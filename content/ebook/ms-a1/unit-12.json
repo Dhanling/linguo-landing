@@ -1,0 +1,641 @@
+{
+  "title": "Bahasa pasar — cakap macam orang sini",
+  "title_target": "Tak, nak, kat, je, dah",
+  "goal": "Menanggalkan lapisan buku dan memasang lapisan jalanan — ragam bahasa yang tidak tercetak di akhbar tapi dipakai di setiap meja mamak, dan tanpanya kamu bisa membaca Malaysia tapi tidak bisa mendengarnya.",
+  "bekal": [
+    "mengenali dan memakai dua puluh pemendekan yang dipakai setiap hari",
+    "memakai partikel akhir kalimat (*lah, kan, kot, je, pun, ke*) tanpa berlebihan",
+    "tahu batas: kapan bahasa pasar tidak boleh dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Melepak kat mamak",
+      "intro": "Pukul sebelas malam. Haziq, Aina, dan Sarah duduk di meja luar kedai mamak. Dialog ini sengaja ditulis persis seperti bunyinya — bukan seperti ejaannya.",
+      "lines": [
+        {
+          "speaker": "Haziq:",
+          "text": "Weh, korang nak order apa? Aku belanja malam ni.",
+          "id": "Woi, kalian mau pesan apa? Aku traktir malam ini.",
+          "literal": "woi, kalian mau pesan apa? aku belanja malam ini."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Eh serius? Aku nak roti telur ngan teh o ais.",
+          "id": "Eh serius? Aku mau roti telur sama es teh tawar.",
+          "literal": "eh serius? aku mau roti telur dengan teh o es."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Aku pun sama je. Tapi kenapa tiba-tiba belanja?",
+          "id": "Aku juga sama aja. Tapi kenapa tiba-tiba traktir?",
+          "literal": "aku pun sama saja. tapi kenapa tiba-tiba belanja?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Takde apa. Baru dapat duit biasiswa. Lagipun korang selalu tolong aku.",
+          "id": "Nggak apa-apa. Baru dapat uang beasiswa. Lagian kalian selalu bantu aku.",
+          "literal": "tidak ada apa. baru dapat uang beasiswa. lagipun kalian selalu tolong aku."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Alaa, sweetnya. Eh, esok ada kelas tak?",
+          "id": "Aduh, manisnya. Eh, besok ada kelas nggak?",
+          "literal": "ala, manisnya. eh, besok ada kelas tidak?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ada kot. Aku tak check lagi jadual.",
+          "id": "Ada kayaknya. Aku belum cek jadwalnya.",
+          "literal": "ada mungkin. aku tidak cek lagi jadwal."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Camne boleh tak check? Esok ada quiz woi!",
+          "id": "Gimana bisa belum cek? Besok ada kuis, woi!",
+          "literal": "bagaimana bisa tidak cek? besok ada kuis woi!"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Hah?! Betul ke? Mampus aku.",
+          "id": "Hah?! Serius? Mampus aku.",
+          "literal": "hah?! betul [tanya]? mampus aku."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Relaks la. Bab satu ngan dua je. Senang.",
+          "id": "Santai aja. Bab satu sama dua doang. Gampang.",
+          "literal": "rileks lah. bab satu dengan dua saja. mudah."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Senang bagi kau la. Aku baru baca separuh.",
+          "id": "Gampang buat kamu doang. Aku baru baca separuh.",
+          "literal": "mudah bagi kamu lah. aku baru baca separuh."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Jom balik awal. Aku ajar kau kejap.",
+          "id": "Ayo pulang cepetan. Aku ajarin kamu bentar.",
+          "literal": "ayo pulang awal. aku ajar kamu sebentar."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Serius? Kau memang terbaik. Thanks weh.",
+          "id": "Serius? Kamu emang the best. Makasih, ya.",
+          "literal": "serius? kamu memang terbaik. terima kasih woi."
+        }
+      ],
+      "notes": [
+        "⚠️ **Dialog ini memakai *aku* dan *kau*** — dan itu sengaja. Ketiganya sudah berkawan rapat. Dengan orang yang baru kamu kenal, dengan pegawai, dengan orang yang lebih tua, kata ini **kasar**. Jarak antara *saya/awak* dan *aku/kau* di Malaysia lebih tegas daripada di Indonesia; jangan menyeberanginya sampai lawan bicaramu menyeberang lebih dulu.",
+        "**Korang** = kalian (dari *kau orang*). Sepupunya: **diorang** = mereka (dari *dia orang*), **kitorang** = kami (dari *kita orang*). Ketiganya bentuk percakapan murni yang tidak pernah muncul dalam tulisan rasmi, dan ketiganya sangat sering.",
+        "**Weh** (juga ditulis *wei*, *woi*) adalah seruan memanggil kawan — setara \"woi\" atau \"bro\". Netral di antara kawan, kasar kepada orang asing.",
+        "**Camne** = *macam mana* = bagaimana. Pemendekan ini begitu umum sampai banyak orang muda menulisnya begitu di pesan. Sepupunya: **camtu** (macam tu), **camni** (macam ni).",
+        "**Mampus aku** adalah seruan panik setengah bercanda — \"mati aku\", \"habislah aku\". Kasar kalau dipakai kepada orang lain (*mampus kau!*), tapi biasa saja kalau tentang diri sendiri."
+      ],
+      "grammars": [
+        {
+          "title": "Dua puluh pemendekan yang wajib kamu kenali",
+          "body": [
+            "Ini tabel yang paling perlu kamu hafal di seluruh modul, bahkan lebih daripada tabel kata jebakan. Alasannya sederhana: tanpa ini, kamu tidak akan menangkap satu kalimat pun dari percakapan sungguhan, meski setiap katanya sudah kamu ketahui dalam bentuk panjangnya."
+          ],
+          "table": {
+            "head": [
+              "Bentuk pasar",
+              "Bentuk penuh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**tak**",
+                "tidak",
+                "tidak, nggak"
+              ],
+              [
+                "**takde / takdak**",
+                "tiada, tak ada",
+                "nggak ada"
+              ],
+              [
+                "**takpe**",
+                "tak apa",
+                "nggak apa-apa"
+              ],
+              [
+                "**nak**",
+                "hendak / mahu",
+                "mau, ingin, akan"
+              ],
+              [
+                "**tanak**",
+                "tak nak",
+                "nggak mau"
+              ],
+              [
+                "**kat**",
+                "di / dekat",
+                "di"
+              ],
+              [
+                "**je / jer**",
+                "sahaja",
+                "saja, doang"
+              ],
+              [
+                "**dah**",
+                "sudah",
+                "sudah, udah"
+              ],
+              [
+                "**belom**",
+                "belum",
+                "belum"
+              ],
+              [
+                "**kejap / sekejap**",
+                "sebentar",
+                "sebentar, bentar"
+              ],
+              [
+                "**camne**",
+                "macam mana",
+                "gimana"
+              ],
+              [
+                "**camtu / camni**",
+                "macam tu / ni",
+                "gitu / gini"
+              ],
+              [
+                "**korang**",
+                "kau orang",
+                "kalian"
+              ],
+              [
+                "**diorang**",
+                "dia orang",
+                "mereka"
+              ],
+              [
+                "**kitorang**",
+                "kita orang",
+                "kami"
+              ],
+              [
+                "**ngan**",
+                "dengan",
+                "sama, dengan"
+              ],
+              [
+                "**cer / cuba**",
+                "cuba",
+                "coba"
+              ],
+              [
+                "**kesian**",
+                "kasihan",
+                "kasihan"
+              ],
+              [
+                "**sikit**",
+                "sedikit",
+                "dikit"
+              ],
+              [
+                "**kecik**",
+                "kecil",
+                "kecil"
+              ]
+            ]
+          },
+          "after": [
+            "Pola pemendekannya bukan acak: hampir semuanya **membuang suku kata pertama** (*sekejap* → *kejap*, *sahaja* → *je*) atau **menelan huruf tengah** (*macam mana* → *camne*, *dengan* → *ngan*). Begitu kamu menangkap polanya, kamu bisa menebak bentuk pendek yang belum pernah kamu dengar.",
+            "⚠️ **Tak** dan **tanak** perlu dibedakan baik-baik: *tak nak* (dua kata) sering keluar sebagai satu bunyi *tanak*. *Saya tanak pergi* = \"saya nggak mau pergi\". Sama sekali tidak ada hubungan dengan *menanak nasi*."
+          ]
+        },
+        {
+          "title": "Partikel akhir kalimat: nada yang ditulis",
+          "body": [
+            "Bahasa Melayu percakapan menaruh perasaan di **ujung kalimat**, bukan di nada suara saja. Bahasa Indonesia melakukan hal yang sama dengan \"sih\", \"dong\", \"kok\", \"deh\", \"lho\" — jadi konsepnya sudah kamu kuasai; yang perlu diganti cuma katanya."
+          ],
+          "table": {
+            "head": [
+              "Partikel",
+              "Rasanya",
+              "Contoh",
+              "Padanan Indonesia"
+            ],
+            "rows": [
+              [
+                "**-lah / la**",
+                "melembutkan, menegaskan",
+                "Relaks la.",
+                "Santai aja, deh."
+              ],
+              [
+                "**kan**",
+                "minta persetujuan",
+                "Sedap kan?",
+                "Enak, kan?"
+              ],
+              [
+                "**ke**",
+                "menanyakan kebenaran",
+                "Betul ke?",
+                "Serius?"
+              ],
+              [
+                "**tak**",
+                "menanyakan ya/tidak",
+                "Nak ikut tak?",
+                "Mau ikut, nggak?"
+              ],
+              [
+                "**je / jer**",
+                "meremehkan, membatasi",
+                "Seringgit je.",
+                "Seribu doang."
+              ],
+              [
+                "**pun**",
+                "juga, bahkan",
+                "Aku pun tak tahu.",
+                "Aku juga nggak tahu."
+              ],
+              [
+                "**kot**",
+                "mungkin, kayaknya",
+                "Dia dah balik kot.",
+                "Kayaknya udah pulang."
+              ],
+              [
+                "**weh / wei**",
+                "memanggil kawan",
+                "Jom weh!",
+                "Ayo, woi!"
+              ],
+              [
+                "**eh**",
+                "menarik perhatian",
+                "Eh, tengok tu.",
+                "Eh, lihat itu."
+              ],
+              [
+                "**ya / yer**",
+                "melembutkan",
+                "Jaga diri ya.",
+                "Jaga diri, ya."
+              ],
+              [
+                "**punya**",
+                "penegas kuat",
+                "Mahal punya!",
+                "Mahal banget!"
+              ],
+              [
+                "**doh / dah**",
+                "tidak sabar",
+                "Jom doh!",
+                "Ayo, buruan!"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Kesalahan orang Indonesia yang paling sering: **memakai terlalu banyak *-lah*.** Karena *-lah* adalah partikel Melayu yang paling terkenal, orang baru menempelkannya ke setiap kalimat dan hasilnya terdengar seperti sedang menirukan. Orang Malaysia memakai *-lah* dengan cermat, dan partikel yang justru paling sering muncul adalah **kan**, **je**, dan **tak**.",
+            "Partikel bisa **bertumpuk**: *Sedap je kan?* (\"Enak juga, kan?\"), *Takde apa je pun.* (\"Nggak ada apa-apa, kok.\") Susunannya tidak diatur kaku; ikuti apa yang kamu dengar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang sama, tiga tingkat kerasmian",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cara terbaik merasakan jaraknya adalah melihat satu kalimat yang sama ditulis tiga kali:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Rasmi (tulisan)",
+            "Sopan (percakapan biasa)",
+            "Pasar (kawan rapat)"
+          ],
+          "rows": [
+            [
+              "Adakah anda hendak makan?",
+              "Awak nak makan tak?",
+              "Kau nak makan tak?"
+            ],
+            [
+              "Saya tidak memahaminya.",
+              "Saya tak faham.",
+              "Aku tak faham la."
+            ],
+            [
+              "Di manakah tandas?",
+              "Tandas kat mana ya?",
+              "Tandas mana weh?"
+            ],
+            [
+              "Saya sudah selesai.",
+              "Saya dah siap.",
+              "Dah siap dah."
+            ],
+            [
+              "Perkara itu tidak menjadi masalah.",
+              "Takpe, tak apa.",
+              "Takpe la, chill."
+            ],
+            [
+              "Bagaimanakah caranya?",
+              "Macam mana nak buat?",
+              "Camne nak buat?"
+            ],
+            [
+              "Mereka belum tiba.",
+              "Dia orang belum sampai.",
+              "Diorang belom sampai."
+            ],
+            [
+              "Harganya sepuluh ringgit sahaja.",
+              "Sepuluh ringgit je.",
+              "Sepuluh je."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa yang berubah bukan cuma pemendekan, melainkan **seluruh pilihan kata**: *adakah* → *tak* di ujung, *memahaminya* → *faham*, *perkara* → dibuang sama sekali. Bahasa Melayu rasmi memakai bentuk berimbuhan panjang; bahasa Melayu pasar membuang hampir semua imbuhan."
+        },
+        {
+          "type": "kotak",
+          "title": "Aturan aman untuk pendatang",
+          "items": [
+            "**Mulai dari tengah.** Ragam \"sopan\" di kolom tengah aman di 95% keadaan — kedai, kelas, kaunter, kawan baru.",
+            "**Naik ke rasmi** untuk: e-mel, borang, pegawai kerajaan, orang jauh lebih tua, mesyuarat.",
+            "**Turun ke pasar** hanya sesudah lawan bicaramu turun lebih dulu. Ini aturan yang tidak tertulis tapi dijaga.",
+            "⚠️ **Jangan meniru kata kasar** dari media sosial atau drama. Kata makian Melayu terdengar jauh lebih tajam di telinga orang Malaysia daripada yang kamu duga dari terjemahannya, dan sebagai orang asing kamu tidak punya keringanan sosial untuk memakainya.",
+            "**Kalau ragu, pakai bentuk penuh.** Terdengar sedikit kaku jauh lebih murah harganya daripada terdengar kurang ajar."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata gaul yang akan kamu dengar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata",
+            "Maksudnya",
+            "Padanan Indonesia"
+          ],
+          "rows": [
+            [
+              "**best**",
+              "seru, asyik",
+              "seru, keren"
+            ],
+            [
+              "**power**",
+              "hebat, mantap",
+              "mantap"
+            ],
+            [
+              "**terbaik**",
+              "the best",
+              "juara, top"
+            ],
+            [
+              "**gempak**",
+              "hebat, dahsyat",
+              "gokil"
+            ],
+            [
+              "**syok**",
+              "asyik, nikmat",
+              "enak, nikmat"
+            ],
+            [
+              "**boring**",
+              "membosankan",
+              "bosen"
+            ],
+            [
+              "**kantoi**",
+              "ketahuan, ketangkap",
+              "ketahuan"
+            ],
+            [
+              "**kena tipu**",
+              "ditipu",
+              "kena tipu"
+            ],
+            [
+              "**blur**",
+              "bingung, nggak nyambung",
+              "bingung"
+            ],
+            [
+              "**cun**",
+              "cantik, ganteng",
+              "cakep"
+            ],
+            [
+              "**poyo**",
+              "norak, sok",
+              "norak"
+            ],
+            [
+              "**perli**",
+              "menyindir",
+              "nyindir"
+            ],
+            [
+              "**bajet**",
+              "sok, mengira diri",
+              "sok"
+            ],
+            [
+              "**jimat**",
+              "hemat",
+              "irit"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata **syok** (juga ditulis *shiok*, dari Melayu-Hokkien) adalah salah satu kata paling khas Asia Tenggara — dipakai di Malaysia, Singapura, dan Brunei untuk segala yang terasa nikmat: makanan, cuaca, tidur siang. *Syok betul!* Tidak ada padanan Indonesia yang persis."
+        },
+        {
+          "type": "p",
+          "text": "Kamu tidak perlu memakai satu pun kata di tabel ini. Tapi kamu perlu **mengenalinya**, karena inilah yang benar-benar terdengar di meja sebelah — dan mengenalinya adalah perbedaan antara mengikuti percakapan dan sekadar menunggu giliran bicara."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "korang",
+      "baca": "korang",
+      "id": "kalian"
+    },
+    {
+      "ms": "diorang",
+      "baca": "diorang",
+      "id": "mereka"
+    },
+    {
+      "ms": "kitorang",
+      "baca": "kitorang",
+      "id": "kami"
+    },
+    {
+      "ms": "camne",
+      "baca": "camné",
+      "id": "gimana"
+    },
+    {
+      "ms": "camtu / camni",
+      "baca": "camtu · camni",
+      "id": "gitu / gini"
+    },
+    {
+      "ms": "takde",
+      "baca": "takdé",
+      "id": "nggak ada"
+    },
+    {
+      "ms": "takpe",
+      "baca": "takpé",
+      "id": "nggak apa-apa"
+    },
+    {
+      "ms": "tanak",
+      "baca": "tanak",
+      "id": "nggak mau"
+    },
+    {
+      "ms": "ngan",
+      "baca": "ngan",
+      "id": "sama, dengan"
+    },
+    {
+      "ms": "kejap",
+      "baca": "kəjap",
+      "id": "sebentar"
+    },
+    {
+      "ms": "weh / wei",
+      "baca": "wéh",
+      "id": "woi, bro"
+    },
+    {
+      "ms": "kot",
+      "baca": "kot",
+      "id": "kayaknya"
+    },
+    {
+      "ms": "biasiswa",
+      "baca": "biasiswə",
+      "id": "beasiswa"
+    },
+    {
+      "ms": "kesian",
+      "baca": "kəsian",
+      "id": "kasihan"
+    },
+    {
+      "ms": "syok",
+      "baca": "syok",
+      "id": "nikmat, asyik"
+    },
+    {
+      "ms": "gempak",
+      "baca": "gəmpak",
+      "id": "hebat, gokil"
+    },
+    {
+      "ms": "kantoi",
+      "baca": "kantoi",
+      "id": "ketahuan"
+    },
+    {
+      "ms": "cun",
+      "baca": "cun",
+      "id": "cakep"
+    },
+    {
+      "ms": "poyo",
+      "baca": "poyo",
+      "id": "norak"
+    },
+    {
+      "ms": "perli",
+      "baca": "pərli",
+      "id": "menyindir"
+    },
+    {
+      "ms": "bajet",
+      "baca": "bajét",
+      "id": "sok"
+    },
+    {
+      "ms": "blur",
+      "baca": "blur",
+      "id": "bingung"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk penuh (rasmi) daripada bentuk pasar ini.",
+      "items": [
+        "takde",
+        "camne",
+        "je",
+        "korang",
+        "kejap",
+        "ngan"
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat rasmi ini jadi bahasa pasar.",
+      "items": [
+        "Adakah anda hendak makan?",
+        "Saya tidak memahaminya.",
+        "Bagaimanakah caranya?",
+        "Mereka belum tiba.",
+        "Harganya sepuluh ringgit sahaja."
+      ]
+    },
+    {
+      "prompt": "Isi dengan partikel yang tepat: *lah*, *kan*, *ke*, *tak*, *je*, *kot*.",
+      "items": [
+        "Sedap ____? (minta persetujuan)",
+        "Nak ikut ____? (menanyakan mau/tidak)",
+        "Betul ____? (menanyakan kebenaran)",
+        "Relaks ____. (melembutkan)",
+        "Seringgit ____. (membatasi: cuma)",
+        "Dia dah balik ____. (kayaknya)"
+      ]
+    },
+    {
+      "prompt": "Apa maksud kata gaul ini?",
+      "items": [
+        "Best gila!",
+        "Aku kantoi semalam.",
+        "Jom melepak.",
+        "Dia belanja kita.",
+        "Syok betul makanan ni."
+      ]
+    }
+  ],
+  "answers": [
+    "tiada / tak ada — macam mana — sahaja — kau orang / kalian — sekejap — dengan",
+    "Awak nak makan tak? / Kau nak makan tak? — Aku tak faham la. — Camne nak buat? — Diorang belom sampai. — Sepuluh ringgit je.",
+    "kan — tak — ke — la — je — kot",
+    "Seru banget! — Aku ketahuan kemarin. — Ayo nongkrong. — Dia traktir kita. — Enak banget makanan ini."
+  ]
+}

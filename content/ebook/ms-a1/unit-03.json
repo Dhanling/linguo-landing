@@ -1,0 +1,440 @@
+{
+  "title": "Kata jebakan — kata yang sama, arti yang lain",
+  "title_target": "Percuma? Maksudnya free?",
+  "goal": "Membongkar kata yang ejaannya sama persis di dua bahasa tapi artinya berbeda — unit terpenting seluruh modul ini, dan satu-satunya yang sebaiknya kamu baca dua kali.",
+  "bekal": [
+    "mengenali tiga puluh kata jebakan yang paling sering menjegal orang Indonesia",
+    "tahu empat kata yang bukan sekadar membingungkan melainkan memalukan",
+    "punya kalimat penyelamat untuk saat kamu sadar baru saja salah kata"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Salah faham di kedai",
+      "intro": "Sarah dan Haziq keluar dari kedai buku. Sarah memegang sehelai risalah yang tadi diberikan orang di pintu.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Haziq, kertas ni tulis \"percuma\". Maksudnya buang masa je ke?",
+          "id": "Haziq, kertas ini tulisannya \"percuma\". Maksudnya buang waktu saja, ya?",
+          "literal": "Haziq, kertas ini tulis \"percuma\". maksudnya buang waktu saja [tanya]?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Hah? Bukanlah! Percuma tu maknanya free — tak payah bayar.",
+          "id": "Hah? Bukan! Percuma itu artinya gratis — nggak usah bayar.",
+          "literal": "hah? bukan-lah! percuma itu maknanya gratis — tidak perlu bayar."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Eh? Kat Indonesia percuma tu maksudnya sia-sia.",
+          "id": "Lho? Di Indonesia percuma itu artinya sia-sia.",
+          "literal": "eh? di Indonesia percuma itu maksudnya sia-sia."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Serius? Patutlah muka awak pelik tadi. Banyak lagi macam tu.",
+          "id": "Serius? Pantas tadi muka kamu aneh. Banyak lagi yang kayak gitu.",
+          "literal": "serius? pantas-lah muka kamu aneh tadi. banyak lagi macam itu."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Contohnya?",
+          "id": "Contohnya?",
+          "literal": "contohnya?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Kereta. Kat sini kereta tu car. Yang atas rel tu keretapi.",
+          "id": "Kereta. Di sini kereta itu mobil. Yang di atas rel itu kereta api.",
+          "literal": "kereta. di sini kereta itu mobil. yang atas rel itu kereta api."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya Allah. Semalam saya cakap saya naik kereta ke kampus.",
+          "id": "Ya ampun. Kemarin saya bilang saya naik kereta ke kampus.",
+          "literal": "ya Allah. kemarin saya bicara saya naik mobil ke kampus."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Haha, patutlah saya tanya kereta jenis apa!",
+          "id": "Haha, pantas saya tanya mobil merek apa!",
+          "literal": "haha, pantas-lah saya tanya mobil jenis apa!"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ada lagi yang bahaya tak? Yang boleh buat orang marah?",
+          "id": "Ada lagi yang bahaya nggak? Yang bisa bikin orang marah?",
+          "literal": "ada lagi yang bahaya tidak? yang bisa buat orang marah?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Ada. Satu je saya nak pesan: jangan guna perkataan \"butuh\". Kat sini tu perkataan lucah. Guna \"perlu\".",
+          "id": "Ada. Satu saja yang mau saya pesan: jangan pakai kata \"butuh\". Di sini itu kata jorok. Pakai \"perlu\".",
+          "literal": "ada. satu saja saya mau pesan: jangan guna kata \"butuh\". di sini itu kata cabul. guna \"perlu\"."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Alamak. Terima kasih beritahu awal-awal.",
+          "id": "Aduh. Terima kasih sudah kasih tahu dari awal.",
+          "literal": "aduh. terima kasih beritahu awal-awal."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Sama-sama. Nanti saya buat senarai untuk awak.",
+          "id": "Sama-sama. Nanti saya buat daftar untuk kamu.",
+          "literal": "sama-sama. nanti saya buat daftar untuk kamu."
+        }
+      ],
+      "notes": [
+        "**Ni** dan **tu** adalah bentuk percakapan dari *ini* dan *itu*, dan letaknya sama: **sesudah** kata bendanya. *Kertas ni* = kertas ini, *kereta tu* = mobil itu. Bentuk pendek ini dipakai orang Malaysia hampir selalu dalam percakapan; bentuk penuh terdengar agak rasmi.",
+        "**Makna / maknanya** dipakai di Malaysia sesering *arti / artinya* di Indonesia. Keduanya benar di dua bahasa, tapi kekerapannya terbalik — dan menirunya adalah cara termurah membuat kalimatmu terdengar Malaysia.",
+        "**Tak payah** = tidak usah, tidak perlu. *Payah* sendiri berarti \"susah, sulit\", jadi *tak payah* secara harfiah \"tidak susah\" — tapi maknanya sudah bergeser jadi \"tidak usah\". *Tak payah bayar* = tidak usah bayar.",
+        "**Pelik** = aneh, ganjil. Bahasa Indonesia tidak memakai kata ini sama sekali, dan kamu akan mendengarnya setiap hari. *Pelik betul* = \"aneh banget\".",
+        "**Alamak** adalah seruan kaget khas Malaysia, setara \"aduh\" atau \"ya ampun\". Sepupunya: *aiyo*, *adoi*, *ish*, *eh*."
+      ],
+      "grammars": [
+        {
+          "title": "Empat kata yang bukan cuma membingungkan",
+          "body": [
+            "Sebagian besar kata jebakan cuma membuat orang tersenyum. Empat kata di bawah ini berbeda — kesalahan memakainya bisa membuatmu malu atau membuat lawan bicaramu tersinggung. Hafalkan keempatnya sekarang, sebelum kamu meneruskan ke halaman berikutnya."
+          ],
+          "table": {
+            "head": [
+              "Kata",
+              "Di Malaysia",
+              "Yang harus kamu pakai"
+            ],
+            "rows": [
+              [
+                "🔴 **butuh**",
+                "kata lucah untuk kemaluan lelaki",
+                "**perlu** — *Saya perlu bantuan.*"
+              ],
+              [
+                "🔴 **seronok**",
+                "menyenangkan, asyik (kata biasa!)",
+                "Kalau maksudmu cabul: **lucah**"
+              ],
+              [
+                "🔴 **pantat**",
+                "kemaluan wanita (kasar)",
+                "**punggung** untuk \"pantat\""
+              ],
+              [
+                "⚠️ **budak**",
+                "anak kecil (kata biasa!)",
+                "Kalau maksudmu hamba: **hamba abdi**"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa bahayanya berjalan **dua arah**. *Butuh* dan *pantat* berbahaya kalau **kamu** yang memakainya. *Seronok* dan *budak* berbahaya kalau kamu **salah menangkap** saat orang Malaysia memakainya — dan reaksi terkejutmu yang justru jadi canggung.",
+            "Kata **punggung** juga bergeser: dalam bahasa Melayu *punggung* berarti **pantat**, sedangkan bagian belakang badan disebut **belakang**. Jadi *sakit belakang* = sakit punggung, dan *sakit punggung* = sakit pantat. Ini sering muncul di klinik, jadi ingat baik-baik."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dua puluh kata jebakan yang paling sering muncul",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Senarai lengkapnya ada di halaman belakang modul ini. Yang di bawah adalah dua puluh yang paling sering benar-benar kamu temui dalam satu minggu pertama di Malaysia — hafalkan yang ini dulu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata",
+            "Di Malaysia",
+            "Di Indonesia"
+          ],
+          "rows": [
+            [
+              "**percuma**",
+              "gratis",
+              "sia-sia"
+            ],
+            [
+              "**kereta**",
+              "mobil",
+              "kereta api"
+            ],
+            [
+              "**budak**",
+              "anak kecil",
+              "hamba"
+            ],
+            [
+              "**pejabat**",
+              "kantor",
+              "pegawai tinggi"
+            ],
+            [
+              "**pusing**",
+              "berputar, berkeliling",
+              "sakit kepala"
+            ],
+            [
+              "**bisa**",
+              "racun",
+              "dapat, mampu"
+            ],
+            [
+              "**boleh**",
+              "bisa, mampu",
+              "diizinkan"
+            ],
+            [
+              "**ahli**",
+              "anggota",
+              "pakar"
+            ],
+            [
+              "**comel**",
+              "lucu, imut",
+              "cerewet"
+            ],
+            [
+              "**berbual**",
+              "mengobrol",
+              "membual, bohong"
+            ],
+            [
+              "**banci**",
+              "sensus penduduk",
+              "waria"
+            ],
+            [
+              "**jemputan**",
+              "undangan",
+              "jemputan (kendaraan)"
+            ],
+            [
+              "**tambang**",
+              "ongkos, tarif",
+              "tambang (galian)"
+            ],
+            [
+              "**cadangan**",
+              "usul, saran",
+              "cadangan"
+            ],
+            [
+              "**kesal**",
+              "menyesal",
+              "jengkel"
+            ],
+            [
+              "**sulit**",
+              "rahasia",
+              "susah"
+            ],
+            [
+              "**senang**",
+              "mudah",
+              "gembira"
+            ],
+            [
+              "**baja**",
+              "pupuk",
+              "baja (logam)"
+            ],
+            [
+              "**panggung**",
+              "bioskop",
+              "panggung"
+            ],
+            [
+              "**kerajaan**",
+              "pemerintah",
+              "kerajaan (monarki)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua baris terakhir pantas diperhatikan tersendiri. **Kerajaan Malaysia** berarti \"Pemerintah Malaysia\" — dan Malaysia memang juga sebuah kerajaan, jadi kalimat seperti *Kerajaan mengumumkan cukai baru* bisa terbaca ganda kalau kamu belum terbiasa. Selalu: *kerajaan* = pemerintah, *istana* dan *raja* = urusan monarki. Sedangkan **panggung wayang** adalah bioskop — *wayang* di sini berarti film, bukan pertunjukan boneka."
+        }
+      ]
+    },
+    {
+      "title": "Kata yang bukan jebakan, cuma berbeda",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Golongan kedua jauh lebih besar dan jauh lebih ramah: katanya memang **berbeda**, bukan sama-tapi-beda-arti. *Kedai* untuk toko, *tandas* untuk toilet, *beg* untuk tas, *borang* untuk formulir, *cukai* untuk pajak, *hospital* untuk rumah sakit. Salah pakai di sini paling jauh membuatmu terdengar seperti orang asing, bukan membuatmu malu — dan seluruh daftarnya menunggu di halaman belakang modul ini. Yang perlu kamu lakukan sekarang cuma satu: berhenti menganggap kata yang tidak kamu kenali sebagai kesalahan cetak."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **semalam** — ia berarti **kemarin**, bukan \"semalam\" dalam arti tadi malam. Untuk \"tadi malam\" orang Malaysia berkata *malam tadi*. Dan **kelmarin** berarti *kemarin dulu*, bukan kemarin. Tiga kata ini bertetangga dan sering tertukar; unit 11 akan memasangnya dengan benar."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalau kamu tidak yakin sebuah kata aman",
+          "items": [
+            "**Perkataan ni maksudnya apa?** — Kata ini artinya apa?",
+            "**Kat Indonesia maknanya lain.** — Di Indonesia artinya beda.",
+            "**Betul ke saya guna perkataan ni?** — Bener nggak saya pakai kata ini?",
+            "**Ada perkataan lain tak?** — Ada kata lain nggak?",
+            "Dan yang paling berguna: kalau ragu, **pakai kata yang lebih panjang dan lebih rasmi**. Kata baku hampir tidak pernah jadi jebakan; yang berbahaya justru kata pendek sehari-hari."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "percuma",
+      "baca": "pərcumə",
+      "id": "gratis ⚠️"
+    },
+    {
+      "ms": "kereta",
+      "baca": "kərétə",
+      "id": "mobil ⚠️"
+    },
+    {
+      "ms": "keretapi",
+      "baca": "kərétəpi",
+      "id": "kereta api"
+    },
+    {
+      "ms": "perlu",
+      "baca": "pərlu",
+      "id": "butuh, perlu ✅"
+    },
+    {
+      "ms": "lucah",
+      "baca": "lucah",
+      "id": "cabul, jorok"
+    },
+    {
+      "ms": "pelik",
+      "baca": "pəlik",
+      "id": "aneh"
+    },
+    {
+      "ms": "makna",
+      "baca": "maknə",
+      "id": "arti"
+    },
+    {
+      "ms": "tak payah",
+      "baca": "tak payah",
+      "id": "tidak usah"
+    },
+    {
+      "ms": "guna",
+      "baca": "gunə",
+      "id": "pakai, gunakan"
+    },
+    {
+      "ms": "senarai",
+      "baca": "sənarai",
+      "id": "daftar"
+    },
+    {
+      "ms": "alamak",
+      "baca": "alamak",
+      "id": "aduh, ya ampun"
+    },
+    {
+      "ms": "beritahu",
+      "baca": "bəritahu",
+      "id": "memberi tahu"
+    },
+    {
+      "ms": "ni / tu",
+      "baca": "ni · tu",
+      "id": "ini / itu"
+    },
+    {
+      "ms": "kesal",
+      "baca": "kəsal",
+      "id": "menyesal ⚠️"
+    },
+    {
+      "ms": "sulit",
+      "baca": "sulit",
+      "id": "rahasia ⚠️"
+    },
+    {
+      "ms": "senang",
+      "baca": "sənang",
+      "id": "mudah ⚠️"
+    },
+    {
+      "ms": "comel",
+      "baca": "comél",
+      "id": "lucu, imut ⚠️"
+    },
+    {
+      "ms": "berbual",
+      "baca": "bərbual",
+      "id": "mengobrol ⚠️"
+    },
+    {
+      "ms": "kerajaan",
+      "baca": "kərajaan",
+      "id": "pemerintah ⚠️"
+    },
+    {
+      "ms": "panggung wayang",
+      "baca": "—",
+      "id": "bioskop"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Apa arti kata bercetak tebal ini di MALAYSIA?",
+      "items": [
+        "Masuk **percuma** hari ini.",
+        "**Kereta** saya rosak.",
+        "**Budak** tu menangis.",
+        "Saya kerja kat **pejabat**.",
+        "Ular tu ada **bisa**.",
+        "Dia **ahli** kelab bola."
+      ]
+    },
+    {
+      "prompt": "Betulkan kalimat orang Indonesia ini supaya berterima di Malaysia.",
+      "items": [
+        "Saya butuh bantuan awak.",
+        "Saya naik kereta api ke pejabat — maksudnya dengan mobil.",
+        "Kepala saya pusing.",
+        "Saya bisa cakap Melayu sikit.",
+        "Dia ahli bahasa yang hebat — maksudnya pakar.",
+        "Saya sakit punggung — maksudnya bagian belakang badan."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Kata ini artinya apa?",
+        "Di Indonesia artinya beda.",
+        "Nggak usah bayar, gratis.",
+        "Mobil saya rusak.",
+        "Saya menyesal nggak datang kemarin.",
+        "Anak-anak itu lucu sekali."
+      ]
+    },
+    {
+      "prompt": "Pilih kata yang aman: kata mana yang sebaiknya kamu pakai?",
+      "items": [
+        "Saya (butuh / perlu) duit.",
+        "Ini surat (sulit / rahasia) — maksudnya rahasia.",
+        "Saya (boleh / bisa) tolong awak.",
+        "Dia (pakar / ahli) sejarah — maksudnya pakar.",
+        "Sakit (belakang / punggung) — maksudnya bagian belakang badan."
+      ]
+    }
+  ],
+  "answers": [
+    "gratis — mobil — anak kecil — kantor — racun — anggota",
+    "Saya perlu bantuan awak. — Saya naik kereta ke pejabat. — Kepala saya pening. — Saya boleh cakap Melayu sikit. — Dia pakar bahasa yang hebat. — Saya sakit belakang.",
+    "Perkataan ni maksudnya apa? — Kat Indonesia maknanya lain. — Tak payah bayar, percuma. — Kereta saya rosak. — Saya kesal tak datang semalam. — Budak-budak tu comel sangat.",
+    "perlu — sulit — boleh — pakar — belakang"
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "title": "Bertanya",
+  "title_target": "Macam mana nak tanya?",
+  "goal": "Menyusun pertanyaan dengan seluruh perangkat tanya bahasa Melayu — termasuk tiga penanda tanya yang tidak dipunyai bahasa Indonesia dan yang menentukan apakah pertanyaanmu terdengar rasmi, santai, atau kasar.",
+  "bekal": [
+    "memakai *apa, siapa, mana, bila, kenapa, macam mana, berapa* dengan susunan Melayu",
+    "memilih antara *-kah*, *ke*, dan nada suara sebagai penanda tanya",
+    "melembutkan pertanyaan supaya tidak terdengar seperti pemeriksaan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ditanya di kaunter kolej",
+      "intro": "Sarah datang ke pejabat kolej untuk mengambil kunci bilik. Kerani di kaunter menanyainya satu demi satu, dan Sarah balas bertanya.",
+      "lines": [
+        {
+          "speaker": "Kerani:",
+          "text": "Ya, boleh saya bantu?",
+          "id": "Ya, ada yang bisa saya bantu?",
+          "literal": "ya, boleh saya bantu?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya nak ambil kunci bilik. Bilik dua belas.",
+          "id": "Saya mau ambil kunci kamar. Kamar dua belas.",
+          "literal": "saya mau ambil kunci kamar. kamar dua belas."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Nama penuh siapa?",
+          "id": "Nama lengkapnya siapa?",
+          "literal": "nama penuh siapa?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sarah Amelia Putri.",
+          "id": "Sarah Amelia Putri.",
+          "literal": "Sarah Amelia Putri."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Nombor matrik berapa?",
+          "id": "Nomor induk mahasiswanya berapa?",
+          "literal": "nomor matrik berapa?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sekejap… S dua kosong lapan tiga empat.",
+          "id": "Sebentar… S dua nol delapan tiga empat.",
+          "literal": "sebentar… S dua kosong delapan tiga empat."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Adakah cik pelajar antarabangsa?",
+          "id": "Apakah Anda mahasiswa internasional?",
+          "literal": "adakah cik pelajar internasional?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya, saya dari Indonesia.",
+          "id": "Ya, saya dari Indonesia.",
+          "literal": "ya, saya dari Indonesia."
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Bila cik sampai Malaysia?",
+          "id": "Kapan Anda tiba di Malaysia?",
+          "literal": "kapan cik sampai Malaysia?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tiga hari lepas. Encik, kunci ni kena pulangkan bila?",
+          "id": "Tiga hari lalu. Pak, kuncinya harus dikembalikan kapan?",
+          "literal": "tiga hari lalu. encik, kunci ini harus dikembalikan kapan?"
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Hujung semester. Kalau hilang, kena denda lima puluh ringgit.",
+          "id": "Akhir semester. Kalau hilang, kena denda lima puluh ringgit.",
+          "literal": "ujung semester. kalau hilang, kena denda lima puluh ringgit."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kenapa mahal sangat?",
+          "id": "Kenapa mahal banget?",
+          "literal": "kenapa mahal sangat?"
+        },
+        {
+          "speaker": "Kerani:",
+          "text": "Sebab kena tukar mangga pintu sekali. Jaga elok-elok ya.",
+          "id": "Karena harus ganti gemboknya sekalian. Jaga baik-baik, ya.",
+          "literal": "sebab harus tukar gembok pintu sekali. jaga baik-baik ya."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Baik. Terima kasih, encik.",
+          "id": "Baik. Terima kasih, Pak.",
+          "literal": "baik. terima kasih, encik."
+        }
+      ],
+      "notes": [
+        "**Adakah** adalah penanda tanya **rasmi** yang diletakkan di **awal** kalimat: *Adakah cik pelajar antarabangsa?* Bahasa Indonesia memakai *Apakah*. Dalam percakapan sehari-hari, *adakah* nyaris tak pernah dipakai — orang berkata *Cik pelajar antarabangsa ke?*. Kamu perlu **mengenalinya** (ia muncul di borang, surat, dan kaunter rasmi) tapi tidak wajib memakainya.",
+        "**Antarabangsa** = internasional. Bahasa Indonesia berkata *internasional*; bahasa Melayu memakai kata bentukannya sendiri, sama seperti *antarabangsa*, *sejagat* (global), *seantero*. Papan di lapangan terbang berbunyi *Ketibaan Antarabangsa* = Kedatangan Internasional.",
+        "**Kena** berarti **harus, wajib** — dan ini salah satu kata paling berguna dalam bahasa Melayu percakapan. *Kena pulangkan* = harus dikembalikan, *kena bayar* = harus bayar, *saya kena pergi* = saya harus pergi. Bahasa Indonesia memakai *kena* hanya dalam arti \"terkena\"; di Malaysia kedua arti itu hidup berdampingan.",
+        "**Sebab** dipakai di Malaysia sesering *karena* di Indonesia. *Sebab kena tukar* = karena harus ganti. Kata *kerana* juga betul dan lebih rasmi; *sebab* lebih sehari-hari.",
+        "**Mangga** di sini bukan buah — dalam bahasa Melayu *mangga* juga berarti **gembok, kunci pintu**. Buahnya juga disebut *mangga*, dan konteks yang memisahkannya. Ini kata jebakan kecil yang menyenangkan."
+      ],
+      "grammars": [
+        {
+          "title": "Kata tanya",
+          "body": [
+            "Susunan kalimat tanya bahasa Melayu **sama persis** dengan bahasa Indonesia: kata tanya boleh di depan atau di belakang, dan susunan pokok-kata kerja tidak dibalik seperti bahasa Inggris. Yang perlu dihafal cuma katanya."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Melayu",
+              "Bahasa Indonesia",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**apa**",
+                "apa",
+                "Awak nak apa?"
+              ],
+              [
+                "**siapa**",
+                "siapa",
+                "Siapa nama awak?"
+              ],
+              [
+                "**mana / kat mana**",
+                "mana / di mana",
+                "Awak duduk kat mana?"
+              ],
+              [
+                "**ke mana**",
+                "ke mana",
+                "Nak ke mana?"
+              ],
+              [
+                "**dari mana**",
+                "dari mana",
+                "Awak dari mana?"
+              ],
+              [
+                "**bila**",
+                "kapan ⚠️",
+                "Bila awak sampai?"
+              ],
+              [
+                "**kenapa / mengapa**",
+                "kenapa / mengapa",
+                "Kenapa lambat?"
+              ],
+              [
+                "**macam mana**",
+                "bagaimana ⚠️",
+                "Macam mana nak pergi?"
+              ],
+              [
+                "**berapa**",
+                "berapa",
+                "Berapa harga ni?"
+              ],
+              [
+                "**yang mana**",
+                "yang mana",
+                "Yang mana punya awak?"
+              ],
+              [
+                "**bukan?**",
+                "kan?",
+                "Awak orang Indonesia, bukan?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Bila** berarti **kapan**, bukan \"bila/jika\". Dalam bahasa Indonesia, *bila* berarti \"jika\" (*bila hujan, saya tinggal di rumah*). Dalam bahasa Melayu, *bila* adalah kata tanya waktu — dan untuk \"jika\" dipakai **kalau**. Ini jebakan halus yang membuat kalimatmu terbaca aneh tanpa kamu sadari.",
+            "⚠️ **Macam mana**, bukan *bagaimana*. Kata *bagaimana* betul dan muncul di tulisan rasmi, tapi dalam percakapan hampir semua orang berkata *macam mana* — atau lebih cepat lagi, **camne**. *Macam mana nak pergi?* = \"Gimana perginya?\""
+          ]
+        },
+        {
+          "title": "Tiga cara menjadikan kalimat jadi pertanyaan",
+          "body": [
+            "Ini bagian yang benar-benar baru bagimu. Bahasa Indonesia praktis cuma punya satu cara (nada suara, atau *apakah* dalam tulisan). Bahasa Melayu punya tiga, dan pilihanmu langsung menandai tingkat kerasmian."
+          ],
+          "table": {
+            "head": [
+              "Cara",
+              "Letak",
+              "Contoh",
+              "Terasa"
+            ],
+            "rows": [
+              [
+                "**Adakah / Apakah**",
+                "awal kalimat",
+                "Adakah awak pelajar?",
+                "Sangat rasmi — surat, borang, berita."
+              ],
+              [
+                "**-kah**",
+                "menempel pada kata yang ditanya",
+                "Betulkah? Awakkah yang datang?",
+                "Rasmi, tapi hidup dalam tulisan."
+              ],
+              [
+                "**ke**",
+                "ujung kalimat",
+                "Awak pelajar ke?",
+                "Percakapan — inilah yang dipakai orang."
+              ],
+              [
+                "**tak**",
+                "ujung kalimat",
+                "Sedap tak?",
+                "Percakapan, menanyakan ya/tidak."
+              ],
+              [
+                "**kan?**",
+                "ujung kalimat",
+                "Sedap kan?",
+                "Minta persetujuan."
+              ],
+              [
+                "**bukan?**",
+                "ujung kalimat",
+                "Awak dari Indonesia, bukan?",
+                "Rasmi dari *kan?*."
+              ]
+            ]
+          },
+          "after": [
+            "**Ke** dan **tak** adalah pasangan yang paling sering kamu dengar. Bedanya halus: *ke* menanyakan **apakah benar begitu** (*Awak pelajar ke?*), sedangkan *tak* menanyakan **ada atau tidak, mau atau tidak** (*Nak makan tak?*, *Ada duit tak?*). Kalau kamu ragu, keduanya hampir selalu bisa dipakai bergantian tanpa kesalahan.",
+            "⚠️ Bahaya yang perlu diketahui: **pertanyaan tanpa penghalus terdengar tajam.** *Awak buat apa?* dengan nada datar bisa terdengar seperti menuduh. Tambahkan *-lah*, *ya*, atau sapaan, dan seluruh kalimatnya berubah: *Awak buat apa tu?* atau *Encik nak ke mana ya?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menjawab: ya, tidak, dan yang di antaranya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**Ya.**",
+              "Ya.",
+              "Sama."
+            ],
+            [
+              "**Tak / Tidak.**",
+              "Nggak / Tidak.",
+              "*Tak* dalam percakapan."
+            ],
+            [
+              "**Bukan.**",
+              "Bukan.",
+              "Untuk menyangkal kata benda."
+            ],
+            [
+              "**Belum.**",
+              "Belum.",
+              "Sama."
+            ],
+            [
+              "**Dah.**",
+              "Sudah.",
+              "*Dah* dari *sudah*."
+            ],
+            [
+              "**Ada.** / **Takde.**",
+              "Ada. / Nggak ada.",
+              "—"
+            ],
+            [
+              "**Boleh.** / **Tak boleh.**",
+              "Bisa. / Nggak bisa.",
+              "—"
+            ],
+            [
+              "**Entah.**",
+              "Nggak tahu.",
+              "Santai, sedikit malas."
+            ],
+            [
+              "**Tak tahu / tak pasti.**",
+              "Nggak tahu / nggak yakin.",
+              "—"
+            ],
+            [
+              "**Mungkin. / Kot.**",
+              "Mungkin. / Kayaknya.",
+              "*Kot* di ujung kalimat."
+            ],
+            [
+              "**Betul / Betul tu.**",
+              "Betul / Iya, betul.",
+              "Persetujuan."
+            ],
+            [
+              "**Tak apa. / Takpe.**",
+              "Nggak apa-apa.",
+              "*Takpe* sangat sering."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kebiasaan Melayu yang perlu ditiru: **menjawab dengan mengulang kata kerjanya**, bukan dengan \"ya\". Ditanya *Awak dah makan?*, jawabannya *Dah* — bukan *Ya*. Ditanya *Ada duit tak?*, jawabannya *Ada* atau *Takde*. Ini sama dengan kebiasaan bahasa Indonesia (\"Sudah\", \"Ada\"), tapi di Malaysia praktis wajib; menjawab \"ya\" untuk semua pertanyaan terdengar seperti terjemahan."
+        },
+        {
+          "type": "kotak",
+          "title": "Melembutkan penolakan",
+          "items": [
+            "**Tak apalah.** — Nggak usah, deh. (menolak tawaran dengan halus)",
+            "**Lain kali ya.** — Lain kali, ya.",
+            "**Saya tengok dulu.** — Saya lihat dulu. (di kedai, untuk menghindari desakan)",
+            "**Nanti saya beritahu.** — Nanti saya kabari.",
+            "**Susah sikit.** — Agak sulit. (penolakan halus)",
+            "⚠️ Menolak secara langsung (*Tak nak.*) tidak salah, tapi tanpa *-lah* atau senyum ia terdengar tegas. Orang Malaysia menolak dengan sangat berputar, dan mengenali penolakan halus itu sama pentingnya dengan bisa mengucapkannya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dua puluh pertanyaan yang akan kamu pakai setiap hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Siapa nama awak?",
+              "Siapa nama kamu?"
+            ],
+            [
+              "Awak duduk kat mana?",
+              "Kamu tinggal di mana?"
+            ],
+            [
+              "Awak buat apa kat sini?",
+              "Kamu ngapain di sini?"
+            ],
+            [
+              "Bila awak sampai?",
+              "Kapan kamu tiba?"
+            ],
+            [
+              "Berapa lama awak kat sini?",
+              "Berapa lama kamu di sini?"
+            ],
+            [
+              "Macam mana nak ke sana?",
+              "Gimana caranya ke sana?"
+            ],
+            [
+              "Kenapa lambat?",
+              "Kenapa telat?"
+            ],
+            [
+              "Berapa harga ni?",
+              "Ini harganya berapa?"
+            ],
+            [
+              "Ada … tak?",
+              "Ada … nggak?"
+            ],
+            [
+              "Boleh tolong saya tak?",
+              "Bisa bantu saya nggak?"
+            ],
+            [
+              "Awak dah makan?",
+              "Kamu sudah makan?"
+            ],
+            [
+              "Nak ikut tak?",
+              "Mau ikut nggak?"
+            ],
+            [
+              "Ini apa?",
+              "Ini apa?"
+            ],
+            [
+              "Perkataan ni maksudnya apa?",
+              "Kata ini artinya apa?"
+            ],
+            [
+              "Betul ke?",
+              "Benar, nggak?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalau kamu menghafal satu tabel dari seluruh unit ini, hafalkan yang ini. Dua puluh kalimat di atas menutupi sebagian besar percakapan yang benar-benar kamu perlukan dalam minggu pertama."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "bila",
+      "baca": "bilə",
+      "id": "kapan ⚠️"
+    },
+    {
+      "ms": "kalau",
+      "baca": "kalau",
+      "id": "jika, kalau"
+    },
+    {
+      "ms": "macam mana",
+      "baca": "macam manə",
+      "id": "bagaimana"
+    },
+    {
+      "ms": "sebab / kerana",
+      "baca": "səbab · kəranə",
+      "id": "karena"
+    },
+    {
+      "ms": "adakah",
+      "baca": "adəkah",
+      "id": "apakah (rasmi)"
+    },
+    {
+      "ms": "kena",
+      "baca": "kənə",
+      "id": "harus; terkena ⚠️"
+    },
+    {
+      "ms": "antarabangsa",
+      "baca": "antarəbangsə",
+      "id": "internasional"
+    },
+    {
+      "ms": "ramai",
+      "baca": "ramai",
+      "id": "banyak (orang) ⚠️"
+    },
+    {
+      "ms": "takpe (tak apa)",
+      "baca": "takpé",
+      "id": "nggak apa-apa"
+    },
+    {
+      "ms": "pulangkan",
+      "baca": "pulangkan",
+      "id": "kembalikan"
+    },
+    {
+      "ms": "tukar",
+      "baca": "tuka",
+      "id": "ganti, tukar"
+    },
+    {
+      "ms": "mangga",
+      "baca": "manggə",
+      "id": "gembok; mangga ⚠️"
+    },
+    {
+      "ms": "kerani",
+      "baca": "kərani",
+      "id": "staf administrasi"
+    },
+    {
+      "ms": "nombor matrik",
+      "baca": "—",
+      "id": "NIM"
+    },
+    {
+      "ms": "lambat",
+      "baca": "lambat",
+      "id": "telat; lambat ⚠️"
+    },
+    {
+      "ms": "pasti",
+      "baca": "pasti",
+      "id": "yakin, pasti"
+    },
+    {
+      "ms": "elok-elok",
+      "baca": "élok-élok",
+      "id": "baik-baik, hati-hati"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata tanya Melayu yang betul.",
+      "items": [
+        "____ nama awak? (siapa)",
+        "____ awak sampai Malaysia? (kapan)",
+        "Awak duduk kat ____? (mana)",
+        "____ nak ke stesen? (bagaimana)",
+        "____ harga baju ni? (berapa)",
+        "____ awak lambat? (kenapa)"
+      ]
+    },
+    {
+      "prompt": "Ubah pertanyaan rasmi ini jadi bentuk percakapan (pakai *ke* atau *tak*).",
+      "items": [
+        "Adakah awak pelajar baru?",
+        "Adakah makanan ini sedap?",
+        "Adakah awak mahu ikut?",
+        "Adakah ada wifi di sini?",
+        "Adakah awak faham?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Kamu tinggal di mana?",
+        "Kapan kamu tiba?",
+        "Gimana caranya ke sana?",
+        "Bisa bantu saya nggak?",
+        "Kata ini artinya apa?",
+        "Toiletnya di mana, ya?"
+      ]
+    },
+    {
+      "prompt": "Jawab dengan cara Melayu — ulang kata kerjanya, jangan pakai \"ya\".",
+      "items": [
+        "Awak dah makan? (sudah)",
+        "Ada duit tak? (tidak ada)",
+        "Boleh tolong saya? (bisa)",
+        "Awak faham tak? (paham)",
+        "Nak ikut tak? (tidak mau)"
+      ]
+    }
+  ],
+  "answers": [
+    "Siapa — Bila — mana — Macam mana — Berapa — Kenapa",
+    "Awak pelajar baru ke? — Makanan ni sedap tak? — Awak nak ikut tak? — Ada wifi kat sini tak? — Awak faham tak?",
+    "Awak duduk kat mana? — Bila awak sampai? — Macam mana nak ke sana? — Boleh tolong saya tak? — Perkataan ni maksudnya apa? — Tandas kat mana ya?",
+    "Dah. — Takde. — Boleh. — Faham. — Tak nak."
+  ]
+}

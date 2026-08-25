@@ -102,7 +102,7 @@ function unit(j) {
      pernah terhitung di ruas target, lolos perbandingan 6:1, lalu ikut terperas
      jadi "kata Indonesia" dan dibungkam di reader. */
   for (const v of j.vocab || []) {
-    for (const k of ["es", "ja", "en", "it", "de", "zh"]) teksTarget(v[k]);
+    for (const k of ["es", "ja", "en", "it", "de", "zh", "ms"]) teksTarget(v[k]);
     teksEn(v.en); teksId(v.id);
   }
   for (const e of j.exercises || []) { teksId(e.title); teksId(e.prompt); daftarId(e.items); }

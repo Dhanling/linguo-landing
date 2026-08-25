@@ -1,0 +1,590 @@
+{
+  "title": "Kata kerja dan imbuhan",
+  "title_target": "Buat, buatkan, dibuat, kena buat",
+  "goal": "Memakai imbuhan Melayu di tempat yang tepat — sistem yang sudah kamu kuasai sejak SD, tapi yang di Malaysia dipakai dengan kekerapan dan pilihan yang berbeda.",
+  "bekal": [
+    "tahu kapan bahasa Melayu memakai bentuk berimbuhan dan kapan bentuk dasar",
+    "memakai *kena* sebagai bentuk pasif percakapan",
+    "mengenali kata kerja yang akar katanya berbeda dari bahasa Indonesia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tugasan yang hampir lewat",
+      "intro": "Malam Ahad di bilik bacaan kolej. Sarah dan Haziq sedang menyiapkan tugasan yang perlu dihantar esok pagi.",
+      "lines": [
+        {
+          "speaker": "Haziq:",
+          "text": "Awak dah siapkan tugasan tu?",
+          "id": "Kamu sudah selesaikan tugasnya?",
+          "literal": "kamu sudah siapkan tugasan itu?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Belum habis. Saya kena tulis dua muka surat lagi.",
+          "id": "Belum selesai. Saya harus nulis dua halaman lagi.",
+          "literal": "belum habis. saya harus tulis dua muka surat lagi."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Bila kena hantar?",
+          "id": "Kapan harus dikumpulkan?",
+          "literal": "kapan harus kirim?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Esok pukul sepuluh pagi. Kena muat naik kat portal.",
+          "id": "Besok jam sepuluh pagi. Harus diunggah di portal.",
+          "literal": "besok pukul sepuluh pagi. harus muat naik di portal."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Kalau lambat, markah kena potong.",
+          "id": "Kalau telat, nilainya dipotong.",
+          "literal": "kalau telat, nilai kena potong."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya tahu. Boleh awak semakkan sekejap?",
+          "id": "Saya tahu. Bisa kamu periksakan sebentar?",
+          "literal": "saya tahu. boleh kamu periksakan sebentar?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Boleh. Hantar kat WhatsApp saya.",
+          "id": "Bisa. Kirim ke WhatsApp saya.",
+          "literal": "boleh. kirim di WhatsApp saya."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Dah hantar. Awak tengok bahagian kesimpulan tu.",
+          "id": "Sudah dikirim. Kamu lihat bagian kesimpulannya.",
+          "literal": "sudah kirim. kamu lihat bagian kesimpulan itu."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Hmm. Ayat ni panjang sangat. Cuba pendekkan.",
+          "id": "Hmm. Kalimat ini kepanjangan. Coba dipendekkan.",
+          "literal": "hmm. kalimat ini panjang sangat. coba pendekkan."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Betul juga. Saya betulkan sekarang.",
+          "id": "Betul juga. Saya perbaiki sekarang.",
+          "literal": "betul juga. saya betulkan sekarang."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Lepas tu simpan dalam PDF. Portal tak terima Word.",
+          "id": "Habis itu simpan dalam PDF. Portalnya nggak nerima Word.",
+          "literal": "setelah itu simpan dalam PDF. portal tidak terima Word."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Nasib baik awak beritahu. Terima kasih banyak!",
+          "id": "Untung kamu kasih tahu. Terima kasih banyak!",
+          "literal": "nasib baik kamu beritahu. terima kasih banyak!"
+        }
+      ],
+      "notes": [
+        "**Muka surat** = halaman. Bahasa Indonesia berkata \"halaman\"; bahasa Melayu memakai *muka surat*, dan kata *halaman* di Malaysia berarti pekarangan rumah. Ini jebakan yang sering muncul dalam urusan akademik.",
+        "**Hantar** berarti **kirim** DAN **antar**. *Hantar tugasan* = kirim tugas, *hantar saya balik* = antar saya pulang. Bahasa Indonesia memisahkan \"kirim\" dan \"antar\"; bahasa Melayu memakai satu kata untuk keduanya, dan konteks yang menentukan.",
+        "**Markah** = nilai, angka ujian. Bahasa Indonesia berkata \"nilai\"; di Malaysia *markah* (dari *mark*). Kata *nilai* di Malaysia lebih berarti \"nilai\" dalam arti harga atau moral.",
+        "**Semak** = periksa, cek. *Semakkan* = periksakan. Bahasa Indonesia memakai \"cek\" atau \"periksa\"; *semak* di Indonesia justru berarti belukar. Kata ini muncul di mana-mana: *semak baki* (cek saldo), *semak keputusan* (cek hasil).",
+        "**Ayat** dalam bahasa Melayu berarti **kalimat** — bukan ayat kitab suci. *Ayat ni panjang sangat* = \"kalimat ini kepanjangan\". Untuk ayat Al-Quran orang berkata *ayat* juga, dan konteks yang memisahkan. Ini jebakan yang cukup sering menjegal."
+      ],
+      "grammars": [
+        {
+          "title": "Imbuhan: yang sama, dan yang dipakai berbeda",
+          "body": [
+            "Seluruh sistem imbuhan bahasa Melayu **sama persis** dengan bahasa Indonesia — bentuknya, aturan peluluhannya, maknanya. Tidak ada satu imbuhan pun yang perlu kamu pelajari dari nol. Yang berbeda adalah **kekerapan** dan **pilihan**, dan itulah yang membuat tulisan orang Indonesia langsung ketahuan."
+          ],
+          "table": {
+            "head": [
+              "Imbuhan",
+              "Fungsi",
+              "Contoh Melayu",
+              "Catatan pemakaian"
+            ],
+            "rows": [
+              [
+                "**me(N)-**",
+                "kata kerja aktif",
+                "menulis, membaca, menghantar",
+                "Sama. Dalam percakapan sering dibuang: *saya tulis*, *dia baca*."
+              ],
+              [
+                "**ber-**",
+                "punya, melakukan",
+                "berjalan, berkahwin, berniaga",
+                "Lebih produktif di Melayu: *berhampiran*, *bersiar-siar*."
+              ],
+              [
+                "**di-**",
+                "pasif",
+                "ditulis, dihantar",
+                "Sama. Tapi percakapan lebih suka *kena*."
+              ],
+              [
+                "**-kan**",
+                "menjadikan / untuk orang lain",
+                "betulkan, pendekkan, semakkan",
+                "⚠️ JAUH lebih sering di Melayu."
+              ],
+              [
+                "**-i**",
+                "berulang / kena sasaran",
+                "menandatangani, melalui",
+                "Sama, tapi lebih jarang."
+              ],
+              [
+                "**pe(N)-**",
+                "pelaku / alat",
+                "penulis, penyapu, pemandu",
+                "Sama."
+              ],
+              [
+                "**pe(N)-…-an**",
+                "proses",
+                "penulisan, pentadbiran",
+                "⚠️ Melayu suka bentuk panjang ini."
+              ],
+              [
+                "**ke-…-an**",
+                "keadaan, hal",
+                "kesihatan, kecemasan, keselamatan",
+                "Sama, tapi kosakatanya berbeda."
+              ],
+              [
+                "**-an**",
+                "hasil",
+                "tugasan, jemputan, cadangan",
+                "⚠️ *Tugasan*, bukan *tugas*."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Akhiran *-kan* adalah tanda pengenal bahasa Melayu.** Di tempat bahasa Indonesia memakai kata dasar, bahasa Melayu sering memakai bentuk *-kan*: *betulkan* (perbaiki), *pendekkan* (pendekkan), *semakkan* (periksakan), *hantarkan*, *tolongkan*, *bukakan*, *ambilkan*, *belikan*. Kalau kamu ingin satu perubahan kebiasaan yang paling cepat membuat kalimatmu terdengar Melayu, ini dia.",
+            "⚠️ **Bentuk *-an* untuk kata benda juga lebih produktif:** *tugasan* (tugas), *jemputan* (undangan), *cadangan* (usul), *tempahan* (pemesanan), *bayaran* (pembayaran), *muatan*, *simpanan*, *tuntutan*. Bahasa Indonesia sering berhenti di kata dasar; bahasa Melayu meneruskannya."
+          ]
+        },
+        {
+          "title": "*Kena* — bentuk pasif yang dipakai orang sungguhan",
+          "body": [
+            "Bahasa Melayu punya bentuk pasif *di-* yang sama dengan bahasa Indonesia, dan ia dipakai penuh dalam tulisan. Tapi dalam percakapan, orang Malaysia lebih sering memakai **kena** — dan bentuk ini tidak ada di bahasa Indonesia."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Contoh",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**kena** + kata dasar (pasif)",
+                "Markah kena potong.",
+                "Nilainya dipotong."
+              ],
+              [
+                "**kena** + kata dasar (wajib)",
+                "Saya kena pergi.",
+                "Saya harus pergi."
+              ],
+              [
+                "**kena** + kata benda (terkena)",
+                "Dia kena denda.",
+                "Dia kena denda."
+              ],
+              [
+                "**di-** (pasif tulisan)",
+                "Tugasan dihantar semalam.",
+                "Tugas dikirim kemarin."
+              ],
+              [
+                "**ter-** (tak sengaja)",
+                "Saya terjatuh.",
+                "Saya terjatuh."
+              ],
+              [
+                "**kena marah**",
+                "Saya kena marah.",
+                "Saya dimarahi."
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa *kena* menanggung **dua beban sekaligus**: pasif dan kewajiban. *Saya kena bayar* bisa berarti \"saya harus bayar\" — dan itulah arti yang jauh lebih sering. Konteks memisahkannya, dan dalam praktiknya jarang ambigu.",
+            "⚠️ Bahasa Indonesia memakai *kena* hanya dalam arti \"terkena\" (*kena hujan*, *kena tilang*). Kalau kamu memakai *kena* dengan cara Melayu di Indonesia, orang akan bingung; sebaliknya, kalau kamu **tidak** memakainya di Malaysia, kalimatmu terdengar terlalu buku."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja yang akar katanya berbeda",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sebagian besar kata kerja sama persis di dua bahasa. Yang di bawah ini adalah yang benar-benar berbeda, disusun menurut seberapa sering kamu akan memerlukannya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "**tengok**",
+              "lihat, nonton",
+              "Nak tengok wayang tak?"
+            ],
+            [
+              "**cakap**",
+              "bicara, bilang",
+              "Dia cakap apa?"
+            ],
+            [
+              "**hantar**",
+              "kirim; antar",
+              "Hantar e-mel tu."
+            ],
+            [
+              "**semak**",
+              "periksa, cek",
+              "Semak baki akaun."
+            ],
+            [
+              "**guna / gunakan**",
+              "pakai",
+              "Guna pen biru."
+            ],
+            [
+              "**buat**",
+              "lakukan; buat; untuk",
+              "Awak buat apa?"
+            ],
+            [
+              "**balik**",
+              "pulang",
+              "Saya nak balik."
+            ],
+            [
+              "**jalan**",
+              "berjalan; berangkat",
+              "Jom jalan!"
+            ],
+            [
+              "**duduk**",
+              "duduk; tinggal",
+              "Saya duduk kat KL."
+            ],
+            [
+              "**bagi**",
+              "beri, kasih",
+              "Bagi saya satu."
+            ],
+            [
+              "**letak**",
+              "taruh, pakai (bumbu)",
+              "Letak kat meja."
+            ],
+            [
+              "**ambik / ambil**",
+              "ambil",
+              "Ambik kunci tu."
+            ],
+            [
+              "**basuh**",
+              "cuci",
+              "Basuh baju."
+            ],
+            [
+              "**cuci**",
+              "cuci (kereta, pinggan)",
+              "Cuci kereta."
+            ],
+            [
+              "**tolak**",
+              "dorong; kurangi",
+              "Tolak sepuluh peratus."
+            ],
+            [
+              "**naik / turun**",
+              "naik / turun",
+              "Naik LRT."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga yang paling sering menjegal orang Indonesia: **siap** berarti **selesai** (bukan \"siap sedia\"), **ingat** juga berarti **mengira** (*Saya ingat awak dah balik* = \"Saya kira kamu sudah pulang\"), dan **rosak** berejaan dengan *o* (bukan *rusak*). Ketiganya muncul setiap hari."
+        },
+        {
+          "type": "kotak",
+          "title": "Perintah dan ajakan",
+          "items": [
+            "**Jom!** — Ayo! (paling sering)",
+            "**Marilah.** — Mari, ayo. (lebih rasmi)",
+            "**Cubalah.** — Coba, deh.",
+            "**Tunggu sekejap.** — Tunggu sebentar.",
+            "**Tolong …** — Tolong … (meminta bantuan)",
+            "**Jangan …** — Jangan …",
+            "**Sila …** — Silakan … (mempersilakan)",
+            "**Usah risau.** — Jangan khawatir. (*usah* = tidak usah, agak rasmi)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata bantu: sudah, belum, sedang, akan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Melayu, sama seperti bahasa Indonesia, tidak mengubah bentuk kata kerja untuk menandai waktu. Yang dipakai adalah kata bantu — dan daftarnya hampir sama, dengan beberapa bentuk pendek yang khas Malaysia."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Rasmi",
+            "Percakapan",
+            "Bahasa Indonesia",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "sudah",
+              "**dah**",
+              "sudah",
+              "Saya dah makan."
+            ],
+            [
+              "belum",
+              "**belum**",
+              "belum",
+              "Belum lagi."
+            ],
+            [
+              "sedang",
+              "**tengah**",
+              "sedang",
+              "Dia tengah tidur."
+            ],
+            [
+              "akan",
+              "**nak**",
+              "akan, mau",
+              "Saya nak balik."
+            ],
+            [
+              "masih",
+              "**lagi**",
+              "masih",
+              "Dia ada lagi kat sana."
+            ],
+            [
+              "pernah",
+              "**pernah**",
+              "pernah",
+              "Saya pernah ke Penang."
+            ],
+            [
+              "baru sahaja",
+              "**baru je**",
+              "baru saja",
+              "Dia baru je keluar."
+            ],
+            [
+              "hampir",
+              "**dekat**",
+              "hampir",
+              "Dah dekat siap."
+            ],
+            [
+              "tidak akan",
+              "**takkan**",
+              "tidak akan",
+              "Takkan saya lupa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Tengah** sebagai penanda \"sedang\" adalah salah satu tanda pengenal bahasa Melayu percakapan yang paling kuat. *Saya tengah makan* = \"saya sedang makan\". Kata *tengah* juga tetap berarti \"tengah\" (*tengah hari*, *di tengah*), dan letaknya yang membedakan: sebelum kata kerja = sedang."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Lagi** dalam bahasa Melayu punya arti tambahan **masih**: *Dia lagi kat sana* = \"dia masih di sana\". Bahasa Indonesia memakai *lagi* untuk \"sedang\" (*lagi makan*) — dan inilah tempat dua bahasa bertukar makna secara diam-diam. Kalau orang Malaysia berkata *dia lagi kat rumah*, artinya \"dia masih di rumah\", bukan \"dia sedang di rumah\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "tengok",
+      "baca": "téngok",
+      "id": "lihat, nonton"
+    },
+    {
+      "ms": "cakap",
+      "baca": "cakap",
+      "id": "bicara, bilang"
+    },
+    {
+      "ms": "hantar",
+      "baca": "hanta",
+      "id": "kirim; antar"
+    },
+    {
+      "ms": "semak",
+      "baca": "səmak",
+      "id": "periksa, cek ⚠️"
+    },
+    {
+      "ms": "bagi",
+      "baca": "bagi",
+      "id": "beri, kasih"
+    },
+    {
+      "ms": "basuh",
+      "baca": "basuh",
+      "id": "cuci"
+    },
+    {
+      "ms": "tempah",
+      "baca": "təmpah",
+      "id": "pesan (tiket)"
+    },
+    {
+      "ms": "rosak",
+      "baca": "rosak",
+      "id": "rusak"
+    },
+    {
+      "ms": "siap",
+      "baca": "siap",
+      "id": "selesai ⚠️"
+    },
+    {
+      "ms": "balik",
+      "baca": "balik",
+      "id": "pulang"
+    },
+    {
+      "ms": "kena",
+      "baca": "kənə",
+      "id": "harus; dikenai ⚠️"
+    },
+    {
+      "ms": "tengah",
+      "baca": "təngah",
+      "id": "sedang ⚠️"
+    },
+    {
+      "ms": "dah (sudah)",
+      "baca": "dah",
+      "id": "sudah"
+    },
+    {
+      "ms": "lagi",
+      "baca": "lagi",
+      "id": "masih; lagi ⚠️"
+    },
+    {
+      "ms": "takkan",
+      "baca": "takkan",
+      "id": "tidak akan"
+    },
+    {
+      "ms": "ayat",
+      "baca": "ayat",
+      "id": "kalimat ⚠️"
+    },
+    {
+      "ms": "muka surat",
+      "baca": "—",
+      "id": "halaman ⚠️"
+    },
+    {
+      "ms": "markah",
+      "baca": "markah",
+      "id": "nilai (ujian)"
+    },
+    {
+      "ms": "tugasan",
+      "baca": "tugasan",
+      "id": "tugas"
+    },
+    {
+      "ms": "nasib baik",
+      "baca": "—",
+      "id": "untung, syukurlah"
+    },
+    {
+      "ms": "betulkan",
+      "baca": "bətulkan",
+      "id": "perbaiki"
+    },
+    {
+      "ms": "muat naik / turun",
+      "baca": "—",
+      "id": "unggah / unduh"
+    },
+    {
+      "ms": "usah",
+      "baca": "usah",
+      "id": "tidak usah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi bentuk *-kan* seperti kebiasaan Melayu.",
+      "items": [
+        "perbaiki → ____",
+        "periksa (untuk orang lain) → ____",
+        "pendekkan → ____",
+        "kirimkan → ____",
+        "bukakan → ____",
+        "belikan → ____"
+      ]
+    },
+    {
+      "prompt": "Ganti bentuk pasif *di-* dengan *kena* seperti percakapan Malaysia.",
+      "items": [
+        "Markah saya dipotong.",
+        "Saya dimarahi cikgu.",
+        "Dia didenda lima puluh ringgit.",
+        "Tugasan itu harus dikirim esok.",
+        "Kereta saya diambil orang."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu (pakai bentuk percakapan).",
+      "items": [
+        "Kamu sudah selesai?",
+        "Saya sedang makan.",
+        "Dia masih di rumah.",
+        "Saya harus pergi sekarang.",
+        "Untung kamu kasih tahu.",
+        "Kalimat ini kepanjangan."
+      ]
+    },
+    {
+      "prompt": "Apa arti kata bercetak tebal ini di Malaysia?",
+      "items": [
+        "Dah **siap** ke?",
+        "Saya **ingat** awak dah balik.",
+        "**Ayat** ni panjang sangat.",
+        "Tolong **semak** dulu.",
+        "Kereta saya **rosak**."
+      ]
+    }
+  ],
+  "answers": [
+    "betulkan — semakkan — pendekkan — hantarkan — bukakan — belikan",
+    "Markah saya kena potong. — Saya kena marah dengan cikgu. — Dia kena denda lima puluh ringgit. — Tugasan tu kena hantar esok. — Kereta saya kena ambil orang.",
+    "Awak dah siap? — Saya tengah makan. — Dia lagi kat rumah. — Saya kena pergi sekarang. — Nasib baik awak beritahu. — Ayat ni panjang sangat.",
+    "selesai — kira, mengira — kalimat — periksa, cek — rusak"
+  ]
+}

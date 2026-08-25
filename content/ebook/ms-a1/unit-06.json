@@ -1,0 +1,587 @@
+{
+  "title": "Membeli-belah",
+  "title_target": "Berapa harga ni?",
+  "goal": "Bertanya harga, menawar, dan membayar — sekaligus memasang kata *duit*, *ringgit*, *sen*, dan seluruh perangkat warna, saiz, serta bilangan yang dipakai di kedai.",
+  "bekal": [
+    "bertanya harga dan menawar tanpa terdengar kasar",
+    "menyebut saiz, warna, dan bilangan barang dengan penjodoh bilangan yang betul",
+    "membaca papan tanda kedai Malaysia: *jualan murah*, *diskaun*, *tukar*, *bayar di kaunter*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Di pasar malam",
+      "intro": "Malam Selasa, pasar malam di tepi jalan berhampiran kolej. Sarah mahu membeli baju sejuk kerana bilik kuliahnya terlalu berhawa dingin.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Bang, berapa harga baju sejuk ni?",
+          "id": "Bang, berapa harga jaket ini?",
+          "literal": "bang, berapa harga baju dingin ini?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Yang tu empat puluh lima ringgit. Ada saiz S sampai XL.",
+          "id": "Yang itu empat puluh lima ringgit. Ada ukuran S sampai XL.",
+          "literal": "yang itu empat puluh lima ringgit. ada ukuran S sampai XL."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Mahalnya. Boleh kurang tak?",
+          "id": "Mahal amat. Bisa kurang, nggak?",
+          "literal": "mahal-nya. boleh kurang tidak?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Empat puluh je untuk adik. Dah murah tu.",
+          "id": "Empat puluh saja untuk Dik. Udah murah itu.",
+          "literal": "empat puluh saja untuk adik. sudah murah itu."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tiga puluh lima boleh? Saya ambil dua.",
+          "id": "Tiga puluh lima bisa? Saya ambil dua.",
+          "literal": "tiga puluh lima boleh? saya ambil dua."
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Dua helai? Alah, boleh. Tujuh puluh dua-dua.",
+          "id": "Dua potong? Yah, boleh. Tujuh puluh untuk dua-duanya.",
+          "literal": "dua helai? alah, boleh. tujuh puluh dua-dua."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Setuju. Ada warna lain tak? Yang ni terlalu terang.",
+          "id": "Setuju. Ada warna lain nggak? Yang ini terlalu terang.",
+          "literal": "setuju. ada warna lain tidak? yang ini terlalu terang."
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Ada hitam, kelabu, biru gelap. Nak yang mana?",
+          "id": "Ada hitam, abu-abu, biru tua. Mau yang mana?",
+          "literal": "ada hitam, abu-abu, biru gelap. mau yang mana?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Satu hitam, satu kelabu. Boleh cuba dulu?",
+          "id": "Satu hitam, satu abu-abu. Boleh coba dulu?",
+          "literal": "satu hitam, satu abu-abu. boleh coba dulu?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Boleh, tapi kat sini takde bilik cuba. Sarung atas baju je.",
+          "id": "Boleh, tapi di sini nggak ada kamar pas. Pakai di atas baju aja.",
+          "literal": "boleh, tapi di sini tidak ada kamar coba. sarung atas baju saja."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Okey. Muat. Saya bayar guna kad boleh?",
+          "id": "Oke. Muat. Saya bayar pakai kartu bisa?",
+          "literal": "oke. muat. saya bayar guna kartu boleh?"
+        },
+        {
+          "speaker": "Peniaga:",
+          "text": "Kat pasar malam tunai je, adik. Ada QR pun boleh.",
+          "id": "Di pasar malam tunai aja, Dik. Ada QR juga bisa.",
+          "literal": "di pasar malam tunai saja, adik. ada QR pun boleh."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Baik, saya scan. Terima kasih, bang!",
+          "id": "Baik, saya scan. Terima kasih, Bang!",
+          "literal": "baik, saya pindai. terima kasih, bang!"
+        }
+      ],
+      "notes": [
+        "**Berapa harga ni?** adalah susunan Malaysia yang paling umum. Bahasa Indonesia berkata \"Ini harganya berapa?\" atau \"Berapa harganya?\"; di Malaysia harganya disebut lebih dulu. Bentuk lain yang sama umum: *Ni berapa?* dan *Berapa satu?*",
+        "**Mahalnya!** — akhiran *-nya* di ujung kata sifat adalah **seruan**, bukan kepemilikan. *Mahalnya!* = \"Mahal amat!\", *Cantiknya!* = \"Cantik banget!\", *Panasnya!* = \"Panas amat!\". Bahasa Indonesia punya bentuk yang sama (\"mahalnya\"), tapi di Malaysia ia jauh lebih sering dan terdengar sepenuhnya alami.",
+        "**Boleh kurang tak?** adalah kalimat tawar-menawar baku. Yang lain: *Kurang sikit boleh?*, *Ada diskaun tak?*, *Harga last berapa?* Menawar di pasar malam dan pasar biasa adalah hal normal; di kedai dalam pusat membeli-belah dan pasaraya, **tidak**.",
+        "**Alah** adalah seruan mengalah setengah hati — setara \"yah\", \"ah\", atau \"ya udah deh\" dalam bahasa Indonesia. Sepupunya: *aiya*, *ala*, *ish*.",
+        "**Takde** adalah bentuk percakapan dari *tak ada* atau *tiada*. *Takde bilik cuba* = tidak ada kamar pas. Kamu akan mendengar bentuk ini terus-menerus, dan bentuk rasminya **tiada** cuma muncul di tulisan."
+      ],
+      "grammars": [
+        {
+          "title": "Duit, ringgit, sen — dan cara menyebut harga",
+          "body": [
+            "Mata wang Malaysia ialah **ringgit** (RM), dan pecahannya **sen**. Satu ringgit = 100 sen. Harga ditulis dengan **titik** sebagai pemisah desimal, kebalikan dari kebiasaan Indonesia."
+          ],
+          "table": {
+            "head": [
+              "Ditulis",
+              "Dibaca",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "RM1",
+                "seringgit",
+                "satu ringgit"
+              ],
+              [
+                "RM2.50",
+                "dua ringgit lima puluh sen",
+                "—"
+              ],
+              [
+                "RM10",
+                "sepuluh ringgit",
+                "—"
+              ],
+              [
+                "RM45",
+                "empat puluh lima ringgit",
+                "—"
+              ],
+              [
+                "RM1,200",
+                "seribu dua ratus ringgit",
+                "⚠️ Koma = pemisah ribuan!"
+              ],
+              [
+                "50 sen",
+                "lima puluh sen",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Koma dan titik terbalik dari kebiasaan Indonesia.** Di Malaysia RM1,200.50 berarti seribu dua ratus ringgit lima puluh sen. Di Indonesia tulisan Rp1.200,50 berarti hal yang sama dengan tanda yang tertukar. Kalau kamu melihat harga di Malaysia dan merasa seribu kali lebih mahal daripada dugaanmu, periksa tandanya.",
+            "**Duit** dan **wang** dua-duanya berarti uang. *Duit* dipakai sehari-hari (di Indonesia terasa agak kasar; di Malaysia tidak sama sekali), *wang* lebih rasmi dan dipakai di bank serta borang. Kata *uang* **tidak dipakai** di Malaysia."
+          ]
+        },
+        {
+          "title": "Penjodoh bilangan — yang di Indonesia sudah longgar",
+          "body": [
+            "Bahasa Indonesia masih punya \"seekor kucing\", \"sebuah rumah\", \"sehelai kertas\", tapi dalam percakapan sehari-hari hampir semuanya diganti \"satu\". Bahasa Melayu baku mempertahankannya lebih ketat, dan penjodoh yang salah langsung terdengar."
+          ],
+          "table": {
+            "head": [
+              "Penjodoh",
+              "Untuk",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**orang**",
+                "manusia",
+                "tiga orang pelajar"
+              ],
+              [
+                "**ekor**",
+                "binatang",
+                "dua ekor kucing"
+              ],
+              [
+                "**buah**",
+                "benda besar, bangunan, buku",
+                "sebuah kereta, dua buah rumah"
+              ],
+              [
+                "**helai**",
+                "benda tipis: baju, kertas, tuala",
+                "dua helai baju"
+              ],
+              [
+                "**batang**",
+                "benda panjang: pen, rokok, pokok",
+                "sebatang pen"
+              ],
+              [
+                "**biji**",
+                "benda kecil bulat: telur, buah",
+                "lima biji telur"
+              ],
+              [
+                "**keping**",
+                "benda pipih: roti, kad, gambar",
+                "sekeping roti"
+              ],
+              [
+                "**cawan / gelas**",
+                "minuman",
+                "secawan kopi"
+              ],
+              [
+                "**bungkus**",
+                "makanan berbungkus",
+                "dua bungkus nasi lemak"
+              ],
+              [
+                "**pasang**",
+                "yang berpasangan: kasut, seluar",
+                "sepasang kasut"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan **se-** yang menempel: *sebuah*, *seorang*, *sehelai*, *secawan* — bentuk ini artinya \"satu\", dan ditulis serangkai. Sama persis dengan bahasa Indonesia.",
+            "⚠️ Dalam percakapan sehari-hari, orang Malaysia juga sering membuang penjodohnya: *dua baju*, *tiga kopi*. Ini tidak salah dalam percakapan. Tapi dalam **tulisan**, karangan sekolah, dan borang, penjodoh yang betul diperiksa — dan itulah sebabnya ia masih diajar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Warna, saiz, dan sifat barang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "merah",
+              "merah",
+              "kelabu ⚠️",
+              "abu-abu"
+            ],
+            [
+              "biru",
+              "biru",
+              "perang ⚠️",
+              "cokelat"
+            ],
+            [
+              "kuning",
+              "kuning",
+              "ungu",
+              "ungu"
+            ],
+            [
+              "hijau",
+              "hijau",
+              "merah jambu ⚠️",
+              "merah muda, pink"
+            ],
+            [
+              "hitam",
+              "hitam",
+              "oren",
+              "oranye"
+            ],
+            [
+              "putih",
+              "putih",
+              "emas / perak",
+              "emas / perak"
+            ],
+            [
+              "gelap",
+              "tua (warna)",
+              "cerah / terang",
+              "muda (warna), terang"
+            ],
+            [
+              "besar / kecil",
+              "besar / kecil",
+              "panjang / pendek",
+              "panjang / pendek"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga warna yang benar-benar berbeda: **kelabu** (abu-abu), **perang** (cokelat — ⚠️ di Indonesia *perang* berarti pertempuran!), dan **merah jambu** (merah muda). Dan perhatikan **nipis**, bukan *tipis*."
+        },
+        {
+          "type": "p",
+          "text": "Untuk warna tua dan muda, bahasa Melayu memakai **gelap** dan **cerah/muda**: *biru gelap* (biru tua), *hijau muda* (hijau muda). Susunan Indonesia \"biru tua\" juga dipahami, tapi *gelap* lebih lazim."
+        },
+        {
+          "type": "sub",
+          "text": "Pakaian"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**baju**",
+              "baju, atasan"
+            ],
+            [
+              "**kemeja**",
+              "kemeja"
+            ],
+            [
+              "**baju-T**",
+              "kaus, T-shirt"
+            ],
+            [
+              "**baju sejuk**",
+              "jaket, sweter ⚠️"
+            ],
+            [
+              "**seluar**",
+              "celana ⚠️"
+            ],
+            [
+              "**seluar pendek**",
+              "celana pendek"
+            ],
+            [
+              "**kasut**",
+              "sepatu ⚠️"
+            ],
+            [
+              "**selipar**",
+              "sandal jepit"
+            ],
+            [
+              "**stoking**",
+              "kaus kaki"
+            ],
+            [
+              "**tudung**",
+              "kerudung, jilbab"
+            ],
+            [
+              "**baju kurung**",
+              "busana tradisional Melayu wanita"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Empat kata yang harus kamu ganti sekarang: **seluar** (celana), **kasut** (sepatu), **cermin mata** (kacamata), dan **baju sejuk** (jaket). Keempatnya dipakai setiap hari dan tak satu pun bisa ditebak dari bahasa Indonesia."
+        }
+      ]
+    },
+    {
+      "title": "Tempat membeli-belah dan papan tandanya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**kedai**",
+              "toko"
+            ],
+            [
+              "**kedai runcit**",
+              "warung kelontong"
+            ],
+            [
+              "**pasaraya**",
+              "supermarket"
+            ],
+            [
+              "**pasar raya besar / hipermarket**",
+              "hipermarket"
+            ],
+            [
+              "**pusat membeli-belah**",
+              "mal, pusat perbelanjaan"
+            ],
+            [
+              "**pasar malam**",
+              "pasar malam"
+            ],
+            [
+              "**pasar tani**",
+              "pasar tani, pasar petani"
+            ],
+            [
+              "**gerai**",
+              "kios, lapak"
+            ],
+            [
+              "**kaunter**",
+              "kasir, loket"
+            ],
+            [
+              "**troli**",
+              "troli"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Papan tanda yang akan kamu lihat",
+          "items": [
+            "**JUALAN MURAH** / **JUALAN GUDANG** — obral / cuci gudang.",
+            "**DISKAUN SEHINGGA 70%** — diskon sampai 70%.",
+            "**BELI 1 PERCUMA 1** — beli satu gratis satu. (⚠️ *percuma* = gratis)",
+            "**HABIS STOK** — stok habis.",
+            "**BAYAR DI KAUNTER** — bayar di kasir.",
+            "**TOLAK** / **TARIK** — dorong / tarik (di pintu).",
+            "**DILARANG MASUK** — dilarang masuk."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata **kecemasan** berarti **darurat**, bukan \"kecemasan\" dalam arti rasa cemas. *Pintu kecemasan* = pintu darurat, *bilik kecemasan* = unit gawat darurat di hospital. Ini salah satu papan tanda yang paling sering salah dibaca orang Indonesia."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "berapa harga",
+      "baca": "bərapə hargə",
+      "id": "berapa harganya"
+    },
+    {
+      "ms": "duit / wang",
+      "baca": "duit · wang",
+      "id": "uang"
+    },
+    {
+      "ms": "kad",
+      "baca": "kad",
+      "id": "kartu"
+    },
+    {
+      "ms": "diskaun",
+      "baca": "diskaun",
+      "id": "diskon"
+    },
+    {
+      "ms": "jualan murah",
+      "baca": "—",
+      "id": "obral"
+    },
+    {
+      "ms": "kurang",
+      "baca": "kurang",
+      "id": "kurang; turunkan harga"
+    },
+    {
+      "ms": "saiz",
+      "baca": "saiz",
+      "id": "ukuran"
+    },
+    {
+      "ms": "muat",
+      "baca": "muat",
+      "id": "pas, cukup ukurannya"
+    },
+    {
+      "ms": "cuba",
+      "baca": "cubə",
+      "id": "coba"
+    },
+    {
+      "ms": "takde (tiada)",
+      "baca": "takdé",
+      "id": "tidak ada"
+    },
+    {
+      "ms": "seluar",
+      "baca": "səlua",
+      "id": "celana ⚠️"
+    },
+    {
+      "ms": "kasut",
+      "baca": "kasut",
+      "id": "sepatu ⚠️"
+    },
+    {
+      "ms": "baju sejuk",
+      "baca": "—",
+      "id": "jaket ⚠️"
+    },
+    {
+      "ms": "cermin mata",
+      "baca": "—",
+      "id": "kacamata ⚠️"
+    },
+    {
+      "ms": "kelabu",
+      "baca": "kəlabu",
+      "id": "abu-abu ⚠️"
+    },
+    {
+      "ms": "perang",
+      "baca": "pərang",
+      "id": "cokelat ⚠️"
+    },
+    {
+      "ms": "merah jambu",
+      "baca": "—",
+      "id": "merah muda"
+    },
+    {
+      "ms": "nipis",
+      "baca": "nipis",
+      "id": "tipis"
+    },
+    {
+      "ms": "resit",
+      "baca": "résit",
+      "id": "struk"
+    },
+    {
+      "ms": "kaunter",
+      "baca": "kaunte",
+      "id": "kasir, loket"
+    },
+    {
+      "ms": "kecemasan",
+      "baca": "kəcəmasan",
+      "id": "darurat ⚠️"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan penjodoh bilangan yang betul.",
+      "items": [
+        "dua ____ pelajar",
+        "tiga ____ kucing",
+        "se____ kereta",
+        "dua ____ baju",
+        "lima ____ telur",
+        "se____ kasut"
+      ]
+    },
+    {
+      "prompt": "Tulis kata Melayu untuk barang berikut.",
+      "items": [
+        "celana",
+        "sepatu",
+        "jaket",
+        "kacamata",
+        "kantong plastik",
+        "struk pembayaran"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Berapa harga ini, Bang?",
+        "Mahal amat! Bisa kurang, nggak?",
+        "Ada warna lain nggak?",
+        "Boleh coba dulu?",
+        "Saya bayar pakai kartu, bisa?",
+        "Ada diskon nggak?"
+      ]
+    },
+    {
+      "prompt": "Apa maksud papan tanda ini?",
+      "items": [
+        "BELI 1 PERCUMA 1",
+        "JUALAN MURAH",
+        "PINTU KECEMASAN",
+        "BAYAR DI KAUNTER",
+        "HABIS STOK"
+      ]
+    }
+  ],
+  "answers": [
+    "orang — ekor — buah — helai — biji — pasang",
+    "seluar — kasut — baju sejuk — cermin mata — beg plastik — resit",
+    "Berapa harga ni, bang? — Mahalnya! Boleh kurang tak? — Ada warna lain tak? — Boleh cuba dulu? — Saya bayar guna kad boleh? — Ada diskaun tak?",
+    "Beli satu gratis satu — Obral — Pintu darurat — Bayar di kasir — Stok habis"
+  ]
+}

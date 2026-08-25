@@ -1,0 +1,501 @@
+{
+  "title": "Cuaca dan berbual kosong",
+  "title_target": "Panas betul hari ni kan?",
+  "goal": "Mengisi keheningan — cuaca, makanan, kesesakan jalan, dan perbualan kecil yang jadi pintu masuk semua persahabatan di Malaysia.",
+  "bekal": [
+    "bercakap tentang cuaca dengan ungkapan yang dipakai orang Malaysia",
+    "membuka dan menutup perbualan kecil dengan orang yang baru dikenal",
+    "memuji, bersetuju, dan menunjukkan simpati"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Menunggu hujan berhenti",
+      "intro": "Petang Rabu. Hujan turun mengejut dan Sarah terperangkap di bawah bumbung perhentian bas bersama seorang mak cik yang juga menunggu.",
+      "lines": [
+        {
+          "speaker": "Mak cik:",
+          "text": "Lebatnya hujan. Dari pagi panas terik, sekarang macam ni.",
+          "id": "Deras banget hujannya. Dari pagi panas terik, sekarang begini.",
+          "literal": "lebatnya hujan. dari pagi panas terik, sekarang macam ini."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Betul, mak cik. Saya tak bawa payung pun.",
+          "id": "Betul, Bu. Saya nggak bawa payung sama sekali.",
+          "literal": "betul, mak cik. saya tidak bawa payung pun."
+        },
+        {
+          "speaker": "Mak cik:",
+          "text": "Musim tengkujuh ni memang macam tu. Sekejap panas, sekejap hujan.",
+          "id": "Musim hujan memang begitu. Sebentar panas, sebentar hujan.",
+          "literal": "musim tengkujuh ini memang macam itu. sebentar panas, sebentar hujan."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kat Indonesia pun sama. Tapi kat sini lagi panas rasanya.",
+          "id": "Di Indonesia juga sama. Tapi di sini rasanya lebih panas.",
+          "literal": "di Indonesia pun sama. tapi di sini lebih panas rasanya."
+        },
+        {
+          "speaker": "Mak cik:",
+          "text": "Oh, adik dari Indonesia? Bahagian mana?",
+          "id": "Oh, Dik dari Indonesia? Bagian mana?",
+          "literal": "oh, adik dari Indonesia? bagian mana?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bandung, mak cik. Kat Jawa Barat.",
+          "id": "Bandung, Bu. Di Jawa Barat.",
+          "literal": "Bandung, mak cik. di Jawa Barat."
+        },
+        {
+          "speaker": "Mak cik:",
+          "text": "Sejuk kat sana kan? Anak saya pernah pergi. Katanya sedap makanan.",
+          "id": "Dingin di sana, kan? Anak saya pernah ke sana. Katanya makanannya enak.",
+          "literal": "dingin di sana kan? anak saya pernah pergi. katanya enak makanan."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sejuk sikit sebab kat atas bukit. Mak cik pernah ke Indonesia?",
+          "id": "Agak dingin karena di atas bukit. Ibu pernah ke Indonesia?",
+          "literal": "dingin sedikit sebab di atas bukit. mak cik pernah ke Indonesia?"
+        },
+        {
+          "speaker": "Mak cik:",
+          "text": "Belum lagi. Nak pergi, tapi tak sempat-sempat.",
+          "id": "Belum. Pengin pergi, tapi nggak sempat-sempat.",
+          "literal": "belum lagi. mau pergi, tapi tidak sempat-sempat."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Datanglah, mak cik. Best.",
+          "id": "Ayo datang, Bu. Seru.",
+          "literal": "datang-lah, mak cik. asyik."
+        },
+        {
+          "speaker": "Mak cik:",
+          "text": "InsyaAllah. Eh, dah reda dah. Jom, bas dah sampai.",
+          "id": "InsyaAllah. Eh, sudah reda. Ayo, busnya sudah datang.",
+          "literal": "insyaAllah. eh, sudah reda sudah. ayo, bus sudah sampai."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Jaga diri, mak cik. Terima kasih berbual.",
+          "id": "Jaga diri, Bu. Terima kasih sudah ngobrol.",
+          "literal": "jaga diri, mak cik. terima kasih berbual."
+        }
+      ],
+      "notes": [
+        "**Musim tengkujuh** adalah musim hujan monsun timur laut yang melanda pantai timur Semenanjung Malaysia sekitar November sampai Mac. Kata *tengkujuh* tidak ada dalam bahasa Indonesia dan muncul di setiap ramalan cuaca Malaysia. Untuk musim hujan biasa orang berkata *musim hujan*.",
+        "**Panas terik** = panas menyengat. Ungkapan tetap yang dipakai persis begitu. Sepupunya: **hujan lebat** (hujan deras), **angin kencang**, **cuaca mendung**.",
+        "**Reda** = mereda, berhenti (hujan). *Dah reda* = sudah reda. Kata ini dipakai di Indonesia juga tapi lebih jarang; di Malaysia inilah kata bakunya untuk hujan yang berhenti.",
+        "**Tak sempat-sempat** — pengulangan kata untuk menekankan bahwa sesuatu tidak pernah terjadi meski diinginkan. Pola ini sama dengan bahasa Indonesia (\"nggak sempat-sempat\") dan sepenuhnya alami di dua bahasa.",
+        "**Berbual** = mengobrol ⚠️ — bukan membual/berbohong seperti bahasa Indonesia. *Terima kasih berbual* = \"terima kasih sudah ngobrol\". Ini kata jebakan yang justru muncul di ujung setiap perbualan ramah."
+      ],
+      "grammars": [
+        {
+          "title": "Cuaca",
+          "body": [
+            "Malaysia cuma punya dua musim — panas dan hujan — jadi kosakatanya kecil dan cepat dikuasai. Yang perlu diperhatikan cuma beberapa kata yang berbeda."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Melayu",
+              "Bahasa Indonesia",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "**cuaca**",
+                "cuaca",
+                "Cuaca hari ni macam mana?"
+              ],
+              [
+                "**panas / panas terik**",
+                "panas / panas terik",
+                "Panas betul hari ni."
+              ],
+              [
+                "**sejuk** ⚠️",
+                "dingin",
+                "Sejuk sangat dalam pejabat."
+              ],
+              [
+                "**hujan / hujan lebat**",
+                "hujan / hujan deras",
+                "Hujan lebat petang tadi."
+              ],
+              [
+                "**hujan renyai**",
+                "gerimis ⚠️",
+                "Hujan renyai je."
+              ],
+              [
+                "**mendung**",
+                "mendung",
+                "Langit mendung."
+              ],
+              [
+                "**cerah**",
+                "cerah",
+                "Cuaca cerah hari ni."
+              ],
+              [
+                "**berangin**",
+                "berangin",
+                "Berangin kuat."
+              ],
+              [
+                "**ribut / taufan**",
+                "badai / topan",
+                "Ada amaran ribut."
+              ],
+              [
+                "**guruh / petir / kilat**",
+                "guntur / petir / kilat",
+                "Guruh kuat sangat."
+              ],
+              [
+                "**banjir**",
+                "banjir",
+                "Jalan tu banjir."
+              ],
+              [
+                "**jerebu** ⚠️",
+                "kabut asap",
+                "Jerebu teruk minggu ni."
+              ],
+              [
+                "**lembap**",
+                "lembap",
+                "Udara lembap."
+              ],
+              [
+                "**musim tengkujuh**",
+                "musim hujan monsun",
+                "—"
+              ],
+              [
+                "**suhu / darjah**",
+                "suhu / derajat",
+                "Tiga puluh dua darjah."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Jerebu** adalah kata Malaysia untuk **kabut asap** — masalah tahunan akibat kebakaran hutan yang melanda Malaysia, Singapura, dan Indonesia. Ia muncul di berita setiap musim kemarau, dan kata Indonesia \"kabut asap\" tidak dipakai di Malaysia. Istilah rasminya: *Indeks Pencemar Udara (IPU)*.",
+            "⚠️ **Sejuk** = dingin, sekali lagi. Ini kata yang paling sering salah ditangkap orang Indonesia karena di Indonesia *sejuk* berarti dingin yang nyaman. Di Malaysia ia dingin apa saja — kulkas *peti sejuk*, AC *penghawa dingin*, cuaca dingin *sejuk*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membuka perbualan dengan orang yang belum dikenal",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Orang Malaysia membuka perbualan dengan tiga topik yang praktis selalu aman, dan urutan ini hampir baku:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Topik",
+            "Contoh pembuka",
+            "Kenapa aman"
+          ],
+          "rows": [
+            [
+              "**Cuaca**",
+              "Panas betul hari ni kan?",
+              "Semua orang mengalaminya."
+            ],
+            [
+              "**Makanan**",
+              "Dah makan?",
+              "Ini sapaan, bukan pertanyaan."
+            ],
+            [
+              "**Jalan / jem**",
+              "Jem teruk tadi kan?",
+              "Keluhan bersama, mengikat."
+            ],
+            [
+              "**Asal**",
+              "Adik dari mana?",
+              "Malaysia negara pendatang; ini biasa."
+            ],
+            [
+              "**Kerja / belajar**",
+              "Buat apa kat sini?",
+              "Netral."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Dah makan?** perlu dijelaskan tersendiri. Ini **sapaan**, bukan undangan makan dan bukan pertanyaan sungguhan — setara \"apa kabar\". Jawabnya cukup *Dah* atau *Belum lagi*. Kalau kamu menjawab *belum* di rumah orang, barulah ia berubah jadi pertanyaan sungguhan dan makanan akan keluar."
+        },
+        {
+          "type": "kotak",
+          "title": "Topik yang perlu dijaga",
+          "items": [
+            "⚠️ **Agama, kaum, dan politik** — tiga topik yang di Malaysia jauh lebih peka daripada di Indonesia, terutama antara orang yang belum saling kenal. Bukan tabu untuk dibahas, tapi bukan pembuka perbualan.",
+            "⚠️ **Membanding-bandingkan Malaysia dan Indonesia** — hati-hati. Perbandingan yang kamu maksudkan sebagai pujian mudah terdengar sebagai perendahan, dan sebaliknya. Kalau ingin membandingkan, bandingkan hal yang remeh: cuaca, harga, makanan.",
+            "⚠️ **Kata \"Indon\"** — singkatan ini dianggap merendahkan oleh banyak orang Indonesia. Kamu akan mendengarnya, dan kamu boleh berkata terus terang bahwa kamu lebih suka \"orang Indonesia\". Sebagian besar orang Malaysia tidak bermaksud buruk dan akan langsung mengubahnya.",
+            "✅ **Aman selalu**: makanan, cuaca, jalan, harga barang, drama dan lagu, bola sepak."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bersetuju, memuji, dan bersimpati",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Fungsi",
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Bersetuju",
+              "**Betul tu.**",
+              "Betul itu."
+            ],
+            [
+              "Bersetuju kuat",
+              "**Memang la!**",
+              "Iya banget!"
+            ],
+            [
+              "Bersetuju santai",
+              "**Ha ah.**",
+              "Iya, iya."
+            ],
+            [
+              "Terkejut",
+              "**Yeke?** / **Betul ke?**",
+              "Masa sih? / Serius?"
+            ],
+            [
+              "Terkejut kuat",
+              "**Alamak!** / **Ya Allah!**",
+              "Ya ampun!"
+            ],
+            [
+              "Memuji",
+              "**Cantiknya!**",
+              "Bagus banget!"
+            ],
+            [
+              "Memuji makanan",
+              "**Sedap sangat!**",
+              "Enak banget!"
+            ],
+            [
+              "Memuji usaha",
+              "**Hebat!** / **Terbaik!**",
+              "Hebat! / Top!"
+            ],
+            [
+              "Bersimpati",
+              "**Kesian.**",
+              "Kasihan."
+            ],
+            [
+              "Bersimpati kuat",
+              "**Sabarlah ya.**",
+              "Yang sabar, ya."
+            ],
+            [
+              "Menenangkan",
+              "**Takpe, takpe.**",
+              "Nggak apa-apa, kok."
+            ],
+            [
+              "Menenangkan",
+              "**Jangan risau.**",
+              "Jangan khawatir."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Yeke?** (dari *ya ke?*) adalah seruan terkejut yang paling sering — setara \"masa sih?\" atau \"serius?\". Bunyinya pendek dan naik di ujung. Bersama *betul ke?* dan *ish!*, ia mengisi hampir semua reaksi terkejut dalam percakapan Malaysia."
+        },
+        {
+          "type": "p",
+          "text": "**Berjaya** = berhasil, sukses. *Semoga berjaya* adalah ucapan selamat berjuang yang muncul di setiap kartu, poster, dan pesan Malaysia — setara \"semoga sukses\". Bahasa Indonesia memakai *jaya* dengan arti yang berbeda (kejayaan, kemakmuran), jadi ungkapan ini terasa sedikit asing pada awalnya."
+        },
+        {
+          "type": "kotak",
+          "title": "Ucapan untuk peristiwa",
+          "items": [
+            "**Selamat Hari Raya** — Selamat Idulfitri. Jawabannya: *Selamat Hari Raya juga*.",
+            "**Maaf zahir dan batin** — Mohon maaf lahir dan batin. ⚠️ *Zahir*, bukan *lahir*.",
+            "**Tahniah!** — Selamat! (untuk keberhasilan) ⚠️ Bahasa Indonesia: \"selamat\".",
+            "**Semoga berjaya** — Semoga sukses.",
+            "**Takziah** — Turut berduka cita.",
+            "**Selamat menjamu selera** — Selamat makan.",
+            "**Selamat maju jaya** — Selamat berjuang, semoga terus maju.",
+            "**Selamat pengantin baru** — Selamat menempuh hidup baru."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Tahniah** adalah kata yang paling sering hilang dari perbendaharaan orang Indonesia — ia berarti **selamat** untuk keberhasilan (lulus, menang, naik pangkat, menikah). Bahasa Indonesia memakai satu kata \"selamat\" untuk semuanya; bahasa Melayu memisahkan *selamat* (untuk keadaan, sapaan) dan *tahniah* (untuk ucapan selamat atas pencapaian). Memakai *tahniah* dengan benar langsung menandai bahwa kamu tahu apa yang kamu lakukan."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "panas terik",
+      "baca": "—",
+      "id": "panas menyengat"
+    },
+    {
+      "ms": "hujan lebat",
+      "baca": "—",
+      "id": "hujan deras"
+    },
+    {
+      "ms": "hujan renyai",
+      "baca": "hujan rənyai",
+      "id": "gerimis"
+    },
+    {
+      "ms": "guruh / kilat",
+      "baca": "guruh · kilat",
+      "id": "guntur / kilat"
+    },
+    {
+      "ms": "ribut",
+      "baca": "ribut",
+      "id": "badai"
+    },
+    {
+      "ms": "jerebu",
+      "baca": "jərəbu",
+      "id": "kabut asap ⚠️"
+    },
+    {
+      "ms": "musim tengkujuh",
+      "baca": "—",
+      "id": "musim hujan monsun"
+    },
+    {
+      "ms": "darjah",
+      "baca": "darjah",
+      "id": "derajat; kelas SD"
+    },
+    {
+      "ms": "berbual",
+      "baca": "bərbual",
+      "id": "mengobrol ⚠️"
+    },
+    {
+      "ms": "bahagian",
+      "baca": "bahagian",
+      "id": "bagian"
+    },
+    {
+      "ms": "yeke?",
+      "baca": "yəké",
+      "id": "masa sih?"
+    },
+    {
+      "ms": "memang la",
+      "baca": "mémang la",
+      "id": "iya banget"
+    },
+    {
+      "ms": "kesian",
+      "baca": "kəsian",
+      "id": "kasihan"
+    },
+    {
+      "ms": "risau",
+      "baca": "risau",
+      "id": "khawatir"
+    },
+    {
+      "ms": "berjaya",
+      "baca": "bərjayə",
+      "id": "berhasil, sukses ⚠️"
+    },
+    {
+      "ms": "tahniah",
+      "baca": "tahniah",
+      "id": "selamat (atas prestasi) ⚠️"
+    },
+    {
+      "ms": "takziah",
+      "baca": "takziah",
+      "id": "turut berduka"
+    },
+    {
+      "ms": "zahir",
+      "baca": "zahir",
+      "id": "lahir (zahir batin)"
+    },
+    {
+      "ms": "amaran",
+      "baca": "amaran",
+      "id": "peringatan ⚠️"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata cuaca Melayu yang betul.",
+      "items": [
+        "Hujan turun deras = hujan ____.",
+        "Gerimis = hujan ____.",
+        "Kabut asap = ____.",
+        "Musim hujan monsun = musim ____.",
+        "Udara dingin = ____.",
+        "Suhu tiga puluh dua derajat = tiga puluh dua ____."
+      ]
+    },
+    {
+      "prompt": "Pilih ucapan yang tepat.",
+      "items": [
+        "Kawan awak baru lulus peperiksaan. Awak cakap: ____",
+        "Kawan awak sakit. Awak cakap: ____",
+        "Ahli keluarga kawan awak meninggal dunia. Awak cakap: ____",
+        "Hari Raya. Awak cakap: ____",
+        "Kawan awak nak temu duga esok. Awak cakap: ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Panas banget hari ini, kan?",
+        "Hujannya deras banget.",
+        "Saya nggak bawa payung.",
+        "Masa sih? Serius?",
+        "Nggak apa-apa, jangan khawatir.",
+        "Terima kasih sudah ngobrol."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang betul.",
+      "items": [
+        "kan / ni / betul / hari / panas / ?",
+        "pun / bawa / saya / payung / tak",
+        "reda / dah / dah",
+        "ya / diri / jaga",
+        "berjaya / semoga"
+      ]
+    }
+  ],
+  "answers": [
+    "lebat — renyai — jerebu — tengkujuh — sejuk — darjah",
+    "Tahniah! — Semoga cepat sembuh. — Takziah. — Selamat Hari Raya, maaf zahir dan batin. — Semoga berjaya!",
+    "Panas betul hari ni kan? — Hujan lebat sangat. — Saya tak bawa payung. — Yeke? Betul ke? — Takpe, jangan risau. — Terima kasih berbual.",
+    "Panas betul hari ni kan? — Saya tak bawa payung pun. — Dah reda dah. — Jaga diri ya. — Semoga berjaya."
+  ]
+}

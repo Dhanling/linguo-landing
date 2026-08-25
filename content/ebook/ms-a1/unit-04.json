@@ -1,0 +1,597 @@
+{
+  "title": "Nombor, masa, dan tarikh",
+  "title_target": "Pukul berapa sekarang?",
+  "goal": "Menyebut angka, jam, hari, bulan, dan tanggal seperti orang Malaysia — termasuk satu cara menyebut jam yang persis terbalik dari kebiasaanmu dan sudah membuat banyak orang Indonesia terlambat satu jam.",
+  "bekal": [
+    "menyebut angka, harga, dan nombor telefon dengan cara Malaysia",
+    "menyebut jam tanpa tersesat di *setengah* yang terbalik",
+    "menyebut hari dan bulan dengan nama yang berbeda dari kebiasaanmu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Janji yang hampir tertukar",
+      "intro": "Aina mengetuk pintu bilik Sarah. Ada kelas tambahan esok, dan waktunya perlu dipastikan.",
+      "lines": [
+        {
+          "speaker": "Aina:",
+          "text": "Sarah, esok ada kelas tambahan. Pukul tiga setengah petang.",
+          "id": "Sarah, besok ada kelas tambahan. Pukul setengah empat sore.",
+          "literal": "Sarah, besok ada kelas tambahan. pukul tiga setengah sore."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Pukul tiga setengah? Maksudnya pukul setengah tiga?",
+          "id": "Pukul tiga setengah? Maksudnya setengah tiga?",
+          "literal": "pukul tiga setengah? maksudnya pukul setengah tiga?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Eh, tak. Tiga setengah tu 3.30. Lepas tiga, sebelum empat.",
+          "id": "Eh, bukan. Tiga setengah itu 3.30. Setelah tiga, sebelum empat.",
+          "literal": "eh, tidak. tiga setengah itu 3.30. lewat tiga, sebelum empat."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya Allah. Kat Indonesia \"setengah empat\" tu 3.30. Kami kira ke depan.",
+          "id": "Ya ampun. Di Indonesia \"setengah empat\" itu 3.30. Kami hitung ke depan.",
+          "literal": "ya Allah. di Indonesia \"setengah empat\" itu 3.30. kami kira ke depan."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Wah, bahaya tu. Kalau macam tu, sebut je nombor: tiga tiga puluh.",
+          "id": "Wah, bahaya itu. Kalau gitu, sebut aja angkanya: tiga tiga puluh.",
+          "literal": "wah, bahaya itu. kalau macam itu, sebut saja nomor: tiga tiga puluh."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Setuju. Kelas tu hari apa? Khamis ke Jumaat?",
+          "id": "Setuju. Kelasnya hari apa? Kamis atau Jumat?",
+          "literal": "setuju. kelas itu hari apa? Kamis [tanya] Jumat?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Khamis. Lima belas haribulan.",
+          "id": "Kamis. Tanggal lima belas.",
+          "literal": "Kamis. lima belas hari-bulan."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lima belas bulan apa?",
+          "id": "Lima belas bulan apa?",
+          "literal": "lima belas bulan apa?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Mac. Lima belas Mac.",
+          "id": "Maret. Lima belas Maret.",
+          "literal": "Maret. lima belas Maret."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Mac? Bukan Mac makanan tu?",
+          "id": "Mac? Bukan Mac yang makanan itu?",
+          "literal": "Mac? bukan Mac makanan itu?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Hahaha! Mac tu bulan ketiga. March. Kat Indonesia Maret kan?",
+          "id": "Hahaha! Mac itu bulan ketiga. March. Di Indonesia Maret, kan?",
+          "literal": "hahaha! Mac itu bulan ketiga. March. di Indonesia Maret kan?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Betul. Ada berapa lagi bulan yang lain namanya?",
+          "id": "Betul. Ada berapa lagi bulan yang namanya beda?",
+          "literal": "betul. ada berapa lagi bulan yang lain namanya?"
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Tiga je: Mac, Jun, Julai, Ogos. Eh, empat.",
+          "id": "Tiga aja: Maret, Juni, Juli, Agustus. Eh, empat.",
+          "literal": "tiga saja: Mac, Jun, Julai, Ogos. eh, empat."
+        }
+      ],
+      "notes": [
+        "**Inilah perbedaan yang paling praktis berbahaya di seluruh modul ini.** Bahasa Indonesia menghitung **ke depan** — \"setengah empat\" berarti setengah jalan menuju pukul empat, yaitu 3.30. Bahasa Melayu menghitung **dari** jam yang sudah lewat — *pukul tiga setengah* berarti tiga lewat setengah, juga 3.30. Angkanya sama, susunannya terbalik, dan kalau kamu menerjemahkannya kata demi kata kamu akan salah satu jam penuh.",
+        "**Haribulan** adalah kata Malaysia untuk **tanggal** — ditulis serangkai. *Lima belas haribulan* = tanggal lima belas. Kata *tarikh* juga berarti tanggal, tapi lebih dipakai dalam tulisan dan borang: *Tarikh lahir* = tanggal lahir.",
+        "**Ke** di tengah kalimat berarti **atau** dalam pertanyaan pilihan: *Khamis ke Jumaat?* = \"Kamis atau Jumat?\" Ini berbeda dari *ke* penanda tanya di ujung kalimat (unit 1) dan dari *ke* yang berarti \"menuju\". Tiga *ke* yang berbeda, dan yang menentukan adalah letaknya.",
+        "**Lepas** = lewat, setelah. *Lepas tiga* = lewat pukul tiga. Kata ini juga berarti \"selesai\": *lepas makan* = setelah makan. Bahasa Indonesia memakai *lepas* dengan arti yang lebih sempit.",
+        "**Kira** = hitung. *Kami kira ke depan* = kami hitung ke depan. ⚠️ Jangan tertukar dengan *kira-kira* (= sekitar) yang sama di dua bahasa."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": [
+            "Susunannya: **pukul** + angka + keterangan. Kata *jam* dalam bahasa Melayu lebih dipakai untuk **lamanya waktu** (*tiga jam* = selama tiga jam) sedangkan **pukul** untuk **titik waktu** — pembagian yang sebenarnya juga ada di bahasa Indonesia baku, tapi jauh lebih dijaga di Malaysia."
+          ],
+          "table": {
+            "head": [
+              "Jam",
+              "Bahasa Melayu",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "3.00",
+                "pukul tiga",
+                "pukul tiga"
+              ],
+              [
+                "3.05",
+                "pukul tiga lima minit",
+                "pukul tiga lewat lima"
+              ],
+              [
+                "3.15",
+                "pukul tiga suku",
+                "pukul tiga seperempat"
+              ],
+              [
+                "3.30",
+                "**pukul tiga setengah** ⚠️",
+                "**pukul setengah empat**"
+              ],
+              [
+                "3.45",
+                "pukul empat kurang suku",
+                "pukul empat kurang seperempat"
+              ],
+              [
+                "3.50",
+                "pukul empat kurang sepuluh minit",
+                "pukul empat kurang sepuluh"
+              ],
+              [
+                "12.00 siang",
+                "pukul dua belas tengah hari",
+                "pukul dua belas siang"
+              ],
+              [
+                "00.00",
+                "pukul dua belas tengah malam",
+                "pukul dua belas malam"
+              ]
+            ]
+          },
+          "after": [
+            "**Suku** berarti seperempat — kata yang tidak dipakai untuk waktu dalam bahasa Indonesia sama sekali. *Pukul tiga suku* = 3.15. Jangan tertukar dengan *suku* yang berarti kelompok etnik; keduanya kata yang sama, dan konteks yang membedakan.",
+            "**Minit** = menit (dari *minute*), **saat** = detik dalam pemakaian rasmi, tapi dalam percakapan orang berkata **saat** untuk \"detik\" DAN *saat* untuk \"momen\" — sama seperti Indonesia. Jam dinding memakai *jarum*, sama seperti kita."
+          ]
+        },
+        {
+          "title": "Angka: yang sama dan yang berbeda",
+          "body": [
+            "Hampir seluruhnya sama dengan bahasa Indonesia. Yang berbeda cuma tiga hal, dan ketiganya sering."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Bahasa Melayu",
+              "Bahasa Indonesia",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "0",
+                "**kosong** / sifar",
+                "nol",
+                "⚠️ *Kosong* dalam percakapan, *sifar* dalam matematik."
+              ],
+              [
+                "1–7",
+                "satu, dua, tiga, empat, lima, enam, tujuh",
+                "sama",
+                "Sama persis."
+              ],
+              [
+                "8",
+                "**lapan**",
+                "delapan",
+                "⚠️ Tanpa *de-*."
+              ],
+              [
+                "9",
+                "sembilan",
+                "sembilan",
+                "Sama."
+              ],
+              [
+                "10–19",
+                "sepuluh, sebelas, dua belas…",
+                "sama",
+                "Sama persis."
+              ],
+              [
+                "20, 30",
+                "dua puluh, tiga puluh",
+                "sama",
+                "Sama."
+              ],
+              [
+                "100",
+                "seratus",
+                "seratus",
+                "Sama."
+              ],
+              [
+                "1.000",
+                "seribu",
+                "seribu",
+                "Sama."
+              ],
+              [
+                "1.000.000",
+                "sejuta",
+                "sejuta",
+                "Sama."
+              ],
+              [
+                "1,5",
+                "**satu perpuluhan lima**",
+                "satu koma lima",
+                "⚠️ Tanda desimalnya **titik**, dibaca *perpuluhan*."
+              ]
+            ]
+          },
+          "after": [
+            "**Lapan**, bukan *delapan* — ini satu-satunya angka dasar yang benar-benar berbeda, dan ia muncul terus-menerus di harga, jam, dan nombor telefon. Bentuk turunannya ikut: *lapan belas*, *lapan puluh*, *kelapan* (kedelapan).",
+            "**Titik desimal, bukan koma.** Malaysia memakai kebiasaan Inggris: *RM12.50* (dibaca *dua belas ringgit lima puluh sen*), *1,000* untuk seribu. Bahasa Indonesia terbalik: Rp12.500 dengan titik sebagai pemisah ribuan. Ini sering membingungkan saat membaca harga — perhatikan letaknya, bukan tandanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hari dan bulan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nama hari sebagian besar sama dengan bahasa Indonesia — keduanya diserap dari bahasa Arab. Yang berbeda cuma tiga, dan ketiganya sering."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**Isnin**",
+              "Senin",
+              "⚠️ Lebih dekat ke bentuk Arabnya."
+            ],
+            [
+              "Selasa",
+              "Selasa",
+              "Sama."
+            ],
+            [
+              "Rabu",
+              "Rabu",
+              "Sama."
+            ],
+            [
+              "**Khamis**",
+              "Kamis",
+              "⚠️ Dengan *kh*."
+            ],
+            [
+              "**Jumaat**",
+              "Jumat",
+              "⚠️ Dengan dua *a*."
+            ],
+            [
+              "Sabtu",
+              "Sabtu",
+              "Sama."
+            ],
+            [
+              "**Ahad**",
+              "Minggu",
+              "⚠️ Berbeda sama sekali."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Ahad**, bukan *Minggu*. Kata *minggu* dalam bahasa Melayu berarti **pekan** (jangka tujuh hari) — *minggu depan*, *dua minggu lagi* — tapi tidak dipakai sebagai nama hari. Kalau kamu berkata *hari Minggu* di Malaysia orang akan mengerti, tapi mereka akan langsung tahu kamu orang Indonesia."
+        },
+        {
+          "type": "p",
+          "text": "Nama bulan diserap dari bahasa Inggris, sedangkan bahasa Indonesia menyerapnya dari bahasa Belanda. Empat berbeda:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Melayu",
+            "Indonesia",
+            "Melayu",
+            "Indonesia"
+          ],
+          "rows": [
+            [
+              "Januari",
+              "Januari",
+              "Julai ⚠️",
+              "Juli"
+            ],
+            [
+              "Februari",
+              "Februari",
+              "Ogos ⚠️",
+              "Agustus"
+            ],
+            [
+              "Mac ⚠️",
+              "Maret",
+              "September",
+              "September"
+            ],
+            [
+              "April",
+              "April",
+              "Oktober",
+              "Oktober"
+            ],
+            [
+              "Mei",
+              "Mei",
+              "November",
+              "November"
+            ],
+            [
+              "Jun ⚠️",
+              "Juni",
+              "Disember ⚠️",
+              "Desember"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lima yang berbeda, bukan empat — Aina salah hitung di dialog, dan itu memang tipikal: **Disember** dengan huruf *i* mudah terlewat karena bunyinya hampir sama. Kalau kamu mengisi borang di Malaysia, ejaan inilah yang dipakai."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Keterangan waktu",
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "hari ini",
+              "**hari ni**",
+              "hari ini"
+            ],
+            [
+              "kemarin",
+              "**semalam** ⚠️",
+              "kemarin"
+            ],
+            [
+              "kemarin dulu",
+              "**kelmarin** ⚠️",
+              "kemarin lusa"
+            ],
+            [
+              "besok",
+              "**esok**",
+              "besok"
+            ],
+            [
+              "lusa",
+              "**lusa**",
+              "lusa"
+            ],
+            [
+              "tadi malam",
+              "**malam tadi**",
+              "tadi malam"
+            ],
+            [
+              "minggu depan",
+              "**minggu depan**",
+              "minggu depan"
+            ],
+            [
+              "bulan lepas",
+              "**bulan lepas** ⚠️",
+              "bulan lalu"
+            ],
+            [
+              "tahun lepas",
+              "**tahun lepas** ⚠️",
+              "tahun lalu"
+            ],
+            [
+              "sekarang",
+              "**sekarang**",
+              "sekarang"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Lepas** menggantikan *lalu* untuk waktu yang sudah lewat: *minggu lepas*, *bulan lepas*, *tahun lepas*. Bentuk *yang lalu* juga betul dan dipakai dalam tulisan rasmi, tapi dalam percakapan hampir selalu *lepas*."
+        },
+        {
+          "type": "kotak",
+          "title": "Menulis tarikh",
+          "items": [
+            "**Susunannya hari-bulan-tahun**, sama seperti Indonesia: *15 Mac 2026*.",
+            "Dalam borang rasmi: *15/03/2026* atau *15-03-2026*.",
+            "⚠️ Jangan memakai susunan Amerika (*03/15/2026*) — di Malaysia susunan itu tidak dipakai dan akan terbaca salah.",
+            "*Tarikh lahir* = tanggal lahir. *Tarikh tamat tempoh* = tanggal kedaluwarsa (di makanan dan kad).",
+            "Tahun dibaca utuh: *dua ribu dua puluh enam*, bukan \"dua puluh dua puluh enam\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "pukul",
+      "baca": "pukul",
+      "id": "pukul (jam)"
+    },
+    {
+      "ms": "minit",
+      "baca": "minit",
+      "id": "menit"
+    },
+    {
+      "ms": "suku",
+      "baca": "suku",
+      "id": "seperempat"
+    },
+    {
+      "ms": "setengah",
+      "baca": "sətəngah",
+      "id": "setengah ⚠️"
+    },
+    {
+      "ms": "lapan",
+      "baca": "lapan",
+      "id": "delapan"
+    },
+    {
+      "ms": "kosong",
+      "baca": "kosong",
+      "id": "nol; kosong"
+    },
+    {
+      "ms": "haribulan",
+      "baca": "haribulan",
+      "id": "tanggal"
+    },
+    {
+      "ms": "tarikh",
+      "baca": "tarikh",
+      "id": "tanggal ⚠️"
+    },
+    {
+      "ms": "Isnin",
+      "baca": "isnin",
+      "id": "Senin"
+    },
+    {
+      "ms": "Khamis",
+      "baca": "khamis",
+      "id": "Kamis"
+    },
+    {
+      "ms": "Jumaat",
+      "baca": "jumaat",
+      "id": "Jumat"
+    },
+    {
+      "ms": "Ahad",
+      "baca": "ahad",
+      "id": "Minggu (hari)"
+    },
+    {
+      "ms": "Mac",
+      "baca": "mac",
+      "id": "Maret"
+    },
+    {
+      "ms": "Jun / Julai",
+      "baca": "jun · julai",
+      "id": "Juni / Juli"
+    },
+    {
+      "ms": "Ogos",
+      "baca": "ogos",
+      "id": "Agustus"
+    },
+    {
+      "ms": "Disember",
+      "baca": "disémbe",
+      "id": "Desember"
+    },
+    {
+      "ms": "semalam",
+      "baca": "səmalam",
+      "id": "kemarin ⚠️"
+    },
+    {
+      "ms": "kelmarin",
+      "baca": "kəlmarin",
+      "id": "kemarin dulu ⚠️"
+    },
+    {
+      "ms": "esok",
+      "baca": "ésok",
+      "id": "besok"
+    },
+    {
+      "ms": "lepas",
+      "baca": "ləpas",
+      "id": "lewat; lalu; setelah"
+    },
+    {
+      "ms": "macam mana",
+      "baca": "macam manə",
+      "id": "bagaimana"
+    },
+    {
+      "ms": "kira",
+      "baca": "kirə",
+      "id": "hitung"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jam berikut dalam bahasa Melayu (pakai *setengah* dan *suku* kalau bisa).",
+      "items": [
+        "07.00",
+        "09.15",
+        "02.30",
+        "05.45",
+        "12.00 tengah hari",
+        "20.30"
+      ]
+    },
+    {
+      "prompt": "Isi dengan nama hari atau bulan Melayu yang betul.",
+      "items": [
+        "Hari sesudah Rabu ialah ____.",
+        "Hari sebelum Sabtu ialah ____.",
+        "Hari pertama minggu bekerja ialah ____.",
+        "Hari cuti hujung minggu ialah Sabtu dan ____.",
+        "Bulan ketiga ialah ____.",
+        "Bulan kelapan ialah ____."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Sekarang pukul setengah empat.",
+        "Kelasnya hari Kamis, tanggal 15 Maret.",
+        "Nomor telepon saya kosong satu dua, tiga empat lima.",
+        "Saya datang kemarin.",
+        "Bulan lalu saya ke Singapura.",
+        "Besok pukul delapan pagi."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang betul.",
+      "items": [
+        "sekarang / berapa / pukul / ?",
+        "setengah / pukul / kelas / tiga / petang",
+        "haribulan / lima belas / Khamis / Mac",
+        "tak / semalam / dia / datang",
+        "esok / saya / pergi / pukul / lapan"
+      ]
+    }
+  ],
+  "answers": [
+    "pukul tujuh — pukul sembilan suku — pukul dua setengah — pukul enam kurang suku — pukul dua belas tengah hari — pukul lapan setengah malam",
+    "Khamis — Jumaat — Isnin — Ahad — Mac — Ogos",
+    "Sekarang pukul tiga setengah. — Kelas tu hari Khamis, lima belas haribulan Mac. — Nombor telefon saya kosong satu dua, tiga empat lima. — Saya datang semalam. — Bulan lepas saya ke Singapura. — Esok pukul lapan pagi.",
+    "Pukul berapa sekarang? — Kelas pukul tiga setengah petang. — Khamis, lima belas haribulan Mac. — Dia tak datang semalam. — Esok saya pergi pukul lapan."
+  ]
+}

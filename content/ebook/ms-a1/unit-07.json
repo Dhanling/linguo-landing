@@ -1,0 +1,564 @@
+{
+  "title": "Arah dan pengangkutan",
+  "title_target": "Tumpang tanya, stesen kat mana?",
+  "goal": "Bertanya jalan, menaiki LRT dan bas, dan memberi arah kepada pemandu Grab — dengan kosakata jalan raya Malaysia yang hampir seluruhnya berbeda dari kebiasaanmu.",
+  "bekal": [
+    "membuka pertanyaan kepada orang asing dengan *tumpang tanya*",
+    "memberi dan mengikuti arah: belok, lurus, simpang, bulatan",
+    "menyebut jenis pengangkutan Malaysia tanpa tertukar dengan bahasa Indonesia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tersesat di Kuala Lumpur",
+      "intro": "Sarah turun di sebuah stesen yang salah dan sekarang berdiri di simpang jalan sambil memegang telefon yang bateri hampir habis.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Tumpang tanya, pak cik. Stesen LRT kat mana ya?",
+          "id": "Permisi, Pak. Stasiun LRT di mana, ya?",
+          "literal": "numpang tanya, pak cik. stasiun LRT di mana ya?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "LRT yang mana? Ada dua kat sini.",
+          "id": "LRT yang mana? Ada dua di sini.",
+          "literal": "LRT yang mana? ada dua di sini."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Yang ke Universiti.",
+          "id": "Yang ke Universiti.",
+          "literal": "yang ke Universiti."
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Oh, jalan lurus sampai lampu isyarat, lepas tu belok kiri.",
+          "id": "Oh, jalan lurus sampai lampu merah, terus belok kiri.",
+          "literal": "jalan lurus sampai lampu isyarat, lepas itu belok kiri."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lepas belok kiri?",
+          "id": "Setelah belok kiri?",
+          "literal": "setelah belok kiri?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Jalan lagi dalam dua ratus meter. Stesen kat sebelah kanan, depan masjid.",
+          "id": "Jalan lagi sekitar dua ratus meter. Stasiunnya di sebelah kanan, depan masjid.",
+          "literal": "jalan lagi dalam dua ratus meter. stasiun di sebelah kanan, depan masjid."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Jauh tak jalan kaki?",
+          "id": "Jauh nggak kalau jalan kaki?",
+          "literal": "jauh tidak jalan kaki?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Tak jauh. Lima minit je. Tapi panas ni, adik.",
+          "id": "Nggak jauh. Lima menit aja. Tapi panas nih, Dik.",
+          "literal": "tidak jauh. lima menit saja. tapi panas ini, adik."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tak apa. Kalau naik teksi berapa tambang?",
+          "id": "Nggak apa-apa. Kalau naik taksi berapa ongkosnya?",
+          "literal": "tidak apa. kalau naik taksi berapa ongkos?"
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Dekat sangat, teksi tak mahu. Naik Grab pun mahal — minimum lapan ringgit.",
+          "id": "Deket banget, taksi nggak mau. Naik Grab juga mahal — minimum delapan ringgit.",
+          "literal": "dekat sangat, taksi tidak mau. naik Grab pun mahal — minimum delapan ringgit."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kalau macam tu saya jalan je. Terima kasih banyak, pak cik.",
+          "id": "Kalau gitu saya jalan aja. Terima kasih banyak, Pak.",
+          "literal": "kalau macam itu saya jalan saja. terima kasih banyak, pak cik."
+        },
+        {
+          "speaker": "Pak cik:",
+          "text": "Sama-sama. Hati-hati melintas jalan tau.",
+          "id": "Sama-sama. Hati-hati nyebrang jalan, ya.",
+          "literal": "sama-sama. hati-hati melintas jalan tahu."
+        }
+      ],
+      "notes": [
+        "**Tumpang tanya** adalah pembuka baku untuk bertanya kepada orang yang tidak dikenal — setara \"permisi, mau tanya\" atau \"numpang tanya\". Ini kalimat pertama yang perlu kamu hafal sebelum keluar rumah di Malaysia. Bentuk lain: *Maaf, boleh saya tanya?* (lebih rasmi).",
+        "**Lepas tu** = setelah itu, terus. Ini penyambung kalimat paling sering dalam percakapan Malaysia, setara \"terus\" dalam bahasa Indonesia. *Lepas tu belok kiri* = \"terus belok kiri\".",
+        "**Lampu isyarat** = lampu lalu lintas. Bahasa Indonesia berkata \"lampu merah\" atau \"lampu lalu lintas\"; di Malaysia istilah rasminya *lampu isyarat*, dan orang juga berkata *traffic light* langsung.",
+        "**Tambang** = ongkos, tarif — bukan tambang galian dan bukan tali. *Berapa tambang?* = berapa ongkosnya? Kata ini dipakai untuk bas, teksi, dan feri.",
+        "**Dalam** di depan angka berarti **sekitar, kira-kira**. *Dalam dua ratus meter* = sekitar dua ratus meter, *dalam pukul tiga* = sekitar pukul tiga. Pemakaian ini tidak ada di bahasa Indonesia dan sering membingungkan pada awalnya."
+      ],
+      "grammars": [
+        {
+          "title": "Memberi arah",
+          "body": [
+            "Kata kerjanya sama dengan bahasa Indonesia; yang berbeda cuma beberapa kata benda jalanan. Tabel ini praktis cukup untuk seluruh keperluanmu."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Melayu",
+              "Bahasa Indonesia",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "**jalan lurus / terus**",
+                "jalan lurus / terus",
+                "Sama."
+              ],
+              [
+                "**belok kiri / kanan**",
+                "belok kiri / kanan",
+                "Sama."
+              ],
+              [
+                "**pusing balik**",
+                "putar balik ⚠️",
+                "*Pusing* = berputar, bukan sakit kepala!"
+              ],
+              [
+                "**simpang**",
+                "persimpangan, perempatan",
+                "*Simpang empat*, *simpang tiga*."
+              ],
+              [
+                "**bulatan**",
+                "bundaran",
+                "⚠️ Berbeda."
+              ],
+              [
+                "**lampu isyarat**",
+                "lampu lalu lintas",
+                "⚠️ Berbeda."
+              ],
+              [
+                "**jalan sehala**",
+                "jalan satu arah",
+                "⚠️ *Sehala* = satu arah."
+              ],
+              [
+                "**lebuh raya**",
+                "jalan tol",
+                "⚠️ Berbeda."
+              ],
+              [
+                "**tol / plaza tol**",
+                "gerbang tol",
+                "—"
+              ],
+              [
+                "**jejambat**",
+                "jembatan layang",
+                "⚠️ Berbeda."
+              ],
+              [
+                "**lorong**",
+                "gang; lajur",
+                "Dua arti."
+              ],
+              [
+                "**bulatan pertama / kedua**",
+                "bundaran pertama / kedua",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Pusing balik** berarti **putar balik** — ini pemakaian paling sering dari kata *pusing* di Malaysia, dan pemandu Grab akan mengatakannya kepadamu. Kalau kepalamu yang sakit, katakan **pening**.",
+            "Kata letak (**di depan, di belakang, di sebelah, di tepi, berhampiran, bertentangan**) hampir seluruhnya sama dengan bahasa Indonesia. Dua yang perlu ditambah: **berhampiran** = di dekat (Indonesia: \"di dekat\"), dan **bertentangan dengan** = berseberangan dengan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pengangkutan di Malaysia",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**kereta**",
+              "mobil ⚠️",
+              "Jebakan paling terkenal."
+            ],
+            [
+              "**keretapi / kereta api**",
+              "kereta api",
+              "KTM = keretapi antara bandar."
+            ],
+            [
+              "**motosikal / motor**",
+              "sepeda motor",
+              "*Motor* dalam percakapan."
+            ],
+            [
+              "**basikal**",
+              "sepeda",
+              "⚠️ Dari *bicycle*."
+            ],
+            [
+              "**bas**",
+              "bus",
+              "*Bas mini*, *bas ekspres*."
+            ],
+            [
+              "**teksi**",
+              "taksi",
+              "—"
+            ],
+            [
+              "**e-hailing / Grab**",
+              "ojek/taksi daring",
+              "Grab adalah yang dominan."
+            ],
+            [
+              "**lori**",
+              "truk ⚠️",
+              "Dari *lorry*."
+            ],
+            [
+              "**van**",
+              "mobil van",
+              "—"
+            ],
+            [
+              "**kapal terbang**",
+              "pesawat ⚠️",
+              "Juga *pesawat* dalam tulisan rasmi."
+            ],
+            [
+              "**feri**",
+              "feri, kapal penyeberangan",
+              "—"
+            ],
+            [
+              "**LRT / MRT / monorel**",
+              "kereta ringan kota",
+              "Tulang belakang KL."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **kapal terbang** untuk pesawat — bahasa Indonesia memakai *pesawat terbang*, bahasa Melayu memakai *kapal terbang*, dan keduanya secara harfiah aneh kalau dipikir. Di papan tanda dan dokumen rasmi Malaysia kamu juga akan melihat *pesawat*, jadi keduanya berterima."
+        },
+        {
+          "type": "sub",
+          "text": "Naik LRT dan bas"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**tambang**",
+              "ongkos, tarif"
+            ],
+            [
+              "**tiket / kad Touch 'n Go**",
+              "tiket / kartu uang elektronik"
+            ],
+            [
+              "**tambah nilai**",
+              "isi ulang saldo, top up"
+            ],
+            [
+              "**pintu masuk / keluar**",
+              "pintu masuk / keluar"
+            ],
+            [
+              "**platform / pelantar**",
+              "peron"
+            ],
+            [
+              "**tukar tren di …**",
+              "ganti kereta di …"
+            ],
+            [
+              "**stesen seterusnya**",
+              "stasiun berikutnya"
+            ],
+            [
+              "**hentian akhir**",
+              "stasiun terakhir"
+            ],
+            [
+              "**berhenti di sini**",
+              "berhenti di sini"
+            ],
+            [
+              "**sesak**",
+              "penuh, padat ⚠️"
+            ],
+            [
+              "**waktu puncak**",
+              "jam sibuk"
+            ],
+            [
+              "**jadual**",
+              "jadwal ⚠️ (ejaan *jadual*)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Touch 'n Go** adalah kartu pembayaran tol dan pengangkutan awam di Malaysia — setara e-Money atau Flazz di Indonesia. Mengisinya disebut **tambah nilai**, ungkapan yang akan kamu lihat di setiap mesin."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat kepada pemandu Grab atau teksi",
+          "items": [
+            "**Nak ke [tempat], boleh?** — Mau ke …, bisa?",
+            "**Berapa tambang ke sana?** — Berapa ongkos ke sana?",
+            "**Guna meter ya, bang.** — Pakai argo, ya, Bang.",
+            "**Boleh berhenti kat depan tu?** — Bisa berhenti di depan situ?",
+            "**Saya kat pintu masuk utama.** — Saya di pintu masuk utama.",
+            "**Lambat sikit tak apa.** — Telat sedikit nggak apa-apa.",
+            "**Jalan mana yang tak sesak?** — Jalan mana yang nggak macet?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jauh, dekat, dan berapa lama",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Jauh tak dari sini?",
+              "Jauh nggak dari sini?"
+            ],
+            [
+              "Dekat je.",
+              "Deket kok."
+            ],
+            [
+              "Berapa lama nak sampai?",
+              "Berapa lama sampainya?"
+            ],
+            [
+              "Dalam lima belas minit.",
+              "Sekitar lima belas menit."
+            ],
+            [
+              "Kalau jalan kaki, lama tak?",
+              "Kalau jalan kaki, lama nggak?"
+            ],
+            [
+              "Sesat pula saya.",
+              "Saya malah nyasar."
+            ],
+            [
+              "Saya tak biasa kat sini.",
+              "Saya nggak hafal daerah sini."
+            ],
+            [
+              "Ikut jalan ni sampai hujung.",
+              "Ikuti jalan ini sampai ujung."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Sesat** = tersesat, nyasar. Kata ini juga dipakai dalam arti keagamaan (*ajaran sesat*), sama seperti bahasa Indonesia — tapi dalam percakapan sehari-hari maknanya polos: *saya sesat* = saya nyasar."
+        },
+        {
+          "type": "p",
+          "text": "Satu kata yang perlu kamu tambah ke perbendaharaanmu: **jem** (dari *jam*, kemacetan). *Jalan jem* = jalanan macet. Bentuk lain: *sesak*, *tersekat*. Bahasa Indonesia \"macet\" tidak dipakai di Malaysia."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "tumpang tanya",
+      "baca": "—",
+      "id": "permisi, mau tanya"
+    },
+    {
+      "ms": "lepas tu",
+      "baca": "ləpas tu",
+      "id": "setelah itu, terus"
+    },
+    {
+      "ms": "lampu isyarat",
+      "baca": "—",
+      "id": "lampu lalu lintas"
+    },
+    {
+      "ms": "simpang",
+      "baca": "simpang",
+      "id": "persimpangan"
+    },
+    {
+      "ms": "bulatan",
+      "baca": "bulatan",
+      "id": "bundaran"
+    },
+    {
+      "ms": "pusing balik",
+      "baca": "—",
+      "id": "putar balik ⚠️"
+    },
+    {
+      "ms": "jalan sehala",
+      "baca": "—",
+      "id": "jalan satu arah"
+    },
+    {
+      "ms": "lebuh raya",
+      "baca": "ləbuh rayə",
+      "id": "jalan tol"
+    },
+    {
+      "ms": "jejambat",
+      "baca": "jəjambat",
+      "id": "jembatan layang"
+    },
+    {
+      "ms": "tambang",
+      "baca": "tambang",
+      "id": "ongkos, tarif ⚠️"
+    },
+    {
+      "ms": "teksi",
+      "baca": "téksi",
+      "id": "taksi"
+    },
+    {
+      "ms": "bas",
+      "baca": "bas",
+      "id": "bus"
+    },
+    {
+      "ms": "lori",
+      "baca": "lori",
+      "id": "truk"
+    },
+    {
+      "ms": "basikal",
+      "baca": "basikal",
+      "id": "sepeda"
+    },
+    {
+      "ms": "kapal terbang",
+      "baca": "—",
+      "id": "pesawat"
+    },
+    {
+      "ms": "lapangan terbang",
+      "baca": "—",
+      "id": "bandara"
+    },
+    {
+      "ms": "perhentian bas",
+      "baca": "—",
+      "id": "halte bus"
+    },
+    {
+      "ms": "tambah nilai",
+      "baca": "—",
+      "id": "isi ulang saldo"
+    },
+    {
+      "ms": "sesak / jem",
+      "baca": "səsak · jém",
+      "id": "macet, padat"
+    },
+    {
+      "ms": "sesat",
+      "baca": "səsat",
+      "id": "tersesat, nyasar"
+    },
+    {
+      "ms": "melintas",
+      "baca": "məlintas",
+      "id": "menyeberang"
+    },
+    {
+      "ms": "hujung",
+      "baca": "hujung",
+      "id": "ujung"
+    },
+    {
+      "ms": "berhampiran",
+      "baca": "bərhampiran",
+      "id": "di dekat"
+    },
+    {
+      "ms": "jadual",
+      "baca": "jadual",
+      "id": "jadwal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis kata Melayu untuk hal berikut.",
+      "items": [
+        "mobil",
+        "sepeda",
+        "truk",
+        "bandara",
+        "halte bus",
+        "jalan tol"
+      ]
+    },
+    {
+      "prompt": "Lengkapi arah berikut.",
+      "items": [
+        "Jalan ____ sampai lampu isyarat. (terus)",
+        "Lepas tu ____ kiri. (belok)",
+        "Stesen kat ____ kanan. (sebelah)",
+        "Ikut jalan ni sampai ____. (ujung)",
+        "Kalau terlepas, ____ balik. (putar)",
+        "Kedai tu ____ masjid. (di dekat)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Permisi, stasiun LRT di mana?",
+        "Jauh nggak kalau jalan kaki?",
+        "Berapa ongkos ke sana?",
+        "Bisa berhenti di depan situ?",
+        "Saya nyasar.",
+        "Jalannya macet banget."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang betul.",
+      "items": [
+        "kat / stesen / mana / tanya / tumpang / ?",
+        "kiri / tu / lepas / belok",
+        "je / dekat / minit / lima",
+        "sini / tak / dari / jauh / ?",
+        "kat / berhenti / boleh / depan / tu / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "kereta — basikal — lori — lapangan terbang — perhentian bas — lebuh raya",
+    "lurus / terus — belok — sebelah — hujung — pusing — berhampiran",
+    "Tumpang tanya, stesen LRT kat mana? — Jauh tak kalau jalan kaki? — Berapa tambang ke sana? — Boleh berhenti kat depan tu? — Saya sesat. — Jalan sesak sangat. / Jalan jem sangat.",
+    "Tumpang tanya, stesen kat mana? — Lepas tu belok kiri. — Lima minit je dekat. / Dekat, lima minit je. — Jauh tak dari sini? — Boleh berhenti kat depan tu?"
+  ]
+}

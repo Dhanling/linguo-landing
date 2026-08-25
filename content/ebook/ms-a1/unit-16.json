@@ -1,0 +1,600 @@
+{
+  "title": "Bank, telefon, dan urusan rasmi",
+  "title_target": "Nak buka akaun boleh?",
+  "goal": "Menyelesaikan urusan yang tidak bisa dihindari — membuka akaun bank, mengisi borang, membeli SIM kad, dan berhadapan dengan kaunter kerajaan.",
+  "bekal": [
+    "mengisi borang rasmi Malaysia tanpa menebak-nebak isian",
+    "membuka akaun bank dan mengurus telefon",
+    "memahami istilah imigresen dan dokumen rasmi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Di kaunter bank",
+      "intro": "Sarah perlu akaun bank tempatan untuk menerima biasiswa. Ia mengambil nombor giliran dan menunggu empat puluh minit sebelum dipanggil.",
+      "lines": [
+        {
+          "speaker": "Pegawai:",
+          "text": "Nombor sembilan puluh tiga. Ya cik, apa yang boleh saya bantu?",
+          "id": "Nomor sembilan puluh tiga. Ya, Mbak, ada yang bisa saya bantu?",
+          "literal": "nomor sembilan puluh tiga. ya cik, apa yang boleh saya bantu?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya nak buka akaun simpanan.",
+          "id": "Saya mau buka rekening tabungan.",
+          "literal": "saya mau buka akun simpanan."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Cik warganegara Malaysia?",
+          "id": "Anda warga negara Malaysia?",
+          "literal": "cik warga negara Malaysia?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bukan, saya pelajar antarabangsa dari Indonesia.",
+          "id": "Bukan, saya mahasiswa internasional dari Indonesia.",
+          "literal": "bukan, saya pelajar internasional dari Indonesia."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Kalau macam tu saya perlu pasport, visa pelajar, dan surat pengesahan universiti.",
+          "id": "Kalau begitu saya perlu paspor, visa pelajar, dan surat keterangan universitas.",
+          "literal": "kalau macam itu saya perlu paspor, visa pelajar, dan surat pengesahan universitas."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Semua ada. Ni pasport, ni surat dari pejabat antarabangsa.",
+          "id": "Semua ada. Ini paspor, ini surat dari kantor internasional.",
+          "literal": "semua ada. ini paspor, ini surat dari kantor internasional."
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Bagus. Sila isi borang ni. Guna huruf besar.",
+          "id": "Bagus. Silakan isi formulir ini. Pakai huruf kapital.",
+          "literal": "bagus. silakan isi formulir ini. guna huruf besar."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Encik, ruangan 'alamat tetap' ni maksudnya apa?",
+          "id": "Pak, kolom 'alamat tetap' ini maksudnya apa?",
+          "literal": "encik, ruangan 'alamat tetap' ini maksudnya apa?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Alamat rumah kekal cik kat Indonesia. Yang bawah tu alamat semasa kat Malaysia.",
+          "id": "Alamat rumah permanen Anda di Indonesia. Yang bawah itu alamat sekarang di Malaysia.",
+          "literal": "alamat rumah kekal kamu di Indonesia. yang bawah itu alamat sekarang di Malaysia."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Faham. Deposit permulaan berapa?",
+          "id": "Paham. Setoran awalnya berapa?",
+          "literal": "paham. deposit permulaan berapa?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Dua puluh ringgit. Kad debit siap dalam tujuh hari bekerja.",
+          "id": "Dua puluh ringgit. Kartu debitnya jadi dalam tujuh hari kerja.",
+          "literal": "dua puluh ringgit. kartu debit siap dalam tujuh hari bekerja."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Boleh guna perbankan internet terus?",
+          "id": "Bisa langsung pakai internet banking?",
+          "literal": "boleh guna perbankan internet terus?"
+        },
+        {
+          "speaker": "Pegawai:",
+          "text": "Boleh. Saya daftarkan sekali. Sila tandatangan kat sini dan sini.",
+          "id": "Bisa. Saya daftarkan sekalian. Silakan tanda tangan di sini dan di sini.",
+          "literal": "boleh. saya daftarkan sekali. silakan tanda tangan di sini dan sini."
+        }
+      ],
+      "notes": [
+        "**Akaun** = rekening, akun. *Akaun simpanan* = rekening tabungan, *akaun semasa* = rekening giro. Bahasa Indonesia memakai \"rekening\" (dari Belanda); Malaysia memakai *akaun* (dari Inggris). Kata \"rekening\" tidak dipakai di Malaysia sama sekali.",
+        "**Pengesahan** = pengesahan, konfirmasi, verifikasi. *Surat pengesahan* = surat keterangan resmi. Keluarga katanya: *sah* (sah), *mengesahkan* (mengonfirmasi), *disahkan* (disahkan). Dokumen apa pun yang perlu dicap disebut *disahkan*.",
+        "**Ruangan** dalam borang berarti **kolom, bagian isian** — bukan ruangan fisik. *Ruangan nama* = kolom nama. Ini pemakaian yang khas Malaysia dan sering membingungkan pada pandangan pertama.",
+        "**Kekal** = tetap, permanen. *Alamat kekal* = alamat tetap, *penduduk tetap* juga disebut *pemastautin tetap*. Bahasa Indonesia memakai \"tetap\" dan \"permanen\".",
+        "**Semasa** = saat ini, sekarang. *Alamat semasa* = alamat sekarang, *isu semasa* = isu terkini. ⚠️ Bahasa Indonesia memakai *semasa* dengan arti \"ketika, pada masa\" — beda. Ini jebakan halus yang muncul di setiap borang."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca borang rasmi Malaysia",
+          "body": [
+            "Hampir setiap urusan di Malaysia dimulai dengan borang, dan istilahnya baku di semua badan — bank, universiti, imigresen, hospital. Hafalkan tabel ini sekali dan kamu tidak akan tersesat di borang mana pun."
+          ],
+          "table": {
+            "head": [
+              "Pada borang",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "**Nama penuh**",
+                "Nama lengkap"
+              ],
+              [
+                "**No. Kad Pengenalan / No. Pasport**",
+                "No. KTP / No. Paspor"
+              ],
+              [
+                "**Tarikh lahir**",
+                "Tanggal lahir"
+              ],
+              [
+                "**Tempat lahir**",
+                "Tempat lahir"
+              ],
+              [
+                "**Jantina**",
+                "Jenis kelamin ⚠️"
+              ],
+              [
+                "**Lelaki / Perempuan**",
+                "Laki-laki / Perempuan"
+              ],
+              [
+                "**Bangsa / Kaum**",
+                "Suku bangsa"
+              ],
+              [
+                "**Warganegara**",
+                "Kewarganegaraan"
+              ],
+              [
+                "**Agama**",
+                "Agama"
+              ],
+              [
+                "**Taraf perkahwinan**",
+                "Status perkawinan ⚠️"
+              ],
+              [
+                "**Bujang / Berkahwin / Duda / Janda**",
+                "Lajang / Menikah / Duda / Janda"
+              ],
+              [
+                "**Alamat kekal**",
+                "Alamat tetap"
+              ],
+              [
+                "**Alamat semasa / surat-menyurat**",
+                "Alamat sekarang / korespondensi"
+              ],
+              [
+                "**Poskod**",
+                "Kode pos ⚠️"
+              ],
+              [
+                "**Negeri**",
+                "Provinsi (negara bagian) ⚠️"
+              ],
+              [
+                "**No. telefon bimbit**",
+                "No. HP"
+              ],
+              [
+                "**Pekerjaan / Jawatan**",
+                "Pekerjaan / Jabatan"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Negeri** berarti **negara bagian**, bukan \"negara\". Malaysia punya 13 *negeri* (Selangor, Johor, Pahang…) dan 3 *Wilayah Persekutuan*. Untuk \"negara\" bahasa Melayu memakai **negara**. Kalau borang meminta *Negeri*, ia menanyakan negara bagian tempat tinggalmu di Malaysia — bukan Indonesia.",
+            "⚠️ **Jantina** = jenis kelamin. Kata ini tidak ada dalam bahasa Indonesia dan muncul di setiap borang Malaysia. **Taraf** = status, tingkat: *taraf perkahwinan*, *taraf pendidikan*, *taraf hidup*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bank dan wang",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**akaun simpanan / semasa**",
+              "rekening tabungan / giro"
+            ],
+            [
+              "**baki**",
+              "saldo ⚠️"
+            ],
+            [
+              "**semak baki**",
+              "cek saldo"
+            ],
+            [
+              "**deposit / masuk duit**",
+              "setor uang"
+            ],
+            [
+              "**keluarkan duit / pengeluaran**",
+              "tarik tunai"
+            ],
+            [
+              "**pindahan wang / transfer**",
+              "transfer"
+            ],
+            [
+              "**caj / yuran**",
+              "biaya / iuran ⚠️"
+            ],
+            [
+              "**faedah**",
+              "bunga (bank) ⚠️"
+            ],
+            [
+              "**pinjaman**",
+              "pinjaman, kredit"
+            ],
+            [
+              "**ansuran / bayaran bulanan**",
+              "cicilan"
+            ],
+            [
+              "**kad debit / kad kredit**",
+              "kartu debit / kredit"
+            ],
+            [
+              "**mesin ATM**",
+              "ATM"
+            ],
+            [
+              "**penyata bank**",
+              "rekening koran"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Baki** = saldo, sisa. *Semak baki* = cek saldo, *baki kredit* = sisa kuota. Bahasa Indonesia memakai \"saldo\" dan \"sisa\"; kata *baki* di Indonesia berarti nampan. Ini kata yang akan kamu lihat di setiap mesin ATM Malaysia."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Faedah** dalam konteks bank berarti **bunga**; dalam konteks umum ia berarti **manfaat, faedah**. *Kadar faedah* = suku bunga. Untuk bank Islam istilahnya berbeda sama sekali (*keuntungan*, *ujrah*), karena bunga tidak dipakai. **Caj** (dari *charge*) = biaya, dan **yuran** = iuran/uang sekolah."
+        },
+        {
+          "type": "sub",
+          "text": "Telefon dan internet"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**telefon bimbit**",
+              "ponsel, HP ⚠️"
+            ],
+            [
+              "**SIM kad / kad prabayar**",
+              "kartu SIM / kartu prabayar"
+            ],
+            [
+              "**tambah nilai / top up**",
+              "isi pulsa ⚠️"
+            ],
+            [
+              "**kredit**",
+              "pulsa ⚠️"
+            ],
+            [
+              "**pakej data**",
+              "paket data"
+            ],
+            [
+              "**pascabayar / prabayar**",
+              "pascabayar / prabayar"
+            ],
+            [
+              "**liputan**",
+              "sinyal, jangkauan ⚠️"
+            ],
+            [
+              "**talian**",
+              "jaringan, saluran ⚠️"
+            ],
+            [
+              "**dalam talian / luar talian**",
+              "online / offline ⚠️"
+            ],
+            [
+              "**mesej / SMS**",
+              "pesan / SMS"
+            ],
+            [
+              "**panggilan**",
+              "panggilan telepon"
+            ],
+            [
+              "**hubungi**",
+              "hubungi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Kredit** = pulsa. *Kredit saya dah habis* = pulsa saya sudah habis. Ini pemakaian yang sepenuhnya berbeda dari bahasa Indonesia dan langsung membingungkan pada pertemuan pertama. **Dalam talian** = online — istilah yang muncul di semua situs kerajaan Malaysia (*permohonan dalam talian* = pengajuan online)."
+        },
+        {
+          "type": "p",
+          "text": "**Kata laluan** = password, secara harfiah \"kata untuk lewat\". Bahasa Indonesia memakai \"kata sandi\". Kedua bahasa membentuk katanya sendiri, dan keduanya tidak saling paham tanpa penjelasan."
+        }
+      ]
+    },
+    {
+      "title": "Kaunter kerajaan dan imigresen",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**Jabatan Imigresen**",
+              "Ditjen Imigrasi"
+            ],
+            [
+              "**pas pelajar**",
+              "izin tinggal pelajar"
+            ],
+            [
+              "**permit kerja**",
+              "izin kerja"
+            ],
+            [
+              "**visa**",
+              "visa"
+            ],
+            [
+              "**pasport**",
+              "paspor"
+            ],
+            [
+              "**cop masuk / keluar**",
+              "cap masuk / keluar"
+            ],
+            [
+              "**tempoh sah laku**",
+              "masa berlaku ⚠️"
+            ],
+            [
+              "**lanjutkan / perbaharui**",
+              "perpanjang / perbarui"
+            ],
+            [
+              "**denda**",
+              "denda"
+            ],
+            [
+              "**Kad Pengenalan / MyKad**",
+              "KTP"
+            ],
+            [
+              "**MyKAD / MyPR / MyTentera**",
+              "jenis kartu identitas Malaysia"
+            ],
+            [
+              "**Jabatan Pendaftaran Negara**",
+              "Dukcapil"
+            ],
+            [
+              "**Balai Polis**",
+              "Kantor Polisi"
+            ],
+            [
+              "**laporan polis**",
+              "laporan polisi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Tempoh sah laku** = masa berlaku. Kata **tempoh** berarti jangka waktu — ⚠️ dalam bahasa Indonesia *tempo* berarti kecepatan atau tenggat, jadi jebakannya halus. *Tempoh sah laku pasport* = masa berlaku paspor."
+        },
+        {
+          "type": "p",
+          "text": "**Perkhidmatan** = layanan, jasa. Keluarga katanya besar: *khidmat* (jasa), *berkhidmat* (mengabdi), *perkhidmatan awam* (pelayanan publik / PNS). Bahasa Indonesia memakai \"layanan\" dan \"pelayanan\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat di kaunter mana pun",
+          "items": [
+            "**Saya nak urus …** — Saya mau urus …",
+            "**Perlu dokumen apa?** — Perlu dokumen apa saja?",
+            "**Borang ni kena isi semua ke?** — Formulir ini harus diisi semua?",
+            "**Ruangan ni maksudnya apa?** — Kolom ini maksudnya apa?",
+            "**Berapa lama proses ni?** — Berapa lama prosesnya?",
+            "**Ada bayaran tak?** — Ada biayanya nggak?",
+            "**Saya kena datang balik bila?** — Saya harus datang lagi kapan?",
+            "**Boleh buat dalam talian tak?** — Bisa dilakukan online nggak?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu nasihat praktis yang berlaku di semua kaunter Malaysia: **bawa salinan** (fotokopi) setiap dokumen, dan bawa juga yang asli. Kata yang akan kamu dengar: *salinan* (fotokopi), *asal* (asli), *disahkan* (dilegalisasi). Kalimat lengkapnya: *Perlu salinan yang disahkan tak?* = \"Perlu fotokopi yang dilegalisasi nggak?\""
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "akaun",
+      "baca": "akaun",
+      "id": "rekening, akun"
+    },
+    {
+      "ms": "baki",
+      "baca": "baki",
+      "id": "saldo, sisa ⚠️"
+    },
+    {
+      "ms": "faedah",
+      "baca": "faédah",
+      "id": "bunga; manfaat ⚠️"
+    },
+    {
+      "ms": "caj / yuran",
+      "baca": "caj · yuran",
+      "id": "biaya / iuran"
+    },
+    {
+      "ms": "borang",
+      "baca": "borang",
+      "id": "formulir"
+    },
+    {
+      "ms": "ruangan",
+      "baca": "ruangan",
+      "id": "kolom isian ⚠️"
+    },
+    {
+      "ms": "jantina",
+      "baca": "jantinə",
+      "id": "jenis kelamin ⚠️"
+    },
+    {
+      "ms": "taraf",
+      "baca": "taraf",
+      "id": "status, tingkat"
+    },
+    {
+      "ms": "bujang",
+      "baca": "bujang",
+      "id": "lajang"
+    },
+    {
+      "ms": "kekal",
+      "baca": "kəkal",
+      "id": "tetap, permanen"
+    },
+    {
+      "ms": "semasa",
+      "baca": "səmasə",
+      "id": "saat ini ⚠️"
+    },
+    {
+      "ms": "negeri",
+      "baca": "nəgəri",
+      "id": "negara bagian ⚠️"
+    },
+    {
+      "ms": "poskod",
+      "baca": "poskod",
+      "id": "kode pos"
+    },
+    {
+      "ms": "salinan",
+      "baca": "salinan",
+      "id": "fotokopi, salinan"
+    },
+    {
+      "ms": "telefon bimbit",
+      "baca": "—",
+      "id": "ponsel, HP"
+    },
+    {
+      "ms": "kredit",
+      "baca": "krédit",
+      "id": "pulsa ⚠️"
+    },
+    {
+      "ms": "liputan",
+      "baca": "liputan",
+      "id": "sinyal, jangkauan ⚠️"
+    },
+    {
+      "ms": "dalam talian",
+      "baca": "—",
+      "id": "online ⚠️"
+    },
+    {
+      "ms": "kata laluan",
+      "baca": "—",
+      "id": "kata sandi"
+    },
+    {
+      "ms": "tempoh",
+      "baca": "témpoh",
+      "id": "jangka waktu ⚠️"
+    },
+    {
+      "ms": "perkhidmatan",
+      "baca": "pərkhidmatan",
+      "id": "layanan"
+    },
+    {
+      "ms": "imigresen",
+      "baca": "imigrésen",
+      "id": "imigrasi"
+    },
+    {
+      "ms": "nombor giliran",
+      "baca": "—",
+      "id": "nomor antrean"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Apa yang harus kamu tulis di ruangan borang ini?",
+      "items": [
+        "Jantina",
+        "Taraf perkahwinan",
+        "Alamat kekal",
+        "Alamat semasa",
+        "Negeri",
+        "Poskod"
+      ]
+    },
+    {
+      "prompt": "Tulis istilah Melayu untuk hal berikut.",
+      "items": [
+        "saldo",
+        "pulsa",
+        "online",
+        "kata sandi",
+        "formulir",
+        "nomor antrean"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Saya mau buka rekening tabungan.",
+        "Setoran awalnya berapa?",
+        "Kolom ini maksudnya apa?",
+        "Berapa lama prosesnya?",
+        "Ada biayanya nggak?",
+        "Bisa dilakukan online nggak?"
+      ]
+    },
+    {
+      "prompt": "Apa arti kata ini di Malaysia?",
+      "items": [
+        "baki",
+        "semasa",
+        "negeri",
+        "kredit (telefon)",
+        "tempoh sah laku"
+      ]
+    }
+  ],
+  "answers": [
+    "Jenis kelamin (Lelaki/Perempuan) — Status perkawinan (Bujang/Berkahwin) — Alamat tetap di negara asal — Alamat sekarang di Malaysia — Negara bagian di Malaysia — Kode pos",
+    "baki — kredit — dalam talian — kata laluan — borang — nombor giliran",
+    "Saya nak buka akaun simpanan. — Deposit permulaan berapa? — Ruangan ni maksudnya apa? — Berapa lama proses ni? — Ada bayaran tak? — Boleh buat dalam talian tak?",
+    "saldo, sisa — saat ini, sekarang — negara bagian — pulsa — masa berlaku"
+  ]
+}

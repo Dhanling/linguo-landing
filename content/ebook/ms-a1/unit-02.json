@@ -1,0 +1,512 @@
+{
+  "title": "Asal, kerja, dan bahasa",
+  "title_target": "Awak buat apa kat sini?",
+  "goal": "Menceritakan asal, pekerjaan, dan bahasa yang kamu kuasai — sambil memungut lapisan kosakata Malaysia yang diserap dari bahasa Inggris, bukan dari bahasa Belanda.",
+  "bekal": [
+    "menyebut pekerjaan dan tempat kerja dengan kata Malaysia yang betul",
+    "mengenali pola serapan Inggris yang membuat ratusan kata terbaca sendiri",
+    "memakai *buat apa*, *kat*, dan *nak* — tiga kata percakapan paling sering di Malaysia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Di kafeteria kolej",
+      "intro": "Petang hari, kafeteria kolej. Sarah duduk sendirian dengan nasi lemak ketika Haziq membawa dulangnya dan bertanya boleh duduk atau tidak.",
+      "lines": [
+        {
+          "speaker": "Haziq:",
+          "text": "Boleh duduk sini tak?",
+          "id": "Boleh duduk di sini, nggak?",
+          "literal": "boleh duduk sini tidak?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bolehlah, silakan.",
+          "id": "Boleh, silakan.",
+          "literal": "boleh-lah, silakan."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Saya Haziq. Awak buat apa kat sini? Belajar ke, kerja?",
+          "id": "Saya Haziq. Kamu ngapain di sini? Kuliah atau kerja?",
+          "literal": "saya Haziq. kamu buat apa di sini? belajar [tanya], kerja?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya belajar. Ambil jurusan Sains Komputer.",
+          "id": "Saya kuliah. Ambil jurusan Ilmu Komputer.",
+          "literal": "saya belajar. ambil jurusan Sains Komputer."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Wah, tahun berapa?",
+          "id": "Wah, tahun berapa?",
+          "literal": "wah, tahun berapa?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tahun satu. Baru mula. Awak pula?",
+          "id": "Tahun pertama. Baru mulai. Kamu sendiri?",
+          "literal": "tahun satu. baru mulai. kamu pula?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Saya tahun tiga, Kejuruteraan Awam. Ayah saya jurutera juga.",
+          "id": "Saya tahun tiga, Teknik Sipil. Ayah saya insinyur juga.",
+          "literal": "saya tahun tiga, kejuruteraan sipil. ayah saya insinyur juga."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ibu awak kerja apa?",
+          "id": "Ibu kamu kerja apa?",
+          "literal": "ibu kamu kerja apa?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Mak saya cikgu. Dia mengajar kat sekolah menengah.",
+          "id": "Ibu saya guru. Dia mengajar di SMA.",
+          "literal": "ibu saya guru. dia mengajar di sekolah menengah."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ayah saya doktor gigi, mak saya kakitangan bank.",
+          "id": "Ayah saya dokter gigi, ibu saya karyawan bank.",
+          "literal": "ayah saya dokter gigi, ibu saya karyawan bank."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Awak cakap Melayu elok juga. Belajar kat mana?",
+          "id": "Bahasa Melayu kamu bagus juga. Belajar di mana?",
+          "literal": "kamu bicara Melayu bagus juga. belajar di mana?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tak belajar pun — hampir sama dengan bahasa saya. Cuma perkataan je yang lain.",
+          "id": "Nggak belajar sama sekali — hampir sama dengan bahasa saya. Cuma kata-katanya yang beda.",
+          "literal": "tidak belajar pun — hampir sama dengan bahasa saya. cuma kata saja yang lain."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Betul tu. Nanti saya ajar awak perkataan orang sini.",
+          "id": "Betul itu. Nanti saya ajarin kamu kata-kata orang sini.",
+          "literal": "betul itu. nanti saya ajar kamu kata orang sini."
+        }
+      ],
+      "notes": [
+        "**Kat** adalah bentuk percakapan dari **di** — dipendekkan dari *dekat*. *Kat sini* = di sini, *kat rumah* = di rumah, *kat mana?* = di mana? Kata ini tidak ada dalam bahasa Indonesia sama sekali dan muncul di hampir setiap kalimat percakapan Malaysia. Dalam tulisan rasmi tetap ditulis *di*.",
+        "**Buat apa** berarti **sedang apa, ngapain** — bukan \"membuat apa\". *Awak buat apa?* = \"Kamu lagi ngapain?\" Kata *buat* dalam bahasa Melayu juga berarti **untuk**: *Ini buat awak* = \"Ini untuk kamu\".",
+        "**Cikgu** = guru. Kata ini dipendekkan dari *encik guru* dan dipakai sebagai sapaan sekaligus sebutan: *Cikgu, boleh tanya?* Padanan Indonesia \"Pak Guru/Bu Guru\" tidak dipakai. **Sekolah menengah** = SMP dan SMA sekaligus; **sekolah rendah** = SD.",
+        "**Kakitangan** berarti **karyawan, staf** — bukan \"kaki tangan\" dalam arti komplotan penjahat seperti bahasa Indonesia. Ini kata resmi yang tercetak di papan pengumuman: *Kakitangan sahaja* = \"Khusus karyawan\".",
+        "**Elok** berarti **bagus, baik, cantik** dan dipakai jauh lebih sering daripada di Indonesia. *Elok juga* = \"lumayan bagus\". Sepupunya: *cantik* (untuk barang dan orang), *bagus*, *hebat*."
+      ],
+      "grammars": [
+        {
+          "title": "Serapan Inggris: pola yang membuka ratusan kata sekaligus",
+          "body": [
+            "Bahasa Indonesia dibentuk oleh tiga setengah abad Belanda; bahasa Melayu oleh satu setengah abad Inggris. Kedua bahasa menyerap kata yang sama dari sumber yang berbeda, dan itulah asal sebagian besar perbedaan kosakata modern. Begitu kamu melihat polanya, kamu bisa menebak kata yang belum pernah kamu dengar."
+          ],
+          "table": {
+            "head": [
+              "Pola Inggris",
+              "Jadi",
+              "Contoh Melayu",
+              "Bahasa Indonesia"
+            ],
+            "rows": [
+              [
+                "-ty",
+                "**-ti**",
+                "universiti, kualiti, fakulti, komuniti",
+                "universitas, kualitas, fakultas, komunitas"
+              ],
+              [
+                "-sion / -tion",
+                "**-syen**",
+                "televisyen, stesyen, promosyen",
+                "televisi, stasiun, promosi"
+              ],
+              [
+                "-ic",
+                "**-ik**",
+                "elektrik, plastik, klinik",
+                "elektrik, plastik, klinik"
+              ],
+              [
+                "-al",
+                "**-al**",
+                "basikal, praktikal, formal",
+                "sepeda, praktis, formal"
+              ],
+              [
+                "-or / -er",
+                "**-or / -er**",
+                "doktor, motor, komputer",
+                "dokter, motor, komputer"
+              ],
+              [
+                "c- (k)",
+                "**k-**",
+                "kaunter, kabinet, kolej",
+                "konter, kabinet, kampus"
+              ],
+              [
+                "-ce",
+                "**-s**",
+                "lesen, ambulans",
+                "izin/SIM, ambulans"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa polanya tidak selalu berbeda — *plastik*, *klinik*, *formal*, *komputer* sama persis di dua bahasa. Yang berbeda justru kata yang bahasa Indonesianya mengambil jalan Belanda: *kantor* (Belanda *kantoor*) lawan *pejabat*; *apotek* (Belanda *apotheek*) lawan *farmasi*; *rekening* (Belanda) lawan *akaun*; *karcis* (Belanda *kaartje*) lawan *tiket*.",
+            "⚠️ Satu jebakan besar dalam tabel ini: **kolej** berarti kolese atau asrama mahasiswa, sedangkan kampus tetap *kampus*. Dan **doktor** dalam bahasa Melayu berarti **dokter** (yang mengobati), bukan gelar S3 — gelar S3 disebut *Doktor Falsafah (PhD)*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pekerjaan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Susunan kalimatnya sama dengan bahasa Indonesia — *Saya bekerja sebagai…*, *Saya seorang…*, atau tanpa kata kerja sama sekali (*Ayah saya doktor*). Yang perlu dihafal cuma katanya:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**cikgu / guru**",
+              "guru",
+              "*Cikgu* dalam percakapan dan sapaan."
+            ],
+            [
+              "**pensyarah**",
+              "dosen",
+              "Dari *lecturer*."
+            ],
+            [
+              "**doktor**",
+              "dokter",
+              "⚠️ Bukan gelar S3."
+            ],
+            [
+              "**jururawat**",
+              "perawat",
+              "*Juru* + *rawat*."
+            ],
+            [
+              "**peguam**",
+              "pengacara",
+              "Tidak ada di bahasa Indonesia."
+            ],
+            [
+              "**jurutera**",
+              "insinyur",
+              "*Juru* + *tera*."
+            ],
+            [
+              "**akauntan**",
+              "akuntan",
+              "Dari *accountant*."
+            ],
+            [
+              "**kerani**",
+              "juru tulis, staf administrasi",
+              "Dari *clerk*."
+            ],
+            [
+              "**kakitangan**",
+              "karyawan, staf",
+              "⚠️ Bukan komplotan."
+            ],
+            [
+              "**penjawat awam**",
+              "pegawai negeri",
+              "*Awam* = umum/publik."
+            ],
+            [
+              "**peniaga**",
+              "pedagang, pengusaha",
+              "Dari *niaga*."
+            ],
+            [
+              "**usahawan**",
+              "wirausahawan",
+              "Sama seperti Indonesia."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata **juru** membentuk banyak nama pekerjaan dalam bahasa Melayu, jauh lebih produktif daripada di Indonesia: *jurutera* (insinyur), *jururawat* (perawat), *juruterbang* (pilot), *jurugambar* (fotografer), *jurulatih* (pelatih), *juruaudit*, *jurubahasa* (penerjemah lisan). Kalau kamu bertemu kata baru berawalan *juru-*, tebakannya hampir selalu \"orang yang ahli mengerjakan X\"."
+        }
+      ]
+    },
+    {
+      "title": "Negara, bangsa, dan bahasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Persis seperti bahasa Indonesia: nama negara berhuruf besar, nama bahasa memakai kata *bahasa* di depannya, dan kebangsaan memakai *orang*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Negara",
+            "Orangnya",
+            "Bahasanya"
+          ],
+          "rows": [
+            [
+              "Malaysia",
+              "orang Malaysia",
+              "bahasa Melayu"
+            ],
+            [
+              "Indonesia",
+              "orang Indonesia",
+              "bahasa Indonesia"
+            ],
+            [
+              "Singapura",
+              "orang Singapura",
+              "bahasa Melayu, Inggeris, Mandarin, Tamil"
+            ],
+            [
+              "Brunei",
+              "orang Brunei",
+              "bahasa Melayu"
+            ],
+            [
+              "Thailand",
+              "orang Thai",
+              "bahasa Thai"
+            ],
+            [
+              "Filipina",
+              "orang Filipina",
+              "bahasa Filipina"
+            ],
+            [
+              "China",
+              "orang Cina",
+              "bahasa Mandarin"
+            ],
+            [
+              "Jepun",
+              "orang Jepun",
+              "bahasa Jepun"
+            ],
+            [
+              "Korea",
+              "orang Korea",
+              "bahasa Korea"
+            ],
+            [
+              "England",
+              "orang Inggeris",
+              "bahasa Inggeris"
+            ],
+            [
+              "Belanda",
+              "orang Belanda",
+              "bahasa Belanda"
+            ],
+            [
+              "Arab Saudi",
+              "orang Arab",
+              "bahasa Arab"
+            ],
+            [
+              "India",
+              "orang India",
+              "bahasa Hindi, Tamil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua ejaan yang perlu diperhatikan: **Jepun** (bukan *Jepang*) dan **Inggeris** (bukan *Inggris*, dengan huruf *e* tambahan). Keduanya muncul terus-menerus dalam tulisan Malaysia dan langsung menandai tulisan siapa pun yang salah menulisnya."
+        },
+        {
+          "type": "p",
+          "text": "Di Malaysia, kata **bangsa** dan **kaum** dipakai untuk kelompok etnik dalam negeri: *orang Melayu*, *orang Cina*, *orang India*, *kaum Iban*, *kaum Kadazan*. Ini pemakaian sehari-hari yang biasa dan tidak berkonotasi buruk — berbeda dengan kepekaan di Indonesia terhadap kata serupa. Perhatikan juga bahwa **orang Melayu** (kelompok etnik) berbeda dari **orang Malaysia** (warga negara); mencampuradukkan keduanya adalah kesalahan yang cepat terdengar."
+        },
+        {
+          "type": "kotak",
+          "title": "Bertanya balik",
+          "items": [
+            "**Awak buat apa kat sini?** — Kamu ngapain di sini?",
+            "**Awak kerja apa?** — Kamu kerja apa?",
+            "**Awak belajar apa?** — Kamu kuliah jurusan apa?",
+            "**Awak orang mana?** — Kamu orang mana? (asal daerah)",
+            "**Awak duduk kat mana?** — Kamu tinggal di mana? (⚠️ *duduk* juga berarti *bertempat tinggal*)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "kat (di)",
+      "baca": "kat",
+      "id": "di"
+    },
+    {
+      "ms": "buat apa",
+      "baca": "buat apə",
+      "id": "sedang apa, ngapain"
+    },
+    {
+      "ms": "cikgu",
+      "baca": "cikgu",
+      "id": "guru"
+    },
+    {
+      "ms": "pensyarah",
+      "baca": "pənsyarah",
+      "id": "dosen"
+    },
+    {
+      "ms": "kakitangan",
+      "baca": "kakitangan",
+      "id": "karyawan ⚠️"
+    },
+    {
+      "ms": "jurutera",
+      "baca": "jurutərə",
+      "id": "insinyur"
+    },
+    {
+      "ms": "jururawat",
+      "baca": "jururawat",
+      "id": "perawat"
+    },
+    {
+      "ms": "peguam",
+      "baca": "pəguam",
+      "id": "pengacara"
+    },
+    {
+      "ms": "kolej",
+      "baca": "koléj",
+      "id": "asrama/kolese ⚠️"
+    },
+    {
+      "ms": "kejuruteraan",
+      "baca": "kəjurutəraan",
+      "id": "teknik (jurusan)"
+    },
+    {
+      "ms": "sains",
+      "baca": "sains",
+      "id": "ilmu, sains"
+    },
+    {
+      "ms": "sekolah rendah",
+      "baca": "—",
+      "id": "SD"
+    },
+    {
+      "ms": "sekolah menengah",
+      "baca": "—",
+      "id": "SMP/SMA"
+    },
+    {
+      "ms": "elok",
+      "baca": "élok",
+      "id": "bagus, baik"
+    },
+    {
+      "ms": "pula",
+      "baca": "pulə",
+      "id": "sendiri, pula"
+    },
+    {
+      "ms": "perkataan",
+      "baca": "pərkataan",
+      "id": "kata"
+    },
+    {
+      "ms": "mula",
+      "baca": "mulə",
+      "id": "mulai"
+    },
+    {
+      "ms": "duduk",
+      "baca": "duduk",
+      "id": "duduk; bertempat tinggal ⚠️"
+    },
+    {
+      "ms": "Jepun",
+      "baca": "jəpun",
+      "id": "Jepang"
+    },
+    {
+      "ms": "Inggeris",
+      "baca": "inggəris",
+      "id": "Inggris"
+    },
+    {
+      "ms": "kaum",
+      "baca": "kaum",
+      "id": "kelompok etnik"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis kata Melayu untuk pekerjaan berikut.",
+      "items": [
+        "dosen",
+        "perawat",
+        "pengacara",
+        "insinyur",
+        "karyawan, staf",
+        "guru"
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat rasmi ini jadi bahasa percakapan (pakai *kat*, *tak*, *je*, *nak*).",
+      "items": [
+        "Saya tinggal di Kuala Lumpur.",
+        "Dia tidak datang hari ini.",
+        "Saya mahu makan sahaja.",
+        "Awak belajar di mana?",
+        "Buku itu tidak ada di sini."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Kamu ngapain di sini?",
+        "Saya kuliah jurusan Ilmu Komputer.",
+        "Ibu saya guru di SMA.",
+        "Ayah saya insinyur.",
+        "Bahasa Melayu kamu bagus juga.",
+        "Kamu tinggal di mana?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang betul.",
+      "items": [
+        "kat / apa / buat / awak / sini / ?",
+        "cikgu / saya / mak / sekolah / kat / mengajar",
+        "je / lain / perkataan / cuma",
+        "tak / sini / boleh / duduk / ?",
+        "jurutera / ayah / juga / saya"
+      ]
+    }
+  ],
+  "answers": [
+    "pensyarah — jururawat — peguam — jurutera — kakitangan — cikgu / guru",
+    "Saya duduk kat Kuala Lumpur. — Dia tak datang hari ni. — Saya nak makan je. — Awak belajar kat mana? — Buku tu takde kat sini.",
+    "Awak buat apa kat sini? — Saya belajar Sains Komputer. — Mak saya cikgu kat sekolah menengah. — Ayah saya jurutera. — Awak cakap Melayu elok juga. — Awak duduk kat mana?",
+    "Awak buat apa kat sini? — Mak saya cikgu, mengajar kat sekolah. — Cuma perkataan je yang lain. — Boleh duduk sini tak? — Ayah saya jurutera juga."
+  ]
+}

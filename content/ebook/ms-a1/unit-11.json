@@ -1,0 +1,564 @@
+{
+  "title": "Bercerita: semalam, esok, hujung minggu",
+  "title_target": "Semalam saya pergi Bukit Bintang",
+  "goal": "Merangkai peristiwa jadi cerita — kata penyambung, urutan waktu, dan cara orang Malaysia bercerita tentang akhir pekannya.",
+  "bekal": [
+    "menyambung kalimat dengan *lepas tu*, *kemudian*, *akhirnya*, *sebelum*, *selepas*",
+    "meletakkan keterangan waktu di tempat yang alami",
+    "bercerita tentang hujung minggu dengan kosakata hiburan Malaysia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Isnin pagi di kafeteria",
+      "intro": "Isnin pagi. Aina belum sempat duduk sebelum bertanya ke mana Sarah menghilang sepanjang hujung minggu.",
+      "lines": [
+        {
+          "speaker": "Aina:",
+          "text": "Eh, hujung minggu semalam awak ke mana? Bilik kosong je.",
+          "id": "Eh, akhir pekan kemarin kamu ke mana? Kamarnya kosong terus.",
+          "literal": "eh, ujung minggu kemarin kamu ke mana? kamar kosong saja."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya pergi Bukit Bintang dengan kawan dari Indonesia.",
+          "id": "Saya pergi ke Bukit Bintang sama teman dari Indonesia.",
+          "literal": "saya pergi Bukit Bintang dengan kawan dari Indonesia."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Best tak? Buat apa kat sana?",
+          "id": "Seru nggak? Ngapain di sana?",
+          "literal": "asyik tidak? buat apa di sana?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Mula-mula kami makan tengah hari kat Jalan Alor.",
+          "id": "Awalnya kami makan siang di Jalan Alor.",
+          "literal": "mula-mula kami makan tengah hari di Jalan Alor."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Sedap kan sana? Lepas tu?",
+          "id": "Enak, kan, di sana? Terus?",
+          "literal": "enak kan sana? setelah itu?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lepas tu kami jalan-jalan kat Pavilion. Sejuk sangat dalam tu.",
+          "id": "Terus kami jalan-jalan di Pavilion. Dingin banget di dalam.",
+          "literal": "setelah itu kami jalan-jalan di Pavilion. dingin sangat dalam itu."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Beli apa-apa tak?",
+          "id": "Beli apa-apa nggak?",
+          "literal": "beli apa-apa tidak?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tengok je. Mahal sangat. Kemudian kami naik ke KLCC.",
+          "id": "Lihat-lihat aja. Mahal banget. Kemudian kami ke KLCC.",
+          "literal": "lihat saja. mahal sangat. kemudian kami naik ke KLCC."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Naik menara tak?",
+          "id": "Naik menaranya nggak?",
+          "literal": "naik menara tidak?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tak sempat. Tiket dah habis. Kami tengok air pancut je.",
+          "id": "Nggak sempat. Tiketnya sudah habis. Kami lihat air mancur aja.",
+          "literal": "tidak sempat. tiket sudah habis. kami lihat air pancur saja."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Balik pukul berapa?",
+          "id": "Pulangnya jam berapa?",
+          "literal": "pulang pukul berapa?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lambat. Akhirnya kami sampai kolej pukul dua belas malam.",
+          "id": "Telat. Akhirnya kami sampai kolej jam dua belas malam.",
+          "literal": "telat. akhirnya kami sampai kolej pukul dua belas malam."
+        },
+        {
+          "speaker": "Aina:",
+          "text": "Patutlah muka awak macam tu pagi ni!",
+          "id": "Pantas muka kamu kayak gitu pagi ini!",
+          "literal": "pantas-lah muka kamu macam itu pagi ini!"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Berbaloi. Minggu depan kita pergi sekali ya.",
+          "id": "Sepadan, kok. Minggu depan kita pergi bareng, ya.",
+          "literal": "sepadan. minggu depan kita pergi sekali ya."
+        }
+      ],
+      "notes": [
+        "**Hujung minggu** = akhir pekan. Bahasa Indonesia berkata \"akhir pekan\" atau \"weekend\"; bahasa Melayu memakai *hujung minggu*, dan kata *hujung* (bukan *ujung*) muncul di banyak ungkapan: *hujung tahun*, *hujung bulan*, *hujung jalan*.",
+        "**Best** adalah kata Inggris yang sudah jadi kata Melayu sepenuhnya, dan artinya **seru, asyik, menyenangkan** — bukan \"terbaik\". *Best tak?* = \"Seru nggak?\", *Best gila!* = \"Seru banget!\". Ia dipakai di semua lapisan usia dan tidak terasa asing sama sekali. Kata Melayu asli yang sepadan: *seronok* (⚠️ ingat unit 3).",
+        "**Berbaloi** = sepadan, worth it. Kata ini tidak ada dalam bahasa Indonesia dan sangat sering dipakai: *tak berbaloi* = nggak sepadan, *berbaloi ke?* = worth it, nggak?",
+        "**Air pancut** = air mancur. Perhatikan *pancut*, bukan *mancur*. Bahasa Melayu juga memakai *pancutan air*.",
+        "**Sempat** dipakai persis seperti bahasa Indonesia. **Tak sempat** = tidak sempat. Ini salah satu dari banyak kata yang tidak perlu kamu ubah sama sekali."
+      ],
+      "grammars": [
+        {
+          "title": "Kata penyambung cerita",
+          "body": [
+            "Perbedaannya dengan bahasa Indonesia bukan di susunan, melainkan di **pilihan kata**. Susunan kalimat bercerita sama persis; yang menandai bahasa Melayu adalah penyambungnya."
+          ],
+          "table": {
+            "head": [
+              "Bahasa Melayu",
+              "Bahasa Indonesia",
+              "Kerasmian"
+            ],
+            "rows": [
+              [
+                "**mula-mula / pada mulanya**",
+                "awalnya, mula-mula",
+                "Netral"
+              ],
+              [
+                "**lepas tu**",
+                "terus, habis itu",
+                "Percakapan ⭐"
+              ],
+              [
+                "**selepas itu / kemudian**",
+                "setelah itu, kemudian",
+                "Rasmi"
+              ],
+              [
+                "**sambil**",
+                "sambil",
+                "Sama"
+              ],
+              [
+                "**sementara**",
+                "sementara",
+                "Sama"
+              ],
+              [
+                "**tiba-tiba**",
+                "tiba-tiba",
+                "Sama"
+              ],
+              [
+                "**akhirnya**",
+                "akhirnya",
+                "Sama"
+              ],
+              [
+                "**sebab tu / oleh itu**",
+                "makanya, oleh karena itu",
+                "Percakapan / rasmi"
+              ],
+              [
+                "**tapi / tetapi**",
+                "tapi / tetapi",
+                "Sama"
+              ],
+              [
+                "**walaupun / walhal**",
+                "walaupun / padahal",
+                "⚠️ *Walhal* = padahal"
+              ],
+              [
+                "**lagipun**",
+                "lagipula",
+                "—"
+              ],
+              [
+                "**pada masa yang sama**",
+                "pada saat yang sama",
+                "Rasmi"
+              ]
+            ]
+          },
+          "after": [
+            "**Lepas tu** adalah penyambung paling sering dalam cerita lisan Malaysia — kamu akan mendengarnya tiga sampai empat kali dalam satu cerita pendek. Menirunya adalah cara termudah membuat ceritamu terdengar alami.",
+            "⚠️ **Walhal** berarti **padahal**, dan bentuknya cukup jauh dari kebiasaan Indonesia sampai sering tidak dikenali: *Dia cakap dah siap, walhal belum mula lagi.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Meletakkan keterangan waktu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sama seperti bahasa Indonesia, keterangan waktu boleh di depan atau di belakang kalimat. Yang khas Malaysia adalah kecenderungan meletakkannya **di depan** dalam cerita lisan:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**Semalam** saya pergi KL.",
+              "Kemarin saya pergi ke KL."
+            ],
+            [
+              "**Pagi tadi** dia telefon saya.",
+              "Tadi pagi dia menelepon saya."
+            ],
+            [
+              "**Minggu lepas** kami ke Melaka.",
+              "Minggu lalu kami ke Melaka."
+            ],
+            [
+              "**Nanti petang** saya jumpa dia.",
+              "Nanti sore saya menemuinya."
+            ],
+            [
+              "**Esok pagi** ada kelas.",
+              "Besok pagi ada kelas."
+            ],
+            [
+              "**Dua hari lepas** saya sampai.",
+              "Dua hari lalu saya tiba."
+            ],
+            [
+              "**Tahun lepas** saya belum kenal dia.",
+              "Tahun lalu saya belum kenal dia."
+            ],
+            [
+              "Saya pergi **pukul lapan**.",
+              "Saya pergi pukul delapan."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Perhatikan **pagi tadi** dan **malam tadi** — bahasa Melayu meletakkan *tadi* **sesudah** bagian harinya, bahasa Indonesia sebelumnya (\"tadi pagi\", \"tadi malam\"). Kesalahan ini kecil tapi langsung terdengar. Untuk masa depan susunannya kebalikan: **nanti petang**, **nanti malam** — *nanti* di depan, sama seperti Indonesia."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**semalam**",
+              "kemarin",
+              "⚠️ Jebakan besar."
+            ],
+            [
+              "**malam tadi**",
+              "tadi malam",
+              "—"
+            ],
+            [
+              "**kelmarin**",
+              "kemarin dulu",
+              "⚠️"
+            ],
+            [
+              "**tadi**",
+              "tadi",
+              "Sama."
+            ],
+            [
+              "**esok / besok**",
+              "besok",
+              "*Esok* lebih lazim."
+            ],
+            [
+              "**lusa / tulat**",
+              "lusa / tiga hari lagi",
+              "*Tulat* khas Melayu."
+            ],
+            [
+              "**minggu lepas / depan**",
+              "minggu lalu / depan",
+              "⚠️ *lepas*, bukan *lalu*."
+            ],
+            [
+              "**dulu / dahulu**",
+              "dulu",
+              "Sama."
+            ],
+            [
+              "**nanti**",
+              "nanti",
+              "Sama."
+            ],
+            [
+              "**sekarang / sekarang ni**",
+              "sekarang",
+              "Sama."
+            ],
+            [
+              "**tiap-tiap hari / setiap hari**",
+              "setiap hari",
+              "Sama."
+            ],
+            [
+              "**kadang-kadang**",
+              "kadang-kadang",
+              "Sama."
+            ],
+            [
+              "**selalu / sentiasa**",
+              "selalu / senantiasa",
+              "*Sentiasa* lebih rasmi."
+            ],
+            [
+              "**jarang / kerap**",
+              "jarang / sering",
+              "⚠️ *kerap* = sering."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hujung minggu di Malaysia",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kosakata hiburan yang akan kamu perlukan begitu ada yang mengajakmu keluar:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**jalan-jalan**",
+              "jalan-jalan"
+            ],
+            [
+              "**bersiar-siar**",
+              "jalan-jalan santai"
+            ],
+            [
+              "**melepak**",
+              "nongkrong ⚠️"
+            ],
+            [
+              "**tengok wayang**",
+              "nonton film ⚠️"
+            ],
+            [
+              "**panggung wayang**",
+              "bioskop"
+            ],
+            [
+              "**karaoke**",
+              "karaoke"
+            ],
+            [
+              "**main bola / badminton**",
+              "main bola / bulu tangkis"
+            ],
+            [
+              "**berenang / kolam renang**",
+              "berenang / kolam renang"
+            ],
+            [
+              "**mendaki / hiking**",
+              "mendaki"
+            ],
+            [
+              "**pantai**",
+              "pantai"
+            ],
+            [
+              "**pulau**",
+              "pulau"
+            ],
+            [
+              "**bercuti**",
+              "berlibur ⚠️"
+            ],
+            [
+              "**melancong**",
+              "berwisata ⚠️"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Melepak** adalah kata gaul Malaysia untuk **nongkrong** — berkumpul tanpa tujuan khusus, biasanya di mamak. *Jom melepak* = \"yuk nongkrong\". Kata ini tidak punya padanan langsung dalam bahasa Indonesia baku dan sangat dipakai anak muda."
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan keluarga kata **sukan** = olahraga: *bersukan* (berolahraga), *acara sukan* (acara olahraga), *Sukan Malaysia*. Bahasa Indonesia memakai \"olahraga\"; kata *sukan* akan terasa asing sampai kamu terbiasa. Dan **melancong / pelancong / pelancongan** menggantikan \"wisata/wisatawan/pariwisata\" sepenuhnya."
+        },
+        {
+          "type": "kotak",
+          "title": "Bertanya dan bercerita tentang hujung minggu",
+          "items": [
+            "**Hujung minggu ni buat apa?** — Akhir pekan ini ngapain?",
+            "**Ada plan tak?** — Ada rencana nggak?",
+            "**Jom keluar.** — Ayo keluar.",
+            "**Best tak?** — Seru nggak?",
+            "**Berbaloi ke?** — Worth it nggak?",
+            "**Penat tapi puas.** — Capek tapi puas.",
+            "**Lain kali kita pergi sekali.** — Lain kali kita pergi bareng."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "hujung minggu",
+      "baca": "—",
+      "id": "akhir pekan"
+    },
+    {
+      "ms": "lepas tu",
+      "baca": "ləpas tu",
+      "id": "terus, habis itu"
+    },
+    {
+      "ms": "selepas",
+      "baca": "sələpas",
+      "id": "setelah"
+    },
+    {
+      "ms": "mula-mula",
+      "baca": "mulə-mulə",
+      "id": "awalnya"
+    },
+    {
+      "ms": "walhal",
+      "baca": "walhal",
+      "id": "padahal ⚠️"
+    },
+    {
+      "ms": "best",
+      "baca": "bést",
+      "id": "seru, asyik"
+    },
+    {
+      "ms": "berbaloi",
+      "baca": "bərbaloi",
+      "id": "sepadan, worth it"
+    },
+    {
+      "ms": "melepak",
+      "baca": "mələpak",
+      "id": "nongkrong"
+    },
+    {
+      "ms": "tengok wayang",
+      "baca": "—",
+      "id": "nonton film"
+    },
+    {
+      "ms": "bercuti",
+      "baca": "bərcuti",
+      "id": "berlibur"
+    },
+    {
+      "ms": "melancong",
+      "baca": "məlancong",
+      "id": "berwisata"
+    },
+    {
+      "ms": "pelancong",
+      "baca": "pəlancong",
+      "id": "wisatawan"
+    },
+    {
+      "ms": "bersukan",
+      "baca": "bərsukan",
+      "id": "berolahraga"
+    },
+    {
+      "ms": "kerap",
+      "baca": "kərap",
+      "id": "sering"
+    },
+    {
+      "ms": "sentiasa",
+      "baca": "səntiasə",
+      "id": "selalu"
+    },
+    {
+      "ms": "tulat",
+      "baca": "tulat",
+      "id": "tiga hari lagi"
+    },
+    {
+      "ms": "air pancut",
+      "baca": "—",
+      "id": "air mancur"
+    },
+    {
+      "ms": "macam",
+      "baca": "macam",
+      "id": "seperti, macam"
+    },
+    {
+      "ms": "plan / rancangan",
+      "baca": "plén · rancangan",
+      "id": "rencana"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata penyambung yang betul.",
+      "items": [
+        "____ kami makan, kemudian kami jalan-jalan. (awalnya)",
+        "Saya mandi. ____ saya keluar. (habis itu)",
+        "Hujan turun. ____ kami balik awal. (oleh karena itu)",
+        "____ makan, jangan lupa cuci tangan. (sebelum)",
+        "____ kelas habis, kita jumpa kat kafe. (setelah)",
+        "Dia cakap dah siap, ____ belum mula lagi. (padahal)"
+      ]
+    },
+    {
+      "prompt": "Betulkan keterangan waktu ini jadi susunan Melayu.",
+      "items": [
+        "Tadi pagi saya bangun lambat.",
+        "Tadi malam hujan lebat.",
+        "Kemarin saya pergi ke KL.",
+        "Minggu lalu kami ke Melaka.",
+        "Kemarin dulu dia sampai."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Akhir pekan kemarin kamu ke mana?",
+        "Awalnya kami makan siang, terus jalan-jalan.",
+        "Seru nggak?",
+        "Nggak sempat, tiketnya sudah habis.",
+        "Akhirnya kami sampai jam dua belas malam.",
+        "Capek tapi sepadan."
+      ]
+    },
+    {
+      "prompt": "Susun jadi cerita yang betul urutannya.",
+      "items": [
+        "tu / kami / lepas / jalan-jalan",
+        "pukul / balik / kami / dua belas / akhirnya",
+        "Alor / kami / kat / makan / Jalan / mula-mula",
+        "tak / naik / menara / sempat / kami",
+        "sekali / depan / kita / minggu / pergi"
+      ]
+    }
+  ],
+  "answers": [
+    "Mula-mula — Lepas tu — Sebab tu — Sebelum — Selepas — walhal",
+    "Pagi tadi saya bangun lambat. — Malam tadi hujan lebat. — Semalam saya pergi KL. — Minggu lepas kami ke Melaka. — Kelmarin dia sampai.",
+    "Hujung minggu semalam awak ke mana? — Mula-mula kami makan tengah hari, lepas tu jalan-jalan. — Best tak? — Tak sempat, tiket dah habis. — Akhirnya kami sampai pukul dua belas malam. — Penat tapi berbaloi.",
+    "Lepas tu kami jalan-jalan. — Akhirnya kami balik pukul dua belas. — Mula-mula kami makan kat Jalan Alor. — Kami tak sempat naik menara. — Minggu depan kita pergi sekali."
+  ]
+}

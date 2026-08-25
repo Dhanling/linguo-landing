@@ -26,6 +26,7 @@ export const CHIRP_LOCALES: Record<string, string> = {
   pa: "pa-IN", yue: "yue-HK",
   fil: "fil-PH", tl: "fil-PH",
   eu: "eu-ES",
+  ms: "ms-MY",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */

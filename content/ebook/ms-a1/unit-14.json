@@ -1,0 +1,599 @@
+{
+  "title": "Kesihatan dan badan",
+  "title_target": "Saya rasa tak sihat",
+  "goal": "Menerangkan sakit di klinik dan hospital — tempat salah kata paling mahal harganya, dan tempat kata *pusing*, *pening*, serta *punggung* benar-benar penting dibedakan.",
+  "bekal": [
+    "menyebut bahagian badan dan jenis sakit dengan kata Melayu",
+    "bercakap dengan doktor dan membaca arahan ubat",
+    "tahu istilah hospital dan kecemasan Malaysia"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Di klinik kesihatan",
+      "intro": "Sarah demam sejak dua hari dan akhirnya pergi ke klinik kesihatan berhampiran kampus. Jururawat memanggilnya masuk.",
+      "lines": [
+        {
+          "speaker": "Doktor:",
+          "text": "Silakan duduk. Apa masalahnya?",
+          "id": "Silakan duduk. Ada keluhan apa?",
+          "literal": "silakan duduk. apa masalahnya?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya rasa tak sihat, doktor. Demam dua hari dah.",
+          "id": "Saya merasa nggak enak badan, Dok. Demam sudah dua hari.",
+          "literal": "saya rasa tidak sehat, dokter. demam dua hari sudah."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Ada batuk atau selesema?",
+          "id": "Ada batuk atau pilek?",
+          "literal": "ada batuk atau selesema?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ada. Batuk kering, hidung tersumbat.",
+          "id": "Ada. Batuk kering, hidung mampet.",
+          "literal": "ada. batuk kering, hidung tersumbat."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Pening kepala tak?",
+          "id": "Pusing nggak kepalanya?",
+          "literal": "pening kepala tidak?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Pening sikit, terutama bila bangun.",
+          "id": "Pusing sedikit, terutama waktu bangun.",
+          "literal": "pening sedikit, terutama bila bangun."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Sakit tekak? Sakit badan?",
+          "id": "Sakit tenggorokan? Badan pegal?",
+          "literal": "sakit tenggorokan? sakit badan?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tekak sakit sangat bila telan. Badan pun sakit-sakit.",
+          "id": "Tenggorokan sakit banget waktu menelan. Badan juga pegal-pegal.",
+          "literal": "tenggorokan sakit sangat bila telan. badan pun sakit-sakit."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Saya periksa suhu dulu. Buka mulut, kata 'aaa'.",
+          "id": "Saya periksa suhunya dulu. Buka mulut, bilang 'aaa'.",
+          "literal": "saya periksa suhu dulu. buka mulut, kata 'aaa'."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Tiga puluh lapan koma lima. Tekak awak merah. Jangkitan virus biasa.",
+          "id": "Tiga puluh delapan koma lima. Tenggorokan Anda merah. Infeksi virus biasa.",
+          "literal": "tiga puluh delapan koma lima. tenggorokan kamu merah. infeksi virus biasa."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Perlu antibiotik tak, doktor?",
+          "id": "Perlu antibiotik nggak, Dok?",
+          "literal": "perlu antibiotik tidak, dokter?"
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Tak perlu. Saya bagi ubat demam dan ubat batuk. Minum air banyak.",
+          "id": "Nggak perlu. Saya kasih obat demam dan obat batuk. Minum air yang banyak.",
+          "literal": "tidak perlu. saya beri obat demam dan obat batuk. minum air banyak."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Boleh dapat sijil sakit? Saya kena hantar kat pejabat.",
+          "id": "Boleh dapat surat sakit? Saya harus serahkan ke kantor.",
+          "literal": "boleh dapat surat sakit? saya harus kirim di kantor."
+        },
+        {
+          "speaker": "Doktor:",
+          "text": "Boleh. Dua hari rehat. Kalau tak baik juga, datang balik.",
+          "id": "Bisa. Dua hari istirahat. Kalau nggak membaik juga, datang lagi.",
+          "literal": "boleh. dua hari istirahat. kalau tidak baik juga, datang kembali."
+        }
+      ],
+      "notes": [
+        "⚠️ **Pening, bukan pusing.** Ini pemakaian klinis yang paling penting di seluruh modul. Dalam bahasa Melayu, **pening** = sakit kepala/pusing, sedangkan **pusing** = berputar, berkeliling. Kalau kamu berkata *saya pusing* kepada doktor Malaysia, ia akan bertanya \"pusing ke mana?\" Katakan **pening kepala**.",
+        "**Selesema** = pilek, flu ringan. Bahasa Indonesia berkata \"pilek\" atau \"flu\"; kata *selesema* tidak dipakai di Indonesia sama sekali dan akan jadi kata pertama yang tidak kamu kenali di klinik.",
+        "**Tekak** = tenggorokan. Bahasa Indonesia memakai \"tenggorokan\"; *tekak* di Indonesia hampir tidak dipakai (kecuali dalam \"anak tekak\" = anak lidah). *Sakit tekak* adalah keluhan paling umum di klinik Malaysia.",
+        "**Jangkitan** = infeksi, penularan. *Jangkitan virus* = infeksi virus, *berjangkit* = menular. Bahasa Indonesia memakai \"infeksi\" dan \"menular\".",
+        "**Ubat** = obat — perhatikan huruf *u* di depan. Seluruh keluarga katanya ikut: *ubat demam*, *ubat batuk*, *ubat gigi* (⚠️ pasta gigi!), *perubatan* (pengobatan), *kedai ubat* (toko obat)."
+      ],
+      "grammars": [
+        {
+          "title": "Bahagian badan",
+          "body": [
+            "Sebagian besar sama dengan bahasa Indonesia. Yang berbeda ditandai — dan dua di antaranya bisa membuatmu salah menunjuk di depan dokter."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Bahasa Melayu",
+                "Bahasa Indonesia",
+                "Bahasa Melayu",
+                "Bahasa Indonesia"
+              ],
+              "rows": [
+                [
+                  "kepala",
+                  "kepala",
+                  "rambut",
+                  "rambut"
+                ],
+                [
+                  "muka / wajah",
+                  "muka / wajah",
+                  "mata",
+                  "mata"
+                ],
+                [
+                  "hidung",
+                  "hidung",
+                  "telinga",
+                  "telinga"
+                ],
+                [
+                  "mulut / bibir",
+                  "mulut / bibir",
+                  "gigi / lidah",
+                  "gigi / lidah"
+                ],
+                [
+                  "**tekak** ⚠️",
+                  "tenggorokan",
+                  "leher",
+                  "leher"
+                ],
+                [
+                  "bahu",
+                  "bahu, pundak",
+                  "tangan / lengan",
+                  "tangan / lengan"
+                ],
+                [
+                  "jari",
+                  "jari",
+                  "dada",
+                  "dada"
+                ],
+                [
+                  "perut",
+                  "perut",
+                  "**belakang** ⚠️",
+                  "punggung"
+                ],
+                [
+                  "**punggung** ⚠️",
+                  "pantat",
+                  "pinggang",
+                  "pinggang"
+                ],
+                [
+                  "kaki",
+                  "kaki",
+                  "lutut",
+                  "lutut"
+                ],
+                [
+                  "**buku lali**",
+                  "mata kaki",
+                  "tumit",
+                  "tumit"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **Belakang** = punggung, dan **punggung** = pantat. Sudah disebut di unit 3, tapi di klinik inilah tempat kesalahan ini benar-benar terasa. *Sakit belakang* = sakit punggung. Kalau kamu berkata *sakit punggung* kepada doktor Malaysia, ia akan memeriksa bagian yang lain sama sekali.",
+            "⚠️ **Buah pinggang** = ginjal, secara harfiah \"buah pinggang\". Bahasa Indonesia memakai \"ginjal\". Istilah ini muncul di semua dokumen kesihatan Malaysia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menerangkan sakit",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Saya rasa tak sihat.",
+              "Saya merasa nggak enak badan."
+            ],
+            [
+              "Saya demam.",
+              "Saya demam."
+            ],
+            [
+              "Saya **pening** kepala. ⚠️",
+              "Saya pusing."
+            ],
+            [
+              "Saya sakit **tekak**. ⚠️",
+              "Tenggorokan saya sakit."
+            ],
+            [
+              "Saya **selesema**. ⚠️",
+              "Saya pilek."
+            ],
+            [
+              "Saya batuk.",
+              "Saya batuk."
+            ],
+            [
+              "Saya sakit perut.",
+              "Perut saya sakit."
+            ],
+            [
+              "Saya **cirit-birit**. ⚠️",
+              "Saya diare / mencret."
+            ],
+            [
+              "Saya **muntah**.",
+              "Saya muntah."
+            ],
+            [
+              "Saya **loya**. ⚠️",
+              "Saya mual."
+            ],
+            [
+              "Saya sakit **belakang**. ⚠️",
+              "Punggung saya sakit."
+            ],
+            [
+              "Saya **terseliuh**. ⚠️",
+              "Kaki saya keseleo."
+            ],
+            [
+              "Saya **luka**.",
+              "Saya luka."
+            ],
+            [
+              "Saya **alah** pada … ⚠️",
+              "Saya alergi terhadap …"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Empat kata yang benar-benar baru dan tidak bisa ditebak: **cirit-birit** (diare), **loya** (mual), **terseliuh** (keseleo), dan **alah** (alergi — perhatikan bahwa ini berbeda dari seruan *alah!* yang berarti \"yah\"). Untuk alergi, orang juga berkata *alahan* atau *alergi* langsung."
+        },
+        {
+          "type": "p",
+          "text": "**Tak lalu makan** = tidak nafsu makan. Kata *lalu* di sini berarti \"berselera\", pemakaian yang sama sekali tidak ada dalam bahasa Indonesia."
+        },
+        {
+          "type": "kotak",
+          "title": "Pertanyaan doktor yang akan kamu dengar",
+          "items": [
+            "**Apa masalahnya?** — Ada keluhan apa?",
+            "**Dah berapa lama?** — Sudah berapa lama?",
+            "**Ada demam tak?** — Ada demam nggak?",
+            "**Sakit macam mana? Berdenyut ke, pedih ke?** — Sakitnya gimana? Berdenyut atau perih?",
+            "**Ada alah pada ubat tak?** — Ada alergi obat nggak?",
+            "**Ada makan ubat lain?** — Sedang minum obat lain?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hospital, ubat, dan kecemasan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**hospital**",
+              "rumah sakit"
+            ],
+            [
+              "**klinik kesihatan**",
+              "puskesmas"
+            ],
+            [
+              "**klinik swasta**",
+              "klinik swasta"
+            ],
+            [
+              "**farmasi**",
+              "apotek"
+            ],
+            [
+              "**doktor / doktor pakar**",
+              "dokter / dokter spesialis"
+            ],
+            [
+              "**jururawat**",
+              "perawat"
+            ],
+            [
+              "**pesakit**",
+              "pasien ⚠️"
+            ],
+            [
+              "**bilik kecemasan**",
+              "IGD, UGD ⚠️"
+            ],
+            [
+              "**ambulans**",
+              "ambulans"
+            ],
+            [
+              "**wad**",
+              "bangsal, ruang rawat ⚠️"
+            ],
+            [
+              "**rawatan**",
+              "perawatan, pengobatan"
+            ],
+            [
+              "**pembedahan**",
+              "operasi ⚠️"
+            ],
+            [
+              "**suntikan / cucuk**",
+              "suntikan"
+            ],
+            [
+              "**ujian darah**",
+              "tes darah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Pembedahan** = operasi. Kata *operasi* dalam bahasa Melayu lebih dipakai untuk operasi polis atau ketenteraan. Kalau doktor berkata *awak kena pembedahan*, itu berarti operasi bedah."
+        },
+        {
+          "type": "p",
+          "text": "**Wad** (dari *ward*) = bangsal rawat inap. *Masuk wad* = dirawat inap. Bahasa Indonesia berkata \"opname\" (dari Belanda) atau \"rawat inap\" — kata *opname* sama sekali tidak dipakai di Malaysia."
+        },
+        {
+          "type": "sub",
+          "text": "Membaca arahan ubat"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pada label",
+            "Maksudnya"
+          ],
+          "rows": [
+            [
+              "**3 kali sehari**",
+              "tiga kali sehari"
+            ],
+            [
+              "**selepas makan**",
+              "sesudah makan"
+            ],
+            [
+              "**sebelum makan**",
+              "sebelum makan"
+            ],
+            [
+              "**bila perlu**",
+              "bila diperlukan"
+            ],
+            [
+              "**habiskan ubat ini**",
+              "habiskan obatnya"
+            ],
+            [
+              "**jangan memandu selepas makan ubat**",
+              "jangan menyetir setelah minum obat"
+            ],
+            [
+              "**simpan di tempat sejuk**",
+              "simpan di tempat dingin"
+            ],
+            [
+              "**jauhkan daripada kanak-kanak**",
+              "jauhkan dari jangkauan anak-anak"
+            ],
+            [
+              "**tarikh luput**",
+              "tanggal kedaluwarsa"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kecemasan — hafalkan ini",
+          "items": [
+            "**Tolong!** — Tolong!",
+            "**Panggil ambulans!** — Panggil ambulans!",
+            "**Ada kemalangan.** — Ada kecelakaan. (⚠️ *kemalangan* = kecelakaan)",
+            "**Dia tak sedarkan diri.** — Dia nggak sadar.",
+            "**Hospital paling dekat kat mana?** — Rumah sakit terdekat di mana?",
+            "**Saya perlu doktor sekarang.** — Saya perlu dokter sekarang.",
+            "**999** — nombor kecemasan Malaysia (polis, bomba, ambulans).",
+            "**Bomba** = pemadam kebakaran. **Polis** = polisi."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Kemalangan** berarti **kecelakaan** — bukan \"kemalangan\" dalam arti nasib buruk seperti bahasa Indonesia. *Kemalangan jalan raya* = kecelakaan lalu lintas. Ini kata yang muncul di berita setiap hari dan sering salah ditangkap orang Indonesia."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "sihat",
+      "baca": "sihat",
+      "id": "sehat"
+    },
+    {
+      "ms": "pening",
+      "baca": "pəning",
+      "id": "pusing (kepala) ⚠️"
+    },
+    {
+      "ms": "tekak",
+      "baca": "təkak",
+      "id": "tenggorokan ⚠️"
+    },
+    {
+      "ms": "selesema",
+      "baca": "sələsémə",
+      "id": "pilek ⚠️"
+    },
+    {
+      "ms": "cirit-birit",
+      "baca": "cirit-birit",
+      "id": "diare ⚠️"
+    },
+    {
+      "ms": "loya",
+      "baca": "loyə",
+      "id": "mual ⚠️"
+    },
+    {
+      "ms": "terseliuh",
+      "baca": "tərsəliuh",
+      "id": "keseleo ⚠️"
+    },
+    {
+      "ms": "alah / alahan",
+      "baca": "alah",
+      "id": "alergi ⚠️"
+    },
+    {
+      "ms": "ubat",
+      "baca": "ubat",
+      "id": "obat"
+    },
+    {
+      "ms": "jangkitan",
+      "baca": "jangkitan",
+      "id": "infeksi"
+    },
+    {
+      "ms": "pesakit",
+      "baca": "pəsakit",
+      "id": "pasien"
+    },
+    {
+      "ms": "jururawat",
+      "baca": "jururawat",
+      "id": "perawat"
+    },
+    {
+      "ms": "wad",
+      "baca": "wad",
+      "id": "bangsal rawat inap"
+    },
+    {
+      "ms": "bilik kecemasan",
+      "baca": "—",
+      "id": "IGD"
+    },
+    {
+      "ms": "pembedahan",
+      "baca": "pəmbədahan",
+      "id": "operasi ⚠️"
+    },
+    {
+      "ms": "belakang",
+      "baca": "bəlakang",
+      "id": "punggung ⚠️"
+    },
+    {
+      "ms": "buah pinggang",
+      "baca": "—",
+      "id": "ginjal ⚠️"
+    },
+    {
+      "ms": "buku lali",
+      "baca": "—",
+      "id": "mata kaki"
+    },
+    {
+      "ms": "kemalangan",
+      "baca": "kəmalangan",
+      "id": "kecelakaan ⚠️"
+    },
+    {
+      "ms": "bomba",
+      "baca": "bombə",
+      "id": "pemadam kebakaran"
+    },
+    {
+      "ms": "rehat",
+      "baca": "réhat",
+      "id": "istirahat"
+    },
+    {
+      "ms": "tarikh luput",
+      "baca": "—",
+      "id": "tanggal kedaluwarsa"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Betulkan kalimat orang Indonesia ini supaya betul di klinik Malaysia.",
+      "items": [
+        "Saya pusing kepala.",
+        "Tenggorokan saya sakit.",
+        "Saya pilek dan batuk.",
+        "Punggung saya sakit. (maksudnya bagian belakang badan)",
+        "Saya mual dan diare.",
+        "Saya alergi obat."
+      ]
+    },
+    {
+      "prompt": "Tulis kata Melayu untuk hal berikut.",
+      "items": [
+        "rumah sakit",
+        "apotek",
+        "pasien",
+        "IGD",
+        "operasi (bedah)",
+        "kecelakaan"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu.",
+      "items": [
+        "Saya nggak enak badan sudah dua hari.",
+        "Perlu antibiotik nggak, Dok?",
+        "Boleh dapat surat sakit?",
+        "Minum obatnya tiga kali sehari sesudah makan.",
+        "Rumah sakit terdekat di mana?",
+        "Panggil ambulans!"
+      ]
+    },
+    {
+      "prompt": "Apa maksud arahan ubat ini?",
+      "items": [
+        "3 kali sehari, selepas makan",
+        "Bila perlu sahaja",
+        "Habiskan ubat ini",
+        "Jauhkan daripada kanak-kanak",
+        "Tarikh luput: 12/2027"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya pening kepala. — Saya sakit tekak. — Saya selesema dan batuk. — Saya sakit belakang. — Saya loya dan cirit-birit. — Saya alah pada ubat.",
+    "hospital — farmasi — pesakit — bilik kecemasan — pembedahan — kemalangan",
+    "Saya rasa tak sihat dah dua hari. — Perlu antibiotik tak, doktor? — Boleh dapat sijil sakit? — Makan ubat tiga kali sehari, selepas makan. — Hospital paling dekat kat mana? — Panggil ambulans!",
+    "Tiga kali sehari setelah makan — Hanya bila diperlukan — Habiskan obat ini — Jauhkan dari anak-anak — Kedaluwarsa Desember 2027"
+  ]
+}

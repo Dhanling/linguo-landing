@@ -1,0 +1,556 @@
+{
+  "title": "Di kedai makan",
+  "title_target": "Nak makan apa?",
+  "goal": "Memesan makanan dan minuman di kedai mamak, gerai, dan medan selera — tempat pertama yang benar-benar menguji bahasa Melayumu, dan tempat kesalahan paling cepat dimaafkan.",
+  "bekal": [
+    "memesan makanan dan minuman dengan susunan yang dipakai orang sungguhan",
+    "memakai *nak*, *boleh*, *tolong*, dan *sila* di tempat yang betul",
+    "membaca menu kedai mamak tanpa menebak-nebak"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kedai mamak malam hari",
+      "intro": "Pukul sepuluh malam. Haziq membawa Sarah ke kedai mamak di seberang kolej — kedai yang buka dua puluh empat jam dan penuh orang di jam yang aneh-aneh.",
+      "lines": [
+        {
+          "speaker": "Pelayan:",
+          "text": "Nak makan apa, adik?",
+          "id": "Mau makan apa, Dik?",
+          "literal": "mau makan apa, adik?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Roti canai dua, teh tarik satu. Sarah, awak nak apa?",
+          "id": "Roti canai dua, teh tarik satu. Sarah, kamu mau apa?",
+          "literal": "roti canai dua, teh tarik satu. Sarah, kamu mau apa?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ada nasi lemak tak?",
+          "id": "Ada nasi lemak nggak?",
+          "literal": "ada nasi lemak tidak?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Ada. Nak pedas ke tak pedas?",
+          "id": "Ada. Mau pedas atau nggak pedas?",
+          "literal": "ada. mau pedas [atau] tidak pedas?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Pedas sikit je. Dengan air apa yang tak manis?",
+          "id": "Pedas sedikit aja. Sama minum apa yang nggak manis?",
+          "literal": "pedas sedikit saja. dengan air apa yang tidak manis?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Teh o kosong. Tak ada gula langsung.",
+          "id": "Teh tawar tanpa susu. Nggak ada gula sama sekali.",
+          "literal": "teh o kosong. tidak ada gula sama sekali."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Okey, teh o kosong satu. Sejuk boleh?",
+          "id": "Oke, teh tawar satu. Dingin bisa?",
+          "literal": "oke, teh o kosong satu. dingin boleh?"
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Boleh. Teh o ais kosong. Makan sini ke bungkus?",
+          "id": "Bisa. Teh tawar es. Makan di sini atau dibungkus?",
+          "literal": "boleh. teh o es kosong. makan sini [atau] bungkus?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Makan sini.",
+          "id": "Makan di sini.",
+          "literal": "makan sini."
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Tambah satu telur mata, bang.",
+          "id": "Tambah satu telur ceplok, Bang.",
+          "literal": "tambah satu telur mata, bang."
+        },
+        {
+          "speaker": "Pelayan:",
+          "text": "Baik. Sekejap ya.",
+          "id": "Baik. Sebentar, ya.",
+          "literal": "baik. sekejap ya."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Haziq, sedap tak nasi lemak sini?",
+          "id": "Haziq, enak nggak nasi lemak di sini?",
+          "literal": "Haziq, enak tidak nasi lemak sini?"
+        },
+        {
+          "speaker": "Haziq:",
+          "text": "Sedap gila. Sambal dia power.",
+          "id": "Enak banget. Sambalnya mantap.",
+          "literal": "enak gila. sambal dia hebat."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Nanti kita kira sekali ya. Saya belanja.",
+          "id": "Nanti kita bayar sekalian, ya. Saya yang traktir.",
+          "literal": "nanti kita hitung sekali ya. saya belanja."
+        }
+      ],
+      "notes": [
+        "**Nak** (dari *hendak*) adalah kata paling sering di seluruh percakapan Malaysia. Ia berarti **mau, ingin**, dan juga dipakai untuk masa depan dekat (\"akan\"). *Nak makan apa?* = mau makan apa? *Saya nak balik* = saya mau pulang. Bentuk rasminya *hendak* atau *mahu*, tapi dalam percakapan hampir tak pernah terdengar.",
+        "**Air** dalam bahasa Melayu berarti **minuman** secara umum, bukan cuma air putih. *Nak air apa?* = \"mau minum apa?\" Untuk air putih orang berkata *air kosong* atau *air suam* (hangat). Ini bergeser dari kebiasaan Indonesia yang memakai *minum* atau *minuman*.",
+        "**Kosong** di kedai berarti **tanpa gula**. Jadi *teh o kosong* = teh tanpa susu tanpa gula. Susunan minuman mamak bekerja seperti kod: *teh* (dengan susu), *teh o* (tanpa susu), *ais* (dingin), *kosong* (tanpa gula), *kurang manis*, *peng* (sangat dingin, dari Hokkien).",
+        "**Bungkus** = dibawa pulang. Kata gaulnya **tapau** (dari bahasa Kanton), dan itu yang paling sering kamu dengar: *nak tapau* = mau dibungkus. Bahasa Indonesia berkata \"dibungkus\" juga, jadi kata ini aman.",
+        "**Sekejap** = sebentar. Kata ini menggantikan *sebentar* hampir sepenuhnya dalam percakapan Malaysia. Bentuk pendeknya *kejap*: *kejap ya*."
+      ],
+      "grammars": [
+        {
+          "title": "Empat cara meminta — dan kapan memakai yang mana",
+          "body": [
+            "Bahasa Indonesia menumpuk hampir semua permintaan ke satu kata: \"tolong\". Bahasa Melayu membaginya ke empat, dan salah pilih terasa lebih tajam daripada di Indonesia — bukan salah tata bahasa, tapi salah nada."
+          ],
+          "table": {
+            "head": [
+              "Kata",
+              "Dipakai untuk",
+              "Contoh",
+              "Rasa"
+            ],
+            "rows": [
+              [
+                "**nak**",
+                "menyatakan keinginanmu sendiri",
+                "Saya nak teh tarik.",
+                "Netral, sehari-hari."
+              ],
+              [
+                "**boleh**",
+                "meminta izin / kemungkinan",
+                "Boleh tambah gula?",
+                "Sopan, tidak memaksa."
+              ],
+              [
+                "**tolong**",
+                "meminta orang melakukan sesuatu",
+                "Tolong bungkuskan.",
+                "Meminta bantuan."
+              ],
+              [
+                "**sila**",
+                "MEMPERSILAKAN orang lain",
+                "Sila duduk.",
+                "⚠️ Bukan untuk meminta!"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Kesalahan orang Indonesia yang paling sering: memakai **sila** untuk meminta. *Sila* berarti \"silakan\" — kamu memberi izin kepada orang lain, bukan meminta darinya. *Sila duduk* = \"silakan duduk\" (kamu tuan rumah). Kalau kamu ingin minta orang duduk, katakan *Tolong duduk* atau lebih baik *Duduklah dulu*.",
+            "Susunan permintaan yang paling aman di kedai mana pun: **[benda] + [jumlah]**, tanpa kata kerja sama sekali. *Teh tarik satu.* *Roti canai dua.* *Nasi lemak tiga bungkus.* Ini yang dipakai orang Malaysia sendiri, dan ia lebih cepat daripada kalimat penuh."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membaca menu kedai mamak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kedai mamak adalah warung India-Muslim yang buka hampir sepanjang malam dan jadi tempat berkumpul semua orang di Malaysia. Menunya hampir tidak pernah diterjemahkan, jadi inilah yang perlu kamu kenali:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Makanan",
+            "Apa itu",
+            "Padanan terdekat"
+          ],
+          "rows": [
+            [
+              "**nasi lemak**",
+              "nasi santan, sambal, ikan bilis, telur, timun",
+              "nasi uduk"
+            ],
+            [
+              "**roti canai**",
+              "roti pipih berlapis, dimakan dengan kari dal",
+              "roti maryam"
+            ],
+            [
+              "**roti telur**",
+              "roti canai bertelur",
+              "—"
+            ],
+            [
+              "**maggi goreng**",
+              "mi instan digoreng bergaya mamak",
+              "indomie goreng"
+            ],
+            [
+              "**mi goreng mamak**",
+              "mi goreng pedas manis",
+              "mi goreng"
+            ],
+            [
+              "**nasi goreng kampung**",
+              "nasi goreng ikan bilis, pedas",
+              "nasi goreng"
+            ],
+            [
+              "**nasi kandar**",
+              "nasi dengan aneka kari, pilih sendiri",
+              "nasi padang (caranya)"
+            ],
+            [
+              "**mee rebus / mee soto**",
+              "mi berkuah kental / berkuah soto",
+              "—"
+            ],
+            [
+              "**murtabak**",
+              "roti isi daging cincang",
+              "martabak telur"
+            ],
+            [
+              "**tosai**",
+              "krep beras India (dosa)",
+              "—"
+            ],
+            [
+              "**telur mata / mata kerbau**",
+              "telur ceplok",
+              "telur mata sapi"
+            ],
+            [
+              "**ikan bilis**",
+              "teri",
+              "teri"
+            ],
+            [
+              "**kangkung goreng belacan**",
+              "tumis kangkung terasi",
+              "tumis kangkung"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan **telur mata kerbau** — bahasa Indonesia berkata \"telur mata sapi\", bahasa Melayu \"mata kerbau\". Hewannya berbeda, telurnya sama. Dan **belacan** adalah kata Melayu untuk *terasi*."
+        },
+        {
+          "type": "sub",
+          "text": "Minuman: sistem kod yang perlu kamu hafal"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pesanan",
+            "Maksudnya"
+          ],
+          "rows": [
+            [
+              "**teh tarik**",
+              "teh susu yang \"ditarik\" sampai berbuih — minuman kebangsaan"
+            ],
+            [
+              "**teh o**",
+              "teh tanpa susu (huruf *o* dari Hokkien \"hitam\")"
+            ],
+            [
+              "**teh o ais**",
+              "es teh tanpa susu"
+            ],
+            [
+              "**teh o ais limau**",
+              "es teh jeruk nipis"
+            ],
+            [
+              "**kopi / kopi o**",
+              "kopi susu / kopi hitam"
+            ],
+            [
+              "**kosong**",
+              "tanpa gula — ditambahkan di ujung pesanan"
+            ],
+            [
+              "**kurang manis**",
+              "gulanya dikurangi"
+            ],
+            [
+              "**air suam**",
+              "air hangat"
+            ],
+            [
+              "**air sejuk**",
+              "air dingin ⚠️ (*sejuk* = dingin)"
+            ],
+            [
+              "**milo ais / milo dinosaur**",
+              "milo es / milo es bertabur serbuk milo"
+            ],
+            [
+              "**sirap bandung**",
+              "sirup mawar bersusu, merah muda"
+            ],
+            [
+              "**limau ais**",
+              "es jeruk nipis"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Susunan pesanannya: **jenis + suhu + gula**. *Teh o ais kosong* = teh, tanpa susu, dingin, tanpa gula. *Kopi kurang manis* = kopi susu, gulanya sedikit. Begitu kamu paham urutannya, kamu bisa merangkai pesanan apa pun tanpa menghafal daftarnya."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat kedai yang perlu kamu punya",
+          "items": [
+            "**Ada … tak?** — Ada … nggak? (*Ada nasi lemak tak?*)",
+            "**Nak … satu.** — Mau … satu. (susunan paling cepat)",
+            "**Jangan letak …** — Jangan pakai … (*Jangan letak cili.*)",
+            "**Kurang pedas / kurang manis** — Kurang pedas / kurang manis.",
+            "**Makan sini ke bungkus?** — Makan di sini atau dibungkus? (kamu akan ditanya ini)",
+            "**Berapa semua?** — Semuanya berapa?",
+            "**Nak kira.** / **Bill.** — Minta bon.",
+            "**Halal ke?** — Halal, nggak? (pertanyaan biasa dan tidak canggung di Malaysia)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rasa dan penilaian",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Melayu",
+            "Bahasa Indonesia",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "**sedap**",
+              "enak",
+              "Kata bakunya di Malaysia."
+            ],
+            [
+              "**tak sedap**",
+              "nggak enak",
+              "—"
+            ],
+            [
+              "**manis / masin**",
+              "manis / asin",
+              "⚠️ *masin*, bukan *asin*."
+            ],
+            [
+              "**masam**",
+              "asam, kecut",
+              "⚠️ *masam*, bukan *asam*."
+            ],
+            [
+              "**pahit / tawar**",
+              "pahit / tawar",
+              "Sama."
+            ],
+            [
+              "**pedas**",
+              "pedas",
+              "Sama."
+            ],
+            [
+              "**panas / sejuk**",
+              "panas / dingin",
+              "⚠️ *sejuk* = dingin."
+            ],
+            [
+              "**kenyang / lapar**",
+              "kenyang / lapar",
+              "Sama."
+            ],
+            [
+              "**dahaga**",
+              "haus",
+              "⚠️ *Haus* juga dipakai, tapi *dahaga* lebih umum."
+            ],
+            [
+              "**muak / jelak**",
+              "eneg, bosan makan",
+              "*Jelak* khas Malaysia."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Penguat rasa dalam percakapan Malaysia: **sangat** (baku), **sungguh** (agak rasmi), **betul** (*sedap betul*), **gila** (sangat santai), **giler** (ejaan gaulnya), dan yang paling khas — **sangat** yang diletakkan di **belakang**: *sedap sangat*, *pedas sangat*, *mahal sangat*. Bahasa Indonesia meletakkan \"sangat\" di depan; bahasa Melayu percakapan hampir selalu di belakang. Satu perubahan kecil ini langsung membuat kalimatmu terdengar Malaysia."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ms": "nak (hendak)",
+      "baca": "nak",
+      "id": "mau, ingin"
+    },
+    {
+      "ms": "air",
+      "baca": "ai",
+      "id": "minuman; air ⚠️"
+    },
+    {
+      "ms": "kosong",
+      "baca": "kosong",
+      "id": "tanpa gula ⚠️"
+    },
+    {
+      "ms": "ais",
+      "baca": "ais",
+      "id": "es"
+    },
+    {
+      "ms": "sejuk",
+      "baca": "səjuk",
+      "id": "dingin ⚠️"
+    },
+    {
+      "ms": "suam",
+      "baca": "suam",
+      "id": "hangat"
+    },
+    {
+      "ms": "bungkus / tapau",
+      "baca": "bungkus · tapau",
+      "id": "dibungkus, dibawa pulang"
+    },
+    {
+      "ms": "sedap",
+      "baca": "sədap",
+      "id": "enak"
+    },
+    {
+      "ms": "masin",
+      "baca": "masin",
+      "id": "asin"
+    },
+    {
+      "ms": "masam",
+      "baca": "masam",
+      "id": "asam, kecut"
+    },
+    {
+      "ms": "dahaga",
+      "baca": "dahagə",
+      "id": "haus"
+    },
+    {
+      "ms": "sekejap",
+      "baca": "səkəjap",
+      "id": "sebentar"
+    },
+    {
+      "ms": "kira",
+      "baca": "kirə",
+      "id": "hitung; minta bon"
+    },
+    {
+      "ms": "belanja",
+      "baca": "bəlanjə",
+      "id": "mentraktir ⚠️"
+    },
+    {
+      "ms": "letak",
+      "baca": "lətak",
+      "id": "taruh, pakai (bumbu)"
+    },
+    {
+      "ms": "cili",
+      "baca": "cili",
+      "id": "cabai"
+    },
+    {
+      "ms": "belacan",
+      "baca": "bəlacan",
+      "id": "terasi"
+    },
+    {
+      "ms": "ikan bilis",
+      "baca": "ikan bilis",
+      "id": "teri"
+    },
+    {
+      "ms": "telur mata",
+      "baca": "təlo matə",
+      "id": "telur ceplok"
+    },
+    {
+      "ms": "gerai",
+      "baca": "gərai",
+      "id": "kios, lapak"
+    },
+    {
+      "ms": "medan selera",
+      "baca": "médan sələrə",
+      "id": "food court"
+    },
+    {
+      "ms": "sila",
+      "baca": "silə",
+      "id": "silakan ⚠️"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Apa yang akan kamu dapat kalau memesan ini?",
+      "items": [
+        "Teh o ais kosong",
+        "Kopi kurang manis",
+        "Air suam",
+        "Nasi lemak bungkus",
+        "Telur mata satu",
+        "Milo ais"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *nak*, *boleh*, *tolong*, atau *sila*.",
+      "items": [
+        "Saya ____ teh tarik satu.",
+        "____ tambah gula sikit? (minta izin)",
+        "____ bungkuskan nasi ni. (minta bantuan)",
+        "____ duduk, encik. (mempersilakan tetamu)",
+        "Awak ____ makan apa?",
+        "____ saya bayar guna kad? (minta izin)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Melayu (pakai susunan kedai yang cepat).",
+      "items": [
+        "Ada nasi goreng nggak?",
+        "Teh tarik dua, roti canai satu.",
+        "Jangan pakai cabai.",
+        "Makan di sini.",
+        "Semuanya berapa?",
+        "Enak banget!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang betul.",
+      "items": [
+        "apa / nak / awak / makan / ?",
+        "sini / ke / makan / bungkus / ?",
+        "je / pedas / sikit",
+        "sangat / nasi lemak / sedap / ni",
+        "semua / berapa / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Es teh tanpa susu, tanpa gula — Kopi susu dengan sedikit gula — Air hangat — Nasi lemak dibungkus — Satu telur ceplok — Es milo",
+    "nak — Boleh — Tolong — Sila — nak — Boleh",
+    "Ada nasi goreng tak? — Teh tarik dua, roti canai satu. — Jangan letak cili. — Makan sini. — Berapa semua? — Sedap sangat!",
+    "Awak nak makan apa? — Makan sini ke bungkus? — Pedas sikit je. — Nasi lemak ni sedap sangat. — Berapa semua?"
+  ]
+}
