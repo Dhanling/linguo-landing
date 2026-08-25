@@ -1,0 +1,212 @@
+{
+  "title": "Di pasar: membeli dan menawar",
+  "title_target": "Meuli jeung nawar di pasar",
+  "goal": "Bertanya harga, menawar dengan cara yang berterima, dan menyebut jumlah, ukuran, serta nama barang sehari-hari.",
+  "bekal": [
+    "menanyakan harga dan menawar tanpa terdengar kasar",
+    "kata bilangan dan satuan: *sakilo*, *saikat*, *sasiki*, *sabungkus*",
+    "warna, ukuran, dan kata sifat untuk memilih barang"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Di Pasar Kosambi",
+      "intro": "Sabtu pagi. Rani dan Sari berbelanja di pasar. Rani mencoba menawar sendiri untuk pertama kalinya, dan Sari berdiri di belakangnya menahan tawa.",
+      "lines": [
+        { "speaker": "Rani:", "text": "Punten, Bi. Cabé na sabaraha sakilo?", "id": "Permisi, Bi. Cabainya berapa sekilo?", "literal": "permisi, Bi. cabainya berapa sekilo?" },
+        { "speaker": "Bi Éncum:", "text": "Opat puluh rébu, Néng. Seger kénéh, kakara datang isuk.", "id": "Empat puluh ribu, Neng. Masih segar, baru datang pagi.", "literal": "empat puluh ribu, Néng. segar masih, baru datang pagi." },
+        { "speaker": "Rani:", "text": "Aduh, awis pisan. Teu tiasa kirang?", "id": "Aduh, mahal banget. Nggak bisa kurang?", "literal": "aduh, mahal sangat. tidak bisa kurang?" },
+        { "speaker": "Bi Éncum:", "text": "Sabaraha atuh maunya?", "id": "Berapa dong maunya?", "literal": "berapa atuh maunya?" },
+        { "speaker": "Rani:", "text": "Tilu puluh rébu kumaha?", "id": "Tiga puluh ribu gimana?", "literal": "tiga puluh ribu bagaimana?" },
+        { "speaker": "Bi Éncum:", "text": "Ih, teu nutup Néng. Tilu puluh lima waé, nya?", "id": "Ih, nggak nutup Neng. Tiga puluh lima aja, ya?", "literal": "ih, tidak menutup Néng. tiga puluh lima saja, ya?" },
+        { "speaker": "Rani:", "text": "Mangga atuh. Sakilo waé.", "id": "Baiklah. Sekilo aja.", "literal": "silakan atuh. sekilo saja." },
+        { "speaker": "Bi Éncum:", "text": "Sok. Aya deui nu badé dipésér?", "id": "Silakan. Ada lagi yang mau dibeli?", "literal": "silakan. ada lagi yang akan dibeli?" },
+        { "speaker": "Rani:", "text": "Bawang beureum saparapat kilo, sareng tomat sakilo.", "id": "Bawang merah seperempat kilo, dan tomat sekilo.", "literal": "bawang merah seperempat kilo, dan tomat sekilo." },
+        { "speaker": "Bi Éncum:", "text": "Sadayana genep puluh rébu, Néng. Digenepan waé, jadi lima puluh lima.", "id": "Semuanya enam puluh ribu, Neng. Digenapkan aja, jadi lima puluh lima.", "literal": "semuanya enam puluh ribu, Néng. digenapkan saja, jadi lima puluh lima." },
+        { "speaker": "Rani:", "text": "Nuhun pisan, Bi! Ieu artosna.", "id": "Terima kasih banyak, Bi! Ini uangnya.", "literal": "terima kasih sangat, Bi! ini uangnya." },
+        { "speaker": "Bi Éncum:", "text": "Sami-sami. Mugia sing seueur rejeki, Néng.", "id": "Sama-sama. Semoga banyak rezeki, Neng.", "literal": "sama-sama. semoga banyak rezeki, Néng." },
+        { "speaker": "Sari:", "text": "Téh, tos tiasa nawar geuning! Sabulan deui mah janten urang Bandung.", "id": "Kak, udah bisa nawar ternyata! Sebulan lagi jadi orang Bandung.", "literal": "Téh, sudah bisa menawar ternyata! sebulan lagi [mah] menjadi orang Bandung." }
+      ],
+      "notes": [
+        "**Awis** = mahal (lemes); loma: **mahal**. Lawannya **mirah** (lemes) / **murah** (loma). Menawar dengan *awis pisan* terdengar sopan; dengan *mahal teuing* terdengar mengeluh.",
+        "**Kirang** = kurang (lemes); loma: **kurang**. *Teu tiasa kirang?* adalah kalimat tawar-menawar paling halus dan paling aman — ia meminta tanpa menyebut angka, sehingga penjual yang menurunkan harga tidak merasa dipaksa.",
+        "**Pésér / mésér** = beli (lemes); loma: **meuli**. Bentuk pasifnya *dipésér* (dibeli). Menjual = **ngical** (lemes) / **ngajual** (loma).",
+        "**Teu nutup** harfiahnya \"tidak menutup\" — istilah pedagang untuk \"tidak balik modal\". Ini penolakan halus atas tawaranmu, bukan penghinaan. Jawaban yang wajar adalah menaikkan sedikit atau menerima harga tengahnya.",
+        "**Digenepan** dari *genep* (enam) — tapi di sini artinya \"digenapkan\", dibulatkan ke bawah agar mudah. Pedagang Sunda sering melakukannya sendiri sebagai tanda hubungan baik, dan itu isyarat bahwa tawar-menawarnya selesai dengan baik.",
+        "**Sareng** = dan, dengan (lemes); loma: **jeung**. Dua kata ini akan muncul di hampir setiap kalimat majemuk mulai sekarang.",
+        "**Mugia** = semoga (lemes); loma: **muga-muga**. *Mugia sing seueur rejeki* adalah doa penutup yang sering diucapkan pedagang — jawabannya cukup *aamiin* atau *hatur nuhun*."
+      ],
+      "grammars": [
+        {
+          "title": "Satuan dan jumlah",
+          "body": [
+            "Basa Sunda memakai awalan **sa-** untuk \"satu\" pada satuan, persis seperti bahasa Indonesia memakai \"se-\". Yang berbeda adalah beberapa kata satuannya sendiri."
+          ],
+          "table": {
+            "head": ["Satuan", "Arti", "Dipakai untuk", "Contoh"],
+            "rows": [
+              ["**sakilo**", "sekilo", "berat", "*cabé sakilo*"],
+              ["**saparapat**", "seperempat", "berat, bagian", "*bawang saparapat*"],
+              ["**satengah**", "setengah", "berat, bagian", "*gula satengah kilo*"],
+              ["**saikat**", "seikat", "sayur, kayu", "*bayam saikat*"],
+              ["**sasiki**", "sebiji, sebutir", "buah, telur", "*endog sasiki*"],
+              ["**sabungkus**", "sebungkus", "makanan bungkus", "*nasi sabungkus*"],
+              ["**sagelas**", "segelas", "minuman", "*cai sagelas*"],
+              ["**sapotong**", "sepotong", "kue, daging", "*roti sapotong*"],
+              ["**saléhér**", "seleher", "botol", "*kécap saléhér*"],
+              ["**sapasang**", "sepasang", "sandal, sepatu", "*sendal sapasang*"],
+              ["**sarébu**", "seribu", "uang", "*sarébu perak*"]
+            ]
+          },
+          "after": [
+            "Untuk jumlah selain satu, angkanya berdiri di depan tanpa perubahan: *dua kilo*, *tilu ikat*, *opat siki*, *lima bungkus*. Awalan *sa-* hilang begitu angkanya bukan satu.",
+            "⚠️ **Siki** berarti biji dan dipakai untuk apa saja yang bisa dihitung satuan: telur, buah, kancing, bahkan orang dalam percakapan santai (*dua siki* = dua orang, terasa akrab dan sedikit bercanda). Untuk orang secara sopan, pakai **urang**: *tilu urang* = tiga orang.",
+            "Untuk uang, kata **perak** masih hidup dan berarti rupiah: *lima rébu perak*. Ia tidak wajib, tapi sangat sering terdengar di pasar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menawar dengan cara yang berterima",
+      "blocks": [
+        { "type": "p", "text": "Tawar-menawar di pasar Sunda punya irama yang tetap, dan mengikutinya membuatmu diperlakukan sebagai orang setempat. Empat langkah berikut hampir selalu berhasil:" },
+        { "type": "list", "items": [
+          "**Sapa dulu, jangan langsung tanya harga.** *Punten, Bi.* Satu kata itu mengubah seluruh nada percakapan.",
+          "**Tanya harga tanpa menyebut tawaranmu.** *Sabaraha sakilo?* Dengarkan dulu.",
+          "**Tolak dengan halus, bukan dengan angka.** *Aduh, awis pisan. Teu tiasa kirang?* — biarkan penjual yang menurunkan lebih dulu.",
+          "**Sebut angkamu satu kali saja, lalu terima harga tengah.** Menawar lebih dari dua putaran dianggap tidak enak, dan menawar terlalu jauh di bawah harga dianggap merendahkan dagangan orang."
+        ] },
+        { "type": "kotak", "title": "Kalimat tawar-menawar", "items": [
+          "**Sabaraha hargana?** — Berapa harganya?",
+          "**Sabaraha sakilo?** — Berapa sekilo?",
+          "**Teu tiasa kirang?** — Tidak bisa kurang?",
+          "**Awis teuing, Bi.** — Mahal sekali, Bi.",
+          "**Tilu puluh waé kumaha?** — Tiga puluh saja bagaimana?",
+          "**Mangga atuh.** — Baiklah. (menerima)",
+          "**Hapunten, badé ningali heula.** — Maaf, mau lihat-lihat dulu. (menolak dengan sopan)",
+          "**Aya deui nu séjén?** — Ada lagi yang lain?"
+        ] },
+        { "type": "p", "text": "⚠️ Kalimat penolakan terakhir penting. Pergi tanpa berkata apa-apa sesudah bertanya harga dianggap kurang sopan. *Hapunten, badé ningali heula* memberi jalan keluar yang enak untuk kedua pihak, dan penjual biasanya menjawab *mangga* tanpa tersinggung." }
+      ]
+    },
+    {
+      "title": "Barang, warna, dan sifat",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Bahasa Indonesia", "Basa Sunda", "Bahasa Indonesia"], "rows": [
+          ["**béas**", "beras", "**endog**", "telur"],
+          ["**sangu**", "nasi", "**daging**", "daging"],
+          ["**lauk**", "ikan ⚠️", "**hayam**", "ayam"],
+          ["**cabé**", "cabai", "**bawang beureum**", "bawang merah"],
+          ["**bawang bodas**", "bawang putih", "**tomat**", "tomat"],
+          ["**gula**", "gula", "**uyah**", "garam"],
+          ["**minyak**", "minyak", "**kécap**", "kecap"],
+          ["**bayam**", "bayam", "**kangkung**", "kangkung"],
+          ["**cau**", "pisang", "**gedang**", "pepaya"],
+          ["**jeruk**", "jeruk", "**salak**", "salak"],
+          ["**ubi / boléd**", "ubi", "**sampeu**", "singkong"],
+          ["**baju**", "baju", "**calana**", "celana"],
+          ["**sendal**", "sandal", "**sapatu**", "sepatu"]
+        ] },
+        { "type": "p", "text": "Warna dan sifat untuk memilih barang:" },
+        { "type": "tabel", "head": ["Warna", "Arti", "Sifat", "Arti"], "rows": [
+          ["**beureum**", "merah", "**gedé / ageung**", "besar (loma/lemes)"],
+          ["**bodas**", "putih", "**leutik / alit**", "kecil (loma/lemes)"],
+          ["**hideung**", "hitam", "**panjang**", "panjang"],
+          ["**héjo**", "hijau", "**pondok**", "pendek"],
+          ["**konéng**", "kuning", "**seger**", "segar"],
+          ["**bulao**", "biru", "**buruk**", "busuk, rusak"],
+          ["**hérang**", "bening, jernih", "**anyar**", "baru"],
+          ["**bulao kolot**", "biru tua", "**heubeul**", "lama, usang"]
+        ] },
+        { "type": "kotak", "title": "Memilih barang", "items": [
+          "**Aya nu langkung ageung?** — Ada yang lebih besar?",
+          "**Nu ieu seger teu?** — Yang ini segar nggak?",
+          "**Abdi milarian nu warna bodas.** — Saya cari yang warna putih. (*milarian* = mencari, lemes)",
+          "**Ieu anyar atanapi heubeul?** — Ini baru atau lama? (*atanapi* = atau, lemes; loma *atawa*)",
+          "**Nu itu waé, nu paling ageung.** — Yang itu saja, yang paling besar.",
+          "**Cekap, hatur nuhun.** — Cukup, terima kasih."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "meuli / mésér", "baca": "meu-LI · mé-SÉR", "id": "membeli (loma/lemes)" },
+    { "su": "ngajual / ngical", "baca": "nga-JU-al · ngi-CAL", "id": "menjual" },
+    { "su": "nawar", "baca": "na-WAR", "id": "menawar" },
+    { "su": "harga", "baca": "har-GA", "id": "harga" },
+    { "su": "awis / mahal", "baca": "a-WIS · ma-HAL", "id": "mahal" },
+    { "su": "mirah / murah", "baca": "mi-RAH · mu-RAH", "id": "murah" },
+    { "su": "kirang / kurang", "baca": "ki-RANG · ku-RANG", "id": "kurang" },
+    { "su": "sakilo", "baca": "saki-LO", "id": "sekilo" },
+    { "su": "saparapat", "baca": "sapara-PAT", "id": "seperempat" },
+    { "su": "sasiki", "baca": "sasi-KI", "id": "sebiji, sebutir" },
+    { "su": "saikat", "baca": "sai-KAT", "id": "seikat" },
+    { "su": "sareng / jeung", "baca": "sa-RENG · jeung", "id": "dan, dengan" },
+    { "su": "atanapi / atawa", "baca": "atana-PI · ata-WA", "id": "atau" },
+    { "su": "béas", "baca": "bé-AS", "id": "beras" },
+    { "su": "endog", "baca": "en-DOG", "id": "telur" },
+    { "su": "uyah", "baca": "u-YAH", "id": "garam" },
+    { "su": "cau", "baca": "ca-U", "id": "pisang" },
+    { "su": "sampeu", "baca": "sam-PEU", "id": "singkong" },
+    { "su": "gedé / ageung", "baca": "ge-DÉ · a-GEUNG", "id": "besar" },
+    { "su": "leutik / alit", "baca": "leu-TIK · a-LIT", "id": "kecil" },
+    { "su": "seger", "baca": "se-GER", "id": "segar" },
+    { "su": "anyar / heubeul", "baca": "a-NYAR · heu-BEUL", "id": "baru / lama" },
+    { "su": "milarian / néangan", "baca": "milari-AN · né-A-ngan", "id": "mencari" },
+    { "su": "cekap / cukup", "baca": "ce-KAP · cu-KUP", "id": "cukup" },
+    { "su": "mugia", "baca": "mu-GI-a", "id": "semoga" },
+    { "su": "rejeki", "baca": "reje-KI", "id": "rezeki" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan satuan yang tepat.",
+      "items": [
+        "Telur dua butir: endog dua ____.",
+        "Cabai satu kilo: cabé ____.",
+        "Bawang seperempat kilo: bawang ____.",
+        "Bayam seikat: bayam ____.",
+        "Nasi sebungkus: sangu ____.",
+        "Tiga orang: tilu ____."
+      ]
+    },
+    {
+      "prompt": "Sebutkan lawan katanya dalam basa Sunda.",
+      "items": [
+        "awis → ____",
+        "ageung → ____",
+        "anyar → ____",
+        "panjang → ____",
+        "beureum (warna gelap lawannya) → ____",
+        "seueur → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda lemes.",
+      "items": [
+        "Permisi, berapa harganya?",
+        "Aduh, mahal sekali. Tidak bisa kurang?",
+        "Ada yang lebih besar?",
+        "Maaf, mau lihat-lihat dulu.",
+        "Semuanya berapa, Bi?",
+        "Cukup, terima kasih banyak."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sakilo / sabaraha / cabé / na / ?",
+        "kirang / tiasa / teu / ?",
+        "waé / puluh / kumaha / tilu / ?",
+        "dipésér / badé / nu / aya / deui / ?",
+        "artosna / ieu / nuhun / hatur"
+      ]
+    }
+  ],
+  "answers": [
+    "siki — sakilo — saparapat — saikat — sabungkus — urang",
+    "mirah/murah — leutik/alit — heubeul — pondok — bodas — saeutik/sakedik",
+    "Punten, sabaraha hargana? — Aduh, awis pisan. Teu tiasa kirang? — Aya nu langkung ageung? — Hapunten, badé ningali heula. — Sadayana sabaraha, Bi? — Cekap, hatur nuhun pisan.",
+    "Cabé na sabaraha sakilo? — Teu tiasa kirang? — Tilu puluh waé kumaha? — Aya deui nu badé dipésér? — Ieu artosna, hatur nuhun."
+  ]
+}

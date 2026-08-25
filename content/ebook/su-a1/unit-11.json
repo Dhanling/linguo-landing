@@ -1,0 +1,204 @@
+{
+  "title": "Arah jalan dan angkot",
+  "title_target": "Néangan jalan jeung naék angkot",
+  "goal": "Bertanya arah, memahami jawabannya, dan bepergian dengan angkot, ojek, serta kereta di Bandung.",
+  "bekal": [
+    "arah: *katuhu*, *kénca*, *lempeng*, *balik deui*",
+    "kata tempat: *palih*, *caket*, *tukang*, *hareup*, *gigir*",
+    "kalimat wajib di angkot: *kénca, Pa!* dan *punten, hilir!*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Dina angkot",
+      "intro": "Rani naik angkot hijau untuk pertama kalinya, hendak ke Jalan Braga. Ia duduk di dekat pintu dan bertanya kepada penumpang di sebelahnya.",
+      "lines": [
+        { "speaker": "Rani:", "text": "Punten, Bu. Angkot ieu ngalangkungan Braga henteu?", "id": "Permisi, Bu. Angkot ini lewat Braga nggak?", "literal": "permisi, Bu. angkot ini melewati Braga tidak?" },
+        { "speaker": "Ibu:", "text": "Henteu, Néng. Ieu mah ka Cicaheum. Kedah ngalih di alun-alun.", "id": "Nggak, Neng. Ini ke Cicaheum. Harus pindah di alun-alun.", "literal": "tidak, Néng. ini [mah] ke Cicaheum. harus pindah di alun-alun." },
+        { "speaker": "Rani:", "text": "Alun-alun tebih teu ti dieu?", "id": "Alun-alun jauh nggak dari sini?", "literal": "alun-alun jauh tidak dari sini?" },
+        { "speaker": "Ibu:", "text": "Teu tebih. Kirang langkung sapuluh menit deui.", "id": "Nggak jauh. Kurang lebih sepuluh menit lagi.", "literal": "tidak jauh. kurang lebih sepuluh menit lagi." },
+        { "speaker": "Rani:", "text": "Hatur nuhun, Bu. Kumaha nyarios ka supirna upami badé turun?", "id": "Terima kasih, Bu. Gimana bilang ke sopirnya kalau mau turun?", "literal": "terima kasih, Bu. bagaimana berkata ke sopirnya kalau akan turun?" },
+        { "speaker": "Ibu:", "text": "Cukup nyebat kénca, Pa! Atawa punten, hilir!", "id": "Cukup bilang kénca, Pa! Atau punten, hilir!", "literal": "cukup menyebut kiri, Pa! atau permisi, hilir!" },
+        { "speaker": "Rani:", "text": "Kénca hartina kiri nya? Naha lain turun?", "id": "Kénca artinya kiri ya? Kenapa bukan turun?", "literal": "kiri artinya kiri ya? kenapa bukan turun?" },
+        { "speaker": "Ibu:", "text": "Heueuh, sabab angkot eureunna sok minggir ka kénca.", "id": "Iya, soalnya angkot berhentinya suka minggir ke kiri.", "literal": "iya, sebab angkot berhentinya suka minggir ke kiri." },
+        { "speaker": "Rani:", "text": "Ooh. Ari ongkosna sabaraha, Bu?", "id": "Ooh. Kalau ongkosnya berapa, Bu?", "literal": "ooh. adapun ongkosnya berapa, Bu?" },
+        { "speaker": "Ibu:", "text": "Lima rébu waé. Bayarna pas rék turun.", "id": "Lima ribu aja. Bayarnya pas mau turun.", "literal": "lima ribu saja. bayarnya pas akan turun." },
+        { "speaker": "Rani:", "text": "Alun-alun tos caket, Bu?", "id": "Alun-alun sudah dekat, Bu?", "literal": "alun-alun sudah dekat, Bu?" },
+        { "speaker": "Ibu:", "text": "Sakedap deui. Tuh, sanggeus masjid ageung éta.", "id": "Sebentar lagi. Tuh, setelah masjid besar itu.", "literal": "sebentar lagi. tuh, sesudah masjid besar itu." },
+        { "speaker": "Rani:", "text": "Kénca, Pa! Punten, hilir!", "id": "Kiri, Pak! Permisi, turun!", "literal": "kiri, Pak! permisi, hilir!" }
+      ],
+      "notes": [
+        "**Kénca** = kiri, **katuhu** = kanan. ⚠️ Keduanya jauh berbeda dari bahasa Indonesia dan harus dihafal terpisah. Cara mengingat *katuhu*: ia sekerabat dengan *tuhu* (setia, benar) — dan tangan kanan adalah tangan yang \"benar\" dalam adat.",
+        "**Hilir** dipakai di angkot Bandung untuk \"saya mau turun di sini\". Asalnya dari *hilir* (bagian bawah aliran sungai) dan kini menjadi kata khusus lalu lintas. *Punten, hilir!* adalah kalimat yang akan kamu ucapkan hampir tiap hari.",
+        "**Ngalangkungan** = melewati (lemes); loma: **ngaliwatan**. Bertanya *ngalangkungan X henteu?* adalah cara paling jelas memastikan rute angkot.",
+        "**Ngalih** = pindah (lemes); loma: **pindah**. Untuk berganti kendaraan orang juga berkata *oper* atau *ganti angkot*.",
+        "**Kirang langkung** = kurang lebih (lemes); loma: **kurang leuwih**. Sangat sering dipakai untuk perkiraan jarak dan waktu.",
+        "**Eureun** = berhenti. *Eureun heula!* = berhenti dulu! Kata ini juga dipakai untuk berhenti melakukan sesuatu: *eureun ngaroko* = berhenti merokok."
+      ],
+      "grammars": [
+        {
+          "title": "Kata tempat dan arah",
+          "body": [
+            "Basa Sunda memakai kata **palih** (lemes) atau **beulah** (loma) untuk menyatakan sisi, dan ia hampir selalu hadir dalam petunjuk arah."
+          ],
+          "table": {
+            "head": ["Basa Sunda", "Arti", "Contoh"],
+            "rows": [
+              ["**palih katuhu / beulah katuhu**", "sebelah kanan", "*Bumina palih katuhu.*"],
+              ["**palih kénca / beulah kénca**", "sebelah kiri", "*Warungna palih kénca.*"],
+              ["**lempeng / terus**", "lurus, terus", "*Lempeng waé heula.*"],
+              ["**balik deui**", "kembali, putar balik", "*Kedah balik deui sakedik.*"],
+              ["**hareup / payun**", "depan", "*Di payun masjid.*"],
+              ["**tukang / pengker**", "belakang", "*Di pengker pasar.*"],
+              ["**gigir / gédéng**", "samping", "*Gigir apotek.*"],
+              ["**luhur / handap**", "atas / bawah", "*Di luhur jambatan.*"],
+              ["**jero / luar**", "dalam / luar", "*Di jero gang.*"],
+              ["**caket / tebih**", "dekat / jauh", "*Caket ka dieu.*"],
+              ["**hareupeun**", "di hadapan", "*Hareupeun sakola.*"],
+              ["**tukangeun**", "di belakang", "*Tukangeun imah.*"]
+            ]
+          },
+          "after": [
+            "Perhatikan akhiran **-eun** yang muncul lagi di sini dengan fungsi berbeda: menempel pada kata tempat, ia berarti \"di posisi itu terhadap sesuatu\". *Hareup* = depan; *hareupeun sakola* = di depan sekolah. Pola yang sama: *tukangeun* (di belakang), *gigireun* (di samping), *handapeun* (di bawah), *luhureun* (di atas).",
+            "⚠️ Petunjuk arah orang Sunda sering memakai patokan bangunan, bukan nama jalan: *sanggeus masjid*, *hareupeun Indomaret*, *palih katuhu apotek*. Kalau kamu bertanya dengan menyebut nama jalan dan jawabannya menyebut bangunan, itu bukan salah paham — itu memang caranya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya arah",
+      "blocks": [
+        { "type": "kotak", "title": "Kalimat bertanya", "items": [
+          "**Punten, badé naros. Jalan Braga palih mana?** — Permisi, mau tanya. Jalan Braga sebelah mana?",
+          "**Kumaha jalanna ka ____?** — Bagaimana jalannya ke ____?",
+          "**Tebih teu ti dieu?** — Jauh nggak dari sini?",
+          "**Tiasa dileumpangan?** — Bisa dijalan kaki?",
+          "**Angkot naon nu ka ____?** — Angkot apa yang ke ____?",
+          "**Ieu ngalangkungan ____ henteu?** — Ini lewat ____ nggak?",
+          "**Turunna di mana?** — Turunnya di mana?",
+          "**Ongkosna sabaraha?** — Ongkosnya berapa?"
+        ] },
+        { "type": "p", "text": "Jawaban yang akan kamu dengar biasanya pendek dan penuh kata tempat. Berikut contoh yang khas, lengkap dengan terjemahannya:" },
+        { "type": "tabel", "head": ["Yang kamu dengar", "Artinya"], "rows": [
+          ["*Lempeng waé, engké aya parapatan.*", "Lurus saja, nanti ada perempatan."],
+          ["*Ka katuhu sanggeus masjid.*", "Ke kanan setelah masjid."],
+          ["*Palih kénca, gigireun apotek.*", "Sebelah kiri, di samping apotek."],
+          ["*Kedah balik deui sakedik.*", "Harus balik lagi sedikit."],
+          ["*Caket, sakedap ogé dugi.*", "Dekat, sebentar juga sampai."],
+          ["*Tebih, mending naék angkot.*", "Jauh, mending naik angkot."],
+          ["*Turun di parapatan, terus leumpang.*", "Turun di perempatan, terus jalan kaki."],
+          ["*Duka teuing, abdi ogé sanés urang dieu.*", "Entahlah, saya juga bukan orang sini."]
+        ] }
+      ]
+    },
+    {
+      "title": "Kendaraan dan jalan",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Arti", "Basa Sunda", "Arti"], "rows": [
+          ["**angkot**", "angkot", "**beus**", "bus"],
+          ["**ojég**", "ojek", "**taksi**", "taksi"],
+          ["**motor**", "motor", "**mobil**", "mobil"],
+          ["**sapédah**", "sepeda", "**karéta**", "kereta"],
+          ["**delman / sado**", "delman", "**becak**", "becak"],
+          ["**jalan**", "jalan", "**gang**", "gang"],
+          ["**parapatan**", "perempatan", "**pertigaan**", "pertigaan"],
+          ["**jambatan**", "jembatan", "**tanjakan**", "tanjakan"],
+          ["**pudunan**", "turunan", "**tikungan**", "tikungan"],
+          ["**halte**", "halte", "**terminal**", "terminal"],
+          ["**stasion**", "stasiun", "**bandara**", "bandara"],
+          ["**macét**", "macet", "**rame**", "ramai"]
+        ] },
+        { "type": "kotak", "title": "Kalimat di dalam kendaraan", "items": [
+          "**Kénca, Pa!** — Kiri, Pak! (minta berhenti)",
+          "**Punten, hilir!** — Permisi, turun!",
+          "**Eureun heula, Pa.** — Berhenti dulu, Pak.",
+          "**Alon-alon waé, Pa.** — Pelan-pelan saja, Pak.",
+          "**Punten, tiasa geser sakedik?** — Permisi, bisa geser sedikit?",
+          "**Ieu artosna, Pa. Nuhun.** — Ini uangnya, Pak. Terima kasih.",
+          "**Aya kembalian teu?** — Ada kembalian nggak?",
+          "**Macét pisan nya poé ieu.** — Macet banget ya hari ini."
+        ] },
+        { "type": "p", "text": "⚠️ Angkot Bandung dibedakan oleh **warna** dan **trayek** yang tertulis di badan mobil, bukan nomor. Bertanya *angkot naon nu ka Dago?* akan dijawab dengan warna: *nu héjo* (yang hijau), *nu konéng* (yang kuning). Menghafal dua-tiga warna trayek yang kamu pakai sehari-hari lebih berguna daripada menghafal nama jalannya." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "kénca", "baca": "kén-CA", "id": "kiri ⚠️" },
+    { "su": "katuhu", "baca": "katu-HU", "id": "kanan ⚠️" },
+    { "su": "lempeng", "baca": "lem-PENG", "id": "lurus" },
+    { "su": "palih / beulah", "baca": "pa-LIH · beu-LAH", "id": "sebelah, sisi" },
+    { "su": "hareup / payun", "baca": "ha-REUP · pa-YUN", "id": "depan" },
+    { "su": "tukang / pengker", "baca": "tu-KANG · peng-KER", "id": "belakang" },
+    { "su": "gigir", "baca": "gi-GIR", "id": "samping" },
+    { "su": "luhur / handap", "baca": "lu-HUR · han-DAP", "id": "atas / bawah" },
+    { "su": "caket / tebih", "baca": "ca-KET · te-BIH", "id": "dekat / jauh" },
+    { "su": "eureun", "baca": "eu-REUN", "id": "berhenti" },
+    { "su": "hilir", "baca": "hi-LIR", "id": "turun (di angkot)" },
+    { "su": "naék / turun", "baca": "na-ÉK · tu-RUN", "id": "naik / turun" },
+    { "su": "ngalangkungan", "baca": "ngalangku-NGAN", "id": "melewati" },
+    { "su": "ngalih / pindah", "baca": "nga-LIH · pin-DAH", "id": "pindah" },
+    { "su": "leumpang", "baca": "leum-PANG", "id": "berjalan kaki" },
+    { "su": "kirang langkung", "baca": "ki-RANG lang-KUNG", "id": "kurang lebih" },
+    { "su": "parapatan", "baca": "parapa-TAN", "id": "perempatan" },
+    { "su": "jambatan", "baca": "jamba-TAN", "id": "jembatan" },
+    { "su": "tanjakan / pudunan", "baca": "tanja-KAN · pudu-NAN", "id": "tanjakan / turunan" },
+    { "su": "ongkos", "baca": "ong-KOS", "id": "ongkos" },
+    { "su": "macét", "baca": "ma-CÉT", "id": "macet" },
+    { "su": "alon-alon", "baca": "a-LON a-LON", "id": "pelan-pelan" },
+    { "su": "dugi / nepi", "baca": "du-GI · ne-PI", "id": "sampai, tiba" },
+    { "su": "supir", "baca": "su-PIR", "id": "sopir" },
+    { "su": "sanggeus / sasampun", "baca": "sang-GEUS", "id": "sesudah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata arah yang tepat.",
+      "items": [
+        "Lawan kata katuhu: ____",
+        "Terus saja tanpa belok: ____",
+        "Di posisi depan sekolah: ____ sakola",
+        "Di samping apotek: ____ apotek",
+        "Tidak jauh dari sini: ____ ka dieu",
+        "Harus putar balik: kedah ____ sakedik"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan petunjuk arah berikut ke bahasa Indonesia.",
+      "items": [
+        "Lempeng waé, engké aya parapatan. → ____",
+        "Ka katuhu sanggeus masjid. → ____",
+        "Palih kénca, gigireun apotek. → ____",
+        "Turun di parapatan, terus leumpang. → ____",
+        "Tebih, mending naék angkot. → ____",
+        "Caket, sakedap ogé dugi. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda.",
+      "items": [
+        "Permisi, mau tanya. Jalan Braga sebelah mana?",
+        "Jauh nggak dari sini?",
+        "Angkot apa yang ke Dago?",
+        "Ongkosnya berapa, Pak?",
+        "Kiri, Pak!",
+        "Pelan-pelan saja, Pak."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "henteu / Braga / ngalangkungan / ieu / ?",
+        "dieu / teu / ti / tebih / ?",
+        "hilir / punten / !",
+        "sabaraha / ongkosna / ?",
+        "masjid / katuhu / sanggeus / ka"
+      ]
+    }
+  ],
+  "answers": [
+    "kénca — lempeng — hareupeun — gigireun — caket — balik deui",
+    "Lurus saja, nanti ada perempatan. — Ke kanan setelah masjid. — Sebelah kiri, di samping apotek. — Turun di perempatan, terus jalan kaki. — Jauh, mending naik angkot. — Dekat, sebentar juga sampai.",
+    "Punten, badé naros. Jalan Braga palih mana? — Tebih teu ti dieu? — Angkot naon nu ka Dago? — Ongkosna sabaraha, Pa? — Kénca, Pa! — Alon-alon waé, Pa.",
+    "Ieu ngalangkungan Braga henteu? — Tebih teu ti dieu? — Punten, hilir! — Ongkosna sabaraha? — Ka katuhu sanggeus masjid."
+  ]
+}

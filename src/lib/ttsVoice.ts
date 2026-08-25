@@ -33,6 +33,11 @@ export const CHIRP_LOCALES: Record<string, string> = {
      membacanya nyaris benar, kecuali `a` di ujung kata yang berbunyi `o` dan
      pasangan dh/th. Tanpa pemetaan ini ia jatuh ke en-US dan terbaca kacau. */
   jv: "id-ID",
+  /* [ebook-tts-sunda-v1] Sama seperti jv: katalog Google nol voice untuk su-*
+     (dicek 25 Agu 2026). Basa Sunda memakai kesepakatan huruf Latin yang sama
+     dengan bahasa Indonesia, jadi suara id-ID membacanya nyaris benar —
+     kecuali vokal `eu` yang keluar sebagai dua bunyi terpisah. */
+  su: "id-ID",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */

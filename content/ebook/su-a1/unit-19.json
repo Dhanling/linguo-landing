@@ -1,0 +1,200 @@
+{
+  "title": "Aksara Sunda",
+  "title_target": "Aksara Sunda Baku",
+  "goal": "Membaca papan nama jalan, kantor, dan stasiun di Jawa Barat yang ditulis dengan aksara Sunda — dan menulis namamu sendiri dengannya.",
+  "bekal": [
+    "tujuh aksara swara dan dua puluh tiga aksara ngalagena",
+    "rarangkén: tanda yang mengubah bunyi aksara",
+    "membaca papan nama sungguhan di Bandung"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Papan nama di Jalan Asia Afrika",
+      "intro": "Rani berhenti di depan papan nama jalan yang bertuliskan dua baris: satu Latin, satu aksara yang belum pernah ia lihat. Sari menjelaskannya.",
+      "lines": [
+        { "speaker": "Rani:", "text": "Sar, tulisan nu di handap téh naon? Kawas aksara Bali.", "id": "Sar, tulisan yang di bawah itu apa? Kayak aksara Bali.", "literal": "Sar, tulisan yang di bawah [téh] apa? seperti aksara Bali." },
+        { "speaker": "Sari:", "text": "Éta aksara Sunda. Sarua jeung nu di luhurna, ngan hurufna béda.", "id": "Itu aksara Sunda. Sama dengan yang di atasnya, cuma hurufnya beda.", "literal": "itu aksara Sunda. sama dengan yang di atasnya, hanya hurufnya beda." },
+        { "speaker": "Rani:", "text": "Jadi maca na sarua Asia Afrika?", "id": "Jadi bacanya sama Asia Afrika?", "literal": "jadi bacanya sama Asia Afrika?" },
+        { "speaker": "Sari:", "text": "Heueuh. Ti taun 2000-an sadaya papan jalan di Jabar kudu dua rupa.", "id": "Iya. Dari tahun 2000-an semua papan jalan di Jabar harus dua rupa.", "literal": "iya. dari tahun 2000-an semua papan jalan di Jabar harus dua rupa." },
+        { "speaker": "Rani:", "text": "Urang Sunda mah bisa maca kabéh?", "id": "Orang Sunda bisa baca semua?", "literal": "orang Sunda [mah] bisa membaca semua?" },
+        { "speaker": "Sari:", "text": "Ah, henteu. Kuring ogé kudu mikir heula. Diajarna di SD, tapi tara dipaké.", "id": "Ah, nggak. Aku juga harus mikir dulu. Belajarnya di SD, tapi nggak pernah dipakai.", "literal": "ah, tidak. aku juga harus berpikir dulu. belajarnya di SD, tapi tidak pernah dipakai." },
+        { "speaker": "Rani:", "text": "Hésé teu diajarna?", "id": "Susah nggak belajarnya?", "literal": "sulit tidak belajarnya?" },
+        { "speaker": "Sari:", "text": "Teu pati hésé. Hurufna geus mawa bunyi a. Tinggal nambahan tanda.", "id": "Nggak terlalu susah. Hurufnya sudah bawa bunyi a. Tinggal nambahin tanda.", "literal": "tidak terlalu sulit. hurufnya sudah membawa bunyi a. tinggal menambahi tanda." },
+        { "speaker": "Rani:", "text": "Kawas hangeul Korea kitu?", "id": "Kayak hangeul Korea gitu?", "literal": "seperti hangeul Korea begitu?" },
+        { "speaker": "Sari:", "text": "Leuwih kawas aksara Jawa jeung Bali. Sadulur kabéh.", "id": "Lebih kayak aksara Jawa dan Bali. Sesaudara semua.", "literal": "lebih seperti aksara Jawa dan Bali. bersaudara semua." },
+        { "speaker": "Rani:", "text": "Cik ajarkeun ngaran kuring dina aksara Sunda!", "id": "Coba ajarin nama aku dalam aksara Sunda!", "literal": "coba ajarkan nama aku dalam aksara Sunda!" },
+        { "speaker": "Sari:", "text": "Sok. Ra-ni. Aksara ra, terus na dibéré panghulu jadi ni. ᮛᮔᮤ", "id": "Boleh. Ra-ni. Aksara ra, terus na dikasih panghulu jadi ni. ᮛᮔᮤ", "literal": "silakan. Ra-ni. aksara ra, terus na diberi panghulu jadi ni. ᮛᮔᮤ" }
+      ],
+      "notes": [
+        "**Aksara Sunda Baku** ditetapkan tahun 1997 dan disahkan lewat Peraturan Daerah Jawa Barat pada 2003. Sejak itu, papan nama jalan, kantor pemerintah, dan stasiun di seluruh Jawa Barat wajib mencantumkannya di bawah tulisan Latin.",
+        "**Teu pati** = tidak terlalu. Pasangan dengan *pati* yang berarti \"terlalu\": *teu pati hésé* = tidak terlalu sulit. Ungkapan ini sangat sering dan berguna untuk melunakkan penilaian.",
+        "**Sadulur** = bersaudara. Aksara Sunda memang sekerabat dengan aksara Jawa (Hanacaraka) dan aksara Bali — ketiganya turunan aksara Kawi, yang berasal dari aksara Pallawa India Selatan.",
+        "**Nambahan** dari *tambah* + *N-* + *-an* = menambahi. Bandingkan dengan *nambahkeun* (menambahkan) — akhiran *-an* dan *-keun* membedakan arah perbuatannya, seperti yang kamu pelajari di Unit 10.",
+        "**Panghulu** adalah nama salah satu tanda dalam aksara Sunda, yaitu tanda yang mengubah bunyi *a* menjadi *i*. Nama-nama tanda ini akan kamu temui di tabel berikutnya.",
+        "⚠️ Jangan berkecil hati kalau merasa lambat: sebagian besar orang Sunda sendiri juga membaca aksara ini perlahan-lahan. Tujuan unit ini bukan kelancaran, melainkan agar papan nama berhenti menjadi gambar."
+      ],
+      "grammars": [
+        {
+          "title": "Cara kerja aksara Sunda",
+          "body": [
+            "Aksara Sunda adalah **abugida**, bukan alfabet. Bedanya penting: setiap huruf konsonan sudah membawa bunyi vokal *a* di dalamnya. Huruf ᮊ tidak dibaca \"k\", melainkan **ka**. Untuk mengubah vokalnya, kamu menambahkan tanda kecil yang disebut **rarangkén**."
+          ],
+          "table": {
+            "head": ["Untuk membuat", "Tanda", "Nama tanda", "Contoh"],
+            "rows": [
+              ["ka → **ki**", "ᮤ (di atas)", "**panghulu**", "ᮊᮤ"],
+              ["ka → **ku**", "ᮥ (di bawah)", "**panyuku**", "ᮊᮥ"],
+              ["ka → **ké**", "ᮦ (di depan)", "**panéléng**", "ᮊᮦ"],
+              ["ka → **ko**", "ᮧ (mengapit)", "**panolong**", "ᮊᮧ"],
+              ["ka → **ke**", "ᮨ (di atas)", "**pamepet**", "ᮊᮨ"],
+              ["ka → **keu**", "ᮩ (di atas)", "**paneuleung**", "ᮊᮩ"],
+              ["ka → **k** (mati)", "᮪ (di belakang)", "**pamaéh**", "ᮊ᮪"],
+              ["ka → **kang**", "ᮀ", "**panyecek**", "ᮊᮀ"],
+              ["ka → **kar**", "ᮁ", "**panglayar**", "ᮊᮁ"],
+              ["ka → **kah**", "ᮂ", "**pangwisad**", "ᮊᮂ"],
+              ["ka → **kra**", "ᮢ", "**panyakra**", "ᮊᮢ"],
+              ["ka → **kla**", "ᮣ", "**panyiku**", "ᮊᮣ"],
+              ["ka → **kya**", "ᮡ", "**pamingkal**", "ᮊᮡ"]
+            ]
+          },
+          "after": [
+            "Tiga belas tanda itu terdengar banyak, tapi enam yang pertama menutup hampir seluruh papan nama yang akan kamu baca: *panghulu*, *panyuku*, *panéléng*, *panolong*, *pamepet*, dan *pamaéh*.",
+            "⚠️ **Pamaéh** (᮪) adalah yang paling penting untuk membaca papan nama, karena ia mematikan vokal bawaan. Tanpa memahaminya, kata seperti *Bandung* akan kamu baca *Bandunga*.",
+            "Kalau aksara di halaman ini tampil sebagai kotak kosong pada perangkatmu, itu karena huruf Sunda belum terpasang. Di ponsel Android dan iPhone terbaru ia sudah ada; pada perangkat lama, pasang tetenger *Noto Sans Sundanese* dari Google Fonts."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Aksara swara dan ngalagena",
+      "blocks": [
+        { "type": "p", "text": "**Aksara swara** adalah tujuh huruf vokal yang berdiri sendiri, dipakai ketika sebuah kata dimulai dengan vokal:" },
+        { "type": "tabel", "head": ["Aksara", "Bunyi", "Aksara", "Bunyi"], "rows": [
+          ["ᮃ", "**a**", "ᮄ", "**i**"],
+          ["ᮅ", "**u**", "ᮆ", "**é**"],
+          ["ᮇ", "**o**", "ᮈ", "**e** (pepet)"],
+          ["ᮉ", "**eu**", "—", "—"]
+        ] },
+        { "type": "p", "text": "**Aksara ngalagena** adalah huruf konsonan, masing-masing sudah membawa bunyi *a*. Delapan belas yang pertama adalah huruf asli Sunda; lima yang terakhir ditambahkan untuk kata serapan." },
+        { "type": "tabel", "head": ["Aksara", "Bunyi", "Aksara", "Bunyi", "Aksara", "Bunyi"], "rows": [
+          ["ᮊ", "**ka**", "ᮌ", "**ga**", "ᮍ", "**nga**"],
+          ["ᮎ", "**ca**", "ᮏ", "**ja**", "ᮑ", "**nya**"],
+          ["ᮒ", "**ta**", "ᮓ", "**da**", "ᮔ", "**na**"],
+          ["ᮕ", "**pa**", "ᮘ", "**ba**", "ᮙ", "**ma**"],
+          ["ᮚ", "**ya**", "ᮛ", "**ra**", "ᮜ", "**la**"],
+          ["ᮝ", "**wa**", "ᮞ", "**sa**", "ᮠ", "**ha**"],
+          ["ᮖ", "**fa**", "ᮗ", "**va**", "ᮐ", "**qa**"],
+          ["ᮟ", "**xa**", "ᮝ᮪ᮏ", "**za**", "—", "—"]
+        ] },
+        { "type": "p", "text": "⚠️ Urutan hafalannya bukan a-b-c melainkan mengikuti kelompok bunyi, dan anak sekolah dasar di Jawa Barat menghafalnya dengan lagu: *ka-ga-nga, ca-ja-nya, ta-da-na, pa-ba-ma, ya-ra-la, wa-sa-ha*. Enam kelompok, tiga huruf tiap kelompok, delapan belas huruf asli. Kalau kamu bisa menghafal enam baris itu, kamu sudah menguasai bagian tersulitnya." }
+      ]
+    },
+    {
+      "title": "Membaca papan nama sungguhan",
+      "blocks": [
+        { "type": "p", "text": "Sekarang bagian yang berguna. Berikut nama-nama yang benar-benar tertulis di papan Bandung dan sekitarnya, dibongkar suku kata demi suku kata:" },
+        { "type": "tabel", "head": ["Aksara Sunda", "Bongkarannya", "Latin"], "rows": [
+          ["ᮘᮔ᮪ᮓᮥᮀ", "ba + na(pamaéh) + du(panyuku) + ng(panyecek)", "**Bandung**"],
+          ["ᮞᮥᮔ᮪ᮓ", "sa + na(pamaéh) + da", "**Sunda**"],
+          ["ᮏᮝ ᮘᮛᮒ᮪", "ja + wa · ba + ra + ta(pamaéh)", "**Jawa Barat**"],
+          ["ᮘᮧᮌᮧᮁ", "bo(panolong) + go + r(panglayar)", "**Bogor**"],
+          ["ᮎᮤᮛᮨᮘᮧᮔ᮪", "ci + re + bo + na(pamaéh)", "**Cirebon**"],
+          ["ᮌᮛᮥᮒ᮪", "ga + ru + ta(pamaéh)", "**Garut**"],
+          ["ᮒᮞᮤᮊ᮪ᮙᮜᮚ", "ta + si + ka(pamaéh) + ma + la + ya", "**Tasikmalaya**"],
+          ["ᮓᮌᮧ", "da + go(panolong)", "**Dago**"],
+          ["ᮕᮞᮤᮁ", "pa + si + r(panglayar)", "**Pasir**"],
+          ["ᮜᮨᮙ᮪ᮘᮀ", "le(pamepet) + ma(pamaéh) + ba + ng(panyecek)", "**Lembang**"]
+        ] },
+        { "type": "p", "text": "Perhatikan pola yang berulang: nama tempat Sunda banyak dimulai dengan **Ci-** (dari *cai*, air) dan **Pa-**. Begitu kamu mengenali dua suku kata pembuka itu dalam aksara — ᮎᮤ dan ᮕ — separuh papan nama Jawa Barat langsung terbaca." },
+        { "type": "kotak", "title": "Latihan lima menit yang paling berguna", "items": [
+          "Hafalkan enam baris ngalagena dengan lagu: *ka-ga-nga · ca-ja-nya · ta-da-na · pa-ba-ma · ya-ra-la · wa-sa-ha*.",
+          "Hafalkan tiga tanda saja dulu: **panghulu** (i), **panyuku** (u), **pamaéh** (mematikan vokal).",
+          "Setiap kali lewat papan nama jalan, baca baris bawahnya sebelum melihat baris atasnya. Cocokkan.",
+          "Tulis namamu sendiri. Itu kata pertama yang akan melekat.",
+          "Jangan mengejar kecepatan. Tujuannya bukan lancar membaca, melainkan berhenti melihatnya sebagai hiasan."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "aksara", "baca": "aksa-RA", "id": "aksara, huruf" },
+    { "su": "aksara swara", "baca": "aksa-RA swa-RA", "id": "huruf vokal" },
+    { "su": "aksara ngalagena", "baca": "ngalage-NA", "id": "huruf konsonan" },
+    { "su": "rarangkén", "baca": "rarang-KÉN", "id": "tanda pengubah bunyi" },
+    { "su": "panghulu", "baca": "panghu-LU", "id": "tanda bunyi i" },
+    { "su": "panyuku", "baca": "panyu-KU", "id": "tanda bunyi u" },
+    { "su": "panéléng", "baca": "pané-LÉNG", "id": "tanda bunyi é" },
+    { "su": "panolong", "baca": "pano-LONG", "id": "tanda bunyi o" },
+    { "su": "pamepet", "baca": "pame-PET", "id": "tanda bunyi e" },
+    { "su": "paneuleung", "baca": "paneu-LEUNG", "id": "tanda bunyi eu" },
+    { "su": "pamaéh", "baca": "pama-ÉH", "id": "tanda pematikan vokal" },
+    { "su": "panyecek", "baca": "panye-CEK", "id": "tanda bunyi ng" },
+    { "su": "panglayar", "baca": "pangla-YAR", "id": "tanda bunyi r" },
+    { "su": "pangwisad", "baca": "pangwi-SAD", "id": "tanda bunyi h" },
+    { "su": "huruf", "baca": "hu-RUF", "id": "huruf" },
+    { "su": "tulisan", "baca": "tuli-SAN", "id": "tulisan" },
+    { "su": "papan nami", "baca": "PA-pan NA-mi", "id": "papan nama" },
+    { "su": "maca / maos", "baca": "ma-CA · ma-OS", "id": "membaca" },
+    { "su": "nulis / nyerat", "baca": "nu-LIS · nye-RAT", "id": "menulis" },
+    { "su": "sadulur", "baca": "sadu-LUR", "id": "bersaudara" },
+    { "su": "teu pati", "baca": "teu PA-ti", "id": "tidak terlalu" },
+    { "su": "nambahan", "baca": "namba-HAN", "id": "menambahi" },
+    { "su": "béda / sarua", "baca": "bé-DA · saru-A", "id": "beda / sama" },
+    { "su": "ngajarkeun", "baca": "ngajar-KEUN", "id": "mengajarkan" },
+    { "su": "hurup", "baca": "hu-RUP", "id": "huruf (bentuk Sunda)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sebutkan nama tanda rarangkén untuk perubahan bunyi berikut.",
+      "items": [
+        "ka menjadi ki: ____",
+        "ka menjadi ku: ____",
+        "ka menjadi ko: ____",
+        "ka menjadi keu: ____",
+        "ka menjadi k (vokal mati): ____",
+        "ka menjadi kang: ____"
+      ]
+    },
+    {
+      "prompt": "Bongkar nama tempat berikut menjadi suku kata seperti contoh di teks.",
+      "items": [
+        "Sunda → ____",
+        "Garut → ____",
+        "Dago → ____",
+        "Bogor → ____",
+        "Cirebon → ____",
+        "Lembang → ____"
+      ]
+    },
+    {
+      "prompt": "Lengkapi lagu hafalan enam baris aksara ngalagena.",
+      "items": [
+        "ka - ga - ____",
+        "ca - ____ - nya",
+        "____ - da - na",
+        "pa - ba - ____",
+        "ya - ____ - la",
+        "wa - sa - ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda.",
+      "items": [
+        "Tulisan yang di bawah itu apa?",
+        "Itu aksara Sunda.",
+        "Susah nggak belajarnya?",
+        "Tidak terlalu susah.",
+        "Coba ajarin nama aku dalam aksara Sunda.",
+        "Aku juga harus mikir dulu."
+      ]
+    }
+  ],
+  "answers": [
+    "panghulu — panyuku — panolong — paneuleung — pamaéh — panyecek",
+    "sa + na(pamaéh) + da — ga + ru + ta(pamaéh) — da + go — bo + go + r(panglayar) — ci + re + bo + na(pamaéh) — le + ma(pamaéh) + ba + ng(panyecek)",
+    "nga — ja — ta — ma — ra — ha",
+    "Tulisan nu di handap téh naon? — Éta aksara Sunda. — Hésé teu diajarna? — Teu pati hésé. — Cik ajarkeun ngaran kuring dina aksara Sunda. — Kuring ogé kudu mikir heula."
+  ]
+}

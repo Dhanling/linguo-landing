@@ -1,0 +1,211 @@
+{
+  "title": "Keluarga dan rumah",
+  "title_target": "Kulawarga jeung imah",
+  "goal": "Menyebut anggota keluarga dengan tingkat basa yang tepat, menerangkan bagian rumah, dan memakai kata tunjuk *ieu*, *éta*, *itu*.",
+  "bekal": [
+    "nama anggota keluarga di dua tingkat, termasuk *lanceuk* dan *adi* yang tidak membedakan jenis kelamin",
+    "bagian rumah dan benda sehari-hari di dalamnya",
+    "kata tunjuk tiga jarak: *ieu*, *éta*, *itu* — bahasa Indonesia hanya punya dua"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Poto di dinding",
+      "intro": "Rani menunggu di ruang tamu Bu Imas sambil menatap deretan foto berbingkai di dinding. Bu Imas datang membawa dua gelas teh.",
+      "lines": [
+        { "speaker": "Bu Imas:", "text": "Keur ningali poto nya? Éta kulawarga Ibu.", "id": "Lagi lihat foto ya? Itu keluarga Ibu.", "literal": "sedang melihat foto ya? itu keluarga Ibu." },
+        { "speaker": "Rani:", "text": "Muhun. Ieu saha, Bu?", "id": "Iya. Ini siapa, Bu?", "literal": "iya. ini siapa, Bu?" },
+        { "speaker": "Bu Imas:", "text": "Éta carogé Ibu, almarhum. Pupus tilu taun ka tukang.", "id": "Itu suami Ibu, almarhum. Meninggal tiga tahun lalu.", "literal": "itu suami Ibu, almarhum. meninggal tiga tahun ke belakang." },
+        { "speaker": "Rani:", "text": "Hapunten, Bu…", "id": "Maaf, Bu…", "literal": "maaf, Bu…" },
+        { "speaker": "Bu Imas:", "text": "Teu nanaon. Ari nu itu, putra Ibu nu cikal, Kang Déni.", "id": "Nggak apa-apa. Kalau yang itu, anak Ibu yang sulung, Kang Deni.", "literal": "tidak apa-apa. adapun yang itu, anak Ibu yang sulung, Kang Déni." },
+        { "speaker": "Rani:", "text": "Calikna di Bandung ogé?", "id": "Tinggalnya di Bandung juga?", "literal": "duduknya di Bandung juga?" },
+        { "speaker": "Bu Imas:", "text": "Henteu, di Cirebon. Damel di dinya. Nu bungsu mah di dieu, Néng Sari.", "id": "Nggak, di Cirebon. Kerja di sana. Yang bungsu di sini, Neng Sari.", "literal": "tidak, di Cirebon. bekerja di sana. yang bungsu [mah] di sini, Néng Sari." },
+        { "speaker": "Rani:", "text": "Ooh, Néng Sari téh putra Ibu? Sangka abdi mah anak kos.", "id": "Ooh, Neng Sari itu anak Ibu? Saya kira anak kos.", "literal": "ooh, Néng Sari [téh] anak Ibu? kira saya [mah] anak kos." },
+        { "speaker": "Bu Imas:", "text": "Hahaha, seueur nu nyangka kitu. Ari Néng, sabaraha dulur?", "id": "Hahaha, banyak yang mengira begitu. Kalau Neng, berapa saudara?", "literal": "hahaha, banyak yang mengira begitu. adapun Néng, berapa saudara?" },
+        { "speaker": "Rani:", "text": "Abdi dua. Aya lanceuk hiji, pameget.", "id": "Saya dua. Ada kakak satu, laki-laki.", "literal": "saya dua. ada kakak satu, laki-laki." },
+        { "speaker": "Bu Imas:", "text": "Janten Néng téh bungsu. Kolot masih sarerea?", "id": "Jadi Neng itu bungsu. Orang tua masih lengkap?", "literal": "jadi Néng [téh] bungsu. orang tua masih semuanya?" },
+        { "speaker": "Rani:", "text": "Muhun, alhamdulillah. Aranjeunna di Bekasi.", "id": "Iya, alhamdulillah. Mereka di Bekasi.", "literal": "iya, alhamdulillah. mereka di Bekasi." },
+        { "speaker": "Bu Imas:", "text": "Sing sering ditelepon nya. Kolot mah sok ngantosan.", "id": "Sering-sering ditelepon ya. Orang tua itu suka menunggu.", "literal": "semoga sering ditelepon ya. orang tua [mah] suka menunggu." }
+      ],
+      "notes": [
+        "**Lanceuk** = kakak, **adi** = adik. Perhatikan: keduanya **tidak** membedakan laki-laki dan perempuan. Kalau perlu ditegaskan, tambahkan **pameget** (laki-laki, lemes) / **istri** (perempuan, lemes), atau **lalaki** / **awéwé** dalam basa loma. Jadi *lanceuk pameget* = kakak laki-laki.",
+        "**Carogé** = suami (lemes); loma: **salaki**. **Bojo / garwa** = istri (lemes); loma: **pamajikan**. ⚠️ Kata *bojo* dalam bahasa Jawa berarti istri juga, tapi dalam basa Sunda ia bisa berarti pasangan secara umum — konteks yang menentukan.",
+        "**Pupus** = meninggal (lemes, penuh hormat). Bentuk lain: *ngantunkeun* (berpulang), *tilar dunya*. ⚠️ Jangan memakai **paéh** untuk manusia — itu kata untuk binatang dan benda, dan terdengar sangat kasar.",
+        "**Cikal** = anak sulung, **bungsu** = anak bungsu, **panengah** = anak tengah. Ketiganya sering dipakai sebagai kata benda: *nu cikal* = yang sulung.",
+        "**Ari** membuka kalimat dengan arti \"kalau\", \"adapun\", \"sedangkan\". Ia mengalihkan pembicaraan ke pokok baru: *Ari Néng, sabaraha dulur?* = \"kalau Neng, berapa saudara?\" Kata ini sangat sering dan sangat khas; bahasa Indonesia biasanya memakai \"kalau\" atau tidak memakai apa-apa.",
+        "**Sangka / nyangka** = mengira. *Sangka abdi mah…* = \"saya kira…\". Susunannya boleh dibalik seperti bahasa Indonesia: *abdi nyangka…*",
+        "**Sok** di sini berarti \"suka\", \"biasa\", menandai kebiasaan: *kolot mah sok ngantosan* = \"orang tua itu biasanya menunggu\". ⚠️ Jangan tertukar dengan *sok* Indonesia yang berarti berlagak. Arti ketiganya: *sok atuh* = silakan."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jarak: ieu, éta, itu",
+          "body": [
+            "Bahasa Indonesia punya dua kata tunjuk: *ini* dan *itu*. Basa Sunda punya **tiga**, dan ketiganya dibedakan oleh jarak yang jelas."
+          ],
+          "table": {
+            "head": ["Kata", "Jarak", "Contoh", "Padanan Indonesia"],
+            "rows": [
+              ["**ieu**", "dekat pembicara", "*Ieu buku abdi.*", "ini"],
+              ["**éta**", "dekat lawan bicara", "*Éta naon?*", "itu (yang kamu pegang)"],
+              ["**itu**", "jauh dari keduanya", "*Nu itu imah saha?*", "itu (yang di sana)"]
+            ]
+          },
+          "after": [
+            "Pasangan keterangan tempatnya mengikuti pola yang sama: **dieu** (di sini), **dinya** (di situ, dekat lawan bicara), **ditu** (di sana, jauh). Untuk arah: **kadieu** (ke sini), **kadinya** (ke situ), **kaditu** (ke sana). Untuk asal: **ti dieu**, **ti dinya**, **ti ditu**.",
+            "⚠️ Kata **itu** dalam basa Sunda **bukan** terjemahan langsung dari \"itu\" Indonesia. Menerjemahkan \"itu apa?\" menjadi *itu naon?* akan dimengerti, tapi maksudnya jadi \"yang jauh di sana apa?\". Untuk benda di tangan lawan bicara, yang benar adalah **éta naon?**",
+            "Kata **nu** (yang) sering mendahuluinya untuk menunjuk benda: *nu ieu* (yang ini), *nu éta* (yang itu), *nu itu* (yang di sana). Ini bentuk yang paling sering terdengar di pasar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Anggota keluarga",
+      "blocks": [
+        { "type": "tabel", "head": ["Loma", "Lemes", "Bahasa Indonesia"], "rows": [
+          ["**bapa / apa**", "**rama**", "ayah"],
+          ["**indung / ema**", "**ibu**", "ibu"],
+          ["**anak**", "**putra**", "anak"],
+          ["**lanceuk**", "**raka**", "kakak"],
+          ["**adi**", "**rai**", "adik"],
+          ["**aki**", "**éyang pameget**", "kakek"],
+          ["**nini**", "**éyang istri**", "nenek"],
+          ["**incu**", "**putu**", "cucu"],
+          ["**salaki**", "**carogé**", "suami"],
+          ["**pamajikan**", "**bojo / garwa**", "istri"],
+          ["**mamang / emang**", "**paman**", "paman"],
+          ["**bibi**", "**bibi**", "bibi"],
+          ["**uwa**", "**uwa**", "kakak dari orang tua"],
+          ["**alo**", "**alo**", "keponakan"],
+          ["**minantu**", "**minantu**", "menantu"],
+          ["**mitoha**", "**mitoha**", "mertua"],
+          ["**dulur**", "**wargi**", "saudara"],
+          ["**kulawarga**", "**kulawargi**", "keluarga"]
+        ] },
+        { "type": "p", "text": "⚠️ **Uwa** perlu penjelasan karena tidak ada padanan satu katanya dalam bahasa Indonesia: ia berarti kakak dari ayah atau ibu — laki-laki maupun perempuan. Adik dari ayah/ibu yang laki-laki disebut *mamang*, yang perempuan *bibi*. Jadi urutan usia menentukan sapaannya, bukan hanya hubungan darahnya." },
+        { "type": "kotak", "title": "Bertanya tentang keluarga", "items": [
+          "**Sabaraha dulur?** — Berapa bersaudara?",
+          "**Anak ka sabaraha?** — Anak ke berapa?",
+          "**Tos kagungan putra?** — Sudah punya anak? (lemes, kepada orang yang dihormati)",
+          "**Kolot masih sarerea?** — Orang tua masih lengkap?",
+          "**Bumina di mana?** — Rumahnya di mana? (kepada orang yang dihormati)",
+          "**Saha jenenganana?** — Siapa namanya? (lemes tinggi)"
+        ] }
+      ]
+    },
+    {
+      "title": "Rumah dan isinya",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Bahasa Indonesia", "Catatan"], "rows": [
+          ["**imah / bumi**", "rumah", "*bumi* = lemes"],
+          ["**panto**", "pintu", "—"],
+          ["**jandéla**", "jendela", "serapan"],
+          ["**tembok / bilik**", "dinding", "*bilik* = dinding anyaman bambu"],
+          ["**pantar / lanté**", "lantai", "—"],
+          ["**hateup**", "atap", "—"],
+          ["**kamar / pangkéng**", "kamar", "*pangkéng* = lemes"],
+          ["**pawon / dapur**", "dapur", "*pawon* lebih Sunda"],
+          ["**cai / jamban**", "kamar mandi, WC", "*ka cai* = ke belakang"],
+          ["**tepas**", "teras depan", "tempat menerima tamu"],
+          ["**buruan**", "halaman", "⚠️ bukan buruan/kejaran"],
+          ["**korsi**", "kursi", "—"],
+          ["**méja**", "meja", "—"],
+          ["**lomari**", "lemari", "—"],
+          ["**samak**", "tikar", "—"],
+          ["**kasur / ranjang**", "kasur, ranjang", "—"],
+          ["**lampu**", "lampu", "—"],
+          ["**kompor**", "kompor", "—"],
+          ["**piring / pinggan**", "piring", "—"],
+          ["**gelas / cangkir**", "gelas, cangkir", "—"]
+        ] },
+        { "type": "p", "text": "⚠️ **Ka cai** harfiahnya \"ke air\" dan merupakan cara paling halus untuk berkata \"mau ke kamar mandi\". Persis seperti \"ke belakang\" dalam bahasa Indonesia. *Punten, badé ka cai heula.* Menyebut *jamban* atau *WC* secara langsung terasa terlalu blak-blakan di ruang tamu orang." },
+        { "type": "kotak", "title": "Kalimat sehari-hari di rumah", "items": [
+          "**Panto na dikonci teu?** — Pintunya dikunci nggak?",
+          "**Lampu na pareum.** — Lampunya mati. (*hurung* = menyala)",
+          "**Aya cai teu?** — Ada air nggak?",
+          "**Mangga calik di tepas.** — Silakan duduk di teras.",
+          "**Punten, badé ka cai heula.** — Permisi, mau ke belakang dulu.",
+          "**Imahna caket ka dieu.** — Rumahnya dekat dari sini. (*caket* = dekat, *tebih* = jauh)"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "kulawarga", "baca": "kula-WAR-ga", "id": "keluarga" },
+    { "su": "lanceuk", "baca": "lan-CEUK", "id": "kakak" },
+    { "su": "adi", "baca": "a-DI", "id": "adik" },
+    { "su": "dulur", "baca": "du-LUR", "id": "saudara" },
+    { "su": "carogé / salaki", "baca": "ca-ro-GÉ · sa-LA-ki", "id": "suami" },
+    { "su": "bojo / pamajikan", "baca": "BO-jo · pama-JI-kan", "id": "istri" },
+    { "su": "putra / anak", "baca": "pu-TRA · a-NAK", "id": "anak" },
+    { "su": "cikal", "baca": "ci-KAL", "id": "anak sulung" },
+    { "su": "bungsu", "baca": "bung-SU", "id": "anak bungsu" },
+    { "su": "pameget", "baca": "pame-GET", "id": "laki-laki (lemes)" },
+    { "su": "istri", "baca": "is-TRI", "id": "perempuan (lemes)" },
+    { "su": "lalaki / awéwé", "baca": "la-LA-ki · a-WÉ-wé", "id": "laki-laki / perempuan (loma)" },
+    { "su": "pupus", "baca": "pu-PUS", "id": "meninggal (lemes)" },
+    { "su": "ieu / éta / itu", "baca": "i-EU · É-ta · i-TU", "id": "ini / itu / itu (jauh)" },
+    { "su": "dieu / dinya / ditu", "baca": "di-EU · di-NYA · di-TU", "id": "sini / situ / sana" },
+    { "su": "nu", "baca": "nu", "id": "yang" },
+    { "su": "ari", "baca": "a-RI", "id": "kalau, adapun" },
+    { "su": "sok", "baca": "sok", "id": "suka, biasa; silakan ⚠️" },
+    { "su": "nyangka", "baca": "nyang-KA", "id": "mengira" },
+    { "su": "panto", "baca": "pan-TO", "id": "pintu" },
+    { "su": "pawon", "baca": "pa-WON", "id": "dapur" },
+    { "su": "tepas", "baca": "te-PAS", "id": "teras depan" },
+    { "su": "buruan", "baca": "buru-AN", "id": "halaman ⚠️" },
+    { "su": "caket / tebih", "baca": "ca-KET · te-BIH", "id": "dekat / jauh (lemes)" },
+    { "su": "hurung / pareum", "baca": "hu-RUNG · pa-REUM", "id": "menyala / mati (lampu)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata tunjuk yang tepat: ieu, éta, atau itu.",
+      "items": [
+        "Buku di tangan saya: ____ buku abdi.",
+        "Barang di tangan lawan bicara: ____ naon?",
+        "Rumah jauh di seberang: Nu ____ imah saha?",
+        "Saya menunjuk kursi di dekat saya: Mangga calik di ____.",
+        "Warung di ujung jalan sana: Warung na di ____.",
+        "Teh yang baru saya sodorkan: Mangga, ____ entéhna."
+      ]
+    },
+    {
+      "prompt": "Sebutkan padanan basa Sunda-nya.",
+      "items": [
+        "kakak (laki-laki) → ____",
+        "adik → ____",
+        "kakek (lemes) → ____",
+        "paman → ____",
+        "menantu → ____",
+        "anak sulung → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda lemes.",
+      "items": [
+        "Berapa bersaudara, Bu?",
+        "Saya anak bungsu.",
+        "Rumah Ibu di mana?",
+        "Permisi, mau ke belakang dulu.",
+        "Suami Ibu bekerja di Cirebon.",
+        "Lampunya mati."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "abdi / lanceuk / hiji / aya",
+        "mana / bumina / di / ?",
+        "di / kolot / Bekasi / abdi",
+        "tepas / mangga / di / calik",
+        "caket / dieu / imahna / ka"
+      ]
+    }
+  ],
+  "answers": [
+    "ieu — éta — itu — dieu — ditu — ieu",
+    "lanceuk pameget — adi — éyang pameget (aki) — mamang/emang — minantu — cikal",
+    "Sabaraha dulur, Bu? — Abdi anak bungsu. — Bumi Ibu di mana? — Punten, badé ka cai heula. — Carogé Ibu damel di Cirebon. — Lampuna pareum.",
+    "Aya lanceuk hiji abdi. — Bumina di mana? — Kolot abdi di Bekasi. — Mangga calik di tepas. — Imahna caket ka dieu."
+  ]
+}

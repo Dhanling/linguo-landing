@@ -1,0 +1,211 @@
+{
+  "title": "Badan, sakit, dan ke dokter",
+  "title_target": "Awak, gering, jeung ka dokter",
+  "goal": "Menyebut bagian tubuh, menerangkan keluhan, dan berbicara di apotek atau puskesmas dengan tingkat basa yang tepat.",
+  "bekal": [
+    "bagian tubuh dan dua tingkat penyebutannya",
+    "menerangkan sakit: *nyeri*, *muriang*, *utah*, *lieur*",
+    "menanyakan dan menjawab kabar orang yang sakit"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Di apotek",
+      "intro": "Rani terbangun dengan kepala berat dan tenggorokan sakit. Sari mengantarnya ke apotek di ujung gang.",
+      "lines": [
+        { "speaker": "Apotéker:", "text": "Wilujeng énjing. Aya nu tiasa dibantosan?", "id": "Selamat pagi. Ada yang bisa dibantu?", "literal": "selamat pagi. ada yang bisa dibantu?" },
+        { "speaker": "Rani:", "text": "Punten, abdi teu damang ti kamari.", "id": "Permisi, saya nggak enak badan dari kemarin.", "literal": "permisi, saya tidak sehat dari kemarin." },
+        { "speaker": "Apotéker:", "text": "Nu karaos naon, Téh?", "id": "Yang terasa apa, Kak?", "literal": "yang terasa apa, Téh?" },
+        { "speaker": "Rani:", "text": "Sirah nyeri, tikoro ogé nyeri upami neureuy.", "id": "Kepala sakit, tenggorokan juga sakit kalau menelan.", "literal": "kepala nyeri, tenggorokan juga nyeri kalau menelan." },
+        { "speaker": "Apotéker:", "text": "Panas henteu awakna? Muriang?", "id": "Panas nggak badannya? Demam?", "literal": "panas tidak badannya? demam?" },
+        { "speaker": "Rani:", "text": "Wengi tadi muriang. Ayeuna mah ngan lieur.", "id": "Semalam demam. Sekarang cuma pusing.", "literal": "malam tadi demam. sekarang [mah] hanya pusing." },
+        { "speaker": "Apotéker:", "text": "Tos ngaleueut obat naon waé?", "id": "Sudah minum obat apa saja?", "literal": "sudah minum obat apa saja?" },
+        { "speaker": "Rani:", "text": "Teu acan nanaon. Sieun lepat.", "id": "Belum apa-apa. Takut salah.", "literal": "belum apa-apa. takut salah." },
+        { "speaker": "Apotéker:", "text": "Saé. Ieu kanggo tikoro, diseuseup tilu kali sadinten.", "id": "Bagus. Ini untuk tenggorokan, diisap tiga kali sehari.", "literal": "bagus. ini untuk tenggorokan, diisap tiga kali sehari." },
+        { "speaker": "Rani:", "text": "Ari kanggo sirah?", "id": "Kalau untuk kepala?", "literal": "adapun untuk kepala?" },
+        { "speaker": "Apotéker:", "text": "Ieu, saatos tuang. Ulah dina beuteung kosong.", "id": "Ini, setelah makan. Jangan dalam perut kosong.", "literal": "ini, sesudah makan. jangan dalam perut kosong." },
+        { "speaker": "Rani:", "text": "Upami tilu dinten teu cageur, kumaha?", "id": "Kalau tiga hari nggak sembuh, gimana?", "literal": "kalau tiga hari tidak sembuh, bagaimana?" },
+        { "speaker": "Apotéker:", "text": "Kedah ka dokter. Puskésmas caket, hareupeun pasar.", "id": "Harus ke dokter. Puskesmas dekat, di depan pasar.", "literal": "harus ke dokter. puskesmas dekat, di depan pasar." },
+        { "speaker": "Rani:", "text": "Hatur nuhun pisan. Sabaraha sadayana?", "id": "Terima kasih banyak. Berapa semuanya?", "literal": "terima kasih sangat. berapa semuanya?" }
+      ],
+      "notes": [
+        "**Teu damang** = tidak sehat, kurang enak badan (lemes). Ini cara paling halus mengatakan bahwa dirimu sakit. Bentuk lomanya **gering**. ⚠️ Untuk orang yang dihormati, pakai **udur**: *Ibu nuju udur* = Ibu sedang sakit.",
+        "**Nyeri** = sakit dalam arti rasa nyeri pada bagian tubuh. Berbeda dari *gering* yang berarti sakit sebagai keadaan. *Sirah nyeri* = kepala sakit; *kuring gering* = aku sakit.",
+        "**Muriang** = demam, meriang. Kata ini juga hidup dalam bahasa Indonesia sehari-hari (*meriang*), jadi mudah diingat.",
+        "**Lieur** = pusing. ⚠️ Diucapkan *li-EUR*, dua ketukan. Kata ini juga dipakai secara kiasan untuk kebingungan: *lieur mikiranana* = pusing memikirkannya.",
+        "**Neureuy** = menelan. Salah satu kata dengan *eu* ganda yang perlu dilatih: *neu-REUY*.",
+        "**Cageur** = sembuh, sehat. Kata ini bagian dari ungkapan Sunda yang terkenal: **cageur, bageur, bener, pinter, singer** — sehat, baik hati, jujur, pandai, cekatan; lima sifat yang diharapkan dari seorang manusia Sunda."
+      ],
+      "grammars": [
+        {
+          "title": "Menerangkan keluhan",
+          "body": [
+            "Susunan kalimat keluhan basa Sunda sangat sederhana: **bagian tubuh + rasa sakitnya**, tanpa kata kerja apa pun."
+          ],
+          "table": {
+            "head": ["Basa Sunda", "Arti", "Susunan"],
+            "rows": [
+              ["*Sirah nyeri.*", "Kepala sakit.", "kepala + nyeri"],
+              ["*Beuteung nyeri.*", "Perut sakit.", "perut + nyeri"],
+              ["*Huntu nyeri.*", "Gigi sakit.", "gigi + nyeri"],
+              ["*Awak panas.*", "Badan panas.", "badan + panas"],
+              ["*Sukuna bareuh.*", "Kakinya bengkak.", "kaki + bengkak"],
+              ["*Tikoro garing.*", "Tenggorokan kering.", "tenggorokan + kering"]
+            ]
+          },
+          "after": [
+            "Untuk menegaskan siapa yang sakit, tambahkan kata ganti di depan: *Sirah abdi nyeri* atau, lebih wajar, *Sirah nyeri* saja — pemiliknya jelas dari konteks.",
+            "Beberapa keluhan memakai kata kerja tersendiri: **utah** (muntah), **budah** (mencret), **batuk** (batuk), **beuki** (pilek — dari *beuki* yang juga berarti semakin; konteks membedakan), **teu tuang** (tidak nafsu makan), **teu tiasa kulem** (tidak bisa tidur).",
+            "⚠️ Untuk bertanya kepada orang lain, pakai bentuk lemes ka batur: *Naon nu karaos?* (apa yang terasa), *Tos dipariksa?* (sudah diperiksa), *Tos ngaleueut obat?* (sudah minum obat). Menanyakan *tos nginum obat?* terdengar terlalu loma untuk keadaan orang sakit."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh",
+      "blocks": [
+        { "type": "tabel", "head": ["Loma", "Lemes", "Arti", "Loma", "Lemes", "Arti"], "rows": [
+          ["**hulu / sirah**", "mastaka", "kepala", "**buuk**", "rambut", "rambut"],
+          ["**panon**", "soca", "mata", "**ceuli**", "cepil", "telinga"],
+          ["**irung**", "pangambung", "hidung", "**biwir**", "lambey", "bibir"],
+          ["**baham / sungut**", "baham", "mulut", "**huntu**", "waos", "gigi"],
+          ["**létah**", "létah", "lidah", "**tikoro**", "tikoro", "tenggorokan"],
+          ["**beuheung**", "tenggek", "leher", "**taktak**", "taktak", "bahu"],
+          ["**leungeun**", "panangan", "tangan", "**ramo**", "ramo", "jari"],
+          ["**dada**", "dada", "dada", "**beuteung**", "patuangan", "perut"],
+          ["**tonggong**", "pungkur", "punggung", "**cangkéng**", "cangkéng", "pinggang"],
+          ["**suku**", "sampéan", "kaki", "**dengkul**", "dengkul", "lutut"],
+          ["**awak**", "salira", "badan", "**kulit**", "kulit", "kulit"],
+          ["**getih**", "rah", "darah", "**tulang**", "tulang", "tulang"]
+        ] },
+        { "type": "p", "text": "⚠️ Perhatikan **leungeun** (tangan) dan **panangan** (tangan, lemes). Sapaan halus *panangan* juga muncul dalam ungkapan sopan: *punten, panangan abdi kotor* = maaf, tangan saya kotor. Untuk kaki, bentuk lemesnya **sampéan** — dan kata itu dalam bahasa Jawa justru berarti \"Anda\", jadi jangan tertukar." },
+        { "type": "kotak", "title": "Kata keluhan", "items": [
+          "**nyeri** — sakit, nyeri",
+          "**muriang** — demam",
+          "**lieur** — pusing",
+          "**utah** — muntah",
+          "**budah / mencrét** — mencret",
+          "**batuk** — batuk",
+          "**bareuh** — bengkak",
+          "**tunduh** — mengantuk",
+          "**cape / lungsé** — lelah",
+          "**tiris** — kedinginan, menggigil"
+        ] }
+      ]
+    },
+    {
+      "title": "Di dokter dan apotek",
+      "blocks": [
+        { "type": "kotak", "title": "Kalimat pasien", "items": [
+          "**Abdi teu damang ti kamari.** — Saya sakit dari kemarin.",
+          "**Sirah nyeri sareng muriang.** — Kepala sakit dan demam.",
+          "**Tos tilu dinten kieu.** — Sudah tiga hari begini.",
+          "**Teu acan ngaleueut obat.** — Belum minum obat.",
+          "**Abdi alérgi ka ____.** — Saya alergi ke ____.",
+          "**Kedah dipariksa henteu?** — Perlu diperiksa nggak?",
+          "**Obatna diseuseup sabaraha kali sadinten?** — Obatnya diminum berapa kali sehari?",
+          "**Aya efék sampingna teu?** — Ada efek sampingnya nggak?"
+        ] },
+        { "type": "tabel", "head": ["Yang akan kamu dengar", "Artinya"], "rows": [
+          ["*Nu karaos naon?*", "Yang terasa apa?"],
+          ["*Tos sabaraha lami kieu?*", "Sudah berapa lama begini?"],
+          ["*Mangga calik, urang pariksa.*", "Silakan duduk, kita periksa."],
+          ["*Tilu kali sadinten, saatos tuang.*", "Tiga kali sehari, setelah makan."],
+          ["*Kedah seueur ngaleueut cai.*", "Harus banyak minum air."],
+          ["*Kedah ngaso, ulah damel heula.*", "Harus istirahat, jangan kerja dulu."],
+          ["*Upami teu cageur, wangsul deui ka dieu.*", "Kalau tidak sembuh, kembali lagi ke sini."],
+          ["*Mugia énggal damang.*", "Semoga cepat sembuh."]
+        ] },
+        { "type": "p", "text": "**Mugia énggal damang** adalah ucapan baku untuk \"semoga cepat sembuh\", dan kamu akan mendengarnya dari hampir semua orang yang tahu kamu sakit. Jawabannya cukup *aamiin, hatur nuhun*. Bentuk lomanya: *muga-muga geura cageur*." },
+        { "type": "kotak", "title": "Menjenguk orang sakit", "items": [
+          "**Kumaha damang, Bu?** — Bagaimana kabarnya, Bu?",
+          "**Tos raraosan?** — Sudah agak enakan?",
+          "**Tos tiasa tuang?** — Sudah bisa makan?",
+          "**Ulah seueur teuing ngalih.** — Jangan terlalu banyak bergerak.",
+          "**Mugia énggal damang.** — Semoga cepat sembuh.",
+          "**Upami peryogi naon-naon, wartosan waé.** — Kalau perlu apa-apa, kabari saja."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "gering / teu damang", "baca": "ge-RING · teu da-MANG", "id": "sakit ⚠️" },
+    { "su": "udur", "baca": "u-DUR", "id": "sakit (lemes ka batur)" },
+    { "su": "cageur / damang", "baca": "ca-GEUR · da-MANG", "id": "sembuh, sehat" },
+    { "su": "nyeri", "baca": "nye-RI", "id": "sakit, nyeri" },
+    { "su": "muriang", "baca": "muri-ANG", "id": "demam" },
+    { "su": "lieur", "baca": "li-EUR", "id": "pusing" },
+    { "su": "utah", "baca": "u-TAH", "id": "muntah" },
+    { "su": "bareuh", "baca": "ba-REUH", "id": "bengkak" },
+    { "su": "tunduh", "baca": "tun-DUH", "id": "mengantuk" },
+    { "su": "cape / lungsé", "baca": "ca-PÉ · lung-SÉ", "id": "lelah" },
+    { "su": "sirah / hulu", "baca": "si-RAH · hu-LU", "id": "kepala" },
+    { "su": "panon / soca", "baca": "pa-NON · so-CA", "id": "mata" },
+    { "su": "ceuli / cepil", "baca": "ceu-LI · ce-PIL", "id": "telinga" },
+    { "su": "huntu / waos", "baca": "hun-TU · wa-OS", "id": "gigi" },
+    { "su": "tikoro", "baca": "tiko-RO", "id": "tenggorokan" },
+    { "su": "leungeun / panangan", "baca": "leu-NGEUN · pana-NGAN", "id": "tangan" },
+    { "su": "suku / sampéan", "baca": "su-KU · sam-PÉ-an", "id": "kaki" },
+    { "su": "beuteung / patuangan", "baca": "beu-TEUNG", "id": "perut" },
+    { "su": "tonggong", "baca": "tong-GONG", "id": "punggung" },
+    { "su": "awak / salira", "baca": "a-WAK · sali-RA", "id": "badan" },
+    { "su": "neureuy", "baca": "neu-REUY", "id": "menelan" },
+    { "su": "obat", "baca": "o-BAT", "id": "obat" },
+    { "su": "dipariksa", "baca": "diparik-SA", "id": "diperiksa" },
+    { "su": "sadinten / sapoé", "baca": "sadin-TEN · sapo-É", "id": "sehari" },
+    { "su": "saatos / sanggeus", "baca": "sa-A-tos", "id": "sesudah" },
+    { "su": "peryogi / butuh", "baca": "peryo-GI · bu-TUH", "id": "perlu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sebutkan bagian tubuh dalam basa Sunda (bentuk loma).",
+      "items": [
+        "kepala → ____",
+        "mata → ____",
+        "telinga → ____",
+        "perut → ____",
+        "tangan → ____",
+        "kaki → ____"
+      ]
+    },
+    {
+      "prompt": "Susun keluhan berikut dalam basa Sunda.",
+      "items": [
+        "Kepala sakit. → ____",
+        "Perut sakit. → ____",
+        "Badan panas. → ____",
+        "Gigi sakit. → ____",
+        "Tenggorokan sakit kalau menelan. → ____",
+        "Kakinya bengkak. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda lemes.",
+      "items": [
+        "Saya sakit dari kemarin.",
+        "Belum minum obat.",
+        "Sudah tiga hari begini.",
+        "Obatnya diminum berapa kali sehari?",
+        "Semoga cepat sembuh, Bu.",
+        "Harus istirahat, jangan kerja dulu."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "damang / abdi / kamari / teu / ti",
+        "naon / karaos / nu / ?",
+        "obat / acan / ngaleueut / teu",
+        "damang / mugia / énggal",
+        "tuang / saatos / ieu"
+      ]
+    }
+  ],
+  "answers": [
+    "hulu/sirah — panon — ceuli — beuteung — leungeun — suku",
+    "Sirah nyeri. — Beuteung nyeri. — Awak panas. — Huntu nyeri. — Tikoro nyeri upami neureuy. — Sukuna bareuh.",
+    "Abdi teu damang ti kamari. — Teu acan ngaleueut obat. — Tos tilu dinten kieu. — Obatna diseuseup sabaraha kali sadinten? — Mugia énggal damang, Bu. — Kedah ngaso, ulah damel heula.",
+    "Abdi teu damang ti kamari. — Nu karaos naon? — Teu acan ngaleueut obat. — Mugia énggal damang. — Ieu saatos tuang."
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "title": "Meminta, mengajak, dan menolak",
+  "title_target": "Ménta, ngajak, jeung nampik",
+  "goal": "Meminta tolong tanpa memaksa, mengajak dengan hangat, dan menolak tanpa memutus hubungan — tiga hal yang di budaya Sunda dikerjakan dengan sangat hati-hati.",
+  "bekal": [
+    "perintah halus dengan *mangga*, *tulung*, *cobi*, *sok*",
+    "larangan dengan *ulah* dan *entong*",
+    "menolak tanpa berkata tidak"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Diajak kondangan",
+      "intro": "Bu Imas mengetuk pintu kamar Rani sambil membawa selembar undangan. Rani sebenarnya sudah punya acara, dan harus menolak tanpa membuat Bu Imas kecewa.",
+      "lines": [
+        { "speaker": "Bu Imas:", "text": "Néng, punten. Sabtu payun aya kondangan di tatangga.", "id": "Neng, permisi. Sabtu depan ada kondangan di tetangga.", "literal": "Néng, permisi. Sabtu depan ada kondangan di tetangga." },
+        { "speaker": "Rani:", "text": "Oh muhun, Bu. Aya naon acarana?", "id": "Oh iya, Bu. Ada acara apa?", "literal": "oh iya, Bu. ada apa acaranya?" },
+        { "speaker": "Bu Imas:", "text": "Nikahan putrana Bu Éha. Hayu atuh ngiring sareng Ibu.", "id": "Nikahan anaknya Bu Eha. Ayo dong ikut sama Ibu.", "literal": "pernikahan anaknya Bu Éha. ayo atuh ikut dengan Ibu." },
+        { "speaker": "Rani:", "text": "Aduh, Bu… Sabtu payun abdi aya acara kantor.", "id": "Aduh, Bu… Sabtu depan saya ada acara kantor.", "literal": "aduh, Bu… Sabtu depan saya ada acara kantor." },
+        { "speaker": "Bu Imas:", "text": "Tabuh sabaraha acarana? Kondangan mah ti tabuh sapuluh.", "id": "Jam berapa acaranya? Kondangan dari jam sepuluh.", "literal": "pukul berapa acaranya? kondangan [mah] dari pukul sepuluh." },
+        { "speaker": "Rani:", "text": "Ti énjing dugi ka soré, Bu. Hapunten pisan.", "id": "Dari pagi sampai sore, Bu. Maaf sekali.", "literal": "dari pagi sampai ke sore, Bu. maaf sangat." },
+        { "speaker": "Bu Imas:", "text": "Nya teu nanaon atuh. Damel mah kedah didahulukeun.", "id": "Ya nggak apa-apa dong. Kerja harus didahulukan.", "literal": "ya tidak apa-apa atuh. kerja [mah] harus didahulukan." },
+        { "speaker": "Rani:", "text": "Punten, tiasa nyuhunkeun tulung teu, Bu?", "id": "Permisi, boleh minta tolong nggak, Bu?", "literal": "permisi, bisa memohon tolong tidak, Bu?" },
+        { "speaker": "Bu Imas:", "text": "Mangga, naon?", "id": "Silakan, apa?", "literal": "silakan, apa?" },
+        { "speaker": "Rani:", "text": "Upami kenging, titip amplop kanggo Bu Éha. Sareng punten kanggo abdi.", "id": "Kalau boleh, titip amplop untuk Bu Eha. Dan sampaikan maaf dari saya.", "literal": "kalau boleh, titip amplop untuk Bu Éha. dan permisi untuk saya." },
+        { "speaker": "Bu Imas:", "text": "Tangtos. Engké ku Ibu dipasihkeun. Bu Éha ogé ngartos pasti.", "id": "Tentu. Nanti Ibu kasihkan. Bu Eha juga pasti ngerti.", "literal": "tentu. nanti oleh Ibu diberikan. Bu Éha juga mengerti pasti." },
+        { "speaker": "Rani:", "text": "Hatur nuhun pisan, Bu. Punten ngarepotkeun.", "id": "Terima kasih banyak, Bu. Maaf merepotkan.", "literal": "terima kasih sangat, Bu. permisi merepotkan." },
+        { "speaker": "Bu Imas:", "text": "Ulah sungkan-sungkan. Urang mah geus kaya kulawarga.", "id": "Jangan sungkan-sungkan. Kita sudah seperti keluarga.", "literal": "jangan sungkan-sungkan. kita [mah] sudah seperti keluarga." }
+      ],
+      "notes": [
+        "**Ngiring** = ikut (lemes); loma: **milu**. *Hayu ngiring* = ayo ikut. Kata ini juga dipakai untuk ikut merasakan: *ngiring bingah* = ikut berbahagia (ucapan selamat).",
+        "**Kondangan** = menghadiri hajatan, terutama pernikahan. Sama seperti bahasa Indonesia. Kata Sunda yang lebih tua: **nyaba** atau **ngahadiran**.",
+        "**Didahulukeun** dari *dahulu* + *di-…-keun*. Kalimat *damel mah kedah didahulukeun* adalah cara Bu Imas melepaskan Rani dari rasa bersalah — sebuah gerakan sosial yang sangat khas.",
+        "**Titip** dipakai persis seperti bahasa Indonesia. *Titip amplop* di konteks kondangan berarti menitipkan sumbangan tanpa hadir — hal yang lumrah dan tidak dianggap kurang.",
+        "**Tangtos** = tentu (lemes); loma: **tangtu**. Jawaban yang lebih hangat daripada *muhun* untuk permintaan tolong.",
+        "**Sungkan** = segan, enggan karena tidak enak hati. *Ulah sungkan-sungkan* = jangan sungkan. Kata ini menjelaskan banyak perilaku Sunda: banyak permintaan tidak diucapkan karena sungkan, dan itulah kenapa menawarkan lebih dulu sangat dihargai."
+      ],
+      "grammars": [
+        {
+          "title": "Meminta dan melarang",
+          "body": [
+            "Basa Sunda tidak punya bentuk perintah yang berdiri sendiri seperti bahasa Inggris. Perintah dibentuk dari kata dasar, lalu dilunakkan oleh kata pembuka dan partikel."
+          ],
+          "table": {
+            "head": ["Bentuk", "Nada", "Contoh", "Arti"],
+            "rows": [
+              ["kata dasar saja", "langsung, akrab", "*Cokot!*", "Ambil!"],
+              ["+ **heula**", "melunakkan", "*Cokot heula.*", "Ambil dulu."],
+              ["+ **atuh**", "membujuk", "*Cokot atuh.*", "Ambil dong."],
+              ["**sok** + kata", "mempersilakan", "*Sok cokot.*", "Silakan ambil."],
+              ["**mangga** + kata", "sopan", "*Mangga dicandak.*", "Silakan diambil."],
+              ["**tulung** + kata", "meminta tolong", "*Tulung candakkeun.*", "Tolong ambilkan."],
+              ["**cobi / cik** + kata", "meminta ringan", "*Cik tingali.*", "Coba lihat."],
+              ["**ulah** + kata", "larangan", "*Ulah cokot.*", "Jangan ambil."],
+              ["**entong** + kata", "larangan (lebih akrab)", "*Entong cokot.*", "Jangan ambil."]
+            ]
+          },
+          "after": [
+            "⚠️ **Ulah** dan **entong** keduanya berarti \"jangan\". *Ulah* lebih baku dan aman di semua keadaan; *entong* terasa lebih santai dan sering dipakai kepada anak-anak dan teman dekat.",
+            "Untuk permintaan kepada orang yang dihormati, bentuk pasif justru terdengar lebih sopan daripada bentuk aktif — persis seperti bahasa Indonesia. *Mangga dicandak* (silakan diambil) lebih halus daripada *mangga nyandak*.",
+            "Kalimat pembuka yang paling aman untuk permintaan apa pun: **Punten, tiasa nyuhunkeun tulung teu?** Ia meminta izin untuk meminta, dan itu memberi jalan keluar yang enak kalau lawan bicara sedang tidak bisa."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengajak dan menerima",
+      "blocks": [
+        { "type": "kotak", "title": "Mengajak", "items": [
+          "**Hayu urang ka ____.** — Ayo kita ke ____. (loma)",
+          "**Mangga ngiring sareng abdi.** — Silakan ikut dengan saya. (lemes)",
+          "**Hayu atuh, sakedap waé.** — Ayo dong, sebentar saja.",
+          "**Kersa henteu ngiring?** — Berkenan ikut nggak?",
+          "**Engké urang bareng.** — Nanti kita bareng.",
+          "**Ditunggu nya di ditu.** — Ditunggu ya di sana."
+        ] },
+        { "type": "kotak", "title": "Menerima ajakan", "items": [
+          "**Hayu!** — Ayo!",
+          "**Mangga atuh.** — Baiklah.",
+          "**Tangtos, hatur nuhun tos diajak.** — Tentu, terima kasih sudah diajak.",
+          "**Insya Allah abdi ngiring.** — Insya Allah saya ikut.",
+          "**Sip, engké abdi ka ditu.** — Sip, nanti saya ke sana.",
+          "**Kabeneran abdi teu aya acara.** — Kebetulan saya tidak ada acara."
+        ] }
+      ]
+    },
+    {
+      "title": "Menolak tanpa memutus",
+      "blocks": [
+        { "type": "p", "text": "Menolak adalah keterampilan sosial paling halus dalam basa Sunda, dan urutannya hampir selalu sama: **minta maaf — sebut alasan — tawarkan gantinya**. Melewatkan salah satu bagiannya membuat penolakan terasa dingin." },
+        { "type": "tabel", "head": ["Bagian", "Kalimat", "Arti"], "rows": [
+          ["1. Maaf", "*Aduh, hapunten pisan…*", "Aduh, maaf sekali…"],
+          ["2. Alasan", "*Abdi aya acara kantor.*", "Saya ada acara kantor."],
+          ["3. Ganti", "*Engké abdi nyusul upami rengse.*", "Nanti saya menyusul kalau selesai."],
+          ["Alternatif ganti", "*Titip salam waé kanggo Bu Éha.*", "Titip salam saja untuk Bu Eha."],
+          ["Penutup", "*Punten ngarepotkeun.*", "Maaf merepotkan."]
+        ] },
+        { "type": "p", "text": "⚠️ Kalimat **insya Allah** dan **engké abdi wartosan deui** sering berfungsi sebagai penolakan halus, bukan janji. Ini bukan ketidakjujuran melainkan cara menjaga muka kedua pihak. Sebagai pendatang, dua hal yang perlu kamu lakukan: **kenali** ketika kamu menerimanya, dan **jangan memakainya** kalau kamu memang berniat datang — dalam hal itu jawablah tegas: *muhun, abdi ngiring*." },
+        { "type": "kotak", "title": "Kalimat menolak", "items": [
+          "**Hapunten pisan, abdi teu tiasa.** — Maaf sekali, saya tidak bisa.",
+          "**Aya acara sanés, Bu.** — Ada acara lain, Bu.",
+          "**Sanés teu daék, ngan leres teu tiasa.** — Bukan tidak mau, tapi memang tidak bisa.",
+          "**Kapan-kapan waé nya.** — Kapan-kapan saja ya.",
+          "**Engké abdi nyusul upami rengse.** — Nanti saya menyusul kalau selesai.",
+          "**Titip salam waé kanggo anjeunna.** — Titip salam saja untuk beliau."
+        ] },
+        { "type": "kotak", "title": "Meminta tolong", "items": [
+          "**Punten, tiasa nyuhunkeun tulung teu?** — Permisi, boleh minta tolong?",
+          "**Tulung candakkeun ____.** — Tolong ambilkan ____.",
+          "**Upami kenging, titip ____.** — Kalau boleh, titip ____.",
+          "**Punten ngarepotkeun.** — Maaf merepotkan.",
+          "**Teu kedah upami repot.** — Tidak usah kalau merepotkan.",
+          "**Hatur nuhun pisan tos dibantosan.** — Terima kasih banyak sudah dibantu."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "ménta / nyuhunkeun", "baca": "mén-TA · nyuhun-KEUN", "id": "meminta" },
+    { "su": "tulung", "baca": "tu-LUNG", "id": "tolong" },
+    { "su": "ngajak", "baca": "nga-JAK", "id": "mengajak" },
+    { "su": "ngiring / milu", "baca": "ngi-RING · mi-LU", "id": "ikut" },
+    { "su": "nampik", "baca": "nam-PIK", "id": "menolak" },
+    { "su": "ulah / entong", "baca": "u-LAH · en-TONG", "id": "jangan" },
+    { "su": "sok", "baca": "sok", "id": "silakan" },
+    { "su": "cik / cobi", "baca": "cik · CO-bi", "id": "coba" },
+    { "su": "heula", "baca": "heu-LA", "id": "dulu" },
+    { "su": "tangtos / tangtu", "baca": "tang-TOS", "id": "tentu" },
+    { "su": "kersa", "baca": "ker-SA", "id": "berkenan" },
+    { "su": "sungkan", "baca": "sung-KAN", "id": "segan, tidak enak hati" },
+    { "su": "ngarepotkeun", "baca": "ngarepot-KEUN", "id": "merepotkan" },
+    { "su": "titip", "baca": "ti-TIP", "id": "titip" },
+    { "su": "nyusul", "baca": "nyu-SUL", "id": "menyusul" },
+    { "su": "kondangan", "baca": "konda-NGAN", "id": "menghadiri hajatan" },
+    { "su": "nikahan", "baca": "nika-HAN", "id": "pernikahan" },
+    { "su": "acara", "baca": "aca-RA", "id": "acara" },
+    { "su": "amplop", "baca": "am-PLOP", "id": "amplop" },
+    { "su": "salam", "baca": "sa-LAM", "id": "salam" },
+    { "su": "kabeneran", "baca": "kabene-RAN", "id": "kebetulan" },
+    { "su": "dipasihkeun", "baca": "dipasih-KEUN", "id": "diberikan" },
+    { "su": "kenging", "baca": "ken-GING", "id": "boleh, dapat" },
+    { "su": "bareng / babarengan", "baca": "ba-RENG", "id": "bersama" },
+    { "su": "kapan-kapan", "baca": "ka-PAN ka-PAN", "id": "kapan-kapan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi permintaan yang lebih halus.",
+      "items": [
+        "Cokot! → ____ (dilunakkan dengan heula)",
+        "Cokot! → ____ (mempersilakan dengan sok)",
+        "Cokot! → ____ (sopan dengan mangga + pasif)",
+        "Candakkeun cai! → ____ (minta tolong)",
+        "Tingali! → ____ (permintaan ringan dengan cik)",
+        "Ulah cokot! → ____ (lebih akrab)"
+      ]
+    },
+    {
+      "prompt": "Susun penolakan lengkap tiga bagian untuk keadaan berikut.",
+      "items": [
+        "Bagian minta maaf: ____",
+        "Bagian alasan (ada acara kantor): ____",
+        "Bagian tawaran ganti (menyusul kalau selesai): ____",
+        "Alternatif ganti (titip salam): ____",
+        "Penutup: ____",
+        "Penegasan bukan karena tidak mau: ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda lemes.",
+      "items": [
+        "Permisi, boleh minta tolong?",
+        "Tolong ambilkan air.",
+        "Ayo dong ikut sama Ibu.",
+        "Maaf sekali, saya tidak bisa.",
+        "Jangan sungkan-sungkan.",
+        "Terima kasih banyak sudah dibantu."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "tulung / nyuhunkeun / tiasa / punten / teu / ?",
+        "tiasa / hapunten / abdi / teu / pisan",
+        "Ibu / sareng / ngiring / hayu / atuh",
+        "sungkan-sungkan / ulah",
+        "dibantosan / nuhun / tos / hatur / pisan"
+      ]
+    }
+  ],
+  "answers": [
+    "Cokot heula. — Sok cokot. — Mangga dicandak. — Tulung candakkeun cai. — Cik tingali. — Entong cokot.",
+    "Aduh, hapunten pisan… — Abdi aya acara kantor. — Engké abdi nyusul upami rengse. — Titip salam waé kanggo anjeunna. — Punten ngarepotkeun. — Sanés teu daék, ngan leres teu tiasa.",
+    "Punten, tiasa nyuhunkeun tulung teu? — Tulung candakkeun cai. — Hayu atuh ngiring sareng Ibu. — Hapunten pisan, abdi teu tiasa. — Ulah sungkan-sungkan. — Hatur nuhun pisan tos dibantosan.",
+    "Punten, tiasa nyuhunkeun tulung teu? — Hapunten pisan, abdi teu tiasa. — Hayu atuh ngiring sareng Ibu. — Ulah sungkan-sungkan. — Hatur nuhun pisan tos dibantosan."
+  ]
+}

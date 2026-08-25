@@ -1,0 +1,205 @@
+{
+  "title": "Makan: warung, rumah makan, dan masakan Sunda",
+  "title_target": "Dahar: warung, rumah makan, jeung masakan Sunda",
+  "goal": "Memesan makanan, menyebut rasa dan cara masak, serta memahami adab makan Sunda — termasuk lalab dan sambal yang tidak bisa dipisahkan darinya.",
+  "bekal": [
+    "memesan di warung dan rumah makan dengan tingkat basa yang tepat",
+    "nama masakan Sunda dan cara memasaknya",
+    "kata rasa: *amis*, *asin*, *haseum*, *pait*, *lada*, *ngeunah*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Di rumah makan Sunda",
+      "intro": "Siang hari di sebuah rumah makan Sunda di daerah Setiabudi. Rani dan Sari duduk lesehan di saung. Pelayan datang membawa buku menu.",
+      "lines": [
+        { "speaker": "Pelayan:", "text": "Wilujeng sumping. Badé tuang naon, Téh?", "id": "Selamat datang. Mau makan apa, Kak?", "literal": "selamat datang. akan makan apa, Téh?" },
+        { "speaker": "Sari:", "text": "Abdi mah nasi timbel komplit hiji.", "id": "Saya nasi timbel komplit satu.", "literal": "saya [mah] nasi timbel komplit satu." },
+        { "speaker": "Rani:", "text": "Abdi… naon nya nu teu lada teuing?", "id": "Saya… apa ya yang nggak terlalu pedas?", "literal": "saya… apa ya yang tidak pedas terlalu?" },
+        { "speaker": "Pelayan:", "text": "Aya pepes lauk, Téh. Éta mah teu lada. Atawa ayam bakakak.", "id": "Ada pepes ikan, Kak. Itu nggak pedas. Atau ayam bakakak.", "literal": "ada pepes ikan, Téh. itu [mah] tidak pedas. atau ayam bakakak." },
+        { "speaker": "Rani:", "text": "Pepes lauk waé atuh. Sareng cai hérang.", "id": "Pepes ikan aja deh. Sama air putih.", "literal": "pepes ikan saja atuh. dan air jernih." },
+        { "speaker": "Pelayan:", "text": "Lalabna kumaha, Téh? Diasupkeun sadayana?", "id": "Lalapnya gimana, Kak? Dimasukkan semuanya?", "literal": "lalapnya bagaimana, Téh? dimasukkan semuanya?" },
+        { "speaker": "Rani:", "text": "Lalab téh naon nya?", "id": "Lalab itu apa ya?", "literal": "lalab [téh] apa ya?" },
+        { "speaker": "Sari:", "text": "Sayuran seger, teu dipasak. Dahar jeung sambel. Wajib, Téh.", "id": "Sayuran segar, nggak dimasak. Dimakan sama sambal. Wajib, Kak.", "literal": "sayuran segar, tidak dimasak. makan dengan sambal. wajib, Téh." },
+        { "speaker": "Rani:", "text": "Atah pisan kitu? Kuring can pernah…", "id": "Mentah gitu? Aku belum pernah…", "literal": "mentah sangat begitu? aku belum pernah…" },
+        { "speaker": "Sari:", "text": "Cobian heula sakeudik. Ulah loba sambelna, sok lada.", "id": "Coba dulu sedikit. Jangan banyak sambalnya, suka pedas.", "literal": "coba dulu sedikit. jangan banyak sambalnya, suka pedas." },
+        { "speaker": "Pelayan:", "text": "Sambelna sambel dadak, Téh. Enggal disayogikeun.", "id": "Sambalnya sambal dadak, Kak. Segera disiapkan.", "literal": "sambalnya sambal dadak, Téh. segera disiapkan." },
+        { "speaker": "Rani:", "text": "Mangga. Hatur nuhun.", "id": "Silakan. Terima kasih.", "literal": "silakan. terima kasih." },
+        { "speaker": "Sari:", "text": "Engké ari tos ngeunah mah, Téh moal daék dahar tanpa lalab deui.", "id": "Nanti kalau sudah enak, Kakak nggak bakal mau makan tanpa lalap lagi.", "literal": "nanti kalau sudah enak [mah], Téh tidak akan mau makan tanpa lalab lagi." }
+      ],
+      "notes": [
+        "**Lada** = pedas. ⚠️ Dalam bahasa Indonesia *lada* adalah nama rempah (merica); dalam basa Sunda ia kata sifat. *Teu lada* = tidak pedas. Kata Indonesia *pedas* tidak dipakai.",
+        "**Ngeunah** = enak. Ini pujian utama untuk makanan, dan juga dipakai untuk rasa nyaman secara umum: *ngeunah saré* = enak tidurnya. Lemesnya **raos**. Lawannya **teu ngeunah** atau **hambar** (tawar).",
+        "**Atah** = mentah. Lawannya **asak** (matang). Untuk daging setengah matang: *satengah asak*.",
+        "**Cai hérang** harfiahnya \"air jernih\" dan berarti air putih. Ini pesanan minuman paling umum. **Cai téh** = teh, **cai kalapa** = air kelapa, **cai jeruk** = jeruk peras.",
+        "**Lalab** (atau *lalapan*) adalah sayuran mentah yang disajikan bersama sambal, dan ia bukan pelengkap melainkan bagian tetap dari makan orang Sunda. Isinya biasanya mentimun, kemangi, daun singkong rebus, terong bulat, kacang panjang, selada air. Menolak lalab tidak apa-apa, tapi kamu akan ditanya.",
+        "**Sambel dadak** = sambal yang diulek saat itu juga, di depanmu, dalam cobek batu. *Dadak* berarti mendadak, dibuat seketika. Ini penanda rumah makan Sunda yang serius.",
+        "**Enggal** = segera (lemes); loma: **buru-buru** atau **gancang**. *Enggal disayogikeun* = segera disiapkan."
+      ],
+      "grammars": [
+        {
+          "title": "Cara memasak: satu kata, satu teknik",
+          "body": [
+            "Basa Sunda punya kata kerja tersendiri untuk hampir setiap cara memasak, dan nama masakannya sering langsung diambil dari kata kerja itu. Mengenali polanya berarti kamu bisa membaca menu tanpa bertanya."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Teknik", "Nama masakannya", "Contoh"],
+            "rows": [
+              ["**ngagoréng**", "menggoreng", "*goréngan*", "hayam goréng"],
+              ["**ngaduruk / ngabakar**", "membakar", "*bakakak*", "ayam bakakak"],
+              ["**mais / mepes**", "membungkus daun lalu dikukus", "*pais / pepes*", "pepes lauk"],
+              ["**ngukus**", "mengukus", "*kukusan*", "sampeu kukus"],
+              ["**ngasak / nyangu**", "menanak nasi", "*sangu*", "sangu liwet"],
+              ["**ngulek**", "mengulek", "*sambel*", "sambel dadak"],
+              ["**nyeupan**", "mengukus dalam dandang", "*seupan*", "seupan cau"],
+              ["**ngaliwet**", "menanak dengan bumbu & santan", "*liwet*", "nasi liwet"],
+              ["**ngagéhan / nyeungeut**", "menumis", "*tumis*", "tumis kangkung"]
+            ]
+          },
+          "after": [
+            "Perhatikan awalan **N-** yang berubah bentuk mengikuti huruf pertama kata dasarnya: *goréng* → **ngagoréng**, *pais* → **mais**, *kukus* → **ngukus**, *sangu* → **nyangu**. Pola ini adalah imbuhan kata kerja aktif basa Sunda dan akan dibahas penuh di Unit 10 — untuk sekarang cukup dikenali.",
+            "⚠️ **Pais** dan **pepes** adalah kata yang sama; *pepes* adalah bentuk yang lebih dikenal di luar Jawa Barat. Di rumah makan yang berbahasa Sunda kamu akan melihat *pais lauk*, *pais oncom*, *pais jamur*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Memesan makanan",
+      "blocks": [
+        { "type": "kotak", "title": "Kalimat pesan", "items": [
+          "**Badé tuang naon?** — Mau makan apa? (ditanyakan kepadamu)",
+          "**Abdi badé neda ____.** — Saya mau makan ____. (tentang diri sendiri)",
+          "**Aya naon waé di dieu?** — Ada apa saja di sini?",
+          "**Nu teu lada aya?** — Yang nggak pedas ada?",
+          "**Sambelna misah waé.** — Sambalnya dipisah saja.",
+          "**Tambih sangu sakedik.** — Tambah nasi sedikit. (*tambih* = tambah, lemes)",
+          "**Sadayana sabaraha?** — Semuanya berapa?",
+          "**Punten, tiasa bungkus?** — Permisi, bisa dibungkus?"
+        ] },
+        { "type": "p", "text": "⚠️ Perhatikan ulang aturan emas Unit 3 di sini, karena ia paling sering diuji di meja makan. Pelayan bertanya *badé tuang naon?* kepadamu — memakai kolom 3 karena kamu yang dihormati. Kamu menjawab dengan kolom 2: *abdi badé neda…*. Menjawab *abdi badé tuang* adalah kesalahan yang akan langsung terdengar." },
+        { "type": "tabel", "head": ["Rasa", "Arti", "Rasa", "Arti"], "rows": [
+          ["**amis**", "manis ⚠️", "**lada**", "pedas ⚠️"],
+          ["**asin**", "asin", "**pait**", "pahit"],
+          ["**haseum**", "asam", "**peuheur**", "sepat"],
+          ["**ngeunah / raos**", "enak", "**hambar**", "tawar"],
+          ["**seuseur**", "berminyak, gurih", "**gurih**", "gurih"],
+          ["**tiis**", "dingin", "**panas**", "panas"],
+          ["**haneut**", "hangat", "**seger**", "segar"]
+        ] }
+      ]
+    },
+    {
+      "title": "Masakan Sunda yang wajib dikenal",
+      "blocks": [
+        { "type": "tabel", "head": ["Nama", "Apa itu", "Catatan"], "rows": [
+          ["**nasi timbel**", "nasi dibungkus daun pisang", "biasanya komplit: ayam, tahu, tempe, lalab, sambel"],
+          ["**nasi liwet**", "nasi ditanak dengan santan & bumbu", "dimakan bersama, langsung dari wadahnya"],
+          ["**karedok**", "sayur **mentah** dengan bumbu kacang", "beda dari gado-gado yang direbus"],
+          ["**lotek**", "sayur **rebus** dengan bumbu kacang", "lebih dekat ke gado-gado"],
+          ["**pepes / pais**", "dibungkus daun, dikukus", "isi: ikan, oncom, jamur, tahu"],
+          ["**ayam bakakak**", "ayam dibelah lalu dibakar utuh", "hidangan hajatan"],
+          ["**sayur asem**", "sayur berkuah asam", "asamnya dari asam jawa"],
+          ["**oncom**", "hasil fermentasi ampas tahu/kacang", "khas Jawa Barat, tak ada di daerah lain"],
+          ["**tutug oncom**", "nasi ditumbuk bersama oncom bakar", "khas Tasikmalaya"],
+          ["**seblak**", "kerupuk basah berkuah pedas", "makanan jalanan Bandung, kencurnya wajib"],
+          ["**cireng, cimol, cilok**", "olahan tepung kanji", "*aci* = tepung kanji"],
+          ["**comro / misro**", "singkong parut isi oncom / gula", "*misro* = amis di jero (manis di dalam)"],
+          ["**peuyeum**", "tape singkong", "khas Bandung"],
+          ["**surabi**", "kue tepung beras di tungku tanah", "asin (oncom) atau manis (kinca)"],
+          ["**colenak**", "peuyeum bakar dengan gula kelapa", "*dicocol énak*"],
+          ["**bandrék / bajigur**", "minuman jahe hangat", "diminum malam hari di udara dingin"],
+          ["**és cendol / és goyobod**", "minuman dingin manis", "khas Bandung"]
+        ] },
+        { "type": "p", "text": "Nama beberapa makanan Sunda adalah singkatan kalimat, dan itu bagian dari humornya: **comro** dari *oncom di jero* (oncom di dalam), **misro** dari *amis di jero* (manis di dalam), **colenak** dari *dicocol énak*, **cilok** dari *aci dicolok*, **cireng** dari *aci digoréng*. Kalau kamu bisa membongkar namanya, kamu sudah setengah jalan mengerti bahasanya." },
+        { "type": "kotak", "title": "Adab makan Sunda", "items": [
+          "**Mangga tuang.** — Silakan makan. Diucapkan tuan rumah; jangan mulai sebelum mendengarnya.",
+          "**Punten, ti payun.** — Permisi, saya duluan. Diucapkan kalau selesai lebih dulu.",
+          "**Tos wareg, hatur nuhun.** — Sudah kenyang, terima kasih. (*wareg* = kenyang)",
+          "**Ngeunah pisan!** — Enak sekali! Pujian yang selalu diterima dengan senang.",
+          "Makan dengan tangan kanan tanpa sendok — **dahar ku leungeun** — biasa dan tidak dianggap kasar; justru di rumah makan Sunda disediakan kobokan untuk itu.",
+          "Menolak tambahan cukup dengan **cekap, hatur nuhun** sambil tersenyum. Menolak dua kali dianggap sungguh-sungguh."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "dahar / neda / tuang", "baca": "da-HAR · ne-DA · tu-ANG", "id": "makan (3 tingkat)" },
+    { "su": "nginum / ngaleueut", "baca": "ngi-NUM · ngaleu-EUT", "id": "minum" },
+    { "su": "sangu", "baca": "sa-NGU", "id": "nasi" },
+    { "su": "lauk", "baca": "la-UK", "id": "ikan ⚠️" },
+    { "su": "hayam", "baca": "ha-YAM", "id": "ayam" },
+    { "su": "lalab", "baca": "la-LAB", "id": "sayuran mentah pendamping" },
+    { "su": "sambel", "baca": "sam-BEL", "id": "sambal" },
+    { "su": "lada", "baca": "la-DA", "id": "pedas ⚠️" },
+    { "su": "ngeunah / raos", "baca": "ngeu-NAH · ra-OS", "id": "enak" },
+    { "su": "hambar", "baca": "ham-BAR", "id": "tawar" },
+    { "su": "atah / asak", "baca": "a-TAH · a-SAK", "id": "mentah / matang" },
+    { "su": "wareg", "baca": "wa-REG", "id": "kenyang" },
+    { "su": "lapar", "baca": "la-PAR", "id": "lapar" },
+    { "su": "hanaang", "baca": "hana-ANG", "id": "haus" },
+    { "su": "cai hérang", "baca": "ca-I hé-RANG", "id": "air putih" },
+    { "su": "ngagoréng", "baca": "ngago-RÉNG", "id": "menggoreng" },
+    { "su": "mais / mepes", "baca": "ma-IS · me-PES", "id": "memepes" },
+    { "su": "ngukus", "baca": "ngu-KUS", "id": "mengukus" },
+    { "su": "ngulek", "baca": "ngu-LEK", "id": "mengulek" },
+    { "su": "ngaliwet", "baca": "ngali-WET", "id": "menanak nasi liwet" },
+    { "su": "tambih / tambah", "baca": "tam-BIH · tam-BAH", "id": "tambah" },
+    { "su": "misah", "baca": "mi-SAH", "id": "terpisah" },
+    { "su": "bungkus", "baca": "bung-KUS", "id": "bungkus" },
+    { "su": "enggal / gancang", "baca": "eng-GAL · gan-CANG", "id": "segera, cepat" },
+    { "su": "cobian / cobi", "baca": "cobi-AN · CO-bi", "id": "coba (lemes)" },
+    { "su": "moal", "baca": "mo-AL", "id": "tidak akan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata rasa yang tepat.",
+      "items": [
+        "Sambalnya bikin lidah panas: ____",
+        "Peuyeum rasanya seperti gula: ____",
+        "Sayur asem rasanya: ____",
+        "Makanan tanpa garam: ____",
+        "Pujian untuk masakan yang lezat: ____",
+        "Sudah tidak bisa makan lagi: ____"
+      ]
+    },
+    {
+      "prompt": "Apa nama masakan Sunda ini?",
+      "items": [
+        "Sayur mentah dengan bumbu kacang: ____",
+        "Nasi dibungkus daun pisang: ____",
+        "Ikan dibungkus daun lalu dikukus: ____",
+        "Singkong parut berisi oncom: ____",
+        "Tape singkong khas Bandung: ____",
+        "Kerupuk basah berkuah pedas berkencur: ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda dengan tingkat yang tepat.",
+      "items": [
+        "Saya mau makan pepes ikan. (kepada pelayan)",
+        "Yang tidak pedas ada?",
+        "Sambalnya dipisah saja.",
+        "Semuanya berapa?",
+        "Sudah kenyang, terima kasih.",
+        "Enak sekali, Bu!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "naon / badé / tuang / ?",
+        "lada / nu / aya / teu / ?",
+        "waé / misah / sambelna",
+        "nuhun / wareg / hatur / tos",
+        "bungkus / punten / tiasa / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "lada — amis — haseum — hambar — ngeunah/raos — wareg",
+    "karedok — nasi timbel — pepes/pais lauk — comro — peuyeum — seblak",
+    "Abdi badé neda pepes lauk. — Nu teu lada aya? — Sambelna misah waé. — Sadayana sabaraha? — Tos wareg, hatur nuhun. — Ngeunah pisan, Bu!",
+    "Badé tuang naon? — Aya nu teu lada? — Sambelna misah waé. — Tos wareg, hatur nuhun. — Punten, tiasa bungkus?"
+  ]
+}

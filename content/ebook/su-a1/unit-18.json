@@ -1,0 +1,200 @@
+{
+  "title": "Pesan, telepon, dan undangan",
+  "title_target": "Pesen, nelepon, jeung ondangan",
+  "goal": "Menulis pesan WhatsApp yang wajar, menelepon dengan sopan, dan membaca undangan berbahasa Sunda tanpa tersesat.",
+  "bekal": [
+    "pembuka dan penutup pesan tertulis basa Sunda",
+    "singkatan yang dipakai orang Sunda di WhatsApp",
+    "membaca undangan hajatan dan kalimat baku di dalamnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Nelepon Kang Yayan",
+      "intro": "Rani perlu menanyakan berkas yang tertinggal di kantor. Ia menelepon rekannya, dan seluruh irama percakapan telepon Sunda muncul di sini.",
+      "lines": [
+        { "speaker": "Kang Yayan:", "text": "Halo, assalamualaikum.", "id": "Halo, assalamualaikum.", "literal": "halo, assalamualaikum." },
+        { "speaker": "Rani:", "text": "Waalaikumsalam. Punten Kang, ieu Rani.", "id": "Waalaikumsalam. Permisi Kang, ini Rani.", "literal": "waalaikumsalam. permisi Kang, ini Rani." },
+        { "speaker": "Kang Yayan:", "text": "Oh Téh Rani. Kumaha, aya naon?", "id": "Oh Kak Rani. Gimana, ada apa?", "literal": "oh Téh Rani. bagaimana, ada apa?" },
+        { "speaker": "Rani:", "text": "Punten ngaganggu wengi-wengi. Nuju sibuk teu?", "id": "Maaf mengganggu malam-malam. Lagi sibuk nggak?", "literal": "permisi mengganggu malam-malam. sedang sibuk tidak?" },
+        { "speaker": "Kang Yayan:", "text": "Henteu, mangga waé. Aya naon, Téh?", "id": "Nggak, silakan aja. Ada apa, Kak?", "literal": "tidak, silakan saja. ada apa, Téh?" },
+        { "speaker": "Rani:", "text": "Berkas laporan téh kantun di méja abdi henteu?", "id": "Berkas laporan itu ketinggalan di meja saya nggak?", "literal": "berkas laporan [téh] tertinggal di meja saya tidak?" },
+        { "speaker": "Kang Yayan:", "text": "Sakedap, abdi tingali heula… Muhun, aya di dieu.", "id": "Sebentar, saya lihat dulu… Iya, ada di sini.", "literal": "sebentar, saya lihat dulu… iya, ada di sini." },
+        { "speaker": "Rani:", "text": "Alhamdulillah. Tiasa dipotokeun teu, Kang?", "id": "Alhamdulillah. Bisa difotoin nggak, Kang?", "literal": "alhamdulillah. bisa difotokan tidak, Kang?" },
+        { "speaker": "Kang Yayan:", "text": "Tangtos. Engké abdi kirimkeun ka WA.", "id": "Tentu. Nanti saya kirimkan ke WA.", "literal": "tentu. nanti saya kirimkan ke WA." },
+        { "speaker": "Rani:", "text": "Hatur nuhun pisan, Kang. Punten ngarepotkeun.", "id": "Terima kasih banyak, Kang. Maaf merepotkan.", "literal": "terima kasih sangat, Kang. permisi merepotkan." },
+        { "speaker": "Kang Yayan:", "text": "Sami-sami. Wios waé, teu ngarepotkeun.", "id": "Sama-sama. Nggak apa-apa, nggak merepotkan.", "literal": "sama-sama. tidak apa-apa saja, tidak merepotkan." },
+        { "speaker": "Rani:", "text": "Nuhun deui, Kang. Assalamualaikum.", "id": "Makasih lagi, Kang. Assalamualaikum.", "literal": "terima kasih lagi, Kang. assalamualaikum." }
+      ],
+      "notes": [
+        "**Kantun** punya dua arti yang keduanya sering: **tertinggal** (seperti di sini) dan **tinggal, tersisa** (*kantun dua* = tinggal dua). Bentuk lomanya **tinggaleun** dan **kari**.",
+        "**Wios** = tidak apa-apa (lemes); loma: **teu nanaon**. Kata ini sangat sering di percakapan telepon dan pesan singkat, dan sering ditulis *wios waé* atau disingkat *wios*.",
+        "**Dipotokeun** dari *poto* (foto) + *di-…-keun* = difotokan. Perhatikan betapa mudahnya kata serapan masuk ke sistem imbuhan Sunda: *di-WA-keun*, *dichat-keun*, *diprint-keun* semuanya wajar di percakapan kantor.",
+        "**Nuju sibuk teu?** adalah pembuka telepon yang hampir wajib. Menelepon lalu langsung ke pokok tanpa menanyakan ini terasa terburu-buru.",
+        "**Punten ngaganggu wengi-wengi** — meminta maaf atas waktu menelepon. Sepasang dengan *punten ngaganggu énjing-énjing* untuk pagi. Ini formalitas yang selalu dihargai.",
+        "Salam pembuka dan penutup telepon di Jawa Barat hampir selalu **assalamualaikum**, bahkan dalam percakapan kerja. Kalau lawan bicaramu bukan Muslim, *wilujeng énjing/wengi* dan *hatur nuhun* sudah cukup."
+      ],
+      "grammars": [
+        {
+          "title": "Basa Sunda tertulis di layar",
+          "body": [
+            "Pesan WhatsApp berbahasa Sunda punya kebiasaannya sendiri, dan mengenalinya membuatmu bisa membaca pesan yang masuk. Yang paling mengejutkan pendatang: tanda *é* hampir selalu hilang, dan banyak kata dipendekkan."
+          ],
+          "table": {
+            "head": ["Ditulis", "Sebenarnya", "Arti"],
+            "rows": [
+              ["*hatur nuhun* / *nuhun* / *hn*", "hatur nuhun", "terima kasih"],
+              ["*punten* / *ptn*", "punten", "permisi"],
+              ["*mangga* / *mgga*", "mangga", "silakan"],
+              ["*tos*", "parantos", "sudah"],
+              ["*teu acan* / *tacan*", "teu acan", "belum"],
+              ["*wios*", "wios", "tidak apa-apa"],
+              ["*sae*", "saé", "bagus"],
+              ["*kmh*", "kumaha", "bagaimana"],
+              ["*insya Allah* / *IA*", "insya Allah", "insya Allah"],
+              ["*mgkn*", "meureun / mungkin", "mungkin"],
+              ["*td*", "tadi", "tadi"],
+              ["*bsk* / *enjing*", "isukan / énjing", "besok"]
+            ]
+          },
+          "after": [
+            "⚠️ Karena tanda *é* hilang, kata seperti *sae*, *bade*, *tehna* harus kamu baca dari konteks. Ini persis kemampuan yang dilatih di Unit 2, dan di sinilah ia terpakai.",
+            "Pesan berbahasa Sunda yang sopan hampir selalu dibuka dengan **punten** dan ditutup dengan **hatur nuhun**. Pesan tanpa keduanya terasa tergesa-gesa, walaupun isinya benar.",
+            "Untuk pesan resmi — kepada atasan, guru, atau orang tua — susunannya tetap: **salam — punten — perkenalkan diri — isi — hatur nuhun — salam**. Melewatkan perkenalan diri adalah kesalahan yang paling sering dilakukan pendatang, karena nomormu belum tentu tersimpan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menelepon dan mengirim pesan",
+      "blocks": [
+        { "type": "kotak", "title": "Kalimat telepon", "items": [
+          "**Halo, assalamualaikum.** — Halo, assalamualaikum.",
+          "**Punten, ieu sareng saha?** — Permisi, ini dengan siapa?",
+          "**Ieu abdi, ____.** — Ini saya, ____.",
+          "**Nuju sibuk teu?** — Sedang sibuk nggak?",
+          "**Punten ngaganggu.** — Maaf mengganggu.",
+          "**Sakedap nya, abdi tingali heula.** — Sebentar ya, saya lihat dulu.",
+          "**Sorana teu kadangu.** — Suaranya tidak terdengar.",
+          "**Tiasa diulang deui?** — Bisa diulang lagi?",
+          "**Engké abdi telepon deui.** — Nanti saya telepon lagi.",
+          "**Hatur nuhun, assalamualaikum.** — Terima kasih, assalamualaikum."
+        ] },
+        { "type": "p", "text": "Contoh pesan tertulis yang sopan kepada atasan, dengan susunan lengkap:" },
+        { "type": "kotak", "title": "Contoh pesan", "items": [
+          "*Assalamualaikum, Pa Dadang.*",
+          "*Punten ngaganggu wengi-wengi.*",
+          "*Ieu abdi Rani ti bagian laporan.*",
+          "*Badé ngawartosan, laporan kanggo rapat énjing parantos rengse. Filena tos dikirim ka email Bapa.*",
+          "*Upami aya nu kedah dirévisi, mangga wartosan waé.*",
+          "*Hatur nuhun. Assalamualaikum.*"
+        ] }
+      ]
+    },
+    {
+      "title": "Membaca undangan",
+      "blocks": [
+        { "type": "p", "text": "Undangan hajatan di Jawa Barat sering ditulis dalam basa Sunda lemes tinggi, dan kata-katanya berbeda dari percakapan sehari-hari. Berikut kalimat yang hampir selalu muncul:" },
+        { "type": "tabel", "head": ["Kalimat undangan", "Arti"], "rows": [
+          ["*Sinareng asmana Alloh Nu Maha Welas*", "Dengan nama Allah Yang Maha Pengasih"],
+          ["*Kalayan pangersa Gusti Nu Maha Suci*", "Dengan izin Tuhan Yang Maha Suci"],
+          ["*Mugi kersa ngaluuhan*", "Semoga berkenan menghadiri"],
+          ["*Dina raraga nikahkeun putra-putri simkuring*", "Dalam rangka menikahkan putra-putri kami"],
+          ["*Anu baris dilaksanakeun dina:*", "Yang akan dilaksanakan pada:"],
+          ["*Dinten / Ping / Wanci / Tempat*", "Hari / Tanggal / Waktu / Tempat"],
+          ["*Kasumpingan Bapa/Ibu mangrupi kabingahan kanggo simkuring*", "Kehadiran Bapak/Ibu merupakan kebahagiaan bagi kami"],
+          ["*Hatur nuhun kana perhatosanana*", "Terima kasih atas perhatiannya"],
+          ["*Wassalamu'alaikum warahmatullahi wabarakatuh*", "Wassalamualaikum…"]
+        ] },
+        { "type": "p", "text": "⚠️ **Simkuring** (atau *sim kuring*) adalah bentuk \"saya/kami\" yang paling merendah, dipakai dalam tulisan resmi dan pidato. Kamu tidak perlu memakainya dalam percakapan, tapi kamu akan membacanya di setiap undangan." },
+        { "type": "kotak", "title": "Membalas undangan", "items": [
+          "**Insya Allah abdi ngiring sumping.** — Insya Allah saya akan hadir.",
+          "**Ngiring bingah kana rencangna.** — Ikut berbahagia atas acaranya.",
+          "**Hapunten abdi teu tiasa ngaluuhan.** — Maaf saya tidak bisa menghadiri.",
+          "**Mugia acarana lancar sareng barokah.** — Semoga acaranya lancar dan berkah.",
+          "**Wilujeng, mugia janten kulawarga sakinah.** — Selamat, semoga menjadi keluarga sakinah.",
+          "**Titip amplop waé nya, punten teu tiasa sumping.** — Titip amplop saja ya, maaf tidak bisa datang."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "nelepon", "baca": "nele-PON", "id": "menelepon" },
+    { "su": "pesen / talatah", "baca": "pe-SEN · tala-TAH", "id": "pesan" },
+    { "su": "ngawartosan / ngabéjaan", "baca": "ngawarto-SAN", "id": "memberi tahu" },
+    { "su": "wartos / béja", "baca": "war-TOS · bé-JA", "id": "kabar, berita" },
+    { "su": "wios", "baca": "wi-OS", "id": "tidak apa-apa (lemes)" },
+    { "su": "kantun", "baca": "kan-TUN", "id": "tertinggal; tersisa" },
+    { "su": "sibuk", "baca": "si-BUK", "id": "sibuk" },
+    { "su": "sakedap", "baca": "sake-DAP", "id": "sebentar" },
+    { "su": "kadangu / kadéngé", "baca": "kadan-GU", "id": "terdengar" },
+    { "su": "diulang", "baca": "diu-LANG", "id": "diulang" },
+    { "su": "dikirimkeun", "baca": "dikirim-KEUN", "id": "dikirimkan" },
+    { "su": "dipotokeun", "baca": "dipoto-KEUN", "id": "difotokan" },
+    { "su": "dirévisi", "baca": "diré-VI-si", "id": "direvisi" },
+    { "su": "ondangan", "baca": "onda-NGAN", "id": "undangan" },
+    { "su": "ngaluuhan", "baca": "ngalu-u-HAN", "id": "menghadiri (lemes tinggi)" },
+    { "su": "sumping", "baca": "sum-PING", "id": "datang (lemes ka batur)" },
+    { "su": "simkuring", "baca": "simku-RING", "id": "saya/kami (sangat merendah)" },
+    { "su": "kabingahan", "baca": "kabinga-HAN", "id": "kebahagiaan" },
+    { "su": "ngiring bingah", "baca": "ngi-RING bi-NGAH", "id": "ikut berbahagia" },
+    { "su": "raraga", "baca": "rara-GA", "id": "rangka (dalam rangka)" },
+    { "su": "dilaksanakeun", "baca": "dilaksana-KEUN", "id": "dilaksanakan" },
+    { "su": "perhatosan", "baca": "perhato-SAN", "id": "perhatian" },
+    { "su": "barokah", "baca": "baro-KAH", "id": "berkah" },
+    { "su": "berkas", "baca": "ber-KAS", "id": "berkas" },
+    { "su": "méja", "baca": "MÉ-ja", "id": "meja" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kalimat telepon yang tepat.",
+      "items": [
+        "Membuka telepon: ____",
+        "Menanyakan siapa yang menelepon: ____",
+        "Menanyakan apakah lawan bicara sibuk: ____",
+        "Minta maaf mengganggu: ____",
+        "Minta lawan bicara menunggu: ____",
+        "Menutup telepon: ____"
+      ]
+    },
+    {
+      "prompt": "Apa kepanjangan atau arti singkatan pesan berikut?",
+      "items": [
+        "tos → ____",
+        "wios → ____",
+        "hn → ____",
+        "kmh → ____",
+        "sae → ____",
+        "tacan → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan kalimat undangan berikut ke bahasa Indonesia.",
+      "items": [
+        "Mugi kersa ngaluuhan. → ____",
+        "Dina raraga nikahkeun putra simkuring. → ____",
+        "Kasumpingan Bapa/Ibu mangrupi kabingahan. → ____",
+        "Hatur nuhun kana perhatosanana. → ____",
+        "Insya Allah abdi ngiring sumping. → ____",
+        "Mugia acarana lancar sareng barokah. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "teu / sibuk / nuju / ?",
+        "heula / abdi / sakedap / tingali / nya",
+        "WA / kirimkeun / abdi / ka / engké",
+        "ngarepotkeun / punten / nuhun / hatur",
+        "sumping / ngiring / Allah / abdi / insya"
+      ]
+    }
+  ],
+  "answers": [
+    "Halo, assalamualaikum. — Punten, ieu sareng saha? — Nuju sibuk teu? — Punten ngaganggu. — Sakedap nya, abdi tingali heula. — Hatur nuhun, assalamualaikum.",
+    "parantos (sudah) — tidak apa-apa — hatur nuhun (terima kasih) — kumaha (bagaimana) — saé (bagus) — teu acan (belum)",
+    "Semoga berkenan menghadiri. — Dalam rangka menikahkan putra kami. — Kehadiran Bapak/Ibu merupakan kebahagiaan. — Terima kasih atas perhatiannya. — Insya Allah saya akan hadir. — Semoga acaranya lancar dan berkah.",
+    "Nuju sibuk teu? — Sakedap nya, abdi tingali heula. — Engké abdi kirimkeun ka WA. — Punten ngarepotkeun, hatur nuhun. — Insya Allah abdi ngiring sumping."
+  ]
+}

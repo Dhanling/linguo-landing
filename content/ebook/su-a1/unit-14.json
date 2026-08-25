@@ -1,0 +1,208 @@
+{
+  "title": "Kegiatan sehari-hari",
+  "title_target": "Kagiatan sapopoé",
+  "goal": "Menceritakan rutinitas dari bangun sampai tidur, dan menempatkan peristiwa di waktu yang tepat dengan *keur*, *geus*, *rék*, dan *can*.",
+  "bekal": [
+    "empat penanda waktu yang menggantikan seluruh sistem tenses",
+    "urutan kegiatan dengan *heula*, *terus*, *sanggeus*, *saméméh*",
+    "menceritakan kebiasaan dengan *sok*, *mindeng*, *tara*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Sapoé Rani",
+      "intro": "Sari penasaran bagaimana Rani menghabiskan hari kerjanya. Percakapan ini memuat seluruh penanda waktu basa Sunda dalam satu halaman.",
+      "lines": [
+        { "speaker": "Sari:", "text": "Téh, biasana hudang tabuh sabaraha?", "id": "Kak, biasanya bangun jam berapa?", "literal": "Téh, biasanya bangun pukul berapa?" },
+        { "speaker": "Rani:", "text": "Tabuh lima. Sanggeus solat subuh, kuring sok olahraga saeutik.", "id": "Jam lima. Setelah salat subuh, aku suka olahraga sedikit.", "literal": "pukul lima. sesudah salat subuh, aku suka olahraga sedikit." },
+        { "speaker": "Sari:", "text": "Wah, rajin. Ari kuring mah tara hudang saméméh tabuh genep.", "id": "Wah, rajin. Kalau aku sih nggak pernah bangun sebelum jam enam.", "literal": "wah, rajin. adapun aku [mah] tidak pernah bangun sebelum pukul enam." },
+        { "speaker": "Rani:", "text": "Terus mandi, dahar, tuluy indit ka kantor tabuh tujuh.", "id": "Terus mandi, makan, lalu pergi ke kantor jam tujuh.", "literal": "terus mandi, makan, lalu pergi ke kantor pukul tujuh." },
+        { "speaker": "Sari:", "text": "Naék naon ka kantorna?", "id": "Naik apa ke kantornya?", "literal": "naik apa ke kantornya?" },
+        { "speaker": "Rani:", "text": "Angkot. Kadang ojég lamun geus telat.", "id": "Angkot. Kadang ojek kalau sudah telat.", "literal": "angkot. kadang ojek kalau sudah telat." },
+        { "speaker": "Sari:", "text": "Ayeuna keur naon? Can indit?", "id": "Sekarang lagi apa? Belum berangkat?", "literal": "sekarang sedang apa? belum pergi?" },
+        { "speaker": "Rani:", "text": "Can. Keur ngadagoan hujan eureun heula.", "id": "Belum. Lagi nunggu hujan berhenti dulu.", "literal": "belum. sedang menunggu hujan berhenti dulu." },
+        { "speaker": "Sari:", "text": "Balikna biasana tabuh sabaraha?", "id": "Pulangnya biasanya jam berapa?", "literal": "pulangnya biasanya pukul berapa?" },
+        { "speaker": "Rani:", "text": "Tabuh lima soré. Tapi mindeng nepi ka imah tabuh tujuh, macét.", "id": "Jam lima sore. Tapi sering sampai rumah jam tujuh, macet.", "literal": "pukul lima sore. tapi sering sampai ke rumah pukul tujuh, macet." },
+        { "speaker": "Sari:", "text": "Peutingna sok naon?", "id": "Malamnya suka ngapain?", "literal": "malamnya suka apa?" },
+        { "speaker": "Rani:", "text": "Ngadéngékeun musik, maca, kadang diajar basa Sunda.", "id": "Dengerin musik, baca, kadang belajar bahasa Sunda.", "literal": "mendengarkan musik, membaca, kadang belajar bahasa Sunda." },
+        { "speaker": "Sari:", "text": "Saréna tabuh sabaraha?", "id": "Tidurnya jam berapa?", "literal": "tidurnya pukul berapa?" },
+        { "speaker": "Rani:", "text": "Sabenerna rék saré tabuh sapuluh, tapi sok kabablasan.", "id": "Sebenarnya mau tidur jam sepuluh, tapi suka kebablasan.", "literal": "sebenarnya akan tidur pukul sepuluh, tapi suka kebablasan." }
+      ],
+      "notes": [
+        "**Tuluy** = lalu, kemudian (loma); lemesnya **teras**. Berbeda dari **terus** yang berarti \"terus, langsung\". Dalam percakapan keduanya sering dipakai bergantian.",
+        "**Saméméh** = sebelum (loma); lemesnya **sateuacan**. Pasangannya **sanggeus** = sesudah (loma); lemesnya **saatos**.",
+        "**Mindeng** = sering (loma); lemesnya **sering**. Bersama **sok** (biasa, suka) dan **tara** (tidak pernah), ketiganya membentuk sistem kekerapan basa Sunda.",
+        "**Kadang / kadang-kadang** = kadang. Kata ini sama dengan bahasa Indonesia. Yang lebih Sunda: **sakapeung**.",
+        "**Kabablasan** = kebablasan, kelewatan. Awalan *ka-* + akhiran *-an* lagi, menandai sesuatu yang terjadi tanpa disengaja. Pola yang sama: *kabeurangan* (kesiangan), *kahujanan* (kehujanan), *kalaparan* (kelaparan).",
+        "**Sabenerna** = sebenarnya. Dari *bener* (benar). Lemesnya *saleresna*, dari *leres*."
+      ],
+      "grammars": [
+        {
+          "title": "Empat penanda waktu",
+          "body": [
+            "Basa Sunda, seperti bahasa Indonesia, tidak mengubah bentuk kata kerja untuk menyatakan waktu. Seluruh sistemnya dikerjakan oleh empat kata kecil yang diletakkan **sebelum** kata kerja."
+          ],
+          "table": {
+            "head": ["Loma", "Lemes", "Arti", "Contoh"],
+            "rows": [
+              ["**keur**", "nuju", "sedang", "*Keur dahar.* — Sedang makan."],
+              ["**geus / enggeus**", "parantos / tos", "sudah", "*Geus dahar.* — Sudah makan."],
+              ["**rék**", "badé", "akan, mau", "*Rék dahar.* — Mau makan."],
+              ["**can / acan**", "teu acan", "belum", "*Can dahar.* — Belum makan."],
+              ["**kakara**", "nembé", "baru saja", "*Kakara dahar.* — Baru saja makan."],
+              ["**tacan**", "teu acan kantos", "belum pernah", "*Tacan ka ditu.* — Belum pernah ke sana."],
+              ["**tara**", "tara", "tidak pernah (biasa)", "*Tara dahar isuk.* — Tidak pernah sarapan."],
+              ["**sok**", "sok", "biasa, suka", "*Sok dahar di dinya.* — Biasa makan di situ."]
+            ]
+          },
+          "after": [
+            "⚠️ Bentuk lemes **tos** adalah singkatan dari *parantos* dan jauh lebih sering terdengar. *Tos tuang?* = sudah makan? Dalam tulisan resmi dipakai *parantos*; dalam percakapan hampir selalu *tos*.",
+            "Perbedaan **can** dan **tacan** perlu diperhatikan: *can* berarti belum tapi akan; *tacan* berarti belum pernah sama sekali. *Kuring can dahar* = aku belum makan (tapi akan). *Kuring tacan ka Ciwidey* = aku belum pernah ke Ciwidey.",
+            "Perbedaan **tara** dan **teu**: *teu* menyangkal satu kejadian; *tara* menyangkal kebiasaan. *Manéhna teu datang* = dia tidak datang (kali ini). *Manéhna tara datang* = dia memang tidak pernah datang."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rutinitas dari pagi sampai malam",
+      "blocks": [
+        { "type": "tabel", "head": ["Waktu", "Basa Sunda", "Arti"], "rows": [
+          ["Subuh", "*hudang / gugah*", "bangun"],
+          ["", "*solat subuh*", "salat subuh"],
+          ["Pagi", "*mandi / ibak*", "mandi"],
+          ["", "*dahar isuk / neda énjing*", "sarapan"],
+          ["", "*dangdan*", "berdandan, bersiap"],
+          ["", "*indit ka kantor / mios ka kantor*", "berangkat ke kantor"],
+          ["Siang", "*digawé / damel*", "bekerja"],
+          ["", "*dahar beurang*", "makan siang"],
+          ["", "*ngaso sakedap*", "istirahat sebentar"],
+          ["Sore", "*balik / wangsul*", "pulang"],
+          ["", "*ngumbah baju*", "mencuci baju"],
+          ["", "*beberesih imah*", "bersih-bersih rumah"],
+          ["Malam", "*masak / nyangu*", "memasak"],
+          ["", "*dahar peuting*", "makan malam"],
+          ["", "*lalajo TV*", "menonton TV"],
+          ["", "*ngobrol jeung batur*", "mengobrol dengan teman"],
+          ["", "*saré / mondok*", "tidur"]
+        ] },
+        { "type": "p", "text": "⚠️ **Lalajo** = menonton (loma); lemesnya **ningali**. Kata ini khas Sunda dan tidak ada dalam bahasa Indonesia: *lalajo bal* = menonton bola, *lalajo pilem* = menonton film." },
+        { "type": "kotak", "title": "Menyusun urutan kegiatan", "items": [
+          "**heula** — dulu: *Mandi heula.* — Mandi dulu.",
+          "**terus / tuluy / teras** — lalu: *Terus dahar.* — Lalu makan.",
+          "**sanggeus / saatos** — sesudah: *Sanggeus dahar, indit.* — Sesudah makan, pergi.",
+          "**saméméh / sateuacan** — sebelum: *Saméméh saré, maca.* — Sebelum tidur, membaca.",
+          "**bari** — sambil: *Dahar bari lalajo.* — Makan sambil menonton.",
+          "**sabot / basa** — ketika: *Basa keur dahar, hujan.* — Ketika sedang makan, hujan."
+        ] }
+      ]
+    },
+    {
+      "title": "Bercerita tentang kebiasaan",
+      "blocks": [
+        { "type": "p", "text": "Untuk menceritakan apa yang biasa kamu lakukan, gabungkan penanda kekerapan dengan keterangan waktu. Susunannya bebas, tapi yang paling wajar adalah keterangan waktu di depan atau di ekor." },
+        { "type": "tabel", "head": ["Kekerapan", "Arti", "Contoh kalimat"], "rows": [
+          ["**salawasna**", "selalu", "*Salawasna hudang tabuh lima.*"],
+          ["**sering / mindeng**", "sering", "*Mindeng telat ka kantor.*"],
+          ["**sok**", "biasa, suka", "*Sok olahraga isuk-isuk.*"],
+          ["**kadang / sakapeung**", "kadang", "*Sakapeung naék ojég.*"],
+          ["**jarang**", "jarang", "*Jarang lalajo TV.*"],
+          ["**tara**", "tidak pernah (biasa)", "*Tara dahar isuk.*"],
+          ["**tacan pernah**", "belum pernah", "*Tacan pernah ka Ciwidey.*"],
+          ["**unggal poé**", "setiap hari", "*Unggal poé diajar basa Sunda.*"],
+          ["**saminggu sakali**", "seminggu sekali", "*Saminggu sakali wangsul ka Jakarta.*"],
+          ["**sabulan sakali**", "sebulan sekali", "*Sabulan sakali ka dokter.*"]
+        ] },
+        { "type": "kotak", "title": "Bertanya tentang kegiatan", "items": [
+          "**Ayeuna keur naon?** — Sekarang lagi apa?",
+          "**Biasana hudang tabuh sabaraha?** — Biasanya bangun jam berapa?",
+          "**Tos tuang?** — Sudah makan?",
+          "**Badé naon engké?** — Mau apa nanti?",
+          "**Kamari ka mana waé?** — Kemarin ke mana saja?",
+          "**Peutingna sok naon?** — Malamnya suka ngapain?",
+          "**Sok olahraga henteu?** — Suka olahraga nggak?",
+          "**Unggal poé kitu?** — Setiap hari begitu?"
+        ] },
+        { "type": "p", "text": "Bercerita tentang keseharian adalah bahan latihan terbaik di tingkat A1 karena kosakatanya berulang dan susunannya sederhana. Coba tulis satu paragraf tentang harimu sendiri memakai empat penanda waktu dan tiga kata kekerapan — itulah tepatnya yang diminta di latihan keempat unit ini." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "keur / nuju", "baca": "keur · nu-JU", "id": "sedang" },
+    { "su": "geus / tos", "baca": "geus · tos", "id": "sudah" },
+    { "su": "rék / badé", "baca": "rék · ba-DÉ", "id": "akan, mau" },
+    { "su": "can / teu acan", "baca": "can", "id": "belum" },
+    { "su": "kakara / nembé", "baca": "kaka-RA · nem-BÉ", "id": "baru saja" },
+    { "su": "tacan", "baca": "ta-CAN", "id": "belum pernah" },
+    { "su": "tara", "baca": "ta-RA", "id": "tidak pernah (kebiasaan)" },
+    { "su": "sok", "baca": "sok", "id": "biasa, suka" },
+    { "su": "mindeng / sering", "baca": "min-DENG", "id": "sering" },
+    { "su": "sakapeung", "baca": "sakape-UNG", "id": "kadang-kadang" },
+    { "su": "salawasna", "baca": "salawas-NA", "id": "selalu" },
+    { "su": "heula", "baca": "heu-LA", "id": "dulu (lebih dahulu)" },
+    { "su": "tuluy / teras", "baca": "tu-LUY · te-RAS", "id": "lalu, kemudian" },
+    { "su": "saméméh / sateuacan", "baca": "samé-MÉH", "id": "sebelum" },
+    { "su": "sanggeus / saatos", "baca": "sang-GEUS", "id": "sesudah" },
+    { "su": "bari", "baca": "ba-RI", "id": "sambil" },
+    { "su": "hudang / gugah", "baca": "hu-DANG · gu-GAH", "id": "bangun" },
+    { "su": "dangdan", "baca": "dang-DAN", "id": "berdandan, bersiap" },
+    { "su": "lalajo", "baca": "lala-JO", "id": "menonton" },
+    { "su": "ngobrol / ngawangkong", "baca": "ngob-ROL", "id": "mengobrol" },
+    { "su": "beberesih", "baca": "bebere-SIH", "id": "bersih-bersih" },
+    { "su": "ngumbah", "baca": "ngum-BAH", "id": "mencuci" },
+    { "su": "kabablasan", "baca": "kababla-SAN", "id": "kebablasan" },
+    { "su": "telat", "baca": "te-LAT", "id": "terlambat" },
+    { "su": "rajin / bageur", "baca": "ra-JIN", "id": "rajin" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan penanda waktu yang tepat: keur, geus, rék, atau can.",
+      "items": [
+        "Sekarang sedang makan: ____ dahar.",
+        "Sudah selesai makan: ____ dahar.",
+        "Akan makan sebentar lagi: ____ dahar.",
+        "Belum makan sama sekali hari ini: ____ dahar.",
+        "Baru saja selesai makan: ____ dahar.",
+        "Tidak pernah sarapan: ____ dahar isuk."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata penyusun urutan: heula, tuluy, sanggeus, saméméh, atau bari.",
+      "items": [
+        "Mandi ____, terus makan.",
+        "Mandi, ____ dahar.",
+        "____ dahar, kuring indit.",
+        "____ saré, kuring maca buku.",
+        "Dahar ____ lalajo TV.",
+        "Solat subuh ____, kakara olahraga."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda.",
+      "items": [
+        "Sekarang lagi apa?",
+        "Belum, lagi nunggu hujan berhenti.",
+        "Biasanya bangun jam lima.",
+        "Aku sih nggak pernah bangun sebelum jam enam.",
+        "Sering sampai rumah jam tujuh, macet.",
+        "Setiap hari belajar bahasa Sunda."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "naon / ayeuna / keur / ?",
+        "eureun / hujan / ngadagoan / keur / heula",
+        "genep / saméméh / tara / hudang / kuring / tabuh",
+        "sok / isuk-isuk / olahraga",
+        "diajar / poé / Sunda / unggal / basa"
+      ]
+    }
+  ],
+  "answers": [
+    "keur — geus — rék — can — kakara — tara",
+    "heula — tuluy — Sanggeus — Saméméh — bari — heula",
+    "Ayeuna keur naon? — Can, keur ngadagoan hujan eureun. — Biasana hudang tabuh lima. — Kuring mah tara hudang saméméh tabuh genep. — Mindeng nepi ka imah tabuh tujuh, macét. — Unggal poé diajar basa Sunda.",
+    "Ayeuna keur naon? — Keur ngadagoan hujan eureun heula. — Kuring tara hudang saméméh tabuh genep. — Sok olahraga isuk-isuk. — Unggal poé diajar basa Sunda."
+  ]
+}

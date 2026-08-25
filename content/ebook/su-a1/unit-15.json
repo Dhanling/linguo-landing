@@ -1,0 +1,195 @@
+{
+  "title": "Sekolah dan pekerjaan",
+  "title_target": "Sakola jeung pagawéan",
+  "goal": "Menyebut pekerjaan dan jenjang pendidikan, berbicara di lingkungan kantor, dan memakai kalimat sopan kepada atasan atau guru.",
+  "bekal": [
+    "nama pekerjaan dan jenjang sekolah",
+    "kosakata kantor dan kelas sehari-hari",
+    "menyapa atasan, guru, dan sesepuh dengan tingkat yang tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Di kantor",
+      "intro": "Hari pertama Rani di kantor cabang Bandung. Pak Dadang, kepala bagian, mengajaknya berkeliling dan memperkenalkannya kepada tim.",
+      "lines": [
+        { "speaker": "Pa Dadang:", "text": "Wilujeng énjing, Néng Rani. Kumaha, tos betah?", "id": "Selamat pagi, Neng Rani. Gimana, sudah betah?", "literal": "selamat pagi, Néng Rani. bagaimana, sudah betah?" },
+        { "speaker": "Rani:", "text": "Wilujeng énjing, Pa. Alhamdulillah tos rada betah.", "id": "Selamat pagi, Pak. Alhamdulillah sudah agak betah.", "literal": "selamat pagi, Pa. alhamdulillah sudah agak betah." },
+        { "speaker": "Pa Dadang:", "text": "Saé. Ieu tim urang. Kang Yayan, Téh Nia, sareng Mang Ohim.", "id": "Bagus. Ini tim kita. Kang Yayan, Teh Nia, dan Mang Ohim.", "literal": "bagus. ini tim kita. Kang Yayan, Téh Nia, dan Mang Ohim." },
+        { "speaker": "Rani:", "text": "Wilujeng patepang sadayana. Nami abdi Rani.", "id": "Salam kenal semuanya. Nama saya Rani.", "literal": "selamat berjumpa semuanya. nama saya Rani." },
+        { "speaker": "Kang Yayan:", "text": "Wilujeng sumping, Téh. Ti Jakarta nya?", "id": "Selamat datang, Kak. Dari Jakarta ya?", "literal": "selamat datang, Téh. dari Jakarta ya?" },
+        { "speaker": "Rani:", "text": "Muhun. Punten upami basa Sunda abdi masih kaku.", "id": "Iya. Maaf kalau bahasa Sunda saya masih kaku.", "literal": "iya. permisi kalau bahasa Sunda saya masih kaku." },
+        { "speaker": "Téh Nia:", "text": "Teu nanaon. Urang mah sok maké basa Indonesia ogé di kantor.", "id": "Nggak apa-apa. Kita suka pakai bahasa Indonesia juga di kantor.", "literal": "tidak apa-apa. kita [mah] suka memakai bahasa Indonesia juga di kantor." },
+        { "speaker": "Pa Dadang:", "text": "Tapi diajar mah alus. Sing daék naros ka Kang Yayan.", "id": "Tapi belajar bagus kok. Rajin-rajin tanya ke Kang Yayan.", "literal": "tapi belajar [mah] bagus. semoga mau bertanya ke Kang Yayan." },
+        { "speaker": "Rani:", "text": "Muhun, Pa. Damelan abdi dinten ieu naon?", "id": "Iya, Pak. Kerjaan saya hari ini apa?", "literal": "iya, Pa. pekerjaan saya hari ini apa?" },
+        { "speaker": "Pa Dadang:", "text": "Dinten ieu mah maca laporan heula. Énjing kakara rapat.", "id": "Hari ini baca laporan dulu. Besok baru rapat.", "literal": "hari ini [mah] membaca laporan dulu. besok baru rapat." },
+        { "speaker": "Rani:", "text": "Rapatna tabuh sabaraha, Pa?", "id": "Rapatnya jam berapa, Pak?", "literal": "rapatnya pukul berapa, Pa?" },
+        { "speaker": "Pa Dadang:", "text": "Tabuh salapan énjing. Ulah telat nya, di dieu mah ketat.", "id": "Jam sembilan pagi. Jangan telat ya, di sini ketat.", "literal": "pukul sembilan pagi. jangan telat ya, di sini [mah] ketat." },
+        { "speaker": "Rani:", "text": "Siap, Pa. Hatur nuhun tos dibimbing.", "id": "Siap, Pak. Terima kasih sudah dibimbing.", "literal": "siap, Pa. terima kasih sudah dibimbing." }
+      ],
+      "notes": [
+        "**Wilujeng patepang** = salam kenal, harfiahnya \"selamat berjumpa\". Ini ucapan perkenalan yang paling pas, lebih Sunda daripada menyerap *salam kenal*.",
+        "**Damelan** = pekerjaan, tugas (lemes); loma: **pagawéan**. Keduanya berasal dari kata kerja *damel*/*gawé*.",
+        "**Kaku** dipakai persis seperti bahasa Indonesia untuk bahasa yang belum lancar. Kalimat *punten upami basa Sunda abdi masih kaku* sangat berguna: ia meminta pengertian sebelum kesalahan terjadi.",
+        "**Sing daék** = \"semoga mau\", dipakai sebagai anjuran lembut. Kata **sing** membentuk harapan: *sing betah* (semoga betah), *sing damang* (semoga sehat), *sing lancar* (semoga lancar).",
+        "**Dinten** = hari (lemes); loma: **poé**. *Dinten ieu* = hari ini.",
+        "**Ketat** dan sejumlah istilah kantor lain diserap langsung dari bahasa Indonesia. Ini normal: percakapan kantor di Bandung memang bercampur, dan tidak ada yang mengharapkanmu memakai basa Sunda murni di ruang rapat."
+      ],
+      "grammars": [
+        {
+          "title": "Berbicara kepada atasan dan guru",
+          "body": [
+            "Di lingkungan kerja dan sekolah, tingkat basa ditentukan oleh kedudukan, bukan usia. Atasan yang lebih muda darimu tetap disapa dengan lemes."
+          ],
+          "table": {
+            "head": ["Kepada", "Sapaan", "Tingkat", "Contoh"],
+            "rows": [
+              ["atasan laki-laki", "**Pa** + nama", "lemes penuh", "*Pa Dadang, punten…*"],
+              ["atasan perempuan", "**Bu** + nama", "lemes penuh", "*Bu Nia, tos rengse.*"],
+              ["rekan sebaya", "**Kang / Téh** + nama", "loma sopan", "*Kang Yayan, tulung.*"],
+              ["bawahan / lebih muda", "nama saja", "loma", "*Ohim, cokot berkas.*"],
+              ["guru", "**Pa / Bu Guru**", "lemes penuh", "*Punten, Bu Guru.*"],
+              ["sesepuh / pimpinan tinggi", "**Bapa / Ibu**", "lemes tinggi", "*Sumuhun, Bapa.*"]
+            ]
+          },
+          "after": [
+            "⚠️ Menyapa rekan sebaya dengan **Kang** atau **Téh** adalah kebiasaan kantor Bandung yang sebaiknya kamu ikuti sejak hari pertama. Memanggil nama saja tanpa sapaan terasa dingin, walaupun tidak salah.",
+            "Kalimat yang paling sering kamu perlukan kepada atasan: **Punten, badé naros sakedik** (permisi, mau bertanya sedikit), **Tos rengse, Pa** (sudah selesai, Pak), **Hapunten, abdi teu acan ngartos** (maaf, saya belum mengerti), **Kenging widi teu?** (boleh izin nggak?).",
+            "Untuk melaporkan pekerjaan: **nuju dikerjakeun** (sedang dikerjakan), **tos rengse** (sudah selesai), **teu acan rengse** (belum selesai), **kedah dirévisi** (harus direvisi)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pekerjaan dan jenjang sekolah",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Arti", "Basa Sunda", "Arti"], "rows": [
+          ["**guru**", "guru", "**dokter**", "dokter"],
+          ["**patani**", "petani", "**padagang**", "pedagang"],
+          ["**tukang ____**", "tukang ____", "**supir**", "sopir"],
+          ["**pagawé kantor**", "pegawai kantor", "**pagawé nagri**", "pegawai negeri"],
+          ["**pulisi**", "polisi", "**prajurit**", "tentara"],
+          ["**tukang bangunan**", "kuli bangunan", "**tukang kayu**", "tukang kayu"],
+          ["**paninggaran**", "pemburu", "**palaut**", "nelayan"],
+          ["**seniman**", "seniman", "**dalang**", "dalang"],
+          ["**murid / siswa**", "murid", "**mahasiswa**", "mahasiswa"],
+          ["**kepala sakola**", "kepala sekolah", "**dosén**", "dosen"]
+        ] },
+        { "type": "p", "text": "⚠️ **Tukang** berarti \"pelaku, ahli\" dan sangat produktif: *tukang bakso*, *tukang beca*, *tukang cukur*, *tukang kebon*. Kata yang sama juga berarti \"belakang\" — konteks yang membedakan, dan kamu sudah bertemu keduanya di Unit 11." },
+        { "type": "tabel", "head": ["Jenjang", "Basa Sunda", "Arti"], "rows": [
+          ["TK", "*taman kanak-kanak*", "taman kanak-kanak"],
+          ["SD", "*sakola dasar*", "sekolah dasar"],
+          ["SMP", "*sakola menengah pertama*", "SMP"],
+          ["SMA", "*sakola menengah luhur*", "SMA"],
+          ["Kuliah", "*kuliah di paguron luhur*", "kuliah di perguruan tinggi"],
+          ["Pesantren", "*pasantrén*", "pesantren"],
+          ["Lulus", "*lulus / tamat*", "lulus"],
+          ["Kelas", "*kelas*", "kelas"]
+        ] }
+      ]
+    },
+    {
+      "title": "Kalimat di kantor dan di kelas",
+      "blocks": [
+        { "type": "kotak", "title": "Di kantor", "items": [
+          "**Punten, badé naros sakedik.** — Permisi, mau bertanya sedikit.",
+          "**Tos rengse, Pa.** — Sudah selesai, Pak.",
+          "**Nuju dikerjakeun.** — Sedang dikerjakan.",
+          "**Kenging widi teu, badé ka luar sakedap?** — Boleh izin, mau keluar sebentar?",
+          "**Hapunten abdi telat, macét pisan.** — Maaf saya telat, macet sekali.",
+          "**Rapatna dimimitian tabuh sabaraha?** — Rapatnya dimulai jam berapa?",
+          "**Punten, tiasa dibantosan?** — Permisi, bisa dibantu?",
+          "**Abdi badé wangsul heula, Pa.** — Saya mau pulang duluan, Pak."
+        ] },
+        { "type": "kotak", "title": "Di kelas", "items": [
+          "**Punten, Bu Guru, abdi teu acan ngartos.** — Permisi, Bu Guru, saya belum mengerti.",
+          "**Tiasa diterangkeun deui?** — Bisa dijelaskan lagi?",
+          "**Punten, kumaha nyebatna dina basa Sunda?** — Permisi, bagaimana menyebutnya dalam bahasa Sunda?",
+          "**Naon hartosna kecap ieu?** — Apa arti kata ini?",
+          "**Punten, PR-na kanggo iraha?** — Permisi, PR-nya untuk kapan?",
+          "**Hatur nuhun tos diwulang.** — Terima kasih sudah diajari."
+        ] },
+        { "type": "p", "text": "**Ngawulang** = mengajar (lemes); loma: **ngajar**. Bentuk pasifnya *diwulang* = diajari. Kalimat penutup *hatur nuhun tos diwulang* adalah ucapan baku murid kepada guru di Jawa Barat, dan ia akan selalu diterima dengan senang." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "damel / gawé", "baca": "da-MEL · ga-WÉ", "id": "bekerja" },
+    { "su": "damelan / pagawéan", "baca": "dame-LAN · pagawé-AN", "id": "pekerjaan" },
+    { "su": "kantor", "baca": "kan-TOR", "id": "kantor" },
+    { "su": "rapat", "baca": "ra-PAT", "id": "rapat" },
+    { "su": "laporan", "baca": "lapo-RAN", "id": "laporan" },
+    { "su": "rengse", "baca": "reng-SE", "id": "selesai" },
+    { "su": "dimimitian", "baca": "dimimiti-AN", "id": "dimulai" },
+    { "su": "kenging widi", "baca": "ken-GING wi-DI", "id": "mendapat izin" },
+    { "su": "wilujeng patepang", "baca": "wilu-JENG tepe-PANG", "id": "salam kenal" },
+    { "su": "sakola", "baca": "sako-LA", "id": "sekolah" },
+    { "su": "murid / siswa", "baca": "mu-RID", "id": "murid" },
+    { "su": "guru", "baca": "gu-RU", "id": "guru" },
+    { "su": "ngawulang / ngajar", "baca": "ngawu-LANG", "id": "mengajar" },
+    { "su": "diwulang", "baca": "diwu-LANG", "id": "diajari" },
+    { "su": "diajar", "baca": "di-A-jar", "id": "belajar" },
+    { "su": "diterangkeun", "baca": "diterang-KEUN", "id": "dijelaskan" },
+    { "su": "ngartos / ngarti", "baca": "ngar-TOS", "id": "mengerti" },
+    { "su": "hartos / harti", "baca": "har-TOS", "id": "arti" },
+    { "su": "kecap", "baca": "ke-CAP", "id": "kata ⚠️ bukan kecap manis" },
+    { "su": "kalimah", "baca": "kali-MAH", "id": "kalimat" },
+    { "su": "tukang", "baca": "tu-KANG", "id": "pelaku, ahli; belakang" },
+    { "su": "patani", "baca": "pata-NI", "id": "petani" },
+    { "su": "dinten / poé", "baca": "din-TEN", "id": "hari" },
+    { "su": "sing", "baca": "sing", "id": "semoga (harapan)" },
+    { "su": "kaku", "baca": "ka-KU", "id": "kaku" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sebutkan pekerjaan dalam basa Sunda.",
+      "items": [
+        "orang yang mengajar di sekolah → ____",
+        "orang yang bekerja di sawah → ____",
+        "orang yang berdagang → ____",
+        "orang yang mengemudikan angkot → ____",
+        "orang yang memainkan wayang golek → ____",
+        "orang yang bekerja di kantor → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kalimat kantor yang tepat.",
+      "items": [
+        "Melaporkan pekerjaan selesai: ____",
+        "Melaporkan pekerjaan sedang berjalan: ____",
+        "Minta izin keluar sebentar: ____",
+        "Minta maaf karena terlambat: ____",
+        "Bertanya jam mulai rapat: ____",
+        "Pamit pulang kepada atasan: ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda lemes.",
+      "items": [
+        "Salam kenal semuanya. Nama saya Rani.",
+        "Maaf kalau bahasa Sunda saya masih kaku.",
+        "Permisi, Bu Guru, saya belum mengerti.",
+        "Bisa dijelaskan lagi?",
+        "Apa arti kata ini?",
+        "Terima kasih sudah diajari."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "naros / punten / badé / sakedik",
+        "Pa / rengse / tos",
+        "deui / diterangkeun / tiasa / ?",
+        "sabaraha / rapatna / tabuh / ?",
+        "diwulang / nuhun / tos / hatur"
+      ]
+    }
+  ],
+  "answers": [
+    "guru — patani — padagang — supir — dalang — pagawé kantor",
+    "Tos rengse, Pa. — Nuju dikerjakeun. — Kenging widi teu, badé ka luar sakedap? — Hapunten abdi telat, macét pisan. — Rapatna dimimitian tabuh sabaraha? — Abdi badé wangsul heula, Pa.",
+    "Wilujeng patepang sadayana. Nami abdi Rani. — Punten upami basa Sunda abdi masih kaku. — Punten, Bu Guru, abdi teu acan ngartos. — Tiasa diterangkeun deui? — Naon hartosna kecap ieu? — Hatur nuhun tos diwulang.",
+    "Punten, badé naros sakedik. — Tos rengse, Pa. — Tiasa diterangkeun deui? — Rapatna tabuh sabaraha? — Hatur nuhun tos diwulang."
+  ]
+}

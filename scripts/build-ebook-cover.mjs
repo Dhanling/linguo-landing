@@ -63,10 +63,15 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   /* Pola latar: dibuat dari gradient berulang, jadi tak ada berkas gambar yang
      perlu ikut diangkut. Tiap modul memilih polanya sendiri lewat cover_design. */
   .pola{position:absolute;inset:0;opacity:${d.pola_opacity ?? 0.5};${esc(d.pola ?? "")}}
+  /* [ebook-sampul-cap-fon-v1] Huruf hias di pojok boleh memakai fon sendiri.
+     Modul Sunda memakai aksara Sunda (ᮞ) yang tidak ada di Roboto/Helvetica,
+     jadi tanpa tombol ini ia jatuh ke kotak kosong. Bawaannya kosong — sampul
+     lama tak bergeser sepiksel pun. */
   .cap{
     position:absolute;right:-40px;bottom:250px;
-    font-size:520px;font-weight:700;line-height:1;
+    font-size:${d.cap_size ?? "520px"};font-weight:700;line-height:1;
     color:rgba(255,255,255,.045);user-select:none;
+    ${d.cap_font ? `font-family:${esc(d.cap_font)};` : ""}
   }
   .isi{position:absolute;inset:0;padding:130px 128px}
   .merek{font-size:34px;font-weight:700;letter-spacing:.34em;color:${esc(d.accent ?? "#5FD6CA")}}

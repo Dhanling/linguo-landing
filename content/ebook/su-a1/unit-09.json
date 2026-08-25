@@ -1,0 +1,204 @@
+{
+  "title": "Bertanya: kata tanya lengkap",
+  "title_target": "Kecap pananya",
+  "goal": "Menyusun semua jenis pertanyaan — apa, siapa, kapan, di mana, bagaimana, mengapa, berapa — dan menjawabnya dengan wajar.",
+  "bekal": [
+    "tujuh kata tanya inti dan letaknya dalam kalimat",
+    "pertanyaan ya/tidak tanpa kata tanya, memakai *teu* atau nada",
+    "menjawab tanpa mengulang seluruh kalimat"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Ditaros tatangga",
+      "intro": "Rani sedang menyapu teras ketika tetangga sebelah, Bu Éha, berhenti di depan pagar. Percakapan pertama mereka nyaris seluruhnya berupa pertanyaan.",
+      "lines": [
+        { "speaker": "Bu Éha:", "text": "Punten, Néng. Néng nu nembé ngontrak di bumi Bu Imas?", "id": "Permisi, Neng. Neng yang baru ngekos di rumah Bu Imas?", "literal": "permisi, Néng. Néng yang baru mengontrak di rumah Bu Imas?" },
+        { "speaker": "Rani:", "text": "Muhun, Bu. Nami abdi Rani.", "id": "Iya, Bu. Nama saya Rani.", "literal": "iya, Bu. nama saya Rani." },
+        { "speaker": "Bu Éha:", "text": "Ti mana asalna?", "id": "Dari mana asalnya?", "literal": "dari mana asalnya?" },
+        { "speaker": "Rani:", "text": "Ti Jakarta.", "id": "Dari Jakarta.", "literal": "dari Jakarta." },
+        { "speaker": "Bu Éha:", "text": "Naon damelna di Bandung?", "id": "Apa kerjanya di Bandung?", "literal": "apa pekerjaannya di Bandung?" },
+        { "speaker": "Rani:", "text": "Abdi damel di kantor, di daérah Dago.", "id": "Saya kerja di kantor, di daerah Dago.", "literal": "saya bekerja di kantor, di daerah Dago." },
+        { "speaker": "Bu Éha:", "text": "Iraha sumpingna ka Bandung?", "id": "Kapan datangnya ke Bandung?", "literal": "kapan datangnya ke Bandung?" },
+        { "speaker": "Rani:", "text": "Nembé dua minggu, Bu.", "id": "Baru dua minggu, Bu.", "literal": "baru dua minggu, Bu." },
+        { "speaker": "Bu Éha:", "text": "Kumaha, betah teu di dieu?", "id": "Gimana, betah nggak di sini?", "literal": "bagaimana, betah tidak di sini?" },
+        { "speaker": "Rani:", "text": "Betah pisan. Ngan hawana tiis.", "id": "Betah banget. Cuma udaranya dingin.", "literal": "betah sangat. hanya udaranya dingin." },
+        { "speaker": "Bu Éha:", "text": "Naha teu ngangge jakét?", "id": "Kenapa nggak pakai jaket?", "literal": "kenapa tidak memakai jaket?" },
+        { "speaker": "Rani:", "text": "Poho, Bu. Hilap teu dicandak ti Jakarta.", "id": "Lupa, Bu. Lupa nggak dibawa dari Jakarta.", "literal": "lupa, Bu. lupa tidak dibawa dari Jakarta." },
+        { "speaker": "Bu Éha:", "text": "Saha waé nu di bumi téh, Néng nyalira?", "id": "Siapa saja yang di rumah itu, Neng sendirian?", "literal": "siapa saja yang di rumah [téh], Néng sendiri?" },
+        { "speaker": "Rani:", "text": "Sareng Néng Sari. Sadayana opat urang.", "id": "Sama Neng Sari. Semuanya empat orang.", "literal": "dengan Néng Sari. semuanya empat orang." }
+      ],
+      "notes": [
+        "**Naha** = kenapa, mengapa (lemes dan loma sama). Bentuk lain yang lebih santai: **kunaon**. Keduanya dipakai di awal kalimat. ⚠️ *Naha* juga bisa berarti \"apakah\" dalam kalimat tanya formal: *Naha leres kitu?* = apakah benar begitu?",
+        "**Nyalira** = sendirian (lemes); loma: **sorangan**. *Néng nyalira?* = \"Neng sendirian?\" — pertanyaan yang sangat sering ditanyakan tetangga kepada pendatang.",
+        "**Hilap** = lupa (lemes); loma: **poho**. Perhatikan Rani memakai keduanya dalam satu jawaban — itu wajar dan sering terjadi di percakapan sungguhan.",
+        "**Ngangge** = memakai (lemes); loma: **maké**. *Teu ngangge jakét* = tidak memakai jaket.",
+        "**Hawa** = udara, cuaca. *Hawana tiis* = udaranya dingin. Bandung dingin adalah topik pembuka percakapan yang tak pernah gagal.",
+        "**Ngan** = hanya, tapi. Ia memperkenalkan pengecualian: *betah pisan, ngan hawana tiis*. Lemesnya **mung**. Berbeda dari *waé* yang berarti \"saja\" sebagai pembatas pilihan."
+      ],
+      "grammars": [
+        {
+          "title": "Tujuh kata tanya dan letaknya",
+          "body": [
+            "Kata tanya basa Sunda boleh berdiri di depan atau di belakang, sama seperti bahasa Indonesia. Yang perlu dijaga hanya bentuk lemes/lomanya."
+          ],
+          "table": {
+            "head": ["Loma", "Lemes", "Arti", "Contoh"],
+            "rows": [
+              ["**naon**", "naon", "apa", "*Ieu naon?*"],
+              ["**saha**", "saha", "siapa", "*Saha jenenganana?*"],
+              ["**iraha**", "iraha", "kapan", "*Iraha badé mulih?*"],
+              ["**di mana**", "di mana", "di mana", "*Bumina di mana?*"],
+              ["**ka mana**", "ka mana", "ke mana", "*Badé ka mana?*"],
+              ["**ti mana**", "ti mana", "dari mana", "*Ti mana asalna?*"],
+              ["**kumaha**", "kumaha", "bagaimana", "*Kumaha damang?*"],
+              ["**naha / kunaon**", "naha", "mengapa", "*Naha teu sumping?*"],
+              ["**sabaraha**", "sabaraha", "berapa", "*Sabaraha hargana?*"],
+              ["**nu mana**", "nu mana", "yang mana", "*Nu mana punten?*"]
+            ]
+          },
+          "after": [
+            "Kabar baiknya: hampir semua kata tanya **sama** di kedua tingkat. Yang berubah hanya kata-kata di sekitarnya. *Ti mana asalna?* dan *Ti mana asalna?* sama persis; yang membedakan adalah apakah kamu melanjutkannya dengan *Bu* atau tidak.",
+            "⚠️ Basa Sunda tidak punya kata tanya untuk \"apakah\" seperti *-kah* dalam bahasa Indonesia. Pertanyaan ya/tidak dibentuk dengan menambahkan **teu** (loma) atau **henteu** (lemes) di ujung kalimat: *Betah teu?* = betah nggak? *Tos tuang henteu?* = sudah makan belum?",
+            "Cara kedua yang sama seringnya adalah **nada suara saja**, persis seperti bahasa Indonesia: *Néng ti Jakarta?* dengan nada naik sudah menjadi pertanyaan tanpa kata tambahan apa pun."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya dan menjawab",
+      "blocks": [
+        { "type": "tabel", "head": ["Pertanyaan", "Arti", "Jawaban wajar"], "rows": [
+          ["*Ieu naon?*", "Ini apa?", "*Ieu peuyeum.*"],
+          ["*Saha éta?*", "Itu siapa?", "*Éta Néng Sari.*"],
+          ["*Iraha sumpingna?*", "Kapan datangnya?", "*Nembé dua minggu.*"],
+          ["*Bumina di mana?*", "Rumahnya di mana?", "*Di Dago.*"],
+          ["*Badé ka mana?*", "Mau ke mana?", "*Badé ka payun.*"],
+          ["*Kumaha damang?*", "Apa kabar?", "*Pangéstu, damang.*"],
+          ["*Naha teu sumping?*", "Kenapa tidak datang?", "*Aya acara, Bu.*"],
+          ["*Sabaraha hargana?*", "Berapa harganya?", "*Lima rébu.*"],
+          ["*Nu mana?*", "Yang mana?", "*Nu ieu.*"],
+          ["*Betah teu?*", "Betah nggak?", "*Betah pisan.*"]
+        ] },
+        { "type": "p", "text": "Menjawab dalam basa Sunda hampir selalu **pendek**. Mengulang seluruh kalimat pertanyaan terdengar kaku, seperti sedang latihan. *Ti mana asalna?* dijawab cukup dengan *Ti Jakarta*, bukan *Abdi asalna ti Jakarta*." },
+        { "type": "kotak", "title": "Jawaban singkat yang paling berguna", "items": [
+          "**Muhun / heueuh** — iya (lemes / loma)",
+          "**Henteu / teu** — tidak",
+          "**Sanés / lain** — bukan",
+          "**Teu acan / can** — belum",
+          "**Parantos / geus** — sudah",
+          "**Duka teuing** — entahlah, saya tidak tahu",
+          "**Sakedap** — sebentar",
+          "**Mangga** — silakan, boleh",
+          "**Sami** — sama",
+          "**Kitu** — begitu (menyetujui isi kalimat lawan bicara)"
+        ] }
+      ]
+    },
+    {
+      "title": "Kalimat tanya yang sering ditanyakan kepada pendatang",
+      "blocks": [
+        { "type": "p", "text": "Sebagai pendatang, sepuluh pertanyaan ini akan kamu terima berulang-ulang dari tetangga, tukang, dan orang di angkot. Menyiapkan jawabannya sekali membuat sisanya lancar." },
+        { "type": "tabel", "head": ["Pertanyaan", "Arti", "Jawaban siap pakai"], "rows": [
+          ["*Ti mana asalna?*", "Dari mana asalnya?", "*Ti Jakarta, Bu.*"],
+          ["*Naon damelna?*", "Kerjanya apa?", "*Damel di kantor.*"],
+          ["*Calikna di mana?*", "Tinggalnya di mana?", "*Di Dago, caket masjid.*"],
+          ["*Tos sabaraha lami di Bandung?*", "Sudah berapa lama di Bandung?", "*Nembé dua minggu.*"],
+          ["*Tiasa basa Sunda?*", "Bisa bahasa Sunda?", "*Sakedik, nembé diajar.*"],
+          ["*Nyalira waé?*", "Sendirian saja?", "*Muhun, nyalira.*"],
+          ["*Tos kagungan carogé?*", "Sudah punya suami?", "*Teu acan, Bu.*"],
+          ["*Betah teu di Bandung?*", "Betah nggak di Bandung?", "*Betah pisan.*"],
+          ["*Sok wangsul ka Jakarta?*", "Sering pulang ke Jakarta?", "*Sabulan sakali.*"],
+          ["*Naon nu paling dipikaresep?*", "Apa yang paling disukai?", "*Hawana, sareng tuangeunana.*"]
+        ] },
+        { "type": "p", "text": "⚠️ Pertanyaan ketujuh mungkin terasa terlalu pribadi bagi telinga Jakarta, tapi dalam kebiasaan Sunda ia adalah bagian wajar dari perkenalan — sama sekali bukan usaha mencampuri. Jawaban singkat sambil tersenyum sudah cukup, dan tidak ada kewajiban menjelaskan lebih jauh." },
+        { "type": "kotak", "title": "Bertanya balik dengan sopan", "items": [
+          "**Ari Ibu nyalira?** — Kalau Ibu sendiri? (mengembalikan pertanyaan)",
+          "**Ibu kumaha?** — Ibu bagaimana?",
+          "**Punten, upami kenging terang…** — Maaf, kalau boleh tahu…",
+          "**Punten badé naros sakedik.** — Maaf mau bertanya sedikit. (*naros* = bertanya, lemes)",
+          "**Hapunten upami lepat naros.** — Maaf kalau salah bertanya."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "naon", "baca": "na-ON", "id": "apa" },
+    { "su": "saha", "baca": "sa-HA", "id": "siapa" },
+    { "su": "iraha", "baca": "ira-HA", "id": "kapan" },
+    { "su": "di mana", "baca": "di MA-na", "id": "di mana" },
+    { "su": "kumaha", "baca": "kuma-HA", "id": "bagaimana" },
+    { "su": "naha / kunaon", "baca": "na-HA · kuna-ON", "id": "mengapa" },
+    { "su": "sabaraha", "baca": "saba-RA-ha", "id": "berapa" },
+    { "su": "nu mana", "baca": "nu MA-na", "id": "yang mana" },
+    { "su": "naros / nanya", "baca": "na-ROS · na-NYA", "id": "bertanya" },
+    { "su": "ngawaler / ngajawab", "baca": "ngawa-LER · ngaja-WAB", "id": "menjawab" },
+    { "su": "nyalira / sorangan", "baca": "nyali-RA · so-RA-ngan", "id": "sendirian" },
+    { "su": "hilap / poho", "baca": "hi-LAP · po-HO", "id": "lupa" },
+    { "su": "émut / inget", "baca": "é-MUT · i-NGET", "id": "ingat" },
+    { "su": "ngangge / maké", "baca": "ngang-GE · ma-KÉ", "id": "memakai" },
+    { "su": "hawa", "baca": "ha-WA", "id": "udara, cuaca" },
+    { "su": "tiis / panas", "baca": "ti-IS · pa-NAS", "id": "dingin / panas" },
+    { "su": "betah", "baca": "be-TAH", "id": "betah" },
+    { "su": "ngan / mung", "baca": "ngan · mung", "id": "hanya, tapi" },
+    { "su": "sanés / lain", "baca": "sa-NÉS · la-IN", "id": "bukan" },
+    { "su": "sakedap", "baca": "sake-DAP", "id": "sebentar" },
+    { "su": "lami / lila", "baca": "la-MI · li-LA", "id": "lama" },
+    { "su": "dipikaresep", "baca": "dipika-RE-sep", "id": "disukai" },
+    { "su": "asal", "baca": "a-SAL", "id": "asal" },
+    { "su": "daérah", "baca": "da-É-rah", "id": "daerah" },
+    { "su": "upami / lamun", "baca": "u-PA-mi · la-MUN", "id": "kalau, jika" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata tanya yang tepat.",
+      "items": [
+        "____ jenenganana? (siapa)",
+        "____ badé mulih? (kapan)",
+        "Bumina ____? (di mana)",
+        "____ teu sumping? (mengapa)",
+        "____ hargana? (berapa)",
+        "____ damang, Bu? (bagaimana)"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pertanyaan ya/tidak dengan menambahkan teu atau henteu.",
+      "items": [
+        "Betah di Bandung. → ____",
+        "Tiasa basa Sunda. → ____",
+        "Tos tuang. → ____",
+        "Aya cai. → ____",
+        "Lada sambelna. → ____",
+        "Sumping isukan. → ____"
+      ]
+    },
+    {
+      "prompt": "Jawab pertanyaan berikut dengan jawaban singkat yang wajar.",
+      "items": [
+        "Ti mana asalna? → ____",
+        "Tiasa basa Sunda? → ____",
+        "Tos sabaraha lami di Bandung? → ____",
+        "Nyalira waé? → ____",
+        "Betah teu di dieu? → ____",
+        "Iraha wangsul ka Jakarta? → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat tanya yang benar.",
+      "items": [
+        "asalna / mana / ti / ?",
+        "damelna / naon / ?",
+        "sumping / iraha / na / ?",
+        "teu / dieu / betah / di / ?",
+        "jenenganana / saha / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Saha — Iraha — di mana — Naha — Sabaraha — Kumaha",
+    "Betah teu di Bandung? — Tiasa basa Sunda henteu? — Tos tuang henteu? — Aya cai teu? — Lada teu sambelna? — Sumping isukan henteu?",
+    "Ti Jakarta. — Sakedik, nembé diajar. — Nembé dua minggu. — Muhun, nyalira. — Betah pisan. — Sabulan sakali.",
+    "Ti mana asalna? — Naon damelna? — Iraha sumpingna? — Betah teu di dieu? — Saha jenenganana?"
+  ]
+}

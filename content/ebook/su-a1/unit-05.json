@@ -1,0 +1,217 @@
+{
+  "title": "Angka, waktu, dan hari",
+  "title_target": "Wilangan, wanci, jeung poé",
+  "goal": "Menghitung, menyebut jam, menamai hari dan bulan, serta menempatkan peristiwa di masa lalu dan masa depan.",
+  "bekal": [
+    "angka Sunda dan tiga bentuk yang berbeda dari bahasa Indonesia: *hiji*, *salapan*, *dalapan*",
+    "menyebut jam dengan *tabuh* dan pembagian hari yang tidak sama dengan kebiasaanmu",
+    "keterangan waktu: *kamari*, *isukan*, *pagéto*, *mangkukna*"
+  ],
+  "dialogs": [
+    {
+      "title": "Paguneman — Jangji jeung Néng Sari",
+      "intro": "Rani dan Sari duduk di teras. Sari menawarkan mengantar Rani berkeliling Bandung, dan mereka mencocokkan waktu.",
+      "lines": [
+        { "speaker": "Sari:", "text": "Téh, isukan aya acara teu?", "id": "Kak, besok ada acara nggak?", "literal": "Téh, besok ada acara tidak?" },
+        { "speaker": "Rani:", "text": "Isukan mah henteu. Kunaon?", "id": "Besok sih nggak. Kenapa?", "literal": "besok [mah] tidak. kenapa?" },
+        { "speaker": "Sari:", "text": "Hayu urang ka Lembang. Kuring nyaho tempat nu alus.", "id": "Ayo kita ke Lembang. Aku tahu tempat yang bagus.", "literal": "ayo kita ke Lembang. aku tahu tempat yang bagus." },
+        { "speaker": "Rani:", "text": "Hayu waé. Tabuh sabaraha indit na?", "id": "Ayo aja. Jam berapa perginya?", "literal": "ayo saja. pukul berapa perginya?" },
+        { "speaker": "Sari:", "text": "Isuk-isuk waé, tabuh tujuh. Ulah beurang teuing, sok macét.", "id": "Pagi-pagi aja, jam tujuh. Jangan siang-siang, suka macet.", "literal": "pagi-pagi saja, pukul tujuh. jangan siang terlalu, suka macet." },
+        { "speaker": "Rani:", "text": "Tabuh tujuh téh isuk pisan nya. Balik na iraha?", "id": "Jam tujuh itu pagi banget ya. Pulangnya kapan?", "literal": "pukul tujuh [téh] pagi sangat ya. pulangnya kapan?" },
+        { "speaker": "Sari:", "text": "Soré, kira-kira tabuh opat. Ké urang dahar heula di ditu.", "id": "Sore, kira-kira jam empat. Nanti kita makan dulu di sana.", "literal": "sore, kira-kira pukul empat. nanti kita makan dulu di sana." },
+        { "speaker": "Rani:", "text": "Sabaraha ongkosna kira-kira?", "id": "Berapa ongkosnya kira-kira?", "literal": "berapa ongkosnya kira-kira?" },
+        { "speaker": "Sari:", "text": "Tilu puluh rébu bulak-balik mah. Kadaharan mah séjén deui.", "id": "Tiga puluh ribu pulang-pergi. Makanan lain lagi.", "literal": "tiga puluh ribu bolak-balik [mah]. makanan [mah] lain lagi." },
+        { "speaker": "Rani:", "text": "Sip. Poé naon ayeuna téh, Sabtu?", "id": "Sip. Hari apa sekarang ini, Sabtu?", "literal": "sip. hari apa sekarang [téh], Saptu?" },
+        { "speaker": "Sari:", "text": "Ayeuna Jumaah. Isukan Saptu, cocog keur ulin.", "id": "Sekarang Jumat. Besok Sabtu, cocok buat jalan-jalan.", "literal": "sekarang Jumaah. besok Saptu, cocok untuk main." },
+        { "speaker": "Rani:", "text": "Sok atuh. Kuring hudang tabuh genep, nya.", "id": "Oke deh. Aku bangun jam enam, ya.", "literal": "silakan atuh. aku bangun pukul enam, ya." },
+        { "speaker": "Sari:", "text": "Ulah kabeurangan! Kuring mah tara ngadagoan lila.", "id": "Jangan kesiangan! Aku nggak pernah nunggu lama.", "literal": "jangan kesiangan! aku [mah] tidak pernah menunggu lama." }
+      ],
+      "notes": [
+        "**Tabuh** = pukul. Selalu dipakai untuk menyebut jam: *tabuh tujuh* (pukul tujuh). Bentuk lomanya juga *tabuh*, jadi tidak ada yang perlu dipilih. Untuk bertanya: **tabuh sabaraha?** = jam berapa?",
+        "**Isuk** = pagi; **isuk-isuk** = pagi-pagi; **isukan** = besok. ⚠️ Ketiganya berakar sama dan sangat mudah tertukar. Ingat: yang berakhiran *-an* melompat ke hari berikutnya.",
+        "**Beurang** = siang. *Kabeurangan* = kesiangan. Awalan *ka-…-an* di sini menandai \"terkena, tanpa sengaja\" — pola yang sama dengan *kahujanan* (kehujanan), *katinggaleun* (ketinggalan).",
+        "**Tara** = tidak pernah, dalam arti kebiasaan. Berbeda dari **tacan** (belum pernah, tapi mungkin akan). *Kuring tara ngadagoan* = aku memang tidak biasa menunggu; *kuring tacan ka Lembang* = aku belum pernah ke Lembang.",
+        "**Hayu** = ayo (loma); lemesnya **mangga**. *Hayu urang…* = \"ayo kita…\". Perhatikan *urang* di sini berarti \"kita\", bukan \"orang\".",
+        "**Ké / engké** = nanti. Bentuk pendek *ké* sangat sering dalam percakapan: *ké heula* = nanti dulu, sebentar.",
+        "**Ongkos** dan **rébu** dipakai persis seperti bahasa Indonesia. Yang berbeda hanya *rébu*, bukan *ribu* — dan itu berlaku untuk semua serapan: *jaman*, *lampu*, *korsi*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka dan cara memakainya",
+          "body": [
+            "Sebagian besar angka Sunda mirip bahasa Indonesia, tapi enam angka pertama berbeda cukup jauh sehingga harus dihafal terpisah."
+          ],
+          "table": {
+            "head": ["Angka", "Basa Sunda", "Bahasa Indonesia", "Catatan"],
+            "rows": [
+              ["1", "**hiji**", "satu", "⚠️ jauh berbeda"],
+              ["2", "**dua**", "dua", "sama"],
+              ["3", "**tilu**", "tiga", "⚠️"],
+              ["4", "**opat**", "empat", "⚠️"],
+              ["5", "**lima**", "lima", "sama"],
+              ["6", "**genep**", "enam", "⚠️"],
+              ["7", "**tujuh**", "tujuh", "sama"],
+              ["8", "**dalapan**", "delapan", "hampir sama"],
+              ["9", "**salapan**", "sembilan", "⚠️"],
+              ["10", "**sapuluh**", "sepuluh", "hampir sama"],
+              ["11", "**sabelas**", "sebelas", "hampir sama"],
+              ["20", "**dua puluh**", "dua puluh", "sama"],
+              ["25", "**dua puluh lima**", "dua puluh lima", "sama"],
+              ["100", "**saratus**", "seratus", "hampir sama"],
+              ["1.000", "**sarébu**", "seribu", "hampir sama"],
+              ["1.000.000", "**sajuta**", "sejuta", "hampir sama"]
+            ]
+          },
+          "after": [
+            "Awalan **sa-** menggantikan \"se-\": *sapuluh*, *saratus*, *sarébu*, *sajuta*, *sapoé* (sehari), *sataun* (setahun), *sabulan* (sebulan). Pola ini berlaku luas dan bisa kamu terapkan sendiri.",
+            "Bilangan tingkat memakai **ka-**: *nu kahiji* (yang pertama), *nu kadua*, *nu katilu*. Untuk bertanya: **nu ka sabaraha?** = yang ke berapa?",
+            "⚠️ Angka pecahan dan setengah: **satengah** (setengah), **saparapat** (seperempat). Untuk jam, *tabuh tujuh satengah* berarti pukul setengah delapan — perhatikan bahwa yang disebut adalah jam yang **sudah lewat**, kebalikan dari kebiasaan bahasa Indonesia. Karena ini sering menimbulkan salah paham, banyak orang Bandung sekarang memakai cara Indonesia: *satengah dalapan*. Ikuti lawan bicaramu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Waktu dalam sehari",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Waktu", "Bahasa Indonesia"], "rows": [
+          ["**subuh**", "sebelum matahari terbit", "subuh"],
+          ["**isuk**", "±05.00–10.00", "pagi"],
+          ["**beurang**", "±10.00–15.00", "siang"],
+          ["**soré / sonten**", "±15.00–magrib", "sore (*sonten* = lemes)"],
+          ["**peuting / wengi**", "sesudah magrib", "malam (*wengi* = lemes)"],
+          ["**tengah peuting**", "tengah malam", "tengah malam"]
+        ] },
+        { "type": "p", "text": "Untuk menandai kapan sesuatu terjadi, keterangan hari ini yang paling sering dipakai:" },
+        { "type": "tabel", "head": ["Basa Sunda", "Arti", "Lemes"], "rows": [
+          ["**ayeuna**", "sekarang", "ayeuna"],
+          ["**tadi**", "tadi", "kapungkur (tadi jauh)"],
+          ["**engké / ké**", "nanti", "engké"],
+          ["**poé ieu**", "hari ini", "dinten ieu"],
+          ["**kamari**", "kemarin", "kamari"],
+          ["**mangkukna**", "kemarin lusa", "mangkukna"],
+          ["**isukan**", "besok", "énjing"],
+          ["**pagéto**", "lusa", "pagéto"],
+          ["**minggu kamari**", "minggu lalu", "minggu kapengker"],
+          ["**minggu hareup**", "minggu depan", "minggu payun"],
+          ["**baheula**", "dahulu kala", "kapungkur"],
+          ["**sok / mindeng**", "sering", "sering"],
+          ["**tara**", "tidak pernah (biasa)", "tara"],
+          ["**can pernah / tacan**", "belum pernah", "teu acan kantos"]
+        ] },
+        { "type": "kotak", "title": "Menyebut jam", "items": [
+          "**Tabuh sabaraha ayeuna?** — Jam berapa sekarang?",
+          "**Tabuh salapan leuwih sapuluh menit.** — Jam sembilan lewat sepuluh menit.",
+          "**Tabuh dalapan kurang lima.** — Jam delapan kurang lima.",
+          "**Satengah dalapan.** — Setengah delapan.",
+          "**Tabuh tujuh isuk-isuk.** — Jam tujuh pagi. (tambahkan waktu untuk memperjelas)",
+          "**Tabuh dua beurang.** — Jam dua siang."
+        ] }
+      ]
+    },
+    {
+      "title": "Hari, bulan, dan tahun",
+      "blocks": [
+        { "type": "tabel", "head": ["Basa Sunda", "Bahasa Indonesia"], "rows": [
+          ["**Senén**", "Senin"],
+          ["**Salasa**", "Selasa"],
+          ["**Rebo**", "Rabu"],
+          ["**Kemis**", "Kamis"],
+          ["**Jumaah**", "Jumat"],
+          ["**Saptu**", "Sabtu"],
+          ["**Minggu / Ahad**", "Minggu"]
+        ] },
+        { "type": "p", "text": "Nama bulan diserap dari bahasa Indonesia dengan penyesuaian bunyi ringan: *Januari, Pébruari, Maret, April, Méi, Juni, Juli, Agustus, Séptémber, Oktober, Nopémber, Désémber*. Perhatikan *Pébruari* dan *Nopémber* — huruf *f* dan *v* diganti *p*, sesuai kebiasaan yang sudah kamu pelajari di Unit 2." },
+        { "type": "p", "text": "Satuan waktu yang lebih panjang: **poé** (hari), **minggu** (minggu), **bulan** (bulan), **taun** (tahun), **windu** (delapan tahun), **abad** (abad). Untuk bertanya tanggal: **Ping sabaraha ayeuna?** (tanggal berapa sekarang) — *ping* adalah kata Sunda untuk tanggal, walaupun banyak orang memakai *tanggal* saja." },
+        { "type": "kotak", "title": "Kalimat waktu yang sering dipakai", "items": [
+          "**Iraha badé mulih?** — Kapan mau pulang?",
+          "**Poé naon ayeuna?** — Hari apa sekarang?",
+          "**Ping sabaraha ayeuna?** — Tanggal berapa sekarang?",
+          "**Abdi di Bandung tos tilu bulan.** — Saya di Bandung sudah tiga bulan.",
+          "**Kuring can pernah ka Ciwidey.** — Aku belum pernah ke Ciwidey.",
+          "**Sok ka dieu unggal Minggu.** — Sering ke sini setiap Minggu. (*unggal* = setiap)"
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "su": "hiji, dua, tilu", "baca": "hi-JI · du-A · ti-LU", "id": "satu, dua, tiga" },
+    { "su": "opat, lima, genep", "baca": "o-PAT · li-MA · ge-NEP", "id": "empat, lima, enam" },
+    { "su": "tujuh, dalapan, salapan", "baca": "tu-JUH · dala-PAN · sala-PAN", "id": "tujuh, delapan, sembilan" },
+    { "su": "sapuluh, saratus, sarébu", "baca": "sapu-LUH · sara-TUS · sa-RÉ-bu", "id": "sepuluh, seratus, seribu" },
+    { "su": "sabaraha", "baca": "saba-RA-ha", "id": "berapa" },
+    { "su": "tabuh", "baca": "ta-BUH", "id": "pukul (jam)" },
+    { "su": "wanci", "baca": "wan-CI", "id": "waktu, saat" },
+    { "su": "isuk", "baca": "i-SUK", "id": "pagi" },
+    { "su": "beurang", "baca": "beu-RANG", "id": "siang" },
+    { "su": "soré / sonten", "baca": "so-RÉ · son-TEN", "id": "sore" },
+    { "su": "peuting / wengi", "baca": "peu-TING · we-NGI", "id": "malam" },
+    { "su": "ayeuna", "baca": "ayeu-NA", "id": "sekarang" },
+    { "su": "kamari", "baca": "kama-RI", "id": "kemarin" },
+    { "su": "isukan", "baca": "isu-KAN", "id": "besok" },
+    { "su": "pagéto", "baca": "pa-GÉ-to", "id": "lusa" },
+    { "su": "mangkukna", "baca": "mang-KUK-na", "id": "kemarin lusa" },
+    { "su": "engké / ké", "baca": "eng-KÉ · ké", "id": "nanti" },
+    { "su": "baheula", "baca": "baheu-LA", "id": "dahulu kala" },
+    { "su": "unggal", "baca": "ung-GAL", "id": "setiap" },
+    { "su": "tara", "baca": "ta-RA", "id": "tidak pernah (kebiasaan)" },
+    { "su": "poé / dinten", "baca": "po-É · din-TEN", "id": "hari" },
+    { "su": "taun", "baca": "ta-UN", "id": "tahun" },
+    { "su": "hudang", "baca": "hu-DANG", "id": "bangun" },
+    { "su": "ngadagoan", "baca": "ngada-go-AN", "id": "menunggu" },
+    { "su": "hayu", "baca": "ha-YU", "id": "ayo" },
+    { "su": "kabeurangan", "baca": "kabeu-RA-ngan", "id": "kesiangan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angka berikut dalam basa Sunda.",
+      "items": [
+        "3 → ____",
+        "6 → ____",
+        "9 → ____",
+        "11 → ____",
+        "100 → ____",
+        "25 → ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan keterangan waktu yang tepat.",
+      "items": [
+        "Hari sesudah hari ini: ____",
+        "Hari sebelum kemarin: ____",
+        "Dua hari sesudah hari ini: ____",
+        "Waktu antara jam 10 dan 15: ____",
+        "Waktu sesudah magrib (lemes): ____",
+        "Setiap hari Minggu: ____ Minggu"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke basa Sunda.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Jam tujuh pagi.",
+        "Hari apa sekarang?",
+        "Saya di Bandung sudah tiga bulan.",
+        "Aku belum pernah ke Ciwidey.",
+        "Kapan mau pulang, Bu?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "tabuh / indit / sabaraha / na / ?",
+        "ka / hayu / urang / Lembang",
+        "genep / hudang / kuring / tabuh",
+        "ngadagoan / tara / kuring / lila",
+        "Jumaah / poé / ayeuna / naon / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "tilu — genep — salapan — sabelas — saratus — dua puluh lima",
+    "isukan — mangkukna — pagéto — beurang — wengi — unggal",
+    "Tabuh sabaraha ayeuna? — Tabuh tujuh isuk-isuk. — Poé naon ayeuna? — Abdi di Bandung tos tilu bulan. — Kuring can pernah ka Ciwidey. — Iraha badé mulih, Bu?",
+    "Tabuh sabaraha indit na? — Hayu urang ka Lembang. — Kuring hudang tabuh genep. — Kuring tara ngadagoan lila. — Poé naon ayeuna?"
+  ]
+}

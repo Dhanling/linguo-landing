@@ -501,7 +501,7 @@ export function klausaKata(teks: string, kata: string): string {
  *  bahasa target, supaya satu kata Spanyol beraksen di tengah kalimat Indonesia
  *  tidak membuat seluruh klausanya dianggap bahasa target. */
 function klausaIndonesia(klausa: string, kode: string): boolean {
-  if (kode === "id" || kode === "ms") return false;
+  if (kode === "id" || kode === "ms" || kode === "su") return false;
   let id = 0;
   let target = 0;
   for (const w of String(klausa || "").toLowerCase().split(PECAH_KATA)) {
@@ -524,7 +524,7 @@ function klausaIndonesia(klausa: string, kode: string): boolean {
    satu kata "rumah" di ujung kanan cukup untuk membungkam "casa".
    Konteks baru dipakai sebagai penentu terakhir, dan hanya seluas KLAUSA. */
 export function kataIndonesia(kata: string, kode: string, konteks?: string): boolean {
-  if (kode === "id" || kode === "ms") return false;
+  if (kode === "id" || kode === "ms" || kode === "su") return false;
   const k = kata.trim().toLowerCase();
   if (!k) return true;
   if (kataTargetJelas(k)) return false;
@@ -607,7 +607,12 @@ export function kalimatTarget(baris: string, kode: string): string {
 
 /** Potongan ini kelihatan bahasa Indonesia (baris terjemahan), bukan bahasa target? */
 export function barisTerjemahan(teks: string, kode: string): boolean {
-  if (kode === "id" || kode === "ms") return false; // modul BIPA/Melayu: itu justru bahasa targetnya
+  /* [ebook-tts-sunda-v1] id & ms: bahasa Indonesia memang bahasa targetnya.
+     su ikut dilepas karena alasan lain — suara basa Sunda DIPINJAM dari id-ID
+     (lihat CHIRP_LOCALES), jadi membungkam kata yang kebetulan juga kata
+     Indonesia (buku, acara, kantor, harga, bulan) tidak menyelamatkan apa pun:
+     kata itu memang akan dibacakan dengan lidah yang benar. */
+  if (kode === "id" || kode === "ms" || kode === "su") return false;
   return klausaIndonesia(teks, kode);
 }
 
@@ -644,6 +649,7 @@ const SUARA_BROWSER: Record<string, string> = {
   el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
   eu: "eu-ES",
   jv: "id-ID", // lihat catatan jv di CHIRP_LOCALES (src/lib/ttsVoice.ts)
+  su: "id-ID", // idem — basa Sunda dipinjamkan ke suara Indonesia
 };
 
 let audio: HTMLAudioElement | null = null;
