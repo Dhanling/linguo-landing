@@ -1427,6 +1427,97 @@ const startsWithSpeakerMarker = (t: string | undefined): boolean =>
 const stripSpeakerMarker = (t: string | undefined): string =>
   (t ?? "").replace(SPEAKER_MARKER_RE, "").trim();
 
+// [watch-sound-tag-v1] Caption/ASR menandai suara NON-UCAPAN dengan tag kurung
+// ("[Musica]", "[Music]", "[Applause]", "(risate)", "♪♪") — itu BUKAN kalimat yang
+// diucapkan, dan window-nya (mis. intro musik 0:00–0:06) hampir selalu jauh lebih
+// panjang dari ucapan yang menyusul. Dulu tag ini ikut digabung mergeCueFragments
+// ke kalimat sesudahnya (tag tak berakhir tanda titik) sehingga subtitle kalimat
+// TAYANG SEJAK MUSIK MULAI: "belum ada yang bicara, teksnya sudah keluar".
+// Kini tag suara = batas section KERAS (tak pernah digabung) dan kalau satu cue
+// berisi tag + ucapan sekaligus, cue itu dipecah dua (lihat splitSoundTagCue).
+const SOUND_TAG_RE =
+  /^\s*(?:[[(（【][^\]\])）】]{0,40}[\])）】]|[♪♫]+)\s*/u;
+// Tag di dalam kurung yang isinya PANJANG/berupa kalimat bukan penanda suara
+// (mis. transkrip yang mengurung seluruh kalimat) → hanya tag pendek yang dianggap.
+const soundTagMatch = (t: string | undefined): string => {
+  const m = (t ?? "").match(SOUND_TAG_RE);
+  return m ? m[0].trim() : "";
+};
+const startsWithSoundTag = (t: string | undefined): boolean => !!soundTagMatch(t);
+/** Seluruh isi cue cuma tag suara — tak ada satu pun huruf ucapan di luarnya. */
+const isSoundTagOnly = (t: string | undefined): boolean => {
+  const tag = soundTagMatch(t);
+  if (!tag) return false;
+  return !(t ?? "").slice((t ?? "").indexOf(tag) + tag.length).trim();
+};
+
+/**
+ * Pecah cue "[Musica] Buongiorno raga, oggi è martedì," jadi DUA cue: tag suara
+ * (menempati bagian awal window, saat musik/hening) + kalimat ucapannya.
+ *
+ * Kapan ucapan mulai? Diambil yang PALING BELAKANG antara (a) pembagian
+ * proporsional per karakter, dan (b) mundur dari `end` sepanjang perkiraan waktu
+ * ucapan (segmenSapuan). Alasannya: sisa window yang tak terpakai ucapan itu
+ * memang musik/heningnya — jadi jatahkan ke tag, bukan ke kalimat. Dengan begitu
+ * kalimat baru muncul kira-kira saat mulut penutur benar-benar bergerak.
+ */
+function splitSoundTagCue(cue: LearnCue, langCode: string): LearnCue[] {
+  const tag = soundTagMatch(cue.target);
+  if (!tag) return [cue];
+  const rest = cue.target.slice(cue.target.indexOf(tag) + tag.length).trim();
+  if (!rest) return [cue]; // cue tag-saja → biarkan utuh (sudah benar)
+  const dur = cue.end - cue.start;
+  if (dur < 1) return [cue]; // window terlalu pendek untuk dipecah
+
+  const total = cue.target.length || 1;
+  const prop = cue.start + dur * (tag.length / total);
+  const mundur = cue.end - segmenSapuan(dur, rest.length, langCode);
+  // Kalimat tak boleh mulai terlalu mepet akhir window (jaga-jaga kalau perkiraan
+  // laju bicara meleset) & tak boleh mulai sebelum tag sempat terbaca.
+  const speechStart = Math.min(
+    Math.max(prop, mundur, cue.start + 0.3),
+    cue.end - Math.max(0.4, dur * 0.15)
+  );
+
+  // Terjemahan/translit ikut dipisah: kalau base juga diawali tag ("[Musik] …"),
+  // pakai tag itu untuk cue tag; sisanya jadi arti kalimat.
+  const baseTag = soundTagMatch(cue.base);
+  const baseRest = baseTag
+    ? cue.base.slice(cue.base.indexOf(baseTag) + baseTag.length).trim()
+    : cue.base;
+  const trTag = soundTagMatch(cue.translit);
+  const trRest = trTag
+    ? (cue.translit ?? "").slice((cue.translit ?? "").indexOf(trTag) + trTag.length).trim()
+    : cue.translit;
+
+  // Analisa kalimat (`breakdown`) yang tersimpan dibuat untuk target LAMA (masih
+  // ber-tag) → buang, biar dihitung ulang untuk kalimat bersihnya. Terjemahan
+  // alternatif cukup dibersihkan tag pembukanya.
+  const { breakdown: _bd, baseAlt, ...sisa } = cue as LearnCue & { _anc?: unknown };
+  delete (sisa as { _anc?: unknown })._anc;
+  if (!trRest) delete (sisa as { translit?: string }).translit;
+  const altBersih = baseAlt
+    ? Object.fromEntries(
+        Object.entries(baseAlt).map(([k, v]) => {
+          const tg = soundTagMatch(v);
+          return [k, tg ? v.slice(v.indexOf(tg) + tg.length).trim() : v];
+        })
+      )
+    : undefined;
+
+  return [
+    { start: cue.start, end: speechStart, target: tag, base: baseTag || tag },
+    {
+      ...sisa,
+      start: speechStart,
+      target: rest,
+      base: baseRest,
+      ...(trRest ? { translit: trRest } : {}),
+      ...(altBersih ? { baseAlt: altBersih } : {}),
+    },
+  ];
+}
+
 function joinText(a: string | undefined, b: string | undefined): string {
   return [a?.trim(), b?.trim()].filter(Boolean).join(" ");
 }
@@ -1454,6 +1545,11 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
       prev &&
       // Cue ini membuka pembicara baru (">>") → JANGAN gabung ke section sebelumnya.
       !startsWithSpeakerMarker(c.target) &&
+      // Tag suara non-ucapan ("[Musica]", "♪") = batas KERAS dua arah: jangan
+      // ditempel ke kalimat sesudahnya (bikin subtitle keluar saat musik saja) dan
+      // jangan menelan kalimat berikutnya ke dalam window musiknya.
+      !startsWithSoundTag(c.target) &&
+      !isSoundTagOnly(prev.target) &&
       !SENTENCE_END_RE.test(prev.target) &&
       prev.target.length + 1 + c.target.length <= MERGE_MAX_CHARS &&
       gap <= MERGE_MAX_GAP;
@@ -1508,8 +1604,11 @@ function deshout(s: string): string {
     .replace(/(^|[.!?…]\s+|[¿¡]\s*)(\p{Ll})/gu, (_m, pre: string, ch: string) => pre + ch.toUpperCase());
 }
 
-function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
-  return mergeCueFragments(cues)
+export function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
+  // Pisahkan dulu tag suara di awal cue ("[Musica] Buongiorno…") biar musik &
+  // ucapan punya window sendiri — mergeCueFragments di bawah tak akan menyatukannya
+  // lagi (tag suara = batas section keras).
+  return mergeCueFragments(cues.flatMap((c) => splitSoundTagCue(c, langCode)))
     .flatMap((c) => splitCueBySentence(c, langCode))
     .flatMap((c) => splitLongCue(c, langCode))
     .flatMap((c) => splitCueByWords(c, langCode))
