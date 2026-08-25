@@ -1,0 +1,193 @@
+{
+  "title": "Di mana: akhiran -ni, kuna, dan kata kerja \"berada\"",
+  "title_target": "Choo kiko wapi?",
+  "goal": "Menanyakan dan menunjukkan arah, mengatakan sesuatu ada atau tidak ada, dan memakai satu akhiran kecil yang menggantikan seluruh kata depan bahasa Indonesia.",
+  "bekal": [
+    "akhiran *-ni* yang berarti di, ke, dan dari sekaligus",
+    "*kuna* dan *hakuna* untuk \"ada\" dan \"tidak ada\"",
+    "kata kerja \"berada\": *niko*, *yuko*, *iko*, *kiko* — dan bedanya dengan *-po* dan *-mo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Njia ya kwenda benki",
+      "intro": "Pagi hari di resepsi penginapan. Budi perlu menukar uang dan tidak tahu arah.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Samahani, choo kiko wapi?", "id": "Permisi, toiletnya di mana?", "literal": "maaf, toilet ia-berada di-mana?" },
+        { "speaker": "Mhudumu:", "text": "Kiko nyuma ya jengo, karibu na jikoni.", "id": "Ada di belakang gedung, dekat dapur.", "literal": "ia-berada belakang dari gedung, dekat dengan di-dapur." },
+        { "speaker": "Budi:", "text": "Asante. Na benki iko wapi?", "id": "Terima kasih. Dan banknya di mana?", "literal": "terima-kasih. dan bank ia-berada di-mana?" },
+        { "speaker": "Mhudumu:", "text": "Benki iko mjini, si mbali. Kuna benki mbili hapo.", "id": "Bank ada di kota, tidak jauh. Ada dua bank di situ.", "literal": "bank ia-berada di-kota, bukan jauh. ada bank dua di-situ." },
+        { "speaker": "Budi:", "text": "Ninatembea au ninapanda daladala?", "id": "Saya jalan kaki atau naik daladala?", "literal": "saya-sedang-jalan atau saya-sedang-naik daladala?" },
+        { "speaker": "Mhudumu:", "text": "Tembea moja kwa moja, kisha geuka kushoto.", "id": "Jalan lurus terus, lalu belok kiri.", "literal": "jalanlah satu dengan satu, kemudian beloklah kiri." },
+        { "speaker": "Budi:", "text": "Kuna soko karibu na benki?", "id": "Ada pasar dekat bank?", "literal": "ada pasar dekat dengan bank?" },
+        { "speaker": "Mhudumu:", "text": "Ndiyo, soko liko mbele ya benki, upande wa kulia.", "id": "Ya, pasarnya ada di depan bank, di sebelah kanan.", "literal": "ya, pasar ia-berada depan dari bank, sisi dari kanan." },
+        { "speaker": "Budi:", "text": "Na hoteli yangu iko wapi? Jina lake ni Bahari.", "id": "Dan hotel saya di mana? Namanya Bahari.", "literal": "dan hotel milik-ku ia-berada di-mana? nama milik-nya adalah Laut." },
+        { "speaker": "Mhudumu:", "text": "Iko baharini, mbali kidogo. Rafiki yako yuko wapi?", "id": "Ada di tepi laut, agak jauh. Temanmu di mana?", "literal": "ia-berada di-laut, jauh sedikit. teman milik-mu dia-berada di-mana?" },
+        { "speaker": "Budi:", "text": "Yumo ndani, anasubiri. Hakuna shida!", "id": "Dia di dalam, sedang menunggu. Tidak masalah!", "literal": "dia-berada-di-dalam dalam, dia-sedang-tunggu. tidak-ada masalah!" },
+        { "speaker": "Mhudumu:", "text": "Karibuni tena! Njia ni salama sana.", "id": "Datang lagi ya! Jalannya aman sekali.", "literal": "selamat-datang-kalian lagi! jalan adalah aman sangat." }
+      ],
+      "notes": [
+        "**Wapi berarti \"di mana\" dan selalu berdiri di ujung kalimat.** *Choo kiko wapi?*, *Unakwenda wapi?* (kamu mau ke mana?), *Unatoka wapi?* (kamu dari mana?). Satu kata untuk ketiganya — arah ditentukan kata kerjanya, bukan kata tanyanya.",
+        "**Daladala adalah minibus umum Tanzania**, sepupu angkot yang penuh sesak dan penuh musik. Di Kenya namanya *matatu*. Ongkosnya disebut *nauli*, dan kondekturnya *konda*. Sepeda motor ojek disebut *bodaboda* — nama yang lahir dari kebiasaan mengantar orang dari perbatasan ke perbatasan, *border to border*.",
+        "**Moja kwa moja harfiahnya \"satu demi satu\" dan berarti \"lurus terus\".** Bersama *kushoto* (kiri) dan *kulia* (kanan), tiga kata ini menutup hampir semua petunjuk arah yang akan kamu terima.",
+        "**Si mbali berarti \"tidak jauh\".** *Si* di sini adalah \"bukan\" yang sudah kamu pasang di unit 1, dipakai di depan kata sifat. Perhatikan bahwa jarak di Afrika Timur diukur dengan sangat longgar: *si mbali* bisa berarti sepuluh menit atau satu jam berjalan kaki.",
+        "**Karibu tena adalah cara berpamitan yang paling hangat.** Harfiahnya \"selamat datang lagi\" — diucapkan penjual, penerima tamu, dan tuan rumah saat kamu pergi, bukan saat kamu datang."
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran -ni: di, ke, dan dari sekaligus",
+          "body": [
+            "Bahasa Swahili tidak punya kata depan seperti \"di\", \"ke\", dan \"dari\". Yang ada adalah **akhiran -ni** yang ditempelkan ke bendanya — dan arah geraknya ditentukan oleh kata kerjanya."
+          ],
+          "table": {
+            "head": ["Benda", "Dengan -ni", "Contoh", "Arti"],
+            "rows": [
+              ["*nyumba* (rumah)", "*nyumbani*", "*Niko nyumbani.*", "Saya di rumah."],
+              ["*soko* (pasar)", "*sokoni*", "*Ninakwenda sokoni.*", "Saya pergi ke pasar."],
+              ["*shule* (sekolah)", "*shuleni*", "*Ninatoka shuleni.*", "Saya dari sekolah."],
+              ["*mji* (kota)", "*mjini*", "*Anafanya kazi mjini.*", "Dia bekerja di kota."],
+              ["*kazi* (pekerjaan)", "*kazini*", "*Yuko kazini.*", "Dia sedang di tempat kerja."],
+              ["*bahari* (laut)", "*baharini*", "*Tunakwenda baharini.*", "Kami ke pantai."],
+              ["*jiko* (dapur)", "*jikoni*", "*Mama yuko jikoni.*", "Ibu di dapur."]
+            ]
+          },
+          "after": [
+            "**Nama tempat tidak pernah menerima -ni**: *Ninakwenda Zanzibar*, *Niko Dar es Salaam*, *Anatoka Jakarta*. Nama diri sudah menyimpan pengertian tempat di dalamnya.",
+            "Beberapa kata sudah bermakna tempat sejak lahir dan juga tidak menerima *-ni*: *nje* (di luar), *ndani* (di dalam), *juu* (di atas), *chini* (di bawah), *mbali* (jauh), *karibu* (dekat), *hapa* (di sini), *kule* (di sana).",
+            "Untuk \"di rumah seseorang\", dipakai **kwa**: *kwa Amina* (di tempat Amina), *kwa daktari* (ke dokter), *kwetu* (di tempat kami), *kwako* (di tempatmu). Inilah *kwa* yang sama dalam *karibu nyumbani kwetu* di unit 2."
+          ]
+        },
+        {
+          "title": "Berada: -ko, -po, -mo — dan kuna",
+          "body": [
+            "\"Ada\" dan \"berada\" dalam bahasa Swahili memakai kata kerja pendek yang menempel langsung ke awalan pelakunya. Bentuk yang paling umum adalah **-ko**."
+          ],
+          "table": {
+            "head": ["Pelaku", "Berada", "Cara baca", "Ingkar", "Contoh"],
+            "rows": [
+              ["*mimi*", "**niko**", "NI-ko", "*sipo* / *siko*", "*Niko hapa.*"],
+              ["*wewe*", "**uko**", "U-ko", "*hupo*", "*Uko wapi?*"],
+              ["*yeye*", "**yuko**", "YU-ko", "*hayupo*", "*Yuko nyumbani.*"],
+              ["*sisi*", "**tuko**", "TU-ko", "*hatupo*", "*Tuko tayari.*"],
+              ["*ninyi*", "**mko**", "m-KO", "*hampo*", "*Mko wapi?*"],
+              ["*wao*", "**wako**", "WA-ko", "*hawapo*", "*Wako sokoni.*"],
+              ["*kitabu*", "**kiko**", "KI-ko", "*hakipo*", "*Kitabu kiko mezani.*"],
+              ["*nyumba*", "**iko** / **ziko**", "I-ko", "*haipo* / *hazipo*", "*Nyumba iko mbali.*"]
+            ]
+          },
+          "after": [
+            "Tiga ekor yang berbeda menandai tiga jenis tempat. **-ko** untuk tempat umum atau yang belum jelas (*Yuko wapi?*). **-po** untuk tempat tertentu yang jelas (*Yupo hapa* — dia ada di sini, tepat di titik ini). **-mo** untuk di dalam sesuatu (*Yumo ndani*, *Kimo mfukoni* — ada di dalam saku). Kalau ragu, pakai *-ko*; ia hampir selalu bisa diterima.",
+            "Untuk **menyatakan ada tanpa menyebut siapa**, dipakai *kuna* (ada) dan *hakuna* (tidak ada): *Kuna soko hapa* (ada pasar di sini), *Hakuna maji* (tidak ada air), *Kuna nini?* (ada apa?). Dua kata ini masuk daftar sepuluh kata paling sering dipakai di Afrika Timur.",
+            "⚠️ Bentuk ingkar orang ketiga adalah **hayupo** — bukan *hako*. Ia salah satu dari sedikit bentuk tak beraturan dalam bahasa ini, dan justru sering kamu dengar: *Daktari hayupo leo* (dokternya tidak ada hari ini)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mahali — di mana persisnya",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*mbele ya*", "m-BÉ-lé ya", "di depan"],
+          ["*nyuma ya*", "NYU-ma ya", "di belakang"],
+          ["*juu ya*", "JU-u ya", "di atas"],
+          ["*chini ya*", "CI-ni ya", "di bawah"],
+          ["*ndani ya*", "n-DA-ni ya", "di dalam"],
+          ["*nje ya*", "n-JÉ ya", "di luar"],
+          ["*karibu na*", "ka-RI-bu na", "dekat dengan"],
+          ["*mbali na*", "m-BA-li na", "jauh dari"],
+          ["*kati ya*", "KA-ti ya", "di antara"],
+          ["*katikati ya*", "ka-ti-KA-ti ya", "di tengah-tengah"],
+          ["*upande wa kushoto*", "u-PAN-dé wa ku-SYO-to", "di sebelah kiri"],
+          ["*upande wa kulia*", "u-PAN-dé wa ku-LI-a", "di sebelah kanan"],
+          ["*moja kwa moja*", "MO-ja kwa MO-ja", "lurus terus"],
+          ["*hapa* / *hapo* / *pale*", "HA-pa", "di sini / di situ / di sana"]
+        ]},
+        { "type": "p", "text": "Perhatikan bahwa hampir semuanya diakhiri *ya* atau *na* — itu penghubung yang sama dengan *picha ya familia*. Kalau bendanya kelas lain, *ya* pun ikut berganti: *mbele ya nyumba*, tapi *mbele wa mti*. Dalam percakapan sehari-hari, bentuk *ya* dipakai untuk hampir semuanya dan tak seorang pun akan menegurmu." },
+        { "type": "p", "text": "Kalimat bertanya arah yang paling berguna: **Nifikaje…?** (bagaimana saya sampai ke…?). Contoh: *Nifikaje sokoni?* Kalau jawabannya terlalu cepat, satu kalimat penyelamat: *Onyesha kwenye ramani, tafadhali* — tunjukkan di peta." }
+      ]
+    },
+    {
+      "title": "Mjini — tempat-tempat di kota",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia", "Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*soko*", "pasar", "*duka*", "toko; warung"],
+          ["*benki*", "bank", "*posta*", "kantor pos"],
+          ["*hospitali*", "rumah sakit", "*duka la dawa*", "apotek"],
+          ["*shule*", "sekolah", "*chuo kikuu*", "universitas"],
+          ["*msikiti*", "masjid", "*kanisa*", "gereja"],
+          ["*mgahawa*", "rumah makan", "*hoteli*", "hotel; penginapan"],
+          ["*kituo cha basi*", "terminal bus", "*uwanja wa ndege*", "bandara"],
+          ["*ufuo* / *pwani*", "pantai", "*bandari*", "pelabuhan"],
+          ["*barabara*", "jalan raya", "*daraja*", "jembatan"],
+          ["*jengo*", "gedung", "*bustani*", "taman"]
+        ]},
+        { "type": "p", "text": "⚠️ *Hoteli* di Tanzania sering berarti **rumah makan**, bukan penginapan. Untuk tempat menginap, kata yang lebih aman adalah *gesti* (guest house) atau *nyumba ya wageni*. Dan *mgahawa* — rumah makan yang lebih besar — datang dari kata yang sama dengan *kahawa*: tempat orang minum kopi." },
+        { "type": "p", "text": "*Chuo kikuu* harfiahnya \"kampus besar\", dan *uwanja wa ndege* harfiahnya \"lapangan burung\" — *ndege* memang berarti burung sekaligus pesawat. Bahasa Swahili sangat sering merangkai kata yang sudah ada alih-alih meminjam kata baru, dan sebagian besar rangkaian itu bisa kamu tebak sendiri begitu tahu bahan-bahannya." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "wapi", "baca": "WA-pi", "id": "di mana" },
+    { "sw": "kuna", "baca": "KU-na", "id": "ada" },
+    { "sw": "hakuna", "baca": "ha-KU-na", "id": "tidak ada" },
+    { "sw": "niko / uko / yuko", "baca": "NI-ko", "id": "saya / kamu / dia berada" },
+    { "sw": "mahali", "baca": "ma-HA-li", "id": "tempat" },
+    { "sw": "mbele", "baca": "m-BÉ-lé", "id": "depan" },
+    { "sw": "nyuma", "baca": "NYU-ma", "id": "belakang" },
+    { "sw": "juu", "baca": "JU-u", "id": "atas" },
+    { "sw": "chini", "baca": "CI-ni", "id": "bawah" },
+    { "sw": "ndani", "baca": "n-DA-ni", "id": "dalam" },
+    { "sw": "nje", "baca": "n-JÉ", "id": "luar" },
+    { "sw": "karibu na", "baca": "ka-RI-bu na", "id": "dekat dengan" },
+    { "sw": "mbali", "baca": "m-BA-li", "id": "jauh" },
+    { "sw": "kushoto", "baca": "ku-SYO-to", "id": "kiri" },
+    { "sw": "kulia", "baca": "ku-LI-a", "id": "kanan" },
+    { "sw": "upande", "baca": "u-PAN-dé", "id": "sisi; sebelah" },
+    { "sw": "kisha", "baca": "KI-sya", "id": "kemudian" },
+    { "sw": "benki", "baca": "BÉN-ki", "id": "bank" },
+    { "sw": "duka / maduka", "baca": "DU-ka", "id": "toko" },
+    { "sw": "jengo / majengo", "baca": "JÉ-ngo", "id": "gedung" },
+    { "sw": "jiko / jikoni", "baca": "JI-ko", "id": "dapur / di dapur" },
+    { "sw": "choo / vyoo", "baca": "CO-o", "id": "toilet" },
+    { "sw": "bahari", "baca": "ba-HA-ri", "id": "laut" },
+    { "sw": "mji / mjini", "baca": "m-JI", "id": "kota / di kota" },
+    { "sw": "barabara", "baca": "ba-ra-BA-ra", "id": "jalan raya" },
+    { "sw": "daladala", "baca": "da-la-DA-la", "id": "angkutan umum" },
+    { "sw": "kutembea", "baca": "ku-tém-BÉ-a", "id": "berjalan kaki" },
+    { "sw": "kupanda", "baca": "ku-PAN-da", "id": "naik (kendaraan)" },
+    { "sw": "kugeuka", "baca": "ku-gé-U-ka", "id": "berbelok" },
+    { "sw": "kusubiri", "baca": "ku-su-BI-ri", "id": "menunggu" },
+    { "sw": "mhudumu", "baca": "m-hu-DU-mu", "id": "pelayan; petugas" },
+    { "sw": "tayari", "baca": "ta-YA-ri", "id": "siap; sudah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tambahkan akhiran -ni kalau perlu. Kalau tidak perlu, tulis kata aslinya.",
+      "items": ["soko → ____", "Zanzibar → ____", "nyumba → ____", "shule → ____", "Jakarta → ____", "kazi → ____"]
+    },
+    {
+      "prompt": "Lengkapi dengan bentuk \"berada\" yang tepat.",
+      "items": ["Mimi ____ hapa. (saya ada di sini)", "Wewe ____ wapi? (kamu di mana)", "Yeye ____ nyumbani. (dia di rumah)", "Kitabu ____ mezani. (buku di atas meja)", "Wao ____ sokoni. (mereka di pasar)", "Daktari ____ leo. (dokternya tidak ada)"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Permisi, toiletnya di mana?", "Bank ada di kota, tidak jauh.", "Ada pasar dekat bank?", "Jalan lurus, lalu belok kiri.", "Tidak ada air.", "Temanmu di mana?"]
+    },
+    {
+      "prompt": "Isi dengan kuna atau hakuna.",
+      "items": ["____ soko hapa. (ada)", "____ maji leo. (tidak ada)", "____ shida! (tidak ada)", "____ watu wengi sokoni. (ada)", "____ daladala sasa. (tidak ada)"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["wapi / kiko / choo", "benki / iko / mjini", "ya / soko / mbele / benki / liko", "moja / kwa / tembea / moja", "wapi / yuko / yako / rafiki"]
+    }
+  ],
+  "answers": [
+    "sokoni — Zanzibar — nyumbani — shuleni — Jakarta — kazini",
+    "niko — uko — yuko — kiko — wako — hayupo",
+    "Samahani, choo kiko wapi? — Benki iko mjini, si mbali. — Kuna soko karibu na benki? — Tembea moja kwa moja, kisha geuka kushoto. — Hakuna maji. — Rafiki yako yuko wapi?",
+    "Kuna — Hakuna — Hakuna — Kuna — Hakuna",
+    "Choo kiko wapi? — Benki iko mjini. — Soko liko mbele ya benki. — Tembea moja kwa moja. — Rafiki yako yuko wapi?"
+  ]
+}

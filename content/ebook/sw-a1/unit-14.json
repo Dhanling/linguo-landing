@@ -1,0 +1,613 @@
+{
+  "title": "Perintah, ajakan, dan bentuk -e yang sopan",
+  "title_target": "Karibu jikoni, kaa hapa!",
+  "goal": "Menyuruh tanpa terdengar kasar, mengajak, melarang, dan memakai satu ekor kata yang menutup semua permintaan sopan dalam bahasa Swahili.",
+  "bekal": [
+    "bentuk perintah: *soma!* untuk satu orang, *someni!* untuk banyak",
+    "bentuk *-e*: *nisome*, *tusome* — untuk ajakan, permintaan, dan larangan",
+    "larangan dengan *usi-* dan *msi-*: *usiende!* (jangan pergi)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Jikoni pamoja",
+      "intro": "Sore hari di dapur rumah Amina. Ibunya sedang menyiapkan makan malam dan Budi menawarkan diri membantu.",
+      "lines": [
+        {
+          "speaker": "Mama:",
+          "text": "Budi, karibu jikoni! Kaa hapa.",
+          "id": "Budi, silakan ke dapur! Duduk sini.",
+          "literal": "Budi, selamat-datang di-dapur! duduklah di-sini."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante mama. Naweza kusaidia?",
+          "id": "Terima kasih, Bu. Boleh saya bantu?",
+          "literal": "terima-kasih ibu. saya-bisa untuk-menolong?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ndiyo! Chukua kisu, kata vitunguu.",
+          "id": "Ya! Ambil pisau, potong bawangnya.",
+          "literal": "ya! ambillah pisau, potonglah bawang-bawang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nikate vipande vidogo au vikubwa?",
+          "id": "Saya potong kecil-kecil atau besar-besar?",
+          "literal": "saya-agar-potong potongan-potongan kecil-kecil atau besar-besar?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Vidogo. Halafu weka ndani ya sufuria.",
+          "id": "Kecil-kecil. Lalu taruh di dalam panci.",
+          "literal": "kecil-kecil. kemudian taruhlah dalam dari panci."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sawa. Nifanye nini sasa?",
+          "id": "Baik. Sekarang saya harus apa?",
+          "literal": "oke. saya-agar-buat apa sekarang?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ngoja kidogo. Usiweke chumvi bado!",
+          "id": "Tunggu sebentar. Jangan taruh garam dulu!",
+          "literal": "tunggulah sedikit. jangan-kamu-taruh garam belum!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani! Nilikuwa na haraka.",
+          "id": "Maaf! Saya buru-buru.",
+          "literal": "maaf! saya-lampau-punya dengan buru-buru."
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Hakuna shida. Amina, njoo usaidie pia!",
+          "id": "Tidak masalah. Amina, sini bantu juga!",
+          "literal": "tidak-ada masalah. Amina, datanglah kamu-agar-menolong juga!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Ninakuja! Tuanze kupika wali?",
+          "id": "Saya datang! Kita mulai masak nasi?",
+          "literal": "saya-sedang-datang! kita-agar-mulai untuk-masak nasi?"
+        },
+        {
+          "speaker": "Mama:",
+          "text": "Ndiyo, anzeni. Na msisahau nazi!",
+          "id": "Ya, mulailah kalian. Dan jangan lupa kelapanya!",
+          "literal": "ya, mulailah-kalian. dan jangan-kalian-lupa kelapa!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tupike haraka — nina njaa kubwa!",
+          "id": "Ayo masak cepat — saya lapar sekali!",
+          "literal": "kita-agar-masak buru-buru — saya-punya lapar besar!"
+        }
+      ],
+      "notes": [
+        "**Perintah dalam bahasa Swahili tidak terdengar kasar seperti dugaanmu.** *Kaa!* (duduk), *Njoo!* (sini), *Kula!* (makan) diucapkan kepada tamu sebagai keramahan, bukan bentakan. Yang membuatnya sopan adalah nada dan tambahan kecil: *tafadhali* (tolong), *bwana*/*mama*/*dada* di belakangnya, atau senyum.",
+        "**Naweza adalah ninaweza yang dipendekkan.** Dalam percakapan cepat, *nina-* sering luruh jadi *na-*: *nataka* (= *ninataka*), *nafikiri*, *naomba*, *nakuja*. Bentuk pendek ini sangat umum dan sepenuhnya benar; modul ini memakai bentuk panjangnya supaya susunannya tetap terlihat.",
+        "**Sufuria adalah panci, dan kata pinjaman lain di dapur juga sudah akrab**: *sahani* (piring), *bilauri* (gelas), *kijiko* (sendok), *chumvi* (garam), *nazi* (kelapa), *sukari* (gula). *Nazi* di sini bukan buah kelapa utuh melainkan santannya — *tui la nazi*.",
+        "**Nina njaa harfiahnya \"saya punya lapar\".** Susunan yang sama untuk keadaan badan lainnya: *nina kiu* (haus), *nina baridi* (kedinginan), *nina joto* (kepanasan), *nina usingizi* (mengantuk), *nina haraka* (buru-buru), *nina wasiwasi* (khawatir).",
+        "**Vipande vidogo — kata sifat yang diulang berarti \"kecil-kecil\".** Pengulangan dalam bahasa Swahili bekerja mirip bahasa Indonesia: *polepole* (pelan-pelan), *harakaharaka* (buru-buru), *kidogokidogo* (sedikit demi sedikit), *mbalimbali* (bermacam-macam)."
+      ],
+      "grammars": [
+        {
+          "title": "Perintah: satu orang dan banyak orang",
+          "body": [
+            "Bentuk perintah untuk satu orang adalah **akar katanya telanjang** — buang *ku-*-nya, selesai. Untuk lebih dari satu orang, tambahkan **-ni** di ujung, dan ekor *-a* berubah jadi *-e*."
+          ],
+          "table": {
+            "head": [
+              "Bentuk kamus",
+              "Ke satu orang",
+              "Ke banyak orang",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*kusoma*",
+                "*soma!*",
+                "*someni!*",
+                "baca!"
+              ],
+              [
+                "*kukaa*",
+                "*kaa!*",
+                "*kaeni!*",
+                "duduk!"
+              ],
+              [
+                "*kusubiri*",
+                "*subiri!*",
+                "*subirini!*",
+                "tunggu!"
+              ],
+              [
+                "*kuandika*",
+                "*andika!*",
+                "*andikeni!*",
+                "tulis!"
+              ],
+              [
+                "*kuja*",
+                "**njoo!**",
+                "**njooni!**",
+                "datang! (tak beraturan)"
+              ],
+              [
+                "*kwenda*",
+                "**nenda!**",
+                "**nendeni!**",
+                "pergi! (tak beraturan)"
+              ],
+              [
+                "*kuleta*",
+                "**lete!**",
+                "**leteni!**",
+                "bawa! (tak beraturan)"
+              ],
+              [
+                "*kula*",
+                "*kula!*",
+                "*kuleni!*",
+                "makan! (ku- ditahan)"
+              ]
+            ]
+          },
+          "after": [
+            "Empat kata kerja tak beraturan di tabel — *njoo*, *nenda*, *lete*, dan *kuwa* → *uwe* — adalah satu-satunya yang perlu dihafal. Semuanya kata yang akan kamu dengar puluhan kali sehari, jadi ia akan menempel sendiri.",
+            "Kata kerja pinjaman Arab tidak mengubah ekornya bahkan dalam bentuk jamak: *fikiri!* → *fikirini!*, *jibu!* → *jibuni!*, *rudi!* → *rudini!*, *samehe!* → *sameheni!*",
+            "⚠️ Satu jebakan bunyi untuk telinga Indonesia: *kata!* berarti **potong!** (dari *kukata*), sama sekali bukan \"kata\". Kata dalam arti kata-kata adalah *neno*, jamaknya *maneno*."
+          ]
+        },
+        {
+          "title": "Bentuk -e: ajakan, permintaan, dan larangan",
+          "body": [
+            "Bahasa Swahili punya satu bentuk kata kerja yang menutup \"agar\", \"mari\", \"tolong\", dan \"jangan\" sekaligus. Bentuknya: **awalan pelaku + akar dengan ekor -e**, tanpa gerbong waktu sama sekali."
+          ],
+          "table": {
+            "head": [
+              "Bentuk",
+              "Cara baca",
+              "Arti",
+              "Dipakai untuk"
+            ],
+            "rows": [
+              [
+                "*nisome*",
+                "ni-SO-mé",
+                "biar saya baca",
+                "menawarkan diri"
+              ],
+              [
+                "*usome*",
+                "u-SO-mé",
+                "(supaya) kamu baca",
+                "permintaan halus"
+              ],
+              [
+                "*asome*",
+                "a-SO-mé",
+                "biar dia baca",
+                "menyarankan"
+              ],
+              [
+                "**tusome**",
+                "tu-SO-mé",
+                "**ayo kita baca**",
+                "ajakan — yang paling sering"
+              ],
+              [
+                "*msome*",
+                "m-SO-mé",
+                "(supaya) kalian baca",
+                "permintaan ke banyak orang"
+              ],
+              [
+                "*wasome*",
+                "wa-SO-mé",
+                "biar mereka baca",
+                "menyarankan"
+              ],
+              [
+                "**usisome**",
+                "u-si-SO-mé",
+                "**jangan kamu baca**",
+                "larangan"
+              ],
+              [
+                "**msisome**",
+                "m-si-SO-mé",
+                "**jangan kalian baca**",
+                "larangan"
+              ]
+            ]
+          },
+          "after": [
+            "**Ajakan** memakai *tu-*: *Twende!* (ayo pergi), *Tuende sokoni* (ayo ke pasar), *Tule!* (mari makan), *Tuanze* (mari mulai). Ini bentuk yang paling sering kamu dengar dari kelompok yang akan berangkat ke mana pun.",
+            "**Larangan** dibentuk dengan menyisipkan *-si-*: *usiende* (jangan pergi), *usisahau* (jangan lupa), *usijali* (jangan khawatir), *usiwe na wasiwasi* (jangan cemas), *msichelewe* (jangan terlambat kalian). Inilah satu-satunya cara melarang — bentuk perintah biasa tidak bisa diingkarkan.",
+            "**Permintaan sopan** hampir selalu didahului *naomba* (saya minta) atau *tafadhali*: *Naomba usaidie* (tolong bantu saya), *Naomba maji* (minta air), *Tafadhali urudie* (tolong ulangi). Dan sesudah *lazima* (harus), bentuk *-e* ini wajib: *Lazima uende sasa* (kamu harus pergi sekarang), *Lazima tuondoke* (kita harus berangkat)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Maagizo ya kila siku — kalimat perintah yang akan kamu dengar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Njoo hapa!*",
+              "n-JO-o HA-pa",
+              "Sini!"
+            ],
+            [
+              "*Ngoja kidogo.*",
+              "NGO-ja ki-DO-go",
+              "Tunggu sebentar."
+            ],
+            [
+              "*Kaa, karibu.*",
+              "KA-a ka-RI-bu",
+              "Duduk, silakan."
+            ],
+            [
+              "*Sema polepole.*",
+              "SÉ-ma po-lé-PO-lé",
+              "Bicara pelan-pelan."
+            ],
+            [
+              "*Rudia tafadhali.*",
+              "ru-DI-a",
+              "Tolong ulangi."
+            ],
+            [
+              "*Nisaidie tafadhali.*",
+              "ni-sa-i-DI-é",
+              "Tolong bantu saya."
+            ],
+            [
+              "*Simama hapa.*",
+              "si-MA-ma",
+              "Berhenti di sini."
+            ],
+            [
+              "*Endelea.*",
+              "én-dé-LÉ-a",
+              "Lanjutkan."
+            ],
+            [
+              "*Usijali.*",
+              "u-si-JA-li",
+              "Jangan khawatir."
+            ],
+            [
+              "*Usisahau!*",
+              "u-si-sa-HA-u",
+              "Jangan lupa!"
+            ],
+            [
+              "*Usiwe na haraka.*",
+              "u-si-WÉ na ha-RA-ka",
+              "Jangan buru-buru."
+            ],
+            [
+              "*Twende!*",
+              "TWÉN-dé",
+              "Ayo berangkat!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nisaidie* sudah memuat \"saya\" di dalamnya — sisipan *-ni-* yang berarti \"saya sebagai sasaran\". Itu bagian yang dibongkar tuntas di unit berikutnya; untuk sekarang hafalkan utuh, karena ia salah satu kalimat paling berguna di seluruh modul ini."
+        },
+        {
+          "type": "p",
+          "text": "Di daladala dan bodaboda, dua perintah ini yang paling sering kamu perlukan: *Shusha hapa!* (turunkan saya di sini) dan *Simama pale!* (berhenti di sana). Dan di pasar: *Punguza bei* (kurangi harganya) — yang sudah kamu pakai di unit 7 tanpa tahu ia bentuk perintah."
+        }
+      ]
+    },
+    {
+      "title": "Nina njaa — keadaan badan yang \"dipunyai\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Swahili menyatakan sebagian besar keadaan badan dan perasaan dengan *kuwa na* — \"punya\" — persis seperti bahasa Arab dan bahasa Prancis, dan berbeda dari bahasa Indonesia yang memakai kata sifat."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Harfiah",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Nina njaa.*",
+              "saya punya lapar",
+              "Saya lapar."
+            ],
+            [
+              "*Nina kiu.*",
+              "saya punya haus",
+              "Saya haus."
+            ],
+            [
+              "*Nina baridi.*",
+              "saya punya dingin",
+              "Saya kedinginan."
+            ],
+            [
+              "*Nina joto.*",
+              "saya punya panas",
+              "Saya kepanasan."
+            ],
+            [
+              "*Nina usingizi.*",
+              "saya punya kantuk",
+              "Saya mengantuk."
+            ],
+            [
+              "*Nina haraka.*",
+              "saya punya buru-buru",
+              "Saya sedang terburu-buru."
+            ],
+            [
+              "*Nina wasiwasi.*",
+              "saya punya cemas",
+              "Saya khawatir."
+            ],
+            [
+              "*Nina furaha.*",
+              "saya punya gembira",
+              "Saya senang."
+            ],
+            [
+              "*Nina hakika.*",
+              "saya punya kepastian",
+              "Saya yakin."
+            ],
+            [
+              "*Sina uhakika.*",
+              "saya tidak punya kepastian",
+              "Saya tidak yakin."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ingkarnya memakai *sina* yang sudah kamu pasang sejak unit 2: *Sina njaa* (saya tidak lapar), *Sina wasiwasi* (saya tidak khawatir). Dan untuk orang lain: *Ana njaa*, *Wana kiu*, *Hana haraka*."
+        },
+        {
+          "type": "p",
+          "text": "Dua yang sudah kamu kenal dari bahasa sendiri: *hakika* (hakikat → kepastian) dan *furaha* (dari akar yang sama dengan \"farah\" — gembira). Kalau kamu ingin menjawab \"apa kabar\" dengan jujur dan hidup, *Nina furaha leo!* jauh lebih berkesan daripada *nzuri* yang otomatis."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "kukata",
+      "baca": "ku-KA-ta",
+      "id": "memotong"
+    },
+    {
+      "sw": "kuweka",
+      "baca": "ku-WÉ-ka",
+      "id": "menaruh"
+    },
+    {
+      "sw": "kuanza",
+      "baca": "ku-AN-za",
+      "id": "memulai"
+    },
+    {
+      "sw": "kuendelea",
+      "baca": "ku-én-dé-LÉ-a",
+      "id": "melanjutkan"
+    },
+    {
+      "sw": "kurudia",
+      "baca": "ku-ru-DI-a",
+      "id": "mengulangi"
+    },
+    {
+      "sw": "kujali",
+      "baca": "ku-JA-li",
+      "id": "peduli; khawatir"
+    },
+    {
+      "sw": "kushusha",
+      "baca": "ku-SYU-sya",
+      "id": "menurunkan"
+    },
+    {
+      "sw": "njoo / njooni",
+      "baca": "n-JO-o",
+      "id": "datanglah! (kamu / kalian)"
+    },
+    {
+      "sw": "nenda / nendeni",
+      "baca": "NÉN-da",
+      "id": "pergilah!"
+    },
+    {
+      "sw": "lete / leteni",
+      "baca": "LÉ-té",
+      "id": "bawalah!"
+    },
+    {
+      "sw": "twende",
+      "baca": "TWÉN-dé",
+      "id": "ayo berangkat"
+    },
+    {
+      "sw": "usijali",
+      "baca": "u-si-JA-li",
+      "id": "jangan khawatir"
+    },
+    {
+      "sw": "usisahau",
+      "baca": "u-si-sa-HA-u",
+      "id": "jangan lupa"
+    },
+    {
+      "sw": "lazima",
+      "baca": "la-ZI-ma",
+      "id": "harus"
+    },
+    {
+      "sw": "naomba",
+      "baca": "na-OM-ba",
+      "id": "saya minta; tolong"
+    },
+    {
+      "sw": "sufuria",
+      "baca": "su-fu-RI-a",
+      "id": "panci"
+    },
+    {
+      "sw": "sahani",
+      "baca": "sa-HA-ni",
+      "id": "piring"
+    },
+    {
+      "sw": "bilauri",
+      "baca": "bi-la-U-ri",
+      "id": "gelas"
+    },
+    {
+      "sw": "chumvi",
+      "baca": "CUM-vi",
+      "id": "garam"
+    },
+    {
+      "sw": "nazi",
+      "baca": "NA-zi",
+      "id": "kelapa; santan"
+    },
+    {
+      "sw": "kitunguu / vitunguu",
+      "baca": "ki-tu-NGU-u",
+      "id": "bawang"
+    },
+    {
+      "sw": "kipande / vipande",
+      "baca": "ki-PAN-dé",
+      "id": "potongan"
+    },
+    {
+      "sw": "njaa",
+      "baca": "n-JA-a",
+      "id": "lapar"
+    },
+    {
+      "sw": "kiu",
+      "baca": "KI-u",
+      "id": "haus"
+    },
+    {
+      "sw": "usingizi",
+      "baca": "u-si-NGI-zi",
+      "id": "kantuk"
+    },
+    {
+      "sw": "haraka",
+      "baca": "ha-RA-ka",
+      "id": "buru-buru"
+    },
+    {
+      "sw": "wasiwasi",
+      "baca": "wa-si-WA-si",
+      "id": "khawatir"
+    },
+    {
+      "sw": "furaha",
+      "baca": "fu-RA-ha",
+      "id": "kegembiraan"
+    },
+    {
+      "sw": "hakika",
+      "baca": "ha-KI-ka",
+      "id": "kepastian; yakin"
+    },
+    {
+      "sw": "mbalimbali",
+      "baca": "m-ba-li-m-BA-li",
+      "id": "bermacam-macam"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi perintah untuk satu orang, lalu untuk banyak orang.",
+      "items": [
+        "kusoma → ____",
+        "kukaa → ____",
+        "kuandika → ____",
+        "kuja → ____",
+        "kwenda → ____",
+        "kuleta → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi larangan.",
+      "items": [
+        "Nenda! → ____",
+        "Sahau! → ____",
+        "Kula! → ____",
+        "Chelewa! → ____",
+        "Njoo! → ____",
+        "Weka chumvi! → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": [
+        "Silakan duduk.",
+        "Tunggu sebentar.",
+        "Ayo kita pergi ke pasar!",
+        "Jangan khawatir.",
+        "Kamu harus pergi sekarang.",
+        "Tolong ulangi."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan bentuk -e yang tepat.",
+      "items": [
+        "Lazima u____ sasa. (kwenda — kamu harus pergi)",
+        "Tu____ chakula! (kula — ayo makan)",
+        "Naomba u____. (kusaidia — tolong bantu)",
+        "Lazima tu____ mapema. (kuondoka — kita harus berangkat)",
+        "U____ na haraka. (kuwa — jangan buru-buru)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "hapa / kaa / karibu",
+        "kidogo / ngoja",
+        "chumvi / usiweke / bado",
+        "wali / tuanze / kupika",
+        "njaa / nina / kubwa"
+      ]
+    }
+  ],
+  "answers": [
+    "soma! / someni! — kaa! / kaeni! — andika! / andikeni! — njoo! / njooni! — nenda! / nendeni! — lete! / leteni!",
+    "Usiende! — Usisahau! — Usile! — Usichelewe! — Usije! — Usiweke chumvi!",
+    "Karibu, kaa. — Ngoja kidogo. — Twende sokoni! — Usijali. — Lazima uende sasa. — Rudia tafadhali.",
+    "uende — tule — usaidie — tuondoke — Usiwe",
+    "Karibu, kaa hapa. — Ngoja kidogo. — Usiweke chumvi bado. — Tuanze kupika wali. — Nina njaa kubwa."
+  ]
+}

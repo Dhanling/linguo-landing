@@ -1,0 +1,190 @@
+{
+  "title": "Mau, bisa, suka: kata kerja yang menggandeng kata kerja",
+  "title_target": "Mgahawani: nataka kuagiza",
+  "goal": "Memesan makanan, menolak yang tak kamu makan, dan merangkai dua kata kerja dalam satu kalimat — yang kedua tetap memakai *ku-*.",
+  "bekal": [
+    "*kutaka*, *kuweza*, *kupenda*, *kujua* + kata kerja berawalan *ku-*",
+    "*ku-* sebagai kata benda: *kusoma ni kuzuri* (membaca itu baik)",
+    "*kabla ya*, *baada ya*, *bila* + kata kerja"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mgahawani",
+      "intro": "Makan malam pertama Budi di rumah makan sungguhan, ditemani Amina yang siap menjadi penerjemah — tapi tidak diperlukan.",
+      "lines": [
+        { "speaker": "Mhudumu:", "text": "Karibuni! Mnataka kuagiza nini?", "id": "Selamat datang! Mau pesan apa?", "literal": "selamat-datang-kalian! kalian-sedang-mau untuk-memesan apa?" },
+        { "speaker": "Budi:", "text": "Naomba menyu, tafadhali.", "id": "Minta menunya, tolong.", "literal": "saya-minta menu, tolong." },
+        { "speaker": "Mhudumu:", "text": "Hii hapa. Leo tuna samaki, kuku na nyama choma.", "id": "Ini dia. Hari ini ada ikan, ayam, dan daging bakar.", "literal": "ini di-sini. hari-ini kami-punya ikan, ayam dan daging bakar." },
+        { "speaker": "Amina:", "text": "Ninataka kula samaki na wali wa nazi.", "id": "Saya mau makan ikan dan nasi santan.", "literal": "saya-sedang-mau untuk-makan ikan dan nasi dari kelapa." },
+        { "speaker": "Budi:", "text": "Naweza kupata kuku bila pilipili? Siwezi kula pilipili kali.", "id": "Bisa dapat ayam tanpa cabai? Saya tidak tahan cabai pedas.", "literal": "saya-bisa untuk-dapat ayam tanpa cabai? saya-tidak-bisa untuk-makan cabai pedas." },
+        { "speaker": "Mhudumu:", "text": "Bila shaka. Mnataka kunywa nini?", "id": "Tentu saja. Mau minum apa?", "literal": "tanpa keraguan. kalian-sedang-mau untuk-minum apa?" },
+        { "speaker": "Amina:", "text": "Maji baridi mawili, tafadhali.", "id": "Dua air dingin, tolong.", "literal": "air dingin dua, tolong." },
+        { "speaker": "Budi:", "text": "Na mimi napenda kujaribu juisi ya embe.", "id": "Dan saya ingin coba jus mangga.", "literal": "dan saya saya-suka untuk-mencoba jus dari mangga." },
+        { "speaker": "Mhudumu:", "text": "Sawa. Chakula kitakuwa tayari baada ya dakika ishirini.", "id": "Baik. Makanannya siap dua puluh menit lagi.", "literal": "oke. makanan ia-akan-menjadi siap sesudah dari menit dua-puluh." },
+        { "speaker": "Budi:", "text": "Asante. Kabla ya kula, choo kiko wapi?", "id": "Terima kasih. Sebelum makan, toiletnya di mana?", "literal": "terima-kasih. sebelum dari makan, toilet ia-berada di-mana?" },
+        { "speaker": "Amina:", "text": "Nyuma pale. Chakula hiki ni kitamu — utapenda!", "id": "Di belakang sana. Makanan ini enak — kamu pasti suka!", "literal": "belakang sana. makanan ini adalah enak — kamu-akan-suka!" },
+        { "speaker": "Budi:", "text": "Kupika kwao ni kuzuri sana. Naomba bili, tafadhali!", "id": "Masakan mereka bagus sekali. Minta bonnya, tolong!", "literal": "memasak milik-mereka adalah bagus sangat. saya-minta bon, tolong!" }
+      ],
+      "notes": [
+        "**Naomba adalah cara paling sopan meminta apa pun.** Harfiahnya \"saya memohon\", dan ia dipakai untuk benda maupun perbuatan: *Naomba maji* (minta air), *Naomba bili* (minta bon), *Naomba kupita* (permisi lewat), *Naomba unisaidie* (tolong bantu saya). Kalau kamu hanya boleh membawa satu kata sopan ke rumah makan, bawa yang ini.",
+        "**Bila shaka berarti \"tanpa ragu\" alias tentu saja.** *Bila* berarti \"tanpa\" dan bisa diikuti kata benda maupun kata kerja: *bila sukari* (tanpa gula), *bila pilipili* (tanpa cabai), *bila kusubiri* (tanpa menunggu), *bila shaka* (pasti).",
+        "**Nyama choma bukan sekadar makanan, ia acara.** Daging kambing atau sapi yang dibakar perlahan dan dimakan beramai-ramai dengan *kachumbari* (sambal segar irisan tomat, bawang, dan jeruk nipis). Kalau kamu diajak *kwenda kula nyama choma*, itu ajakan berkumpul, bukan sekadar makan.",
+        "**Wali wa nazi adalah nasi yang dimasak dengan santan** — kembaran nasi uduk, dan barangkali makanan paling menghibur bagi lidah Indonesia di Afrika Timur. Sepupunya *mchuzi wa nazi* (gulai santan) dan *samaki wa nazi*.",
+        "**Hii hapa berarti \"ini dia\".** Kata tunjuk digandeng dengan kata tempat: *hii hapa* (ini dia benda kelas N), *hiki hapa*, *huyu hapa* (nah ini orangnya). Ungkapan yang sangat sering dipakai saat menyerahkan sesuatu."
+      ],
+      "grammars": [
+        {
+          "title": "Dua kata kerja dalam satu kalimat",
+          "body": [
+            "Kalau satu kalimat memuat dua kata kerja, yang **pertama dirakit lengkap** dengan awalan pelaku dan gerbong waktu, sementara yang **kedua tetap dalam bentuk kamusnya** — dengan *ku-* utuh di depannya. Susunan yang persis sama dengan \"saya mau **untuk** makan\"."
+          ],
+          "table": {
+            "head": ["Kata kerja pertama", "Contoh", "Arti", "Ingkarnya"],
+            "rows": [
+              ["*kutaka* (mau)", "*ninataka kula*", "saya mau makan", "*sitaki kula*"],
+              ["*kuweza* (bisa)", "*ninaweza kusema*", "saya bisa bicara", "*siwezi kusema*"],
+              ["*kupenda* (suka)", "*ninapenda kusoma*", "saya suka membaca", "*sipendi kusoma*"],
+              ["*kujua* (tahu caranya)", "*ninajua kuogelea*", "saya bisa berenang", "*sijui kuogelea*"],
+              ["*kuanza* (mulai)", "*nimeanza kujifunza*", "saya sudah mulai belajar", "*sijaanza kujifunza*"],
+              ["*kumaliza* (selesai)", "*nimemaliza kula*", "saya sudah selesai makan", "*sijamaliza kula*"],
+              ["*kujaribu* (mencoba)", "*nitajaribu kupika*", "saya akan coba memasak", "*sitajaribu kupika*"],
+              ["*kusahau* (lupa)", "*nimesahau kununua*", "saya lupa membeli", "*sijasahau kununua*"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **hanya kata kerja pertama yang diingkarkan** — yang kedua tak tersentuh. *Siwezi kuja* (saya tidak bisa datang), bukan *siwezi siji*.",
+            "*Kujua* berarti \"tahu\" untuk fakta dan \"bisa\" untuk keterampilan: *Ninajua Kiswahili* (saya tahu bahasa Swahili), *Ninajua kuendesha gari* (saya bisa menyetir). Bedakan dari *kuweza*, yang berarti bisa karena keadaan mengizinkan: *Siwezi kuja leo* (saya tidak bisa datang hari ini — bukan karena tidak mampu).",
+            "Untuk permintaan yang lebih halus dari *ninataka*, dipakai **ningependa** (\"saya ingin\", nada seperti *I would like*): *Ningependa kuagiza* (saya ingin memesan), *Ningependa chai* (saya ingin teh). Hafalkan bentuknya utuh; susunannya baru dibongkar di tingkat A2."
+          ]
+        },
+        {
+          "title": "Ku- sebagai kata benda: \"membaca itu bagus\"",
+          "body": [
+            "Bentuk *ku-* bukan cuma \"untuk…\" — ia juga mengubah kata kerja menjadi **kata benda**, persis seperti awalan *me-* menjadi \"membaca\" dalam \"membaca itu menyenangkan\". Dan sebagai kata benda, ia punya kelasnya sendiri, dengan awalan **ku-**."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti", "Catatan"],
+            "rows": [
+              ["*Kusoma ni kuzuri.*", "Membaca itu baik.", "kata sifatnya ikut: *ku-*"],
+              ["*Kupika kwao ni kuzuri.*", "Masakan mereka bagus.", "kata miliknya: *kwangu, kwako, kwao*"],
+              ["*Kusafiri ni ghali.*", "Bepergian itu mahal.", "kata pinjaman tak berubah"],
+              ["*Kabla ya kula*", "sebelum makan", "sesudah *ya* selalu bentuk *ku-*"],
+              ["*Baada ya kufika*", "sesudah tiba", "sama"],
+              ["*Bila kusubiri*", "tanpa menunggu", "sama"]
+            ]
+          },
+          "after": [
+            "Tiga kata sambung waktu yang perlu kamu bawa dari halaman ini: **kabla ya** (sebelum), **baada ya** (sesudah), dan **bila** (tanpa). Ketiganya selalu diikuti bentuk *ku-*, tak pernah bentuk yang dirakit.",
+            "Perhatikan *kwao* di baris kedua: kata milik untuk kelas *ku-* berbunyi *kwangu*, *kwako*, *kwake*, *kwetu*, *kwenu*, *kwao* — bentuk yang sama persis dengan \"di tempat kami\" yang sudah kamu pakai sejak unit 2. Keduanya memang satu keluarga.",
+            "Kalimat-kalimat bijak dalam bahasa Swahili hampir selalu dibangun dengan pola ini: *Kusoma ni kujua* (membaca adalah mengetahui), *Kupanga ni kuchagua* (merencanakan adalah memilih), *Kuuliza si ujinga* (bertanya bukan kebodohan)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mgahawani — kalimat memesan makanan",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*Naomba menyu.*", "Minta menunya."],
+          ["*Mna chakula gani leo?*", "Hari ini ada makanan apa?"],
+          ["*Ningependa kuagiza…*", "Saya ingin memesan…"],
+          ["*Kuna kitu bila nyama?*", "Ada yang tanpa daging?"],
+          ["*Bila pilipili, tafadhali.*", "Tanpa cabai, tolong."],
+          ["*Punguza chumvi kidogo.*", "Kurangi garamnya sedikit."],
+          ["*Kiasi gani?* / *Bei gani?*", "Berapa harganya?"],
+          ["*Chakula kitakuwa tayari lini?*", "Makanannya siap kapan?"],
+          ["*Chakula ni kitamu sana!*", "Makanannya enak sekali!"],
+          ["*Nimeshiba, asante.*", "Saya sudah kenyang, terima kasih."],
+          ["*Naomba bili, tafadhali.*", "Minta bonnya, tolong."],
+          ["*Mnapokea pesa za simu?*", "Bisa bayar pakai uang elektronik?"]
+        ]},
+        { "type": "p", "text": "Baris terakhir bukan basa-basi teknologi: pembayaran lewat ponsel (*M-Pesa* di Kenya, *Tigo Pesa* dan *Mixx* di Tanzania) dipakai di mana-mana, bahkan di warung pinggir jalan. Nomor teleponmu adalah dompetmu, dan kalimat yang sering kamu dengar adalah *Nitume kwa namba hii* (kirim ke nomor ini)." },
+        { "type": "p", "text": "*Mgahawa* adalah rumah makan; *baa* menjual minuman; *kibanda* adalah warung kecil; dan *hoteli* — hati-hati — di Tanzania sering berarti rumah makan, bukan penginapan." }
+      ]
+    },
+    {
+      "title": "Ladha na maombi maalum — rasa dan permintaan khusus",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*tamu*", "TA-mu", "manis; enak"],
+          ["*chumvi nyingi*", "CUM-vi NYI-ngi", "terlalu asin"],
+          ["*kali*", "KA-li", "pedas"],
+          ["*chungu*", "CU-ngu", "pahit"],
+          ["*chachu*", "CA-cu", "asam"],
+          ["*baridi* / *moto*", "ba-RI-di / MO-to", "dingin / panas"],
+          ["*bila nyama*", "BI-la NYA-ma", "tanpa daging"],
+          ["*bila sukari*", "BI-la su-KA-ri", "tanpa gula"],
+          ["*chakula cha halali*", "ca-KU-la ca ha-LA-li", "makanan halal"],
+          ["*sili nyama ya nguruwe*", "SI-li NYA-ma ya ngu-RU-wé", "saya tidak makan daging babi"],
+          ["*nina mzio wa…*", "NI-na m-ZI-o wa", "saya alergi terhadap…"],
+          ["*maji ya kunywa*", "MA-ji ya KU-nywa", "air minum"]
+        ]},
+        { "type": "p", "text": "Di Zanzibar dan sepanjang pesisir Tanzania, sebagian besar rumah makan memang *halali* dan tidak menyajikan babi sama sekali; di kota besar seperti Dar es Salaam dan Nairobi, bertanya lebih dulu adalah kebiasaan yang wajar dan tidak membuat siapa pun tersinggung. Kalimatnya: *Chakula hiki ni halali?*" },
+        { "type": "p", "text": "Perhatikan *maji ya kunywa* — \"air untuk diminum\", memakai bentuk *ku-* dari halaman sebelumnya sebagai keterangan. Pola yang sama: *chumba cha kulala* (kamar tidur), *chumba cha kulia* (ruang makan), *mashine ya kufulia* (mesin cuci). Bahasa Swahili membangun istilah baru dengan bahan lama, dan sekarang kamu bisa membacanya sendiri." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "kuagiza", "baca": "ku-a-GI-za", "id": "memesan" },
+    { "sw": "kupata", "baca": "ku-PA-ta", "id": "mendapat" },
+    { "sw": "kujaribu", "baca": "ku-ja-RI-bu", "id": "mencoba" },
+    { "sw": "kuweza", "baca": "ku-WÉ-za", "id": "bisa" },
+    { "sw": "kujua", "baca": "ku-JU-a", "id": "tahu; bisa (keterampilan)" },
+    { "sw": "kuendesha", "baca": "ku-én-DÉ-sya", "id": "menyetir; menjalankan" },
+    { "sw": "ningependa", "baca": "ni-ngé-PÉN-da", "id": "saya ingin (halus)" },
+    { "sw": "menyu", "baca": "MÉ-nyu", "id": "menu" },
+    { "sw": "bili", "baca": "BI-li", "id": "bon; tagihan" },
+    { "sw": "mgahawa", "baca": "m-ga-HA-wa", "id": "rumah makan" },
+    { "sw": "mhudumu", "baca": "m-hu-DU-mu", "id": "pelayan" },
+    { "sw": "kuku", "baca": "KU-ku", "id": "ayam" },
+    { "sw": "nyama choma", "baca": "NYA-ma CO-ma", "id": "daging bakar" },
+    { "sw": "kachumbari", "baca": "ka-cum-BA-ri", "id": "sambal irisan segar" },
+    { "sw": "juisi", "baca": "JU-i-si", "id": "jus" },
+    { "sw": "pilipili", "baca": "pi-li-PI-li", "id": "cabai" },
+    { "sw": "bila", "baca": "BI-la", "id": "tanpa" },
+    { "sw": "bila shaka", "baca": "BI-la SYA-ka", "id": "tentu saja" },
+    { "sw": "kabla ya", "baca": "KAB-la ya", "id": "sebelum" },
+    { "sw": "baada ya", "baca": "ba-A-da ya", "id": "sesudah" },
+    { "sw": "ladha", "baca": "LA-dza", "id": "rasa" },
+    { "sw": "moto", "baca": "MO-to", "id": "panas; api" },
+    { "sw": "chachu", "baca": "CA-cu", "id": "asam" },
+    { "sw": "halali", "baca": "ha-LA-li", "id": "halal" },
+    { "sw": "nguruwe", "baca": "ngu-RU-wé", "id": "babi" },
+    { "sw": "mzio", "baca": "m-ZI-o", "id": "alergi" },
+    { "sw": "kupanga", "baca": "ku-PA-nga", "id": "merencanakan; menyusun" },
+    { "sw": "ujinga", "baca": "u-JI-nga", "id": "kebodohan" },
+    { "sw": "kuvuta", "baca": "ku-VU-ta", "id": "menarik; merokok" },
+    { "sw": "kulipa", "baca": "ku-LI-pa", "id": "membayar" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Rangkai dua kata kerjanya.",
+      "items": ["saya mau + makan → ____", "saya bisa + bicara Kiswahili → ____", "dia suka + memasak → ____", "kami sudah mulai + belajar → ____", "saya lupa + membeli → ____", "mereka akan coba + berenang → ____"]
+    },
+    {
+      "prompt": "Ubah jadi ingkar.",
+      "items": ["Ninataka kula. → ____", "Ninaweza kuja. → ____", "Anapenda kusubiri. → ____", "Ninajua kuogelea. → ____", "Tumemaliza kula. → ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Mau pesan apa?", "Minta menunya, tolong.", "Saya mau makan ikan.", "Bisa dapat ayam tanpa cabai?", "Makanannya enak sekali!", "Minta bonnya, tolong."]
+    },
+    {
+      "prompt": "Isi dengan kabla ya, baada ya, atau bila.",
+      "items": ["____ kula, nanawa mikono. (sebelum)", "____ kufika, nitakupigia simu. (sesudah)", "Nataka chai ____ sukari. (tanpa)", "____ kusubiri, aliondoka. (tanpa)", "____ dakika ishirini chakula kitakuwa tayari. (sesudah)"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["kula / ninataka / samaki", "pilipili / bila / kuku / naweza / kupata", "tafadhali / naomba / bili", "kuzuri / ni / kusoma", "kula / choo / kabla / kiko / wapi / ya"]
+    }
+  ],
+  "answers": [
+    "ninataka kula — ninaweza kusema Kiswahili — anapenda kupika — tumeanza kujifunza — nimesahau kununua — watajaribu kuogelea",
+    "Sitaki kula. — Siwezi kuja. — Hapendi kusubiri. — Sijui kuogelea. — Hatujamaliza kula.",
+    "Mnataka kuagiza nini? — Naomba menyu, tafadhali. — Ninataka kula samaki. — Naweza kupata kuku bila pilipili? — Chakula ni kitamu sana! — Naomba bili, tafadhali.",
+    "Kabla ya — Baada ya — bila — Bila — Baada ya",
+    "Ninataka kula samaki. — Naweza kupata kuku bila pilipili. — Naomba bili, tafadhali. — Kusoma ni kuzuri. — Kabla ya kula, choo kiko wapi?"
+  ]
+}

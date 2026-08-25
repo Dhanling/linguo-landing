@@ -1,0 +1,623 @@
+{
+  "title": "Bilang \"tidak\": awalan yang berganti dan ekor -a yang jadi -i",
+  "title_target": "Samahani, sielewi",
+  "goal": "Mengingkarkan kalimat apa pun, menolak dengan sopan, dan memesan minuman di warung tanpa terpaksa memakai bahasa Inggris.",
+  "bekal": [
+    "enam awalan ingkar: *si-, hu-, ha-, hatu-, ham-, hawa-*",
+    "aturan ekor: kata kerja berakhiran *-a* berubah jadi *-i* saat diingkarkan",
+    "kata kerja pinjaman Arab yang ekornya tidak pernah berubah"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kwenye kibanda cha chai",
+      "intro": "Pagi hari di warung teh pinggir jalan. Budi mencoba memesan sendiri untuk pertama kalinya.",
+      "lines": [
+        {
+          "speaker": "Muuzaji:",
+          "text": "Karibu! Unataka nini?",
+          "id": "Silakan! Mau apa?",
+          "literal": "selamat-datang! kamu-sedang-mau apa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani, sielewi. Sema polepole tafadhali.",
+          "id": "Maaf, saya tidak mengerti. Tolong bicara pelan-pelan.",
+          "literal": "maaf, saya-tidak-paham. bicara pelan-pelan tolong."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Pole! Unataka chai au kahawa?",
+          "id": "Maaf ya! Kamu mau teh atau kopi?",
+          "literal": "sabar-ya! kamu-sedang-mau teh atau kopi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ninataka chai, tafadhali. Sipendi kahawa.",
+          "id": "Saya mau teh. Saya tidak suka kopi.",
+          "literal": "saya-sedang-mau teh, tolong. saya-tidak-suka kopi."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Unataka sukari ngapi?",
+          "id": "Mau gula berapa (sendok)?",
+          "literal": "kamu-sedang-mau gula berapa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hapana, asante. Sitaki sukari kabisa.",
+          "id": "Tidak, terima kasih. Saya sama sekali tidak mau gula.",
+          "literal": "tidak, terima-kasih. saya-tidak-mau gula sama-sekali."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Sawa. Shilingi elfu moja.",
+          "id": "Baik. Seribu shilling.",
+          "literal": "sama; oke. shilling ribu satu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Samahani, sina pesa ndogo. Nina elfu tano.",
+          "id": "Maaf, saya tidak punya uang kecil. Saya punya lima ribu.",
+          "literal": "maaf, saya-tidak-punya uang kecil. saya-punya ribu lima."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Hakuna shida. Chenji yako hii.",
+          "id": "Tidak masalah. Ini kembalianmu.",
+          "literal": "tidak-ada masalah. kembalian milik-mu ini."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante. Rafiki yangu haji leo, anaumwa.",
+          "id": "Terima kasih. Teman saya tidak datang hari ini, dia sakit.",
+          "literal": "terima-kasih. teman milik-ku dia-tidak-datang hari-ini, dia-sedang-sakit."
+        },
+        {
+          "speaker": "Muuzaji:",
+          "text": "Pole sana. Yeye hanywi chai?",
+          "id": "Turut prihatin. Dia tidak minum teh?",
+          "literal": "sabar sangat. dia dia-tidak-minum teh?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hanywi chai, lakini anapenda maji ya matunda.",
+          "id": "Dia tidak minum teh, tapi dia suka jus buah.",
+          "literal": "dia-tidak-minum teh, tetapi dia-sedang-suka air dari buah-buah."
+        }
+      ],
+      "notes": [
+        "**Pole dan samahani bukan dua kata untuk hal yang sama.** *Samahani* dipakai kalau kamu yang bersalah atau ingin permisi. *Pole* dipakai kepada orang yang sedang susah — sakit, capek, kehilangan sesuatu. Penjual di dialog ini mengucapkan *pole* karena kasihan, bukan karena merasa bersalah.",
+        "**Sawa berarti \"sama\", dan dipakai untuk \"oke\".** Ia salah satu kata paling sering terdengar di Afrika Timur. *Sawa sawa* (dobel) berarti \"beres, tidak apa-apa\", dan *sawa?* dengan nada naik berarti \"setuju?\".",
+        "**Kabisa berarti \"sama sekali\" dan menguatkan ingkarnya.** *Sitaki* = saya tidak mau; *sitaki kabisa* = saya sama sekali tidak mau. Berdiri sendiri, *kabisa!* berarti \"betul sekali!\".",
+        "**Maji ya matunda harfiahnya \"air dari buah-buahan\" — itulah jus.** Bahasa Swahili sering merangkai dua kata benda dengan penghubung *ya*/*wa*/*cha* alih-alih menciptakan kata baru: *maji ya matunda* (jus), *chai ya maziwa* (teh susu), *kibanda cha chai* (warung teh).",
+        "**Anaumwa berarti \"dia sakit\", harfiahnya \"dia sedang disakiti\".** Bentuk ini akan dibongkar di unit 19 bersama seluruh kosakata tubuh; untuk sekarang hafalkan *ninaumwa* (saya sakit) dan *anaumwa* (dia sakit) sebagai kalimat utuh."
+      ],
+      "grammars": [
+        {
+          "title": "Ingkar: dua hal berubah sekaligus",
+          "body": [
+            "Mengingkarkan kalimat kini dalam bahasa Swahili berarti mengubah **dua** hal sekaligus, dan gerbong *-na-* justru menghilang:",
+            "**(1)** awalan pelakunya diganti dengan awalan ingkar, dan **(2)** ekor *-a* pada kata kerjanya berubah jadi *-i*."
+          ],
+          "table": {
+            "head": [
+              "Positif",
+              "Awalan ingkar",
+              "Ingkar",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*ninasoma*",
+                "**si-**",
+                "*sisomi*",
+                "si-SO-mi",
+                "saya tidak membaca"
+              ],
+              [
+                "*unasoma*",
+                "**hu-**",
+                "*husomi*",
+                "hu-SO-mi",
+                "kamu tidak membaca"
+              ],
+              [
+                "*anasoma*",
+                "**ha-**",
+                "*hasomi*",
+                "ha-SO-mi",
+                "dia tidak membaca"
+              ],
+              [
+                "*tunasoma*",
+                "**hatu-**",
+                "*hatusomi*",
+                "ha-tu-SO-mi",
+                "kami tidak membaca"
+              ],
+              [
+                "*mnasoma*",
+                "**ham-**",
+                "*hamsomi*",
+                "ham-SO-mi",
+                "kalian tidak membaca"
+              ],
+              [
+                "*wanasoma*",
+                "**hawa-**",
+                "*hawasomi*",
+                "ha-wa-SO-mi",
+                "mereka tidak membaca"
+              ]
+            ]
+          },
+          "after": [
+            "Gerbong *-na-* dibuang karena tugasnya sudah selesai: bentuk ingkar ini menutup \"tidak sedang\" dan \"tidak biasa\" sekaligus. *Sisomi* berarti \"saya tidak sedang membaca\" **dan** \"saya tidak pernah membaca\", tergantung konteks.",
+            "Kamu sudah mengenal keenam awalan ini dari unit 2: *sina*, *huna*, *hana*, *hatuna*, *hamna*, *hawana*. Persis awalan yang sama, dipasang ke kata kerja mana pun.",
+            "Contoh yang paling sering dipakai sehari-hari: *sielewi* (saya tidak mengerti), *sijui* (saya tidak tahu), *sitaki* (saya tidak mau), *sipendi* (saya tidak suka), *sisemi* (saya tidak bilang). Lima kalimat ini saja sudah menyelamatkan banyak percakapan."
+          ]
+        },
+        {
+          "title": "Ekor yang tidak berubah — dan empat kata kerja pendek",
+          "body": [
+            "Aturan \"-a jadi -i\" hanya berlaku untuk kata kerja asli Bantu, yang memang selalu berakhiran *-a*. Kata kerja pinjaman dari bahasa Arab berakhiran *-i*, *-e*, atau *-u*, dan **ekornya dibiarkan apa adanya**."
+          ],
+          "table": {
+            "head": [
+              "Bentuk kamus",
+              "Arti",
+              "Positif",
+              "Ingkar",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "*kufikiri*",
+                "berpikir",
+                "*ninafikiri*",
+                "*sifikiri*",
+                "ekor -i tetap"
+              ],
+              [
+                "*kujibu*",
+                "menjawab",
+                "*anajibu*",
+                "*hajibu*",
+                "ekor -u tetap"
+              ],
+              [
+                "*kusamehe*",
+                "memaafkan",
+                "*tunasamehe*",
+                "*hatusamehe*",
+                "ekor -e tetap"
+              ],
+              [
+                "*kurudi*",
+                "kembali",
+                "*wanarudi*",
+                "*hawarudi*",
+                "ekor -i tetap"
+              ],
+              [
+                "*kula*",
+                "makan",
+                "*ninakula*",
+                "**sili**",
+                "ku- lepas saat diingkarkan"
+              ],
+              [
+                "*kunywa*",
+                "minum",
+                "*ninakunywa*",
+                "**sinywi**",
+                "ku- lepas"
+              ],
+              [
+                "*kuja*",
+                "datang",
+                "*ninakuja*",
+                "**siji**",
+                "ku- lepas"
+              ],
+              [
+                "*kwenda*",
+                "pergi",
+                "*ninakwenda*",
+                "**siendi**",
+                "ku- lepas, kw- jadi -e-"
+              ]
+            ]
+          },
+          "after": [
+            "Empat kata kerja pendek di baris bawah menahan *ku-* dalam kalimat positif, tapi **melepasnya dalam kalimat ingkar** — karena awalan ingkarnya sendiri sudah cukup panjang untuk menyangga bunyinya. *Ninakula* → *sili*. *Anakuja* → *haji*.",
+            "Cara mengenalinya di kamus tanpa menghafal: kalau kata kerjanya berakhir **-a**, ubah jadi **-i**. Kalau berakhir huruf lain, jangan sentuh. Sesederhana itu, dan tak ada kekecualian yang perlu dihafal.",
+            "⚠️ *Kujua* (tahu) berakhiran *-a*, jadi ingkarnya *sijui*, *hujui*, *hajui*. Dan *kuwa na* (punya) sudah kamu kenal bentuk ingkarnya sejak unit 2: *sina*, bukan *siwi*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menolak tanpa menyinggung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Di Afrika Timur, menolak secara langsung terasa kasar. Tabel berikut disusun dari yang paling halus ke yang paling tegas — dan tiga baris pertamalah yang paling sering kamu perlukan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Cara baca",
+            "Kapan dipakai"
+          ],
+          "rows": [
+            [
+              "*Asante, nimeshiba*",
+              "a-SAN-té ni-mé-SYI-ba",
+              "\"Terima kasih, saya sudah kenyang\" — menolak makanan"
+            ],
+            [
+              "*Labda baadaye*",
+              "LAB-da ba-a-DA-yé",
+              "\"Mungkin nanti\" — menolak ajakan tanpa menutup pintu"
+            ],
+            [
+              "*Sitaki, asante*",
+              "si-TA-ki a-SAN-té",
+              "\"Saya tidak mau, terima kasih\" — sopan dan jelas"
+            ],
+            [
+              "*Hapana, asante*",
+              "ha-PA-na",
+              "\"Tidak, terima kasih\" — netral"
+            ],
+            [
+              "*Siyo* / *Sio*",
+              "SI-yo",
+              "\"Bukan begitu\" — mengoreksi pernyataan"
+            ],
+            [
+              "*Hapana kabisa*",
+              "ha-PA-na ka-BI-sa",
+              "\"Sama sekali tidak\" — tegas"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Perhatikan bedanya *hapana* dan *siyo*. *Hapana* menolak permintaan (\"mau teh?\" → \"tidak\"). *Siyo* menyangkal keterangan (\"kamu orang Malaysia?\" → \"bukan\"). Memakai *hapana* untuk menyangkal juga bisa dipahami, tapi *siyo* terdengar lebih tepat."
+        },
+        {
+          "type": "p",
+          "text": "Satu kalimat penyelamat yang belum masuk tabel: **Sijui** (saya tidak tahu). Ia jujur, ia sopan, dan ia hampir selalu dijawab dengan penjelasan panjang yang justru mengajarimu lebih banyak daripada pura-pura mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Kibanda cha chai — warung dan isinya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*chai*",
+              "CA-i",
+              "teh"
+            ],
+            [
+              "*kahawa*",
+              "ka-HA-wa",
+              "kopi"
+            ],
+            [
+              "*maji*",
+              "MA-ji",
+              "air"
+            ],
+            [
+              "*maziwa*",
+              "ma-ZI-wa",
+              "susu"
+            ],
+            [
+              "*juisi* / *maji ya matunda*",
+              "JU-i-si",
+              "jus"
+            ],
+            [
+              "*soda*",
+              "SO-da",
+              "minuman bersoda"
+            ],
+            [
+              "*sukari*",
+              "su-KA-ri",
+              "gula"
+            ],
+            [
+              "*chumvi*",
+              "CUM-vi",
+              "garam"
+            ],
+            [
+              "*mkate*",
+              "m-KA-té",
+              "roti"
+            ],
+            [
+              "*mandazi*",
+              "man-DA-zi",
+              "roti goreng manis"
+            ],
+            [
+              "*chapati*",
+              "ca-PA-ti",
+              "roti pipih"
+            ],
+            [
+              "*bei*",
+              "BÉ-i",
+              "harga"
+            ],
+            [
+              "*pesa*",
+              "PÉ-sa",
+              "uang"
+            ],
+            [
+              "*chenji*",
+              "CÉN-ji",
+              "uang kembalian"
+            ],
+            [
+              "*muuzaji*",
+              "mu-u-ZA-ji",
+              "penjual"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Chai* di Afrika Timur bukan teh tawar. Bawaannya *chai ya maziwa* — teh yang direbus bersama susu, sering dengan jahe (*tangawizi*) dan kapulaga. Kalau kamu mau teh tawar seperti di rumah, mintalah *chai ya rangi*, harfiahnya \"teh warna\" — teh yang hanya diberi warna, tanpa susu."
+        },
+        {
+          "type": "p",
+          "text": "*Mandazi* adalah kembaran roti goreng yang akan langsung akrab di lidah orang Indonesia, dan hampir selalu ada di meja bersama teh pagi. Menyebutnya dalam bahasa Swahili di warung mana pun akan membuat penjualnya tersenyum."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "samahani",
+      "baca": "sa-ma-HA-ni",
+      "id": "maaf; permisi"
+    },
+    {
+      "sw": "pole",
+      "baca": "PO-lé",
+      "id": "turut prihatin; sabar ya"
+    },
+    {
+      "sw": "tafadhali",
+      "baca": "ta-fa-DZA-li",
+      "id": "tolong; silakan"
+    },
+    {
+      "sw": "sawa",
+      "baca": "SA-wa",
+      "id": "oke; sama"
+    },
+    {
+      "sw": "au",
+      "baca": "A-u",
+      "id": "atau"
+    },
+    {
+      "sw": "kabisa",
+      "baca": "ka-BI-sa",
+      "id": "sama sekali; betul sekali"
+    },
+    {
+      "sw": "labda",
+      "baca": "LAB-da",
+      "id": "mungkin"
+    },
+    {
+      "sw": "baadaye",
+      "baca": "ba-a-DA-yé",
+      "id": "nanti"
+    },
+    {
+      "sw": "siyo / sio",
+      "baca": "SI-yo",
+      "id": "bukan begitu"
+    },
+    {
+      "sw": "kutaka",
+      "baca": "ku-TA-ka",
+      "id": "mau; ingin"
+    },
+    {
+      "sw": "kujua",
+      "baca": "ku-JU-a",
+      "id": "tahu"
+    },
+    {
+      "sw": "kufikiri",
+      "baca": "ku-fi-KI-ri",
+      "id": "berpikir"
+    },
+    {
+      "sw": "kujibu",
+      "baca": "ku-JI-bu",
+      "id": "menjawab"
+    },
+    {
+      "sw": "kuuliza",
+      "baca": "ku-u-LI-za",
+      "id": "bertanya"
+    },
+    {
+      "sw": "kusamehe",
+      "baca": "ku-sa-MÉ-hé",
+      "id": "memaafkan"
+    },
+    {
+      "sw": "kurudi",
+      "baca": "ku-RU-di",
+      "id": "kembali"
+    },
+    {
+      "sw": "kunipa / kupa",
+      "baca": "ku-PA",
+      "id": "memberi"
+    },
+    {
+      "sw": "kuumwa",
+      "baca": "ku-UM-wa",
+      "id": "sakit"
+    },
+    {
+      "sw": "chai",
+      "baca": "CA-i",
+      "id": "teh"
+    },
+    {
+      "sw": "kahawa",
+      "baca": "ka-HA-wa",
+      "id": "kopi"
+    },
+    {
+      "sw": "maji",
+      "baca": "MA-ji",
+      "id": "air"
+    },
+    {
+      "sw": "maziwa",
+      "baca": "ma-ZI-wa",
+      "id": "susu"
+    },
+    {
+      "sw": "sukari",
+      "baca": "su-KA-ri",
+      "id": "gula"
+    },
+    {
+      "sw": "matunda",
+      "baca": "ma-TUN-da",
+      "id": "buah-buahan"
+    },
+    {
+      "sw": "mkate",
+      "baca": "m-KA-té",
+      "id": "roti"
+    },
+    {
+      "sw": "bei",
+      "baca": "BÉ-i",
+      "id": "harga"
+    },
+    {
+      "sw": "pesa",
+      "baca": "PÉ-sa",
+      "id": "uang"
+    },
+    {
+      "sw": "chenji",
+      "baca": "CÉN-ji",
+      "id": "kembalian"
+    },
+    {
+      "sw": "shilingi",
+      "baca": "syi-LI-ngi",
+      "id": "shilling (mata uang)"
+    },
+    {
+      "sw": "elfu",
+      "baca": "ÉL-fu",
+      "id": "ribu"
+    },
+    {
+      "sw": "muuzaji",
+      "baca": "mu-u-ZA-ji",
+      "id": "penjual"
+    },
+    {
+      "sw": "kibanda",
+      "baca": "ki-BAN-da",
+      "id": "warung; kios"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi ingkar.",
+      "items": [
+        "Ninaelewa. → ____",
+        "Anapenda kahawa. → ____",
+        "Tunajua. → ____",
+        "Wanasoma kila siku. → ____",
+        "Unataka sukari. → ____",
+        "Mnaongea Kiswahili. → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi ingkar. Awas: ada kata kerja pinjaman dan kata kerja pendek.",
+      "items": [
+        "Ninafikiri. → ____",
+        "Anakula wali. → ____",
+        "Wanakuja leo. → ____",
+        "Tunarudi jioni. → ____",
+        "Ninakunywa chai. → ____",
+        "Anajibu haraka. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": [
+        "Maaf, saya tidak mengerti.",
+        "Saya tidak tahu.",
+        "Saya tidak suka kopi.",
+        "Dia tidak datang hari ini.",
+        "Kami tidak punya uang kecil.",
+        "Mereka tidak minum teh."
+      ]
+    },
+    {
+      "prompt": "Pilih jawaban yang paling tepat: hapana, siyo, pole, atau samahani.",
+      "items": [
+        "Temanmu bercerita bahwa tasnya hilang. → ____",
+        "Penjual menawarkan gula, kamu tidak mau. → ____",
+        "Kamu menyenggol orang di pasar. → ____",
+        "Orang mengira kamu orang Malaysia. → ____",
+        "Kamu ingin permisi lewat di lorong sempit. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "sielewi / samahani",
+        "kahawa / sipendi",
+        "haji / rafiki / leo / yangu",
+        "ndogo / sina / pesa",
+        "chai / hanywi / yeye"
+      ]
+    }
+  ],
+  "answers": [
+    "Sielewi. — Hapendi kahawa. — Hatujui. — Hawasomi kila siku. — Hutaki sukari. — Hamuongei Kiswahili.",
+    "Sifikiri. — Hali wali. — Hawaji leo. — Haturudi jioni. — Sinywi chai. — Hajibu haraka.",
+    "Samahani, sielewi. — Sijui. — Sipendi kahawa. — Haji leo. — Hatuna pesa ndogo. — Hawanywi chai.",
+    "pole — hapana — samahani — siyo — samahani",
+    "Samahani, sielewi. — Sipendi kahawa. — Rafiki yangu haji leo. — Sina pesa ndogo. — Yeye hanywi chai."
+  ]
+}

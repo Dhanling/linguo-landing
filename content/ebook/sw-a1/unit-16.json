@@ -1,0 +1,192 @@
+{
+  "title": "Dua kelas terakhir — dan seluruh sistem kata milik dalam satu tabel",
+  "title_target": "Miti hii ni mikubwa!",
+  "goal": "Menutup enam kelas kata benda dengan kelas *mti* dan kelas *u-*, lalu melihat seluruh sistem kata milik dan penghubung bahasa Swahili sekaligus dalam satu halaman.",
+  "bekal": [
+    "kelas M-/MI-: *mti → miti*, awalan pelaku *u-* dan *i-*",
+    "kelas U-: *ukuta → kuta*, dan kata-kata gagasan seperti *uhuru*, *upendo*",
+    "tabel lengkap *-angu/-ako/-ake* dan penghubung *-a* untuk keenam kelas"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kijijini kwao",
+      "intro": "Akhir pekan di kampung halaman Amina, di kaki pegunungan.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Karibu kijijini kwetu! Huu ni mji mdogo sana.", "id": "Selamat datang di kampung kami! Ini kota yang sangat kecil.", "literal": "selamat-datang di-kampung milik-kami! ini adalah kota kecil sangat." },
+        { "speaker": "Budi:", "text": "Ni mzuri sana. Na miti hii ni mikubwa!", "id": "Bagus sekali. Dan pohon-pohon ini besar-besar!", "literal": "adalah bagus sangat. dan pohon-pohon ini adalah besar-besar!" },
+        { "speaker": "Amina:", "text": "Ni miembe. Mwaka huu imezaa sana.", "id": "Itu pohon mangga. Tahun ini berbuah banyak.", "literal": "adalah pohon-mangga. tahun ini mereka-sudah-berbuah sangat." },
+        { "speaker": "Budi:", "text": "Na mlima ule? Jina lake nani?", "id": "Dan gunung itu? Namanya apa?", "literal": "dan gunung itu? nama milik-nya siapa?" },
+        { "speaker": "Amina:", "text": "Ni Mlima Uluguru. Mto wetu unatoka huko.", "id": "Itu Gunung Uluguru. Sungai kami datang dari sana.", "literal": "adalah Gunung Uluguru. sungai milik-kami ia-sedang-datang dari-sana." },
+        { "speaker": "Budi:", "text": "Maji ya mto ni safi?", "id": "Air sungainya bersih?", "literal": "air dari sungai adalah bersih?" },
+        { "speaker": "Amina:", "text": "Safi kabisa. Watoto huogelea humo kila jioni.", "id": "Bersih sekali. Anak-anak biasa berenang di situ tiap sore.", "literal": "bersih sama-sekali. anak-anak biasa-berenang di-dalamnya setiap sore." },
+        { "speaker": "Budi:", "text": "Nyumba yenu iko wapi?", "id": "Rumah kalian di mana?", "literal": "rumah milik-kalian ia-berada di-mana?" },
+        { "speaker": "Amina:", "text": "Pale, nyuma ya ukuta mweupe. Nina ufunguo wake.", "id": "Di sana, di belakang tembok putih. Saya punya kuncinya.", "literal": "di-sana, belakang dari tembok putih. saya-punya kunci milik-nya." },
+        { "speaker": "Budi:", "text": "Ninasikia muziki. Nyimbo hizi ni za nani?", "id": "Saya dengar musik. Lagu-lagu ini punya siapa?", "literal": "saya-sedang-dengar musik. lagu-lagu ini adalah dari siapa?" },
+        { "speaker": "Amina:", "text": "Ni za bibi yangu. Anapenda nyimbo za zamani.", "id": "Punya nenek saya. Dia suka lagu-lagu lama.", "literal": "adalah dari nenek milik-ku. dia-sedang-suka lagu-lagu dari dahulu." },
+        { "speaker": "Budi:", "text": "Ninafurahi kuwa hapa. Ukarimu wenu ni mkubwa.", "id": "Saya senang ada di sini. Keramahan kalian besar sekali.", "literal": "saya-sedang-gembira untuk-menjadi di-sini. keramahan milik-kalian adalah besar." }
+      ],
+      "notes": [
+        "**Kijiji berarti desa dan kijijini berarti di desa.** Ia kelas *ki-/vi-* dari unit 6, dan asalnya menarik: *mji* (kota) yang dikecilkan dengan awalan *ki-* menjadi \"kota kecil\". Bahasa Swahili membangun kata dengan bahan yang sudah ada, dan sekali kamu tahu bahannya, artinya bisa ditebak.",
+            "**Huogelea adalah bentuk hu- kebiasaan** yang kamu lihat di tabel unit 13: tanpa awalan pelaku sama sekali, dan berarti \"biasa berenang\". Bentuk ini sangat sering dipakai untuk menceritakan kebiasaan tempat: *Watu hapa hulima* (orang di sini bertani).",
+        "**Humo berarti \"di dalam situ\".** Sepupu *hapa* (di sini) dan *huko* (di sana), tapi khusus untuk bagian dalam sesuatu — sungai, kamar, tas. Ia ekor *-mo* yang sudah kamu temui di *yumo ndani* di unit 8.",
+        "**Kuzaa berarti melahirkan dan berbuah sekaligus.** *Mti umezaa* (pohonnya berbuah), *Amezaa mtoto* (dia melahirkan anak). Kata yang sama juga menurunkan *mzazi* (orang tua) dan *uzazi* (kelahiran).",
+        "**Ukarimu berarti keramahan, dari karim.** Ia kata kelas *u-* — kelas gagasan, tempat bahasa Swahili menaruh hampir semua kata abstraknya, persis seperti bahasa Indonesia memakai *ke-…-an*."
+      ],
+      "grammars": [
+        {
+          "title": "Kelas mti: pohon, benda panjang, dan waktu",
+          "body": [
+            "Kelas ini tampak mirip kelas orang dari luar — tunggalnya juga berawalan **m-** — tapi jamaknya **mi-**, dan awalan pelakunya sama sekali berbeda. Isinya: tumbuhan, benda memanjang, bagian badan yang berpasangan, dan satuan waktu."
+          ],
+          "table": {
+            "head": ["Tunggal", "Jamak", "Arti", "Kalimat"],
+            "rows": [
+              ["*mti*", "*miti*", "pohon", "*Mti **u**mekua.* (pohonnya tumbuh)"],
+              ["*mji*", "*miji*", "kota", "*Miji **i**nakua haraka.*"],
+              ["*mkono*", "*mikono*", "tangan; lengan", "*Mikono **ya**ngu ni chafu.*"],
+              ["*mguu*", "*miguu*", "kaki", "*Mguu **wa**ngu unauma.*"],
+              ["*mlango*", "*milango*", "pintu", "*Mlango **u**mefungwa.*"],
+              ["*mto*", "*mito*", "sungai; bantal", "*Mto **u**natoka mlimani.*"],
+              ["*mlima*", "*milima*", "gunung", "*Milima **i**ko mbali.*"],
+              ["*mwaka*", "*miaka*", "tahun", "*Mwaka **u**jao* (tahun depan)"],
+              ["*mkate*", "*mikate*", "roti", "*Mkate **u**metosha.*"]
+            ]
+          },
+          "after": [
+            "Awalan pelakunya: **u-** untuk satu, **i-** untuk banyak. Kata miliknya **wangu / yangu**, penghubungnya **wa / ya**, kata tunjuknya **huu / hii** dan **ule / ile**.",
+            "Cara membedakannya dari kelas orang di lapangan: kalau bendanya bukan manusia, ia hampir pasti kelas ini. *Mtoto anakuja* (orang → *a-*) berhadapan dengan *mti unakua* (bukan orang → *u-*).",
+            "⚠️ Bahaya kecil: *mto* berarti **sungai** dan **bantal**. Konteks yang memisahkan, dan penduduk setempat pun bercanda soal ini."
+          ]
+        },
+        {
+          "title": "Kata milik dan penghubung -a: keenam kelas sekaligus",
+          "body": [
+            "Halaman ini adalah tulang punggung bahasa Swahili. Kata milik selalu **akar -angu/-ako/-ake/-etu/-enu/-ao** dengan awalan kelasnya di depan; penghubung *-a* bekerja dengan awalan yang sama persis."
+          ],
+          "table": {
+            "head": ["Kelas", "Contoh benda", "milikku", "milikmu", "penghubung -a"],
+            "rows": [
+              ["M-/WA-", "*mtoto / watoto*", "*wangu / wangu*", "*wako / wako*", "*wa / wa*"],
+              ["M-/MI-", "*mti / miti*", "*wangu / yangu*", "*wako / yako*", "*wa / ya*"],
+              ["JI-/MA-", "*gari / magari*", "*langu / yangu*", "*lako / yako*", "*la / ya*"],
+              ["KI-/VI-", "*kitabu / vitabu*", "*changu / vyangu*", "*chako / vyako*", "*cha / vya*"],
+              ["N-", "*nyumba / nyumba*", "*yangu / zangu*", "*yako / zako*", "*ya / za*"],
+              ["U-", "*ukuta / kuta*", "*wangu / zangu*", "*wako / zako*", "*wa / za*"]
+            ]
+          },
+          "after": [
+            "Enam akar kata miliknya tak pernah berubah: **-angu** (ku), **-ako** (mu), **-ake** (nya), **-etu** (kami), **-enu** (kalian), **-ao** (mereka). Yang berganti cuma awalannya. Jadi *kitabu changu*, *vitabu vyangu*, *nyumba yangu*, *nyumba zangu*, *gari langu*, *magari yangu* — enam bentuk, satu akar.",
+            "Penghubung *-a* menutup semua hubungan \"dari, milik, jenis, untuk\": *mwalimu wa Kiswahili* (guru bahasa Swahili), *kitabu cha Amina* (buku Amina), *maji ya matunda* (jus buah), *gari la baba* (mobil ayah), *nyimbo za zamani* (lagu-lagu lama).",
+            "Dua kata milik yang sering bikin ragu: *-ake* berarti \"miliknya\" untuk satu pemilik, sementara *-ao* berarti \"milik mereka\". *Nyumba yake* (rumahnya) berhadapan dengan *nyumba yao* (rumah mereka). Perhatikan bahwa awalannya ditentukan oleh **benda yang dimiliki**, bukan oleh pemiliknya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kelas u-: tempat bahasa Swahili menaruh gagasan",
+      "blocks": [
+        { "type": "p", "text": "Awalan **u-** membentuk kata benda abstrak dari kata sifat atau kata kerja — tugas yang persis sama dengan *ke-…-an* dalam bahasa Indonesia. Sekali kamu tahu akarnya, kata barunya bisa kamu tebak sendiri." },
+        { "type": "tabel", "head": ["Kata dasar", "Jadi kata u-", "Arti"], "rows": [
+          ["*huru* (bebas)", "*uhuru*", "kemerdekaan"],
+          ["*kupenda* (mencintai)", "*upendo*", "cinta"],
+          ["*rafiki* (teman)", "*urafiki*", "persahabatan"],
+          ["*kweli* (benar)", "*ukweli*", "kebenaran"],
+          ["*-zuri* (bagus)", "*uzuri*", "keindahan"],
+          ["*mgonjwa* (orang sakit)", "*ugonjwa*", "penyakit"],
+          ["*-vivu* (malas)", "*uvivu*", "kemalasan"],
+          ["*karimu* (murah hati)", "*ukarimu*", "keramahan"],
+          ["*salama* (aman)", "*usalama*", "keamanan"],
+          ["*-hai* (hidup)", "*uhai*", "kehidupan"]
+        ]},
+        { "type": "p", "text": "Kelas yang sama juga memuat benda-benda tipis dan panjang, dan yang ini punya bentuk jamak: *ukuta* → *kuta* (tembok), *ufunguo* → *funguo* (kunci), *uso* → *nyuso* (wajah), *wimbo* → *nyimbo* (lagu), *ubao* → *mbao* (papan). Awalan pelakunya *u-* untuk satu dan *zi-* untuk banyak." },
+        { "type": "p", "text": "*Uhuru* mungkin kata Swahili paling terkenal setelah *safari* dan *hakuna matata* — ia nama jalan, stadion, dan tugu di seluruh Afrika Timur, dan menjadi kata kunci gerakan kemerdekaan tahun 1960-an. *Uhuru na umoja* (kemerdekaan dan persatuan) adalah semboyan negara Tanzania." }
+      ]
+    },
+    {
+      "title": "Mazingira — alam di sekitar",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*mlima* / *milima*", "m-LI-ma", "gunung"],
+          ["*mto* / *mito*", "m-TO", "sungai"],
+          ["*msitu* / *misitu*", "m-SI-tu", "hutan"],
+          ["*bahari*", "ba-HA-ri", "laut"],
+          ["*ziwa* / *maziwa*", "ZI-wa", "danau"],
+          ["*kisiwa* / *visiwa*", "ki-SI-wa", "pulau"],
+          ["*jangwa*", "JA-ngwa", "gurun"],
+          ["*bonde* / *mabonde*", "BON-dé", "lembah"],
+          ["*shamba* / *mashamba*", "SYAM-ba", "kebun; ladang"],
+          ["*kijiji* / *vijiji*", "ki-JI-ji", "desa"],
+          ["*mwezi*", "MWÉ-zi", "bulan (di langit)"],
+          ["*nyota*", "NYO-ta", "bintang"],
+          ["*anga*", "A-nga", "langit"],
+          ["*ardhi*", "AR-dzi", "tanah; bumi"]
+        ]},
+        { "type": "p", "text": "⚠️ *Maziwa* berarti **danau-danau** dan **susu** sekaligus — dua kata berbeda yang bentuk jamaknya kebetulan sama. Danau-danau besar Afrika Timur disebut *Maziwa Makuu*, dan yang terbesar, Danau Victoria, disebut *Ziwa Nyanza* dalam bahasa setempat." },
+        { "type": "p", "text": "Gunung tertinggi Afrika ada di Tanzania: *Mlima Kilimanjaro*. Namanya sendiri diperdebatkan asal-usulnya, tapi *kilima* dalam bahasa Swahili berarti \"bukit\" — bentuk kecil dari *mlima*, dengan awalan *ki-* yang sama seperti *kijiji* dari *mji*. Sebuah nama yang, kalau dibaca apa adanya, berarti \"bukit kecil\" untuk gunung setinggi 5.895 meter." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "mti / miti", "baca": "m-TI", "id": "pohon" },
+    { "sw": "mji / miji", "baca": "m-JI", "id": "kota" },
+    { "sw": "kijiji / vijiji", "baca": "ki-JI-ji", "id": "desa" },
+    { "sw": "mlima / milima", "baca": "m-LI-ma", "id": "gunung" },
+    { "sw": "mto / mito", "baca": "m-TO", "id": "sungai; bantal" },
+    { "sw": "msitu / misitu", "baca": "m-SI-tu", "id": "hutan" },
+    { "sw": "mkono / mikono", "baca": "m-KO-no", "id": "tangan; lengan" },
+    { "sw": "mguu / miguu", "baca": "m-GU-u", "id": "kaki" },
+    { "sw": "mlango / milango", "baca": "m-LA-ngo", "id": "pintu" },
+    { "sw": "mkate / mikate", "baca": "m-KA-té", "id": "roti" },
+    { "sw": "mwembe / miembe", "baca": "MWÉM-bé", "id": "pohon mangga" },
+    { "sw": "ukuta / kuta", "baca": "u-KU-ta", "id": "tembok" },
+    { "sw": "ufunguo / funguo", "baca": "u-fu-NGU-o", "id": "kunci" },
+    { "sw": "uso / nyuso", "baca": "U-so", "id": "wajah" },
+    { "sw": "wimbo / nyimbo", "baca": "WIM-bo", "id": "lagu" },
+    { "sw": "uhuru", "baca": "u-HU-ru", "id": "kemerdekaan" },
+    { "sw": "upendo", "baca": "u-PÉN-do", "id": "cinta" },
+    { "sw": "urafiki", "baca": "u-ra-FI-ki", "id": "persahabatan" },
+    { "sw": "ukweli", "baca": "u-KWÉ-li", "id": "kebenaran" },
+    { "sw": "ukarimu", "baca": "u-ka-RI-mu", "id": "keramahan" },
+    { "sw": "umoja", "baca": "u-MO-ja", "id": "persatuan" },
+    { "sw": "muziki", "baca": "mu-ZI-ki", "id": "musik" },
+    { "sw": "kuogelea", "baca": "ku-o-gé-LÉ-a", "id": "berenang" },
+    { "sw": "kuzaa", "baca": "ku-ZA-a", "id": "melahirkan; berbuah" },
+    { "sw": "kukua", "baca": "ku-KU-a", "id": "tumbuh" },
+    { "sw": "kufunga", "baca": "ku-FU-nga", "id": "menutup; mengikat" },
+    { "sw": "kufungua", "baca": "ku-fu-NGU-a", "id": "membuka" },
+    { "sw": "humo", "baca": "HU-mo", "id": "di dalam situ" },
+    { "sw": "ziwa / maziwa", "baca": "ZI-wa", "id": "danau" },
+    { "sw": "kisiwa / visiwa", "baca": "ki-SI-wa", "id": "pulau" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi jamak, kata sifatnya ikut.",
+      "items": ["mti mkubwa → ____", "mji mzuri → ____", "mlima mrefu → ____", "mkono mchafu → ____", "mkate mpya → ____", "mlango mdogo → ____"]
+    },
+    {
+      "prompt": "Lengkapi dengan awalan pelaku yang tepat (u- atau i-).",
+      "items": ["Mti ____mekua. (satu pohon)", "Miti ____mekua. (banyak pohon)", "Mto ____natoka mlimani.", "Milima ____ko mbali.", "Mkate ____metosha."]
+    },
+    {
+      "prompt": "Isi dengan kata milik \"saya\" yang tepat.",
+      "items": ["kitabu ____", "nyumba ____", "gari ____", "miti ____", "watoto ____", "ufunguo ____"]
+    },
+    {
+      "prompt": "Isi dengan penghubung -a yang tepat.",
+      "items": ["mwalimu ____ Kiswahili", "kitabu ____ Amina", "gari ____ baba", "maji ____ matunda", "nyimbo ____ zamani"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["mikubwa / hii / ni / miti", "wetu / unatoka / mlimani / mto", "nani / hizi / za / nyimbo / ni", "mweupe / nyuma / ukuta / ya", "mkubwa / wenu / ni / ukarimu"]
+    }
+  ],
+  "answers": [
+    "miti mikubwa — miji mizuri — milima mirefu — mikono michafu — mikate mipya — milango midogo",
+    "u — i — u — i — u",
+    "changu — yangu — langu — yangu — wangu — wangu",
+    "wa — cha — la — ya — za",
+    "Miti hii ni mikubwa. — Mto wetu unatoka mlimani. — Nyimbo hizi ni za nani? — Nyuma ya ukuta mweupe. — Ukarimu wenu ni mkubwa."
+  ]
+}

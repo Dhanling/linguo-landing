@@ -1,0 +1,193 @@
+{
+  "title": "Keluarga: kelas orang dan jamak yang mengganti kepala kata",
+  "title_target": "Hii ni familia yangu",
+  "goal": "Menyebut anggota keluarga, memperkenalkan orang, membentuk jamak dengan mengganti awalan, dan mengatakan \"punya\" tanpa memakai kata kerja sama sekali.",
+  "bekal": [
+    "membentuk jamak kelas orang: *mtoto → watoto*, *mwalimu → walimu*",
+    "memasangkan kata sifat dengan kelasnya: *mtoto mdogo → watoto wadogo*",
+    "mengatakan punya dan tidak punya dengan *nina*, *una*, *ana* — dan *sina*, *huna*, *hana*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Picha ya familia",
+      "intro": "Sore hari di beranda. Amina menunjukkan foto-foto di ponselnya kepada Budi.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Angalia, hii ni picha ya familia yangu.", "id": "Lihat, ini foto keluarga saya.", "literal": "lihat, ini adalah gambar dari keluarga milik-ku." },
+        { "speaker": "Budi:", "text": "Familia yako ni kubwa! Hawa ni nani?", "id": "Keluargamu besar! Mereka ini siapa?", "literal": "keluarga milik-mu adalah besar! ini-orang-orang adalah siapa?" },
+        { "speaker": "Amina:", "text": "Huyu ni baba yangu, na huyu ni mama yangu.", "id": "Ini ayah saya, dan ini ibu saya.", "literal": "ini-orang adalah ayah milik-ku, dan ini-orang adalah ibu milik-ku." },
+        { "speaker": "Budi:", "text": "Baba yako ni mrefu sana! Yeye ni mwalimu?", "id": "Ayahmu tinggi sekali! Dia guru?", "literal": "ayah milik-mu adalah tinggi sangat! dia adalah guru?" },
+        { "speaker": "Amina:", "text": "Hapana, yeye ni daktari. Mama yangu ni mwalimu.", "id": "Bukan, dia dokter. Ibu saya guru.", "literal": "tidak, dia adalah dokter. ibu milik-ku adalah guru." },
+        { "speaker": "Budi:", "text": "Na hawa watoto wadogo ni nani?", "id": "Dan anak-anak kecil ini siapa?", "literal": "dan ini-orang-orang anak-anak kecil-kecil adalah siapa?" },
+        { "speaker": "Amina:", "text": "Hao ni watoto wa kaka yangu. Ana watoto watatu.", "id": "Mereka anak-anak kakak saya. Dia punya tiga anak.", "literal": "itu-orang-orang adalah anak-anak dari kakak milik-ku. dia-punya anak-anak tiga." },
+        { "speaker": "Budi:", "text": "Wewe una watoto pia?", "id": "Kamu punya anak juga?", "literal": "kamu kamu-punya anak-anak juga?" },
+        { "speaker": "Amina:", "text": "Hapana, sina. Sina mume bado. Na wewe je?", "id": "Tidak, saya tidak punya. Saya belum punya suami. Kalau kamu?", "literal": "tidak, saya-tidak-punya. saya-tidak-punya suami belum. dan kamu bagaimana?" },
+        { "speaker": "Budi:", "text": "Mimi nina dada mmoja tu. Yeye ni mwanafunzi.", "id": "Saya cuma punya satu adik perempuan. Dia mahasiswa.", "literal": "saya saya-punya saudari satu saja. dia adalah pelajar." },
+        { "speaker": "Amina:", "text": "Familia yako ni ndogo, lakini nzuri. Karibu nyumbani kwetu!", "id": "Keluargamu kecil, tapi bagus. Silakan mampir ke rumah kami!", "literal": "keluarga milik-mu adalah kecil, tetapi bagus. selamat-datang di-rumah milik-kami!" },
+        { "speaker": "Budi:", "text": "Asante sana, dada!", "id": "Terima kasih banyak, kak!", "literal": "terima-kasih sangat, kakak-perempuan!" }
+      ],
+      "notes": [
+        "**Hii, huyu, hawa — kata \"ini\" ada banyak.** Bahasa Swahili memilih bentuk \"ini\" menurut kelas bendanya: *huyu* untuk satu orang, *hawa* untuk banyak orang, *hii* untuk benda seperti *picha* dan *familia*. Untuk sekarang hafalkan ketiganya sebagai kata utuh; tabel lengkapnya menyusul di unit 6.",
+        "**Ya dalam picha ya familia berarti \"dari\" alias \"-nya\".** Bentuknya ikut kelas benda di depannya: *picha ya familia* (gambar dari keluarga), tetapi *watoto wa kaka* (anak-anak dari kakak). Sama seperti kata milik, ia berganti baju — dan itu memang inti bahasa ini.",
+        "**Je? di ujung kalimat berarti \"bagaimana?\".** *Na wewe je?* adalah cara melemparkan pertanyaan yang sama kembali ke lawan bicara tanpa mengulang kalimatnya. Sepotong kecil yang membuat percakapanmu langsung terdengar hidup.",
+        "**Bado berarti \"belum\" dan berdiri di ujung.** *Sina mume bado* = \"saya belum punya suami\". Berdiri sendiri, *Bado* juga jawaban lengkap untuk \"sudah?\" — artinya \"belum\".",
+        "**Dada dan kaka bukan cuma untuk saudara kandung.** Keduanya dipakai menyapa orang seumuran: *dada* untuk perempuan, *kaka* untuk laki-laki, persis seperti \"mbak\" dan \"mas\". Kepada yang lebih tua, pakai *mama* dan *baba* — juga bukan berarti orang tua kandung."
+      ],
+      "grammars": [
+        {
+          "title": "Kelas orang: jamak yang mengganti kepala kata",
+          "body": [
+            "Bahasa Swahili tidak menambahkan akhiran untuk jamak — ia **mengganti awalannya**. Kelas pertama yang kamu pasang adalah kelas orang: **M-** untuk satu orang, **WA-** untuk banyak orang."
+          ],
+          "table": {
+            "head": ["Satu orang", "Banyak orang", "Arti", "Catatan bunyi"],
+            "rows": [
+              ["*mtu*", "*watu*", "orang", "m- → wa-"],
+              ["*mtoto*", "*watoto*", "anak", "m- → wa-"],
+              ["*mgeni*", "*wageni*", "tamu", "m- → wa-"],
+              ["*mzee*", "*wazee*", "orang tua", "m- → wa-"],
+              ["*mwalimu*", "*walimu*", "guru", "mw- → w- (bukan *wawalimu*)"],
+              ["*mwanafunzi*", "*wanafunzi*", "pelajar", "mw- → w-"],
+              ["*Mtanzania*", "*Watanzania*", "orang Tanzania", "sama untuk semua nama bangsa"]
+            ]
+          },
+          "after": [
+            "Kata sifat **ikut berganti awalan bersama bendanya**, dan inilah bunyi khas bahasa Swahili: *mtoto mdogo* (anak kecil) → *watoto wadogo* (anak-anak kecil). *mgeni mzuri* → *wageni wazuri*. *mzee mrefu* → *wazee warefu*. Satu bunyi, menular ke seluruh kalimat.",
+            "Enam kata sifat yang paling sering dipakai: **-zuri** (bagus), **-baya** (buruk), **-kubwa** (besar), **-dogo** (kecil), **-refu** (tinggi; panjang), **-fupi** (pendek). Tanda hubung di depannya artinya: awalan kelasnya menyusul.",
+            "⚠️ Tidak semua kata tentang orang masuk kelas ini. *Baba*, *mama*, *dada*, *kaka*, *rafiki*, dan *daktari* tidak berawalan *m-* karena semuanya kata pinjaman — jamaknya dibentuk lain (*marafiki*, *madaktari*) atau tidak berubah sama sekali. Tapi mereka tetap **diperlakukan sebagai orang** dalam kalimat: *baba yangu ni mrefu*, bukan *baba yangu ni ndefu*."
+          ]
+        },
+        {
+          "title": "Punya: nina, una, ana — tanpa kata kerja",
+          "body": [
+            "Bahasa Swahili tidak punya kata kerja \"punya\". Yang ada adalah awalan pelaku yang ditempelkan langsung ke *na* (\"dengan\") — harfiahnya \"saya dengan\", \"kamu dengan\"."
+          ],
+          "table": {
+            "head": ["Pelaku", "Punya", "Cara baca", "Tidak punya", "Contoh"],
+            "rows": [
+              ["*mimi*", "**nina**", "NI-na", "**sina**", "*Nina dada.* (saya punya saudari)"],
+              ["*wewe*", "**una**", "U-na", "**huna**", "*Una watoto?* (kamu punya anak?)"],
+              ["*yeye*", "**ana**", "A-na", "**hana**", "*Ana kazi.* (dia punya pekerjaan)"],
+              ["*sisi*", "**tuna**", "TU-na", "**hatuna**", "*Tuna wageni.* (kami punya tamu)"],
+              ["*ninyi*", "**mna**", "m-NA", "**hamna**", "*Mna muda?* (kalian punya waktu?)"],
+              ["*wao*", "**wana**", "WA-na", "**hawana**", "*Wana nyumba.* (mereka punya rumah)"]
+            ]
+          },
+          "after": [
+            "Perhatikan bentuk ingkarnya: **si-**, **hu-**, **ha-**, **hatu-**, **ham-**, **hawa-**. Enam awalan ini akan muncul lagi persis sama di unit 4 untuk mengingkarkan seluruh kata kerja bahasa Swahili. Menghafalnya sekarang berarti sudah setengah jalan.",
+            "*Sina* berdiri sendiri sudah menjadi jawaban lengkap untuk \"kamu punya?\" — artinya \"saya tidak punya\". Sama seperti *hana*, *hatuna*, dan seterusnya.",
+            "Kalimat \"punya\" yang berisi angka menaruh angkanya **di belakang benda**: *nina kaka wawili* (saya punya dua kakak), *ana watoto watatu* (dia punya tiga anak). Angkanya ikut berganti awalan juga — itu urusan unit 5."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Familia yangu — seisi rumah dalam satu tabel",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*baba*", "BA-ba", "ayah"],
+          ["*mama*", "MA-ma", "ibu"],
+          ["*mtoto* / *watoto*", "m-TO-to", "anak / anak-anak"],
+          ["*kaka*", "KA-ka", "kakak laki-laki; saudara laki-laki"],
+          ["*dada*", "DA-da", "kakak perempuan; saudara perempuan"],
+          ["*ndugu*", "n-DU-gu", "saudara; kerabat"],
+          ["*babu*", "BA-bu", "kakek"],
+          ["*bibi*", "BI-bi", "nenek"],
+          ["*mjomba*", "m-JOM-ba", "paman (dari pihak ibu)"],
+          ["*shangazi*", "sya-NGA-zi", "bibi (dari pihak ayah)"],
+          ["*binamu*", "bi-NA-mu", "sepupu"],
+          ["*mume* / *mke*", "MU-mé / m-KÉ", "suami / istri"],
+          ["*mzazi* / *wazazi*", "m-ZA-zi", "orang tua (satu / berdua)"],
+          ["*familia* / *jamaa*", "fa-mi-LI-a", "keluarga / kerabat besar"]
+        ]},
+        { "type": "p", "text": "Bahasa Swahili tidak membedakan kakak dan adik dalam satu kata: *kaka* berarti saudara laki-laki, tua maupun muda. Kalau perlu ditegaskan, tambahkan *mkubwa* (besar) atau *mdogo* (kecil): *kaka mkubwa* (kakak laki-laki), *dada mdogo* (adik perempuan)." },
+        { "type": "p", "text": "Yang justru dibedakan bahasa Swahili adalah sesuatu yang tidak dibedakan bahasa Indonesia: **paman dari pihak ibu dan dari pihak ayah punya nama berbeda**. *Mjomba* adalah saudara laki-laki ibumu; saudara laki-laki ayahmu justru disebut *baba mdogo* atau *baba mkubwa* — \"ayah kecil\" dan \"ayah besar\", tergantung ia lebih muda atau lebih tua dari ayahmu. Begitu pula *shangazi* (saudara perempuan ayah) berhadapan dengan *mama mdogo* dan *mama mkubwa*." }
+      ]
+    },
+    {
+      "title": "Kazi gani? — pekerjaan yang paling sering disebut",
+      "blocks": [
+        { "type": "p", "text": "Sesudah nama dan asal, pertanyaan ketiga di Afrika Timur hampir selalu tentang pekerjaan. Semua kata berikut dipakai dengan *ni*: *Mimi ni mwalimu*, *Yeye ni dereva*." },
+        { "type": "tabel", "head": ["Satu orang", "Banyak orang", "Bahasa Indonesia"], "rows": [
+          ["*mwalimu*", "*walimu*", "guru"],
+          ["*mwanafunzi*", "*wanafunzi*", "pelajar; mahasiswa"],
+          ["*daktari*", "*madaktari*", "dokter"],
+          ["*mfanyakazi*", "*wafanyakazi*", "pekerja; pegawai"],
+          ["*mfanyabiashara*", "*wafanyabiashara*", "pedagang; pengusaha"],
+          ["*dereva*", "*madereva*", "sopir"],
+          ["*mkulima*", "*wakulima*", "petani"],
+          ["*mvuvi*", "*wavuvi*", "nelayan"],
+          ["*muuguzi*", "*wauguzi*", "perawat"],
+          ["*mhandisi*", "*wahandisi*", "insinyur"],
+          ["*askari*", "*maaskari*", "tentara; satpam"],
+          ["*mpishi*", "*wapishi*", "juru masak"]
+        ]},
+        { "type": "p", "text": "Perhatikan berapa banyak di antaranya yang dibentuk dari kata kerja: *mfanyakazi* dari *kufanya kazi* (bekerja), *mkulima* dari *kulima* (bercocok tanam), *mvuvi* dari *kuvua* (menangkap ikan), *mpishi* dari *kupika* (memasak). Awalan **m-/wa-** yang ditempelkan ke akar kata kerja berarti \"orang yang…\" — mesin pembuat kata yang akan menghemat ratusan hafalan." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "familia", "baca": "fa-mi-LI-a", "id": "keluarga" },
+    { "sw": "picha", "baca": "PI-ca", "id": "foto; gambar" },
+    { "sw": "angalia", "baca": "a-nga-LI-a", "id": "lihat!; perhatikan" },
+    { "sw": "baba", "baca": "BA-ba", "id": "ayah" },
+    { "sw": "mama", "baca": "MA-ma", "id": "ibu" },
+    { "sw": "kaka", "baca": "KA-ka", "id": "saudara laki-laki" },
+    { "sw": "dada", "baca": "DA-da", "id": "saudara perempuan" },
+    { "sw": "mtoto / watoto", "baca": "m-TO-to", "id": "anak / anak-anak" },
+    { "sw": "mtu / watu", "baca": "m-TU", "id": "orang / orang-orang" },
+    { "sw": "mume", "baca": "MU-mé", "id": "suami" },
+    { "sw": "mke", "baca": "m-KÉ", "id": "istri" },
+    { "sw": "ndugu", "baca": "n-DU-gu", "id": "saudara; kerabat" },
+    { "sw": "daktari", "baca": "dak-TA-ri", "id": "dokter" },
+    { "sw": "dereva", "baca": "dé-RÉ-va", "id": "sopir" },
+    { "sw": "kazi", "baca": "KA-zi", "id": "pekerjaan" },
+    { "sw": "nyumbani", "baca": "nyum-BA-ni", "id": "di rumah; ke rumah" },
+    { "sw": "kubwa", "baca": "KU-bwa", "id": "besar" },
+    { "sw": "dogo", "baca": "DO-go", "id": "kecil" },
+    { "sw": "refu", "baca": "RÉ-fu", "id": "tinggi; panjang" },
+    { "sw": "fupi", "baca": "FU-pi", "id": "pendek" },
+    { "sw": "zuri", "baca": "ZU-ri", "id": "bagus; cantik" },
+    { "sw": "baya", "baca": "BA-ya", "id": "buruk; jelek" },
+    { "sw": "nina / una / ana", "baca": "NI-na", "id": "saya / kamu / dia punya" },
+    { "sw": "sina / huna / hana", "baca": "SI-na", "id": "saya / kamu / dia tidak punya" },
+    { "sw": "bado", "baca": "BA-do", "id": "belum; masih" },
+    { "sw": "lakini", "baca": "la-KI-ni", "id": "tetapi" },
+    { "sw": "tu", "baca": "tu", "id": "saja; hanya" },
+    { "sw": "na", "baca": "na", "id": "dan; dengan" },
+    { "sw": "huyu / hawa", "baca": "HU-yu / HA-wa", "id": "orang ini / orang-orang ini" },
+    { "sw": "hao", "baca": "HA-o", "id": "mereka itu" },
+    { "sw": "je", "baca": "jé", "id": "bagaimana? (di ujung kalimat)" },
+    { "sw": "muda", "baca": "MU-da", "id": "waktu; tempo" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi jamak. Ingat, kata sifatnya ikut berubah.",
+      "items": ["mtoto mdogo → ____", "mgeni mzuri → ____", "mwalimu mrefu → ____", "mzee mkubwa → ____", "mwanafunzi mfupi → ____", "Mtanzania mzuri → ____"]
+    },
+    {
+      "prompt": "Lengkapi dengan bentuk \"punya\" yang tepat.",
+      "items": ["Mimi ____ dada wawili. (punya)", "Yeye ____ watoto. (tidak punya)", "Wewe ____ kazi? (punya)", "Sisi ____ wageni leo. (punya)", "Wao ____ nyumba hapa. (tidak punya)", "Ninyi ____ muda? (punya)"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Ini keluarga saya.", "Ayah saya dokter.", "Dia punya tiga anak.", "Saya tidak punya anak.", "Anak-anak kecil ini siapa?", "Keluargamu besar!"]
+    },
+    {
+      "prompt": "Jawab dengan kata kekerabatan yang tepat dalam bahasa Swahili.",
+      "items": ["Ibu dari ibumu.", "Saudara laki-laki ibumu.", "Anak dari mjomba-mu.", "Ayah dari ayahmu.", "Saudara perempuan ayahmu."]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["yangu / familia / kubwa / ni", "watatu / ana / watoto", "mwalimu / mama / ni / yangu", "sina / bado / mume", "wadogo / hawa / watoto / ni / nani"]
+    }
+  ],
+  "answers": [
+    "watoto wadogo — wageni wazuri — walimu warefu — wazee wakubwa — wanafunzi wafupi — Watanzania wazuri",
+    "nina — hana — una — tuna — hawana — mna",
+    "Hii ni familia yangu. — Baba yangu ni daktari. — Ana watoto watatu. — Sina watoto. — Hawa watoto wadogo ni nani? — Familia yako ni kubwa!",
+    "bibi — mjomba — binamu — babu — shangazi",
+    "Familia yangu ni kubwa. — Ana watoto watatu. — Mama yangu ni mwalimu. — Sina mume bado. — Hawa watoto wadogo ni nani?"
+  ]
+}

@@ -1,0 +1,576 @@
+{
+  "title": "Gerbong -me-: sudah selesai, dan hasilnya masih terasa",
+  "title_target": "Bado sijala",
+  "goal": "Membedakan \"tadi saya makan\" dari \"saya sudah makan\", mengatakan belum, dan memakai satu gerbong yang di bahasa Swahili juga berarti keadaan sekarang.",
+  "bekal": [
+    "gerbong *-me-* untuk perbuatan yang sudah selesai",
+    "ingkarnya dengan *-ja-*: *sijala* (saya belum makan)",
+    "kata kerja yang dengan *-me-* berubah arti jadi keadaan: *nimechoka*, *nimeshiba*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Karibu nyumbani",
+      "intro": "Sore hari, Budi diundang makan di rumah keluarga Amina untuk pertama kalinya.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Hodi hodi!",
+          "id": "Permisi! (di depan pintu)",
+          "literal": "hodi hodi!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibu sana! Umefika mapema.",
+          "id": "Silakan masuk! Kamu datang lebih awal.",
+          "literal": "selamat-datang sangat! kamu-sudah-tiba lebih-awal."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nimeshafika, ndiyo. Nimeleta matunda kidogo.",
+          "id": "Iya, saya sudah sampai. Saya bawa sedikit buah.",
+          "literal": "saya-sudah-tiba, ya. saya-sudah-bawa buah-buah sedikit."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Asante sana! Umekula?",
+          "id": "Terima kasih banyak! Sudah makan?",
+          "literal": "terima-kasih sangat! kamu-sudah-makan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bado sijala. Nimekunywa chai tu asubuhi.",
+          "id": "Belum makan. Tadi pagi saya cuma minum teh.",
+          "literal": "belum saya-belum-makan. saya-sudah-minum teh saja pagi."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibu chakula! Mama amepika pilau.",
+          "id": "Silakan makan! Ibu sudah masak pilau.",
+          "literal": "selamat-datang makanan! ibu dia-sudah-masak pilau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Harufu nzuri sana! Nimeshiba kwa harufu tu.",
+          "id": "Baunya harum sekali! Baru dari baunya saja saya sudah kenyang.",
+          "literal": "bau bagus sangat! saya-sudah-kenyang dengan bau saja."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Baba hajarudi bado. Yuko kazini mpaka saa mbili.",
+          "id": "Ayah belum pulang. Dia di tempat kerja sampai jam delapan.",
+          "literal": "ayah dia-belum-kembali belum. dia-berada di-kerja sampai jam dua."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aa, nimesahau kitu... simu yangu iko wapi?",
+          "id": "Ah, saya lupa sesuatu... telepon saya di mana?",
+          "literal": "aa, saya-sudah-lupa benda... telepon milik-ku ia-berada di-mana?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Iko mezani pale. Umechoka, siyo?",
+          "id": "Ada di meja itu. Kamu capek, ya?",
+          "literal": "ia-berada di-meja sana. kamu-sudah-capek, bukan-begitu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kidogo. Nimetembea sana leo — nimeona mji wote!",
+          "id": "Sedikit. Hari ini saya banyak jalan — saya sudah lihat seluruh kota!",
+          "literal": "sedikit. saya-sudah-jalan sangat hari-ini — saya-sudah-lihat kota semua!"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Pole sana! Kaa, chakula kiko tayari.",
+          "id": "Kasihan! Duduk dulu, makanannya sudah siap.",
+          "literal": "sabar sangat! duduklah, makanan ia-berada siap."
+        }
+      ],
+      "notes": [
+        "**Hodi adalah kata mengetuk pintu.** Diucapkan, bukan diketukkan, dan jawabannya selalu *karibu*. Bahkan di rumah berpintu terbuka, orang tetap berseru *hodi* sebelum masuk — dan seorang tamu yang tahu berseru *hodi* langsung terdengar seperti orang yang pernah tinggal di sini.",
+        "**Nimeshafika adalah -me- yang disisipi -sha-.** Sisipan itu potongan dari *kwisha* (selesai) dan berarti \"sudah terlanjur; sudah sejak tadi\". *Nimekula* = saya sudah makan; *nimeshakula* = saya sudah makan kok, jadi tak usah repot.",
+        "**Bado punya dua tugas.** Sebagai jawaban tunggal ia berarti \"belum\". Di dalam kalimat ia menemani bentuk *-ja-* dan boleh berdiri di depan atau di belakang: *Bado sijala* = *Sijala bado*. Ia juga berarti \"masih\": *Bado ninasoma* (saya masih belajar).",
+        "**Pilau adalah nasi berempah yang akan terasa akrab di lidahmu**, sepupu langsung nasi kebuli — dan kembarannya yang lebih mewah, *biriani*, memang biryani yang sama. Rempahnya datang lewat jalur pelayaran yang sama dengan yang membawa kata-kata Arab ke dalam bahasa ini.",
+        "**Mpaka berarti \"sampai\".** *Mpaka saa mbili* (sampai jam delapan), *mpaka kesho* (sampai besok), *kutoka... mpaka...* (dari… sampai…). Kata yang sama juga berarti \"perbatasan\"."
+      ],
+      "grammars": [
+        {
+          "title": "-me-: sudah, dan masih terasa sekarang",
+          "body": [
+            "Bahasa Swahili membedakan dua macam masa lalu, dan bedanya bukan soal jauh-dekatnya waktu melainkan soal **apakah hasilnya masih terasa sekarang**.",
+            "*Nilikula* = saya makan (tadi; ceritanya sudah lewat). *Nimekula* = saya sudah makan (jadi sekarang saya kenyang — jangan tawari lagi)."
+          ],
+          "table": {
+            "head": [
+              "Dengan -li-",
+              "Dengan -me-",
+              "Bedanya"
+            ],
+            "rows": [
+              [
+                "*Nilifika saa tatu.*",
+                "*Nimefika.*",
+                "\"Saya tiba jam sembilan\" vs \"Saya sudah sampai (ini saya)\""
+              ],
+              [
+                "*Alilala mapema.*",
+                "*Amelala.*",
+                "\"Dia tidur lebih awal\" vs \"Dia sedang tidur sekarang\""
+              ],
+              [
+                "*Nilichoka jana.*",
+                "*Nimechoka.*",
+                "\"Kemarin saya capek\" vs \"Saya capek sekarang\""
+              ],
+              [
+                "*Mama alipika pilau.*",
+                "*Mama amepika pilau.*",
+                "\"Ibu masak pilau\" vs \"Pilaunya sudah jadi\""
+              ],
+              [
+                "*Nilisahau.*",
+                "*Nimesahau.*",
+                "\"Saya lupa waktu itu\" vs \"Saya lupa — sekarang saya tidak ingat\""
+              ],
+              [
+                "*Alivaa kanzu.*",
+                "*Amevaa kanzu.*",
+                "\"Dia memakai kanzu\" vs \"Dia sedang berkanzu\""
+              ]
+            ]
+          },
+          "after": [
+            "Baris-baris terakhir memperlihatkan hal yang mengejutkan pelajar baru: untuk sejumlah kata kerja, **-me- justru menerjemahkan keadaan sekarang**. *Amesimama* = dia sedang berdiri (dia sudah berdiri, dan masih). *Amekaa* = dia sedang duduk. *Amevaa* = dia sedang memakai. *Nimeshiba* = saya kenyang. *Nimeelewa* = saya paham sekarang.",
+            "Kata kerja bersuku satu tetap menahan *ku-*-nya: *nimekula*, *nimekunywa*, *nimekuja*, *nimekwenda*.",
+            "Karena *-me-* menandai hasil yang masih berlaku, ia jadi gerbong paling sering dipakai saat bertamu, berbelanja, dan menelepon: *Nimefika* (saya sudah sampai), *Nimepokea* (sudah saya terima), *Nimeelewa* (saya mengerti), *Nimemaliza* (saya sudah selesai)."
+          ]
+        },
+        {
+          "title": "Belum: gerbong -ja-",
+          "body": [
+            "Ingkar dari *-me-* bukan \"tidak sudah\" melainkan **belum** — dan gerbongnya berganti jadi *-ja-*."
+          ],
+          "table": {
+            "head": [
+              "Sudah",
+              "Belum",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "*nimekula*",
+                "**sijala**",
+                "si-JA-la",
+                "saya belum makan"
+              ],
+              [
+                "*umekula*",
+                "**hujala**",
+                "hu-JA-la",
+                "kamu belum makan"
+              ],
+              [
+                "*amekula*",
+                "**hajala**",
+                "ha-JA-la",
+                "dia belum makan"
+              ],
+              [
+                "*tumekula*",
+                "**hatujala**",
+                "ha-tu-JA-la",
+                "kami belum makan"
+              ],
+              [
+                "*mmekula*",
+                "**hamjala**",
+                "ham-JA-la",
+                "kalian belum makan"
+              ],
+              [
+                "*wamekula*",
+                "**hawajala**",
+                "ha-wa-JA-la",
+                "mereka belum makan"
+              ],
+              [
+                "*amefika*",
+                "**hajafika**",
+                "ha-ja-FI-ka",
+                "dia belum tiba"
+              ],
+              [
+                "*nimemaliza*",
+                "**sijamaliza**",
+                "si-ja-ma-LI-za",
+                "saya belum selesai"
+              ]
+            ]
+          },
+          "after": [
+            "Ekor katanya **tidak berubah** — sama seperti bentuk lampau ingkar di unit 11. Yang berganti hanya dua gerbong depannya. Kata kerja pendek melepas *ku-*-nya: *nimekula* → **sijala**, *nimekunywa* → **sijanywa**, *amekuja* → **hajaja**. Jangan tertukar dengan bentuk kini ingkar dari unit 4 (*sili*, *sinywi*, *siji*): itu \"tidak\", ini \"belum\".",
+            "Tiga kalimat yang akan kamu ucapkan berkali-kali: *Sijaelewa* (saya belum paham), *Sijui bado* (saya belum tahu), *Bado hajafika* (dia belum sampai).",
+            "Ringkasan empat gerbong yang sudah kamu pegang: **-na-** sekarang, **-li-** lampau, **-me-** sudah, dan ingkarnya masing-masing *si…i*, *siku…*, *sija…*. Satu gerbong lagi — masa depan — menunggu di unit berikutnya, dan ia yang paling mudah dari semuanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat -me- yang dipakai tiap hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Nimefika.*",
+              "ni-mé-FI-ka",
+              "Saya sudah sampai."
+            ],
+            [
+              "*Nimechoka.*",
+              "ni-mé-CO-ka",
+              "Saya capek."
+            ],
+            [
+              "*Nimeshiba.*",
+              "ni-mé-SYI-ba",
+              "Saya kenyang."
+            ],
+            [
+              "*Nimeelewa.*",
+              "ni-mé-é-LÉ-wa",
+              "Saya mengerti."
+            ],
+            [
+              "*Nimesahau.*",
+              "ni-mé-sa-HA-u",
+              "Saya lupa."
+            ],
+            [
+              "*Nimemaliza.*",
+              "ni-mé-ma-LI-za",
+              "Saya sudah selesai."
+            ],
+            [
+              "*Nimepotea.*",
+              "ni-mé-po-TÉ-a",
+              "Saya tersesat."
+            ],
+            [
+              "*Nimefurahi kukuona.*",
+              "ni-mé-fu-RA-hi",
+              "Senang bertemu denganmu."
+            ],
+            [
+              "*Amelala.*",
+              "a-mé-LA-la",
+              "Dia sedang tidur."
+            ],
+            [
+              "*Hajafika bado.*",
+              "ha-ja-FI-ka",
+              "Dia belum sampai."
+            ],
+            [
+              "*Chakula kimekwisha.*",
+              "ki-mé-KWI-sya",
+              "Makanannya sudah habis."
+            ],
+            [
+              "*Simu imezimika.*",
+              "i-mé-zi-MI-ka",
+              "Teleponnya mati."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Nimepotea* adalah kalimat yang paling perlu kamu hafal utuh sebelum berkeliling kota sendirian. Sambungannya: *Ninatafuta…* (saya sedang mencari…) dan *Unaweza kunisaidia?* (bisa tolong saya?)."
+        }
+      ]
+    },
+    {
+      "title": "Adabu ya kutembelea — sopan santun bertamu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bertamu di Afrika Timur punya urutannya sendiri, dan hampir semuanya berupa kalimat pendek yang sudah kamu punya bahannya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Saat",
+            "Yang kamu ucapkan",
+            "Yang kamu dengar"
+          ],
+          "rows": [
+            [
+              "Di depan pintu",
+              "*Hodi!*",
+              "*Karibu!*"
+            ],
+            [
+              "Masuk",
+              "*Shikamoo* (ke yang tua)",
+              "*Marahaba*"
+            ],
+            [
+              "Duduk",
+              "*Asante*",
+              "*Karibu, kaa*"
+            ],
+            [
+              "Ditawari makan",
+              "*Asante sana!*",
+              "*Karibu chakula*"
+            ],
+            [
+              "Sesudah makan",
+              "*Nimeshiba, asante*",
+              "*Karibu tena*"
+            ],
+            [
+              "Memuji masakan",
+              "*Chakula ni kitamu sana!*",
+              "*Asante!*"
+            ],
+            [
+              "Berpamitan",
+              "*Naomba niondoke*",
+              "*Karibu tena, safari njema*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Membawa sesuatu adalah kebiasaan yang selalu disambut** — buah, gula, teh, atau roti dari warung di jalan. Kalimatnya: *Nimeleta kitu kidogo* (saya bawa sedikit oleh-oleh). Menolaknya bukan kebiasaan, jadi jangan kaget kalau ditolak sekali dulu sebelum diterima."
+        },
+        {
+          "type": "p",
+          "text": "*Naomba niondoke* harfiahnya \"saya minta agar saya pergi\" — cara paling sopan berpamitan, dan bentuk kalimat yang akan kamu bongkar sendiri di unit 14. Pergi tanpa mengucapkannya dianggap terburu-buru; mengucapkannya lalu duduk sepuluh menit lagi dianggap normal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "hodi",
+      "baca": "HO-di",
+      "id": "permisi (di pintu)"
+    },
+    {
+      "sw": "kufika",
+      "baca": "ku-FI-ka",
+      "id": "tiba; sampai"
+    },
+    {
+      "sw": "kuleta",
+      "baca": "ku-LÉ-ta",
+      "id": "membawa"
+    },
+    {
+      "sw": "kusahau",
+      "baca": "ku-sa-HA-u",
+      "id": "lupa"
+    },
+    {
+      "sw": "kumaliza",
+      "baca": "ku-ma-LI-za",
+      "id": "menyelesaikan"
+    },
+    {
+      "sw": "kukwisha",
+      "baca": "ku-KWI-sya",
+      "id": "habis; selesai"
+    },
+    {
+      "sw": "kupokea",
+      "baca": "ku-po-KÉ-a",
+      "id": "menerima"
+    },
+    {
+      "sw": "kutafuta",
+      "baca": "ku-ta-FU-ta",
+      "id": "mencari"
+    },
+    {
+      "sw": "kusaidia",
+      "baca": "ku-sa-i-DI-a",
+      "id": "menolong"
+    },
+    {
+      "sw": "kusimama",
+      "baca": "ku-si-MA-ma",
+      "id": "berdiri; berhenti"
+    },
+    {
+      "sw": "kuomba",
+      "baca": "ku-OM-ba",
+      "id": "meminta; berdoa"
+    },
+    {
+      "sw": "kuondoka",
+      "baca": "ku-on-DO-ka",
+      "id": "pergi; berangkat"
+    },
+    {
+      "sw": "bado",
+      "baca": "BA-do",
+      "id": "belum; masih"
+    },
+    {
+      "sw": "mpaka",
+      "baca": "m-PA-ka",
+      "id": "sampai"
+    },
+    {
+      "sw": "harufu",
+      "baca": "ha-RU-fu",
+      "id": "bau; aroma"
+    },
+    {
+      "sw": "pilau",
+      "baca": "pi-LA-u",
+      "id": "nasi berempah"
+    },
+    {
+      "sw": "biriani",
+      "baca": "bi-ri-A-ni",
+      "id": "nasi biryani"
+    },
+    {
+      "sw": "tayari",
+      "baca": "ta-YA-ri",
+      "id": "siap"
+    },
+    {
+      "sw": "adabu",
+      "baca": "a-DA-bu",
+      "id": "sopan santun"
+    },
+    {
+      "sw": "kutembelea",
+      "baca": "ku-tém-bé-LÉ-a",
+      "id": "bertamu; mengunjungi"
+    },
+    {
+      "sw": "nimefika",
+      "baca": "ni-mé-FI-ka",
+      "id": "saya sudah sampai"
+    },
+    {
+      "sw": "nimechoka",
+      "baca": "ni-mé-CO-ka",
+      "id": "saya capek"
+    },
+    {
+      "sw": "nimeshiba",
+      "baca": "ni-mé-SYI-ba",
+      "id": "saya kenyang"
+    },
+    {
+      "sw": "nimeelewa",
+      "baca": "ni-mé-é-LÉ-wa",
+      "id": "saya mengerti"
+    },
+    {
+      "sw": "sijala",
+      "baca": "si-JA-la",
+      "id": "saya belum makan"
+    },
+    {
+      "sw": "hajafika",
+      "baca": "ha-ja-FI-ka",
+      "id": "dia belum sampai"
+    },
+    {
+      "sw": "kitamu",
+      "baca": "ki-TA-mu",
+      "id": "enak (kelas ki-)"
+    },
+    {
+      "sw": "safari njema",
+      "baca": "sa-FA-ri n-JÉ-ma",
+      "id": "selamat jalan"
+    },
+    {
+      "sw": "kuzimika",
+      "baca": "ku-zi-MI-ka",
+      "id": "mati (lampu; alat)"
+    },
+    {
+      "sw": "mgonjwa",
+      "baca": "m-GON-jwa",
+      "id": "orang sakit"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk -me-.",
+      "items": [
+        "Ninafika. → ____",
+        "Anapika chakula. → ____",
+        "Tunamaliza kazi. → ____",
+        "Wanakula. → ____",
+        "Unaelewa. → ____",
+        "Chakula kinakwisha. → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk \"belum\".",
+      "items": [
+        "Nimekula. → ____",
+        "Amefika. → ____",
+        "Tumemaliza. → ____",
+        "Wamekuja. → ____",
+        "Umeelewa. → ____",
+        "Nimeona daktari. → ____"
+      ]
+    },
+    {
+      "prompt": "Pilih -li- atau -me-, lalu tulis kalimatnya penuh.",
+      "items": [
+        "Saya sudah sampai (sekarang saya di sini). → ____",
+        "Kemarin saya tiba jam sembilan. → ____",
+        "Ibu sudah masak (makanannya siap). → ____",
+        "Tahun lalu dia belajar di Kenya. → ____",
+        "Saya capek sekarang. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": [
+        "Kamu sudah makan?",
+        "Belum, saya belum makan.",
+        "Ayah belum pulang.",
+        "Saya lupa sesuatu.",
+        "Saya sudah mengerti.",
+        "Makanannya sudah siap."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "mapema / umefika",
+        "sijala / bado",
+        "pilau / amepika / mama",
+        "bado / hajarudi / baba",
+        "leo / nimetembea / sana"
+      ]
+    }
+  ],
+  "answers": [
+    "Nimefika. — Amepika chakula. — Tumemaliza kazi. — Wamekula. — Umeelewa. — Chakula kimekwisha.",
+    "Sijala. — Hajafika. — Hatujamaliza. — Hawajaja. — Hujaelewa. — Sijaona daktari.",
+    "Nimefika. — Jana nilifika saa tatu. — Mama amepika. — Mwaka jana alisoma Kenya. — Nimechoka.",
+    "Umekula? — Bado, sijala. — Baba hajarudi bado. — Nimesahau kitu. — Nimeelewa. — Chakula kiko tayari.",
+    "Umefika mapema. — Bado sijala. — Mama amepika pilau. — Baba hajarudi bado. — Nimetembea sana leo."
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "title": "Sisipan sasaran: ninakupenda dalam satu kata",
+  "title_target": "Naomba unisaidie",
+  "goal": "Menyebut siapa yang dikenai perbuatan tanpa kata terpisah — menelepon, meminta tolong, menitip salam — dengan menyelipkan satu gerbong tambahan di tengah kata kerja.",
+  "bekal": [
+    "sisipan sasaran untuk orang: *-ni-*, *-ku-*, *-m-*, *-tu-*, *-wa-*",
+    "letaknya: pelaku + waktu + **sasaran** + akar",
+    "sisipan untuk benda, yang menandai \"yang itu, yang sudah disebut\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kwenye simu",
+      "intro": "Malam hari. Amina menelepon Budi karena meninggalkan sesuatu di kampus.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Halo? Budi? Unanisikia?", "id": "Halo? Budi? Kamu dengar saya?", "literal": "halo? Budi? kamu-sedang-saya-dengar?" },
+        { "speaker": "Budi:", "text": "Ndiyo, ninakusikia vizuri. Habari za jioni?", "id": "Ya, saya dengar kamu jelas. Selamat sore, apa kabar?", "literal": "ya, saya-sedang-kamu-dengar bagus. kabar dari sore?" },
+        { "speaker": "Amina:", "text": "Nzuri. Naomba unisaidie kidogo.", "id": "Baik. Tolong bantu saya sedikit.", "literal": "bagus. saya-minta kamu-agar-saya-tolong sedikit." },
+        { "speaker": "Budi:", "text": "Karibu. Niambie.", "id": "Silakan. Bilang saja.", "literal": "silakan. katakanlah-kepada-saya." },
+        { "speaker": "Amina:", "text": "Nimesahau kitabu changu chuoni. Unaweza kukichukua?", "id": "Saya ketinggalan buku saya di kampus. Bisa ambilkan?", "literal": "saya-sudah-lupa buku milik-ku di-kampus. kamu-bisa untuk-nya-ambil?" },
+        { "speaker": "Budi:", "text": "Ninakiona sasa hivi, kiko mezani. Nikilete lini?", "id": "Saya lihat sekarang, ada di meja. Kapan saya bawakan?", "literal": "saya-sedang-nya-lihat sekarang ini, ia-berada di-meja. saya-agar-nya-bawa kapan?" },
+        { "speaker": "Amina:", "text": "Kesho asubuhi. Utanikuta kituoni.", "id": "Besok pagi. Kamu akan menemukan saya di halte.", "literal": "besok pagi. kamu-akan-saya-temukan di-halte." },
+        { "speaker": "Budi:", "text": "Sawa. Nitakusubiri saa mbili kamili.", "id": "Oke. Saya akan menunggumu jam delapan tepat.", "literal": "oke. saya-akan-kamu-tunggu jam dua penuh." },
+        { "speaker": "Amina:", "text": "Asante sana! Unanisaidia kila wakati.", "id": "Terima kasih banyak! Kamu selalu menolong saya.", "literal": "terima-kasih sangat! kamu-sedang-saya-tolong setiap waktu." },
+        { "speaker": "Budi:", "text": "Hakuna shida. Sisi ni marafiki, tunasaidiana.", "id": "Tidak masalah. Kita teman, kita saling menolong.", "literal": "tidak-ada masalah. kami adalah teman-teman, kami-sedang-saling-tolong." },
+        { "speaker": "Amina:", "text": "Kweli kabisa. Mama anakusalimia pia.", "id": "Betul sekali. Ibu titip salam untukmu.", "literal": "sungguh sama-sekali. ibu dia-sedang-kamu-salami juga." },
+        { "speaker": "Budi:", "text": "Nisalimie mama! Tutaonana kesho, usiku mwema.", "id": "Sampaikan salam saya ke ibu! Sampai jumpa besok, selamat malam.", "literal": "salamilah-untuk-saya ibu! akan-kita-saling-lihat besok, malam baik." }
+      ],
+      "notes": [
+        "**Kusalimia berarti menyampaikan salam kepada seseorang.** *Anakusalimia* = dia titip salam untukmu; *Nisalimie mama* = sampaikan salam saya ke ibu. Titip salam adalah kebiasaan yang sangat kuat di Afrika Timur — hampir tiap percakapan telepon ditutup dengan salam untuk seisi rumah.",
+        "**Sasa hivi berarti \"barusan\" dan \"sebentar lagi\" sekaligus.** Sama seperti \"tadi\" dan \"nanti\" bertumpuk dalam satu kata. Kalau seseorang berkata *ninakuja sasa hivi*, siapkan diri untuk menunggu — dan lihat kembali catatan tentang waktu di unit 10.",
+        "**Kila wakati berarti \"setiap waktu; selalu\".** *Kila* dipakai persis seperti \"setiap\": *kila siku* (tiap hari), *kila mtu* (setiap orang), *kila mahali* (di mana-mana). Ia salah satu dari sedikit kata yang berdiri **di depan** bendanya.",
+        "**Usiku mwema adalah selamat malam saat berpisah.** Untuk menyapa di malam hari, dipakai *habari za usiku*. Pasangannya: *lala salama* (tidur nyenyak — harfiahnya \"tidurlah dengan aman\"), yang diucapkan kepada orang yang akan tidur.",
+        "**Marafiki adalah jamak dari rafiki.** Karena kata pinjaman, jamaknya dibentuk dengan *ma-*, bukan *wa-* — walaupun artinya orang. Begitu pula *madaktari*, *madereva*, *maaskari*."
+      ],
+      "grammars": [
+        {
+          "title": "Sisipan sasaran: siapa yang dikenai",
+          "body": [
+            "Kereta kata kerja bahasa Swahili punya satu gerbong lagi, dan letaknya persis di tengah: **pelaku + waktu + sasaran + akar**.",
+            "*Ni* + *na* + *ku* + *penda* = **ninakupenda** — \"saya-sedang-kamu-cinta\", alias saya mencintaimu."
+          ],
+          "table": {
+            "head": ["Sasaran", "Sisipan", "Contoh", "Cara baca", "Arti"],
+            "rows": [
+              ["saya", "**-ni-**", "*unanisaidia*", "u-na-ni-sa-i-DI-a", "kamu menolong saya"],
+              ["kamu", "**-ku-**", "*ninakupenda*", "ni-na-ku-PÉN-da", "saya mencintaimu"],
+              ["dia", "**-m-** / **-mw-**", "*ninamwona*", "ni-na-MWO-na", "saya melihatnya"],
+              ["kami", "**-tu-**", "*anatusaidia*", "a-na-tu-sa-i-DI-a", "dia menolong kami"],
+              ["kalian", "**-wa-**", "*ninawaona*", "ni-na-wa-O-na", "saya melihat kalian"],
+              ["mereka", "**-wa-**", "*tunawajua*", "tu-na-wa-JU-a", "kami mengenal mereka"]
+            ]
+          },
+          "after": [
+            "Untuk **orang**, sisipan ini hampir selalu **wajib**, bahkan kalau namanya disebutkan: *Ninamwona Amina* (saya melihat Amina) — bukan *ninaona Amina*. Sisipannya dan namanya berdiri bersama, dan justru itulah yang terdengar wajar.",
+            "Sisipan *-m-* berubah jadi **-mw-** di depan vokal: *ninamwona* (saya melihatnya), *ninamwuliza* (saya bertanya kepadanya), tapi *ninampenda* (saya menyukainya) dan *ninamsaidia* (saya menolongnya).",
+            "Sisipan ini bekerja di semua gerbong waktu dan juga di bentuk *-e*: *nilikuona* (saya melihatmu tadi), *nitakusubiri* (saya akan menunggumu), *nimemwona* (saya sudah melihatnya), *unisaidie* (tolong bantu saya), *usinisahau* (jangan lupakan saya)."
+          ]
+        },
+        {
+          "title": "Sasaran yang berupa benda",
+          "body": [
+            "Benda juga bisa jadi sasaran, dan sisipannya **ikut kelas bendanya** — bunyinya sama dengan awalan pelaku yang sudah kamu kenal. Bedanya: untuk benda, sisipan ini **tidak wajib**, dan kehadirannya menandai \"yang itu, yang sudah kita bicarakan\"."
+          ],
+          "table": {
+            "head": ["Kelas", "Sisipan", "Tanpa sisipan", "Dengan sisipan", "Bedanya"],
+            "rows": [
+              ["*kitabu*", "**-ki-**", "*ninasoma kitabu*", "*ninakisoma*", "saya membacanya (buku itu)"],
+              ["*vitabu*", "**-vi-**", "*ninasoma vitabu*", "*ninavisoma*", "saya membacanya (buku-buku itu)"],
+              ["*nyumba*", "**-i-**", "*ninaona nyumba*", "*ninaiona*", "saya melihatnya (rumah itu)"],
+              ["*nyumba* (jamak)", "**-zi-**", "*ninaona nyumba*", "*ninaziona*", "saya melihatnya (rumah-rumah itu)"],
+              ["*gari*", "**-li-**", "*ninaona gari*", "*ninaliona*", "saya melihatnya (mobil itu)"],
+              ["*magari*", "**-ya-**", "*ninaona magari*", "*ninayaona*", "saya melihatnya"]
+            ]
+          },
+          "after": [
+            "Bandingkan dua kalimat ini: *Ninanunua kitabu* (saya membeli sebuah buku — buku apa saja) dan *Ninakinunua kitabu* (saya membeli buku itu — yang tadi kita lihat). Sisipannya bekerja seperti kata \"itu\" yang menempel di kata kerja.",
+            "Beberapa kata kerja **selalu** memakai sisipan ini karena maknanya menuntut sasaran tertentu: *kukumbuka* (mengingat), *kupenda* (menyukai), *kuchukia* (membenci) — semuanya hampir tak pernah dipakai tanpa sasaran.",
+            "Akhiran **-ana** yang sudah kamu temui di *tutaonana* adalah kembaran dari halaman ini: alih-alih menyisipkan sasaran, ia menyatakan bahwa dua pihak saling melakukannya. *Kusaidia* (menolong) → *kusaidiana* (saling menolong); *kupenda* → *kupendana*; *kuona* → *kuonana*; *kujua* → *kujuana* (saling kenal)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat bersasaran yang paling sering kamu perlukan",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*Nisaidie tafadhali.*", "ni-sa-i-DI-é", "Tolong bantu saya."],
+          ["*Niambie.*", "ni-AM-bi-é", "Bilang ke saya."],
+          ["*Nipe, tafadhali.*", "NI-pé", "Tolong beri saya."],
+          ["*Nionyeshe.*", "ni-o-NYÉ-syé", "Tunjukkan ke saya."],
+          ["*Nisubiri kidogo.*", "ni-su-BI-ri", "Tunggu saya sebentar."],
+          ["*Usinisahau.*", "u-si-ni-sa-HA-u", "Jangan lupakan saya."],
+          ["*Ninakupenda.*", "ni-na-ku-PÉN-da", "Saya mencintaimu."],
+          ["*Ninakukumbuka.*", "ni-na-ku-kum-BU-ka", "Saya merindukanmu."],
+          ["*Nitakupigia simu.*", "ni-ta-ku-PI-gi-a", "Saya akan meneleponmu."],
+          ["*Nakushukuru sana.*", "na-ku-syu-KU-ru", "Saya sangat berterima kasih padamu."],
+          ["*Nisamehe.*", "ni-sa-MÉ-hé", "Maafkan saya."],
+          ["*Nionyeshe njia, tafadhali.*", "ni-o-NYÉ-syé n-JI-a", "Tolong tunjukkan jalannya."]
+        ]},
+        { "type": "p", "text": "Perhatikan bahwa hampir semuanya memakai bentuk *-e* dari unit 14 dengan sisipan *-ni-* di dalamnya. Susunannya: *u* (kamu) + *ni* (saya) + akar + *-e* → *unisaidie*, yang dalam percakapan sering dipendekkan jadi *nisaidie* saja." },
+        { "type": "p", "text": "*Ninakukumbuka* dipakai untuk kangen kepada orang, sementara *Nakumbuka* saja berarti \"saya ingat\". Satu sisipan kecil yang memisahkan ingatan dari kerinduan." }
+      ]
+    },
+    {
+      "title": "Kwenye simu — menelepon dalam bahasa Swahili",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*Halo? Naomba kuongea na…*", "Halo? Bisa bicara dengan…"],
+          ["*Ni nani anaongea?*", "Ini siapa yang bicara?"],
+          ["*Ni mimi, Budi.*", "Ini saya, Budi."],
+          ["*Unanisikia?*", "Kamu dengar saya?"],
+          ["*Mtandao ni mbaya.*", "Sinyalnya jelek."],
+          ["*Sikusikii vizuri.*", "Saya tidak dengar kamu dengan jelas."],
+          ["*Nitakupigia baadaye.*", "Saya telepon kamu nanti."],
+          ["*Nipigie ukifika.*", "Telepon saya kalau sudah sampai."],
+          ["*Tuma ujumbe.*", "Kirim pesan saja."],
+          ["*Salamu kwa familia.*", "Salam untuk keluarga."]
+        ]},
+        { "type": "p", "text": "Di Afrika Timur, pulsa disebut *salio* dan paket data *bandeli* atau *kifurushi*. Kalimat yang akan kamu perlukan di kios pulsa: *Naomba salio ya elfu tano* (minta pulsa lima ribu) dan *Nataka bandeli ya wiki* (mau paket mingguan)." },
+        { "type": "p", "text": "Kebiasaan yang khas: *kupiga miss* — menelepon lalu langsung memutus supaya lawan bicara yang menelepon balik. Bukan hal kasar, melainkan hemat pulsa yang dipahami semua orang, dan punya namanya sendiri dalam bahasa gaul: *kubipu*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "kusikia", "baca": "ku-si-KI-a", "id": "mendengar" },
+    { "sw": "kuambia", "baca": "ku-am-BI-a", "id": "memberi tahu" },
+    { "sw": "kupa", "baca": "ku-PA", "id": "memberi" },
+    { "sw": "kuonyesha", "baca": "ku-o-NYÉ-sya", "id": "menunjukkan" },
+    { "sw": "kukuta", "baca": "ku-KU-ta", "id": "menemukan; menjumpai" },
+    { "sw": "kukumbuka", "baca": "ku-kum-BU-ka", "id": "mengingat; merindukan" },
+    { "sw": "kusalimia", "baca": "ku-sa-li-MI-a", "id": "menyampaikan salam" },
+    { "sw": "kushukuru", "baca": "ku-syu-KU-ru", "id": "berterima kasih" },
+    { "sw": "kusaidiana", "baca": "ku-sa-i-di-A-na", "id": "saling menolong" },
+    { "sw": "kupendana", "baca": "ku-pén-DA-na", "id": "saling mencintai" },
+    { "sw": "kujuana", "baca": "ku-ju-A-na", "id": "saling kenal" },
+    { "sw": "kutuma", "baca": "ku-TU-ma", "id": "mengirim" },
+    { "sw": "ujumbe", "baca": "u-JUM-bé", "id": "pesan" },
+    { "sw": "mtandao", "baca": "m-tan-DA-o", "id": "jaringan; internet" },
+    { "sw": "salio", "baca": "sa-LI-o", "id": "pulsa" },
+    { "sw": "kila", "baca": "KI-la", "id": "setiap" },
+    { "sw": "wakati", "baca": "wa-KA-ti", "id": "waktu" },
+    { "sw": "sasa hivi", "baca": "SA-sa HI-vi", "id": "barusan; sebentar lagi" },
+    { "sw": "marafiki", "baca": "ma-ra-FI-ki", "id": "teman-teman" },
+    { "sw": "salamu", "baca": "sa-LA-mu", "id": "salam" },
+    { "sw": "usiku mwema", "baca": "u-SI-ku MWÉ-ma", "id": "selamat malam" },
+    { "sw": "lala salama", "baca": "LA-la sa-LA-ma", "id": "tidur nyenyak" },
+    { "sw": "ninakupenda", "baca": "ni-na-ku-PÉN-da", "id": "saya mencintaimu" },
+    { "sw": "unanisikia", "baca": "u-na-ni-si-KI-a", "id": "kamu mendengar saya" },
+    { "sw": "nisaidie", "baca": "ni-sa-i-DI-é", "id": "tolong bantu saya" },
+    { "sw": "niambie", "baca": "ni-AM-bi-é", "id": "beri tahu saya" },
+    { "sw": "nipe", "baca": "NI-pé", "id": "beri saya" },
+    { "sw": "nisamehe", "baca": "ni-sa-MÉ-hé", "id": "maafkan saya" },
+    { "sw": "halo", "baca": "HA-lo", "id": "halo" },
+    { "sw": "kupigia", "baca": "ku-pi-GI-a", "id": "menelepon (seseorang)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sisipkan sasarannya.",
+      "items": ["saya + kamu + kupenda (kini) → ____", "kamu + saya + kusaidia (kini) → ____", "saya + dia + kuona (kini) → ____", "dia + kami + kujua (kini) → ____", "saya + kamu + kusubiri (akan) → ____", "saya + dia + kuona (sudah) → ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Kamu dengar saya?", "Saya dengar kamu jelas.", "Tolong bantu saya sedikit.", "Beri tahu saya.", "Saya akan meneleponmu nanti.", "Jangan lupakan saya."]
+    },
+    {
+      "prompt": "Ganti bendanya dengan sisipan, seperti contoh: Ninasoma kitabu → Ninakisoma.",
+      "items": ["Ninanunua kitabu. → ____", "Anaona nyumba. → ____", "Tunaleta magari. → ____", "Wanauza viatu. → ____", "Nimeona gari. → ____"]
+    },
+    {
+      "prompt": "Ubah jadi bentuk \"saling\" dengan akhiran -ana.",
+      "items": ["kusaidia → ____", "kupenda → ____", "kuona → ____", "kujua → ____", "kuandika → ____"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["unanisikia / halo", "kidogo / unisaidie / naomba", "kesho / utanikuta / kituoni", "wakati / unanisaidia / kila", "mama / anakusalimia"]
+    }
+  ],
+  "answers": [
+    "ninakupenda — unanisaidia — ninamwona — anatujua — nitakusubiri — nimemwona",
+    "Unanisikia? — Ninakusikia vizuri. — Naomba unisaidie kidogo. — Niambie. — Nitakupigia simu baadaye. — Usinisahau.",
+    "Ninakinunua. — Anaiona. — Tunayaleta. — Wanaviuza. — Nimeliona.",
+    "kusaidiana — kupendana — kuonana — kujuana — kuandikiana",
+    "Halo, unanisikia? — Naomba unisaidie kidogo. — Utanikuta kituoni kesho. — Unanisaidia kila wakati. — Mama anakusalimia."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "title": "Saa ngapi? Jam Swahili yang bergeser enam angka",
+  "title_target": "Tunakutana saa ngapi?",
+  "goal": "Membaca jam dengan cara Afrika Timur, menyebut hari dan bulan, membuat janji temu — dan tidak terlambat enam jam pada hari pertama.",
+  "bekal": [
+    "menghitung jam mulai dari matahari terbit, bukan dari tengah malam",
+    "*na nusu*, *na robo*, *kasoro robo* untuk bagian jam",
+    "tujuh nama hari dan cara menyebut tanggal"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tunakutana lini?",
+      "intro": "Juma mengajak Budi ikut ke pantai. Yang tersisa tinggal menentukan jamnya — dan di situlah kesalahpahaman paling khas Afrika Timur menunggu.",
+      "lines": [
+        { "speaker": "Juma:", "text": "Kesho tunakwenda ufuoni. Tunakutana saa ngapi?", "id": "Besok kita ke pantai. Kita ketemu jam berapa?", "literal": "besok kami-sedang-pergi ke-pantai. kami-sedang-saling-temu jam berapa?" },
+        { "speaker": "Budi:", "text": "Saa ngapi ni nzuri kwako?", "id": "Jam berapa yang cocok buatmu?", "literal": "jam berapa adalah bagus untuk-mu?" },
+        { "speaker": "Juma:", "text": "Saa tatu asubuhi. Jua bado si kali.", "id": "Jam sembilan pagi. Mataharinya belum terik.", "literal": "jam tiga pagi. matahari belum bukan tajam." },
+        { "speaker": "Budi:", "text": "Ngoja kidogo... saa tatu ni saa tisa kwa saa yangu?", "id": "Tunggu sebentar... saa tatu itu jam sembilan menurut jam saya?", "literal": "tunggu sedikit... jam tiga adalah jam sembilan pada jam milik-ku?" },
+        { "speaker": "Juma:", "text": "Ndiyo! Sisi tunahesabu kutoka macheo ya jua.", "id": "Ya! Kami menghitung dari terbitnya matahari.", "literal": "ya! kami kami-sedang-hitung dari terbit dari matahari." },
+        { "speaker": "Budi:", "text": "Aa, sasa ninaelewa. Saa sita ni adhuhuri, siyo?", "id": "Ah, sekarang saya mengerti. Saa sita itu tengah hari, kan?", "literal": "aa, sekarang saya-sedang-paham. jam enam adalah tengah-hari, bukan-begitu?" },
+        { "speaker": "Juma:", "text": "Hasa! Na saa kumi na mbili jioni ni machweo.", "id": "Tepat! Dan saa kumi na mbili sore itu matahari terbenam.", "literal": "tepat! dan jam sepuluh dan dua sore adalah terbenam." },
+        { "speaker": "Budi:", "text": "Kesho ni Jumanne, siyo?", "id": "Besok Selasa, kan?", "literal": "besok adalah Selasa, bukan-begitu?" },
+        { "speaker": "Juma:", "text": "Hapana, kesho ni Jumatano. Jumamosi kuna sherehe kubwa.", "id": "Bukan, besok Rabu. Hari Sabtu ada pesta besar.", "literal": "tidak, besok adalah Rabu. Sabtu ada pesta besar." },
+        { "speaker": "Budi:", "text": "Sawa. Tunarudi saa ngapi?", "id": "Oke. Kita pulang jam berapa?", "literal": "oke. kami-sedang-kembali jam berapa?" },
+        { "speaker": "Juma:", "text": "Saa kumi na moja na nusu, kabla ya giza.", "id": "Jam setengah enam sore, sebelum gelap.", "literal": "jam sepuluh dan satu dan setengah, sebelum dari gelap." },
+        { "speaker": "Budi:", "text": "Haya basi! Tutaonana kesho saa tatu kamili.", "id": "Baiklah! Sampai jumpa besok jam sembilan tepat.", "literal": "baiklah! akan-kita-saling-lihat besok jam tiga penuh." }
+      ],
+      "notes": [
+        "**Kesalahpahaman jam adalah cerita klasik pendatang di Afrika Timur.** Kalau seseorang menyebut jam dalam bahasa Swahili, ia hampir pasti memakai hitungan Swahili. Kalau ia menyebutnya dalam bahasa Inggris, ia hampir pasti memakai hitungan internasional. Kalimat penyelamatnya satu: *Saa tatu ya Kiswahili au ya kizungu?* — jam tiga Swahili atau jam tiga cara Barat?",
+        "**Hasa berarti \"tepat sekali; persisnya\".** Kata pujian singkat yang enak dipakai saat kamu akhirnya paham sesuatu. Sepupunya: *sawa kabisa* (betul sekali) dan *ndiyo hivyo* (nah, begitu).",
+        "**Kamili berarti \"penuh; tepat\", dan kamu sudah mengenalnya sebagai \"kamil\".** *Saa tatu kamili* = jam tiga tepat. Perhatikan juga *kabla ya* (sebelum) dan pasangannya *baada ya* (sesudah) — keduanya dari bahasa Arab, dan keduanya diikuti *ya*.",
+        "**Siyo? di ujung kalimat berarti \"kan?\".** Ia mengajak lawan bicara membenarkan, persis seperti *bukan begitu?* dalam bahasa Indonesia. Bentuk lain yang sama gunanya: *je?* dan *sivyo?*",
+        "**Kutana berarti \"bertemu\" dan sudah mengandung \"saling\" di dalamnya.** Akhiran *-ana* berarti saling: *kuona* (melihat) → *kuonana* (saling melihat, alias bertemu), *kupenda* → *kupendana* (saling mencintai), *kusaidia* → *kusaidiana* (saling menolong). Itu sebabnya *tutaonana* berarti \"sampai jumpa\"."
+      ],
+      "grammars": [
+        {
+          "title": "Jam Swahili: hitungannya mulai saat matahari terbit",
+          "body": [
+            "Di garis khatulistiwa, matahari terbit dan terbenam nyaris pada jam yang sama sepanjang tahun: pukul enam pagi dan pukul enam petang. Maka bahasa Swahili menghitung jam **mulai dari matahari terbit**. Jam pertama sesudah matahari terbit adalah *saa moja* — dan itu pukul tujuh pagi.",
+            "Aturan praktisnya satu kalimat: **tambahkan atau kurangi enam**."
+          ],
+          "table": {
+            "head": ["Jam internasional", "Kiswahili", "Bagian hari", "Arti harfiah"],
+            "rows": [
+              ["07.00", "*saa moja*", "*asubuhi*", "jam kesatu (sesudah terbit)"],
+              ["09.00", "*saa tatu*", "*asubuhi*", "jam ketiga"],
+              ["12.00", "*saa sita*", "*mchana*", "jam keenam — tengah hari"],
+              ["13.00", "*saa saba*", "*mchana*", "jam ketujuh"],
+              ["16.00", "*saa kumi*", "*jioni*", "jam kesepuluh"],
+              ["18.00", "*saa kumi na mbili*", "*jioni*", "jam kedua belas — terbenam"],
+              ["20.00", "*saa mbili*", "*usiku*", "jam kedua malam"],
+              ["24.00", "*saa sita*", "*usiku*", "jam keenam malam"]
+            ]
+          },
+          "after": [
+            "Empat bagian hari itu **wajib disebut**, karena angkanya berulang dua kali sehari: *asubuhi* (pagi, sampai tengah hari), *mchana* (siang), *jioni* (sore, kira-kira sesudah pukul empat), *usiku* (malam). *Saa mbili asubuhi* = pukul delapan pagi; *saa mbili usiku* = pukul delapan malam.",
+            "Cara tercepat mengubahnya di kepala: **kalau jam internasionalnya lebih dari 6, kurangi 6; kalau kurang dari 6, tambah 6**. Pukul 15.00 → 15 − 6 = *saa tisa*. Pukul 04.00 → 4 + 6 = *saa kumi*.",
+            "⚠️ Kata *saa* punya tiga arti sekaligus: jam sebagai waktu (*saa tatu*), jam sebagai benda (*saa yangu* = jam tangan saya), dan jam sebagai lama (*saa mbili* = dua jam). Konteks yang memisahkannya, dan hampir tak pernah membingungkan."
+          ]
+        },
+        {
+          "title": "Setengah, seperempat, dan menit",
+          "body": [
+            "Bagian jam dipasang dengan *na* (lebih) dan *kasoro* (kurang) — susunan yang sama dengan bahasa Inggris *past* dan *to*."
+          ],
+          "table": {
+            "head": ["Kiswahili", "Arti", "Jam internasional"],
+            "rows": [
+              ["*saa tatu kamili*", "jam ketiga tepat", "09.00"],
+              ["*saa tatu na robo*", "jam ketiga lebih seperempat", "09.15"],
+              ["*saa tatu na nusu*", "jam ketiga lebih setengah", "09.30"],
+              ["*saa nne kasoro robo*", "jam keempat kurang seperempat", "09.45"],
+              ["*saa tatu na dakika kumi*", "jam ketiga lebih sepuluh menit", "09.10"],
+              ["*saa nne kasoro dakika tano*", "jam keempat kurang lima menit", "09.55"]
+            ]
+          },
+          "after": [
+            "*Nusu* (setengah) dan *robo* (seperempat) datang langsung dari bahasa Arab, sama seperti \"nisfu\" dan \"rubu'\" yang mungkin pernah kamu dengar di pelajaran waktu salat. *Dakika* berarti menit, *sekunde* berarti detik.",
+            "Untuk lama waktu, bukan titik waktu, dipakai kata yang sama: *saa mbili* (dua jam), *dakika thelathini* (tiga puluh menit), *siku tatu* (tiga hari), *wiki moja* (satu minggu), *mwezi mmoja* (satu bulan).",
+            "Menanyakan waktu: *Saa ngapi?* (jam berapa sekarang?), *Saa ngapi tunakutana?* (jam berapa kita bertemu?), *Lini?* (kapan?), *Kwa muda gani?* (berapa lama?)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Siku za wiki — dan kenapa Senin disebut \"hari kesatu\"",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia", "Harfiah"], "rows": [
+          ["*Jumatatu*", "ju-ma-TA-tu", "Senin", "hari (ke)satu"],
+          ["*Jumanne*", "ju-MA-n-né", "Selasa", "hari (ke)dua"],
+          ["*Jumatano*", "ju-ma-TA-no", "Rabu", "hari (ke)tiga"],
+          ["*Alhamisi*", "al-ha-MI-si", "Kamis", "dari \"al-khamis\""],
+          ["*Ijumaa*", "i-ju-MA-a", "Jumat", "dari \"al-jum'ah\""],
+          ["*Jumamosi*", "ju-ma-MO-si", "Sabtu", "hari (ke)satu (pekan baru)"],
+          ["*Jumapili*", "ju-ma-PI-li", "Minggu", "hari (ke)dua"]
+        ]},
+        { "type": "p", "text": "Dua nama tengah pekan — **Alhamisi** dan **Ijumaa** — sama persis dengan Kamis dan Jumat kita, dan datang dari sumber yang sama. Sisanya dihitung, dan hitungannya mulai dari **Jumamosi**: Sabtu hari kesatu pekan itu, Minggu kedua, Senin ketiga… tapi namanya justru *Jumatatu* (ketiga → \"tatu\"). Yang tampak kacau sebetulnya konsisten: pekan Swahili tradisional dimulai Sabtu." },
+        { "type": "p", "text": "Nama bulan cukup dua pola. Yang pertama dipinjam apa adanya: *Januari, Februari, Machi, Aprili, Mei, Juni, Julai, Agosti, Septemba, Oktoba, Novemba, Desemba*. Yang kedua dihitung: *mwezi wa kwanza* (bulan pertama = Januari), *mwezi wa pili*, dan seterusnya. Keduanya dipakai; yang dihitung lebih sering terdengar di kampung." },
+        { "type": "p", "text": "Tanggal disebut begini: *tarehe kumi na tano Machi* (tanggal 15 Maret). *Tarehe* adalah \"tarikh\" — sekali lagi kata yang sudah kamu punya." }
+      ]
+    },
+    {
+      "title": "Jana, leo, kesho — menempatkan diri dalam waktu",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia", "Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*juzi*", "kemarin lusa", "*keshokutwa*", "lusa"],
+          ["*jana*", "kemarin", "*kesho*", "besok"],
+          ["*leo*", "hari ini", "*sasa hivi*", "barusan; sebentar lagi"],
+          ["*wiki iliyopita*", "minggu lalu", "*wiki ijayo*", "minggu depan"],
+          ["*mwezi uliopita*", "bulan lalu", "*mwezi ujao*", "bulan depan"],
+          ["*mwaka jana*", "tahun lalu", "*mwaka kesho*", "tahun depan"],
+          ["*asubuhi*", "pagi", "*mchana*", "siang"],
+          ["*jioni*", "sore", "*usiku*", "malam"],
+          ["*alfajiri*", "subuh; dini hari", "*adhuhuri*", "tengah hari"],
+          ["*mapema*", "lebih awal", "*kuchelewa*", "terlambat"]
+        ]},
+        { "type": "p", "text": "*Alfajiri* dan *adhuhuri* datang dari nama waktu salat, dan bunyinya persis seperti yang kamu kenal. Begitu pula *magharibi* — di bahasa Swahili ia berarti \"barat\" dan sekaligus \"waktu matahari terbenam\"." },
+        { "type": "p", "text": "⚠️ Satu kebiasaan yang perlu disiapkan: janji temu di Afrika Timur ditepati dengan longgar, dan orang menyebutnya sendiri dengan istilah bercanda *saa za Kiafrika* (jam Afrika). Kalau ketepatan penting, sebutkan *kamili* (tepat) dan konfirmasi ulang sehari sebelumnya. Kalau tidak penting, ikuti saja iramanya — *haraka haraka haina baraka*." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "saa", "baca": "SA-a", "id": "jam (waktu; benda; lama)" },
+    { "sw": "dakika", "baca": "da-KI-ka", "id": "menit" },
+    { "sw": "nusu", "baca": "NU-su", "id": "setengah" },
+    { "sw": "robo", "baca": "RO-bo", "id": "seperempat" },
+    { "sw": "kasoro", "baca": "ka-SO-ro", "id": "kurang" },
+    { "sw": "kamili", "baca": "ka-MI-li", "id": "tepat; penuh" },
+    { "sw": "lini", "baca": "LI-ni", "id": "kapan" },
+    { "sw": "siku", "baca": "SI-ku", "id": "hari" },
+    { "sw": "wiki", "baca": "WI-ki", "id": "minggu" },
+    { "sw": "mwezi / miezi", "baca": "MWÉ-zi", "id": "bulan" },
+    { "sw": "tarehe", "baca": "ta-RÉ-hé", "id": "tanggal" },
+    { "sw": "jana", "baca": "JA-na", "id": "kemarin" },
+    { "sw": "kesho", "baca": "KÉ-syo", "id": "besok" },
+    { "sw": "juzi", "baca": "JU-zi", "id": "kemarin lusa" },
+    { "sw": "keshokutwa", "baca": "ké-syo-KU-twa", "id": "lusa" },
+    { "sw": "mapema", "baca": "ma-PÉ-ma", "id": "lebih awal" },
+    { "sw": "kuchelewa", "baca": "ku-cé-LÉ-wa", "id": "terlambat" },
+    { "sw": "kabla ya", "baca": "KAB-la ya", "id": "sebelum" },
+    { "sw": "baada ya", "baca": "ba-A-da ya", "id": "sesudah" },
+    { "sw": "jua", "baca": "JU-a", "id": "matahari" },
+    { "sw": "macheo", "baca": "ma-CÉ-o", "id": "matahari terbit" },
+    { "sw": "machweo", "baca": "ma-CWÉ-o", "id": "matahari terbenam" },
+    { "sw": "giza", "baca": "GI-za", "id": "gelap" },
+    { "sw": "kukutana", "baca": "ku-ku-TA-na", "id": "bertemu" },
+    { "sw": "kituo", "baca": "ki-TU-o", "id": "halte; terminal" },
+    { "sw": "basi", "baca": "BA-si", "id": "bus; ya sudah" },
+    { "sw": "ufuo", "baca": "u-FU-o", "id": "pantai" },
+    { "sw": "kali", "baca": "KA-li", "id": "terik; galak; tajam" },
+    { "sw": "hasa", "baca": "HA-sa", "id": "tepat sekali; terutama" },
+    { "sw": "alfajiri", "baca": "al-fa-JI-ri", "id": "subuh" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke jam Swahili, lengkap dengan bagian harinya.",
+      "items": ["07.00", "09.00", "12.00", "15.00", "18.00", "20.00"]
+    },
+    {
+      "prompt": "Ubah ke jam internasional.",
+      "items": ["saa mbili asubuhi", "saa saba mchana", "saa kumi jioni", "saa tatu na nusu asubuhi", "saa nne kasoro robo asubuhi", "saa nne usiku"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Kita ketemu jam berapa?", "Jam sembilan pagi.", "Besok hari Rabu.", "Kita pulang jam setengah enam sore.", "Sampai jumpa besok jam sembilan tepat.", "Hari Sabtu ada pesta besar."]
+    },
+    {
+      "prompt": "Isi nama harinya dalam bahasa Swahili.",
+      "items": ["Senin", "Rabu", "Kamis", "Jumat", "Minggu"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["ngapi / tunakutana / saa", "asubuhi / tatu / saa", "kesho / ni / Jumatano", "nusu / saa / na / tunarudi / kumi", "kamili / tutaonana / tatu / saa"]
+    }
+  ],
+  "answers": [
+    "saa moja asubuhi — saa tatu asubuhi — saa sita mchana — saa tisa mchana — saa kumi na mbili jioni — saa mbili usiku",
+    "08.00 — 13.00 — 16.00 — 09.30 — 09.45 — 22.00",
+    "Tunakutana saa ngapi? — Saa tatu asubuhi. — Kesho ni Jumatano. — Tunarudi saa kumi na moja na nusu jioni. — Tutaonana kesho saa tatu kamili. — Jumamosi kuna sherehe kubwa.",
+    "Jumatatu — Jumatano — Alhamisi — Ijumaa — Jumapili",
+    "Tunakutana saa ngapi? — Saa tatu asubuhi. — Kesho ni Jumatano. — Tunarudi saa kumi na nusu. — Tutaonana saa tatu kamili."
+  ]
+}

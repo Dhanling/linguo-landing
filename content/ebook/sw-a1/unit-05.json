@@ -1,0 +1,183 @@
+{
+  "title": "Angka dan umur: enam angka yang ikut berganti baju",
+  "title_target": "Una miaka mingapi?",
+  "goal": "Menghitung dari nol sampai jutaan, menyebut umur, mengeja nomor telepon, dan mengenali enam angka yang berubah bentuk mengikuti benda yang dihitungnya.",
+  "bekal": [
+    "angka 1–10, puluhan, ratusan, dan ribuan",
+    "enam angka yang ikut kelas benda: *-moja, -wili, -tatu, -nne, -tano, -nane*",
+    "menanyakan dan menyebut umur dengan *miaka*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Wangapi nyumbani kwenu?",
+      "intro": "Sore hari di beranda, sambil menunggu hujan reda. Amina dan Budi bertukar cerita tentang rumah masing-masing.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Budi, una miaka mingapi?", "id": "Budi, umurmu berapa?", "literal": "kamu-punya tahun-tahun berapa?" },
+        { "speaker": "Budi:", "text": "Nina miaka ishirini na mitatu. Na wewe?", "id": "Saya dua puluh tiga tahun. Kamu?", "literal": "saya-punya tahun-tahun dua-puluh dan tiga. dan kamu?" },
+        { "speaker": "Amina:", "text": "Nina miaka ishirini na mmoja.", "id": "Saya dua puluh satu tahun.", "literal": "saya-punya tahun-tahun dua-puluh dan satu." },
+        { "speaker": "Budi:", "text": "Familia yako ina watu wangapi?", "id": "Keluargamu berapa orang?", "literal": "keluarga milik-mu ia-punya orang-orang berapa?" },
+        { "speaker": "Amina:", "text": "Tuko watu saba: wazazi wawili na watoto watano.", "id": "Kami tujuh orang: dua orang tua dan lima anak.", "literal": "kami-ada orang-orang tujuh: orang-tua dua dan anak-anak lima." },
+        { "speaker": "Budi:", "text": "Watoto watano! Wewe ni wa ngapi?", "id": "Lima anak! Kamu anak ke berapa?", "literal": "anak-anak lima! kamu adalah dari berapa?" },
+        { "speaker": "Amina:", "text": "Mimi ni wa tatu. Kaka zangu wana miaka thelathini na ishirini na saba.", "id": "Saya anak ketiga. Kakak-kakak saya berumur tiga puluh dan dua puluh tujuh.", "literal": "saya adalah dari tiga. kakak-kakak milik-ku mereka-punya tahun-tahun tiga-puluh dan dua-puluh dan tujuh." },
+        { "speaker": "Budi:", "text": "Namba yako ya simu ni ngapi?", "id": "Nomor teleponmu berapa?", "literal": "nomor milik-mu dari telepon adalah berapa?" },
+        { "speaker": "Amina:", "text": "Sifuri, saba, tano — mbili, tatu, nne — sita, saba, nane.", "id": "Nol, tujuh, lima — dua, tiga, empat — enam, tujuh, delapan.", "literal": "nol, tujuh, lima — dua, tiga, empat — enam, tujuh, delapan." },
+        { "speaker": "Budi:", "text": "Ngoja kidogo... sema tena polepole, tafadhali!", "id": "Tunggu sebentar... ulangi pelan-pelan, tolong!", "literal": "tunggu sedikit... bicara lagi pelan-pelan, tolong!" },
+        { "speaker": "Amina:", "text": "Haya: sifuri, saba, tano... Unaandika sasa?", "id": "Baik: nol, tujuh, lima... Kamu sedang menulis?", "literal": "baiklah: nol, tujuh, lima... kamu-sedang-tulis sekarang?" },
+        { "speaker": "Budi:", "text": "Ndiyo, ninaandika. Asante sana, dada!", "id": "Ya, saya sedang menulis. Terima kasih banyak, kak!", "literal": "ya, saya-sedang-tulis. terima-kasih sangat, kakak-perempuan!" }
+      ],
+      "notes": [
+        "**Umur diukur dengan miaka, jamak dari mwaka (tahun).** Harfiahnya \"saya punya tahun-tahun dua puluh tiga\", persis susunan bahasa Arab dan bahasa Prancis. Pertanyaannya *Una miaka mingapi?* — dan jangan kaget kalau orang menjawabnya sambil bertanya balik; umur bukan hal rahasia di Afrika Timur.",
+        "**Na berarti \"dan\" sekaligus penyambung angka.** *Ishirini na tatu* = dua puluh dan tiga = 23. *Mia moja hamsini na tano* = 155. Semua sambungan angka memakai *na*, tanpa kekecualian.",
+        "**Tuko berarti \"kami ada\".** Ini bentuk \"berada\" yang dipasang tuntas di unit 8; untuk sekarang cukup tahu bahwa *tuko watu saba* adalah cara paling wajar mengatakan \"kami ada tujuh orang\".",
+        "**Wa ngapi? menanyakan urutan, bukan jumlah.** *Wewe ni wa ngapi?* = kamu anak ke berapa? Jawabannya memakai bilangan tingkat: *wa kwanza* (pertama), *wa pili* (kedua), *wa tatu* (ketiga).",
+        "**Ngoja berarti \"tunggu\" dan haya berarti \"baiklah\".** Keduanya kata percakapan yang jarang masuk buku pelajaran tapi terdengar seratus kali sehari. *Haya basi* = \"ya sudah kalau begitu\", penutup percakapan yang paling sering dipakai."
+      ],
+      "grammars": [
+        {
+          "title": "Angka: sepuluh yang pertama, lalu semuanya",
+          "body": [
+            "Sepuluh angka pertama harus dihafal. Sesudah itu bahasa Swahili menghitung dengan cara yang paling masuk akal di dunia: tinggal disambung dengan *na*."
+          ],
+          "table": {
+            "head": ["Angka", "Kiswahili", "Cara baca", "Angka", "Kiswahili"],
+            "rows": [
+              ["0", "*sifuri*", "si-FU-ri", "10", "*kumi*"],
+              ["1", "*moja*", "MO-ja", "20", "*ishirini*"],
+              ["2", "*mbili*", "m-BI-li", "30", "*thelathini*"],
+              ["3", "*tatu*", "TA-tu", "40", "*arobaini*"],
+              ["4", "*nne*", "n-NÉ", "50", "*hamsini*"],
+              ["5", "*tano*", "TA-no", "60", "*sitini*"],
+              ["6", "*sita*", "SI-ta", "70", "*sabini*"],
+              ["7", "*saba*", "SA-ba", "80", "*themanini*"],
+              ["8", "*nane*", "NA-né", "90", "*tisini*"],
+              ["9", "*tisa*", "TI-sa", "100 / 1.000", "*mia* / *elfu*"]
+            ]
+          },
+          "after": [
+            "Perhatikan berapa banyak yang sudah kamu kenal: *sifuri* (sifir/nol), *ishirini* (isyrin), *thelathini*, *arobaini* (arbain — empat puluh, seperti dalam \"hadis arbain\"), *hamsini* (khamsin), *mia*, *elfu* (alif/seribu). Semua puluhan datang dari bahasa Arab, sementara satuan 1–10 asli Bantu.",
+            "Menyambungnya selalu dengan *na*: **23** = *ishirini na tatu*, **47** = *arobaini na saba*, **99** = *tisini na tisa*, **156** = *mia moja hamsini na sita*, **2.024** = *elfu mbili na ishirini na nne*.",
+            "Untuk uang, orang di Tanzania dan Kenya menyebut ribuan lebih dulu: *elfu tano* (5.000), *elfu kumi* (10.000), *laki moja* (100.000 — pinjaman dari bahasa Hindi *lakh*), *milioni moja* (1.000.000)."
+          ]
+        },
+        {
+          "title": "Enam angka yang ikut kelas bendanya",
+          "body": [
+            "Empat angka tak pernah berubah: **sita, saba, tisa, kumi** — dan semua puluhan serta ratusan. Enam sisanya berawalan kosong yang harus diisi kelas bendanya: **-moja, -wili, -tatu, -nne, -tano, -nane**."
+          ],
+          "table": {
+            "head": ["Kelas benda", "satu", "dua", "tiga", "lima", "tapi: enam"],
+            "rows": [
+              ["*watu* (orang)", "*mtu mmoja*", "*watu wawili*", "*watu watatu*", "*watu watano*", "*watu sita*"],
+              ["*vitabu* (buku)", "*kitabu kimoja*", "*vitabu viwili*", "*vitabu vitatu*", "*vitabu vitano*", "*vitabu sita*"],
+              ["*miaka* (tahun)", "*mwaka mmoja*", "*miaka miwili*", "*miaka mitatu*", "*miaka mitano*", "*miaka sita*"],
+              ["*magari* (mobil)", "*gari moja*", "*magari mawili*", "*magari matatu*", "*magari matano*", "*magari sita*"],
+              ["*nyumba* (rumah)", "*nyumba moja*", "*nyumba mbili*", "*nyumba tatu*", "*nyumba tano*", "*nyumba sita*"]
+            ]
+          },
+          "after": [
+            "Kelas *nyumba* — kelas terbesar dalam bahasa Swahili, yang dipasang di unit 7 — kebetulan memakai angka dalam bentuk telanjangnya: *nyumba mbili*, *saa tatu*, *shilingi elfu tano*. Itu sebabnya bentuk *mbili*, *tatu*, *tano* terdengar paling sering: ia bentuk kelas yang paling banyak anggotanya.",
+            "Angkanya selalu berdiri **sesudah** bendanya: *watoto watano* (lima anak), bukan sebaliknya. Persis seperti kalau kamu berkata \"anak lima orang\" dalam bahasa Indonesia.",
+            "Kata tanya *-ngapi* (berapa) ikut aturan yang sama persis: *watu wangapi?*, *vitabu vingapi?*, *miaka mingapi?*, *nyumba ngapi?*, *magari mangapi?*. Kalau kamu ragu bentuknya, ingat saja angka \"dua\" untuk benda itu — awalannya sama."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Wa kwanza, wa pili — bilangan tingkat",
+      "blocks": [
+        { "type": "p", "text": "Bilangan tingkat dibentuk dengan penghubung *-a* di depan angkanya. Bentuk penghubung itu ikut kelas bendanya — *wa* untuk orang, *cha* untuk benda kelas *ki-*, *ya* untuk kelas *nyumba*." },
+        { "type": "tabel", "head": ["Urutan", "Untuk orang", "Contoh lain", "Bahasa Indonesia"], "rows": [
+          ["1", "*wa kwanza*", "*mwaka wa kwanza*", "pertama"],
+          ["2", "*wa pili*", "*siku ya pili*", "kedua"],
+          ["3", "*wa tatu*", "*kitabu cha tatu*", "ketiga"],
+          ["4", "*wa nne*", "*mtoto wa nne*", "keempat"],
+          ["5", "*wa tano*", "*safari ya tano*", "kelima"],
+          ["6", "*wa sita*", "*gari la sita*", "keenam"]
+        ]},
+        { "type": "p", "text": "⚠️ Dua yang tak terduga: \"pertama\" bukan *wa moja* melainkan **wa kwanza**, dan \"kedua\" bukan *wa mbili* melainkan **wa pili**. Sesudah itu barulah angka biasa dipakai. Kedua kata istimewa ini muncul di mana-mana: *daraja la kwanza* (kelas satu), *mara ya pili* (kali kedua)." },
+        { "type": "p", "text": "*Mara* berarti \"kali\": *mara moja* (sekali — sekaligus juga berarti \"segera\"), *mara mbili* (dua kali), *mara nyingi* (sering), *mara ya kwanza* (untuk pertama kalinya)." }
+      ]
+    },
+    {
+      "title": "Angka di dunia nyata",
+      "blocks": [
+        { "type": "p", "text": "Angka jarang muncul sendirian. Enam baris berikut adalah tempat kamu akan paling sering mendengarnya." },
+        { "type": "tabel", "head": ["Situasi", "Kalimat", "Bahasa Indonesia"], "rows": [
+          ["Umur", "*Nina miaka thelathini.*", "Saya tiga puluh tahun."],
+          ["Harga", "*Ni shilingi elfu tatu.*", "Harganya tiga ribu shilling."],
+          ["Nomor telepon", "*Namba yangu ni sifuri saba tano...*", "Nomor saya nol tujuh lima..."],
+          ["Jumlah orang", "*Sisi ni watu wanne.*", "Kami berempat."],
+          ["Nomor kamar", "*Chumba namba kumi na tano.*", "Kamar nomor lima belas."],
+          ["Jam", "*Saa tatu asubuhi.*", "Jam sembilan pagi."]
+        ]},
+        { "type": "p", "text": "Nomor telepon **selalu dieja satu per satu**, tidak pernah dikelompokkan seperti kebiasaan kita menyebut \"delapan satu dua\". Nol disebut *sifuri*, dan di percakapan santai sering diganti *ziro*." },
+        { "type": "p", "text": "Untuk harga, orang biasa membuang kata *shilingi* dan langsung menyebut angkanya: \"*Elfu tatu*\" sudah cukup jelas berarti tiga ribu shilling. Yang penting kamu tangkap kata *elfu* — di situlah letak nolnya." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "sifuri", "baca": "si-FU-ri", "id": "nol" },
+    { "sw": "moja", "baca": "MO-ja", "id": "satu" },
+    { "sw": "mbili", "baca": "m-BI-li", "id": "dua" },
+    { "sw": "tatu", "baca": "TA-tu", "id": "tiga" },
+    { "sw": "nne", "baca": "n-NÉ", "id": "empat" },
+    { "sw": "tano", "baca": "TA-no", "id": "lima" },
+    { "sw": "sita", "baca": "SI-ta", "id": "enam" },
+    { "sw": "saba", "baca": "SA-ba", "id": "tujuh" },
+    { "sw": "nane", "baca": "NA-né", "id": "delapan" },
+    { "sw": "tisa", "baca": "TI-sa", "id": "sembilan" },
+    { "sw": "kumi", "baca": "KU-mi", "id": "sepuluh" },
+    { "sw": "ishirini", "baca": "i-syi-RI-ni", "id": "dua puluh" },
+    { "sw": "thelathini", "baca": "tsé-la-TSI-ni", "id": "tiga puluh" },
+    { "sw": "arobaini", "baca": "a-ro-BA-i-ni", "id": "empat puluh" },
+    { "sw": "hamsini", "baca": "ham-SI-ni", "id": "lima puluh" },
+    { "sw": "mia", "baca": "MI-a", "id": "seratus" },
+    { "sw": "elfu", "baca": "ÉL-fu", "id": "seribu" },
+    { "sw": "laki", "baca": "LA-ki", "id": "seratus ribu" },
+    { "sw": "milioni", "baca": "mi-li-O-ni", "id": "satu juta" },
+    { "sw": "mwaka / miaka", "baca": "MWA-ka / mi-A-ka", "id": "tahun / tahun-tahun" },
+    { "sw": "-ngapi", "baca": "NGA-pi", "id": "berapa" },
+    { "sw": "namba", "baca": "NAM-ba", "id": "nomor" },
+    { "sw": "simu", "baca": "SI-mu", "id": "telepon; ponsel" },
+    { "sw": "kwanza", "baca": "KWAN-za", "id": "pertama" },
+    { "sw": "pili", "baca": "PI-li", "id": "kedua" },
+    { "sw": "mara", "baca": "MA-ra", "id": "kali" },
+    { "sw": "ngoja", "baca": "NGO-ja", "id": "tunggu" },
+    { "sw": "haya", "baca": "HA-ya", "id": "baiklah" },
+    { "sw": "tena", "baca": "TÉ-na", "id": "lagi" },
+    { "sw": "chumba / vyumba", "baca": "CUM-ba", "id": "kamar / kamar-kamar" },
+    { "sw": "kuandika", "baca": "ku-an-DI-ka", "id": "menulis" },
+    { "sw": "kuhesabu", "baca": "ku-hé-SA-bu", "id": "menghitung" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis dengan huruf dalam bahasa Swahili.",
+      "items": ["7", "12", "25", "48", "100", "3.500"]
+    },
+    {
+      "prompt": "Lengkapi angkanya dengan awalan kelas yang tepat.",
+      "items": ["watoto ____ (2)", "vitabu ____ (3)", "miaka ____ (5)", "nyumba ____ (4)", "magari ____ (2)", "watu ____ (8)"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Umurmu berapa?", "Saya dua puluh tiga tahun.", "Keluargamu berapa orang?", "Kami tujuh orang.", "Saya anak ketiga.", "Nomor teleponmu berapa?"]
+    },
+    {
+      "prompt": "Jawab dengan bilangan tingkat yang tepat.",
+      "items": ["Anak nomor 1 → mtoto ____", "Hari nomor 2 → siku ____", "Buku nomor 3 → kitabu ____", "Kali nomor 5 → mara ____", "Tahun nomor 1 → mwaka ____"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["mingapi / una / miaka", "watano / tuna / watoto", "ni / wa / mimi / tatu", "sita / vyumba / nyumba / ina", "elfu / ni / tatu / bei"]
+    }
+  ],
+  "answers": [
+    "saba — kumi na mbili — ishirini na tano — arobaini na nane — mia moja — elfu tatu na mia tano",
+    "wawili — vitatu — mitano — nne — mawili — wanane",
+    "Una miaka mingapi? — Nina miaka ishirini na mitatu. — Familia yako ina watu wangapi? — Sisi ni watu saba. — Mimi ni wa tatu. — Namba yako ya simu ni ngapi?",
+    "wa kwanza — ya pili — cha tatu — ya tano — wa kwanza",
+    "Una miaka mingapi? — Tuna watoto watano. — Mimi ni wa tatu. — Nyumba ina vyumba sita. — Bei ni elfu tatu."
+  ]
+}

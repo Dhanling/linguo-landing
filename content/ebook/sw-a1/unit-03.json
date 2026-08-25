@@ -1,0 +1,193 @@
+{
+  "title": "Satu kata, satu kalimat: awalan pelaku dan gerbong -na-",
+  "title_target": "Unafanya nini?",
+  "goal": "Merakit kata kerja bahasa Swahili seperti merangkai gerbong kereta — pelaku, waktu, akar kata — dan menceritakan apa yang sedang kamu lakukan hari ini.",
+  "bekal": [
+    "enam awalan pelaku: *ni-, u-, a-, tu-, m-, wa-*",
+    "gerbong *-na-* untuk \"sedang\" dan untuk kebiasaan sehari-hari",
+    "melepas *ku-* dari bentuk kamus — dan enam kata kerja yang menahannya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Chuoni",
+      "intro": "Siang hari di halaman kampus. Juma, pemuda seusia Budi, duduk di sebelahnya di bawah pohon mangga.",
+      "lines": [
+        { "speaker": "Juma:", "text": "Habari za mchana! Unafanya nini hapa?", "id": "Selamat siang! Kamu sedang apa di sini?", "literal": "kabar dari siang! kamu-sedang-buat apa di-sini?" },
+        { "speaker": "Budi:", "text": "Ninajifunza Kiswahili. Ninasoma kila siku.", "id": "Saya sedang belajar bahasa Swahili. Saya belajar setiap hari.", "literal": "saya-sedang-ajar-diri Kiswahili. saya-sedang-baca setiap hari." },
+        { "speaker": "Juma:", "text": "Vizuri sana! Unajifunza wapi?", "id": "Bagus sekali! Kamu belajar di mana?", "literal": "bagus sangat! kamu-sedang-ajar-diri di-mana?" },
+        { "speaker": "Budi:", "text": "Ninajifunza hapa chuoni. Mwalimu wangu anafundisha vizuri.", "id": "Saya belajar di kampus ini. Guru saya mengajar dengan baik.", "literal": "saya-sedang-ajar-diri di-sini di-kampus. guru milik-ku dia-sedang-ajar bagus." },
+        { "speaker": "Juma:", "text": "Unaelewa Kiswahili sasa?", "id": "Kamu mengerti bahasa Swahili sekarang?", "literal": "kamu-sedang-paham Kiswahili sekarang?" },
+        { "speaker": "Budi:", "text": "Ninaelewa kidogo. Ninasema polepole sana.", "id": "Saya mengerti sedikit. Saya bicara pelan sekali.", "literal": "saya-sedang-paham sedikit. saya-sedang-bicara pelan-pelan sangat." },
+        { "speaker": "Juma:", "text": "Hakuna shida. Sisi tunaongea polepole pia.", "id": "Tidak masalah. Kami juga bicara pelan-pelan.", "literal": "tidak-ada masalah. kami kami-sedang-mengobrol pelan-pelan juga." },
+        { "speaker": "Budi:", "text": "Wewe unafanya kazi gani?", "id": "Kamu kerjanya apa?", "literal": "kamu kamu-sedang-buat pekerjaan apa?" },
+        { "speaker": "Juma:", "text": "Ninafanya kazi hotelini. Ninapika chakula.", "id": "Saya bekerja di hotel. Saya memasak makanan.", "literal": "saya-sedang-buat pekerjaan di-hotel. saya-sedang-masak makanan." },
+        { "speaker": "Budi:", "text": "Aa, wewe ni mpishi! Unapika nini leo?", "id": "Wah, kamu juru masak! Hari ini kamu masak apa?", "literal": "aa, kamu adalah juru-masak! kamu-sedang-masak apa hari-ini?" },
+        { "speaker": "Juma:", "text": "Ninapika samaki na wali. Wageni wanakula saa tatu.", "id": "Saya memasak ikan dan nasi. Para tamu makan jam sembilan.", "literal": "saya-sedang-masak ikan dan nasi. tamu-tamu mereka-sedang-makan jam tiga." },
+        { "speaker": "Budi:", "text": "Ninakuja jioni. Ninapenda samaki sana!", "id": "Saya datang sore nanti. Saya suka sekali ikan!", "literal": "saya-sedang-datang sore. saya-sedang-suka ikan sangat!" }
+      ],
+      "notes": [
+        "**Ninasoma bisa berarti \"saya sedang membaca\" dan \"saya biasa membaca\".** Gerbong *-na-* menutup dua arti yang dipisahkan bahasa Inggris. Konteks yang memilihnya, dan hampir tak pernah ada salah paham: *ninasoma sasa* (sedang) berhadapan dengan *ninasoma kila siku* (kebiasaan).",
+        "**Kusoma berarti membaca dan sekaligus belajar.** *Ninasoma kitabu* = saya membaca buku; *Ninasoma chuoni* = saya kuliah. Untuk \"belajar\" yang lebih tegas ada *kujifunza*, harfiahnya \"mengajar diri sendiri\" — sisipan *-ji-* itu berarti \"diri sendiri\".",
+        "**Vizuri adalah \"dengan baik\", bukan \"bagus\".** Bentuk *vi-* di depan kata sifat mengubahnya jadi kata keterangan: *nzuri* (bagus) → *vizuri* (dengan baik), *baya* (buruk) → *vibaya* (dengan buruk). *Anafundisha vizuri* = dia mengajar dengan baik.",
+        "**Hotelini, chuoni, nyumbani — akhiran -ni berarti \"di\".** Ditempelkan ke benda tempat mana pun: *hoteli* → *hotelini* (di hotel), *chuo* → *chuoni* (di kampus), *soko* → *sokoni* (di pasar). Akhiran ini dibongkar tuntas di unit 8; sementara ini pakai saja sebagai kata utuh.",
+        "**Hakuna shida = \"tidak ada masalah\".** Kalimat ini, bersama saudaranya *hakuna matata*, adalah kalimat Swahili paling terkenal sedunia — dan memang betul-betul dipakai sehari-hari. *Hakuna* berarti \"tidak ada\", dan kamu akan memasangnya sendiri di unit 8."
+      ],
+      "grammars": [
+        {
+          "title": "Kereta kata kerja: pelaku + waktu + akar",
+          "body": [
+            "Kata kerja bahasa Swahili tidak berkonjugasi — ia **dirakit**. Tiga gerbong, selalu dalam urutan yang sama, tanpa spasi di antaranya:",
+            "**awalan pelaku + gerbong waktu + akar kata**. *Ni* + *na* + *soma* = *ninasoma*. Ganti gerbong depan, pelakunya berganti. Ganti gerbong tengah, waktunya berganti. Akarnya tak pernah tersentuh."
+          ],
+          "table": {
+            "head": ["Kata ganti", "Awalan", "+ -na- + soma", "Cara baca", "Arti"],
+            "rows": [
+              ["*mimi*", "**ni-**", "*ninasoma*", "ni-na-SO-ma", "saya membaca"],
+              ["*wewe*", "**u-**", "*unasoma*", "u-na-SO-ma", "kamu membaca"],
+              ["*yeye*", "**a-**", "*anasoma*", "a-na-SO-ma", "dia membaca"],
+              ["*sisi*", "**tu-**", "*tunasoma*", "tu-na-SO-ma", "kami membaca"],
+              ["*ninyi*", "**m-**", "*mnasoma*", "m-na-SO-ma", "kalian membaca"],
+              ["*wao*", "**wa-**", "*wanasoma*", "wa-na-SO-ma", "mereka membaca"]
+            ]
+          },
+          "after": [
+            "Kata gantinya (*mimi*, *wewe*, …) hampir selalu **dibuang**, karena awalannya sudah menyimpan pelakunya. *Ninasoma* sudah pasti berarti \"saya membaca\". Kata gantinya dipakai kalau kamu ingin menekankan atau membandingkan: *Mimi ninasoma, wewe unalala* — \"Saya belajar, kamu tidur\".",
+            "Perhatikan tekanannya: selalu di suku kata kedua dari belakang, jadi ia **bergeser sendiri** saat katanya memanjang. *SO-ma* → *ni-na-SO-ma* → *ni-na-ku-SO-ma*. Tak ada yang perlu dihafal.",
+            "Awalan orang ketiga *a-* melebur dengan vokal berikutnya: *a- + -elewa* menjadi **anaelewa** (bukan *aelewa*), dan awalan *m-* untuk \"kalian\" berdiri sendiri sebagai suku kata: *mnasoma* dibaca m-na-SO-ma."
+          ]
+        },
+        {
+          "title": "Ku- yang dilepas — dan enam kata kerja yang menahannya",
+          "body": [
+            "Bentuk kamus tiap kata kerja diawali **ku-**, yang berarti \"untuk…\": *kusoma* (untuk membaca), *kupika* (untuk memasak). Begitu awalan pelaku dipasang, *ku-* itu **dibuang**."
+          ],
+          "table": {
+            "head": ["Bentuk kamus", "Arti", "Dengan pelaku", "Catatan"],
+            "rows": [
+              ["*kusoma*", "membaca; belajar", "*ninasoma*", "ku- dilepas"],
+              ["*kupika*", "memasak", "*anapika*", "ku- dilepas"],
+              ["*kufanya*", "melakukan", "*tunafanya*", "ku- dilepas"],
+              ["*kula*", "makan", "**ninakula**", "ku- **ditahan** (akar cuma -la)"],
+              ["*kunywa*", "minum", "**ninakunywa**", "ku- ditahan"],
+              ["*kuja*", "datang", "**ninakuja**", "ku- ditahan"],
+              ["*kwenda*", "pergi", "**ninakwenda**", "ku- ditahan (kw- di depan vokal)"],
+              ["*kuwa*", "menjadi; ada", "**ninakuwa**", "ku- ditahan"]
+            ]
+          },
+          "after": [
+            "Alasannya semata-mata bunyi: akar kata itu terlalu pendek untuk berdiri sendiri. *Ni-na-la* tak enak diucapkan dan tekanannya jatuh entah ke mana, jadi *ku-* tetap dipakai sebagai penyangga. Kata kerja bersuku satu jumlahnya bisa dihitung jari — enam di tabel ini plus *kufa* (mati) — dan semuanya kata yang akan kamu pakai tiap hari, jadi ia akan menempel sendiri.",
+            "*Kwenda* punya satu kelonggaran: bentuk *ninaenda* juga betul dan justru lebih sering terdengar dalam percakapan sehari-hari. Keduanya boleh.",
+            "⚠️ Jangan tertukar antara *ku-* penyangga ini dengan *ku-* yang berarti \"kamu\" sebagai sasaran (*ninakupenda* = saya mencintaimu). Yang kedua duduk di gerbong lain dan baru dibongkar di unit 15."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dua puluh kata kerja untuk hari pertama",
+      "blocks": [
+        { "type": "tabel", "head": ["Bentuk kamus", "Arti", "Bentuk kamus", "Arti"], "rows": [
+          ["*kusoma*", "membaca; belajar", "*kuandika*", "menulis"],
+          ["*kusema*", "berkata; berbicara", "*kuongea*", "mengobrol"],
+          ["*kuelewa*", "mengerti", "*kujua*", "tahu"],
+          ["*kufanya*", "melakukan", "*kufanya kazi*", "bekerja"],
+          ["*kupika*", "memasak", "*kununua*", "membeli"],
+          ["*kupenda*", "suka; cinta", "*kutaka*", "mau"],
+          ["*kuona*", "melihat", "*kusikia*", "mendengar"],
+          ["*kukaa*", "duduk; tinggal", "*kusimama*", "berdiri; berhenti"],
+          ["*kulala*", "tidur", "*kuamka*", "bangun"],
+          ["*kucheza*", "bermain; menari", "*kuimba*", "menyanyi"],
+          ["*kuandaa*", "menyiapkan", "*kusubiri*", "menunggu"],
+          ["*kutoka*", "berasal; keluar", "*kufika*", "tiba"],
+          ["*kujifunza*", "belajar", "*kufundisha*", "mengajar"],
+          ["*kula*", "makan", "*kunywa*", "minum"],
+          ["*kuja*", "datang", "*kwenda*", "pergi"]
+        ]},
+        { "type": "p", "text": "Hampir semuanya berakhiran **-a**, dan itu bukan kebetulan: kata kerja asli bahasa Swahili selalu berakhir *-a*. Yang berakhir *-i*, *-e*, atau *-u* — *kufikiri* (berpikir), *kusamehe* (memaafkan), *kujibu* (menjawab) — hampir selalu pinjaman dari bahasa Arab, dan bedanya baru terasa saat kalimatnya diingkarkan di unit 4." }
+      ]
+    },
+    {
+      "title": "Sasa, leo, kila siku — kapan dan seberapa sering",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*sasa*", "SA-sa", "sekarang"],
+          ["*leo*", "LÉ-o", "hari ini"],
+          ["*kila siku*", "KI-la SI-ku", "setiap hari"],
+          ["*mara nyingi*", "MA-ra NYI-ngi", "sering"],
+          ["*mara kwa mara*", "MA-ra kwa MA-ra", "kadang-kadang"],
+          ["*kidogo*", "ki-DO-go", "sedikit"],
+          ["*sana*", "SA-na", "sangat; sekali"],
+          ["*polepole*", "po-lé-PO-lé", "pelan-pelan"],
+          ["*haraka*", "ha-RA-ka", "cepat; buru-buru"],
+          ["*pamoja*", "pa-MO-ja", "bersama-sama"]
+        ]},
+        { "type": "p", "text": "Semuanya berdiri **sesudah kata kerja**, tidak pernah di depannya: *Ninasoma kila siku*, *Anapika haraka*, *Tunacheza pamoja*. Susunan yang sama persis dengan bahasa Indonesia." },
+        { "type": "p", "text": "*Polepole* adalah kata favorit Afrika Timur, dan artinya lebih luas daripada \"pelan\". Ia sikap hidup: *Pole pole ndio mwendo* — \"pelan-pelan itulah caranya berjalan\". Kalau ada yang mengucapkannya kepadamu saat kamu terburu-buru, itu bukan teguran, itu ajakan bernapas." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "kufanya", "baca": "ku-FA-nya", "id": "melakukan; membuat" },
+    { "sw": "kusoma", "baca": "ku-SO-ma", "id": "membaca; belajar" },
+    { "sw": "kujifunza", "baca": "ku-ji-FUN-za", "id": "belajar" },
+    { "sw": "kufundisha", "baca": "ku-fun-DI-sya", "id": "mengajar" },
+    { "sw": "kuelewa", "baca": "ku-é-LÉ-wa", "id": "mengerti" },
+    { "sw": "kusema", "baca": "ku-SÉ-ma", "id": "berkata; berbicara" },
+    { "sw": "kuongea", "baca": "ku-o-NGÉ-a", "id": "mengobrol; bercakap" },
+    { "sw": "kupika", "baca": "ku-PI-ka", "id": "memasak" },
+    { "sw": "kula", "baca": "KU-la", "id": "makan" },
+    { "sw": "kunywa", "baca": "KU-nywa", "id": "minum" },
+    { "sw": "kuja", "baca": "KU-ja", "id": "datang" },
+    { "sw": "kwenda", "baca": "KWÉN-da", "id": "pergi" },
+    { "sw": "kupenda", "baca": "ku-PÉN-da", "id": "suka; cinta" },
+    { "sw": "kulala", "baca": "ku-LA-la", "id": "tidur" },
+    { "sw": "kuamka", "baca": "ku-AM-ka", "id": "bangun" },
+    { "sw": "nini", "baca": "NI-ni", "id": "apa" },
+    { "sw": "wapi", "baca": "WA-pi", "id": "di mana" },
+    { "sw": "gani", "baca": "GA-ni", "id": "apa; yang mana" },
+    { "sw": "chuo / chuoni", "baca": "CU-o", "id": "kampus / di kampus" },
+    { "sw": "hoteli", "baca": "ho-TÉ-li", "id": "hotel" },
+    { "sw": "chakula", "baca": "ca-KU-la", "id": "makanan" },
+    { "sw": "samaki", "baca": "sa-MA-ki", "id": "ikan" },
+    { "sw": "wali", "baca": "WA-li", "id": "nasi" },
+    { "sw": "mpishi", "baca": "m-PI-syi", "id": "juru masak" },
+    { "sw": "sasa", "baca": "SA-sa", "id": "sekarang" },
+    { "sw": "leo", "baca": "LÉ-o", "id": "hari ini" },
+    { "sw": "kila siku", "baca": "KI-la SI-ku", "id": "setiap hari" },
+    { "sw": "kidogo", "baca": "ki-DO-go", "id": "sedikit" },
+    { "sw": "polepole", "baca": "po-lé-PO-lé", "id": "pelan-pelan" },
+    { "sw": "vizuri", "baca": "vi-ZU-ri", "id": "dengan baik" },
+    { "sw": "shida", "baca": "SYI-da", "id": "masalah" },
+    { "sw": "hakuna", "baca": "ha-KU-na", "id": "tidak ada" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Rakit kata kerjanya: pelaku + -na- + akar.",
+      "items": ["mimi + kusoma → ____", "yeye + kupika → ____", "sisi + kufanya kazi → ____", "wao + kuongea → ____", "wewe + kula → ____", "ninyi + kuja → ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Kamu sedang apa?", "Saya belajar bahasa Swahili setiap hari.", "Dia bekerja di hotel.", "Kami mengerti sedikit.", "Mereka makan ikan dan nasi.", "Saya bicara pelan-pelan."]
+    },
+    {
+      "prompt": "Ubah pelakunya jadi wao (mereka).",
+      "items": ["Ninapika chakula. → ____", "Unafanya kazi hapa. → ____", "Anakunywa chai. → ____", "Tunajifunza Kiswahili. → ____", "Ninakwenda sokoni. → ____"]
+    },
+    {
+      "prompt": "Kata kerja mana yang menahan ku-? Tulis bentuk \"saya sedang…\" untuk tiap kata.",
+      "items": ["kuandika", "kula", "kusikia", "kuja", "kununua", "kunywa"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["nini / unafanya / hapa", "kila / ninasoma / siku", "hotelini / anafanya / kazi", "polepole / tunaongea", "samaki / wanakula / wageni"]
+    }
+  ],
+  "answers": [
+    "ninasoma — anapika — tunafanya kazi — wanaongea — unakula — mnakuja",
+    "Unafanya nini? — Ninajifunza Kiswahili kila siku. — Anafanya kazi hotelini. — Tunaelewa kidogo. — Wanakula samaki na wali. — Ninasema polepole.",
+    "Wanapika chakula. — Wanafanya kazi hapa. — Wanakunywa chai. — Wanajifunza Kiswahili. — Wanakwenda sokoni.",
+    "ninaandika — ninakula (ku- ditahan) — ninasikia — ninakuja (ku- ditahan) — ninanunua — ninakunywa (ku- ditahan)",
+    "Unafanya nini hapa? — Ninasoma kila siku. — Anafanya kazi hotelini. — Tunaongea polepole. — Wageni wanakula samaki."
+  ]
+}

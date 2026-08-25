@@ -1,0 +1,190 @@
+{
+  "title": "Benda di sekitarmu: kelas ki-/vi- dan kata tunjuk",
+  "title_target": "Hiki ni kitu gani?",
+  "goal": "Menamai benda-benda di sekitarmu, menawar sedikit di pasar kerajinan, dan menunjuk dengan tepat: ini, itu, dan yang di sana.",
+  "bekal": [
+    "kelas *ki-/vi-*: *kitabu → vitabu*, dan kata sifat yang ikut awalannya",
+    "tiga jenis kata tunjuk: *hiki* (ini), *hicho* (itu yang tadi), *kile* (itu yang jauh)",
+    "cara membaca ulang bunyi awalan untuk menebak kata tunjuk kelas mana pun"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Sokoni la vitu vya mikono",
+      "intro": "Pasar kerajinan di Stone Town. Budi mencari oleh-oleh untuk adiknya, ditemani Amina.",
+      "lines": [
+        { "speaker": "Budi:", "text": "Hiki ni kitu gani?", "id": "Ini benda apa?", "literal": "ini-benda adalah benda apa?" },
+        { "speaker": "Amina:", "text": "Hiki ni kikapu cha mkono. Watu hapa wanatengeneza vikapu vizuri.", "id": "Ini keranjang tangan. Orang di sini membuat keranjang yang bagus.", "literal": "ini-benda adalah keranjang dari tangan. orang-orang di-sini mereka-sedang-buat keranjang-keranjang bagus-bagus." },
+        { "speaker": "Budi:", "text": "Ni kizuri sana! Na hivi ni nini?", "id": "Bagus sekali! Dan ini apa?", "literal": "adalah bagus sangat! dan ini-benda-benda adalah apa?" },
+        { "speaker": "Amina:", "text": "Hivi ni viatu vya ngozi. Vinatoka Mombasa.", "id": "Ini sepatu kulit. Datangnya dari Mombasa.", "literal": "ini-benda-benda adalah sepatu-sepatu dari kulit. mereka-sedang-datang Mombasa." },
+        { "speaker": "Budi:", "text": "Viatu hivi ni ghali?", "id": "Sepatu ini mahal?", "literal": "sepatu-sepatu ini adalah mahal?" },
+        { "speaker": "Amina:", "text": "Hapana, ni rahisi. Shilingi elfu kumi tu.", "id": "Tidak, murah. Cuma sepuluh ribu shilling.", "literal": "tidak, adalah mudah. shilling ribu sepuluh saja." },
+        { "speaker": "Budi:", "text": "Kitu gani ni kizuri kwa dada yangu?", "id": "Benda apa yang bagus untuk adik saya?", "literal": "benda apa adalah bagus untuk saudari milik-ku?" },
+        { "speaker": "Amina:", "text": "Kikapu hiki kidogo ni kizuri. Au vikombe hivi.", "id": "Keranjang kecil ini bagus. Atau cangkir-cangkir ini.", "literal": "keranjang ini kecil adalah bagus. atau cangkir-cangkir ini." },
+        { "speaker": "Budi:", "text": "Vikombe hivi ni vingapi?", "id": "Cangkir-cangkir ini ada berapa?", "literal": "cangkir-cangkir ini adalah berapa?" },
+        { "speaker": "Amina:", "text": "Ni vinne. Vyote ni vya udongo.", "id": "Ada empat. Semuanya dari tanah liat.", "literal": "adalah empat. semuanya adalah dari tanah-liat." },
+        { "speaker": "Budi:", "text": "Ninapenda kile cheusi kule!", "id": "Saya suka yang hitam di sana itu!", "literal": "saya-sedang-suka itu-benda hitam di-sana!" },
+        { "speaker": "Amina:", "text": "Kile ni kizuri kabisa. Bei yake ni elfu tano.", "id": "Yang itu bagus sekali. Harganya lima ribu.", "literal": "itu-benda adalah bagus sama-sekali. harga milik-nya adalah ribu lima." }
+      ],
+      "notes": [
+        "**Kitu berarti \"benda\" dan Kiswahili memakainya sesering kita memakai \"barang\".** *Kitu gani?* (benda apa?), *kitu kimoja* (satu benda), *hakuna kitu* (tidak ada apa-apa). Jamaknya *vitu*.",
+        "**Vya, cha berarti \"dari; terbuat dari\".** Bentuknya ikut kelas bendanya: *kikapu cha mkono* (keranjang tangan), *viatu vya ngozi* (sepatu kulit), *vikombe vya udongo* (cangkir tanah liat). Kamu sudah bertemu saudaranya di unit 2: *picha ya familia*, *watoto wa kaka*.",
+        "**Ghali dan rahisi tidak pernah berubah bentuk.** Keduanya pinjaman Arab, jadi tak ikut kelas: *kitabu ghali*, *nyumba ghali*, *viatu ghali*. Kata sifat pinjaman lain yang berperilaku sama: *safi* (bersih), *tayari* (siap), *muhimu* (penting), *bora* (terbaik), *hodari* (pandai; rajin).",
+        "**Rahisi berarti \"murah\" dan \"mudah\" sekaligus.** Lawannya dua: *ghali* untuk harga, *gumu* untuk kesulitan. Kalau ada yang berkata *Kiswahili ni rahisi*, ia sedang berkata bahasa ini mudah — dan sejauh ini ia tidak salah.",
+        "**Cheusi adalah ki- + eusi.** Awalan *ki-* berubah jadi *ch-* di depan vokal: *ki + eusi* → *cheusi* (hitam), *ki + eupe* → *cheupe* (putih), *ki + ingi* → *vingi* untuk jamaknya. Aturan bunyi kecil yang berlaku di seluruh kelas ini."
+      ],
+      "grammars": [
+        {
+          "title": "Kelas ki-/vi- — benda buatan tangan",
+          "body": [
+            "Kelas kedua yang kamu pasang berisi sebagian besar **benda buatan manusia**: perkakas, perabot, alat. Tunggalnya **ki-**, jamaknya **vi-** — dan seperti biasa, kata sifat serta angkanya ikut berganti."
+          ],
+          "table": {
+            "head": ["Tunggal", "Jamak", "Arti", "Dengan kata sifat"],
+            "rows": [
+              ["*kitabu*", "*vitabu*", "buku", "*kitabu kizuri → vitabu vizuri*"],
+              ["*kiti*", "*viti*", "kursi", "*kiti kidogo → viti vidogo*"],
+              ["*kisu*", "*visu*", "pisau", "*kisu kikubwa → visu vikubwa*"],
+              ["*kikombe*", "*vikombe*", "cangkir", "*kikombe kimoja → vikombe viwili*"],
+              ["*kiatu*", "*viatu*", "sepatu", "*kiatu kipya → viatu vipya*"],
+              ["*kijiko*", "*vijiko*", "sendok", "*kijiko kifupi → vijiko vifupi*"],
+              ["*chakula*", "*vyakula*", "makanan", "*ch- di depan vokal*"],
+              ["*chumba*", "*vyumba*", "kamar", "*chumba changu → vyumba vyangu*"]
+            ]
+          },
+          "after": [
+            "Dua baris terakhir memperlihatkan aturan bunyinya: **ki- jadi ch- dan vi- jadi vy- di depan vokal**. *Ki + akula* → *chakula*. *Vi + akula* → *vyakula*. Kata seperti *chumba*, *choo* (toilet), dan *chuo* (kampus) sebenarnya anggota kelas ini yang menyamar.",
+            "Awalan *ki-* juga mesin pembuat kata. Ia menandai **bahasa**: *Kiswahili*, *Kiingereza*, *Kiindonesia*. Ia menandai **cara**: *kienyeji* (secara tradisional), *kizungu* (gaya orang Barat). Dan ia mengecilkan: *mtoto* (anak) → *kitoto* (bayi mungil), *kijiji* (desa kecil) dari *mji* (kota).",
+            "Bentuk *vi-* di depan kata sifat menghasilkan kata keterangan yang sudah kamu pakai sejak unit 3: *vizuri* (dengan baik), *vibaya* (dengan buruk), *vingi* (banyak), *vipi?* (bagaimana?)."
+          ]
+        },
+        {
+          "title": "Ini, itu, dan yang di sana",
+          "body": [
+            "Bahasa Swahili membedakan **tiga** jarak, bukan dua. Bahasa Indonesia punya \"ini\" dan \"itu\"; bahasa Swahili menambahkan satu lagi untuk benda yang baru saja disebut dalam percakapan."
+          ],
+          "table": {
+            "head": ["Kelas", "ini (di sini)", "itu (yang tadi)", "itu (di sana)", "Contoh"],
+            "rows": [
+              ["Orang: *mtu/watu*", "*huyu* / *hawa*", "*huyo* / *hao*", "*yule* / *wale*", "*mtu huyu*"],
+              ["*kitu/vitu*", "*hiki* / *hivi*", "*hicho* / *hivyo*", "*kile* / *vile*", "*kitabu hiki*"],
+              ["*nyumba* (kelas N)", "*hii* / *hizi*", "*hiyo* / *hizo*", "*ile* / *zile*", "*nyumba hii*"],
+              ["*gari/magari*", "*hili* / *haya*", "*hilo* / *hayo*", "*lile* / *yale*", "*gari hili*"],
+              ["*mti/miti*", "*huu* / *hii*", "*huo* / *hiyo*", "*ule* / *ile*", "*mti huu*"],
+              ["Tempat", "*hapa*", "*hapo*", "*pale* / *kule*", "*hapa Zanzibar*"]
+            ]
+          },
+          "after": [
+            "Ada pola yang menghemat seluruh tabel ini. Kata tunjuk \"ini\" dibentuk dari **h + vokal yang sama dengan awalan kelasnya + awalan kelasnya**: kelas *ki-* → *h* + *i* + *ki* = **hiki**. Kelas *vi-* → *h* + *i* + *vi* = **hivi**. Kelas *wa-* → *h* + *a* + *wa* = **hawa**. Sekali kamu dengar polanya, tabelnya tak perlu dihafal.",
+            "Bentuk \"itu yang tadi\" (*hicho*, *hiyo*, *hayo*) dipakai untuk benda yang **sudah disebut dalam percakapan**, walau bendanya ada di depan mata. Ini yang paling sering terdengar dalam obrolan sehari-hari: *Hiyo ni kweli* — \"itu benar\" (yang barusan kamu bilang).",
+            "Kata tunjuknya berdiri **sesudah** bendanya: *kitabu hiki* (buku ini), *watu hawa* (orang-orang ini). Kalau ditaruh di depan — *hiki kitabu* — artinya bergeser jadi penegasan: \"buku yang **ini**, bukan yang itu\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vitu ndani ya chumba — isi ruangan",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*kitanda* / *vitanda*", "ki-TAN-da", "tempat tidur"],
+          ["*kiti* / *viti*", "KI-ti", "kursi"],
+          ["*meza*", "MÉ-za", "meja"],
+          ["*mlango* / *milango*", "m-LA-ngo", "pintu"],
+          ["*dirisha* / *madirisha*", "di-RI-sya", "jendela"],
+          ["*taa*", "TA-a", "lampu"],
+          ["*kioo* / *vioo*", "ki-O-o", "cermin; kaca"],
+          ["*sanduku* / *masanduku*", "san-DU-ku", "kotak; koper"],
+          ["*kikombe* / *vikombe*", "ki-KOM-bé", "cangkir"],
+          ["*sahani*", "sa-HA-ni", "piring"],
+          ["*kijiko* / *vijiko*", "ki-JI-ko", "sendok"],
+          ["*uma*", "U-ma", "garpu"],
+          ["*kisu* / *visu*", "KI-su", "pisau"],
+          ["*choo* / *vyoo*", "CO-o", "toilet"],
+          ["*ufunguo* / *funguo*", "u-fu-NGU-o", "kunci"]
+        ]},
+        { "type": "p", "text": "Perhatikan bahwa tidak semuanya masuk kelas *ki-/vi-*. *Meza*, *taa*, dan *sahani* adalah kata pinjaman yang masuk kelas *nyumba* (unit 7); *mlango* masuk kelas *mti* (unit 16); *dirisha* dan *sanduku* masuk kelas *gari* (unit 9). Modul ini memasang kelasnya satu per satu, jadi untuk sekarang cukup hafalkan bentuk jamaknya apa adanya." }
+      ]
+    },
+    {
+      "title": "Rangi — warna, dan yang ikut berganti awalan",
+      "blocks": [
+        { "type": "p", "text": "Warna terbagi dua rombongan, dan bedanya penting karena hanya rombongan pertama yang berganti awalan mengikuti bendanya." },
+        { "type": "tabel", "head": ["Berganti awalan", "Arti", "Contoh kelas ki-", "Contoh orang"], "rows": [
+          ["*-eusi*", "hitam", "*cheusi*", "*mweusi*"],
+          ["*-eupe*", "putih", "*cheupe*", "*mweupe*"],
+          ["*-ekundu*", "merah", "*chekundu*", "*mwekundu*"]
+        ]},
+        { "type": "tabel", "head": ["Tidak berubah", "Arti", "Tidak berubah", "Arti"], "rows": [
+          ["*bluu*", "biru", "*kijani*", "hijau"],
+          ["*njano*", "kuning", "*kahawia*", "cokelat"],
+          ["*rangi ya machungwa*", "oranye", "*kijivu*", "abu-abu"]
+        ]},
+        { "type": "p", "text": "Cara bertanyanya: *Rangi gani?* (warna apa?). Menjawabnya boleh dengan *ni* atau tanpa: *Kitabu ni cheusi* atau *kitabu cheusi* (buku hitam). Perhatikan *kijani* (hijau) — harfiahnya \"seperti daun\", dari *jani* (daun); dan *kahawia* (cokelat) — dari *kahawa* (kopi)." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "kitu / vitu", "baca": "KI-tu", "id": "benda / benda-benda" },
+    { "sw": "kikapu / vikapu", "baca": "ki-KA-pu", "id": "keranjang" },
+    { "sw": "kiatu / viatu", "baca": "ki-A-tu", "id": "sepatu" },
+    { "sw": "kikombe / vikombe", "baca": "ki-KOM-bé", "id": "cangkir" },
+    { "sw": "kitabu / vitabu", "baca": "ki-TA-bu", "id": "buku" },
+    { "sw": "kiti / viti", "baca": "KI-ti", "id": "kursi" },
+    { "sw": "kisu / visu", "baca": "KI-su", "id": "pisau" },
+    { "sw": "chumba / vyumba", "baca": "CUM-ba", "id": "kamar" },
+    { "sw": "chakula / vyakula", "baca": "ca-KU-la", "id": "makanan" },
+    { "sw": "mkono / mikono", "baca": "m-KO-no", "id": "tangan" },
+    { "sw": "ngozi", "baca": "NGO-zi", "id": "kulit" },
+    { "sw": "udongo", "baca": "u-DO-ngo", "id": "tanah liat; tanah" },
+    { "sw": "ghali", "baca": "GHA-li", "id": "mahal" },
+    { "sw": "rahisi", "baca": "ra-HI-si", "id": "murah; mudah" },
+    { "sw": "gumu", "baca": "GU-mu", "id": "sulit; keras" },
+    { "sw": "-pya", "baca": "pya", "id": "baru" },
+    { "sw": "-eusi", "baca": "É-u-si", "id": "hitam" },
+    { "sw": "-eupe", "baca": "É-u-pé", "id": "putih" },
+    { "sw": "-ekundu", "baca": "é-KUN-du", "id": "merah" },
+    { "sw": "rangi", "baca": "RA-ngi", "id": "warna" },
+    { "sw": "hiki / hivi", "baca": "HI-ki / HI-vi", "id": "ini (kelas ki-/vi-)" },
+    { "sw": "kile / vile", "baca": "KI-lé", "id": "itu (yang jauh)" },
+    { "sw": "hii / hizi", "baca": "HI-i / HI-zi", "id": "ini (kelas nyumba)" },
+    { "sw": "kule", "baca": "KU-lé", "id": "di sana" },
+    { "sw": "-ote", "baca": "O-té", "id": "semua" },
+    { "sw": "kutengeneza", "baca": "ku-té-ngé-NÉ-za", "id": "membuat; memperbaiki" },
+    { "sw": "kununua", "baca": "ku-nu-NU-a", "id": "membeli" },
+    { "sw": "kuuza", "baca": "ku-U-za", "id": "menjual" },
+    { "sw": "soko / masoko", "baca": "SO-ko", "id": "pasar" },
+    { "sw": "kweli", "baca": "KWÉ-li", "id": "benar; sungguh" },
+    { "sw": "meza", "baca": "MÉ-za", "id": "meja" },
+    { "sw": "mlango / milango", "baca": "m-LA-ngo", "id": "pintu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi jamak, kata sifatnya ikut.",
+      "items": ["kitabu kizuri → ____", "kiti kidogo → ____", "kikombe kipya → ____", "kisu kikubwa → ____", "chumba kizuri → ____", "kiatu cheusi → ____"]
+    },
+    {
+      "prompt": "Lengkapi dengan kata tunjuk \"ini\" yang tepat.",
+      "items": ["kitabu ____", "vitabu ____", "mtu ____", "watu ____", "nyumba ____", "gari ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Ini benda apa?", "Ini keranjang tangan.", "Sepatu ini mahal?", "Tidak, murah.", "Cangkir-cangkir ini ada berapa?", "Saya suka yang hitam itu."]
+    },
+    {
+      "prompt": "Isi dengan penghubung cha atau vya.",
+      "items": ["kikapu ____ mkono", "viatu ____ ngozi", "vikombe ____ udongo", "kitabu ____ Kiswahili", "chumba ____ wageni"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["gani / hiki / kitu / ni", "vingapi / hivi / ni / vikombe", "cheusi / ninapenda / kile", "ni / viatu / ghali / hivi", "vizuri / vikapu / ni / hivi"]
+    }
+  ],
+  "answers": [
+    "vitabu vizuri — viti vidogo — vikombe vipya — visu vikubwa — vyumba vizuri — viatu vyeusi",
+    "hiki — hivi — huyu — hawa — hii — hili",
+    "Hiki ni kitu gani? — Hiki ni kikapu cha mkono. — Viatu hivi ni ghali? — Hapana, ni rahisi. — Vikombe hivi ni vingapi? — Ninapenda kile cheusi.",
+    "cha — vya — vya — cha — cha",
+    "Hiki ni kitu gani? — Vikombe hivi ni vingapi? — Ninapenda kile cheusi. — Viatu hivi ni ghali. — Vikapu hivi ni vizuri."
+  ]
+}

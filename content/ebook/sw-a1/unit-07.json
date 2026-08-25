@@ -1,0 +1,189 @@
+{
+  "title": "Kelas terbesar: benda tanpa jamak dan kata sifat yang mendengung",
+  "title_target": "Nguo hizi ni nzuri",
+  "goal": "Membeli pakaian, menyebut warna, menawar harga — dan menguasai kelas kata benda yang paling banyak anggotanya, yang bentuk tunggal dan jamaknya sama persis.",
+  "bekal": [
+    "kelas N: *nyumba*, *nguo*, *safari* — tunggal dan jamak tak berbeda",
+    "kata sifat yang mendengung: *nzuri*, *ndogo*, *ndefu*, *mbaya*, *nyeusi*",
+    "awalan pelaku kelas ini: *i-* untuk satu, *zi-* untuk banyak"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kununua nguo sokoni",
+      "intro": "Ada undangan pesta akhir pekan. Amina mengajak Budi mencari baju di pasar kain.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Unahitaji nguo mpya kwa sherehe ya Jumamosi.", "id": "Kamu butuh baju baru untuk pesta Sabtu.", "literal": "kamu-sedang-butuh baju baru untuk pesta dari Sabtu." },
+        { "speaker": "Budi:", "text": "Kweli. Nguo zangu zote ni chafu kidogo.", "id": "Benar. Baju saya semua agak kotor.", "literal": "sungguh. baju milik-ku semua adalah kotor sedikit." },
+        { "speaker": "Amina:", "text": "Angalia nguo hizi. Rangi gani unapenda?", "id": "Lihat baju-baju ini. Kamu suka warna apa?", "literal": "lihat baju-baju ini. warna apa kamu-sedang-suka?" },
+        { "speaker": "Budi:", "text": "Ninapenda rangi ya bluu. Nguo hii ni bei gani?", "id": "Saya suka warna biru. Baju ini harganya berapa?", "literal": "saya-sedang-suka warna dari biru. baju ini adalah harga apa?" },
+        { "speaker": "Muuzaji:", "text": "Elfu ishirini. Ni nguo nzuri sana, safi kabisa.", "id": "Dua puluh ribu. Baju yang sangat bagus, benar-benar rapi.", "literal": "ribu dua-puluh. adalah baju bagus sangat, bersih sama-sekali." },
+        { "speaker": "Budi:", "text": "Ghali sana! Punguza bei kidogo, tafadhali.", "id": "Mahal sekali! Tolong kurangi harganya sedikit.", "literal": "mahal sangat! kurangi harga sedikit, tolong." },
+        { "speaker": "Muuzaji:", "text": "Kwa sababu wewe ni rafiki: elfu kumi na tano.", "id": "Karena kamu teman: lima belas ribu.", "literal": "karena kamu adalah teman: ribu sepuluh dan lima." },
+        { "speaker": "Budi:", "text": "Sawa. Na kanga hizi ni ngapi?", "id": "Oke. Dan kanga-kanga ini berapa?", "literal": "oke. dan kanga-kanga ini adalah berapa?" },
+        { "speaker": "Amina:", "text": "Kanga ni nzuri kwa mama yako! Zina maneno mazuri.", "id": "Kanga bagus untuk ibumu! Ada tulisan-tulisan bagusnya.", "literal": "kanga adalah bagus untuk ibu milik-mu! mereka-punya kata-kata bagus-bagus." },
+        { "speaker": "Muuzaji:", "text": "Kanga mbili ni elfu kumi tu. Rangi zote ziko hapa.", "id": "Dua kanga cuma sepuluh ribu. Semua warna ada di sini.", "literal": "kanga dua adalah ribu sepuluh saja. warna semua mereka-ada di-sini." },
+        { "speaker": "Budi:", "text": "Ninachukua kanga mbili nyekundu na nguo moja ya bluu.", "id": "Saya ambil dua kanga merah dan satu baju biru.", "literal": "saya-sedang-ambil kanga dua merah dan baju satu dari biru." },
+        { "speaker": "Amina:", "text": "Bei nzuri sana! Sasa una nguo za sherehe.", "id": "Harga yang bagus sekali! Sekarang kamu punya baju pesta.", "literal": "harga bagus sangat! sekarang kamu-punya baju-baju dari pesta." }
+      ],
+      "notes": [
+        "**Bei gani? adalah cara menanyakan harga.** Harfiahnya \"harga apa?\". Sinonimnya *Ni pesa ngapi?* (berapa uangnya) dan yang paling pendek: *Ngapi?*. Menawar di pasar bukan hal kasar di Afrika Timur — ia bagian dari percakapan, dan penjual justru menunggu kamu menawar.",
+        "**Punguza bei berarti \"kurangi harganya\".** Kalimat tawar-menawar yang wajar: *Punguza kidogo* (kurangi sedikit), *Bei ya mwisho ni ngapi?* (harga akhirnya berapa?), *Nitalipa elfu kumi* (saya akan bayar sepuluh ribu). Bentuk perintahnya dipasang di unit 14.",
+        "**Kwa sababu berarti \"karena\", dan kamu sudah mengenal separuhnya.** *Sababu* adalah \"sebab\" yang sama dengan bahasa Indonesia. *Kwa* berarti \"dengan; untuk; oleh\" dan akan muncul di mana-mana: *kwa nini?* (kenapa?), *kwa sababu* (karena), *kwa ajili ya* (demi).",
+        "**Zote berarti \"semua\" untuk kelas ini.** Kata *-ote* ikut kelas bendanya: *wote* (semua orang), *vyote* (semua benda ki-), *zote* (semua benda kelas N), *yote* (semua benda gari). Kamu sudah memakai *wote* sejak unit 1.",
+        "**Kanga adalah kain persegi bergambar yang selalu memuat kalimat.** Sepasang kanga selalu dijual berdua — satu untuk pinggang, satu untuk bahu atau kepala. Kalimat di pinggirnya (*jina la kanga*) bisa peribahasa, doa, atau sindiran halus untuk tetangga. Membeli kanga tanpa membaca kalimatnya adalah kesalahan turis yang paling sering ditertawakan penduduk setempat."
+      ],
+      "grammars": [
+        {
+          "title": "Kelas N: tunggal dan jamak yang serupa",
+          "body": [
+            "Kelas ini yang paling banyak anggotanya, dan yang paling gampang sekaligus paling menipu. Gampang, karena **bentuk tunggal dan jamaknya sama persis**: *nyumba* berarti \"rumah\" dan \"rumah-rumah\". Menipu, karena kata sifatnya berubah bentuk dengan cara yang harus didengar, bukan dihafal."
+          ],
+          "table": {
+            "head": ["Kata sifat", "Bentuk kelas N", "Aturan bunyi", "Contoh"],
+            "rows": [
+              ["*-zuri*", "**nzuri**", "n- di depan z, d, g, j", "*nguo nzuri*"],
+              ["*-dogo*", "**ndogo**", "n- di depan d", "*nyumba ndogo*"],
+              ["*-refu*", "**ndefu**", "n- + r berubah jadi d", "*safari ndefu*"],
+              ["*-baya*", "**mbaya**", "m- di depan b, p, v", "*habari mbaya*"],
+              ["*-pya*", "**mpya**", "m- di depan p", "*nguo mpya*"],
+              ["*-eusi*", "**nyeusi**", "ny- di depan vokal", "*kanga nyeusi*"],
+              ["*-ingi*", "**nyingi**", "ny- di depan vokal", "*pesa nyingi*"],
+              ["*-kubwa*", "**kubwa**", "tanpa awalan di depan k, t, f, s, ch", "*nyumba kubwa*"],
+              ["*-fupi*", "**fupi**", "tanpa awalan", "*njia fupi*"]
+            ]
+          },
+          "after": [
+            "Aturannya sebenarnya satu kalimat: **bunyi n itu menyesuaikan diri dengan huruf berikutnya, dan menghilang kalau tak bisa menyatu**. Di depan *b*, *p*, *v* ia jadi *m*; di depan vokal jadi *ny*; di depan huruf keras seperti *k*, *t*, *f*, *s*, *ch* ia lenyap sama sekali. Lidahmu sudah tahu aturan ini dari bahasa Indonesia — bandingkan *me-* yang jadi *mem-*, *men-*, *meng-*.",
+            "Kata sifat pinjaman Arab tidak ikut sama sekali: *nguo safi*, *habari muhimu*, *safari tayari*, *kazi ngumu*. Tak ada yang perlu ditambahkan di depannya.",
+            "⚠️ Jangan bingung dengan *nyumba nzuri mbili* — tiga kata, tiga aturan berbeda, semuanya benar: *nzuri* mendapat *n-*, *mbili* memakai bentuk telanjangnya karena kelas ini memang begitu, dan *nyumba* tidak berubah karena tunggal dan jamaknya sama."
+          ]
+        },
+        {
+          "title": "Awalan pelaku i- dan zi-",
+          "body": [
+            "Benda kelas ini punya awalan pelakunya sendiri saat menjadi pokok kalimat: **i-** untuk satu, **zi-** untuk banyak. Ini bagian yang paling mengejutkan pelajar baru — kata kerjanya ikut berganti mengikuti kelas bendanya, bukan cuma kata sifatnya."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti", "Catatan"],
+            "rows": [
+              ["*Nyumba **i**natosha.*", "Rumahnya cukup.", "satu rumah → i-"],
+              ["*Nyumba **zi**natosha.*", "Rumah-rumahnya cukup.", "banyak rumah → zi-"],
+              ["*Safari **i**naanza kesho.*", "Perjalanannya mulai besok.", "i-"],
+              ["*Barua **zi**nakuja.*", "Surat-suratnya datang.", "zi-"],
+              ["*Nguo **ha**itoshi.*", "Bajunya tidak cukup.", "ingkar: ha- + i- → hai-"],
+              ["*Nguo **haz**itoshi.*", "Baju-bajunya tidak cukup.", "ingkar: ha- + zi- → hazi-"]
+            ]
+          },
+          "after": [
+            "Kata milik dan penghubungnya ikut pola yang sama: **yangu / zangu** dan **ya / za**. *Nguo yangu* (baju saya) → *nguo zangu* (baju-baju saya). *Nguo ya sherehe* (baju pesta) → *nguo za sherehe* (baju-baju pesta).",
+            "Kata tunjuknya sudah kamu lihat di unit 6: *hii* / *hizi* (ini), *hiyo* / *hizo* (itu yang tadi), *ile* / *zile* (itu yang di sana).",
+            "Karena kelas ini menampung hampir semua kata pinjaman — *meza*, *chai*, *hoteli*, *simu*, *picha*, *saa*, *kazi*, *bei*, *pesa*, *safari*, *habari*, *shilingi* — maka *i-*, *zi-*, *ya*, *za*, dan *nzuri* adalah bunyi yang paling sering kamu dengar dalam bahasa Swahili sehari-hari. Kalau harus memilih satu kelas untuk dihafal betul-betul, pilih yang ini."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Nguo — apa yang dipakai orang",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*nguo*", "n-GU-o", "baju; pakaian"],
+          ["*shati* / *mashati*", "SYA-ti", "kemeja"],
+          ["*suruali*", "su-ru-A-li", "celana panjang"],
+          ["*kaptula*", "kap-TU-la", "celana pendek"],
+          ["*sketi*", "SKÉ-ti", "rok"],
+          ["*gauni*", "ga-U-ni", "gaun"],
+          ["*kanzu*", "KAN-zu", "jubah panjang (pria)"],
+          ["*kanga* / *kitenge*", "KA-nga", "kain bermotif"],
+          ["*kofia*", "ko-FI-a", "peci; topi"],
+          ["*hijabu* / *baibui*", "hi-JA-bu", "kerudung; jilbab"],
+          ["*viatu*", "vi-A-tu", "sepatu"],
+          ["*soksi*", "SOK-si", "kaus kaki"],
+          ["*mkoba*", "m-KO-ba", "tas"],
+          ["*saa*", "SA-a", "jam tangan; jam"],
+          ["*miwani*", "mi-WA-ni", "kacamata"]
+        ]},
+        { "type": "p", "text": "Kata kerjanya *kuvaa* (memakai): *Ninavaa kanzu* (saya memakai kanzu), *Anavaa kofia* (dia memakai peci). Untuk melepas: *kuvua* — perhatikan bahwa satu huruf saja yang berbeda, dan kata yang sama juga berarti \"memancing\"." },
+        { "type": "p", "text": "Di Zanzibar dan pesisir Tanzania, pakaian sopan bukan sekadar saran. Perempuan menutup bahu dan lutut, laki-laki tidak bertelanjang dada di luar pantai. *Kanga* atau *kitenge* yang dililitkan di pinggang adalah jalan keluar paling praktis — dan menjadi oleh-oleh sekaligus." }
+      ]
+    },
+    {
+      "title": "Kanga: kain yang bisa bicara",
+      "blocks": [
+        { "type": "p", "text": "Tiap kanga memuat satu kalimat yang dicetak di pinggirnya. Kalimat itu punya nama sendiri, *jina la kanga*, dan sering dipakai untuk menyampaikan sesuatu yang tak enak diucapkan langsung. Beberapa yang paling terkenal — dan semuanya bisa kamu baca sekarang:" },
+        { "type": "tabel", "head": ["Kalimat di kanga", "Bahasa Indonesia"], "rows": [
+          ["*Mama ni mama*", "Ibu tetaplah ibu"],
+          ["*Haraka haraka haina baraka*", "Buru-buru tidak membawa berkah"],
+          ["*Penzi ni moyo*", "Cinta itu urusan hati"],
+          ["*Sipendi fitina*", "Saya tidak suka gosip"],
+          ["*Asante mama kwa malezi*", "Terima kasih Ibu atas asuhannya"],
+          ["*Mgeni njoo mwenyeji apone*", "Datanglah tamu, agar tuan rumah beroleh berkah"]
+        ]},
+        { "type": "p", "text": "*Baraka* (berkah), *fitina* (fitnah; gosip), *penzi* dari *kupenda* — sekali lagi, sebagian katanya sudah kamu kenal sejak sebelum membuka modul ini." },
+        { "type": "p", "text": "Peribahasa terakhir menjelaskan satu hal tentang Afrika Timur yang akan kamu rasakan sendiri: tamu dianggap membawa berkah, bukan merepotkan. Itu sebabnya kata *karibu* diucapkan begitu sering, dan diucapkan sungguh-sungguh." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "nguo", "baca": "n-GU-o", "id": "baju; pakaian" },
+    { "sw": "kanga", "baca": "KA-nga", "id": "kain bermotif" },
+    { "sw": "kofia", "baca": "ko-FI-a", "id": "peci; topi" },
+    { "sw": "mkoba", "baca": "m-KO-ba", "id": "tas" },
+    { "sw": "nyumba", "baca": "NYUM-ba", "id": "rumah" },
+    { "sw": "njia", "baca": "n-JI-a", "id": "jalan" },
+    { "sw": "safari", "baca": "sa-FA-ri", "id": "perjalanan" },
+    { "sw": "barua", "baca": "ba-RU-a", "id": "surat" },
+    { "sw": "sherehe", "baca": "syé-RÉ-hé", "id": "pesta; perayaan" },
+    { "sw": "biashara", "baca": "bi-a-SYA-ra", "id": "dagang; usaha" },
+    { "sw": "nzuri", "baca": "n-ZU-ri", "id": "bagus (kelas N)" },
+    { "sw": "ndogo", "baca": "n-DO-go", "id": "kecil (kelas N)" },
+    { "sw": "ndefu", "baca": "n-DÉ-fu", "id": "panjang (kelas N)" },
+    { "sw": "mbaya", "baca": "m-BA-ya", "id": "buruk (kelas N)" },
+    { "sw": "mpya", "baca": "m-PYA", "id": "baru (kelas N)" },
+    { "sw": "nyeusi", "baca": "nyé-U-si", "id": "hitam (kelas N)" },
+    { "sw": "nyeupe", "baca": "nyé-U-pé", "id": "putih (kelas N)" },
+    { "sw": "nyekundu", "baca": "nyé-KUN-du", "id": "merah (kelas N)" },
+    { "sw": "nyingi", "baca": "NYI-ngi", "id": "banyak (kelas N)" },
+    { "sw": "chafu", "baca": "CA-fu", "id": "kotor" },
+    { "sw": "safi", "baca": "SA-fi", "id": "bersih; rapi" },
+    { "sw": "kuvaa", "baca": "ku-VA-a", "id": "memakai (pakaian)" },
+    { "sw": "kuchukua", "baca": "ku-cu-KU-a", "id": "mengambil; membawa" },
+    { "sw": "kuhitaji", "baca": "ku-hi-TA-ji", "id": "membutuhkan" },
+    { "sw": "kutosha", "baca": "ku-TO-sya", "id": "cukup" },
+    { "sw": "kupunguza", "baca": "ku-pu-NGU-za", "id": "mengurangi" },
+    { "sw": "kwa sababu", "baca": "kwa sa-BA-bu", "id": "karena" },
+    { "sw": "kwa nini", "baca": "kwa NI-ni", "id": "kenapa" },
+    { "sw": "neno / maneno", "baca": "NÉ-no", "id": "kata / kata-kata" },
+    { "sw": "mwisho", "baca": "MWI-syo", "id": "akhir; terakhir" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pasangkan kata sifatnya dengan kelas N.",
+      "items": ["nyumba (-zuri) → ____", "safari (-refu) → ____", "habari (-baya) → ____", "nguo (-pya) → ____", "kanga (-eusi) → ____", "njia (-kubwa) → ____"]
+    },
+    {
+      "prompt": "Lengkapi dengan awalan pelaku i- atau zi-.",
+      "items": ["Nyumba ____natosha. (satu rumah)", "Barua ____nakuja. (banyak surat)", "Safari ____naanza kesho. (satu perjalanan)", "Nguo ____na rangi nzuri. (banyak baju)", "Simu yangu ____mepotea. (satu telepon)"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Baju ini harganya berapa?", "Mahal sekali! Tolong kurangi sedikit.", "Saya suka warna biru.", "Baju saya semua kotor.", "Dua kanga sepuluh ribu.", "Saya ambil satu baju merah."]
+    },
+    {
+      "prompt": "Isi dengan kata milik: yangu atau zangu.",
+      "items": ["nguo ____ (baju saya, satu)", "nguo ____ (baju-baju saya)", "safari ____ (perjalanan saya)", "barua ____ (surat-surat saya)", "simu ____ (telepon saya)"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["gani / hii / ni / nguo / bei", "bei / punguza / tafadhali / kidogo", "nzuri / ni / kanga / hizi", "zangu / chafu / nguo / ni", "mbili / ninachukua / nyekundu / kanga"]
+    }
+  ],
+  "answers": [
+    "nyumba nzuri — safari ndefu — habari mbaya — nguo mpya — kanga nyeusi — njia kubwa",
+    "i — zi — i — zi — i",
+    "Nguo hii ni bei gani? — Ghali sana! Punguza kidogo, tafadhali. — Ninapenda rangi ya bluu. — Nguo zangu zote ni chafu. — Kanga mbili ni elfu kumi. — Ninachukua nguo moja nyekundu.",
+    "yangu — zangu — yangu — zangu — yangu",
+    "Nguo hii ni bei gani? — Punguza bei kidogo, tafadhali. — Kanga hizi ni nzuri. — Nguo zangu ni chafu. — Ninachukua kanga mbili nyekundu."
+  ]
+}

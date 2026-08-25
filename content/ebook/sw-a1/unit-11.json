@@ -1,0 +1,187 @@
+{
+  "title": "Jana: gerbong -li- untuk yang sudah lewat",
+  "title_target": "Ulifanya nini wikendi?",
+  "goal": "Menceritakan apa yang sudah terjadi — akhir pekan, perjalanan, cuaca kemarin — dan mengingkarkannya dengan gerbong yang berganti, bukan ekor yang berganti.",
+  "bekal": [
+    "gerbong *-li-* untuk peristiwa lampau",
+    "ingkarnya: *-li-* diganti *-ku-* dan ekor katanya dibiarkan",
+    "*nilikuwa* dan *kulikuwa na* — dulu saya, dulu ada"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Wikendi ilikuwaje?",
+      "intro": "Senin pagi di kampus. Amina ingin tahu ke mana Budi menghilang selama dua hari.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Habari za Jumatatu! Ulifanya nini wikendi?", "id": "Selamat hari Senin! Kamu ngapain akhir pekan?", "literal": "kabar dari Senin! kamu-lampau-buat apa akhir-pekan?" },
+        { "speaker": "Budi:", "text": "Nilikwenda Bagamoyo pamoja na Juma.", "id": "Saya pergi ke Bagamoyo bersama Juma.", "literal": "saya-lampau-pergi Bagamoyo bersama dengan Juma." },
+        { "speaker": "Amina:", "text": "Kweli? Mlisafiri vipi?", "id": "Serius? Kalian berangkat naik apa?", "literal": "sungguh? kalian-lampau-bepergian bagaimana?" },
+        { "speaker": "Budi:", "text": "Tulipanda basi mapema. Safari ilichukua saa tatu.", "id": "Kami naik bus pagi-pagi. Perjalanannya makan waktu tiga jam.", "literal": "kami-lampau-naik bus lebih-awal. perjalanan ia-lampau-ambil jam tiga." },
+        { "speaker": "Amina:", "text": "Mliona nini huko?", "id": "Kalian lihat apa di sana?", "literal": "kalian-lampau-lihat apa di-sana?" },
+        { "speaker": "Budi:", "text": "Tuliona bahari, majengo ya zamani, na soko kubwa.", "id": "Kami lihat laut, bangunan-bangunan tua, dan pasar besar.", "literal": "kami-lampau-lihat laut, gedung-gedung dari dahulu, dan pasar besar." },
+        { "speaker": "Amina:", "text": "Mlikula wapi?", "id": "Kalian makan di mana?", "literal": "kalian-lampau-makan di-mana?" },
+        { "speaker": "Budi:", "text": "Tulikula samaki wa kupaka ufuoni. Ilikuwa tamu sana!", "id": "Kami makan ikan saus santan di pantai. Enak sekali!", "literal": "kami-lampau-makan ikan dari mengoles di-pantai. ia-lampau-jadi manis sangat!" },
+        { "speaker": "Amina:", "text": "Hapa jana kulikuwa na mvua kubwa siku nzima.", "id": "Di sini kemarin hujan besar seharian.", "literal": "di-sini kemarin ada-lampau dengan hujan besar hari penuh." },
+        { "speaker": "Budi:", "text": "Huko hakukuwa na mvua. Jua lilikuwa kali sana.", "id": "Di sana tidak hujan. Mataharinya terik sekali.", "literal": "di-sana tidak-ada-lampau dengan hujan. matahari ia-lampau-jadi tajam sangat." },
+        { "speaker": "Amina:", "text": "Mlirudi lini?", "id": "Kalian pulang kapan?", "literal": "kalian-lampau-kembali kapan?" },
+        { "speaker": "Budi:", "text": "Tulirudi usiku. Sikulala vizuri — nilichoka sana.", "id": "Kami pulang malam. Saya tidak tidur nyenyak — saya capek sekali.", "literal": "kami-lampau-kembali malam. saya-tidak-lampau-tidur bagus — saya-lampau-capek sangat." }
+      ],
+      "notes": [
+        "**Vipi berarti \"bagaimana\" dan berdiri di ujung.** *Mlisafiri vipi?* (kalian berangkat bagaimana?), *Ilikuwaje?* (bagaimana rasanya?). Bentuk kedua memakai akhiran *-je* yang ditempelkan langsung ke kata kerjanya — sama gunanya, lebih ringkas.",
+        "**Huko berarti \"di sana\" untuk tempat yang sedang dibicarakan**, bukan yang terlihat. *Kule* dipakai untuk tempat yang bisa ditunjuk. Perbedaan yang sama seperti *hapo* dan *pale* di unit 6.",
+        "**Bagamoyo adalah kota pelabuhan tua di seberang Zanzibar.** Namanya berarti \"letakkan hatimu\" — dari *bwaga* (letakkan) dan *moyo* (hati), warisan pahit dari zaman ia menjadi pelabuhan perdagangan budak. Kata *moyo* sendiri akan sering kamu temui: *moyo mkunjufu* (hati yang lapang), *kwa moyo wote* (dengan sepenuh hati).",
+        "**Siku nzima berarti \"sepanjang hari\".** *-zima* berarti utuh, penuh: *mwaka mzima* (setahun penuh), *usiku kucha* (semalam suntuk). Perhatikan bahwa *siku* kelas N, jadi *-zima* jadi *nzima*.",
+        "**Samaki wa kupaka adalah masakan Zanzibar paling terkenal**: ikan bakar yang dioles santan berempah. *Kupaka* berarti mengoles, dan penghubung *wa* menandai jenis — sama seperti *maji ya matunda* dan *chai ya maziwa*."
+      ],
+      "grammars": [
+        {
+          "title": "Gerbong -li-: yang sudah lewat",
+          "body": [
+            "Untuk berpindah ke masa lampau, kamu **tidak mengubah apa pun kecuali gerbong tengahnya**. Akar katanya utuh, awalan pelakunya utuh. Ganti *-na-* jadi **-li-**, selesai."
+          ],
+          "table": {
+            "head": ["Kini", "Lampau", "Cara baca", "Arti"],
+            "rows": [
+              ["*ninasoma*", "*nilisoma*", "ni-li-SO-ma", "saya membaca (tadi)"],
+              ["*unasoma*", "*ulisoma*", "u-li-SO-ma", "kamu membaca"],
+              ["*anasoma*", "*alisoma*", "a-li-SO-ma", "dia membaca"],
+              ["*tunasoma*", "*tulisoma*", "tu-li-SO-ma", "kami membaca"],
+              ["*mnasoma*", "*mlisoma*", "m-li-SO-ma", "kalian membaca"],
+              ["*wanasoma*", "*walisoma*", "wa-li-SO-ma", "mereka membaca"],
+              ["*ninakula*", "*nilikula*", "ni-li-KU-la", "saya makan (ku- tetap ditahan)"],
+              ["*gari linakuja*", "*gari lilikuja*", "li-li-KU-ja", "mobilnya datang"]
+            ]
+          },
+          "after": [
+            "Kata kerja bersuku satu tetap menahan *ku-*-nya persis seperti di bentuk kini: *nilikula*, *nilikunywa*, *nilikuja*, *nilikwenda*, *nilikuwa*.",
+            "Awalan kelas benda bekerja sama seperti biasa: *safari ilichukua* (perjalanannya makan waktu), *magari yalifika* (mobil-mobilnya tiba), *kitabu kilipotea* (bukunya hilang), *watoto walicheza* (anak-anak bermain).",
+            "Bahasa Swahili tidak membedakan \"membaca\" dan \"sudah membaca\" di gerbong ini — *nilisoma* menutup keduanya. Yang membedakan \"sudah selesai dan hasilnya masih terasa\" adalah gerbong *-me-*, dan itu urusan unit berikutnya."
+          ]
+        },
+        {
+          "title": "Ingkarnya: -li- diganti -ku-, ekornya dibiarkan",
+          "body": [
+            "Inilah bagian yang paling sering salah, dan aturannya sebetulnya lebih mudah daripada bentuk kini: **ekor katanya tidak berubah sama sekali**. Yang berganti cuma dua gerbong depannya."
+          ],
+          "table": {
+            "head": ["Lampau", "Ingkar", "Cara baca", "Arti"],
+            "rows": [
+              ["*nilisoma*", "**sikusoma**", "si-ku-SO-ma", "saya tidak membaca"],
+              ["*ulisoma*", "**hukusoma**", "hu-ku-SO-ma", "kamu tidak membaca"],
+              ["*alisoma*", "**hakusoma**", "ha-ku-SO-ma", "dia tidak membaca"],
+              ["*tulisoma*", "**hatukusoma**", "ha-tu-ku-SO-ma", "kami tidak membaca"],
+              ["*mlisoma*", "**hamkusoma**", "ham-ku-SO-ma", "kalian tidak membaca"],
+              ["*walisoma*", "**hawakusoma**", "ha-wa-ku-SO-ma", "mereka tidak membaca"],
+              ["*nilikula*", "**sikula**", "si-KU-la", "saya tidak makan"],
+              ["*nilikwenda*", "**sikwenda**", "si-KWÉN-da", "saya tidak pergi"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa *-ku-* di sini **bukan** *ku-* penyangga dari unit 3, walau bunyinya sama — ini gerbong lampau versi ingkar. Itu sebabnya kata kerja pendek tidak menggandakannya: *nilikula* jadi *sikula*, bukan *sikukula*.",
+            "Untuk **\"dulu adalah\"** dipakai *kuwa*: *nilikuwa mwanafunzi* (saya dulu mahasiswa), *ilikuwa tamu* (rasanya enak), *hakukuwa na mvua* (tidak ada hujan). Bentuk *kulikuwa na* berarti \"dulu ada\", pasangan lampau dari *kuna*.",
+            "Dan untuk **\"dulu punya\"**: *nilikuwa na pesa* (saya punya uang waktu itu), *hatukuwa na muda* (kami tidak punya waktu). Susunannya persis *kuwa* + *na*, gerbongnya dipasang di *kuwa*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hali ya hewa — cuaca, dan kenapa hewa berarti udara",
+      "blocks": [
+        { "type": "p", "text": "*Hali* (hal; keadaan) + *hewa* (hawa; udara) = keadaan udara, alias cuaca. Dua kata Arab yang dua-duanya sudah ada di bahasa Indonesia." },
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*mvua*", "m-VU-a", "hujan"],
+          ["*jua*", "JU-a", "matahari; panas terik"],
+          ["*joto*", "JO-to", "panas"],
+          ["*baridi*", "ba-RI-di", "dingin; sejuk"],
+          ["*upepo*", "u-PÉ-po", "angin"],
+          ["*mawingu*", "ma-WI-ngu", "awan; mendung"],
+          ["*unyevu*", "u-NYÉ-vu", "lembap"],
+          ["*dhoruba*", "dzo-RU-ba", "badai"],
+          ["*kiangazi*", "ki-a-NGA-zi", "musim kemarau"],
+          ["*masika*", "ma-SI-ka", "musim hujan besar"]
+        ]},
+        { "type": "p", "text": "Kalimat cuaca hampir selalu memakai *kuna* atau *ni*: *Kuna mvua* (hujan), *Kuna jua kali* (panas terik), *Leo ni baridi* (hari ini dingin), *Jana kulikuwa na upepo* (kemarin berangin). Untuk bertanya: *Hali ya hewa ikoje leo?*" },
+        { "type": "p", "text": "Afrika Timur punya **dua** musim hujan, bukan satu: *masika* (Maret–Mei, hujan besar) dan *vuli* (Oktober–Desember, hujan kecil). Di antaranya *kiangazi*, musim kering yang panas. Pola yang akan terasa akrab bagi siapa pun yang tumbuh di daerah tropis — kecuali bahwa di sini orang menghitungnya dari arah angin muson, angin yang sama yang dulu membawa pelaut dari Arab dan Gujarat ke pesisir ini, dan membawa kata-katanya sekalian." }
+      ]
+    },
+    {
+      "title": "Menceritakan yang sudah lewat",
+      "blocks": [
+        { "type": "p", "text": "Kalimat-kalimat berikut adalah kerangka cerita yang bisa kamu isi sendiri. Semuanya memakai gerbong *-li-*." },
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*Jana nilikwenda…*", "Kemarin saya pergi ke…"],
+          ["*Wikendi iliyopita tulikutana na…*", "Akhir pekan lalu kami bertemu dengan…"],
+          ["*Kwanza tulikula, kisha tulitembea.*", "Pertama kami makan, lalu kami jalan-jalan."],
+          ["*Ilikuwa nzuri sana!*", "Menyenangkan sekali!"],
+          ["*Sikupenda sana.*", "Saya kurang suka."],
+          ["*Nilichoka lakini nilifurahi.*", "Saya capek tapi senang."],
+          ["*Tulikaa huko siku mbili.*", "Kami tinggal di sana dua hari."],
+          ["*Nilirudi jana usiku.*", "Saya pulang kemarin malam."]
+        ]},
+        { "type": "p", "text": "Dua penyambung cerita yang perlu kamu punya sejak sekarang: **kwanza** (pertama), **kisha** atau **halafu** (lalu), **mwisho** (akhirnya), dan **kwa hiyo** (jadi; karena itu). Dengan empat kata ini, kalimat-kalimat pendekmu langsung terdengar seperti cerita, bukan daftar." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "wikendi", "baca": "wi-KÉN-di", "id": "akhir pekan" },
+    { "sw": "kusafiri", "baca": "ku-sa-FI-ri", "id": "bepergian" },
+    { "sw": "kuchukua", "baca": "ku-cu-KU-a", "id": "mengambil; memakan waktu" },
+    { "sw": "kufika", "baca": "ku-FI-ka", "id": "tiba" },
+    { "sw": "kuondoka", "baca": "ku-on-DO-ka", "id": "berangkat; pergi" },
+    { "sw": "kukaa", "baca": "ku-KA-a", "id": "duduk; tinggal" },
+    { "sw": "kuchoka", "baca": "ku-CO-ka", "id": "capek" },
+    { "sw": "kufurahi", "baca": "ku-fu-RA-hi", "id": "gembira" },
+    { "sw": "kupotea", "baca": "ku-po-TÉ-a", "id": "hilang; tersesat" },
+    { "sw": "kuona", "baca": "ku-O-na", "id": "melihat" },
+    { "sw": "huko", "baca": "HU-ko", "id": "di sana (yang dibicarakan)" },
+    { "sw": "vipi", "baca": "VI-pi", "id": "bagaimana" },
+    { "sw": "zamani", "baca": "za-MA-ni", "id": "dahulu; zaman" },
+    { "sw": "nzima", "baca": "n-ZI-ma", "id": "utuh; penuh" },
+    { "sw": "pamoja na", "baca": "pa-MO-ja na", "id": "bersama dengan" },
+    { "sw": "kwanza", "baca": "KWAN-za", "id": "pertama; mula-mula" },
+    { "sw": "halafu", "baca": "ha-LA-fu", "id": "lalu; kemudian" },
+    { "sw": "kwa hiyo", "baca": "kwa HI-yo", "id": "jadi; karena itu" },
+    { "sw": "hali ya hewa", "baca": "HA-li ya HÉ-wa", "id": "cuaca" },
+    { "sw": "mvua", "baca": "m-VU-a", "id": "hujan" },
+    { "sw": "joto", "baca": "JO-to", "id": "panas" },
+    { "sw": "baridi", "baca": "ba-RI-di", "id": "dingin" },
+    { "sw": "upepo", "baca": "u-PÉ-po", "id": "angin" },
+    { "sw": "mawingu", "baca": "ma-WI-ngu", "id": "awan; mendung" },
+    { "sw": "kiangazi", "baca": "ki-a-NGA-zi", "id": "musim kemarau" },
+    { "sw": "masika", "baca": "ma-SI-ka", "id": "musim hujan" },
+    { "sw": "moyo / mioyo", "baca": "MO-yo", "id": "hati" },
+    { "sw": "kupaka", "baca": "ku-PA-ka", "id": "mengoles" },
+    { "sw": "nilikuwa", "baca": "ni-li-KU-wa", "id": "saya dulu; saya adalah (lampau)" },
+    { "sw": "kulikuwa na", "baca": "ku-li-KU-wa na", "id": "dulu ada" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke bentuk lampau.",
+      "items": ["Ninasoma kitabu. → ____", "Anapika chakula. → ____", "Tunakwenda sokoni. → ____", "Wanakula wali. → ____", "Unafanya kazi. → ____", "Safari inachukua saa tatu. → ____"]
+    },
+    {
+      "prompt": "Ubah jadi ingkar lampau.",
+      "items": ["Nilisoma. → ____", "Alikuja. → ____", "Tulikwenda. → ____", "Walikula. → ____", "Ulilala vizuri. → ____", "Mlirudi jana. → ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Kamu ngapain akhir pekan?", "Saya pergi ke Bagamoyo.", "Kami naik bus pagi-pagi.", "Kalian makan di mana?", "Kemarin hujan besar.", "Saya tidak tidur nyenyak."]
+    },
+    {
+      "prompt": "Lengkapi dengan nilikuwa, kulikuwa na, atau hakukuwa na.",
+      "items": ["Jana ____ mvua kubwa. (ada)", "____ mwanafunzi mwaka jana. (saya dulu)", "Huko ____ mvua. (tidak ada)", "Sokoni ____ watu wengi. (ada)", "____ mgonjwa juzi. (saya dulu)"]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["nini / wikendi / ulifanya", "basi / tulipanda / mapema", "wapi / mlikula", "vizuri / sikulala", "mvua / kulikuwa / jana / na"]
+    }
+  ],
+  "answers": [
+    "Nilisoma kitabu. — Alipika chakula. — Tulikwenda sokoni. — Walikula wali. — Ulifanya kazi. — Safari ilichukua saa tatu.",
+    "Sikusoma. — Hakuja. — Hatukwenda. — Hawakula. — Hukulala vizuri. — Hamkurudi jana.",
+    "Ulifanya nini wikendi? — Nilikwenda Bagamoyo. — Tulipanda basi mapema. — Mlikula wapi? — Jana kulikuwa na mvua kubwa. — Sikulala vizuri.",
+    "kulikuwa na — Nilikuwa — hakukuwa na — kulikuwa na — Nilikuwa",
+    "Ulifanya nini wikendi? — Tulipanda basi mapema. — Mlikula wapi? — Sikulala vizuri. — Jana kulikuwa na mvua."
+  ]
+}

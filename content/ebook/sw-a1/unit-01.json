@@ -1,0 +1,600 @@
+{
+  "title": "Salam dan nama: kata \"adalah\" yang cuma dua huruf",
+  "title_target": "Habari yako? Jina lako nani?",
+  "goal": "Menyapa pada jam yang tepat dan kepada orang yang tepat, menyebut nama, mengaku dari mana asalmu, dan memakai dua kata terpendek bahasa Swahili — *ni* dan *si*.",
+  "bekal": [
+    "menyapa dengan *habari*, *shikamoo*, dan *mambo* pada tempatnya masing-masing",
+    "menyusun kalimat \"A adalah B\" dan \"A bukan B\" dengan *ni* dan *si*",
+    "menyebut nama sendiri, nama orang lain, dan bangsa asalmu dengan awalan *M-/Wa-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Siku ya kwanza Zanzibar",
+      "intro": "Hari pertama di Zanzibar. Budi, mahasiswa dari Jakarta, baru turun dari kapal dan disapa seorang perempuan muda di pelabuhan.",
+      "lines": [
+        {
+          "speaker": "Amina:",
+          "text": "Habari za asubuhi!",
+          "id": "Selamat pagi!",
+          "literal": "kabar-kabar dari pagi!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nzuri sana. Habari yako?",
+          "id": "Baik sekali. Apa kabarmu?",
+          "literal": "bagus sangat. kabar milik-mu?"
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Nzuri. Karibu Zanzibar!",
+          "id": "Baik. Selamat datang di Zanzibar!",
+          "literal": "bagus. selamat-datang Zanzibar!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Asante sana.",
+          "id": "Terima kasih banyak.",
+          "literal": "terima-kasih sangat."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Jina langu ni Amina. Jina lako nani?",
+          "id": "Nama saya Amina. Siapa namamu?",
+          "literal": "nama milik-ku adalah Amina. nama milik-mu siapa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jina langu ni Budi. Nimefurahi kukutana nawe.",
+          "id": "Nama saya Budi. Senang berkenalan denganmu.",
+          "literal": "nama milik-ku adalah Budi. saya-sudah-gembira bertemu dengan-mu."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Mimi pia. Wewe ni mgeni hapa?",
+          "id": "Saya juga. Kamu pendatang di sini?",
+          "literal": "saya juga. kamu adalah tamu di-sini?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ndiyo. Mimi si Mtanzania, mimi ni Mwindonesia.",
+          "id": "Ya. Saya bukan orang Tanzania, saya orang Indonesia.",
+          "literal": "ya. saya bukan orang-Tanzania, saya adalah orang-Indonesia."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Aa, safi! Na yeye ni nani?",
+          "id": "Wah, keren! Dan dia siapa?",
+          "literal": "aa, bersih! dan dia adalah siapa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yeye ni rafiki yangu. Jina lake ni Rina.",
+          "id": "Dia teman saya. Namanya Rina.",
+          "literal": "dia adalah teman milik-ku. nama milik-nya adalah Rina."
+        },
+        {
+          "speaker": "Amina:",
+          "text": "Karibuni wote! Tutaonana!",
+          "id": "Selamat datang kalian semua! Sampai jumpa!",
+          "literal": "selamat-datang-kalian semua! akan-kita-saling-lihat!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kwaheri!",
+          "id": "Sampai jumpa!",
+          "literal": "dengan kebaikan!"
+        }
+      ],
+      "notes": [
+        "**Habari harfiahnya \"kabar\" — dan kamu sudah tahu kata itu.** Ia dipakai persis seperti \"apa kabar\", tapi bisa ditempeli waktunya: *habari za asubuhi* (pagi), *za mchana* (siang), *za jioni* (sore), *za usiku* (malam). Boleh juga cuma *Habari?* atau *Habari gani?*",
+        "**Jawabannya hampir selalu Nzuri.** *Nzuri* berarti \"bagus\", dan di Afrika Timur menjawab \"apa kabar\" dengan keluhan bukan kebiasaan. Kalau memang sedang tidak enak badan pun, orang menjawab *nzuri* dulu, baru bercerita sesudahnya. Pilihan lain yang sama amannya: *salama* (aman) dan *safi* (bersih; keren).",
+        "**Ndiyo berarti \"ya\", hapana berarti \"tidak\".** *Ndiyo* dipakai untuk membenarkan, *hapana* untuk menolak. Yang lebih santai: *ndio* (tanpa y) dan *la*.",
+        "**Karibu berubah jadi karibuni untuk lebih dari satu orang.** Akhiran *-ni* di ujung sapaan dan perintah berarti \"kalian\": *karibu* → *karibuni*, *asante* → *asanteni*. Ini akhiran yang akan kamu temui lagi di unit 14.",
+        "**Kwaheri harfiahnya \"dengan kebaikan\".** *Kwa* (dengan) + *heri* (kebaikan; berkah). Untuk perpisahan yang lebih ringan, orang lebih sering berkata *tutaonana* (\"kita akan saling melihat\") atau *baadaye* (nanti)."
+      ],
+      "grammars": [
+        {
+          "title": "Ni dan si — \"adalah\" dan \"bukan\" yang tak pernah berubah",
+          "body": [
+            "Bahasa Swahili punya kata \"adalah\", dan ini bagian paling ringan dari seluruh modul: **bentuknya cuma satu, untuk siapa pun**. Tidak ada *am/is/are*, tidak ada perubahan menurut pelaku, tidak ada perubahan menurut waktu."
+          ],
+          "table": {
+            "head": [
+              "Kata ganti",
+              "Cara baca",
+              "Positif",
+              "Ingkar",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "**mimi**",
+                "MI-mi",
+                "*mimi ni mwalimu*",
+                "*mimi si mwalimu*",
+                "saya (bukan) guru"
+              ],
+              [
+                "**wewe**",
+                "WÉ-wé",
+                "*wewe ni mwalimu*",
+                "*wewe si mwalimu*",
+                "kamu (bukan) guru"
+              ],
+              [
+                "**yeye**",
+                "YÉ-yé",
+                "*yeye ni mwalimu*",
+                "*yeye si mwalimu*",
+                "dia (bukan) guru"
+              ],
+              [
+                "**sisi**",
+                "SI-si",
+                "*sisi ni walimu*",
+                "*sisi si walimu*",
+                "kami (bukan) guru"
+              ],
+              [
+                "**ninyi**",
+                "NI-nyi",
+                "*ninyi ni walimu*",
+                "*ninyi si walimu*",
+                "kalian (bukan) guru"
+              ],
+              [
+                "**wao**",
+                "WA-o",
+                "*wao ni walimu*",
+                "*wao si walimu*",
+                "mereka (bukan) guru"
+              ]
+            ]
+          },
+          "after": [
+            "*Yeye* berarti \"dia\" untuk laki-laki maupun perempuan. Bahasa Swahili tidak punya *he/she*, tidak punya kata sandang *a*/*the*, dan tidak punya kata sifat yang berubah menurut jenis kelamin — sama persis seperti bahasa Indonesia.",
+            "Kata gantinya boleh dibuang kalau sudah jelas dari percakapan: *Ni mwalimu* sudah cukup untuk \"dia guru\". Ia dipakai kalau kamu ingin **menekankan**: *Mimi ni mwalimu* = \"Kalau saya, saya guru\".",
+            "⚠️ Jangan tertukar: *si* berarti **bukan**, bukan \"saya\". Awalan *si-* yang berarti \"saya tidak\" pada kata kerja baru muncul di unit 4, dan keduanya memang bersaudara — tapi *si* yang ini berdiri sendiri sebagai satu kata."
+          ]
+        },
+        {
+          "title": "Orang dari mana? Awalan M- dan Wa-",
+          "body": [
+            "Nama bangsa dibentuk dari nama negaranya dengan awalan **M-** untuk satu orang dan **Wa-** untuk banyak orang. Bahasanya memakai awalan ketiga, **Ki-**, dan negaranya biasanya **U-**."
+          ],
+          "table": {
+            "head": [
+              "Negara",
+              "Satu orang",
+              "Banyak orang",
+              "Bahasanya"
+            ],
+            "rows": [
+              [
+                "*Indonesia*",
+                "**Mwindonesia**",
+                "**Waindonesia**",
+                "*Kiindonesia*"
+              ],
+              [
+                "*Tanzania*",
+                "**Mtanzania**",
+                "**Watanzania**",
+                "*Kiswahili*"
+              ],
+              [
+                "*Kenya*",
+                "**Mkenya**",
+                "**Wakenya**",
+                "*Kiswahili*"
+              ],
+              [
+                "*Uingereza* (Inggris)",
+                "**Mwingereza**",
+                "**Waingereza**",
+                "*Kiingereza*"
+              ],
+              [
+                "*Ujerumani* (Jerman)",
+                "**Mjerumani**",
+                "**Wajerumani**",
+                "*Kijerumani*"
+              ],
+              [
+                "*Uchina* (Tiongkok)",
+                "**Mchina**",
+                "**Wachina**",
+                "*Kichina*"
+              ],
+              [
+                "*Uarabuni* (Arab)",
+                "**Mwarabu**",
+                "**Waarabu**",
+                "*Kiarabu*"
+              ]
+            ]
+          },
+          "after": [
+            "Kalau nama negaranya mulai dengan vokal, *M-* berubah jadi *Mw-* supaya enak diucapkan: *Mwindonesia*, *Mwingereza*, *Mwarabu*. Aturan kecil yang sama berlaku sepanjang modul ini.",
+            "Awalan **Ki-** yang menandai bahasa itu awalan yang sama dengan *kitabu* dan *kiti*. Ia salah satu dari enam kelas kata benda yang akan kamu pasang satu per satu mulai unit 2 — dan yang membuat bahasa ini bernama *Kiswahili*, \"bahasa orang pesisir\" (*sahil* dalam bahasa Arab berarti pesisir; kata itu pun sudah kamu kenal).",
+            "Untuk bertanya, cukup tempelkan *wapi*: *Unatoka wapi?* (Kamu berasal dari mana?) — jawabannya *Ninatoka Indonesia*. Bentuk kata kerjanya dibongkar tuntas di unit 3."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kalimat berikut bukan bahan hafalan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kiswahili",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Ndiyo / Hapana",
+              "n-DI-yo / ha-PA-na",
+              "Ya / Tidak"
+            ],
+            [
+              "Asante (sana)",
+              "a-SAN-té",
+              "Terima kasih (banyak)"
+            ],
+            [
+              "Karibu",
+              "ka-RI-bu",
+              "Sama-sama; silakan; selamat datang"
+            ],
+            [
+              "Samahani",
+              "sa-ma-HA-ni",
+              "Maaf; permisi"
+            ],
+            [
+              "Tafadhali",
+              "ta-fa-DZA-li",
+              "Tolong; silakan"
+            ],
+            [
+              "Pole",
+              "PO-lé",
+              "Turut prihatin; sabar ya"
+            ],
+            [
+              "Sielewi",
+              "si-é-LÉ-wi",
+              "Saya tidak mengerti"
+            ],
+            [
+              "Sijui",
+              "si-JU-i",
+              "Saya tidak tahu"
+            ],
+            [
+              "Sema polepole",
+              "SÉ-ma po-lé-PO-lé",
+              "Tolong bicara pelan-pelan"
+            ],
+            [
+              "Unasema Kiingereza?",
+              "u-na-SÉ-ma ki-i-ngé-RÉ-za",
+              "Kamu bisa bahasa Inggris?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Karibu* adalah kata paling serbaguna di halaman ini. Ia berarti \"selamat datang\" di pintu, \"silakan\" saat mempersilakan duduk atau makan, dan \"sama-sama\" sesudah orang berterima kasih. Kalau kamu cuma boleh menghafal satu kata dari unit ini, hafalkan yang ini."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Pole* tidak berarti \"maaf saya salah\" — itu *samahani*. *Pole* adalah rasa iba: diucapkan kepada orang yang tersandung, yang sedang sakit, yang barangnya jatuh, bahkan kepada orang yang sedang bekerja keras (*pole na kazi*). Menerimanya cukup dijawab *asante*."
+        }
+      ]
+    },
+    {
+      "title": "Salam menurut jam dan menurut umur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Swahili membedakan sapaan bukan cuma menurut waktu, tapi menurut **siapa yang kamu sapa**. Salah pilih tidak fatal, tapi memilih dengan benar adalah cara tercepat membuat orang tersenyum."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kepada siapa",
+            "Sapaan",
+            "Jawaban wajibnya"
+          ],
+          "rows": [
+            [
+              "Siapa pun, sopan & aman",
+              "*Habari?* / *Habari yako?*",
+              "*Nzuri* / *Salama*"
+            ],
+            [
+              "Orang yang lebih tua, dihormati",
+              "*Shikamoo*",
+              "*Marahaba*"
+            ],
+            [
+              "Teman sebaya, santai",
+              "*Mambo?* / *Vipi?*",
+              "*Poa* / *Safi* / *Freshi*"
+            ],
+            [
+              "Sapaan baku, agak resmi",
+              "*Hujambo?*",
+              "*Sijambo*"
+            ],
+            [
+              "Kepada beberapa orang sekaligus",
+              "*Hamjambo?*",
+              "*Hatujambo*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Shikamoo adalah yang paling penting di tabel ini.** Ia diucapkan kepada orang yang jelas lebih tua — pemilik warung, sopir, ibu tetangga, siapa pun yang seumuran orang tuamu ke atas. Jawabannya selalu *marahaba*, dan seorang pendatang yang tahu memakai *shikamoo* pada tempatnya akan langsung diperlakukan sebagai tamu, bukan turis."
+        },
+        {
+          "type": "p",
+          "text": "*Mzee* (orang tua, pak tua) dan *mama* atau *dada* (untuk perempuan) sering ditempelkan sesudahnya: *Shikamoo mzee*, *Shikamoo mama*. Sementara *Mambo?* sebaliknya — pakai hanya kepada orang seumuranmu atau lebih muda. Mengucapkan *mambo* kepada kakek di kampung terdengar seperti menepuk bahu orang asing."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "sw": "habari",
+      "baca": "ha-BA-ri",
+      "id": "kabar; berita"
+    },
+    {
+      "sw": "asubuhi",
+      "baca": "a-su-BU-hi",
+      "id": "pagi"
+    },
+    {
+      "sw": "mchana",
+      "baca": "m-CA-na",
+      "id": "siang"
+    },
+    {
+      "sw": "jioni",
+      "baca": "ji-O-ni",
+      "id": "sore"
+    },
+    {
+      "sw": "usiku",
+      "baca": "u-SI-ku",
+      "id": "malam"
+    },
+    {
+      "sw": "nzuri",
+      "baca": "n-ZU-ri",
+      "id": "bagus; baik"
+    },
+    {
+      "sw": "salama",
+      "baca": "sa-LA-ma",
+      "id": "aman; damai"
+    },
+    {
+      "sw": "safi",
+      "baca": "SA-fi",
+      "id": "bersih; keren"
+    },
+    {
+      "sw": "karibu",
+      "baca": "ka-RI-bu",
+      "id": "selamat datang; silakan; sama-sama"
+    },
+    {
+      "sw": "asante",
+      "baca": "a-SAN-té",
+      "id": "terima kasih"
+    },
+    {
+      "sw": "sana",
+      "baca": "SA-na",
+      "id": "sangat; sekali"
+    },
+    {
+      "sw": "jina",
+      "baca": "JI-na",
+      "id": "nama"
+    },
+    {
+      "sw": "langu / lako / lake",
+      "baca": "LA-ngu",
+      "id": "(nama) saya / kamu / dia"
+    },
+    {
+      "sw": "nani",
+      "baca": "NA-ni",
+      "id": "siapa"
+    },
+    {
+      "sw": "mimi",
+      "baca": "MI-mi",
+      "id": "saya"
+    },
+    {
+      "sw": "wewe",
+      "baca": "WÉ-wé",
+      "id": "kamu"
+    },
+    {
+      "sw": "yeye",
+      "baca": "YÉ-yé",
+      "id": "dia"
+    },
+    {
+      "sw": "sisi",
+      "baca": "SI-si",
+      "id": "kami; kita"
+    },
+    {
+      "sw": "ninyi",
+      "baca": "NI-nyi",
+      "id": "kalian"
+    },
+    {
+      "sw": "wao",
+      "baca": "WA-o",
+      "id": "mereka"
+    },
+    {
+      "sw": "ni",
+      "baca": "ni",
+      "id": "adalah"
+    },
+    {
+      "sw": "si",
+      "baca": "si",
+      "id": "bukan"
+    },
+    {
+      "sw": "ndiyo",
+      "baca": "n-DI-yo",
+      "id": "ya"
+    },
+    {
+      "sw": "hapana",
+      "baca": "ha-PA-na",
+      "id": "tidak; bukan"
+    },
+    {
+      "sw": "mgeni",
+      "baca": "m-GÉ-ni",
+      "id": "tamu; pendatang"
+    },
+    {
+      "sw": "rafiki",
+      "baca": "ra-FI-ki",
+      "id": "teman"
+    },
+    {
+      "sw": "mwalimu",
+      "baca": "mwa-LI-mu",
+      "id": "guru"
+    },
+    {
+      "sw": "mwanafunzi",
+      "baca": "mwa-na-FUN-zi",
+      "id": "pelajar; mahasiswa"
+    },
+    {
+      "sw": "hapa",
+      "baca": "HA-pa",
+      "id": "di sini"
+    },
+    {
+      "sw": "pia",
+      "baca": "PI-a",
+      "id": "juga"
+    },
+    {
+      "sw": "wote",
+      "baca": "WO-té",
+      "id": "semua"
+    },
+    {
+      "sw": "kwaheri",
+      "baca": "kwa-HÉ-ri",
+      "id": "selamat tinggal"
+    },
+    {
+      "sw": "tutaonana",
+      "baca": "tu-ta-o-NA-na",
+      "id": "sampai jumpa"
+    },
+    {
+      "sw": "shikamoo",
+      "baca": "syi-ka-MO-o",
+      "id": "salam hormat (kepada yang lebih tua)"
+    },
+    {
+      "sw": "marahaba",
+      "baca": "ma-ra-HA-ba",
+      "id": "jawaban atas shikamoo"
+    },
+    {
+      "sw": "mzee",
+      "baca": "m-ZÉ-é",
+      "id": "orang tua; pak tua"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": [
+        "Selamat pagi! Apa kabarmu?",
+        "Baik sekali. Terima kasih banyak.",
+        "Nama saya Rina.",
+        "Siapa namamu?",
+        "Saya bukan orang Tanzania.",
+        "Dia teman saya."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan ni atau si.",
+      "items": [
+        "Mimi ____ Mwindonesia. (saya orang Indonesia)",
+        "Yeye ____ mwalimu. (dia bukan guru)",
+        "Wewe ____ mgeni hapa? (kamu tamu di sini?)",
+        "Sisi ____ wanafunzi. (kami mahasiswa)",
+        "Jina lake ____ Amina.",
+        "Wao ____ Wakenya. (mereka bukan orang Kenya)"
+      ]
+    },
+    {
+      "prompt": "Sapaan mana yang tepat? Pilih shikamoo, mambo, atau habari.",
+      "items": [
+        "Kepada nenek pemilik warung.",
+        "Kepada teman sekelas yang seumuran.",
+        "Kepada petugas hotel yang baru kamu temui.",
+        "Kepada sopir taksi yang jauh lebih tua darimu.",
+        "Kepada anak muda yang menjual pisang di pasar."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "Budi / ni / jina / langu",
+        "Mwindonesia / mimi / ni",
+        "nani / lako / jina",
+        "yangu / yeye / rafiki / ni",
+        "hapa / mgeni / wewe / ni"
+      ]
+    },
+    {
+      "prompt": "Isi bangsa dan bahasanya, mengikuti pola Mtanzania — Watanzania — Kiswahili.",
+      "items": [
+        "Uingereza → ____",
+        "Uchina → ____",
+        "Ujerumani → ____",
+        "Indonesia → ____",
+        "Uarabuni → ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Habari za asubuhi! Habari yako? — Nzuri sana. Asante sana. — Jina langu ni Rina. — Jina lako nani? — Mimi si Mtanzania. — Yeye ni rafiki yangu.",
+    "ni — si — ni — ni — ni — si",
+    "shikamoo — mambo — habari — shikamoo — mambo",
+    "Jina langu ni Budi. — Mimi ni Mwindonesia. — Jina lako nani? — Yeye ni rafiki yangu. — Wewe ni mgeni hapa?",
+    "Mwingereza / Waingereza / Kiingereza — Mchina / Wachina / Kichina — Mjerumani / Wajerumani / Kijerumani — Mwindonesia / Waindonesia / Kiindonesia — Mwarabu / Waarabu / Kiarabu"
+  ]
+}

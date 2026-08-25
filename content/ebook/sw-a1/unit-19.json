@@ -1,0 +1,196 @@
+{
+  "title": "Kalau…: gerbong -ki- dan sakit yang punya kelasnya sendiri",
+  "title_target": "Kichwa kinaniuma",
+  "goal": "Mengatakan \"kalau\" dan \"sambil\" dengan satu gerbong, menyebut bagian badan, dan menjelaskan apa yang sakit kepada dokter.",
+  "bekal": [
+    "gerbong *-ki-* untuk \"kalau\" dan \"sambil\"",
+    "ingkarnya: *-sipo-* — *usipokunywa* (kalau kamu tidak minum)",
+    "menyatakan sakit: *kichwa kinaniuma* — kepala yang menyakiti saya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Hospitalini",
+      "intro": "Pagi hari, Budi terlihat pucat. Amina langsung tahu ada yang tidak beres.",
+      "lines": [
+        { "speaker": "Amina:", "text": "Habari yako? Uso wako hauonekani vizuri.", "id": "Kamu kenapa? Wajahmu kelihatan tidak enak badan.", "literal": "kabar milik-mu? wajah milik-mu ia-tidak-terlihat bagus." },
+        { "speaker": "Budi:", "text": "Sijisikii vizuri. Kichwa kinaniuma sana.", "id": "Saya tidak enak badan. Kepala saya sakit sekali.", "literal": "saya-tidak-merasa-diri bagus. kepala ia-sedang-saya-sakiti sangat." },
+        { "speaker": "Amina:", "text": "Una homa?", "id": "Kamu demam?", "literal": "kamu-punya demam?" },
+        { "speaker": "Budi:", "text": "Kidogo. Na tumbo pia linaniuma tangu jana usiku.", "id": "Sedikit. Dan perut saya juga sakit sejak semalam.", "literal": "sedikit. dan perut juga ia-sedang-saya-sakiti sejak kemarin malam." },
+        { "speaker": "Amina:", "text": "Ulikula nini jana?", "id": "Kemarin kamu makan apa?", "literal": "kamu-lampau-makan apa kemarin?" },
+        { "speaker": "Budi:", "text": "Nilikula samaki barabarani... labda hakuwa safi.", "id": "Saya makan ikan di pinggir jalan... mungkin tidak segar.", "literal": "saya-lampau-makan ikan di-jalan... mungkin ia-tidak-lampau-jadi bersih." },
+        { "speaker": "Amina:", "text": "Pole sana. Ukienda hospitali sasa, utapata dawa haraka.", "id": "Kasihan. Kalau kamu ke rumah sakit sekarang, kamu cepat dapat obat.", "literal": "sabar sangat. kamu-kalau-pergi rumah-sakit sekarang, kamu-akan-dapat obat cepat." },
+        { "speaker": "Budi:", "text": "Nikienda peke yangu, sitaweza kueleza vizuri.", "id": "Kalau saya pergi sendiri, saya tidak bisa menjelaskan dengan baik.", "literal": "saya-kalau-pergi sendiri milik-ku, saya-tidak-akan-bisa untuk-menjelaskan bagus." },
+        { "speaker": "Amina:", "text": "Nitakwenda nawe. Twende sasa hivi!", "id": "Saya ikut denganmu. Ayo sekarang juga!", "literal": "saya-akan-pergi dengan-mu. kita-agar-pergi sekarang ini!" },
+        { "speaker": "Daktari:", "text": "Karibu. Unaumwa nini?", "id": "Silakan. Sakit apa?", "literal": "selamat-datang. kamu-sedang-disakiti apa?" },
+        { "speaker": "Budi:", "text": "Kichwa na tumbo. Nina homa tangu jana.", "id": "Kepala dan perut. Saya demam sejak kemarin.", "literal": "kepala dan perut. saya-punya demam sejak kemarin." },
+        { "speaker": "Daktari:", "text": "Usipokunywa maji mengi, hutapona haraka. Kunywa dawa hii mara tatu kwa siku.", "id": "Kalau tidak banyak minum air, kamu tidak akan cepat sembuh. Minum obat ini tiga kali sehari.", "literal": "kamu-kalau-tidak-minum air banyak, kamu-tidak-akan-sembuh cepat. minumlah obat ini kali tiga per hari." }
+      ],
+      "notes": [
+        "**Sijisikii vizuri adalah kalimat \"saya tidak enak badan\".** Sisipan *-ji-* berarti \"diri sendiri\" — kata yang sama yang membuat *kujifunza* berarti \"mengajar diri sendiri\" alias belajar. Bentuk positifnya: *ninajisikia vizuri* (saya merasa baik).",
+        "**Tangu berarti \"sejak\".** *Tangu jana* (sejak kemarin), *tangu asubuhi* (sejak pagi), *tangu lini?* (sejak kapan?). Pertanyaan yang selalu ditanyakan dokter, jadi hafalkan jawabannya sekalian.",
+        "**Peke yangu berarti \"sendirian\".** Bentuknya ikut pemiliknya: *peke yangu*, *peke yako*, *peke yake*, *peke yetu*. *Anaishi peke yake* = dia tinggal sendirian.",
+        "**Nawe adalah na + wewe yang melebur.** Begitu pula *nami* (dengan saya), *naye* (dengan dia), *nasi* (dengan kami), *nanyi* (dengan kalian), *nao* (dengan mereka). Bentuk pendek yang sangat sering terdengar: *Njoo nami* (ikut saya).",
+        "**Mara tatu kwa siku berarti tiga kali sehari.** *Kwa* di sini berarti \"per\": *mara mbili kwa wiki* (dua kali seminggu), *shilingi elfu kwa kilo* (seribu shilling per kilo)."
+      ],
+      "grammars": [
+        {
+          "title": "Gerbong -ki-: kalau, dan sambil",
+          "body": [
+            "Gerbong **-ki-** menutup dua arti yang dipisahkan bahasa Indonesia: \"kalau\" untuk syarat, dan \"sambil\" untuk dua perbuatan yang berjalan bersamaan. Ia dipasang di tempat gerbong waktu, dan **kalimat berikutnya yang membawa waktunya**."
+          ],
+          "table": {
+            "head": ["Kalimat", "Arti", "Catatan"],
+            "rows": [
+              ["*Ukienda sokoni, nunua ndizi.*", "Kalau kamu ke pasar, beli pisang.", "syarat + perintah"],
+              ["*Nikipata pesa, nitasafiri.*", "Kalau saya dapat uang, saya akan pergi.", "syarat + masa depan"],
+              ["*Akifika, niambie.*", "Kalau dia sampai, beri tahu saya.", "syarat + permintaan"],
+              ["*Tukisoma, tutafaulu.*", "Kalau kita belajar, kita akan lulus.", "syarat umum"],
+              ["*Ninasoma nikisikiliza muziki.*", "Saya belajar sambil dengar musik.", "arti \"sambil\""],
+              ["*Alianguka akikimbia.*", "Dia jatuh saat berlari.", "arti \"sambil\""],
+              ["*Usipokunywa dawa, hutapona.*", "Kalau tidak minum obat, kamu tidak sembuh.", "ingkar: -sipo-"],
+              ["*Nisipofika, msinisubiri.*", "Kalau saya tidak datang, jangan tunggu.", "ingkar: -sipo-"]
+            ]
+          },
+          "after": [
+            "Bentuk ingkarnya memakai gerbong **-sipo-**, dan awalan pelakunya tetap yang biasa — bukan awalan ingkar. *Ni-sipo-fika*, *u-sipo-kunywa*, *a-sipo-kuja*, *tu-sipo-soma*. Ini satu-satunya bentuk ingkar dalam bahasa Swahili yang tidak memakai *si-*, *hu-*, *ha-*.",
+            "*Mungu akipenda* — insyaallah, yang kamu pakai di unit 13 — sekarang bisa kamu baca sendiri: *a-ki-penda*, \"kalau Dia berkenan\".",
+            "Untuk syarat yang lebih tegas atau tidak nyata, dipakai **kama** (kalau) dengan kalimat biasa: *Kama una muda, njoo* (kalau kamu punya waktu, datanglah). *Kama* juga berarti \"seperti\": *kama nyumbani* (seperti di rumah)."
+          ]
+        },
+        {
+          "title": "Sakit: bagian badan yang menyakiti kamu",
+          "body": [
+            "Bahasa Swahili membalik susunan yang kita pakai. Bukan \"saya sakit kepala\", melainkan **\"kepala sedang menyakiti saya\"** — bagian badannya jadi pelaku, dan kamu jadi sasaran lewat sisipan *-ni-* dari unit 15."
+          ],
+          "table": {
+            "head": ["Kalimat", "Harfiah", "Arti"],
+            "rows": [
+              ["*Kichwa **ki**na**ni**uma.*", "kepala ia-menyakiti-saya", "Kepala saya sakit."],
+              ["*Tumbo **li**na**ni**uma.*", "perut ia-menyakiti-saya", "Perut saya sakit."],
+              ["*Miguu **i**na**ni**uma.*", "kaki-kaki mereka-menyakiti-saya", "Kaki saya sakit."],
+              ["*Jino **li**na**m**uma.*", "gigi ia-menyakiti-dia", "Giginya sakit."],
+              ["*Koo **li**na**ni**uma.*", "tenggorokan ia-menyakiti-saya", "Tenggorokan saya sakit."],
+              ["*Ninaumwa na kichwa.*", "saya-disakiti oleh kepala", "Saya sakit kepala. (bentuk lain)"]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa awalan pelakunya ikut kelas bagian badannya: *kichwa* kelas *ki-* → *kinauma*; *tumbo* dan *jino* kelas *gari* → *linauma*; *miguu* dan *mikono* kelas *mti* → *inauma*. Semua yang sudah kamu pasang di unit 6, 9, dan 16 dipakai lagi di sini.",
+            "Bentuk kedua — *ninaumwa na…* — lebih mudah dan sama betulnya: *ninaumwa na kichwa*, *ninaumwa na tumbo*. Kalau kamu ragu dengan awalan kelasnya, pakai bentuk ini.",
+            "Untuk keluhan lain dipakai *kuwa na* seperti di unit 14: *nina homa* (demam), *nina kikohozi* (batuk), *nina mafua* (pilek), *nina kizunguzungu* (pusing), *nina kuhara* (diare), *nina mzio* (alergi)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mwili — bagian badan",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["*kichwa* / *vichwa*", "KI-cwa", "kepala"],
+          ["*uso* / *nyuso*", "U-so", "wajah"],
+          ["*jicho* / *macho*", "JI-co", "mata"],
+          ["*sikio* / *masikio*", "si-KI-o", "telinga"],
+          ["*pua*", "PU-a", "hidung"],
+          ["*mdomo* / *midomo*", "m-DO-mo", "mulut; bibir"],
+          ["*jino* / *meno*", "JI-no", "gigi"],
+          ["*ulimi* / *ndimi*", "u-LI-mi", "lidah"],
+          ["*koo*", "KO-o", "tenggorokan"],
+          ["*shingo*", "SYI-ngo", "leher"],
+          ["*mkono* / *mikono*", "m-KO-no", "tangan; lengan"],
+          ["*kidole* / *vidole*", "ki-DO-lé", "jari"],
+          ["*mguu* / *miguu*", "m-GU-u", "kaki"],
+          ["*tumbo* / *matumbo*", "TUM-bo", "perut"],
+          ["*mgongo* / *migongo*", "m-GO-ngo", "punggung"],
+          ["*moyo* / *mioyo*", "MO-yo", "hati; jantung"],
+          ["*damu*", "DA-mu", "darah"],
+          ["*ngozi*", "NGO-zi", "kulit"]
+        ]},
+        { "type": "p", "text": "Bagian badan yang berpasangan hampir semuanya masuk kelas *gari* (*jicho → macho*, *sikio → masikio*, *jino → meno*) atau kelas *mti* (*mkono → mikono*, *mguu → miguu*). Itu bukan kebetulan: kelas *mti* memang menampung benda memanjang, dan kelas *gari* menampung benda berpasangan." },
+        { "type": "p", "text": "*Moyo* berarti hati dalam arti perasaan sekaligus jantung dalam arti organ — persis seperti bahasa Indonesia memakai \"hati\". Ungkapannya pun mirip: *moyo mkunjufu* (hati yang lapang), *kwa moyo wote* (dengan sepenuh hati), *moyo unauma* (hati yang perih)." }
+      ]
+    },
+    {
+      "title": "Hospitalini na duka la dawa",
+      "blocks": [
+        { "type": "tabel", "head": ["Kiswahili", "Bahasa Indonesia"], "rows": [
+          ["*Sijisikii vizuri.*", "Saya tidak enak badan."],
+          ["*Ninaumwa na kichwa / tumbo.*", "Saya sakit kepala / perut."],
+          ["*Nina homa tangu jana.*", "Saya demam sejak kemarin."],
+          ["*Nina mafua na kikohozi.*", "Saya pilek dan batuk."],
+          ["*Nina kizunguzungu.*", "Saya pusing."],
+          ["*Nina mzio wa dawa hii.*", "Saya alergi obat ini."],
+          ["*Naomba dawa ya maumivu.*", "Minta obat pereda nyeri."],
+          ["*Nimechomwa na mbu.*", "Saya digigit nyamuk."],
+          ["*Ninahitaji kupima malaria.*", "Saya perlu tes malaria."],
+          ["*Dawa hii ninywe mara ngapi?*", "Obat ini diminum berapa kali?"],
+          ["*Nitapona lini?*", "Kapan saya sembuh?"],
+          ["*Bima yangu ya afya iko hapa.*", "Ini kartu asuransi kesehatan saya."]
+        ]},
+        { "type": "p", "text": "**Malaria masih nyata di sebagian Afrika Timur**, dan gejala pertamanya persis seperti flu berat: demam, menggigil, sakit kepala. Kalimat *Ninahitaji kupima malaria* bukan kalimat berlebihan — di klinik mana pun tesnya cepat dan murah, dan meminta sendiri dianggap wajar." },
+        { "type": "p", "text": "Obat dijual di *duka la dawa* (apotek) atau *famasi*. Kata yang perlu kamu kenali di label: *kidonge* (tablet), *sharubati* (sirop), *sindano* (suntikan), *mara tatu kwa siku* (tiga kali sehari), *baada ya chakula* (sesudah makan), *kabla ya kulala* (sebelum tidur)." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "sw": "kuumwa", "baca": "ku-UM-wa", "id": "sakit; disakiti" },
+    { "sw": "kuuma", "baca": "ku-U-ma", "id": "menyakiti; menggigit" },
+    { "sw": "kujisikia", "baca": "ku-ji-si-KI-a", "id": "merasa (badan)" },
+    { "sw": "kupona", "baca": "ku-PO-na", "id": "sembuh" },
+    { "sw": "kupima", "baca": "ku-PI-ma", "id": "mengukur; memeriksa" },
+    { "sw": "kueleza", "baca": "ku-é-LÉ-za", "id": "menjelaskan" },
+    { "sw": "kusikiliza", "baca": "ku-si-ki-LI-za", "id": "mendengarkan" },
+    { "sw": "kukimbia", "baca": "ku-kim-BI-a", "id": "berlari" },
+    { "sw": "kuanguka", "baca": "ku-an-GU-ka", "id": "jatuh" },
+    { "sw": "kufaulu", "baca": "ku-fa-U-lu", "id": "lulus; berhasil" },
+    { "sw": "kichwa / vichwa", "baca": "KI-cwa", "id": "kepala" },
+    { "sw": "tumbo / matumbo", "baca": "TUM-bo", "id": "perut" },
+    { "sw": "jino / meno", "baca": "JI-no", "id": "gigi" },
+    { "sw": "sikio / masikio", "baca": "si-KI-o", "id": "telinga" },
+    { "sw": "pua", "baca": "PU-a", "id": "hidung" },
+    { "sw": "koo", "baca": "KO-o", "id": "tenggorokan" },
+    { "sw": "mgongo / migongo", "baca": "m-GO-ngo", "id": "punggung" },
+    { "sw": "damu", "baca": "DA-mu", "id": "darah" },
+    { "sw": "homa", "baca": "HO-ma", "id": "demam" },
+    { "sw": "mafua", "baca": "ma-FU-a", "id": "pilek" },
+    { "sw": "kikohozi", "baca": "ki-ko-HO-zi", "id": "batuk" },
+    { "sw": "kizunguzungu", "baca": "ki-zu-ngu-ZU-ngu", "id": "pusing" },
+    { "sw": "dawa", "baca": "DA-wa", "id": "obat" },
+    { "sw": "kidonge / vidonge", "baca": "ki-DON-gé", "id": "tablet" },
+    { "sw": "hospitali", "baca": "hos-pi-TA-li", "id": "rumah sakit" },
+    { "sw": "afya", "baca": "A-fya", "id": "kesehatan" },
+    { "sw": "mbu", "baca": "m-BU", "id": "nyamuk" },
+    { "sw": "tangu", "baca": "TA-ngu", "id": "sejak" },
+    { "sw": "peke yangu", "baca": "PÉ-ké YA-ngu", "id": "sendirian" },
+    { "sw": "maumivu", "baca": "ma-u-MI-vu", "id": "rasa sakit" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Gabungkan jadi kalimat dengan -ki-.",
+      "items": ["kamu pergi ke pasar + belilah pisang → ____", "saya dapat uang + saya akan pergi → ____", "dia sampai + beri tahu saya → ____", "kita belajar + kita akan lulus → ____", "kamu datang + kita akan makan bersama → ____"]
+    },
+    {
+      "prompt": "Ubah jadi ingkar dengan -sipo-.",
+      "items": ["Ukikunywa dawa → ____", "Nikifika → ____", "Akija → ____", "Tukisoma → ____", "Mkiondoka → ____"]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Swahili.",
+      "items": ["Kepala saya sakit.", "Perut saya sakit sejak kemarin.", "Saya demam.", "Saya tidak enak badan.", "Kalau kamu tidak minum obat, kamu tidak akan sembuh.", "Minta obat pereda nyeri."]
+    },
+    {
+      "prompt": "Isi awalan pelaku bagian badannya.",
+      "items": ["Kichwa ____naniuma.", "Tumbo ____naniuma.", "Miguu ____naniuma.", "Jino ____naniuma.", "Mikono ____naniuma."]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": ["kinaniuma / kichwa / sana", "jana / homa / nina / tangu", "vizuri / sijisikii", "dawa / hospitali / utapata / ukienda", "siku / mara / kunywa / kwa / dawa / tatu"]
+    }
+  ],
+  "answers": [
+    "Ukienda sokoni, nunua ndizi. — Nikipata pesa, nitasafiri. — Akifika, niambie. — Tukisoma, tutafaulu. — Ukija, tutakula pamoja.",
+    "Usipokunywa dawa — Nisipofika — Asipokuja — Tusiposoma — Msipoondoka",
+    "Kichwa kinaniuma. — Tumbo linaniuma tangu jana. — Nina homa. — Sijisikii vizuri. — Usipokunywa dawa, hutapona. — Naomba dawa ya maumivu.",
+    "ki — li — i — li — i",
+    "Kichwa kinaniuma sana. — Nina homa tangu jana. — Sijisikii vizuri. — Ukienda hospitali utapata dawa. — Kunywa dawa mara tatu kwa siku."
+  ]
+}
