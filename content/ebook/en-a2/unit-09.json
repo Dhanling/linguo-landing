@@ -1,0 +1,233 @@
+{
+ "title": "Cari kosan",
+ "title_target": "Looking for a place",
+ "goal": "Membandingkan dua pilihan dan menyebut yang paling — dengan aturan yang bergantung pada panjang katanya.",
+ "bekal": [
+  "membentuk *-er* / *more* dan *the -est* / *the most*",
+  "membandingkan dengan *than* dan menyamakan dengan *as … as*",
+  "memakai *too* dan *enough* di tempat yang benar",
+  "menawar dan menanyakan rincian tempat tinggal"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — The second viewing",
+   "intro": "Lina melihat kamar kos kedua hari ini. Pemiliknya menunggu jawaban.",
+   "lines": [
+    { "speaker": "Pemilik:", "text": "So, what do you think? It's bigger than the one you saw this morning.", "id": "Gimana? Ini lebih luas daripada yang tadi pagi.", "literal": "jadi, apa apakah kamu pikir? itu-adalah lebih besar daripada itu satu kamu melihat ini pagi." },
+    { "speaker": "Lina:", "text": "It is. But it's also more expensive.", "id": "Iya. Tapi lebih mahal juga.", "literal": "itu adalah. tetapi itu-adalah juga lebih mahal." },
+    { "speaker": "Pemilik:", "text": "Only two hundred thousand more. And it's much quieter.", "id": "Cuma beda dua ratus ribu. Dan jauh lebih tenang.", "literal": "hanya dua ratus ribu lebih. dan itu-adalah jauh lebih tenang." },
+    { "speaker": "Lina:", "text": "That's true. The other one was next to the main road.", "id": "Benar juga. Yang satunya persis di pinggir jalan raya.", "literal": "itu-adalah benar. itu lain satu adalah sebelah ke itu utama jalan." },
+    { "speaker": "Pemilik:", "text": "This is the quietest room in the building. And the highest.", "id": "Ini kamar paling tenang di gedung ini. Dan paling atas.", "literal": "ini adalah itu paling-tenang kamar di itu gedung. dan itu paling-tinggi." },
+    { "speaker": "Lina:", "text": "Is there a lift?", "id": "Ada lift?", "literal": "adalah di sana sebuah lift?" },
+    { "speaker": "Pemilik:", "text": "No, but the stairs are good for your health.", "id": "Nggak ada, tapi naik tangga bagus buat kesehatan.", "literal": "tidak, tetapi itu tangga adalah baik untuk punyamu kesehatan." },
+    { "speaker": "Lina:", "text": "Four floors is a bit too much for my health. How big is the kitchen?", "id": "Empat lantai agak kebanyakan buat kesehatan saya. Dapurnya seberapa besar?", "literal": "empat lantai adalah sedikit terlalu banyak untuk punyaku kesehatan. berapa besar adalah itu dapur?" },
+    { "speaker": "Pemilik:", "text": "It's shared, but it's big enough for four people.", "id": "Bareng-bareng, tapi cukup luas untuk empat orang.", "literal": "itu-adalah dibagi, tetapi itu-adalah besar cukup untuk empat orang." },
+    { "speaker": "Lina:", "text": "And the water? The last place I saw wasn't as clean as this.", "id": "Airnya? Tempat terakhir yang saya lihat nggak sebersih ini.", "literal": "dan itu air? itu terakhir tempat saya melihat tidak-adalah se bersih seperti ini." },
+    { "speaker": "Pemilik:", "text": "Hot water twenty-four hours. It's the best building on this street.", "id": "Air panas 24 jam. Ini gedung terbaik di jalan ini.", "literal": "panas air dua-puluh-empat jam. itu-adalah itu terbaik gedung di ini jalan." },
+    { "speaker": "Lina:", "text": "It's also the most expensive one, I imagine.", "id": "Sekaligus paling mahal, saya rasa.", "literal": "itu-adalah juga itu paling mahal satu, saya membayangkan." },
+    { "speaker": "Pemilik:", "text": "Not the most expensive. The third most expensive.", "id": "Bukan paling mahal. Nomor tiga termahal.", "literal": "tidak itu paling mahal. itu ketiga paling mahal." },
+    { "speaker": "Lina:", "text": "Can you do it a little cheaper if I pay six months?", "id": "Bisa kurang sedikit kalau saya bayar enam bulan?", "literal": "bisa kamu melakukan itu sebuah sedikit lebih murah jika saya membayar enam bulan?" },
+    { "speaker": "Pemilik:", "text": "For six months, yes. You're a better negotiator than my wife.", "id": "Kalau enam bulan, bisa. Nawarnya lebih jago daripada istri saya.", "literal": "untuk enam bulan, ya. kamu-adalah sebuah lebih baik penawar daripada punyaku istri." }
+   ],
+   "notes": [
+    "**Panjang katanya yang menentukan.** Kata pendek satu suku kata memakai *-er* dan *-est* (*big → bigger → the biggest*); kata panjang dua suku kata atau lebih memakai *more* dan *the most* (*expensive → more expensive → the most expensive*). ⚠️ Jangan digabung: *more bigger* dan *more cheaper* selalu salah, dan sayangnya sangat sering terdengar.",
+    "**Than adalah kata pembandingnya**, dan ia tidak boleh dilupakan. \"Lebih besar dari yang tadi\" adalah *bigger **than** the other one*. ⚠️ *Bigger from* dan *bigger with* tidak ada.",
+    "**Much quieter, a bit more expensive** — kata penguat berdiri **di depan** perbandingannya. Urutannya dari kuat ke lemah: *much / far* (jauh lebih), *a lot* (jauh), *a bit / a little* (sedikit), *slightly* (sedikit sekali). ⚠️ *Very bigger* tidak ada; untuk memperkuat perbandingan, *very* tidak dipakai.",
+    "**As … as** menyatakan sama, dan sangkalannya menyatakan kurang: *not as clean as this* = \"nggak sebersih ini\". Susunan ini terasa alami bagi penutur Indonesia karena \"se-\" bekerja persis begitu.",
+    "**Too atau enough?** *Too* berarti kelewatan (*too expensive* = kemahalan), *enough* berarti cukup (*big enough* = cukup besar). ⚠️ Letaknya berbeda: *too* di **depan** kata sifat, *enough* di **belakang**. *Enough big* salah.",
+    "**The best building on this street** — perhatikan bahwa bentuk paling selalu memakai *the*. Dan tak beraturan pula: *good → better → the best*, *bad → worse → the worst*. Dua pasangan ini muncul setiap hari, jadi hafalkan sekarang.",
+    "**The third most expensive** — bahasa Inggris bisa menyisipkan urutan ke dalam bentuk paling. *The second largest city*, *the third most popular*. Cara berhitung yang rapi dan sering muncul di berita.",
+    "**Four floors is a bit too much** — perhatikan *is*, bukan *are*. Kalau jumlah dianggap satu kesatuan (jarak, uang, waktu), kata kerjanya tunggal: *Ten kilometres is far.* *Two hundred thousand is too much.*"
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk perbandingan dan bentuk paling",
+     "body": [
+      "Aturannya bergantung pada jumlah suku kata:"
+     ],
+     "table": {
+      "head": ["Kata", "Lebih …", "Paling …", "Contoh"],
+      "rows": [
+       ["satu suku kata", "+ *-er*", "*the* + *-est*", "*cheap → cheaper → the cheapest*"],
+       ["satu suku kata, vokal + konsonan", "konsonan digandakan", "—", "*big → bigger → the biggest*"],
+       ["berakhir *-y*", "*-y* → *-ier*", "*the -iest*", "*easy → easier → the easiest*"],
+       ["dua suku kata atau lebih", "*more* +", "*the most* +", "*modern → more modern*"],
+       ["tak beraturan", "—", "—", "*good → better → the best*"],
+       ["tak beraturan", "—", "—", "*bad → worse → the worst*"],
+       ["tak beraturan", "—", "—", "*far → further → the furthest*"]
+      ]
+     },
+     "after": [
+      "Beberapa kata dua suku kata boleh dua-duanya: *quiet → quieter* atau *more quiet*, *simple*, *narrow*, *clever*. Tidak ada yang salah di antaranya.",
+      "⚠️ *Little* dan *few* punya bentuknya sendiri: *less* (untuk yang tak terhitung) dan *fewer* (untuk yang bisa dihitung). *Less money*, *fewer people*."
+     ]
+    },
+    {
+     "title": "Membandingkan dan menyamakan",
+     "body": [
+      "Tiga susunan yang menutupi hampir semua kebutuhan:"
+     ],
+     "table": {
+      "head": ["Susunan", "Artinya", "Contoh"],
+      "rows": [
+       ["*A is …-er than B*", "A lebih … daripada B", "*This room is bigger than that one.*"],
+       ["*A is as … as B*", "A sama …-nya dengan B", "*It's as clean as the other one.*"],
+       ["*A isn't as … as B*", "A kurang … dibanding B", "*It isn't as expensive as I thought.*"],
+       ["*the same as*", "sama dengan", "*The price is the same as last year.*"],
+       ["*different from*", "berbeda dari", "*It's different from the photos.*"]
+      ]
+     },
+     "after": [
+      "Penguat yang berdiri di depan perbandingan: *much*, *far*, *a lot*, *a bit*, *a little*, *slightly*. *It's **much** cheaper.* *It's **a bit** smaller.*",
+      "⚠️ Sesudah *than*, bahasa Inggris santai memakai *me*, *him*, *her*: *He's taller than me.* Bentuk resminya *than I am*, tapi hampir tidak ada yang memakainya di percakapan."
+     ]
+    },
+    {
+     "title": "Too dan enough",
+     "body": [
+      "Dua kata yang sering tertukar karena letaknya berlawanan:"
+     ],
+     "table": {
+      "head": ["Susunan", "Artinya", "Contoh"],
+      "rows": [
+       ["*too* + kata sifat", "kelewat …", "*It's too expensive.*"],
+       ["*too much* + tak terhitung", "kebanyakan", "*too much noise*"],
+       ["*too many* + bisa dihitung", "kebanyakan", "*too many people*"],
+       ["kata sifat + *enough*", "cukup …", "*It's big enough.*"],
+       ["*enough* + kata benda", "cukup …", "*enough space*"],
+       ["*not … enough*", "kurang …", "*It isn't clean enough.*"]
+      ]
+     },
+     "after": [
+      "Perhatikan baris keempat dan kelima: *enough* berdiri **di belakang** kata sifat tapi **di depan** kata benda. *Big enough*, tetapi *enough room*.",
+      "⚠️ *Too* bukan *very*. *It's too expensive* berarti kamu tidak jadi membelinya. *It's very expensive* cuma pernyataan. Salah pilih di sini mengubah keputusan, bukan cuma nada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat tinggal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["a room", "e ruum", "kamar"],
+      ["a boarding house", "e BOR-ding haus", "kos"],
+      ["a flat", "e flæt", "apartemen"],
+      ["a landlord", "e LÆND-lord", "pemilik kos"],
+      ["rent", "rént", "sewa"],
+      ["a deposit", "e di-PO-zit", "uang jaminan"],
+      ["bills", "bilz", "tagihan (listrik, air)"],
+      ["furnished", "FEER-nisht", "sudah berperabot"],
+      ["shared", "shérd", "dipakai bersama"],
+      ["the stairs", "dhe stérz", "tangga"],
+      ["a lift", "e lift", "lift"],
+      ["a floor", "e flor", "lantai"],
+      ["quiet", "KWAI-et", "tenang"],
+      ["noisy", "NOI-zi", "berisik"],
+      ["bright", "brait", "terang"],
+      ["convenient", "ken-VII-ni-ent", "praktis, dekat ke mana-mana"]
+     ]
+    },
+    { "type": "sub", "text": "Bertanya dan menawar" },
+    {
+     "type": "tabel",
+     "head": ["English", "Bahasa Indonesia"],
+     "rows": [
+      ["*How much is the rent per month?*", "Sewanya berapa sebulan?"],
+      ["*Are bills included?*", "Sudah termasuk listrik air?"],
+      ["*Is there a deposit?*", "Ada uang jaminan?"],
+      ["*How far is it from the station?*", "Berapa jauh dari stasiun?"],
+      ["*Can I see the kitchen?*", "Boleh lihat dapurnya?"],
+      ["*Is it available from next month?*", "Bisa mulai bulan depan?"],
+      ["*Can you do it a little cheaper?*", "Bisa kurang sedikit?"],
+      ["*I'll think about it.*", "Saya pikir-pikir dulu."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Delapan pasangan tak beraturan dan setengah-beraturan",
+     "items": [
+      "*good → better → the best* · *bad → worse → the worst*",
+      "*far → further → the furthest* · *many/much → more → the most*",
+      "*little → less → the least* · *few → fewer → the fewest*",
+      "*old → older → the oldest* (barang) tetapi *old → elder → the eldest* (anggota keluarga)",
+      "⚠️ *Further* untuk jarak dan untuk hal abstrak (*further information*); *farther* hanya untuk jarak, dan makin jarang dipakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "than", "baca": "dhæn", "id": "daripada" },
+  { "en": "as … as", "baca": "æz … æz", "id": "se-…" },
+  { "en": "too", "baca": "tuu", "id": "terlalu" },
+  { "en": "enough", "baca": "i-NAF", "id": "cukup" },
+  { "en": "much", "baca": "mach", "id": "jauh (penguat)" },
+  { "en": "a bit", "baca": "e bit", "id": "sedikit" },
+  { "en": "expensive", "baca": "iks-PÉN-siv", "id": "mahal" },
+  { "en": "cheap", "baca": "chiip", "id": "murah" },
+  { "en": "clean", "baca": "kliin", "id": "bersih" },
+  { "en": "high", "baca": "hai", "id": "tinggi" },
+  { "en": "the main road", "baca": "dhe méin roud", "id": "jalan raya" },
+  { "en": "health", "baca": "hélth", "id": "kesehatan" },
+  { "en": "to imagine", "baca": "i-MÆ-jin", "id": "membayangkan, mengira" },
+  { "en": "to include", "baca": "in-KLUUD", "id": "termasuk" },
+  { "en": "available", "baca": "e-VÉI-le-bel", "id": "tersedia" },
+  { "en": "That's true.", "baca": "dhæts truu", "id": "Benar juga." },
+  { "en": "I'll think about it.", "baca": "ail thingk e-BAUT it", "id": "Saya pikir-pikir dulu." }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk perbandingan (*-er* atau *more*).",
+   "items": [
+    "This room is ____ (big) than the other one.",
+    "It's ____ (expensive) than I thought.",
+    "The kitchen is ____ (clean) than the bathroom.",
+    "This street is ____ (quiet) than the main road.",
+    "My new flat is ____ (good) than the old one.",
+    "The traffic today is ____ (bad) than yesterday."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk paling (*the -est* atau *the most*).",
+   "items": [
+    "This is ____ (quiet) room in the building.",
+    "It's ____ (expensive) flat on this street.",
+    "That was ____ (bad) day of my life.",
+    "She is ____ (good) student in the class.",
+    "This is ____ (comfortable) chair here."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *too*, *too much*, *too many*, atau *enough*.",
+   "items": [
+    "It's ____ expensive for me.",
+    "There are ____ people in this room.",
+    "The room isn't big ____ for two.",
+    "There's ____ noise from the road.",
+    "I don't have ____ money for the deposit."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Kamar ini lebih besar daripada yang tadi pagi.",
+    "Tapi lebih mahal juga.",
+    "Ini kamar paling tenang di gedung ini.",
+    "Tempat yang satunya nggak sebersih ini.",
+    "Bisa kurang sedikit?"
+   ]
+  }
+ ],
+ "answers": [
+  "bigger — more expensive — cleaner — quieter — better — worse",
+  "the quietest — the most expensive — the worst — the best — the most comfortable",
+  "too — too many — enough — too much — enough",
+  "This room is bigger than the one I saw this morning. — But it's also more expensive. — This is the quietest room in the building. — The other place wasn't as clean as this. — Can you do it a little cheaper?"
+ ],
+ "wave": "Ulangi **unit 8**: beri tiga nasihat dengan *should* dan satu larangan dengan *mustn't* kepada teman yang sedang sakit, tanpa melihat halamannya."
+}

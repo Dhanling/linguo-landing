@@ -1,0 +1,233 @@
+{
+ "title": "Katanya begini",
+ "title_target": "Tell me your story",
+ "goal": "Menyampaikan ucapan orang lain — dan menutup modul ini dengan merangkai seluruh bentuk waktu yang sudah kamu punya jadi satu cerita utuh.",
+ "bekal": [
+  "menggeser waktu dalam kalimat tak langsung",
+  "membedakan *say* dan *tell*",
+  "melaporkan pertanyaan, perintah, dan permintaan",
+  "menceritakan satu kejadian panjang dengan seluruh bentuk waktu A2"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — What did she say?",
+   "intro": "Setelah rapat yang tegang, Bayu menanyakan kepada Sari apa yang sebenarnya dikatakan atasan mereka.",
+   "lines": [
+    { "speaker": "Bayu:", "text": "I missed the meeting. What did she say?", "id": "Saya nggak ikut rapat. Beliau bilang apa?", "literal": "saya melewatkan itu rapat. apa apakah dia berkata?" },
+    { "speaker": "Sari:", "text": "She said the project was behind schedule.", "id": "Katanya proyeknya telat dari jadwal.", "literal": "dia berkata itu proyek adalah di belakang jadwal." },
+    { "speaker": "Bayu:", "text": "We knew that already. Did she say anything new?", "id": "Itu kita sudah tahu. Ada yang baru?", "literal": "kami tahu itu sudah. apakah dia berkata apa-apa baru?" },
+    { "speaker": "Sari:", "text": "She told us she had spoken to the client on Friday.", "id": "Beliau bilang sudah bicara dengan klien hari Jumat.", "literal": "dia memberitahu kami dia punya berbicara kepada itu klien pada Jumat." },
+    { "speaker": "Bayu:", "text": "And?", "id": "Terus?", "literal": "dan?" },
+    { "speaker": "Sari:", "text": "They've given us three more weeks. She said they would review it in March.", "id": "Mereka kasih tambahan tiga minggu. Katanya akan ditinjau bulan Maret.", "literal": "mereka-punya memberi kami tiga lebih minggu. dia berkata mereka akan meninjau itu di Maret." },
+    { "speaker": "Bayu:", "text": "That's better than I expected. Did anyone ask about the budget?", "id": "Lebih baik dari dugaan saya. Ada yang tanya soal anggaran?", "literal": "itu-adalah lebih baik daripada saya menduga. apakah siapa pun bertanya tentang itu anggaran?" },
+    { "speaker": "Sari:", "text": "Rani asked when the extra money would arrive. She said she didn't know yet.", "id": "Rani tanya kapan dana tambahannya cair. Beliau bilang belum tahu.", "literal": "Rani bertanya kapan itu tambahan uang akan tiba. dia berkata dia tidak tahu belum." },
+    { "speaker": "Bayu:", "text": "Typical. Did she say anything about me?", "id": "Biasa. Ada bilang soal saya?", "literal": "khas. apakah dia berkata apa-apa tentang saya?" },
+    { "speaker": "Sari:", "text": "She asked where you were.", "id": "Beliau nanya kamu di mana.", "literal": "dia bertanya di mana kamu adalah." },
+    { "speaker": "Bayu:", "text": "What did you tell her?", "id": "Kamu jawab apa?", "literal": "apa apakah kamu memberitahu dia?" },
+    { "speaker": "Sari:", "text": "I told her you were at the dentist. She said you'd been at the dentist twice this month.", "id": "Saya bilang kamu ke dokter gigi. Katanya kamu sudah dua kali ke dokter gigi bulan ini.", "literal": "saya memberitahu dia kamu adalah pada itu dokter-gigi. dia berkata kamu-punya ada pada itu dokter-gigi dua kali ini bulan." },
+    { "speaker": "Bayu:", "text": "She counts?", "id": "Beliau ngitung?", "literal": "dia menghitung?" },
+    { "speaker": "Sari:", "text": "She asked me to tell you to come to the next one.", "id": "Beliau minta saya bilang ke kamu supaya ikut rapat berikutnya.", "literal": "dia meminta saya untuk memberitahu kamu untuk datang ke itu berikutnya satu." },
+    { "speaker": "Bayu:", "text": "Tell her I'll be there. Both teeth are fine now.", "id": "Bilang saya bakal datang. Dua gigi saya sudah beres.", "literal": "beritahu dia saya-akan ada di sana. kedua gigi-gigi adalah baik sekarang." }
+   ],
+   "notes": [
+    "**Kalimat tak langsung menggeser semuanya mundur satu langkah.** *\"I am tired\"* → *He said he **was** tired.* *\"I have finished\"* → *She said she **had** finished.* *\"I will call\"* → *He said he **would** call.* Alasannya sama dengan pengandaian di Unit 14: bentuk lampau menandai **jarak**, bukan waktu.",
+    "**Bahasa Indonesia tidak menggeser apa pun.** \"Katanya dia capek\" memakai kata yang sama persis dengan \"dia capek\". Karena itu pergeseran ini terasa mengada-ada di awal — dan karena itu pula ia perlu dilatih sampai otomatis, bukan dihitung setiap kali.",
+    "**Say atau tell?** *Say* tidak butuh lawan bicara, *tell* wajib punya lawan bicara. *He **said** that…* dan *He **told me** that…* keduanya benar. ⚠️ *He told that…* dan *He said me…* keduanya salah, dan dua-duanya sering terdengar.",
+    "**That boleh dibuang.** *She said **(that)** the project was late.* Dalam percakapan, penutur asli hampir selalu membuangnya.",
+    "**Pertanyaan yang dilaporkan kembali jadi kalimat biasa**, persis seperti pertanyaan tidak langsung di Unit 17: *\"Where are you?\"* → *She asked where **you were**.* ⚠️ *She asked where were you* salah.",
+    "**Kalau pertanyaannya tanpa kata tanya, pakai if:** *\"Are you coming?\"* → *He asked **if** I was coming.*",
+    "**Perintah dan permintaan memakai to + V1:** *\"Come to the meeting.\"* → *She asked me **to come** to the meeting.* Sangkalannya menyisipkan *not*: *He told me **not to** wait.*",
+    "**Kalau isinya masih benar sekarang, pergeseran boleh tidak dilakukan.** *She said the project **is** behind schedule* juga benar kalau proyeknya memang masih telat hari ini. Aturan ini membuat hidup lebih mudah — tapi bentuk yang bergeser selalu aman, jadi pakailah itu selama kamu belum yakin."
+   ],
+   "grammars": [
+    {
+     "title": "Pergeseran waktu",
+     "body": [
+      "Setiap bentuk mundur satu langkah ketika diceritakan ulang:"
+     ],
+     "table": {
+      "head": ["Yang diucapkan", "Yang dilaporkan"],
+      "rows": [
+       ["*\"I am tired.\"*", "*He said he **was** tired.*"],
+       ["*\"I work here.\"*", "*She said she **worked** here.*"],
+       ["*\"I am working.\"*", "*He said he **was working**.*"],
+       ["*\"I finished it.\"*", "*She said she **had finished** it.*"],
+       ["*\"I have finished.\"*", "*She said she **had finished**.*"],
+       ["*\"I will call you.\"*", "*He said he **would** call me.*"],
+       ["*\"I can come.\"*", "*She said she **could** come.*"],
+       ["*\"I must go.\"*", "*He said he **had to** go.*"]
+      ]
+     },
+     "after": [
+      "Kata penunjuk waktu ikut bergeser: *now* → *then*, *today* → *that day*, *yesterday* → *the day before*, *tomorrow* → *the next day*, *here* → *there*, *this* → *that*.",
+      "⚠️ *Would*, *could*, *should*, dan *might* sudah bentuk lampau, jadi tidak bergeser lagi. *\"I would help.\"* → *He said he **would** help.*"
+     ]
+    },
+    {
+     "title": "Say, tell, ask",
+     "body": [
+      "Tiga kata kerja pelapor, dengan susunan yang berbeda-beda:"
+     ],
+     "table": {
+      "head": ["Kata", "Susunan", "Contoh"],
+      "rows": [
+       ["*say*", "*say (that) …*", "*He said (that) he was busy.*"],
+       ["*tell*", "*tell + orang + (that) …*", "*He told me (that) he was busy.*"],
+       ["*ask*", "*ask + kata tanya + kalimat biasa*", "*She asked where I was.*"],
+       ["*ask*", "*ask if + kalimat biasa*", "*She asked if I was coming.*"],
+       ["*ask*", "*ask + orang + to + V1*", "*She asked me to wait.*"],
+       ["*tell*", "*tell + orang + to + V1*", "*He told me to leave.*"]
+      ]
+     },
+     "after": [
+      "⚠️ Dua kesalahan yang paling sering: *He told that…* (kurang lawan bicara) dan *He said me…* (kelebihan lawan bicara). Ingat: ***tell*** **butuh orang, *say* tidak.**",
+      "Kata kerja pelapor lain yang berguna: *explain* (menjelaskan), *promise* (berjanji), *suggest* (menyarankan), *complain* (mengeluh), *admit* (mengaku)."
+     ]
+    },
+    {
+     "title": "Ringkasan seluruh bentuk waktu modul ini",
+     "body": [
+      "Delapan bentuk yang sudah kamu kuasai, dalam satu tabel penutup:"
+     ],
+     "table": {
+      "head": ["Bentuk", "Rumus", "Contoh", "Unit"],
+      "rows": [
+       ["past simple", "V2", "*I went to Bali.*", "1, 3"],
+       ["used to", "*used to* + V1", "*I used to live there.*", "2"],
+       ["past continuous", "*was/were* + V-ing", "*I was cooking.*", "4"],
+       ["present perfect", "*have* + V3", "*I have been there.*", "5, 6, 11"],
+       ["present perfect continuous", "*have been* + V-ing", "*I've been waiting.*", "7"],
+       ["past perfect", "*had* + V3", "*She had left.*", "19"],
+       ["going to / will", "—", "*I'm going to call. I'll help.*", "12"],
+       ["pasif", "*to be* + V3", "*It was made in Japan.*", "18"]
+      ]
+     },
+     "after": [
+      "Kalau ada satu baris yang masih terasa kabur, buka kembali unitnya sekarang juga — bukan nanti. Delapan bentuk ini adalah seluruh isi tingkat A2, dan B1 dibangun langsung di atasnya.",
+      "Uji terbaiknya bukan mengisi tabel, melainkan bercerita. Kalau kamu bisa menceritakan satu hari yang berantakan dengan enam dari delapan bentuk ini tanpa berhenti, modul ini sudah selesai bekerja."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyampaikan kabar orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Bahasa Indonesia"],
+     "rows": [
+      ["*She said she was busy.*", "Katanya dia sibuk."],
+      ["*He told me he'd call back.*", "Dia bilang mau telepon lagi."],
+      ["*They said they were on their way.*", "Katanya mereka lagi di jalan."],
+      ["*She asked where you were.*", "Dia nanya kamu di mana."],
+      ["*He asked if you were coming.*", "Dia nanya kamu jadi datang nggak."],
+      ["*She asked me to tell you.*", "Dia minta saya kasih tahu kamu."],
+      ["*He told me not to worry.*", "Dia bilang jangan khawatir."],
+      ["*Apparently, they've cancelled it.*", "Katanya sih dibatalkan."],
+      ["*I heard that she's leaving.*", "Saya dengar dia mau keluar."]
+     ]
+    },
+    { "type": "sub", "text": "Kosakata unit terakhir" },
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["to report", "ri-PORT", "melaporkan"],
+      ["to explain", "iks-PLÉIN", "menjelaskan"],
+      ["to admit", "ed-MIT", "mengaku"],
+      ["to complain", "kem-PLÉIN", "mengeluh"],
+      ["to expect", "iks-PÉKT", "menduga, mengharapkan"],
+      ["to review", "ri-VYUU", "meninjau"],
+      ["to count", "kaunt", "menghitung"],
+      ["a project", "e PRO-jekt", "proyek"],
+      ["a schedule", "e SHÉ-dyuul", "jadwal"],
+      ["a budget", "e BA-jet", "anggaran"],
+      ["a dentist", "e DÉN-tist", "dokter gigi"],
+      ["extra", "ÉK-stre", "tambahan"],
+      ["behind schedule", "bi-HAIND SHÉ-dyuul", "telat dari jadwal"],
+      ["apparently", "e-PÆ-rent-li", "katanya, rupanya"],
+      ["typical", "TI-pi-kel", "biasa, khas dia"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tugas penutup modul ini",
+     "items": [
+      "**Tulis satu cerita nyata sepanjang sepuluh kalimat** tentang kejadian yang paling berkesan tahun ini. Wajib memakai minimal enam dari delapan bentuk di tabel tadi.",
+      "**Baca keras-keras dan rekam.** Dengarkan besok. Tandai setiap tempat kamu berhenti lebih dari dua detik — di situlah pekerjaanmu berikutnya.",
+      "**Ceritakan ulang sebagai kabar orang ketiga**, seluruhnya dalam kalimat tak langsung: *I told him that…* Latihan ini memaksa seluruh isi Unit 19 dan 20 bekerja sekaligus.",
+      "**Lalu cari orang untuk mendengarkannya.** Sepuluh kalimat yang benar-benar diucapkan kepada manusia mengalahkan seratus kalimat yang cuma ditulis."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "to say", "baca": "séi", "id": "berkata" },
+  { "en": "to tell", "baca": "tél", "id": "memberitahu" },
+  { "en": "to ask", "baca": "aask", "id": "bertanya, meminta" },
+  { "en": "said", "baca": "séd", "id": "berkata (lampau)" },
+  { "en": "told", "baca": "tould", "id": "memberitahu (lampau)" },
+  { "en": "would", "baca": "wud", "id": "akan (dalam laporan)" },
+  { "en": "the next day", "baca": "dhe nékst déi", "id": "keesokan harinya" },
+  { "en": "the day before", "baca": "dhe déi bi-FOR", "id": "sehari sebelumnya" },
+  { "en": "a client", "baca": "e KLAI-ent", "id": "klien" },
+  { "en": "a meeting", "baca": "e MII-ting", "id": "rapat" },
+  { "en": "anyone", "baca": "É-ni-wan", "id": "siapa pun" },
+  { "en": "both", "baca": "bouth", "id": "keduanya" },
+  { "en": "I heard that …", "baca": "ai heerd dhæt", "id": "Saya dengar …" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat tak langsung dengan *He/She said …*",
+   "items": [
+    "\"I am tired.\"",
+    "\"I work in Jakarta.\"",
+    "\"I have finished the report.\"",
+    "\"I will call you tomorrow.\"",
+    "\"I can't come.\"",
+    "\"I bought it last week.\""
+   ]
+  },
+  {
+   "prompt": "Isi dengan *said*, *told*, atau *asked*.",
+   "items": [
+    "She ____ me she was busy.",
+    "He ____ that the meeting was cancelled.",
+    "She ____ where I was.",
+    "He ____ me to wait outside.",
+    "They ____ if we were coming.",
+    "She ____ us she had spoken to the client."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan atau perintah yang dilaporkan.",
+   "items": [
+    "\"Where are you?\" she asked.",
+    "\"Are you coming?\" he asked.",
+    "\"Please wait here.\" she said.",
+    "\"Don't tell anyone.\" he said.",
+    "\"When will the money arrive?\" Rani asked."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Katanya proyeknya telat dari jadwal.",
+    "Beliau bilang sudah bicara dengan klien hari Jumat.",
+    "Beliau nanya kamu di mana.",
+    "Saya bilang kamu ke dokter gigi.",
+    "Beliau minta saya bilang ke kamu supaya ikut rapat berikutnya."
+   ]
+  }
+ ],
+ "answers": [
+  "He said he was tired. — He said he worked in Jakarta. — He said he had finished the report. — He said he would call me the next day. — He said he couldn't come. — He said he had bought it the week before.",
+  "told — said — asked — told — asked — told",
+  "She asked where I was. — He asked if I was coming. — She asked me to wait there. — He told me not to tell anyone. — Rani asked when the money would arrive.",
+  "She said the project was behind schedule. — She told us she had spoken to the client on Friday. — She asked where you were. — I told her you were at the dentist. — She asked me to tell you to come to the next one."
+ ],
+ "wave": "Ulangi **seluruh modul**: ceritakan satu kejadian nyata sepanjang dua menit, memakai minimal enam dari delapan bentuk waktu di tabel penutup — lalu ceritakan ulang sebagai kabar orang ketiga."
+}

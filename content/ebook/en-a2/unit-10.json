@@ -1,0 +1,236 @@
+{
+ "title": "Belanja dan tukar barang",
+ "title_target": "Shopping and returns",
+ "goal": "Menghitung yang bisa dihitung, menakar yang tidak — dan mengembalikan barang yang salah tanpa bertengkar.",
+ "bekal": [
+  "membedakan benda yang bisa dihitung dan tidak",
+  "memakai *much*, *many*, *a few*, *a little*, *a lot of*",
+  "memakai *some* dan *any* di tempat yang benar",
+  "menukar atau mengembalikan barang di toko"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Returning a jacket",
+   "intro": "Tiga hari setelah membeli jaket, Yoga kembali ke toko dengan struk di tangan.",
+   "lines": [
+    { "speaker": "Yoga:", "text": "Excuse me, I'd like to return this jacket.", "id": "Permisi, saya mau mengembalikan jaket ini.", "literal": "maafkan saya, saya-akan-suka untuk mengembalikan ini jaket." },
+    { "speaker": "Kasir:", "text": "Is there anything wrong with it?", "id": "Ada masalah dengan barangnya?", "literal": "adalah di sana apa-apa salah dengan itu?" },
+    { "speaker": "Yoga:", "text": "It's the wrong size. I need a bigger one.", "id": "Ukurannya salah. Saya butuh yang lebih besar.", "literal": "itu-adalah itu salah ukuran. saya butuh sebuah lebih besar satu." },
+    { "speaker": "Kasir:", "text": "Do you have the receipt?", "id": "Ada struknya?", "literal": "apakah kamu punya itu struk?" },
+    { "speaker": "Yoga:", "text": "Yes, here it is. I bought it on Saturday.", "id": "Ada, ini. Saya beli hari Sabtu.", "literal": "ya, di sini itu adalah. saya membeli itu pada Sabtu." },
+    { "speaker": "Kasir:", "text": "Let me check. I'm sorry, we don't have many large sizes left.", "id": "Saya cek dulu. Maaf, ukuran besar tinggal sedikit.", "literal": "biarkan saya memeriksa. saya-adalah menyesal, kami tidak punya banyak besar ukuran-ukuran tersisa." },
+    { "speaker": "Yoga:", "text": "How many do you have?", "id": "Ada berapa?", "literal": "berapa banyak apakah kamu punya?" },
+    { "speaker": "Kasir:", "text": "Two, but they're a different colour. We've got some black ones and a few grey ones.", "id": "Dua, tapi warnanya beda. Ada beberapa yang hitam dan beberapa abu-abu.", "literal": "dua, tetapi mereka-adalah sebuah berbeda warna. kami-punya sedikit hitam satu-satu dan sedikit abu-abu satu-satu." },
+    { "speaker": "Yoga:", "text": "Can I try the grey one?", "id": "Boleh coba yang abu-abu?", "literal": "bisa saya mencoba itu abu-abu satu?" },
+    { "speaker": "Kasir:", "text": "Of course. The fitting room is over there.", "id": "Silakan. Kamar pasnya di sebelah sana.", "literal": "tentu saja. itu ruang pas adalah di sana." },
+    { "speaker": "Yoga:", "text": "It fits. Is there any difference in price?", "id": "Pas. Ada beda harga?", "literal": "itu pas. adalah di sana sedikit perbedaan dalam harga?" },
+    { "speaker": "Kasir:", "text": "It's fifty thousand more, but there's a discount this week.", "id": "Lebih mahal lima puluh ribu, tapi minggu ini ada diskon.", "literal": "itu-adalah lima-puluh ribu lebih, tetapi di sana-adalah sebuah diskon ini minggu." },
+    { "speaker": "Yoga:", "text": "So how much do I have to pay?", "id": "Jadi saya bayar berapa?", "literal": "jadi berapa banyak apakah saya punya untuk membayar?" },
+    { "speaker": "Kasir:", "text": "Nothing. With the discount, it's the same price.", "id": "Nggak ada. Dengan diskon, harganya sama.", "literal": "tidak-apa-apa. dengan itu diskon, itu-adalah itu sama harga." },
+    { "speaker": "Yoga:", "text": "That's the best news I've had all week.", "id": "Itu kabar terbaik saya minggu ini.", "literal": "itu-adalah itu terbaik kabar saya-punya punya seluruh minggu." }
+   ],
+   "notes": [
+    "**Bahasa Indonesia tidak membedakan benda yang bisa dihitung dan tidak, bahasa Inggris membedakannya di mana-mana.** \"Dua nasi\" wajar di warung; *two rices* tidak ada dalam bahasa Inggris. Yang tak terhitung dihitung lewat wadah atau takaran: *two plates of rice*, *a cup of coffee*, *a piece of advice*.",
+    "**How many untuk yang bisa dihitung, how much untuk yang tidak.** ⚠️ Tapi hati-hati: *How much do I have to pay?* memakai *much* karena yang ditanyakan adalah **uang**, dan uang tak terhitung dalam bahasa Inggris — walaupun angkanya sangat bisa dihitung.",
+    "**Some di kalimat positif, any di pertanyaan dan sangkalan.** *We've got **some** black ones.* *Is there **any** difference?* *We don't have **any** left.* Aturannya hampir tanpa kecuali.",
+    "**Kecuali satu:** *some* dipakai dalam pertanyaan yang berupa **tawaran atau permintaan**, karena si penanya sudah menduga jawabannya \"ya\". *Would you like **some** coffee?* *Can I have **some** water?* Memakai *any* di sini terdengar dingin.",
+    "**A few dan a little berarti \"beberapa\" — few dan little tanpa a berarti \"nyaris tidak ada\".** Bedanya cuma satu huruf tapi nadanya berlawanan: *I have **a few** friends here* (lumayan) melawan *I have **few** friends here* (kesepian). Dalam percakapan sehari-hari, yang tanpa *a* jarang dipakai; kalau ragu, pakai *not many* atau *not much*.",
+    "**Is there anything wrong with it?** — susunan tetap untuk menanyakan masalah. Perhatikan *anything* + kata sifat di belakangnya, seperti *nothing special* di Unit 8.",
+    "**It fits** = ukurannya pas. Bedakan dari *it suits you* = cocok, bagus dilihat. Barang bisa *fit* tapi tidak *suit*, dan itu dua kabar yang sangat berbeda di toko.",
+    "**One dan ones menggantikan kata benda yang sudah disebut**, supaya tidak diulang: *a bigger **one***, *the grey **one***, *some black **ones***. Bahasa Indonesia memakai \"yang\" untuk pekerjaan yang sama."
+   ],
+   "grammars": [
+    {
+     "title": "Bisa dihitung dan tidak",
+     "body": [
+      "Yang menentukan bukan bendanya di dunia nyata, melainkan cara bahasa Inggris memperlakukannya — dan beberapa di antaranya mengejutkan:"
+     ],
+     "table": {
+      "head": ["", "Bisa dihitung", "Tak terhitung"],
+      "rows": [
+       ["bisa dijamakkan", "*books, chairs, ideas*", "tidak pernah"],
+       ["memakai *a / an*", "*a book*", "tidak pernah"],
+       ["banyak", "*many, a lot of*", "*much, a lot of*"],
+       ["sedikit", "*a few*", "*a little*"],
+       ["pertanyaan jumlah", "*How many?*", "*How much?*"],
+       ["yang mengejutkan", "—", "*money, time, information, advice, news, furniture, luggage, work, bread, rice*"]
+      ]
+     },
+     "after": [
+      "⚠️ Enam kata di baris terakhir adalah jebakan tetap: *an advice*, *two informations*, *many furnitures*, dan *a news* semuanya salah. Yang benar: *a piece of advice*, *some information*, *a lot of furniture*, *some news*.",
+      "*A lot of* aman untuk dua-duanya, dan karena itu ia adalah jalan keluar terbaik saat kamu ragu: *a lot of people*, *a lot of money*."
+     ]
+    },
+    {
+     "title": "Some dan any",
+     "body": [
+      "Keduanya berarti \"beberapa\" atau \"sedikit\", dan letaknya ditentukan jenis kalimatnya:"
+     ],
+     "table": {
+      "head": ["Jenis kalimat", "Pakai", "Contoh"],
+      "rows": [
+       ["positif", "*some*", "*I bought some shoes.*"],
+       ["sangkalan", "*any*", "*I didn't buy any shoes.*"],
+       ["pertanyaan", "*any*", "*Did you buy any shoes?*"],
+       ["tawaran & permintaan", "*some*", "*Would you like some tea?*"],
+       ["\"apa pun boleh\"", "*any*", "*Any colour is fine.*"]
+      ]
+     },
+     "after": [
+      "Turunannya mengikuti aturan yang sama persis: *something / anything*, *someone / anyone*, *somewhere / anywhere*. *I didn't see **anyone**.* *Would you like **something** to drink?*",
+      "⚠️ *No* + kata benda sama dengan *not any*: *There's **no** milk* = *There isn't **any** milk*. Jangan digabung — *There isn't no milk* salah."
+     ]
+    },
+    {
+     "title": "Menakar yang tak terhitung",
+     "body": [
+      "Kalau benda tak terhitung perlu dihitung, bahasa Inggris meminjam wadahnya:"
+     ],
+     "table": {
+      "head": ["Takaran", "Contoh", "Bahasa Indonesia"],
+      "rows": [
+       ["*a piece of*", "*a piece of advice, a piece of paper*", "sepotong, sebuah"],
+       ["*a cup of / a glass of*", "*a cup of coffee, a glass of water*", "secangkir, segelas"],
+       ["*a bottle of / a can of*", "*a bottle of water*", "sebotol, sekaleng"],
+       ["*a kilo of / a litre of*", "*two kilos of rice*", "sekilo, seliter"],
+       ["*a bit of*", "*a bit of luck*", "sedikit"],
+       ["*a pair of*", "*a pair of shoes, a pair of trousers*", "sepasang"]
+      ]
+     },
+     "after": [
+      "⚠️ Beberapa benda dalam bahasa Inggris **selalu jamak** walaupun barangnya satu: *trousers*, *jeans*, *shorts*, *glasses* (kacamata), *scissors*. Semuanya dihitung dengan *a pair of*.",
+      "*A pair of trousers **is** expensive* — kata kerjanya mengikuti *pair*, bukan *trousers*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["a receipt", "e ri-SIIT", "struk"],
+      ["a refund", "e RII-fand", "uang kembali"],
+      ["an exchange", "en iks-CHÉINJ", "tukar barang"],
+      ["a discount", "e DIS-kaunt", "diskon"],
+      ["a size", "e saiz", "ukuran"],
+      ["a fitting room", "e FI-ting ruum", "kamar pas"],
+      ["a jacket", "e JÆ-ket", "jaket"],
+      ["trousers", "TRAU-zerz", "celana panjang"],
+      ["to fit", "fit", "pas ukurannya"],
+      ["to suit", "suut", "cocok, pantas"],
+      ["to try on", "trai on", "mencoba (pakaian)"],
+      ["to return", "ri-TEERN", "mengembalikan"],
+      ["to exchange", "iks-CHÉINJ", "menukar"],
+      ["faulty", "FOOL-ti", "cacat, rusak"],
+      ["left", "léft", "tersisa"],
+      ["wrong", "rong", "salah"]
+     ]
+    },
+    { "type": "sub", "text": "Kalimat yang menyelamatkanmu di toko" },
+    {
+     "type": "tabel",
+     "head": ["English", "Bahasa Indonesia"],
+     "rows": [
+      ["*I'm just looking, thanks.*", "Lihat-lihat dulu, terima kasih."],
+      ["*Do you have this in a bigger size?*", "Ada yang lebih besar?"],
+      ["*Can I try it on?*", "Boleh dicoba?"],
+      ["*It doesn't fit.*", "Nggak muat."],
+      ["*I'd like to return this.*", "Saya mau mengembalikan ini."],
+      ["*Can I get a refund?*", "Bisa uangnya dikembalikan?"],
+      ["*It's faulty.*", "Barangnya rusak."],
+      ["*Is there a discount?*", "Ada diskon?"],
+      ["*I'll take it.*", "Saya ambil."],
+      ["*I'll think about it.*", "Saya pikir-pikir dulu."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kata yang paling sering dijamakkan padahal tidak boleh",
+     "items": [
+      "*information* — bukan *informations*. \"Dua informasi\" adalah *two pieces of information*.",
+      "*advice* — bukan *advices*. \"Saran saya\" adalah *my advice* atau *a piece of advice*.",
+      "*news* — sudah berakhiran *s* tapi tunggal: *The news **is** good.*",
+      "*furniture* — bukan *furnitures*. *A lot of furniture.*",
+      "*luggage* — bukan *luggages*. *How much luggage do you have?*",
+      "*money* — bukan *moneys*. *How much money?*, bukan *how many*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "much", "baca": "mach", "id": "banyak (tak terhitung)" },
+  { "en": "many", "baca": "MÉ-ni", "id": "banyak (bisa dihitung)" },
+  { "en": "a few", "baca": "e fyuu", "id": "beberapa" },
+  { "en": "a little", "baca": "e LI-tel", "id": "sedikit" },
+  { "en": "a lot of", "baca": "e lot ov", "id": "banyak" },
+  { "en": "some", "baca": "sam", "id": "beberapa, sedikit" },
+  { "en": "any", "baca": "É-ni", "id": "sedikit pun, apa pun" },
+  { "en": "a piece of", "baca": "e piis ov", "id": "sepotong, sebuah" },
+  { "en": "a pair of", "baca": "e pér ov", "id": "sepasang" },
+  { "en": "information", "baca": "in-fer-MÉI-shen", "id": "informasi" },
+  { "en": "advice", "baca": "ed-VAIS", "id": "saran" },
+  { "en": "luggage", "baca": "LA-gij", "id": "bagasi, koper" },
+  { "en": "furniture", "baca": "FEER-ni-cher", "id": "perabot" },
+  { "en": "a difference", "baca": "e DI-fe-rens", "id": "perbedaan" },
+  { "en": "a colour", "baca": "e KA-ler", "id": "warna" },
+  { "en": "Of course.", "baca": "ov kors", "id": "Tentu saja." },
+  { "en": "over there", "baca": "OU-ver dhér", "id": "di sebelah sana" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *much* atau *many*.",
+   "items": [
+    "How ____ money do you have?",
+    "How ____ people came to the party?",
+    "There isn't ____ time left.",
+    "We don't have ____ large sizes.",
+    "How ____ luggage are you taking?",
+    "There weren't ____ shops on that street."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *some* atau *any*.",
+   "items": [
+    "We've got ____ black ones in stock.",
+    "Is there ____ difference in price?",
+    "I didn't buy ____ shoes.",
+    "Would you like ____ coffee?",
+    "There's ____ milk in the fridge.",
+    "I couldn't find ____ information about it."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya.",
+   "items": [
+    "Can you give me two advices?",
+    "I need some informations.",
+    "How many money do you need?",
+    "The news are very bad today.",
+    "I bought a new trouser yesterday."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Saya mau mengembalikan jaket ini.",
+    "Ukuran besar tinggal sedikit.",
+    "Ada beda harga?",
+    "Boleh dicoba?",
+    "Saya bayar berapa?"
+   ]
+  }
+ ],
+ "answers": [
+  "much — many — much — many — much — many",
+  "some — any — any — some — some — any",
+  "Can you give me two pieces of advice? — I need some information. — How much money do you need? — The news is very bad today. — I bought a new pair of trousers yesterday.",
+  "I'd like to return this jacket. — We don't have many large sizes left. — Is there any difference in price? — Can I try it on? — How much do I have to pay?"
+ ],
+ "wave": "Ulangi **unit 9**: bandingkan dua tempat tinggal yang pernah kamu tempati dalam lima kalimat, wajib memakai satu *-er than*, satu *the most*, dan satu *not as … as*."
+}
