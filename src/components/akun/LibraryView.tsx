@@ -166,6 +166,45 @@ function edisiProduk(p: { title: string; slug?: string | null }): Edisi | null {
   return null;
 }
 
+// [pustaka-filter-lanjutan-v1] Tiga saringan tambahan yang paling sering ditanya
+// siswa di Perpustakaan: "mana modul yang baru", "yang bahasa X", "yang level A1".
+// Ketiganya dibaca dari kolom yang SUDAH ada di `digital_products` (title/language/
+// level) — tidak ada perubahan skema.
+
+// Modul cetakan baru ditandai di judulnya ("Spanish 101 new edition"). E-Learning
+// tidak pernah punya penanda ini, jadi memilih "New edition" otomatis menyisakan
+// Lingbook saja — itu memang perilaku yang diharapkan.
+function adalahNewEdition(p: { title: string }) {
+  return /\bnew edition\b/i.test(p.title || "");
+}
+
+// `digital_products.language` isinya nama Inggris ("Sundanese", "Persian"),
+// sementara dashboard siswa berbahasa Indonesia. Dipetakan di sini saja supaya
+// tidak menyeret seluruh master kurikulum ke bundel halaman Perpustakaan.
+const NAMA_BAHASA_ID: Record<string, string> = {
+  arabic: "Arab", basque: "Basque", bengali: "Bengali", cantonese: "Kanton",
+  chinese: "Mandarin", czech: "Ceko", danish: "Denmark", dutch: "Belanda",
+  english: "Inggris", estonian: "Estonia", finnish: "Finlandia", french: "Prancis",
+  georgian: "Georgia", german: "Jerman", greek: "Yunani", hebrew: "Ibrani",
+  hindi: "Hindi", hungarian: "Hungaria", icelandic: "Islandia", indonesian: "Indonesia",
+  italian: "Italia", japanese: "Jepang", javanese: "Jawa", khmer: "Khmer",
+  korean: "Korea", lao: "Laos", malay: "Melayu", mandarin: "Mandarin",
+  myanmar: "Myanmar", norwegian: "Norwegia", persian: "Persia", polish: "Polandia",
+  portuguese: "Portugis", russian: "Rusia", serbian: "Serbia", slovak: "Slovakia",
+  slovenian: "Slovenia", spanish: "Spanyol", sundanese: "Sunda", swahili: "Swahili",
+  swedish: "Swedia", tagalog: "Tagalog", thai: "Thailand", turkish: "Turki",
+  ukrainian: "Ukraina", urdu: "Urdu", uzbek: "Uzbek", vietnamese: "Vietnam",
+};
+function labelBahasa(raw: string) {
+  return NAMA_BAHASA_ID[raw.trim().toLowerCase()] ?? raw.trim();
+}
+
+// Level dipakai apa adanya ("A1", "A2", "B1", "A1-B1"); yang kosong hanya muncul
+// di pilihan "Semua level".
+function urutLevel(a: string, b: string) {
+  return a.localeCompare(b, "en");
+}
+
 function fmtDate(iso: string) {
   return new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" });
 }
@@ -508,6 +547,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
   // [pustaka-filter-edisi-v1] "all" = kedua edisi (plus produk tanpa edisi)
   const [edisi, setEdisi] = useState<"all" | Edisi>("all");
+  // [pustaka-filter-lanjutan-v1] versi cetakan · bahasa · level
+  const [versi, setVersi] = useState<"all" | "new" | "lama">("all");
+  const [bahasa, setBahasa] = useState("all");
+  const [level, setLevel] = useState("all");
   const [view, setView] = useState<"grid" | "list">("grid");
   const [q, setQ] = useState("");
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
@@ -819,6 +862,44 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     return { total: purchases.length, running, certs };
   }, [purchases, byLang]);
 
+  // [pustaka-filter-lanjutan-v1] SATU predikat dipakai bertiga (angka di tab,
+  // kartu milik siswa, kartu tergembok) — kalau dipisah, angka tab gampang
+  // berbohong seperti dulu waktu saringan edisi belum ikut dihitung.
+  const cocokSaring = useCallback((p: DProduct) => {
+    if (edisi !== "all" && edisiProduk(p) !== edisi) return false;
+    if (versi !== "all" && (versi === "new") !== adalahNewEdition(p)) return false;
+    if (bahasa !== "all" && (p.language ?? "").trim().toLowerCase() !== bahasa) return false;
+    if (level !== "all" && (p.level ?? "").trim() !== level) return false;
+    return true;
+  }, [edisi, versi, bahasa, level]);
+
+  // Pilihan bahasa & level dibangun dari katalog yang benar-benar ada, bukan dari
+  // daftar hardcode — kalau modul baru terbit, saringannya ikut tanpa disentuh.
+  const opsiBahasa = useMemo(() => {
+    const m = new Map<string, string>();
+    const tambah = (p?: DProduct | null) => {
+      const v = p?.language?.trim();
+      if (v) m.set(v.toLowerCase(), labelBahasa(v));
+    };
+    purchases.forEach((p) => tambah(p.digital_products));
+    katalog.forEach((k) => tambah(k));
+    return [...m.entries()].sort((a, b) => a[1].localeCompare(b[1], "id"));
+  }, [purchases, katalog]);
+
+  const opsiLevel = useMemo(() => {
+    const set = new Set<string>();
+    const tambah = (p?: DProduct | null) => {
+      const v = p?.level?.trim();
+      if (v) set.add(v);
+    };
+    purchases.forEach((p) => tambah(p.digital_products));
+    katalog.forEach((k) => tambah(k));
+    return [...set].sort(urutLevel);
+  }, [purchases, katalog]);
+
+  const adaSaringan = edisi !== "all" || versi !== "all" || bahasa !== "all" || level !== "all";
+  const resetSaringan = () => { setEdisi("all"); setVersi("all"); setBahasa("all"); setLevel("all"); };
+
   // [pustaka-tab-hitung-katalog-v1] Angka di tab dulu cuma menghitung produk yang
   // SUDAH dibeli, jadi selalu "0" padahal daftar di bawahnya berisi 47 produk
   // tergembok. Sekarang angkanya = jumlah kartu yang benar-benar muncul di tab itu
@@ -827,10 +908,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     const punya = new Set(purchases.map((p) => p.digital_products?.id).filter(Boolean));
     // [pustaka-filter-edisi-v1] angka ikut saringan edisi yang sedang aktif —
     // kalau tidak, tabnya menjanjikan 47 produk padahal daftarnya cuma 20.
-    const cocokEdisi = (p: { title: string; slug?: string | null }) =>
-      edisi === "all" || edisiProduk(p) === edisi;
-    const milik = purchases.filter((p) => cocokEdisi(p.digital_products));
-    const belum = katalog.filter((k) => !punya.has(k.id) && cocokEdisi(k));
+    const milik = purchases.filter((p) => cocokSaring(p.digital_products));
+    const belum = katalog.filter((k) => !punya.has(k.id) && cocokSaring(k));
     const hitung = (tipe: ProductType) =>
       milik.filter((p) => p.digital_products.type === tipe).length +
       belum.filter((k) => k.type === tipe).length;
@@ -839,7 +918,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
       elearning: hitung("elearning"),
       ebook: hitung("ebook"),
     };
-  }, [purchases, katalog, edisi]);
+  }, [purchases, katalog, cocokSaring]);
 
   const hero = useMemo(() => {
     for (const p of purchases) {
@@ -853,11 +932,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     const needle = q.trim().toLowerCase();
     return purchases.filter((p) => {
       if (tab !== "all" && p.digital_products.type !== tab) return false;
-      if (edisi !== "all" && edisiProduk(p.digital_products) !== edisi) return false;
+      if (!cocokSaring(p.digital_products)) return false;
       if (needle && !p.digital_products.title.toLowerCase().includes(needle)) return false;
       return true;
     });
-  }, [purchases, tab, edisi, q]);
+  }, [purchases, tab, cocokSaring, q]);
 
   // [pustaka-katalog-terkunci-v1] produk yang belum dimiliki → kartu tergembok.
   // Saring ikut tab & pencarian yang sama supaya terasa satu daftar.
@@ -867,11 +946,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     return katalog.filter((k) => {
       if (punya.has(k.id)) return false;
       if (tab !== "all" && k.type !== tab) return false;
-      if (edisi !== "all" && edisiProduk(k) !== edisi) return false;
+      if (!cocokSaring(k)) return false;
       if (needle && !k.title.toLowerCase().includes(needle)) return false;
       return true;
     });
-  }, [katalog, purchases, tab, edisi, q]);
+  }, [katalog, purchases, tab, cocokSaring, q]);
 
   /* ---------------- render ---------------- */
   if (loading) {
@@ -1015,6 +1094,64 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
             </button>
           ))}
         </div>
+
+        {/* [pustaka-filter-lanjutan-v1] versi cetakan — modul "new edition" adalah
+            tulisan ulang 20 unit; siswa yang punya edisi lama datang ke sini justru
+            untuk mencari yang baru. */}
+        <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
+          {([["all", "Semua versi"], ["new", "New edition"], ["lama", "Edisi lama"]] as const).map(([k, label]) => (
+            <button
+              key={k}
+              onClick={() => setVersi(k)}
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-[13px] font-bold transition ${
+                versi === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
+              }`}
+            >
+              {k === "new" && <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} />}
+              {t(label)}
+            </button>
+          ))}
+        </div>
+
+        {/* Bahasa & level: daftarnya puluhan, jadi dropdown — bukan deretan chip
+            yang memakan tiga baris di layar HP. */}
+        <select
+          value={bahasa}
+          onChange={(e) => setBahasa(e.target.value)}
+          aria-label={t("Saring bahasa")}
+          className={`rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition ${
+            bahasa === "all" ? "border-slate-200 bg-white text-slate-500" : "border-[#12A37E]/40 bg-[#12A37E]/10 text-[#0C8163]"
+          }`}
+        >
+          <option value="all">{t("Semua bahasa")}</option>
+          {opsiBahasa.map(([v, label]) => (
+            <option key={v} value={v}>{label}</option>
+          ))}
+        </select>
+
+        <select
+          value={level}
+          onChange={(e) => setLevel(e.target.value)}
+          aria-label={t("Saring level")}
+          className={`rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition ${
+            level === "all" ? "border-slate-200 bg-white text-slate-500" : "border-[#12A37E]/40 bg-[#12A37E]/10 text-[#0C8163]"
+          }`}
+        >
+          <option value="all">{t("Semua level")}</option>
+          {opsiLevel.map((v) => (
+            <option key={v} value={v}>{v}</option>
+          ))}
+        </select>
+
+        {adaSaringan && (
+          <button
+            type="button"
+            onClick={resetSaringan}
+            className="inline-flex items-center gap-1.5 rounded-2xl px-3 py-2.5 text-[13px] font-bold text-slate-500 transition hover:bg-slate-100 hover:text-[#12172B]"
+          >
+            <X className="h-3.5 w-3.5" strokeWidth={2.6} /> {t("Reset filter")}
+          </button>
+        )}
         </div>
 
         <div className="flex items-center gap-2">
