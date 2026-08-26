@@ -1,0 +1,465 @@
+{
+ "title": "Sudah — tapi sudah yang mana",
+ "title_target": "I've been meaning to call you",
+ "goal": "Memisahkan tiga bentuk yang di bahasa Indonesia sama-sama berbunyi \"sudah\": past simple, present perfect, dan present perfect continuous.",
+ "bekal": [
+  "tahu kapan keterangan waktu memaksa past simple",
+  "memakai *since* dan *for* tanpa tertukar",
+  "memakai present perfect continuous untuk lamanya, bukan untuk hasilnya",
+  "memakai *yet*, *already*, *still*, dan *ever* di tempatnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Running into someone after three years",
+   "intro": "Rani bertemu Dimas, teman kuliahnya, di sebuah kedai kopi di Jakarta. Perhatikan satu hal sepanjang halaman ini: tiap kali waktunya disebut, bentuk kalimatnya berubah — dan itu terjadi lima kali.",
+   "lines": [
+    {
+     "speaker": "Rani:",
+     "text": "Dimas? I don't believe it. How long has it been?",
+     "id": "Dimas? Nggak nyangka. Udah berapa lama ya?",
+     "literal": "Dimas? aku tidak percaya itu. berapa lama telah itu ada?"
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Three years, easily. I haven't seen you since the wedding.",
+     "id": "Tiga tahun, gampang. Aku nggak ketemu kamu sejak nikahan itu.",
+     "literal": "tiga tahun, gampang. aku belum melihat kamu sejak itu pernikahan."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "God, you're right. I've been meaning to message you for months.",
+     "id": "Ya ampun, iya. Udah berbulan-bulan aku niat mau chat kamu.",
+     "literal": "Tuhan, kamu benar. aku telah sedang bermaksud untuk memesan kamu selama berbulan-bulan."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Same here. So what have you been up to?",
+     "id": "Sama. Jadi lagi sibuk apa kamu belakangan ini?",
+     "literal": "sama di-sini. jadi apa telah kamu sedang berada di-atas ke?"
+    },
+    {
+     "speaker": "Rani:",
+     "text": "I moved to Bandung in 2023, then came back last April.",
+     "id": "Aku pindah ke Bandung tahun 2023, terus balik April kemarin.",
+     "literal": "aku pindah ke Bandung dalam 2023, kemudian datang kembali April lalu."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Back for good?",
+     "id": "Balik buat seterusnya?",
+     "literal": "kembali untuk baik?"
+    },
+    {
+     "speaker": "Rani:",
+     "text": "I think so. I've been working at a startup in Kuningan since June.",
+     "id": "Kayaknya sih. Aku kerja di startup di Kuningan sejak Juni.",
+     "literal": "aku pikir begitu. aku telah sedang bekerja di sebuah startup di Kuningan sejak Juni."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Nice. Have you seen anyone else from uni?",
+     "id": "Mantap. Udah ketemu anak-anak kampus yang lain?",
+     "literal": "bagus. sudahkah kamu melihat siapa pun lain dari universitas?"
+    },
+    {
+     "speaker": "Rani:",
+     "text": "I ran into Sasha last month, actually. She's had a baby.",
+     "id": "Aku kebetulan ketemu Sasha bulan lalu. Dia udah punya anak.",
+     "literal": "aku berlari ke-dalam Sasha bulan lalu, sebenarnya. dia telah punya seorang bayi."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "No way. When?",
+     "id": "Serius. Kapan?",
+     "literal": "tidak jalan. kapan?"
+    },
+    {
+     "speaker": "Rani:",
+     "text": "In February. I've only seen photos, though. I haven't visited yet.",
+     "id": "Februari. Tapi aku baru lihat fotonya doang. Belum sempat main ke sana.",
+     "literal": "dalam Februari. aku telah hanya melihat foto-foto, walaupun. aku belum mengunjungi lagi."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "We should go together. I've been saying that about everyone for two years.",
+     "id": "Kita mesti barengan. Udah dua tahun aku ngomong gitu ke semua orang.",
+     "literal": "kita seharusnya pergi bersama. aku telah sedang mengatakan itu tentang semua orang selama dua tahun."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "And you've never actually gone.",
+     "id": "Dan kenyataannya nggak pernah jadi.",
+     "literal": "dan kamu telah tidak pernah sebenarnya pergi."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "I went once. In 2022. It rained and nobody came.",
+     "id": "Pernah sekali kok. Tahun 2022. Hujan dan nggak ada yang datang.",
+     "literal": "aku pergi sekali. dalam 2022. itu hujan dan tak seorang pun datang."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "That's the saddest thing I've heard all week.",
+     "id": "Itu hal paling sedih yang aku dengar minggu ini.",
+     "literal": "itu adalah itu paling-sedih hal yang aku telah dengar seluruh minggu."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Give it time. It's only Tuesday.",
+     "id": "Sabar, masih panjang. Ini baru Selasa.",
+     "literal": "beri itu waktu. ini adalah hanya Selasa."
+    }
+   ],
+   "notes": [
+    "**Keterangan waktu yang sudah tertutup memaksa past simple.** *I **moved** to Bandung **in 2023*** — begitu waktunya disebut dan sudah lewat (*in 2023*, *last April*, *yesterday*), present perfect langsung salah. Bandingkan dengan baris 7: *I've been working… **since June***, yang memakai *since* justru karena masa itu belum ditutup.",
+    "***How long has it been?*** adalah cara paling lazim menanyakan \"udah berapa lama ya\" tanpa menyebut apa yang berlangsung. Bentuk panjangnya *How long has it been since we last met?* — perhatikan *since* selalu diikuti past simple, bukan present perfect.",
+    "***I've been meaning to*** wajib dihafal utuh. Artinya \"dari dulu niat, belum kesampaian\", dan nadanya setengah minta maaf. Continuous di sini bukan soal berapa lama, melainkan soal **niat yang masih menggantung sampai detik ini**.",
+    "***What have you been up to?*** = \"lagi ngapain aja belakangan?\". Jauh lebih lazim daripada *what have you done*, yang justru terdengar seperti menuduh — persis seperti \"kamu ngapain sih?\" dalam bahasa Indonesia.",
+    "***She's had a baby*** memakai present perfect walaupun kejadiannya jelas sudah lewat. Yang dibicarakan bukan kelahirannya, melainkan **keadaan sekarang**: dia sekarang punya bayi. Begitu waktunya diminta di baris 10, bentuknya wajib pindah: *In February.*",
+    "***yet*** menandai hal yang masih rencana, dan hampir selalu berpasangan dengan present perfect negatif atau pertanyaan. Saudara dekatnya: *already* (lebih cepat dari dugaan) dan *still haven't* (lebih lambat dari yang pantas — nadanya kesal).",
+    "***run into someone*** = kebetulan bertemu, bukan menabrak. Ia tak bisa dipisah: *I ran into **her***, bukan *ran her into*. Phrasal verb berpreposisi seperti ini dibahas lengkap di unit 15.",
+    "**Baris 12 dan 13 memperlihatkan bedanya dengan telak.** *I've been **saying** that for two years* menyorot kegiatan yang berulang dan belum berhenti; *you've never actually **gone*** menyorot hasil yang nihil. Continuous untuk prosesnya, simple untuk hasilnya — dan seluruh unit ini bisa diringkas jadi satu kalimat itu."
+   ]
+  },
+  {
+   "title": "Dialogue 2 — The email that never got sent",
+   "intro": "Di kantor, dua rekan kerja membahas satu email yang seharusnya sudah dikirim minggu lalu.",
+   "lines": [
+    {
+     "speaker": "Priya:",
+     "text": "Has the client replied yet?",
+     "id": "Kliennya udah bales belum?",
+     "literal": "sudahkah itu klien membalas lagi?"
+    },
+    {
+     "speaker": "Ben:",
+     "text": "Ah. About that. I haven't actually sent it.",
+     "id": "Ah. Soal itu. Sebenarnya belum aku kirim.",
+     "literal": "ah. tentang itu. aku belum sebenarnya mengirim itu."
+    },
+    {
+     "speaker": "Priya:",
+     "text": "You've had it since Monday.",
+     "id": "Kan udah ada di kamu dari Senin.",
+     "literal": "kamu telah punya itu sejak Senin."
+    },
+    {
+     "speaker": "Ben:",
+     "text": "I know. I've been rewriting the second paragraph all week.",
+     "id": "Iya tahu. Seminggu ini aku nulis ulang paragraf keduanya terus.",
+     "literal": "aku tahu. aku telah sedang menulis-ulang itu kedua paragraf seluruh minggu."
+    },
+    {
+     "speaker": "Priya:",
+     "text": "Did you show it to Maya? She wrote the original brief.",
+     "id": "Udah kamu tunjukin ke Maya? Kan dia yang bikin briefnya.",
+     "literal": "apakah kamu menunjukkan itu kepada Maya? dia menulis itu asli brief."
+    },
+    {
+     "speaker": "Ben:",
+     "text": "I showed her a version on Wednesday. She's already changed it twice since then.",
+     "id": "Aku tunjukin satu versi hari Rabu. Sejak itu dia udah ngubah dua kali.",
+     "literal": "aku menunjukkan dia sebuah versi pada Rabu. dia telah sudah mengubah itu dua kali sejak waktu itu."
+    },
+    {
+     "speaker": "Priya:",
+     "text": "So it's been sitting in drafts for four days while two people edit it.",
+     "id": "Jadi udah empat hari nangkring di draf sementara dua orang ngedit.",
+     "literal": "jadi itu telah sedang duduk dalam draf-draf selama empat hari sementara dua orang mengedit itu."
+    },
+    {
+     "speaker": "Ben:",
+     "text": "When you say it like that, it sounds bad.",
+     "id": "Kalau diomongin kayak gitu, kedengarannya jelek.",
+     "literal": "ketika kamu mengatakan itu seperti itu, itu terdengar buruk."
+    }
+   ],
+   "notes": [
+    "***Has the client replied **yet**?*** — pertanyaan present perfect dengan *yet* menanyakan hasil sampai detik ini. Kalau ditanya *Did the client reply?*, artinya bergeser jadi \"waktu itu, dia balas nggak?\".",
+    "***I've been rewriting… all week*** vs ***I haven't sent it***: continuous untuk usaha yang berjalan, simple untuk hasil yang belum ada. Dua kalimat itu berdampingan justru karena artinya berlawanan.",
+    "***I showed her a version **on Wednesday*** memakai past simple karena harinya disebut, lalu langsung disusul present perfect *she's already changed it twice **since then*** karena masa itu belum ditutup. Perpindahan bolak-balik seperti ini adalah bunyi asli bahasa Inggris B2.",
+    "***it's been sitting in drafts*** — kata kerja diam seperti *sit*, *lie*, *stand*, dan *stay* justru sering dipakai dalam bentuk continuous untuk menekankan bahwa sesuatu **dibiarkan** terlalu lama. Nadanya menyindir."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertemu lagi, mengejar kabar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "to run into someone",
+       "tu ran IN-tu",
+       "kebetulan bertemu"
+      ],
+      [
+       "to lose touch",
+       "tu luuz TATCH",
+       "kehilangan kontak"
+      ],
+      [
+       "to catch up (with)",
+       "tu ketch AP",
+       "mengobrol mengejar kabar"
+      ],
+      [
+       "long overdue",
+       "long o-ver-DYU",
+       "sudah lama seharusnya"
+      ],
+      [
+       "it's been ages",
+       "its bin EY-jez",
+       "sudah lama sekali"
+      ],
+      [
+       "to keep in touch",
+       "tu kiip in TATCH",
+       "tetap berhubungan"
+      ],
+      [
+       "for good",
+       "for GUD",
+       "untuk seterusnya"
+      ],
+      [
+       "out of the blue",
+       "aut ov dhe BLUU",
+       "tiba-tiba, tanpa aba-aba"
+      ],
+      [
+       "to drift apart",
+       "tu drift e-PAART",
+       "perlahan menjauh"
+      ],
+      [
+       "to drop someone a line",
+       "drop … e LAIN",
+       "mengirim pesan singkat"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Potongan siap pakai untuk membuka percakapan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Potongan",
+      "Nadanya",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "It's been ages!",
+       "hangat, spontan",
+       "It's been ages! How are you?"
+      ],
+      [
+       "Long time no see.",
+       "santai, hampir bercanda",
+       "Long time no see, stranger."
+      ],
+      [
+       "I've been meaning to…",
+       "setengah minta maaf",
+       "I've been meaning to call you."
+      ],
+      [
+       "What have you been up to?",
+       "ramah, terbuka",
+       "So, what have you been up to?"
+      ],
+      [
+       "How've you been?",
+       "peduli, agak pribadi",
+       "How've you been, really?"
+      ],
+      [
+       "We should catch up properly.",
+       "mengajak, belum janji",
+       "We should catch up properly sometime."
+      ],
+      [
+       "Don't be a stranger.",
+       "perpisahan hangat",
+       "Take care, and don't be a stranger."
+      ],
+      [
+       "I'll drop you a line.",
+       "janji longgar",
+       "I'll drop you a line next week."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua jebakan warisan sekolah",
+     "items": [
+      "***Since* diikuti TITIK waktu, *for* diikuti LAMANYA.** *since June*, *since 2019*, *since we met* vs *for six months*, *for years*, *for a while*. Kesalahan *since three years* adalah penanda paling cepat bahwa penuturnya belum benar-benar B2.",
+      "**Present perfect TIDAK berarti \"baru saja\".** Untuk \"baru saja\", tambahkan *just*: *I've **just** finished*. Tanpa *just*, *I've finished* cuma berarti pekerjaannya beres sekarang — bisa lima menit lalu, bisa lima jam lalu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "to run into",
+   "baca": "tu ran IN-tu",
+   "id": "kebetulan bertemu"
+  },
+  {
+   "en": "to be up to",
+   "baca": "tu bi AP tu",
+   "id": "sedang mengerjakan"
+  },
+  {
+   "en": "to mean to",
+   "baca": "tu MIIN tu",
+   "id": "berniat"
+  },
+  {
+   "en": "for good",
+   "baca": "for GUD",
+   "id": "untuk seterusnya"
+  },
+  {
+   "en": "a startup",
+   "baca": "e START-ap",
+   "id": "perusahaan rintisan"
+  },
+  {
+   "en": "uni (university)",
+   "baca": "YUU-ni",
+   "id": "kampus, universitas"
+  },
+  {
+   "en": "actually",
+   "baca": "EK-chu-a-li",
+   "id": "sebenarnya"
+  },
+  {
+   "en": "though",
+   "baca": "dhou",
+   "id": "walaupun begitu"
+  },
+  {
+   "en": "yet",
+   "baca": "yet",
+   "id": "belum, sampai sekarang"
+  },
+  {
+   "en": "already",
+   "baca": "ol-RE-di",
+   "id": "sudah"
+  },
+  {
+   "en": "still",
+   "baca": "stil",
+   "id": "masih"
+  },
+  {
+   "en": "ever",
+   "baca": "E-ver",
+   "id": "pernah"
+  },
+  {
+   "en": "since",
+   "baca": "sins",
+   "id": "sejak"
+  },
+  {
+   "en": "ages",
+   "baca": "EY-jez",
+   "id": "waktu yang sangat lama"
+  },
+  {
+   "en": "to catch up",
+   "baca": "tu ketch AP",
+   "id": "mengejar kabar, menyusul"
+  },
+  {
+   "en": "to lose touch",
+   "baca": "tu luuz TATCH",
+   "id": "kehilangan kontak"
+  },
+  {
+   "en": "out of the blue",
+   "baca": "aut ov dhe BLUU",
+   "id": "tiba-tiba"
+  },
+  {
+   "en": "no way",
+   "baca": "nou WEY",
+   "id": "nggak mungkin, serius?"
+  },
+  {
+   "en": "a stranger",
+   "baca": "e STREYN-jer",
+   "id": "orang asing"
+  },
+  {
+   "en": "to drift apart",
+   "baca": "tu drift e-PAART",
+   "id": "perlahan menjauh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih past simple atau present perfect, lalu tulis bentuk yang benar.",
+   "items": [
+    "I (live) ____ in Surabaya from 2018 to 2021.",
+    "She (not call) ____ me since Tuesday.",
+    "We (meet) ____ at a conference last year.",
+    "They (already finish) ____ the report.",
+    "He (work) ____ here for six years and he still loves it.",
+    "When (you arrive) ____ ?"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi present perfect continuous kalau yang disorot adalah lamanya kegiatan.",
+   "items": [
+    "I wait here. (dua jam)",
+    "She study English. (sejak SMA)",
+    "We look for a flat. (berminggu-minggu)",
+    "He try to reach you. (sepanjang pagi)",
+    "They argue about it. (sejak Senin)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan since, for, yet, already, atau still.",
+   "items": [
+    "I've known her ____ we were children.",
+    "We've been friends ____ ten years.",
+    "Have you eaten ____ ?",
+    "I've ____ sent the email, don't worry.",
+    "He ____ hasn't replied, and it's been a week."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Udah berapa lama ya?",
+    "Aku udah lama niat mau chat kamu.",
+    "Aku pindah ke Bandung tahun 2023.",
+    "Dia udah punya anak.",
+    "Aku belum sempat ke sana."
+   ]
+  }
+ ],
+ "answers": [
+  "lived — hasn't called — met — have already finished — has worked — did you arrive",
+  "I've been waiting here for two hours. — She's been studying English since high school. — We've been looking for a flat for weeks. — He's been trying to reach you all morning. — They've been arguing about it since Monday.",
+  "since — for — yet — already — still",
+  "How long has it been? — I've been meaning to message you. — I moved to Bandung in 2023. — She's had a baby. — I haven't visited yet."
+ ]
+}

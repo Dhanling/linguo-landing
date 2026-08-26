@@ -1,0 +1,516 @@
+{
+ "title": "Rapat, tawar-menawar, dan wawancara",
+ "title_target": "Let's park that for now",
+ "goal": "Bahasa kerja yang sesungguhnya: memimpin dan mengikuti rapat, menawar, memberi masukan, dan menjawab wawancara.",
+ "bekal": [
+  "membuka, mengarahkan, dan menutup rapat dalam bahasa Inggris",
+  "menawar tanpa menutup pintu",
+  "memberi masukan yang keras dengan cara yang bisa diterima",
+  "menjawab pertanyaan wawancara dengan pola STAR"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — A meeting that stays on track",
+   "intro": "Rapat mingguan yang dijalankan dengan baik. Perhatikan berapa banyak kalimat yang tidak berisi apa-apa selain mengatur jalannya rapat — dan betapa itu justru intinya.",
+   "lines": [
+    {
+     "speaker": "Rita:",
+     "text": "Right, shall we make a start? We've got half an hour and three items.",
+     "id": "Oke, kita mulai ya? Waktunya setengah jam, tiga agenda.",
+     "literal": "baik, akankah kami membuat sebuah mulai? kami telah punya setengah sebuah jam dan tiga butir-butir."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Before we do — can we add the vendor contract?",
+     "id": "Sebelum mulai, boleh tambah kontrak vendor?",
+     "literal": "sebelum kami melakukan, bisakah kami menambahkan itu vendor kontrak?"
+    },
+    {
+     "speaker": "Rita:",
+     "text": "Let's park that for now and pick it up if we have time.",
+     "id": "Itu kita simpan dulu, nanti dibahas kalau masih ada waktu.",
+     "literal": "mari kita parkir itu untuk sekarang dan mengambil itu atas jika kami punya waktu."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Fine. It's not urgent.",
+     "id": "Oke. Nggak mendesak kok.",
+     "literal": "baik. itu adalah tidak mendesak."
+    },
+    {
+     "speaker": "Rita:",
+     "text": "First item: the launch date. Nadia, do you want to take us through it?",
+     "id": "Agenda pertama: tanggal peluncuran. Nadia, mau jelasin?",
+     "literal": "pertama butir: itu peluncuran tanggal. Nadia, apakah kamu ingin untuk mengambil kami melalui itu?"
+    },
+    {
+     "speaker": "Nadia:",
+     "text": "Sure. Short version: we can hit the fifteenth, but only without the reporting feature.",
+     "id": "Boleh. Singkatnya: tanggal lima belas bisa, tapi tanpa fitur laporan.",
+     "literal": "tentu. pendek versi: kami bisa memukul itu kelima-belas, tapi hanya tanpa itu pelaporan fitur."
+    },
+    {
+     "speaker": "Rita:",
+     "text": "And with it?",
+     "id": "Kalau pakai fiturnya?",
+     "literal": "dan dengan itu?"
+    },
+    {
+     "speaker": "Nadia:",
+     "text": "The end of the month, realistically. I'd rather ship late than ship broken.",
+     "id": "Realistisnya akhir bulan. Aku lebih milih telat daripada rilis rusak.",
+     "literal": "itu akhir dari itu bulan, secara-realistis. aku akan lebih-suka mengirim terlambat daripada mengirim rusak."
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Can I come in here? Marketing has already booked the fifteenth.",
+     "id": "Boleh nyela? Marketing udah pesan tanggal lima belas.",
+     "literal": "bisakah aku datang dalam di-sini? pemasaran telah sudah memesan itu kelima-belas."
+    },
+    {
+     "speaker": "Rita:",
+     "text": "Understood. So the question is what we drop, not when we ship.",
+     "id": "Paham. Jadi pertanyaannya apa yang dibuang, bukan kapan rilisnya.",
+     "literal": "dipahami. jadi itu pertanyaan adalah apa kami menjatuhkan, tidak kapan kami mengirim."
+    },
+    {
+     "speaker": "Nadia:",
+     "text": "That's a much better way of framing it.",
+     "id": "Itu cara ngerangkainya jauh lebih bagus.",
+     "literal": "itu adalah sebuah jauh lebih-baik jalan dari membingkai itu."
+    },
+    {
+     "speaker": "Rita:",
+     "text": "Let's take that offline. Nadia and Dimas, fifteen minutes after this?",
+     "id": "Itu dibahas terpisah aja. Nadia dan Dimas, lima belas menit habis ini?",
+     "literal": "mari kita mengambil itu di-luar-jaringan. Nadia dan Dimas, lima belas menit sesudah ini?"
+    },
+    {
+     "speaker": "Dimas:",
+     "text": "Works for me.",
+     "id": "Aku bisa.",
+     "literal": "bekerja untuk aku."
+    },
+    {
+     "speaker": "Rita:",
+     "text": "Good. Just to recap: launch on the fifteenth, scope to be agreed today.",
+     "id": "Bagus. Ringkasnya: rilis tanggal lima belas, cakupannya disepakati hari ini.",
+     "literal": "baik. hanya untuk meringkas: peluncuran pada itu kelima-belas, cakupan untuk menjadi disetujui hari-ini."
+    },
+    {
+     "speaker": "Nadia:",
+     "text": "And who's writing that up?",
+     "id": "Terus siapa yang nulis catatannya?",
+     "literal": "dan siapa adalah menulis itu atas?"
+    },
+    {
+     "speaker": "Rita:",
+     "text": "I am. Actions in the channel by five. Thanks, everyone.",
+     "id": "Aku. Daftar tindakannya masuk kanal sebelum jam lima. Makasih semua.",
+     "literal": "aku sedang. tindakan-tindakan dalam itu kanal pada lima. terima kasih, semua orang."
+    }
+   ],
+   "notes": [
+    "***Shall we make a start?*** — *shall we* untuk mengajak sangat lazim di rapat, terutama ragam Britania. Di Amerika lebih sering *should we* atau *let's get started*.",
+    "***Let's park that*** dan ***take that offline*** adalah dua ungkapan rapat paling berguna. Yang pertama menunda tanpa menolak; yang kedua memindahkan pembahasan ke luar rapat agar tak menyandera orang lain.",
+    "***take us through it*** = jelaskan langkah demi langkah. Saudaranya *walk us through it*, yang artinya persis sama.",
+    "***hit the fifteenth*** = mencapai tenggat itu. *Hit* berpasangan dengan *deadline*, *target*, *deadline*, dan *milestone*. Kolokasi dari unit 16 muncul lagi di sini.",
+    "***Can I come in here?*** adalah cara baku menyela di rapat, dan sudah lewat di unit 13. Bedanya di sini ia dipakai dalam konteks aslinya.",
+    "***the question is what we drop, not when we ship*** — Rita memakai cleft dari unit 12 untuk **membingkai ulang** perdebatan. Inilah kegunaan sesungguhnya alat penekan: mengubah pertanyaan, bukan menaikkan suara.",
+    "***Just to recap*** membuka ringkasan penutup, dan hampir wajib di akhir rapat berbahasa Inggris. Saudaranya *So, to summarise*, *Where does that leave us?*",
+    "***scope to be agreed today*** — bentuk *to be* + V3 tanpa subjek dipakai di catatan rapat dan agenda untuk menandai hal yang belum diputuskan. Sangat padat, dan sangat khas bahasa kerja tertulis."
+   ]
+  },
+  {
+   "title": "Dialogue 2 — A negotiation and a job interview, side by side",
+   "intro": "Dua situasi yang tampak berbeda, tapi memakai mesin bahasa yang sama: menahan posisi tanpa menutup pintu.",
+   "lines": [
+    {
+     "speaker": "Penjual:",
+     "text": "We could look at twelve per cent, but not this quarter.",
+     "id": "Kami bisa pertimbangkan dua belas persen, tapi bukan kuartal ini.",
+     "literal": "kami bisa melihat pada dua belas per seratus, tapi tidak ini kuartal."
+    },
+    {
+     "speaker": "Pembeli:",
+     "text": "If we committed to two years, would that change things?",
+     "id": "Kalau kami komit dua tahun, apa itu mengubah keadaan?",
+     "literal": "jika kami berkomitmen kepada dua tahun-tahun, akan itu mengubah hal-hal?"
+    },
+    {
+     "speaker": "Penjual:",
+     "text": "It might. Let me come back to you on that.",
+     "id": "Bisa jadi. Nanti saya kabari soal itu.",
+     "literal": "itu mungkin. biarkan aku datang kembali kepada kamu pada itu."
+    },
+    {
+     "speaker": "Pembeli:",
+     "text": "That's fine. Where we can't move is the delivery date.",
+     "id": "Nggak apa-apa. Yang nggak bisa kami geser itu tanggal pengiriman.",
+     "literal": "itu adalah baik. di-mana kami tidak-bisa bergerak adalah itu pengiriman tanggal."
+    },
+    {
+     "speaker": "Pewawancara:",
+     "text": "Tell me about a time you disagreed with your manager.",
+     "id": "Ceritakan saat Anda berbeda pendapat dengan atasan.",
+     "literal": "beritahu aku tentang sebuah waktu kamu tidak-setuju dengan manajermu."
+    },
+    {
+     "speaker": "Pelamar:",
+     "text": "We were three weeks from launch and I felt the testing was too thin.",
+     "id": "Waktu itu tiga minggu sebelum rilis dan saya merasa pengujiannya kurang.",
+     "literal": "kami sedang tiga minggu-minggu dari peluncuran dan aku merasa itu pengujian sedang terlalu tipis."
+    },
+    {
+     "speaker": "Pewawancara:",
+     "text": "And what did you do?",
+     "id": "Lalu apa yang Anda lakukan?",
+     "literal": "dan apa apakah kamu melakukan?"
+    },
+    {
+     "speaker": "Pelamar:",
+     "text": "I asked for twenty minutes, brought data, and proposed two options rather than one.",
+     "id": "Saya minta waktu dua puluh menit, bawa data, dan menawarkan dua opsi, bukan satu.",
+     "literal": "aku meminta untuk dua puluh menit, membawa data, dan mengusulkan dua pilihan-pilihan alih-alih satu."
+    },
+    {
+     "speaker": "Pewawancara:",
+     "text": "And the outcome?",
+     "id": "Hasilnya?",
+     "literal": "dan itu hasil?"
+    },
+    {
+     "speaker": "Pelamar:",
+     "text": "We delayed by a week. Two bugs turned up in that week.",
+     "id": "Kami menunda seminggu. Dua bug muncul di minggu itu.",
+     "literal": "kami menunda oleh sebuah minggu. dua kutu-kutu berbalik atas dalam itu minggu."
+    }
+   ],
+   "notes": [
+    "***We could look at twelve per cent, but not this quarter*** — pola tawar-menawar baku: beri sedikit di satu sisi, tahan di sisi lain. *Could* menjaga agar tawaran itu belum mengikat.",
+    "***If we committed to two years, would that change things?*** — pengandaian tipe dua dipakai sebagai alat negosiasi: ia menanyakan kemungkinan **tanpa menawarkan**. Ini pemakaian paling berharga dari bentuk yang dipelajari di unit 6.",
+    "***Let me come back to you on that*** adalah cara profesional untuk tidak menjawab sekarang. Jauh lebih baik daripada *I don't know*.",
+    "***Tell me about a time you…*** adalah pembuka wawancara perilaku yang paling lazim, dan jawabannya mengikuti pola **STAR**: Situation, Task, Action, Result. Jawaban pelamar di atas persis mengikutinya, dalam empat kalimat."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rapat, negosiasi, dan wawancara",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "an agenda item",
+       "en e-JEN-de AI-tem",
+       "butir agenda"
+      ],
+      [
+       "to park something",
+       "tu PAARK",
+       "menunda pembahasan"
+      ],
+      [
+       "to take something offline",
+       "teyk … OF-lain",
+       "dibahas di luar rapat"
+      ],
+      [
+       "to hit a deadline",
+       "hit e DED-lain",
+       "memenuhi tenggat"
+      ],
+      [
+       "to ship (produk)",
+       "syip",
+       "merilis"
+      ],
+      [
+       "scope",
+       "skoup",
+       "cakupan pekerjaan"
+      ],
+      [
+       "to recap",
+       "tu RII-kep",
+       "meringkas ulang"
+      ],
+      [
+       "an action point",
+       "en EK-syen point",
+       "daftar tindakan"
+      ],
+      [
+       "to commit to",
+       "tu ke-MIT tu",
+       "berkomitmen pada"
+      ],
+      [
+       "an outcome",
+       "en AUT-kam",
+       "hasil akhir"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat siap pakai untuk rapat"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tahap",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "membuka",
+       "Shall we make a start? / Right, let's get going."
+      ],
+      [
+       "menetapkan waktu",
+       "We've got half an hour, so let's keep it tight."
+      ],
+      [
+       "memberi giliran",
+       "Nadia, do you want to take us through it?"
+      ],
+      [
+       "menyela",
+       "Can I come in here? / Sorry, just to add to that…"
+      ],
+      [
+       "menunda",
+       "Let's park that. / Can we take that offline?"
+      ],
+      [
+       "mengembalikan arah",
+       "Coming back to the main point… / Let's not go down that road."
+      ],
+      [
+       "mengecek kesepakatan",
+       "Are we all agreed on that? / Any objections?"
+      ],
+      [
+       "menutup",
+       "Just to recap… / Actions in the channel by five."
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menawar tanpa menutup pintu"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Maksud",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "menahan posisi",
+       "Where we can't move is the delivery date."
+      ],
+      [
+       "memberi sedikit",
+       "We could look at twelve per cent."
+      ],
+      [
+       "menukar",
+       "If we committed to two years, would that change things?"
+      ],
+      [
+       "mengulur",
+       "Let me come back to you on that."
+      ],
+      [
+       "menolak halus",
+       "That's going to be difficult, I'm afraid."
+      ],
+      [
+       "menutup kesepakatan",
+       "Then I think we've got a deal."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Memberi masukan yang bisa diterima",
+     "items": [
+      "**Jangan pakai sandwich basi.** Pola pujian-kritik-pujian sudah terlalu dikenal; lawan bicara menunggu bagian tengahnya dan mengabaikan sisanya.",
+      "**Pakai pola situasi-perilaku-akibat:** *In yesterday's call* (situasi), *the client's question wasn't answered directly* (perilaku, bukan sifat orangnya), *and they followed up twice afterwards* (akibat). Tak ada kata sifat tentang orangnya.",
+      "**Akhiri dengan pertanyaan, bukan perintah:** *How do you want to handle it next time?* Itu memindahkan tanggung jawab ke orangnya, dan hampir selalu menghasilkan perbaikan yang bertahan."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Wawancara: pola STAR dan tiga jebakan",
+     "items": [
+      "**STAR:** *Situation* (satu kalimat latar) → *Task* (apa yang jadi tanggung jawabmu) → *Action* (apa yang **kamu** lakukan, bukan tim) → *Result* (angka kalau ada). Empat kalimat sudah cukup.",
+      "**Jebakan 1: menjawab dengan *we*.** Pewawancara ingin tahu apa yang kamu kerjakan. Pakai *I* di bagian Action.",
+      "**Jebakan 2: kelemahan palsu.** *I'm a perfectionist* sudah tak mempan sejak sepuluh tahun lalu. Sebutkan kelemahan nyata plus apa yang sedang kamu lakukan atasnya.",
+      "**Jebakan 3: tak punya pertanyaan.** *Do you have any questions for us?* selalu ditanyakan, dan menjawab *no* terbaca sebagai tak berminat. Siapkan dua, dan tanyakan tentang pekerjaannya, bukan tentang liburannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "an agenda",
+   "baca": "e-JEN-de",
+   "id": "agenda"
+  },
+  {
+   "en": "to make a start",
+   "baca": "meyk e STAART",
+   "id": "memulai"
+  },
+  {
+   "en": "to park",
+   "baca": "paark",
+   "id": "menunda"
+  },
+  {
+   "en": "to take offline",
+   "baca": "teyk OF-lain",
+   "id": "bahas terpisah"
+  },
+  {
+   "en": "a launch",
+   "baca": "lonch",
+   "id": "peluncuran"
+  },
+  {
+   "en": "to ship",
+   "baca": "syip",
+   "id": "merilis"
+  },
+  {
+   "en": "scope",
+   "baca": "skoup",
+   "id": "cakupan"
+  },
+  {
+   "en": "to frame",
+   "baca": "freym",
+   "id": "membingkai, merumuskan"
+  },
+  {
+   "en": "to recap",
+   "baca": "RII-kep",
+   "id": "meringkas"
+  },
+  {
+   "en": "an action point",
+   "baca": "EK-syen point",
+   "id": "tindakan lanjutan"
+  },
+  {
+   "en": "to commit",
+   "baca": "ke-MIT",
+   "id": "berkomitmen"
+  },
+  {
+   "en": "delivery",
+   "baca": "di-LI-ve-ri",
+   "id": "pengiriman"
+  },
+  {
+   "en": "an outcome",
+   "baca": "AUT-kam",
+   "id": "hasil"
+  },
+  {
+   "en": "to propose",
+   "baca": "pre-POUZ",
+   "id": "mengusulkan"
+  },
+  {
+   "en": "an objection",
+   "baca": "eb-JEK-syen",
+   "id": "keberatan"
+  },
+  {
+   "en": "a vendor",
+   "baca": "VEN-der",
+   "id": "pemasok, vendor"
+  },
+  {
+   "en": "urgent",
+   "baca": "ER-jent",
+   "id": "mendesak"
+  },
+  {
+   "en": "testing",
+   "baca": "TES-ting",
+   "id": "pengujian"
+  },
+  {
+   "en": "a bug",
+   "baca": "bag",
+   "id": "kesalahan program"
+  },
+  {
+   "en": "to follow up",
+   "baca": "FO-lou ap",
+   "id": "menindaklanjuti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis satu kalimat rapat untuk tiap maksud.",
+   "items": [
+    "Membuka rapat dan menyebut lama waktunya.",
+    "Menyela dengan sopan.",
+    "Menunda satu topik tanpa menolaknya.",
+    "Memeriksa apakah semua sudah setuju.",
+    "Menutup rapat dengan ringkasan."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kalimat negosiasi yang tidak menutup pintu.",
+   "items": [
+    "No, we can't do twelve per cent.",
+    "We will never change the delivery date.",
+    "I don't know the answer.",
+    "Your price is too high.",
+    "Only if you sign for two years."
+   ]
+  },
+  {
+   "prompt": "Susun jawaban STAR untuk pertanyaan ini, satu kalimat per huruf.",
+   "items": [
+    "Situation: proyek apa dan kapan.",
+    "Task: apa tanggung jawabmu.",
+    "Action: apa yang kamu lakukan.",
+    "Result: apa hasilnya.",
+    "Satu kalimat penutup tentang apa yang kamu pelajari."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Kita mulai ya? Waktunya setengah jam.",
+    "Itu kita simpan dulu.",
+    "Boleh nyela? Marketing udah pesan tanggal lima belas.",
+    "Jadi pertanyaannya apa yang dibuang, bukan kapan rilisnya.",
+    "Nanti saya kabari soal itu."
+   ]
+  }
+ ],
+ "answers": [
+  "Shall we make a start? We've got half an hour. — Sorry, can I come in here? — Let's park that for now. — Are we all agreed on that? — Just to recap, we're launching on the fifteenth.",
+  "We could look at twelve per cent, but not this quarter. — Where we can't move is the delivery date. — Let me come back to you on that. — That's going to be difficult, I'm afraid. — If you committed to two years, that might change things.",
+  "We were three weeks from launch on the reporting project. — I was responsible for testing sign-off. — I asked for twenty minutes, brought the data and proposed two options. — We delayed by a week and caught two serious bugs. — It taught me to bring options rather than objections.",
+  "Shall we make a start? We've got half an hour. — Let's park that for now. — Can I come in here? Marketing has already booked the fifteenth. — So the question is what we drop, not when we ship. — Let me come back to you on that."
+ ],
+ "wave": "Kembali ke unit 14. Ambil penolakan Bu Ratih atas usulan Ayla, lalu jalankan ulang sebagai rapat dengan tiga orang: satu memimpin, satu menyela, satu menawar. Pakai kalimat rapat dari halaman ini untuk semua peralihan giliran."
+}

@@ -1,0 +1,509 @@
+{
+ "title": "Kata yang selalu berpasangan",
+ "title_target": "Make a decision, do the work, take a break",
+ "goal": "Kolokasi: pasangan kata yang wajib, kata kerja kosong (*make*, *do*, *take*, *have*, *give*), dan pembentukan kata dari satu akar.",
+ "bekal": [
+  "memilih *make*, *do*, *take*, *have*, atau *give* tanpa menebak",
+  "memakai kolokasi kata sifat + kata benda yang lazim",
+  "membentuk kata benda, sifat, dan kerja dari satu akar",
+  "mengganti kata kerja lemah dengan kata kerja yang tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Preparing someone for a job interview",
+   "intro": "Rani melatih adiknya menghadapi wawancara. Yang diperbaiki bukan tata bahasanya — semuanya sudah benar — melainkan pasangan katanya.",
+   "lines": [
+    {
+     "speaker": "Rani:",
+     "text": "Right, from the top. Tell me about yourself.",
+     "id": "Oke, dari awal. Ceritakan tentang dirimu.",
+     "literal": "baik, dari itu puncak. beritahu aku tentang dirimu."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "I make a degree in economics and I did three internships.",
+     "id": "Saya bikin gelar ekonomi dan saya melakukan tiga magang.",
+     "literal": "aku membuat sebuah gelar dalam ekonomi dan aku melakukan tiga magang-magang."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Stop. You don't make a degree. You do a degree, or you have one.",
+     "id": "Stop. Gelar itu bukan dibikin. Kamu do a degree, atau have one.",
+     "literal": "berhenti. kamu tidak membuat sebuah gelar. kamu melakukan sebuah gelar, atau kamu punya satu."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "But I do three internships is right?",
+     "id": "Tapi kalau do three internships bener?",
+     "literal": "tapi aku melakukan tiga magang-magang adalah benar?"
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Almost. You did three internships. And you'd say completed, in an interview.",
+     "id": "Hampir. You did three internships. Dan di wawancara mendingan completed.",
+     "literal": "hampir. kamu melakukan tiga magang-magang. dan kamu akan mengatakan diselesaikan, dalam sebuah wawancara."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "Completed three internships. Then I take a decision to change field.",
+     "id": "Completed three internships. Terus saya mengambil keputusan pindah bidang.",
+     "literal": "diselesaikan tiga magang-magang. kemudian aku mengambil sebuah keputusan untuk mengubah bidang."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Made. You make a decision in English. Take is French and Indonesian.",
+     "id": "Made. Dalam bahasa Inggris make a decision. Take itu Prancis dan Indonesia.",
+     "literal": "membuat. kamu membuat sebuah keputusan dalam Inggris. mengambil adalah Prancis dan Indonesia."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "So I made a decision, I did some research, and I took a course.",
+     "id": "Jadi saya bikin keputusan, melakukan riset, dan ikut kursus.",
+     "literal": "jadi aku membuat sebuah keputusan, aku melakukan beberapa riset, dan aku mengambil sebuah kursus."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Perfect. All three different verbs, and there's no logic to it.",
+     "id": "Sempurna. Tiga kata kerja beda, dan nggak ada logikanya.",
+     "literal": "sempurna. semua tiga berbeda kata-kerja, dan di-sana adalah tidak logika kepada itu."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "That's not comforting.",
+     "id": "Itu nggak menghibur.",
+     "literal": "itu adalah tidak menghibur."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "It's honest. Now: what are your strengths? Don't say hard worker.",
+     "id": "Itu jujur. Sekarang: apa kelebihanmu? Jangan bilang hard worker.",
+     "literal": "itu adalah jujur. sekarang: apa sedang kekuatan-kekuatanmu? jangan mengatakan keras pekerja."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "Why not? It's true.",
+     "id": "Kenapa nggak? Itu bener kok.",
+     "literal": "mengapa tidak? itu adalah benar."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Everyone says it. Say you meet deadlines and you take responsibility.",
+     "id": "Semua orang bilang gitu. Bilang kamu tepat tenggat dan mau tanggung jawab.",
+     "literal": "semua orang mengatakan itu. katakan kamu bertemu tenggat-tenggat dan kamu mengambil tanggung-jawab."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "Meet deadlines. Take responsibility. Make progress. Give feedback.",
+     "id": "Meet deadlines. Take responsibility. Make progress. Give feedback.",
+     "literal": "bertemu tenggat-tenggat. mengambil tanggung-jawab. membuat kemajuan. memberi umpan-balik."
+    },
+    {
+     "speaker": "Rani:",
+     "text": "Now you sound like someone who's had the job before.",
+     "id": "Nah, sekarang kamu kedengaran kayak orang yang pernah kerja itu.",
+     "literal": "sekarang kamu terdengar seperti seseorang yang telah punya itu pekerjaan sebelum."
+    },
+    {
+     "speaker": "Fajar:",
+     "text": "I haven't. But I can make a good impression trying.",
+     "id": "Belum pernah sih. Tapi setidaknya bisa kasih kesan bagus.",
+     "literal": "aku belum. tapi aku bisa membuat sebuah baik kesan mencoba."
+    }
+   ],
+   "notes": [
+    "***do a degree*** vs ***make a decision*** — inilah masalah kolokasi dalam bentuk paling murni: tak ada aturan, hanya kebiasaan. Bahasa Indonesia memakai satu kata (\"membuat keputusan\", \"mengambil keputusan\" — keduanya boleh), bahasa Inggris memaksa satu pilihan.",
+    "**Petunjuk kasar yang menolong 70 persen kasus:** *do* untuk pekerjaan dan kegiatan tanpa hasil benda (*do the washing*, *do business*, *do research*), *make* untuk sesuatu yang **dihasilkan** (*make a plan*, *make a mistake*, *make a noise*), *take* untuk yang **diambil atau dijalani** (*take a course*, *take a break*, *take responsibility*).",
+    "***completed three internships*** — di wawancara, kata kerja yang lebih tepat mengalahkan kata kerja umum. Ini yang membedakan B2 dari C1: bukan kalimat yang lebih rumit, melainkan kata kerja yang lebih tepat.",
+    "***Take is French and Indonesian*** adalah lelucon yang benar: banyak bahasa memakai kata \"ambil\" untuk keputusan (*prendre une décision*, \"mengambil keputusan\"), dan justru bahasa Inggris yang menyimpang dengan *make*.",
+    "***what are your strengths*** — *strength* dan *weakness* adalah pasangan baku di wawancara. Jangan menggantinya dengan *my plus* atau *my minus*, yang tak berarti apa-apa dalam bahasa Inggris.",
+    "***meet a deadline*** — kata kerja *meet* juga berpasangan dengan *requirements*, *standards*, *expectations*, *targets*, dan *demand*. Satu kata kerja, satu keluarga kata benda.",
+    "***make progress*** dan ***give feedback*** adalah kolokasi kantor yang paling sering muncul. *Do progress* dan *make feedback* keduanya salah dan langsung terdengar asing.",
+    "***make a good impression*** — perhatikan *impression* selalu dengan *make*, tak pernah *give*. Sepasang dengannya: *make an effort*, *make an exception*, *make a difference*."
+   ]
+  },
+  {
+   "title": "Dialogue 2 — Two people describing the same rain",
+   "intro": "Latihan kecil tentang kolokasi kata sifat: kata benda yang sama, pasangan yang berbeda.",
+   "lines": [
+    {
+     "speaker": "Oki:",
+     "text": "It was a heavy rain last night. Very strong.",
+     "id": "Semalam hujannya berat. Kuat sekali.",
+     "literal": "itu sedang sebuah berat hujan malam lalu. sangat kuat."
+    },
+    {
+     "speaker": "Lea:",
+     "text": "Heavy rain, yes. But not a heavy rain, and not strong rain.",
+     "id": "Heavy rain, iya. Tapi bukan a heavy rain, dan bukan strong rain.",
+     "literal": "berat hujan, ya. tapi tidak sebuah berat hujan, dan tidak kuat hujan."
+    },
+    {
+     "speaker": "Oki:",
+     "text": "So rain is heavy but wind is strong?",
+     "id": "Jadi hujan itu heavy tapi angin strong?",
+     "literal": "jadi hujan adalah berat tapi angin adalah kuat?"
+    },
+    {
+     "speaker": "Lea:",
+     "text": "Exactly. Strong wind, heavy rain, thick fog, bright sunshine.",
+     "id": "Persis. Strong wind, heavy rain, thick fog, bright sunshine.",
+     "literal": "persis. kuat angin, berat hujan, tebal kabut, terang sinar-matahari."
+    },
+    {
+     "speaker": "Oki:",
+     "text": "And a big traffic? I always say big traffic.",
+     "id": "Terus big traffic? Aku selalu bilang big traffic.",
+     "literal": "dan sebuah besar lalu-lintas? aku selalu mengatakan besar lalu-lintas."
+    },
+    {
+     "speaker": "Lea:",
+     "text": "Heavy traffic. Same word as the rain, funnily enough.",
+     "id": "Heavy traffic. Sama kayak hujan, lucunya.",
+     "literal": "berat lalu-lintas. sama kata sebagai itu hujan, lucunya cukup."
+    },
+    {
+     "speaker": "Oki:",
+     "text": "There's no system at all, is there.",
+     "id": "Nggak ada sistemnya sama sekali ya.",
+     "literal": "di-sana adalah tidak sistem pada semua, adalah di-sana."
+    },
+    {
+     "speaker": "Lea:",
+     "text": "None. Which is why you collect them like vocabulary.",
+     "id": "Nggak ada. Makanya dikumpulin kayak kosakata.",
+     "literal": "tak-satu-pun. yang adalah mengapa kamu mengumpulkan mereka seperti kosakata."
+    }
+   ],
+   "notes": [
+    "***heavy rain*** tanpa *a* — *rain* di sini kata benda tak terhitung. Kesalahan *a heavy rain* sangat lazim di kalangan penutur Indonesia karena bahasa Indonesia tak membedakan.",
+    "***strong wind, heavy rain, thick fog, bright sunshine*** — empat kata sifat berbeda untuk empat gejala cuaca. Tak ada logikanya, dan itu justru alasan mencatatnya berpasangan, bukan satu-satu.",
+    "***funnily enough*** = lucunya, anehnya. Keluarga *-ly enough*: *oddly enough*, *strangely enough*, *interestingly enough*.",
+    "***Which is why you collect them like vocabulary*** adalah nasihat sesungguhnya unit ini: catat **frasa**, jangan kata. Buku catatan kosakata yang berisi kata tunggal berhenti berguna di tingkat B2."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Wawancara, kekuatan, dan kata yang berpasangan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "an internship",
+       "en IN-tern-syip",
+       "magang"
+      ],
+      [
+       "a strength",
+       "e strength",
+       "kelebihan"
+      ],
+      [
+       "a weakness",
+       "e WIIK-nes",
+       "kelemahan"
+      ],
+      [
+       "to meet a deadline",
+       "miit e DED-lain",
+       "memenuhi tenggat"
+      ],
+      [
+       "to take responsibility",
+       "teyk ris-pon-si-BI-li-ti",
+       "bertanggung jawab"
+      ],
+      [
+       "to make progress",
+       "meyk PROU-gres",
+       "membuat kemajuan"
+      ],
+      [
+       "to give feedback",
+       "giv FIID-bek",
+       "memberi masukan"
+      ],
+      [
+       "an impression",
+       "en im-PRE-syen",
+       "kesan"
+      ],
+      [
+       "comforting",
+       "KAM-fer-ting",
+       "menenangkan"
+      ],
+      [
+       "funnily enough",
+       "FA-ni-li i-NAF",
+       "lucunya"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Lima kata kerja kosong dan pasangannya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Pasangannya"
+     ],
+     "rows": [
+      [
+       "make",
+       "a decision, a mistake, progress, an effort, a difference, a mess, a profit, an appointment, sense, sure, a complaint, an exception"
+      ],
+      [
+       "do",
+       "the washing, the shopping, business, research, homework, a course, harm, damage, your best, a favour, exercise, an experiment"
+      ],
+      [
+       "take",
+       "a break, a photo, a look, notes, a risk, responsibility, an exam, medicine, time, advantage, part, place"
+      ],
+      [
+       "have",
+       "a shower, a meeting, an argument, a look, breakfast, fun, trouble, an idea, a go, difficulty, a word"
+      ],
+      [
+       "give",
+       "advice, a hand, a lift, feedback, permission, a talk, an example, priority, notice, a call"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kolokasi kata sifat yang paling sering meleset"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Benar",
+      "Salah",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "heavy rain / traffic",
+       "big rain / traffic",
+       "hujan deras, macet"
+      ],
+      [
+       "strong wind / coffee / accent",
+       "heavy wind",
+       "angin kencang, kopi kental"
+      ],
+      [
+       "deep sleep / concern",
+       "big sleep",
+       "tidur nyenyak"
+      ],
+      [
+       "highly likely / recommended",
+       "very likely (boleh, lebih lemah)",
+       "sangat mungkin"
+      ],
+      [
+       "closely related",
+       "near related",
+       "berkaitan erat"
+      ],
+      [
+       "bitterly disappointed",
+       "very disappointed (lebih lemah)",
+       "kecewa berat"
+      ],
+      [
+       "utterly ridiculous",
+       "very ridiculous",
+       "konyol sekali"
+      ],
+      [
+       "fully aware",
+       "very aware",
+       "sadar betul"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu akar, empat kata",
+     "items": [
+      "Menguasai satu akar berarti menguasai empat kata sekaligus: *decide* (kerja) → *decision* (benda) → *decisive* (sifat) → *decisively* (keterangan). Begitu juga *analyse / analysis / analytical*, *succeed / success / successful*, *compete / competition / competitive*, *depend / dependence / dependent*.",
+      "Di ujian, bagian pembentukan kata hampir selalu ada — dan yang diuji bukan artinya, melainkan **akhirannya**. Akhiran benda: *-tion*, *-ment*, *-ness*, *-ity*, *-ance*. Akhiran sifat: *-ive*, *-ful*, *-less*, *-able*, *-ous*, *-al*.",
+      "Awalan pembalik juga berpola: *un-* paling umum, *im-* di depan *m*/*p* (*impossible*, *impatient*), *il-* di depan *l* (*illegal*), *ir-* di depan *r* (*irregular*), *in-* di sisanya (*inaccurate*), *dis-* untuk kata kerja dan sifat (*disagree*, *dishonest*)."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara mencatat kosakata setelah B1",
+     "items": [
+      "**Berhenti mencatat kata tunggal.** *Decision* sendirian tak bisa dipakai. Yang bisa dipakai adalah *make a decision*, *a tough decision*, *reverse a decision*.",
+      "**Catat tiga hal setiap kata baru:** kata kerja yang biasanya menyertainya, kata sifat yang biasanya menyertainya, dan preposisi yang mengikutinya (*concerned **about***, *responsible **for***, *depend **on***).",
+      "**Dua kamus yang wajib dipakai penutur B2:** kamus kolokasi (mencari kata apa yang berpasangan) dan kamus contoh kalimat. Kamus dwibahasa berhenti menolong di tingkat ini, karena masalahmu bukan lagi arti."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "a collocation",
+   "baca": "ko-le-KEY-syen",
+   "id": "pasangan kata yang lazim"
+  },
+  {
+   "en": "an internship",
+   "baca": "IN-tern-syip",
+   "id": "magang"
+  },
+  {
+   "en": "a degree",
+   "baca": "di-GRII",
+   "id": "gelar"
+  },
+  {
+   "en": "to complete",
+   "baca": "kem-PLIIT",
+   "id": "menyelesaikan"
+  },
+  {
+   "en": "a strength",
+   "baca": "strength",
+   "id": "kelebihan"
+  },
+  {
+   "en": "a weakness",
+   "baca": "WIIK-nes",
+   "id": "kelemahan"
+  },
+  {
+   "en": "to meet a deadline",
+   "baca": "miit e DED-lain",
+   "id": "memenuhi tenggat"
+  },
+  {
+   "en": "responsibility",
+   "baca": "ris-pon-si-BI-li-ti",
+   "id": "tanggung jawab"
+  },
+  {
+   "en": "progress",
+   "baca": "PROU-gres",
+   "id": "kemajuan"
+  },
+  {
+   "en": "feedback",
+   "baca": "FIID-bek",
+   "id": "masukan"
+  },
+  {
+   "en": "an impression",
+   "baca": "im-PRE-syen",
+   "id": "kesan"
+  },
+  {
+   "en": "an effort",
+   "baca": "E-fert",
+   "id": "usaha"
+  },
+  {
+   "en": "a favour",
+   "baca": "FEY-ver",
+   "id": "bantuan"
+  },
+  {
+   "en": "a lift",
+   "baca": "lift",
+   "id": "tumpangan"
+  },
+  {
+   "en": "heavy traffic",
+   "baca": "HE-vi TRE-fik",
+   "id": "macet"
+  },
+  {
+   "en": "strong wind",
+   "baca": "strong WIND",
+   "id": "angin kencang"
+  },
+  {
+   "en": "thick fog",
+   "baca": "thik FOG",
+   "id": "kabut tebal"
+  },
+  {
+   "en": "bitterly disappointed",
+   "baca": "BI-ter-li dis-e-POIN-ted",
+   "id": "kecewa berat"
+  },
+  {
+   "en": "highly recommended",
+   "baca": "HAI-li re-ke-MEN-ded",
+   "id": "sangat disarankan"
+  },
+  {
+   "en": "fully aware",
+   "baca": "FU-li e-WEER",
+   "id": "sadar betul"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan make, do, take, have, atau give, dalam bentuk yang benar.",
+   "items": [
+    "She ____ a decision without asking anyone.",
+    "Could you ____ me a hand with this?",
+    "I need to ____ some research before the meeting.",
+    "Let's ____ a break for ten minutes.",
+    "We ____ an argument about it last night.",
+    "He ____ a lot of progress this term."
+   ]
+  },
+  {
+   "prompt": "Betulkan kolokasi yang salah, tulis frasa yang benar.",
+   "items": [
+    "a big rain",
+    "a strong headache",
+    "to do a mistake",
+    "to say a suggestion",
+    "very disappointed by the result"
+   ]
+  },
+  {
+   "prompt": "Bentuk kata yang diminta dari akar di dalam kurung.",
+   "items": [
+    "Her ____ (decide) surprised everyone.",
+    "The plan was highly ____ (success).",
+    "He spoke ____ (confidence) about the results.",
+    "There is no ____ (possible) of a refund.",
+    "The data is ____ (accurate), unfortunately."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Saya menyelesaikan tiga magang.",
+    "Terus saya ambil keputusan pindah bidang.",
+    "Saya tepat tenggat dan mau tanggung jawab.",
+    "Semalam hujannya deras.",
+    "Aku selalu bilang big traffic, ternyata heavy traffic."
+   ]
+  }
+ ],
+ "answers": [
+  "made — give — do — take — had — has made",
+  "heavy rain — a bad headache — to make a mistake — to make a suggestion — bitterly disappointed by the result",
+  "decision — successful — confidently — possibility — inaccurate",
+  "I completed three internships. — Then I made a decision to change field. — I meet deadlines and I take responsibility. — There was heavy rain last night. — I always say big traffic, but it's heavy traffic."
+ ],
+ "wave": "Kembali ke unit 3, dialog serah terima sebelum cuti. Baca ulang dan garis bawahi tiap pasangan kata yang tak bisa ditukar: *meet the deadline*, *take annual leave*, *cover for someone*, *make a decision*. Tulis ulang daftarnya di halaman kosakatamu — sebagai frasa, bukan kata."
+}

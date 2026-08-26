@@ -1,0 +1,491 @@
+{
+ "title": "Kata kecil yang mengatur seluruh percakapan",
+ "title_target": "Mind you, that's not the whole story",
+ "goal": "Penanda wacana: kata dan potongan yang tidak menambah isi tapi mengatur arah — membuka, menyela, membelokkan, kembali ke topik, dan menutup.",
+ "bekal": [
+  "memakai penanda pertentangan, sebab, akibat, dan penambahan sesuai ragamnya",
+  "menyela dan mengembalikan topik tanpa terdengar kasar",
+  "memakai *mind you*, *actually*, *the thing is*, *anyway*",
+  "menyusun sebuah pendapat panjang yang tetap mudah diikuti"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Arguing about working from home",
+   "intro": "Tiga rekan kerja berdebat di ruang makan kantor. Isi perdebatannya sederhana; yang perlu diperhatikan adalah kata-kata kecil yang mengatur giliran bicara.",
+   "lines": [
+    {
+     "speaker": "Sena:",
+     "text": "Look, the point is nobody actually works better in an open-plan office.",
+     "id": "Gini ya, intinya nggak ada yang beneran lebih produktif di kantor terbuka.",
+     "literal": "lihat, itu titik adalah tak seorang pun sebenarnya bekerja lebih-baik dalam sebuah terbuka-denah kantor."
+    },
+    {
+     "speaker": "Wira:",
+     "text": "That's not quite true, though. Some people do.",
+     "id": "Tapi itu nggak sepenuhnya bener. Ada yang emang gitu.",
+     "literal": "itu adalah tidak cukup benar, walaupun. beberapa orang memang."
+    },
+    {
+     "speaker": "Sena:",
+     "text": "Such as?",
+     "id": "Contohnya?",
+     "literal": "seperti?"
+    },
+    {
+     "speaker": "Wira:",
+     "text": "New starters, for one. Mind you, that's about learning, not output.",
+     "id": "Karyawan baru, salah satunya. Tapi ya, itu soal belajar, bukan hasil kerja.",
+     "literal": "baru pemula-pemula, untuk satu. pikirkan kamu, itu adalah tentang belajar, tidak keluaran."
+    },
+    {
+     "speaker": "Rara:",
+     "text": "Can I just say something? We're comparing two different things.",
+     "id": "Boleh nyela sebentar? Kita lagi bandingin dua hal yang beda.",
+     "literal": "bisakah aku hanya mengatakan sesuatu? kami sedang membandingkan dua berbeda hal-hal."
+    },
+    {
+     "speaker": "Sena:",
+     "text": "Go on.",
+     "id": "Lanjut.",
+     "literal": "pergi pada."
+    },
+    {
+     "speaker": "Rara:",
+     "text": "There's focused work, and there's collaboration. The thing is, we only measure one.",
+     "id": "Ada kerja fokus, ada kolaborasi. Masalahnya, kita cuma ngukur yang satu.",
+     "literal": "di-sana adalah terfokus kerja, dan di-sana adalah kolaborasi. itu hal adalah, kami hanya mengukur satu."
+    },
+    {
+     "speaker": "Wira:",
+     "text": "Which one, though?",
+     "id": "Yang mana emangnya?",
+     "literal": "yang satu, walaupun?"
+    },
+    {
+     "speaker": "Rara:",
+     "text": "Attendance. Which is neither. Anyway, that's my point.",
+     "id": "Kehadiran. Yang bukan dua-duanya. Ya udah, itu poinku.",
+     "literal": "kehadiran. yang adalah bukan-keduanya. bagaimanapun, itu adalah poinku."
+    },
+    {
+     "speaker": "Sena:",
+     "text": "Actually, that's a much better argument than mine.",
+     "id": "Eh, itu argumen yang jauh lebih bagus daripada punyaku.",
+     "literal": "sebenarnya, itu adalah sebuah jauh lebih-baik argumen daripada milikku."
+    },
+    {
+     "speaker": "Wira:",
+     "text": "Granted. Having said that, someone has to run the office.",
+     "id": "Diakui. Meski begitu, tetap harus ada yang ngurus kantornya.",
+     "literal": "diberikan. telah mengatakan itu, seseorang harus untuk menjalankan itu kantor."
+    },
+    {
+     "speaker": "Rara:",
+     "text": "Sure. But that's an argument for some days, not all five.",
+     "id": "Iya. Tapi itu argumen buat beberapa hari, bukan lima-limanya.",
+     "literal": "tentu. tapi itu adalah sebuah argumen untuk beberapa hari-hari, tidak semua lima."
+    },
+    {
+     "speaker": "Sena:",
+     "text": "So, to sum up: measure output, not attendance, and keep two days.",
+     "id": "Jadi, kesimpulannya: ukur hasil, bukan kehadiran, dan tetap dua hari.",
+     "literal": "jadi, untuk menjumlahkan atas: ukur keluaran, tidak kehadiran, dan simpan dua hari-hari."
+    },
+    {
+     "speaker": "Wira:",
+     "text": "Put like that, I'd sign it. Not that anyone's asking us.",
+     "id": "Kalau dibilang gitu sih aku setuju. Ya walaupun nggak ada yang nanya kita.",
+     "literal": "ditaruh seperti itu, aku akan menandatangani itu. tidak bahwa siapa pun sedang menanyakan kami."
+    },
+    {
+     "speaker": "Rara:",
+     "text": "They will. Eventually. Right, back to work.",
+     "id": "Bakal kok. Suatu saat. Ya udah, balik kerja.",
+     "literal": "mereka akan. akhirnya. baik, kembali kepada kerja."
+    },
+    {
+     "speaker": "Sena:",
+     "text": "In an open-plan office. The irony isn't lost on me.",
+     "id": "Di kantor terbuka. Ironinya nggak lolos dari aku.",
+     "literal": "dalam sebuah terbuka-denah kantor. itu ironi adalah-tidak hilang pada aku."
+    }
+   ],
+   "notes": [
+    "***Look, the point is…*** — *look* di awal kalimat bukan perintah melihat, melainkan penanda \"dengarkan dulu\". Ia sedikit tegas dan sering membuka pendapat yang sudah lama ditahan.",
+    "***That's not quite true, though.*** — *though* di **akhir** kalimat berarti \"tapi\", sangat lisan, dan jauh lebih halus daripada *but* di depan. Ini salah satu penanda paling berguna yang jarang diajarkan.",
+    "***Mind you*** menambahkan syarat atau pengecualian atas apa yang baru saja **kamu sendiri** katakan. Padanan Indonesianya kira-kira \"tapi ya…\". Bandingkan dengan *however*, yang membantah pihak lain.",
+    "***Can I just say something?*** adalah cara baku menyela di rapat berbahasa Inggris. Kata *just* melunakkannya sehingga tak terdengar merebut giliran. Saudaranya: *Sorry, can I come in here?*",
+    "***The thing is,…*** membuka penjelasan yang membalik dugaan, dan hampir selalu memperkenalkan hambatan. Kalau kamu mendengarnya, bersiaplah menerima kabar yang kurang enak.",
+    "***Anyway*** mengembalikan pembicaraan ke jalur, atau menutup topik. Ia sangat lazim dan sangat berguna: satu kata untuk mengatakan \"sudah, kembali ke tadi\".",
+    "***Granted*** dan ***Having said that*** adalah pasangan berargumen: yang pertama mengakui satu poin lawan, yang kedua langsung menariknya kembali. Bersama-sama, keduanya membuatmu terdengar adil sekaligus tetap menang.",
+    "***Not that anyone's asking us*** — pola *Not that…* menambahkan komentar yang meremehkan ucapan sendiri, biasanya dengan nada pahit atau bercanda: *Not that it matters.* / *Not that I'm counting.*"
+   ]
+  },
+  {
+   "title": "Dialogue 2 — Telling a story and being interrupted",
+   "intro": "Bagaimana penanda wacana mengatur cerita: membuka, menahan giliran, dan menutup.",
+   "lines": [
+    {
+     "speaker": "Fani:",
+     "text": "So anyway, I get to the airport and the flight's been moved.",
+     "id": "Nah pokoknya, aku nyampe bandara dan penerbangannya dipindah.",
+     "literal": "jadi bagaimanapun, aku sampai kepada itu bandara dan itu penerbangan telah menjadi dipindahkan."
+    },
+    {
+     "speaker": "Ivan:",
+     "text": "Moved as in delayed, or moved as in yesterday?",
+     "id": "Dipindah dalam arti ditunda, atau dipindah ke kemarin?",
+     "literal": "dipindahkan seperti dalam ditunda, atau dipindahkan seperti dalam kemarin?"
+    },
+    {
+     "speaker": "Fani:",
+     "text": "Hold on, I'm getting to that. So, long story short, it left at six.",
+     "id": "Bentar, aku lagi mau ke situ. Jadi, singkat cerita, berangkatnya jam enam.",
+     "literal": "tahan pada, aku sedang sampai kepada itu. jadi, panjang cerita pendek, itu pergi pada enam."
+    },
+    {
+     "speaker": "Ivan:",
+     "text": "In the morning?",
+     "id": "Pagi?",
+     "literal": "dalam itu pagi?"
+    },
+    {
+     "speaker": "Fani:",
+     "text": "In the morning. Which, by the way, nobody had told me.",
+     "id": "Pagi. Yang, ngomong-ngomong, nggak ada yang ngasih tahu aku.",
+     "literal": "dalam itu pagi. yang, oleh itu jalan, tak seorang pun telah memberitahu aku."
+    },
+    {
+     "speaker": "Ivan:",
+     "text": "To be fair, they did email you. You never read those.",
+     "id": "Adilnya sih, mereka emang email kamu. Kamu nggak pernah baca.",
+     "literal": "untuk menjadi adil, mereka memang mengemail kamu. kamu tidak pernah membaca itu."
+    },
+    {
+     "speaker": "Fani:",
+     "text": "That's beside the point. Where was I?",
+     "id": "Itu bukan intinya. Tadi sampai mana?",
+     "literal": "itu adalah di-samping itu titik. di-mana sedang aku?"
+    },
+    {
+     "speaker": "Ivan:",
+     "text": "Six in the morning, sleeping on a bench.",
+     "id": "Jam enam pagi, tidur di bangku.",
+     "literal": "enam dalam itu pagi, tidur pada sebuah bangku."
+    },
+    {
+     "speaker": "Fani:",
+     "text": "Right. Anyway, the upshot is I now check my email.",
+     "id": "Iya. Pokoknya, hasil akhirnya sekarang aku ngecek email.",
+     "literal": "baik. bagaimanapun, itu hasil-akhir adalah aku sekarang memeriksa emailku."
+    }
+   ],
+   "notes": [
+    "***So anyway,…*** membuka cerita baru atau melanjutkan yang tertunda. Di awal cerita, *so* nyaris tak punya arti — ia cuma tanda bahwa giliran bicara dimulai.",
+    "***Hold on, I'm getting to that*** adalah cara sopan menahan giliran bicara. Saudaranya: *Let me finish*, *Bear with me*, *I'll come to that in a minute*.",
+    "***long story short*** dan ***the upshot is*** sama-sama meringkas, tapi yang pertama melompati bagian tengah cerita, sedangkan yang kedua menyampaikan akibat akhirnya.",
+    "***To be fair*** memperkenalkan pembelaan terhadap pihak yang sedang dikritik. Ia salah satu penanda paling sering dipakai penutur asli dan hampir tak pernah muncul di buku pelajaran."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berdebat, menyela, dan menutup pembicaraan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "an open-plan office",
+       "OU-pen-plen O-fis",
+       "kantor tanpa sekat"
+      ],
+      [
+       "a new starter",
+       "nyuu STAAR-ter",
+       "karyawan baru"
+      ],
+      [
+       "output",
+       "AUT-put",
+       "hasil kerja"
+      ],
+      [
+       "attendance",
+       "e-TEN-dens",
+       "kehadiran"
+      ],
+      [
+       "collaboration",
+       "ke-le-be-REY-syen",
+       "kerja sama"
+      ],
+      [
+       "to measure",
+       "tu ME-zyer",
+       "mengukur"
+      ],
+      [
+       "an argument",
+       "en AAR-gyu-ment",
+       "argumen; pertengkaran"
+      ],
+      [
+       "irony",
+       "AI-re-ni",
+       "ironi"
+      ],
+      [
+       "beside the point",
+       "bi-SAID dhe POINT",
+       "tidak relevan"
+      ],
+      [
+       "the upshot",
+       "dhe AP-syot",
+       "hasil akhirnya"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Penanda wacana menurut tugasnya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "Lisan",
+      "Tulis / resmi"
+     ],
+     "rows": [
+      [
+       "membuka pendapat",
+       "Look, … / The point is…",
+       "It should be noted that…"
+      ],
+      [
+       "menambah",
+       "On top of that, …",
+       "Moreover, / Furthermore,"
+      ],
+      [
+       "membantah pihak lain",
+       "But then again, / Although",
+       "However, / Nevertheless,"
+      ],
+      [
+       "membantah diri sendiri",
+       "Mind you, / Then again,",
+       "That said, / Having said that,"
+      ],
+      [
+       "mengakui poin lawan",
+       "Fair enough, / Granted,",
+       "Admittedly, / It is true that…"
+      ],
+      [
+       "membela pihak yang dikritik",
+       "To be fair, …",
+       "In fairness, …"
+      ],
+      [
+       "memberi contoh",
+       "Like, / Say,",
+       "For instance, / such as"
+      ],
+      [
+       "mengoreksi",
+       "Actually, / No, hang on,",
+       "In fact, / Rather,"
+      ],
+      [
+       "kembali ke topik",
+       "Anyway, / Where was I?",
+       "To return to the point,"
+      ],
+      [
+       "menyimpulkan",
+       "So basically, / All in all,",
+       "In conclusion, / To sum up,"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga penanda yang paling mengubah nada",
+     "items": [
+      "***though* di akhir kalimat** = \"tapi\", dan ia melunakkan bantahan sampai hampir tak terasa. *That's expensive.* → *It's good quality, **though**.* Hampir mustahil terdengar kasar dengan kata ini.",
+      "***actually*** memperkenalkan koreksi. Karena itu ia berbahaya: *Actually, it's on Tuesday* mengoreksi dengan sopan, tapi *Actually, I know* terdengar menggurui. Pakai untuk fakta, jangan untuk pendapat.",
+      "***I mean*** BUKAN \"maksud saya\" dalam arti menerjemahkan. Ia dipakai untuk **mengulang dengan kata lain** atau membeli waktu berpikir: *It's complicated. I mean, nobody really knows.*"
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menyela tanpa terdengar kasar",
+     "items": [
+      "**Aman di rapat mana pun:** *Sorry, can I just come in here?* / *If I could add something…* / *Just to build on that…*",
+      "**Menahan giliran:** *Bear with me.* / *I'll come to that.* / *Let me just finish this point.*",
+      "**Mengembalikan giliran kepada orang lain:** *Sorry, you were saying?* / *Go on.* — dua kalimat yang membuatmu terdengar jauh lebih matang daripada isi pendapatmu sendiri."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "the point is",
+   "baca": "dhe POINT iz",
+   "id": "intinya"
+  },
+  {
+   "en": "mind you",
+   "baca": "maind YUU",
+   "id": "tapi ya"
+  },
+  {
+   "en": "though (akhir)",
+   "baca": "dhou",
+   "id": "tapi"
+  },
+  {
+   "en": "actually",
+   "baca": "EK-chu-e-li",
+   "id": "sebenarnya"
+  },
+  {
+   "en": "the thing is",
+   "baca": "dhe THING iz",
+   "id": "masalahnya"
+  },
+  {
+   "en": "anyway",
+   "baca": "E-ni-wey",
+   "id": "pokoknya, ya sudah"
+  },
+  {
+   "en": "granted",
+   "baca": "GRAAN-ted",
+   "id": "diakui"
+  },
+  {
+   "en": "having said that",
+   "baca": "HE-ving sed DHET",
+   "id": "meski begitu"
+  },
+  {
+   "en": "to be fair",
+   "baca": "tu bi FEER",
+   "id": "adilnya"
+  },
+  {
+   "en": "by the way",
+   "baca": "bai dhe WEY",
+   "id": "ngomong-ngomong"
+  },
+  {
+   "en": "long story short",
+   "baca": "long STO-ri SYORT",
+   "id": "singkat cerita"
+  },
+  {
+   "en": "the upshot",
+   "baca": "dhi AP-syot",
+   "id": "hasil akhirnya"
+  },
+  {
+   "en": "beside the point",
+   "baca": "bi-SAID dhe POINT",
+   "id": "bukan intinya"
+  },
+  {
+   "en": "to sum up",
+   "baca": "tu sam AP",
+   "id": "menyimpulkan"
+  },
+  {
+   "en": "output",
+   "baca": "AUT-put",
+   "id": "hasil kerja"
+  },
+  {
+   "en": "attendance",
+   "baca": "e-TEN-dens",
+   "id": "kehadiran"
+  },
+  {
+   "en": "to measure",
+   "baca": "ME-zyer",
+   "id": "mengukur"
+  },
+  {
+   "en": "an argument",
+   "baca": "AAR-gyu-ment",
+   "id": "argumen"
+  },
+  {
+   "en": "irony",
+   "baca": "AI-re-ni",
+   "id": "ironi"
+  },
+  {
+   "en": "eventually",
+   "baca": "i-VEN-chu-e-li",
+   "id": "akhirnya (pada waktunya)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan penanda yang paling tepat: mind you, though, actually, the thing is, anyway.",
+   "items": [
+    "It's a great flat. It's very far from the station, ____ .",
+    "____ , I'm not sure that's what she said.",
+    "He's a good manager. ____ , he's never run a team this big.",
+    "____ , we can't afford it until March.",
+    "____ , where were we before the phone rang?"
+   ]
+  },
+  {
+   "prompt": "Ganti penanda lisan berikut dengan padanan tulis resminya.",
+   "items": [
+    "On top of that, the price went up.",
+    "But then again, nobody complained.",
+    "So basically, we lost money.",
+    "Like, for example, the Jakarta office.",
+    "Fair enough, the deadline was tight."
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat sopan untuk tiap situasi.",
+   "items": [
+    "Kamu ingin menyela di rapat.",
+    "Kamu ingin lawan bicara menunggu sampai kamu selesai.",
+    "Kamu ingin mengakui satu poin lawan sebelum membantah.",
+    "Kamu ingin membela orang yang sedang dikritik.",
+    "Kamu ingin mengembalikan pembicaraan ke topik semula."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Gini ya, intinya nggak ada yang lebih produktif di kantor terbuka.",
+    "Tapi itu nggak sepenuhnya bener.",
+    "Boleh nyela sebentar?",
+    "Masalahnya, kita cuma ngukur yang satu.",
+    "Jadi kesimpulannya: ukur hasil, bukan kehadiran."
+   ]
+  }
+ ],
+ "answers": [
+  "though — Actually — Mind you — The thing is — Anyway",
+  "Moreover, the price went up. — Nevertheless, nobody complained. — In conclusion, we lost money. — For instance, the Jakarta office. — Admittedly, the deadline was tight.",
+  "Sorry, can I just come in here? — Bear with me, let me finish this point. — Granted, but having said that… — To be fair, she was given no warning. — Anyway, to return to the point…",
+  "Look, the point is nobody works better in an open-plan office. — That's not quite true, though. — Can I just say something? — The thing is, we only measure one. — So, to sum up: measure output, not attendance."
+ ],
+ "wave": "Kembali ke unit 12. Ambil perdebatan soal keputusan yang tak diumumkan, lalu ulangi dengan menambahkan penanda wacana di tiap giliran: *Look… To be fair… Mind you… Anyway…* Isinya tak berubah sedikit pun, tapi percakapannya berhenti terdengar seperti pertengkaran."
+}

@@ -1,0 +1,492 @@
+{
+ "title": "Kata dia, dan bagaimana dia mengatakannya",
+ "title_target": "He admitted he'd forgotten",
+ "goal": "Melaporkan ucapan orang dengan tepat: pemunduran waktu, dan kata kerja pelapor yang membawa penilaian — *admit*, *deny*, *insist*, *urge*, *claim*.",
+ "bekal": [
+  "memundurkan waktu, kata ganti, dan keterangan tempat dengan benar",
+  "tahu kapan pemunduran TIDAK perlu",
+  "memakai kata kerja pelapor dengan pola yang benar",
+  "melaporkan pertanyaan dan perintah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Reporting back after a difficult meeting",
+   "intro": "Ines baru keluar dari rapat dengan pemasok dan menceritakannya kepada atasannya. Perhatikan bahwa ia hampir tak pernah mengutip persis — tiap kalimat dilaporkan dengan kata kerja yang sudah memberi penilaian.",
+   "lines": [
+    {
+     "speaker": "Hadi:",
+     "text": "So? How did they take it?",
+     "id": "Gimana? Reaksi mereka gimana?",
+     "literal": "jadi? bagaimana apakah mereka mengambil itu?"
+    },
+    {
+     "speaker": "Ines:",
+     "text": "Badly at first. Wira claimed he'd never received the revised terms.",
+     "id": "Awalnya jelek. Wira ngaku katanya nggak pernah nerima syarat yang direvisi.",
+     "literal": "buruk pada pertama. Wira mengklaim dia telah tidak pernah menerima itu direvisi syarat-syarat."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "He did receive them. I copied you in.",
+     "id": "Jelas dia terima. Aku cc kamu kok.",
+     "literal": "dia memang menerima mereka. aku menyalin kamu dalam."
+    },
+    {
+     "speaker": "Ines:",
+     "text": "I know. When I showed him, he admitted he hadn't read them properly.",
+     "id": "Iya tahu. Pas aku tunjukin, dia ngaku belum baca dengan benar.",
+     "literal": "aku tahu. ketika aku menunjukkan dia, dia mengakui dia telah-tidak membaca mereka dengan-benar."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "That's something, at least. And the price?",
+     "id": "Ya lumayan lah. Terus harganya?",
+     "literal": "itu adalah sesuatu, pada paling-sedikit. dan itu harga?"
+    },
+    {
+     "speaker": "Ines:",
+     "text": "He insisted the increase was unavoidable. Said costs had gone up twice this year.",
+     "id": "Dia ngotot kenaikannya nggak bisa dihindari. Katanya biaya naik dua kali tahun ini.",
+     "literal": "dia bersikeras itu kenaikan sedang tak-terhindarkan. mengatakan biaya-biaya telah pergi atas dua kali ini tahun."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "Did he say by how much?",
+     "id": "Dia bilang naiknya berapa?",
+     "literal": "apakah dia mengatakan oleh berapa banyak?"
+    },
+    {
+     "speaker": "Ines:",
+     "text": "He refused to give a figure. He denied it was about our volume.",
+     "id": "Dia nggak mau kasih angka. Dia bantah itu soal volume kita.",
+     "literal": "dia menolak untuk memberi sebuah angka. dia menyangkal itu sedang tentang volume kami."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "Which means it's about our volume.",
+     "id": "Yang artinya justru soal volume kita.",
+     "literal": "yang berarti itu adalah tentang volume kami."
+    },
+    {
+     "speaker": "Ines:",
+     "text": "Probably. Then he suggested we sign a two-year deal instead.",
+     "id": "Kemungkinan. Terus dia usul kita tanda tangan kontrak dua tahun aja.",
+     "literal": "mungkin. kemudian dia menyarankan kami menandatangani sebuah dua-tahun kesepakatan sebagai-ganti."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "Of course he did. What did you tell him?",
+     "id": "Ya iyalah. Kamu jawab apa?",
+     "literal": "tentu saja dia melakukan. apa apakah kamu memberitahu dia?"
+    },
+    {
+     "speaker": "Ines:",
+     "text": "I said we'd think about it and get back to him this week.",
+     "id": "Aku bilang kita pikirin dulu dan kabari dia minggu ini.",
+     "literal": "aku mengatakan kami akan berpikir tentang itu dan mendapat kembali kepada dia ini minggu."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "Good answer. Did he ask when exactly?",
+     "id": "Jawaban bagus. Dia nanya kapan persisnya?",
+     "literal": "baik jawaban. apakah dia bertanya kapan persisnya?"
+    },
+    {
+     "speaker": "Ines:",
+     "text": "He asked whether we could decide by Thursday. I didn't promise anything.",
+     "id": "Dia nanya bisa nggak kita putusin sebelum Kamis. Aku nggak janji apa-apa.",
+     "literal": "dia bertanya apakah kami bisa memutuskan pada Kamis. aku tidak menjanjikan apa pun."
+    },
+    {
+     "speaker": "Hadi:",
+     "text": "Perfect. And he urged you to sign today, I assume.",
+     "id": "Sip. Dan aku yakin dia mendesak kamu tanda tangan hari itu juga.",
+     "literal": "sempurna. dan dia mendesak kamu untuk menandatangani hari-ini, aku mengira."
+    },
+    {
+     "speaker": "Ines:",
+     "text": "Twice. I reminded him we'd waited three weeks for his last reply.",
+     "id": "Dua kali. Aku ingetin dia kalau kita nunggu tiga minggu buat balasan dia yang terakhir.",
+     "literal": "dua kali. aku mengingatkan dia kami telah menunggu tiga minggu-minggu untuk balasan terakhirnya."
+    }
+   ],
+   "notes": [
+    "***He claimed he'd never received…*** — *claim* melaporkan sekaligus menyatakan bahwa penuturnya **tidak percaya**. Bandingkan dengan *he said*, yang netral. Memilih kata kerja pelapor berarti memilih sikap.",
+    "**Pemunduran waktu.** Ucapan asli *I never received them* jadi *he had never received them*; *costs have gone up* jadi *costs had gone up*; *we will think* jadi *we would think*. Present → past, past → past perfect, *will* → *would*, *can* → *could*.",
+    "***He admitted he hadn't read them*** — *admit* diikuti klausa (*admit that…*) atau bentuk *-ing* (*admit **reading** them*), tapi **tidak pernah** *to* + kata kerja dasar. Tiap kata kerja pelapor punya polanya sendiri, dan itulah yang harus dihafal, bukan artinya.",
+    "***He refused to give a figure*** — *refuse* selalu diikuti *to* + kata dasar. Sepasang dengannya: *offer to*, *promise to*, *threaten to*, *agree to*.",
+    "***He denied it was about our volume*** — *deny* diikuti klausa atau *-ing*, tak pernah *to*. Kesalahan *he denied to know* sangat lazim di kalangan pemelajar dan langsung terdengar salah.",
+    "***He suggested we sign*** — sesudah *suggest*, *recommend*, *insist*, *demand*, bahasa Inggris memakai **kata kerja dasar tanpa *to*** untuk semua subjek: *he suggested she **sign***, bukan *signs*. Bentuk ini disebut subjunctive dan lazim terutama di ragam Amerika; ragam Britania sering memakai *should*: *he suggested we should sign*.",
+    "***He asked whether we could decide*** — pertanyaan yang dilaporkan kehilangan susunan tanyanya: bukan *he asked could we decide*. Untuk pertanyaan ya-tidak dipakai *if* atau *whether*; *whether* sedikit lebih resmi.",
+    "***He urged you to sign*** — *urge*, *advise*, *remind*, *warn*, *encourage*, *persuade* semuanya memakai pola **kata kerja + objek + *to*** + kata dasar. Perhatikan objeknya wajib ada: *he urged **you** to sign*, bukan *he urged to sign*."
+   ]
+  },
+  {
+   "title": "Dialogue 2 — Passing on bad news secondhand",
+   "intro": "Seorang rekan menyampaikan apa yang didengarnya, dengan hati-hati menandai mana yang fakta dan mana yang cuma kabar.",
+   "lines": [
+    {
+     "speaker": "Gita:",
+     "text": "Have you heard? Apparently the Bandung office is closing.",
+     "id": "Udah denger belum? Katanya kantor Bandung mau tutup.",
+     "literal": "sudahkah kamu mendengar? rupanya itu Bandung kantor sedang menutup."
+    },
+    {
+     "speaker": "Pram:",
+     "text": "Who told you that?",
+     "id": "Siapa yang bilang?",
+     "literal": "siapa memberitahu kamu itu?"
+    },
+    {
+     "speaker": "Gita:",
+     "text": "Nobody officially. It's rumoured to have been decided last month.",
+     "id": "Nggak ada yang resmi. Kabarnya udah diputuskan bulan lalu.",
+     "literal": "tak seorang pun secara-resmi. itu adalah dikabarkan untuk telah menjadi diputuskan bulan lalu."
+    },
+    {
+     "speaker": "Pram:",
+     "text": "Rumoured by whom, though? That's the bit that matters.",
+     "id": "Tapi kabar dari siapa? Itu yang penting.",
+     "literal": "dikabarkan oleh siapa, walaupun? itu adalah itu potongan yang penting."
+    },
+    {
+     "speaker": "Gita:",
+     "text": "Two people in finance. They both said the lease hadn't been renewed.",
+     "id": "Dua orang di keuangan. Dua-duanya bilang sewanya nggak diperpanjang.",
+     "literal": "dua orang dalam keuangan. mereka keduanya mengatakan itu sewa telah-tidak diperbarui."
+    },
+    {
+     "speaker": "Pram:",
+     "text": "That I can check. Did anyone mention the staff?",
+     "id": "Itu bisa aku cek. Ada yang nyinggung soal karyawan nggak?",
+     "literal": "itu aku bisa memeriksa. apakah siapa pun menyebut itu staf?"
+    },
+    {
+     "speaker": "Gita:",
+     "text": "One of them claimed everyone would be offered a transfer.",
+     "id": "Salah satunya ngaku semua bakal ditawarin pindah.",
+     "literal": "satu dari mereka mengklaim semua orang akan menjadi ditawarkan sebuah pemindahan."
+    },
+    {
+     "speaker": "Pram:",
+     "text": "Claimed, or said?",
+     "id": "Ngaku, atau bilang?",
+     "literal": "mengklaim, atau mengatakan?"
+    },
+    {
+     "speaker": "Gita:",
+     "text": "You're right. Said. I shouldn't editorialise.",
+     "id": "Bener juga. Bilang. Aku nggak boleh nambah-nambahin penilaian.",
+     "literal": "kamu adalah benar. mengatakan. aku seharusnya-tidak menambahkan-penilaian."
+    },
+    {
+     "speaker": "Pram:",
+     "text": "You should. Just say which is which.",
+     "id": "Boleh kok. Asal bilang mana yang mana.",
+     "literal": "kamu seharusnya. hanya katakan yang adalah yang."
+    },
+    {
+     "speaker": "Gita:",
+     "text": "Fine. Fact: the lease. Rumour: everything else.",
+     "id": "Oke. Fakta: sewanya. Rumor: sisanya.",
+     "literal": "baik. fakta: itu sewa. rumor: semua yang lain."
+    }
+   ],
+   "notes": [
+    "***It's rumoured to have been decided*** menumpuk dua alat sekaligus: pasif pelapor dari unit 8, dan pasif biasa di dalamnya. Bentuk seperti ini adalah bunyi khas berita dan laporan.",
+    "***That's the bit that matters*** — *bit* dalam ragam Britania berarti \"bagian\", sangat lisan. Padanan netralnya *part*.",
+    "***That I can check*** memakai **fronting**: objeknya ditarik ke depan untuk menyorotnya. Alat penekan lengkapnya di unit 12.",
+    "***Claimed, or said?*** adalah seluruh isi unit ini dalam dua kata. Di bahasa Inggris B2, memilih kata kerja pelapor sama artinya dengan memilih posisi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menegosiasi, melapor, dan menyampaikan kabar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "a supplier",
+       "e se-PLAI-er",
+       "pemasok"
+      ],
+      [
+       "revised terms",
+       "ri-VAIZD TERMZ",
+       "syarat yang direvisi"
+      ],
+      [
+       "an increase",
+       "en IN-kriis",
+       "kenaikan"
+      ],
+      [
+       "unavoidable",
+       "an-e-VOI-de-bel",
+       "tak terhindarkan"
+      ],
+      [
+       "a figure",
+       "e FI-ger",
+       "angka"
+      ],
+      [
+       "volume",
+       "VO-lyum",
+       "jumlah pembelian"
+      ],
+      [
+       "to get back to someone",
+       "get BEK tu",
+       "mengabari kembali"
+      ],
+      [
+       "a lease",
+       "e liis",
+       "perjanjian sewa"
+      ],
+      [
+       "to renew",
+       "tu ri-NYUU",
+       "memperpanjang"
+      ],
+      [
+       "a transfer",
+       "e TRENS-fer",
+       "pemindahan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata kerja pelapor menurut polanya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pola",
+      "Kata kerja",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "+ (that) klausa",
+       "say, admit, deny, claim, insist, explain, point out",
+       "He admitted (that) he'd lied."
+      ],
+      [
+       "+ objek + (that) klausa",
+       "tell, remind, inform, assure, warn",
+       "She reminded me (that) it was due."
+      ],
+      [
+       "+ to + kata dasar",
+       "offer, refuse, promise, threaten, agree, claim",
+       "They refused to pay."
+      ],
+      [
+       "+ objek + to + kata dasar",
+       "advise, urge, warn, encourage, persuade, ask, remind",
+       "He urged us to sign."
+      ],
+      [
+       "+ -ing",
+       "suggest, recommend, admit, deny, mention, propose",
+       "She suggested waiting."
+      ],
+      [
+       "+ kata dasar (subjunctive)",
+       "suggest, recommend, insist, demand, propose",
+       "He insisted we leave."
+      ],
+      [
+       "+ objek + preposisi + -ing",
+       "accuse of, blame for, congratulate on, apologise for",
+       "They accused him of lying."
+      ],
+      [
+       "+ if / whether",
+       "ask, wonder, want to know",
+       "She asked whether we could decide."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pemunduran waktu, dan kapan ia TIDAK perlu",
+     "items": [
+      "**Mundur satu langkah:** present → past, present perfect & past simple → past perfect, *will* → *would*, *can* → *could*, *may* → *might*, *must* → *had to*. Ikut mundur juga: *today* → *that day*, *tomorrow* → *the next day*, *here* → *there*, *this* → *that*.",
+      "**Tidak perlu mundur** kalau kabarnya **masih berlaku sekarang** (*She said she **lives** in Bandung* — dan memang masih), kalau kata kerja pelapornya sendiri di bentuk sekarang (*He **says** he's busy*), kalau isinya kebenaran umum, atau kalau bentuknya sudah tak bisa mundur lagi (*would*, *could*, *should*, *might*, past perfect)."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Melaporkan pertanyaan dan perintah",
+     "items": [
+      "**Pertanyaan ya-tidak** → *if* atau *whether*, dan susunannya kembali normal: *\"Are you coming?\"* → *She asked **if I was coming**.* Tanpa *do/does/did*, tanpa tanda tanya.",
+      "**Pertanyaan berkata tanya** → kata tanyanya tetap, susunannya normal: *\"Where do you live?\"* → *He asked **where I lived**.*",
+      "**Perintah dan permintaan** → *tell/ask/order* + objek + *to*: *\"Wait here.\"* → *He **told me to wait** there.* Bentuk negatifnya *not to*: *She asked me **not to** mention it.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "to claim",
+   "baca": "kleym",
+   "id": "mengklaim (belum tentu benar)"
+  },
+  {
+   "en": "to admit",
+   "baca": "ed-MIT",
+   "id": "mengakui"
+  },
+  {
+   "en": "to deny",
+   "baca": "di-NAI",
+   "id": "menyangkal"
+  },
+  {
+   "en": "to insist",
+   "baca": "in-SIST",
+   "id": "bersikeras"
+  },
+  {
+   "en": "to urge",
+   "baca": "erj",
+   "id": "mendesak"
+  },
+  {
+   "en": "to remind",
+   "baca": "ri-MAIND",
+   "id": "mengingatkan"
+  },
+  {
+   "en": "to refuse",
+   "baca": "ri-FYUUZ",
+   "id": "menolak"
+  },
+  {
+   "en": "to suggest",
+   "baca": "se-JEST",
+   "id": "menyarankan"
+  },
+  {
+   "en": "to point out",
+   "baca": "point AUT",
+   "id": "menunjukkan, mengingatkan"
+  },
+  {
+   "en": "to accuse of",
+   "baca": "e-KYUUZ ov",
+   "id": "menuduh"
+  },
+  {
+   "en": "a supplier",
+   "baca": "se-PLAI-er",
+   "id": "pemasok"
+  },
+  {
+   "en": "an increase",
+   "baca": "IN-kriis",
+   "id": "kenaikan"
+  },
+  {
+   "en": "unavoidable",
+   "baca": "an-e-VOI-de-bel",
+   "id": "tak terhindarkan"
+  },
+  {
+   "en": "a figure",
+   "baca": "FI-ger",
+   "id": "angka"
+  },
+  {
+   "en": "to renew",
+   "baca": "ri-NYUU",
+   "id": "memperpanjang"
+  },
+  {
+   "en": "a rumour",
+   "baca": "RUU-mer",
+   "id": "kabar burung"
+  },
+  {
+   "en": "officially",
+   "baca": "e-FI-syel-li",
+   "id": "secara resmi"
+  },
+  {
+   "en": "a transfer",
+   "baca": "TRENS-fer",
+   "id": "pemindahan"
+  },
+  {
+   "en": "to get back to",
+   "baca": "get BEK tu",
+   "id": "mengabari kembali"
+  },
+  {
+   "en": "whether",
+   "baca": "WE-dher",
+   "id": "apakah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Laporkan ucapan ini, mundurkan bentuknya.",
+   "items": [
+    "\"I am waiting outside.\" (She said)",
+    "\"We have finished the report.\" (They told me)",
+    "\"I will call you tomorrow.\" (He promised)",
+    "\"I can't come today.\" (She said)",
+    "\"I saw him last week.\" (He said)"
+   ]
+  },
+  {
+   "prompt": "Laporkan pertanyaan dan perintah ini.",
+   "items": [
+    "\"Where do you work?\" (He asked me)",
+    "\"Are you free on Friday?\" (She asked)",
+    "\"Don't touch that.\" (He told me)",
+    "\"Please send it again.\" (She asked me)",
+    "\"Why did you leave?\" (They wanted to know)"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja pelapor yang paling tepat, lalu tulis kalimatnya.",
+   "items": [
+    "\"It wasn't me.\" (deny)",
+    "\"You really should see a doctor.\" (urge)",
+    "\"Yes, I broke it.\" (admit)",
+    "\"I'll pay for the damage.\" (offer)",
+    "\"Let's postpone the meeting.\" (suggest)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Dia ngaku katanya nggak pernah nerima syaratnya.",
+    "Dia ngotot kenaikannya nggak bisa dihindari.",
+    "Dia nggak mau kasih angka.",
+    "Dia usul kita tanda tangan kontrak dua tahun.",
+    "Aku bilang kita pikirin dulu."
+   ]
+  }
+ ],
+ "answers": [
+  "She said she was waiting outside. — They told me they had finished the report. — He promised he would call me the next day. — She said she couldn't come that day. — He said he had seen him the week before.",
+  "He asked me where I worked. — She asked if I was free on Friday. — He told me not to touch that. — She asked me to send it again. — They wanted to know why I had left.",
+  "He denied breaking it. — She urged me to see a doctor. — He admitted breaking it. — He offered to pay for the damage. — She suggested postponing the meeting.",
+  "He claimed he'd never received the terms. — He insisted the increase was unavoidable. — He refused to give a figure. — He suggested we sign a two-year deal. — I said we'd think about it."
+ ],
+ "wave": "Kembali ke unit 8. Ambil rapat soal surel yang salah kirim, lalu laporkan seluruhnya kepada orang ketiga: *She asked how it had been sent. He claimed the tool had picked it up. She pointed out that somebody had written it.* Perhatikan bahwa kata kerja pelapor yang kamu pilih menentukan di pihak siapa kamu berdiri."
+}

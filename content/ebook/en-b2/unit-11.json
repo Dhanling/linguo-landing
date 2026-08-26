@@ -1,0 +1,474 @@
+{
+ "title": "Dua kalimat dipadatkan jadi satu",
+ "title_target": "Having read the report, she said nothing",
+ "goal": "Klausa partisip: memadatkan dua kalimat jadi satu dengan *-ing*, V3, dan *having* + V3 — alat utama bahasa Inggris tulis.",
+ "bekal": [
+  "memakai klausa *-ing* untuk kejadian yang bersamaan atau berurutan",
+  "memakai *having* + V3 untuk kejadian yang lebih dulu",
+  "memakai klausa partisip pasif (*Written in 1920, the book…*)",
+  "menghindari dangling participle — kesalahan yang membuat kalimat jadi lucu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Editing someone else's writing",
+   "intro": "Vina meminta Raka membaca draf lamarannya. Yang dibicarakan bukan isinya, melainkan bagaimana kalimat-kalimat pendek disatukan.",
+   "lines": [
+    {
+     "speaker": "Raka:",
+     "text": "It's good. It's just choppy. Look at this paragraph.",
+     "id": "Bagus kok. Cuma patah-patah. Coba lihat paragraf ini.",
+     "literal": "itu adalah baik. itu adalah hanya patah-patah. lihat pada ini paragraf."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "\"I finished my degree. Then I moved to Jakarta. I started working in design.\"",
+     "id": "\"Saya menyelesaikan kuliah. Lalu saya pindah ke Jakarta. Saya mulai kerja di bidang desain.\"",
+     "literal": "aku menyelesaikan gelarku. kemudian aku pindah kepada Jakarta. aku memulai bekerja dalam desain."
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Three sentences, one idea. Try: having finished my degree, I moved to Jakarta.",
+     "id": "Tiga kalimat, satu ide. Coba: setelah menyelesaikan kuliah, saya pindah ke Jakarta.",
+     "literal": "tiga kalimat-kalimat, satu ide. coba: telah menyelesaikan gelarku, aku pindah kepada Jakarta."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "That does sound better. Why having and not after finishing?",
+     "id": "Emang kedengaran lebih enak. Kenapa having, bukan after finishing?",
+     "literal": "itu memang terdengar lebih-baik. mengapa telah dan tidak sesudah menyelesaikan?"
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Both work. Having is a bit more formal and makes the order clearer.",
+     "id": "Dua-duanya bisa. Having agak lebih formal dan urutannya lebih jelas.",
+     "literal": "keduanya bekerja. telah adalah sebuah potongan lebih resmi dan membuat itu urutan lebih-jelas."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "And the last sentence?",
+     "id": "Terus kalimat terakhirnya?",
+     "literal": "dan itu terakhir kalimat?"
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Fold it in: … I moved to Jakarta, starting my first design job that August.",
+     "id": "Gabung aja: … saya pindah ke Jakarta, memulai kerja desain pertama saya Agustus itu.",
+     "literal": "lipat itu dalam: aku pindah kepada Jakarta, memulai pertama desainku pekerjaan itu Agustus."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "So -ing at the end means what happened next.",
+     "id": "Jadi -ing di akhir artinya yang terjadi berikutnya.",
+     "literal": "jadi -ing pada itu akhir berarti apa terjadi berikutnya."
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Or at the same time. Context sorts it out. Now, this next one is a problem.",
+     "id": "Atau bersamaan. Konteksnya yang nentuin. Nah, yang berikutnya ini masalah.",
+     "literal": "atau pada itu sama waktu. konteks memilah itu keluar. sekarang, ini berikutnya satu adalah sebuah masalah."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "\"Working late one evening, the fire alarm went off.\"",
+     "id": "\"Kerja lembur suatu malam, alarm kebakaran berbunyi.\"",
+     "literal": "bekerja terlambat satu malam, itu api alarm pergi mati."
+    },
+    {
+     "speaker": "Raka:",
+     "text": "So the fire alarm was working late. Poor thing.",
+     "id": "Berarti alarm kebakarannya yang lembur. Kasihan.",
+     "literal": "jadi itu api alarm sedang bekerja terlambat. miskin benda."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "Oh no. The subject has to match, doesn't it.",
+     "id": "Aduh. Subjeknya harus sama ya.",
+     "literal": "oh tidak. itu subjek harus untuk cocok, bukankah itu."
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Always. Working late one evening, I heard the fire alarm go off.",
+     "id": "Selalu. Kerja lembur suatu malam, saya dengar alarm kebakaran berbunyi.",
+     "literal": "selalu. bekerja terlambat satu malam, aku mendengar itu api alarm pergi mati."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "Fixed. What about the opening line? Everyone says it's flat.",
+     "id": "Beres. Kalimat pembukanya gimana? Semua bilang datar.",
+     "literal": "diperbaiki. apa tentang itu pembuka baris? semua orang mengatakan itu adalah datar."
+    },
+    {
+     "speaker": "Raka:",
+     "text": "Try a passive one. Trained as an architect, I now work in product design.",
+     "id": "Coba yang pasif. Dididik sebagai arsitek, sekarang saya kerja di desain produk.",
+     "literal": "coba sebuah pasif satu. dilatih sebagai seorang arsitek, aku sekarang bekerja dalam produk desain."
+    },
+    {
+     "speaker": "Vina:",
+     "text": "That's the whole letter in one line. Right. Rewriting the rest tonight.",
+     "id": "Itu sih seluruh suratnya dalam satu baris. Oke. Nanti malam sisanya aku tulis ulang.",
+     "literal": "itu adalah itu seluruh surat dalam satu baris. baik. menulis-ulang itu sisa malam-ini."
+    }
+   ],
+   "notes": [
+    "***Having finished my degree, I moved…*** — *having* + V3 menandai kejadian yang **lebih dulu**. Subjeknya tidak disebut karena ia sama dengan subjek klausa utama, dan itulah syarat mutlaknya.",
+    "***starting my first design job that August*** — klausa *-ing* di **belakang** kalimat menyatakan kejadian yang menyusul atau berlangsung bersamaan. Di depan kalimat, ia lebih sering menyatakan sebab atau latar.",
+    "***Working late one evening, the fire alarm went off*** adalah **dangling participle**: subjek klausa partisip tak sama dengan subjek kalimat utamanya, jadi secara tata bahasa alarmnyalah yang lembur. Kesalahan ini sangat lazim di tulisan pemelajar dan selalu terdengar konyol bagi penutur asli.",
+    "***the fire alarm went off*** — *go off* untuk alarm berarti **berbunyi**, bukan mati. Untuk lampu dan mesin, *go off* justru berarti padam. Konteksnya yang menentukan.",
+    "***I heard the fire alarm go off*** — sesudah kata kerja indra (*hear*, *see*, *watch*, *feel*), bahasa Inggris memakai kata dasar tanpa *to* untuk kejadian yang **utuh**, dan *-ing* untuk kejadian yang **sedang berlangsung**: *I heard him **shout*** vs *I heard him **shouting***.",
+    "***Trained as an architect, I now work…*** — klausa partisip **pasif** memakai V3 langsung. Bentuk penuhnya *Having been trained as an architect*, tapi versi pendeknya jauh lebih lazim dan lebih kuat.",
+    "***choppy*** = patah-patah, tersendat. Kata yang dipakai penyunting bahasa Inggris untuk tulisan yang kalimatnya terlalu pendek-pendek semua — persis penyakit khas tulisan pemelajar B1.",
+    "***Rewriting the rest tonight*** adalah kalimat tanpa subjek dan tanpa kata bantu, sangat lazim di percakapan santai. Bentuk penuhnya *I'm rewriting the rest tonight*."
+   ]
+  },
+  {
+   "title": "Dialogue 2 — A news bulletin, read aloud",
+   "intro": "Dua orang mendengarkan siaran berita. Perhatikan bahwa hampir tiap kalimat siaran memakai klausa partisip — itulah cara berita memadatkan banyak informasi ke dalam waktu yang sempit.",
+   "lines": [
+    {
+     "speaker": "Radio:",
+     "text": "Speaking earlier today, the minister denied any knowledge of the report.",
+     "id": "Berbicara tadi pagi, menteri membantah mengetahui laporan itu.",
+     "literal": "berbicara lebih-awal hari-ini, itu menteri menyangkal apa pun pengetahuan dari itu laporan."
+    },
+    {
+     "speaker": "Ita:",
+     "text": "Denied any knowledge. That's doing a lot of work.",
+     "id": "Membantah mengetahui. Itu kalimat yang kerja keras.",
+     "literal": "menyangkal apa pun pengetahuan. itu adalah melakukan banyak dari kerja."
+    },
+    {
+     "speaker": "Radio:",
+     "text": "Published last week, the document has been described as damaging.",
+     "id": "Diterbitkan minggu lalu, dokumen itu disebut merugikan.",
+     "literal": "diterbitkan minggu lalu, itu dokumen telah menjadi digambarkan sebagai merusak."
+    },
+    {
+     "speaker": "Adit:",
+     "text": "Described by whom, though. Nobody ever says.",
+     "id": "Disebut sama siapa sih. Nggak pernah ada yang bilang.",
+     "literal": "digambarkan oleh siapa, walaupun. tak seorang pun pernah mengatakan."
+    },
+    {
+     "speaker": "Radio:",
+     "text": "Having reviewed the evidence, the committee will meet again on Friday.",
+     "id": "Setelah meninjau bukti, komite akan bersidang lagi hari Jumat.",
+     "literal": "telah meninjau itu bukti, itu komite akan bertemu lagi pada Jumat."
+    },
+    {
+     "speaker": "Ita:",
+     "text": "Four sentences of information in three lines. That's the whole trick.",
+     "id": "Empat kalimat informasi dalam tiga baris. Itu triknya.",
+     "literal": "empat kalimat-kalimat dari informasi dalam tiga baris-baris. itu adalah itu seluruh trik."
+    },
+    {
+     "speaker": "Adit:",
+     "text": "And nobody's the subject of anything.",
+     "id": "Dan nggak ada yang jadi pelaku apa pun.",
+     "literal": "dan tak seorang pun adalah itu subjek dari apa pun."
+    },
+    {
+     "speaker": "Ita:",
+     "text": "Now you're reading it properly.",
+     "id": "Nah, sekarang kamu bacanya bener.",
+     "literal": "sekarang kamu sedang membaca itu dengan-benar."
+    }
+   ],
+   "notes": [
+    "***Speaking earlier today, the minister denied…*** — klausa partisip di depan adalah pembuka baku berita. Ia memadatkan *while he was speaking* jadi dua kata.",
+    "***Published last week, the document…*** — partisip pasif membuka kalimat. Ia setara dengan *The document, which was published last week,* tapi jauh lebih ringkas.",
+    "***That's doing a lot of work*** adalah kritik gaya bahasa yang sedang populer: satu kata dipakai untuk menyembunyikan banyak hal. Ungkapan ini bagus untuk dipakai, tapi ingat nadanya menyindir.",
+    "***Having reviewed the evidence, the committee will meet…*** — perhatikan klausa partisip bisa mendahului kalimat masa depan. Ia menandai urutan, bukan waktu."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyunting, melamar, dan membaca berita",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "choppy",
+       "CHO-pi",
+       "patah-patah (tulisan)"
+      ],
+      [
+       "a paragraph",
+       "e PE-re-graaf",
+       "paragraf"
+      ],
+      [
+       "a degree",
+       "e di-GRII",
+       "gelar sarjana"
+      ],
+      [
+       "to fold something in",
+       "fould … IN",
+       "menggabungkan"
+      ],
+      [
+       "to go off (alarm)",
+       "gou OF",
+       "berbunyi"
+      ],
+      [
+       "flat (writing)",
+       "flet",
+       "datar, tak bertenaga"
+      ],
+      [
+       "to be trained as",
+       "treynd ez",
+       "dididik sebagai"
+      ],
+      [
+       "evidence",
+       "E-vi-dens",
+       "bukti"
+      ],
+      [
+       "damaging",
+       "DE-mi-jing",
+       "merugikan"
+      ],
+      [
+       "a committee",
+       "e ke-MI-ti",
+       "komite"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Empat bentuk klausa partisip"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Artinya",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "-ing di depan",
+       "bersamaan, atau sebab",
+       "Feeling tired, I went to bed."
+      ],
+      [
+       "-ing di belakang",
+       "menyusul, atau bersamaan",
+       "She left, slamming the door."
+      ],
+      [
+       "having + V3",
+       "lebih dulu",
+       "Having eaten, we set off."
+      ],
+      [
+       "V3 (pasif)",
+       "keadaan atau sebab pasif",
+       "Written in 1920, it still sells."
+      ],
+      [
+       "having been + V3",
+       "pasif, lebih dulu",
+       "Having been warned, he stopped."
+      ],
+      [
+       "not + partisip",
+       "bentuk negatif",
+       "Not knowing the way, we asked."
+      ],
+      [
+       "with + kata benda + partisip",
+       "keadaan yang menyertai",
+       "With the door locked, we waited."
+      ],
+      [
+       "kata benda + partisip (absolut)",
+       "dua subjek berbeda",
+       "The rain having stopped, we left."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dangling participle: kesalahan yang membuat orang tertawa",
+     "items": [
+      "Subjek klausa partisip **wajib** sama dengan subjek kalimat utamanya. *Walking down the street, the tree looked beautiful* berarti pohonnya yang berjalan. *Being only five, my father took me to the zoo* berarti ayahnya yang berumur lima tahun.",
+      "Obatnya ada dua: **ganti subjek kalimat utamanya** (*Walking down the street, **I** thought the tree looked beautiful*) atau **kembalikan jadi klausa penuh** (*While **I was** walking down the street, the tree looked beautiful*).",
+      "Perkecualiannya cuma ungkapan tetap yang sudah membeku: *Generally speaking*, *Considering the price*, *Judging by his face*, *Given the circumstances*. Semuanya boleh berdiri tanpa subjek yang cocok."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Konstruksi absolut",
+     "items": [
+      "Kalau subjeknya memang **berbeda**, ia disebut dan klausanya tetap berbentuk partisip: *The rain **having stopped**, we set off.* / *Everyone **being** ready, the meeting began.*",
+      "Nadanya tertulis dan agak tinggi, jadi ia jarang muncul di percakapan. Tapi ia sangat lazim di laporan, karya ilmiah, dan sastra — dan di ujian membaca, kalimat semacam ini adalah yang paling sering membuat pemelajar tersesat."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "having + V3",
+   "baca": "HE-ving",
+   "id": "setelah (melakukan)"
+  },
+  {
+   "en": "choppy",
+   "baca": "CHO-pi",
+   "id": "patah-patah"
+  },
+  {
+   "en": "a paragraph",
+   "baca": "PE-re-graaf",
+   "id": "paragraf"
+  },
+  {
+   "en": "a degree",
+   "baca": "di-GRII",
+   "id": "gelar"
+  },
+  {
+   "en": "to fold in",
+   "baca": "fould IN",
+   "id": "menggabungkan"
+  },
+  {
+   "en": "to go off",
+   "baca": "gou OF",
+   "id": "berbunyi (alarm)"
+  },
+  {
+   "en": "a fire alarm",
+   "baca": "FAI-er e-LAAM",
+   "id": "alarm kebakaran"
+  },
+  {
+   "en": "to match",
+   "baca": "metch",
+   "id": "cocok, sepadan"
+  },
+  {
+   "en": "flat",
+   "baca": "flet",
+   "id": "datar, hambar"
+  },
+  {
+   "en": "to be trained as",
+   "baca": "treynd ez",
+   "id": "dididik sebagai"
+  },
+  {
+   "en": "an architect",
+   "baca": "AAR-ki-tekt",
+   "id": "arsitek"
+  },
+  {
+   "en": "to rewrite",
+   "baca": "ri-RAIT",
+   "id": "menulis ulang"
+  },
+  {
+   "en": "the rest",
+   "baca": "dhe REST",
+   "id": "sisanya"
+  },
+  {
+   "en": "a minister",
+   "baca": "MI-nis-ter",
+   "id": "menteri"
+  },
+  {
+   "en": "knowledge",
+   "baca": "NO-lij",
+   "id": "pengetahuan"
+  },
+  {
+   "en": "to publish",
+   "baca": "PA-blisy",
+   "id": "menerbitkan"
+  },
+  {
+   "en": "evidence",
+   "baca": "E-vi-dens",
+   "id": "bukti"
+  },
+  {
+   "en": "damaging",
+   "baca": "DE-mi-jing",
+   "id": "merugikan"
+  },
+  {
+   "en": "a committee",
+   "baca": "ke-MI-ti",
+   "id": "komite"
+  },
+  {
+   "en": "generally speaking",
+   "baca": "JE-ne-re-li SPII-king",
+   "id": "secara umum"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Gabungkan jadi satu kalimat dengan klausa partisip -ing.",
+   "items": [
+    "He felt ill. He went home early.",
+    "She opened the door. She saw the mess.",
+    "They didn't know the answer. They stayed silent.",
+    "I walked into the room. I noticed the smell.",
+    "We waited for the bus. We talked about the film."
+   ]
+  },
+  {
+   "prompt": "Tulis ulang memakai having + V3.",
+   "items": [
+    "After I had finished the report, I sent it to Ines.",
+    "When they had eaten, they went for a walk.",
+    "Because she had already seen the film, she stayed at home.",
+    "After we had checked the figures, we approved the budget.",
+    "Since he had lost his keys, he had to wait outside."
+   ]
+  },
+  {
+   "prompt": "Betulkan dangling participle berikut, tulis kalimat lengkapnya.",
+   "items": [
+    "Running for the bus, my bag fell open.",
+    "Written in a hurry, I regretted the email.",
+    "Being very old, we had to replace the boiler.",
+    "Having arrived late, the meeting had already started.",
+    "Looking out of the window, the garden seemed smaller."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Setelah menyelesaikan kuliah, saya pindah ke Jakarta.",
+    "Kerja lembur suatu malam, saya dengar alarm berbunyi.",
+    "Dididik sebagai arsitek, sekarang saya kerja di desain produk.",
+    "Diterbitkan minggu lalu, dokumen itu disebut merugikan.",
+    "Setelah meninjau bukti, komite akan bersidang lagi."
+   ]
+  }
+ ],
+ "answers": [
+  "Feeling ill, he went home early. — Opening the door, she saw the mess. — Not knowing the answer, they stayed silent. — Walking into the room, I noticed the smell. — We waited for the bus, talking about the film.",
+  "Having finished the report, I sent it to Ines. — Having eaten, they went for a walk. — Having already seen the film, she stayed at home. — Having checked the figures, we approved the budget. — Having lost his keys, he had to wait outside.",
+  "Running for the bus, I felt my bag fall open. — Written in a hurry, the email was one I regretted. — Being very old, the boiler had to be replaced. — Having arrived late, I found the meeting had already started. — Looking out of the window, I thought the garden seemed smaller.",
+  "Having finished my degree, I moved to Jakarta. — Working late one evening, I heard the alarm go off. — Trained as an architect, I now work in product design. — Published last week, the document has been described as damaging. — Having reviewed the evidence, the committee will meet again."
+ ],
+ "wave": "Kembali ke unit 9. Ambil laporan Ines tentang rapat dengan pemasok, lalu tulis ulang sebagai satu paragraf berita: *Speaking after the meeting, Ines said… Having refused to give a figure, the supplier proposed…* Isi yang sama, separuh jumlah kalimatnya."
+}
