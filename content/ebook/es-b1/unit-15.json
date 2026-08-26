@@ -1,0 +1,211 @@
+{
+  "title": "Berita hari ini",
+  "title_target": "En las noticias de hoy",
+  "goal": "Memahami dan meringkas berita, lalu menebak-nebak apa yang terjadi dengan bentuk masa depan dan kondisional yang dipakai untuk perkiraan.",
+  "bekal": [
+    "membaca susunan kalimat berita",
+    "memakai *futuro* untuk menebak masa kini",
+    "memakai *condicional* untuk menebak masa lalu",
+    "meringkas berita dalam tiga kalimat"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — El telediario de las tres",
+      "intro": "Marisol dan ayahnya menonton berita siang. Perhatikan bentuk kata kerja tiap kali salah satu dari mereka menebak.",
+      "lines": [
+        { "speaker": "Padre:", "text": "Sube otra vez la luz. Lo han dicho al principio del telediario.", "id": "Listrik naik lagi. Diberitakan di awal siaran.", "literal": "ia-naik lain kali itu cahaya. itu mereka-punya mengatakan ke-itu permulaan dari-itu siaran-berita." },
+        { "speaker": "Marisol:", "text": "¿Cuánto? Serán unos veinte céntimos más, imagino.", "id": "Berapa? Paling sekitar dua puluh sen lebih, kurasa.", "literal": "berapa? mereka-akan-adalah sekitar dua-puluh sen lebih, saya-membayangkan." },
+        { "speaker": "Padre:", "text": "Más. Han dicho que el recibo medio subirá un ocho por ciento.", "id": "Lebih. Katanya tagihan rata-rata naik delapan persen.", "literal": "lebih. mereka-punya mengatakan bahwa itu tagihan rata-rata ia-akan-naik satu delapan untuk seratus." },
+        { "speaker": "Marisol:", "text": "Menudo disgusto. ¿Y han explicado por qué?", "id": "Nyebelin banget. Dijelaskan alasannya?", "literal": "betapa kekecewaan. dan mereka-punya menjelaskan untuk apa?" },
+        { "speaker": "Padre:", "text": "Algo del precio del gas. La verdad, no me he enterado bien.", "id": "Sesuatu soal harga gas. Jujur, aku nggak nangkep betul.", "literal": "sesuatu dari-itu harga dari-itu gas. itu kebenaran, tidak kepadaku saya-punya mengetahui baik." },
+        { "speaker": "Marisol:", "text": "Estarías con el móvil, como siempre.", "id": "Pasti kamu lagi main HP, kayak biasa.", "literal": "kamu-akan-berada dengan itu ponsel, seperti selalu." },
+        { "speaker": "Padre:", "text": "Puede ser. Oye, mira: se ha caído un árbol en la plaza.", "id": "Bisa jadi. Eh, lihat: ada pohon tumbang di alun-alun.", "literal": "ia-bisa menjadi. dengar, lihat: dirinya ia-punya jatuh satu pohon di itu alun-alun." },
+        { "speaker": "Marisol:", "text": "¡En nuestra plaza! ¿Habrá heridos?", "id": "Di alun-alun kita! Ada korban luka nggak ya?", "literal": "di kami punya alun-alun! ia-akan-ada terluka-terluka?" },
+        { "speaker": "Padre:", "text": "Dicen que no. Sería por el viento de anoche, cayeron rachas de noventa.", "id": "Katanya nggak ada. Mungkin gara-gara angin semalam, hembusannya sampai sembilan puluh.", "literal": "mereka-bilang bahwa tidak. ia-akan-adalah untuk itu angin dari tadi-malam, mereka-jatuh hembusan-hembusan dari sembilan-puluh." },
+        { "speaker": "Marisol:", "text": "Pues el ayuntamiento tendrá que revisar los demás. Ese árbol estaba fatal.", "id": "Pemkot harus periksa yang lain dong. Pohon itu memang parah kondisinya.", "literal": "maka itu balai-kota ia-akan-punya bahwa memeriksa itu sisanya. itu pohon ia-berada fatal." },
+        { "speaker": "Padre:", "text": "Llevaba años torcido. Alguien lo habrá avisado alguna vez, digo yo.", "id": "Sudah bertahun-tahun miring. Pasti pernah ada yang lapor, menurutku.", "literal": "ia-membawa tahun-tahun bengkok. seseorang itu ia-akan-punya memberi-tahu suatu kali, saya-katakan saya." },
+        { "speaker": "Marisol:", "text": "Seguro. Voy a mirarlo en el periódico digital, que ahí lo explican mejor.", "id": "Pasti. Aku cek di koran digital deh, di situ dijelaskan lebih baik.", "literal": "yakin. saya-pergi ke melihat-itu di itu koran digital, bahwa di-situ itu mereka-menjelaskan lebih-baik." },
+        { "speaker": "Padre:", "text": "Léemelo en voz alta, anda.", "id": "Bacain keras-keras dong.", "literal": "baca-kepadaku-itu di suara tinggi, ayo." },
+        { "speaker": "Marisol:", "text": "\"El temporal deja daños materiales en tres municipios y obliga a cortar dos carreteras.\" Ya está, eso es todo.", "id": "\"Badai menyebabkan kerusakan material di tiga kota dan memaksa penutupan dua jalan raya.\" Sudah, cuma itu.", "literal": "itu badai ia-meninggalkan kerusakan-kerusakan material di tiga kotamadya dan ia-memaksa ke memotong dua jalan-raya. sudah ia-berada, itu adalah semua." }
+      ],
+      "notes": [
+        "**Bentuk *futuro* punya pekerjaan kedua yang jarang diajarkan: menebak apa yang terjadi SEKARANG.** *Serán unos veinte céntimos* berarti \"paling sekitar dua puluh sen\", bukan \"nanti akan\". *¿Habrá heridos?* berarti \"apa ada korban ya?\".",
+        "**Bentuk *condicional* menebak apa yang terjadi DULU**: *sería por el viento* (mungkin gara-gara angin), *estarías con el móvil* (kamu pasti lagi main HP tadi). Pasangan ini rapi: futuro untuk sekarang, condicional untuk lampau.",
+        "**Untuk menebak kejadian yang sudah selesai, pakai *futuro compuesto***: *alguien lo habrá avisado* (pasti sudah ada yang lapor). Bentuknya *habrá* + bentuk ketiga.",
+        "**Bahasa berita memadatkan kalimat dengan cara tetap**: judul memakai bentuk sekarang untuk kejadian yang sudah lewat (*el temporal deja daños*), membuang kata sandang, dan memakai kata kerja yang berat maknanya (*obliga a*, *deja*, *provoca*, *se salda con*).",
+        "***No me he enterado*** berarti \"aku nggak nangkep, nggak sempat tahu\". *Enterarse de* adalah kata kerja yang sangat sering dipakai untuk kabar: *¿te has enterado de lo del árbol?*",
+        "***Menudo disgusto*** — *menudo* di depan kata benda berarti kebalikan dari arti kamusnya (\"kecil\"): ia justru melebih-lebihkan. *Menudo lío*, *menudo susto*, *menuda suerte*.",
+        "***El ayuntamiento*** adalah pemerintah kota, dan kata ini muncul di hampir semua berita lokal Spanyol. Kerabatnya: *la comunidad autónoma* (pemerintah daerah), *el gobierno* (pemerintah pusat).",
+        "***Digo yo*** di ujung kalimat melunakkan pendapat: \"menurutku sih\". Sepupunya *vamos, digo yo* dan *o eso creo*."
+      ],
+      "grammars": [
+        {
+          "title": "Menebak: tiga bentuk, tiga waktu",
+          "body": [
+            "Bahasa Indonesia memakai kata bantu (\"mungkin\", \"pasti\", \"kayaknya\"). Bahasa Spanyol menggeser bentuk kata kerjanya."
+          ],
+          "table": {
+            "head": ["Yang ditebak", "Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["keadaan sekarang", "futuro", "**Estará** en casa.", "Dia pasti di rumah."],
+              ["jumlah sekarang", "futuro", "**Serán** las cinco.", "Kira-kira jam lima."],
+              ["kejadian yang baru selesai", "futuro compuesto", "**Habrá salido** ya.", "Pasti sudah pergi."],
+              ["keadaan lampau", "condicional", "**Estaría** cansado.", "Waktu itu dia pasti capek."],
+              ["kejadian lampau", "condicional compuesto", "**Habría salido** antes.", "Mungkin dia pergi lebih awal."]
+            ]
+          },
+          "after": [
+            "**Kalau kamu tak yakin dengan bentuk-bentuk ini, ada jalan aman**: *seguramente*, *probablemente*, *a lo mejor*, *supongo que*, semuanya dengan bentuk biasa. *Supongo que está en casa* sama artinya dengan *estará en casa*.",
+            "**Tapi kenali bentuk tebakan waktu mendengarnya**, karena penutur memakainya terus-menerus. *¿Dónde estará Juan?* bukan pertanyaan tentang masa depan — itu berarti \"Juan di mana ya sekarang?\"."
+          ]
+        },
+        {
+          "title": "Membaca berita: susunan yang berulang",
+          "body": [
+            "Berita Spanyol dibangun dari potongan tetap. Mengenalinya membuat teks yang tampak sulit jadi bisa ditebak."
+          ],
+          "table": {
+            "head": ["Potongan", "Arti", "Contoh"],
+            "rows": [
+              ["según fuentes de…", "menurut sumber…", "**Según fuentes** policiales…"],
+              ["se prevé que + subj.", "diperkirakan", "**Se prevé que** suba un 8 %."],
+              ["ha sido detenido", "telah ditangkap", "El conductor **ha sido detenido**."],
+              ["se salda con", "berakhir dengan (korban)", "El accidente **se salda con** dos heridos."],
+              ["a causa de / debido a", "akibat", "**Debido al** temporal…"],
+              ["por el momento", "sejauh ini", "**Por el momento** no hay heridos."],
+              ["está previsto que + subj.", "dijadwalkan", "**Está previsto que** abra el lunes."]
+            ]
+          },
+          "after": [
+            "**Ringkasan berita yang baik cukup tiga kalimat**: apa yang terjadi, di mana dan kapan, dan akibatnya. Contoh: *Ha caído un árbol en la plaza del pueblo. Ocurrió anoche, durante el temporal. No hay heridos, pero han cortado la calle.*",
+            "**Kata kerja berita yang paling sering muncul**: *provocar*, *dejar*, *obligar a*, *afectar a*, *prever*, *detener*, *rescatar*, *evacuar*, *convocar*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Diálogo B — Comentando el titular",
+      "intro": "Dua rekan kerja membicarakan satu berita yang mereka baca di ponsel.",
+      "lines": [
+        { "speaker": "Nadia:", "text": "¿Has visto lo de la huelga de trenes? Empieza el lunes.", "id": "Sudah lihat soal mogok kereta? Mulai Senin.", "literal": "kamu-punya melihat itu dari itu mogok dari kereta-kereta? ia-memulai itu Senin." },
+        { "speaker": "Gorka:", "text": "Algo he leído. ¿Afectará también a los cercanías?", "id": "Baca sekilas. Kereta lokal kena juga?", "literal": "sesuatu saya-punya membaca. ia-akan-mempengaruhi juga ke itu jarak-dekat?" },
+        { "speaker": "Nadia:", "text": "Sí. Está previsto que haya servicios mínimos del cincuenta por ciento.", "id": "Iya. Dijadwalkan ada layanan minimum lima puluh persen.", "literal": "ya. ia-berada diperkirakan bahwa adalah layanan-layanan minimum dari-itu lima-puluh untuk seratus." },
+        { "speaker": "Gorka:", "text": "Menos mal. Entonces llegaré tarde, pero llegaré.", "id": "Syukurlah. Berarti aku telat, tapi tetap sampai.", "literal": "kurang buruk. kalau-begitu saya-akan-tiba larut, tetapi saya-akan-tiba." },
+        { "speaker": "Nadia:", "text": "Yo iré en bici. Con la huelga, el tráfico será imposible.", "id": "Aku naik sepeda. Kalau ada mogok, lalu lintas pasti mustahil.", "literal": "saya saya-akan-pergi di sepeda. dengan itu mogok, itu lalu-lintas ia-akan-adalah mustahil." },
+        { "speaker": "Gorka:", "text": "Buena idea. ¿Sabes cuánto durará?", "id": "Ide bagus. Tahu berapa lama?", "literal": "baik gagasan. kamu-tahu berapa ia-akan-berlangsung?" },
+        { "speaker": "Nadia:", "text": "Tres días, según el sindicato. Aunque estas cosas se alargan.", "id": "Tiga hari, menurut serikat. Meski hal-hal begini biasanya molor.", "literal": "tiga hari, menurut itu serikat. meskipun ini hal-hal dirinya mereka-memanjang." },
+        { "speaker": "Gorka:", "text": "Ya veremos. Avísame si sale algo nuevo.", "id": "Lihat nanti. Kabari kalau ada kabar baru.", "literal": "sudah kita-akan-lihat. beri-tahu-kepadaku jika ia-keluar sesuatu baru." }
+      ],
+      "notes": [
+        "***Lo de…*** adalah cara paling cepat menyebut sebuah peristiwa yang sudah sama-sama diketahui: *lo de la huelga*, *lo del árbol*, *lo de ayer*.",
+        "***Los cercanías*** adalah kereta komuter jarak dekat di Spanyol; *el AVE* adalah kereta cepat. Keduanya muncul di berita transportasi hampir tiap minggu.",
+        "***Servicios mínimos*** adalah layanan minimum yang wajib jalan selama mogok — konsep yang selalu disebut di berita huelga.",
+        "***Está previsto que* selalu diikuti subjuntivo**: *está previsto que haya*, *está previsto que abra*. Ini pemicu subjuntivo yang khas bahasa berita."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Berita, cuaca buruk, dan urusan kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["el telediario", "te-le-DIA-rio", "siaran berita TV"],
+            ["el titular", "ti-tu-LAR", "judul berita"],
+            ["el recibo", "rre-SI-bo", "tagihan bulanan"],
+            ["el temporal", "tem-po-RAL", "badai"],
+            ["la racha", "RRA-cha", "hembusan angin"],
+            ["el herido", "e-RI-do", "korban luka"],
+            ["el ayuntamiento", "a-yun-ta-MIEN-to", "pemerintah kota"],
+            ["la carretera", "ka-rre-TE-ra", "jalan raya"],
+            ["la huelga", "UEL-ga", "mogok kerja"],
+            ["el sindicato", "sin-di-KA-to", "serikat pekerja"],
+            ["los daños", "DA-nyos", "kerusakan"],
+            ["enterarse de", "en-te-RAR-se de", "mengetahui kabar"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Meringkas berita dalam tiga kalimat",
+          "items": [
+            "Kalimat 1 — apa yang terjadi: *Ha caído un árbol en la plaza del pueblo.* Kalimat 2 — kapan dan kenapa: *Ocurrió anoche, a causa del temporal.* Kalimat 3 — akibatnya: *No hay heridos, pero han cortado la calle.*",
+            "Rangka ini adalah tugas lisan yang paling sering keluar di ujian B1: \"ceritakan sebuah berita yang kamu baca minggu ini\". Latih dengan satu berita nyata setiap hari selama seminggu; tiga kalimat saja, keras-keras."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "el telediario", "baca": "te-le-DIA-rio", "id": "siaran berita" },
+    { "es": "subir", "baca": "su-BIR", "id": "naik" },
+    { "es": "el recibo", "baca": "rre-SI-bo", "id": "tagihan" },
+    { "es": "medio", "baca": "ME-dio", "id": "rata-rata" },
+    { "es": "el disgusto", "baca": "dis-GUS-to", "id": "kekecewaan" },
+    { "es": "enterarse", "baca": "en-te-RAR-se", "id": "tahu kabarnya" },
+    { "es": "el árbol", "baca": "AR-bol", "id": "pohon" },
+    { "es": "el herido", "baca": "e-RI-do", "id": "korban luka" },
+    { "es": "el viento", "baca": "BIEN-to", "id": "angin" },
+    { "es": "la racha", "baca": "RRA-cha", "id": "hembusan" },
+    { "es": "el ayuntamiento", "baca": "a-yun-ta-MIEN-to", "id": "pemkot" },
+    { "es": "torcido", "baca": "tor-SI-do", "id": "miring, bengkok" },
+    { "es": "el periódico", "baca": "pe-RIO-di-ko", "id": "koran" },
+    { "es": "el temporal", "baca": "tem-po-RAL", "id": "badai" },
+    { "es": "el daño", "baca": "DA-nyo", "id": "kerusakan" },
+    { "es": "el municipio", "baca": "mu-ni-SI-pio", "id": "kotamadya" },
+    { "es": "cortar", "baca": "kor-TAR", "id": "menutup (jalan)" },
+    { "es": "la huelga", "baca": "UEL-ga", "id": "mogok kerja" },
+    { "es": "prever", "baca": "pre-BER", "id": "memperkirakan" },
+    { "es": "el sindicato", "baca": "sin-di-KA-to", "id": "serikat pekerja" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi tebakan dengan *futuro* atau *condicional*.",
+      "items": [
+        "Probablemente está en casa. → ____",
+        "Seguramente son las cinco. → ____",
+        "Supongo que estaba cansado. (waktu itu) → ____",
+        "Imagino que fue por el viento. → ____",
+        "Supongo que ya ha salido. → ____"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan bentuk yang tepat.",
+      "items": [
+        "¿(Haber) ____ heridos? (tebakan sekarang)",
+        "Alguien lo (avisar) ____ alguna vez. (pasti sudah)",
+        "Está previsto que (haber) ____ servicios mínimos.",
+        "Se prevé que el recibo (subir) ____ un ocho por ciento.",
+        "Dicen que el temporal (dejar) ____ daños en tres municipios."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kosakata berita yang tepat.",
+      "items": [
+        "El ____ dejó daños en tres municipios.",
+        "El ____ ha decidido revisar todos los árboles.",
+        "La ____ de trenes empieza el lunes.",
+        "Por el momento no hay ____.",
+        "Según el ____, la huelga durará tres días."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Katanya tagihan rata-rata naik delapan persen.",
+        "Ada korban luka nggak ya?",
+        "Mungkin gara-gara angin semalam.",
+        "Pemkot harus periksa yang lain.",
+        "Kabari aku kalau ada kabar baru."
+      ]
+    }
+  ],
+  "answers": [
+    "Estará en casa. — Serán las cinco. — Estaría cansado. — Sería por el viento. — Habrá salido ya.",
+    "Habrá — habrá avisado — haya — suba — deja",
+    "temporal — ayuntamiento — huelga — heridos — sindicato",
+    "Han dicho que el recibo medio subirá un ocho por ciento. — ¿Habrá heridos? — Sería por el viento de anoche. — El ayuntamiento tendrá que revisar los demás. — Avísame si sale algo nuevo."
+  ],
+  "wave": "Ulangi **unit 13**: pilih satu berita minggu ini dan berikan pendapatmu selama satu menit memakai rangka lima langkah dari unit 13."
+}

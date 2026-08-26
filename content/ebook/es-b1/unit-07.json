@@ -1,0 +1,191 @@
+{
+  "title": "Coba kamu kerjakan sendiri",
+  "title_target": "Hazlo tú mismo",
+  "goal": "Memberi perintah, petunjuk, dan larangan — dari resep masakan sampai saran yang tegas — dengan bentuk yang tepat untuk tiap orang.",
+  "bekal": [
+    "membentuk perintah positif untuk *tú*, *usted*, *vosotros*, *nosotros*",
+    "membentuk larangan dengan *no* + subjuntivo",
+    "menempelkan kata ganti di belakang perintah",
+    "melunakkan perintah agar tak terdengar kasar"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — La tortilla de la abuela",
+      "intro": "Nando menelepon neneknya untuk menanyakan resep. Perhatikan bentuk kata kerja tiap kali sang nenek menyuruh sesuatu.",
+      "lines": [
+        { "speaker": "Nando:", "text": "Abuela, ¿me explicas cómo haces la tortilla? Quiero hacerla esta noche.", "id": "Nek, jelasin dong cara bikin tortilla. Aku mau bikin malam ini.", "literal": "nenek, kepadaku kamu-menjelaskan bagaimana kamu-membuat itu tortilla? saya-mau membuat-itu ini malam." },
+        { "speaker": "Abuela:", "text": "Apunta. Pela cuatro patatas y córtalas finas, no gruesas.", "id": "Catat. Kupas empat kentang dan potong tipis-tipis, jangan tebal.", "literal": "catat. kupas empat kentang-kentang dan potong-itu tipis, tidak tebal." },
+        { "speaker": "Nando:", "text": "¿Muy finas? Es que la última vez me quedaron duras.", "id": "Tipis banget? Soalnya kemarin kentangku keras.", "literal": "sangat tipis? adalah bahwa itu terakhir kali kepadaku mereka-tinggal keras." },
+        { "speaker": "Abuela:", "text": "Porque tenías prisa. No las frías a fuego fuerte, hijo. Ponlo bajito.", "id": "Soalnya kamu buru-buru. Jangan digoreng api besar, Nak. Kecilkan apinya.", "literal": "karena kamu-punya keburu-buruan. tidak itu kamu-gorenglah ke api kuat, anak. taruh-itu pelan." },
+        { "speaker": "Nando:", "text": "Vale, fuego bajo. ¿Y cuánto aceite echo?", "id": "Oke, api kecil. Minyaknya berapa?", "literal": "baik, api rendah. dan berapa minyak saya-tuang?" },
+        { "speaker": "Abuela:", "text": "Que las cubra. Y échales sal cuando estén a medias, no antes.", "id": "Sampai kerendam. Terus kasih garam pas setengah matang, jangan sebelumnya.", "literal": "bahwa itu ia-menutupilah. dan tuang-kepada-mereka garam ketika mereka-beradalah ke setengah, tidak sebelum." },
+        { "speaker": "Nando:", "text": "¿Y la cebolla? Papá dice que sin cebolla no es tortilla.", "id": "Bawang bombaynya? Ayah bilang tanpa bawang bukan tortilla.", "literal": "dan itu bawang? ayah ia-bilang bahwa tanpa bawang tidak ia-adalah tortilla." },
+        { "speaker": "Abuela:", "text": "Tu padre exagera. Ponle si quieres, pero póchala primero, muy despacio.", "id": "Ayahmu lebay. Pakai saja kalau mau, tapi tumis dulu, pelan-pelan.", "literal": "kamu punya ayah ia-melebih-lebihkan. taruh-kepadanya jika kamu-mau, tetapi tumis-itu pertama, sangat pelan." },
+        { "speaker": "Nando:", "text": "Entendido. ¿Y los huevos, cuántos?", "id": "Paham. Telurnya berapa?", "literal": "dimengerti. dan itu telur-telur, berapa?" },
+        { "speaker": "Abuela:", "text": "Seis. Bátelos bien, mézclalo todo y déjalo reposar diez minutos.", "id": "Enam. Kocok yang rata, campur semua, terus diamkan sepuluh menit.", "literal": "enam. kocok-mereka baik, campur-itu semua dan biarkan-itu beristirahat sepuluh menit." },
+        { "speaker": "Nando:", "text": "¿Reposar? Eso no lo sabía.", "id": "Didiemin? Itu aku baru tahu.", "literal": "beristirahat? itu tidak itu saya-tahu." },
+        { "speaker": "Abuela:", "text": "Ahí está el secreto. Y no la muevas mientras cuaja, déjala tranquila.", "id": "Nah itu rahasianya. Dan jangan digoyang selagi mengeras, biarkan saja.", "literal": "di-situ ia-berada itu rahasia. dan tidak itu kamu-gerakkanlah selagi ia-mengeras, biarkan-itu tenang." },
+        { "speaker": "Nando:", "text": "¿Y para darle la vuelta? Ahí siempre la destrozo.", "id": "Terus buat baliknya gimana? Di situ aku selalu hancur.", "literal": "dan untuk memberi-kepadanya itu putaran? di-situ selalu itu saya-menghancurkan." },
+        { "speaker": "Abuela:", "text": "Usa un plato grande y hazlo rápido, sin miedo. Si se rompe, no pasa nada: llámalo revuelto.", "id": "Pakai piring besar dan lakukan cepat, jangan takut. Kalau hancur, santai: sebut saja telur orak-arik.", "literal": "pakai satu piring besar dan buat-itu cepat, tanpa ketakutan. jika dirinya ia-pecah, tidak ia-lewat apa-apa: panggil-itu orak-arik." }
+      ],
+      "notes": [
+        "**Perintah untuk *tú* itu paling mudah**: ambil bentuk *él/ella* sekarang, selesai. *Pela*, *corta*, *pon* — eh, tidak, *poner* justru satu dari delapan yang tak beraturan. Delapan itu: *pon, ten, ven, sal, haz, di, sé, ve*.",
+        "**Larangan bukan sekadar menambahkan *no***. Perintah *fríe* jadi *no **frías***; *pon* jadi *no **pongas***; *hazlo* jadi *no lo **hagas***. Bentuk larangan seluruhnya memakai subjuntivo — itulah kenapa unit ini datang sesudah enam unit subjuntivo.",
+        "**Kata ganti menempel di belakang perintah positif** dan menyatu jadi satu kata: *córta**las***, *échal**es** sal*, *bátel**os***, *déja**lo***. Tanda aksen muncul untuk menjaga tekanan kata tetap di suku kata semula.",
+        "**Di larangan, kata ganti kembali ke depan**: *no **las** frías*, *no **la** muevas*, *no **lo** hagas*. Perbandingan langsungnya: *hazlo* / *no lo hagas*.",
+        "***Que las cubra*** adalah perintah tak langsung yang diawali *que* — nenek sebenarnya berkata \"(minyaknya) biar merendam kentangnya\". Bentuk ini dipakai untuk menyuruh orang ketiga: *que pase*, *que lo haga él*, *que esperen*.",
+        "**Untuk *usted* dan *ustedes*, perintah positif dan larangan memakai bentuk yang sama** — keduanya subjuntivo: *pele*, *no pele*, *pelen*, *no pelen*. Ini yang membuat perintah formal terasa lebih rapi daripada perintah akrab.",
+        "***Vosotros* punya bentuk perintah tersendiri**: buang *-r* dari kata dasar, ganti *-d*. *Pelar* → *pelad*, *comer* → *comed*, *venir* → *venid*. Di Amerika Latin bentuk ini tak dipakai; yang dipakai *ustedes*: *pelen*.",
+        "**Dua ungkapan dapur yang berguna**: *a fuego fuerte / bajo* (api besar/kecil) dan *dar la vuelta* (membalik). Dan *ahí está el secreto* dipakai jauh di luar dapur — artinya \"nah, itu kuncinya\"."
+      ],
+      "grammars": [
+        {
+          "title": "Empat orang, dua arah",
+          "body": [
+            "Hanya *tú* dan *vosotros* punya bentuk perintah positif tersendiri. Sisanya — dan seluruh larangan — memakai subjuntivo."
+          ],
+          "table": {
+            "head": ["", "positif", "larangan", "asalnya"],
+            "rows": [
+              ["tú", "**habla**, come, vive", "no **hables**, no comas", "bentuk él/ella"],
+              ["usted", "**hable**, coma, viva", "no **hable**, no coma", "subjuntivo"],
+              ["nosotros", "**hablemos**, comamos", "no **hablemos**", "subjuntivo"],
+              ["vosotros", "**hablad**, comed, vivid", "no **habléis**, no comáis", "dasar + d"],
+              ["ustedes", "**hablen**, coman, vivan", "no **hablen**, no coman", "subjuntivo"]
+            ]
+          },
+          "after": [
+            "**Delapan perintah *tú* yang tak beraturan, wajib hafal**: poner → **pon**, tener → **ten**, venir → **ven**, salir → **sal**, hacer → **haz**, decir → **di**, ser → **sé**, ir → **ve**.",
+            "Larangannya kembali normal karena diambil dari subjuntivo: *no pongas*, *no tengas*, *no vengas*, *no salgas*, *no hagas*, *no digas*, *no seas*, *no vayas*."
+          ]
+        },
+        {
+          "title": "Kata ganti: menempel atau di depan",
+          "body": [
+            "Satu aturan, dua sisi. Positif menempel di belakang; negatif berdiri di depan."
+          ],
+          "table": {
+            "head": ["Positif", "Larangan", "Arti"],
+            "rows": [
+              ["Ház**lo**.", "No **lo** hagas.", "Lakukan / jangan lakukan."],
+              ["Córta**las** finas.", "No **las** cortes gruesas.", "Potong tipis / jangan tebal."],
+              ["Dí**me**lo.", "No **me lo** digas.", "Bilang ke aku / jangan bilang."],
+              ["Siénta**te**.", "No **te** sientes.", "Duduk / jangan duduk."],
+              ["Vámo**nos**.", "No **nos** vayamos.", "Ayo pergi / jangan pergi."],
+              ["Dá**selo**.", "No **se lo** des.", "Kasih ke dia / jangan."]
+            ]
+          },
+          "after": [
+            "**Dua peleburan yang perlu dicatat**: *sentaos* (vosotros + os, huruf *d* hilang) dan *vámonos* (nosotros + nos, huruf *s* hilang). Keduanya sangat sering dipakai.",
+            "**Perintah telanjang terdengar kasar di banyak situasi.** Penutur melunakkannya dengan tiga cara: menambahkan *por favor*, memakai pertanyaan (*¿me pasas la sal?*), atau memakai *podrías* (*¿podrías pasarme la sal?*). Perintah langsung dipakai untuk petunjuk, resep, dan orang dekat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dapur, resep, dan petunjuk",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Español", "Cara baca", "Arti"],
+          "rows": [
+            ["pelar", "pe-LAR", "mengupas"],
+            ["cortar", "kor-TAR", "memotong"],
+            ["freír", "fre-IR", "menggoreng"],
+            ["batir", "ba-TIR", "mengocok"],
+            ["mezclar", "mes-KLAR", "mencampur"],
+            ["echar", "e-CHAR", "menuang, memasukkan"],
+            ["el aceite", "a-SEI-te", "minyak"],
+            ["la sal", "sal", "garam"],
+            ["la cebolla", "se-BO-ya", "bawang bombay"],
+            ["el huevo", "UE-bo", "telur"],
+            ["a fuego bajo", "a FUE-go BA-kho", "api kecil"],
+            ["dar la vuelta", "dar la BUEL-ta", "membalik"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Petunjuk tertulis memakai bentuk lain",
+          "items": [
+            "Resep di buku dan petunjuk di mesin jarang memakai perintah. Yang dipakai adalah **kata kerja dasar** (*pelar las patatas, cortarlas finas*) atau **bentuk *se*** (*se pelan las patatas, se cortan finas*). Keduanya terasa netral, tanpa menyuruh siapa pun secara langsung.",
+            "Rambu dan pengumuman memakai bentuk ketiga: *no fumar*, *empujar*, *tirar*, *no pisar el césped*. Kalau kamu melihat kata kerja dasar sendirian di papan pengumuman, itu adalah perintah untuk semua orang."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "apuntar", "baca": "a-pun-TAR", "id": "mencatat" },
+    { "es": "pelar", "baca": "pe-LAR", "id": "mengupas" },
+    { "es": "la patata", "baca": "pa-TA-ta", "id": "kentang" },
+    { "es": "fino", "baca": "FI-no", "id": "tipis, halus" },
+    { "es": "grueso", "baca": "GRUE-so", "id": "tebal" },
+    { "es": "duro", "baca": "DU-ro", "id": "keras" },
+    { "es": "la prisa", "baca": "PRI-sa", "id": "buru-buru" },
+    { "es": "freír", "baca": "fre-IR", "id": "menggoreng" },
+    { "es": "el fuego", "baca": "FUE-go", "id": "api" },
+    { "es": "el aceite", "baca": "a-SEI-te", "id": "minyak" },
+    { "es": "cubrir", "baca": "ku-BRIR", "id": "menutupi" },
+    { "es": "la cebolla", "baca": "se-BO-ya", "id": "bawang bombay" },
+    { "es": "pochar", "baca": "po-CHAR", "id": "menumis pelan" },
+    { "es": "batir", "baca": "ba-TIR", "id": "mengocok" },
+    { "es": "mezclar", "baca": "mes-KLAR", "id": "mencampur" },
+    { "es": "reposar", "baca": "rre-po-SAR", "id": "didiamkan" },
+    { "es": "cuajar", "baca": "kua-KHAR", "id": "mengeras, membeku" },
+    { "es": "el plato", "baca": "PLA-to", "id": "piring" },
+    { "es": "romperse", "baca": "rrom-PER-se", "id": "pecah, hancur" },
+    { "es": "el revuelto", "baca": "rre-BUEL-to", "id": "telur orak-arik" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi perintah untuk *tú*.",
+      "items": [
+        "pelar → ____",
+        "cortar → ____",
+        "poner → ____",
+        "hacer → ____",
+        "venir → ____",
+        "decir → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi larangan untuk *tú*.",
+      "items": [
+        "Fríelas a fuego fuerte. → ____",
+        "Ponlo ahí. → ____",
+        "Hazlo ahora. → ____",
+        "Dímelo. → ____",
+        "Muévela. → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi perintah untuk *usted*.",
+      "items": [
+        "Pela las patatas. → ____",
+        "Corta la cebolla. → ____",
+        "Ven aquí. → ____",
+        "No lo hagas. → ____",
+        "Siéntate. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol (pakai *tú*).",
+      "items": [
+        "Kupas empat kentang dan potong tipis-tipis.",
+        "Jangan digoreng dengan api besar.",
+        "Kocok telurnya yang rata.",
+        "Diamkan sepuluh menit.",
+        "Jangan digoyang selagi mengeras."
+      ]
+    }
+  ],
+  "answers": [
+    "pela — corta — pon — haz — ven — di",
+    "No las frías a fuego fuerte. — No lo pongas ahí. — No lo hagas ahora. — No me lo digas. — No la muevas.",
+    "Pele las patatas. — Corte la cebolla. — Venga aquí. — No lo haga. — Siéntese.",
+    "Pela cuatro patatas y córtalas finas. — No las frías a fuego fuerte. — Bate bien los huevos. — Déjalo reposar diez minutos. — No la muevas mientras cuaja."
+  ],
+  "wave": "Ulangi **unit 5**: bayangkan kamu sedang mencari rumah, pekerjaan, dan teman sekamar sekaligus, lalu sebutkan syarat masing-masing selama satu menit dengan *busco algo/alguien que…*."
+}
