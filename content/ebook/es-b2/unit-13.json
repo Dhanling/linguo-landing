@@ -1,0 +1,203 @@
+{
+  "title": "Saya mau ajukan keluhan resmi",
+  "title_target": "Quisiera poner una reclamación",
+  "goal": "Mengurus perkara resmi: mengajukan keluhan, menuntut hak, dan bertahan menghadapi bahasa birokrasi yang sengaja dibuat berbelit.",
+  "bekal": [
+    "memakai *quisiera*, *desearía*, *me gustaría que* di loket dan telepon",
+    "membaca kalimat administratif yang subjeknya sengaja dihilangkan",
+    "menuntut dengan dasar: *conforme a*, *según el reglamento*, *me ampara*",
+    "menyusun surat keluhan yang tak bisa diabaikan"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Mostrador de incidencias, vuelo cancelado",
+      "intro": "Bandara Barajas, pukul sebelas malam. Penerbangan ke Vigo dibatalkan. Antrean panjang, dan Nando sudah tiga jam berdiri. Perhatikan bahwa petugasnya nyaris tak pernah memakai kalimat yang punya subjek.",
+      "lines": [
+        { "speaker": "Nando:", "text": "Buenas noches. Vengo por el vuelo de Vigo. Quisiera poner una reclamación.", "id": "Selamat malam. Saya soal penerbangan Vigo. Saya mau ajukan keluhan.", "literal": "baik malam-malam. saya-datang untuk itu penerbangan dari Vigo. saya-mau-akan menaruh satu keluhan." },
+        { "speaker": "Agente:", "text": "El vuelo se ha cancelado por causas meteorológicas. Se ofrece reubicación mañana.", "id": "Penerbangan dibatalkan karena cuaca. Ditawarkan penjadwalan ulang besok.", "literal": "itu penerbangan diri-itu ia-telah batalkan untuk sebab-sebab meteorologis. diri-itu ia-menawarkan penempatan-ulang besok." },
+        { "speaker": "Nando:", "text": "Ya, eso me lo han dicho tres veces. Lo que pregunto es qué hago esta noche.", "id": "Iya, itu sudah dibilang tiga kali. Yang saya tanya, malam ini saya gimana.", "literal": "sudah, itu kepadaku itu mereka-telah katakan tiga kali. itu yang saya-bertanya adalah apa saya-membuat ini malam." },
+        { "speaker": "Agente:", "text": "En caso de cancelación por meteorología no se contempla alojamiento.", "id": "Dalam hal pembatalan karena cuaca, akomodasi tidak disediakan.", "literal": "dalam kasus dari pembatalan untuk meteorologi tidak diri-itu ia-mempertimbangkan penginapan." },
+        { "speaker": "Nando:", "text": "Perdone, pero eso no es exacto. El reglamento europeo me ampara igualmente.", "id": "Maaf, tapi itu tidak tepat. Peraturan Eropa tetap melindungi saya.", "literal": "maafkan, tetapi itu tidak adalah persis. itu peraturan Eropa kepadaku ia-melindungi sama-juga." },
+        { "speaker": "Agente:", "text": "El derecho a compensación económica no aplica en circunstancias extraordinarias.", "id": "Hak atas kompensasi uang tidak berlaku dalam keadaan luar biasa.", "literal": "itu hak kepada kompensasi ekonomis tidak ia-berlaku dalam keadaan-keadaan luar-biasa." },
+        { "speaker": "Nando:", "text": "La compensación no, de acuerdo. Pero la atención sí: comida y hotel. Son cosas distintas.", "id": "Kompensasinya memang tidak, setuju. Tapi bantuannya iya: makan dan hotel. Itu dua hal berbeda.", "literal": "itu kompensasi tidak, dari kesepakatan. tetapi itu perhatian ya: makanan dan hotel. mereka-adalah hal-hal berbeda." },
+        { "speaker": "Agente:", "text": "Un momento, que lo consulto. ¿Me facilita su localizador, por favor?", "id": "Sebentar, saya cek. Boleh minta kode bookingnya?", "literal": "satu momen, bahwa itu saya-berkonsultasi. kepadaku anda-memudahkan anda punya pelokasi, untuk kebaikan?" },
+        { "speaker": "Nando:", "text": "Aquí lo tiene. Y si no le importa, deme también la hoja de reclamaciones.", "id": "Ini. Dan kalau tidak keberatan, tolong lembar keluhannya juga.", "literal": "di-sini itu anda-punya. dan jika tidak kepada-anda ia-mementingkan, berikan-kepadaku juga itu lembar dari keluhan-keluhan." },
+        { "speaker": "Agente:", "text": "Está en su derecho. Se la imprimo. Aunque le adelanto que la resolución tarda.", "id": "Itu hak Anda. Saya cetakkan. Tapi saya kasih tahu duluan, putusannya lama.", "literal": "ia-berada dalam anda punya hak. kepada-anda itu saya-cetak. walaupun kepada-anda saya-memajukan bahwa itu putusan ia-berlama." },
+        { "speaker": "Nando:", "text": "No tengo prisa. Con que quede constancia por escrito, me vale.", "id": "Saya nggak buru-buru. Asal tercatat tertulis, buat saya cukup.", "literal": "tidak saya-punya tergesa. dengan bahwa ia-tinggallah bukti untuk tertulis, kepadaku ia-berharga." },
+        { "speaker": "Agente:", "text": "Mire, le he encontrado plaza en el de las siete y veinte. Y hotel con traslado.", "id": "Begini, saya dapat kursi di penerbangan tujuh dua puluh. Sama hotel dengan antar-jemput.", "literal": "lihat, kepada-anda saya-telah temukan tempat dalam itu dari itu tujuh dan dua-puluh. dan hotel dengan pemindahan." },
+        { "speaker": "Nando:", "text": "Se lo agradezco de verdad. ¿Eso me lo puede dar impreso también?", "id": "Terima kasih banget. Itu bisa dicetakkan juga?", "literal": "kepada-anda itu saya-berterima-kasih dari kebenaran. itu kepadaku itu anda-bisa memberi tercetak juga?" },
+        { "speaker": "Agente:", "text": "Todo impreso. Y no se olvide de guardar los tiques de la cena.", "id": "Semuanya dicetak. Dan jangan lupa simpan struk makan malamnya.", "literal": "semua tercetak. dan tidak diri-anda anda-lupalah dari menyimpan itu struk-struk dari itu makan-malam." },
+        { "speaker": "Nando:", "text": "Lo tendré en cuenta. Perdone si he sonado brusco antes, llevo tres horas de pie.", "id": "Saya ingat. Maaf kalau tadi saya kedengeran ketus, tiga jam saya berdiri.", "literal": "itu saya-akan-punya dalam hitungan. maafkan jika saya-telah berbunyi kasar sebelumnya, saya-membawa tiga jam dari kaki." },
+        { "speaker": "Agente:", "text": "Nada, hombre. Aquí llevamos todos el mismo día. Buen viaje mañana.", "id": "Nggak apa-apa. Di sini kita semua ngalamin hari yang sama. Selamat jalan besok.", "literal": "apa-apa, lelaki. di-sini kami-membawa semua itu sama hari. baik perjalanan besok." }
+      ],
+      "notes": [
+        "**Perhatikan siapa yang hilang dari kalimat petugas.** *Se ha cancelado*, *se ofrece*, *no se contempla*, *no aplica* — tak satu pun menyebut pelakunya. Itu bukan kebetulan: bahasa administratif Spanyol memakai impersonal justru agar tak ada yang bisa dituntut. Unit 7 memberimu alatnya; di sini kamu melihat gunanya.",
+        "***Quisiera*** adalah imperfecto de subjuntivo dari *querer*, dan ia dipakai sebagai bentuk **paling sopan** untuk menyatakan keinginan di loket, telepon, dan surat. Kerabatnya: *desearía*, *me gustaría*. Ketiganya lebih halus daripada *quiero*, yang di loket terdengar seperti tuntutan.",
+        "***Me ampara*** — *amparar* berarti melindungi secara hukum. Ia bagian dari sekelompok kata yang mengubah keluhan jadi tuntutan: *conforme a la normativa*, *según el reglamento*, *tengo derecho a*, *me consta que*.",
+        "***Eso no es exacto*** lebih efektif daripada *eso es mentira* karena ia menyerang isinya, bukan orangnya. Di loket, menyerang orangnya hampir selalu memperlambat urusanmu.",
+        "***La hoja de reclamaciones*** adalah lembar keluhan resmi yang wajib disediakan tiap usaha di Spanyol. Menyebut namanya adalah langkah tawar-menawar tersendiri: begitu diminta, banyak perkara mendadak menemukan jalan keluarnya.",
+        "***Que quede constancia*** berarti \"supaya tercatat\". Ia dipakai baik di loket maupun di rapat, dan sering muncul sebagai *que conste que…* — \"catat ya, bahwa…\".",
+        "***Le adelanto que…*** memberitahukan sesuatu lebih dulu, biasanya yang tak enak. Kerabatnya: *le aviso de que*, *le informo de que*, *para que lo sepa*.",
+        "***Tener en cuenta*** = memperhitungkan, mengingat. Ia salah satu ungkapan tetap dengan *tener* yang paling sering muncul: *tener ganas de*, *tener prisa*, *tener razón*, *tener cuidado*, *tener en cuenta*."
+      ],
+      "grammars": [
+        {
+          "title": "Membaca bahasa administratif",
+          "body": [
+            "Bahasa birokrasi Spanyol punya ciri tetap. Mengenalinya membuat surat setebal apa pun bisa dibaca dalam dua menit — dan membuatmu bisa menirunya kalau perlu."
+          ],
+          "table": {
+            "head": ["Ciri", "Contoh administratif", "Terjemahan sehari-harinya"],
+            "rows": [
+              ["kata kerja jadi kata benda", "se procederá al abono", "le devolveremos el dinero"],
+              ["impersonal dengan se", "no se contempla alojamiento", "no damos hotel"],
+              ["kata depan bertumpuk", "en relación con lo dispuesto en…", "sobre lo que dice…"],
+              ["futuro perintah", "el usuario deberá presentar…", "trae el documento"],
+              ["kata sifat panjang", "circunstancias extraordinarias", "cosas raras"],
+              ["rujukan pasal", "conforme al artículo 5.2", "según la ley"],
+              ["kalimat pasif", "será notificado en su domicilio", "te lo mandamos a casa"],
+              ["gerundio resmi", "habiendo sido informado…", "como ya te avisamos…"]
+            ]
+          },
+          "after": [
+            "**Kalau kamu tersesat di satu kalimat panjang, cari kata kerjanya lebih dulu**, lalu tanyakan siapa pelakunya. Di sembilan dari sepuluh kalimat administratif, jawabannya \"tidak disebut\" — dan itu sendiri sudah informasi.",
+            "***Deberá*** dan ***habrá de*** adalah bentuk perintah dalam ragam resmi. Keduanya berarti \"wajib\", bukan \"mungkin akan\", walaupun bentuknya futuro.",
+            "**Untuk menulis balasan yang setara beratnya**, cukup tiga hal: sebut dasar hukumnya, sebut tanggal dan nomor berkas, lalu tutup dengan *quedo a la espera de su respuesta*. Nada resmi dibuat oleh kerangka, bukan oleh kata-kata sulit."
+          ]
+        },
+        {
+          "title": "Menuntut hak dengan tenang",
+          "body": [
+            "Susunan keluhan yang berhasil selalu berurutan: fakta, dasar, tuntutan, tenggat. Marah boleh, tapi ia diletakkan di luar keempat bagian ini."
+          ],
+          "table": {
+            "head": ["Tahap", "Rumusan", "Contoh"],
+            "rows": [
+              ["fakta", "El día X…", "El día 4 de mayo mi vuelo fue cancelado."],
+              ["dasar", "Conforme a… / Según…", "Conforme al Reglamento 261/2004…"],
+              ["hak", "Tengo derecho a…", "Tengo derecho a asistencia y alojamiento."],
+              ["tuntutan", "Solicito que + subj.", "Solicito que se me reembolse la cena."],
+              ["bukti", "Adjunto…", "Adjunto los tiques y la tarjeta de embarque."],
+              ["tenggat", "en el plazo de…", "en el plazo de quince días hábiles"],
+              ["ancaman halus", "me veré obligado a…", "me veré obligado a acudir a consumo"],
+              ["penutup", "Quedo a la espera…", "Quedo a la espera de su respuesta."]
+            ]
+          },
+          "after": [
+            "***Solicito que…* selalu subjuntivo**: *solicito que **se me reembolse***, *solicito que **se revise** el expediente*. Bentuk ini menggantikan *quiero que* di seluruh ragam tertulis resmi.",
+            "***Días hábiles*** berarti hari kerja, ***días naturales*** berarti hari kalender. Perbedaannya penting dan sering dipakai untuk mengulur waktu; sebutkan yang mana yang kamu maksud.",
+            "***Me veré obligado a…*** adalah ancaman yang paling sopan sekaligus paling efektif dalam bahasa Spanyol tertulis. Ia mengumumkan langkah berikutnya tanpa menuduh siapa pun."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Loket, berkas, dan hak konsumen",
+      "blocks": [
+        { "type": "tabel", "head": ["Español", "Cara baca", "Arti"], "rows": [
+          ["la reclamación", "rre-kla-ma-SION", "keluhan resmi"],
+          ["la hoja de reclamaciones", "O-kha de rre-kla-ma-SIO-nes", "lembar keluhan"],
+          ["el expediente", "eks-pe-DIEN-te", "berkas perkara"],
+          ["el reglamento", "rre-gla-MEN-to", "peraturan"],
+          ["la normativa", "nor-ma-TI-ba", "ketentuan"],
+          ["el reembolso", "rre-em-BOL-so", "pengembalian uang"],
+          ["la compensación", "kom-pen-sa-SION", "kompensasi"],
+          ["el alojamiento", "a-lo-kha-MIEN-to", "penginapan"],
+          ["el localizador", "lo-ka-li-sa-DOR", "kode pemesanan" ],
+          ["el justificante", "khus-ti-fi-KAN-te", "bukti, tanda terima"],
+          ["días hábiles", "DI-as A-bi-les", "hari kerja"],
+          ["la ventanilla", "ben-ta-NI-lia", "loket"]
+        ] },
+        { "type": "sub", "text": "Bertahan di loket tanpa meledak" },
+        { "type": "tabel", "head": ["Potongan", "Fungsinya", "Contoh"], "rows": [
+          ["quisiera…", "membuka permintaan dengan sopan", "Quisiera poner una reclamación."],
+          ["lo que pregunto es…", "mengembalikan ke pertanyaan", "Lo que pregunto es qué hago hoy."],
+          ["eso no es exacto", "mengoreksi tanpa menuduh", "Perdone, pero eso no es exacto."],
+          ["tengo derecho a…", "menyebut dasar", "Tengo derecho a asistencia."],
+          ["son cosas distintas", "memisahkan dua pokok", "La compensación y la atención son cosas distintas."],
+          ["deme la hoja", "menaikkan taruhan", "Deme la hoja de reclamaciones."],
+          ["que quede constancia", "meminta bukti tertulis", "Con que quede constancia, me vale."],
+          ["me veré obligado a…", "mengumumkan langkah berikut", "Me veré obligado a acudir a consumo."]
+        ] },
+        { "type": "kotak", "title": "Dua hal yang menghemat berjam-jam", "items": [
+          "**Minta semuanya tertulis.** *¿Me lo puede dar por escrito?* adalah kalimat paling berguna dalam urusan resmi Spanyol. Janji lisan di loket tak punya nilai apa pun begitu kamu berganti petugas.",
+          "**Simpan semua struk.** Kata kuncinya *el justificante*: *guarde los justificantes*, *sin justificante no hay reembolso*. Pengembalian uang di Spanyol hampir selalu bergantung pada kertas kecil, bukan pada siapa yang benar."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "la reclamación", "baca": "rre-kla-ma-SION", "id": "keluhan resmi" },
+    { "es": "cancelar", "baca": "kan-se-LAR", "id": "membatalkan" },
+    { "es": "la reubicación", "baca": "rreu-bi-ka-SION", "id": "penjadwalan ulang" },
+    { "es": "contemplar", "baca": "kon-tem-PLAR", "id": "mengatur, menyediakan" },
+    { "es": "el alojamiento", "baca": "a-lo-kha-MIEN-to", "id": "penginapan" },
+    { "es": "el reglamento", "baca": "rre-gla-MEN-to", "id": "peraturan" },
+    { "es": "amparar", "baca": "am-pa-RAR", "id": "melindungi secara hukum" },
+    { "es": "la compensación", "baca": "kom-pen-sa-SION", "id": "kompensasi" },
+    { "es": "la circunstancia", "baca": "sir-kuns-TAN-sia", "id": "keadaan" },
+    { "es": "la atención", "baca": "a-ten-SION", "id": "bantuan, layanan" },
+    { "es": "consultar", "baca": "kon-sul-TAR", "id": "memeriksa, menanyakan" },
+    { "es": "facilitar", "baca": "fa-si-li-TAR", "id": "memberikan" },
+    { "es": "el localizador", "baca": "lo-ka-li-sa-DOR", "id": "kode pemesanan" },
+    { "es": "imprimir", "baca": "im-pri-MIR", "id": "mencetak" },
+    { "es": "la resolución", "baca": "rre-so-lu-SION", "id": "putusan" },
+    { "es": "la constancia", "baca": "kons-TAN-sia", "id": "catatan resmi" },
+    { "es": "el traslado", "baca": "tras-LA-do", "id": "antar-jemput" },
+    { "es": "el tique", "baca": "TI-ke", "id": "struk" },
+    { "es": "brusco", "baca": "BRUS-ko", "id": "ketus" },
+    { "es": "de pie", "baca": "de pie", "id": "berdiri" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah kalimat sehari-hari berikut ke ragam administratif.",
+      "items": [
+        "No damos hotel. → ____",
+        "Te devolvemos el dinero. → ____",
+        "Trae el documento. → ____",
+        "Te lo mandamos a casa. → ____",
+        "Según la ley, tienes derecho. → ____",
+        "Cancelamos el vuelo por el tiempo. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun surat keluhan: lengkapi tiap tahapnya.",
+      "items": [
+        "Fakta: El día 4 de mayo mi vuelo ____ (cancelar, pasif).",
+        "Dasar: ____ al Reglamento 261/2004…",
+        "Hak: ____ derecho a asistencia y alojamiento.",
+        "Tuntutan: Solicito que se me (reembolsar) ____ la cena.",
+        "Tenggat: en el ____ de quince días hábiles."
+      ]
+    },
+    {
+      "prompt": "Lunakkan permintaan berikut memakai *quisiera*, *me gustaría*, *¿me podría…?* atau *deme*.",
+      "items": [
+        "Quiero poner una reclamación. → ____",
+        "Dame la hoja de reclamaciones. → ____",
+        "¿Puedes imprimirlo? (usted) → ____",
+        "Quiero saber qué hago esta noche. → ____",
+        "Necesito el justificante. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Yang saya tanya, malam ini saya gimana.",
+        "Maaf, tapi itu tidak tepat.",
+        "Peraturan Eropa tetap melindungi saya.",
+        "Asal tercatat tertulis, buat saya cukup.",
+        "Jangan lupa simpan struk makan malamnya."
+      ]
+    }
+  ],
+  "answers": [
+    "No se contempla alojamiento. — Se procederá al abono del importe. — El usuario deberá presentar el documento. — Será notificado en su domicilio. — Conforme a la normativa, le asiste ese derecho. — El vuelo ha sido cancelado por causas meteorológicas.",
+    "fue cancelado — Conforme — Tengo — reembolse — plazo",
+    "Quisiera poner una reclamación. — Deme la hoja de reclamaciones, por favor. — ¿Me lo podría imprimir? — Me gustaría saber qué hago esta noche. — ¿Me facilita el justificante, por favor?",
+    "Lo que pregunto es qué hago esta noche. — Perdone, pero eso no es exacto. — El reglamento europeo me ampara igualmente. — Con que quede constancia por escrito, me vale. — No se olvide de guardar los tiques de la cena."
+  ],
+  "wave": "Kembali ke unit 12 dan ambil kerangka surat kerjanya. Tulis satu surat keluhan lengkap tentang penerbangan yang dibatalkan, memakai empat tahap unit ini. Lalu baca keras-keras: kalau ada satu kalimat yang terdengar marah, ganti — surat keluhan yang berhasil selalu terdengar bosan."
+}

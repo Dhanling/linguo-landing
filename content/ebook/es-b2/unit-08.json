@@ -1,0 +1,203 @@
+{
+  "title": "Katanya sih dia bakal datang",
+  "title_target": "Dijo que vendría",
+  "goal": "Menyampaikan ulang perkataan orang secara lengkap: pergeseran waktu, tempat, dan orang, ditambah kata kerja bicara yang membawa penilaian sendiri.",
+  "bekal": [
+    "menggeser seluruh bentuk kata kerja saat melaporkan perkataan lampau",
+    "menggeser penanda waktu dan tempat: *hoy* → *aquel día*, *aquí* → *allí*",
+    "melaporkan pertanyaan dan perintah",
+    "memilih kata kerja bicara yang tepat: *insistir*, *advertir*, *insinuar*, *recalcar*"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — Lo que dijo en la reunión",
+      "intro": "Pilar tidak hadir di rapat kemarin. Hoy, di dapur kantor, Dani menceritakannya kembali. Perhatikan bahwa hampir tak ada satu pun kalimat langsung di halaman ini — semuanya laporan.",
+      "lines": [
+        { "speaker": "Pilar:", "text": "Cuéntame, que ayer no pude entrar. ¿Qué dijo exactamente?", "id": "Cerita dong, kemarin aku nggak bisa masuk. Dia bilang apa persisnya?", "literal": "ceritakan-kepadaku, bahwa kemarin tidak saya-bisa masuk. apa ia-berkata persisnya?" },
+        { "speaker": "Dani:", "text": "Empezó diciendo que el trimestre había ido mejor de lo previsto.", "id": "Dia mulai dengan bilang kuartalnya lebih bagus dari perkiraan.", "literal": "ia-memulai mengatakan bahwa itu triwulan ia-telah pergi lebih-baik dari itu diramalkan." },
+        { "speaker": "Pilar:", "text": "Eso ya lo sabíamos. ¿Y lo de las contrataciones? Era lo único que me interesaba.", "id": "Itu kita udah tahu. Terus soal rekrutmen? Cuma itu yang aku pengin tahu.", "literal": "itu sudah itu kami-tahu. dan itu dari itu perekrutan-perekrutan? ia-adalah itu satu-satunya yang kepadaku ia-menarik." },
+        { "speaker": "Dani:", "text": "Dijo que se contratarían dos personas, pero no dijo cuándo ni para qué equipo.", "id": "Katanya bakal rekrut dua orang, tapi nggak bilang kapan atau buat tim mana.", "literal": "ia-berkata bahwa diri-mereka mereka-akan-merekrut dua orang, tetapi tidak ia-berkata kapan tidak-juga untuk apa tim." },
+        { "speaker": "Pilar:", "text": "Típico. ¿Y nadie preguntó?", "id": "Tipikal. Terus nggak ada yang nanya?", "literal": "tipikal. dan tak-seorang-pun ia-bertanya?" },
+        { "speaker": "Dani:", "text": "Sí, Marga le preguntó si eso incluía el equipo de soporte, y él se fue por las ramas.", "id": "Ada, Marga nanya apa itu termasuk tim support, dan dia muter-muter.", "literal": "ya, Marga kepadanya ia-bertanya jika itu ia-mencakup itu tim dari dukungan, dan dia diri-dia ia-pergi lewat itu ranting-ranting." },
+        { "speaker": "Pilar:", "text": "Cómo no. ¿Y no insistió ella?", "id": "Ya jelas. Terus dia nggak ngedesak?", "literal": "bagaimana tidak. dan tidak ia-mendesak dia?" },
+        { "speaker": "Dani:", "text": "Insistió en que le diera una fecha. Él contestó que ya se vería.", "id": "Dia ngedesak minta dikasih tanggal. Dia jawab nanti dilihat.", "literal": "ia-mendesak dalam bahwa kepadanya ia-berilah satu tanggal. dia ia-menjawab bahwa sudah diri-itu ia-akan-terlihat." },
+        { "speaker": "Pilar:", "text": "O sea, nada. ¿Y comentó algo del traslado de planta?", "id": "Berarti nol. Terus dia nyinggung soal pindah lantai nggak?", "literal": "atau menjadi, apa-apa. dan ia-mengomentari sesuatu dari-itu pemindahan dari lantai?" },
+        { "speaker": "Dani:", "text": "Insinuó que podría pasar antes del verano. No lo dijo, pero lo dejó caer.", "id": "Dia nyerempet-nyerempet bisa jadi sebelum musim panas. Nggak dibilang, tapi dilempar gitu.", "literal": "ia-menyiratkan bahwa ia-bisa-akan terjadi sebelum dari-itu musim-panas. tidak itu ia-berkata, tetapi itu ia-membiarkan jatuh." },
+        { "speaker": "Pilar:", "text": "Mira, eso sí me preocupa. ¿Y advirtió de algo más?", "id": "Nah, itu bikin aku khawatir. Terus dia ngasih peringatan lain nggak?", "literal": "lihat, itu ya kepadaku ia-mengkhawatirkan. dan ia-memperingatkan dari sesuatu lebih?" },
+        { "speaker": "Dani:", "text": "Advirtió de que en octubre habría una auditoría. Y recalcó que había que tenerlo todo al día.", "id": "Dia ngasih tahu Oktober bakal ada audit. Dan dia tekankan semuanya harus rapi.", "literal": "ia-memperingatkan dari bahwa dalam Oktober ia-akan-ada satu audit. dan ia-menekankan bahwa ia-ada bahwa memiliki-itu semua ke-itu hari." },
+        { "speaker": "Pilar:", "text": "Pues me pongo esta tarde. ¿Pidió algo concreto?", "id": "Ya udah sore ini aku garap. Dia minta sesuatu yang konkret?", "literal": "maka kepadaku saya-menaruh ini sore. ia-meminta sesuatu konkret?" },
+        { "speaker": "Dani:", "text": "Nos pidió que revisáramos los expedientes viejos antes de que llegaran.", "id": "Dia minta kita cek berkas-berkas lama sebelum mereka datang.", "literal": "kepada-kami ia-meminta bahwa kami-memeriksalah itu berkas-berkas tua sebelum dari bahwa mereka-tibalah." },
+        { "speaker": "Pilar:", "text": "Vale. Oye, gracias por el resumen. Me ha servido más que el acta.", "id": "Oke. Eh, makasih ringkasannya. Lebih berguna daripada notulennya.", "literal": "baik. dengar, terima-kasih untuk itu ringkasan. kepadaku ia-telah berguna lebih dari itu notulen." },
+        { "speaker": "Dani:", "text": "El acta la escribió Marga, y sospecho que quitó justo lo interesante.", "id": "Notulennya ditulis Marga, dan aku curiga dia buang justru bagian menariknya.", "literal": "itu notulen itu ia-menulis Marga, dan saya-mencurigai bahwa ia-mencabut persis itu menarik." }
+      ],
+      "notes": [
+        "**Aturan pergeserannya sama seperti B1, tapi di sini muncul lengkap dalam satu halaman.** *Ha ido mejor* → *había ido mejor*; *se contratarán* → *se contratarían*; *ya se verá* → *ya se vería*; *revisad* → *que revisáramos*.",
+        "**Yang bergeser bukan cuma kata kerja.** *Hoy* → *aquel día*, *mañana* → *al día siguiente*, *aquí* → *allí*, *este* → *aquel*, *venir* → *ir*, *traer* → *llevar*. Di dialog ini pergeserannya tersembunyi karena Dani bercerita di tempat yang sama, tapi di tulisan ia wajib.",
+        "***Insistió en que le diera*** — *insistir* menuntut *en* lalu subjuntivo ketika isinya permintaan. Kalau isinya penegasan, ia memakai indicativo: *insistió en que no lo sabía* (ia bersikeras tidak tahu).",
+        "***Advirtió de que…*** dengan *de* melaporkan peringatan tentang sesuatu; ***advirtió que…*** tanpa *de* juga sah dan lebih lisan. Kalau isinya ancaman atau perintah, ia menarik subjuntivo: *me advirtió que no lo hiciera*.",
+        "***Insinuar* dan *dejar caer* adalah sepasang.** Keduanya melaporkan sesuatu yang dikatakan setengah, tanpa tanggung jawab. *Lo dejó caer* harfiahnya \"dia membiarkannya jatuh\", persis seperti \"dilempar gitu aja\".",
+        "***Irse por las ramas*** harfiahnya \"pergi lewat ranting-ranting\": menghindar dengan berputar-putar. Lawannya *ir al grano* (langsung ke pokok). Dua ungkapan yang sangat sering muncul di rapat.",
+        "***Cómo no*** di sini bukan pertanyaan, melainkan tanggapan sinis: \"ya jelas\", \"sudah pasti\". Di Amerika Latin ungkapan yang sama justru berarti \"tentu saja, silakan\" — dan unit 17 mengumpulkan jebakan-jebakan seperti ini.",
+        "***Tenerlo todo al día*** berarti menjaga semuanya tetap mutakhir. Kerabatnya: *ponerse al día* (menyusul ketertinggalan), *estar al día* (mengikuti perkembangan), *ponerse a ello* (mulai mengerjakan)."
+      ],
+      "grammars": [
+        {
+          "title": "Tabel pergeseran lengkap",
+          "body": [
+            "Kalau kata kerja pelapor berdiri di masa lampau (*dijo*, *comentó*, *preguntó*), seluruh isi laporan mundur satu langkah. Kalau pelapornya di masa sekarang (*dice*), tak ada yang bergeser sama sekali."
+          ],
+          "table": {
+            "head": ["Kata aslinya", "Jadi", "Contoh"],
+            "rows": [
+              ["presente (viene)", "imperfecto", "dijo que **venía**"],
+              ["perfecto (ha venido)", "pluscuamperfecto", "dijo que **había venido**"],
+              ["indefinido (vino)", "pluscuamperfecto", "dijo que **había venido**"],
+              ["imperfecto (venía)", "tetap imperfecto", "dijo que **venía**"],
+              ["futuro (vendrá)", "condicional", "dijo que **vendría**"],
+              ["futuro compuesto (habrá venido)", "condicional compuesto", "dijo que **habría venido**"],
+              ["perintah (ven)", "que + imperf. subj.", "me pidió que **viniera**"],
+              ["presente subj. (venga)", "imperfecto subj.", "quería que **viniera**"]
+            ]
+          },
+          "after": [
+            "**Penanda waktu dan tempat ikut bergeser**: *hoy* → *aquel día*, *ayer* → *el día anterior*, *mañana* → *al día siguiente*, *ahora* → *entonces*, *aquí* → *allí*, *este* → *aquel*, *venir* → *ir*, *traer* → *llevar*.",
+            "**Kalau isinya masih berlaku, pergeseran boleh tidak dilakukan.** *Dijo que la reunión **es** a las diez* sah kalau rapatnya belum berlangsung. Penutur memilih menurut apakah mereka masih membenarkan isinya.",
+            "**Pertanyaan dilaporkan dua cara.** Pertanyaan ya-tidak memakai *si*: *me preguntó **si** venía*. Pertanyaan berkata tanya mempertahankan kata tanyanya beserta aksennya: *me preguntó **cuándo** venía*."
+          ]
+        },
+        {
+          "title": "Kata kerja bicara yang membawa penilaian",
+          "body": [
+            "Di B2, *decir* saja tak cukup. Pilihan kata kerja pelapor memberi tahu pendengar **bagaimana** sesuatu dikatakan — dan seringkali apa pendapatmu tentangnya."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Susunan", "Nada yang dibawanya"],
+            "rows": [
+              ["comentar", "comentar que + ind.", "netral, sambil lalu"],
+              ["señalar / indicar", "señalar que + ind.", "netral, tertulis"],
+              ["recalcar / subrayar", "recalcar que + ind.", "menekankan"],
+              ["insistir", "insistir en que + ind./subj.", "mengulang, mendesak"],
+              ["sostener / mantener", "sostener que + ind.", "bertahan walau dibantah"],
+              ["reconocer / admitir", "reconocer que + ind.", "mengaku"],
+              ["negar", "negar que + subj.", "menyangkal"],
+              ["insinuar / dar a entender", "insinuar que + ind.", "mengatakan setengah"],
+              ["advertir", "advertir (de) que + ind./subj.", "memperingatkan"],
+              ["pedir / rogar / exigir", "pedir que + subj.", "meminta, menuntut"]
+            ]
+          },
+          "after": [
+            "**Kata kerja yang isinya permintaan selalu menarik subjuntivo**: *pedir*, *rogar*, *exigir*, *ordenar*, *sugerir*, *recomendar*, *aconsejar*. *Nos pidió que revisáramos*, bukan *que revisábamos*.",
+            "**Beberapa kata kerja berubah arti menurut bentuk yang menyusulnya.** *Decir que + indicativo* melaporkan; *decir que + subjuntivo* memerintah. *Me dijo que **venía*** (dia bilang dia datang) berbeda jauh dari *me dijo que **viniera*** (dia menyuruhku datang).",
+            "***Negar* menuntut subjuntivo** karena isinya disangkal: *negó que **hubiera** dicho eso*. Tapi sangkalan atas sangkalan kembali ke indicativo: *no niego que lo **dijo***."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rapat, laporan, dan kabar kantor",
+      "blocks": [
+        { "type": "tabel", "head": ["Español", "Cara baca", "Arti"], "rows": [
+          ["el trimestre", "tri-MES-tre", "kuartal"],
+          ["la contratación", "kon-tra-ta-SION", "perekrutan"],
+          ["el soporte", "so-POR-te", "dukungan teknis"],
+          ["el traslado", "tras-LA-do", "pemindahan"],
+          ["la planta", "PLAN-ta", "lantai gedung"],
+          ["la auditoría", "au-di-to-RI-a", "audit"],
+          ["el expediente", "eks-pe-DIEN-te", "berkas perkara"],
+          ["el acta", "AK-ta", "notulen"],
+          ["lo previsto", "lo pre-BIS-to", "yang diperkirakan"],
+          ["al día", "al DI-a", "mutakhir, tak tertinggal"]
+        ] },
+        { "type": "sub", "text": "Melaporkan dengan warna" },
+        { "type": "tabel", "head": ["Potongan", "Artinya", "Contoh"], "rows": [
+          ["empezó diciendo que…", "membuka laporan", "Empezó diciendo que iba bien."],
+          ["no lo dijo, pero lo dejó caer", "menyiratkan", "Lo dejó caer al final."],
+          ["se fue por las ramas", "berputar-putar", "Preguntaron y se fue por las ramas."],
+          ["fue al grano", "langsung ke pokok", "Esta vez fue al grano."],
+          ["según él…", "menurut versinya", "Según él, no había presupuesto."],
+          ["por lo visto…", "kabarnya", "Por lo visto se van dos personas."],
+          ["dicen por ahí que…", "gosip", "Dicen por ahí que cambia el jefe."],
+          ["que conste que…", "supaya tercatat", "Que conste que yo avisé."]
+        ] },
+        { "type": "kotak", "title": "Dua jebakan di kalimat tak langsung", "items": [
+          "***El acta*** berjenis perempuan walaupun memakai *el*. Kata benda perempuan yang dimulai dengan *a* bertekanan memakai *el* di bentuk tunggal supaya tak berbenturan bunyi: *el agua fría*, *el aula nueva*, *el acta anterior*. Bentuk jamaknya kembali normal: *las actas*.",
+          "**Kata tanya tetap beraksen di kalimat tak langsung.** *Me preguntó **qué** quería*, *no sé **dónde** está*, *dime **cuándo** llegas*. Aksennya tidak hilang hanya karena tanda tanyanya hilang."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "el trimestre", "baca": "tri-MES-tre", "id": "kuartal" },
+    { "es": "prever", "baca": "pre-BER", "id": "memperkirakan" },
+    { "es": "la contratación", "baca": "kon-tra-ta-SION", "id": "perekrutan" },
+    { "es": "incluir", "baca": "in-klu-IR", "id": "mencakup" },
+    { "es": "el soporte", "baca": "so-POR-te", "id": "dukungan teknis" },
+    { "es": "insistir", "baca": "in-sis-TIR", "id": "mendesak" },
+    { "es": "el traslado", "baca": "tras-LA-do", "id": "pemindahan" },
+    { "es": "insinuar", "baca": "in-si-NUAR", "id": "menyiratkan" },
+    { "es": "dejar caer", "baca": "de-KHAR ka-ER", "id": "melempar isyarat" },
+    { "es": "advertir", "baca": "ad-ber-TIR", "id": "memperingatkan" },
+    { "es": "la auditoría", "baca": "au-di-to-RI-a", "id": "audit" },
+    { "es": "recalcar", "baca": "rre-kal-KAR", "id": "menekankan" },
+    { "es": "el expediente", "baca": "eks-pe-DIEN-te", "id": "berkas" },
+    { "es": "revisar", "baca": "rre-bi-SAR", "id": "memeriksa" },
+    { "es": "el acta", "baca": "AK-ta", "id": "notulen" },
+    { "es": "servir", "baca": "ser-BIR", "id": "berguna" },
+    { "es": "sospechar", "baca": "sos-pe-CHAR", "id": "mencurigai" },
+    { "es": "irse por las ramas", "baca": "IR-se por las RRA-mas", "id": "berputar-putar" },
+    { "es": "ir al grano", "baca": "ir al GRA-no", "id": "langsung ke pokok" },
+    { "es": "por lo visto", "baca": "por lo BIS-to", "id": "kabarnya" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Laporkan perkataan berikut, dimulai dengan *Dijo que…*.",
+      "items": [
+        "\"El trimestre ha ido mejor.\" → ____",
+        "\"Contrataremos a dos personas.\" → ____",
+        "\"Ya se verá.\" → ____",
+        "\"Llegué tarde.\" → ____",
+        "\"Estoy revisando los expedientes.\" → ____",
+        "\"Habrá una auditoría en octubre.\" → ____"
+      ]
+    },
+    {
+      "prompt": "Laporkan pertanyaan dan perintah berikut.",
+      "items": [
+        "\"¿Vienes mañana?\" (preguntar) → Me preguntó ____",
+        "\"¿Cuándo empieza?\" (preguntar) → Me preguntó ____",
+        "\"Revisad los expedientes.\" (pedir) → Nos pidió ____",
+        "\"No lo hagas.\" (advertir) → Me advirtió ____",
+        "\"Dame una fecha.\" (insistir) → Insistió ____"
+      ]
+    },
+    {
+      "prompt": "Ganti *decir* dengan kata kerja bicara yang lebih tepat, lalu sesuaikan bentuknya.",
+      "items": [
+        "Dijo, sin decirlo del todo, que habría traslado. → ____",
+        "Dijo con fuerza que había que tenerlo todo al día. → ____",
+        "Dijo que no era verdad, negándolo. → ____",
+        "Dijo que sí, admitiendo su error. → ____",
+        "Dijo varias veces que le dieran una fecha. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Katanya bakal rekrut dua orang, tapi nggak bilang kapan.",
+        "Marga nanya apa itu termasuk tim support.",
+        "Nggak dibilang, tapi dilempar gitu aja.",
+        "Dia minta kita cek berkas-berkas lama.",
+        "Aku curiga dia buang justru bagian menariknya."
+      ]
+    }
+  ],
+  "answers": [
+    "Dijo que el trimestre había ido mejor. — Dijo que contratarían a dos personas. — Dijo que ya se vería. — Dijo que había llegado tarde. — Dijo que estaba revisando los expedientes. — Dijo que habría una auditoría en octubre.",
+    "si venía al día siguiente. — cuándo empezaba. — que revisáramos los expedientes. — que no lo hiciera. — en que le diera una fecha.",
+    "Insinuó que habría traslado. — Recalcó que había que tenerlo todo al día. — Negó que fuera verdad. — Reconoció que se había equivocado. — Insistió en que le dieran una fecha.",
+    "Dijo que se contratarían dos personas, pero no dijo cuándo. — Marga le preguntó si eso incluía el equipo de soporte. — No lo dijo, pero lo dejó caer. — Nos pidió que revisáramos los expedientes viejos. — Sospecho que quitó justo lo interesante."
+  ],
+  "wave": "Kembali ke unit 6 dan baca ulang rapat soal kerja kantor. Ceritakan seluruh dialognya kepada orang ketiga keesokan harinya, memakai enam kata kerja bicara berbeda dari kotak kedua. Perhatikan bahwa pilihan kata kerjanya sendiri sudah membocorkan kamu berpihak kepada siapa."
+}

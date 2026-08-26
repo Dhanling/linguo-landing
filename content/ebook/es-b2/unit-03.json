@@ -1,0 +1,200 @@
+{
+  "title": "Paling juga dia ketiduran",
+  "title_target": "Se habrá quedado dormido",
+  "goal": "Menduga tanpa memastikan: memakai futuro dan condicional untuk menebak, ditambah seluruh keluarga *quizá*, *puede que*, *deber de*, dan *a lo mejor*.",
+  "bekal": [
+    "memakai *futuro* untuk menebak keadaan sekarang, *futuro compuesto* untuk yang sudah lewat",
+    "memakai *condicional* untuk menebak masa lampau",
+    "membedakan *debe de estar* (dugaan) dan *debe estar* (kewajiban)",
+    "tahu mana penanda dugaan yang menuntut subjuntivo dan mana yang tidak"
+  ],
+  "dialogs": [
+    {
+      "title": "Diálogo — El compañero que no aparece",
+      "intro": "Pukul sepuluh lewat di kantor kecil sebuah perusahaan perangkat lunak. Sergio belum datang, dan rapat sudah setengah jam terlambat. Perhatikan bahwa hampir tak ada satu pun kalimat di halaman ini yang menyatakan kepastian.",
+      "lines": [
+        { "speaker": "Bea:", "text": "¿Sabes algo de Sergio? Llevamos media hora esperándolo.", "id": "Ada kabar dari Sergio? Kita udah setengah jam nungguin dia.", "literal": "kamu-tahu sesuatu dari Sergio? kami-membawa setengah jam menunggu-dia." },
+        { "speaker": "Álex:", "text": "Ni idea. Se habrá quedado dormido, que anoche salió tarde del bar.", "id": "Nggak tahu. Paling ketiduran, semalam dia pulang telat dari bar.", "literal": "tidak ide. diri-dia ia-akan-telah tinggal tertidur, bahwa tadi-malam ia-keluar terlambat dari-itu bar." },
+        { "speaker": "Bea:", "text": "No creo. Sergio es de los que ponen tres alarmas. Algo le habrá pasado.", "id": "Kayaknya nggak. Sergio tipe yang pasang tiga alarm. Pasti ada apa-apa.", "literal": "tidak saya-percaya. Sergio adalah dari itu-yang mereka-menaruh tiga alarm. sesuatu kepadanya ia-akan-telah terjadi." },
+        { "speaker": "Álex:", "text": "Bueno, tampoco te pongas en lo peor. Estará en un atasco.", "id": "Ya udah, jangan mikir yang paling parah. Paling kena macet.", "literal": "baik, juga-tidak kepadamu kamu-taruhlah dalam itu terburuk. ia-akan-berada dalam satu kemacetan." },
+        { "speaker": "Bea:", "text": "A esta hora ya no hay atascos. Serían las nueve cuando le escribí.", "id": "Jam segini udah nggak macet. Kira-kira jam sembilan waktu aku chat dia.", "literal": "pada ini jam sudah tidak ada kemacetan-kemacetan. mereka-akan-menjadi itu sembilan ketika kepadanya saya-menulis." },
+        { "speaker": "Álex:", "text": "¿Y no te contestó? Pues igual se ha quedado sin batería.", "id": "Terus nggak dibales? Ya mungkin baterainya habis.", "literal": "dan tidak kepadamu ia-menjawab? maka sama diri-dia ia-telah tinggal tanpa baterai." },
+        { "speaker": "Bea:", "text": "Puede que sea eso. Aunque le vi en línea hace veinte minutos.", "id": "Bisa jadi. Tapi tadi aku lihat dia online dua puluh menit lalu.", "literal": "ia-bisa bahwa ia-adalah itu. walaupun kepadanya saya-melihat dalam garis sejak dua-puluh menit." },
+        { "speaker": "Álex:", "text": "Entonces está vivo, que es lo importante. Debe de estar de camino.", "id": "Berarti dia hidup, itu yang penting. Pasti lagi di jalan.", "literal": "kemudian ia-berada hidup, yang adalah itu penting. ia-harus dari berada dari jalan." },
+        { "speaker": "Bea:", "text": "Quizá se le haya olvidado que la reunión se adelantó al lunes.", "id": "Mungkin dia lupa rapatnya dimajuin ke Senin.", "literal": "mungkin kepada-dirinya kepadanya ia-telahlah lupa bahwa itu rapat diri-itu ia-majukan ke-itu Senin." },
+        { "speaker": "Álex:", "text": "Uy, pues eso lo explicaría todo. Yo lo avisé por el grupo, no en privado.", "id": "Wah, itu bisa jelasin semuanya. Aku kabarin lewat grup, bukan japri.", "literal": "aduh, maka itu itu ia-akan-jelaskan semua. saya itu saya-kabari lewat itu grup, tidak dalam pribadi." },
+        { "speaker": "Bea:", "text": "Y él tiene el grupo silenciado desde diciembre. Ahí lo tienes.", "id": "Dan grup itu dia mute dari Desember. Nah itu dia.", "literal": "dan dia ia-punya itu grup dibungkam sejak Desember. di-sana itu kamu-punya." },
+        { "speaker": "Álex:", "text": "Vaya. Habrá pensado que la reunión era el lunes que viene.", "id": "Yah. Dia pasti mikir rapatnya Senin depan.", "literal": "aduh. ia-akan-telah pikir bahwa itu rapat ia-adalah itu Senin yang ia-datang." },
+        { "speaker": "Bea:", "text": "Llámalo tú, que a mí me va a colgar. Y dile que no pasa nada.", "id": "Kamu aja yang telepon, kalau aku pasti ditutup. Bilang nggak apa-apa.", "literal": "panggil-dia kamu, bahwa kepada saya kepadaku ia-pergi untuk menutup. dan katakan-kepadanya bahwa tidak ia-terjadi apa-apa." },
+        { "speaker": "Álex:", "text": "Voy. Aunque me apuesto lo que quieras a que sigue durmiendo.", "id": "Oke. Tapi aku berani taruhan apa aja dia masih tidur.", "literal": "saya-pergi. walaupun kepadaku saya-bertaruh itu yang kamu-maulah pada bahwa ia-melanjutkan tidur." },
+        { "speaker": "Bea:", "text": "Si está durmiendo, le invito yo al café durante un mes.", "id": "Kalau dia lagi tidur, aku yang traktir kopi sebulan.", "literal": "jika ia-berada tidur, kepadanya saya-mengundang saya ke-itu kopi selama satu bulan." },
+        { "speaker": "Álex:", "text": "Trato hecho. Y si no, invitas igual, por desconfiada.", "id": "Deal. Kalau ternyata nggak, kamu tetap traktir, karena udah suudzon.", "literal": "kesepakatan dibuat. dan jika tidak, kamu-mengundang sama, untuk tak-percaya." }
+      ],
+      "notes": [
+        "**Bentuk *futuro* di halaman ini hampir tak pernah bicara tentang masa depan.** *Estará en un atasco*, *debe de estar de camino*, *habrá pensado* — semuanya bicara tentang **sekarang** atau **kemarin**. Yang ditambahkan futuro bukan waktu, melainkan **ketidakpastian**.",
+        "**Dua tingkat dugaan dalam satu bentuk.** *Estará* menebak keadaan yang berlangsung sekarang; *habrá pensado* dan *se habrá quedado* menebak sesuatu yang sudah selesai. Rumusnya: futuro simple untuk sekarang, futuro compuesto untuk yang sudah lewat.",
+        "***Serían las nueve*** memakai condicional untuk menebak **waktu lampau** — \"kira-kira jam sembilan\". Ini pasangan lampau dari *serán las nueve* (\"mungkin sekarang jam sembilan\"). Sangat sering dipakai untuk jam, umur, harga, dan jumlah.",
+        "***Debe de estar* dengan *de*, bukan tanpa.** *Debe estar aquí* = dia harus ada di sini (kewajiban). *Debe de estar aquí* = dia mestinya ada di sini (dugaan). Penutur sehari-hari sering membuang *de*, tapi di tulisan perbedaan ini dijaga, dan di ujian ia ditanyakan.",
+        "***Puede que sea*** menuntut subjuntivo, sementara ***a lo mejor*** dan ***igual*** menuntut indicativo, walaupun ketiganya berarti \"mungkin\". Tak ada logika di baliknya; ini urusan hafalan, dan kotak kedua memberi daftar lengkapnya.",
+        "***Se le haya olvidado*** menumpuk dua hal yang sudah kamu punya: *olvidarse* bentuk yang menyalahkan keadaan (unit 7), dan perfecto de subjuntivo (unit 1), dipicu oleh *quizá*. Di B2 tumpukan seperti ini normal — bacalah dari kanan ke kiri saat membongkarnya.",
+        "***Ahí lo tienes*** harfiahnya \"di situ kamu punya itu\", dipakai persis seperti \"nah, itu dia\" ketika sebab suatu masalah baru ketahuan. Kerabatnya: *ya está* (\"selesai perkara\") dan *ahí está el problema*.",
+        "***Trato hecho*** = deal. Ungkapan baku untuk menutup taruhan atau tawar-menawar, sepadan dengan *hecho* saja atau *me lo quedo* di pasar."
+      ],
+      "grammars": [
+        {
+          "title": "Menebak dengan futuro dan condicional",
+          "body": [
+            "Bahasa Spanyol tak perlu kata \"mungkin\" untuk menduga: **bentuk kata kerjanya sendiri yang menandai dugaan.** Yang dipakai adalah bentuk masa depan dan kondisional, dipindahkan satu langkah ke belakang."
+          ],
+          "table": {
+            "head": ["Kepastian", "Dugaan", "Waktu yang dibicarakan"],
+            "rows": [
+              ["Son las nueve.", "**Serán** las nueve.", "sekarang"],
+              ["Está en casa.", "**Estará** en casa.", "sekarang"],
+              ["Ha salido ya.", "**Habrá salido** ya.", "baru saja lewat"],
+              ["Eran las nueve.", "**Serían** las nueve.", "lampau"],
+              ["Estaba en casa.", "**Estaría** en casa.", "lampau"],
+              ["Había salido.", "**Habría salido**.", "lampau lebih dulu"]
+            ]
+          },
+          "after": [
+            "**Jangan bingung dengan pengandaian.** *Habría salido* di kalimat berdiri sendiri berarti \"mungkin dia sudah keluar\". *Habría salido si…* berarti \"dia akan keluar seandainya…\". Yang membedakan cuma ada tidaknya bagian *si*.",
+            "**Bentuk ini juga dipakai untuk menyanggah dengan sopan**: *Serás muy listo, pero te has equivocado* — \"kamu boleh saja pintar, tapi kamu salah\". Nadanya menyerahkan satu poin sebelum merebut yang lain.",
+            "Di bahasa Indonesia semua ini jatuh ke satu kata: \"paling\", \"mungkin\", \"kira-kira\". Karena itu penerjemah pemula sering menambahkan *quizá* di depan futuro — tidak perlu, dan kedengarannya bertumpuk."
+          ]
+        },
+        {
+          "title": "Kata penanda dugaan: mana subjuntivo, mana bukan",
+          "body": [
+            "Selain lewat bentuk kata kerja, dugaan bisa ditandai kata khusus. Yang harus dihafal adalah **bentuk apa yang menyusulnya.**"
+          ],
+          "table": {
+            "head": ["Penanda", "Diikuti", "Contoh"],
+            "rows": [
+              ["a lo mejor", "indicativo", "A lo mejor **viene** mañana."],
+              ["igual / lo mismo", "indicativo", "Igual **está** en un atasco."],
+              ["seguramente", "indicativo", "Seguramente **ha salido** ya."],
+              ["seguro que", "indicativo", "Seguro que **se ha dormido**."],
+              ["puede que", "subjuntivo", "Puede que **sea** eso."],
+              ["es posible que", "subjuntivo", "Es posible que no **llegue**."],
+              ["quizá / quizás", "dua-duanya", "Quizá **viene** / Quizá **venga**."],
+              ["tal vez / posiblemente", "dua-duanya", "Tal vez **lo sabe** / Tal vez **lo sepa**."],
+              ["deber de + inf.", "&mdash;", "**Debe de** estar de camino."]
+            ]
+          },
+          "after": [
+            "**Untuk *quizá*, *tal vez*, dan *posiblemente*, pilihannya bermakna**: indicativo terdengar lebih yakin, subjuntivo lebih ragu. *Quizá viene* hampir menyatakan; *quizá venga* benar-benar menggantung.",
+            "**Aturan letak**: kalau penandanya berdiri **sesudah** kata kerjanya, subjuntivo tak mungkin. *Viene, quizá* — tak pernah *venga, quizá*.",
+            "***Igual* dan *lo mismo* sebagai \"mungkin\" adalah ciri Spanyol Eropa** dan nyaris tak terdengar di Amerika Latin, yang lebih memilih *capaz que* (Argentina) atau *a lo mejor*. Unit 17 memetakan perbedaan-perbedaan begini."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kantor, rapat, dan orang yang tak muncul",
+      "blocks": [
+        { "type": "tabel", "head": ["Español", "Cara baca", "Arti"], "rows": [
+          ["la reunión", "rreu-NION", "rapat"],
+          ["adelantar la reunión", "a-de-lan-TAR la rreu-NION", "memajukan rapat"],
+          ["aplazar", "a-pla-SAR", "menunda"],
+          ["el atasco", "a-TAS-ko", "kemacetan"],
+          ["quedarse sin batería", "ke-DAR-se sin ba-te-RI-a", "kehabisan baterai"],
+          ["tener silenciado", "te-NER si-len-SIA-do", "memute, membisukan"],
+          ["estar en línea", "es-TAR en LI-nea", "sedang daring"],
+          ["colgar", "kol-GAR", "menutup telepon"],
+          ["estar de camino", "es-TAR de ka-MI-no", "sedang di jalan"],
+          ["ponerse en lo peor", "po-NER-se en lo pe-OR", "membayangkan yang terburuk"]
+        ] },
+        { "type": "sub", "text": "Menebak dengan sopan, dan menolak tebakan orang" },
+        { "type": "tabel", "head": ["Potongan", "Nadanya", "Contoh"], "rows": [
+          ["me imagino que…", "menduga masuk akal", "Me imagino que estará ocupado."],
+          ["supongo que…", "menerima tanpa bukti", "Supongo que ya lo sabrá."],
+          ["no me extrañaría que…", "sudah setengah menduga", "No me extrañaría que se hubiera dormido."],
+          ["lo más seguro es que…", "dugaan terkuat", "Lo más seguro es que venga tarde."],
+          ["vete a saber", "menyerah menebak", "¿Dónde estará? Vete a saber."],
+          ["ni idea", "tak tahu sama sekali", "¿Sabes algo? Ni idea."],
+          ["ahí lo tienes", "sebabnya baru ketahuan", "Lo tiene silenciado. Ahí lo tienes."],
+          ["no me lo creo", "menolak tebakan orang", "¿Un atasco? No me lo creo."]
+        ] },
+        { "type": "kotak", "title": "Dua kembar palsu", "items": [
+          "***Seguro que…*** memakai indicativo dan berarti \"pasti\" walaupun sebenarnya cuma menebak. ***Es seguro que…*** juga indicativo, tapi benar-benar berarti pasti. Yang menuntut subjuntivo justru bentuk sangkalannya: *no es seguro que **venga***.",
+          "***Deber de*** menebak, ***tener que*** memaksa. *Debe de tener treinta años* (kira-kira tiga puluh) berbeda jauh dari *tiene que tener treinta años* (mestinya tiga puluh, kalau perhitunganku benar) dan dari *tiene que venir* (dia wajib datang)."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "es": "la reunión", "baca": "rreu-NION", "id": "rapat" },
+    { "es": "el atasco", "baca": "a-TAS-ko", "id": "kemacetan" },
+    { "es": "la alarma", "baca": "a-LAR-ma", "id": "alarm" },
+    { "es": "quedarse dormido", "baca": "ke-DAR-se dor-MI-do", "id": "ketiduran" },
+    { "es": "la batería", "baca": "ba-te-RI-a", "id": "baterai" },
+    { "es": "silenciar", "baca": "si-len-SIAR", "id": "membisukan" },
+    { "es": "adelantar", "baca": "a-de-lan-TAR", "id": "memajukan" },
+    { "es": "avisar por privado", "baca": "a-bi-SAR por pri-BA-do", "id": "mengabari lewat japri" },
+    { "es": "colgar", "baca": "kol-GAR", "id": "menutup telepon" },
+    { "es": "apostar", "baca": "a-pos-TAR", "id": "bertaruh" },
+    { "es": "el trato", "baca": "TRA-to", "id": "kesepakatan" },
+    { "es": "desconfiado", "baca": "des-kon-FIA-do", "id": "penuh curiga" },
+    { "es": "de camino", "baca": "de ka-MI-no", "id": "di perjalanan" },
+    { "es": "explicar", "baca": "eks-pli-KAR", "id": "menjelaskan" },
+    { "es": "suponer", "baca": "su-po-NER", "id": "mengira" },
+    { "es": "imaginarse", "baca": "i-ma-khi-NAR-se", "id": "membayangkan" },
+    { "es": "extrañar", "baca": "eks-tra-NIAR", "id": "mengherankan" },
+    { "es": "vete a saber", "baca": "BE-te a sa-BER", "id": "entahlah" },
+    { "es": "ni idea", "baca": "ni i-DE-a", "id": "tidak tahu sama sekali" },
+    { "es": "lo peor", "baca": "lo pe-OR", "id": "yang terburuk" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah kalimat pasti menjadi dugaan, memakai futuro atau condicional.",
+      "items": [
+        "Son las diez. → ____",
+        "Está en el trabajo. → ____",
+        "Ha salido temprano. → ____",
+        "Eran las cuatro. → ____",
+        "Tenía treinta años. → ____",
+        "Se ha quedado sin batería. → ____"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan indicativo atau subjuntivo sesuai penandanya.",
+      "items": [
+        "A lo mejor (venir, él) ____ mañana.",
+        "Puede que no (llegar, ellos) ____ a tiempo.",
+        "Seguro que se (dormir) ____ otra vez.",
+        "Es posible que (estar, nosotros) ____ equivocados.",
+        "Igual (tener, tú) ____ razón."
+      ]
+    },
+    {
+      "prompt": "Pilih *deber* atau *deber de*, lalu lengkapi.",
+      "items": [
+        "Ya son las once: ____ estar de camino. (dugaan)",
+        "Todos los alumnos ____ entregar el trabajo. (kewajiban)",
+        "No contesta: ____ tener el móvil apagado. (dugaan)",
+        "Para entrar ____ enseñar el carné. (kewajiban)",
+        "____ de costar unos cien euros. (dugaan)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Spanyol.",
+      "items": [
+        "Paling dia ketiduran.",
+        "Kira-kira jam sembilan waktu aku chat dia.",
+        "Mungkin dia lupa rapatnya dimajuin.",
+        "Dia pasti mikir rapatnya Senin depan.",
+        "Nggak tahu. Entahlah."
+      ]
+    }
+  ],
+  "answers": [
+    "Serán las diez. — Estará en el trabajo. — Habrá salido temprano. — Serían las cuatro. — Tendría treinta años. — Se habrá quedado sin batería.",
+    "viene — lleguen — ha dormido — estemos — tienes",
+    "debe de — deben — debe de — deben — Debe",
+    "Se habrá quedado dormido. — Serían las nueve cuando le escribí. — Quizá se le haya olvidado que la reunión se adelantó. — Habrá pensado que la reunión era el lunes que viene. — Ni idea. Vete a saber."
+  ],
+  "wave": "Kembali ke unit 1. Ambil enam kalimat pertama dialognya, lalu ucapkan ulang seolah kamu tidak yakin sama sekali: *habrá venido*, *se lo habrá dejado*, *habrán aguantado tres años*. Bentuk yang sama, sikap yang berbeda."
+}
