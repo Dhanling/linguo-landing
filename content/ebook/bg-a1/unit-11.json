@@ -1,0 +1,514 @@
+{
+ "title": "Satu salad shopska, tolong",
+ "title_target": "Една шопска салата, моля",
+ "goal": "Memesan makan dari awal sampai membayar, mengenali makanan Bulgaria yang akan ditawarkan kepadamu, dan memakai bentuk panjang kata ganti yang wajib muncul sesudah kata depan.",
+ "bekal": [
+  "memesan makanan dan minuman dengan tiga susunan berbeda",
+  "memakai bentuk panjang kata ganti sesudah kata depan: **за мен, с теб**",
+  "meminta bon dan membayar",
+  "membaca daftar menu Bulgaria tanpa panik",
+  "bersulang dengan cara yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Di механа malam hari",
+   "intro": "Ani dan Maria makan malam di *механа*, rumah makan tradisional Bulgaria. Perhatikan bentuk kata ganti sesudah kata depan **за** — di situ bentuk pendek tidak boleh dipakai.",
+   "lines": [
+    {
+     "speaker": "Сервитьор:",
+     "text": "[Добър|Do-BĂR] [вечер|VE-cher]! [Заповядайте|Za-po-VYA-day-te], [менюто|me-NYU-to].",
+     "id": "Selamat malam! Silakan, ini menunya.",
+     "literal": "baik — malam! silakan-lah-Anda, menu-itu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA]. [Какво|Kak-VO] [ще|shte] [ни|ni] [препоръчате|pre-po-RĂ-cha-te]?",
+     "id": "Terima kasih. Anda menyarankan apa untuk kami?",
+     "literal": "terima-kasih. apa — akan — kepada-kami — menyarankan-Anda?"
+    },
+    {
+     "speaker": "Сервитьор:",
+     "text": "[Шопската|SHOP-ska-ta] [салата|sa-LA-ta] [е|e] [много|MNO-go] [добра|dob-RA]. [И|I] [мусаката|mu-SA-ka-ta].",
+     "id": "Salad shopska-nya enak sekali. Dan musakanya.",
+     "literal": "shopska-itu — salad — adalah — sangat — baik. dan — musaka-itu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Добре|Dob-RE]. [Една|Ed-NA] [шопска|SHOP-ska] [салата|sa-LA-ta] [и|i] [една|ed-NA] [баница|BA-ni-tsa], [моля|MO-lya].",
+     "id": "Baik. Satu salad shopska dan satu banitsa, tolong.",
+     "literal": "baik. satu — shopska — salad — dan — satu — banitsa, silakan."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[За|Za] [мен|men] [таратор|ta-ra-TOR] [и|i] [мусака|mu-SA-ka].",
+     "id": "Untuk saya tarator dan musaka.",
+     "literal": "untuk — saya — tarator — dan — musaka."
+    },
+    {
+     "speaker": "Сервитьор:",
+     "text": "[За|Za] [пиене|PI-e-ne]?",
+     "id": "Minumnya?",
+     "literal": "untuk — minum?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Една|Ed-NA] [минерална|mi-ne-RAL-na] [вода|vo-DA], [моля|MO-lya]. [Мария|Ma-RI-ya]?",
+     "id": "Satu air mineral, tolong. Maria?",
+     "literal": "satu — mineral — air, silakan. Maria?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Чаша|CHA-sha] [червено|cher-VE-no] [вино|VI-no] [за|za] [мен|men].",
+     "id": "Segelas anggur merah untuk saya.",
+     "literal": "gelas — merah — anggur — untuk — saya."
+    },
+    {
+     "speaker": "Сервитьор:",
+     "text": "[Веднага|Ved-na-GA].",
+     "id": "Segera.",
+     "literal": "seketika."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Наздраве|Naz-DRA-ve]! [Гледай|GLE-day] [ме|me] [в|f] [очите|O-chi-te]!",
+     "id": "Bersulang! Lihat mata saya!",
+     "literal": "untuk-kesehatan! lihatlah — saya — di — mata-mata-itu!"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Наздраве|Naz-DRA-ve]! [Много|MNO-go] [е|e] [вкусно|VKUS-no].",
+     "id": "Bersulang! Enak sekali.",
+     "literal": "untuk-kesehatan! sangat — adalah — lezat."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Сервитьор|Ser-vi-TYOR], [сметката|SMET-ka-ta], [моля|MO-lya]!",
+     "id": "Mas, bonnya, tolong!",
+     "literal": "pelayan, bon-itu, silakan!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Sesudah kata depan, kata ganti WAJIB memakai bentuk panjang.** *За мен*, bukan *за ме*. *С теб*, bukan *с те*. *На него*, bukan *на му*. Bentuk pendek yang kamu pelajari di Unit 6 hanya boleh menempel langsung pada kata kerja; begitu ada kata depan di depannya, ia berubah jadi bentuk panjang.",
+    "**За мен … adalah cara memesan yang paling ringkas dan paling lazim.** Tidak perlu kata kerja sama sekali: *За мен таратор.* Ini juga cara yang dipakai untuk membagi pesanan di meja besar.",
+    "**Наздраве berarti \"untuk kesehatan\" dan dipakai untuk dua hal**: bersulang, dan berkata kepada orang yang bersin — sama persis seperti \"sehat!\" dalam bahasa Indonesia dan *Gesundheit* dalam bahasa Jerman.",
+    "⚠️ **Bersulang di Bulgaria menuntut kontak mata.** Ketika gelas beradu, kamu harus menatap mata orang yang kamu sulangi — bukan menatap gelasnya. Melewatkannya dianggap tidak sopan, atau setidaknya janggal, dan ada takhayul lama bahwa akibatnya tujuh tahun nasib buruk. Perhatikan saja kalau ada rombongan bersulang: semua kepala akan berputar mencari mata satu sama lain.",
+    "**Menu dibaca dari kelompoknya, bukan kata demi kata.** *Салати* (salad), *предястия* (hidangan pembuka), *основни ястия* (hidangan utama), *гарнитури* (pelengkap), *десерти* (penutup), *напитки* (minuman). Kalau kamu hanya mengenali enam kata ini, kamu sudah bisa menavigasi menu apa pun di Bulgaria.",
+    "**Сметката, моля adalah kalimat penutup yang selalu tepat.** Kamu juga bisa memberi isyarat menulis di udara, gerakan yang dimengerti di seluruh Bulgaria. ⚠️ Uang tip (**бакшиш**) sekitar sepuluh persen dan biasanya ditinggalkan di meja, bukan diserahkan ke tangan.",
+    "**Веднага berarti \"segera, seketika\".** Kata ini akan sering kamu dengar dari pelayan, dan artinya kurang lebih sama fleksibelnya dengan \"sebentar ya\" dalam bahasa Indonesia.",
+    "**Vokal о di вкусно, вино, много tetap dibaca o penuh dalam ucapan hati-hati**, tetapi dalam obrolan cepat ia condong ke *u*: *MNO-gu*, *VI-nu*. Jangan kaget kalau yang kamu dengar tidak persis seperti yang tertulis."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara memesan",
+     "body": [
+      "Ketiganya benar dan ketiganya sopan. Pilih mana pun yang paling cepat keluar dari mulutmu."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Baca",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "Benda + моля",
+        "Една салата, моля.",
+        "ed-NA sa-LA-ta MO-lya",
+        "Paling ringkas, selalu aman"
+       ],
+       [
+        "За + orang + benda",
+        "За мен таратор.",
+        "za men ta-ra-TOR",
+        "Untuk membagi pesanan"
+       ],
+       [
+        "Искам + benda",
+        "Искам една баница.",
+        "IS-kam ed-NA BA-ni-tsa",
+        "Langsung, sedikit tegas"
+       ],
+       [
+        "Ще взема…",
+        "Ще взема мусака.",
+        "shte VZE-ma mu-SA-ka",
+        "\"Saya ambil…\", sangat lazim"
+       ],
+       [
+        "Може ли…",
+        "Може ли едно кафе?",
+        "MO-zhe li ed-NO ka-FE",
+        "Paling halus"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa angka \"satu\" ikut jenis kelamin makanannya: *един чай* (maskulin), *една салата* (feminin), *едно кафе* (netral). Menyebutnya salah tidak akan menghentikan pesananmu, tetapi menyebutnya benar terdengar jauh lebih terlatih."
+     ]
+    },
+    {
+     "title": "Bentuk panjang kata ganti — wajib sesudah kata depan",
+     "body": [
+      "Kumpulan kedua kata ganti ini muncul hanya di dua tempat: sesudah kata depan, dan ketika kamu ingin menekankan siapa yang dimaksud."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "Pendek (objek)",
+       "Panjang",
+       "Contoh dengan kata depan"
+      ],
+      "rows": [
+       [
+        "аз",
+        "ме / ми",
+        "мен / мене",
+        "за мен, с мен, на мен"
+       ],
+       [
+        "ти",
+        "те / ти",
+        "теб / тебе",
+        "за теб, с теб"
+       ],
+       [
+        "той",
+        "го / му",
+        "него",
+        "за него, с него"
+       ],
+       [
+        "тя",
+        "я / ѝ",
+        "нея",
+        "за нея, с нея"
+       ],
+       [
+        "ние",
+        "ни",
+        "нас",
+        "за нас, с нас"
+       ],
+       [
+        "вие",
+        "ви",
+        "вас",
+        "за вас, с вас"
+       ],
+       [
+        "те",
+        "ги / им",
+        "тях",
+        "за тях, с тях"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk panjang juga dipakai untuk mempertentangkan: *Не него, а нея* — bukan dia (laki-laki), tapi dia (perempuan).",
+      "Dalam percakapan, bentuk panjang dan pendek kadang muncul bersamaan untuk penekanan berat: *На мен ми е приятно* — harfiahnya \"bagi saya bagi-saya menyenangkan\". Susunan ini terdengar berlebihan kalau diterjemahkan, tetapi sangat lazim dan sepenuhnya benar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Lima makanan yang pasti ditawarkan kepadamu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Apa itu"
+     ],
+     "rows": [
+      [
+       "шопска салата",
+       "SHOP-ska sa-LA-ta",
+       "Tomat, timun, paprika, bawang, dengan parutan keju putih menggunung di atasnya. Warnanya putih-hijau-merah, sama dengan bendera negaranya."
+      ],
+      [
+       "баница",
+       "BA-ni-tsa",
+       "Pastri berlapis tipis isi keju putih dan telur. Sarapan nasional; dijual di setiap sudut sejak pukul enam pagi."
+      ],
+      [
+       "таратор",
+       "ta-ra-TOR",
+       "Sup dingin dari yoghurt, timun, bawang putih, dill, dan kenari. Diminum, bukan disendok, pada hari-hari terpanas."
+      ],
+      [
+       "мусака",
+       "mu-SA-ka",
+       "Kentang dan daging cincang berlapis, ditutup adonan telur-yoghurt yang dipanggang. Bukan versi Yunani yang memakai terong."
+      ],
+      [
+       "кебапче",
+       "ke-BAP-che",
+       "Daging cincang panjang yang dipanggang arang, hampir selalu dipesan bersama *шопска салата* dan bir."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua minuman yang perlu kamu kenali: **ракия** (*ra-KI-ya*), brendi buah yang keras dan diminum pelan-pelan sebelum makan bersama salad — bukan sesudah makan; dan **айрян** (*ay-RYAN*), yoghurt asin encer yang jadi penawar cuaca panas."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Satu jebakan kata untuk penutur bahasa Indonesia",
+     "items": [
+      "Kata **пиле** (*PI-le*) berarti **ayam**, bukan sesuatu yang lain. Dan **баница** tidak ada hubungannya dengan \"banci\". Bunyi yang tidak sengaja terdengar lucu bagi telinga Indonesia cukup banyak di bahasa Bulgaria — yang penting jangan tertawa di tengah memesan.",
+      "Sebaliknya, satu kata Bulgaria memang perlu kamu ketahui: **майка** berarti \"ibu\" dan diucapkan *MAY-ka*, sedangkan **лайка** berarti bunga kamomil. Beda satu huruf, beda seluruh percakapan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Semua yang perlu diucapkan di rumah makan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Имате ли свободна маса?",
+       "I-ma-te li svo-BOD-na MA-sa",
+       "Ada meja kosong?"
+      ],
+      [
+       "Менюто, моля.",
+       "me-NYU-to MO-lya",
+       "Menunya, tolong."
+      ],
+      [
+       "Какво ще ни препоръчате?",
+       "kak-VO shte ni pre-po-RĂ-cha-te",
+       "Anda menyarankan apa?"
+      ],
+      [
+       "Аз съм вегетарианец.",
+       "az săm ve-ge-ta-ri-A-nets",
+       "Saya vegetarian."
+      ],
+      [
+       "Без месо, моля.",
+       "bez me-SO MO-lya",
+       "Tanpa daging, tolong."
+      ],
+      [
+       "Много е вкусно!",
+       "MNO-go e VKUS-no",
+       "Enak sekali!"
+      ],
+      [
+       "Още една бира, моля.",
+       "OSH-te ed-NA BI-ra MO-lya",
+       "Satu bir lagi, tolong."
+      ],
+      [
+       "Сметката, моля.",
+       "SMET-ka-ta MO-lya",
+       "Bonnya, tolong."
+      ],
+      [
+       "Заедно или отделно?",
+       "ZA-ed-no I-li ot-DEL-no",
+       "Digabung atau dipisah?"
+      ],
+      [
+       "Задръжте рестото.",
+       "zad-RĂZH-te RES-to-to",
+       "Kembaliannya ambil saja."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Аз съм вегетарианец** untuk laki-laki, **вегетарианка** untuk perempuan. Dan bersiaplah: konsep \"tanpa daging\" kadang dianggap tidak termasuk sup kaldu atau sepotong kecil daging asap. Kalimat pengaman: *Изобщо без месо, моля.* (Sama sekali tanpa daging.)"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "меню",
+   "baca": "me-NYU",
+   "id": "menu"
+  },
+  {
+   "bg": "сметка",
+   "baca": "SMET-ka",
+   "id": "bon, tagihan"
+  },
+  {
+   "bg": "сервитьор",
+   "baca": "ser-vi-TYOR",
+   "id": "pelayan"
+  },
+  {
+   "bg": "салата",
+   "baca": "sa-LA-ta",
+   "id": "salad"
+  },
+  {
+   "bg": "месо",
+   "baca": "me-SO",
+   "id": "daging"
+  },
+  {
+   "bg": "пиле",
+   "baca": "PI-le",
+   "id": "ayam"
+  },
+  {
+   "bg": "риба",
+   "baca": "RI-ba",
+   "id": "ikan"
+  },
+  {
+   "bg": "супа",
+   "baca": "SU-pa",
+   "id": "sup"
+  },
+  {
+   "bg": "ориз",
+   "baca": "o-RIS",
+   "id": "nasi, beras"
+  },
+  {
+   "bg": "картофи",
+   "baca": "kar-TO-fi",
+   "id": "kentang"
+  },
+  {
+   "bg": "зеленчуци",
+   "baca": "ze-len-CHU-tsi",
+   "id": "sayuran"
+  },
+  {
+   "bg": "плодове",
+   "baca": "plo-do-VE",
+   "id": "buah-buahan"
+  },
+  {
+   "bg": "вода",
+   "baca": "vo-DA",
+   "id": "air"
+  },
+  {
+   "bg": "вино",
+   "baca": "VI-no",
+   "id": "anggur"
+  },
+  {
+   "bg": "бира",
+   "baca": "BI-ra",
+   "id": "bir"
+  },
+  {
+   "bg": "кафе",
+   "baca": "ka-FE",
+   "id": "kopi"
+  },
+  {
+   "bg": "чаша",
+   "baca": "CHA-sha",
+   "id": "gelas"
+  },
+  {
+   "bg": "вкусно",
+   "baca": "VKUS-no",
+   "id": "enak, lezat"
+  },
+  {
+   "bg": "сладко",
+   "baca": "SLAD-ko",
+   "id": "manis"
+  },
+  {
+   "bg": "солено",
+   "baca": "so-LE-no",
+   "id": "asin"
+  },
+  {
+   "bg": "люто",
+   "baca": "LYU-to",
+   "id": "pedas"
+  },
+  {
+   "bg": "наздраве",
+   "baca": "naz-DRA-ve",
+   "id": "bersulang; sehat selalu"
+  },
+  {
+   "bg": "веднага",
+   "baca": "ved-na-GA",
+   "id": "segera"
+  },
+  {
+   "bg": "препоръчвам",
+   "baca": "pre-po-RĂCH-vam",
+   "id": "saya menyarankan"
+  },
+  {
+   "bg": "отделно",
+   "baca": "ot-DEL-no",
+   "id": "terpisah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Menunya, tolong.",
+    "Satu salad shopska.",
+    "Untuk saya kopi.",
+    "Enak sekali!",
+    "Bonnya, tolong.",
+    "Ada meja kosong?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk panjang kata ganti yang tepat.",
+   "items": [
+    "Това е за ____. (saya)",
+    "Отивам с ____. (kamu)",
+    "Салатата е за ____. (dia perempuan)",
+    "Виното е за ____. (kami)",
+    "Сметката е за ____. (mereka)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "моля / салата / една / шопска",
+    "мен / таратор / за",
+    "ни / какво / препоръчате / ще",
+    "моля / сметката",
+    "бира / още / една"
+   ]
+  },
+  {
+   "prompt": "Isi dengan един, една, atau едно.",
+   "items": [
+    "____ кафе",
+    "____ салата",
+    "____ чай",
+    "____ бира",
+    "____ вино"
+   ]
+  }
+ ],
+ "answers": [
+  "Менюто, моля. — Една шопска салата. — За мен кафе. — Много е вкусно! — Сметката, моля. — Имате ли свободна маса?",
+  "мен — теб — нея — нас — тях",
+  "Една шопска салата, моля. — За мен таратор. — Какво ще ни препоръчате? — Сметката, моля. — Още една бира.",
+  "едно — една — един — една — едно"
+ ]
+}

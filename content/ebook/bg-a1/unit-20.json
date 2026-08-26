@@ -1,0 +1,617 @@
+{
+ "title": "Selamat jalan",
+ "title_target": "На добър път!",
+ "goal": "Berpamitan, menyampaikan kembali apa yang dikatakan orang lain, dan mengintip satu kekhasan bahasa Bulgaria yang tidak dimiliki hampir seluruh bahasa Eropa: bentuk kata kerja yang menandai bahwa kamu **tidak menyaksikan sendiri** kejadiannya.",
+ "bekal": [
+  "berpamitan dan mengucapkan doa perjalanan",
+  "menyampaikan ucapan orang lain dengan **че**",
+  "mengenali bentuk kabar burung **преизказно наклонение**",
+  "mengucapkan selamat pada berbagai kesempatan",
+  "melihat kembali seluruh isi dua puluh unit dalam satu halaman"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Sehari sebelum berangkat",
+   "intro": "Maria dan Ani bertemu untuk terakhir kalinya sebelum Ani pulang. Perhatikan bentuk kata kerja di baris tentang Ivan — Maria tidak menyaksikan sendiri apa yang diceritakannya.",
+   "lines": [
+    {
+     "speaker": "Мария:",
+     "text": "[Значи|ZNA-chi] [утре|U-tre] [заминаваш|za-mi-NA-vash]?",
+     "id": "Jadi besok kamu berangkat?",
+     "literal": "berarti — besok — berangkat-kamu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da]. [Не|Ne] [мога|MO-ga] [да|da] [повярвам|po-VYAR-vam], [че|che] [мина|MI-na] [толкова|TOL-ko-va] [бързо|BĂR-zo].",
+     "id": "Ya. Saya tidak percaya waktunya berlalu secepat ini.",
+     "literal": "ya. tidak — bisa-saya — supaya — percaya-saya, bahwa — berlalu — sebegitu — cepat."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Ще|Shte] [се|se] [върнеш|VĂR-nesh] [ли|li]?",
+     "id": "Kamu akan kembali?",
+     "literal": "akan — diri — kembali-kamu — (tanya)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Разбира|Raz-BI-ra] [се|se]. [Вече|VE-che] [купих|KU-pih] [билет|bi-LET] [за|za] [март|mart].",
+     "id": "Tentu saja. Saya sudah beli tiket untuk bulan Maret.",
+     "literal": "mengerti — diri. sudah — membeli-saya — tiket — untuk — Maret."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Иван|I-van] [казва|KAZ-va], [че|che] [си|si] [говорила|go-VO-ri-la] [само|SA-mo] [на|na] [български|BĂL-gar-ski] [цяла|TSYA-la] [седмица|SED-mi-tsa].",
+     "id": "Ivan bilang kamu bicara bahasa Bulgaria saja selama seminggu penuh.",
+     "literal": "Ivan — mengatakan, bahwa — adalah-kamu — bicara-perempuan — hanya — dalam — Bulgaria — seluruh — minggu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Той|Toy] [преувеличава|pre-u-ve-li-CHA-va]!",
+     "id": "Dia melebih-lebihkan!",
+     "literal": "dia — melebih-lebihkan!"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Не|Ne], [не|ne] [преувеличава|pre-u-ve-li-CHA-va]. [Много|MNO-go] [научи|na-U-chi].",
+     "id": "Tidak, dia tidak melebih-lebihkan. Kamu banyak belajar.",
+     "literal": "tidak, tidak — melebih-lebihkan. banyak — mempelajari-kamu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA] [за|za] [всичко|FSICH-ko]. [Ще|Shte] [ми|mi] [липсваш|LIP-svash].",
+     "id": "Terima kasih untuk semuanya. Saya akan kangen kamu.",
+     "literal": "terima-kasih — untuk — semua. akan — kepada-saya — kurang-kamu."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[И|I] [ти|ti] [на|na] [мен|men]. [Пиши|Pi-SHI] [ми|mi], [става|STA-va] [ли|li]?",
+     "id": "Saya juga. Kabari saya ya?",
+     "literal": "juga — kamu — bagi — saya. tulislah — kepada-saya, jadi — (tanya)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Обещавам|O-besh-TA-vam]. [На|Na] [български|BĂL-gar-ski]!",
+     "id": "Saya janji. Dalam bahasa Bulgaria!",
+     "literal": "berjanji-saya. dalam — Bulgaria!"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Тогава|To-GA-va] [хайде|HAY-de] — [на|na] [добър|do-BĂR] [път|păt]!",
+     "id": "Kalau begitu — selamat jalan!",
+     "literal": "kalau-begitu — ayo — untuk — baik — jalan!"
+    }
+   ],
+   "notes": [
+    "**Че berarti \"bahwa\" dan hampir tidak pernah dilesapkan.** *Мисля, че…* (saya pikir bahwa…), *Казва, че…* (dia bilang bahwa…), *Радвам се, че…* (saya senang bahwa…). ⚠️ Bahasa Indonesia sering membuang \"bahwa\"; bahasa Bulgaria hampir selalu memakainya, dan selalu didahului tanda koma.",
+    "**Че dan да tidak boleh tertukar.** *Че* memperkenalkan kenyataan: *Знам, че работиш* (saya tahu kamu bekerja). *Да* memperkenalkan sesuatu yang diinginkan atau belum terjadi: *Искам да работиш* (saya mau kamu bekerja). Salah pilih akan mengubah arti kalimat sepenuhnya.",
+    "**На добър път harfiahnya \"untuk jalan yang baik\"** dan diucapkan kepada siapa pun yang akan bepergian. Ucapan pengiring lain: *Лек път!* (perjalanan yang ringan) dan *Успех!* (semoga berhasil).",
+    "**Ще ми липсваш — \"saya akan kangen kamu\".** Perhatikan susunan membaliknya dari Unit 17: yang menjadi pelaku adalah **kamu**, jadi bentuk kata kerjanya *липсваш*. Harfiahnya \"kamu akan kurang bagi saya\". ⚠️ Bukan *ще те липсвам*, yang berarti kebalikannya.",
+    "**Става ли? berarti \"boleh ya? oke?\"** dan dipakai di ujung permintaan untuk melunakkannya. Jawabannya *Става!* — oke, jadi. Ini salah satu kata paling serbaguna dalam bahasa Bulgaria sehari-hari.",
+    "**Пиши ми — \"tulis kepadaku\", artinya \"kabari aku\".** Bentuk perintah untuk teman. Dalam percakapan sehari-hari, orang Bulgaria memakai *пиши ми* untuk pesan singkat, sama seperti kita memakai \"kabarin ya\".",
+    "**Обещавам berarti \"saya berjanji\"** dan ia salah satu kata kerja kelompok III yang teratur. Bentuk lampaunya *обещах*.",
+    "**Kalau kamu sampai di halaman ini, kamu sudah melewati sesuatu yang jarang dilewati orang.** Sebagian besar orang yang memulai bahasa Bulgaria berhenti di halaman aksara. Dua puluh dialog, delapan ratus lebih baris latihan, dan tiga ratus lima puluh kata kemudian — kamu tidak lagi termasuk mereka."
+   ],
+   "grammars": [
+    {
+     "title": "Преизказно наклонение — bentuk untuk kabar yang tidak kamu saksikan",
+     "body": [
+      "Inilah kekhasan bahasa Bulgaria yang paling terkenal, dan hampir tidak ada bahasa Eropa lain yang memilikinya. Ketika kamu menceritakan sesuatu yang **tidak kamu saksikan sendiri** — kamu dengar dari orang, kamu baca di berita, kamu simpulkan — bentuk kata kerjanya berubah."
+     ],
+     "table": {
+      "head": [
+       "Kamu menyaksikan",
+       "Kamu mendengar dari orang",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Той дойде.",
+        "Той дошъл.",
+        "Dia datang. / Katanya dia datang."
+       ],
+       [
+        "Тя работи в София.",
+        "Тя работела в София.",
+        "Dia bekerja di Sofia. / Katanya begitu."
+       ],
+       [
+        "Валя дъжд.",
+        "Валяло дъжд.",
+        "Hujan turun. / Katanya hujan."
+       ],
+       [
+        "Иван беше болен.",
+        "Иван бил болен.",
+        "Ivan sakit. / Katanya Ivan sakit."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk ini dipakai di seluruh siaran berita Bulgaria, di seluruh dongeng, dan di setiap percakapan tentang orang lain. Ia bukan penanda keraguan — ia penanda **sumber**. Pembicara tidak sedang mengatakan bahwa beritanya salah, hanya bahwa ia tidak menyaksikannya.",
+      "⚠️ Kamu **tidak perlu memakainya** di tingkat A1. Cara aman dan sepenuhnya benar adalah menyebut sumbernya secara terbuka dengan *че*: *Иван казва, че тя работи в София.* Semua orang akan mengerti, dan tidak ada yang menganggapnya keliru.",
+      "Yang perlu kamu lakukan sekarang cuma **mengenalinya ketika kamu mendengarnya** — supaya kamu tahu bahwa lawan bicaramu sedang meneruskan kabar, bukan bersaksi. Sistem lengkapnya menunggumu di tingkat A2."
+     ]
+    },
+    {
+     "title": "Menyampaikan ucapan orang lain",
+     "body": [
+      "Cara paling sederhana dan paling aman, dan cukup untuk seluruh tingkat A1."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Иван казва, че…",
+        "I-van KAZ-va che",
+        "Ivan bilang bahwa…"
+       ],
+       [
+        "Чух, че…",
+        "chuh che",
+        "Saya dengar bahwa…"
+       ],
+       [
+        "Мисля, че…",
+        "MIS-lya che",
+        "Saya pikir bahwa…"
+       ],
+       [
+        "Знам, че…",
+        "znam che",
+        "Saya tahu bahwa…"
+       ],
+       [
+        "Надявам се, че…",
+        "na-DYA-vam se che",
+        "Saya harap bahwa…"
+       ],
+       [
+        "Радвам се, че…",
+        "RAD-vam se che",
+        "Saya senang bahwa…"
+       ],
+       [
+        "Съжалявам, че…",
+        "să-zha-LYA-vam che",
+        "Saya menyesal bahwa…"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa kata kerja di dalam anak kalimatnya **tidak berubah waktunya** seperti bahasa Inggris. *Той каза, че работи* berarti \"dia bilang dia (sedang) bekerja\" — bentuk sekarang tetap dipakai meskipun kalimat utamanya lampau. Bahasa Indonesia bekerja dengan cara yang persis sama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berpamitan dan mengucapkan selamat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "Довиждане!",
+       "do-VIZH-da-ne",
+       "Sampai jumpa (resmi)"
+      ],
+      [
+       "Чао!",
+       "chao",
+       "Dah (santai)"
+      ],
+      [
+       "До скоро!",
+       "do SKO-ro",
+       "Sampai ketemu lagi"
+      ],
+      [
+       "На добър път!",
+       "na do-BĂR păt",
+       "Selamat jalan"
+      ],
+      [
+       "Лек път!",
+       "lek păt",
+       "Perjalanan yang lancar"
+      ],
+      [
+       "Успех!",
+       "us-PEH",
+       "Semoga berhasil"
+      ],
+      [
+       "Всичко хубаво!",
+       "FSICH-ko HU-ba-vo",
+       "Semoga semuanya baik"
+      ],
+      [
+       "Поздрави на семейството!",
+       "POZ-dra-vi na se-MEY-stvo-to",
+       "Salam untuk keluarga"
+      ],
+      [
+       "Пази се!",
+       "pa-ZI se",
+       "Jaga diri"
+      ],
+      [
+       "Ще ми липсваш.",
+       "shte mi LIP-svash",
+       "Saya akan kangen kamu"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ucapan selamat",
+      "Baca",
+      "Kesempatan"
+     ],
+     "rows": [
+      [
+       "Честит рожден ден!",
+       "ches-TIT rozh-DEN den",
+       "Ulang tahun"
+      ],
+      [
+       "Честит имен ден!",
+       "ches-TIT I-men den",
+       "Hari nama"
+      ],
+      [
+       "Честита Нова година!",
+       "ches-TI-ta NO-va go-DI-na",
+       "Tahun Baru"
+      ],
+      [
+       "Честита Баба Марта!",
+       "ches-TI-ta BA-ba MAR-ta",
+       "1 Maret"
+      ],
+      [
+       "Наздраве!",
+       "naz-DRA-ve",
+       "Bersulang; kepada yang bersin"
+      ],
+      [
+       "Добре дошъл / дошла!",
+       "dob-RE DO-shăl",
+       "Selamat datang"
+      ],
+      [
+       "Оздравявай!",
+       "oz-dra-VYA-vay",
+       "Semoga cepat sembuh"
+      ],
+      [
+       "Приятен ден!",
+       "pri-YA-ten den",
+       "Selamat beraktivitas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa **честит** ikut jenis kelamin hal yang dirayakan: *честит рожден ден* (maskulin), *честита Нова година* (feminin), *честито дете* (netral, untuk kelahiran anak). Satu kata, tiga bentuk — persis seperti kata sifat lain."
+    }
+   ]
+  },
+  {
+   "title": "Dua puluh unit dalam satu halaman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup lajur kanan dan periksa apakah kamu masih ingat. Yang tersendat, kembalilah ke unitnya — satu unit, dua puluh menit, dan ia kembali."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Unit",
+      "Yang kamu pelajari",
+      "Contoh kunci"
+     ],
+     "rows": [
+      [
+       "1",
+       "съм dan aturan letak kata kecil",
+       "Студентка съм."
+      ],
+      [
+       "2",
+       "tiga jenis kelamin kata benda",
+       "български / българка"
+      ],
+      [
+       "3",
+       "artikel takrif menempel di ujung",
+       "градът / града / книгата"
+      ],
+      [
+       "4",
+       "имам, няма, има",
+       "Има ли аптека?"
+      ],
+      [
+       "5",
+       "angka dan bentuk hitung maskulin",
+       "два лева, двама мъже"
+      ],
+      [
+       "6",
+       "kata milik pendek",
+       "майка ми, книгата ми"
+      ],
+      [
+       "7",
+       "tiga kelompok kata kerja",
+       "чета / говоря / искам"
+      ],
+      [
+       "8",
+       "bentuk да menggantikan infinitif",
+       "Искам да ям."
+      ],
+      [
+       "9",
+       "jam dan kata kerja се",
+       "седем и половина"
+      ],
+      [
+       "10",
+       "arah dan bentuk perintah",
+       "Вървете направо."
+      ],
+      [
+       "11",
+       "bentuk panjang kata ganti",
+       "За мен таратор."
+      ],
+      [
+       "12",
+       "kata sifat dan artikelnya",
+       "черният пуловер"
+      ],
+      [
+       "13",
+       "ли dan sangkalan bertumpuk",
+       "Никога не закъснявам."
+      ],
+      [
+       "14",
+       "ще dan няма да",
+       "Няма да е скъпо."
+      ],
+      [
+       "15",
+       "waktu lampau аорист",
+       "Вчера отидох."
+      ],
+      [
+       "16",
+       "bentuk perfek dengan съм",
+       "Била съм там."
+      ],
+      [
+       "17",
+       "susunan membalik харесва ми",
+       "Много ми харесва."
+      ],
+      [
+       "18",
+       "боли ме dan bagian badan",
+       "Боли ме главата."
+      ],
+      [
+       "19",
+       "по- dan най-",
+       "по-голям от…"
+      ],
+      [
+       "20",
+       "че dan bentuk kabar burung",
+       "Казва, че…"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu kalimat untuk dibawa pulang",
+     "items": [
+      "**Не се притеснявай — говори!** (*ne se pri-tes-nya-VAY — go-VO-ri*) — \"Jangan sungkan, bicaralah!\"",
+      "Ini kalimat yang akan paling sering kamu dengar dari orang Bulgaria begitu mereka tahu kamu sedang belajar bahasanya. Mereka tidak sedang berbasa-basi. Negeri ini nyaris tidak pernah bertemu orang Indonesia yang bisa bicara bahasanya, dan kalimat pertamamu akan diingat orang seharian.",
+      "Kesalahanmu tidak akan ditertawakan. Usahamu akan dihargai berlebihan. Dan satu-satunya cara agar dua puluh unit ini menjadi bahasa yang hidup adalah mengeluarkannya dari halaman ini ke dalam sebuah percakapan yang sungguhan — hari ini, bukan setelah kamu merasa siap.",
+      "**На добър път.**"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "заминавам",
+   "baca": "za-mi-NA-vam",
+   "id": "saya berangkat, saya pergi"
+  },
+  {
+   "bg": "връщам се",
+   "baca": "VRĂSH-tam se",
+   "id": "saya kembali"
+  },
+  {
+   "bg": "че",
+   "baca": "che",
+   "id": "bahwa"
+  },
+  {
+   "bg": "вярвам",
+   "baca": "VYAR-vam",
+   "id": "saya percaya"
+  },
+  {
+   "bg": "надявам се",
+   "baca": "na-DYA-vam se",
+   "id": "saya berharap"
+  },
+  {
+   "bg": "радвам се",
+   "baca": "RAD-vam se",
+   "id": "saya senang"
+  },
+  {
+   "bg": "обещавам",
+   "baca": "o-besh-TA-vam",
+   "id": "saya berjanji"
+  },
+  {
+   "bg": "преувеличавам",
+   "baca": "pre-u-ve-li-CHA-vam",
+   "id": "saya melebih-lebihkan"
+  },
+  {
+   "bg": "научавам",
+   "baca": "na-u-CHA-vam",
+   "id": "saya mempelajari, saya jadi tahu"
+  },
+  {
+   "bg": "става ли?",
+   "baca": "STA-va li",
+   "id": "boleh ya?, oke?"
+  },
+  {
+   "bg": "пиши ми",
+   "baca": "pi-SHI mi",
+   "id": "kabari saya"
+  },
+  {
+   "bg": "билет",
+   "baca": "bi-LET",
+   "id": "tiket"
+  },
+  {
+   "bg": "път",
+   "baca": "păt",
+   "id": "jalan; kali"
+  },
+  {
+   "bg": "на добър път",
+   "baca": "na do-BĂR păt",
+   "id": "selamat jalan"
+  },
+  {
+   "bg": "успех",
+   "baca": "us-PEH",
+   "id": "sukses, keberhasilan"
+  },
+  {
+   "bg": "поздрави",
+   "baca": "POZ-dra-vi",
+   "id": "salam"
+  },
+  {
+   "bg": "пази се",
+   "baca": "pa-ZI se",
+   "id": "jaga diri"
+  },
+  {
+   "bg": "честит",
+   "baca": "ches-TIT",
+   "id": "selamat (ucapan)"
+  },
+  {
+   "bg": "рожден ден",
+   "baca": "rozh-DEN den",
+   "id": "ulang tahun"
+  },
+  {
+   "bg": "до скоро",
+   "baca": "do SKO-ro",
+   "id": "sampai ketemu lagi"
+  },
+  {
+   "bg": "толкова",
+   "baca": "TOL-ko-va",
+   "id": "sebegitu, sedemikian"
+  },
+  {
+   "bg": "март",
+   "baca": "mart",
+   "id": "Maret"
+  },
+  {
+   "bg": "чувам",
+   "baca": "CHU-vam",
+   "id": "saya mendengar"
+  },
+  {
+   "bg": "мисля",
+   "baca": "MIS-lya",
+   "id": "saya pikir"
+  },
+  {
+   "bg": "новина",
+   "baca": "no-vi-NA",
+   "id": "berita"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Besok saya berangkat.",
+    "Saya akan kembali bulan Maret.",
+    "Saya akan kangen kamu.",
+    "Terima kasih untuk semuanya.",
+    "Selamat jalan!",
+    "Kabari saya ya?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan че atau да.",
+   "items": [
+    "Мисля, ____ си прав.",
+    "Искам ____ отида в Пловдив.",
+    "Знам, ____ работиш утре.",
+    "Трябва ____ тръгвам.",
+    "Радвам се, ____ дойде."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "заминаваш / утре / значи",
+    "за / вече / купих / билет / март",
+    "всичко / благодаря / за",
+    "ми / липсваш / ще",
+    "път / добър / на"
+   ]
+  },
+  {
+   "prompt": "Tulis ucapan yang tepat dalam bahasa Bulgaria.",
+   "items": [
+    "Temanmu berulang tahun. Kamu bilang ____.",
+    "Temanmu akan naik pesawat. Kamu bilang ____.",
+    "Temanmu sedang sakit. Kamu bilang ____.",
+    "Temanmu baru bersin. Kamu bilang ____.",
+    "Temanmu akan ujian besok. Kamu bilang ____."
+   ]
+  }
+ ],
+ "answers": [
+  "Утре заминавам. — Ще се върна през март. — Ще ми липсваш. — Благодаря за всичко. — На добър път! — Пиши ми, става ли?",
+  "че — да — че — да — че",
+  "Значи утре заминаваш? — Вече купих билет за март. — Благодаря за всичко. — Ще ми липсваш. — На добър път!",
+  "Честит рожден ден! — На добър път! — Оздравявай! — Наздраве! — Успех!"
+ ]
+}

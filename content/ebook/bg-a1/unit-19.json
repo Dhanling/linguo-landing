@@ -1,0 +1,546 @@
+{
+ "title": "Yang mana yang lebih besar?",
+ "title_target": "Кой е по-голям?",
+ "goal": "Membandingkan apa saja dengan dua awalan yang tidak pernah berubah — **по-** untuk \"lebih\" dan **най-** untuk \"paling\" — susunan yang jauh lebih sederhana daripada bahasa Inggris atau Indonesia.",
+ "bekal": [
+  "membentuk tingkat perbandingan dengan **по-** dan **най-**",
+  "memakai **от** untuk \"daripada\"",
+  "memasang artikel takrif pada bentuk **най-**",
+  "memakai **повече** dan **по-малко** untuk jumlah",
+  "membandingkan kota, cuaca, dan harga"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Sofia, Plovdiv, dan Jakarta",
+   "intro": "Ivan dan Ani membandingkan kota. Perhatikan bahwa **по-** dan **най-** selalu ditulis dengan tanda hubung dan selalu membawa tekanan.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Кой|Koy] [град|grad] [е|e] [по-голям|po-go-LYAM] — [София|SO-fi-ya] [или|I-li] [Пловдив|PLOV-div]?",
+     "id": "Kota mana yang lebih besar — Sofia atau Plovdiv?",
+     "literal": "yang-mana — kota — adalah — lebih-besar — Sofia — atau — Plovdiv?"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[София|SO-fi-ya], [разбира|raz-BI-ra] [се|se]. [Тя|Tya] [е|e] [най-големият|NAY-go-LE-mi-yat] [град|grad] [в|v] [България|Băl-GA-ri-ya].",
+     "id": "Sofia, tentu saja. Dia kota terbesar di Bulgaria.",
+     "literal": "Sofia, mengerti — diri. dia — adalah — paling-besar-itu — kota — di — Bulgaria."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [по-хубав|po-HU-bav]?",
+     "id": "Kalau yang lebih bagus?",
+     "literal": "dan — lebih-bagus?"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Пловдив|PLOV-div] [е|e] [по-стар|po-STAR] [и|i] [по-спокоен|po-spo-KO-en]. [София|SO-fi-ya] [е|e] [по-модерна|po-mo-DER-na].",
+     "id": "Plovdiv lebih tua dan lebih tenang. Sofia lebih modern.",
+     "literal": "Plovdiv — adalah — lebih-tua — dan — lebih-tenang. Sofia — adalah — lebih-modern."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|V] [Джакарта|Dzha-KAR-ta] [има|I-ma] [много|MNO-go] [повече|PO-ve-che] [хора|ho-RA].",
+     "id": "Di Jakarta orangnya jauh lebih banyak.",
+     "literal": "di — Jakarta — ada — banyak — lebih-banyak — orang-orang."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Колко|KOL-ko]?",
+     "id": "Berapa?",
+     "literal": "berapa?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Около|O-ko-lo] [десет|DE-set] [милиона|mi-li-O-na]. [Осем|O-sem] [пъти|PĂ-ti] [повече|PO-ve-che] [от|ot] [София|SO-fi-ya].",
+     "id": "Sekitar sepuluh juta. Delapan kali lebih banyak daripada Sofia.",
+     "literal": "sekitar — sepuluh — juta. delapan — kali — lebih-banyak — dari — Sofia."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Невероятно|Ne-ve-ro-YAT-no]! [А|A] [по-топло|po-TOP-lo] [ли|li] [е|e]?",
+     "id": "Luar biasa! Lebih panas juga?",
+     "literal": "tak-terpercaya! dan — lebih-panas — (tanya) — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Много|MNO-go] [по-топло|po-TOP-lo]. [Най-студеният|NAY-stu-DE-ni-yat] [ден|den] [там|tam] [е|e] [по-топъл|po-TO-păl] [от|ot] [най-топлия|NAY-TOP-li-ya] [ден|den] [тук|tuk] [през|prez] [зимата|ZI-ma-ta].",
+     "id": "Jauh lebih panas. Hari terdingin di sana lebih panas daripada hari terpanas di sini waktu musim dingin.",
+     "literal": "sangat — lebih-panas. paling-dingin-itu — hari — di-sana — adalah — lebih-panas — dari — paling-panas-itu — hari — di-sini — selama — musim-dingin-itu."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Тогава|To-GA-va] [зимата|ZI-ma-ta] [ще|shte] [ти|ti] [бъде|BĂ-de] [най-трудното|NAY-TRUD-no-to] [нещо|NESH-to].",
+     "id": "Kalau begitu musim dingin bakal jadi hal tersulit buatmu.",
+     "literal": "kalau-begitu — musim-dingin-itu — akan — kepada-kamu — menjadi — paling-sulit-itu — hal."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Вече|VE-che] [е|e]!",
+     "id": "Sudah!",
+     "literal": "sudah — adalah!"
+    }
+   ],
+   "notes": [
+    "**По- dan най- tidak pernah berubah bentuk.** Bahasa Bulgaria tidak punya bentuk perbandingan tak beraturan seperti *good / better / best* atau *baik / lebih baik / terbaik*. Ia cukup menempelkan dua awalan pada kata sifat apa pun: *голям → по-голям → най-голям*. Satu sistem, tanpa kekecualian.",
+    "⚠️ **Tanda hubungnya wajib, dan bukan hiasan.** *По-голям* dengan tanda hubung berarti \"lebih besar\"; *по голям* tanpa tanda hubung tidak berarti apa-apa. Hal yang sama untuk *най-*. Ini kesalahan tulis paling sering di kalangan pelajar — dan juga di kalangan orang Bulgaria sendiri dalam pesan singkat.",
+    "⚠️ **По- dan най- selalu membawa tekanan kalimatnya.** *ПО-голям*, *НАЙ-голям*. Kata sifat aslinya kehilangan tekanan utamanya. Kalau kamu mengucapkannya tanpa menekankan awalannya, perbandinganmu tidak akan terdengar.",
+    "**Untuk \"daripada\" dipakai от**, kata depan yang sama dengan \"dari\": *София е по-голяма от Пловдив.* Kalau yang dibandingkan berupa kalimat, dipakai *отколкото*: *По-лесно е, отколкото мислех.* (Lebih mudah daripada yang saya kira.)",
+    "**Bentuk най- membawa artikel takrif** — masuk akal, karena \"yang paling\" pasti sudah tertentu. *Най-големият град* (kota terbesar itu), *най-хубавата песен* (lagu terbagus itu). Artikelnya menempel pada kata sifat, sesuai aturan Unit 12.",
+    "⚠️ **Много punya bentuk perbandingan yang tak beraturan: повече.** Bukan *по-много*. Lawannya *по-малко* (lebih sedikit), yang justru teratur. Ini satu-satunya kekecualian yang perlu kamu hafal di seluruh unit ini.",
+    "**Untuk memperkuat perbandingan dipakai много di depannya**: *много по-топло* (jauh lebih panas), *много по-добре* (jauh lebih baik). Susunannya sama persis dengan \"jauh lebih\" dalam bahasa Indonesia.",
+    "**Вече berarti \"sudah\" dan letaknya di depan kata kerjanya.** *Вече разбирам* (saya sudah mengerti), *Вече е късно* (sudah larut). Lawannya *още не* — belum: *Още не разбирам.*"
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tingkat, dua awalan",
+     "body": [
+      "Berlaku untuk kata sifat maupun kata keterangan, tanpa perbedaan bentuk."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Lebih",
+       "Paling",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "голям",
+        "**по-**голям",
+        "**най-**голям",
+        "besar"
+       ],
+       [
+        "хубав",
+        "**по-**хубав",
+        "**най-**хубав",
+        "bagus"
+       ],
+       [
+        "евтин",
+        "**по-**евтин",
+        "**най-**евтин",
+        "murah"
+       ],
+       [
+        "добре",
+        "**по-**добре",
+        "**най-**добре",
+        "dengan baik"
+       ],
+       [
+        "бързо",
+        "**по-**бързо",
+        "**най-**бързо",
+        "cepat"
+       ],
+       [
+        "много",
+        "**повече**",
+        "**най-много**",
+        "banyak"
+       ],
+       [
+        "малко",
+        "**по-малко**",
+        "**най-малко**",
+        "sedikit"
+       ]
+      ]
+     },
+     "after": [
+      "Kata sifatnya tetap menyesuaikan diri dengan bendanya seperti biasa: *по-голям град*, *по-голяма къща*, *по-голямо дете*, *по-големи къщи*. Awalan *по-* tidak mengubah apa pun tentang penyesuaian itu.",
+      "⚠️ Jangan tertukar antara **по-добър** (kata sifat: lebih baik) dan **по-добре** (kata keterangan: dengan lebih baik). *Този филм е по-добър* (film ini lebih bagus) lawan *Говоря по-добре* (saya bicara lebih baik)."
+     ]
+    },
+    {
+     "title": "Membandingkan dua hal",
+     "body": [
+      "Empat susunan yang menutup hampir semua perbandingan sehari-hari."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "A е по-X от B",
+        "София е по-голяма от Пловдив.",
+        "Sofia lebih besar daripada Plovdiv."
+       ],
+       [
+        "A е най-X в …",
+        "София е най-големият град в България.",
+        "Sofia kota terbesar di Bulgaria."
+       ],
+       [
+        "A е толкова X, колкото B",
+        "Пловдив е толкова хубав, колкото София.",
+        "Plovdiv sama bagusnya dengan Sofia."
+       ],
+       [
+        "A не е толкова X като B",
+        "Не е толкова студено като вчера.",
+        "Tidak sedingin kemarin."
+       ],
+       [
+        "повече / по-малко от",
+        "Има повече хора от вчера.",
+        "Ada lebih banyak orang daripada kemarin."
+       ]
+      ]
+     },
+     "after": [
+      "Susunan ketiga dan keempat memakai pasangan **толкова … колкото** — \"sebegitu … sebagaimana\". Untuk perbandingan yang lebih santai, dipakai **като** (seperti): *Той е висок като баща си.* (Dia setinggi ayahnya.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat yang paling sering dibandingkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti",
+      "Lawannya",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "голям",
+       "go-LYAM",
+       "besar",
+       "малък",
+       "MA-lăk",
+       "kecil"
+      ],
+      [
+       "дълъг",
+       "DĂ-lăg",
+       "panjang",
+       "къс",
+       "kăs",
+       "pendek"
+      ],
+      [
+       "висок",
+       "vi-SOK",
+       "tinggi",
+       "нисък",
+       "NI-săk",
+       "rendah, pendek"
+      ],
+      [
+       "скъп",
+       "skăp",
+       "mahal",
+       "евтин",
+       "EV-tin",
+       "murah"
+      ],
+      [
+       "нов",
+       "nov",
+       "baru",
+       "стар",
+       "star",
+       "tua, lama"
+      ],
+      [
+       "бърз",
+       "bărz",
+       "cepat",
+       "бавен",
+       "BA-ven",
+       "lambat"
+      ],
+      [
+       "лесен",
+       "LE-sen",
+       "mudah",
+       "труден",
+       "TRU-den",
+       "sulit"
+      ],
+      [
+       "хубав",
+       "HU-bav",
+       "bagus",
+       "лош",
+       "losh",
+       "buruk"
+      ],
+      [
+       "топъл",
+       "TO-păl",
+       "hangat",
+       "студен",
+       "stu-DEN",
+       "dingin"
+      ],
+      [
+       "близък",
+       "BLI-zăk",
+       "dekat",
+       "далечен",
+       "da-LE-chen",
+       "jauh"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan berapa banyak yang memakai vokal timbul di bentuk maskulinnya — *дълъг / дълга*, *нисък / ниска*, *лесен / лесна*, *топъл / топла*. Kalau kamu ragu bentuk femininnya, buang saja vokal terakhir sebelum huruf mati penutup, lalu tambahkan **-а**."
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Добър (baik) tidak sama dengan хубав (bagus).** *Добър човек* berarti orang baik hatinya; *хубав човек* berarti orang yang enak dipandang. Menukar keduanya tidak akan menghentikan percakapan, tetapi bisa membuat pujianmu salah sasaran."
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan Bulgaria dan Indonesia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Latihan yang paling berguna sekaligus paling sering kamu butuhkan — karena setiap orang Bulgaria akan menanyakannya kepadamu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Индонезия е много по-голяма от България.",
+       "Indonesia jauh lebih besar daripada Bulgaria."
+      ],
+      [
+       "В Индонезия има много повече хора.",
+       "Di Indonesia orangnya jauh lebih banyak."
+      ],
+      [
+       "В София е по-студено, отколкото в Джакарта.",
+       "Di Sofia lebih dingin daripada di Jakarta."
+      ],
+      [
+       "Храната тук е по-солена.",
+       "Makanan di sini lebih asin."
+      ],
+      [
+       "Животът в София е по-евтин от живота в Джакарта.",
+       "Hidup di Sofia lebih murah daripada di Jakarta."
+      ],
+      [
+       "Най-трудното нещо е зимата.",
+       "Hal tersulit adalah musim dinginnya."
+      ],
+      [
+       "Най-хубавото нещо са хората.",
+       "Hal terbaiknya adalah orang-orangnya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir memperlihatkan sesuatu yang halus: *най-хубавото нещо* berbentuk tunggal, tetapi kata kerjanya **са** (jamak), karena yang menyusul adalah *хората*. Bahasa Bulgaria menyesuaikan kata kerjanya dengan bagian yang menjelaskan, bukan dengan yang dijelaskan. Bahasa Indonesia tidak menuntut apa pun di sini, jadi cukup diperhatikan, tidak perlu dikhawatirkan."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka yang berguna untuk percakapan ini",
+     "items": [
+      "Bulgaria berpenduduk sekitar **6,5 juta** orang dan luasnya sekitar 111.000 km² — kira-kira seukuran Provinsi Jawa Timur dan Jawa Tengah digabung, dengan penduduk seperempatnya.",
+      "Indonesia berpenduduk sekitar **280 juta** — lebih dari empat puluh kali lipat. Kalimatnya: *Индонезия има четирийсет пъти повече хора от България.*",
+      "Sofia berketinggian 550 meter di atas permukaan laut, salah satu ibu kota tertinggi di Eropa. Suhu terendah yang pernah tercatat di Bulgaria adalah **−38,3 °C**. Sebutkan angka itu kepada siapa pun di Jakarta dan lihat reaksinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "по-",
+   "baca": "po",
+   "id": "lebih (awalan)"
+  },
+  {
+   "bg": "най-",
+   "baca": "nay",
+   "id": "paling (awalan)"
+  },
+  {
+   "bg": "повече",
+   "baca": "PO-ve-che",
+   "id": "lebih banyak"
+  },
+  {
+   "bg": "по-малко",
+   "baca": "po-MAL-ko",
+   "id": "lebih sedikit"
+  },
+  {
+   "bg": "от",
+   "baca": "ot",
+   "id": "daripada; dari"
+  },
+  {
+   "bg": "отколкото",
+   "baca": "ot-KOL-ko-to",
+   "id": "daripada (sebelum kalimat)"
+  },
+  {
+   "bg": "толкова",
+   "baca": "TOL-ko-va",
+   "id": "sebegitu"
+  },
+  {
+   "bg": "като",
+   "baca": "ka-TO",
+   "id": "seperti"
+  },
+  {
+   "bg": "висок",
+   "baca": "vi-SOK",
+   "id": "tinggi"
+  },
+  {
+   "bg": "нисък",
+   "baca": "NI-săk",
+   "id": "rendah, pendek"
+  },
+  {
+   "bg": "дълъг",
+   "baca": "DĂ-lăg",
+   "id": "panjang"
+  },
+  {
+   "bg": "къс",
+   "baca": "kăs",
+   "id": "pendek"
+  },
+  {
+   "bg": "лесен",
+   "baca": "LE-sen",
+   "id": "mudah"
+  },
+  {
+   "bg": "труден",
+   "baca": "TRU-den",
+   "id": "sulit"
+  },
+  {
+   "bg": "бърз",
+   "baca": "bărz",
+   "id": "cepat"
+  },
+  {
+   "bg": "бавен",
+   "baca": "BA-ven",
+   "id": "lambat"
+  },
+  {
+   "bg": "спокоен",
+   "baca": "spo-KO-en",
+   "id": "tenang"
+  },
+  {
+   "bg": "модерен",
+   "baca": "mo-DE-ren",
+   "id": "modern"
+  },
+  {
+   "bg": "лош",
+   "baca": "losh",
+   "id": "buruk, jelek"
+  },
+  {
+   "bg": "добър",
+   "baca": "do-BĂR",
+   "id": "baik"
+  },
+  {
+   "bg": "милион",
+   "baca": "mi-li-ON",
+   "id": "juta"
+  },
+  {
+   "bg": "около",
+   "baca": "O-ko-lo",
+   "id": "sekitar"
+  },
+  {
+   "bg": "невероятно",
+   "baca": "ne-ve-ro-YAT-no",
+   "id": "luar biasa, tak terpercaya"
+  },
+  {
+   "bg": "вече",
+   "baca": "VE-che",
+   "id": "sudah"
+  },
+  {
+   "bg": "живот",
+   "baca": "zhi-VOT",
+   "id": "hidup, kehidupan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bentuk tingkat perbandingan dan tingkat tertinggi.",
+   "items": [
+    "голям → ____ , ____",
+    "хубав → ____ , ____",
+    "евтин → ____ , ____",
+    "добре → ____ , ____",
+    "много → ____ , ____",
+    "труден → ____ , ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimatnya.",
+   "items": [
+    "София е ____-голяма ____ Пловдив.",
+    "Това е ____-хубавата песен.",
+    "В Джакарта има ____ хора. (lebih banyak)",
+    "Днес е ____-студено ____ вчера.",
+    "Пловдив е ____-стар град в Европа. (paling)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "е / по-голям / кой / град",
+    "град / най-големият / е / София",
+    "от / е / по-стар / Пловдив / София",
+    "по-топло / много / е",
+    "нещо / най-трудното / зимата / е"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Sofia lebih besar daripada Plovdiv.",
+    "Ini kota terbagus di Bulgaria.",
+    "Jauh lebih panas.",
+    "Ada lebih banyak orang.",
+    "Hal tersulit adalah musim dinginnya."
+   ]
+  }
+ ],
+ "answers": [
+  "по-голям, най-голям — по-хубав, най-хубав — по-евтин, най-евтин — по-добре, най-добре — повече, най-много — по-труден, най-труден",
+  "по, от — най — повече — по, от — най",
+  "Кой град е по-голям? — София е най-големият град. — Пловдив е по-стар от София. — Много по-топло е. — Най-трудното нещо е зимата.",
+  "София е по-голяма от Пловдив. — Това е най-хубавият град в България. — Много по-топло е. — Има повече хора. — Най-трудното нещо е зимата."
+ ]
+}

@@ -1,0 +1,541 @@
+{
+ "title": "Berapa harga tomatnya?",
+ "title_target": "Колко струват доматите?",
+ "goal": "Berbelanja di pasar dengan angka, satuan, dan harga — sekaligus mengurai satu-satunya kerumitan angka bahasa Bulgaria: bentuk hitung khusus untuk kata maskulin, dan bentuk yang lain lagi khusus untuk laki-laki.",
+ "bekal": [
+  "menghitung dari nol sampai seribu",
+  "menanyakan harga dengan **колко струва** dan **колко струват**",
+  "memakai **два** dan **две** sesuai jenis benda",
+  "memakai bentuk hitung maskulin: *два лева*, *три хляба*",
+  "membayar, menerima kembalian, dan menutup transaksi dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Di pasar Женски пазар",
+   "intro": "Ani berbelanja di pasar terbuka terbesar di Sofia. Perhatikan bahwa kata benda sesudah angka berakhiran **-а** yang tidak berarti jamak biasa — itulah bentuk hitung maskulin.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Добър|Do-BĂR] [ден|den]! [Колко|KOL-ko] [струват|STRU-vat] [доматите|do-MA-ti-te]?",
+     "id": "Selamat siang! Berapa harga tomatnya?",
+     "literal": "baik — hari! berapa — berharga-mereka — tomat-tomat-itu?"
+    },
+    {
+     "speaker": "Продавач:",
+     "text": "[Три|Tri] [лева|LE-va] [килото|ki-LO-to]. [Много|MNO-go] [са|sa] [хубави|HU-ba-vi].",
+     "id": "Tiga leva sekilo. Bagus-bagus.",
+     "literal": "tiga — leva — kilo-itu. sangat — adalah-mereka — bagus-bagus."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Дайте|DAY-te] [ми|mi] [един|e-DIN] [килограм|ki-lo-GRAM], [моля|MO-lya]. [И|I] [две|dve] [краставици|kras-TA-vi-tsi].",
+     "id": "Beri saya satu kilogram. Dan dua timun.",
+     "literal": "beri-lah-Anda — kepada-saya — satu — kilogram, silakan. dan — dua — timun-timun."
+    },
+    {
+     "speaker": "Продавач:",
+     "text": "[Заповядайте|Za-po-VYA-day-te]. [Друго|DRU-go]?",
+     "id": "Silakan. Ada lagi?",
+     "literal": "silakan-lah-Anda. lain?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Колко|KOL-ko] [струва|STRU-va] [това|to-VA] [сирене|SI-re-ne]?",
+     "id": "Berapa harga keju ini?",
+     "literal": "berapa — berharga-dia — ini — keju?"
+    },
+    {
+     "speaker": "Продавач:",
+     "text": "[Дванайсет|Dva-NAY-set] [лева|LE-va] [килото|ki-LO-to]. [Искате|IS-ka-te] [ли|li] [половин|po-lo-VIN] [кило|ki-LO]?",
+     "id": "Dua belas leva sekilo. Mau setengah kilo?",
+     "literal": "dua-belas — leva — kilo-itu. mau-Anda — (tanya) — setengah — kilo?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da], [моля|MO-lya]. [И|I] [един|e-DIN] [хляб|hlyab].",
+     "id": "Ya, tolong. Dan satu roti.",
+     "literal": "ya, silakan. dan — satu — roti."
+    },
+    {
+     "speaker": "Продавач:",
+     "text": "[Всичко|FSICH-ko] [е|e] [дванайсет|dva-NAY-set] [лева|LE-va] [и|i] [петдесет|pet-de-SET] [стотинки|sto-TIN-ki].",
+     "id": "Semuanya dua belas leva lima puluh stotinki.",
+     "literal": "semua — adalah — dua-belas — leva — dan — lima-puluh — stotinki."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ето|E-to] [двайсет|DVAY-set] [лева|LE-va].",
+     "id": "Ini dua puluh leva.",
+     "literal": "ini-dia — dua-puluh — leva."
+    },
+    {
+     "speaker": "Продавач:",
+     "text": "[Ето|E-to] [рестото|RES-to-to] — [седем|SE-dem] [лева|LE-va] [и|i] [петдесет|pet-de-SET]. [Благодаря|Bla-go-da-RYA]!",
+     "id": "Ini kembaliannya — tujuh leva lima puluh. Terima kasih!",
+     "literal": "ini-dia — kembalian-itu — tujuh — leva — dan — lima-puluh. terima-kasih!"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Аз|Az] [благодаря|bla-go-da-RYA]! [Довиждане|Do-VIZH-da-ne]!",
+     "id": "Saya yang terima kasih! Sampai jumpa!",
+     "literal": "saya — terima-kasih! sampai-perjumpaan!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Kata maskulin sesudah angka memakai bentuk khusus, bukan bentuk jamak biasa.** Jamak dari *лев* adalah *левове*, tetapi sesudah angka ia menjadi **лева**: *два лева, пет лева, сто лева*. Begitu pula *хляб* → jamak *хлябове*, tetapi *два хляба*. Bentuk ini disebut **бройна форма** — bentuk hitung — dan ia hanya ada pada kata maskulin yang bukan orang.",
+    "**Дайте ми harfiahnya \"berikanlah kepada saya\".** Kata *ми* di situ adalah bentuk pendek \"kepada saya\" yang sudah kamu lihat pada *Приятно ми е*. Untuk teman, bentuknya *Дай ми*.",
+    "**Заповядайте adalah kata paling serbaguna di Bulgaria.** Ia dipakai saat menyerahkan barang (\"silakan, ini\"), saat mempersilakan masuk (\"mari masuk\"), saat menawarkan kursi, dan saat pelayan menyapamu (\"silakan, mau pesan apa?\"). Bentuk santainya *Заповядай*. Kalau kamu hanya menghafal sepuluh kata dari unit ini, masukkan yang ini.",
+    "**Килото berarti \"per kilo\", dengan artikel.** Susunannya sama dengan bahasa Indonesia \"sekilonya\": *три лева килото* — tiga leva sekilonya. Pola yang sama untuk *бройката* (per buah) dan *литърът* (per liter).",
+    "**Uang Bulgaria: лев, jamak левове, bentuk hitung лева.** Satu lev berisi seratus **стотинки** (dari kata *сто*, seratus). Dalam percakapan, orang sering menyebut harga tanpa menyebut satuannya sama sekali: *дванайсет и петдесет* sudah cukup jelas berarti 12,50 lv.",
+    "**Струва untuk satu benda, струват untuk banyak benda.** *Колко струва хлябът?* (Berapa harga rotinya?) dan *Колко струват доматите?* (Berapa harga tomatnya?). ⚠️ Penutur Indonesia sering memakai bentuk tunggal untuk semuanya karena bahasa kita tidak menuntut penyesuaian; di sini penyesuaiannya wajib.",
+    "**Друго? adalah cara penjual bertanya \"ada lagi?\"** Jawaban penutupnya: *Не, благодаря. Това е всичко.* (Tidak, terima kasih. Sudah itu saja.)",
+    "**Аз благодаря — \"saya yang berterima kasih\".** Kalimat penutup yang hangat dan sangat lazim; menaruh *аз* di depan memindahkan penekanan ke dirimu. Penjual akan mengingatmu."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 1–20 dan seterusnya",
+     "body": [
+      "Angka 1 sampai 10 harus dihafal; sisanya tersusun dari batu bata yang sama."
+     ],
+     "table": {
+      "head": [
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      "rows": [
+       [
+        "0 нула",
+        "1 един/една/едно",
+        "2 два/две",
+        "3 три",
+        "4 четири"
+       ],
+       [
+        "5 пет",
+        "6 шест",
+        "7 седем",
+        "8 осем",
+        "9 девет"
+       ],
+       [
+        "10 десет",
+        "11 единайсет",
+        "12 дванайсет",
+        "13 тринайсет",
+        "14 четиринайсет"
+       ],
+       [
+        "15 петнайсет",
+        "16 шестнайсет",
+        "17 седемнайсет",
+        "18 осемнайсет",
+        "19 деветнайсет"
+       ],
+       [
+        "20 двайсет",
+        "30 трийсет",
+        "40 четирийсет",
+        "50 петдесет",
+        "60 шейсет"
+       ],
+       [
+        "70 седемдесет",
+        "80 осемдесет",
+        "90 деветдесет",
+        "100 сто",
+        "1000 хиляда"
+       ]
+      ]
+     },
+     "after": [
+      "Angka 11 sampai 19 semuanya berpola **angka + найсет**, yang asalnya *на десет* — \"di atas sepuluh\". Kalau kamu bisa menyebut 1 sampai 10, kamu praktis sudah bisa menyebut 1 sampai 20.",
+      "Angka gabungan disambung dengan **и** sebelum bagian terakhir: *двайсет и едно* (21), *сто двайсет и пет* (125), *хиляда деветстотин деветдесет и девет* (1999)."
+     ]
+    },
+    {
+     "title": "Един, два, dan bentuk hitung maskulin",
+     "body": [
+      "Hanya angka satu dan dua yang ikut jenis kelamin. Angka tiga ke atas tidak pernah berubah. Yang berubah justru **kata bendanya** — dan hanya kalau ia maskulin."
+     ],
+     "table": {
+      "head": [
+       "Jenis benda",
+       "1",
+       "2",
+       "3",
+       "Contoh 5"
+      ],
+      "rows": [
+       [
+        "Maskulin (benda)",
+        "един лев",
+        "два лев**а**",
+        "три лев**а**",
+        "пет лев**а**"
+       ],
+       [
+        "Maskulin (benda)",
+        "един хляб",
+        "два хляб**а**",
+        "три хляб**а**",
+        "пет хляб**а**"
+       ],
+       [
+        "Feminin",
+        "една книга",
+        "две книги",
+        "три книги",
+        "пет книги"
+       ],
+       [
+        "Netral",
+        "едно дете",
+        "две деца",
+        "три деца",
+        "пет деца"
+       ],
+       [
+        "Maskulin (ORANG)",
+        "един мъж",
+        "**двама** мъже",
+        "**трима** мъже",
+        "**петима** мъже"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir adalah keanehan yang harus dihafal terpisah: **untuk laki-laki, angkanya sendiri yang berubah** — *двама, трима, четирима, петима, шестима*. Bentuk ini hanya dipakai untuk manusia laki-laki atau kelompok campur. Untuk perempuan saja dipakai angka biasa: *две жени*.",
+      "⚠️ Jebakan yang paling sering: mengatakan *два лева* dengan benar lalu mengatakan *два мъжа* — yang salah dua kali sekaligus. Yang benar **двама мъже**.",
+      "Cara mengingat yang paling ringkas: **benda maskulin → kata bendanya yang berubah; orang laki-laki → angkanya yang berubah.**"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ungkapan belanja yang menutup seluruh transaksi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Български",
+      "Baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Колко струва?",
+       "KOL-ko STRU-va",
+       "Berapa harganya?"
+      ],
+      [
+       "Колко струва всичко?",
+       "KOL-ko STRU-va FSICH-ko",
+       "Semuanya berapa?"
+      ],
+      [
+       "Скъпо е.",
+       "SKĂ-po e",
+       "Mahal."
+      ],
+      [
+       "Имате ли по-евтино?",
+       "I-ma-te li po-EV-ti-no",
+       "Ada yang lebih murah?"
+      ],
+      [
+       "Дайте ми, моля…",
+       "DAY-te mi, MO-lya",
+       "Tolong beri saya…"
+      ],
+      [
+       "Само това.",
+       "SA-mo to-VA",
+       "Ini saja."
+      ],
+      [
+       "Това е всичко.",
+       "to-VA e FSICH-ko",
+       "Sudah itu saja."
+      ],
+      [
+       "Може ли да платя с карта?",
+       "MO-zhe li da pla-TYA s KAR-ta",
+       "Boleh bayar pakai kartu?"
+      ],
+      [
+       "В брой.",
+       "v broy",
+       "Tunai."
+      ],
+      [
+       "Нямам ресто.",
+       "NYA-mam RES-to",
+       "Saya tidak punya kembalian."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Baris terakhir sering kamu dengar dari penjual, bukan dari dirimu. Di pasar terbuka, membayar barang seharga tiga leva dengan lembaran lima puluh sering ditolak halus. Simpan uang pecahan kecil — di Bulgaria ia berharga lebih daripada nilainya."
+    }
+   ]
+  },
+  {
+   "title": "Satuan, takaran, dan bungkusan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "кило / килограм",
+       "ki-LO / ki-lo-GRAM",
+       "kilo",
+       "едно кило домати"
+      ],
+      [
+       "половин кило",
+       "po-lo-VIN ki-LO",
+       "setengah kilo",
+       "половин кило сирене"
+      ],
+      [
+       "грам",
+       "gram",
+       "gram",
+       "двеста грама"
+      ],
+      [
+       "литър",
+       "LI-tăr",
+       "liter",
+       "един литър мляко"
+      ],
+      [
+       "брой",
+       "broy",
+       "buah, biji",
+       "три броя"
+      ],
+      [
+       "парче",
+       "par-CHE",
+       "potong",
+       "едно парче торта"
+      ],
+      [
+       "бутилка",
+       "bu-TIL-ka",
+       "botol",
+       "бутилка вода"
+      ],
+      [
+       "пакет",
+       "pa-KET",
+       "bungkus",
+       "пакет ориз"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di pasar, jumlah kecil sering disebut tanpa satuan sama sekali: *два домата* (dua tomat), *три краставици* (tiga timun). Penjual akan mengerti. Yang penting jangan lupa bentuk hitung maskulinnya — *домат* itu maskulin, jadi **два домата**, bukan *два домати*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kisero mlyako — yoghurt yang namanya membawa nama negara",
+     "items": [
+      "Kalau kamu berbelanja di Bulgaria, satu produk akan selalu ada di keranjang orang lokal: **кисело мляко** (*KI-se-lo MLYA-ko*), harfiahnya \"susu asam\", yaitu yoghurt. Bakteri yang membuatnya, *Lactobacillus bulgaricus*, dinamai dari negara ini karena memang ditemukan di sini pada 1905 oleh seorang mahasiswa Bulgaria.",
+      "Yoghurt bukan makanan sampingan di Bulgaria; ia bahan utama. Ia jadi sup dingin *таратор* di musim panas, jadi saus, jadi minuman asin *айрян*, dan dimakan begitu saja dengan madu. Kalau kamu bertanya *Кое кисело мляко е най-хубавото?* (yoghurt mana yang paling enak?), bersiaplah untuk percakapan panjang yang serius."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "колко",
+   "baca": "KOL-ko",
+   "id": "berapa"
+  },
+  {
+   "bg": "струва",
+   "baca": "STRU-va",
+   "id": "berharga (satu benda)"
+  },
+  {
+   "bg": "лев",
+   "baca": "lev",
+   "id": "lev (mata uang Bulgaria)"
+  },
+  {
+   "bg": "стотинка",
+   "baca": "sto-TIN-ka",
+   "id": "stotinka (1/100 lev)"
+  },
+  {
+   "bg": "пазар",
+   "baca": "pa-ZAR",
+   "id": "pasar"
+  },
+  {
+   "bg": "магазин",
+   "baca": "ma-ga-ZIN",
+   "id": "toko"
+  },
+  {
+   "bg": "домат",
+   "baca": "do-MAT",
+   "id": "tomat"
+  },
+  {
+   "bg": "краставица",
+   "baca": "KRAS-ta-vi-tsa",
+   "id": "timun"
+  },
+  {
+   "bg": "сирене",
+   "baca": "SI-re-ne",
+   "id": "keju putih"
+  },
+  {
+   "bg": "кисело мляко",
+   "baca": "KI-se-lo MLYA-ko",
+   "id": "yoghurt"
+  },
+  {
+   "bg": "хляб",
+   "baca": "hlyab",
+   "id": "roti"
+  },
+  {
+   "bg": "кило",
+   "baca": "ki-LO",
+   "id": "kilo"
+  },
+  {
+   "bg": "половин",
+   "baca": "po-lo-VIN",
+   "id": "setengah"
+  },
+  {
+   "bg": "заповядайте",
+   "baca": "za-po-VYA-day-te",
+   "id": "silakan"
+  },
+  {
+   "bg": "дайте ми",
+   "baca": "DAY-te mi",
+   "id": "beri saya"
+  },
+  {
+   "bg": "друго",
+   "baca": "DRU-go",
+   "id": "lain, yang lain"
+  },
+  {
+   "bg": "ресто",
+   "baca": "RES-to",
+   "id": "kembalian"
+  },
+  {
+   "bg": "скъп",
+   "baca": "skăp",
+   "id": "mahal"
+  },
+  {
+   "bg": "евтин",
+   "baca": "EV-tin",
+   "id": "murah"
+  },
+  {
+   "bg": "плащам",
+   "baca": "PLASH-tam",
+   "id": "saya membayar"
+  },
+  {
+   "bg": "в брой",
+   "baca": "v broy",
+   "id": "tunai"
+  },
+  {
+   "bg": "бутилка",
+   "baca": "bu-TIL-ka",
+   "id": "botol"
+  },
+  {
+   "bg": "парче",
+   "baca": "par-CHE",
+   "id": "potong"
+  },
+  {
+   "bg": "мъж / мъже",
+   "baca": "măzh / mă-ZHE",
+   "id": "laki-laki (tunggal / jamak)"
+  },
+  {
+   "bg": "жена / жени",
+   "baca": "zhe-NA / zhe-NI",
+   "id": "perempuan (tunggal / jamak)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf Kiril.",
+   "items": [
+    "7",
+    "12",
+    "20",
+    "45",
+    "100",
+    "1999"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk angka dan kata benda yang tepat.",
+   "items": [
+    "два ____ (лев)",
+    "три ____ (хляб)",
+    "две ____ (книга)",
+    "____ мъже (2 orang laki-laki)",
+    "пет ____ (дете)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "струват / доматите / колко",
+    "лева / три / килото",
+    "ми / дайте / килограм / един",
+    "е / всичко / лева / осем",
+    "половин / искам / кило"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Berapa harga kejunya?",
+    "Mahal sekali.",
+    "Beri saya dua roti.",
+    "Semuanya berapa?",
+    "Boleh bayar pakai kartu?"
+   ]
+  }
+ ],
+ "answers": [
+  "седем — дванайсет — двайсет — четирийсет и пет — сто — хиляда деветстотин деветдесет и девет",
+  "лева — хляба — книги — двама — деца",
+  "Колко струват доматите? — Три лева килото. — Дайте ми един килограм. — Всичко е осем лева. — Искам половин кило.",
+  "Колко струва сиренето? — Много е скъпо. — Дайте ми два хляба. — Колко струва всичко? — Може ли да платя с карта?"
+ ]
+}

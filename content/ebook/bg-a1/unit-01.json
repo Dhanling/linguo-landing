@@ -1,0 +1,524 @@
+{
+ "title": "Halo, nama saya Ani",
+ "title_target": "Здравейте — Zdraveyte",
+ "goal": "Menyapa dengan aman kepada siapa pun, menyebut nama, menanyakan nama lawan bicara, dan mengucapkan kalimat Bulgaria pertama yang benar — kalimat yang memakai kata \"adalah\" tetapi tidak pernah menaruhnya di depan.",
+ "bekal": [
+  "menyapa resmi dan santai, dan tahu bedanya",
+  "menyebut namamu dengan dua cara",
+  "menanyakan nama dan pekerjaan orang lain",
+  "memakai enam bentuk kata kerja **съм** dengan letak yang benar",
+  "mengucapkan terima kasih, permisi, dan sama-sama"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Hari pertama di kursus",
+   "intro": "Ani, pelajar dari Indonesia, masuk ke kelas bahasa Bulgaria di Sofia dan duduk di sebelah seseorang yang belum dikenalnya. Perhatikan letak kata kecil **съм** dan **е** — tak satu pun berdiri di awal kalimat.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Здравейте|Zdra-VEY-te]!",
+     "id": "Halo!",
+     "literal": "sehat-lah-Anda!"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Здравейте|Zdra-VEY-te]! [Аз|Az] [съм|săm] [Иван|i-VAN]. [А|A] [вие|VI-e]?",
+     "id": "Halo! Saya Ivan. Dan Anda?",
+     "literal": "sehat-lah-Anda! saya — adalah — Ivan. dan — Anda?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Казвам|KAZ-vam] [се|se] [Ани|A-ni]. [Приятно|Pri-YAT-no] [ми|mi] [е|e].",
+     "id": "Nama saya Ani. Senang berkenalan.",
+     "literal": "memanggil — diri — Ani. menyenangkan — bagi-saya — adalah."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[И|I] [на|na] [мен|men] [ми|mi] [е|e] [приятно|pri-YAT-no]. [Вие|Vi-e] [студентка|stu-DENT-ka] [ли|li] [сте|ste]?",
+     "id": "Saya juga senang. Anda mahasiswi?",
+     "literal": "juga — bagi — saya — bagi-saya — adalah — menyenangkan. Anda — mahasiswi — (tanya) — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da], [студентка|stu-DENT-ka] [съм|săm]. [А|A] [вие|VI-e]?",
+     "id": "Ya, saya mahasiswi. Kalau Anda?",
+     "literal": "ya, mahasiswi — adalah-saya. dan — Anda?"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Аз|Az] [не|ne] [съм|săm] [студент|stu-DENT]. [Учител|U-chi-tel] [съм|săm].",
+     "id": "Saya bukan mahasiswa. Saya guru.",
+     "literal": "saya — tidak — adalah — mahasiswa. guru — adalah-saya."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[О|O], [извинете|iz-vi-NE-te]!",
+     "id": "Oh, maaf!",
+     "literal": "oh, maafkan-lah-Anda!"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Няма|NYA-ma] [нищо|NISH-to]. [Всичко|FSICH-ko] [е|e] [наред|na-RED].",
+     "id": "Tidak apa-apa. Semuanya beres.",
+     "literal": "tidak-ada — apa-apa. semua — adalah — beres."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA].",
+     "id": "Terima kasih.",
+     "literal": "terima-kasih."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Моля|MO-lya]. [Приятен|Pri-YA-ten] [ден|den], [Ани|A-ni]!",
+     "id": "Sama-sama. Selamat beraktivitas, Ani!",
+     "literal": "silakan. menyenangkan — hari, Ani!"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Довиждане|Do-VIZH-da-ne]!",
+     "id": "Sampai jumpa!",
+     "literal": "sampai — perjumpaan!"
+    }
+   ],
+   "notes": [
+    "**Bahasa Bulgaria punya kata \"adalah\", dan wajib memakainya.** Ini kebalikan dari bahasa Indonesia dan juga kebalikan dari bahasa Rusia. *Аз съм студент* — \"saya adalah mahasiswa\". Menghilangkan *съм* bukan sekadar tidak baku; kalimatnya jadi tidak lengkap. ⚠️ Ini jebakan nomor satu bagi penutur bahasa Indonesia: naluri kita menulis *Аз студент*, dan itu salah.",
+    "**Tetapi съм tidak boleh berdiri di awal kalimat.** *Съм студент* salah, meskipun artinya jelas. Kata ini termasuk kelompok kata kecil yang selalu menempel di belakang sesuatu — bahasa aslinya menyebutnya *клитика*. Kalau kamu ingin menghilangkan *аз*, kata lain harus maju ke depan: **Студентка съм.** Dua-duanya benar dan artinya sama; bedanya *Аз съм студентка* sedikit lebih menekankan \"saya\".",
+    "**Здравейте resmi, Здравей dan Здрасти santai.** Здравейте dipakai kepada orang yang belum dikenal, orang yang lebih tua, guru, petugas — siapa pun yang kamu panggil *вие*. Здравей (*zdra-VEY*) untuk satu teman, Здрасти (*ZDRAS-ti*) lebih santai lagi. ⚠️ Memakai Здрасти kepada petugas imigrasi terdengar seperti anak kecil menepuk bahu orang dewasa.",
+    "**Казвам се harfiahnya \"saya memanggil diri saya\".** Bukan \"nama saya\". Kata *се* di situ berarti \"diri sendiri\" dan akan sering kamu temui menempel pada kata kerja. Untuk bertanya balik cukup **А вие?** — tak perlu mengulang seluruh kalimatnya.",
+    "**Ли adalah tanda tanya yang berupa kata.** Bahasa Bulgaria tidak mengubah susunan kata untuk bertanya seperti bahasa Inggris. Ia menyisipkan *ли* tepat sesudah **kata yang sedang ditanyakan**. *Вие студентка ли сте?* menanyakan apakah dia mahasiswi; *Вие ли сте студентка?* menanyakan apakah **dia**-lah yang mahasiswi itu. Letaknya memindahkan sasaran pertanyaan.",
+    "**Извинете dan Съжалявам dua-duanya \"maaf\", tapi tidak sama beratnya.** Извинете (*iz-vi-NE-te*) untuk gangguan kecil: menyela, lewat, salah tebak. Съжалявам (*să-zha-LYA-vam*) harfiahnya \"saya menyesal\" dan dipakai untuk kesalahan yang sungguhan atau untuk turut berduka.",
+    "**Моля satu kata, tiga pekerjaan.** Ia berarti \"silakan\", \"tolong\", dan \"sama-sama\" sekaligus. Diucapkan sendirian dengan nada naik — *Моля?* — ia berarti \"apa? tolong ulangi\". Kamu akan memakainya puluhan kali sehari.",
+    "**Няма нищо harfiahnya \"tidak ada apa-apa\" — dua sangkalan sekaligus.** Bahasa Bulgaria memang menumpuk sangkalan dan itu justru bentuk yang benar; ini akan dibahas tuntas di Unit 13. Untuk sekarang hafalkan utuh sebagai satu bongkah."
+   ],
+   "grammars": [
+    {
+     "title": "Съм — kata kerja \"adalah\"",
+     "body": [
+      "Ini kata kerja terpenting di seluruh bahasa Bulgaria dan bentuknya tidak beraturan, jadi hafalkan sekarang juga. Bentuknya sama sekali tidak mirip satu sama lain — persis seperti *am / is / are* dalam bahasa Inggris."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "Bulgaria",
+       "Baca",
+       "Contoh kalimat"
+      ],
+      "rows": [
+       [
+        "аз (saya)",
+        "съм",
+        "săm",
+        "Аз съм Ани."
+       ],
+       [
+        "ти (kamu)",
+        "си",
+        "si",
+        "Ти си студент."
+       ],
+       [
+        "той / тя / то (dia)",
+        "е",
+        "e",
+        "Той е учител."
+       ],
+       [
+        "ние (kami)",
+        "сме",
+        "sme",
+        "Ние сме от Индонезия."
+       ],
+       [
+        "вие (kalian / Anda)",
+        "сте",
+        "ste",
+        "Вие сте учител."
+       ],
+       [
+        "те (mereka)",
+        "са",
+        "sa",
+        "Те са студенти."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk sangkalannya cukup menambahkan **не** tepat di depan: *не съм, не си, не е, не сме, не сте, не са*. Dan berbeda dari bentuk positifnya, **не съм boleh** berdiri di awal kalimat, karena yang di depan sekarang adalah *не*: *Не съм студент.*"
+     ]
+    },
+    {
+     "title": "Aturan letak yang menentukan segalanya",
+     "body": [
+      "Bahasa Bulgaria punya sekumpulan kata kecil tanpa tekanan — *съм, се, ми, те, го, ли* dan kawan-kawannya. Semuanya tunduk pada satu aturan tunggal: **tidak boleh menjadi kata pertama dalam kalimat.** Sisanya bisa kamu susun cukup bebas."
+     ],
+     "table": {
+      "head": [
+       "Salah",
+       "Benar",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Съм студент.*",
+        "**Аз съм студент.** / **Студент съм.**",
+        "Saya mahasiswa."
+       ],
+       [
+        "*Ми е приятно.*",
+        "**Приятно ми е.**",
+        "Senang berkenalan."
+       ],
+       [
+        "*Се казвам Ани.*",
+        "**Казвам се Ани.**",
+        "Nama saya Ani."
+       ],
+       [
+        "*Ли сте студент?*",
+        "**Студент ли сте?**",
+        "Anda mahasiswa?"
+       ]
+      ]
+     },
+     "after": [
+      "Cara paling mudah mengingatnya: **kalimat Bulgaria tidak pernah dibuka dengan kata yang tidak bertekanan.** Kalau kata kecil itu terancam berada di depan, dorong kata bertekanan mana pun ke depan sebagai penyangga."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ungkapan yang wajib ada di saku hari pertama",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sepuluh ungkapan berikut menutup hampir semua basa-basi hari pertama. Hafalkan utuh sebagai bongkahan; tata bahasanya akan terurai sendiri di unit-unit berikutnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Български",
+      "Baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Добро утро",
+       "dob-RO U-tro",
+       "Selamat pagi (sampai ±10.00)"
+      ],
+      [
+       "Добър ден",
+       "DO-băr den",
+       "Selamat siang (sapaan umum sepanjang hari)"
+      ],
+      [
+       "Добър вечер",
+       "DO-băr VE-cher",
+       "Selamat sore/malam"
+      ],
+      [
+       "Лека нощ",
+       "LE-ka nosht",
+       "Selamat tidur"
+      ],
+      [
+       "Как сте?",
+       "kak ste",
+       "Apa kabar? (resmi)"
+      ],
+      [
+       "Как си?",
+       "kak si",
+       "Apa kabar? (santai)"
+      ],
+      [
+       "Добре съм, благодаря",
+       "dob-RE săm, bla-go-da-RYA",
+       "Baik, terima kasih"
+      ],
+      [
+       "Не разбирам",
+       "ne raz-BI-ram",
+       "Saya tidak mengerti"
+      ],
+      [
+       "Говорите ли английски?",
+       "go-VO-ri-te li ang-LIY-ski",
+       "Anda bisa bahasa Inggris?"
+      ],
+      [
+       "Как се казва това?",
+       "kak se KAZ-va to-VA",
+       "Ini namanya apa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **Добър ден**: ia bukan hanya untuk siang hari sempit seperti \"selamat siang\" bahasa Indonesia. Dari pagi sampai petang, kalau kamu ragu harus memakai yang mana, pakai *Добър ден* dan kamu tak akan pernah keliru."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Menggeleng berarti YA",
+     "items": [
+      "Ini bukan lelucon dan bukan cerita turis. Di Bulgaria **gerakan kepala untuk \"ya\" adalah menggeleng ke kiri-kanan**, dan untuk \"tidak\" adalah menganggukkan kepala ke atas sekali, sering disertai bunyi kecil *ts*. Kebalikan penuh dari yang kamu kenal.",
+      "Akibatnya sangat nyata di hari pertama: kamu bertanya \"ada kamar kosong?\", petugas menggeleng, kamu berbalik pergi — padahal dia baru saja bilang ya. Selama kamu masih baru, **selalu andalkan kata *да* dan *не*, bukan kepalanya**, dan ucapkan jawabanmu sendiri dengan kata, bukan dengan gerakan.",
+      "Orang Bulgaria yang sering berurusan dengan orang asing kadang sengaja membalik gerakannya untuk menolongmu — dan itu justru membuat keadaan lebih kacau. Kalau ragu, tanyakan saja: *Да или не?* (da I-li ne) — \"Ya atau tidak?\""
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kamu sudah bisa membaca lebih banyak daripada yang kamu kira",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebelum lanjut, uji dirimu dengan sepuluh kata di bawah. Semuanya dipinjam dari bahasa Eropa dan sudah kamu kenal dalam bahasa Indonesia — satu-satunya rintangan cuma aksaranya. Tutup lajur kanan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kiril",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "такси",
+       "tak-SI",
+       "taksi"
+      ],
+      [
+       "хотел",
+       "ho-TEL",
+       "hotel"
+      ],
+      [
+       "ресторант",
+       "res-to-RANT",
+       "restoran"
+      ],
+      [
+       "паспорт",
+       "pas-PORT",
+       "paspor"
+      ],
+      [
+       "банка",
+       "BAN-ka",
+       "bank"
+      ],
+      [
+       "апартамент",
+       "a-par-ta-MENT",
+       "apartemen"
+      ],
+      [
+       "телефон",
+       "te-le-FON",
+       "telepon"
+      ],
+      [
+       "интернет",
+       "in-ter-NET",
+       "internet"
+      ],
+      [
+       "полиция",
+       "po-LI-tsi-ya",
+       "polisi"
+      ],
+      [
+       "билет",
+       "bi-LET",
+       "tiket"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sepuluh kata dalam dua menit, tanpa menghafal apa pun. Begitulah cara Kiril bekerja: begitu hurufnya menempel, ratusan kata terbuka sekaligus."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "здравейте",
+   "baca": "zdra-VEY-te",
+   "id": "halo (resmi, kepada siapa pun)"
+  },
+  {
+   "bg": "здравей",
+   "baca": "zdra-VEY",
+   "id": "hai (santai, ke satu teman)"
+  },
+  {
+   "bg": "довиждане",
+   "baca": "do-VIZH-da-ne",
+   "id": "sampai jumpa"
+  },
+  {
+   "bg": "чао",
+   "baca": "chao",
+   "id": "dah (sangat santai)"
+  },
+  {
+   "bg": "казвам се",
+   "baca": "KAZ-vam se",
+   "id": "nama saya"
+  },
+  {
+   "bg": "как се казвате?",
+   "baca": "kak se KAZ-va-te",
+   "id": "siapa nama Anda?"
+  },
+  {
+   "bg": "приятно ми е",
+   "baca": "pri-YAT-no mi e",
+   "id": "senang berkenalan"
+  },
+  {
+   "bg": "аз",
+   "baca": "az",
+   "id": "saya"
+  },
+  {
+   "bg": "ти",
+   "baca": "ti",
+   "id": "kamu"
+  },
+  {
+   "bg": "той / тя",
+   "baca": "toy / tya",
+   "id": "dia (laki-laki / perempuan)"
+  },
+  {
+   "bg": "ние",
+   "baca": "NI-e",
+   "id": "kami, kita"
+  },
+  {
+   "bg": "вие",
+   "baca": "VI-e",
+   "id": "kalian; Anda (resmi)"
+  },
+  {
+   "bg": "те",
+   "baca": "te",
+   "id": "mereka"
+  },
+  {
+   "bg": "студент / студентка",
+   "baca": "stu-DENT / stu-DENT-ka",
+   "id": "mahasiswa / mahasiswi"
+  },
+  {
+   "bg": "учител / учителка",
+   "baca": "U-chi-tel / u-chi-TEL-ka",
+   "id": "guru (lk / pr)"
+  },
+  {
+   "bg": "да",
+   "baca": "da",
+   "id": "ya"
+  },
+  {
+   "bg": "не",
+   "baca": "ne",
+   "id": "tidak, bukan"
+  },
+  {
+   "bg": "моля",
+   "baca": "MO-lya",
+   "id": "silakan; tolong; sama-sama"
+  },
+  {
+   "bg": "благодаря",
+   "baca": "bla-go-da-RYA",
+   "id": "terima kasih"
+  },
+  {
+   "bg": "извинете",
+   "baca": "iz-vi-NE-te",
+   "id": "maaf, permisi (resmi)"
+  },
+  {
+   "bg": "няма нищо",
+   "baca": "NYA-ma NISH-to",
+   "id": "tidak apa-apa"
+  },
+  {
+   "bg": "добре",
+   "baca": "dob-RE",
+   "id": "baik, oke"
+  },
+  {
+   "bg": "всичко",
+   "baca": "FSICH-ko",
+   "id": "semua, segalanya"
+  },
+  {
+   "bg": "наред",
+   "baca": "na-RED",
+   "id": "beres, teratur"
+  },
+  {
+   "bg": "ден",
+   "baca": "den",
+   "id": "hari"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria. Ingat: kata \"adalah\" wajib ada, tapi tidak boleh di awal.",
+   "items": [
+    "Halo! (resmi)",
+    "Nama saya Ani.",
+    "Saya mahasiswi.",
+    "Dia bukan guru.",
+    "Anda mahasiswa?",
+    "Sampai jumpa!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk съм yang tepat.",
+   "items": [
+    "Аз ____ студент.",
+    "Ти ____ от Индонезия.",
+    "Той ____ учител.",
+    "Ние ____ студенти.",
+    "Те ____ от София."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar. Ingat aturan letak kata kecil.",
+   "items": [
+    "се / Ани / казвам",
+    "съм / не / студент / аз",
+    "ми / приятно / е",
+    "ли / сте / вие / студентка",
+    "наред / всичко / е"
+   ]
+  },
+  {
+   "prompt": "Pilih ucapan yang tepat. Tulis jawabannya dalam huruf Kiril.",
+   "items": [
+    "Kamu masuk ke ruang dosen pukul sembilan pagi. Kamu bilang ____.",
+    "Kamu tidak menangkap yang dikatakan orang. Kamu bilang ____.",
+    "Kamu menginjak kaki orang di trem. Kamu bilang ____.",
+    "Seseorang baru saja menolongmu. Kamu bilang ____.",
+    "Kamu berpamitan dari kantor secara resmi. Kamu bilang ____."
+   ]
+  }
+ ],
+ "answers": [
+  "Здравейте! — Казвам се Ани. — Студентка съм. — Той не е учител. — Вие студент ли сте? — Довиждане!",
+  "съм — си — е — сме — са",
+  "Казвам се Ани. — Аз не съм студент. — Приятно ми е. — Вие студентка ли сте? — Всичко е наред.",
+  "Добро утро — Моля? — Извинете — Благодаря — Довиждане"
+ ]
+}

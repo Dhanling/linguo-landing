@@ -1,0 +1,590 @@
+{
+ "title": "Kunci itu, kamar itu, tangga itu",
+ "title_target": "Ключът, стаята, стълбите",
+ "goal": "Menguasai satu-satunya hal yang benar-benar khas bahasa Bulgaria di antara seluruh rumpun Slavia: artikel takrif yang menempel di **ujung** kata benda, dalam tiga jenis kelamin dan bentuk jamak.",
+ "bekal": [
+  "menempelkan artikel takrif pada kata maskulin, feminin, netral, dan jamak",
+  "membedakan bentuk panjang **-ът** dan bentuk pendek **-а**",
+  "membaca akhiran -а maskulin dengan benar sebagai *-ă*",
+  "menanyakan letak barang di hotel",
+  "mengenali kapan artikel justru TIDAK dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Resepsi hotel di Sofia",
+   "intro": "Ani sampai di hotelnya. Perhatikan akhiran tiap kata benda di dialog ini — hampir semuanya membawa artikel takrif yang menempel di belakang, dan bentuknya berganti-ganti.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Добър|DO-băr] [ден|den]! [Имам|I-mam] [резервация|re-zer-VA-tsi-ya].",
+     "id": "Selamat siang! Saya punya reservasi.",
+     "literal": "baik — hari! punya-saya — reservasi."
+    },
+    {
+     "speaker": "Рецепционист:",
+     "text": "[Добър|DO-băr] [ден|den]. [Как|Kak] [се|se] [казвате|KAZ-va-te]?",
+     "id": "Selamat siang. Siapa nama Anda?",
+     "literal": "baik — hari. bagaimana — diri — memanggil-Anda?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ани|A-ni]. [Ето|E-to] [паспорта|pas-POR-tă] [ми|mi].",
+     "id": "Ani. Ini paspor saya.",
+     "literal": "Ani. ini-dia — paspor-nya — milik-saya."
+    },
+    {
+     "speaker": "Рецепционист:",
+     "text": "[Благодаря|Bla-go-da-RYA]. [Стаята|STA-ya-ta] [ви|vi] [е|e] [номер|NO-mer] [дванайсет|dva-NAY-set]. [Ето|E-to] [ключа|KLYU-chă].",
+     "id": "Terima kasih. Kamar Anda nomor dua belas. Ini kuncinya.",
+     "literal": "terima-kasih. kamar-nya — milik-Anda — adalah — nomor — dua-belas. ini-dia — kunci-nya."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Къде|Kă-DE] [е|e] [асансьорът|a-san-SYO-răt]?",
+     "id": "Di mana liftnya?",
+     "literal": "di-mana — adalah — lift-itu?"
+    },
+    {
+     "speaker": "Рецепционист:",
+     "text": "[Асансьорът|A-san-SYO-răt] [е|e] [там|tam], [вдясно|VDYAS-no]. [Но|No] [днес|dnes] [не|ne] [работи|ra-BO-ti].",
+     "id": "Liftnya di sana, sebelah kanan. Tapi hari ini tidak jalan.",
+     "literal": "lift-itu — adalah — di-sana, di-kanan. tapi — hari-ini — tidak — bekerja."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[О|O]! [А|A] [стълбите|STĂL-bi-te]?",
+     "id": "Oh! Kalau tangganya?",
+     "literal": "oh! dan — tangga-tangga-itu?"
+    },
+    {
+     "speaker": "Рецепционист:",
+     "text": "[Стълбите|STĂL-bi-te] [са|sa] [наляво|na-LYA-vo]. [Стаята|STA-ya-ta] [е|e] [на|na] [втория|VTO-ri-ya] [етаж|e-TAZH].",
+     "id": "Tangganya di sebelah kiri. Kamarnya di lantai dua.",
+     "literal": "tangga-tangga-itu — adalah — di-kiri. kamar-nya — adalah — di — kedua-itu — lantai."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Добре|Dob-RE]. [А|A] [закуската|za-KUS-ka-ta]?",
+     "id": "Baik. Kalau sarapannya?",
+     "literal": "baik. dan — sarapan-itu?"
+    },
+    {
+     "speaker": "Рецепционист:",
+     "text": "[Закуската|Za-KUS-ka-ta] [е|e] [от|ot] [седем|SE-dem] [до|do] [десет|DE-set], [в|v] [ресторанта|res-to-RAN-tă] [долу|DO-lu].",
+     "id": "Sarapan dari jam tujuh sampai sepuluh, di restoran bawah.",
+     "literal": "sarapan-itu — adalah — dari — tujuh — sampai — sepuluh, di — restoran-itu — bawah."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Чудесно|Chu-DES-no]. [Благодаря|Bla-go-da-RYA]!",
+     "id": "Bagus sekali. Terima kasih!",
+     "literal": "luar-biasa. terima-kasih!"
+    }
+   ],
+   "notes": [
+    "**Bahasa Bulgaria menempelkan artikelnya di BELAKANG kata.** *Стая* = kamar; *стаята* = kamar itu. *Ключ* = kunci; *ключът* = kunci itu. Tidak ada kata terpisah seperti *the* atau *der*. Bagi penutur bahasa Indonesia inilah kabar baik yang jarang disebut: naluri kita untuk *buku* → *buku**nya*** bekerja dengan arah yang sama persis. Bahkan artinya sering bertepatan — *книгата* memang paling enak diterjemahkan \"bukunya\".",
+    "**Bahasa Bulgaria adalah satu-satunya bahasa Slavia yang punya artikel takrif.** Rusia, Polandia, Ceko, Kroasia — tidak satu pun memilikinya. Kalau kamu pernah membaca bahwa \"bahasa Slavia tidak punya artikel\", itu benar untuk semuanya kecuali yang sedang kamu pelajari.",
+    "⚠️ **Паспорта dibaca *pas-POR-tă*, bukan *pas-POR-ta*.** Akhiran pendek maskulin ditulis dengan huruf **а** tetapi selalu dibaca **ă** — bunyi *e* pepet. Hal yang sama berlaku untuk *ключа* (*KLYU-chă*) dan *ресторанта* (*res-to-RAN-tă*). Ini satu-satunya tempat ejaan bahasa Bulgaria benar-benar berbohong; sesudah kamu terbiasa, tidak ada lagi kejutan.",
+    "**Ето berarti \"ini dia\", diucapkan sambil menyerahkan sesuatu.** Ia bukan kata kerja dan tidak butuh *е*. *Ето ключа* — nih kuncinya. *Ето ме* — ini saya.",
+    "**Стълбите jamak, dan bahasa Bulgaria memakainya sebagai jamak.** \"Tangga\" dalam bahasa Indonesia satu benda; dalam bahasa Bulgaria ia sekumpulan anak tangga, jadi kata kerjanya *са*, bukan *е*.",
+    "**На втория етаж — \"di lantai dua\".** Bilangan bertingkat ikut berartikel, dan artikelnya menempel pada bilangannya, bukan pada *етаж*. Aturan ini akan diperjelas di Unit 12; untuk sekarang hafalkan bongkahannya: *на първия / втория / третия етаж*.",
+    "**От … до … — \"dari … sampai …\"**, dipakai untuk waktu maupun tempat. *От седем до десет* (jam tujuh sampai sepuluh), *от София до Пловдив* (dari Sofia ke Plovdiv).",
+    "**Не работи berarti \"tidak berfungsi\" maupun \"tidak bekerja\".** Papan bertuliskan *Не работи* menempel di lift, mesin ATM, dan pintu di seluruh Bulgaria. Ini mungkin dua kata paling berguna yang bisa kamu kenali di hari pertama."
+   ],
+   "grammars": [
+    {
+     "title": "Artikel takrif — empat bentuk dasar",
+     "body": [
+      "Yang perlu kamu lihat cuma huruf terakhir kata bendanya. Tidak ada yang perlu dihafal selain empat baris di bawah ini."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Tanpa artikel",
+       "Tempel",
+       "Dengan artikel",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "Maskulin (bunyi mati)",
+        "град",
+        "**-ът / -а**",
+        "градът / града",
+        "gra-DĂT / gra-DĂ"
+       ],
+       [
+        "Maskulin -й",
+        "чай",
+        "**-ят / -я**",
+        "чаят / чая",
+        "CHA-yăt / CHA-ya"
+       ],
+       [
+        "Feminin -а / -я",
+        "стая",
+        "**-та**",
+        "стаята",
+        "STA-ya-ta"
+       ],
+       [
+        "Feminin bunyi mati",
+        "вечер",
+        "**-та**",
+        "вечерта",
+        "ve-CHER-ta"
+       ],
+       [
+        "Netral -о / -е",
+        "мляко",
+        "**-то**",
+        "млякото",
+        "MLYA-ko-to"
+       ],
+       [
+        "Jamak -и / -е",
+        "стълби",
+        "**-те**",
+        "стълбите",
+        "STĂL-bi-te"
+       ],
+       [
+        "Jamak -а / -я",
+        "деца",
+        "**-та**",
+        "децата",
+        "de-tsa-TA"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan pola bunyinya: feminin dan netral memakai **-та / -то**, jamak memakai **-те / -та**. Semuanya bertumpu pada huruf **т**. Hanya maskulin tunggal yang memakai **ъ**, dan hanya maskulin tunggal yang punya dua bentuk."
+     ]
+    },
+    {
+     "title": "Bentuk panjang lawan bentuk pendek — hanya maskulin tunggal",
+     "body": [
+      "Kata maskulin punya dua bentuk berartikel, dan pilihannya ditentukan oleh **peran kata itu di dalam kalimat**. Ini satu-satunya sisa dari sistem kasus yang dibuang bahasa Bulgaria."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Dipakai kalau kata itu…",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**-ът** (panjang)",
+        "adalah PELAKU kalimat",
+        "Ключ**ът** е тук.",
+        "Kuncinya ada di sini."
+       ],
+       [
+        "**-а** (pendek)",
+        "adalah OBJEK",
+        "Ето ключ**а**.",
+        "Ini kuncinya."
+       ],
+       [
+        "**-а** (pendek)",
+        "berdiri sesudah kata depan",
+        "в ресторант**а**",
+        "di restoran itu"
+       ],
+       [
+        "**-ът** (panjang)",
+        "berdiri sesudah **е / са**",
+        "Това е ключ**ът**.",
+        "Ini kuncinya."
+       ]
+      ]
+     },
+     "after": [
+      "Uji cepat: **ganti kata itu dengan \"dia\".** Kalau kalimatnya masih masuk akal dengan *той* (dia sebagai pelaku), pakai bentuk panjang. Kalau harus jadi *него* (dia sebagai sasaran), pakai bentuk pendek.",
+      "⚠️ Dalam percakapan lisan sehari-hari, sebagian besar orang Bulgaria memakai bentuk pendek untuk segalanya. Aturan panjang-pendek adalah aturan **tulisan**, dan pelanggarannya di mulut hampir tidak pernah terdengar. Jangan biarkan aturan ini menghentikan kalimatmu; tulis dengan benar, bicara dengan lancar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kapan artikel dipakai — dan kapan justru tidak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu ragu, pertanyaannya selalu sama: **apakah lawan bicaraku tahu benda mana yang kumaksud?** Kalau ya, tempel artikelnya. Kalau tidak, biarkan kata itu telanjang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pakai artikel kalau…",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "bendanya sudah disebut sebelumnya",
+       "Имам стая. Стаята е малка.",
+       "Saya punya kamar. Kamarnya kecil."
+      ],
+      [
+       "jelas yang mana bagi kedua pihak",
+       "Къде е банята?",
+       "Di mana kamar mandinya?"
+      ],
+      [
+       "tunggal di dunia",
+       "Слънцето е горещо.",
+       "Mataharinya panas."
+      ],
+      [
+       "bicara tentang golongan secara umum",
+       "Кафето е скъпо.",
+       "Kopi itu mahal."
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "JANGAN pakai artikel kalau…",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "bendanya baru diperkenalkan",
+       "Имам резервация.",
+       "Saya punya reservasi."
+      ],
+      [
+       "sesudah **един / една / едно**",
+       "Искам една стая.",
+       "Saya mau satu kamar."
+      ],
+      [
+       "menyebut profesi sesudah съм",
+       "Учителка съм.",
+       "Saya guru."
+      ],
+      [
+       "sesudah **има** dan **няма**",
+       "Има ресторант тук.",
+       "Ada restoran di sini."
+      ],
+      [
+       "anggota keluarga + kata milik pendek",
+       "майка ми",
+       "ibu saya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Baris keempat penting dan sering dilanggar pemula: **има** dan **няма** memperkenalkan sesuatu yang baru, jadi bendanya belum boleh bertakrif. *Има ресторант* = ada sebuah restoran. *Ресторантът е там* = restorannya di sana. Unit 4 seluruhnya tentang pasangan kata ini."
+    }
+   ]
+  },
+  {
+   "title": "Latihan mata: dua puluh kata, telanjang dan berartikel",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Baca menurun, keras-keras. Tutup lajur kanan, tebak bentuk berartikelnya, baru buka. Ini latihan lima menit yang menggantikan setengah jam menghafal aturan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Jenis",
+      "Berartikel",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "хляб",
+       "м",
+       "хлябът / хляба",
+       "HLYA-băt / HLYA-bă",
+       "roti"
+      ],
+      [
+       "ключ",
+       "м",
+       "ключът / ключа",
+       "KLYU-chăt / KLYU-chă",
+       "kunci"
+      ],
+      [
+       "град",
+       "м",
+       "градът / града",
+       "gra-DĂT / gra-DĂ",
+       "kota"
+      ],
+      [
+       "чай",
+       "м",
+       "чаят / чая",
+       "CHA-yăt / CHA-ya",
+       "teh"
+      ],
+      [
+       "книга",
+       "ж",
+       "книгата",
+       "KNI-ga-ta",
+       "buku"
+      ],
+      [
+       "стая",
+       "ж",
+       "стаята",
+       "STA-ya-ta",
+       "kamar"
+      ],
+      [
+       "вода",
+       "ж",
+       "водата",
+       "vo-da-TA",
+       "air"
+      ],
+      [
+       "вечер",
+       "ж",
+       "вечерта",
+       "ve-CHER-ta",
+       "sore"
+      ],
+      [
+       "мляко",
+       "ср",
+       "млякото",
+       "MLYA-ko-to",
+       "susu"
+      ],
+      [
+       "дете",
+       "ср",
+       "детето",
+       "de-TE-to",
+       "anak"
+      ],
+      [
+       "море",
+       "ср",
+       "морето",
+       "mo-RE-to",
+       "laut"
+      ],
+      [
+       "книги",
+       "мн",
+       "книгите",
+       "KNI-gi-te",
+       "buku-buku"
+      ],
+      [
+       "стаи",
+       "мн",
+       "стаите",
+       "STA-i-te",
+       "kamar-kamar"
+      ],
+      [
+       "деца",
+       "мн",
+       "децата",
+       "de-tsa-TA",
+       "anak-anak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *водата* (*vo-da-TA*) dan *децата* (*de-tsa-TA*): pada sejumlah kata, **tekanan berpindah ke artikelnya**. Jumlahnya sedikit dan modul ini selalu menuliskan bacaannya, jadi cukup hafalkan yang kamu temui."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "стая",
+   "baca": "STA-ya",
+   "id": "kamar"
+  },
+  {
+   "bg": "ключ",
+   "baca": "klyuch",
+   "id": "kunci"
+  },
+  {
+   "bg": "паспорт",
+   "baca": "pas-PORT",
+   "id": "paspor"
+  },
+  {
+   "bg": "резервация",
+   "baca": "re-zer-VA-tsi-ya",
+   "id": "reservasi"
+  },
+  {
+   "bg": "асансьор",
+   "baca": "a-san-SYOR",
+   "id": "lift"
+  },
+  {
+   "bg": "стълби",
+   "baca": "STĂL-bi",
+   "id": "tangga"
+  },
+  {
+   "bg": "етаж",
+   "baca": "e-TAZH",
+   "id": "lantai (tingkat)"
+  },
+  {
+   "bg": "закуска",
+   "baca": "za-KUS-ka",
+   "id": "sarapan"
+  },
+  {
+   "bg": "ресторант",
+   "baca": "res-to-RANT",
+   "id": "restoran"
+  },
+  {
+   "bg": "ето",
+   "baca": "E-to",
+   "id": "ini dia, nih"
+  },
+  {
+   "bg": "къде",
+   "baca": "kă-DE",
+   "id": "di mana"
+  },
+  {
+   "bg": "вдясно",
+   "baca": "VDYAS-no",
+   "id": "di sebelah kanan"
+  },
+  {
+   "bg": "наляво",
+   "baca": "na-LYA-vo",
+   "id": "di sebelah kiri"
+  },
+  {
+   "bg": "долу",
+   "baca": "DO-lu",
+   "id": "di bawah"
+  },
+  {
+   "bg": "горе",
+   "baca": "GO-re",
+   "id": "di atas"
+  },
+  {
+   "bg": "днес",
+   "baca": "dnes",
+   "id": "hari ini"
+  },
+  {
+   "bg": "работи",
+   "baca": "ra-BO-ti",
+   "id": "berfungsi; bekerja"
+  },
+  {
+   "bg": "чудесно",
+   "baca": "chu-DES-no",
+   "id": "bagus sekali"
+  },
+  {
+   "bg": "номер",
+   "baca": "NO-mer",
+   "id": "nomor"
+  },
+  {
+   "bg": "до",
+   "baca": "do",
+   "id": "sampai; di samping"
+  },
+  {
+   "bg": "хляб",
+   "baca": "hlyab",
+   "id": "roti"
+  },
+  {
+   "bg": "вода",
+   "baca": "vo-DA",
+   "id": "air"
+  },
+  {
+   "bg": "дете",
+   "baca": "de-TE",
+   "id": "anak"
+  },
+  {
+   "bg": "море",
+   "baca": "mo-RE",
+   "id": "laut"
+  },
+  {
+   "bg": "баня",
+   "baca": "BA-nya",
+   "id": "kamar mandi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tempelkan artikel takrif. Untuk kata maskulin tulis bentuk PANJANG.",
+   "items": [
+    "книга ____",
+    "град ____",
+    "мляко ____",
+    "стълби ____",
+    "вечер ____",
+    "дете ____"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk maskulin yang tepat: panjang atau pendek.",
+   "items": [
+    "Ключ____ е на масата.",
+    "Ето ключ____.",
+    "Отивам в град____.",
+    "Град____ е много хубав.",
+    "Това е паспорт____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "е / асансьорът / там",
+    "стаята / на / е / втория / етаж",
+    "са / наляво / стълбите",
+    "закуската / от / е / седем",
+    "ресторанта / в / е / долу"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Di mana kamarnya?",
+    "Ini kuncinya.",
+    "Kotanya sangat bagus.",
+    "Tangganya di sebelah kiri.",
+    "Sarapan dari jam tujuh sampai sepuluh."
+   ]
+  }
+ ],
+ "answers": [
+  "книгата — градът — млякото — стълбите — вечерта — детето",
+  "Ключът — ключа — града — Градът — паспортът",
+  "Асансьорът е там. — Стаята е на втория етаж. — Стълбите са наляво. — Закуската е от седем. — Ресторантът е долу.",
+  "Къде е стаята? — Ето ключа. — Градът е много хубав. — Стълбите са наляво. — Закуската е от седем до десет."
+ ]
+}

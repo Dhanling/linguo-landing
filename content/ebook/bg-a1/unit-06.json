@@ -1,0 +1,588 @@
+{
+ "title": "Ini ibu saya, ini ayah saya",
+ "title_target": "Това е майка ми, това е баща ми",
+ "goal": "Menyebut anggota keluarga dan kepemilikan dengan cara yang paling menguntungkan penutur bahasa Indonesia: kata milik pendek yang menempel di belakang, persis seperti akhiran *-ku*, *-mu*, dan *-nya*.",
+ "bekal": [
+  "menyebut sepuluh anggota keluarga inti",
+  "memakai kata milik pendek: **ми, ти, му, ѝ, ни, ви, им**",
+  "tahu kapan kata bendanya bertakrif dan kapan tidak",
+  "menanyakan dan menyebut umur dengan **на … години**",
+  "mengatakan seseorang sudah menikah dengan bentuk yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Foto keluarga di telepon",
+   "intro": "Maria melihat foto di telepon Ani. Perhatikan pola yang berulang di seluruh dialog: kata benda dulu, penanda milik menyusul di belakangnya.",
+   "lines": [
+    {
+     "speaker": "Мария:",
+     "text": "[Това|To-VA] [ли|li] [е|e] [семейството|se-MEY-stvo-to] [ти|ti]?",
+     "id": "Ini keluargamu?",
+     "literal": "ini — (tanya) — adalah — keluarga-itu — milik-kamu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da]. [Това|To-VA] [е|e] [майка|MAY-ka] [ми|mi], [а|a] [това|to-VA] [е|e] [баща|bash-TA] [ми|mi].",
+     "id": "Ya. Ini ibu saya, dan ini ayah saya.",
+     "literal": "ya. ini — adalah — ibu — milik-saya, dan — ini — adalah — ayah — milik-saya."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[А|A] [това|to-VA] [момиче|mo-MI-che] [коя|ko-YA] [е|e]?",
+     "id": "Kalau anak perempuan ini siapa?",
+     "literal": "dan — ini — anak-perempuan — siapa-perempuan — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Това|To-VA] [е|e] [сестра|ses-TRA] [ми|mi]. [Казва|KAZ-va] [се|se] [Дина|DI-na].",
+     "id": "Ini adik saya. Namanya Dina.",
+     "literal": "ini — adalah — saudara-perempuan — milik-saya. memanggil — diri — Dina."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[На|Na] [колко|KOL-ko] [години|go-DI-ni] [е|e]?",
+     "id": "Umurnya berapa?",
+     "literal": "pada — berapa — tahun-tahun — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[На|Na] [деветнайсет|de-vet-NAY-set] [години|go-DI-ni] [е|e]. [Учи|U-chi] [в|v] [университета|u-ni-ver-si-TE-tă].",
+     "id": "Sembilan belas tahun. Kuliah di universitas.",
+     "literal": "pada — sembilan-belas — tahun-tahun — adalah. belajar-dia — di — universitas-itu."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Имаш|I-mash] [ли|li] [брат|brat]?",
+     "id": "Kamu punya saudara laki-laki?",
+     "literal": "punya-kamu — (tanya) — saudara-laki-laki?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da], [имам|I-mam] [по-голям|po-go-LYAM] [брат|brat]. [Той|Toy] [е|e] [женен|ZHE-nen] [и|i] [има|I-ma] [две|dve] [деца|de-TSA].",
+     "id": "Ya, saya punya kakak laki-laki. Dia sudah menikah dan punya dua anak.",
+     "literal": "ya, punya-saya — lebih-besar — saudara-laki-laki. dia — adalah — beristri — dan — punya — dua — anak-anak."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Значи|ZNA-chi] [си|si] [леля|LE-lya]!",
+     "id": "Berarti kamu tante!",
+     "literal": "berarti — adalah-kamu — tante!"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da]! [А|A] [твоето|TVO-e-to] [семейство|se-MEY-stvo]?",
+     "id": "Ya! Kalau keluargamu?",
+     "literal": "ya! dan — milik-kamu-itu — keluarga?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Родителите|Ro-DI-te-li-te] [ми|mi] [живеят|zhi-VE-yat] [във|văv] [Варна|VAR-na]. [Имам|I-mam] [една|ed-NA] [сестра|ses-TRA].",
+     "id": "Orang tua saya tinggal di Varna. Saya punya satu saudara perempuan.",
+     "literal": "orang-tua-orang-tua-itu — milik-saya — tinggal-mereka — di — Varna. punya-saya — satu — saudara-perempuan."
+    }
+   ],
+   "notes": [
+    "**Kata milik pendek bekerja persis seperti akhiran -ku dan -mu.** *Книгата ми* = bukuku. *Книгата ти* = bukumu. *Книгата му* = bukunya (laki-laki). Kata bendanya di depan, penandanya menempel di belakang — arah yang sama dengan bahasa Indonesia dan kebalikan dari bahasa Inggris. Ini keuntungan yang jarang disadari pelajar Indonesia.",
+    "⚠️ **Untuk benda biasa, kata bendanya WAJIB bertakrif dulu.** Bukan *книга ми* melainkan **книгата ми**. Alasannya masuk akal: kalau benda itu milikmu, jelas benda mana yang dimaksud. Pikirkan begini — *книгата ми* harfiahnya \"buku-itu milik-saya\".",
+    "⚠️ **Tetapi untuk anggota keluarga terdekat, artikelnya justru TIDAK dipakai.** *Майка ми*, bukan *майката ми*. *Баща ми*, *брат ми*, *сестра ми*, *син ми*, *дъщеря ми*, *жена ми*, *мъж ми*. Ini kelompok kecil dan tertutup: orang tua, saudara kandung, anak, dan pasangan. Untuk kerabat yang lebih jauh, artikelnya kembali muncul: *лелята ми* (tante saya), *братовчедът ми* (sepupu saya).",
+    "**Kata milik pendek tunduk pada aturan letak yang sama seperti съм.** Ia tidak boleh menjadi kata pertama kalimat, dan ia berdiri langsung sesudah kata yang dimilikinya. *Майка ми е учителка* — ibu saya guru.",
+    "**Ѝ dengan aksen adalah \"miliknya (perempuan)\".** Tanpa aksen, *и* berarti \"dan\". Perbedaan satu coretan kecil ini memisahkan *книгата ѝ* (bukunya, milik dia perempuan) dari *книгата и* yang tidak berarti apa-apa. Dalam tulisan tangan dan pesan singkat orang sering mengabaikannya, tetapi kamu sebaiknya menulisnya dengan benar.",
+    "**Umur memakai \"pada\": на колко години си?** Harfiahnya \"pada berapa tahun kamu?\" — dan jawabannya *На двайсет години съм.* Kata *години* tidak pernah dilesapkan seperti \"tahun\" dalam bahasa Indonesia. ⚠️ Jangan berkata *Имам двайсет години*; itu susunan bahasa Prancis dan Spanyol, bukan Bulgaria.",
+    "**Женен untuk laki-laki, омъжена untuk perempuan — dan akarnya berbeda.** *Женен* berasal dari *жена* (istri): \"sudah beristri\". *Омъжена* berasal dari *мъж* (suami): \"sudah bersuami\". ⚠️ Perempuan yang berkata *женена съм* akan langsung terdengar seperti pelajar asing.",
+    "**Значи berarti \"berarti\" dan dipakai sebagai penyambung obrolan.** Orang Bulgaria memakainya sesering orang Indonesia memakai \"jadi\" atau \"berarti\" di awal kalimat. Menyelipkannya membuat bicaramu terdengar jauh lebih alami."
+   ],
+   "grammars": [
+    {
+     "title": "Kata milik pendek — tujuh kata yang menutup semuanya",
+     "body": [
+      "Bentuknya tidak pernah berubah menurut benda yang dimiliki; ia hanya menunjuk **siapa pemiliknya**. Bandingkan dengan bahasa Prancis atau Jerman yang menuntut penyesuaian ganda."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Kata",
+       "Benda biasa",
+       "Anggota keluarga",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "saya",
+        "ми",
+        "книгата ми",
+        "майка ми",
+        "buku saya / ibu saya"
+       ],
+       [
+        "kamu",
+        "ти",
+        "книгата ти",
+        "баща ти",
+        "buku kamu / ayah kamu"
+       ],
+       [
+        "dia (lk)",
+        "му",
+        "книгата му",
+        "брат му",
+        "buku dia / saudara dia"
+       ],
+       [
+        "dia (pr)",
+        "ѝ",
+        "книгата ѝ",
+        "сестра ѝ",
+        "buku dia / saudari dia"
+       ],
+       [
+        "kami",
+        "ни",
+        "книгата ни",
+        "детето ни",
+        "buku kami / anak kami"
+       ],
+       [
+        "kalian / Anda",
+        "ви",
+        "книгата ви",
+        "стаята ви",
+        "buku kalian / kamar Anda"
+       ],
+       [
+        "mereka",
+        "им",
+        "книгата им",
+        "децата им",
+        "buku mereka / anak-anak mereka"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa kata-kata ini persis sama dengan bentuk \"kepada saya / kepada kamu\" yang sudah kamu pakai di *Приятно ми е* dan *Дайте ми*. Bahasa Bulgaria memakai satu kumpulan kata kecil untuk dua pekerjaan, dan letaknyalah yang menjelaskan mana yang dimaksud."
+     ]
+    },
+    {
+     "title": "Bentuk panjang — kalau kamu ingin menekankan",
+     "body": [
+      "Ada juga bentuk milik yang panjang. Ia berperilaku seperti kata sifat: ikut jenis kelamin dan jumlah bendanya, dan membawa artikel takrif sendiri. Dipakai kalau kepemilikannya sedang ditekankan atau dipertentangkan."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Maskulin",
+       "Feminin",
+       "Netral",
+       "Jamak"
+      ],
+      "rows": [
+       [
+        "saya",
+        "моят",
+        "моята",
+        "моето",
+        "моите"
+       ],
+       [
+        "kamu",
+        "твоят",
+        "твоята",
+        "твоето",
+        "твоите"
+       ],
+       [
+        "dia (lk)",
+        "неговият",
+        "неговата",
+        "неговото",
+        "неговите"
+       ],
+       [
+        "dia (pr)",
+        "нейният",
+        "нейната",
+        "нейното",
+        "нейните"
+       ],
+       [
+        "kami",
+        "нашият",
+        "нашата",
+        "нашето",
+        "нашите"
+       ],
+       [
+        "kalian",
+        "вашият",
+        "вашата",
+        "вашето",
+        "вашите"
+       ],
+       [
+        "mereka",
+        "техният",
+        "тяхната",
+        "тяхното",
+        "техните"
+       ]
+      ]
+     },
+     "after": [
+      "*Това е моята книга, не твоята.* — Ini buku **saya**, bukan bukumu. Di luar situasi mempertentangkan seperti itu, orang Bulgaria hampir selalu memakai bentuk pendek. **Kalau ragu, pakai bentuk pendek** — ia lebih pendek, lebih lazim, dan tidak menuntut penyesuaian apa pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pohon keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti",
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "майка",
+       "MAY-ka",
+       "ibu",
+       "баща",
+       "bash-TA",
+       "ayah"
+      ],
+      [
+       "мама",
+       "MA-ma",
+       "mama",
+       "татко",
+       "TAT-ko",
+       "papa"
+      ],
+      [
+       "син",
+       "sin",
+       "anak laki-laki",
+       "дъщеря",
+       "dăsh-te-RYA",
+       "anak perempuan"
+      ],
+      [
+       "брат",
+       "brat",
+       "saudara laki-laki",
+       "сестра",
+       "ses-TRA",
+       "saudara perempuan"
+      ],
+      [
+       "баба",
+       "BA-ba",
+       "nenek",
+       "дядо",
+       "DYA-do",
+       "kakek"
+      ],
+      [
+       "леля",
+       "LE-lya",
+       "tante",
+       "чичо",
+       "CHI-cho",
+       "om (adik ayah)"
+      ],
+      [
+       "братовчед",
+       "bra-tov-CHED",
+       "sepupu (lk)",
+       "братовчедка",
+       "bra-tov-CHED-ka",
+       "sepupu (pr)"
+      ],
+      [
+       "жена",
+       "zhe-NA",
+       "istri; perempuan",
+       "мъж",
+       "măzh",
+       "suami; laki-laki"
+      ],
+      [
+       "родители",
+       "ro-DI-te-li",
+       "orang tua",
+       "деца",
+       "de-TSA",
+       "anak-anak"
+      ],
+      [
+       "семейство",
+       "se-MEY-stvo",
+       "keluarga",
+       "роднини",
+       "rod-NI-ni",
+       "kerabat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Bahasa Bulgaria tidak membedakan kakak dan adik dengan kata tersendiri.** *Брат* berarti saudara laki-laki, titik. Kalau umurnya perlu disebut, dipakai kata sifat: *по-голям брат* (kakak) dan *по-малък брат* (adik). Bagi penutur bahasa Indonesia yang terbiasa dengan \"kakak\" dan \"adik\", ini terasa kehilangan sesuatu — dan memang begitu adanya."
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Bulgaria justru lebih terperinci di tempat lain: ada kata berbeda untuk om dari pihak ayah (*чичо*) dan om dari pihak ibu (*вуйчо*). Dalam percakapan sehari-hari di kota, *чичо* sering dipakai untuk keduanya, jadi jangan cemas."
+    }
+   ]
+  },
+  {
+   "title": "Umur, status, dan pertanyaan yang boleh ditanyakan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "На колко години си?",
+       "na KOL-ko go-DI-ni si",
+       "Umur kamu berapa?"
+      ],
+      [
+       "На двайсет и пет години съм.",
+       "na DVAY-set i pet go-DI-ni săm",
+       "Saya dua puluh lima tahun."
+      ],
+      [
+       "Женен ли си?",
+       "ZHE-nen li si",
+       "Kamu (lk) sudah menikah?"
+      ],
+      [
+       "Омъжена ли си?",
+       "o-MĂ-zhe-na li si",
+       "Kamu (pr) sudah menikah?"
+      ],
+      [
+       "Не съм женен.",
+       "ne săm ZHE-nen",
+       "Saya (lk) belum menikah."
+      ],
+      [
+       "Имам две деца.",
+       "I-mam dve de-TSA",
+       "Saya punya dua anak."
+      ],
+      [
+       "Нямам деца.",
+       "NYA-mam de-TSA",
+       "Saya tidak punya anak."
+      ],
+      [
+       "Живея сам.",
+       "zhi-VE-ya sam",
+       "Saya tinggal sendiri."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pertanyaan tentang umur, status pernikahan, dan pekerjaan dianggap wajar dan ramah di Bulgaria, bukan lancang — sikap yang mirip Indonesia dan berbeda jauh dari Eropa Barat. Kalau kamu ditanya semuanya dalam lima menit pertama, itu tanda percakapannya berjalan baik."
+    },
+    {
+     "type": "kotak",
+     "title": "Имен ден — hari nama, yang kadang lebih penting daripada ulang tahun",
+     "items": [
+      "Sebagian besar nama Bulgaria terikat pada seorang santo, dan hari santo itu adalah **имен ден** — hari nama — yang dirayakan seperti ulang tahun. Semua yang bernama Иван merayakan **Ивановден** pada 7 Januari; semua yang bernama Георги merayakan **Гергьовден** pada 6 Mei.",
+      "Bedanya dengan ulang tahun: pada hari nama, **kamu tidak perlu diundang**. Orang boleh datang, dan yang berulang nama wajib menjamu. Ucapannya: *Честит имен ден!* (*ches-TIT I-men den*).",
+      "Kalau kolega Bulgariamu tiba-tiba membawa kue ke kantor tanpa alasan yang jelas, ini kemungkinan besar sebabnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "семейство",
+   "baca": "se-MEY-stvo",
+   "id": "keluarga"
+  },
+  {
+   "bg": "майка",
+   "baca": "MAY-ka",
+   "id": "ibu"
+  },
+  {
+   "bg": "баща",
+   "baca": "bash-TA",
+   "id": "ayah"
+  },
+  {
+   "bg": "брат",
+   "baca": "brat",
+   "id": "saudara laki-laki"
+  },
+  {
+   "bg": "сестра",
+   "baca": "ses-TRA",
+   "id": "saudara perempuan"
+  },
+  {
+   "bg": "син",
+   "baca": "sin",
+   "id": "anak laki-laki"
+  },
+  {
+   "bg": "дъщеря",
+   "baca": "dăsh-te-RYA",
+   "id": "anak perempuan"
+  },
+  {
+   "bg": "родители",
+   "baca": "ro-DI-te-li",
+   "id": "orang tua"
+  },
+  {
+   "bg": "баба",
+   "baca": "BA-ba",
+   "id": "nenek"
+  },
+  {
+   "bg": "дядо",
+   "baca": "DYA-do",
+   "id": "kakek"
+  },
+  {
+   "bg": "леля",
+   "baca": "LE-lya",
+   "id": "tante"
+  },
+  {
+   "bg": "момиче",
+   "baca": "mo-MI-che",
+   "id": "anak perempuan, gadis"
+  },
+  {
+   "bg": "момче",
+   "baca": "mom-CHE",
+   "id": "anak laki-laki"
+  },
+  {
+   "bg": "година",
+   "baca": "go-DI-na",
+   "id": "tahun"
+  },
+  {
+   "bg": "женен",
+   "baca": "ZHE-nen",
+   "id": "sudah menikah (lk)"
+  },
+  {
+   "bg": "омъжена",
+   "baca": "o-MĂ-zhe-na",
+   "id": "sudah menikah (pr)"
+  },
+  {
+   "bg": "по-голям",
+   "baca": "po-go-LYAM",
+   "id": "lebih besar; lebih tua"
+  },
+  {
+   "bg": "по-малък",
+   "baca": "po-MA-lăk",
+   "id": "lebih kecil; lebih muda"
+  },
+  {
+   "bg": "учи",
+   "baca": "U-chi",
+   "id": "dia belajar, dia kuliah"
+  },
+  {
+   "bg": "университет",
+   "baca": "u-ni-ver-si-TET",
+   "id": "universitas"
+  },
+  {
+   "bg": "значи",
+   "baca": "ZNA-chi",
+   "id": "berarti, jadi"
+  },
+  {
+   "bg": "кой / коя",
+   "baca": "koy / ko-YA",
+   "id": "siapa (lk / pr)"
+  },
+  {
+   "bg": "сам",
+   "baca": "sam",
+   "id": "sendiri"
+  },
+  {
+   "bg": "живея",
+   "baca": "zhi-VE-ya",
+   "id": "saya tinggal, saya hidup"
+  },
+  {
+   "bg": "честит",
+   "baca": "ches-TIT",
+   "id": "selamat (ucapan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria. Perhatikan mana yang butuh artikel.",
+   "items": [
+    "ibu saya",
+    "buku saya",
+    "ayah kamu",
+    "kamar Anda",
+    "adik perempuan saya",
+    "anak-anak mereka"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata milik pendek yang tepat.",
+   "items": [
+    "Това е майка ____. (saya)",
+    "Книгата ____ е на масата. (kamu)",
+    "Брат ____ живее във Варна. (dia perempuan)",
+    "Стаята ____ е на втория етаж. (Anda)",
+    "Родителите ____ са в София. (kami)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "е / това / ми / майка",
+    "години / на / е / деветнайсет",
+    "ли / брат / имаш",
+    "е / женен / той",
+    "ми / живеят / родителите / във Варна"
+   ]
+  },
+  {
+   "prompt": "Jawab tentang dirimu sendiri dalam bahasa Bulgaria.",
+   "items": [
+    "На колко години си? ____",
+    "Имаш ли брат или сестра? ____",
+    "Къде живеят родителите ти? ____",
+    "Женен ли си? Омъжена ли си? ____",
+    "Как се казва майка ти? ____"
+   ]
+  }
+ ],
+ "answers": [
+  "майка ми — книгата ми — баща ти — стаята ви — сестра ми — децата им",
+  "ми — ти — ѝ — ви — ни",
+  "Това е майка ми. — На деветнайсет години е. — Имаш ли брат? — Той е женен. — Родителите ми живеят във Варна.",
+  "На двайсет и пет години съм. — Да, имам една сестра. — Родителите ми живеят в Джакарта. — Не, не съм женен. — Майка ми се казва Сити."
+ ]
+}

@@ -1,0 +1,598 @@
+{
+ "title": "Tenggorokan saya sakit",
+ "title_target": "Боли ме гърлото",
+ "goal": "Menjelaskan keluhan badan di apotek dan di ruang dokter. Susunannya membalik lagi — bukan kamu yang sakit, melainkan **bagian badanmu yang menyakitimu**.",
+ "bekal": [
+  "memakai **боли ме** dan **болят ме** dengan benar",
+  "menyebut bagian badan yang paling sering dikeluhkan",
+  "menjelaskan sejak kapan sesuatu terjadi dengan **от**",
+  "membaca aturan pakai obat",
+  "meminta bantuan darurat"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Di apotek",
+   "intro": "Ani jatuh sakit di musim dingin pertamanya. Perhatikan susunan *боли ме* — bagian badannya berdiri sebagai pelaku, dan kata kerjanya menyesuaikan diri dengan bagian badan itu.",
+   "lines": [
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Добър|Do-BĂR] [ден|den]. [Какво|Kak-VO] [ви|vi] [е|e]?",
+     "id": "Selamat siang. Ada keluhan apa?",
+     "literal": "baik — hari. apa — kepada-Anda — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Боли|Bo-LI] [ме|me] [гърлото|GĂR-lo-to] [и|i] [имам|I-mam] [температура|tem-pe-ra-TU-ra].",
+     "id": "Tenggorokan saya sakit dan saya demam.",
+     "literal": "menyakiti — saya — tenggorokan-itu — dan — punya-saya — suhu."
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[От|Ot] [кога|ko-GA]?",
+     "id": "Sejak kapan?",
+     "literal": "dari — kapan?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[От|Ot] [вчера|VCHE-ra]. [Не|Ne] [мога|MO-ga] [да|da] [спя|spya].",
+     "id": "Sejak kemarin. Saya tidak bisa tidur.",
+     "literal": "dari — kemarin. tidak — bisa-saya — supaya — tidur-saya."
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Боли|Bo-LI] [ли|li] [ви|vi] [главата|gla-VA-ta]?",
+     "id": "Kepala Anda sakit juga?",
+     "literal": "menyakiti — (tanya) — kepada-Anda — kepala-itu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Малко|MAL-ko]. [И|I] [ме|me] [болят|bo-LYAT] [очите|O-chi-te].",
+     "id": "Sedikit. Dan mata saya sakit.",
+     "literal": "sedikit. dan — saya — menyakiti-mereka — mata-mata-itu."
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Имате|I-ma-te] [ли|li] [алергия|a-ler-GI-ya] [към|kăm] [лекарства|le-KARST-va]?",
+     "id": "Anda ada alergi obat?",
+     "literal": "punya-Anda — (tanya) — alergi — terhadap — obat-obatan?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Не|Ne], [нямам|NYA-mam].",
+     "id": "Tidak ada.",
+     "literal": "tidak, tidak-punya-saya."
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Вземайте|VZE-may-te] [тези|TE-zi] [хапчета|HAP-che-ta] — [три|tri] [пъти|PĂ-ti] [на|na] [ден|den], [след|sled] [ядене|YA-de-ne].",
+     "id": "Minum tablet ini — tiga kali sehari, sesudah makan.",
+     "literal": "ambil-lah-Anda — ini — tablet-tablet — tiga — kali — pada — hari, sesudah — makan."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [за|za] [гърлото|GĂR-lo-to]?",
+     "id": "Kalau untuk tenggorokannya?",
+     "literal": "dan — untuk — tenggorokan-itu?"
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Този|TO-zi] [спрей|sprey]. [И|I] [пийте|PIY-te] [топъл|TO-păl] [чай|chay] [с|s] [мед|med].",
+     "id": "Semprot ini. Dan minum teh hangat dengan madu.",
+     "literal": "ini — semprot. dan — minum-lah-Anda — hangat — teh — dengan — madu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA]. [Колко|KOL-ko] [струва|STRU-va] [всичко|FSICH-ko]?",
+     "id": "Terima kasih. Semuanya berapa?",
+     "literal": "terima-kasih. berapa — berharga — semua?"
+    },
+    {
+     "speaker": "Аптекарка:",
+     "text": "[Дванайсет|Dva-NAY-set] [лева|LE-va]. [Оздравявайте|Oz-dra-VYA-vay-te]!",
+     "id": "Dua belas leva. Semoga cepat sembuh!",
+     "literal": "dua-belas — leva. sembuh-lah-Anda!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Боли ме membalik susunan seperti харесва ми.** Harfiahnya \"ia menyakiti saya\", dan yang menjadi pelaku adalah **bagian badannya**. Akibatnya kata kerjanya ikut jumlah bagian badan itu: *Боли ме главата* (satu kepala) tetapi **Болят** *ме очите* (dua mata), *краката* (dua kaki), *зъбите* (banyak gigi).",
+    "⚠️ **Kata orangnya di sini memakai bentuk objek, bukan bentuk penerima.** Yang benar *боли **ме***, bukan *боли ми*. Bandingkan: *харесва **ми*** (kepada saya) tetapi *боли **ме*** (saya). Ini satu-satunya tempat dua kumpulan kata kecil itu bisa tertukar, jadi hafalkan pasangannya: **ме, те, го, я, ни, ви, ги**.",
+    "**Bagian badannya selalu bertakrif.** *Боли ме главата*, bukan *боли ме глава*. Masuk akal: kepala yang dimaksud jelas kepalamu sendiri, jadi ia sudah tertentu.",
+    "**Какво ви е? adalah cara paling lazim menanyakan keluhan** dan harfiahnya \"apa yang ada padamu?\". Bentuk santainya *Какво ти е?* Pertanyaan yang sama juga dipakai kalau seseorang terlihat murung — bukan cuma untuk sakit badan.",
+    "**От кога? berarti \"sejak kapan?\"** dan jawabannya juga memakai *от*: *от вчера, от два дни, от една седмица*. Kata depan yang sama dipakai untuk asal tempat di Unit 2 — bahasa Bulgaria memakainya untuk titik mula, apa pun jenisnya.",
+    "**Вземайте, bukan вземете.** Bentuk pertama menandai pekerjaan yang berulang — minum obat tiga kali sehari selama beberapa hari. Bentuk kedua menandai satu kali saja. Perbedaan yang sama muncul di semua kata kerja Bulgaria dan akan kamu pelajari sebagai sistem di tingkat A2.",
+    "**Оздравявайте! — \"semoga cepat sembuh\" — diucapkan kepada orang sakit.** Untuk teman: *Оздравявай!* Ini juga yang diucapkan orang kalau kamu bersin dua kali; setelah bersin pertama biasanya *Наздраве!*",
+    "**Nomor darurat di Bulgaria adalah 112**, sama dengan seluruh Uni Eropa, dan operatornya berbahasa Inggris. Kalimat yang perlu kamu hafalkan sekarang juga: **Помощ!** (*POMOSHT* — tolong!) dan **Извикайте линейка!** (*iz-vi-KAY-te li-NEY-ka* — panggil ambulans!)."
+   ],
+   "grammars": [
+    {
+     "title": "Боли ме — susunan keluhan badan",
+     "body": [
+      "Kata kerjanya cuma punya dua bentuk yang perlu kamu pakai: **боли** untuk satu bagian badan, **болят** untuk lebih dari satu."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Боли ме главата.",
+        "bo-LI me gla-VA-ta",
+        "menyakiti saya kepala-itu",
+        "Kepala saya sakit."
+       ],
+       [
+        "Боли ме гърлото.",
+        "bo-LI me GĂR-lo-to",
+        "menyakiti saya tenggorokan-itu",
+        "Tenggorokan saya sakit."
+       ],
+       [
+        "Болят ме очите.",
+        "bo-LYAT me O-chi-te",
+        "menyakiti-mereka saya mata-itu",
+        "Mata saya sakit."
+       ],
+       [
+        "Боли ли те коремът?",
+        "bo-LI li te ko-RE-măt",
+        "menyakiti (tanya) kamu perut-itu",
+        "Perut kamu sakit?"
+       ],
+       [
+        "Не ме боли нищо.",
+        "ne me bo-LI NISH-to",
+        "tidak saya menyakiti apa-pun",
+        "Saya tidak sakit apa-apa."
+       ],
+       [
+        "Вчера ме болеше главата.",
+        "VCHE-ra me bo-LE-she gla-VA-ta",
+        "kemarin saya menyakiti kepala-itu",
+        "Kemarin kepala saya sakit."
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir memakai bentuk lampau **болеше**, satu dari sedikit bentuk имперфект yang perlu kamu kenali di tingkat A1 karena keluhan badan hampir selalu tentang keadaan yang berlangsung, bukan kejadian sekejap.",
+      "Kalau bagian badannya tidak perlu disebut, cukup: *Боли ме.* (Saya sakit / saya kesakitan.)"
+     ]
+    },
+    {
+     "title": "Bagian badan",
+     "body": [
+      "Semuanya dipakai dengan artikel dalam susunan *боли ме*."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Arti",
+       "Bulgaria",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "глава",
+        "gla-VA",
+        "kepala",
+        "ръка / ръце",
+        "ră-KA / ră-TSE",
+        "tangan"
+       ],
+       [
+        "око / очи",
+        "o-KO / o-CHI",
+        "mata",
+        "крак / крака",
+        "krak / kra-KA",
+        "kaki"
+       ],
+       [
+        "ухо / уши",
+        "u-HO / u-SHI",
+        "telinga",
+        "гръб",
+        "grăb",
+        "punggung"
+       ],
+       [
+        "нос",
+        "nos",
+        "hidung",
+        "стомах",
+        "sto-MAH",
+        "lambung"
+       ],
+       [
+        "уста",
+        "us-TA",
+        "mulut",
+        "корем",
+        "ko-REM",
+        "perut"
+       ],
+       [
+        "зъб / зъби",
+        "zăb / ZĂ-bi",
+        "gigi",
+        "сърце",
+        "săr-TSE",
+        "jantung"
+       ],
+       [
+        "гърло",
+        "GĂR-lo",
+        "tenggorokan",
+        "кръв",
+        "krăv",
+        "darah"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan tiga jamak tak beraturan: *око → очи*, *ухо → уши*, *ръка → ръце*. Ketiganya adalah sisa bentuk ganda bahasa Slavia kuno — bentuk khusus untuk sepasang benda — dan bahasa Bulgaria menyimpannya justru pada bagian badan yang memang berpasangan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di apotek dan di ruang dokter",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Не се чувствам добре.",
+       "ne se CHUV-stvam dob-RE",
+       "Saya merasa tidak enak badan."
+      ],
+      [
+       "Имам температура.",
+       "I-mam tem-pe-ra-TU-ra",
+       "Saya demam."
+      ],
+      [
+       "Имам кашлица.",
+       "I-mam KASH-li-tsa",
+       "Saya batuk."
+      ],
+      [
+       "Настинал съм.",
+       "nas-TI-nal săm",
+       "Saya masuk angin. (lk)"
+      ],
+      [
+       "Настинала съм.",
+       "nas-TI-na-la săm",
+       "Saya masuk angin. (pr)"
+      ],
+      [
+       "Повръща ми се.",
+       "po-VRĂSH-ta mi se",
+       "Saya mual."
+      ],
+      [
+       "Имам алергия към…",
+       "I-mam a-ler-GI-ya kăm",
+       "Saya alergi terhadap…"
+      ],
+      [
+       "Трябва ми лекар.",
+       "TRYAB-va mi LE-kar",
+       "Saya perlu dokter."
+      ],
+      [
+       "Къде е болницата?",
+       "kă-DE e BOL-ni-tsa-ta",
+       "Di mana rumah sakitnya?"
+      ],
+      [
+       "Имате ли нещо за…?",
+       "I-ma-te li NESH-to za",
+       "Ada obat untuk…?"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aturan pakai",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "три пъти на ден",
+       "tri PĂ-ti na den",
+       "tiga kali sehari"
+      ],
+      [
+       "преди ядене",
+       "pre-DI YA-de-ne",
+       "sebelum makan"
+      ],
+      [
+       "след ядене",
+       "sled YA-de-ne",
+       "sesudah makan"
+      ],
+      [
+       "на гладно",
+       "na GLAD-no",
+       "saat perut kosong"
+      ],
+      [
+       "по едно хапче",
+       "po ed-NO HAP-che",
+       "satu tablet tiap kali"
+      ],
+      [
+       "в продължение на пет дни",
+       "f pro-dăl-ZHE-ni-e na pet dni",
+       "selama lima hari"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Настинал съм ikut jenis kelamin**, seperti semua bentuk perfek di Unit 16. Perempuan berkata *настинала съм*. Kalimat ini akan sering kamu pakai di musim dingin Bulgaria, jadi pastikan bentuknya benar sejak awal."
+    }
+   ]
+  },
+  {
+   "title": "Kata darurat, dan satu kebiasaan yang perlu kamu tahu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Помощ!",
+       "POMOSHT",
+       "Tolong!"
+      ],
+      [
+       "Извикайте линейка!",
+       "iz-vi-KAY-te li-NEY-ka",
+       "Panggil ambulans!"
+      ],
+      [
+       "Спешно е.",
+       "SPESH-no e",
+       "Ini darurat."
+      ],
+      [
+       "Обадете се на 112.",
+       "o-ba-DE-te se na sto i dva-NAY-set",
+       "Telepon 112."
+      ],
+      [
+       "Изгубих си паспорта.",
+       "iz-GU-bih si pas-POR-ta",
+       "Paspor saya hilang."
+      ],
+      [
+       "Откраднаха ми чантата.",
+       "ot-KRAD-na-ha mi CHAN-ta-ta",
+       "Tas saya dicuri."
+      ],
+      [
+       "Не говоря добре български.",
+       "ne go-VO-rya dob-RE BĂL-gar-ski",
+       "Saya belum lancar bahasa Bulgaria."
+      ],
+      [
+       "Говорите ли английски?",
+       "go-VO-ri-te li ang-LIY-ski",
+       "Anda bisa bahasa Inggris?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Layanan gawat darurat Bulgaria gratis untuk semua orang, termasuk pendatang. Untuk perawatan lanjutan, wisatawan Uni Eropa memakai kartu EHIC; pendatang dari luar Uni Eropa sebaiknya punya asuransi perjalanan — **застраховка** (*zas-tra-HOF-ka*)."
+    },
+    {
+     "type": "kotak",
+     "title": "Течение — angin yang ditakuti seluruh Bulgaria",
+     "items": [
+      "Kalau kamu membuka dua jendela sekaligus di bus, kereta, atau ruang kelas Bulgaria, seseorang akan segera menutupnya sambil berkata **течение!** (*te-CHE-ni-e*) — angin yang bersilangan.",
+      "Keyakinannya sungguh-sungguh: angin yang mengalir menembus ruangan dipercaya menyebabkan sakit kepala, radang saraf wajah, dan masuk angin berat — bahkan pada hari yang panas. Ini bukan lelucon dan tidak ada gunanya berdebat.",
+      "Bagi pendatang dari Indonesia keyakinan ini terasa akrab: ia bersaudara dekat dengan \"masuk angin\". Dan sesungguhnya kata Bulgaria untuk masuk angin, **настинка**, berasal dari akar yang berarti \"menjadi dingin\" — susunan pikiran yang sama persis."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "боли ме",
+   "baca": "bo-LI me",
+   "id": "saya sakit (bagian badan)"
+  },
+  {
+   "bg": "глава",
+   "baca": "gla-VA",
+   "id": "kepala"
+  },
+  {
+   "bg": "гърло",
+   "baca": "GĂR-lo",
+   "id": "tenggorokan"
+  },
+  {
+   "bg": "корем",
+   "baca": "ko-REM",
+   "id": "perut"
+  },
+  {
+   "bg": "зъб",
+   "baca": "zăb",
+   "id": "gigi"
+  },
+  {
+   "bg": "око / очи",
+   "baca": "o-KO / o-CHI",
+   "id": "mata"
+  },
+  {
+   "bg": "ръка / ръце",
+   "baca": "ră-KA / ră-TSE",
+   "id": "tangan"
+  },
+  {
+   "bg": "крак / крака",
+   "baca": "krak / kra-KA",
+   "id": "kaki"
+  },
+  {
+   "bg": "температура",
+   "baca": "tem-pe-ra-TU-ra",
+   "id": "demam, suhu"
+  },
+  {
+   "bg": "кашлица",
+   "baca": "KASH-li-tsa",
+   "id": "batuk"
+  },
+  {
+   "bg": "настинка",
+   "baca": "nas-TIN-ka",
+   "id": "masuk angin, pilek"
+  },
+  {
+   "bg": "лекар",
+   "baca": "LE-kar",
+   "id": "dokter"
+  },
+  {
+   "bg": "болница",
+   "baca": "BOL-ni-tsa",
+   "id": "rumah sakit"
+  },
+  {
+   "bg": "аптека",
+   "baca": "ap-TE-ka",
+   "id": "apotek"
+  },
+  {
+   "bg": "лекарство",
+   "baca": "le-KARST-vo",
+   "id": "obat"
+  },
+  {
+   "bg": "хапче",
+   "baca": "HAP-che",
+   "id": "tablet, pil"
+  },
+  {
+   "bg": "алергия",
+   "baca": "a-ler-GI-ya",
+   "id": "alergi"
+  },
+  {
+   "bg": "мед",
+   "baca": "med",
+   "id": "madu"
+  },
+  {
+   "bg": "чувствам се",
+   "baca": "CHUV-stvam se",
+   "id": "saya merasa"
+  },
+  {
+   "bg": "помощ",
+   "baca": "POMOSHT",
+   "id": "tolong, bantuan"
+  },
+  {
+   "bg": "линейка",
+   "baca": "li-NEY-ka",
+   "id": "ambulans"
+  },
+  {
+   "bg": "спешно",
+   "baca": "SPESH-no",
+   "id": "darurat, mendesak"
+  },
+  {
+   "bg": "здраве",
+   "baca": "ZDRA-ve",
+   "id": "kesehatan"
+  },
+  {
+   "bg": "оздравявам",
+   "baca": "oz-dra-VYA-vam",
+   "id": "saya sembuh"
+  },
+  {
+   "bg": "след",
+   "baca": "sled",
+   "id": "sesudah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan боли atau болят.",
+   "items": [
+    "____ ме главата.",
+    "____ ме очите.",
+    "____ ме гърлото.",
+    "____ ме краката.",
+    "____ ли те коремът?",
+    "Не ме ____ нищо."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata orang pendek bentuk objek: ме, те, го, я, ни, ви, ги.",
+   "items": [
+    "Боли ____ главата. (saya)",
+    "Боли ли ____ гърлото? (kamu)",
+    "Болят ____ зъбите. (dia lk)",
+    "Боли ____ коремът. (kami)",
+    "Какво ____ е? (Anda)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ме / гърлото / боли",
+    "температура / имам",
+    "кога / от",
+    "ми / лекар / трябва",
+    "се / чувствам / не / добре"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Kepala saya sakit.",
+    "Mata saya sakit.",
+    "Sejak kemarin.",
+    "Saya perlu dokter.",
+    "Semoga cepat sembuh!"
+   ]
+  }
+ ],
+ "answers": [
+  "Боли — Болят — Боли — Болят — Боли — боли",
+  "ме — те — го — ни — ви",
+  "Боли ме гърлото. — Имам температура. — От кога? — Трябва ми лекар. — Не се чувствам добре.",
+  "Боли ме главата. — Болят ме очите. — От вчера. — Трябва ми лекар. — Оздравявайте!"
+ ]
+}

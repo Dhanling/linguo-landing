@@ -1,0 +1,491 @@
+{
+ "title": "Saya belum pernah ke sana",
+ "title_target": "Никога не съм ходила там",
+ "goal": "Menceritakan pengalaman — apa yang sudah dan belum pernah kamu alami — dengan bentuk perfek, dan menghadapi kenyataan bahwa bentuk ini **ikut jenis kelamin pembicaranya**.",
+ "bekal": [
+  "membentuk perfek dengan **съм** + kata sifat kerja",
+  "menyesuaikan bentuknya dengan jenis kelamin dan jumlah",
+  "membedakan perfek dari аорист",
+  "menanyakan pengalaman dengan **бил ли си…?**",
+  "bercerita tentang perjalanan dan tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Rencana ke Plovdiv",
+   "intro": "Maria mengusulkan perjalanan. Perhatikan akhiran kata kerja bentuk perfek — ia berubah tergantung siapa yang sedang bicara, laki-laki atau perempuan.",
+   "lines": [
+    {
+     "speaker": "Мария:",
+     "text": "[Била|BI-la] [ли|li] [си|si] [в|f] [Пловдив|PLOV-div]?",
+     "id": "Kamu pernah ke Plovdiv?",
+     "literal": "pernah-perempuan — (tanya) — adalah-kamu — di — Plovdiv?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Не|Ne], [никога|NI-ko-ga] [не|ne] [съм|săm] [ходила|HO-di-la] [там|tam].",
+     "id": "Belum, saya belum pernah ke sana.",
+     "literal": "tidak, tidak-pernah — tidak — adalah-saya — pergi-perempuan — di-sana."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Трябва|TRYAB-va] [да|da] [отидеш|o-TI-desh]! [Аз|Az] [съм|săm] [била|BI-la] [пет|pet] [пъти|PĂ-ti].",
+     "id": "Kamu harus pergi! Saya sudah lima kali ke sana.",
+     "literal": "harus — supaya — pergi-kamu! saya — adalah-saya — pernah-perempuan — lima — kali."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Какво|Kak-VO] [има|I-ma] [там|tam]?",
+     "id": "Ada apa di sana?",
+     "literal": "apa — ada — di-sana?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Стария|STA-ri-ya] [град|grad], [римския|RIM-ski-ya] [театър|te-A-tăr]… [Пловдив|PLOV-div] [е|e] [по-стар|po-STAR] [от|ot] [Рим|Rim].",
+     "id": "Kota Tua, teater Romawi… Plovdiv lebih tua daripada Roma.",
+     "literal": "tua-itu — kota, Romawi-itu — teater… Plovdiv — adalah — lebih-tua — dari — Roma."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Наистина|Na-IS-ti-na] [ли|li]? [Не|Ne] [съм|săm] [чувала|CHU-va-la] [това|to-VA].",
+     "id": "Serius? Saya belum pernah dengar itu.",
+     "literal": "sungguh — (tanya)? tidak — adalah-saya — mendengar-perempuan — ini."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Осем|O-sem] [хиляди|HI-lya-di] [години|go-DI-ni]. [Иван|I-van] [беше|BE-she] [там|tam] [миналата|MI-na-la-ta] [година|go-DI-na].",
+     "id": "Delapan ribu tahun. Ivan ke sana tahun lalu.",
+     "literal": "delapan — ribu — tahun-tahun. Ivan — adalah-dia — di-sana — lalu-itu — tahun."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Той|Toy] [ходил|HO-dil] [ли|li] [е|e] [и|i] [във|văv] [Велико|VE-li-ko] [Търново|TĂR-no-vo]?",
+     "id": "Dia pernah ke Veliko Tarnovo juga?",
+     "literal": "dia — pergi-laki-laki — (tanya) — adalah — juga — di — Veliko — Tarnovo?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Разбира|Raz-BI-ra] [се|se]. [Той|Toy] [е|e] [обиколил|o-bi-KO-lil] [цяла|TSYA-la] [България|Băl-GA-ri-ya].",
+     "id": "Tentu saja. Dia sudah keliling seluruh Bulgaria.",
+     "literal": "mengerti — diri. dia — adalah — mengelilingi-laki-laki — seluruh — Bulgaria."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Тогава|To-GA-va] [ще|shte] [го|go] [питам|PI-tam] [къде|kă-DE] [да|da] [отидем|o-TI-dem] [първо|PĂR-vo].",
+     "id": "Kalau begitu saya akan tanya dia ke mana dulu sebaiknya.",
+     "literal": "kalau-begitu — akan — dia — bertanya-saya — di-mana — supaya — pergi-kami — pertama."
+    }
+   ],
+   "notes": [
+    "⚠️ **Bentuk perfek ikut jenis kelamin pembicaranya.** Perempuan berkata *била съм*, laki-laki *бил съм*. Perempuan *не съм ходила*, laki-laki *не съм ходил*. Untuk banyak orang: *били сме*, *ходили сме*. Ini titik keliru terbesar unit ini bagi penutur bahasa Indonesia, karena bahasa kita tidak pernah menandai jenis kelamin pada kata kerja sama sekali. **Kalau kamu perempuan, biasakan mengucapkan -ла di ujung.**",
+    "**Kapan pakai perfek dan kapan pakai аорист?** Perfek dipakai kalau yang penting **hasilnya sekarang**, bukan kapan kejadiannya: *Бил съм в Пловдив* (saya pernah ke Plovdiv — pengalaman yang saya bawa sampai sekarang). Аорист dipakai kalau kejadiannya diberi waktu tertentu: *Отидох в Пловдив миналата година* (saya pergi ke Plovdiv tahun lalu). ⚠️ Kalau ada keterangan waktu yang jelas, pakai аорист.",
+    "**Никога не съм ходила там — perhatikan tiga sangkalan yang bekerja bersama.** *Никога* menuntut *не*, dan *не* berdiri di depan *съм*. Ini juga menjelaskan kenapa *съм* boleh muncul lebih dulu di sini: yang berdiri di awal kalimat adalah *никога*, bukan *съм*.",
+    "**Той ходил ли е — perhatikan letak ли.** Dalam bentuk perfek, *ли* diselipkan sesudah kata sifat kerjanya dan sebelum *е*. Susunan yang terdengar aneh pada awalnya tetapi cepat jadi terbiasa.",
+    "**Пет пъти berarti \"lima kali\".** Kata *път* berarti \"kali\" dan juga \"jalan\", dan bentuk hitung maskulinnya *пъти*: *един път, два пъти, много пъти*. Untuk \"pertama kali\": *за първи път*.",
+    "**Пловдив memang lebih tua daripada Roma, dan bukan sedikit.** Permukiman di sana sudah ada sekitar enam ribu tahun sebelum Masehi, membuatnya kota berpenghuni tak terputus tertua di Eropa — lebih tua daripada Athena dan Roma. Teater Romawinya masih dipakai untuk konser sampai hari ini.",
+    "**Обиколил берasal dari обикалям — \"berkeliling\".** Awalan **о-** menandai gerakan melingkari sesuatu. Awalan-awalan seperti ini mengubah arti kata kerja Bulgaria secara mendalam dan menjadi salah satu bahan terbesar tingkat A2.",
+    "**Стария град dan римския театър memakai bentuk pendek** meskipun keduanya bukan objek. Dalam percakapan sehari-hari, aturan panjang-pendek memang sering diabaikan — sesuatu yang sudah diperingatkan di Unit 3. Dalam tulisan, yang benar adalah *Старият град*."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk perfek — съм + kata sifat kerja",
+     "body": [
+      "Bentuk ini terdiri dari dua bagian: kata kerja **съм** yang ikut pelakunya, dan kata sifat kerja yang ikut **jenis kelamin dan jumlah** pelakunya."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "съм",
+       "+ работил",
+       "Kalimat lengkap",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "аз (lk)",
+        "съм",
+        "работил",
+        "Работил съм.",
+        "Saya pernah bekerja."
+       ],
+       [
+        "аз (pr)",
+        "съм",
+        "работил**а**",
+        "Работила съм.",
+        "Saya pernah bekerja."
+       ],
+       [
+        "ти (lk)",
+        "си",
+        "работил",
+        "Работил си.",
+        "Kamu pernah bekerja."
+       ],
+       [
+        "той",
+        "е",
+        "работил",
+        "Работил е.",
+        "Dia pernah bekerja."
+       ],
+       [
+        "тя",
+        "е",
+        "работил**а**",
+        "Работила е.",
+        "Dia pernah bekerja."
+       ],
+       [
+        "то",
+        "е",
+        "работил**о**",
+        "Работило е.",
+        "Dia pernah bekerja."
+       ],
+       [
+        "ние / вие / те",
+        "сме / сте / са",
+        "работил**и**",
+        "Работили сме.",
+        "Kami pernah bekerja."
+       ]
+      ]
+     },
+     "after": [
+      "Kata sifat kerjanya dibentuk dari bentuk lampau *аз* dengan mengganti **-х** menjadi **-л**: *работих* → *работил*, *четох* → *чел*, *видях* → *видял*, *бях* → *бил*.",
+      "⚠️ Beberapa bentuk tidak beraturan dan harus dihafal: *чел* (dari чета), *ял* (dari ям), *пил* (dari пия), *дошъл / дошла / дошли* (dari дойда), *отишъл / отишла / отишли* (dari отида). Perhatikan **ъ** yang muncul di bentuk maskulin lalu hilang lagi di bentuk lain — pola yang sama dengan kata sifat *топъл / топла* di Unit 12."
+     ]
+    },
+    {
+     "title": "Perfek lawan аорист — memilih yang mana",
+     "body": [
+      "Dua-duanya bicara tentang masa lalu, tetapi menjawab pertanyaan yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Perfek",
+       "Аорист",
+       "Bedanya"
+      ],
+      "rows": [
+       [
+        "Бил съм в Пловдив.",
+        "Отидох в Пловдив вчера.",
+        "pengalaman lawan kejadian bertanggal"
+       ],
+       [
+        "Ял ли си баница?",
+        "Яде ли баница на закуска?",
+        "pernah lawan tadi"
+       ],
+       [
+        "Не съм чувала това.",
+        "Не чух какво каза.",
+        "belum pernah lawan tidak menangkap"
+       ],
+       [
+        "Обиколил е България.",
+        "Обиколи България миналата година.",
+        "hasilnya sekarang lawan kapan"
+       ]
+      ]
+     },
+     "after": [
+      "Uji cepat yang hampir selalu tepat: **kalau kalimatmu bisa memakai kata \"pernah\" atau \"sudah\", pakai perfek. Kalau ia menyebut kapan tepatnya, pakai аорист.**",
+      "Untuk menanyakan pengalaman, bentuk bakunya: *Бил ли си в…?* (kepada laki-laki), *Била ли си в…?* (kepada perempuan), *Били ли сте в…?* (resmi atau jamak)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bercerita tentang perjalanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Бил ли си в България?",
+       "bil li si v băl-GA-ri-ya",
+       "Kamu (lk) pernah ke Bulgaria?"
+      ],
+      [
+       "Била ли си в България?",
+       "BI-la li si v băl-GA-ri-ya",
+       "Kamu (pr) pernah ke Bulgaria?"
+      ],
+      [
+       "Никога не съм бил там.",
+       "NI-ko-ga ne săm bil tam",
+       "Saya (lk) belum pernah ke sana."
+      ],
+      [
+       "За първи път съм тук.",
+       "za PĂR-vi păt săm tuk",
+       "Ini pertama kali saya di sini."
+      ],
+      [
+       "Пътувал съм много.",
+       "pă-TU-val săm MNO-go",
+       "Saya sudah banyak bepergian."
+      ],
+      [
+       "Обиколих цялата страна.",
+       "o-bi-KO-lih TSYA-la-ta stra-NA",
+       "Saya keliling seluruh negeri."
+      ],
+      [
+       "Много ми хареса.",
+       "MNO-go mi ha-RE-sa",
+       "Saya suka sekali."
+      ],
+      [
+       "Ще се върна пак.",
+       "shte se VĂR-na pak",
+       "Saya akan kembali lagi."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat *За първи път съм тук* akan sering kamu pakai, dan ia hampir selalu membuka percakapan panjang. Orang Bulgaria sangat ingin tahu kesan pendatang tentang negerinya, dan pertanyaan berikutnya hampir pasti: *Харесва ли ти?* (Kamu suka?)"
+    }
+   ]
+  },
+  {
+   "title": "Lima tempat yang akan disebut orang kepadamu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Baca",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "Пловдив",
+       "PLOV-div",
+       "Kota berpenghuni tak terputus tertua di Eropa. Kota Tua-nya berbukit, berbatu, penuh rumah kayu abad kesembilan belas berwarna cerah, dan teater Romawi yang masih hidup."
+      ],
+      [
+       "Велико Търново",
+       "VE-li-ko TĂR-no-vo",
+       "Bekas ibu kota kerajaan Bulgaria kedua, rumah-rumahnya bertumpuk di tebing di atas kelokan sungai Янтра."
+      ],
+      [
+       "Рилски манастир",
+       "RIL-ski ma-nas-TIR",
+       "Biara di dalam gunung dengan pilar bergaris hitam-putih dan lukisan dinding yang menutupi setiap permukaan. Dua jam dari Sofia."
+      ],
+      [
+       "Несебър",
+       "ne-SE-băr",
+       "Kota kecil di semenanjung batu di Laut Hitam, dengan puluhan gereja abad pertengahan."
+      ],
+      [
+       "Розовата долина",
+       "RO-zo-va-ta do-LI-na",
+       "Lembah Mawar dekat Казанлък, tempat sebagian besar minyak mawar dunia dihasilkan. Panennya pada bulan Mei, sebelum matahari terbit."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Minyak mawar Bulgaria — **розово масло** — masih menjadi bahan wangi kelas atas di seluruh dunia, dan untuk satu kilogramnya dibutuhkan sekitar tiga ton kelopak. Kalau kamu ingin membawa oleh-oleh yang benar-benar Bulgaria, ini jawabannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Aksara yang lahir di sini",
+     "items": [
+      "Pada 24 Mei, seluruh Bulgaria merayakan **Ден на българската азбука, просвета и култура** — hari aksara, pendidikan, dan kebudayaan Bulgaria. Anak-anak sekolah berjalan membawa bunga dan huruf-huruf besar dari kertas.",
+      "Yang dirayakan bukan kemerdekaan atau kemenangan perang, melainkan sebuah **abjad**. Kiril dan Metodi menyusun aksara Glagolitik pada abad kesembilan; murid-murid mereka di Preslav, Bulgaria, mengembangkan aksara Kiril yang kamu pelajari sekarang.",
+      "Dari sinilah aksara itu menyebar ke Serbia, Rusia, Ukraina, dan akhirnya ke Mongolia. Kalau kamu ingin membuat seorang Bulgaria bangga: *Кирилицата е родена тук, нали?* (Kiril lahir di sini, kan?)"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "бил / била / били",
+   "baca": "bil / BI-la / BI-li",
+   "id": "pernah (lk / pr / jamak)"
+  },
+  {
+   "bg": "ходил",
+   "baca": "HO-dil",
+   "id": "pernah pergi (lk)"
+  },
+  {
+   "bg": "чувал",
+   "baca": "CHU-val",
+   "id": "pernah dengar (lk)"
+  },
+  {
+   "bg": "чувам",
+   "baca": "CHU-vam",
+   "id": "saya mendengar"
+  },
+  {
+   "bg": "пътувал",
+   "baca": "pă-TU-val",
+   "id": "pernah bepergian (lk)"
+  },
+  {
+   "bg": "обикалям",
+   "baca": "o-bi-KA-lyam",
+   "id": "saya berkeliling"
+  },
+  {
+   "bg": "път / пъти",
+   "baca": "păt / PĂ-ti",
+   "id": "kali (tunggal / hitungan)"
+  },
+  {
+   "bg": "за първи път",
+   "baca": "za PĂR-vi păt",
+   "id": "untuk pertama kali"
+  },
+  {
+   "bg": "пак",
+   "baca": "pak",
+   "id": "lagi"
+  },
+  {
+   "bg": "стар град",
+   "baca": "star grad",
+   "id": "kota tua"
+  },
+  {
+   "bg": "римски",
+   "baca": "RIM-ski",
+   "id": "Romawi"
+  },
+  {
+   "bg": "театър",
+   "baca": "te-A-tăr",
+   "id": "teater"
+  },
+  {
+   "bg": "манастир",
+   "baca": "ma-nas-TIR",
+   "id": "biara"
+  },
+  {
+   "bg": "църква",
+   "baca": "TSĂRK-va",
+   "id": "gereja"
+  },
+  {
+   "bg": "крепост",
+   "baca": "KRE-post",
+   "id": "benteng"
+  },
+  {
+   "bg": "музей",
+   "baca": "mu-ZEY",
+   "id": "museum"
+  },
+  {
+   "bg": "долина",
+   "baca": "do-LI-na",
+   "id": "lembah"
+  },
+  {
+   "bg": "роза",
+   "baca": "RO-za",
+   "id": "mawar"
+  },
+  {
+   "bg": "хиляда / хиляди",
+   "baca": "HI-lya-da / HI-lya-di",
+   "id": "seribu / ribuan"
+  },
+  {
+   "bg": "страна",
+   "baca": "stra-NA",
+   "id": "negeri"
+  },
+  {
+   "bg": "азбука",
+   "baca": "AZ-bu-ka",
+   "id": "abjad"
+  },
+  {
+   "bg": "кирилица",
+   "baca": "ki-RI-li-tsa",
+   "id": "aksara Kiril"
+  },
+  {
+   "bg": "снимка",
+   "baca": "SNIM-ka",
+   "id": "foto"
+  },
+  {
+   "bg": "сувенир",
+   "baca": "su-ve-NIR",
+   "id": "suvenir"
+  },
+  {
+   "bg": "първо",
+   "baca": "PĂR-vo",
+   "id": "pertama, mula-mula"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk perfek. Perhatikan jenis kelamin pelakunya.",
+   "items": [
+    "Аз (жена) работих там. ____",
+    "Аз (мъж) бях в Пловдив. ____",
+    "Тя чете книгата. ____",
+    "Ние пътувахме много. ____",
+    "Той отиде в Рим. ____",
+    "Те видяха морето. ____"
+   ]
+  },
+  {
+   "prompt": "Pilih perfek atau аорист, lalu isi dengan bentuk yang tepat.",
+   "items": [
+    "Никога не ____ там. (съм ходил atau отидох)",
+    "Вчера ____ на пазар. (съм ходил atau отидох)",
+    "____ ли баница някога? (Ял си atau Яде)",
+    "Миналата година ____ в Гърция. (съм бил atau бях)",
+    "Тя ____ пет пъти в Пловдив. (е била atau беше)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ли / била / си / в Пловдив",
+    "съм / никога / там / не / ходила",
+    "пъти / съм / пет / била",
+    "чувала / това / не / съм",
+    "България / е / обиколил / цяла"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria. Anggap pembicaranya perempuan.",
+   "items": [
+    "Saya belum pernah ke sana.",
+    "Ini pertama kali saya di sini.",
+    "Kamu pernah ke Bulgaria?",
+    "Saya suka sekali.",
+    "Saya akan kembali lagi."
+   ]
+  }
+ ],
+ "answers": [
+  "Работила съм там. — Бил съм в Пловдив. — Тя е чела книгата. — Пътували сме много. — Той е отишъл в Рим. — Те са видели морето.",
+  "съм ходил — отидох — Ял си — бях — е била",
+  "Била ли си в Пловдив? — Никога не съм ходила там. — Била съм пет пъти. — Не съм чувала това. — Обиколил е цяла България.",
+  "Никога не съм ходила там. — За първи път съм тук. — Била ли си в България? — Много ми хареса. — Ще се върна пак."
+ ]
+}

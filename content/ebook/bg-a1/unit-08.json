@@ -1,0 +1,522 @@
+{
+ "title": "Bahasa tanpa kata \"makan\"",
+ "title_target": "Искам да ям — Iskam da yam",
+ "goal": "Menghadapi kekhasan bahasa Bulgaria yang paling mengagetkan: tidak ada bentuk infinitif sama sekali. Sebagai gantinya dipakai **да** + kata kerja yang tetap ikut pelakunya — dan begitu kamu terbiasa, ia justru lebih sederhana.",
+ "bekal": [
+  "menyusun kalimat dengan **искам да**, **мога да**, **трябва да**",
+  "menyadari bahwa kata kerja kedua tetap berubah menurut pelakunya",
+  "meminta izin dengan **може ли да**",
+  "menyatakan keharusan tanpa pelaku dengan **трябва да**",
+  "menolak dan menyetujui ajakan dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Merencanakan akhir pekan",
+   "intro": "Maria mengajak Ani jalan-jalan. Hitung berapa kali kata **да** muncul, dan perhatikan bahwa kata kerja sesudahnya tidak pernah membeku — ia selalu ikut siapa pelakunya.",
+   "lines": [
+    {
+     "speaker": "Мария:",
+     "text": "[Какво|Kak-VO] [искаш|IS-kash] [да|da] [правиш|PRA-vish] [в|v] [събота|SĂ-bo-ta]?",
+     "id": "Sabtu kamu mau ngapain?",
+     "literal": "apa — mau-kamu — supaya — melakukan-kamu — pada — Sabtu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Не|Ne] [знам|znam]. [Искам|IS-kam] [да|da] [видя|VI-dya] [нещо|NESH-to] [ново|NO-vo].",
+     "id": "Tidak tahu. Saya mau melihat sesuatu yang baru.",
+     "literal": "tidak — tahu-saya. mau-saya — supaya — melihat-saya — sesuatu — baru."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Може|MO-zhe] [ли|li] [да|da] [отидем|o-TI-dem] [на|na] [Витоша|VI-to-sha]? [Времето|VRE-me-to] [ще|shte] [е|e] [хубаво|HU-ba-vo].",
+     "id": "Boleh kita pergi ke Vitosha? Cuacanya bakal bagus.",
+     "literal": "boleh — (tanya) — supaya — pergi-kami — ke — Vitosha? cuaca-itu — akan — adalah — bagus."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[С|S] [удоволствие|u-do-VOL-stvi-e]! [Но|No] [трябва|TRYAB-va] [да|da] [се|se] [върна|VĂR-na] [до|do] [шест|shest].",
+     "id": "Dengan senang hati! Tapi saya harus pulang sebelum jam enam.",
+     "literal": "dengan — kesenangan! tapi — harus — supaya — diri — kembali-saya — sampai — enam."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Няма|NYA-ma] [проблем|prob-LEM]. [Можем|MO-zhem] [да|da] [тръгнем|TRĂG-nem] [рано|RA-no].",
+     "id": "Tidak masalah. Kita bisa berangkat pagi.",
+     "literal": "tidak-ada — masalah. bisa-kami — supaya — berangkat-kami — pagi-pagi."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Трябва|TRYAB-va] [ли|li] [да|da] [взема|VZE-ma] [нещо|NESH-to]?",
+     "id": "Perlu bawa sesuatu?",
+     "literal": "perlu — (tanya) — supaya — mengambil-saya — sesuatu?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Вода|Vo-DA] [и|i] [яке|YA-ke]. [Горе|GO-re] [може|MO-zhe] [да|da] [е|e] [студено|stu-DE-no].",
+     "id": "Air dan jaket. Di atas bisa jadi dingin.",
+     "literal": "air — dan — jaket. di-atas — bisa — supaya — adalah — dingin."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Добре|Dob-RE]. [Обичам|O-bi-cham] [да|da] [ходя|HO-dya] [в|v] [планината|pla-ni-NA-ta].",
+     "id": "Baik. Saya suka jalan-jalan di gunung.",
+     "literal": "baik. suka-saya — supaya — berjalan-saya — di — gunung-itu."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Аз|Az] [също|SĂSH-to]. [Значи|ZNA-chi] [в|v] [събота|SĂ-bo-ta] [в|v] [осем|O-sem] [пред|pred] [хотела|ho-TE-lă]?",
+     "id": "Saya juga. Berarti Sabtu jam delapan di depan hotel?",
+     "literal": "saya — juga. berarti — pada — Sabtu — pada — delapan — di-depan — hotel-itu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Разбрахме|Raz-BRAH-me] [се|se]!",
+     "id": "Sepakat!",
+     "literal": "mengerti-kami — diri!"
+    }
+   ],
+   "notes": [
+    "**Bahasa Bulgaria tidak punya infinitif — sama sekali.** Tidak ada satu bentuk yang berarti \"makan\" begitu saja seperti *to eat*, *essen*, atau *makan*. Yang ada cuma bentuk yang sudah ikut pelakunya. Untuk menyusun \"saya mau makan\", bahasa ini berkata **искам да ям** — harfiahnya \"saya-mau supaya saya-makan\". Dua kata kerja, dua-duanya berubah menurut pelakunya.",
+    "⚠️ **Kata kerja kedua ikut berubah, dan ini titik keliru terbesar unit ini.** *Искам да ям* (saya mau makan) tetapi *Искаш да ядеш* (kamu mau makan) dan *Той иска да яде* (dia mau makan). Penutur bahasa Indonesia otomatis membekukan kata kerja kedua karena bahasa kita memang tidak pernah mengubahnya. Di sini keduanya harus cocok.",
+    "**Да bukan \"ya\" di sini.** Kata *да* memang berarti \"ya\" kalau berdiri sendiri, tetapi di dalam kalimat seperti ini ia berfungsi seperti \"supaya\" atau \"untuk\". Dua pekerjaan, satu kata — dan telinga orang Bulgaria tidak pernah bingung karena letaknya berbeda.",
+    "**Трябва tidak pernah berubah bentuk.** Ia selalu *трябва*, siapa pun pelakunya: *трябва да отида* (saya harus pergi), *трябва да отидеш* (kamu harus pergi). Yang membawa keterangan pelaku adalah kata kerja keduanya. ⚠️ Menyusun *трябвам да…* adalah kesalahan yang sangat khas pemula.",
+    "**Може ли да… adalah cara meminta izin yang paling lazim.** *Може ли да платя с карта?* (Boleh saya bayar pakai kartu?), *Може ли да седна?* (Boleh saya duduk?). Diucapkan sendirian, **Може ли?** sudah berarti \"boleh?\" atau \"permisi\" dan bisa dipakai untuk memanggil pelayan.",
+    "**Може juga berarti \"mungkin\".** *Може да е студено* — bisa jadi dingin. Nada dan keadaanlah yang membedakannya dari arti \"boleh\".",
+    "**Разбрахме се harfiahnya \"kita sudah saling mengerti\" dan artinya \"sepakat, oke\".** Ungkapan penutup kesepakatan yang sangat lazim. Bentuk pendeknya untuk satu orang: *Разбрано!* (mengerti, siap).",
+    "**С удоволствие — \"dengan senang hati\" — adalah cara menerima ajakan yang selalu tepat.** Kalau kamu ingin menolak dengan halus: *За съжаление не мога* (sayangnya saya tidak bisa)."
+   ],
+   "grammars": [
+    {
+     "title": "Pola да — susunan yang menggantikan infinitif",
+     "body": [
+      "Susunannya selalu sama: kata kerja pertama ikut pelakunya, lalu **да**, lalu kata kerja kedua yang juga ikut pelaku yang sama."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Искам да ям.",
+        "IS-kam da yam",
+        "saya-mau supaya saya-makan",
+        "Saya mau makan."
+       ],
+       [
+        "Искаш да ядеш.",
+        "IS-kash da ya-DESH",
+        "kamu-mau supaya kamu-makan",
+        "Kamu mau makan."
+       ],
+       [
+        "Той иска да яде.",
+        "toy IS-ka da YA-de",
+        "dia-mau supaya dia-makan",
+        "Dia mau makan."
+       ],
+       [
+        "Мога да говоря.",
+        "MO-ga da go-VO-rya",
+        "saya-bisa supaya saya-bicara",
+        "Saya bisa bicara."
+       ],
+       [
+        "Трябва да работим.",
+        "TRYAB-va da ra-BO-tim",
+        "harus supaya kami-bekerja",
+        "Kami harus bekerja."
+       ],
+       [
+        "Обичам да чета.",
+        "o-BI-cham da che-TA",
+        "saya-cinta supaya saya-baca",
+        "Saya suka membaca."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk sangkalannya menaruh **не** di depan kata kerja **pertama**: *Не искам да ям* (saya tidak mau makan). Kalau *не* ditaruh sesudah *да*, artinya berpindah ke kata kerja kedua: *Искам да не ям* — saya ingin (supaya saya) tidak makan. Perbedaannya nyata, jadi perhatikan letaknya.",
+      "Kata kecil seperti *се, ми, го* berdiri **di antara да dan kata kerjanya**: *трябва да **се** върна* (saya harus pulang), *искам да **ти** кажа* (saya mau memberitahumu)."
+     ]
+    },
+    {
+     "title": "Lima kata yang paling sering diikuti да",
+     "body": [
+      "Hafalkan lima kata ini dan kamu bisa membangun ratusan kalimat hari ini juga."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Baca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "искам да",
+        "IS-kam da",
+        "saya mau",
+        "Искам да пътувам."
+       ],
+       [
+        "мога да",
+        "MO-ga da",
+        "saya bisa",
+        "Не мога да дойда."
+       ],
+       [
+        "трябва да",
+        "TRYAB-va da",
+        "harus (tak berubah)",
+        "Трябва да тръгвам."
+       ],
+       [
+        "може ли да",
+        "MO-zhe li da",
+        "boleh (minta izin)",
+        "Може ли да седна?"
+       ],
+       [
+        "обичам да",
+        "o-BI-cham da",
+        "saya suka",
+        "Обичам да готвя."
+       ],
+       [
+        "започвам да",
+        "za-POCH-vam da",
+        "saya mulai",
+        "Започвам да разбирам."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Мога tidak beraturan**: *мога, можеш, може, можем, можете, могат*. Perhatikan bahwa bentuk \"saya\" memakai **г** sedangkan sisanya memakai **ж**. Ini kata kerja paling sering dipakai kedua sesudah *съм*, jadi hafalkan sekarang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerima, menolak, dan menawar waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "С удоволствие!",
+       "s u-do-VOL-stvi-e",
+       "Dengan senang hati!"
+      ],
+      [
+       "Разбира се!",
+       "raz-BI-ra se",
+       "Tentu saja!"
+      ],
+      [
+       "Добра идея.",
+       "dob-RA i-DE-ya",
+       "Ide bagus."
+      ],
+      [
+       "Защо не?",
+       "zash-TO ne",
+       "Kenapa tidak?"
+      ],
+      [
+       "За съжаление не мога.",
+       "za să-zha-LE-ni-e ne MO-ga",
+       "Sayangnya saya tidak bisa."
+      ],
+      [
+       "Може би друг път.",
+       "MO-zhe bi drug păt",
+       "Mungkin lain kali."
+      ],
+      [
+       "Имам друга работа.",
+       "I-mam DRU-ga ra-BO-ta",
+       "Saya ada urusan lain."
+      ],
+      [
+       "Може ли по-късно?",
+       "MO-zhe li po-KĂS-no",
+       "Bisa agak nanti?"
+      ],
+      [
+       "Трябва да помисля.",
+       "TRYAB-va da po-MIS-lya",
+       "Saya harus pikir dulu."
+      ],
+      [
+       "Разбрахме се.",
+       "raz-BRAH-me se",
+       "Sepakat."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Menolak ajakan dengan hanya *Не* terdengar tajam di Bulgaria, sama seperti di Indonesia. Selalu tambahkan alasan atau tawaran pengganti — *За съжаление не мога, но може ли в неделя?* Susunan sopan yang sama persis dengan kebiasaan kita."
+    }
+   ]
+  },
+  {
+   "title": "Витоша — gunung yang duduk di pinggir ibu kota",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dialog unit ini menyebut **Витоша**, dan itu bukan pilihan acak. Sofia adalah salah satu dari sedikit ibu kota di dunia yang punya gunung setinggi 2.290 meter tepat di batas kotanya. Dari pusat kota, bus dan lift gantung membawamu ke padang batu dan hutan pinus dalam waktu kurang dari satu jam."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "планина",
+       "pla-ni-NA",
+       "gunung"
+      ],
+      [
+       "връх",
+       "vrăh",
+       "puncak"
+      ],
+      [
+       "пътека",
+       "pă-TE-ka",
+       "jalan setapak"
+      ],
+      [
+       "хижа",
+       "HI-zha",
+       "pondok gunung"
+      ],
+      [
+       "лифт",
+       "lift",
+       "lift gantung"
+      ],
+      [
+       "яке",
+       "YA-ke",
+       "jaket"
+      ],
+      [
+       "раница",
+       "RA-ni-tsa",
+       "ransel"
+      ],
+      [
+       "на разходка",
+       "na raz-HOD-ka",
+       "jalan-jalan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu ingin satu kalimat untuk membuka percakapan dengan orang Bulgaria mana pun, cobalah: *Обичам да ходя на планина.* (Saya suka naik gunung.) Hampir semua orang di sini punya cerita tentang gunung, dan banyak yang punya pendapat keras tentang jalur mana yang terbaik."
+    },
+    {
+     "type": "kotak",
+     "title": "Мартеница — gelang merah-putih di pergelangan tangan",
+     "items": [
+      "Kalau kamu berada di Bulgaria pada bulan Maret, semua orang tiba-tiba memakai tali kecil merah-putih di pergelangan tangan atau di kerah baju. Namanya **мартеница** (*MAR-te-ni-tsa*), dan orang saling memberikannya pada 1 Maret sambil berkata *Честита Баба Марта!*",
+      "Aturannya: kamu memakainya sampai melihat burung bangau atau pohon yang sudah berbunga, lalu mengikatnya di dahan pohon itu. Merah melambangkan kesehatan dan darah kehidupan; putih melambangkan umur panjang.",
+      "Kalau ada orang Bulgaria memberimu satu, itu tanda kamu sudah dianggap bagian dari lingkarannya. Terimalah, pakailah, dan jangan lupa mengikatnya di pohon."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "да",
+   "baca": "da",
+   "id": "supaya, untuk (penghubung kata kerja)"
+  },
+  {
+   "bg": "искам",
+   "baca": "IS-kam",
+   "id": "saya mau"
+  },
+  {
+   "bg": "мога",
+   "baca": "MO-ga",
+   "id": "saya bisa"
+  },
+  {
+   "bg": "трябва",
+   "baca": "TRYAB-va",
+   "id": "harus, perlu"
+  },
+  {
+   "bg": "може",
+   "baca": "MO-zhe",
+   "id": "boleh; mungkin"
+  },
+  {
+   "bg": "знам",
+   "baca": "znam",
+   "id": "saya tahu"
+  },
+  {
+   "bg": "видя",
+   "baca": "VI-dya",
+   "id": "saya melihat (selesai)"
+  },
+  {
+   "bg": "отида",
+   "baca": "o-TI-da",
+   "id": "saya pergi (selesai)"
+  },
+  {
+   "bg": "тръгвам",
+   "baca": "TRĂG-vam",
+   "id": "saya berangkat"
+  },
+  {
+   "bg": "връщам се",
+   "baca": "VRĂSH-tam se",
+   "id": "saya pulang, saya kembali"
+  },
+  {
+   "bg": "взема",
+   "baca": "VZE-ma",
+   "id": "saya ambil"
+  },
+  {
+   "bg": "ходя",
+   "baca": "HO-dya",
+   "id": "saya berjalan, saya biasa pergi"
+  },
+  {
+   "bg": "планина",
+   "baca": "pla-ni-NA",
+   "id": "gunung"
+  },
+  {
+   "bg": "събота",
+   "baca": "SĂ-bo-ta",
+   "id": "Sabtu"
+  },
+  {
+   "bg": "неделя",
+   "baca": "ne-DE-lya",
+   "id": "Minggu"
+  },
+  {
+   "bg": "рано",
+   "baca": "RA-no",
+   "id": "pagi-pagi, awal"
+  },
+  {
+   "bg": "късно",
+   "baca": "KĂS-no",
+   "id": "terlambat, larut"
+  },
+  {
+   "bg": "ново",
+   "baca": "NO-vo",
+   "id": "baru (netral)"
+  },
+  {
+   "bg": "яке",
+   "baca": "YA-ke",
+   "id": "jaket"
+  },
+  {
+   "bg": "също",
+   "baca": "SĂSH-to",
+   "id": "juga"
+  },
+  {
+   "bg": "с удоволствие",
+   "baca": "s u-do-VOL-stvi-e",
+   "id": "dengan senang hati"
+  },
+  {
+   "bg": "за съжаление",
+   "baca": "za să-zha-LE-ni-e",
+   "id": "sayangnya"
+  },
+  {
+   "bg": "разбира се",
+   "baca": "raz-BI-ra se",
+   "id": "tentu saja"
+  },
+  {
+   "bg": "идея",
+   "baca": "i-DE-ya",
+   "id": "ide"
+  },
+  {
+   "bg": "разходка",
+   "baca": "raz-HOD-ka",
+   "id": "jalan-jalan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata kerja kedua agar cocok dengan pelakunya.",
+   "items": [
+    "Искам да ____ български. (уча)",
+    "Ти искаш да ____ вода. (пия)",
+    "Той трябва да ____ рано. (тръгна)",
+    "Ние можем да ____ утре. (дойда)",
+    "Те обичат да ____. (чета)",
+    "Вие искате ли да ____? (платя)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Saya mau makan.",
+    "Kamu bisa bicara pelan?",
+    "Kami harus pulang.",
+    "Boleh saya duduk?",
+    "Dia suka membaca."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "да / искам / нещо / видя / ново",
+    "се / трябва / да / върна",
+    "ли / да / може / отидем",
+    "обичам / планината / да / в / ходя",
+    "мога / за съжаление / не"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat sangkalan dengan menaruh не di tempat yang benar.",
+   "items": [
+    "Искам да ям. ____",
+    "Мога да дойда. ____",
+    "Трябва да работя днес. ____",
+    "Той иска да пътува. ____",
+    "Обичаме да ставаме рано. ____"
+   ]
+  }
+ ],
+ "answers": [
+  "уча — пиеш — тръгне — дойдем — четат — платите",
+  "Искам да ям. — Можеш ли да говориш бавно? — Трябва да се върнем. — Може ли да седна? — Той обича да чете.",
+  "Искам да видя нещо ново. — Трябва да се върна. — Може ли да отидем? — Обичам да ходя в планината. — За съжаление не мога.",
+  "Не искам да ям. — Не мога да дойда. — Не трябва да работя днес. — Той не иска да пътува. — Не обичаме да ставаме рано."
+ ]
+}

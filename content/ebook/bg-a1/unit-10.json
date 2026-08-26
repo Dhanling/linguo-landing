@@ -1,0 +1,641 @@
+{
+ "title": "Bagaimana caranya ke katedral?",
+ "title_target": "Как да стигна до катедралата?",
+ "goal": "Bergerak di dalam kota: bertanya arah, memakai kata depan tempat tanpa perlu mengubah kata bendanya, dan memahami kenapa bahasa Bulgaria memakai satu kata **къде** untuk \"di mana\" sekaligus \"ke mana\".",
+ "bekal": [
+  "bertanya arah dan mengerti jawabannya",
+  "memakai **в** dan **на** dengan tepat untuk tempat",
+  "menyebut alat transportasi dengan **с**",
+  "memakai bentuk perintah untuk memberi petunjuk",
+  "menyebut urutan: pertama, kedua, ketiga"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Tersesat di pusat kota",
+   "intro": "Ani mencari Katedral Alexander Nevsky, bangunan berkubah emas yang jadi tengara Sofia. Perhatikan bahwa nama tempatnya tidak pernah berubah bentuk, betapa pun sering kata depannya berganti.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Извинете|Iz-vi-NE-te], [как|kak] [да|da] [стигна|STIG-na] [до|do] [катедралата|ka-ted-RA-la-ta]?",
+     "id": "Permisi, bagaimana caranya sampai ke katedral?",
+     "literal": "maafkan-lah-Anda, bagaimana — supaya — sampai-saya — sampai-ke — katedral-itu?"
+    },
+    {
+     "speaker": "Жена:",
+     "text": "[Пеша|Pe-SHA] [ли|li] [сте|ste] [или|I-li] [с|s] [колата|KO-la-ta]?",
+     "id": "Anda jalan kaki atau naik mobil?",
+     "literal": "dengan-kaki — (tanya) — adalah-Anda — atau — dengan — mobil-itu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Пеша|Pe-SHA]. [Далече|Da-LE-che] [ли|li] [е|e]?",
+     "id": "Jalan kaki. Jauh?",
+     "literal": "dengan-kaki. jauh — (tanya) — adalah?"
+    },
+    {
+     "speaker": "Жена:",
+     "text": "[Не|Ne], [десет|DE-set] [минути|mi-NU-ti]. [Вървете|Văr-VE-te] [направо|na-PRA-vo] [по|po] [тази|TA-zi] [улица|U-li-tsa].",
+     "id": "Tidak, sepuluh menit. Jalan lurus lewat jalan ini.",
+     "literal": "tidak, sepuluh — menit. berjalan-lah-Anda — lurus — lewat — ini — jalan."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[До|Do] [светофара|sve-to-FA-ră]?",
+     "id": "Sampai lampu merahnya?",
+     "literal": "sampai — lampu-lalu-lintas-itu?"
+    },
+    {
+     "speaker": "Жена:",
+     "text": "[Да|Da]. [На|Na] [втората|VTO-ra-ta] [пресечка|pre-SECH-ka] [завийте|za-VIY-te] [надясно|na-DYAS-no].",
+     "id": "Ya. Di perempatan kedua belok kanan.",
+     "literal": "ya. pada — kedua-itu — persimpangan — belok-lah-Anda — ke-kanan."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[И|I] [после|PO-sle]?",
+     "id": "Lalu?",
+     "literal": "dan — kemudian?"
+    },
+    {
+     "speaker": "Жена:",
+     "text": "[После|PO-sle] [ще|shte] [видите|VI-di-te] [голям|go-LYAM] [парк|park]. [Катедралата|Ka-ted-RA-la-ta] [е|e] [зад|zad] [парка|PAR-kă].",
+     "id": "Nanti Anda akan lihat taman besar. Katedralnya di belakang taman.",
+     "literal": "kemudian — akan — melihat-Anda — besar — taman. katedral-itu — adalah — di-belakang — taman-itu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Не|Ne] [може|MO-zhe] [да|da] [я|ya] [пропусна|pro-PUS-na], [нали|na-LI]?",
+     "id": "Tidak mungkin terlewat, kan?",
+     "literal": "tidak — bisa — supaya — dia — melewatkan-saya, bukan-begitu?"
+    },
+    {
+     "speaker": "Жена:",
+     "text": "[Няма|NYA-ma] [начин|NA-chin]! [Куполите|KU-po-li-te] [са|sa] [златни|ZLAT-ni].",
+     "id": "Mustahil! Kubahnya emas.",
+     "literal": "tidak-ada — cara! kubah-kubah-itu — adalah — emas."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA] [много|MNO-go]!",
+     "id": "Terima kasih banyak!",
+     "literal": "terima-kasih — banyak!"
+    }
+   ],
+   "notes": [
+    "**Как да стигна до…? adalah kalimat kunci unit ini.** Harfiahnya \"bagaimana supaya saya sampai ke…\", dan ia memakai pola *да* dari Unit 8. Hafalkan utuh; ia akan menyelamatkanmu di kota mana pun.",
+    "**Alat transportasi memakai с — \"dengan\".** *С колата* (naik mobil), *с автобус* (naik bus), *с влак* (naik kereta), *с метрото* (naik metro). Untuk berjalan kaki dipakai kata tersendiri: **пеша**. ⚠️ Jangan berkata *с крака*; itu terdengar seperti membawa kaki sebagai barang.",
+    "**По тази улица berarti \"menyusuri jalan ini\".** Kata depan **по** dipakai untuk gerak *sepanjang* sesuatu: *по улицата* (menyusuri jalan), *по стълбите* (menaiki tangga). Bedakan dari *на улицата* — berada di jalan itu, tanpa gerak.",
+    "**Вървете dan завийте adalah bentuk perintah resmi.** Untuk satu orang yang akrab, bentuknya *върви* dan *завий*. Bentuk perintah resmi hampir selalu berakhiran **-те**, dan kamu akan mendengarnya dari setiap orang yang memberimu petunjuk jalan.",
+    "**Bilangan bertingkat ikut jenis kelamin dan membawa artikel.** *На втората пресечка* — pada perempatan kedua (*пресечка* feminin). *На втория етаж* — di lantai dua (*етаж* maskulin). Perhatikan bahwa artikelnya menempel pada **bilangannya**, bukan pada kata bendanya.",
+    "**Не може да я пропусна — kata ganti pendek я menggantikan katedral.** *Катедрала* feminin, jadi kata gantinya *я*. Perhatikan letaknya: di antara *да* dan kata kerjanya, persis seperti *се* di Unit 9.",
+    "**Няма начин harfiahnya \"tidak ada cara\" dan artinya \"mustahil\" atau \"tidak mungkin\".** Dipakai persis seperti *no way* dalam bahasa Inggris, untuk hal yang mustahil maupun untuk penolakan tegas.",
+    "**Катедралата \"Свети Александър Невски\" dibangun untuk mengenang dua ratus ribu tentara Rusia yang gugur dalam perang pembebasan Bulgaria 1877–78.** Kubahnya berlapis emas asli, dan ruang bawahnya menyimpan salah satu koleksi ikon Ortodoks terbesar di Eropa. Kalau kamu masuk: bahu tertutup, dan jangan memotret di dalam tanpa izin."
+   ],
+   "grammars": [
+    {
+     "title": "Къde — satu kata untuk \"di mana\" dan \"ke mana\"",
+     "body": [
+      "Bahasa Bulgaria tidak membedakan tempat berada dan tempat yang dituju lewat kata tanya maupun bentuk kata bendanya. Yang menjelaskan arah cuma kata kerjanya — persis seperti bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Arti",
+       "Yang menjelaskan"
+      ],
+      "rows": [
+       [
+        "Къде си?",
+        "kă-DE si",
+        "Kamu di mana?",
+        "съм = berada"
+       ],
+       [
+        "Къде отиваш?",
+        "kă-DE o-TI-vash",
+        "Kamu ke mana?",
+        "отивам = pergi"
+       ],
+       [
+        "Живея в София.",
+        "zhi-VE-ya f SO-fi-ya",
+        "Saya tinggal di Sofia.",
+        "живея = tinggal"
+       ],
+       [
+        "Отивам в София.",
+        "o-TI-vam f SO-fi-ya",
+        "Saya pergi ke Sofia.",
+        "отивам = pergi"
+       ],
+       [
+        "Тук съм.",
+        "tuk săm",
+        "Saya di sini.",
+        "съм"
+       ],
+       [
+        "Ела тук.",
+        "e-LA tuk",
+        "Datang ke sini.",
+        "ела = datanglah"
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan bahasa Rusia, yang menuntut *где* lawan *куда*, *в Москве* lawan *в Москву*. Bahasa Bulgaria membuang seluruh perbedaan itu, dan tidak ada yang hilang — konteksnya selalu cukup. Ini salah satu alasan bahasa Bulgaria jauh lebih mudah bagi pemula daripada saudara-saudara Slavianya."
+     ]
+    },
+    {
+     "title": "Bentuk perintah",
+     "body": [
+      "Dua bentuk saja: satu untuk orang yang kamu panggil *ти*, satu untuk *вие*. Bentuk kedua selalu bentuk pertama ditambah **-те**."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Kepada ти",
+       "Kepada вие",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "вървя",
+        "върви",
+        "вървете",
+        "jalanlah"
+       ],
+       [
+        "завия",
+        "завий",
+        "завийте",
+        "beloklah"
+       ],
+       [
+        "дойда",
+        "ела",
+        "елате",
+        "datanglah"
+       ],
+       [
+        "седна",
+        "седни",
+        "седнете",
+        "duduklah"
+       ],
+       [
+        "кажа",
+        "кажи",
+        "кажете",
+        "katakanlah"
+       ],
+       [
+        "изчакам",
+        "изчакай",
+        "изчакайте",
+        "tunggulah"
+       ],
+       [
+        "внимавам",
+        "внимавай",
+        "внимавайте",
+        "hati-hati"
+       ]
+      ]
+     },
+     "after": [
+      "Larangannya cukup menambahkan **не** di depan — tetapi dengan kata kerja bentuk berlangsung: *Не закъснявай!* (jangan telat), *Не влизайте!* (jangan masuk).",
+      "⚠️ **Ела dan елате sangat tak beraturan** dan tidak mirip sama sekali dengan bentuk kamusnya *дойда*. Hafalkan terpisah; kamu akan mendengarnya setiap hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya arah dan mengerti jawabannya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bertanya",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Как да стигна до…?",
+       "kak da STIG-na do",
+       "Bagaimana caranya ke…?"
+      ],
+      [
+       "Къде е…?",
+       "kă-DE e",
+       "Di mana…?"
+      ],
+      [
+       "Далече ли е?",
+       "da-LE-che li e",
+       "Jauh?"
+      ],
+      [
+       "Колко време пеша?",
+       "KOL-ko VRE-me pe-SHA",
+       "Berapa lama jalan kaki?"
+      ],
+      [
+       "Изгубих се.",
+       "iz-GU-bih se",
+       "Saya tersesat."
+      ],
+      [
+       "Може ли да ми покажете на картата?",
+       "MO-zhe li da mi po-KA-zhe-te na KAR-ta-ta",
+       "Bisa tunjukkan di peta?"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jawaban yang akan kamu dengar",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Вървете направо.",
+       "văr-VE-te na-PRA-vo",
+       "Jalan lurus."
+      ],
+      [
+       "Завийте надясно / наляво.",
+       "za-VIY-te na-DYAS-no",
+       "Belok kanan / kiri."
+      ],
+      [
+       "На ъгъла.",
+       "na Ă-găl-a",
+       "Di pojokan."
+      ],
+      [
+       "На светофара.",
+       "na sve-to-FA-ră",
+       "Di lampu merah."
+      ],
+      [
+       "Точно срещу…",
+       "TOCH-no sresh-TU",
+       "Tepat di seberang…"
+      ],
+      [
+       "До спирката.",
+       "do SPIR-ka-ta",
+       "Di dekat halte."
+      ],
+      [
+       "Втората пресечка.",
+       "VTO-ra-ta pre-SECH-ka",
+       "Perempatan kedua."
+      ],
+      [
+       "Не е далече.",
+       "ne e da-LE-che",
+       "Tidak jauh."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau jawabannya terlalu cepat, satu kalimat menyelamatkanmu: **Може ли по-бавно, моля?** (Bisa lebih pelan?). Orang Bulgaria hampir selalu langsung mengulanginya dengan sabar — dan sering ikut mengantarmu sebagian jalan."
+    }
+   ]
+  },
+  {
+   "title": "Tempat, transportasi, dan bilangan bertingkat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Baca",
+      "Arti",
+      "Transportasi",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "улица",
+       "U-li-tsa",
+       "jalan",
+       "автобус",
+       "av-to-BUS",
+       "bus"
+      ],
+      [
+       "булевард",
+       "bu-le-VARD",
+       "jalan besar",
+       "трамвай",
+       "tram-VAY",
+       "trem"
+      ],
+      [
+       "площад",
+       "plosh-TAD",
+       "alun-alun",
+       "тролей",
+       "tro-LEY",
+       "bus listrik"
+      ],
+      [
+       "парк",
+       "park",
+       "taman",
+       "метро",
+       "met-RO",
+       "metro"
+      ],
+      [
+       "спирка",
+       "SPIR-ka",
+       "halte",
+       "влак",
+       "vlak",
+       "kereta api"
+      ],
+      [
+       "гара",
+       "GA-ra",
+       "stasiun",
+       "такси",
+       "tak-SI",
+       "taksi"
+      ],
+      [
+       "летище",
+       "LE-tish-te",
+       "bandara",
+       "кола",
+       "ko-LA",
+       "mobil"
+      ],
+      [
+       "болница",
+       "BOL-ni-tsa",
+       "rumah sakit",
+       "колело",
+       "ko-le-LO",
+       "sepeda"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bilangan",
+      "Maskulin",
+      "Feminin",
+      "Netral",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "1",
+       "първи",
+       "първа",
+       "първо",
+       "pertama"
+      ],
+      [
+       "2",
+       "втори",
+       "втора",
+       "второ",
+       "kedua"
+      ],
+      [
+       "3",
+       "трети",
+       "трета",
+       "трето",
+       "ketiga"
+      ],
+      [
+       "4",
+       "четвърти",
+       "четвърта",
+       "четвърто",
+       "keempat"
+      ],
+      [
+       "5",
+       "пети",
+       "пета",
+       "пето",
+       "kelima"
+      ],
+      [
+       "10",
+       "десети",
+       "десета",
+       "десето",
+       "kesepuluh"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bilangan bertingkat berperilaku seperti kata sifat: ia ikut jenis kelamin bendanya, dan kalau dipakai dengan artikel, artikelnya menempel padanya. *Първият автобус* (bus pertama), *първата спирка* (halte pertama), *първото дете* (anak pertama)."
+    },
+    {
+     "type": "kotak",
+     "title": "Metro Sofia dan kejutan arkeologi",
+     "items": [
+      "Sofia punya jaringan metro yang bersih, murah, dan mudah dibaca — tiga jalur, papan nama berhuruf Kiril dan Latin. Yang membuatnya khas: ketika terowongan digali, para pekerja terus-menerus menemukan reruntuhan kota Romawi **Serdica** di bawah pusat kota.",
+      "Alih-alih menyingkirkannya, Sofia membangun stasiun *Сердика* di sekelilingnya. Kamu turun dari kereta dan berjalan di antara jalan berbatu Romawi berumur delapan belas abad, di bawah kaca, di tengah jam sibuk.",
+      "Nama kota ini pun berasal dari gereja **Света София** — Kebijaksanaan Suci. Kalau kamu ingin satu kalimat untuk memuji kotanya: *София е много стар град.* (Sofia kota yang sangat tua.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "стигам",
+   "baca": "STI-gam",
+   "id": "saya sampai, saya tiba"
+  },
+  {
+   "bg": "улица",
+   "baca": "U-li-tsa",
+   "id": "jalan"
+  },
+  {
+   "bg": "площад",
+   "baca": "plosh-TAD",
+   "id": "alun-alun"
+  },
+  {
+   "bg": "парк",
+   "baca": "park",
+   "id": "taman"
+  },
+  {
+   "bg": "катедрала",
+   "baca": "ka-ted-RA-la",
+   "id": "katedral"
+  },
+  {
+   "bg": "църква",
+   "baca": "TSĂRK-va",
+   "id": "gereja"
+  },
+  {
+   "bg": "спирка",
+   "baca": "SPIR-ka",
+   "id": "halte"
+  },
+  {
+   "bg": "светофар",
+   "baca": "sve-to-FAR",
+   "id": "lampu lalu lintas"
+  },
+  {
+   "bg": "пресечка",
+   "baca": "pre-SECH-ka",
+   "id": "persimpangan"
+  },
+  {
+   "bg": "ъгъл",
+   "baca": "Ă-găl",
+   "id": "sudut, pojok"
+  },
+  {
+   "bg": "срещу",
+   "baca": "sresh-TU",
+   "id": "di seberang"
+  },
+  {
+   "bg": "зад",
+   "baca": "zad",
+   "id": "di belakang"
+  },
+  {
+   "bg": "пред",
+   "baca": "pred",
+   "id": "di depan"
+  },
+  {
+   "bg": "по",
+   "baca": "po",
+   "id": "menyusuri, lewat"
+  },
+  {
+   "bg": "вървя",
+   "baca": "văr-VYA",
+   "id": "saya berjalan"
+  },
+  {
+   "bg": "завивам",
+   "baca": "za-VI-vam",
+   "id": "saya belok"
+  },
+  {
+   "bg": "автобус",
+   "baca": "av-to-BUS",
+   "id": "bus"
+  },
+  {
+   "bg": "метро",
+   "baca": "met-RO",
+   "id": "metro"
+  },
+  {
+   "bg": "влак",
+   "baca": "vlak",
+   "id": "kereta api"
+  },
+  {
+   "bg": "билет",
+   "baca": "bi-LET",
+   "id": "tiket"
+  },
+  {
+   "bg": "изгубих се",
+   "baca": "iz-GU-bih se",
+   "id": "saya tersesat"
+  },
+  {
+   "bg": "начин",
+   "baca": "NA-chin",
+   "id": "cara"
+  },
+  {
+   "bg": "златен",
+   "baca": "ZLA-ten",
+   "id": "emas"
+  },
+  {
+   "bg": "стар",
+   "baca": "star",
+   "id": "tua, lama"
+  },
+  {
+   "bg": "покажете",
+   "baca": "po-KA-zhe-te",
+   "id": "tunjukkan (resmi)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Bagaimana caranya ke stasiun?",
+    "Di mana haltenya?",
+    "Jauh?",
+    "Saya tersesat.",
+    "Jalan lurus lalu belok kiri.",
+    "Katedralnya di belakang taman."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang tepat: в, на, до, зад, срещу.",
+   "items": [
+    "Катедралата е ____ парка.",
+    "Живея ____ София.",
+    "Спирката е ____ хотела.",
+    "Чакам ____ ъгъла.",
+    "Банката е ____ аптеката."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "до / как / стигна / да / катедралата",
+    "направо / вървете / улица / тази / по",
+    "завийте / пресечка / на / втората / надясно",
+    "се / изгубих",
+    "начин / няма"
+   ]
+  },
+  {
+   "prompt": "Ubah bentuk perintah dari ти menjadi вие.",
+   "items": [
+    "Върви направо! ____",
+    "Завий надясно! ____",
+    "Ела тук! ____",
+    "Седни, моля! ____",
+    "Изчакай малко! ____"
+   ]
+  }
+ ],
+ "answers": [
+  "Как да стигна до гарата? — Къде е спирката? — Далече ли е? — Изгубих се. — Вървете направо и завийте наляво. — Катедралата е зад парка.",
+  "зад — в — до — на — срещу",
+  "Как да стигна до катедралата? — Вървете направо по тази улица. — На втората пресечка завийте надясно. — Изгубих се. — Няма начин.",
+  "Вървете направо! — Завийте надясно! — Елате тук! — Седнете, моля! — Изчакайте малко!"
+ ]
+}

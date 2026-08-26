@@ -1,0 +1,518 @@
+{
+ "title": "Ada apotek di dekat sini?",
+ "title_target": "Има ли аптека наблизо?",
+ "goal": "Memakai dua kata yang paling sering dipakai di seluruh bahasa Bulgaria — **има** dan **няма** — untuk menyatakan kepemilikan dan keberadaan, dan mengenali bahwa keduanya bekerja hampir persis seperti \"ada\" dan \"tidak ada\" dalam bahasa Indonesia.",
+ "bekal": [
+  "mengatakan apa yang kamu punya dan tidak punya",
+  "menanyakan apakah sesuatu ada di suatu tempat",
+  "membedakan **има** \"dia punya\" dari **има** \"ada\"",
+  "menjawab terima kasih dengan **няма защо**",
+  "menyebut letak benda dengan tujuh kata depan tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Bertanya di jalan",
+   "intro": "Ani berhenti di trotoar dan bertanya kepada orang yang lewat. Hitung berapa kali kata **има** dan **няма** muncul — dan perhatikan bahwa artinya tidak selalu sama.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Извинете|Iz-vi-NE-te], [има|I-ma] [ли|li] [аптека|ap-TE-ka] [наблизо|na-BLI-zo]?",
+     "id": "Permisi, ada apotek di dekat sini?",
+     "literal": "maafkan-lah-Anda, ada — (tanya) — apotek — di-dekat?"
+    },
+    {
+     "speaker": "Минувач:",
+     "text": "[Да|Da], [има|I-ma]. [Ето|E-to] [там|tam], [до|do] [банката|BAN-ka-ta].",
+     "id": "Ya, ada. Itu di sana, di sebelah banknya.",
+     "literal": "ya, ada. ini-dia — di-sana, di-samping — bank-itu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [банкомат|ban-ko-MAT]? [Имам|I-mam] [само|SA-mo] [големи|go-LE-mi] [банкноти|bank-NO-ti].",
+     "id": "Kalau ATM? Saya cuma punya uang lembaran besar.",
+     "literal": "dan — ATM? punya-saya — hanya — besar-besar — lembaran-uang."
+    },
+    {
+     "speaker": "Минувач:",
+     "text": "[Банкомат|Ban-ko-MAT] [няма|NYA-ma] [тук|tuk]. [Има|I-ma] [в|v] [мола|MO-lă].",
+     "id": "ATM tidak ada di sini. Ada di mal.",
+     "literal": "ATM — tidak-ada — di-sini. ada — di — mal-itu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Далече|Da-LE-che] [ли|li] [е|e] [молът|MO-lăt]?",
+     "id": "Malnya jauh?",
+     "literal": "jauh — (tanya) — adalah — mal-itu?"
+    },
+    {
+     "speaker": "Минувач:",
+     "text": "[Не|Ne], [десет|DE-set] [минути|mi-NU-ti] [пеша|pe-SHA]. [Имате|I-ma-te] [ли|li] [карта|KAR-ta]?",
+     "id": "Tidak, sepuluh menit jalan kaki. Anda punya peta?",
+     "literal": "tidak, sepuluh — menit — dengan-kaki. punya-Anda — (tanya) — peta?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Имам|I-mam] [телефон|te-le-FON], [но|no] [нямам|NYA-mam] [интернет|in-ter-NET].",
+     "id": "Saya punya telepon, tapi tidak punya internet.",
+     "literal": "punya-saya — telepon, tapi — tidak-punya-saya — internet."
+    },
+    {
+     "speaker": "Минувач:",
+     "text": "[Няма|NYA-ma] [проблем|prob-LEM]. [Вървете|Văr-VE-te] [направо|na-PRA-vo] [и|i] [после|PO-sle] [надясно|na-DYAS-no].",
+     "id": "Tidak masalah. Jalan lurus lalu belok kanan.",
+     "literal": "tidak-ada — masalah. berjalan-lah-Anda — lurus — dan — kemudian — ke-kanan."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Благодаря|Bla-go-da-RYA] [много|MNO-go]!",
+     "id": "Terima kasih banyak!",
+     "literal": "terima-kasih — banyak!"
+    },
+    {
+     "speaker": "Минувач:",
+     "text": "[Няма|NYA-ma] [защо|zash-TO]. [Приятен|Pri-YA-ten] [ден|den]!",
+     "id": "Sama-sama. Selamat beraktivitas!",
+     "literal": "tidak-ada — untuk-apa. menyenangkan — hari!"
+    }
+   ],
+   "notes": [
+    "**Има punya dua pekerjaan, dan bahasa Indonesia melakukan hal yang persis sama.** Sebagai kata kerja biasa ia berarti \"dia punya\": *Той има кола* — dia punya mobil. Tanpa pelaku ia berarti \"ada\": *Има кола* — ada mobil. Perbedaannya cuma hadir atau tidaknya pelaku di depan. Bandingkan dengan bahasa Indonesia: \"dia **ada** mobil\" dan \"**ada** mobil\" — naluri yang sama.",
+    "**Няма adalah satu kata untuk \"tidak ada\", bukan dua.** Bahasa Bulgaria tidak berkata *не има*; bentuk itu meleburkan diri jadi *няма*. Hal yang sama berlaku untuk \"saya tidak punya\": bukan *не имам* melainkan **нямам**.",
+    "⚠️ **Sesudah има dan няма, kata bendanya TIDAK bertakrif.** *Има аптека* — ada apotek (sebuah). Kalau kamu memasang artikel — *Има аптеката* — kalimatnya jadi janggal, karena *има* justru bertugas memperkenalkan sesuatu yang baru. Begitu bendanya sudah dikenal, kamu berpindah ke *е*: *Аптеката е там.*",
+    "**Има dan няма tidak pernah berubah bentuk ketika berarti \"ada\".** Tidak peduli bendanya satu atau seribu, laki-laki atau perempuan: *Има човек* (ada seorang), *Има хора* (ada orang-orang). Bandingkan dengan bahasa Inggris yang menuntut *there is* dan *there are*.",
+    "**Няма защо harfiahnya \"tidak ada untuk apa\" dan artinya \"sama-sama\".** Ini jawaban paling lazim untuk *благодаря*, sedikit lebih hangat daripada *моля*. Kalau kamu hanya mau menghafal satu, hafalkan yang ini.",
+    "**Няма проблем sudah jadi ungkapan sehari-hari** dan dipakai persis seperti \"tidak masalah\" dalam bahasa Indonesia. Kamu akan mendengarnya puluhan kali sehari.",
+    "**Само berarti \"hanya\", dan letaknya tepat di depan kata yang dibatasi.** *Имам само телефон* (saya cuma punya telepon) berbeda dari *Само аз имам телефон* (cuma saya yang punya telepon). Memindahkan *само* memindahkan seluruh arti kalimat.",
+    "**Пеша berarti \"dengan berjalan kaki\" dan tidak berubah bentuk.** *Десет минути пеша* — sepuluh menit jalan kaki. Ini kata yang akan sering kamu dengar di Sofia, kota yang sebagian besarnya bisa ditempuh dengan kaki."
+   ],
+   "grammars": [
+    {
+     "title": "Имам dan нямам — punya dan tidak punya",
+     "body": [
+      "Kata kerja ini termasuk kelompok III, kelompok paling teratur dan paling besar dalam bahasa Bulgaria. Kalau kamu hafal enam bentuk di bawah, kamu sudah hafal pola untuk ratusan kata kerja lain."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "Punya",
+       "Baca",
+       "Tidak punya",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "аз",
+        "имам",
+        "I-mam",
+        "нямам",
+        "NYA-mam"
+       ],
+       [
+        "ти",
+        "имаш",
+        "I-mash",
+        "нямаш",
+        "NYA-mash"
+       ],
+       [
+        "той / тя / то",
+        "има",
+        "I-ma",
+        "няма",
+        "NYA-ma"
+       ],
+       [
+        "ние",
+        "имаме",
+        "I-ma-me",
+        "нямаме",
+        "NYA-ma-me"
+       ],
+       [
+        "вие",
+        "имате",
+        "I-ma-te",
+        "нямате",
+        "NYA-ma-te"
+       ],
+       [
+        "те",
+        "имат",
+        "I-mat",
+        "нямат",
+        "NYA-mat"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa bentuk sangkalannya bukan *не* + kata kerja, melainkan kata tersendiri yang huruf awalnya berubah: **и- → ня-**. Ini satu-satunya kata kerja bahasa Bulgaria yang bersikap begini, jadi tidak ada pola lain yang perlu kamu khawatirkan."
+     ]
+    },
+    {
+     "title": "Има / няма tanpa pelaku — \"ada\" dan \"tidak ada\"",
+     "body": [
+      "Dalam pekerjaan keduanya, bentuknya membeku di orang ketiga tunggal dan tidak pernah berganti. Yang berubah cuma benda yang menyusul."
+     ],
+     "table": {
+      "head": [
+       "Bulgaria",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Има аптека.",
+        "I-ma ap-TE-ka",
+        "Ada apotek."
+       ],
+       [
+        "Няма аптека.",
+        "NYA-ma ap-TE-ka",
+        "Tidak ada apotek."
+       ],
+       [
+        "Има ли аптека?",
+        "I-ma li ap-TE-ka",
+        "Ada apotek?"
+       ],
+       [
+        "Има много хора.",
+        "I-ma MNO-go ho-RA",
+        "Ada banyak orang."
+       ],
+       [
+        "Тук няма никой.",
+        "tuk NYA-ma NI-koy",
+        "Di sini tidak ada siapa-siapa."
+       ],
+       [
+        "Няма нищо за ядене.",
+        "NYA-ma NISH-to za YA-de-ne",
+        "Tidak ada apa-apa untuk dimakan."
+       ]
+      ]
+     },
+     "after": [
+      "Dua baris terakhir memperlihatkan sangkalan bertumpuk yang sudah kamu temui di Unit 1: *няма никой* harfiahnya \"tidak-ada tidak-siapa\". Dalam bahasa Bulgaria ini bukan kesalahan melainkan keharusan — sangkalan wajib diulang. Unit 13 membahasnya sampai tuntas."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tujuh kata depan tempat yang menutup hampir semua kebutuhan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Karena kata benda bahasa Bulgaria tidak berubah bentuk, kata depan adalah satu-satunya yang perlu kamu pilih dengan benar — dan bendanya tinggal ditempelkan apa adanya. Bandingkan dengan bahasa Rusia, tempat setiap kata depan menuntut bentuk kata benda yang berbeda-beda."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata depan",
+      "Baca",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "в / във",
+       "v / văv",
+       "di, ke (di dalam)",
+       "в стаята — di kamar itu"
+      ],
+      [
+       "на",
+       "na",
+       "di, di atas, ke",
+       "на масата — di atas meja itu"
+      ],
+      [
+       "до",
+       "do",
+       "di samping",
+       "до банката — di sebelah bank itu"
+      ],
+      [
+       "пред",
+       "pred",
+       "di depan",
+       "пред хотела — di depan hotel itu"
+      ],
+      [
+       "зад",
+       "zad",
+       "di belakang",
+       "зад къщата — di belakang rumah itu"
+      ],
+      [
+       "под",
+       "pod",
+       "di bawah",
+       "под масата — di bawah meja itu"
+      ],
+      [
+       "между",
+       "MEZH-du",
+       "di antara",
+       "между банката и аптеката"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perbedaan **в** dan **на** adalah satu-satunya yang perlu dilatih. **В** berarti berada *di dalam* sesuatu yang punya ruang: *в стаята, в България, в колата*. **На** berarti berada *pada permukaan* atau *pada suatu tempat kegiatan*: *на масата* (di atas meja), *на работа* (di tempat kerja), *на море* (di laut, artinya berlibur di pantai)."
+    },
+    {
+     "type": "p",
+     "text": "Bentuk **във** dipakai hanya kalau kata berikutnya diawali **в** atau **ф** — *във Варна*, *във Франция* — supaya tidak terdengar tersandung. Aturan yang sama berlaku untuk **със** menggantikan **с**: *със сестра ми*."
+    }
+   ]
+  },
+  {
+   "title": "Има dan няма dalam ungkapan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Baca",
+      "Arti harfiah",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "Няма защо.",
+       "NYA-ma zash-TO",
+       "tidak ada untuk apa",
+       "Sama-sama."
+      ],
+      [
+       "Няма проблем.",
+       "NYA-ma prob-LEM",
+       "tidak ada masalah",
+       "Tidak masalah."
+      ],
+      [
+       "Няма значение.",
+       "NYA-ma zna-CHE-ni-e",
+       "tidak ada arti",
+       "Tidak apa-apa, terserah."
+      ],
+      [
+       "Няма време.",
+       "NYA-ma VRE-me",
+       "tidak ada waktu",
+       "Tidak sempat."
+      ],
+      [
+       "Има време.",
+       "I-ma VRE-me",
+       "ada waktu",
+       "Masih sempat, santai saja."
+      ],
+      [
+       "Има ли някой?",
+       "I-ma li NYA-koy",
+       "ada (tanya) seseorang",
+       "Ada orang? (mengetuk pintu)"
+      ],
+      [
+       "Какво има?",
+       "kak-VO I-ma",
+       "apa ada",
+       "Ada apa? Kenapa?"
+      ],
+      [
+       "Няма ги.",
+       "NYA-ma gi",
+       "tidak ada mereka",
+       "Mereka tidak ada di sini."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir memperlihatkan sesuatu yang khas: **няма** bisa memakai kata ganti pendek untuk menyatakan bahwa seseorang tidak ada di tempat. *Няма го* — dia (laki-laki) tidak ada. *Няма я* — dia (perempuan) tidak ada. *Няма ме* — saya tidak di tempat. Kamu akan sering mendengarnya di kantor dan lewat telepon."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "имам",
+   "baca": "I-mam",
+   "id": "saya punya"
+  },
+  {
+   "bg": "нямам",
+   "baca": "NYA-mam",
+   "id": "saya tidak punya"
+  },
+  {
+   "bg": "има",
+   "baca": "I-ma",
+   "id": "ada; dia punya"
+  },
+  {
+   "bg": "няма",
+   "baca": "NYA-ma",
+   "id": "tidak ada; dia tidak punya"
+  },
+  {
+   "bg": "аптека",
+   "baca": "ap-TE-ka",
+   "id": "apotek"
+  },
+  {
+   "bg": "банка",
+   "baca": "BAN-ka",
+   "id": "bank"
+  },
+  {
+   "bg": "банкомат",
+   "baca": "ban-ko-MAT",
+   "id": "ATM"
+  },
+  {
+   "bg": "пари",
+   "baca": "pa-RI",
+   "id": "uang"
+  },
+  {
+   "bg": "карта",
+   "baca": "KAR-ta",
+   "id": "peta; kartu"
+  },
+  {
+   "bg": "наблизо",
+   "baca": "na-BLI-zo",
+   "id": "di dekat sini"
+  },
+  {
+   "bg": "пеша",
+   "baca": "pe-SHA",
+   "id": "jalan kaki"
+  },
+  {
+   "bg": "минута",
+   "baca": "mi-NU-ta",
+   "id": "menit"
+  },
+  {
+   "bg": "направо",
+   "baca": "na-PRA-vo",
+   "id": "lurus"
+  },
+  {
+   "bg": "надясно",
+   "baca": "na-DYAS-no",
+   "id": "ke kanan"
+  },
+  {
+   "bg": "наляво",
+   "baca": "na-LYA-vo",
+   "id": "ke kiri"
+  },
+  {
+   "bg": "после",
+   "baca": "PO-sle",
+   "id": "kemudian"
+  },
+  {
+   "bg": "само",
+   "baca": "SA-mo",
+   "id": "hanya"
+  },
+  {
+   "bg": "проблем",
+   "baca": "prob-LEM",
+   "id": "masalah"
+  },
+  {
+   "bg": "време",
+   "baca": "VRE-me",
+   "id": "waktu; cuaca"
+  },
+  {
+   "bg": "някой",
+   "baca": "NYA-koy",
+   "id": "seseorang"
+  },
+  {
+   "bg": "никой",
+   "baca": "NI-koy",
+   "id": "tidak seorang pun"
+  },
+  {
+   "bg": "хора",
+   "baca": "ho-RA",
+   "id": "orang-orang"
+  },
+  {
+   "bg": "маса",
+   "baca": "MA-sa",
+   "id": "meja"
+  },
+  {
+   "bg": "кола",
+   "baca": "ko-LA",
+   "id": "mobil"
+  },
+  {
+   "bg": "между",
+   "baca": "MEZH-du",
+   "id": "di antara"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Ada apotek di dekat sini?",
+    "Saya tidak punya uang.",
+    "Tidak ada ATM di sini.",
+    "Kami punya peta.",
+    "Sama-sama.",
+    "Ada banyak orang."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk имам atau нямам yang tepat.",
+   "items": [
+    "Аз ____ телефон, но нямам интернет.",
+    "Ти ____ ли карта?",
+    "Ние не ____ време.",
+    "Те ____ голяма къща.",
+    "Вие ____ ли резервация?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ли / аптека / има / наблизо",
+    "банкомат / тук / няма",
+    "само / имам / телефон",
+    "хора / много / има",
+    "защо / няма"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang tepat: в, на, до, пред, под.",
+   "items": [
+    "Аптеката е ____ банката.",
+    "Книгата е ____ масата.",
+    "Живея ____ София.",
+    "Колата е ____ хотела.",
+    "Ключът е ____ книгата."
+   ]
+  }
+ ],
+ "answers": [
+  "Има ли аптека наблизо? — Нямам пари. — Тук няма банкомат. — Имаме карта. — Няма защо. — Има много хора.",
+  "имам — имаш — нямаме — имат — имате",
+  "Има ли аптека наблизо? — Тук няма банкомат. — Имам само телефон. — Има много хора. — Няма защо.",
+  "до — на — в — пред — под"
+ ]
+}

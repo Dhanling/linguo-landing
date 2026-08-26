@@ -1,0 +1,595 @@
+{
+ "title": "Jam berapa kamu bangun?",
+ "title_target": "В колко часа ставаш?",
+ "goal": "Menyebut jam, membuat janji, dan menceritakan rutinitas harian — sekaligus menghindari satu-satunya jebakan jam yang sungguhan bagi penutur bahasa Indonesia: *три и половина* berarti 03.30, bukan 02.30.",
+ "bekal": [
+  "menanyakan dan menyebut jam dengan **и**, **без**, dan **и половина**",
+  "membuat janji dengan **в колко часа**",
+  "menyebut hari dalam seminggu",
+  "menceritakan rutinitas pagi sampai malam",
+  "memakai kata kerja berimbuhan **се**"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Membuat janji bertemu",
+   "intro": "Ivan ingin mengajak Ani menonton. Perhatikan bagaimana jam dinyatakan — dan bahwa *и половина* menghitung ke depan dari jam yang disebut, bukan ke belakang.",
+   "lines": [
+    {
+     "speaker": "Иван:",
+     "text": "[В|F] [колко|KOL-ko] [часа|cha-SA] [ставаш|STA-vash] [сутрин|SU-trin]?",
+     "id": "Jam berapa kamu bangun pagi?",
+     "literal": "pada — berapa — jam — bangun-kamu — pagi-hari?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|F] [седем|SE-dem]. [Закусвам|Za-KUS-vam] [в|f] [седем|SE-dem] [и|i] [половина|po-lo-VI-na].",
+     "id": "Jam tujuh. Saya sarapan jam setengah delapan.",
+     "literal": "pada — tujuh. sarapan-saya — pada — tujuh — dan — setengah."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[А|A] [кога|ko-GA] [започват|za-POCH-vat] [часовете|cha-SO-ve-te]?",
+     "id": "Kalau kuliahnya mulai kapan?",
+     "literal": "dan — kapan — mulai-mereka — jam-jam-pelajaran-itu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|F] [девет|DE-vet] [без|bez] [петнайсет|pet-NAY-set]. [Свършват|SVĂR-shvat] [в|f] [един|e-DIN].",
+     "id": "Jam sembilan kurang lima belas. Selesai jam satu.",
+     "literal": "pada — sembilan — tanpa — lima-belas. berakhir-mereka — pada — satu."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Значи|ZNA-chi] [следобед|sled-O-bed] [си|si] [свободна|svo-BOD-na].",
+     "id": "Berarti sorenya kamu senggang.",
+     "literal": "berarti — sesudah-tengah-hari — adalah-kamu — bebas."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Да|Da], [но|no] [обикновено|o-bik-no-VE-no] [уча|U-cha] [до|do] [пет|pet]. [После|PO-sle] [почивам|po-CHI-vam].",
+     "id": "Ya, tapi biasanya saya belajar sampai jam lima. Setelah itu istirahat.",
+     "literal": "ya, tapi — biasanya — belajar-saya — sampai — lima. kemudian — beristirahat-saya."
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Може|MO-zhe] [ли|li] [да|da] [се|se] [видим|VI-dim] [в|f] [четвъртък|chet-VĂR-tăk] [вечер|VE-cher]?",
+     "id": "Boleh kita ketemu Kamis malam?",
+     "literal": "boleh — (tanya) — supaya — saling — melihat-kami — pada — Kamis — malam?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|F] [колко|KOL-ko]?",
+     "id": "Jam berapa?",
+     "literal": "pada — berapa?"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[В|F] [седем|SE-dem] [и|i] [половина|po-lo-VI-na], [пред|pred] [Народния|Na-ROD-ni-ya] [театър|te-A-tăr].",
+     "id": "Jam setengah delapan, di depan Teater Nasional.",
+     "literal": "pada — tujuh — dan — setengah, di-depan — Nasional-itu — teater."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Добре|Dob-RE]. [Но|No] [моля|MO-lya] [те|te], [не|ne] [закъснявай|za-kăs-NYA-vay]!",
+     "id": "Baik. Tapi tolong ya, jangan telat!",
+     "literal": "baik. tapi — memohon-saya — kamu, tidak — terlambat-lah-kamu!"
+    },
+    {
+     "speaker": "Иван:",
+     "text": "[Никога|NI-ko-ga] [не|ne] [закъснявам|za-kăs-NYA-vam]. [Почти|Poch-TI] [никога|NI-ko-ga].",
+     "id": "Saya tidak pernah telat. Hampir tidak pernah.",
+     "literal": "tidak-pernah — tidak — terlambat-saya. hampir — tidak-pernah."
+    }
+   ],
+   "notes": [
+    "⚠️ **Седем и половина berarti 07.30, bukan 06.30.** Harfiahnya \"tujuh dan setengah\", jadi hitungannya maju dari jam yang disebut. Bahasa Indonesia menghitung mundur — \"setengah delapan\" berarti setengah jalan **menuju** delapan, yaitu 07.30. Hasilnya kebetulan sama untuk kalimat ini, tetapi cara berpikirnya berlawanan. **Cara aman: ambil angka yang disebut, lalu tambahkan tiga puluh menit.** *Три и половина* = 03.30. *Дванайсет и половина* = 12.30.",
+    "**Без berarti \"kurang\", dan angka jamnya disebut BELAKANGAN.** *Девет без петнайсет* = jam sembilan kurang lima belas = 08.45. Susunannya kebalikan dari bahasa Indonesia yang menyebut jamnya lebih dulu. ⚠️ Salah tangkap di sini berarti datang satu jam lebih awal atau lebih lambat, jadi berlatihlah membaca jam dinding keras-keras.",
+    "**Часът berarti \"jamnya\" sebagai penunjuk waktu; час berarti \"satu jam\" sebagai lamanya, dan juga \"jam pelajaran\".** *Колко е часът?* (Jam berapa sekarang?), *Уча два часа* (Saya belajar dua jam), *Часовете започват в девет* (Pelajarannya mulai jam sembilan).",
+    "**В berarti \"pada jam\", dan diucapkan f di depan huruf mati tak bersuara.** *В седем* terdengar *f SE-dem*, *в пет* terdengar *f pet*. Ejaannya tetap **в**. Ini berlaku untuk semua kata depan berhuruf satu.",
+    "**Да се видим harfiahnya \"supaya kami saling melihat\" dan artinya \"bertemu\".** Kata **се** berarti \"diri sendiri\" atau \"satu sama lain\", dan ia menempel pada banyak kata kerja Bulgaria untuk mengubah artinya: *казвам* (mengatakan) → *казвам се* (bernama), *връщам* (mengembalikan) → *връщам се* (pulang), *виждам* (melihat) → *виждаме се* (bertemu).",
+    "**Моля те berarti \"tolong ya\" dengan nada memohon, bukan sekadar \"silakan\".** Bentuk resminya *моля Ви*. Menambahkannya melunakkan permintaan atau larangan seketika.",
+    "**Не закъснявай adalah larangan.** Bentuk perintah untuk satu orang, disangkal dengan *не*. Untuk lebih dari satu orang atau resmi: *Не закъснявайте.* Bentuk perintah dibahas lebih lengkap di Unit 11.",
+    "**Никога не закъснявам memakai dua sangkalan sekaligus** dan itu memang bentuk yang benar. *Никога* wajib berpasangan dengan *не*. Unit 13 membahasnya tuntas — untuk sekarang, terima saja bahwa membuang salah satunya membuat kalimat salah."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Bulgaria memakai jam satu sampai dua belas dalam percakapan, dengan *сутринта*, *следобед*, atau *вечерта* kalau perlu dijelaskan. Jam dua puluh empat dipakai di jadwal kereta dan pengumuman resmi."
+     ],
+     "table": {
+      "head": [
+       "Waktu",
+       "Bulgaria",
+       "Baca",
+       "Harfiah"
+      ],
+      "rows": [
+       [
+        "03.00",
+        "три часа",
+        "tri cha-SA",
+        "tiga jam"
+       ],
+       [
+        "03.10",
+        "три и десет",
+        "tri i DE-set",
+        "tiga dan sepuluh"
+       ],
+       [
+        "03.15",
+        "три и петнайсет",
+        "tri i pet-NAY-set",
+        "tiga dan lima belas"
+       ],
+       [
+        "03.30",
+        "три и половина",
+        "tri i po-lo-VI-na",
+        "tiga dan setengah"
+       ],
+       [
+        "03.45",
+        "четири без петнайсет",
+        "CHE-ti-ri bez pet-NAY-set",
+        "empat tanpa lima belas"
+       ],
+       [
+        "03.50",
+        "четири без десет",
+        "CHE-ti-ri bez DE-set",
+        "empat tanpa sepuluh"
+       ],
+       [
+        "12.00 siang",
+        "дванайсет на обед",
+        "dva-NAY-set na O-bed",
+        "dua belas pada tengah hari"
+       ],
+       [
+        "00.00",
+        "полунощ",
+        "PO-lu-nosht",
+        "tengah malam"
+       ]
+      ]
+     },
+     "after": [
+      "Pertanyaannya ada dua bentuk dan artinya berbeda: **Колко е часът?** menanyakan jam berapa sekarang. **В колко часа?** menanyakan jam berapa sesuatu terjadi. Jangan tertukar — yang kedua selalu diawali *в*."
+     ]
+    },
+    {
+     "title": "Kata kerja dengan се",
+     "body": [
+      "Puluhan kata kerja Bulgaria membawa **се** sebagai bagian tetapnya. Ia tidak selalu bisa diterjemahkan; kadang ia berarti \"diri sendiri\", kadang \"satu sama lain\", kadang tidak berarti apa-apa selain mengubah arti kata kerjanya."
+     ],
+     "table": {
+      "head": [
+       "Tanpa се",
+       "Arti",
+       "Dengan се",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "казвам",
+        "mengatakan",
+        "казвам се",
+        "bernama"
+       ],
+       [
+        "връщам",
+        "mengembalikan",
+        "връщам се",
+        "pulang, kembali"
+       ],
+       [
+        "виждам",
+        "melihat",
+        "виждаме се",
+        "bertemu"
+       ],
+       [
+        "чувствам",
+        "merasakan",
+        "чувствам се",
+        "merasa"
+       ],
+       [
+        "обличам",
+        "memakaikan",
+        "обличам се",
+        "berpakaian"
+       ],
+       [
+        "събуждам",
+        "membangunkan",
+        "събуждам се",
+        "bangun"
+       ],
+       [
+        "казва",
+        "dia bilang",
+        "казва се",
+        "namanya"
+       ]
+      ]
+     },
+     "after": [
+      "**Се tunduk pada aturan letak yang sama seperti съм dan ми**: tidak boleh jadi kata pertama kalimat, dan berdiri sedekat mungkin dengan kata kerjanya. *Казвам се Ани*, bukan *Се казвам Ани*. Di dalam pola *да*, ia menyelip di antara: *трябва да **се** върна*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu hari dari bangun sampai tidur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulgaria",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "събуждам се",
+       "să-BUZH-dam se",
+       "saya bangun (membuka mata)"
+      ],
+      [
+       "ставам",
+       "STA-vam",
+       "saya bangkit dari tempat tidur"
+      ],
+      [
+       "къпя се",
+       "KĂ-pya se",
+       "saya mandi"
+      ],
+      [
+       "обличам се",
+       "ob-LI-cham se",
+       "saya berpakaian"
+      ],
+      [
+       "закусвам",
+       "za-KUS-vam",
+       "saya sarapan"
+      ],
+      [
+       "тръгвам",
+       "TRĂG-vam",
+       "saya berangkat"
+      ],
+      [
+       "обядвам",
+       "o-BYAD-vam",
+       "saya makan siang"
+      ],
+      [
+       "почивам",
+       "po-CHI-vam",
+       "saya istirahat"
+      ],
+      [
+       "вечерям",
+       "ve-CHE-ryam",
+       "saya makan malam"
+      ],
+      [
+       "гледам телевизия",
+       "GLE-dam te-le-VI-zi-ya",
+       "saya menonton televisi"
+      ],
+      [
+       "лягам си",
+       "LYA-gam si",
+       "saya pergi tidur"
+      ],
+      [
+       "спя",
+       "spya",
+       "saya tidur"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan tiga kata kerja makan: **закусвам, обядвам, вечерям** — masing-masing satu kata untuk sarapan, makan siang, dan makan malam, tanpa perlu menyebut kata \"makan\" sama sekali. Bahasa Indonesia menyusunnya dengan dua kata; bahasa Bulgaria memadatkannya jadi satu."
+    },
+    {
+     "type": "p",
+     "text": "Coba susun harimu sendiri dengan enam kalimat malam ini, lalu bacakan keras-keras. Rutinitas adalah bahan latihan terbaik untuk waktu sekarang, karena kamu sudah tahu isinya dan tinggal memikirkan bentuknya."
+    }
+   ]
+  },
+  {
+   "title": "Hari dan seberapa sering",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hari",
+      "Baca",
+      "Arti harfiah"
+     ],
+     "rows": [
+      [
+       "понеделник",
+       "po-ne-DEL-nik",
+       "sesudah hari-tak-bekerja"
+      ],
+      [
+       "вторник",
+       "VTOR-nik",
+       "hari kedua"
+      ],
+      [
+       "сряда",
+       "SRYA-da",
+       "hari tengah"
+      ],
+      [
+       "четвъртък",
+       "chet-VĂR-tăk",
+       "hari keempat"
+      ],
+      [
+       "петък",
+       "PE-tăk",
+       "hari kelima"
+      ],
+      [
+       "събота",
+       "SĂ-bo-ta",
+       "sabat"
+      ],
+      [
+       "неделя",
+       "ne-DE-lya",
+       "tak-bekerja"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sistem penomorannya sama persis dengan bahasa Indonesia lama dan bahasa Arab: hari dihitung mulai dari hari sesudah hari istirahat. *Неделя* — Minggu — harfiahnya \"tidak-bekerja\", dari *не* + *дело* (pekerjaan). Dan *понеделник* adalah \"hari sesudah tidak-bekerja\". Sekali kamu melihat polanya, tujuh nama itu tidak perlu dihafal lagi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "в понеделник",
+       "f po-ne-DEL-nik",
+       "pada hari Senin"
+      ],
+      [
+       "всеки понеделник",
+       "FSE-ki po-ne-DEL-nik",
+       "setiap hari Senin"
+      ],
+      [
+       "през седмицата",
+       "prez SED-mi-tsa-ta",
+       "pada hari kerja"
+      ],
+      [
+       "през уикенда",
+       "prez u-i-KEN-da",
+       "pada akhir pekan"
+      ],
+      [
+       "днес / утре / вчера",
+       "dnes / U-tre / VCHE-ra",
+       "hari ini / besok / kemarin"
+      ],
+      [
+       "вдругиден",
+       "VDRU-gi-den",
+       "lusa"
+      ],
+      [
+       "онзи ден",
+       "ON-zi den",
+       "kemarin dulu"
+      ],
+      [
+       "тази седмица",
+       "TA-zi SED-mi-tsa",
+       "minggu ini"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Nama hari dan bulan tidak pernah ditulis dengan huruf besar** dalam bahasa Bulgaria, kecuali di awal kalimat. Kebiasaan bahasa Inggris menulis *Monday* dan *March* dengan huruf besar tidak berlaku di sini — dan itu kesalahan tulis yang paling sering dilakukan pelajar."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "часът",
+   "baca": "cha-SĂT",
+   "id": "jamnya (waktu sekarang)"
+  },
+  {
+   "bg": "час",
+   "baca": "chas",
+   "id": "jam (lamanya); jam pelajaran"
+  },
+  {
+   "bg": "половина",
+   "baca": "po-lo-VI-na",
+   "id": "setengah"
+  },
+  {
+   "bg": "без",
+   "baca": "bez",
+   "id": "kurang, tanpa"
+  },
+  {
+   "bg": "ставам",
+   "baca": "STA-vam",
+   "id": "saya bangun, saya jadi"
+  },
+  {
+   "bg": "закусвам",
+   "baca": "za-KUS-vam",
+   "id": "saya sarapan"
+  },
+  {
+   "bg": "обядвам",
+   "baca": "o-BYAD-vam",
+   "id": "saya makan siang"
+  },
+  {
+   "bg": "вечерям",
+   "baca": "ve-CHE-ryam",
+   "id": "saya makan malam"
+  },
+  {
+   "bg": "спя",
+   "baca": "spya",
+   "id": "saya tidur"
+  },
+  {
+   "bg": "почивам",
+   "baca": "po-CHI-vam",
+   "id": "saya istirahat"
+  },
+  {
+   "bg": "започвам",
+   "baca": "za-POCH-vam",
+   "id": "saya mulai"
+  },
+  {
+   "bg": "свършвам",
+   "baca": "SVĂRSH-vam",
+   "id": "saya selesai"
+  },
+  {
+   "bg": "закъснявам",
+   "baca": "za-kăs-NYA-vam",
+   "id": "saya terlambat"
+  },
+  {
+   "bg": "свободен",
+   "baca": "svo-BO-den",
+   "id": "senggang, bebas"
+  },
+  {
+   "bg": "зает",
+   "baca": "za-ET",
+   "id": "sibuk"
+  },
+  {
+   "bg": "кога",
+   "baca": "ko-GA",
+   "id": "kapan"
+  },
+  {
+   "bg": "утре",
+   "baca": "U-tre",
+   "id": "besok"
+  },
+  {
+   "bg": "вчера",
+   "baca": "VCHE-ra",
+   "id": "kemarin"
+  },
+  {
+   "bg": "седмица",
+   "baca": "SED-mi-tsa",
+   "id": "minggu (7 hari)"
+  },
+  {
+   "bg": "театър",
+   "baca": "te-A-tăr",
+   "id": "teater"
+  },
+  {
+   "bg": "никога",
+   "baca": "NI-ko-ga",
+   "id": "tidak pernah"
+  },
+  {
+   "bg": "почти",
+   "baca": "poch-TI",
+   "id": "hampir"
+  },
+  {
+   "bg": "обикновено",
+   "baca": "o-bik-no-VE-no",
+   "id": "biasanya"
+  },
+  {
+   "bg": "виждам се",
+   "baca": "VIZH-dam se",
+   "id": "saya bertemu"
+  },
+  {
+   "bg": "полунощ",
+   "baca": "PO-lu-nosht",
+   "id": "tengah malam"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jamnya dalam bahasa Bulgaria.",
+   "items": [
+    "05.00",
+    "07.30",
+    "09.15",
+    "11.45",
+    "12.30",
+    "02.50"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Аз ____ в седем сутрин. (ставам)",
+    "Тя ____ се в шест. (събуждам)",
+    "Часовете ____ в девет. (започвам)",
+    "Ние ____ в един. (обядвам)",
+    "Те не ____ никога. (закъснявам)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "часа / в / ставаш / колко",
+    "и / закусвам / седем / в / половина",
+    "без / девет / в / петнайсет",
+    "се / може / да / видим / ли",
+    "не / никога / закъснявам"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Saya bangun jam tujuh.",
+    "Kuliahnya selesai jam satu.",
+    "Boleh kita ketemu hari Kamis?",
+    "Jangan telat!"
+   ]
+  }
+ ],
+ "answers": [
+  "пет часа — седем и половина — девет и петнайсет — дванайсет без петнайсет — дванайсет и половина — три без десет",
+  "ставам — събужда — започват — обядваме — закъсняват",
+  "В колко часа ставаш? — Закусвам в седем и половина. — В девет без петнайсет. — Може ли да се видим? — Никога не закъснявам.",
+  "Колко е часът? — Ставам в седем. — Часовете свършват в един. — Може ли да се видим в четвъртък? — Не закъснявай!"
+ ]
+}

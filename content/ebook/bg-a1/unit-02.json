@@ -1,0 +1,528 @@
+{
+ "title": "Anda dari mana?",
+ "title_target": "Откъде сте? — Otkăde ste?",
+ "goal": "Menyebut asal negara dan kota, menanyakan asal orang lain, dan mengenali jenis kelamin kata benda Bulgaria hanya dari huruf terakhirnya — pengetahuan yang akan dipakai di setiap unit sesudah ini.",
+ "bekal": [
+  "menanyakan dan menjawab \"dari mana?\"",
+  "menyebut kebangsaan dengan bentuk laki-laki dan perempuan",
+  "menebak jenis kelamin kata benda dari huruf terakhirnya",
+  "memakai **нали** untuk meminta persetujuan",
+  "menerima ucapan selamat datang dengan benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Di kafe dekat kampus",
+   "intro": "Ani duduk di sebuah kafe di Sofia dan memberanikan diri menyapa perempuan di meja sebelah. Perhatikan bahwa kata untuk \"orang Bulgaria\" berubah bentuk tergantung siapa yang dibicarakan.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Извинете|Iz-vi-NE-te], [вие|VI-e] [българка|BĂL-gar-ka] [ли|li] [сте|ste]?",
+     "id": "Permisi, Anda orang Bulgaria?",
+     "literal": "maafkan-lah-Anda, Anda — orang-Bulgaria-perempuan — (tanya) — adalah?"
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Да|Da], [българка|BĂL-gar-ka] [съм|săm]. [От|Ot] [Пловдив|PLOV-div]. [А|A] [вие|VI-e] [откъде|ot-kă-DE] [сте|ste]?",
+     "id": "Ya, saya orang Bulgaria. Dari Plovdiv. Dan Anda dari mana?",
+     "literal": "ya, orang-Bulgaria-perempuan — adalah-saya. dari — Plovdiv. dan — Anda — dari-mana — adalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[От|Ot] [Индонезия|In-do-NE-zi-ya]. [От|Ot] [Джакарта|Dzha-KAR-ta].",
+     "id": "Dari Indonesia. Dari Jakarta.",
+     "literal": "dari — Indonesia. dari — Jakarta."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Индонезия|In-do-NE-zi-ya]! [Много|MNO-go] [далече|da-LE-che]. [Как|Kak] [е|e] [там|tam]?",
+     "id": "Indonesia! Jauh sekali. Bagaimana di sana?",
+     "literal": "Indonesia! banyak — jauh. bagaimana — adalah — di-sana?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Топло|TOP-lo] [е|e]. [Винаги|VI-na-gi] [е|e] [топло|TOP-lo].",
+     "id": "Panas. Selalu panas.",
+     "literal": "panas — adalah. selalu — adalah — panas."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[А|A] [тук|tuk] [е|e] [студено|stu-DE-no], [нали|na-LI]?",
+     "id": "Kalau di sini dingin, kan?",
+     "literal": "dan — di-sini — adalah — dingin, bukan-begitu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Малко|MAL-ko]. [Но|No] [София|SO-fi-ya] [е|e] [хубав|HU-bav] [град|grad].",
+     "id": "Sedikit. Tapi Sofia kota yang bagus.",
+     "literal": "sedikit. tapi — Sofia — adalah — bagus — kota."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[Благодаря|Bla-go-da-RYA]! [Аз|Az] [съм|săm] [Мария|Ma-RI-ya]. [Учителка|U-chi-tel-ka] [съм|săm].",
+     "id": "Terima kasih! Saya Maria. Saya guru.",
+     "literal": "terima-kasih! saya — adalah — Maria. guru-perempuan — adalah-saya."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Аз|Az] [съм|săm] [Ани|A-ni], [студентка|stu-DENT-ka]. [Приятно|Pri-YAT-no] [ми|mi] [е|e].",
+     "id": "Saya Ani, mahasiswi. Senang berkenalan.",
+     "literal": "saya — adalah — Ani, mahasiswi. menyenangkan — bagi-saya — adalah."
+    },
+    {
+     "speaker": "Мария:",
+     "text": "[И|I] [на|na] [мен|men]. [Добре|Dob-RE] [дошла|dosh-LA] [в|v] [България|Băl-GA-ri-ya]!",
+     "id": "Saya juga. Selamat datang di Bulgaria!",
+     "literal": "juga — bagi — saya. baik — datang-perempuan — di — Bulgaria!"
+    }
+   ],
+   "notes": [
+    "**Kebangsaan ikut jenis kelamin ORANGNYA, bukan negaranya.** Seorang laki-laki adalah *българин*, seorang perempuan adalah *българка*. ⚠️ Ini titik keliru yang khas: pelajar Indonesia terbiasa satu kata untuk semua — \"orang Bulgaria\" — lalu memakai *българин* untuk perempuan. Kesalahannya terdengar sekeras memanggil seorang ibu dengan \"Pak\".",
+    "**Nama negara hampir semuanya berakhiran -ия dan berjenis feminin.** *Индонезия, България, Русия, Италия, Германия.* Yang tidak berakhiran -ия pun umumnya tetap feminin kalau berakhir -а: *Америка, Гърция*. Kekecualian yang perlu diingat: *Китай* (Cina) dan *Виетнам* maskulin, sedangkan *Мароко* netral.",
+    "**Много berarti \"banyak\" DAN \"sangat\".** *Много хора* = banyak orang; *много далече* = sangat jauh. Bahasa Bulgaria tidak membedakan keduanya, jadi satu kata ini akan kamu pakai terus-menerus. Lawannya *малко* — \"sedikit\", juga \"agak\".",
+    "**Нали adalah \"kan?\" bahasa Bulgaria, dan bentuknya tidak pernah berubah.** Bahasa Inggris menuntut *isn't it? / don't you? / haven't we?* yang berganti-ganti; bahasa Bulgaria cuma punya satu kata untuk semuanya, persis seperti \"kan?\" dalam bahasa Indonesia. Satu beban besar yang hilang begitu saja.",
+    "**Добре дошъл / дошла / дошли — \"selamat datang\" pun ikut jenis kelamin.** Kepada laki-laki: *Добре дошъл!* Kepada perempuan: *Добре дошла!* Kepada lebih dari satu orang: *Добре дошли!* ⚠️ Jawabannya bukan \"terima kasih\" melainkan **Добре заварил** (laki-laki) atau **Добре заварила** (perempuan) — harfiahnya \"baik, saya mendapati (Anda dalam keadaan baik)\". Menjawab dengan *благодаря* tidak salah, tetapi menjawab dengan *добре заварила* akan membuat orang terkejut senang.",
+    "**Тук dan там — \"di sini\" dan \"di sana\", tanpa perubahan bentuk.** Bahasa Rusia membedakan \"di sini\" dan \"ke sini\" dengan kata berbeda; bahasa Bulgaria tidak. *Тук* dipakai untuk dua-duanya. Ini contoh pertama dari banyak penyederhanaan yang membuat bahasa Bulgaria lebih ringan daripada saudara-saudaranya.",
+    "**Kalimat tentang cuaca tidak punya pelaku.** *Топло е* — \"panas adalah\", tanpa kata \"cuacanya\" atau \"ini\". Susunannya sama persis dengan bahasa Indonesia \"panas\" sebagai kalimat utuh. Yang wajib tetap ada cuma *е*."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga jenis kelamin kata benda — kenali dari huruf terakhirnya",
+     "body": [
+      "Setiap kata benda Bulgaria punya jenis kelamin, dan hampir selalu kamu bisa menebaknya dari huruf terakhir. Ini bukan pengetahuan hiasan: artikel takrif, kata sifat, dan angka semuanya menyesuaikan diri dengannya. Investasikan lima menit di tabel ini dan sepuluh unit berikutnya jadi jauh lebih ringan."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Berakhir dengan",
+       "Contoh",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Maskulin",
+        "bunyi mati",
+        "град",
+        "grad",
+        "kota"
+       ],
+       [
+        "",
+        "",
+        "мъж",
+        "măzh",
+        "laki-laki"
+       ],
+       [
+        "",
+        "-й",
+        "чай",
+        "chay",
+        "teh"
+       ],
+       [
+        "Feminin",
+        "-а",
+        "книга",
+        "KNI-ga",
+        "buku"
+       ],
+       [
+        "",
+        "-я",
+        "стая",
+        "STA-ya",
+        "kamar"
+       ],
+       [
+        "",
+        "(sebagian) bunyi mati",
+        "вечер",
+        "VE-cher",
+        "sore"
+       ],
+       [
+        "Netral",
+        "-о",
+        "мляко",
+        "MLYA-ko",
+        "susu"
+       ],
+       [
+        "",
+        "-е",
+        "море",
+        "mo-RE",
+        "laut"
+       ],
+       [
+        "",
+        "-ие",
+        "списание",
+        "spi-SA-ni-e",
+        "majalah"
+       ]
+      ]
+     },
+     "after": [
+      "Kekecualian yang paling sering muncul: sekelompok kata feminin berakhir bunyi mati — *вечер* (sore), *нощ* (malam), *пролет* (musim semi), *есен* (musim gugur), *сол* (garam), *любов* (cinta). Jumlahnya tidak banyak; hafalkan enam ini dan sisanya jarang mengganggu.",
+      "⚠️ Bahasa Indonesia tidak punya jenis kelamin kata benda sama sekali, jadi naluri ini harus dibangun dari nol. Kabar baiknya: **hafalkan kata bersama huruf terakhirnya**, bukan dengan label \"maskulin/feminin\". Kalau kamu tahu kata itu berakhir -а, kamu otomatis tahu semuanya."
+     ]
+    },
+    {
+     "title": "Откъде сте? — asal-usul",
+     "body": [
+      "Cukup satu kata depan, **от**, dan bentuk nama tempatnya tidak pernah berubah. Bandingkan dengan bahasa Rusia, tempat setiap kata depan menuntut bentuk kata benda yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan / jawaban",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Откъде сте?",
+        "ot-kă-DE ste",
+        "Anda dari mana? (resmi)"
+       ],
+       [
+        "Откъде си?",
+        "ot-kă-DE si",
+        "Kamu dari mana? (santai)"
+       ],
+       [
+        "От Индонезия съм.",
+        "ot in-do-NE-zi-ya săm",
+        "Saya dari Indonesia."
+       ],
+       [
+        "Живея в София.",
+        "zhi-VE-ya f SO-fi-ya",
+        "Saya tinggal di Sofia."
+       ],
+       [
+        "Отивам в Пловдив.",
+        "o-TI-vam f PLOV-div",
+        "Saya pergi ke Plovdiv."
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan dua baris terakhir: **в** dipakai untuk \"di\" **dan** untuk \"ke\", dan nama kotanya tidak berubah sedikit pun. Kata kerjanyalah yang menjelaskan mana yang dimaksud — *живея* (tinggal) berarti diam di tempat, *отивам* (pergi) berarti berpindah. Bahasa Indonesia bekerja persis seperti ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, kebangsaan, dan bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga lajur, tiga bentuk berbeda dari akar yang sama. Perhatikan bahwa nama bahasa selalu berakhiran **-ски** dan tidak pernah berhuruf besar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Laki-laki",
+      "Perempuan",
+      "Bahasa"
+     ],
+     "rows": [
+      [
+       "България",
+       "българин",
+       "българка",
+       "български"
+      ],
+      [
+       "Индонезия",
+       "индонезиец",
+       "индонезийка",
+       "индонезийски"
+      ],
+      [
+       "Англия",
+       "англичанин",
+       "англичанка",
+       "английски"
+      ],
+      [
+       "Русия",
+       "руснак",
+       "рускиня",
+       "руски"
+      ],
+      [
+       "Германия",
+       "германец",
+       "германка",
+       "немски"
+      ],
+      [
+       "Турция",
+       "турчин",
+       "туркиня",
+       "турски"
+      ],
+      [
+       "Гърция",
+       "грък",
+       "гъркиня",
+       "гръцки"
+      ],
+      [
+       "Китай",
+       "китаец",
+       "китайка",
+       "китайски"
+      ],
+      [
+       "Япония",
+       "японец",
+       "японка",
+       "японски"
+      ],
+      [
+       "Америка",
+       "американец",
+       "американка",
+       "английски"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Nama bahasa Jerman **немски** sama sekali tidak mirip nama negaranya *Германия*. Akarnya kata Slavia kuno *ням* — \"bisu\": orang yang bahasanya tidak kita mengerti. Kejanggalan yang sama ada di seluruh rumpun Slavia."
+    },
+    {
+     "type": "p",
+     "text": "Untuk mengatakan \"saya bicara bahasa X\", kata bahasanya diberi awalan **по-**: *Говоря по български* (saya bicara bahasa Bulgaria), *Говорите ли по английски?* (Anda bicara bahasa Inggris?). Tanpa *по-*, *български език* berarti \"bahasa Bulgaria\" sebagai benda."
+    }
+   ]
+  },
+  {
+   "title": "Lima kota yang akan kamu dengar terus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kota",
+      "Baca",
+      "Kenapa disebut"
+     ],
+     "rows": [
+      [
+       "София",
+       "SO-fi-ya",
+       "Ibu kota, di kaki Gunung Витоша"
+      ],
+      [
+       "Пловдив",
+       "PLOV-div",
+       "Kota berpenghuni tertua di Eropa, lebih tua dari Roma dan Athena"
+      ],
+      [
+       "Варна",
+       "VAR-na",
+       "Pelabuhan terbesar di Laut Hitam"
+      ],
+      [
+       "Бургас",
+       "bur-GAS",
+       "Kota pantai kedua, pintu masuk musim panas"
+      ],
+      [
+       "Велико Търново",
+       "VE-li-ko TĂR-no-vo",
+       "Bekas ibu kota kerajaan, kota di atas tebing"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu ditanya *Харесва ли ти София?* (Suka Sofia?) dan kamu belum bisa menjawab panjang, dua kata sudah cukup: **Много хубаво!** Orang akan tersenyum dan meneruskan bicara — dan itulah cara belajar yang sesungguhnya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bg": "откъде",
+   "baca": "ot-kă-DE",
+   "id": "dari mana"
+  },
+  {
+   "bg": "от",
+   "baca": "ot",
+   "id": "dari"
+  },
+  {
+   "bg": "в",
+   "baca": "v / f",
+   "id": "di; ke"
+  },
+  {
+   "bg": "тук",
+   "baca": "tuk",
+   "id": "di sini; ke sini"
+  },
+  {
+   "bg": "там",
+   "baca": "tam",
+   "id": "di sana; ke sana"
+  },
+  {
+   "bg": "град",
+   "baca": "grad",
+   "id": "kota"
+  },
+  {
+   "bg": "страна",
+   "baca": "stra-NA",
+   "id": "negara"
+  },
+  {
+   "bg": "българин / българка",
+   "baca": "BĂL-ga-rin / BĂL-gar-ka",
+   "id": "orang Bulgaria (lk / pr)"
+  },
+  {
+   "bg": "чужденец",
+   "baca": "CHUZH-de-nets",
+   "id": "orang asing"
+  },
+  {
+   "bg": "много",
+   "baca": "MNO-go",
+   "id": "banyak; sangat"
+  },
+  {
+   "bg": "малко",
+   "baca": "MAL-ko",
+   "id": "sedikit; agak"
+  },
+  {
+   "bg": "далече",
+   "baca": "da-LE-che",
+   "id": "jauh"
+  },
+  {
+   "bg": "близо",
+   "baca": "BLI-zo",
+   "id": "dekat"
+  },
+  {
+   "bg": "топло",
+   "baca": "TOP-lo",
+   "id": "hangat, panas"
+  },
+  {
+   "bg": "студено",
+   "baca": "stu-DE-no",
+   "id": "dingin"
+  },
+  {
+   "bg": "хубав",
+   "baca": "HU-bav",
+   "id": "bagus, cantik"
+  },
+  {
+   "bg": "винаги",
+   "baca": "VI-na-gi",
+   "id": "selalu"
+  },
+  {
+   "bg": "но",
+   "baca": "no",
+   "id": "tapi"
+  },
+  {
+   "bg": "нали",
+   "baca": "na-LI",
+   "id": "kan?, bukan begitu?"
+  },
+  {
+   "bg": "добре дошъл",
+   "baca": "dob-RE DO-shăl",
+   "id": "selamat datang (ke lk)"
+  },
+  {
+   "bg": "живея",
+   "baca": "zhi-VE-ya",
+   "id": "saya tinggal"
+  },
+  {
+   "bg": "говоря",
+   "baca": "go-VO-rya",
+   "id": "saya bicara"
+  },
+  {
+   "bg": "език",
+   "baca": "e-ZIK",
+   "id": "bahasa; lidah"
+  },
+  {
+   "bg": "как",
+   "baca": "kak",
+   "id": "bagaimana"
+  },
+  {
+   "bg": "стая",
+   "baca": "STA-ya",
+   "id": "kamar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bulgaria.",
+   "items": [
+    "Anda dari mana? (resmi)",
+    "Saya dari Indonesia.",
+    "Dia (perempuan) orang Bulgaria.",
+    "Sofia kota yang bagus.",
+    "Di sini dingin, kan?",
+    "Selamat datang di Bulgaria! (kepada seorang perempuan)"
+   ]
+  },
+  {
+   "prompt": "Tulis jenis kelamin kata benda berikut: м (maskulin), ж (feminin), atau ср (netral).",
+   "items": [
+    "книга ____",
+    "град ____",
+    "мляко ____",
+    "стая ____",
+    "море ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "съм / Индонезия / от",
+    "е / далече / много",
+    "град / е / хубав / София",
+    "ли / сте / българка / вие",
+    "в / живея / София"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kebangsaan yang tepat.",
+   "items": [
+    "Мария е от София. Тя е ____.",
+    "Иван е от София. Той е ____.",
+    "Ани е от Джакарта. Тя е ____.",
+    "Джон е от Лондон. Той е ____.",
+    "Юки е от Токио. Тя е ____."
+   ]
+  }
+ ],
+ "answers": [
+  "Откъде сте? — От Индонезия съм. — Тя е българка. — София е хубав град. — Тук е студено, нали? — Добре дошла в България!",
+  "ж — м — ср — ж — ср",
+  "От Индонезия съм. — Много далече е. — София е хубав град. — Вие българка ли сте? — Живея в София.",
+  "българка — българин — индонезийка — англичанин — японка"
+ ]
+}
