@@ -1,0 +1,336 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "Сайн байна уу? Таны нэр хэн бэ?",
+ "goal": "Menyapa, memperkenalkan diri, dan bertanya kabar — sekaligus menguasai satu kata kerja yang muncul di hampir setiap kalimat bahasa Mongolia: *байх*.",
+ "bekal": [
+  "menyapa dan berpamitan dengan tepat, resmi maupun santai",
+  "menyebut nama, pekerjaan, dan asal memakai *байна*",
+  "memilih antara *та* dan *чи* tanpa membuat orang tersinggung"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Анхны уулзалт",
+   "intro": "Budi baru tiba di Ulaanbaatar untuk satu semester pertukaran pelajar. Di lorong kampus ia berpapasan dengan Сарнай.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]?",
+     "id": "Halo! (Apa kabar?)",
+     "literal": "baik ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Сайн|Sain]. [Та|Ta] [сайн|sain] [байна|BAI-n] [уу|uu]?",
+     "id": "Baik. Anda apa kabar?",
+     "literal": "baik. Anda baik ada -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сайн|Sain], [баярлалаа|ba-yar-la-LAA]. [Таны|TA-nii] [нэр|ner] [хэн|khen] [бэ|be]?",
+     "id": "Baik, terima kasih. Siapa nama Anda?",
+     "literal": "baik, terima-kasih. Anda-punya nama siapa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Миний|MI-nii] [нэр|ner] [Буди|BU-di]. [Таны|TA-nii] [нэр|ner] [хэн|khen] [бэ|be]?",
+     "id": "Nama saya Budi. Siapa nama Anda?",
+     "literal": "saya-punya nama Budi. Anda-punya nama siapa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Би|Bi] [Сарнай|sar-NAI]. [Танилцахад|ta-NIL-tsa-khad] [таатай|TAA-tai] [байна|BAI-n].",
+     "id": "Saya Sarnai. Senang berkenalan.",
+     "literal": "saya Sarnai. berkenalan-pada menyenangkan ada."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Надад|NA-dad] [ч|ch] [бас|bas] [таатай|TAA-tai] [байна|BAI-n].",
+     "id": "Saya juga senang.",
+     "literal": "saya-kepada pun juga menyenangkan ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Та|Ta] [хаанаас|KHAA-naas] [ирсэн|IR-sen] [бэ|be]?",
+     "id": "Anda dari mana?",
+     "literal": "Anda dari-mana datang-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Би|Bi] [Индонезоос|in-do-NE-dzoos] [ирсэн|IR-sen].",
+     "id": "Saya dari Indonesia.",
+     "literal": "saya Indonesia-dari datang-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Өө|Öö], [сонирхолтой|so-NIR-khol-toi] [юм|yum] [байна|BAI-n]! [Та|Ta] [оюутан|o-YUU-tan] [уу|uu]?",
+     "id": "Oh, menarik sekali! Anda mahasiswa?",
+     "literal": "oh, menarik hal ada! Anda mahasiswa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тийм|Tiim], [би|bi] [оюутан|o-YUU-tan]. [Та|Ta] [ч|ch] [бас|bas] [оюутан|o-YUU-tan] [уу|uu]?",
+     "id": "Ya, saya mahasiswa. Anda juga mahasiswa?",
+     "literal": "ya, saya mahasiswa. Anda pun juga mahasiswa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Үгүй|Ü-güi], [би|bi] [багш|baksh]. [Би|Bi] [монгол|MON-gol] [хэл|khel] [заадаг|DZAA-dag].",
+     "id": "Bukan, saya guru. Saya mengajar bahasa Mongolia.",
+     "literal": "bukan, saya guru. saya Mongolia bahasa mengajar-biasa."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Гайхалтай|GAI-khal-tai]! [Би|Bi] [монгол|MON-gol] [хэл|khel] [сурч|surch] [байна|BAI-n].",
+     "id": "Hebat! Saya sedang belajar bahasa Mongolia.",
+     "literal": "hebat! saya Mongolia bahasa belajar-sambil ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Та|Ta] [сайн|sain] [ярьж|yar'j] [байна|BAI-n] [шүү|shüü]!",
+     "id": "Anda bicaranya bagus lho!",
+     "literal": "Anda baik bicara-sambil ada lho!"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баярлалаа|ba-yar-la-LAA]. [Гэхдээ|GEKH-dee] [бага|BA-ga] [зэрэг|DZE-reg] [мэднэ|MED-ne].",
+     "id": "Terima kasih. Tapi saya cuma tahu sedikit.",
+     "literal": "terima-kasih. tetapi sedikit derajat tahu."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Уучлаарай|UUCH-laa-rai], [би|bi] [яван|YA-van] [байна|BAI-n]. [Дараа|da-RAA] [уулзъя|UULDZ-ya]!",
+     "id": "Maaf, saya harus pergi. Sampai jumpa lagi!",
+     "literal": "maaf, saya pergi-sedang ada. nanti bertemu-mari!"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баяртай|ba-YAR-tai], [Сарнай|sar-NAI]!",
+     "id": "Sampai jumpa, Sarnai!",
+     "literal": "gembira-berdengan, Sarnai!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Сайн байна уу? bukan pertanyaan sungguhan.** Harfiahnya \"apakah ada baik?\", tetapi fungsinya persis \"halo\" — kamu menjawabnya dengan mengulang kalimat yang sama, bukan dengan bercerita. Jawaban paling aman adalah satu kata: *Сайн.*",
+    "**Байна berarti \"ada\", \"berada\", dan \"adalah\" sekaligus.** Ia adalah kata kerja tersibuk dalam bahasa Mongolia, dan ia selalu berdiri **di ujung kalimat**. Perhatikan bahwa dalam sembilan dari enam belas baris dialog ini, kata terakhirnya adalah *байна*.",
+    "**Баяртай harfiahnya \"berdengan-gembira\".** Kata *баяр* berarti kegembiraan atau perayaan, dan ekor *-тай* berarti \"dengan\". Kamu akan bertemu ekor itu lagi di unit 15, dan di situ ia akan berubah menjadi cara bahasa Mongolia mengatakan \"punya\".",
+    "**Тийм = ya, үгүй = tidak.** ⚠️ Untuk menyangkal kata benda, orang Mongolia lebih sering memakai *биш*: *Би багш **биш**.* (Saya bukan guru.) *Үгүй* dipakai sebagai jawaban yang berdiri sendiri.",
+    "**Ч бас berarti \"juga\".** Kedua kata itu hampir selalu muncul berpasangan dan letaknya sesudah kata yang ditandai: *Та **ч бас** оюутан уу?* — \"Anda **juga** mahasiswa?\""
+   ],
+   "grammars": [
+    {
+     "title": "Байх — kata kerja yang paling sering kamu pakai",
+     "body": [
+      "Bahasa Indonesia sering menghilangkan kata \"adalah\" (\"Saya mahasiswa\"). Bahasa Mongolia melakukan hal yang sama untuk **kalimat pengenalan diri** — tetapi memakai *байна* begitu kalimatnya menyatakan keberadaan, keadaan, atau sesuatu yang sedang berlangsung.",
+      "Dan inilah hadiah pertamanya: **bentuknya tidak pernah berubah menurut pelakunya.** Satu kata mengurus semua orang."
+     ],
+     "table": {
+      "head": ["Kalimat", "Baca", "Arti"],
+      "rows": [
+       ["*Би энд байна.*", "bi end BAI-n", "Saya ada di sini."],
+       ["*Чи энд байна.*", "chi end BAI-n", "Kamu ada di sini."],
+       ["*Тэр энд байна.*", "ter end BAI-n", "Dia ada di sini."],
+       ["*Бид энд байна.*", "bid end BAI-n", "Kami ada di sini."],
+       ["*Тэд энд байна.*", "ted end BAI-n", "Mereka ada di sini."]
+      ]
+     },
+     "after": [
+      "Lima baris, satu bentuk kata kerja. Bandingkan dengan bahasa Inggris yang butuh *am/are/is*, atau bahasa Rusia yang butuh enam bentuk. **Bahasa Mongolia dan bahasa Indonesia sama-sama menyerahkan urusan itu kepada kata gantinya.**",
+      "⚠️ Untuk kalimat pengenalan sederhana — nama, pekerjaan, kebangsaan — *байна* boleh dihilangkan: *Би оюутан.* sudah lengkap dan wajar. Menambahkannya (*Би оюутан байна.*) terdengar seperti \"saya sedang menjadi mahasiswa\" dan agak aneh."
+     ]
+    },
+    {
+     "title": "Та atau чи? Satu keputusan yang harus benar",
+     "body": [
+      "Bahasa Mongolia punya dua kata untuk \"kamu\", dan memilih yang keliru adalah kesalahan sosial, bukan kesalahan tata bahasa. Aturannya lebih ketat daripada di bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Kata", "Baca", "Dipakai kepada", "Setara bahasa Indonesia"],
+      "rows": [
+       ["*та*", "ta", "orang yang lebih tua, atasan, guru, orang yang baru dikenal, siapa pun di tempat resmi", "Bapak, Ibu, Anda"],
+       ["*чи*", "chi", "teman sebaya yang sudah akrab, adik, anak-anak", "kamu, lu"],
+       ["*та нар*", "ta nar", "beberapa orang, resmi", "kalian (hormat)"],
+       ["*та бүхэн*", "ta BÜ-khen", "hadirin, pembaca, penonton", "Anda sekalian"]
+      ]
+     },
+     "after": [
+      "**Aturan praktisnya satu baris: pakai *та* sampai orangnya sendiri yang beralih ke *чи*.** Memakai *та* kepada teman sebaya cuma terdengar sedikit kaku; memakai *чи* kepada orang yang lebih tua terdengar kurang ajar. Risikonya tidak seimbang, jadi pilihannya jelas.",
+      "⚠️ Perhatikan bahwa *та* dipakai bahkan untuk **satu** orang. Ia bukan bentuk jamak — untuk jamak ada *та нар*. Ini berbeda dari bahasa Rusia dan Prancis, tempat bentuk hormat dan bentuk jamak memakai kata yang sama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa dan berpamitan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Cara baca", "Bahasa Indonesia", "Kapan"],
+     "rows": [
+      ["*Сайн байна уу?*", "*sain BAI-n uu*", "Halo (resmi)", "Ke siapa pun yang bukan teman akrab. Paling aman."],
+      ["*Сайн уу?*", "*sain uu*", "Hai (santai)", "Ke teman sebaya. Bentuk pendek."],
+      ["*Өглөөний мэнд.*", "*ÖG-löö-nii mend*", "Selamat pagi", "Sampai kira-kira pukul sebelas. Agak resmi."],
+      ["*Өдрийн мэнд.*", "*ÖD-riin mend*", "Selamat siang", "Di kantor dan toko."],
+      ["*Оройн мэнд.*", "*o-ROIN mend*", "Selamat sore", "Salam saat bertemu di sore atau malam hari."],
+      ["*Сайхан амраарай.*", "*SAI-khan am-RAA-rai*", "Selamat istirahat", "⚠️ Hanya saat berpisah untuk tidur."],
+      ["*Баяртай!*", "*ba-YAR-tai*", "Sampai jumpa", "Yang paling umum saat berpisah."],
+      ["*Дараа уулзъя.*", "*da-RAA UULDZ-ya*", "Sampai bertemu lagi", "Lebih hangat, kalau memang akan bertemu lagi."],
+      ["*Маргааш уулзъя.*", "*mar-GAASH UULDZ-ya*", "Sampai besok", "Harfiah: \"besok mari bertemu\"."],
+      ["*Сайн яваарай.*", "*sain ya-VAA-rai*", "Selamat jalan", "Diucapkan oleh yang tinggal kepada yang pergi."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa dua kalimat terakhir **tidak bisa ditukar**. *Сайн яваарай* diucapkan oleh yang **tinggal**, dan yang pergi menjawab *Сайн сууж байгаарай* (\"tinggallah baik-baik\"). Pasangan ini persis seperti \"hati-hati di jalan\" dan \"iya, saya duluan ya\" dalam bahasa Indonesia — dan sama seperti di Indonesia, mengucapkannya terbalik langsung terdengar lucu."
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya kabar",
+     "items": [
+      "*Сайн байна уу?* — Apa kabar? Yang paling umum, dan sekaligus berarti \"halo\".",
+      "*Юу байна?* — Ada apa? Apa kabar? ⚠️ Sangat santai, hanya ke teman akrab.",
+      "*Сайн, баярлалаа.* — Baik, terima kasih. *Их сайн.* — Sangat baik.",
+      "*Тэгэх юм.* — Begitulah, biasa saja. ⚠️ Jawaban yang jujur dan sering dipakai; orang Mongolia tidak wajib menjawab \"baik\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dengan уу dan вэ",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Mongolia menandai pertanyaan di **ujung** kalimat, bukan di awal. Susunan kata di depannya tidak berubah sedikit pun — persis seperti bahasa Indonesia yang cukup menambahkan nada naik atau kata \"kah\"."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jenis pertanyaan", "Partikel", "Contoh", "Arti"],
+     "rows": [
+      ["Ya/tidak, sesudah *а, о, у*", "**уу**", "*Та багш **уу**?*", "Anda guru?"],
+      ["Ya/tidak, sesudah *э, ө, ү*", "**үү**", "*Энэ гэр **үү**?*", "Ini rumah?"],
+      ["Ya/tidak, sesudah vokal", "**юу / юү**", "*Энэ чиний **юу**?*", "Ini punyamu?"],
+      ["Dengan kata tanya, sesudah *н, л, м, в* dan vokal", "**вэ**", "*Чи хаана байна **вэ**?*", "Kamu di mana?"],
+      ["Dengan kata tanya, sesudah huruf mati lain", "**бэ**", "*Таны нэр хэн **бэ**?*", "Siapa nama Anda?"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Partikelnya tidak boleh dilupakan.** *Та багш* tanpa *уу* adalah pernyataan (\"Anda guru\"), bukan pertanyaan. Nada suara saja tidak cukup dalam bahasa Mongolia — inilah beda pertama yang harus kamu terima, karena dalam bahasa Indonesia nada suara memang sudah cukup."
+    },
+    {
+     "type": "p",
+     "text": "Memilih antara *вэ* dan *бэ* memang merepotkan di awal, tetapi tolok ukurnya sederhana: **ucapkan kalimatnya bersuara.** *Хэн бэ* mengalir; *хэн вэ* tersendat. *Хаана вэ* mengalir; *хаана бэ* tersendat. Mulutmu akan memilih dengan benar sebelum otakmu sempat mengingat aturannya."
+    }
+   ]
+  },
+  {
+   "title": "Sepuluh kalimat yang menyelamatkan pemula",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*Уучлаарай.*", "*UUCH-laa-rai*", "Maaf. / Permisi."],
+      ["*Баярлалаа.*", "*ba-yar-la-LAA*", "Terima kasih."],
+      ["*Зүгээр.*", "*DZÜ-geer*", "Tidak apa-apa. / Sama-sama."],
+      ["*Би ойлгохгүй байна.*", "*bi OIL-gokh-güi BAI-n*", "Saya tidak mengerti."],
+      ["*Би мэдэхгүй.*", "*bi ME-dekh-güi*", "Saya tidak tahu."],
+      ["*Удаан яриач.*", "*u-DAAN ya-RIA-ch*", "Tolong bicara lebih pelan."],
+      ["*Дахин хэлээч.*", "*da-KHIN khe-LEE-ch*", "Tolong ulangi."],
+      ["*Энэ юу гэсэн үг вэ?*", "*E-ne yuu GE-sen üg ve*", "Apa artinya itu?"],
+      ["*Та англиар ярьдаг уу?*", "*ta ANG-li-ar YAR'-dag uu*", "Anda bicara bahasa Inggris?"],
+      ["*Би монгол хэл сурч байна.*", "*bi MON-gol khel surch BAI-n*", "Saya sedang belajar bahasa Mongolia."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Зүгээр mengerjakan tiga tugas sekaligus",
+     "items": [
+      "**\"Tidak apa-apa\"** — menjawab permintaan maaf: *Уучлаарай!* — *Зүгээр.*",
+      "**\"Sama-sama\"** — menjawab terima kasih: *Баярлалаа!* — *Зүгээр.*",
+      "**\"Biasa saja, lumayan\"** — menjawab pertanyaan kabar: *Сайн байна уу?* — *Зүгээр.*",
+      "Ketiganya kata yang sama. Konteks yang membedakan, dan konteksnya tak pernah rancu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir di tabel itu layak dihafal hari ini juga. Orang Mongolia yang bertemu orang asing hampir selalu menganggap bahasa Mongolia terlalu sulit untuk dipelajari, dan akan langsung beralih ke bahasa Inggris atau bahasa isyarat. Mengatakan *би монгол хэл сурч байна* adalah cara paling sopan untuk meminta mereka tetap berbahasa Mongolia — dan hampir selalu disambut dengan senyum yang tidak dibuat-buat."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "сайн", "baca": "sain", "id": "baik, bagus" },
+  { "mn": "байна", "baca": "BAI-n", "id": "ada, berada, adalah" },
+  { "mn": "баярлалаа", "baca": "ba-yar-la-LAA", "id": "terima kasih" },
+  { "mn": "уучлаарай", "baca": "UUCH-laa-rai", "id": "maaf, permisi" },
+  { "mn": "баяртай", "baca": "ba-YAR-tai", "id": "sampai jumpa" },
+  { "mn": "тийм", "baca": "tiim", "id": "ya" },
+  { "mn": "үгүй", "baca": "Ü-güi", "id": "tidak, bukan" },
+  { "mn": "би", "baca": "bi", "id": "saya" },
+  { "mn": "чи", "baca": "chi", "id": "kamu (akrab)" },
+  { "mn": "та", "baca": "ta", "id": "⚠️ Anda (hormat)" },
+  { "mn": "тэр", "baca": "ter", "id": "dia; itu" },
+  { "mn": "бид", "baca": "bid", "id": "kami, kita" },
+  { "mn": "тэд", "baca": "ted", "id": "mereka" },
+  { "mn": "нэр", "baca": "ner", "id": "nama" },
+  { "mn": "хэн", "baca": "khen", "id": "siapa" },
+  { "mn": "хаанаас", "baca": "KHAA-naas", "id": "dari mana" },
+  { "mn": "оюутан", "baca": "o-YUU-tan", "id": "mahasiswa" },
+  { "mn": "багш", "baca": "baksh", "id": "guru" },
+  { "mn": "хэл", "baca": "khel", "id": "bahasa; lidah" },
+  { "mn": "зүгээр", "baca": "DZÜ-geer", "id": "tidak apa-apa; sama-sama" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Halo! Saya Budi.",
+    "Anda guru?",
+    "Ya, saya guru.",
+    "Saya dari Indonesia.",
+    "Saya sedang belajar bahasa Mongolia.",
+    "Sampai jumpa!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan partikel tanya yang tepat: уу, үү, вэ, atau бэ.",
+   "items": [
+    "Та багш ____?",
+    "Таны нэр хэн ____?",
+    "Чи хаана байна ____?",
+    "Энэ гэр ____?",
+    "Тэр оюутан ____?",
+    "Та хаанаас ирсэн ____?"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pertanyaan ya/tidak dengan уу atau үү.",
+   "items": [
+    "Та багш.",
+    "Чи оюутан.",
+    "Тэр сайн байна.",
+    "Бид энд байна.",
+    "Энэ чиний ном.",
+    "Та монгол хүн."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "би / оюутан",
+    "нэр / миний / Буди",
+    "байна / уу / сайн",
+    "ирсэн / Индонезоос / би",
+    "хэн / нэр / бэ / таны"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Сайн байна уу! Би Буди. — Та багш уу? — Тийм, би багш. — Би Индонезоос ирсэн. — Би монгол хэл сурч байна. — Баяртай!",
+  "1": "уу — бэ — вэ — үү — уу — бэ",
+  "2": "Та багш уу? — Чи оюутан уу? — Тэр сайн байна уу? — Бид энд байна уу? — Энэ чиний ном уу? — Та монгол хүн үү?",
+  "3": "Би оюутан. — Миний нэр Буди. — Сайн байна уу? — Би Индонезоос ирсэн. — Таны нэр хэн бэ?"
+ }
+}

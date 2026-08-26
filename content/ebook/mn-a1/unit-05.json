@@ -1,0 +1,333 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "Үнэ хэд вэ?",
+ "goal": "Berhitung sampai satu juta, menawar di pasar, dan membayar — sambil melihat kenapa angka bahasa Mongolia punya dua wajah.",
+ "bekal": [
+  "menyebut dan memahami angka sampai satu juta dalam tugrik",
+  "bertanya harga, meminta yang lebih murah, dan menghitung kembalian",
+  "memakai bentuk angka berekor *-н* di depan kata benda tanpa berpikir"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Захад",
+   "intro": "Budi pergi ke Pasar Naran Tuul bersama Sarnai untuk membeli kaus kaki wol dan sebuah syal.",
+   "lines": [
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]! [Юу|Yuu] [авах|a-VAKH] [вэ|ve]?",
+     "id": "Halo! Mau beli apa?",
+     "literal": "baik ada -kah! apa ambil -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ноосон|NOO-son] [оймс|oims] [байгаа|bai-GAA] [юу|yuu]?",
+     "id": "Ada kaus kaki wol?",
+     "literal": "wol-punya kaus-kaki ada-yang -kah?"
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Байгаа|Bai-GAA], [маш|mash] [сайн|sain] [ноос|noos]. [Тэмээний|te-MEE-nii] [ноос|noos].",
+     "id": "Ada, wolnya bagus sekali. Wol unta.",
+     "literal": "ada-yang, sangat baik wol. unta-punya wol."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Үнэ|Ü-ne] [хэд|khed] [вэ|ve]?",
+     "id": "Berapa harganya?",
+     "literal": "harga berapa -kah?"
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Нэг|Neg] [хос|khos] [арван|A-rvan] [таван|TA-van] [мянга|MYAN-ga].",
+     "id": "Satu pasang lima belas ribu.",
+     "literal": "satu pasang sepuluh lima ribu."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Үнэтэй|Ü-ne-tei] [юм|yum] [байна|BAI-n]. [Хямдхан|KHYAMD-khan] [болгож|BOL-goj] [болох|BO-lokh] [уу|uu]?",
+     "id": "Mahal ya. Bisa dikurangi sedikit?",
+     "literal": "harga-berdengan hal ada. murah-agak jadikan-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Хоёр|Kho-YOR] [хос|khos] [аваарай|a-VAA-rai]. [Хорин|KHO-rin] [таван|TA-van] [мянга|MYAN-ga] [болно|BOL-no].",
+     "id": "Ambil dua pasang. Jadi dua puluh lima ribu.",
+     "literal": "dua pasang ambillah. dua-puluh lima ribu jadi."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хоёр|Kho-YOR] [хос|khos] [хорин|KHO-rin] [мянга|MYAN-ga] [бол|bol] [авъя|AV-ya].",
+     "id": "Kalau dua pasang dua puluh ribu, kami ambil.",
+     "literal": "dua pasang dua-puluh ribu kalau ambil-mari."
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Хорин|KHO-rin] [хоёр|kho-YOR] [мянга|MYAN-ga]. [Сүүлчийн|SÜÜL-chiin] [үнэ|ü-ne].",
+     "id": "Dua puluh dua ribu. Harga terakhir.",
+     "literal": "dua-puluh dua ribu. terakhir-punya harga."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[За|Dza], [болъё|BOL-yo]. [Тэр|Ter] [ороолт|o-ROOLT] [хэд|khed] [вэ|ve]?",
+     "id": "Baik, jadi. Syal itu berapa?",
+     "literal": "baik, jadi-mari. itu syal berapa -kah?"
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Гучин|GU-chin] [найман|NAI-man] [мянга|MYAN-ga]. [Ямаан|ya-MAAN] [ноолуур|noo-LUUR].",
+     "id": "Tiga puluh delapan ribu. Kasmir kambing.",
+     "literal": "tiga-puluh delapan ribu. kambing-punya kasmir."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хоёуланг|kho-YOU-lang] [нь|n'] [авбал|AV-bal] [нийт|niit] [хэд|khed] [вэ|ve]?",
+     "id": "Kalau ambil dua-duanya, totalnya berapa?",
+     "literal": "kedua-nya kalau-ambil total berapa -kah?"
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Жаран|JA-ran] [мянга|MYAN-ga]. [Хямд|Khyamd] [болголоо|BOL-go-loo].",
+     "id": "Enam puluh ribu. Sudah saya murahkan.",
+     "literal": "enam-puluh ribu. murah jadikan-sudah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[За|Dza], [баярлалаа|ba-yar-la-LAA]. [Энэ|E-ne] [зуун|DZUUN] [мянга|MYAN-ga].",
+     "id": "Baik, terima kasih. Ini seratus ribu.",
+     "literal": "baik, terima-kasih. ini seratus ribu."
+    },
+    {
+     "speaker": "Худалдагч:",
+     "text": "[Дөчин|DÖ-chin] [мянган|MYAN-gan] [хариулт|kha-RIULT]. [Дахин|Da-KHIN] [ирээрэй|i-REE-rei]!",
+     "id": "Kembaliannya empat puluh ribu. Datang lagi ya!",
+     "literal": "empat-puluh ribu kembalian. lagi datanglah!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Хэд bertanya jumlah, хэдэн bertanya \"berapa banyak\" di depan kata benda.** *Үнэ хэд вэ?* (Harganya berapa?) tetapi *Хэдэн ном вэ?* (Berapa buku?). Bedanya sama dengan \"berapa\" dan \"berapa buah\" dalam bahasa Indonesia.",
+    "**Мянга = ribu, dan orang Mongolia hampir selalu menyebut harga dalam ribuan tanpa menyebut mata uangnya.** *Арван таван мянга* = 15.000 tugrik. Menambahkan *төгрөг* tidak salah, tetapi terdengar seperti mengisi formulir.",
+    "**За adalah kata yang paling sering kamu dengar sepanjang hari di Mongolia.** Ia berarti \"baik\", \"oke\", \"ya sudah\", \"nah\", dan sekaligus mengisi jeda seperti \"ehm\". Kalau kamu cuma boleh membawa satu kata dari unit ini, bawa *за*.",
+    "**Menawar di pasar bukan cuma boleh, melainkan diharapkan** — di *зах* (pasar terbuka) dan toko kecil. ⚠️ Di supermarket, toko modern, dan restoran, menawar tidak dilakukan dan akan membuat suasana kikuk. Batasnya sama persis dengan di Indonesia.",
+    "**Ekor -хан / -хон membuat kata sifat menjadi \"agak\" atau \"lumayan\".** *Хямд* (murah) → *хямдхан* (agak murah, lumayan murah); *ойр* (dekat) → *ойрхон*. Ekor ini melembutkan permintaan — persis fungsi \"sedikit\" dalam \"kurang sedikit dong\"."
+   ],
+   "grammars": [
+    {
+     "title": "Angka punya dua wajah",
+     "body": [
+      "Ini satu-satunya kerumitan angka bahasa Mongolia, dan begitu kamu melihat polanya, ia selesai dalam lima menit. Angka berdiri sendiri memakai satu bentuk; angka **di depan kata benda** memakai bentuk lain yang berekor **-н**."
+     ],
+     "table": {
+      "head": ["Angka", "Berdiri sendiri", "Baca", "Di depan kata benda", "Baca"],
+      "rows": [
+       ["1", "*нэг*", "*neg*", "*нэг*", "*neg*"],
+       ["2", "*хоёр*", "*kho-YOR*", "*хоёр*", "*kho-YOR*"],
+       ["3", "*гурав*", "*GU-rav*", "*гурван*", "*GUR-van*"],
+       ["4", "*дөрөв*", "*DÖ-röv*", "*дөрвөн*", "*DÖR-vön*"],
+       ["5", "*тав*", "*tav*", "*таван*", "*TA-van*"],
+       ["6", "*зургаа*", "*dzur-GAA*", "*зургаан*", "*dzur-GAAN*"],
+       ["7", "*долоо*", "*do-LOO*", "*долоон*", "*do-LOON*"],
+       ["8", "*найм*", "*naim*", "*найман*", "*NAI-man*"],
+       ["9", "*ес*", "*yes*", "*есөн*", "*YE-sön*"],
+       ["10", "*арав*", "*A-rav*", "*арван*", "*A-rvan*"],
+       ["20", "*хорь*", "*khor'*", "*хорин*", "*KHO-rin*"],
+       ["100", "*зуу*", "*dzuu*", "*зуун*", "*DZUUN*"]
+      ]
+     },
+     "after": [
+      "**Polanya satu kalimat: tambahkan -н, dan kalau kata dasarnya berakhir dengan huruf mati, sisipkan vokal supaya bisa diucapkan.** *Гурав* → *гурван*; *ес* → *есөн*; *хорь* → *хорин*. Hanya *нэг* dan *хоёр* yang tidak berubah sama sekali.",
+      "⚠️ Bentuk berekor *-н* itulah yang dipakai untuk **harga, umur, waktu, tanggal, dan jumlah apa pun** — karena semuanya berdiri di depan kata benda. Bentuk telanjang hanya dipakai saat kamu berhitung keras-keras atau menjawab \"berapa\" dengan satu kata."
+     ]
+    },
+    {
+     "title": "Menyusun angka besar",
+     "body": [
+      "Bahasa Mongolia menyusun angka persis seperti bahasa Indonesia: dari yang terbesar ke yang terkecil, tanpa kata sambung apa pun. Tidak ada \"dan\", tidak ada pembalikan seperti bahasa Jerman."
+     ],
+     "table": {
+      "head": ["Angka", "Монгол", "Harfiah"],
+      "rows": [
+       ["11", "*арван нэг*", "sepuluh satu"],
+       ["25", "*хорин тав*", "dua-puluh lima"],
+       ["48", "*дөчин найм*", "empat-puluh delapan"],
+       ["100", "*зуу*", "seratus"],
+       ["350", "*гурван зуун тавь*", "tiga ratus lima-puluh"],
+       ["1.000", "*мянга*", "seribu"],
+       ["5.000", "*таван мянга*", "lima ribu"],
+       ["27.500", "*хорин долоон мянга таван зуу*", "dua-puluh tujuh ribu lima ratus"],
+       ["1.000.000", "*сая*", "satu juta"],
+       ["2.500.000", "*хоёр сая таван зуун мянга*", "dua juta lima ratus ribu"]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan puluhan yang bentuknya sendiri-sendiri dan wajib dihafal: 30 *гуч*, 40 *дөч*, 50 *тавь*, 60 *жар*, 70 *дал*, 80 *ная*, 90 *ер*. Di depan angka lain, semuanya mendapat *-н*: *гучин*, *дөчин*, *тавин*, *жаран*, *далан*, *наян*, *ерэн*.",
+      "**Mata uang Mongolia adalah төгрөг (TÖG-rög), disingkat ₮.** Satu tugrik nilainya sangat kecil, jadi harga sehari-hari berkisar ribuan sampai puluhan ribu — kebiasaan yang justru akrab bagi orang Indonesia. Sebotol air kira-kira 1.500₮, semangkuk sup 8.000₮, ongkos bus 500₮."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berbelanja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*Үнэ хэд вэ?*", "*Ü-ne khed ve*", "Berapa harganya?"],
+      ["*Энэ хэд вэ?*", "*E-ne khed ve*", "Ini berapa?"],
+      ["*Их үнэтэй байна.*", "*ikh Ü-ne-tei BAI-n*", "Mahal sekali."],
+      ["*Хямдхан болгож болох уу?*", "*KHYAMD-khan BOL-goj BO-lokh uu*", "Bisa dimurahkan sedikit?"],
+      ["*Би энийг авъя.*", "*bi E-niig AV-ya*", "Saya ambil yang ini."],
+      ["*Өөр өнгө байгаа юу?*", "*öör ÖN-gö bai-GAA yuu*", "Ada warna lain?"],
+      ["*Үзэж болох уу?*", "*Ü-dzej BO-lokh uu*", "Boleh lihat?"],
+      ["*Хэрэггүй, баярлалаа.*", "*KHE-reg-güi ba-yar-la-LAA*", "Tidak perlu, terima kasih."],
+      ["*Картаар төлж болох уу?*", "*KAR-taar TÖLJ BO-lokh uu*", "Bisa bayar pakai kartu?"],
+      ["*Хариулт өгнө үү.*", "*kha-RIULT ÖG-nö üü*", "Tolong kembaliannya."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Boлох uu — kalimat sakti yang membuka segalanya",
+     "items": [
+      "*болох уу?* harfiahnya \"boleh menjadi?\" dan berfungsi seperti \"boleh …?\" dalam bahasa Indonesia.",
+      "Pasangkan dengan bentuk *-ж / -ч* kata kerja apa pun: *үзэж болох уу?* (boleh lihat?), *орж болох уу?* (boleh masuk?), *суух болох уу?* (boleh duduk?).",
+      "Jawabannya *Болно* (boleh) atau *Болохгүй* (tidak boleh).",
+      "Ini adalah satu pola yang menggantikan sepuluh kalimat sopan. Hafalkan hari ini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Warna dan ukuran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*цагаан*", "*tsa-GAAN*", "putih", "*хар*", "*khar*", "hitam"],
+      ["*улаан*", "*u-LAAN*", "merah", "*шар*", "*shar*", "kuning"],
+      ["*хөх*", "*khökh*", "biru", "*ногоон*", "*no-GOON*", "hijau"],
+      ["*бор*", "*bor*", "cokelat", "*саарал*", "*SAA-ral*", "abu-abu"],
+      ["*том*", "*tom*", "besar", "*жижиг*", "*JI-jig*", "kecil"],
+      ["*урт*", "*urt*", "panjang", "*богино*", "*bo-GI-no*", "pendek"],
+      ["*өргөн*", "*ÖR-gön*", "lebar", "*нарийн*", "*na-RIIN*", "sempit, halus"],
+      ["*үнэтэй*", "*Ü-ne-tei*", "mahal", "*хямд*", "*khyamd*", "murah"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Цагаан* (putih) adalah salah satu kata paling bermuatan budaya dalam bahasa Mongolia. Putih berarti murni, baik, dan suci: *цагаан сар* adalah Tahun Baru Mongolia (\"bulan putih\"), *цагаан идээ* adalah seluruh makanan dari susu, dan *цагаан сэтгэл* berarti \"hati yang bersih\". Kalau kamu menyebut sesuatu *цагаан*, kamu memujinya."
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan juga bahwa *хөх* berarti biru **dan** hijau kebiruan — batas antara biru dan hijau dalam bahasa Mongolia tidak persis sama dengan dalam bahasa Indonesia. Langit adalah *хөх тэнгэр*, dan langit biru abadi itu adalah lambang negara sekaligus akar kepercayaan Mongolia sebelum agama Buddha masuk."
+    }
+   ]
+  },
+  {
+   "title": "Menghitung dengan benar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Arti"],
+     "rows": [
+      ["*Нэг аяга цай.*", "Satu cangkir teh."],
+      ["*Хоёр литр ус.*", "Dua liter air."],
+      ["*Гурван кг мах.*", "Tiga kilo daging."],
+      ["*Таван ширхэг өндөг.*", "Lima butir telur."],
+      ["*Арван хуудас цаас.*", "Sepuluh lembar kertas."],
+      ["*Хоёр хос оймс.*", "Dua pasang kaus kaki."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata-kata penghitung itu — *аяга* (cangkir), *ширхэг* (butir, biji), *хуудас* (lembar), *хос* (pasang) — bekerja persis seperti \"butir\", \"lembar\", dan \"pasang\" dalam bahasa Indonesia. **Kamu sudah menguasai konsepnya**; yang perlu ditambah cuma kosakatanya. Bandingkan dengan penutur bahasa Inggris yang harus belajar konsep ini dari nol."
+    },
+    {
+     "type": "kotak",
+     "title": "Nomor telepon dan tahun",
+     "items": [
+      "Nomor telepon dibaca **angka per angka**, memakai bentuk telanjang: *есөн есөн, гурав хоёр, нэг найм…*",
+      "Tahun dibaca sebagai angka utuh: 2026 = *хоёр мянга хорин зургаан он*. ⚠️ Jangan dibaca \"dua puluh dua puluh enam\" seperti bahasa Inggris.",
+      "*он* = tahun (dalam penanggalan); *жил* = tahun (lama waktu). *2026 **он*** tetapi *гурван **жил*** (tiga tahun lamanya).",
+      "Tanggal: *арван таваны өдөр* atau lebih sering hanya *арван тавны*, \"tanggal lima belas\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "хэд", "baca": "khed", "id": "berapa" },
+  { "mn": "үнэ", "baca": "Ü-ne", "id": "harga" },
+  { "mn": "төгрөг", "baca": "TÖG-rög", "id": "tugrik (mata uang)" },
+  { "mn": "мянга", "baca": "MYAN-ga", "id": "ribu" },
+  { "mn": "зуу", "baca": "dzuu", "id": "ratus" },
+  { "mn": "сая", "baca": "sa-YA", "id": "juta" },
+  { "mn": "үнэтэй", "baca": "Ü-ne-tei", "id": "mahal" },
+  { "mn": "хямд", "baca": "khyamd", "id": "murah" },
+  { "mn": "авах", "baca": "a-VAKH", "id": "mengambil, membeli" },
+  { "mn": "худалдагч", "baca": "khu-DAL-dagch", "id": "penjual" },
+  { "mn": "за", "baca": "dza", "id": "⚠️ baik, oke, nah" },
+  { "mn": "болох", "baca": "BO-lokh", "id": "menjadi; boleh" },
+  { "mn": "болно", "baca": "BOL-no", "id": "boleh, bisa" },
+  { "mn": "болохгүй", "baca": "BO-lokh-güi", "id": "tidak boleh" },
+  { "mn": "нийт", "baca": "niit", "id": "total, seluruhnya" },
+  { "mn": "хариулт", "baca": "kha-RIULT", "id": "kembalian; jawaban" },
+  { "mn": "ноос", "baca": "noos", "id": "wol" },
+  { "mn": "цагаан", "baca": "tsa-GAAN", "id": "putih" },
+  { "mn": "улаан", "baca": "u-LAAN", "id": "merah" },
+  { "mn": "хөх", "baca": "khökh", "id": "biru" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Berapa harganya?",
+    "Mahal sekali.",
+    "Bisa dimurahkan sedikit?",
+    "Saya ambil yang ini.",
+    "Ada warna lain?",
+    "Bisa bayar pakai kartu?"
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf Mongolia.",
+   "items": [
+    "3 ____ ном",
+    "8 ____ хүн",
+    "15 ____ мянга",
+    "40 ____ мянга",
+    "100 ____ төгрөг",
+    "9 ____ өдөр"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk yang dipakai di depan kata benda.",
+   "items": [
+    "гурав",
+    "дөрөв",
+    "ес",
+    "арав",
+    "хорь",
+    "зуу"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "вэ / үнэ / хэд",
+    "байна / үнэтэй / их",
+    "уу / болох / болгож / хямдхан",
+    "авъя / энийг / би",
+    "мянга / таван / арван"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Үнэ хэд вэ? — Их үнэтэй байна. — Хямдхан болгож болох уу? — Би энийг авъя. — Өөр өнгө байгаа юу? — Картаар төлж болох уу?",
+  "1": "гурван — найман — арван таван — дөчин — зуун — есөн",
+  "2": "гурван — дөрвөн — есөн — арван — хорин — зуун",
+  "3": "Үнэ хэд вэ? — Их үнэтэй байна. — Хямдхан болгож болох уу? — Би энийг авъя. — Арван таван мянга."
+ }
+}

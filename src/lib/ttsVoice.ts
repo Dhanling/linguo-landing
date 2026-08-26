@@ -38,6 +38,13 @@ export const CHIRP_LOCALES: Record<string, string> = {
      dengan bahasa Indonesia, jadi suara id-ID membacanya nyaris benar —
      kecuali vokal `eu` yang keluar sebagai dua bunyi terpisah. */
   su: "id-ID",
+  /* [ebook-tts-mongolia-v1] Katalog Google nol voice untuk mn-* (dicek live
+     lewat GET /v1/voices, 27 Agu 2026). Dipetakan ke ru-RU karena Kiril Mongol
+     adalah Kiril Rusia + dua huruf; suara Rusia membaca sebagian besar katanya
+     mendekati benar. ⚠️ Yang meleset justru dua huruf khas Mongolia: ө dan ү
+     tak ada di bahasa Rusia dan keluar sebagai o/u biasa. Tanpa pemetaan ini
+     ia jatuh ke en-US dan Kiril-nya terbaca kacau sama sekali. */
+  mn: "ru-RU",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */

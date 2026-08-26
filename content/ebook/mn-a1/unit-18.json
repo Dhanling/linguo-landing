@@ -1,0 +1,332 @@
+{
+ "title": "Menyambung dua kejadian",
+ "title_target": "Хоёр үйлдлийг холбох",
+ "goal": "Menyambung kalimat dengan *-ж*, *-аад*, dan *-вал* — tiga ekor yang mengubah kalimat pendek menjadi cerita.",
+ "bekal": [
+  "menyambung dua kejadian yang berurutan dengan *-аад*",
+  "menyatakan cara dan kegiatan bersamaan dengan *-ж / -ч*",
+  "membuat kalimat bersyarat dengan *-вал / -бэл*"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Байр хайж байна",
+   "intro": "Budi ingin pindah dari asrama ke apartemen kecil. Sarnai membantu menelepon pemilik apartemen.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Буди|BU-di], [ямар|YA-mar] [байр|bair] [хайж|khaij] [байна|BAI-n]?",
+     "id": "Budi, kamu cari apartemen yang seperti apa?",
+     "literal": "Budi, seperti-apa apartemen cari-sambil ada?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Нэг|Neg] [өрөөтэй|ö-RÖÖ-tei], [сургуулиас|sur-GUU-lias] [ойрхон|OIR-khon] [байвал|BAI-val] [сайн|sain].",
+     "id": "Kalau satu kamar dan dekat dari kampus, bagus.",
+     "literal": "satu kamar-berdengan, sekolah-dari dekat kalau-ada baik."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сарын|SA-riin] [хэдэн|KHE-den] [төгрөг|TÖG-rög] [хүртэл|KHÜR-tel] [төлж|TÖLJ] [чадах|CHA-dakh] [вэ|ve]?",
+     "id": "Sebulan bisa bayar sampai berapa tugrik?",
+     "literal": "bulan-punya berapa tugrik sampai bayar-sambil mampu -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Долоон|Do-LOON] [зуун|DZUUN] [мянга|MYAN-ga] [орчим|OR-chim]. [Илүү|I-LÜÜ] [үнэтэй|Ü-ne-tei] [бол|bol] [хэцүү|khe-TSÜÜ].",
+     "id": "Sekitar tujuh ratus ribu. Kalau lebih mahal, berat.",
+     "literal": "tujuh ratus ribu sekitar. lebih harga-berdengan kalau sulit."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[За|Dza], [зар|dzar] [үзээд|ü-DZEED] [залгая|DZAL-ga-ya]. [Энэ|E-ne] [нэг|neg] [сайхан|SAI-khan] [байна|BAI-n].",
+     "id": "Baik, lihat iklannya lalu kita telepon. Ini ada satu yang bagus.",
+     "literal": "baik, iklan lihat-sesudah telepon-mari. ini satu bagus ada."
+    },
+    {
+     "speaker": "Эзэн:",
+     "text": "[Байна|BAI-n] [уу|uu]?",
+     "id": "Halo?",
+     "literal": "ada -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Зар|Dzar] [үзээд|ü-DZEED] [залгаж|DZAL-gaj] [байна|BAI-n]. [Байр|Bair] [түрээслэгдэх|tü-REES-leg-dekh] [үү|üü]?",
+     "id": "Selamat siang. Saya menelepon setelah melihat iklan. Apartemennya masih disewakan?",
+     "literal": "baik ada -kah. iklan lihat-sesudah telepon-sambil ada. apartemen disewakan -kah?"
+    },
+    {
+     "speaker": "Эзэн:",
+     "text": "[Тийм|Tiim], [байгаа|bai-GAA]. [Нэг|Neg] [өрөө|ö-RÖÖ], [гал|gal] [тогоо|to-GOO], [угаалгын|u-GAAL-giin] [өрөөтэй|ö-RÖÖ-tei].",
+     "id": "Ya, masih ada. Satu kamar, dapur, dengan kamar mandi.",
+     "literal": "ya, ada-yang. satu kamar, api panci, cuci-punya kamar-berdengan."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Түрээс|Tü-REES] [хэд|khed] [вэ|ve]? [Тооцоо|TOO-tsoo] [багтсан|BAGT-san] [уу|uu]?",
+     "id": "Sewanya berapa? Sudah termasuk tagihan?",
+     "literal": "sewa berapa -kah? hitungan termasuk-sudah -kah?"
+    },
+    {
+     "speaker": "Эзэн:",
+     "text": "[Сард|Sard] [зургаан|dzur-GAAN] [зуун|DZUUN] [мянга|MYAN-ga]. [Цахилгаан|TSA-khil-gaan], [ус|us] [тусдаа|TUS-daa].",
+     "id": "Sebulan enam ratus ribu. Listrik dan air terpisah.",
+     "literal": "bulan-pada enam ratus ribu. listrik, air terpisah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Үзэж|Ü-dzej] [болох|BO-lokh] [уу|uu]? [Өнөөдөр|Ö-nöö-dör] [оройдоо|O-roi-doo] [очвол|OCH-vol] [болох|BO-lokh] [уу|uu]?",
+     "id": "Boleh lihat? Kalau kami datang sore ini bisa?",
+     "literal": "lihat-sambil boleh -kah? hari-ini malam-pada-sendiri kalau-sampai boleh -kah?"
+    },
+    {
+     "speaker": "Эзэн:",
+     "text": "[Болно|BOL-no]. [Долоон|Do-LOON] [цагт|tsagt] [ирээрэй|i-REE-rei]. [Хаяг|KHA-yag] [явуулъя|ya-VUUL-ya].",
+     "id": "Bisa. Datanglah jam tujuh. Saya kirim alamatnya.",
+     "literal": "boleh. tujuh jam-pada datanglah. alamat kirim-mari."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баярлалаа|ba-yar-la-LAA]! [Байрыг|BAI-riig] [үзээд|ü-DZEED], [таалагдвал|TAA-lag-dval] [маргааш|mar-GAASH] [гэрээ|ge-REE] [байгуулъя|bai-GUUL-ya].",
+     "id": "Terima kasih! Setelah lihat apartemennya, kalau cocok besok kita buat kontrak.",
+     "literal": "terima-kasih! apartemen-objek lihat-sesudah, kalau-disukai besok kontrak buat-mari."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Яараад|YAA-raad] [хэрэггүй|KHE-reg-güi]. [Хоёр|Kho-YOR], [гурван|GUR-van] [байр|bair] [үзээд|ü-DZEED] [шийдэх|SHII-dekh] [нь|n'] [дээр|deer].",
+     "id": "Tidak perlu buru-buru. Lebih baik lihat dua tiga apartemen dulu baru putuskan.",
+     "literal": "buru-buru-sesudah perlu-tidak. dua, tiga apartemen lihat-sesudah putuskan -nya lebih-baik."
+    }
+   ],
+   "notes": [
+    "⚠️ **Tiga ekor penyambung, tiga makna yang berbeda tajam:** *-ж / -ч* berarti \"sambil, dengan cara\"; *-аад / -ээд* berarti \"lalu, sesudah\"; *-вал / -вэл* berarti \"kalau\". Ketiganya menempel di kata kerja yang **bukan** kata kerja terakhir kalimat.",
+    "**Зар үзээд залгаж байна = \"melihat iklan lalu menelepon\".** Perhatikan bahwa cuma kata kerja **terakhir** yang mendapat ekor waktu; semua kata kerja sebelumnya memakai ekor penyambung. Inilah cara bahasa Mongolia merangkai kejadian, dan ia bisa berlanjut sepanjang yang kamu mau.",
+    "**Таалагдвал = \"kalau disukai\", dari таалагдах + -вал.** Ekor *-вал* menempel langsung di akar kata kerja. ⚠️ Untuk kata kerja yang berakhir dengan huruf mati tertentu, bentuknya *-бал / -бэл*: *ав* → *авбал* (kalau ambil).",
+    "**Бол juga berarti \"kalau\", tetapi ia kata terpisah dan berdiri sesudah kata benda atau kata sifat.** *Илүү үнэтэй **бол** хэцүү* = kalau lebih mahal, berat. Bandingkan dengan *-вал* yang menempel di kata kerja. Keduanya sering dipakai bersama-sama tanpa masalah.",
+    "**Байна уу? di telepon berarti \"halo?\"** — harfiahnya \"ada?\", yaitu menanyakan apakah ada orang di ujung sana. Persis seperti \"halo?\" atau \"ada orang?\" dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga ekor penyambung",
+     "body": [
+      "Tabel ini adalah inti unit dan patut kamu baca dua kali. Perhatikan kolom terakhir: perbedaan antara ketiganya bukan soal tata bahasa melainkan soal **hubungan antara dua kejadiannya**."
+     ],
+     "table": {
+      "head": ["Ekor", "Contoh", "Arti", "Hubungannya"],
+      "rows": [
+       ["**-ж / -ч**", "*Явж байна.*", "Sedang pergi.", "Bersamaan, atau cara."],
+       ["**-ж / -ч**", "*Гүйж ирсэн.*", "Datang berlari.", "Cara melakukannya."],
+       ["**-аад / -ээд**", "*Идээд явсан.*", "Makan lalu pergi.", "Berurutan; yang satu selesai dulu."],
+       ["**-аад / -ээд**", "*Гэртээ ирээд амарсан.*", "Pulang lalu istirahat.", "Berurutan."],
+       ["**-вал / -бэл**", "*Явбал хэлээрэй.*", "Kalau pergi, bilang ya.", "Syarat."],
+       ["**-вал / -бэл**", "*Мөнгө байвал авна.*", "Kalau ada uang, saya beli.", "Syarat."],
+       ["**-хдаа / -хдээ**", "*Гэрт орохдоо гутлаа тайл.*", "Saat masuk rumah, lepas sepatu.", "Bersamaan, waktunya."],
+       ["**-магц / -мэгц**", "*Ирмэгц залгаарай.*", "Begitu sampai, telepon ya.", "Langsung sesudah."]
+      ]
+     },
+     "after": [
+      "⚠️ **Bedakan -ж dari -аад dengan satu pertanyaan: apakah kejadian pertama selesai sebelum yang kedua mulai?** Kalau ya, pakai *-аад*. Kalau keduanya berjalan bersamaan atau yang pertama menerangkan **cara** yang kedua, pakai *-ж*. *Идээд явсан* = makan dulu, baru pergi. *Идэж явсан* = pergi sambil makan.",
+      "**Kalimat Mongolia bisa merangkai lima atau enam kata kerja berturut-turut dengan cara ini**, dan cuma yang terakhir yang menandai waktu. *Босоод, цай уугаад, хувцасаа өмсөөд, ажилдаа явлаа* = \"Bangun, minum teh, pakai baju, lalu berangkat kerja.\" Ini bunyi khas bahasa Mongolia, dan ia terdengar wajar justru karena panjang."
+     ]
+    },
+    {
+     "title": "Membentuk ekor penyambung",
+     "body": [
+      "Semuanya dibentuk dari akar kata kerja (bentuk kamus tanpa *-х*), dan vokalnya mengikuti keselarasan yang sudah kamu kenal."
+     ],
+     "table": {
+      "head": ["Kamus", "-ж / -ч", "-аад / -ээд", "-вал / -бэл", "Arti"],
+      "rows": [
+       ["*явах*", "*явж*", "*яваад*", "*явбал*", "pergi"],
+       ["*ирэх*", "*ирж*", "*ирээд*", "*ирвэл*", "datang"],
+       ["*идэх*", "*идэж*", "*идээд*", "*идвэл*", "makan"],
+       ["*уух*", "*ууж*", "*уугаад*", "*уувал*", "minum"],
+       ["*үзэх*", "*үзэж*", "*үзээд*", "*үзвэл*", "melihat"],
+       ["*авах*", "*авч*", "*аваад*", "*авбал*", "mengambil"],
+       ["*өгөх*", "*өгч*", "*өгөөд*", "*өгвөл*", "memberi"],
+       ["*байх*", "*байж*", "*байгаад*", "*байвал*", "ada"],
+       ["*хийх*", "*хийж*", "*хийгээд*", "*хийвэл*", "melakukan"],
+       ["*босох*", "*босож*", "*босоод*", "*босвол*", "bangun"]
+      ]
+     },
+     "after": [
+      "⚠️ **-ч dipakai menggantikan -ж sesudah в, г, р, с dan sesudah vokal panjang.** *Авах* → *авч* (bukan *авж*); *өгөх* → *өгч*. Ucapkan keduanya bersuara dan kamu akan memilih yang benar — bentuk yang salah memang sulit diucapkan.",
+      "**Untuk menyangkal kalimat bersyarat, pakai *-хгүй бол*:** *Мөнгө байхгүй бол авахгүй* = kalau tidak ada uang, tidak beli. Ini bentuk yang paling sering kamu dengar untuk syarat negatif."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah, sewa, dan tagihan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*байр*", "*bair*", "apartemen"],
+      ["*түрээс*", "*tü-REES*", "sewa"],
+      ["*түрээслэх*", "*tü-REES-lekh*", "menyewa"],
+      ["*эзэн*", "*E-dzen*", "pemilik"],
+      ["*гэрээ*", "*ge-REE*", "kontrak, perjanjian"],
+      ["*хаяг*", "*KHA-yag*", "alamat"],
+      ["*зар*", "*dzar*", "iklan"],
+      ["*цахилгаан*", "*TSA-khil-gaan*", "listrik"],
+      ["*халаалт*", "*kha-LAALT*", "pemanas"],
+      ["*интернэт*", "*in-ter-NET*", "internet"],
+      ["*тавилга*", "*TA-vil-ga*", "perabot"],
+      ["*тусдаа*", "*TUS-daa*", "terpisah"],
+      ["*багтсан*", "*BAGT-san*", "termasuk"],
+      ["*давхар*", "*DAV-khar*", "lantai (tingkat)"],
+      ["*лифт*", "*lift*", "lift"],
+      ["*хашаа*", "*kha-SHAA*", "halaman berpagar"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Халаалт adalah kata yang menentukan kenyamanan hidupmu di Ulaanbaatar.** Sebagian besar apartemen kota tersambung ke pemanas terpusat yang dinyalakan sekitar 15 September dan dimatikan sekitar 15 Mei — **tanpa pengatur suhu di dalam rumah**. Kalau kamu menyewa, tanyakan *халаалттай юу?* Apartemen tanpa pemanas terpusat di Mongolia bukan pilihan gaya hidup melainkan risiko."
+    },
+    {
+     "type": "kotak",
+     "title": "Дүүрэг dan хороо: cara alamat bekerja di Ulaanbaatar",
+     "items": [
+      "Ulaanbaatar dibagi menjadi *дүүрэг* (distrik) lalu *хороо* (subdistrik), lalu nomor gedung dan pintu.",
+      "Contoh alamat: *Сүхбаатар дүүрэг, 1-р хороо, 25-р байр, 34 тоот*.",
+      "⚠️ **Nama jalan hampir tidak dipakai dalam percakapan.** Orang memberi arah dengan patokan: nama gedung, halte, atau toko.",
+      "Kalau kamu memesan taksi atau mengirim paket, siapkan **patokan**, bukan alamat. Ini persis kebiasaan Indonesia yang memberi arah dengan \"belakang Indomaret, sebelum masjid\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Merangkai hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bacalah paragraf ini bersuara dua kali. Ia berisi tujuh kata kerja berturut-turut, dan cuma yang terakhir yang menandai waktu — inilah bunyi bahasa Mongolia yang sesungguhnya, dan begitu kamu bisa mengucapkannya tanpa tersendat, kamu sudah melewati batas terbesar di A1."
+    },
+    {
+     "type": "kotak",
+     "title": "Өнөөдрийн минь өдөр",
+     "items": [
+      "*Өглөө зургаан цаг хагаст босоод,* — Bangun setengah tujuh pagi, lalu",
+      "*нүүрээ угаагаад, цай уугаад,* — cuci muka, minum teh,",
+      "*хувцасаа өмсөөд, гэрээсээ гараад,* — pakai baju, keluar dari rumah,",
+      "*автобусанд сууж сургуульдаа очлоо.* — naik bus dan sampai di kampus."
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Arti"],
+     "rows": [
+      ["*Хоол идээд ном уншсан.*", "Makan lalu baca buku."],
+      ["*Гэртээ ирээд амарсан.*", "Pulang lalu istirahat."],
+      ["*Ажлаа дуусгаад гэртээ харина.*", "Selesaikan kerjaan lalu pulang."],
+      ["*Цай ууж ярилцъя.*", "Ayo ngobrol sambil minum teh."],
+      ["*Гүйж ирсэн.*", "Datang berlari."],
+      ["*Хэрэв цаг байвал уулзая.*", "Kalau ada waktu, kita bertemu."],
+      ["*Бороо орвол гарахгүй.*", "Kalau hujan, saya tidak keluar."],
+      ["*Ирмэгц надад залгаарай.*", "Begitu sampai, telepon saya ya."]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kegiatan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*босох*", "*BO-sokh*", "bangun", "*унтах*", "*UN-takh*", "tidur"],
+      ["*угаах*", "*u-GAAKH*", "mencuci", "*өмсөх*", "*ÖM-sökh*", "memakai baju"],
+      ["*хувцаслах*", "*KHUV-tsas-lakh*", "berpakaian", "*тайлах*", "*TAI-lakh*", "melepas"],
+      ["*гарах*", "*GA-rakh*", "keluar", "*орох*", "*O-rokh*", "masuk"],
+      ["*цэвэрлэх*", "*TSE-ver-lekh*", "membersihkan", "*хоол хийх*", "*khool KHIIKH*", "memasak"],
+      ["*дуусгах*", "*DUUS-gakh*", "menyelesaikan", "*эхлэх*", "*EKH-lekh*", "memulai"],
+      ["*ярилцах*", "*ya-RIL-tsakh*", "mengobrol", "*амрах*", "*AM-rakh*", "istirahat"],
+      ["*гүйх*", "*güikh*", "berlari", "*алхах*", "*AL-khakh*", "berjalan"],
+      ["*шийдэх*", "*SHII-dekh*", "memutuskan", "*яарах*", "*YAA-rakh*", "buru-buru"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan pasangan **эхлэх / дуусах** (mulai / selesai) dan **дуусгах** (menyelesaikan). Ekor **-га / -гэ** mengubah kata kerja \"terjadi sendiri\" menjadi \"membuat terjadi\": *дуусах* (selesai) → *дуусгах* (menyelesaikan); *босох* (bangun) → *босгох* (membangunkan); *сурах* (belajar) → *сургах* (mengajar). Pola ini persis seperti \"me-kan\" dalam bahasa Indonesia, dan ia sangat produktif."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "байр", "baca": "bair", "id": "apartemen" },
+  { "mn": "түрээс", "baca": "tü-REES", "id": "sewa" },
+  { "mn": "эзэн", "baca": "E-dzen", "id": "pemilik" },
+  { "mn": "гэрээ", "baca": "ge-REE", "id": "kontrak" },
+  { "mn": "хаяг", "baca": "KHA-yag", "id": "alamat" },
+  { "mn": "зар", "baca": "dzar", "id": "iklan" },
+  { "mn": "цахилгаан", "baca": "TSA-khil-gaan", "id": "listrik" },
+  { "mn": "халаалт", "baca": "kha-LAALT", "id": "⚠️ pemanas" },
+  { "mn": "тавилга", "baca": "TA-vil-ga", "id": "perabot" },
+  { "mn": "тусдаа", "baca": "TUS-daa", "id": "terpisah" },
+  { "mn": "угаах", "baca": "u-GAAKH", "id": "mencuci" },
+  { "mn": "өмсөх", "baca": "ÖM-sökh", "id": "memakai baju" },
+  { "mn": "цэвэрлэх", "baca": "TSE-ver-lekh", "id": "membersihkan" },
+  { "mn": "дуусгах", "baca": "DUUS-gakh", "id": "menyelesaikan" },
+  { "mn": "эхлэх", "baca": "EKH-lekh", "id": "memulai" },
+  { "mn": "ярилцах", "baca": "ya-RIL-tsakh", "id": "mengobrol" },
+  { "mn": "шийдэх", "baca": "SHII-dekh", "id": "memutuskan" },
+  { "mn": "яарах", "baca": "YAA-rakh", "id": "buru-buru" },
+  { "mn": "гүйх", "baca": "güikh", "id": "berlari" },
+  { "mn": "хувцас", "baca": "KHUV-tsas", "id": "pakaian" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Makan lalu pergi.",
+    "Pulang lalu istirahat.",
+    "Kalau ada waktu, kita bertemu.",
+    "Kalau hujan, saya tidak keluar.",
+    "Ayo ngobrol sambil minum teh.",
+    "Sewanya berapa?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor -аад, -ээд, -оод, atau -өөд.",
+   "items": [
+    "Хоол ид____ явсан.",
+    "Гэртээ ир____ амарсан.",
+    "Цай уу____ гарсан.",
+    "Зар үз____ залгасан.",
+    "Бос____ нүүрээ угаасан.",
+    "Ном өг____ явсан."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk bersyarat dengan -вал atau -бэл.",
+   "items": [
+    "явах",
+    "ирэх",
+    "байх",
+    "авах",
+    "үзэх",
+    "өгөх"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "явсан / идээд / хоол",
+    "амарсан / ирээд / гэртээ",
+    "уулзая / байвал / цаг",
+    "гарахгүй / орвол / бороо",
+    "вэ / хэд / түрээс"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Хоол идээд явсан. — Гэртээ ирээд амарсан. — Хэрэв цаг байвал уулзая. — Бороо орвол гарахгүй. — Цай ууж ярилцъя. — Түрээс хэд вэ?",
+  "1": "ээд — ээд — гаад — ээд — оод — өөд",
+  "2": "явбал — ирвэл — байвал — авбал — үзвэл — өгвөл",
+  "3": "Хоол идээд явсан. — Гэртээ ирээд амарсан. — Цаг байвал уулзая. — Бороо орвол гарахгүй. — Түрээс хэд вэ?"
+ }
+}

@@ -1,0 +1,307 @@
+{
+ "title": "Buku atau buku itu?",
+ "title_target": "Ном уу, номыг уу?",
+ "goal": "Menguasai ekor objek *-ыг / -ийг* — satu-satunya tempat bahasa Mongolia menandai perbedaan yang bahasa Inggris tandai dengan *a* dan *the*.",
+ "bekal": [
+  "memberi ekor objek hanya saat memang perlu, dan tahu kapan tidak perlu",
+  "memakai *-ыг / -ийг / -г* dengan bentuk yang benar",
+  "menyusun kalimat dengan dua objek sekaligus tanpa tersesat"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Номын санд",
+   "intro": "Budi mencari sebuah buku di perpustakaan kampus. Petugas perpustakaan membantunya.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Би|Bi] [ном|nom] [хайж|khaij] [байна|BAI-n].",
+     "id": "Selamat siang. Saya sedang mencari buku.",
+     "literal": "baik ada -kah. saya buku cari-sambil ada."
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Ямар|YA-mar] [ном|nom] [бэ|be]? [Нэр|Ner] [нь|n'] [юу|yuu] [вэ|ve]?",
+     "id": "Buku apa? Judulnya apa?",
+     "literal": "seperti-apa buku -kah? nama -nya apa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "\"[Монголын|MON-go-liin] [нууц|nuuts] [товчоо|tov-CHOO]\" [гэдэг|GE-deg] [номыг|NO-miig] [хайж|khaij] [байна|BAI-n].",
+     "id": "Saya mencari buku yang berjudul \"Sejarah Rahasia Bangsa Mongol\".",
+     "literal": "Mongolia-punya rahasia ringkasan disebut buku-objek cari-sambil ada."
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Аан|Aan], [тэр|ter] [номыг|NO-miig] [мэднэ|MED-ne]. [Хоёрдугаар|kho-YOR-du-gaar] [давхарт|DAV-khart] [байгаа|bai-GAA].",
+     "id": "Oh, buku itu saya tahu. Ada di lantai dua.",
+     "literal": "oh, itu buku-objek tahu. kedua lantai-di ada-yang."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Түүнийг|TÜÜ-niig] [гэртээ|GER-tee] [авч|avch] [явж|yavj] [болох|BO-lokh] [уу|uu]?",
+     "id": "Boleh saya bawa pulang?",
+     "literal": "itu-objek rumah-ke-sendiri ambil-sambil pergi-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Болно|BOL-no]. [Гэхдээ|GEKH-dee] [оюутны|o-YUUT-nii] [үнэмлэхээ|Ü-nem-le-khee] [үзүүлнэ|ü-DZÜÜL-ne] [үү|üü].",
+     "id": "Boleh. Tapi tolong perlihatkan kartu mahasiswa Anda.",
+     "literal": "boleh. tetapi mahasiswa-punya kartu-sendiri-objek perlihatkan -kah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Энэ|E-ne] [байна|BAI-n]. [Хэдэн|KHE-den] [хоног|kho-NOG] [авч|avch] [болох|BO-lokh] [вэ|ve]?",
+     "id": "Ini dia. Boleh pinjam berapa hari?",
+     "literal": "ini ada. berapa hari ambil-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Хоёр|Kho-YOR] [долоо|do-LOO] [хоног|kho-NOG]. [Хугацаа|khu-ga-TSAA] [хэтэрвэл|khe-TER-vel] [торгууль|tor-GUUL'] [төлнө|TÖL-nö].",
+     "id": "Dua minggu. Kalau lewat batas waktu, ada denda.",
+     "literal": "dua tujuh hari. waktu kalau-lewat denda bayar."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo]. [Бас|Bas] [толь|tol'] [бичиг|BI-chig] [байгаа|bai-GAA] [юу|yuu]?",
+     "id": "Saya mengerti. Ada kamus juga?",
+     "literal": "mengerti-sudah. juga cermin tulisan ada-yang -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Байгаа|Bai-GAA], [гэхдээ|GEKH-dee] [толь|tol'] [бичгийг|BICH-giig] [гаргаж|GAR-gaj] [болохгүй|BO-lokh-güi].",
+     "id": "Ada, tapi kamus tidak boleh dibawa keluar.",
+     "literal": "ada-yang, tetapi cermin tulisan-objek keluarkan-sambil boleh-tidak."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Зүгээр|DZÜ-geer], [энд|end] [уншина|UN-shi-na]. [Ширээ|Shi-REE] [хаана|KHAA-na] [байна|BAI-n] [вэ|ve]?",
+     "id": "Tidak apa-apa, saya baca di sini. Mejanya di mana?",
+     "literal": "tidak-apa, di-sini baca. meja di-mana ada -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Цонхны|TSONKH-nii] [дэргэд|DER-ged]. [Тэр|Ter] [ширээг|shi-REEG] [ашиглаарай|a-SHIG-laa-rai].",
+     "id": "Di dekat jendela. Pakai meja itu saja.",
+     "literal": "jendela-punya sebelah. itu meja-objek pakailah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA]. [Та|Ta] [надад|NA-dad] [маш|mash] [их|ikh] [тусаллаа|TU-sal-laa].",
+     "id": "Terima kasih banyak. Anda sangat membantu saya.",
+     "literal": "besar terima-kasih. Anda saya-kepada sangat besar bantu-sudah."
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Зүгээр|DZÜ-geer]. [Асуулт|A-suult] [байвал|BAI-val] [асуугаарай|a-SUU-gaa-rai].",
+     "id": "Sama-sama. Kalau ada pertanyaan, tanya saja.",
+     "literal": "tidak-apa. pertanyaan kalau-ada tanyalah."
+    }
+   ],
+   "notes": [
+    "⚠️ **Inilah inti unit ini: bandingkan baris pertama dan baris ketiga.** *Би **ном** хайж байна* = \"saya mencari buku\" (buku apa saja, belum tentu ada di kepala saya). *Би **номыг** хайж байна* = \"saya mencari buku **itu**\" (buku tertentu yang sudah kita bicarakan). Ekor objek adalah cara bahasa Mongolia berkata \"the\".",
+    "**Түүнийг = \"itu\" dalam bentuk objek.** Kata ganti punya bentuk objeknya sendiri: *би* → *намайг*, *чи* → *чамайг*, *та* → *таныг*, *тэр* → *түүнийг*. Bentuk-bentuk ini tidak beraturan dan wajib dihafal karena terlalu sering dipakai.",
+    "**Толь бичиг harfiahnya \"tulisan cermin\" dan berarti kamus.** Bahasa Mongolia banyak memakai gambaran semacam ini: *гар утас* (telepon tangan) untuk ponsel, *галт тэрэг* (kereta api berapi) untuk kereta, *нисдэг тэрэг* (kereta terbang) untuk helikopter. Kalau kamu menemui kata majemuk yang aneh, terjemahkan bagian-bagiannya — artinya biasanya langsung jelas.",
+    "**Байвал dan хэтэрвэл berekor -вал / -вэл yang berarti \"kalau\".** *Асуулт **байвал*** = \"kalau ada pertanyaan\". Ekor ini menempel di kata kerja dan sangat sering dipakai; ia digarap lebih penuh di A2, tetapi kenali bentuknya sekarang.",
+    "⚠️ **Perhatikan urutan pada baris terakhir dialog: *Та надад маш их тусаллаа*.** Penerima (*надад*, kepada saya) berdiri **sebelum** kata kerja, seperti semua yang lain. Bahasa Mongolia tidak pernah menaruh apa pun sesudah kata kerja."
+   ],
+   "grammars": [
+    {
+     "title": "Kapan objek memakai ekor, kapan tidak",
+     "body": [
+      "Ini satu-satunya bagian tata bahasa Mongolia yang benar-benar menuntut keputusan setiap kali kamu berbicara. Untungnya aturannya bisa diringkas menjadi satu pertanyaan: **apakah lawan bicaraku tahu benda mana yang kumaksud?**"
+     ],
+     "table": {
+      "head": ["Pakai ekor kalau…", "Contoh", "Arti"],
+      "rows": [
+       ["Bendanya **tertentu**, sudah disebut sebelumnya", "*Номыг уншлаа.*", "Saya baca buku itu."],
+       ["Bendanya punya **kata tunjuk** энэ/тэр", "*Энэ номыг ав.*", "Ambil buku ini."],
+       ["Bendanya **milik seseorang**", "*Миний номыг уншсан.*", "Dia baca buku saya."],
+       ["Bendanya adalah **orang atau nama**", "*Болдыг дуудаарай.*", "Panggil Bold."],
+       ["Objeknya **jauh** dari kata kerjanya", "*Номыг би өчигдөр уншсан.*", "Buku itu saya baca kemarin."]
+      ]
+     },
+     "after": [
+      "**Dan jangan pakai ekor kalau bendanya tak tentu, umum, atau menyatu dengan kata kerjanya.** *Би ном уншина* (saya membaca buku — kegiatan membaca); *би хоол иднэ* (saya makan — kegiatan makan); *би монгол хэл сурна* (saya belajar bahasa Mongolia).",
+      "⚠️ **Kesalahan paling sering penutur Indonesia adalah kelebihan ekor**, karena dalam bahasa Indonesia tidak ada penanda seperti ini sama sekali sehingga rasanya \"lebih aman kalau dipasang\". Kebalikannya yang benar: **kalau ragu, jangan pasang.** Objek tanpa ekor terdengar netral; objek berekor yang salah tempat terdengar seolah kamu menunjuk sesuatu yang lawan bicaramu tidak tahu."
+     ]
+    },
+    {
+     "title": "Bentuk ekor objek",
+     "body": [
+      "Tiga bentuk, dipilih berdasarkan huruf terakhir kata dan kubu vokalnya — pola yang sama persis dengan ekor kepemilikan di unit 2."
+     ],
+     "table": {
+      "head": ["Kata berakhir dengan", "Ekor", "Contoh", "Arti"],
+      "rows": [
+       ["huruf mati, kubu belakang", "**-ыг**", "*ном* → *ном**ыг***", "buku itu"],
+       ["huruf mati, kubu depan", "**-ийг**", "*гэр* → *гэр**ийг***", "rumah itu"],
+       ["vokal panjang atau diftong", "**-г**", "*ширээ* → *ширээ**г***", "meja itu"],
+       ["*-ь* atau *-и*", "**-ийг**", "*морь* → *мор**ийг***", "kuda itu"],
+       ["*-н*", "**-ыг / -ийг**", "*хүн* → *хүн**ийг***", "orang itu"]
+      ]
+     },
+     "after": [
+      "Kata ganti punya bentuk sendiri yang wajib dihafal: *намайг* (saya), *чамайг* (kamu), *таныг* (Anda), *түүнийг* (dia/itu), *биднийг* (kami), *тэднийг* (mereka), *энийг* (ini), *тэрийг* (itu).",
+      "**Satu latihan yang sangat membantu:** ambil sepuluh kalimat dari dialog unit 6, lalu tanyakan pada tiap objek — \"apakah lawan bicara tahu benda mana yang kumaksud?\" Kalau ya, pasang ekor. Kalau tidak, biarkan telanjang. Lakukan sekali dan aturannya melekat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata ganti dalam bentuk objek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Pelaku", "Objek", "Baca", "Contoh"],
+     "rows": [
+      ["*би*", "*намайг*", "*na-MAIG*", "*Тэр намайг дуудсан.* — Dia memanggil saya."],
+      ["*чи*", "*чамайг*", "*cha-MAIG*", "*Би чамайг хүлээнэ.* — Saya menunggumu."],
+      ["*та*", "*таныг*", "*TA-niig*", "*Бид таныг мэднэ.* — Kami kenal Anda."],
+      ["*тэр*", "*түүнийг*", "*TÜÜ-niig*", "*Би түүнийг харсан.* — Saya melihat dia."],
+      ["*бид*", "*биднийг*", "*BID-niig*", "*Тэр биднийг урьсан.* — Dia mengundang kami."],
+      ["*тэд*", "*тэднийг*", "*TED-niig*", "*Би тэднийг таньдаг.* — Saya kenal mereka."],
+      ["*энэ*", "*энийг*", "*E-niig*", "*Энийг ав.* — Ambil ini."],
+      ["*тэр*", "*тэрийг*", "*TE-riig*", "*Тэрийг өг.* — Berikan itu."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa *тэр* punya **dua** bentuk objek: *түүнийг* saat berarti \"dia\", dan *тэрийг* saat berarti \"itu\" (benda). Ini satu-satunya tempat bahasa Mongolia memisahkan orang dari benda, dan pemisahannya tidak wajib — orang sering memakai *түүнийг* untuk keduanya dalam percakapan santai."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja yang selalu butuh objek berekor",
+     "items": [
+      "*дуудах* (memanggil), *хүлээх* (menunggu), *таних* (mengenal orang), *урих* (mengundang), *харах* (melihat orang) — semuanya menyasar **orang tertentu**, jadi objeknya hampir selalu berekor.",
+      "Bandingkan: *хоол хийх* (memasak), *ном унших* (membaca), *хэл сурах* (belajar bahasa) — semuanya kegiatan umum, jadi objeknya hampir selalu telanjang.",
+      "⚠️ Ini bukan aturan tata bahasa melainkan akibat dari maknanya. Orang selalu tertentu; kegiatan umum tidak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dua objek dalam satu kalimat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata kerja seperti *өгөх* (memberi), *хэлэх* (mengatakan), dan *үзүүлэх* (memperlihatkan) butuh dua sasaran: barangnya dan orangnya. Bahasa Mongolia menandai keduanya dengan ekor yang berbeda, sehingga urutannya boleh bertukar tanpa mengubah arti."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Arti", "Catatan"],
+     "rows": [
+      ["*Би түүнд ном өгсөн.*", "Saya memberinya buku.", "Orang berekor **-д**, barang telanjang."],
+      ["*Би түүнд номыг өгсөн.*", "Saya memberinya buku itu.", "Buku tertentu → berekor **-ыг**."],
+      ["*Тэр надад үнэнийг хэлсэн.*", "Dia mengatakan yang sebenarnya kepada saya.", "\"Kebenaran\" itu tertentu."],
+      ["*Багш оюутнуудад хичээл заана.*", "Guru mengajar pelajaran kepada para mahasiswa.", "Keduanya jelas dari ekornya."],
+      ["*Номыг би түүнд өгсөн.*", "Buku itu saya berikan kepadanya.", "Objek pindah ke depan untuk menekankan."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir memperlihatkan keuntungan besar dari sistem ekor: **karena peran tiap kata sudah ditandai, urutannya bisa diubah untuk menekankan.** Bahasa Indonesia harus memakai bentuk pasif untuk hal yang sama (\"Buku itu saya berikan…\"). Bahasa Mongolia cukup memindahkan katanya ke depan."
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang berpasangan dengan objek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Arti", "Contoh"],
+     "rows": [
+      ["*харах*", "*KHA-rakh*", "melihat", "*Би түүнийг харсан.*"],
+      ["*хайх*", "*KHAIKH*", "mencari", "*Ном хайж байна.*"],
+      ["*олох*", "*O-lokh*", "menemukan", "*Номыг оллоо.*"],
+      ["*хүлээх*", "*khü-LEEKH*", "menunggu", "*Чамайг хүлээнэ.*"],
+      ["*дуудах*", "*DUU-dakh*", "memanggil", "*Багшийг дууд.*"],
+      ["*таних*", "*ta-NIKH*", "mengenal", "*Түүнийг танихгүй.*"],
+      ["*урих*", "*u-RIKH*", "mengundang", "*Найзаа урьсан.*"],
+      ["*туслах*", "*TUS-lakh*", "membantu", "*Надад тусалсан.*"],
+      ["*үзүүлэх*", "*ü-DZÜÜ-lekh*", "memperlihatkan", "*Зургаа үзүүл.*"],
+      ["*ашиглах*", "*a-SHIG-lakh*", "memakai", "*Ширээг ашигла.*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Туслах* (membantu) memakai ekor **-д**, bukan ekor objek — \"membantu **kepada** seseorang\". *Надад тусалсан*, bukan *намайг тусалсан*. Kata kerja semacam ini ada beberapa dan sebaiknya kamu hafalkan bersama ekornya, persis seperti kamu menghafal \"tergantung **pada**\" dan bukan \"tergantung dengan\" dalam bahasa Indonesia."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "хайх", "baca": "KHAIKH", "id": "mencari" },
+  { "mn": "олох", "baca": "O-lokh", "id": "menemukan" },
+  { "mn": "харах", "baca": "KHA-rakh", "id": "melihat" },
+  { "mn": "хүлээх", "baca": "khü-LEEKH", "id": "menunggu" },
+  { "mn": "дуудах", "baca": "DUU-dakh", "id": "memanggil" },
+  { "mn": "таних", "baca": "ta-NIKH", "id": "mengenal" },
+  { "mn": "урих", "baca": "u-RIKH", "id": "mengundang" },
+  { "mn": "туслах", "baca": "TUS-lakh", "id": "⚠️ membantu (+ -д)" },
+  { "mn": "ашиглах", "baca": "a-SHIG-lakh", "id": "memakai" },
+  { "mn": "хэлэх", "baca": "KHE-lekh", "id": "mengatakan" },
+  { "mn": "асуух", "baca": "a-SUUKH", "id": "bertanya" },
+  { "mn": "намайг", "baca": "na-MAIG", "id": "saya (objek)" },
+  { "mn": "чамайг", "baca": "cha-MAIG", "id": "kamu (objek)" },
+  { "mn": "таныг", "baca": "TA-niig", "id": "Anda (objek)" },
+  { "mn": "түүнийг", "baca": "TÜÜ-niig", "id": "dia, itu (objek)" },
+  { "mn": "номын сан", "baca": "NO-miin san", "id": "perpustakaan" },
+  { "mn": "толь бичиг", "baca": "tol' BI-chig", "id": "kamus" },
+  { "mn": "давхар", "baca": "DAV-khar", "id": "lantai (tingkat)" },
+  { "mn": "асуулт", "baca": "A-suult", "id": "pertanyaan" },
+  { "mn": "ямар", "baca": "YA-mar", "id": "seperti apa, yang mana" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya sedang mencari buku.",
+    "Saya sedang mencari buku itu.",
+    "Ambil buku ini.",
+    "Saya menunggumu.",
+    "Dia memanggil saya.",
+    "Panggil guru itu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor objek -ыг, -ийг, atau -г. Kalau tidak perlu ekor, tulis tanda hubung.",
+   "items": [
+    "Би ном____ уншина. (buku apa saja)",
+    "Би энэ ном____ уншина.",
+    "Тэр ширээ____ ашигласан.",
+    "Би хоол____ иднэ. (makan biasa)",
+    "Багш оюутан____ дуудсан.",
+    "Бид гэр____ харсан."
+   ]
+  },
+  {
+   "prompt": "Ubah kata ganti menjadi bentuk objek.",
+   "items": [
+    "би",
+    "чи",
+    "та",
+    "тэр",
+    "бид",
+    "тэд"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "хүлээнэ / чамайг / би",
+    "уншина / номыг / энэ / би",
+    "өгсөн / түүнд / ном / би",
+    "тусалсан / надад / та",
+    "байна / хайж / ном / би"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би ном хайж байна. — Би номыг хайж байна. — Энэ номыг ав. — Би чамайг хүлээнэ. — Тэр намайг дуудсан. — Тэр багшийг дууд.",
+  "1": "- — ыг — г — - — ыг — ийг",
+  "2": "намайг — чамайг — таныг — түүнийг — биднийг — тэднийг",
+  "3": "Би чамайг хүлээнэ. — Би энэ номыг уншина. — Би түүнд ном өгсөн. — Та надад тусалсан. — Би ном хайж байна."
+ }
+}

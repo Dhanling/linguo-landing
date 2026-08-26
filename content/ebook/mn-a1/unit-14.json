@@ -1,0 +1,644 @@
+{
+ "title": "Naik apa ke sana?",
+ "title_target": "Тийшээ юугаар явах вэ?",
+ "goal": "Bepergian di kota dan ke luar kota — dan menguasai ekor arah *-руу / -лүү* yang berbeda dari ekor tempat *-д*.",
+ "bekal": [
+  "menyebut alat angkut dan bertanya cara sampai ke suatu tempat",
+  "membedakan *-руу* (menuju) dari *-д* (di, ke, pada)",
+  "membeli tiket, naik taksi, dan bertanya berapa lama perjalanannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Хархорин руу",
+   "intro": "Budi ingin pergi ke Kharkhorin, bekas ibu kota kekaisaran Mongol. Ia bertanya di loket terminal bus.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Хархорин|khar-KHO-rin] [руу|ruu] [явах|ya-VAKH] [автобус|av-TO-bus] [байна|BAI-n] [уу|uu]?",
+     "id": "Selamat siang. Ada bus yang pergi ke Kharkhorin?",
+     "literal": "baik ada -kah. Kharkhorin ke pergi bus ada -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Байна|BAI-n]. [Өдөрт|Ö-dört] [хоёр|kho-YOR] [удаа|u-DAA]: [өглөө|ÖG-löö] [найман|NAI-man] [цагт|tsagt], [үдээс|Ü-dees] [хойш|khoish] [хоёр|kho-YOR] [цагт|tsagt].",
+     "id": "Ada. Dua kali sehari: pagi jam delapan, siang jam dua.",
+     "literal": "hari-pada dua kali: pagi delapan jam-pada, tengah-hari-dari sesudah dua jam-pada."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэдэн|KHE-den] [цаг|tsag] [явах|ya-VAKH] [вэ|ve]?",
+     "id": "Berapa jam perjalanannya?",
+     "literal": "berapa jam pergi -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Зургаа|Dzur-GAA], [долоон|do-LOON] [цаг|tsag]. [Зам|Dzam] [ямар|YA-mar] [байхаас|BAI-khaas] [шалтгаална|SHALT-gaal-na].",
+     "id": "Enam, tujuh jam. Tergantung jalannya bagaimana.",
+     "literal": "enam, tujuh jam. jalan seperti-apa ada-dari bergantung."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тасалбар|TA-sal-bar] [хэд|khed] [вэ|ve]?",
+     "id": "Tiketnya berapa?",
+     "literal": "tiket berapa -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Хорин|KHO-rin] [таван|TA-van] [мянга|MYAN-ga]. [Хэдэн|KHE-den] [хүн|khün] [бэ|be]?",
+     "id": "Dua puluh lima ribu. Berapa orang?",
+     "literal": "dua-puluh lima ribu. berapa orang -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хоёр|Kho-YOR] [хүн|khün]. [Маргааш|Mar-GAASH] [өглөөний|ÖG-löö-nii] [автобусанд|av-TO-bu-sand] [суумаар|SUU-maar] [байна|BAI-n].",
+     "id": "Dua orang. Kami ingin naik bus pagi besok.",
+     "literal": "dua orang. besok pagi-punya bus-pada duduk-ingin ada."
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Болно|BOL-no]. [Долоон|Do-LOON] [цаг|tsag] [хагаст|kha-GAST] [ирээрэй|i-REE-rei]. [Автобус|Av-TO-bus] [хүлээдэггүй|khü-LEE-deg-güi] [шүү|shüü].",
+     "id": "Bisa. Datanglah setengah delapan. Busnya tidak menunggu lho.",
+     "literal": "boleh. tujuh jam separuh-pada datanglah. bus tunggu-biasa-tidak lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo]. [Автобусны|av-TO-bus-nii] [буудал|BUU-dal] [хаана|KHAA-na] [байдаг|BAI-dag] [вэ|ve]?",
+     "id": "Saya mengerti. Terminal busnya di mana?",
+     "literal": "bus-punya halte di-mana ada-biasa -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Драгон|Dra-GON] [автобусны|av-TO-bus-nii] [буудал|BUU-dal]. [Төвөөс|TÖ-vöös] [таксигаар|TAK-si-gaar] [хорин|KHO-rin] [минут|mi-NUT].",
+     "id": "Terminal Dragon. Dari pusat kota naik taksi dua puluh menit.",
+     "literal": "Dragon bus-punya halte. pusat-dari taksi-dengan dua-puluh menit."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Таксигаар|TAK-si-gaar] [хэд|khed] [болох|BO-lokh] [вэ|ve]?",
+     "id": "Naik taksi berapa ongkosnya?",
+     "literal": "taksi-dengan berapa jadi -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Найм|Naim], [есөн|YE-sön] [мянга|MYAN-ga] [орчим|OR-chim]. [Аппаар|AP-paar] [дуудвал|DUUD-val] [хямд|khyamd].",
+     "id": "Sekitar delapan, sembilan ribu. Kalau panggil lewat aplikasi lebih murah.",
+     "literal": "delapan, sembilan ribu sekitar. aplikasi-dengan kalau-panggil murah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA]. [Буцах|BU-tsakh] [тасалбар|TA-sal-bar] [одоо|o-DOO] [авах|a-VAKH] [хэрэгтэй|KHE-reg-tei] [юу|yuu]?",
+     "id": "Terima kasih banyak. Tiket pulangnya perlu beli sekarang?",
+     "literal": "kembali tiket sekarang ambil perlu -kah?"
+    },
+    {
+     "speaker": "Ажилтан:",
+     "text": "[Авбал|AV-bal] [дээр|deer]. [Зун|Dzun] [хүн|khün] [их|ikh], [газар|GA-dzar] [дуусдаг|DUUS-dag].",
+     "id": "Lebih baik dibeli. Musim panas orangnya banyak, tempatnya habis.",
+     "literal": "kalau-ambil lebih-baik. musim-panas orang banyak, tempat habis-biasa."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тэгвэл|TEG-vel] [хоёр|kho-YOR] [талын|TA-liin] [тасалбар|TA-sal-bar] [авъя|AV-ya].",
+     "id": "Kalau begitu saya ambil tiket dua arah.",
+     "literal": "kalau-begitu dua sisi-punya tiket ambil-mari."
+    }
+   ],
+   "notes": [
+    "⚠️ **-руу / -лүү berarti \"menuju\" dan menekankan arah, sedangkan -д berarti \"di, ke, pada\" secara netral.** *Хархорин **руу** явна* = pergi menuju Kharkhorin (perjalanannya yang ditekankan); *Хархорин**д** очно* = sampai di Kharkhorin (tujuannya yang ditekankan). Untuk A1, keduanya sering bisa saling menggantikan — jangan biarkan ini menghambatmu berbicara.",
+    "**Bentuknya: -руу sesudah kata berkubu belakang, -рүү sesudah kata berkubu depan, -луу / -лүү sesudah kata berakhiran -р.** *Гэр **лүү*** (ke rumah), *хот **руу*** (ke kota), *дэлгүүр **лүү*** (ke toko).",
+    "**Юугаар вэ? = \"dengan apa?\"** Ini pertanyaan baku untuk alat angkut, dan jawabannya memakai ekor *-аар* yang sudah kamu kenal dari unit 10: *автобусаар*, *таксигаар*, *онгоцоор*, *явганаар*.",
+    "**Үдээс хойш = \"sesudah tengah hari\", үдээс өмнө = \"sebelum tengah hari\".** Ini cara Mongolia menyebut pagi dan sore dalam konteks jadwal, setara dengan \"pagi\" dan \"siang\" pada jadwal kereta di Indonesia.",
+    "⚠️ **Автобус хүлээдэггүй adalah peringatan yang harus kamu percayai.** Bus antarkota di Mongolia berangkat tepat waktu dan tidak menunggu siapa pun, berbeda dari kebanyakan angkutan di Asia Tenggara. Datanglah tiga puluh menit lebih awal."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor arah: -руу, -рүү, -луу, -лүү",
+     "body": [
+      "Ekor ini muda dalam bahasa Mongolia — ia berasal dari kata *уруу* (menurun, ke arah) yang menyatu ke belakang kata benda. Karena itu ia terasa lebih \"berarah\" daripada ekor *-д* yang tua dan netral."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Kubu / akhiran",
+       "Bentuk",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*хот*",
+        "belakang",
+        "*хот **руу***",
+        "ke kota"
+       ],
+       [
+        "*гэр*",
+        "berakhir *-р*",
+        "*гэр **лүү***",
+        "ke rumah"
+       ],
+       [
+        "*дэлгүүр*",
+        "berakhir *-р*, depan",
+        "*дэлгүүр **лүү***",
+        "ke toko"
+       ],
+       [
+        "*зах*",
+        "belakang",
+        "*зах **руу***",
+        "ke pasar"
+       ],
+       [
+        "*Улаанбаатар*",
+        "berakhir *-р*",
+        "*Улаанбаатар **луу***",
+        "ke Ulaanbaatar"
+       ],
+       [
+        "*тэр*",
+        "berakhir *-р*",
+        "*тийш**ээ***",
+        "ke sana"
+       ],
+       [
+        "*би*",
+        "kata ganti",
+        "*над **руу***",
+        "ke arah saya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Ekor ini juga dipakai untuk **menelepon dan mengirim**: *над **руу** залга* (telepon saya), *чам **руу** явуулсан* (saya kirim ke kamu). Di zaman ponsel, inilah pemakaian yang paling sering kamu dengar dari anak muda Mongolia.",
+      "**Untuk arah balik, pakai ekor *-аас* yang sudah kamu kenal:** *хотоос* (dari kota), *гэрээс* (dari rumah), *Улаанбаатараас* (dari Ulaanbaatar). Pasangan *-аас* dan *-руу* mengurus seluruh gagasan \"dari … ke …\"."
+     ]
+    },
+    {
+     "title": "Bertanya dan menjawab tentang perjalanan",
+     "body": [
+      "Empat pertanyaan ini mengurus hampir semua kebutuhanmu di terminal, bandara, dan stasiun. Hafalkan sebagai potongan utuh, bukan sebagai susunan kata."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*… руу яаж явах вэ?*",
+        "*… ruu yaaj ya-VAKH ve*",
+        "Ke … bagaimana caranya?"
+       ],
+       [
+        "*Хэдэн цаг явах вэ?*",
+        "*KHE-den tsag ya-VAKH ve*",
+        "Berapa jam perjalanannya?"
+       ],
+       [
+        "*Тасалбар хэд вэ?*",
+        "*TA-sal-bar khed ve*",
+        "Tiketnya berapa?"
+       ],
+       [
+        "*Хэдэн цагт хөдлөх вэ?*",
+        "*KHE-den tsagt KHÖD-lökh ve*",
+        "Berangkat jam berapa?"
+       ],
+       [
+        "*Хэзээ хүрэх вэ?*",
+        "*khe-DZEE KHÜ-rekh ve*",
+        "Sampainya kapan?"
+       ],
+       [
+        "*Энэ автобус … руу явах уу?*",
+        "*E-ne av-TO-bus … ruu ya-VAKH uu*",
+        "Bus ini ke … ?"
+       ],
+       [
+        "*Хаана буух вэ?*",
+        "*KHAA-na BUUKH ve*",
+        "Turun di mana?"
+       ],
+       [
+        "*Энд зогсооно уу.*",
+        "*end DZOG-soo-no uu*",
+        "Tolong berhenti di sini."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Dua kata terakhir sangat berguna di taksi: ***Энд зогсооно уу*** untuk minta berhenti, dan ***Тоолуур ажиллуулна уу*** untuk minta argonya dinyalakan. Taksi resmi di Ulaanbaatar tidak banyak; sebagian besar \"taksi\" adalah mobil pribadi yang berhenti kalau kamu mengulurkan tangan, dan ongkosnya dihitung per kilometer dengan tarif yang disepakati bersama.",
+      "**Kalimat *Яаж явах вэ?* (bagaimana caranya pergi) adalah salah satu kalimat paling berguna dalam bahasa apa pun.** Ia bekerja untuk jarak lima ratus meter maupun lima ratus kilometer, dan jawabannya hampir selalu bisa kamu pahami dari satu kata: nama alat angkutnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Alat angkut",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Монгол",
+      "Baca",
+      "Indonesia",
+      "Dengan itu"
+     ],
+     "rows": [
+      [
+       "*автобус*",
+       "*av-TO-bus*",
+       "bus",
+       "*автобусаар*"
+      ],
+      [
+       "*такси*",
+       "*TAK-si*",
+       "taksi",
+       "*таксигаар*"
+      ],
+      [
+       "*машин*",
+       "*ma-SHIN*",
+       "mobil",
+       "*машинаар*"
+      ],
+      [
+       "*галт тэрэг*",
+       "*galt TE-reg*",
+       "kereta api",
+       "*галт тэргээр*"
+      ],
+      [
+       "*онгоц*",
+       "*on-GOTS*",
+       "pesawat",
+       "*онгоцоор*"
+      ],
+      [
+       "*дугуй*",
+       "*du-GUI*",
+       "sepeda",
+       "*дугуйгаар*"
+      ],
+      [
+       "*мотоцикл*",
+       "*mo-to-TSIKL*",
+       "motor",
+       "*мотоциклоор*"
+      ],
+      [
+       "*морь*",
+       "*mor'*",
+       "kuda",
+       "*мориор*"
+      ],
+      [
+       "*тэмээ*",
+       "*te-MEE*",
+       "unta",
+       "*тэмээгээр*"
+      ],
+      [
+       "*явган*",
+       "*YAV-gan*",
+       "jalan kaki",
+       "*явганаар*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Галт тэрэг* harfiahnya \"kereta berapi\" dan *онгоц* aslinya berarti \"perahu\" — bahasa Mongolia memakai kata perahu untuk pesawat karena keduanya adalah kendaraan yang mengambang. Untuk sebuah negara yang tidak berbatasan dengan laut, ini pilihan kata yang menarik: kata perahunya lebih tua daripada perkenalan mereka dengan laut."
+    },
+    {
+     "type": "kotak",
+     "title": "Kuda bukan olahraga, melainkan alat angkut",
+     "items": [
+      "Mongolia adalah salah satu dari sedikit tempat di dunia tempat **kuda masih menjadi kendaraan sehari-hari**, bukan hobi. Di padang rumput, anak-anak naik kuda sebelum bisa naik sepeda.",
+      "*Морь унах* = naik kuda. ⚠️ *Унах* berarti \"naik\" **dan** \"jatuh\" — konteks yang membedakan, dan orang Mongolia menganggap tumpang tindih ini lucu.",
+      "*Морьтой хүн* = orang berkuda. *Мориной уралдаан* = pacuan kuda, salah satu dari tiga cabang *Наадам*.",
+      "Ada lebih dari **tiga ratus kata** dalam bahasa Mongolia untuk menggambarkan kuda menurut warna, umur, dan cara berjalannya. Kamu tidak perlu menghafalnya; cukup tahu bahwa mereka ada, supaya kamu paham betapa dalam kuda tertanam dalam bahasa ini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di jalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Монгол",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "*тасалбар*",
+       "*TA-sal-bar*",
+       "tiket"
+      ],
+      [
+       "*буудал*",
+       "*BUU-dal*",
+       "halte, terminal, stasiun"
+      ],
+      [
+       "*нисэх онгоцны буудал*",
+       "*NI-sekh on-GOTS-nii BUU-dal*",
+       "bandara"
+      ],
+      [
+       "*хөдлөх*",
+       "*KHÖD-lökh*",
+       "berangkat"
+      ],
+      [
+       "*хүрэх*",
+       "*KHÜ-rekh*",
+       "sampai, tiba"
+      ],
+      [
+       "*буух*",
+       "*BUUKH*",
+       "turun"
+      ],
+      [
+       "*суух*",
+       "*SUUKH*",
+       "naik, duduk"
+      ],
+      [
+       "*зогсох*",
+       "*DZOG-sokh*",
+       "berhenti"
+      ],
+      [
+       "*хойш*",
+       "*khoish*",
+       "ke belakang; sesudah"
+      ],
+      [
+       "*урагш*",
+       "*u-RAGSH*",
+       "ke depan"
+      ],
+      [
+       "*дараагийн*",
+       "*da-RAA-giin*",
+       "berikutnya"
+      ],
+      [
+       "*сүүлчийн*",
+       "*SÜÜL-chiin*",
+       "terakhir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa **суух berarti \"duduk\" dan \"naik kendaraan\" sekaligus** — masuk akal, karena naik bus memang berarti duduk di dalamnya. Bahasa Indonesia memakai \"naik\", yang justru aneh kalau dipikirkan. *Автобусанд суух* = naik bus; *автобуснаас буух* = turun dari bus."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Энэ автобус зах руу явах уу?*",
+       "Bus ini ke pasar?"
+      ],
+      [
+       "*Дараагийн буудалд буунa.*",
+       "Saya turun di halte berikutnya."
+      ],
+      [
+       "*Хэдэн буудал вэ?*",
+       "Berapa halte lagi?"
+      ],
+      [
+       "*Хөдлөх цаг болсон уу?*",
+       "Sudah waktunya berangkat?"
+      ],
+      [
+       "*Онгоц хэдэн цагт хөдлөх вэ?*",
+       "Pesawat berangkat jam berapa?"
+      ],
+      [
+       "*Би замаа андуурсан.*",
+       "Saya salah jalan."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tempat yang layak kamu tuju",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Baca",
+      "Apa yang ada di sana"
+     ],
+     "rows": [
+      [
+       "*Хархорин*",
+       "*khar-KHO-rin*",
+       "Bekas ibu kota Kekaisaran Mongol, didirikan 1220. Vihara Erdene Zuu berdiri di atas reruntuhannya."
+      ],
+      [
+       "*Тэрэлж*",
+       "*TE-relj*",
+       "Taman nasional dua jam dari Ulaanbaatar. Tempat paling mudah untuk menginap di ger."
+      ],
+      [
+       "*Говь*",
+       "*gov'*",
+       "Gurun Gobi. ⚠️ *Говь* berarti \"padang berbatu\", bukan padang pasir — sebagian besar Gobi memang berbatu."
+      ],
+      [
+       "*Хөвсгөл нуур*",
+       "*KHÖVS-göl nuur*",
+       "Danau air tawar raksasa di utara, dekat Siberia. Airnya bisa langsung diminum."
+      ],
+      [
+       "*Баян-Өлгий*",
+       "*ba-YAN-ÖL-gii*",
+       "Provinsi Kazakh di barat. Tempat berburu dengan elang emas."
+      ],
+      [
+       "*Их Тэнгэрийн*",
+       "*ikh TEN-ge-riin*",
+       "Patung berkuda Jenghis Khan setinggi 40 meter, 54 km dari ibu kota."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal praktis yang perlu kamu tahu sebelum merencanakan perjalanan: **jarak di Mongolia diukur dengan waktu, bukan kilometer**, karena sebagian besar jalannya tidak beraspal. \"Empat ratus kilometer\" bisa berarti lima jam di jalan beraspal atau dua belas jam di jalan tanah. Kalau kamu bertanya *хэр хол вэ?* (seberapa jauh), jawabannya hampir selalu dalam jam."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "mn": "автобус",
+   "baca": "av-TO-bus",
+   "id": "bus"
+  },
+  {
+   "mn": "галт тэрэг",
+   "baca": "galt TE-reg",
+   "id": "kereta api"
+  },
+  {
+   "mn": "онгоц",
+   "baca": "on-GOTS",
+   "id": "pesawat"
+  },
+  {
+   "mn": "морь",
+   "baca": "mor'",
+   "id": "kuda"
+  },
+  {
+   "mn": "явган",
+   "baca": "YAV-gan",
+   "id": "jalan kaki"
+  },
+  {
+   "mn": "тасалбар",
+   "baca": "TA-sal-bar",
+   "id": "tiket"
+  },
+  {
+   "mn": "буудал",
+   "baca": "BUU-dal",
+   "id": "halte, terminal"
+  },
+  {
+   "mn": "хөдлөх",
+   "baca": "KHÖD-lökh",
+   "id": "berangkat"
+  },
+  {
+   "mn": "хүрэх",
+   "baca": "KHÜ-rekh",
+   "id": "sampai, tiba"
+  },
+  {
+   "mn": "буух",
+   "baca": "BUUKH",
+   "id": "turun"
+  },
+  {
+   "mn": "зогсох",
+   "baca": "DZOG-sokh",
+   "id": "berhenti"
+  },
+  {
+   "mn": "унах",
+   "baca": "U-nakh",
+   "id": "naik (kuda)"
+  },
+  {
+   "mn": "яаж",
+   "baca": "yaaj",
+   "id": "bagaimana"
+  },
+  {
+   "mn": "удаа",
+   "baca": "u-DAA",
+   "id": "kali"
+  },
+  {
+   "mn": "дараагийн",
+   "baca": "da-RAA-giin",
+   "id": "berikutnya"
+  },
+  {
+   "mn": "сүүлчийн",
+   "baca": "SÜÜL-chiin",
+   "id": "terakhir"
+  },
+  {
+   "mn": "буцах",
+   "baca": "BU-tsakh",
+   "id": "kembali, pulang"
+  },
+  {
+   "mn": "залгах",
+   "baca": "DZAL-gakh",
+   "id": "menelepon"
+  },
+  {
+   "mn": "андуурах",
+   "baca": "an-DUU-rakh",
+   "id": "keliru, salah"
+  },
+  {
+   "mn": "нуур",
+   "baca": "nuur",
+   "id": "danau"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya pergi ke kota.",
+    "Naik bus dua jam.",
+    "Tiketnya berapa?",
+    "Berangkat jam berapa?",
+    "Bus ini ke pasar?",
+    "Tolong berhenti di sini."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor arah -руу, -рүү, -луу, atau -лүү.",
+   "items": [
+    "Би хот____ явна.",
+    "Тэр гэр____ харина.",
+    "Бид зах____ явъя.",
+    "Дэлгүүр____ орьё.",
+    "Улаанбаатар____ нисэх онгоц.",
+    "Над____ залгаарай."
+   ]
+  },
+  {
+   "prompt": "Ubah alat angkut menjadi bentuk berekor -аар.",
+   "items": [
+    "автобус",
+    "такси",
+    "машин",
+    "онгоц",
+    "морь",
+    "явган"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "явна / хот / би / руу",
+    "вэ / хэд / тасалбар",
+    "вэ / хөдлөх / цагт / хэдэн",
+    "уу / зогсооно / энд",
+    "явна / автобусаар / цаг / хоёр"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би хот руу явна. — Автобусаар хоёр цаг явна. — Тасалбар хэд вэ? — Хэдэн цагт хөдлөх вэ? — Энэ автобус зах руу явах уу? — Энд зогсооно уу.",
+  "1": "руу — лүү — руу — лүү — луу — руу",
+  "2": "автобусаар — таксигаар — машинаар — онгоцоор — мориор — явганаар",
+  "3": "Би хот руу явна. — Тасалбар хэд вэ? — Хэдэн цагт хөдлөх вэ? — Энд зогсооно уу. — Автобусаар хоёр цаг явна."
+ }
+}

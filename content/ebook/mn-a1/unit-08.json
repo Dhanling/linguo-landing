@@ -1,0 +1,311 @@
+{
+ "title": "Jam berapa? Hari apa?",
+ "title_target": "Хэдэн цаг болж байна? Ямар гараг вэ?",
+ "goal": "Menyebut jam, hari, dan tanggal — sekaligus melihat kenapa nama hari bahasa Mongolia adalah tujuh benda langit.",
+ "bekal": [
+  "menyebut dan menanyakan jam, termasuk setengah dan lewat sekian menit",
+  "menyebut hari, tanggal, bulan, dan membuat janji",
+  "memakai ekor waktu *-д / -т* untuk mengatakan \"pada jam sekian\""
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Уулзалт товлох",
+   "intro": "Sarnai dan Budi mengatur waktu untuk pergi ke museum bersama. Keduanya sibuk, jadi butuh beberapa kali tawar-menawar.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Сарнай|Sar-NAI] [аа|aa], [бямбад|BYAM-bad] [хэдэн|KHE-den] [цагт|tsagt] [уулзах|UUL-dzakh] [вэ|ve]?",
+     "id": "Sarnai, Sabtu kita ketemu jam berapa?",
+     "literal": "Sarnai wahai, Sabtu-pada berapa jam-pada bertemu -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Өглөө|ÖG-löö] [аравт|A-ravt] [болох|BO-lokh] [уу|uu]?",
+     "id": "Pagi jam sepuluh bisa?",
+     "literal": "pagi sepuluh-pada boleh -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Арав|A-rav] [эрт|ert] [байна|BAI-n]. [Арван|A-rvan] [нэгэн|NE-gen] [цагт|tsagt] [болох|BO-lokh] [уу|uu]?",
+     "id": "Jam sepuluh kepagian. Jam sebelas bisa?",
+     "literal": "sepuluh pagi ada. sepuluh satu jam-pada boleh -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Болно|BOL-no]. [Музей|Mu-ZEY] [хэдэн|KHE-den] [цагт|tsagt] [нээдэг|NEE-deg] [вэ|ve]?",
+     "id": "Bisa. Museum bukanya jam berapa?",
+     "literal": "boleh. museum berapa jam-pada buka-biasa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Есөн|YE-sön] [цагаас|tsa-GAAS] [зургаан|dzur-GAAN] [цаг|tsag] [хүртэл|KHÜR-tel].",
+     "id": "Dari jam sembilan sampai jam enam.",
+     "literal": "sembilan jam-dari enam jam sampai."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сайн|Sain] [байна|BAI-n]. [Хаана|KHAA-na] [уулзах|UUL-dzakh] [вэ|ve]?",
+     "id": "Bagus. Ketemu di mana?",
+     "literal": "baik ada. di-mana bertemu -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Талбай|TAL-bai] [дээр|deer]. [Арван|A-rvan] [нэгэн|NE-gen] [цаг|tsag] [хорин|KHO-rin] [минутад|mi-NU-tad] [очно|OCH-no].",
+     "id": "Di lapangan. Saya sampai jam sebelas lewat dua puluh.",
+     "literal": "lapangan atas. sepuluh satu jam dua-puluh menit-pada sampai."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Яагаад|YAA-gaad] [хорин|KHO-rin] [минутад|mi-NU-tad] [вэ|ve]? [Арван|A-rvan] [нэгт|negt] [гэж|gej] [ярьсан|YAR'-san] [шүү|shüü].",
+     "id": "Kenapa lewat dua puluh? Katanya jam sebelas lho.",
+     "literal": "kenapa dua-puluh menit-pada -kah? sepuluh satu-pada begitu bicara-sudah lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Уучлаарай|UUCH-laa-rai], [автобус|av-TO-bus] [удаан|u-DAAN] [явдаг|YAV-dag]. [Арван|A-rvan] [нэгт|negt] [очих|O-chikh] [гэж|gej] [хичээнэ|khi-CHEE-ne].",
+     "id": "Maaf, busnya lambat. Saya usahakan sampai jam sebelas.",
+     "literal": "maaf, bus lambat pergi-biasa. sepuluh satu-pada sampai begitu berusaha."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Зүгээр|DZÜ-geer]. [Би|Bi] [ч|ch] [бас|bas] [заримдаа|DZA-rim-daa] [хоцордог|KHO-tsor-dog].",
+     "id": "Tidak apa-apa. Saya juga kadang terlambat.",
+     "literal": "tidak-apa. saya pun juga kadang terlambat-biasa."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэдэн|KHE-den] [цагт|tsagt] [буцах|BU-tsakh] [вэ|ve]? [Оройдоо|O-roi-doo] [ажилтай|A-jil-tai] [юу|yuu]?",
+     "id": "Pulangnya jam berapa? Malamnya ada kerjaan?",
+     "literal": "berapa jam-pada kembali -kah? malam-pada-sendiri kerja-berdengan -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Гурван|GUR-van] [цаг|tsag] [хагаст|kha-GAST] [гэртээ|GER-tee] [харина|KHA-ri-na]. [Дөрөвт|DÖ-rövt] [хичээл|khi-CHEEL] [заана|DZAA-na].",
+     "id": "Setengah empat saya pulang. Jam empat saya mengajar.",
+     "literal": "tiga jam separuh-pada rumah-ke-sendiri kembali. empat-pada pelajaran ajar."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[За|Dza], [ойлголоо|OIL-go-loo]. [Тэгвэл|TEG-vel] [бямбад|BYAM-bad] [уулзая|UUL-dza-ya]!",
+     "id": "Baik, saya mengerti. Kalau begitu Sabtu kita ketemu!",
+     "literal": "baik, mengerti-sudah. kalau-begitu Sabtu-pada bertemu-mari!"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Тэгье|TEG-ye]. [Хоцрохгүй|KHOTS-rokh-güi] [шүү|shüü]!",
+     "id": "Begitu saja. Jangan telat ya!",
+     "literal": "begitu-mari. terlambat-tidak lho!"
+    }
+   ],
+   "notes": [
+    "**Цаг berarti jam, waktu, dan cuaca sekaligus.** *Хэдэн цаг вэ?* (jam berapa), *цаг байхгүй* (tidak ada waktu), *цаг агаар* (cuaca). Bahasa Indonesia juga memakai \"jam\" untuk alat dan satuan waktu, jadi tumpang tindih semacam ini bukan hal asing.",
+    "⚠️ **Ekor -д / -т pada penyebutan jam berarti \"pada\".** *Арван нэгэн цаг**т*** = pada jam sebelas. Ini ekor yang sama persis dengan ekor tempat di unit 4 — bahasa Mongolia memperlakukan waktu sebagai tempat, seperti bahasa Indonesia yang berkata \"**pada** jam sebelas\" dan \"**di** rumah\" dengan gagasan yang mirip.",
+    "**Цагаас … хүртэл = dari … sampai.** *Есөн цагаас зургаан цаг хүртэл*. Ekor *-аас* berarti \"dari\" dan dipakai untuk waktu maupun tempat, sedangkan *хүртэл* adalah kata terpisah yang berdiri **sesudah** waktunya.",
+    "**Гэж menandai kutipan dan niat.** *Арван нэгт **гэж** ярьсан* = \"katanya jam sebelas\"; *очих **гэж** хичээнэ* = \"berusaha supaya sampai\". Kata ini sangat sering dipakai dan tidak punya padanan tunggal dalam bahasa Indonesia — ia adalah tanda kutip yang diucapkan.",
+    "**Хагас = setengah, dan bahasa Mongolia menghitungnya maju, bukan mundur.** *Гурван цаг хагас* = \"tiga jam setengah\" = pukul 03.30. ⚠️ Ini berbeda dari bahasa Jerman dan Belanda yang berkata \"setengah empat\" untuk 03.30, tetapi **sama persis dengan bahasa Indonesia** kalau kamu berkata \"jam tiga setengah\". Hitungannya maju dari jam yang sudah lewat."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Susunannya: **angka berekor -н + цаг**, lalu tambahan menit kalau perlu. Untuk mengatakan \"pada jam sekian\", tambahkan ekor *-т* di ujung."
+     ],
+     "table": {
+      "head": ["Waktu", "Монгол", "Baca"],
+      "rows": [
+       ["Jam berapa?", "*Хэдэн цаг болж байна?*", "*KHE-den tsag bolj BAI-n*"],
+       ["Jam satu", "*Нэг цаг*", "*neg tsag*"],
+       ["Jam tiga", "*Гурван цаг*", "*GUR-van tsag*"],
+       ["Jam 03.30", "*Гурван цаг хагас*", "*GUR-van tsag kha-GAS*"],
+       ["Jam 03.15", "*Гурван цаг арван таван минут*", "*GUR-van tsag A-rvan TA-van mi-NUT*"],
+       ["Jam 03.45", "*Дөрвөн цаг арван таван минут дутуу*", "*DÖR-vön tsag … du-TUU*"],
+       ["Pada jam tiga", "*Гурван цагт*", "*GUR-van tsagt*"],
+       ["Pada jam setengah empat", "*Гурван цаг хагаст*", "*GUR-van tsag kha-GAST*"],
+       ["Dari jam 9 sampai 6", "*Есөн цагаас зургаан цаг хүртэл*", "*YE-sön tsa-GAAS dzur-GAAN tsag KHÜR-tel*"]
+      ]
+     },
+     "after": [
+      "⚠️ *Дутуу* berarti \"kurang\" dan dipakai untuk menit menjelang jam berikutnya, persis seperti \"kurang\" dalam \"jam empat kurang seperempat\". Dalam percakapan sehari-hari orang lebih sering menyebut angka menitnya saja: *гурван цаг дөчин таван минут*.",
+      "**Mongolia tidak memakai sistem dua belas jam dengan \"pagi/sore\" seperti bahasa Inggris.** Kalau perlu memperjelas, tambahkan *өглөөний* (pagi), *өдрийн* (siang), *оройн* (sore/malam), *шөнийн* (dini hari) **di depan** jamnya: *оройн долоон цагт* = pada jam tujuh malam."
+     ]
+    },
+    {
+     "title": "Hari, bulan, dan tanggal",
+     "body": [
+      "Nama hari bahasa Mongolia berasal dari bahasa Tibet dan menyebut tujuh benda langit — pola yang sama persis dengan nama hari bahasa Jepang dan bahasa Sanskerta. Menghafalnya sebagai satu deret jauh lebih mudah daripada sebagai tujuh kata terpisah."
+     ],
+     "table": {
+      "head": ["Hari", "Baca", "Benda langit", "Nomor (resmi)"],
+      "rows": [
+       ["*Даваа*", "*da-VAA*", "Bulan", "*нэг дэх өдөр*"],
+       ["*Мягмар*", "*MYAG-mar*", "Mars", "*хоёр дахь өдөр*"],
+       ["*Лхагва*", "*LKHAG-va*", "Merkurius", "*гурав дахь өдөр*"],
+       ["*Пүрэв*", "*PÜ-rev*", "Yupiter", "*дөрөв дэх өдөр*"],
+       ["*Баасан*", "*BAA-san*", "Venus", "*тав дахь өдөр*"],
+       ["*Бямба*", "*BYAM-ba*", "Saturnus", "*зургаа дахь өдөр*"],
+       ["*Ням*", "*nyam*", "Matahari", "*долоо дахь өдөр*"]
+      ]
+     },
+     "after": [
+      "⚠️ Kolom terakhir adalah bentuk resmi yang dipakai di dokumen dan jadwal: \"hari kesatu\", \"hari kedua\", dan seterusnya. Di percakapan, orang memakai nama benda langit. Keduanya sama-sama umum, jadi kenali dua-duanya.",
+      "**Bulan disebut dengan nomor saja: *нэгдүгээр сар* (bulan pertama = Januari), *хоёрдугаар сар* (Februari), sampai *арван хоёрдугаар сар* (Desember).** Ini menghemat dua belas hafalan sekaligus, dan sistemnya sama dengan bahasa Mandarin dan Jepang. Tanggal: *арван тавны өдөр* atau cukup *арван тавны* — \"tanggal lima belas\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata waktu yang sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*цаг*", "*tsag*", "jam, waktu", "*минут*", "*mi-NUT*", "menit"],
+      ["*өдөр*", "*Ö-dör*", "hari", "*хоног*", "*kho-NOG*", "sehari semalam"],
+      ["*долоо хоног*", "*do-LOO kho-NOG*", "minggu", "*сар*", "*sar*", "bulan"],
+      ["*жил*", "*jil*", "tahun", "*он*", "*on*", "tahun (penanggalan)"],
+      ["*эрт*", "*ert*", "awal, pagi-pagi", "*оройтсон*", "*o-ROIT-son*", "terlambat"],
+      ["*хурдан*", "*KHUR-dan*", "cepat", "*удаан*", "*u-DAAN*", "lambat, lama"],
+      ["*одоо*", "*o-DOO*", "sekarang", "*дараа*", "*da-RAA*", "nanti"],
+      ["*эхэлдэг*", "*E-khel-deg*", "mulai", "*дуусдаг*", "*DUUS-dag*", "selesai"],
+      ["*нээдэг*", "*NEE-deg*", "buka", "*хаадаг*", "*KHAA-dag*", "tutup"],
+      ["*хоцрох*", "*KHOTS-rokh*", "terlambat", "*амрах*", "*AM-rakh*", "istirahat, libur"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membuat janji",
+     "items": [
+      "*Хэзээ уулзах вэ?* — Kapan kita bertemu?",
+      "*Бямбад уулзая.* — Sabtu kita bertemu ya.",
+      "*Хэдэн цагт вэ?* — Jam berapa?",
+      "*Арван нэгэн цагт.* — Jam sebelas.",
+      "*Чөлөөтэй юу?* — Ada waktu luang?",
+      "*Уучлаарай, тэр өдөр завгүй байна.* — Maaf, hari itu saya sibuk."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hari dalam kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Arti"],
+     "rows": [
+      ["*Өнөөдөр ямар гараг вэ?*", "Hari ini hari apa?"],
+      ["*Өнөөдөр Лхагва гараг.*", "Hari ini hari Rabu."],
+      ["*Бямбад амардаг.*", "Hari Sabtu saya libur."],
+      ["*Ням гарагт ажилладаггүй.*", "Hari Minggu tidak bekerja."],
+      ["*Даваагаас Баасан хүртэл ажилладаг.*", "Bekerja dari Senin sampai Jumat."],
+      ["*Ирэх долоо хоногт уулзая.*", "Minggu depan kita bertemu."],
+      ["*Өнгөрсөн сард Улаанбаатарт байсан.*", "Bulan lalu saya di Ulaanbaatar."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan *ирэх* (yang akan datang) dan *өнгөрсөн* (yang sudah lewat) di dua baris terakhir. Keduanya adalah bentuk kata kerja yang dipakai sebagai kata sifat — *ирэх долоо хоног* harfiahnya \"minggu yang datang\", *өнгөрсөн сар* adalah \"bulan yang lewat\". Bahasa Indonesia melakukan hal yang persis sama dengan \"minggu depan\" dan \"bulan lalu\", jadi gagasannya sudah kamu punya."
+    },
+    {
+     "type": "p",
+     "text": "Satu catatan praktis tentang waktu di Mongolia: **jam kerja kantor umumnya 09.00–18.00 dengan istirahat siang 13.00–14.00, dan istirahat siang itu benar-benar ditutup** — bank, kantor pos, dan kantor pemerintahan mengunci pintu. Kalau kamu punya urusan resmi, tanyakan *цайны цаг хэдэд вэ?* (jam istirahatnya kapan?) sebelum berangkat."
+    }
+   ]
+  },
+  {
+   "title": "Berapa lama?",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Jawaban", "Arti"],
+     "rows": [
+      ["*Хэдэн цаг болох вэ?*", "*Хоёр цаг болно.*", "Berapa lama? — Dua jam."],
+      ["*Хэдэн хоног вэ?*", "*Гурван хоног.*", "Berapa hari? — Tiga hari."],
+      ["*Хэр удаан вэ?*", "*Их удаан биш.*", "Berapa lama? — Tidak lama."],
+      ["*Хэзээнээс вэ?*", "*Өнгөрсөн жилээс.*", "Sejak kapan? — Sejak tahun lalu."],
+      ["*Хэзээ хүртэл вэ?*", "*Ирэх сар хүртэл.*", "Sampai kapan? — Sampai bulan depan."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Bedakan **цаг** (satuan jam) dari **хоног** (satuan sehari semalam) dan **өдөр** (hari sebagai hari). *Гурван өдөр* dan *гурван хоног* sama-sama \"tiga hari\", tetapi *хоног* menekankan lamanya waktu berjalan sementara *өдөр* menekankan hari-harinya. Untuk lama menginap, izin tinggal, dan lama perjalanan, orang Mongolia hampir selalu memakai *хоног*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "цаг", "baca": "tsag", "id": "jam, waktu; cuaca" },
+  { "mn": "минут", "baca": "mi-NUT", "id": "menit" },
+  { "mn": "хагас", "baca": "kha-GAS", "id": "setengah" },
+  { "mn": "гараг", "baca": "GA-rag", "id": "hari (dalam seminggu)" },
+  { "mn": "Даваа", "baca": "da-VAA", "id": "Senin" },
+  { "mn": "Мягмар", "baca": "MYAG-mar", "id": "Selasa" },
+  { "mn": "Лхагва", "baca": "LKHAG-va", "id": "Rabu" },
+  { "mn": "Пүрэв", "baca": "PÜ-rev", "id": "Kamis" },
+  { "mn": "Баасан", "baca": "BAA-san", "id": "Jumat" },
+  { "mn": "Бямба", "baca": "BYAM-ba", "id": "Sabtu" },
+  { "mn": "Ням", "baca": "nyam", "id": "Minggu" },
+  { "mn": "хэзээ", "baca": "khe-DZEE", "id": "kapan" },
+  { "mn": "хүртэл", "baca": "KHÜR-tel", "id": "sampai" },
+  { "mn": "эрт", "baca": "ert", "id": "awal, pagi-pagi" },
+  { "mn": "хоцрох", "baca": "KHOTS-rokh", "id": "terlambat" },
+  { "mn": "амрах", "baca": "AM-rakh", "id": "istirahat, libur" },
+  { "mn": "чөлөөтэй", "baca": "CHÖ-löö-tei", "id": "luang" },
+  { "mn": "завгүй", "baca": "DZAV-güi", "id": "sibuk" },
+  { "mn": "гэж", "baca": "gej", "id": "⚠️ tanda kutip; supaya" },
+  { "mn": "тэгвэл", "baca": "TEG-vel", "id": "kalau begitu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Sekarang jam tiga.",
+    "Kita bertemu jam sebelas.",
+    "Hari ini hari apa?",
+    "Hari Sabtu saya libur.",
+    "Dari jam sembilan sampai jam enam."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor waktu -д atau -т.",
+   "items": [
+    "Гурван цаг____ уулзая.",
+    "Бямба____ амардаг.",
+    "Долоон цаг____ боссон.",
+    "Ирэх сар____ явна.",
+    "Арван нэгэн цаг____ ирнэ.",
+    "Ням гараг____ ажилладаггүй."
+   ]
+  },
+  {
+   "prompt": "Tulis jamnya dalam bahasa Mongolia.",
+   "items": [
+    "02.00 ____",
+    "05.30 ____",
+    "07.00 ____",
+    "09.15 ____",
+    "12.00 ____",
+    "10.30 ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "байна / болж / цаг / хэдэн",
+    "уулзая / цагт / арван / нэгэн",
+    "гараг / өнөөдөр / ямар / вэ",
+    "амардаг / бямбад / би",
+    "хүртэл / цагаас / есөн / цаг / зургаан"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Хэдэн цаг болж байна? — Одоо гурван цаг. — Арван нэгэн цагт уулзая. — Өнөөдөр ямар гараг вэ? — Бямбад амардаг. — Есөн цагаас зургаан цаг хүртэл.",
+  "1": "т — д — т — д — т — т",
+  "2": "хоёр цаг — таван цаг хагас — долоон цаг — есөн цаг арван таван минут — арван хоёр цаг — арван цаг хагас",
+  "3": "Хэдэн цаг болж байна? — Арван нэгэн цагт уулзая. — Өнөөдөр ямар гараг вэ? — Би бямбад амардаг. — Есөн цагаас зургаан цаг хүртэл."
+ }
+}

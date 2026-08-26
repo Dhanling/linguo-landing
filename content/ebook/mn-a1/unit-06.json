@@ -1,0 +1,334 @@
+{
+ "title": "Kata kerja berdiri di ujung",
+ "title_target": "Үйл үг өгүүлбэрийн төгсгөлд",
+ "goal": "Menguasai bentuk kata kerja pertama — *-на / -нэ / -но / -нө* — dan membiasakan telinga pada susunan kalimat yang kebalikan dari bahasa Indonesia.",
+ "bekal": [
+  "menyusun kalimat lengkap dengan kata kerja di ujung",
+  "memakai bentuk *-на* untuk kebiasaan, keadaan sekarang, dan rencana",
+  "membedakan *-на* dari *-ж байна* yang berarti \"sedang, saat ini juga\""
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Өдөр бүр юу хийдэг вэ?",
+   "intro": "Sarnai dan Budi mengobrol di kantin kampus tentang bagaimana hari mereka berjalan.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Буди|BU-di], [чи|chi] [өглөө|ÖG-löö] [хэдэн|KHE-den] [цагт|tsagt] [босдог|BOS-dog] [вэ|ve]?",
+     "id": "Budi, kamu pagi bangun jam berapa?",
+     "literal": "Budi, kamu pagi berapa jam-pada bangun-biasa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Долоон|Do-LOON] [цагт|tsagt] [босдог|BOS-dog]. [Дараа|Da-RAA] [нь|n'] [цай|tsai] [уудаг|UU-dag].",
+     "id": "Bangun jam tujuh. Setelah itu minum teh.",
+     "literal": "tujuh jam-pada bangun-biasa. sesudah -nya teh minum-biasa."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Өглөөний|ÖG-löö-nii] [хоол|khool] [иддэг|ID-deg] [үү|üü]?",
+     "id": "Sarapan tidak?",
+     "literal": "pagi-punya makanan makan-biasa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Заримдаа|DZA-rim-daa]. [Ихэвчлэн|I-khev-chlen] [цай|tsai] [л|l] [уугаад|UU-gaad] [явна|YAV-na].",
+     "id": "Kadang-kadang. Biasanya cuma minum teh lalu pergi.",
+     "literal": "kadang. biasanya teh saja minum-sesudah pergi."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сургуульд|Sur-GUUL'D] [яаж|yaaj] [явдаг|YAV-dag] [вэ|ve]?",
+     "id": "Ke kampus bagaimana perginya?",
+     "literal": "sekolah-ke bagaimana pergi-biasa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Автобусаар|Av-TO-bu-saar] [явна|YAV-na]. [Хорин|KHO-rin] [минут|mi-NUT] [болно|BOL-no].",
+     "id": "Naik bus. Makan waktu dua puluh menit.",
+     "literal": "bus-dengan pergi. dua-puluh menit jadi."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Оройдоо|O-roi-doo] [юу|yuu] [хийдэг|KHII-deg] [вэ|ve]?",
+     "id": "Kalau malam biasanya ngapain?",
+     "literal": "malam-pada-sendiri apa lakukan-biasa -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Гэртээ|GER-tee] [ном|nom] [уншина|UN-shi-na]. [Заримдаа|DZA-rim-daa] [кино|KI-no] [үзнэ|ÜDZ-ne].",
+     "id": "Di rumah baca buku. Kadang nonton film.",
+     "literal": "rumah-di-sendiri buku baca. kadang film tonton."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Одоо|O-doo] [юу|yuu] [хийж|khiij] [байна|BAI-n]?",
+     "id": "Sekarang lagi ngapain?",
+     "literal": "sekarang apa lakukan-sambil ada?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Одоо|O-doo] [би|bi] [цай|tsai] [ууж|uuj] [байна|BAI-n]. [Мөн|Mön] [чамтай|CHAM-tai] [ярьж|yar'j] [байна|BAI-n].",
+     "id": "Sekarang saya sedang minum teh. Dan sedang bicara denganmu.",
+     "literal": "sekarang saya teh minum-sambil ada. juga kamu-dengan bicara-sambil ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Маргааш|Mar-GAASH] [юу|yuu] [хийх|khiikh] [вэ|ve]?",
+     "id": "Besok mau ngapain?",
+     "literal": "besok apa lakukan -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Маргааш|Mar-GAASH] [музей|mu-ZEY] [рүү|rüü] [явна|YAV-na]. [Чи|Chi] [ирэх|i-REKH] [үү|üü]?",
+     "id": "Besok saya pergi ke museum. Kamu ikut?",
+     "literal": "besok museum ke pergi. kamu datang -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Маргааш|Mar-GAASH] [би|bi] [ажиллана|A-jil-la-na]. [Бямбад|BYAM-bad] [болох|BO-lokh] [уу|uu]?",
+     "id": "Besok saya kerja. Sabtu bisa?",
+     "literal": "besok saya bekerja. Sabtu-pada boleh -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Болно|BOL-no]. [Бямбад|BYAM-bad] [уулзана|UUL-dza-na].",
+     "id": "Bisa. Sabtu kita ketemu.",
+     "literal": "boleh. Sabtu-pada bertemu."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[За|Dza], [тэгье|TEG-ye]. [Би|Bi] [одоо|o-doo] [хичээлд|khi-CHEELD] [орно|OR-no].",
+     "id": "Baik, begitu saja. Saya sekarang masuk kelas.",
+     "literal": "baik, begitu-mari. saya sekarang pelajaran-ke masuk."
+    }
+   ],
+   "notes": [
+    "⚠️ **Kata kerja bahasa Mongolia selalu paling akhir.** Perhatikan bahwa dalam empat belas baris dialog ini, tak satu pun kalimat berakhir dengan kata benda. Bahasa Indonesia berkata \"Saya minum teh\"; bahasa Mongolia berkata \"Saya teh minum\". Kalimatnya tidak bisa dipahami sebelum kamu sampai ke ujung — dan itulah kebiasaan telinga yang butuh waktu paling lama.",
+    "**Bentuk -на / -нэ / -но / -нө mengurus tiga hal sekaligus: kebiasaan, keadaan sekarang, dan rencana.** *Би автобусаар явна* bisa berarti \"saya biasa naik bus\", \"saya naik bus\", atau \"saya akan naik bus\". Bahasa Indonesia sama saja — \"saya naik bus\" juga bisa berarti ketiganya. **Tidak ada bentuk masa depan tersendiri dalam bahasa Mongolia**, persis seperti bahasa Indonesia.",
+    "**Bentuk -даг / -дэг / -дог / -дөг menekankan kebiasaan.** *Уншдаг* = \"biasa membaca\", *явдаг* = \"biasa pergi\". Bedanya dengan *-на* tipis: *-даг* menekankan bahwa itu rutin, *-на* netral. Kalau ragu, pakai *-на*.",
+    "**Bentuk -ж / -ч байна berarti \"sedang, saat ini juga\".** *Ууж байна* = sedang minum. ⚠️ Inilah satu-satunya tempat bahasa Mongolia benar-benar membedakan \"sedang\" dari \"biasa\", dan bedanya tegas — jangan memakainya untuk kebiasaan.",
+    "**Гэртээ dan оройдоо memakai ekor -даа / -дээ / -доо / -дөө**, yang berarti \"…nya sendiri\": *гэртээ* = di rumah sendiri, *оройдоо* = pada malam harinya. Ekor ini digarap di unit 17. Untuk sekarang terimalah sebagai satu potongan."
+   ],
+   "grammars": [
+    {
+     "title": "Susunan kalimat: SOV, dan kenapa itu masuk akal",
+     "body": [
+      "Bahasa Indonesia menyusun **Pelaku – Kerja – Sasaran**. Bahasa Mongolia menyusun **Pelaku – Sasaran – Kerja**. Semua keterangan — waktu, tempat, cara — berdiri di depan kata kerja, dan urutannya di antara mereka cukup bebas."
+     ],
+     "table": {
+      "head": ["Indonesia", "Монгол", "Harfiah"],
+      "rows": [
+       ["Saya minum teh.", "*Би цай уудаг.*", "saya teh minum-biasa"],
+       ["Saya baca buku di rumah.", "*Би гэртээ ном уншдаг.*", "saya rumah-di buku baca-biasa"],
+       ["Besok saya pergi ke museum.", "*Маргааш би музей рүү явна.*", "besok saya museum ke pergi"],
+       ["Saya naik bus ke sekolah.", "*Би автобусаар сургуульд явна.*", "saya bus-dengan sekolah-ke pergi"],
+       ["Dia bicara bahasa Mongolia dengan bagus.", "*Тэр монголоор сайн ярьдаг.*", "dia Mongolia-dalam baik bicara-biasa"]
+      ]
+     },
+     "after": [
+      "**Cara melatihnya bukan dengan menghafal aturan, melainkan dengan membalik kalimat Indonesia sambil bersuara.** Ambil kalimatmu sendiri, pindahkan kata kerjanya ke ujung, dan ucapkan. \"Saya makan nasi di rumah\" → \"Saya di rumah nasi makan\". Lakukan sepuluh kali sehari selama seminggu dan kebiasaannya terpasang.",
+      "⚠️ Satu akibat yang sering mengejutkan: **kata tanya tidak pindah ke depan.** *Чи юу хийж байна?* — harfiah \"kamu apa lakukan-sedang?\", bukan \"apa kamu sedang lakukan\". Kata tanya berdiri persis di tempat jawabannya akan berdiri. Bahasa Indonesia juga bisa begini (\"kamu ngapain?\"), jadi polanya sudah ada di lidahmu."
+     ]
+    },
+    {
+     "title": "Membentuk -на dan saudara-saudaranya",
+     "body": [
+      "Dari bentuk kamus yang berakhir **-х**, buang *-х*, lalu tambahkan **-на / -нэ / -но / -нө** mengikuti keselarasan vokal. Itu saja — tidak ada perubahan menurut pelaku."
+     ],
+     "table": {
+      "head": ["Bentuk kamus", "Vokal", "Sekarang/nanti", "Kebiasaan", "Sedang", "Arti"],
+      "rows": [
+       ["*явах*", "а", "*явна*", "*явдаг*", "*явж байна*", "pergi"],
+       ["*ирэх*", "э", "*ирнэ*", "*ирдэг*", "*ирж байна*", "datang"],
+       ["*унших*", "и/а", "*уншина*", "*уншдаг*", "*уншиж байна*", "membaca"],
+       ["*үзэх*", "ү/э", "*үзнэ*", "*үздэг*", "*үзэж байна*", "menonton"],
+       ["*уух*", "у", "*ууна*", "*уудаг*", "*ууж байна*", "minum"],
+       ["*идэх*", "э", "*иднэ*", "*иддэг*", "*идэж байна*", "makan"],
+       ["*орох*", "о", "*орно*", "*ордог*", "*орж байна*", "masuk"],
+       ["*өгөх*", "ө", "*өгнө*", "*өгдөг*", "*өгч байна*", "memberi"],
+       ["*хийх*", "и", "*хийнэ*", "*хийдэг*", "*хийж байна*", "melakukan"],
+       ["*ажиллах*", "а", "*ажиллана*", "*ажилладаг*", "*ажиллаж байна*", "bekerja"]
+      ]
+     },
+     "after": [
+      "Perhatikan kolom kedua: vokal ekornya **selalu** mengikuti vokal terakhir kata dasarnya. *Явах* berkubu belakang → *явна*; *ирэх* berkubu depan → *ирнэ*; *орох* bervokal *о* → *орно*; *өгөх* bervokal *ө* → *өгнө*. Tidak ada perkecualian yang perlu kamu hafal di tingkat A1.",
+      "⚠️ Untuk bentuk *-ж байна*, sebagian kata kerja memakai **-ч** dan bukan *-ж*: sesudah *в, г, р, с* dan sesudah vokal panjang. *Өгөх* → *өгч байна*, bukan *өгж байна*. Ucapkan bersuara dan kamu akan memilih yang benar — *өгж* memang sulit diucapkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dua puluh kata kerja yang paling sering",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kamus", "Baca", "Sekarang", "Arti"],
+     "rows": [
+      ["*байх*", "*BAI-kh*", "*байна*", "ada, berada"],
+      ["*явах*", "*ya-VAKH*", "*явна*", "pergi"],
+      ["*ирэх*", "*i-REKH*", "*ирнэ*", "datang"],
+      ["*идэх*", "*i-DEKH*", "*иднэ*", "makan"],
+      ["*уух*", "*UUKH*", "*ууна*", "minum"],
+      ["*хийх*", "*KHIIKH*", "*хийнэ*", "melakukan, membuat"],
+      ["*үзэх*", "*ü-DZEKH*", "*үзнэ*", "melihat, menonton"],
+      ["*унших*", "*un-SHIKH*", "*уншина*", "membaca"],
+      ["*бичих*", "*bi-CHIKH*", "*бичнэ*", "menulis"],
+      ["*ярих*", "*ya-RIKH*", "*ярина*", "berbicara"],
+      ["*сонсох*", "*SON-sokh*", "*сонсоно*", "mendengar"],
+      ["*мэдэх*", "*me-DEKH*", "*мэднэ*", "tahu"],
+      ["*ойлгох*", "*OIL-gokh*", "*ойлгоно*", "mengerti"],
+      ["*өгөх*", "*ö-GÖKH*", "*өгнө*", "memberi"],
+      ["*авах*", "*a-VAKH*", "*авна*", "mengambil, membeli"],
+      ["*суух*", "*SUUKH*", "*сууна*", "duduk, tinggal"],
+      ["*босох*", "*BO-sokh*", "*босно*", "bangun, berdiri"],
+      ["*унтах*", "*UN-takh*", "*унтана*", "tidur"],
+      ["*ажиллах*", "*a-JIL-lakh*", "*ажиллана*", "bekerja"],
+      ["*сурах*", "*su-RAKH*", "*сурна*", "belajar"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa **semua bentuk kamus berakhir dengan -х**. Ini penanda yang sangat berguna: begitu kamu melihat kata berakhir *-х* di kamus, kamu tahu itu kata kerja. Bentuk ini juga berfungsi sebagai kata benda kerja — *унших* berarti \"membaca\" maupun \"kegiatan membaca\", persis seperti \"membaca\" dalam bahasa Indonesia."
+    }
+   ]
+  },
+  {
+   "title": "Keterangan waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*өнөөдөр*", "*ö-NÖÖ-dör*", "hari ini", "*маргааш*", "*mar-GAASH*", "besok"],
+      ["*өчигдөр*", "*ö-CHIG-dör*", "kemarin", "*нөгөөдөр*", "*NÖ-göö-dör*", "lusa"],
+      ["*одоо*", "*o-DOO*", "sekarang", "*дараа*", "*da-RAA*", "nanti, sesudah"],
+      ["*өглөө*", "*ÖG-löö*", "pagi", "*орой*", "*o-ROI*", "sore, malam"],
+      ["*өдөр*", "*Ö-dör*", "siang, hari", "*шөнө*", "*SHÖ-nö*", "dini hari"],
+      ["*үргэлж*", "*ÜR-gelj*", "selalu", "*хэзээ ч үгүй*", "*khe-DZEE ch Ü-güi*", "tidak pernah"],
+      ["*ихэвчлэн*", "*I-khev-chlen*", "biasanya", "*заримдаа*", "*DZA-rim-daa*", "kadang-kadang"],
+      ["*өдөр бүр*", "*Ö-dör bür*", "setiap hari", "*долоо хоногт*", "*do-LOO kho-NOGT*", "seminggu sekali"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Keterangan waktu hampir selalu berdiri **di awal kalimat**, sebelum pelakunya: *Маргааш би музей рүү явна.* Menaruhnya di tempat lain tidak salah, tetapi awal kalimat adalah tempat yang paling wajar — sama seperti dalam bahasa Indonesia (\"Besok saya ke museum\")."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Долоо хоног = minggu, harfiah \"tujuh malam\"",
+     "items": [
+      "*хоног* berarti \"satu putaran siang-malam\", dua puluh empat jam penuh. Bahasa Indonesia tidak punya kata untuk ini — kita berkata \"sehari semalam\".",
+      "*Долоо хоног* (tujuh hoNOG) = satu minggu. *Хоёр долоо хоног* = dua minggu.",
+      "*сар* = bulan. *жил* = tahun.",
+      "*Гурван хоног болно* = \"perlu tiga hari\" — dipakai saat bicara tentang lamanya, bukan tanggalnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membalik kalimat: latihan telinga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini bukan tabel untuk ditengok, melainkan untuk dibaca bersuara dari atas ke bawah, dua kali. Baca kolom Indonesia, tutup dua kolom lainnya, lalu ucapkan versi Mongolianya sebelum melihat. Sepuluh menit sehari selama seminggu sudah cukup."
+    },
+    {
+     "type": "tabel",
+     "head": ["Indonesia", "Монгол"],
+     "rows": [
+      ["Saya makan.", "*Би иднэ.*"],
+      ["Saya makan daging.", "*Би мах иднэ.*"],
+      ["Saya makan daging di rumah.", "*Би гэртээ мах иднэ.*"],
+      ["Malam saya makan daging di rumah.", "*Орой би гэртээ мах иднэ.*"],
+      ["Dia membaca buku.", "*Тэр ном уншина.*"],
+      ["Dia membaca buku setiap hari.", "*Тэр өдөр бүр ном уншина.*"],
+      ["Kami pergi ke pasar.", "*Бид зах руу явна.*"],
+      ["Besok kami naik bus ke pasar.", "*Маргааш бид автобусаар зах руу явна.*"],
+      ["Kamu sedang apa?", "*Чи юу хийж байна?*"],
+      ["Saya sedang belajar bahasa Mongolia.", "*Би монгол хэл сурч байна.*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bagaimana kalimatnya tumbuh: kata kerja tidak pernah bergeser dari ujung, dan setiap tambahan menyelip **di depannya**. Inilah gambaran mental yang paling berguna untuk bahasa Mongolia — **kata kerja adalah dinding di ujung ruangan, dan semua yang lain berbaris menghadapnya.**"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "хийх", "baca": "KHIIKH", "id": "melakukan, membuat" },
+  { "mn": "унших", "baca": "un-SHIKH", "id": "membaca" },
+  { "mn": "бичих", "baca": "bi-CHIKH", "id": "menulis" },
+  { "mn": "идэх", "baca": "i-DEKH", "id": "makan" },
+  { "mn": "уух", "baca": "UUKH", "id": "minum" },
+  { "mn": "үзэх", "baca": "ü-DZEKH", "id": "melihat, menonton" },
+  { "mn": "босох", "baca": "BO-sokh", "id": "bangun, berdiri" },
+  { "mn": "унтах", "baca": "UN-takh", "id": "tidur" },
+  { "mn": "суух", "baca": "SUUKH", "id": "duduk, tinggal" },
+  { "mn": "сурах", "baca": "su-RAKH", "id": "belajar" },
+  { "mn": "уулзах", "baca": "UUL-dzakh", "id": "bertemu" },
+  { "mn": "орох", "baca": "O-rokh", "id": "masuk" },
+  { "mn": "цай", "baca": "tsai", "id": "teh" },
+  { "mn": "хоол", "baca": "khool", "id": "makanan" },
+  { "mn": "кино", "baca": "KI-no", "id": "film" },
+  { "mn": "одоо", "baca": "o-DOO", "id": "sekarang" },
+  { "mn": "ихэвчлэн", "baca": "I-khev-chlen", "id": "biasanya" },
+  { "mn": "заримдаа", "baca": "DZA-rim-daa", "id": "kadang-kadang" },
+  { "mn": "өдөр бүр", "baca": "Ö-dör bür", "id": "setiap hari" },
+  { "mn": "долоо хоног", "baca": "do-LOO kho-NOG", "id": "⚠️ minggu (7 hari)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya minum teh.",
+    "Dia membaca buku di rumah.",
+    "Besok saya pergi ke pasar.",
+    "Sekarang saya sedang belajar.",
+    "Setiap hari saya naik bus.",
+    "Kamu sedang apa?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk -на, -нэ, -но, atau -нө.",
+   "items": [
+    "Би маргааш яв____.",
+    "Тэр ном унши____.",
+    "Бид цай уу____.",
+    "Чи хэзээ ир____?",
+    "Тэр надад ном өг____.",
+    "Би хичээлд ор____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk sedang berlangsung dengan -ж byna atau -ч байна.",
+   "items": [
+    "Би цай ууна.",
+    "Тэр ном уншина.",
+    "Бид хоол иднэ.",
+    "Чи юу хийнэ?",
+    "Тэд кино үзнэ.",
+    "Би монгол хэл сурна."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "уудаг / цай / би",
+    "уншина / ном / тэр / гэртээ",
+    "явна / зах / маргааш / руу / би",
+    "байна / сурч / хэл / би / монгол",
+    "вэ / байна / юу / чи / хийж"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би цай ууна. — Тэр гэртээ ном уншина. — Маргааш би зах руу явна. — Одоо би сурч байна. — Өдөр бүр би автобусаар явна. — Чи юу хийж байна?",
+  "1": "на — на — на — нэ — нө — но",
+  "2": "Би цай ууж байна. — Тэр ном уншиж байна. — Бид хоол идэж байна. — Чи юу хийж байна? — Тэд кино үзэж байна. — Би монгол хэл сурч байна.",
+  "3": "Би цай уудаг. — Тэр гэртээ ном уншина. — Маргааш би зах руу явна. — Би монгол хэл сурч байна. — Чи юу хийж байна?"
+ }
+}

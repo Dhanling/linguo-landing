@@ -1,0 +1,316 @@
+{
+ "title": "Kemarin saya pergi",
+ "title_target": "Өчигдөр би явлаа",
+ "goal": "Menceritakan apa yang sudah terjadi — dan memahami kenapa bahasa Mongolia punya tiga bentuk lampau, padahal bahasa Indonesia tidak punya satu pun.",
+ "bekal": [
+  "menceritakan kejadian hari ini dengan *-лаа* dan kejadian lama dengan *-сан*",
+  "membedakan tiga bentuk lampau dan memilih yang wajar",
+  "menyangkal kalimat lampau dengan benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Амралтын өдөр юу хийсэн бэ?",
+   "intro": "Senin pagi di kantin kampus. Sarnai bertanya bagaimana akhir pekan Budi.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Буди|BU-di], [амралтын|AM-ral-tiin] [өдрүүдэд|ÖD-rüü-ded] [юу|yuu] [хийсэн|KHII-sen] [бэ|be]?",
+     "id": "Budi, akhir pekan kemarin ngapain saja?",
+     "literal": "Budi, libur-punya hari-jamak-pada apa lakukan-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Бямбад|BYAM-bad] [музей|mu-ZEY] [үзсэн|ÜDZ-sen]. [Ням|Nyam] [гарагт|ga-RAGT] [гэртээ|GER-tee] [амарсан|A-mar-san].",
+     "id": "Sabtu lihat museum. Minggu istirahat di rumah.",
+     "literal": "Sabtu-pada museum lihat-sudah. Minggu hari-pada rumah-di-sendiri istirahat-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Музей|Mu-ZEY] [сонирхолтой|so-NIR-khol-toi] [байсан|BAI-san] [уу|uu]?",
+     "id": "Museumnya menarik?",
+     "literal": "museum menarik ada-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Маш|Mash] [их|ikh]! [Чингис|CHIN-gis] [хааны|KHAA-nii] [тухай|TU-khai] [маш|mash] [их|ikh] [юм|yum] [үзсэн|ÜDZ-sen].",
+     "id": "Sangat! Banyak sekali yang saya lihat tentang Jenghis Khan.",
+     "literal": "sangat besar! Jenghis raja-punya tentang sangat besar hal lihat-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хэдэн|KHE-den] [цаг|tsag] [байсан|BAI-san] [бэ|be]?",
+     "id": "Berapa jam di sana?",
+     "literal": "berapa jam ada-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Гурван|GUR-van] [цаг|tsag] [орчим|OR-chim]. [Дараа|Da-RAA] [нь|n'] [ресторанд|res-to-RAND] [хоол|khool] [идсэн|ID-sen].",
+     "id": "Sekitar tiga jam. Setelah itu makan di restoran.",
+     "literal": "tiga jam sekitar. sesudah -nya restoran-di makanan makan-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Юу|Yuu] [идсэн|ID-sen] [бэ|be]? [Бууз|Buudz] [идсэн|ID-sen] [үү|üü]?",
+     "id": "Makan apa? Makan buuz?",
+     "literal": "apa makan-sudah -kah? buuz makan-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тийм|Tiim], [бууз|buudz] [идлээ|ID-lee]. [Маш|Mash] [амттай|AMT-tai] [байлаа|BAI-laa].",
+     "id": "Ya, makan buuz. Enak sekali.",
+     "literal": "ya, buuz makan-baru-saja. sangat rasa-berdengan ada-baru-saja."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Ням|Nyam] [гарагт|ga-RAGT] [гадаа|ga-DAA] [гарсангүй|GAR-san-güi] [юу|yuu]?",
+     "id": "Hari Minggu tidak keluar sama sekali?",
+     "literal": "Minggu hari-pada luar keluar-sudah-tidak -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Гарсангүй|GAR-san-güi]. [Өдөржин|Ö-dör-jin] [ном|nom] [уншсан|UNSH-san], [бага|BA-ga] [зэрэг|DZE-reg] [унтсан|UNT-san].",
+     "id": "Tidak keluar. Seharian baca buku, tidur sebentar.",
+     "literal": "keluar-sudah-tidak. sehari-penuh buku baca-sudah, sedikit derajat tidur-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Аан|Aan]. [Өнөөдөр|Ö-nöö-dör] [өглөө|ÖG-löö] [хэдэд|KHE-ded] [боссон|BOS-son] [бэ|be]?",
+     "id": "Oh. Tadi pagi bangun jam berapa?",
+     "literal": "oh. hari-ini pagi berapa-pada bangun-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Зургаан|Dzur-GAAN] [цаг|tsag] [хагаст|kha-GAST] [бослоо|BOS-loo]. [Автобусаа|Av-TO-bu-saa] [алдсангүй|ALD-san-güi].",
+     "id": "Bangun setengah tujuh. Tidak ketinggalan bus.",
+     "literal": "enam jam separuh-pada bangun-baru-saja. bus-sendiri-objek kehilangan-sudah-tidak."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Сайн|Sain] [байна|BAI-n]. [Би|Bi] [харин|KHA-rin] [хоцорлоо|KHO-tsor-loo]. [Такси|TAK-si] [барьсан|BAR'-san].",
+     "id": "Bagus. Saya malah terlambat. Naik taksi.",
+     "literal": "baik ada. saya sebaliknya terlambat-baru-saja. taksi pegang-sudah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэд|Khed] [төлсөн|TÖL-sön] [бэ|be]?",
+     "id": "Bayar berapa?",
+     "literal": "berapa bayar-sudah -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Найман|NAI-man] [мянга|MYAN-ga]. [Их|Ikh] [үнэтэй|Ü-ne-tei] [байлаа|BAI-laa].",
+     "id": "Delapan ribu. Mahal sekali.",
+     "literal": "delapan ribu. besar harga-berdengan ada-baru-saja."
+    }
+   ],
+   "notes": [
+    "⚠️ **Bahasa Mongolia punya tiga bentuk lampau, dan bahasa Indonesia tidak punya satu pun.** Ini terdengar menakutkan, tetapi bedanya sebenarnya sama dengan beda \"tadi\", \"kemarin\", dan \"dulu\" dalam bahasa Indonesia — hanya saja bahasa Mongolia menaruh perbedaan itu di **kata kerjanya**, bukan di kata keterangan.",
+    "**-лаа / -лээ / -лоо / -лөө = baru saja, hari ini, masih terasa.** *Бослоо* (barusan bangun), *хоцорлоо* (barusan terlambat). Bentuk ini membawa nada \"dan akibatnya masih ada sekarang\".",
+    "**-сан / -сэн / -сон / -сөн = sudah, kemarin, dulu, netral.** *Боссон* (sudah bangun), *үзсэн* (sudah melihat). Inilah bentuk yang paling aman dan paling sering dipakai untuk bercerita. **Kalau ragu, pakai -сан.**",
+    "**-в = bentuk resmi dan tertulis.** *Боллов*, *ирэв*. Kamu akan melihatnya di surat kabar, buku, dan pengumuman, tetapi hampir tidak pernah mendengarnya di percakapan. Kenali saja bentuknya; kamu tidak perlu memakainya di A1.",
+    "⚠️ **Menyangkal lampau memakai -сангүй, bukan -гүй biasa.** *Гарсан* (sudah keluar) → *гарсан**гүй*** (tidak keluar). Perhatikan bahwa ekor lampaunya tetap ada dan *-гүй* menempel sesudahnya. Ini beda dari bentuk sekarang yang memakai *-хгүй*: *гарахгүй* (tidak akan keluar)."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk lampau, dan cara memilihnya",
+     "body": [
+      "Tabel ini adalah inti unit. Bacalah kolom \"Rasanya\" lebih dulu — di situlah letak perbedaannya, bukan di ejaan ekornya."
+     ],
+     "table": {
+      "head": ["Ekor", "Contoh (*явах*)", "Rasanya", "Setara Indonesia"],
+      "rows": [
+       ["**-лаа / -лээ**", "*явлаа*", "baru saja, hari ini, akibatnya masih terasa", "\"barusan pergi\", \"udah pergi tuh\""],
+       ["**-сан / -сэн**", "*явсан*", "netral, kemarin, dulu, sekadar fakta", "\"pergi\", \"sudah pergi\""],
+       ["**-в**", "*явав*", "resmi, tertulis, laporan", "\"telah berangkat\""],
+       ["**-жээ / -чээ**", "*явжээ*", "ternyata, baru saya tahu, cerita rakyat", "\"ternyata pergi\""]
+      ]
+     },
+     "after": [
+      "**Aturan praktisnya dua baris.** Untuk kejadian **hari ini** yang baru saja: *-лаа*. Untuk semua kejadian lain: *-сан*. Dengan dua bentuk itu kamu bisa menceritakan apa pun di tingkat A1 tanpa pernah terdengar aneh.",
+      "⚠️ Bentuk keempat, *-жээ*, patut kamu kenali walaupun jarang kamu pakai sendiri: ia berarti \"ternyata\" dan dipakai untuk hal yang **baru kamu ketahui** atau untuk cerita yang tidak kamu saksikan. Seluruh dongeng dan legenda Mongolia ditulis dengan bentuk ini, jadi ia adalah bunyi khas cerita — seperti \"pada zaman dahulu…\" dalam bahasa Indonesia."
+     ]
+    },
+    {
+     "title": "Membentuk dan menyangkal lampau",
+     "body": [
+      "Dari bentuk kamus, buang *-х*, lalu tambahkan ekornya mengikuti keselarasan vokal. Untuk menyangkal, tambahkan *-гүй* **sesudah** ekor lampaunya."
+     ],
+     "table": {
+      "head": ["Kamus", "Baru saja", "Netral", "Sangkalan", "Arti"],
+      "rows": [
+       ["*явах*", "*явлаа*", "*явсан*", "*явсангүй*", "pergi"],
+       ["*ирэх*", "*ирлээ*", "*ирсэн*", "*ирсэнгүй*", "datang"],
+       ["*идэх*", "*идлээ*", "*идсэн*", "*идсэнгүй*", "makan"],
+       ["*уух*", "*уулаа*", "*уусан*", "*уусангүй*", "minum"],
+       ["*унших*", "*уншлаа*", "*уншсан*", "*уншсангүй*", "membaca"],
+       ["*үзэх*", "*үзлээ*", "*үзсэн*", "*үзсэнгүй*", "menonton"],
+       ["*босох*", "*бослоо*", "*боссон*", "*боссонгүй*", "bangun"],
+       ["*өгөх*", "*өглөө*", "*өгсөн*", "*өгсөнгүй*", "memberi"],
+       ["*байх*", "*байлаа*", "*байсан*", "*байсангүй*", "ada"],
+       ["*хийх*", "*хийлээ*", "*хийсэн*", "*хийсэнгүй*", "melakukan"]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan baris kedelapan: *өгөх* → *өглөө*, yang bentuknya sama persis dengan kata *өглөө* (pagi). Bahasa Mongolia punya beberapa pasangan semacam ini, dan konteks selalu memisahkannya — sama seperti \"bisa\" (racun) dan \"bisa\" (mampu) dalam bahasa Indonesia.",
+      "**Ada bentuk sangkalan kedua yang lebih sering terdengar di percakapan: *-аагүй / -ээгүй / -оогүй / -өөгүй*.** *Яваагүй* = belum pergi; *идээгүй* = belum makan. Bedanya dengan *-сангүй* halus: *-сангүй* berarti \"tidak jadi\", *-аагүй* berarti \"belum\". Untuk A1, *-сангүй* sudah cukup, tetapi kenali bentuk yang satunya karena kamu akan sering mendengarnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menceritakan hari kemarin",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*Өчигдөр юу хийсэн бэ?*", "*ö-CHIG-dör yuu KHII-sen be*", "Kemarin ngapain?"],
+      ["*Өглөө эрт боссон.*", "*ÖG-löö ert BOS-son*", "Pagi bangun pagi-pagi."],
+      ["*Ажилдаа явсан.*", "*A-jil-daa YAV-san*", "Pergi ke kerjaan."],
+      ["*Үдэд хоол идсэн.*", "*Ü-ded khool ID-sen*", "Siang makan."],
+      ["*Оройдоо гэртээ харьсан.*", "*O-roi-doo GER-tee KHAR'-san*", "Malamnya pulang ke rumah."],
+      ["*Найзтайгаа уулзсан.*", "*NAIDZ-tai-gaa UULDZ-san*", "Bertemu dengan teman."],
+      ["*Кино үзсэн.*", "*KI-no ÜDZ-sen*", "Nonton film."],
+      ["*Эрт унтсан.*", "*ert UNT-san*", "Tidur cepat."],
+      ["*Юу ч хийсэнгүй.*", "*yuu ch KHII-sen-güi*", "Tidak melakukan apa-apa."],
+      ["*Сайхан амарсан.*", "*SAI-khan A-mar-san*", "Istirahatnya enak."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan *юу ч хийсэнгүй* — \"tidak melakukan apa-apa\". Bahasa Mongolia memakai **kata tanya + ч + sangkalan** untuk membuat \"tidak apa-apa\", \"tidak siapa-siapa\", \"tidak ke mana-mana\": *хэн ч байхгүй* (tidak ada siapa-siapa), *хаана ч яваагүй* (tidak pergi ke mana pun), *хэзээ ч үгүй* (tidak pernah). Polanya persis sama dengan bahasa Indonesia yang mengulang kata tanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kata penyambung cerita",
+     "items": [
+      "*дараа нь* (da-RAA n') — sesudah itu, lalu.",
+      "*тэгээд* (te-GEED) — lalu, terus. ⚠️ Ini yang paling sering dipakai di percakapan.",
+      "*гэхдээ* (GEKH-dee) — tetapi.",
+      "*учир нь* (u-CHIR n') — karena, sebabnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya tentang masa lalu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Arti", "Jawaban contoh"],
+     "rows": [
+      ["*Хэзээ ирсэн бэ?*", "Kapan datang?", "*Өнгөрсөн сард ирсэн.*"],
+      ["*Хаана байсан бэ?*", "Tadi di mana?", "*Номын санд байсан.*"],
+      ["*Хэнтэй уулзсан бэ?*", "Bertemu siapa?", "*Найзтайгаа уулзсан.*"],
+      ["*Юу идсэн бэ?*", "Makan apa?", "*Бууз идсэн.*"],
+      ["*Хэд төлсөн бэ?*", "Bayar berapa?", "*Найман мянга.*"],
+      ["*Яагаад ирсэнгүй вэ?*", "Kenapa tidak datang?", "*Өвчтэй байсан.*"],
+      ["*Сайхан амарсан уу?*", "Istirahatnya enak?", "*Тийм, маш сайхан.*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir adalah pertanyaan yang akan kamu dengar setiap Senin pagi di Mongolia, sesering \"apa kabar\" di hari lain. Jawaban yang wajar bukan sekadar \"ya\", melainkan satu kalimat tambahan tentang apa yang kamu lakukan — sama persis dengan kebiasaan Indonesia menjawab \"gimana liburannya?\" dengan cerita pendek, bukan dengan satu kata."
+    }
+   ]
+  },
+  {
+   "title": "Makanan Mongolia yang akan kamu temui",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Apa itu"],
+     "rows": [
+      ["*бууз*", "*buudz*", "Pangsit kukus berisi daging domba. Makanan nasional; wajib dicoba."],
+      ["*хуушуур*", "*khuu-SHUUR*", "Pastel goreng pipih berisi daging. Kembaran buuz yang digoreng."],
+      ["*цуйван*", "*TSUI-van*", "Mi tumis dengan daging dan sayur. Paling akrab bagi lidah Indonesia."],
+      ["*гуляш*", "*GU-lyash*", "Daging tumis dengan kentang, dari bahasa Rusia."],
+      ["*банштай цай*", "*BANSH-tai tsai*", "Teh susu asin dengan pangsit kecil di dalamnya."],
+      ["*сүүтэй цай*", "*SÜÜ-tei tsai*", "⚠️ Teh susu ASIN, bukan manis. Ini minuman sehari-hari."],
+      ["*айраг*", "*AI-rag*", "Susu kuda fermentasi, sedikit beralkohol. Musim panas saja."],
+      ["*ааруул*", "*AA-ruul*", "Keju kering keras. Sangat asam, sangat keras, sangat Mongolia."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Satu peringatan yang menyelamatkan banyak tamu Indonesia: **teh Mongolia diberi garam, bukan gula.** *Сүүтэй цай* adalah teh, susu, garam, dan kadang sedikit lemak. Kalau kamu meminta *цай*, itulah yang datang. Untuk teh manis seperti di Indonesia, mintalah *хар цай* (teh hitam) lalu tambahkan gula sendiri."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "өчигдөр", "baca": "ö-CHIG-dör", "id": "kemarin" },
+  { "mn": "өнгөрсөн", "baca": "ÖN-gör-sön", "id": "yang lalu" },
+  { "mn": "амралт", "baca": "AM-ralt", "id": "libur, istirahat" },
+  { "mn": "гарах", "baca": "GA-rakh", "id": "keluar" },
+  { "mn": "харих", "baca": "KHA-rikh", "id": "pulang" },
+  { "mn": "төлөх", "baca": "TÖ-lökh", "id": "membayar" },
+  { "mn": "барих", "baca": "BA-rikh", "id": "memegang; naik (taksi)" },
+  { "mn": "алдах", "baca": "AL-dakh", "id": "kehilangan, ketinggalan" },
+  { "mn": "бууз", "baca": "buudz", "id": "pangsit kukus Mongolia" },
+  { "mn": "хуушуур", "baca": "khuu-SHUUR", "id": "pastel goreng" },
+  { "mn": "цуйван", "baca": "TSUI-van", "id": "mi tumis" },
+  { "mn": "амттай", "baca": "AMT-tai", "id": "enak" },
+  { "mn": "тэгээд", "baca": "te-GEED", "id": "lalu, terus" },
+  { "mn": "гэхдээ", "baca": "GEKH-dee", "id": "tetapi" },
+  { "mn": "дараа нь", "baca": "da-RAA n'", "id": "sesudah itu" },
+  { "mn": "учир нь", "baca": "u-CHIR n'", "id": "karena" },
+  { "mn": "харин", "baca": "KHA-rin", "id": "sebaliknya, malah" },
+  { "mn": "орчим", "baca": "OR-chim", "id": "sekitar, kira-kira" },
+  { "mn": "өдөржин", "baca": "Ö-dör-jin", "id": "seharian" },
+  { "mn": "тухай", "baca": "TU-khai", "id": "tentang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Kemarin saya pergi ke museum.",
+    "Saya makan buuz.",
+    "Hari Minggu saya istirahat di rumah.",
+    "Saya tidak keluar.",
+    "Bertemu siapa?",
+    "Bayar berapa?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk lampau -сан, -сэн, -сон, atau -сөн.",
+   "items": [
+    "Би өчигдөр яв____.",
+    "Тэр ном унш____.",
+    "Бид хоол ид____.",
+    "Чи хэзээ ир____ бэ?",
+    "Тэр надад ном өг____.",
+    "Би зургаан цагт бос____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk sangkalan lampau.",
+   "items": [
+    "Би явсан.",
+    "Тэр ирсэн.",
+    "Бид идсэн.",
+    "Чи уншсан.",
+    "Тэд үзсэн.",
+    "Би гарсан."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "үзсэн / музей / өчигдөр / би",
+    "идсэн / бууз / би",
+    "амарсан / гэртээ / би / гарагт / ням",
+    "бэ / уулзсан / хэнтэй / чи",
+    "байлаа / үнэтэй / их"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Өчигдөр би музей үзсэн. — Би бууз идсэн. — Ням гарагт би гэртээ амарсан. — Би гарсангүй. — Хэнтэй уулзсан бэ? — Хэд төлсөн бэ?",
+  "1": "сан — сан — сэн — сэн — сөн — сон",
+  "2": "Би явсангүй. — Тэр ирсэнгүй. — Бид идсэнгүй. — Чи уншсангүй. — Тэд үзсэнгүй. — Би гарсангүй.",
+  "3": "Өчигдөр би музей үзсэн. — Би бууз идсэн. — Ням гарагт би гэртээ амарсан. — Чи хэнтэй уулзсан бэ? — Их үнэтэй байлаа."
+ }
+}

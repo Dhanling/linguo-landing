@@ -1,0 +1,604 @@
+{
+ "title": "Tidak, bukan, belum, tidak ada",
+ "title_target": "Үгүй, биш, -гүй, байхгүй",
+ "goal": "Menyangkal dengan benar — empat kata untuk pekerjaan yang dalam bahasa Indonesia dikerjakan oleh \"tidak\" dan \"bukan\" saja.",
+ "bekal": [
+  "memilih antara *биш*, *-гүй*, *үгүй*, dan *байхгүй* tanpa ragu",
+  "menyangkal kata kerja di semua bentuk waktu",
+  "memakai *хэн ч*, *юу ч*, *хаана ч* untuk \"tidak siapa-siapa, tidak apa-apa, tidak ke mana-mana\""
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Юу ч болоогүй",
+   "intro": "Budi mencari kunci kamarnya yang hilang. Sarnai membantu mencari sambil bertanya ke sana ke mari.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Сарнай|Sar-NAI] [аа|aa], [миний|MI-nii] [түлхүүр|TÜL-khüür] [байхгүй|BAIKH-güi] [байна|BAI-n].",
+     "id": "Sarnai, kunci saya tidak ada.",
+     "literal": "Sarnai wahai, saya-punya kunci ada-tidak ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Цүнхэндээ|TSÜN-khen-dee] [харсан|KHAR-san] [уу|uu]?",
+     "id": "Sudah lihat di tasmu?",
+     "literal": "tas-di-sendiri lihat-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Харсан|KHAR-san], [байхгүй|BAIKH-güi]. [Ширээн|Shi-REEN] [дээр|deer] [ч|ch] [байхгүй|BAIKH-güi].",
+     "id": "Sudah, tidak ada. Di atas meja juga tidak ada.",
+     "literal": "lihat-sudah, ada-tidak. meja atas pun ada-tidak."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Өнөөдөр|Ö-nöö-dör] [хаана|KHAA-na] [явсан|YAV-san] [бэ|be]?",
+     "id": "Hari ini ke mana saja?",
+     "literal": "hari-ini di-mana pergi-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хаана|KHAA-na] [ч|ch] [яваагүй|ya-VAA-güi]. [Гэртээ|GER-tee] [л|l] [байсан|BAI-san].",
+     "id": "Tidak ke mana-mana. Cuma di rumah.",
+     "literal": "di-mana pun pergi-belum. rumah-di-sendiri saja ada-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хэн|Khen] [ч|ch] [ирээгүй|i-REE-güi] [юу|yuu]?",
+     "id": "Tidak ada siapa-siapa yang datang?",
+     "literal": "siapa pun datang-belum -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэн|Khen] [ч|ch] [ирээгүй|i-REE-güi]. [Би|Bi] [гадаа|ga-DAA] [ч|ch] [гараагүй|ga-RAA-güi].",
+     "id": "Tidak ada siapa pun. Saya juga tidak keluar.",
+     "literal": "siapa pun datang-belum. saya luar pun keluar-belum."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Тэгвэл|TEG-vel] [гэрт|gert] [байгаа|bai-GAA] [нь|n'] [гарцаагүй|GAR-tsaa-güi]. [Хүйтэн|KHÜY-ten] [байна|BAI-n] [уу|uu]?",
+     "id": "Kalau begitu pasti ada di rumah. Kamu kedinginan?",
+     "literal": "kalau-begitu rumah-di ada-yang -nya jalan-keluar-tanpa. dingin ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Үгүй|Ü-güi], [хүйтэн|KHÜY-ten] [биш|bish]. [Гэхдээ|GEKH-dee] [би|bi] [санаа|sa-NAA] [зовж|dzovj] [байна|BAI-n].",
+     "id": "Tidak, tidak dingin. Tapi saya khawatir.",
+     "literal": "tidak, dingin bukan. tetapi saya pikiran sakit-sambil ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Битгий|BIT-gii] [санаа|sa-NAA] [зов|dzov]. [Хүрэм|khü-REM] [шалгасан|SHAL-ga-san] [уу|uu]?",
+     "id": "Jangan khawatir. Sudah cek jaketnya?",
+     "literal": "jangan pikiran sakitlah. jaket periksa-sudah -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Шалгаагүй|SHAL-gaa-güi] [байна|BAI-n]! [Хэсэг|KHE-seg] [хүлээгээрэй|khü-LEE-gee-rei]…",
+     "id": "Belum saya cek! Tunggu sebentar…",
+     "literal": "periksa-belum ada! sebentar tunggulah…"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хүлээж|khü-LEEJ] [байна|BAI-n]. [Яараад|YAA-raad] [хэрэггүй|KHE-reg-güi].",
+     "id": "Saya tunggu. Tidak usah buru-buru.",
+     "literal": "tunggu-sambil ada. buru-buru-sesudah perlu-tidak."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Оллоо|OL-loo]! [Хүрэмний|khü-REM-nii] [халаасанд|kha-LAA-sand] [байсан|BAI-san].",
+     "id": "Ketemu! Ada di saku jaket.",
+     "literal": "temukan-baru-saja! jaket-punya saku-di ada-sudah."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хараарай|KHA-raa-rai]! [Юу|Yuu] [ч|ch] [болоогүй|bo-LOO-güi] [шүү|shüü] [дээ|dee].",
+     "id": "Tuh kan! Tidak terjadi apa-apa kok.",
+     "literal": "lihatlah! apa pun jadi-belum lho ya."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Үнэхээр|Ü-ne-kheer] [баярлалаа|ba-yar-la-LAA]. [Чамгүйгээр|CHAM-güi-geer] [олохгүй|O-lokh-güi] [байсан|BAI-san].",
+     "id": "Sungguh terima kasih. Tanpa kamu saya tidak akan menemukannya.",
+     "literal": "sungguh terima-kasih. kamu-tanpa-dengan temukan-tidak ada-sudah."
+    }
+   ],
+   "notes": [
+    "⚠️ **Inilah peta lengkapnya, dan sebaiknya kamu baca ini lebih dulu sebelum tabel mana pun:** *биш* menyangkal **kata benda dan kata sifat**; *-гүй* menempel di **kata kerja**; *үгүй* berdiri sendiri sebagai **jawaban**; *байхгүй* berarti **\"tidak ada\"**. Empat kata, empat tempat, tidak pernah bertukar.",
+    "**Ч sesudah kata tanya mengubahnya menjadi \"pun\".** *Хаана* (di mana) → *хаана ч* (di mana pun); *хэн* (siapa) → *хэн ч* (siapa pun). Dipasangkan dengan sangkalan, hasilnya \"tidak ke mana-mana\", \"tidak siapa-siapa\". ⚠️ Kalimatnya **wajib** disangkal — *хэн ч ирсэн* tanpa sangkalan tidak berarti apa-apa.",
+    "**Bentuk -аагүй / -ээгүй berarti \"belum\", bedanya halus dari -сангүй yang berarti \"tidak\".** *Яваагүй* = belum pergi (mungkin nanti); *явсангүй* = tidak jadi pergi. Di percakapan, bentuk *-аагүй* jauh lebih sering — pakai itu kalau ragu.",
+    "**Л berarti \"cuma, saja\" dan menempel sesudah kata yang dibatasi.** *Гэртээ **л** байсан* = cuma di rumah saja. Kata kecil ini sangat sering dipakai dan langsung membuat kalimatmu terdengar wajar.",
+    "**Чамгүйгээр = \"tanpamu\".** Perhatikan tiga ekor bertumpuk: *чам* (kamu) + *-гүй* (tanpa) + *-гээр* (dengan). Bahasa Mongolia menumpuk ekor sesuka hati, dan urutannya selalu tetap. Ini bukan hal yang perlu kamu tiru sekarang, tetapi penting untuk kamu kenali saat mendengarnya."
+   ],
+   "grammars": [
+    {
+     "title": "Empat penyangkal dan tempatnya masing-masing",
+     "body": [
+      "Tabel ini adalah inti unit. Bacalah kolom terakhir sambil membandingkannya dengan bahasa Indonesia — di situ terlihat bahwa bahasa Indonesia sebenarnya juga membedakan \"tidak\" dan \"bukan\" dengan aturan yang mirip."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Menyangkal",
+       "Contoh",
+       "Setara Indonesia"
+      ],
+      "rows": [
+       [
+        "**биш**",
+        "kata benda, kata sifat",
+        "*Би багш **биш**.*",
+        "Saya **bukan** guru."
+       ],
+       [
+        "**биш**",
+        "kata sifat",
+        "*Хол **биш**.*",
+        "**Tidak** jauh."
+       ],
+       [
+        "**-гүй**",
+        "kata kerja (sekarang/nanti)",
+        "*Би мэдэ**хгүй**.*",
+        "Saya **tidak** tahu."
+       ],
+       [
+        "**-сангүй / -аагүй**",
+        "kata kerja (lampau)",
+        "*Би яв**сангүй**.*",
+        "Saya **tidak** pergi."
+       ],
+       [
+        "**үгүй**",
+        "berdiri sendiri",
+        "*Үгүй, тийм биш.*",
+        "**Tidak**, bukan begitu."
+       ],
+       [
+        "**байхгүй**",
+        "keberadaan",
+        "*Мөнгө **байхгүй**.*",
+        "**Tidak ada** uang."
+       ],
+       [
+        "**битгий**",
+        "larangan",
+        "***Битгий** яв.*",
+        "**Jangan** pergi."
+       ],
+       [
+        "**-гүй** (di kata benda)",
+        "\"tanpa\"",
+        "*мөнгө**гүй***",
+        "**tanpa** uang, miskin"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Baris terakhir memperlihatkan pemakaian *-гүй* yang berbeda dan sangat produktif: ditempelkan pada **kata benda**, ia berarti \"tanpa\" dan membentuk kata sifat baru. *Цаг**гүй*** (tidak punya waktu), *ажил**гүй*** (menganggur), *асуудал**гүй*** (tidak ada masalah), *хамаа**гүй*** (tidak apa-apa, terserah).",
+      "**Pasangannya adalah -тай yang sudah kamu kenal dari unit 3.** *Мөнгө**тэй*** (punya uang) lawan *мөнгө**гүй*** (tanpa uang). Dua ekor ini bekerja berpasangan dan bersama-sama membentuk sebagian besar kata sifat bahasa Mongolia."
+     ]
+    },
+    {
+     "title": "Menyangkal kata kerja di setiap bentuk waktu",
+     "body": [
+      "Ekor sangkalannya berubah menurut bentuk waktunya. Tabel ini sebaiknya kamu baca bersuara sebaris demi sebaris sambil membandingkan kolom kedua dan ketiga."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Positif",
+       "Negatif",
+       "Arti negatifnya"
+      ],
+      "rows": [
+       [
+        "Sekarang / nanti",
+        "*явна*",
+        "*явахгүй*",
+        "tidak pergi, tidak akan pergi"
+       ],
+       [
+        "Kebiasaan",
+        "*явдаг*",
+        "*явдаггүй*",
+        "tidak biasa pergi"
+       ],
+       [
+        "Sedang",
+        "*явж байна*",
+        "*явахгүй байна*",
+        "sedang tidak pergi"
+       ],
+       [
+        "Lampau (tidak)",
+        "*явсан*",
+        "*явсангүй*",
+        "tidak jadi pergi"
+       ],
+       [
+        "Lampau (belum)",
+        "*явсан*",
+        "*яваагүй*",
+        "belum pergi"
+       ],
+       [
+        "Ada",
+        "*байна*",
+        "*байхгүй*",
+        "tidak ada"
+       ],
+       [
+        "Bisa",
+        "*болно*",
+        "*болохгүй*",
+        "tidak boleh, tidak bisa"
+       ],
+       [
+        "Tahu",
+        "*мэднэ*",
+        "*мэдэхгүй*",
+        "tidak tahu"
+       ]
+      ]
+     },
+     "after": [
+      "**Polanya satu kalimat: ambil bentuk kamus (yang berakhir -х), lalu tambahkan -гүй.** *Явах* → *явахгүй*; *мэдэх* → *мэдэхгүй*; *ойлгох* → *ойлгохгүй*. Itulah bentuk sangkalan sekarang/nanti, dan ia mengurus sebagian besar kebutuhanmu.",
+      "⚠️ Untuk kebiasaan, ekornya bertumpuk dua: *явдаг* + *-гүй* = *явдаггүй*, dengan **dua г berturut-turut**. Bentuk ini terlihat aneh tetapi benar, dan sering muncul: *иддэггүй* (tidak makan), *уудаггүй* (tidak minum), *ярьдаггүй* (tidak berbicara)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata tanya + ч = tidak apa-apa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Baca",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*хэн ч*",
+       "*khen ch*",
+       "siapa pun",
+       "*Хэн ч байхгүй.* — Tidak ada siapa-siapa."
+      ],
+      [
+       "*юу ч*",
+       "*yuu ch*",
+       "apa pun",
+       "*Юу ч хийсэнгүй.* — Tidak melakukan apa-apa."
+      ],
+      [
+       "*хаана ч*",
+       "*KHAA-na ch*",
+       "di mana pun",
+       "*Хаана ч байхгүй.* — Tidak ada di mana pun."
+      ],
+      [
+       "*хэзээ ч*",
+       "*khe-DZEE ch*",
+       "kapan pun",
+       "*Хэзээ ч ирдэггүй.* — Tidak pernah datang."
+      ],
+      [
+       "*ямар ч*",
+       "*YA-mar ch*",
+       "apa pun jenisnya",
+       "*Ямар ч асуудалгүй.* — Tidak ada masalah apa pun."
+      ],
+      [
+       "*хэд ч*",
+       "*khed ch*",
+       "berapa pun",
+       "*Хэд ч байхгүй.* — Tidak ada satu pun."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Kalimatnya wajib disangkal.** Ini aturan mutlak: *хэн ч* selalu berpasangan dengan *байхгүй*, *-гүй*, atau *-аагүй*. Bahasa Mongolia memakai **sangkalan ganda** persis seperti bahasa Rusia dan bahasa Indonesia sehari-hari (\"nggak ada siapa-siapa\"), berbeda dari bahasa Inggris yang menganggapnya salah."
+    },
+    {
+     "type": "kotak",
+     "title": "Tanpa sangkalan, artinya berbalik",
+     "items": [
+      "*Хэн ч ирж болно.* — **Siapa pun** boleh datang. (Positif, jadi berarti \"semua orang\".)",
+      "*Хаана ч явж болно.* — Boleh pergi **ke mana pun**.",
+      "*Юу ч хий.* — Lakukan **apa saja**.",
+      "⚠️ Jadi *ч* sendiri netral: sangkalannyalah yang menentukan arti. Persis seperti \"apa pun\" dalam bahasa Indonesia yang bisa berarti \"segalanya\" atau \"tidak satu pun\" tergantung kalimatnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat berpasangan -тай dan -гүй",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata dasar",
+      "+ -тай",
+      "Arti",
+      "+ -гүй",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*мөнгө* (uang)",
+       "*мөнгөтэй*",
+       "punya uang, kaya",
+       "*мөнгөгүй*",
+       "tanpa uang, miskin"
+      ],
+      [
+       "*цаг* (waktu)",
+       "*цагтай*",
+       "punya waktu",
+       "*цаггүй*",
+       "tidak punya waktu"
+      ],
+      [
+       "*ажил* (kerja)",
+       "*ажилтай*",
+       "punya pekerjaan",
+       "*ажилгүй*",
+       "menganggur"
+      ],
+      [
+       "*гэр* (rumah)",
+       "*гэртэй*",
+       "punya rumah",
+       "*гэргүй*",
+       "tunawisma"
+      ],
+      [
+       "*амт* (rasa)",
+       "*амттай*",
+       "enak",
+       "*амтгүй*",
+       "hambar"
+      ],
+      [
+       "*утга* (makna)",
+       "*утгатай*",
+       "bermakna",
+       "*утгагүй*",
+       "tidak berarti"
+      ],
+      [
+       "*асуудал* (masalah)",
+       "*асуудалтай*",
+       "bermasalah",
+       "*асуудалгүй*",
+       "tidak ada masalah"
+      ],
+      [
+       "*аюул* (bahaya)",
+       "*аюултай*",
+       "berbahaya",
+       "*аюулгүй*",
+       "aman"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Pola ini adalah salah satu alat paling berguna dalam bahasa Mongolia**, karena ia mengubah kata benda apa pun menjadi kata sifat tanpa kamu perlu menghafal kata baru. Kalau kamu tahu *хүч* (kekuatan), kamu otomatis tahu *хүчтэй* (kuat) dan *хүчгүй* (lemah). Kalau kamu tahu *ус* (air), kamu tahu *устай* (berair) dan *усгүй* (kering)."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat sangkalan yang paling sering kamu butuhkan",
+     "items": [
+      "*Би ойлгохгүй байна.* — Saya tidak mengerti.",
+      "*Би мэдэхгүй.* — Saya tidak tahu.",
+      "*Болохгүй.* — Tidak boleh. / Tidak bisa.",
+      "*Асуудалгүй.* — Tidak masalah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menjawab pertanyaan bernada negatif",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini titik yang membingungkan penutur bahasa Inggris tetapi **sama sekali tidak membingungkan penutur bahasa Indonesia**, karena bahasa Mongolia dan bahasa Indonesia bekerja dengan cara yang sama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Jawaban Mongolia",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Чи явахгүй юу?* (Kamu tidak pergi?)",
+       "*Тийм, явахгүй.*",
+       "Iya, saya tidak pergi."
+      ],
+      [
+       "*Чи явахгүй юу?*",
+       "*Үгүй, явна.*",
+       "Tidak, saya pergi kok."
+      ],
+      [
+       "*Мөнгө байхгүй юу?*",
+       "*Тийм, байхгүй.*",
+       "Iya, tidak ada."
+      ],
+      [
+       "*Ойлгохгүй байна уу?*",
+       "*Үгүй, ойлголоо.*",
+       "Tidak, saya mengerti."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa *тийм* (ya) di sini berarti **\"benar, dugaanmu tepat\"** — bukan \"ya, saya pergi\". Persis seperti bahasa Indonesia: kalau ditanya \"kamu nggak jadi pergi?\", jawaban \"iya\" berarti \"betul, nggak jadi\". Bahasa Inggris justru terbalik di sini, jadi ini adalah satu tempat di mana **bahasa Indonesiamu memberimu keuntungan langsung.**"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "mn": "биш",
+   "baca": "bish",
+   "id": "bukan (kata benda/sifat)"
+  },
+  {
+   "mn": "үгүй",
+   "baca": "Ü-güi",
+   "id": "tidak (jawaban)"
+  },
+  {
+   "mn": "байхгүй",
+   "baca": "BAIKH-güi",
+   "id": "tidak ada"
+  },
+  {
+   "mn": "мэдэхгүй",
+   "baca": "ME-dekh-güi",
+   "id": "tidak tahu"
+  },
+  {
+   "mn": "ойлгохгүй",
+   "baca": "OIL-gokh-güi",
+   "id": "tidak mengerti"
+  },
+  {
+   "mn": "болохгүй",
+   "baca": "BO-lokh-güi",
+   "id": "tidak boleh"
+  },
+  {
+   "mn": "хэн ч",
+   "baca": "khen ch",
+   "id": "siapa pun"
+  },
+  {
+   "mn": "юу ч",
+   "baca": "yuu ch",
+   "id": "apa pun"
+  },
+  {
+   "mn": "хаана ч",
+   "baca": "KHAA-na ch",
+   "id": "di mana pun"
+  },
+  {
+   "mn": "хэзээ ч",
+   "baca": "khe-DZEE ch",
+   "id": "kapan pun"
+  },
+  {
+   "mn": "л",
+   "baca": "l",
+   "id": "cuma, saja"
+  },
+  {
+   "mn": "түлхүүр",
+   "baca": "TÜL-khüür",
+   "id": "kunci"
+  },
+  {
+   "mn": "хүрэм",
+   "baca": "khü-REM",
+   "id": "jaket"
+  },
+  {
+   "mn": "халаас",
+   "baca": "kha-LAAS",
+   "id": "saku"
+  },
+  {
+   "mn": "шалгах",
+   "baca": "SHAL-gakh",
+   "id": "memeriksa"
+  },
+  {
+   "mn": "санаа зовох",
+   "baca": "sa-NAA DZO-vokh",
+   "id": "khawatir"
+  },
+  {
+   "mn": "асуудал",
+   "baca": "A-suu-dal",
+   "id": "masalah"
+  },
+  {
+   "mn": "аюулгүй",
+   "baca": "a-YUUL-güi",
+   "id": "aman"
+  },
+  {
+   "mn": "үнэхээр",
+   "baca": "Ü-ne-kheer",
+   "id": "sungguh, benar-benar"
+  },
+  {
+   "mn": "хамаагүй",
+   "baca": "kha-MAA-güi",
+   "id": "tidak apa-apa, terserah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya bukan guru.",
+    "Saya tidak tahu.",
+    "Tidak ada uang.",
+    "Tidak ada siapa-siapa.",
+    "Saya tidak pergi ke mana-mana.",
+    "Jangan khawatir."
+   ]
+  },
+  {
+   "prompt": "Isi dengan биш, байхгүй, atau үгүй.",
+   "items": [
+    "Би багш ____.",
+    "Мөнгө ____.",
+    "____, тийм биш.",
+    "Хол ____.",
+    "Энд хэн ч ____.",
+    "Энэ миний ном ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk sangkalan.",
+   "items": [
+    "Би мэднэ.",
+    "Тэр явна.",
+    "Бид ойлгоно.",
+    "Чи уншдаг.",
+    "Тэр ирсэн.",
+    "Болно."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "биш / багш / би",
+    "байхгүй / ч / хэн / энд",
+    "байна / ойлгохгүй / би",
+    "яваагүй / ч / хаана / би",
+    "зов / битгий / санаа"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би багш биш. — Би мэдэхгүй. — Мөнгө байхгүй. — Хэн ч байхгүй. — Би хаана ч яваагүй. — Битгий санаа зов.",
+  "1": "биш — байхгүй — Үгүй — биш — байхгүй — биш",
+  "2": "Би мэдэхгүй. — Тэр явахгүй. — Бид ойлгохгүй. — Чи уншдаггүй. — Тэр ирээгүй. — Болохгүй.",
+  "3": "Би багш биш. — Энд хэн ч байхгүй. — Би ойлгохгүй байна. — Би хаана ч яваагүй. — Битгий санаа зов."
+ }
+}

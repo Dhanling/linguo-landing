@@ -1,0 +1,641 @@
+{
+ "title": "Ini apa? Itu punya siapa?",
+ "title_target": "Энэ юу вэ? Тэр хэний юм бэ?",
+ "goal": "Menunjuk benda, menamainya, dan menyatakan miliknya — sambil melihat untuk pertama kali bagaimana bahasa Mongolia menutup kalimat dengan *юм* dan *вэ*.",
+ "bekal": [
+  "menunjuk dan menamai benda di sekitarmu dengan *энэ* dan *тэр*",
+  "bertanya *юу вэ*, *хэний юм бэ*, dan menjawab keduanya",
+  "menyebut jamak hanya saat perlu — dan tahu kapan tidak perlu"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Ангид",
+   "intro": "Hari pertama Budi masuk kelas. Sarnai membereskan meja, dan Budi bertanya tentang benda-benda yang belum ia kenali namanya.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Багш|Baksh] [аа|aa], [энэ|E-ne] [юу|yuu] [вэ|ve]?",
+     "id": "Bu Guru, ini apa?",
+     "literal": "guru wahai, ini apa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Энэ|E-ne] [ном|nom]. [Монгол|MON-gol] [хэлний|KHEL-nii] [ном|nom].",
+     "id": "Ini buku. Buku bahasa Mongolia.",
+     "literal": "ini buku. Mongolia bahasa-punya buku."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тэр|Ter] [ч|ch] [бас|bas] [ном|nom] [уу|uu]?",
+     "id": "Itu juga buku?",
+     "literal": "itu pun juga buku -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Үгүй|Ü-güi], [тэр|ter] [дэвтэр|DEV-ter]. [Ном|Nom] [биш|bish].",
+     "id": "Bukan, itu buku tulis. Bukan buku bacaan.",
+     "literal": "bukan, itu buku-tulis. buku bukan."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тэр|Ter] [дэвтэр|DEV-ter] [хэний|KHE-nii] [юм|yum] [бэ|be]?",
+     "id": "Buku tulis itu punya siapa?",
+     "literal": "itu buku-tulis siapa-punya hal -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Тэр|Ter] [Болдын|BOL-diin] [дэвтэр|DEV-ter].",
+     "id": "Itu buku tulis Bold.",
+     "literal": "itu Bold-punya buku-tulis."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Болд|Bold] [хэн|khen] [бэ|be]?",
+     "id": "Bold itu siapa?",
+     "literal": "Bold siapa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Болд|Bold] [бол|bol] [миний|MI-nii] [оюутан|o-YUU-tan]. [Тэр|Ter] [маргааш|mar-GAASH] [ирнэ|IR-ne].",
+     "id": "Bold itu mahasiswa saya. Dia datang besok.",
+     "literal": "Bold adapun saya-punya mahasiswa. dia besok datang."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Энэ|E-ne] [хэдэн|KHE-den] [ном|nom] [бэ|be]?",
+     "id": "Ini berapa buku?",
+     "literal": "ini berapa buku -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Гурван|GUR-van] [ном|nom]. [Бүгд|Bügd] [шинэ|SHI-ne].",
+     "id": "Tiga buku. Semuanya baru.",
+     "literal": "tiga buku. semua baru."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Энэ|E-ne] [ном|nom] [хэдэн|KHE-den] [төгрөг|TÖG-rög] [вэ|ve]?",
+     "id": "Buku ini berapa tugrik?",
+     "literal": "ini buku berapa tugrik -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Мэдэхгүй|ME-dekh-güi]. [Тэр|Ter] [миний|MI-nii] [ном|nom] [биш|bish], [сургуулийн|sur-GUU-liin] [ном|nom].",
+     "id": "Tidak tahu. Itu bukan buku saya, itu buku sekolah.",
+     "literal": "tahu-tidak. itu saya-punya buku bukan, sekolah-punya buku."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo]. [Тэгвэл|TEG-vel] [энэ|E-ne] [бал|bal] [хэний|KHE-nii] [бэ|be]?",
+     "id": "Saya mengerti. Kalau begitu pulpen ini punya siapa?",
+     "literal": "mengerti-sudah. kalau-begitu ini pulpen siapa-punya -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Тэр|Ter] [чинийх|CHI-niikh] [шүү|shüü]! [Чи|Chi] [сая|sa-YA] [ширээн|shi-REEN] [дээр|deer] [тавьсан|TAV'-san].",
+     "id": "Itu punyamu lho! Kamu barusan menaruhnya di meja.",
+     "literal": "itu kamu-punya lho! kamu barusan meja atas taruh-sudah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Өө|Öö], [үнэн|Ü-nen] [юм|yum] [байна|BAI-n]! [Уучлаарай|UUCH-laa-rai].",
+     "id": "Oh, benar juga! Maaf.",
+     "literal": "oh, benar hal ada! maaf."
+    }
+   ],
+   "notes": [
+    "**Энэ = ini, тэр = itu.** Keduanya bisa berdiri sebagai kata tunjuk (*энэ ном* — buku ini) maupun sebagai kata ganti (*Энэ юу вэ?* — Ini apa?). ⚠️ Ingat bahwa *тэр* juga berarti \"dia\" — kalimat *Тэр багш* bisa berarti \"guru itu\" atau \"dia guru\", dan cuma nada bicara yang membedakannya.",
+    "**Юм berarti \"hal, benda\", tetapi di ujung kalimat ia melembutkan.** *Хэний юм бэ?* harfiahnya \"barang milik siapa?\", dan *Үнэн юм байна* harfiahnya \"benar hal ada\" — yang wajarnya \"oh iya, benar juga\". Anggap *юм* sebagai \"kok\" atau \"ternyata\" dalam bahasa Indonesia.",
+    "⚠️ **Ekor kepemilikan -ын / -ийн menempel pada pemiliknya, bukan pada barangnya.** *Болд**ын** дэвтэр* — \"Bold**-punya** buku tulis\". Susunannya persis kebalikan bahasa Indonesia (\"buku tulis Bold\") dan persis sama dengan bahasa Jawa (\"Bold-é buku\") — kalau kamu berbahasa Jawa, urutan ini sudah kamu kuasai.",
+    "**Бол menandai pokok kalimat**, mirip \"adapun\" atau \"kalau soal\". *Болд **бол** миний оюутан* — \"Bold itu mahasiswa saya\". Ia tidak wajib, tetapi membuat kalimat terdengar rapi saat memperkenalkan sesuatu untuk pertama kali.",
+    "**Биш menyangkal kata benda.** *Ном биш* = \"bukan buku\". ⚠️ Jangan memakai *үгүй* di sini — *үгүй* adalah jawaban yang berdiri sendiri (\"tidak\"), bukan penyangkal di dalam kalimat."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor kepemilikan: -ын, -ийн, -ы, -и, -н",
+     "body": [
+      "Lima bentuk, satu makna: \"milik\". Yang menentukan bentuknya adalah **huruf terakhir kata pemiliknya** dan **kubu vokalnya** — dua hal yang sudah kamu kenal dari halaman keselarasan vokal di depan."
+     ],
+     "table": {
+      "head": [
+       "Kata berakhir dengan",
+       "Ekor",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "huruf mati, kubu belakang",
+        "**-ын**",
+        "*Болд* → *Болд**ын***",
+        "milik Bold"
+       ],
+       [
+        "huruf mati, kubu depan",
+        "**-ийн**",
+        "*гэр* → *гэр**ийн***",
+        "milik rumah"
+       ],
+       [
+        "*-н*",
+        "**-ы / -ий**",
+        "*оюутан* → *оюутн**ы***",
+        "milik mahasiswa"
+       ],
+       [
+        "vokal panjang atau diftong",
+        "**-гийн / -гын**",
+        "*эмээ* → *эмээ**гийн***",
+        "milik nenek"
+       ],
+       [
+        "*-ь* atau *-и*",
+        "**-йн**",
+        "*морь* → *мор**ийн***",
+        "milik kuda"
+       ]
+      ]
+     },
+     "after": [
+      "Jangan menghafal tabel ini sekarang. Yang perlu kamu bawa dari sini cuma satu kalimat: **ekornya selalu berbunyi seperti \"-iin\" atau \"-in\", dan ia menempel pada pemiliknya.** Bentuk pastinya akan datang sendiri lewat pemakaian.",
+      "⚠️ Untuk kata ganti, bentuknya tidak beraturan dan wajib dihafal karena terlalu sering dipakai: *би* → ***миний***, *чи* → ***чиний***, *та* → ***таны***, *тэр* → ***түүний***, *бид* → ***бидний***, *тэд* → ***тэдний***."
+     ]
+    },
+    {
+     "title": "Jamak — dan kenapa kamu jarang membutuhkannya",
+     "body": [
+      "Bahasa Mongolia punya ekor jamak, tetapi memakainya jauh lebih jarang daripada bahasa Inggris. Kalau jumlahnya sudah jelas dari angka atau dari konteks, kata bendanya **tetap tunggal** — persis seperti bahasa Indonesia."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Bentuk kata benda",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Гурван ном*",
+        "tunggal",
+        "tiga buku"
+       ],
+       [
+        "*Олон ном*",
+        "tunggal",
+        "banyak buku"
+       ],
+       [
+        "*Ном**ууд***",
+        "jamak",
+        "buku-buku (sekelompok tertentu)"
+       ],
+       [
+        "*Оюутн**ууд***",
+        "jamak",
+        "para mahasiswa"
+       ],
+       [
+        "*Багш **нар***",
+        "jamak (orang)",
+        "para guru"
+       ]
+      ]
+     },
+     "after": [
+      "Ekornya ada empat — *-ууд, -үүд, -ууд, -нууд* mengikuti keselarasan vokal — plus kata terpisah ***нар*** yang khusus dipakai untuk **orang**: *багш нар* (para guru), *эмч нар* (para dokter), *та нар* (kalian).",
+      "**Aturan praktisnya: jangan pakai ekor jamak sampai kamu merasa benar-benar butuh.** Kesalahan penutur Indonesia di sini hampir selalu berupa kelebihan, bukan kekurangan — kebiasaan dari pelajaran bahasa Inggris. *Гурван номууд* salah; *гурван ном* benar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Benda di sekitarmu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Монгол",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*ном*",
+       "*nom*",
+       "buku"
+      ],
+      [
+       "*дэвтэр*",
+       "*DEV-ter*",
+       "buku tulis"
+      ],
+      [
+       "*бал*",
+       "*bal*",
+       "pulpen"
+      ],
+      [
+       "*харандаа*",
+       "*kha-ran-DAA*",
+       "pensil"
+      ],
+      [
+       "*ширээ*",
+       "*shi-REE*",
+       "meja"
+      ],
+      [
+       "*сандал*",
+       "*SAN-dal*",
+       "kursi"
+      ],
+      [
+       "*цонх*",
+       "*tsonkh*",
+       "jendela"
+      ],
+      [
+       "*хаалга*",
+       "*KHAAL-ga*",
+       "pintu"
+      ],
+      [
+       "*цүнх*",
+       "*tsünkh*",
+       "tas"
+      ],
+      [
+       "*утас*",
+       "*u-TAS*",
+       "telepon; benang"
+      ],
+      [
+       "*компьютер*",
+       "*kom-P'YU-ter*",
+       "komputer"
+      ],
+      [
+       "*цаас*",
+       "*TSAAS*",
+       "kertas"
+      ],
+      [
+       "*ус*",
+       "*us*",
+       "air"
+      ],
+      [
+       "*аяга*",
+       "*a-YA-ga*",
+       "gelas, cangkir"
+      ],
+      [
+       "*түлхүүр*",
+       "*TÜL-khüür*",
+       "kunci"
+      ],
+      [
+       "*мөнгө*",
+       "*MÖN-gö*",
+       "uang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Утас* berarti **telepon** dan **benang** sekaligus, dan itu bukan kebetulan: telepon dinamai dari kawatnya, persis seperti \"kabel\" masuk ke bahasa Indonesia. Untuk ponsel, orang berkata *гар утас* — harfiah \"telepon tangan\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kata sifat yang langsung berguna",
+     "items": [
+      "*шинэ* (SHI-ne) — baru. *хуучин* (KHUU-chin) — lama, bekas.",
+      "*том* (tom) — besar. *жижиг* (JI-jig) — kecil.",
+      "*сайн* (sain) — bagus. *муу* (muu) — jelek, buruk.",
+      "⚠️ Kata sifat selalu berdiri **di depan** kata bendanya dan tidak pernah berubah bentuk: *шинэ ном*, *шинэ ширээ*, *шинэ оюутнууд*. Tidak ada penyesuaian apa pun — sama seperti bahasa Indonesia, kecuali letaknya yang di depan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menunjuk: энэ, тэр, энд, тэнд",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Empat kata ini bekerja berpasangan dan seluruhnya berdiri di **depan** kata yang ditunjuk. Sekali kamu melihat polanya, keempatnya jadi satu hafalan, bukan empat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dekat",
+      "Baca",
+      "Jauh",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*энэ*",
+       "*E-ne*",
+       "*тэр*",
+       "*ter*",
+       "ini / itu"
+      ],
+      [
+       "*энд*",
+       "*end*",
+       "*тэнд*",
+       "*tend*",
+       "di sini / di sana"
+      ],
+      [
+       "*ийш*",
+       "*iish*",
+       "*тийш*",
+       "*tiish*",
+       "ke sini / ke sana"
+      ],
+      [
+       "*ингэж*",
+       "*IN-gej*",
+       "*тэгж*",
+       "*tegj*",
+       "begini / begitu"
+      ],
+      [
+       "*эдгээр*",
+       "*ed-GEER*",
+       "*тэдгээр*",
+       "*ted-GEER*",
+       "ini semua / itu semua"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa seluruh kata \"dekat\" dimulai dengan **э-** dan seluruh kata \"jauh\" dimulai dengan **тэ-**. Ini pola yang setia dan dipakai untuk belasan kata lain. Begitu kamu menangkapnya, kamu bisa menebak arti kata baru sebelum melihatnya di kamus."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pertanyaan",
+      "Jawaban",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Энэ юу вэ?*",
+       "*Энэ ном.*",
+       "Ini apa? — Ini buku."
+      ],
+      [
+       "*Тэр юу вэ?*",
+       "*Тэр цүнх.*",
+       "Itu apa? — Itu tas."
+      ],
+      [
+       "*Энэ хэн бэ?*",
+       "*Энэ миний багш.*",
+       "Ini siapa? — Ini guru saya."
+      ],
+      [
+       "*Ном хаана байна вэ?*",
+       "*Ширээн дээр байна.*",
+       "Buku di mana? — Ada di atas meja."
+      ],
+      [
+       "*Энэ хэний юм бэ?*",
+       "*Миний юм.*",
+       "Ini punya siapa? — Punya saya."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menjawab \"punya siapa\"",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ada dua cara menjawab, dan orang Mongolia memakai keduanya sesering satu sama lain. Yang kedua lebih pendek dan lebih sering terdengar di percakapan santai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Cara",
+      "Bentuk",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Lengkap",
+       "milik + benda",
+       "*Миний ном.*",
+       "Buku saya."
+      ],
+      [
+       "Pendek",
+       "milik + **-х**",
+       "*Минийх.*",
+       "Punya saya."
+      ],
+      [
+       "Pendek",
+       "milik + **-х**",
+       "*Чинийх.*",
+       "Punyamu."
+      ],
+      [
+       "Pendek",
+       "milik + **-х**",
+       "*Таных.*",
+       "Punya Anda."
+      ],
+      [
+       "Pendek",
+       "milik + **-х**",
+       "*Түүнийх.*",
+       "Punya dia."
+      ],
+      [
+       "Pendek",
+       "nama + **-ынх**",
+       "*Болдынх.*",
+       "Punya Bold."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Bentuk pendek berekor **-х** itu punya satu pemakaian tambahan yang sangat sering dan tidak ada padanannya dalam bahasa Indonesia: ia berarti **\"rumah/keluarga si anu\"**. *Болдынх* bisa berarti \"punya Bold\" maupun \"rumah Bold\". *Би Болдынх руу явна* = \"Saya pergi ke rumah Bold\". Sama persis dengan \"aku ke tempatnya Bold\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Pola siap pakai",
+     "items": [
+      "*Энэ хэний юм бэ?* — Ini punya siapa?",
+      "*Энэ минийх.* — Ini punya saya.",
+      "*Энэ миний ном биш.* — Ini bukan buku saya.",
+      "*Тэр Сарнайнх.* — Itu punya Sarnai.",
+      "*Мэдэхгүй, хэний ч биш байх.* — Tidak tahu, mungkin bukan punya siapa-siapa."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "mn": "энэ",
+   "baca": "E-ne",
+   "id": "ini"
+  },
+  {
+   "mn": "тэр",
+   "baca": "ter",
+   "id": "itu; dia"
+  },
+  {
+   "mn": "энд",
+   "baca": "end",
+   "id": "di sini"
+  },
+  {
+   "mn": "тэнд",
+   "baca": "tend",
+   "id": "di sana"
+  },
+  {
+   "mn": "юу",
+   "baca": "yuu",
+   "id": "apa"
+  },
+  {
+   "mn": "юм",
+   "baca": "yum",
+   "id": "hal, benda; kok, ternyata"
+  },
+  {
+   "mn": "хэний",
+   "baca": "KHE-nii",
+   "id": "milik siapa"
+  },
+  {
+   "mn": "биш",
+   "baca": "bish",
+   "id": "⚠️ bukan (menyangkal kata benda)"
+  },
+  {
+   "mn": "бол",
+   "baca": "bol",
+   "id": "adapun, kalau soal"
+  },
+  {
+   "mn": "ном",
+   "baca": "nom",
+   "id": "buku"
+  },
+  {
+   "mn": "дэвтэр",
+   "baca": "DEV-ter",
+   "id": "buku tulis"
+  },
+  {
+   "mn": "бал",
+   "baca": "bal",
+   "id": "pulpen"
+  },
+  {
+   "mn": "ширээ",
+   "baca": "shi-REE",
+   "id": "meja"
+  },
+  {
+   "mn": "цүнх",
+   "baca": "tsünkh",
+   "id": "tas"
+  },
+  {
+   "mn": "мөнгө",
+   "baca": "MÖN-gö",
+   "id": "uang"
+  },
+  {
+   "mn": "шинэ",
+   "baca": "SHI-ne",
+   "id": "baru"
+  },
+  {
+   "mn": "хуучин",
+   "baca": "KHUU-chin",
+   "id": "lama, bekas"
+  },
+  {
+   "mn": "том",
+   "baca": "tom",
+   "id": "besar"
+  },
+  {
+   "mn": "жижиг",
+   "baca": "JI-jig",
+   "id": "kecil"
+  },
+  {
+   "mn": "ойлголоо",
+   "baca": "OIL-go-loo",
+   "id": "saya mengerti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Ini apa?",
+    "Ini buku baru.",
+    "Itu bukan tas saya.",
+    "Buku tulis itu punya siapa?",
+    "Itu punya Bold.",
+    "Meja ini besar."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kepemilikan yang tepat.",
+   "items": [
+    "Энэ ____ ном. (би)",
+    "Тэр ____ цүнх. (чи)",
+    "Энэ ____ дэвтэр. (Болд)",
+    "Тэр ____ бал. (та)",
+    "Энэ ____ ширээ. (тэр)",
+    "Тэр ____ сандал. (бид)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk pendek berekor -х.",
+   "items": [
+    "миний ном",
+    "чиний цүнх",
+    "таны бал",
+    "түүний дэвтэр",
+    "Болдын ширээ",
+    "Сарнайн ном"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "юу / энэ / вэ",
+    "ном / энэ / шинэ",
+    "цүнх / биш / миний / тэр",
+    "хэний / бэ / дэвтэр / тэр / юм",
+    "ном / гурван / энэ"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Энэ юу вэ? — Энэ шинэ ном. — Тэр миний цүнх биш. — Тэр дэвтэр хэний юм бэ? — Тэр Болдынх. — Энэ ширээ том.",
+  "1": "миний — чиний — Болдын — таны — түүний — бидний",
+  "2": "минийх — чинийх — таных — түүнийх — Болдынх — Сарнайнх",
+  "3": "Энэ юу вэ? — Энэ шинэ ном. — Тэр миний цүнх биш. — Тэр дэвтэр хэний юм бэ? — Энэ гурван ном."
+ }
+}

@@ -1,0 +1,325 @@
+{
+ "title": "Memesan makanan",
+ "title_target": "Хоол захиалах",
+ "goal": "Memesan, membayar, dan berbasa-basi di restoran — sekaligus menguasai ekor *-аар / -ээр*, yang berarti \"dengan\", \"lewat\", dan \"dalam bahasa\".",
+ "bekal": [
+  "memesan makanan dan minuman, dan bertanya isi hidangan",
+  "memakai ekor *-аар* untuk alat, cara, jalan, dan bahasa",
+  "menolak, meminta tambahan, dan meminta bon dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Рестораны цэсэнд",
+   "intro": "Budi dan Sarnai masuk ke sebuah restoran kecil di dekat kampus. Pelayan datang membawa daftar menu.",
+   "lines": [
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Энэ|E-ne] [цэс|tses] [байна|BAI-n]. [Юу|Yuu] [захиалах|dza-KHIA-lakh] [вэ|ve]?",
+     "id": "Selamat datang. Ini menunya. Mau pesan apa?",
+     "literal": "baik ada -kah. ini menu ada. apa pesan -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Цуйван|TSUI-van] [байгаа|bai-GAA] [юу|yuu]?",
+     "id": "Ada tsuivan?",
+     "literal": "tsuivan ada-yang -kah?"
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Байгаа|Bai-GAA]. [Хонины|KHO-ni-nii] [махаар|ma-KHAAR] [хийсэн|KHII-sen].",
+     "id": "Ada. Dibuat dengan daging domba.",
+     "literal": "domba-punya daging-dengan buat-sudah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тахианы|ta-KHIA-nii] [махаар|ma-KHAAR] [хийсэн|KHII-sen] [байгаа|bai-GAA] [юу|yuu]?",
+     "id": "Ada yang dibuat dengan daging ayam?",
+     "literal": "ayam-punya daging-dengan buat-sudah ada-yang -kah?"
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Байхгүй|BAIKH-güi]. [Гэхдээ|GEKH-dee] [ногоотой|no-GOO-toi] [цуйван|TSUI-van] [байгаа|bai-GAA].",
+     "id": "Tidak ada. Tapi ada tsuivan dengan sayur.",
+     "literal": "ada-tidak. tetapi sayur-berdengan tsuivan ada-yang."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тэгвэл|TEG-vel] [түүнийг|TÜÜ-niig] [авъя|AV-ya]. [Мах|Makh] [багатай|BA-ga-tai] [байж|baij] [болох|BO-lokh] [уу|uu]?",
+     "id": "Kalau begitu itu saja. Bisa dagingnya sedikit?",
+     "literal": "kalau-begitu itu-objek ambil-mari. daging sedikit-berdengan ada-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Болно|BOL-no]. [Ундаа|Un-DAA] [юу|yuu] [авах|a-VAKH] [вэ|ve]?",
+     "id": "Bisa. Minumnya apa?",
+     "literal": "boleh. minuman apa ambil -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Надад|NA-dad] [сүүтэй|SÜÜ-tei] [цай|tsai], [түүнд|TÜÜnd] [ус|us] [өгнө|ÖG-nö] [үү|üü].",
+     "id": "Untuk saya teh susu, untuk dia air putih.",
+     "literal": "saya-kepada susu-berdengan teh, dia-kepada air beri -kah."
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Хүйтэн|KHÜY-ten] [ус|us] [үү|üü], [халуун|kha-LUUN] [ус|us] [уу|uu]?",
+     "id": "Air dingin atau air panas?",
+     "literal": "dingin air -kah, panas air -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хүйтэн|KHÜY-ten] [ус|us]. [Бас|Bas] [нэг|neg] [хуушуур|khuu-SHUUR] [нэмээрэй|ne-MEE-rei].",
+     "id": "Air dingin. Tolong tambah satu khuushuur juga.",
+     "literal": "dingin air. juga satu khuushuur tambahkanlah."
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[За|Dza], [ойлголоо|OIL-go-loo]. [Арван|A-rvan] [минутын|mi-NU-tiin] [дараа|da-RAA] [бэлэн|BE-len] [болно|BOL-no].",
+     "id": "Baik, saya mengerti. Sepuluh menit lagi siap.",
+     "literal": "baik, mengerti-sudah. sepuluh menit-punya sesudah siap jadi."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Буди|BU-di], [чи|chi] [монголоор|MON-go-loor] [сайн|sain] [захиаллаа|dza-KHIAL-laa] [шүү|shüü]!",
+     "id": "Budi, kamu memesan dalam bahasa Mongolia dengan bagus lho!",
+     "literal": "Budi, kamu Mongolia-dalam baik pesan-baru-saja lho!"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баярлалаа|ba-yar-la-LAA]! [Гартаа|GAR-taa] [бичгээр|BICH-geer] [бэлдсэн|BELD-sen] [юм|yum].",
+     "id": "Terima kasih! Saya siapkan tertulis di tangan.",
+     "literal": "terima-kasih! tangan-di-sendiri tulisan-dengan siapkan-sudah kok."
+    },
+    {
+     "speaker": "Зөөгч:",
+     "text": "[Хоол|Khool] [ирлээ|IR-lee]. [Сайхан|SAI-khan] [хооллоорой|khool-LOO-roi]!",
+     "id": "Makanannya datang. Selamat menikmati!",
+     "literal": "makanan datang-baru-saja. bagus makanlah!"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баярлалаа|ba-yar-la-LAA]. [Дараа|Da-RAA] [нь|n'] [тооцоог|TOO-tsoog] [авъя|AV-ya].",
+     "id": "Terima kasih. Nanti minta bonnya ya.",
+     "literal": "terima-kasih. sesudah -nya hitungan-objek ambil-mari."
+    }
+   ],
+   "notes": [
+    "⚠️ **Ekor -аар / -ээр / -оор / -өөр mengerjakan empat pekerjaan sekaligus:** alat (*махаар* — dengan daging), cara (*бичгээр* — secara tertulis), jalan (*замаар* — lewat jalan), dan bahasa (*монголоор* — dalam bahasa Mongolia). Semuanya menjawab pertanyaan \"dengan apa?\", jadi anggaplah ia sebagai satu ekor dengan satu makna yang lentur.",
+    "**Монголоор ярих = berbicara dalam bahasa Mongolia.** ⚠️ Perhatikan bahwa yang berekor adalah *монгол*, bukan *хэл*. Menyebut *монгол хэлээр* juga benar tetapi terdengar lebih formal; di percakapan orang berkata *монголоор*, *англиар*, *оросоор*, *индонезоор*.",
+    "**Өгнө үү harfiahnya \"maukah memberi\" dan berfungsi persis seperti \"tolong\" dalam bahasa Indonesia.** *Ус өгнө үү* = tolong airnya. Ini bentuk permintaan paling sopan dan bisa dipasangkan dengan kata kerja apa pun.",
+    "**Ekor -аарай / -ээрэй adalah perintah yang sopan dan hangat**, dipakai untuk saran dan harapan: *нэмээрэй* (tolong tambahkan), *сайхан хооллоорой* (selamat menikmati), *сайн яваарай* (hati-hati di jalan). Bentuk ini terdengar seperti \"ya\" yang menempel di ujung kalimat Indonesia — melembutkan tanpa mengubah isi.",
+    "**Тооцоо = bon, hitungan.** *Тооцоог авъя* atau *тооцоо хийе* adalah cara meminta bon. ⚠️ Di Mongolia, memberi tip belum menjadi kebiasaan umum kecuali di restoran mahal di Ulaanbaatar; kalau layanannya bagus, membulatkan ke atas sudah lebih dari cukup."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor -аар: dengan, lewat, dalam",
+     "body": [
+      "Empat bentuk mengikuti keselarasan vokal, dan pilihannya sama persis dengan ekor lain yang sudah kamu kenal."
+     ],
+     "table": {
+      "head": ["Vokal kata dasar", "Ekor", "Contoh", "Arti"],
+      "rows": [
+       ["*а, у*", "**-аар**", "*мах* → *мах**аар***", "dengan daging"],
+       ["*э, ү*", "**-ээр**", "*гэр* → *гэр**ээр***", "lewat rumah"],
+       ["*о*", "**-оор**", "*ном* → *ном**оор***", "dengan buku"],
+       ["*ө*", "**-өөр**", "*өдөр* → *өдр**өөр***", "per hari"],
+       ["berakhir vokal", "**-гаар / -гээр**", "*ширээ* → *ширээ**гээр***", "lewat meja"]
+      ]
+     },
+     "after": [
+      "**Empat pemakaian yang paling sering, dengan contoh yang bisa langsung kamu pakai:**",
+      "⚠️ *Автобус**аар** явна* (naik bus) — perhatikan bahwa bahasa Mongolia berkata \"pergi **dengan** bus\", bukan \"naik bus\". Kata kerja *явах* mengurus semua alat angkut: *машинаар*, *онгоцоор* (pesawat), *галт тэргээр* (kereta), *явганаар* (jalan kaki)."
+     ]
+    },
+    {
+     "title": "Meminta dengan sopan: tiga tingkat",
+     "body": [
+      "Bahasa Mongolia punya tiga cara meminta, dan bedanya sama dengan beda \"ambil\", \"tolong ambilkan\", dan \"boleh minta tolong ambilkan\" dalam bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Nada", "Kapan dipakai"],
+      "rows": [
+       ["Akar telanjang", "*Ус өг.*", "langsung", "Ke teman akrab, adik, anak."],
+       ["**-аарай / -ээрэй**", "*Ус өгөөрэй.*", "hangat, sopan", "Ke siapa pun. Paling aman."],
+       ["**… өгнө үү**", "*Ус өгнө үү.*", "sangat sopan", "Ke pelayan, petugas, orang tak dikenal."],
+       ["**… болох уу?**", "*Ус авч болох уу?*", "meminta izin", "Kalau kamu tidak yakin boleh."],
+       ["**битгий** + akar", "*Битгий яв.*", "larangan", "\"Jangan pergi.\""]
+      ]
+     },
+     "after": [
+      "⚠️ **Битгий adalah satu-satunya cara melarang di bahasa Mongolia, dan letaknya di DEPAN kata kerja** — satu-satunya hal yang boleh berdiri di depan kata kerja selain objeknya. *Битгий хоцроорой* = jangan terlambat ya.",
+      "Bentuk *-аарай* adalah yang paling berguna untuk dipelajari lebih dulu, karena ia tidak pernah salah tempat: cukup sopan untuk orang asing, cukup hangat untuk teman. **Kalau kamu cuma menghafal satu bentuk perintah dari unit ini, hafalkan yang ini.**"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Makanan dan minuman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*хоол*", "*khool*", "makanan", "*ундаа*", "*un-DAA*", "minuman"],
+      ["*мах*", "*makh*", "daging", "*ногоо*", "*no-GOO*", "sayur"],
+      ["*хонины мах*", "*KHO-ni-nii makh*", "daging domba", "*үхрийн мах*", "*ÜKH-riin makh*", "daging sapi"],
+      ["*тахианы мах*", "*ta-KHIA-nii makh*", "daging ayam", "*загас*", "*DZA-gas*", "ikan"],
+      ["*будаа*", "*bu-DAA*", "nasi, beras", "*гурил*", "*GU-ril*", "tepung, mi"],
+      ["*төмс*", "*töms*", "kentang", "*лууван*", "*LUU-van*", "wortel"],
+      ["*сонгино*", "*SON-gi-no*", "bawang", "*байцаа*", "*bai-TSAA*", "kubis"],
+      ["*давс*", "*davs*", "garam", "*элсэн чихэр*", "*EL-sen CHI-kher*", "gula"],
+      ["*цай*", "*tsai*", "teh", "*кофе*", "*KO-fe*", "kopi"],
+      ["*сүү*", "*süü*", "susu", "*ус*", "*us*", "air"],
+      ["*талх*", "*talkh*", "roti", "*өндөг*", "*ÖN-dög*", "telur"],
+      ["*жимс*", "*jims*", "buah", "*шөл*", "*shöl*", "sup, kuah"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan pola nama daging: **hewan berekor -ын/-ийн + мах**. *Хонь* (domba) → *хонины мах*; *үхэр* (sapi) → *үхрийн мах*; *тахиа* (ayam) → *тахианы мах*. Harfiahnya \"daging milik domba\". Begitu kamu tahu nama hewannya, kamu tahu nama dagingnya — tidak seperti bahasa Inggris yang memakai kata sama sekali berbeda (*sheep* dan *mutton*)."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Untuk yang tidak makan daging babi atau mencari makanan halal",
+     "items": [
+      "*Гахайн мах* (ga-KHAIN makh) = daging babi. Kalimat yang perlu kamu hafalkan: ***Би гахайн мах иддэггүй.*** — Saya tidak makan daging babi.",
+      "Masakan Mongolia tradisional hampir seluruhnya **domba dan sapi**; babi jauh lebih jarang daripada di Tiongkok atau Korea, jadi risikonya kecil. Yang perlu diwaspadai adalah masakan bergaya Korea dan Tiongkok di kota.",
+      "Ulaanbaatar punya komunitas Muslim Kazakh dan beberapa restoran halal, terutama di sekitar *Баянгол* dan wilayah Kazakh di provinsi *Баян-Өлгий*.",
+      "*Би мах иддэггүй.* — Saya tidak makan daging. ⚠️ Bersiaplah menjelaskan; vegetarianisme masih sangat tidak lazim di Mongolia, dan pertanyaannya akan tulus, bukan menghakimi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat siap pakai di restoran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*Цэс өгнө үү.*", "*tses ÖG-nö üü*", "Tolong menunya."],
+      ["*Юу захиалах вэ?*", "*yuu dza-KHIA-lakh ve*", "Mau pesan apa?"],
+      ["*Энийг авъя.*", "*E-niig AV-ya*", "Saya pesan ini."],
+      ["*Энэ юу вэ?*", "*E-ne yuu ve*", "Ini apa?"],
+      ["*Хурц уу?*", "*khurts uu*", "Pedas?"],
+      ["*Хурц биш байг.*", "*khurts bish baig*", "Jangan pedas."],
+      ["*Бас нэг өгнө үү.*", "*bas neg ÖG-nö üü*", "Tolong tambah satu lagi."],
+      ["*Маш амттай байна.*", "*mash AMT-tai BAI-n*", "Enak sekali."],
+      ["*Би цатгалан боллоо.*", "*bi TSAT-ga-lan BOL-loo*", "Saya sudah kenyang."],
+      ["*Тооцоо хийе.*", "*TOO-tsoo KHII-ye*", "Minta bonnya."],
+      ["*Картаар төлж болох уу?*", "*KAR-taar TÖLJ BO-lokh uu*", "Bisa bayar pakai kartu?"],
+      ["*Сайхан хооллоорой!*", "*SAI-khan khool-LOO-roi*", "Selamat menikmati!"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa **bahasa Mongolia tidak punya ucapan sebelum makan** seperti *itadakimasu* atau \"selamat makan\" yang diucapkan pemakannya sendiri. *Сайхан хооллоорой* diucapkan **kepada** orang yang akan makan, oleh pelayan atau tuan rumah. Kalau kamu yang makan, cukup menjawab *баярлалаа*."
+    }
+   ]
+  },
+  {
+   "title": "Rasa dan keadaan makanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*амттай*", "*AMT-tai*", "enak"],
+      ["*амтгүй*", "*AMT-güi*", "tidak enak, hambar"],
+      ["*давстай*", "*DAVS-tai*", "asin"],
+      ["*чихэрлэг*", "*CHI-kher-leg*", "manis"],
+      ["*исгэлэн*", "*IS-ge-len*", "asam"],
+      ["*гашуун*", "*ga-SHUUN*", "pahit"],
+      ["*хурц*", "*khurts*", "pedas; tajam"],
+      ["*халуун*", "*kha-LUUN*", "panas"],
+      ["*хүйтэн*", "*KHÜY-ten*", "dingin"],
+      ["*шинэхэн*", "*SHI-ne-khen*", "segar"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan ekor **-тай** (punya) dan **-гүй** (tidak punya) yang membentuk sebagian besar kata sifat ini: *амт* (rasa) → *амттай* (berasa, enak) dan *амтгүй* (tanpa rasa). Pola ini sangat produktif dan bisa kamu pakai untuk membuat kata sifat baru sendiri: *мөнгөтэй* (punya uang, kaya), *мөнгөгүй* (tidak punya uang), *цагтай* (punya waktu), *цаггүй* (tidak punya waktu)."
+    },
+    {
+     "type": "p",
+     "text": "Satu catatan tentang rasa yang sering mengejutkan tamu Indonesia: **masakan Mongolia hampir tidak memakai cabai, bawang putih, atau rempah sama sekali.** Bumbunya garam, dan kadang bawang bombai. Ini bukan kekurangan melainkan pilihan — di iklim tempat sayur nyaris tidak tumbuh selama delapan bulan setahun, rasa datang dari dagingnya sendiri. Kalau kamu ingin pedas, bawalah sambal sendiri; itu yang dilakukan hampir semua orang Indonesia yang tinggal di sana."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "хоол", "baca": "khool", "id": "makanan" },
+  { "mn": "ундаа", "baca": "un-DAA", "id": "minuman" },
+  { "mn": "цэс", "baca": "tses", "id": "menu" },
+  { "mn": "захиалах", "baca": "dza-KHIA-lakh", "id": "memesan" },
+  { "mn": "зөөгч", "baca": "DZÖÖGCH", "id": "pelayan" },
+  { "mn": "тооцоо", "baca": "TOO-tsoo", "id": "bon, hitungan" },
+  { "mn": "мах", "baca": "makh", "id": "daging" },
+  { "mn": "ногоо", "baca": "no-GOO", "id": "sayur" },
+  { "mn": "будаа", "baca": "bu-DAA", "id": "nasi, beras" },
+  { "mn": "сүү", "baca": "süü", "id": "susu" },
+  { "mn": "талх", "baca": "talkh", "id": "roti" },
+  { "mn": "өндөг", "baca": "ÖN-dög", "id": "telur" },
+  { "mn": "халуун", "baca": "kha-LUUN", "id": "panas" },
+  { "mn": "хүйтэн", "baca": "KHÜY-ten", "id": "dingin" },
+  { "mn": "хурц", "baca": "khurts", "id": "pedas, tajam" },
+  { "mn": "нэмэх", "baca": "NE-mekh", "id": "menambah" },
+  { "mn": "бэлэн", "baca": "BE-len", "id": "siap" },
+  { "mn": "цатгалан", "baca": "TSAT-ga-lan", "id": "kenyang" },
+  { "mn": "өлссөн", "baca": "ÖLS-sön", "id": "lapar" },
+  { "mn": "битгий", "baca": "BIT-gii", "id": "⚠️ jangan (di depan kata kerja)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Tolong menunya.",
+    "Saya pesan ini.",
+    "Ada tsuivan?",
+    "Tolong jangan pedas.",
+    "Enak sekali.",
+    "Minta bonnya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor -аар, -ээр, -оор, atau -өөр.",
+   "items": [
+    "Би автобус____ явна.",
+    "Тэр монгол____ ярьдаг.",
+    "Энэ мах____ хийсэн.",
+    "Би энэ зам____ явна.",
+    "Тэр бичиг____ бэлдсэн.",
+    "Бид өдр____ ажилладаг."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi permintaan sopan dengan -аарай, -ээрэй, -оорой, atau -өөрэй.",
+   "items": [
+    "Ус өг.",
+    "Нэг нэм.",
+    "Сайхан хоол.",
+    "Битгий хоцор.",
+    "Энд суу.",
+    "Дахин ир."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "үү / өгнө / цэс",
+    "авъя / энийг / би",
+    "байна / амттай / маш",
+    "хийе / тооцоо",
+    "явна / автобусаар / би"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Цэс өгнө үү. — Би энийг авъя. — Цуйван байгаа юу? — Битгий хурц хийгээрэй. — Маш амттай байна. — Тооцоо хийе.",
+  "1": "аар — оор — аар — аар — ээр — өөр",
+  "2": "Ус өгөөрэй. — Нэг нэмээрэй. — Сайхан хооллоорой. — Битгий хоцроорой. — Энд суугаарай. — Дахин ирээрэй.",
+  "3": "Цэс өгнө үү. — Би энийг авъя. — Маш амттай байна. — Тооцоо хийе. — Би автобусаар явна."
+ }
+}

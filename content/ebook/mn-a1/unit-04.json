@@ -1,0 +1,319 @@
+{
+ "title": "Di mana? Ke mana?",
+ "title_target": "Хаана байна вэ? Хаашаа явж байна вэ?",
+ "goal": "Menyebut tempat — dan menguasai ekor *-д / -т*, satu ekor yang mengerjakan pekerjaan tiga kata depan Indonesia sekaligus: di, ke, dan kepada.",
+ "bekal": [
+  "mengatakan di mana sesuatu berada dan ke mana kamu pergi",
+  "memakai *дээр*, *дотор*, *доор*, *дэргэд* untuk menunjuk letak dengan tepat",
+  "bertanya arah di kota dan memahami jawabannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Сүхбаатарын талбай хаана вэ?",
+   "intro": "Budi tersesat di pusat kota Ulaanbaatar. Ia bertanya kepada seorang perempuan di halte bus.",
+   "lines": [
+    {
+     "speaker": "Буди:",
+     "text": "[Уучлаарай|UUCH-laa-rai], [эгч|egch] [ээ|ee]. [Сүхбаатарын|sükh-BAA-ta-riin] [талбай|TAL-bai] [хаана|KHAA-na] [байна|BAI-n] [вэ|ve]?",
+     "id": "Permisi, Kak. Lapangan Sukhbaatar di mana ya?",
+     "literal": "maaf, kakak-pr wahai. Sukhbaatar-punya lapangan di-mana ada -kah?"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Тэнд|Tend], [банкны|BANK-nii] [ард|ard] [байна|BAI-n]. [Хол|Khol] [биш|bish].",
+     "id": "Di sana, di belakang bank. Tidak jauh.",
+     "literal": "di-sana, bank-punya belakang ada. jauh bukan."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Явган|YAV-gan] [явж|yavj] [болох|BO-lokh] [уу|uu]?",
+     "id": "Bisa jalan kaki?",
+     "literal": "kaki pergi-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Болно|BOL-no]. [Арван|A-rvan] [минут|mi-NUT]. [Энэ|E-ne] [замаар|dza-MAAR] [чигээрээ|chi-GEE-ree] [яв|yav].",
+     "id": "Bisa. Sepuluh menit. Lewat jalan ini, lurus terus.",
+     "literal": "boleh. sepuluh menit. ini jalan-lewat lurus-sendiri pergilah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo]. [Ойролцоо|OI-rol-tsoo] [банк|bank] [байгаа|bai-GAA] [юу|yuu]?",
+     "id": "Saya mengerti. Di dekat sini ada bank?",
+     "literal": "mengerti-sudah. sekitar bank ada-yang -kah?"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Байгаа|Bai-GAA]. [Дэлгүүрийн|del-GÜÜ-riin] [дэргэд|DER-ged] [байна|BAI-n].",
+     "id": "Ada. Di sebelah toko.",
+     "literal": "ada-yang. toko-punya sebelah ada."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Баярлалаа|ba-yar-la-LAA]. [Бас|Bas] [нэг|neg] [юм|yum] [асууя|a-SUU-ya]. [Та|Ta] [Улаанбаатарт|u-laan-BAA-tart] [амьдардаг|AM'-dar-dag] [уу|uu]?",
+     "id": "Terima kasih. Boleh tanya satu lagi. Anda tinggal di Ulaanbaatar?",
+     "literal": "terima-kasih. juga satu hal tanya-mari. Anda Ulaanbaatar-di hidup-biasa -kah?"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Тийм|Tiim], [би|bi] [энд|end] [төрсөн|TÖR-sön]. [Та|Ta] [аялж|a-YALJ] [байна|BAI-n] [уу|uu]?",
+     "id": "Ya, saya lahir di sini. Anda sedang bepergian?",
+     "literal": "ya, saya di-sini lahir-sudah. Anda berwisata-sambil ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Үгүй|Ü-güi], [би|bi] [энд|end] [сурч|surch] [байна|BAI-n]. [Их|Ikh] [сургуульд|sur-GUUL'D].",
+     "id": "Tidak, saya belajar di sini. Di universitas.",
+     "literal": "tidak, saya di-sini belajar-sambil ada. besar sekolah-di."
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Аан|Aan], [Үндэсний|ün-DES-nii] [их|ikh] [сургуульд|sur-GUUL'D] [уу|uu]?",
+     "id": "Oh, di Universitas Nasional?",
+     "literal": "oh, nasional-punya besar sekolah-di -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Тийм|Tiim]. [Тэр|Ter] [сургууль|sur-GUUL'] [хаана|KHAA-na] [байдаг|BAI-dag] [вэ|ve]? [Би|Bi] [маргааш|mar-GAASH] [тийшээ|TII-shee] [явна|YAV-na].",
+     "id": "Ya. Kampus itu di mana? Besok saya ke sana.",
+     "literal": "ya. itu sekolah di-mana ada-biasa -kah? saya besok ke-sana pergi."
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Талбайн|TAL-bain] [баруун|ba-RUUN] [талд|tald]. [Автобусаар|av-TO-bu-saar] [яв|yav], [хурдан|KHUR-dan].",
+     "id": "Di sebelah barat lapangan. Naik bus saja, lebih cepat.",
+     "literal": "lapangan-punya barat sisi-di. bus-dengan pergilah, cepat."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэдэн|KHE-den] [дугаарын|du-GAA-riin] [автобус|av-TO-bus] [вэ|ve]?",
+     "id": "Bus nomor berapa?",
+     "literal": "berapa nomor-punya bus -kah?"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Хорин|KHO-rin] [нэг|neg] [дугаар|du-GAAR]. [Буудал|BUU-dal] [энд|end], [замын|dza-MIIN] [нөгөө|NÖ-göö] [талд|tald].",
+     "id": "Nomor dua puluh satu. Haltenya di sini, di seberang jalan.",
+     "literal": "dua-puluh satu nomor. halte di-sini, jalan-punya seberang sisi-di."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA], [эгч|egch] [ээ|ee]!",
+     "id": "Terima kasih banyak, Kak!",
+     "literal": "besar terima-kasih, kakak-pr wahai!"
+    },
+    {
+     "speaker": "Эгч:",
+     "text": "[Зүгээр|DZÜ-geer]. [Сайн|Sain] [яваарай|ya-VAA-rai]!",
+     "id": "Sama-sama. Hati-hati di jalan!",
+     "literal": "tidak-apa. baik pergilah!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Satu ekor, tiga kata depan Indonesia.** *Сургуульд* bisa berarti \"**di** sekolah\", \"**ke** sekolah\", atau \"**kepada** sekolah\". Yang menentukan bukan ekornya, melainkan **kata kerjanya**: *байна* (ada) → \"di\"; *явна* (pergi) → \"ke\"; *хэлнэ* (bilang) → \"kepada\". Ini menghemat banyak hafalan, tetapi menuntut kamu membaca kalimat sampai ujung sebelum menerjemahkan.",
+    "**Хаана = di mana, хаашаа = ke mana, хаанаас = dari mana.** Ketiganya berakar pada *хаа* dan ekornya sama dengan ekor kata benda biasa. Pola yang sama berlaku untuk *энд/ийшээ/эндээс* dan *тэнд/тийшээ/тэндээс*.",
+    "**Байгаа bukan bentuk lain dari байна.** *Байна* menyatakan keadaan sekarang; *байгаа* adalah bentuk yang \"menggantung\", dipakai saat menanyakan keberadaan sesuatu (*Банк байгаа юу?* — Ada bank?) atau menerangkan kata benda. Untuk sekarang, hafalkan *байгаа юу?* sebagai satu potongan siap pakai: \"ada … tidak?\"",
+    "**Их сургууль harfiahnya \"sekolah besar\" dan berarti universitas.** Pola ini sering: *их дэлгүүр* (pusat perbelanjaan), *их эмч* (dokter kepala). ⚠️ Jangan tertukar dengan *том* yang juga berarti besar — *их* dipakai untuk ukuran abstrak dan derajat, *том* untuk ukuran fisik.",
+    "**Ekor -аар / -ээр pada замаар dan автобусаар berarti \"lewat\" dan \"dengan\".** *Замаар* = lewat jalan; *автобусаар* = dengan bus; *монголоор* = dalam bahasa Mongolia. Ekor ini digarap penuh di unit 10; kenali dulu bentuknya di sini."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor tempat: kapan -д, kapan -т",
+     "body": [
+      "Ekor ini adalah yang paling sering kamu pakai sesudah *байна*. Dua bentuknya dipilih murni berdasarkan **bunyi huruf terakhir** kata dasarnya — bukan berdasarkan kubu vokal."
+     ],
+     "table": {
+      "head": ["Kata berakhir dengan", "Ekor", "Contoh", "Arti"],
+      "rows": [
+       ["*в, г, р, с* dan vokal panjang", "**-т**", "*гэр* → *гэр**т***", "di rumah"],
+       ["huruf mati lain", "**-д**", "*ном* → *ном**д***", "pada buku"],
+       ["*-н*", "**-д**", "*хүн* → *хүн**д***", "kepada orang"],
+       ["vokal pendek", "**-д**", "*ширээ* → *ширээ**н дээр***", "di atas meja"],
+       ["nama tempat berakhir *-р, -т*", "**-т**", "*Улаанбаатар* → *…бааар**т***", "di Ulaanbaatar"]
+      ]
+     },
+     "after": [
+      "⚠️ Baris keempat menunjukkan hal penting: untuk benda yang punya **permukaan**, orang Mongolia tidak memakai ekor tempat sendirian, melainkan menambahkan kata letak (*дээр*, *дотор*). *Ширээд* terdengar salah; *ширээн дээр* benar.",
+      "Kalau kamu keliru memilih *-д* atau *-т*, tidak ada yang salah paham. Ini kesalahan yang setara dengan mengucapkan \"di sekolahan\" — terdengar sedikit tidak baku, tidak lebih. **Jangan menunda berbicara demi menghafal tabel ini.**"
+     ]
+    },
+    {
+     "title": "Kata letak: дээр, дотор, доор, дэргэд",
+     "body": [
+      "Bahasa Indonesia menaruh \"di atas\" di **depan** kata bendanya. Bahasa Mongolia menaruhnya di **belakang** — dan itulah satu-satunya perbedaan yang perlu kamu ingat."
+     ],
+     "table": {
+      "head": ["Монгол", "Baca", "Arti", "Contoh"],
+      "rows": [
+       ["*дээр*", "*deer*", "di atas", "*ширээн **дээр*** — di atas meja"],
+       ["*дотор*", "*DO-tor*", "di dalam", "*цүнхэн **дотор*** — di dalam tas"],
+       ["*доор*", "*door*", "di bawah", "*сандлын **доор*** — di bawah kursi"],
+       ["*дэргэд*", "*DER-ged*", "di sebelah", "*банкны **дэргэд*** — di sebelah bank"],
+       ["*ард*", "*ard*", "di belakang", "*гэрийн **ард*** — di belakang rumah"],
+       ["*өмнө*", "*ÖM-nö*", "di depan", "*сургуулийн **өмнө*** — di depan sekolah"],
+       ["*хажууд*", "*kha-JUUD*", "di samping", "*миний **хажууд*** — di samping saya"],
+       ["*дунд*", "*dund*", "di tengah", "*хотын **дунд*** — di tengah kota"]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan bahwa kata bendanya berubah bentuk sebelum kata letak: *ширээ* → *ширээ**н***, *цүнх* → *цүнх**эн***, *банк* → *банк**ны***, *гэр* → *гэр**ийн***. Sebagian memakai ekor kepemilikan (*-ын/-ийн*), sebagian memakai *-н* yang tersembunyi. Untuk A1, tirulah polanya dari contoh; keteraturannya baru terlihat di A2.",
+      "**Өмнө punya dua arti sekaligus: \"di depan\" (tempat) dan \"sebelum\" (waktu).** *Сургуулийн өмнө* = di depan sekolah; *хоолны өмнө* = sebelum makan. Bahasa Indonesia juga memakai satu kata untuk keduanya kalau kamu pikirkan (\"di muka\", \"sebelumnya\"), jadi ini bukan hal yang asing."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*хот*", "*khot*", "kota"],
+      ["*гэр*", "*ger*", "rumah, kemah"],
+      ["*сургууль*", "*sur-GUUL'*", "sekolah"],
+      ["*их сургууль*", "*ikh sur-GUUL'*", "universitas"],
+      ["*дэлгүүр*", "*del-GÜÜR*", "toko"],
+      ["*зах*", "*dzakh*", "pasar"],
+      ["*банк*", "*bank*", "bank"],
+      ["*эмнэлэг*", "*EM-ne-leg*", "rumah sakit"],
+      ["*эмийн сан*", "*E-miin san*", "apotek"],
+      ["*ресторан*", "*res-to-RAN*", "restoran"],
+      ["*зочид буудал*", "*DZO-chid BUU-dal*", "hotel"],
+      ["*музей*", "*mu-ZEY*", "museum"],
+      ["*талбай*", "*TAL-bai*", "lapangan, alun-alun"],
+      ["*буудал*", "*BUU-dal*", "halte, stasiun"],
+      ["*зам*", "*dzam*", "jalan"],
+      ["*гудамж*", "*GU-damj*", "jalan kecil, gang"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Гэр* adalah salah satu kata terpenting dalam bahasa Mongolia dan artinya **rumah** sekaligus **kemah bundar tradisional** yang di dunia luar sering disebut \"yurt\". Orang Mongolia sendiri tidak pernah memakai kata \"yurt\" — itu kata Turki lewat bahasa Rusia. Kalau kamu diundang *гэрт* seseorang, kamu diundang ke rumahnya, apa pun bentuk rumah itu."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kata arah yang wajib",
+     "items": [
+      "*баруун* (ba-RUUN) — barat; kanan.",
+      "*зүүн* (DZÜÜN) — timur; kiri.",
+      "*хойд* (khoid) — utara; belakang.",
+      "*өмнөд* (ÖM-nöd) — selatan; depan.",
+      "⚠️ Sistem ini menganggap orang **menghadap ke selatan** — kebiasaan lama dari pintu ger yang selalu menghadap selatan. Karena itu \"kanan\" adalah barat dan \"depan\" adalah selatan. Ini terdengar aneh sampai kamu berdiri di depan sebuah ger; sesudah itu, ia masuk akal seumur hidup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dan menunjukkan arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*… хаана байна вэ?*", "*… KHAA-na BAI-n ve*", "… di mana?"],
+      ["*Энэ хаана вэ?*", "*E-ne KHAA-na ve*", "Ini di mana?"],
+      ["*Чигээрээ яв.*", "*chi-GEE-ree yav*", "Jalan lurus terus."],
+      ["*Баруун тийшээ эргэ.*", "*ba-RUUN TII-shee ER-ge*", "Belok ke kanan."],
+      ["*Зүүн тийшээ эргэ.*", "*DZÜÜN TII-shee ER-ge*", "Belok ke kiri."],
+      ["*Хол уу?*", "*khol uu*", "Jauh?"],
+      ["*Ойрхон.*", "*OIR-khon*", "Dekat."],
+      ["*Явган явж болно.*", "*YAV-gan yavj BOL-no*", "Bisa jalan kaki."],
+      ["*Такси барих уу?*", "*TAK-si BA-rikh uu*", "Naik taksi saja?"],
+      ["*Би төөрчихлөө.*", "*bi TÖÖR-chikh-löö*", "Saya tersesat."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir itu — *Би төөрчихлөө* — patut kamu hafalkan sebelum mendarat di Ulaanbaatar. Kota itu ditata tanpa nama jalan yang konsisten; orang setempat pun memberi alamat dengan patokan (\"di belakang toko X, di seberang halte Y\"). Kalau kamu mengatakan kamu tersesat, orang Mongolia hampir pasti tidak cuma menunjukkan arah, melainkan mengantarmu."
+    },
+    {
+     "type": "kotak",
+     "title": "Menjawab \"ada tidak?\"",
+     "items": [
+      "*Ойролцоо банк байгаа юу?* — Di dekat sini ada bank?",
+      "*Байгаа.* — Ada. / *Байхгүй.* — Tidak ada.",
+      "⚠️ *Байхгүй* adalah lawan *байна* dan salah satu kata paling sering kamu dengar di toko dan pasar: \"tidak ada\", \"habis\", \"tidak punya\".",
+      "*Мэдэхгүй.* — Tidak tahu. Ini juga sering, dan tidak dianggap kasar."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "хаана", "baca": "KHAA-na", "id": "di mana" },
+  { "mn": "хаашаа", "baca": "KHAA-shaa", "id": "ke mana" },
+  { "mn": "энд", "baca": "end", "id": "di sini" },
+  { "mn": "тэнд", "baca": "tend", "id": "di sana" },
+  { "mn": "дээр", "baca": "deer", "id": "di atas" },
+  { "mn": "дотор", "baca": "DO-tor", "id": "di dalam" },
+  { "mn": "доор", "baca": "door", "id": "di bawah" },
+  { "mn": "дэргэд", "baca": "DER-ged", "id": "di sebelah" },
+  { "mn": "өмнө", "baca": "ÖM-nö", "id": "di depan; sebelum" },
+  { "mn": "ард", "baca": "ard", "id": "di belakang" },
+  { "mn": "хот", "baca": "khot", "id": "kota" },
+  { "mn": "гэр", "baca": "ger", "id": "rumah; kemah Mongolia" },
+  { "mn": "сургууль", "baca": "sur-GUUL'", "id": "sekolah" },
+  { "mn": "дэлгүүр", "baca": "del-GÜÜR", "id": "toko" },
+  { "mn": "зах", "baca": "dzakh", "id": "pasar" },
+  { "mn": "зам", "baca": "dzam", "id": "jalan" },
+  { "mn": "хол", "baca": "khol", "id": "jauh" },
+  { "mn": "ойрхон", "baca": "OIR-khon", "id": "dekat" },
+  { "mn": "баруун", "baca": "ba-RUUN", "id": "kanan; barat" },
+  { "mn": "зүүн", "baca": "DZÜÜN", "id": "kiri; timur" },
+  { "mn": "байхгүй", "baca": "BAIKH-güi", "id": "tidak ada" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya ada di rumah.",
+    "Buku ada di atas meja.",
+    "Bank di mana?",
+    "Toko ada di sebelah bank.",
+    "Besok saya pergi ke sekolah.",
+    "Tidak jauh."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor tempat -д atau -т.",
+   "items": [
+    "Би гэр____ байна.",
+    "Тэр ном____ бичсэн.",
+    "Ээж сургууль____ ажилладаг.",
+    "Бид хот____ амьдардаг.",
+    "Тэр Улаанбаатар____ байна.",
+    "Би эмнэлэг____ явна."
+   ]
+  },
+  {
+   "prompt": "Ubah dengan kata letak yang tepat sesuai arti dalam kurung.",
+   "items": [
+    "ширээн ____ (di atas)",
+    "цүнхэн ____ (di dalam)",
+    "сандлын ____ (di bawah)",
+    "банкны ____ (di sebelah)",
+    "гэрийн ____ (di belakang)",
+    "сургуулийн ____ (di depan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "байна / гэрт / би",
+    "дээр / ном / ширээн / байна",
+    "вэ / хаана / банк / байна",
+    "явна / би / сургуульд / маргааш",
+    "биш / хол"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би гэрт байна. — Ном ширээн дээр байна. — Банк хаана байна вэ? — Дэлгүүр банкны дэргэд байна. — Би маргааш сургуульд явна. — Хол биш.",
+  "1": "т — д — д — д — т — т",
+  "2": "дээр — дотор — доор — дэргэд — ард — өмнө",
+  "3": "Би гэрт байна. — Ном ширээн дээр байна. — Банк хаана байна вэ? — Би маргааш сургуульд явна. — Хол биш."
+ }
+}

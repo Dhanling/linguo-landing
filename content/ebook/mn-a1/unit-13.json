@@ -1,0 +1,320 @@
+{
+ "title": "Bisa, mau, harus",
+ "title_target": "Чадна, хүсэж байна, ёстой",
+ "goal": "Menyatakan kemampuan, keinginan, kewajiban, dan izin — empat hal yang membuat kalimatmu berhenti terdengar seperti daftar fakta.",
+ "bekal": [
+  "mengatakan apa yang bisa, mau, harus, dan boleh kamu lakukan",
+  "memakai *-маар байна* untuk keinginan yang terasa saat ini",
+  "meminta izin dan menolak dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Гэрт урих",
+   "intro": "Sarnai mengundang Budi makan malam di rumah keluarganya. Budi mau ikut, tapi ada beberapa hal yang perlu ia pastikan.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Буди|BU-di], [бямбад|BYAM-bad] [манайд|MA-naid] [ирж|irj] [болох|BO-lokh] [уу|uu]?",
+     "id": "Budi, Sabtu bisa datang ke rumah saya?",
+     "literal": "Budi, Sabtu-pada kami-punya-di datang-sambil boleh -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Мэдээж|me-DEEJ]! [Би|Bi] [очмоор|OCH-moor] [байна|BAI-n]. [Хэдэн|KHE-den] [цагт|tsagt] [очих|O-chikh] [ёстой|YOS-toi] [вэ|ve]?",
+     "id": "Tentu! Saya memang ingin ke sana. Harus sampai jam berapa?",
+     "literal": "tentu! saya sampai-ingin ada. berapa jam-pada sampai harus -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Долоон|Do-LOON] [цагт|tsagt]. [Эрт|Ert] [ирж|irj] [ч|ch] [болно|BOL-no].",
+     "id": "Jam tujuh. Datang lebih awal juga boleh.",
+     "literal": "tujuh jam-pada. awal datang-sambil pun boleh."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Юу|Yuu] [авчрах|AVCH-rakh] [ёстой|YOS-toi] [вэ|ve]? [Би|Bi] [юм|yum] [авчирмаар|AV-chir-maar] [байна|BAI-n].",
+     "id": "Harus bawa apa? Saya ingin membawa sesuatu.",
+     "literal": "apa membawa harus -kah? saya hal bawa-ingin ada."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Юу|Yuu] [ч|ch] [авчрах|AVCH-rakh] [шаардлагагүй|SHAARD-la-ga-güi]. [Гэхдээ|GEKH-dee] [хүсвэл|KHÜS-vel] [жимс|jims] [авчирч|AV-chirch] [болно|BOL-no].",
+     "id": "Tidak perlu bawa apa-apa. Tapi kalau mau, boleh bawa buah.",
+     "literal": "apa pun membawa perlu-tidak. tetapi kalau-ingin buah bawa-sambil boleh."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[За|Dza]. [Би|Bi] [монголоор|MON-go-loor] [ярьж|yar'j] [чадах|CHA-dakh] [болов|BO-lov] [уу|uu]? [Танай|TA-nai] [ээж|eej] [англиар|ANG-li-ar] [ярьдаг|YAR'-dag] [уу|uu]?",
+     "id": "Baik. Apa saya bisa bicara bahasa Mongolia? Ibu Anda bisa bahasa Inggris?",
+     "literal": "baik. saya Mongolia-dalam bicara-sambil mampu mungkin -kah? Anda-punya ibu Inggris-dalam bicara-biasa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Ээж|Eej] [маань|MAAN'] [англиар|ANG-li-ar] [ярьж|yar'j] [чаддаггүй|CHAD-dag-güi]. [Гэхдээ|GEKH-dee] [чи|chi] [сайн|sain] [ярьж|yar'j] [чадна|CHAD-na] [шүү|shüü].",
+     "id": "Ibu saya tidak bisa bahasa Inggris. Tapi kamu bisa bicara dengan bagus kok.",
+     "literal": "ibu kami-punya Inggris-dalam bicara-sambil mampu-biasa-tidak. tetapi kamu baik bicara-sambil mampu lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Айж|Aij] [байна|BAI-n]. [Алдаа|al-DAA] [гаргаж|GAR-gaj] [магадгүй|MA-gad-güi].",
+     "id": "Saya takut. Mungkin saya bikin kesalahan.",
+     "literal": "takut-sambil ada. kesalahan keluarkan-sambil mungkin."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Битгий|BIT-gii] [ай|ai]. [Алдаа|al-DAA] [гаргах|GAR-gakh] [ёстой|YOS-toi], [тэгж|tegj] [сурна|SUR-na].",
+     "id": "Jangan takut. Kamu memang harus salah, begitulah belajar.",
+     "literal": "jangan takutlah. kesalahan keluarkan harus, begitu belajar."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Зөв|Dzöv]. [Гэрт|Gert] [орохдоо|O-rokh-doo] [гутлаа|GUT-laa] [тайлах|TAI-lakh] [ёстой|YOS-toi] [юу|yuu]?",
+     "id": "Benar. Waktu masuk rumah harus lepas sepatu?",
+     "literal": "benar. rumah-ke masuk-saat-sendiri sepatu-sendiri lepas harus -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Тийм|Tiim]. [Мөн|Mön] [босгон|BOS-gon] [дээр|deer] [гишгэж|GISH-gej] [болохгүй|BO-lokh-güi] [шүү|shüü].",
+     "id": "Ya. Dan tidak boleh menginjak ambang pintu lho.",
+     "literal": "ya. juga ambang atas menginjak-sambil boleh-tidak lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Яагаад|YAA-gaad] [вэ|ve]?",
+     "id": "Kenapa?",
+     "literal": "kenapa -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хуучин|KHUU-chin] [ёсоор|yo-SOOR] [босго|BOS-go] [бол|bol] [гэрийн|GE-riin] [хамгаалагч|kham-GAA-lagch]. [Гишгэвэл|GISH-ge-vel] [хүндлээгүй|KHÜND-lee-güi] [гэсэн|GE-sen] [үг|üg].",
+     "id": "Menurut adat lama, ambang pintu adalah penjaga rumah. Menginjaknya berarti tidak menghormati.",
+     "literal": "lama adat-dengan ambang adapun rumah-punya penjaga. kalau-injak hormat-tidak begitu kata."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo], [сайн|sain] [хэлж|khelj] [өгсөн|ÖG-sön]. [Өөр|Öör] [юу|yuu] [мэдэх|ME-dekh] [хэрэгтэй|KHE-reg-tei] [вэ|ve]?",
+     "id": "Saya mengerti, bagus sudah diberitahu. Apa lagi yang perlu saya tahu?",
+     "literal": "mengerti-sudah, baik bilang-sambil beri-sudah. lain apa tahu perlu -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Цайг|Tsaig] [хоёр|kho-YOR] [гараар|ga-RAAR] [авах|a-VAKH] [ёстой|YOS-toi]. [Тэгвэл|TEG-vel] [хангалттай|KHAN-galt-tai]!",
+     "id": "Tehnya harus diterima dengan dua tangan. Itu sudah cukup!",
+     "literal": "teh-objek dua tangan-dengan ambil harus. kalau-begitu cukup!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Empat pola, empat kata, dan semuanya berdiri SESUDAH kata kerja utamanya** — karena kata kerja utama itu sendiri ada di ujung kalimat. *Ярьж **чадна*** (bisa bicara), *очих **ёстой*** (harus pergi), *ирж **болно*** (boleh datang), *очмоор **байна*** (ingin pergi).",
+    "**Чадах = mampu, dan ia butuh bentuk -ж / -ч di depannya.** *Ярь**ж** чадна* = bisa berbicara. ⚠️ Jangan tertukar dengan *болох* yang berarti \"boleh\": *чадах* tentang kemampuan, *болох* tentang izin. Bahasa Indonesia memakai satu kata \"bisa\" untuk keduanya, jadi ini pembagian yang harus kamu bangun dari nol.",
+    "**Ёстой = harus, dan ia butuh bentuk kamus (-х) di depannya.** *Очих ёстой* = harus pergi. Untuk \"tidak perlu\", pakai *шаардлагагүй* atau *хэрэггүй*; untuk \"tidak boleh\", pakai *болохгүй*. ⚠️ Ketiganya berbeda: *ёстой биш* jarang dipakai.",
+    "**-маар байна berarti \"ingin\" yang terasa sekarang.** *Очмоор байна* = lagi ingin ke sana. Bandingkan dengan *хүсэх* yang lebih formal dan lebih tentang keinginan besar: *Би эмч болохыг хүсэж байна* = saya ingin menjadi dokter.",
+    "**Орохдоо memakai ekor -хдаа / -хдээ yang berarti \"saat, sambil\".** *Гэрт **орохдоо*** = saat masuk rumah. Ini bentuk yang sangat berguna dan akan sering kamu dengar; ia digarap penuh di A2, tetapi kenali sekarang karena ia muncul di mana-mana."
+   ],
+   "grammars": [
+    {
+     "title": "Empat pola dan bentuk yang mendahuluinya",
+     "body": [
+      "Yang menentukan bukan artinya, melainkan **bentuk apa yang harus berdiri di depannya**. Tiga pola memakai bentuk *-ж / -ч*, satu memakai bentuk kamus *-х*. Hafalkan pasangannya, bukan kata-katanya sendiri-sendiri."
+     ],
+     "table": {
+      "head": ["Pola", "Bentuk sebelumnya", "Contoh", "Arti"],
+      "rows": [
+       ["**чадах** (mampu)", "**-ж / -ч**", "*ярьж чадна*", "bisa berbicara"],
+       ["**болох** (boleh)", "**-ж / -ч**", "*орж болно*", "boleh masuk"],
+       ["**эхлэх** (mulai)", "**-ж / -ч**", "*сурч эхэлсэн*", "mulai belajar"],
+       ["**ёстой** (harus)", "**-х**", "*явах ёстой*", "harus pergi"],
+       ["**хэрэгтэй** (perlu)", "**-х**", "*мэдэх хэрэгтэй*", "perlu tahu"],
+       ["**хүсэх** (ingin)", "**-хыг / -хийг**", "*очихыг хүсэж байна*", "ingin pergi"],
+       ["**-маар байна** (ingin)", "menempel di akar", "*очмоор байна*", "lagi ingin pergi"],
+       ["**битгий** (jangan)", "akar telanjang", "*битгий яв*", "jangan pergi"]
+      ]
+     },
+     "after": [
+      "⚠️ **Sangkalannya menempel pada kata keduanya, bukan pada kata kerja utamanya.** *Ярьж **чадахгүй*** (tidak bisa bicara), *явах **ёсгүй*** (tidak seharusnya pergi), *орж **болохгүй*** (tidak boleh masuk). Kata kerja utamanya tetap utuh.",
+      "**Untuk bertanya izin, bentuk yang paling sopan adalah *… болох уу?*** — dan ia bisa dipasangkan dengan kata kerja apa pun. Kalau kamu cuma menghafal satu pola dari unit ini, hafalkan ini: ia membuka pintu di toko, kantor, dan rumah orang."
+     ]
+    },
+    {
+     "title": "Membentuk -маар байна",
+     "body": [
+      "Dari bentuk kamus, buang *-х*, lalu tambahkan **-маар / -мээр / -моор / -мөөр** mengikuti keselarasan vokal, lalu *байна*."
+     ],
+     "table": {
+      "head": ["Kamus", "Ingin", "Baca", "Arti"],
+      "rows": [
+       ["*явах*", "*явмаар байна*", "*YAV-maar BAI-n*", "ingin pergi"],
+       ["*идэх*", "*идмээр байна*", "*ID-meer BAI-n*", "ingin makan"],
+       ["*уух*", "*уумаар байна*", "*UU-maar BAI-n*", "ingin minum"],
+       ["*унтах*", "*унтмаар байна*", "*UNT-maar BAI-n*", "ingin tidur"],
+       ["*үзэх*", "*үзмээр байна*", "*ÜDZ-meer BAI-n*", "ingin melihat"],
+       ["*очих*", "*очмоор байна*", "*OCH-moor BAI-n*", "ingin ke sana"],
+       ["*өгөх*", "*өгмөөр байна*", "*ÖG-möör BAI-n*", "ingin memberi"],
+       ["*амрах*", "*амармаар байна*", "*A-mar-maar BAI-n*", "ingin istirahat"]
+      ]
+     },
+     "after": [
+      "**Sangkalannya: *-маар байхгүй* atau lebih sering *… хүсэхгүй байна*.** Di percakapan, orang lebih suka mengatakannya secara positif dengan penolakan halus: *Одоо биш* (nanti saja), *Дараа* (nanti), *Болих байх* (mungkin tidak usah).",
+      "⚠️ Ada satu bentuk lagi yang perlu kamu kenali karena sering dipakai untuk mengajak: **-ъя / -ье / -ё** yang berarti \"mari\". *Явъя* (ayo pergi), *идье* (ayo makan), *уулзая* (ayo bertemu). Bentuk ini hanya untuk orang pertama — kamu dan lawan bicaramu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta izin dan menjawabnya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*Орж болох уу?*", "*orj BO-lokh uu*", "Boleh masuk?"],
+      ["*Суух болох уу?*", "*SUUKH BO-lokh uu*", "Boleh duduk?"],
+      ["*Зураг авч болох уу?*", "*DZU-rag avch BO-lokh uu*", "Boleh memotret?"],
+      ["*Асууж болох уу?*", "*a-SUUJ BO-lokh uu*", "Boleh bertanya?"],
+      ["*Утсаа ашиглаж болох уу?*", "*UT-saa a-SHIG-laj BO-lokh uu*", "Boleh pakai teleponnya?"],
+      ["*Болно.*", "*BOL-no*", "Boleh."],
+      ["*Мэдээж болно.*", "*me-DEEJ BOL-no*", "Tentu boleh."],
+      ["*Болохгүй.*", "*BO-lokh-güi*", "Tidak boleh."],
+      ["*Уучлаарай, болохгүй.*", "*UUCH-laa-rai BO-lokh-güi*", "Maaf, tidak boleh."],
+      ["*Мэдэхгүй, асууя.*", "*ME-dekh-güi a-SUU-ya*", "Tidak tahu, saya tanyakan."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menolak undangan tanpa menyinggung",
+     "items": [
+      "*Уучлаарай, тэр өдөр завгүй байна.* — Maaf, hari itu saya sibuk.",
+      "*Их баярлалаа, гэхдээ болохгүй нь.* — Terima kasih banyak, tapi sepertinya tidak bisa.",
+      "*Дараагийн удаад заавал очно.* — Lain kali pasti saya datang.",
+      "⚠️ Menolak undangan makan di Mongolia perlu **alasan dan janji untuk lain kali** — sama persis dengan di Indonesia. Menolak dengan satu kata \"tidak\" terdengar seperti penolakan pada orangnya, bukan pada acaranya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat kemampuan dan kewajiban",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Indonesia"],
+     "rows": [
+      ["*Би монголоор ярьж чадна.*", "Saya bisa berbicara bahasa Mongolia."],
+      ["*Би сайн ярьж чадахгүй.*", "Saya tidak bisa bicara dengan baik."],
+      ["*Тэр морь унаж чаддаг.*", "Dia bisa naik kuda."],
+      ["*Би маргааш ажиллах ёстой.*", "Besok saya harus bekerja."],
+      ["*Чи эрт унтах ёстой.*", "Kamu harus tidur cepat."],
+      ["*Виз авах хэрэгтэй.*", "Perlu mengurus visa."],
+      ["*Юу ч хийх шаардлагагүй.*", "Tidak perlu melakukan apa-apa."],
+      ["*Энд тамхи татаж болохгүй.*", "Di sini tidak boleh merokok."],
+      ["*Одоо явмаар байна.*", "Sekarang saya ingin pergi."],
+      ["*Би эмч болохыг хүсэж байна.*", "Saya ingin menjadi dokter."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan baris ketiga: **kemampuan yang sudah menjadi keterampilan tetap memakai *чаддаг*, bukan *чадна*.** *Морь унаж чаддаг* = \"bisa naik kuda\" sebagai keterampilan yang dimiliki. *Морь унаж чадна* lebih terdengar seperti \"sanggup naik kuda (sekarang)\". Bedanya sama dengan \"bisa berenang\" dan \"kuat berenang\" dalam bahasa Indonesia."
+    }
+   ]
+  },
+  {
+   "title": "Tamu di rumah orang Mongolia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Unit ini menyentuh sesuatu yang lebih besar daripada tata bahasa: **keramahtamahan Mongolia adalah salah satu yang paling sungguh-sungguh di dunia**, dan ia punya aturan yang tidak tertulis di mana pun. Aturan-aturan ini berasal dari kehidupan padang rumput, tempat menolak tamu bisa berarti membiarkan orang mati kedinginan."
+    },
+    {
+     "type": "tabel",
+     "head": ["Yang dilakukan", "Kenapa"],
+     "rows": [
+      ["**Terima apa pun yang disodorkan dengan tangan kanan**, ditopang siku kiri.", "Tangan kiri sendirian berarti kamu menganggapnya remeh."],
+      ["**Cicipi teh atau susu yang disodorkan**, walau cuma seteguk.", "Menolaknya sepenuhnya berarti menolak rumahnya."],
+      ["**Jangan menginjak ambang pintu (*босго*).**", "Ambang pintu adalah penjaga rumah dalam kepercayaan lama."],
+      ["**Jangan menunjuk api atau membuang sampah ke perapian.**", "Api adalah roh rumah tangga, yang paling dihormati."],
+      ["**Kalau tak sengaja menyenggol kaki orang, segera berjabat tangan.**", "Jabat tangan menghapus kekeliruan itu seketika."],
+      ["**Bergeraklah searah jarum jam di dalam *гэр*.**", "Arah gerak matahari; arah sebaliknya dianggap membalik keberuntungan."],
+      ["**Sisi barat untuk lelaki dan tamu, sisi timur untuk perempuan dan dapur.**", "Tata ruang ger sudah tetap sejak berabad-abad."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal terakhir yang perlu kamu siapkan secara mental: **kalau kamu diundang makan, kamu akan diberi lebih banyak daripada yang bisa kamu habiskan, dan penolakan akan dianggap basa-basi.** Cara paling sopan adalah menerima sedikit, memuji rasanya, dan berhenti perlahan — persis seperti di rumah nenek di kampung. Kalimat yang menyelamatkan: *Маш амттай байна, гэхдээ би цатгалан боллоо.*"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "чадах", "baca": "CHA-dakh", "id": "⚠️ mampu, bisa (+ -ж)" },
+  { "mn": "ёстой", "baca": "YOS-toi", "id": "harus (+ -х)" },
+  { "mn": "хэрэгтэй", "baca": "KHE-reg-tei", "id": "perlu" },
+  { "mn": "шаардлагагүй", "baca": "SHAARD-la-ga-güi", "id": "tidak perlu" },
+  { "mn": "хүсэх", "baca": "KHÜ-sekh", "id": "ingin, berharap" },
+  { "mn": "мэдээж", "baca": "me-DEEJ", "id": "tentu saja" },
+  { "mn": "магадгүй", "baca": "MA-gad-güi", "id": "mungkin" },
+  { "mn": "заавал", "baca": "DZAA-val", "id": "wajib, pasti" },
+  { "mn": "авчрах", "baca": "AVCH-rakh", "id": "membawa" },
+  { "mn": "тайлах", "baca": "TAI-lakh", "id": "melepas" },
+  { "mn": "гутал", "baca": "GU-tal", "id": "sepatu" },
+  { "mn": "босго", "baca": "BOS-go", "id": "⚠️ ambang pintu" },
+  { "mn": "гишгэх", "baca": "GISH-gekh", "id": "menginjak" },
+  { "mn": "хүндлэх", "baca": "KHÜND-lekh", "id": "menghormati" },
+  { "mn": "айх", "baca": "aikh", "id": "takut" },
+  { "mn": "алдаа", "baca": "al-DAA", "id": "kesalahan" },
+  { "mn": "гар", "baca": "gar", "id": "tangan" },
+  { "mn": "тамхи татах", "baca": "TAM-khi TA-takh", "id": "merokok" },
+  { "mn": "унах", "baca": "U-nakh", "id": "naik (kuda); jatuh" },
+  { "mn": "хангалттай", "baca": "KHAN-galt-tai", "id": "cukup" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Saya bisa bicara bahasa Mongolia.",
+    "Besok saya harus bekerja.",
+    "Boleh masuk?",
+    "Tidak boleh.",
+    "Sekarang saya ingin tidur.",
+    "Tidak perlu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan чадна, ёстой, болно, atau хэрэгтэй.",
+   "items": [
+    "Би монголоор ярьж ____.",
+    "Чи эрт унтах ____.",
+    "Энд суух ____.",
+    "Виз авах ____.",
+    "Тэр морь унаж ____.",
+    "Маргааш ажиллах ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk keinginan dengan -маар байна.",
+   "items": [
+    "явах",
+    "идэх",
+    "уух",
+    "унтах",
+    "үзэх",
+    "амрах"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "чадна / ярьж / монголоор / би",
+    "ёстой / ажиллах / маргааш / би",
+    "уу / болох / орж",
+    "байна / явмаар / одоо / би",
+    "болохгүй / татаж / энд / тамхи"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Би монголоор ярьж чадна. — Маргааш би ажиллах ёстой. — Орж болох уу? — Болохгүй. — Одоо би унтмаар байна. — Хэрэггүй.",
+  "1": "чадна — ёстой — болно — хэрэгтэй — чадна — ёстой",
+  "2": "явмаар байна — идмээр байна — уумаар байна — унтмаар байна — үзмээр байна — амармаар байна",
+  "3": "Би монголоор ярьж чадна. — Маргааш би ажиллах ёстой. — Орж болох уу? — Одоо би явмаар байна. — Энд тамхи татаж болохгүй."
+ }
+}

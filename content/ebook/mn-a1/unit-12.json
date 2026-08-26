@@ -1,0 +1,335 @@
+{
+ "title": "Lebih besar, paling bagus",
+ "title_target": "Илүү том, хамгийн сайхан",
+ "goal": "Menggambarkan dan membandingkan — dan melihat kenapa \"daripada\" dalam bahasa Mongolia memakai ekor yang sama dengan \"dari\".",
+ "bekal": [
+  "memakai kata sifat dengan tepat, termasuk tingkat \"agak\" dan \"sangat\"",
+  "membandingkan dua hal dengan ekor *-аас* dan kata *илүү*",
+  "menyebut yang paling dengan *хамгийн*"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Аль нь дээр вэ?",
+   "intro": "Budi ingin membeli jaket musim dingin. Sarnai menemaninya di toko dan mereka membandingkan dua pilihan.",
+   "lines": [
+    {
+     "speaker": "Сарнай:",
+     "text": "[Аль|Al'] [нь|n'] [танд|tand] [таалагдаж|TAA-lag-daj] [байна|BAI-n] [вэ|ve]?",
+     "id": "Yang mana yang kamu suka?",
+     "literal": "yang-mana -nya kamu-kepada disukai-sambil ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хар|Khar] [нь|n'] [сайхан|SAI-khan] [байна|BAI-n]. [Гэхдээ|GEKH-dee] [хөх|khökh] [нь|n'] [илүү|i-LÜÜ] [дулаан|du-LAAN] [байх|baikh].",
+     "id": "Yang hitam bagus. Tapi yang biru sepertinya lebih hangat.",
+     "literal": "hitam -nya bagus ada. tetapi biru -nya lebih hangat mungkin."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хөх|Khökh] [нь|n'] [харнаас|KHAR-naas] [үнэтэй|Ü-ne-tei] [байх|baikh] [шүү|shüü].",
+     "id": "Yang biru sepertinya lebih mahal daripada yang hitam lho.",
+     "literal": "biru -nya hitam-dari harga-berdengan mungkin lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хэдэн|KHE-den] [төгрөгийн|TÖG-rö-giin] [зөрүүтэй|DZÖ-rüü-tei] [вэ|ve]?",
+     "id": "Bedanya berapa tugrik?",
+     "literal": "berapa tugrik-punya selisih-berdengan -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Хорин|KHO-rin] [мянга|MYAN-ga]. [Гэхдээ|GEKH-dee] [ноосон|NOO-son], [чанар|CHA-nar] [нь|n'] [хамаагүй|kha-MAA-güi] [дээр|deer].",
+     "id": "Dua puluh ribu. Tapi bahannya wol, kualitasnya jauh lebih baik.",
+     "literal": "dua-puluh ribu. tetapi wol-punya, kualitas -nya tidak-peduli lebih-baik."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Улаанбаатарын|u-laan-BAA-ta-riin] [өвөл|Ö-völ] [хэр|kher] [хүйтэн|KHÜY-ten] [вэ|ve]?",
+     "id": "Musim dingin Ulaanbaatar sedingin apa?",
+     "literal": "Ulaanbaatar-punya musim-dingin seberapa dingin -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Маш|Mash] [хүйтэн|KHÜY-ten]. [Дэлхийн|DEL-khiin] [хамгийн|KHAM-giin] [хүйтэн|KHÜY-ten] [нийслэл|NIIS-lel] [шүү|shüü].",
+     "id": "Sangat dingin. Ini ibu kota terdingin di dunia lho.",
+     "literal": "dunia-punya paling dingin ibu-kota lho."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Индонезоос|In-do-NE-dzoos] [хэр|kher] [хүйтэн|KHÜY-ten] [бэ|be]?",
+     "id": "Sedingin apa dibandingkan Indonesia?",
+     "literal": "Indonesia-dari seberapa dingin -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Индонез|In-do-NEDZ] [гуч|guch] [хэм|khem], [энд|end] [хасах|KHA-sakh] [гуч|guch] [хэм|khem]. [Жаран|JA-ran] [хэмийн|KHE-miin] [зөрүү|DZÖ-rüü].",
+     "id": "Indonesia tiga puluh derajat, di sini minus tiga puluh. Bedanya enam puluh derajat.",
+     "literal": "Indonesia tiga-puluh derajat, di-sini kurang tiga-puluh derajat. enam-puluh derajat-punya selisih."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Аймшигтай|AIM-shig-tai]! [Тэгвэл|TEG-vel] [хамгийн|KHAM-giin] [дулаан|du-LAAN] [хүрмийг|KHÜR-miig] [авъя|AV-ya].",
+     "id": "Mengerikan! Kalau begitu saya ambil jaket yang paling hangat.",
+     "literal": "menakutkan! kalau-begitu paling hangat jaket-objek ambil-mari."
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Зөв|Dzöv] [шийдвэр|SHIID-ver]. [Хямд|Khyamd] [хүрэм|khü-REM] [авбал|AV-bal] [хожим|KHO-jim] [хоёр|kho-YOR] [дахин|da-KHIN] [авна|AV-na].",
+     "id": "Keputusan yang tepat. Kalau beli jaket murah, nanti beli dua kali.",
+     "literal": "benar keputusan. murah jaket kalau-beli kemudian dua kali beli."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Бас|Bas] [малгай|MAL-gai] [хэрэгтэй|KHE-reg-tei] [юу|yuu]?",
+     "id": "Perlu topi juga?",
+     "literal": "juga topi perlu-berdengan -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Заавал|DZAA-val]! [Малгайгүй|MAL-gai-güi] [гарвал|GAR-val] [чих|chikh] [чинь|chin'] [хөлдөнө|KHÖL-dö-nö].",
+     "id": "Wajib! Kalau keluar tanpa topi, telingamu beku.",
+     "literal": "pasti! topi-tanpa kalau-keluar telinga kamu-punya membeku."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[За|Dza], [хамгийн|KHAM-giin] [зузаан|dzu-DZAAN] [малгайг|MAL-gaig] [нь|n'] [аваарай|a-VAA-rai] [гэсэн|GE-sen] [үг|üg] [үү|üü]?",
+     "id": "Baik, maksudnya ambil topi yang paling tebal?",
+     "literal": "baik, paling tebal topi-objek -nya ambillah begitu kata -kah?"
+    },
+    {
+     "speaker": "Сарнай:",
+     "text": "[Яг|Yag] [тийм|tiim]. [Гоо|Goo] [сайхнаас|SAIKH-naas] [дулаан|du-LAAN] [нь|n'] [чухал|CHU-khal].",
+     "id": "Tepat sekali. Kehangatan lebih penting daripada keindahan.",
+     "literal": "persis begitu. cantik indah-dari hangat -nya penting."
+    }
+   ],
+   "notes": [
+    "⚠️ **Perbandingan bahasa Mongolia memakai ekor -аас, ekor yang sama dengan \"dari\".** *Харнаас үнэтэй* = \"lebih mahal **dari** yang hitam\". Gambarannya masuk akal: kamu mengukur sesuatu **berangkat dari** titik yang lain. Bahasa Indonesia melakukan hal serupa dengan \"**dari**pada\" — kata itu memang berasal dari \"dari\".",
+    "**Илүү (lebih) boleh dipakai, boleh tidak.** *Харнаас үнэтэй* dan *харнаас илүү үнэтэй* sama artinya. Ekor *-аас* sudah cukup memberi tahu bahwa ini perbandingan. Orang menambahkan *илүү* untuk menekankan.",
+    "**Хамгийн = paling, dan letaknya persis di depan kata sifatnya.** *Хамгийн сайхан* (paling bagus), *хамгийн хүйтэн* (paling dingin). Ini satu-satunya bentuk superlatif yang perlu kamu tahu di A1.",
+    "**Нь adalah kata kecil yang berarti \"…nya\" dan sangat sering dipakai.** *Хар **нь*** = \"yang hitam\" (harfiah: hitam-nya); *чанар **нь*** = kualitasnya. Ia mengubah kata sifat menjadi kata benda dan menandai kepemilikan orang ketiga sekaligus.",
+    "**Байх di ujung kalimat berarti \"mungkin, sepertinya\".** *Илүү дулаан **байх*** = sepertinya lebih hangat. ⚠️ Jangan tertukar dengan *байх* sebagai bentuk kamus dari \"ada\" — letaknya di ujung kalimat sesudah kata sifat adalah tandanya."
+   ],
+   "grammars": [
+    {
+     "title": "Membandingkan dua hal",
+     "body": [
+      "Susunannya: **pembanding + -аас + kata sifat**. Yang dibandingkan berdiri lebih dulu, lalu tolok ukurnya, lalu sifatnya — persis kebalikan urutan bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Монгол", "Harfiah", "Indonesia"],
+      "rows": [
+       ["*Энэ түүнээс том.*", "ini itu-dari besar", "Ini lebih besar daripada itu."],
+       ["*Улаанбаатар Эрдэнэтээс том.*", "Ulaanbaatar Erdenet-dari besar", "Ulaanbaatar lebih besar daripada Erdenet."],
+       ["*Би чамаас том.*", "saya kamu-dari besar", "Saya lebih tua daripada kamu."],
+       ["*Монгол хэл англи хэлнээс хэцүү.*", "Mongolia bahasa Inggris bahasa-dari sulit", "Bahasa Mongolia lebih sulit daripada bahasa Inggris."],
+       ["*Өнөөдөр өчигдрөөс дулаан.*", "hari-ini kemarin-dari hangat", "Hari ini lebih hangat daripada kemarin."],
+       ["*Энэ бага зэрэг хямд.*", "ini sedikit derajat murah", "Ini agak lebih murah."]
+      ]
+     },
+     "after": [
+      "⚠️ Perhatikan baris ketiga: *том* berarti \"besar\" **dan** \"lebih tua\". Bahasa Mongolia memakai kata yang sama untuk keduanya, persis seperti bahasa Indonesia yang berkata \"kakak\" dari \"besar\". *Би чамаас том* dalam percakapan hampir selalu berarti umur, bukan ukuran badan.",
+      "**Untuk mengatakan \"sama\", pakai *шиг* (seperti) atau *адилхан* (sama).** *Энэ түүн **шиг** том* = ini sebesar itu; *хоёулаа **адилхан*** = keduanya sama."
+     ]
+    },
+    {
+     "title": "Tingkat kata sifat",
+     "body": [
+      "Bahasa Mongolia punya lima tingkat, dan tiga di antaranya dibentuk dengan ekor yang menempel — bukan dengan kata terpisah seperti bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Tingkat", "Bentuk", "Contoh (*сайхан* — bagus)", "Arti"],
+      "rows": [
+       ["Biasa", "kata dasar", "*сайхан*", "bagus"],
+       ["Agak", "**-хан / -хон / -втар**", "*сайхнаар*, *улаа**втар***", "agak bagus, kemerahan"],
+       ["Sangat", "**маш / их / маш их**", "*маш сайхан*", "sangat bagus"],
+       ["Lebih", "**илүү** atau **-аас**", "*илүү сайхан*", "lebih bagus"],
+       ["Paling", "**хамгийн**", "*хамгийн сайхан*", "paling bagus"],
+       ["Terlalu", "**хэт**", "*хэт сайхан*", "terlalu bagus"]
+      ]
+     },
+     "after": [
+      "⚠️ Ekor **-втар / -втор** membuat warna menjadi \"ke…-an\": *улаан* (merah) → *улаавтар* (kemerahan); *хөх* (biru) → *хөхөвтөр* (kebiruan); *шар* (kuning) → *шаравтар* (kekuningan). Polanya sama persis dengan awalan-akhiran \"ke-…-an\" dalam bahasa Indonesia.",
+      "**Маш dan их sama-sama berarti \"sangat\", dan keduanya bisa digabung untuk menekankan lebih jauh:** *маш их сайхан* = bagus sekali. Kalau kamu cuma ingin satu, pakai *маш* — ia sedikit lebih kuat dan lebih sering dipakai di percakapan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Lawannya", "Baca", "Indonesia"],
+     "rows": [
+      ["*том*", "*tom*", "besar; tua", "*жижиг*", "*JI-jig*", "kecil"],
+      ["*урт*", "*urt*", "panjang", "*богино*", "*bo-GI-no*", "pendek"],
+      ["*өндөр*", "*ÖN-dör*", "tinggi", "*намхан*", "*NAM-khan*", "rendah, pendek"],
+      ["*зузаан*", "*dzu-DZAAN*", "tebal", "*нимгэн*", "*NIM-gen*", "tipis"],
+      ["*хүнд*", "*khünd*", "berat; sulit", "*хөнгөн*", "*KHÖN-gön*", "ringan"],
+      ["*хэцүү*", "*khe-TSÜÜ*", "sulit", "*амархан*", "*A-mar-khan*", "mudah"],
+      ["*шинэ*", "*SHI-ne*", "baru", "*хуучин*", "*KHUU-chin*", "lama"],
+      ["*дулаан*", "*du-LAAN*", "hangat", "*хүйтэн*", "*KHÜY-ten*", "dingin"],
+      ["*сайн*", "*sain*", "baik", "*муу*", "*muu*", "buruk"],
+      ["*сайхан*", "*SAI-khan*", "bagus, indah", "*муухай*", "*MUU-khai*", "jelek"],
+      ["*хурдан*", "*KHUR-dan*", "cepat", "*удаан*", "*u-DAAN*", "lambat"],
+      ["*олон*", "*o-LON*", "banyak", "*цөөн*", "*TSÖÖN*", "sedikit"],
+      ["*чухал*", "*CHU-khal*", "penting", "*энгийн*", "*EN-giin*", "biasa"],
+      ["*залуу*", "*dza-LUU*", "muda", "*хөгшин*", "*KHÖG-shin*", "tua (orang)"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Bedakan **сайн** dan **сайхан**: *сайн* berarti \"baik\" dalam arti mutu dan moral (*сайн хүн* — orang baik), sedangkan *сайхан* berarti \"indah, menyenangkan\" (*сайхан өдөр* — hari yang indah). Keduanya sering tertukar oleh pemula, dan hasilnya lucu tetapi tidak fatal: *сайхан хүн* berarti \"orang yang cantik\", bukan \"orang baik\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata sifat berdiri di DEPAN kata benda, selalu",
+     "items": [
+      "*том ном* (buku besar), *шинэ гэр* (rumah baru), *хамгийн сайхан өдөр* (hari terindah).",
+      "⚠️ Ini kebalikan bahasa Indonesia yang menaruhnya di belakang. Kesalahan *ном том* adalah kesalahan paling sering penutur Indonesia di bulan pertama.",
+      "**Kata sifat tidak pernah berubah bentuk** — tidak ikut jamak, tidak ikut kasus. *Том ном*, *том номууд*, *том номыг*: kata sifatnya tetap *том*.",
+      "Kalau kata sifat berdiri sesudah kata benda, ia menjadi **predikat**: *Ном том.* = \"Buku itu besar.\" Beda tempat, beda peran — persis seperti \"buku besar\" dan \"buku itu besar\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan dalam percakapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Indonesia"],
+     "rows": [
+      ["*Аль нь дээр вэ?*", "Yang mana yang lebih baik?"],
+      ["*Энэ нь дээр.*", "Yang ini lebih baik."],
+      ["*Хэр том бэ?*", "Sebesar apa?"],
+      ["*Ямар нь илүү хямд вэ?*", "Yang mana yang lebih murah?"],
+      ["*Хоёулаа адилхан.*", "Keduanya sama."],
+      ["*Ялгаагүй.*", "Tidak ada bedanya."],
+      ["*Энэ хамгийн сайн нь.*", "Ini yang paling bagus."],
+      ["*Надад энэ илүү таалагдаж байна.*", "Saya lebih suka yang ini."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Таалагдах* berarti \"disukai\" dan bekerja **terbalik** dari bahasa Indonesia: yang disukai menjadi pelakunya, dan orangnya berekor *-д*. *Надад энэ таалагдаж байна* harfiahnya \"kepada saya ini menyenangkan\". Bentuk ini persis seperti *me gusta* bahasa Spanyol — dan seperti \"saya suka\" versus \"ini menarik bagi saya\" dalam bahasa Indonesia."
+    },
+    {
+     "type": "p",
+     "text": "Untuk \"suka\" yang lebih sederhana, pakai *дуртай* (berminat pada): *Би цайнд дуртай* = \"Saya suka teh\". Orangnya menjadi pelaku, dan yang disukai berekor *-д*. Bentuk ini jauh lebih mudah dan sama-sama benar — pakai ini di A1."
+    }
+   ]
+  },
+  {
+   "title": "Cuaca dan suhu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*цаг агаар*", "*tsag a-GAAR*", "cuaca"],
+      ["*хэм*", "*khem*", "derajat"],
+      ["*хасах гуч хэм*", "*KHA-sakh guch khem*", "minus tiga puluh derajat"],
+      ["*хүйтэн байна*", "*KHÜY-ten BAI-n*", "dingin"],
+      ["*халуун байна*", "*kha-LUUN BAI-n*", "panas"],
+      ["*салхитай*", "*SAL-khi-tai*", "berangin"],
+      ["*нартай*", "*NAR-tai*", "cerah, ada matahari"],
+      ["*үүлтэй*", "*ÜÜL-tei*", "berawan"],
+      ["*бороотой*", "*bo-ROO-toi*", "hujan"],
+      ["*цастай*", "*TSAS-tai*", "bersalju"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan lagi ekor **-тай** yang sudah kamu kenal: *салхи* (angin) → *салхитай* (berangin); *цас* (salju) → *цастай* (bersalju). Bahasa Mongolia menggambarkan cuaca sebagai sesuatu yang **dipunyai hari itu**, persis seperti bahasa Indonesia berkata \"hari ini berangin\"."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Angka yang perlu kamu percayai",
+     "items": [
+      "Ulaanbaatar adalah **ibu kota terdingin di dunia**, dengan rata-rata tahunan sekitar −1°C.",
+      "Januari rata-rata **−25°C**, dan −40°C bukan hal luar biasa. Jakarta di hari yang sama sekitar +30°C — **selisih tujuh puluh derajat.**",
+      "Musim panas bisa mencapai +35°C. Mongolia punya selisih suhu tahunan terbesar di antara semua ibu kota dunia.",
+      "Karena itu *хүрэм* (jaket), *малгай* (topi), *бээлий* (sarung tangan), dan *гутал* (sepatu bot) bukan aksesori melainkan perlengkapan bertahan hidup. Belilah di Mongolia, bukan di Indonesia — yang dijual di sana memang dibuat untuk suhu itu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "илүү", "baca": "i-LÜÜ", "id": "lebih" },
+  { "mn": "хамгийн", "baca": "KHAM-giin", "id": "paling" },
+  { "mn": "хэт", "baca": "khet", "id": "terlalu" },
+  { "mn": "маш", "baca": "mash", "id": "sangat" },
+  { "mn": "адилхан", "baca": "A-dil-khan", "id": "sama" },
+  { "mn": "ялгаагүй", "baca": "yal-GAA-güi", "id": "tidak ada bedanya" },
+  { "mn": "аль", "baca": "al'", "id": "yang mana" },
+  { "mn": "нь", "baca": "n'", "id": "⚠️ …nya" },
+  { "mn": "хэр", "baca": "kher", "id": "seberapa" },
+  { "mn": "дулаан", "baca": "du-LAAN", "id": "hangat" },
+  { "mn": "зузаан", "baca": "dzu-DZAAN", "id": "tebal" },
+  { "mn": "хэцүү", "baca": "khe-TSÜÜ", "id": "sulit" },
+  { "mn": "амархан", "baca": "A-mar-khan", "id": "mudah" },
+  { "mn": "чухал", "baca": "CHU-khal", "id": "penting" },
+  { "mn": "чанар", "baca": "CHA-nar", "id": "kualitas" },
+  { "mn": "хүрэм", "baca": "khü-REM", "id": "jaket" },
+  { "mn": "малгай", "baca": "MAL-gai", "id": "topi" },
+  { "mn": "хэрэгтэй", "baca": "KHE-reg-tei", "id": "perlu" },
+  { "mn": "дуртай", "baca": "DUR-tai", "id": "suka" },
+  { "mn": "цаг агаар", "baca": "tsag a-GAAR", "id": "cuaca" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Ini lebih besar daripada itu.",
+    "Hari ini lebih hangat daripada kemarin.",
+    "Ini yang paling bagus.",
+    "Bahasa Mongolia sulit.",
+    "Saya suka teh.",
+    "Keduanya sama."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor pembanding -аас, -ээс, -оос, atau -өөс.",
+   "items": [
+    "Энэ түүн____ том.",
+    "Өнөөдөр өчигдр____ дулаан.",
+    "Би чам____ том.",
+    "Хөх нь хар____ үнэтэй.",
+    "Улаанбаатар Эрдэнэт____ том.",
+    "Ном____ сонин илүү хямд."
+   ]
+  },
+  {
+   "prompt": "Tulis lawan katanya.",
+   "items": [
+    "том",
+    "урт",
+    "шинэ",
+    "хүйтэн",
+    "хурдан",
+    "хэцүү"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "том / энэ / түүнээс",
+    "сайхан / хамгийн / энэ",
+    "дуртай / цайнд / би",
+    "адилхан / хоёулаа",
+    "вэ / нь / дээр / аль"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Энэ түүнээс том. — Өнөөдөр өчигдрөөс дулаан. — Энэ хамгийн сайхан нь. — Монгол хэл хэцүү. — Би цайнд дуртай. — Хоёулаа адилхан.",
+  "1": "ээс — өөс — аас — аас — ээс — оос",
+  "2": "жижиг — богино — хуучин — халуун — удаан — амархан",
+  "3": "Энэ түүнээс том. — Энэ хамгийн сайхан. — Би цайнд дуртай. — Хоёулаа адилхан. — Аль нь дээр вэ?"
+ }
+}

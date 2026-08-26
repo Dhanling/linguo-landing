@@ -1,0 +1,333 @@
+{
+ "title": "Badan saya sakit",
+ "title_target": "Би өвдөж байна",
+ "goal": "Menjelaskan sakit, pergi ke dokter, dan membeli obat — sekaligus menguasai ekor *-аа / -ээ* yang berarti \"milik sendiri\".",
+ "bekal": [
+  "menyebut bagian tubuh dan mengatakan bagian mana yang sakit",
+  "memakai ekor refleksif *-аа / -ээ / -оо / -өө* dengan benar",
+  "menjelaskan gejala kepada dokter dan memahami petunjuk minum obat"
+ ],
+ "dialogs": [
+  {
+   "title": "Яриа — Эмнэлэгт",
+   "intro": "Budi masuk angin setelah tiga hari cuaca berubah drastis. Sarnai mengantarnya ke klinik kampus.",
+   "lines": [
+    {
+     "speaker": "Эмч:",
+     "text": "[Сайн|Sain] [байна|BAI-n] [уу|uu]. [Хаана|KHAA-na] [тань|tan'] [өвдөж|öv-DÖJ] [байна|BAI-n] [вэ|ve]?",
+     "id": "Selamat siang. Bagian mana yang sakit?",
+     "literal": "baik ada -kah. di-mana Anda-punya sakit-sambil ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Толгой|TOL-goi] [маань|MAAN'] [өвдөж|öv-DÖJ] [байна|BAI-n]. [Хоолой|KHOO-loi] [ч|ch] [бас|bas].",
+     "id": "Kepala saya sakit. Tenggorokan juga.",
+     "literal": "kepala saya-punya sakit-sambil ada. tenggorokan pun juga."
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Хэдэн|KHE-den] [өдөр|Ö-dör] [болж|bolj] [байна|BAI-n] [вэ|ve]?",
+     "id": "Sudah berapa hari?",
+     "literal": "berapa hari jadi-sambil ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Гурав|GU-rav] [хоног|kho-NOG] [болж|bolj] [байна|BAI-n]. [Шөнө|SHÖ-nö] [сайн|sain] [унтаж|UN-taj] [чадахгүй|CHA-dakh-güi] [байна|BAI-n].",
+     "id": "Sudah tiga hari. Malam tidak bisa tidur nyenyak.",
+     "literal": "tiga hari jadi-sambil ada. malam baik tidur-sambil mampu-tidak ada."
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Халуурч|kha-LUURCH] [байна|BAI-n] [уу|uu]? [Ханиаж|KHA-niaj] [байна|BAI-n] [уу|uu]?",
+     "id": "Demam? Batuk?",
+     "literal": "demam-sambil ada -kah? batuk-sambil ada -kah?"
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Бага|BA-ga] [зэрэг|DZE-reg] [халуурч|kha-LUURCH] [байна|BAI-n]. [Ханиад|KHA-niad] [хүрсэн|KHÜR-sen] [байх|baikh].",
+     "id": "Sedikit demam. Sepertinya kena flu.",
+     "literal": "sedikit derajat demam-sambil ada. flu sampai-sudah mungkin."
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Амаа|A-maa] [ангайгаарай|an-GAI-gaa-rai]. [За|Dza], [хоолой|KHOO-loi] [тань|tan'] [улайсан|u-LAI-san] [байна|BAI-n].",
+     "id": "Buka mulut Anda. Baik, tenggorokan Anda merah.",
+     "literal": "mulut-sendiri-objek bukalah. baik, tenggorokan Anda-punya merah-sudah ada."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Хүнд|Khünd] [юу|yuu]?",
+     "id": "Parah?",
+     "literal": "berat -kah?"
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Хүнд|Khünd] [биш|bish]. [Энгийн|EN-giin] [ханиад|KHA-niad]. [Гурав|GU-rav], [дөрвөн|DÖR-vön] [хоногт|kho-NOGT] [эдгэрнэ|ED-ger-ne].",
+     "id": "Tidak parah. Flu biasa. Dalam tiga, empat hari sembuh.",
+     "literal": "berat bukan. biasa flu. tiga, empat hari-pada sembuh."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Эм|Em] [уух|UUKH] [хэрэгтэй|KHE-reg-tei] [юу|yuu]?",
+     "id": "Perlu minum obat?",
+     "literal": "obat minum perlu -kah?"
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Тийм|Tiim]. [Энэ|E-ne] [эмийг|E-miig] [өдөрт|Ö-dört] [гурван|GUR-van] [удаа|u-DAA], [хоолны|KHOOL-nii] [дараа|da-RAA] [уугаарай|UU-gaa-rai].",
+     "id": "Ya. Obat ini diminum tiga kali sehari, sesudah makan.",
+     "literal": "ya. ini obat-objek hari-pada tiga kali, makanan-punya sesudah minumlah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Ойлголоо|OIL-go-loo]. [Өөр|Öör] [юу|yuu] [хийх|KHIIKH] [ёстой|YOS-toi] [вэ|ve]?",
+     "id": "Saya mengerti. Apa lagi yang harus saya lakukan?",
+     "literal": "mengerti-sudah. lain apa lakukan harus -kah?"
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Халуун|Kha-LUUN] [шингэн|SHIN-gen] [их|ikh] [уугаарай|UU-gaa-rai]. [Гэртээ|GER-tee] [амраарай|am-RAA-rai], [гадаа|ga-DAA] [битгий|BIT-gii] [удаан|u-DAAN] [яв|yav].",
+     "id": "Minum banyak cairan hangat. Istirahat di rumah Anda, jangan lama-lama di luar.",
+     "literal": "panas cairan besar minumlah. rumah-di-sendiri istirahatlah, luar jangan lama pergilah."
+    },
+    {
+     "speaker": "Буди:",
+     "text": "[Их|Ikh] [баярлалаа|ba-yar-la-LAA], [эмч|emch] [ээ|ee].",
+     "id": "Terima kasih banyak, Dokter.",
+     "literal": "besar terima-kasih, dokter wahai."
+    },
+    {
+     "speaker": "Эмч:",
+     "text": "[Зүгээр|DZÜ-geer]. [Хэрэв|KHE-rev] [гурав|GU-rav] [хоногийн|kho-NO-giin] [дараа|da-RAA] [сайжрахгүй|SAIJ-rakh-güi] [бол|bol] [дахин|da-KHIN] [ирээрэй|i-REE-rei].",
+     "id": "Sama-sama. Kalau tiga hari lagi tidak membaik, datang lagi ya.",
+     "literal": "tidak-apa. jika tiga hari-punya sesudah baik-tidak kalau lagi datanglah."
+    }
+   ],
+   "notes": [
+    "⚠️ **Ekor -аа / -ээ / -оо / -өө berarti \"milik pelaku kalimat ini\", dan tidak ada padanannya dalam bahasa Indonesia.** *Амаа ангай* = \"buka mulut**mu sendiri**\"; *гэртээ амар* = \"istirahat di rumah**mu sendiri**\". Ekor ini menempel **sesudah** ekor kasus, dan sangat sering dipakai — menghilangkannya membuat kalimatmu terdengar patah.",
+    "**Bandingkan dua kalimat ini:** *Тэр гэр**тээ** харьсан* = \"Dia pulang ke rumah**nya sendiri**\"; *Тэр гэр**т** харьсан* = \"Dia pulang ke rumah (entah rumah siapa)\". Perbedaannya nyata, dan orang Mongolia mendengarnya langsung.",
+    "**Untuk bagian tubuh, cara paling wajar adalah bagian tubuh + маань / тань + өвдөж байна.** *Толгой **маань** өвдөж байна* = \"kepala saya sakit\". ⚠️ Menyebut *Би толгой өвдөж байна* terdengar salah — yang sakit adalah kepalanya, bukan dia.",
+    "**Өвдөх = sakit (badan), өвчтэй = sakit (keadaan), эмнэлэг = rumah sakit, эмч = dokter, эм = obat.** Perhatikan bahwa *эм* (obat), *эмч* (dokter), dan *эмнэлэг* (rumah sakit) berasal dari satu akar — ekor *-ч* membentuk pelaku, ekor *-лэг* membentuk tempat. Pola ini berlaku luas dan berguna untuk menebak kata baru.",
+    "**Хэрэв … бол = \"jika … maka\".** *Хэрэв* berdiri di depan, *бол* di belakang anak kalimatnya. Keduanya mengapit, persis seperti \"kalau … ya\" dalam bahasa Indonesia sehari-hari. ⚠️ *Хэрэв* boleh dihilangkan; *бол* tidak."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor refleksif -аа: \"milik sendiri\"",
+     "body": [
+      "Ini adalah ekor yang paling sering dilupakan penutur asing dan paling langsung terdengar oleh penutur asli. Ia menempel **sesudah** ekor kasus, dan berarti bahwa barangnya milik pelaku kalimat itu sendiri."
+     ],
+     "table": {
+      "head": ["Tanpa refleksif", "Arti", "Dengan refleksif", "Arti"],
+      "rows": [
+       ["*гэрт*", "di rumah", "*гэртээ*", "di rumahnya sendiri"],
+       ["*ээжид*", "kepada ibu", "*ээждээ*", "kepada ibunya sendiri"],
+       ["*номыг*", "buku itu", "*номоо*", "bukunya sendiri"],
+       ["*найзтай*", "dengan teman", "*найзтайгаа*", "dengan temannya sendiri"],
+       ["*хотоос*", "dari kota", "*хотоосоо*", "dari kotanya sendiri"],
+       ["*ажилд*", "di pekerjaan", "*ажилдаа*", "di pekerjaannya sendiri"]
+      ]
+     },
+     "after": [
+      "⚠️ **Ekornya berlaku untuk pelaku kalimat mana pun, bukan cuma \"saya\".** *Би номоо уншина* (saya baca buku saya), *чи номоо унш* (kamu baca bukumu), *тэр номоо уншсан* (dia baca bukunya sendiri). Satu ekor mengurus semua orang — sekali lagi, bahasa Mongolia menolak berubah menurut pelaku.",
+      "**Kapan wajib dipakai?** Kapan pun barangnya milik pelaku kalimatnya dan hal itu penting. Untuk anggota keluarga, barang pribadi, rumah, pekerjaan, dan tempat asal, orang Mongolia **hampir selalu** memakainya. Kalau kamu ragu, pasang — kelebihan refleksif jauh lebih tidak mengganggu daripada kekurangannya."
+     ]
+    },
+    {
+     "title": "Menjelaskan sakit",
+     "body": [
+      "Tiga pola mengurus hampir semua yang perlu kamu katakan di klinik. Hafalkan ketiganya sebagai potongan utuh."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["bagian tubuh + **өвдөж байна**", "*Толгой маань өвдөж байна.*", "Kepala saya sakit."],
+       ["**Би** + keadaan + **байна**", "*Би халуурч байна.*", "Saya demam."],
+       ["gejala + **хүрсэн**", "*Ханиад хүрсэн.*", "Saya kena flu."],
+       ["**… чадахгүй байна**", "*Унтаж чадахгүй байна.*", "Saya tidak bisa tidur."],
+       ["**Надад … байна**", "*Надад харшил байна.*", "Saya punya alergi."],
+       ["**… -д харштай**", "*Би пенициллинд харштай.*", "Saya alergi penisilin."]
+      ]
+     },
+     "after": [
+      "⚠️ **Dua baris terakhir bisa menyelamatkan nyawa dan patut kamu hafalkan sebelum berangkat.** Tuliskan juga di kertas dalam bahasa Mongolia dan simpan di dompet — kalau kamu tidak sadar, kertas itu yang berbicara.",
+      "**Sistem kesehatan Mongolia menyediakan layanan darurat gratis bagi siapa pun**, termasuk orang asing. Untuk perawatan lanjutan, asuransi perjalanan wajib. Nomor darurat: **103** untuk ambulans, **102** untuk polisi, **101** untuk pemadam kebakaran."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia", "Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*толгой*", "*TOL-goi*", "kepala", "*нүд*", "*nüd*", "mata"],
+      ["*чих*", "*chikh*", "telinga", "*хамар*", "*KHA-mar*", "hidung"],
+      ["*ам*", "*am*", "mulut", "*шүд*", "*shüd*", "gigi"],
+      ["*хэл*", "*khel*", "lidah; bahasa", "*хоолой*", "*KHOO-loi*", "tenggorokan"],
+      ["*хүзүү*", "*khü-DZÜÜ*", "leher", "*мөр*", "*mör*", "bahu"],
+      ["*гар*", "*gar*", "tangan, lengan", "*хуруу*", "*khu-RUU*", "jari"],
+      ["*хөл*", "*khöl*", "kaki", "*өвдөг*", "*ÖV-dög*", "lutut"],
+      ["*гэдэс*", "*GE-des*", "perut", "*нуруу*", "*nu-RUU*", "punggung"],
+      ["*зүрх*", "*dzürkh*", "jantung, hati", "*цус*", "*tsus*", "darah"],
+      ["*арьс*", "*ar's*", "kulit", "*үс*", "*üs*", "rambut"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa **хэл berarti \"lidah\" dan \"bahasa\" sekaligus** — persis seperti \"lidah\" dalam \"bahasa\" pada banyak bahasa dunia, dan seperti \"lisan\" dalam bahasa Indonesia. *Монгол хэл* harfiahnya \"lidah Mongolia\". Begitu juga *зүрх* yang berarti jantung sekaligus keberanian: *зүрхтэй хүн* = orang pemberani."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata sakit yang sering dipakai",
+     "items": [
+      "*өвдөх* (öv-DÖKH) — sakit (badan). *Гэдэс маань өвдөж байна.*",
+      "*халуурах* (kha-LUU-rakh) — demam.",
+      "*ханиах* (KHA-niakh) — batuk. *ханиад* (KHA-niad) — flu.",
+      "*бөөлжих* (BÖÖL-jikh) — muntah. *суулгах* (SUUL-gakh) — diare.",
+      "*толгой эргэх* (TOL-goi ER-gekh) — pusing, harfiah \"kepala berputar\".",
+      "*ядрах* (YAD-rakh) — lelah. *эдгэрэх* (ED-ge-rekh) — sembuh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di apotek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Монгол", "Baca", "Indonesia"],
+     "rows": [
+      ["*эмийн сан*", "*E-miin san*", "apotek"],
+      ["*эм*", "*em*", "obat"],
+      ["*жор*", "*jor*", "resep"],
+      ["*толгой өвдөхийн эм*", "*TOL-goi öv-DÖ-khiin em*", "obat sakit kepala"],
+      ["*ханиадны эм*", "*KHA-niad-nii em*", "obat flu"],
+      ["*халуун бууруулах эм*", "*kha-LUUN BUU-ruu-lakh em*", "obat penurun panas"],
+      ["*витамин*", "*vi-ta-MIN*", "vitamin"],
+      ["*боолт*", "*boolt*", "perban"],
+      ["*өдөрт гурван удаа*", "*Ö-dört GUR-van u-DAA*", "tiga kali sehari"],
+      ["*хоолны дараа*", "*KHOOL-nii da-RAA*", "sesudah makan"],
+      ["*хоолны өмнө*", "*KHOOL-nii ÖM-nö*", "sebelum makan"],
+      ["*өдөрт нэг ширхэг*", "*Ö-dört neg SHIR-kheg*", "satu butir sehari"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pola nama obat: **penyakitnya berekor -ын/-ийн + эм**. *Ханиад* (flu) → *ханиадны эм* (obat flu). Ini pola kepemilikan yang sudah kamu kenal dari unit 2, dan ia berlaku untuk hampir semua nama obat. Kalau kamu tahu nama penyakitnya, kamu bisa meminta obatnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kalimat yang perlu kamu bisa di apotek",
+     "items": [
+      "*Ханиадны эм байгаа юу?* — Ada obat flu?",
+      "*Жоргүй авч болох уу?* — Bisa beli tanpa resep?",
+      "*Яаж уух вэ?* — Cara minumnya bagaimana?",
+      "*Өдөрт хэдэн удаа уух вэ?* — Sehari berapa kali diminum?",
+      "*Би пенициллинд харштай.* — Saya alergi penisilin.",
+      "*Илүү хүчтэй эм байгаа юу?* — Ada obat yang lebih kuat?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat dengan refleksif dalam kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Arti", "Kenapa refleksif"],
+     "rows": [
+      ["*Би гэртээ харина.*", "Saya pulang ke rumah saya.", "Rumah sendiri."],
+      ["*Ээждээ утасдсан.*", "Saya telepon ibu saya.", "Ibu sendiri."],
+      ["*Номоо уншиж байна.*", "Saya sedang baca buku saya.", "Buku sendiri."],
+      ["*Найзтайгаа уулзсан.*", "Saya bertemu teman saya.", "Teman sendiri."],
+      ["*Ажилдаа явлаа.*", "Dia berangkat ke kerjaannya.", "Pekerjaan sendiri."],
+      ["*Гутлаа тайл.*", "Lepas sepatumu.", "Sepatu sendiri."],
+      ["*Хүрмээ өмс.*", "Pakai jaketmu.", "Jaket sendiri."],
+      ["*Нутаг руугаа явна.*", "Saya pulang ke kampung saya.", "Kampung sendiri."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Baris terakhir memperlihatkan sesuatu yang penting: refleksif bisa menempel sesudah ekor arah *-руу* juga.** *Нутаг руу**гаа*** = ke kampung halamannya sendiri. Bahasa Mongolia menumpuk ekor dengan bebas, dan urutannya selalu tetap: **dasar → jamak → kasus → refleksif**. Kalau kamu mengenali urutan ini, kata sepanjang apa pun bisa kamu bongkar."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "mn": "өвдөх", "baca": "öv-DÖKH", "id": "sakit (badan)" },
+  { "mn": "эмч", "baca": "emch", "id": "dokter" },
+  { "mn": "эм", "baca": "em", "id": "obat" },
+  { "mn": "эмнэлэг", "baca": "EM-ne-leg", "id": "rumah sakit" },
+  { "mn": "эмийн сан", "baca": "E-miin san", "id": "apotek" },
+  { "mn": "толгой", "baca": "TOL-goi", "id": "kepala" },
+  { "mn": "хоолой", "baca": "KHOO-loi", "id": "tenggorokan" },
+  { "mn": "гэдэс", "baca": "GE-des", "id": "perut" },
+  { "mn": "гар", "baca": "gar", "id": "tangan" },
+  { "mn": "хөл", "baca": "khöl", "id": "kaki" },
+  { "mn": "нүд", "baca": "nüd", "id": "mata" },
+  { "mn": "шүд", "baca": "shüd", "id": "gigi" },
+  { "mn": "ханиад", "baca": "KHA-niad", "id": "flu" },
+  { "mn": "халуурах", "baca": "kha-LUU-rakh", "id": "demam" },
+  { "mn": "ядрах", "baca": "YAD-rakh", "id": "lelah" },
+  { "mn": "эдгэрэх", "baca": "ED-ge-rekh", "id": "sembuh" },
+  { "mn": "харштай", "baca": "KHARSH-tai", "id": "alergi" },
+  { "mn": "хэрэв", "baca": "KHE-rev", "id": "jika" },
+  { "mn": "бол", "baca": "bol", "id": "maka, kalau" },
+  { "mn": "сайжрах", "baca": "SAIJ-rakh", "id": "membaik" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mongolia.",
+   "items": [
+    "Kepala saya sakit.",
+    "Saya demam.",
+    "Saya tidak bisa tidur.",
+    "Ada obat flu?",
+    "Sehari berapa kali diminum?",
+    "Saya alergi penisilin."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ekor refleksif -аа, -ээ, -оо, atau -өө.",
+   "items": [
+    "Би гэрт____ харина.",
+    "Ээжид____ утасдсан.",
+    "Ном____ уншиж байна.",
+    "Ажилд____ явлаа.",
+    "Гутл____ тайл.",
+    "Хүрм____ өмс."
+   ]
+  },
+  {
+   "prompt": "Tulis nama bagian tubuhnya dalam bahasa Mongolia.",
+   "items": [
+    "kepala",
+    "mata",
+    "tangan",
+    "kaki",
+    "perut",
+    "gigi"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "байна / өвдөж / толгой / маань",
+    "байна / халуурч / би",
+    "байна / чадахгүй / унтаж / би",
+    "юу / байгаа / эм / ханиадны",
+    "уугаарай / дараа / хоолны"
+   ]
+  }
+ ],
+ "answers": {
+  "0": "Толгой маань өвдөж байна. — Би халуурч байна. — Би унтаж чадахгүй байна. — Ханиадны эм байгаа юу? — Өдөрт хэдэн удаа уух вэ? — Би пенициллинд харштай.",
+  "1": "ээ — ээ — оо — аа — аа — ээ",
+  "2": "толгой — нүд — гар — хөл — гэдэс — шүд",
+  "3": "Толгой маань өвдөж байна. — Би халуурч байна. — Би унтаж чадахгүй байна. — Ханиадны эм байгаа юу? — Хоолны дараа уугаарай."
+ }
+}
