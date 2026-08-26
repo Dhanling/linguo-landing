@@ -1,0 +1,620 @@
+{
+ "title": "Menceritakan dirimu sendiri",
+ "title_target": "Tell me about yourself",
+ "goal": "Menyatukan seluruh isi modul dalam satu keterampilan: bercerita tentang dirimu — pengalaman, alasan, rencana — tanpa tersendat dan tanpa menghafal naskah.",
+ "bekal": [
+  "menyusun jawaban \"tell me about yourself\" dalam empat lapis waktu",
+  "menceritakan pengalaman dengan bukti, bukan kata sifat kosong",
+  "menjawab pertanyaan sulit tanpa berbohong dan tanpa menjatuhkan diri",
+  "menutup percakapan penting dengan rapi"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — The interview",
+   "intro": "Wawancara kerja untuk posisi koordinator program di sebuah lembaga pendidikan. Pewawancara bernama Ms Clarke; pelamarnya Anisa, 27 tahun.",
+   "lines": [
+    {
+     "speaker": "Clarke:",
+     "text": "Thanks for coming in. So, tell me a bit about yourself.",
+     "id": "Terima kasih sudah datang. Jadi, ceritakan sedikit tentang Anda.",
+     "literal": "terima-kasih untuk datang masuk. jadi, beritahu saya sedikit tentang dirimu."
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "I've been working in education for about five years now.",
+     "id": "Saya sudah lima tahunan bekerja di bidang pendidikan.",
+     "literal": "saya sudah ada bekerja dalam pendidikan selama sekitar lima tahun sekarang."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "And before that?",
+     "id": "Sebelum itu?",
+     "literal": "dan sebelum itu?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "I studied linguistics, then spent a year teaching in Sumba.",
+     "id": "Saya kuliah linguistik, lalu setahun mengajar di Sumba.",
+     "literal": "saya belajar linguistik, kemudian menghabiskan setahun mengajar di Sumba."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "What made you move into coordination?",
+     "id": "Apa yang membuat Anda pindah ke koordinasi?",
+     "literal": "apa membuat kamu pindah kedalam koordinasi?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "I kept being asked to fix schedules nobody else wanted to fix.",
+     "id": "Saya sering diminta membereskan jadwal yang nggak ada yang mau urus.",
+     "literal": "saya terus menjadi diminta untuk memperbaiki jadwal-jadwal tidak-seorang-pun lain ingin untuk memperbaiki."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "And you enjoyed it?",
+     "id": "Dan Anda menikmatinya?",
+     "literal": "dan kamu menikmati itu?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "More than I expected. If I hadn't tried it, I'd still be teaching.",
+     "id": "Lebih dari dugaan saya. Kalau nggak dicoba, saya pasti masih mengajar.",
+     "literal": "lebih daripada saya mengharapkan. jika saya tidak-sudah mencoba itu, saya akan masih menjadi mengajar."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "What would you say is your biggest weakness?",
+     "id": "Menurut Anda apa kelemahan terbesar Anda?",
+     "literal": "apa akan kamu berkata adalah punyamu terbesar kelemahan?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "I used to take on too much. I've been learning to say no.",
+     "id": "Dulu saya ambil terlalu banyak. Sekarang saya sedang belajar menolak.",
+     "literal": "saya dulu mengambil pada terlalu banyak. saya sudah ada belajar untuk mengatakan tidak."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "Has that worked?",
+     "id": "Berhasil?",
+     "literal": "sudahkah itu bekerja?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "Mostly. I said no twice last month, which is a record.",
+     "id": "Sebagian besar. Bulan lalu saya menolak dua kali, itu rekor.",
+     "literal": "kebanyakan. saya berkata tidak dua-kali terakhir bulan, yang adalah sebuah rekor."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "Where do you see yourself in three years?",
+     "id": "Tiga tahun lagi Anda melihat diri Anda di mana?",
+     "literal": "di-mana apakah kamu melihat dirimu dalam tiga tahun?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "Running a programme like this one, hopefully here.",
+     "id": "Menjalankan program seperti ini, mudah-mudahan di sini.",
+     "literal": "menjalankan sebuah program seperti ini satu, dengan-harapan di-sini."
+    },
+    {
+     "speaker": "Clarke:",
+     "text": "Good answer. Do you have any questions for us?",
+     "id": "Jawaban bagus. Ada pertanyaan untuk kami?",
+     "literal": "bagus jawaban. apakah kamu punya sedikit pertanyaan-pertanyaan untuk kami?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "Could you tell me how the team is structured at the moment?",
+     "id": "Boleh tahu susunan timnya sekarang seperti apa?",
+     "literal": "bisakah kamu memberitahu saya bagaimana itu tim adalah disusun pada itu saat?"
+    }
+   ],
+   "notes": [
+    "**Perhatikan empat lapis waktu dalam empat baris pertama Anisa.** *I've been working* (Unit 2: sudah berapa lama, masih berjalan) → *I studied* (Unit 1: selesai di masa lampau) → *spent a year teaching* → dan nanti *If I hadn't tried it, I'd still be teaching* (Unit 7: pengandaian campuran). Inilah yang membedakan B1 dari A2: bukan kata-katanya, melainkan kemampuan berpindah waktu tanpa jatuh.",
+    "**I've been working in education for about five years now** — pembuka \"tell me about yourself\" yang paling aman. ⚠️ Jangan membuka dengan tanggal lahir atau nama lengkap; pewawancara sudah memegang CV-mu. Yang ia tanyakan adalah **bagaimana kamu menceritakan dirimu**, bukan datanya.",
+    "**What made you move into coordination?** — *make* + orang + V1 polos, dari Unit 13. Pertanyaan ini menanyakan sebab, dan jawaban terbaik adalah cerita pendek, bukan kata sifat.",
+    "**I kept being asked to fix schedules** — gabungan tiga hal: *keep* + V-ing (Unit 13), bentuk pasif (Unit 10), dan klausa relatif tanpa penyambung (*schedules nobody else wanted to fix*, Unit 12). Kalimat sepadat ini adalah tanda B1 yang matang.",
+    "**If I hadn't tried it, I'd still be teaching** — pengandaian campuran: sebab di masa lalu, akibat sekarang. Dipakai di sini bukan untuk memamerkan tata bahasa, melainkan karena itulah bentuk yang tepat untuk maksudnya.",
+    "**I used to take on too much. I've been learning to say no.** — rangka terbaik untuk menjawab pertanyaan kelemahan: **dulu begini** (*used to*, Unit 4), **sekarang sedang diperbaiki** (*have been -ing*, Unit 2). ⚠️ Hindari jawaban klise *I'm a perfectionist*; pewawancara berbahasa Inggris mendengarnya setiap hari.",
+    "**I said no twice last month, which is a record.** — bukti kecil dan konkret jauh lebih meyakinkan daripada kata sifat besar. Bandingkan dengan *I'm very disciplined*, yang tidak bisa diperiksa siapa pun.",
+    "**Could you tell me how the team is structured?** — pertanyaan tak langsung dari Unit 18, dipakai di tempat yang tepat. ⚠️ Menjawab *No, I don't have any questions* hampir selalu merugikan; siapkan dua pertanyaan sebelum masuk ruangan."
+   ],
+   "grammars": [
+    {
+     "title": "Empat lapis waktu dalam satu cerita",
+     "body": [
+      "Cerita tentang dirimu selalu bergerak di antara empat titik. Menguasai perpindahannya adalah seluruh isi modul ini."
+     ],
+     "table": {
+      "head": [
+       "Lapis",
+       "Bentuk",
+       "Contoh",
+       "Unit"
+      ],
+      "rows": [
+       [
+        "latar belakang selesai",
+        "past simple",
+        "*I studied linguistics.*",
+        "1, 3"
+       ],
+       [
+        "sampai sekarang",
+        "present perfect (continuous)",
+        "*I've been working here for five years.*",
+        "1, 2"
+       ],
+       [
+        "keadaan sekarang",
+        "present simple / continuous",
+        "*I'm currently leading two projects.*",
+        "—"
+       ],
+       [
+        "rencana & harapan",
+        "*will*, *going to*, *would like to*",
+        "*I'd like to move into research.*",
+        "5"
+       ],
+       [
+        "yang tak terjadi",
+        "pengandaian 2 & 3",
+        "*If I hadn't moved, I'd still be teaching.*",
+        "6, 7"
+       ],
+       [
+        "kebiasaan lama",
+        "*used to*",
+        "*I used to take on too much.*",
+        "4"
+       ]
+      ]
+     },
+     "after": [
+      "Latihan yang paling berguna sebelum wawancara mana pun: tulis enam kalimat tentang dirimu, satu untuk tiap baris tabel ini. Bukan untuk dihafal — untuk memastikan keenam bentuknya bisa keluar tanpa dipikir.",
+      "⚠️ Kesalahan bentuk waktu di wawancara mengubah isi ceritamu. *I worked there for five years* memberi tahu pewawancara bahwa kamu sudah keluar; *I've worked there for five years* bahwa kamu masih di sana."
+     ]
+    },
+    {
+     "title": "Menjawab pertanyaan sulit",
+     "body": [
+      "Empat pertanyaan yang hampir pasti muncul, dan rangka jawaban yang bekerja."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Rangka jawaban"
+      ],
+      "rows": [
+       [
+        "*Tell me about yourself.*",
+        "sekarang → masa lalu singkat → kenapa di sini"
+       ],
+       [
+        "*What's your biggest weakness?*",
+        "*I used to…* → *I've been learning to…* → bukti"
+       ],
+       [
+        "*Why did you leave?*",
+        "alasan ke depan, bukan keluhan ke belakang"
+       ],
+       [
+        "*Why should we hire you?*",
+        "satu kekuatan + satu contoh nyata"
+       ],
+       [
+        "*Where do you see yourself…?*",
+        "arah, bukan jabatan; kaitkan dengan posisinya"
+       ],
+       [
+        "*Do you have any questions?*",
+        "dua pertanyaan tentang pekerjaan, bukan gaji"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Untuk *Why did you leave?*, hindari menjelekkan tempat lama. Bahkan alasan yang jujur pun sebaiknya dibingkai ke depan: *I was ready for something with more responsibility* alih-alih *My manager was impossible.*",
+      "Rangka bercerita yang dipakai di seluruh dunia kerja berbahasa Inggris: **keadaannya apa → tugas saya apa → saya melakukan apa → hasilnya apa.** Empat kalimat, dan pewawancara mana pun akan mengerti."
+     ]
+    },
+    {
+     "title": "Menutup percakapan penting",
+     "body": [
+      "Bagian yang paling sering dilupakan, dan yang paling diingat orang."
+     ],
+     "table": {
+      "head": [
+       "Kapan",
+       "Kalimat"
+      ],
+      "rows": [
+       [
+        "menegaskan minat",
+        "*I'd really like to be part of this.*"
+       ],
+       [
+        "menanyakan langkah berikutnya",
+        "*Could I ask what the next steps are?*"
+       ],
+       [
+        "berterima kasih",
+        "*Thank you for your time.*"
+       ],
+       [
+        "menjaga pintu terbuka",
+        "*Please do get in touch if you need anything else.*"
+       ],
+       [
+        "email susulan",
+        "*Thank you for taking the time to meet me today.*"
+       ],
+       [
+        "kalau ditolak",
+        "*Thank you for letting me know — I'd welcome any feedback.*"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir jarang dipakai orang dan hampir selalu berbuah: meminta masukan sesudah ditolak membuatmu diingat, dan kadang mengubah keputusan berikutnya.",
+      "*Do* di *Please do get in touch* adalah penegas dari Unit 19. Ia membuat undangan terdengar sungguh-sungguh, bukan basa-basi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue B — Small talk before it starts",
+   "intro": "Lima menit sebelum wawancara. Anisa menunggu di lobi bersama seorang staf. Bagian percakapan yang tidak dinilai — dan yang paling menentukan kesan pertama.",
+   "lines": [
+    {
+     "speaker": "Staff:",
+     "text": "Did you find us all right?",
+     "id": "Ketemu tempatnya gampang?",
+     "literal": "apakah kamu menemukan kami semua benar?"
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "Eventually. I'd been going round the wrong block for ten minutes.",
+     "id": "Akhirnya. Tadi sepuluh menit muter di blok yang salah.",
+     "literal": "akhirnya. saya sudah ada pergi berkeliling itu salah blok selama sepuluh menit."
+    },
+    {
+     "speaker": "Staff:",
+     "text": "Everyone does. The sign's hidden behind a tree.",
+     "id": "Semua gitu kok. Papannya ketutup pohon.",
+     "literal": "semua-orang melakukan. itu papan-adalah tersembunyi di-belakang sebuah pohon."
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "That would explain it. Have you been here long?",
+     "id": "Pantas. Sudah lama di sini?",
+     "literal": "itu akan menjelaskan itu. sudahkah kamu ada di-sini lama?"
+    },
+    {
+     "speaker": "Staff:",
+     "text": "Three years. It's a good place to work, honestly.",
+     "id": "Tiga tahun. Jujur, enak kerja di sini.",
+     "literal": "tiga tahun. itu-adalah sebuah bagus tempat untuk bekerja, dengan-jujur."
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "That's good to hear. I was slightly nervous, to be honest.",
+     "id": "Senang dengarnya. Jujur saya agak deg-degan tadi.",
+     "literal": "itu-adalah bagus untuk mendengar. saya adalah sedikit gugup, untuk menjadi jujur."
+    },
+    {
+     "speaker": "Staff:",
+     "text": "Don't be. She's much nicer than she looks on paper.",
+     "id": "Nggak usah. Orangnya jauh lebih ramah daripada kelihatan di kertas.",
+     "literal": "jangan menjadi. dia-adalah banyak lebih-ramah daripada dia terlihat pada kertas."
+    },
+    {
+     "speaker": "Anisa:",
+     "text": "I'll hold you to that. Thanks — that actually helped.",
+     "id": "Saya pegang omongannya ya. Makasih — beneran ngebantu.",
+     "literal": "saya akan memegang kamu kepada itu. terima-kasih — itu sebenarnya membantu."
+    }
+   ],
+   "notes": [
+    "**I'd been going round the wrong block** — past perfect continuous (Unit 3), dipakai di percakapan santai. Ini bukti bahwa bentuk yang terasa \"terlalu rumit\" sebenarnya muncul di obrolan sehari-hari.",
+    "**That would explain it.** — jawaban tiga kata yang sangat sering dipakai penutur asli ketika sebuah penjelasan menutup teka-teki kecil. Hafalkan utuh.",
+    "**She's much nicer than she looks on paper** — perbandingan bertenaga dari Unit 16 (*much* + bentuk perbandingan), plus ungkapan *on paper* (di atas kertas, secara formal).",
+    "**I'll hold you to that.** — ungkapan setengah bercanda yang berarti \"saya pegang omonganmu\". Ia menandai keakraban dan hampir selalu diterima dengan baik — asalkan nadanya ringan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bercerita tentang diri sendiri",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*I've been working in… for…*",
+       "aiv bin WEER-king in",
+       "Saya sudah … tahun bekerja di…"
+      ],
+      [
+       "*My background is in…*",
+       "mai BÆK-graund iz in",
+       "Latar belakang saya di…"
+      ],
+      [
+       "*What drew me to this was…*",
+       "wot druu mi tu dhis woz",
+       "Yang menarik saya ke sini adalah…"
+      ],
+      [
+       "*I'm currently responsible for…*",
+       "aim KA-rent-li ris-PON-si-bel for",
+       "Saat ini saya bertanggung jawab atas…"
+      ],
+      [
+       "*One thing I'm proud of is…*",
+       "wan thing aim praud ov iz",
+       "Satu hal yang saya banggakan adalah…"
+      ],
+      [
+       "*I've been learning to…*",
+       "aiv bin LEER-ning tu",
+       "Saya sedang belajar untuk…"
+      ],
+      [
+       "*I'd like to move into…*",
+       "aid laik tu muuv IN-tu",
+       "Saya ingin masuk ke bidang…"
+      ],
+      [
+       "*What appeals to me is…*",
+       "wot e-PIILZ tu mi iz",
+       "Yang menarik buat saya adalah…"
+      ],
+      [
+       "*To give you an example, …*",
+       "tu giv yuu en ig-ZAAM-pel",
+       "Contohnya begini,…"
+      ],
+      [
+       "*It taught me that…*",
+       "it toot mi dhæt",
+       "Dari situ saya belajar bahwa…"
+      ],
+      [
+       "*I'm still working on that.*",
+       "aim stil WEER-king on dhæt",
+       "Itu masih saya perbaiki."
+      ],
+      [
+       "*Thank you for your time.*",
+       "thænk yuu for yor taim",
+       "Terima kasih atas waktunya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*I'm still working on that* adalah cara paling jujur dan paling aman mengakui kekurangan. Ia mengakui tanpa merendahkan diri, dan menunjukkan bahwa kamu sadar — dua hal yang dicari pewawancara mana pun."
+    },
+    {
+     "type": "sub",
+     "text": "Basa-basi yang menyelamatkan lima menit pertama"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pembuka",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Did you find us all right?*",
+       "Ketemu tempatnya gampang?"
+      ],
+      [
+       "*How was the journey?*",
+       "Perjalanannya gimana?"
+      ],
+      [
+       "*Terrible traffic this morning, wasn't it?*",
+       "Macet parah ya tadi pagi?"
+      ],
+      [
+       "*Have you been here long?*",
+       "Sudah lama di sini?"
+      ],
+      [
+       "*It's my first time here.*",
+       "Ini pertama kali saya ke sini."
+      ],
+      [
+       "*Lovely building.*",
+       "Gedungnya bagus."
+      ],
+      [
+       "*I was slightly nervous, to be honest.*",
+       "Jujur saya agak deg-degan."
+      ],
+      [
+       "*That's good to hear.*",
+       "Senang dengarnya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Basa-basi bukan pemborosan waktu; di budaya berbahasa Inggris ia adalah bagian resmi dari pertemuan. Melewatinya dan langsung ke pokok masalah terdengar dingin. Tiga kalimat sudah cukup — lebih dari itu justru canggung."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "background",
+   "baca": "BÆK-graund",
+   "id": "latar belakang"
+  },
+  {
+   "en": "coordination",
+   "baca": "kou-or-di-NÉI-shen",
+   "id": "koordinasi"
+  },
+  {
+   "en": "weakness",
+   "baca": "WIIK-nes",
+   "id": "kelemahan"
+  },
+  {
+   "en": "strength",
+   "baca": "stréngth",
+   "id": "kekuatan"
+  },
+  {
+   "en": "to take on",
+   "baca": "téik on",
+   "id": "mengambil (tugas)"
+  },
+  {
+   "en": "responsible for",
+   "baca": "ris-PON-si-bel for",
+   "id": "bertanggung jawab atas"
+  },
+  {
+   "en": "to run (menjalankan)",
+   "baca": "ran",
+   "id": "menjalankan (program)"
+  },
+  {
+   "en": "programme",
+   "baca": "PROU-græm",
+   "id": "program"
+  },
+  {
+   "en": "to structure",
+   "baca": "STRAK-cher",
+   "id": "menyusun (organisasi)"
+  },
+  {
+   "en": "next steps",
+   "baca": "nékst stéps",
+   "id": "langkah berikutnya"
+  },
+  {
+   "en": "feedback",
+   "baca": "FIID-bæk",
+   "id": "masukan"
+  },
+  {
+   "en": "nervous",
+   "baca": "NEER-ves",
+   "id": "gugup"
+  },
+  {
+   "en": "to appeal to",
+   "baca": "e-PIIL tu",
+   "id": "menarik bagi"
+  },
+  {
+   "en": "to be proud of",
+   "baca": "praud ov",
+   "id": "bangga akan"
+  },
+  {
+   "en": "record",
+   "baca": "RÉ-kord",
+   "id": "rekor, catatan"
+  },
+  {
+   "en": "hopefully",
+   "baca": "HOUP-fe-li",
+   "id": "mudah-mudahan"
+  },
+  {
+   "en": "currently",
+   "baca": "KA-rent-li",
+   "id": "saat ini"
+  },
+  {
+   "en": "on paper",
+   "baca": "on PÉI-per",
+   "id": "di atas kertas"
+  },
+  {
+   "en": "to get in touch",
+   "baca": "gét in tach",
+   "id": "menghubungi"
+  },
+  {
+   "en": "to hold someone to it",
+   "baca": "hould ... tu it",
+   "id": "memegang omongan seseorang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis satu kalimat tentang dirimu untuk tiap lapis waktu.",
+   "items": [
+    "Latar belakang yang sudah selesai (past simple)",
+    "Sudah berapa lama, masih berjalan (present perfect continuous)",
+    "Keadaan sekarang (present simple / continuous)",
+    "Rencana ke depan (*would like to* / *going to*)",
+    "Yang tidak terjadi (pengandaian ketiga atau campuran)",
+    "Kebiasaan lama yang sudah berubah (*used to*)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan wawancara berikut dengan rangka yang dipelajari. Tulis, jangan cuma dipikirkan.",
+   "items": [
+    "Tell me about yourself.",
+    "What's your biggest weakness?",
+    "Why did you leave your last job?",
+    "Where do you see yourself in three years?",
+    "Do you have any questions for us?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya. Semuanya kesalahan khas di wawancara.",
+   "items": [
+    "I work here since 2021. (masih bekerja di sana)",
+    "I am working in education for five years.",
+    "My last manager was very bad, so I leave.",
+    "I have many experiences in this field.",
+    "I look forward to hear from you."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Saya sudah sekitar lima tahun bekerja di bidang pendidikan.",
+    "Dulu saya suka ambil terlalu banyak tugas.",
+    "Kalau saya nggak coba, mungkin saya masih mengajar.",
+    "Boleh tahu susunan timnya sekarang seperti apa?",
+    "Terima kasih atas waktunya."
+   ]
+  },
+  {
+   "prompt": "Rangkai satu cerita empat kalimat tentang satu hal yang pernah kamu kerjakan, memakai rangka keadaan → tugas → tindakan → hasil.",
+   "items": [
+    "Keadaannya apa?",
+    "Tugas kamu apa?",
+    "Kamu melakukan apa?",
+    "Hasilnya apa?",
+    "Sekarang gabungkan keempatnya jadi satu paragraf tanpa jeda."
+   ]
+  }
+ ],
+ "answers": [
+  "Contoh: I studied linguistics at university. — I've been working in education for five years. — I'm currently coordinating two programmes. — I'd like to move into research. — If I hadn't taken that job, I'd still be teaching. — I used to take on too much work.",
+  "Contoh: I've been working in education for five years. Before that I studied linguistics and taught for a year in Sumba. What drew me to this role is the coordination side. — Contoh: I used to take on too much, and it affected my deadlines. I've been learning to say no; I turned down two projects last month. — Contoh: I was ready for a role with more responsibility, and this one matches that. — Contoh: Running a programme like this one, hopefully here. — Contoh: Could you tell me how the team is structured at the moment, and what the next steps are?",
+  "I've worked here since 2021. — I've been working in education for five years. — I was ready for a role with more responsibility. — I have a lot of experience in this field. — I look forward to hearing from you.",
+  "I've been working in education for about five years. — I used to take on too much. — If I hadn't tried it, I'd still be teaching. — Could you tell me how the team is structured at the moment? — Thank you for your time.",
+  "Contoh keadaan: Last year our enrolment dropped by a third. — Contoh tugas: I was asked to find out why. — Contoh tindakan: I interviewed twenty students and redesigned the schedule around their working hours. — Contoh hasil: Enrolment recovered within two terms. — Gabungan: Last year our enrolment dropped by a third. I was asked to find out why. I interviewed twenty students and redesigned the schedule around their working hours. Enrolment recovered within two terms."
+ ],
+ "wave": "Ulangi **seluruh modul**: rekam dirimu menjawab *Tell me about yourself* selama dua menit tanpa membaca. Dengarkan ulang dan tandai tiap bentuk waktu yang kamu pakai. Kalau keenam lapis di Unit 20 muncul semua, kamu sudah selesai dengan B1."
+}

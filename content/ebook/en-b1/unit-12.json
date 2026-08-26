@@ -1,0 +1,635 @@
+{
+ "title": "Yang mana yang kamu maksud",
+ "title_target": "The one that got away",
+ "goal": "Menyambung dua kalimat jadi satu dengan *who*, *which*, dan *that* — supaya keteranganmu tidak lagi keluar sepotong-sepotong.",
+ "bekal": [
+  "memakai klausa relatif untuk menunjuk orang, benda, tempat, dan waktu",
+  "membedakan klausa yang menentukan dan yang sekadar menambah",
+  "menghilangkan *that* ketika boleh dihilangkan",
+  "menerangkan barang dan orang tanpa tahu namanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Looking for a place",
+   "intro": "Dua mahasiswa, Puti dan Reno, mencari kos di sekitar kampus lewat telepon dengan calon pemilik.",
+   "lines": [
+    {
+     "speaker": "Puti:",
+     "text": "It's the building which is next to the pharmacy, right?",
+     "id": "Yang gedungnya sebelah apotek, kan?",
+     "literal": "itu-adalah itu gedung yang adalah sebelah kepada itu apotek, benar?"
+    },
+    {
+     "speaker": "Reno:",
+     "text": "No, that's the one we saw last week. This one's behind it.",
+     "id": "Bukan, itu yang kita lihat minggu lalu. Yang ini di belakangnya.",
+     "literal": "tidak, itu-adalah itu satu kami melihat terakhir minggu. ini satu-adalah di-belakang itu."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "The place where we got lost?",
+     "id": "Yang tempat kita nyasar itu?",
+     "literal": "itu tempat di-mana kami menjadi tersesat?"
+    },
+    {
+     "speaker": "Reno:",
+     "text": "That's the one. The landlord who called me is her son.",
+     "id": "Nah itu. Pemilik yang nelepon saya itu anaknya.",
+     "literal": "itu-adalah itu satu. itu tuan-tanah yang menelepon saya adalah punyadia anak-lelaki."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "How much is the room that faces the garden?",
+     "id": "Kamar yang menghadap taman berapa?",
+     "literal": "berapa banyak adalah itu kamar yang menghadap itu taman?"
+    },
+    {
+     "speaker": "Reno:",
+     "text": "Two and a half. The ones at the back are cheaper.",
+     "id": "Dua setengah. Yang di belakang lebih murah.",
+     "literal": "dua dan setengah. itu yang-jamak pada itu belakang adalah lebih-murah."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "What about the girl whose room is next to the kitchen?",
+     "id": "Kalau cewek yang kamarnya sebelah dapur gimana?",
+     "literal": "apa tentang itu perempuan yang-punya kamar adalah sebelah kepada itu dapur?"
+    },
+    {
+     "speaker": "Reno:",
+     "text": "She's moving out in June, which is perfect for us.",
+     "id": "Dia keluar bulan Juni, yang mana pas banget buat kita.",
+     "literal": "dia adalah pindah keluar di Juni, yang adalah sempurna untuk kami."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "Is there anyone we could talk to about the deposit?",
+     "id": "Ada yang bisa kita tanyain soal deposit?",
+     "literal": "adakah di-sana seseorang kami bisa berbicara kepada tentang itu deposit?"
+    },
+    {
+     "speaker": "Reno:",
+     "text": "The woman I spoke to yesterday handles all that.",
+     "id": "Ibu yang saya ajak bicara kemarin yang ngurus itu semua.",
+     "literal": "itu perempuan saya berbicara kepada kemarin menangani semua itu."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "And the rent includes water? That's the part I care about.",
+     "id": "Sewanya termasuk air? Itu yang saya pentingin.",
+     "literal": "dan itu sewa memasukkan air? itu-adalah itu bagian saya peduli tentang."
+    },
+    {
+     "speaker": "Reno:",
+     "text": "Water yes, electricity no. Which is normal around here.",
+     "id": "Air iya, listrik nggak. Yang mana biasa sih di sini.",
+     "literal": "air ya, listrik tidak. yang adalah normal sekitar di-sini."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "My last place, where the wifi never worked, was cheaper.",
+     "id": "Kos saya yang dulu, yang wifinya nggak pernah nyala itu, lebih murah.",
+     "literal": "punyaku terakhir tempat, di-mana itu wifi tidak-pernah bekerja, adalah lebih-murah."
+    },
+    {
+     "speaker": "Reno:",
+     "text": "And an hour away. That's the reason you moved.",
+     "id": "Dan sejam jauhnya. Itu alasan kamu pindah.",
+     "literal": "dan sejam jauh. itu-adalah itu alasan kamu pindah."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "Fine, book the viewing. Thursday, when I finish early.",
+     "id": "Ya udah, atur jadwal lihat. Kamis, pas saya pulang cepat.",
+     "literal": "baik, pesan itu peninjauan. Kamis, ketika saya selesai awal."
+    }
+   ],
+   "notes": [
+    "**Klausa relatif adalah cara bahasa Inggris menempelkan keterangan panjang pada sebuah kata benda.** Bahasa Indonesia memakai satu kata untuk semuanya: \"yang\". Bahasa Inggris memilih kata penyambungnya sesuai jenis benda yang diterangkan — orang, benda, tempat, waktu, atau kepemilikan.",
+    "**The building which is next to the pharmacy** — *which* untuk benda, *who* untuk orang, *that* untuk keduanya. Di percakapan sehari-hari, *that* jauh lebih sering dipakai daripada *which*.",
+    "**That's the one we saw last week** — perhatikan tidak ada kata penyambung sama sekali. Kalau kata yang diterangkan adalah **objek** di anak kalimatnya (yang kita **lihat**), penyambungnya boleh dibuang. ⚠️ Kalau ia **pelaku** (*the landlord who called me*), penyambungnya wajib ada.",
+    "**The place where we got lost** — *where* untuk tempat, *when* untuk waktu (*Thursday, when I finish early*), *why* untuk alasan (*the reason why*). Ketiganya menggantikan gabungan kata depan + *which*: *the place in which* → *the place where*.",
+    "**The girl whose room is next to the kitchen** — *whose* untuk kepemilikan, dan ia dipakai untuk orang maupun benda: *a company whose profits fell*. ⚠️ Jangan tertukar dengan *who's* (= *who is*), yang bunyinya sama persis.",
+    "**She's moving out in June, which is perfect for us** — di sini *which* tidak menerangkan satu kata benda, melainkan **seluruh kalimat sebelumnya**. Pola ini sangat sering dipakai penutur asli untuk menambahkan komentar, dan wajib memakai koma serta *which* — tidak pernah *that*.",
+    "**My last place, where the wifi never worked, was cheaper** — dua koma menandai keterangan **tambahan**: dibuang pun kalimatnya tetap utuh dan tetap jelas menunjuk tempat yang sama. Bandingkan dengan *the place where we got lost*, yang tanpa keterangannya jadi tidak jelas menunjuk apa.",
+    "**The woman I spoke to yesterday** — di bahasa Inggris sehari-hari, kata depan tertinggal di ujung: *the woman I spoke **to***, *the room I told you **about***. ⚠️ Bentuk resmi *the woman to whom I spoke* benar tetapi terdengar sangat kaku; simpan untuk tulisan formal saja."
+   ],
+   "grammars": [
+    {
+     "title": "Kata penyambung dan tugasnya",
+     "body": [
+      "Enam kata, dan pilihannya ditentukan oleh apa yang diterangkan."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*who*",
+        "orang (pelaku atau objek)",
+        "*the man who called*"
+       ],
+       [
+        "*which*",
+        "benda dan binatang",
+        "*the book which won the prize*"
+       ],
+       [
+        "*that*",
+        "orang atau benda (santai)",
+        "*the film that we saw*"
+       ],
+       [
+        "*whose*",
+        "kepemilikan",
+        "*the girl whose bag was stolen*"
+       ],
+       [
+        "*where*",
+        "tempat",
+        "*the café where we met*"
+       ],
+       [
+        "*when*",
+        "waktu",
+        "*the day when we arrived*"
+       ],
+       [
+        "*why*",
+        "alasan",
+        "*the reason why he left*"
+       ]
+      ]
+     },
+     "after": [
+      "*Whom* adalah bentuk objek dari *who*. Di bahasa Inggris masa kini ia hampir hilang dari percakapan, kecuali langsung sesudah kata depan: *the person to whom it was sent*. Kenali, jangan dipaksakan.",
+      "⚠️ Jangan menggandakan pelakunya. *The man who he called me* salah — *who* sudah menjadi pelakunya. Ini kesalahan yang sangat sering muncul karena bahasa Indonesia mengucapkan \"orang yang dia telepon saya\" tanpa masalah."
+     ]
+    },
+    {
+     "title": "Menentukan atau menambah",
+     "body": [
+      "Dua jenis klausa relatif dengan aturan tanda baca yang berbeda — dan artinya betul-betul berbeda."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Menentukan",
+       "Menambah"
+      ],
+      "rows": [
+       [
+        "koma",
+        "tidak ada",
+        "wajib dua koma"
+       ],
+       [
+        "boleh *that*",
+        "ya",
+        "**tidak**"
+       ],
+       [
+        "boleh dihilangkan",
+        "ya, kalau objek",
+        "tidak pernah"
+       ],
+       [
+        "contoh",
+        "*My brother who lives in Bali is a chef.*",
+        "*My brother, who lives in Bali, is a chef.*"
+       ],
+       [
+        "artinya",
+        "saya punya lebih dari satu saudara",
+        "saya cuma punya satu saudara"
+       ],
+       [
+        "dipakai di",
+        "percakapan sehari-hari",
+        "tulisan & keterangan tambahan"
+       ]
+      ]
+     },
+     "after": [
+      "Baris \"artinya\" adalah alasan aturan ini ada. Dua koma mengubah keterangan dari **penentu identitas** menjadi **informasi sampingan**. Di dokumen resmi, salah koma bisa mengubah isi perjanjian.",
+      "⚠️ Nama orang dan tempat selalu memakai jenis kedua, karena identitasnya sudah pasti: *Jakarta, which has ten million people, …* — bukan *Jakarta which has…*"
+     ]
+    },
+    {
+     "title": "Kapan penyambungnya boleh dibuang",
+     "body": [
+      "Uji cepatnya: lihat apakah ada pelaku baru sesudah kata penyambungnya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Boleh dibuang?",
+       "Sebab"
+      ],
+      "rows": [
+       [
+        "*the film (that) we saw*",
+        "ya",
+        "ada pelaku baru: *we*"
+       ],
+       [
+        "*the man who called me*",
+        "tidak",
+        "*who* adalah pelakunya"
+       ],
+       [
+        "*the book (which) I bought*",
+        "ya",
+        "ada pelaku baru: *I*"
+       ],
+       [
+        "*the bus that goes to Bogor*",
+        "tidak",
+        "*that* adalah pelakunya"
+       ],
+       [
+        "*the woman (who) I spoke to*",
+        "ya",
+        "ada pelaku baru: *I*"
+       ],
+       [
+        "*my sister, who lives in Bali*",
+        "tidak",
+        "jenis menambah, tak pernah dibuang"
+       ]
+      ]
+     },
+     "after": [
+      "Membuang penyambung membuat bahasa Inggrismu terdengar jauh lebih alami. Kalimat *the film we saw last night* adalah bahasa Inggris sehari-hari; *the film which we saw last night* terdengar seperti buku pelajaran.",
+      "⚠️ Kalau penyambungnya dibuang, kata depannya tetap tinggal di ujung: *the room I told you about*, bukan *the room I told you*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue B — Describing something you can't name",
+   "intro": "Di toko perkakas. Puti mencari sesuatu yang ia tidak tahu namanya dalam bahasa Inggris — kemampuan yang lebih berguna daripada menghafal seribu kata.",
+   "lines": [
+    {
+     "speaker": "Puti:",
+     "text": "I'm looking for the thing that you use to open paint tins.",
+     "id": "Saya cari benda yang dipakai buat buka kaleng cat.",
+     "literal": "saya adalah mencari untuk itu benda yang kamu pakai untuk membuka cat kaleng-kaleng."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "A paint can opener. Anything else?",
+     "id": "Pembuka kaleng cat. Ada lagi?",
+     "literal": "sebuah cat kaleng pembuka. apa-pun lain?"
+    },
+    {
+     "speaker": "Puti:",
+     "text": "Yes — the sticky stuff which people put on walls to hang posters.",
+     "id": "Iya — yang lengket yang ditempel di tembok buat gantung poster.",
+     "literal": "ya — itu lengket barang yang orang-orang taruh pada dinding-dinding untuk menggantung poster-poster."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Adhesive putty. Third aisle, on the left.",
+     "id": "Lem tempel. Lorong ketiga, sebelah kiri.",
+     "literal": "perekat dempul. ketiga lorong, pada itu kiri."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "And a person who can install shelves — do you know anyone?",
+     "id": "Dan orang yang bisa pasang rak — ada kenalan?",
+     "literal": "dan seseorang yang bisa memasang rak-rak — apakah kamu tahu seseorang?"
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "There's a board where people leave numbers. By the door.",
+     "id": "Ada papan tempat orang nempel nomor. Dekat pintu.",
+     "literal": "di-sana-adalah sebuah papan di-mana orang-orang meninggalkan nomor-nomor. dekat itu pintu."
+    },
+    {
+     "speaker": "Puti:",
+     "text": "Perfect. That's the kind of help I needed.",
+     "id": "Mantap. Itu yang saya butuhin.",
+     "literal": "sempurna. itu-adalah itu jenis dari bantuan saya membutuhkan."
+    },
+    {
+     "speaker": "Clerk:",
+     "text": "Most people who come in here can't name half of it either.",
+     "id": "Kebanyakan yang datang ke sini juga nggak tahu namanya.",
+     "literal": "kebanyakan orang-orang yang datang masuk di-sini tidak-bisa menamai setengah dari itu juga."
+    }
+   ],
+   "notes": [
+    "**Ini keterampilan B1 yang paling berguna dan paling jarang dilatih**: menerangkan benda yang kamu tidak tahu namanya. Rangkanya selalu sama — kata umum + klausa relatif: *the thing that…*, *the person who…*, *the place where…*, *the stuff you use to…*",
+    "**The thing that you use to open paint tins** — perhatikan *to* + V1 di ujung untuk menyebut kegunaannya. Rangka ini menyelesaikan ribuan kata yang belum kamu punya: *the machine you use to dry clothes*, *the app people use to pay.*",
+    "**The sticky stuff which people put on walls** — *stuff* adalah kata paling berguna di bahasa Inggris sehari-hari untuk benda yang tak terhitung atau tak bernama. Ia tidak pernah berbentuk jamak: *stuffs* tidak ada.",
+    "**Most people who come in here** — sesudah *most people*, *everyone*, *anyone*, klausa relatifnya tidak memakai koma karena ia menentukan siapa yang dimaksud."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerangkan orang dan benda",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "English",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*the thing you use to…*",
+       "dhe thing yuu yuuz tu",
+       "benda yang dipakai buat…"
+      ],
+      [
+       "*the stuff that…*",
+       "dhe staf dhæt",
+       "barang yang…"
+      ],
+      [
+       "*a person who…*",
+       "e PEER-sen huu",
+       "orang yang…"
+      ],
+      [
+       "*the place where…*",
+       "dhe pléis wér",
+       "tempat di mana…"
+      ],
+      [
+       "*What's the word for…?*",
+       "wots dhe weerd for",
+       "Apa ya bahasa Inggrisnya…?"
+      ],
+      [
+       "*It's a kind of…*",
+       "its e kaind ov",
+       "Semacam…"
+      ],
+      [
+       "*It looks like a…*",
+       "it luks laik e",
+       "Bentuknya kayak…"
+      ],
+      [
+       "*It's used for -ing*",
+       "its yuuzd for",
+       "Dipakai buat…"
+      ],
+      [
+       "*You know, the one that…*",
+       "yuu nou dhe wan dhæt",
+       "Itu lho, yang…"
+      ],
+      [
+       "*What do you call it?*",
+       "wot du yuu kool it",
+       "Apa namanya ya?"
+      ],
+      [
+       "*That's the one.*",
+       "dhæts dhe wan",
+       "Nah itu."
+      ],
+      [
+       "*I can't think of the word.*",
+       "ai kaant think ov dhe weerd",
+       "Lupa katanya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Enam baris pertama tabel ini pantas dihafal utuh. Selama kamu memegangnya, tidak ada satu pun kata yang belum kamu tahu bisa menghentikan percakapanmu — kamu tinggal menerangkannya."
+    },
+    {
+     "type": "sub",
+     "text": "Kata umum yang bisa menampung apa saja"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Untuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*thing*",
+       "benda apa pun",
+       "*the thing that beeps*"
+      ],
+      [
+       "*stuff*",
+       "barang tak terhitung",
+       "*cleaning stuff*"
+      ],
+      [
+       "*place*",
+       "tempat apa pun",
+       "*the place we ate*"
+      ],
+      [
+       "*person / people*",
+       "orang",
+       "*the person who fixed it*"
+      ],
+      [
+       "*device / gadget*",
+       "alat",
+       "*a device that measures it*"
+      ],
+      [
+       "*bit / piece*",
+       "bagian kecil",
+       "*the bit that broke*"
+      ],
+      [
+       "*sort of / kind of*",
+       "semacam",
+       "*a sort of box*"
+      ],
+      [
+       "*whatsit / thingy* (santai)",
+       "anu, itu lho",
+       "*pass me the thingy*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Thingy* dan *whatsit* hanya untuk percakapan sangat santai dengan teman. Di kantor, pakai *the thing that…* atau langsung tanyakan *What's the word for…?* — bertanya tidak pernah membuatmu terdengar bodoh, tetapi diam membuat percakapan berhenti."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "en": "landlord",
+   "baca": "LÆND-lord",
+   "id": "pemilik kos/rumah sewa"
+  },
+  {
+   "en": "rent",
+   "baca": "rént",
+   "id": "uang sewa"
+  },
+  {
+   "en": "deposit",
+   "baca": "di-PO-zit",
+   "id": "uang jaminan"
+  },
+  {
+   "en": "to face",
+   "baca": "féis",
+   "id": "menghadap"
+  },
+  {
+   "en": "to move out",
+   "baca": "muuv aut",
+   "id": "pindah keluar"
+  },
+  {
+   "en": "viewing",
+   "baca": "VYUU-ing",
+   "id": "peninjauan (rumah)"
+  },
+  {
+   "en": "pharmacy",
+   "baca": "FAAR-me-si",
+   "id": "apotek"
+  },
+  {
+   "en": "to handle",
+   "baca": "HÆN-del",
+   "id": "menangani, mengurus"
+  },
+  {
+   "en": "electricity",
+   "baca": "i-lék-TRI-si-ti",
+   "id": "listrik"
+  },
+  {
+   "en": "to get lost",
+   "baca": "gét lost",
+   "id": "nyasar"
+  },
+  {
+   "en": "stuff",
+   "baca": "staf",
+   "id": "barang (tak terhitung)"
+  },
+  {
+   "en": "sticky",
+   "baca": "STI-ki",
+   "id": "lengket"
+  },
+  {
+   "en": "shelf / shelves",
+   "baca": "shélf / shélvz",
+   "id": "rak"
+  },
+  {
+   "en": "to install",
+   "baca": "in-STOOL",
+   "id": "memasang"
+  },
+  {
+   "en": "aisle",
+   "baca": "ail",
+   "id": "lorong (toko)"
+  },
+  {
+   "en": "board",
+   "baca": "bord",
+   "id": "papan"
+  },
+  {
+   "en": "device",
+   "baca": "di-VAIS",
+   "id": "alat, perangkat"
+  },
+  {
+   "en": "to care about",
+   "baca": "kér e-BAUT",
+   "id": "mementingkan"
+  },
+  {
+   "en": "a kind of",
+   "baca": "e kaind ov",
+   "id": "semacam"
+  },
+  {
+   "en": "either (di ujung)",
+   "baca": "AI-dher",
+   "id": "juga (dalam kalimat sangkalan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *who*, *which*, *whose*, *where*, atau *when*.",
+   "items": [
+    "That's the woman ____ sold me the bike.",
+    "This is the café ____ we first met.",
+    "I don't like films ____ have sad endings.",
+    "He's the guy ____ brother works with us.",
+    "Sunday is the day ____ I do nothing.",
+    "The company, ____ profits fell last year, is closing two offices."
+   ]
+  },
+  {
+   "prompt": "Gabungkan jadi satu kalimat.",
+   "items": [
+    "I met a woman. She works at your office.",
+    "This is the book. I told you about it.",
+    "That's the restaurant. We had dinner there.",
+    "My neighbour has a dog. Its bark keeps me awake.",
+    "She passed the exam. That surprised everyone."
+   ]
+  },
+  {
+   "prompt": "Tandai kalimat yang penyambungnya BOLEH dibuang, lalu tulis ulang tanpa penyambung.",
+   "items": [
+    "The film that we watched was terrible.",
+    "The man who lives upstairs is a doctor.",
+    "The email which I sent yesterday came back.",
+    "The bus that goes to the airport leaves at six.",
+    "The person who I spoke to was very helpful."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya.",
+   "items": [
+    "The man who he called me was rude.",
+    "My brother, that lives in Bali, is a chef.",
+    "This is the room where I told you about it.",
+    "She's the girl who's bag was stolen.",
+    "The film what we saw was long."
+   ]
+  },
+  {
+   "prompt": "Terangkan tanpa menyebut namanya. Pakai *the thing that…* atau *a person who…*",
+   "items": [
+    "kulkas",
+    "tukang cukur",
+    "payung",
+    "penghapus",
+    "dokter gigi"
+   ]
+  }
+ ],
+ "answers": [
+  "who — where — which/that — whose — when — whose",
+  "I met a woman who works at your office. — This is the book (that) I told you about. — That's the restaurant where we had dinner. — My neighbour has a dog whose bark keeps me awake. — She passed the exam, which surprised everyone.",
+  "Boleh: The film we watched was terrible. — Tidak boleh: who adalah pelakunya. — Boleh: The email I sent yesterday came back. — Tidak boleh: that adalah pelakunya. — Boleh: The person I spoke to was very helpful.",
+  "The man who called me was rude. — My brother, who lives in Bali, is a chef. — This is the room I told you about. — She's the girl whose bag was stolen. — The film that we saw was long.",
+  "It's the thing that you use to keep food cold. — A person who cuts your hair. — The thing you use when it rains. — The thing that you use to remove pencil marks. — A person who looks after your teeth."
+ ],
+ "wave": "Ulangi **unit 11**: laporkan lima kalimat orang lain, lalu tambahkan klausa relatif untuk menerangkan siapa orangnya — *The colleague who sits next to me said that…*"
+}

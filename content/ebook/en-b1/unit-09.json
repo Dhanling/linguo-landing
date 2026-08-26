@@ -1,0 +1,238 @@
+{
+ "title": "Harus, sebaiknya, jangan",
+ "title_target": "You'd better see a doctor",
+ "goal": "Menakar kewajiban dan nasihat dengan tepat — memisahkan aturan dari saran, dan *don't have to* dari *mustn't*, dua kalimat yang artinya berlawanan.",
+ "bekal": [
+  "membedakan *must*, *have to*, dan *need to*",
+  "memakai *don't have to* dan *mustn't* tanpa tertukar",
+  "menasihati dengan *should*, *ought to*, *had better*",
+  "menyebut hal yang seharusnya terjadi dengan *be supposed to*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Doctor's advice",
+   "intro": "Ruang praktik dokter di Jakarta Selatan. Pak Hendra, 46 tahun, datang karena sakit kepala yang tak kunjung hilang.",
+   "lines": [
+    { "speaker": "Doctor:", "text": "Your blood pressure is high. You should have come in months ago.", "id": "Tekanan darah Bapak tinggi. Harusnya Bapak datang berbulan-bulan lalu.", "literal": "punyamu darah tekanan adalah tinggi. kamu seharusnya sudah datang masuk bulan-bulan lalu." },
+    { "speaker": "Hendra:", "text": "I know. I've been meaning to. Do I have to take medication?", "id": "Iya, Dok. Dari kemarin niat terus. Saya harus minum obat?", "literal": "saya tahu. saya sudah ada berniat untuk. apakah saya harus mengambil obat?" },
+    { "speaker": "Doctor:", "text": "Yes. And you must take it at the same time every day.", "id": "Iya. Dan wajib diminum jam yang sama tiap hari.", "literal": "ya. dan kamu harus mengambil itu pada itu sama waktu tiap hari." },
+    { "speaker": "Hendra:", "text": "For how long?", "id": "Sampai kapan?", "literal": "untuk berapa lama?" },
+    { "speaker": "Doctor:", "text": "We'll review it in three months. You don't have to take it forever.", "id": "Kita tinjau tiga bulan lagi. Nggak harus seumur hidup kok.", "literal": "kami akan meninjau itu dalam tiga bulan. kamu tidak harus mengambil itu selamanya." },
+    { "speaker": "Hendra:", "text": "That's a relief. What about coffee?", "id": "Lega deh. Kalau kopi gimana?", "literal": "itu-adalah sebuah kelegaan. apa tentang kopi?" },
+    { "speaker": "Doctor:", "text": "You don't have to give it up. But you ought to cut down.", "id": "Nggak harus berhenti. Tapi sebaiknya dikurangi.", "literal": "kamu tidak harus memberi itu naik. tetapi kamu seharusnya memotong turun." },
+    { "speaker": "Hendra:", "text": "How much is too much?", "id": "Berapa banyak yang kebanyakan?", "literal": "berapa banyak adalah terlalu banyak?" },
+    { "speaker": "Doctor:", "text": "More than two cups. And you mustn't drink it after six.", "id": "Lebih dari dua cangkir. Dan jangan sampai minum setelah jam enam.", "literal": "lebih daripada dua cangkir. dan kamu tidak-boleh minum itu sesudah enam." },
+    { "speaker": "Hendra:", "text": "I'm supposed to walk more too, aren't I?", "id": "Saya juga harusnya lebih banyak jalan kaki ya?", "literal": "saya adalah seharusnya untuk berjalan lebih juga, tidakkah saya?" },
+    { "speaker": "Doctor:", "text": "Thirty minutes a day. You'd better start slowly, though.", "id": "Tiga puluh menit sehari. Tapi mendingan mulai pelan-pelan.", "literal": "tiga-puluh menit sehari. kamu sebaiknya mulai perlahan, meskipun." },
+    { "speaker": "Hendra:", "text": "Do I need to change my diet as well?", "id": "Pola makan perlu diubah juga?", "literal": "apakah saya perlu untuk mengubah punyaku pola-makan juga?" },
+    { "speaker": "Doctor:", "text": "Less salt. You needn't cut out rice — just eat less of it.", "id": "Kurangi garam. Nasi nggak perlu disetop — cukup dikurangi.", "literal": "lebih-sedikit garam. kamu tidak-perlu memotong keluar nasi — hanya makan lebih-sedikit dari itu." },
+    { "speaker": "Hendra:", "text": "My wife will be pleased. She's been saying this for a year.", "id": "Istri saya pasti senang. Setahun ini dia ngomong terus.", "literal": "punyaku istri akan menjadi senang. dia sudah ada mengatakan ini selama setahun." },
+    { "speaker": "Doctor:", "text": "Then you'd better listen to her. Come back in a month.", "id": "Ya sebaiknya didengarkan. Kontrol lagi sebulan.", "literal": "kalau-begitu kamu sebaiknya mendengarkan kepada dia. datang kembali dalam sebulan." }
+   ],
+   "notes": [
+    "**Bahasa Indonesia memakai satu kata \"harus\" untuk kewajiban dari mana pun asalnya.** Bahasa Inggris membedakan: *must* untuk aturan yang datang dari penuturnya sendiri atau dari peraturan tertulis, *have to* untuk keharusan yang datang dari luar. Perbedaannya halus, dan di banyak kalimat keduanya sama-sama bisa dipakai.",
+    "**Do I have to take medication?** ⚠️ Pertanyaan hampir selalu memakai *have to*, bukan *must*. *Must I take medication?* terdengar kuno dan sedikit menantang. Pakai *do I have to*, *do I need to*, atau *am I supposed to*.",
+    "**You don't have to take it forever** vs **you mustn't drink it after six** — inilah pasangan yang paling berbahaya di seluruh unit ini. *Don't have to* = **tidak wajib**, terserah kamu. *Mustn't* = **dilarang**. ⚠️ Menukar keduanya di ruang dokter, di bandara, atau di kontrak kerja bisa berakibat serius.",
+    "**You ought to cut down** — *ought to* sama artinya dengan *should*, hanya sedikit lebih formal dan sedikit lebih menekankan bahwa itu hal yang benar dilakukan. Perhatikan bahwa *ought* satu-satunya modal yang diikuti *to*.",
+    "**I'm supposed to walk more** — *be supposed to* menyebut hal yang **seharusnya terjadi menurut aturan, jadwal, atau harapan orang lain** — dan sering menyiratkan bahwa kenyataannya tidak begitu. *I'm supposed to be working right now* berarti saya sedang tidak bekerja.",
+    "**You'd better start slowly** — *had better* bukan sekadar saran; ia membawa **peringatan**, seolah ada akibat buruk kalau tidak dituruti. Bentuknya beku: *had better* + V1, hampir selalu disingkat *'d better*, dan sangkalannya *had better not*. ⚠️ *You'd better to start* salah — tidak ada *to*.",
+    "**You needn't cut out rice** — *needn't* = *don't need to* = tidak perlu. Keduanya benar; *needn't* sedikit lebih formal dan lebih sering di Inggris. ⚠️ Jangan tertukar dengan *mustn't*.",
+    "**You should have come in months ago** — kembali dari Unit 7, kini dalam pekerjaan aslinya: menegur dengan halus. Nadanya bukan marah melainkan menyayangkan."
+   ],
+   "grammars": [
+    {
+     "title": "Kewajiban — must, have to, need to",
+     "body": [
+      "Ketiganya menyebut keharusan, tetapi asal keharusannya berbeda, dan bentuk lampaunya tidak sama."
+     ],
+     "table": {
+      "head": ["", "Sekarang", "Lampau", "Masa depan"],
+      "rows": [
+       ["*must*", "*I must go.*", "— (pakai *had to*)", "— (pakai *will have to*)"],
+       ["*have to*", "*I have to go.*", "*I had to go.*", "*I'll have to go.*"],
+       ["*need to*", "*I need to go.*", "*I needed to go.*", "*I'll need to go.*"],
+       ["pertanyaan", "*Do I have to…?*", "*Did I have to…?*", "*Will I have to…?*"]
+      ]
+     },
+     "after": [
+      "*Must* tidak punya bentuk lampau maupun masa depan. Begitu keluar dari waktu sekarang, ia wajib berganti jadi *have to*. ⚠️ *I musted* dan *I will must* tidak ada.",
+      "Nada: *must* terasa datang dari dalam diri penutur (*I must stop smoking*), *have to* dari luar (*I have to wear a uniform*). Di tulisan resmi dan peraturan, *must* yang dipakai."
+     ]
+    },
+    {
+     "title": "Tidak wajib vs dilarang",
+     "body": [
+      "Sangkalan keduanya berlawanan arti sepenuhnya. Ini satu-satunya tabel di unit ini yang wajib dihafal utuh."
+     ],
+     "table": {
+      "head": ["Bentuk", "Arti", "Contoh"],
+      "rows": [
+       ["*don't have to*", "tidak wajib, terserah", "*You don't have to come.*"],
+       ["*don't need to / needn't*", "tidak perlu", "*You needn't wait.*"],
+       ["*mustn't*", "**dilarang**", "*You mustn't park here.*"],
+       ["*can't*", "tidak boleh / tidak bisa", "*You can't smoke inside.*"],
+       ["*not allowed to*", "tidak diizinkan", "*We're not allowed to record.*"],
+       ["lampau, tidak wajib", "*didn't have to*", "*I didn't have to pay.*"]
+      ]
+     },
+     "after": [
+      "⚠️ Bahasa Indonesia mengucapkan keduanya dengan \"nggak usah\" dan \"nggak boleh\" — dua kata yang mirip di telinga. Di bahasa Inggris jaraknya sejauh mungkin. Kalau ragu, ganti *mustn't* dengan *You're not allowed to*, yang tidak mungkin disalahpahami.",
+      "*Didn't need to* dan *needn't have* juga berbeda, seperti di Unit 7: yang pertama memang tidak perlu, yang kedua terlanjur dilakukan padahal tidak perlu."
+     ]
+    },
+    {
+     "title": "Nasihat — tiga kekuatan",
+     "body": [
+      "Ketiganya sah, tetapi menekan pendengar dengan kekuatan yang berbeda."
+     ],
+     "table": {
+      "head": ["Bentuk", "Kekuatan", "Contoh"],
+      "rows": [
+       ["*should / shouldn't*", "saran biasa", "*You should rest.*"],
+       ["*ought to*", "saran, sedikit lebih tegas & formal", "*You ought to tell her.*"],
+       ["*had better ('d better)*", "peringatan: kalau tidak, celaka", "*You'd better hurry.*"],
+       ["*'d better not*", "peringatan sangkalan", "*You'd better not be late.*"],
+       ["*be supposed to*", "seharusnya menurut aturan/harapan", "*You're supposed to sign it.*"],
+       ["lampau", "*should have* + V3", "*You should have told me.*"]
+      ]
+     },
+     "after": [
+      "Untuk menasihati orang yang lebih tua atau atasan, *should* sekalipun bisa terdengar lancang. Lebih aman: *Maybe you could…*, *Have you thought about…?*, *It might be worth…* Nada sopan dibahas tuntas di Unit 18.",
+      "⚠️ *Had better* memakai bentuk lampau *had*, tetapi berbicara tentang **sekarang dan nanti**, bukan masa lalu. Bentuk lampaunya tidak ada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dokter, di kantor, di jalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*How long has it been going on?*", "hau long hæz it bin GOU-ing on", "Sudah berapa lama begini?"],
+      ["*It comes and goes.*", "it kamz end gouz", "Hilang-timbul."],
+      ["*I've got a splitting headache.*", "aiv got e SPLI-ting HÉ-déik", "Kepala saya pecah rasanya."],
+      ["*Take one twice a day.*", "téik wan twais e déi", "Minum satu, dua kali sehari."],
+      ["*after meals / on an empty stomach*", "AAF-ter miilz", "sesudah makan / saat perut kosong"],
+      ["*Cut down on salt.*", "kat daun on solt", "Kurangi garam."],
+      ["*I'm allergic to…*", "aim e-LEER-jik tu", "Saya alergi…"],
+      ["*Are you on any medication?*", "aar yuu on É-ni mé-di-KÉI-shen", "Sedang minum obat apa?"],
+      ["*You'd better get it checked.*", "yuud BÉ-ter gét it chékt", "Mendingan diperiksakan."],
+      ["*It's nothing serious.*", "its NA-thing SI-ri-es", "Nggak parah kok."],
+      ["*That's a relief.*", "dhæts e ri-LIIF", "Lega deh."],
+      ["*Come back in a month.*", "kam bæk in e manth", "Kontrol lagi sebulan."]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Cut down on* (mengurangi) dan *cut out* (menghentikan sama sekali) berbeda takarannya. Dokter yang berkata *cut down on sugar* tidak melarangmu makan gula — ia menyuruhmu mengurangi."
+    },
+    { "type": "sub", "text": "Aturan dan larangan di tempat umum" },
+    {
+     "type": "tabel",
+     "head": ["Tulisan", "Artinya"],
+     "rows": [
+      ["*No entry*", "dilarang masuk"],
+      ["*Staff only*", "khusus karyawan"],
+      ["*Please refrain from smoking*", "mohon tidak merokok"],
+      ["*Visitors must sign in*", "tamu wajib lapor"],
+      ["*Mind the step*", "hati-hati ada undakan"],
+      ["*Out of order*", "rusak, tidak berfungsi"],
+      ["*Queue here*", "antre di sini"],
+      ["*ID required*", "wajib menunjukkan identitas"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa peraturan tertulis hampir selalu memakai *must* dan bentuk pasif (Unit 10): *Helmets must be worn.* *Bags must not be left unattended.* Mengenalinya berguna di bandara, rumah sakit, dan kantor mana pun."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "blood pressure", "baca": "blad PRÉ-sher", "id": "tekanan darah" },
+  { "en": "medication", "baca": "mé-di-KÉI-shen", "id": "obat (yang diresepkan)" },
+  { "en": "to review", "baca": "ri-VYUU", "id": "meninjau ulang" },
+  { "en": "to cut down on", "baca": "kat daun on", "id": "mengurangi" },
+  { "en": "to cut out", "baca": "kat aut", "id": "menghentikan sama sekali" },
+  { "en": "to give up", "baca": "giv ap", "id": "berhenti (kebiasaan)" },
+  { "en": "diet", "baca": "DAI-et", "id": "pola makan" },
+  { "en": "salt", "baca": "solt", "id": "garam" },
+  { "en": "relief", "baca": "ri-LIIF", "id": "kelegaan" },
+  { "en": "to be allergic to", "baca": "e-LEER-jik tu", "id": "alergi terhadap" },
+  { "en": "headache", "baca": "HÉ-déik", "id": "sakit kepala" },
+  { "en": "to be pleased", "baca": "pliizd", "id": "senang, puas" },
+  { "en": "to be supposed to", "baca": "se-POUZD tu", "id": "seharusnya (menurut aturan)" },
+  { "en": "to be allowed to", "baca": "e-LAUD tu", "id": "diizinkan" },
+  { "en": "to refrain from", "baca": "ri-FRÉIN from", "id": "menahan diri dari" },
+  { "en": "out of order", "baca": "aut ov OR-der", "id": "rusak, tidak berfungsi" },
+  { "en": "to queue", "baca": "kyuu", "id": "mengantre" },
+  { "en": "serious", "baca": "SI-ri-es", "id": "serius, parah" },
+  { "en": "slowly", "baca": "SLOU-li", "id": "perlahan" },
+  { "en": "though (di ujung)", "baca": "dhou", "id": "tapi, meskipun begitu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *must*, *mustn't*, *have to*, atau *don't have to*.",
+   "items": [
+    "You ____ wear a seatbelt. It's the law.",
+    "You ____ come if you're busy — it's optional.",
+    "Passengers ____ smoke anywhere on board.",
+    "I ____ work on Saturdays in my new job.",
+    "You ____ tell anyone. It's confidential.",
+    "We ____ pay — the tickets are free."
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk lampau.",
+   "items": [
+    "I must finish the report today. → Yesterday I ____",
+    "She has to work late. → Last night she ____",
+    "We don't have to pay. → Last week we ____",
+    "You mustn't be late. → He told me I ____ (tidak boleh) be late.",
+    "They need to sign it. → They ____ sign it."
+   ]
+  },
+  {
+   "prompt": "Pilih *should*, *ought to*, *had better*, atau *be supposed to*.",
+   "items": [
+    "You ____ see a doctor about that cough. (saran biasa)",
+    "We ____ leave now or we'll miss the train. (peringatan)",
+    "I ____ be at the office at eight, but I'm still at home.",
+    "You ____ tell her the truth. It's the right thing.",
+    "You ____ not park there — they'll fine you."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya.",
+   "items": [
+    "You mustn't come if you're busy. (maksudnya: tidak wajib)",
+    "I will must work tomorrow.",
+    "You'd better to see a doctor.",
+    "Must I take the medicine? — asked by a patient, in natural English",
+    "Yesterday I must work until nine."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Inggris.",
+   "items": [
+    "Obatnya harus diminum jam yang sama tiap hari.",
+    "Nggak usah datang kalau lagi sibuk.",
+    "Jangan minum kopi setelah jam enam.",
+    "Mendingan kamu berangkat sekarang.",
+    "Harusnya saya sudah di kantor jam delapan."
+   ]
+  }
+ ],
+ "answers": [
+  "must / have to — don't have to — mustn't — have to — mustn't — don't have to",
+  "had to finish the report — had to work late — didn't have to pay — mustn't — needed to",
+  "should — 'd better — 'm supposed to — ought to — 'd better",
+  "You don't have to come if you're busy. — I will have to work tomorrow. — You'd better see a doctor. — Do I have to take the medicine? — Yesterday I had to work until nine.",
+  "You must take the medication at the same time every day. — You don't have to come if you're busy. — You mustn't drink coffee after six. — You'd better leave now. — I'm supposed to be at the office at eight."
+ ],
+ "wave": "Ulangi **unit 8**: ambil lima aturan di tempat kerjamu, tulis dengan *must* / *don't have to* / *mustn't*, lalu tambahkan satu dugaan *must be* tentang alasan aturan itu ada."
+}

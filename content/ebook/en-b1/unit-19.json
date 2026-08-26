@@ -1,0 +1,264 @@
+{
+ "title": "Bahasa yang tepat di tempatnya",
+ "title_target": "Dear Sir or Mate?",
+ "goal": "Memilih ragam bahasa sesuai lawan bicara — menulis email kerja yang benar, dan mengenali kapan bahasa Inggris santai justru lebih tepat.",
+ "bekal": [
+  "menulis email permintaan dan email keluhan dengan rangka baku",
+  "memisahkan ragam formal, netral, dan santai",
+  "memakai kata yang berpasangan (collocation) alih-alih terjemahan harfiah",
+  "membentuk kata turunan untuk memperluas kosakata tanpa menghafal kata baru"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialogue — Two messages, one request",
+   "intro": "Sore hari. Fajar perlu meminta perpanjangan tenggat dua kali: satu kepada klien, satu kepada rekan setimnya. Isinya sama, bahasanya jauh berbeda.",
+   "lines": [
+    { "speaker": "Fajar:", "text": "Listen to this. \"Dear Mr Harris, I am writing to request a short extension.\"", "id": "Dengar deh. \"Dear Mr Harris, saya menulis untuk meminta perpanjangan singkat.\"", "literal": "dengarkan kepada ini. \"terhormat Tuan Harris, saya adalah menulis untuk meminta sebuah pendek perpanjangan.\"" },
+    { "speaker": "Nia:", "text": "Sounds right. What did you write to Bayu?", "id": "Kedengerannya pas. Ke Bayu nulis apa?", "literal": "terdengar benar. apa apakah kamu tulis kepada Bayu?" },
+    { "speaker": "Fajar:", "text": "\"Mate, any chance we can push this to Friday?\"", "id": "\"Bro, bisa nggak digeser ke Jumat?\"", "literal": "\"kawan, sedikit kesempatan kami bisa mendorong ini ke Jumat?\"" },
+    { "speaker": "Nia:", "text": "Same request, completely different English.", "id": "Permintaan sama, bahasanya beda total.", "literal": "sama permintaan, sepenuhnya berbeda Inggris." },
+    { "speaker": "Fajar:", "text": "That's the point. I used to write to everyone the same way.", "id": "Nah itu. Dulu saya nulis ke semua orang sama aja.", "literal": "itu-adalah itu poin. saya dulu menulis kepada semua-orang itu sama jalan." },
+    { "speaker": "Nia:", "text": "Which way — the formal one?", "id": "Yang mana — yang formal?", "literal": "yang jalan — itu formal satu?" },
+    { "speaker": "Fajar:", "text": "Yes. Bayu once asked me why I was so angry with him.", "id": "Iya. Bayu pernah nanya kenapa saya marah sama dia.", "literal": "ya. Bayu sekali bertanya saya kenapa saya adalah begitu marah dengan dia." },
+    { "speaker": "Nia:", "text": "Formal English sounds cold between friends. It really does.", "id": "Bahasa Inggris formal memang terdengar dingin antar teman.", "literal": "formal Inggris terdengar dingin di-antara teman-teman. itu sungguh melakukan." },
+    { "speaker": "Fajar:", "text": "And the other way round is worse. I once wrote \"Hi guys\" to a client.", "id": "Kebalikannya lebih parah. Saya pernah nulis \"Hi guys\" ke klien.", "literal": "dan itu lain jalan sekitar adalah lebih-buruk. saya sekali menulis \"hai orang-orang\" kepada seorang klien." },
+    { "speaker": "Nia:", "text": "What happened?", "id": "Terus gimana?", "literal": "apa terjadi?" },
+    { "speaker": "Fajar:", "text": "Nothing. But my manager forwarded it back with one word: \"Really?\"", "id": "Nggak apa-apa. Tapi manajer saya forward balik dengan satu kata: \"Really?\"", "literal": "tidak-ada. tetapi punyaku manajer meneruskan itu kembali dengan satu kata: \"sungguh?\"" },
+    { "speaker": "Nia:", "text": "Brutal. So what's your rule now?", "id": "Sadis. Jadi aturan kamu sekarang apa?", "literal": "brutal. jadi apa-adalah punyamu aturan sekarang?" },
+    { "speaker": "Fajar:", "text": "If I've never met them, I write formally. After that, I copy their tone.", "id": "Kalau belum pernah ketemu, saya formal. Habis itu saya ikutin gaya mereka.", "literal": "jika saya sudah tidak-pernah bertemu mereka, saya menulis dengan-formal. sesudah itu, saya menyalin punyamereka nada." },
+    { "speaker": "Nia:", "text": "That's actually a good rule.", "id": "Itu aturan bagus sih sebenarnya.", "literal": "itu-adalah sebenarnya sebuah bagus aturan." },
+    { "speaker": "Fajar:", "text": "It took two embarrassing emails to work it out.", "id": "Butuh dua email memalukan buat sampai ke situ.", "literal": "itu mengambil dua memalukan surel-surel untuk bekerja itu keluar." }
+   ],
+   "notes": [
+    "**Bahasa Inggris memisahkan ragam jauh lebih tegas daripada bahasa Indonesia.** Bahasa Indonesia punya jarak antara \"Bapak\" dan \"kamu\", tetapi kalimatnya sendiri tidak banyak berubah. Di bahasa Inggris, ragam mengubah **pilihan kata, panjang kalimat, dan kata kerjanya sekaligus**.",
+    "**I am writing to request a short extension** — perhatikan tiga penanda formal sekaligus: bentuk penuh *I am* (bukan *I'm*), rangka baku *I am writing to…*, dan kata resmi *request* (bukan *ask for*).",
+    "**Any chance we can push this to Friday?** — santai: tanpa subjek di awal, phrasal verb (*push*), tanpa *please*, tanpa sapaan formal. ⚠️ Ini bukan bahasa Inggris yang salah; ini bahasa Inggris yang tepat untuk penerimanya.",
+    "**Bayu once asked me why I was so angry with him** — inilah risiko yang jarang disadari: memakai ragam **terlalu formal** kepada teman terdengar dingin dan menjaga jarak, bukan sopan. Penutur Indonesia lebih sering tersandung di sisi ini daripada di sisi sebaliknya.",
+    "**I once wrote \"Hi guys\" to a client** — dan ini risiko sebaliknya. Yang menyelamatkan bukan menghafal aturan, melainkan satu kebiasaan: **untuk orang yang belum pernah kamu temui, mulai formal.** Menurunkan ragam belakangan mudah; menaikkannya sesudah terlanjur, sulit.",
+    "**I copy their tone** — aturan praktis terbaik yang ada. Kalau lawan bicara menulis *Best regards*, balas *Best regards*. Kalau ia menulis *Cheers*, kamu boleh *Cheers*. Bahasa Inggris kerja sehari-hari dijalankan dengan cara ini, bukan dengan buku panduan.",
+    "**It really does** — *do* dipakai untuk menegaskan kalimat sebelumnya: *I do apologise*, *It does help*, *She did tell me*. Penekanan ini sering hilang dari bahasa Inggris pembelajar, padahal ia sangat sering dipakai.",
+    "**It took two embarrassing emails to work it out** — rangka *it takes … to …* menyebut apa yang diperlukan untuk sesuatu: *It takes time to learn.* *It took me a year to get used to it.*"
+   ],
+   "grammars": [
+    {
+     "title": "Tiga ragam, satu pesan",
+     "body": [
+      "Baris yang sama diucapkan dalam tiga ragam. Perhatikan bahwa yang berubah bukan cuma sapaannya."
+     ],
+     "table": {
+      "head": ["Formal", "Netral", "Santai"],
+      "rows": [
+       ["*I am writing to request…*", "*I'd like to ask for…*", "*Any chance of…?*"],
+       ["*I would be grateful if you could…*", "*Could you…?*", "*Can you…?*"],
+       ["*Please find attached…*", "*I've attached…*", "*Here's the file.*"],
+       ["*I regret to inform you…*", "*I'm afraid…*", "*Bad news —*"],
+       ["*Should you require any further…*", "*If you need anything else…*", "*Give me a shout.*"],
+       ["*Yours sincerely,*", "*Best regards,*", "*Cheers,*"],
+       ["*I apologise for the delay.*", "*Sorry for the delay.*", "*Sorry it took so long!*"],
+       ["*at your earliest convenience*", "*as soon as you can*", "*ASAP*"]
+      ]
+     },
+     "after": [
+      "Penanda ragam formal yang paling gampang dikenali: **tidak ada bentuk pendek** (*do not*, bukan *don't*), **tidak ada phrasal verb** (*postpone*, bukan *put off*), dan **kalimat lebih panjang**.",
+      "⚠️ *Yours sincerely* dipakai kalau kamu tahu nama penerimanya; *Yours faithfully* kalau kamu membuka dengan *Dear Sir or Madam*. Kesalahan ini kecil tetapi langsung terlihat oleh penerima berbahasa Inggris."
+     ]
+    },
+    {
+     "title": "Rangka email kerja",
+     "body": [
+      "Lima baris. Hampir semua email kerja berbahasa Inggris memakai rangka ini, dan menyimpang darinya jarang menolong."
+     ],
+     "table": {
+      "head": ["Bagian", "Contoh"],
+      "rows": [
+       ["sapaan", "*Dear Mr Harris,* / *Hi Sarah,*"],
+       ["alasan menulis", "*I'm writing to ask about…* / *I hope you're well.*"],
+       ["isi", "*As discussed, the deadline was…*"],
+       ["permintaan", "*Would it be possible to…?*"],
+       ["penutup", "*Thanks in advance.* / *I look forward to hearing from you.*"],
+       ["tanda tangan", "*Best regards,* + nama"]
+      ]
+     },
+     "after": [
+      "⚠️ *I look forward to hearing from you* — bukan *to hear*. Ini penutup email paling sering di dunia dan paling sering ditulis salah, karena *to* di situ kata depan (Unit 13).",
+      "Baris subjek yang baik menyebut isinya, bukan basa-basi: *Deadline extension — project Alpha*, bukan *Question*. Di kotak masuk yang penuh, baris subjek menentukan apakah emailmu dibaca."
+     ]
+    },
+    {
+     "title": "Kata yang berpasangan",
+     "body": [
+      "Bahasa Inggris punya pasangan kata yang tidak bisa ditukar walaupun artinya mirip. Menghafalnya berpasangan jauh lebih berguna daripada menghafal satuannya."
+     ],
+     "table": {
+      "head": ["Benar", "Salah", "Benar", "Salah"],
+      "rows": [
+       ["*make a decision*", "*do a decision*", "*do research*", "*make research*"],
+       ["*make a mistake*", "*do a mistake*", "*do homework*", "*make homework*"],
+       ["*take a photo*", "*make a photo*", "*take a break*", "*do a break*"],
+       ["*have a shower*", "*take a rest*—ok", "*have a meeting*", "*do a meeting*"],
+       ["*heavy rain*", "*big rain*", "*strong coffee*", "*hard coffee*"],
+       ["*pay attention*", "*give attention*", "*keep a promise*", "*hold a promise*"],
+       ["*catch a bus*", "*ride a bus*—beda", "*miss a deadline*", "*lose a deadline*"],
+       ["*get married to*", "*get married with*", "*depend on*", "*depend to*"]
+      ]
+     },
+     "after": [
+      "Aturan kasar: **make** untuk sesuatu yang kamu ciptakan (*make a plan*, *make a mistake*, *make money*), **do** untuk kegiatan dan pekerjaan (*do the washing*, *do business*, *do your best*). Selebihnya harus dihafal.",
+      "⚠️ Kata depan adalah bagian dari pasangannya, bukan terjemahan: *married **to***, *depend **on***, *arrive **at***, *listen **to***, *good **at***, *interested **in***, *afraid **of***. Menerjemahkan kata depan dari bahasa Indonesia hampir selalu meleset."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue B — One word, many words",
+   "intro": "Nia menunjukkan kepada Fajar cara memperbanyak kosakata tanpa menghafal kata baru — dengan menurunkannya dari kata yang sudah dia punya.",
+   "lines": [
+    { "speaker": "Nia:", "text": "You know the word decide. Do you know decision and decisive?", "id": "Kamu tahu kata decide. Tahu decision dan decisive nggak?", "literal": "kamu tahu itu kata memutuskan. apakah kamu tahu keputusan dan tegas?" },
+    { "speaker": "Fajar:", "text": "Decision, yes. Decisive I've seen but never used.", "id": "Decision tahu. Decisive pernah lihat tapi nggak pernah pakai.", "literal": "keputusan, ya. tegas saya sudah melihat tetapi tidak-pernah memakai." },
+    { "speaker": "Nia:", "text": "That's most people. One root gives you three or four words.", "id": "Kebanyakan orang gitu. Satu akar kata kasih kamu tiga empat kata.", "literal": "itu-adalah kebanyakan orang-orang. satu akar memberi kamu tiga atau empat kata-kata." },
+    { "speaker": "Fajar:", "text": "So from succeed I get success, successful, successfully?", "id": "Jadi dari succeed saya dapat success, successful, successfully?", "literal": "jadi dari berhasil saya mendapat kesuksesan, sukses, dengan-sukses?" },
+    { "speaker": "Nia:", "text": "Exactly. And the opposite with un-, in-, or dis-.", "id": "Persis. Dan lawannya pakai un-, in-, atau dis-.", "literal": "tepatnya. dan itu berlawanan dengan un-, in-, atau dis-." },
+    { "speaker": "Fajar:", "text": "Unsuccessful. Disagree. Impossible. It's a system, isn't it?", "id": "Unsuccessful. Disagree. Impossible. Ini sistem ya?", "literal": "tidak-sukses. tidak-setuju. tidak-mungkin. itu-adalah sebuah sistem, tidakkah itu?" },
+    { "speaker": "Nia:", "text": "It is. Learn one word properly, get four for free.", "id": "Iya. Belajar satu kata dengan benar, dapat empat gratis.", "literal": "itu adalah. pelajari satu kata dengan-benar, dapatkan empat untuk gratis." },
+    { "speaker": "Fajar:", "text": "That's the most useful thing anyone's told me this month.", "id": "Itu hal paling berguna yang saya dengar bulan ini.", "literal": "itu-adalah itu paling berguna hal seseorang sudah memberitahu saya ini bulan." }
+   ],
+   "notes": [
+    "**Satu akar kata, empat kata jadi.** Di B1, cara tercepat memperbanyak kosakata bukan menghafal kata baru melainkan menurunkan yang sudah kamu punya: *decide → decision → decisive → decisively*.",
+    "**Awalan sangkalan tidak bisa ditebak dan harus dihafal**: *un-* (*unhappy*, *unfair*), *in-* (*incorrect*, *invisible*), *im-* sebelum *m/p* (*impossible*, *impatient*), *dis-* (*disagree*, *dishonest*), *ir-* sebelum *r* (*irregular*).",
+    "**Akhiran menandai jenis katanya**: kata benda (*-tion*, *-ment*, *-ness*, *-ity*), kata sifat (*-ful*, *-less*, *-ive*, *-able*), kata keterangan (*-ly*), kata kerja (*-ise*, *-ify*, *-en*).",
+    "⚠️ **Tekanan sering berpindah** saat kata diturunkan: *PHO-to-graph → pho-TO-gra-pher → pho-to-GRA-phic*. Salah tekanan membuat kata yang benar jadi tidak dikenali telinga penutur asli."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menulis email yang dibaca orang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["English", "Cara baca", "Bahasa Indonesia"],
+     "rows": [
+      ["*I hope this email finds you well.*", "ai houp dhis II-méil faindz yuu wél", "Semoga Bapak/Ibu sehat."],
+      ["*I'm writing to ask about…*", "aim RAI-ting tu aask e-BAUT", "Saya menulis untuk menanyakan…"],
+      ["*As discussed,*", "ez dis-KAST", "Sesuai pembicaraan,"],
+      ["*Please find attached…*", "pliiz faind e-TÆCHT", "Terlampir…"],
+      ["*Would it be possible to…?*", "wud it bi PO-se-bel tu", "Apakah memungkinkan untuk…?"],
+      ["*I'd be grateful if you could…*", "aid bi GRÉIT-fel if yuu kud", "Saya akan berterima kasih bila…"],
+      ["*Apologies for the late reply.*", "e-PO-le-jiz for dhe léit ri-PLAI", "Maaf balasannya terlambat."],
+      ["*Just a quick reminder that…*", "jast e kwik ri-MAIN-der dhæt", "Sekadar mengingatkan bahwa…"],
+      ["*Thanks in advance.*", "thænks in ed-VAANS", "Terima kasih sebelumnya."],
+      ["*I look forward to hearing from you.*", "ai luk FOR-werd tu HI-ring", "Saya menunggu kabarnya."],
+      ["*Let me know if anything's unclear.*", "lét mi nou if É-ni-thingz an-KLIR", "Kabari kalau ada yang kurang jelas."],
+      ["*Best regards,*", "bést ri-GAARDZ", "Salam hormat,"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *I hope this email finds you well* aman tetapi sudah terasa klise bagi penutur asli. Alternatif yang lebih hidup: *Hope you had a good weekend.* *Hope things are going well at your end.* Untuk email pertama kepada orang asing, langsung ke pokok masalah justru lebih dihargai."
+    },
+    { "type": "sub", "text": "Kata turunan yang paling sering dipakai" },
+    {
+     "type": "tabel",
+     "head": ["Kata kerja", "Kata benda", "Kata sifat", "Lawannya"],
+     "rows": [
+      ["*decide*", "*decision*", "*decisive*", "*indecisive*"],
+      ["*succeed*", "*success*", "*successful*", "*unsuccessful*"],
+      ["*agree*", "*agreement*", "*agreeable*", "*disagree*"],
+      ["*inform*", "*information*", "*informative*", "*uninformed*"],
+      ["*rely*", "*reliance*", "*reliable*", "*unreliable*"],
+      ["*organise*", "*organisation*", "*organised*", "*disorganised*"],
+      ["*expect*", "*expectation*", "*expected*", "*unexpected*"],
+      ["*employ*", "*employment / employer / employee*", "*employed*", "*unemployed*"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir menunjukkan pasangan akhiran yang sering tertukar: **-er** adalah yang melakukan (*employer* = pemberi kerja), **-ee** adalah yang dikenai (*employee* = karyawan). Pola yang sama: *trainer / trainee*, *interviewer / interviewee*, *payer / payee*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "en": "extension", "baca": "ék-STÉN-shen", "id": "perpanjangan (waktu)" },
+  { "en": "to request", "baca": "ri-KWÉST", "id": "meminta (resmi)" },
+  { "en": "tone", "baca": "toun", "id": "nada bahasa" },
+  { "en": "to forward", "baca": "FOR-werd", "id": "meneruskan (email)" },
+  { "en": "embarrassing", "baca": "im-BÆ-re-sing", "id": "memalukan" },
+  { "en": "attached", "baca": "e-TÆCHT", "id": "terlampir" },
+  { "en": "grateful", "baca": "GRÉIT-fel", "id": "berterima kasih" },
+  { "en": "reminder", "baca": "ri-MAIN-der", "id": "pengingat" },
+  { "en": "regards", "baca": "ri-GAARDZ", "id": "salam (penutup surat)" },
+  { "en": "in advance", "baca": "in ed-VAANS", "id": "sebelumnya" },
+  { "en": "as discussed", "baca": "ez dis-KAST", "id": "sesuai pembicaraan" },
+  { "en": "unclear", "baca": "an-KLIR", "id": "kurang jelas" },
+  { "en": "reliable", "baca": "ri-LAI-e-bel", "id": "bisa diandalkan" },
+  { "en": "decisive", "baca": "di-SAI-siv", "id": "tegas" },
+  { "en": "employee", "baca": "im-ploi-II", "id": "karyawan" },
+  { "en": "employer", "baca": "im-PLOI-er", "id": "pemberi kerja" },
+  { "en": "properly", "baca": "PRO-per-li", "id": "dengan benar" },
+  { "en": "root (kata)", "baca": "ruut", "id": "akar kata" },
+  { "en": "Any chance…?", "baca": "É-ni chaans", "id": "Bisa nggak…?" },
+  { "en": "Give me a shout.", "baca": "giv mi e shaut", "id": "Kabari saja." }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi ragam formal.",
+   "items": [
+    "Can you send me the file?",
+    "Sorry it's late.",
+    "Here's the report.",
+    "I want to ask about the invoice.",
+    "Tell me if you need anything."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *make*, *do*, *take*, atau *have*.",
+   "items": [
+    "I need to ____ a decision by Friday.",
+    "She's ____ research on the topic.",
+    "Let's ____ a break.",
+    "Don't ____ the same mistake twice.",
+    "We're ____ a meeting at three.",
+    "Could you ____ a photo of this?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang benar.",
+   "items": [
+    "It depends ____ the weather.",
+    "She's married ____ a doctor.",
+    "I'm not very good ____ maths.",
+    "We arrived ____ the airport at six.",
+    "He's interested ____ photography."
+   ]
+  },
+  {
+   "prompt": "Bentuk kata turunannya.",
+   "items": [
+    "decide → kata benda: ____",
+    "success → kata sifat: ____",
+    "rely → kata sifat: ____ , lawannya: ____",
+    "organise → kata benda: ____",
+    "expect → kata sifat \"tak terduga\": ____"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya.",
+   "items": [
+    "I look forward to hear from you.",
+    "Please find attach the report.",
+    "I want to make a research about this.",
+    "She is married with an engineer.",
+    "Dear Sir or Madam, … Yours sincerely,"
+   ]
+  }
+ ],
+ "answers": [
+  "Contoh: Could you send me the file, please? / I would be grateful if you could send me the file. — I apologise for the delay. — Please find attached the report. — I am writing to enquire about the invoice. — Should you require anything further, please let me know.",
+  "make — doing — take — make — having — take",
+  "on — to — at — at — in",
+  "decision — successful — reliable, unreliable — organisation — unexpected",
+  "I look forward to hearing from you. — Please find attached the report. — I want to do some research on this. — She is married to an engineer. — Dear Sir or Madam, … Yours faithfully,"
+ ],
+ "wave": "Ulangi **unit 18**: ambil tiga permintaan sopan yang kamu buat, lalu tulis ulang tiap satu dua kali — sekali sebagai email formal kepada klien, sekali sebagai pesan singkat kepada rekan setim."
+}
