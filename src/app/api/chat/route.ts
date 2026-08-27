@@ -966,9 +966,143 @@ async function getOfflineBlock(): Promise<string> {
   }
 }
 
+/* ── [ling-chat-fallback-v1] Rantai penyedia AI ────────────────────────────────
+ * 27 Agt 2026: chat Ling di prod mati total — tiap pesan dibalas "Maaf, Ling
+ * lagi ada gangguan" karena panggilan ke api.anthropic.com menjawab !ok
+ * (kredit/kunci), dan rute ini dulu TIDAK punya cadangan sama sekali (beda dari
+ * edge function yang lewat _shared/llm.ts). Sekarang berlapis: Anthropic →
+ * Gemini → DeepSeek, semuanya dipaksa mengeluarkan JSON dengan kontrak yang
+ * sama supaya parseBotOut tak perlu tahu siapa yang menjawab.
+ * Statusnya di-console.error biar penyebabnya kelihatan di runtime log Vercel —
+ * tanpa itu kegagalan ini benar-benar senyap.
+ */
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
+// Kuota free-tier Gemini dihitung per-model per hari — samakan dengan
+// /api/deck-generate & /api/word-deep.
+const GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL || "deepseek-chat";
+
+async function callAnthropicChat(system: string, msgs: ChatMsg[]): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return "";
+  try {
+    const r = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({ model: MODEL, max_tokens: 1024, system, messages: msgs }),
+    });
+    if (!r.ok) {
+      console.error("[ling-chat] anthropic", r.status, (await r.text()).slice(0, 300));
+      return "";
+    }
+    const data = (await r.json()) as { content?: Array<{ type?: string; text?: string }> };
+    return Array.isArray(data.content)
+      ? data.content
+          .filter((b) => b.type === "text")
+          .map((b) => b.text || "")
+          .join("\n")
+          .trim()
+      : "";
+  } catch (e) {
+    console.error("[ling-chat] anthropic error", e);
+    return "";
+  }
+}
+
+// Gemini tak punya peran "system" di v1beta generateContent → prompt sistem
+// dikirim lewat systemInstruction, riwayatnya dipetakan user/model.
+async function callGeminiChat(system: string, msgs: ChatMsg[]): Promise<string> {
+  if (!GEMINI_API_KEY) return "";
+  for (const model of GEMINI_MODELS) {
+    try {
+      const r = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: system }] },
+            contents: msgs.map((m) => ({
+              role: m.role === "assistant" ? "model" : "user",
+              parts: [{ text: m.content }],
+            })),
+            generationConfig: {
+              temperature: 0.6,
+              maxOutputTokens: 1024,
+              responseMimeType: "application/json",
+            },
+          }),
+        },
+      );
+      if (!r.ok) {
+        console.error("[ling-chat] gemini", model, r.status);
+        continue;
+      }
+      const data = (await r.json()) as {
+        candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+      };
+      const text = (data.candidates?.[0]?.content?.parts || [])
+        .map((p) => (typeof p?.text === "string" ? p.text : ""))
+        .join("")
+        .trim();
+      if (text) return text;
+    } catch (e) {
+      console.error("[ling-chat] gemini error", model, e);
+    }
+  }
+  return "";
+}
+
+// DeepSeek: API ala OpenAI, kantong tagihannya terpisah dari Anthropic & Gemini.
+async function callDeepSeekChat(system: string, msgs: ChatMsg[]): Promise<string> {
+  if (!DEEPSEEK_API_KEY) return "";
+  try {
+    const r = await fetch("https://api.deepseek.com/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        temperature: 0.6,
+        max_tokens: 1024,
+        messages: [{ role: "system", content: system }, ...msgs],
+        response_format: { type: "json_object" },
+      }),
+    });
+    if (!r.ok) {
+      console.error("[ling-chat] deepseek", r.status, (await r.text()).slice(0, 300));
+      return "";
+    }
+    const data = (await r.json()) as { choices?: Array<{ message?: { content?: string } }> };
+    const text = data.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text.trim() : "";
+  } catch (e) {
+    console.error("[ling-chat] deepseek error", e);
+    return "";
+  }
+}
+
+/** Balasan mentah model (JSON kontrak Ling). "" = semua penyedia gagal. */
+async function callChatLLM(system: string, msgs: ChatMsg[]): Promise<string> {
+  return (
+    (await callAnthropicChat(system, msgs)) ||
+    (await callGeminiChat(system, msgs)) ||
+    (await callDeepSeekChat(system, msgs))
+  );
+}
+
 export async function POST(req: Request) {
   try {
-    const apiKey = process.env.ANTHROPIC_API_KEY;
+    // Cukup SALAH SATU penyedia yang punya kunci — lihat callChatLLM.
+    const apiKey =
+      process.env.ANTHROPIC_API_KEY || GEMINI_API_KEY || DEEPSEEK_API_KEY;
 
     const body = (await req.json().catch(() => ({}))) as {
       messages?: unknown;
@@ -1044,29 +1178,18 @@ export async function POST(req: Request) {
       });
     }
 
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 1024,
-        system: await (async () => {
-          const [sched, offline, teacher] = await Promise.all([
-            getScheduleBlock(),
-            getOfflineBlock(),
-            getTeacherBlock(),
-          ]);
-          return [SYSTEM, sched, offline, teacher].filter(Boolean).join("\n\n");
-        })(),
-        messages: msgs,
-      }),
-    });
+    const systemPrompt = await (async () => {
+      const [sched, offline, teacher] = await Promise.all([
+        getScheduleBlock(),
+        getOfflineBlock(),
+        getTeacherBlock(),
+      ]);
+      return [SYSTEM, sched, offline, teacher].filter(Boolean).join("\n\n");
+    })();
 
-    if (!r.ok) {
+    const rawText = await callChatLLM(systemPrompt, msgs);
+
+    if (!rawText) {
       return NextResponse.json({
         reply:
           "Maaf, Ling lagi ada gangguan. Coba klik tombol WhatsApp di atas untuk ngobrol sama admin ya 🙏",
@@ -1074,17 +1197,6 @@ export async function POST(req: Request) {
         status,
       });
     }
-
-    const data = (await r.json()) as {
-      content?: Array<{ type?: string; text?: string }>;
-    };
-    const rawText = Array.isArray(data.content)
-      ? data.content
-          .filter((b) => b.type === "text")
-          .map((b) => b.text || "")
-          .join("\n")
-          .trim()
-      : "";
 
     const out = parseBotOut(rawText);
     const finalReply =
