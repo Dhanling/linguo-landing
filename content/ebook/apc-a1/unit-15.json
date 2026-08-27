@@ -1,0 +1,576 @@
+{
+  "title": "Laazim w mumkin — harus, boleh, bisa",
+  "title_target": "لَازِم وْمُمْكِن",
+  "goal": "Menyatakan keharusan, izin, dan kemampuan — tiga hal yang bahasa Indonesia sering satukan dalam kata \"bisa\", dan bahasa Arab pisahkan dengan tegas.",
+  "bekal": [
+    "membedakan لَازِم، مُمْكِن، فِيني، dan بِقْدَر",
+    "meminta izin dan menolak permintaan dengan sopan",
+    "menyatakan keharusan yang berlaku untuk siapa pun"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِمَكْتَب الْجَامْعَة",
+      "intro": "Budi mengurus perpanjangan izin tinggal dan bertanya kepada pegawai kantor kampus.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "مَرْحَبَا. مُمْكِن أَسْأَل عَن الْإِقَامَة؟",
+          "baca": "marhaba. mumkin as’al ‘an el-i’aame?",
+          "id": "Halo. Boleh saya tanya soal izin tinggal?",
+          "literal": "selamat. boleh saya-bertanya tentang izin-tinggal?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "تْفَضَّل. شُو بَدَّك تَعْرِف؟",
+          "baca": "tfaddhal. syu baddak ta‘rif?",
+          "id": "Silakan. Mau tahu apa?",
+          "literal": "silakan. apa mau-kamu kamu-mengetahui?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُو لَازِم أَجِيب؟",
+          "baca": "syu laazim ajiib?",
+          "id": "Saya harus bawa apa?",
+          "literal": "apa harus saya-membawa?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "لَازِم تْجِيب جَوَاز السَّفَر وْصُورْتَين.",
+          "baca": "laazim tjiib jawaaz es-safar w shuurteen.",
+          "id": "Kamu harus bawa paspor dan dua foto.",
+          "literal": "harus kamu-membawa paspor dan dua-foto."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْفِيني أَجِيبْهُن بُكْرَا؟",
+          "baca": "w fiini ajiibhun bukra?",
+          "id": "Bisa saya bawa besok?",
+          "literal": "dan bisa-saya saya-membawa-mereka besok?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "مُمْكِن، بَسّ لَازِم تِيجِي قَبِل الظُّهِر.",
+          "baca": "mumkin, bass laazim tiiji ’abl edh-dhuhr.",
+          "id": "Boleh, tapi kamu harus datang sebelum zuhur.",
+          "literal": "boleh, tapi harus kamu-datang sebelum tengah-hari."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا فِيني أَجِي بَعِد الظُّهِر؟ عِنْدِي صَفّ.",
+          "baca": "ma fiini aji ba‘d edh-dhuhr? ‘indi shaff.",
+          "id": "Tidak bisa saya datang sesudah zuhur? Saya ada kelas.",
+          "literal": "tidak bisa-saya saya-datang sesudah tengah-hari? pada-saya kelas."
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "لَلْأَسَف لَا. اَلْمَكْتَب بْيِسَكِّر السَّاعَة وَحْدِة.",
+          "baca": "lal-asaf la’. el-maktab byisakkir es-saa‘a wahde.",
+          "id": "Sayangnya tidak. Kantornya tutup jam satu.",
+          "literal": "untuk-penyesalan tidak. kantor dia-menutup jam satu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب. مُمْكِن حَدَا تَانِي يْجِيبْهُن عَنِّي؟",
+          "baca": "thayyib. mumkin hada taani yjiibhun ‘anni?",
+          "id": "Baik. Boleh orang lain yang membawakannya untuk saya?",
+          "literal": "baik. boleh seseorang lain dia-membawa-mereka dari-saya?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "لَا، لَازِم تِجِي إِنْتَ شَخْصِيًّا.",
+          "baca": "la’, laazim tiji inta syakhshiyyan.",
+          "id": "Tidak, kamu harus datang sendiri.",
+          "literal": "tidak, harus kamu-datang kamu pribadi."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. رَح إِحْكِي مَع الْمُدَرِّسَة.",
+          "baca": "maasyi. rah ihki ma‘ el-mudarrise.",
+          "id": "Baik. Saya akan bicara dengan gurunya.",
+          "literal": "berjalan. akan saya-bicara bersama guru."
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "أَحْسَن شِي. وْلَازِم مَا تْتَأَخَّر أَكْتَر.",
+          "baca": "ahsan syi. w laazim ma tit’akhkhar aktar.",
+          "id": "Itu yang terbaik. Dan kamu jangan menunda lagi.",
+          "literal": "terbaik sesuatu. dan harus tidak kamu-terlambat lebih."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَيش؟ فِي مُشْكِلِة؟",
+          "baca": "leesy? fi musykile?",
+          "id": "Kenapa? Ada masalah?",
+          "literal": "kenapa? ada masalah?"
+        },
+        {
+          "speaker": "اَلْمُوَظَّف:",
+          "text": "إِقَامْتَك بْتِخْلَص بَعِد أُسْبُوع.",
+          "baca": "i’aamtak btikhlash ba‘d usbuu‘.",
+          "id": "Izin tinggalmu habis seminggu lagi.",
+          "literal": "izin-tinggal-kamu dia-habis sesudah minggu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يَا اللَّه! يِسْلَمُوا، رَح إِجِي بُكْرَا بَكِّير.",
+          "baca": "ya alla! yislamu, rah iji bukra bakkiir.",
+          "id": "Ya ampun! Terima kasih, saya datang besok pagi-pagi.",
+          "literal": "ya Tuhan! semoga-selamat, akan saya-datang besok pagi."
+        }
+      ],
+      "notes": [
+        "**Ketiganya diikuti bentuk kata kerja telanjang, tanpa b-.** Sama seperti sesudah بَدِّي dan رَح. Bentuknya لَازِم تِجِي، مُمْكِن أَسْأَل، فِيني أَجِيب. Ini pagar keempat dan terakhir; kalau kamu sudah menguasainya, seluruh sistem kata kerja A1 sudah lengkap.",
+        "**Kata لَازِم tidak berubah untuk delapan orang.** Ia satu kata mati, dan yang berubah cuma kata kerjanya: لَازِم أَرُوح (saya harus pergi), لَازِم تْرُوح (kamu harus pergi), لَازِم يْرُوح (dia harus pergi). Bentuk كَان لَازِم berarti \"seharusnya tadi\".",
+        "**Kata مُمْكِن punya dua pekerjaan.** Sebagai permintaan izin ia berarti \"boleh\": مُمْكِن أَسْأَل؟ Sebagai pernyataan ia berarti \"mungkin\": مُمْكِن يِجِي بُكْرَا (\"mungkin dia datang besok\"). Nadanya yang membedakan.",
+        "**⚠️ Kata فِيني berarti \"saya bisa\" dalam arti mampu atau sempat, dan ia bukan kata kerja.** Bentuknya فِيني، فِيك، فِيكِي، فِيه، فِيهَا، فِينَا، فِيكُن، فِيهُن — akhiran yang sama lagi. Penyangkalnya مَا — misalnya مَا فِيني.",
+        "**Kata بِقْدَر juga berarti \"bisa\", tapi lebih ke arah kesanggupan.** Kalimat مَا بِقْدَر إِمْشِي berarti \"saya tidak sanggup berjalan\" (kaki sakit, misalnya), sedangkan مَا فِيني إِمْشِي lebih ke \"saya tidak sempat\" atau \"tidak memungkinkan\". Batasnya kabur, dan penutur asli pun sering menukarnya.",
+        "**Untuk melarang dengan لَازِم, sisipkan مَا sesudahnya.** Bentuknya لَازِم مَا تْتَأَخَّر (\"kamu jangan sampai telat\"). Ia lebih tegas daripada لَا تْتَأَخَّر dari unit 9, dan biasanya menandakan ada akibatnya."
+      ],
+      "grammars": [
+        {
+          "title": "Empat kata dan bedanya",
+          "table": {
+            "head": [
+              "Kata",
+              "Cara baca",
+              "Arti",
+              "Berubah?",
+              "Penyangkal",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "لَازِم",
+                "laazim",
+                "harus",
+                "tidak",
+                "مِش لَازِم",
+                "لَازِم أَرُوح"
+              ],
+              [
+                "مُمْكِن",
+                "mumkin",
+                "boleh, mungkin",
+                "tidak",
+                "مِش مُمْكِن",
+                "مُمْكِن أَسْأَل؟"
+              ],
+              [
+                "فِيني",
+                "fiini",
+                "saya bisa",
+                "ya",
+                "مَا فِيني",
+                "فِيني أَجِي"
+              ],
+              [
+                "بِقْدَر",
+                "bi’dar",
+                "saya sanggup",
+                "ya",
+                "مَا بِقْدَر",
+                "بِقْدَر إِمْشِي"
+              ],
+              [
+                "ضَرُورِي",
+                "dharuuri",
+                "perlu, wajib",
+                "tidak",
+                "مِش ضَرُورِي",
+                "ضَرُورِي تِجِي"
+              ],
+              [
+                "مَمْنُوع",
+                "mamnuu‘",
+                "dilarang",
+                "tidak",
+                "—",
+                "مَمْنُوع التَّدْخِين"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan baris pertama dengan hati-hati: **مِش لَازِم tidak berarti \"dilarang\", melainkan \"tidak perlu\".** Kalimat مِش لَازِم تِجِي berarti \"kamu tidak harus datang\", bukan \"kamu tidak boleh datang\". Untuk melarang, pakai مَمْنُوع atau لَازِم مَا.",
+            "Kata فِيني dan بِقْدَر keduanya berubah menurut orangnya, tapi caranya berbeda: فِيني memakai akhiran milik, sementara بِقْدَر adalah kata kerja biasa dengan awalan b- yang ikut pola unit 8."
+          ]
+        },
+        {
+          "title": "فِيني dalam delapan bentuk",
+          "table": {
+            "head": [
+              "Orang",
+              "Bentuk",
+              "Cara baca",
+              "Penyangkal",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "ana",
+                "فِيني",
+                "fiini",
+                "مَا فِيني",
+                "فِيني أَجِي بُكْرَا"
+              ],
+              [
+                "inta",
+                "فِيك",
+                "fiik",
+                "مَا فِيك",
+                "فِيك تْسَاعِدْنِي؟"
+              ],
+              [
+                "inti",
+                "فِيكِي",
+                "fiiki",
+                "مَا فِيكِي",
+                "فِيكِي تِجِي؟"
+              ],
+              [
+                "huwwe",
+                "فِيه",
+                "fii",
+                "مَا فِيه",
+                "مَا فِيه يِجِي"
+              ],
+              [
+                "hiyye",
+                "فِيهَا",
+                "fiiha",
+                "مَا فِيهَا",
+                "فِيهَا تْسَاعِد"
+              ],
+              [
+                "nihna",
+                "فِينَا",
+                "fiina",
+                "مَا فِينَا",
+                "مَا فِينَا نِنْتِظِر"
+              ],
+              [
+                "intu",
+                "فِيكُن",
+                "fiikun",
+                "مَا فِيكُن",
+                "فِيكُن تِجُوا؟"
+              ],
+              [
+                "hinne",
+                "فِيهُن",
+                "fiihun",
+                "مَا فِيهُن",
+                "مَا فِيهُن يِجُوا"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Bentuk فِيه bertabrakan dengan فِيه yang berarti \"ada di dalamnya\" dari unit 12. Letaknya yang membedakan: kalau diikuti kata kerja, ia berarti \"dia bisa\"; kalau diikuti kata benda atau berdiri sendiri, ia berarti \"di dalamnya\".",
+            "Ungkapan فِيك تْسَاعِدْنِي؟ (\"bisa bantu saya?\") adalah salah satu kalimat paling berguna di seluruh modul ini. Hafalkan utuh, dan pakai kapan pun kamu terjebak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Meminta izin dan menolak",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Nadanya"
+          ],
+          "rows": [
+            [
+              "مُمْكِن أَسْأَل؟",
+              "mumkin as’al?",
+              "boleh saya tanya?",
+              "sopan"
+            ],
+            [
+              "فِيني أُقْعُد هُون؟",
+              "fiini u’‘ud hoon?",
+              "boleh saya duduk di sini?",
+              "biasa"
+            ],
+            [
+              "بْتِسْمَحْلِي؟",
+              "btismahli?",
+              "kamu izinkan saya?",
+              "sangat sopan"
+            ],
+            [
+              "أَكِيد، تْفَضَّل",
+              "akiid, tfaddhal",
+              "tentu, silakan",
+              "menerima"
+            ],
+            [
+              "لَلْأَسَف لَا",
+              "lal-asaf la’",
+              "sayangnya tidak",
+              "menolak halus"
+            ],
+            [
+              "مَعْلِيش، مِش مُمْكِن",
+              "ma‘leesy, misy mumkin",
+              "maaf, tidak bisa",
+              "menolak"
+            ],
+            [
+              "مَمْنُوع لَلْأَسَف",
+              "mamnuu‘ lal-asaf",
+              "dilarang, sayangnya",
+              "menolak tegas"
+            ],
+            [
+              "خَلِّينَا نْشُوف",
+              "khalliina nsyuuf",
+              "kita lihat nanti",
+              "menunda"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata مَعْلِيش bekerja dua arah, dan itu yang membuatnya begitu berguna. Diucapkan oleh yang menolak, ia berarti \"maaf ya\". Diucapkan oleh yang ditolak, ia berarti \"tidak apa-apa\". Ia juga dipakai untuk menghibur orang yang sedang kesulitan, dan dalam hal itu ia salah satu kata paling hangat dalam bahasa Arab Syam."
+        },
+        {
+          "type": "kotak",
+          "title": "Larangan yang akan kamu lihat tertulis",
+          "items": [
+            "Papan **مَمْنُوع التَّدْخِين** *mamnuu‘ et-tadkhiin* berarti \"dilarang merokok\".",
+            "Papan **مَمْنُوع التَّصْوِير** *mamnuu‘ et-tashwiir* berarti \"dilarang memotret\" — dan ini serius di dekat bangunan pemerintah dan pos militer di seluruh Syam.",
+            "Papan **مَمْنُوع الدُّخُول** *mamnuu‘ ed-dukhuul* berarti \"dilarang masuk\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Keharusan sehari-hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "لَازِم أَرُوح هَلَّق",
+              "laazim aruuh halla’",
+              "saya harus pergi sekarang"
+            ],
+            [
+              "لَازِم تِجِي بَكِّير",
+              "laazim tiji bakkiir",
+              "kamu harus datang pagi"
+            ],
+            [
+              "مِش لَازِم تِدْفَع",
+              "misy laazim tidfa‘",
+              "kamu tidak perlu bayar"
+            ],
+            [
+              "كَان لَازِم إِحْكِي مَعُو",
+              "kaan laazim ihki ma‘o",
+              "saya seharusnya bicara dengannya"
+            ],
+            [
+              "ضَرُورِي تِجِيب جَوَازَك",
+              "dharuuri tjiib jawaazak",
+              "kamu wajib bawa paspormu"
+            ],
+            [
+              "لَازِم مَا تِنْسَى",
+              "laazim ma tinsa",
+              "jangan sampai kamu lupa"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bentuk كَان لَازِم menyatakan penyesalan atas sesuatu yang tidak dilakukan — sama persis dengan \"seharusnya tadi\" dalam bahasa Indonesia. Ia sering dipakai untuk menyalahkan diri sendiri dengan halus, dan jawabannya hampir selalu مَعْلِيش."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata bantu yang melengkapi unit ini",
+          "items": [
+            "Kata لَيش *leesy* berarti \"kenapa\", dan jawabannya dimulai dengan لَإِنّ *la’inn* (\"karena\"): لَيش مَا جِيت؟ لَإِنّي كِنِت تَعْبَان.",
+            "Kata شَخْصِيًّا *syakhshiyyan* berarti \"secara pribadi, sendiri\" — kata yang akan kamu dengar di tiap kantor pemerintahan.",
+            "Ungkapan لَلْأَسَف *lal-asaf* berarti \"sayangnya\". Ia melunakkan penolakan apa pun, dan memakainya membuatmu terdengar jauh lebih sopan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "لَازِم",
+      "baca": "laazim",
+      "id": "harus"
+    },
+    {
+      "ar": "مِش لَازِم",
+      "baca": "misy laazim",
+      "id": "tidak perlu"
+    },
+    {
+      "ar": "مُمْكِن",
+      "baca": "mumkin",
+      "id": "boleh, mungkin"
+    },
+    {
+      "ar": "فِيني",
+      "baca": "fiini",
+      "id": "saya bisa"
+    },
+    {
+      "ar": "مَا فِيني",
+      "baca": "ma fiini",
+      "id": "saya tidak bisa"
+    },
+    {
+      "ar": "بِقْدَر",
+      "baca": "bi’dar",
+      "id": "saya sanggup"
+    },
+    {
+      "ar": "ضَرُورِي",
+      "baca": "dharuuri",
+      "id": "perlu, wajib"
+    },
+    {
+      "ar": "مَمْنُوع",
+      "baca": "mamnuu‘",
+      "id": "dilarang"
+    },
+    {
+      "ar": "مَعْلِيش",
+      "baca": "ma‘leesy",
+      "id": "tidak apa-apa; maaf"
+    },
+    {
+      "ar": "لَلْأَسَف",
+      "baca": "lal-asaf",
+      "id": "sayangnya"
+    },
+    {
+      "ar": "إِقَامَة",
+      "baca": "i’aame",
+      "id": "izin tinggal"
+    },
+    {
+      "ar": "جَوَاز السَّفَر",
+      "baca": "jawaaz es-safar",
+      "id": "paspor"
+    },
+    {
+      "ar": "مَكْتَب",
+      "baca": "maktab",
+      "id": "kantor"
+    },
+    {
+      "ar": "مُوَظَّف",
+      "baca": "muwazhzhaf",
+      "id": "pegawai"
+    },
+    {
+      "ar": "مُشْكِلِة",
+      "baca": "musykile",
+      "id": "masalah"
+    },
+    {
+      "ar": "لَيش",
+      "baca": "leesy",
+      "id": "kenapa"
+    },
+    {
+      "ar": "لَإِنّ",
+      "baca": "la’inn",
+      "id": "karena"
+    },
+    {
+      "ar": "بْسَاعِد",
+      "baca": "bsaa‘id",
+      "id": "saya membantu"
+    },
+    {
+      "ar": "بْيِسَكِّر",
+      "baca": "byisakkir",
+      "id": "dia menutup"
+    },
+    {
+      "ar": "بْتِخْلَص",
+      "baca": "btikhlash",
+      "id": "ia habis, selesai"
+    },
+    {
+      "ar": "شَخْصِيًّا",
+      "baca": "syakhshiyyan",
+      "id": "sendiri, secara pribadi"
+    },
+    {
+      "ar": "حَدَا",
+      "baca": "hada",
+      "id": "seseorang"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Saya harus pergi sekarang.",
+        "Boleh saya tanya?",
+        "Bisa kamu (lk) bantu saya?",
+        "Kamu tidak perlu bayar.",
+        "Sayangnya saya tidak bisa datang.",
+        "Kamu harus bawa paspormu."
+      ]
+    },
+    {
+      "prompt": "Isi dengan لَازِم, مُمْكِن, atau مَا فِيني.",
+      "items": [
+        "____ تْجِيب صُورْتَين. (harus)",
+        "____ أَسْأَل سُؤَال؟ (boleh)",
+        "____ أَجِي بُكْرَا، عِنْدِي شُغْل. (tidak bisa)",
+        "مِش ____ تِدْفَع، مَجَّانِي. (perlu)",
+        "____ يِجِي بَعْدَين، مَا بَعْرِف. (mungkin)",
+        "____ نِنْتِظِر أَكْتَر. (tidak bisa, kami)"
+      ]
+    },
+    {
+      "prompt": "Pasang bentuk فِين yang tepat.",
+      "items": [
+        "____ تْسَاعِدْنِي؟ (kamu laki-laki)",
+        "مَا ____ أَجِي الْيَوْم. (saya)",
+        "____ تِجِي مَعْنَا؟ (kamu perempuan)",
+        "مَا ____ يِجُوا بُكْرَا. (mereka)",
+        "____ نِحْكِي شْوَي؟ (kami)",
+        "مَا ____ تِنْتِظِر أَكْتَر. (dia perempuan)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "أَرُوح / لَازِم / هَلَّق",
+        "أَسْأَل / ؟ / مُمْكِن",
+        "تْسَاعِدْنِي / فِيك / ؟",
+        "تِدْفَع / مِش / لَازِم",
+        "أَجِي / مَا / فِيني / لَلْأَسَف",
+        "جَوَازَك / تْجِيب / ضَرُورِي"
+      ]
+    }
+  ],
+  "answers": [
+    "لَازِم أَرُوح هَلَّق. — مُمْكِن أَسْأَل؟ — فِيك تْسَاعِدْنِي؟ — مِش لَازِم تِدْفَع. — لَلْأَسَف مَا فِيني أَجِي. — لَازِم تْجِيب جَوَازَك.",
+    "لَازِم — مُمْكِن — مَا فِيني — لَازِم — مُمْكِن — مَا فِينَا",
+    "فِيك — فِيني — فِيكِي — فِيهُن — فِينَا — فِيهَا",
+    "لَازِم أَرُوح هَلَّق. — مُمْكِن أَسْأَل؟ — فِيك تْسَاعِدْنِي؟ — مِش لَازِم تِدْفَع. — لَلْأَسَف مَا فِيني أَجِي. — ضَرُورِي تْجِيب جَوَازَك."
+  ],
+  "wave": "Tulis tiga hal yang harus kamu lakukan besok dengan لَازِم, dan dua hal yang tidak bisa kamu lakukan dengan مَا فِيني."
+}

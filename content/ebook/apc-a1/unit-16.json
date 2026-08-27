@@ -1,0 +1,607 @@
+{
+  "title": "Bil-beet — rumah dan isinya",
+  "title_target": "بِالْبَيْت",
+  "goal": "Menggambarkan tempat tinggalmu, menyebut letak benda, dan mengurus urusan sewa-menyewa dari menanyakan sampai mengeluh.",
+  "bekal": [
+    "menyebut ruangan dan perabot rumah",
+    "menggambarkan letak benda dengan kata depan yang tepat",
+    "mengurus sewa: bertanya, menawar, dan melaporkan kerusakan"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — شَقَّة لَلْإِيجَار",
+      "intro": "Budi melihat sebuah apartemen kecil bersama pemiliknya, Umm Rami.",
+      "lines": [
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "تْفَضَّل، هَيّ الشَّقَّة.",
+          "baca": "tfaddhal, hayy esy-sya’’a.",
+          "id": "Silakan, ini apartemennya.",
+          "literal": "silakan, ini apartemen."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حِلْوِة. قَدِّيش أُوضَة فِيهَا؟",
+          "baca": "hilwe. ’addeesy oodha fiiha?",
+          "id": "Bagus. Ada berapa kamar?",
+          "literal": "manis. berapa kamar di-dalamnya?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "أُوضْتَين، صَالُون، مَطْبَخ، وْحَمَّام.",
+          "baca": "oodhteen, shaaluun, mathbakh, w hammaam.",
+          "id": "Dua kamar, ruang tamu, dapur, dan kamar mandi.",
+          "literal": "dua-kamar, salon, dapur, dan kamar-mandi."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَفْرُوشَة؟",
+          "baca": "mafruusye?",
+          "id": "Berperabot?",
+          "literal": "terisi-perabot?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "إِيه. فِي تَخِت وْخَزَانِة وْطَاوْلِة وْكَرَاسِي.",
+          "baca": "eeh. fi takht w khazaane w thaawle w karaasi.",
+          "id": "Iya. Ada ranjang, lemari, meja, dan kursi.",
+          "literal": "iya. ada ranjang dan lemari dan meja dan kursi-kursi."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَطْبَخ؟ فِي بَرَّاد؟",
+          "baca": "wel-mathbakh? fi barraad?",
+          "id": "Dapurnya? Ada kulkas?",
+          "literal": "dan-dapur? ada kulkas?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "فِي بَرَّاد وْغَاز. بَسّ مَا فِي غَسَّالِة.",
+          "baca": "fi barraad w ghaaz. bass ma fi ghassaale.",
+          "id": "Ada kulkas dan kompor. Tapi tidak ada mesin cuci.",
+          "literal": "ada kulkas dan gas. tapi tidak ada mesin-cuci."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. قَدِّيش الْإِيجَار بِالشَّهْر؟",
+          "baca": "maasyi. ’addeesy el-iijaar bisy-syahr?",
+          "id": "Oke. Sewanya berapa sebulan?",
+          "literal": "berjalan. berapa sewa di-bulan?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "مِيتَين، وَالْكَهْرَبَا عَلَيْك.",
+          "baca": "miiteen, wel-kahraba ‘aleek.",
+          "id": "Dua ratus, dan listrik ditanggung kamu.",
+          "literal": "dua-ratus, dan-listrik atasmu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَي؟",
+          "baca": "wel-mayy?",
+          "id": "Airnya?",
+          "literal": "dan-air?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "اَلْمَي عَلَيِّي. بَسّ لَازِم تِدْفَع شَهْرَين مُقَدَّم.",
+          "baca": "el-mayy ‘aleyyi. bass laazim tidfa‘ syahreen mu’addam.",
+          "id": "Air saya yang tanggung. Tapi harus bayar dua bulan di muka.",
+          "literal": "air atas-saya. tapi harus kamu-membayar dua-bulan di-muka."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شَهْرَين كْتِير. مُمْكِن شَهِر وَاحِد؟",
+          "baca": "syahreen ktiir. mumkin syahr waahid?",
+          "id": "Dua bulan kebanyakan. Boleh satu bulan?",
+          "literal": "dua-bulan banyak. boleh bulan satu?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "طَيِّب، لَإِنَّك طَالِب. شَهِر وَاحِد.",
+          "baca": "thayyib, la’innak thaalib. syahr waahid.",
+          "id": "Baiklah, karena kamu pelajar. Satu bulan.",
+          "literal": "baik, karena-kamu pelajar. bulan satu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. إِمْتَى فِيني إِنْتِقِل؟",
+          "baca": "yislamu. imta fiini inti’il?",
+          "id": "Terima kasih. Kapan saya bisa pindah?",
+          "literal": "semoga-selamat. kapan bisa-saya saya-pindah?"
+        },
+        {
+          "speaker": "أُمّ رَامِي:",
+          "text": "مِن أَوَّل الشَّهِر. اَلْبَيْت بَيْتَك.",
+          "baca": "min awwal esy-syahr. el-beet beetak.",
+          "id": "Mulai awal bulan. Anggap rumah sendiri.",
+          "literal": "dari awal bulan. rumah rumah-kamu."
+        }
+      ],
+      "notes": [
+        "**Ungkapan اَلْبَيْت بَيْتَك adalah salah satu kalimat paling Syam yang ada.** Harfiahnya \"rumah ini rumahmu\", dan diucapkan tuan rumah kepada tamu maupun penyewa. Jawabannya: يِسْلَمُوا atau اَللَّه يْخَلِّيلَك يَاه.",
+        "**Kata عَلَيْك dalam urusan uang berarti \"ditanggung kamu\".** Kalimat اَلْكَهْرَبَا عَلَيْك berarti listriknya kewajibanmu. Sebaliknya عَلَيِّي berarti \"saya yang tanggung\", dan itulah yang diucapkan orang yang mau membayari makanmu di restoran.",
+        "**Kata صَالُون berarti ruang tamu**, dan ia datang dari bahasa Prancis lewat Lebanon. Di Yordania kamu juga akan mendengar غُرْفَة الْجُلُوس. Rumah Syam hampir selalu punya ruang tamu tersendiri, dan ia bagian penting dari adab menerima tamu.",
+        "**Kata مَفْرُوش berarti \"berperabot\", dan ini pertanyaan wajib waktu mencari sewaan.** Bentuk perempuannya مَفْرُوشَة, dan lawannya عَ الْعَظِم (harfiahnya \"di atas tulang\", artinya kosong melompong).",
+        "**Membayar di muka adalah kebiasaan yang normal di seluruh Syam.** Satu sampai tiga bulan lazim, dan bisa ditawar — terutama kalau kamu pelajar. Alasan لَإِنِّي طَالِب betul-betul bekerja, dan tidak dianggap merendahkan.",
+        "**Kata شَقَّة berarti apartemen, dan بَيْت berarti rumah maupun tempat tinggal secara umum.** Orang Syam memakai بَيْت untuk apartemennya sendiri tanpa merasa keliru, persis seperti orang Indonesia berkata \"rumah\" untuk kamar kosnya."
+      ],
+      "grammars": [
+        {
+          "title": "Menggambarkan letak dengan kata depan bertumpuk",
+          "body": [
+            "Kata depan dari unit 11 sekarang dipakai untuk isi rumah, dan bisa ditempeli akhiran milik supaya menunjuk dirimu sendiri."
+          ],
+          "table": {
+            "head": [
+              "Kalimat",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "اَلتَّخِت جَنْب الشُّبَّاك",
+                "et-takht janb esy-syubbaak",
+                "ranjangnya di sebelah jendela"
+              ],
+              [
+                "اَلْخَزَانِة وَرَا الْبَاب",
+                "el-khazaane wara el-baab",
+                "lemarinya di belakang pintu"
+              ],
+              [
+                "اَلْكْتُب فَوْق الطَّاوْلِة",
+                "el-kitub foo’ eth-thaawle",
+                "buku-bukunya di atas meja"
+              ],
+              [
+                "اَلشَّنْطَة تَحِت التَّخِت",
+                "esy-syantha taht et-takht",
+                "tasnya di bawah ranjang"
+              ],
+              [
+                "اَلْمَطْبَخ قِدَّامِي",
+                "el-mathbakh ’iddaami",
+                "dapurnya di depan saya"
+              ],
+              [
+                "اَلْحَمَّام آخِر الْمَمَرّ",
+                "el-hammaam aakhir el-mamarr",
+                "kamar mandinya di ujung lorong"
+              ],
+              [
+                "اَلْبَرَّاد بْجُوَّا الْمَطْبَخ",
+                "el-barraad bjuwwa el-mathbakh",
+                "kulkasnya di dalam dapur"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk bertanya, cukup ganti bagian keterangannya dengan وَين — misalnya وَين الْخَزَانِة؟ Jawabannya berupa kata depan + tempat, tanpa perlu kata kerja sama sekali.",
+            "Kalau kamu ingin menyatakan sesuatu \"ada di\" sebuah tempat, pakai فِي dari unit 5 diikuti tempatnya: فِي بَرَّاد بِالْمَطْبَخ (\"ada kulkas di dapur\"). Bedanya dengan kalimat di tabel: yang ini memperkenalkan bendanya, yang di tabel menempatkan benda yang sudah diketahui."
+          ]
+        },
+        {
+          "title": "Kata sifat untuk tempat tinggal",
+          "table": {
+            "head": [
+              "Syam",
+              "Cara baca",
+              "Arti",
+              "Lawannya",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "كْبِير",
+                "kbiir",
+                "besar",
+                "زْغِير",
+                "zghiir"
+              ],
+              [
+                "وَاسِع",
+                "waasi‘",
+                "luas",
+                "ضَيِّق",
+                "dhayyi’"
+              ],
+              [
+                "جْدِيد",
+                "jdiid",
+                "baru",
+                "قَدِيم",
+                "’adiim"
+              ],
+              [
+                "نْضِيف",
+                "ndhiif",
+                "bersih",
+                "وِسِخ",
+                "wisikh"
+              ],
+              [
+                "مْرَتَّب",
+                "mrattab",
+                "rapi",
+                "مْبَعْثَر",
+                "mba‘tsar"
+              ],
+              [
+                "مْنَوَّر",
+                "mnawwar",
+                "terang",
+                "عَتِم",
+                "‘atim"
+              ],
+              [
+                "هَادِي",
+                "haadi",
+                "tenang",
+                "دَعْجِة",
+                "da‘je"
+              ],
+              [
+                "مَفْرُوش",
+                "mafruusy",
+                "berperabot",
+                "عَ الْعَظِم",
+                "‘a el-‘azhm"
+              ]
+            ]
+          },
+          "after": [
+            "Kata sifat selalu diletakkan **sesudah** kata bendanya, persis seperti bahasa Indonesia: بَيْت كْبِير (\"rumah besar\"), أُوضَة نْضِيفَة (\"kamar bersih\"). Ini salah satu hadiah bahasa Arab untuk penutur Indonesia.",
+            "⚠️ Kalau bendanya memakai اَل, kata sifatnya **juga** wajib memakai اَل — misalnya اَلْبَيْت الْكْبِير (\"rumah yang besar itu\"). Tanpa اَل di kata sifat, artinya berubah jadi kalimat: اَلْبَيْت كْبِير (\"rumah itu besar\"). Perbedaan ini penting dan sering terlewat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ruangan dan perabot",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "شَقَّة",
+              "sya’’a",
+              "apartemen",
+              "بِنَايِة",
+              "binaaye",
+              "gedung"
+            ],
+            [
+              "أُوضَة نَوْم",
+              "oodhat noom",
+              "kamar tidur",
+              "صَالُون",
+              "shaaluun",
+              "ruang tamu"
+            ],
+            [
+              "مَطْبَخ",
+              "mathbakh",
+              "dapur",
+              "حَمَّام",
+              "hammaam",
+              "kamar mandi"
+            ],
+            [
+              "بَلْكُون",
+              "balkuun",
+              "balkon",
+              "دَرَج",
+              "daraj",
+              "tangga"
+            ],
+            [
+              "تَخِت",
+              "takht",
+              "ranjang",
+              "خَزَانِة",
+              "khazaane",
+              "lemari"
+            ],
+            [
+              "كَنَبَايِة",
+              "kanabaaye",
+              "sofa",
+              "سِجَّادِة",
+              "sijjaade",
+              "karpet"
+            ],
+            [
+              "بَرَّاد",
+              "barraad",
+              "kulkas",
+              "غَاز",
+              "ghaaz",
+              "kompor"
+            ],
+            [
+              "غَسَّالِة",
+              "ghassaale",
+              "mesin cuci",
+              "مِكْيَاف",
+              "mikyaaf",
+              "AC"
+            ],
+            [
+              "ضَوّ",
+              "dhaww",
+              "lampu, listrik",
+              "سَخَّان",
+              "sakhkhaan",
+              "pemanas air"
+            ],
+            [
+              "مِفْتَاح",
+              "miftaah",
+              "kunci",
+              "جَرَس",
+              "jaras",
+              "bel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata ضَوّ berarti \"cahaya\" maupun \"listrik\" dalam pemakaian sehari-hari. Kalimat رَاح الضَّوّ (\"listriknya mati\") adalah salah satu kalimat tersering di Suriah dan Lebanon, dan kamu akan mendengarnya berkali-kali sehari."
+        },
+        {
+          "type": "kotak",
+          "title": "Mengeluh dan minta diperbaiki",
+          "items": [
+            "Rumusnya: فِي مُشْكِلِة بِالـ… — misalnya فِي مُشْكِلِة بِالسَّخَّان (\"ada masalah dengan pemanas airnya\").",
+            "Kalau sesuatu rusak: اَلْبَرَّاد خَرْبَان *el-barraad kharbaan* (\"kulkasnya rusak\"). Kata خَرْبَان dipakai untuk apa pun yang tidak berfungsi.",
+            "Untuk minta diperbaiki: مُمْكِن تْصَلِّحُو؟ *mumkin tshallho?* (\"bisa diperbaiki?\"). Tambahkan لَو سَمَحْت dan kamu selalu aman."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Urusan sewa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "قَدِّيش الْإِيجَار؟",
+              "’addeesy el-iijaar?",
+              "sewanya berapa?"
+            ],
+            [
+              "بِالشَّهْر وَلَّا بِالسِّنِة؟",
+              "bisy-syahr walla bis-sine?",
+              "per bulan atau per tahun?"
+            ],
+            [
+              "اَلْكَهْرَبَا دَاخْلِة؟",
+              "el-kahraba daakhle?",
+              "listrik sudah termasuk?"
+            ],
+            [
+              "مَفْرُوشَة وَلَّا لَا؟",
+              "mafruusye walla la’?",
+              "berperabot atau tidak?"
+            ],
+            [
+              "قَدِّيش مُقَدَّم؟",
+              "’addeesy mu’addam?",
+              "berapa bulan di muka?"
+            ],
+            [
+              "فِي عَقِد؟",
+              "fi ‘a’d?",
+              "ada kontrak?"
+            ],
+            [
+              "إِمْتَى فِيني إِنْتِقِل؟",
+              "imta fiini inti’il?",
+              "kapan saya bisa pindah?"
+            ],
+            [
+              "اَلْجِيرَان هَادْيِين؟",
+              "el-jiiraan haadyiin?",
+              "tetangganya tenang?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata وَلَّا *walla* berarti \"atau\" dalam pertanyaan pilihan, dan ia berbeda dari وَاللَّه *walla* yang berarti \"demi Tuhan\" — dua kata yang ditulis mirip dan dibedakan lewat konteks. Untuk \"atau\" dalam pernyataan biasa, bahasa Arab Syam memakai أَو."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Tiga hal yang perlu kamu tanyakan tapi sering dilupakan",
+          "items": [
+            "**Listrik dan air.** Di Suriah dan Lebanon, pemadaman terjadwal itu biasa, dan banyak gedung punya langganan generator terpisah: فِي اِشْتِرَاك مُوَلِّدَة؟",
+            "**Pemanas air.** Tanyakan apakah pakai listrik atau gas: اَلسَّخَّان كَهْرَبَا وَلَّا غَاز؟ Ini menentukan biaya bulananmu.",
+            "**Kontrak tertulis.** Sewa lisan lazim di kalangan pelajar, tapi mintalah setidaknya kwitansi: مُمْكِن وَصِل؟"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "شَقَّة",
+      "baca": "sya’’a",
+      "id": "apartemen"
+    },
+    {
+      "ar": "إِيجَار",
+      "baca": "iijaar",
+      "id": "sewa"
+    },
+    {
+      "ar": "مَفْرُوش",
+      "baca": "mafruusy",
+      "id": "berperabot"
+    },
+    {
+      "ar": "أُوضَة نَوْم",
+      "baca": "oodhat noom",
+      "id": "kamar tidur"
+    },
+    {
+      "ar": "صَالُون",
+      "baca": "shaaluun",
+      "id": "ruang tamu"
+    },
+    {
+      "ar": "مَطْبَخ",
+      "baca": "mathbakh",
+      "id": "dapur"
+    },
+    {
+      "ar": "بَلْكُون",
+      "baca": "balkuun",
+      "id": "balkon"
+    },
+    {
+      "ar": "تَخِت",
+      "baca": "takht",
+      "id": "ranjang"
+    },
+    {
+      "ar": "خَزَانِة",
+      "baca": "khazaane",
+      "id": "lemari"
+    },
+    {
+      "ar": "كَنَبَايِة",
+      "baca": "kanabaaye",
+      "id": "sofa"
+    },
+    {
+      "ar": "غَسَّالِة",
+      "baca": "ghassaale",
+      "id": "mesin cuci"
+    },
+    {
+      "ar": "كَهْرَبَا",
+      "baca": "kahraba",
+      "id": "listrik"
+    },
+    {
+      "ar": "ضَوّ",
+      "baca": "dhaww",
+      "id": "lampu, listrik"
+    },
+    {
+      "ar": "سَخَّان",
+      "baca": "sakhkhaan",
+      "id": "pemanas air"
+    },
+    {
+      "ar": "خَرْبَان",
+      "baca": "kharbaan",
+      "id": "rusak"
+    },
+    {
+      "ar": "نْضِيف / وِسِخ",
+      "baca": "ndhiif / wisikh",
+      "id": "bersih / kotor"
+    },
+    {
+      "ar": "وَاسِع / ضَيِّق",
+      "baca": "waasi‘ / dhayyi’",
+      "id": "luas / sempit"
+    },
+    {
+      "ar": "هَادِي",
+      "baca": "haadi",
+      "id": "tenang"
+    },
+    {
+      "ar": "جِيرَان",
+      "baca": "jiiraan",
+      "id": "tetangga"
+    },
+    {
+      "ar": "مُقَدَّم",
+      "baca": "mu’addam",
+      "id": "uang muka"
+    },
+    {
+      "ar": "عَقِد",
+      "baca": "‘a’d",
+      "id": "kontrak"
+    },
+    {
+      "ar": "وَلَّا",
+      "baca": "walla",
+      "id": "atau"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Ada berapa kamar di apartemen ini?",
+        "Sewanya berapa sebulan?",
+        "Listrik sudah termasuk?",
+        "Kulkasnya rusak.",
+        "Kamarnya bersih dan luas.",
+        "Kapan saya bisa pindah?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat.",
+      "items": [
+        "اَلتَّخِت ____ الشُّبَّاك. (di sebelah)",
+        "اَلْكْتُب ____ الطَّاوْلِة. (di atas)",
+        "اَلشَّنْطَة ____ التَّخِت. (di bawah)",
+        "اَلْبَرَّاد ____ الْمَطْبَخ. (di dalam)",
+        "اَلْخَزَانِة ____ الْبَاب. (di belakang)",
+        "اَلْبَلْكُون ____ الصَّالُون. (di depan)"
+      ]
+    },
+    {
+      "prompt": "Tambahkan اَل di tempat yang perlu, lalu terjemahkan.",
+      "items": [
+        "بَيْت كْبِير (rumah itu besar)",
+        "بَيْت كْبِير (rumah yang besar itu)",
+        "أُوضَة نْضِيفَة (kamar itu bersih)",
+        "أُوضَة نْضِيفَة (kamar yang bersih itu)",
+        "شَقَّة مَفْرُوشَة (apartemen itu berperabot)",
+        "شَقَّة مَفْرُوشَة (apartemen yang berperabot itu)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "الْإِيجَار / قَدِّيش / ؟",
+        "أُوضْتَين / فِيهَا / اَلشَّقَّة",
+        "خَرْبَان / اَلسَّخَّان",
+        "دَاخْلِة / اَلْكَهْرَبَا / ؟",
+        "جَنْب / اَلتَّخِت / اَلشُّبَّاك",
+        "إِنْتِقِل / إِمْتَى / فِيني / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "قَدِّيش أُوضَة فِي هَالشَّقَّة؟ — قَدِّيش الْإِيجَار بِالشَّهْر؟ — اَلْكَهْرَبَا دَاخْلِة؟ — اَلْبَرَّاد خَرْبَان. — اَلْأُوضَة نْضِيفَة وْوَاسْعَة. — إِمْتَى فِيني إِنْتِقِل؟",
+    "جَنْب — فَوْق — تَحِت — بْجُوَّا — وَرَا — قِدَّام",
+    "اَلْبَيْت كْبِير — اَلْبَيْت الْكْبِير — اَلْأُوضَة نْضِيفَة — اَلْأُوضَة النْضِيفَة — اَلشَّقَّة مَفْرُوشَة — اَلشَّقَّة الْمَفْرُوشَة",
+    "قَدِّيش الْإِيجَار؟ — اَلشَّقَّة فِيهَا أُوضْتَين. — اَلسَّخَّان خَرْبَان. — اَلْكَهْرَبَا دَاخْلِة؟ — اَلتَّخِت جَنْب الشُّبَّاك. — إِمْتَى فِيني إِنْتِقِل؟"
+  ],
+  "wave": "Gambar denah kamarmu dan tulis letak enam benda di dalamnya, masing-masing dengan kata depan yang berbeda."
+}

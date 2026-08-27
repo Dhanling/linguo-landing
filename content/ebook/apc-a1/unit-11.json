@@ -1,0 +1,633 @@
+{
+  "title": "Ween el-mahatta — menanyakan jalan",
+  "title_target": "وَين الْمَحَطَّة؟",
+  "goal": "Menanyakan jalan dan benar-benar mengerti jawabannya, memakai kata perintah, dan menyebut letak sesuatu terhadap yang lain.",
+  "bekal": [
+    "menanyakan letak sebuah tempat dengan tiga rumus yang berbeda",
+    "mengerti perintah رُوح، لِف، اِمْشِي dan bentuk perempuannya",
+    "menyebut arah dan letak dengan kata depan yang tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — عَ الطَّرِيق",
+      "intro": "Budi tersesat mencari halte bus di Amman dan bertanya kepada seorang bapak di depan toko.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "لَو سَمَحْت، وَين مَحَطَّة الْبَاص؟",
+          "baca": "law samaht, ween mahatthat el-baash?",
+          "id": "Permisi, di mana halte bus?",
+          "literal": "kalau kamu-mengizinkan, di-mana halte bus?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "أَهْلًا. قَرِيبِة، تْقَرِيبًا خَمْس دَقَايِق مَشِي.",
+          "baca": "ahlan. ’ariibe, ta’riiban khams da’aayi’ masyi.",
+          "id": "Selamat datang. Dekat, kira-kira lima menit jalan.",
+          "literal": "keluarga. dekat, kira-kira lima menit berjalan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "كِيف بُوصَل؟",
+          "baca": "keef buushal?",
+          "id": "Bagaimana caranya ke sana?",
+          "literal": "bagaimana saya-tiba?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "اِمْشِي دُغْرِي لَآخِر الشَّارِع.",
+          "baca": "imsyi dughri la-aakhir esy-syaari‘.",
+          "id": "Jalan lurus sampai ujung jalan.",
+          "literal": "berjalan lurus sampai-ujung jalan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب. وْبَعْدَين؟",
+          "baca": "thayyib. w ba‘deen?",
+          "id": "Baik. Lalu?",
+          "literal": "baik. dan sesudah-itu?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "لِف عَ الْيَمِين عِنْد الصَّيْدَلِيِّة.",
+          "baca": "lif ‘a el-yamiin ‘ind esh-shaydaliyye.",
+          "id": "Belok kanan di apotek.",
+          "literal": "belok atas kanan pada apotek."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَ الْيَمِين… مَاشِي.",
+          "baca": "‘a el-yamiin… maasyi.",
+          "id": "Ke kanan… oke.",
+          "literal": "atas kanan… berjalan."
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "اِمْشِي شْوَي كَمَان، بْتْشُوف بَنْك عَ الشِّمَال.",
+          "baca": "imsyi syway kamaan, btsyuuf bank ‘a esy-syimaal.",
+          "id": "Jalan sedikit lagi, kamu akan lihat bank di kiri.",
+          "literal": "berjalan sedikit juga, kamu-melihat bank atas kiri."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَالْمَحَطَّة قِدَّام الْبَنْك؟",
+          "baca": "wel-mahattha ’iddaam el-bank?",
+          "id": "Dan haltenya di depan bank?",
+          "literal": "dan-halte di-depan bank?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "لَا، وَرَا الْبَنْك. جَنْب الْجَامِع.",
+          "baca": "la’, wara el-bank. janb el-jaami‘.",
+          "id": "Bukan, di belakang bank. Di sebelah masjid.",
+          "literal": "tidak, belakang bank. samping masjid."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فْهِمِت. وْأَيّ بَاص بْيَاخُدْنِي عَ وَسَط الْبَلَد؟",
+          "baca": "fhimt. w ayy baash byaakhudni ‘a wasath el-balad?",
+          "id": "Mengerti. Bus mana yang ke pusat kota?",
+          "literal": "saya-mengerti. dan yang-mana bus dia-mengambil-saya atas tengah kota?"
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "رَقَم سِتَّة. بَسّ اِسْأَل السَّوَّاق لَتْأَكَّد.",
+          "baca": "ra’m sitte. bass is’al es-sawwaa’ lat’akkad.",
+          "id": "Nomor enam. Tapi tanya sopirnya untuk memastikan.",
+          "literal": "nomor enam. tapi tanya sopir untuk-kamu-memastikan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا كْتِير. اَللَّه يْخَلِّيك.",
+          "baca": "yislamu ktiir. alla ykhalliik.",
+          "id": "Terima kasih banyak. Semoga Tuhan menjagamu.",
+          "literal": "semoga-selamat banyak. Tuhan semoga-menjagamu."
+        },
+        {
+          "speaker": "اَلرِّجَّال:",
+          "text": "وْلَا يْهِمَّك. أَهْلًا وْسَهْلًا فِيك.",
+          "baca": "wala yhimmak. ahlan w sahlan fiik.",
+          "id": "Sama sekali tidak masalah. Selamat datang.",
+          "literal": "dan-tidak menyusahkanmu. keluarga dan mudah padamu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَللَّه يْسَلِّمَك. مَع السَّلَامِة.",
+          "baca": "alla ysallmak. ma‘ es-salaame.",
+          "id": "Semoga Tuhan menyelamatkanmu. Sampai jumpa.",
+          "literal": "Tuhan semoga-menyelamatkanmu. bersama keselamatan."
+        }
+      ],
+      "notes": [
+        "**Kata perintah dibuat dengan membuang awalan dari bentuk \"kamu\".** Bentuk بْتِمْشِي (\"kamu berjalan\") menjadi اِمْشِي (\"jalanlah\"). Untuk perempuan tambahkan ـِي — misalnya اِمْشِي tetap اِمْشِي, tapi رُوح menjadi رُوحِي dan لِف menjadi لِفِّي.",
+        "**Kata دُغْرِي berarti \"lurus\" dan ia bukan bahasa Arab asli.** Ia datang dari bahasa Turki, sisa empat abad pemerintahan Utsmani, dan dipakai di seluruh Syam. Kamu akan mendengarnya di tiap petunjuk jalan.",
+        "**Kanan dan kiri memakai kata depan عَ.** Bentuknya عَ الْيَمِين dan عَ الشِّمَال. Di sebagian Lebanon dan Palestina, \"kiri\" disebut عَ الْيَسَار — dua-duanya benar dan sama-sama dimengerti.",
+        "**Kata عِنْد berarti \"di\" untuk penanda tempat, bukan cuma \"punya\".** Ungkapan عِنْد الصَّيْدَلِيِّة berarti \"di apotek itu\" sebagai patokan. Fungsinya sama persis dengan \"di sebelah\" atau \"di dekat\" dalam petunjuk jalan bahasa Indonesia.",
+        "**Ungkapan وْلَا يْهِمَّك adalah jawaban paling khas Syam untuk terima kasih.** Harfiahnya \"jangan sampai itu menyusahkanmu\", artinya \"tidak masalah sama sekali\". Ia jauh lebih hangat daripada عَفْوًا, dan memakainya membuatmu langsung terdengar bukan turis.",
+        "**Jangan malu bertanya dua kali.** Petunjuk jalan diberikan cepat dan sering panjang. Kalimat penyelamatnya: مُمْكِن تْعِيد؟ (\"boleh diulang?\") dan شْوَي شْوَي لَو سَمَحْت (\"pelan-pelan, tolong\"). Keduanya sopan dan selalu berhasil."
+      ],
+      "grammars": [
+        {
+          "title": "Kata perintah",
+          "table": {
+            "head": [
+              "Kepada lk",
+              "Kepada pr",
+              "Kepada banyak",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "رُوح",
+                "رُوحِي",
+                "رُوحُوا",
+                "ruuh / ruuhi / ruuhu",
+                "pergilah"
+              ],
+              [
+                "تَعَال",
+                "تَعَالِي",
+                "تَعَالُوا",
+                "ta‘aal / ta‘aali / ta‘aalu",
+                "kemarilah"
+              ],
+              [
+                "اِمْشِي",
+                "اِمْشِي",
+                "اِمْشُوا",
+                "imsyi / imsyi / imsyu",
+                "jalanlah"
+              ],
+              [
+                "لِف",
+                "لِفِّي",
+                "لِفُّوا",
+                "lif / liffi / liffu",
+                "beloklah"
+              ],
+              [
+                "اِسْأَل",
+                "اِسْأَلِي",
+                "اِسْأَلُوا",
+                "is’al / is’ali / is’alu",
+                "tanyalah"
+              ],
+              [
+                "شُوف",
+                "شُوفِي",
+                "شُوفُوا",
+                "syuuf / syuufi / syuufu",
+                "lihatlah"
+              ],
+              [
+                "اِسْتَنَّى",
+                "اِسْتَنِّي",
+                "اِسْتَنُّوا",
+                "istanna / istanni / istannu",
+                "tunggulah"
+              ],
+              [
+                "خُدْ",
+                "خُدِي",
+                "خُدُوا",
+                "khud / khudi / khudu",
+                "ambillah"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk melarang, taruh لَا di depan bentuk **kata kerja biasa tanpa b-**, bukan di depan bentuk perintah: لَا تْرُوح (\"jangan pergi\"), لَا تِسْأَل (\"jangan tanya\"). Bentuk لَا رُوح salah dan langsung terdengar keliru.",
+            "⚠️ Perintah terdengar jauh lebih kasar dalam bahasa Indonesia daripada dalam bahasa Arab. Ungkapan تَعَال kepada teman sepenuhnya normal. Tapi kepada orang yang lebih tua atau tidak dikenal, tambahkan لَو سَمَحْت, atau ganti dengan pertanyaan: مُمْكِن تِيجِي؟"
+          ]
+        },
+        {
+          "title": "Kata depan tempat",
+          "table": {
+            "head": [
+              "Syam",
+              "Cara baca",
+              "Arti",
+              "Contoh",
+              "Arti contoh"
+            ],
+            "rows": [
+              [
+                "قِدَّام",
+                "’iddaam",
+                "di depan",
+                "قِدَّام الْبَنْك",
+                "di depan bank"
+              ],
+              [
+                "وَرَا",
+                "wara",
+                "di belakang",
+                "وَرَا الْبَيْت",
+                "di belakang rumah"
+              ],
+              [
+                "جَنْب",
+                "janb",
+                "di sebelah",
+                "جَنْب الْجَامِع",
+                "di sebelah masjid"
+              ],
+              [
+                "بَين",
+                "been",
+                "di antara",
+                "بَين الْبَنْك وَالْمَحَلّ",
+                "di antara bank dan toko"
+              ],
+              [
+                "فَوْق",
+                "foo’",
+                "di atas",
+                "فَوْق الطَّاوْلِة",
+                "di atas meja"
+              ],
+              [
+                "تَحِت",
+                "taht",
+                "di bawah",
+                "تَحِت الْبَيْت",
+                "di bawah rumah"
+              ],
+              [
+                "حَدّ",
+                "hadd",
+                "persis di samping",
+                "حَدّ الْبَاب",
+                "persis di samping pintu"
+              ],
+              [
+                "مُقَابِل",
+                "mu’aabil",
+                "berhadapan dengan",
+                "مُقَابِل الْمَدْرَسِة",
+                "berhadapan dengan sekolah"
+              ],
+              [
+                "بْجُوَّا",
+                "bjuwwa",
+                "di dalam",
+                "بْجُوَّا الْمَحَلّ",
+                "di dalam toko"
+              ],
+              [
+                "بَرَّا",
+                "barra",
+                "di luar",
+                "بَرَّا الْبَيْت",
+                "di luar rumah"
+              ]
+            ]
+          },
+          "after": [
+            "Kata-kata ini juga bisa ditempeli akhiran milik dari unit 4: قِدَّامِي (\"di depan saya\"), وَرَايِ (\"di belakang saya\"), جَنْبَك (\"di sebelahmu\"). Bentuk ini sangat sering dipakai untuk menunjukkan letak sesuatu terhadap dirimu sendiri.",
+            "Kata فَوْق dan تَحِت juga dipakai untuk lantai bangunan: الطَّابِق فَوْق (\"lantai atas\"), تَحِت (\"lantai bawah\"). Di gedung bertingkat, orang menyebut lantainya dengan angka biasa: اَلطَّابِق التَّالِت."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat yang paling sering dicari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "مَحَطَّة",
+              "mahattha",
+              "halte, stasiun",
+              "مَطَار",
+              "mathaar",
+              "bandara"
+            ],
+            [
+              "بَنْك",
+              "bank",
+              "bank",
+              "صَرَّاف",
+              "sharraaf",
+              "tempat tukar uang"
+            ],
+            [
+              "صَيْدَلِيِّة",
+              "shaydaliyye",
+              "apotek",
+              "مَشْفَى",
+              "masyfa",
+              "rumah sakit"
+            ],
+            [
+              "جَامِع",
+              "jaami‘",
+              "masjid",
+              "كْنِيسَة",
+              "kniise",
+              "gereja"
+            ],
+            [
+              "سُوق",
+              "suu’",
+              "pasar",
+              "مَوْل",
+              "mool",
+              "mal"
+            ],
+            [
+              "مَطْعَم",
+              "math‘am",
+              "restoran",
+              "فُرْن",
+              "furn",
+              "toko roti"
+            ],
+            [
+              "فُنْدُق",
+              "fundu’",
+              "hotel",
+              "سِفَارَة",
+              "sifaara",
+              "kedutaan"
+            ],
+            [
+              "شَارِع",
+              "syaari‘",
+              "jalan",
+              "سَاحَة",
+              "saaha",
+              "alun-alun"
+            ],
+            [
+              "حَمَّام",
+              "hammaam",
+              "kamar kecil",
+              "مَخْفَر",
+              "makhfar",
+              "kantor polisi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata حَمَّام bekerja rangkap: ia berarti kamar mandi di rumah dan toilet umum di tempat publik. Pertanyaan وَين الْحَمَّام؟ selalu dimengerti, dan tidak dianggap kasar di mana pun di Syam."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga rumus bertanya, dan bedanya",
+          "items": [
+            "Untuk letak: وَين + tempat + ؟ — وَين الْبَنْك؟ Ini yang paling langsung.",
+            "Untuk cara sampai: كِيف بُوصَل عَ…؟ — كِيف بُوصَل عَ الْمَطَار؟ Jawabannya berupa petunjuk arah.",
+            "Untuk keberadaan: فِي + tempat + هُون؟ — فِي صَيْدَلِيِّة قَرِيبِة؟ Jawabannya sekadar ada atau tidak."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Naik kendaraan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "بَاص",
+              "baash",
+              "bus"
+            ],
+            [
+              "سِرْفِيس",
+              "sirviis",
+              "angkutan bersama"
+            ],
+            [
+              "تَاكْسِي",
+              "taaksi",
+              "taksi"
+            ],
+            [
+              "عَ وَسَط الْبَلَد لَو سَمَحْت",
+              "‘a wasath el-balad law samaht",
+              "ke pusat kota, tolong"
+            ],
+            [
+              "قَدِّيش الْأُجْرَة؟",
+              "’addeesy el-ujra?",
+              "ongkosnya berapa?"
+            ],
+            [
+              "عَ الْعَدَّاد لَو سَمَحْت",
+              "‘a el-‘addaad law samaht",
+              "pakai argo, tolong"
+            ],
+            [
+              "وَقِّف هُون",
+              "wa’’if hoon",
+              "berhenti di sini"
+            ],
+            [
+              "عَ الزَّاوِيِة",
+              "‘a ez-zaawye",
+              "di pojok itu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata سِرْفِيس menunjuk angkutan umum berbentuk mobil van yang berjalan di jalur tetap dan berhenti di mana saja — semacam angkot. Ia jauh lebih murah daripada taksi, dan menaikinya adalah cara tercepat merasa betul-betul tinggal di kota itu."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Taksi dan argo",
+          "items": [
+            "Di Amman dan Beirut, mintalah عَ الْعَدَّاد (\"pakai argo\") sebelum naik. Kalau sopirnya menolak, sepakati harganya lebih dulu: قَدِّيش لَـ…؟",
+            "Menyepakati harga sebelum berangkat bukan tanda tidak percaya, melainkan kebiasaan setempat yang dilakukan semua orang.",
+            "Untuk turun, ucapkan وَقِّف هُون لَو سَمَحْت atau, yang lebih khas, عَ جَنْب (\"minggir sebentar\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "وَين",
+      "baca": "ween",
+      "id": "di mana"
+    },
+    {
+      "ar": "مَحَطَّة",
+      "baca": "mahattha",
+      "id": "halte, stasiun"
+    },
+    {
+      "ar": "شَارِع",
+      "baca": "syaari‘",
+      "id": "jalan"
+    },
+    {
+      "ar": "دُغْرِي",
+      "baca": "dughri",
+      "id": "lurus"
+    },
+    {
+      "ar": "يَمِين / شِمَال",
+      "baca": "yamiin / syimaal",
+      "id": "kanan / kiri"
+    },
+    {
+      "ar": "لِف",
+      "baca": "lif",
+      "id": "belok! (perintah)"
+    },
+    {
+      "ar": "اِمْشِي",
+      "baca": "imsyi",
+      "id": "jalan! (perintah)"
+    },
+    {
+      "ar": "رُوح",
+      "baca": "ruuh",
+      "id": "pergilah!"
+    },
+    {
+      "ar": "تَعَال",
+      "baca": "ta‘aal",
+      "id": "kemarilah!"
+    },
+    {
+      "ar": "قِدَّام / وَرَا",
+      "baca": "’iddaam / wara",
+      "id": "di depan / di belakang"
+    },
+    {
+      "ar": "جَنْب",
+      "baca": "janb",
+      "id": "di sebelah"
+    },
+    {
+      "ar": "بَين",
+      "baca": "been",
+      "id": "di antara"
+    },
+    {
+      "ar": "فَوْق / تَحِت",
+      "baca": "foo’ / taht",
+      "id": "di atas / di bawah"
+    },
+    {
+      "ar": "صَيْدَلِيِّة",
+      "baca": "shaydaliyye",
+      "id": "apotek"
+    },
+    {
+      "ar": "جَامِع",
+      "baca": "jaami‘",
+      "id": "masjid"
+    },
+    {
+      "ar": "فُنْدُق",
+      "baca": "fundu’",
+      "id": "hotel"
+    },
+    {
+      "ar": "حَمَّام",
+      "baca": "hammaam",
+      "id": "kamar kecil"
+    },
+    {
+      "ar": "وَسَط الْبَلَد",
+      "baca": "wasath el-balad",
+      "id": "pusat kota"
+    },
+    {
+      "ar": "سِرْفِيس",
+      "baca": "sirviis",
+      "id": "angkutan bersama"
+    },
+    {
+      "ar": "أُجْرَة",
+      "baca": "ujra",
+      "id": "ongkos"
+    },
+    {
+      "ar": "تْقَرِيبًا",
+      "baca": "ta’riiban",
+      "id": "kira-kira"
+    },
+    {
+      "ar": "وْلَا يْهِمَّك",
+      "baca": "wala yhimmak",
+      "id": "tidak masalah sama sekali"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Permisi, di mana halte bus?",
+        "Jalan lurus sampai ujung jalan.",
+        "Belok kanan di apotek.",
+        "Haltenya di belakang bank.",
+        "Bagaimana caranya ke bandara?",
+        "Berhenti di sini, tolong."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kata perintah untuk perempuan.",
+      "items": [
+        "رُوح",
+        "تَعَال",
+        "لِف",
+        "شُوف",
+        "اِسْأَل",
+        "خُدْ"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat.",
+      "items": [
+        "اَلْمَحَطَّة ____ الْبَنْك. (di belakang)",
+        "اَلْمَحَلّ ____ الْجَامِع. (di sebelah)",
+        "اَلْكْتَاب ____ الطَّاوْلِة. (di atas)",
+        "اَلْفُنْدُق ____ الْبَنْك وَالْمَحَلّ. (di antara)",
+        "اَلصَّيْدَلِيِّة ____ الْمَدْرَسِة. (berhadapan dengan)",
+        "اَلْحَمَّام ____. (di dalam)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "الْبَاص / وَين / مَحَطَّة / ؟",
+        "دُغْرِي / اِمْشِي",
+        "الْيَمِين / لِف / عَ",
+        "الْبَنْك / وَرَا / اَلْمَحَطَّة",
+        "بُوصَل / كِيف / عَ الْمَطَار / ؟",
+        "لَو سَمَحْت / هُون / وَقِّف"
+      ]
+    }
+  ],
+  "answers": [
+    "لَو سَمَحْت، وَين مَحَطَّة الْبَاص؟ — اِمْشِي دُغْرِي لَآخِر الشَّارِع. — لِف عَ الْيَمِين عِنْد الصَّيْدَلِيِّة. — اَلْمَحَطَّة وَرَا الْبَنْك. — كِيف بُوصَل عَ الْمَطَار؟ — وَقِّف هُون لَو سَمَحْت.",
+    "رُوحِي — تَعَالِي — لِفِّي — شُوفِي — اِسْأَلِي — خُدِي",
+    "وَرَا — جَنْب — فَوْق — بَين — مُقَابِل — بْجُوَّا",
+    "وَين مَحَطَّة الْبَاص؟ — اِمْشِي دُغْرِي. — لِف عَ الْيَمِين. — اَلْمَحَطَّة وَرَا الْبَنْك. — كِيف بُوصَل عَ الْمَطَار؟ — وَقِّف هُون لَو سَمَحْت."
+  ],
+  "wave": "Bayangkan jalan dari rumahmu ke pasar terdekat, lalu jelaskan rutenya dalam bahasa Arab Syam — pakai دُغْرِي dan لِف minimal sekali."
+}

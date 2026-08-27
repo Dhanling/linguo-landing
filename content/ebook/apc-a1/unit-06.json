@@ -1,0 +1,609 @@
+{
+  "title": "’addeesy — harga, angka besar, dan menawar",
+  "title_target": "قَدِّيش؟",
+  "goal": "Menanyakan harga, mengerti angka sampai seribu, menawar tanpa menyinggung, dan mengenal mata uang empat negara Syam.",
+  "bekal": [
+    "menanyakan harga dengan قَدِّيش dan mengerti jawabannya",
+    "menghitung puluhan, ratusan, dan ribuan",
+    "menawar dengan ungkapan yang dipakai penduduk setempat"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِسُوق الْحَمِيدِيِّة",
+      "intro": "Pasar tertutup terbesar di Damaskus. Budi ingin membeli syal untuk ibunya, dan pedagangnya menyebut harga pertama.",
+      "lines": [
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "أَهْلًا! تْفَضَّل، شُوف.",
+          "baca": "ahlan! tfaddhal, syuuf.",
+          "id": "Selamat datang! Silakan, lihat-lihat.",
+          "literal": "keluarga! silakan, lihat."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا. قَدِّيش هَاد الشَّال؟",
+          "baca": "yislamu. ’addeesy haad esy-syaal?",
+          "id": "Terima kasih. Berapa syal ini?",
+          "literal": "semoga-selamat. berapa ini syal?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَاد بِخَمْسِين أَلْف. صُوف أَصْلِي.",
+          "baca": "haad bikhamsiin alf. shuuf ashli.",
+          "id": "Yang ini lima puluh ribu. Wol asli.",
+          "literal": "ini dengan-lima-puluh ribu. wol asli."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "خَمْسِين؟ غَالِي شْوَي.",
+          "baca": "khamsiin? ghaali syway.",
+          "id": "Lima puluh? Agak mahal.",
+          "literal": "lima-puluh? mahal sedikit."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "وَاللَّه هَاد أَحْسَن نَوْع عِنَّا.",
+          "baca": "walla haad ahsan noo‘ ‘inna.",
+          "id": "Sungguh, ini jenis terbaik yang kami punya.",
+          "literal": "demi Tuhan ini terbaik jenis pada-kami."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "فِي شِي أَرْخَص؟",
+          "baca": "fi syi arkhash?",
+          "id": "Ada yang lebih murah?",
+          "literal": "ada sesuatu lebih-murah?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "أَكِيد. هَيّ بِتْلَاتِين، بَسّ مِش صُوف.",
+          "baca": "akiid. hayy bitlaatiin, bass misy shuuf.",
+          "id": "Tentu. Yang ini tiga puluh, tapi bukan wol.",
+          "literal": "pasti. ini dengan-tiga-puluh, tapi bukan wol."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بَدِّي هَاد الْأَوَّل. آخِر سِعِر قَدِّيش؟",
+          "baca": "baddi haad el-awwal. aakhir si‘ir ’addeesy?",
+          "id": "Saya mau yang pertama. Harga terakhirnya berapa?",
+          "literal": "mau-saya ini pertama. terakhir harga berapa?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "لَإِنَّك إِنْتَ… أَرْبَعِين. وْخَلَص.",
+          "baca": "la’innak inta… arba‘iin. w khalash.",
+          "id": "Karena kamu… empat puluh. Sudah.",
+          "literal": "karena-kamu kamu… empat-puluh. dan selesai."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "خَمْسَة وْتْلَاتِين وْبَاخْدُو هَلَّق.",
+          "baca": "khamse w tlaatiin w baakhdo halla’.",
+          "id": "Tiga puluh lima dan saya ambil sekarang.",
+          "literal": "lima dan-tiga-puluh dan saya-mengambil-dia sekarang."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "يَلَّا، مِن عْيُونِي. خَدُو.",
+          "baca": "yalla, min ‘yuuni. khudo.",
+          "id": "Ya sudah, demi kamu. Ambillah.",
+          "literal": "ayo, dari mata-saya. ambil-dia."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يِسْلَمُوا كْتِير. تْفَضَّل الْمَصَارِي.",
+          "baca": "yislamu ktiir. tfaddhal el-mashaari.",
+          "id": "Terima kasih banyak. Ini uangnya.",
+          "literal": "semoga-selamat banyak. silakan uang."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَيّ الْبَاقِي. خَمْسِة.",
+          "baca": "hayy el-baa’i. khamse.",
+          "id": "Ini kembaliannya. Lima.",
+          "literal": "ini sisa. lima."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَبْرُوك عَلَيِّي؟",
+          "baca": "mabruuk ‘aleyyi?",
+          "id": "Selamat buat saya?",
+          "literal": "diberkati atas-saya?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "مَبْرُوك! تِلْبْسُو بِالْهَنَا.",
+          "baca": "mabruuk! tilbso bil-hana.",
+          "id": "Selamat! Semoga dipakai dengan senang.",
+          "literal": "diberkati! semoga-kamu-memakainya dengan-kebahagiaan."
+        }
+      ],
+      "notes": [
+        "**Kata قَدِّيش adalah satu-satunya kata \"berapa\" yang kamu butuhkan.** Ia dipakai untuk harga (قَدِّيش هَاد؟), umur (قَدِّيش عُمْرَك؟), jarak, waktu, dan jumlah. Bentuk Fusha كَم memang ada di Syam, tapi terdengar resmi.",
+        "**Harga disebut dengan awalan بِـ.** Ungkapan بِخَمْسِين أَلْف berarti \"dengan lima puluh ribu\", persis seperti kita berkata \"seharga lima puluh ribu\". Menyebut angkanya saja tanpa بِـ tetap dimengerti dan sangat lazim.",
+        "**Menawar bukan penghinaan, melainkan bagian dari transaksi.** Di pasar tradisional, harga pertama memang diperkirakan akan ditawar, dan pedagang justru sedikit kecewa kalau kamu langsung setuju. Sebaliknya, **di toko modern dan supermarket harga sudah pasti** — menawar di sana justru salah tempat.",
+        "**Aturan tak tertulisnya sederhana: turunkan sekitar sepertiga, lalu bertemu di tengah.** Kalimat yang membuka penawaran dengan sopan adalah آخِر سِعِر قَدِّيش؟ (\"harga terakhirnya berapa?\"). Jangan pernah menawar barang yang tidak berniat kamu beli.",
+        "**Ungkapan مِن عْيُونِي harfiahnya \"dari mataku\".** Ia berarti \"baiklah, demi kamu\" dan dipakai waktu seseorang mengabulkan permintaan. Bersama تَكْرَم عَيْنَك dari unit 3, ia bagian dari sekumpulan ungkapan Syam yang semuanya melibatkan mata.",
+        "**Ucapan مَبْرُوك diucapkan untuk pembelian apa pun.** Untuk baju yang dibeli ada versi khususnya: تِلْبْسُو بِالْهَنَا (\"semoga kamu memakainya dengan bahagia\"), dan jawabannya يِسْلَمُوا atau اَللَّه يْخَلِّيك."
+      ],
+      "grammars": [
+        {
+          "title": "Puluhan, ratusan, ribuan",
+          "table": {
+            "head": [
+              "Angka",
+              "Syam",
+              "Cara baca",
+              "Angka",
+              "Syam",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "20",
+                "عِشْرِين",
+                "‘isyriin",
+                "100",
+                "مِيِّة",
+                "miyye"
+              ],
+              [
+                "30",
+                "تْلَاتِين",
+                "tlaatiin",
+                "200",
+                "مِيتَين",
+                "miiteen"
+              ],
+              [
+                "40",
+                "أَرْبَعِين",
+                "arba‘iin",
+                "300",
+                "تْلَات مِيِّة",
+                "tlaat miyye"
+              ],
+              [
+                "50",
+                "خَمْسِين",
+                "khamsiin",
+                "500",
+                "خَمْس مِيِّة",
+                "khams miyye"
+              ],
+              [
+                "60",
+                "سِتِّين",
+                "sittiin",
+                "1.000",
+                "أَلْف",
+                "alf"
+              ],
+              [
+                "70",
+                "سَبْعِين",
+                "sab‘iin",
+                "2.000",
+                "أَلْفَين",
+                "alfeen"
+              ],
+              [
+                "80",
+                "تْمَانِين",
+                "tmaaniin",
+                "5.000",
+                "خَمْس تْلَاف",
+                "khams tlaaf"
+              ],
+              [
+                "90",
+                "تِسْعِين",
+                "tis‘iin",
+                "1.000.000",
+                "مِلْيُون",
+                "milyoon"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Untuk angka gabungan, **satuannya disebut lebih dulu**: خَمْسَة وْتْلَاتِين *khamse w tlaatiin* secara harfiah \"lima dan tiga puluh\" untuk 35. Ini terbalik dari bahasa Indonesia dan butuh latihan sadar; kalau kamu ragu, sebut angkanya perlahan dan biarkan lawan bicaramu membetulkan.",
+            "Perhatikan bahwa semua puluhan berakhiran ـِين — satu pola untuk delapan angka. Begitu kamu menangkapnya, seluruh deretnya jatuh sendiri."
+          ]
+        },
+        {
+          "title": "Mata uang dan cara menyebut harga",
+          "table": {
+            "head": [
+              "Negara",
+              "Mata uang",
+              "Cara baca",
+              "Contoh harga",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Suriah",
+                "لِيرَة",
+                "liira",
+                "خَمْسِين أَلْف لِيرَة",
+                "50.000 lira"
+              ],
+              [
+                "Lebanon",
+                "لِيرَة",
+                "liira",
+                "مِيت أَلْف لِيرَة",
+                "100.000 lira"
+              ],
+              [
+                "Yordania",
+                "دِينَار",
+                "diinaar",
+                "خَمْس دَنَانِير",
+                "5 dinar"
+              ],
+              [
+                "Palestina",
+                "شِيكِل",
+                "syiikil",
+                "عِشْرِين شِيكِل",
+                "20 syikal"
+              ],
+              [
+                "Umum",
+                "دُولَار",
+                "doolaar",
+                "عَشْر دُولَار",
+                "10 dolar"
+              ]
+            ]
+          },
+          "after": [
+            "Dalam percakapan sehari-hari, **nama mata uangnya hampir selalu dilewati** kalau sudah jelas dari konteks. Jawaban بِخَمْسِين sudah cukup, dan menambahkan لِيرَة justru terdengar seperti sedang membaca daftar harga.",
+            "⚠️ Di Lebanon dan Suriah, angka nol yang banyak sering dipangkas dalam ucapan: harga \"seratus ribu\" bisa disebut مِيِّة saja. Kalau angkanya terasa terlalu kecil untuk barangnya, tanyakan ulang dengan قَدِّيش بِالضَّبْط؟ (\"tepatnya berapa?\")."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang dipakai saat berbelanja",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "قَدِّيش هَاد؟",
+              "’addeesy haad?",
+              "ini berapa?"
+            ],
+            [
+              "قَدِّيش الْكِيلُو؟",
+              "’addeesy el-kiilu?",
+              "sekilonya berapa?"
+            ],
+            [
+              "غَالِي شْوَي",
+              "ghaali syway",
+              "agak mahal"
+            ],
+            [
+              "فِي شِي أَرْخَص؟",
+              "fi syi arkhash?",
+              "ada yang lebih murah?"
+            ],
+            [
+              "آخِر سِعِر قَدِّيش؟",
+              "aakhir si‘ir ’addeesy?",
+              "harga terakhirnya berapa?"
+            ],
+            [
+              "بَدِّي شُوف بَسّ",
+              "baddi syuuf bass",
+              "saya mau lihat-lihat saja"
+            ],
+            [
+              "بَاخْدُو",
+              "baakhdo",
+              "saya ambil"
+            ],
+            [
+              "مَا بَدِّي، شُكْرًا",
+              "ma baddi, syukran",
+              "tidak, terima kasih"
+            ],
+            [
+              "فِي بَاقِي؟",
+              "fi baa’i?",
+              "ada kembalian?"
+            ],
+            [
+              "بَقْبَل كَرْت؟",
+              "ba’bal kart?",
+              "terima kartu?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat بَدِّي شُوف بَسّ adalah kalimat penyelamat di pasar mana pun. Ia mengatakan dengan sopan bahwa kamu sedang melihat-lihat, dan pedagang Syam akan menghormatinya — biasanya sambil tetap menyodorkan segelas teh."
+        },
+        {
+          "type": "kotak",
+          "title": "Menolak tanpa menyinggung",
+          "items": [
+            "Yang paling halus: اَللَّه يْسَهِّل *alla ysahhil* — harfiahnya \"semoga Tuhan memudahkan\". Ia sekaligus doa dan penolakan, dan tidak ada yang tersinggung karenanya.",
+            "Yang lugas tapi tetap sopan: مَا بَدِّي، شُكْرًا. Ucapkan sambil tersenyum dan terus berjalan.",
+            "⚠️ Jangan menawar lalu pergi setelah pedagang menyetujui harga tawaranmu. Di seluruh Syam itu dianggap tidak pantas — persetujuan atas tawaran dianggap sudah mengikat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Di toko bahan makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "خُبْز",
+              "khubz",
+              "roti",
+              "جِبْنِة",
+              "jibne",
+              "keju"
+            ],
+            [
+              "حَلِيب",
+              "haliib",
+              "susu",
+              "لَبَن",
+              "laban",
+              "yoghurt"
+            ],
+            [
+              "بَيْض",
+              "beedh",
+              "telur",
+              "زَيْت",
+              "zeet",
+              "minyak"
+            ],
+            [
+              "سِكَّر",
+              "sikkar",
+              "gula",
+              "مِلِح",
+              "milih",
+              "garam"
+            ],
+            [
+              "رِزّ",
+              "rizz",
+              "beras",
+              "تُفَّاح",
+              "tuffaah",
+              "apel"
+            ],
+            [
+              "مَوْز",
+              "mooz",
+              "pisang",
+              "بَنْدُورَة",
+              "banduura",
+              "tomat"
+            ],
+            [
+              "خِيَار",
+              "khiyaar",
+              "mentimun",
+              "بَطَاطَا",
+              "bathaatha",
+              "kentang"
+            ],
+            [
+              "دَجَاج",
+              "dajaaj",
+              "ayam",
+              "لَحْمِة",
+              "lahme",
+              "daging"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa لَبَن di Syam berarti **yoghurt**, bukan susu — dan itu jebakan langsung untuk penutur Indonesia yang mengenal kata \"laban\" dari bahasa Arab Fusha. Susu adalah حَلِيب. Salah menyebutnya akan membuatmu pulang membawa yoghurt satu liter."
+        },
+        {
+          "type": "kotak",
+          "title": "Membeli dengan satuan",
+          "items": [
+            "Satuan berat: كِيلُو *kiilu* (kilo) dan نُصّ كِيلُو *nushsh kiilu* (setengah kilo). Kalimat lengkapnya كِيلُو تُفَّاح مِن فَضْلَك.",
+            "Satuan hitung: حَبِّة *habbe* untuk buah dan telur (تْلَات حَبَّات bermakna \"tiga butir\"), dan رَبْطَة *rabtha* untuk sayur berikat.",
+            "Untuk minta ditambah: كَمَان شْوَي *kamaan syway* (\"tambah sedikit\"). Untuk menghentikan: هَيْك بَسّ *heek bass* atau خَلَص."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "قَدِّيش",
+      "baca": "’addeesy",
+      "id": "berapa"
+    },
+    {
+      "ar": "سِعِر",
+      "baca": "si‘ir",
+      "id": "harga"
+    },
+    {
+      "ar": "غَالِي",
+      "baca": "ghaali",
+      "id": "mahal"
+    },
+    {
+      "ar": "رْخِيص",
+      "baca": "rkhiish",
+      "id": "murah"
+    },
+    {
+      "ar": "أَرْخَص",
+      "baca": "arkhash",
+      "id": "lebih murah"
+    },
+    {
+      "ar": "أَحْسَن",
+      "baca": "ahsan",
+      "id": "lebih baik, terbaik"
+    },
+    {
+      "ar": "شْوَي",
+      "baca": "syway",
+      "id": "sedikit, agak"
+    },
+    {
+      "ar": "لِيرَة",
+      "baca": "liira",
+      "id": "lira"
+    },
+    {
+      "ar": "دِينَار",
+      "baca": "diinaar",
+      "id": "dinar"
+    },
+    {
+      "ar": "أَلْف",
+      "baca": "alf",
+      "id": "seribu"
+    },
+    {
+      "ar": "مِيِّة",
+      "baca": "miyye",
+      "id": "seratus"
+    },
+    {
+      "ar": "نُصّ",
+      "baca": "nushsh",
+      "id": "setengah"
+    },
+    {
+      "ar": "كِيلُو",
+      "baca": "kiilu",
+      "id": "kilogram"
+    },
+    {
+      "ar": "حَبِّة",
+      "baca": "habbe",
+      "id": "butir, buah (satuan)"
+    },
+    {
+      "ar": "خَلَص",
+      "baca": "khalash",
+      "id": "sudah, cukup"
+    },
+    {
+      "ar": "آخِر",
+      "baca": "aakhir",
+      "id": "terakhir"
+    },
+    {
+      "ar": "أَصْلِي",
+      "baca": "ashli",
+      "id": "asli"
+    },
+    {
+      "ar": "نَوْع",
+      "baca": "noo‘",
+      "id": "jenis"
+    },
+    {
+      "ar": "لَبَن",
+      "baca": "laban",
+      "id": "yoghurt"
+    },
+    {
+      "ar": "حَلِيب",
+      "baca": "haliib",
+      "id": "susu"
+    },
+    {
+      "ar": "سُوق",
+      "baca": "suu’",
+      "id": "pasar"
+    },
+    {
+      "ar": "بَاخِد",
+      "baca": "baakhid",
+      "id": "saya ambil"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Ini berapa?",
+        "Agak mahal.",
+        "Ada yang lebih murah?",
+        "Harga terakhirnya berapa?",
+        "Saya ambil yang ini.",
+        "Saya mau lihat-lihat saja."
+      ]
+    },
+    {
+      "prompt": "Tulis angkanya dalam bahasa Arab Syam.",
+      "items": [
+        "35",
+        "48",
+        "70",
+        "150",
+        "600",
+        "2.500"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "____ هَاد الشَّال؟ (berapa)",
+        "هَاد ____ شْوَي. (mahal)",
+        "فِي شِي ____؟ (lebih murah)",
+        "بَدِّي كِيلُو ____ مِن فَضْلَك. (apel)",
+        "هَيّ الْ____. خَمْسِة. (kembalian)",
+        "____، مَا بَدِّي شِي تَانِي. (sudah)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "هَاد / قَدِّيش / ؟",
+        "غَالِي / كْتِير / هَاد",
+        "أَرْخَص / فِي / ؟ / شِي",
+        "بِتْلَاتِين / هَيّ / أَلْف",
+        "بَاخْدُو / وْ / خَمْسَة / تْلَاتِين / وْ",
+        "بَسّ / شُوف / بَدِّي"
+      ]
+    }
+  ],
+  "answers": [
+    "قَدِّيش هَاد؟ — غَالِي شْوَي. — فِي شِي أَرْخَص؟ — آخِر سِعِر قَدِّيش؟ — بَاخِد هَاد. — بَدِّي شُوف بَسّ.",
+    "خَمْسَة وْتْلَاتِين — تْمَانْيِة وْأَرْبَعِين — سَبْعِين — مِيِّة وْخَمْسِين — سِتّ مِيِّة — أَلْفَين وْخَمْس مِيِّة",
+    "قَدِّيش — غَالِي — أَرْخَص — تُفَّاح — بَاقِي — خَلَص",
+    "قَدِّيش هَاد؟ — هَاد غَالِي كْتِير. — فِي شِي أَرْخَص؟ — هَيّ بِتْلَاتِين أَلْف. — خَمْسَة وْتْلَاتِين وْبَاخْدُو. — بَدِّي شُوف بَسّ."
+  ],
+  "wave": "Ucapkan sepuluh harga acak keras-keras — dari 21 sampai 999 — dan ingat bahwa satuannya selalu disebut lebih dulu."
+}

@@ -1,0 +1,607 @@
+{
+  "title": "‘am basytighil — kata kerja sekarang",
+  "title_target": "عَم بِشْتِغِل",
+  "goal": "Menyusun kata kerja bentuk sekarang untuk delapan orang, dan membedakan kebiasaan dari perbuatan yang sedang berlangsung dengan satu kata: عَم.",
+  "bekal": [
+    "memasang awalan b- pada kata kerja untuk delapan orang",
+    "membedakan \"saya minum kopi tiap hari\" dari \"saya sedang minum kopi\"",
+    "menyangkal kata kerja dengan مَا di tempat yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — عَ التِّلِفُون",
+      "intro": "Laila menelepon Budi di siang hari. Budi sedang di perpustakaan kampus.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَلُو بُودِي؟ وَين إِنْتَ؟",
+          "baca": "aloo Buudi? ween inta?",
+          "id": "Halo Budi? Kamu di mana?",
+          "literal": "halo Budi? di-mana kamu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بِالْمَكْتَبِة. عَم بِدْرُس.",
+          "baca": "bil-maktabe. ‘am bidrus.",
+          "id": "Di perpustakaan. Sedang belajar.",
+          "literal": "di-perpustakaan. sedang saya-belajar."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُو عَم تِدْرُس؟",
+          "baca": "syu ‘am tidrus?",
+          "id": "Belajar apa?",
+          "literal": "apa sedang kamu-belajar?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "قِوَاعِد. كِلّ يَوْم بِدْرُس سَاعْتَين.",
+          "baca": "’awaa‘id. kill yoom bidrus saa‘teen.",
+          "id": "Tata bahasa. Tiap hari saya belajar dua jam.",
+          "literal": "kaidah. setiap hari saya-belajar dua-jam."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَاللَّه؟ شَاطِر. أَنَا مَا بِدْرُس هَيْك.",
+          "baca": "walla? syaathir. ana ma bidrus heek.",
+          "id": "Serius? Rajin. Saya tidak belajar sebanyak itu.",
+          "literal": "demi Tuhan? pintar. saya tidak saya-belajar begini."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "إِنْتِي شُو عَم تَعْمْلِي هَلَّق؟",
+          "baca": "inti syu ‘am ta‘mli halla’?",
+          "id": "Kamu sedang apa sekarang?",
+          "literal": "kamu apa sedang kamu-melakukan sekarang?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "عَم بِسْتَنَّى الْبَاص. رَايْحَة عَ الْبَيْت.",
+          "baca": "‘am bistanna el-baash. raayha ‘a el-beet.",
+          "id": "Sedang menunggu bus. Mau pulang.",
+          "literal": "sedang saya-menunggu bus. pergi atas rumah."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "إِمْتَى بْتُوصَلِي عَادَة؟",
+          "baca": "imta btuushali ‘aade?",
+          "id": "Biasanya sampai jam berapa?",
+          "literal": "kapan kamu-tiba biasanya?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "بُوصَل قَبِل الْمَغْرِب. بَسّ الْيَوْم فِي زَحْمِة.",
+          "baca": "buushal ’abl el-maghrib. bass el-yoom fi zahme.",
+          "id": "Saya sampai sebelum magrib. Tapi hari ini macet.",
+          "literal": "saya-tiba sebelum magrib. tapi hari ini ada kepadatan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَللَّه يْعِينِك. أَنَا بِرْجَع مَشِي.",
+          "baca": "alla y‘iinik. ana birja‘ masyi.",
+          "id": "Semoga dimudahkan. Saya pulang jalan kaki.",
+          "literal": "Tuhan semoga-menolong-kamu. saya saya-kembali berjalan."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "إِنْتَ مَا بْتِرْكَب بَاص أَبَدًا؟",
+          "baca": "inta ma btirkab baash abadan?",
+          "id": "Kamu tidak pernah naik bus?",
+          "literal": "kamu tidak kamu-naik bus sama-sekali?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نَادِرًا. بْحِبّ إِمْشِي، اَلطَّقْس حِلُو.",
+          "baca": "naadiran. bhibb imsyi, eth-tha’s hilu.",
+          "id": "Jarang. Saya suka jalan, cuacanya bagus.",
+          "literal": "jarang. saya-suka saya-berjalan, cuaca manis."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "طَيِّب، بْشُوفَك بُكْرَا بِالصَّفّ.",
+          "baca": "thayyib, bsyuufak bukra bish-shaff.",
+          "id": "Baik, sampai jumpa besok di kelas.",
+          "literal": "baik, saya-melihat-kamu besok di-kelas."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "إِنْ شَاءَ اللَّه. سَلِّمِي عَ الْعِيلِة.",
+          "baca": "insyaalla. sallmi ‘a el-‘eele.",
+          "id": "Insyaallah. Salam untuk keluarga.",
+          "literal": "jika Tuhan menghendaki. sampaikan-salam atas keluarga."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "بْيِسَلْمُوا. يَلَّا بَاي.",
+          "baca": "byisalmu. yalla baay.",
+          "id": "Mereka juga kirim salam. Dah.",
+          "literal": "mereka-menyampaikan-salam. ayo dah."
+        }
+      ],
+      "notes": [
+        "**Awalan b- itu wajib, dan ini beda besar dari Fusha.** Di Fusha \"saya belajar\" adalah أَدْرُس; di Syam ia بِدْرُس *bidrus* dengan b di depan. Kata kerja tanpa b hanya muncul sesudah بَدِّي، رَح، لَازِم، مُمْكِن — tidak pernah berdiri sendiri.",
+        "**Kata عَم mengubah kebiasaan menjadi \"sedang\".** Bentuk بِدْرُس berarti \"saya belajar\" sebagai kebiasaan atau kenyataan umum. Bentuk عَم بِدْرُس berarti \"saya sedang belajar\" saat ini juga. Bahasa Indonesia memakai kata \"sedang\" dengan cara yang persis sama, jadi ini salah satu titik termudah di seluruh modul.",
+        "**Kata عَم tidak berubah bentuknya sama sekali** untuk delapan orang. Ia satu kata mati yang cukup ditaruh di depan. Yang berubah cuma kata kerja di belakangnya.",
+        "**Penyangkal kata kerja selalu مَا, dan letaknya di depan seluruhnya.** Bentuknya مَا بِدْرُس (\"saya tidak belajar\") dan مَا عَم بِدْرُس (\"saya sedang tidak belajar\"). Jangan pernah memakai مِش di sini.",
+        "**Ungkapan رَايْحَة عَ الْبَيْت memakai bentuk pelaku, bukan kata kerja.** Kata رَايِح berarti \"yang sedang pergi\", dan ia sangat sering menggantikan kata kerja untuk perbuatan yang sedang terjadi atau sudah diputuskan. Bentuk perempuannya رَايْحَة dan jamaknya رَايْحِين.",
+        "**Menitipkan salam itu bagian dari menutup percakapan.** Ucapan سَلِّم عَ الْعِيلِة (kepada laki-laki) atau سَلِّمِي (kepada perempuan) hampir selalu muncul, dan jawabannya بْيِسَلْمُوا (\"mereka membalas salam\") walaupun kamu belum sempat menyampaikannya."
+      ],
+      "grammars": [
+        {
+          "title": "Kata kerja sekarang: dua pola dasar",
+          "body": [
+            "Pola awalannya sama untuk semua kata kerja; yang berbeda cuma vokal di dalam batang katanya. Hafalkan dua kata kerja ini sebagai contoh, lalu semua kata kerja lain mengikuti bentuk yang sama."
+          ],
+          "table": {
+            "head": [
+              "Orang",
+              "دَرَس (belajar)",
+              "Cara baca",
+              "اِشْتَغَل (bekerja)",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "ana",
+                "بِدْرُس",
+                "bidrus",
+                "بِشْتِغِل",
+                "bisytighil"
+              ],
+              [
+                "inta",
+                "بْتِدْرُس",
+                "btidrus",
+                "بْتِشْتِغِل",
+                "btisytighil"
+              ],
+              [
+                "inti",
+                "بْتِدْرْسِي",
+                "btidrsi",
+                "بْتِشْتِغْلِي",
+                "btisytighli"
+              ],
+              [
+                "huwwe",
+                "بْيِدْرُس",
+                "byidrus",
+                "بْيِشْتِغِل",
+                "byisytighil"
+              ],
+              [
+                "hiyye",
+                "بْتِدْرُس",
+                "btidrus",
+                "بْتِشْتِغِل",
+                "btisytighil"
+              ],
+              [
+                "nihna",
+                "مْنِدْرُس",
+                "mnidrus",
+                "مْنِشْتِغِل",
+                "mnisytighil"
+              ],
+              [
+                "intu",
+                "بْتِدْرْسُوا",
+                "btidrsu",
+                "بْتِشْتِغْلُوا",
+                "btisytighlu"
+              ],
+              [
+                "hinne",
+                "بْيِدْرْسُوا",
+                "byidrsu",
+                "بْيِشْتِغْلُوا",
+                "byisytighlu"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Bentuk **kamu perempuan** dan **dia perempuan** tidak sama: بْتِدْرْسِي berakhiran ـِي, sedangkan بْتِدْرُس tidak. Dan bentuk **dia perempuan** sama persis dengan **kamu laki-laki** — itu bukan kesalahan cetak, memang begitu. Konteks yang membedakannya, dan tidak pernah membingungkan dalam percakapan sungguhan.",
+            "Bentuk **kami** adalah satu-satunya yang tidak memakai b- melainkan **mn-**: مْنِدْرُس. Anggap saja ia b- yang berubah wujud; polanya tetap sama."
+          ]
+        },
+        {
+          "title": "Kebiasaan, sedang berlangsung, dan penyangkalannya",
+          "table": {
+            "head": [
+              "Bentuk",
+              "Contoh",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "b- saja",
+                "بِشْرَب قَهْوِة كِلّ يَوْم",
+                "bisyrab ’ahwe kill yoom",
+                "saya minum kopi tiap hari"
+              ],
+              [
+                "عَم + b-",
+                "عَم بِشْرَب قَهْوِة",
+                "‘am bisyrab ’ahwe",
+                "saya sedang minum kopi"
+              ],
+              [
+                "مَا + b-",
+                "مَا بِشْرَب قَهْوِة",
+                "ma bisyrab ’ahwe",
+                "saya tidak minum kopi"
+              ],
+              [
+                "مَا عَم + b-",
+                "مَا عَم بِشْرَب",
+                "ma ‘am bisyrab",
+                "saya sedang tidak minum"
+              ],
+              [
+                "pelaku",
+                "شَارِب قَهْوِة",
+                "syaarib ’ahwe",
+                "saya sudah minum kopi"
+              ],
+              [
+                "pelaku pr",
+                "شَارْبِة قَهْوِة",
+                "syaarbe ’ahwe",
+                "saya (pr) sudah minum kopi"
+              ]
+            ]
+          },
+          "after": [
+            "Dua baris terakhir memperlihatkan bentuk pelaku, yang untuk sebagian kata kerja berarti keadaan yang **sudah terjadi dan masih berlaku** — seperti \"sudah makan\", \"sudah minum\", \"sudah tahu\". Untuk kata kerja gerak seperti رَاح dan إِجَا, justru artinya \"sedang dalam perjalanan\".",
+            "Untuk tingkat A1, kamu cukup mengenali bentuk ini waktu mendengar dan menghafal empat yang paling sering: رَايِح (sedang pergi), جَايِ (sedang datang), سَاكِن (tinggal), عَارِف (tahu)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata keterangan waktu untuk kebiasaan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Contoh kalimat"
+          ],
+          "rows": [
+            [
+              "دَايْمًا",
+              "daayman",
+              "selalu",
+              "دَايْمًا بِشْرَب قَهْوِة"
+            ],
+            [
+              "عَادَة",
+              "‘aade",
+              "biasanya",
+              "عَادَة بُوصَل بَكِّير"
+            ],
+            [
+              "كْتِير",
+              "ktiir",
+              "sering",
+              "كْتِير بْرُوح عَ السُّوق"
+            ],
+            [
+              "أَحْيَانًا",
+              "ahyaanan",
+              "kadang-kadang",
+              "أَحْيَانًا بِطْبُخ"
+            ],
+            [
+              "نَادِرًا",
+              "naadiran",
+              "jarang",
+              "نَادِرًا بِرْكَب بَاص"
+            ],
+            [
+              "أَبَدًا",
+              "abadan",
+              "tidak pernah",
+              "مَا بِشْرَب أَبَدًا"
+            ],
+            [
+              "كِلّ يَوْم",
+              "kill yoom",
+              "tiap hari",
+              "كِلّ يَوْم بِدْرُس"
+            ],
+            [
+              "مَرَّة بِالْأُسْبُوع",
+              "marra bil-usbuu‘",
+              "seminggu sekali",
+              "بْزُور عَمِّي مَرَّة بِالْأُسْبُوع"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan kata أَبَدًا yang cuma bisa dipakai bersama penyangkalan: مَا بِشْرَب أَبَدًا. Berdiri sendiri ia tidak berarti \"tidak pernah\", jadi jangan menjawab pertanyaan cuma dengan أَبَدًا — jawab dengan لَا، أَبَدًا."
+        },
+        {
+          "type": "kotak",
+          "title": "Letak kata keterangan waktu itu longgar",
+          "items": [
+            "Di depan kalimat: دَايْمًا بِشْرَب قَهْوِة. Di belakang: بِشْرَب قَهْوِة دَايْمًا. Keduanya benar dan sama-sama lazim.",
+            "Menaruhnya di depan memberi sedikit penekanan pada waktunya, persis seperti bahasa Indonesia \"tiap hari saya belajar\" dibandingkan \"saya belajar tiap hari\".",
+            "⚠️ Satu yang tidak longgar: عَم harus **langsung menempel** di depan kata kerjanya, tidak boleh disisipi apa pun."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sepuluh kata kerja yang paling cepat kamu butuhkan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Arti",
+            "Saya",
+            "Cara baca",
+            "Kamu lk",
+            "Dia lk"
+          ],
+          "rows": [
+            [
+              "makan",
+              "بَاكُل",
+              "baakul",
+              "بْتَاكُل",
+              "بْيَاكُل"
+            ],
+            [
+              "minum",
+              "بِشْرَب",
+              "bisyrab",
+              "بْتِشْرَب",
+              "بْيِشْرَب"
+            ],
+            [
+              "pergi",
+              "بْرُوح",
+              "bruuh",
+              "بِتْرُوح",
+              "بِيرُوح"
+            ],
+            [
+              "datang",
+              "بِجِي",
+              "biji",
+              "بْتِجِي",
+              "بْيِجِي"
+            ],
+            [
+              "tahu",
+              "بَعْرِف",
+              "ba‘rif",
+              "بْتَعْرِف",
+              "بْيَعْرِف"
+            ],
+            [
+              "mau (suka)",
+              "بْحِبّ",
+              "bhibb",
+              "بِتْحِبّ",
+              "بِيحِبّ"
+            ],
+            [
+              "bicara",
+              "بِحْكِي",
+              "bihki",
+              "بْتِحْكِي",
+              "بْيِحْكِي"
+            ],
+            [
+              "lihat",
+              "بْشُوف",
+              "bsyuuf",
+              "بِتْشُوف",
+              "بِيشُوف"
+            ],
+            [
+              "kerja",
+              "بِشْتِغِل",
+              "bisytighil",
+              "بْتِشْتِغِل",
+              "بْيِشْتِغِل"
+            ],
+            [
+              "tidur",
+              "بْنَام",
+              "bnaam",
+              "بِتْنَام",
+              "بِينَام"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan kata kerja yang batangnya berhuruf panjang di tengah — رَاح، شَاف، نَام — yang bentuk \"kamu\" dan \"dia\"-nya memakai بِتْـ dan بِيـ, bukan بْتِـ dan بْيِـ. Perbedaan kecil ini terjadi karena bunyinya, bukan karena aturan yang harus dihafal; menirukan tabelnya keras-keras sudah cukup."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata kerja بْحِبّ dan dua artinya",
+          "items": [
+            "Diikuti kata benda, ia berarti **suka** atau **cinta**: بْحِبّ الْقَهْوِة (\"saya suka kopi\").",
+            "Diikuti kata kerja telanjang, ia berarti **suka melakukan**: بْحِبّ إِمْشِي (\"saya suka berjalan\").",
+            "⚠️ Untuk menyatakan \"saya ingin\" gunakan بَدِّي dari unit 7, bukan بْحِبّ. Kalimat بْحِبّ إِشْرَب قَهْوِة berarti \"saya suka minum kopi\", bukan \"saya ingin minum kopi sekarang\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "عَم",
+      "baca": "‘am",
+      "id": "sedang (penanda)"
+    },
+    {
+      "ar": "بِدْرُس",
+      "baca": "bidrus",
+      "id": "saya belajar"
+    },
+    {
+      "ar": "بِشْتِغِل",
+      "baca": "bisytighil",
+      "id": "saya bekerja"
+    },
+    {
+      "ar": "بَاكُل",
+      "baca": "baakul",
+      "id": "saya makan"
+    },
+    {
+      "ar": "بِشْرَب",
+      "baca": "bisyrab",
+      "id": "saya minum"
+    },
+    {
+      "ar": "بْرُوح",
+      "baca": "bruuh",
+      "id": "saya pergi"
+    },
+    {
+      "ar": "بِجِي",
+      "baca": "biji",
+      "id": "saya datang"
+    },
+    {
+      "ar": "بَعْرِف",
+      "baca": "ba‘rif",
+      "id": "saya tahu"
+    },
+    {
+      "ar": "بْحِبّ",
+      "baca": "bhibb",
+      "id": "saya suka"
+    },
+    {
+      "ar": "بِحْكِي",
+      "baca": "bihki",
+      "id": "saya bicara"
+    },
+    {
+      "ar": "بِسْتَنَّى",
+      "baca": "bistanna",
+      "id": "saya menunggu"
+    },
+    {
+      "ar": "بُوصَل",
+      "baca": "buushal",
+      "id": "saya tiba"
+    },
+    {
+      "ar": "بِرْجَع",
+      "baca": "birja‘",
+      "id": "saya kembali"
+    },
+    {
+      "ar": "بِرْكَب",
+      "baca": "birkab",
+      "id": "saya naik (kendaraan)"
+    },
+    {
+      "ar": "دَايْمًا",
+      "baca": "daayman",
+      "id": "selalu"
+    },
+    {
+      "ar": "عَادَة",
+      "baca": "‘aade",
+      "id": "biasanya"
+    },
+    {
+      "ar": "أَحْيَانًا",
+      "baca": "ahyaanan",
+      "id": "kadang-kadang"
+    },
+    {
+      "ar": "أَبَدًا",
+      "baca": "abadan",
+      "id": "tidak pernah"
+    },
+    {
+      "ar": "مَكْتَبِة",
+      "baca": "maktabe",
+      "id": "perpustakaan"
+    },
+    {
+      "ar": "زَحْمِة",
+      "baca": "zahme",
+      "id": "macet, berdesakan"
+    },
+    {
+      "ar": "مَشِي",
+      "baca": "masyi",
+      "id": "jalan kaki"
+    },
+    {
+      "ar": "شَاطِر",
+      "baca": "syaathir",
+      "id": "pintar, rajin"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Saya sedang belajar.",
+        "Tiap hari saya minum kopi.",
+        "Dia (pr) sedang menunggu bus.",
+        "Kami tidak bekerja hari ini.",
+        "Kamu (lk) tidak pernah naik bus?",
+        "Mereka sedang makan."
+      ]
+    },
+    {
+      "prompt": "Ubah ke bentuk yang diminta.",
+      "items": [
+        "بِدْرُس (jadikan bentuk kami)",
+        "بْيِشْتِغِل (jadikan bentuk mereka)",
+        "بْتِشْرَب (jadikan bentuk kamu perempuan)",
+        "بَاكُل (jadikan bentuk dia perempuan)",
+        "بْرُوح (jadikan bentuk kalian)",
+        "بْحِبّ (jadikan bentuk dia laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Isi dengan عَم atau kosongkan sesuai artinya.",
+      "items": [
+        "هَلَّق ____ بِدْرُس بِالْمَكْتَبِة.",
+        "كِلّ يَوْم ____ بِشْرَب قَهْوِة.",
+        "شُو ____ تَعْمُل هَلَّق؟",
+        "عَادَة ____ بُوصَل بَكِّير.",
+        "هِيِّ ____ بْتِسْتَنَّى الْبَاص.",
+        "مَا ____ بِشْتِغِل هَالْأُسْبُوع."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "بِدْرُس / عَم / بِالْمَكْتَبِة",
+        "قَهْوِة / كِلّ / بِشْرَب / يَوْم",
+        "بِشْتِغِل / مَا / اَلْيَوْم",
+        "عَم / شُو / تَعْمْلِي / ؟",
+        "بْيِرْجَعُوا / بَكِّير / دَايْمًا",
+        "أَبَدًا / بِرْكَب / مَا / بَاص"
+      ]
+    }
+  ],
+  "answers": [
+    "عَم بِدْرُس. — كِلّ يَوْم بِشْرَب قَهْوِة. — عَم بْتِسْتَنَّى الْبَاص. — مَا مْنِشْتِغِل الْيَوْم. — مَا بْتِرْكَب بَاص أَبَدًا؟ — عَم بْيَاكْلُوا.",
+    "مْنِدْرُس — بْيِشْتِغْلُوا — بْتِشْرْبِي — بْتَاكُل — بِتْرُوحُوا — بِيحِبّ",
+    "عَم — (kosong) — عَم — (kosong) — عَم — عَم",
+    "عَم بِدْرُس بِالْمَكْتَبِة. — كِلّ يَوْم بِشْرَب قَهْوِة. — مَا بِشْتِغِل الْيَوْم. — شُو عَم تَعْمْلِي؟ — دَايْمًا بْيِرْجَعُوا بَكِّير. — مَا بِرْكَب بَاص أَبَدًا."
+  ],
+  "wave": "Ceritakan hari ini kepada dirimu sendiri dalam lima kalimat: tiga dengan عَم untuk yang sedang terjadi, dua tanpa عَم untuk kebiasaanmu."
+}

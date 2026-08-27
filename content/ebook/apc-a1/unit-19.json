@@ -1,0 +1,573 @@
+{
+  "title": "‘a et-tilifoon — telepon, pesan, dan undangan",
+  "title_target": "عَ التِّلِفُون",
+  "goal": "Menelepon dan mengangkat telepon dengan rumus yang benar, menulis pesan singkat, dan mengundang serta menolak undangan tanpa menyinggung.",
+  "bekal": [
+    "membuka dan menutup percakapan telepon dengan rumus yang lazim",
+    "menulis pesan singkat dengan singkatan yang dipakai orang Syam",
+    "mengundang, menerima, dan menolak dengan sopan"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — عَزِيمِة عَ الْعَشَا",
+      "intro": "Laila menelepon Budi untuk mengundangnya makan malam di rumah keluarganya hari Jumat.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "أَلُو؟",
+          "baca": "aloo?",
+          "id": "Halo?",
+          "literal": "halo?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَلُو بُودِي؟ مَعَك لَيْلَى.",
+          "baca": "aloo Buudi? ma‘ak Leela.",
+          "id": "Halo Budi? Ini Laila.",
+          "literal": "halo Budi? bersama-kamu Laila."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَهْلَين لَيْلَى! كِيفِك؟",
+          "baca": "ahleen Leela! keefik?",
+          "id": "Halo Laila! Apa kabar?",
+          "literal": "dua-keluarga Laila! bagaimana-kamu?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مْنِيحَة، يِسْلَمُوا. عَم بِزْعِجَك؟",
+          "baca": "mniiha, yislamu. ‘am biz‘ijak?",
+          "id": "Baik, terima kasih. Saya mengganggu?",
+          "literal": "baik, semoga-selamat. sedang saya-mengganggu-kamu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "أَبَدًا، تْفَضَّلِي.",
+          "baca": "abadan, tfaddhali.",
+          "id": "Sama sekali tidak, silakan.",
+          "literal": "sama-sekali, silakan."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "إِمِّي بْتِعْزْمَك عَ الْعَشَا يَوْم الْجُمْعَة.",
+          "baca": "immi bti‘zmak ‘a el-‘asya yoom el-jum‘a.",
+          "id": "Ibu saya mengundangmu makan malam hari Jumat.",
+          "literal": "ibu-saya dia-mengundang-kamu atas makan-malam hari Jumat."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَاللَّه؟ يِسْلَمُوا كْتِير. أَيّ سَاعَة؟",
+          "baca": "walla? yislamu ktiir. ayy saa‘a?",
+          "id": "Serius? Terima kasih banyak. Jam berapa?",
+          "literal": "demi Tuhan? semoga-selamat banyak. yang-mana jam?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "حَوَالِي السَّبْعَة. بَسّ لَا تِتْأَخَّر، إِمِّي بْتِطْبُخ مَنْسَف.",
+          "baca": "hawaali es-sab‘a. bass la tit’akhkhar, immi btithbukh mansaf.",
+          "id": "Sekitar jam tujuh. Tapi jangan telat, ibu masak mansaf.",
+          "literal": "sekitar tujuh. tapi jangan kamu-terlambat, ibu-saya dia-memasak mansaf."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَنْسَف؟ أَكِيد رَح إِجِي! بْجِيب شِي مَعِي؟",
+          "baca": "mansaf? akiid rah iji! bjiib syi ma‘i?",
+          "id": "Mansaf? Pasti saya datang! Bawa sesuatu?",
+          "literal": "mansaf? pasti akan saya-datang! saya-membawa sesuatu bersama-saya?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "لَا وَاللَّه، مَا فِي دَاعِي. تَعَا إِنْتَ بَسّ.",
+          "baca": "la’ walla, ma fi daa‘i. ta‘a inta bass.",
+          "id": "Tidak usah, tidak perlu. Datang saja.",
+          "literal": "tidak demi Tuhan, tidak ada alasan. datang kamu saja."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا بِصِير أَجِي إِيدِي فَاضْيِة.",
+          "baca": "ma bishiir aji iidi faadhye.",
+          "id": "Tidak pantas saya datang dengan tangan kosong.",
+          "literal": "tidak jadi saya-datang tangan-saya kosong."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "طَيِّب، جِيب حِلْوِيَّات إِذَا بَدَّك. بَسّ مِش لَازِم.",
+          "baca": "thayyib, jiib hilwiyyaat idza baddak. bass misy laazim.",
+          "id": "Baik, bawa kue kalau mau. Tapi tidak wajib.",
+          "literal": "baik, bawa manisan jika mau-kamu. tapi bukan harus."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَاشِي. بْتِبْعَتِيلِي الْعِنْوَان عَ الْوَاتْس؟",
+          "baca": "maasyi. btib‘atiili el-‘inwaan ‘a el-waats?",
+          "id": "Oke. Kirimi saya alamatnya di WhatsApp?",
+          "literal": "berjalan. kamu-mengirim-untukku alamat atas WhatsApp?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "أَكِيد، بَبْعَتْلَك هَلَّق. بْشُوفَك الْجُمْعَة.",
+          "baca": "akiid, bab‘atlak halla’. bsyuufak el-jum‘a.",
+          "id": "Tentu, saya kirim sekarang. Sampai jumpa Jumat.",
+          "literal": "pasti, saya-mengirim-untukmu sekarang. saya-melihat-kamu Jumat."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يَلَّا، سَلِّمِي عَ خَالْتِي. بَاي.",
+          "baca": "yalla, sallmi ‘a khaalti. baay.",
+          "id": "Oke, salam untuk ibumu. Dah.",
+          "literal": "ayo, sampaikan-salam atas bibi-saya. dah."
+        }
+      ],
+      "notes": [
+        "**Rumus mengangkat telepon hampir tidak pernah berubah.** Yang mengangkat berkata أَلُو, yang menelepon menyebut diri dengan مَعَك… (\"ini… bicara\"). Kepada perempuan: مَعِك. Menyebut nama sendiri lebih dulu adalah kesopanan dasar, bahkan kepada orang yang sudah menyimpan nomormu.",
+        "**Pertanyaan عَم بِزْعِجَك؟ (\"saya mengganggu?\") hampir wajib** di awal telepon, dan jawabannya selalu أَبَدًا (\"sama sekali tidak\") — bahkan kalau memang sedang sibuk. Kalau kamu benar-benar tidak bisa bicara, katakan فِيني إِحْكِيك بَعِد شْوَي؟",
+        "**⚠️ Menolak bawaan tamu adalah bagian dari tarian kesopanan, bukan penolakan sungguhan.** Waktu tuan rumah berkata مَا فِي دَاعِي, jawaban yang benar bukan menurut, melainkan tetap membawa sesuatu. Ungkapan مَا بِصِير أَجِي إِيدِي فَاضْيِة (\"tidak pantas datang bertangan kosong\") adalah kalimat kuncinya, dan mengucapkannya membuatmu langsung terlihat mengerti adat.",
+        "**Kata عَزَم berarti mengundang, dan عَزِيمِة berarti undangan atau jamuan.** Kalimat أَنَا عَازْمَك berarti \"kamu saya undang\" — dan di restoran, ia juga berarti \"saya yang bayar\". Dua arti itu memang berhubungan erat.",
+        "**Kata بِصِير bekerja rangkap dan sangat sering dipakai.** Ia berarti \"terjadi\", \"menjadi\", dan juga \"boleh, pantas\". Kalimat مَا بِصِير berarti \"tidak pantas\" atau \"tidak boleh\", dan ia salah satu cara paling halus menolak sesuatu.",
+        "**Pesan tertulis di Syam ditulis dengan bahasa lisan, bukan Fusha.** Orang menulis كِيفَك، شُو أَخْبَارَك، هَلَّق di WhatsApp persis seperti mengucapkannya. Ini kabar baik untukmu: apa yang kamu pelajari di modul ini langsung bisa kamu tulis."
+      ],
+      "grammars": [
+        {
+          "title": "Rumus telepon dari awal sampai akhir",
+          "table": {
+            "head": [
+              "Tahap",
+              "Syam",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Mengangkat",
+                "أَلُو؟",
+                "aloo?",
+                "halo?"
+              ],
+              [
+                "Menyebut diri",
+                "مَعَك بُودِي",
+                "ma‘ak Buudi",
+                "ini Budi"
+              ],
+              [
+                "Bertanya siapa",
+                "مِين مَعِي؟",
+                "miin ma‘i?",
+                "ini siapa?"
+              ],
+              [
+                "Sopan santun",
+                "عَم بِزْعِجَك؟",
+                "‘am biz‘ijak?",
+                "saya mengganggu?"
+              ],
+              [
+                "Meminta orang",
+                "مُمْكِن سَامِر؟",
+                "mumkin Saamir?",
+                "boleh bicara dengan Samer?"
+              ],
+              [
+                "Salah sambung",
+                "آسِف، غَلَط",
+                "aasif, ghalath",
+                "maaf, salah sambung"
+              ],
+              [
+                "Sinyal jelek",
+                "اَلْخَطّ مِش مْنِيح",
+                "el-khathth misy mniih",
+                "sinyalnya jelek"
+              ],
+              [
+                "Menutup",
+                "يَلَّا، بْشُوفَك",
+                "yalla, bsyuufak",
+                "oke, sampai jumpa"
+              ]
+            ]
+          },
+          "after": [
+            "Kalau yang dicari tidak ada, jawabannya: مِش مَوْجُود *misy moojuud* (\"tidak ada di tempat\"). Untuk menitip pesan: مُمْكِن تْخَبْرُو إِنِّي اِتَّصَلِت؟ (\"boleh sampaikan bahwa saya menelepon?\").",
+            "Untuk minta ditelepon balik: خَلِّيه يِتَّصِل فِيِّي (\"suruh dia telepon saya\"). Kata خَلِّي dari unit 14 muncul lagi di sini, dan pola خَلِّي + orang + kata kerja telanjang berarti \"suruh dia\"."
+          ]
+        },
+        {
+          "title": "Mengundang, menerima, menolak",
+          "table": {
+            "head": [
+              "Fungsi",
+              "Syam",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "Mengundang",
+                "بِعْزْمَك عَ الْعَشَا",
+                "bi‘zmak ‘a el-‘asya",
+                "saya undang kamu makan malam"
+              ],
+              [
+                "Mengundang",
+                "شَرِّفْنَا",
+                "syarrifna",
+                "muliakan kami dengan hadir"
+              ],
+              [
+                "Menerima",
+                "بْكِلّ سُرُور",
+                "bikill suruur",
+                "dengan senang hati"
+              ],
+              [
+                "Menerima",
+                "أَكِيد رَح إِجِي",
+                "akiid rah iji",
+                "pasti saya datang"
+              ],
+              [
+                "Menolak",
+                "لَلْأَسَف مَا فِيني",
+                "lal-asaf ma fiini",
+                "sayangnya saya tidak bisa"
+              ],
+              [
+                "Menolak",
+                "عِنْدِي اِرْتِبَاط",
+                "‘indi irtibaath",
+                "saya ada acara lain"
+              ],
+              [
+                "Menunda",
+                "خَلِّينَا نْشُوف",
+                "khalliina nsyuuf",
+                "kita lihat nanti"
+              ],
+              [
+                "Membalas",
+                "اَلْمَرَّة الْجَايِة عَلَيِّي",
+                "el-marra el-jaaye ‘aleyyi",
+                "lain kali saya yang traktir"
+              ]
+            ]
+          },
+          "after": [
+            "Ungkapan شَرِّفْنَا harfiahnya \"muliakan kami\" dan merupakan undangan yang paling hangat sekaligus paling sopan. Jawabannya: اَلشَّرَف إِلِي (\"kehormatan bagi saya\").",
+            "⚠️ Menolak undangan makan butuh alasan, tidak cukup sekadar \"tidak bisa\". Sebutkan alasannya (عِنْدِي اِمْتِحَان، عِنْدِي اِرْتِبَاط) dan tawarkan lain kali. Menolak tanpa alasan terdengar seperti menolak orangnya, bukan acaranya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menulis pesan singkat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "كِيفَك؟ شُو أَخْبَارَك؟",
+              "keefak? syu akhbaarak?",
+              "apa kabar? gimana kabarmu?"
+            ],
+            [
+              "وَين صِرِت؟",
+              "ween shirt?",
+              "sudah sampai mana?"
+            ],
+            [
+              "أَنَا جَايِ",
+              "ana jaay",
+              "saya dalam perjalanan"
+            ],
+            [
+              "وْصِلِت",
+              "wshilt",
+              "saya sudah sampai"
+            ],
+            [
+              "اِسْتَنَّانِي شْوَي",
+              "istannaani syway",
+              "tunggu saya sebentar"
+            ],
+            [
+              "مِتْأَخِّر عَشِر دَقَايِق",
+              "mit’akhkhir ‘asyr da’aayi’",
+              "telat sepuluh menit"
+            ],
+            [
+              "بْحِكِيك بَعْدَين",
+              "bhkiik ba‘deen",
+              "nanti saya hubungi"
+            ],
+            [
+              "اِبْعَتْلِي الْعِنْوَان",
+              "ib‘atli el-‘inwaan",
+              "kirimi saya alamatnya"
+            ],
+            [
+              "تِكْرَم",
+              "tikram",
+              "siap, oke"
+            ],
+            [
+              "مَاشِي، تَمَام",
+              "maasyi, tamaam",
+              "oke, beres"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pertanyaan وَين صِرِت؟ harfiahnya \"kamu sudah jadi di mana\", dan ia cara paling wajar menanyakan posisi seseorang yang sedang dalam perjalanan. Jawaban yang lazim: قَرِيب (\"dekat\"), وَاصِل (\"hampir sampai\"), atau عَ الطَّرِيق (\"di jalan\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Singkatan yang akan kamu lihat di layar",
+          "items": [
+            "Huruf **٢٣٧** dan angka Latin dipakai bercampur; jangan bingung melihat keduanya dalam satu pesan.",
+            "Orang muda sering menulis bahasa Arab dengan huruf Latin — disebut *arabizi*: **3** untuk ع, **7** untuk ح, **2** untuk hamzah. Jadi كيفك ditulis *kifak* dan قهوة ditulis *2ahwe*.",
+            "Kata **تِكْرَم** *tikram* adalah balasan sopan untuk permintaan apa pun, sepadan dengan \"siap\". Bentuk panjangnya تِكْرَم عَيْنَك yang sudah kamu temui di unit 3."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Basa-basi yang menutup percakapan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Jawabannya"
+          ],
+          "rows": [
+            [
+              "سَلِّم عَ الْعِيلِة",
+              "sallim ‘a el-‘eele",
+              "salam untuk keluarga",
+              "بْيِسَلْمُوا"
+            ],
+            [
+              "دِير بَالَك عَ حَالَك",
+              "diir baalak ‘a haalak",
+              "jaga dirimu",
+              "وْإِنْتَ كَمَان"
+            ],
+            [
+              "اَللَّه يْخَلِّيك",
+              "alla ykhalliik",
+              "semoga Tuhan menjagamu",
+              "وْإِنْتَ كَمَان"
+            ],
+            [
+              "بْشُوفَك قَرِيبًا",
+              "bsyuufak ’ariiban",
+              "sampai jumpa lagi",
+              "إِنْ شَاءَ اللَّه"
+            ],
+            [
+              "اِشْتَقْنَالَك",
+              "isyta’naalak",
+              "kami kangen kamu",
+              "وْأَنَا أَكْتَر"
+            ],
+            [
+              "نَوَّرِت",
+              "nawwart",
+              "kehadiranmu menerangi",
+              "اَلنُّور نُورَك"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ucapan اِشْتَقْنَالَك (\"kami kangen kamu\") diucapkan kepada siapa pun yang tidak kamu temui beberapa waktu, termasuk kenalan yang tidak terlalu dekat. Ia bukan pernyataan perasaan yang berat, melainkan kesopanan yang hangat — dan jawabannya وْأَنَا أَكْتَر (\"saya lebih kangen lagi\")."
+        },
+        {
+          "type": "kotak",
+          "title": "Percakapan telepon jarang langsung ke pokoknya",
+          "items": [
+            "Urutannya hampir selalu: salam, tanya kabar, tanya kabar keluarga, baru pokok pembicaraan. Melompatinya terasa seperti tergesa-gesa atau ada masalah.",
+            "Menutup pun bertahap: يَلَّا، سَلِّم عَ الْعِيلِة، اَللَّه يْخَلِّيك، بْشُوفَك — biasanya tiga sampai empat kalimat sebelum benar-benar berhenti.",
+            "Kalau kamu buru-buru, katakan sejak awal: آسِف، أَنَا مِسْتَعْجِل شْوَي. Orang Syam akan mengerti dan langsung ke pokoknya."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "أَلُو",
+      "baca": "aloo",
+      "id": "halo (di telepon)"
+    },
+    {
+      "ar": "مَعَك",
+      "baca": "ma‘ak",
+      "id": "ini… bicara"
+    },
+    {
+      "ar": "بِزْعِجَك",
+      "baca": "biz‘ijak",
+      "id": "saya mengganggumu"
+    },
+    {
+      "ar": "بِتَّصِل",
+      "baca": "bittashil",
+      "id": "saya menelepon"
+    },
+    {
+      "ar": "بِبْعَت",
+      "baca": "bib‘at",
+      "id": "saya mengirim"
+    },
+    {
+      "ar": "رِسَالِة",
+      "baca": "risaale",
+      "id": "pesan"
+    },
+    {
+      "ar": "عِنْوَان",
+      "baca": "‘inwaan",
+      "id": "alamat"
+    },
+    {
+      "ar": "رَقَم",
+      "baca": "ra’m",
+      "id": "nomor"
+    },
+    {
+      "ar": "خَطّ",
+      "baca": "khathth",
+      "id": "sinyal, jalur"
+    },
+    {
+      "ar": "مَوْجُود",
+      "baca": "moojuud",
+      "id": "ada di tempat"
+    },
+    {
+      "ar": "غَلَط",
+      "baca": "ghalath",
+      "id": "salah"
+    },
+    {
+      "ar": "عَزِيمِة",
+      "baca": "‘aziime",
+      "id": "undangan, jamuan"
+    },
+    {
+      "ar": "بِعْزْمَك",
+      "baca": "bi‘zmak",
+      "id": "saya mengundangmu"
+    },
+    {
+      "ar": "شَرِّفْنَا",
+      "baca": "syarrifna",
+      "id": "muliakan kami dengan hadir"
+    },
+    {
+      "ar": "بْكِلّ سُرُور",
+      "baca": "bikill suruur",
+      "id": "dengan senang hati"
+    },
+    {
+      "ar": "اِرْتِبَاط",
+      "baca": "irtibaath",
+      "id": "acara lain, janji"
+    },
+    {
+      "ar": "حِلْوِيَّات",
+      "baca": "hilwiyyaat",
+      "id": "kue, manisan"
+    },
+    {
+      "ar": "مَا بِصِير",
+      "baca": "ma bishiir",
+      "id": "tidak pantas, tidak boleh"
+    },
+    {
+      "ar": "إِيدِي فَاضْيِة",
+      "baca": "iidi faadhye",
+      "id": "tangan kosong"
+    },
+    {
+      "ar": "وَين صِرِت؟",
+      "baca": "ween shirt?",
+      "id": "sudah sampai mana?"
+    },
+    {
+      "ar": "اِشْتَقْنَالَك",
+      "baca": "isyta’naalak",
+      "id": "kami kangen kamu"
+    },
+    {
+      "ar": "دِير بَالَك",
+      "baca": "diir baalak",
+      "id": "jaga dirimu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Halo, ini Budi.",
+        "Saya mengganggu?",
+        "Ibu saya mengundangmu makan malam.",
+        "Sayangnya saya tidak bisa datang.",
+        "Kirimi saya alamatnya.",
+        "Salam untuk keluarga."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "____ بُودِي؟ مَعَك سَامِر. (halo)",
+        "عَم ____؟ (saya mengganggumu)",
+        "لَلْأَسَف عِنْدِي ____ يَوْم الْجُمْعَة. (acara lain)",
+        "بْكِلّ ____، رَح إِجِي. (senang hati)",
+        "مَا ____ أَجِي إِيدِي فَاضْيِة. (pantas)",
+        "____ عَ الْعِيلِة. (salam)"
+      ]
+    },
+    {
+      "prompt": "Pasangkan situasi dengan kalimat yang tepat. Tulis kalimatnya.",
+      "items": [
+        "Kamu salah menelepon nomor orang",
+        "Orang yang kamu cari tidak ada di tempat",
+        "Kamu ingin menerima undangan dengan hangat",
+        "Kamu ingin menolak dengan alasan",
+        "Kamu terlambat sepuluh menit",
+        "Kamu ingin menutup telepon dengan sopan"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "بُودِي / مَعَك / أَلُو / ؟",
+        "بِزْعِجَك / عَم / ؟",
+        "عَ الْعَشَا / بْتِعْزْمَك / إِمِّي",
+        "فِيني / مَا / لَلْأَسَف",
+        "الْعِنْوَان / اِبْعَتْلِي",
+        "الْعِيلِة / عَ / سَلِّم"
+      ]
+    }
+  ],
+  "answers": [
+    "أَلُو، مَعَك بُودِي. — عَم بِزْعِجَك؟ — إِمِّي بْتِعْزْمَك عَ الْعَشَا. — لَلْأَسَف مَا فِيني إِجِي. — اِبْعَتْلِي الْعِنْوَان. — سَلِّم عَ الْعِيلِة.",
+    "أَلُو — بِزْعِجَك — اِرْتِبَاط — سُرُور — بِصِير — سَلِّم",
+    "آسِف، غَلَط — مِش مَوْجُود — بْكِلّ سُرُور — لَلْأَسَف عِنْدِي اِرْتِبَاط — مِتْأَخِّر عَشِر دَقَايِق — يَلَّا، بْشُوفَك",
+    "أَلُو، مَعَك بُودِي؟ — عَم بِزْعِجَك؟ — إِمِّي بْتِعْزْمَك عَ الْعَشَا. — لَلْأَسَف مَا فِيني. — اِبْعَتْلِي الْعِنْوَان. — سَلِّم عَ الْعِيلِة."
+  ],
+  "wave": "Tulis lima pesan WhatsApp dalam bahasa Arab Syam: satu menanyakan kabar, satu memberi tahu kamu terlambat, satu meminta alamat, satu menerima undangan, satu menolaknya."
+}

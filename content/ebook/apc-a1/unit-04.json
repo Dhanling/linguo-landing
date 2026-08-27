@@ -1,0 +1,601 @@
+{
+  "title": "‘eelti — keluarga dan milik",
+  "title_target": "عِيلْتِي",
+  "goal": "Bercerita tentang keluargamu, dan memasang akhiran milik yang menempel di kata benda — tulang punggung yang dipakai sampai unit terakhir.",
+  "bekal": [
+    "menyebut anggota keluarga dan menanyakan keluarga orang lain",
+    "memasang delapan akhiran milik pada kata benda apa pun",
+    "memakai تَبَع sebagai cara kedua menyatakan kepemilikan"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — صُوَر عَ التِّلِفُون",
+      "intro": "Laila memperlihatkan foto keluarganya di telepon, dan Budi membalas dengan fotonya sendiri.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُوف، هَيّ عِيلْتِي.",
+          "baca": "syuuf, hayy ‘eelti.",
+          "id": "Lihat, ini keluarga saya.",
+          "literal": "lihat, ini keluarga-saya."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا شَاءَ اللَّه. مِين هَاد؟",
+          "baca": "ma syaa alla. miin haad?",
+          "id": "Masyaallah. Ini siapa?",
+          "literal": "apa yang dikehendaki Tuhan. siapa ini?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هَاد بَيِّي. اِسْمُو خَالِد.",
+          "baca": "haad bayyi. ismo Khaalid.",
+          "id": "Ini ayah saya. Namanya Khalid.",
+          "literal": "ini ayah-saya. nama-dia Khalid."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْهَيّ إِمَّك؟",
+          "baca": "w hayy immak?",
+          "id": "Dan ini ibumu?",
+          "literal": "dan ini ibu-kamu?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "إِيه، إِمِّي. وْهَدُول خَيِّي وْأُخْتِي.",
+          "baca": "eeh, immi. w hadool khayyi w ukhti.",
+          "id": "Iya, ibu saya. Dan ini kakak saya dan adik perempuan saya.",
+          "literal": "iya, ibu-saya. dan ini-ini saudara-saya dan saudari-saya."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "قَدِّيش عُمْر أُخْتِك؟",
+          "baca": "’addeesy ‘umr ukhtik?",
+          "id": "Berapa umur adikmu?",
+          "literal": "berapa umur saudari-kamu?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "عُمْرَا سِتَّعْش. بْتِدْرُس بِالْمَدْرَسِة.",
+          "baca": "‘umra sitta‘sy. btidrus bil-madrase.",
+          "id": "Umurnya enam belas. Masih sekolah.",
+          "literal": "umur-dia enam-belas. dia-belajar di-sekolah."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْخَيِّك؟ شُو بْيِشْتِغِل؟",
+          "baca": "w khayyik? syu byisytighil?",
+          "id": "Kakakmu? Kerja apa?",
+          "literal": "dan saudara-kamu? apa dia-bekerja?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "دُكْتُور بِمَشْفَى بِعَمَّان.",
+          "baca": "duktuur bimasyfa bi-‘Ammaan.",
+          "id": "Dokter di rumah sakit di Amman.",
+          "literal": "dokter di-rumah-sakit di-Amman."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَنْجَدّ؟ عِيلْتِك كْبِيرِة.",
+          "baca": "‘anjadd? ‘eeltik kbiire.",
+          "id": "Serius? Keluargamu besar.",
+          "literal": "sungguh? keluarga-kamu besar."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وْعِيلْتَك إِنْتَ؟",
+          "baca": "w ‘eeltak inta?",
+          "id": "Kalau keluargamu?",
+          "literal": "dan keluarga-kamu kamu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "نِحْنَا تْلَاتِة بَسّ. أَنَا وْبَابَا وْمَامَا.",
+          "baca": "nihna tlaate bass. ana w baaba w maama.",
+          "id": "Kami cuma bertiga. Saya, ayah, dan ibu.",
+          "literal": "kami tiga saja. saya dan ayah dan ibu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "مَا عِنْدَك خَيّ وَلَا أُخْت؟",
+          "baca": "ma ‘indak khayy wala ukht?",
+          "id": "Kamu tidak punya saudara sama sekali?",
+          "literal": "tidak pada-kamu saudara dan-tidak saudari?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا، أَنَا وْحِيد. بَسّ عِنْدِي عَمّ وْعَمِّة كْتِير.",
+          "baca": "la’, ana wahiid. bass ‘indi ‘amm w ‘amme ktiir.",
+          "id": "Tidak, saya anak tunggal. Tapi paman dan bibi saya banyak.",
+          "literal": "tidak, saya sendiri. tapi pada-saya paman dan bibi banyak."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "هَيْك أَحْسَن! اَللَّه يْخَلِّيلَك يَاهُن.",
+          "baca": "heek ahsan! alla ykhalliilak yaahun.",
+          "id": "Justru lebih baik! Semoga mereka diberkahi umur.",
+          "literal": "begini lebih-baik! Tuhan semoga-menyisakan-untukmu mereka."
+        }
+      ],
+      "notes": [
+        "**Kepemilikan ditandai dengan akhiran yang menempel, bukan kata terpisah.** Bahasa Indonesia berkata \"rumah saya\" dengan dua kata; bahasa Arab menempelkannya jadi satu: بَيْتِي *beeti*. Delapan akhiran ini dipakai di seluruh sisa modul, jadi tabel di bawah adalah tabel terpenting sampai sejauh ini.",
+        "**Ayah dan ibu punya bentuk khusus waktu ditempeli.** Kata أَب berubah jadi بَيِّي *bayyi* (\"ayah saya\") dan بَيَّك *bayyak* (\"ayahmu\"); kata إِمّ jadi إِمِّي *immi* dan إِمَّك *immak*. Bentuk بَابَا dan مَامَا dari unit 2 tidak pernah ditempeli — ia sudah berarti \"ayahku\" dengan sendirinya.",
+        "**Umur dinyatakan dengan kata عُمْر, bukan dengan kata kerja.** Kalimat عُمْرَا سِتَّعْش secara harfiah berarti \"umur-dia enam belas\" — tidak ada kata \"adalah\" dan tidak ada kata \"tahun\". Menambahkan سِنِة justru terdengar seperti buku pelajaran.",
+        "**Kata خَيّ berarti saudara laki-laki, tanpa membedakan kakak dan adik.** Bahasa Arab Syam tidak punya kata terpisah untuk keduanya, persis seperti bahasa Inggris. Kalau perlu diperjelas, ditambahkan اَلْكْبِير (\"yang besar\") atau اَلزْغِير (\"yang kecil\").",
+        "**Ucapan مَا شَاءَ اللَّه bukan sekadar pujian, melainkan kesopanan.** Waktu melihat foto keluarga, anak, atau sesuatu yang bagus, orang Syam hampir selalu mengucapkannya — sebagian karena keyakinan tentang mata yang jahat, sebagian karena kebiasaan. Melewatkannya terasa dingin.",
+        "**Doa balasan panjang itu wajar dan tidak perlu dihafal seluruhnya.** Ucapan اَللَّه يْخَلِّيلَك يَاهُن kira-kira berarti \"semoga Tuhan menjaga mereka untukmu\". Kalau kamu belum sanggup, jawaban اَللَّه يْسَلِّمَك *alla ysallmak* selalu aman dan selalu pas."
+      ],
+      "grammars": [
+        {
+          "title": "Delapan akhiran milik",
+          "body": [
+            "Hafalkan tabel ini sampai keluar tanpa berpikir. Ia dipakai untuk kata benda apa pun, dan mulai unit 5 ia juga dipakai untuk menyatakan \"punya\" dan \"mau\"."
+          ],
+          "table": {
+            "head": [
+              "Milik",
+              "Akhiran",
+              "بَيْت (rumah)",
+              "Cara baca",
+              "اِسْم (nama)",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "saya",
+                "ـِي",
+                "بَيْتِي",
+                "beeti",
+                "اِسْمِي",
+                "ismi"
+              ],
+              [
+                "kamu lk",
+                "ـَك",
+                "بَيْتَك",
+                "beetak",
+                "اِسْمَك",
+                "ismak"
+              ],
+              [
+                "kamu pr",
+                "ـِك",
+                "بَيْتِك",
+                "beetik",
+                "اِسْمِك",
+                "ismik"
+              ],
+              [
+                "dia lk",
+                "ـو",
+                "بَيْتُو",
+                "beeto",
+                "اِسْمُو",
+                "ismo"
+              ],
+              [
+                "dia pr",
+                "ـَا",
+                "بَيْتَا",
+                "beeta",
+                "اِسْمَا",
+                "isma"
+              ],
+              [
+                "kami",
+                "ـْنَا",
+                "بَيْتْنَا",
+                "beetna",
+                "اِسِمْنَا",
+                "isimna"
+              ],
+              [
+                "kalian",
+                "ـْكُن",
+                "بَيْتْكُن",
+                "beetkun",
+                "اِسِمْكُن",
+                "isimkun"
+              ],
+              [
+                "mereka",
+                "ـْهُن",
+                "بَيْتْهُن",
+                "beethun",
+                "اِسِمْهُن",
+                "isimhun"
+              ]
+            ]
+          },
+          "after": [
+            "Kata benda perempuan yang berakhir ة mengubah ة-nya jadi ت sebelum akhiran menempel: سَيَّارَة menjadi سَيَّارْتِي *sayyaarti* (\"mobil saya\"), مَدْرَسِة menjadi مَدْرَسْتُو *madrasto* (\"sekolahnya\"). Aturan ini berlaku tanpa kecuali.",
+            "Di Lebanon kamu akan mendengar ـْكُن dan ـْهُن diucapkan lebih lembut, hampir seperti *-kon* dan *-hon*. Di Yordania ia sering menjadi ـْكُم dan ـْهُم seperti Fusha. Semuanya dimengerti di mana pun."
+          ]
+        },
+        {
+          "title": "Cara kedua: تَبَع",
+          "body": [
+            "Untuk benda yang bukan bagian dirimu — barang yang dibeli, dipinjam, atau kebetulan dipegang — orang Syam sering memakai kata تَبَع *taba‘* alih-alih menempelkan akhiran. Rasanya lebih longgar, dan untuk pemula ia jalan keluar yang aman waktu kamu lupa akhirannya."
+          ],
+          "table": {
+            "head": [
+              "Dengan akhiran",
+              "Dengan تَبَع",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "كْتَابِي",
+                "اَلْكْتَاب تَبَعِي",
+                "el-ktaab taba‘i",
+                "buku saya"
+              ],
+              [
+                "سَيَّارْتُو",
+                "اَلسَّيَّارَة تَبَعُو",
+                "es-sayyaara taba‘o",
+                "mobilnya"
+              ],
+              [
+                "شَنْطِتْهَا",
+                "اَلشَّنْطَة تَبَعَا",
+                "esy-syantha taba‘a",
+                "tasnya"
+              ],
+              [
+                "بَيْتْنَا",
+                "اَلْبَيْت تَبَعْنَا",
+                "el-beet taba‘na",
+                "rumah kami"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Ada batasnya, dan ini yang membedakan penutur yang wajar dari yang kaku: **تَبَع tidak dipakai untuk keluarga dan bagian tubuh.** Ungkapan اَلْأُخْت تَبَعِي terdengar aneh sampai lucu, seperti \"adik milik saya\". Untuk keluarga selalu pakai akhiran: أُخْتِي.",
+            "Bentuk perempuan تَبَعِة dan jamak تَبَعُون memang ada, tapi di percakapan sehari-hari تَبَع dipakai untuk semuanya. Jangan repot menghafal ketiganya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Anggota keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Bentuk \"saya\"",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "أَب",
+              "ab",
+              "ayah",
+              "بَيِّي",
+              "bayyi"
+            ],
+            [
+              "إِمّ",
+              "imm",
+              "ibu",
+              "إِمِّي",
+              "immi"
+            ],
+            [
+              "خَيّ",
+              "khayy",
+              "saudara laki-laki",
+              "خَيِّي",
+              "khayyi"
+            ],
+            [
+              "أُخْت",
+              "ukht",
+              "saudara perempuan",
+              "أُخْتِي",
+              "ukhti"
+            ],
+            [
+              "اِبْن",
+              "ibn",
+              "anak laki-laki",
+              "اِبْنِي",
+              "ibni"
+            ],
+            [
+              "بِنْت",
+              "bint",
+              "anak perempuan",
+              "بِنْتِي",
+              "binti"
+            ],
+            [
+              "جِدّ",
+              "jidd",
+              "kakek",
+              "جِدِّي",
+              "jiddi"
+            ],
+            [
+              "سِتّ",
+              "sitt",
+              "nenek",
+              "سِتِّي",
+              "sitti"
+            ],
+            [
+              "عَمّ",
+              "‘amm",
+              "paman dari ayah",
+              "عَمِّي",
+              "‘ammi"
+            ],
+            [
+              "خَال",
+              "khaal",
+              "paman dari ibu",
+              "خَالِي",
+              "khaali"
+            ],
+            [
+              "جَوْز",
+              "jooz",
+              "suami",
+              "جَوْزِي",
+              "joozi"
+            ],
+            [
+              "مَرَة",
+              "mara",
+              "istri",
+              "مَرْتِي",
+              "marti"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bahasa Arab membedakan paman dari jalur ayah dan dari jalur ibu — عَمّ dan خَال — dan bibinya pun begitu: عَمِّة dan خَالِة. Bahasa Indonesia memakai satu kata \"paman\" untuk keduanya, jadi ini pembagian yang harus kamu bangun baru. Kabar baiknya: orang Syam tidak akan salah paham kalau kamu keliru, mereka cuma akan membetulkannya sambil tersenyum."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Dua kata yang gampang membuat malu",
+          "items": [
+            "Kata سِتّ *sitt* berarti **nenek** — tapi juga dipakai sebagai sapaan hormat kepada perempuan dewasa, kira-kira seperti \"Bu\". Konteksnya jelas, jadi jangan takut memakainya.",
+            "Kata مَرَة *mara* berarti **istri** maupun **perempuan**, dan memanggil perempuan yang tak kamu kenal dengan kata itu terdengar kasar. Untuk menyapa, pakai مَدَام *madaam* atau آنِسِة *aanise* untuk yang muda."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bertanya tentang keluarga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "قَدِّيش عُمْرَك؟",
+              "’addeesy ‘umrak?",
+              "berapa umurmu?"
+            ],
+            [
+              "عِنْدَك خَيّ؟",
+              "‘indak khayy?",
+              "punya saudara laki-laki?"
+            ],
+            [
+              "قَدِّيش عِنْدَك إِخْوِة؟",
+              "’addeesy ‘indak ikhwe?",
+              "punya berapa saudara?"
+            ],
+            [
+              "إِنْتَ مْجَوَّز؟",
+              "inta mjawwaz?",
+              "kamu sudah menikah?"
+            ],
+            [
+              "عِنْدَك وْلَاد؟",
+              "‘indak wlaad?",
+              "punya anak?"
+            ],
+            [
+              "وَين سَاكْنِة عِيلْتَك؟",
+              "ween saakne ‘eeltak?",
+              "keluargamu tinggal di mana?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pertanyaan tentang pernikahan dan anak datang jauh lebih cepat di Syam daripada di Indonesia — sering di sepuluh menit pertama perkenalan, dan dari orang yang baru kamu temui. Itu bukan kelancangan, melainkan cara menempatkanmu dalam peta sosial. Jawaban singkat sudah cukup, dan kamu boleh membalikkan pertanyaannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Jawaban siap pakai untuk pertanyaan yang pasti datang",
+          "items": [
+            "Belum menikah: لِسَّا *lissa* — satu kata, sopan, dan menutup topik dengan halus.",
+            "Sudah menikah: إِيه، مْجَوَّز *eeh, mjawwaz* (laki-laki) atau مْجَوَّزَة *mjawwaze* (perempuan).",
+            "Belum punya anak: لِسَّا، إِنْ شَاءَ اللَّه *lissa, insyaalla* — jawaban yang paling sering terdengar dan paling aman."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "عِيلِة",
+      "baca": "‘eele",
+      "id": "keluarga"
+    },
+    {
+      "ar": "أَب / بَيِّي",
+      "baca": "ab / bayyi",
+      "id": "ayah / ayah saya"
+    },
+    {
+      "ar": "إِمّ / إِمِّي",
+      "baca": "imm / immi",
+      "id": "ibu / ibu saya"
+    },
+    {
+      "ar": "خَيّ",
+      "baca": "khayy",
+      "id": "saudara laki-laki"
+    },
+    {
+      "ar": "أُخْت",
+      "baca": "ukht",
+      "id": "saudara perempuan"
+    },
+    {
+      "ar": "اِبْن",
+      "baca": "ibn",
+      "id": "anak laki-laki"
+    },
+    {
+      "ar": "بِنْت",
+      "baca": "bint",
+      "id": "anak perempuan"
+    },
+    {
+      "ar": "جِدّ / سِتّ",
+      "baca": "jidd / sitt",
+      "id": "kakek / nenek"
+    },
+    {
+      "ar": "عَمّ / عَمِّة",
+      "baca": "‘amm / ‘amme",
+      "id": "paman / bibi dari ayah"
+    },
+    {
+      "ar": "خَال / خَالِة",
+      "baca": "khaal / khaale",
+      "id": "paman / bibi dari ibu"
+    },
+    {
+      "ar": "جَوْز / مَرَة",
+      "baca": "jooz / mara",
+      "id": "suami / istri"
+    },
+    {
+      "ar": "مْجَوَّز",
+      "baca": "mjawwaz",
+      "id": "sudah menikah"
+    },
+    {
+      "ar": "وْحِيد",
+      "baca": "wahiid",
+      "id": "anak tunggal, sendirian"
+    },
+    {
+      "ar": "عُمْر",
+      "baca": "‘umr",
+      "id": "umur"
+    },
+    {
+      "ar": "تَبَع",
+      "baca": "taba‘",
+      "id": "milik, punya"
+    },
+    {
+      "ar": "كْبِير / زْغِير",
+      "baca": "kbiir / zghiir",
+      "id": "besar / kecil"
+    },
+    {
+      "ar": "مَشْفَى",
+      "baca": "masyfa",
+      "id": "rumah sakit"
+    },
+    {
+      "ar": "مَدْرَسِة",
+      "baca": "madrase",
+      "id": "sekolah"
+    },
+    {
+      "ar": "لِسَّا",
+      "baca": "lissa",
+      "id": "belum, masih"
+    },
+    {
+      "ar": "شُوف",
+      "baca": "syuuf",
+      "id": "lihat! (perintah)"
+    },
+    {
+      "ar": "مَا شَاءَ اللَّه",
+      "baca": "ma syaa alla",
+      "id": "masyaallah"
+    },
+    {
+      "ar": "وَلَا",
+      "baca": "wala",
+      "id": "dan tidak, maupun"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Ini keluarga saya.",
+        "Nama ayah saya Khalid.",
+        "Berapa umur adik perempuanmu?",
+        "Saya tidak punya saudara laki-laki.",
+        "Rumah kami di Jakarta.",
+        "Kakaknya (lk) dokter di Amman."
+      ]
+    },
+    {
+      "prompt": "Pasang akhiran milik yang tepat.",
+      "items": [
+        "بَيْت____ بِجَاكَرْتَا. (saya)",
+        "شُو اِسْم____؟ (kamu, perempuan)",
+        "عِيلْت____ كْبِيرِة. (dia, laki-laki)",
+        "سَيَّارْت____ جْدِيدِة. (kami)",
+        "وَين مَدْرَسْت____؟ (dia, perempuan)",
+        "شَنْطِت____ عَ الطَّاوْلِة. (kalian)"
+      ]
+    },
+    {
+      "prompt": "Tulis hubungan keluarganya.",
+      "items": [
+        "أَب بَيِّي (ayah dari ayahmu)",
+        "إِمّ إِمَّك (ibu dari ibumu)",
+        "خَيّ بَيَّك (saudara laki-laki ayahmu)",
+        "أُخْت إِمَّك (saudara perempuan ibumu)",
+        "بِنْت عَمَّك (anak perempuan pamanmu)",
+        "اِبْن خَيَّك (anak laki-laki saudaramu)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "عِيلْتِي / هَيّ",
+        "عُمْرَك / قَدِّيش / ؟",
+        "خَيّ / مَا / عِنْدِي",
+        "بِعَمَّان / سَاكْنِة / عِيلْتُو",
+        "تَبَعِي / اَلْكْتَاب / هَاد",
+        "كْبِيرِة / كْتِير / عِيلْتِك"
+      ]
+    }
+  ],
+  "answers": [
+    "هَيّ عِيلْتِي. — اِسْم بَيِّي خَالِد. — قَدِّيش عُمْر أُخْتِك؟ — مَا عِنْدِي خَيّ. — بَيْتْنَا بِجَاكَرْتَا. — خَيُّو دُكْتُور بِعَمَّان.",
+    "بَيْتِي — اِسْمِك — عِيلْتُو — سَيَّارْتْنَا — مَدْرَسْتَا — شَنْطِتْكُن",
+    "جِدِّي — سِتِّي — عَمِّي — خَالْتِي — بِنْت عَمِّي — اِبْن خَيِّي",
+    "هَيّ عِيلْتِي. — قَدِّيش عُمْرَك؟ — مَا عِنْدِي خَيّ. — عِيلْتُو سَاكْنِة بِعَمَّان. — هَاد الْكْتَاب تَبَعِي. — عِيلْتِك كْبِيرِة كْتِير."
+  ],
+  "wave": "Gambar pohon keluargamu di selembar kertas dan tulis tiap orangnya dalam bahasa Arab Syam, lengkap dengan akhiran milik."
+}

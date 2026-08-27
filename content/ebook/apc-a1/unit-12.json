@@ -1,0 +1,591 @@
+{
+  "title": "Bil-math‘am — makan di luar",
+  "title_target": "بِالْمَطْعَم",
+  "goal": "Memesan makanan dari daftar menu, bertanya tentang bahan dan rasa, meminta bon, dan mengerti ucapan sopan seputar makan.",
+  "bekal": [
+    "memesan makanan lengkap dari pembuka sampai penutup",
+    "bertanya apa isi sebuah masakan dan apakah ia pedas atau halal",
+    "meminta bon dan membayar dengan ucapan yang tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — مَطْعَم شَعْبِي",
+      "intro": "Sebuah rumah makan sederhana di Damaskus. Budi dan Laila duduk dan pelayan datang membawa daftar menu.",
+      "lines": [
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَهْلًا وْسَهْلًا. تْفَضَّلُوا الْمِينْيُو.",
+          "baca": "ahlan w sahlan. tfaddhalu el-minyu.",
+          "id": "Selamat datang. Ini menunya.",
+          "literal": "keluarga dan mudah. silakan kalian menu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُكْرًا. بُودِي، جَرِّب الْمْسَخَّن.",
+          "baca": "syukran. Buudi, jarrib el-msakhkhan.",
+          "id": "Terima kasih. Budi, coba musakhan.",
+          "literal": "terima kasih. Budi, coba musakhan."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُو فِيه؟ حَارّ؟",
+          "baca": "syu fii? haarr?",
+          "id": "Isinya apa? Pedas?",
+          "literal": "apa di-dalamnya? panas?"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "لَا، مِش حَارّ. دَجَاج وْبَصَل وْسُمَّاق.",
+          "baca": "la’, misy haarr. dajaaj w bashal w summaa’.",
+          "id": "Tidak pedas. Ayam, bawang, dan sumak.",
+          "literal": "tidak, bukan panas. ayam dan bawang dan sumak."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب، بَدِّي وَاحِد. وْمَزَّة كَمَان.",
+          "baca": "thayyib, baddi waahid. w mazze kamaan.",
+          "id": "Baik, saya mau satu. Dan mezze juga.",
+          "literal": "baik, mau-saya satu. dan mezze juga."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَيّ مَزَّة؟ عِنَّا حُمُّص وْمْتَبَّل وْتَبُّولِة.",
+          "baca": "ayy mazze? ‘inna hummush w mtabbal w tabbuule.",
+          "id": "Mezze apa? Ada hummus, mutabbal, dan tabbouleh.",
+          "literal": "yang-mana mezze? pada-kami hummus dan mutabbal dan tabbouleh."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "حُمُّص وْتَبُّولِة، لَو سَمَحْت.",
+          "baca": "hummush w tabbuule, law samaht.",
+          "id": "Hummus dan tabbouleh, tolong.",
+          "literal": "hummus dan tabbouleh, kalau kamu-mengizinkan."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وْأَنَا بَدِّي فَتُّوش وْشِيش طَاوُوق.",
+          "baca": "w ana baddi fattuusy w syiisy thaawuu’.",
+          "id": "Saya mau fattoush dan shish tawook.",
+          "literal": "dan saya mau-saya fattoush dan shish tawook."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "وْتِشْرَبُوا شُو؟",
+          "baca": "w tisyrabu syu?",
+          "id": "Minumnya apa?",
+          "literal": "dan kalian-minum apa?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَيْرَان لَإِلِي، وْمَي لَلطَّاوْلِة.",
+          "baca": "‘ayraan la-ili, w mayy la-eth-thaawle.",
+          "id": "Ayran untuk saya, dan air untuk meja.",
+          "literal": "ayran untuk-saya, dan air untuk-meja."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "حَاضِر. عَشِر دَقَايِق.",
+          "baca": "haadhir. ‘asyr da’aayi’.",
+          "id": "Baik. Sepuluh menit.",
+          "literal": "siap. sepuluh menit."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَو سَمَحْت، اَلدَّجَاج حَلَال؟",
+          "baca": "law samaht, ed-dajaaj halaal?",
+          "id": "Permisi, ayamnya halal?",
+          "literal": "kalau kamu-mengizinkan, ayam halal?"
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَكِيد. كِلّ شِي عِنَّا حَلَال.",
+          "baca": "akiid. kill syi ‘inna halaal.",
+          "id": "Tentu. Semua di sini halal.",
+          "literal": "pasti. setiap sesuatu pada-kami halal."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "بَعِد الْأَكِل، لَو سَمَحْت الْحْسَاب.",
+          "baca": "ba‘d el-akl, law samaht el-hsaab.",
+          "id": "Sesudah makan, tolong bonnya.",
+          "literal": "sesudah makanan, kalau kamu-mengizinkan bon."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "عَ رَاسِي. صَحْتَين مُقَدَّمًا.",
+          "baca": "‘a raasi. sahteen mu’addaman.",
+          "id": "Siap. Selamat menikmati sebelumnya.",
+          "literal": "atas kepala-saya. dua-kesehatan sebelumnya."
+        }
+      ],
+      "notes": [
+        "**Kata مَزَّة adalah kunci makan di Syam.** Ia berarti sekumpulan hidangan kecil yang dimakan bersama sebelum atau menggantikan hidangan utama — hummus, mutabbal, tabbouleh, fattoush, dan puluhan lainnya. Memesan tiga sampai empat مَزَّة untuk berdua sepenuhnya normal.",
+        "**Pertanyaan شُو فِيه؟ berarti \"isinya apa?\".** Harfiahnya \"apa di dalamnya\", dan ia pertanyaan paling berguna di seluruh unit ini. Untuk hidangan perempuan, bentuknya شُو فِيهَا؟",
+        "**Kata حَارّ berarti pedas, bukan panas suhu.** Untuk panas suhu, pakai سُخْن. Makanan Syam umumnya **tidak pedas** — kalau kamu ingin pedas, minta شَطَّة (saus cabai) terpisah.",
+        "**Bertanya soal halal sepenuhnya wajar dan tidak menyinggung.** Di Suriah dan Yordania hampir semua daging halal; di Lebanon, tergantung daerahnya. Pertanyaan yang lebih tepat sasaran adalah فِي لَحِم خِنْزِير؟ (\"ada daging babi?\") daripada bertanya umum.",
+        "**Ucapan عَ رَاسِي harfiahnya \"di atas kepala saya\".** Ia berarti \"siap, dengan senang hati\", dan setara dengan حَاضِر tapi lebih hangat. Bersama مِن عْيُونِي dan تَكْرَم عَيْنَك, ketiganya adalah cara Syam mengatakan \"beres\".",
+        "**Kata لَإِلِي berarti \"untuk saya\".** Ia gabungan لَـ (untuk) dan akhiran milik. Bentuk lainnya: لَإِلَك، لَإِلِك، لَإِلُو، لَإِلَا. Kalau kamu merasa rumit, kamu boleh berkata أَنَا بَدِّي… saja."
+      ],
+      "grammars": [
+        {
+          "title": "Memesan: empat rumus",
+          "table": {
+            "head": [
+              "Rumus",
+              "Contoh",
+              "Cara baca",
+              "Arti",
+              "Nadanya"
+            ],
+            "rows": [
+              [
+                "بَدِّي +",
+                "بَدِّي حُمُّص",
+                "baddi hummush",
+                "saya mau hummus",
+                "biasa"
+              ],
+              [
+                "جِيبْلِي +",
+                "جِيبْلِي شَاي",
+                "jiibli syaay",
+                "bawakan saya teh",
+                "akrab"
+              ],
+              [
+                "مُمْكِن +",
+                "مُمْكِن مَي؟",
+                "mumkin mayy?",
+                "boleh minta air?",
+                "sopan"
+              ],
+              [
+                "لَو سَمَحْت +",
+                "لَو سَمَحْت الْحْسَاب",
+                "law samaht el-hsaab",
+                "tolong bonnya",
+                "sopan"
+              ],
+              [
+                "وَاحِد +",
+                "وَاحِد شِيش طَاوُوق",
+                "waahid syiisy thaawuu’",
+                "satu shish tawook",
+                "ringkas"
+              ],
+              [
+                "عَطِينِي +",
+                "عَطِينِي تْنَين",
+                "‘athiini tneen",
+                "beri saya dua",
+                "akrab"
+              ]
+            ]
+          },
+          "after": [
+            "Untuk menyebut jumlah porsi, angkanya diletakkan di depan tanpa kata bantu: تْلَات حُمُّص berarti \"tiga porsi hummus\". Tidak perlu kata seperti \"porsi\" atau \"piring\" kecuali kamu ingin menegaskan.",
+            "Untuk membatalkan atau mengubah pesanan: لَحْظَة، غَيَّرِت رَأْيِي *lahzha, ghayyart ra’yi* (\"sebentar, saya berubah pikiran\"). Ini sepenuhnya wajar selama pesanannya belum keluar."
+          ]
+        },
+        {
+          "title": "Kata sifat untuk makanan",
+          "table": {
+            "head": [
+              "Syam",
+              "Cara baca",
+              "Arti",
+              "Lawannya",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "طَيِّب",
+                "thayyib",
+                "enak",
+                "مِش طَيِّب",
+                "misy thayyib",
+                "tidak enak"
+              ],
+              [
+                "زَاكِي",
+                "zaaki",
+                "lezat",
+                "بَايِخ",
+                "baayikh",
+                "hambar"
+              ],
+              [
+                "حَارّ",
+                "haarr",
+                "pedas",
+                "مِش حَارّ",
+                "misy haarr",
+                "tidak pedas"
+              ],
+              [
+                "سُخْن",
+                "sukhn",
+                "panas",
+                "بَارِد",
+                "baarid",
+                "dingin"
+              ],
+              [
+                "حِلُو",
+                "hilu",
+                "manis",
+                "مَالِح",
+                "maalih",
+                "asin"
+              ],
+              [
+                "دَسِم",
+                "dasim",
+                "berlemak",
+                "خَفِيف",
+                "khafiif",
+                "ringan"
+              ],
+              [
+                "طَازَة",
+                "thaaza",
+                "segar",
+                "قَدِيم",
+                "’adiim",
+                "tidak segar"
+              ]
+            ]
+          },
+          "after": [
+            "Kata طَيِّب bekerja rangkap sekali lagi: sebagai kata sifat ia berarti \"enak\", sebagai kata seru ia berarti \"baiklah\" seperti di unit 3. Konteksnya selalu jelas.",
+            "Untuk memuji masakan seseorang, ucapan yang wajib adalah تِسْلَم إِيدَيْك *tislam iideek* (\"semoga tanganmu selamat\") kepada laki-laki atau تِسْلَم إِيدَيْكِي kepada perempuan. Ini bukan basa-basi — melewatkannya dianggap tidak tahu terima kasih."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Makanan yang akan kamu temui",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "حُمُّص",
+              "hummush",
+              "pasta kacang arab dengan tahini"
+            ],
+            [
+              "مْتَبَّل",
+              "mtabbal",
+              "pasta terung bakar"
+            ],
+            [
+              "تَبُّولِة",
+              "tabbuule",
+              "salad peterseli dan burghul"
+            ],
+            [
+              "فَتُّوش",
+              "fattuusy",
+              "salad sayur dengan roti goreng"
+            ],
+            [
+              "وَرَق عِنَب",
+              "wara’ ‘inab",
+              "daun anggur isi nasi"
+            ],
+            [
+              "كِبِّة",
+              "kibbe",
+              "bola burghul isi daging"
+            ],
+            [
+              "شِيش طَاوُوق",
+              "syiisy thaawuu’",
+              "sate ayam bumbu yoghurt"
+            ],
+            [
+              "مْسَخَّن",
+              "msakhkhan",
+              "ayam sumak di atas roti"
+            ],
+            [
+              "مَنْسَف",
+              "mansaf",
+              "hidangan nasi dan domba khas Yordania"
+            ],
+            [
+              "شَاوَرْمَا",
+              "syaawarma",
+              "daging putar dalam roti"
+            ],
+            [
+              "فَلَافِل",
+              "falaafil",
+              "gorengan kacang arab"
+            ],
+            [
+              "مَنَاقِيش",
+              "manaa’iisy",
+              "roti pipih dengan zaatar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Hidangan مَنْسَف punya kedudukan khusus di Yordania: ia bukan sekadar makanan melainkan tanda penghormatan, disajikan pada acara besar dan dimakan bersama dari satu nampan. Kalau kamu diundang ke مَنْسَف, itu undangan yang tidak sepatutnya ditolak."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang mengejutkan pelajar Indonesia",
+          "items": [
+            "**Nasi bukan makanan pokok setiap kali makan.** Roti (خُبْز) yang mengambil peran itu, dan ia disajikan di tiap hidangan tanpa perlu dipesan.",
+            "**Makan dengan tangan kanan sepenuhnya normal**, terutama untuk mezze dan roti. Sendok garpu tersedia, tapi tidak wajib.",
+            "**Porsinya besar dan tuan rumah akan terus menambah.** Ucapan صَحْتَين dari mereka dijawab dengan عَ قَلْبَك, dan untuk berhenti katakan خَلَص، شَبْعِت، اَللَّه يْخَلِّيك."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Membayar dan berterima kasih",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "لَو سَمَحْت الْحْسَاب",
+              "law samaht el-hsaab",
+              "tolong bonnya"
+            ],
+            [
+              "قَدِّيش الْحْسَاب؟",
+              "’addeesy el-hsaab?",
+              "totalnya berapa?"
+            ],
+            [
+              "بَقْبَل كَرْت؟",
+              "ba’bal kart?",
+              "terima kartu?"
+            ],
+            [
+              "اَلْبَاقِي إِلَك",
+              "el-baa’i ilak",
+              "kembaliannya buat kamu"
+            ],
+            [
+              "تِسْلَم إِيدَيْك",
+              "tislam iideek",
+              "masakannya enak sekali"
+            ],
+            [
+              "اَلْأَكِل كَان زَاكِي",
+              "el-akl kaan zaaki",
+              "makanannya lezat"
+            ],
+            [
+              "شَبْعِت، يِسْلَمُوا",
+              "syabi‘t, yislamu",
+              "saya kenyang, terima kasih"
+            ],
+            [
+              "دَايْمًا",
+              "daayman",
+              "balasan untuk pujian makanan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Jawaban دَايْمًا harfiahnya \"selalu\", dan diucapkan tuan rumah ketika tamunya memuji makanan — kira-kira berarti \"semoga meja ini selalu terisi\". Bentuk lengkapnya سُفْرَة دَايْمِة, dan mendengarnya adalah tanda kamu diterima dengan baik."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Siapa yang membayar",
+          "items": [
+            "Di Syam, orang yang mengajak biasanya membayar untuk semua, dan berdebat untuk membayar adalah bagian dari kesopanan yang diharapkan.",
+            "Kalau kamu ingin sungguh-sungguh membayar, katakan lebih awal kepada pelayan, bukan di meja. Kalau kalah berdebat, terima dengan اَللَّه يْخَلِّيك dan tawarkan untuk membayar lain kali: اَلْمَرَّة الْجَايِة عَلَيِّي.",
+            "Uang tip sekitar sepuluh persen lazim di restoran, dan tidak diharapkan di kedai kecil atau warung jalanan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مَطْعَم",
+      "baca": "math‘am",
+      "id": "restoran"
+    },
+    {
+      "ar": "مِينْيُو",
+      "baca": "minyu",
+      "id": "daftar menu"
+    },
+    {
+      "ar": "مَزَّة",
+      "baca": "mazze",
+      "id": "hidangan kecil"
+    },
+    {
+      "ar": "أَكِل",
+      "baca": "akl",
+      "id": "makanan"
+    },
+    {
+      "ar": "حْسَاب",
+      "baca": "hsaab",
+      "id": "bon, tagihan"
+    },
+    {
+      "ar": "طَيِّب / زَاكِي",
+      "baca": "thayyib / zaaki",
+      "id": "enak / lezat"
+    },
+    {
+      "ar": "حَارّ",
+      "baca": "haarr",
+      "id": "pedas"
+    },
+    {
+      "ar": "مَالِح",
+      "baca": "maalih",
+      "id": "asin"
+    },
+    {
+      "ar": "حَلَال",
+      "baca": "halaal",
+      "id": "halal"
+    },
+    {
+      "ar": "لَحْمِة",
+      "baca": "lahme",
+      "id": "daging"
+    },
+    {
+      "ar": "دَجَاج",
+      "baca": "dajaaj",
+      "id": "ayam"
+    },
+    {
+      "ar": "سَمَك",
+      "baca": "samak",
+      "id": "ikan"
+    },
+    {
+      "ar": "خُضْرَة",
+      "baca": "khudhra",
+      "id": "sayur"
+    },
+    {
+      "ar": "رِزّ",
+      "baca": "rizz",
+      "id": "nasi"
+    },
+    {
+      "ar": "شَطَّة",
+      "baca": "syattha",
+      "id": "saus cabai"
+    },
+    {
+      "ar": "عَيْرَان",
+      "baca": "‘ayraan",
+      "id": "minuman yoghurt asin"
+    },
+    {
+      "ar": "حَاضِر",
+      "baca": "haadhir",
+      "id": "siap, baik"
+    },
+    {
+      "ar": "عَ رَاسِي",
+      "baca": "‘a raasi",
+      "id": "dengan senang hati"
+    },
+    {
+      "ar": "تِسْلَم إِيدَيْك",
+      "baca": "tislam iideek",
+      "id": "masakanmu enak"
+    },
+    {
+      "ar": "شَبْعِت",
+      "baca": "syabi‘t",
+      "id": "saya kenyang"
+    },
+    {
+      "ar": "طَازَة",
+      "baca": "thaaza",
+      "id": "segar"
+    },
+    {
+      "ar": "مُقَدَّمًا",
+      "baca": "mu’addaman",
+      "id": "sebelumnya, di muka"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Isinya apa? Pedas?",
+        "Saya mau hummus dan tabbouleh.",
+        "Ayamnya halal?",
+        "Tolong bonnya.",
+        "Makanannya enak sekali.",
+        "Saya kenyang, terima kasih."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata yang tepat.",
+      "items": [
+        "لَو سَمَحْت، اَلْ____. (bon)",
+        "هَاد الْأَكِل ____ كْتِير. (enak)",
+        "مِش ____، مَا بْحِبّ الشَّطَّة. (pedas)",
+        "بَدِّي ____ لَو سَمَحْت. (segelas air)",
+        "____ إِيدَيْك، كَان زَاكِي. (semoga selamat)",
+        "اَلْمَي ____، بَدِّي وَحْدِة بَارْدِة. (panas)"
+      ]
+    },
+    {
+      "prompt": "Pasangkan dengan hidangannya. Tulis nama hidangannya dalam bahasa Arab.",
+      "items": [
+        "Pasta kacang arab dengan tahini",
+        "Salad peterseli dan burghul",
+        "Sate ayam bumbu yoghurt",
+        "Gorengan kacang arab",
+        "Daging putar dalam roti",
+        "Hidangan nasi dan domba khas Yordania"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "فِيه / شُو / ؟",
+        "حُمُّص / بَدِّي / وْتَبُّولِة",
+        "حَلَال / اَلدَّجَاج / ؟",
+        "الْحْسَاب / لَو سَمَحْت",
+        "زَاكِي / كَان / اَلْأَكِل",
+        "يِسْلَمُوا / شَبْعِت / ،"
+      ]
+    }
+  ],
+  "answers": [
+    "شُو فِيه؟ حَارّ؟ — بَدِّي حُمُّص وْتَبُّولِة. — اَلدَّجَاج حَلَال؟ — لَو سَمَحْت الْحْسَاب. — اَلْأَكِل زَاكِي كْتِير. — شَبْعِت، يِسْلَمُوا.",
+    "حْسَاب — طَيِّب — حَارّ — كُبَّايِة مَي — تِسْلَم — سُخْنِة",
+    "حُمُّص — تَبُّولِة — شِيش طَاوُوق — فَلَافِل — شَاوَرْمَا — مَنْسَف",
+    "شُو فِيه؟ — بَدِّي حُمُّص وْتَبُّولِة. — اَلدَّجَاج حَلَال؟ — لَو سَمَحْت الْحْسَاب. — اَلْأَكِل كَان زَاكِي. — شَبْعِت، يِسْلَمُوا."
+  ],
+  "wave": "Susun pesanan lengkap untuk dua orang — dua mezze, dua hidangan utama, dua minuman — lalu ucapkan seluruhnya dalam satu tarikan napas."
+}

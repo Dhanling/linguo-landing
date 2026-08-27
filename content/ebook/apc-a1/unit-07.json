@@ -1,0 +1,620 @@
+{
+  "title": "Baddi — mau, dan secangkir kopi",
+  "title_target": "بَدِّي",
+  "goal": "Menyatakan mau dan tidak mau, memesan kopi dan teh dengan benar, dan mengerti kenapa بَدِّي bukan kata kerja walaupun artinya seperti kata kerja.",
+  "bekal": [
+    "memasang بَدّ dengan delapan akhiran milik",
+    "memesan minuman dengan takaran gula yang tepat",
+    "meminta sesuatu dengan sopan tanpa terdengar memerintah"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِالْقَهْوِة",
+      "intro": "Sebuah kedai kopi lama di Damaskus, tengah hari. Budi datang bersama Samer dan seorang pelayan menghampiri meja.",
+      "lines": [
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "أَهْلَين. شُو بَدْكُن تِشْرَبُوا؟",
+          "baca": "ahleen. syu badkun tisyrabu?",
+          "id": "Selamat datang. Mau minum apa?",
+          "literal": "dua-keluarga. apa mau-kalian kalian-minum?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "أَنَا بَدِّي قَهْوِة عَ الرِّيحَة.",
+          "baca": "ana baddi ’ahwe ‘a er-riiha.",
+          "id": "Saya mau kopi tanpa gula.",
+          "literal": "saya mau-saya kopi atas aroma."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُو يَعْنِي عَ الرِّيحَة؟",
+          "baca": "syu ya‘ni ‘a er-riiha?",
+          "id": "Maksudnya apa \"‘a er-riiha\"?",
+          "literal": "apa maksudnya atas aroma?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "يَعْنِي سُكَّر شْوَي كْتِير. مِش سَادَة.",
+          "baca": "ya‘ni sikkar syway ktiir. misy saade.",
+          "id": "Maksudnya gulanya sedikit sekali. Bukan tanpa gula sama sekali.",
+          "literal": "maksudnya gula sedikit banyak. bukan polos."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب، أَنَا بَدِّي وَحْدِة وَسَط.",
+          "baca": "thayyib, ana baddi wahde wasath.",
+          "id": "Baik, saya mau yang gulanya sedang.",
+          "literal": "baik, saya mau-saya satu tengah."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "مَاشِي. بَدْكُن شِي مَعَا؟",
+          "baca": "maasyi. badkun syi ma‘a?",
+          "id": "Baik. Mau sesuatu bersamanya?",
+          "literal": "berjalan. mau-kalian sesuatu bersama-dia?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "جِيبْلْنَا مَي كَمَان، لَو سَمَحْت.",
+          "baca": "jiiblna mayy kamaan, law samaht.",
+          "id": "Bawakan kami air juga, tolong.",
+          "literal": "bawa-untuk-kami air juga, kalau kamu-mengizinkan."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "مِن عْيُونِي. دَقِيقْتَين.",
+          "baca": "min ‘yuuni. da’ii’teen.",
+          "id": "Baik. Dua menit.",
+          "literal": "dari mata-saya. dua-menit."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "سَامِر، مَا بَدَّك تَاكُل شِي؟",
+          "baca": "Saamir, ma baddak taakul syi?",
+          "id": "Samer, kamu tidak mau makan sesuatu?",
+          "literal": "Samer, tidak mau-kamu kamu-makan sesuatu?"
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "لَا، شَبْعَان. أَكَلِت قَبِل شْوَي.",
+          "baca": "la’, syab‘aan. akalt ’abl syway.",
+          "id": "Tidak, sudah kenyang. Saya makan tadi.",
+          "literal": "tidak, kenyang. saya-makan sebelum sedikit."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْأَنَا جُوعَان. بَدِّي شِي حِلُو.",
+          "baca": "w ana juu‘aan. baddi syi hilu.",
+          "id": "Saya lapar. Saya mau yang manis-manis.",
+          "literal": "dan saya lapar. mau-saya sesuatu manis."
+        },
+        {
+          "speaker": "سَامِر:",
+          "text": "جَرِّب الْبَقْلَاوَة. أَحْسَن شِي هُون.",
+          "baca": "jarrib el-ba’laawa. ahsan syi hoon.",
+          "id": "Coba baklava. Paling enak di sini.",
+          "literal": "coba baklava. terbaik sesuatu di-sini."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "يَلَّا. لَو سَمَحْت، صَحِن بَقْلَاوَة.",
+          "baca": "yalla. law samaht, sahn ba’laawa.",
+          "id": "Oke. Tolong, satu piring baklava.",
+          "literal": "ayo. kalau kamu-mengizinkan, piring baklava."
+        },
+        {
+          "speaker": "اَلْجَرْسُون:",
+          "text": "صَحْتَين. تْفَضَّلُوا.",
+          "baca": "sahteen. tfaddhalu.",
+          "id": "Selamat menikmati. Silakan.",
+          "literal": "dua-kesehatan. silakan kalian."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "عَ قَلْبَك. يِسْلَمُوا.",
+          "baca": "‘a ’albak. yislamu.",
+          "id": "Terima kasih.",
+          "literal": "atas hatimu. semoga-selamat."
+        }
+      ],
+      "notes": [
+        "**Kata بَدِّي bukan kata kerja, dan itu bukan kerewelan istilah.** Bentuk aslinya adalah بَدّ ditambah akhiran milik yang sudah kamu hafal di unit 4 — persis pola عِنْدِي. Karena itu ia tidak punya bentuk lampau, tidak bisa diberi awalan b-, dan penyangkalnya مَا — misalnya مَا بَدِّي.",
+        "**Sesudah بَدِّي, kata kerjanya kehilangan awalan b-.** Bentuk \"saya minum\" adalah بِشْرَب, tapi \"saya mau minum\" adalah بَدِّي إِشْرَب — tanpa b. Aturan ini juga berlaku sesudah لَازِم dan مُمْكِن di unit 15, dan sesudah رَح di unit 14. Ingat pagarnya sekarang, dan tiga unit berikutnya jadi mudah.",
+        "**Kalau yang kamu mau adalah benda, bukan perbuatan, langsung sebut bendanya.** Ungkapan بَدِّي قَهْوِة sudah lengkap dan benar. Tidak perlu kata kerja sama sekali, persis seperti bahasa Indonesia \"saya mau kopi\".",
+        "**Kopi Arab punya takaran gula yang harus kamu sebutkan.** Pilihannya empat: سَادَة (tanpa gula sama sekali), عَ الرِّيحَة (sedikit sekali), وَسَط (sedang), dan حِلْوِة (manis). Kalau kamu tidak menyebutkan apa pun, kamu akan diberi وَسَط — dan itu selalu aman.",
+        "**Ungkapan لَو سَمَحْت adalah kata \"tolong\" yang paling aman.** Harfiahnya \"kalau kamu mengizinkan\". Bentuk مِن فَضْلَك juga benar tapi sedikit lebih resmi. Kepada perempuan keduanya berubah: لَو سَمَحْتِي dan مِن فَضْلِك.",
+        "**Ucapan صَحْتَين diucapkan kepada orang yang sedang atau akan makan.** Harfiahnya \"dua kesehatan\". Jawabannya عَ قَلْبَك (\"atas hatimu\") atau, kalau kamu sedang makan bersama, تِسْلَم إِيدَيْك kepada yang memasaknya."
+      ],
+      "grammars": [
+        {
+          "title": "Delapan bentuk بَدّ",
+          "table": {
+            "head": [
+              "Orang",
+              "Bentuk",
+              "Cara baca",
+              "Penyangkalnya",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "ana",
+                "بَدِّي",
+                "baddi",
+                "مَا بَدِّي",
+                "بَدِّي مَي",
+                "saya mau air"
+              ],
+              [
+                "inta",
+                "بَدَّك",
+                "baddak",
+                "مَا بَدَّك",
+                "بَدَّك شِي؟",
+                "kamu mau sesuatu?"
+              ],
+              [
+                "inti",
+                "بَدِّك",
+                "baddik",
+                "مَا بَدِّك",
+                "بَدِّك قَهْوِة؟",
+                "kamu mau kopi?"
+              ],
+              [
+                "huwwe",
+                "بَدُّو",
+                "baddo",
+                "مَا بَدُّو",
+                "بَدُّو يْنَام",
+                "dia mau tidur"
+              ],
+              [
+                "hiyye",
+                "بَدَّا",
+                "badda",
+                "مَا بَدَّا",
+                "بَدَّا تْرُوح",
+                "dia mau pergi"
+              ],
+              [
+                "nihna",
+                "بَدْنَا",
+                "badna",
+                "مَا بَدْنَا",
+                "بَدْنَا نَاكُل",
+                "kami mau makan"
+              ],
+              [
+                "intu",
+                "بَدْكُن",
+                "badkun",
+                "مَا بَدْكُن",
+                "بَدْكُن تِشْرَبُوا؟",
+                "kalian mau minum?"
+              ],
+              [
+                "hinne",
+                "بَدْهُن",
+                "badhun",
+                "مَا بَدْهُن",
+                "بَدْهُن يِجُوا",
+                "mereka mau datang"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan pasangan yang berbahaya: **بَدَّك** (kamu laki-laki) dan **بَدِّك** (kamu perempuan). Bedanya cuma satu vokal, persis seperti كِيفَك dan كِيفِك di unit 1. Ini pola yang berulang di seluruh bahasa Arab Syam.",
+            "Di Yordania dan Palestina bentuknya sedikit berbeda: بِدِّي *biddi* dengan i, bukan a. Dua-duanya dimengerti di mana pun, dan kamu boleh memilih yang mana saja asal konsisten."
+          ]
+        },
+        {
+          "title": "Kata kerja telanjang sesudah بَدِّي",
+          "body": [
+            "Bentuk kata kerja yang muncul sesudah بَدِّي disebut bentuk telanjang — tanpa awalan b-. Ia adalah bentuk dasar yang akan kamu pakai lagi sesudah رَح، لَازِم، مُمْكِن، dan فِيني. Tabel ini memakai kata kerja شِرِب (minum)."
+          ],
+          "table": {
+            "head": [
+              "Orang",
+              "Sesudah بَدِّي",
+              "Cara baca",
+              "Kalimat utuh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "ana",
+                "إِشْرَب",
+                "isyrab",
+                "بَدِّي إِشْرَب",
+                "saya mau minum"
+              ],
+              [
+                "inta",
+                "تِشْرَب",
+                "tisyrab",
+                "بَدَّك تِشْرَب",
+                "kamu mau minum"
+              ],
+              [
+                "inti",
+                "تِشْرْبِي",
+                "tisyrbi",
+                "بَدِّك تِشْرْبِي",
+                "kamu mau minum"
+              ],
+              [
+                "huwwe",
+                "يِشْرَب",
+                "yisyrab",
+                "بَدُّو يِشْرَب",
+                "dia mau minum"
+              ],
+              [
+                "hiyye",
+                "تِشْرَب",
+                "tisyrab",
+                "بَدَّا تِشْرَب",
+                "dia mau minum"
+              ],
+              [
+                "nihna",
+                "نِشْرَب",
+                "nisyrab",
+                "بَدْنَا نِشْرَب",
+                "kami mau minum"
+              ],
+              [
+                "intu",
+                "تِشْرْبُوا",
+                "tisyrbu",
+                "بَدْكُن تِشْرْبُوا",
+                "kalian mau minum"
+              ],
+              [
+                "hinne",
+                "يِشْرْبُوا",
+                "yisyrbu",
+                "بَدْهُن يِشْرْبُوا",
+                "mereka mau minum"
+              ]
+            ]
+          },
+          "after": [
+            "Aturannya betul-betul cuma satu: **buang huruf b di depan.** Bentuk بِشْرَب menjadi إِشْرَب · بْتِشْرَب menjadi تِشْرَب · بْيِشْرَب menjadi يِشْرَب. Kalau kamu sudah hafal bentuk ber-b dari unit 8, kamu sudah otomatis hafal yang ini.",
+            "⚠️ Kekeliruan nomor satu pelajar Indonesia di titik ini adalah mengatakan بَدِّي بِشْرَب dengan b yang ikut terbawa. Ia langsung terdengar salah — kira-kira seperti \"saya mau meminumkan\" dalam bahasa Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Memesan minuman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Syam",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "قَهْوِة",
+              "’ahwe",
+              "kopi Arab",
+              "نِسْكَافِيه",
+              "niskaafiih",
+              "kopi instan"
+            ],
+            [
+              "شَاي",
+              "syaay",
+              "teh",
+              "شَاي بِنَعْنَع",
+              "syaay bina‘na‘",
+              "teh mint"
+            ],
+            [
+              "عَصِير",
+              "‘ashiir",
+              "jus",
+              "لِيمُونَادَة",
+              "liimuunaada",
+              "limun"
+            ],
+            [
+              "مَي",
+              "mayy",
+              "air",
+              "مَي مَعْدَنِيِّة",
+              "mayy ma‘daniyye",
+              "air mineral"
+            ],
+            [
+              "سَحْلَب",
+              "sahlab",
+              "sahlab hangat",
+              "بُوظَة",
+              "buuzha",
+              "es krim"
+            ],
+            [
+              "سَادَة",
+              "saade",
+              "tanpa gula",
+              "حِلْوِة",
+              "hilwe",
+              "manis"
+            ],
+            [
+              "عَ الرِّيحَة",
+              "‘a er-riiha",
+              "gula sedikit sekali",
+              "وَسَط",
+              "wasath",
+              "gula sedang"
+            ],
+            [
+              "كُبَّايِة",
+              "kubbaaye",
+              "gelas",
+              "فِنْجَان",
+              "finjaan",
+              "cangkir kecil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kopi yang disebut قَهْوِة tanpa keterangan lain selalu berarti kopi Arab yang diseduh dengan bubuknya, bukan kopi saring. Kalau kamu mau kopi ala Eropa, sebutkan namanya: كَابُتْشِينُو، إِسْبْرِيسُو، أَمِيرِيكَانُو. Semuanya dimengerti di seluruh Syam."
+        },
+        {
+          "type": "kotak",
+          "title": "⚠️ Kopi di Syam bukan sekadar minuman",
+          "items": [
+            "Menolak kopi yang ditawarkan tuan rumah dianggap menolak keramahannya. Kalau kamu benar-benar tak sanggup, jawab dengan mendoakan: اَللَّه يْخَلِّيك، بَسّ لِسَّا شَارِب.",
+            "Kopi pahit tanpa gula (سَادَة) punya makna khusus dalam upacara duka dan lamaran. Di kedai biasa ia cuma pilihan rasa, jadi jangan cemas memesannya.",
+            "Fungsi تْفَضَّل dan صَحْتَين berlaku juga untuk minuman, bukan cuma makanan. Kalau seseorang menyodorkan gelas kepadamu, jawaban aman selalu يِسْلَمُوا."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Meminta dengan sopan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Syam",
+            "Cara baca",
+            "Arti",
+            "Nadanya"
+          ],
+          "rows": [
+            [
+              "لَو سَمَحْت",
+              "law samaht",
+              "tolong",
+              "paling aman"
+            ],
+            [
+              "مِن فَضْلَك",
+              "min fadhlak",
+              "tolong",
+              "agak resmi"
+            ],
+            [
+              "مُمْكِن…؟",
+              "mumkin…?",
+              "boleh…?",
+              "sopan, bertanya"
+            ],
+            [
+              "بَدِّي…",
+              "baddi…",
+              "saya mau…",
+              "biasa, netral"
+            ],
+            [
+              "جِيبْلِي…",
+              "jiibli…",
+              "bawakan saya…",
+              "akrab, di kedai"
+            ],
+            [
+              "إِذَا بْتِسْمَح",
+              "idza btismah",
+              "kalau berkenan",
+              "sangat sopan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bentuk جِيبْلِي terdengar seperti perintah kalau diterjemahkan harfiah, tapi di kedai dan restoran ia sepenuhnya wajar dan tidak kasar — asal disertai لَو سَمَحْت. Sebaliknya, memakainya kepada orang yang bukan pelayan terdengar tidak sopan."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kata sifat keadaan yang akan sering kamu pakai",
+          "items": [
+            "Kata جُوعَان *juu‘aan* berarti lapar, dan شَبْعَان *syab‘aan* berarti kenyang. Bentuk perempuannya جُوعَانِة dan شَبْعَانِة.",
+            "Kata عَطْشَان *‘athsyaan* berarti haus, dan تَعْبَان *ta‘baan* berarti capek. Keduanya berpola sama.",
+            "⚠️ Semua kata ini adalah **kata sifat**, bukan kata kerja — jadi penyangkalnya مِش, bukan مَا — misalnya أَنَا مِش جُوعَان."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "بَدِّي",
+      "baca": "baddi",
+      "id": "saya mau"
+    },
+    {
+      "ar": "مَا بَدِّي",
+      "baca": "ma baddi",
+      "id": "saya tidak mau"
+    },
+    {
+      "ar": "قَهْوِة",
+      "baca": "’ahwe",
+      "id": "kopi"
+    },
+    {
+      "ar": "شَاي",
+      "baca": "syaay",
+      "id": "teh"
+    },
+    {
+      "ar": "عَصِير",
+      "baca": "‘ashiir",
+      "id": "jus"
+    },
+    {
+      "ar": "سُكَّر",
+      "baca": "sikkar",
+      "id": "gula"
+    },
+    {
+      "ar": "سَادَة",
+      "baca": "saade",
+      "id": "tanpa gula"
+    },
+    {
+      "ar": "وَسَط",
+      "baca": "wasath",
+      "id": "sedang, tengah"
+    },
+    {
+      "ar": "كُبَّايِة",
+      "baca": "kubbaaye",
+      "id": "gelas"
+    },
+    {
+      "ar": "صَحِن",
+      "baca": "sahn",
+      "id": "piring"
+    },
+    {
+      "ar": "لَو سَمَحْت",
+      "baca": "law samaht",
+      "id": "tolong"
+    },
+    {
+      "ar": "مِن فَضْلَك",
+      "baca": "min fadhlak",
+      "id": "tolong (resmi)"
+    },
+    {
+      "ar": "جِيبْلِي",
+      "baca": "jiibli",
+      "id": "bawakan saya"
+    },
+    {
+      "ar": "جُوعَان",
+      "baca": "juu‘aan",
+      "id": "lapar"
+    },
+    {
+      "ar": "شَبْعَان",
+      "baca": "syab‘aan",
+      "id": "kenyang"
+    },
+    {
+      "ar": "عَطْشَان",
+      "baca": "‘athsyaan",
+      "id": "haus"
+    },
+    {
+      "ar": "تَعْبَان",
+      "baca": "ta‘baan",
+      "id": "capek"
+    },
+    {
+      "ar": "بَقْلَاوَة",
+      "baca": "ba’laawa",
+      "id": "baklava"
+    },
+    {
+      "ar": "جَرِّب",
+      "baca": "jarrib",
+      "id": "coba! (perintah)"
+    },
+    {
+      "ar": "صَحْتَين",
+      "baca": "sahteen",
+      "id": "selamat menikmati"
+    },
+    {
+      "ar": "يَعْنِي",
+      "baca": "ya‘ni",
+      "id": "maksudnya, yaitu"
+    },
+    {
+      "ar": "قَبِل شْوَي",
+      "baca": "’abl syway",
+      "id": "tadi, sebentar yang lalu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Saya mau kopi tanpa gula.",
+        "Kamu (pr) mau minum apa?",
+        "Kami tidak mau makan sekarang.",
+        "Tolong, satu gelas air.",
+        "Dia (lk) mau tidur.",
+        "Saya lapar sekali."
+      ]
+    },
+    {
+      "prompt": "Pasang bentuk بَدّ yang tepat.",
+      "items": [
+        "____ قَهْوِة وَسَط. (saya)",
+        "____ شِي تَاكُل؟ (kamu laki-laki)",
+        "مَا ____ يْرُوح هَلَّق. (dia laki-laki)",
+        "____ نِشْرَب شَاي. (kami)",
+        "شُو ____ تِشْرَبُوا؟ (kalian)",
+        "مَا ____ تِيجِي؟ (kamu perempuan)"
+      ]
+    },
+    {
+      "prompt": "Buang awalan b- supaya bentuknya benar sesudah بَدِّي.",
+      "items": [
+        "بَدِّي بِشْرَب مَي",
+        "بَدَّك بْتَاكُل شِي؟",
+        "بَدُّو بْيِنَام هَلَّق",
+        "بَدْنَا مْنِرُوح عَ السُّوق",
+        "بَدَّا بْتِدْرُس عَرَبِي",
+        "بَدْهُن بْيِجُوا بُكْرَا"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "قَهْوِة / بَدِّي / سَادَة",
+        "تِشْرَب / شُو / بَدَّك / ؟",
+        "مَي / لَو سَمَحْت / جِيبْلِي",
+        "جُوعَان / أَنَا / كْتِير",
+        "بَدِّي / مَا / شِي / شُكْرًا",
+        "حِلُو / شِي / بَدِّي"
+      ]
+    }
+  ],
+  "answers": [
+    "بَدِّي قَهْوِة سَادَة. — شُو بَدِّك تِشْرْبِي؟ — مَا بَدْنَا نَاكُل هَلَّق. — لَو سَمَحْت، كُبَّايِة مَي. — بَدُّو يْنَام. — أَنَا جُوعَان كْتِير.",
+    "بَدِّي — بَدَّك — بَدُّو — بَدْنَا — بَدْكُن — بَدِّك",
+    "بَدِّي إِشْرَب مَي — بَدَّك تَاكُل شِي؟ — بَدُّو يْنَام هَلَّق — بَدْنَا نْرُوح عَ السُّوق — بَدَّا تِدْرُس عَرَبِي — بَدْهُن يِجُوا بُكْرَا",
+    "بَدِّي قَهْوِة سَادَة. — شُو بَدَّك تِشْرَب؟ — جِيبْلِي مَي لَو سَمَحْت. — أَنَا جُوعَان كْتِير. — مَا بَدِّي شِي شُكْرًا. — بَدِّي شِي حِلُو."
+  ],
+  "wave": "Pesan kopi tiga kali di kepalamu hari ini — sekali سَادَة, sekali وَسَط, sekali حِلْوِة — dan tambahkan لَو سَمَحْت di tiap kalimat."
+}

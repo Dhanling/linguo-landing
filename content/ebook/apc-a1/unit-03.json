@@ -1,0 +1,582 @@
+{
+  "title": "Haad wella hayy — menunjuk benda",
+  "title_target": "هَاد وَلَّا هَيّ؟",
+  "goal": "Menunjuk benda di sekitarmu, mengenali jenis kelamin kata benda dari ujungnya, dan memakai kata sandang اَل dengan benar.",
+  "bekal": [
+    "menunjuk benda dengan هَاد dan هَيّ sesuai jenis kelamin katanya",
+    "menebak jenis kelamin sebuah kata benda dari huruf terakhirnya",
+    "membedakan benda tertentu dan tidak tertentu dengan اَل"
+  ],
+  "dialogs": [
+    {
+      "title": "حَكِي — بِمَكْتَبِة الْجَامْعَة",
+      "intro": "Toko buku kampus. Budi mencari buku pelajaran dan bertanya kepada penjaga toko.",
+      "lines": [
+        {
+          "speaker": "بُودِي:",
+          "text": "مَرْحَبَا. بَدِّي أَسْأَل شِي.",
+          "baca": "marhaba. baddi as’al syi.",
+          "id": "Halo. Saya mau tanya sesuatu.",
+          "literal": "selamat. mau-saya saya-bertanya sesuatu."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "تْفَضَّل. شُو بَدَّك؟",
+          "baca": "tfaddhal. syu baddak?",
+          "id": "Silakan. Mau apa?",
+          "literal": "silakan. apa mau-kamu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "شُو هَاد؟",
+          "baca": "syu haad?",
+          "id": "Ini apa?",
+          "literal": "apa ini?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَاد كْتَاب قِوَاعِد. مْنِيح كْتِير.",
+          "baca": "haad ktaab ’awaa‘id. mniih ktiir.",
+          "id": "Ini buku tata bahasa. Bagus sekali.",
+          "literal": "ini buku kaidah. bagus banyak."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْهَيّ؟",
+          "baca": "w hayy?",
+          "id": "Dan ini?",
+          "literal": "dan ini?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَيّ مَجَلِّة. بْتِطْلَع كِلّ أُسْبُوع.",
+          "baca": "hayy majalle. btithla‘ kill usbuu‘.",
+          "id": "Ini majalah. Terbit tiap minggu.",
+          "literal": "ini majalah. dia-keluar setiap minggu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وْهَدُول شُو؟",
+          "baca": "w hadool syu?",
+          "id": "Dan yang itu apa?",
+          "literal": "dan ini-ini apa?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "هَدُول قَوَامِيس. عَرَبِي إِنْكْلِيزِي.",
+          "baca": "hadool ’awaamiis. ‘arabi ingliizi.",
+          "id": "Itu kamus-kamus. Arab-Inggris.",
+          "literal": "ini-ini kamus-kamus. Arab Inggris."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "مَا فِي عَرَبِي إِنْدُونِيسِي؟",
+          "baca": "ma fi ‘arabi Induuniisi?",
+          "id": "Tidak ada Arab-Indonesia?",
+          "literal": "tidak ada Arab Indonesia?"
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "لَا وَاللَّه. بَسّ فِي عَرَبِي عَرَبِي.",
+          "baca": "la’ walla. bass fi ‘arabi ‘arabi.",
+          "id": "Tidak ada. Tapi ada Arab-Arab.",
+          "literal": "tidak demi Tuhan. tapi ada Arab Arab."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "طَيِّب. بَدِّي الْكْتَاب وْهَاد الْقَامُوس.",
+          "baca": "thayyib. baddi el-ktaab w haad el-’aamuus.",
+          "id": "Baiklah. Saya mau buku itu dan kamus ini.",
+          "literal": "baik. mau-saya buku dan ini kamus."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "تَكْرَم عَيْنَك. شِي تَانِي؟",
+          "baca": "takram ‘eenak. syi taani?",
+          "id": "Dengan senang hati. Ada lagi?",
+          "literal": "semoga-mulia matamu. sesuatu kedua?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا شُكْرًا. هَيْك بَسّ.",
+          "baca": "la’ syukran. heek bass.",
+          "id": "Tidak, terima kasih. Segitu saja.",
+          "literal": "tidak terima kasih. begini saja."
+        },
+        {
+          "speaker": "اَلْبَيَّاع:",
+          "text": "تْفَضَّل. مَبْرُوك.",
+          "baca": "tfaddhal. mabruuk.",
+          "id": "Silakan. Selamat.",
+          "literal": "silakan. diberkati."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "اَللَّه يْبَارِك فِيك.",
+          "baca": "alla ybaarik fiik.",
+          "id": "Semoga Tuhan memberkatimu.",
+          "literal": "Tuhan semoga-memberkati padamu."
+        }
+      ],
+      "notes": [
+        "**Kata tunjuk mengikuti jenis kelamin bendanya, bukan jaraknya.** Bentuk هَاد *haad* untuk benda laki-laki, هَيّ *hayy* untuk perempuan, هَدُول *hadool* untuk jamak apa pun. Dan \"jenis kelamin\" di sini tidak ada hubungannya dengan makhluk hidup: كْتَاب (buku) laki-laki, مَجَلِّة (majalah) perempuan.",
+        "**Cara menebaknya gampang: lihat ujungnya.** Kata yang berakhir ة hampir selalu perempuan (مَجَلِّة · طَاوْلِة · مَدْرَسِة · شَنْطَة). Yang tidak berakhir ة hampir selalu laki-laki (كْتَاب · قَامُوس · بَاب · قَلَم). Aturan sesederhana ini menutup sekitar sembilan dari sepuluh kata.",
+        "**Bahasa Arab Syam tidak memisahkan \"ini\" dan \"itu\" setegas bahasa Indonesia.** Bentuk هَاد dipakai untuk keduanya, dan kalau perlu diperjelas ditambah هْنِيك *hniik* (\"di sana\") atau ditunjuk dengan tangan. Bentuk هَدَاك *hadaak* memang ada untuk \"yang itu\", tapi jauh lebih jarang.",
+        "**Kata فِي berarti \"ada\", dan ia bukan kata depan di sini.** Kalimat فِي قَامُوس berarti \"ada kamus\"; مَا فِي قَامُوس berarti \"tidak ada kamus\". Kebetulan kata yang sama juga berarti \"di dalam\", dan letaknya di kalimat yang membedakan.",
+        "**Basa-basi jual beli punya rumusnya sendiri.** Ucapan تَكْرَم عَيْنَك *takram ‘eenak* kira-kira \"dengan senang hati\", dan مَبْرُوك *mabruuk* diucapkan untuk pembelian apa pun, sekecil apa pun, lalu dijawab اَللَّه يْبَارِك فِيك. Hafalkan pasangannya utuh.",
+        "**Kata طَيِّب dipakai persis seperti \"oke\" atau \"baiklah\".** Ia menutup satu bagian percakapan dan membuka bagian berikutnya. Bersama يَلَّا dan خَلَص, ketiganya adalah tulang punggung percakapan sehari-hari."
+      ],
+      "grammars": [
+        {
+          "title": "Kata tunjuk dan jenis kelamin benda",
+          "table": {
+            "head": [
+              "Syam",
+              "Cara baca",
+              "Untuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "هَاد",
+                "haad",
+                "benda laki-laki",
+                "هَاد كْتَاب",
+                "ini buku"
+              ],
+              [
+                "هَيّ",
+                "hayy",
+                "benda perempuan",
+                "هَيّ مَجَلِّة",
+                "ini majalah"
+              ],
+              [
+                "هَدُول",
+                "hadool",
+                "jamak, apa pun",
+                "هَدُول قَوَامِيس",
+                "ini kamus-kamus"
+              ],
+              [
+                "هَدَاك",
+                "hadaak",
+                "yang itu, jauh",
+                "هَدَاك الْبَيْت",
+                "rumah yang itu"
+              ],
+              [
+                "هَدِيك",
+                "hadiik",
+                "yang itu, perempuan",
+                "هَدِيك السَّيَّارَة",
+                "mobil yang itu"
+              ]
+            ]
+          },
+          "after": [
+            "Kalau kata tunjuk dipasangkan dengan benda **tertentu**, bendanya wajib memakai اَل — misalnya هَاد الْكْتَاب *haad el-ktaab* (\"buku ini\"). Tanpa اَل artinya berubah menjadi kalimat utuh: هَاد كْتَاب (\"ini buku\").",
+            "Perbedaan itu penting dan sering dilewatkan. Kalimat هَيّ الْمَجَلِّة berarti \"majalah ini\" — belum selesai, masih menunggu keterangan. Kalimat هَيّ مَجَلِّة sudah kalimat lengkap: \"ini majalah\"."
+          ]
+        },
+        {
+          "title": "Kata sandang اَل dan huruf yang meleburkannya",
+          "body": [
+            "Bahasa Indonesia tidak punya penanda ini sama sekali, dan itu justru yang membuatnya gampang dilupakan. Bahasa Arab menandai \"benda yang sudah diketahui bersama\" di kata itu sendiri, dan menandainya adalah keharusan."
+          ],
+          "table": {
+            "head": [
+              "Tanpa اَل",
+              "Cara baca",
+              "Dengan اَل",
+              "Cara baca",
+              "Catatan"
+            ],
+            "rows": [
+              [
+                "كْتَاب",
+                "ktaab",
+                "اَلْكْتَاب",
+                "el-ktaab",
+                "biasa"
+              ],
+              [
+                "بَيْت",
+                "beet",
+                "اَلْبَيْت",
+                "el-beet",
+                "biasa"
+              ],
+              [
+                "قَامُوس",
+                "’aamuus",
+                "اَلْقَامُوس",
+                "el-’aamuus",
+                "biasa"
+              ],
+              [
+                "شَمْس",
+                "syams",
+                "اَلشَّمْس",
+                "esy-syams",
+                "melebur"
+              ],
+              [
+                "صَفّ",
+                "shaff",
+                "اَلصَّفّ",
+                "esh-shaff",
+                "melebur"
+              ],
+              [
+                "طَاوْلِة",
+                "thaawle",
+                "اَلطَّاوْلِة",
+                "eth-thaawle",
+                "melebur"
+              ],
+              [
+                "دِرْس",
+                "dirs",
+                "اَلدِّرْس",
+                "ed-dirs",
+                "melebur"
+              ]
+            ]
+          },
+          "after": [
+            "Bunyi *l* pada اَل melebur ke dalam huruf sesudahnya kalau huruf itu termasuk **huruf syamsiyah** — yang di antaranya ت ث د ذ ر ز س ش ص ض ط ظ ل ن. Kamu bisa mengenalinya dari syaddah yang muncul di huruf itu.",
+            "Yang perlu dicatat untuk dialek: di Syam, اَل hampir selalu dibaca **el-**, bukan **al-** seperti di Fusha. Kata اَلْبَيْت terdengar *el-beet*, bukan *al-bait*. Dua perubahan sekaligus, dan keduanya menandai dialek."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Benda di sekitarmu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Laki-laki",
+            "Cara baca",
+            "Arti",
+            "Perempuan",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "كْتَاب",
+              "ktaab",
+              "buku",
+              "طَاوْلِة",
+              "thaawle",
+              "meja"
+            ],
+            [
+              "قَلَم",
+              "’alam",
+              "pena",
+              "شَنْطَة",
+              "syantha",
+              "tas"
+            ],
+            [
+              "بَاب",
+              "baab",
+              "pintu",
+              "كِرْسِي",
+              "kirsi",
+              "kursi"
+            ],
+            [
+              "شُبَّاك",
+              "syubbaak",
+              "jendela",
+              "وَرَقَة",
+              "wara’a",
+              "kertas"
+            ],
+            [
+              "تِلِفُون",
+              "tilifoon",
+              "telepon",
+              "سَاعَة",
+              "saa‘a",
+              "jam"
+            ],
+            [
+              "مِفْتَاح",
+              "miftaah",
+              "kunci",
+              "مِرَايِة",
+              "miraaye",
+              "cermin"
+            ],
+            [
+              "كُمْبْيُوتَر",
+              "kumbyuutar",
+              "komputer",
+              "صُورَة",
+              "shuura",
+              "foto"
+            ],
+            [
+              "مَصْرُوف",
+              "mashruuf",
+              "uang saku",
+              "مَجَلِّة",
+              "majalle",
+              "majalah"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu kejanggalan yang sengaja ditaruh di tabel: كِرْسِي *kirsi* (kursi) berakhiran ي, bukan ة, tapi ia tetap dianggap **perempuan** di banyak daerah Syam. Kata semacam ini ada beberapa dan tidak banyak — hafalkan saja waktu ketemu, jangan mencari aturannya."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kata yang bunyinya sudah kamu kenal",
+          "items": [
+            "Kata كِرْسِي · قَلَم · كْتَاب, dan سَاعَة semuanya sudah masuk ke bahasa Indonesia sebagai kursi, kalam, kitab, dan saat. Artinya nyaris tidak bergeser, jadi keempatnya gratis untukmu.",
+            "Kata تِلِفُون dan كُمْبْيُوتَر justru datang dari arah sebaliknya — bahasa Arab meminjamnya dari bahasa Eropa, persis seperti bahasa Indonesia. Ratusan kata teknologi bisa kamu tebak dengan cara ini."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bertanya tentang benda",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan",
+            "Cara baca",
+            "Arti",
+            "Jawaban contoh"
+          ],
+          "rows": [
+            [
+              "شُو هَاد؟",
+              "syu haad?",
+              "ini apa?",
+              "هَاد قَلَم"
+            ],
+            [
+              "شُو هَيّ؟",
+              "syu hayy?",
+              "ini apa? (pr)",
+              "هَيّ سَاعَة"
+            ],
+            [
+              "مِين هَاد؟",
+              "miin haad?",
+              "ini siapa?",
+              "هَاد سَامِر"
+            ],
+            [
+              "وَين الْمِفْتَاح؟",
+              "ween el-miftaah?",
+              "di mana kuncinya?",
+              "عَ الطَّاوْلِة"
+            ],
+            [
+              "لَمِين هَاد؟",
+              "lamiin haad?",
+              "ini punya siapa?",
+              "هَاد إِلِي"
+            ],
+            [
+              "فِي شَنْطَة هُون؟",
+              "fi syantha hoon?",
+              "ada tas di sini?",
+              "إِيه، فِي"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa pertanyaan شُو هَاد dan مِين هَاد memakai kata tunjuk yang sama, dan yang membedakan cuma kata tanyanya: شُو untuk benda, مِين untuk orang. Bahasa Arab tidak pernah memakai شُو untuk manusia, dan memakainya terdengar kasar."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata كْتِير yang bekerja dua arah",
+          "items": [
+            "Sesudah kata sifat, كْتِير *ktiir* berarti \"sekali\": مْنِيح كْتِير (\"bagus sekali\").",
+            "Sebelum kata benda, ia berarti \"banyak\": كْتِير كْتُب (\"banyak buku\").",
+            "Sendirian sebagai jawaban, ia berarti \"banyak\" atau \"sangat\" — dan itu jawaban yang wajar untuk pertanyaan قَدِّيش."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "هَاد / هَيّ",
+      "baca": "haad / hayy",
+      "id": "ini (lk / pr)"
+    },
+    {
+      "ar": "هَدُول",
+      "baca": "hadool",
+      "id": "ini, mereka (jamak)"
+    },
+    {
+      "ar": "كْتَاب",
+      "baca": "ktaab",
+      "id": "buku"
+    },
+    {
+      "ar": "مَجَلِّة",
+      "baca": "majalle",
+      "id": "majalah"
+    },
+    {
+      "ar": "قَامُوس",
+      "baca": "’aamuus",
+      "id": "kamus"
+    },
+    {
+      "ar": "قَلَم",
+      "baca": "’alam",
+      "id": "pena"
+    },
+    {
+      "ar": "طَاوْلِة",
+      "baca": "thaawle",
+      "id": "meja"
+    },
+    {
+      "ar": "كِرْسِي",
+      "baca": "kirsi",
+      "id": "kursi"
+    },
+    {
+      "ar": "شَنْطَة",
+      "baca": "syantha",
+      "id": "tas"
+    },
+    {
+      "ar": "مِفْتَاح",
+      "baca": "miftaah",
+      "id": "kunci"
+    },
+    {
+      "ar": "سَاعَة",
+      "baca": "saa‘a",
+      "id": "jam, arloji"
+    },
+    {
+      "ar": "بَاب",
+      "baca": "baab",
+      "id": "pintu"
+    },
+    {
+      "ar": "شُبَّاك",
+      "baca": "syubbaak",
+      "id": "jendela"
+    },
+    {
+      "ar": "فِي",
+      "baca": "fi",
+      "id": "ada"
+    },
+    {
+      "ar": "مَا فِي",
+      "baca": "ma fi",
+      "id": "tidak ada"
+    },
+    {
+      "ar": "كْتِير",
+      "baca": "ktiir",
+      "id": "banyak; sekali"
+    },
+    {
+      "ar": "طَيِّب",
+      "baca": "thayyib",
+      "id": "baiklah, oke"
+    },
+    {
+      "ar": "تْفَضَّل",
+      "baca": "tfaddhal",
+      "id": "silakan"
+    },
+    {
+      "ar": "مَبْرُوك",
+      "baca": "mabruuk",
+      "id": "selamat (atas sesuatu)"
+    },
+    {
+      "ar": "شِي",
+      "baca": "syi",
+      "id": "sesuatu"
+    },
+    {
+      "ar": "تَانِي",
+      "baca": "taani",
+      "id": "kedua, yang lain"
+    },
+    {
+      "ar": "هَيْك",
+      "baca": "heek",
+      "id": "begini, begitu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab Syam.",
+      "items": [
+        "Ini apa? Ini buku.",
+        "Ini majalah baru.",
+        "Kamus itu bagus sekali.",
+        "Tidak ada kunci di meja.",
+        "Ini punya siapa?",
+        "Ada jendela di kelas."
+      ]
+    },
+    {
+      "prompt": "Isi dengan هَاد atau هَيّ atau هَدُول.",
+      "items": [
+        "____ قَلَم جْدِيد.",
+        "____ شَنْطَة كْبِيرِة.",
+        "____ كْتُب مْنِيحَة.",
+        "____ سَاعَة حِلْوِة.",
+        "____ قَامُوس عَرَبِي.",
+        "____ مَجَلِّة لُبْنَانِيِّة."
+      ]
+    },
+    {
+      "prompt": "Tambahkan اَل dan tulis cara bacanya.",
+      "items": [
+        "كْتَاب",
+        "شَمْس",
+        "طَاوْلِة",
+        "بَاب",
+        "صَفّ",
+        "قَامُوس"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "كْتَاب / هَاد / جْدِيد",
+        "هَيّ / ؟ / شُو",
+        "مَا / مِفْتَاح / فِي / هُون",
+        "كْتِير / اَلْقَامُوس / مْنِيح",
+        "الطَّاوْلِة / عَ / اَلشَّنْطَة",
+        "هَدُول / ؟ / مِين"
+      ]
+    }
+  ],
+  "answers": [
+    "شُو هَاد؟ هَاد كْتَاب. — هَيّ مَجَلِّة جْدِيدِة. — اَلْقَامُوس مْنِيح كْتِير. — مَا فِي مِفْتَاح عَ الطَّاوْلِة. — لَمِين هَاد؟ — فِي شُبَّاك بِالصَّفّ.",
+    "هَاد — هَيّ — هَدُول — هَيّ — هَاد — هَيّ",
+    "اَلْكْتَاب · el-ktaab — اَلشَّمْس · esy-syams — اَلطَّاوْلِة · eth-thaawle — اَلْبَاب · el-baab — اَلصَّفّ · esh-shaff — اَلْقَامُوس · el-’aamuus",
+    "هَاد كْتَاب جْدِيد. — شُو هَيّ؟ — مَا فِي مِفْتَاح هُون. — اَلْقَامُوس مْنِيح كْتِير. — اَلشَّنْطَة عَ الطَّاوْلِة. — مِين هَدُول؟"
+  ],
+  "wave": "Sebelum tidur, tunjuk delapan benda di kamarmu dan sebutkan namanya lengkap dengan هَاد atau هَيّ yang benar."
+}
