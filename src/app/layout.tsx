@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Baloo_2, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { BRAND_FACTS } from "@/lib/brand-facts"; // [aeo-brand-facts-v1] satu sumber angka & klaim brand
 
 // Self-hosted via next/font: no render-blocking request to fonts.googleapis.com,
 // preloaded + size-adjusted (no layout shift). Replaces the old <link> stylesheet.
@@ -45,7 +46,7 @@ import PosterPopup from "@/components/PosterPopup"; // poster-popup-v1 — pop-u
 export const metadata: Metadata = {
   metadataBase: new URL("https://linguo.id"),
   title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-  description: "Kursus 60+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 75.000.",
+  description: `Kursus ${BRAND_FACTS.languageCountLabel} asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari ${BRAND_FACTS.price.fromLabel}.`,
   keywords: [
     "kursus bahasa asing online",
     "les bahasa online",
@@ -54,19 +55,19 @@ export const metadata: Metadata = {
     "kursus bahasa inggris online",
     "les privat bahasa",
   ],
-  alternates: { canonical: "https://linguo.id" },
+  alternates: { canonical: BRAND_FACTS.url },
   openGraph: {
     title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 75.000.",
-    url: "https://linguo.id",
-    siteName: "Linguo.id",
+    description: `Kursus ${BRAND_FACTS.languageCountLabel} asing online rasa offline! Kelas live via Zoom, mulai dari ${BRAND_FACTS.price.fromLabel}.`,
+    url: BRAND_FACTS.url,
+    siteName: BRAND_FACTS.name,
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
-    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 75.000.",
+    description: `Kursus ${BRAND_FACTS.languageCountLabel} asing online rasa offline! Kelas live via Zoom, mulai dari ${BRAND_FACTS.price.fromLabel}.`,
   },
   robots: {
     index: true,

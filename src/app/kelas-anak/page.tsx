@@ -56,7 +56,7 @@ const TIERS = [
 ];
 
 const BENEFITS = [
-  { icon: "🌍", title: "55+ Bahasa", desc: "Bukan cuma English! Anak bisa belajar Japanese, Korean, Mandarin, French, dan 50+ bahasa lainnya." },
+  { icon: "🌍", title: "60+ Bahasa", desc: "Bukan cuma English! Anak bisa belajar Japanese, Korean, Mandarin, French, dan puluhan bahasa lainnya." },
   { icon: "👩‍🏫", title: "1-on-1 Private", desc: "Guru fokus 100% pada anak Anda. Bukan kelas grup — perhatian penuh setiap sesi." },
   { icon: "🎮", title: "Fun & Gamified", desc: "Materi dikemas dengan games, lagu, flashcards, dan aktivitas interaktif — anak belajar tanpa merasa belajar." },
   { icon: "📅", title: "Jadwal Fleksibel", desc: "Pilih jadwal yang cocok untuk anak. Bisa request hari & jam sesuai aktivitas sekolah." },
@@ -143,7 +143,7 @@ export default function KelasAnakPage() {
             <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-8 leading-relaxed">
               Kelas private 1-on-1 via Zoom dengan guru berpengalaman.
               <br className="hidden sm:block" />
-              55+ bahasa tersedia — bukan cuma English!
+              60+ bahasa tersedia — bukan cuma English!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href={waMsg("Halo, saya tertarik Kelas Kids Linguo untuk anak saya. Boleh info lebih lanjut?")}
@@ -164,7 +164,7 @@ export default function KelasAnakPage() {
       {/* Language showcase */}
       <section className="py-10 bg-slate-50 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-sm text-slate-500 font-medium mb-5">Tersedia untuk 55+ bahasa, termasuk:</p>
+          <p className="text-center text-sm text-slate-500 font-medium mb-5">Tersedia untuk 60+ bahasa, termasuk:</p>
           <div className="flex flex-wrap justify-center gap-3">
             {LANGUAGES.map((l) => (
               <div key={l.name} className="flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-slate-200 text-sm font-medium text-slate-700">
@@ -294,7 +294,7 @@ export default function KelasAnakPage() {
               ["Harga", "Mulai Rp 75.000–85.000", "Mulai Rp 90.000"],
               ["Metode", "Games, lagu, interaktif", "Konversasi, textbook"],
               ["Format", "1-on-1 via Zoom", "1-on-1 via Zoom"],
-              ["Bahasa", "55+ bahasa", "55+ bahasa"],
+              ["Bahasa", "60+ bahasa", "60+ bahasa"],
               ["Report", "Untuk orang tua", "Untuk siswa"],
             ].map((row, i) => (
               <div key={i} className={`grid grid-cols-3 text-sm ${i === 0 ? "bg-[#1A9E9E] text-white font-bold" : i % 2 === 1 ? "bg-white" : "bg-slate-50"}`}>

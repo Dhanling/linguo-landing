@@ -8,6 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
+import { BRAND_FACTS } from "@/lib/brand-facts"; // [aeo-brand-facts-v1] jumlah bahasa & harga "mulai dari" tidak lagi ditulis manual
 import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier, applyOfflineSurcharge, supportsOffline, OFFLINE_SURCHARGE_PER_SESSION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1 · offline-private-class-v1
 
 import TokoCTA from "@/components/TokoCTA";
@@ -77,12 +78,12 @@ const QUICK_EXPERIENCE = [
 const QUICK_FIELD_CLS = "w-full rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1A9E9E]";
 
 const FAQS = [
-  {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif.",video:"3hDBE8o-jJU"},
+  {q:"Apa itu Linguo.id?",a:`Linguo.id adalah platform kursus bahasa online milik ${BRAND_FACTS.legalName} yang menawarkan ${BRAND_FACTS.languageCountLabel} dengan kelas live interaktif via Zoom. Level yang tersedia ${BRAND_FACTS.cefrLevelsLabel}. Harga mulai ${BRAND_FACTS.price.fromLabel}.`,video:"3hDBE8o-jJU"},
   {q:"Boleh ikut lebih dari 1 bahasa?",a:"Boleh banget! Kamu bisa daftar beberapa bahasa sekaligus."},
-  {q:"Bagaimana format kelasnya?",a:"Kelas Private 1-on-1 via Zoom. Request jadwal & topik sesukamu. Dapat rekaman & materi."},
+  {q:"Bagaimana format kelasnya?",a:`Kelas Private 1-on-1 via Zoom, 60 menit per sesi, mulai ${BRAND_FACTS.price.privateFromLabel}. Kamu bebas request jadwal & topik. Setiap sesi dapat rekaman, modul pembelajaran, dan e-certificate setelah selesai.`},
   {q:"Dapat sertifikat?",a:"Ya! Setiap siswa yang menyelesaikan kursus mendapat e-certificate."},
   {q:"Cara bayarnya?",a:"Transfer bank, QRIS, GoPay, OVO, dan lainnya. Konfirmasi otomatis."},
-  {q:"Ada kelas lanjutan?",a:"Ada! Tersedia dari Basic hingga Advance."},
+  {q:"Ada kelas lanjutan?",a:`Ada. Kurikulum Linguo.id mengikuti ${BRAND_FACTS.cefrLevelsLabel}, jadi kamu bisa lanjut dari Basic sampai Advance tanpa pindah platform.`},
 ];
 
 // ========== LOGIN MODAL ==========
@@ -1629,7 +1630,7 @@ const PRICING_TABS = [
       {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Mulai Rp 900.000",highlighted:false},
       {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Mulai Rp 1.800.000",highlighted:false},
     ],
-    features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 55+ Bahasa"],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 60+ Bahasa"],
     allCheck:true,wa:"Kelas Private",
   },
   {
@@ -1656,7 +1657,7 @@ const PRICING_TABS = [
       {name:"Little Learner",desc:"30 menit • usia 5-8 thn",price:"Rp 75.000",highlighted:true,badge:"USIA 5-8"},
       {name:"Young Explorer",desc:"45 menit • usia 9-12 thn",price:"Rp 85.000",highlighted:false,badge:"USIA 9-12"},
     ],
-    features:["Recording Class/sesi","Interactive Class via ZOOM","Materi Fun & Gamified","Request Jadwal","Qualified Kids Teacher","E-Certificate","55+ Bahasa Tersedia","Progress Report untuk Orang Tua"],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Materi Fun & Gamified","Request Jadwal","Qualified Kids Teacher","E-Certificate","60+ Bahasa Tersedia","Progress Report untuk Orang Tua"],
     allCheck:true,
     wa:"Kelas Kids",
   },
@@ -2078,7 +2079,7 @@ export default function Home() {
           </div>
           <div><h4 className="font-bold mb-4">Kontak</h4>
             <div className="text-sm text-white/80 space-y-1">
-              <p>Happy Creative Hub, Jl. Cisitu Indah III No.2,</p><p>Dago, Coblong, Bandung 40135</p>
+              <p>{BRAND_FACTS.address.streetAddress},</p><p>{BRAND_FACTS.address.addressLocality} {BRAND_FACTS.address.postalCode}</p>
               <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
             </div>
             <div className="flex gap-3 mt-4">

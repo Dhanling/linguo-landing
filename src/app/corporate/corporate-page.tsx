@@ -13,12 +13,12 @@ const BENEFITS = [
   { icon: "👥", title: "Group Class", desc: "Satu kelas untuk tim Anda (5-15 orang), lebih efisien & membangun team bonding" },
   { icon: "📊", title: "Progress Report", desc: "Laporan perkembangan bulanan untuk setiap peserta, langsung ke HR/PIC" },
   { icon: "📜", title: "E-Certificate", desc: "Sertifikat resmi dari Linguo.id untuk setiap peserta yang menyelesaikan program" },
-  { icon: "🌍", title: "55+ Bahasa", desc: "Dari English & Mandarin hingga Korean, Japanese, German, French, dan lainnya" },
+  { icon: "🌍", title: "60+ Bahasa", desc: "Dari English & Mandarin hingga Korean, Japanese, German, French, dan lainnya" },
 ];
 
 const PROGRAMS = [
   { title: "Business Communication", desc: "Tingkatkan kemampuan komunikasi bisnis tim Anda dalam bahasa asing — email, meeting, presentasi, dan negosiasi.", langs: ["English", "Mandarin", "Japanese", "Korean"], levels: "A1 – B2", sessions: "16–32 sesi", color: "from-teal-500 to-teal-600" },
-  { title: "General Language Training", desc: "Program bahasa umum untuk karyawan — membangun fondasi komunikasi dan kepercayaan diri berbahasa asing.", langs: ["55+ bahasa tersedia"], levels: "A1 – B2", sessions: "16–32 sesi", color: "from-blue-500 to-blue-600" },
+  { title: "General Language Training", desc: "Program bahasa umum untuk karyawan — membangun fondasi komunikasi dan kepercayaan diri berbahasa asing.", langs: ["60+ bahasa tersedia"], levels: "A1 – B2", sessions: "16–32 sesi", color: "from-blue-500 to-blue-600" },
   { title: "IELTS / TOEFL Preparation", desc: "Persiapan tes bahasa Inggris untuk karyawan yang butuh sertifikasi — IELTS, TOEFL, atau tes internal perusahaan.", langs: ["English"], levels: "Intermediate+", sessions: "16 sesi @90 menit", color: "from-amber-500 to-amber-600" },
   { title: "Custom Program", desc: "Butuh sesuatu yang berbeda? Kami bisa rancang program khusus sesuai kebutuhan perusahaan Anda.", langs: ["Semua bahasa"], levels: "Custom", sessions: "Flexible", color: "from-purple-500 to-purple-600" },
 ];

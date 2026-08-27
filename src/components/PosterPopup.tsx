@@ -29,7 +29,7 @@ const POSTER_SRC = "/popup-reguler-september.jpg";
 const POSTER_W = 1200;
 const POSTER_H = 982;
 const POSTER_ALT =
-  "Belajar 50+ bahasa cuma Rp 150.000 untuk 2 bulan / 8x pertemuan — pendaftaran Kelas Reguler batch September dibuka";
+  "Belajar 60+ bahasa cuma Rp 150.000 untuk 2 bulan / 8x pertemuan — pendaftaran Kelas Reguler batch September dibuka";
 
 // Ke mana poster ini mengarah. Poster mengiklankan Kelas Reguler batch
 // terdekat, jadi tujuannya halaman jadwal batch (di situ ada tombol daftarnya).

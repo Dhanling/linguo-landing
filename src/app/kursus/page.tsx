@@ -30,7 +30,7 @@ const WA = "6282217866789";
 export const metadata: Metadata = {
   title: "Kursus Bahasa Asing Online — 60+ Bahasa, Kelas Live 1-on-1 | Linguo.id",
   description:
-    "Pilih kelas bahasa yang kamu mau: Inggris, Jepang, Korea, Mandarin, dan 55+ bahasa lain. Kelas live via Zoom bersama pengajar berpengalaman, mulai Rp90.000/sesi.",
+    "Pilih kelas bahasa yang kamu mau: Inggris, Jepang, Korea, Mandarin, dan 60+ bahasa lain. Kelas live via Zoom bersama pengajar berpengalaman, mulai Rp90.000/sesi.",
   keywords: [
     "kursus bahasa asing online",
     "les bahasa online",
