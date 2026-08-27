@@ -5834,6 +5834,169 @@ export const languageDetails: Record<string, LanguageDetail> = {
   },
 
   // ==========================================================================
+  // SWAHILI
+  // [aeo-language-deep-v1] Bahasa Swahili sudah lama punya kategori harga di
+  // src/lib/trial-pricing.ts (kategori A) dan kurikulum di curriculum/languages,
+  // tapi belum pernah punya landing sendiri — jadi satu-satunya bahasa Afrika
+  // yang dijual Linguo tidak bisa ditemukan lewat pencarian.
+  // ==========================================================================
+  swahili: {
+    urlSlug: "swahili",
+    languageSlug: "swahili",
+    tagline: "Bahasa Afrika dengan penutur terbanyak — dan salah satu yang paling ramah buat orang Indonesia.",
+    heroDescription:
+      "Kursus Bahasa Swahili online dengan kurikulum CEFR A1–B2. Tanpa nada, aksara Latin, pelafalan nyaris sama dengan bahasa Indonesia — untuk kerja di Afrika Timur, misi kemanusiaan, dan perjalanan.",
+
+    whyLearn: [
+      {
+        icon: "🌍",
+        title: "200 Juta Penutur di 6 Negara",
+        description:
+          "Bahasa resmi Tanzania, Kenya, Uganda, dan Rwanda, serta dipakai luas di Burundi dan timur Kongo. Juga bahasa resmi Uni Afrika — satu bahasa membuka seluruh kawasan Afrika Timur.",
+      },
+      {
+        icon: "🏗️",
+        title: "Pasar Kerja yang Belum Ramai",
+        description:
+          "Perusahaan konstruksi, energi, dan perdagangan Indonesia terus menambah kehadiran di Afrika Timur. Tenaga kerja Indonesia yang bisa Swahili masih sangat sedikit — pembeda yang langsung terasa di CV.",
+      },
+      {
+        icon: "🗣️",
+        title: "Pelafalan Rasa Bahasa Indonesia",
+        description:
+          "Tanpa nada, tanpa aksara baru, dan vokal a-i-u-e-o dibaca persis seperti bahasa Indonesia. Salah satu bahasa asing yang tahap awalnya paling cepat dilalui penutur Indonesia.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💼",
+        persona: "Profesional & Pekerja Proyek",
+        benefit: "Koordinasi tim lokal di proyek konstruksi, energi, dan perdagangan.",
+      },
+      {
+        emoji: "🕊️",
+        persona: "Pekerja Kemanusiaan",
+        benefit: "Bahasa lapangan untuk program di Kenya, Tanzania, dan sekitarnya.",
+      },
+      {
+        emoji: "🏔️",
+        persona: "Pendaki & Pelancong",
+        benefit: "Kilimanjaro, safari Serengeti, dan Zanzibar tanpa perantara.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Peneliti & Mahasiswa",
+        benefit: "Wawancara lapangan dan literatur kawasan Afrika Timur.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Pelafalan cepat dikuasai karena mirip bahasa Indonesia, fokus langsung ke sistem kelas kata benda.",
+        topics: [
+          "Pelafalan & tekanan kata (satu aturan, tanpa pengecualian)",
+          "Salam bertingkat: jambo, habari, shikamoo",
+          "Kelas ngeli M-/WA- (orang) dan KI-/VI- (benda)",
+          "Angka, uang shilling, pasar & tawar-menawar",
+          "Kata kerja kala kini dengan awalan pelaku",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari mandiri dan penguasaan kelas ngeli yang lebih luas.",
+        topics: [
+          "Kelas ngeli lanjutan: N-, JI-/MA-, U-, KU-",
+          "Kala lampau (-li-), kala depan (-ta-), bentuk sempurna (-me-)",
+          "Kepemilikan & kata tunjuk mengikuti kelas",
+          "Arah, lokasi, dan transportasi",
+          "Topik: kesehatan, keluarga, pekerjaan, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Level fungsional untuk kerja lapangan: rapat, koordinasi, dan memahami media.",
+        topics: [
+          "Bentuk pasif, kausatif, dan aplikatif",
+          "Kalimat bersyarat & kalimat majemuk",
+          "Ragam formal untuk surat dan pengumuman",
+          "Kosakata kerja: proyek, laporan, jadwal",
+          "Membaca berita ringan & mendengar siaran radio",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — media penuh, dokumen resmi, dan nuansa budaya.",
+        topics: [
+          "Methali (peribahasa) & idiom sehari-hari",
+          "Perbedaan ragam Kenya, Tanzania, dan Kongo",
+          "Bahasa dokumen & birokrasi",
+          "Presentasi dan rapat penuh tanpa bantuan",
+          "Sastra Swahili & teks akademik",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bahasa Swahili dipakai di negara mana saja?",
+        answer:
+          "Bahasa resmi di Tanzania, Kenya, Uganda, dan Rwanda, serta dipakai luas di Burundi dan bagian timur Republik Demokratik Kongo. Statusnya juga bahasa resmi Uni Afrika dan Komunitas Afrika Timur, dengan total penutur melebihi 200 juta orang.",
+      },
+      {
+        question: "Susah nggak buat orang Indonesia?",
+        answer:
+          "Termasuk yang paling ramah. Aksaranya Latin, tidak ada nada, dan pelafalan vokalnya nyaris sama dengan bahasa Indonesia. Bagian yang benar-benar menantang cuma satu: sistem kelas kata benda (ngeli) dengan 18 kelas yang menentukan bentuk kata sifat dan kata kerja di sekitarnya.",
+      },
+      {
+        question: "Apa itu ngeli?",
+        answer:
+          "Ngeli adalah sistem kelas kata benda khas bahasa Bantu. Setiap kata benda masuk salah satu dari 18 kelas, dan kelas itu menentukan awalan yang dipakai kata sifat, kata kerja, serta kata tunjuk yang menyertainya. Fungsinya mirip gender dalam bahasa Eropa, tapi lebih tertebak dari bentuk katanya.",
+      },
+      {
+        question: "Berapa lama sampai bisa percakapan sehari-hari?",
+        answer:
+          "Dengan 2 sesi per minggu ditambah sekitar 3 jam latihan mandiri, level A1 umumnya tercapai dalam 3–4 bulan dan A2 dalam 7–10 bulan. Lebih cepat daripada kebanyakan bahasa lain karena tidak ada aksara baru maupun nada yang harus dikuasai lebih dulu.",
+      },
+      {
+        question: "Swahili di Kenya dan Tanzania beda?",
+        answer:
+          "Tata bahasanya sama dan saling dipahami sepenuhnya. Bedanya di kosakata sehari-hari dan aksen. Ragam Tanzania, khususnya Zanzibar, dianggap paling baku dan itu yang jadi acuan pengajaran; ragam Kenya menyerap lebih banyak kata Inggris dalam percakapan santai.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Swahili Online | Linguo.id — Kiswahili A1–B2",
+    metaDescription:
+      "Belajar Bahasa Swahili (Kiswahili) online dari nol. Tanpa nada, aksara Latin, pelafalan mirip bahasa Indonesia. Untuk kerja di Afrika Timur, misi kemanusiaan, dan perjalanan. Semi privat mulai Rp 105.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa swahili",
+      "les bahasa swahili online",
+      "belajar bahasa swahili",
+      "kiswahili",
+      "bahasa swahili untuk pemula",
+      "kursus bahasa afrika",
+      "kerja di kenya",
+      "kerja di tanzania",
+      "bahasa swahili susah tidak",
+      "belajar kiswahili online",
+    ],
+  },
+
+  // ==========================================================================
   // LAOS
   // ==========================================================================
   laos: {

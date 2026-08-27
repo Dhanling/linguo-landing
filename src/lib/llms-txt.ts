@@ -167,10 +167,6 @@ const REGION_ORDER = ["european", "asian", "middle-eastern", "african", "nusanta
 // llms.txt — versi ringkas
 // -----------------------------------------------------------------------------
 
-// CATATAN: /tentang dan /perbandingan SENGAJA belum ditaut di sini — kedua
-// halaman itu baru dibuat di tahap berikutnya. Menaut halaman yang belum ada
-// mengirim 404 ke mesin jawaban, dan itu justru menurunkan kepercayaan pada
-// seluruh isi berkas ini. Tambahkan barisnya begitu halamannya hidup.
 export function buildLlmsTxt(): string {
   const rows = languageRows();
   const withLanding = rows.filter((r) => r.url);
@@ -184,9 +180,11 @@ Fakta lengkap, daftar seluruh bahasa, dan tabel harga semua program: ${BASE}/llm
 ## Halaman utama
 
 - [Beranda](${BASE}/): ringkasan seluruh program dan harga ${BRAND_FACTS.name}.
+- [Tentang Linguo.id](${BASE}/tentang): profil perusahaan, badan hukum, metodologi, level, dan jawaban atas pertanyaan umum tentang lembaga.
 - [Daftar kursus per bahasa](${BASE}/kursus): hub ${withLanding.length} landing bahasa dengan kurikulum, harga, dan FAQ masing-masing.
 - [Harga](${BASE}/harga): pricelist lengkap per program, bahasa, dan level.
 - [Pendaftaran](${BASE}/daftar): pilih bahasa, program, level, dan jadwal lalu bayar online.
+- [Perbandingan platform](${BASE}/perbandingan): perbandingan Linguo.id dengan Cakap, italki, Preply, EF, dan Wall Street English, termasuk kapan Linguo.id bukan pilihan terbaik.
 
 ## Program
 

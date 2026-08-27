@@ -70,6 +70,13 @@ const STATIC_ROUTES: Array<{
   { path: "/simulasi", priority: 0.8, changeFrequency: "weekly" },
   { path: "/simulasi/paket", priority: 0.7, changeFrequency: "monthly" },
 
+  // [aeo-halaman-entitas-v1] Dua halaman yang sasarannya mesin jawaban, bukan
+  // kueri transaksional: /tentang mendefinisikan entitas Linguo.id (dipakai
+  // model untuk menjawab "apa itu Linguo"), /perbandingan menjawab kueri
+  // "X vs Y" yang selama ini dijawab pihak ketiga.
+  { path: "/tentang", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/perbandingan", priority: 0.8, changeFrequency: "monthly" },
+
   // Konten & alat gratis — mesin akuisisi organik
   { path: "/blog", priority: 0.9, changeFrequency: "daily" },
   { path: "/silabus", priority: 0.8, changeFrequency: "weekly" },

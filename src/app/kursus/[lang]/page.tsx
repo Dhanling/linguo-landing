@@ -30,6 +30,10 @@ import {
   jsonLd,
 } from "../../../lib/schema"; // [aeo-schema-v1]
 import { toLangCode } from "../../../lib/quiz/language";
+import { getLanguageDeep, type LanguageDeep } from "../../../data/language-deep"; // [aeo-language-deep-v1]
+import LanguageDeepContent, {
+  LanguageDeepFaq,
+} from "../../../components/kursus/LanguageDeepContent";
 
 // ============================================================================
 // PARAM PARSING
@@ -278,8 +282,11 @@ export default async function BahasaLandingPage({ params }: PageProps) {
   // [seo-review-schema-v1] Hanya testimoni bahasa INI, dan hanya kalau ada.
   // Yang dirender di halaman = persis yang di-markup di Course schema.
   const testimonials = testimonialsForLang(detail.urlSlug);
+  // [aeo-language-deep-v1] null untuk mayoritas bahasa — konten mendalam baru
+  // digarap untuk sebagian kecil bahasa yang kompetisinya nyaris nol.
+  const deep = getLanguageDeep(detail.urlSlug);
   const courseLd = buildCourseSchema(detail, meta.name, testimonials);
-  const faqLd = buildFAQSchema(detail);
+  const faqLd = buildFAQSchema(detail, deep);
   // [aeo-schema-v1] BreadcrumbList baru ada di sini. 45 landing bahasa —
   // halaman paling bernilai di situs ini — sebelumnya tidak punya breadcrumb
   // sama sekali, padahal navigasi Beranda / Kursus Bahasa / <bahasa> memang
@@ -312,10 +319,12 @@ export default async function BahasaLandingPage({ params }: PageProps) {
         <WhyLearn detail={detail} langName={meta.name} />
         <TargetAudience detail={detail} langName={meta.name} />
         <Curriculum detail={detail} langName={meta.name} />
+        {deep && <LanguageDeepContent deep={deep} langName={meta.name} />}
         <Pricing detail={detail} langName={meta.name} />
         <Teachers langName={meta.name} />
         <Testimonials items={testimonials} langName={meta.name} />
         <FAQSection detail={detail} langName={meta.name} />
+        {deep && <LanguageDeepFaq deep={deep} langName={meta.name} />}
         <FinalCTA detail={detail} langName={meta.name} />
       </main>
     </>
@@ -1003,9 +1012,13 @@ function buildCourseSchema(
   });
 }
 
-function buildFAQSchema(detail: LanguageDetail) {
-  return faqSchema(
-    detail.faq.map((item) => ({ q: item.question, a: item.answer })),
-    `https://linguo.id/kursus/bahasa-${detail.urlSlug}`,
-  );
+function buildFAQSchema(detail: LanguageDetail, deep: LanguageDeep | null) {
+  // [aeo-language-deep-v1] FAQ spesifik bahasa ikut masuk schema — tapi HANYA
+  // kalau blok-nya benar-benar dirender di halaman (lihat pemakaian `deep` di
+  // bawah). FAQ yang cuma hidup di markup dianggap manipulatif.
+  const items = [
+    ...detail.faq.map((item) => ({ q: item.question, a: item.answer })),
+    ...(deep?.faq ?? []).map((item) => ({ q: item.question, a: item.answer })),
+  ];
+  return faqSchema(items, `https://linguo.id/kursus/bahasa-${detail.urlSlug}`);
 }
