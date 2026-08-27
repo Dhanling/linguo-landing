@@ -1,0 +1,193 @@
+{
+  "title": "Kontrakan yang baru",
+  "title_target": "Die neue Wohnung",
+  "goal": "Memakai kata sifat di depan kata benda — lapis pertama: sesudah *der*, *die*, *das*, *dieser*, dan *welcher*.",
+  "bekal": [
+    "menggambarkan tempat tinggal dengan kata sifat",
+    "menambahkan akhiran -e atau -en sesudah kata sandang tertentu",
+    "menanyakan pilihan dengan *welcher* dan menunjuk dengan *dieser*",
+    "kosakata mencari dan menyewa tempat tinggal di Jerman"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Die Besichtigung",
+      "intro": "Farah melihat-lihat sebuah apartemen bersama agennya. Hitung berapa kata sifat yang berakhiran **-e** dan berapa yang berakhiran **-en**.",
+      "lines": [
+        { "speaker": "Frau Wolf:", "text": "Kommen Sie herein. Das ist der große Wohnraum.", "id": "Silakan masuk. Ini ruang tamunya yang besar.", "literal": "datang Anda ke-dalam. itu adalah itu besar ruang-tinggal." },
+        { "speaker": "Farah:", "text": "Oh, die hohen Fenster gefallen mir sehr.", "id": "Wah, saya suka banget jendelanya yang tinggi.", "literal": "oh, itu tinggi jendela-jendela menyenangkan kepadaku sangat." },
+        { "speaker": "Frau Wolf:", "text": "Ja, das Licht ist hier den ganzen Tag gut.", "id": "Iya, cahayanya bagus seharian di sini.", "literal": "ya, itu cahaya adalah di-sini itu seluruh hari baik." },
+        { "speaker": "Farah:", "text": "Und die alte Heizung? Funktioniert die noch?", "id": "Terus pemanas yang lama itu? Masih jalan?", "literal": "dan itu tua pemanas? berfungsi itu masih?" },
+        { "speaker": "Frau Wolf:", "text": "Die wurde letztes Jahr ersetzt. Schauen Sie, das neue Gerät ist dort.", "id": "Itu sudah diganti tahun lalu. Lihat, alat yang baru ada di sana.", "literal": "itu menjadi-dulu lalu tahun diganti. lihat Anda, itu baru alat adalah di-sana." },
+        { "speaker": "Farah:", "text": "Gut. Welches Zimmer ist das kleine da hinten?", "id": "Bagus. Kamar yang kecil di belakang itu kamar apa?", "literal": "baik. yang-mana kamar adalah itu kecil di-situ belakang?" },
+        { "speaker": "Frau Wolf:", "text": "Das ist das zweite Schlafzimmer. Es geht auf den ruhigen Innenhof.", "id": "Itu kamar tidur kedua. Menghadap ke halaman dalam yang tenang.", "literal": "itu adalah itu kedua kamar-tidur. ia pergi ke itu tenang halaman-dalam." },
+        { "speaker": "Farah:", "text": "Perfekt. In der lauten Straße könnte ich nicht schlafen.", "id": "Sempurna. Di jalan yang berisik saya nggak bisa tidur.", "literal": "sempurna. di itu berisik jalan bisa-andai saya tidak tidur." },
+        { "speaker": "Frau Wolf:", "text": "Das verstehe ich. Die meisten Mieter sagen dasselbe.", "id": "Saya paham. Kebanyakan penyewa bilang begitu.", "literal": "itu mengerti saya. itu terbanyak penyewa mengatakan itu-sama." },
+        { "speaker": "Farah:", "text": "Wie hoch sind die monatlichen Nebenkosten?", "id": "Biaya bulanan tambahannya berapa?", "literal": "berapa tinggi adalah itu bulanan biaya-tambahan?" },
+        { "speaker": "Frau Wolf:", "text": "Zweihundert Euro. Darin sind das warme Wasser und die Heizung enthalten.", "id": "Dua ratus euro. Sudah termasuk air panas dan pemanas.", "literal": "dua-ratus euro. di-dalamnya adalah itu hangat air dan itu pemanas termuat." },
+        { "speaker": "Farah:", "text": "Und der Strom?", "id": "Listriknya?", "literal": "dan itu listrik?" },
+        { "speaker": "Frau Wolf:", "text": "Den zahlen Sie extra. Möchten Sie das schöne Bad auch noch sehen?", "id": "Itu bayar terpisah. Mau lihat kamar mandinya yang bagus juga?", "literal": "itu membayar Anda ekstra. ingin Anda itu bagus kamar-mandi juga masih melihat?" }
+      ],
+      "notes": [
+        "**Kata sifat berubah hanya kalau ia berdiri di depan kata benda.** *Die Wohnung ist **schön*** — tanpa akhiran. *Die **schöne** Wohnung* — dengan akhiran. Aturan ini mutlak, dan ia langsung memotong separuh kekhawatiranmu: semua kalimat *X ist schön* aman selamanya.",
+        "**Sesudah der/die/das, pilihannya cuma dua: -e atau -en.** Tidak ada kemungkinan ketiga. Bandingkan dengan bahasa Indonesia yang tidak punya perubahan sama sekali — inilah harga yang harus dibayar, dan harganya ternyata murah.",
+        "**-e dipakai di lima kotak saja**: Nominativ maskulin, Nominativ & Akkusativ feminin, Nominativ & Akkusativ netral. **Semua sisanya -en.** Kalau kamu lupa, menebak *-en* memberi peluang benar lebih besar.",
+        "**Seluruh Dativ dan seluruh jamak selalu -en.** Tidak ada kecuali: *in der laut**en** Straße*, *die hoh**en** Fenster*, *mit den neu**en** Möbeln*.",
+        "**dieser, jener, welcher, jeder, alle bekerja persis seperti der/die/das.** *dies**es** Zimmer* = *das Zimmer*, jadi kata sifat sesudahnya ikut aturan yang sama: *dieses klein**e** Zimmer*.",
+        "**hoch kehilangan huruf c waktu memakai akhiran**: *das Haus ist **hoch***, tapi *das **hohe** Haus*. Satu-satunya kata sifat yang berperilaku begini, dan ia sering muncul.",
+        "**teuer dan dunkel membuang huruf e-nya**: *ein teures Zimmer* → *das **teure** Zimmer*, *das **dunkle** Zimmer*. Ini soal enak diucapkan, bukan aturan tata bahasa baru.",
+        "**Nebenkosten** — biaya tambahan di luar sewa pokok, mencakup air, pemanas, sampah. Sewa pokok disebut *Kaltmiete*, sewa total disebut *Warmmiete*. Ketiga kata ini muncul di setiap iklan sewa di Jerman, jadi hafalkan bertiga."
+      ],
+      "grammars": [
+        {
+          "title": "Akhiran kata sifat sesudah der / die / das",
+          "body": [
+            "Lihat bentuknya sebagai gambar, bukan sebagai daftar. Yang berwarna terang adalah **-e**; sisanya **-en**:"
+          ],
+          "table": {
+            "head": ["", "maskulin", "feminin", "netral", "jamak"],
+            "rows": [
+              ["Nominativ", "der gut**e** Mann", "die gut**e** Frau", "das gut**e** Kind", "die gut**en** Leute"],
+              ["Akkusativ", "den gut**en** Mann", "die gut**e** Frau", "das gut**e** Kind", "die gut**en** Leute"],
+              ["Dativ", "dem gut**en** Mann", "der gut**en** Frau", "dem gut**en** Kind", "den gut**en** Leuten"]
+            ]
+          },
+          "after": [
+            "Hitung sendiri: dari dua belas kotak, hanya **lima** yang memakai -e — dan kelimanya menempel di baris Nominativ dan Akkusativ non-maskulin.",
+            "Ringkasnya dalam satu kalimat: **-e di pojok kiri atas, -en di mana-mana selain itu.**"
+          ]
+        },
+        {
+          "title": "welcher dan dieser",
+          "body": [
+            "Keduanya berubah persis seperti *der/die/das*, jadi kalau kamu bisa satu, kamu bisa ketiganya:"
+          ],
+          "table": {
+            "head": ["", "maskulin", "feminin", "netral", "jamak"],
+            "rows": [
+              ["Nominativ", "dies**er** / welch**er**", "dies**e** / welch**e**", "dies**es** / welch**es**", "dies**e** / welch**e**"],
+              ["Akkusativ", "dies**en** / welch**en**", "dies**e** / welch**e**", "dies**es** / welch**es**", "dies**e** / welch**e**"],
+              ["Dativ", "dies**em** / welch**em**", "dies**er** / welch**er**", "dies**em** / welch**em**", "dies**en** / welch**en**"]
+            ]
+          },
+          "after": [
+            "*Welcher* dipakai untuk bertanya \"yang mana\": *Welch**es** Zimmer ist das?* Jangan tertukar dengan *was für ein* yang berarti \"jenis apa\".",
+            "Dalam percakapan, *dieser* sering dipendekkan jadi *der da* — *Welche Wohnung? Die da.* Bentuk pendek itu justru yang paling sering terdengar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mencari tempat tinggal di Jerman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["die Wohnung", "VOO-nung", "apartemen, tempat tinggal"],
+            ["die Miete", "MII-te", "sewa"],
+            ["die Kaltmiete", "KALT-mii-te", "sewa pokok tanpa biaya tambahan"],
+            ["die Warmmiete", "VARM-mii-te", "sewa total"],
+            ["die Nebenkosten", "NEE-ben-kos-ten", "biaya tambahan bulanan"],
+            ["die Kaution", "kau-TSIOON", "uang jaminan"],
+            ["der Mieter", "MII-ta", "penyewa"],
+            ["der Vermieter", "fea-MII-ta", "pemilik yang menyewakan"],
+            ["die Besichtigung", "be-ZIKH-ti-gung", "kunjungan melihat rumah"],
+            ["der Innenhof", "I-nen-hoof", "halaman dalam"],
+            ["die Heizung", "HAI-tsung", "pemanas ruangan"],
+            ["der Strom", "sytroom", "listrik"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Angka yang sungguh dilihat orang di iklan sewa",
+          "items": [
+            "**Kaltmiete + Nebenkosten = Warmmiete.** Iklan biasanya menulis Kaltmiete, karena angkanya lebih kecil; yang kamu bayar tiap bulan adalah yang kedua.",
+            "**Kaution** biasanya tiga kali Kaltmiete dan dikembalikan saat pindah — kalau tidak ada kerusakan.",
+            "**qm** atau **m²** = luas. *65 qm, 2 Zimmer* berarti 65 meter persegi, dua kamar — dan di Jerman dapur serta kamar mandi **tidak** ikut dihitung sebagai Zimmer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata sifat untuk menggambarkan ruangan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Arti", "Deutsch", "Arti"],
+          "rows": [
+            ["groß / klein", "besar / kecil", "hell / dunkel", "terang / gelap"],
+            ["ruhig / laut", "tenang / berisik", "neu / alt", "baru / lama"],
+            ["hoch / niedrig", "tinggi / rendah", "teuer / günstig", "mahal / murah"],
+            ["möbliert / leer", "berperabot / kosong", "gemütlich", "nyaman, betah"],
+            ["sauber / schmutzig", "bersih / kotor", "modern / altmodisch", "modern / kuno"],
+            ["warm / kalt", "hangat / dingin", "praktisch", "praktis"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan yang paling cepat membuat akhiran ini otomatis: ambil satu kata sifat, lalu ucapkan **tiga kalimat berturut-turut** dengan kata benda berbeda jenis — *der ruhige Innenhof, die ruhige Straße, das ruhige Zimmer*. Sesudah sepuluh kata sifat, tanganmu akan menulis akhirannya sendiri tanpa berpikir."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "die Wohnung", "baca": "VOO-nung", "id": "apartemen" },
+    { "de": "der Wohnraum", "baca": "VOON-raum", "id": "ruang tamu" },
+    { "de": "das Fenster", "baca": "FENS-ta", "id": "jendela" },
+    { "de": "das Licht", "baca": "likht", "id": "cahaya, lampu" },
+    { "de": "die Heizung", "baca": "HAI-tsung", "id": "pemanas" },
+    { "de": "das Gerät", "baca": "ge-REET", "id": "alat, perangkat" },
+    { "de": "ersetzen", "baca": "ea-ZE-tsen", "id": "mengganti" },
+    { "de": "der Innenhof", "baca": "I-nen-hoof", "id": "halaman dalam" },
+    { "de": "ruhig", "baca": "RUU-ikh", "id": "tenang" },
+    { "de": "laut", "baca": "laut", "id": "berisik, keras" },
+    { "de": "der Mieter", "baca": "MII-ta", "id": "penyewa" },
+    { "de": "die Nebenkosten", "baca": "NEE-ben-kos-ten", "id": "biaya tambahan" },
+    { "de": "der Strom", "baca": "sytroom", "id": "listrik" },
+    { "de": "monatlich", "baca": "MOO-nat-likh", "id": "bulanan" },
+    { "de": "enthalten", "baca": "ent-HAL-ten", "id": "termasuk, termuat" },
+    { "de": "hoch", "baca": "hookh", "id": "tinggi" },
+    { "de": "die Besichtigung", "baca": "be-ZIKH-ti-gung", "id": "kunjungan melihat rumah" },
+    { "de": "dasselbe", "baca": "das-ZEL-be", "id": "hal yang sama" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan akhiran -e atau -en.",
+      "items": [
+        "Das ist der groß____ Wohnraum.",
+        "Die alt____ Heizung funktioniert nicht.",
+        "Ich nehme das klein____ Zimmer.",
+        "In der laut____ Straße kann ich nicht schlafen.",
+        "Die hoh____ Fenster gefallen mir."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk *dieser* atau *welcher* yang tepat.",
+      "items": [
+        "____ Wohnung nehmen Sie? (welch-)",
+        "____ Zimmer ist sehr hell. (dies-)",
+        "Mit ____ Mieter haben Sie gesprochen? (welch-)",
+        "____ Fenster sind neu. (dies-)",
+        "In ____ Haus wohnst du? (welch-)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Saya suka jendelanya yang tinggi.",
+        "Kamar tidur kedua menghadap halaman dalam yang tenang.",
+        "Biaya bulanan tambahannya berapa?",
+        "Di jalan yang berisik saya nggak bisa tidur.",
+        "Air panas sudah termasuk."
+      ]
+    }
+  ],
+  "answers": [
+    "große — alte — kleine — lauten — hohen",
+    "Welche — Dieses — welchem — Diese — welchem",
+    "Die hohen Fenster gefallen mir. — Das zweite Schlafzimmer geht auf den ruhigen Innenhof. — Wie hoch sind die monatlichen Nebenkosten? — In der lauten Straße kann ich nicht schlafen. — Das warme Wasser ist enthalten."
+  ],
+  "wave": "Ulangi **unit 3**: sebutkan lima kado dan untuk siapa masing-masing, dengan lantang, semuanya memakai Dativ — tanpa membuka halamannya."
+}

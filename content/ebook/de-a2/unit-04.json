@@ -1,0 +1,193 @@
+{
+  "title": "Karena saya nggak sempat",
+  "title_target": "Weil ich keine Zeit habe",
+  "goal": "Menyambung dua kalimat jadi satu dengan *weil*, *dass*, dan *ob* — dan tahu kata sambung mana yang memindahkan kata kerja dan mana yang tidak.",
+  "bekal": [
+    "menyebutkan alasan dengan *weil* dan *denn*",
+    "melaporkan isi pikiran dan perkataan dengan *dass*",
+    "menanyakan hal yang belum pasti dengan *ob*",
+    "memakai *deshalb* dan *trotzdem* tanpa merusak urutan kata"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Die Absage",
+      "intro": "Nina membatalkan janji lewat telepon. Perhatikan ke mana kata kerja pergi sesudah tiap kata sambung.",
+      "lines": [
+        { "speaker": "Nina:", "text": "Hallo Ben, ich muss dir leider absagen.", "id": "Halo Ben, maaf aku harus batal.", "literal": "halo Ben, saya harus kepadamu sayangnya membatalkan." },
+        { "speaker": "Ben:", "text": "Schade. Warum denn?", "id": "Sayang banget. Kenapa?", "literal": "sayang. kenapa toh?" },
+        { "speaker": "Nina:", "text": "Weil ich morgen früh eine Prüfung habe. Ich muss noch lernen.", "id": "Soalnya besok pagi aku ada ujian. Masih harus belajar.", "literal": "karena saya besok pagi sebuah ujian punya. saya harus masih belajar." },
+        { "speaker": "Ben:", "text": "Ach so. Ich dachte, dass du schon fertig bist.", "id": "Oh gitu. Aku kira kamu sudah selesai.", "literal": "ah begitu. saya pikir-dulu, bahwa kamu sudah selesai adalah." },
+        { "speaker": "Nina:", "text": "Nein, überhaupt nicht. Ich habe gestern kaum etwas geschafft.", "id": "Nggak, sama sekali belum. Kemarin aku nyaris nggak ngerjain apa-apa.", "literal": "tidak, sama-sekali tidak. saya punya kemarin nyaris sesuatu diselesaikan." },
+        { "speaker": "Ben:", "text": "Kein Problem. Weißt du schon, ob du am Samstag Zeit hast?", "id": "Nggak apa-apa. Sudah tahu belum, Sabtu kamu ada waktu nggak?", "literal": "tidak-ada masalah. tahu kamu sudah, apakah kamu pada Sabtu waktu punya?" },
+        { "speaker": "Nina:", "text": "Ich glaube schon. Aber ich weiß noch nicht, wann die Prüfung zu Ende ist.", "id": "Kayaknya ada. Tapi aku belum tahu ujiannya selesai jam berapa.", "literal": "saya percaya sudah. tetapi saya tahu masih tidak, kapan itu ujian ke akhir adalah." },
+        { "speaker": "Ben:", "text": "Dann sag einfach Bescheid, wenn du es weißt.", "id": "Ya udah, kabarin aja kalau sudah tahu.", "literal": "lalu katakan sederhana kabar, kalau kamu ia tahu." },
+        { "speaker": "Nina:", "text": "Mache ich. Es tut mir wirklich leid, dass ich so kurzfristig absage.", "id": "Oke. Maaf banget ya batalnya mendadak.", "literal": "melakukan saya. ia melakukan kepadaku sungguh sedih, bahwa saya begitu jangka-pendek membatalkan." },
+        { "speaker": "Ben:", "text": "Ist doch nicht schlimm. Du hast ja einen guten Grund.", "id": "Nggak masalah kok. Alasanmu jelas.", "literal": "adalah toh tidak parah. kamu punya ya sebuah baik alasan." },
+        { "speaker": "Nina:", "text": "Danke. Ich bin gerade ziemlich gestresst, deshalb bin ich so kurz angebunden.", "id": "Makasih. Aku lagi stres banget, makanya jawabnya singkat-singkat.", "literal": "terima-kasih. saya adalah barusan cukup tertekan, karena-itu adalah saya begitu pendek terikat." },
+        { "speaker": "Ben:", "text": "Verstehe ich. Trotzdem solltest du heute Abend eine Pause machen.", "id": "Aku ngerti. Tapi nanti malam istirahat sebentar, ya.", "literal": "mengerti saya. meskipun-begitu seharusnya kamu hari-ini malam sebuah jeda melakukan." },
+        { "speaker": "Nina:", "text": "Mal sehen. Bis Samstag, hoffe ich!", "id": "Lihat nanti. Sampai Sabtu, semoga!", "literal": "sekali melihat. sampai Sabtu, berharap saya!" }
+      ],
+      "notes": [
+        "**weil, dass, ob, wenn, als melempar kata kerja ke ujung.** *Ich komme nicht, weil ich morgen eine Prüfung **habe**.* Ini ciri bahasa Jerman yang paling khas, dan paling perlu dilatih — bukan karena rumit, tapi karena telinga Indonesia tidak menyiapkanmu untuk itu.",
+        "**Kalau ada dua bagian kata kerja, urutannya juga terbalik di ujung.** *…, weil ich noch **lernen muss**.* Kata kerja bantunya yang berdiri paling belakang. Ingat: yang berakhiran ikut orangnya selalu paling akhir.",
+        "**denn = weil, tapi tidak memindahkan apa pun.** *Ich komme nicht, **denn** ich **habe** morgen eine Prüfung.* Isinya sama persis, urutannya normal. Kalau kamu belum percaya diri dengan anak kalimat, *denn* adalah jalan aman — tapi jangan berhenti di situ, karena *weil* jauh lebih sering dipakai.",
+        "**deshalb dan trotzdem bukan kata sambung anak kalimat.** Mereka berdiri di **posisi pertama**, jadi kata kerjanya menyusul di posisi kedua dan pelakunya mundur: *Ich bin gestresst, **deshalb bin ich** kurz angebunden.* Menulis *deshalb ich bin* adalah kesalahan yang langsung terdengar.",
+        "**dass melaporkan isi.** Sesudah *ich denke*, *ich glaube*, *ich hoffe*, *es tut mir leid*, *ich weiß* — semuanya bisa disambung dengan *dass*. Perhatikan ejaannya: **dass** dengan dua s adalah kata sambung; **das** dengan satu s adalah kata sandang atau kata tunjuk.",
+        "**ob = apakah**, dipakai untuk pertanyaan ya/tidak yang dilaporkan. *Weißt du, **ob** er kommt?* Jangan memakai *wenn* di sini; *wenn* berarti \"kalau/tiap kali\", bukan \"apakah\".",
+        "**Pertanyaan berkata tanya juga jadi anak kalimat.** *Wann ist die Prüfung zu Ende?* → *Ich weiß nicht, **wann** die Prüfung zu Ende **ist**.* Kata tanyanya tetap, kata kerjanya pindah ke ujung.",
+        "**Kalau anak kalimat berdiri di depan, ia menghitung sebagai posisi pertama.** *Weil ich krank bin, **bleibe ich** zu Hause.* Sesudah komanya langsung kata kerja — pola \"koma lalu kata kerja\" itu tanda kalimat Jerman yang tersusun benar."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis kata sambung",
+          "body": [
+            "Bahasa Jerman punya tiga perilaku, dan kesalahan A2 hampir selalu datang dari mencampurnya:"
+          ],
+          "table": {
+            "head": ["Jenis", "Anggota", "Letak kata kerja", "Contoh"],
+            "rows": [
+              ["tidak mengubah apa pun", "und, oder, aber, denn, sondern", "normal (posisi 2)", "…, **denn** ich **habe** keine Zeit."],
+              ["berdiri di posisi 1", "deshalb, darum, trotzdem, dann, sonst, außerdem", "menyusul di posisi 2", "…, **deshalb habe ich** keine Zeit."],
+              ["membuka anak kalimat", "weil, dass, ob, wenn, als, obwohl, damit, bevor, nachdem", "**ujung kalimat**", "…, **weil** ich keine Zeit **habe**."]
+            ]
+          },
+          "after": [
+            "Perhatikan baris pertama dan ketiga: *denn* dan *weil* berarti sama, tapi berperilaku berlawanan. Kalau ragu di tengah bicara, pakai *denn* — kalimatmu tetap benar.",
+            "*aber* ada di baris pertama, tapi *obwohl* (\"walaupun\") ada di baris ketiga. Jangan tertukar."
+          ]
+        },
+        {
+          "title": "Urutan di dalam anak kalimat",
+          "body": [
+            "Di dalam anak kalimat, seluruh isi tetap seperti biasa — hanya kata kerjanya yang berpindah ke belakang:"
+          ],
+          "table": {
+            "head": ["Kalimat biasa", "Jadi anak kalimat"],
+            "rows": [
+              ["Ich habe morgen eine Prüfung.", "…, weil ich morgen eine Prüfung **habe**."],
+              ["Ich muss noch lernen.", "…, weil ich noch **lernen muss**."],
+              ["Er ist schon fertig.", "…, dass er schon **fertig ist**."],
+              ["Sie steht um sechs auf.", "…, dass sie um sechs **aufsteht**."],
+              ["Er hat gestern gearbeitet.", "…, weil er gestern **gearbeitet hat**."],
+              ["Kommt er heute?", "…, **ob** er heute **kommt**."]
+            ]
+          },
+          "after": [
+            "Baris keempat penting: kata kerja terpisah **menyatu kembali** di anak kalimat — *aufsteht*, bukan *steht … auf*.",
+            "Baris kelima memperlihatkan urutan ujung yang benar: Partizip dulu, baru kata bantunya. *…, weil er gearbeitet **hat*** — bukan *hat gearbeitet*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menolak, meminta maaf, dan memberi alasan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Bahasa Indonesia"],
+          "rows": [
+            ["Ich muss leider absagen.", "Maaf, saya harus batal."],
+            ["Es tut mir leid, dass ich so kurzfristig absage.", "Maaf ya batalnya mendadak."],
+            ["Ich schaffe es heute nicht.", "Hari ini saya nggak keburu."],
+            ["Weil ich noch arbeiten muss.", "Karena saya masih harus kerja."],
+            ["Ich habe einen guten Grund.", "Alasan saya jelas."],
+            ["Können wir das verschieben?", "Bisa kita undur?"],
+            ["Passt es dir am Samstag?", "Sabtu cocok buat kamu?"],
+            ["Ich sage dir Bescheid.", "Nanti saya kabari."],
+            ["Kein Problem, ist nicht schlimm.", "Santai, nggak masalah."],
+            ["Schade, aber ich verstehe das.", "Sayang, tapi saya paham."],
+            ["Ich hoffe, dass es beim nächsten Mal klappt.", "Semoga lain kali jadi."],
+            ["Mal sehen.", "Lihat nanti."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga pembuka yang otomatis menuntut dass",
+          "items": [
+            "*Ich glaube / denke / hoffe, **dass** …* — untuk pendapat dan harapan.",
+            "*Es tut mir leid, **dass** …* dan *Ich freue mich, **dass** …* — untuk perasaan.",
+            "*Es ist wichtig / schade / schön, **dass** …* — untuk penilaian. Ketiga pola ini menutup sebagian besar keperluan A2, dan semuanya melempar kata kerja ke ujung."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "weil atau deshalb — dua sisi satu alasan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Isi", "Dengan weil", "Dengan deshalb"],
+          "rows": [
+            ["sakit → di rumah", "Ich bleibe zu Hause, weil ich krank bin.", "Ich bin krank, deshalb bleibe ich zu Hause."],
+            ["ujian → belajar", "Ich lerne, weil ich eine Prüfung habe.", "Ich habe eine Prüfung, deshalb lerne ich."],
+            ["hujan → naik taksi", "Wir nehmen ein Taxi, weil es regnet.", "Es regnet, deshalb nehmen wir ein Taxi."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan urutannya terbalik: *weil* memperkenalkan **sebabnya**, *deshalb* memperkenalkan **akibatnya**. Latihan yang paling berguna adalah menulis satu kalimat lalu langsung membalikkannya ke bentuk yang satu lagi — dua kali lipat latihan dengan satu isi."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "absagen", "baca": "AP-zaa-gen", "id": "membatalkan" },
+    { "de": "die Prüfung", "baca": "PRÜÜ-fung", "id": "ujian" },
+    { "de": "schaffen", "baca": "SYA-fen", "id": "sempat, berhasil menyelesaikan" },
+    { "de": "fertig", "baca": "FER-tikh", "id": "selesai, siap" },
+    { "de": "der Grund", "baca": "grunt", "id": "alasan" },
+    { "de": "Bescheid sagen", "baca": "be-SYAIT ZAA-gen", "id": "mengabari" },
+    { "de": "kurzfristig", "baca": "KUURTS-fris-tikh", "id": "mendadak" },
+    { "de": "schlimm", "baca": "sylim", "id": "parah, gawat" },
+    { "de": "gestresst", "baca": "ge-SYTREST", "id": "stres" },
+    { "de": "die Pause", "baca": "PAU-ze", "id": "istirahat, jeda" },
+    { "de": "verschieben", "baca": "fea-SYII-ben", "id": "mengundur" },
+    { "de": "klappen", "baca": "KLA-pen", "id": "berhasil, jadi" },
+    { "de": "überhaupt nicht", "baca": "ü-ba-HAUPT nikht", "id": "sama sekali tidak" },
+    { "de": "kaum", "baca": "kaum", "id": "nyaris tidak" },
+    { "de": "ziemlich", "baca": "TSIIM-likh", "id": "cukup, lumayan" },
+    { "de": "schade", "baca": "SYAA-de", "id": "sayang sekali" },
+    { "de": "deshalb", "baca": "DES-halp", "id": "karena itu, makanya" },
+    { "de": "trotzdem", "baca": "TROTS-deem", "id": "meskipun begitu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sambung jadi satu kalimat dengan *weil*.",
+      "items": [
+        "Ich komme nicht. Ich habe keine Zeit.",
+        "Wir bleiben zu Hause. Es regnet.",
+        "Er lernt viel. Er hat morgen eine Prüfung.",
+        "Sie ist müde. Sie musste lange arbeiten.",
+        "Ich rufe dich an. Ich brauche deine Hilfe."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *dass*, *ob*, *weil*, atau *deshalb*.",
+      "items": [
+        "Ich glaube, ____ er heute kommt.",
+        "Weißt du, ____ der Laden noch offen ist?",
+        "Ich bin krank, ____ bleibe ich zu Hause.",
+        "Sie sagt ab, ____ sie eine Prüfung hat.",
+        "Es tut mir leid, ____ ich so spät anrufe."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Saya nggak bisa datang karena besok ada ujian.",
+        "Aku kira kamu sudah selesai.",
+        "Kamu tahu nggak dia datang atau nggak?",
+        "Aku lagi stres, makanya jawabku singkat.",
+        "Semoga lain kali jadi."
+      ]
+    }
+  ],
+  "answers": [
+    "Ich komme nicht, weil ich keine Zeit habe. — Wir bleiben zu Hause, weil es regnet. — Er lernt viel, weil er morgen eine Prüfung hat. — Sie ist müde, weil sie lange arbeiten musste. — Ich rufe dich an, weil ich deine Hilfe brauche.",
+    "dass — ob — deshalb — weil — dass",
+    "Ich kann nicht kommen, weil ich morgen eine Prüfung habe. — Ich dachte, dass du schon fertig bist. — Weißt du, ob er kommt? — Ich bin gestresst, deshalb bin ich so kurz angebunden. — Ich hoffe, dass es beim nächsten Mal klappt."
+  ],
+  "wave": "Ulangi **unit 2**: ceritakan masa kecilmu selama satu menit, seluruhnya dengan *als* dan *immer wenn*, tanpa membuka halamannya."
+}

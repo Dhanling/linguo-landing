@@ -1,0 +1,205 @@
+{
+  "title": "Boleh tahu kapan dia balik?",
+  "title_target": "Können Sie mir sagen, wann er zurückkommt?",
+  "goal": "Menelepon dalam bahasa Jerman: mengeja nama, meninggalkan pesan, dan mengubah pertanyaan langsung jadi pertanyaan sopan yang dilaporkan.",
+  "bekal": [
+    "membentuk pertanyaan tak langsung dengan kata tanya dan dengan *ob*",
+    "mengeja nama memakai abjad Jerman",
+    "meninggalkan dan menerima pesan telepon",
+    "menangani sambungan yang buruk tanpa panik"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ein Anruf im Büro",
+      "intro": "Rizky menelepon sebuah kantor. Perhatikan ke mana kata kerja pergi sesudah *ob* dan sesudah kata tanya.",
+      "lines": [
+        { "speaker": "Empfang:", "text": "Firma Berger, Steiner am Apparat. Was kann ich für Sie tun?", "id": "Firma Berger, dengan Steiner. Ada yang bisa saya bantu?", "literal": "firma Berger, Steiner pada-itu pesawat. apa bisa saya untuk Anda melakukan?" },
+        { "speaker": "Rizky:", "text": "Guten Tag. Könnten Sie mir sagen, ob Herr Weber heute im Haus ist?", "id": "Selamat siang. Boleh tahu, Pak Weber hari ini ada di kantor?", "literal": "baik hari. bisa-andai Anda kepadaku mengatakan, apakah tuan Weber hari-ini di-dalam-itu rumah adalah?" },
+        { "speaker": "Empfang:", "text": "Er ist gerade in einer Besprechung. Worum geht es denn?", "id": "Beliau sedang rapat. Ini soal apa ya?", "literal": "dia adalah barusan di dalam-sebuah rapat. tentang-apa pergi ia toh?" },
+        { "speaker": "Rizky:", "text": "Es geht um die Rechnung vom letzten Monat.", "id": "Soal tagihan bulan lalu.", "literal": "ia pergi tentang itu tagihan dari-itu lalu bulan." },
+        { "speaker": "Empfang:", "text": "Verstehe. Wissen Sie, welche Rechnungsnummer das ist?", "id": "Paham. Anda tahu nomor tagihannya berapa?", "literal": "mengerti. tahu Anda, yang-mana tagihan-nomor itu adalah?" },
+        { "speaker": "Rizky:", "text": "Moment… vier-sieben-null-zwei. Wissen Sie zufällig, wann er zurückkommt?", "id": "Sebentar… empat-tujuh-nol-dua. Kebetulan tahu nggak beliau balik jam berapa?", "literal": "sebentar… empat-tujuh-nol-dua. tahu Anda kebetulan, kapan dia kembali-datang?" },
+        { "speaker": "Empfang:", "text": "Vermutlich gegen vierzehn Uhr. Möchten Sie eine Nachricht hinterlassen?", "id": "Kira-kira jam dua siang. Mau tinggal pesan?", "literal": "diduga sekitar empat-belas jam. ingin Anda sebuah pesan meninggalkan?" },
+        { "speaker": "Rizky:", "text": "Gern. Er soll mich bitte zurückrufen.", "id": "Boleh. Tolong minta beliau telepon balik.", "literal": "dengan-senang. dia harus saya mohon kembali-menelepon." },
+        { "speaker": "Empfang:", "text": "Wie ist Ihr Name, bitte?", "id": "Nama Anda siapa?", "literal": "bagaimana adalah punya-Anda nama, mohon?" },
+        { "speaker": "Rizky:", "text": "Rizky Pratama. Soll ich das buchstabieren?", "id": "Rizky Pratama. Perlu saya eja?", "literal": "Rizky Pratama. harus saya itu mengeja?" },
+        { "speaker": "Empfang:", "text": "Ja bitte, langsam.", "id": "Iya tolong, pelan-pelan.", "literal": "ya mohon, pelan." },
+        { "speaker": "Rizky:", "text": "R-I-Z-K-Y, wie Richard, Ida, Zeppelin, Kaufmann, Ypsilon. Meine Nummer ist null-eins-sieben-drei…", "id": "R-I-Z-K-Y, seperti Richard, Ida, Zeppelin, Kaufmann, Ypsilon. Nomor saya nol-satu-tujuh-tiga…", "literal": "R-I-Z-K-Y, seperti Richard, Ida, Zeppelin, Kaufmann, Ypsilon. punyaku nomor adalah nol-satu-tujuh-tiga…" },
+        { "speaker": "Empfang:", "text": "Ich habe alles notiert. Er meldet sich sicher noch heute.", "id": "Sudah saya catat semua. Beliau pasti menghubungi hari ini juga.", "literal": "saya punya semua dicatat. dia melapor diri pasti masih hari-ini." }
+      ],
+      "notes": [
+        "**Pertanyaan tak langsung memindahkan kata kerja ke ujung** — persis seperti *weil* dan *dass* di unit 4. *Wann kommt er zurück?* → *Wissen Sie, wann er zurück**kommt**?* Perhatikan juga kata kerja terpisah menyatu kembali.",
+        "**Pertanyaan yang jawabannya ya/tidak memakai ob.** *Ist Herr Weber da?* → *Können Sie mir sagen, **ob** Herr Weber da **ist**?* Bahasa Indonesia menyisipkan \"apakah\", bahasa Jerman menyisipkan *ob* — dan tidak boleh dilewat.",
+        "**Pertanyaan berkata tanya mempertahankan kata tanyanya**: *wann*, *wo*, *wer*, *wie*, *warum*, *welcher* tetap di tempatnya sebagai penyambung. Yang berubah cuma letak kata kerjanya.",
+        "**Pembuka yang paling sering dipakai**: *Können Sie mir sagen, …*, *Wissen Sie, …*, *Ich möchte wissen, …*, *Ich frage mich, …*. Keempatnya menuntut kata kerja di ujung, jadi begitu kamu mendengar dirimu mengucapkannya, siapkan kata kerjanya untuk diletakkan belakangan.",
+        "**Worum geht es?** = ini soal apa. Bentuk *es geht um + Akkusativ* dipakai untuk menyebut pokok perkara: *Es geht um die Rechnung.* Kalimat ini akan kamu dengar di hampir setiap telepon resmi di Jerman.",
+        "**Er soll mich zurückrufen** — *sollen* di sini menyampaikan permintaan dari orang lain, bukan kewajiban. Terjemahan yang paling pas: \"tolong minta beliau…\". Bentuk ini sangat berguna saat menitipkan pesan.",
+        "**Buchstabieren** — mengeja — adalah keterampilan telepon yang wajib di Jerman, karena nama Indonesia hampir selalu perlu dieja. Orang Jerman memakai daftar nama baku (*A wie Anton*), dan tabel di halaman berikutnya memuat yang lengkap.",
+        "**sich melden** = menghubungi, mengabari. *Er meldet sich* berarti \"beliau akan menghubungi\". Jangan menerjemahkannya sebagai \"melapor\" — dalam konteks telepon, artinya lebih ringan."
+      ],
+      "grammars": [
+        {
+          "title": "Dari pertanyaan langsung ke pertanyaan tak langsung",
+          "body": [
+            "Kolom kanan selalu memakai koma, lalu kata penyambung, lalu kalimat dengan kata kerja di ujung:"
+          ],
+          "table": {
+            "head": ["Langsung", "Tak langsung"],
+            "rows": [
+              ["Wann kommt er zurück?", "Wissen Sie, **wann** er zurück**kommt**?"],
+              ["Wo ist das Büro?", "Können Sie mir sagen, **wo** das Büro **ist**?"],
+              ["Wie viel kostet das?", "Ich möchte wissen, **wie viel** das **kostet**."],
+              ["Ist Herr Weber da?", "Können Sie mir sagen, **ob** Herr Weber da **ist**?"],
+              ["Hat sie angerufen?", "Ich frage mich, **ob** sie **angerufen hat**."],
+              ["Muss ich einen Termin machen?", "Wissen Sie, **ob** ich einen Termin **machen muss**?"]
+            ]
+          },
+          "after": [
+            "Dua baris terakhir memperlihatkan urutan ujung yang benar: Partizip lalu kata bantu (*angerufen hat*), kata kerja dasar lalu kata bantu (*machen muss*).",
+            "Kalimat tak langsung diakhiri **tanda tanya** kalau pembukanya pertanyaan (*Wissen Sie, …?*) dan **titik** kalau pembukanya pernyataan (*Ich möchte wissen, …*)."
+          ]
+        },
+        {
+          "title": "Abjad telepon Jerman",
+          "body": [
+            "Dipakai persis seperti ini di telepon, di bank, dan di kantor pemerintah:"
+          ],
+          "table": {
+            "head": ["", "", "", "", "", ""],
+            "rows": [
+              ["A – Anton", "B – Berta", "C – Cäsar", "D – Dora", "E – Emil", "F – Friedrich"],
+              ["G – Gustav", "H – Heinrich", "I – Ida", "J – Julius", "K – Kaufmann", "L – Ludwig"],
+              ["M – Martha", "N – Nordpol", "O – Otto", "P – Paula", "Q – Quelle", "R – Richard"],
+              ["S – Samuel", "T – Theodor", "U – Ulrich", "V – Viktor", "W – Wilhelm", "X – Xanthippe"],
+              ["Y – Ypsilon", "Z – Zeppelin", "Ä – Ärger", "Ö – Ökonom", "Ü – Übermut", "ß – Eszett"]
+            ]
+          },
+          "after": [
+            "Cara memakainya: *R wie Richard, I wie Ida, Z wie Zeppelin.* Kata *wie* di sini berarti \"seperti\".",
+            "Kalau kamu lupa daftarnya, sebutkan kota: *B wie Berlin* selalu dimengerti. Yang penting kamu memberi kata pembanding, bukan mengulang hurufnya lebih keras."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat telepon yang wajib dikuasai",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Bahasa Indonesia"],
+          "rows": [
+            ["Firma Berger, Steiner am Apparat.", "Firma Berger, dengan Steiner."],
+            ["Könnte ich bitte Herrn Weber sprechen?", "Boleh bicara dengan Pak Weber?"],
+            ["Wen darf ich melden?", "Dengan siapa saya sampaikan?"],
+            ["Einen Moment, ich verbinde.", "Sebentar, saya sambungkan."],
+            ["Die Leitung ist besetzt.", "Salurannya sedang sibuk."],
+            ["Er ist gerade in einer Besprechung.", "Beliau sedang rapat."],
+            ["Möchten Sie eine Nachricht hinterlassen?", "Mau tinggal pesan?"],
+            ["Er soll mich bitte zurückrufen.", "Tolong minta beliau telepon balik."],
+            ["Ich rufe später noch einmal an.", "Nanti saya telepon lagi."],
+            ["Können Sie das bitte wiederholen?", "Bisa diulang?"],
+            ["Die Verbindung ist schlecht.", "Sambungannya jelek."],
+            ["Auf Wiederhören!", "Sampai jumpa!"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalau kamu tidak paham",
+          "items": [
+            "*Entschuldigung, ich habe Sie nicht verstanden.* — Maaf, saya tidak menangkap.",
+            "*Könnten Sie bitte langsamer sprechen?* — Bisa lebih pelan?",
+            "*Wie schreibt man das?* — Ejaannya bagaimana?",
+            "Ketiga kalimat ini lebih berguna daripada kosakata baru mana pun. Menelepon dalam bahasa asing sulit bagi semua orang; yang membedakan bukan siapa yang paham segalanya, melainkan siapa yang berani meminta pengulangan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Meninggalkan pesan suara",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Susunan baku pesan suara Jerman selalu sama, dan kamu bisa menyiapkannya sekali lalu memakainya seumur hidup:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Sapaan dan nama** — *Guten Tag, hier spricht Rizky Pratama.*",
+            "**Alasan menelepon** — *Ich rufe wegen der Rechnung vom letzten Monat an.*",
+            "**Permintaan** — *Könnten Sie mich bitte zurückrufen?*",
+            "**Nomor, pelan-pelan dan dua kali** — *Meine Nummer ist null-eins-sieben-drei… Ich wiederhole:…*",
+            "**Penutup** — *Vielen Dank und auf Wiederhören.*"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Angka telepon Jerman",
+          "items": [
+            "Nomor disebut **satu per satu**: 0173 → *null-eins-sieben-drei*. Menyebutnya berpasangan (*siebzehn-drei*) memang terdengar di sebagian daerah, tapi menyulitkan pendengar asing dan sebaiknya dihindari.",
+            "Ingat kebiasaan angka Jerman dari A1: **satuan dulu, puluhan belakangan** — *einundzwanzig* = 21. Di telepon inilah kebiasaan itu paling sering membuat salah dengar, jadi ejalah angka satu per satu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "der Apparat", "baca": "a-pa-RAAT", "id": "pesawat telepon" },
+    { "de": "der Empfang", "baca": "emp-FANG", "id": "resepsionis, penerimaan" },
+    { "de": "die Besprechung", "baca": "be-SYPRE-khung", "id": "rapat" },
+    { "de": "die Nachricht", "baca": "NAAKH-rikht", "id": "pesan, berita" },
+    { "de": "hinterlassen", "baca": "hin-ta-LA-sen", "id": "meninggalkan (pesan)" },
+    { "de": "zurückrufen", "baca": "tsu-RÜK-ruu-fen", "id": "menelepon balik" },
+    { "de": "buchstabieren", "baca": "buukh-sta-BII-ren", "id": "mengeja" },
+    { "de": "verbinden", "baca": "fea-BIN-den", "id": "menyambungkan" },
+    { "de": "die Leitung", "baca": "LAI-tung", "id": "saluran telepon" },
+    { "de": "besetzt", "baca": "be-ZETST", "id": "sibuk, terisi" },
+    { "de": "die Verbindung", "baca": "fea-BIN-dung", "id": "sambungan" },
+    { "de": "sich melden", "baca": "zikh MEL-den", "id": "menghubungi, mengabari" },
+    { "de": "notieren", "baca": "no-TII-ren", "id": "mencatat" },
+    { "de": "wiederholen", "baca": "vii-da-HOO-len", "id": "mengulang" },
+    { "de": "zufällig", "baca": "TSUU-fe-likh", "id": "kebetulan" },
+    { "de": "vermutlich", "baca": "fea-MUUT-likh", "id": "kemungkinan besar" },
+    { "de": "die Rechnungsnummer", "baca": "REKH-nungs-nu-ma", "id": "nomor tagihan" },
+    { "de": "die Firma", "baca": "FIR-ma", "id": "perusahaan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi pertanyaan tak langsung dengan pembuka *Können Sie mir sagen, …*",
+      "items": [
+        "Wann kommt er zurück?",
+        "Wo ist das Büro?",
+        "Ist Herr Weber heute da?",
+        "Wie viel kostet die Reparatur?",
+        "Hat sie schon angerufen?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan *ob* atau kata tanya yang tepat.",
+      "items": [
+        "Wissen Sie, ____ die Besprechung dauert?",
+        "Ich möchte wissen, ____ das Büro heute offen ist.",
+        "Können Sie mir sagen, ____ ich einen Termin brauche?",
+        "Ich frage mich, ____ er wohnt.",
+        "Wissen Sie, ____ die Rechnungsnummer ist?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Boleh bicara dengan Pak Weber?",
+        "Beliau sedang rapat.",
+        "Mau tinggal pesan?",
+        "Tolong minta beliau telepon balik.",
+        "Bisa diulang?"
+      ]
+    }
+  ],
+  "answers": [
+    "Können Sie mir sagen, wann er zurückkommt? — Können Sie mir sagen, wo das Büro ist? — Können Sie mir sagen, ob Herr Weber heute da ist? — Können Sie mir sagen, wie viel die Reparatur kostet? — Können Sie mir sagen, ob sie schon angerufen hat?",
+    "wie lange — ob — ob — wo — wie",
+    "Könnte ich bitte Herrn Weber sprechen? — Er ist gerade in einer Besprechung. — Möchten Sie eine Nachricht hinterlassen? — Er soll mich bitte zurückrufen. — Können Sie das bitte wiederholen?"
+  ],
+  "wave": "Ulangi **unit 9**: sebutkan lima hal yang kamu nantikan dan lima yang membuatmu kesal, semuanya dengan kata kerja refleksif dan kata depan tetapnya."
+}

@@ -1,0 +1,202 @@
+{
+  "title": "Ini bukan yang saya pesan",
+  "title_target": "Das habe ich nicht bestellt",
+  "goal": "Mengeluh dan menuntut penyelesaian dengan sopan tapi tegas — sambil merapikan seluruh kata sambung yang sudah kamu kumpulkan.",
+  "bekal": [
+    "menyampaikan keluhan di toko, restoran, dan lewat surat",
+    "memakai *obwohl*, *trotzdem*, *sonst*, *außerdem*, *sondern*",
+    "meminta ganti, tukar, atau uang kembali",
+    "menjaga urutan kata saat kalimatnya jadi panjang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Reklamation im Laden",
+      "intro": "Fitri mengembalikan barang yang salah kirim. Perhatikan mana kata sambung yang memindahkan kata kerja dan mana yang tidak.",
+      "lines": [
+        { "speaker": "Fitri:", "text": "Guten Tag. Ich habe hier eine Lampe, die ich online bestellt habe.", "id": "Selamat siang. Saya bawa lampu yang saya pesan online.", "literal": "baik hari. saya punya di-sini sebuah lampu, yang saya daring memesan punya." },
+        { "speaker": "Verkäufer:", "text": "Guten Tag. Gibt es ein Problem damit?", "id": "Selamat siang. Ada masalah?", "literal": "baik hari. memberi ia sebuah masalah dengan-itu?" },
+        { "speaker": "Fitri:", "text": "Ja. Ich habe die weiße bestellt, aber geliefert wurde die schwarze.", "id": "Iya. Saya pesan yang putih, tapi yang dikirim yang hitam.", "literal": "ya. saya punya itu putih memesan, tetapi dikirim menjadi-dulu itu hitam." },
+        { "speaker": "Verkäufer:", "text": "Das tut mir leid. Haben Sie die Rechnung dabei?", "id": "Maaf sekali. Faktur dibawa?", "literal": "itu melakukan kepadaku sedih. punya Anda itu faktur serta?" },
+        { "speaker": "Fitri:", "text": "Hier. Und obwohl ich sofort geschrieben habe, hat niemand geantwortet.", "id": "Ini. Padahal saya langsung menulis, tapi nggak ada yang membalas.", "literal": "di-sini. dan meskipun saya segera menulis punya, punya tidak-seorang-pun menjawab." },
+        { "speaker": "Verkäufer:", "text": "Das ist ärgerlich. Ich schaue gleich im System nach.", "id": "Memang menjengkelkan. Saya cek di sistem sekarang.", "literal": "itu adalah menjengkelkan. saya melihat segera di-dalam-itu sistem menyusul." },
+        { "speaker": "Fitri:", "text": "Danke. Ich möchte nicht die schwarze behalten, sondern die weiße bekommen.", "id": "Terima kasih. Saya nggak mau ambil yang hitam, tapi mau dapat yang putih.", "literal": "terima-kasih. saya ingin tidak itu hitam menyimpan, melainkan itu putih menerima." },
+        { "speaker": "Verkäufer:", "text": "Verstehe. Die weiße ist momentan leider nicht auf Lager.", "id": "Paham. Sayangnya yang putih sedang kosong.", "literal": "mengerti. itu putih adalah sekarang sayangnya tidak di atas gudang." },
+        { "speaker": "Fitri:", "text": "Trotzdem hätte ich gern eine Lösung. Bis wann kommt sie wieder rein?", "id": "Tapi saya tetap mau ada solusinya. Kapan masuk lagi?", "literal": "meskipun-begitu punya-andai saya dengan-senang sebuah solusi. sampai kapan datang dia lagi masuk?" },
+        { "speaker": "Verkäufer:", "text": "In zehn Tagen. Ich kann sie für Sie reservieren, sonst ist sie sofort wieder weg.", "id": "Sepuluh hari lagi. Bisa saya pesankan buat Anda, kalau nggak nanti langsung habis lagi.", "literal": "dalam sepuluh hari. saya bisa dia untuk Anda memesan, kalau-tidak adalah dia segera lagi pergi." },
+        { "speaker": "Fitri:", "text": "Bitte tun Sie das. Außerdem möchte ich die Versandkosten zurück.", "id": "Tolong ya. Selain itu saya minta ongkos kirimnya balik.", "literal": "mohon melakukan Anda itu. selain-itu ingin saya itu kirim-biaya kembali." },
+        { "speaker": "Verkäufer:", "text": "Selbstverständlich, das war unser Fehler. Das Geld ist in drei Tagen auf Ihrem Konto.", "id": "Tentu saja, itu kesalahan kami. Uangnya masuk ke rekening Anda dalam tiga hari.", "literal": "sendiri-dimengerti, itu adalah-dulu punya-kami kesalahan. itu uang adalah dalam tiga hari di atas punya-Anda rekening." },
+        { "speaker": "Fitri:", "text": "Danke, das ist fair. Dann warte ich auf Ihre Nachricht.", "id": "Terima kasih, itu adil. Saya tunggu kabarnya.", "literal": "terima-kasih, itu adalah adil. lalu menunggu saya ke-atas punya-Anda pesan." }
+      ],
+      "notes": [
+        "**obwohl = walaupun**, dan ia melempar kata kerja ke ujung: *…, **obwohl** ich sofort geschrieben **habe**.* Bandingkan dengan *trotzdem*, yang berdiri di posisi pertama dan justru menarik kata kerja ke posisi kedua.",
+        "**Pasangan obwohl / trotzdem persis seperti weil / deshalb** di unit 4: keduanya menyampaikan isi yang sama dari dua arah. *Obwohl es regnete, gingen wir.* = *Es regnete. **Trotzdem gingen wir**.*",
+        "**sondern = melainkan**, dan ia hanya dipakai sesudah kalimat **berisi ingkar**: *Ich möchte **nicht** die schwarze behalten, **sondern** die weiße bekommen.* Kalau tidak ada ingkar, pakai *aber*.",
+        "**sonst = kalau tidak**, menunjuk akibat buruk yang dihindari: *Ich reserviere sie, **sonst ist sie** weg.* Ia berdiri di posisi pertama, jadi kata kerjanya menyusul.",
+        "**außerdem = selain itu**, juga berdiri di posisi pertama: ***Außerdem möchte ich*** die Versandkosten zurück. Kata ini sangat berguna saat mengeluh, karena keluhan biasanya lebih dari satu.",
+        "**auf Lager sein** = tersedia di stok. Kebalikannya *ausverkauft* (habis terjual). Keduanya muncul di setiap toko daring Jerman.",
+        "**Reklamation adalah kata yang tepat untuk keluhan resmi** di Jerman — bukan *Beschwerde*, yang lebih dipakai untuk mengeluh tentang perlakuan atau pelayanan. Untuk barang, pakai *Reklamation* atau *Umtausch*.",
+        "**Nada mengeluh dalam bahasa Jerman: tegas soal isinya, sopan soal bentuknya.** *Das tut mir leid* dari pihak toko dan *Ich hätte gern eine Lösung* dari pihakmu adalah pasangan baku. Meninggikan suara justru memperlambat penyelesaian."
+      ],
+      "grammars": [
+        {
+          "title": "Seluruh kata sambung dalam satu tabel",
+          "body": [
+            "Semua yang kamu kumpulkan sejak unit 4, dirapikan menurut perilakunya:"
+          ],
+          "table": {
+            "head": ["Perilaku", "Anggota", "Contoh"],
+            "rows": [
+              ["kalimat sesudahnya normal", "und, oder, **aber**, denn, **sondern**", "Ich rufe an, **denn** ich **habe** eine Frage."],
+              ["berdiri di posisi 1", "deshalb, darum, **trotzdem**, dann, **sonst**, **außerdem**, danach", "**Trotzdem möchte ich** eine Lösung."],
+              ["melempar kata kerja ke ujung", "weil, dass, ob, wenn, als, **obwohl**, damit, bevor, nachdem, während, seitdem, bis", "…, **obwohl** ich geschrieben **habe**."]
+            ]
+          },
+          "after": [
+            "Kalau kamu ragu di tengah bicara, baris pertama selalu aman — *aber* dan *denn* tidak menuntut apa pun darimu.",
+            "Kesalahan yang paling sering: memakai *trotzdem* seolah ia *obwohl*. Uji cepatnya, coba sisipkan koma di depannya. Kalau kalimat sesudahnya bisa berdiri sendiri, kata itu ada di baris kedua."
+          ]
+        },
+        {
+          "title": "aber atau sondern",
+          "body": [
+            "Bahasa Indonesia memakai \"tapi\" untuk keduanya, jadi pembagiannya perlu dilihat sekali dengan jelas:"
+          ],
+          "table": {
+            "head": ["Pakai", "Syarat", "Contoh"],
+            "rows": [
+              ["**aber**", "menambahkan kontras biasa", "Die Lampe ist schön, **aber** teuer."],
+              ["**sondern**", "kalimat pertama **mengandung ingkar** dan bagian kedua **mengoreksinya**", "Ich möchte **nicht** die schwarze, **sondern** die weiße."],
+              ["**aber** (walau ada ingkar)", "bagian kedua **tidak** mengoreksi, cuma menambah", "Ich habe **kein** Geld, **aber** ich bin glücklich."]
+            ]
+          },
+          "after": [
+            "Uji cepat: kalau bagian kedua menggantikan yang diingkari, pakai *sondern*. Kalau ia berbicara tentang hal lain, pakai *aber*.",
+            "Pola berpasangan yang sering muncul: *nicht nur …, **sondern auch** …* = bukan hanya …, melainkan juga … — kalimat yang langsung menaikkan kesan bahasamu."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengeluh dan menuntut penyelesaian",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Bahasa Indonesia"],
+          "rows": [
+            ["Das habe ich nicht bestellt.", "Ini bukan yang saya pesan."],
+            ["Die Ware ist beschädigt.", "Barangnya rusak."],
+            ["Das Gerät funktioniert nicht.", "Alatnya nggak berfungsi."],
+            ["Die Lieferung war unvollständig.", "Kirimannya nggak lengkap."],
+            ["Ich möchte das reklamieren.", "Saya mau ajukan komplain."],
+            ["Kann ich es umtauschen?", "Bisa ditukar?"],
+            ["Ich hätte gern mein Geld zurück.", "Saya minta uang kembali."],
+            ["Ich möchte die Versandkosten erstattet bekommen.", "Saya minta ongkos kirim diganti."],
+            ["Bis wann ist es wieder auf Lager?", "Kapan stoknya masuk lagi?"],
+            ["Können Sie es für mich reservieren?", "Bisa dipesankan buat saya?"],
+            ["Das war Ihr Fehler, nicht meiner.", "Itu kesalahan Anda, bukan saya."],
+            ["Danke, das ist fair.", "Terima kasih, itu adil."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Di restoran",
+          "items": [
+            "*Entschuldigung, das habe ich nicht bestellt.* — Maaf, ini bukan pesanan saya.",
+            "*Die Suppe ist kalt.* — Supnya dingin.",
+            "*Könnten Sie das bitte noch einmal aufwärmen?* — Bisa tolong dihangatkan lagi?",
+            "*Wir warten schon über eine halbe Stunde.* — Kami sudah menunggu lebih dari setengah jam.",
+            "*Die Rechnung stimmt nicht.* — Tagihannya nggak cocok.",
+            "*Ich möchte bitte mit dem Chef sprechen.* — Saya mau bicara dengan manajernya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kerangka surat keluhan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Surat keluhan Jerman selalu pendek dan selalu memuat lima bagian yang sama. Perhatikan bahwa bagian ketiga adalah yang paling sering dilupakan orang asing — menyebut **apa yang kamu inginkan**, bukan cuma apa yang salah."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Rujukan:** *Sehr geehrte Damen und Herren, am 3. März habe ich bei Ihnen eine Lampe bestellt (Bestellnummer 4702).*",
+            "**Masalah:** *Geliefert wurde jedoch eine schwarze Lampe, obwohl ich die weiße bestellt hatte.*",
+            "**Tuntutan:** *Ich bitte Sie, mir die weiße Lampe zu schicken und die Versandkosten zu erstatten.*",
+            "**Tenggat:** *Bitte antworten Sie mir bis zum 20. März.*",
+            "**Penutup:** *Mit freundlichen Grüßen* lalu namamu."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua kata yang membuat surat terdengar resmi",
+          "items": [
+            "**jedoch** = namun. Lebih tertulis daripada *aber*, dan sangat lazim di surat: *Geliefert wurde **jedoch** die schwarze.*",
+            "**bis zum + tanggal** = paling lambat tanggal … Menyebut tenggat yang jelas adalah kebiasaan Jerman yang sangat dihargai, dan sering membuat balasan datang lebih cepat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "die Reklamation", "baca": "re-kla-ma-TSIOON", "id": "komplain barang" },
+    { "de": "liefern", "baca": "LII-fan", "id": "mengirimkan" },
+    { "de": "die Lieferung", "baca": "LII-fe-rung", "id": "pengiriman" },
+    { "de": "beschädigt", "baca": "be-SYEE-dikht", "id": "rusak" },
+    { "de": "unvollständig", "baca": "UN-fol-syten-dikh", "id": "tidak lengkap" },
+    { "de": "umtauschen", "baca": "UM-tau-syen", "id": "menukar" },
+    { "de": "erstatten", "baca": "ea-SYTA-ten", "id": "mengganti (biaya)" },
+    { "de": "die Versandkosten", "baca": "fea-ZANT-kos-ten", "id": "ongkos kirim" },
+    { "de": "auf Lager", "baca": "auf LAA-ga", "id": "tersedia di stok" },
+    { "de": "reservieren", "baca": "re-zer-VII-ren", "id": "memesan, menahan" },
+    { "de": "behalten", "baca": "be-HAL-ten", "id": "menyimpan, mengambil" },
+    { "de": "das Konto", "baca": "KON-to", "id": "rekening" },
+    { "de": "ärgerlich", "baca": "ER-ga-likh", "id": "menjengkelkan" },
+    { "de": "momentan", "baca": "mo-men-TAAN", "id": "saat ini" },
+    { "de": "obwohl", "baca": "op-VOOL", "id": "walaupun" },
+    { "de": "sonst", "baca": "zonst", "id": "kalau tidak" },
+    { "de": "außerdem", "baca": "AU-sa-deem", "id": "selain itu" },
+    { "de": "jedoch", "baca": "yee-DOKH", "id": "namun" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *obwohl*, *trotzdem*, *sonst*, atau *außerdem*.",
+      "items": [
+        "____ ich sofort geschrieben habe, hat niemand geantwortet.",
+        "Die Lampe ist nicht da. ____ möchte ich eine Lösung.",
+        "Ich reserviere sie, ____ ist sie sofort weg.",
+        "____ möchte ich die Versandkosten zurück.",
+        "____ es regnete, sind wir spazieren gegangen."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *aber* atau *sondern*.",
+      "items": [
+        "Die Lampe ist schön, ____ teuer.",
+        "Ich möchte nicht die schwarze, ____ die weiße.",
+        "Ich habe kein Geld, ____ ich bin glücklich.",
+        "Er kommt nicht heute, ____ morgen.",
+        "Das Zimmer ist klein, ____ hell."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Ini bukan yang saya pesan.",
+        "Saya pesan yang putih, tapi yang dikirim yang hitam.",
+        "Bisa ditukar?",
+        "Saya minta uang kembali.",
+        "Kapan stoknya masuk lagi?"
+      ]
+    }
+  ],
+  "answers": [
+    "Obwohl — Trotzdem — sonst — Außerdem — Obwohl",
+    "aber — sondern — aber — sondern — aber",
+    "Das habe ich nicht bestellt. — Ich habe die weiße bestellt, aber geliefert wurde die schwarze. — Kann ich es umtauschen? — Ich hätte gern mein Geld zurück. — Bis wann ist es wieder auf Lager?"
+  ],
+  "wave": "Ulangi **unit 17**: perankan satu kunjungan ke dokter dari awal sampai akhir, dengan lantang, tanpa membuka halamannya."
+}

@@ -1,0 +1,205 @@
+{
+  "title": "Badan saya kurang enak",
+  "title_target": "Ich fühle mich nicht wohl",
+  "goal": "Menjelaskan keluhan badan, memahami saran dokter, dan mengurus izin sakit di Jerman.",
+  "bekal": [
+    "menyebut bagian tubuh yang sakit dengan *tut … weh* dan *Schmerzen haben*",
+    "memberi dan memahami saran dengan *sollen*, *sollten*, dan bentuk perintah",
+    "mengurus *Krankmeldung* dan resep di apotek",
+    "menyusun kalimat sebab-akibat tentang kesehatan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Beim Hausarzt",
+      "intro": "Wulan datang ke dokter keluarga. Perhatikan dua cara menyebut rasa sakit yang dipakai bergantian.",
+      "lines": [
+        { "speaker": "Ärztin:", "text": "Guten Tag, Frau Sari. Was führt Sie zu mir?", "id": "Selamat siang, Bu Sari. Ada keluhan apa?", "literal": "baik hari, nyonya Sari. apa memimpin Anda kepada saya?" },
+        { "speaker": "Wulan:", "text": "Ich fühle mich seit drei Tagen nicht wohl. Mir tut der Hals weh.", "id": "Sudah tiga hari badan saya kurang enak. Tenggorokan saya sakit.", "literal": "saya merasa diri sejak tiga hari tidak sehat. kepadaku melakukan itu leher sakit." },
+        { "speaker": "Ärztin:", "text": "Haben Sie auch Fieber gehabt?", "id": "Ada demam juga?", "literal": "punya Anda juga demam punya?" },
+        { "speaker": "Wulan:", "text": "Gestern achtunddreißig fünf. Heute Morgen war es besser.", "id": "Kemarin tiga puluh delapan lima. Pagi ini sudah turun.", "literal": "kemarin tiga-puluh-delapan lima. hari-ini pagi adalah-dulu ia lebih-baik." },
+        { "speaker": "Ärztin:", "text": "Und Husten? Kopfschmerzen?", "id": "Batuk? Sakit kepala?", "literal": "dan batuk? kepala-sakit?" },
+        { "speaker": "Wulan:", "text": "Husten ja, aber trocken. Und ich habe starke Gliederschmerzen.", "id": "Batuk iya, tapi kering. Dan badan saya pegal semua.", "literal": "batuk ya, tetapi kering. dan saya punya kuat anggota-badan-sakit." },
+        { "speaker": "Ärztin:", "text": "Machen Sie bitte den Mund auf. — Der Hals ist gerötet, aber die Lunge ist frei.", "id": "Tolong buka mulut. — Tenggorokannya merah, tapi paru-paru bersih.", "literal": "membuat Anda mohon itu mulut buka. — itu leher adalah memerah, tetapi itu paru adalah bebas." },
+        { "speaker": "Wulan:", "text": "Ist es schlimm?", "id": "Parah nggak?", "literal": "adalah ia parah?" },
+        { "speaker": "Ärztin:", "text": "Nein, ein normaler Infekt. Sie sollten viel trinken und sich schonen.", "id": "Nggak, infeksi biasa. Sebaiknya banyak minum dan istirahat.", "literal": "tidak, sebuah normal infeksi. Anda seharusnya banyak minum dan diri mengistirahatkan." },
+        { "speaker": "Wulan:", "text": "Brauche ich ein Antibiotikum?", "id": "Perlu antibiotik?", "literal": "membutuhkan saya sebuah antibiotik?" },
+        { "speaker": "Ärztin:", "text": "Nein, das hilft hier nicht. Ich verschreibe Ihnen etwas gegen die Schmerzen.", "id": "Nggak, itu nggak membantu di sini. Saya resepkan obat pereda nyeri.", "literal": "tidak, itu menolong di-sini tidak. saya meresepkan kepada-Anda sesuatu melawan itu nyeri." },
+        { "speaker": "Wulan:", "text": "Und ich brauche eine Krankmeldung für meinen Arbeitgeber.", "id": "Saya juga butuh surat sakit buat kantor.", "literal": "dan saya membutuhkan sebuah sakit-laporan untuk punyaku pemberi-kerja." },
+        { "speaker": "Ärztin:", "text": "Bekommen Sie. Drei Tage, und wenn es nicht besser wird, kommen Sie wieder.", "id": "Nanti dikasih. Tiga hari, dan kalau belum membaik, datang lagi.", "literal": "menerima Anda. tiga hari, dan kalau ia tidak lebih-baik menjadi, datang Anda lagi." }
+      ],
+      "notes": [
+        "**Ada dua cara menyebut rasa sakit, dan keduanya sama-sama lazim.** *Mir **tut** der Hals **weh*** (Dativ + *wehtun*) dan *Ich **habe** Halsschmerzen* (Akkusativ + *Schmerzen*). Yang pertama menunjuk satu bagian, yang kedua menyebut jenis nyerinya.",
+        "**wehtun memakai Dativ untuk orangnya** dan Nominativ untuk bagian tubuhnya. Yang \"melakukan\" adalah bagian tubuhnya: *Der Kopf tut **mir** weh.* Kalau jamak, kata kerjanya ikut: *Die Füße **tun** mir weh.*",
+        "**Schmerzen selalu jamak** dan ditempel di belakang bagian tubuhnya jadi satu kata: *Kopfschmerzen*, *Halsschmerzen*, *Bauchschmerzen*, *Rückenschmerzen*, *Zahnschmerzen*.",
+        "**sollten = sebaiknya**, bentuk saran yang paling sering dipakai dokter dan teman. Bandingkan: *Sie **müssen** viel trinken* (perintah) versus *Sie **sollten** viel trinken* (saran). Yang kedua jauh lebih sering terdengar di ruang praktik.",
+        "**sich fühlen selalu refleksif**: *Ich fühle **mich** nicht wohl.* Jangan berkata *Ich fühle nicht gut* — kalimat itu berarti indra perabamu yang bermasalah.",
+        "**Bentuk perintah sopan memakai Sie di belakang kata kerja**: *Machen **Sie** bitte den Mund auf.* Untuk *du*, kata kerjanya telanjang: *Mach den Mund auf.* Keduanya sudah kamu punya sejak A1; di ruang praktik keduanya muncul bergantian.",
+        "**Krankmeldung** atau *Arbeitsunfähigkeitsbescheinigung* adalah surat keterangan sakit resmi. Di Jerman umumnya wajib diserahkan ke pemberi kerja mulai hari sakit ketiga, tapi banyak perusahaan memintanya sejak hari pertama — periksa kontrakmu.",
+        "**Nilai suhu Jerman memakai koma**: *38,5* dibaca *achtunddreißig Komma fünf*, sering dipendekkan jadi *achtunddreißig fünf*. Demam dihitung mulai sekitar 38 derajat."
+      ],
+      "grammars": [
+        {
+          "title": "Dua cara menyebut sakit",
+          "body": [
+            "Dua kolom ini berisi kalimat yang sama artinya. Latih berpasangan supaya keduanya keluar tanpa berpikir:"
+          ],
+          "table": {
+            "head": ["Dengan wehtun (Dativ)", "Dengan Schmerzen (Akkusativ)", "Arti"],
+            "rows": [
+              ["Mir tut der Kopf weh.", "Ich habe Kopfschmerzen.", "Kepala saya sakit."],
+              ["Mir tut der Hals weh.", "Ich habe Halsschmerzen.", "Tenggorokan saya sakit."],
+              ["Mir tut der Bauch weh.", "Ich habe Bauchschmerzen.", "Perut saya sakit."],
+              ["Mir tut der Rücken weh.", "Ich habe Rückenschmerzen.", "Punggung saya sakit."],
+              ["Mir tun die Zähne weh.", "Ich habe Zahnschmerzen.", "Gigi saya sakit."],
+              ["Mir tun die Füße weh.", "—", "Kaki saya sakit."]
+            ]
+          },
+          "after": [
+            "Perhatikan baris kelima dan keenam: kalau bagian tubuhnya jamak, *tut* berubah jadi **tun**.",
+            "Untuk orang lain: *Ihm tut der Kopf weh*, *Ihr tut der Bauch weh*, *Meinem Kind tut der Hals weh*. Yang di depan selalu Dativ."
+          ]
+        },
+        {
+          "title": "Memberi saran — empat tingkat",
+          "body": [
+            "Dari yang paling lembut ke yang paling tegas:"
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Nada"],
+            "rows": [
+              ["An deiner Stelle würde ich…", "An deiner Stelle würde ich zum Arzt gehen.", "paling halus"],
+              ["Du solltest… / Sie sollten…", "Sie sollten viel trinken.", "saran biasa"],
+              ["Es ist wichtig, … zu …", "Es ist wichtig, sich zu schonen.", "penekanan netral"],
+              ["Du musst… / Sie müssen…", "Sie müssen zu Hause bleiben.", "perintah"],
+              ["Bentuk perintah", "Bleiben Sie im Bett!", "paling tegas"]
+            ]
+          },
+          "after": [
+            "Kalau kamu ragu, *sollten* hampir selalu pilihan yang tepat. Ia terdengar peduli tanpa menggurui.",
+            "Untuk melarang: *Sie sollten **nicht** so viel arbeiten* — jauh lebih halus daripada *Sie dürfen nicht…*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh dan keluhan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Arti", "Deutsch", "Arti"],
+          "rows": [
+            ["der Kopf", "kepala", "der Hals", "leher, tenggorokan"],
+            ["der Bauch", "perut", "der Rücken", "punggung"],
+            ["das Bein", "kaki (tungkai)", "der Fuß", "kaki (telapak)"],
+            ["der Arm", "lengan", "die Hand", "tangan"],
+            ["das Auge", "mata", "das Ohr", "telinga"],
+            ["der Zahn", "gigi", "die Nase", "hidung"],
+            ["die Brust", "dada", "die Schulter", "bahu"],
+            ["das Knie", "lutut", "die Haut", "kulit"],
+            ["der Husten", "batuk", "der Schnupfen", "pilek"],
+            ["das Fieber", "demam", "die Erkältung", "masuk angin, flu ringan"],
+            ["die Übelkeit", "mual", "der Durchfall", "diare"],
+            ["die Allergie", "alergi", "die Grippe", "flu berat"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang wajib bisa diucapkan tanpa berpikir",
+          "items": [
+            "*Ich fühle mich nicht wohl.* — Badan saya kurang enak.",
+            "*Ich bin erkältet.* — Saya masuk angin.",
+            "*Mir ist schlecht.* — Saya mual. (perhatikan Dativ, bukan *Ich bin schlecht*)",
+            "*Mir ist schwindelig.* — Saya pusing berputar.",
+            "*Ich bin allergisch gegen…* — Saya alergi terhadap…",
+            "*Ich nehme regelmäßig Medikamente.* — Saya rutin minum obat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Di apotek dan urusan sakit di kantor",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Bahasa Indonesia"],
+          "rows": [
+            ["Ich habe ein Rezept.", "Saya punya resep."],
+            ["Haben Sie etwas gegen Halsschmerzen?", "Ada obat untuk sakit tenggorokan?"],
+            ["Ist das rezeptfrei?", "Ini bisa tanpa resep?"],
+            ["Wie oft muss ich das nehmen?", "Diminum berapa kali sehari?"],
+            ["Dreimal täglich nach dem Essen.", "Tiga kali sehari sesudah makan."],
+            ["Gibt es Nebenwirkungen?", "Ada efek samping?"],
+            ["Ich brauche eine Krankmeldung.", "Saya butuh surat sakit."],
+            ["Ich kann heute nicht zur Arbeit kommen.", "Hari ini saya nggak bisa masuk kerja."],
+            ["Ich habe mich krankgemeldet.", "Saya sudah lapor sakit."],
+            ["Gute Besserung!", "Semoga lekas sembuh!"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Baris terakhir adalah kalimat yang paling sering kamu dengar dan ucapkan seputar sakit di Jerman: **Gute Besserung!** Jawabannya cukup *Danke!* Kalau seseorang bersin, ucapannya lain lagi: *Gesundheit!*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "sich fühlen", "baca": "zikh FÜÜ-len", "id": "merasa" },
+    { "de": "wehtun", "baca": "VEE-tuun", "id": "terasa sakit" },
+    { "de": "die Schmerzen", "baca": "SYMER-tsen", "id": "nyeri (jamak)" },
+    { "de": "der Husten", "baca": "HUUS-ten", "id": "batuk" },
+    { "de": "trocken", "baca": "TRO-ken", "id": "kering" },
+    { "de": "die Glieder", "baca": "GLII-da", "id": "anggota badan" },
+    { "de": "gerötet", "baca": "ge-RÖÖ-tet", "id": "memerah" },
+    { "de": "die Lunge", "baca": "LUNG-e", "id": "paru-paru" },
+    { "de": "der Infekt", "baca": "in-FEKT", "id": "infeksi" },
+    { "de": "sich schonen", "baca": "zikh SYOO-nen", "id": "mengistirahatkan diri" },
+    { "de": "verschreiben", "baca": "fea-SYRAI-ben", "id": "meresepkan" },
+    { "de": "das Rezept", "baca": "re-TSEPT", "id": "resep" },
+    { "de": "rezeptfrei", "baca": "re-TSEPT-frai", "id": "tanpa resep" },
+    { "de": "die Nebenwirkung", "baca": "NEE-ben-vir-kung", "id": "efek samping" },
+    { "de": "die Krankmeldung", "baca": "KRANK-mel-dung", "id": "surat sakit" },
+    { "de": "die Erkältung", "baca": "ea-KEL-tung", "id": "masuk angin" },
+    { "de": "schwindelig", "baca": "SYVIN-de-likh", "id": "pusing berputar" },
+    { "de": "die Besserung", "baca": "BE-se-rung", "id": "kesembuhan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *tut* atau *tun* dan kata ganti Dativ yang tepat.",
+      "items": [
+        "____ ____ der Kopf weh. (saya)",
+        "____ ____ die Füße weh. (saya)",
+        "____ ____ der Bauch weh. (dia, laki-laki)",
+        "____ ____ der Hals weh. (kamu)",
+        "____ ____ die Zähne weh. (dia, perempuan)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat saran dengan *sollten*.",
+      "items": [
+        "Trinken Sie viel!",
+        "Bleib zu Hause!",
+        "Geh zum Arzt!",
+        "Arbeiten Sie nicht so viel!",
+        "Nimm die Tabletten nach dem Essen!"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Sudah tiga hari badan saya kurang enak.",
+        "Tenggorokan saya sakit.",
+        "Saya butuh surat sakit buat kantor.",
+        "Ada obat untuk sakit tenggorokan?",
+        "Diminum berapa kali sehari?"
+      ]
+    }
+  ],
+  "answers": [
+    "Mir tut — Mir tun — Ihm tut — Dir tut — Ihr tun",
+    "Sie sollten viel trinken. — Du solltest zu Hause bleiben. — Du solltest zum Arzt gehen. — Sie sollten nicht so viel arbeiten. — Du solltest die Tabletten nach dem Essen nehmen.",
+    "Ich fühle mich seit drei Tagen nicht wohl. — Mir tut der Hals weh. — Ich brauche eine Krankmeldung für meinen Arbeitgeber. — Haben Sie etwas gegen Halsschmerzen? — Wie oft muss ich das nehmen?"
+  ],
+  "wave": "Ulangi **unit 15**: ceritakan satu perjalananmu yang berantakan selama satu menit, dengan minimal dua kalimat Plusquamperfekt."
+}

@@ -1,0 +1,199 @@
+{
+  "title": "Di sini pakai bahasa Jerman",
+  "title_target": "Hier wird Deutsch gesprochen",
+  "goal": "Mengurus keperluan di kantor pemerintah Jerman, dan memahami bentuk kalimat yang dipakai formulir: Passiv dan *man*.",
+  "bekal": [
+    "membentuk Passiv dengan *werden* + Partizip II",
+    "memakai *man* sebagai pengganti Passiv dalam percakapan",
+    "membaca petunjuk formulir dan papan pengumuman",
+    "kosakata Anmeldung, Termin, dan dokumen"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Im Bürgeramt",
+      "intro": "Nadia mendaftarkan alamat barunya. Hitung berapa kali kata *wird* dan *werden* muncul.",
+      "lines": [
+        { "speaker": "Nadia:", "text": "Guten Tag, ich möchte mich anmelden. Ich bin letzte Woche umgezogen.", "id": "Selamat siang, saya mau daftar alamat. Minggu lalu saya pindah.", "literal": "baik hari, saya ingin diri mendaftarkan. saya adalah lalu minggu pindah." },
+        { "speaker": "Beamter:", "text": "Haben Sie einen Termin? Ohne Termin werden hier keine Anträge bearbeitet.", "id": "Sudah bikin janji? Tanpa janji, permohonan tidak diproses di sini.", "literal": "punya Anda sebuah janji? tanpa janji menjadi di-sini tidak-ada permohonan diproses." },
+        { "speaker": "Nadia:", "text": "Ja, um zehn Uhr fünfzehn, auf den Namen Nadia Sari.", "id": "Sudah, jam sepuluh lewat lima belas, atas nama Nadia Sari.", "literal": "ya, pada sepuluh jam lima-belas, atas itu nama Nadia Sari." },
+        { "speaker": "Beamter:", "text": "Gut. Welche Unterlagen haben Sie dabei?", "id": "Baik. Bawa dokumen apa saja?", "literal": "yang-mana dokumen punya Anda serta." },
+        { "speaker": "Nadia:", "text": "Meinen Pass und die Wohnungsgeberbestätigung.", "id": "Paspor saya dan surat keterangan dari pemilik rumah.", "literal": "punyaku paspor dan itu pemberi-tempat-tinggal-keterangan." },
+        { "speaker": "Beamter:", "text": "Sehr gut. Das Formular wird gleich am Schalter ausgefüllt, nicht zu Hause.", "id": "Bagus. Formulirnya diisi di loket sekarang, bukan di rumah.", "literal": "sangat baik. itu formulir menjadi segera pada-itu loket diisi, tidak di rumah." },
+        { "speaker": "Nadia:", "text": "Verstanden. Muss das Formular auf Deutsch ausgefüllt werden?", "id": "Paham. Formulirnya harus diisi dalam bahasa Jerman?", "literal": "dimengerti. harus itu formulir pada Jerman diisi menjadi?" },
+        { "speaker": "Beamter:", "text": "Ja. Aber ich helfe Ihnen. Hier trägt man den Namen ein, dort das Geburtsdatum.", "id": "Iya. Tapi saya bantu. Di sini nama, di sana tanggal lahir.", "literal": "ya. tetapi saya menolong kepada-Anda. di-sini menuliskan orang itu nama masuk, di-sana itu lahir-tanggal." },
+        { "speaker": "Nadia:", "text": "Und was schreibt man in dieses Feld?", "id": "Kolom ini diisi apa?", "literal": "dan apa menulis orang ke-dalam ini kolom?" },
+        { "speaker": "Beamter:", "text": "Das bleibt frei. Es wird nur bei Familien ausgefüllt.", "id": "Itu dikosongkan. Cuma diisi untuk keluarga.", "literal": "itu tinggal kosong. ia menjadi hanya pada keluarga diisi." },
+        { "speaker": "Nadia:", "text": "Alles klar. Wann bekomme ich die Bestätigung?", "id": "Oke. Surat keterangannya kapan saya terima?", "literal": "semua jelas. kapan menerima saya itu keterangan?" },
+        { "speaker": "Beamter:", "text": "Die wird sofort ausgedruckt. Die Steuer-ID wird Ihnen später zugeschickt.", "id": "Langsung dicetak. Nomor pajaknya dikirim ke Anda belakangan.", "literal": "itu menjadi segera dicetak. itu pajak-ID menjadi kepada-Anda kemudian dikirim." },
+        { "speaker": "Nadia:", "text": "Wunderbar. Vielen Dank für Ihre Geduld!", "id": "Bagus sekali. Terima kasih atas kesabarannya!", "literal": "ajaib. banyak terima-kasih untuk punya-Anda kesabaran." }
+      ],
+      "notes": [
+        "**Passiv menggeser perhatian dari siapa ke apa.** *Man füllt das Formular aus* memusatkan perhatian pada orangnya; *Das Formular **wird ausgefüllt*** memusatkan perhatian pada formulirnya. Bahasa administrasi Jerman hampir selalu memilih yang kedua.",
+        "**Polanya: werden (yang berubah menurut orang) + Partizip II di ujung.** *Das Formular **wird** ausgefüllt.* / *Die Anträge **werden** bearbeitet.* Persis kurung kalimat yang sudah kamu kenal sejak A1.",
+        "**Passiv lampau memakai wurde**: *Das Haus **wurde** 1990 gebaut.* Bentuk Perfektnya (*ist gebaut worden*) ada, tapi jarang dipakai di percakapan — kenali saja, belum perlu diproduksi.",
+        "**Dengan kata kerja bantu, urutannya bertambah satu**: *Das Formular **muss** ausgefüllt **werden**.* Dua bagian di ujung: Partizip dulu, lalu *werden* dalam bentuk dasar.",
+        "**Pelakunya biasanya tidak disebut sama sekali** — itulah gunanya Passiv. Kalau memang perlu disebut, pakai **von + Dativ**: *Der Antrag wird **von der Sachbearbeiterin** geprüft.*",
+        "**man adalah jalan pintas yang sepenuhnya sah.** *Hier **spricht man** Deutsch* dan *Hier **wird** Deutsch **gesprochen*** berarti sama. Dalam percakapan, *man* jauh lebih sering; dalam tulisan resmi, Passiv menang.",
+        "**man selalu diperlakukan sebagai er/sie/es**: *man macht*, *man muss*, *man kann*. Ia bukan jamak, walau artinya \"orang-orang\". Bentuk Akkusativnya *einen*, Dativnya *einem*.",
+        "**Anmeldung adalah kewajiban hukum di Jerman**: setiap pindah alamat harus didaftarkan, biasanya dalam dua minggu. Tanpa *Anmeldebestätigung*, kamu tidak bisa membuka rekening bank atau mendapat *Steuer-ID*. Kata-kata di unit ini bukan sekadar latihan."
+      ],
+      "grammars": [
+        {
+          "title": "Passiv — tiga bentuk yang cukup untuk A2",
+          "body": [
+            "Kata kerja *werden* menanggung seluruh perubahan; Partizip II tidak pernah berubah:"
+          ],
+          "table": {
+            "head": ["Bentuk", "Pola", "Contoh"],
+            "rows": [
+              ["sekarang", "wird / werden + Partizip II", "Das Formular **wird** ausgefüllt."],
+              ["jamak sekarang", "werden + Partizip II", "Die Anträge **werden** bearbeitet."],
+              ["lampau", "wurde / wurden + Partizip II", "Das Haus **wurde** 1990 gebaut."],
+              ["dengan modal", "modal + Partizip II + werden", "Das **muss** heute gemacht **werden**."],
+              ["pelaku disebut", "+ von + Dativ", "Der Brief wird **von der Chefin** geschrieben."]
+            ]
+          },
+          "after": [
+            "Cara membentuknya dari kalimat biasa: objek Akkusativ naik jadi pelaku, kata kerjanya jadi Partizip II, dan *werden* masuk. *Man **prüft** **den Antrag**.* → ***Der Antrag** **wird** **geprüft**.*",
+            "Perhatikan *werden* punya dua pekerjaan berbeda: \"menjadi\" (*Ich werde Lehrer*) dan penanda Passiv. Konteksnya yang membedakan, dan Partizip II di ujung adalah tandanya."
+          ]
+        },
+        {
+          "title": "man dan pasangannya",
+          "body": [
+            "Satu kata, tiga bentuk, dan semuanya berperilaku seperti orang ketiga tunggal:"
+          ],
+          "table": {
+            "head": ["Kasus", "Bentuk", "Contoh", "Arti"],
+            "rows": [
+              ["Nominativ", "**man**", "Hier spricht man Deutsch.", "Di sini orang berbahasa Jerman."],
+              ["Akkusativ", "**einen**", "Das macht einen müde.", "Itu membuat orang lelah."],
+              ["Dativ", "**einem**", "Das hilft einem sehr.", "Itu sangat menolong."],
+              ["milik", "**sein**", "Man muss seinen Pass mitbringen.", "Orang harus membawa paspornya."]
+            ]
+          },
+          "after": [
+            "*man* tidak sama dengan *der Mann*. Ejaannya satu n, artinya \"orang\" secara umum, dan ia tidak berjenis kelamin.",
+            "Dalam percakapan sehari-hari, *man* juga dipakai untuk menghaluskan pendapat sendiri: *Das kann man so sehen* — \"bisa dilihat begitu\", padahal maksudnya \"menurut saya begitu\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kantor pemerintah dan dokumen",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["das Bürgeramt", "BÜR-ga-amt", "kantor pelayanan warga"],
+            ["die Anmeldung", "AN-mel-dung", "pendaftaran alamat"],
+            ["die Bestätigung", "be-SYTEE-ti-gung", "surat keterangan"],
+            ["der Antrag", "AN-traak", "permohonan"],
+            ["das Formular", "for-mu-LAAR", "formulir"],
+            ["die Unterlagen", "UN-ta-laa-gen", "dokumen (jamak)"],
+            ["der Pass", "pas", "paspor"],
+            ["die Steuer-ID", "SYTOI-a-ii-dee", "nomor pajak"],
+            ["der Schalter", "SYAL-ta", "loket"],
+            ["das Feld", "felt", "kolom isian"],
+            ["das Geburtsdatum", "ge-BUUATS-daa-tum", "tanggal lahir"],
+            ["die Gebühr", "ge-BÜÜA", "biaya administrasi"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Urutan yang benar-benar terjadi di Jerman",
+          "items": [
+            "**Termin buchen** — hampir semua kantor hanya melayani dengan janji daring. Datang tanpa janji biasanya sia-sia.",
+            "**Anmeldung** dalam dua minggu setelah pindah, dengan paspor dan *Wohnungsgeberbestätigung* dari pemilik rumah.",
+            "**Steuer-ID** dikirim lewat pos beberapa minggu kemudian — tanpa diminta, dan tanpa bisa dipercepat.",
+            "Kalau ada yang tidak kamu mengerti di loket, kalimat penyelamatnya: *Könnten Sie mir das bitte erklären?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bahasa papan pengumuman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Tulisan Jerman", "Artinya"],
+          "rows": [
+            ["Hier wird nur mit Termin bedient.", "Di sini hanya dilayani dengan janji."],
+            ["Das Formular wird am Schalter ausgefüllt.", "Formulir diisi di loket."],
+            ["Anträge werden innerhalb von zwei Wochen bearbeitet.", "Permohonan diproses dalam dua minggu."],
+            ["Zahlung wird nur in bar akzeptiert.", "Pembayaran hanya diterima tunai."],
+            ["Hunde müssen angeleint werden.", "Anjing harus ditali."],
+            ["Der Aufzug wird repariert.", "Lift sedang diperbaiki."],
+            ["Hier darf nicht geraucht werden.", "Dilarang merokok di sini."],
+            ["Es wird um Ruhe gebeten.", "Mohon tenang."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan dua baris terakhir: Passiv tanpa pelaku **dan** tanpa subjek sama sekali, dibuka dengan *es* atau langsung dengan kata kerja. Bentuk ini terdengar sangat resmi, dan itulah persis alasan kantor Jerman memakainya. Kamu tidak perlu memproduksinya — cukup membacanya tanpa panik."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "sich anmelden", "baca": "zikh AN-mel-den", "id": "mendaftarkan diri" },
+    { "de": "umziehen", "baca": "UM-tsii-en", "id": "pindah rumah" },
+    { "de": "bearbeiten", "baca": "be-AR-bai-ten", "id": "memproses" },
+    { "de": "ausfüllen", "baca": "AUS-fü-len", "id": "mengisi (formulir)" },
+    { "de": "eintragen", "baca": "AIN-traa-gen", "id": "menuliskan ke dalam" },
+    { "de": "ausdrucken", "baca": "AUS-druu-ken", "id": "mencetak" },
+    { "de": "zuschicken", "baca": "TSUU-syi-ken", "id": "mengirimkan" },
+    { "de": "prüfen", "baca": "PRÜÜ-fen", "id": "memeriksa" },
+    { "de": "der Beamte", "baca": "be-AM-te", "id": "pegawai negeri" },
+    { "de": "dabei haben", "baca": "da-BAI HAA-ben", "id": "membawa serta" },
+    { "de": "frei bleiben", "baca": "frai BLAI-ben", "id": "dikosongkan" },
+    { "de": "sofort", "baca": "zo-FORT", "id": "segera" },
+    { "de": "die Geduld", "baca": "ge-DULT", "id": "kesabaran" },
+    { "de": "innerhalb", "baca": "I-na-halp", "id": "dalam (jangka waktu)" },
+    { "de": "in bar", "baca": "in baar", "id": "tunai" },
+    { "de": "der Aufzug", "baca": "AUF-tsuuk", "id": "lift" },
+    { "de": "erklären", "baca": "ea-KLEE-ren", "id": "menjelaskan" },
+    { "de": "wunderbar", "baca": "VUN-da-baar", "id": "bagus sekali" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi Passiv.",
+      "items": [
+        "Man füllt das Formular aus.",
+        "Man bearbeitet die Anträge.",
+        "Man druckt die Bestätigung sofort aus.",
+        "Man baute das Haus 1990.",
+        "Man muss den Antrag heute prüfen."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi kalimat dengan *man*.",
+      "items": [
+        "Hier wird Deutsch gesprochen.",
+        "Das Formular wird am Schalter ausgefüllt.",
+        "Hier darf nicht geraucht werden.",
+        "Der Pass wird immer gebraucht.",
+        "Die Gebühr wird in bar bezahlt."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Saya mau daftar alamat.",
+        "Tanpa janji, permohonan tidak diproses.",
+        "Formulirnya harus diisi dalam bahasa Jerman?",
+        "Surat keterangannya langsung dicetak.",
+        "Bisa tolong dijelaskan?"
+      ]
+    }
+  ],
+  "answers": [
+    "Das Formular wird ausgefüllt. — Die Anträge werden bearbeitet. — Die Bestätigung wird sofort ausgedruckt. — Das Haus wurde 1990 gebaut. — Der Antrag muss heute geprüft werden.",
+    "Hier spricht man Deutsch. — Man füllt das Formular am Schalter aus. — Hier darf man nicht rauchen. — Man braucht immer den Pass. — Man bezahlt die Gebühr in bar.",
+    "Ich möchte mich anmelden. — Ohne Termin werden keine Anträge bearbeitet. — Muss das Formular auf Deutsch ausgefüllt werden? — Die Bestätigung wird sofort ausgedruckt. — Könnten Sie mir das bitte erklären?"
+  ],
+  "wave": "Ulangi **unit 10**: ucapkan sepuluh permintaan sehari-hari dalam bentuk sopan — *Könnten Sie…*, *Ich hätte gern…*, *Würden Sie…* — tanpa membuka halamannya."
+}
