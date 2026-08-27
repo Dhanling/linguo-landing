@@ -1,0 +1,586 @@
+{
+  "title": "Di mana, ke arah mana",
+  "title_target": "فين؟",
+  "goal": "Bertanya arah dan mengerti jawabannya — plus bentuk perintah bahasa Mesir, yang justru lebih pendek daripada bentuk biasanya.",
+  "bekal": [
+    "menanyakan letak tempat dan mengerti petunjuk arah yang diberikan",
+    "memakai kata depan tempat dengan tepat",
+    "menyuruh dan mempersilakan dengan bentuk perintah"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — تايه في وسط البلد",
+      "intro": "Budi mencari sebuah kantor pos di Downtown Kairo. Peta di ponselnya kehilangan sinyal, jadi dia bertanya kepada penjual koran di sudut jalan.",
+      "lines": [
+        {
+          "speaker": "بودي:",
+          "text": "لو سمحت، البوسطة فين؟",
+          "baca": "law samaht, il-bosstha feen?",
+          "id": "Permisi, kantor pos di mana ya?",
+          "literal": "kalau kau izinkan, pos di mana?"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "البوسطة؟ قريبة. امشي على طول لحد الميدان.",
+          "baca": "il-bosstha? ’urayyiba. imsyi ‘ala thuul lihadd il-midaan.",
+          "id": "Kantor pos? Dekat. Jalan lurus sampai alun-alun.",
+          "literal": "pos? dekat. berjalanlah atas panjang sampai lapangan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "على طول؟ وبعدين؟",
+          "baca": "‘ala thuul? wi ba‘deen?",
+          "id": "Lurus terus? Lalu?",
+          "literal": "atas panjang? dan kemudian?"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "بعدين خش شمال، تاني شارع.",
+          "baca": "ba‘deen khusysy syimaal, taani syaari‘.",
+          "id": "Lalu belok kiri, jalan yang kedua.",
+          "literal": "kemudian masuklah kiri, kedua jalan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "تاني شارع شمال. طيب.",
+          "baca": "taani syaari‘ syimaal. thayyib.",
+          "id": "Jalan kedua ke kiri. Baik.",
+          "literal": "kedua jalan kiri. baik."
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "حتلاقيها على إيدك اليمين، جنب الصيدلية.",
+          "baca": "hatlaa’iiha ‘ala iidak il-yimiin, ganb is-shaydaleyya.",
+          "id": "Nanti ketemu di sebelah kananmu, di samping apotek.",
+          "literal": "kamu-akan-menemukannya atas tanganmu yang kanan, samping apotek."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "بعيدة قد إيه؟",
+          "baca": "bi‘iida ’add ’eeh?",
+          "id": "Jauhnya berapa?",
+          "literal": "jauh sebesar apa?"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "خمس دقايق مشي، مش أكتر.",
+          "baca": "khamas da’aayi’ masyi, misy aktar.",
+          "id": "Lima menit jalan kaki, tidak lebih.",
+          "literal": "lima menit berjalan, bukan lebih."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "وهي بتقفل الساعة كام؟",
+          "baca": "wi hiyya bti’fil is-saa‘a kaam?",
+          "id": "Tutupnya jam berapa?",
+          "literal": "dan dia dia-menutup jam berapa?"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "تلاتة الظهر. اجري بقى!",
+          "baca": "talaata d-dhuhr. igri ba’a!",
+          "id": "Jam tiga siang. Cepetan deh!",
+          "literal": "tiga siang. berlarilah sekarang!"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "الساعة دلوقتي تلاتة إلا ربع!",
+          "baca": "is-saa‘a dilwa’ti talaata illa rub‘!",
+          "id": "Sekarang jam tiga kurang seperempat!",
+          "literal": "jam sekarang tiga kecuali seperempat!"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "خد تاكسي أحسن. ده الميدان قدامك.",
+          "baca": "khud taksi ahsan. da l-midaan ’uddaamak.",
+          "id": "Naik taksi saja lebih baik. Itu alun-alunnya di depanmu.",
+          "literal": "ambillah taksi lebih baik. ini lapangan di depanmu."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً جزيلاً يا أسطى!",
+          "baca": "syukran gaziilan ya usthaa!",
+          "id": "Terima kasih banyak, Bang!",
+          "literal": "terima kasih banyak wahai tukang!"
+        },
+        {
+          "speaker": "الراجل:",
+          "text": "العفو. ربنا معاك.",
+          "baca": "il-‘afw. rabbina ma‘aak.",
+          "id": "Sama-sama. Semoga Tuhan menyertaimu.",
+          "literal": "maaf. Tuhan kami bersamamu."
+        }
+      ],
+      "notes": [
+        "**Kata على طول berarti \"lurus terus\", dan juga \"langsung\".** Harfiahnya \"sepanjang itu\". Dalam urusan waktu ia berarti seketika: روحت على طول (saya langsung pergi). Dalam urusan arah ia berarti tanpa berbelok. Dua arti yang tidak pernah tertukar.",
+        "**Kata خش berarti \"masuk\" dan dipakai untuk \"belok\".** Ia bentuk perintah dari kata kerja خش *khasysy*. Alternatif yang juga umum: حوّد *hawwid* (belok). Keduanya sama-sama sering terdengar di jalanan Kairo.",
+        "**Kanan dan kiri di Mesir: يمين dan شمال.** Kata شمال juga berarti \"utara\", dan itu memang asal-usulnya — di dunia Arab, orang yang menghadap matahari terbit menemukan utara di tangan kirinya. Konteks memisahkan keduanya tanpa kesulitan.",
+        "**Kata قد إيه berarti \"seberapa\", untuk jarak, ukuran, dan lama waktu.** بعيدة قد إيه؟ (seberapa jauh?), كبيرة قد إيه؟ (seberapa besar?), حتقعد قد إيه؟ (berapa lama kamu tinggal?). Ia salah satu pertanyaan paling berguna dan paling sering dilewatkan pemula.",
+        "**Panggilan يا أسطى datang dari kata Turki usta, \"tukang ahli\".** Ia dipakai kepada sopir, tukang, penjual jalanan, dan siapa pun yang bekerja dengan tangannya — dengan nada hormat, bukan merendahkan. Untuk sopir taksi, ia panggilan yang paling tepat.",
+        "**Kalimat ربنا معاك adalah salam perpisahan yang hangat**, harfiahnya \"Tuhan kami bersamamu\". Ia dipakai kepada orang yang sedang menuju sesuatu yang tidak mudah, dan menerima seluruh nada baiknya adalah bagian dari belajar bahasa ini."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perintah — yang justru paling pendek",
+          "body": [
+            "Bentuk perintah dibuat dengan membuang awalan تـ dari bentuk kata kerja tanpa بـ. Tidak ada yang ditambahkan; justru ada yang dicopot."
+          ],
+          "table": {
+            "head": [
+              "Kata kerja",
+              "Bentuk انت",
+              "Perintah (lk)",
+              "Perintah (pr)",
+              "Perintah (jamak)"
+            ],
+            "rows": [
+              [
+                "menulis",
+                "تكتب",
+                "اكتب iktib",
+                "اكتبي iktibi",
+                "اكتبوا iktibu"
+              ],
+              [
+                "minum",
+                "تشرب",
+                "اشرب isyrab",
+                "اشربي isyrabi",
+                "اشربوا isyrabu"
+              ],
+              [
+                "berjalan",
+                "تمشي",
+                "امشي imsyi",
+                "امشي imsyi",
+                "امشوا imsyu"
+              ],
+              [
+                "duduk",
+                "تقعد",
+                "اقعد u’‘ud",
+                "اقعدي u’‘udi",
+                "اقعدوا u’‘udu"
+              ],
+              [
+                "mengambil",
+                "تاخد",
+                "خد khud",
+                "خدي khudi",
+                "خدوا khudu"
+              ],
+              [
+                "datang",
+                "تيجي",
+                "تعالى ta‘aala",
+                "تعالي ta‘aali",
+                "تعالوا ta‘aalu"
+              ],
+              [
+                "membawa",
+                "تجيب",
+                "هات haat",
+                "هاتي haati",
+                "هاتوا haatu"
+              ],
+              [
+                "melihat",
+                "تبص",
+                "بص bushsh",
+                "بصي bushshi",
+                "بصوا bushshu"
+              ]
+            ]
+          },
+          "after": [
+            "Tiga baris terakhir tidak beraturan dan wajib dihafal: تعالى (kemarilah), هات (bawakan), خد (ambil). Ketiganya termasuk kata yang paling sering kamu dengar di Mesir.",
+            "Untuk melarang, jangan pakai bentuk perintah melainkan bentuk انت dengan bungkus مـ...ـش, misalnya ماتشربش (jangan minum), ماتروحش (jangan pergi), ماتنساش (jangan lupa). Ini persis pola ingkar biasa yang akan digarap di unit 10.",
+            "Bentuk perintah terdengar keras kalau berdiri telanjang. Cara melembutkannya di Mesir bukan mengubah kata kerjanya melainkan menambahkan kata: لو سمحت di depan, من فضلك di belakang, atau يا بيه di ujung. Bandingkan اقعد dengan اتفضل اقعد."
+          ]
+        },
+        {
+          "title": "Kata depan tempat",
+          "body": [
+            "Semua kata depan berikut bisa ditempeli akhiran orang yang sudah kamu kenal dari unit empat — قدامي، وراك، جنبه."
+          ],
+          "table": {
+            "head": [
+              "مصري",
+              "Cara baca",
+              "Arti",
+              "Contoh",
+              "Arti contoh"
+            ],
+            "rows": [
+              [
+                "في",
+                "fi",
+                "di, di dalam",
+                "في البيت",
+                "di rumah"
+              ],
+              [
+                "على",
+                "‘ala",
+                "di atas",
+                "على الترابيزة",
+                "di atas meja"
+              ],
+              [
+                "تحت",
+                "taht",
+                "di bawah",
+                "تحت الكرسي",
+                "di bawah kursi"
+              ],
+              [
+                "فوق",
+                "foo’",
+                "di atas, di lantai atas",
+                "فوق السطح",
+                "di atas atap"
+              ],
+              [
+                "جنب",
+                "ganb",
+                "di sebelah",
+                "جنب الصيدلية",
+                "di sebelah apotek"
+              ],
+              [
+                "قدام",
+                "’uddaam",
+                "di depan",
+                "قدام المحطة",
+                "di depan stasiun"
+              ],
+              [
+                "ورا",
+                "wara",
+                "di belakang",
+                "ورا الجامع",
+                "di belakang masjid"
+              ],
+              [
+                "بين",
+                "been",
+                "di antara",
+                "بين البنك والمدرسة",
+                "di antara bank dan sekolah"
+              ],
+              [
+                "حوالين",
+                "hawaleen",
+                "di sekeliling",
+                "حوالين الميدان",
+                "di sekeliling alun-alun"
+              ],
+              [
+                "بعيد عن",
+                "bi‘iid ‘an",
+                "jauh dari",
+                "بعيد عن هنا",
+                "jauh dari sini"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa kata depan في berarti \"di\" maupun \"di dalam\"; bahasa Mesir tidak membedakannya. Untuk menegaskan bagian dalam, orang menambahkan جوه *guwwa*: جوه الأوضة.",
+            "Kata على sering memendek jadi عـ di percakapan cepat: عالشمال، عاليمين، عالطول. Kamu akan mendengar bentuk pendek ini jauh lebih sering daripada bentuk panjangnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti",
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "ميدان",
+              "midaan",
+              "alun-alun, bundaran",
+              "شارع",
+              "syaari‘",
+              "jalan"
+            ],
+            [
+              "محطة",
+              "mahaththa",
+              "stasiun, halte",
+              "مطار",
+              "mathaar",
+              "bandara"
+            ],
+            [
+              "بنك",
+              "bank",
+              "bank",
+              "بوسطة",
+              "bosstha",
+              "kantor pos"
+            ],
+            [
+              "صيدلية",
+              "shaydaleyya",
+              "apotek",
+              "مستشفى",
+              "mustasyfa",
+              "rumah sakit"
+            ],
+            [
+              "سوبر ماركت",
+              "subir markit",
+              "swalayan",
+              "سوق",
+              "suu’",
+              "pasar"
+            ],
+            [
+              "جامع",
+              "gaami‘",
+              "masjid",
+              "كنيسة",
+              "kiniisa",
+              "gereja"
+            ],
+            [
+              "مطعم",
+              "math‘am",
+              "restoran",
+              "فندق",
+              "fundu’",
+              "hotel"
+            ],
+            [
+              "مدرسة",
+              "madrasa",
+              "sekolah",
+              "جامعة",
+              "gam‘a",
+              "universitas"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Beberapa nama tempat di Kairo akan terus kamu dengar dan berguna untuk dikenali sejak awal: وسط البلد *wisth il-balad* (Downtown), ميدان التحرير *midaan it-tahriir* (Tahrir), الزمالك *iz-Zamaalik*, المعادي *il-Ma‘aadi*, الدقي *id-Do’’i*, مصر الجديدة *Mashr ig-Gidiida* (Heliopolis), والقلعة *il-’al‘a* (Benteng Saladin)."
+        },
+        {
+          "type": "kotak",
+          "title": "Kata كوبري dan warisan Turki di jalanan",
+          "items": [
+            "Kata كوبري (jembatan) datang dari bahasa Turki köprü, dan ia salah satu dari puluhan kata Turki yang tinggal di bahasa Mesir sejak empat abad pemerintahan Utsmani.",
+            "Yang lain: أوضة (kamar, dari oda), دولاب (lemari, dari dolap), أسطى (tukang, dari usta), جزمة (sepatu, dari çizme), بقشيش (tip, dari bahşiş), أفندم (tuan, dari efendim).",
+            "Sebagian kata itu bahkan sampai ke bahasa Indonesia lewat jalur yang berbeda — bandingkan \"laci\" dengan دولاب, atau \"efendi\" dengan أفندم."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bertanya arah tanpa tersesat lebih jauh",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yang paling sulit dari bertanya arah bukan bertanyanya, melainkan mengerti jawabannya. Kalimat-kalimat berikut membantumu mengendalikan percakapan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "أنا تايه",
+              "ana taayih",
+              "saya tersesat"
+            ],
+            [
+              "ممكن تساعدني؟",
+              "mumkin tisaa‘idni?",
+              "boleh minta tolong?"
+            ],
+            [
+              "المحطة فين؟",
+              "il-mahaththa feen?",
+              "stasiunnya di mana?"
+            ],
+            [
+              "إزاي أروح هناك؟",
+              "izzaay aruuh hinaak?",
+              "bagaimana saya ke sana?"
+            ],
+            [
+              "ده صح؟",
+              "da shahh?",
+              "ini benar?"
+            ],
+            [
+              "ممكن تورّيني على الخريطة؟",
+              "mumkin tiwarriini ‘alal-khariitha?",
+              "boleh tunjukkan di peta?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat ممكن تورّيني على الخريطة؟ pantas kamu hafal utuh. Petunjuk arah lisan di Kairo cenderung panjang, cepat, dan penuh nama tempat yang belum kamu kenal; meminta ditunjukkan di peta memotong semuanya dalam satu langkah."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "فين",
+      "baca": "feen",
+      "id": "di mana"
+    },
+    {
+      "ar": "على طول",
+      "baca": "‘ala thuul",
+      "id": "lurus terus; langsung"
+    },
+    {
+      "ar": "يمين",
+      "baca": "yimiin",
+      "id": "kanan"
+    },
+    {
+      "ar": "شمال",
+      "baca": "syimaal",
+      "id": "kiri; utara"
+    },
+    {
+      "ar": "خش",
+      "baca": "khusysy",
+      "id": "belok, masuk"
+    },
+    {
+      "ar": "امشي",
+      "baca": "imsyi",
+      "id": "jalanlah"
+    },
+    {
+      "ar": "خد",
+      "baca": "khud",
+      "id": "ambillah"
+    },
+    {
+      "ar": "هات",
+      "baca": "haat",
+      "id": "bawakan"
+    },
+    {
+      "ar": "تعالى",
+      "baca": "ta‘aala",
+      "id": "kemarilah"
+    },
+    {
+      "ar": "بص",
+      "baca": "bushsh",
+      "id": "lihatlah"
+    },
+    {
+      "ar": "قدام",
+      "baca": "’uddaam",
+      "id": "di depan"
+    },
+    {
+      "ar": "ورا",
+      "baca": "wara",
+      "id": "di belakang"
+    },
+    {
+      "ar": "جنب",
+      "baca": "ganb",
+      "id": "di sebelah"
+    },
+    {
+      "ar": "تحت",
+      "baca": "taht",
+      "id": "di bawah"
+    },
+    {
+      "ar": "فوق",
+      "baca": "foo’",
+      "id": "di atas"
+    },
+    {
+      "ar": "بين",
+      "baca": "been",
+      "id": "di antara"
+    },
+    {
+      "ar": "قد إيه",
+      "baca": "’add ’eeh",
+      "id": "seberapa"
+    },
+    {
+      "ar": "تايه",
+      "baca": "taayih",
+      "id": "tersesat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Permisi, stasiunnya di mana?",
+        "Jalan lurus sampai alun-alun.",
+        "Lalu belok kiri, jalan yang kedua.",
+        "Ada di sebelah kananmu, di samping apotek.",
+        "Seberapa jauh dari sini?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan tempat yang tepat.",
+      "items": [
+        "الكتاب ____ الترابيزة. (di atas)",
+        "الصيدلية ____ البنك. (di sebelah)",
+        "المحطة ____ الجامع. (di belakang)",
+        "العربية ____ البيت. (di depan)",
+        "الشنطة ____ الكرسي. (di bawah)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi bentuk perintah untuk orang yang disebutkan.",
+      "items": [
+        "تكتب اسمك. (laki-laki)",
+        "تشربي الشاي. (perempuan)",
+        "تاخد تاكسي. (laki-laki)",
+        "تيجي هنا. (perempuan)",
+        "تجيب المية. (laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "فين / لو سمحت / البوسطة / ؟",
+        "الميدان / لحد / امشي / طول / على",
+        "شارع / خش / تاني / شمال",
+        "الصيدلية / جنب / هي",
+        "إيه / بعيدة / قد / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "لو سمحت، المحطة فين؟ — امشي على طول لحد الميدان. — بعدين خش شمال، تاني شارع. — حتلاقيها على إيدك اليمين، جنب الصيدلية. — بعيدة قد إيه من هنا؟",
+    "على — جنب — ورا — قدام — تحت",
+    "اكتب اسمك. — اشربي الشاي. — خد تاكسي. — تعالي هنا. — هات المية.",
+    "لو سمحت، البوسطة فين؟ — امشي على طول لحد الميدان. — خش شمال، تاني شارع. — هي جنب الصيدلية. — بعيدة قد إيه؟"
+  ],
+  "wave": "Besok, ceritakan pada dirimu sendiri arah dari rumah ke tempat kerjamu dalam bahasa Mesir. Pakai على طول، خش، جنب، قدام."
+}

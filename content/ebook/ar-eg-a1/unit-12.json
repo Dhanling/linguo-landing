@@ -1,0 +1,607 @@
+{
+  "title": "Belanja baju, warna, dan perbandingan",
+  "title_target": "في محل الهدوم",
+  "goal": "Membeli pakaian dengan ukuran dan warna yang tepat — dan membandingkan dua hal, yang dalam bahasa Mesir dilakukan dengan satu bentuk kata untuk semua.",
+  "bekal": [
+    "menyebut warna, ukuran, dan bahan pakaian",
+    "membandingkan dua hal dengan bentuk أفعل dan kata من",
+    "meminta dicobakan, ditukar, atau diganti ukurannya"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — قميص أزرق",
+      "intro": "Budi mencari kemeja untuk undangan makan malam di rumah Mona. Dia masuk ke toko pakaian di Ma'adi.",
+      "lines": [
+        {
+          "speaker": "البياعة:",
+          "text": "أهلاً! بتدور على حاجة معينة؟",
+          "baca": "ahlan! bitdawwar ‘ala haaga mu‘ayyana?",
+          "id": "Halo! Sedang cari sesuatu yang khusus?",
+          "literal": "halo! kamu-mencari atas sesuatu tertentu?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، عايز قميص. حاجة رسمية شوية.",
+          "baca": "aywa, ‘aayiz ’amiish. haaga rasmeyya syuwayya.",
+          "id": "Ya, saya mau kemeja. Yang agak resmi.",
+          "literal": "ya, mau kemeja. sesuatu resmi sedikit."
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "مقاسك كام؟",
+          "baca": "ma’aasak kaam?",
+          "id": "Ukuran Anda berapa?",
+          "literal": "ukuranmu berapa?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "مش عارف بالظبط. متوسط أظن.",
+          "baca": "misy ‘aarif biz-zhabth. mutawassith azhunn.",
+          "id": "Tidak tahu persis. Sedang, kayaknya.",
+          "literal": "bukan tahu tepat. sedang aku-mengira."
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "خد ده وقيسه. الأوضة هناك.",
+          "baca": "khud da wi ’iisu. il-oodha hinaak.",
+          "id": "Ambil ini dan coba. Kamar pasnya di sana.",
+          "literal": "ambillah ini dan ukurlah. kamar di sana."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "ده ضيق عليا شوية. فيه أكبر؟",
+          "baca": "da dhayya’ ‘alayya syuwayya. fiih akbar?",
+          "id": "Ini agak sempit buat saya. Ada yang lebih besar?",
+          "literal": "ini sempit atasku sedikit. ada lebih besar?"
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "أكيد. ده لارج. جربه.",
+          "baca": "akiid. da laarg. garrabu.",
+          "id": "Tentu. Ini ukuran L. Coba.",
+          "literal": "pasti. ini large. cobalah dia."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أحسن كتير. بس اللون ده غامق أوي.",
+          "baca": "ahsan kitiir. bas il-loon da ghaami’ ’awi.",
+          "id": "Jauh lebih baik. Tapi warnanya terlalu gelap.",
+          "literal": "lebih baik banyak. tapi warna ini gelap sangat."
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "فيه نفس الموديل أزرق فاتح. أحلى كمان.",
+          "baca": "fiih nafs il-modeel azra’ faatih. ahla kamaan.",
+          "id": "Ada model yang sama warna biru muda. Lebih bagus malah.",
+          "literal": "ada sama model biru terang. lebih manis juga."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، ده أحلى من الأول. بكام؟",
+          "baca": "aywa, da ahla mil-awwil. bikaam?",
+          "id": "Iya, ini lebih bagus dari yang pertama. Berapa?",
+          "literal": "ya, ini lebih manis dari yang pertama. dengan berapa?"
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "أربعمية وخمسين. قطن مية في المية.",
+          "baca": "arba‘miyya wi khamsiin. ’uthn miyya fil-miyya.",
+          "id": "Empat ratus lima puluh. Katun seratus persen.",
+          "literal": "empat ratus dan lima puluh. katun seratus dalam seratus."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "غالي شوية. فيه خصم؟",
+          "baca": "ghaali syuwayya. fiih khashm?",
+          "id": "Agak mahal. Ada diskon?",
+          "literal": "mahal sedikit. ada potongan?"
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "خليها أربعمية، وده آخر سعر.",
+          "baca": "khalliiha arba‘miyya, wi da aakhir si‘r.",
+          "id": "Jadikan empat ratus, dan itu harga terakhir.",
+          "literal": "jadikan dia empat ratus, dan ini akhir harga."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "ماشي. لو مانفعش، ممكن أغيره؟",
+          "baca": "maasyi. law manafa‘sy, mumkin aghayyaru?",
+          "id": "Oke. Kalau tidak cocok, boleh saya tukar?",
+          "literal": "berjalan. kalau tidak berguna, boleh aku-menggantinya?"
+        },
+        {
+          "speaker": "البياعة:",
+          "text": "طبعاً، في أسبوع، بالفاتورة. مبروك!",
+          "baca": "thab‘an, fi usbuu‘, bil-fatuura. mabruuk!",
+          "id": "Tentu, dalam seminggu, dengan nota. Selamat!",
+          "literal": "tentu, dalam minggu, dengan nota. diberkati!"
+        }
+      ],
+      "notes": [
+        "**Bentuk perbandingan bahasa Arab cuma satu untuk semua**: pola أفعل. Kata كبير jadi أكبر, lalu حلو jadi أحلى, dan كويس jadi أحسن. Ia berarti \"lebih\" maupun \"paling\", tergantung susunannya, dan ia **tidak berubah** menurut laki-laki atau perempuan.",
+        "**Kata \"daripada\" dalam bahasa Mesir adalah من.** أحلى من الأول (lebih bagus daripada yang pertama), أكبر مني (lebih besar daripada saya). Ini persis pola Fusha, dan juga persis pola bahasa Ibrani dan Aram — ciri khas rumpun bahasa Semit.",
+        "**Kata نفس berarti \"sama\" ketika berdiri di depan kata benda.** نفس الموديل (model yang sama), نفس الحاجة (hal yang sama), في نفس الوقت (pada waktu yang sama). Berdiri sendiri, نفس berarti \"jiwa\" atau \"diri\", dan kamu sudah mengenalnya dari bahasa Indonesia lewat kata \"nafsu\".",
+        "**Kata غامق dan فاتح dipakai untuk kedalaman warna**, bukan untuk terang gelapnya ruangan: أزرق غامق (biru tua), أزرق فاتح (biru muda). Untuk ruangan yang gelap, katanya ضلمة *dhalma*.",
+        "**Kata مبروك diucapkan ketika seseorang membeli sesuatu**, bukan hanya untuk pernikahan dan kelulusan. Sepatu baru, ponsel baru, potongan rambut baru — semuanya pantas مبروك. Balasannya الله يبارك فيك.",
+        "**Kalimat لو مانفعش memakai kata kerja نفع, \"berguna, cocok\".** Ia sangat sering dipakai dalam bentuk ingkar: مش حاينفع (tidak akan bisa), ماينفعش كده (begitu tidak boleh). Sebagai kata sifat: نافع (berguna)."
+      ],
+      "grammars": [
+        {
+          "title": "Lebih, dan paling",
+          "body": [
+            "Satu bentuk kata mengurus keduanya. Yang membedakan cuma tempat berdirinya di dalam kalimat."
+          ],
+          "table": {
+            "head": [
+              "Kata sifat",
+              "Perbandingan",
+              "Cara baca",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "كبير besar",
+                "أكبر",
+                "akbar",
+                "أكبر من كده",
+                "lebih besar dari itu"
+              ],
+              [
+                "صغير kecil",
+                "أصغر",
+                "ashghar",
+                "أصغر واحد",
+                "yang paling kecil"
+              ],
+              [
+                "كويس bagus",
+                "أحسن",
+                "ahsan",
+                "أحسن حاجة",
+                "hal yang terbaik"
+              ],
+              [
+                "حلو manis",
+                "أحلى",
+                "ahla",
+                "أحلى من الأول",
+                "lebih bagus dari yang pertama"
+              ],
+              [
+                "غالي mahal",
+                "أغلى",
+                "aghla",
+                "أغلى شوية",
+                "sedikit lebih mahal"
+              ],
+              [
+                "رخيص murah",
+                "أرخص",
+                "arkhash",
+                "فيه أرخص؟",
+                "ada yang lebih murah?"
+              ],
+              [
+                "طويل panjang",
+                "أطول",
+                "athwal",
+                "أطول منه",
+                "lebih panjang darinya"
+              ],
+              [
+                "قصير pendek",
+                "أقصر",
+                "a’shar",
+                "أقصر شوية",
+                "sedikit lebih pendek"
+              ],
+              [
+                "كتير banyak",
+                "أكتر",
+                "aktar",
+                "أكتر من مية",
+                "lebih dari seratus"
+              ],
+              [
+                "قليل sedikit",
+                "أقل",
+                "a’all",
+                "أقل من كده",
+                "kurang dari itu"
+              ]
+            ]
+          },
+          "after": [
+            "Aturan tempatnya: **sesudah** kata benda berarti \"lebih\" — بيت أكبر (rumah yang lebih besar). **Sebelum** kata benda berarti \"paling\" — أكبر بيت (rumah terbesar). Satu bentuk, dua arti, dipisahkan oleh urutan.",
+            "Baris ketiga menyimpang dan wajib dihafal: perbandingan dari كويس bukan أكوس melainkan **أحسن**. Ia salah satu kata yang paling sering dipakai dalam bahasa Mesir, jadi ia akan cepat menempel sendiri.",
+            "Untuk mengatakan dua hal setara, pakai زي *zayy*: ده زي ده (ini seperti ini), أنا زيك (saya sama sepertimu). Kata زي juga berarti \"seperti\" dalam arti perumpamaan."
+          ]
+        },
+        {
+          "title": "Warna, dan bentuknya yang tidak biasa",
+          "body": [
+            "Warna dasar dalam bahasa Arab punya pola tersendiri yang tidak mengikuti kata sifat biasa: laki-laki berpola أفعل, perempuan berpola فعلا."
+          ],
+          "table": {
+            "head": [
+              "Warna",
+              "Laki-laki",
+              "Perempuan",
+              "Jamak",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "merah",
+                "أحمر",
+                "حمرا",
+                "حمر",
+                "ahmar / hamra"
+              ],
+              [
+                "biru",
+                "أزرق",
+                "زرقا",
+                "زرق",
+                "azra’ / zar’a"
+              ],
+              [
+                "hijau",
+                "أخضر",
+                "خضرا",
+                "خضر",
+                "akhdhar / khadhra"
+              ],
+              [
+                "kuning",
+                "أصفر",
+                "صفرا",
+                "صفر",
+                "ashfar / shafra"
+              ],
+              [
+                "hitam",
+                "أسود",
+                "سودا",
+                "سود",
+                "iswid / sooda"
+              ],
+              [
+                "putih",
+                "أبيض",
+                "بيضا",
+                "بيض",
+                "abyadh / beedha"
+              ],
+              [
+                "cokelat",
+                "بني",
+                "بنية",
+                "بنيين",
+                "bunni / bunneyya"
+              ],
+              [
+                "abu-abu",
+                "رمادي",
+                "رمادية",
+                "رماديين",
+                "rumaadi / rumadeyya"
+              ],
+              [
+                "merah muda",
+                "بمبي",
+                "بمبي",
+                "بمبي",
+                "bambi"
+              ],
+              [
+                "oranye",
+                "برتقاني",
+                "برتقانية",
+                "برتقانيين",
+                "burtu’aani"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa **enam warna pertama** memakai pola khusus, sedangkan sisanya adalah kata sifat biasa yang dibentuk dari nama benda: بني dari بن (biji kopi), برتقاني dari برتقان (jeruk), رمادي dari رماد (abu).",
+            "Bentuk laki-laki warna kebetulan sama persis dengan bentuk perbandingan: أحمر dan أكبر. Tapi keduanya tidak berhubungan sama sekali, dan warna tidak punya bentuk perbandingan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pakaian dan ukuran",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti",
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "هدوم",
+              "huduum",
+              "pakaian",
+              "قميص",
+              "’amiish",
+              "kemeja"
+            ],
+            [
+              "بنطلون",
+              "banthaloon",
+              "celana panjang",
+              "تي شيرت",
+              "ti syiirt",
+              "kaus"
+            ],
+            [
+              "جاكيت",
+              "gakiit",
+              "jaket",
+              "فستان",
+              "fustaan",
+              "gaun"
+            ],
+            [
+              "جزمة",
+              "gazma",
+              "sepatu",
+              "شبشب",
+              "syibsyib",
+              "sandal"
+            ],
+            [
+              "شنطة",
+              "syantha",
+              "tas",
+              "حزام",
+              "hizaam",
+              "sabuk"
+            ],
+            [
+              "طرحة",
+              "tarha",
+              "kerudung",
+              "نظارة",
+              "nadhdhaara",
+              "kacamata"
+            ],
+            [
+              "مقاس",
+              "ma’aas",
+              "ukuran",
+              "لون",
+              "loon",
+              "warna"
+            ],
+            [
+              "قطن",
+              "’uthn",
+              "katun",
+              "جلد",
+              "gild",
+              "kulit"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ukuran pakaian di Mesir memakai istilah Inggris yang sudah dilokalkan: سمول *smool*, ميديم *midyum*, لارج *laarg*, إكس لارج. Untuk sepatu, ukurannya memakai angka Eropa, dan pertanyaannya مقاس رجلك كام؟"
+        },
+        {
+          "type": "kotak",
+          "title": "Kata جزمة dan sopan santun sepatu",
+          "items": [
+            "Kata جزمة datang dari bahasa Turki çizme, dan ia berarti sepatu apa pun — bukan hanya bot.",
+            "Di Mesir, sepatu dianggap kotor dalam arti yang cukup harfiah. Menaruh sepatu di atas meja, atau menunjukkan telapak sepatu ke arah orang saat menyilangkan kaki, dianggap kasar. Kebiasaan yang mirip juga ada di Indonesia.",
+            "Melepas sepatu di rumah orang tidak selalu diharapkan di Mesir kota — tunggu isyarat tuan rumah. Kalau ragu, tanyakan: أخلع الجزمة؟"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kalimat di dalam toko",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat berikut menutup hampir seluruh kunjungan ke toko pakaian, dari masuk sampai keluar membawa nota."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "بس بتفرج",
+              "bas batfarrag",
+              "cuma lihat-lihat"
+            ],
+            [
+              "ممكن أقيسه؟",
+              "mumkin a’iisu?",
+              "boleh saya coba?"
+            ],
+            [
+              "فيه مقاس أكبر؟",
+              "fiih ma’aas akbar?",
+              "ada ukuran lebih besar?"
+            ],
+            [
+              "فيه لون تاني؟",
+              "fiih loon taani?",
+              "ada warna lain?"
+            ],
+            [
+              "ده ضيق عليا",
+              "da dhayya’ ‘alayya",
+              "ini sempit buat saya"
+            ],
+            [
+              "ده واسع عليا",
+              "da waasi‘ ‘alayya",
+              "ini longgar buat saya"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat بس بتفرج adalah kunci ketenangan di pasar Mesir. Ia memberi tahu penjual bahwa kamu belum siap membeli, dan hampir selalu dijawab dengan اتفضل، براحتك (\"silakan, santai saja\"). Tanpa kalimat itu, kamu akan terus diikuti dengan tawaran."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "هدوم",
+      "baca": "huduum",
+      "id": "pakaian"
+    },
+    {
+      "ar": "قميص",
+      "baca": "’amiish",
+      "id": "kemeja"
+    },
+    {
+      "ar": "بنطلون",
+      "baca": "banthaloon",
+      "id": "celana panjang"
+    },
+    {
+      "ar": "جزمة",
+      "baca": "gazma",
+      "id": "sepatu"
+    },
+    {
+      "ar": "مقاس",
+      "baca": "ma’aas",
+      "id": "ukuran"
+    },
+    {
+      "ar": "لون",
+      "baca": "loon",
+      "id": "warna"
+    },
+    {
+      "ar": "أحمر",
+      "baca": "ahmar",
+      "id": "merah"
+    },
+    {
+      "ar": "أزرق",
+      "baca": "azra’",
+      "id": "biru"
+    },
+    {
+      "ar": "أخضر",
+      "baca": "akhdhar",
+      "id": "hijau"
+    },
+    {
+      "ar": "أبيض",
+      "baca": "abyadh",
+      "id": "putih"
+    },
+    {
+      "ar": "أسود",
+      "baca": "iswid",
+      "id": "hitam"
+    },
+    {
+      "ar": "فاتح",
+      "baca": "faatih",
+      "id": "muda (warna)"
+    },
+    {
+      "ar": "غامق",
+      "baca": "ghaami’",
+      "id": "tua (warna)"
+    },
+    {
+      "ar": "واسع",
+      "baca": "waasi‘",
+      "id": "longgar"
+    },
+    {
+      "ar": "ضيق",
+      "baca": "dhayya’",
+      "id": "sempit"
+    },
+    {
+      "ar": "مظبوط",
+      "baca": "mazbuuth",
+      "id": "pas, tepat"
+    },
+    {
+      "ar": "أحسن",
+      "baca": "ahsan",
+      "id": "lebih baik"
+    },
+    {
+      "ar": "أكتر",
+      "baca": "aktar",
+      "id": "lebih banyak"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk perbandingannya.",
+      "items": [
+        "كبير",
+        "رخيص",
+        "كويس",
+        "حلو",
+        "طويل"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk warna yang tepat.",
+      "items": [
+        "القميص ____. (biru, laki-laki)",
+        "الشنطة ____. (merah, perempuan)",
+        "الجزمة ____. (hitam, perempuan)",
+        "العربية ____. (putih, perempuan)",
+        "الكتاب ____. (hijau, laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Ukuran Anda berapa?",
+        "Ini agak sempit buat saya, ada yang lebih besar?",
+        "Ada warna lain?",
+        "Ini lebih bagus dari yang pertama.",
+        "Ada diskon?"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "كام / مقاسك / ؟",
+        "شوية / عليا / ده / ضيق",
+        "أكبر / فيه / ؟",
+        "الأول / من / أحلى / ده",
+        "خصم / فيه / ؟"
+      ]
+    }
+  ],
+  "answers": [
+    "أكبر — أرخص — أحسن — أحلى — أطول",
+    "أزرق — حمرا — سودا — بيضا — أخضر",
+    "مقاسك كام؟ — ده ضيق عليا شوية، فيه أكبر؟ — فيه لون تاني؟ — ده أحلى من الأول. — فيه خصم؟",
+    "مقاسك كام؟ — ده ضيق عليا شوية. — فيه أكبر؟ — ده أحلى من الأول. — فيه خصم؟"
+  ],
+  "wave": "Buka lemarimu malam ini dan sebutkan warna sepuluh potong pakaian di dalamnya. Perhatikan bentuk perempuannya untuk kata seperti جزمة dan شنطة."
+}

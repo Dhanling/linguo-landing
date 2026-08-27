@@ -1,0 +1,562 @@
+{
+  "title": "Sakit, dan bagian badan yang jadi pelaku",
+  "title_target": "راسي بتوجعني",
+  "goal": "Menjelaskan keluhan kepada apoteker dan dokter — dengan susunan Mesir yang menjadikan bagian badanmu sebagai pelaku, bukan kamu.",
+  "bekal": [
+    "menyebut bagian badan dan menjelaskan di mana sakitnya",
+    "memakai susunan وجع yang menjadikan anggota badan sebagai pelaku",
+    "membeli obat di apotek dan menerima anjuran memakainya"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — في الصيدلية",
+      "intro": "Budi bangun dengan tenggorokan sakit dan kepala berat. Dia masuk ke apotek di dekat rumahnya; apoteker Mesir terbiasa menangani keluhan ringan tanpa resep.",
+      "lines": [
+        {
+          "speaker": "الصيدلي:",
+          "text": "أهلاً. خير؟ عامل إيه؟",
+          "baca": "ahlan. kheer? ‘aamil ’eeh?",
+          "id": "Halo. Kenapa? Bagaimana keadaanmu?",
+          "literal": "halo. kebaikan? melakukan apa?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "تعبان شوية. زوري بيوجعني من إمبارح.",
+          "baca": "ta‘baan syuwayya. zoori biywga‘ni min imbaarih.",
+          "id": "Agak tidak enak badan. Tenggorokan saya sakit dari kemarin.",
+          "literal": "lelah sedikit. tenggorokanku dia-menyakitiku dari kemarin."
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "وعندك سخونية؟",
+          "baca": "wi ‘andak sukhuneyya?",
+          "id": "Ada demam?",
+          "literal": "dan padamu panas?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شوية بالليل. وراسي كمان بتوجعني.",
+          "baca": "syuwayya bil-leel. wi raasi kamaan bitiwga‘ni.",
+          "id": "Sedikit tadi malam. Dan kepala saya juga sakit.",
+          "literal": "sedikit pada malam. dan kepalaku juga dia-menyakitiku."
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "بتكح؟",
+          "baca": "bitikohh?",
+          "id": "Batuk?",
+          "literal": "kamu-batuk?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، خصوصاً بالليل. ومابنامش كويس.",
+          "baca": "aywa, khushuushan bil-leel. wi mabnamsy kuwayyis.",
+          "id": "Ya, terutama malam. Dan saya tidak tidur nyenyak.",
+          "literal": "ya, khususnya pada malam. dan tidak-aku-tidur baik."
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "عندك حساسية من أي دوا؟",
+          "baca": "‘andak hasaseyya min ayyi dawa?",
+          "id": "Ada alergi obat tertentu?",
+          "literal": "padamu alergi dari apa obat?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "مااعتقدش. عمري مااتحسست من حاجة.",
+          "baca": "ma‘ta’idsy. ‘umri ma-thassist min haaga.",
+          "id": "Sepertinya tidak. Saya belum pernah alergi apa pun.",
+          "literal": "tidak-aku-menyangka. seumurku tidak-aku-alergi dari sesuatu."
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "خد الشراب ده تلات مرات في اليوم بعد الأكل.",
+          "baca": "khud isy-syaraab da talat marraat fil-yoom ba‘d il-akl.",
+          "id": "Minum sirup ini tiga kali sehari sesudah makan.",
+          "literal": "ambillah sirup ini tiga kali pada hari sesudah makan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "وللسخونية؟",
+          "baca": "wi lis-sukhuneyya?",
+          "id": "Untuk demamnya?",
+          "literal": "dan untuk panas?"
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "قرص ده لما تحس بحرارة، مش أكتر من أربعة في اليوم.",
+          "baca": "’ursh da lamma tihiss bi-haraara, misy aktar min arba‘a fil-yoom.",
+          "id": "Tablet ini kalau terasa panas, tidak lebih dari empat sehari.",
+          "literal": "tablet ini ketika kamu-merasa dengan panas, bukan lebih dari empat pada hari."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "طيب. وأشرب حاجة سخنة؟",
+          "baca": "thayyib. wi asyrab haaga sukhna?",
+          "id": "Baik. Perlu minum yang hangat?",
+          "literal": "baik. dan aku-minum sesuatu panas?"
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "أكيد. ينسون بعسل وليمون. ده أحسن من أي دوا.",
+          "baca": "akiid. yansuun bi-‘asal wi lamuun. da ahsan min ayyi dawa.",
+          "id": "Tentu. Adas manis dengan madu dan lemon. Itu lebih baik dari obat apa pun.",
+          "literal": "pasti. adas dengan madu dan lemon. ini lebih baik dari apa obat."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً. لو ماتحسنتش أعمل إيه؟",
+          "baca": "syukran. law mat-hassintisy a‘mil ’eeh?",
+          "id": "Terima kasih. Kalau tidak membaik saya harus bagaimana?",
+          "literal": "terima kasih. kalau tidak-aku-membaik aku-melakukan apa?"
+        },
+        {
+          "speaker": "الصيدلي:",
+          "text": "لو بعد تلات أيام لسه، روح لدكتور. سلامتك!",
+          "baca": "law ba‘d talat ayyaam lissa, ruuh li-duktuur. salaamtak!",
+          "id": "Kalau setelah tiga hari masih, pergilah ke dokter. Semoga cepat sembuh!",
+          "literal": "kalau sesudah tiga hari masih, pergilah kepada dokter. keselamatanmu!"
+        }
+      ],
+      "notes": [
+        "**Bagian badan yang jadi pelaku adalah ciri paling khas kalimat sakit di Mesir.** راسي بتوجعني harfiahnya \"kepala saya menyakiti saya\". Bandingkan dengan bahasa Indonesia yang berkata \"kepala saya sakit\" — di sana kepala cuma keadaan, bukan pelaku. Susunan Mesir ini tidak punya pengecualian.",
+        "**Perhatikan bahwa kata kerjanya ikut jenis kelamin bagian badannya.** راس itu perempuan, jadi بتوجعني. زور itu laki-laki, jadi بيوجعني. Kalau yang sakit dua bagian, kata kerjanya jamak: رجليا بيوجعوني.",
+        "**Kata خير sebagai pertanyaan berarti \"ada apa? semoga baik-baik saja\".** Ia bukan basa-basi kosong: orang Mesir memakainya begitu melihat sesuatu yang tidak biasa di wajahmu. Menjawabnya cukup dengan خير، الحمد لله kalau tidak ada apa-apa.",
+        "**Kata عامل إيه؟ adalah saudara santai dari إزيك؟** Harfiahnya \"melakukan apa\", maksudnya \"apa kabar\". Bentuk perempuannya عاملة إيه؟, jamak عاملين إيه؟",
+        "**Kata سلامتك diucapkan kepada orang yang sedang sakit**, harfiahnya \"semoga keselamatanmu\". Balasannya الله يسلمك. Kalau seseorang bersin, ucapannya berbeda: يرحمكم الله, dibalas يهديكم الله.",
+        "**Apotek Mesir memberikan obat tanpa resep untuk keluhan ringan**, dan apotekernya sering ditanya seperti dokter. Untuk obat yang sungguh-sungguh butuh resep, katanya لازم روشتة *rusyitta* — dari bahasa Italia ricetta."
+      ],
+      "grammars": [
+        {
+          "title": "Susunan sakit dan susunan rasa",
+          "body": [
+            "Bahasa Mesir punya beberapa cara menyatakan keadaan badan, dan masing-masing punya susunan sendiri yang tidak bisa ditukar."
+          ],
+          "table": {
+            "head": [
+              "Susunan",
+              "Contoh",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "anggota badan + بيوجع",
+                "بطني بتوجعني",
+                "bathni bitiwga‘ni",
+                "perut saya sakit"
+              ],
+              [
+                "عندي + kata benda",
+                "عندي صداع",
+                "‘andi shudaa‘",
+                "saya sakit kepala"
+              ],
+              [
+                "عندي + kata benda",
+                "عندي سخونية",
+                "‘andi sukhuneyya",
+                "saya demam"
+              ],
+              [
+                "kata sifat pelaku",
+                "أنا تعبان",
+                "ana ta‘baan",
+                "saya tidak enak badan"
+              ],
+              [
+                "kata sifat pelaku",
+                "أنا دايخ",
+                "ana daayikh",
+                "saya pusing"
+              ],
+              [
+                "حاسس بـ",
+                "حاسس بدوخة",
+                "haasis bi-dookha",
+                "saya merasa pusing"
+              ],
+              [
+                "بـ + kata kerja",
+                "بكح",
+                "bakohh",
+                "saya batuk"
+              ],
+              [
+                "مش قادر",
+                "مش قادر أنام",
+                "misy ’aadir anaam",
+                "saya tidak bisa tidur"
+              ]
+            ]
+          },
+          "after": [
+            "Susunan pertama dipakai untuk **rasa sakit di satu tempat**, dan susunan kedua untuk **penyakit atau keadaan yang punya nama**. Jadi عندي صداع dan راسي بتوجعني dua-duanya benar dan artinya nyaris sama.",
+            "Kata حاسس (merasa) diikuti kata depan بـ, dan bentuknya ikut orangnya: حاسس، حاسة، حاسين. Ia berguna untuk keluhan yang sulit disebut namanya: حاسس إني تعبان.",
+            "Untuk bertanya kepada orang: مالك؟ *maalak?* (kenapa kamu?), وجعك فين؟ *waga‘ak feen?* (sakitmu di mana?), بقالك كام يوم كده؟ (sudah berapa hari begini?)."
+          ]
+        },
+        {
+          "title": "Anjuran memakai obat",
+          "body": [
+            "Petunjuk pemakaian obat memakai susunan yang sangat baku, dan mengenalinya membuatmu bisa membaca kemasan obat Mesir sendiri."
+          ],
+          "table": {
+            "head": [
+              "مصري",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "مرة في اليوم",
+                "marra fil-yoom",
+                "sekali sehari"
+              ],
+              [
+                "مرتين في اليوم",
+                "marriteen fil-yoom",
+                "dua kali sehari"
+              ],
+              [
+                "تلات مرات في اليوم",
+                "talat marraat fil-yoom",
+                "tiga kali sehari"
+              ],
+              [
+                "كل تمن ساعات",
+                "kull taman sa‘aat",
+                "tiap delapan jam"
+              ],
+              [
+                "قبل الأكل",
+                "’abl il-akl",
+                "sebelum makan"
+              ],
+              [
+                "بعد الأكل",
+                "ba‘d il-akl",
+                "sesudah makan"
+              ],
+              [
+                "على الريق",
+                "‘alar-rii’",
+                "saat perut kosong"
+              ],
+              [
+                "قبل النوم",
+                "’abl in-noom",
+                "sebelum tidur"
+              ],
+              [
+                "لمدة أسبوع",
+                "limuddit usbuu‘",
+                "selama seminggu"
+              ],
+              [
+                "عند اللزوم",
+                "‘and il-luzuum",
+                "bila perlu"
+              ]
+            ]
+          },
+          "after": [
+            "Kata مرة berarti \"kali\", dan bentuk duanya مرتين memakai akhiran ـين yang sudah kamu kenal dari unit lima. Untuk tiga sampai sepuluh: تلات مرات، خمس مرات.",
+            "Kata كل di sini berarti \"tiap\": كل تمن ساعات (tiap delapan jam), كل يوم (tiap hari), كل ساعتين (tiap dua jam)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian badan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti",
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "راس",
+              "raas",
+              "kepala",
+              "شعر",
+              "sya‘r",
+              "rambut"
+            ],
+            [
+              "وش",
+              "wisysy",
+              "wajah",
+              "عين",
+              "‘een",
+              "mata"
+            ],
+            [
+              "ودن",
+              "widn",
+              "telinga",
+              "مناخير",
+              "manakhiir",
+              "hidung"
+            ],
+            [
+              "بق",
+              "bo’’",
+              "mulut",
+              "سنة",
+              "sinna",
+              "gigi"
+            ],
+            [
+              "زور",
+              "zoor",
+              "tenggorokan",
+              "رقبة",
+              "ra’aba",
+              "leher"
+            ],
+            [
+              "إيد",
+              "iid",
+              "tangan",
+              "صباع",
+              "shubaa‘",
+              "jari"
+            ],
+            [
+              "رجل",
+              "rigl",
+              "kaki",
+              "ركبة",
+              "rukba",
+              "lutut"
+            ],
+            [
+              "ضهر",
+              "dhahr",
+              "punggung",
+              "بطن",
+              "bathn",
+              "perut"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Hampir semua bagian badan dalam bahasa Arab berjenis **perempuan** — عين، ودن، إيد، رجل، ركبة، بطن، راس. Ini aturan yang jarang diberitahukan padahal sangat berguna: begitu kamu tahu, kamu langsung bisa memilih bentuk kata kerja yang benar untuk mengeluh."
+        },
+        {
+          "type": "kotak",
+          "title": "Bagian badan yang muncul di ungkapan",
+          "items": [
+            "Kata عين muncul di mana-mana: من عنيا *min ‘eneyya* (\"dari kedua mataku\", artinya \"dengan senang hati\"), عين الحسود (mata orang dengki).",
+            "Kata إيد juga: تسلم إيدك (terima kasih atas masakan atau kerjamu), إيده حلوة (tangannya membawa keberuntungan), على إيد فلان (lewat perantaraan si anu).",
+            "Kata قلب berarti jantung sekaligus hati dalam arti perasaan — sama persis dengan bahasa Indonesia yang memakai \"hati\" untuk keduanya. قلبه أبيض berarti \"orangnya baik hati\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Di ruang dokter",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau keluhannya lebih dari sekadar batuk, kalimat berikut membawamu dari pintu masuk sampai keluar dengan resep."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "عايز أحجز عند الدكتور",
+              "‘aayiz ahgiz ‘and id-duktuur",
+              "saya mau buat janji dengan dokter"
+            ],
+            [
+              "الكشف بكام؟",
+              "il-kasyf bikaam?",
+              "biaya periksanya berapa?"
+            ],
+            [
+              "بقالي تلات أيام كده",
+              "ba’aali talat ayyaam kida",
+              "sudah tiga hari begini"
+            ],
+            [
+              "الوجع هنا",
+              "il-waga‘ hina",
+              "sakitnya di sini"
+            ],
+            [
+              "بيوجعني لما أتحرك",
+              "biywga‘ni lamma at-harrak",
+              "sakit kalau saya bergerak"
+            ],
+            [
+              "عندي حساسية من البنسلين",
+              "‘andi hasaseyya mil-binsiliin",
+              "saya alergi penisilin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Susunan بقالي berarti \"sudah berapa lama saya\": بقالي تلات أيام (sudah tiga hari saya begini), بقالي سنة في مصر (sudah setahun saya di Mesir). Bentuknya ikut orangnya: بقالك، بقاله، بقالنا. Ia salah satu susunan paling berguna dalam bahasa Mesir dan tidak punya padanan langsung dalam bahasa kita."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "تعبان",
+      "baca": "ta‘baan",
+      "id": "tidak enak badan"
+    },
+    {
+      "ar": "وجع",
+      "baca": "waga‘",
+      "id": "rasa sakit"
+    },
+    {
+      "ar": "بيوجعني",
+      "baca": "biywga‘ni",
+      "id": "membuat saya sakit"
+    },
+    {
+      "ar": "سخونية",
+      "baca": "sukhuneyya",
+      "id": "demam"
+    },
+    {
+      "ar": "صداع",
+      "baca": "shudaa‘",
+      "id": "sakit kepala"
+    },
+    {
+      "ar": "دوخة",
+      "baca": "dookha",
+      "id": "pusing"
+    },
+    {
+      "ar": "كحة",
+      "baca": "kohha",
+      "id": "batuk"
+    },
+    {
+      "ar": "برد",
+      "baca": "bard",
+      "id": "flu, masuk angin"
+    },
+    {
+      "ar": "حساسية",
+      "baca": "hasaseyya",
+      "id": "alergi"
+    },
+    {
+      "ar": "دوا",
+      "baca": "dawa",
+      "id": "obat"
+    },
+    {
+      "ar": "قرص",
+      "baca": "’ursh",
+      "id": "tablet"
+    },
+    {
+      "ar": "شراب",
+      "baca": "syaraab",
+      "id": "sirup"
+    },
+    {
+      "ar": "روشتة",
+      "baca": "rusyitta",
+      "id": "resep dokter"
+    },
+    {
+      "ar": "صيدلية",
+      "baca": "shaydaleyya",
+      "id": "apotek"
+    },
+    {
+      "ar": "دكتور",
+      "baca": "duktuur",
+      "id": "dokter"
+    },
+    {
+      "ar": "كشف",
+      "baca": "kasyf",
+      "id": "pemeriksaan"
+    },
+    {
+      "ar": "راس",
+      "baca": "raas",
+      "id": "kepala"
+    },
+    {
+      "ar": "بطن",
+      "baca": "bathn",
+      "id": "perut"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir memakai susunan بيوجعني.",
+      "items": [
+        "Kepala saya sakit.",
+        "Perut saya sakit.",
+        "Tenggorokan saya sakit dari kemarin.",
+        "Punggung saya sakit kalau saya bergerak.",
+        "Gigi saya sakit."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat menurut jenis kelamin bagian badannya.",
+      "items": [
+        "راسي ____ من الصبح. (بيوجع)",
+        "زوري ____ أوي. (بيوجع)",
+        "بطني ____ بعد الأكل. (بيوجع)",
+        "ضهري ____ من إمبارح. (بيوجع)",
+        "عيني ____ من الشاشة. (بيوجع)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Saya agak tidak enak badan.",
+        "Ada demam sedikit tadi malam.",
+        "Saya tidak alergi obat apa pun.",
+        "Minum sirup ini tiga kali sehari sesudah makan.",
+        "Sudah tiga hari begini."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "بيوجعني / زوري / إمبارح / من",
+        "بتوجعني / كمان / راسي",
+        "سخونية / عندك / ؟",
+        "الأكل / بعد / في اليوم / مرات / تلات / خد",
+        "كده / أيام / بقالي / تلات"
+      ]
+    }
+  ],
+  "answers": [
+    "راسي بتوجعني. — بطني بتوجعني. — زوري بيوجعني من إمبارح. — ضهري بيوجعني لما أتحرك. — سناني بتوجعني.",
+    "بتوجعني — بيوجعني — بتوجعني — بيوجعني — بتوجعني",
+    "أنا تعبان شوية. — كان فيه سخونية شوية بالليل. — ماعنديش حساسية من أي دوا. — خد الشراب ده تلات مرات في اليوم بعد الأكل. — بقالي تلات أيام كده.",
+    "زوري بيوجعني من إمبارح. — راسي كمان بتوجعني. — عندك سخونية؟ — خد تلات مرات في اليوم بعد الأكل. — بقالي تلات أيام كده."
+  ],
+  "wave": "Malam ini, sebutkan sepuluh bagian badanmu dan buat satu kalimat keluhan untuk masing-masing. Perhatikan bahwa hampir semuanya perempuan."
+}

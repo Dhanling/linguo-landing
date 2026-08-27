@@ -32,6 +32,11 @@ const NAME_TO_CODE: Record<string, string> = {
   japanese: "ja", jepang: "ja",
   korean: "ko", korea: "ko",
   arabic: "ar", arab: "ar",
+  // Modul Arab Mesir (ar-eg-a1) memakai kolom language "Egyptian Arabic".
+  // Tanpa alias ini kodeBahasaEbook() balik null dan reader kehilangan
+  // TTS serta ketuk-kata; suaranya sendiri tetap ar-XA seperti Fusha.
+  "egyptian arabic": "ar", "arab mesir": "ar", "bahasa arab mesir": "ar",
+  masri: "ar", ammiyya: "ar",
   german: "de", jerman: "de",
   french: "fr", prancis: "fr", perancis: "fr",
   spanish: "es", spanyol: "es",

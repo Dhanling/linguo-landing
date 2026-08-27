@@ -1,0 +1,594 @@
+{
+  "title": "Angka, harga, dan tawar-menawar",
+  "title_target": "بكام؟",
+  "goal": "Menyebut angka sampai seratus, menanyakan harga, dan menawar — plus satu aturan yang membalik naluri: sesudah angka besar, kata bendanya justru kembali tunggal.",
+  "bekal": [
+    "menghitung dari satu sampai seratus dan membaca angka Arab ٠١٢٣",
+    "menanyakan harga dan menyebut jumlah uang dalam pound Mesir",
+    "menawar dengan kalimat yang wajar, bukan terjemahan harfiah"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — في خان الخليلي",
+      "intro": "Budi ke pasar Khan el-Khalili di Kairo tua. Dia berhenti di lapak selendang, dan pedagangnya langsung menyapa.",
+      "lines": [
+        {
+          "speaker": "البياع:",
+          "text": "اتفضل يا باشا! اتفرج من غير فلوس.",
+          "baca": "itfadhdhal ya baasya! itfarrag min gheer fuluus.",
+          "id": "Silakan, Tuan! Lihat-lihat saja, gratis.",
+          "literal": "silakan wahai pasya! melihat dari tanpa uang."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "الشال ده بكام؟",
+          "baca": "isy-syaal da bikaam?",
+          "id": "Selendang ini berapa?",
+          "literal": "selendang ini dengan berapa?"
+        },
+        {
+          "speaker": "البياع:",
+          "text": "ده بمية وخمسين جنيه. صوف أصلي.",
+          "baca": "da bi-miyya wi khamsiin gineeh. shuuf ashli.",
+          "id": "Ini seratus lima puluh pound. Wol asli.",
+          "literal": "ini dengan seratus dan lima puluh pound. wol asli."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "مية وخمسين؟ ده غالي أوي!",
+          "baca": "miyya wi khamsiin? da ghaali ’awi!",
+          "id": "Seratus lima puluh? Itu mahal sekali!",
+          "literal": "seratus dan lima puluh? ini mahal sangat!"
+        },
+        {
+          "speaker": "البياع:",
+          "text": "غالي؟ لأ يا باشا، ده سعر خاص ليك.",
+          "baca": "ghaali? la’ ya baasya, da si‘r khaash liik.",
+          "id": "Mahal? Tidak, Tuan, ini harga khusus untuk Anda.",
+          "literal": "mahal? tidak wahai pasya, ini harga khusus untukmu."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "عندي تمانين جنيه بس.",
+          "baca": "‘andi tamaniin gineeh bas.",
+          "id": "Saya cuma punya delapan puluh pound.",
+          "literal": "padaku delapan puluh pound saja."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "تمانين؟ ده مش سعره. خليها مية وعشرين.",
+          "baca": "tamaniin? da misy si‘ru. khalliiha miyya wi ‘isyriin.",
+          "id": "Delapan puluh? Itu bukan harganya. Jadikan seratus dua puluh.",
+          "literal": "delapan puluh? ini bukan harganya. jadikan seratus dan dua puluh."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "تسعين، وآخد اتنين.",
+          "baca": "tis‘iin, wi aakhud itneen.",
+          "id": "Sembilan puluh, dan saya ambil dua.",
+          "literal": "sembilan puluh, dan aku-ambil dua."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "اتنين؟ طيب، مية لكل واحد. آخر كلام.",
+          "baca": "itneen? thayyib, miyya likulli waahid. aakhir kalaam.",
+          "id": "Dua? Baik, seratus per potong. Harga mati.",
+          "literal": "dua? baik, seratus untuk setiap satu. akhir perkataan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "خمسة وتسعين، ونمشي.",
+          "baca": "khamsa wi tis‘iin, wi nimsyi.",
+          "id": "Sembilan puluh lima, dan kita selesai.",
+          "literal": "lima dan sembilan puluh, dan kita berjalan."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "ماشي، عشان خاطرك. مية وتسعين للاتنين.",
+          "baca": "maasyi, ‘asyaan khaathrak. miyya wi tis‘iin lil-itneen.",
+          "id": "Baiklah, demi Anda. Seratus sembilan puluh untuk dua.",
+          "literal": "berjalan, karena hatimu. seratus dan sembilan puluh untuk dua."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "اتفقنا. اتفضل الفلوس.",
+          "baca": "itafa’na. itfadhdhal il-fuluus.",
+          "id": "Sepakat. Ini uangnya.",
+          "literal": "kami sepakat. silakan uangnya."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "تسلم إيدك. عايز حاجة تانية؟",
+          "baca": "tislam iidak. ‘aayiz haaga tanya?",
+          "id": "Terima kasih. Mau yang lain?",
+          "literal": "selamat tanganmu. mau sesuatu yang kedua?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً، كفاية كده. مع السلامة.",
+          "baca": "syukran, kifaaya kida. ma‘a s-salaama.",
+          "id": "Terima kasih, cukup segitu. Sampai jumpa.",
+          "literal": "terima kasih, cukup begitu. bersama keselamatan."
+        },
+        {
+          "speaker": "البياع:",
+          "text": "شرفتنا يا باشا. تعالى تاني!",
+          "baca": "syarraftina ya baasya. ta‘aala taani!",
+          "id": "Suatu kehormatan, Tuan. Datang lagi ya!",
+          "literal": "engkau memuliakan kami wahai pasya. datang kedua!"
+        }
+      ],
+      "notes": [
+        "**Kata بكام adalah gabungan بـ dan كام** — harfiahnya \"dengan berapa\". Kata depan بـ dipakai untuk harga di seluruh bahasa Arab: بمية جنيه (seharga seratus pound). Jangan tergoda memakai كام sendirian untuk menanyakan harga; كام saja berarti \"berapa banyak\", bukan \"berapa harganya\".",
+        "**Panggilan يا باشا adalah sisa gelar Utsmani yang kini jadi rayuan pedagang.** Sederet gelar serupa dipakai dengan bebas di jalanan Kairo: يا باشا، يا بيه، يا ريس، يا أسطى، يا حاج. Tak satu pun berarti apa-apa secara harfiah; semuanya berarti \"saya sedang menghormati Anda supaya Anda membeli\".",
+        "**Menawar di Mesir adalah percakapan, bukan pertarungan.** Aturan tak tertulisnya: pedagang membuka tinggi, kamu menawar sekitar separuh, lalu bertemu di tengah. Yang penting bukan angkanya melainkan nadanya — tetap tersenyum, dan jangan menawar kalau tidak berniat membeli.",
+        "**Kalimat آخر كلام berarti \"harga terakhir\", dan ia jarang benar-benar terakhir.** Kalau kamu ingin menutup tawar-menawar sungguhan, kalimat yang bekerja adalah berjalan pergi pelan-pelan sambil berkata معلش، شكراً. Delapan dari sepuluh kali kamu akan dipanggil kembali.",
+        "**Kalimat عشان خاطرك harfiahnya \"demi hatimu\", dan ia kalimat kunci di Mesir.** Ia menandai bahwa yang memberi sedang melakukannya sebagai kemurahan pribadi, bukan karena kalah tawar. Balasannya تسلم *tislam* atau ربنا يخليك.",
+        "**Kalimat تسلم إيدك dipakai jauh lebih luas daripada dugaan.** Harfiahnya \"semoga tanganmu selamat\", dan ia diucapkan kepada orang yang memasak untukmu, memberi sesuatu, atau memperbaiki sesuatu. Balasannya وإيدك *w iidak*."
+      ],
+      "grammars": [
+        {
+          "title": "Satu sampai sepuluh, dan bentuk yang ikut",
+          "body": [
+            "Angka Mesir punya dua bentuk untuk satuan: bentuk berdiri sendiri yang dipakai saat menghitung, dan bentuk pendek yang dipakai di depan kata benda."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "Berdiri sendiri",
+              "Di depan benda",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "١",
+                "واحد wahid",
+                "—",
+                "كتاب واحد",
+                "satu buku"
+              ],
+              [
+                "٢",
+                "اتنين itneen",
+                "—",
+                "كتابين",
+                "dua buku"
+              ],
+              [
+                "٣",
+                "تلاتة talaata",
+                "تلات talat",
+                "تلات كتب",
+                "tiga buku"
+              ],
+              [
+                "٤",
+                "أربعة arba‘a",
+                "أربع arba‘",
+                "أربع كتب",
+                "empat buku"
+              ],
+              [
+                "٥",
+                "خمسة khamsa",
+                "خمس khamas",
+                "خمس كتب",
+                "lima buku"
+              ],
+              [
+                "٦",
+                "ستة sitta",
+                "ست sitt",
+                "ست كتب",
+                "enam buku"
+              ],
+              [
+                "٧",
+                "سبعة sab‘a",
+                "سبع saba‘",
+                "سبع كتب",
+                "tujuh buku"
+              ],
+              [
+                "٨",
+                "تمانية tamanya",
+                "تمن taman",
+                "تمن كتب",
+                "delapan buku"
+              ],
+              [
+                "٩",
+                "تسعة tis‘a",
+                "تسع tisa‘",
+                "تسع كتب",
+                "sembilan buku"
+              ],
+              [
+                "١٠",
+                "عشرة ‘asyara",
+                "عشر ‘asyar",
+                "عشر كتب",
+                "sepuluh buku"
+              ]
+            ]
+          },
+          "after": [
+            "Angka satu diletakkan **sesudah** bendanya seperti kata sifat: كتاب واحد. Angka dua tidak dipakai sama sekali — sebagai gantinya kata bendanya diberi akhiran ـين sehingga jadi كتابين *kitabeen*, يومين *yomeen*, مرتين *marriteen*.",
+            "Dari tiga sampai sepuluh, bentuk pendeknya dipakai dan kata bendanya **jamak**. Ini persis pola Fusha yang mungkin sudah kamu kenal, cuma tanpa akhiran i'raab.",
+            "Angka Arab ٠١٢٣٤٥٦٧٨٩ dipakai di seluruh Mesir untuk harga, nomor rumah, dan nomor telepon. Ia ditulis dari kiri ke kanan seperti angka kita, walaupun tulisan di sekelilingnya berjalan dari kanan ke kiri."
+          ]
+        },
+        {
+          "title": "Sebelas ke atas — dan kejutannya",
+          "body": [
+            "Mulai dari sebelas, bahasa Arab melakukan sesuatu yang terasa terbalik bagi kita: kata bendanya kembali **tunggal**, bukan jamak."
+          ],
+          "table": {
+            "head": [
+              "Angka",
+              "مصري",
+              "Cara baca",
+              "Dengan benda",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "١١",
+                "حداشر",
+                "hidaasyar",
+                "حداشر كتاب",
+                "sebelas buku"
+              ],
+              [
+                "١٢",
+                "اتناشر",
+                "itnaasyar",
+                "اتناشر كتاب",
+                "dua belas buku"
+              ],
+              [
+                "٢٠",
+                "عشرين",
+                "‘isyriin",
+                "عشرين كتاب",
+                "dua puluh buku"
+              ],
+              [
+                "٣٠",
+                "تلاتين",
+                "talatiin",
+                "تلاتين جنيه",
+                "tiga puluh pound"
+              ],
+              [
+                "٤٠",
+                "أربعين",
+                "arbi‘iin",
+                "أربعين سنة",
+                "empat puluh tahun"
+              ],
+              [
+                "٥٠",
+                "خمسين",
+                "khamsiin",
+                "خمسين يوم",
+                "lima puluh hari"
+              ],
+              [
+                "٦٠",
+                "ستين",
+                "sittiin",
+                "ستين دقيقة",
+                "enam puluh menit"
+              ],
+              [
+                "٧٠",
+                "سبعين",
+                "sab‘iin",
+                "سبعين جنيه",
+                "tujuh puluh pound"
+              ],
+              [
+                "٨٠",
+                "تمانين",
+                "tamaniin",
+                "تمانين طالب",
+                "delapan puluh pelajar"
+              ],
+              [
+                "٩٠",
+                "تسعين",
+                "tis‘iin",
+                "تسعين دقيقة",
+                "sembilan puluh menit"
+              ],
+              [
+                "١٠٠",
+                "مية",
+                "miyya",
+                "مية جنيه",
+                "seratus pound"
+              ],
+              [
+                "١٠٠٠",
+                "ألف",
+                "alf",
+                "ألف جنيه",
+                "seribu pound"
+              ]
+            ]
+          },
+          "after": [
+            "Susunannya membaca satuan **lebih dulu**: خمسة وتسعين harfiahnya \"lima dan sembilan puluh\" untuk sembilan puluh lima, dan مية وخمسين untuk seratus lima puluh. Kebiasaan yang sama masih hidup di bahasa Jerman dan Belanda.",
+            "Ringkasan aturan bendanya: **1 tunggal, 2 dengan akhiran ـين, 3 sampai 10 jamak, 11 ke atas tunggal lagi**. Aturan terakhir itulah yang paling sering keliru diucapkan orang asing, karena naluri kita menyuruh memakai jamak untuk jumlah besar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Uang Mesir dan cara menyebutnya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "جنيه",
+              "gineeh",
+              "pound Mesir"
+            ],
+            [
+              "قرش",
+              "’irsy",
+              "piaster, seperseratus pound"
+            ],
+            [
+              "فلوس",
+              "fuluus",
+              "uang"
+            ],
+            [
+              "فكة",
+              "fakka",
+              "uang kecil, kembalian"
+            ],
+            [
+              "كاش",
+              "kaasy",
+              "tunai"
+            ],
+            [
+              "فيزا",
+              "fiiza",
+              "kartu"
+            ],
+            [
+              "الباقي",
+              "il-baa’i",
+              "sisanya, kembaliannya"
+            ],
+            [
+              "حساب",
+              "hisaab",
+              "tagihan, hitungan"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Nama جنيه datang dari kata Inggris guinea lewat masa Utsmani, dan bunyinya sudah lama berpindah jadi *gineeh* — dengan ج yang dibaca g, seperti biasa. Sedangkan قرش hampir tidak lagi berguna sebagai uang, tapi katanya masih hidup dalam ungkapan: مافيش ولا قرش (tidak punya sepeser pun)."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang menyelamatkanmu di kasir",
+          "items": [
+            "Kalimat معنديش فكة *ma‘andiisy fakka* berarti \"saya tidak punya uang kecil\", dan kamu akan mendengarnya lebih sering daripada mengucapkannya — kekurangan uang kecil adalah masalah nasional di Mesir.",
+            "Kalimat الباقي كام؟ *il-baa’i kaam?* menanyakan berapa kembaliannya. Kalau kembaliannya kamu relakan sebagai tip: خليك بالباقي *khalliik bil-baa’i*.",
+            "Kalimat الحساب من فضلك *il-hisaab min fadhlak* meminta tagihan di restoran. Untuk membayar bersama-sama: كل واحد يدفع لنفسه."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menawar dengan wajar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat berikut disusun dalam urutan sebuah tawar-menawar yang khas, dari pembukaan sampai penutupan. Hafalkan urutannya, bukan cuma katanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "بكام ده؟",
+              "bikaam da?",
+              "ini berapa?"
+            ],
+            [
+              "ده غالي أوي",
+              "da ghaali ’awi",
+              "ini mahal sekali"
+            ],
+            [
+              "فيه أرخص؟",
+              "fiih arkhash?",
+              "ada yang lebih murah?"
+            ],
+            [
+              "ممكن تنزل شوية؟",
+              "mumkin tinzil syuwayya?",
+              "bisa turun sedikit?"
+            ],
+            [
+              "حافكر وأرجع",
+              "hafakkar wi arga‘",
+              "saya pikir dulu, nanti kembali"
+            ],
+            [
+              "معلش، شكراً",
+              "ma‘lesy, syukran",
+              "tidak jadi, terima kasih"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa dua kalimat terakhir tidak kasar sama sekali. Pergi tanpa membeli adalah bagian normal dari permainan, dan pedagang Mesir tidak akan tersinggung — asal kamu tetap tersenyum dan mengucapkan sesuatu. Yang justru dianggap kasar adalah berbalik pergi diam-diam."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "كام",
+      "baca": "kaam",
+      "id": "berapa"
+    },
+    {
+      "ar": "بكام",
+      "baca": "bikaam",
+      "id": "berapa harganya"
+    },
+    {
+      "ar": "سعر",
+      "baca": "si‘r",
+      "id": "harga"
+    },
+    {
+      "ar": "جنيه",
+      "baca": "gineeh",
+      "id": "pound Mesir"
+    },
+    {
+      "ar": "فكة",
+      "baca": "fakka",
+      "id": "uang kecil, kembalian"
+    },
+    {
+      "ar": "غالي",
+      "baca": "ghaali",
+      "id": "mahal"
+    },
+    {
+      "ar": "رخيص",
+      "baca": "rikhiish",
+      "id": "murah"
+    },
+    {
+      "ar": "واحد",
+      "baca": "waahid",
+      "id": "satu"
+    },
+    {
+      "ar": "اتنين",
+      "baca": "itneen",
+      "id": "dua"
+    },
+    {
+      "ar": "تلاتة",
+      "baca": "talaata",
+      "id": "tiga"
+    },
+    {
+      "ar": "أربعة",
+      "baca": "arba‘a",
+      "id": "empat"
+    },
+    {
+      "ar": "خمسة",
+      "baca": "khamsa",
+      "id": "lima"
+    },
+    {
+      "ar": "عشرة",
+      "baca": "‘asyara",
+      "id": "sepuluh"
+    },
+    {
+      "ar": "عشرين",
+      "baca": "‘isyriin",
+      "id": "dua puluh"
+    },
+    {
+      "ar": "خمسين",
+      "baca": "khamsiin",
+      "id": "lima puluh"
+    },
+    {
+      "ar": "مية",
+      "baca": "miyya",
+      "id": "seratus"
+    },
+    {
+      "ar": "ألف",
+      "baca": "alf",
+      "id": "seribu"
+    },
+    {
+      "ar": "نص",
+      "baca": "nushsh",
+      "id": "setengah"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angka berikut dengan huruf Arab-Latin sesuai cara baca Mesir.",
+      "items": [
+        "7",
+        "12",
+        "35",
+        "60",
+        "95"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata benda yang tepat sesudah angka.",
+      "items": [
+        "عندي تلات ____. (كتاب)",
+        "استنى ____. (دقيقة، dua)",
+        "في الفصل عشرين ____. (طالب)",
+        "خمس ____ بس. (جنيه)",
+        "أنا هنا من ____. (يوم، dua)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Selendang ini berapa?",
+        "Itu mahal sekali!",
+        "Saya cuma punya delapan puluh pound.",
+        "Bisa turun sedikit?",
+        "Sepakat. Ini uangnya."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "بكام / ده / الشال / ؟",
+        "أوي / غالي / ده",
+        "بس / تمانين / عندي / جنيه",
+        "شوية / تنزل / ممكن / ؟",
+        "كده / كفاية / شكراً"
+      ]
+    }
+  ],
+  "answers": [
+    "sab‘a — itnaasyar — khamsa wi talatiin — sittiin — khamsa wi tis‘iin",
+    "كتب — دقيقتين — طالب — جنيه — يومين",
+    "الشال ده بكام؟ — ده غالي أوي! — عندي تمانين جنيه بس. — ممكن تنزل شوية؟ — اتفقنا. اتفضل الفلوس.",
+    "الشال ده بكام؟ — ده غالي أوي. — عندي تمانين جنيه بس. — ممكن تنزل شوية؟ — كفاية كده، شكراً."
+  ],
+  "wave": "Malam ini, sebutkan keras-keras harga sepuluh barang di sekitarmu dalam pound Mesir. Bunyikan satuannya lebih dulu, seperti orang Mesir."
+}

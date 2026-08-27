@@ -1,0 +1,554 @@
+{
+  "title": "Salam kenal di Kairo",
+  "title_target": "أهلاً وسهلاً",
+  "goal": "Menyapa, menyebut nama, menanyakan kabar — dan menelan tiga kejutan sekaligus: ج yang dibaca g, ق yang jadi hentakan, dan kata tanya yang justru ditaruh di ujung kalimat.",
+  "bekal": [
+    "menyapa dan menjawab salam seperti orang Mesir, bukan seperti buku Fusha",
+    "menanyakan nama dan kabar dengan bentuk yang tepat untuk laki-laki dan perempuan",
+    "menyusun kalimat lengkap tanpa satu pun kata kerja"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — أول يوم في المعهد",
+      "intro": "Hari pertama Budi di sebuah lembaga bahasa di Dokki, Kairo. Dia duduk di ruang tunggu, dan seorang pemuda Mesir duduk di sebelahnya.",
+      "lines": [
+        {
+          "speaker": "أحمد:",
+          "text": "السلام عليكم.",
+          "baca": "is-salaamu ‘aleekum.",
+          "id": "Assalamualaikum.",
+          "literal": "keselamatan atas kalian."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "وعليكم السلام ورحمة الله.",
+          "baca": "wi ‘aleekum is-salaam wi rahmatillaah.",
+          "id": "Waalaikumsalam warahmatullah.",
+          "literal": "dan atas kalian keselamatan dan rahmat Allah."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "أهلاً! انت مصري؟",
+          "baca": "ahlan! inta mashri?",
+          "id": "Halo! Kamu orang Mesir?",
+          "literal": "keluarga! kamu Mesir?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "لأ، أنا مش مصري. أنا من إندونيسيا.",
+          "baca": "la’, ana misy mashri. ana min Indunisya.",
+          "id": "Bukan, saya bukan orang Mesir. Saya dari Indonesia.",
+          "literal": "tidak, saya bukan Mesir. saya dari Indonesia."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "أهلاً وسهلاً! اسمك إيه؟",
+          "baca": "ahlan wi sahlan! ismak ’eeh?",
+          "id": "Selamat datang! Siapa namamu?",
+          "literal": "keluarga dan mudah! namamu apa?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "اسمي بودي. وحضرتك؟",
+          "baca": "ismi Buudi. wi hadhritak?",
+          "id": "Nama saya Budi. Dan Anda?",
+          "literal": "namaku Budi. dan kehadiranmu?"
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "أنا أحمد. تشرفنا.",
+          "baca": "ana Ahmad. tasyarrafna.",
+          "id": "Saya Ahmad. Senang berkenalan.",
+          "literal": "saya Ahmad. kami dimuliakan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "الشرف ليا. إزيك؟",
+          "baca": "isy-syaraf liyya. izzayyak?",
+          "id": "Kehormatan bagi saya. Apa kabar?",
+          "literal": "kehormatan untukku. bagaimanamu?"
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "الحمد لله، كويس. وانت؟",
+          "baca": "il-hamdu lillaah, kuwayyis. w inta?",
+          "id": "Alhamdulillah, baik. Kamu?",
+          "literal": "segala puji bagi Allah, baik. dan kamu?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أنا كمان كويس، شكراً.",
+          "baca": "ana kamaan kuwayyis, syukran.",
+          "id": "Saya juga baik, terima kasih.",
+          "literal": "saya juga baik, terima kasih."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "انت طالب هنا؟",
+          "baca": "inta thaalib hina?",
+          "id": "Kamu pelajar di sini?",
+          "literal": "kamu pelajar di sini?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، أنا طالب جديد في المعهد.",
+          "baca": "aywa, ana thaalib gidiid fil-ma‘had.",
+          "id": "Ya, saya pelajar baru di lembaga ini.",
+          "literal": "ya, saya pelajar baru di lembaga."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "جميل! العربي بتاعك حلو أوي.",
+          "baca": "gamiil! il-‘arabi bitaa‘ak hilw ’awi.",
+          "id": "Bagus! Bahasa Arabmu enak sekali.",
+          "literal": "indah! bahasa Arab punyamu manis sangat."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً، بس لسه بتعلم.",
+          "baca": "syukran, bas lissa bat‘allim.",
+          "id": "Terima kasih, tapi saya masih belajar.",
+          "literal": "terima kasih, tapi masih aku-belajar."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "معلش، شوية شوية. أهلاً بيك في مصر!",
+          "baca": "ma‘lesy, syuwayya syuwayya. ahlan biik fi Mashr!",
+          "id": "Santai saja, pelan-pelan. Selamat datang di Mesir!",
+          "literal": "tak apa, sedikit sedikit. keluarga denganmu di Mesir!"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "يلا، مع السلامة. أشوفك بكرة.",
+          "baca": "yalla, ma‘a s-salaama. asyuufak bukra.",
+          "id": "Baik, sampai jumpa. Ketemu besok.",
+          "literal": "ayo, bersama keselamatan. aku-lihatmu besok."
+        },
+        {
+          "speaker": "أحمد:",
+          "text": "إن شاء الله. سلام.",
+          "baca": "insya’allah. salaam.",
+          "id": "Insyaallah. Sampai jumpa.",
+          "literal": "jika Allah menghendaki. keselamatan."
+        }
+      ],
+      "notes": [
+        "**Salam yang tidak kenal waktu.** السلام عليكم dipakai pagi, siang, dan malam, kepada satu orang maupun seratus orang, di kantor maupun di warung. Di Mesir ia bukan sekadar salam agama melainkan sapaan sehari-hari yang normal, dan menjawabnya bukan pilihan melainkan kewajiban sosial.",
+        "**Huruf ج dibaca g keras, dan inilah kejutan nomor satu.** جميل bukan *jamiil* melainkan *gamiil*. جديد bukan *jadiid* melainkan *gidiid*. Gejala ini berlaku untuk semua kata, tanpa kecuali, di seluruh Mesir bagian utara — termasuk Kairo dan Alexandria. Begitu telingamu menerimanya, separuh lagu Mesir tiba-tiba jadi bisa diikuti.",
+        "**Huruf ق berubah jadi hentakan tenggorokan.** Tanda ’ di kolom cara baca menandai jeda pendek seperti di antara dua suku kata pada kata \"bapak-anak\". Jadi لأ dibaca *la’* dan أوي dibaca *’awi*. Kata قهوة yang kamu kenal sebagai *qahwah* di Kairo terdengar *’ahwa*.",
+        "**Kata tanya ditaruh di ujung kalimat, bukan di depan.** اسمك إيه؟ harfiahnya \"namamu apa?\" Ini bukan gaya santai melainkan satu-satunya susunan yang benar dalam bahasa Mesir. Menaruh إيه di depan terdengar sama anehnya seperti orang berkata \"apa namamu itu\" dalam bahasa Indonesia.",
+        "**Kata مش mengingkari semua yang bukan kata kerja.** أنا مش مصري = \"saya bukan orang Mesir\". Satu kata untuk semua keperluan: مش طالب، مش كويس، مش هنا. Bandingkan dengan Fusha yang memakai لَيْسَ berikut segala perubahannya, lalu bersyukurlah.",
+        "**Kata حضرتك adalah \"Anda\" versi Mesir.** Dipakai kepada orang yang lebih tua, kepada pegawai resmi, kepada orang yang baru dikenal, dan kepada siapa pun yang ingin kamu hormati. Bentuk perempuannya حضرتك juga, cuma dibaca *hadhritik*. Memakainya tidak pernah salah; melewatkannya kadang terasa kurang sopan.",
+        "**Dua kata Mesir yang akan kamu dengar tiap hari.** معلش *ma‘lesy* menutup segala hal kecil yang tidak beres — dari kopi yang tumpah sampai kereta yang telat. Sedangkan شوية شوية *syuwayya syuwayya* berarti \"pelan-pelan\", dan ia jawaban baku untuk orang asing yang minta maaf karena bahasanya masih patah-patah."
+      ],
+      "grammars": [
+        {
+          "title": "Kalimat tanpa kata kerja — dan tanpa kata \"adalah\"",
+          "body": [
+            "Inilah bentuk kalimat pertama yang perlu kamu kuasai, dan pelajaran terbesarnya justru ada pada apa yang TIDAK muncul di dalamnya."
+          ],
+          "table": {
+            "head": [
+              "مصري",
+              "Cara baca",
+              "Arti",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "أنا بودي",
+                "ana Buudi",
+                "Saya Budi",
+                "saya Budi"
+              ],
+              [
+                "أنا طالب",
+                "ana thaalib",
+                "Saya (seorang) pelajar",
+                "saya pelajar"
+              ],
+              [
+                "انت مدرس",
+                "inta mudarris",
+                "Kamu (seorang) guru",
+                "kamu guru"
+              ],
+              [
+                "هو من مصر",
+                "huwwa min Mashr",
+                "Dia dari Mesir",
+                "dia dari Mesir"
+              ],
+              [
+                "هي كويسة",
+                "hiyya kuwayyisa",
+                "Dia (perempuan) baik-baik saja",
+                "dia baik"
+              ],
+              [
+                "احنا هنا",
+                "ihna hina",
+                "Kami di sini",
+                "kami di sini"
+              ],
+              [
+                "أنا مش مصري",
+                "ana misy mashri",
+                "Saya bukan orang Mesir",
+                "saya bukan Mesir"
+              ]
+            ]
+          },
+          "after": [
+            "Susunannya: **[yang dibicarakan] + [keterangannya]**. Selesai. Tidak ada yang perlu dipasang di antaranya, persis seperti bahasa Indonesia.",
+            "Perhatikan juga bahwa tidak ada kata sandang \"seorang\". أنا طالب bisa berarti \"saya pelajar\" maupun \"saya seorang pelajar\" — bahasa Mesir tidak membedakannya, dan tanwin Fusha ٌ ـ yang dulu menandainya sudah lenyap total.",
+            "Untuk mengingkarinya, tinggal sisipkan مش di depan keterangannya. Untuk masa lampau barulah muncul kata kerja كان — tapi itu urusan unit 14."
+          ]
+        },
+        {
+          "title": "Satu kata, dua bentuk: laki-laki dan perempuan",
+          "body": [
+            "Hampir setiap sapaan dalam bahasa Mesir punya dua bentuk, dan bedanya cuma pada bunyi vokal terakhir. Bahasa Indonesia tidak membedakannya sama sekali, jadi inilah kekeliruan yang paling sering terdengar dari kita."
+          ],
+          "table": {
+            "head": [
+              "Kepada laki-laki",
+              "Cara baca",
+              "Kepada perempuan",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "انت",
+                "inta",
+                "انتي",
+                "inti",
+                "kamu"
+              ],
+              [
+                "اسمك إيه؟",
+                "ismak ’eeh?",
+                "اسمك إيه؟",
+                "ismik ’eeh?",
+                "siapa namamu?"
+              ],
+              [
+                "إزيك؟",
+                "izzayyak?",
+                "إزيك؟",
+                "izzayyik?",
+                "apa kabar?"
+              ],
+              [
+                "انت منين؟",
+                "inta mineen?",
+                "انتي منين؟",
+                "inti mineen?",
+                "kamu dari mana?"
+              ],
+              [
+                "أهلاً بيك",
+                "ahlan biik",
+                "أهلاً بيكي",
+                "ahlan biiki",
+                "selamat datang"
+              ],
+              [
+                "حضرتك",
+                "hadhritak",
+                "حضرتك",
+                "hadhritik",
+                "Anda"
+              ],
+              [
+                "كويس",
+                "kuwayyis",
+                "كويسة",
+                "kuwayyisa",
+                "baik"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan barisan tengah tabel: tulisannya sama persis, yang berubah cuma cara membacanya. Inilah sebabnya modul ini selalu mencantumkan cara baca — tanpa harakat, mata tidak bisa melihat bedanya, sementara telinga langsung mendengarnya.",
+            "Aturan gampangnya: **ـك dibaca -ak kepada laki-laki dan -ik kepada perempuan**. Salah pilih tidak berbahaya dan tidak akan membuat orang tersinggung, tapi langsung menandaimu sebagai pemula."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sapaan dari pagi sampai malam",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Waktu",
+            "Sapaan",
+            "Cara baca",
+            "Jawabannya"
+          ],
+          "rows": [
+            [
+              "Kapan saja",
+              "السلام عليكم",
+              "is-salaamu ‘aleekum",
+              "وعليكم السلام"
+            ],
+            [
+              "Kapan saja, santai",
+              "أهلاً",
+              "ahlan",
+              "أهلاً بيك"
+            ],
+            [
+              "Pagi",
+              "صباح الخير",
+              "shabaah il-kheer",
+              "صباح النور"
+            ],
+            [
+              "Pagi, lebih manis",
+              "صباح الفل",
+              "shabaah il-full",
+              "صباح القشطة"
+            ],
+            [
+              "Sore dan malam",
+              "مساء الخير",
+              "masaa’ il-kheer",
+              "مساء النور"
+            ],
+            [
+              "Berpisah",
+              "مع السلامة",
+              "ma‘a s-salaama",
+              "الله يسلمك"
+            ],
+            [
+              "Berpisah, santai",
+              "سلام",
+              "salaam",
+              "سلام"
+            ],
+            [
+              "Sampai besok",
+              "أشوفك بكرة",
+              "asyuufak bukra",
+              "إن شاء الله"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa sapaan pagi tidak dijawab dengan mengulanginya. صباح الخير (\"pagi kebaikan\") dijawab صباح النور (\"pagi cahaya\"), dan orang Mesir gemar menaikkannya lagi jadi صباح الفل (\"pagi bunga melati\") lalu صباح القشطة (\"pagi krim\"). Menjawab dengan kalimat yang sama persis langsung menandaimu sebagai orang asing."
+        },
+        {
+          "type": "kotak",
+          "title": "Kapan salam Islami, kapan sapaan netral",
+          "items": [
+            "Kalimat السلام عليكم adalah salam paling umum di Mesir, termasuk di kantor, di televisi, dan di antara orang yang tidak saling kenal. Ia sapaan sehari-hari yang normal, bukan penanda kesalehan.",
+            "Mesir punya jutaan warga Kristen Koptik, dan kepada orang yang kamu tahu bukan Muslim sapaan netral yang selalu aman adalah صباح الخير atau أهلاً. Keduanya sopan dan tidak membawa muatan apa pun.",
+            "Sapaan bersalaman tangan lazim antara sesama laki-laki maupun sesama perempuan. Antara laki-laki dan perempuan, tunggu pihak lain mengulurkan tangan lebih dulu — kebiasaannya berbeda-beda antar keluarga."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sepuluh kalimat penyelamat di hari pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalimat-kalimat berikut sengaja diberikan utuh, sebelum kamu mengerti susunannya. Hafalkan sebagai satu bongkahan — bongkarannya menyusul di unit-unit berikutnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "مش فاهم",
+              "misy faahim",
+              "Saya tidak mengerti"
+            ],
+            [
+              "تاني، من فضلك",
+              "taani, min fadhlak",
+              "Sekali lagi, tolong"
+            ],
+            [
+              "بالراحة شوية",
+              "bir-raaha syuwayya",
+              "Pelan-pelan sedikit"
+            ],
+            [
+              "إيه ده؟",
+              "’eeh da?",
+              "Apa ini?"
+            ],
+            [
+              "ده يعني إيه؟",
+              "da ya‘ni ’eeh?",
+              "Ini artinya apa?"
+            ],
+            [
+              "بتتكلم إنجليزي؟",
+              "bititkallim ingliizi?",
+              "Anda bicara bahasa Inggris?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat مش فاهم punya bentuk perempuan مش فاهمة *misy fahma*, dan bentuk jamak مش فاهمين *misy fahmiin*. Pola tiga bentuk seperti ini akan terus muncul; mulai sekarang, tiap kali bertemu kata sifat, biasakan langsung menanyakan pada dirimu sendiri bagaimana bentuk perempuannya."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "السلام عليكم",
+      "baca": "is-salaamu ‘aleekum",
+      "id": "salam sejahtera atasmu"
+    },
+    {
+      "ar": "أهلاً وسهلاً",
+      "baca": "ahlan wi sahlan",
+      "id": "selamat datang"
+    },
+    {
+      "ar": "صباح الخير",
+      "baca": "shabaah il-kheer",
+      "id": "selamat pagi"
+    },
+    {
+      "ar": "مساء الخير",
+      "baca": "masaa’ il-kheer",
+      "id": "selamat sore, selamat malam"
+    },
+    {
+      "ar": "مع السلامة",
+      "baca": "ma‘a s-salaama",
+      "id": "sampai jumpa"
+    },
+    {
+      "ar": "إزيك",
+      "baca": "izzayyak",
+      "id": "apa kabar (kepada laki-laki)"
+    },
+    {
+      "ar": "كويس",
+      "baca": "kuwayyis",
+      "id": "baik, bagus"
+    },
+    {
+      "ar": "الحمد لله",
+      "baca": "il-hamdu lillaah",
+      "id": "alhamdulillah"
+    },
+    {
+      "ar": "اسم",
+      "baca": "ism",
+      "id": "nama"
+    },
+    {
+      "ar": "إيه",
+      "baca": "’eeh",
+      "id": "apa"
+    },
+    {
+      "ar": "أنا",
+      "baca": "ana",
+      "id": "saya"
+    },
+    {
+      "ar": "انت",
+      "baca": "inta",
+      "id": "kamu (laki-laki)"
+    },
+    {
+      "ar": "انتي",
+      "baca": "inti",
+      "id": "kamu (perempuan)"
+    },
+    {
+      "ar": "حضرتك",
+      "baca": "hadhritak",
+      "id": "Anda (hormat)"
+    },
+    {
+      "ar": "مش",
+      "baca": "misy",
+      "id": "bukan, tidak"
+    },
+    {
+      "ar": "أيوه",
+      "baca": "aywa",
+      "id": "ya"
+    },
+    {
+      "ar": "لأ",
+      "baca": "la’",
+      "id": "tidak, bukan"
+    },
+    {
+      "ar": "طالب",
+      "baca": "thaalib",
+      "id": "pelajar, mahasiswa"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Selamat pagi! Siapa namamu? (kepada laki-laki)",
+        "Nama saya Budi.",
+        "Saya pelajar baru.",
+        "Apa kabar? (kepada perempuan)",
+        "Alhamdulillah, baik."
+      ]
+    },
+    {
+      "prompt": "Isi dengan akhiran kepemilikan yang tepat.",
+      "items": [
+        "اسم____ بودي. (saya)",
+        "اسم____ إيه؟ (kamu, perempuan)",
+        "إزي____؟ (kamu, laki-laki)",
+        "أهلاً بي____. (kamu, perempuan)",
+        "حضرت____ منين؟ (kamu, laki-laki)"
+      ]
+    },
+    {
+      "prompt": "Kamu berada dalam keadaan berikut. Tulis satu kalimat bahasa Mesir yang tepat.",
+      "items": [
+        "Kamu masuk toko roti jam delapan pagi dan menyapa penjualnya.",
+        "Penjual itu menjawab sapaanmu.",
+        "Kamu tidak menangkap apa yang dia katakan dan minta diulang.",
+        "Kamu ingin bertanya letak kamar kecil.",
+        "Kamu berpamitan dan berjanji datang lagi besok."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "طالب / أنا / جديد",
+        "إيه / اسمك / ؟",
+        "بودي / اسمي",
+        "مصري / مش / أنا",
+        "إندونيسيا / من / أنا"
+      ]
+    }
+  ],
+  "answers": [
+    "صباح الخير! اسمك إيه؟ — اسمي بودي. — أنا طالب جديد. — إزيك؟ — الحمد لله، كويسة.",
+    "اسمي — اسمك — إزيك — أهلاً بيكي — حضرتك",
+    "صباح الخير. — صباح النور. — تاني، من فضلك. — الحمام فين، لو سمحت؟ — مع السلامة، أشوفك بكرة.",
+    "أنا طالب جديد. — اسمك إيه؟ — اسمي بودي. — أنا مش مصري. — أنا من إندونيسيا."
+  ],
+  "wave": "Mulai besok, baca ulang dialog unit ini keras-keras sebelum masuk unit berikutnya. Lima menit, dan tekankan tiap ج sebagai g."
+}

@@ -1,0 +1,555 @@
+{
+  "title": "Naik apa, dan kata tidak",
+  "title_target": "ماباخدش تاكسي",
+  "goal": "Bepergian di kota dengan metro, mikrobus, dan taksi — sambil menguasai satu-satunya cara mengingkari kata kerja dalam bahasa Mesir: bungkus مـ...ـش.",
+  "bekal": [
+    "mengingkari kata kerja dengan bungkus مـ...ـش pada semua bentuk",
+    "naik metro, mikrobus, dan taksi tanpa salah bayar",
+    "membedakan kapan memakai مش dan kapan memakai bungkus"
+  ],
+  "dialogs": [
+    {
+      "title": "حوار — في التاكسي",
+      "intro": "Malam hari, Budi menghentikan taksi putih di Dokki untuk pulang ke rumahnya di Ma'adi.",
+      "lines": [
+        {
+          "speaker": "بودي:",
+          "text": "المعادي لو سمحت. العداد شغال؟",
+          "baca": "il-Ma‘aadi law samaht. il-‘addaad syaghghaal?",
+          "id": "Ma'adi ya, kalau berkenan. Argonya jalan?",
+          "literal": "Ma'adi kalau kau izinkan. meteran bekerja?"
+        },
+        {
+          "speaker": "السواق:",
+          "text": "شغال يا باشا. اركب.",
+          "baca": "syaghghaal ya baasya. irkab.",
+          "id": "Jalan kok, Tuan. Naik saja.",
+          "literal": "bekerja wahai pasya. naiklah."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "شكراً. الطريق زحمة النهاردة؟",
+          "baca": "syukran. ith-thurii’ zahma innaharda?",
+          "id": "Terima kasih. Jalanan macet hari ini?",
+          "literal": "terima kasih. jalan padat hari ini?"
+        },
+        {
+          "speaker": "السواق:",
+          "text": "مش أوي. بس ماتاخدش الكورنيش، فيه حادثة.",
+          "baca": "misy ’awi. bas matakhudsy il-kurniisy, fiih hadsa.",
+          "id": "Tidak terlalu. Tapi jangan lewat Corniche, ada kecelakaan.",
+          "literal": "bukan sangat. tapi jangan kau-ambil Corniche, ada kecelakaan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أنا مابعرفش الطرق كويس. انت أدرى.",
+          "baca": "ana maba‘rafsy ith-thuru’ kuwayyis. inta adra.",
+          "id": "Saya tidak begitu tahu jalannya. Anda lebih tahu.",
+          "literal": "saya tidak-aku-tahu jalan-jalan baik. kamu lebih tahu."
+        },
+        {
+          "speaker": "السواق:",
+          "text": "انت مش مصري صح؟ بتتكلم عربي حلو.",
+          "baca": "inta misy mashri shahh? bititkallim ‘arabi hilw.",
+          "id": "Anda bukan orang Mesir ya? Bahasa Arabnya bagus.",
+          "literal": "kamu bukan Mesir benar? kamu-berbicara Arab manis."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "من إندونيسيا. بس لسه مابفهمش كل حاجة.",
+          "baca": "min Indunisya. bas lissa mabafhamsy kull haaga.",
+          "id": "Dari Indonesia. Tapi masih belum mengerti semuanya.",
+          "literal": "dari Indonesia. tapi masih tidak-aku-mengerti setiap sesuatu."
+        },
+        {
+          "speaker": "السواق:",
+          "text": "معلش، الأول صعب. انت بتركب المترو؟",
+          "baca": "ma‘lesy, il-awwil sha‘b. inta bitirkab il-mitro?",
+          "id": "Santai, awalnya memang susah. Anda naik metro?",
+          "literal": "tak apa, yang pertama sulit. kamu kamu-naik metro?"
+        },
+        {
+          "speaker": "بودي:",
+          "text": "أيوه، كل يوم. بس بالليل مابركبش.",
+          "baca": "aywa, kull yoom. bas bil-leel mabarkabsy.",
+          "id": "Ya, tiap hari. Tapi malam saya tidak naik.",
+          "literal": "ya, setiap hari. tapi pada malam tidak-aku-naik."
+        },
+        {
+          "speaker": "السواق:",
+          "text": "صح. بالليل التاكسي أحسن. أهو وصلنا.",
+          "baca": "shahh. bil-leel it-taksi ahsan. ahu washalna.",
+          "id": "Betul. Malam memang lebih baik taksi. Nah, sudah sampai.",
+          "literal": "benar. pada malam taksi lebih baik. itu dia kami sampai."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "الحساب كام؟",
+          "baca": "il-hisaab kaam?",
+          "id": "Berapa?",
+          "literal": "hitungan berapa?"
+        },
+        {
+          "speaker": "السواق:",
+          "text": "العداد بيقول خمسة وستين.",
+          "baca": "il-‘addaad biy’uul khamsa wi sittiin.",
+          "id": "Argonya bilang enam puluh lima.",
+          "literal": "meteran dia-berkata lima dan enam puluh."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "اتفضل سبعين. مامعييش فكة.",
+          "baca": "itfadhdhal sab‘iin. mama‘ayyaasy fakka.",
+          "id": "Ini tujuh puluh. Saya tidak bawa uang kecil.",
+          "literal": "silakan tujuh puluh. tidak-bersamaku uang kecil."
+        },
+        {
+          "speaker": "السواق:",
+          "text": "ولا يهمك. ربنا يخليك، تصبح على خير.",
+          "baca": "wala yihimmak. rabbina yikhalliik, tishbah ‘ala kheer.",
+          "id": "Tidak apa-apa. Semoga Tuhan menjagamu, selamat malam.",
+          "literal": "jangan menyusahkanmu. Tuhan kami menjagamu, semoga kau pagi di atas kebaikan."
+        },
+        {
+          "speaker": "بودي:",
+          "text": "وانت من أهل الخير. تصبح على خير.",
+          "baca": "w inta min ahl il-kheer. tishbah ‘ala kheer.",
+          "id": "Anda juga. Selamat malam.",
+          "literal": "dan kamu dari keluarga kebaikan. semoga kau pagi di atas kebaikan."
+        }
+      ],
+      "notes": [
+        "**Bungkus مـ...ـش memeluk seluruh kata kerja dari dua sisi.** Awalan مـ di depan, akhiran ـش di belakang, dan kata kerjanya tetap membawa بـ. Jadi بعرف jadi مابعرفش, dan بفهم jadi مابفهمش. Bungkus ini juga ada di bahasa Maroko, Tunisia, dan Palestina — tapi tidak ada di Fusha sama sekali.",
+        "**Akhiran ـش adalah sisa kata شيء, \"sesuatu\".** Aslinya kalimatnya berbunyi \"saya tidak tahu sesuatu\", persis seperti bahasa Prancis yang memakai ne dan pas. Lama-lama bagian keduanya menempel jadi akhiran, dan sekarang tidak bisa dilepas.",
+        "**Untuk kata kerja masa depan dengan حـ, pakai مش, bukan bungkus.** مش حاروح (saya tidak akan pergi), bukan ماحاروحش. Ini satu-satunya kata kerja yang diingkari dengan مش, dan alasannya akan lebih jelas di unit 13.",
+        "**Kata أهو berarti \"nah, itu dia\", dan ia menunjuk sesuatu yang baru muncul.** Bentuk perempuannya أهي, jamaknya أهم. Ia salah satu kata yang paling khas Mesir dan tidak punya padanan langsung di Fusha maupun bahasa Indonesia.",
+        "**Kalimat مامعييش فكة berarti \"saya tidak bawa uang kecil\".** Perhatikan bahwa معايا (\"bersamaku\", artinya \"saya bawa\") diperlakukan seperti kata kerja: ia diingkari dengan bungkus, bukan dengan مش. Perlakuan yang sama berlaku untuk عندي dan فيه.",
+        "**Ucapan selamat malam yang sesungguhnya adalah تصبح على خير**, harfiahnya \"semoga kamu memasuki pagi dalam kebaikan\". Balasannya وانت من أهل الخير. Sepasang kalimat ini adalah salah satu yang paling indah dalam bahasa Mesir sehari-hari."
+      ],
+      "grammars": [
+        {
+          "title": "Bungkus مـ...ـش pada semua bentuk",
+          "body": [
+            "Aturannya satu dan berlaku untuk semua orang: tempelkan مـ di depan seluruh kata kerja berikut awalannya, dan ـش di belakang seluruhnya berikut akhirannya."
+          ],
+          "table": {
+            "head": [
+              "Orang",
+              "Kalimat biasa",
+              "Ingkarnya",
+              "Cara baca",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "أنا",
+                "بفهم",
+                "مابفهمش",
+                "mabafhamsy",
+                "saya tidak mengerti"
+              ],
+              [
+                "انت",
+                "بتفهم",
+                "مابتفهمش",
+                "mabtifhamsy",
+                "kamu tidak mengerti"
+              ],
+              [
+                "انتي",
+                "بتفهمي",
+                "مابتفهميش",
+                "mabtifhamiisy",
+                "kamu tidak mengerti"
+              ],
+              [
+                "هو",
+                "بيفهم",
+                "مابيفهمش",
+                "mabyifhamsy",
+                "dia tidak mengerti"
+              ],
+              [
+                "هي",
+                "بتفهم",
+                "مابتفهمش",
+                "mabtifhamsy",
+                "dia tidak mengerti"
+              ],
+              [
+                "احنا",
+                "بنفهم",
+                "مابنفهمش",
+                "mabnifhamsy",
+                "kami tidak mengerti"
+              ],
+              [
+                "انتوا",
+                "بتفهموا",
+                "مابتفهموش",
+                "mabtifhamuusy",
+                "kalian tidak mengerti"
+              ],
+              [
+                "هما",
+                "بيفهموا",
+                "مابيفهموش",
+                "mabyifhamuusy",
+                "mereka tidak mengerti"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan tiga baris dengan akhiran: ـي pada انتي dan ـوا pada انتوا dan هما **memanjang** ketika ـش ditempelkan — بتفهمي jadi مابتفهميش. Vokal panjang itu yang menahan akhiran ـش supaya tetap terdengar.",
+            "Bungkus yang sama dipakai untuk kata kerja lampau: ماشربتش (saya tidak minum), ماراحش (dia tidak pergi), ماكلناش (kami tidak makan). Tidak ada aturan tambahan sama sekali.",
+            "Bungkus yang sama juga dipakai untuk melarang: ماتشربش (jangan minum), ماتروحش (jangan pergi), ماتنساش (jangan lupa). Bentuk larangan memakai bentuk انت tanpa بـ."
+          ]
+        },
+        {
+          "title": "مش atau bungkus — tabel keputusan",
+          "body": [
+            "Inilah tabel yang perlu kamu lihat sekali lagi tiap kali ragu. Aturannya bisa diringkas jadi satu kalimat: kalau kalimatnya punya kata kerja bertanda بـ atau berbentuk lampau, pakai bungkus; selain itu pakai مش."
+          ],
+          "table": {
+            "head": [
+              "Yang diingkari",
+              "Caranya",
+              "Contoh",
+              "Cara baca"
+            ],
+            "rows": [
+              [
+                "kata kerja dengan بـ",
+                "bungkus",
+                "مابشربش",
+                "mabasyrabsy"
+              ],
+              [
+                "kata kerja lampau",
+                "bungkus",
+                "ماشربتش",
+                "masyribtisy"
+              ],
+              [
+                "عند (punya)",
+                "bungkus",
+                "ماعنديش",
+                "ma‘andiisy"
+              ],
+              [
+                "مع (membawa)",
+                "bungkus",
+                "مامعييش",
+                "mama‘ayyaasy"
+              ],
+              [
+                "فيه (ada)",
+                "bungkus",
+                "مافيش",
+                "mafiisy"
+              ],
+              [
+                "kata kerja dengan حـ",
+                "مش",
+                "مش حاروح",
+                "misy haruuh"
+              ],
+              [
+                "kata benda",
+                "مش",
+                "مش طالب",
+                "misy thaalib"
+              ],
+              [
+                "kata sifat",
+                "مش",
+                "مش كويس",
+                "misy kuwayyis"
+              ],
+              [
+                "عايز، عارف، رايح",
+                "مش",
+                "مش عايز",
+                "misy ‘aayiz"
+              ],
+              [
+                "kata keterangan tempat",
+                "مش",
+                "مش هنا",
+                "misy hina"
+              ]
+            ]
+          },
+          "after": [
+            "Tiga baris tengah — عند، مع، فيه — adalah yang paling sering keliru. Ketiganya kata depan, bukan kata kerja, tapi karena mereka berdiri di tempat kata kerja, bahasa Mesir memperlakukannya seperti kata kerja.",
+            "Kalau kamu terlanjur memakai مش pada kata kerja bertanda بـ, orang tetap paham dan kadang justru dipakai untuk menekankan penyangkalan: أنا مش بشتغل هنا terdengar seperti \"saya bukannya kerja di sini\". Tapi sebagai bentuk baku, pakailah bungkus."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Empat cara berpindah di Kairo",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Apa itu"
+          ],
+          "rows": [
+            [
+              "مترو الأنفاق",
+              "mitro l-anfaa’",
+              "metro bawah tanah, tercepat dan termurah"
+            ],
+            [
+              "ميكروباص",
+              "mikrobaash",
+              "minibus tanpa jadwal, berhenti di mana saja"
+            ],
+            [
+              "أتوبيس",
+              "utubiis",
+              "bus kota"
+            ],
+            [
+              "تاكسي أبيض",
+              "taksi abyadh",
+              "taksi putih berargo"
+            ],
+            [
+              "تاكسي أجرة",
+              "taksi ugra",
+              "taksi antarkota, harga disepakati"
+            ],
+            [
+              "توك توك",
+              "tuktuk",
+              "bajaj roda tiga di gang-gang"
+            ],
+            [
+              "فرح",
+              "farah",
+              "aplikasi transportasi daring"
+            ],
+            [
+              "عربية",
+              "‘arabeyya",
+              "mobil"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Metro Kairo punya satu hal yang perlu kamu ketahui sejak hari pertama: dua gerbong di tengah tiap rangkaian dikhususkan untuk perempuan — عربية السيدات *‘arabeyyit is-sayyidaat*. Laki-laki yang naik ke situ akan diminta pindah, sementara perempuan boleh naik gerbong mana saja."
+        },
+        {
+          "type": "kotak",
+          "title": "Naik mikrobus tanpa panik",
+          "items": [
+            "Mikrobus tidak punya halte tetap. Kamu memberhentikannya dengan isyarat tangan, dan untuk turun kamu berteriak على جنب لو سمحت *‘ala ganb law samaht* (menepi ya).",
+            "Ongkos dibayar dengan mengoper uang lewat penumpang di depanmu sampai ke sopir, dan kembaliannya kembali lewat jalur yang sama. Sistem ini bekerja dengan kepercayaan penuh dan hampir tak pernah gagal.",
+            "Untuk bertanya apakah mikrobus itu ke arahmu: رايح المعادي؟ Jawaban yang bukan anggukan biasanya berarti tidak."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kalimat ingkar yang paling sering kamu butuhkan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sebagian besar kalimat yang menyelamatkan orang asing justru kalimat ingkar. Yang berikut ini sebaiknya kamu hafal utuh."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "مصري",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "مابفهمش",
+              "mabafhamsy",
+              "saya tidak mengerti"
+            ],
+            [
+              "مابعرفش",
+              "maba‘rafsy",
+              "saya tidak tahu"
+            ],
+            [
+              "مابتكلمش عربي كويس",
+              "mabatkallimsy ‘arabi kuwayyis",
+              "bahasa Arab saya belum bagus"
+            ],
+            [
+              "ماسمعتش",
+              "masmi‘tisy",
+              "saya tidak dengar"
+            ],
+            [
+              "ماتنساش",
+              "matinsaasy",
+              "jangan lupa"
+            ],
+            [
+              "مش عايز، شكراً",
+              "misy ‘aayiz, syukran",
+              "tidak mau, terima kasih"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat مش عايز، شكراً pantas dilatih sampai keluar tanpa berpikir. Di tempat wisata Kairo, kamu akan ditawari barang, jasa, dan tumpangan puluhan kali sehari, dan menjawab dalam bahasa Mesir dengan nada tenang bekerja jauh lebih baik daripada diam atau menjawab dalam bahasa Inggris."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "مابفهمش",
+      "baca": "mabafhamsy",
+      "id": "saya tidak mengerti"
+    },
+    {
+      "ar": "مابعرفش",
+      "baca": "maba‘rafsy",
+      "id": "saya tidak tahu"
+    },
+    {
+      "ar": "ماعنديش",
+      "baca": "ma‘andiisy",
+      "id": "saya tidak punya"
+    },
+    {
+      "ar": "خالص",
+      "baca": "khaalish",
+      "id": "sama sekali"
+    },
+    {
+      "ar": "خلاص",
+      "baca": "khalaash",
+      "id": "sudah, cukup"
+    },
+    {
+      "ar": "مترو",
+      "baca": "mitro",
+      "id": "metro"
+    },
+    {
+      "ar": "أتوبيس",
+      "baca": "utubiis",
+      "id": "bus"
+    },
+    {
+      "ar": "ميكروباص",
+      "baca": "mikrobaash",
+      "id": "mikrobus"
+    },
+    {
+      "ar": "تاكسي",
+      "baca": "taksi",
+      "id": "taksi"
+    },
+    {
+      "ar": "عربية",
+      "baca": "‘arabeyya",
+      "id": "mobil"
+    },
+    {
+      "ar": "سواق",
+      "baca": "sawwaa’",
+      "id": "sopir"
+    },
+    {
+      "ar": "عداد",
+      "baca": "‘addaad",
+      "id": "argometer"
+    },
+    {
+      "ar": "أجرة",
+      "baca": "ugra",
+      "id": "ongkos"
+    },
+    {
+      "ar": "تذكرة",
+      "baca": "tazkara",
+      "id": "tiket"
+    },
+    {
+      "ar": "شغال",
+      "baca": "syaghghaal",
+      "id": "berfungsi, jalan"
+    },
+    {
+      "ar": "بايظ",
+      "baca": "baayizh",
+      "id": "rusak"
+    },
+    {
+      "ar": "وصلنا",
+      "baca": "washalna",
+      "id": "kita sudah sampai"
+    },
+    {
+      "ar": "أهو",
+      "baca": "ahu",
+      "id": "nah, itu dia"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi kalimat ingkar.",
+      "items": [
+        "بفهم عربي.",
+        "هو بيشتغل هنا.",
+        "احنا بناكل لحمة.",
+        "عندي فكة.",
+        "هما بيروحوا المعهد."
+      ]
+    },
+    {
+      "prompt": "Isi dengan مش atau bentuk bungkus yang tepat.",
+      "items": [
+        "أنا ____ طالب هنا. (bukan)",
+        "أنا ____ الطريق. (tidak tahu)",
+        "هو ____ حايجي بكرة. (tidak akan)",
+        "احنا ____ عربية. (tidak punya)",
+        "هي ____ عايزة تروح. (tidak)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Mesir.",
+      "items": [
+        "Saya tidak mengerti, ulangi pelan-pelan.",
+        "Argonya jalan?",
+        "Saya tidak bawa uang kecil.",
+        "Jangan lewat Corniche, ada kecelakaan.",
+        "Malam saya tidak naik metro."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "الطرق / مابعرفش / أنا / كويس",
+        "بالليل / مابركبش / المترو",
+        "فكة / مامعييش",
+        "شغال / ؟ / العداد",
+        "الكورنيش / ماتاخدش"
+      ]
+    }
+  ],
+  "answers": [
+    "مابفهمش عربي. — هو مابيشتغلش هنا. — احنا مابناكلش لحمة. — ماعنديش فكة. — هما مابيروحوش المعهد.",
+    "مش — مابعرفش — مش — ماعندناش — مش",
+    "مابفهمش، تاني بالراحة. — العداد شغال؟ — مامعييش فكة. — ماتاخدش الكورنيش، فيه حادثة. — بالليل مابركبش المترو.",
+    "أنا مابعرفش الطرق كويس. — بالليل مابركبش المترو. — مامعييش فكة. — العداد شغال؟ — ماتاخدش الكورنيش."
+  ],
+  "wave": "Malam ini, ubah sepuluh kalimat harianmu jadi bentuk ingkar dan ucapkan keras-keras. Rasakan bungkusnya memeluk kata kerjanya dari dua sisi."
+}
