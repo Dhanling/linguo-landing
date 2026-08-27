@@ -1,0 +1,212 @@
+{
+  "title": "Berkas Anda sedang diperiksa",
+  "title_target": "Ihr Antrag wird gerade geprüft",
+  "goal": "Menyusun kalimat yang menyebut perbuatannya tanpa menyebut pelakunya — bentuk yang memenuhi kantor, papan pengumuman, dan berita.",
+  "bekal": [
+    "membentuk kalimat pasif di tiga waktu",
+    "memakai pasif bersama kata kerja modal",
+    "membedakan *von* dan *durch*",
+    "membedakan pasif kejadian dan pasif keadaan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Beim Versicherungsservice",
+      "intro": "Rina menelepon asuransi kesehatannya untuk menanyakan permohonan penggantian biaya. Perhatikan bahwa hampir tak ada pelaku yang disebut sepanjang percakapan.",
+      "lines": [
+        { "speaker": "Rina:", "text": "Guten Tag, ich wollte fragen, ob mein Antrag schon bearbeitet wurde.", "id": "Selamat siang, saya mau tanya apakah permohonan saya sudah diproses.", "literal": "baik hari, aku mau bertanya, apakah kepunyaanku permohonan sudah dikerjakan menjadi." },
+        { "speaker": "Service:", "text": "Einen Moment. Ihr Antrag wird gerade geprüft, sehe ich hier.", "id": "Sebentar. Permohonan Anda sedang diperiksa, saya lihat di sini.", "literal": "satu momen. kepunyaan-Anda permohonan menjadi sedang diperiksa, melihat aku di-sini." },
+        { "speaker": "Rina:", "text": "Er wurde vor vier Wochen eingereicht. Ist das normal?", "id": "Permohonannya diajukan empat minggu lalu. Itu wajar?", "literal": "dia menjadi sebelum empat minggu diajukan. adalah itu wajar?" },
+        { "speaker": "Service:", "text": "Leider ja. Zurzeit werden sehr viele Anträge gestellt.", "id": "Sayangnya iya. Saat ini banyak sekali permohonan yang masuk.", "literal": "sayangnya ya. saat-ini menjadi sangat banyak permohonan-permohonan diajukan." },
+        { "speaker": "Rina:", "text": "Und was passiert dann? Werde ich benachrichtigt?", "id": "Terus apa yang terjadi? Saya akan dikabari?", "literal": "dan apa terjadi lalu? menjadi aku dikabari?" },
+        { "speaker": "Service:", "text": "Ja. Sie werden per Post informiert, sobald entschieden worden ist.", "id": "Ya. Anda akan diberi kabar lewat pos begitu diputuskan.", "literal": "ya. Anda menjadi lewat pos diberitahu, segera-setelah diputuskan menjadi adalah." },
+        { "speaker": "Rina:", "text": "Muss der Beleg im Original geschickt werden?", "id": "Buktinya harus dikirim aslinya?", "literal": "harus itu bukti di-itu asli dikirim menjadi?" },
+        { "speaker": "Service:", "text": "Nein, eine Kopie reicht. Originale werden bei uns nicht aufbewahrt.", "id": "Tidak, salinan cukup. Berkas asli tidak kami simpan.", "literal": "tidak, satu salinan cukup. asli-asli menjadi pada kami tidak disimpan." },
+        { "speaker": "Rina:", "text": "Gut zu wissen. Und der Betrag wird direkt überwiesen?", "id": "Bagus tahu itu. Uangnya langsung ditransfer?", "literal": "baik untuk tahu. dan itu jumlah menjadi langsung ditransfer?" },
+        { "speaker": "Service:", "text": "Genau, auf das Konto, das bei der Anmeldung angegeben wurde.", "id": "Betul, ke rekening yang dicantumkan waktu pendaftaran.", "literal": "persis, atas itu rekening, yang pada itu pendaftaran dicantumkan menjadi." },
+        { "speaker": "Rina:", "text": "Das Konto ist inzwischen geschlossen. Kann das noch geändert werden?", "id": "Rekening itu sekarang sudah ditutup. Masih bisa diganti?", "literal": "itu rekening adalah sementara-itu tertutup. bisa itu lagi diubah menjadi?" },
+        { "speaker": "Service:", "text": "Ja, aber es muss schriftlich mitgeteilt werden. Am besten heute noch.", "id": "Bisa, tapi harus disampaikan tertulis. Sebaiknya hari ini juga.", "literal": "ya, tetapi itu harus tertulis disampaikan menjadi. pada-yang terbaik hari-ini lagi." },
+        { "speaker": "Rina:", "text": "Dann schicke ich gleich eine Mail. Wird die auch geprüft?", "id": "Kalau begitu saya kirim surel sekarang. Itu diperiksa juga?", "literal": "lalu mengirim aku langsung satu surel. menjadi dia juga diperiksa?" },
+        { "speaker": "Service:", "text": "Selbstverständlich. Alles, was uns geschickt wird, wird geprüft.", "id": "Tentu saja. Semua yang dikirim ke kami diperiksa.", "literal": "sudah-sepantasnya. semua, yang kepada-kami dikirim menjadi, menjadi diperiksa." }
+      ],
+      "notes": [
+        "**Pasif Jerman dibangun dari *werden* + Partizip II.** *Der Antrag **wird geprüft*** = permohonannya diperiksa. Kata *werden* di sini bukan berarti \"menjadi\" — ia cuma penanda bahwa kalimatnya pasif.",
+        "**Bentuk lampaunya mengganti *wird* dengan *wurde***: *Der Antrag **wurde** eingereicht.* Untuk Perfekt, susunannya menjadi *ist … **worden***: *Es **ist** entschieden **worden**.* Perhatikan bahwa *geworden* kehilangan *ge*-nya di sini.",
+        "**Bersama kata kerja modal, Partizip II berpasangan dengan *werden* dalam bentuk dasar di ujung**: *Der Beleg **muss** geschickt **werden***. Susunan itu terasa panjang, tapi ia muncul di hampir setiap surat resmi Jerman.",
+        "**Pelakunya boleh disebut, dan biasanya justru tidak.** Kalau perlu: *von* + Dativ untuk orang atau lembaga (*Der Antrag wurde **von der Kasse** geprüft*), *durch* + Akkusativ untuk perantara atau sebab (*Der Fehler wurde **durch ein Update** verursacht*).",
+        "**Sasaran kalimat aktif menjadi pelaku kalimat pasif.** *Wir prüfen **den Antrag*** (Akkusativ) → ***Der Antrag** wird geprüft* (Nominativ). Perubahan kasus inilah yang perlu diperhatikan, bukan sekadar bentuk kata kerjanya.",
+        "**Kata kerja yang menuntut Dativ tidak mengubah kasusnya** di pasif: *Man hilft **dem Kunden*** → ***Dem Kunden** wird geholfen.* Kalimat itu tidak punya subjek sama sekali — dan itu sah dalam bahasa Jerman.",
+        "**Ada dua wajah yang mirip.** *Das Konto **wird** geschlossen* = rekeningnya sedang ditutup (kejadian). *Das Konto **ist** geschlossen* = rekeningnya sudah tertutup (keadaan). Yang kedua memakai *sein*, bukan *werden*.",
+        "**Di percakapan sehari-hari, penutur lebih sering memakai *man***: *Man prüft das noch* lebih ringan daripada *Das wird noch geprüft*. Pasif adalah bahasa surat dan kantor; *man* adalah bahasa lisan."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk pasif di semua waktu",
+          "body": [
+            "Satu pola, tiga waktu, ditambah dua susunan khusus."
+          ],
+          "table": {
+            "head": ["Waktu", "Susunan", "Contoh"],
+            "rows": [
+              ["sekarang", "wird + Partizip II", "Der Antrag **wird geprüft**."],
+              ["lampau", "wurde + Partizip II", "Der Antrag **wurde geprüft**."],
+              ["Perfekt", "ist + Partizip II + worden", "Der Antrag **ist geprüft worden**."],
+              ["Plusquamperfekt", "war + Partizip II + worden", "Der Antrag **war geprüft worden**."],
+              ["dengan modal", "modal + Partizip II + werden", "Der Antrag **muss geprüft werden**."],
+              ["keadaan (Zustand)", "ist + Partizip II", "Das Konto **ist geschlossen**."]
+            ]
+          },
+          "after": [
+            "**Kalimat pasif tanpa subjek dibuka dengan *es***, dan *es* itu hilang begitu ada kata lain di depannya: ***Es** wird hier viel gearbeitet* → *Hier **wird** viel gearbeitet.*",
+            "**Bentuk masa depan pasif jarang dipakai** — *wird geprüft werden* terdengar berat. Penutur memakai bentuk sekarang plus keterangan waktu: *Der Antrag wird nächste Woche geprüft.*"
+          ]
+        },
+        {
+          "title": "Empat cara menghilangkan pelaku",
+          "body": [
+            "Semuanya sah; yang membedakan adalah nada dan tempat pemakaiannya."
+          ],
+          "table": {
+            "head": ["Cara", "Contoh", "Terasa"],
+            "rows": [
+              ["pasif werden", "Das **wird geprüft**.", "resmi, tertulis"],
+              ["man", "**Man** prüft das.", "lisan, sehari-hari"],
+              ["sich lassen", "Das **lässt sich** leicht ändern.", "bisa diubah, luwes"],
+              ["sein + zu + dasar", "Das **ist** noch **zu prüfen**.", "sangat resmi, wajib"],
+              ["bentuk -bar", "Das ist leicht **änderbar**.", "sifat, bahasa teknis"],
+              ["Zustandspassiv", "Das **ist** schon **geprüft**.", "hasilnya, bukan kejadiannya"]
+            ]
+          },
+          "after": [
+            "**Baris ketiga dan keempat sering muncul di surat kantor** dan mudah salah dibaca: *Das lässt sich machen* = itu bisa diatur; *Der Antrag ist bis Freitag einzureichen* = permohonan harus diajukan paling lambat Jumat.",
+            "**Kalau kamu ragu, pakailah *man*.** Ia hampir selalu bisa menggantikan pasif tanpa mengubah arti, dan tak pernah terdengar salah di percakapan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog B — Aushang im Treppenhaus",
+      "intro": "Pengumuman yang ditempel di tangga gedung apartemen Rina. Perhatikan bahwa tak satu pun kalimat menyebut siapa yang mengerjakan.",
+      "lines": [
+        { "speaker": "Aushang:", "text": "Liebe Hausgemeinschaft, in der nächsten Woche wird das Treppenhaus renoviert.", "id": "Warga yang terhormat, minggu depan tangga gedung akan direnovasi.", "literal": "sayang rumah-perkumpulan, di itu berikutnya minggu menjadi itu tangga-rumah direnovasi." },
+        { "speaker": "Aushang:", "text": "Die Arbeiten werden von der Firma Kolb durchgeführt.", "id": "Pekerjaannya dilaksanakan oleh perusahaan Kolb.", "literal": "itu pekerjaan-pekerjaan menjadi dari itu perusahaan Kolb dilaksanakan." },
+        { "speaker": "Aushang:", "text": "Der Aufzug kann während dieser Zeit nicht benutzt werden.", "id": "Lift tidak bisa dipakai selama waktu itu.", "literal": "itu lift bisa selama ini waktu tidak dipakai menjadi." },
+        { "speaker": "Aushang:", "text": "Fahrräder müssen bis Montag aus dem Flur entfernt werden.", "id": "Sepeda harus disingkirkan dari lorong paling lambat Senin.", "literal": "sepeda-sepeda harus sampai Senin dari itu lorong disingkirkan menjadi." },
+        { "speaker": "Aushang:", "text": "Nicht entfernte Räder werden auf Kosten der Eigentümer abgeholt.", "id": "Sepeda yang tidak disingkirkan akan diangkut atas biaya pemiliknya.", "literal": "tidak disingkirkan roda-roda menjadi atas biaya dari-itu pemilik diambil." },
+        { "speaker": "Aushang:", "text": "Für die Unannehmlichkeiten wird um Verständnis gebeten.", "id": "Atas ketidaknyamanannya, mohon pengertian.", "literal": "untuk itu ketidaknyamanan-ketidaknyamanan menjadi mengenai pengertian dimohon." },
+        { "speaker": "Aushang:", "text": "Fragen können an die Hausverwaltung gerichtet werden.", "id": "Pertanyaan bisa disampaikan ke pengelola gedung.", "literal": "pertanyaan-pertanyaan bisa kepada itu rumah-pengelolaan diarahkan menjadi." },
+        { "speaker": "Aushang:", "text": "Die Baustelle ist ab Freitag wieder frei zugänglich.", "id": "Area kerja bisa diakses lagi mulai Jumat.", "literal": "itu bangunan-tempat adalah mulai Jumat lagi bebas dapat-dimasuki." }
+      ],
+      "notes": [
+        "**Inilah bahasa Jerman yang sesungguhnya akan kamu baca setiap hari** — di tangga gedung, di halte, di surat kantor. Enam dari delapan kalimat di atas berbentuk pasif, dan tak satu pun pelakunya berupa orang tertentu.",
+        "***Wird um Verständnis gebeten*** adalah pasif tanpa subjek sama sekali, dari *um Verständnis bitten*. Terjemahan harfiahnya mustahil; artinya sederhana: mohon pengertian.",
+        "**Perhatikan dua bentuk berbeda di kalimat pertama dan terakhir**: *wird renoviert* (kejadian yang akan berlangsung) dan *ist zugänglich* (keadaan sesudahnya). Papan pengumuman Jerman memakai keduanya berdampingan.",
+        "**Kalimat pasif bermodal selalu berakhir dengan *werden***: *kann nicht benutzt **werden***, *müssen entfernt **werden***, *können gerichtet **werden***. Kalau kamu melihat *werden* di ujung kalimat surat, hampir pasti itu pasif."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Urusan surat, asuransi, dan pengumuman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["der Antrag", "AN-traak", "permohonan"],
+            ["bearbeiten", "be-AR-bai-ten", "memproses"],
+            ["einreichen", "AIN-rai-khen", "mengajukan"],
+            ["prüfen", "PRÜÜ-fen", "memeriksa"],
+            ["benachrichtigen", "be-NAAKH-rikh-ti-gen", "mengabari"],
+            ["der Beleg", "be-LEEK", "bukti, kuitansi"],
+            ["aufbewahren", "AUF-be-vaa-ren", "menyimpan"],
+            ["überweisen", "ü-ba-VAI-zen", "mentransfer"],
+            ["das Konto", "KON-to", "rekening"],
+            ["mitteilen", "MIT-tai-len", "menyampaikan"],
+            ["die Hausverwaltung", "HAUS-fer-val-tung", "pengelola gedung"],
+            ["entfernen", "ent-FER-nen", "menyingkirkan"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Membaca surat resmi Jerman tanpa panik",
+          "items": [
+            "Carilah **kata kerja di ujung kalimat** lebih dulu — di surat resmi, ia hampir selalu Partizip II + *werden*. Begitu kamu menemukannya, kamu sudah tahu apa yang dikerjakan; sisanya tinggal siapa dan kapan.",
+            "Empat potongan yang berulang di hampir semua surat: *Es wird darauf hingewiesen, dass…* (perlu diingatkan bahwa…) · *Ihr Antrag wird bearbeitet.* · *Weitere Unterlagen sind einzureichen.* (berkas lain harus diajukan) · *Über die Entscheidung werden Sie informiert.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "der Antrag", "baca": "AN-traak", "id": "permohonan" },
+    { "de": "bearbeiten", "baca": "be-AR-bai-ten", "id": "memproses" },
+    { "de": "prüfen", "baca": "PRÜÜ-fen", "id": "memeriksa" },
+    { "de": "einreichen", "baca": "AIN-rai-khen", "id": "mengajukan" },
+    { "de": "zurzeit", "baca": "tsuur-TSAIT", "id": "saat ini" },
+    { "de": "benachrichtigen", "baca": "be-NAAKH-rikh-ti-gen", "id": "mengabari" },
+    { "de": "die Post", "baca": "post", "id": "pos" },
+    { "de": "entscheiden", "baca": "ent-SYAI-den", "id": "memutuskan" },
+    { "de": "der Beleg", "baca": "be-LEEK", "id": "bukti pembayaran" },
+    { "de": "die Kopie", "baca": "ko-PII", "id": "salinan" },
+    { "de": "aufbewahren", "baca": "AUF-be-vaa-ren", "id": "menyimpan" },
+    { "de": "der Betrag", "baca": "be-TRAAK", "id": "jumlah uang" },
+    { "de": "überweisen", "baca": "ü-ba-VAI-zen", "id": "mentransfer" },
+    { "de": "angeben", "baca": "AN-gee-ben", "id": "mencantumkan" },
+    { "de": "schriftlich", "baca": "SYRIFT-likh", "id": "tertulis" },
+    { "de": "mitteilen", "baca": "MIT-tai-len", "id": "menyampaikan" },
+    { "de": "renovieren", "baca": "re-no-VII-ren", "id": "merenovasi" },
+    { "de": "der Aufzug", "baca": "AUF-tsuuk", "id": "lift" },
+    { "de": "entfernen", "baca": "ent-FER-nen", "id": "menyingkirkan" },
+    { "de": "das Verständnis", "baca": "fer-SYTENT-nis", "id": "pengertian" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi kalimat pasif dengan waktu yang sama.",
+      "items": [
+        "Man prüft den Antrag. → ____",
+        "Man hat den Antrag geprüft. → ____",
+        "Die Firma renovierte das Treppenhaus. → ____",
+        "Man muss den Beleg schicken. → ____",
+        "Man kann den Aufzug nicht benutzen. → ____"
+      ]
+    },
+    {
+      "prompt": "Isi bentuk *werden* yang tepat.",
+      "items": [
+        "Der Antrag ____ gerade geprüft.",
+        "Der Antrag ____ vor vier Wochen eingereicht.",
+        "Es ist gestern entschieden ____.",
+        "Die Fahrräder müssen entfernt ____.",
+        "Sie ____ per Post informiert.",
+        "Zurzeit ____ sehr viele Anträge gestellt."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *von* atau *durch*.",
+      "items": [
+        "Der Antrag wurde ____ der Sachbearbeiterin geprüft.",
+        "Der Fehler wurde ____ ein Update verursacht.",
+        "Das Haus wurde ____ einen Sturm beschädigt.",
+        "Die Arbeiten werden ____ der Firma Kolb durchgeführt.",
+        "Ich wurde ____ meinem Kollegen informiert."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Permohonan Anda sedang diperiksa.",
+        "Permohonannya diajukan empat minggu lalu.",
+        "Buktinya harus dikirim aslinya?",
+        "Lift tidak bisa dipakai minggu depan.",
+        "Rekening itu sudah ditutup."
+      ]
+    }
+  ],
+  "answers": [
+    "Der Antrag wird geprüft. — Der Antrag ist geprüft worden. — Das Treppenhaus wurde renoviert. — Der Beleg muss geschickt werden. — Der Aufzug kann nicht benutzt werden.",
+    "wird — wurde — worden — werden — werden — werden",
+    "von — durch — durch — von — von",
+    "Ihr Antrag wird gerade geprüft. — Der Antrag wurde vor vier Wochen eingereicht. — Muss der Beleg im Original geschickt werden? — Der Aufzug kann nächste Woche nicht benutzt werden. — Das Konto ist geschlossen."
+  ],
+  "wave": "Ulangi **unit 12**: ambil cerita yang kamu tulis dengan Präteritum, lalu ubah lima kalimatnya menjadi bentuk pasif — perhatikan bahwa pelakunya sering justru tak perlu disebut."
+}

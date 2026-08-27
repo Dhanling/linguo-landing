@@ -1,0 +1,212 @@
+{
+  "title": "Saya ingin mengajukan keluhan",
+  "title_target": "Ich möchte mich beschweren",
+  "goal": "Mengurus keluhan sampai selesai — lewat telepon dan lewat surat — dengan susunan kalimat yang rapi dan nada resmi yang tepat.",
+  "bekal": [
+    "menyusun keterangan menurut urutan waktu-sebab-cara-tempat",
+    "menyampaikan keluhan dengan nada resmi",
+    "menuntut penyelesaian dengan tenggat",
+    "menulis surat resmi bahasa Jerman"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Der Anruf beim Kundenservice",
+      "intro": "Mesin cuci yang dipesan Laras datang dengan sisi penyok. Ia menelepon layanan pelanggan. Perhatikan urutan keterangan di kalimat-kalimat panjangnya.",
+      "lines": [
+        { "speaker": "Service:", "text": "Kundenservice Weber, mein Name ist Roth. Was kann ich für Sie tun?", "id": "Layanan pelanggan Weber, saya Roth. Ada yang bisa dibantu?", "literal": "pelanggan-layanan Weber, kepunyaanku nama adalah Roth. apa bisa aku untuk Anda membuat?" },
+        { "speaker": "Laras:", "text": "Guten Tag. Ich möchte mich über eine Lieferung von letzter Woche beschweren.", "id": "Selamat siang. Saya mau mengeluhkan pengiriman minggu lalu.", "literal": "baik hari. aku ingin diriku mengenai satu pengiriman dari terakhir minggu mengeluh." },
+        { "speaker": "Service:", "text": "Das tut mir leid. Haben Sie die Auftragsnummer zur Hand?", "id": "Maaf soal itu. Nomor pesanannya ada?", "literal": "itu membuat kepadaku sedih. punya Anda itu pesanan-nomor ke-itu tangan?" },
+        { "speaker": "Laras:", "text": "Ja, 4-9-2-0-7. Die Waschmaschine wurde am Dienstag wegen des Umzugs verspätet geliefert.", "id": "Ada, 4-9-2-0-7. Mesin cucinya dikirim Selasa, telat karena pindahan.", "literal": "ya, 4-9-2-0-7. itu cuci-mesin menjadi pada-itu Selasa karena dari-itu pindahan terlambat dikirim." },
+        { "speaker": "Service:", "text": "Ich sehe die Bestellung. Was genau ist das Problem?", "id": "Saya lihat pesanannya. Masalahnya persisnya apa?", "literal": "aku melihat itu pesanan. apa persis adalah itu masalah?" },
+        { "speaker": "Laras:", "text": "Die Seite ist eingedrückt. Außerdem fehlt der Zulaufschlauch komplett.", "id": "Sisinya penyok. Selain itu selang airnya nggak ada sama sekali.", "literal": "itu sisi adalah tertekan-masuk. selain-itu kurang itu masuk-selang lengkap." },
+        { "speaker": "Service:", "text": "Verstehe. Haben Sie den Schaden beim Boten gemeldet?", "id": "Paham. Kerusakannya sudah dilaporkan ke kurirnya?", "literal": "mengerti. punya Anda itu kerusakan pada-itu kurir dilaporkan?" },
+        { "speaker": "Laras:", "text": "Er ist sofort weitergefahren. Ich habe die Beschädigung aber fotografiert.", "id": "Dia langsung pergi. Tapi kerusakannya sudah saya foto.", "literal": "dia adalah segera terus-berkendara. aku punya itu kerusakan tetapi difoto." },
+        { "speaker": "Service:", "text": "Sehr gut. Bitte schicken Sie uns die Fotos heute noch per E-Mail zu.", "id": "Bagus sekali. Tolong kirim fotonya ke kami hari ini juga lewat surel.", "literal": "sangat baik. tolong mengirim Anda kepada-kami itu foto-foto hari-ini lagi lewat surel ke." },
+        { "speaker": "Laras:", "text": "Mache ich. Und wie geht es dann weiter?", "id": "Siap. Terus lanjutannya gimana?", "literal": "membuat aku. dan bagaimana berjalan itu lalu terus?" },
+        { "speaker": "Service:", "text": "Wir tauschen das Gerät aus. Ein Termin wird Ihnen schriftlich mitgeteilt.", "id": "Kami tukar unitnya. Jadwalnya akan disampaikan tertulis kepada Anda.", "literal": "kami menukar itu alat keluar. satu janji menjadi kepada-Anda tertulis disampaikan." },
+        { "speaker": "Laras:", "text": "Bis wann ungefähr? Ich habe seit einer Woche keine Waschmaschine.", "id": "Kira-kira sampai kapan? Sudah seminggu saya nggak punya mesin cuci.", "literal": "sampai kapan kira-kira? aku punya sejak satu minggu tak-satu-pun cuci-mesin." },
+        { "speaker": "Service:", "text": "Innerhalb von fünf Werktagen. Sollte es länger dauern, melden Sie sich bitte.", "id": "Dalam lima hari kerja. Kalau lebih lama, silakan hubungi kami.", "literal": "di-dalam dari lima kerja-hari. seharusnya itu lebih-lama berlangsung, melaporkan Anda diri-Anda tolong." },
+        { "speaker": "Laras:", "text": "Danke. Könnten Sie mir das kurz per Mail bestätigen?", "id": "Terima kasih. Bisa dikonfirmasi lewat surel?", "literal": "terima-kasih. bisalah Anda kepadaku itu sebentar lewat surel mengesahkan?" }
+      ],
+      "notes": [
+        "**Bahasa Jerman menata keterangan menurut urutan tetap: waktu — sebab — cara — tempat.** *Die Waschmaschine wurde **am Dienstag** (waktu) **wegen des Umzugs** (sebab) **verspätet** (cara) **geliefert**.* Urutan ini biasa disingkat TeKaMoLo.",
+        "**Urutan itu bukan aturan mati**, tapi menyimpanginya membuat penekanannya bergeser. Yang benar-benar tetap: keterangan tempat tujuan berdiri paling dekat dengan kata kerjanya di ujung.",
+        "**Sasaran berbentuk orang mendahului sasaran berbentuk benda**: *Wir schicken **Ihnen** (orang) **die Fotos** (benda)*. Tapi kalau keduanya berupa kata ganti, urutannya berbalik: *Wir schicken **sie Ihnen**.*",
+        "***Sich beschweren über*** adalah pasangan dari unit 8 dan inilah kata yang benar untuk keluhan resmi. *Sich ärgern über* berarti kesal di dalam hati; *sich beschweren* berarti menyampaikannya kepada pihak yang berwenang.",
+        "**Nada resmi Jerman tidak berarti berputar-putar.** Justru sebaliknya: sebutkan urusanmu di kalimat kedua, sebutkan nomor pesanan, sebutkan apa yang kamu inginkan. Yang membuatnya sopan adalah bentuk Konjunktiv II dan kata *bitte*, bukan panjangnya kalimat.",
+        "***Sollte es länger dauern, …*** adalah kalimat *wenn* tanpa *wenn* dari unit 6, dan di bahasa layanan pelanggan ia terdengar wajar sekali: seandainya lebih lama, silakan hubungi.",
+        "**Perhatikan dua kata benda kejadian**: *die Lieferung* (dari *liefern*), *die Beschädigung* (dari *beschädigen*). Bahasa resmi Jerman lebih suka kata benda daripada kata kerja — kebiasaan yang disebut *Nominalstil*.",
+        "**Selalu minta pengesahan tertulis.** Kalimat *Könnten Sie mir das bitte per Mail bestätigen?* adalah kalimat paling berguna dalam seluruh unit ini, dan ia memakai bentuk sopan dari unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "Urutan keterangan dalam kalimat",
+          "body": [
+            "Empat jenis keterangan, satu urutan bawaan."
+          ],
+          "table": {
+            "head": ["Urutan", "Jenis", "Pertanyaan", "Contoh"],
+            "rows": [
+              ["1", "Temporal", "wann?", "**am Dienstag**"],
+              ["2", "Kausal", "warum?", "**wegen des Umzugs**"],
+              ["3", "Modal", "wie?", "**mit dem Lkw**"],
+              ["4", "Lokal", "wo? wohin?", "**nach Leipzig**"],
+              ["—", "sasaran orang", "wem?", "mendahului benda"],
+              ["—", "kata ganti", "—", "selalu maju ke depan"]
+            ]
+          },
+          "after": [
+            "**Contoh penuh**: *Ich habe **ihm gestern wegen des Termins kurz im Büro** Bescheid gesagt.* Kata ganti *ihm* maju paling depan; sisanya mengikuti urutan TeKaMoLo.",
+            "**Keterangan yang ingin ditonjolkan dipindahkan ke posisi pertama**, di depan kata kerja: *Gestern habe ich ihm Bescheid gesagt.* Posisi pertama adalah tempat penekanan, dan hanya boleh diisi satu bagian."
+          ]
+        },
+        {
+          "title": "Susunan surat resmi",
+          "body": [
+            "Enam bagian yang selalu ada, dari sapaan sampai penutup."
+          ],
+          "table": {
+            "head": ["Bagian", "Potongan baku", "Catatan"],
+            "rows": [
+              ["sapaan", "Sehr geehrte Damen und Herren,", "kalau namanya tak diketahui"],
+              ["sapaan bernama", "Sehr geehrte Frau Roth,", "kalimat berikutnya huruf kecil"],
+              ["pembuka", "mit diesem Schreiben möchte ich …", "sebutkan urusannya segera"],
+              ["duduk perkara", "Am … habe ich … bestellt.", "tanggal, nomor, fakta"],
+              ["tuntutan", "Ich bitte Sie daher, … bis zum … zu …", "sertakan tenggat"],
+              ["penutup", "Mit freundlichen Grüßen", "tanpa koma sesudahnya"]
+            ]
+          },
+          "after": [
+            "**Sesudah koma pada sapaan, kalimat berikutnya dimulai dengan huruf kecil** — kecuali kata bendanya. Ini kebiasaan penulisan Jerman yang hampir selalu dilanggar pelajar.",
+            "**Tenggat wajib disebutkan** dalam surat keluhan Jerman: *bis zum 15. Oktober*. Tanpa tenggat, suratmu dianggap pemberitahuan, bukan tuntutan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog B — Die schriftliche Beschwerde",
+      "intro": "Surel yang dikirim Laras keesokan harinya. Perhatikan bahwa isinya sama dengan percakapan telepon, tapi nada dan susunannya berbeda.",
+      "lines": [
+        { "speaker": "Betreff:", "text": "Beschwerde zur Bestellung 49207 — beschädigte Lieferung", "id": "Perihal: Keluhan pesanan 49207 — kiriman rusak", "literal": "keluhan ke-itu pesanan 49207 — rusak pengiriman." },
+        { "speaker": "Text:", "text": "Sehr geehrte Frau Roth, wie soeben telefonisch besprochen, schicke ich Ihnen die Fotos.", "id": "Yth. Ibu Roth, seperti baru saja dibicarakan lewat telepon, saya kirimkan fotonya.", "literal": "sangat dihormati Nyonya Roth, seperti barusan lewat-telepon dibicarakan, mengirim aku kepada-Anda itu foto-foto." },
+        { "speaker": "Text:", "text": "Die Waschmaschine wurde am 14. Oktober in beschädigtem Zustand geliefert.", "id": "Mesin cuci itu dikirim pada 14 Oktober dalam keadaan rusak.", "literal": "itu cuci-mesin menjadi pada 14. Oktober di rusak keadaan dikirim." },
+        { "speaker": "Text:", "text": "Die linke Seite ist eingedrückt, und der Zulaufschlauch fehlt vollständig.", "id": "Sisi kirinya penyok, dan selang airnya tidak ada sama sekali.", "literal": "itu kiri sisi adalah tertekan-masuk, dan itu masuk-selang kurang sepenuhnya." },
+        { "speaker": "Text:", "text": "Ich bitte Sie daher, das Gerät bis zum 25. Oktober auszutauschen.", "id": "Karena itu saya mohon perangkatnya ditukar paling lambat 25 Oktober.", "literal": "aku memohon Anda karena-itu, itu alat sampai ke-itu 25. Oktober untuk-menukar-keluar." },
+        { "speaker": "Text:", "text": "Sollte das nicht möglich sein, bitte ich um Erstattung des Kaufpreises.", "id": "Kalau tidak memungkinkan, saya mohon pengembalian harga beli.", "literal": "seharusnya itu tidak mungkin adalah, memohon aku mengenai penggantian dari-itu beli-harga." },
+        { "speaker": "Text:", "text": "Über eine kurze Bestätigung würde ich mich freuen.", "id": "Saya akan senang menerima konfirmasi singkat.", "literal": "mengenai satu pendek pengesahan akan aku diriku menyenangkan." },
+        { "speaker": "Text:", "text": "Mit freundlichen Grüßen, Laras Prameswari", "id": "Hormat saya, Laras Prameswari", "literal": "dengan ramah salam-salam, Laras Prameswari." }
+      ],
+      "notes": [
+        "**Bandingkan kedua dialog kalimat demi kalimat.** Isinya sama; yang berubah adalah bentuknya: kalimat pasif menggantikan kalimat aktif, kata benda menggantikan kata kerja, dan tuntutannya diberi tenggat.",
+        "***Ich bitte Sie daher, … zu …*** adalah rumus tuntutan yang paling banyak dipakai. Ia memakai susunan *zu* dari unit 10, dan kata *daher* menandai bahwa tuntutannya lahir dari duduk perkara yang baru disebutkan.",
+        "***Über eine kurze Bestätigung würde ich mich freuen*** — kalimat penutup baku yang memakai pasangan preposisi (*sich freuen über*, unit 8) sekaligus Konjunktiv II (unit 5). Hafalkan utuh; ia muncul di hampir semua surat resmi.",
+        "**Tanggal Jerman ditulis dengan titik**: *am 14. Oktober*, *bis zum 25. Oktober*, dan dibaca *am vierzehnten Oktober*, *bis zum fünfundzwanzigsten Oktober* — dengan akhiran urutan yang ikut kasusnya."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keluhan, kerusakan, dan penyelesaian",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["sich beschweren", "zikh be-SYVEE-ren", "mengeluh resmi"],
+            ["die Lieferung", "LII-fe-rung", "pengiriman"],
+            ["die Bestellung", "be-SYTE-lung", "pesanan"],
+            ["der Schaden", "SYAA-den", "kerusakan"],
+            ["beschädigt", "be-SYEE-dikht", "rusak"],
+            ["fehlen", "FEE-len", "tidak ada"],
+            ["umtauschen", "UM-tau-syen", "menukar"],
+            ["die Erstattung", "er-SYTA-tung", "penggantian uang"],
+            ["die Bestätigung", "be-SYTEE-ti-gung", "konfirmasi"],
+            ["der Werktag", "VERK-taak", "hari kerja"],
+            ["die Frist setzen", "dii FRIST ZE-tsen", "memberi tenggat"],
+            ["das Schreiben", "SYRAI-ben", "surat resmi"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Hak pembeli di Jerman yang perlu kamu tahu",
+          "items": [
+            "**Gewährleistung** — jaminan hukum dua tahun atas barang cacat, berlaku otomatis dan tak bisa dihapus penjual. Berbeda dengan **Garantie**, yang sukarela dan diberikan pabrik.",
+            "**Widerrufsrecht** — hak membatalkan pembelian daring dalam **empat belas hari** tanpa alasan apa pun. Untuk pembelian di toko, hak ini **tidak** berlaku — itulah yang dijelaskan penjual di unit 15."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "sich beschweren", "baca": "zikh be-SYVEE-ren", "id": "mengeluh resmi" },
+    { "de": "der Kundenservice", "baca": "KUN-den-zer-vis", "id": "layanan pelanggan" },
+    { "de": "die Lieferung", "baca": "LII-fe-rung", "id": "pengiriman" },
+    { "de": "die Auftragsnummer", "baca": "AUF-traaks-nu-ma", "id": "nomor pesanan" },
+    { "de": "die Waschmaschine", "baca": "VASY-ma-syii-ne", "id": "mesin cuci" },
+    { "de": "liefern", "baca": "LII-fern", "id": "mengirimkan" },
+    { "de": "eingedrückt", "baca": "AIN-ge-drükt", "id": "penyok" },
+    { "de": "der Schlauch", "baca": "sylaukh", "id": "selang" },
+    { "de": "der Schaden", "baca": "SYAA-den", "id": "kerusakan" },
+    { "de": "melden", "baca": "MEL-den", "id": "melaporkan" },
+    { "de": "die Beschädigung", "baca": "be-SYEE-di-gung", "id": "kerusakan" },
+    { "de": "austauschen", "baca": "AUS-tau-syen", "id": "menukar" },
+    { "de": "der Werktag", "baca": "VERK-taak", "id": "hari kerja" },
+    { "de": "bestätigen", "baca": "be-SYTEE-ti-gen", "id": "mengesahkan" },
+    { "de": "der Betreff", "baca": "be-TREF", "id": "perihal" },
+    { "de": "soeben", "baca": "zo-EE-ben", "id": "barusan" },
+    { "de": "vollständig", "baca": "FOL-sytendikh", "id": "sepenuhnya" },
+    { "de": "die Erstattung", "baca": "er-SYTA-tung", "id": "penggantian uang" },
+    { "de": "der Kaufpreis", "baca": "KAUF-prais", "id": "harga beli" },
+    { "de": "die Bestätigung", "baca": "be-SYTEE-ti-gung", "id": "konfirmasi" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Susun keterangan menurut urutan waktu-sebab-cara-tempat.",
+      "items": [
+        "geliefert / am Dienstag / wurde / wegen des Umzugs / verspätet / die Maschine",
+        "gefahren / mit dem Rad / bin / ins Büro / ich / heute",
+        "gesagt / im Büro / habe / ich / kurz / gestern / ihm / Bescheid",
+        "gekommen / wegen des Staus / sie / spät / ist / gestern",
+        "geschickt / per E-Mail / ich / habe / die Fotos / Ihnen / sofort"
+      ]
+    },
+    {
+      "prompt": "Isi dengan potongan surat resmi yang tepat.",
+      "items": [
+        "____ Damen und Herren,",
+        "Ich möchte mich ____ die Lieferung beschweren.",
+        "Ich bitte Sie ____, das Gerät auszutauschen.",
+        "____ das nicht möglich sein, bitte ich um Erstattung.",
+        "Über eine kurze Bestätigung ____ ich mich freuen.",
+        "Mit ____ Grüßen"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi kalimat bergaya surat resmi.",
+      "items": [
+        "Ihr habt die Maschine kaputt geschickt. → ____",
+        "Schickt mir bis Freitag eine neue. → ____",
+        "Ich will mein Geld zurück. → ____",
+        "Antwortet mir schnell. → ____",
+        "Ich habe die Sachen fotografiert. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Saya mau mengeluhkan pengiriman minggu lalu.",
+        "Mesin cucinya dikirim dalam keadaan rusak.",
+        "Selain itu selang airnya tidak ada.",
+        "Saya mohon perangkatnya ditukar paling lambat 25 Oktober.",
+        "Bisakah Anda mengonfirmasi itu lewat surel?"
+      ]
+    }
+  ],
+  "answers": [
+    "Die Maschine wurde am Dienstag wegen des Umzugs verspätet geliefert. — Ich bin heute mit dem Rad ins Büro gefahren. — Ich habe ihm gestern kurz im Büro Bescheid gesagt. — Sie ist gestern wegen des Staus spät gekommen. — Ich habe Ihnen die Fotos sofort per E-Mail geschickt.",
+    "Sehr geehrte — über — daher — Sollte — würde — freundlichen",
+    "Die Maschine wurde in beschädigtem Zustand geliefert. — Ich bitte Sie, mir bis Freitag ein neues Gerät zu schicken. — Ich bitte um Erstattung des Kaufpreises. — Über eine kurze Rückmeldung würde ich mich freuen. — Ich habe die Beschädigung fotografiert.",
+    "Ich möchte mich über eine Lieferung von letzter Woche beschweren. — Die Waschmaschine wurde in beschädigtem Zustand geliefert. — Außerdem fehlt der Zulaufschlauch. — Ich bitte Sie, das Gerät bis zum 25. Oktober auszutauschen. — Könnten Sie mir das bitte per E-Mail bestätigen?"
+  ],
+  "wave": "Ulangi **unit 17**: sampaikan ulang percakapan teleponmu sendiri seolah kamu menceritakannya kepada rekan — *Sie sagte, das Gerät werde innerhalb von fünf Werktagen ausgetauscht.*"
+}
