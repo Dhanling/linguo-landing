@@ -171,11 +171,14 @@ function edisiProduk(p: { title: string; slug?: string | null }): Edisi | null {
 // Ketiganya dibaca dari kolom yang SUDAH ada di `digital_products` (title/language/
 // level) — tidak ada perubahan skema.
 
-// Modul cetakan baru ditandai di judulnya ("Spanish 101 new edition"). E-Learning
-// tidak pernah punya penanda ini, jadi memilih "New edition" otomatis menyisakan
-// Lingbook saja — itu memang perilaku yang diharapkan.
+// [judul-ebook-inggris-v2] Modul cetakan baru dikenali dari pola judul barunya
+// "<Bahasa> 101 - A1" (dulu bertanda "… new edition"; pola lama tetap dikenali
+// supaya produk yang belum tersinkron tidak hilang dari saringan). E-Learning dan
+// modul edisi lama tidak pernah cocok, jadi memilih "New edition" otomatis
+// menyisakan Lingbook cetakan baru saja — itu memang perilaku yang diharapkan.
 function adalahNewEdition(p: { title: string }) {
-  return /\bnew edition\b/i.test(p.title || "");
+  const judul = p.title || "";
+  return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul);
 }
 
 // `digital_products.language` isinya nama Inggris ("Sundanese", "Persian"),
