@@ -11,6 +11,7 @@
 // src/app/sitemap.ts — tiga tempat (metadata, sitemap, robots) harus sepakat.
 
 import type { ReactNode } from "react";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -28,5 +29,13 @@ export const metadata = pageMetadata({
 });
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbLd trail={[
+        { name: "Produk Digital", path: "/toko" },
+        { name: "E-Book", path: "/produk/ebook" },
+      ]} />
+      {children}
+    </>
+  );
 }

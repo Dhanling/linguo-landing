@@ -4,6 +4,7 @@ import { Baloo_2, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { BRAND_FACTS } from "@/lib/brand-facts"; // [aeo-brand-facts-v1] satu sumber angka & klaim brand
+import { jsonLd, organizationSchema, websiteSchema } from "@/lib/schema"; // [aeo-schema-v1]
 
 // Self-hosted via next/font: no render-blocking request to fonts.googleapis.com,
 // preloaded + size-adjusted (no layout shift). Replaces the old <link> stylesheet.
@@ -76,47 +77,17 @@ export const metadata: Metadata = {
   },
 };
 
-// [seo-jsonld-v1] Sebelumnya tidak ada structured data sama sekali di level
-// situs. Organization + WebSite adalah dasar yang dipakai Google untuk knowledge
-// panel dan sitelink — dan alamat fisik di Bandung adalah sinyal lokal yang
-// selama ini tidak pernah disampaikan ke mesin pencari dalam bentuk terbaca.
-const ORG_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "@id": "https://linguo.id/#organization",
-  name: "Linguo.id",
-  legalName: "PT. Linguo Edu Indonesia",
-  url: "https://linguo.id",
-  logo: "https://linguo.id/FULL_LOGO_LINGUO_HIJAU.png",
-  description: "Sekolah bahasa online dengan 60+ pilihan bahasa. Kelas live via Zoom bersama pengajar berpengalaman.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong",
-    addressLocality: "Bandung",
-    addressRegion: "Jawa Barat",
-    postalCode: "40135",
-    addressCountry: "ID",
-  },
-  telephone: "+62-22-85942550",
-  email: "official.linguo@gmail.com",
-  sameAs: [
-    "https://instagram.com/linguo.id",
-    "https://facebook.com/linguo.id",
-    "https://tiktok.com/@linguo.id",
-    "https://linkedin.com/company/linguo-id",
-    "https://youtube.com/@linguo.id",
-  ],
-};
-
-const WEBSITE_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://linguo.id/#website",
-  url: "https://linguo.id",
-  name: "Linguo.id",
-  inLanguage: "id-ID",
-  publisher: { "@id": "https://linguo.id/#organization" },
-};
+// [aeo-schema-v1] Organization & WebSite pindah ke src/lib/schema.ts. Dulu
+// keduanya object literal di berkas ini, dengan alamat, telepon, dan deskripsi
+// yang disalin ulang dari halaman lain — salinan itu sudah mulai berbeda isinya.
+// Sekarang keduanya dibangkitkan dari BRAND_FACTS.
+//
+// SearchAction menunjuk /blog?q= karena itu satu-satunya pencarian di situs ini
+// yang benar-benar bekerja lewat URL (lihat BlogContent.tsx). Jangan diarahkan
+// ke halaman yang tidak memproses query — SearchAction yang mati membuat Google
+// mengabaikan seluruh blok WebSite.
+const ORG_SCHEMA = organizationSchema();
+const WEBSITE_SCHEMA = websiteSchema(`${BRAND_FACTS.url}/blog?q={search_term_string}`);
 
 // Set your IDs in Vercel Environment Variables:
 // NEXT_PUBLIC_FB_PIXEL_ID  → from Meta Events Manager
@@ -134,14 +105,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* [seo-jsonld-v1] Structured data tingkat situs — dibaca crawler, tidak
             memengaruhi tampilan sedikit pun. */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
-        />
+        <script type="application/ld+json" {...jsonLd(ORG_SCHEMA)} />
+        <script type="application/ld+json" {...jsonLd(WEBSITE_SCHEMA)} />
 
         {/* Google Analytics (GA4) */}
         {GA_ID && (

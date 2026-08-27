@@ -23,6 +23,7 @@ import {
   getLanguageMetaForDetail,
 } from "@/data/languages-detail";
 import { languages as curriculumLanguages } from "@/data/curriculum";
+import { breadcrumbSchema } from "@/lib/schema"; // [aeo-schema-v1]
 
 const BASE = "https://linguo.id";
 const WA = "6282217866789";
@@ -87,14 +88,9 @@ export default function KelasIndexPage() {
     })),
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Beranda", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Kursus Bahasa", item: `${BASE}/kursus` },
-    ],
-  };
+  // [aeo-schema-v1] Dulu object literal di sini; sekarang lewat helper bersama
+  // supaya bentuknya identik dengan breadcrumb di /blog/* dan /kursus/bahasa-*.
+  const breadcrumbLd = breadcrumbSchema([{ name: "Kursus Bahasa", path: "/kursus" }]);
 
   return (
     <>
@@ -104,7 +100,7 @@ export default function KelasIndexPage() {
       <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       {/* HERO */}
       <section className="bg-[#1A9E9E] text-white pt-24 pb-14 lg:pt-32 lg:pb-20">

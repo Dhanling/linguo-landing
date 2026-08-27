@@ -23,6 +23,13 @@ import {
   SEMI_PRIVATE_PRICE_BASIC,
 } from "../../../lib/trial-pricing";
 import { REGULER_LANGS } from "../../../lib/programLanguages";
+import {
+  breadcrumbSchema,
+  courseSchema,
+  faqSchema,
+  jsonLd,
+} from "../../../lib/schema"; // [aeo-schema-v1]
+import { toLangCode } from "../../../lib/quiz/language";
 
 // ============================================================================
 // PARAM PARSING
@@ -271,8 +278,16 @@ export default async function BahasaLandingPage({ params }: PageProps) {
   // [seo-review-schema-v1] Hanya testimoni bahasa INI, dan hanya kalau ada.
   // Yang dirender di halaman = persis yang di-markup di Course schema.
   const testimonials = testimonialsForLang(detail.urlSlug);
-  const courseSchema = buildCourseSchema(detail, meta.name, testimonials);
-  const faqSchema = buildFAQSchema(detail);
+  const courseLd = buildCourseSchema(detail, meta.name, testimonials);
+  const faqLd = buildFAQSchema(detail);
+  // [aeo-schema-v1] BreadcrumbList baru ada di sini. 45 landing bahasa —
+  // halaman paling bernilai di situs ini — sebelumnya tidak punya breadcrumb
+  // sama sekali, padahal navigasi Beranda / Kursus Bahasa / <bahasa> memang
+  // sudah dirender di hero-nya.
+  const breadcrumbLd = breadcrumbSchema([
+    { name: "Kursus Bahasa", path: "/kursus" },
+    { name: `Bahasa ${meta.name}`, path: `/kursus/bahasa-${detail.urlSlug}` },
+  ]);
 
   return (
     <>
@@ -282,16 +297,9 @@ export default async function BahasaLandingPage({ params }: PageProps) {
           terkirim ke crawler cuma payload RSC ber-escape. Diganti <script>
           biasa, sama seperti Organization/WebSite di src/app/layout.tsx yang
           memang muncul di HTML. */}
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" {...jsonLd(courseLd)} />
+      <script type="application/ld+json" {...jsonLd(faqLd)} />
+      <script type="application/ld+json" {...jsonLd(breadcrumbLd)} />
 
       <main className="min-h-screen bg-white text-slate-900">
         <Breadcrumb langName={meta.name} />
@@ -948,12 +956,33 @@ function buildCourseSchema(
   // tidak dapat rating sama sekali — schema tanpa bintang jauh lebih baik
   // daripada bintang yang tidak bisa dibuktikan di halaman.
   const rating = aggregateRatingFor(testimonials);
+  const url = `https://linguo.id/kursus/bahasa-${detail.urlSlug}`;
 
-  return {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    name: `Kursus Bahasa ${langName}`,
+  // [kelas-pricelist-sync-v1] offers = tier yang benar-benar tampil di halaman
+  // (harga pricelist per kategori), bukan detail.pricing hardcode.
+  const tiers = buildPricingTiers(detail.languageSlug);
+
+  return courseSchema({
+    name: `Kursus Bahasa ${langName} Online`,
     description: detail.metaDescription,
+    url,
+    // [aeo-schema-v1] schema.org meminta kode BCP-47, bukan slug internal.
+    // Sebelumnya nilainya "korean"/"japanese" — bukan kode bahasa yang sah,
+    // jadi field ini tidak berarti apa-apa buat mesin pencari. Dua slug tidak
+    // punya padanan kode (portuguese-br, betawi); untuk itu field-nya sengaja
+    // DIHILANGKAN, bukan diisi tebakan.
+    inLanguage: toLangCode(detail.languageSlug) ?? undefined,
+    offers: tiers.map((tier) => ({
+      name: tier.name,
+      price: tier.price,
+      category: tier.sub,
+      unit: tier.priceUnit,
+    })),
+    instances: detail.curriculum.map((level) => ({
+      name: level.title,
+      description: level.description,
+      sessionCount: level.sessionCount,
+    })),
     ...(rating
       ? {
           aggregateRating: rating,
@@ -967,49 +996,16 @@ function buildCourseSchema(
               worstRating: 1,
             },
             reviewBody: t.text,
-            itemReviewed: { "@type": "Course", name: `Kursus Bahasa ${langName}` },
+            itemReviewed: { "@type": "Course", name: `Kursus Bahasa ${langName} Online` },
           })),
         }
       : {}),
-    provider: {
-      "@type": "Organization",
-      name: "Linguo.id",
-      sameAs: "https://linguo.id",
-    },
-    educationalLevel: "A1, A2, B1, B2 (CEFR)",
-    inLanguage: detail.languageSlug,
-    courseMode: "online",
-    hasCourseInstance: detail.curriculum.map((level) => ({
-      "@type": "CourseInstance",
-      name: level.title,
-      description: level.description,
-      courseMode: "online",
-      courseWorkload: `PT${level.sessionCount}H`,
-    })),
-    // [kelas-pricelist-sync-v1] offers = tiers yang benar-benar tampil di
-    // halaman (harga pricelist per kategori), bukan detail.pricing hardcode.
-    offers: buildPricingTiers(detail.languageSlug).map((tier) => ({
-      "@type": "Offer",
-      name: tier.name,
-      price: tier.price,
-      priceCurrency: "IDR",
-      category: tier.sub,
-      availability: "https://schema.org/InStock",
-    })),
-  };
+  });
 }
 
 function buildFAQSchema(detail: LanguageDetail) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: detail.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
+  return faqSchema(
+    detail.faq.map((item) => ({ q: item.question, a: item.answer })),
+    `https://linguo.id/kursus/bahasa-${detail.urlSlug}`,
+  );
 }

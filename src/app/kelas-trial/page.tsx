@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrialWizard from "@/components/TrialWizard";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://linguo.id/kelas-trial" },
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function KelasTrialPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50/60 to-white flex flex-col items-center px-4 py-8 sm:py-14">
+      <BreadcrumbLd trail={[{ name: "Kelas Trial", path: "/kelas-trial" }]} />
       <div className="text-center mb-7 max-w-lg">
         <span
           className="inline-block text-xs font-bold tracking-wide px-3 py-1 rounded-full"

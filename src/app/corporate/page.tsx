@@ -3,6 +3,7 @@
 // tidak perlu layout terpisah seperti halaman "use client" lainnya.
 import { pageMetadata } from "@/lib/seo";
 import CorporatePage from "./corporate-page";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 
 export const metadata = pageMetadata({
   path: "/corporate",
@@ -18,4 +19,11 @@ export const metadata = pageMetadata({
   ogTitle: "Tingkatkan Skill Bahasa Tim Anda Bersama Linguo",
 });
 
-export default CorporatePage;
+export default function Corporate() {
+  return (
+    <>
+      <BreadcrumbLd trail={[{ name: "Corporate Training", path: "/corporate" }]} />
+      <CorporatePage />
+    </>
+  );
+}

@@ -2,6 +2,7 @@
 // mengekspor `metadata` sendiri. Layout tipis ini yang membawanya — tanpa itu
 // halaman mewarisi judul & deskripsi homepage dari src/app/layout.tsx.
 import type { ReactNode } from "react";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -18,5 +19,10 @@ export const metadata = pageMetadata({
 });
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbLd trail={[{ name: "Kursus Bahasa Anak", path: "/kelas-anak" }]} />
+      {children}
+    </>
+  );
 }

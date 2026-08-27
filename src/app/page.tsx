@@ -8,7 +8,8 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { BRAND_FACTS } from "@/lib/brand-facts"; // [aeo-brand-facts-v1] jumlah bahasa & harga "mulai dari" tidak lagi ditulis manual
+import { BRAND_FACTS } from "@/lib/brand-facts";
+import { jsonLd, faqSchema } from "@/lib/schema"; // [aeo-schema-v1] // [aeo-brand-facts-v1] jumlah bahasa & harga "mulai dari" tidak lagi ditulis manual
 import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier, applyOfflineSurcharge, supportsOffline, OFFLINE_SURCHARGE_PER_SESSION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1 · offline-private-class-v1
 
 import TokoCTA from "@/components/TokoCTA";
@@ -2016,6 +2017,13 @@ export default function Home() {
         publisher: { "@id": "https://linguo.id/#organization" },
       }) }}
     />
+
+    {/* [aeo-schema-v1] FAQPage — isinya PERSIS array FAQS yang dirender akordeon
+        di bawah, jadi tidak ada pertanyaan yang cuma hidup di markup. FAQ di
+        homepage adalah sumber kutipan paling sering dipakai mesin jawaban untuk
+        pertanyaan "apa itu Linguo" dan "berapa harganya", jadi jawabannya
+        sengaja ditulis lengkap & berdiri sendiri, bukan potongan satu frasa. */}
+    <script type="application/ld+json" {...jsonLd(faqSchema(FAQS, `${BRAND_FACTS.url}/`))} />
 
     {/* FAQ */}
     <Reveal>

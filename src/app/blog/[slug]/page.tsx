@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ArticleContent from "./ArticleContent";
 import TableOfContents from "./TableOfContents";
+import { breadcrumbSchema } from "@/lib/schema"; // [aeo-schema-v1]
 
 // Render per-request: time-gate post terjadwal harus dievaluasi dgn `now` yang
 // selalu segar. Dgn ISR, halaman detail post terjadwal yg sempat ter-generate
@@ -164,33 +165,12 @@ export default async function ArticlePage(props: any) {
     ...(Array.isArray(post.tags) && post.tags.length > 0 ? { keywords: post.tags.join(", ") } : {}),
   };
 
-  // ============================================================================
-  // BreadcrumbList Schema — enables breadcrumb display in search results
-  // ============================================================================
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Beranda",
-        item: "https://linguo.id",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: "https://linguo.id/blog",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: post.title,
-      },
-    ],
-  };
-
+  // [aeo-schema-v1] Lewat helper bersama — bentuknya dulu sedikit berbeda dari
+  // breadcrumb di /kursus (butir terakhir di sana ikut ditaut ke dirinya sendiri).
+  const breadcrumbLd = breadcrumbSchema([
+    { name: "Blog", path: "/blog" },
+    { name: post.title },
+  ]);
   return (
     <>
       <script

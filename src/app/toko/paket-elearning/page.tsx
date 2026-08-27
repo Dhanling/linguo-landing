@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase-client';
 import { ELEARNING_BUNDLE_SLUG } from '@/lib/elearningBundle';
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import ElearningLangClient from './ElearningLangClient';
 
 // Product/pricing data changes rarely, so cache the rendered page and
@@ -72,5 +73,15 @@ export default async function ElearningPage() {
     console.error('[/toko/paket-elearning] fetch error:', error.message);
   }
 
-  return <ElearningLangClient products={(data as ElearningProduct[] | null) ?? []} />;
+  return (
+    <>
+      <BreadcrumbLd
+        trail={[
+          { name: "Produk Digital", path: "/toko" },
+          { name: "E-Learning", path: "/toko/paket-elearning" },
+        ]}
+      />
+      <ElearningLangClient products={(data as ElearningProduct[] | null) ?? []} />
+    </>
+  );
 }

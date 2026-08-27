@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import Link from "next/link";
 import { BookOpen, Headphones, PenLine, Mic, type LucideIcon } from "lucide-react";
 import { promoAmountFor } from "@/lib/promoMerdeka";
@@ -44,6 +45,7 @@ export default function SimulasiLandingPage() {
   const STEPS = steps(price);
   return (
     <main className="min-h-screen bg-white">
+      <BreadcrumbLd trail={[{ name: "Simulasi TOEFL", path: "/simulasi" }]} />
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
         <div className="mx-auto max-w-5xl px-5 py-20 text-center text-white sm:py-28">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SilabusHub from "./SilabusHub";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { languages } from "@/data/curriculum";
 
 export const metadata: Metadata = {
@@ -14,5 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function SilabusPage() {
-  return <SilabusHub languages={languages} />;
+  return (
+    <>
+      <BreadcrumbLd trail={[{ name: "Silabus", path: "/silabus" }]} />
+      <SilabusHub languages={languages} />
+    </>
+  );
 }

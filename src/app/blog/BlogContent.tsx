@@ -288,6 +288,21 @@ function Footer(){return(
   </footer>
 )}
 
+// [aeo-schema-v1] Kotak pencarian blog dulu murni state lokal: mengetik di situ
+// tidak mengubah URL sama sekali, jadi hasil pencarian tidak bisa ditaut, tidak
+// bisa dirayapi, dan SearchAction di WebSite schema akan menunjuk halaman yang
+// tidak ada. Sekarang kata kunci disalin ke query string `?q=`.
+//
+// Sengaja TIDAK memakai useSearchParams(): hook itu memaksa seluruh pohon di
+// bawahnya masuk Suspense boundary saat build, dan halaman /daftar di repo ini
+// sudah pernah gagal build karena persis itu. Membaca window.location sekali
+// saat mount sudah cukup — halaman ini di-render statis, jadi nilai awalnya
+// memang baru bisa diketahui di browser.
+const initialSearchFromUrl = () => {
+  if (typeof window === "undefined") return "";
+  return new URLSearchParams(window.location.search).get("q") ?? "";
+};
+
 export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
   const [search,setSearch]=useState("");
   const [activeCat,setActiveCat]=useState("Semua");
@@ -326,6 +341,20 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
     return()=>obs.disconnect();
   },[view,loadMore]);
   useEffect(()=>{setFeedN(FEED_BATCH);setPage(1)},[activeCat,search]);
+
+  // Ambil ?q= saat pertama kali render di browser.
+  useEffect(()=>{const q=initialSearchFromUrl();if(q)setSearch(q)},[]);
+
+  // Cerminkan kata kunci ke URL supaya hasilnya bisa ditaut & dibagikan.
+  // replaceState, bukan router.push — mengetik tidak boleh menumpuk riwayat.
+  useEffect(()=>{
+    if(typeof window==="undefined")return;
+    const url=new URL(window.location.href);
+    const now=url.searchParams.get("q")??"";
+    if(now===search)return;
+    if(search.trim())url.searchParams.set("q",search);else url.searchParams.delete("q");
+    window.history.replaceState(null,"",url.toString());
+  },[search]);
 
   const GP=6;
   const totP=Math.ceil(filtered.length/GP);

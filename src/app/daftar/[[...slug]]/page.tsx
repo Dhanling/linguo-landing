@@ -31,6 +31,7 @@ import {
   parseFunnelPath,
   kursusSlugOf,
 } from "@/lib/funnelRouting";
+import { breadcrumbSchema, jsonLd } from "@/lib/schema"; // [aeo-schema-v1]
 
 const BASE = "https://linguo.id";
 
@@ -100,19 +101,17 @@ export default async function DaftarPage({ params }: PageProps) {
   const langId = route.langEn ? langNameId(route.langEn) : null;
   const kursusSlug = route.langEn ? kursusSlugOf(route.langEn) : null;
 
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Beranda", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Daftar", item: `${BASE}/daftar` },
-      ...(langId ? [{ "@type": "ListItem", position: 3, name: `Bahasa ${langId}`, item: `${BASE}/daftar/${slug[0]}` }] : []),
-    ],
-  };
+  // [aeo-schema-v1] Lewat helper bersama. Bentuk lamanya menaut butir terakhir
+  // ke halaman ini sendiri — pola yang Google minta dihindari, dan bikin 49
+  // halaman /daftar/* melanggar sekaligus.
+  const breadcrumb = breadcrumbSchema([
+    { name: "Daftar", path: "/daftar" },
+    ...(langId ? [{ name: `Bahasa ${langId}`, path: `/daftar/${slug[0]}` }] : []),
+  ]);
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" {...jsonLd(breadcrumb)} />
 
       <header className="border-b border-slate-100 bg-white">
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-3">

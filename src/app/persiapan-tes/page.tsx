@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PersiapanTesClient from "./PersiapanTesClient";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 
 export const metadata: Metadata = {
   title: "Persiapan Ujian HSK, JLPT, TOPIK & Goethe | Linguo.id",
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function PersiapanTesPage() {
-  return <PersiapanTesClient />;
+  return (
+    <>
+      <BreadcrumbLd trail={[{ name: "Persiapan Ujian Bahasa", path: "/persiapan-tes" }]} />
+      <PersiapanTesClient />
+    </>
+  );
 }

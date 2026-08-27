@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
+import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { createClient } from "@supabase/supabase-js";
 import JadwalKelasRegulerClient from "./JadwalKelasRegulerClient";
 import { todayWIBISO } from "@/lib/etpBatches";
@@ -98,8 +99,11 @@ async function getEtpBatches() {
 export default async function JadwalKelasRegulerPage() {
   const [batches, etpBatches] = await Promise.all([getBatches(), getEtpBatches()]);
   return (
-    <Suspense fallback={<div className="min-h-screen" />}>
-      <JadwalKelasRegulerClient batches={batches} etpBatches={etpBatches} />
-    </Suspense>
+    <>
+      <BreadcrumbLd trail={[{ name: "Jadwal Kelas Reguler", path: "/jadwal-kelas-reguler" }]} />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <JadwalKelasRegulerClient batches={batches} etpBatches={etpBatches} />
+      </Suspense>
+    </>
   );
 }

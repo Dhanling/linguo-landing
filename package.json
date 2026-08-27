@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "cek:jsonld": "node scripts/cek-jsonld.mjs",
     "ime:pinyin": "node scripts/build-ime-pinyin.mjs",
     "postinstall": "node scripts/copy-pdf-worker.mjs"
   },
