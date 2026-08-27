@@ -1,0 +1,290 @@
+{
+  "title": "Bahasa kantor pemerintah",
+  "title_target": "Bescheid, Widerspruch, Frist",
+  "goal": "Membaca surat resmi Jerman sampai paham betul apa yang diminta darimu, dan menulis balasan yang diterima — termasuk keberatan resmi.",
+  "bekal": [
+    "membongkar susunan sebuah *Bescheid*",
+    "mengenali kata kunci: *Frist*, *Widerspruch*, *Nachweis*, *unverzüglich*",
+    "menulis surat resmi dengan pembuka dan penutup yang baku",
+    "memakai *sein + zu + Infinitiv* dan Passiv resmi dengan tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ein Brief mit vier Wochen Frist",
+      "intro": "Meja konsultasi sebuah *Beratungsstelle* untuk pendatang di Dortmund. Pak Sabar membawa surat dari Familienkasse yang menolak permohonannya. Frau Neumann, penasihat, membacanya bersama.",
+      "lines": [
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Setzen Sie sich. Zeigen Sie mir den Bescheid mal.",
+          "id": "Silakan duduk. Coba tunjukkan surat keputusannya.",
+          "literal": "duduk Anda diri-Anda. tunjukkan Anda kepadaku itu keputusan sekali."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Hier. Ich verstehe nur, dass etwas abgelehnt wurde. Den Rest nicht.",
+          "id": "Ini. Saya cuma paham ada yang ditolak. Sisanya nggak.",
+          "literal": "di-sini. aku mengerti hanya, bahwa sesuatu tolak menjadi. itu sisa tidak."
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Das geht vielen so. Erstens: Ihr Antrag ist nicht abgelehnt, sondern zurückgestellt.",
+          "id": "Banyak yang begitu. Pertama: permohonan Anda bukan ditolak, tapi ditangguhkan.",
+          "literal": "itu pergi kepada-banyak begitu. pertama: Anda-punya permohonan ada tidak tolak, melainkan kembali-taruh."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Was ist der Unterschied?",
+          "id": "Bedanya apa?",
+          "literal": "apa ada itu perbedaan?"
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Es fehlt ein Nachweis. Sobald er vorliegt, wird weiter bearbeitet. Hier: \"Der Nachweis ist bis zum 30.09. vorzulegen.\"",
+          "id": "Ada bukti yang kurang. Begitu ada, prosesnya lanjut. Ini: \"Bukti harus diserahkan paling lambat 30.09.\"",
+          "literal": "itu kurang satu bukti. begitu-segera dia tersedia, akan lebih-lanjut proses. di-sini: \"itu bukti ada sampai kepada-itu 30.09. untuk-serahkan.\""
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "\"Ist vorzulegen\" heißt, ich muss es abgeben?",
+          "id": "\"Ist vorzulegen\" artinya saya harus menyerahkannya?",
+          "literal": "\"ada untuk-serahkan\" berarti, aku harus itu serahkan?"
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Genau. Behördendeutsch sagt nie \"Sie müssen\". Es sagt \"ist vorzulegen\".",
+          "id": "Persis. Bahasa kantor pemerintah nggak pernah bilang \"Anda harus\". Dia bilang \"harus diserahkan\".",
+          "literal": "persis. kantor-Jerman berkata tak-pernah \"Anda harus\". itu berkata \"ada untuk-serahkan\"."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Und welcher Nachweis fehlt? Da steht \"Einkommensnachweis der letzten sechs Monate\".",
+          "id": "Bukti apa yang kurang? Di situ tertulis \"bukti penghasilan enam bulan terakhir\".",
+          "literal": "dan yang-mana bukti kurang? di-situ berdiri \"penghasilan-bukti itu terakhir enam bulan\"."
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Sechs Lohnabrechnungen. Kopien reichen. Schicken Sie sie per Post, nicht per Mail.",
+          "id": "Enam slip gaji. Fotokopi cukup. Kirim lewat pos, jangan lewat surel.",
+          "literal": "enam upah-perhitungan. salinan-salinan cukup. kirim Anda mereka lewat pos, tidak lewat surel."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Warum nicht per Mail? Das ginge doch schneller.",
+          "id": "Kenapa nggak lewat surel? Kan lebih cepat.",
+          "literal": "mengapa tidak lewat surel? itu pergilah toh lebih-cepat."
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Weil Sie einen Nachweis über den Versand brauchen. Einschreiben, dann haben Sie ihn.",
+          "id": "Karena Anda butuh bukti pengiriman. Surat tercatat, jadi Anda punya buktinya.",
+          "literal": "karena Anda satu bukti tentang itu pengiriman butuh. tercatat-surat, kemudian punya Anda dia."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Und wenn ich die Frist verpasse?",
+          "id": "Dan kalau saya lewat tenggatnya?",
+          "literal": "dan jika aku itu tenggat lewatkan?"
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Dann gilt der Antrag als zurückgenommen, und Sie müssen neu stellen. Also: nicht verpassen.",
+          "id": "Permohonannya dianggap ditarik, dan Anda harus mengajukan baru. Jadi: jangan sampai lewat.",
+          "literal": "kemudian berlaku itu permohonan sebagai kembali-ambil, dan Anda harus baru menaruh. jadi: tidak lewatkan."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Und wenn ich mit der Entscheidung nicht einverstanden bin?",
+          "id": "Dan kalau saya tidak setuju dengan keputusannya?",
+          "literal": "dan jika aku dengan itu keputusan tidak setuju ada?"
+        },
+        {
+          "speaker": "Frau Neumann:",
+          "text": "Unten steht die Rechtsbehelfsbelehrung. Einen Monat Widerspruch, schriftlich, mit Begründung.",
+          "id": "Di bawah ada petunjuk upaya hukum. Satu bulan untuk keberatan, tertulis, dengan alasan.",
+          "literal": "di-bawah berdiri itu hak-upaya-penjelasan. satu bulan keberatan, tertulis, dengan alasan."
+        },
+        {
+          "speaker": "Sabar:",
+          "text": "Gut. Dann schicke ich heute noch die Kopien und behalte den Beleg.",
+          "id": "Baik. Kalau begitu hari ini juga saya kirim salinannya dan saya simpan resinya.",
+          "literal": "baik. kemudian kirim aku hari-ini lagi itu salinan-salinan dan menyimpan itu tanda-terima."
+        }
+      ],
+      "notes": [
+        "**Baris 5, 6, 7: *ist vorzulegen*** — *sein* + *zu* + infinitif, yang di unit 4 kita sebut pengganti Passiv. Di surat resmi ia **selalu berarti kewajiban**. *Ist einzureichen*, *ist zu beachten*, *ist mitzuteilen* — kalimat-kalimat inilah yang memberitahumu apa yang harus kamu lakukan, walau tak ada kata \"harus\" di dalamnya.",
+        "**Baris 3: *zurückgestellt* bukan *abgelehnt*.** Membedakan istilah ini menentukan apakah kamu perlu mengajukan keberatan atau cukup melengkapi berkas. Salah membaca satu kata bisa berarti kehilangan hak.",
+        "**Baris 13: *gilt als zurückgenommen*** — \"dianggap ditarik\". *gelten als* adalah kata kerja kunci Amtsdeutsch: ia menyatakan akibat hukum tanpa menyebut siapa yang memutuskannya.",
+        "**Baris 15: *Rechtsbehelfsbelehrung*** — bagian wajib di setiap keputusan resmi Jerman yang memberitahu **berapa lama** dan **ke mana** kamu bisa mengajukan keberatan. Selalu di bagian bawah. Kalau bagian ini tidak ada, tenggatnya justru menjadi satu tahun.",
+        "**Baris 11: *Einschreiben*** — surat tercatat. Dalam urusan dengan Behörde, yang menentukan bukan bahwa kamu mengirim, melainkan bahwa kamu **bisa membuktikannya**.",
+        "**Baris 10: *Das ginge doch schneller*** — Konjunktiv II *gehen*. Bentuk *ginge* memang jarang; *würde gehen* juga benar dan lebih umum dalam lisan."
+      ],
+      "grammars": [
+        {
+          "title": "Ciri-ciri Amtsdeutsch, dan cara membacanya",
+          "body": [
+            "Bahasa kantor pemerintah Jerman punya lima ciri yang bisa dikenali dan diterjemahkan satu per satu. Setelah kelimanya kamu kenal, surat resmi berhenti menakutkan."
+          ],
+          "table": {
+            "head": ["Ciri", "Contoh", "Terjemahan ke bahasa manusia"],
+            "rows": [
+              ["sein + zu + Inf.", "Der Nachweis **ist vorzulegen**.", "Anda harus menyerahkan buktinya."],
+              ["Passiv tanpa pelaku", "Der Antrag **wird bearbeitet**.", "Kami sedang memproses."],
+              ["gaya nomina", "**nach Eingang** der Unterlagen", "sesudah berkasnya masuk"],
+              ["gelten als", "**gilt als** zurückgenommen", "dianggap ditarik"],
+              ["kata benda majemuk", "Einkommens**nachweis**", "bukti penghasilan"],
+              ["kata keterangan resmi", "**unverzüglich**, **umgehend**", "segera, tanpa menunda"],
+              ["Konjunktiv I", "Es **werde** geprüft.", "katanya sedang diperiksa"]
+            ]
+          },
+          "after": [
+            "🔑 **Cara membaca yang benar-benar bekerja:** cari kalimat berbentuk *ist zu …*, *bis zum …*, dan *innerhalb von …*. Ketiganya berisi **apa yang harus kamu lakukan** dan **kapan**. Sisanya sering hanya dasar hukum.",
+            "***unverzüglich* bukan \"secepatnya\" dalam arti longgar** — dalam hukum Jerman ia berarti \"tanpa penundaan yang bisa dipersalahkan\", biasanya dibaca beberapa hari kerja, bukan minggu.",
+            "**Kata benda majemuk dibaca dari belakang.** *Einkommensnachweis* = *Nachweis* (bukti) tentang *Einkommen* (penghasilan). *Rechtsbehelfsbelehrung* = *Belehrung* (penjelasan) tentang *Rechtsbehelf* (upaya hukum). Bagian terakhir selalu inti maknanya."
+          ]
+        },
+        {
+          "title": "Menulis surat resmi: rangka yang selalu sama",
+          "body": [
+            "Surat resmi Jerman punya susunan baku. Menyimpang darinya tidak membuat suratmu ditolak, tapi mengikutinya membuat urusanmu lebih cepat."
+          ],
+          "table": {
+            "head": ["Bagian", "Isi", "Contoh"],
+            "rows": [
+              ["Betreff", "pokok surat, tanpa kata kerja", "**Betreff:** Widerspruch gegen den Bescheid vom 12.08.2026"],
+              ["Aktenzeichen", "nomor berkas — selalu sertakan", "**Az.:** KG 4711/26"],
+              ["Anrede", "sapaan baku", "Sehr geehrte Damen und Herren,"],
+              ["kalimat pembuka", "rujukan", "hiermit lege ich Widerspruch gegen den o. g. Bescheid ein."],
+              ["Begründung", "alasan, ringkas dan berurutan", "Die Ablehnung stützt sich auf …"],
+              ["permintaan", "apa yang kamu minta", "Ich bitte Sie, den Bescheid aufzuheben."],
+              ["lampiran", "daftar", "**Anlagen:** 6 Lohnabrechnungen"],
+              ["Grußformel", "penutup baku", "Mit freundlichen Grüßen"]
+            ]
+          },
+          "after": [
+            "***Hiermit*** membuka hampir setiap surat resmi Jerman dan berarti \"dengan ini\". *Hiermit lege ich Widerspruch ein*, *hiermit kündige ich*, *hiermit beantrage ich*. Ia menandai bahwa surat itu sendiri adalah tindakan hukumnya.",
+            "***o. g.*** = *oben genannt* (tersebut di atas); ***s. o.*** = *siehe oben*; ***ggf.*** = *gegebenenfalls* (jika perlu); ***z. K.*** = *zur Kenntnis*. Singkatan-singkatan ini muncul terus-menerus.",
+            "⚠️ **Jangan menulis surat resmi Jerman dengan nada memohon.** *Ich wäre Ihnen sehr dankbar, wenn Sie vielleicht …* justru melemahkan posisimu. Yang berlaku: menyebut hak, menyebut tanggal, menyebut nomor berkas, dan meminta dengan jelas."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kosakata Behörde yang tak bisa ditawar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["der Bescheid", "be-SYAIT", "surat keputusan"],
+            ["der Antrag", "AN-trak", "permohonan"],
+            ["der Nachweis", "NAKH-vais", "bukti, keterangan"],
+            ["die Frist", "frist", "tenggat"],
+            ["der Widerspruch", "VII-da-syprukh", "keberatan resmi"],
+            ["die Begründung", "be-GRIUN-dung", "alasan"],
+            ["das Aktenzeichen", "AK-ten-tsai-khen", "nomor berkas"],
+            ["die Anlage", "AN-laa-ge", "lampiran"],
+            ["das Einschreiben", "AIN-syrai-ben", "surat tercatat"],
+            ["der Beleg", "be-LEEK", "tanda terima, bukti"]
+          ]
+        },
+        { "type": "sub", "text": "Kalimat surat resmi siap pakai" },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Kapan dipakai"],
+          "rows": [
+            ["Hiermit lege ich Widerspruch gegen den Bescheid vom … ein.", "mengajukan keberatan"],
+            ["Hiermit beantrage ich eine Fristverlängerung.", "minta perpanjangan tenggat"],
+            ["Die geforderten Unterlagen füge ich bei.", "melampirkan berkas"],
+            ["Ich bitte um Prüfung und um einen neuen Bescheid.", "meminta peninjauan"],
+            ["Ich bitte um schriftliche Bestätigung des Eingangs.", "minta konfirmasi penerimaan"],
+            ["Für Rückfragen stehe ich Ihnen gerne zur Verfügung.", "penutup baku"],
+            ["Sollten weitere Unterlagen erforderlich sein, teilen Sie mir dies bitte mit.", "penutup kedua"],
+            ["Ich beziehe mich auf Ihr Schreiben vom …", "merujuk surat mereka"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga aturan praktis berurusan dengan Behörde",
+          "items": [
+            "**Selalu sebut *Aktenzeichen*.** Tanpa nomor berkas, suratmu masuk ke tumpukan yang salah. Nomornya ada di pojok kanan atas surat yang kamu terima.",
+            "**Simpan bukti pengiriman.** *Einschreiben* atau tanda terima di loket. Dalam sengketa tenggat, yang menentukan adalah tanggal **masuk** ke kantor, bukan tanggal kamu mengirim — kecuali kamu bisa membuktikan sebaliknya.",
+            "**Kalau tenggatnya mepet, ajukan keberatan lebih dulu, alasannya menyusul.** *Hiermit lege ich Widerspruch ein. Die Begründung reiche ich innerhalb von zwei Wochen nach.* Ini sah dan sangat umum."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "der Bescheid", "baca": "be-SYAIT", "id": "surat keputusan" },
+    { "de": "ablehnen", "baca": "AP-lee-nen", "id": "menolak" },
+    { "de": "zurückstellen", "baca": "tsu-RIUK-syte-len", "id": "menangguhkan" },
+    { "de": "der Nachweis", "baca": "NAKH-vais", "id": "bukti" },
+    { "de": "vorlegen", "baca": "FOR-lee-gen", "id": "menyerahkan" },
+    { "de": "bearbeiten", "baca": "be-AR-bai-ten", "id": "memproses" },
+    { "de": "die Lohnabrechnung", "baca": "LOON-ap-rekh-nung", "id": "slip gaji" },
+    { "de": "der Versand", "baca": "fer-ZANT", "id": "pengiriman" },
+    { "de": "das Einschreiben", "baca": "AIN-syrai-ben", "id": "surat tercatat" },
+    { "de": "verpassen", "baca": "fer-PA-sen", "id": "melewatkan" },
+    { "de": "gelten als", "baca": "GEL-ten als", "id": "dianggap sebagai" },
+    { "de": "zurücknehmen", "baca": "tsu-RIUK-nee-men", "id": "menarik kembali" },
+    { "de": "der Widerspruch", "baca": "VII-da-syprukh", "id": "keberatan" },
+    { "de": "die Begründung", "baca": "be-GRIUN-dung", "id": "alasan" },
+    { "de": "aufheben", "baca": "AUF-hee-ben", "id": "membatalkan" },
+    { "de": "erforderlich", "baca": "er-FOR-da-likh", "id": "diperlukan" },
+    { "de": "unverzüglich", "baca": "UN-fer-tsiuk-likh", "id": "segera" },
+    { "de": "der Eingang", "baca": "AIN-gang", "id": "penerimaan, masuknya" },
+    { "de": "beifügen", "baca": "BAI-fiu-gen", "id": "melampirkan" },
+    { "de": "der Beleg", "baca": "be-LEEK", "id": "tanda terima" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan kalimat Amtsdeutsch ini ke bahasa Jerman sehari-hari (pakai *müssen* atau *können*).",
+      "items": [
+        "Der Nachweis ist bis zum 30.09. vorzulegen. → ____",
+        "Die Unterlagen sind vollständig einzureichen. → ____",
+        "Änderungen sind unverzüglich mitzuteilen. → ____",
+        "Die Frist ist einzuhalten. → ____",
+        "Der Antrag ist schriftlich zu stellen. → ____"
+      ]
+    },
+    {
+      "prompt": "Lengkapi surat resminya.",
+      "items": [
+        "____ lege ich Widerspruch gegen den Bescheid vom 12.08. ein.",
+        "Sehr geehrte ____ und Herren,",
+        "Die geforderten Unterlagen ____ ich bei.",
+        "Ich bitte um ____ und um einen neuen Bescheid.",
+        "Mit freundlichen ____"
+      ]
+    },
+    {
+      "prompt": "Pilih istilah yang tepat: *Bescheid*, *Antrag*, *Frist*, *Widerspruch*, *Nachweis*.",
+      "items": [
+        "Surat keputusan dari kantor pemerintah: der ____",
+        "Permohonan yang kamu ajukan: der ____",
+        "Batas waktu: die ____",
+        "Keberatan resmi: der ____",
+        "Bukti yang harus diserahkan: der ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Permohonan Anda bukan ditolak, tapi ditangguhkan.",
+        "Ada satu bukti yang kurang. Begitu tersedia, prosesnya dilanjutkan.",
+        "Kirim lewat surat tercatat, jangan lewat surel.",
+        "Kalau tenggatnya lewat, permohonannya dianggap ditarik.",
+        "Untuk pertanyaan lebih lanjut, saya siap dihubungi."
+      ]
+    }
+  ],
+  "answers": [
+    "Sie müssen den Nachweis bis zum 30.09. vorlegen. — Sie müssen die Unterlagen vollständig einreichen. — Sie müssen Änderungen sofort mitteilen. — Sie müssen die Frist einhalten. — Sie müssen den Antrag schriftlich stellen.",
+    "Hiermit — Damen — füge — Prüfung — Grüßen",
+    "Bescheid — Antrag — Frist — Widerspruch — Nachweis",
+    "Ihr Antrag ist nicht abgelehnt, sondern zurückgestellt. — Es fehlt ein Nachweis. Sobald er vorliegt, wird weiter bearbeitet. — Schicken Sie es per Einschreiben, nicht per Mail. — Wenn Sie die Frist verpassen, gilt der Antrag als zurückgenommen. — Für Rückfragen stehe ich Ihnen gerne zur Verfügung."
+  ],
+  "wave": "Kembali ke unit 4 dan ambil percakapan telepon dengan pengelola gedung. Sekarang tulis apa yang seharusnya dikirim Herr Adiwijaya sebagai surat: *Betreff: Mangelanzeige — Heizungsausfall seit dem 01.11.* Pakai rangka baku unit ini, sertakan tenggat yang kamu tetapkan sendiri, dan tutup dengan kalimat yang menyebut akibat kalau tenggat itu lewat."
+}

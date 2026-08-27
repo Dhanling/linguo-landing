@@ -1,0 +1,605 @@
+{
+  "title": "Menduga tanpa menuduh",
+  "title_target": "Er muss es gewusst haben",
+  "goal": "Memakai kata kerja modal untuk menyatakan **seberapa yakin** kamu — dari kesimpulan yang pasti sampai kabar yang kamu ragukan sendiri.",
+  "bekal": [
+    "membedakan arti objektif dan arti subjektif kata kerja modal",
+    "menyusun dugaan tentang masa lalu: *muss … gewesen sein*",
+    "memakai *soll* untuk kabar dan *will* untuk pengakuan yang diragukan",
+    "menyusun tangga kepastian dari *muss* sampai *kann kaum*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Die Wohnung im dritten Stock",
+      "intro": "Tangga sebuah gedung tua di Halle, Selasa pagi. Flat di lantai tiga kosong sejak minggu lalu, tanpa penjelasan. Frau Lubis dan Herr Grimm bertemu di kotak surat, dan sepuluh menit berikutnya adalah dugaan murni.",
+      "lines": [
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Haben Sie gesehen? Bei Weller im dritten steht die Tür offen.",
+          "id": "Ibu lihat? Pintu Weller di lantai tiga terbuka.",
+          "literal": "punya Anda lihat? pada Weller di-dalam-itu ketiga berdiri itu pintu terbuka."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Dann muss er ausgezogen sein. Der Briefkasten ist auch leer.",
+          "id": "Berarti dia pasti udah pindah. Kotak suratnya juga kosong.",
+          "literal": "kemudian harus dia keluar-tarik ada. itu surat-kotak ada juga kosong."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Er soll Schulden gehabt haben. Das erzählt zumindest die Frau aus dem Erdgeschoss.",
+          "id": "Katanya dia punya utang. Setidaknya itu cerita ibu di lantai dasar.",
+          "literal": "dia harus utang-utang punya ada. itu menceritakan setidaknya itu perempuan dari itu tanah-lantai."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Das kann stimmen, muss aber nicht. Sie erzählt vieles.",
+          "id": "Bisa jadi benar, tapi belum tentu. Dia banyak cerita.",
+          "literal": "itu bisa benar, harus tetapi tidak. dia menceritakan banyak."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Er dürfte schon länger Probleme gehabt haben. Die Post lag oft wochenlang da.",
+          "id": "Kemungkinan besar dia udah lama bermasalah. Suratnya sering nganggur berminggu-minggu.",
+          "literal": "dia bolehlah sudah lebih-lama masalah-masalah punya ada. itu pos berbaring sering minggu-panjang di-situ."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Das habe ich auch gesehen. Er könnte allerdings auch einfach viel gereist sein.",
+          "id": "Saya juga lihat itu. Tapi bisa jadi juga dia cuma sering bepergian.",
+          "literal": "itu punya aku juga lihat. dia bisalah akan-tetapi juga begitu-saja banyak bepergian ada."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Mit einem Auto von 1998? Das mag sein, wahrscheinlich ist es nicht.",
+          "id": "Sama mobil tahun 1998? Boleh jadi, tapi kecil kemungkinannya.",
+          "literal": "dengan satu mobil dari 1998? itu boleh ada, barangkali ada itu tidak."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Herr Grimm. Wir wissen es nicht. Alles andere ist Erfindung.",
+          "id": "Pak Grimm. Kita nggak tahu. Selain itu semua cuma karangan.",
+          "literal": "tuan Grimm. kami tahu itu tidak. semua lain ada penemuan."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Der Hausmeister will nichts gewusst haben. Dabei hat er die Schlüssel.",
+          "id": "Penjaga gedung ngaku nggak tahu apa-apa. Padahal dia yang pegang kuncinya.",
+          "literal": "itu rumah-penjaga mau tidak-apa-apa tahu ada. pada-itu punya dia itu kunci-kunci."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Das heißt nicht, dass er lügt. Vielleicht darf er einfach nichts sagen.",
+          "id": "Itu nggak berarti dia bohong. Mungkin dia memang nggak boleh bilang.",
+          "literal": "itu berarti tidak, bahwa dia berbohong. mungkin boleh dia begitu-saja tidak-apa-apa katakan."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Auch wieder wahr. Er müsste es aber wissen, oder?",
+          "id": "Bener juga. Tapi harusnya dia tahu, kan?",
+          "literal": "juga lagi benar. dia haruslah itu tetapi tahu, atau?"
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Wissen ja. Sagen dürfen nein. Das ist ein Unterschied.",
+          "id": "Tahu iya. Boleh bilang tidak. Itu beda.",
+          "literal": "tahu ya. mengatakan boleh tidak. itu ada satu perbedaan."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Trotzdem: Die Wohnung kann nicht leer bleiben. Die wird schnell neu vermietet.",
+          "id": "Tetap aja: flatnya nggak mungkin dibiarkan kosong. Bakal cepat disewakan lagi.",
+          "literal": "meskipun-itu: itu apartemen bisa tidak kosong tinggal. itu akan cepat baru sewakan."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Das dürfte stimmen. Und dann wissen wir in zwei Wochen mehr als heute.",
+          "id": "Itu kayaknya benar. Dan dua minggu lagi kita bakal tahu lebih banyak dari hari ini.",
+          "literal": "itu bolehlah benar. dan kemudian tahu kami di-dalam dua minggu lebih daripada hari-ini."
+        },
+        {
+          "speaker": "Herr Grimm:",
+          "text": "Sie wollen mir wohl sagen, ich soll aufhören zu spekulieren.",
+          "id": "Kayaknya Ibu mau bilang saya harus berhenti berspekulasi.",
+          "literal": "Anda mau kepadaku barangkali katakan, aku harus berhenti untuk berspekulasi."
+        },
+        {
+          "speaker": "Frau Lubis:",
+          "text": "Ich will Ihnen gar nichts sagen. Ich hole meine Post.",
+          "id": "Saya nggak mau bilang apa-apa. Saya ngambil surat saya.",
+          "literal": "aku mau kepada-Anda sama-sekali tidak-apa-apa katakan. aku mengambil aku-punya pos."
+        }
+      ],
+      "notes": [
+        "**Baris 2: *muss … gewesen/ausgezogen sein*** — bukan keharusan, melainkan **kesimpulan**. \"Pasti sudah pindah.\" Ini arti subjektif *müssen*, dan ia yang paling kuat di seluruh tangga kepastian.",
+        "**Baris 3 dan 9: *soll* vs *will*.** *Er **soll** Schulden gehabt haben* = kata orang dia punya utang (aku tak menjaminnya). *Der Hausmeister **will** nichts gewusst haben* = dia **mengaku** tak tahu apa-apa — dan pemakaian *will* sendiri sudah menyiratkan bahwa pembicara tak percaya.",
+        "**Baris 5 dan 14: *dürfte*** — dugaan yang paling berhati-hati sekaligus paling sopan. Sangat sering muncul dalam laporan dan analisis: *Die Zahlen dürften bis Juni steigen.*",
+        "**Baris 4: *Das kann stimmen, muss aber nicht*** — rumus baku untuk menimbang kabar. Pantas dihafal utuh.",
+        "**Baris 7: *Das mag sein*** — mengakui kemungkinan sambil menolaknya. Hampir selalu diikuti bagian kedua yang membantah.",
+        "**Susunan dugaan tentang masa lalu:** kata kerja modal (bentuk kini) + **Partizip II + haben/sein**. *Er muss es **gewusst haben***, *Sie soll dort **gewesen sein***. Perhatikan bahwa kata kerja modalnya **tidak** dijadikan lampau — yang dilampaukan adalah kejadiannya."
+      ],
+      "grammars": [
+        {
+          "title": "Satu bentuk, dua arti: objektif dan subjektif",
+          "body": [
+            "Tiap kata kerja modal punya dua kehidupan. Yang membedakan bukan bentuknya melainkan apa yang dibicarakan: **kenyataan di luar** (objektif) atau **penilaian pembicara** (subjektif)."
+          ],
+          "table": {
+            "head": [
+              "Modal",
+              "Arti objektif",
+              "Arti subjektif",
+              "Contoh subjektif"
+            ],
+            "rows": [
+              [
+                "müssen",
+                "harus",
+                "pasti — kesimpulan",
+                "Er **muss** krank sein."
+              ],
+              [
+                "dürfen (dürfte)",
+                "boleh",
+                "kemungkinan besar",
+                "Er **dürfte** krank sein."
+              ],
+              [
+                "können",
+                "bisa",
+                "mungkin saja",
+                "Er **kann** krank sein."
+              ],
+              [
+                "könnte",
+                "bisa (halus)",
+                "mungkin, lebih ragu",
+                "Er **könnte** krank sein."
+              ],
+              [
+                "mögen (mag)",
+                "suka",
+                "boleh jadi, tapi…",
+                "Das **mag** stimmen."
+              ],
+              [
+                "sollen",
+                "harus (perintah orang)",
+                "kata orang",
+                "Er **soll** reich sein."
+              ],
+              [
+                "wollen",
+                "mau",
+                "mengaku — dan aku ragu",
+                "Er **will** es nicht gewusst haben."
+              ],
+              [
+                "nicht können",
+                "tak bisa",
+                "mustahil",
+                "Das **kann** nicht stimmen."
+              ]
+            ]
+          },
+          "after": [
+            "🔑 **Tangga kepastian, dari paling yakin ke paling ragu:** *muss* → *dürfte* → *müsste* → *könnte / kann* → *mag* → *kann kaum* → *kann nicht*. Menguasai tangga ini adalah salah satu tanda paling jelas bahwa seorang pelajar sudah sampai B2.",
+            "**Bentuk lampaunya tidak menyentuh kata kerja modal.** *Er muss es gewusst haben* (dugaan sekarang tentang masa lalu), bukan *Er musste es wissen* — yang terakhir berarti \"dia wajib mengetahuinya\", arti objektif.",
+            "***sollen* subjektif hampir selalu tentang orang ketiga.** *Ich soll reich sein* terdengar aneh kecuali kamu sedang mengutip gosip tentang dirimu sendiri — dan itu memang efeknya."
+          ]
+        },
+        {
+          "title": "Alat dugaan selain kata kerja modal",
+          "body": [
+            "Bahasa Jerman punya beberapa jalan lain untuk menyatakan seberapa yakin kamu, dan penutur asli mencampurnya bebas."
+          ],
+          "table": {
+            "head": [
+              "Alat",
+              "Contoh",
+              "Tingkat kepastian"
+            ],
+            "rows": [
+              [
+                "bestimmt / sicher",
+                "Er ist **bestimmt** krank.",
+                "sangat yakin"
+              ],
+              [
+                "wohl",
+                "Er ist **wohl** krank.",
+                "cukup yakin"
+              ],
+              [
+                "wahrscheinlich",
+                "Er ist **wahrscheinlich** krank.",
+                "cukup yakin"
+              ],
+              [
+                "vermutlich",
+                "**Vermutlich** hat er verschlafen.",
+                "cukup yakin, tertulis"
+              ],
+              [
+                "vielleicht",
+                "**Vielleicht** kommt er noch.",
+                "terbuka"
+              ],
+              [
+                "möglicherweise",
+                "**Möglicherweise** ist er weg.",
+                "terbuka, tertulis"
+              ],
+              [
+                "kaum",
+                "Er kommt **kaum** noch.",
+                "hampir mustahil"
+              ],
+              [
+                "angeblich",
+                "**Angeblich** hat er Schulden.",
+                "kabar yang diragukan"
+              ],
+              [
+                "anscheinend",
+                "**Anscheinend** ist er ausgezogen.",
+                "tampaknya, dari tanda-tanda"
+              ],
+              [
+                "scheinbar",
+                "**Scheinbar** ist alles in Ordnung.",
+                "kelihatannya saja — sebenarnya tidak"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ ***anscheinend* dan *scheinbar* bukan sinonim**, walaupun banyak penutur Jerman sendiri mencampurnya. *Anscheinend* = menurut tanda-tanda, mungkin memang begitu. *Scheinbar* = kelihatannya begitu, tapi sebenarnya tidak. Dalam tulisan, bedanya masih dijaga.",
+            "***wohl* di sini adalah partikel yang sama dengan unit 13** — dan ia adalah cara paling ringan menyatakan dugaan dalam percakapan: *Er hat wohl verschlafen.*",
+            "**Menggabungkan alatnya sah dan sangat umum:** *Er dürfte wohl schon weg sein.* / *Das kann eigentlich kaum stimmen.* Justru gabungan seperti inilah yang membuat kalimat terdengar seperti diucapkan penutur asli."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tetangga, gedung, dan kabar yang belum tentu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Deutsch",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "ausziehen",
+              "AUS-tsii-en",
+              "pindah keluar"
+            ],
+            [
+              "einziehen",
+              "AIN-tsii-en",
+              "pindah masuk"
+            ],
+            [
+              "der Briefkasten",
+              "BRIIF-kas-ten",
+              "kotak surat"
+            ],
+            [
+              "das Erdgeschoss",
+              "ERT-ge-syos",
+              "lantai dasar"
+            ],
+            [
+              "der Hausmeister",
+              "HAUS-mais-ta",
+              "penjaga gedung"
+            ],
+            [
+              "die Schulden",
+              "SYUL-den",
+              "utang"
+            ],
+            [
+              "vermieten",
+              "fer-MII-ten",
+              "menyewakan"
+            ],
+            [
+              "die Erfindung",
+              "er-FIN-dung",
+              "karangan, rekaan"
+            ],
+            [
+              "spekulieren",
+              "sype-ku-LII-ren",
+              "berspekulasi"
+            ],
+            [
+              "der Unterschied",
+              "UN-ta-syiit",
+              "perbedaan"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Dua puluh kalimat dugaan siap pakai"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti",
+            "Kepastian"
+          ],
+          "rows": [
+            [
+              "Das muss ein Irrtum sein.",
+              "itu pasti keliru",
+              "sangat yakin"
+            ],
+            [
+              "Er muss es gewusst haben.",
+              "dia pasti sudah tahu",
+              "sangat yakin"
+            ],
+            [
+              "Das dürfte stimmen.",
+              "kemungkinan besar benar",
+              "yakin, sopan"
+            ],
+            [
+              "Das dürfte teuer werden.",
+              "kayaknya bakal mahal",
+              "yakin, sopan"
+            ],
+            [
+              "Das könnte klappen.",
+              "bisa jadi berhasil",
+              "terbuka"
+            ],
+            [
+              "Das kann stimmen, muss aber nicht.",
+              "bisa benar, belum tentu",
+              "netral"
+            ],
+            [
+              "Das mag sein, aber …",
+              "boleh jadi, tapi",
+              "mengakui separuh"
+            ],
+            [
+              "Er soll krank sein.",
+              "katanya dia sakit",
+              "kabar"
+            ],
+            [
+              "Sie soll das gesagt haben.",
+              "katanya dia bilang begitu",
+              "kabar"
+            ],
+            [
+              "Er will davon nichts gewusst haben.",
+              "dia mengaku tak tahu",
+              "ragu"
+            ],
+            [
+              "Das kann nicht sein.",
+              "itu mustahil",
+              "menolak"
+            ],
+            [
+              "Das kann kaum stimmen.",
+              "hampir mustahil benar",
+              "menolak halus"
+            ],
+            [
+              "Anscheinend ist er weg.",
+              "tampaknya dia pergi",
+              "dari tanda-tanda"
+            ],
+            [
+              "Angeblich hat er gekündigt.",
+              "katanya dia resign",
+              "kabar yang diragukan"
+            ],
+            [
+              "Vermutlich hat er verschlafen.",
+              "mungkin dia kesiangan",
+              "dugaan tertulis"
+            ],
+            [
+              "Ich könnte mir vorstellen, dass …",
+              "saya bisa membayangkan",
+              "hati-hati"
+            ],
+            [
+              "Ich habe den Eindruck, dass …",
+              "saya berkesan",
+              "hati-hati"
+            ],
+            [
+              "Es sieht so aus, als ob …",
+              "kelihatannya seolah",
+              "dari tanda-tanda"
+            ],
+            [
+              "Alles deutet darauf hin, dass …",
+              "semua menunjuk ke",
+              "tertulis, kuat"
+            ],
+            [
+              "Da bin ich mir nicht sicher.",
+              "saya tidak yakin",
+              "mundur"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "*als ob* — satu konstruksi tambahan",
+          "items": [
+            "***Es sieht so aus, als ob er ausgezogen wäre.*** Sesudah *als ob*, bahasa Jerman memakai **Konjunktiv II** — karena yang dibicarakan hanya kesan, bukan kenyataan.",
+            "**Bentuk pendeknya membuang *ob* dan menaikkan kata kerja:** *Es sieht so aus, **als wäre** er ausgezogen.* Bentuk ini lebih sering di tulisan dan terdengar lebih halus.",
+            "**Jangan tertukar dengan *als* waktu** (unit 9). Di sini *als* tak ada hubungannya dengan waktu; ia berarti \"seolah\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "ausziehen",
+      "baca": "AUS-tsii-en",
+      "id": "pindah keluar"
+    },
+    {
+      "de": "der Briefkasten",
+      "baca": "BRIIF-kas-ten",
+      "id": "kotak surat"
+    },
+    {
+      "de": "leer",
+      "baca": "leer",
+      "id": "kosong"
+    },
+    {
+      "de": "die Schulden",
+      "baca": "SYUL-den",
+      "id": "utang"
+    },
+    {
+      "de": "das Erdgeschoss",
+      "baca": "ERT-ge-syos",
+      "id": "lantai dasar"
+    },
+    {
+      "de": "die Post",
+      "baca": "post",
+      "id": "surat, pos"
+    },
+    {
+      "de": "reisen",
+      "baca": "RAI-zen",
+      "id": "bepergian"
+    },
+    {
+      "de": "die Erfindung",
+      "baca": "er-FIN-dung",
+      "id": "karangan"
+    },
+    {
+      "de": "der Hausmeister",
+      "baca": "HAUS-mais-ta",
+      "id": "penjaga gedung"
+    },
+    {
+      "de": "lügen",
+      "baca": "LIU-gen",
+      "id": "berbohong"
+    },
+    {
+      "de": "der Unterschied",
+      "baca": "UN-ta-syiit",
+      "id": "perbedaan"
+    },
+    {
+      "de": "vermieten",
+      "baca": "fer-MII-ten",
+      "id": "menyewakan"
+    },
+    {
+      "de": "spekulieren",
+      "baca": "sype-ku-LII-ren",
+      "id": "berspekulasi"
+    },
+    {
+      "de": "angeblich",
+      "baca": "AN-geep-likh",
+      "id": "katanya"
+    },
+    {
+      "de": "anscheinend",
+      "baca": "an-SYAI-nend",
+      "id": "tampaknya"
+    },
+    {
+      "de": "vermutlich",
+      "baca": "fer-MUUT-likh",
+      "id": "mungkin"
+    },
+    {
+      "de": "möglicherweise",
+      "baca": "MOOK-li-kha-vai-ze",
+      "id": "boleh jadi"
+    },
+    {
+      "de": "kaum",
+      "baca": "kaum",
+      "id": "hampir tidak"
+    },
+    {
+      "de": "der Irrtum",
+      "baca": "IR-tum",
+      "id": "kekeliruan"
+    },
+    {
+      "de": "der Eindruck",
+      "baca": "AIN-druk",
+      "id": "kesan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih kata kerja modal yang cocok: *muss*, *dürfte*, *könnte*, *soll*, *will*.",
+      "items": [
+        "Der Briefkasten ist leer — er ____ ausgezogen sein. (pasti)",
+        "Er ____ Schulden gehabt haben. (kata orang)",
+        "Der Hausmeister ____ nichts gewusst haben. (dia mengaku, kita ragu)",
+        "Das ____ stimmen, ganz sicher bin ich nicht. (kemungkinan besar)",
+        "Er ____ auch einfach viel gereist sein. (mungkin saja)"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi dugaan tentang masa lalu.",
+      "items": [
+        "Er ist krank. (muss) → ____",
+        "Sie war dort. (soll) → ____",
+        "Er hat es gewusst. (dürfte) → ____",
+        "Sie hat nichts gesagt. (will) → ____",
+        "Er hat verschlafen. (könnte) → ____"
+      ]
+    },
+    {
+      "prompt": "Tulis nomor urut kepastiannya di tempat kosong: 1 = paling yakin, 5 = paling ragu.",
+      "items": [
+        "Das kann stimmen. → ____",
+        "Das muss stimmen. → ____",
+        "Das kann kaum stimmen. → ____",
+        "Das dürfte stimmen. → ____",
+        "Das mag stimmen. → ____"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Berarti dia pasti sudah pindah.",
+        "Katanya dia punya utang.",
+        "Bisa jadi benar, tapi belum tentu.",
+        "Penjaga gedung mengaku tidak tahu apa-apa.",
+        "Kelihatannya seolah semuanya baik-baik saja."
+      ]
+    }
+  ],
+  "answers": [
+    "muss — soll — will — dürfte — könnte",
+    "Er muss krank sein. — Sie soll dort gewesen sein. — Er dürfte es gewusst haben. — Sie will nichts gesagt haben. — Er könnte verschlafen haben.",
+    "3 — 1 — 5 — 2 — 4",
+    "Dann muss er ausgezogen sein. — Er soll Schulden gehabt haben. — Das kann stimmen, muss aber nicht. — Der Hausmeister will nichts gewusst haben. — Es sieht so aus, als wäre alles in Ordnung."
+  ],
+  "wave": "Kembali ke unit 3 dan baca ulang berita tentang klinik itu. Tulis ulang seluruh laporannya **tanpa satu pun Konjunktiv I** — pakai kata kerja modal subjektif saja: *Die Klinik soll seit Januar davon gewusst haben. Ein externes Büro dürfte beauftragt worden sein.* Bandingkan keduanya: Konjunktiv I menyebut sumber, kata kerja modal menyebut seberapa yakin **kamu**."
+}

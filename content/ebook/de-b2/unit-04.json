@@ -1,0 +1,287 @@
+{
+  "title": "Sedang ditangani",
+  "title_target": "Daran wird gearbeitet",
+  "goal": "Memakai seluruh sistem Passiv — proses, hasil, dengan kata kerja modal — dan empat cara menghindarinya kalau Passiv terdengar terlalu kaku.",
+  "bekal": [
+    "membedakan *wird repariert* dan *ist repariert*",
+    "menyusun Passiv dengan kata kerja modal: *muss repariert werden*",
+    "memakai *worden*, bukan *geworden*, di Passiv Perfekt",
+    "mengganti Passiv dengan *man*, *sich lassen*, *sein + zu + Inf.*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Seit drei Wochen kalt",
+      "intro": "Telepon antara Herr Adiwijaya, penyewa sebuah flat di Köln, dan Frau Brehm dari pengelola gedung. Pemanas rusak sejak tiga minggu. Hitung berapa kali pengelola berbicara tanpa menyebut siapa yang melakukan apa.",
+      "lines": [
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Hausverwaltung Brehm, guten Tag.",
+          "id": "Pengelola gedung Brehm, selamat siang.",
+          "literal": "rumah-administrasi Brehm, baik hari."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Adiwijaya, Lindenstraße 14. Meine Heizung wird seit drei Wochen nicht repariert.",
+          "id": "Adiwijaya, Lindenstraße 14. Pemanas saya sudah tiga minggu tidak diperbaiki.",
+          "literal": "Adiwijaya, Linden-jalan 14. aku punya pemanas akan sejak tiga minggu tidak perbaiki."
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Moment. Ja, der Fall ist erfasst. Es wird daran gearbeitet.",
+          "id": "Sebentar. Ya, kasusnya sudah tercatat. Sedang ditangani.",
+          "literal": "sebentar. ya, itu kasus ada tercatat. itu akan pada-itu kerjakan."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Von wem? Das frage ich, weil mir das seit drei Wochen gesagt wird.",
+          "id": "Oleh siapa? Saya tanya karena kalimat itu sudah tiga minggu dikatakan ke saya.",
+          "literal": "dari siapa? itu tanya aku, karena kepadaku itu sejak tiga minggu katakan akan."
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Der Auftrag ist an eine Firma weitergeleitet worden. Mehr kann ich dazu nicht sagen.",
+          "id": "Perintah kerjanya sudah diteruskan ke sebuah perusahaan. Lebih dari itu saya tidak bisa bilang.",
+          "literal": "itu perintah ada ke satu perusahaan teruskan menjadi. lebih bisa aku kepada-itu tidak katakan."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Dann sagen Sie mir bitte, wann die Heizung repariert werden soll.",
+          "id": "Kalau begitu tolong beri tahu saya kapan pemanasnya harus diperbaiki.",
+          "literal": "kemudian katakan Anda kepadaku tolong, kapan itu pemanas perbaiki jadi harus."
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Ein Termin kann Ihnen erst genannt werden, wenn die Firma sich meldet.",
+          "id": "Jadwal baru bisa disebutkan ke Anda kalau perusahaannya menghubungi.",
+          "literal": "satu janji bisa kepada-Anda baru sebutkan jadi, jika itu perusahaan diri melapor."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Frau Brehm, es ist November. Die Wohnung ist seit drei Wochen nicht beheizt.",
+          "id": "Bu Brehm, ini bulan November. Flatnya sudah tiga minggu tidak dipanaskan.",
+          "literal": "ibu Brehm, itu ada November. itu apartemen ada sejak tiga minggu tidak panasi."
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Das ist mir bewusst. Aber die Reihenfolge lässt sich von hier aus nicht ändern.",
+          "id": "Saya sadar itu. Tapi urutannya tidak bisa diubah dari sini.",
+          "literal": "itu ada kepadaku sadar. tetapi itu urutan biarkan diri dari sini keluar tidak ubah."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Man könnte aber anrufen und nachfragen. Das ließe sich machen, oder?",
+          "id": "Tapi kan bisa telepon dan menanyakan. Itu bisa dikerjakan, kan?",
+          "literal": "orang bisalah tetapi telepon dan tanyakan. itu biarkanlah diri buat, atau?"
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "… Das ist zu machen, ja. Ich rufe heute noch dort an.",
+          "id": "… Itu memang bisa dilakukan, ya. Hari ini juga saya telepon ke sana.",
+          "literal": "… itu ada untuk buat, ya. aku telepon hari-ini lagi di-sana di."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Danke. Und darf ich Sie bitten, mir das schriftlich zu bestätigen?",
+          "id": "Terima kasih. Dan boleh saya minta Anda mengonfirmasi itu tertulis ke saya?",
+          "literal": "terima-kasih. dan boleh aku Anda minta, kepadaku itu tertulis untuk konfirmasi?"
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Eine Mail wird Ihnen zugeschickt. Darf ich fragen, warum schriftlich?",
+          "id": "Sebuah surel akan dikirimkan ke Anda. Boleh saya tanya, kenapa harus tertulis?",
+          "literal": "satu surel akan kepada-Anda kirimkan. boleh aku tanya, mengapa tertulis?"
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Weil eine Mietminderung nur anerkannt wird, wenn der Mangel dokumentiert ist.",
+          "id": "Karena pengurangan sewa cuma diakui kalau kerusakannya terdokumentasi.",
+          "literal": "karena satu sewa-pengurangan hanya akui akan, jika itu cacat dokumentasikan ada."
+        },
+        {
+          "speaker": "Frau Brehm:",
+          "text": "Verstehe. Dann bekommen Sie die Mail heute noch.",
+          "id": "Saya mengerti. Kalau begitu Anda dapat surelnya hari ini juga.",
+          "literal": "mengerti. kemudian dapat Anda itu surel hari-ini lagi."
+        },
+        {
+          "speaker": "Herr A.:",
+          "text": "Sehr gut. Übrigens: Es wäre einfacher gewesen, wenn das gleich so gelaufen wäre.",
+          "id": "Bagus sekali. Ngomong-ngomong: lebih gampang kalau dari awal jalannya begini.",
+          "literal": "sangat baik. omong-omong: itu adalah lebih-mudah ada, jika itu langsung begitu berjalan adalah."
+        }
+      ],
+      "notes": [
+        "**Baris 3: *Es wird daran gearbeitet*** — Passiv tanpa subjek sama sekali. *Es* di depan hanya pengisi tempat, dan begitu ada bagian lain di posisi pertama ia hilang: *Daran wird gearbeitet*. Bentuk ini adalah puncak bahasa administrasi Jerman: sesuatu terjadi, tak ada yang melakukannya.",
+        "**Baris 5: *ist … weitergeleitet worden*** — Passiv Perfekt. Kata bantunya **sein**, bukan *haben*, dan partisipnya **worden**, bukan *geworden*. Kesalahan *ist … geworden* di sini termasuk yang paling cepat terdengar salah.",
+        "**Baris 2 dan 8: dua Passiv yang berbeda.** *wird nicht repariert* = prosesnya tak berjalan. *ist nicht beheizt* = keadaannya begitu. Yang pertama menuntut kerja, yang kedua melaporkan hasil.",
+        "**Baris 6, 7: Passiv + kata kerja modal.** Susunannya *modal … + Partizip II + werden*: *repariert werden soll*, *genannt werden kann*. Di anak kalimat, kata kerja modal jatuh paling belakang.",
+        "**Baris 9, 10, 11: tiga pengganti Passiv berturut-turut** — *lässt sich nicht ändern*, *man könnte*, *ist zu machen*. Herr Adiwijaya sengaja memakai bentuk-bentuk yang lebih ringan untuk membuat Frau Brehm melangkah keluar dari bahasa resminya, dan itu berhasil.",
+        "**Baris 4: *Von wem?*** — pelaku dalam Passiv diperkenalkan dengan *von* + Dativ (orang atau lembaga) atau *durch* + Akkusativ (sarana, sebab). *Der Antrag wurde **von** der Leitung geprüft* vs *Die Straße wurde **durch** das Hochwasser zerstört*."
+      ],
+      "grammars": [
+        {
+          "title": "Passiv: enam bentuk yang perlu kamu kenali",
+          "body": [
+            "Semuanya dibangun dari satu rumus — *werden* + Partizip II — yang lalu dipasangi waktu dan kata kerja modal."
+          ],
+          "table": {
+            "head": ["Waktu / jenis", "Rumus", "Contoh"],
+            "rows": [
+              ["Präsens", "wird + Part. II", "Die Heizung **wird** repariert."],
+              ["Präteritum", "wurde + Part. II", "Die Heizung **wurde** repariert."],
+              ["Perfekt", "ist + Part. II + **worden**", "Die Heizung **ist** repariert **worden**."],
+              ["Plusquamperfekt", "war + Part. II + worden", "Die Heizung **war** repariert **worden**."],
+              ["+ kata kerja modal", "modal + Part. II + **werden**", "Die Heizung **muss** repariert **werden**."],
+              ["Zustandspassiv", "ist + Part. II", "Die Heizung **ist** repariert."]
+            ]
+          },
+          "after": [
+            "**Objek Akkusativ menjadi subjek; objek Dativ tetap Dativ.** *Man nennt **Ihnen** einen Termin* → ***Ihnen** wird ein Termin genannt*. Ini jebakan besar: kalimat *Sie werden einen Termin genannt* salah, karena *Ihnen* tak pernah bisa naik jadi subjek.",
+            "**Kata kerja tanpa objek Akkusativ tetap bisa dipasifkan** — dan hasilnya tanpa subjek sama sekali: *helfen* → *Ihnen wird geholfen*; *arbeiten* → *Es wird gearbeitet*; *tanzen* → *Hier wird getanzt*. Bentuk ini disebut *unpersönliches Passiv* dan sangat khas Jerman; bahasa Indonesia tak punya padanan langsungnya.",
+            "**Beberapa kata kerja tak bisa dipasifkan sama sekali**: *haben*, *bekommen*, *kennen*, *wissen*, *es gibt*, dan kata kerja yang memakai *sein* di Perfekt (*gehen*, *fahren*, *bleiben*)."
+          ]
+        },
+        {
+          "title": "Empat cara menghindari Passiv — dan kapan memilih yang mana",
+          "body": [
+            "Passiv terdengar resmi. Kadang itu yang kamu mau; sering kali tidak. Empat bentuk berikut menyampaikan isi yang sama dengan nada berbeda-beda."
+          ],
+          "table": {
+            "head": ["Pengganti", "Contoh", "Nada", "Catatan"],
+            "rows": [
+              ["man", "**Man** repariert das morgen.", "lisan, netral", "pengganti paling umum"],
+              ["sich lassen", "Das **lässt sich** reparieren.", "lisan, \"bisa dikerjakan\"", "selalu bermakna kemungkinan"],
+              ["sein + zu + Inf.", "Das **ist** zu **reparieren**.", "sangat resmi", "bisa berarti wajib atau bisa"],
+              ["-bar / -lich", "Das ist reparier**bar**.", "sifat", "hanya kemungkinan"],
+              ["bekommen + Part. II", "Er **bekommt** das Formular **zugeschickt**.", "lisan", "penerima jadi subjek"],
+              ["gehören + Part. II", "Das **gehört** verboten.", "lisan, marah", "\"itu harusnya dilarang\""]
+            ]
+          },
+          "after": [
+            "⚠️ ***sein + zu + Infinitiv* punya dua arti dan hanya kalimatnya yang memutuskan.** *Das Formular ist bis Freitag abzugeben* = wajib. *Der Fehler ist leicht zu beheben* = bisa. Kalau ada *leicht*, *schwer*, *kaum*, artinya kemungkinan; tanpa itu, biasanya kewajiban.",
+            "***lassen* punya tiga pekerjaan berbeda** yang mudah tertukar: *Ich **lasse** das reparieren* = aku menyuruh orang memperbaikinya; *Das **lässt sich** reparieren* = itu bisa diperbaiki; *Lass das!* = hentikan. Yang pertama sangat sering dipakai dan tak punya padanan ringkas dalam bahasa Indonesia.",
+            "**Kalau kamu menulis surat resmi, Passiv adalah teman.** Kalau kamu berbicara dengan orang, ia adalah tembok. Dialog di atas memperlihatkan keduanya sekaligus: Frau Brehm memakai Passiv untuk berlindung, Herr Adiwijaya memakai *man* dan *lassen* untuk memaksanya keluar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyewa flat, mengadu, dan mendokumentasikan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Deutsch", "Cara baca", "Arti"],
+          "rows": [
+            ["die Hausverwaltung", "HAUS-fer-val-tung", "pengelola gedung"],
+            ["der Mangel", "MANG-el", "cacat, kerusakan"],
+            ["die Mietminderung", "MIIT-min-de-rung", "pengurangan sewa"],
+            ["der Auftrag", "AUF-trak", "perintah kerja"],
+            ["die Frist setzen", "frist ZE-tsen", "menetapkan tenggat"],
+            ["beheben", "be-HEE-ben", "memperbaiki, mengatasi"],
+            ["die Reihenfolge", "RAI-en-fol-ge", "urutan"],
+            ["bestätigen", "be-SYTEE-ti-gen", "mengonfirmasi"],
+            ["anerkennen", "AN-er-ke-nen", "mengakui"],
+            ["schriftlich", "SYRIFT-likh", "tertulis"]
+          ]
+        },
+        { "type": "sub", "text": "Kalimat Passiv yang benar-benar akan kamu temui" },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Di mana kamu menemukannya"],
+          "rows": [
+            ["Ihr Antrag wird bearbeitet.", "surat dari Behörde"],
+            ["Sie werden benachrichtigt.", "surat resmi"],
+            ["Der Termin muss eingehalten werden.", "kontrak"],
+            ["Bitte beachten Sie: Änderungen sind vorbehalten.", "syarat & ketentuan"],
+            ["Es wird um Rückruf gebeten.", "pesan di mesin penjawab"],
+            ["Hier darf nicht geparkt werden.", "papan di jalan"],
+            ["Der Zug wird voraussichtlich zehn Minuten später eintreffen.", "pengumuman stasiun"],
+            ["Ihre Daten werden nicht an Dritte weitergegeben.", "kebijakan privasi"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang perlu diperhatikan pelajar Indonesia",
+          "items": [
+            "**Bahasa Indonesia sangat suka Passiv** (\"sudah dikerjakan\", \"akan dikabari\"), jadi godaan menerjemahkan kata per kata besar sekali. Tapi banyak kalimat Indonesia berbentuk pasif justru lebih wajar diterjemahkan dengan *man* dalam bahasa Jerman: \"nanti dikabari\" → *Man sagt Ihnen Bescheid*, bukan *Sie werden gesagt*.",
+            "**Jangan lupa *worden*.** *Ist repariert worden* = sudah diperbaiki. *Ist repariert geworden* salah. *Ist Lehrer geworden* = menjadi guru — itu *werden* yang lain sama sekali.",
+            "**Bentuk *bekommen + Partizip II* menyelamatkan kalimat Dativ.** \"Saya dikirimi surel\" tidak bisa jadi *Ich werde eine Mail geschickt*; yang wajar *Ich bekomme eine Mail geschickt* atau *Mir wird eine Mail geschickt*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "de": "reparieren", "baca": "re-pa-RII-ren", "id": "memperbaiki" },
+    { "de": "die Heizung", "baca": "HAI-tsung", "id": "pemanas ruangan" },
+    { "de": "beheizen", "baca": "be-HAI-tsen", "id": "memanaskan (ruangan)" },
+    { "de": "erfassen", "baca": "er-FA-sen", "id": "mencatat, merekam" },
+    { "de": "weiterleiten", "baca": "VAI-ta-lai-ten", "id": "meneruskan" },
+    { "de": "der Auftrag", "baca": "AUF-trak", "id": "perintah kerja" },
+    { "de": "nennen", "baca": "NE-nen", "id": "menyebutkan" },
+    { "de": "sich melden", "baca": "zikh MEL-den", "id": "menghubungi, melapor" },
+    { "de": "die Reihenfolge", "baca": "RAI-en-fol-ge", "id": "urutan" },
+    { "de": "ändern", "baca": "EN-dern", "id": "mengubah" },
+    { "de": "nachfragen", "baca": "NAKH-fra-gen", "id": "menanyakan susulan" },
+    { "de": "bestätigen", "baca": "be-SYTEE-ti-gen", "id": "mengonfirmasi" },
+    { "de": "zuschicken", "baca": "TSU-syi-ken", "id": "mengirimkan" },
+    { "de": "anerkennen", "baca": "AN-er-ke-nen", "id": "mengakui" },
+    { "de": "der Mangel", "baca": "MANG-el", "id": "cacat" },
+    { "de": "dokumentieren", "baca": "do-ku-men-TII-ren", "id": "mendokumentasikan" },
+    { "de": "beachten", "baca": "be-AKH-ten", "id": "memperhatikan" },
+    { "de": "einhalten", "baca": "AIN-hal-ten", "id": "menepati" },
+    { "de": "benachrichtigen", "baca": "be-NAKH-rikh-ti-gen", "id": "memberi kabar" },
+    { "de": "voraussichtlich", "baca": "for-AUS-zikht-likh", "id": "diperkirakan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi Passiv, pertahankan waktunya.",
+      "items": [
+        "Man repariert die Heizung. → ____",
+        "Man hat den Auftrag weitergeleitet. → ____",
+        "Man muss den Termin einhalten. → ____",
+        "Man nannte ihm keinen Termin. → ____",
+        "Man hilft Ihnen sofort. → ____"
+      ]
+    },
+    {
+      "prompt": "Ganti Passiv berikut dengan bentuk yang disebut dalam kurung.",
+      "items": [
+        "Das kann repariert werden. (sich lassen) → ____",
+        "Das Formular muss bis Freitag abgegeben werden. (sein + zu) → ____",
+        "Die Heizung wird morgen repariert. (man) → ____",
+        "Der Fehler kann leicht behoben werden. (-bar) → ____",
+        "Ihm wird das Formular zugeschickt. (bekommen) → ____"
+      ]
+    },
+    {
+      "prompt": "Pilih *ist* atau *wird*.",
+      "items": [
+        "Die Heizung ____ gerade repariert. (prosesnya berjalan)",
+        "Die Heizung ____ repariert. (sudah beres)",
+        "Der Antrag ____ noch bearbeitet. (belum selesai)",
+        "Das Fenster ____ seit gestern geschlossen. (keadaan)",
+        "Hier ____ nicht geraucht. (larangan)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Jerman.",
+      "items": [
+        "Pemanas saya sudah tiga minggu tidak diperbaiki.",
+        "Perintah kerjanya sudah diteruskan ke sebuah perusahaan.",
+        "Kapan pemanasnya harus diperbaiki?",
+        "Urutannya tidak bisa diubah dari sini.",
+        "Sebuah surel akan dikirimkan kepada Anda."
+      ]
+    }
+  ],
+  "answers": [
+    "Die Heizung wird repariert. — Der Auftrag ist weitergeleitet worden. — Der Termin muss eingehalten werden. — Ihm wurde kein Termin genannt. — Ihnen wird sofort geholfen.",
+    "Das lässt sich reparieren. — Das Formular ist bis Freitag abzugeben. — Man repariert die Heizung morgen. — Der Fehler ist leicht behebbar. — Er bekommt das Formular zugeschickt.",
+    "wird — ist — wird — ist — wird",
+    "Meine Heizung wird seit drei Wochen nicht repariert. — Der Auftrag ist an eine Firma weitergeleitet worden. — Wann soll die Heizung repariert werden? — Die Reihenfolge lässt sich von hier aus nicht ändern. — Eine Mail wird Ihnen zugeschickt."
+  ],
+  "wave": "Kembali ke unit 3 dan ambil kalimat-kalimat berita di dalamnya. Tulis ulang tiap kalimat dua kali: sekali sebagai Passiv resmi (*Die Zahlen wurden geprüft*), sekali sebagai kalimat *man* yang wajar diucapkan (*Man hat die Zahlen geprüft*). Bacalah keduanya keras-keras — perbedaannya bukan makna, melainkan jarak."
+}
