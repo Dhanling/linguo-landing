@@ -7,6 +7,7 @@
 import { useState, useRef, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { BRAND_FACTS } from "@/lib/brand-facts";
 import {
   Sparkles,
   Gift,
@@ -532,8 +533,10 @@ function LingfluencerPage() {
             <div className="font-bold text-slate-900 text-sm">
               Paket E-learning FREE
             </div>
+            {/* [aeo-klaim-toko-v1] Dulu "10+ bahasa + komunitas" — sisa dari zaman
+                paket e-learning semua-bahasa yang sudah tidak dijual. */}
             <div className="text-xs text-slate-500 mt-1">
-              10+ bahasa + komunitas
+              Pilih bahasamu + komunitas
             </div>
           </motion.div>
           <motion.div
@@ -1185,7 +1188,7 @@ function SuccessView({ name }: { name: string }) {
               Pastikan WhatsApp kamu aktif. Kalau dalam 7 hari belum ada
               kontak dari tim Linguo, kamu bisa follow up ke{" "}
               <a
-                href="https://wa.me/6281234567890"
+                href={BRAND_FACTS.contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1A9E9E] font-semibold hover:underline"

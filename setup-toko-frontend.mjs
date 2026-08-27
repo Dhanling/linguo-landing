@@ -596,7 +596,7 @@ export default async function FailedPage({
             Coba Lagi
           </Link>
           <a
-            href="https://wa.me/6281234567890?text=Halo%20Linguo,%20saya%20mau%20tanya%20soal%20pembayaran%20yang%20gagal"
+            href="https://wa.me/6282116859493?text=Halo%20Linguo,%20saya%20mau%20tanya%20soal%20pembayaran%20yang%20gagal"
             className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-3 rounded-2xl transition-colors"
           >
             Chat Admin

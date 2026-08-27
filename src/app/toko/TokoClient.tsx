@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { Product } from './page';
+import { BRAND_FACTS } from '@/lib/brand-facts';
 
 // linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
 // (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
@@ -124,7 +125,10 @@ export default function TokoClient({ products }: { products: Product[] }) {
             <span className="font-serif italic text-teal-600">di waktu luangmu</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-            E-Book ringkas & E-Learning interaktif. Akses kapan saja, dari mana saja, dalam 10+ bahasa.
+            {/* [aeo-klaim-toko-v1] "10+ bahasa" itu angka lama dari zaman paket
+                e-learning semua-bahasa. Katalog e-book saja sudah 20 bahasa. */}
+            E-Book ringkas & E-Learning interaktif. Akses kapan saja, dari mana saja,
+            dalam {BRAND_FACTS.catalog.ebookLanguages}+ bahasa.
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@ export const metadata = pageMetadata({
   path: "/lingfluencer",
   title: "Lingfluencer — Belajar Bahasa Gratis + Komisi 10% | Linguo.id",
   description:
-    "Program kolaborasi kreator Linguo: akses paket e-learning 10+ bahasa, komunitas eksklusif, dan komisi 10% dari tiap pembelian lewat linkmu.",
+    "Program kolaborasi kreator Linguo: akses e-learning gratis untuk bahasa pilihanmu, komunitas eksklusif, dan komisi 10% dari tiap pembelian lewat linkmu.",
   keywords: ["program kreator linguo", "kolaborasi influencer bahasa", "lingfluencer"],
 });
 

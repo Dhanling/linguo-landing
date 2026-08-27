@@ -137,6 +137,28 @@ export const BRAND_FACTS = {
     },
   ],
 
+  // --- Katalog produk digital ----------------------------------------------
+  // [aeo-klaim-toko-v1] Angka katalog toko dulu ditulis lepas di komponen dan
+  // sudah basi: "paket E-Learning unlimited 10+ bahasa" (paket semua-bahasa
+  // SUDAH TIDAK DIJUAL sejak e-learning dipecah per bahasa) dan "modul belajar
+  // 6+ bahasa" (e-book sebenarnya 20 bahasa).
+  catalog: {
+    /**
+     * Jumlah bahasa e-book. WAJIB sama dengan panjang `LANGS` di
+     * src/app/produk/ebook/page.tsx — itu daftar yang benar-benar bisa dibeli.
+     * Kalau menambah bahasa e-book di sana, naikkan angka ini juga.
+     */
+    ebookLanguages: 20,
+    /** E-book sekali beli, tanpa masa berlaku. */
+    ebookAccess: "akses selamanya",
+    /**
+     * E-Learning dijual PER BAHASA, bukan satu paket berisi semua bahasa.
+     * Jangan pernah menulis "unlimited" / "akses semua bahasa" untuk produk ini.
+     */
+    elearningPerLanguage: true,
+    elearningAccess: "akses 6 bulan atau 1 tahun",
+  },
+
   // --- Kontak & lokasi -----------------------------------------------------
   contact: {
     phone: "(022) 85942550",

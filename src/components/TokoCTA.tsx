@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, ShoppingBag } from "lucide-react";
+import { BRAND_FACTS } from "@/lib/brand-facts";
 
 export default function TokoCTA() {
   return (
@@ -31,7 +32,12 @@ export default function TokoCTA() {
                 <span className="italic font-serif font-medium text-[#F5C842]">belajar di waktu luangmu.</span>
               </h2>
               <p className="text-white/80 text-lg max-w-xl leading-relaxed">
-                Modul belajar 6+ bahasa, plus paket E-Learning unlimited 10+ bahasa. Akses sekali, manfaat seumur hidup.
+                {/* [aeo-klaim-toko-v1] Dulu: "Modul belajar 6+ bahasa, plus paket
+                    E-Learning unlimited 10+ bahasa. Akses sekali, manfaat seumur
+                    hidup." Tiga-tiganya salah — e-book ada 20 bahasa, paket
+                    e-learning semua-bahasa sudah tidak dijual (sekarang per
+                    bahasa), dan e-learning berbatas waktu, bukan seumur hidup. */}
+                E-Book {BRAND_FACTS.catalog.ebookLanguages} bahasa dengan {BRAND_FACTS.catalog.ebookAccess}, plus rekaman kelas E-Learning per bahasa ({BRAND_FACTS.catalog.elearningAccess}).
               </p>
             </div>
             <div className="flex md:flex-col items-center gap-3">

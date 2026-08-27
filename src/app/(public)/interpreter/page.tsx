@@ -10,6 +10,7 @@ import {
 import { toast } from "sonner";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { supabase } from "@/lib/supabase-client";
+import { BRAND_FACTS } from "@/lib/brand-facts";
 import {
   LANGUAGES, INDUSTRIES, MODES, LOCATION_TYPES, ONLINE_PLATFORMS, BUDGET_RANGES,
 } from "@/components/interpreter/constants";
@@ -234,7 +235,7 @@ export default function InterpreterPage() {
           <a href="/" className="flex items-center gap-2 text-slate-800 hover:text-[#1A9E9E] transition-colors">
             <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} priority className="h-8 w-auto brightness-0" />
           </a>
-          <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20Interpreter%20Service%20Linguo" target="_blank" rel="noopener noreferrer"
+          <a href={`${BRAND_FACTS.contact.whatsappUrl}?text=Halo%2C%20saya%20tertarik%20Interpreter%20Service%20Linguo`} target="_blank" rel="noopener noreferrer"
             className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95">
             Hubungi Kami
           </a>
@@ -259,7 +260,7 @@ export default function InterpreterPage() {
                 className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full transition-all active:scale-95 text-sm">
                 Kirim Inquiry
               </button>
-              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+              <a href={BRAND_FACTS.contact.whatsappUrl} target="_blank" rel="noopener noreferrer"
                 className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-all active:scale-95 text-sm backdrop-blur-sm border border-white/20 inline-flex items-center gap-2">
                 <MessageCircleMore className="h-4 w-4" /> Chat via WhatsApp
               </a>
@@ -796,7 +797,7 @@ function SuccessCard({ onReset }: { onReset: () => void }) {
           className="px-5 py-2.5 rounded-lg bg-[#1A9E9E] text-white font-medium hover:bg-[#178888] transition">
           Kirim Inquiry Lagi
         </button>
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+        <a href={BRAND_FACTS.contact.whatsappUrl} target="_blank" rel="noopener noreferrer"
           className="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
           <MessageCircleMore className="h-4 w-4" /> WhatsApp Linguo
         </a>
