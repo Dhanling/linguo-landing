@@ -1,0 +1,603 @@
+{
+ "title": "Berapa umurmu?",
+ "title_target": "شمېرې او عمر",
+ "goal": "Menghitung dari satu sampai dua puluh, menyebut umur, dan menemukan bahwa kata benda sesudah angka memakai bentuknya sendiri — bukan bentuk jamak yang dipasang unit 3.",
+ "bekal": [
+  "menghitung 1–20 dan memakai angka di depan kata benda",
+  "menanyakan dan menyebut umur dengan کلن dan کلنه",
+  "menyebut jumlah orang, barang, dan hari"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — ګلالۍ پوښتنې کوي",
+   "intro": "Gulalai, anak perempuan Najib, duduk di samping Budi sambil memegang buku hitungnya. Anak-anak adalah guru bahasa yang paling sabar dan paling jujur.",
+   "lines": [
+    {
+     "speaker": "ګلالۍ:",
+     "text": "تاسو څو کلن یاست؟",
+     "baca": "tāso tso kalən yāst?",
+     "id": "Umur Anda berapa?",
+     "literal": "kalian berapa bertahun ada?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه اته ویشت کلن یم. او ته؟",
+     "baca": "zə atə-wisht kalən yəm. aw tə?",
+     "id": "Saya dua puluh delapan tahun. Dan kamu?",
+     "literal": "saya delapan-dua-puluh bertahun ada-saya. dan kamu?"
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "زه اووه کلنه یم!",
+     "baca": "zə owə kaləna yəm!",
+     "id": "Saya tujuh tahun!",
+     "literal": "saya tujuh bertahun-perempuan ada-saya!"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ولې ته کلنه وایې او زه کلن؟",
+     "baca": "wale tə kaləna waye aw zə kalən?",
+     "id": "Kenapa kamu bilang کلنه dan saya کلن?",
+     "literal": "kenapa kamu bertahun-perempuan berkata-kamu dan saya bertahun?"
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "ځکه چې زه انجلۍ یم او تاسو سړی یاست!",
+     "baca": "dzəka che zə anjləy yəm aw tāso saṛay yāst!",
+     "id": "Karena saya perempuan dan Anda laki-laki!",
+     "literal": "karena bahwa saya gadis ada-saya dan kalian laki-laki ada-kalian!"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ښه ښوونکې یې. اوس ماته شمېرې راوښیه.",
+     "baca": "ṣa ṣowunke ye. os mā-ta shmere rāwuṣya.",
+     "id": "Kamu guru yang baik. Sekarang tunjukkan angka-angkanya padaku.",
+     "literal": "baik guru ada-kamu. sekarang saya-kepada angka-angka tunjukkanlah."
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "یو، دوه، درې، څلور، پنځه، شپږ، اووه، اته، نهه، لس!",
+     "baca": "yaw, dwa, dre, tsalor, pindzə, shpaẓ, owə, atə, nəhə, las!",
+     "id": "Satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh!",
+     "literal": "satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh!"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ډېره ښه! ستاسو په کورنۍ کې څو کسان دي؟",
+     "baca": "ḍera ṣa! stāso pə kornəy ke tso kasān dī?",
+     "id": "Bagus sekali! Di keluargamu ada berapa orang?",
+     "literal": "sangat baik! punya-kalian di keluarga dalam berapa orang-orang ada?"
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "شپږ کسان. پلار، مور، انا، دوه وروڼه او زه.",
+     "baca": "shpaẓ kasān. plār, mor, anā, dwa wrūṇa aw zə.",
+     "id": "Enam orang. Ayah, ibu, nenek, dua saudara laki-laki, dan saya.",
+     "literal": "enam orang-orang. ayah, ibu, nenek, dua saudara-saudara dan saya."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ستا وروڼه څو کلن دي؟",
+     "baca": "stā wrūṇa tso kalən dī?",
+     "id": "Saudara-saudaramu berumur berapa?",
+     "literal": "punya-kamu saudara-saudara berapa bertahun ada?"
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "یو دولس کلن دی او بل پنځلس کلن دی.",
+     "baca": "yaw dwolas kalən day aw bal pindzəlas kalən day.",
+     "id": "Yang satu dua belas tahun dan yang lain lima belas tahun.",
+     "literal": "satu dua-belas bertahun adalah dan lain lima-belas bertahun adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه دوه وروڼه لرم، خو هغوی په اندونیزیا کې دي.",
+     "baca": "zə dwa wrūṇa larəm, kho haghwī pə Indonezyā ke dī.",
+     "id": "Saya punya dua saudara laki-laki, tapi mereka di Indonesia.",
+     "literal": "saya dua saudara-saudara punya-saya, tapi mereka di Indonesia dalam ada."
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "اندونیزیا څومره لرې ده؟",
+     "baca": "Indonezyā tsomra lare da?",
+     "id": "Indonesia jauhnya berapa?",
+     "literal": "Indonesia seberapa jauh adalah?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ډېره لرې. په الوتکه کې لس ساعته لار ده.",
+     "baca": "ḍera lare. pə alwatka ke las sā'ata lār da.",
+     "id": "Sangat jauh. Sepuluh jam perjalanan dengan pesawat.",
+     "literal": "sangat jauh. di pesawat dalam sepuluh jam jalan adalah."
+    },
+    {
+     "speaker": "ګلالۍ:",
+     "text": "لس ساعته! زه یو ساعت هم نه شم ناست.",
+     "baca": "las sā'ata! zə yaw sā'at ham nə shəm nāst.",
+     "id": "Sepuluh jam! Satu jam saja saya tidak bisa duduk diam.",
+     "literal": "sepuluh jam! saya satu jam juga tidak bisa-saya duduk."
+    }
+   ],
+   "notes": [
+    "Menyebut umur memakai kata کلن, bukan kata kerja. Kalimatnya زه اته ویشت کلن **یم**, harfiahnya \"saya dua puluh delapan bertahun ada\". Kata کلن berperilaku persis seperti kata sifat, dan karena itu ia ikut jenis kelamin: کلن untuk laki-laki, **کلنه** untuk perempuan — persis yang dikoreksi Gulalai di baris keempat.",
+    "Angka dua puluh delapan berbunyi اته ویشت, harfiahnya \"delapan dua puluh\". Bahasa Pashto menyebut **satuannya lebih dulu**, seperti bahasa Jerman dan Belanda, terbalik dari bahasa Indonesia. Halaman belakang modul memuat daftar lengkapnya; unit 7 melatihnya di pasar.",
+    "Perhatikan bentuk وروڼه, bukan ورونه. Kata ورور (saudara laki-laki) termasuk segelintir kata yang jamaknya tidak beraturan: ورور menjadi **وروڼه**, خور menjadi **خویندې**, مور menjadi **میندې**, زوی menjadi **زامن**. Empat kata ini kebetulan justru yang paling sering dipakai.",
+    "Kata کسان berarti \"orang-orang\" dan dipakai khusus untuk menghitung manusia. Untuk menanyakan jumlah orang, pertanyaannya څو کسان دي؟ Untuk benda cukup څو dengan nama bendanya.",
+    "Pertanyaan څومره لرې ده؟ memakai څومره, bukan څو. Kata څو menghitung sesuatu yang bisa dihitung satu-satu (berapa buku, berapa orang), sementara څومره menanyakan ukuran, harga, dan jarak. Salah memakainya tidak fatal, tetapi terdengar seperti bertanya \"berapa jauhnya buku itu\".",
+    "Ungkapan نه شم ناست berarti \"saya tidak bisa duduk\". Bentuk شم adalah kata bantu \"bisa\", dan ia berdiri **di depan** kata kerja utamanya — salah satu dari sedikit hal yang tidak diletakkan di ujung. Kemampuan dan izin dikupas penuh di unit 13."
+   ],
+   "grammars": [
+    {
+     "title": "Angka 1–20, dan bentuk hitung kata bendanya",
+     "body": [
+      "Sepuluh angka pertama harus dihafal sebagai kata; sisanya sampai dua puluh dibentuk dari sepuluh itu dengan akhiran **ـلس** *-las*, dan polanya cukup mudah dikenali walaupun beberapa bunyinya menyusut.",
+      "⚠️ Kata benda sesudah angka **tidak memakai bentuk jamak** yang kamu pelajari di unit 3. Ia memakai bentuk hitung sendiri: کتاب menjadi دوه **کتابه**, bukan دوه کتابونه. Untuk kata perempuan berakhiran ه, bentuk hitungnya kebetulan sama dengan jamaknya: درې **ښځې**."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Pashto",
+       "Cara baca",
+       "",
+       "Pashto",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "1",
+        "یو",
+        "yaw",
+        "11",
+        "یوولس",
+        "yawolas"
+       ],
+       [
+        "2",
+        "دوه",
+        "dwa",
+        "12",
+        "دوولس",
+        "dwolas"
+       ],
+       [
+        "3",
+        "درې",
+        "dre",
+        "13",
+        "دیارلس",
+        "diārlas"
+       ],
+       [
+        "4",
+        "څلور",
+        "tsalor",
+        "14",
+        "څوارلس",
+        "tswārlas"
+       ],
+       [
+        "5",
+        "پنځه",
+        "pindzə",
+        "15",
+        "پنځلس",
+        "pindzəlas"
+       ],
+       [
+        "6",
+        "شپږ",
+        "shpaẓ",
+        "16",
+        "شپاړس",
+        "shpāṛas"
+       ],
+       [
+        "7",
+        "اووه",
+        "owə",
+        "17",
+        "اوولس",
+        "owəlas"
+       ],
+       [
+        "8",
+        "اته",
+        "atə",
+        "18",
+        "اتلس",
+        "atlas"
+       ],
+       [
+        "9",
+        "نهه",
+        "nəhə",
+        "19",
+        "نولس",
+        "nūlas"
+       ],
+       [
+        "10",
+        "لس",
+        "las",
+        "20",
+        "شل",
+        "shəl"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Menanyakan dan menyebut umur",
+     "body": [
+      "Pertanyaan umurnya selalu sama: څو کلن یاست؟ untuk laki-laki dan څو کلنه یاست؟ untuk perempuan. Menanyakan umur di Afghanistan sama sekali tidak dianggap tidak sopan, termasuk kepada perempuan dewasa.",
+      "Perhatikan bahwa yang ikut jenis kelamin adalah **orang yang ditanya**, bukan yang bertanya. Gulalai berkata کلنه tentang dirinya sendiri, dan akan berkata کلن tentang ayahnya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "تاسو څو کلن یاست؟",
+        "tāso tso kalən yāst",
+        "Umur Anda berapa? (kepada laki-laki)"
+       ],
+       [
+        "تاسو څو کلنه یاست؟",
+        "tāso tso kaləna yāst",
+        "Umur Anda berapa? (kepada perempuan)"
+       ],
+       [
+        "زه شل کلن یم",
+        "zə shəl kalən yəm",
+        "Saya dua puluh tahun (laki-laki)"
+       ],
+       [
+        "زه شل کلنه یم",
+        "zə shəl kaləna yəm",
+        "Saya dua puluh tahun (perempuan)"
+       ],
+       [
+        "هغه لس کلن دی",
+        "hagha las kalən day",
+        "Dia sepuluh tahun (laki-laki)"
+       ],
+       [
+        "هغه لس کلنه ده",
+        "hagha las kaləna da",
+        "Dia sepuluh tahun (perempuan)"
+       ],
+       [
+        "ماشوم دوه کلن دی",
+        "māshūm dwa kalən day",
+        "Anak itu dua tahun"
+       ],
+       [
+        "زه لا ځوان یم",
+        "zə lā dzwān yəm",
+        "Saya masih muda"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menghitung orang, hari, dan benda",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Pashto memakai kata yang berbeda untuk menghitung manusia dan untuk menghitung benda, dan perbedaan itu terdengar jelas di telinga penutur asli. Tabel berikut memberimu bentuk yang paling sering dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "کس",
+       "kas",
+       "orang (satuan hitung)",
+       "پنځه کسان — lima orang"
+      ],
+      [
+       "تن",
+       "tan",
+       "orang (agak resmi)",
+       "درې تنه — tiga orang"
+      ],
+      [
+       "ورځ",
+       "wradz",
+       "hari",
+       "درې ورځې — tiga hari"
+      ],
+      [
+       "اونۍ",
+       "onəy",
+       "minggu",
+       "دوه اونۍ — dua minggu"
+      ],
+      [
+       "میاشت",
+       "myāsht",
+       "bulan",
+       "شپږ میاشتې — enam bulan"
+      ],
+      [
+       "کال",
+       "kāl",
+       "tahun",
+       "دوه کاله — dua tahun"
+      ],
+      [
+       "ساعت",
+       "sā'at",
+       "jam",
+       "لس ساعته — sepuluh jam"
+      ],
+      [
+       "دقیقه",
+       "daqīqa",
+       "menit",
+       "پنځه دقیقې — lima menit"
+      ],
+      [
+       "ځل",
+       "dzal",
+       "kali",
+       "درې ځله — tiga kali"
+      ],
+      [
+       "ټوټه",
+       "ṭoṭa",
+       "potong, buah (benda)",
+       "دوه ټوټې — dua potong"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Bentuk hitung: apa yang berubah sesudah angka"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata dasar",
+      "Sesudah angka",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "کتاب",
+       "کتابه",
+       "درې کتابه",
+       "tiga buku"
+      ],
+      [
+       "کور",
+       "کوره",
+       "دوه کوره",
+       "dua rumah"
+      ],
+      [
+       "کال",
+       "کاله",
+       "پنځه کاله",
+       "lima tahun"
+      ],
+      [
+       "ساعت",
+       "ساعته",
+       "اووه ساعته",
+       "tujuh jam"
+      ],
+      [
+       "سړی",
+       "سړي",
+       "څلور سړي",
+       "empat laki-laki"
+      ],
+      [
+       "ښځه",
+       "ښځې",
+       "درې ښځې",
+       "tiga perempuan"
+      ],
+      [
+       "ورځ",
+       "ورځې",
+       "شپږ ورځې",
+       "enam hari"
+      ],
+      [
+       "ۍ tidak berubah",
+       "روپۍ",
+       "لس روپۍ",
+       "sepuluh rupee"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu lupa bentuk hitungnya",
+     "items": [
+      "Pakai bentuk tunggal apa adanya. Kalimat درې کتاب tetap dimengerti semua orang, cuma terdengar seperti orang asing yang belum lama belajar — dan itu memang keadaanmu sekarang.",
+      "Yang **tidak** boleh dilakukan adalah memakai bentuk jamak penuh sesudah angka. Kalimat درې کتابونه terdengar salah di telinga penutur asli, bukan cuma asing.",
+      "Untuk kata perempuan berakhiran ه, jamak dan bentuk hitungnya kebetulan sama, jadi tidak ada yang perlu diingat: درې ښځې benar dua-duanya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Angka dalam kehidupan sehari-hari",
+     "items": [
+      "Nomor telepon dibaca angka per angka, seperti di Indonesia: صفر اووه نهه ... *sifr owə nəhə*.",
+      "Kata صفر *sifr* berarti nol, dan dari kata inilah datangnya kata *cipher* dan angka nol di seluruh dunia.",
+      "Angka Arab-Timur dipakai berdampingan dengan angka Latin di Afghanistan: ۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹. Perhatikan bahwa ۴ ۵ ۶ ditulis berbeda dari angka Arab ٤ ٥ ٦ — Afghanistan memakai bentuk Persia.",
+      "⚠️ Angka ditulis dari kiri ke kanan walaupun tulisannya berjalan dari kanan ke kiri. Tahun ۱۴۰۴ dibaca seribu empat ratus empat, bukan sebaliknya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "شمېره",
+   "baca": "shmera",
+   "id": "angka"
+  },
+  {
+   "ps": "یو",
+   "baca": "yaw",
+   "id": "satu"
+  },
+  {
+   "ps": "دوه",
+   "baca": "dwa",
+   "id": "dua"
+  },
+  {
+   "ps": "درې",
+   "baca": "dre",
+   "id": "tiga"
+  },
+  {
+   "ps": "څلور",
+   "baca": "tsalor",
+   "id": "empat"
+  },
+  {
+   "ps": "پنځه",
+   "baca": "pindzə",
+   "id": "lima"
+  },
+  {
+   "ps": "شپږ",
+   "baca": "shpaẓ",
+   "id": "enam"
+  },
+  {
+   "ps": "اووه",
+   "baca": "owə",
+   "id": "tujuh"
+  },
+  {
+   "ps": "اته",
+   "baca": "atə",
+   "id": "delapan"
+  },
+  {
+   "ps": "نهه",
+   "baca": "nəhə",
+   "id": "sembilan"
+  },
+  {
+   "ps": "لس",
+   "baca": "las",
+   "id": "sepuluh"
+  },
+  {
+   "ps": "شل",
+   "baca": "shəl",
+   "id": "dua puluh"
+  },
+  {
+   "ps": "کلن",
+   "baca": "kalən",
+   "id": "berumur (laki-laki)"
+  },
+  {
+   "ps": "کلنه",
+   "baca": "kaləna",
+   "id": "berumur (perempuan)"
+  },
+  {
+   "ps": "کس",
+   "baca": "kas",
+   "id": "orang (satuan hitung)"
+  },
+  {
+   "ps": "کال",
+   "baca": "kāl",
+   "id": "tahun"
+  },
+  {
+   "ps": "ساعت",
+   "baca": "sā'at",
+   "id": "jam"
+  },
+  {
+   "ps": "لرې",
+   "baca": "lare",
+   "id": "jauh"
+  },
+  {
+   "ps": "څومره",
+   "baca": "tsomra",
+   "id": "berapa banyak"
+  },
+  {
+   "ps": "ځوان",
+   "baca": "dzwān",
+   "id": "muda"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis dengan huruf Pashto.",
+   "items": [
+    "tiga",
+    "enam",
+    "sembilan",
+    "dua belas",
+    "dua puluh"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan کلن atau کلنه.",
+   "items": [
+    "زه شل ____ یم. (laki-laki)",
+    "زرغونه پنځلس ____ ده.",
+    "هغه سړی څلوېښت ____ دی.",
+    "ګلالۍ اووه ____ ده.",
+    "تاسو څو ____ یاست؟ (kepada laki-laki)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Umur Anda berapa?",
+    "Saya dua puluh delapan tahun.",
+    "Di keluarga kami ada enam orang.",
+    "Saya punya tiga buku.",
+    "Indonesia sangat jauh."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "یم / زه / کلن / شل",
+    "دي / کسان / شپږ / کورنۍ / کې / په",
+    "یاست / تاسو / کلن / څو / ؟",
+    "لرم / زه / کتابه / درې",
+    "ده / لرې / ډېره / اندونیزیا"
+   ]
+  }
+ ],
+ "answers": [
+  "درې — شپږ — نهه — دوولس — شل",
+  "کلن — کلنه — کلن — کلنه — کلن",
+  "تاسو څو کلن یاست؟ — زه اته ویشت کلن یم. — زمونږ په کورنۍ کې شپږ کسان دي. — زه درې کتابه لرم. — اندونیزیا ډېره لرې ده.",
+  "زه شل کلن یم. — په کورنۍ کې شپږ کسان دي. — تاسو څو کلن یاست؟ — زه درې کتابه لرم. — اندونیزیا ډېره لرې ده."
+ ],
+ "wave": "Hitung keras-keras dari satu sampai dua puluh setiap kali kamu menunggu sesuatu hari ini. Sekali di antrean, sekali di lampu merah — dan besok mulailah dari dua puluh mundur ke satu."
+}

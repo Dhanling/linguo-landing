@@ -1,0 +1,609 @@
+{
+ "title": "Badan, sakit, dan kata-kata kecil",
+ "title_target": "بدن او روغتیا",
+ "goal": "Menjelaskan keluhan kepada dokter, menyebut bagian tubuh — dan memasang empat kata kecil yang menempel di tengah kalimat dan menggantikan kata ganti utuh.",
+ "bekal": [
+  "menyebut bagian tubuh dan menjelaskan di mana sakitnya",
+  "memakai kata ganti lekat مې، دې، یې، مو",
+  "berbicara di apotek dan di klinik"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — په روغتون کې",
+   "intro": "Budi bangun dengan tenggorokan yang menolak bekerja sama. Zarghuna membawanya ke klinik kecil dua gang dari rumah.",
+   "lines": [
+    {
+     "speaker": "ډاکټر:",
+     "text": "ښه راغلاست. څه ستونزه لرئ؟",
+     "baca": "ṣa rāghlāst. tsə stūnza larəy?",
+     "id": "Selamat datang. Ada keluhan apa?",
+     "literal": "baik datang-kalian. apa masalah punya-kalian?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ستونی مې خوږېږي او سر مې دروند دی.",
+     "baca": "stūnay me khwaẓīẓī aw sar me drūnd day.",
+     "id": "Tenggorokan saya sakit dan kepala saya berat.",
+     "literal": "tenggorokan punya-saya sakit dan kepala punya-saya berat adalah."
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "له کله راهیسې؟",
+     "baca": "lə kəla rāhīse?",
+     "id": "Sejak kapan?",
+     "literal": "dari kapan sejak?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "له دوو ورځو راهیسې. پرون تبه هم راغله.",
+     "baca": "lə dwo wradzo rāhīse. parūn taba ham rāghla.",
+     "id": "Sejak dua hari lalu. Kemarin demam juga datang.",
+     "literal": "dari dua hari-dari sejak. kemarin demam juga datang-perempuan-lampau."
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "خوله مو پرانیزئ. آه ووایئ.",
+     "baca": "khwəla mo prānīzəy. āh wə́wāyəy.",
+     "id": "Buka mulut Anda. Katakan aaa.",
+     "literal": "mulut punya-kalian bukalah-kalian. ah katakanlah-kalian."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "آه... درد یې ډېر دی کله چې تېروم.",
+     "baca": "āh... dard ye ḍer day kəla che terawəm.",
+     "id": "Aaa... sakitnya berat kalau saya menelan.",
+     "literal": "ah... sakit punya-dia banyak adalah kapan bahwa menelan-saya."
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "ستونی مو سور دی. سختې پرېشانۍ خبره نه ده.",
+     "baca": "stūnay mo sūr day. sakhte pareṣānəy khabara nə da.",
+     "id": "Tenggorokan Anda merah. Bukan hal yang perlu dikhawatirkan.",
+     "literal": "tenggorokan punya-kalian merah adalah. keras kekhawatiran hal tidak adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "دوا پکار ده؟",
+     "baca": "dawā pəkār da?",
+     "id": "Perlu obat?",
+     "literal": "obat perlu adalah?"
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "هو. دا دوا ورځ کې درې ځله واخلئ، درې ورځې.",
+     "baca": "ho. dā dawā wradz ke dre dzala wākhləy, dre wradze.",
+     "id": "Ya. Minum obat ini tiga kali sehari, selama tiga hari.",
+     "literal": "ya. ini obat hari dalam tiga kali ambillah-kalian, tiga hari."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "له ډوډۍ وړاندې که وروسته؟",
+     "baca": "lə ḍoḍəy wṛānde ka wrūsta?",
+     "id": "Sebelum makan atau sesudah?",
+     "literal": "dari makanan sebelum atau sesudah?"
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "وروسته. او ګرمې اوبه ډېرې وڅښئ.",
+     "baca": "wrūsta. aw garme ūba ḍere wə́tsṣəy.",
+     "id": "Sesudah. Dan minumlah banyak air hangat.",
+     "literal": "sesudah. dan hangat air banyak minumlah-kalian."
+    },
+    {
+     "speaker": "زرغونه:",
+     "text": "شین چای د شاتو سره ورکړم؟",
+     "baca": "shīn chāy də shāto sara warkṛəm?",
+     "id": "Saya beri teh hijau dengan madu?",
+     "literal": "hijau teh punya madu dengan berikan-saya?"
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "ډېره ښه. دا زمونږ تر ټولو زوړ درمل دی.",
+     "baca": "ḍera ṣa. dā zmūẓ tər ṭolo zoṛ darmal day.",
+     "id": "Bagus sekali. Itu obat kami yang paling tua.",
+     "literal": "sangat baik. ini punya-kami dari semua tua obat adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "مننه، ډاکټر صاحب. فیس څومره دی؟",
+     "baca": "manana, ḍākṭar sāhib. fīs tsomra day?",
+     "id": "Terima kasih, Dokter. Biayanya berapa?",
+     "literal": "terima-kasih, dokter tuan. biaya seberapa adalah?"
+    },
+    {
+     "speaker": "ډاکټر:",
+     "text": "دوه سوه افغانۍ. خدای دې روغ لره.",
+     "baca": "dwa swa afghānəy. khudāy de rogh lara.",
+     "id": "Dua ratus afghani. Semoga Tuhan menyehatkanmu.",
+     "literal": "dua ratus afghani. Tuhan semoga sehat peliharalah."
+    }
+   ],
+   "notes": [
+    "Perhatikan kata kecil **مې** di baris kedua. Kalimat ستونی **مې** خوږېږي berarti \"tenggorokan saya sakit\", dan مې menggantikan زما. Ia lebih pendek, jauh lebih sering dipakai dalam percakapan, dan tidak pernah berdiri di awal kalimat.",
+    "⚠️ Kata ganti lekat selalu berdiri **di tempat kedua**, tepat sesudah kata pertama kalimat — persis seperti به di unit 14. Kalau kalimatnya dibuka kata benda, ia menempel di belakang kata benda itu: سر **مې** دروند دی.",
+    "Bahasa Pashto tidak berkata \"saya sakit kepala\". Ia berkata سر مې خوږېږي, harfiahnya \"kepala saya sakit\" — bagian tubuhnyalah yang menjadi pelaku kalimat, bukan orangnya. Susunan ini sama dengan pola خوښېږي di unit 15, dan sama pula dengan bahasa Persia dan Urdu.",
+    "Kata تبه (demam) adalah kata perempuan, karena itu kalimatnya تبه هم **راغله** dengan bentuk perempuan. Bahasa Pashto berkata demam \"datang\", tidak \"ada\" — dan ungkapan itu terdengar lebih hidup daripada padanan Indonesianya.",
+    "Ungkapan له کله راهیسې berarti \"sejak kapan\". Kata راهیسې selalu berpasangan dengan له di depannya, satu pasangan lagi yang bekerja seperti unit 6. Jawabannya memakai bentuk miring: له دوو ورځو راهیسې.",
+    "Doa خدای دې روغ لره berarti \"semoga Tuhan memeliharamu tetap sehat\", dan ia diucapkan kepada orang sakit maupun sebagai ucapan terima kasih yang hangat. Jawabannya cukup مننه."
+   ],
+   "grammars": [
+    {
+     "title": "Empat kata ganti lekat",
+     "body": [
+      "Kata ganti lekat menggantikan kata ganti utuh untuk kepemilikan, untuk objek, dan untuk pelaku kalimat lampau berobjek. Empat kata ini termasuk yang paling sering terdengar dalam bahasa Pashto sehari-hari, dan mengenalinya melipatgandakan berapa banyak yang bisa kamu tangkap.",
+      "⚠️ Aturan letaknya mutlak: **tidak pernah di awal kalimat**, selalu di tempat kedua. Kalau kalimat dibuka نه atau به, kata lekatnya berdiri tepat sesudah kata itu."
+     ],
+     "table": {
+      "head": [
+       "Lekat",
+       "Cara baca",
+       "Menggantikan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "مې",
+        "me",
+        "زما / ما",
+        "سر مې خوږېږي",
+        "Kepala saya sakit"
+       ],
+       [
+        "دې",
+        "de",
+        "ستا / تا",
+        "نوم دې څه دی؟",
+        "Namamu siapa?"
+       ],
+       [
+        "یې",
+        "ye",
+        "د هغه / هغه",
+        "نوم یې احمد دی",
+        "Namanya Ahmad"
+       ],
+       [
+        "مو",
+        "mo",
+        "زمونږ / ستاسو",
+        "ستونی مو سور دی",
+        "Tenggorokan Anda merah"
+       ],
+       [
+        "مې (lampau)",
+        "me",
+        "ما sebagai pelaku",
+        "ولیدل مې",
+        "Saya melihatnya"
+       ],
+       [
+        "یې (lampau)",
+        "ye",
+        "هغه sebagai pelaku",
+        "ولیکل یې",
+        "Dia menulisnya"
+       ],
+       [
+        "⚠️ salah",
+        "—",
+        "—",
+        "مې سر خوږېږي",
+        "Tidak boleh di awal"
+       ],
+       [
+        "⚠️ benar",
+        "—",
+        "—",
+        "سر مې خوږېږي",
+        "Di tempat kedua"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Mengatakan di mana sakitnya",
+     "body": [
+      "Polanya tetap: bagian tubuh, kata lekat, lalu kata kerja **خوږېږي** (sakit, nyeri). Bagian tubuhnya menjadi pelaku, jadi kata kerjanya mengikuti bagian tubuh itu — bukan mengikuti orangnya.",
+      "Kalau yang sakit lebih dari satu, kata kerjanya jamak: سترګې مې **خوږېږي** (mata saya sakit, karena سترګې jamak). Ini kelanjutan langsung dari pola yang sudah kamu pasang di unit 15."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "سر مې خوږېږي",
+        "sar me khwaẓīẓī",
+        "Kepala saya sakit"
+       ],
+       [
+        "ستونی مې خوږېږي",
+        "stūnay me khwaẓīẓī",
+        "Tenggorokan saya sakit"
+       ],
+       [
+        "ګېډه مې خوږېږي",
+        "geḍa me khwaẓīẓī",
+        "Perut saya sakit"
+       ],
+       [
+        "غاښ مې خوږېږي",
+        "ghāṣ me khwaẓīẓī",
+        "Gigi saya sakit"
+       ],
+       [
+        "تبه لرم",
+        "taba larəm",
+        "Saya demam"
+       ],
+       [
+        "ټوخی لرم",
+        "ṭūkhay larəm",
+        "Saya batuk"
+       ],
+       [
+        "زه ناروغ یم",
+        "zə nārogh yəm",
+        "Saya sakit"
+       ],
+       [
+        "زه ښه یم",
+        "zə ṣa yəm",
+        "Saya sudah sehat"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh, dan di klinik",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti",
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "سر",
+       "sar",
+       "kepala",
+       "لاس",
+       "lās",
+       "tangan"
+      ],
+      [
+       "سترګه",
+       "stərga",
+       "mata",
+       "ګوته",
+       "gūta",
+       "jari"
+      ],
+      [
+       "غوږ",
+       "ghwaẓ",
+       "telinga",
+       "پښه",
+       "ṣpa",
+       "kaki"
+      ],
+      [
+       "پزه",
+       "pəza",
+       "hidung",
+       "زړه",
+       "zṛə",
+       "hati, jantung"
+      ],
+      [
+       "خوله",
+       "khwəla",
+       "mulut",
+       "ګېډه",
+       "geḍa",
+       "perut"
+      ],
+      [
+       "غاښ",
+       "ghāṣ",
+       "gigi",
+       "شا",
+       "shā",
+       "punggung"
+      ],
+      [
+       "ژبه",
+       "zhəba",
+       "lidah",
+       "مخ",
+       "makh",
+       "wajah"
+      ],
+      [
+       "ستونی",
+       "stūnay",
+       "tenggorokan",
+       "وېښته",
+       "weṣtə",
+       "rambut"
+      ],
+      [
+       "مټ",
+       "maṭ",
+       "lengan",
+       "ورمېږ",
+       "warmeẓ",
+       "leher"
+      ],
+      [
+       "بدن",
+       "badan",
+       "tubuh",
+       "پوستکی",
+       "postakay",
+       "kulit"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Keluhan dan obat"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ناروغي",
+       "nāroghī",
+       "penyakit"
+      ],
+      [
+       "درد",
+       "dard",
+       "rasa sakit"
+      ],
+      [
+       "تبه",
+       "taba",
+       "demam"
+      ],
+      [
+       "ټوخی",
+       "ṭūkhay",
+       "batuk"
+      ],
+      [
+       "پرېشکه",
+       "preṣka",
+       "pilek"
+      ],
+      [
+       "دوا",
+       "dawā",
+       "obat"
+      ],
+      [
+       "درمل",
+       "darmal",
+       "obat, ramuan"
+      ],
+      [
+       "دواخانه",
+       "dawākhāna",
+       "apotek"
+      ],
+      [
+       "روغتون",
+       "roghtūn",
+       "rumah sakit"
+      ],
+      [
+       "کلینیک",
+       "klīnīk",
+       "klinik"
+      ],
+      [
+       "ډاکټر",
+       "ḍākṭar",
+       "dokter"
+      ],
+      [
+       "نرسه",
+       "nərsa",
+       "perawat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat yang perlu kamu punya kalau sakit di negeri orang",
+     "items": [
+      "Membuka: **زه ناروغ یم** *zə nārogh yəm* — \"saya sakit\". Perempuan berkata زه ناروغه یم.",
+      "Menjelaskan: **... مې خوږېږي** dengan bagian tubuhnya di depan. Kalau kamu lupa namanya, tunjuk saja dan katakan **دلته مې خوږېږي** — \"di sini sakitnya\".",
+      "Menanyakan aturan minum: **ورځ کې څو ځله؟** *wradz ke tso dzala* — \"berapa kali sehari?\" dan **له ډوډۍ وړاندې که وروسته؟** — \"sebelum atau sesudah makan?\".",
+      "Menyebut alergi: **زه ... ته حساسیت لرم** *zə ... ta hassāsiyat larəm* — \"saya alergi terhadap ...\". Kalimat ini pantas dihafal sebelum kamu berangkat, bukan sesudah.",
+      "⚠️ Apotek Afghanistan menjual banyak obat tanpa resep, dan itu bukan izin untuk menebak sendiri. Sebutkan keluhanmu, minta saran, dan tanyakan namanya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata lekat dalam percakapan sehari-hari",
+     "items": [
+      "Untuk kepemilikan, kata lekat hampir selalu menang atas bentuk panjangnya. Orang Afghanistan berkata **نوم مې بودي دی**, jarang sekali زما نوم بودي دی — yang kedua benar tetapi terdengar seperti membaca.",
+      "Untuk cerita masa lampau, kata lekat menggantikan pelaku miring dari unit 13: **ولیدل مې** berarti \"saya melihatnya\", dan itu bentuk yang paling sering kamu dengar.",
+      "Kata **یې** melakukan pekerjaan paling banyak: ia bisa berarti \"punya dia\", \"dia sebagai objek\", dan \"dia sebagai pelaku lampau\". Konteks yang memisahkannya, dan telingamu akan belajar lebih cepat daripada kepalamu.",
+      "⚠️ Jangan memakai kata lekat kalau kalimatmu dibuka bagian yang kamu tekankan. Kalau kamu ingin menegaskan \"punya SAYA, bukan punya dia\", pakailah bentuk panjang زما — bentuk panjang adalah bentuk penekanan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "بدن",
+   "baca": "badan",
+   "id": "tubuh"
+  },
+  {
+   "ps": "سر",
+   "baca": "sar",
+   "id": "kepala"
+  },
+  {
+   "ps": "ستونی",
+   "baca": "stūnay",
+   "id": "tenggorokan"
+  },
+  {
+   "ps": "ګېډه",
+   "baca": "geḍa",
+   "id": "perut"
+  },
+  {
+   "ps": "سترګه",
+   "baca": "stərga",
+   "id": "mata"
+  },
+  {
+   "ps": "لاس",
+   "baca": "lās",
+   "id": "tangan"
+  },
+  {
+   "ps": "پښه",
+   "baca": "ṣpa",
+   "id": "kaki"
+  },
+  {
+   "ps": "زړه",
+   "baca": "zṛə",
+   "id": "hati, jantung"
+  },
+  {
+   "ps": "خوږېږي",
+   "baca": "khwaẓīẓī",
+   "id": "sakit, nyeri"
+  },
+  {
+   "ps": "درد",
+   "baca": "dard",
+   "id": "rasa sakit"
+  },
+  {
+   "ps": "تبه",
+   "baca": "taba",
+   "id": "demam"
+  },
+  {
+   "ps": "ټوخی",
+   "baca": "ṭūkhay",
+   "id": "batuk"
+  },
+  {
+   "ps": "دوا",
+   "baca": "dawā",
+   "id": "obat"
+  },
+  {
+   "ps": "دواخانه",
+   "baca": "dawākhāna",
+   "id": "apotek"
+  },
+  {
+   "ps": "روغتون",
+   "baca": "roghtūn",
+   "id": "rumah sakit"
+  },
+  {
+   "ps": "ناروغ",
+   "baca": "nārogh",
+   "id": "sakit (orang)"
+  },
+  {
+   "ps": "روغ",
+   "baca": "rogh",
+   "id": "sehat"
+  },
+  {
+   "ps": "مې",
+   "baca": "me",
+   "id": "saya (kata lekat)"
+  },
+  {
+   "ps": "یې",
+   "baca": "ye",
+   "id": "dia (kata lekat)"
+  },
+  {
+   "ps": "شات",
+   "baca": "shāt",
+   "id": "madu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto memakai kata lekat.",
+   "items": [
+    "Kepala saya sakit.",
+    "Tenggorokan saya sakit.",
+    "Namamu siapa?",
+    "Namanya Ahmad.",
+    "Perut saya sakit."
+   ]
+  },
+  {
+   "prompt": "Perbaiki letak kata lekatnya.",
+   "items": [
+    "مې سر خوږېږي.",
+    "دې نوم څه دی؟",
+    "یې نوم احمد دی.",
+    "مو ستونی سور دی.",
+    "مې ګېډه خوږېږي."
+   ]
+  },
+  {
+   "prompt": "Sebutkan bagian tubuhnya dalam bahasa Pashto.",
+   "items": [
+    "mata",
+    "tangan",
+    "kaki",
+    "gigi",
+    "perut"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "خوږېږي / مې / سر",
+    "یم / زه / ناروغ",
+    "لرم / تبه / زه",
+    "ده / پکار / دوا",
+    "دی / سور / مو / ستونی"
+   ]
+  }
+ ],
+ "answers": [
+  "سر مې خوږېږي. — ستونی مې خوږېږي. — نوم دې څه دی؟ — نوم یې احمد دی. — ګېډه مې خوږېږي.",
+  "سر مې خوږېږي. — نوم دې څه دی؟ — نوم یې احمد دی. — ستونی مو سور دی. — ګېډه مې خوږېږي.",
+  "سترګه — لاس — پښه — غاښ — ګېډه",
+  "سر مې خوږېږي. — زه ناروغ یم. — زه تبه لرم. — دوا پکار ده. — ستونی مو سور دی."
+ ],
+ "wave": "Sentuh lima bagian tubuhmu sendiri dan katakan namanya keras-keras, lalu ucapkan ... مې خوږېږي untuk masing-masing. Kalimat yang kamu pelajari sebelum sakit adalah kalimat yang akan tersedia ketika kamu benar-benar memerlukannya."
+}

@@ -45,6 +45,14 @@ export const CHIRP_LOCALES: Record<string, string> = {
      tak ada di bahasa Rusia dan keluar sebagai o/u biasa. Tanpa pemetaan ini
      ia jatuh ke en-US dan Kiril-nya terbaca kacau sama sekali. */
   mn: "ru-RU",
+  /* [ebook-tts-pashto-v1] Katalog Google nol voice untuk ps-* (bahasa Pashto tak
+     pernah masuk katalog Text-to-Speech, dicek 27 Agu 2026). Dipetakan ke ur-IN
+     karena Urdu memakai aksara yang sama persis — termasuk پ چ ژ ګ dan huruf
+     berlidah melipat — sehingga suara Urdu membaca sebagian besar katanya
+     mendekati benar. ⚠️ Yang meleset justru huruf khas Pashto: ښ ږ ځ څ ې ۍ tak
+     ada di Urdu dan keluar sebagai bunyi terdekatnya. Tanpa pemetaan ini ia
+     jatuh ke en-US dan aksara Arabnya terbaca kacau sama sekali. */
+  ps: "ur-IN",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */

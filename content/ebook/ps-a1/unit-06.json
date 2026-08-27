@@ -1,0 +1,577 @@
+{
+ "title": "Kata depan yang datang berpasangan",
+ "title_target": "په کابل کې",
+ "goal": "Menyatakan tempat, arah, dan asal — dan memasang tulang punggung seluruh modul: kata depan bahasa Pashto datang berdua, satu di depan kata bendanya dan satu di belakang.",
+ "bekal": [
+  "memakai enam pasangan kata depan yang menutup hampir semua keperluan",
+  "mengubah kata benda dan kata ganti ke bentuk miring",
+  "menyatakan di mana sesuatu berada dan ke mana kamu pergi"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — د ښار په لور",
+   "intro": "Pagi kedua. Najib mengajak Budi berkeliling kota. Mereka berdiri di depan pintu rumah sambil menunggu mobil.",
+   "lines": [
+    {
+     "speaker": "نجیب:",
+     "text": "نن مونږ ښار ته ځو. تاسو چمتو یاست؟",
+     "baca": "nən mūẓ ṣār ta dzū. tāso chamto yāst?",
+     "id": "Hari ini kita ke kota. Anda sudah siap?",
+     "literal": "hari-ini kami kota ke pergi-kami. kalian siap ada?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "هو، چمتو یم. مونږ له کوره څخه څنګه ځو؟",
+     "baca": "ho, chamto yəm. mūẓ lə kora tsəkha tsənga dzū?",
+     "id": "Ya, siap. Kita dari rumah pergi dengan apa?",
+     "literal": "ya, siap ada-saya. kami dari rumah-dari dari bagaimana pergi-kami?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "په موټر کې. زما موټر په کوڅه کې ولاړ دی.",
+     "baca": "pə moṭar ke. zmā moṭar pə kūcha ke wlāṛ day.",
+     "id": "Dengan mobil. Mobil saya terparkir di gang.",
+     "literal": "di mobil dalam. punya-saya mobil di gang dalam berdiri adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "مونږ لومړی چېرته ځو؟",
+     "baca": "mūẓ lūmṛay cherta dzū?",
+     "id": "Kita ke mana dulu?",
+     "literal": "kami pertama di-mana pergi-kami?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "د بازار سره یو ښکلی باغ دی. هلته ځو.",
+     "baca": "də bāzār sara yaw ṣkulay bāgh day. halta dzū.",
+     "id": "Di dekat pasar ada kebun yang indah. Ke sana kita pergi.",
+     "literal": "punya pasar dengan satu indah kebun adalah. di-sana pergi-kami."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "له کوره تر باغه پورې څومره لار ده؟",
+     "baca": "lə kora tər bāgha pore tsomra lār da?",
+     "id": "Dari rumah sampai kebun jauhnya berapa?",
+     "literal": "dari rumah-dari sampai kebun-sampai sampai seberapa jalan adalah?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "شل دقیقې. په کابل کې ټرافیک ډېر دی.",
+     "baca": "shəl daqīqe. pə Kābəl ke ṭrāfīk ḍer day.",
+     "id": "Dua puluh menit. Di Kabul lalu lintasnya padat.",
+     "literal": "dua-puluh menit. di Kabul dalam lalu-lintas banyak adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "دا کتاب د چا دی؟ په موټر کې پروت دی.",
+     "baca": "dā kitāb də chā day? pə moṭar ke prot day.",
+     "id": "Buku ini punya siapa? Tergeletak di dalam mobil.",
+     "literal": "ini buku punya siapa adalah? di mobil dalam tergeletak adalah."
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "د احمد دی. هغه یې تل زما په موټر کې پرېږدي.",
+     "baca": "də Ahmad day. hagha ye təl zmā pə moṭar ke preẓdī.",
+     "id": "Punya Ahmad. Dia selalu meninggalkannya di mobil saya.",
+     "literal": "punya Ahmad adalah. dia punya-dia selalu punya-saya di mobil dalam meninggalkan-dia."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "له باغه وروسته چېرته ځو؟",
+     "baca": "lə bāgha wrūsta cherta dzū?",
+     "id": "Sesudah dari kebun kita ke mana?",
+     "literal": "dari kebun-dari sesudah di-mana pergi-kami?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "د ښار مینځ ته. هلته زوړ بازار دی.",
+     "baca": "də ṣār mīndz ta. halta zoṛ bāzār day.",
+     "id": "Ke tengah kota. Di sana ada pasar tua.",
+     "literal": "punya kota tengah ke. di-sana tua pasar adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه د تاسو سره ځم، خو زه لار نه پېژنم.",
+     "baca": "zə də tāso sara dzəm, kho zə lār nə pezhanəm.",
+     "id": "Saya ikut Anda, tapi saya tidak tahu jalannya.",
+     "literal": "saya punya kalian dengan pergi-saya, tapi saya jalan tidak mengenal-saya."
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "هېڅ پروا نه لري. زه ستاسو سره یم.",
+     "baca": "hets parwā nə larī. zə stāso sara yəm.",
+     "id": "Tidak apa-apa. Saya bersama Anda.",
+     "literal": "sama-sekali kepedulian tidak punya-dia. saya punya-kalian dengan ada-saya."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "پر مېز باندې زما موبایل پروت و. هېر مې کړ!",
+     "baca": "pər mez bānde zmā mobāyl prot wə. her me kṛ!",
+     "id": "Ponsel saya tadi ada di atas meja. Saya lupa!",
+     "literal": "di meja atas punya-saya ponsel tergeletak adalah. lupa punya-saya jadi!"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "راځئ، کور ته بېرته ځو. لا وخت لرو.",
+     "baca": "rādzəy, kor ta berta dzū. lā wakht larū.",
+     "id": "Ayo, kita kembali ke rumah. Kita masih punya waktu.",
+     "literal": "datang-kalian, rumah ke kembali pergi-kami. masih waktu punya-kami."
+    }
+   ],
+   "notes": [
+    "Inilah unit yang paling menentukan di paruh pertama modul. Bahasa Indonesia memakai satu kata di depan: \"di rumah\", \"dari rumah\", \"dengan teman\". Bahasa Pashto memakai **dua kata yang mengapit**: په کور **کې** (di rumah), له کوره **څخه** (dari rumah), د ملګري **سره** (dengan teman). Kalau salah satu hilang, kalimatnya terdengar bolong.",
+    "Perhatikan bahwa kata bendanya sendiri ikut berubah. Kata کور menjadi **کوره** di dalam له کوره څخه, dan باغ menjadi **باغه** di dalam له باغه. Perubahan ini disebut bentuk miring, dan ia muncul setiap kali kata benda dijepit sepasang kata depan.",
+    "Satu pasangan yang tidak berpasangan: **ته** untuk arah tujuan. Kalimat کابل **ته** ځم berarti \"saya pergi ke Kabul\", dan ته berdiri sendirian **di belakang** kata bendanya. Ini satu-satunya kata depan bahasa Pashto yang bukan kata depan melainkan kata belakang.",
+    "Ungkapan د چا دی؟ berarti \"punya siapa?\". Perhatikan bahwa چا adalah bentuk miring dari څوک (siapa) — kata tanya pun ikut berubah begitu ia berada di belakang د. Bentuk miring memang menular ke mana-mana.",
+    "Kalimat هېر مې کړ berarti \"saya lupa\", harfiahnya \"lupa punya-saya jadi\". Ini bentuk kalimat lampau yang aturannya akan dipasang di unit 13; untuk sekarang hafalkan sebagai satu ungkapan utuh, karena kamu akan memerlukannya setiap hari.",
+    "Kata بېرته berarti \"kembali\" dan ia berdiri sebagai kata keterangan, bukan bagian dari kata kerjanya. Kalimat کور ته بېرته ځو harfiahnya \"rumah ke kembali pergi-kami\", dan susunannya tidak boleh dibolak-balik."
+   ],
+   "grammars": [
+    {
+     "title": "🔴 Enam pasangan kata depan yang menutup hampir semuanya",
+     "body": [
+      "Hafalkan pasangannya sebagai satu benda, bukan sebagai dua kata. Kalau kepalamu menyimpan په ... کې sebagai satu bentuk berlubang di tengah, kamu tidak akan pernah kehilangan separuhnya.",
+      "⚠️ Dalam percakapan cepat, orang Afghanistan sering membuang bagian depannya: کور کې sebagai ganti په کور کې. Yang **tidak pernah** dibuang adalah bagian belakangnya. Kalau kamu harus memilih satu, pilih yang belakang."
+     ],
+     "table": {
+      "head": [
+       "Pasangan",
+       "Arti",
+       "Contoh",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "په ... کې",
+        "di, di dalam",
+        "په کابل کې",
+        "pə Kābəl ke"
+       ],
+       [
+        "له ... څخه",
+        "dari",
+        "له کوره څخه",
+        "lə kora tsəkha"
+       ],
+       [
+        "د ... سره",
+        "dengan (bersama)",
+        "د ملګري سره",
+        "də malgərī sara"
+       ],
+       [
+        "تر ... پورې",
+        "sampai",
+        "تر سبا پورې",
+        "tər sabā pore"
+       ],
+       [
+        "د ... لپاره",
+        "untuk",
+        "د تاسو لپاره",
+        "də tāso ləpāra"
+       ],
+       [
+        "پر ... باندې",
+        "di atas",
+        "پر مېز باندې",
+        "pər mez bānde"
+       ],
+       [
+        "... ته",
+        "ke, kepada",
+        "کابل ته",
+        "Kābəl ta"
+       ],
+       [
+        "د ... په اړه",
+        "tentang",
+        "د افغانستان په اړه",
+        "də Afghānistān pə aṛa"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk miring: apa yang berubah, dan kapan",
+     "body": [
+      "Kata benda bahasa Pashto berubah bentuk begitu ia berdiri di dalam pasangan kata depan. Perubahannya kecil dan hampir selalu sama: kata laki-laki berakhiran huruf mati menambahkan **ـه**, sementara kata perempuan sering tidak berubah sama sekali.",
+      "Kata ganti punya bentuk miringnya sendiri, dan yang wajib kamu ingat cuma dua: زه menjadi **ما**, dan ته menjadi **تا**. Sisanya tetap. Bentuk miring ini akan muncul lagi di unit 13 dengan pekerjaan yang jauh lebih besar."
+     ],
+     "table": {
+      "head": [
+       "Bentuk biasa",
+       "Bentuk miring",
+       "Contoh pemakaian",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "کور",
+        "کوره",
+        "له کوره څخه",
+        "dari rumah"
+       ],
+       [
+        "باغ",
+        "باغه",
+        "تر باغه پورې",
+        "sampai kebun"
+       ],
+       [
+        "ښار",
+        "ښاره",
+        "له ښاره څخه",
+        "dari kota"
+       ],
+       [
+        "ښځه",
+        "ښځې",
+        "د ښځې سره",
+        "dengan perempuan itu"
+       ],
+       [
+        "زه",
+        "**ما**",
+        "ما ته",
+        "kepada saya"
+       ],
+       [
+        "ته",
+        "**تا**",
+        "تا سره",
+        "denganmu"
+       ],
+       [
+        "هغه (pr)",
+        "**هغې**",
+        "د هغې کور",
+        "rumah dia (perempuan)"
+       ],
+       [
+        "څوک",
+        "**چا**",
+        "د چا دی؟",
+        "punya siapa?"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat, arah, dan kota-kota Afghanistan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ښار",
+       "ṣār",
+       "kota"
+      ],
+      [
+       "کلی",
+       "kalay",
+       "desa"
+      ],
+      [
+       "کوڅه",
+       "kūcha",
+       "gang, jalan kecil"
+      ],
+      [
+       "سړک",
+       "saṛak",
+       "jalan raya"
+      ],
+      [
+       "بازار",
+       "bāzār",
+       "pasar"
+      ],
+      [
+       "جومات",
+       "jumāt",
+       "masjid"
+      ],
+      [
+       "روغتون",
+       "roghtūn",
+       "rumah sakit"
+      ],
+      [
+       "ښوونځی",
+       "ṣowundzay",
+       "sekolah"
+      ],
+      [
+       "پوهنتون",
+       "pohantūn",
+       "universitas"
+      ],
+      [
+       "هوایي ډګر",
+       "hawāyī ḍagar",
+       "bandara"
+      ],
+      [
+       "پارک",
+       "pārk",
+       "taman"
+      ],
+      [
+       "هوټل",
+       "hoṭal",
+       "hotel, rumah makan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Arah dan letak"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "مخې ته",
+       "makhe ta",
+       "di depan"
+      ],
+      [
+       "شا ته",
+       "shā ta",
+       "di belakang"
+      ],
+      [
+       "څنګ ته",
+       "tsang ta",
+       "di samping"
+      ],
+      [
+       "مینځ کې",
+       "mīndz ke",
+       "di tengah"
+      ],
+      [
+       "نږدې",
+       "nəẓde",
+       "dekat"
+      ],
+      [
+       "لرې",
+       "lare",
+       "jauh"
+      ],
+      [
+       "ښي لور ته",
+       "ṣəy lor ta",
+       "ke kanan"
+      ],
+      [
+       "کیڼ لور ته",
+       "kīṇ lor ta",
+       "ke kiri"
+      ],
+      [
+       "مخ ته",
+       "makh ta",
+       "lurus ke depan"
+      ],
+      [
+       "بېرته",
+       "berta",
+       "kembali"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Enam kota yang perlu kamu kenali namanya",
+     "items": [
+      "Ibu kotanya **کابل** *Kābəl*, berada di lembah tinggi antara gunung-gunung, dan di musim dingin dinginnya sungguhan.",
+      "Kota kedua terbesar **کندهار** *Kandahār* di selatan, tempat lahir bahasa Pashto baku dan tempat ښ dibaca dengan lidah melipat.",
+      "Kota timur **جلال آباد** *Jalālābād*, hangat sepanjang tahun, terkenal dengan jeruk dan tebunya.",
+      "Kota utara **مزار شریف** *Mazār-e Sharīf*, terkenal dengan masjid birunya dan perayaan Nowruz terbesar di Afghanistan.",
+      "Kota barat **هرات** *Harāt*, dekat perbatasan Iran, tempat bahasa Dari jauh lebih banyak terdengar daripada Pashto.",
+      "Kota di Pakistan **پېښور** *Peṣāwar*, pusat kedua bahasa Pashto, dengan sekitar sepuluh juta penutur di sekelilingnya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Kesalahan yang paling sering dibuat pemula",
+     "items": [
+      "Membuang bagian belakang pasangan. Kalimat زه په کابل یم terdengar bolong; yang benar زه په کابل **کې** یم.",
+      "Memakai ته untuk tempat berada, bukan tujuan. Kalimat زه کابل ته یم salah; ته cuma untuk arah tujuan, jadi زه په کابل کې یم.",
+      "Melupakan bentuk miring sesudah له. Kalimat له کور څخه terdengar seperti orang asing; yang benar له **کوره** څخه.",
+      "Memakai سره tanpa د di depannya. Bentuk د ملګري سره yang baku, walaupun dalam percakapan cepat orang sering berkata ملګري سره saja."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "په ... کې",
+   "baca": "pə ... ke",
+   "id": "di dalam"
+  },
+  {
+   "ps": "له ... څخه",
+   "baca": "lə ... tsəkha",
+   "id": "dari"
+  },
+  {
+   "ps": "د ... سره",
+   "baca": "də ... sara",
+   "id": "dengan"
+  },
+  {
+   "ps": "تر ... پورې",
+   "baca": "tər ... pore",
+   "id": "sampai"
+  },
+  {
+   "ps": "لپاره",
+   "baca": "ləpāra",
+   "id": "untuk"
+  },
+  {
+   "ps": "ته",
+   "baca": "ta",
+   "id": "ke, kepada"
+  },
+  {
+   "ps": "کوڅه",
+   "baca": "kūcha",
+   "id": "gang"
+  },
+  {
+   "ps": "سړک",
+   "baca": "saṛak",
+   "id": "jalan raya"
+  },
+  {
+   "ps": "بازار",
+   "baca": "bāzār",
+   "id": "pasar"
+  },
+  {
+   "ps": "لار",
+   "baca": "lār",
+   "id": "jalan, rute"
+  },
+  {
+   "ps": "نږدې",
+   "baca": "nəẓde",
+   "id": "dekat"
+  },
+  {
+   "ps": "مخې ته",
+   "baca": "makhe ta",
+   "id": "di depan"
+  },
+  {
+   "ps": "شا ته",
+   "baca": "shā ta",
+   "id": "di belakang"
+  },
+  {
+   "ps": "مینځ",
+   "baca": "mīndz",
+   "id": "tengah"
+  },
+  {
+   "ps": "بېرته",
+   "baca": "berta",
+   "id": "kembali"
+  },
+  {
+   "ps": "وروسته",
+   "baca": "wrūsta",
+   "id": "sesudah"
+  },
+  {
+   "ps": "نن",
+   "baca": "nən",
+   "id": "hari ini"
+  },
+  {
+   "ps": "سبا",
+   "baca": "sabā",
+   "id": "besok"
+  },
+  {
+   "ps": "پېژنم",
+   "baca": "pezhanəm",
+   "id": "saya mengenal"
+  },
+  {
+   "ps": "ټرافیک",
+   "baca": "ṭrāfīk",
+   "id": "lalu lintas"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bagian belakang pasangan yang hilang.",
+   "items": [
+    "زه په کابل ____ یم.",
+    "مونږ له کوره ____ ځو.",
+    "زه د ملګري ____ ځم.",
+    "تر سبا ____ انتظار کوم.",
+    "پر مېز ____ کتاب پروت دی."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Saya di Kabul.",
+    "Kami pergi ke pasar.",
+    "Dia datang dari rumah.",
+    "Buku ini untuk Anda.",
+    "Saya pergi bersama teman."
+   ]
+  },
+  {
+   "prompt": "Ubah kata dalam kurung ke bentuk miring yang tepat.",
+   "items": [
+    "له ____ څخه (کور)",
+    "تر ____ پورې (باغ)",
+    "د ____ سره (ښځه)",
+    "____ ته (زه)",
+    "د ____ کور (هغه، perempuan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "یم / زه / کې / کابل / په",
+    "ځو / مونږ / ته / بازار",
+    "ځم / زه / سره / ملګري / د",
+    "دی / پروت / کتاب / کې / موټر / په",
+    "ځو / کوره / له / څخه / مونږ"
+   ]
+  }
+ ],
+ "answers": [
+  "کې — څخه — سره — پورې — باندې",
+  "زه په کابل کې یم. — مونږ بازار ته ځو. — هغه له کوره څخه راځي. — دا کتاب ستاسو لپاره دی. — زه د ملګري سره ځم.",
+  "کوره — باغه — ښځې — ما — هغې",
+  "زه په کابل کې یم. — مونږ بازار ته ځو. — زه د ملګري سره ځم. — کتاب په موټر کې پروت دی. — مونږ له کوره څخه ځو."
+ ],
+ "wave": "Ambil sepuluh benda di sekitarmu dan katakan di mana masing-masing berada, lengkap dengan kedua bagian pasangannya. Kalau ada satu saja yang keluar tanpa کې di belakangnya, ulangi sepuluh-sepuluhnya dari awal."
+}

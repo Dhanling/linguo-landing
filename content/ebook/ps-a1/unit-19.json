@@ -1,0 +1,568 @@
+{
+ "title": "Menanyakan jalan",
+ "title_target": "لار پوښتل",
+ "goal": "Bertanya arah, mengerti jawabannya, dan bepergian dengan kendaraan umum — unit yang mengumpulkan kembali kata depan unit 6, perintah unit 16, dan angka unit 7 dalam satu kerja nyata.",
+ "bekal": [
+  "menanyakan arah dan mengerti petunjuk yang diberikan",
+  "menyebut alat perhubungan dan menawar ongkosnya",
+  "menyatakan jarak dan waktu tempuh"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — د کوڅې پر سر",
+   "intro": "Budi tersesat di antara gang-gang pasar tua. Peta di ponsel tidak menolong, tetapi seorang penjual roti punya waktu lebih banyak daripada peta mana pun.",
+   "lines": [
+    {
+     "speaker": "بودي:",
+     "text": "بخښنه غواړم، یوه پوښتنه لرم.",
+     "baca": "bakhṣəna ghwāṛəm, yawa pūṣtəna larəm.",
+     "id": "Permisi, saya mau bertanya.",
+     "literal": "maaf mau-saya, satu pertanyaan punya-saya."
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "ووایه، ورورجانه.",
+     "baca": "wə́wāya, wrorjāna.",
+     "id": "Katakan, saudaraku.",
+     "literal": "katakanlah, saudara-sayang."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه د پښتنو باغ لټوم. چېرته دی؟",
+     "baca": "zə də paṣtano bāgh laṭawəm. cherta day?",
+     "id": "Saya mencari Taman Pashtunistan. Di mana letaknya?",
+     "literal": "saya punya Pashtun kebun cari-saya. di-mana adalah?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "لرې نه دی. مخ ته ولاړ شه، بیا ښي لور ته.",
+     "baca": "lare nə day. makh ta wlāṛ sha, byā ṣəy lor ta.",
+     "id": "Tidak jauh. Jalan lurus, lalu belok kanan.",
+     "literal": "jauh tidak adalah. depan ke pergi jadilah, lalu kanan arah ke."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "څومره مخ ته؟",
+     "baca": "tsomra makh ta?",
+     "id": "Lurus seberapa jauh?",
+     "literal": "seberapa depan ke?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "شاوخوا درې سوه متره. د جومات تر څنګه تېر شه.",
+     "baca": "shāwkhwā dre swa metra. də jumāt tər tsanga ter sha.",
+     "id": "Kira-kira tiga ratus meter. Lewati sisi masjid.",
+     "literal": "sekitar tiga ratus meter. punya masjid dari samping lewat jadilah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "له جومات وروسته څه شته؟",
+     "baca": "lə jumāt wrūsta tsə shta?",
+     "id": "Sesudah masjid ada apa?",
+     "literal": "dari masjid sesudah apa ada?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "یو لوی څلورلاری. هلته کیڼ لور ته وګرځه.",
+     "baca": "yaw loy tsalorlārī. halta kīṇ lor ta wə́gardza.",
+     "id": "Sebuah perempatan besar. Di sana belok kiri.",
+     "literal": "satu besar perempatan. di-sana kiri arah ke belok jadilah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او باغ به ښکاره وي؟",
+     "baca": "aw bāgh ba ṣkāra wī?",
+     "id": "Dan tamannya akan terlihat?",
+     "literal": "dan kebun akan kelihatan biasa-ada?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "هو، سمدلاسه. لویه دروازه یې شنه ده.",
+     "baca": "ho, samdlāsa. lawya darwāza ye shna da.",
+     "id": "Ya, langsung kelihatan. Gerbang besarnya berwarna hijau.",
+     "literal": "ya, segera. besar pintu punya-dia hijau adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "په پښو څومره وخت نیسي؟",
+     "baca": "pə ṣpo tsomra wakht nīsī?",
+     "id": "Jalan kaki makan waktu berapa lama?",
+     "literal": "dengan kaki-kaki seberapa waktu ambil-dia?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "لس دقیقې، نه ډېر. که ستړی یې، رکشه ونیسه.",
+     "baca": "las daqīqe, nə ḍer. ka stəṛay ye, riksha wə́nīsa.",
+     "id": "Sepuluh menit, tidak lebih. Kalau kamu lelah, naik bajaj saja.",
+     "literal": "sepuluh menit, tidak banyak. kalau lelah ada-kamu, bajaj ambillah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "رکشه څومره اخلي؟",
+     "baca": "riksha tsomra akhlī?",
+     "id": "Bajaj minta berapa?",
+     "literal": "bajaj seberapa ambil-dia?"
+    },
+    {
+     "speaker": "ناناوی:",
+     "text": "پنځوس افغانۍ. خو مخکې بیه وټاکه!",
+     "baca": "pindzos afghānəy. kho məkhke bīya wə́ṭāka!",
+     "id": "Lima puluh afghani. Tapi tentukan harganya lebih dulu!",
+     "literal": "lima-puluh afghani. tapi sebelum harga tentukanlah!"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ډېره مننه. ستړی مه شې!",
+     "baca": "ḍera manana. stəṛay ma she!",
+     "id": "Terima kasih banyak. Semoga tidak lelah!",
+     "literal": "banyak terima-kasih. lelah jangan jadi-kamu!"
+    }
+   ],
+   "notes": [
+    "Sapaan ورورجانه berarti \"saudaraku sayang\", dan orang Afghanistan memakainya kepada orang asing yang seumuran. Bentuk lain yang akan kamu dengar: **لالا** *lālā* (kakak laki-laki, kepada yang lebih tua), **کاکا** *kākā* (paman, kepada laki-laki jauh lebih tua), **خورجانې** kepada perempuan.",
+    "Petunjuk arah bahasa Pashto memakai bentuk perintah untuk ته, bahkan kepada orang asing. Kalimat مخ ته ولاړ شه bukan tidak sopan; ia bentuk yang biasa untuk memberi petunjuk, dan penjual roti yang ramah pun akan memakainya.",
+    "Kata لور berarti \"arah\" dan selalu berpasangan dengan kata belakang ته — misalnya ښي **لور ته** untuk ke arah kanan · کیڼ **لور ته** untuk ke arah kiri. Perhatikan bahwa لور di sini bukan kata yang sama dengan لور yang berarti anak perempuan; keduanya kebetulan ditulis sama.",
+    "Ungkapan تر څنګه تېر شه berarti \"lewati sisinya\". Kata kerja تېرېدل (lewat) muncul di banyak petunjuk arah, dan ia berpasangan dengan تر ... څنګه seperti pasangan-pasangan di unit 6.",
+    "⚠️ Nasihat مخکې بیه وټاکه (tentukan harga lebih dulu) berlaku untuk taksi, bajaj, dan semua kendaraan yang tidak berargometer. Menanyakan harga sesudah sampai adalah cara tercepat untuk membayar dua kali lipat, dan itu berlaku di mana pun, bukan hanya di Afghanistan.",
+    "Jarak sering disebut dengan waktu tempuh, bukan meter. Jawaban yang paling sering kamu dengar adalah لس دقیقې (sepuluh menit) atau نږدې دی (dekat), dan angka meter justru jarang. Kalau kamu perlu ketepatan, tanyakan dua kali dengan cara yang berbeda."
+   ],
+   "grammars": [
+    {
+     "title": "Bertanya arah, dan mengerti jawabannya",
+     "body": [
+      "Tiga pertanyaan di baris pertama tabel menutup hampir semua keperluan. Yang lebih sulit justru mengerti jawabannya, dan karena itu baris keempat sampai kedelapan pantas kamu hafal sebagai bunyi utuh.",
+      "Kalau kamu tidak menangkap jawabannya, jangan mengangguk. Katakan **بخښنه، بیا ووایه** atau tunjuk arah dengan tanganmu dan tanyakan **دې لور ته؟** — orang akan mengoreksi dengan senang hati."
+     ],
+     "table": {
+      "head": [
+       "Pashto",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "... چېرته دی؟",
+        "... cherta day",
+        "... di mana?"
+       ],
+       [
+        "... ته څنګه ولاړ شم؟",
+        "... ta tsənga wlāṛ shəm",
+        "Bagaimana saya ke ...?"
+       ],
+       [
+        "دلته نږدې ... شته؟",
+        "dəlta nəẓde ... shta",
+        "Di dekat sini ada ...?"
+       ],
+       [
+        "مخ ته ولاړ شه",
+        "makh ta wlāṛ sha",
+        "Jalan lurus"
+       ],
+       [
+        "ښي لور ته وګرځه",
+        "ṣəy lor ta wə́gardza",
+        "Belok kanan"
+       ],
+       [
+        "کیڼ لور ته وګرځه",
+        "kīṇ lor ta wə́gardza",
+        "Belok kiri"
+       ],
+       [
+        "بېرته وګرځه",
+        "berta wə́gardza",
+        "Putar balik"
+       ],
+       [
+        "تر څنګه تېر شه",
+        "tər tsanga ter sha",
+        "Lewati sisinya"
+       ],
+       [
+        "څلورلاری",
+        "tsalorlārī",
+        "perempatan"
+       ],
+       [
+        "دویمه کوڅه",
+        "dwayama kūcha",
+        "gang kedua"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Jarak dan waktu tempuh",
+     "body": [
+      "Bahasa Pashto menyatakan jarak dengan kata kerja **وخت نیسي** (memakan waktu) atau langsung dengan lamanya. Untuk cara perjalanannya dipakai pasangan **په ... کې** untuk kendaraan tertutup dan **په پښو** untuk jalan kaki.",
+      "Perhatikan bentuk په پښو: kata پښه (kaki) berdiri di bentuk jamak miring پښو. Ini bentuk yang dipasang di unit 6, dan di sini ia bekerja tanpa kata belakang apa pun."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "څومره لرې دی؟",
+        "tsomra lare day",
+        "Berapa jauh?"
+       ],
+       [
+        "څومره وخت نیسي؟",
+        "tsomra wakht nīsī",
+        "Makan waktu berapa lama?"
+       ],
+       [
+        "لس دقیقې په پښو",
+        "las daqīqe pə ṣpo",
+        "Sepuluh menit jalan kaki"
+       ],
+       [
+        "نږدې دی",
+        "nəẓde day",
+        "Dekat"
+       ],
+       [
+        "ډېر لرې دی",
+        "ḍer lare day",
+        "Sangat jauh"
+       ],
+       [
+        "په موټر کې نیم ساعت",
+        "pə moṭar ke nīm sā'at",
+        "Setengah jam naik mobil"
+       ],
+       [
+        "شاوخوا درې سوه متره",
+        "shāwkhwā dre swa metra",
+        "Kira-kira tiga ratus meter"
+       ],
+       [
+        "دوه ساعته لار ده",
+        "dwa sā'ata lār da",
+        "Dua jam perjalanan"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kendaraan, tempat, dan bepergian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "موټر",
+       "moṭar",
+       "mobil"
+      ],
+      [
+       "ټکسي",
+       "ṭaksī",
+       "taksi"
+      ],
+      [
+       "رکشه",
+       "riksha",
+       "bajaj roda tiga"
+      ],
+      [
+       "بس",
+       "bas",
+       "bus"
+      ],
+      [
+       "ملي بس",
+       "millī bas",
+       "bus kota kecil"
+      ],
+      [
+       "بایسکل",
+       "bāysikl",
+       "sepeda"
+      ],
+      [
+       "موټرسایکل",
+       "moṭarsāykl",
+       "sepeda motor"
+      ],
+      [
+       "الوتکه",
+       "alwatka",
+       "pesawat"
+      ],
+      [
+       "هوایي ډګر",
+       "hawāyī ḍagar",
+       "bandara"
+      ],
+      [
+       "اډه",
+       "aḍa",
+       "terminal, halte"
+      ],
+      [
+       "ټکټ",
+       "ṭikaṭ",
+       "tiket"
+      ],
+      [
+       "سفر",
+       "safar",
+       "perjalanan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tempat yang perlu kamu bisa tanyakan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti",
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "بانک",
+       "bānk",
+       "bank",
+       "پارک",
+       "pārk",
+       "taman"
+      ],
+      [
+       "پوسته خانه",
+       "posta khāna",
+       "kantor pos",
+       "موزیم",
+       "mūzyam",
+       "museum"
+      ],
+      [
+       "دواخانه",
+       "dawākhāna",
+       "apotek",
+       "کتابتون",
+       "kitābtūn",
+       "perpustakaan"
+      ],
+      [
+       "روغتون",
+       "roghtūn",
+       "rumah sakit",
+       "سفارت",
+       "safārat",
+       "kedutaan"
+      ],
+      [
+       "هوټل",
+       "hoṭal",
+       "hotel",
+       "پولیس",
+       "polīs",
+       "polisi"
+      ],
+      [
+       "جومات",
+       "jumāt",
+       "masjid",
+       "تشناب",
+       "tashnāb",
+       "kamar kecil"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat yang membuatmu tidak pernah benar-benar tersesat",
+     "items": [
+      "Untuk membuka: **بخښنه غواړم، یوه پوښتنه لرم** — \"permisi, saya mau bertanya\". Kalimat ini membuka pintu di mana pun.",
+      "Untuk memastikan: **دې لور ته؟** *de lor ta* — \"ke arah ini?\", sambil menunjuk dengan seluruh tangan, bukan dengan satu jari.",
+      "Untuk minta diulang: **بخښنه، بیا ووایه** — \"maaf, tolong ulangi\". Tambahkan **ورو** kalau perlu lebih pelan.",
+      "Untuk menyerah dengan sopan: **زه دلته نوی یم** *zə dəlta naway yəm* — \"saya baru di sini\". Kalimat ini hampir selalu menghasilkan pertolongan yang lebih sabar, dan kadang menghasilkan pengantar sampai ke tempatnya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Menunjuk, dan hal-hal kecil yang penting",
+     "items": [
+      "Tunjuk arah dengan **seluruh tangan terbuka**, bukan dengan telunjuk. Menunjuk orang dengan telunjuk dianggap kasar di sebagian besar Afghanistan.",
+      "Kalau kamu perempuan dan bertanya kepada laki-laki asing, jarak dan nada suara yang tenang lebih penting daripada kata-katanya. Bertanya kepada perempuan lain atau kepada penjual di kios adalah pilihan yang paling nyaman.",
+      "Orang Afghanistan jarang mengatakan \"saya tidak tahu\" untuk pertanyaan arah, karena itu terasa seperti menolak menolong. Kalau jawabannya ragu-ragu, tanyakan sekali lagi kepada orang kedua sebelum berjalan jauh.",
+      "Alamat rumah hampir tidak dipakai. Yang dipakai adalah patokan: **د جومات تر څنګه** (di sisi masjid), **د بانک مخې ته** (di depan bank). Belajarlah menyebut patokan, bukan nomor rumah."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "لار",
+   "baca": "lār",
+   "id": "jalan, rute"
+  },
+  {
+   "ps": "لور",
+   "baca": "lor",
+   "id": "arah"
+  },
+  {
+   "ps": "ښي لور",
+   "baca": "ṣəy lor",
+   "id": "arah kanan"
+  },
+  {
+   "ps": "کیڼ لور",
+   "baca": "kīṇ lor",
+   "id": "arah kiri"
+  },
+  {
+   "ps": "مخ ته",
+   "baca": "makh ta",
+   "id": "lurus ke depan"
+  },
+  {
+   "ps": "څلورلاری",
+   "baca": "tsalorlārī",
+   "id": "perempatan"
+  },
+  {
+   "ps": "ګرځېدل",
+   "baca": "gardzedəl",
+   "id": "berbelok, berkeliling"
+  },
+  {
+   "ps": "تېرېدل",
+   "baca": "teredəl",
+   "id": "lewat, melintasi"
+  },
+  {
+   "ps": "لټول",
+   "baca": "laṭawəl",
+   "id": "mencari"
+  },
+  {
+   "ps": "نیول",
+   "baca": "nīwəl",
+   "id": "mengambil, memegang"
+  },
+  {
+   "ps": "ټاکل",
+   "baca": "ṭākəl",
+   "id": "menentukan"
+  },
+  {
+   "ps": "رکشه",
+   "baca": "riksha",
+   "id": "bajaj roda tiga"
+  },
+  {
+   "ps": "اډه",
+   "baca": "aḍa",
+   "id": "terminal, halte"
+  },
+  {
+   "ps": "ټکټ",
+   "baca": "ṭikaṭ",
+   "id": "tiket"
+  },
+  {
+   "ps": "سفر",
+   "baca": "safar",
+   "id": "perjalanan"
+  },
+  {
+   "ps": "متره",
+   "baca": "metra",
+   "id": "meter"
+  },
+  {
+   "ps": "شاوخوا",
+   "baca": "shāwkhwā",
+   "id": "kira-kira, sekitar"
+  },
+  {
+   "ps": "ښکاره",
+   "baca": "ṣkāra",
+   "id": "terlihat, jelas"
+  },
+  {
+   "ps": "سمدلاسه",
+   "baca": "samdlāsa",
+   "id": "segera, langsung"
+  },
+  {
+   "ps": "ورورجان",
+   "baca": "wrorjān",
+   "id": "saudaraku (sapaan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Permisi, saya mau bertanya.",
+    "Taman itu di mana?",
+    "Bagaimana saya ke bandara?",
+    "Berapa jauh?",
+    "Saya baru di sini."
+   ]
+  },
+  {
+   "prompt": "Lengkapi petunjuk arahnya.",
+   "items": [
+    "مخ ته ____. (jalanlah)",
+    "ښي لور ته ____. (beloklah)",
+    "کیڼ لور ته ____. (beloklah)",
+    "د جومات تر څنګه ____. (lewatlah)",
+    "بېرته ____. (putar balik)"
+   ]
+  },
+  {
+   "prompt": "Sebutkan tempatnya dalam bahasa Pashto.",
+   "items": [
+    "rumah sakit",
+    "apotek",
+    "bank",
+    "masjid",
+    "kamar kecil"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "دی / چېرته / باغ / ؟",
+    "شه / ولاړ / ته / مخ",
+    "وګرځه / ته / لور / ښي",
+    "نیسي / وخت / څومره / ؟",
+    "یم / نوی / دلته / زه"
+   ]
+  }
+ ],
+ "answers": [
+  "بخښنه غواړم، یوه پوښتنه لرم. — باغ چېرته دی؟ — هوایي ډګر ته څنګه ولاړ شم؟ — څومره لرې دی؟ — زه دلته نوی یم.",
+  "ولاړ شه — وګرځه — وګرځه — تېر شه — وګرځه",
+  "روغتون — دواخانه — بانک — جومات — تشناب",
+  "باغ چېرته دی؟ — مخ ته ولاړ شه. — ښي لور ته وګرځه. — څومره وخت نیسي؟ — زه دلته نوی یم."
+ ],
+ "wave": "Bayangkan jalan dari rumahmu ke tempat kerja atau kampus, lalu ucapkan petunjuknya dalam bahasa Pashto seolah kepada orang asing. Empat kalimat sudah cukup, dan kalau kamu tersendat di satu belokan, di situlah kata yang perlu kamu tambahkan besok."
+}

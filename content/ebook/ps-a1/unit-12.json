@@ -1,0 +1,579 @@
+{
+ "title": "Kemarin saya pergi",
+ "title_target": "پرون څه وشول؟",
+ "goal": "Menceritakan apa yang terjadi kemarin dengan kata kerja yang tidak berobjek — separuh yang mudah dari kalimat lampau, dipasang penuh sebelum separuh yang sulit datang di unit berikutnya.",
+ "bekal": [
+  "menceritakan perjalanan, kedatangan, dan kejadian kemarin",
+  "memakai bentuk lampau kata kerja tak berobjek yang ikut pelakunya",
+  "memakai وم، وې، و، وه sebagai kata \"adalah\" lampau"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — د پرون کیسه",
+   "intro": "Sabtu pagi. Najib baru kembali dari Mazar-e Sharif dan Budi ingin tahu semuanya sekaligus.",
+   "lines": [
+    {
+     "speaker": "بودي:",
+     "text": "نجیبه، پرون چېرته وې؟",
+     "baca": "Najība, parūn cherta we?",
+     "id": "Najib, kemarin kamu di mana?",
+     "literal": "Najib, kemarin di-mana ada-kamu-lampau?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "زه مزار شریف ته ولاړم.",
+     "baca": "zə Mazār-e Sharīf ta wlāṛəm.",
+     "id": "Saya pergi ke Mazar-e Sharif.",
+     "literal": "saya Mazar-e Sharif ke pergi-saya-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "څنګه ولاړې؟ په موټر کې؟",
+     "baca": "tsənga wlāṛe? pə moṭar ke?",
+     "id": "Pergi bagaimana? Naik mobil?",
+     "literal": "bagaimana pergi-kamu-lampau? di mobil dalam?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "نه، په الوتکه کې ولاړم. لار اوږده وه.",
+     "baca": "nə, pə alwatka ke wlāṛəm. lār ūẓda wa.",
+     "id": "Bukan, saya naik pesawat. Perjalanannya panjang.",
+     "literal": "tidak, di pesawat dalam pergi-saya-lampau. jalan panjang adalah-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او څه وخت راغلې؟",
+     "baca": "aw tsə wakht rāghle?",
+     "id": "Dan kamu sampai jam berapa?",
+     "literal": "dan apa waktu datang-kamu-lampau?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "ماښام لس بجې راغلم. ډېر ستړی وم.",
+     "baca": "māṣām las baje rāghləm. ḍer stəṛay wəm.",
+     "id": "Malam jam sepuluh saya sampai. Saya sangat lelah.",
+     "literal": "senja sepuluh jam datang-saya-lampau. sangat lelah ada-saya-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زرغونه هم ولاړه؟",
+     "baca": "Zarghūna ham wlāṛa?",
+     "id": "Zarghuna juga ikut pergi?",
+     "literal": "Zarghuna juga pergi-dia-perempuan-lampau?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "هو، هغه هم ولاړه. خو هغه پرون بېرته راغله.",
+     "baca": "ho, hagha ham wlāṛa. kho hagha parūn berta rāghla.",
+     "id": "Ya, dia juga pergi. Tapi dia sudah kembali kemarin.",
+     "literal": "ya, dia juga pergi-dia-perempuan-lampau. tapi dia kemarin kembali datang-dia-perempuan-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ولې ولاړل؟ کار و؟",
+     "baca": "wale wlāṛəl? kār wə?",
+     "id": "Kenapa kalian pergi? Ada urusan?",
+     "literal": "kenapa pergi-mereka-lampau? pekerjaan ada-lampau?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "نه، د ترور واده و. ټوله کورنۍ راټوله شوه.",
+     "baca": "nə, də tror wāda wə. ṭola kornəy rāṭola shwa.",
+     "id": "Bukan, pernikahan bibi. Seluruh keluarga berkumpul.",
+     "literal": "tidak, punya bibi pernikahan ada-lampau. seluruh keluarga berkumpul jadi-dia-perempuan-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "واده څنګه و؟",
+     "baca": "wāda tsənga wə?",
+     "id": "Pernikahannya bagaimana?",
+     "literal": "pernikahan bagaimana ada-lampau?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "ډېر ښکلی و! درې سوه کسان راغلل.",
+     "baca": "ḍer ṣkulay wə! dre swa kasān rāghləl.",
+     "id": "Indah sekali! Tiga ratus orang datang.",
+     "literal": "sangat indah ada-lampau! tiga ratus orang datang-mereka-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "درې سوه؟ زه هېڅکله دومره لوی واده نه یم لیدلی.",
+     "baca": "dre swa? zə hetskəla domra loy wāda nə yəm līdəlay.",
+     "id": "Tiga ratus? Saya belum pernah melihat pernikahan sebesar itu.",
+     "literal": "tiga ratus? saya tidak-pernah sebanyak-itu besar pernikahan tidak ada-saya melihat-sudah."
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "دلته دا معمولي ده. بل ځل ته هم راځه.",
+     "baca": "dəlta dā ma'mūlī da. bəl dzal tə ham rādza.",
+     "id": "Di sini itu biasa. Lain kali kamu ikut juga.",
+     "literal": "di-sini ini biasa adalah. lain kali kamu juga datanglah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "حتماً! خو زه لا نه پوهېږم څنګه ونڅېږم.",
+     "baca": "hatman! kho zə lā nə poheẓəm tsənga wə́nadzeẓəm.",
+     "id": "Pasti! Tapi saya belum tahu cara menari.",
+     "literal": "pasti! tapi saya masih tidak mengerti-saya bagaimana menari-selesai-saya."
+    }
+   ],
+   "notes": [
+    "Kata kerja yang **tidak berobjek** — pergi, datang, duduk, tidur, bangun, jadi — membuat kalimat lampau yang perilakunya masuk akal: pelakunya tetap bentuk biasa, dan kata kerjanya ikut pelakunya. Ini separuh yang mudah, dan seluruh unit ini dipakai untuk memasangnya sampai otomatis.",
+    "⚠️ Kata kerjanya ikut **jenis kelamin** pelakunya. Najib berkata زه **ولاړم**, Zarghuna berkata زه **ولاړمه**; untuk orang ketiga, laki-laki **ولاړ** dan perempuan **ولاړه**. Inilah tempat jenis kelamin yang dipasang di unit 2 akhirnya bekerja penuh.",
+    "Perhatikan bahwa ولاړم adalah bentuk lampau dari تلل, bukan dari kata lain. Bahasa Pashto punya beberapa kata kerja yang bentuk lampaunya sama sekali berbeda dari bentuk sekarangnya — persis seperti *go* dan *went* dalam bahasa Inggris, dan tidak ada gunanya melawannya.",
+    "Kata \"adalah\" lampau adalah وم، وې، و، وه، وو. Kalimat زه ستړی **وم** berarti \"saya lelah\", واده ښکلی **و** berarti \"pernikahannya indah\". Bentuk-bentuk ini memuat huruf و saja dan mudah dilewatkan telinga; dengarkan baik-baik.",
+    "Pernikahan Afghanistan memang sebesar itu. Tiga ratus tamu adalah jumlah menengah, dan undangan untuk kerabat jauh maupun tetangga bukan basa-basi. Kalau kamu diundang, datanglah — menolak undangan pernikahan jauh lebih berat daripada menolak tawaran teh.",
+    "Ungkapan نه یم لیدلی berarti \"saya belum pernah melihat\". Bentuk ini disebut bentuk sudah-selesai, dan ia dibangun dari kata kerja ditambah bentuk \"adalah\". Kamu belum perlu membuatnya sendiri; cukup kenali polanya kalau mendengarnya."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat lampau untuk kata kerja tak berobjek",
+     "body": [
+      "Bentuknya dibuat dari badan lampau kata kerja ditambah akhiran yang mengikuti pelakunya. Untuk orang ketiga tunggal, akhiran laki-lakinya justru **kosong** — itulah yang membuatnya sering terdengar seperti kata yang terpotong.",
+      "Perhatikan kolom perempuan. Bentuk ولاړه dan راغله mudah dikira bentuk jamak; yang membedakannya cuma satu huruf. Baca keduanya keras-keras sekarang, karena kamu akan memerlukannya setiap kali menceritakan sesuatu tentang seorang perempuan."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "تلل pergi",
+       "راتلل datang",
+       "کېناستل duduk",
+       "کېدل jadi"
+      ],
+      "rows": [
+       [
+        "زه (lk)",
+        "ولاړم *wlāṛəm*",
+        "راغلم *rāghləm*",
+        "کېناستم",
+        "شوم *shwəm*"
+       ],
+       [
+        "زه (pr)",
+        "ولاړمه *wlāṛəma*",
+        "راغلمه",
+        "کېناستمه",
+        "شومه"
+       ],
+       [
+        "ته",
+        "ولاړې *wlāṛe*",
+        "راغلې *rāghle*",
+        "کېناستې",
+        "شوې *shwe*"
+       ],
+       [
+        "هغه (lk)",
+        "ولاړ *wlāṛ*",
+        "راغی *rāghay*",
+        "کېناست",
+        "شو *shū*"
+       ],
+       [
+        "هغه (pr)",
+        "ولاړه *wlāṛa*",
+        "راغله *rāghla*",
+        "کېناسته",
+        "شوه *shwa*"
+       ],
+       [
+        "مونږ",
+        "ولاړو *wlāṛū*",
+        "راغلو *rāghlū*",
+        "کېناستو",
+        "شو"
+       ],
+       [
+        "تاسو",
+        "ولاړئ *wlāṛəy*",
+        "راغلئ *rāghləy*",
+        "کېناستئ",
+        "شوئ"
+       ],
+       [
+        "هغوی",
+        "ولاړل *wlāṛəl*",
+        "راغلل *rāghləl*",
+        "کېناستل",
+        "شول *shwəl*"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Kata \"adalah\" bentuk lampau",
+     "body": [
+      "Bentuk lampau dari \"adalah\" jauh lebih pendek daripada bentuk sekarangnya, dan seluruhnya dibangun dari huruf و. Dalam percakapan cepat ia hampir tidak terdengar — dengarkan panjang vokalnya, bukan hurufnya.",
+      "Perbedaan dengan bahasa Indonesia yang perlu disadari: bahasa Pashto **wajib** memakainya. Kalimat \"kemarin dingin\" tidak bisa dibiarkan tanpa kata kerja; yang benar پرون سوړ **و**."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Sekarang",
+       "Lampau",
+       "Contoh lampau"
+      ],
+      "rows": [
+       [
+        "زه",
+        "یم",
+        "**وم** *wəm*",
+        "زه ستړی وم"
+       ],
+       [
+        "ته",
+        "یې",
+        "**وې** *we*",
+        "ته چېرته وې؟"
+       ],
+       [
+        "هغه (lk)",
+        "دی",
+        "**و** *wə*",
+        "واده ښکلی و"
+       ],
+       [
+        "هغه (pr)",
+        "ده",
+        "**وه** *wa*",
+        "لار اوږده وه"
+       ],
+       [
+        "مونږ",
+        "یو",
+        "**وو** *wū*",
+        "مونږ هلته وو"
+       ],
+       [
+        "تاسو",
+        "یاست",
+        "**واست** *wāst*",
+        "تاسو چېرته واست؟"
+       ],
+       [
+        "هغوی",
+        "دي",
+        "**وو** *wū*",
+        "هغوی ستړي وو"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bercerita tentang kemarin",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dasar",
+      "Arti",
+      "\"saya ... kemarin\"",
+      "\"dia (pr) ... kemarin\""
+     ],
+     "rows": [
+      [
+       "تلل",
+       "pergi",
+       "ولاړم",
+       "ولاړه"
+      ],
+      [
+       "راتلل",
+       "datang",
+       "راغلم",
+       "راغله"
+      ],
+      [
+       "کېناستل",
+       "duduk",
+       "کېناستم",
+       "کېناسته"
+      ],
+      [
+       "پاڅېدل",
+       "bangun",
+       "پاڅېدم",
+       "پاڅېده"
+      ],
+      [
+       "ویده کېدل",
+       "tidur",
+       "ویده شوم",
+       "ویده شوه"
+      ],
+      [
+       "رسېدل",
+       "sampai, tiba",
+       "ورسېدم",
+       "ورسېده"
+      ],
+      [
+       "ګرځېدل",
+       "jalan-jalan",
+       "وګرځېدم",
+       "وګرځېده"
+      ],
+      [
+       "پوهېدل",
+       "mengerti",
+       "پوه شوم",
+       "پوه شوه"
+      ],
+      [
+       "ستړی کېدل",
+       "menjadi lelah",
+       "ستړی شوم",
+       "ستړې شوه"
+      ],
+      [
+       "کېدل",
+       "jadi, terjadi",
+       "شوم",
+       "شوه"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata waktu untuk masa lampau"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "پرون",
+       "parūn",
+       "kemarin"
+      ],
+      [
+       "ورځ مخکې",
+       "wradz məkhke",
+       "sehari sebelumnya"
+      ],
+      [
+       "تېره اونۍ",
+       "tera onəy",
+       "minggu lalu"
+      ],
+      [
+       "تېره میاشت",
+       "tera myāsht",
+       "bulan lalu"
+      ],
+      [
+       "تېر کال",
+       "ter kāl",
+       "tahun lalu"
+      ],
+      [
+       "پخوا",
+       "pakhwā",
+       "dulu, dahulu"
+      ],
+      [
+       "هغه وخت",
+       "hagha wakht",
+       "waktu itu"
+      ],
+      [
+       "څو ورځې مخکې",
+       "tso wradze məkhke",
+       "beberapa hari lalu"
+      ],
+      [
+       "سهار وختي",
+       "sahār wakhtī",
+       "pagi-pagi tadi"
+      ],
+      [
+       "تېره شپه",
+       "tera shpa",
+       "tadi malam"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pernikahan Afghanistan, dan kata-katanya",
+     "items": [
+      "Kata **واده** *wāda* berarti pernikahan, **ناوې** *nāwe* pengantin perempuan, dan **زوم** *zūm* pengantin laki-laki.",
+      "Musik dan tariannya disebut **اتڼ** *atáṇ* — tarian lingkaran Pashtun yang berputar makin cepat, dan yang akan kamu diminta ikuti apakah kamu bisa atau tidak.",
+      "Ucapan selamat yang dipakai: **مبارک شه** *mubārak sha* — \"selamat\". Jawabannya **مننه** atau **خدای دې مبارک کړي**.",
+      "Undangan hampir selalu lisan dan berlaku untuk seluruh keluarga. Kalau kamu diundang sendirian dan datang bersama teman, itu tidak apa-apa — justru sebaliknya yang aneh."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Kenapa unit ini hanya separuh cerita",
+     "items": [
+      "Semua kata kerja di unit ini **tidak berobjek**: pergi, datang, duduk, tidur, jadi. Kamu tidak bisa \"pergi sesuatu\" atau \"datang sesuatu\".",
+      "Begitu kata kerjanya **punya objek** — membaca buku, makan roti, melihat orang — bahasa Pashto mengubah seluruh susunan kalimat lampaunya. Pelakunya berpindah ke bentuk miring, dan kata kerjanya berhenti mengikuti pelaku.",
+      "Itulah isi unit 13, dan itu satu-satunya hal yang dikerjakan unit itu. Jangan lompati unit ini untuk sampai ke sana lebih cepat: bentuk lampau di halaman ini adalah tanah yang dipijak unit berikutnya.",
+      "Uji dirimu sebelum melangkah: kalau kamu bisa mengatakan \"kemarin saya pergi ke pasar dan sampai jam lima\" tanpa berhenti, kamu siap."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "پرون",
+   "baca": "parūn",
+   "id": "kemarin"
+  },
+  {
+   "ps": "ولاړم",
+   "baca": "wlāṛəm",
+   "id": "saya pergi (lampau)"
+  },
+  {
+   "ps": "راغلم",
+   "baca": "rāghləm",
+   "id": "saya datang (lampau)"
+  },
+  {
+   "ps": "وم",
+   "baca": "wəm",
+   "id": "saya adalah (lampau)"
+  },
+  {
+   "ps": "و",
+   "baca": "wə",
+   "id": "dia adalah (lampau, lk)"
+  },
+  {
+   "ps": "وه",
+   "baca": "wa",
+   "id": "dia adalah (lampau, pr)"
+  },
+  {
+   "ps": "شوم",
+   "baca": "shwəm",
+   "id": "saya menjadi (lampau)"
+  },
+  {
+   "ps": "الوتکه",
+   "baca": "alwatka",
+   "id": "pesawat"
+  },
+  {
+   "ps": "اوږد",
+   "baca": "ūẓd",
+   "id": "panjang"
+  },
+  {
+   "ps": "ستړی",
+   "baca": "stəṛay",
+   "id": "lelah"
+  },
+  {
+   "ps": "واده",
+   "baca": "wāda",
+   "id": "pernikahan"
+  },
+  {
+   "ps": "ناوې",
+   "baca": "nāwe",
+   "id": "pengantin perempuan"
+  },
+  {
+   "ps": "اتڼ",
+   "baca": "atáṇ",
+   "id": "tarian lingkaran Pashtun"
+  },
+  {
+   "ps": "مبارک",
+   "baca": "mubārak",
+   "id": "selamat, diberkati"
+  },
+  {
+   "ps": "تېر",
+   "baca": "ter",
+   "id": "yang lalu"
+  },
+  {
+   "ps": "پخوا",
+   "baca": "pakhwā",
+   "id": "dulu"
+  },
+  {
+   "ps": "معمولي",
+   "baca": "ma'mūlī",
+   "id": "biasa"
+  },
+  {
+   "ps": "حتماً",
+   "baca": "hatman",
+   "id": "pasti"
+  },
+  {
+   "ps": "سوه",
+   "baca": "swa",
+   "id": "ratus"
+  },
+  {
+   "ps": "راټولېدل",
+   "baca": "rāṭoledəl",
+   "id": "berkumpul"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk lampau untuk pelaku زه (laki-laki).",
+   "items": [
+    "ځم",
+    "راځم",
+    "کېنم",
+    "کېږم",
+    "پاڅېږم"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk \"adalah\" lampau yang tepat.",
+   "items": [
+    "زه ستړی ____.",
+    "ته چېرته ____؟",
+    "واده ښکلی ____.",
+    "لار اوږده ____.",
+    "مونږ هلته ____."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Kemarin saya pergi ke Mazar-e Sharif.",
+    "Saya datang jam sepuluh malam.",
+    "Zarghuna juga pergi.",
+    "Saya sangat lelah.",
+    "Tiga ratus orang datang."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ولاړم / زه / ته / مزار / پرون",
+    "وم / ستړی / ډېر / زه",
+    "راغله / بېرته / هغه / پرون",
+    "و / ښکلی / ډېر / واده",
+    "راغلل / درې / کسان / سوه"
+   ]
+  }
+ ],
+ "answers": [
+  "ولاړم — راغلم — کېناستم — شوم — پاڅېدم",
+  "وم — وې — و — وه — وو",
+  "پرون زه مزار شریف ته ولاړم. — زه ماښام لس بجې راغلم. — زرغونه هم ولاړه. — زه ډېر ستړی وم. — درې سوه کسان راغلل.",
+  "پرون زه مزار ته ولاړم. — زه ډېر ستړی وم. — هغه پرون بېرته راغله. — واده ډېر ښکلی و. — درې سوه کسان راغلل."
+ ],
+ "wave": "Ceritakan kemarinmu sendiri dalam lima kalimat lampau, semuanya dengan kata kerja tak berobjek: bangun, pergi, sampai, duduk, tidur. Kalau kamu perempuan, pastikan tiap kata kerjanya berakhiran ـمه."
+}

@@ -1,0 +1,592 @@
+{
+ "title": "Jam berapa sekarang?",
+ "title_target": "وخت او ورځې",
+ "goal": "Menyebut jam, hari, dan membuat janji — dan membalik satu kebiasaan Indonesia yang paling sering menyesatkan: bahasa Pashto menghitung setengah jam MAJU, bukan mundur.",
+ "bekal": [
+  "menanyakan dan menyebut jam, termasuk setengah dan seperempat",
+  "menyebut tujuh hari dalam seminggu dan lima bagian hari",
+  "membuat janji dan menyepakati waktu bertemu"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — وعده",
+   "intro": "Sore hari. Najib harus bekerja besok, jadi mereka menyepakati kapan bertemu dan ke mana pergi.",
+   "lines": [
+    {
+     "speaker": "نجیب:",
+     "text": "بودي، سبا څو بجې پاڅېږئ؟",
+     "baca": "Būdī, sabā tso baje pātsīẓəy?",
+     "id": "Budi, besok Anda bangun jam berapa?",
+     "literal": "Budi, besok berapa jam bangun-kalian?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه تل شپږ بجې پاڅېږم. ولې؟",
+     "baca": "zə təl shpaẓ baje pātsīẓəm. wale?",
+     "id": "Saya selalu bangun jam enam. Kenapa?",
+     "literal": "saya selalu enam jam bangun-saya. kenapa?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "زه اته بجې کار ته ځم. مونږ اووه نیمې بجې ډوډۍ خورو.",
+     "baca": "zə atə baje kār ta dzəm. mūẓ owə nīme baje ḍoḍəy khorū.",
+     "id": "Saya berangkat kerja jam delapan. Kita sarapan setengah delapan.",
+     "literal": "saya delapan jam kerja ke pergi-saya. kami tujuh setengah jam makanan makan-kami."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "اووه نیمې بجې؟ دا اووه پنځه دېرش دی؟",
+     "baca": "owə nīme baje? dā owə pindzə-dersh day?",
+     "id": "Setengah delapan? Itu maksudnya pukul 07.35?",
+     "literal": "tujuh setengah jam? ini tujuh lima-tiga-puluh adalah?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "نه، اووه دېرش. نیمه تل مخکې ساعت ته اضافه کېږي.",
+     "baca": "nə, owə dersh. nīma təl məkhke sā'at ta izāfa keẓī.",
+     "id": "Bukan, 07.30. Setengah selalu ditambahkan ke jam yang sudah lewat.",
+     "literal": "tidak, tujuh tiga-puluh. setengah selalu depan jam ke tambahan jadi."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "آه، دا زمونږ برعکس دی. مونږ وایو نیمه اته.",
+     "baca": "āh, dā zmūẓ bar'aks day. mūẓ wāyū nīma atə.",
+     "id": "Ah, itu kebalikan dari kami. Kami bilang setengah delapan.",
+     "literal": "ah, ini punya-kami kebalikan adalah. kami berkata-kami setengah delapan."
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "هو، خارجیان تل دلته تېروځي.",
+     "baca": "ho, khārijiyān təl dəlta terodzī.",
+     "id": "Ya, orang asing selalu tersesat di sini.",
+     "literal": "ya, orang-asing selalu di-sini keliru-mereka."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ښه، اوس پوهېږم. تاسو کله بېرته راځئ؟",
+     "baca": "ṣa, os poheẓəm. tāso kəla berta rādzəy?",
+     "id": "Baik, sekarang saya mengerti. Anda kembali jam berapa?",
+     "literal": "baik, sekarang mengerti-saya. kalian kapan kembali datang-kalian?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "ماسپښین څلور بجې. بیا پارک ته ځو.",
+     "baca": "māspaṣīn tsalor baje. byā pārk ta dzū.",
+     "id": "Sore jam empat. Lalu kita ke taman.",
+     "literal": "sore empat jam. lalu taman ke pergi-kami."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او جمعه؟ جمعه هم کار کوئ؟",
+     "baca": "aw juma? juma ham kār kawəy?",
+     "id": "Dan hari Jumat? Hari Jumat juga bekerja?",
+     "literal": "dan Jumat? Jumat juga kerja lakukan-kalian?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "نه، جمعه رخصتي ده. هره جمعه کورنۍ راټولېږي.",
+     "baca": "nə, juma rukhsatī da. hara juma kornəy rāṭoleẓī.",
+     "id": "Tidak, Jumat hari libur. Setiap Jumat keluarga berkumpul.",
+     "literal": "tidak, Jumat libur adalah. setiap Jumat keluarga berkumpul."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "په اندونیزیا کې یکشنبه رخصتي وي.",
+     "baca": "pə Indonezyā ke yakshanbe rukhsatī wī.",
+     "id": "Di Indonesia hari Minggu yang libur.",
+     "literal": "di Indonesia dalam Minggu libur biasa-ada."
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "زمونږ اونۍ له شنبې څخه پیل کېږي.",
+     "baca": "zmūẓ onəy lə shanbe tsəkha pīl keẓī.",
+     "id": "Minggu kami dimulai dari hari Sabtu.",
+     "literal": "punya-kami minggu dari Sabtu-dari dari mulai jadi."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "نو سبا کومه ورځ ده؟",
+     "baca": "no sabā kūma wradz da?",
+     "id": "Jadi besok hari apa?",
+     "literal": "jadi besok mana hari adalah?"
+    },
+    {
+     "speaker": "نجیب:",
+     "text": "سبا سه شنبه ده. اووه نیمې بجې! هېر یې نه کړئ.",
+     "baca": "sabā se-shanbe da. owə nīme baje! her ye nə kṛəy.",
+     "id": "Besok hari Selasa. Setengah delapan! Jangan lupa.",
+     "literal": "besok Selasa adalah. tujuh setengah jam! lupa punya-dia tidak lakukan-kalian."
+    }
+   ],
+   "notes": [
+    "⚠️ Inilah jebakan yang paling banyak memakan korban di unit ini. Bahasa Indonesia menghitung setengah jam **mundur**: \"setengah delapan\" berarti tiga puluh menit **sebelum** pukul delapan. Bahasa Pashto menghitungnya **maju**: اووه نیمې بجې harfiahnya \"tujuh setengah\", dan artinya pukul 07.30. Bahasa Portugis, Hungaria, dan Persia melakukan hal yang sama, dan penutur Indonesia salah di ketiganya.",
+    "Cara paling aman untuk tidak pernah keliru: bayangkan jam yang sudah lewat, lalu tambahkan. Kalau jarum panjangnya baru meninggalkan angka tujuh, kamu berada di اووه نیمې, bukan نیمه اته. Kalau ragu di depan orang, sebutkan angkanya polos: اووه دېرش.",
+    "Kata بجې *baje* berarti \"jam\" dalam arti penunjuk waktu, dan ia dipakai jamak: درې **بجې** دي. Kata ساعت *sā'at* berarti jam sebagai lamanya waktu maupun benda arloji: درې **ساعته** انتظار وکړم (saya menunggu tiga jam).",
+    "Nama hari dipinjam seluruhnya dari bahasa Persia dan memakai angka: دوشنبه harfiahnya \"dua sesudah Sabtu\", سه شنبه \"tiga sesudah Sabtu\", dan seterusnya. Begitu kamu tahu شنبه berarti Sabtu, lima hari lainnya bisa dihitung sendiri.",
+    "Hari libur Afghanistan adalah **Jumat**, bukan Minggu, dan minggu kerjanya dimulai hari **Sabtu**. Kalau kamu membuat janji untuk \"akhir pekan\", pastikan kalian membicarakan hari yang sama — ini sumber salah paham yang jauh lebih sering daripada salah menyebut jam.",
+    "Kalimat هېر یې نه کړئ berarti \"jangan lupa\". Bentuk perintah larangan sebenarnya memakai مه, tetapi bentuk نه کړئ juga lazim dan terdengar sedikit lebih lembut. Perintah dan larangan dikupas penuh di unit 16."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Menyebut jam: setengah dihitung MAJU",
+     "body": [
+      "Pertanyaannya selalu sama: څو بجې دي؟ *tso baje dī*, \"jam berapa?\". Jawabannya angka ditambah بجې, dengan kata kerja jamak دي atau bentuk lampau وې.",
+      "Untuk seperempat sebelum jam berikutnya, bahasa Pashto memakai kata pinjaman Persia **پونې** *pūne*: پونې څلور berarti pukul 03.45. Bagian ini boleh kamu lewati dulu; menyebut angka polos selalu aman."
+     ],
+     "table": {
+      "head": [
+       "Jam",
+       "Pashto",
+       "Cara baca",
+       "Harfiah"
+      ],
+      "rows": [
+       [
+        "03.00",
+        "درې بجې دي",
+        "dre baje dī",
+        "tiga jam ada"
+       ],
+       [
+        "03.10",
+        "درې بجې او لس دقیقې",
+        "dre baje aw las daqīqe",
+        "tiga jam dan sepuluh menit"
+       ],
+       [
+        "03.15",
+        "درې او پاو",
+        "dre aw pāw",
+        "tiga dan seperempat"
+       ],
+       [
+        "03.30",
+        "درې نیمې بجې",
+        "dre nīme baje",
+        "⚠️ tiga setengah jam"
+       ],
+       [
+        "03.45",
+        "پونې څلور",
+        "pūne tsalor",
+        "kurang seperempat empat"
+       ],
+       [
+        "07.30",
+        "اووه نیمې بجې",
+        "owə nīme baje",
+        "⚠️ tujuh setengah — bukan 06.30"
+       ],
+       [
+        "12.00",
+        "دولس بجې",
+        "dwolas baje",
+        "dua belas jam"
+       ],
+       [
+        "Sekarang jam berapa?",
+        "څو بجې دي؟",
+        "tso baje dī",
+        "berapa jam ada?"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Tujuh hari dan lima bagian hari",
+     "body": [
+      "Nama hari dipinjam dari bahasa Persia dan dibangun dari angka, dengan شنبه (Sabtu) sebagai titik nol. Di Afghanistan bentuk Pashto asli څلورشنبه dan پنځشنبه juga terdengar, dan keduanya sama benarnya dengan bentuk Persia.",
+      "Bagian hari lebih penting daripada kelihatannya, karena orang Afghanistan lebih sering membuat janji dengan bagian hari daripada dengan jam: سهار (pagi), ماسپښین (sore), ماښام (senja)."
+     ],
+     "table": {
+      "head": [
+       "Hari",
+       "Pashto",
+       "Cara baca",
+       "Bagian hari",
+       "Pashto",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "Sabtu",
+        "شنبه",
+        "shanbe",
+        "pagi",
+        "سهار",
+        "sahār"
+       ],
+       [
+        "Minggu",
+        "یکشنبه",
+        "yakshanbe",
+        "tengah hari",
+        "غرمه",
+        "gharma"
+       ],
+       [
+        "Senin",
+        "دوشنبه",
+        "do-shanbe",
+        "sore",
+        "ماسپښین",
+        "māspaṣīn"
+       ],
+       [
+        "Selasa",
+        "سه شنبه",
+        "se-shanbe",
+        "senja",
+        "ماښام",
+        "māṣām"
+       ],
+       [
+        "Rabu",
+        "څلورشنبه",
+        "tsalor-shanbe",
+        "malam",
+        "شپه",
+        "shpa"
+       ],
+       [
+        "Kamis",
+        "پنځشنبه",
+        "pindzə-shanbe",
+        "hari ini",
+        "نن",
+        "nən"
+       ],
+       [
+        "Jumat ⚠️ libur",
+        "جمعه",
+        "juma",
+        "besok",
+        "سبا",
+        "sabā"
+       ],
+       [
+        "minggu",
+        "اونۍ",
+        "onəy",
+        "kemarin",
+        "پرون",
+        "parūn"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membuat janji, dan kata waktu yang dipakai setiap hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "څو بجې دي؟",
+       "tso baje dī",
+       "Jam berapa sekarang?"
+      ],
+      [
+       "کله ګورو یو بل؟",
+       "kəla gorū yaw bəl",
+       "Kapan kita bertemu?"
+      ],
+      [
+       "سبا اته بجې څنګه؟",
+       "sabā atə baje tsənga",
+       "Bagaimana kalau besok jam delapan?"
+      ],
+      [
+       "زه چمتو یم",
+       "zə chamto yəm",
+       "Saya siap"
+      ],
+      [
+       "زه ناوخته یم",
+       "zə nāwakhta yəm",
+       "Saya terlambat"
+      ],
+      [
+       "لږ انتظار وکړئ",
+       "ləẓ intizār wəkṛəy",
+       "Tunggu sebentar"
+      ],
+      [
+       "وخت نه لرم",
+       "wakht nə larəm",
+       "Saya tidak punya waktu"
+      ],
+      [
+       "وعده کوم",
+       "wa'da kawəm",
+       "Saya berjanji"
+      ],
+      [
+       "هېر یې نه کړئ",
+       "her ye nə kṛəy",
+       "Jangan lupa"
+      ],
+      [
+       "بیا ګورو",
+       "byā gorū",
+       "Sampai jumpa lagi"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata waktu yang paling sering terpakai"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "اوس",
+       "os",
+       "sekarang"
+      ],
+      [
+       "تل",
+       "təl",
+       "selalu"
+      ],
+      [
+       "کله کله",
+       "kəla kəla",
+       "kadang-kadang"
+      ],
+      [
+       "هېڅکله",
+       "hetskəla",
+       "tidak pernah"
+      ],
+      [
+       "مخکې",
+       "məkhke",
+       "sebelumnya, tadi"
+      ],
+      [
+       "وروسته",
+       "wrūsta",
+       "sesudah, nanti"
+      ],
+      [
+       "ژر",
+       "zhər",
+       "cepat, segera"
+      ],
+      [
+       "ورو",
+       "wro",
+       "pelan-pelan"
+      ],
+      [
+       "ناوخته",
+       "nāwakhta",
+       "terlambat"
+      ],
+      [
+       "هره ورځ",
+       "hara wradz",
+       "setiap hari"
+      ],
+      [
+       "دا اونۍ",
+       "dā onəy",
+       "minggu ini"
+      ],
+      [
+       "بله اونۍ",
+       "bəla onəy",
+       "minggu depan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Waktu Afghanistan, dan apa yang perlu kamu maklumi",
+     "items": [
+      "Waktu Afghanistan berjarak setengah jam dari jam bulat: pukul 12.00 di Kabul adalah pukul 15.00 di Jakarta. Perbedaan setengah jam ini juga berlaku terhadap negara tetangga, dan orang Afghanistan menganggapnya biasa.",
+      "Penanggalan resminya bukan Masehi melainkan tahun matahari Persia, dan tahun baru jatuh di **نوروز** *Nawroz*, hari pertama musim semi sekitar 21 Maret. Tahun 2026 Masehi kira-kira setara tahun ۱۴۰۵.",
+      "Janji lisan sering ditutup dengan **انشاءالله** *inshā'allāh*. Ini bukan cara menghindar; ia bagian tetap dari kalimat rencana, sama seperti \"insyaallah\" dalam bahasa Indonesia.",
+      "⚠️ Waktu salat menjadi patokan janji yang lebih sering daripada jam: د مازدیګر لمانځه وروسته (sesudah salat Asar) adalah cara membuat janji yang sangat lazim, dan lebih tepat daripada menyebut angka."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bulan, musim, dan cuaca singkat",
+     "items": [
+      "Empat musim: **پسرلی** *psarlay* (semi) · **اوړی** *oṛay* (panas) · **منی** *manay* (gugur) · **ژمی** *zhamay* (dingin).",
+      "Di Kabul musim dingin bersalju dan suhunya turun di bawah nol; di Jalalabad hampir tidak pernah dingin. Kalimat yang dipakai: **ژمی سوړ دی** (musim dingin itu dingin) dan **اوړی ګرم دی** (musim panas itu panas).",
+      "Nama bulan memakai penanggalan matahari: **وری، غویی، غبرګولی، چنګاښ، زمری، وږی، تله، لړم، لیندۍ، مرغومی، سلواغه، کب**. Dua belas nama ini tidak perlu dihafal sekarang; cukup kamu tahu bahwa mereka ada dan bukan Januari."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "وخت",
+   "baca": "wakht",
+   "id": "waktu"
+  },
+  {
+   "ps": "بجې",
+   "baca": "baje",
+   "id": "jam (penunjuk waktu)"
+  },
+  {
+   "ps": "ساعت",
+   "baca": "sā'at",
+   "id": "jam (lamanya), arloji"
+  },
+  {
+   "ps": "دقیقه",
+   "baca": "daqīqa",
+   "id": "menit"
+  },
+  {
+   "ps": "نیم",
+   "baca": "nīm",
+   "id": "setengah"
+  },
+  {
+   "ps": "پاو",
+   "baca": "pāw",
+   "id": "seperempat"
+  },
+  {
+   "ps": "ورځ",
+   "baca": "wradz",
+   "id": "hari"
+  },
+  {
+   "ps": "اونۍ",
+   "baca": "onəy",
+   "id": "minggu"
+  },
+  {
+   "ps": "میاشت",
+   "baca": "myāsht",
+   "id": "bulan"
+  },
+  {
+   "ps": "سهار",
+   "baca": "sahār",
+   "id": "pagi"
+  },
+  {
+   "ps": "ماسپښین",
+   "baca": "māspaṣīn",
+   "id": "sore"
+  },
+  {
+   "ps": "ماښام",
+   "baca": "māṣām",
+   "id": "senja"
+  },
+  {
+   "ps": "شپه",
+   "baca": "shpa",
+   "id": "malam"
+  },
+  {
+   "ps": "پرون",
+   "baca": "parūn",
+   "id": "kemarin"
+  },
+  {
+   "ps": "رخصتي",
+   "baca": "rukhsatī",
+   "id": "libur"
+  },
+  {
+   "ps": "وعده",
+   "baca": "wa'da",
+   "id": "janji"
+  },
+  {
+   "ps": "پاڅېږم",
+   "baca": "pātsīẓəm",
+   "id": "saya bangun"
+  },
+  {
+   "ps": "ناوخته",
+   "baca": "nāwakhta",
+   "id": "terlambat"
+  },
+  {
+   "ps": "ژر",
+   "baca": "zhər",
+   "id": "cepat, segera"
+  },
+  {
+   "ps": "هره ورځ",
+   "baca": "hara wradz",
+   "id": "setiap hari"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jam berikut dalam bahasa Pashto.",
+   "items": [
+    "pukul 03.00",
+    "pukul 07.30",
+    "pukul 09.15",
+    "pukul 12.00",
+    "pukul 05.30"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Jam berapa sekarang?",
+    "Saya selalu bangun jam enam.",
+    "Besok hari Selasa.",
+    "Hari Jumat libur.",
+    "Saya tidak punya waktu."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan nama hari yang tepat.",
+   "items": [
+    "Hari libur di Afghanistan: ____",
+    "Hari pertama minggu kerja: ____",
+    "Hari sesudah شنبه: ____",
+    "Hari kedua sesudah شنبه: ____",
+    "Hari sebelum جمعه: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "دي / بجې / څو / ؟",
+    "پاڅېږم / زه / بجې / شپږ / تل",
+    "ده / رخصتي / جمعه",
+    "ځو / بجې / څلور / پارک / ته",
+    "ده / سه شنبه / سبا"
+   ]
+  }
+ ],
+ "answers": [
+  "درې بجې دي — اووه نیمې بجې — نهه او پاو — دولس بجې — پنځه نیمې بجې",
+  "څو بجې دي؟ — زه تل شپږ بجې پاڅېږم. — سبا سه شنبه ده. — جمعه رخصتي ده. — زه وخت نه لرم.",
+  "جمعه — شنبه — یکشنبه — دوشنبه — پنځشنبه",
+  "څو بجې دي؟ — زه تل شپږ بجې پاڅېږم. — جمعه رخصتي ده. — څلور بجې پارک ته ځو. — سبا سه شنبه ده."
+ ],
+ "wave": "Setiap kali kamu melihat jam hari ini, sebutkan waktunya dalam bahasa Pashto. Kalau jarumnya berada di setengah, tahan sedetik dan pastikan kamu menyebut jam yang sudah LEWAT, bukan yang akan datang."
+}

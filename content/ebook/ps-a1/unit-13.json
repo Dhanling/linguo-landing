@@ -1,0 +1,601 @@
+{
+ "title": "Kalimat lampau yang membalik semuanya",
+ "title_target": "ما ولیدل",
+ "goal": "Memasang satu-satunya aturan yang benar-benar sulit dalam bahasa Pashto: di kalimat lampau yang berobjek, pelakunya berpindah ke bentuk miring dan kata kerjanya mengikuti OBJEK, bukan pelaku.",
+ "bekal": [
+  "membuat kalimat lampau untuk kata kerja yang berobjek",
+  "memindahkan pelaku ke bentuk miring: ما، تا، هغه، هغې",
+  "menyesuaikan kata kerja dengan jenis kelamin dan jumlah objeknya"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — پرون مې څه وکړل",
+   "intro": "Ahmad menemukan Budi di beranda dengan buku catatan penuh coretan. Satu aturan sedang menolak masuk ke kepalanya.",
+   "lines": [
+    {
+     "speaker": "احمد:",
+     "text": "بودي، څه لیکې؟ ستړی ښکارې.",
+     "baca": "Būdī, tsə like? stəṛay ṣkāre.",
+     "id": "Budi, kamu menulis apa? Kelihatan lelah.",
+     "literal": "Budi, apa tulis-kamu? lelah kelihatan-kamu."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه تېر مهال زده کوم. خو یو څه نه پوهېږم.",
+     "baca": "zə ter mahāl zdə kawəm. kho yaw tsə nə poheẓəm.",
+     "id": "Saya sedang belajar bentuk lampau. Tapi ada satu hal yang tidak saya mengerti.",
+     "literal": "saya lampau waktu belajar lakukan-saya. tapi satu apa tidak mengerti-saya."
+    },
+    {
+     "speaker": "احمد:",
+     "text": "ووایه.",
+     "baca": "wə́wāya.",
+     "id": "Katakan saja.",
+     "literal": "katakanlah-selesai."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه پرون ولاړم — دا روښانه ده. خو زه پرون کتاب ولوستم؟",
+     "baca": "zə parūn wlāṛəm — dā roṣāna da. kho zə parūn kitāb wə́lwastəm?",
+     "id": "زه پرون ولاړم — itu jelas. Tapi \"kemarin saya membaca buku\"?",
+     "literal": "saya kemarin pergi-saya-lampau — ini terang adalah. tapi saya kemarin buku baca-saya-lampau?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "نه. هلته زه نه وایې، ما وایې. ما کتاب ولوست.",
+     "baca": "nə. halta zə nə waye, mā waye. mā kitāb wə́lwast.",
+     "id": "Tidak. Di situ bukan زه, melainkan ما. ما کتاب ولوست.",
+     "literal": "tidak. di-sana saya tidak berkata-kamu, saya-miring berkata-kamu. saya-miring buku baca-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ولې ولوست، نه ولوستم؟",
+     "baca": "wale wə́lwast, nə wə́lwastəm?",
+     "id": "Kenapa ولوست, bukan ولوستم?",
+     "literal": "kenapa baca-lampau, tidak baca-saya-lampau?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "ځکه چې فعل کتاب پسې ځي، نه ما پسې.",
+     "baca": "dzəka che fi'l kitāb pase dzī, nə mā pase.",
+     "id": "Karena kata kerjanya mengikuti کتاب, bukan mengikuti ما.",
+     "literal": "karena bahwa kata-kerja buku mengikuti pergi, tidak saya-miring mengikuti."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "نو که ډوډۍ وي؟",
+     "baca": "no ka ḍoḍəy wī?",
+     "id": "Jadi kalau objeknya ډوډۍ?",
+     "literal": "jadi kalau roti biasa-ada?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "ډوډۍ ښځینه ده، نو ما ډوډۍ وخوړه.",
+     "baca": "ḍoḍəy ṣədzīna da, no mā ḍoḍəy wə́khoṛa.",
+     "id": "ډوډۍ perempuan, jadi ما ډوډۍ وخوړه.",
+     "literal": "roti perempuan adalah, jadi saya-miring roti makan-perempuan-lampau."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او که کتابونه وي؟",
+     "baca": "aw ka kitābūna wī?",
+     "id": "Dan kalau bukunya banyak?",
+     "literal": "dan kalau buku-buku biasa-ada?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "ما کتابونه ولوستل. جمع، نو فعل هم جمع.",
+     "baca": "mā kitābūna wə́lwastəl. jam', no fi'l ham jam'.",
+     "id": "ما کتابونه ولوستل. Objeknya jamak, jadi kata kerjanya juga jamak.",
+     "literal": "saya-miring buku-buku baca-jamak-lampau. jamak, jadi kata-kerja juga jamak."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "نو په تېر مهال کې فعل زه نه ګوري؟",
+     "baca": "no pə ter mahāl ke fi'l zə nə gorī?",
+     "id": "Jadi di bentuk lampau kata kerjanya tidak melihat \"saya\" sama sekali?",
+     "literal": "jadi di lampau waktu dalam kata-kerja saya tidak melihat-dia?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "سمه ده. خو یوازې کله چې مفعول وي.",
+     "baca": "sama da. kho yawāze kəla che maf'ūl wī.",
+     "id": "Betul. Tapi hanya kalau ada objeknya.",
+     "literal": "benar adalah. tapi hanya kapan bahwa objek biasa-ada."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او په اوس مهال کې؟",
+     "baca": "aw pə os mahāl ke?",
+     "id": "Dan di bentuk sekarang?",
+     "literal": "dan di sekarang waktu dalam?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "هېڅ نه بدلېږي. زه کتاب لولم. عادي جمله ده.",
+     "baca": "hets nə badleẓī. zə kitāb lwaləm. 'ādī jumla da.",
+     "id": "Tidak berubah sama sekali. زه کتاب لولم. Kalimat biasa.",
+     "literal": "sama-sekali tidak berubah. saya buku baca-saya. biasa kalimat adalah."
+    }
+   ],
+   "notes": [
+    "🔴 Inilah aturan tunggal yang paling menentukan di seluruh modul ini, dan satu-satunya yang tidak punya padanan sama sekali dalam bahasa Indonesia. Bacalah kotak tata bahasa dua kali, lalu kembalilah ke dialog dan telusuri tiap barisnya.",
+    "Perhatikan bahwa syaratnya **dua** dan keduanya harus terpenuhi bersamaan: kalimatnya harus **lampau**, dan kata kerjanya harus **punya objek**. Kalau salah satunya tidak ada, semuanya normal. Kalimat sekarang selalu normal; kalimat lampau tanpa objek sudah kamu pelajari di unit 12.",
+    "Bentuk miring pelakunya bukan hal baru. Kamu sudah memakainya di unit 6 untuk kata depan: ما ته (kepada saya), تا سره (denganmu). Bentuk yang sama persis kini bekerja sebagai pelaku kalimat lampau, dan itulah sebabnya unit 6 dipasang lebih dulu.",
+    "⚠️ Kesalahan yang paling sering dibuat pemula bukan memakai bentuk miring yang salah, melainkan **lupa mengubah kata kerjanya**. Kalimat ما کتاب ولوستم terdengar salah bagi orang Afghanistan, karena ـم di ujungnya menunjuk kepada \"saya\" padahal kata kerja lampau berobjek tidak boleh menunjuk kepada pelakunya.",
+    "Cara memeriksa yang tidak pernah gagal: tanyakan pada dirimu \"apa yang dikerjakan?\". Kalau ada jawabannya, itulah objeknya, dan kata kerjamu harus mengikuti benda itu. Kalau tidak ada jawabannya, kata kerjanya mengikuti pelakunya seperti biasa.",
+    "Aturan ini punya nama dalam ilmu bahasa: ergativitas terbelah. Bahasa Pashto berbagi sifat ini dengan bahasa Urdu, Hindi, Kurdi, dan Basque — tetapi tidak dengan bahasa Persia, walaupun keduanya bertetangga. Kamu tidak perlu istilahnya; kamu cuma perlu bisa memakainya."
+   ],
+   "grammars": [
+    {
+     "title": "🔴 Aturan lengkapnya dalam tiga baris",
+     "body": [
+      "Baris pertama: kalimat **sekarang** selalu normal. Pelakunya bentuk biasa, kata kerjanya ikut pelaku. Contohnya زه کتاب لولم.",
+      "Baris kedua: kalimat **lampau tanpa objek** juga normal. Pelakunya bentuk biasa, kata kerjanya ikut pelaku. Contohnya زه ولاړم.",
+      "Baris ketiga: kalimat **lampau dengan objek** membalik semuanya. Pelakunya bentuk **miring**, dan kata kerjanya ikut **objek** — jenis kelaminnya dan jumlahnya. Contohnya ما کتاب ولوست."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Cara baca",
+       "Kata kerjanya ikut siapa",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "زه کتاب لولم",
+        "zə kitāb lwaləm",
+        "ikut زه (sekarang)",
+        "Saya membaca buku"
+       ],
+       [
+        "زه ولاړم",
+        "zə wlāṛəm",
+        "ikut زه (tanpa objek)",
+        "Saya pergi"
+       ],
+       [
+        "**ما** کتاب ولوست",
+        "mā kitāb wə́lwast",
+        "⚠️ ikut کتاب (lk tunggal)",
+        "Saya membaca buku"
+       ],
+       [
+        "**ما** ډوډۍ وخوړه",
+        "mā ḍoḍəy wə́khoṛa",
+        "⚠️ ikut ډوډۍ (pr tunggal)",
+        "Saya makan roti"
+       ],
+       [
+        "**ما** کتابونه ولوستل",
+        "mā kitābūna wə́lwastəl",
+        "⚠️ ikut کتابونه (jamak)",
+        "Saya membaca buku-buku"
+       ],
+       [
+        "**تا** څه وویل؟",
+        "tā tsə wəwayəl",
+        "ikut څه",
+        "Kamu bilang apa?"
+       ],
+       [
+        "**هغې** لیک ولیکه",
+        "haghe līk wə́lika",
+        "ikut لیک",
+        "Dia (pr) menulis surat"
+       ],
+       [
+        "**هغوی** موټر واخیست",
+        "haghwī moṭar wākhist",
+        "ikut موټر",
+        "Mereka membeli mobil"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk miring pelaku, dan empat akhiran kata kerja",
+     "body": [
+      "Kolom kiri adalah bentuk pelaku yang wajib kamu pakai di kalimat lampau berobjek. Perhatikan bahwa hanya زه، ته، dan هغه (perempuan) yang benar-benar berubah; sisanya kebetulan sama.",
+      "Kolom kanan adalah akhiran kata kerjanya, dan ia jauh lebih sederhana daripada yang kamu kira: cuma **empat** kemungkinan, ditentukan sepenuhnya oleh objeknya. Tidak ada bentuk untuk \"saya\", \"kamu\", atau \"kami\" sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Pelaku biasa",
+       "Pelaku miring",
+       "Objeknya",
+       "Akhiran kata kerja",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "زه",
+        "**ما** *mā*",
+        "laki-laki tunggal",
+        "kosong",
+        "ولوست"
+       ],
+       [
+        "ته",
+        "**تا** *tā*",
+        "perempuan tunggal",
+        "ـه *-a*",
+        "ولوسته"
+       ],
+       [
+        "هغه (lk)",
+        "هغه *hagha*",
+        "laki-laki jamak",
+        "ـل *-əl*",
+        "ولوستل"
+       ],
+       [
+        "هغه (pr)",
+        "**هغې** *haghe*",
+        "perempuan jamak",
+        "ـې *-e*",
+        "ولوستې"
+       ],
+       [
+        "مونږ",
+        "مونږ *mūẓ*",
+        "—",
+        "—",
+        "—"
+       ],
+       [
+        "تاسو",
+        "تاسو *tāso*",
+        "—",
+        "—",
+        "—"
+       ],
+       [
+        "هغوی",
+        "هغوی *haghwī*",
+        "—",
+        "—",
+        "—"
+       ],
+       [
+        "څوک",
+        "**چا** *chā*",
+        "—",
+        "—",
+        "چا وویل؟"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Melatih aturannya sampai otomatis",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Aturan ini tidak akan menempel lewat penjelasan; ia menempel lewat pengulangan kalimat utuh. Sepuluh baris di bawah adalah kalimat yang paling sering kamu butuhkan, dan seluruhnya memakai aturan yang sama. Bacalah keras-keras, lalu tutup kolom Pashtonya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ما ډوډۍ وخوړه",
+       "mā ḍoḍəy wə́khoṛa",
+       "Saya sudah makan"
+      ],
+      [
+       "ما چای وڅښه",
+       "mā chāy wə́tsṣa",
+       "Saya sudah minum teh"
+      ],
+      [
+       "ما هغه ولید",
+       "mā hagha wə́līd",
+       "Saya melihat dia"
+      ],
+      [
+       "ما یو لیک ولیکه",
+       "mā yaw līk wə́lika",
+       "Saya menulis sepucuk surat"
+      ],
+      [
+       "ما دا کتاب ولوست",
+       "mā dā kitāb wə́lwast",
+       "Saya membaca buku ini"
+      ],
+      [
+       "ما موټر واخیست",
+       "mā moṭar wākhist",
+       "Saya membeli mobil"
+      ],
+      [
+       "تا څه وویل؟",
+       "tā tsə wəwayəl",
+       "Kamu bilang apa?"
+      ],
+      [
+       "تا زه ولیدم؟",
+       "tā zə wə́līdəm",
+       "⚠️ Kamu melihat saya?"
+      ],
+      [
+       "هغه ډوډۍ وخوړه",
+       "hagha ḍoḍəy wə́khoṛa",
+       "Dia sudah makan"
+      ],
+      [
+       "مونږ کار وکړ",
+       "mūẓ kār wə́kṛ",
+       "Kami mengerjakannya"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Baris kedelapan, dan kenapa ia begitu aneh",
+     "items": [
+      "Kalimat تا زه ولیدم berarti \"kamu melihat saya\", dan kata kerjanya berakhiran ـم. Akhiran itu bukan menunjuk kepada \"kamu\" melainkan kepada **زه**, yang di sini menjadi objeknya.",
+      "Inilah bukti paling telanjang bahwa kata kerja lampau berobjek benar-benar buta terhadap pelakunya. Yang dilihatnya cuma benda yang dikerjakan, walaupun benda itu kebetulan berupa orang.",
+      "Bandingkan pasangan ini sampai terasa: ما ته ولیدې (saya melihat kamu) dan تا زه ولیدم (kamu melihat saya). Pelakunya bertukar, tetapi yang menentukan akhiran kata kerjanya tetap objeknya.",
+      "Kalau ini terasa seperti kepala terbalik, itu wajar. Berikan waktu tiga hari, kerjakan latihan unit ini dua kali, dan jangan berpindah unit sebelum kesepuluh kalimat di tabel atas keluar tanpa dipikirkan."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Bentuk lampau sepuluh kata kerja berobjek yang tersering"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dasar",
+      "Arti",
+      "Objek lk tunggal",
+      "Objek pr tunggal",
+      "Objek jamak"
+     ],
+     "rows": [
+      [
+       "لیدل",
+       "melihat",
+       "ولید",
+       "ولیده",
+       "ولیدل"
+      ],
+      [
+       "خوړل",
+       "makan",
+       "وخوړ",
+       "وخوړه",
+       "وخوړل"
+      ],
+      [
+       "څښل",
+       "minum",
+       "وڅښ",
+       "وڅښه",
+       "وڅښل"
+      ],
+      [
+       "لوستل",
+       "membaca",
+       "ولوست",
+       "ولوسته",
+       "ولوستل"
+      ],
+      [
+       "لیکل",
+       "menulis",
+       "ولیکه",
+       "ولیکه",
+       "ولیکل"
+      ],
+      [
+       "اخیستل",
+       "membeli",
+       "واخیست",
+       "واخیسته",
+       "واخیستل"
+      ],
+      [
+       "ویل",
+       "berkata",
+       "وویل",
+       "وویله",
+       "وویل"
+      ],
+      [
+       "کول",
+       "melakukan",
+       "وکړ",
+       "وکړه",
+       "وکړل"
+      ],
+      [
+       "ورکول",
+       "memberi",
+       "ورکړ",
+       "ورکړه",
+       "ورکړل"
+      ],
+      [
+       "موندل",
+       "menemukan",
+       "وموند",
+       "ومونده",
+       "وموندل"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu terpaksa memilih satu hal untuk dihafal",
+     "items": [
+      "Hafalkan **ما** sebagai kata pembuka cerita masa lalu. Begitu kamu mulai bercerita tentang apa yang kamu kerjakan kemarin, kalimatnya hampir selalu dibuka ما, bukan زه.",
+      "Kata kerjanya boleh kamu tinggalkan di bentuk laki-laki tunggal kalau kamu ragu. Kalimat ما ډوډۍ وخوړ tidak sempurna, tetapi ia jauh lebih baik daripada ما ډوډۍ وخوړم — yang terakhir terdengar salah, yang pertama cuma terdengar asing.",
+      "⚠️ Jangan mencampur dua bentuk. Kalimat زه کتاب ولوستم adalah kesalahan yang paling menonjol, karena ia memakai pelaku bentuk biasa **dan** akhiran pelaku sekaligus.",
+      "Perhatikan orang Afghanistan bercerita. Dalam waktu satu minggu telingamu akan menangkap bahwa cerita masa lalu hampir selalu dibuka ما، تا، هغه، مونږ — dan itu isyarat yang lebih cepat daripada tabel mana pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "ما",
+   "baca": "mā",
+   "id": "saya (bentuk miring)"
+  },
+  {
+   "ps": "تا",
+   "baca": "tā",
+   "id": "kamu (bentuk miring)"
+  },
+  {
+   "ps": "هغې",
+   "baca": "haghe",
+   "id": "dia perempuan (bentuk miring)"
+  },
+  {
+   "ps": "چا",
+   "baca": "chā",
+   "id": "siapa (bentuk miring)"
+  },
+  {
+   "ps": "ولوست",
+   "baca": "wə́lwast",
+   "id": "membaca (lampau)"
+  },
+  {
+   "ps": "وخوړه",
+   "baca": "wə́khoṛa",
+   "id": "memakan (lampau, objek pr)"
+  },
+  {
+   "ps": "ولید",
+   "baca": "wə́līd",
+   "id": "melihat (lampau)"
+  },
+  {
+   "ps": "ولیکه",
+   "baca": "wə́lika",
+   "id": "menulis (lampau)"
+  },
+  {
+   "ps": "واخیست",
+   "baca": "wākhist",
+   "id": "membeli (lampau)"
+  },
+  {
+   "ps": "وویل",
+   "baca": "wəwayəl",
+   "id": "berkata (lampau)"
+  },
+  {
+   "ps": "وکړ",
+   "baca": "wə́kṛ",
+   "id": "melakukan (lampau)"
+  },
+  {
+   "ps": "ورکړ",
+   "baca": "warkṛ",
+   "id": "memberi (lampau)"
+  },
+  {
+   "ps": "فعل",
+   "baca": "fi'l",
+   "id": "kata kerja"
+  },
+  {
+   "ps": "مفعول",
+   "baca": "maf'ūl",
+   "id": "objek"
+  },
+  {
+   "ps": "جمله",
+   "baca": "jumla",
+   "id": "kalimat"
+  },
+  {
+   "ps": "تېر مهال",
+   "baca": "ter mahāl",
+   "id": "bentuk lampau"
+  },
+  {
+   "ps": "روښانه",
+   "baca": "roṣāna",
+   "id": "jelas, terang"
+  },
+  {
+   "ps": "سمه ده",
+   "baca": "sama da",
+   "id": "betul"
+  },
+  {
+   "ps": "ښځینه",
+   "baca": "ṣədzīna",
+   "id": "berjenis perempuan"
+  },
+  {
+   "ps": "نارینه",
+   "baca": "nārīna",
+   "id": "berjenis laki-laki"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih pelaku yang tepat: زه atau ما.",
+   "items": [
+    "____ پرون ولاړم.",
+    "____ کتاب ولوست.",
+    "____ ډوډۍ وخوړه.",
+    "____ ماښام راغلم.",
+    "____ یو لیک ولیکه."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk kata kerja lampau yang tepat sesuai objeknya. Bentuk dasarnya ada di dalam kurung.",
+   "items": [
+    "ما کتاب ____. (لوستل)",
+    "ما ډوډۍ ____. (خوړل)",
+    "ما کتابونه ____. (لوستل)",
+    "هغې موټر ____. (اخیستل)",
+    "مونږ کار ____. (کول)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Saya sudah makan.",
+    "Saya melihat dia.",
+    "Kamu bilang apa?",
+    "Dia (perempuan) menulis surat.",
+    "Kami mengerjakannya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ولوست / کتاب / ما",
+    "وخوړه / ډوډۍ / ما",
+    "وویل / څه / تا / ؟",
+    "ولیکه / لیک / هغې",
+    "وکړ / کار / مونږ"
+   ]
+  }
+ ],
+ "answers": [
+  "زه — ما — ما — زه — ما",
+  "ولوست — وخوړه — ولوستل — واخیست — وکړ",
+  "ما ډوډۍ وخوړه. — ما هغه ولید. — تا څه وویل؟ — هغې لیک ولیکه. — مونږ کار وکړ.",
+  "ما کتاب ولوست. — ما ډوډۍ وخوړه. — تا څه وویل؟ — هغې لیک ولیکه. — مونږ کار وکړ."
+ ],
+ "wave": "Selama tiga hari ke depan, awali setiap cerita tentang kemarin dengan ما. Kalau kalimatmu keluar dengan زه dan kata kerja berakhiran ـم di kalimat berobjek, berhentilah dan ulangi dari awal — pengulangan yang benar tiga kali lebih berharga daripada dua puluh kalimat yang salah."
+}

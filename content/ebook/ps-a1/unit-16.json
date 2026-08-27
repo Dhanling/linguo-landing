@@ -1,0 +1,572 @@
+{
+ "title": "Meminta tanpa memerintah",
+ "title_target": "امر او مهرباني",
+ "goal": "Menyusun perintah, permintaan, dan larangan dalam dua tingkat kesopanan — dan mengetahui kapan bentuk perintah justru terdengar hangat, bukan kasar.",
+ "bekal": [
+  "membuat perintah untuk ته dan untuk تاسو",
+  "melarang dengan مه, bukan dengan نه",
+  "melunakkan permintaan dengan لطفاً، مهرباني وکړئ، او که کېږي"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — په ټکسي کې",
+   "intro": "Budi naik taksi sendirian untuk pertama kalinya. Sopirnya ramah, jalannya macet, dan setiap kalimat harus keluar tepat.",
+   "lines": [
+    {
+     "speaker": "بودي:",
+     "text": "سلام. مهرباني وکړئ، ما ته د پوهنتون خوا ته ولاړ شئ.",
+     "baca": "salām. mihrabānī wə́kṛəy, mā ta də pohantūn khwā ta wlāṛ shəy.",
+     "id": "Halo. Tolong antar saya ke arah universitas.",
+     "literal": "salam. kebaikan lakukan-kalian, saya kepada punya universitas arah ke pergi jadi-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "ښه، کېنئ. کوم دروازه ته؟",
+     "baca": "ṣa, kenəy. kūma darwāza ta?",
+     "id": "Baik, silakan duduk. Ke gerbang yang mana?",
+     "literal": "baik, duduk-kalian. mana pintu ke?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "لومړۍ دروازه. که کېږي، ورو ولاړ شئ.",
+     "baca": "lūmṛəy darwāza. ka keẓī, wro wlāṛ shəy.",
+     "id": "Gerbang pertama. Kalau bisa, jalannya pelan-pelan.",
+     "literal": "pertama pintu. kalau jadi, pelan pergi jadi-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "هېڅ پروا نه لري. ټرافیک هرومرو ورو دی!",
+     "baca": "hets parwā nə larī. ṭrāfīk harūmarū wro day!",
+     "id": "Tidak masalah. Lalu lintasnya memang pelan!",
+     "literal": "sama-sekali kepedulian tidak punya-dia. lalu-lintas tentu pelan adalah!"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "مهرباني وکړئ، کړکۍ پرانیزئ.",
+     "baca": "mihrabānī wə́kṛəy, kṛkəy prānīzəy.",
+     "id": "Tolong bukakan jendelanya.",
+     "literal": "kebaikan lakukan-kalian, jendela bukalah-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "واخلئ. ګرمي ده نن.",
+     "baca": "wākhləy. garmī da nən.",
+     "id": "Silakan. Hari ini panas.",
+     "literal": "ambillah-kalian. panas adalah hari-ini."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "لطفاً دلته مه دریږئ — لږ مخ ته ولاړ شئ.",
+     "baca": "lutfan dəlta ma dareẓəy — ləẓ makh ta wlāṛ shəy.",
+     "id": "Tolong jangan berhenti di sini — maju sedikit.",
+     "literal": "tolong di-sini jangan berhenti-kalian — sedikit depan ke pergi jadi-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "دلته؟ که هلته؟",
+     "baca": "dəlta? ka halta?",
+     "id": "Di sini? Atau di sana?",
+     "literal": "di-sini? atau di-sana?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "هلته، د جومات مخې ته. همدلته ودرېږئ.",
+     "baca": "halta, də jumāt makhe ta. hamdəlta wədareẓəy.",
+     "id": "Di sana, di depan masjid. Berhentilah persis di situ.",
+     "literal": "di-sana, punya masjid depan ke. persis-di-sini berhenti-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "ښه. یو سل او پنځوس افغانۍ.",
+     "baca": "ṣa. yaw sal aw pindzos afghānəy.",
+     "id": "Baik. Seratus lima puluh afghani.",
+     "literal": "baik. satu ratus dan lima-puluh afghani."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "دا واخلئ. باقي پرېږدئ.",
+     "baca": "dā wākhləy. bāqī preẓdəy.",
+     "id": "Ini ambil. Kembaliannya simpan saja.",
+     "literal": "ini ambillah-kalian. sisa tinggalkan-kalian."
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "خدای دې مل شه! بیا راشئ.",
+     "baca": "khudāy de mal sha! byā rāshəy.",
+     "id": "Semoga Tuhan menyertaimu! Datang lagi ya.",
+     "literal": "Tuhan semoga teman jadi! lagi datang-kalian."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "مننه. یوه پوښتنه — بېرته څنګه راشم؟",
+     "baca": "manana. yawa pūṣtəna — berta tsənga rāshəm?",
+     "id": "Terima kasih. Satu pertanyaan — bagaimana saya kembali?",
+     "literal": "terima-kasih. satu pertanyaan — kembali bagaimana datang-saya?"
+    },
+    {
+     "speaker": "ډرایور:",
+     "text": "همدلته ودرېږئ او لاس پورته کړئ. ټکسي به ژر راشي.",
+     "baca": "hamdəlta wədareẓəy aw lās porta kṛəy. ṭaksī ba zhər rāshī.",
+     "id": "Berdiri saja di sini dan angkat tangan. Taksi akan segera datang.",
+     "literal": "persis-di-sini berhenti-kalian dan tangan atas lakukan-kalian. taksi akan cepat datang-dia."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "پوه شوم. ډېره مننه، خدای پامان.",
+     "baca": "poh shwəm. ḍera manana, khudāy pāmān.",
+     "id": "Saya mengerti. Terima kasih banyak, sampai jumpa.",
+     "literal": "paham jadi-saya. banyak terima-kasih, Tuhan penjagaan."
+    }
+   ],
+   "notes": [
+    "Perintah bahasa Pashto **tidak terdengar kasar** seperti perintah bahasa Indonesia. Kalimat کېنئ (duduklah) adalah cara yang sepenuhnya sopan untuk mempersilakan orang duduk, dan menambahkan \"silakan\" di depannya justru terdengar kaku. Yang menentukan kesopanan adalah bentuknya untuk تاسو, bukan tambahan kata apa pun.",
+    "Perhatikan bahwa perintah selalu memakai bentuk tuntas dengan و- yang dipasang di unit 11: **و**کړئ، **وا**خلئ، **و**درېږئ. Perintah tanpa و- berarti \"teruslah melakukannya\", yang jarang kamu maksud.",
+    "⚠️ Larangan memakai **مه**, tidak pernah نه. Kalimat مه دریږئ berarti \"jangan berhenti\"; نه دریږئ berarti \"kalian tidak berhenti\" dan bukan larangan sama sekali. Ini kesalahan yang membuat kalimatmu bukan sekadar asing melainkan tidak dimengerti.",
+    "Kata pelunak yang paling sering dipakai adalah **مهرباني وکړئ**, harfiahnya \"berbaik hatilah\". Kata Arab **لطفاً** juga dipakai luas, terutama di kota dan dalam tulisan. Yang paling halus: **که کېږي**, harfiahnya \"kalau jadi\", yang persis seperti \"kalau boleh\" dalam bahasa Indonesia.",
+    "Doa perpisahan خدای دې مل شه berarti \"semoga Tuhan menjadi temanmu\". Bahasa Pashto penuh dengan doa pendek semacam ini, dan mereka bukan basa-basi keagamaan melainkan tata krama sehari-hari. Menjawabnya cukup dengan مننه atau آمین.",
+    "Ungkapan باقي پرېږدئ berarti \"simpan kembaliannya\". Memberi kembalian sebagai tip lazim untuk sopir taksi tetapi tidak untuk pedagang, dan jumlahnya kecil saja — sepuluh sampai dua puluh afghani sudah cukup."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah: dua bentuk untuk dua tingkat",
+     "body": [
+      "Bentuk untuk **تاسو** berakhiran ـئ dan itulah yang kamu pakai kepada hampir semua orang. Bentuk untuk **ته** berakhiran ـه dan cuma dipakai kepada teman dekat, adik, dan anak-anak.",
+      "Kedua bentuk memakai awalan tuntas و-, dan tekanannya jatuh di sana. Untuk kata kerja yang menolak و- — راتلل، کېناستل، پاڅېدل — perintahnya dibuat dari badan katanya sendiri: راشئ، کېنئ، پاڅئ."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "Kepada ته",
+       "Kepada تاسو",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "Duduklah",
+        "کېنه",
+        "کېنئ",
+        "kena / kenəy"
+       ],
+       [
+        "Datanglah",
+        "راشه",
+        "راشئ",
+        "rāsha / rāshəy"
+       ],
+       [
+        "Pergilah",
+        "ولاړ شه",
+        "ولاړ شئ",
+        "wlāṛ sha / wlāṛ shəy"
+       ],
+       [
+        "Makanlah",
+        "وخوره",
+        "وخورئ",
+        "wə́khora / wə́khorəy"
+       ],
+       [
+        "Minumlah",
+        "وڅښه",
+        "وڅښئ",
+        "wə́tsṣa / wə́tsṣəy"
+       ],
+       [
+        "Ambillah",
+        "واخله",
+        "واخلئ",
+        "wā́khla / wā́khləy"
+       ],
+       [
+        "Tulislah",
+        "ولیکه",
+        "ولیکئ",
+        "wə́lika / wə́likəy"
+       ],
+       [
+        "Katakanlah",
+        "ووایه",
+        "ووایئ",
+        "wə́wāya / wə́wāyəy"
+       ],
+       [
+        "Lakukanlah",
+        "وکړه",
+        "وکړئ",
+        "wə́kṛa / wə́kṛəy"
+       ],
+       [
+        "Tunggulah",
+        "انتظار وکړه",
+        "انتظار وکړئ",
+        "intizār wə́kṛa"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "⚠️ Larangan memakai مه",
+     "body": [
+      "Bentuknya sama dengan perintah, cuma didahului **مه** *ma*. Awalan و- boleh tetap ada atau hilang, dan keduanya terdengar wajar; yang wajib adalah مه-nya.",
+      "Untuk melarang dengan lebih lembut, dipakai bentuk pertanyaan: **که کېږي، ونه کړئ** *ka keẓī, wə́-nə-kṛəy* — \"kalau boleh, jangan dilakukan\". Ini bentuk yang dipakai kepada orang yang lebih tua atau lebih senior."
+     ],
+     "table": {
+      "head": [
+       "Larangan",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "مه ځه",
+        "ma dza",
+        "Jangan pergi (akrab)"
+       ],
+       [
+        "مه ځئ",
+        "ma dzəy",
+        "Jangan pergi (hormat)"
+       ],
+       [
+        "مه دریږئ",
+        "ma dareẓəy",
+        "Jangan berhenti"
+       ],
+       [
+        "مه خبرې کوئ",
+        "ma khabare kawəy",
+        "Jangan bicara"
+       ],
+       [
+        "مه وېرېږه",
+        "ma wereẓa",
+        "Jangan takut"
+       ],
+       [
+        "مه خفه کېږئ",
+        "ma khafa keẓəy",
+        "Jangan bersedih"
+       ],
+       [
+        "مه یې هېروئ",
+        "ma ye herawəy",
+        "Jangan lupakan"
+       ],
+       [
+        "⚠️ نه دریږئ",
+        "nə dareẓəy",
+        "Kalian tidak berhenti — bukan larangan"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat permintaan untuk hari-hari pertama",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "مهرباني وکړئ",
+       "mihrabānī wə́kṛəy",
+       "Tolong, silakan"
+      ],
+      [
+       "لطفاً",
+       "lutfan",
+       "Tolong (agak resmi)"
+      ],
+      [
+       "که کېږي",
+       "ka keẓī",
+       "Kalau boleh"
+      ],
+      [
+       "بخښنه غواړم",
+       "bakhṣəna ghwāṛəm",
+       "Maaf"
+      ],
+      [
+       "ورو ووایئ",
+       "wro wowāyəy",
+       "Bicaralah pelan-pelan"
+      ],
+      [
+       "یو ځل بیا ووایئ",
+       "yaw dzal byā wowāyəy",
+       "Tolong ulangi"
+      ],
+      [
+       "ما سره مرسته وکړئ",
+       "mā sara marasta wə́kṛəy",
+       "Tolong bantu saya"
+      ],
+      [
+       "لږ انتظار وکړئ",
+       "ləẓ intizār wə́kṛəy",
+       "Tunggu sebentar"
+      ],
+      [
+       "دا راکړئ",
+       "dā rākṛəy",
+       "Berikan ini kepada saya"
+      ],
+      [
+       "راځئ",
+       "rādzəy",
+       "Mari, silakan"
+      ],
+      [
+       "کېنئ",
+       "kenəy",
+       "Silakan duduk"
+      ],
+      [
+       "ډوډۍ وخورئ",
+       "ḍoḍəy wə́khorəy",
+       "Silakan makan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Doa pendek yang dipakai sebagai tata krama"
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Pashto memakai doa pendek di tempat bahasa Indonesia memakai ucapan sopan biasa. Menghafalnya adalah cara tercepat untuk terdengar seperti orang yang dibesarkan di sana, bukan seperti orang yang membaca buku frasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Dipakai kapan"
+     ],
+     "rows": [
+      [
+       "خدای دې مل شه",
+       "khudāy de mal sha",
+       "Kepada yang berangkat"
+      ],
+      [
+       "ستړی مه شې",
+       "stəṛay ma she",
+       "Kepada yang sedang bekerja"
+      ],
+      [
+       "خدای دې برکت کړي",
+       "khudāy de barakat kṛī",
+       "Sesudah makan"
+      ],
+      [
+       "خدای دې روغ لره",
+       "khudāy de rogh lara",
+       "Kepada yang sakit"
+      ],
+      [
+       "مبارک شه",
+       "mubārak sha",
+       "Ucapan selamat"
+      ],
+      [
+       "انشاءالله",
+       "inshā'allāh",
+       "Untuk rencana"
+      ],
+      [
+       "الحمدلله",
+       "alhamdulillāh",
+       "Menjawab \"apa kabar\""
+      ],
+      [
+       "خدای مه کړه",
+       "khudāy ma kṛa",
+       "Semoga jangan terjadi"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ ستړی مه شې — ucapan yang tidak ada di bahasa Indonesia",
+     "items": [
+      "Kalimat **ستړی مه شې** harfiahnya \"jangan menjadi lelah\", dan ia diucapkan kepada siapa pun yang sedang bekerja: tukang, sopir, penjahit, petani, guru yang baru keluar kelas.",
+      "Jawabannya juga tetap: **خدای دې ښه لره** *khudāy de ṣa lara* — \"semoga Tuhan memeliharamu\".",
+      "Bahasa Indonesia tidak punya padanannya, dan itulah yang membuat ucapan ini begitu berkesan kalau kamu memakainya. Kepada perempuan bentuknya ستړې مه شې.",
+      "Coba pakai besok kepada orang pertama yang kamu lihat sedang bekerja. Reaksinya akan memberitahumu lebih banyak tentang budaya Afghanistan daripada satu bab buku."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Naik kendaraan umum di Kabul",
+     "items": [
+      "Taksi kuning berhenti kalau kamu mengangkat tangan. Harga **selalu** disepakati sebelum naik, bukan sesudah: **پوهنتون ته څومره؟**",
+      "Bus kecil disebut **ملي بس** *millī bas* atau **کاسټر** *kāsṭar*, dan penumpang memberi tahu tempat turun dengan berkata **همدلته ودرېږه** *hamdəlta wədareẓa*.",
+      "Untuk menyuruh berhenti, kalimat yang dipakai bukan \"berhenti\" melainkan **ودرېږئ** (berdirilah). Kata kerja درېدل berarti berdiri sekaligus berhenti.",
+      "⚠️ Perempuan biasanya duduk di kursi belakang taksi, dan itu diharapkan. Kalau kamu bepergian bersama perempuan yang bukan kerabat, aturan itu berlaku juga untukmu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "مهرباني",
+   "baca": "mihrabānī",
+   "id": "kebaikan hati"
+  },
+  {
+   "ps": "لطفاً",
+   "baca": "lutfan",
+   "id": "tolong"
+  },
+  {
+   "ps": "مه",
+   "baca": "ma",
+   "id": "jangan"
+  },
+  {
+   "ps": "کېنئ",
+   "baca": "kenəy",
+   "id": "silakan duduk"
+  },
+  {
+   "ps": "راشئ",
+   "baca": "rāshəy",
+   "id": "silakan datang"
+  },
+  {
+   "ps": "ودرېږئ",
+   "baca": "wədareẓəy",
+   "id": "berhentilah"
+  },
+  {
+   "ps": "پرانیستل",
+   "baca": "prānīstəl",
+   "id": "membuka"
+  },
+  {
+   "ps": "پرېښودل",
+   "baca": "preṣodəl",
+   "id": "meninggalkan, membiarkan"
+  },
+  {
+   "ps": "دروازه",
+   "baca": "darwāza",
+   "id": "gerbang, pintu"
+  },
+  {
+   "ps": "ټکسي",
+   "baca": "ṭaksī",
+   "id": "taksi"
+  },
+  {
+   "ps": "ډرایور",
+   "baca": "ḍrāywar",
+   "id": "sopir"
+  },
+  {
+   "ps": "باقي",
+   "baca": "bāqī",
+   "id": "sisa, kembalian"
+  },
+  {
+   "ps": "لاس",
+   "baca": "lās",
+   "id": "tangan"
+  },
+  {
+   "ps": "پورته",
+   "baca": "porta",
+   "id": "atas, naik"
+  },
+  {
+   "ps": "خوا",
+   "baca": "khwā",
+   "id": "sisi, arah"
+  },
+  {
+   "ps": "پوښتنه",
+   "baca": "pūṣtəna",
+   "id": "pertanyaan"
+  },
+  {
+   "ps": "ګرمي",
+   "baca": "garmī",
+   "id": "panas (keadaan)"
+  },
+  {
+   "ps": "وېرېدل",
+   "baca": "weredəl",
+   "id": "takut"
+  },
+  {
+   "ps": "انتظار",
+   "baca": "intizār",
+   "id": "menunggu"
+  },
+  {
+   "ps": "همدلته",
+   "baca": "hamdəlta",
+   "id": "persis di sini"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi perintah untuk تاسو.",
+   "items": [
+    "کېنه",
+    "راشه",
+    "وخوره",
+    "ولیکه",
+    "وکړه"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi larangan.",
+   "items": [
+    "ځئ",
+    "دریږئ",
+    "خبرې کوئ",
+    "وېرېږه",
+    "خفه کېږئ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Tolong bicara pelan-pelan.",
+    "Tunggu sebentar.",
+    "Tolong bantu saya.",
+    "Jangan berhenti di sini.",
+    "Silakan duduk."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "وکړئ / مهرباني / کړکۍ / پرانیزئ",
+    "ووایئ / ورو / لطفاً",
+    "مه / دلته / دریږئ",
+    "وکړئ / انتظار / لږ",
+    "شئ / ولاړ / ته / پوهنتون"
+   ]
+  }
+ ],
+ "answers": [
+  "کېنئ — راشئ — وخورئ — ولیکئ — وکړئ",
+  "مه ځئ — مه دریږئ — مه خبرې کوئ — مه وېرېږه — مه خفه کېږئ",
+  "لطفاً ورو ووایئ. — لږ انتظار وکړئ. — ما سره مرسته وکړئ. — دلته مه دریږئ. — کېنئ.",
+  "مهرباني وکړئ، کړکۍ پرانیزئ. — لطفاً ورو ووایئ. — دلته مه دریږئ. — لږ انتظار وکړئ. — پوهنتون ته ولاړ شئ."
+ ],
+ "wave": "Ucapkan ستړی مه شې besok kepada orang pertama yang kamu lihat sedang bekerja, walaupun ia tidak mengerti bahasa Pashto. Kalimat yang cuma dibaca akan hilang; kalimat yang pernah keluar dari mulut akan menunggu di sana sampai kamu memerlukannya."
+}

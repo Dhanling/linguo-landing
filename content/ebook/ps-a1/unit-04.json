@@ -1,0 +1,552 @@
+{
+ "title": "Saya punya",
+ "title_target": "زه لرم",
+ "goal": "Memakai kata kerja لرل (punya) dan memasang enam akhiran kata kerja waktu sekarang — akhiran yang mulai unit ini akan dipakai di setiap kalimat sampai halaman terakhir.",
+ "bekal": [
+  "mengatakan apa yang kamu punya dan tidak punya",
+  "memasang enam akhiran kata kerja waktu sekarang",
+  "menyangkal kalimat dengan نه di depan kata kerjanya"
+ ],
+ "dialogs": [
+  {
+   "title": "خبرې اترې — د چای په دکان کې",
+   "intro": "Sore hari di kedai teh dekat rumah. Ahmad, saudara laki-laki Najib, duduk bersama Budi sambil menunggu teh hijau.",
+   "lines": [
+    {
+     "speaker": "احمد:",
+     "text": "بودي، تاسو په کابل کې ملګري لرئ؟",
+     "baca": "Būdī, tāso pə Kābəl ke malgərī larəy?",
+     "id": "Budi, Anda punya teman di Kabul?",
+     "literal": "Budi, kalian di Kabul dalam teman-teman punya-kalian?"
+    },
+    {
+     "speaker": "بودي:",
+     "text": "اوس یو ملګری لرم — تاسو!",
+     "baca": "os yaw malgəray larəm — tāso!",
+     "id": "Sekarang saya punya satu teman — Anda!",
+     "literal": "sekarang satu teman punya-saya — kalian!"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "ښه ځواب دی. زه ډېر ملګري لرم، خو وخت نه لرم.",
+     "baca": "ṣa dzawāb day. zə ḍer malgərī larəm, kho wakht nə larəm.",
+     "id": "Jawaban yang bagus. Saya punya banyak teman, tapi tidak punya waktu.",
+     "literal": "baik jawaban adalah. saya banyak teman-teman punya-saya, tapi waktu tidak punya-saya."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "ولې؟ تاسو څه کوئ؟",
+     "baca": "wale? tāso tsə kawəy?",
+     "id": "Kenapa? Anda mengerjakan apa?",
+     "literal": "kenapa? kalian apa lakukan-kalian?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "زه په پوهنتون کې لولم او په دکان کې کار کوم.",
+     "baca": "zə pə pohantūn ke lwaləm aw pə dūkān ke kār kawəm.",
+     "id": "Saya kuliah di universitas dan bekerja di toko.",
+     "literal": "saya di universitas dalam membaca-saya dan di toko dalam kerja lakukan-saya."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "تاسو کوم دکان لرئ؟",
+     "baca": "tāso kūm dūkān larəy?",
+     "id": "Toko apa yang Anda punya?",
+     "literal": "kalian mana toko punya-kalian?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "زمونږ کورنۍ د مېوو دکان لري. زه هلته مرسته کوم.",
+     "baca": "zmūẓ kornəy də mewo dūkān larī. zə halta marasta kawəm.",
+     "id": "Keluarga kami punya toko buah. Saya membantu di sana.",
+     "literal": "punya-kami keluarga punya buah-buah toko punya-dia. saya di-sana bantuan lakukan-saya."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "زه هم کار غواړم، خو زه پښتو ښه نه وایم.",
+     "baca": "zə ham kār ghwāṛəm, kho zə paṣto ṣa nə wāyəm.",
+     "id": "Saya juga mau bekerja, tapi saya belum bisa berbahasa Pashto dengan baik.",
+     "literal": "saya juga kerja mau-saya, tapi saya Pashto baik tidak berkata-saya."
+    },
+    {
+     "speaker": "احمد:",
+     "text": "تاسو ښه وایئ! ډېر ښه وایئ.",
+     "baca": "tāso ṣa wāyəy! ḍer ṣa wāyəy.",
+     "id": "Anda bicara dengan baik! Sangat baik.",
+     "literal": "kalian baik berkata-kalian! sangat baik berkata-kalian."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "مننه، خو زه ډېرې کلمې نه پوهېږم.",
+     "baca": "manana, kho zə ḍere kalime nə poheẓəm.",
+     "id": "Terima kasih, tapi banyak kata yang saya tidak mengerti.",
+     "literal": "terima-kasih, tapi saya banyak kata-kata tidak mengerti-saya."
+    },
+    {
+     "speaker": "احمد:",
+     "text": "هېڅ پروا نه لري. مونږ وخت لرو.",
+     "baca": "hets parwā nə larī. mūẓ wakht larū.",
+     "id": "Tidak masalah. Kita punya waktu.",
+     "literal": "sama-sekali kepedulian tidak punya-dia. kami waktu punya-kami."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "تاسو ورونه او خویندې لرئ؟",
+     "baca": "tāso wrūṇa aw khwayənde larəy?",
+     "id": "Anda punya saudara laki-laki dan perempuan?",
+     "literal": "kalian saudara-saudara dan saudari-saudari punya-kalian?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "هو، دوه ورونه او یوه خور لرم. نجیب زما مشر ورور دی.",
+     "baca": "ho, dwa wrūṇa aw yawa khor larəm. Najīb zmā məshr wror day.",
+     "id": "Ya, saya punya dua saudara laki-laki dan satu saudara perempuan. Najib kakak saya.",
+     "literal": "ya, dua saudara-saudara dan satu saudari punya-saya. Najib punya-saya besar saudara adalah."
+    },
+    {
+     "speaker": "بودي:",
+     "text": "او ماشومان لرئ؟",
+     "baca": "aw māshūmān larəy?",
+     "id": "Dan apakah Anda punya anak?",
+     "literal": "dan anak-anak punya-kalian?"
+    },
+    {
+     "speaker": "احمد:",
+     "text": "نه، زه واده نه لرم. لا محصل یم!",
+     "baca": "nə, zə wāda nə larəm. lā mahsal yəm!",
+     "id": "Belum, saya belum menikah. Saya masih mahasiswa!",
+     "literal": "tidak, saya pernikahan tidak punya-saya. masih mahasiswa ada-saya!"
+    }
+   ],
+   "notes": [
+    "Kata kerja لرل adalah hadiah terbesar bahasa Pashto bagi penutur bahasa Indonesia. Bahasa Persia, Urdu, Arab, dan Ibrani semuanya memutar jalan untuk mengatakan \"saya punya\"; bahasa Pashto memakai kata kerja biasa seperti kita. Kalimatnya زه یو کتاب لرم, harfiahnya \"saya satu buku punya\" — cuma kata kerjanya di ujung.",
+    "Perhatikan bahwa akhiran ـم muncul di banyak kata kerja sekaligus: لرم، کوم، وایم، غواړم، پوهېږم. Akhiran itulah yang berarti \"saya\". Begitu enam akhiran di kotak tata bahasa menempel, kamu bisa memakai kata kerja apa pun yang kamu temui.",
+    "Ungkapan هېڅ پروا نه لري harfiahnya \"tidak punya kepedulian sama sekali\", dan artinya \"tidak apa-apa\". Ia jawaban standar untuk permintaan maaf maupun untuk ucapan terima kasih, dan kamu akan mendengarnya puluhan kali sehari.",
+    "Kata خو berarti \"tetapi\" dan tempatnya di awal anak kalimat, persis seperti bahasa Indonesia. Ada juga مګر *magar* dengan arti sama, sedikit lebih formal dan sedikit lebih Persia.",
+    "Perhatikan urutan نه dan kata kerjanya sekali lagi. Kalimat وخت **نه** لرم benar; وخت لرم **نه** salah. Kata نه selalu tepat di depan kata kerja, tidak pernah di belakangnya, dan tidak pernah di awal kalimat.",
+    "Kata مشر berarti \"yang lebih tua\" dan کشر berarti \"yang lebih muda\". Bahasa Pashto membedakan kakak dan adik persis seperti bahasa Indonesia, sesuatu yang tidak dilakukan bahasa Inggris maupun bahasa Persia — dan orang Afghanistan akan senang kalau kamu memakainya dengan benar."
+   ],
+   "grammars": [
+    {
+     "title": "Enam akhiran waktu sekarang",
+     "body": [
+      "Kata kerja bahasa Pashto tidak memerlukan kata bantu apa pun untuk waktu sekarang. Yang berubah cuma akhirannya, dan akhirannya sama untuk hampir semua kata kerja — inilah yang membuat bahasa Pashto jauh lebih ringan daripada kelihatannya.",
+      "Perhatikan bahwa bentuk untuk \"dia\" dan untuk \"mereka\" sama persis: ـي. Bahasa Pashto tidak membedakan keduanya di waktu sekarang, jadi ada satu bentuk yang bisa kamu lupakan."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Akhiran",
+       "لرل punya",
+       "کول lakukan",
+       "ویل berkata"
+      ],
+      "rows": [
+       [
+        "زه",
+        "ـم *-əm*",
+        "لرم *larəm*",
+        "کوم *kawəm*",
+        "وایم *wāyəm*"
+       ],
+       [
+        "ته",
+        "ـې *-e*",
+        "لرې *lare*",
+        "کوې *kawe*",
+        "وایې *wāye*"
+       ],
+       [
+        "هغه",
+        "ـي *-ī*",
+        "لري *larī*",
+        "کوي *kawī*",
+        "وایي *wāyī*"
+       ],
+       [
+        "مونږ",
+        "ـو *-ū*",
+        "لرو *larū*",
+        "کوو *kawū*",
+        "وایو *wāyū*"
+       ],
+       [
+        "تاسو",
+        "ـئ *-əy*",
+        "لرئ *larəy*",
+        "کوئ *kawəy*",
+        "وایئ *wāyəy*"
+       ],
+       [
+        "هغوی",
+        "ـي *-ī*",
+        "لري *larī*",
+        "کوي *kawī*",
+        "وایي *wāyī*"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Menyangkal dengan نه",
+     "body": [
+      "Menyangkal kalimat bahasa Pashto cuma memerlukan satu kata di satu tempat: نه, tepat di depan kata kerja. Tidak ada bentuk kata kerja yang berubah, tidak ada kata bantu yang muncul, tidak ada susunan yang dibongkar.",
+      "⚠️ Satu hal yang perlu dijaga: untuk **perintah** larangan dipakai مه, bukan نه. Kalimat مه ځه berarti \"jangan pergi\"; نه ځه tidak berarti apa-apa. Perintah dikupas penuh di unit 16."
+     ],
+     "table": {
+      "head": [
+       "Kalimat biasa",
+       "Kalimat sangkalan",
+       "Arti sangkalannya"
+      ],
+      "rows": [
+       [
+        "زه وخت لرم",
+        "زه وخت **نه** لرم",
+        "Saya tidak punya waktu"
+       ],
+       [
+        "هغه کار کوي",
+        "هغه کار **نه** کوي",
+        "Dia tidak bekerja"
+       ],
+       [
+        "مونږ پوهېږو",
+        "مونږ **نه** پوهېږو",
+        "Kami tidak mengerti"
+       ],
+       [
+        "تاسو پښتو وایئ",
+        "تاسو پښتو **نه** وایئ",
+        "Anda tidak berbahasa Pashto"
+       ],
+       [
+        "دا زما کتاب دی",
+        "دا زما کتاب **نه** دی",
+        "Ini bukan buku saya"
+       ],
+       [
+        "ځه!",
+        "**مه** ځه!",
+        "⚠️ Jangan pergi!"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pekerjaan, kepunyaan, dan kata kerja pertamamu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti (laki-laki)",
+      "Bentuk perempuan"
+     ],
+     "rows": [
+      [
+       "ښوونکی",
+       "ṣowunkay",
+       "guru",
+       "ښوونکې"
+      ],
+      [
+       "ډاکټر",
+       "ḍākṭar",
+       "dokter",
+       "ډاکټره"
+      ],
+      [
+       "انجنیر",
+       "injinīr",
+       "insinyur",
+       "انجنیره"
+      ],
+      [
+       "دوکاندار",
+       "dūkāndār",
+       "pedagang, pemilik toko",
+       "دوکانداره"
+      ],
+      [
+       "بزګر",
+       "bazgar",
+       "petani",
+       "—"
+      ],
+      [
+       "ډرایور",
+       "ḍrāywar",
+       "sopir",
+       "—"
+      ],
+      [
+       "پخوان",
+       "pakhwān",
+       "juru masak",
+       "پخوانه"
+      ],
+      [
+       "ژورنالیست",
+       "zhūrnālist",
+       "wartawan",
+       "ژورنالیسته"
+      ],
+      [
+       "محصل",
+       "mahsal",
+       "mahasiswa",
+       "محصله"
+      ],
+      [
+       "کارګر",
+       "kārgar",
+       "buruh, pekerja",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Barang yang biasa kamu punya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pashto",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "موټر",
+       "moṭar",
+       "mobil"
+      ],
+      [
+       "بایسکل",
+       "bāysikl",
+       "sepeda"
+      ],
+      [
+       "موبایل",
+       "mobāyl",
+       "ponsel"
+      ],
+      [
+       "کمپیوټر",
+       "kampyūṭar",
+       "komputer"
+      ],
+      [
+       "پیسې",
+       "payse",
+       "uang"
+      ],
+      [
+       "وخت",
+       "wakht",
+       "waktu"
+      ],
+      [
+       "کار",
+       "kār",
+       "pekerjaan"
+      ],
+      [
+       "دکان",
+       "dūkān",
+       "toko"
+      ],
+      [
+       "ملګری",
+       "malgəray",
+       "teman (laki-laki)"
+      ],
+      [
+       "ملګرې",
+       "malgəre",
+       "teman (perempuan)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja yang bentuk \"saya\"-nya tidak bisa ditebak",
+     "items": [
+      "Sebagian besar kata kerja Pashto berperilaku rapi: لرل menjadi لرم · کول menjadi کوم. Tetapi kata kerja yang paling sering dipakai justru berubah bentuk, dan tidak ada gunanya melawannya — hafalkan bentuk \"saya\"-nya sebagai kata baru.",
+      "Contoh yang wajib kamu punya sejak sekarang: تلل (pergi) menjadi **ځم** · راتلل (datang) menjadi **راځم** · لیدل (melihat) menjadi **وینم** · خوړل (makan) menjadi **خورم** · غوښتل (mau) menjadi **غواړم** · لوستل (membaca) menjadi **لولم**.",
+      "Perhatikan bahwa akhirannya tetap ـم seperti biasa. Yang berubah cuma badan katanya, dan begitu badan itu kamu tahu, lima bentuk lainnya mengikuti aturan yang sama.",
+      "Halaman belakang modul ini memuat lima puluh kata kerja tersering beserta bentuk \"saya\"-nya. Jangan dihafal sekaligus; pakai sebagai tempat melihat balik."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya tentang kepunyaan",
+     "items": [
+      "Untuk benda: تاسو موټر لرئ؟ *tāso moṭar larəy* — \"Anda punya mobil?\". Jawabannya هو، لرم atau نه، نه لرم.",
+      "Untuk orang: تاسو ماشومان لرئ؟ *tāso māshūmān larəy* — \"Anda punya anak?\". Ini pertanyaan yang sangat biasa di Afghanistan dan sama sekali tidak dianggap terlalu pribadi.",
+      "Untuk keadaan: زه وخت نه لرم *zə wakht nə larəm* — \"saya tidak punya waktu\". Kalimat penolakan yang paling sopan dan paling sering dipakai.",
+      "⚠️ Bahasa Pashto memakai لرل untuk hal yang bahasa Indonesia katakan dengan \"ada\": غر واوره لري, harfiahnya \"gunung punya salju\", artinya \"di gunung ada salju\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ps": "لرل",
+   "baca": "larəl",
+   "id": "punya"
+  },
+  {
+   "ps": "لرم",
+   "baca": "larəm",
+   "id": "saya punya"
+  },
+  {
+   "ps": "کول",
+   "baca": "kawəl",
+   "id": "melakukan, membuat"
+  },
+  {
+   "ps": "کار",
+   "baca": "kār",
+   "id": "pekerjaan"
+  },
+  {
+   "ps": "وخت",
+   "baca": "wakht",
+   "id": "waktu"
+  },
+  {
+   "ps": "پیسې",
+   "baca": "payse",
+   "id": "uang"
+  },
+  {
+   "ps": "دکان",
+   "baca": "dūkān",
+   "id": "toko"
+  },
+  {
+   "ps": "موټر",
+   "baca": "moṭar",
+   "id": "mobil"
+  },
+  {
+   "ps": "مېوه",
+   "baca": "mewa",
+   "id": "buah"
+  },
+  {
+   "ps": "مرسته",
+   "baca": "marasta",
+   "id": "bantuan"
+  },
+  {
+   "ps": "غواړم",
+   "baca": "ghwāṛəm",
+   "id": "saya mau"
+  },
+  {
+   "ps": "وایم",
+   "baca": "wāyəm",
+   "id": "saya berkata"
+  },
+  {
+   "ps": "پوهېږم",
+   "baca": "poheẓəm",
+   "id": "saya mengerti"
+  },
+  {
+   "ps": "لولم",
+   "baca": "lwaləm",
+   "id": "saya membaca"
+  },
+  {
+   "ps": "خو",
+   "baca": "kho",
+   "id": "tetapi"
+  },
+  {
+   "ps": "مشر",
+   "baca": "məshr",
+   "id": "yang lebih tua, kakak"
+  },
+  {
+   "ps": "کشر",
+   "baca": "kəshr",
+   "id": "yang lebih muda, adik"
+  },
+  {
+   "ps": "واده",
+   "baca": "wāda",
+   "id": "pernikahan"
+  },
+  {
+   "ps": "لا",
+   "baca": "lā",
+   "id": "masih, belum"
+  },
+  {
+   "ps": "هېڅ",
+   "baca": "hets",
+   "id": "sama sekali (tidak)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Pashto.",
+   "items": [
+    "Saya punya satu teman.",
+    "Kami tidak punya waktu.",
+    "Anda punya mobil?",
+    "Dia bekerja di toko.",
+    "Saya tidak mengerti."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk لرل yang tepat.",
+   "items": [
+    "زه یو کتاب ____.",
+    "تاسو موټر ____؟",
+    "هغه پیسې نه ____.",
+    "مونږ وخت ____.",
+    "هغوی دکان ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat sangkalan.",
+   "items": [
+    "زه وخت لرم.",
+    "هغه کار کوي.",
+    "مونږ پوهېږو.",
+    "تاسو پښتو وایئ.",
+    "دا زما کتاب دی."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "لرم / زه / ملګری / یو",
+    "لرو / نه / وخت / مونږ",
+    "کوم / زه / کار / کې / دکان / په",
+    "لرئ / تاسو / ؟ / ماشومان",
+    "دی / ورور / زما / مشر / نجیب"
+   ]
+  }
+ ],
+ "answers": [
+  "زه یو ملګری لرم. — مونږ وخت نه لرو. — تاسو موټر لرئ؟ — هغه په دکان کې کار کوي. — زه نه پوهېږم.",
+  "لرم — لرئ — لري — لرو — لري",
+  "زه وخت نه لرم. — هغه کار نه کوي. — مونږ نه پوهېږو. — تاسو پښتو نه وایئ. — دا زما کتاب نه دی.",
+  "زه یو ملګری لرم. — مونږ وخت نه لرو. — زه په دکان کې کار کوم. — تاسو ماشومان لرئ؟ — نجیب زما مشر ورور دی."
+ ],
+ "wave": "Tulis lima kalimat tentang apa yang kamu punya dan tiga tentang apa yang kamu tidak punya. Bacalah keras-keras, dan perhatikan bahwa نه selalu duduk tepat di depan لرم."
+}
