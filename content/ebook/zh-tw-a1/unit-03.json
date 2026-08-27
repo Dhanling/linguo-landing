@@ -1,0 +1,608 @@
+{
+ "title": "Ini punya siapa?",
+ "title_target": "這是誰的？",
+ "goal": "Menunjuk benda, menanyakan pemiliknya, dan memakai 的 — satu huruf yang mengerjakan tugas \"punya\", \"yang\", dan seluruh kata sifat panjang.",
+ "bekal": [
+  "membedakan 這 dan 那 serta memakainya dengan kata penggolong",
+  "memasang 的 untuk kepemilikan — dan tahu kapan justru harus dibuang",
+  "bertanya dengan 誰, 什麼, 哪 tanpa mengubah urutan kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 教室裡的雨傘",
+   "intro": "Hujan sore hari di Taipei. Budi menemukan sebuah payung tertinggal di bangku ruang kelas.",
+   "lines": [
+    {
+     "speaker": "布迪:",
+     "text": "[小美|Xiǎoměi]，[這是|zhè shì][什麼|shénme]？",
+     "id": "Xiaomei, ini apa?",
+     "literal": "Xiaomei, ini — adalah — apa?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[那是|Nà shì][雨傘|yǔsǎn][啊|a]。[台北|Táiběi][常常|chángcháng][下雨|xiàyǔ]。",
+     "id": "Itu payung. Taipei sering hujan.",
+     "literal": "itu — adalah — hujan-payung — lho. Taipei — sering-sering — turun-hujan."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[這|Zhè][把|bǎ][雨傘|yǔsǎn][是|shì][誰的|shéi de]？",
+     "id": "Payung ini punya siapa?",
+     "literal": "ini — (penggolong) — payung — adalah — siapa — punya?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我|Wǒ][不知道|bù zhīdào]。[不是|Bú shì][我的|wǒ de]。",
+     "id": "Saya tidak tahu. Bukan punya saya.",
+     "literal": "saya — tidak — tahu. tidak — adalah — saya — punya."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][那個|nà ge][背包|bēibāo][呢|ne]？[也|Yě][不是|bú shì][你的|nǐ de][嗎|ma]？",
+     "id": "Kalau tas ransel itu? Bukan punyamu juga?",
+     "literal": "kalau-begitu — itu — (penggolong) — punggung-bungkus — kalau? juga — tidak — adalah — kamu — punya — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[那個|Nà ge][是|shì][阿明|Ā Míng][的|de]。[他|Tā][常常|chángcháng][忘東西|wàng dōngxi]。",
+     "id": "Yang itu punya A-Ming. Dia sering lupa barang.",
+     "literal": "itu — (penggolong) — adalah — A-Ming — punya. dia — sering-sering — lupa — barang."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[哈哈|Hāhā]！[那|Nà][雨傘|yǔsǎn][應該|yīnggāi][也是|yě shì][他的|tā de][吧|ba]？",
+     "id": "Haha! Berarti payungnya pasti punya dia juga kan?",
+     "literal": "haha! kalau-begitu — payung — seharusnya — juga — adalah — dia — punya — kan?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[有可能|Yǒu kěnéng][喔|o]。[我們|Wǒmen][問問|wènwèn][他|tā]。",
+     "id": "Bisa jadi lho. Kita tanya dia deh.",
+     "literal": "ada — kemungkinan — lho. kami — tanya-tanya — dia."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[等一下|Děng yíxià]，[這|zhè][是|shì][我的|wǒ de][手機|shǒujī][嗎|ma]？",
+     "id": "Eh sebentar, ini ponsel saya bukan ya?",
+     "literal": "tunggu — sebentar, ini — adalah — saya — punya — tangan-mesin — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[你的|Nǐ de][手機|shǒujī][在|zài][你|nǐ][手上|shǒu shàng][啦|la]！",
+     "id": "Ponselmu ada di tanganmu kok!",
+     "literal": "kamu — punya — ponsel — berada — kamu — tangan — atas — kok!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[啊|A]…[不好意思|bù hǎoyìsi]。[我|Wǒ][今天|jīntiān][很|hěn][累|lèi]。",
+     "id": "Ah… maaf. Hari ini saya capek sekali.",
+     "literal": "ah… tidak — enak — maksud. saya — hari-ini — sangat — lelah."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[沒關係|Méi guānxi]。[你|Nǐ][的|de][中文|Zhōngwén][課|kè][幾點|jǐ diǎn]？",
+     "id": "Tidak apa-apa. Kelas Mandarinmu jam berapa?",
+     "literal": "tidak — ada — hubungan. kamu — punya — Mandarin — pelajaran — berapa — jam?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[三點|Sān diǎn]。[還有|Hái yǒu][二十|èrshí][分鐘|fēnzhōng]。",
+     "id": "Jam tiga. Masih dua puluh menit lagi.",
+     "literal": "tiga — jam. masih — ada — dua-puluh — menit."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[那|Nà][快走|kuài zǒu][吧|ba]！[雨傘|Yǔsǎn][先|xiān][放|fàng][這裡|zhèlǐ]。",
+     "id": "Kalau begitu cepat jalan! Payungnya taruh sini dulu.",
+     "literal": "kalau-begitu — cepat — jalan — ayo! payung — dulu — taruh — sini."
+    }
+   ],
+   "notes": [
+    "**這 (*zhè*, ini) dan 那 (*nà*, itu)** dipakai persis seperti bahasa Indonesia. ⚠️ Yang berbeda: kalau ada kata bendanya, **wajib ada kata penggolong di tengah**. 這**個**背包, 那**把**雨傘 — bukan 這背包.",
+    "⚠️ **那 mengerjakan dua tugas.** Sebagai penunjuk ia berarti \"itu\"; di **awal kalimat** ia berarti \"kalau begitu\", \"berarti\". *那我們走吧！* — \"Kalau begitu ayo jalan!\" Konteks selalu memisahkannya, dan bentuk kedua ini muncul di hampir setiap percakapan.",
+    "**吧 (*ba*) melunakkan kalimat jadi ajakan atau dugaan.** *走吧！* \"ayo jalan!\" *是他的吧？* \"punya dia kan?\" Ia tidak pernah dipakai untuk pertanyaan sungguhan — kalau kamu benar-benar tidak tahu, pakai 嗎.",
+    "**問問 dan 等一下 memperlihatkan kebiasaan Mandarin melunakkan kata kerja.** Mengulang kata kerjanya (問問, 看看, 想想) atau menambahkan 一下 memberi rasa \"sebentar saja, santai\" — persis seperti \"lihat-lihat dulu\" dalam bahasa Indonesia.",
+    "⚠️ **手機 = ponsel** (harfiah \"mesin tangan\"), dan **東西 = barang** (harfiah \"timur barat\"). Dua kata yang tak bisa ditebak dari bagian-bagiannya; hafalkan utuh."
+   ],
+   "grammars": [
+    {
+     "title": "的: satu huruf, tiga pekerjaan",
+     "body": [
+      "**的** adalah aksara yang paling sering muncul dalam bahasa Mandarin, dan ia mengerjakan tiga hal yang dalam bahasa Indonesia dikerjakan tiga cara berbeda."
+     ],
+     "table": {
+      "head": [
+       "Pekerjaan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**Kepemilikan**",
+        "我**的**書",
+        "buku saya"
+       ],
+       [
+        "**Kepemilikan tanpa bendanya**",
+        "這是我**的**。",
+        "Ini punya saya."
+       ],
+       [
+        "**Kata sifat panjang → keterangan**",
+        "很貴**的**東西",
+        "barang yang mahal"
+       ],
+       [
+        "**Anak kalimat \"yang\"**",
+        "台南來**的**朋友",
+        "teman yang datang dari Tainan"
+       ],
+       [
+        "**Menjadikan sifat jadi benda**",
+        "紅**的**",
+        "yang merah"
+       ]
+      ]
+     },
+     "after": [
+      "Kuncinya satu kalimat: **的 selalu berdiri tepat SEBELUM benda yang diterangkan**, dan segala keterangan berdiri di depannya. Urutan Mandarin selalu **penerang → 的 → yang diterangkan**, kebalikan dari bahasa Indonesia yang berkata \"buku *saya*\", \"barang *yang mahal*\".",
+      "⚠️ Latih membaca dari belakang: 台南來的朋友 → mulai dari 朋友 (teman), lalu ke depan: teman *yang* datang dari Tainan. Kebiasaan membaca mundur ini akan sangat berguna sampai tingkat B1."
+     ]
+    },
+    {
+     "title": "⚠️ Kapan 的 justru harus dibuang",
+     "body": [
+      "Ada satu keadaan penting saat memasang 的 justru terdengar salah: **hubungan yang sangat dekat** — keluarga, sekolah, negara, tempat kerja. Di situ 的 dilepas."
+     ],
+     "table": {
+      "head": [
+       "Ditulis",
+       "Baca",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "我**媽媽**",
+        "wǒ māma",
+        "ibu saya",
+        "⚠️ bukan 我的媽媽"
+       ],
+       [
+        "我**朋友**",
+        "wǒ péngyǒu",
+        "teman saya",
+        "hubungan dekat"
+       ],
+       [
+        "我**家**",
+        "wǒ jiā",
+        "rumah saya",
+        "⚠️ 我的家 terdengar dingin"
+       ],
+       [
+        "我們**學校**",
+        "wǒmen xuéxiào",
+        "sekolah kami",
+        "kelembagaan"
+       ],
+       [
+        "我們**國家**",
+        "wǒmen guójiā",
+        "negara kami",
+        "kelembagaan"
+       ],
+       [
+        "我**的**書",
+        "wǒ de shū",
+        "buku saya",
+        "✓ benda biasa, 的 wajib"
+       ],
+       [
+        "我**的**手機",
+        "wǒ de shǒujī",
+        "ponsel saya",
+        "✓ benda biasa"
+       ]
+      ]
+     },
+     "after": [
+      "Alasannya bisa dirasakan: 的 menandai kepemilikan sebagai sesuatu yang **bisa berpindah**. Ibumu tidak berpindah tangan, jadi menandainya terdengar seperti memperlakukannya sebagai barang.",
+      "⚠️ Kekeliruan ini tidak menghalangi orang mengerti kalimatmu, tetapi ia adalah salah satu tanda paling cepat bahwa seseorang belum lama belajar. Perbaiki sekarang selagi kosakatamu masih sedikit."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata tanya: tinggal ditukar di tempatnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Inilah hadiah kedua bahasa Mandarin untukmu, dan ia besar. Untuk membuat pertanyaan dengan kata tanya, **letakkan kata tanyanya persis di tempat jawabannya akan berdiri**. Tidak ada yang dipindah ke depan seperti dalam bahasa Inggris."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata tanya",
+      "Pīnyīn",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**誰**",
+       "shéi",
+       "siapa",
+       "他是**誰**？ Dia siapa?"
+      ],
+      [
+       "**什麼**",
+       "shénme",
+       "apa",
+       "這是**什麼**？ Ini apa?"
+      ],
+      [
+       "**哪**",
+       "nǎ",
+       "yang mana",
+       "**哪**個是你的？ Yang mana punyamu?"
+      ],
+      [
+       "**哪裡 / 哪兒**",
+       "nǎlǐ",
+       "di mana",
+       "你在**哪裡**？ ⚠️ Taiwan pakai 哪裡"
+      ],
+      [
+       "**幾**",
+       "jǐ",
+       "berapa (di bawah 10)",
+       "**幾**點？ Jam berapa?"
+      ],
+      [
+       "**多少**",
+       "duōshǎo",
+       "berapa (banyak)",
+       "**多少**錢？ Berapa harganya?"
+      ],
+      [
+       "**什麼時候**",
+       "shénme shíhòu",
+       "kapan",
+       "你**什麼時候**去？ Kapan kamu pergi?"
+      ],
+      [
+       "**為什麼**",
+       "wèishénme",
+       "kenapa",
+       "你**為什麼**不去？ Kenapa kamu tidak pergi?"
+      ],
+      [
+       "**怎麼**",
+       "zěnme",
+       "bagaimana",
+       "**怎麼**去？ Perginya bagaimana?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bandingkan: *他是誰？* dan jawabannya *他是老師。* Kata 誰 berdiri persis di tempat 老師 akan berdiri. ⚠️ **Jangan pernah menambahkan 嗎 pada kalimat yang sudah punya kata tanya** — *你是誰嗎？* salah. Satu penanda tanya per kalimat sudah cukup."
+    }
+   ]
+  },
+  {
+   "title": "Benda-benda di sekitarmu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia",
+      "Penggolong"
+     ],
+     "rows": [
+      [
+       "書",
+       "shū",
+       "buku",
+       "本 běn"
+      ],
+      [
+       "筆",
+       "bǐ",
+       "pena, pulpen",
+       "支 zhī"
+      ],
+      [
+       "手機",
+       "shǒujī",
+       "ponsel",
+       "支 zhī"
+      ],
+      [
+       "電腦",
+       "diànnǎo",
+       "komputer, laptop",
+       "台 tái"
+      ],
+      [
+       "背包",
+       "bēibāo",
+       "tas ransel",
+       "個 ge"
+      ],
+      [
+       "雨傘",
+       "yǔsǎn",
+       "payung",
+       "把 bǎ"
+      ],
+      [
+       "鑰匙",
+       "yàoshi",
+       "kunci",
+       "把 bǎ"
+      ],
+      [
+       "錢包",
+       "qiánbāo",
+       "dompet",
+       "個 ge"
+      ],
+      [
+       "椅子",
+       "yǐzi",
+       "kursi",
+       "張 zhāng"
+      ],
+      [
+       "桌子",
+       "zhuōzi",
+       "meja",
+       "張 zhāng"
+      ],
+      [
+       "卡片",
+       "kǎpiàn",
+       "kartu",
+       "張 zhāng"
+      ],
+      [
+       "東西",
+       "dōngxi",
+       "barang, benda",
+       "個 ge"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Barang hilang di Taiwan",
+     "items": [
+      "**我的東西不見了。** *Wǒ de dōngxi bú jiàn le.* — Barang saya hilang.",
+      "**這是我的。** *Zhè shì wǒ de.* — Ini punya saya.",
+      "**這不是我的。** *Zhè bú shì wǒ de.* — Ini bukan punya saya.",
+      "**失物招領處在哪裡？** *Shīwù zhāolǐng chù zài nǎlǐ?* — Di mana bagian barang hilang?",
+      "⚠️ Taiwan terkenal sebagai tempat barang hilang biasanya kembali. Di 捷運 dan 便利商店 ada prosedurnya, dan orang benar-benar menyerahkan barang temuan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "這 dan 那 dengan kata penggolong",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "**這個**",
+       "zhè ge",
+       "yang ini (benda umum)"
+      ],
+      [
+       "**那個**",
+       "nà ge",
+       "yang itu"
+      ],
+      [
+       "**哪個**",
+       "nǎ ge",
+       "yang mana"
+      ],
+      [
+       "**這本書**",
+       "zhè běn shū",
+       "buku ini"
+      ],
+      [
+       "**那把雨傘**",
+       "nà bǎ yǔsǎn",
+       "payung itu"
+      ],
+      [
+       "**這些**",
+       "zhèxiē",
+       "yang ini (jamak) ⚠️ tanpa penggolong"
+      ],
+      [
+       "**那些**",
+       "nàxiē",
+       "yang itu (jamak)"
+      ],
+      [
+       "**這裡 / 那裡**",
+       "zhèlǐ / nàlǐ",
+       "di sini / di sana"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **那個 (*nà ge*) juga dipakai sebagai kata sisipan** saat orang berpikir, persis seperti \"anu…\" atau \"itu lho…\" dalam bahasa Indonesia: *那個…我想問一下。* Kamu akan mendengarnya berkali-kali dalam satu percakapan, dan jangan bingung — ia bukan menunjuk apa pun."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "這",
+   "baca": "zhè",
+   "id": "ini"
+  },
+  {
+   "zh": "那",
+   "baca": "nà",
+   "id": "itu; kalau begitu"
+  },
+  {
+   "zh": "的",
+   "baca": "de",
+   "id": "(penanda milik / yang)"
+  },
+  {
+   "zh": "誰",
+   "baca": "shéi",
+   "id": "siapa"
+  },
+  {
+   "zh": "個",
+   "baca": "ge",
+   "id": "(penggolong umum)"
+  },
+  {
+   "zh": "知道",
+   "baca": "zhīdào",
+   "id": "tahu"
+  },
+  {
+   "zh": "東西",
+   "baca": "dōngxi",
+   "id": "barang"
+  },
+  {
+   "zh": "手機",
+   "baca": "shǒujī",
+   "id": "ponsel"
+  },
+  {
+   "zh": "書",
+   "baca": "shū",
+   "id": "buku"
+  },
+  {
+   "zh": "背包",
+   "baca": "bēibāo",
+   "id": "tas ransel"
+  },
+  {
+   "zh": "雨傘",
+   "baca": "yǔsǎn",
+   "id": "payung"
+  },
+  {
+   "zh": "下雨",
+   "baca": "xiàyǔ",
+   "id": "hujan"
+  },
+  {
+   "zh": "常常",
+   "baca": "chángcháng",
+   "id": "sering"
+  },
+  {
+   "zh": "累",
+   "baca": "lèi",
+   "id": "lelah"
+  },
+  {
+   "zh": "沒關係",
+   "baca": "méi guānxi",
+   "id": "tidak apa-apa"
+  },
+  {
+   "zh": "等一下",
+   "baca": "děng yíxià",
+   "id": "tunggu sebentar"
+  },
+  {
+   "zh": "吧",
+   "baca": "ba",
+   "id": "(ajakan / dugaan)"
+  },
+  {
+   "zh": "哪裡",
+   "baca": "nǎlǐ",
+   "id": "di mana (⚠️ Taiwan)"
+  },
+  {
+   "zh": "應該",
+   "baca": "yīnggāi",
+   "id": "seharusnya, pasti"
+  },
+  {
+   "zh": "先",
+   "baca": "xiān",
+   "id": "dulu, lebih dahulu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Ini apa?",
+    "Payung ini punya siapa?",
+    "Ini bukan punya saya.",
+    "Ibu saya orang Indonesia.",
+    "Yang mana punyamu?",
+    "Saya tidak tahu."
+   ]
+  },
+  {
+   "prompt": "Pasang 的 kalau perlu; tulis ✗ kalau justru tidak boleh dipakai.",
+   "items": [
+    "我 ____ 手機",
+    "我 ____ 媽媽",
+    "他 ____ 書",
+    "我們 ____ 學校",
+    "老師 ____ 電腦",
+    "我 ____ 朋友"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata tanya yang tepat: 誰, 什麼, 哪裡, 幾, atau 多少.",
+   "items": [
+    "他是 ____？",
+    "這是 ____？",
+    "你在 ____？",
+    "現在 ____ 點？",
+    "這個 ____ 錢？",
+    "____ 個是你的？"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "誰的 / 這 / 是",
+    "我的 / 不是 / 這",
+    "什麼 / 那 / 是",
+    "背包 / 是 / 阿明的 / 那個",
+    "媽媽 / 是 / 我 / 老師"
+   ]
+  }
+ ],
+ "answers": [
+  "這是什麼？ — 這把雨傘是誰的？ — 這不是我的。 — 我媽媽是印尼人。 — 哪個是你的？ — 我不知道。",
+  "的 — ✗ — 的 — ✗ — 的 — ✗",
+  "誰 — 什麼 — 哪裡 — 幾 — 多少 — 哪",
+  "這是誰的？ — 這不是我的。 — 那是什麼？ — 那個背包是阿明的。 — 我媽媽是老師。"
+ ]
+}

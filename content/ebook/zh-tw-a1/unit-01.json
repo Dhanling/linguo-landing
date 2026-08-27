@@ -1,0 +1,539 @@
+{
+ "title": "Halo, siapa namamu?",
+ "title_target": "你好！你叫什麼名字？",
+ "goal": "Menyapa, memperkenalkan diri, dan menanyakan nama — sekaligus menerima kenyataan pertama bahasa Mandarin: nama tidak dipasang dengan kata \"adalah\".",
+ "bekal": [
+  "menyapa dan berpamitan dengan tepat, resmi maupun santai",
+  "menyebutkan nama sendiri dengan 叫 dan marga dengan 姓",
+  "memakai 不好意思 — satu ungkapan yang menyelamatkan segalanya di Taiwan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 第一次見面",
+   "intro": "Budi, mahasiswa pertukaran dari Indonesia, baru tiba di kampusnya di Taipei. Di depan ruang kelas ia berpapasan dengan seorang mahasiswi.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[你好|Nǐ hǎo]！",
+     "id": "Halo!",
+     "literal": "kamu — baik."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[你好|Nǐ hǎo]！[我叫|Wǒ jiào][布迪|Bùdí]。",
+     "id": "Halo! Nama saya Budi.",
+     "literal": "kamu — baik. saya — bernama — Budi."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我姓|Wǒ xìng][林|Lín]，[叫|jiào][林小美|Lín Xiǎoměi]。",
+     "id": "Marga saya Lin, nama saya Lin Xiaomei.",
+     "literal": "saya — bermarga — Lin, bernama — Lin Xiaomei."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[很高興|Hěn gāoxìng][認識你|rènshì nǐ]。",
+     "id": "Senang berkenalan denganmu.",
+     "literal": "sangat — gembira — mengenal — kamu."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我也是|Wǒ yě shì]。[你是|Nǐ shì][新來的|xīn lái de][嗎|ma]？",
+     "id": "Saya juga. Kamu yang baru datang ya?",
+     "literal": "saya — juga — adalah. kamu — adalah — baru — datang — yang — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[對|Duì]，[我是|wǒ shì][印尼人|Yìnní rén]。",
+     "id": "Betul, saya orang Indonesia.",
+     "literal": "benar, saya — adalah — Indonesia — orang."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[哇|Wā]！[你的|Nǐ de][中文|Zhōngwén][很好|hěn hǎo][耶|ye]！",
+     "id": "Wah! Bahasa Mandarinmu bagus lho!",
+     "literal": "wah! kamu — punya — Mandarin — sangat — baik — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[哪裡|Nǎlǐ][哪裡|nǎlǐ]，[我|wǒ][只會|zhǐ huì][一點點|yìdiǎndiǎn]。",
+     "id": "Ah, mana ada, saya cuma bisa sedikit sekali.",
+     "literal": "mana — mana, saya — hanya — bisa — sedikit-sedikit."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[不好意思|Bù hǎoyìsi]，[你|nǐ][叫|jiào][什麼|shénme][名字|míngzi]？",
+     "id": "Maaf, tadi namamu siapa ya?",
+     "literal": "tidak — baik — maksud, kamu — bernama — apa — nama?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[布迪|Bùdí]。[B-U-D-I|B-U-D-I]。",
+     "id": "Budi. B-U-D-I.",
+     "literal": "Budi. B-U-D-I."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[布迪|Bùdí]。[好|Hǎo]，[我記住了|wǒ jìzhù le]。",
+     "id": "Budi. Oke, saya ingat.",
+     "literal": "Budi. baik, saya — ingat-tertahan — sudah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[謝謝|Xièxie]，[林同學|Lín tóngxué]。",
+     "id": "Terima kasih, Lin.",
+     "literal": "terima kasih, Lin — teman-belajar."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[叫我|Jiào wǒ][小美|Xiǎoměi][就好|jiù hǎo]！",
+     "id": "Panggil saja Xiaomei!",
+     "literal": "panggil — saya — Xiaomei — cukup — baik!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]，[小美|Xiǎoměi]。[明天見|Míngtiān jiàn]！",
+     "id": "Oke, Xiaomei. Sampai besok!",
+     "literal": "baik, Xiaomei. besok — bertemu!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[明天見|Míngtiān jiàn]！[掰掰|Bāibāi]！",
+     "id": "Sampai besok! Dah!",
+     "literal": "besok — bertemu! dah-dah!"
+    }
+   ],
+   "notes": [
+    "⚠️ **你好 bukan \"selamat pagi\" dan bukan \"apa kabar\".** Harfiahnya \"kamu baik\", dan fungsinya persis \"halo\" — dipakai kapan saja, siang atau malam. Jawabannya adalah mengulang kata yang sama: *你好*.",
+    "**哪裡哪裡 adalah cara Taiwan menolak pujian.** Harfiahnya \"di mana, di mana\" — maksudnya \"mana ada, saya tidak sebagus itu\". Menerima pujian dengan *謝謝* saja terdengar agak sombong; menolaknya sedikit dulu adalah kebiasaan yang dianggap sopan.",
+    "**耶 (*ye*) di ujung kalimat sangat khas Taiwan.** Ia menambahkan rasa kagum atau terkejut yang menyenangkan — kira-kira \"lho\" atau \"euy\" dalam bahasa Indonesia. Kamu akan mendengarnya puluhan kali sehari di Taipei.",
+    "**掰掰 (*bāibāi*) adalah \"bye-bye\" yang ditulis dengan aksara.** Di Taiwan ia jauh lebih sering dipakai daripada 再見 (*zàijiàn*) dalam percakapan sehari-hari; 再見 terasa sedikit lebih resmi.",
+    "⚠️ **同學 (*tóngxué*) berarti \"teman sekelas\", tetapi juga dipakai sebagai sapaan** kepada sesama pelajar, digabung dengan marganya: 林同學. Sama seperti 老師 untuk guru dan 先生/小姐 untuk orang umum."
+   ],
+   "grammars": [
+    {
+     "title": "叫 dan 姓: nama tidak dipasang dengan 是",
+     "body": [
+      "Bahasa Indonesia berkata \"nama saya Budi\" — sebuah kalimat dengan kata benda (\"nama\") dan tanpa kata kerja. Bahasa Mandarin memakai **kata kerja** untuk itu, dan punya dua kata kerja berbeda tergantung yang disebut nama panggilan atau marga."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我**叫**布迪。",
+        "Wǒ jiào Bùdí.",
+        "saya bernama Budi",
+        "Nama saya Budi."
+       ],
+       [
+        "我**姓**林。",
+        "Wǒ xìng Lín.",
+        "saya bermarga Lin",
+        "Marga saya Lin."
+       ],
+       [
+        "你**叫**什麼名字？",
+        "Nǐ jiào shénme míngzi?",
+        "kamu bernama apa nama",
+        "Siapa namamu?"
+       ],
+       [
+        "你**貴姓**？",
+        "Nǐ guìxìng?",
+        "kamu mulia-marga",
+        "Marga Anda apa? (hormat)"
+       ],
+       [
+        "他**叫**小美。",
+        "Tā jiào Xiǎoměi.",
+        "dia bernama Xiaomei",
+        "Namanya Xiaomei."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **我是布迪 juga benar**, tetapi artinya sedikit berbeda: \"saya *adalah* Budi\" — dipakai saat memperkenalkan diri di panggung atau saat mengaku identitas. Untuk perkenalan biasa, 我叫 lebih wajar.",
+      "⚠️ **Jangan pernah mengatakan 我是姓林.** 姓 sudah kata kerja; menambahkan 是 di depannya sama seperti mengatakan \"saya adalah bermarga Lin\" dalam bahasa Indonesia.",
+      "**貴姓 adalah bentuk hormat**, dipakai kepada orang yang lebih tua, pelanggan, atau di telepon kantor. Jawabannya bukan 我貴姓林 melainkan **敝姓林** (*bì xìng Lín*, \"marga saya yang rendah adalah Lin\") atau cukup **我姓林**."
+     ]
+    },
+    {
+     "title": "Nama Tionghoa: marga dulu, baru nama",
+     "body": [
+      "**林小美**: 林 adalah marganya, 小美 nama pribadinya. Urutannya kebalikan dari kebiasaan Barat dan tidak pernah dibalik, bahkan dalam tulisan Latin sekalipun."
+     ],
+     "table": {
+      "head": [
+       "Nama penuh",
+       "Marga",
+       "Nama pribadi",
+       "Panggilan akrab"
+      ],
+      "rows": [
+       [
+        "**林**小美",
+        "林 Lín",
+        "小美 Xiǎoměi",
+        "小美"
+       ],
+       [
+        "**陳**大文",
+        "陳 Chén",
+        "大文 Dàwén",
+        "大文 / 阿文"
+       ],
+       [
+        "**王**建國",
+        "王 Wáng",
+        "建國 Jiànguó",
+        "建國"
+       ],
+       [
+        "**李**美玲",
+        "李 Lǐ",
+        "美玲 Měilíng",
+        "美玲 / 阿玲"
+       ]
+      ]
+     },
+     "after": [
+      "Lima marga terbanyak di Taiwan: **陳** (Chén), **林** (Lín), **黃** (Huáng), **張** (Zhāng), **李** (Lǐ). Satu dari sepuluh orang Taiwan bermarga 陳.",
+      "⚠️ **Memanggil orang dengan marganya saja terdengar kasar.** Marga selalu digabung dengan sesuatu: 林小姐 (Nona Lin), 林老師 (Guru Lin), 林同學 (kawan Lin), atau 小林 (Lin kecil, akrab). Nama pribadi saja hanya dipakai oleh keluarga dan teman dekat.",
+      "**阿 (*ā*) di depan satu suku kata terakhir adalah panggilan sayang khas Taiwan** — warisan bahasa Hokkien. 阿文, 阿明, 阿美. Ia terdengar hangat dan kampung dalam arti yang baik."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa dan berpamitan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "**你好**",
+       "nǐ hǎo",
+       "Halo",
+       "Kapan saja, ke siapa saja. Paling aman."
+      ],
+      [
+       "**您好**",
+       "nín hǎo",
+       "Halo (hormat)",
+       "Ke orang tua, atasan, pelanggan."
+      ],
+      [
+       "**大家好**",
+       "dàjiā hǎo",
+       "Halo semua",
+       "Ke sekelompok orang."
+      ],
+      [
+       "**早安 / 早**",
+       "zǎo'ān / zǎo",
+       "Selamat pagi",
+       "Sampai sekitar pukul sepuluh."
+      ],
+      [
+       "**午安**",
+       "wǔ'ān",
+       "Selamat siang",
+       "⚠️ Agak resmi; sehari-hari orang tetap 你好."
+      ],
+      [
+       "**晚安**",
+       "wǎn'ān",
+       "Selamat malam",
+       "⚠️ Hanya saat berpisah untuk tidur, bukan saat bertemu."
+      ],
+      [
+       "**再見**",
+       "zàijiàn",
+       "Sampai jumpa",
+       "Agak resmi. Harfiah: \"bertemu lagi\"."
+      ],
+      [
+       "**掰掰**",
+       "bāibāi",
+       "Dah",
+       "Yang paling sering dipakai sehari-hari."
+      ],
+      [
+       "**明天見**",
+       "míngtiān jiàn",
+       "Sampai besok",
+       "Ganti 明天 dengan waktu mana pun."
+      ],
+      [
+       "**慢走**",
+       "màn zǒu",
+       "Hati-hati di jalan",
+       "Diucapkan oleh yang tinggal kepada yang pergi."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Dua baris terakhir **tidak bisa ditukar**. *慢走* (harfiah: \"jalannya pelan-pelan\") diucapkan oleh tuan rumah atau penjaga toko kepada tamu yang pergi; yang pergi menjawab *謝謝* atau *再見*. Pasangan ini persis seperti \"hati-hati di jalan\" dan \"iya, saya duluan ya\" dalam bahasa Indonesia."
+    }
+   ]
+  },
+  {
+   "title": "不好意思: ungkapan paling berguna di Taiwan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu cuma boleh membawa satu ungkapan dari unit ini, bawalah **不好意思** (*bù hǎoyìsi*). Harfiahnya \"tidak enak maksud\" — dan orang Taiwan memakainya untuk hampir segala keperluan sosial."
+    },
+    {
+     "type": "kotak",
+     "title": "Lima pekerjaan 不好意思",
+     "items": [
+      "**Permisi, numpang lewat** — di kereta yang penuh, sambil menyelinap keluar.",
+      "**Permisi, numpang tanya** — sebelum bertanya arah kepada orang asing.",
+      "**Memanggil pelayan** — di restoran, jangan melambaikan tangan; katakan saja *不好意思*.",
+      "**Maaf yang ringan** — menyenggol orang, datang terlambat lima menit, merepotkan.",
+      "**Menolak dengan sopan** — *不好意思，我今天不行。* \"Maaf, hari ini saya tidak bisa.\""
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Untuk kesalahan yang **sungguhan** — memecahkan barang, melukai perasaan, melanggar janji — 不好意思 terlalu ringan. Yang dipakai adalah **對不起** (*duìbùqǐ*, \"tidak bisa menghadapkan wajah\"). Membedakan keduanya adalah salah satu tanda paling cepat bahwa seseorang benar-benar tinggal di Taiwan, bukan cuma belajar dari buku."
+    }
+   ]
+  },
+  {
+   "title": "Sepuluh kalimat yang menyelamatkan pemula",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**謝謝**",
+       "xièxie",
+       "Terima kasih."
+      ],
+      [
+       "**不客氣**",
+       "bú kèqì",
+       "Sama-sama. (harfiah: jangan sungkan)"
+      ],
+      [
+       "**對不起**",
+       "duìbùqǐ",
+       "Maaf. (sungguhan)"
+      ],
+      [
+       "**沒關係**",
+       "méi guānxi",
+       "Tidak apa-apa."
+      ],
+      [
+       "**請問…**",
+       "qǐngwèn…",
+       "Numpang tanya…"
+      ],
+      [
+       "**我不懂**",
+       "wǒ bù dǒng",
+       "Saya tidak mengerti."
+      ],
+      [
+       "**我不知道**",
+       "wǒ bù zhīdào",
+       "Saya tidak tahu."
+      ],
+      [
+       "**請再說一次**",
+       "qǐng zài shuō yí cì",
+       "Tolong ulangi sekali lagi."
+      ],
+      [
+       "**請說慢一點**",
+       "qǐng shuō màn yìdiǎn",
+       "Tolong bicara lebih pelan."
+      ],
+      [
+       "**這個中文怎麼說？**",
+       "zhè ge Zhōngwén zěnme shuō?",
+       "Ini bahasa Mandarinnya apa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir layak dihafal hari ini juga. Ia mengubah setiap orang yang kamu temui menjadi guru, dan mengubah setiap benda di sekelilingmu menjadi kartu kosakata. Tunjuk bendanya, ucapkan kalimatnya, dengarkan jawabannya, ulangi jawabannya keras-keras. Itu satu putaran belajar yang lengkap dalam sepuluh detik."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "你好",
+   "baca": "nǐ hǎo",
+   "id": "halo"
+  },
+  {
+   "zh": "您",
+   "baca": "nín",
+   "id": "Anda (hormat)"
+  },
+  {
+   "zh": "我",
+   "baca": "wǒ",
+   "id": "saya"
+  },
+  {
+   "zh": "你",
+   "baca": "nǐ",
+   "id": "kamu"
+  },
+  {
+   "zh": "他 / 她",
+   "baca": "tā",
+   "id": "dia (lk / pr)"
+  },
+  {
+   "zh": "叫",
+   "baca": "jiào",
+   "id": "bernama; memanggil"
+  },
+  {
+   "zh": "姓",
+   "baca": "xìng",
+   "id": "bermarga"
+  },
+  {
+   "zh": "名字",
+   "baca": "míngzi",
+   "id": "nama"
+  },
+  {
+   "zh": "什麼",
+   "baca": "shénme",
+   "id": "apa"
+  },
+  {
+   "zh": "很",
+   "baca": "hěn",
+   "id": "sangat (⚠️ lihat unit 14)"
+  },
+  {
+   "zh": "高興",
+   "baca": "gāoxìng",
+   "id": "gembira"
+  },
+  {
+   "zh": "認識",
+   "baca": "rènshì",
+   "id": "mengenal"
+  },
+  {
+   "zh": "也",
+   "baca": "yě",
+   "id": "juga"
+  },
+  {
+   "zh": "對",
+   "baca": "duì",
+   "id": "benar, betul"
+  },
+  {
+   "zh": "謝謝",
+   "baca": "xièxie",
+   "id": "terima kasih"
+  },
+  {
+   "zh": "不好意思",
+   "baca": "bù hǎoyìsi",
+   "id": "⚠️ permisi; maaf (ringan)"
+  },
+  {
+   "zh": "對不起",
+   "baca": "duìbùqǐ",
+   "id": "maaf (sungguhan)"
+  },
+  {
+   "zh": "再見",
+   "baca": "zàijiàn",
+   "id": "sampai jumpa"
+  },
+  {
+   "zh": "掰掰",
+   "baca": "bāibāi",
+   "id": "dah (sehari-hari)"
+  },
+  {
+   "zh": "同學",
+   "baca": "tóngxué",
+   "id": "teman sekelas; sapaan sesama pelajar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Halo! Nama saya Budi.",
+    "Marga saya Lin.",
+    "Siapa namamu?",
+    "Senang berkenalan denganmu.",
+    "Terima kasih!",
+    "Sampai besok!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 叫 atau 姓.",
+   "items": [
+    "我 ____ 布迪。",
+    "她 ____ 林。",
+    "你 ____ 什麼名字？",
+    "我 ____ 陳，____ 陳大文。",
+    "老師 ____ 王。"
+   ]
+  },
+  {
+   "prompt": "Pilih ungkapan yang tepat: 不好意思, 對不起, 謝謝, 不客氣, atau 沒關係.",
+   "items": [
+    "Kamu mau menanyakan arah kepada orang asing: ____",
+    "Kamu memecahkan gelas milik temanmu: ____",
+    "Temanmu berkata 謝謝 kepadamu: ____",
+    "Temanmu minta maaf karena terlambat: ____",
+    "Kamu ingin memanggil pelayan di restoran: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "我 / 布迪 / 叫",
+    "名字 / 你 / 什麼 / 叫",
+    "認識 / 很 / 你 / 高興",
+    "小美 / 就好 / 我 / 叫",
+    "見 / 明天"
+   ]
+  }
+ ],
+ "answers": [
+  "你好！我叫布迪。 — 我姓林。 — 你叫什麼名字？ — 很高興認識你。 — 謝謝！ — 明天見！",
+  "叫 — 姓 — 叫 — 姓、叫 — 姓",
+  "不好意思 — 對不起 — 不客氣 — 沒關係 — 不好意思",
+  "我叫布迪。 — 你叫什麼名字？ — 很高興認識你。 — 叫我小美就好。 — 明天見。"
+ ]
+}

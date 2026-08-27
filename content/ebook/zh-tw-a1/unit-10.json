@@ -1,0 +1,584 @@
+{
+ "title": "Kamu bisa bahasa Mandarin?",
+ "title_target": "你會說中文嗎？",
+ "goal": "Membedakan tiga kata Mandarin yang semuanya diterjemahkan \"bisa\" — 會, 能, 可以 — satu titik yang hampir semua penutur Indonesia lewatkan.",
+ "bekal": [
+  "memilih antara 會, 能, dan 可以 dengan benar",
+  "meminta izin dan menolak permintaan dengan sopan",
+  "menyatakan kemampuan dan tingkat kemahiran"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 借腳踏車",
+   "intro": "Budi ingin meminjam sepeda A-Ming untuk pergi ke pasar pagi, tetapi ada masalah kecil.",
+   "lines": [
+    {
+     "speaker": "布迪:",
+     "text": "[阿明|Ā Míng]，[我|wǒ][可以|kěyǐ][借|jiè][你的|nǐ de][腳踏車|jiǎotàchē][嗎|ma]？",
+     "id": "A-Ming, boleh saya pinjam sepedamu?",
+     "literal": "A-Ming, saya — boleh — pinjam — kamu — punya — kaki-injak-kendaraan — kah?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[當然|Dāngrán][可以|kěyǐ]。[你|Nǐ][會|huì][騎|qí][嗎|ma]？",
+     "id": "Tentu boleh. Kamu bisa naik sepeda?",
+     "literal": "tentu — boleh. kamu — bisa — kendarai — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[會|Huì][啊|a]！[在|Zài][印尼|Yìnní][我|wǒ][每天|měitiān][騎|qí]。",
+     "id": "Bisa dong! Di Indonesia saya naik sepeda tiap hari.",
+     "literal": "bisa — lho! di — Indonesia — saya — setiap-hari — kendarai."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[那|Nà][沒問題|méi wèntí]。[不過|Búguò][今天|jīntiān][下雨|xiàyǔ][耶|ye]。",
+     "id": "Kalau begitu tidak masalah. Tapi hari ini hujan lho.",
+     "literal": "kalau-begitu — tidak — ada — masalah. tetapi — hari-ini — turun-hujan — lho."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[下雨|Xiàyǔ][也|yě][能|néng][騎|qí][吧|ba]？",
+     "id": "Hujan juga masih bisa naik sepeda kan?",
+     "literal": "turun-hujan — juga — mampu — kendarai — kan?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[能|Néng][是|shì][能|néng]，[可是|kěshì][會|huì][很|hěn][危險|wéixiǎn]。",
+     "id": "Bisa sih bisa, tapi bahaya.",
+     "literal": "mampu — adalah — mampu, tetapi — akan — sangat — bahaya."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][我|wǒ][坐|zuò][捷運|jiéyùn][好了|hǎo le]。",
+     "id": "Kalau begitu saya naik MRT saja.",
+     "literal": "kalau-begitu — saya — duduk — MRT — baik — sudah."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[聰明|Cōngmíng]！[你|Nǐ][有|yǒu][悠遊卡|yōuyóukǎ][嗎|ma]？",
+     "id": "Pintar! Kamu punya kartu EasyCard?",
+     "literal": "cerdas! kamu — ada — santai-jalan-kartu — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[有|Yǒu]，[可是|kěshì][我|wǒ][不會|bú huì][加值|jiāzhí]。",
+     "id": "Punya, tapi saya tidak bisa mengisi ulang.",
+     "literal": "ada, tetapi — saya — tidak — bisa — tambah-nilai."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[很|Hěn][簡單|jiǎndān]！[在|Zài][便利商店|biànlì shāngdiàn][就|jiù][可以|kěyǐ]。",
+     "id": "Gampang banget! Di minimarket saja bisa.",
+     "literal": "sangat — sederhana! di — minimarket — persis — boleh."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[你|Nǐ][能|néng][教|jiāo][我|wǒ][嗎|ma]？",
+     "id": "Kamu bisa ajari saya?",
+     "literal": "kamu — mampu — ajar — saya — kah?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[可以|Kěyǐ][啊|a]，[我們|wǒmen][現在|xiànzài][去|qù]。",
+     "id": "Boleh dong, kita pergi sekarang.",
+     "literal": "boleh — lho, kami — sekarang — pergi."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太好了|Tài hǎo le]！[你|Nǐ][真的|zhēn de][很|hěn][會|huì][幫|bāng][人|rén]。",
+     "id": "Bagus sekali! Kamu benar-benar pandai menolong orang.",
+     "literal": "terlalu — baik — sudah! kamu — benar — yang — sangat — pandai — bantu — orang."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[不會|Bú huì][啦|la]！[走|Zǒu][吧|ba]！",
+     "id": "Ah, mana ada! Ayo jalan!",
+     "literal": "tidak — bisa — kok! jalan — ayo!"
+    }
+   ],
+   "notes": [
+    "⚠️ **不會啦 di sini berarti \"ah, tidak kok\" — bukan \"tidak bisa\".** Ia adalah cara Taiwan menolak pujian, sejajar dengan 哪裡哪裡. Kamu akan mendengarnya setiap kali kamu memuji seseorang.",
+    "**能是能，可是… adalah pola \"…sih…, tapi…\"** yang sangat berguna: *好是好，可是太貴。* (\"Bagus sih bagus, tapi terlalu mahal.\") Ulangi kata sifatnya dengan 是 di tengah, lalu bantah dengan 可是.",
+    "⚠️ **悠遊卡 (EasyCard) adalah benda yang paling perlu kamu punya di Taiwan.** Ia dipakai untuk 捷運, bus, kereta, sepeda umum YouBike, dan berbelanja di 便利商店. Beli dan isi ulangnya di minimarket mana pun.",
+    "**腳踏車 (\"kendaraan injak kaki\") adalah kata Taiwan untuk sepeda.** Buku terbitan daratan mengajarkan 自行车; memakainya di Taipei dimengerti tetapi langsung menandai kamu belajar dari buku daratan.",
+    "**很會 + kata kerja berarti \"pandai melakukan sesuatu\"**: 他很會唱歌 (dia pandai menyanyi), 你很會買東西 (kamu jago belanja). ⚠️ Berbeda dari 會 biasa yang cuma berarti \"bisa\"."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ 會, 能, 可以: tiga \"bisa\" yang tidak bisa ditukar",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"bisa\" untuk tiga hal yang sangat berbeda: keterampilan yang dipelajari, kemampuan yang tersedia saat itu, dan izin. Bahasa Mandarin memisahkan ketiganya, dan memilih yang keliru langsung terdengar."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti pokok",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "**會**",
+        "bisa karena **dipelajari**",
+        "我**會**說中文。",
+        "Saya bisa bahasa Mandarin."
+       ],
+       [
+        "**會**",
+        "**akan** (kemungkinan)",
+        "明天**會**下雨。",
+        "Besok akan hujan."
+       ],
+       [
+        "**能**",
+        "bisa karena **keadaan memungkinkan**",
+        "我今天**不能**去。",
+        "Hari ini saya tidak bisa pergi."
+       ],
+       [
+        "**能**",
+        "bisa secara **fisik**",
+        "他**能**跑十公里。",
+        "Dia sanggup lari sepuluh kilometer."
+       ],
+       [
+        "**可以**",
+        "**boleh** (izin)",
+        "我**可以**借嗎？",
+        "Boleh saya pinjam?"
+       ],
+       [
+        "**可以**",
+        "bisa sebagai **pilihan**",
+        "在超商**可以**加值。",
+        "Di minimarket bisa isi ulang."
+       ]
+      ]
+     },
+     "after": [
+      "**Uji cepat:** kalau kamu bisa mengganti \"bisa\" dengan **\"pandai\"** → 會. Kalau bisa diganti dengan **\"sempat\"** atau **\"sanggup\"** → 能. Kalau bisa diganti dengan **\"boleh\"** → 可以.",
+      "⚠️ **我不會去 dan 我不能去 sangat berbeda.** Yang pertama berarti \"saya tidak akan pergi\" (keputusan); yang kedua berarti \"saya tidak bisa pergi\" (halangan). Menukarnya bisa membuat temanmu tersinggung.",
+      "**Menjawab pertanyaan: ulangi kata kerja bantunya.** *你會說中文嗎？* → **會** atau **不會**. *我可以借嗎？* → **可以** atau **不行**."
+     ]
+    },
+    {
+     "title": "Meminta izin dan menolaknya",
+     "body": [
+      "Meminta izin memakai 可以…嗎？ atau bentuk yang lebih halus 可不可以…？ Menolak punya beberapa tingkat, dan menolak terlalu langsung dianggap kasar di Taiwan."
+     ],
+     "table": {
+      "head": [
+       "中文",
+       "Baca",
+       "Arti",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "**可以…嗎？**",
+        "kěyǐ… ma?",
+        "Boleh…?",
+        "biasa"
+       ],
+       [
+        "**可不可以…？**",
+        "kě bù kěyǐ…?",
+        "Boleh nggak…?",
+        "lebih akrab"
+       ],
+       [
+        "**請問可以…嗎？**",
+        "qǐngwèn kěyǐ… ma?",
+        "Numpang tanya, boleh…?",
+        "sopan"
+       ],
+       [
+        "**可以！**",
+        "kěyǐ!",
+        "Boleh!",
+        "setuju"
+       ],
+       [
+        "**當然可以**",
+        "dāngrán kěyǐ",
+        "Tentu boleh",
+        "setuju hangat"
+       ],
+       [
+        "**不行**",
+        "bùxíng",
+        "⚠️ Tidak boleh",
+        "menolak tegas"
+       ],
+       [
+        "**不太方便**",
+        "bú tài fāngbiàn",
+        "Kurang enak, agak repot",
+        "menolak halus"
+       ],
+       [
+        "**可能不行耶**",
+        "kěnéng bùxíng ye",
+        "Sepertinya tidak bisa deh",
+        "menolak paling halus"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **不行 terdengar tegas dan bisa melukai** kalau dipakai kepada teman. Orang Taiwan lebih sering memakai 不太方便 atau 可能不行耶 — menolak sambil menyisakan ruang. Pola ini sama persis dengan kebiasaan Indonesia menolak dengan \"kayaknya susah deh\".",
+      "**Papan larangan memakai 禁止 (*jìnzhǐ*, dilarang) atau 請勿 (*qǐng wù*, mohon jangan)**: 禁止吸菸 (dilarang merokok), 請勿飲食 (mohon tidak makan-minum — ⚠️ berlaku di seluruh 捷運 Taipei, termasuk minum air, dan dendanya nyata)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keterampilan: apa saja yang bisa kamu lakukan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "會說中文",
+       "huì shuō Zhōngwén",
+       "bisa bahasa Mandarin"
+      ],
+      [
+       "會開車",
+       "huì kāichē",
+       "bisa menyetir"
+      ],
+      [
+       "會騎車",
+       "huì qíchē",
+       "bisa naik sepeda/motor"
+      ],
+      [
+       "會游泳",
+       "huì yóuyǒng",
+       "bisa berenang"
+      ],
+      [
+       "會做飯",
+       "huì zuòfàn",
+       "bisa memasak"
+      ],
+      [
+       "會唱歌",
+       "huì chànggē",
+       "bisa menyanyi"
+      ],
+      [
+       "會打球",
+       "huì dǎqiú",
+       "bisa main bola"
+      ],
+      [
+       "會用電腦",
+       "huì yòng diànnǎo",
+       "bisa pakai komputer"
+      ],
+      [
+       "會寫漢字",
+       "huì xiě hànzì",
+       "bisa menulis aksara Han"
+      ],
+      [
+       "會拍照",
+       "huì pāizhào",
+       "bisa memotret"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tingkat kemahiran",
+     "items": [
+      "**我會一點。** — Saya bisa sedikit. (paling aman dan paling sering dipakai)",
+      "**我會一點點。** — Saya bisa sedikit sekali.",
+      "**我說得不好。** — Saya bicaranya belum bagus.",
+      "**我還在學。** — Saya masih belajar.",
+      "**我聽得懂，但是不會說。** — Saya mengerti, tapi belum bisa bicara.",
+      "⚠️ **Jangan menjawab 我會中文 dengan mantap** kalau kamu masih A1 — orang Taiwan akan langsung berbicara dengan kecepatan penuh. *我會一點* menjaga percakapan tetap pelan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dan meminta bantuan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**你可以幫我嗎？**",
+       "nǐ kěyǐ bāng wǒ ma?",
+       "Bisa bantu saya?"
+      ],
+      [
+       "**請幫我一下**",
+       "qǐng bāng wǒ yíxià",
+       "Tolong bantu sebentar"
+      ],
+      [
+       "**你能教我嗎？**",
+       "nǐ néng jiāo wǒ ma?",
+       "Bisa ajari saya?"
+      ],
+      [
+       "**這個怎麼用？**",
+       "zhè ge zěnme yòng?",
+       "Ini cara pakainya bagaimana?"
+      ],
+      [
+       "**可以拍照嗎？**",
+       "kěyǐ pāizhào ma?",
+       "Boleh foto?"
+      ],
+      [
+       "**可以坐這裡嗎？**",
+       "kěyǐ zuò zhèlǐ ma?",
+       "Boleh duduk di sini?"
+      ],
+      [
+       "**可以借過嗎？**",
+       "kěyǐ jièguò ma?",
+       "Permisi, boleh lewat?"
+      ],
+      [
+       "**我不會用**",
+       "wǒ bú huì yòng",
+       "Saya tidak bisa memakainya"
+      ],
+      [
+       "**你會不會…？**",
+       "nǐ huì bú huì…?",
+       "Kamu bisa nggak…?"
+      ],
+      [
+       "**謝謝你的幫忙**",
+       "xièxie nǐ de bāngmáng",
+       "Terima kasih bantuannya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **一下 sesudah kata kerja melunakkan permintaan** jadi \"sebentar saja\": 幫我一下 (bantu sebentar), 看一下 (lihat sebentar), 等一下 (tunggu sebentar). Tanpa 一下, permintaanmu terdengar seperti perintah. Tambahkan ia di setiap permintaan sampai jadi kebiasaan."
+    }
+   ]
+  },
+  {
+   "title": "會 sebagai \"akan\"",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Selain \"bisa karena belajar\", 會 juga menyatakan **kemungkinan di masa depan**. Dua arti ini dibedakan oleh apa yang mengikutinya: kata kerja keterampilan → \"bisa\"; kejadian → \"akan\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "明天**會**下雨。",
+       "Míngtiān huì xiàyǔ.",
+       "Besok akan hujan."
+      ],
+      [
+       "他**會**來嗎？",
+       "Tā huì lái ma?",
+       "Dia akan datang?"
+      ],
+      [
+       "我**不會**忘記。",
+       "Wǒ bú huì wàngjì.",
+       "Saya tidak akan lupa."
+      ],
+      [
+       "這樣**會**很危險。",
+       "Zhèyàng huì hěn wéixiǎn.",
+       "Begini akan berbahaya."
+      ],
+      [
+       "我**會**說中文。",
+       "Wǒ huì shuō Zhōngwén.",
+       "Saya bisa bahasa Mandarin."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Bahasa Mandarin tidak punya bentuk masa depan.** Yang menandai masa depan adalah kata waktu (明天, 下星期) atau kata bantu seperti 會 dan 要. Kata kerjanya sendiri tidak pernah berubah sedikit pun — hadiah yang sama seperti bahasa Indonesia."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "會",
+   "baca": "huì",
+   "id": "bisa (belajar); akan"
+  },
+  {
+   "zh": "能",
+   "baca": "néng",
+   "id": "bisa (keadaan)"
+  },
+  {
+   "zh": "可以",
+   "baca": "kěyǐ",
+   "id": "boleh"
+  },
+  {
+   "zh": "不行",
+   "baca": "bùxíng",
+   "id": "⚠️ tidak boleh (tegas)"
+  },
+  {
+   "zh": "借",
+   "baca": "jiè",
+   "id": "meminjam; meminjamkan"
+  },
+  {
+   "zh": "幫",
+   "baca": "bāng",
+   "id": "membantu"
+  },
+  {
+   "zh": "教",
+   "baca": "jiāo",
+   "id": "mengajar"
+  },
+  {
+   "zh": "騎",
+   "baca": "qí",
+   "id": "mengendarai (sepeda, motor)"
+  },
+  {
+   "zh": "開車",
+   "baca": "kāichē",
+   "id": "menyetir"
+  },
+  {
+   "zh": "腳踏車",
+   "baca": "jiǎotàchē",
+   "id": "sepeda (⚠️ khas Taiwan)"
+  },
+  {
+   "zh": "悠遊卡",
+   "baca": "yōuyóukǎ",
+   "id": "EasyCard"
+  },
+  {
+   "zh": "簡單",
+   "baca": "jiǎndān",
+   "id": "sederhana, mudah"
+  },
+  {
+   "zh": "危險",
+   "baca": "wéixiǎn",
+   "id": "bahaya"
+  },
+  {
+   "zh": "聰明",
+   "baca": "cōngmíng",
+   "id": "pintar, cerdas"
+  },
+  {
+   "zh": "用",
+   "baca": "yòng",
+   "id": "memakai"
+  },
+  {
+   "zh": "不過",
+   "baca": "búguò",
+   "id": "tetapi"
+  },
+  {
+   "zh": "一下",
+   "baca": "yíxià",
+   "id": "sebentar (pelunak)"
+  },
+  {
+   "zh": "游泳",
+   "baca": "yóuyǒng",
+   "id": "berenang"
+  },
+  {
+   "zh": "做飯",
+   "baca": "zuòfàn",
+   "id": "memasak"
+  },
+  {
+   "zh": "幫忙",
+   "baca": "bāngmáng",
+   "id": "bantuan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kamu bisa bahasa Mandarin?",
+    "Saya bisa sedikit.",
+    "Boleh saya pinjam bukumu?",
+    "Hari ini saya tidak bisa pergi.",
+    "Besok akan hujan.",
+    "Bisa bantu saya sebentar?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 會, 能, atau 可以.",
+   "items": [
+    "我 ____ 說中文。",
+    "我今天很忙，不 ____ 去。",
+    "____ 借過嗎？",
+    "明天 ____ 下雨。",
+    "在便利商店 ____ 加值。",
+    "他 ____ 開車，我不 ____。"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaannya dengan mengulang kata bantunya.",
+   "items": [
+    "你會說中文嗎？（bisa）",
+    "你會游泳嗎？（tidak bisa）",
+    "我可以坐這裡嗎？（boleh）",
+    "你今天能來嗎？（tidak bisa）",
+    "你會開車嗎？（bisa）"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "說 / 中文 / 你 / 嗎 / 會",
+    "一點 / 會 / 我",
+    "嗎 / 借 / 可以 / 我",
+    "去 / 不能 / 我 / 今天",
+    "幫 / 你 / 嗎 / 我 / 可以"
+   ]
+  }
+ ],
+ "answers": [
+  "你會說中文嗎？ — 我會一點。 — 我可以借你的書嗎？ — 我今天不能去。 — 明天會下雨。 — 你可以幫我一下嗎？",
+  "會 — 能 — 可以 — 會 — 可以 — 會、會",
+  "會。 — 不會。 — 可以。 — 不能。 — 會。",
+  "你會說中文嗎？ — 我會一點。 — 我可以借嗎？ — 我今天不能去。 — 你可以幫我嗎？"
+ ]
+}

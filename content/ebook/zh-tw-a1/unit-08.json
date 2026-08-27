@@ -1,0 +1,549 @@
+{
+ "title": "Keluargamu berapa orang?",
+ "title_target": "你家有幾個人？",
+ "goal": "Menceritakan keluarga dan umur dengan 有 dan 沒有 — dan menerima kenyataan bahwa \"kakak\" dalam bahasa Mandarin bukan satu kata melainkan empat.",
+ "bekal": [
+  "memakai 有 untuk kepemilikan dan menyangkalnya HANYA dengan 沒有",
+  "menyebut anggota keluarga dengan kata yang tepat menurut umur dan pihak",
+  "menanyakan dan menyebutkan umur dengan tiga bentuk yang berbeda"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 看照片",
+   "intro": "Di ruang makan asrama, Xiaomei melihat foto keluarga di ponsel Budi.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[這|Zhè][是|shì][你|nǐ][家人|jiārén][嗎|ma]？[好|Hǎo][多|duō][人|rén][喔|o]！",
+     "id": "Ini keluargamu? Banyak sekali orangnya!",
+     "literal": "ini — adalah — kamu — rumah-orang — kah? sangat — banyak — orang — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[對|Duì]。[我|Wǒ][家|jiā][有|yǒu][六|liù][口|kǒu][人|rén]。",
+     "id": "Iya. Keluarga saya enam orang.",
+     "literal": "benar. saya — rumah — ada — enam — (penggolong) — orang."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[哇|Wā]！[你|Nǐ][有|yǒu][兄弟姐妹|xiōngdì jiěmèi][嗎|ma]？",
+     "id": "Wah! Kamu punya saudara?",
+     "literal": "wah! kamu — ada — kakak-adik-kakak-adik — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[有|Yǒu]。[一個|Yí ge][哥哥|gēge]，[兩個|liǎng ge][妹妹|mèimei]。",
+     "id": "Ada. Satu kakak laki-laki, dua adik perempuan.",
+     "literal": "ada. satu — (penggolong) — kakak-lk, dua — (penggolong) — adik-pr."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[你|Nǐ][哥哥|gēge][幾歲|jǐ suì]？[不對|Bú duì]…[多大|duō dà]？",
+     "id": "Kakakmu berapa tahun? Eh salah… umurnya berapa?",
+     "literal": "kamu — kakak — berapa — tahun? tidak — benar… berapa — besar?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[他|Tā][二十八歲|èrshíbā suì]。[他|Tā][已經|yǐjīng][結婚|jiéhūn][了|le]。",
+     "id": "Dia dua puluh delapan. Sudah menikah.",
+     "literal": "dia — dua-puluh-delapan — tahun. dia — sudah — ikat-nikah — sudah."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[他|Tā][有|yǒu][小孩|xiǎohái][嗎|ma]？",
+     "id": "Dia sudah punya anak?",
+     "literal": "dia — ada — kecil-anak — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[有|Yǒu][一個|yí ge][女兒|nǚ'ér]，[兩歲|liǎng suì]。[超|Chāo][可愛|kě'ài]！",
+     "id": "Ada satu anak perempuan, dua tahun. Lucu banget!",
+     "literal": "ada — satu — (penggolong) — perempuan-anak, dua — tahun. super — bisa-disayang!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[那|Nà][你|nǐ][是|shì][叔叔|shūshu][了|le]！",
+     "id": "Berarti kamu sudah jadi paman!",
+     "literal": "kalau-begitu — kamu — adalah — paman — sudah!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[對啊|Duì a]！[妳|Nǐ][呢|ne]？[妳|Nǐ][家|jiā][有|yǒu][幾個|jǐ ge][人|rén]？",
+     "id": "Iya dong! Kalau kamu? Keluargamu berapa orang?",
+     "literal": "benar — lho! kamu — kalau? kamu — rumah — ada — berapa — (penggolong) — orang?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[三|Sān][口|kǒu]。[爸爸|Bàba]、[媽媽|māma][和|hàn][我|wǒ]。",
+     "id": "Tiga orang. Ayah, ibu, dan saya.",
+     "literal": "tiga — (penggolong). ayah, ibu — dan — saya."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[妳|Nǐ][沒有|méi yǒu][兄弟姐妹|xiōngdì jiěmèi][嗎|ma]？",
+     "id": "Kamu tidak punya saudara?",
+     "literal": "kamu — tidak — ada — saudara — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[沒有|Méi yǒu]。[在|Zài][台灣|Táiwān]，[這|zhè][很|hěn][普遍|pǔbiàn]。",
+     "id": "Tidak ada. Di Taiwan itu umum sekali.",
+     "literal": "tidak — ada. di — Taiwan, ini — sangat — umum-luas."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][妳|nǐ][爸媽|bàmā][一定|yídìng][很|hěn][疼|téng][妳|nǐ]。",
+     "id": "Berarti orang tuamu pasti sayang banget sama kamu.",
+     "literal": "kalau-begitu — kamu — ayah-ibu — pasti — sangat — sayang — kamu."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[太疼了|Tài téng le]！[所以|Suǒyǐ][我|wǒ][還|hái][住|zhù][家裡|jiālǐ][啊|a]！",
+     "id": "Sayang banget malah! Makanya saya masih tinggal di rumah!",
+     "literal": "terlalu — sayang — sudah! sebab-itu — saya — masih — tinggal — rumah-dalam — lho!"
+    }
+   ],
+   "notes": [
+    "⚠️ **口 adalah kata penggolong khusus untuk anggota keluarga** dan tidak dipakai untuk apa pun yang lain. *我家有六口人* terdengar hangat dan tradisional; *六個人* juga benar dan sama umum di kalangan muda.",
+    "⚠️ **幾歲 hanya untuk anak kecil.** Menanyakan umur orang dewasa dengan 幾歲 terdengar seperti bertanya kepada anak TK. Untuk orang seusiamu pakai **多大**, untuk orang yang lebih tua pakai **您貴庚** (*nín guìgēng*) — dan yang paling aman, jangan bertanya sama sekali.",
+    "**了 di 結婚了 dan 我是叔叔了 bukan bentuk lampau** melainkan penanda **perubahan keadaan**: dulu belum, sekarang sudah. Unit 11 menggarapnya tuntas; untuk sekarang, rasakan saja polanya.",
+    "**超 (*chāo*, \"super\") adalah kata anak muda Taiwan** yang menggantikan 很: 超可愛, 超好吃, 超累. Ia santai dan ada di mana-mana, tetapi jangan dipakai dalam tulisan resmi.",
+    "⚠️ **疼 berarti \"sayang\" kalau tentang orang, dan \"sakit\" kalau tentang badan.** *我媽媽很疼我* (ibu sayang saya) lawan *我頭很疼* (kepala saya sakit). Konteks selalu memisahkannya."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ 有 disangkal HANYA dengan 沒, tidak pernah dengan 不",
+     "body": [
+      "Bahasa Mandarin punya dua kata penyangkal, dan pembagiannya sederhana tetapi kaku: **不** untuk hampir semua kata kerja, **沒** untuk 有 dan untuk kejadian yang belum terjadi. Tidak ada kekecualian."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我**有**兩個妹妹。",
+        "Wǒ yǒu liǎng ge mèimei.",
+        "Saya punya dua adik perempuan."
+       ],
+       [
+        "我**沒有**兄弟姐妹。",
+        "Wǒ méi yǒu xiōngdì jiěmèi.",
+        "Saya tidak punya saudara."
+       ],
+       [
+        "我**沒有**錢。",
+        "Wǒ méi yǒu qián.",
+        "Saya tidak punya uang."
+       ],
+       [
+        "✗ 我不有錢。",
+        "—",
+        "✗ salah, tidak pernah dipakai"
+       ],
+       [
+        "我**不**喝咖啡。",
+        "Wǒ bù hē kāfēi.",
+        "Saya tidak minum kopi. (kebiasaan)"
+       ],
+       [
+        "我**沒**喝咖啡。",
+        "Wǒ méi hē kāfēi.",
+        "Saya belum/tidak jadi minum kopi."
+       ]
+      ]
+     },
+     "after": [
+      "**沒有 boleh dipendekkan jadi 沒** di depan kata kerja lain: *我沒去* (saya tidak jadi pergi). Tetapi kalau ia menyangkal 有 sendiri, biasanya tetap utuh: *我沒有錢*.",
+      "⚠️ Bandingkan dua baris terakhir sekali lagi. **不 menyangkal kebiasaan atau kemauan; 沒 menyangkal kejadian.** *我不吃豬肉* = saya tidak makan babi (prinsip). *我沒吃* = saya belum makan (fakta hari ini)."
+     ]
+    },
+    {
+     "title": "Umur: tiga bentuk, tiga tingkat kesopanan",
+     "body": [
+      "Bahasa Mandarin memilih kata tanya umur menurut siapa yang ditanya. Memakai yang salah tidak melanggar tata bahasa, tetapi langsung terdengar janggal."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Baca",
+       "Kepada siapa",
+       "Jawaban"
+      ],
+      "rows": [
+       [
+        "**你幾歲？**",
+        "Nǐ jǐ suì?",
+        "anak di bawah sepuluh",
+        "我五歲。"
+       ],
+       [
+        "**你多大？**",
+        "Nǐ duō dà?",
+        "teman sebaya, remaja, dewasa muda",
+        "我二十歲。"
+       ],
+       [
+        "**您貴庚？**",
+        "Nín guìgēng?",
+        "⚠️ orang yang jauh lebih tua, sangat hormat",
+        "我六十五歲。"
+       ],
+       [
+        "**你今年幾年級？**",
+        "Nǐ jīnnián jǐ niánjí?",
+        "pelajar — menanyakan tingkat, bukan umur",
+        "我大二。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Menyebut umur tidak butuh 是**: *我二十歲* — bukan *我是二十歲*. Angka + 歲 sudah berfungsi seperti kata sifat, dan kata sifat tidak memakai 是. Ini penerapan pertama dari aturan yang akan digarap penuh di unit 14.",
+      "**大一, 大二, 大三, 大四** adalah tingkat kuliah (tahun pertama sampai keempat) — singkatan dari 大學一年級. Menanyakan *你大幾？* adalah cara paling wajar berkenalan sesama mahasiswa di Taiwan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "⚠️ Keluarga: satu kata Indonesia, empat kata Mandarin",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia berkata \"kakak\" dan \"adik\" tanpa membedakan laki-laki dan perempuan sampai kita menambahkan katanya. Bahasa Mandarin **membedakannya di dalam kata itu sendiri**, dan tidak punya satu pun kata umum untuk \"saudara\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "爸爸",
+       "bàba",
+       "ayah",
+       "媽媽",
+       "māma",
+       "ibu"
+      ],
+      [
+       "哥哥",
+       "gēge",
+       "kakak laki-laki",
+       "姐姐",
+       "jiějie",
+       "kakak perempuan"
+      ],
+      [
+       "弟弟",
+       "dìdi",
+       "adik laki-laki",
+       "妹妹",
+       "mèimei",
+       "adik perempuan"
+      ],
+      [
+       "兒子",
+       "érzi",
+       "anak laki-laki",
+       "女兒",
+       "nǚ'ér",
+       "anak perempuan"
+      ],
+      [
+       "先生",
+       "xiānshēng",
+       "suami; Tuan",
+       "太太",
+       "tàitai",
+       "istri; Nyonya"
+      ],
+      [
+       "爺爺",
+       "yéye",
+       "kakek (pihak ayah)",
+       "奶奶",
+       "nǎinai",
+       "nenek (pihak ayah)"
+      ],
+      [
+       "外公",
+       "wàigōng",
+       "kakek (pihak ibu)",
+       "外婆",
+       "wàipó",
+       "nenek (pihak ibu)"
+      ],
+      [
+       "叔叔",
+       "shūshu",
+       "paman (adik ayah)",
+       "阿姨",
+       "āyí",
+       "bibi (pihak ibu)"
+      ],
+      [
+       "家人",
+       "jiārén",
+       "anggota keluarga",
+       "小孩",
+       "xiǎohái",
+       "anak (kecil)"
+      ],
+      [
+       "兄弟姐妹",
+       "xiōngdì jiěmèi",
+       "saudara (semuanya)",
+       "父母",
+       "fùmǔ",
+       "orang tua"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Sistem penuhnya jauh lebih rumit — bahasa Mandarin punya kata berbeda untuk paman dari pihak ayah dan pihak ibu, dan untuk yang lebih tua dan lebih muda dari ayahmu. Untuk tingkat A1, sepuluh baris pertama sudah cukup. **外 (\"luar\") pada 外公 dan 外婆 menandai pihak ibu**, warisan zaman ketika anak dianggap milik keluarga ayah."
+    },
+    {
+     "type": "kotak",
+     "title": "阿姨 dan 叔叔 juga sapaan untuk orang asing",
+     "items": [
+      "Di Taiwan, anak-anak memanggil perempuan seusia ibunya **阿姨** dan laki-laki seusia ayahnya **叔叔**, meskipun bukan keluarga sama sekali.",
+      "Orang dewasa memanggil orang yang jauh lebih tua **阿伯** (*ābó*, pak tua) dan **阿姨** atau **阿嬤** (*āmà*, dari bahasa Hokkien, nenek).",
+      "⚠️ Memanggil pelayan restoran perempuan yang lebih tua dengan **阿姨** terdengar hangat; memanggilnya dengan **小姐** terdengar dingin.",
+      "**帥哥** (*shuàigē*, mas ganteng) dan **美女** (*měinǚ*, mbak cantik) dipakai penjual pasar malam kepada pembeli mana pun. Ia bukan rayuan — ia sekadar sapaan ramah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "有 dan 沒有 dalam pemakaian sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**你有嗎？**",
+       "nǐ yǒu ma?",
+       "Kamu punya?"
+      ],
+      [
+       "**有沒有？**",
+       "yǒu méi yǒu?",
+       "Ada nggak? (paling sering)"
+      ],
+      [
+       "**有！**",
+       "yǒu!",
+       "Ada!"
+      ],
+      [
+       "**沒有**",
+       "méi yǒu",
+       "Tidak ada"
+      ],
+      [
+       "**我沒有錢**",
+       "wǒ méi yǒu qián",
+       "Saya tidak punya uang"
+      ],
+      [
+       "**這裡有沒有廁所？**",
+       "zhèlǐ yǒu méi yǒu cèsuǒ?",
+       "Di sini ada toilet nggak?"
+      ],
+      [
+       "**有問題嗎？**",
+       "yǒu wèntí ma?",
+       "Ada pertanyaan?"
+      ],
+      [
+       "**沒問題！**",
+       "méi wèntí!",
+       "Tidak masalah!"
+      ],
+      [
+       "**有一點…**",
+       "yǒu yìdiǎn…",
+       "agak… (⚠️ selalu negatif)"
+      ],
+      [
+       "**沒關係**",
+       "méi guānxi",
+       "Tidak apa-apa"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **有一點 selalu mengantar sesuatu yang tidak menyenangkan**: 有一點貴 (agak mahal), 有一點累 (agak capek), 有一點吵 (agak berisik). Untuk hal yang menyenangkan, orang memakai 一點 tanpa 有, atau memakai kata lain: *便宜一點* (lebih murah sedikit). Kekeliruan *有一點好* terdengar aneh di telinga orang Taiwan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "有",
+   "baca": "yǒu",
+   "id": "punya, ada"
+  },
+  {
+   "zh": "沒有",
+   "baca": "méi yǒu",
+   "id": "⚠️ tidak punya, tidak ada"
+  },
+  {
+   "zh": "家人",
+   "baca": "jiārén",
+   "id": "anggota keluarga"
+  },
+  {
+   "zh": "口",
+   "baca": "kǒu",
+   "id": "(penggolong anggota keluarga)"
+  },
+  {
+   "zh": "爸爸",
+   "baca": "bàba",
+   "id": "ayah"
+  },
+  {
+   "zh": "媽媽",
+   "baca": "māma",
+   "id": "ibu"
+  },
+  {
+   "zh": "哥哥",
+   "baca": "gēge",
+   "id": "kakak laki-laki"
+  },
+  {
+   "zh": "姐姐",
+   "baca": "jiějie",
+   "id": "kakak perempuan"
+  },
+  {
+   "zh": "弟弟",
+   "baca": "dìdi",
+   "id": "adik laki-laki"
+  },
+  {
+   "zh": "妹妹",
+   "baca": "mèimei",
+   "id": "adik perempuan"
+  },
+  {
+   "zh": "兄弟姐妹",
+   "baca": "xiōngdì jiěmèi",
+   "id": "saudara"
+  },
+  {
+   "zh": "小孩",
+   "baca": "xiǎohái",
+   "id": "anak kecil"
+  },
+  {
+   "zh": "歲",
+   "baca": "suì",
+   "id": "tahun (umur)"
+  },
+  {
+   "zh": "多大",
+   "baca": "duō dà",
+   "id": "umur berapa"
+  },
+  {
+   "zh": "結婚",
+   "baca": "jiéhūn",
+   "id": "menikah"
+  },
+  {
+   "zh": "已經",
+   "baca": "yǐjīng",
+   "id": "sudah"
+  },
+  {
+   "zh": "可愛",
+   "baca": "kě'ài",
+   "id": "lucu, menggemaskan"
+  },
+  {
+   "zh": "一定",
+   "baca": "yídìng",
+   "id": "pasti"
+  },
+  {
+   "zh": "所以",
+   "baca": "suǒyǐ",
+   "id": "jadi, karena itu"
+  },
+  {
+   "zh": "問題",
+   "baca": "wèntí",
+   "id": "masalah; pertanyaan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Keluargamu berapa orang?",
+    "Keluarga saya lima orang.",
+    "Saya punya satu kakak laki-laki dan dua adik perempuan.",
+    "Saya tidak punya saudara.",
+    "Kakakmu umurnya berapa?",
+    "Tidak masalah!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 不 atau 沒.",
+   "items": [
+    "我 ____ 有錢。",
+    "我 ____ 喝咖啡，我喝茶。",
+    "他 ____ 是台灣人。",
+    "我今天 ____ 吃早餐。",
+    "她 ____ 有兄弟姐妹。",
+    "我 ____ 知道。"
+   ]
+  },
+  {
+   "prompt": "Pilih kata keluarga yang tepat.",
+   "items": [
+    "Kakak perempuan: ____",
+    "Adik laki-laki: ____",
+    "Nenek dari pihak ibu: ____",
+    "Anak perempuan: ____",
+    "Orang tua: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "人 / 家 / 幾個 / 有 / 你",
+    "妹妹 / 我 / 兩個 / 有",
+    "兄弟姐妹 / 我 / 沒有",
+    "歲 / 他 / 二十八",
+    "了 / 已經 / 他 / 結婚"
+   ]
+  }
+ ],
+ "answers": [
+  "你家有幾個人？ — 我家有五口人。 — 我有一個哥哥和兩個妹妹。 — 我沒有兄弟姐妹。 — 你哥哥多大？ — 沒問題！",
+  "沒 — 不 — 不 — 沒 — 沒 — 不",
+  "姐姐 — 弟弟 — 外婆 — 女兒 — 父母",
+  "你家有幾個人？ — 我有兩個妹妹。 — 我沒有兄弟姐妹。 — 他二十八歲。 — 他已經結婚了。"
+ ]
+}

@@ -1,0 +1,610 @@
+{
+ "title": "Kamu tinggal di mana?",
+ "title_target": "你住哪裡？",
+ "goal": "Menyebut tempat, alamat, dan letak benda — sambil menerima aturan kedua yang mengubah kalimatmu: kata tempat berdiri di BELAKANG bendanya.",
+ "bekal": [
+  "memakai 在 sebagai kata kerja 'berada' dan sebagai keterangan tempat",
+  "menaruh 上面, 裡面, 旁邊 di belakang bendanya, bukan di depan",
+  "menyebutkan alamat dengan urutan besar ke kecil"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 找房子",
+   "intro": "Budi ingin pindah dari asrama. Xiaomei membantunya menelepon pemilik kamar sewa.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[布迪|Bùdí]，[你|nǐ][現在|xiànzài][住|zhù][哪裡|nǎlǐ]？",
+     "id": "Budi, sekarang kamu tinggal di mana?",
+     "literal": "Budi, kamu — sekarang — tinggal — mana?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][住|zhù][學校|xuéxiào][宿舍|sùshè]。[有點|Yǒudiǎn][吵|chǎo]。",
+     "id": "Saya tinggal di asrama kampus. Agak berisik.",
+     "literal": "saya — tinggal — sekolah — asrama. ada-sedikit — berisik."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我|Wǒ][有|yǒu][一個|yí ge][朋友|péngyǒu][在|zài][租|zū][房間|fángjiān]。",
+     "id": "Saya punya teman yang sedang menyewakan kamar.",
+     "literal": "saya — ada — satu — (penggolong) — teman — sedang — sewa — kamar."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[真的|Zhēn de][嗎|ma]？[在|Zài][哪裡|nǎlǐ]？",
+     "id": "Serius? Di mana?",
+     "literal": "benar — yang — kah? di — mana?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[在|Zài][大安區|Dà'ān Qū]，[捷運站|jiéyùn zhàn][旁邊|pángbiān]。",
+     "id": "Di Distrik Da'an, di sebelah stasiun MRT.",
+     "literal": "di — Da'an — distrik, MRT — stasiun — samping."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太方便了|Tài fāngbiàn le]！[房租|Fángzū][多少|duōshǎo]？",
+     "id": "Praktis sekali! Sewanya berapa?",
+     "literal": "terlalu — mudah — sudah! rumah-sewa — berapa?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[一個月|Yí ge yuè][八千|bāqiān]，[水電|shuǐdiàn][另外|lìngwài][算|suàn]。",
+     "id": "Delapan ribu sebulan, listrik dan air dihitung terpisah.",
+     "literal": "satu — (penggolong) — bulan — delapan-ribu, air-listrik — lain-luar — hitung."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[房間|Fángjiān][裡面|lǐmiàn][有|yǒu][什麼|shénme]？",
+     "id": "Di dalam kamarnya ada apa saja?",
+     "literal": "kamar — dalam-sisi — ada — apa?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[有|Yǒu][床|chuáng]、[桌子|zhuōzi]、[冷氣|lěngqì]，[還有|hái yǒu][冰箱|bīngxiāng]。",
+     "id": "Ada kasur, meja, AC, dan kulkas.",
+     "literal": "ada — ranjang, meja, dingin-udara, masih — ada — es-kotak."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[附近|Fùjìn][有|yǒu][便利商店|biànlì shāngdiàn][嗎|ma]？",
+     "id": "Di dekat situ ada minimarket?",
+     "literal": "dekat-sekitar — ada — mudah-toko — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[樓下|Lóu xià][就|jiù][有|yǒu][一家|yì jiā][小七|Xiǎo Qī]。",
+     "id": "Di bawah gedung ada 7-Eleven.",
+     "literal": "lantai — bawah — persis — ada — satu — (penggolong) — kecil-tujuh."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[聽起來|Tīngqǐlái][很|hěn][不錯|búcuò]。[我|Wǒ][可以|kěyǐ][去|qù][看看|kànkàn][嗎|ma]？",
+     "id": "Kedengarannya bagus. Boleh saya lihat-lihat?",
+     "literal": "terdengar — sangat — tidak — salah. saya — boleh — pergi — lihat-lihat — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[當然|Dāngrán][可以|kěyǐ]。[地址|Dìzhǐ][我|wǒ][傳|chuán][給|gěi][你|nǐ]。",
+     "id": "Tentu boleh. Alamatnya saya kirim ke kamu.",
+     "literal": "tentu — boleh. alamat — saya — kirim — beri — kamu."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[謝謝|Xièxie]！[妳|Nǐ][真的|zhēn de][是|shì][我|wǒ][在|zài][台灣|Táiwān][的|de][貴人|guìrén]。",
+     "id": "Terima kasih! Kamu benar-benar penolong saya di Taiwan.",
+     "literal": "terima kasih! kamu — benar — yang — adalah — saya — di — Taiwan — punya — mulia-orang."
+    }
+   ],
+   "notes": [
+    "⚠️ **小七 (\"tujuh kecil\") adalah panggilan akrab untuk 7-Eleven** dan dipakai semua orang Taiwan. Minimarket di Taiwan bukan cuma toko: di situ orang membayar tagihan, mengirim paket, membeli tiket kereta, mengisi 悠遊卡, dan mencetak dokumen.",
+    "**貴人 (\"orang mulia\") berarti orang yang menolongmu di saat penting** — bukan orang kaya. Menyebut seseorang 貴人 adalah pujian yang hangat dan tulus, dan orang Taiwan tersentuh mendengarnya.",
+    "**不錯 harfiahnya \"tidak salah\", tetapi artinya \"lumayan bagus\".** Ia adalah pujian yang paling sering dipakai di Taiwan, lebih sering daripada 很好. Rendah hati, tetapi positif.",
+    "**就 (*jiù*) di sini berarti \"persis, langsung\"** — menekankan kedekatan atau kemudahan: *樓下就有* (\"di bawah saja sudah ada\"). Kata kecil ini muncul di mana-mana dan sulit diterjemahkan; kenali rasanya, jangan cari padanan tetapnya.",
+    "⚠️ **一個月八千 berarti \"delapan ribu per bulan\".** Keterangan waktu di depan, jumlah di belakang — tanpa kata \"per\". Pola ini dipakai untuk segala hal: *一天三次* (tiga kali sehari), *一個星期兩次* (dua kali seminggu)."
+   ],
+   "grammars": [
+    {
+     "title": "在: kata kerja 'berada' dan keterangan tempat",
+     "body": [
+      "**在** mengerjakan dua hal yang dalam bahasa Indonesia dikerjakan satu kata \"di\". Bedanya penting: kalau 在 satu-satunya kata kerja, ia berarti \"berada\"; kalau ada kata kerja lain, ia jadi keterangan dan berdiri **sebelum** kata kerja itu."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Pelaku + **在** + tempat",
+        "我**在**家。",
+        "Saya di rumah."
+       ],
+       [
+        "Pelaku + **在** + tempat + kerja",
+        "我**在**家吃飯。",
+        "Saya makan di rumah."
+       ],
+       [
+        "✗ Pelaku + kerja + 在 + tempat",
+        "✗ 我吃飯在家。",
+        "✗ salah"
+       ],
+       [
+        "Penyangkalan",
+        "我**不在**家。",
+        "Saya tidak di rumah."
+       ],
+       [
+        "Pertanyaan",
+        "你**在**哪裡？",
+        "Kamu di mana?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **我吃飯在家 adalah kekeliruan khas penutur Indonesia**, karena bahasa Indonesia berkata \"saya makan di rumah\" dengan tempat di belakang. Ingat aturan unit sebelumnya: **semua keterangan berdiri sebelum kata kerja** — waktu, tempat, cara, teman. Tidak ada kekecualian di tingkat A1.",
+      "**Kata kerja yang sudah mengandung arti tempat tidak butuh 在**: 住 (tinggal), 去 (pergi), 來 (datang), 回 (pulang). *我住台北* sudah lengkap; *我住在台北* juga benar dan sama umum."
+     ]
+    },
+    {
+     "title": "⚠️ Kata letak berdiri di BELAKANG bendanya",
+     "body": [
+      "Bahasa Indonesia berkata \"di **atas** meja\" — letak dulu, benda kemudian. Bahasa Mandarin membalik urutannya: **benda dulu, letak kemudian**. Ini kebalikan yang perlu waktu untuk terasa wajar."
+     ],
+     "table": {
+      "head": [
+       "中文",
+       "Pīnyīn",
+       "Harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "桌子**上面**",
+        "zhuōzi shàngmiàn",
+        "meja atas-sisi",
+        "di atas meja"
+       ],
+       [
+        "房間**裡面**",
+        "fángjiān lǐmiàn",
+        "kamar dalam-sisi",
+        "di dalam kamar"
+       ],
+       [
+        "學校**旁邊**",
+        "xuéxiào pángbiān",
+        "sekolah samping",
+        "di sebelah sekolah"
+       ],
+       [
+        "銀行**後面**",
+        "yínháng hòumiàn",
+        "bank belakang-sisi",
+        "di belakang bank"
+       ],
+       [
+        "捷運站**前面**",
+        "jiéyùn zhàn qiánmiàn",
+        "MRT stasiun depan-sisi",
+        "di depan stasiun MRT"
+       ],
+       [
+        "兩家店**中間**",
+        "liǎng jiā diàn zhōngjiān",
+        "dua toko tengah",
+        "di antara dua toko"
+       ]
+      ]
+     },
+     "after": [
+      "Kalimat lengkapnya menggabungkan keduanya: **書在桌子上面。** — \"Buku ada di atas meja.\" Pola: benda + 在 + tempat + kata letak.",
+      "⚠️ **面 dan 邊 sering bisa ditukar** (上面 / 上邊, 裡面 / 裡邊), tetapi di Taiwan **面** jauh lebih umum. Beberapa bentuk cuma punya satu pilihan: 旁邊 selalu 邊, 中間 selalu 間.",
+      "**Sesudah nama tempat yang sudah jelas, 裡面 boleh dilepas**: *我在圖書館* (\"saya di perpustakaan\") tidak perlu 裡面. Yang butuh kata letak adalah benda biasa: *在桌子上面*, bukan *在桌子*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat-tempat di kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "家",
+       "jiā",
+       "rumah",
+       "醫院",
+       "yīyuàn",
+       "rumah sakit"
+      ],
+      [
+       "學校",
+       "xuéxiào",
+       "sekolah",
+       "藥局",
+       "yàojú",
+       "apotek"
+      ],
+      [
+       "宿舍",
+       "sùshè",
+       "asrama",
+       "郵局",
+       "yóujú",
+       "kantor pos"
+      ],
+      [
+       "圖書館",
+       "túshūguǎn",
+       "perpustakaan",
+       "銀行",
+       "yínháng",
+       "bank"
+      ],
+      [
+       "教室",
+       "jiàoshì",
+       "ruang kelas",
+       "公園",
+       "gōngyuán",
+       "taman"
+      ],
+      [
+       "餐廳",
+       "cāntīng",
+       "restoran",
+       "市場",
+       "shìchǎng",
+       "pasar"
+      ],
+      [
+       "便利商店",
+       "biànlì shāngdiàn",
+       "minimarket",
+       "廟",
+       "miào",
+       "kuil"
+      ],
+      [
+       "捷運站",
+       "jiéyùn zhàn",
+       "stasiun MRT",
+       "百貨公司",
+       "bǎihuò gōngsī",
+       "department store"
+      ],
+      [
+       "火車站",
+       "huǒchē zhàn",
+       "stasiun kereta",
+       "廁所",
+       "cèsuǒ",
+       "toilet"
+      ],
+      [
+       "機場",
+       "jīchǎng",
+       "bandara",
+       "夜市",
+       "yèshì",
+       "pasar malam"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **廁所 adalah kata yang paling mendesak untuk dihafal.** *請問，廁所在哪裡？* — \"Numpang tanya, toilet di mana?\" Di Taiwan, toilet umum yang bersih paling mudah ditemukan di 捷運站 dan 便利商店, dan keduanya boleh dipakai siapa saja tanpa membeli apa pun."
+    }
+   ]
+  },
+  {
+   "title": "Kata letak",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "上面",
+       "shàngmiàn",
+       "di atas",
+       "外面",
+       "wàimiàn",
+       "di luar"
+      ],
+      [
+       "下面",
+       "xiàmiàn",
+       "di bawah",
+       "旁邊",
+       "pángbiān",
+       "di sebelah"
+      ],
+      [
+       "前面",
+       "qiánmiàn",
+       "di depan",
+       "對面",
+       "duìmiàn",
+       "di seberang"
+      ],
+      [
+       "後面",
+       "hòumiàn",
+       "di belakang",
+       "中間",
+       "zhōngjiān",
+       "di antara"
+      ],
+      [
+       "裡面",
+       "lǐmiàn",
+       "di dalam",
+       "附近",
+       "fùjìn",
+       "di sekitar"
+      ],
+      [
+       "左邊",
+       "zuǒbiān",
+       "di kiri",
+       "右邊",
+       "yòubiān",
+       "di kanan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Lima kalimat untuk dihafal utuh",
+     "items": [
+      "**書在桌子上面。** — Bukunya di atas meja.",
+      "**我家在學校附近。** — Rumah saya di dekat sekolah.",
+      "**廁所在二樓。** — Toiletnya di lantai dua.",
+      "**便利商店在捷運站旁邊。** — Minimarketnya di sebelah stasiun MRT.",
+      "**我的錢包在背包裡面。** — Dompet saya di dalam tas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Alamat: besar ke kecil, tanpa kekecualian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Alamat Taiwan ditulis dari yang paling besar ke yang paling kecil — kebalikan dari kebiasaan Indonesia yang menulis nomor rumah lebih dulu. Urutannya: **kota → distrik → jalan → bagian → gang → nomor → lantai**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "kota",
+       "台北市",
+       "Táiběi Shì",
+       "Kota Taipei"
+      ],
+      [
+       "distrik",
+       "大安區",
+       "Dà'ān Qū",
+       "Distrik Da'an"
+      ],
+      [
+       "jalan besar",
+       "忠孝東路",
+       "Zhōngxiào Dōng Lù",
+       "Jalan Zhongxiao Timur"
+      ],
+      [
+       "bagian jalan",
+       "四段",
+       "sì duàn",
+       "bagian keempat"
+      ],
+      [
+       "gang",
+       "巷",
+       "xiàng",
+       "gang"
+      ],
+      [
+       "nomor",
+       "號",
+       "hào",
+       "nomor rumah"
+      ],
+      [
+       "lantai",
+       "樓",
+       "lóu",
+       "lantai"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Contoh alamat lengkap: **台北市大安區忠孝東路四段45巷12號3樓**. Dibaca berurutan, ia menyempit sendiri dari kota sampai lantai. ⚠️ Nomor lantai memakai angka biasa: 三樓 (lantai tiga), 十樓 (lantai sepuluh). Dan **一樓 adalah lantai dasar**, bukan lantai satu di atas dasar."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "在",
+   "baca": "zài",
+   "id": "di, berada"
+  },
+  {
+   "zh": "住",
+   "baca": "zhù",
+   "id": "tinggal"
+  },
+  {
+   "zh": "家",
+   "baca": "jiā",
+   "id": "rumah; keluarga"
+  },
+  {
+   "zh": "學校",
+   "baca": "xuéxiào",
+   "id": "sekolah, kampus"
+  },
+  {
+   "zh": "宿舍",
+   "baca": "sùshè",
+   "id": "asrama"
+  },
+  {
+   "zh": "房間",
+   "baca": "fángjiān",
+   "id": "kamar"
+  },
+  {
+   "zh": "裡面",
+   "baca": "lǐmiàn",
+   "id": "di dalam"
+  },
+  {
+   "zh": "上面",
+   "baca": "shàngmiàn",
+   "id": "di atas"
+  },
+  {
+   "zh": "旁邊",
+   "baca": "pángbiān",
+   "id": "di sebelah"
+  },
+  {
+   "zh": "附近",
+   "baca": "fùjìn",
+   "id": "di sekitar"
+  },
+  {
+   "zh": "捷運",
+   "baca": "jiéyùn",
+   "id": "MRT (⚠️ khas Taiwan)"
+  },
+  {
+   "zh": "便利商店",
+   "baca": "biànlì shāngdiàn",
+   "id": "minimarket"
+  },
+  {
+   "zh": "圖書館",
+   "baca": "túshūguǎn",
+   "id": "perpustakaan"
+  },
+  {
+   "zh": "廁所",
+   "baca": "cèsuǒ",
+   "id": "toilet"
+  },
+  {
+   "zh": "樓",
+   "baca": "lóu",
+   "id": "lantai; gedung"
+  },
+  {
+   "zh": "地址",
+   "baca": "dìzhǐ",
+   "id": "alamat"
+  },
+  {
+   "zh": "方便",
+   "baca": "fāngbiàn",
+   "id": "praktis, mudah"
+  },
+  {
+   "zh": "不錯",
+   "baca": "búcuò",
+   "id": "lumayan bagus"
+  },
+  {
+   "zh": "當然",
+   "baca": "dāngrán",
+   "id": "tentu saja"
+  },
+  {
+   "zh": "有",
+   "baca": "yǒu",
+   "id": "ada, punya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kamu tinggal di mana?",
+    "Saya tinggal di asrama kampus.",
+    "Bukunya di atas meja.",
+    "Toiletnya di lantai dua.",
+    "Di dekat sini ada minimarket?",
+    "Saya makan di rumah."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata letak yang tepat: 上面, 裡面, 旁邊, 對面, atau 附近.",
+   "items": [
+    "書在桌子 ____。",
+    "錢包在背包 ____。",
+    "便利商店在捷運站 ____。",
+    "我家在學校 ____。",
+    "餐廳在銀行 ____，要過馬路。"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya — semua salah letak keterangan tempatnya.",
+   "items": [
+    "我吃飯在家。",
+    "他念書在圖書館。",
+    "我們見面在捷運站。",
+    "她工作在銀行。",
+    "我買東西在夜市。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "哪裡 / 你 / 住",
+    "上面 / 書 / 桌子 / 在",
+    "有 / 附近 / 嗎 / 便利商店",
+    "在 / 我 / 吃飯 / 家",
+    "旁邊 / 捷運站 / 在 / 我家"
+   ]
+  }
+ ],
+ "answers": [
+  "你住哪裡？ — 我住學校宿舍。 — 書在桌子上面。 — 廁所在二樓。 — 附近有便利商店嗎？ — 我在家吃飯。",
+  "上面 — 裡面 — 旁邊 — 附近 — 對面",
+  "我在家吃飯。 — 他在圖書館念書。 — 我們在捷運站見面。 — 她在銀行工作。 — 我在夜市買東西。",
+  "你住哪裡？ — 書在桌子上面。 — 附近有便利商店嗎？ — 我在家吃飯。 — 我家在捷運站旁邊。"
+ ]
+}

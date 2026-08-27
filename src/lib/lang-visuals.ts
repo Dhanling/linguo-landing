@@ -22,6 +22,8 @@ export const LANG_FLAGS: Record<string, string> = {
   Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
   Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
   Uzbek:"uz",
+  // [ebook-taiwan-101-v1] Katalog Perpustakaan punya baris "Taiwanese Mandarin".
+  "Taiwanese Mandarin":"tw", "Mandarin Taiwan":"tw",
 };
 export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[baseLanguage(lang)] || "un"}.png`;
 

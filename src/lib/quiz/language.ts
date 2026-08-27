@@ -23,6 +23,11 @@ import { baseLanguage } from "@/lib/classLanguage";
 const NAME_TO_CODE: Record<string, string> = {
   english: "en", inggris: "en",
   mandarin: "zh", chinese: "zh",
+  // [ebook-taiwan-101-v1] Modul 台灣華語 101 memakai language "Taiwanese Mandarin"
+  // supaya katalog Perpustakaan memisahkannya dari Mandarin daratan. Kodenya tetap
+  // zh: bahasanya sama, yang beda cuma aksara & sebagian kosakata — dan tanpa alias
+  // ini kodeBahasaEbook() balik null, jadi reader kehilangan TTS & ketuk-kata.
+  "taiwanese mandarin": "zh", "mandarin taiwan": "zh", taiwan: "zh",
   cantonese: "yue", kanton: "yue",
   japanese: "ja", jepang: "ja",
   korean: "ko", korea: "ko",

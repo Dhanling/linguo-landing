@@ -1,0 +1,571 @@
+{
+ "title": "Kamu pernah ke Tainan?",
+ "title_target": "你去過台南嗎？",
+ "goal": "Menceritakan pengalaman dengan 過 — dan menguasai satu bentuk yang khas Taiwan dan dianggap keliru oleh buku daratan: 有 + kata kerja.",
+ "bekal": [
+  "membedakan 過 (pernah) dari 了 (sudah)",
+  "memakai bentuk 有 + kata kerja yang dipakai seluruh Taiwan",
+  "berbicara tentang tempat-tempat di Taiwan dan pengalaman perjalanan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 週末去哪裡",
+   "intro": "Menjelang libur panjang, ketiganya membahas rencana jalan-jalan ke luar Taipei.",
+   "lines": [
+    {
+     "speaker": "阿明:",
+     "text": "[布迪|Bùdí]，[你|nǐ][去過|qùguò][台南|Táinán][嗎|ma]？",
+     "id": "Budi, kamu pernah ke Tainan?",
+     "literal": "Budi, kamu — pergi-pernah — Tainan — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[沒有|Méi yǒu]。[我|Wǒ][只|zhǐ][去過|qùguò][台北|Táiběi][和|hàn][基隆|Jīlóng]。",
+     "id": "Belum. Saya cuma pernah ke Taipei dan Keelung.",
+     "literal": "tidak — ada. saya — hanya — pergi-pernah — Taipei — dan — Keelung."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[那|Nà][你|nǐ][一定|yídìng][要|yào][去|qù]！[台南|Táinán][是|shì][我|wǒ][的|de][家鄉|jiāxiāng]。",
+     "id": "Kalau begitu kamu harus ke sana! Tainan itu kampung halaman saya.",
+     "literal": "kalau-begitu — kamu — pasti — harus — pergi! Tainan — adalah — saya — punya — rumah-kampung."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[台南|Táinán][有|yǒu][什麼|shénme][好玩|hǎowán][的|de]？",
+     "id": "Di Tainan ada apa yang seru?",
+     "literal": "Tainan — ada — apa — baik-main — yang?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[古蹟|Gǔjī][很多|hěn duō]，[小吃|xiǎochī][更|gèng][多|duō]！",
+     "id": "Situs bersejarahnya banyak, jajanannya lebih banyak lagi!",
+     "literal": "kuno-jejak — sangat — banyak, kecil-makan — lebih — banyak!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我|Wǒ][有|yǒu][去過|qùguò][三次|sān cì]。[真的|Zhēn de][很|hěn][好吃|hǎochī]！",
+     "id": "Saya sudah pernah ke sana tiga kali. Beneran enak banget!",
+     "literal": "saya — ada — pergi-pernah — tiga — kali. benar — yang — sangat — enak!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[妳|Nǐ][有|yǒu][吃過|chīguò][擔仔麵|dànzǎi miàn][嗎|ma]？",
+     "id": "Kamu pernah makan mi danzai?",
+     "literal": "kamu — ada — makan-pernah — pikul-mi — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[有|Yǒu][啊|a]！[還有|Hái yǒu][牛肉湯|niúròu tāng]，[早上|zǎoshang][喝|hē][的|de]。",
+     "id": "Pernah dong! Ada juga sup daging sapi, yang diminum pagi-pagi.",
+     "literal": "ada — lho! masih — ada — sapi-daging — sup, pagi — minum — yang."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[早上|Zǎoshang][喝|hē][牛肉湯|niúròu tāng]？[真|Zhēn][特別|tèbié]！",
+     "id": "Sup daging sapi buat sarapan? Unik sekali!",
+     "literal": "pagi — minum — sapi-daging-sup? sungguh — khusus-beda!"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[台南|Táinán][人|rén][都|dōu][這樣|zhèyàng]。[你|Nǐ][沒|méi][吃過|chīguò][就|jiù][不算|bú suàn][來過|láiguò]。",
+     "id": "Orang Tainan semua begitu. Belum makan itu belum dianggap pernah datang.",
+     "literal": "Tainan — orang — semua — begini. kamu — belum — makan-pernah — maka — tidak — hitung — datang-pernah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]！[那|Nà][我們|wǒmen][什麼時候|shénme shíhòu][去|qù]？",
+     "id": "Oke! Jadi kapan kita pergi?",
+     "literal": "baik! kalau-begitu — kami — apa — waktu — pergi?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[下個月|Xià ge yuè][有|yǒu][三天|sān tiān][連假|liánjià]。",
+     "id": "Bulan depan ada libur panjang tiga hari.",
+     "literal": "bawah — (penggolong) — bulan — ada — tiga — hari — sambung-libur."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[我|Wǒ][爸媽|bàmā][家|jiā][可以|kěyǐ][住|zhù]。[不用|Bú yòng][錢|qián]！",
+     "id": "Bisa nginap di rumah orang tua saya. Gratis!",
+     "literal": "saya — ayah-ibu — rumah — boleh — tinggal. tidak — perlu — uang!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太|Tài][不好意思|bù hǎoyìsi][了|le]…[可是|Kěshì][謝謝|xièxie]！",
+     "id": "Jadi nggak enak… tapi terima kasih!",
+     "literal": "terlalu — tidak-enak-maksud — sudah… tetapi — terima kasih!"
+    }
+   ],
+   "notes": [
+    "⚠️ **有去過 adalah bentuk yang sangat khas Taiwan.** Buku tata bahasa terbitan daratan menganggapnya keliru — menurut mereka cukup 去過. Tetapi di Taiwan, 有 + kata kerja adalah bentuk normal, terdengar di mana-mana, dan berasal dari pengaruh bahasa Hokkien. Pakailah; kamu akan terdengar lokal.",
+    "**小吃 (\"makan kecil\") berarti jajanan atau makanan warung**, bukan camilan ringan. Tainan adalah ibu kota 小吃 Taiwan, dan orang benar-benar bepergian lintas pulau untuk memakannya.",
+    "**不算 berarti \"tidak dihitung\", \"belum dianggap\"** — sebuah ungkapan yang sering dipakai bercanda: *沒吃過就不算來過* (\"belum makan itu belum dianggap pernah datang\").",
+    "⚠️ **太不好意思了 berarti \"jadi tidak enak hati\"**, bukan \"terlalu memalukan\". Ia adalah cara sopan menerima kebaikan orang, dan menolaknya sekali sebelum menerima adalah bagian dari kesopanan Taiwan.",
+    "**連假 (\"libur bersambung\") adalah libur panjang** ketika hari libur nasional jatuh berdekatan dengan akhir pekan. Seluruh Taiwan bergerak saat 連假; pesan tiket kereta jauh-jauh hari."
+   ],
+   "grammars": [
+    {
+     "title": "過: pernah, sekali waktu dalam hidup",
+     "body": [
+      "**過** ditempelkan di belakang kata kerja untuk mengatakan bahwa kamu **pernah** mengalaminya — kapan pun, tidak penting. Ia bercerita tentang pengalaman, bukan tentang kejadian tertentu."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我去**過**台南。",
+        "Wǒ qùguò Táinán.",
+        "Saya pernah ke Tainan."
+       ],
+       [
+        "你吃**過**臭豆腐嗎？",
+        "Nǐ chīguò chòudòufǔ ma?",
+        "Kamu pernah makan tahu busuk?"
+       ],
+       [
+        "我**沒**去**過**。",
+        "Wǒ méi qùguò.",
+        "Saya belum pernah ke sana."
+       ],
+       [
+        "我去**過**三次。",
+        "Wǒ qùguò sān cì.",
+        "Saya pernah ke sana tiga kali."
+       ],
+       [
+        "我**有**去**過**。",
+        "Wǒ yǒu qùguò.",
+        "⚠️ Saya pernah ke sana. (khas Taiwan)"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Beda 過 dan 了 penting dan sering tertukar.** *我去了台南* berarti \"saya (sudah) pergi ke Tainan\" — kejadian tertentu, mungkin baru kemarin, mungkin masih di sana. *我去過台南* berarti \"saya pernah ke Tainan\" — pengalaman, sudah kembali.",
+      "**Menyangkal 過 memakai 沒, dan 過 TETAP ADA**: *我沒去過* ✓. Bandingkan dengan 了 yang justru hilang saat disangkal: *我沒去* ✓, *我沒去了* ✗. Dua penanda, dua perilaku.",
+      "**Menghitung frekuensi memakai 次 (*cì*, kali)** dan letaknya **sesudah** kata kerjanya: *我去過三次* — bukan *我三次去過*."
+     ]
+    },
+    {
+     "title": "⚠️ 有 + kata kerja: bentuk Taiwan yang tidak ada di buku daratan",
+     "body": [
+      "Di Taiwan, 有 sering dipasang di depan kata kerja untuk menegaskan bahwa sesuatu **benar-benar terjadi**. Bentuk ini berasal dari bahasa Hokkien, dan ia ada di mana-mana dalam percakapan sehari-hari."
+     ],
+     "table": {
+      "head": [
+       "Bentuk Taiwan",
+       "Bentuk buku daratan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "你**有**吃嗎？",
+        "你吃了嗎？",
+        "Kamu jadi makan?"
+       ],
+       [
+        "我**有**去。",
+        "我去了。",
+        "Saya jadi pergi."
+       ],
+       [
+        "他**有**來。",
+        "他來了。",
+        "Dia jadi datang."
+       ],
+       [
+        "你**有沒有**看到？",
+        "你看到了沒有？",
+        "Kamu lihat nggak?"
+       ],
+       [
+        "我**有**看過。",
+        "我看過。",
+        "Saya pernah lihat."
+       ],
+       [
+        "**沒有**，我**沒**去。",
+        "沒有，我沒去。",
+        "Tidak, saya tidak pergi."
+       ]
+      ]
+     },
+     "after": [
+      "**Kenapa ini berguna untukmu:** bentuk 有 + kata kerja jauh lebih mudah dipakai daripada 了, karena ia disangkal dengan 沒有 tanpa membuang apa pun, dan bertanya dengan 有沒有 tanpa memikirkan letak 了.",
+      "⚠️ **Jangan memakainya dalam ujian TOCFL bagian tata bahasa formal**, karena kunci jawabannya biasanya mengikuti standar tulisan. Dalam percakapan, ia benar dan wajar.",
+      "**Bentuk ini juga menjadi cara menekankan** saat orang meragukanmu: *我有說啊！* (\"Saya sudah bilang kok!\") Nadanya sedikit membela diri, dan sangat sering terdengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tempat-tempat di Taiwan yang wajib kamu tahu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "台北",
+       "Táiběi",
+       "ibu kota, di utara"
+      ],
+      [
+       "新北",
+       "Xīnběi",
+       "kota terbesar, mengelilingi Taipei"
+      ],
+      [
+       "台中",
+       "Táizhōng",
+       "kota terbesar kedua, di tengah"
+      ],
+      [
+       "台南",
+       "Táinán",
+       "kota tertua, ibu kota jajanan"
+      ],
+      [
+       "高雄",
+       "Gāoxióng",
+       "pelabuhan besar di selatan"
+      ],
+      [
+       "花蓮",
+       "Huālián",
+       "pantai timur, tebing dan ngarai"
+      ],
+      [
+       "台東",
+       "Táidōng",
+       "tenggara, budaya masyarakat adat"
+      ],
+      [
+       "墾丁",
+       "Kěndīng",
+       "pantai paling selatan"
+      ],
+      [
+       "日月潭",
+       "Rìyuètán",
+       "Danau Matahari-Bulan"
+      ],
+      [
+       "阿里山",
+       "Ālǐshān",
+       "gunung, kereta wisata, matahari terbit"
+      ],
+      [
+       "九份",
+       "Jiǔfèn",
+       "kota bukit dengan lampion merah"
+      ],
+      [
+       "淡水",
+       "Dànshuǐ",
+       "kota pelabuhan tua, ujung 捷運 Taipei"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan pola namanya: **台北 (Taiwan-utara), 台中 (Taiwan-tengah), 台南 (Taiwan-selatan), 台東 (Taiwan-timur)**. Empat kota, empat arah mata angin — begitu kamu melihat polanya, keempatnya tak akan tertukar lagi. Yang tidak mengikuti pola adalah 高雄 dan 花蓮."
+    }
+   ]
+  },
+  {
+   "title": "Bercerita tentang pengalaman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**你去過…嗎？**",
+       "nǐ qùguò… ma?",
+       "Kamu pernah ke…?"
+      ],
+      [
+       "**你吃過…嗎？**",
+       "nǐ chīguò… ma?",
+       "Kamu pernah makan…?"
+      ],
+      [
+       "**我沒去過**",
+       "wǒ méi qùguò",
+       "Saya belum pernah ke sana"
+      ],
+      [
+       "**我去過一次**",
+       "wǒ qùguò yí cì",
+       "Saya pernah sekali"
+      ],
+      [
+       "**我常常去**",
+       "wǒ chángcháng qù",
+       "Saya sering ke sana"
+      ],
+      [
+       "**第一次來**",
+       "dì-yī cì lái",
+       "baru pertama kali datang"
+      ],
+      [
+       "**好玩嗎？**",
+       "hǎowán ma?",
+       "Seru nggak?"
+      ],
+      [
+       "**很好玩！**",
+       "hěn hǎowán!",
+       "Seru banget!"
+      ],
+      [
+       "**值得去**",
+       "zhídé qù",
+       "layak dikunjungi"
+      ],
+      [
+       "**下次一起去**",
+       "xià cì yìqǐ qù",
+       "Lain kali kita pergi bareng"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Jajanan Taiwan yang akan ditanyakan kepadamu",
+     "items": [
+      "**臭豆腐** *chòudòufǔ* — tahu busuk goreng. ⚠️ Ini ujian keberanian yang akan ditawarkan kepada setiap orang asing.",
+      "**擔仔麵** *dànzǎi miàn* — mi kecil khas Tainan dengan daging cincang dan udang.",
+      "**滷味** *lǔwèi* — aneka bahan direbus dalam kuah kecap, dipilih sendiri.",
+      "**鹽酥雞** *yánsūjī* — potongan ayam goreng tepung dengan daun kemangi.",
+      "**豆花** *dòuhuā* — puding tahu manis dengan kacang dan sirup jahe.",
+      "**芒果冰** *mángguǒ bīng* — es serut mangga, wajib saat musim panas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata bilangan kejadian: 次, 遍, 天",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Baca",
+      "Untuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**次**",
+       "cì",
+       "berapa kali suatu kejadian",
+       "我去過三**次**。"
+      ],
+      [
+       "**遍**",
+       "biàn",
+       "berapa kali dari awal sampai akhir",
+       "我看了兩**遍**。"
+      ],
+      [
+       "**天**",
+       "tiān",
+       "berapa hari",
+       "我住了五**天**。"
+      ],
+      [
+       "**年**",
+       "nián",
+       "berapa tahun",
+       "我學了一**年**。"
+      ],
+      [
+       "**個月**",
+       "ge yuè",
+       "berapa bulan",
+       "我來了三**個月**。"
+      ],
+      [
+       "**小時**",
+       "xiǎoshí",
+       "berapa jam",
+       "我等了兩**小時**。"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Semua kata bilangan kejadian berdiri SESUDAH kata kerjanya**, kebalikan dari keterangan waktu yang berdiri sebelum. Bandingkan: *我明天去* (waktu → sebelum) tetapi *我去過三次* (jumlah → sesudah). Kalau ada bendanya, jumlahnya tetap di depan benda: *我看了兩遍這本書* atau *我這本書看了兩遍*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "過",
+   "baca": "guò",
+   "id": "pernah (pengalaman)"
+  },
+  {
+   "zh": "次",
+   "baca": "cì",
+   "id": "kali"
+  },
+  {
+   "zh": "台南",
+   "baca": "Táinán",
+   "id": "Tainan"
+  },
+  {
+   "zh": "高雄",
+   "baca": "Gāoxióng",
+   "id": "Kaohsiung"
+  },
+  {
+   "zh": "家鄉",
+   "baca": "jiāxiāng",
+   "id": "kampung halaman"
+  },
+  {
+   "zh": "古蹟",
+   "baca": "gǔjī",
+   "id": "situs bersejarah"
+  },
+  {
+   "zh": "小吃",
+   "baca": "xiǎochī",
+   "id": "jajanan, makanan warung"
+  },
+  {
+   "zh": "好玩",
+   "baca": "hǎowán",
+   "id": "seru, menyenangkan"
+  },
+  {
+   "zh": "特別",
+   "baca": "tèbié",
+   "id": "khusus, istimewa"
+  },
+  {
+   "zh": "只",
+   "baca": "zhǐ",
+   "id": "hanya"
+  },
+  {
+   "zh": "更",
+   "baca": "gèng",
+   "id": "lebih (lagi)"
+  },
+  {
+   "zh": "這樣",
+   "baca": "zhèyàng",
+   "id": "begini, begitu"
+  },
+  {
+   "zh": "連假",
+   "baca": "liánjià",
+   "id": "libur panjang"
+  },
+  {
+   "zh": "旅行",
+   "baca": "lǚxíng",
+   "id": "bepergian"
+  },
+  {
+   "zh": "牛肉",
+   "baca": "niúròu",
+   "id": "daging sapi"
+  },
+  {
+   "zh": "臭豆腐",
+   "baca": "chòudòufǔ",
+   "id": "tahu busuk"
+  },
+  {
+   "zh": "值得",
+   "baca": "zhídé",
+   "id": "layak, pantas"
+  },
+  {
+   "zh": "不用",
+   "baca": "bú yòng",
+   "id": "tidak perlu"
+  },
+  {
+   "zh": "山",
+   "baca": "shān",
+   "id": "gunung"
+  },
+  {
+   "zh": "海",
+   "baca": "hǎi",
+   "id": "laut"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kamu pernah ke Tainan?",
+    "Saya belum pernah ke sana.",
+    "Saya pernah ke sana tiga kali.",
+    "Kamu pernah makan tahu busuk?",
+    "Lain kali kita pergi bareng.",
+    "Seru banget!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 了 atau 過.",
+   "items": [
+    "我昨天去 ____ 夜市。",
+    "我去 ____ 日本兩次。",
+    "你吃 ____ 臭豆腐嗎？（pernah?）",
+    "他來 ____，現在在外面。",
+    "我沒看 ____ 那部電影。"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk Taiwan dengan 有.",
+   "items": [
+    "你吃了嗎？",
+    "我去了。",
+    "他來了。",
+    "我看過。",
+    "你看到了沒有？"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "台南 / 過 / 你 / 嗎 / 去",
+    "去過 / 我 / 沒",
+    "三次 / 去過 / 我",
+    "嗎 / 吃過 / 臭豆腐 / 你",
+    "一起 / 下次 / 去"
+   ]
+  }
+ ],
+ "answers": [
+  "你去過台南嗎？ — 我沒去過。 — 我去過三次。 — 你吃過臭豆腐嗎？ — 下次一起去。 — 很好玩！",
+  "了 — 過 — 過 — 了 — 過",
+  "你有吃嗎？ — 我有去。 — 他有來。 — 我有看過。 — 你有沒有看到？",
+  "你去過台南嗎？ — 我沒去過。 — 我去過三次。 — 你吃過臭豆腐嗎？ — 下次一起去。"
+ ]
+}

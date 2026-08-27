@@ -1,0 +1,613 @@
+{
+ "title": "Akhir pekan mau ngapain?",
+ "title_target": "週末你要做什麼？",
+ "goal": "Membuat rencana dan mengungkapkan keinginan — sambil membongkar tiga kata yang semuanya diterjemahkan \"mau\": 要, 想, dan 打算.",
+ "bekal": [
+  "membedakan 要 (mau, akan), 想 (ingin, kepikiran), dan 打算 (berencana)",
+  "mengajak dan menolak ajakan dengan wajar",
+  "bercerita tentang kegiatan waktu luang"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 週末計畫",
+   "intro": "Jumat sore di kantin. Ketiganya membahas rencana akhir pekan.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[週末|Zhōumò][你們|nǐmen][要|yào][做|zuò][什麼|shénme]？",
+     "id": "Akhir pekan kalian mau ngapain?",
+     "literal": "minggu-ujung — kalian — mau — buat — apa?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[我|Wǒ][要|yào][回|huí][台南|Táinán]。[我|Wǒ][媽|mā][生日|shēngrì]。",
+     "id": "Saya mau pulang ke Tainan. Ulang tahun ibu saya.",
+     "literal": "saya — mau — kembali — Tainan. saya — ibu — lahir-hari."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[真|Zhēn][孝順|xiàoshùn]！[布迪|Bùdí][呢|ne]？",
+     "id": "Berbakti sekali! Kalau Budi?",
+     "literal": "sungguh — berbakti! Budi — kalau?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][想|xiǎng][去|qù][爬山|páshān]，[可是|kěshì][還|hái][沒|méi][決定|juédìng]。",
+     "id": "Saya kepikiran mau naik gunung, tapi belum memutuskan.",
+     "literal": "saya — ingin — pergi — panjat-gunung, tetapi — masih — belum — putus-tentu."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[爬山|Páshān][好|hǎo][啊|a]！[象山|Xiàngshān][怎麼樣|zěnmeyàng]？",
+     "id": "Naik gunung bagus tuh! Gunung Gajah bagaimana?",
+     "literal": "panjat-gunung — baik — lho! gajah-gunung — bagaimana?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[象山|Xiàngshān][難|nán][爬|pá][嗎|ma]？[我|Wǒ][很久|hěn jiǔ][沒|méi][運動|yùndòng][了|le]。",
+     "id": "Gunung Gajah susah didaki? Saya sudah lama tidak olahraga.",
+     "literal": "gajah-gunung — sulit — panjat — kah? saya — sangat — lama — tidak — olahraga — sudah."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[不會|Bú huì][啦|la]！[半|Bàn][小時|xiǎoshí][就|jiù][到|dào][了|le]。",
+     "id": "Nggak kok! Setengah jam juga sampai.",
+     "literal": "tidak — akan — kok! setengah — jam — persis — sampai — sudah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][妳|nǐ][要|yào][一起|yìqǐ][去|qù][嗎|ma]？",
+     "id": "Kalau begitu kamu mau ikut?",
+     "literal": "kalau-begitu — kamu — mau — bersama — pergi — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[好啊|Hǎo a]！[我|Wǒ][打算|dǎsuàn][傍晚|bàngwǎn][去|qù]，[可以|kěyǐ][看|kàn][夜景|yèjǐng]。",
+     "id": "Boleh! Saya berencana pergi sore menjelang malam, bisa lihat pemandangan malam.",
+     "literal": "baik — lho! saya — rencana — senja — pergi, boleh — lihat — malam-pemandangan."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太|Tài][棒|bàng][了|le]！[幾點|Jǐ diǎn][碰面|pèngmiàn]？",
+     "id": "Mantap! Ketemuan jam berapa?",
+     "literal": "terlalu — hebat — sudah! berapa — jam — jumpa-muka?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[四點|Sì diǎn][半|bàn][在|zài][象山|Xiàngshān][捷運站|jiéyùn zhàn][出口|chūkǒu][二號|èr hào]。",
+     "id": "Setengah lima di stasiun MRT Xiangshan pintu keluar nomor dua.",
+     "literal": "empat — jam — setengah — di — Xiangshan — MRT — stasiun — keluar-mulut — dua — nomor."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[真|Zhēn][羨慕|xiànmù]！[下次|Xià cì][我|wǒ][也|yě][要|yào][去|qù]。",
+     "id": "Iri deh! Lain kali saya juga mau ikut.",
+     "literal": "sungguh — iri! bawah — kali — saya — juga — mau — pergi."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[記得|Jìde][帶|dài][水|shuǐ]。[我|Wǒ][不想|bù xiǎng][在|zài][山上|shān shàng][渴死|kěsǐ]。",
+     "id": "Ingat bawa air. Saya tidak mau mati kehausan di gunung.",
+     "literal": "ingat — bawa — air. saya — tidak — ingin — di — gunung — atas — haus-mati."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[放心|Fàngxīn][啦|la]！[山下|Shān xià][就|jiù][有|yǒu][小七|Xiǎo Qī]！",
+     "id": "Tenang aja! Di bawah gunung ada 7-Eleven kok!",
+     "literal": "lepas-hati — kok! gunung — bawah — persis — ada — kecil-tujuh!"
+    }
+   ],
+   "notes": [
+    "**孝順 (berbakti kepada orang tua) adalah nilai yang masih sangat hidup di Taiwan.** Menyebut seseorang 孝順 adalah pujian besar, dan pulang ke kampung untuk ulang tahun orang tua dianggap wajar bahkan bagi orang dewasa yang sudah bekerja.",
+    "**象山 (Gunung Gajah) adalah tempat pendakian paling terkenal di Taipei** — dua puluh menit dari pusat kota lewat 捷運, dan pemandangan menara 台北101 dari puncaknya adalah foto Taipei yang paling sering kamu lihat.",
+    "**很久沒…了 berarti \"sudah lama tidak…\"**: 很久沒運動了, 很久沒見了 (lama tidak jumpa). ⚠️ Perhatikan bahwa 沒 dan 了 muncul bersama di sini — kekecualian dari aturan unit 11, karena yang ditandai 了 adalah keadaan \"sudah lama\", bukan kejadiannya.",
+    "**放心 (\"melepas hati\") berarti \"tenang saja, jangan khawatir\"**, dan lawannya 擔心 (\"memikul hati\") berarti khawatir. Sepasang ungkapan yang gambarannya jelas sekali.",
+    "⚠️ **出口二號 — nomor pintu keluar adalah cara standar menentukan titik temu di Taiwan.** Stasiun 捷運 besar punya sampai delapan pintu keluar yang berjauhan, jadi menyebut \"di stasiun\" saja tidak cukup."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ 要, 想, 打算: tiga tingkat kepastian",
+     "body": [
+      "Bahasa Indonesia memakai \"mau\" untuk keinginan samar maupun keputusan bulat. Bahasa Mandarin memisahkan ketiganya menurut **seberapa pasti** rencananya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Kepastian",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**想**",
+        "samar",
+        "ingin, kepikiran",
+        "我**想**去爬山。"
+       ],
+       [
+        "**打算**",
+        "sedang",
+        "berencana",
+        "我**打算**下午去。"
+       ],
+       [
+        "**要**",
+        "bulat",
+        "mau, akan (pasti)",
+        "我**要**回台南。"
+       ],
+       [
+        "**要**",
+        "—",
+        "minta (memesan)",
+        "我**要**一杯茶。"
+       ],
+       [
+        "**想要**",
+        "sedang",
+        "ingin punya",
+        "我**想要**一台新電腦。"
+       ],
+       [
+        "**不想**",
+        "—",
+        "tidak ingin",
+        "我**不想**去。"
+       ],
+       [
+        "**不要**",
+        "—",
+        "⚠️ jangan; tidak mau",
+        "**不要**走！"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **不要 dan 不想 sangat berbeda dan sering tertukar.** *我不想去* = \"saya tidak ingin pergi\" (halus, tentang perasaan). *我不要去* = \"saya tidak mau pergi\" (tegas, hampir menolak). Dan **不要 di depan kata kerja berarti \"jangan\"**: *不要吃！* (jangan makan!).",
+      "**Menolak ajakan dengan halus: pakai 不想 atau alasan, bukan 不要.** *我今天有點累，不想出門* jauh lebih halus daripada *我不要去*.",
+      "**想 juga berarti \"merindukan\" dan \"berpikir\"**: *我想家* (saya rindu rumah), *我想一下* (saya pikir sebentar). Ketiga arti dibedakan oleh apa yang mengikutinya: kata kerja → ingin; kata benda orang/tempat → rindu; sendirian → berpikir."
+     ]
+    },
+    {
+     "title": "Mengajak dan menanggapi ajakan",
+     "body": [
+      "Mengajak dalam bahasa Mandarin hampir selalu berbentuk pertanyaan, karena mengajak dengan kalimat perintah terdengar memaksa."
+     ],
+     "table": {
+      "head": [
+       "中文",
+       "Baca",
+       "Arti",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "我們去…**好嗎**？",
+        "hǎo ma?",
+        "Kita pergi… ya?",
+        "usul sopan"
+       ],
+       [
+        "我們去…**吧**！",
+        "ba!",
+        "Ayo kita pergi…!",
+        "ajakan santai"
+       ],
+       [
+        "你**要不要**一起去？",
+        "yào bú yào?",
+        "Kamu mau ikut nggak?",
+        "menawarkan"
+       ],
+       [
+        "**要不要**…看看？",
+        "…kànkàn?",
+        "Mau coba…?",
+        "melunakkan"
+       ],
+       [
+        "**好啊**！",
+        "hǎo a!",
+        "Boleh!",
+        "setuju hangat"
+       ],
+       [
+        "**沒問題**！",
+        "méi wèntí!",
+        "Siap!",
+        "setuju mantap"
+       ],
+       [
+        "**下次**好嗎？",
+        "xià cì hǎo ma?",
+        "Lain kali ya?",
+        "menolak halus"
+       ],
+       [
+        "**改天**吧",
+        "gǎitiān ba",
+        "Lain hari saja",
+        "menolak halus"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Menolak ajakan di Taiwan hampir selalu memakai pola \"alasan + tawaran ganti\"**: *這個週末有事，下次好嗎？* Menolak tanpa memberi alasan atau tanpa menawarkan lain waktu dianggap dingin.",
+      "**Menyetujui dengan 好 saja terdengar enggan.** Tambahkan partikel: 好啊！好啦！好喔！ — ketiganya hangat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kegiatan waktu luang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "看電影",
+       "kàn diànyǐng",
+       "nonton film",
+       "爬山",
+       "páshān",
+       "naik gunung"
+      ],
+      [
+       "看書",
+       "kànshū",
+       "baca buku",
+       "游泳",
+       "yóuyǒng",
+       "berenang"
+      ],
+      [
+       "聽音樂",
+       "tīng yīnyuè",
+       "dengar musik",
+       "跑步",
+       "pǎobù",
+       "lari"
+      ],
+      [
+       "唱歌",
+       "chànggē",
+       "karaoke",
+       "打球",
+       "dǎqiú",
+       "main bola"
+      ],
+      [
+       "逛街",
+       "guàngjiē",
+       "jalan-jalan belanja",
+       "騎車",
+       "qíchē",
+       "naik sepeda/motor"
+      ],
+      [
+       "拍照",
+       "pāizhào",
+       "memotret",
+       "旅行",
+       "lǚxíng",
+       "bepergian"
+      ],
+      [
+       "打電動",
+       "dǎ diàndòng",
+       "main gim",
+       "露營",
+       "lùyíng",
+       "berkemah"
+      ],
+      [
+       "睡午覺",
+       "shuì wǔjiào",
+       "tidur siang",
+       "泡溫泉",
+       "pào wēnquán",
+       "berendam air panas"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kegiatan yang paling khas Taiwan",
+     "items": [
+      "**唱歌 di KTV** — karaoke ruangan tertutup, dibayar per jam, dengan makanan dan minuman tak terbatas. Ini kegiatan sosial nomor satu anak muda Taiwan.",
+      "**泡溫泉** — Taiwan penuh sumber air panas alami (北投, 烏來, 礁溪). ⚠️ Sebagian pemandian mengharuskan telanjang dan memisahkan laki-laki dan perempuan; sebagian lain memakai baju renang. Tanyalah dulu.",
+      "**逛夜市** — jalan-jalan di pasar malam tanpa tujuan tertentu, makan sedikit-sedikit di banyak tempat. Ini bukan berbelanja; ini kegiatan tersendiri.",
+      "**爬山** — Taiwan adalah pulau bergunung, dan mendaki adalah hobi nasional. Bahkan di dalam kota Taipei ada belasan jalur pendakian yang bisa dicapai dengan 捷運."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyatakan kesukaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**我喜歡…**",
+       "wǒ xǐhuān…",
+       "Saya suka…"
+      ],
+      [
+       "**我很喜歡…**",
+       "wǒ hěn xǐhuān…",
+       "Saya suka sekali…"
+      ],
+      [
+       "**我最喜歡…**",
+       "wǒ zuì xǐhuān…",
+       "Yang paling saya suka…"
+      ],
+      [
+       "**我不喜歡…**",
+       "wǒ bù xǐhuān…",
+       "Saya tidak suka…"
+      ],
+      [
+       "**我討厭…**",
+       "wǒ tǎoyàn…",
+       "⚠️ Saya benci… (kuat)"
+      ],
+      [
+       "**我對…有興趣**",
+       "wǒ duì… yǒu xìngqù",
+       "Saya tertarik pada…"
+      ],
+      [
+       "**我的興趣是…**",
+       "wǒ de xìngqù shì…",
+       "Hobi saya adalah…"
+      ],
+      [
+       "**還好**",
+       "háihǎo",
+       "Biasa saja"
+      ],
+      [
+       "**都可以**",
+       "dōu kěyǐ",
+       "Terserah, apa saja boleh"
+      ],
+      [
+       "**隨便**",
+       "suíbiàn",
+       "⚠️ Terserah (hati-hati nadanya)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **隨便 harus dipakai hati-hati.** Ia berarti \"terserah\", dan diucapkan dengan nada datar ia bisa terdengar tidak peduli atau bahkan kesal — persis seperti \"terserah\" dalam bahasa Indonesia. Yang aman adalah **都可以** (\"apa saja boleh\"), yang terdengar ramah."
+    }
+   ]
+  },
+  {
+   "title": "Kata bantu yang menyusun rencana",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**先…再…**",
+       "xiān… zài…",
+       "…dulu, baru…",
+       "先吃飯**再**去。"
+      ],
+      [
+       "**然後**",
+       "ránhòu",
+       "lalu",
+       "看電影，**然後**吃飯。"
+      ],
+      [
+       "**如果…就…**",
+       "rúguǒ… jiù…",
+       "kalau…, maka…",
+       "**如果**下雨**就**不去。"
+      ],
+      [
+       "**因為…所以…**",
+       "yīnwèi… suǒyǐ…",
+       "karena…, jadi…",
+       "**因為**很累**所以**不去。"
+      ],
+      [
+       "**記得**",
+       "jìde",
+       "ingat (untuk)",
+       "**記得**帶水。"
+      ],
+      [
+       "**別忘了**",
+       "bié wàng le",
+       "jangan lupa",
+       "**別忘了**帶傘。"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Bahasa Mandarin memakai kedua kata dalam pasangan 因為…所以… dan 如果…就…**, berbeda dari bahasa Indonesia yang cukup satu. *因為很累，所以我不去* — dua-duanya ada. Menghilangkan salah satunya tidak salah, tetapi memakai keduanya terdengar lebih rapi dan lebih mudah diikuti."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "要",
+   "baca": "yào",
+   "id": "mau, akan (pasti)"
+  },
+  {
+   "zh": "想",
+   "baca": "xiǎng",
+   "id": "ingin; rindu; berpikir"
+  },
+  {
+   "zh": "打算",
+   "baca": "dǎsuàn",
+   "id": "berencana"
+  },
+  {
+   "zh": "週末",
+   "baca": "zhōumò",
+   "id": "akhir pekan"
+  },
+  {
+   "zh": "計畫",
+   "baca": "jìhuà",
+   "id": "rencana"
+  },
+  {
+   "zh": "爬山",
+   "baca": "páshān",
+   "id": "naik gunung"
+  },
+  {
+   "zh": "看電影",
+   "baca": "kàn diànyǐng",
+   "id": "nonton film"
+  },
+  {
+   "zh": "逛街",
+   "baca": "guàngjiē",
+   "id": "jalan-jalan belanja"
+  },
+  {
+   "zh": "興趣",
+   "baca": "xìngqù",
+   "id": "minat, hobi"
+  },
+  {
+   "zh": "決定",
+   "baca": "juédìng",
+   "id": "memutuskan"
+  },
+  {
+   "zh": "記得",
+   "baca": "jìde",
+   "id": "ingat"
+  },
+  {
+   "zh": "忘記",
+   "baca": "wàngjì",
+   "id": "lupa"
+  },
+  {
+   "zh": "帶",
+   "baca": "dài",
+   "id": "membawa"
+  },
+  {
+   "zh": "放心",
+   "baca": "fàngxīn",
+   "id": "tenang, jangan khawatir"
+  },
+  {
+   "zh": "擔心",
+   "baca": "dānxīn",
+   "id": "khawatir"
+  },
+  {
+   "zh": "如果",
+   "baca": "rúguǒ",
+   "id": "kalau"
+  },
+  {
+   "zh": "因為",
+   "baca": "yīnwèi",
+   "id": "karena"
+  },
+  {
+   "zh": "先",
+   "baca": "xiān",
+   "id": "dulu, lebih dahulu"
+  },
+  {
+   "zh": "再",
+   "baca": "zài",
+   "id": "baru, lagi"
+  },
+  {
+   "zh": "隨便",
+   "baca": "suíbiàn",
+   "id": "⚠️ terserah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Akhir pekan kamu mau ngapain?",
+    "Saya mau pulang ke Tainan.",
+    "Saya kepikiran mau naik gunung.",
+    "Kamu mau ikut nggak?",
+    "Kalau hujan saya tidak jadi pergi.",
+    "Jangan lupa bawa payung."
+   ]
+  },
+  {
+   "prompt": "Isi dengan 要, 想, atau 打算.",
+   "items": [
+    "我 ____ 一杯咖啡。",
+    "我 ____ 去日本，可是沒錢。",
+    "我 ____ 明年去台南工作。",
+    "我明天 ____ 上班。",
+    "我 ____ 家了。",
+    "你 ____ 不 ____ 一起去？"
+   ]
+  },
+  {
+   "prompt": "Pilih 不要 atau 不想.",
+   "items": [
+    "____ 走！（jangan pergi）",
+    "我今天很累，____ 出門。",
+    "____ 吃太多。（jangan）",
+    "我 ____ 去，太遠了。",
+    "____ 忘記帶錢包。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "什麼 / 你 / 週末 / 做 / 要",
+    "爬山 / 想 / 我 / 去",
+    "一起 / 你 / 去 / 要不要",
+    "就 / 不去 / 下雨 / 如果",
+    "帶 / 記得 / 水"
+   ]
+  }
+ ],
+ "answers": [
+  "週末你要做什麼？ — 我要回台南。 — 我想去爬山。 — 你要不要一起去？ — 如果下雨我就不去。 — 別忘了帶傘。",
+  "要 — 想 — 打算 — 要 — 想 — 要、要",
+  "不要 — 不想 — 不要 — 不想 — 不要",
+  "週末你要做什麼？ — 我想去爬山。 — 你要不要一起去？ — 如果下雨就不去。 — 記得帶水。"
+ ]
+}

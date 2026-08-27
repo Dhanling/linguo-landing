@@ -1,0 +1,598 @@
+{
+ "title": "Perginya bagaimana?",
+ "title_target": "怎麼去？",
+ "goal": "Naik apa saja di Taiwan dan menjelaskan rutenya — sambil memakai pola 從…到… dan menaruh alat angkut di tempat yang benar: sebelum kata kerja.",
+ "bekal": [
+  "memilih antara 坐, 搭, 騎, dan 開 untuk tiap kendaraan",
+  "memakai 從…到… untuk menyebut titik awal dan tujuan",
+  "bertanya rute dan lama perjalanan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 去高鐵站",
+   "intro": "Pagi keberangkatan ke Tainan. Budi belum pernah naik kereta cepat dan bertanya kepada Xiaomei.",
+   "lines": [
+    {
+     "speaker": "布迪:",
+     "text": "[小美|Xiǎoměi]，[我們|wǒmen][怎麼|zěnme][去|qù][高鐵站|gāotiě zhàn]？",
+     "id": "Xiaomei, kita ke stasiun kereta cepat naik apa?",
+     "literal": "Xiaomei, kami — bagaimana — pergi — tinggi-rel — stasiun?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[坐|Zuò][捷運|jiéyùn][就|jiù][可以|kěyǐ]。[大概|Dàgài][二十|èrshí][分鐘|fēnzhōng]。",
+     "id": "Naik MRT saja bisa. Kira-kira dua puluh menit.",
+     "literal": "duduk — MRT — persis — boleh. kira-kira — dua-puluh — menit."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[從|Cóng][學校|xuéxiào][到|dào][車站|chēzhàn][要|yào][轉車|zhuǎnchē][嗎|ma]？",
+     "id": "Dari kampus ke stasiun perlu ganti kereta?",
+     "literal": "dari — sekolah — sampai — kendaraan-stasiun — perlu — putar-kendaraan — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[要|Yào][轉|zhuǎn][一次|yí cì]。[在|Zài][台北車站|Táiběi chēzhàn][換|huàn][紅線|hóng xiàn]。",
+     "id": "Perlu ganti sekali. Di Stasiun Taipei pindah ke jalur merah.",
+     "literal": "perlu — putar — satu — kali. di — Taipei — stasiun — tukar — merah — garis."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我們|Wǒmen][幾點|jǐ diǎn][出發|chūfā][比較|bǐjiào][好|hǎo]？",
+     "id": "Kita berangkat jam berapa lebih baik?",
+     "literal": "kami — berapa — jam — keluar-berangkat — lebih — baik?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[火車|Huǒchē][八點半|bā diǎn bàn]。[我們|Wǒmen][七點半|qī diǎn bàn][出門|chūmén][吧|ba]。",
+     "id": "Keretanya jam setengah sembilan. Kita keluar rumah jam setengah delapan ya.",
+     "literal": "api-kendaraan — delapan — jam — setengah. kami — tujuh — jam — setengah — keluar-pintu — ya."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][阿明|Ā Míng][呢|ne]？[他|Tā][也|yě][坐|zuò][捷運|jiéyùn][嗎|ma]？",
+     "id": "Kalau A-Ming? Dia juga naik MRT?",
+     "literal": "kalau-begitu — A-Ming — kalau? dia — juga — duduk — MRT — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[不|Bù]，[他|tā][騎|qí][機車|jīchē][去|qù]。[他|Tā][說|shuō][比較|bǐjiào][快|kuài]。",
+     "id": "Tidak, dia naik motor. Katanya lebih cepat.",
+     "literal": "tidak, dia — kendarai — mesin-kendaraan — pergi. dia — mengatakan — lebih — cepat."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[台北|Táiběi][的|de][機車|jīchē][真|zhēn][多|duō]！",
+     "id": "Motor di Taipei banyak sekali!",
+     "literal": "Taipei — punya — motor — sungguh — banyak!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[全台灣|Quán Táiwān][有|yǒu][一千四百萬|yìqiān sìbǎi wàn][台|tái][機車|jīchē][喔|o]。",
+     "id": "Seluruh Taiwan ada empat belas juta motor lho.",
+     "literal": "seluruh — Taiwan — ada — seribu-empat-ratus — sepuluh-ribu — (penggolong) — motor — lho."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[比|Bǐ][印尼|Yìnní][少|shǎo]！[我們|Wǒmen][有|yǒu][一億|yí yì][多|duō]。",
+     "id": "Lebih sedikit daripada Indonesia! Kami punya lebih dari seratus juta.",
+     "literal": "banding — Indonesia — sedikit! kami — ada — satu — ratus-juta — lebih."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[哇|Wā]！[那|Nà][你|nǐ][應該|yīnggāi][很|hěn][會|huì][騎|qí][吧|ba]？",
+     "id": "Wah! Berarti kamu pasti jago naik motor dong?",
+     "literal": "wah! kalau-begitu — kamu — seharusnya — sangat — pandai — kendarai — kan?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[會|Huì][是|shì][會|huì]，[可是|kěshì][台灣|Táiwān][的|de][交通|jiāotōng][我|wǒ][還|hái][不熟|bù shú]。",
+     "id": "Bisa sih bisa, tapi lalu lintas Taiwan saya belum hafal.",
+     "literal": "bisa — adalah — bisa, tetapi — Taiwan — punya — lalu-lintas — saya — masih — tidak — akrab."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[慢慢來|Mànmàn lái]！[走|Zǒu]，[捷運|jiéyùn][來|lái][了|le]！",
+     "id": "Pelan-pelan saja! Ayo, MRT-nya datang!",
+     "literal": "pelan-pelan — datang! jalan, MRT — datang — sudah!"
+    }
+   ],
+   "notes": [
+    "⚠️ **機車 di Taiwan berarti sepeda motor**, dan Taiwan punya salah satu kepadatan motor tertinggi di dunia — sekitar empat belas juta untuk dua puluh tiga juta penduduk. ⚠️ Dalam bahasa gaul anak muda, 機車 juga berarti \"menyebalkan, rewel\": *他很機車* (dia nyebelin banget).",
+    "**慢慢來 (\"pelan-pelan saja\") adalah salah satu kalimat penyemangat paling khas Taiwan.** Ia dipakai kepada siapa pun yang sedang belajar, gugup, atau terburu-buru. Kamu akan mendengarnya sering, dan ia benar-benar menenangkan.",
+    "**億 (*yì*) berarti seratus juta.** Bahasa Mandarin punya satuan besar sendiri: 萬 (sepuluh ribu), 億 (seratus juta). Seratus juta bukan \"seratus juta\" melainkan satu 億 — dan angka besar Indonesia sering perlu dihitung ulang.",
+    "⚠️ **不熟 (\"belum akrab\") dipakai untuk tempat, orang, dan keterampilan.** *我對台北還不熟* (saya belum hafal Taipei), *我跟他不熟* (saya tidak akrab dengan dia). Kata ini sangat berguna dan jarang diajarkan.",
+    "**紅線, 藍線, 綠線** — jalur MRT Taipei dikenal dengan warnanya, bukan nomornya. Peta di setiap stasiun memakai warna, dan orang menyebutkannya begitu saat memberi petunjuk."
+   ],
+   "grammars": [
+    {
+     "title": "坐, 搭, 騎, 開: memilih kata kerja untuk tiap kendaraan",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"naik\" untuk semuanya. Bahasa Mandarin memilih kata kerjanya menurut **caramu berada di atas kendaraan itu**."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Baca",
+       "Untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**坐**",
+        "zuò",
+        "duduk di dalam: bus, kereta, pesawat, taksi",
+        "**坐**捷運, **坐**飛機"
+       ],
+       [
+        "**搭**",
+        "dā",
+        "sama seperti 坐, agak lebih halus",
+        "**搭**高鐵, **搭**公車"
+       ],
+       [
+        "**騎**",
+        "qí",
+        "⚠️ duduk mengangkang: motor, sepeda, kuda",
+        "**騎**機車, **騎**腳踏車"
+       ],
+       [
+        "**開**",
+        "kāi",
+        "mengemudikan sendiri",
+        "**開**車 menyetir mobil"
+       ],
+       [
+        "**走路**",
+        "zǒulù",
+        "jalan kaki",
+        "我**走路**去。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **騎 dipakai untuk apa pun yang kamu duduki dengan kaki terbuka** — motor, sepeda, kuda. Memakai 坐 untuk motor terdengar janggal, seperti mengatakan \"duduk motor\" dalam bahasa Indonesia.",
+      "**Alat angkut berdiri SEBELUM kata kerja tujuan**: *我坐捷運去學校* — \"saya naik MRT ke kampus\". Ini penerapan aturan yang sama seperti waktu dan tempat: semua keterangan mendahului kata kerja utamanya.",
+      "**開 juga berarti \"membuka\" dan \"menyalakan\"**: 開門 (buka pintu), 開燈 (nyalakan lampu), 開會 (rapat), 開始 (mulai). Aksara yang sama, keluarga arti yang lebar."
+     ]
+    },
+    {
+     "title": "從…到…: dari mana ke mana, dan berapa lama",
+     "body": [
+      "**從 A 到 B** adalah kerangka yang dipakai untuk jarak, waktu, maupun urutan. Keduanya berdiri **di depan kata kerja**, seperti seluruh keterangan lain."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**從**學校**到**車站",
+        "cóng xuéxiào dào chēzhàn",
+        "dari kampus ke stasiun"
+       ],
+       [
+        "**從**台北**到**台南要兩小時。",
+        "Cóng Táiběi dào Táinán yào liǎng xiǎoshí.",
+        "Dari Taipei ke Tainan perlu dua jam."
+       ],
+       [
+        "**從**九點**到**五點",
+        "cóng jiǔ diǎn dào wǔ diǎn",
+        "dari jam sembilan sampai jam lima"
+       ],
+       [
+        "你**從**哪裡來？",
+        "Nǐ cóng nǎlǐ lái?",
+        "Kamu datang dari mana?"
+       ],
+       [
+        "我**到**了。",
+        "Wǒ dào le.",
+        "Saya sudah sampai."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **要 di sini berarti \"memerlukan, memakan waktu\"**, bukan \"mau\": *要兩小時* = \"perlu dua jam\". Arti ini muncul setiap kali 要 diikuti jumlah waktu atau jumlah uang: *要多少錢？* (perlu berapa uang = berapa harganya).",
+      "**Bertanya lama perjalanan: 要多久？** (*yào duō jiǔ?*) — \"perlu berapa lama?\". Jawabannya memakai satuan waktu yang berdiri sesudah kata kerja: *要半個小時* (perlu setengah jam)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kendaraan di Taiwan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "Kata kerjanya"
+     ],
+     "rows": [
+      [
+       "捷運",
+       "jiéyùn",
+       "MRT (Taipei, Kaohsiung)",
+       "坐 / 搭"
+      ],
+      [
+       "公車",
+       "gōngchē",
+       "bus kota",
+       "坐 / 搭"
+      ],
+      [
+       "火車",
+       "huǒchē",
+       "kereta biasa (台鐵)",
+       "坐 / 搭"
+      ],
+      [
+       "高鐵",
+       "gāotiě",
+       "kereta cepat (HSR)",
+       "坐 / 搭"
+      ],
+      [
+       "計程車",
+       "jìchéngchē",
+       "⚠️ taksi (khas Taiwan)",
+       "坐 / 搭"
+      ],
+      [
+       "飛機",
+       "fēijī",
+       "pesawat",
+       "坐 / 搭"
+      ],
+      [
+       "機車",
+       "jīchē",
+       "⚠️ sepeda motor",
+       "騎"
+      ],
+      [
+       "腳踏車",
+       "jiǎotàchē",
+       "⚠️ sepeda",
+       "騎"
+      ],
+      [
+       "YouBike",
+       "YouBike",
+       "sepeda sewa umum",
+       "騎"
+      ],
+      [
+       "車",
+       "chē",
+       "mobil",
+       "開"
+      ],
+      [
+       "船",
+       "chuán",
+       "kapal",
+       "坐 / 搭"
+      ],
+      [
+       "走路",
+       "zǒulù",
+       "jalan kaki",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kereta Taiwan: dua sistem yang berbeda",
+     "items": [
+      "**高鐵 (HSR)** — kereta cepat di pantai barat, Taipei–Kaohsiung dalam sekitar 1 jam 45 menit. Mahal, cepat, stasiunnya di pinggir kota.",
+      "**台鐵 (TRA)** — kereta biasa yang mengelilingi seluruh pulau, termasuk pantai timur ke 花蓮 dan 台東. Lebih murah, lebih lambat, stasiunnya di pusat kota.",
+      "⚠️ **Untuk 花蓮 dan 台東, satu-satunya kereta adalah 台鐵** — 高鐵 tidak melewati pantai timur sama sekali.",
+      "**Kelas 台鐵:** 自強號 (paling cepat), 莒光號, 區間車 (semua berhenti). Pesan lewat aplikasi atau di 便利商店.",
+      "**悠遊卡 bisa dipakai untuk 捷運, 公車, YouBike, dan 台鐵 jarak pendek** — tetapi tidak untuk 高鐵."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya rute",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**怎麼去？**",
+       "zěnme qù?",
+       "Perginya bagaimana?"
+      ],
+      [
+       "**要坐幾號公車？**",
+       "yào zuò jǐ hào gōngchē?",
+       "Naik bus nomor berapa?"
+      ],
+      [
+       "**要轉車嗎？**",
+       "yào zhuǎnchē ma?",
+       "Perlu ganti kendaraan?"
+      ],
+      [
+       "**在哪裡下車？**",
+       "zài nǎlǐ xiàchē?",
+       "Turun di mana?"
+      ],
+      [
+       "**要多久？**",
+       "yào duō jiǔ?",
+       "Perlu berapa lama?"
+      ],
+      [
+       "**車票多少錢？**",
+       "chēpiào duōshǎo qián?",
+       "Tiketnya berapa?"
+      ],
+      [
+       "**下一班幾點？**",
+       "xià yì bān jǐ diǎn?",
+       "Yang berikutnya jam berapa?"
+      ],
+      [
+       "**這班車去台南嗎？**",
+       "zhè bān chē qù Táinán ma?",
+       "Kereta ini ke Tainan?"
+      ],
+      [
+       "**我坐過站了**",
+       "wǒ zuòguò zhàn le",
+       "⚠️ Saya kelewatan stasiun"
+      ],
+      [
+       "**麻煩到這個地址**",
+       "máfán dào zhè ge dìzhǐ",
+       "Tolong ke alamat ini (ke sopir taksi)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **上車 dan 下車 berarti naik dan turun kendaraan**, memakai pasangan 上/下 yang sama seperti 上課/下課 dan 上班/下班. Dan **麻煩** (*máfán*, \"merepotkan\") dipakai sebagai pengantar permintaan yang sangat sopan: *麻煩你* = \"maaf merepotkan, tolong…\"."
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat kecepatan dan jarak",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "快",
+       "kuài",
+       "cepat",
+       "慢",
+       "màn",
+       "pelan"
+      ],
+      [
+       "近",
+       "jìn",
+       "dekat",
+       "遠",
+       "yuǎn",
+       "jauh"
+      ],
+      [
+       "早",
+       "zǎo",
+       "awal",
+       "晚",
+       "wǎn",
+       "terlambat"
+      ],
+      [
+       "方便",
+       "fāngbiàn",
+       "praktis",
+       "麻煩",
+       "máfán",
+       "merepotkan"
+      ],
+      [
+       "塞車",
+       "sāichē",
+       "macet",
+       "順",
+       "shùn",
+       "lancar"
+      ],
+      [
+       "準時",
+       "zhǔnshí",
+       "tepat waktu",
+       "誤點",
+       "wùdiǎn",
+       "terlambat (jadwal)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**塞車 (\"kendaraan tersumbat\") berarti macet**, dan Taipei jauh lebih lancar daripada Jakarta — tetapi cobalah keluar kota saat 連假 dan kamu akan memakai kata ini berkali-kali. Untuk memperkirakan: *可能會塞車* (\"mungkin akan macet\")."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "怎麼",
+   "baca": "zěnme",
+   "id": "bagaimana"
+  },
+  {
+   "zh": "坐",
+   "baca": "zuò",
+   "id": "duduk; naik (kendaraan)"
+  },
+  {
+   "zh": "搭",
+   "baca": "dā",
+   "id": "naik (kendaraan)"
+  },
+  {
+   "zh": "騎",
+   "baca": "qí",
+   "id": "⚠️ naik (motor, sepeda)"
+  },
+  {
+   "zh": "開車",
+   "baca": "kāichē",
+   "id": "menyetir"
+  },
+  {
+   "zh": "走路",
+   "baca": "zǒulù",
+   "id": "jalan kaki"
+  },
+  {
+   "zh": "從",
+   "baca": "cóng",
+   "id": "dari"
+  },
+  {
+   "zh": "到",
+   "baca": "dào",
+   "id": "ke, sampai"
+  },
+  {
+   "zh": "高鐵",
+   "baca": "gāotiě",
+   "id": "kereta cepat"
+  },
+  {
+   "zh": "火車",
+   "baca": "huǒchē",
+   "id": "kereta"
+  },
+  {
+   "zh": "公車",
+   "baca": "gōngchē",
+   "id": "bus kota"
+  },
+  {
+   "zh": "計程車",
+   "baca": "jìchéngchē",
+   "id": "⚠️ taksi (Taiwan)"
+  },
+  {
+   "zh": "機車",
+   "baca": "jīchē",
+   "id": "⚠️ sepeda motor"
+  },
+  {
+   "zh": "車站",
+   "baca": "chēzhàn",
+   "id": "stasiun, terminal"
+  },
+  {
+   "zh": "轉車",
+   "baca": "zhuǎnchē",
+   "id": "ganti kendaraan"
+  },
+  {
+   "zh": "下車",
+   "baca": "xiàchē",
+   "id": "turun dari kendaraan"
+  },
+  {
+   "zh": "多久",
+   "baca": "duō jiǔ",
+   "id": "berapa lama"
+  },
+  {
+   "zh": "大概",
+   "baca": "dàgài",
+   "id": "kira-kira"
+  },
+  {
+   "zh": "遠",
+   "baca": "yuǎn",
+   "id": "jauh"
+  },
+  {
+   "zh": "近",
+   "baca": "jìn",
+   "id": "dekat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kita ke stasiun naik apa?",
+    "Naik MRT saja bisa.",
+    "Dari Taipei ke Tainan perlu dua jam.",
+    "Dia naik motor ke kampus.",
+    "Perlu ganti kendaraan?",
+    "Turun di mana?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 坐, 騎, 開, atau 走路.",
+   "items": [
+    "我 ____ 捷運去學校。",
+    "他 ____ 機車。",
+    "我爸爸 ____ 車去上班。",
+    "很近，我們 ____ 去吧。",
+    "我們 ____ 高鐵去台南。",
+    "她 ____ 腳踏車。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 從 atau 到.",
+   "items": [
+    "我 ____ 印尼來。",
+    "____ 學校 ____ 車站要二十分鐘。",
+    "我八點 ____ 了。",
+    "____ 九點 ____ 五點我在上班。",
+    "這班車 ____ 高雄嗎？"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "去 / 怎麼 / 我們",
+    "捷運 / 去 / 坐 / 我 / 學校",
+    "到 / 從 / 台南 / 台北",
+    "騎 / 他 / 機車 / 去",
+    "久 / 要 / 多"
+   ]
+  }
+ ],
+ "answers": [
+  "我們怎麼去車站？ — 坐捷運就可以。 — 從台北到台南要兩小時。 — 他騎機車去學校。 — 要轉車嗎？ — 在哪裡下車？",
+  "坐 — 騎 — 開 — 走路 — 坐 — 騎",
+  "從 — 從、到 — 到 — 從、到 — 到",
+  "我們怎麼去？ — 我坐捷運去學校。 — 從台北到台南。 — 他騎機車去。 — 要多久？"
+ ]
+}

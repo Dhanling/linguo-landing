@@ -1,0 +1,577 @@
+{
+ "title": "Hari ini hari apa?",
+ "title_target": "今天星期幾？",
+ "goal": "Menyebut hari, tanggal, dan tahun — dan memakai satu pola yang mengatur seluruh bahasa Mandarin: dari yang besar ke yang kecil.",
+ "bekal": [
+  "menyebut hari dan tanggal dengan urutan Mandarin yang benar",
+  "mengucapkan selamat ulang tahun dan mengurus undangan",
+  "membedakan 號 dan 日, serta membaca tahun angka per angka"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 生日快樂",
+   "intro": "Di kantin, A-Ming menanyakan tanggal ulang tahun Budi karena mereka ingin merayakannya.",
+   "lines": [
+    {
+     "speaker": "阿明:",
+     "text": "[布迪|Bùdí]，[今天|jīntiān][星期幾|xīngqí jǐ]？",
+     "id": "Budi, hari ini hari apa?",
+     "literal": "Budi, hari-ini — minggu — berapa?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[今天|Jīntiān][星期四|xīngqísì]。[怎麼了|Zěnme le]？",
+     "id": "Hari ini Kamis. Kenapa?",
+     "literal": "hari-ini — minggu-empat. bagaimana — sudah?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[下星期|Xià xīngqí][是|shì][小美|Xiǎoměi][的|de][生日|shēngrì]。",
+     "id": "Minggu depan ulang tahun Xiaomei.",
+     "literal": "bawah — minggu — adalah — Xiaomei — punya — lahir-hari."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[真的|Zhēn de][嗎|ma]？[幾月|Jǐ yuè][幾號|jǐ hào]？",
+     "id": "Serius? Tanggal berapa?",
+     "literal": "benar — yang — kah? berapa — bulan — berapa — nomor?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[五月|Wǔ yuè][十二號|shí'èr hào]，[星期三|xīngqísān]。",
+     "id": "12 Mei, hari Rabu.",
+     "literal": "lima — bulan — dua-belas — nomor, minggu-tiga."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][我們|wǒmen][要|yào][做|zuò][什麼|shénme]？",
+     "id": "Kalau begitu kita mau bikin apa?",
+     "literal": "kalau-begitu — kami — mau — buat — apa?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[晚上|Wǎnshang][吃飯|chīfàn]，[然後|ránhòu][唱歌|chànggē]。[你|Nǐ][有空|yǒukòng][嗎|ma]？",
+     "id": "Malamnya makan, terus karaoke. Kamu ada waktu?",
+     "literal": "malam — makan-nasi, sesudah-itu — nyanyi-lagu. kamu — ada — waktu — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[有|Yǒu]！[我|Wǒ][要|yào][送|sòng][她|tā][一個|yí ge][禮物|lǐwù]。",
+     "id": "Ada! Saya mau kasih dia hadiah.",
+     "literal": "ada! saya — mau — antar — dia — satu — (penggolong) — hadiah."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[好主意|Hǎo zhǔyì]！[她|Tā][很|hěn][喜歡|xǐhuān][看書|kànshū]。",
+     "id": "Ide bagus! Dia suka sekali baca buku.",
+     "literal": "baik — pokok-maksud! dia — sangat — suka — lihat-buku."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][我|wǒ][送|sòng][她|tā][一本|yì běn][書|shū][好了|hǎo le]。",
+     "id": "Kalau begitu saya kasih dia buku saja.",
+     "literal": "kalau-begitu — saya — antar — dia — satu — (penggolong) — buku — baik — sudah."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "⚠️[不要|Bú yào][送|sòng][鐘|zhōng][喔|o]！[那|Nà][不吉利|bù jílì]。",
+     "id": "Jangan kasih jam dinding lho! Itu tidak membawa keberuntungan.",
+     "literal": "tidak — mau — antar — jam-dinding — lho! itu — tidak — baik-untung."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[為什麼|Wèishénme]？",
+     "id": "Kenapa?",
+     "literal": "untuk — apa?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[送鐘|Sòng zhōng][聽起來|tīngqǐlái][像|xiàng][送終|sòngzhōng]，[很|hěn][不好|bù hǎo]。",
+     "id": "\"Kasih jam\" bunyinya mirip \"mengantar orang mati\", jelek sekali.",
+     "literal": "antar — jam — terdengar — mirip — antar — akhir, sangat — tidak — baik."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[哇|Wā]，[還好|háihǎo][你|nǐ][說|shuō]！[我|Wǒ][差點|chàdiǎn][闖禍|chuǎnghuò]。",
+     "id": "Wah, untung kamu bilang! Hampir saja saya bikin kacau.",
+     "literal": "wah, masih — baik — kamu — mengatakan! saya — kurang-sedikit — tabrak-bencana."
+    }
+   ],
+   "notes": [
+    "⚠️ **Jangan pernah memberi jam dinding sebagai hadiah kepada orang Tionghoa.** 送鐘 (*sòng zhōng*, memberi jam) terdengar sama persis dengan 送終 (*sòngzhōng*, mengantar orang ke liang lahat). Larangan ini serius dan berlaku di seluruh dunia berbahasa Tionghoa.",
+    "**Hadiah lain yang dihindari:** payung (傘 *sǎn* mirip 散 *sàn*, berpisah), sepatu (鞋 *xié* mirip 邪 *xié*, sial), dan pisau atau gunting (memutus hubungan). Hadiah yang aman: makanan, buah, teh, buku, kosmetik.",
+    "**怎麼了？ berarti \"kenapa?\", \"ada apa?\"** — dipakai saat melihat sesuatu yang tidak biasa. Bedakan dari 為什麼 (\"kenapa\" dalam arti mencari alasan) dan 怎麼樣 (\"bagaimana\").",
+    "**好了 di ujung kalimat berarti \"saja lah, itu sudah cukup\"** — sebuah keputusan yang santai. *我送她一本書好了。* Ia sangat sering dipakai dan membuat kalimatmu terdengar wajar.",
+    "⚠️ **還好 punya dua arti:** \"untung saja\" (*還好你說*) dan \"lumayan, biasa saja\" (jawaban atas 你好嗎?). Konteks memisahkannya, dan yang kedua adalah jawaban paling jujur dan paling sering dipakai orang Taiwan."
+   ],
+   "grammars": [
+    {
+     "title": "Hari dalam seminggu: tinggal berhitung",
+     "body": [
+      "Hari dalam bahasa Mandarin dinomori, bukan dinamai. **星期 (\"minggu\") + angka** — dan angkanya mulai dari Senin, bukan Minggu."
+     ],
+     "table": {
+      "head": [
+       "Hari",
+       "中文",
+       "Pīnyīn",
+       "Harfiah"
+      ],
+      "rows": [
+       [
+        "Senin",
+        "星期一",
+        "xīngqíyī",
+        "minggu-satu"
+       ],
+       [
+        "Selasa",
+        "星期二",
+        "xīngqí'èr",
+        "minggu-dua"
+       ],
+       [
+        "Rabu",
+        "星期三",
+        "xīngqísān",
+        "minggu-tiga"
+       ],
+       [
+        "Kamis",
+        "星期四",
+        "xīngqísì",
+        "minggu-empat"
+       ],
+       [
+        "Jumat",
+        "星期五",
+        "xīngqíwǔ",
+        "minggu-lima"
+       ],
+       [
+        "Sabtu",
+        "星期六",
+        "xīngqíliù",
+        "minggu-enam"
+       ],
+       [
+        "Minggu",
+        "星期日 / 星期天",
+        "xīngqírì / xīngqítiān",
+        "⚠️ minggu-matahari"
+       ],
+       [
+        "hari apa?",
+        "星期幾？",
+        "xīngqí jǐ?",
+        "minggu-berapa?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Minggu bukan 星期七.** Bentuk itu tidak ada. Yang dipakai adalah 星期日 (agak resmi, di kalender) atau 星期天 (sehari-hari).",
+      "⚠️ **期 pada 星期 dibaca *qí* di Taiwan**, bukan *qī* seperti di daratan. Perbedaan nada ini adalah salah satu penanda pelafalan Taiwan yang paling sering muncul, karena kata ini dipakai setiap hari.",
+      "**週 (*zhōu*) adalah bentuk yang lebih pendek dan agak resmi**: 週一, 週二, 週末 (akhir pekan). Kamu akan melihatnya di jadwal dan papan pengumuman."
+     ]
+    },
+    {
+     "title": "Tanggal: bulan dulu, dan selalu besar ke kecil",
+     "body": [
+      "Bahasa Mandarin menyebut tanggal dengan urutan **tahun → bulan → tanggal → hari**, kebalikan dari kebiasaan Indonesia yang menyebut tanggal lebih dulu."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Pola",
+       "Contoh",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "Bulan",
+        "angka + 月",
+        "五月",
+        "wǔ yuè (Mei)"
+       ],
+       [
+        "Tanggal (lisan)",
+        "angka + 號",
+        "十二號",
+        "shí'èr hào"
+       ],
+       [
+        "Tanggal (tulis)",
+        "angka + 日",
+        "十二日",
+        "shí'èr rì"
+       ],
+       [
+        "Tahun",
+        "angka per angka + 年",
+        "二〇二六年",
+        "èr líng èr liù nián"
+       ],
+       [
+        "Lengkap",
+        "tahun → bulan → tanggal → hari",
+        "二〇二六年五月十二號星期三",
+        "—"
+       ],
+       [
+        "Bertanya",
+        "幾月幾號？",
+        "今天幾月幾號？",
+        "Jǐ yuè jǐ hào?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Tahun dibaca angka per angka, bukan sebagai bilangan.** 2026 adalah *èr líng èr liù*, bukan *liǎngqiān líng èrshíliù*. Kekeliruan ini langsung terdengar.",
+      "⚠️ **號 dipakai saat bicara, 日 saat menulis.** Kalender dan surat resmi memakai 日; percakapan sehari-hari selalu 號.",
+      "**Nama bulan cuma angka**: 一月 Januari, 二月 Februari, sampai 十二月 Desember. Tidak ada nama khusus sama sekali — hadiah kecil yang menghemat dua belas kata hafalan.",
+      "⚠️ Di Taiwan, dokumen resmi kadang memakai **民國 (*Mínguó*)**, tahun Republik: tahun 2026 adalah 民國115年. Rumusnya: tahun Masehi dikurangi 1911. Kamu akan melihatnya di KTP, tiket kereta, dan struk resmi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata waktu yang berpasangan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Lalu",
+      "Ini",
+      "Depan",
+      "Satuan"
+     ],
+     "rows": [
+      [
+       "昨天 zuótiān",
+       "今天 jīntiān",
+       "明天 míngtiān",
+       "hari"
+      ],
+      [
+       "上星期 shàng xīngqí",
+       "這星期 zhè xīngqí",
+       "下星期 xià xīngqí",
+       "minggu"
+      ],
+      [
+       "上個月 shàng ge yuè",
+       "這個月 zhè ge yuè",
+       "下個月 xià ge yuè",
+       "bulan"
+      ],
+      [
+       "去年 qùnián",
+       "今年 jīnnián",
+       "明年 míngnián",
+       "tahun"
+      ],
+      [
+       "前天 qiántiān",
+       "—",
+       "後天 hòutiān",
+       "dua hari"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa polanya **tidak seragam**: hari memakai 昨/今/明, minggu dan bulan memakai 上/這/下, dan tahun memakai 去/今/明. Ketiga pola ini harus dihafal terpisah, dan mencampurnya (*上天* untuk kemarin) adalah kekeliruan yang umum. **月 selalu butuh 個** di tengah: 上**個**月, bukan 上月."
+    }
+   ]
+  },
+  {
+   "title": "Ulang tahun dan ucapan selamat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**你的生日是幾月幾號？**",
+       "nǐ de shēngrì shì jǐ yuè jǐ hào?",
+       "Ulang tahunmu tanggal berapa?"
+      ],
+      [
+       "**生日快樂！**",
+       "shēngrì kuàilè!",
+       "Selamat ulang tahun!"
+      ],
+      [
+       "**新年快樂！**",
+       "xīnnián kuàilè!",
+       "Selamat tahun baru!"
+      ],
+      [
+       "**恭喜！**",
+       "gōngxǐ!",
+       "Selamat! (atas keberhasilan)"
+      ],
+      [
+       "**恭喜發財！**",
+       "gōngxǐ fācái!",
+       "Semoga makin makmur! (Imlek)"
+      ],
+      [
+       "**祝你…**",
+       "zhù nǐ…",
+       "Semoga kamu…"
+      ],
+      [
+       "**送你一個禮物**",
+       "sòng nǐ yí ge lǐwù",
+       "Kasih kamu hadiah"
+      ],
+      [
+       "**謝謝你的禮物**",
+       "xièxie nǐ de lǐwù",
+       "Terima kasih hadiahnya"
+      ],
+      [
+       "**我請你**",
+       "wǒ qǐng nǐ",
+       "Saya yang traktir"
+      ],
+      [
+       "**乾杯！**",
+       "gānbēi!",
+       "Bersulang! (harfiah: gelas kering)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Lagu yang akan kamu dengar",
+     "items": [
+      "Lagu \"Happy Birthday\" dinyanyikan di Taiwan dengan lirik Mandarin: **祝你生日快樂** (*Zhù nǐ shēngrì kuàilè*), diulang empat kali dengan nada yang sama persis seperti versi bahasa Inggris.",
+      "**Kue ulang tahun** disebut 蛋糕 (*dàngāo*), dan meniup lilin disebut 吹蠟燭 (*chuī làzhú*).",
+      "⚠️ **Ulang tahun tradisional dihitung menurut kalender bulan (農曆)**, jadi orang tua Taiwan sering punya dua tanggal ulang tahun yang berbeda tiap tahun. Anak muda umumnya memakai tanggal Masehi.",
+      "**壽星** (*shòuxīng*, \"bintang umur panjang\") adalah sebutan untuk orang yang berulang tahun hari itu. *今天你是壽星！*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Angka yang membawa untung dan sial",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Angka di Taiwan bukan sekadar angka — bunyinya menentukan apakah ia disukai atau dihindari. Ini bukan takhayul kecil: harga apartemen, nomor plat, dan nomor kamar rumah sakit benar-benar dipengaruhi olehnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Bunyi",
+      "Mirip dengan",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "**8** 八",
+       "bā",
+       "發 *fā* (menjadi kaya)",
+       "⭐ paling disukai"
+      ],
+      [
+       "**6** 六",
+       "liù",
+       "流 *liú* (mengalir lancar)",
+       "⭐ disukai"
+      ],
+      [
+       "**9** 九",
+       "jiǔ",
+       "久 *jiǔ* (lama, awet)",
+       "⭐ disukai, untuk cinta"
+      ],
+      [
+       "**4** 四",
+       "sì",
+       "死 *sǐ* (mati)",
+       "⚠️ dihindari kuat"
+      ],
+      [
+       "**14** 十四",
+       "shísì",
+       "實死 (pasti mati)",
+       "⚠️ paling dihindari"
+      ],
+      [
+       "**2** 二",
+       "èr",
+       "—",
+       "netral; 兩兩 = berpasangan, baik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Banyak gedung di Taiwan tidak punya lantai 4**, melompat dari 3 ke 5 — persis seperti gedung Barat yang melompati lantai 13. Rumah sakit hampir tidak pernah punya kamar bernomor 4. Kalau kamu memberi hadiah berupa barang berjumlah, hindari empat buah; **berikan dua, enam, atau delapan**."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "星期",
+   "baca": "xīngqí",
+   "id": "minggu (⚠️ Taiwan: qí)"
+  },
+  {
+   "zh": "今天",
+   "baca": "jīntiān",
+   "id": "hari ini"
+  },
+  {
+   "zh": "月",
+   "baca": "yuè",
+   "id": "bulan"
+  },
+  {
+   "zh": "號",
+   "baca": "hào",
+   "id": "tanggal (lisan)"
+  },
+  {
+   "zh": "日",
+   "baca": "rì",
+   "id": "hari; tanggal (tulis)"
+  },
+  {
+   "zh": "年",
+   "baca": "nián",
+   "id": "tahun"
+  },
+  {
+   "zh": "今年",
+   "baca": "jīnnián",
+   "id": "tahun ini"
+  },
+  {
+   "zh": "生日",
+   "baca": "shēngrì",
+   "id": "ulang tahun"
+  },
+  {
+   "zh": "快樂",
+   "baca": "kuàilè",
+   "id": "gembira, selamat"
+  },
+  {
+   "zh": "禮物",
+   "baca": "lǐwù",
+   "id": "hadiah"
+  },
+  {
+   "zh": "送",
+   "baca": "sòng",
+   "id": "memberi; mengantar"
+  },
+  {
+   "zh": "喜歡",
+   "baca": "xǐhuān",
+   "id": "suka"
+  },
+  {
+   "zh": "然後",
+   "baca": "ránhòu",
+   "id": "lalu, sesudah itu"
+  },
+  {
+   "zh": "唱歌",
+   "baca": "chànggē",
+   "id": "menyanyi"
+  },
+  {
+   "zh": "為什麼",
+   "baca": "wèishénme",
+   "id": "kenapa"
+  },
+  {
+   "zh": "怎麼了",
+   "baca": "zěnme le",
+   "id": "ada apa?"
+  },
+  {
+   "zh": "還好",
+   "baca": "háihǎo",
+   "id": "untung; lumayan"
+  },
+  {
+   "zh": "週末",
+   "baca": "zhōumò",
+   "id": "akhir pekan"
+  },
+  {
+   "zh": "恭喜",
+   "baca": "gōngxǐ",
+   "id": "selamat!"
+  },
+  {
+   "zh": "主意",
+   "baca": "zhǔyì",
+   "id": "ide, gagasan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Hari ini hari apa?",
+    "Hari ini hari Rabu.",
+    "Ulang tahunmu tanggal berapa?",
+    "12 Mei.",
+    "Selamat ulang tahun!",
+    "Minggu depan saya tidak ada waktu."
+   ]
+  },
+  {
+   "prompt": "Tulis dalam aksara Mandarin.",
+   "items": [
+    "Hari Senin",
+    "Hari Minggu",
+    "3 Maret",
+    "Tahun 2026",
+    "Bulan depan",
+    "Tahun lalu"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya — semua salah urutan atau salah kata.",
+   "items": [
+    "今天星期七。",
+    "我的生日是十二號五月。",
+    "今天是二〇二六年，讀作兩千零二十六年。",
+    "上天我去了夜市。",
+    "下月我去台南。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "星期幾 / 今天",
+    "生日 / 幾月 / 你的 / 是 / 幾號",
+    "快樂 / 生日",
+    "禮物 / 送 / 一個 / 我 / 她",
+    "有空 / 我 / 下星期 / 沒"
+   ]
+  }
+ ],
+ "answers": [
+  "今天星期幾？ — 今天星期三。 — 你的生日是幾月幾號？ — 五月十二號。 — 生日快樂！ — 下星期我沒有空。",
+  "星期一 — 星期日 — 三月三號 — 二〇二六年 — 下個月 — 去年",
+  "今天星期日。 — 我的生日是五月十二號。 — 二〇二六年讀作「èr líng èr liù」。 — 昨天我去了夜市。 — 下個月我去台南。",
+  "今天星期幾？ — 你的生日是幾月幾號？ — 生日快樂。 — 我送她一個禮物。 — 我下星期沒有空。"
+ ]
+}

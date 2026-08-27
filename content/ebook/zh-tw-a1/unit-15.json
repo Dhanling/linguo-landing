@@ -1,0 +1,602 @@
+{
+ "title": "Saya kurang enak badan",
+ "title_target": "我不舒服",
+ "goal": "Menjelaskan sakit dan pergi ke klinik di Taiwan — sambil mengenali kata kerja yang sudah membawa bendanya sendiri, sebuah pola yang mengubah cara kamu menyusun kalimat.",
+ "bekal": [
+  "menyebutkan bagian tubuh dan menjelaskan gejala kepada dokter",
+  "mengenali kata kerja berpasangan (看病, 吃藥, 睡覺) dan menyisipkan sesuatu di tengahnya",
+  "mengurus kunjungan ke klinik dan apotek Taiwan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 看醫生",
+   "intro": "Pagi hari di Tainan, Budi bangun dengan tenggorokan sakit. Xiaomei mengantarnya ke klinik di seberang jalan.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[布迪|Bùdí]，[你|nǐ][臉色|liǎnsè][不太|bú tài][好|hǎo][耶|ye]。",
+     "id": "Budi, mukamu pucat lho.",
+     "literal": "Budi, kamu — muka-warna — tidak — terlalu — baik — lho."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][有點|yǒudiǎn][不舒服|bù shūfú]。[喉嚨|Hóulóng][很|hěn][痛|tòng]。",
+     "id": "Saya agak tidak enak badan. Tenggorokan sakit sekali.",
+     "literal": "saya — ada-sedikit — tidak — nyaman. tenggorokan — sangat — sakit."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[有|Yǒu][發燒|fāshāo][嗎|ma]？[我|Wǒ][摸摸|mōmō][看|kàn]。",
+     "id": "Demam nggak? Coba saya raba.",
+     "literal": "ada — keluar-bakar — kah? saya — raba-raba — lihat."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好像|Hǎoxiàng][有|yǒu][一點|yìdiǎn]。[昨天|Zuótiān][晚上|wǎnshang][沒|méi][睡|shuì][好|hǎo]。",
+     "id": "Kayaknya sedikit. Semalam saya tidak tidur nyenyak.",
+     "literal": "seperti — ada — sedikit. kemarin — malam — tidak — tidur — baik."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[走|Zǒu]，[我們|wǒmen][去|qù][看|kàn][醫生|yīshēng]。[對面|Duìmiàn][有|yǒu][診所|zhěnsuǒ]。",
+     "id": "Ayo, kita ke dokter. Di seberang ada klinik.",
+     "literal": "jalan, kami — pergi — lihat — dokter. seberang — ada — periksa-tempat."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[可是|Kěshì][我|wǒ][沒有|méi yǒu][健保卡|jiànbǎokǎ]…",
+     "id": "Tapi saya tidak punya kartu asuransi kesehatan…",
+     "literal": "tetapi — saya — tidak — ada — sehat-jamin-kartu…"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[你|Nǐ][有|yǒu][學生|xuéshēng][保險|bǎoxiǎn][吧|ba]？[帶|Dài][護照|hùzhào][也|yě][可以|kěyǐ]。",
+     "id": "Kamu punya asuransi mahasiswa kan? Bawa paspor juga bisa.",
+     "literal": "kamu — ada — pelajar — jamin-bahaya — kan? bawa — paspor — juga — boleh."
+    },
+    {
+     "speaker": "醫生:",
+     "text": "[哪裡|Nǎlǐ][不舒服|bù shūfú]？",
+     "id": "Bagian mana yang tidak enak?",
+     "literal": "mana — tidak — nyaman?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[喉嚨|Hóulóng][痛|tòng]，[頭|tóu][也|yě][痛|tòng]，[有|yǒu][一點|yìdiǎn][咳嗽|késòu]。",
+     "id": "Tenggorokan sakit, kepala juga sakit, sedikit batuk.",
+     "literal": "tenggorokan — sakit, kepala — juga — sakit, ada — sedikit — batuk."
+    },
+    {
+     "speaker": "醫生:",
+     "text": "[幾天|Jǐ tiān][了|le]？[有|Yǒu][流鼻水|liú bíshuǐ][嗎|ma]？",
+     "id": "Sudah berapa hari? Ada pilek?",
+     "literal": "berapa — hari — sudah? ada — mengalir — hidung-air — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[兩天|Liǎng tiān][了|le]。[有|Yǒu][一點|yìdiǎn]。",
+     "id": "Sudah dua hari. Sedikit ada.",
+     "literal": "dua — hari — sudah. ada — sedikit."
+    },
+    {
+     "speaker": "醫生:",
+     "text": "[感冒|Gǎnmào][而已|éryǐ]。[我|Wǒ][開|kāi][三天|sān tiān][的|de][藥|yào][給|gěi][你|nǐ]。",
+     "id": "Cuma flu. Saya resepkan obat tiga hari untukmu.",
+     "literal": "rasa-tertutup — saja. saya — buka — tiga — hari — punya — obat — beri — kamu."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[謝謝|Xièxie][醫生|yīshēng]。[藥|Yào][怎麼|zěnme][吃|chī]？",
+     "id": "Terima kasih Dokter. Obatnya diminum bagaimana?",
+     "literal": "terima kasih — dokter. obat — bagaimana — makan?"
+    },
+    {
+     "speaker": "醫生:",
+     "text": "[飯後|Fàn hòu][吃|chī]，[一天|yì tiān][三次|sān cì]。[多|Duō][喝|hē][水|shuǐ]，[多|duō][休息|xiūxí]。",
+     "id": "Diminum sesudah makan, tiga kali sehari. Banyak minum air, banyak istirahat.",
+     "literal": "nasi — sesudah — makan, satu — hari — tiga — kali. banyak — minum — air, banyak — istirahat."
+    }
+   ],
+   "notes": [
+    "⚠️ **健保卡 (kartu 健保, asuransi kesehatan nasional) adalah salah satu hal yang paling dibanggakan Taiwan.** Sekali berobat ke 診所 hanya sekitar 150–200 塊 termasuk obat. **Mahasiswa asing yang tinggal lebih dari enam bulan berhak mendapatkannya**, dan iurannya sekitar 800 塊 sebulan.",
+    "**診所 (klinik) berbeda dari 醫院 (rumah sakit).** Untuk flu, demam, atau sakit ringan, orang Taiwan pergi ke 診所 — cepat, murah, tanpa janji. 醫院 untuk yang serius. ⚠️ Pergi ke 醫院 untuk flu akan membuatmu menunggu berjam-jam dan membayar lebih mahal.",
+    "**摸摸看 memperlihatkan pola \"coba dulu\"**: kata kerja diulang + 看 = \"coba lakukan dan lihat hasilnya\". 試試看 (coba saja), 吃吃看 (coba makan), 想想看 (coba pikirkan). Pola ini sangat sering dipakai dan membuat kalimatmu terdengar ramah.",
+    "**而已 di ujung kalimat berarti \"cuma itu saja\"**, sering melegakan: *感冒而已* (\"cuma flu kok\"), *一百塊而已* (\"cuma seratus\"). Ia sangat khas Taiwan dan lebih sering dipakai daripada 只是.",
+    "⚠️ **好像 berarti \"kayaknya, sepertinya\"** dan dipakai untuk melunakkan pernyataan. Orang Taiwan memakainya terus-menerus untuk menghindari terdengar terlalu pasti — kebiasaan yang mirip dengan \"kayaknya\" dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja yang sudah membawa bendanya",
+     "body": [
+      "Banyak kata kerja Mandarin sebenarnya adalah **kata kerja + kata benda** yang menempel jadi satu. 吃飯 harfiahnya \"makan nasi\", 睡覺 \"tidur tidur\", 看病 \"melihat penyakit\". Kenapa ini penting: kamu **tidak boleh menambahkan benda lagi di belakangnya**, dan keterangan justru disisipkan di **tengahnya**."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Harfiah",
+       "Arti",
+       "Disisipi jadi"
+      ],
+      "rows": [
+       [
+        "**吃飯**",
+        "makan nasi",
+        "makan",
+        "吃**了**飯 / 吃**兩碗**飯"
+       ],
+       [
+        "**睡覺**",
+        "tidur tidur",
+        "tidur",
+        "睡**了**覺 / 睡**八小時**覺"
+       ],
+       [
+        "**看病**",
+        "lihat penyakit",
+        "berobat",
+        "看**了**病"
+       ],
+       [
+        "**上課**",
+        "naik pelajaran",
+        "kuliah",
+        "上**了**兩節課"
+       ],
+       [
+        "**唱歌**",
+        "nyanyi lagu",
+        "menyanyi",
+        "唱**一首**歌"
+       ],
+       [
+        "**幫忙**",
+        "bantu sibuk",
+        "membantu",
+        "幫**我的**忙"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Kekeliruan khasnya: 我吃飯麵.** Karena 飯 sudah jadi bendanya, kamu tidak bisa menambahkan 麵. Yang benar adalah **我吃麵** — buang 飯-nya.",
+      "**Uji cepat:** kalau kata kerja dua sukunya terasa seperti kegiatan umum tanpa objek tertentu (makan, tidur, bekerja, berenang, menyanyi), kemungkinan besar ia berpasangan. Begitu kamu punya objek yang jelas, buang bagian kedua.",
+      "**幫忙 adalah contoh yang paling sering menjebak**: *幫忙我* ✗ salah; *幫我* ✓ atau *幫我的忙* ✓."
+     ]
+    },
+    {
+     "title": "Menjelaskan gejala: pola 哪裡 + 痛",
+     "body": [
+      "Menyebutkan sakit di bahasa Mandarin sangat sederhana: **bagian tubuh + 痛**. Tidak ada kata kerja tambahan, tidak ada 是."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我**頭痛**。",
+        "Wǒ tóu tòng.",
+        "Kepala saya sakit."
+       ],
+       [
+        "我**肚子痛**。",
+        "Wǒ dùzi tòng.",
+        "Perut saya sakit."
+       ],
+       [
+        "我**喉嚨痛**。",
+        "Wǒ hóulóng tòng.",
+        "Tenggorokan saya sakit."
+       ],
+       [
+        "我**發燒**了。",
+        "Wǒ fāshāo le.",
+        "Saya demam."
+       ],
+       [
+        "我**咳嗽**。",
+        "Wǒ késòu.",
+        "Saya batuk."
+       ],
+       [
+        "我**感冒**了。",
+        "Wǒ gǎnmào le.",
+        "Saya kena flu."
+       ],
+       [
+        "我**不舒服**。",
+        "Wǒ bù shūfú.",
+        "Saya tidak enak badan."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **痛 dan 疼 sama-sama berarti sakit**, tetapi di Taiwan **痛** yang jauh lebih umum. Bandingkan dengan unit 8, tempat 疼 muncul dengan arti \"menyayangi\".",
+      "**了 pada 發燒了 dan 感冒了 adalah penanda perubahan** dari unit 11: tadinya sehat, sekarang tidak. Melepasnya membuat kalimatnya terdengar seperti pernyataan umum yang aneh.",
+      "**Pertanyaan pertama dokter selalu 哪裡不舒服？** — hafalkan jawabannya sekarang: bagian tubuh + 痛, ditambah lama sakitnya: *兩天了*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "頭",
+       "tóu",
+       "kepala",
+       "手",
+       "shǒu",
+       "tangan"
+      ],
+      [
+       "眼睛",
+       "yǎnjīng",
+       "mata",
+       "腳",
+       "jiǎo",
+       "kaki"
+      ],
+      [
+       "鼻子",
+       "bízi",
+       "hidung",
+       "背",
+       "bèi",
+       "punggung"
+      ],
+      [
+       "嘴巴",
+       "zuǐbā",
+       "mulut",
+       "肚子",
+       "dùzi",
+       "perut"
+      ],
+      [
+       "耳朵",
+       "ěrduo",
+       "telinga",
+       "腰",
+       "yāo",
+       "pinggang"
+      ],
+      [
+       "牙齒",
+       "yáchǐ",
+       "gigi",
+       "心",
+       "xīn",
+       "jantung, hati"
+      ],
+      [
+       "喉嚨",
+       "hóulóng",
+       "tenggorokan",
+       "身體",
+       "shēntǐ",
+       "badan"
+      ],
+      [
+       "脖子",
+       "bózi",
+       "leher",
+       "臉",
+       "liǎn",
+       "wajah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa banyak bagian tubuh berakhiran **子** atau **巴/朵/齒** yang bernada netral: 鼻**子**, 肚**子**, 脖**子**, 嘴**巴**, 耳**朵**. Ekor ini tidak berarti apa-apa — ia sekadar membuat katanya jadi dua suku kata, karena bahasa Mandarin modern lebih suka kata dua suku."
+    }
+   ]
+  },
+  {
+   "title": "Di klinik",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**我要看醫生**",
+       "wǒ yào kàn yīshēng",
+       "Saya mau ke dokter"
+      ],
+      [
+       "**我要掛號**",
+       "wǒ yào guàhào",
+       "Saya mau daftar"
+      ],
+      [
+       "**我沒有健保卡**",
+       "wǒ méi yǒu jiànbǎokǎ",
+       "Saya tidak punya kartu 健保"
+      ],
+      [
+       "**這是我的護照**",
+       "zhè shì wǒ de hùzhào",
+       "Ini paspor saya"
+      ],
+      [
+       "**我對…過敏**",
+       "wǒ duì… guòmǐn",
+       "Saya alergi terhadap…"
+      ],
+      [
+       "**我肚子痛**",
+       "wǒ dùzi tòng",
+       "Perut saya sakit"
+      ],
+      [
+       "**我拉肚子**",
+       "wǒ lā dùzi",
+       "Saya diare"
+      ],
+      [
+       "**我想吐**",
+       "wǒ xiǎng tù",
+       "Saya mual"
+      ],
+      [
+       "**藥怎麼吃？**",
+       "yào zěnme chī?",
+       "Obatnya diminum bagaimana?"
+      ],
+      [
+       "**飯後吃**",
+       "fàn hòu chī",
+       "Diminum sesudah makan"
+      ],
+      [
+       "**一天三次**",
+       "yì tiān sān cì",
+       "Tiga kali sehari"
+      ],
+      [
+       "**多喝水，多休息**",
+       "duō hē shuǐ, duō xiūxí",
+       "Banyak minum air, banyak istirahat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara kerja klinik Taiwan",
+     "items": [
+      "**掛號** (daftar) di meja depan sambil menyerahkan 健保卡 atau paspor. Tanpa janji; datang saja.",
+      "**Menunggu nomormu dipanggil** — biasanya sepuluh sampai tiga puluh menit di 診所.",
+      "**Dokter memeriksa dua sampai lima menit**, lalu meresepkan obat.",
+      "**Obat diambil di jendela sebelah**, sudah dibagi per waktu minum dalam bungkus kecil. ⚠️ Kamu tidak perlu ke apotek terpisah.",
+      "**Bayar di akhir**: sekitar 150–200 塊 dengan 健保, sekitar 800–1.500 塊 tanpa.",
+      "⚠️ **藥局 (apotek) menjual obat bebas**, tetapi obat resep hampir selalu keluar dari klinik langsung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "多 dan 少 di depan kata kerja",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**多** dan **少** bisa berdiri di depan kata kerja untuk berarti \"lebih banyak…\" dan \"kurangi…\". Bentuk ini sangat sering dipakai untuk memberi nasihat, dan ia terdengar hangat, bukan memerintah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "**多**喝水",
+       "duō hē shuǐ",
+       "banyak-banyak minum air"
+      ],
+      [
+       "**多**休息",
+       "duō xiūxí",
+       "banyak istirahat"
+      ],
+      [
+       "**多**運動",
+       "duō yùndòng",
+       "lebih sering berolahraga"
+      ],
+      [
+       "**少**吃一點",
+       "shǎo chī yìdiǎn",
+       "makannya dikurangi"
+      ],
+      [
+       "**少**熬夜",
+       "shǎo áoyè",
+       "jangan sering begadang"
+      ],
+      [
+       "**多**穿一點",
+       "duō chuān yìdiǎn",
+       "pakai baju lebih tebal"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **多穿一點 adalah kalimat yang akan sering kamu dengar dari orang Taiwan yang lebih tua**, terutama saat cuaca dingin. Ia adalah bentuk perhatian, bukan perintah — jawaban yang tepat adalah *好，謝謝* dengan senyum, bukan penjelasan bahwa kamu tidak kedinginan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "不舒服",
+   "baca": "bù shūfú",
+   "id": "tidak enak badan"
+  },
+  {
+   "zh": "痛",
+   "baca": "tòng",
+   "id": "sakit, nyeri"
+  },
+  {
+   "zh": "頭",
+   "baca": "tóu",
+   "id": "kepala"
+  },
+  {
+   "zh": "肚子",
+   "baca": "dùzi",
+   "id": "perut"
+  },
+  {
+   "zh": "喉嚨",
+   "baca": "hóulóng",
+   "id": "tenggorokan"
+  },
+  {
+   "zh": "身體",
+   "baca": "shēntǐ",
+   "id": "badan"
+  },
+  {
+   "zh": "發燒",
+   "baca": "fāshāo",
+   "id": "demam"
+  },
+  {
+   "zh": "感冒",
+   "baca": "gǎnmào",
+   "id": "flu, masuk angin"
+  },
+  {
+   "zh": "咳嗽",
+   "baca": "késòu",
+   "id": "batuk"
+  },
+  {
+   "zh": "醫生",
+   "baca": "yīshēng",
+   "id": "dokter"
+  },
+  {
+   "zh": "診所",
+   "baca": "zhěnsuǒ",
+   "id": "klinik"
+  },
+  {
+   "zh": "醫院",
+   "baca": "yīyuàn",
+   "id": "rumah sakit"
+  },
+  {
+   "zh": "藥",
+   "baca": "yào",
+   "id": "obat"
+  },
+  {
+   "zh": "藥局",
+   "baca": "yàojú",
+   "id": "apotek"
+  },
+  {
+   "zh": "健保卡",
+   "baca": "jiànbǎokǎ",
+   "id": "⚠️ kartu asuransi kesehatan"
+  },
+  {
+   "zh": "掛號",
+   "baca": "guàhào",
+   "id": "mendaftar (di klinik)"
+  },
+  {
+   "zh": "護照",
+   "baca": "hùzhào",
+   "id": "paspor"
+  },
+  {
+   "zh": "好像",
+   "baca": "hǎoxiàng",
+   "id": "kayaknya, sepertinya"
+  },
+  {
+   "zh": "而已",
+   "baca": "éryǐ",
+   "id": "cuma itu saja"
+  },
+  {
+   "zh": "運動",
+   "baca": "yùndòng",
+   "id": "berolahraga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Saya tidak enak badan.",
+    "Kepala saya sakit.",
+    "Saya demam.",
+    "Saya mau ke dokter.",
+    "Obatnya diminum bagaimana?",
+    "Banyak minum air, banyak istirahat."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya — semua salah karena kata kerja berpasangan.",
+   "items": [
+    "我吃飯麵。",
+    "他幫忙我。",
+    "我睡覺八小時。",
+    "我唱歌一首歌。",
+    "我上課兩節課。"
+   ]
+  },
+  {
+   "prompt": "Pasangkan gejalanya dengan bahasa Mandarinnya.",
+   "items": [
+    "Tenggorokan sakit: ____",
+    "Perut sakit: ____",
+    "Batuk: ____",
+    "Kena flu: ____",
+    "Diare: ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "舒服 / 我 / 不",
+    "痛 / 喉嚨 / 我 / 很",
+    "醫生 / 去 / 我們 / 看",
+    "吃 / 藥 / 怎麼",
+    "水 / 多 / 喝"
+   ]
+  }
+ ],
+ "answers": [
+  "我不舒服。 — 我頭痛。 — 我發燒了。 — 我要看醫生。 — 藥怎麼吃？ — 多喝水，多休息。",
+  "我吃麵。 — 他幫我。 — 我睡了八小時。 — 我唱一首歌。 — 我上了兩節課。",
+  "喉嚨痛 — 肚子痛 — 咳嗽 — 感冒了 — 拉肚子",
+  "我不舒服。 — 我喉嚨很痛。 — 我們去看醫生。 — 藥怎麼吃？ — 多喝水。"
+ ]
+}

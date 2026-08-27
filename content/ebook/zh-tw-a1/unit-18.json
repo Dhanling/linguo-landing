@@ -1,0 +1,592 @@
+{
+ "title": "Menelepon dan memesan tempat",
+ "title_target": "打電話訂位",
+ "goal": "Menelepon dalam bahasa Mandarin dan mengatakan apakah kamu berhasil mengerti atau tidak — lewat bentuk 聽得懂 dan 聽不懂 yang paling dibutuhkan pemula.",
+ "bekal": [
+  "menelepon, memesan tempat, dan meninggalkan pesan",
+  "memakai pelengkap hasil (看到, 聽懂, 買到) dan bentuk kemungkinannya",
+  "meminta lawan bicara memperlambat atau mengulang"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 訂位",
+   "intro": "Budi menelepon restoran untuk memesan tempat bagi lima orang. Ini panggilan telepon pertamanya dalam bahasa Mandarin.",
+   "lines": [
+    {
+     "speaker": "店員:",
+     "text": "[喂|Wéi]，[您好|nín hǎo]，[小林|Xiǎo Lín][餐廳|cāntīng]。",
+     "id": "Halo, selamat siang, Restoran Xiao Lin.",
+     "literal": "halo, Anda — baik, kecil-Lin — restoran."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[您好|Nín hǎo]，[我|wǒ][要|yào][訂位|dìngwèi]。",
+     "id": "Halo, saya mau pesan tempat.",
+     "literal": "Anda — baik, saya — mau — pesan-tempat."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[好的|Hǎo de]，[請問|qǐngwèn][幾位|jǐ wèi]？[什麼|Shénme][時候|shíhòu]？",
+     "id": "Baik, berapa orang? Kapan?",
+     "literal": "baik — nya, mohon — tanya — berapa — (penggolong)? apa — waktu?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[五位|Wǔ wèi]，[明天|míngtiān][晚上|wǎnshang][七點|qī diǎn]。",
+     "id": "Lima orang, besok malam jam tujuh.",
+     "literal": "lima — (penggolong), besok — malam — tujuh — jam."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[不好意思|Bù hǎoyìsi]，[七點|qī diǎn][客滿|kèmǎn][了|le]。[六點|Liù diǎn][半|bàn][可以|kěyǐ][嗎|ma]？",
+     "id": "Maaf, jam tujuh sudah penuh. Setengah tujuh bisa?",
+     "literal": "tidak — enak — maksud, tujuh — jam — tamu-penuh — sudah. enam — jam — setengah — boleh — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[不好意思|Bù hǎoyìsi]，[我|wǒ][沒|méi][聽|tīng][懂|dǒng]。[可以|Kěyǐ][說|shuō][慢|màn][一點|yìdiǎn][嗎|ma]？",
+     "id": "Maaf, saya tidak menangkap. Bisa bicara lebih pelan?",
+     "literal": "maaf, saya — tidak — dengar — paham. boleh — bicara — pelan — sedikit — kah?"
+    },
+    {
+     "speaker": "店員:",
+     "text": "[沒|Méi][問題|wèntí]。[七|Qī]…[點|diǎn]…[滿|mǎn][了|le]。[六|Liù][點|diǎn][半|bàn]…[可以|kěyǐ]。",
+     "id": "Tidak masalah. Jam… tujuh… penuh. Setengah tujuh… bisa.",
+     "literal": "tidak — ada — masalah. tujuh… jam… penuh — sudah. enam — jam — setengah… boleh."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[啊|A]，[我|wǒ][聽|tīng][懂|dǒng][了|le]！[六點|Liù diǎn][半|bàn][沒|méi][問題|wèntí]。",
+     "id": "Ah, saya paham! Setengah tujuh tidak masalah.",
+     "literal": "ah, saya — dengar — paham — sudah! enam — jam — setengah — tidak — ada — masalah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[請問|Qǐngwèn][怎麼|zěnme][稱呼|chēnghū]？[電話|Diànhuà][幾號|jǐ hào]？",
+     "id": "Atas nama siapa? Nomor teleponnya berapa?",
+     "literal": "mohon — tanya — bagaimana — sebut-panggil? telepon — berapa — nomor?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][姓|xìng][布|Bù]。[電話|Diànhuà][是|shì][0912-345-678|líng jiǔ yāo èr sān sì wǔ liù qī bā]。",
+     "id": "Marga saya Bu. Teleponnya 0912-345-678.",
+     "literal": "saya — bermarga — Bu. telepon — adalah — 0912-345-678."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[好|Hǎo]，[布|Bù][先生|xiānshēng]，[五位|wǔ wèi]，[明天|míngtiān][六點|liù diǎn][半|bàn]。",
+     "id": "Baik, Tuan Bu, lima orang, besok setengah tujuh.",
+     "literal": "baik, Bu — tuan, lima — (penggolong), besok — enam — jam — setengah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[對|Duì]。[請問|Qǐngwèn][有|yǒu][素食|sùshí][嗎|ma]？[我|Wǒ][朋友|péngyǒu][吃素|chīsù]。",
+     "id": "Betul. Numpang tanya, ada menu vegetarian? Teman saya vegetarian.",
+     "literal": "benar. mohon — tanya — ada — sayur-makanan — kah? saya — teman — makan — sayur."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[有|Yǒu][喔|o]！[我們|Wǒmen][有|yǒu][三|sān][種|zhǒng][素食|sùshí]。",
+     "id": "Ada lho! Kami punya tiga macam menu vegetarian.",
+     "literal": "ada — lho! kami — ada — tiga — jenis — sayur-makanan."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太好了|Tài hǎo le]！[謝謝|Xièxie]，[明天|míngtiān][見|jiàn]！",
+     "id": "Bagus sekali! Terima kasih, sampai jumpa besok!",
+     "literal": "terlalu — baik — sudah! terima kasih, besok — bertemu!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Angka 1 dibaca 幺 (*yāo*), bukan 一 (*yī*), saat menyebut nomor telepon dan nomor kamar.** Sebabnya praktis: *yī* terdengar terlalu mirip *qī* (tujuh) di telepon. Ini aturan yang jarang diajarkan tetapi dipakai setiap hari.",
+    "**怎麼稱呼？ (\"bagaimana memanggil Anda?\") adalah cara sopan menanyakan nama** di telepon dan di tempat resmi. Jawabannya cukup margamu: *我姓布*.",
+    "**客滿 (\"tamu penuh\") berarti full booked.** Kamu akan melihat tulisan ini di pintu restoran populer, terutama akhir pekan. ⚠️ Restoran terkenal di Taiwan sering harus dipesan berminggu-minggu sebelumnya.",
+    "**Menelepon dalam bahasa asing jauh lebih sulit daripada bertatap muka** karena tidak ada gerak bibir dan gerak tangan yang membantu. ⚠️ Jangan berkecil hati kalau panggilan pertamamu berantakan; siapkan kalimatmu tertulis sebelum menelepon.",
+    "**種 (*zhǒng*, jenis) adalah kata penggolong untuk macam atau ragam**: 三種素食 (tiga macam menu vegetarian), 兩種語言 (dua macam bahasa)."
+   ],
+   "grammars": [
+    {
+     "title": "Pelengkap hasil: kata kerja yang menyebut hasilnya",
+     "body": [
+      "Bahasa Mandarin sering memisahkan **perbuatan** dari **hasilnya**. 看 berarti \"melihat\" (perbuatannya); untuk mengatakan bahwa kamu benar-benar **melihatnya**, kamu menambahkan hasil: 看**到**. Bahasa Indonesia menyatukan keduanya, dan di situlah pemula kehilangan separuh maknanya."
+     ],
+     "table": {
+      "head": [
+       "Kerja",
+       "+ Hasil",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "看",
+        "看**到**",
+        "melihat (berhasil)",
+        "我看到他了。"
+       ],
+       [
+        "看",
+        "看**完**",
+        "selesai menonton/membaca",
+        "我看完了。"
+       ],
+       [
+        "聽",
+        "聽**懂**",
+        "mendengar dan paham",
+        "我聽懂了。"
+       ],
+       [
+        "聽",
+        "聽**到**",
+        "terdengar",
+        "我沒聽到。"
+       ],
+       [
+        "買",
+        "買**到**",
+        "berhasil membeli",
+        "我買到票了！"
+       ],
+       [
+        "找",
+        "找**到**",
+        "berhasil menemukan",
+        "我找到了！"
+       ],
+       [
+        "吃",
+        "吃**飽**",
+        "makan sampai kenyang",
+        "我吃飽了。"
+       ],
+       [
+        "學",
+        "學**會**",
+        "belajar sampai bisa",
+        "我學會了。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **我看了 dan 我看到了 sangat berbeda.** Yang pertama berarti \"saya melihat/menonton\" (perbuatannya dilakukan); yang kedua berarti \"saya berhasil melihatnya\" (hasilnya tercapai). *我找了* = saya mencari; *我找到了* = saya menemukan.",
+      "**Menyangkalnya memakai 沒, dan seluruh pelengkapnya tetap ada**: *我沒聽懂* (saya tidak menangkap), *我沒買到* (saya tidak kebagian).",
+      "**吃飽了嗎？ adalah sapaan yang sangat umum di Taiwan** — sama seperti \"udah makan?\" dalam bahasa Indonesia. Jawablah *吃飽了，謝謝*."
+     ]
+    },
+    {
+     "title": "得 dan 不: bisa atau tidak bisa mencapai hasilnya",
+     "body": [
+      "Sisipkan **得** di antara kata kerja dan hasilnya untuk berarti \"bisa\"; sisipkan **不** untuk berarti \"tidak bisa\". Bentuk ini sangat sering dipakai dan sangat berguna bagi pemula."
+     ],
+     "table": {
+      "head": [
+       "Bisa",
+       "Tidak bisa",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "聽**得**懂",
+        "聽**不**懂",
+        "⚠️ bisa / tidak bisa menangkap"
+       ],
+       [
+        "看**得**到",
+        "看**不**到",
+        "kelihatan / tidak kelihatan"
+       ],
+       [
+        "買**得**到",
+        "買**不**到",
+        "bisa / tidak bisa dibeli"
+       ],
+       [
+        "找**得**到",
+        "找**不**到",
+        "ketemu / tidak ketemu"
+       ],
+       [
+        "吃**得**完",
+        "吃**不**完",
+        "habis / tidak habis dimakan"
+       ],
+       [
+        "來**得**及",
+        "來**不**及",
+        "keburu / tidak keburu"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **聽不懂 adalah kalimat paling penting dalam unit ini.** Ia berarti \"saya tidak menangkap apa yang kamu katakan\" — bukan \"saya tuli\" dan bukan \"saya bodoh\". Ucapkan tanpa malu; orang Taiwan akan langsung memperlambat.",
+      "**Bedakan 我不懂 dan 我聽不懂.** Yang pertama berarti \"saya tidak mengerti konsepnya\"; yang kedua berarti \"telinga saya tidak menangkap kata-katanya\". Bagi pemula, yang kedua hampir selalu yang benar.",
+      "**來不及 (\"tidak keburu\") sangat sering dipakai**: *快一點，來不及了！* (\"cepat, nggak keburu!\")."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menelepon",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**喂？**",
+       "wéi?",
+       "Halo? (hanya di telepon)"
+      ],
+      [
+       "**請問…在嗎？**",
+       "qǐngwèn… zài ma?",
+       "Numpang tanya, apakah … ada?"
+      ],
+      [
+       "**我找…**",
+       "wǒ zhǎo…",
+       "Saya mencari…"
+      ],
+      [
+       "**請稍等**",
+       "qǐng shāo děng",
+       "Mohon tunggu sebentar"
+      ],
+      [
+       "**他不在**",
+       "tā bú zài",
+       "Dia tidak ada"
+      ],
+      [
+       "**要留言嗎？**",
+       "yào liúyán ma?",
+       "Mau tinggalkan pesan?"
+      ],
+      [
+       "**請他回電**",
+       "qǐng tā huídiàn",
+       "Tolong minta dia telepon balik"
+      ],
+      [
+       "**你打錯了**",
+       "nǐ dǎ cuò le",
+       "Anda salah sambung"
+      ],
+      [
+       "**訊號不好**",
+       "xùnhào bù hǎo",
+       "Sinyalnya jelek"
+      ],
+      [
+       "**我等一下再打**",
+       "wǒ děng yíxià zài dǎ",
+       "Saya telepon lagi nanti"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **打電話 (\"memukul telepon\") berarti menelepon** — 打 dipakai untuk banyak kegiatan tanpa hubungan dengan memukul: 打電話, 打字 (mengetik), 打球 (main bola), 打工 (kerja paruh waktu), 打折 (diskon). Ini salah satu kata kerja paling serbaguna dalam bahasa Mandarin."
+    }
+   ]
+  },
+  {
+   "title": "Kalimat penyelamat saat kamu tidak paham",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Hafalkan kelimanya hari ini juga",
+     "items": [
+      "**我聽不懂。** *Wǒ tīng bù dǒng.* — Saya tidak menangkap.",
+      "**請說慢一點。** *Qǐng shuō màn yìdiǎn.* — Tolong bicara lebih pelan.",
+      "**請再說一次。** *Qǐng zài shuō yí cì.* — Tolong ulangi sekali lagi.",
+      "**可以寫下來嗎？** *Kěyǐ xiě xiàlái ma?* — Bisa ditulis?",
+      "**…是什麼意思？** *… shì shénme yìsi?* — … artinya apa?"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Kelima kalimat ini lebih berharga daripada dua ratus kosakata.** Selama kamu bisa mengatakannya, percakapan apa pun bisa diselamatkan — dan orang Taiwan hampir selalu dengan senang hati memperlambat. Yang membunuh percakapan bukan ketidaktahuanmu, melainkan diam."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**這個中文怎麼說？**",
+       "zhè ge Zhōngwén zěnme shuō?",
+       "Ini bahasa Mandarinnya apa?"
+      ],
+      [
+       "**怎麼寫？**",
+       "zěnme xiě?",
+       "Nulisnya bagaimana?"
+      ],
+      [
+       "**怎麼念？**",
+       "zěnme niàn?",
+       "Bacanya bagaimana?"
+      ],
+      [
+       "**你說什麼？**",
+       "nǐ shuō shénme?",
+       "Kamu bilang apa?"
+      ],
+      [
+       "**對不對？**",
+       "duì bú duì?",
+       "Betul nggak?"
+      ],
+      [
+       "**我懂了**",
+       "wǒ dǒng le",
+       "Saya paham"
+      ],
+      [
+       "**原來如此**",
+       "yuánlái rúcǐ",
+       "Oh begitu rupanya"
+      ],
+      [
+       "**我不太確定**",
+       "wǒ bú tài quèdìng",
+       "Saya kurang yakin"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Memesan tempat dan mengurus janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**我要訂位**",
+       "wǒ yào dìngwèi",
+       "Saya mau pesan tempat"
+      ],
+      [
+       "**幾位？**",
+       "jǐ wèi?",
+       "Berapa orang?"
+      ],
+      [
+       "**五位**",
+       "wǔ wèi",
+       "Lima orang"
+      ],
+      [
+       "**幾點？**",
+       "jǐ diǎn?",
+       "Jam berapa?"
+      ],
+      [
+       "**客滿了**",
+       "kèmǎn le",
+       "Sudah penuh"
+      ],
+      [
+       "**還有位子嗎？**",
+       "hái yǒu wèizi ma?",
+       "Masih ada tempat?"
+      ],
+      [
+       "**怎麼稱呼？**",
+       "zěnme chēnghū?",
+       "Atas nama siapa?"
+      ],
+      [
+       "**我要取消**",
+       "wǒ yào qǔxiāo",
+       "Saya mau membatalkan"
+      ],
+      [
+       "**可以改時間嗎？**",
+       "kěyǐ gǎi shíjiān ma?",
+       "Bisa ganti waktu?"
+      ],
+      [
+       "**有素食嗎？**",
+       "yǒu sùshí ma?",
+       "Ada menu vegetarian?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Nomor telepon Taiwan dibaca satu per satu, dan angka 1 dibaca 幺 (*yāo*).** Nomor ponsel selalu diawali 09, jadi 0912-345-678 dibaca *líng jiǔ yāo èr — sān sì wǔ — liù qī bā*. Latihlah membaca nomormu sendiri sampai lancar; ia akan ditanyakan berkali-kali."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "打電話",
+   "baca": "dǎ diànhuà",
+   "id": "menelepon"
+  },
+  {
+   "zh": "電話",
+   "baca": "diànhuà",
+   "id": "telepon"
+  },
+  {
+   "zh": "訂位",
+   "baca": "dìngwèi",
+   "id": "memesan tempat"
+  },
+  {
+   "zh": "位子",
+   "baca": "wèizi",
+   "id": "tempat duduk"
+  },
+  {
+   "zh": "客滿",
+   "baca": "kèmǎn",
+   "id": "penuh (restoran)"
+  },
+  {
+   "zh": "聽懂",
+   "baca": "tīng dǒng",
+   "id": "menangkap, paham"
+  },
+  {
+   "zh": "聽不懂",
+   "baca": "tīng bù dǒng",
+   "id": "⚠️ tidak menangkap"
+  },
+  {
+   "zh": "看到",
+   "baca": "kàndào",
+   "id": "berhasil melihat"
+  },
+  {
+   "zh": "找到",
+   "baca": "zhǎodào",
+   "id": "berhasil menemukan"
+  },
+  {
+   "zh": "買到",
+   "baca": "mǎidào",
+   "id": "berhasil membeli"
+  },
+  {
+   "zh": "吃飽",
+   "baca": "chībǎo",
+   "id": "kenyang"
+  },
+  {
+   "zh": "來不及",
+   "baca": "lái bù jí",
+   "id": "tidak keburu"
+  },
+  {
+   "zh": "稍等",
+   "baca": "shāo děng",
+   "id": "tunggu sebentar"
+  },
+  {
+   "zh": "留言",
+   "baca": "liúyán",
+   "id": "meninggalkan pesan"
+  },
+  {
+   "zh": "取消",
+   "baca": "qǔxiāo",
+   "id": "membatalkan"
+  },
+  {
+   "zh": "改",
+   "baca": "gǎi",
+   "id": "mengubah"
+  },
+  {
+   "zh": "意思",
+   "baca": "yìsi",
+   "id": "arti, maksud"
+  },
+  {
+   "zh": "種",
+   "baca": "zhǒng",
+   "id": "(penggolong jenis)"
+  },
+  {
+   "zh": "吃素",
+   "baca": "chīsù",
+   "id": "vegetarian"
+  },
+  {
+   "zh": "確定",
+   "baca": "quèdìng",
+   "id": "yakin, memastikan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Halo, saya mau pesan tempat.",
+    "Lima orang, besok malam jam tujuh.",
+    "Maaf, saya tidak menangkap.",
+    "Tolong bicara lebih pelan.",
+    "Saya paham!",
+    "Ada menu vegetarian?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan pelengkap hasil: 到, 懂, 完, atau 飽.",
+   "items": [
+    "我看 ____ 他了。",
+    "我聽 ____ 了！",
+    "這本書我看 ____ 了。",
+    "我吃 ____ 了，謝謝。",
+    "我買 ____ 票了！",
+    "我找不 ____ 我的手機。"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi bentuk 'tidak bisa' dengan menyisipkan 不.",
+   "items": [
+    "聽得懂",
+    "看得到",
+    "買得到",
+    "吃得完",
+    "來得及"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "訂位 / 要 / 我",
+    "位 / 五 / 七點 / 明天",
+    "懂 / 聽 / 我 / 不",
+    "說 / 請 / 一點 / 慢",
+    "意思 / 什麼 / 是 / 這個"
+   ]
+  }
+ ],
+ "answers": [
+  "喂，我要訂位。 — 五位，明天晚上七點。 — 不好意思，我聽不懂。 — 請說慢一點。 — 我懂了！ — 有素食嗎？",
+  "到 — 懂 — 完 — 飽 — 到 — 到",
+  "聽不懂 — 看不到 — 買不到 — 吃不完 — 來不及",
+  "我要訂位。 — 明天七點五位。 — 我聽不懂。 — 請說慢一點。 — 這個是什麼意思？"
+ ]
+}

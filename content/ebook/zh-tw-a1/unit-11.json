@@ -1,0 +1,578 @@
+{
+ "title": "Saya sedang makan",
+ "title_target": "我在吃飯",
+ "goal": "Mengatakan apa yang sedang terjadi dan apa yang sudah berubah — dan membongkar salah paham terbesar tentang bahasa Mandarin: 了 bukan bentuk lampau.",
+ "bekal": [
+  "memakai 在 di depan kata kerja untuk menyatakan 'sedang'",
+  "memakai 了 dengan benar — sebagai penanda perubahan, bukan masa lalu",
+  "menyangkal kejadian dengan 沒 dan membuang 了 saat menyangkal"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 電話裡的午餐",
+   "intro": "Xiaomei menelepon Budi siang-siang. Budi sedang di tengah sesuatu.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[喂|Wéi]？[布迪|Bùdí]，[你|nǐ][在|zài][做|zuò][什麼|shénme]？",
+     "id": "Halo? Budi, kamu lagi apa?",
+     "literal": "halo? Budi, kamu — sedang — buat — apa?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][在|zài][吃飯|chīfàn]。[妳|Nǐ][吃|chī][了|le][嗎|ma]？",
+     "id": "Saya lagi makan. Kamu sudah makan?",
+     "literal": "saya — sedang — makan-nasi. kamu — makan — sudah — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[還|Hái][沒|méi]。[我|Wǒ][還|hái][在|zài][上課|shàngkè]。",
+     "id": "Belum. Saya masih di kelas.",
+     "literal": "masih — belum. saya — masih — sedang — naik-pelajaran."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[妳|Nǐ][不是|bú shì][三點|sān diǎn][下課|xiàkè][嗎|ma]？[現在|Xiànzài][四點|sì diǎn][了|le]。",
+     "id": "Bukannya kamu selesai jam tiga? Sekarang sudah jam empat.",
+     "literal": "kamu — bukan — tiga — jam — turun-pelajaran — kah? sekarang — empat — jam — sudah."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[老師|Lǎoshī][拖堂|tuōtáng][了|le][啦|la]！[我|Wǒ][快|kuài][餓死|èsǐ][了|le]。",
+     "id": "Dosennya kelebihan waktu! Saya hampir mati kelaparan.",
+     "literal": "guru — seret-kelas — sudah — kok! saya — hampir — lapar-mati — sudah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][幫|bāng][妳|nǐ][買|mǎi][一個|yí ge][便當|biàndāng][好嗎|hǎo ma]？",
+     "id": "Saya belikan kamu satu nasi kotak ya?",
+     "literal": "saya — bantu — kamu — beli — satu — (penggolong) — nasi-kotak — baik — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[太好了|Tài hǎo le]！[你|Nǐ][真|zhēn][好|hǎo]！",
+     "id": "Bagus sekali! Kamu baik banget!",
+     "literal": "terlalu — baik — sudah! kamu — sungguh — baik!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[妳|Nǐ][要|yào][什麼|shénme]？[排骨|Páigǔ][還是|háishì][雞腿|jītuǐ]？",
+     "id": "Kamu mau apa? Iga atau paha ayam?",
+     "literal": "kamu — mau — apa? tulang-iga — atau — ayam-paha?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[雞腿|Jītuǐ]！[不要|Bú yào][辣|là]，[謝謝|xièxie]。",
+     "id": "Paha ayam! Jangan pedas, terima kasih.",
+     "literal": "ayam-paha! tidak — mau — pedas, terima kasih."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]。[我|Wǒ][吃|chī][完|wán][就|jiù][去|qù][買|mǎi]。",
+     "id": "Oke. Begitu selesai makan saya langsung beli.",
+     "literal": "baik. saya — makan — selesai — langsung — pergi — beli."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[下課|Xiàkè][了|le]！[我|Wǒ][現在|xiànzài][過去|guòqù][找|zhǎo][你|nǐ]。",
+     "id": "Kelasnya selesai! Saya sekarang ke sana cari kamu.",
+     "literal": "turun-pelajaran — sudah! saya — sekarang — lewat-pergi — cari — kamu."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]，[我|wǒ][在|zài][學生餐廳|xuéshēng cāntīng][等|děng][妳|nǐ]。",
+     "id": "Oke, saya tunggu kamu di kantin.",
+     "literal": "baik, saya — di — pelajar — restoran — tunggu — kamu."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我|Wǒ][五分鐘|wǔ fēnzhōng][到|dào]！[不要|Bú yào][吃|chī][完|wán][喔|o]！",
+     "id": "Lima menit saya sampai! Jangan dihabiskan lho!",
+     "literal": "saya — lima — menit — sampai! tidak — mau — makan — habis — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[哈哈|Hāhā]，[我|wǒ][已經|yǐjīng][吃|chī][完|wán][了|le]！",
+     "id": "Haha, saya sudah habis!",
+     "literal": "haha, saya — sudah — makan — selesai — sudah!"
+    }
+   ],
+   "notes": [
+    "**喂 (*wéi*) hanya dipakai untuk menjawab telepon**, tidak pernah untuk menyapa orang di depanmu. Nadanya biasanya naik jadi *wéi* meskipun kamusnya menulis *wèi*.",
+    "**拖堂 (\"menyeret kelas\") berarti dosen yang tidak berhenti tepat waktu** — kata yang sangat dikenal setiap mahasiswa Taiwan. Lawannya 提早下課 (selesai lebih awal), yang disambut sorak.",
+    "⚠️ **快…了 berarti \"hampir\", \"sebentar lagi\"**: 快餓死了 (hampir mati kelaparan), 快到了 (sebentar lagi sampai), 快下雨了 (sebentar lagi hujan). Kerangkanya lengkap dengan 了 di ujung dan tidak boleh dipisah.",
+    "**餓死了 (\"lapar sampai mati\") adalah cara Taiwan melebih-lebihkan** yang dipakai sehari-hari: 熱死了 (panas banget), 累死了 (capek banget), 笑死了 (ngakak). Ia tidak kasar sama sekali.",
+    "⚠️ **完 sesudah kata kerja berarti \"selesai, habis\"**: 吃完 (habis dimakan), 看完 (selesai dibaca), 做完 (selesai dikerjakan). Ia adalah pelengkap hasil — bentuk yang akan digarap penuh di unit 18."
+   ],
+   "grammars": [
+    {
+     "title": "在 + kata kerja: sedang berlangsung",
+     "body": [
+      "Untuk mengatakan bahwa sesuatu **sedang** terjadi, taruh **在** tepat di depan kata kerjanya. Itu saja; kata kerjanya tidak berubah sedikit pun."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我**在**吃飯。",
+        "Wǒ zài chīfàn.",
+        "Saya sedang makan."
+       ],
+       [
+        "他**在**睡覺。",
+        "Tā zài shuìjiào.",
+        "Dia sedang tidur."
+       ],
+       [
+        "你**在**做什麼？",
+        "Nǐ zài zuò shénme?",
+        "Kamu sedang apa?"
+       ],
+       [
+        "我**正在**上課。",
+        "Wǒ zhèngzài shàngkè.",
+        "Saya sedang kuliah. (lebih tegas)"
+       ],
+       [
+        "我**還在**等。",
+        "Wǒ hái zài děng.",
+        "Saya masih menunggu."
+       ],
+       [
+        "我**沒有在**看電視。",
+        "Wǒ méi yǒu zài kàn diànshì.",
+        "Saya tidak sedang nonton TV."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan bingung dengan 在 sebagai \"di\" dari unit 7.** Bedanya sederhana: **在 + tempat** = di suatu tempat; **在 + kata kerja** = sedang. Kalau keduanya muncul bersama, tempatnya lebih dulu: *我在圖書館看書* (saya membaca di perpustakaan) — dan di situ 在 cuma sekali.",
+      "**正在 lebih tegas daripada 在** dan menekankan \"tepat pada saat ini\". Dalam percakapan sehari-hari, 在 saja sudah cukup."
+     ]
+    },
+    {
+     "title": "⚠️ 了 bukan bentuk lampau",
+     "body": [
+      "Inilah salah paham terbesar yang dibawa hampir semua pemula, dan sebabnya masuk akal: buku sering menerjemahkan 了 sebagai \"sudah\". Yang sebenarnya ditandai 了 adalah **perubahan** — sesuatu yang tadinya belum, sekarang sudah; atau sesuatu yang selesai.",
+      "Bukti bahwa ia bukan bentuk lampau: kalimat masa lalu sering **tanpa** 了, dan kalimat masa depan sering **dengan** 了."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti",
+       "Waktu"
+      ],
+      "rows": [
+       [
+        "我吃**了**。",
+        "Wǒ chī le.",
+        "Saya sudah makan.",
+        "lampau"
+       ],
+       [
+        "現在四點**了**。",
+        "Xiànzài sì diǎn le.",
+        "Sekarang sudah jam empat.",
+        "⚠️ sekarang"
+       ],
+       [
+        "下雨**了**！",
+        "Xiàyǔ le!",
+        "Hujan (mulai turun)!",
+        "⚠️ sekarang"
+       ],
+       [
+        "我明天到**了**再打給你。",
+        "Wǒ míngtiān dào le zài dǎ gěi nǐ.",
+        "Besok setelah sampai saya telepon.",
+        "⚠️ masa depan"
+       ],
+       [
+        "我小時候住台南。",
+        "Wǒ xiǎo shíhòu zhù Táinán.",
+        "Waktu kecil saya tinggal di Tainan.",
+        "⚠️ lampau, tanpa 了"
+       ],
+       [
+        "我**沒**吃。",
+        "Wǒ méi chī.",
+        "Saya belum makan.",
+        "⚠️ 了 hilang"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Aturan yang paling penting dari unit ini: 了 HILANG saat kalimat disangkal.** *我吃了* → *我沒吃*, bukan *我沒吃了*. Kekeliruan ini sangat umum dan sangat mudah diperbaiki — hafalkan sekarang.",
+      "**還沒 = \"belum\"**, dan ia adalah jawaban paling sering untuk pertanyaan berpola 你…了嗎？ *你吃了嗎？* → *還沒。*",
+      "**Bertanya dengan 了: …了嗎？ atau …了沒？** Bentuk kedua sangat khas Taiwan dan terdengar santai: *你吃了沒？* Ia bahkan dipakai sebagai sapaan, persis seperti \"udah makan?\" dalam bahasa Indonesia."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "做",
+       "zuò",
+       "membuat, melakukan",
+       "等",
+       "děng",
+       "menunggu"
+      ],
+      [
+       "看",
+       "kàn",
+       "melihat, membaca",
+       "找",
+       "zhǎo",
+       "mencari"
+      ],
+      [
+       "聽",
+       "tīng",
+       "mendengar",
+       "帶",
+       "dài",
+       "membawa"
+      ],
+      [
+       "寫",
+       "xiě",
+       "menulis",
+       "拿",
+       "ná",
+       "mengambil"
+      ],
+      [
+       "念",
+       "niàn",
+       "membaca keras, belajar",
+       "給",
+       "gěi",
+       "memberi"
+      ],
+      [
+       "睡覺",
+       "shuìjiào",
+       "tidur",
+       "打",
+       "dǎ",
+       "memukul; menelepon"
+      ],
+      [
+       "工作",
+       "gōngzuò",
+       "bekerja",
+       "洗",
+       "xǐ",
+       "mencuci"
+      ],
+      [
+       "休息",
+       "xiūxí",
+       "beristirahat",
+       "到",
+       "dào",
+       "sampai, tiba"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pola \"lagi apa?\" yang akan kamu pakai tiap hari",
+     "items": [
+      "**你在做什麼？** — Kamu lagi apa? (pertanyaan paling sering di aplikasi pesan)",
+      "**我在忙。** — Saya lagi sibuk.",
+      "**我在上班。** — Saya lagi kerja.",
+      "**我在回家的路上。** — Saya lagi di jalan pulang.",
+      "**我在等你。** — Saya lagi nungguin kamu.",
+      "⚠️ Jawaban singkat **在忙** (\"lagi sibuk\") adalah cara paling halus mengatakan \"nanti saya balas\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tiga cara memakai 了, dan satu larangan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pemakaian",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "**Perbuatan selesai** (了 sesudah kerja)",
+       "我買**了**一本書。",
+       "Saya sudah beli sebuah buku."
+      ],
+      [
+       "**Keadaan berubah** (了 di ujung)",
+       "我餓**了**。",
+       "Saya (jadi) lapar."
+      ],
+      [
+       "**Keadaan berubah**",
+       "他長大**了**。",
+       "Dia sudah besar."
+      ],
+      [
+       "**Sebentar lagi** (快…了)",
+       "快到**了**。",
+       "Sebentar lagi sampai."
+      ],
+      [
+       "**Terlalu** (太…了)",
+       "太貴**了**！",
+       "Mahal sekali!"
+      ],
+      [
+       "⚠️ **Dilarang** bersama 沒",
+       "✗ 我沒吃**了**。",
+       "✗ salah — buang 了-nya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bandingkan dua kalimat ini sampai kamu merasakan bedanya: **我餓了** berarti \"saya jadi lapar\" — tadinya tidak, sekarang iya. **我很餓** berarti \"saya lapar\" — sekadar keadaan, tanpa cerita perubahan. Bahasa Indonesia menerjemahkan keduanya \"saya lapar\", dan di situlah 了 hilang dari kepala pemula."
+    }
+   ]
+  },
+  {
+   "title": "Nasi kotak: pelajaran budaya dalam satu kotak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**便當 (*biàndāng*) adalah kata pinjaman dari bahasa Jepang *bentō*** — peninggalan lima puluh tahun pemerintahan Jepang di Taiwan, dan salah satu dari ratusan kata Jepang yang masih hidup di sini. Ia adalah makan siang standar seluruh Taiwan: nasi, satu lauk utama, tiga sampai empat sayur, semuanya dalam satu kotak seharga 80–100 塊."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "排骨便當",
+       "páigǔ biàndāng",
+       "nasi kotak iga babi goreng"
+      ],
+      [
+       "雞腿便當",
+       "jītuǐ biàndāng",
+       "nasi kotak paha ayam"
+      ],
+      [
+       "魚排便當",
+       "yúpái biàndāng",
+       "nasi kotak ikan goreng"
+      ],
+      [
+       "素食便當",
+       "sùshí biàndāng",
+       "nasi kotak vegetarian"
+      ],
+      [
+       "要不要加飯？",
+       "yào bú yào jiā fàn?",
+       "mau tambah nasi? (⚠️ sering gratis)"
+      ],
+      [
+       "要辣嗎？",
+       "yào là ma?",
+       "mau pedas?"
+      ],
+      [
+       "幫我加熱",
+       "bāng wǒ jiārè",
+       "tolong dipanaskan"
+      ],
+      [
+       "要湯嗎？",
+       "yào tāng ma?",
+       "mau sup? (⚠️ biasanya gratis)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Sup dan tambahan nasi biasanya gratis di kedai 便當 Taiwan**, dan penjualnya benar-benar akan tersinggung kalau kamu menolak karena mengira harus membayar. Ambil saja, dan ucapkan 謝謝."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "在",
+   "baca": "zài",
+   "id": "sedang (+ kata kerja)"
+  },
+  {
+   "zh": "正在",
+   "baca": "zhèngzài",
+   "id": "sedang (tegas)"
+  },
+  {
+   "zh": "了",
+   "baca": "le",
+   "id": "⚠️ (penanda perubahan)"
+  },
+  {
+   "zh": "還沒",
+   "baca": "hái méi",
+   "id": "belum"
+  },
+  {
+   "zh": "做",
+   "baca": "zuò",
+   "id": "membuat, melakukan"
+  },
+  {
+   "zh": "等",
+   "baca": "děng",
+   "id": "menunggu"
+  },
+  {
+   "zh": "找",
+   "baca": "zhǎo",
+   "id": "mencari"
+  },
+  {
+   "zh": "完",
+   "baca": "wán",
+   "id": "selesai, habis"
+  },
+  {
+   "zh": "餓",
+   "baca": "è",
+   "id": "lapar"
+  },
+  {
+   "zh": "渴",
+   "baca": "kě",
+   "id": "haus"
+  },
+  {
+   "zh": "睡覺",
+   "baca": "shuìjiào",
+   "id": "tidur"
+  },
+  {
+   "zh": "休息",
+   "baca": "xiūxí",
+   "id": "istirahat"
+  },
+  {
+   "zh": "便當",
+   "baca": "biàndāng",
+   "id": "nasi kotak (⚠️ dari Jepang)"
+  },
+  {
+   "zh": "辣",
+   "baca": "là",
+   "id": "pedas"
+  },
+  {
+   "zh": "湯",
+   "baca": "tāng",
+   "id": "sup"
+  },
+  {
+   "zh": "喂",
+   "baca": "wéi",
+   "id": "halo (telepon)"
+  },
+  {
+   "zh": "快",
+   "baca": "kuài",
+   "id": "cepat; hampir"
+  },
+  {
+   "zh": "到",
+   "baca": "dào",
+   "id": "sampai, tiba"
+  },
+  {
+   "zh": "就",
+   "baca": "jiù",
+   "id": "lalu langsung; persis"
+  },
+  {
+   "zh": "電視",
+   "baca": "diànshì",
+   "id": "televisi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kamu lagi apa?",
+    "Saya sedang makan.",
+    "Kamu sudah makan?",
+    "Belum.",
+    "Sekarang sudah jam empat.",
+    "Sebentar lagi hujan."
+   ]
+  },
+  {
+   "prompt": "Sangkal kalimatnya — ingat apa yang terjadi pada 了.",
+   "items": [
+    "我吃了。",
+    "他去了。",
+    "我買了一本書。",
+    "她來了。",
+    "我看了那部電影。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 在, 了, atau 還沒.",
+   "items": [
+    "我 ____ 吃飯，等一下打給你。",
+    "現在五點 ____。",
+    "你吃了嗎？ ____。",
+    "下雨 ____！",
+    "他 ____ 睡覺，不要吵他。",
+    "我 ____ 做完，再給我十分鐘。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "什麼 / 做 / 你 / 在",
+    "吃飯 / 我 / 在",
+    "嗎 / 吃 / 你 / 了",
+    "了 / 四點 / 現在",
+    "了 / 快 / 到"
+   ]
+  }
+ ],
+ "answers": [
+  "你在做什麼？ — 我在吃飯。 — 你吃了嗎？ — 還沒。 — 現在四點了。 — 快下雨了。",
+  "我沒吃。 — 他沒去。 — 我沒買書。 — 她沒來。 — 我沒看那部電影。",
+  "在 — 了 — 還沒 — 了 — 在 — 還沒",
+  "你在做什麼？ — 我在吃飯。 — 你吃了嗎？ — 現在四點了。 — 快到了。"
+ ]
+}

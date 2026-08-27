@@ -1,0 +1,612 @@
+{
+ "title": "Satu teh susu mutiara, setengah gula",
+ "title_target": "一杯珍珠奶茶，半糖少冰",
+ "goal": "Memesan makanan dan minuman dengan takaran gula dan es sesukamu — dan menuntaskan dinding terbesar penutur bahasa Indonesia: kata penggolong.",
+ "bekal": [
+  "memakai kata penggolong dengan benar dan tahu jalan keluarnya kalau lupa",
+  "memesan minuman dengan takaran gula dan es seperti orang Taiwan",
+  "membedakan 吃 dan 喝 serta memakai 要 untuk memesan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 手搖飲料店",
+   "intro": "Siang yang panas. Budi dan Xiaomei berhenti di kedai teh susu di seberang kampus.",
+   "lines": [
+    {
+     "speaker": "店員:",
+     "text": "[歡迎光臨|Huānyíng guānglín]！[要|Yào][喝|hē][什麼|shénme]？",
+     "id": "Selamat datang! Mau minum apa?",
+     "literal": "menyambut — cahaya-datang! mau — minum — apa?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我要|Wǒ yào][一杯|yì bēi][珍珠奶茶|zhēnzhū nǎichá]，[大杯|dà bēi]。",
+     "id": "Saya mau satu teh susu mutiara, ukuran besar.",
+     "literal": "saya — mau — satu — gelas — mutiara — susu-teh, besar — gelas."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[甜度|Tiándù][冰塊|bīngkuài][呢|ne]？",
+     "id": "Manisnya dan esnya bagaimana?",
+     "literal": "manis-derajat — es-bongkah — kalau?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[半糖|Bàn táng]、[少冰|shǎo bīng]，[謝謝|xièxie]。",
+     "id": "Setengah gula, es sedikit, terima kasih.",
+     "literal": "setengah — gula, sedikit — es, terima kasih."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[好的|Hǎo de]。[先生|Xiānshēng][您|nín][呢|ne]？",
+     "id": "Baik. Kalau Bapak?",
+     "literal": "baik — yang. tuan — Anda — kalau?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[呃|È]…[我|wǒ][不知道|bù zhīdào][怎麼|zěnme][說|shuō]。",
+     "id": "Ehm… saya tidak tahu bagaimana mengatakannya.",
+     "literal": "ehm… saya — tidak — tahu — bagaimana — mengatakan."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[他|Tā][第一次|dì-yī cì][喝|hē]。[給|Gěi][他|tā][一樣|yíyàng][的|de][吧|ba]。",
+     "id": "Dia baru pertama kali minum. Kasih yang sama saja.",
+     "literal": "dia — ke-satu — kali — minum. beri — dia — satu-sama — yang — ya."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[沒問題|Méi wèntí]。[兩杯|Liǎng bēi][一共|yígòng][一百三|yìbǎi sān]。",
+     "id": "Tidak masalah. Dua gelas totalnya seratus tiga puluh.",
+     "literal": "tidak — ada — masalah. dua — gelas — bersama-total — seratus-tiga."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我|Wǒ][請客|qǐngkè]！[小美|Xiǎoměi][幫|bāng][我|wǒ][這麼多|zhème duō]。",
+     "id": "Saya yang traktir! Xiaomei sudah banyak membantu saya.",
+     "literal": "saya — undang-tamu! Xiaomei — bantu — saya — begini — banyak."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[不用|Bú yòng][啦|la]！[下次|Xià cì][你|nǐ][請|qǐng]。",
+     "id": "Nggak usah! Lain kali saja kamu yang traktir.",
+     "literal": "tidak — perlu — kok! bawah — kali — kamu — undang."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[那|Nà][我們|wǒmen][也|yě][吃|chī][點|diǎn][東西|dōngxi][好嗎|hǎo ma]？",
+     "id": "Kalau begitu kita makan sesuatu juga ya?",
+     "literal": "kalau-begitu — kami — juga — makan — sedikit — barang — baik — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[好啊|Hǎo a]！[隔壁|Gébì][有|yǒu][很好吃|hěn hǎochī][的|de][滷肉飯|lǔròufàn]。",
+     "id": "Boleh! Sebelah ada nasi babi kecap yang enak banget.",
+     "literal": "baik — lho! sebelah — ada — sangat — enak — yang — kecap-daging-nasi."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[聽起來|Tīngqǐlái][很棒|hěn bàng]！[走|Zǒu]！",
+     "id": "Kedengarannya mantap! Ayo!",
+     "literal": "terdengar — sangat — hebat! jalan!"
+    },
+    {
+     "speaker": "店員:",
+     "text": "[您的|Nín de][飲料|yǐnliào][好了|hǎo le]！[謝謝|Xièxie][光臨|guānglín]！",
+     "id": "Minumannya sudah jadi! Terima kasih sudah mampir!",
+     "literal": "Anda — punya — minuman — baik — sudah! terima kasih — cahaya-datang!"
+    }
+   ],
+   "notes": [
+    "⚠️ **手搖飲料 (\"minuman kocok tangan\") adalah salah satu hal paling khas Taiwan.** Ada puluhan ribu kedainya di seluruh pulau, dan hampir semuanya menanyakan dua hal yang sama: takaran gula dan takaran es. Tidak menjawab akan membuat antrean berhenti.",
+    "**請客 berarti mentraktir**, harfiah \"mengundang tamu\". ⚠️ Di Taiwan, orang yang mengajak biasanya yang membayar, dan menolak sekali dua kali sebelum menerima adalah bagian dari kesopanan — persis seperti di Indonesia. Membagi tagihan rata disebut **AA制** (*AA zhì*).",
+    "**好嗎？ dan 好啊！ adalah sepasang.** 好嗎 melunakkan usul jadi pertanyaan (\"…ya?\"), dan 好啊 adalah persetujuan yang hangat. Menjawab dengan 好 saja terdengar datar, hampir enggan.",
+    "**滷肉飯 (*lǔròufàn*) adalah makanan nasional Taiwan** — nasi dengan potongan kecil daging babi yang direbus lama dalam kecap asin. Semangkuk kecil sekitar 30–40 塊. ⚠️ Kalau kamu tidak makan babi, ucapkan *我不吃豬肉* (*wǒ bù chī zhūròu*); pilihan aman adalah 素食 (*sùshí*, vegetarian), yang sangat mudah ditemukan di Taiwan.",
+    "**歡迎光臨 diteriakkan setiap kali pintu toko terbuka.** Kamu tidak perlu menjawabnya sama sekali."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ Kata penggolong: dinding yang harus kamu lewati sekarang",
+     "body": [
+      "Inilah kekeliruan nomor satu penutur bahasa Indonesia, dan sebabnya masuk akal: bahasa Indonesia **punya** penggolong (seekor, sebuah, sehelai) tetapi **membolehkanmu melewatinya**. Bahasa Mandarin tidak memberi kelonggaran itu.",
+      "Aturannya satu kalimat: **antara angka (atau 這/那/幾) dan kata bendanya WAJIB ada satu kata penggolong.**"
+     ],
+     "table": {
+      "head": [
+       "Salah",
+       "Benar",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "✗ 三書",
+        "✓ 三**本**書",
+        "tiga buku"
+       ],
+       [
+        "✗ 一茶",
+        "✓ 一**杯**茶",
+        "segelas teh"
+       ],
+       [
+        "✗ 兩人",
+        "✓ 兩**個**人",
+        "dua orang"
+       ],
+       [
+        "✗ 這書",
+        "✓ 這**本**書",
+        "buku ini"
+       ],
+       [
+        "✗ 幾人",
+        "✓ 幾**個**人",
+        "berapa orang"
+       ]
+      ]
+     },
+     "after": [
+      "**Jalan keluar kalau kamu lupa: pakai 個 (*ge*).** Ia penggolong umum dan dimengerti untuk hampir segala hal. Memakai 個 yang kurang tepat terdengar seperti aksen; **tidak memakai penggolong sama sekali** terdengar seperti bahasa robot.",
+      "⚠️ Perhatikan bahwa **kalau bendanya sudah jelas dari percakapan, bendanya boleh hilang tetapi penggolongnya tidak**: *我要三個。* — \"Saya mau tiga.\""
+     ]
+    },
+    {
+     "title": "Penggolong yang paling sering kamu pakai",
+     "body": [
+      "Kamu tidak perlu menghafal semuanya hari ini. Sepuluh baris pertama tabel ini sudah menutupi delapan puluh persen percakapan sehari-hari."
+     ],
+     "table": {
+      "head": [
+       "Penggolong",
+       "Baca",
+       "Untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**個**",
+        "ge",
+        "⚠️ umum, cadangan untuk apa saja",
+        "三個人 tiga orang"
+       ],
+       [
+        "**杯**",
+        "bēi",
+        "gelas, cangkir",
+        "一杯奶茶 segelas teh susu"
+       ],
+       [
+        "**碗**",
+        "wǎn",
+        "mangkuk",
+        "兩碗飯 dua mangkuk nasi"
+       ],
+       [
+        "**份**",
+        "fèn",
+        "porsi, paket",
+        "一份便當 satu kotak nasi"
+       ],
+       [
+        "**本**",
+        "běn",
+        "buku, majalah",
+        "三本書 tiga buku"
+       ],
+       [
+        "**張**",
+        "zhāng",
+        "benda datar",
+        "一張票 selembar tiket"
+       ],
+       [
+        "**支**",
+        "zhī",
+        "benda batang",
+        "兩支筆 dua pena"
+       ],
+       [
+        "**件**",
+        "jiàn",
+        "pakaian atasan, urusan",
+        "一件衣服 sepotong baju"
+       ],
+       [
+        "**位**",
+        "wèi",
+        "orang, dengan hormat",
+        "三位客人 tiga orang tamu"
+       ],
+       [
+        "**瓶**",
+        "píng",
+        "botol",
+        "一瓶水 sebotol air"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Ingat aturan unit sebelumnya: di depan penggolong, angka dua adalah **兩**, bukan 二. 兩杯, 兩個, 兩本.",
+      "**位 adalah bentuk hormat dari 個 untuk orang.** Pelayan restoran akan menyambutmu dengan *幾位？* (\"berapa orang?\"), dan kamu menjawab *兩位* atau cukup *兩個*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Memesan minuman seperti orang Taiwan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua pertanyaan yang selalu datang: **甜度** (takaran gula) dan **冰塊** (takaran es). Jawabannya dipilih dari daftar tetap, dan menyebutnya berurutan — gula dulu, es kemudian — sudah cukup."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "甜度 gula",
+      "Baca",
+      "Arti",
+      "冰塊 es",
+      "Baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "全糖",
+       "quán táng",
+       "gula penuh",
+       "正常冰",
+       "zhèngcháng bīng",
+       "es biasa"
+      ],
+      [
+       "少糖",
+       "shǎo táng",
+       "gula sedikit (70%)",
+       "少冰",
+       "shǎo bīng",
+       "es sedikit"
+      ],
+      [
+       "半糖",
+       "bàn táng",
+       "setengah gula (50%)",
+       "微冰",
+       "wéi bīng",
+       "es sangat sedikit"
+      ],
+      [
+       "微糖",
+       "wéi táng",
+       "gula sangat sedikit (30%)",
+       "去冰",
+       "qù bīng",
+       "tanpa es"
+      ],
+      [
+       "無糖",
+       "wú táng",
+       "tanpa gula",
+       "熱的",
+       "rè de",
+       "yang panas"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pesanan lengkap dalam satu tarikan napas",
+     "items": [
+      "**我要一杯珍珠奶茶，大杯，半糖少冰。** — Satu teh susu mutiara, besar, setengah gula, es sedikit.",
+      "**中杯紅茶，微糖去冰，謝謝。** — Teh hitam sedang, gula sedikit, tanpa es, terima kasih.",
+      "**熱的拿鐵，無糖。** — Latte panas, tanpa gula.",
+      "Ukuran: **大杯** (besar), **中杯** (sedang), **小杯** (kecil).",
+      "⚠️ Kalau kamu tidak menyebut apa pun, kamu akan dapat **全糖正常冰** — dan teh susu Taiwan dengan gula penuh jauh lebih manis daripada dugaanmu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Makanan yang wajib kamu tahu namanya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "滷肉飯",
+       "lǔròufàn",
+       "nasi babi kecap — makanan nasional"
+      ],
+      [
+       "牛肉麵",
+       "niúròu miàn",
+       "mi kuah daging sapi"
+      ],
+      [
+       "便當",
+       "biàndāng",
+       "nasi kotak"
+      ],
+      [
+       "水餃",
+       "shuǐjiǎo",
+       "pangsit rebus"
+      ],
+      [
+       "小籠包",
+       "xiǎolóngbāo",
+       "pangsit kukus berkuah"
+      ],
+      [
+       "蚵仔煎",
+       "é'ā jiān",
+       "telur dadar tiram (khas pasar malam)"
+      ],
+      [
+       "珍珠奶茶",
+       "zhēnzhū nǎichá",
+       "teh susu mutiara"
+      ],
+      [
+       "炒飯",
+       "chǎofàn",
+       "nasi goreng"
+      ],
+      [
+       "雞排",
+       "jīpái",
+       "ayam goreng tepung selembar besar"
+      ],
+      [
+       "飯糰",
+       "fàntuán",
+       "nasi kepal (sarapan)"
+      ],
+      [
+       "蛋餅",
+       "dànbǐng",
+       "dadar telur gulung (sarapan)"
+      ],
+      [
+       "素食",
+       "sùshí",
+       "makanan vegetarian"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **吃 (*chī*, makan) dan 喝 (*hē*, minum) tidak boleh ditukar** — bahasa Indonesia sesekali berkata \"makan sup\", bahasa Mandarin selalu **喝湯** (minum sup). Yang cair diminum, tanpa kekecualian. Dan **吃藥** (\"makan obat\") memang memakai 吃, sama seperti bahasa Indonesia."
+    }
+   ]
+  },
+  {
+   "title": "Di restoran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**幾位？**",
+       "jǐ wèi?",
+       "Berapa orang? (dari pelayan)"
+      ],
+      [
+       "**內用還是外帶？**",
+       "nèiyòng háishì wàidài?",
+       "⚠️ Makan di sini atau bawa pulang?"
+      ],
+      [
+       "**我要點餐**",
+       "wǒ yào diǎncān",
+       "Saya mau pesan"
+      ],
+      [
+       "**有菜單嗎？**",
+       "yǒu càidān ma?",
+       "Ada menunya?"
+      ],
+      [
+       "**這個怎麼賣？**",
+       "zhè ge zěnme mài?",
+       "Ini dijual bagaimana? (berapa)"
+      ],
+      [
+       "**不要辣**",
+       "bú yào là",
+       "Jangan pedas"
+      ],
+      [
+       "**我不吃豬肉**",
+       "wǒ bù chī zhūròu",
+       "Saya tidak makan babi"
+      ],
+      [
+       "**我吃素**",
+       "wǒ chī sù",
+       "Saya vegetarian"
+      ],
+      [
+       "**買單 / 結帳**",
+       "mǎidān / jiézhàng",
+       "Minta bill"
+      ],
+      [
+       "**很好吃！**",
+       "hěn hǎochī!",
+       "Enak sekali!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **內用還是外帶 adalah pertanyaan yang akan kamu dengar paling sering di Taiwan** — di kedai nasi, kedai minuman, dan 便利商店. Hafalkan dua jawabannya sekarang: **內用** (makan di sini) dan **外帶** (bawa pulang). Menjawab salah satu dari keduanya sudah membuat seluruh transaksi berjalan mulus."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "吃",
+   "baca": "chī",
+   "id": "makan"
+  },
+  {
+   "zh": "喝",
+   "baca": "hē",
+   "id": "minum"
+  },
+  {
+   "zh": "杯",
+   "baca": "bēi",
+   "id": "(penggolong gelas)"
+  },
+  {
+   "zh": "碗",
+   "baca": "wǎn",
+   "id": "(penggolong mangkuk)"
+  },
+  {
+   "zh": "本",
+   "baca": "běn",
+   "id": "(penggolong buku)"
+  },
+  {
+   "zh": "位",
+   "baca": "wèi",
+   "id": "(penggolong orang, hormat)"
+  },
+  {
+   "zh": "飯",
+   "baca": "fàn",
+   "id": "nasi; makanan"
+  },
+  {
+   "zh": "麵",
+   "baca": "miàn",
+   "id": "mi"
+  },
+  {
+   "zh": "水",
+   "baca": "shuǐ",
+   "id": "air"
+  },
+  {
+   "zh": "茶",
+   "baca": "chá",
+   "id": "teh"
+  },
+  {
+   "zh": "奶茶",
+   "baca": "nǎichá",
+   "id": "teh susu"
+  },
+  {
+   "zh": "好吃",
+   "baca": "hǎochī",
+   "id": "enak (makanan)"
+  },
+  {
+   "zh": "好喝",
+   "baca": "hǎohē",
+   "id": "enak (minuman)"
+  },
+  {
+   "zh": "半",
+   "baca": "bàn",
+   "id": "setengah"
+  },
+  {
+   "zh": "少",
+   "baca": "shǎo",
+   "id": "sedikit; kurangi"
+  },
+  {
+   "zh": "冰",
+   "baca": "bīng",
+   "id": "es"
+  },
+  {
+   "zh": "糖",
+   "baca": "táng",
+   "id": "gula"
+  },
+  {
+   "zh": "內用",
+   "baca": "nèiyòng",
+   "id": "makan di tempat"
+  },
+  {
+   "zh": "外帶",
+   "baca": "wàidài",
+   "id": "bawa pulang"
+  },
+  {
+   "zh": "一共",
+   "baca": "yígòng",
+   "id": "totalnya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Saya mau satu gelas teh susu.",
+    "Setengah gula, es sedikit.",
+    "Bawa pulang, terima kasih.",
+    "Dua mangkuk nasi.",
+    "Saya tidak makan babi.",
+    "Enak sekali!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata penggolong yang tepat: 個, 杯, 碗, 本, 位, atau 件.",
+   "items": [
+    "一 ____ 咖啡",
+    "三 ____ 人",
+    "兩 ____ 書",
+    "一 ____ 牛肉麵",
+    "四 ____ 客人",
+    "一 ____ 衣服"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 吃 atau 喝.",
+   "items": [
+    "我要 ____ 飯。",
+    "他 ____ 茶。",
+    "我們 ____ 湯。",
+    "你要 ____ 什麼？",
+    "我 ____ 素。",
+    "她 ____ 珍珠奶茶。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "一杯 / 我 / 奶茶 / 要",
+    "少冰 / 半糖",
+    "外帶 / 內用 / 還是",
+    "好吃 / 這個 / 很",
+    "一共 / 多少 / 兩杯 / 錢"
+   ]
+  }
+ ],
+ "answers": [
+  "我要一杯奶茶。 — 半糖少冰。 — 外帶，謝謝。 — 兩碗飯。 — 我不吃豬肉。 — 很好吃！",
+  "杯 — 個 — 本 — 碗 — 位 — 件",
+  "吃 — 喝 — 喝 — 吃 — 吃 — 喝",
+  "我要一杯奶茶。 — 半糖少冰。 — 內用還是外帶？ — 這個很好吃。 — 兩杯一共多少錢？"
+ ]
+}

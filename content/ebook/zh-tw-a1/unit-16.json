@@ -1,0 +1,603 @@
+{
+ "title": "Numpang tanya, kantor pos di mana?",
+ "title_target": "請問，郵局在哪裡？",
+ "goal": "Bertanya arah kepada orang asing dan memahami jawabannya — sebuah keterampilan yang menentukan apakah kamu bisa berjalan sendiri di Taiwan.",
+ "bekal": [
+  "bertanya arah dengan pembuka yang tepat dan menangkap jawabannya",
+  "memakai kata kerja arah 往, 過, 轉, 走",
+  "menyebutkan jarak dengan 大概 dan patokan dengan 看到"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 迷路了",
+   "intro": "Budi tersesat mencari kantor pos di kota lama Tainan. Ia bertanya kepada seorang ibu penjual buah.",
+   "lines": [
+    {
+     "speaker": "布迪:",
+     "text": "[不好意思|Bù hǎoyìsi]，[請問|qǐngwèn][郵局|yóujú][在|zài][哪裡|nǎlǐ]？",
+     "id": "Permisi, numpang tanya, kantor pos di mana?",
+     "literal": "tidak — enak — maksud, mohon — tanya — pos-kantor — di — mana?"
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[郵局|Yóujú][喔|o]？[你|Nǐ][往|wǎng][前面|qiánmiàn][直走|zhí zǒu]。",
+     "id": "Kantor pos ya? Kamu jalan lurus ke depan.",
+     "literal": "pos-kantor — ya? kamu — menuju — depan-sisi — lurus — jalan."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[直走|Zhí zǒu][多久|duō jiǔ]？",
+     "id": "Jalan lurus berapa lama?",
+     "literal": "lurus — jalan — berapa — lama?"
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[大概|Dàgài][五|wǔ][分鐘|fēnzhōng]。[看到|Kàndào][廟|miào][以後|yǐhòu][右轉|yòu zhuǎn]。",
+     "id": "Kira-kira lima menit. Setelah lihat kuil, belok kanan.",
+     "literal": "kira-kira — lima — menit. lihat-sampai — kuil — sesudah — kanan — putar."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[看到|Kàndào][廟|miào][右轉|yòu zhuǎn]…[然後|ránhòu][呢|ne]？",
+     "id": "Lihat kuil belok kanan… terus?",
+     "literal": "lihat-sampai — kuil — kanan — putar… sesudah-itu — kalau?"
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[過|Guò][一個|yí ge][紅綠燈|hónglǜdēng]，[郵局|yóujú][就|jiù][在|zài][左邊|zuǒbiān]。",
+     "id": "Lewat satu lampu merah, kantor posnya ada di kiri.",
+     "literal": "lewat — satu — (penggolong) — merah-hijau-lampu, pos-kantor — persis — di — kiri-sisi."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[左邊|Zuǒbiān]…[有|yǒu][什麼|shénme][招牌|zhāopái][嗎|ma]？",
+     "id": "Kiri… ada papan namanya?",
+     "literal": "kiri-sisi… ada — apa — papan-nama — kah?"
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[綠色|Lǜsè][的|de]，[很|hěn][大|dà]。[你|Nǐ][一定|yídìng][看得到|kàndedào]。",
+     "id": "Warna hijau, besar. Pasti kelihatan kok.",
+     "literal": "hijau-warna — yang, sangat — besar. kamu — pasti — lihat-bisa-sampai."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太|Tài][謝謝|xièxie][您|nín][了|le]！[我|Wǒ][剛剛|gānggāng][走|zǒu][錯|cuò][方向|fāngxiàng]。",
+     "id": "Terima kasih banyak! Tadi saya salah arah.",
+     "literal": "terlalu — terima kasih — Anda — sudah! saya — barusan — jalan — salah — arah."
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[你|Nǐ][是|shì][外國人|wàiguó rén][喔|o]？[中文|Zhōngwén][說|shuō][得|de][很|hěn][好|hǎo][耶|ye]！",
+     "id": "Kamu orang asing ya? Bahasa Mandarinmu bagus lho!",
+     "literal": "kamu — adalah — luar-negara-orang — ya? Mandarin — bicara — (penanda) — sangat — baik — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[謝謝|Xièxie]！[我|Wǒ][是|shì][印尼|Yìnní][來|lái][的|de][學生|xuéshēng]。",
+     "id": "Terima kasih! Saya mahasiswa dari Indonesia.",
+     "literal": "terima kasih! saya — adalah — Indonesia — datang — yang — pelajar."
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[歡迎|Huānyíng][歡迎|huānyíng]！[來|Lái]，[送|sòng][你|nǐ][一個|yí ge][芭樂|bālè]！",
+     "id": "Selamat datang! Sini, saya kasih kamu satu jambu!",
+     "literal": "menyambut — menyambut! datang, beri — kamu — satu — (penggolong) — jambu!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[真的|Zhēn de][嗎|ma]？[太|Tài][不好意思|bù hǎoyìsi][了|le]！",
+     "id": "Serius? Jadi nggak enak!",
+     "literal": "benar — yang — kah? terlalu — tidak-enak-maksud — sudah!"
+    },
+    {
+     "speaker": "阿姨:",
+     "text": "[沒關係|Méi guānxi][啦|la]！[路上|Lù shàng][小心|xiǎoxīn][喔|o]！",
+     "id": "Nggak apa-apa kok! Hati-hati di jalan ya!",
+     "literal": "tidak — ada — hubungan — kok! jalan — atas — hati-kecil — ya!"
+    }
+   ],
+   "notes": [
+    "⚠️ **請問 adalah pembuka wajib saat bertanya kepada orang asing.** Bertanya langsung tanpa 請問 terdengar seperti menginterogasi. Gabungan yang paling wajar adalah **不好意思，請問…** — dua lapis kesopanan sekaligus.",
+    "**Memberi buah atau makanan kepada orang asing adalah kebiasaan yang benar-benar hidup di Taiwan**, terutama di kota kecil dan pasar. Menolaknya justru bisa menyinggung; terimalah sambil berkata *太不好意思了* dan *謝謝*.",
+    "**得 pada 說得很好 adalah penanda cara melakukan sesuatu**: kata kerja + 得 + kata sifat. 說得很好 (bicaranya bagus), 跑得很快 (larinya cepat), 吃得很多 (makannya banyak). ⚠️ Ia dibaca *de*, sama seperti 的, tetapi ditulis berbeda.",
+    "**看得到 berarti \"bisa terlihat\"** — bentuk pelengkap kemungkinan yang akan digarap di unit 18. Lawannya 看不到 (tidak bisa terlihat). Pola ini sangat sering muncul dalam petunjuk arah.",
+    "⚠️ **芭樂 (jambu biji) adalah buah paling sehari-hari di Taiwan**, sering dijual dipotong dengan bubuk asam manis. Dalam bahasa gaul, 芭樂 juga berarti \"pasaran, klise\": *芭樂歌* = lagu pop yang biasa-biasa saja."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja arah: 往, 過, 轉, 走",
+     "body": [
+      "Petunjuk arah dalam bahasa Mandarin dibangun dari beberapa kata kerja yang selalu muncul dalam urutan yang sama: **往 + arah**, lalu **走**, lalu patokan, lalu **轉**."
+     ],
+     "table": {
+      "head": [
+       "中文",
+       "Pīnyīn",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**往**前走",
+        "wǎng qián zǒu",
+        "jalan ke depan"
+       ],
+       [
+        "**直**走",
+        "zhí zǒu",
+        "jalan lurus"
+       ],
+       [
+        "**左**轉 / **右**轉",
+        "zuǒ zhuǎn / yòu zhuǎn",
+        "belok kiri / belok kanan"
+       ],
+       [
+        "**過**馬路",
+        "guò mǎlù",
+        "menyeberang jalan"
+       ],
+       [
+        "**過**一個紅綠燈",
+        "guò yí ge hónglǜdēng",
+        "lewat satu lampu merah"
+       ],
+       [
+        "**到**十字路口",
+        "dào shízì lùkǒu",
+        "sampai perempatan"
+       ],
+       [
+        "**看到**…以後",
+        "kàndào… yǐhòu",
+        "setelah melihat…"
+       ],
+       [
+        "就在**左邊**",
+        "jiù zài zuǒbiān",
+        "ada persis di sebelah kiri"
+       ]
+      ]
+     },
+     "after": [
+      "**十字路口 (\"mulut jalan berbentuk aksara sepuluh\") berarti perempatan** — 十 memang berbentuk salib. Ini contoh bagus bagaimana aksara Han membantu mengingat kata.",
+      "⚠️ **往 selalu diikuti arah, bukan tempat**: 往前 (ke depan), 往左 (ke kiri), 往北 (ke utara). Untuk tempat, pakai 去 atau 到."
+     ]
+    },
+    {
+     "title": "以前 dan 以後: sesudah bendanya, bukan sebelum",
+     "body": [
+      "Bahasa Indonesia berkata \"**sebelum** makan\" dan \"**sesudah** makan\" dengan katanya di depan. Bahasa Mandarin menaruhnya di **belakang** — sama seperti kata letak di unit 7."
+     ],
+     "table": {
+      "head": [
+       "中文",
+       "Pīnyīn",
+       "Harfiah",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "吃飯**以前**",
+        "chīfàn yǐqián",
+        "makan sebelum",
+        "sebelum makan"
+       ],
+       [
+        "吃飯**以後**",
+        "chīfàn yǐhòu",
+        "makan sesudah",
+        "sesudah makan"
+       ],
+       [
+        "三點**以前**",
+        "sān diǎn yǐqián",
+        "jam tiga sebelum",
+        "sebelum jam tiga"
+       ],
+       [
+        "看到廟**以後**",
+        "kàndào miào yǐhòu",
+        "lihat kuil sesudah",
+        "setelah melihat kuil"
+       ],
+       [
+        "**以前**我住台北。",
+        "Yǐqián wǒ zhù Táiběi.",
+        "dulu saya tinggal Taipei",
+        "⚠️ 以前 sendiri = dulu"
+       ],
+       [
+        "**以後**再說。",
+        "Yǐhòu zài shuō.",
+        "nanti lagi bicara",
+        "⚠️ 以後 sendiri = nanti"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Kalau 以前 dan 以後 berdiri sendiri di awal kalimat, artinya berubah** jadi \"dulu\" dan \"nanti\". *以前我不會說中文* = \"dulu saya tidak bisa bahasa Mandarin\".",
+      "**Pola yang sama berlaku untuk 的時候 (\"waktu…\")**: 吃飯的時候 (waktu makan), 小的時候 (waktu kecil). Semuanya menempel di belakang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bertanya arah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**請問，…在哪裡？**",
+       "qǐngwèn, … zài nǎlǐ?",
+       "Numpang tanya, … di mana?"
+      ],
+      [
+       "**…怎麼走？**",
+       "… zěnme zǒu?",
+       "… jalannya bagaimana?"
+      ],
+      [
+       "**離這裡遠嗎？**",
+       "lí zhèlǐ yuǎn ma?",
+       "Jauh dari sini?"
+      ],
+      [
+       "**要走多久？**",
+       "yào zǒu duō jiǔ?",
+       "Jalan kaki berapa lama?"
+      ],
+      [
+       "**我迷路了**",
+       "wǒ mílù le",
+       "Saya tersesat"
+      ],
+      [
+       "**我走錯了**",
+       "wǒ zǒu cuò le",
+       "Saya salah jalan"
+      ],
+      [
+       "**這附近有…嗎？**",
+       "zhè fùjìn yǒu… ma?",
+       "Di dekat sini ada…?"
+      ],
+      [
+       "**可以幫我看地圖嗎？**",
+       "kěyǐ bāng wǒ kàn dìtú ma?",
+       "Bisa bantu lihat peta?"
+      ],
+      [
+       "**我不是本地人**",
+       "wǒ bú shì běndì rén",
+       "Saya bukan orang sini"
+      ],
+      [
+       "**謝謝，我知道了**",
+       "xièxie, wǒ zhīdào le",
+       "Terima kasih, saya sudah paham"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **離 (*lí*) berarti \"berjarak dari\"** dan susunannya A 離 B + jauh/dekat: *我家離學校很近* (\"rumah saya dekat dari kampus\"). Bedakan dari 從 (dari, titik awal gerakan): *我從家裡走路去* (\"saya jalan kaki dari rumah\")."
+    }
+   ]
+  },
+  {
+   "title": "Arah mata angin dan patokan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "東",
+       "dōng",
+       "timur",
+       "馬路",
+       "mǎlù",
+       "jalan raya"
+      ],
+      [
+       "西",
+       "xī",
+       "barat",
+       "巷子",
+       "xiàngzi",
+       "gang"
+      ],
+      [
+       "南",
+       "nán",
+       "selatan",
+       "紅綠燈",
+       "hónglǜdēng",
+       "lampu lalu lintas"
+      ],
+      [
+       "北",
+       "běi",
+       "utara",
+       "十字路口",
+       "shízì lùkǒu",
+       "perempatan"
+      ],
+      [
+       "左邊",
+       "zuǒbiān",
+       "sebelah kiri",
+       "轉角",
+       "zhuǎnjiǎo",
+       "pojok, tikungan"
+      ],
+      [
+       "右邊",
+       "yòubiān",
+       "sebelah kanan",
+       "橋",
+       "qiáo",
+       "jembatan"
+      ],
+      [
+       "前面",
+       "qiánmiàn",
+       "di depan",
+       "地下道",
+       "dìxiàdào",
+       "terowongan bawah"
+      ],
+      [
+       "後面",
+       "hòumiàn",
+       "di belakang",
+       "招牌",
+       "zhāopái",
+       "papan nama"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Urutan arah mata angin Mandarin adalah 東西南北** (timur-barat-selatan-utara), bukan utara-timur-selatan-barat. Dan nama jalan besar di Taiwan sering memuat arahnya: 忠孝**東**路 (Jalan Zhongxiao **Timur**), 中山**北**路 (Jalan Zhongshan **Utara**) — sangat membantu saat kamu tersesat."
+    }
+   ]
+  },
+  {
+   "title": "Di kantor pos dan minimarket",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**我要寄信**",
+       "wǒ yào jì xìn",
+       "Saya mau kirim surat"
+      ],
+      [
+       "**我要寄包裹**",
+       "wǒ yào jì bāoguǒ",
+       "Saya mau kirim paket"
+      ],
+      [
+       "**寄到印尼多少錢？**",
+       "jì dào Yìnní duōshǎo qián?",
+       "Kirim ke Indonesia berapa?"
+      ],
+      [
+       "**要幾天？**",
+       "yào jǐ tiān?",
+       "Perlu berapa hari?"
+      ],
+      [
+       "**我要領錢**",
+       "wǒ yào lǐng qián",
+       "Saya mau ambil uang"
+      ],
+      [
+       "**這裡可以影印嗎？**",
+       "zhèlǐ kěyǐ yǐngyìn ma?",
+       "Di sini bisa fotokopi?"
+      ],
+      [
+       "**我要繳費**",
+       "wǒ yào jiǎofèi",
+       "Saya mau bayar tagihan"
+      ],
+      [
+       "**悠遊卡加值**",
+       "yōuyóukǎ jiāzhí",
+       "Isi ulang EasyCard"
+      ],
+      [
+       "**要袋子嗎？**",
+       "yào dàizi ma?",
+       "Perlu kantong?"
+      ],
+      [
+       "**要加熱嗎？**",
+       "yào jiārè ma?",
+       "Mau dipanaskan?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Dua pertanyaan terakhir akan kamu dengar setiap kali membeli sesuatu di 便利商店.** Jawabannya: *要* atau *不用，謝謝*. Kantong plastik di Taiwan berbayar (1–3 塊) sejak larangan plastik gratis, jadi bawalah tas sendiri."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "請問",
+   "baca": "qǐngwèn",
+   "id": "⚠️ numpang tanya"
+  },
+  {
+   "zh": "郵局",
+   "baca": "yóujú",
+   "id": "kantor pos"
+  },
+  {
+   "zh": "往",
+   "baca": "wǎng",
+   "id": "menuju ke"
+  },
+  {
+   "zh": "直走",
+   "baca": "zhí zǒu",
+   "id": "jalan lurus"
+  },
+  {
+   "zh": "左轉",
+   "baca": "zuǒ zhuǎn",
+   "id": "belok kiri"
+  },
+  {
+   "zh": "右轉",
+   "baca": "yòu zhuǎn",
+   "id": "belok kanan"
+  },
+  {
+   "zh": "過",
+   "baca": "guò",
+   "id": "melewati, menyeberang"
+  },
+  {
+   "zh": "馬路",
+   "baca": "mǎlù",
+   "id": "jalan raya"
+  },
+  {
+   "zh": "紅綠燈",
+   "baca": "hónglǜdēng",
+   "id": "lampu lalu lintas"
+  },
+  {
+   "zh": "路口",
+   "baca": "lùkǒu",
+   "id": "persimpangan"
+  },
+  {
+   "zh": "看到",
+   "baca": "kàndào",
+   "id": "melihat (berhasil)"
+  },
+  {
+   "zh": "以前",
+   "baca": "yǐqián",
+   "id": "sebelum; dulu"
+  },
+  {
+   "zh": "以後",
+   "baca": "yǐhòu",
+   "id": "sesudah; nanti"
+  },
+  {
+   "zh": "離",
+   "baca": "lí",
+   "id": "berjarak dari"
+  },
+  {
+   "zh": "迷路",
+   "baca": "mílù",
+   "id": "tersesat"
+  },
+  {
+   "zh": "錯",
+   "baca": "cuò",
+   "id": "salah"
+  },
+  {
+   "zh": "小心",
+   "baca": "xiǎoxīn",
+   "id": "hati-hati"
+  },
+  {
+   "zh": "地圖",
+   "baca": "dìtú",
+   "id": "peta"
+  },
+  {
+   "zh": "寄",
+   "baca": "jì",
+   "id": "mengirim (pos)"
+  },
+  {
+   "zh": "外國人",
+   "baca": "wàiguó rén",
+   "id": "orang asing"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Numpang tanya, kantor pos di mana?",
+    "Jalan lurus lima menit.",
+    "Setelah lihat kuil, belok kanan.",
+    "Saya tersesat.",
+    "Jauh dari sini?",
+    "Hati-hati di jalan!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 往, 過, 轉, atau 到.",
+   "items": [
+    "____ 前直走。",
+    "____ 馬路以後左 ____。",
+    "____ 十字路口右 ____。",
+    "____ 一個紅綠燈。",
+    "____ 左走五分鐘。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 以前 atau 以後.",
+   "items": [
+    "吃飯 ____ 要洗手。",
+    "看到廟 ____ 右轉。",
+    "三點 ____ 我有課。",
+    "____ 我住台北，現在住台南。",
+    "下課 ____ 我們去吃飯。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "在 / 郵局 / 哪裡 / 請問",
+    "走 / 直 / 往前",
+    "轉 / 右 / 紅綠燈 / 過",
+    "了 / 我 / 迷路",
+    "遠 / 這裡 / 嗎 / 離"
+   ]
+  }
+ ],
+ "answers": [
+  "請問，郵局在哪裡？ — 直走五分鐘。 — 看到廟以後右轉。 — 我迷路了。 — 離這裡遠嗎？ — 路上小心！",
+  "往 — 過、轉 — 到、轉 — 過 — 往",
+  "以前 — 以後 — 以前 — 以前 — 以後",
+  "請問郵局在哪裡？ — 往前直走。 — 過紅綠燈右轉。 — 我迷路了。 — 離這裡遠嗎？"
+ ]
+}

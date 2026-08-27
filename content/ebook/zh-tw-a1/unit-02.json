@@ -1,0 +1,588 @@
+{
+ "title": "Kamu orang mana?",
+ "title_target": "你是哪國人？",
+ "goal": "Menyebutkan asal, pekerjaan, dan bahasa — sambil menguasai 是, 不, dan 嗎, tiga kata yang membentuk hampir semua kalimat pertamamu.",
+ "bekal": [
+  "menyusun kalimat 'A adalah B' dengan 是 dan menyangkalnya dengan 不是",
+  "mengubah kalimat apa pun jadi pertanyaan dengan 嗎 tanpa mengubah urutannya",
+  "menghindari jebakan terbesar penutur Indonesia: memakai 是 di depan kata sifat"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 在學生餐廳",
+   "intro": "Hari kedua. Budi dan Xiaomei mengantre di kantin kampus. Seorang teman Xiaomei ikut bergabung.",
+   "lines": [
+    {
+     "speaker": "小美:",
+     "text": "[布迪|Bùdí]，[這是|zhè shì][我朋友|wǒ péngyǒu][阿明|Ā Míng]。",
+     "id": "Budi, ini temanku A-Ming.",
+     "literal": "Budi, ini — adalah — saya — teman — A-Ming."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[你好|Nǐ hǎo]！[你是|Nǐ shì][哪國人|nǎ guó rén]？",
+     "id": "Halo! Kamu orang mana?",
+     "literal": "kamu — baik! kamu — adalah — mana — negara — orang?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我是|Wǒ shì][印尼人|Yìnní rén]。[你呢|Nǐ ne]？",
+     "id": "Saya orang Indonesia. Kalau kamu?",
+     "literal": "saya — adalah — Indonesia — orang. kamu — kalau?"
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[我是|Wǒ shì][台灣人|Táiwān rén]，[台南來的|Táinán lái de]。",
+     "id": "Saya orang Taiwan, dari Tainan.",
+     "literal": "saya — adalah — Taiwan — orang, Tainan — datang — yang."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[你們|Nǐmen][都是|dōu shì][學生|xuéshēng][嗎|ma]？",
+     "id": "Kalian berdua mahasiswa?",
+     "literal": "kalian — semua — adalah — pelajar — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[我是|Wǒ shì]，[可是|kěshì][阿明|Ā Míng][不是|bú shì]。",
+     "id": "Saya iya, tapi A-Ming bukan.",
+     "literal": "saya — adalah, tetapi — A-Ming — tidak — adalah."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[我是|Wǒ shì][老師|lǎoshī]。[我教|Wǒ jiāo][英文|Yīngwén]。",
+     "id": "Saya guru. Saya mengajar bahasa Inggris.",
+     "literal": "saya — adalah — guru. saya — mengajar — Inggris — bahasa."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[真的|Zhēn de][嗎|ma]？[你|Nǐ][看起來|kànqǐlái][很年輕|hěn niánqīng]。",
+     "id": "Serius? Kamu kelihatan muda sekali.",
+     "literal": "benar — yang — kah? kamu — kelihatan — sangat — muda."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[謝謝|Xièxie]！[你|Nǐ][學|xué][什麼|shénme]？",
+     "id": "Terima kasih! Kamu belajar apa?",
+     "literal": "terima kasih! kamu — belajar — apa?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[我學|Wǒ xué][電腦|diànnǎo]。[中文|Zhōngwén][是|shì][我的|wǒ de][第二|dì-èr][專長|zhuāncháng]。",
+     "id": "Saya belajar komputer. Mandarin keahlian keduaku.",
+     "literal": "saya — belajar — komputer. Mandarin — adalah — saya — punya — ke-dua — keahlian."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[你|Nǐ][會說|huì shuō][印尼話|Yìnní huà][和|hàn][英文|Yīngwén][嗎|ma]？",
+     "id": "Kamu bisa bahasa Indonesia dan Inggris?",
+     "literal": "kamu — bisa — bicara — Indonesia — ucapan — dan — Inggris — kah?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[會|Huì]。[還有|Hái yǒu][一點|yìdiǎn][爪哇話|Zhǎowā huà]。",
+     "id": "Bisa. Plus sedikit bahasa Jawa.",
+     "literal": "bisa. masih — ada — sedikit — Jawa — ucapan."
+    },
+    {
+     "speaker": "阿明:",
+     "text": "[哇|Wā]，[三種|sān zhǒng][語言|yǔyán]！[你|Nǐ][不簡單|bù jiǎndān][喔|o]！",
+     "id": "Wah, tiga bahasa! Kamu hebat lho!",
+     "literal": "wah, tiga — jenis — bahasa! kamu — tidak — sederhana — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[在|Zài][印尼|Yìnní][很|hěn][正常|zhèngcháng][啦|la]！",
+     "id": "Di Indonesia itu biasa aja kok!",
+     "literal": "di — Indonesia — sangat — normal — kok!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[好了|Hǎo le]，[我們|wǒmen][去|qù][吃飯|chīfàn][吧|ba]！",
+     "id": "Ya sudah, kita makan yuk!",
+     "literal": "baik — sudah, kami — pergi — makan-nasi — ayo!"
+    }
+   ],
+   "notes": [
+    "⚠️ **和 (\"dan\") dibaca *hàn* oleh sebagian besar orang Taiwan**, bukan *hé* seperti yang diajarkan buku daratan. Keduanya dimengerti; *hàn* yang terdengar lokal. Ini salah satu tanda pengucapan paling khas Taiwan.",
+    "**呢 mengembalikan pertanyaan tanpa mengulangnya.** *我是印尼人。你呢？* — \"Saya orang Indonesia. Kalau kamu?\" Tempelkan 呢 pada kata benda apa pun dan ia berarti \"kalau …?\". Hemat sekali, dan dipakai terus-menerus.",
+    "**都 (*dōu*, \"semua\") berdiri di depan kata kerja, bukan di depan orangnya.** *你們都是學生嗎？* — bukan *都你們*. Aturannya: 都 selalu **sesudah** yang ia rangkum dan **sebelum** kata kerjanya.",
+    "**啦 (*la*) dan 喔 (*o*) adalah dua partikel Taiwan yang paling sering kamu dengar.** 啦 melunakkan kalimat dan memberi rasa \"kok\", \"deh\", \"kan\"; 喔 memberi peringatan lembut atau nada gemas. Tanpa keduanya, kalimatmu benar tetapi terdengar seperti membaca pengumuman.",
+    "⚠️ **印尼話 dan 印尼文 dua-duanya berarti \"bahasa Indonesia\"**, tetapi 話 menekankan bahasa **lisan** dan 文 menekankan bahasa **tulis**. Untuk mengatakan \"saya bisa bicara bahasa Indonesia\", 印尼話 lebih tepat."
+   ],
+   "grammars": [
+    {
+     "title": "是: kata kerja yang menyambung dua kata benda — dan hanya itu",
+     "body": [
+      "**是** berarti \"adalah\", dan tugasnya cuma satu: menyambungkan **dua kata benda**. A 是 B artinya \"A adalah B\". Ia disangkal dengan 不是 dan tidak pernah dengan 沒是."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "我**是**印尼人。",
+        "Wǒ shì Yìnní rén.",
+        "Saya orang Indonesia."
+       ],
+       [
+        "他**是**老師。",
+        "Tā shì lǎoshī.",
+        "Dia guru."
+       ],
+       [
+        "這**是**我朋友。",
+        "Zhè shì wǒ péngyǒu.",
+        "Ini teman saya."
+       ],
+       [
+        "我**不是**台灣人。",
+        "Wǒ bú shì Táiwān rén.",
+        "Saya bukan orang Taiwan."
+       ],
+       [
+        "她**不是**學生。",
+        "Tā bú shì xuéshēng.",
+        "Dia bukan pelajar."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Inilah jebakan terbesar unit ini: 是 TIDAK dipakai di depan kata sifat.** Bahasa Indonesia berkata \"saya *adalah* orang Indonesia\" dan juga \"saya sibuk\" — dua-duanya tanpa masalah. Bahasa Mandarin memisahkan keduanya dengan tegas.",
+      "**我是忙。** ✗ salah. **我很忙。** ✓ benar. Kata sifat tidak butuh 是; yang dipasang di depannya adalah 很. Unit 14 menggarap ini sampai tuntas, tetapi tanamkan sekarang: **kata benda pakai 是, kata sifat pakai 很.**",
+      "⚠️ Perhatikan pula bahwa 不 di depan 是 dibaca **bú**, bukan *bù* — karena 是 bernada keempat. Modul ini selalu mencetak nada yang benar-benar diucapkan."
+     ]
+    },
+    {
+     "title": "嗎: kalimat tanya tanpa membalik apa pun",
+     "body": [
+      "Ini hadiah dari bahasa Mandarin untukmu. Untuk membuat pertanyaan ya/tidak, **tempelkan 嗎 di ujung kalimat berita**. Tidak ada yang dibalik, tidak ada yang dipindah, tidak ada yang ditambahkan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat berita",
+       "Jadi pertanyaan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "你是學生。",
+        "你是學生**嗎**？",
+        "Kamu pelajar?"
+       ],
+       [
+        "他會說中文。",
+        "他會說中文**嗎**？",
+        "Dia bisa bahasa Mandarin?"
+       ],
+       [
+        "你們都是台灣人。",
+        "你們都是台灣人**嗎**？",
+        "Kalian semua orang Taiwan?"
+       ],
+       [
+        "這是你的書。",
+        "這是你的書**嗎**？",
+        "Ini bukumu?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Nada suaramu tidak boleh naik di ujung.** Inilah kekeliruan yang paling susah dibongkar bagi penutur bahasa Indonesia: kita menandai pertanyaan dengan nada naik, dan kebiasaan itu terbawa. Di bahasa Mandarin, 嗎 sudah menandai pertanyaannya; menaikkan nadanya justru mengubah kata terakhirmu jadi kata lain.",
+      "**Cara menjawab: ulangi kata kerjanya.** Bahasa Mandarin tidak punya kata untuk \"ya\". *你是學生嗎？* dijawab **是** (iya) atau **不是** (bukan). *你會說中文嗎？* dijawab **會** atau **不會**.",
+      "**Bentuk A-不-A adalah cara kedua**, sedikit lebih santai dan sangat umum di Taiwan: *你**是不是**學生？* *你**會不會**說中文？* Artinya sama persis; 嗎 tidak dipakai bersamaan dengan bentuk ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, orang, dan bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Polanya sangat teratur: **nama negara + 人** = orangnya, **nama negara + 文** = bahasanya. Sekali kamu tahu nama negaranya, dua kata lain datang gratis."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Negara",
+      "Pīnyīn",
+      "Orangnya",
+      "Bahasanya"
+     ],
+     "rows": [
+      [
+       "**印尼**",
+       "Yìnní",
+       "印尼人",
+       "印尼文 / 印尼話"
+      ],
+      [
+       "**台灣**",
+       "Táiwān",
+       "台灣人",
+       "中文 / 台語"
+      ],
+      [
+       "**中國**",
+       "Zhōngguó",
+       "中國人",
+       "中文"
+      ],
+      [
+       "**日本**",
+       "Rìběn",
+       "日本人",
+       "日文"
+      ],
+      [
+       "**韓國**",
+       "Hánguó",
+       "韓國人",
+       "韓文"
+      ],
+      [
+       "**美國**",
+       "Měiguó",
+       "美國人",
+       "英文"
+      ],
+      [
+       "**英國**",
+       "Yīngguó",
+       "英國人",
+       "英文"
+      ],
+      [
+       "**馬來西亞**",
+       "Mǎláixīyà",
+       "馬來西亞人",
+       "馬來文"
+      ],
+      [
+       "**新加坡**",
+       "Xīnjiāpō",
+       "新加坡人",
+       "英文 / 中文"
+      ],
+      [
+       "**泰國**",
+       "Tàiguó",
+       "泰國人",
+       "泰文"
+      ],
+      [
+       "**越南**",
+       "Yuènán",
+       "越南人",
+       "越南文"
+      ],
+      [
+       "**法國**",
+       "Fǎguó",
+       "法國人",
+       "法文"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan bahwa **中文** dipakai baik di Taiwan maupun di Tiongkok untuk \"bahasa Mandarin\". Di Taiwan kamu juga akan mendengar **國語** (*Guóyǔ*, \"bahasa negara\") dan **華語** (*Huáyǔ*). Yang **tidak** dipakai di Taiwan adalah 普通話 (*pǔtōnghuà*) — itu istilah daratan. Dan **台語** (*Táiyǔ*) adalah bahasa lain sama sekali: bahasa Hokkien Taiwan, yang dipakai lebih dari separuh penduduk di rumah."
+    }
+   ]
+  },
+  {
+   "title": "Pekerjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "學生",
+       "xuéshēng",
+       "pelajar, mahasiswa"
+      ],
+      [
+       "老師",
+       "lǎoshī",
+       "guru, dosen"
+      ],
+      [
+       "醫生",
+       "yīshēng",
+       "dokter"
+      ],
+      [
+       "護士",
+       "hùshì",
+       "perawat"
+      ],
+      [
+       "工程師",
+       "gōngchéngshī",
+       "insinyur"
+      ],
+      [
+       "上班族",
+       "shàngbānzú",
+       "pegawai kantoran"
+      ],
+      [
+       "老闆",
+       "lǎobǎn",
+       "bos, pemilik toko"
+      ],
+      [
+       "司機",
+       "sījī",
+       "sopir"
+      ],
+      [
+       "廚師",
+       "chúshī",
+       "juru masak"
+      ],
+      [
+       "設計師",
+       "shèjìshī",
+       "desainer"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya pekerjaan",
+     "items": [
+      "**你做什麼工作？** *Nǐ zuò shénme gōngzuò?* — Kerja apa kamu?",
+      "**我是工程師。** *Wǒ shì gōngchéngshī.* — Saya insinyur.",
+      "**我在銀行工作。** *Wǒ zài yínháng gōngzuò.* — Saya bekerja di bank.",
+      "**我還是學生。** *Wǒ háishì xuéshēng.* — Saya masih pelajar.",
+      "⚠️ **老闆 juga dipakai untuk memanggil penjaga toko mana pun** — di pasar malam, di kedai, di bengkel. Ia sopan dan hangat, bukan menjilat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "都, 也, dan 還: tiga kata kecil yang letaknya kaku",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ketiganya adalah **keterangan**, dan keterangan dalam bahasa Mandarin punya satu tempat: **sesudah pelaku, sebelum kata kerja**. Tempat itu tidak pernah berubah, dan menaruhnya di tempat lain adalah kekeliruan yang langsung terdengar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "**都**",
+       "semua, semuanya",
+       "我們**都**是學生。",
+       "Kami semua pelajar."
+      ],
+      [
+       "**也**",
+       "juga",
+       "我**也**是印尼人。",
+       "Saya juga orang Indonesia."
+      ],
+      [
+       "**還**",
+       "masih; lagi",
+       "我**還**是學生。",
+       "Saya masih pelajar."
+      ],
+      [
+       "**都不**",
+       "semuanya tidak",
+       "他們**都不**去。",
+       "Mereka semua tidak pergi."
+      ],
+      [
+       "**也不**",
+       "juga tidak",
+       "我**也不**知道。",
+       "Saya juga tidak tahu."
+      ],
+      [
+       "**都也** ✗",
+       "—",
+       "tidak ada bentuk ini",
+       "urutannya selalu 也都"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Kalau ketiganya muncul bersama, urutannya **也 → 都 → 還**: *我們**也都還**是學生。* \"Kami juga semua masih pelajar.\" Urutan ini kaku dan tidak bisa ditawar — untungnya, kalimat dengan ketiganya sekaligus jarang muncul."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "是",
+   "baca": "shì",
+   "id": "adalah"
+  },
+  {
+   "zh": "不",
+   "baca": "bù / bú",
+   "id": "tidak, bukan"
+  },
+  {
+   "zh": "嗎",
+   "baca": "ma",
+   "id": "(penanda tanya)"
+  },
+  {
+   "zh": "呢",
+   "baca": "ne",
+   "id": "kalau …? (mengembalikan tanya)"
+  },
+  {
+   "zh": "哪",
+   "baca": "nǎ",
+   "id": "yang mana"
+  },
+  {
+   "zh": "國",
+   "baca": "guó",
+   "id": "negara"
+  },
+  {
+   "zh": "人",
+   "baca": "rén",
+   "id": "orang"
+  },
+  {
+   "zh": "台灣",
+   "baca": "Táiwān",
+   "id": "Taiwan"
+  },
+  {
+   "zh": "印尼",
+   "baca": "Yìnní",
+   "id": "Indonesia"
+  },
+  {
+   "zh": "學生",
+   "baca": "xuéshēng",
+   "id": "pelajar, mahasiswa"
+  },
+  {
+   "zh": "老師",
+   "baca": "lǎoshī",
+   "id": "guru"
+  },
+  {
+   "zh": "朋友",
+   "baca": "péngyǒu",
+   "id": "teman"
+  },
+  {
+   "zh": "都",
+   "baca": "dōu",
+   "id": "semua (⚠️ sebelum kata kerja)"
+  },
+  {
+   "zh": "會",
+   "baca": "huì",
+   "id": "bisa (terampil)"
+  },
+  {
+   "zh": "說",
+   "baca": "shuō",
+   "id": "berbicara, mengatakan"
+  },
+  {
+   "zh": "學",
+   "baca": "xué",
+   "id": "belajar"
+  },
+  {
+   "zh": "和",
+   "baca": "hàn / hé",
+   "id": "dan (⚠️ Taiwan: hàn)"
+  },
+  {
+   "zh": "可是",
+   "baca": "kěshì",
+   "id": "tetapi"
+  },
+  {
+   "zh": "工作",
+   "baca": "gōngzuò",
+   "id": "bekerja; pekerjaan"
+  },
+  {
+   "zh": "中文",
+   "baca": "Zhōngwén",
+   "id": "bahasa Mandarin"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Saya orang Indonesia.",
+    "Dia bukan guru.",
+    "Kalian semua mahasiswa?",
+    "Saya juga bisa bahasa Inggris.",
+    "Kamu orang mana?",
+    "Saya masih pelajar."
+   ]
+  },
+  {
+   "prompt": "Isi dengan 是, 不是, 很, atau 都.",
+   "items": [
+    "我 ____ 台灣人。",
+    "他 ____ 學生，他是老師。",
+    "我今天 ____ 忙。",
+    "我們 ____ 是印尼人。",
+    "這 ____ 我的書。",
+    "她 ____ 高興。"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan dengan 嗎.",
+   "items": [
+    "你是老師。",
+    "他會說中文。",
+    "你們都是學生。",
+    "她是台灣人。",
+    "你學電腦。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "我 / 印尼人 / 是",
+    "嗎 / 你 / 學生 / 是",
+    "也 / 我 / 是 / 印尼人",
+    "都 / 我們 / 學生 / 是",
+    "不是 / 他 / 台灣人"
+   ]
+  }
+ ],
+ "answers": [
+  "我是印尼人。 — 他不是老師。 — 你們都是學生嗎？ — 我也會說英文。 — 你是哪國人？ — 我還是學生。",
+  "是 — 不是 — 很 — 都 — 是 — 很",
+  "你是老師嗎？ — 他會說中文嗎？ — 你們都是學生嗎？ — 她是台灣人嗎？ — 你學電腦嗎？",
+  "我是印尼人。 — 你是學生嗎？ — 我也是印尼人。 — 我們都是學生。 — 他不是台灣人。"
+ ]
+}

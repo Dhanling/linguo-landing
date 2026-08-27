@@ -1,0 +1,593 @@
+{
+ "title": "Berapa harganya?",
+ "title_target": "多少錢？",
+ "goal": "Berhitung sampai sepuluh ribu, menyebut harga dalam 塊, dan menawar di pasar malam — sambil menuntaskan beda 二 dan 兩 yang menjegal semua pemula.",
+ "bekal": [
+  "menghitung dan membaca harga sampai lima angka",
+  "memakai 兩 di depan kata penggolong dan 二 untuk berhitung",
+  "menawar di 夜市 dengan kalimat yang benar-benar dipakai orang Taiwan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 士林夜市",
+   "intro": "Malam Sabtu di pasar malam Shilin. Budi ingin membeli kaus, dan Xiaomei menemaninya menawar.",
+   "lines": [
+    {
+     "speaker": "老闆:",
+     "text": "[來來來|Lái lái lái]！[看一下|Kàn yíxià]！[很便宜|Hěn piányí]！",
+     "id": "Mari mari! Lihat-lihat dulu! Murah kok!",
+     "literal": "datang-datang-datang! lihat — sebentar! sangat — murah!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[老闆|Lǎobǎn]，[這件|zhè jiàn][多少錢|duōshǎo qián]？",
+     "id": "Bang, ini berapa?",
+     "literal": "bos, ini — (penggolong) — berapa — uang?"
+    },
+    {
+     "speaker": "老闆:",
+     "text": "[三百五|Sānbǎi wǔ]。[純棉的|Chúnmián de][喔|o]！",
+     "id": "Tiga ratus lima puluh. Katun asli lho!",
+     "literal": "tiga-ratus-lima. murni-kapas — yang — lho!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[三百五|Sānbǎi wǔ]？[有點|Yǒudiǎn][貴|guì][耶|ye]。",
+     "id": "Tiga lima puluh? Agak mahal lho.",
+     "literal": "tiga-ratus-lima? ada-sedikit — mahal — lho."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[老闆|Lǎobǎn]，[算|suàn][便宜|piányí][一點|yìdiǎn][啦|la]！[我們|Wǒmen][買|mǎi][兩件|liǎng jiàn]。",
+     "id": "Bang, kasih murah dikit dong! Kita ambil dua.",
+     "literal": "bos, hitung — murah — sedikit — dong! kami — beli — dua — (penggolong)."
+    },
+    {
+     "speaker": "老闆:",
+     "text": "[兩件|Liǎng jiàn][的話|de huà]，[六百|liùbǎi][好不好|hǎo bù hǎo]？",
+     "id": "Kalau dua, enam ratus gimana?",
+     "literal": "dua — (penggolong) — kalau, enam-ratus — baik — tidak — baik?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[五百五|Wǔbǎi wǔ][啦|la]！[我們|Wǒmen][是|shì][學生|xuéshēng][耶|ye]。",
+     "id": "Lima ratus lima puluh deh! Kita kan mahasiswa.",
+     "literal": "lima-ratus-lima — dong! kami — adalah — pelajar — lho."
+    },
+    {
+     "speaker": "老闆:",
+     "text": "[哎唷|Āiyō]…[好啦|Hǎo la]！[五百八|Wǔbǎi bā]，[不能|bù néng][再少|zài shǎo][了|le]。",
+     "id": "Aduh… ya sudah! Lima ratus delapan puluh, tidak bisa kurang lagi.",
+     "literal": "aduh… baik — deh! lima-ratus-delapan, tidak — bisa — lagi — sedikit — sudah."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]，[我們|wǒmen][要|yào][兩件|liǎng jiàn]。",
+     "id": "Oke, kami ambil dua.",
+     "literal": "baik, kami — mau — dua — (penggolong)."
+    },
+    {
+     "speaker": "老闆:",
+     "text": "[謝謝|Xièxie]！[要|Yào][刷卡|shuākǎ][還是|háishì][付現|fùxiàn]？",
+     "id": "Terima kasih! Mau bayar kartu atau tunai?",
+     "literal": "terima kasih! mau — gesek-kartu — atau — bayar-tunai?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[付現|Fùxiàn]。[這是|Zhè shì][一千|yìqiān]。",
+     "id": "Tunai. Ini seribu.",
+     "literal": "bayar-tunai. ini — adalah — satu-ribu."
+    },
+    {
+     "speaker": "老闆:",
+     "text": "[找|Zhǎo][你|nǐ][四百二|sìbǎi èr]。[謝謝|Xièxie][光臨|guānglín]！",
+     "id": "Kembaliannya empat ratus dua puluh. Terima kasih sudah mampir!",
+     "literal": "cari-kembali — kamu — empat-ratus-dua. terima kasih — cahaya-datang!"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[小美|Xiǎoměi]，[妳|nǐ][好厲害|hǎo lìhài]！",
+     "id": "Xiaomei, kamu jago banget!",
+     "literal": "Xiaomei, kamu — sangat — hebat!"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[在|Zài][夜市|yèshì][一定|yídìng][要|yào][殺價|shājià][啊|a]！",
+     "id": "Di pasar malam memang harus nawar lah!",
+     "literal": "di — malam-pasar — pasti — harus — potong-harga — lho!"
+    }
+   ],
+   "notes": [
+    "⚠️ **三百五 berarti 350, bukan 305.** Dalam menyebut harga, angka terakhir yang bulat boleh dipotong: 三百五 = 三百五十, 五百八 = 五百八十, 四百二 = 四百二十. Kalau kamu mendengar 三百五 dan mengira 305, kamu akan salah bayar sepuluh kali lipat.",
+    "**塊 (*kuài*) adalah kata yang benar-benar diucapkan**, sedangkan 元 (*yuán*) yang tertulis di struk. Bahkan sering keduanya dilepas: cukup *三百五* saja. Bandingkan dengan \"ceban\" dan \"sepuluh ribu rupiah\" dalam bahasa Indonesia.",
+    "**還是 = \"atau\" dalam pertanyaan**, 或是/或者 = \"atau\" dalam kalimat berita. ⚠️ *你要茶還是咖啡？* (Mau teh atau kopi?) benar; *你要茶或是咖啡？* terdengar salah.",
+    "**謝謝光臨** (\"terima kasih atas kunjungan Anda\") diucapkan penjaga toko kepada pelanggan yang keluar. Di 便利商店 kamu akan mendengarnya ratusan kali. Kamu tidak perlu menjawab apa pun — anggukan sudah cukup.",
+    "⚠️ **妳 dengan bagian 女 adalah \"kamu\" untuk perempuan.** Bunyinya sama persis: *nǐ*. Pembedaan tulisan ini masih dipakai di Taiwan, bersama 他 (dia lk) dan 她 (dia pr) yang juga sama-sama dibaca *tā*."
+   ],
+   "grammars": [
+    {
+     "title": "⚠️ 二 atau 兩: aturannya satu kalimat",
+     "body": [
+      "Bahasa Mandarin punya dua kata untuk angka dua, dan memilih yang keliru adalah kekeliruan yang paling sering terdengar dari mulut pemula. Aturannya pendek: **兩 di depan kata penggolong, 二 untuk yang lain.**"
+     ],
+     "table": {
+      "head": [
+       "Pakai",
+       "Keadaan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**兩**",
+        "di depan kata penggolong",
+        "**兩**個人",
+        "dua orang"
+       ],
+       [
+        "**兩**",
+        "di depan kata penggolong",
+        "**兩**杯茶",
+        "dua gelas teh"
+       ],
+       [
+        "**兩**",
+        "ratus/ribu/sepuluh-ribu",
+        "**兩**百, **兩**千",
+        "dua ratus, dua ribu"
+       ],
+       [
+        "**二**",
+        "berhitung",
+        "一、**二**、三",
+        "satu, dua, tiga"
+       ],
+       [
+        "**二**",
+        "di dalam bilangan besar",
+        "十**二**, **二**十**二**",
+        "dua belas, dua puluh dua"
+       ],
+       [
+        "**二**",
+        "nomor urut",
+        "第**二**",
+        "kedua"
+       ],
+       [
+        "**二**",
+        "tanggal dan menit",
+        "**二**號, **二**分",
+        "tanggal 2, 2 menit"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **兩個人** benar; **二個人** salah dan langsung terdengar aneh. Sebaliknya **十二** benar; **十兩** salah. Uji cepat: kalau sesudahnya ada kata penggolong, pakai 兩.",
+      "**Jam adalah kekecualian yang harus dihafal**: pukul dua adalah **兩點** (*liǎng diǎn*), karena 點 adalah kata penggolong. Tetapi dua menit adalah **兩分**… dan tanggal dua adalah **二號**. Tiga bentuk, tiga aturan."
+     ]
+    },
+    {
+     "title": "Angka dan harga: 萬 mengubah cara berhitungmu",
+     "body": [
+      "Sampai seribu, bahasa Mandarin berhitung persis seperti bahasa Indonesia. Yang berbeda dimulai di sepuluh ribu."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "中文",
+       "Pīnyīn",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "11",
+        "十一",
+        "shíyī",
+        "sepuluh-satu"
+       ],
+       [
+        "20",
+        "二十",
+        "èrshí",
+        "dua-sepuluh"
+       ],
+       [
+        "99",
+        "九十九",
+        "jiǔshíjiǔ",
+        ""
+       ],
+       [
+        "100",
+        "一百",
+        "yìbǎi",
+        "⚠️ 一 tidak boleh dilepas"
+       ],
+       [
+        "105",
+        "一百零五",
+        "yìbǎi líng wǔ",
+        "⚠️ 零 wajib untuk lubang"
+       ],
+       [
+        "350",
+        "三百五(十)",
+        "sānbǎi wǔ(shí)",
+        "harga: boleh dipotong"
+       ],
+       [
+        "1.000",
+        "一千",
+        "yìqiān",
+        ""
+       ],
+       [
+        "10.000",
+        "一萬",
+        "yíwàn",
+        "⚠️ bukan 十千"
+       ],
+       [
+        "25.000",
+        "兩萬五",
+        "liǎngwàn wǔ",
+        ""
+       ],
+       [
+        "1.000.000",
+        "一百萬",
+        "yìbǎiwàn",
+        "seratus sepuluh-ribu"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **零 (*líng*) wajib dipakai untuk menandai lubang di tengah bilangan**, dan cukup sekali betapa pun banyak nolnya: 1005 = 一千零五, 1050 = 一千零五十.",
+      "**Harga barang sehari-hari di Taiwan** untuk dijadikan tolok ukur: kopi 便利商店 sekitar 45 塊, sekotak 便當 sekitar 90 塊, sekali naik 捷運 20–40 塊, segelas 珍珠奶茶 sekitar 60 塊, sewa kamar mahasiswa 5.000–9.000 塊 sebulan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belanja: kalimat yang benar-benar dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**多少錢？**",
+       "duōshǎo qián?",
+       "Berapa harganya?"
+      ],
+      [
+       "**這個多少？**",
+       "zhè ge duōshǎo?",
+       "Yang ini berapa? (paling singkat)"
+      ],
+      [
+       "**太貴了！**",
+       "tài guì le!",
+       "Mahal sekali!"
+      ],
+      [
+       "**算便宜一點**",
+       "suàn piányí yìdiǎn",
+       "Kasih murah sedikit dong"
+      ],
+      [
+       "**可以打折嗎？**",
+       "kěyǐ dǎzhé ma?",
+       "Boleh diskon?"
+      ],
+      [
+       "**我要這個**",
+       "wǒ yào zhè ge",
+       "Saya mau yang ini"
+      ],
+      [
+       "**我不要，謝謝**",
+       "wǒ bú yào, xièxie",
+       "Tidak, terima kasih"
+      ],
+      [
+       "**我看看**",
+       "wǒ kànkàn",
+       "Saya lihat-lihat dulu"
+      ],
+      [
+       "**有沒有別的？**",
+       "yǒu méi yǒu bié de?",
+       "Ada yang lain?"
+      ],
+      [
+       "**可以刷卡嗎？**",
+       "kěyǐ shuākǎ ma?",
+       "Bisa bayar kartu?"
+      ],
+      [
+       "**給我一張收據**",
+       "gěi wǒ yì zhāng shōujù",
+       "Minta strukmya"
+      ],
+      [
+       "**不用袋子，謝謝**",
+       "búyòng dàizi, xièxie",
+       "Tidak usah kantong, terima kasih"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **打折 dihitung terbalik dari kebiasaan Indonesia.** *八折* (*bā zhé*) bukan diskon delapan puluh persen, melainkan **membayar delapan puluh persen** — jadi diskonnya dua puluh persen. *五折* = separuh harga. Papan bertuliskan 三折 berarti kamu cuma bayar tiga puluh persen; itu obral besar."
+    }
+   ]
+  },
+  {
+   "title": "Menawar: di mana boleh, di mana tidak",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "⚠️ Aturan tak tertulis di Taiwan",
+     "items": [
+      "**Boleh menawar:** pasar malam 夜市, pasar tradisional 傳統市場, toko kecil pakaian dan aksesori, penjual buah di pinggir jalan.",
+      "**Tidak boleh menawar:** 便利商店, toko berantai, restoran, apotek, department store, mesin tiket. Menawar di 7-Eleven akan membuat kasirnya bingung, bukan tersinggung.",
+      "**Kalimat pembuka yang paling wajar:** *算便宜一點啦！* — bukan menyebut angka duluan. Biarkan penjualnya yang turun.",
+      "**Kartu truf yang benar-benar berhasil:** membeli lebih dari satu (*我買兩件*) dan mengaku mahasiswa (*我們是學生耶*).",
+      "**Kalau sudah tidak bisa turun, penjual akan berkata** *不能再少了* atau *真的沒賺錢*. Itu tanda berhenti; memaksa lebih jauh dianggap tidak sopan."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nada bicaranya jauh lebih penting daripada kalimatnya. Menawar di Taiwan dilakukan sambil tersenyum, dengan 啦 dan 耶 di ujung kalimat, seperti bercanda dengan teman. Menawar dengan wajah serius membuat suasananya berubah dan hasilnya justru lebih buruk."
+    }
+   ]
+  },
+  {
+   "title": "Warna dan ukuran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "紅色",
+       "hóngsè",
+       "merah",
+       "大",
+       "dà",
+       "besar"
+      ],
+      [
+       "藍色",
+       "lánsè",
+       "biru",
+       "小",
+       "xiǎo",
+       "kecil"
+      ],
+      [
+       "黑色",
+       "hēisè",
+       "hitam",
+       "長",
+       "cháng",
+       "panjang"
+      ],
+      [
+       "白色",
+       "báisè",
+       "putih",
+       "短",
+       "duǎn",
+       "pendek"
+      ],
+      [
+       "黃色",
+       "huángsè",
+       "kuning",
+       "貴",
+       "guì",
+       "mahal"
+      ],
+      [
+       "綠色",
+       "lǜsè",
+       "hijau",
+       "便宜",
+       "piányí",
+       "murah"
+      ],
+      [
+       "咖啡色",
+       "kāfēisè",
+       "cokelat",
+       "新",
+       "xīn",
+       "baru"
+      ],
+      [
+       "粉紅色",
+       "fěnhóngsè",
+       "merah muda",
+       "舊",
+       "jiù",
+       "lama, bekas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**色 berarti \"warna\" dan boleh dilepas** kalau ada 的 sesudahnya: *紅的* = \"yang merah\". Ukuran baju memakai kata Inggris yang diucapkan apa adanya, atau: 大號 (L), 中號 (M), 小號 (S). Untuk mencoba baju: **我可以試穿嗎？** *Wǒ kěyǐ shìchuān ma?*"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "錢",
+   "baca": "qián",
+   "id": "uang"
+  },
+  {
+   "zh": "多少",
+   "baca": "duōshǎo",
+   "id": "berapa banyak"
+  },
+  {
+   "zh": "塊",
+   "baca": "kuài",
+   "id": "dolar (diucapkan)"
+  },
+  {
+   "zh": "元",
+   "baca": "yuán",
+   "id": "dolar (tertulis)"
+  },
+  {
+   "zh": "兩",
+   "baca": "liǎng",
+   "id": "⚠️ dua (+ penggolong)"
+  },
+  {
+   "zh": "百",
+   "baca": "bǎi",
+   "id": "ratus"
+  },
+  {
+   "zh": "千",
+   "baca": "qiān",
+   "id": "ribu"
+  },
+  {
+   "zh": "萬",
+   "baca": "wàn",
+   "id": "⚠️ sepuluh ribu"
+  },
+  {
+   "zh": "零",
+   "baca": "líng",
+   "id": "nol"
+  },
+  {
+   "zh": "貴",
+   "baca": "guì",
+   "id": "mahal"
+  },
+  {
+   "zh": "便宜",
+   "baca": "piányí",
+   "id": "murah"
+  },
+  {
+   "zh": "買",
+   "baca": "mǎi",
+   "id": "membeli"
+  },
+  {
+   "zh": "賣",
+   "baca": "mài",
+   "id": "menjual"
+  },
+  {
+   "zh": "要",
+   "baca": "yào",
+   "id": "mau, minta"
+  },
+  {
+   "zh": "老闆",
+   "baca": "lǎobǎn",
+   "id": "bos; penjaga toko"
+  },
+  {
+   "zh": "夜市",
+   "baca": "yèshì",
+   "id": "pasar malam"
+  },
+  {
+   "zh": "件",
+   "baca": "jiàn",
+   "id": "(penggolong pakaian)"
+  },
+  {
+   "zh": "還是",
+   "baca": "háishì",
+   "id": "atau (dalam tanya)"
+  },
+  {
+   "zh": "刷卡",
+   "baca": "shuākǎ",
+   "id": "bayar dengan kartu"
+  },
+  {
+   "zh": "打折",
+   "baca": "dǎzhé",
+   "id": "⚠️ diskon (dihitung terbalik)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Berapa harganya?",
+    "Mahal sekali!",
+    "Saya mau dua.",
+    "Kasih murah sedikit dong!",
+    "Bisa bayar pakai kartu?",
+    "Ini seribu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan 二 atau 兩.",
+   "items": [
+    "我要 ____ 個。",
+    "一、____、三。",
+    "十 ____ 點。",
+    "____ 百塊。",
+    "五月 ____ 號。",
+    "____ 杯茶。"
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan aksara Mandarin.",
+   "items": [
+    "35",
+    "108",
+    "350",
+    "1.000",
+    "10.000",
+    "25.000"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "錢 / 多少 / 這個",
+    "件 / 我 / 兩 / 要",
+    "一點 / 算 / 便宜",
+    "了 / 太 / 貴",
+    "嗎 / 刷卡 / 可以"
+   ]
+  }
+ ],
+ "answers": [
+  "多少錢？ — 太貴了！ — 我要兩個。 — 算便宜一點啦！ — 可以刷卡嗎？ — 這是一千。",
+  "兩 — 二 — 二 — 兩 — 二 — 兩",
+  "三十五 — 一百零八 — 三百五十 — 一千 — 一萬 — 兩萬五千",
+  "這個多少錢？ — 我要兩件。 — 算便宜一點。 — 太貴了。 — 可以刷卡嗎？"
+ ]
+}

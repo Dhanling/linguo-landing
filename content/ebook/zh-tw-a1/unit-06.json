@@ -1,0 +1,617 @@
+{
+ "title": "Sekarang jam berapa?",
+ "title_target": "現在幾點？",
+ "goal": "Menyebut jam, membuat janji, dan menerima satu aturan yang mengatur seluruh kalimatmu sesudah ini: keterangan waktu berdiri SEBELUM kata kerja.",
+ "bekal": [
+  "menyebut jam, menit, dan bagian hari dengan benar",
+  "menaruh keterangan waktu di tempat yang benar — dan tahu kenapa di situ",
+  "membuat dan membatalkan janji dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "對話 — 約時間",
+   "intro": "Budi dan Xiaomei mau belajar bersama sebelum ujian. Mereka mencari waktu yang cocok.",
+   "lines": [
+    {
+     "speaker": "布迪:",
+     "text": "[小美|Xiǎoměi]，[妳|nǐ][明天|míngtiān][有空|yǒukòng][嗎|ma]？",
+     "id": "Xiaomei, besok kamu ada waktu?",
+     "literal": "Xiaomei, kamu — besok — ada — waktu-luang — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[明天|Míngtiān][早上|zǎoshang][有課|yǒu kè]，[下午|xiàwǔ][可以|kěyǐ]。",
+     "id": "Besok pagi ada kelas, sore bisa.",
+     "literal": "besok — pagi — ada — pelajaran, sore — boleh."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[下午|Xiàwǔ][幾點|jǐ diǎn][比較|bǐjiào][好|hǎo]？",
+     "id": "Sore jam berapa yang lebih enak?",
+     "literal": "sore — berapa — jam — lebih-banding — baik?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[兩點|Liǎng diǎn][半|bàn][怎麼樣|zěnmeyàng]？",
+     "id": "Setengah tiga bagaimana?",
+     "literal": "dua — jam — setengah — bagaimana-rupa?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[兩點半|Liǎng diǎn bàn][我|wǒ][還在|hái zài][上課|shàngkè][耶|ye]。",
+     "id": "Setengah tiga saya masih kuliah lho.",
+     "literal": "dua — jam — setengah — saya — masih — sedang — naik-pelajaran — lho."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[那|Nà][你|nǐ][幾點|jǐ diǎn][下課|xiàkè]？",
+     "id": "Kalau begitu kamu selesai kelas jam berapa?",
+     "literal": "kalau-begitu — kamu — berapa — jam — turun-pelajaran?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[三點|Sān diǎn][十分|shí fēn]。[三點半|Sān diǎn bàn][可以|kěyǐ][嗎|ma]？",
+     "id": "Jam 3.10. Setengah empat bisa?",
+     "literal": "tiga — jam — sepuluh — menit. tiga — jam — setengah — boleh — kah?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[可以|Kěyǐ]。[我們|Wǒmen][在|zài][圖書館|túshūguǎn][見|jiàn]。",
+     "id": "Bisa. Kita ketemu di perpustakaan.",
+     "literal": "boleh. kami — di — perpustakaan — bertemu."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[好|Hǎo]。[圖書館|Túshūguǎn][幾點|jǐ diǎn][關門|guānmén]？",
+     "id": "Oke. Perpustakaan tutup jam berapa?",
+     "literal": "baik. perpustakaan — berapa — jam — tutup-pintu?"
+    },
+    {
+     "speaker": "小美:",
+     "text": "[晚上|Wǎnshang][十點|shí diǎn]。[時間|Shíjiān][很多|hěn duō]。",
+     "id": "Jam sepuluh malam. Waktunya banyak.",
+     "literal": "malam — sepuluh — jam. waktu — sangat — banyak."
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[太好了|Tài hǎo le]！[那|Nà][我們|wǒmen][晚上|wǎnshang][一起|yìqǐ][吃飯|chīfàn][吧|ba]。",
+     "id": "Bagus sekali! Kalau begitu malamnya kita makan bareng ya.",
+     "literal": "terlalu — baik — sudah! kalau-begitu — kami — malam — bersama — makan-nasi — ya."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[好啊|Hǎo a]！[六點|Liù diǎn][還是|háishì][七點|qī diǎn]？",
+     "id": "Boleh! Jam enam atau jam tujuh?",
+     "literal": "baik — lho! enam — jam — atau — tujuh — jam?"
+    },
+    {
+     "speaker": "布迪:",
+     "text": "[六點|Liù diǎn][吧|ba]，[太晚|tài wǎn][我|wǒ][會|huì][餓|è]。",
+     "id": "Jam enam saja deh, kalau kemalaman saya kelaparan.",
+     "literal": "enam — jam — ya, terlalu — malam — saya — akan — lapar."
+    },
+    {
+     "speaker": "小美:",
+     "text": "[哈哈|Hāhā]，[好|hǎo]！[明天|Míngtiān][三點半|sān diǎn bàn][見|jiàn]！",
+     "id": "Haha, oke! Sampai jumpa besok setengah empat!",
+     "literal": "haha, baik! besok — tiga — jam — setengah — bertemu!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Pukul dua adalah 兩點, bukan 二點.** 點 adalah kata penggolong, dan di depan penggolong angka dua selalu 兩. Ini satu-satunya jam yang memakai 兩; semua jam lain memakai angka biasa.",
+    "**上課 dan 下課 dipakai oleh guru maupun murid.** 上課 = kelas berlangsung / masuk kelas; 下課 = kelas selesai. Pola 上/下 yang sama muncul di 上班 (masuk kerja) dan 下班 (pulang kerja), 上車 (naik kendaraan) dan 下車 (turun).",
+    "**怎麼樣？ (\"bagaimana?\") adalah cara paling wajar mengusulkan sesuatu.** *兩點半怎麼樣？* — \"Setengah tiga bagaimana?\" Ia juga dipakai untuk bertanya pendapat: *這家餐廳怎麼樣？*",
+    "**比較 (*bǐjiào*, \"lebih\") dipakai jauh lebih sering daripada dugaanmu.** Orang Taiwan memakainya untuk melunakkan pendapat: *我比較喜歡這個* (\"saya lebih suka yang ini\") terdengar lebih halus daripada menyatakan pilihan langsung.",
+    "⚠️ **太…了 adalah kerangka lengkap yang tidak boleh dipisah.** *太好了！* (bagus sekali!), *太貴了！* (mahal sekali!), *太晚了！* (kemalaman!). Melepas 了 membuatnya terdengar menggantung."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca jam",
+     "body": [
+      "Jam memakai **點** (*diǎn*, harfiah \"titik\") dan menit memakai **分** (*fēn*). Urutannya besar ke kecil, sama seperti seluruh keterangan waktu dalam bahasa Mandarin."
+     ],
+     "table": {
+      "head": [
+       "Waktu",
+       "中文",
+       "Pīnyīn",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "1.00",
+        "一點",
+        "yì diǎn",
+        ""
+       ],
+       [
+        "2.00",
+        "**兩**點",
+        "liǎng diǎn",
+        "⚠️ bukan 二點"
+       ],
+       [
+        "3.10",
+        "三點十分",
+        "sān diǎn shí fēn",
+        ""
+       ],
+       [
+        "3.05",
+        "三點零五分",
+        "sān diǎn líng wǔ fēn",
+        "⚠️ 零 untuk di bawah 10"
+       ],
+       [
+        "3.15",
+        "三點十五分 / 三點一刻",
+        "sān diǎn yí kè",
+        "刻 = seperempat"
+       ],
+       [
+        "3.30",
+        "三點半",
+        "sān diǎn bàn",
+        "半 = setengah"
+       ],
+       [
+        "3.45",
+        "三點四十五分 / 三點三刻",
+        "sān diǎn sān kè",
+        ""
+       ],
+       [
+        "2.55",
+        "差五分三點",
+        "chà wǔ fēn sān diǎn",
+        "kurang lima menit ke jam tiga"
+       ],
+       [
+        "12.00 siang",
+        "中午十二點",
+        "zhōngwǔ shí'èr diǎn",
+        ""
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **三點半 berarti pukul 3.30, bukan setengah tiga.** Bahasa Mandarin menghitung setengah **sesudah** jamnya, sama seperti bahasa Inggris dan kebalikan dari bahasa Indonesia yang menghitung setengah **menuju** jam berikutnya. Kekeliruan ini membuat orang datang satu jam lebih awal atau terlambat.",
+      "**Bagian hari selalu berdiri di DEPAN jamnya**: 早上八點 (jam 8 pagi), 下午三點 (jam 3 sore), 晚上十點 (jam 10 malam). Taiwan memakai sistem dua belas jam dalam percakapan; jadwal kereta memakai dua puluh empat jam."
+     ]
+    },
+    {
+     "title": "⚠️ Waktu berdiri SEBELUM kata kerja",
+     "body": [
+      "Inilah aturan yang paling sering dilanggar penutur bahasa Indonesia, karena bahasa Indonesia membolehkan keterangan waktu di mana saja: \"Saya pergi besok\", \"Besok saya pergi\", \"Saya besok pergi\" — ketiganya benar.",
+      "Bahasa Mandarin cuma membolehkan dua tempat, dan keduanya **sebelum kata kerja**."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**我明天去。**",
+        "Wǒ míngtiān qù.",
+        "✓ Saya besok pergi."
+       ],
+       [
+        "**明天我去。**",
+        "Míngtiān wǒ qù.",
+        "✓ Besok saya pergi. (waktu ditekankan)"
+       ],
+       [
+        "✗ 我去明天。",
+        "—",
+        "✗ salah, tidak pernah dipakai"
+       ],
+       [
+        "我**每天七點**起床。",
+        "Wǒ měitiān qī diǎn qǐchuáng.",
+        "Saya bangun jam tujuh setiap hari."
+       ],
+       [
+        "我們**三點半**見。",
+        "Wǒmen sān diǎn bàn jiàn.",
+        "Kita ketemu setengah empat."
+       ]
+      ]
+     },
+     "after": [
+      "**Kalau ada beberapa keterangan waktu, urutannya besar ke kecil**: *明天下午三點* (besok sore jam tiga) — bukan *三點下午明天*. Aturan besar-ke-kecil ini juga berlaku untuk tanggal dan alamat, dan ia berlaku tanpa kekecualian.",
+      "⚠️ Aturan ini bukan cuma soal waktu. **Semua keterangan** — tempat (在…), cara (怎麼), teman (跟…) — berdiri sebelum kata kerja dalam bahasa Mandarin. Sekali kamu menerima ini, separuh susunan kalimat Mandarin sudah beres.",
+      "Kalimat lengkap yang menampung semuanya: **我明天下午在圖書館跟小美一起念書。** — \"Besok sore saya belajar bersama Xiaomei di perpustakaan.\" Waktu → tempat → teman → kata kerja."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian hari dan kata waktu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Arti",
+      "中文",
+      "Pīnyīn",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "早上",
+       "zǎoshang",
+       "pagi",
+       "現在",
+       "xiànzài",
+       "sekarang"
+      ],
+      [
+       "上午",
+       "shàngwǔ",
+       "pagi–siang",
+       "今天",
+       "jīntiān",
+       "hari ini"
+      ],
+      [
+       "中午",
+       "zhōngwǔ",
+       "tengah hari",
+       "明天",
+       "míngtiān",
+       "besok"
+      ],
+      [
+       "下午",
+       "xiàwǔ",
+       "sore",
+       "昨天",
+       "zuótiān",
+       "kemarin"
+      ],
+      [
+       "晚上",
+       "wǎnshang",
+       "malam",
+       "後天",
+       "hòutiān",
+       "lusa"
+      ],
+      [
+       "半夜",
+       "bànyè",
+       "tengah malam",
+       "前天",
+       "qiántiān",
+       "kemarin dulu"
+      ],
+      [
+       "早",
+       "zǎo",
+       "awal, pagi-pagi",
+       "每天",
+       "měitiān",
+       "setiap hari"
+      ],
+      [
+       "晚",
+       "wǎn",
+       "terlambat, malam",
+       "有時候",
+       "yǒu shíhòu",
+       "kadang-kadang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **後天 (\"hari belakang\") berarti lusa dan 前天 (\"hari depan\") berarti kemarin dulu** — kebalikan dari dugaan orang Indonesia, yang menganggap \"depan\" berarti masa depan. Bahasa Mandarin membayangkan waktu seperti antrean: yang **sudah lewat** berdiri di depanmu karena kamu bisa melihatnya; yang belum datang ada di belakang."
+    }
+   ]
+  },
+  {
+   "title": "Kegiatan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "起床",
+       "qǐchuáng",
+       "bangun tidur"
+      ],
+      [
+       "洗澡",
+       "xǐzǎo",
+       "mandi"
+      ],
+      [
+       "吃早餐",
+       "chī zǎocān",
+       "sarapan"
+      ],
+      [
+       "上班 / 上課",
+       "shàngbān / shàngkè",
+       "masuk kerja / masuk kelas"
+      ],
+      [
+       "下班 / 下課",
+       "xiàbān / xiàkè",
+       "pulang kerja / selesai kelas"
+      ],
+      [
+       "吃午餐",
+       "chī wǔcān",
+       "makan siang"
+      ],
+      [
+       "念書 / 讀書",
+       "niànshū / dúshū",
+       "belajar, membaca buku"
+      ],
+      [
+       "回家",
+       "huí jiā",
+       "pulang ke rumah"
+      ],
+      [
+       "吃晚餐",
+       "chī wǎncān",
+       "makan malam"
+      ],
+      [
+       "睡覺",
+       "shuìjiào",
+       "tidur"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Satu hari Budi, sekaligus latihan urutan waktu",
+     "items": [
+      "**我每天七點起床。** — Saya bangun jam tujuh setiap hari.",
+      "**我早上八點上課。** — Saya masuk kelas jam delapan pagi.",
+      "**我中午十二點半吃午餐。** — Saya makan siang jam setengah satu.",
+      "**我下午五點回家。** — Saya pulang jam lima sore.",
+      "**我晚上十一點睡覺。** — Saya tidur jam sebelas malam.",
+      "⚠️ Perhatikan bahwa dalam kelima kalimat itu, kata kerjanya selalu di **ujung**, sesudah seluruh keterangan waktu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membuat janji",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "中文",
+      "Pīnyīn",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**你有空嗎？**",
+       "nǐ yǒukòng ma?",
+       "Kamu ada waktu?"
+      ],
+      [
+       "**你什麼時候有空？**",
+       "nǐ shénme shíhòu yǒukòng?",
+       "Kapan kamu ada waktu?"
+      ],
+      [
+       "**幾點比較好？**",
+       "jǐ diǎn bǐjiào hǎo?",
+       "Jam berapa lebih enak?"
+      ],
+      [
+       "**三點怎麼樣？**",
+       "sān diǎn zěnmeyàng?",
+       "Jam tiga bagaimana?"
+      ],
+      [
+       "**我們幾點見？**",
+       "wǒmen jǐ diǎn jiàn?",
+       "Kita ketemu jam berapa?"
+      ],
+      [
+       "**我沒空**",
+       "wǒ méi kòng",
+       "Saya tidak ada waktu"
+      ],
+      [
+       "**我今天有事**",
+       "wǒ jīntiān yǒu shì",
+       "Hari ini saya ada urusan"
+      ],
+      [
+       "**改天好嗎？**",
+       "gǎitiān hǎo ma?",
+       "Lain hari saja ya?"
+      ],
+      [
+       "**我會遲到十分鐘**",
+       "wǒ huì chídào shí fēnzhōng",
+       "Saya akan telat sepuluh menit"
+      ],
+      [
+       "**不好意思，我遲到了**",
+       "bù hǎoyìsi, wǒ chídào le",
+       "Maaf, saya terlambat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Menolak langsung dianggap kasar; yang dipakai adalah alasan lalu tawaran ganti.** *我今天有事，改天好嗎？* jauh lebih wajar daripada 我不要. Pola \"alasan + 改天好嗎\" ini akan menyelamatkanmu berkali-kali."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "現在",
+   "baca": "xiànzài",
+   "id": "sekarang"
+  },
+  {
+   "zh": "幾",
+   "baca": "jǐ",
+   "id": "berapa (di bawah 10)"
+  },
+  {
+   "zh": "點",
+   "baca": "diǎn",
+   "id": "jam (waktu)"
+  },
+  {
+   "zh": "分",
+   "baca": "fēn",
+   "id": "menit"
+  },
+  {
+   "zh": "半",
+   "baca": "bàn",
+   "id": "setengah"
+  },
+  {
+   "zh": "早上",
+   "baca": "zǎoshang",
+   "id": "pagi"
+  },
+  {
+   "zh": "下午",
+   "baca": "xiàwǔ",
+   "id": "sore"
+  },
+  {
+   "zh": "晚上",
+   "baca": "wǎnshang",
+   "id": "malam"
+  },
+  {
+   "zh": "明天",
+   "baca": "míngtiān",
+   "id": "besok"
+  },
+  {
+   "zh": "昨天",
+   "baca": "zuótiān",
+   "id": "kemarin"
+  },
+  {
+   "zh": "每天",
+   "baca": "měitiān",
+   "id": "setiap hari"
+  },
+  {
+   "zh": "時間",
+   "baca": "shíjiān",
+   "id": "waktu"
+  },
+  {
+   "zh": "有空",
+   "baca": "yǒukòng",
+   "id": "ada waktu luang"
+  },
+  {
+   "zh": "上課",
+   "baca": "shàngkè",
+   "id": "masuk kelas"
+  },
+  {
+   "zh": "下課",
+   "baca": "xiàkè",
+   "id": "selesai kelas"
+  },
+  {
+   "zh": "見",
+   "baca": "jiàn",
+   "id": "bertemu"
+  },
+  {
+   "zh": "一起",
+   "baca": "yìqǐ",
+   "id": "bersama"
+  },
+  {
+   "zh": "怎麼樣",
+   "baca": "zěnmeyàng",
+   "id": "bagaimana"
+  },
+  {
+   "zh": "比較",
+   "baca": "bǐjiào",
+   "id": "lebih"
+  },
+  {
+   "zh": "遲到",
+   "baca": "chídào",
+   "id": "terlambat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Sekarang jam 3.30.",
+    "Besok kamu ada waktu?",
+    "Saya bangun jam tujuh setiap hari.",
+    "Kita ketemu di perpustakaan jam empat sore.",
+    "Maaf, saya terlambat."
+   ]
+  },
+  {
+   "prompt": "Tulis jamnya dengan aksara Mandarin.",
+   "items": [
+    "2.00",
+    "3.30",
+    "8.05",
+    "12.15",
+    "10.45",
+    "7.20 malam"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya — semua salah letak keterangan waktunya.",
+   "items": [
+    "我去明天。",
+    "他吃飯七點。",
+    "我起床每天六點。",
+    "我們見三點半。",
+    "她回家晚上十點。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "點 / 現在 / 幾",
+    "有空 / 嗎 / 你 / 明天",
+    "起床 / 我 / 七點 / 每天",
+    "見 / 我們 / 三點半",
+    "吃飯 / 晚上 / 一起 / 我們"
+   ]
+  }
+ ],
+ "answers": [
+  "現在幾點？ — 現在三點半。 — 你明天有空嗎？ — 我每天七點起床。 — 我們下午四點在圖書館見。 — 不好意思，我遲到了。",
+  "兩點 — 三點半 — 八點零五分 — 十二點十五分 — 十點四十五分 — 晚上七點二十分",
+  "我明天去。 — 他七點吃飯。 — 我每天六點起床。 — 我們三點半見。 — 她晚上十點回家。",
+  "現在幾點？ — 你明天有空嗎？ — 我每天七點起床。 — 我們三點半見。 — 我們晚上一起吃飯。"
+ ]
+}
