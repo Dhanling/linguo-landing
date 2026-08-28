@@ -83,11 +83,23 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
    naik sedikit lebih tinggi dari barisnya — itu yang bikin gerakannya terbaca
    sebagai "maju ke depan", bukan sekadar kotak yang melar. */
 const NAV_ITEM_BASE =
-  "group relative flex w-full items-center gap-3 rounded-2xl px-3.5 py-2.5 text-left text-[13px] font-semibold origin-left transform-gpu transition-[transform,background-color,color] duration-200 ease-out hover:scale-[1.045] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
+  "group relative flex w-full shrink-0 items-center gap-3 rounded-2xl px-3.5 py-2.5 text-left text-[13px] font-semibold origin-left transform-gpu transition-[transform,background-color,color] duration-200 ease-out hover:scale-[1.045] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 [@media(max-height:820px)]:py-2";
 const NAV_ITEM_ACTIVE = "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]";
 const NAV_ITEM_IDLE = "text-white/70 hover:bg-white/10 hover:text-white";
 const NAV_ICON = "h-[20px] w-[20px] shrink-0 transform-gpu transition-transform duration-200 ease-out group-hover:scale-110";
-const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracking-[0.09em] text-white/40";
+const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracking-[0.09em] text-white/40 [@media(max-height:820px)]:pt-2.5";
+
+/* [shell-tablet-rail-v1] Tablet (md, 768–1023px) dulu dilempar ke tampilan HP:
+   sidebar `hidden lg:flex` bikin iPad tegak & laptop kecil kehilangan menu tetap
+   dan malah dapat drawer + bottom nav — layar 800px jadi terasa "HP raksasa".
+   Sekarang ada tingkat ketiga: RAIL ikon-saja selebar 76px mulai md, melebar jadi
+   216px + label mulai lg. Pola ini sengaja kembar dengan rail dashboard pengajar
+   supaya dua dashboard terasa satu keluarga.
+   AWAS: kelas di bawah HANYA dipakai sidebar. Drawer mobile memakai renderer yang
+   sama tapi hidup di bawah md — kalau kelas `lg:`-nya ikut dipasang ke drawer,
+   menunya jadi ikon tanpa teks di HP. Itu sebabnya `rail` dioper eksplisit. */
+const RAIL_COMPACT = "justify-center gap-0 px-0 lg:justify-start lg:gap-3 lg:px-3.5";
+const RAIL_LABEL = "hidden lg:inline";
 
 const DARK_KEY = "lms-dark-mode";
 
@@ -261,10 +273,15 @@ export default function StudentShell({
   );
 
   // Satu renderer dipakai sidebar desktop & drawer mobile → menunya mustahil beda.
-  const renderItem = (item: NavItem, onNavigated?: () => void) => {
+  const renderItem = (item: NavItem, onNavigated?: () => void, rail = false) => {
     const Icon = item.icon;
+    // [shell-tablet-rail-v1] di rail sempit label disembunyikan → judulnya pindah ke
+    // tooltip supaya menu tetap bisa dikenali tanpa melebarkan sidebar.
+    const compact = rail ? ` ${RAIL_COMPACT}` : "";
+    const labelCls = rail ? `truncate ${RAIL_LABEL}` : "truncate";
+    const railTitle = rail ? t(item.label) : undefined;
     // [nav-newtab-icon-off-v1] tak ada lagi tombol di kanan → tak perlu sisa ruang.
-    const NAV_ITEM_LINK = NAV_ITEM_BASE;
+    const NAV_ITEM_LINK = NAV_ITEM_BASE + compact;
     if ("href" in item) {
       // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
       // (dulu <a> biasa = full page reload tiap pindah menu)
@@ -285,8 +302,8 @@ export default function StudentShell({
           onClick={onNavigated}
           target={newTab ? "_blank" : undefined}
           rel={newTab ? "noopener noreferrer" : undefined}
-          title={newTab ? `${t("Buka")} ${t(item.label)} ${t("di tab baru")}` : undefined}
-          className={`${newTab ? NAV_ITEM_BASE : NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+          title={newTab ? `${t("Buka")} ${t(item.label)} ${t("di tab baru")}` : railTitle}
+          className={`${newTab ? NAV_ITEM_BASE + compact : NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
           aria-current={isActiveLink ? "page" : undefined}
         >
           <Icon className={NAV_ICON} />
@@ -301,9 +318,9 @@ export default function StudentShell({
     }
     if (item.soon) {
       return (
-        <div key={item.key} className={`${NAV_ITEM_BASE} cursor-default text-white/35`}>
+        <div key={item.key} title={railTitle} className={`${NAV_ITEM_BASE}${compact} cursor-default text-white/35`}>
           <Icon className={NAV_ICON} />
-          <span className="truncate">{t(item.label)}</span>
+          <span className={labelCls}>{t(item.label)}</span>
         </div>
       );
     }
@@ -328,62 +345,76 @@ export default function StudentShell({
           onTabChange(item.key as AkunTab);
           onNavigated?.();
         }}
+        title={railTitle}
         className={`${NAV_ITEM_LINK} ${isActive ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
         aria-current={isActive ? "page" : undefined}
       >
         <Icon className={NAV_ICON} />
-        <span className="truncate">{t(item.label)}</span>
+        <span className={labelCls}>{t(item.label)}</span>
       </Link>
     ));
   };
 
-  const renderNav = (onNavigated?: () => void) => (
+  const renderNav = (onNavigated?: () => void, rail = false) => (
     <>
-      {renderItem(NAV_HOME, onNavigated)}
+      {renderItem(NAV_HOME, onNavigated, rail)}
       {NAV_GROUPS.map((g) => {
         const items = g.items.filter((it) => showNav(it.key));
         if (items.length === 0) return null;
         return (
           <div key={g.title} className="flex flex-col gap-1.5">
-            <p className={GROUP_LABEL}>{t(g.title)}</p>
-            {items.map((it) => renderItem(it, onNavigated))}
+            {/* [shell-tablet-rail-v1] Judul seksi tak muat di rail 76px. Diganti garis
+                tipis supaya pengelompokannya tetap kebaca sebagai kelompok, bukan
+                satu daftar panjang tanpa jeda. */}
+            {rail && <span aria-hidden className="mx-auto mt-3 h-px w-7 rounded-full bg-white/15 lg:hidden" />}
+            <p className={`${GROUP_LABEL}${rail ? " hidden lg:block" : ""}`}>{t(g.title)}</p>
+            {items.map((it) => renderItem(it, onNavigated, rail))}
           </div>
         );
       })}
     </>
   );
 
-  const themeBtn = (
-    <button
-      onClick={toggleDark}
-      className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
-      aria-label={isDark ? t("Mode terang") : t("Mode gelap")}
-    >
-      {isDark ? <Sun className={`${NAV_ICON} text-amber-300`} /> : <Moon className={NAV_ICON} />}
-      <span className="truncate">{isDark ? t("Mode terang") : t("Mode gelap")}</span>
-    </button>
-  );
+  // [shell-tablet-rail-v1] dulu tiga konstanta JSX — sekarang fungsi, karena di rail
+  // tablet ketiganya ikut menciut jadi ikon-saja.
+  const themeBtn = (rail = false) => {
+    const label = isDark ? t("Mode terang") : t("Mode gelap");
+    return (
+      <button
+        onClick={toggleDark}
+        title={rail ? label : undefined}
+        className={`${NAV_ITEM_BASE}${rail ? ` ${RAIL_COMPACT}` : ""} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
+        aria-label={label}
+      >
+        {isDark ? <Sun className={`${NAV_ICON} text-amber-300`} /> : <Moon className={NAV_ICON} />}
+        <span className={rail ? `truncate ${RAIL_LABEL}` : "truncate"}>{label}</span>
+      </button>
+    );
+  };
 
-  const bugBtn = canReportBug ? (
+  const bugBtn = (rail = false) => canReportBug ? (
     <button
       onClick={() => setBugOpen(true)}
-      className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
+      title={rail ? t("Lapor Bug") : undefined}
+      aria-label={t("Lapor Bug")}
+      className={`${NAV_ITEM_BASE}${rail ? ` ${RAIL_COMPACT}` : ""} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
     >
       <Bug className={NAV_ICON} />
-      <span className="truncate">{t("Lapor Bug")}</span>
+      <span className={rail ? `truncate ${RAIL_LABEL}` : "truncate"}>{t("Lapor Bug")}</span>
     </button>
   ) : null;
 
-  const logoutBtn = (
-    <button onClick={signOut} className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}>
+  const logoutBtn = (rail = false) => (
+    <button onClick={signOut} title={rail ? t("Keluar") : undefined} aria-label={t("Keluar")}
+      className={`${NAV_ITEM_BASE}${rail ? ` ${RAIL_COMPACT}` : ""} text-white/80 hover:bg-[#0F5A52] hover:text-white`}>
       <LogOut className={NAV_ICON} />
-      <span className="truncate">{t("Keluar")}</span>
+      <span className={rail ? `truncate ${RAIL_LABEL}` : "truncate"}>{t("Keluar")}</span>
     </button>
   );
 
   return (
     /* [linguo-patch:shell-frame-ref-v2] full-bleed: teal isi penuh viewport (no outer grey), white canvas float di dalem */
-    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0">
+    <div className="min-h-screen w-full bg-[#EEF1F4] md:flex md:p-0">
       <script dangerouslySetInnerHTML={{ __html: DARK_BOOT }} />
       {/* [ling-lms-dark-v2] dark mode scoped & class-based — !important biar menang atas utility Tailwind.
           Palet HITAM dominan (bukan abu kebiruan) + teks kontras tinggi; nutup juga class gray-* dan
@@ -406,7 +437,7 @@ export default function StudentShell({
         /* ── Latar: hitam dominan ── */
         .lms-dark{background:#000000;}
         .lms-dark .bg-\\[\\#EEF1F4\\]{background-color:#000000 !important;}
-        .lms-dark .lg\\:bg-\\[\\#16796E\\]{background-color:#000000 !important;}
+        .lms-dark .md\\:bg-\\[\\#16796E\\]{background-color:#000000 !important;}
         /* [shell-dark-pure-black-v1] Palet dibikin HITAM PEKAT (samain rasa dgn dashboard
            pengajar). Sebelumnya panel #141414 + kartu #1c1c1c: bidang abu selebar layar
            bikin dashboard kelihatan abu kebiruan, bukan hitam. Sekarang panel & well
@@ -642,34 +673,47 @@ export default function StudentShell({
         .lms-dark .bg-slate-400.text-white,.lms-dark .bg-gray-400.text-white{background-color:#2f3338 !important;}
         .lms-dark .hover\\:bg-slate-500.text-white:hover,.lms-dark .hover\\:bg-gray-500.text-white:hover{background-color:#3a3f45 !important;}
       `}</style>
-      <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
+      {/* [shell-tablet-rail-v1] Bingkai teal + tinggi setara layar mulai md (bukan lg):
+          itu yang bikin iPad tegak & laptop kecil dapat kanvas dashboard, bukan
+          halaman panjang gaya HP.
+          [shell-laptop-height-v1] `min-h-[600px]` dilonggarkan ke 520px khusus md–lg:
+          laptop Windows 1366×768 (tinggi viewport efektif ±600px setelah bilah
+          browser) sebelumnya kena tinggi minimum yang lebih besar dari layarnya
+          sendiri → seluruh shell ikut menggulung dan sidebar-nya ikut hanyut. */}
+      <div className="w-full md:flex md:h-screen md:min-h-[520px] md:bg-[#16796E] md:p-2.5 lg:min-h-[600px] lg:p-3">
 
         {/* SIDEBAR — desktop only. [sidebar-label-v1] ikon + teks label */}
-        <aside className="hidden w-[216px] shrink-0 flex-col overflow-y-auto px-4 py-7 lg:flex">
-          {/* logo — white bubble langsung di atas teal, tanpa kotak putih */}
-          <div className="flex items-center gap-2.5 px-2">
+        {/* [shell-laptop-height-v1] 10 menu + 3 label seksi + 3 tombol bawah ≈ 750px. Di
+            laptop Windows 1366×768 sidebar-nya lebih tinggi dari layar → sebelumnya isinya
+            saling dipepet karena flex-item boleh menciut. Sekarang tiap baris `shrink-0`
+            (lihat NAV_ITEM_BASE) dan padding-nya menyusut di viewport pendek; kalau tetap
+            tak muat, sidebar-nya digulung — bukan menumpuk. */}
+        <aside className="hidden w-[76px] shrink-0 flex-col overflow-y-auto overflow-x-hidden px-2.5 py-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex lg:w-[216px] lg:px-4 lg:py-6">
+          {/* logo — white bubble langsung di atas teal, tanpa kotak putih.
+              [shell-tablet-rail-v1] di rail sempit tinggal ikonnya. */}
+          <div className="flex shrink-0 items-center justify-center gap-2.5 lg:justify-start lg:px-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
-            <span className="text-lg font-bold text-white">Linguo</span>
+            <span className="hidden text-lg font-bold text-white lg:inline">Linguo</span>
           </div>
 
           {/* nav */}
-          <nav className="mt-8 flex flex-col gap-1.5" aria-label="Menu utama">
-            {renderNav()}
+          <nav className="mt-6 flex shrink-0 flex-col gap-1.5 lg:mt-7" aria-label="Menu utama">
+            {renderNav(undefined, true)}
           </nav>
 
           {/* bottom group: dark toggle + logout */}
-          <div className="mt-auto flex flex-col gap-1.5 pt-6">
-            {bugBtn}
-            {themeBtn}
-            {logoutBtn}
+          <div className="mt-auto flex shrink-0 flex-col gap-1.5 pt-6 [@media(max-height:820px)]:pt-3">
+            {bugBtn(true)}
+            {themeBtn(true)}
+            {logoutBtn(true)}
           </div>
         </aside>
 
         {/* ── TOP BAR MOBILE ── [shell-mobile-drawer-v1]
             Dirender di SHELL (bukan di /akun) supaya semua halaman ber-shell
             (perpustakaan, lingbook, kelas, rekaman) ikut punya navigasi di HP. */}
-        <header className={`sticky top-0 z-40 h-14 shrink-0 items-center gap-2 border-b border-gray-100 bg-white/90 px-3 backdrop-blur-lg lg:hidden ${immersive ? "hidden" : "flex"}`}>
+        <header className={`sticky top-0 z-40 h-14 shrink-0 items-center gap-2 border-b border-gray-100 bg-white/90 px-3 backdrop-blur-lg md:hidden ${immersive ? "hidden" : "flex"}`}>
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label={t("Buka menu")}
@@ -700,7 +744,7 @@ export default function StudentShell({
 
         {/* ── DRAWER MOBILE ── */}
         {drawerOpen && (
-          <div className="fixed inset-0 z-[70] lg:hidden">
+          <div className="fixed inset-0 z-[70] md:hidden">
             <button
               aria-label={t("Tutup menu")}
               onClick={() => setDrawerOpen(false)}
@@ -747,9 +791,9 @@ export default function StudentShell({
               </nav>
 
               <div className="mt-auto flex flex-col gap-1.5 pt-6">
-                {bugBtn}
-                {themeBtn}
-                {logoutBtn}
+                {bugBtn()}
+                {themeBtn()}
+                {logoutBtn()}
               </div>
             </div>
           </div>
@@ -758,7 +802,7 @@ export default function StudentShell({
         {/* WHITE PANEL — semua konten tab masuk sini.
             [shell-dark-elevation-v1] pakai `bg-[#FFFFFF]` (bukan `bg-white`) supaya di dark
             mode panel bisa dibedain levelnya dari kartu — dua-duanya dulu `bg-white`. */}
-        <div className={`flex min-h-screen w-full min-w-0 flex-1 flex-col bg-[#FFFFFF] lg:min-h-0 lg:pb-0 lg:rounded-[26px] ${immersive ? "" : "pb-20"} ${active === "materi" ? "lg:overflow-hidden" : "lg:overflow-y-auto"}`}>
+        <div className={`flex min-h-screen w-full min-w-0 flex-1 flex-col bg-[#FFFFFF] md:min-h-0 md:rounded-[22px] md:pb-0 lg:rounded-[26px] ${immersive ? "" : "pb-20 md:pb-0"} ${active === "materi" ? "md:overflow-y-auto lg:overflow-hidden" : "md:overflow-y-auto"}`}>
           {children}
         </div>
       </div>

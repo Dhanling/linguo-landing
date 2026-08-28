@@ -1703,8 +1703,8 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
           )}
         </div>
 
-        {/* mobile signout */}
-        <div className="px-6 pb-6 lg:hidden">
+        {/* mobile signout — [shell-tablet-rail-v1] mulai md tombol Keluar sudah di rail */}
+        <div className="px-6 pb-6 md:hidden">
           <button onClick={signOut} className="flex w-full items-center justify-center gap-2 rounded-2xl border border-rose-200 py-3 text-[14px] font-bold text-rose-500 transition hover:bg-rose-50">
             <LogOut className="h-4 w-4" /> {ts("Keluar dari Akun")}
           </button>
@@ -4135,7 +4135,7 @@ export default function AkunPage() {
                 });
 
                 return (
-                  <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
+                  <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
 
                     {/* ════ KOLOM PROFIL (kiri di desktop) — collapsible, default tertutup ════ */}
                     <aside className={`order-2 flex-col lg:order-1 lg:border-r lg:border-slate-100 ${profileOpen ? "flex" : "hidden"}`}>
@@ -4310,7 +4310,7 @@ export default function AkunPage() {
                               persis di kiri lonceng & avatar. */}
                           <UiLangSwitcher />
                           {student?.id && (
-                            <div className="hidden lg:block">
+                            <div className="hidden md:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
                             </div>
                           )}
@@ -4350,7 +4350,7 @@ export default function AkunPage() {
                           + "Sesi Mendatang" (kanan). Sebelumnya kartu kelas berdiri
                           sendiri selebar kolom — punya 1 kelas bikin sisa gridnya kosong
                           melompong, sementara daftar sesi terdorong jauh ke bawah lipatan. */}
-                      <div className={`grid gap-5 xl:items-start ${sesiMendatangCards.length ? "xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
+                      <div className={`grid gap-5 lg:items-start ${sesiMendatangCards.length ? "lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
                         <div className="min-w-0">
                         {/* [beranda-tanpa-tab-mandiri-v1] Tab "Kelas Live" vs "Belajar Mandiri"
                             dicabut — beranda cuma menampilkan kelas live. Materi mandiri
@@ -5030,7 +5030,7 @@ export default function AkunPage() {
                     {/* [linguo-patch:materi-frame-ref-v1] wrapper isi penuh canvas (no padding di lg) */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {liveClasses.length > 0 && selected ? (
-                      <div className="materi-flat overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+                      <div className="materi-flat overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[276px_minmax(0,1fr)] lg:min-h-0 xl:grid-cols-[320px_minmax(0,1fr)] lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
                         <aside className="materi-flat hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
@@ -5278,7 +5278,7 @@ export default function AkunPage() {
         <>
           <button
             onClick={() => setShowQuickActions(true)}
-            className="fixed lg:hidden bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+            className="fixed md:hidden bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             aria-label="Aksi Cepat"
           >
             <motion.span
@@ -5562,7 +5562,7 @@ export default function AkunPage() {
       />
 
       {/* Footer (desktop) */}
-      <div className="hidden lg:block text-center py-8 text-xs text-gray-400">© 2026 Linguo.id — Everyone Can Be a Polyglot</div>
+      <div className="hidden md:block text-center py-8 text-xs text-gray-400">© 2026 Linguo.id — Everyone Can Be a Polyglot</div>
 
       {/* [linguo-patch:akun-inplace-lessonplayer-v1] overlay immersive: satu LessonPlayer dipake route & in-place (LmsLesson lama dibuang) */}
       {lmsSesi && (

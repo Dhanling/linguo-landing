@@ -38,7 +38,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
       : href;
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
+      className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label={t("Navigasi utama")}
     >
