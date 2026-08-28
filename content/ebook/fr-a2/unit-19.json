@@ -1,0 +1,204 @@
+{
+  "title": "Katanya dia nggak bisa datang",
+  "title_target": "Il dit qu'il ne peut pas venir",
+  "goal": "Menyampaikan ulang perkataan orang lain — pertanyaan, permintaan, dan pernyataan — tanpa mengulang kata-katanya persis.",
+  "bekal": [
+    "mengubah kalimat langsung menjadi *il dit que…*",
+    "menyampaikan pertanyaan dengan *si*, *ce que*, dan kata tanya",
+    "menyampaikan perintah dengan *de* + infinitif",
+    "menggeser bentuk kata kerja ketika kalimat pembukanya lampau"
+  ],
+  "wave": "Ulangi **unit 17**: laporkan satu kerusakan dengan lantang dalam empat tingkat tekanan berturut-turut, dari memberi tahu sampai mencatat lewat email.",
+  "dialogs": [
+    {
+      "title": "Dialog — Transmettre un message",
+      "intro": "Sarah menerima telepon untuk Léo yang sedang mandi. Perhatikan bagaimana tiap kalimat langsung berubah bentuk saat disampaikan ulang.",
+      "lines": [
+        { "speaker": "Léo :", "text": "C'était qui, au téléphone ?", "id": "Tadi siapa yang telepon?", "literal": "ini adalah-dulu siapa, pada-itu telepon?" },
+        { "speaker": "Sarah :", "text": "Ton frère. Il dit qu'il ne peut pas venir samedi.", "id": "Kakakmu. Katanya dia nggak bisa datang Sabtu.", "literal": "punyamu saudara-lelaki. dia berkata bahwa-dia tidak bisa tidak datang Sabtu." },
+        { "speaker": "Léo :", "text": "Encore ? Il a expliqué pourquoi ?", "id": "Lagi? Dia jelasin kenapa?", "literal": "lagi? dia punya jelaskan kenapa?" },
+        { "speaker": "Sarah :", "text": "Il a dit qu'il travaillait ce week-end. Il a l'air désolé.", "id": "Katanya dia kerja akhir pekan ini. Kedengarannya dia nggak enak hati.", "literal": "dia punya katakan bahwa-dia bekerja-dulu ini akhir-pekan. dia punya itu udara menyesal." },
+        { "speaker": "Léo :", "text": "Il demande quelque chose ?", "id": "Dia minta sesuatu?", "literal": "dia meminta sesuatu benda?" },
+        { "speaker": "Sarah :", "text": "Il demande si tu peux garder les enfants dimanche après-midi.", "id": "Dia tanya kamu bisa nggak jagain anak-anaknya Minggu sore.", "literal": "dia meminta jika kamu bisa menjaga itu anak Minggu sesudah-tengah-hari." },
+        { "speaker": "Léo :", "text": "Ah. Et il a dit à quelle heure ?", "id": "Ah. Dia bilang jam berapa?", "literal": "ah. dan dia punya katakan pada apa jam?" },
+        { "speaker": "Sarah :", "text": "Il m'a demandé de te dire deux heures, mais il a ajouté que ce n'était pas fixe.", "id": "Dia minta aku bilang jam dua ke kamu, tapi katanya belum pasti.", "literal": "dia kepadaku punya minta dari kepadamu katakan dua jam, tetapi dia punya tambahkan bahwa ini tidak-adalah-dulu tidak tetap." },
+        { "speaker": "Léo :", "text": "Il veut savoir quoi d'autre ?", "id": "Dia mau tahu apa lagi?", "literal": "dia mau tahu apa dari-lain?" },
+        { "speaker": "Sarah :", "text": "Il voulait savoir ce que tu fais dimanche matin. Je lui ai dit que tu ne faisais rien.", "id": "Dia mau tahu kamu ngapain Minggu pagi. Aku bilang kamu nggak ngapa-ngapain.", "literal": "dia mau-dulu tahu ini bahwa kamu buat Minggu pagi. saya kepadanya punya katakan bahwa kamu tidak buat-dulu apa-apa." },
+        { "speaker": "Léo :", "text": "Merci beaucoup.", "id": "Makasih banyak.", "literal": "terima-kasih banyak." },
+        { "speaker": "Sarah :", "text": "C'est vrai que tu ne fais rien.", "id": "Emang bener kamu nggak ngapa-ngapain.", "literal": "ini-adalah benar bahwa kamu tidak buat apa-apa." },
+        { "speaker": "Léo :", "text": "Bon. Dis-lui que je suis d'accord, mais qu'il me doit un dîner.", "id": "Ya udah. Bilang ke dia aku setuju, tapi dia utang makan malam.", "literal": "baik. katakan-kepadanya bahwa saya adalah dari-setuju, tetapi bahwa-dia kepadaku berutang sebuah makan-malam." },
+        { "speaker": "Sarah :", "text": "Dis-le-lui toi-même. Je ne suis pas ta secrétaire.", "id": "Bilang sendiri sana. Aku bukan sekretarismu.", "literal": "katakan-dia-kepadanya kamu-sendiri. saya tidak adalah tidak punyamu sekretaris." }
+      ],
+      "notes": [
+        "**Menyampaikan ulang perkataan orang butuh tiga penyesuaian**: kata penghubung (*que*, *si*, *de*), kata ganti (*je* → *il*), dan kadang bentuk kata kerja. Bahasa Indonesia sering cukup dengan \"katanya\", jadi ketiga penyesuaian ini harus dibangun sadar.",
+        "**Pernyataan → que.** *« Je ne peux pas venir »* → *Il dit **qu'**il ne peut pas venir.* Perhatikan *je* berubah jadi *il*. Kesalahan yang paling sering: mempertahankan *je*.",
+        "**Pertanyaan ya/tidak → si.** *« Tu peux garder les enfants ? »* → *Il demande **si** tu peux garder les enfants.* Kata *si* di sini berarti \"apakah\", bukan \"jika\" — walaupun tulisannya sama.",
+        "**Pertanyaan dengan kata tanya → kata tanyanya dipakai lagi**, tapi *est-ce que* dan pembalikan urutan hilang: *« Quand est-ce que tu viens ? »* → *Il demande **quand** tu viens.*",
+        "**Qu'est-ce que → ce que.** *« Qu'est-ce que tu fais ? »* → *Il demande **ce que** tu fais.* Ini penyesuaian yang paling sering meleset, karena bentuknya berubah total. Pasangannya: *qu'est-ce qui* → *ce qui*.",
+        "**Perintah → de + infinitif.** *« Dis-lui deux heures. »* → *Il m'a demandé **de** te dire deux heures.* Bahasa Prancis tidak memakai *que* untuk perintah yang disampaikan ulang; ia memakai infinitif.",
+        "**Kalau kalimat pembukanya lampau, kata kerja di dalamnya mundur satu langkah**: bentuk sekarang → imparfait (*il travaille* → *il a dit qu'il **travaillait***), passé composé → plus-que-parfait, futur → conditionnel. Untuk A2, cukup kuasai pergeseran pertama; dua sisanya cukup dikenali.",
+        "**Dis-le-lui toi-même** memakai dua kata ganti pada perintah positif dari unit 7, ditambah *toi-même* (\"kamu sendiri\"). Bentuk penegas: *moi-même*, *toi-même*, *lui-même*, *nous-mêmes*."
+      ],
+      "grammars": [
+        {
+          "title": "Empat jenis kalimat, empat penghubung",
+          "body": [
+            "Yang menentukan penghubungnya adalah **jenis kalimat aslinya**, bukan isinya:"
+          ],
+          "table": {
+            "head": ["Kalimat asli", "Jenis", "Penghubung", "Disampaikan ulang"],
+            "rows": [
+              ["« Je viens. »", "pernyataan", "**que**", "Il dit **qu'**il vient."],
+              ["« Tu viens ? »", "ya/tidak", "**si**", "Il demande **si** tu viens."],
+              ["« Quand viens-tu ? »", "kata tanya", "**quand**", "Il demande **quand** tu viens."],
+              ["« Où habites-tu ? »", "kata tanya", "**où**", "Il demande **où** tu habites."],
+              ["« Qu'est-ce que tu fais ? »", "apa (objek)", "**ce que**", "Il demande **ce que** tu fais."],
+              ["« Qu'est-ce qui se passe ? »", "apa (pelaku)", "**ce qui**", "Il demande **ce qui** se passe."],
+              ["« Viens ! »", "perintah", "**de** + infinitif", "Il me dit **de** venir."],
+              ["« Ne pars pas ! »", "larangan", "**de ne pas** + inf.", "Il me dit **de ne pas** partir."]
+            ]
+          },
+          "after": [
+            "Perhatikan baris terakhir: sangkalan berdiri **bersama** di depan infinitif — *de **ne pas** partir*, bukan *de ne partir pas*.",
+            "Kata kerja pembuka yang paling sering: *dire que*, *demander si*, *répondre que*, *expliquer que*, *ajouter que*, *promettre de*, *conseiller de*, *proposer de*."
+          ]
+        },
+        {
+          "title": "Pergeseran waktu ketika pembukanya lampau",
+          "body": [
+            "*Il dit que…* tidak menggeser apa pun. *Il a dit que…* menggeser semuanya satu langkah mundur:"
+          ],
+          "table": {
+            "head": ["Kalimat asli", "Sesudah *il dit que*", "Sesudah *il a dit que*"],
+            "rows": [
+              ["« Je travaille. »", "qu'il travaille", "qu'il **travaillait**"],
+              ["« Je suis fatigué. »", "qu'il est fatigué", "qu'il **était** fatigué"],
+              ["« J'ai fini. »", "qu'il a fini", "qu'il **avait** fini"],
+              ["« Je viendrai. »", "qu'il viendra", "qu'il **viendrait**"],
+              ["« Je peux venir. »", "qu'il peut venir", "qu'il **pouvait** venir"]
+            ]
+          },
+          "after": [
+            "Kolom terakhir baris ketiga memakai plus-que-parfait (*avait fini*) dan baris keempat memakai conditionnel (*viendrait*). Keduanya cukup kamu **kenali** di A2.",
+            "Yang wajib kamu produksi: pergeseran **sekarang → imparfait**. Itu saja sudah membuat laporanmu terdengar benar."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menyampaikan pesan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Bahasa Indonesia"],
+          "rows": [
+            ["Il a appelé pendant que tu dormais.", "Dia telepon pas kamu tidur."],
+            ["Il dit qu'il ne peut pas venir.", "Katanya dia nggak bisa datang."],
+            ["Il demande si tu es libre samedi.", "Dia tanya kamu kosong nggak Sabtu."],
+            ["Il voulait savoir ce que tu fais.", "Dia mau tahu kamu ngapain."],
+            ["Il m'a demandé de te prévenir.", "Dia minta aku kasih tahu kamu."],
+            ["Il a dit de le rappeler ce soir.", "Katanya telepon balik nanti malam."],
+            ["Elle a laissé un message.", "Dia tinggal pesan."],
+            ["Elle rappellera plus tard.", "Nanti dia telepon lagi."],
+            ["Je lui ai dit que tu étais occupé.", "Aku bilang kamu lagi sibuk."],
+            ["Je n'ai pas compris ce qu'il voulait.", "Aku nggak paham dia mau apa."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kesalahan khas saat melapor",
+          "items": [
+            "**Mempertahankan *je*.** *Il dit que je ne peux pas venir* berarti **kamu** yang tidak bisa datang, bukan dia. Kesalahan kecil dengan akibat besar.",
+            "**Memakai *que* untuk pertanyaan.** *Il demande que tu viens* ✗ → *Il demande **si** tu viens* ✓.",
+            "**Memakai *que* untuk perintah.** *Il dit que viens* ✗ → *Il dit **de** venir* ✓."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Di telepon",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Français", "Arti", "Français", "Arti"],
+          "rows": [
+            ["Allô ?", "Halo?", "C'est de la part de qui ?", "Dari siapa ya?"],
+            ["Je suis bien chez… ?", "Ini benar rumah…?", "Ne quittez pas.", "Jangan ditutup."],
+            ["Je vous le passe.", "Saya sambungkan.", "Il est absent.", "Dia sedang tidak ada."],
+            ["Vous voulez laisser un message ?", "Mau tinggal pesan?", "Je rappellerai.", "Nanti saya telepon lagi."],
+            ["Vous pouvez répéter ?", "Bisa diulang?", "Je vous entends mal.", "Suaranya kurang jelas."],
+            ["Ça coupe.", "Putus-putus.", "Je te rappelle.", "Nanti aku telepon balik."],
+            ["Désolé, je me suis trompé de numéro.", "Maaf, salah sambung.", "Merci, au revoir.", "Terima kasih, sampai jumpa."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*C'est de la part de qui ?* adalah kalimat yang hampir pasti kamu dengar saat menelepon kantor. Jawabannya cukup namamu: *C'est Nour Benali.* Kalau kamu tidak menangkapnya, minta pengulangan — itu wajar dan tidak memalukan."
+        },
+        {
+          "type": "p",
+          "text": "*Se tromper de* + kata benda tanpa kata sandang = salah sesuatu: *se tromper de numéro* (salah nomor), *de train*, *de jour*, *de porte*. Susunan yang sama seperti *changer de* di unit 18."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "fr": "transmettre", "baca": "trans-METR", "id": "menyampaikan" },
+    { "fr": "le message", "baca": "le me-SAAJ", "id": "pesan" },
+    { "fr": "prévenir", "baca": "prev-NIIR", "id": "memberi tahu" },
+    { "fr": "ajouter", "baca": "a-ju-TE", "id": "menambahkan" },
+    { "fr": "garder", "baca": "gar-DE", "id": "menjaga" },
+    { "fr": "fixe", "baca": "fiks", "id": "pasti, tetap" },
+    { "fr": "libre", "baca": "LIBR", "id": "kosong, luang" },
+    { "fr": "occupé", "baca": "o-kü-PE", "id": "sibuk" },
+    { "fr": "absent", "baca": "ap-SAN", "id": "tidak ada di tempat" },
+    { "fr": "quitter", "baca": "ki-TE", "id": "meninggalkan, menutup telepon" },
+    { "fr": "répéter", "baca": "re-pe-TE", "id": "mengulang" },
+    { "fr": "entendre", "baca": "an-TANDR", "id": "mendengar" },
+    { "fr": "couper", "baca": "ku-PE", "id": "memotong, putus" },
+    { "fr": "se tromper", "baca": "se tron-PE", "id": "keliru" },
+    { "fr": "le numéro", "baca": "le nü-me-RO", "id": "nomor" },
+    { "fr": "devoir", "baca": "de-VWAAR", "id": "berutang, harus" },
+    { "fr": "la secrétaire", "baca": "la se-kre-TEER", "id": "sekretaris" },
+    { "fr": "toi-même", "baca": "twa-MEEM", "id": "kamu sendiri" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Sampaikan ulang dengan il dit que, il demande si, atau il demande de.",
+      "items": [
+        "« Je ne peux pas venir. »",
+        "« Tu es libre samedi ? »",
+        "« Rappelle-moi ce soir. »",
+        "« Qu'est-ce que tu fais dimanche ? »",
+        "« Ne pars pas sans moi. »"
+      ]
+    },
+    {
+      "prompt": "Ubah pembukanya jadi lampau (il a dit que) dan geser bentuk kata kerjanya.",
+      "items": [
+        "Il dit qu'il travaille ce week-end.",
+        "Elle dit qu'elle est fatiguée.",
+        "Il dit qu'il ne peut pas venir.",
+        "Elle dit qu'elle a besoin de temps.",
+        "Il dit que ce n'est pas fixe."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Katanya dia nggak bisa datang Sabtu.",
+        "Dia tanya kamu bisa nggak jagain anak-anaknya.",
+        "Dia minta aku bilang jam dua ke kamu.",
+        "Aku bilang kamu nggak ngapa-ngapain.",
+        "Bilang ke dia aku setuju."
+      ]
+    }
+  ],
+  "answers": [
+    "Il dit qu'il ne peut pas venir. — Il demande si tu es libre samedi. — Il demande de le rappeler ce soir. — Il demande ce que tu fais dimanche. — Il demande de ne pas partir sans lui.",
+    "Il a dit qu'il travaillait ce week-end. — Elle a dit qu'elle était fatiguée. — Il a dit qu'il ne pouvait pas venir. — Elle a dit qu'elle avait besoin de temps. — Il a dit que ce n'était pas fixe.",
+    "Il dit qu'il ne peut pas venir samedi. — Il demande si tu peux garder les enfants. — Il m'a demandé de te dire deux heures. — Je lui ai dit que tu ne faisais rien. — Dis-lui que je suis d'accord."
+  ]
+}
