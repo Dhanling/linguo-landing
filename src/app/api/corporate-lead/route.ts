@@ -19,9 +19,9 @@ export async function POST(req: NextRequest) {
         company_name: body.company_name,
         industry: body.industry,
         company_size: body.company_size,
-        pic_name: body.pic_name,
+        pic_name: body.pic_name ?? "",
         pic_title: body.pic_title,
-        pic_email: body.pic_email,
+        pic_email: body.pic_email ?? "",
         pic_phone: body.pic_phone,
         languages: body.languages,
         participant_count: body.participant_count,
@@ -29,7 +29,12 @@ export async function POST(req: NextRequest) {
         budget_range: body.budget_range,
         timeline: body.timeline,
         notes: body.notes,
-        status: "new",
+        // Kolom `status` bergerbang CHECK (cold_lead|prospek|deal|on_hold|lost).
+        // Sebelumnya diisi "new" → SETIAP insert ditolak Postgres dan tak satu
+        // pun lead dari form ini pernah masuk ke menu Corporate.
+        status: "cold_lead",
+        program_type: "corporate",
+        lead_date: new Date().toISOString().slice(0, 10),
       }),
     });
 
