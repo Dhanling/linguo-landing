@@ -110,3 +110,43 @@ export const featuredLanguages = languages.filter((l) => l.featured);
 export function getLanguageBySlug(slug: string) {
   return languages.find((l) => l.slug === slug);
 }
+
+// linguo-patch:silabus-alias-redirect-v1 — /silabus/melayu dulu 404 padahal silabusnya
+// ada: slug kanoniknya "malay". Orang (termasuk tim sendiri) mengetik nama yang mereka
+// tahu — melayu, tagalog, bangla, kamboja, myanmar — bukan slug internal Inggrisnya.
+// Peta di bawah dipakai route [lang] buat mengalihkan alias ke slug kanonik.
+// Alias yang diklaim lebih dari satu bahasa ("portugis" → pt & br) sengaja dibuang:
+// menebak salah satu lebih buruk daripada membiarkan orang mendarat di hub.
+const normalizeLangKey = (s: string) =>
+  s.toLowerCase().trim().replace(/[-_]+/g, " ").replace(/\s+/g, " ");
+
+const aliasToSlug: Map<string, string | null> = (() => {
+  const m = new Map<string, string | null>();
+  const claim = (key: string, slug: string) => {
+    const k = normalizeLangKey(key);
+    // slug asli selalu menang; jangan sampai alias bahasa lain membajaknya
+    if (!k || languages.some((l) => l.slug === k)) return;
+    m.set(k, m.has(k) && m.get(k) !== slug ? null : slug);
+  };
+  for (const l of languages) {
+    if (!l.available) continue;
+    claim(l.name, l.slug);
+    claim(l.nativeName, l.slug);
+    for (const a of l.aliases ?? []) claim(a, l.slug);
+  }
+  return m;
+})();
+
+/**
+ * Slug kanonik untuk input bebas: "melayu" → "malay", "Bahasa Melayu" → "malay".
+ * null kalau tak dikenal, belum available, atau ambigu (dipakai >1 bahasa).
+ */
+export function resolveLanguageSlug(input: string): string | null {
+  let key = normalizeLangKey(input ?? "");
+  if (!key) return null;
+  const bySlug = (k: string) => languages.find((l) => l.slug === k && l.available)?.slug ?? null;
+  const hit = bySlug(key) ?? aliasToSlug.get(key) ?? null;
+  if (hit) return hit;
+  key = key.replace(/^bahasa\s+/, "");
+  return bySlug(key) ?? aliasToSlug.get(key) ?? null;
+}

@@ -12,7 +12,7 @@ import { supabase } from "@/lib/supabase-client";
 import RegisterModal from "@/components/RegisterModal";
 // linguo-patch:placement-cefr-wire-v1
 import PlacementTest from "./PlacementTest";
-import { getCurriculum, getLanguageBySlug } from "@/data/curriculum";
+import { getCurriculum, getLanguageBySlug, resolveLanguageSlug } from "@/data/curriculum";
 import { englishPlacementTest } from "@/data/placement/english";
 import { japanesePlacementTest } from "@/data/placement/japanese";
 // linguo-patch:placement-asia-v1 — 10 bahasa Asia "SEGERA" dapat placement test CEFR
@@ -398,7 +398,9 @@ const CEFR_QUESTIONS: Record<string, PlacementQuestion[]> = {
 
 export default function PlacementTestPage() {
   const params = useParams();
-  const lang = params?.lang as string;
+  // linguo-patch:silabus-alias-redirect-v1 — /silabus/melayu/coba dulu diam-diam
+  // jatuh ke placement TOEFL ITP karena "melayu" bukan slug. Samakan dulu ke kanonik.
+  const lang = resolveLanguageSlug(params?.lang as string) ?? (params?.lang as string);
   const questions = CEFR_QUESTIONS[lang];
   if (questions) {
     // linguo-patch:placement-all-v1 — bahasa yang belum punya data silabus tetap bisa
