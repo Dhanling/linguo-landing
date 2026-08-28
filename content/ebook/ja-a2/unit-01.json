@@ -1,0 +1,379 @@
+{
+ "title": "Berbicara seperti teman",
+ "title_target": "久しぶり — Hisashiburi",
+ "goal": "Menjatuhkan kalimat ます ke bentuk biasa, memahami percakapan santai antarteman, dan tahu kapan bentuk biasa justru tidak boleh dipakai.",
+ "bekal": [
+  "membentuk bentuk kamus, ない, た, dan なかった dari kata kerja mana pun",
+  "memakai bentuk biasa untuk kata sifat dan kata benda",
+  "bertanya secara santai tanpa か",
+  "mengenali の, よ, ね, dan だ yang dibuang",
+  "memilih antara bentuk biasa dan bentuk です・ます dengan tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Bertemu lagi setelah lama",
+   "intro": "Ani bertemu Kenta, teman satu kampusnya, di depan stasiun. Perhatikan bahwa hampir tidak ada satu pun ます di dialog ini — dan kalimatnya tetap kalimat lengkap.",
+   "lines": [
+    { "speaker": "アニ:", "text": "[健太|Kenta]！[久|Hisa]しぶり。", "id": "Kenta! Lama tak jumpa.", "literal": "Kenta! lama-tak-bertemu." },
+    { "speaker": "健太:", "text": "[あ|A]、[アニ|Ani]。[元気|Genki]だった？", "id": "Ah, Ani. Kamu sehat?", "literal": "ah, Ani. sehat — adalah-dulu?" },
+    { "speaker": "アニ:", "text": "うん、[元気|genki]。[健太|Kenta]は？[まだ|Mada][あの|ano][会社|kaisha]にいる？", "id": "Iya, sehat. Kamu? Masih di perusahaan itu?", "literal": "iya, sehat. Kenta — mengenai? masih — itu — perusahaan — di — ada?" },
+    { "speaker": "健太:", "text": "[いや|Iya]、[先月|sengetsu][辞|ya]めた。[今|Ima]は[別|betsu]の[会社|kaisha]で[働|hatara]いてる。", "id": "Enggak, bulan lalu berhenti. Sekarang kerja di perusahaan lain.", "literal": "tidak, bulan-lalu — berhenti-sudah. sekarang — mengenai — lain — punya — perusahaan — di — bekerja-sedang." },
+    { "speaker": "アニ:", "text": "[えっ|E]、[知|shi]らなかった。[どうして|Dōshite]？", "id": "Eh, aku nggak tahu. Kenapa?", "literal": "eh, tahu-tidak-dulu. kenapa?" },
+    { "speaker": "健太:", "text": "[前|Mae]の[会社|kaisha]、[残業|zangyō]が[多|ō]すぎた。[毎日|Mainichi]10[時|ji]まで。", "id": "Perusahaan yang dulu lemburnya kebanyakan. Tiap hari sampai jam 10.", "literal": "sebelum — punya — perusahaan, lembur — yang — banyak-terlalu-dulu. tiap-hari — 10 — jam — sampai." },
+    { "speaker": "アニ:", "text": "[それは|Sore wa][大変|taihen]だったね。[今|Ima]の[会社|kaisha]は[どう|dō]？", "id": "Wah berat ya. Perusahaan yang sekarang gimana?", "literal": "itu — mengenai — berat — adalah-dulu — ya. sekarang — punya — perusahaan — mengenai — bagaimana?" },
+    { "speaker": "健太:", "text": "[給料|Kyūryō]は[前|mae]より[少|suko]し[安|yasu]い。でも[時間|jikan]がある。", "id": "Gajinya sedikit lebih kecil dari yang dulu. Tapi ada waktu.", "literal": "gaji — mengenai — sebelum — daripada — sedikit — murah. tapi — waktu — yang — ada." },
+    { "speaker": "アニ:", "text": "[それ|Sore]、[大事|daiji]だと[思|omo]う。", "id": "Itu penting menurutku.", "literal": "itu, penting — adalah — begitu — berpikir." },
+    { "speaker": "健太:", "text": "[アニ|Ani]は？[まだ|Mada][大学|daigaku]？", "id": "Kalau kamu? Masih kuliah?", "literal": "Ani — mengenai? masih — universitas?" },
+    { "speaker": "アニ:", "text": "うん、[来年|rainen][卒業|sotsugyō]する。[今|Ima][就活|shūkatsu][中|chū]。", "id": "Iya, tahun depan lulus. Sekarang lagi cari kerja.", "literal": "iya, tahun-depan — lulus — melakukan. sekarang — cari-kerja — tengah." },
+    { "speaker": "健太:", "text": "[大変|Taihen]だね。[何|Nani]か[困|koma]ったら[言|i]って。", "id": "Berat ya. Kalau ada kesulitan, bilang saja.", "literal": "berat — ya. apa — pun — kesulitan-kalau — katakan." }
+   ],
+   "notes": [
+    "**[久|Hisa]しぶり** harfiahnya “selang waktu yang lama”. Versi sopannya [お久|Ohisa]しぶりです — dipakai kepada atasan, dosen, atau siapa pun yang tidak setara denganmu. Versi pendek di dialog ini hanya untuk teman.",
+    "**[元気|Genki]だった？** adalah bentuk biasa dari [元気|genki]でしたか. Perhatikan dua hal yang hilang sekaligus: **でした** jadi **だった**, dan **か** menguap. Nada suara naik di ujung yang menggantikannya jadi pertanyaan.",
+    "**うん = ya, ううん = tidak** — pasangan santai untuk はい dan いいえ. Bedanya cuma satu bunyi panjang di tengah, jadi orang Indonesia sering salah dengar. Kalau ragu, dengarkan anggukan kepalanya.",
+    "**[働|hatara]いてる** adalah [働|hatara]いている dengan い-nya dibuang. Dalam percakapan santai い pada ～ている hampir selalu hilang: [見|mi]てる、[知|shi]ってる、[持|mo]ってる. Ini bukan kesalahan; ini yang normal.",
+    "**[知|Shi]らなかった** = “aku tidak tahu (waktu itu)”. Bahasa Jepang memakai bentuk lampau di sini, sementara bahasa Indonesia memakai bentuk kini (“aku nggak tahu”). Ikuti bahasa Jepangnya.",
+    "**[多|ō]すぎた** = “terlalu banyak (dulu)”. ～すぎる menempel di batang kata kerja atau kata sifat tanpa い: [食|ta]べすぎる (makan terlalu banyak), [高|taka]すぎる (terlalu mahal). Dibongkar penuh di Unit 3.",
+    "**[言|I]って** di kalimat terakhir adalah bentuk て yang dipakai sebagai perintah santai — potongan dari [言|i]ってください. Membuang ください membuatnya akrab, bukan kasar, asalkan lawan bicaranya memang teman."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk biasa kata kerja — empat bentuk yang menggantikan ます",
+     "body": [
+      "Setiap kata kerja bahasa Jepang punya dua rombongan bentuk yang isinya sama persis: rombongan **ます** (sopan) dan rombongan **biasa**. Yang berubah cuma nada sosialnya, bukan artinya."
+     ],
+     "table": {
+      "head": ["Bentuk ます", "Bentuk biasa", "Nama bentuknya", "Arti"],
+      "rows": [
+       ["[行|i]きます", "[行|i]く", "bentuk kamus", "pergi"],
+       ["[行|i]きません", "[行|i]かない", "bentuk ない", "tidak pergi"],
+       ["[行|i]きました", "[行|i]った", "bentuk た", "sudah pergi"],
+       ["[行|i]きませんでした", "[行|i]かなかった", "bentuk なかった", "tidak pergi dulu"]
+      ]
+     },
+     "after": [
+      "**Bentuk た dibuat persis seperti bentuk て, tinggal tukar ujungnya.** [書|ka]いて → [書|ka]いた、[飲|no]んで → [飲|no]んだ、[食|ta]べて → [食|ta]べた、して → した. Kalau bentuk て-mu sudah otomatis, bentuk た datang gratis.",
+      "**Bentuk ない dibuat dari baris あ.** Ganti ujung ます dengan baris あ lalu tambah ない: [書|ka]きます → [書|ka]か**ない**、[飲|no]みます → [飲|no]ま**ない**、[買|ka]います → [買|ka]**わ**ない ⚠️ (bukan あない). Kata kerja る: buang ます, tambah ない — [食|ta]べます → [食|ta]べない.",
+      "**Yang menyimpang cuma dua.** します → しない・した・しなかった. [来|ki]ます → [来|ko]ない・[来|ki]た・[来|ko]なかった ⚠️ — bacaannya berpindah-pindah, dan ini satu-satunya kata kerja yang begitu di seluruh bahasa Jepang."
+     ]
+    },
+    {
+     "title": "Bentuk biasa kata sifat dan kata benda — dan だ yang sering dibuang",
+     "body": [
+      "Kata sifat い hampir tidak berubah: cukup buang です. Kata sifat な dan kata benda memakai だ, dan だ inilah yang paling sering menghilang dalam percakapan."
+     ],
+     "table": {
+      "head": ["", "Sopan", "Biasa"],
+      "rows": [
+       ["Kata sifat い", "[高|taka]いです", "[高|taka]い"],
+       ["", "[高|taka]くないです", "[高|taka]くない"],
+       ["", "[高|taka]かったです", "[高|taka]かった"],
+       ["", "[高|taka]くなかったです", "[高|taka]くなかった"],
+       ["Kata sifat な", "[静|shizu]かです", "[静|shizu]かだ"],
+       ["", "[静|shizu]かじゃないです", "[静|shizu]かじゃない"],
+       ["", "[静|shizu]かでした", "[静|shizu]かだった"],
+       ["Kata benda", "[学生|Gakusei]です", "[学生|Gakusei]だ"],
+       ["", "[学生|Gakusei]じゃないです", "[学生|Gakusei]じゃない"],
+       ["", "[学生|Gakusei]でした", "[学生|Gakusei]だった"]
+      ]
+     },
+     "after": [
+      "**だ dibuang saat bertanya, dan sering dibuang saat menyatakan.** [学生|Gakusei]？ (Kamu mahasiswa?) — menambahkan だ di situ justru salah. Dalam pernyataan, [きれい|Kirei]だ terdengar tegas hampir seperti mengumumkan; [きれい|Kirei] saja terdengar wajar. Perempuan Jepang hampir tidak pernah memakai だ di ujung kalimat santai.",
+      "**Tapi だ TIDAK boleh dibuang di dalam kalimat.** Begitu kalimatnya masuk ke ～と[思|omo]う、～から、～のに, だ wajib hadir: [学生|Gakusei]**だ**と[思|omo]う (kupikir dia mahasiswa). Ini sumber kesalahan nomor satu di tingkat A2, dan akan kita temui lagi di Unit 6."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Mengobrol soal akhir pekan",
+   "intro": "Kenta dan Ani meneruskan obrolan sambil jalan. Perhatikan の, よ, dan ね di ujung kalimat — di sinilah bentuk biasa berhenti terdengar dingin.",
+   "lines": [
+    { "speaker": "健太:", "text": "[週末|Shūmatsu]、[何|nani]かする[予定|yotei]ある？", "id": "Akhir pekan ada rencana?", "literal": "akhir-pekan, apa — pun — melakukan — rencana — ada?" },
+    { "speaker": "アニ:", "text": "[特|Toku]にない。[家|Ie]で[映画|eiga][見|mi]るぐらい。", "id": "Nggak ada yang khusus. Paling nonton film di rumah.", "literal": "khusus — pada — tidak-ada. rumah — di — film — melihat — kira-kira." },
+    { "speaker": "健太:", "text": "[じゃあ|Jā]、[土曜日|doyōbi][暇|hima]？[友達|Tomodachi]と[花見|hanami][行|i]くんだけど。", "id": "Kalau gitu Sabtu senggang? Aku mau hanami sama teman-teman.", "literal": "kalau-begitu, Sabtu — senggang? teman — dengan — lihat-bunga — pergi — hal-adalah-tapi." },
+    { "speaker": "アニ:", "text": "[花見|Hanami]？[もう|Mō][桜|sakura][咲|sa]いてるの？", "id": "Hanami? Sakuranya sudah mekar?", "literal": "lihat-bunga? sudah — sakura — mekar-sedang — kah?" },
+    { "speaker": "健太:", "text": "うん、[今週|konshū]から。[来週|Raishū]だと[遅|oso]すぎるらしい。", "id": "Iya, mulai minggu ini. Katanya kalau minggu depan sudah kelewat.", "literal": "iya, minggu-ini — dari. minggu-depan — kalau — terlambat-terlalu — sepertinya." },
+    { "speaker": "アニ:", "text": "[行|I]きたい！でも[土曜日|doyōbi]、[バイト|baito]あるかも。", "id": "Mau ikut! Tapi Sabtu mungkin ada kerja paruh waktu.", "literal": "pergi-ingin! tapi — Sabtu, kerja-sambilan — ada — mungkin." },
+    { "speaker": "健太:", "text": "[何時|Nanji]まで？[夕方|Yūgata]からでも[大丈夫|daijōbu]だよ。", "id": "Sampai jam berapa? Dari sore juga nggak apa-apa kok.", "literal": "jam-berapa — sampai? sore — dari — pun — tidak-apa-apa — adalah — lho." },
+    { "speaker": "アニ:", "text": "[じゃ|Ja][多分|tabun][大丈夫|daijōbu]。4[時|ji]に[終|o]わるから。", "id": "Kalau gitu kayaknya bisa. Soalnya selesai jam 4.", "literal": "kalau-begitu — mungkin — tidak-apa-apa. 4 — jam — pada — selesai — karena." },
+    { "speaker": "健太:", "text": "よかった。[場所|Basho]は[後|ato]で[送|oku]る。", "id": "Syukurlah. Lokasinya nanti aku kirim.", "literal": "baik-dulu. tempat — mengenai — nanti — di — mengirim." },
+    { "speaker": "アニ:", "text": "[何|Nani]か[持|mo]って[行|i]こうか？", "id": "Perlu aku bawa sesuatu?", "literal": "apa — pun — membawa — pergi-mari — kah?" },
+    { "speaker": "健太:", "text": "[飲|No]み[物|mono]だけでいい。[食|Ta]べ[物|mono]は[僕|boku]が[買|ka]っておく。", "id": "Minuman saja cukup. Makanannya aku yang beli.", "literal": "minum — barang — hanya — dengan — baik. makan — barang — mengenai — saya — yang — membeli-menyiapkan." },
+    { "speaker": "アニ:", "text": "[分|Wa]かった。[楽|Tano]しみ！", "id": "Oke. Nggak sabar!", "literal": "mengerti-sudah. menyenangkan!" }
+   ],
+   "notes": [
+    "**の di ujung pertanyaan** ([咲|sa]いてるの？) melembutkan pertanyaannya dan menunjukkan kamu benar-benar ingin tahu. Tanpa の, [咲|sa]いてる？ terdengar seperti pemeriksaan. Versi laki-laki sering memakai のか atau tidak sama sekali.",
+    "**んだけど di ujung kalimat** adalah cara Jepang menawarkan tanpa menawarkan. [行|I]くんだけど harfiahnya “soalnya aku (mau) pergi, tapi …”, dan kalimat itu sengaja tidak diselesaikan. Lawan bicara yang menyimpulkan sendiri bahwa ia diajak. Ini pola sosial yang sangat khas dan akan kembali di Unit 9.",
+    "**よ dan ね bukan hiasan.** よ = kabar yang belum diketahui lawan bicara ([大丈夫|daijōbu]だ**よ** = tenang saja, aku memberitahumu). ね = mengajak setuju ([大変|taihen]だった**ね** = berat ya, kan?). Menukar keduanya membuatmu terdengar aneh: よ ke orang yang sudah tahu terasa menggurui.",
+    "**[暇|Hima]？** — satu kata, tanpa だ, tanpa か, nada naik. Inilah bentuk pertanyaan yang paling sering kamu dengar di antara teman. Terjemahannya “senggang nggak?”",
+    "**かも** adalah potongan dari かもしれない (mungkin). [バイト|Baito]あるかも = mungkin ada kerja sambilan. Sangat lazim, dan lebih sering muncul daripada versi panjangnya.",
+    "**[持|mo]って[行|i]こうか** memakai bentuk 意向形 (bentuk ajakan biasa) dari ～ましょうか. [行|I]きましょうか → [行|i]こうか、[食|ta]べましょう → [食|ta]べよう、しましょう → しよう. Sering muncul di percakapan santai."
+   ],
+   "grammars": [
+    {
+     "title": "Bertanya tanpa か — dan tiga penutup kalimat santai",
+     "body": [
+      "Menghapus か membuat kalimat jadi pertanyaan hanya lewat nada. Yang ditambahkan di ujung menentukan warna pertanyaannya."
+     ],
+     "table": {
+      "head": ["Sopan", "Biasa", "Warnanya"],
+      "rows": [
+       ["[行|I]きますか。", "[行|I]く？", "Netral, langsung."],
+       ["[行|I]きますか。", "[行|I]くの？", "Lebih lembut, ingin tahu."],
+       ["[学生|Gakusei]ですか。", "[学生|Gakusei]？ ⚠️", "だ TIDAK dipakai saat bertanya."],
+       ["[静|Shizu]かですか。", "[静|Shizu]か？", "Sama, tanpa だ."],
+       ["そうですね。", "そうだね。", "Setuju, mengajak."],
+       ["そうですよ。", "そうだよ。", "Memberitahu kabar baru."]
+      ]
+     },
+     "after": [
+      "**Nada suara mengerjakan seluruh pekerjaannya.** Di tulisan, tanda tanya dipakai (orang Jepang menulis ？ di pesan singkat meski buku cetak tidak). Dalam suara, ujung kalimat naik.",
+      "**Jangan menempel か pada bentuk biasa** — [行|i]くか？ terdengar kasar dan memerintah, bukan santai. Kalau ingin santai, buang か sekalian."
+     ]
+    },
+    {
+     "title": "Kapan bentuk biasa, kapan bentuk です・ます",
+     "body": [
+      "Pilihan ini tidak ada di bahasa Indonesia, dan salah memilih terasa jauh lebih tajam daripada salah tata bahasa. Aturan praktisnya bukan “akrab atau tidak”, melainkan **posisi**."
+     ],
+     "table": {
+      "head": ["Kepada siapa", "Bentuk", "Kenapa"],
+      "rows": [
+       ["Teman seangkatan, adik kelas", "Biasa", "Setara atau di bawahmu."],
+       ["Keluarga sendiri", "Biasa", "Termasuk orang tua."],
+       ["Kakak kelas, senior kantor", "です・ます", "Di atasmu, meski umurnya sebaya."],
+       ["Atasan, dosen, pelanggan", "です・ます", "Selalu, tanpa perkecualian."],
+       ["Orang yang baru dikenal", "です・ます", "Sampai dia yang menurunkannya duluan."],
+       ["Anak kecil yang tak dikenal", "Biasa", "Memakai ます justru terasa dingin."],
+       ["Menulis catatan untuk diri sendiri", "Biasa", "Tidak ada lawan bicara."]
+      ]
+     },
+     "after": [
+      "**Yang menurunkan nada selalu orang yang lebih tinggi.** Kalau atasanmu mulai memakai bentuk biasa kepadamu, itu bukan izin untukmu membalas dengan bentuk biasa. Tunggu sampai dia berkata [敬語|keigo]はいらないよ.",
+      "**Kalau ragu, pakai です・ます.** Terlalu sopan membuatmu terdengar berjarak; terlalu santai membuatmu terdengar tidak sopan. Yang pertama jauh lebih mudah dimaafkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata santai yang menggantikan kata sopan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bersamaan dengan turunnya bentuk kalimat, sebagian kata juga berganti. Daftar ini bukan slang — semuanya kata baku yang kebetulan hanya dipakai di ragam santai."
+    },
+    {
+     "type": "tabel",
+     "head": ["Sopan", "Santai", "Arti"],
+     "rows": [
+      ["はい", "うん", "ya"],
+      ["いいえ", "ううん", "tidak"],
+      ["そうですか", "そうなんだ", "oh begitu"],
+      ["[本当|Hontō]ですか", "[本当|Hontō]？ / まじで？", "serius?"],
+      ["すみません", "ごめん", "maaf"],
+      ["ありがとうございます", "ありがとう / サンキュー", "terima kasih"],
+      ["わかりました", "[分|wa]かった / りょうかい", "oke, mengerti"],
+      ["[大丈夫|Daijōbu]ですか", "[大丈夫|Daijōbu]？", "kamu nggak apa-apa?"],
+      ["どうしてですか", "なんで？", "kenapa?"],
+      ["[少|Suko]し", "ちょっと", "sedikit"],
+      ["とても", "すごく / めっちゃ", "sangat"],
+      ["[本当|Hontō]に", "マジで", "sungguh"],
+      ["[私|Watashi]", "[俺|ore] (lk) / [僕|boku] (lk) / [あたし|atashi] (pr)", "saya"],
+      ["では", "じゃ / じゃあ", "kalau begitu"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Hati-hati dengan kata ganti orang",
+     "items": [
+      "**[俺|Ore]** terdengar maskulin dan agak kasar — dipakai laki-laki di antara teman, tidak dipakai di kantor kepada atasan.",
+      "**[僕|Boku]** lebih lembut, dipakai laki-laki segala usia, aman di hampir semua situasi kecuali yang sangat resmi.",
+      "**あなた** yang di buku pelajaran berarti “kamu” sebaiknya **tidak** kamu pakai. Orang Jepang memanggil lawan bicaranya dengan nama: [健太|Kenta]は？ bukan あなたは？. あなた dari istri kepada suami justru berarti “sayang”.",
+      "Perempuan yang memakai [俺|ore] atau laki-laki yang memakai あたし akan langsung terdengar sedang bercanda. Ini bukan aturan tata bahasa, tapi orang akan menoleh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Melatih bentuk biasa tanpa lawan bicara",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Masalah bentuk biasa bukan memahaminya, melainkan mengeluarkannya cukup cepat. Latihan berikut bisa dikerjakan sendirian, dan lima menit sehari cukup."
+    },
+    {
+     "type": "sub",
+     "text": "1. Buku harian tiga kalimat"
+    },
+    {
+     "type": "p",
+     "text": "Buku harian bahasa Jepang **selalu** ditulis dalam bentuk biasa — tidak ada lawan bicara yang harus dihormati. Tulis tiga kalimat tiap malam:"
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh satu hari",
+     "items": [
+      "[今日|Kyō]は[朝|asa]6[時|ji]に[起|o]きた。",
+      "[会社|Kaisha]まで[歩|aru]いて[行|i]った。[天気|Tenki]がよかったから。",
+      "[夜|Yoru]、[友達|tomodachi]と[電話|denwa]した。[久|Hisa]しぶりで[楽|tano]しかった。",
+      "Hari ini bangun jam 6 pagi. Jalan kaki ke kantor, karena cuacanya bagus. Malamnya telepon teman. Sudah lama tak bicara, jadi menyenangkan."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "2. Terjemahkan ulang kalimat 101-mu"
+    },
+    {
+     "type": "p",
+     "text": "Buka dialog mana pun di 日本語 101, lalu bacakan ulang seluruhnya dalam bentuk biasa. Ini latihan yang paling langsung membuahkan hasil, karena isinya sudah kamu kuasai — yang dilatih murni perubahan bentuknya."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kalimat 101", "Bentuk biasa"],
+     "rows": [
+      ["[毎日|Mainichi][電車|densha]で[会社|kaisha]へ[行|i]きます。", "[毎日|Mainichi][電車|densha]で[会社|kaisha]へ[行|i]く。"],
+      ["[昨日|Kinō]は[何|nani]も[食|ta]べませんでした。", "[昨日|Kinō]は[何|nani]も[食|ta]べなかった。"],
+      ["[この|Kono][店|mise]は[静|shizu]かでした。", "[この|Kono][店|mise]は[静|shizu]かだった。"],
+      ["[私|Watashi]は[学生|gakusei]じゃありません。", "[私|Watashi]は[学生|gakusei]じゃない。"],
+      ["[映画|Eiga]は[面白|omoshiro]くなかったです。", "[映画|Eiga]は[面白|omoshiro]くなかった。"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau lima baris ini bisa kamu ucapkan tanpa berhenti, batang utama modul ini sudah terpasang. Sisa dua belas unit tinggal menggantung di atasnya."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[久|Hisa]しぶり", "baca": "ひさしぶり · hisashiburi", "id": "lama tak jumpa" },
+  { "ja": "[元気|Genki]", "baca": "げんき · genki", "id": "sehat, bersemangat" },
+  { "ja": "まだ", "baca": "まだ · mada", "id": "masih" },
+  { "ja": "[会社|Kaisha]", "baca": "かいしゃ · kaisha", "id": "perusahaan" },
+  { "ja": "[辞|Ya]める", "baca": "やめる · yameru", "id": "berhenti (dari pekerjaan)" },
+  { "ja": "[先月|Sengetsu]", "baca": "せんげつ · sengetsu", "id": "bulan lalu" },
+  { "ja": "[別|Betsu]の", "baca": "べつの · betsu no", "id": "yang lain" },
+  { "ja": "[働|Hatara]く", "baca": "はたらく · hataraku", "id": "bekerja" },
+  { "ja": "[知|Shi]る", "baca": "しる · shiru", "id": "tahu, mengetahui" },
+  { "ja": "どうして", "baca": "どうして · dōshite", "id": "kenapa" },
+  { "ja": "[残業|Zangyō]", "baca": "ざんぎょう · zangyō", "id": "lembur" },
+  { "ja": "[多|Ō]い", "baca": "おおい · ōi", "id": "banyak" },
+  { "ja": "～すぎる", "baca": "～すぎる · sugiru", "id": "terlalu ~" },
+  { "ja": "[大変|Taihen]", "baca": "たいへん · taihen", "id": "berat, repot" },
+  { "ja": "[給料|Kyūryō]", "baca": "きゅうりょう · kyūryō", "id": "gaji" },
+  { "ja": "～より", "baca": "～より · yori", "id": "daripada" },
+  { "ja": "[時間|Jikan]", "baca": "じかん · jikan", "id": "waktu" },
+  { "ja": "[大事|Daiji]", "baca": "だいじ · daiji", "id": "penting" },
+  { "ja": "[来年|Rainen]", "baca": "らいねん · rainen", "id": "tahun depan" },
+  { "ja": "[卒業|Sotsugyō]する", "baca": "そつぎょうする · sotsugyō suru", "id": "lulus" },
+  { "ja": "[就活|Shūkatsu]", "baca": "しゅうかつ · shūkatsu", "id": "mencari kerja" },
+  { "ja": "[困|Koma]る", "baca": "こまる · komaru", "id": "kesulitan, repot" },
+  { "ja": "[週末|Shūmatsu]", "baca": "しゅうまつ · shūmatsu", "id": "akhir pekan" },
+  { "ja": "[予定|Yotei]", "baca": "よてい · yotei", "id": "rencana, jadwal" },
+  { "ja": "[特|Toku]に", "baca": "とくに · toku ni", "id": "khususnya, terutama" },
+  { "ja": "[映画|Eiga]", "baca": "えいが · eiga", "id": "film" },
+  { "ja": "～ぐらい", "baca": "～ぐらい · gurai", "id": "kira-kira, paling-paling" },
+  { "ja": "[土曜日|Doyōbi]", "baca": "どようび · doyōbi", "id": "hari Sabtu" },
+  { "ja": "[暇|Hima]", "baca": "ひま · hima", "id": "senggang, luang" },
+  { "ja": "[花見|Hanami]", "baca": "はなみ · hanami", "id": "melihat bunga sakura" },
+  { "ja": "[桜|Sakura]", "baca": "さくら · sakura", "id": "bunga sakura" },
+  { "ja": "[咲|Sa]く", "baca": "さく · saku", "id": "mekar" },
+  { "ja": "[今週|Konshū]", "baca": "こんしゅう · konshū", "id": "minggu ini" },
+  { "ja": "[来週|Raishū]", "baca": "らいしゅう · raishū", "id": "minggu depan" },
+  { "ja": "[遅|Oso]い", "baca": "おそい · osoi", "id": "terlambat, lambat" },
+  { "ja": "～らしい", "baca": "～らしい · rashii", "id": "katanya, sepertinya" },
+  { "ja": "[バイト|Baito]", "baca": "ばいと · baito", "id": "kerja paruh waktu" },
+  { "ja": "～かも", "baca": "～かも · kamo", "id": "mungkin" },
+  { "ja": "[夕方|Yūgata]", "baca": "ゆうがた · yūgata", "id": "sore" },
+  { "ja": "[大丈夫|Daijōbu]", "baca": "だいじょうぶ · daijōbu", "id": "tidak apa-apa" },
+  { "ja": "[多分|Tabun]", "baca": "たぶん · tabun", "id": "mungkin, barangkali" },
+  { "ja": "[終|O]わる", "baca": "おわる · owaru", "id": "selesai, berakhir" },
+  { "ja": "[場所|Basho]", "baca": "ばしょ · basho", "id": "tempat, lokasi" },
+  { "ja": "[後|Ato]で", "baca": "あとで · ato de", "id": "nanti" },
+  { "ja": "[送|Oku]る", "baca": "おくる · okuru", "id": "mengirim" },
+  { "ja": "[飲|No]み[物|mono]", "baca": "のみもの · nomimono", "id": "minuman" },
+  { "ja": "[食|Ta]べ[物|mono]", "baca": "たべもの · tabemono", "id": "makanan" },
+  { "ja": "[僕|Boku]", "baca": "ぼく · boku", "id": "saya (laki-laki, santai)" },
+  { "ja": "[俺|Ore]", "baca": "おれ · ore", "id": "saya (laki-laki, kasar)" },
+  { "ja": "[楽|Tano]しみ", "baca": "たのしみ · tanoshimi", "id": "hal yang dinanti-nanti" },
+  { "ja": "ごめん", "baca": "ごめん · gomen", "id": "maaf (santai)" },
+  { "ja": "なんで", "baca": "なんで · nande", "id": "kenapa (santai)" },
+  { "ja": "すごく", "baca": "すごく · sugoku", "id": "sangat (santai)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk kamus (bentuk biasa positif, bukan lampau).",
+   "items": [
+    "[行|i]きます ___",
+    "[食|ta]べます ___",
+    "[飲|no]みます ___",
+    "します ___",
+    "[来|ki]ます ___",
+    "[働|hatara]きます ___"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk ない.",
+   "items": [
+    "[書|ka]きます ___",
+    "[買|ka]います ___",
+    "[見|mi]ます ___",
+    "[待|ma]ちます ___",
+    "します ___",
+    "[来|ki]ます ___"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk た (lampau biasa).",
+   "items": [
+    "[話|hana]しました ___",
+    "[遊|aso]びました ___",
+    "[起|o]きました ___",
+    "[行|i]きました ___",
+    "[静|shizu]かでした ___",
+    "[高|taka]かったです ___"
+   ]
+  },
+  {
+   "prompt": "Ubah seluruh kalimat dari bentuk sopan ke bentuk biasa.",
+   "items": [
+    "[明日|Ashita][友達|tomodachi]に[会|a]います。",
+    "[昨日|Kinō]は[何|nani]も[食|ta]べませんでした。",
+    "[この|Kono][店|mise]は[静|shizu]かじゃありません。",
+    "[私|Watashi]は[学生|gakusei]でした。",
+    "[映画|Eiga]は[面白|omoshiro]くなかったです。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "まだ / あの / 会社 / に / いる",
+    "先月 / 会社 / を / 辞めた",
+    "週末 / 何か / する / 予定 / ある",
+    "食べ物 / は / 僕 / が / 買っておく",
+    "来週 / だ / と / 遅すぎる / らしい"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang dalam bentuk biasa. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Lama tak jumpa. Kamu sehat?",
+    "Aku nggak tahu.",
+    "Sabtu senggang?",
+    "Kayaknya nggak apa-apa.",
+    "Nanti aku kirim lokasinya."
+   ]
+  }
+ ],
+ "answers": [
+  "[行|i]く — [食|ta]べる — [飲|no]む — する — [来|ku]る — [働|hatara]く",
+  "[書|ka]かない — [買|ka]わない — [見|mi]ない — [待|ma]たない — しない — [来|ko]ない",
+  "[話|hana]した — [遊|aso]んだ — [起|o]きた — [行|i]った — [静|shizu]かだった — [高|taka]かった",
+  "[明日|Ashita][友達|tomodachi]に[会|a]う。 — [昨日|Kinō]は[何|nani]も[食|ta]べなかった。 — [この|Kono][店|mise]は[静|shizu]かじゃない。 — [私|Watashi]は[学生|gakusei]だった。 — [映画|Eiga]は[面白|omoshiro]くなかった。",
+  "まだあの[会社|kaisha]にいる — [先月|Sengetsu][会社|kaisha]を[辞|ya]めた — [週末|Shūmatsu][何|nani]かする[予定|yotei]ある — [食|Ta]べ[物|mono]は[僕|boku]が[買|ka]っておく — [来週|Raishū]だと[遅|oso]すぎるらしい",
+  "[久|Hisa]しぶり。[元気|Genki]だった？ — [知|Shi]らなかった。 — [土曜日|Doyōbi][暇|hima]？ — [多分|Tabun][大丈夫|daijōbu]。 — [場所|Basho]は[後|ato]で[送|oku]る。"
+ ],
+ "wave": "Buka 日本語 101 Unit 10 dan bacakan ulang seluruh dialognya dalam bentuk biasa, keras-keras. Isinya sudah kamu kuasai, jadi seluruh tenagamu bisa dipakai untuk perubahan bentuknya saja. Lakukan itu tiga hari berturut-turut sebelum masuk Unit 2."
+}

@@ -1,0 +1,358 @@
+{
+ "title": "Bentuk kamus dan apa yang menempel padanya",
+ "title_target": "泳ぐことができる — Oyogu koto ga dekiru",
+ "goal": "Memakai bentuk kamus sebagai kata benda, menyatakan kemampuan dengan ことができる, menyusun urutan kejadian dengan ～前に dan ～てから, serta menyatakan keputusan dengan ～ことにする.",
+ "bekal": [
+  "menyatakan bisa atau tidak bisa dengan ～ことができる",
+  "menjadikan kata kerja sebagai pokok kalimat dengan ～こと dan ～の",
+  "menyusun dua kejadian dengan ～前に dan ～てから",
+  "menyatakan kesukaan dan kemahiran dengan ～のが好き・上手",
+  "menyatakan keputusan sendiri dengan ～ことにする"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Mendaftar kelas renang",
+   "intro": "Ani mendaftar di kolam renang kota. Perhatikan berapa kali bentuk kamus muncul di tengah kalimat, bukan di ujungnya.",
+   "lines": [
+    { "speaker": "[受付|Uketsuke]:", "text": "こんにちは。[何|Nan]のクラスをお[探|saga]しですか。", "id": "Selamat siang. Mencari kelas apa?", "literal": "selamat-siang. apa — punya — kelas — akan — mencari — adalah — kah." },
+    { "speaker": "アニ:", "text": "[水泳|Suiei]のクラスを[習|nara]いたいんですが。", "id": "Saya ingin belajar kelas renang.", "literal": "renang — punya — kelas — akan — belajar-ingin — hal-adalah-tapi." },
+    { "speaker": "[受付|Uketsuke]:", "text": "[泳|Oyo]ぐことができますか。", "id": "Bisa berenang?", "literal": "berenang — hal — yang — bisa — kah." },
+    { "speaker": "アニ:", "text": "[少|Suko]しだけ。[顔|Kao]を[水|mizu]につけることができません。", "id": "Sedikit saja. Saya tidak bisa memasukkan wajah ke air.", "literal": "sedikit — hanya. wajah — akan — air — pada — menempelkan — hal — yang — tidak-bisa." },
+    { "speaker": "[受付|Uketsuke]:", "text": "でしたら[初級|shokyū]クラスですね。[泳|Oyo]ぐ[前|mae]に[準備運動|junbi undō]をします。", "id": "Kalau begitu kelas pemula ya. Sebelum berenang kita pemanasan dulu.", "literal": "kalau-begitu — pemula — kelas — adalah — ya. berenang — sebelum — pada — persiapan-gerak — akan — melakukan." },
+    { "speaker": "アニ:", "text": "[何|Nan][曜日|yōbi]ですか。", "id": "Hari apa?", "literal": "apa — hari — adalah — kah." },
+    { "speaker": "[受付|Uketsuke]:", "text": "[火曜|Kayō]と[木曜|mokuyō]の[夜|yoru]です。[仕事|Shigoto]が[終|o]わってから[来|ko]られますか。", "id": "Selasa dan Kamis malam. Bisa datang setelah pekerjaan selesai?", "literal": "Selasa — dan — Kamis — punya — malam — adalah. pekerjaan — yang — selesai-sesudah — datang-bisa — kah." },
+    { "speaker": "アニ:", "text": "はい。7[時|ji]までに[着|tsu]くことができると[思|omo]います。", "id": "Ya. Saya rasa bisa sampai sebelum jam 7.", "literal": "ya. 7 — jam — sampai-pada — tiba — hal — yang — bisa — begitu — berpikir." },
+    { "speaker": "[受付|Uketsuke]:", "text": "では[この|kono][紙|kami]に[名前|namae]と[電話番号|denwa bangō]をお[書|ka]きください。", "id": "Kalau begitu tulis nama dan nomor telepon di kertas ini.", "literal": "kalau-begitu — ini — kertas — pada — nama — dan — telepon-nomor — akan — menulis-silakan." },
+    { "speaker": "アニ:", "text": "[水着|Mizugi]は[借|ka]りることができますか。", "id": "Baju renang bisa disewa?", "literal": "baju-renang — mengenai — meminjam — hal — yang — bisa — kah." },
+    { "speaker": "[受付|Uketsuke]:", "text": "[水着|Mizugi]は[無理|muri]ですが、タオルは[貸|ka]し[出|da]しています。", "id": "Baju renang tidak bisa, tapi handuk kami sewakan.", "literal": "baju-renang — mengenai — mustahil — adalah-tapi, handuk — mengenai — meminjamkan-mengeluarkan — sedang." },
+    { "speaker": "アニ:", "text": "[分|Wa]かりました。[来週|Raishū]から[始|haji]めることにします。", "id": "Baik. Saya putuskan mulai minggu depan.", "literal": "mengerti-sudah. minggu-depan — dari — memulai — hal — pada — melakukan." }
+   ],
+   "notes": [
+    "**[泳|Oyo]ぐこと** = “hal berenang”. こと mengubah kata kerja jadi kata benda, persis seperti akhiran *-ing* di bahasa Inggris atau awalan *ber-* yang dibendakan. Setelah jadi kata benda, ia bisa dipasangi partikel: [泳|oyo]ぐこと**が**できる、[泳|oyo]ぐこと**を**[考|kanga]える.",
+    "**Sesudah こと selalu bentuk kamus, bukan bentuk ます.** [泳|Oyo]ぎますこと ⚠️ tidak pernah ada. Semua yang menempel di tengah kalimat memakai bentuk biasa — inilah kenapa Unit 1 harus lebih dulu.",
+    "**～[前|mae]に juga menuntut bentuk kamus, bahkan untuk kejadian yang sudah lewat.** [食|Ta]べる[前|mae]に[手|te]を[洗|ara]った (sebelum makan saya cuci tangan). Yang menentukan waktunya adalah kata kerja di ujung kalimat, bukan yang di depan [前|mae]に. Ini sering terasa salah bagi pembelajar dan hampir selalu jadi kesalahan pertama.",
+    "**[来|Ko]られますか** adalah bentuk potensial dari [来|ku]る, yang akan dibongkar penuh di Unit 5. Untuk sekarang cukup tahu bahwa ini cara lain berkata [来|ku]ることができますか — lebih pendek, dan lebih sering dipakai.",
+    "**までに ≠ まで.** 7[時|ji]**まで** = sampai jam 7 (kegiatannya berlangsung terus). 7[時|ji]**までに** = paling lambat jam 7 (batas waktunya). Untuk tenggat, selalu までに.",
+    "**お～ください** ([お書|oka]きください) adalah permintaan sopan yang dipakai petugas kepada pelanggan. Kamu akan sering mendengarnya, tapi belum perlu memakainya sendiri — dibongkar di Unit 13.",
+    "**[無理|Muri]です** harfiahnya “mustahil”, tapi dalam praktik ia berarti “tidak bisa, maaf”. Jauh lebih halus daripada できません yang terdengar seperti penolakan mentah."
+   ],
+   "grammars": [
+    {
+     "title": "～ことができる — bisa dan tidak bisa",
+     "body": [
+      "Pola pertama untuk menyatakan kemampuan. Susunannya tetap: **bentuk kamus + ことができる**, dan tidak ada pengecualian sama sekali."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti"],
+      "rows": [
+       ["[泳|Oyo]ぐことができます。", "Saya bisa berenang."],
+       ["[漢字|Kanji]を[読|yo]むことができません。", "Saya tidak bisa membaca kanji."],
+       ["[昨日|Kinō]は[行|i]くことができませんでした。", "Kemarin saya tidak bisa pergi."],
+       ["ここで[写真|shashin]を[撮|to]ることができますか。", "Di sini boleh memotret?"],
+       ["[日本語|Nihongo]で[説明|setsumei]することができる。", "Aku bisa menjelaskannya dalam bahasa Jepang."]
+      ]
+     },
+     "after": [
+      "**できる sendirian dipakai dengan kata benda.** [日本語|Nihongo]ができます = saya bisa bahasa Jepang. [料理|Ryōri]ができます = saya bisa memasak. Perhatikan partikelnya **が**, bukan を — ini menjebak, karena bahasa Indonesia memakai objek langsung.",
+      "**Dua arti sekaligus: sanggup dan diizinkan.** ここで[撮|to]ることができますか bisa berarti “apakah saya mampu” maupun “apakah boleh”. Situasi yang memilahnya; kalau ingin tegas soal izin, pakai ～てもいいですか dari 101 Unit 9.",
+      "**Bentuk pendeknya dipelajari di Unit 5.** [泳|Oyo]げる、[読|yo]める、[来|ko]られる. Dalam percakapan sehari-hari bentuk pendek jauh lebih sering; ことができる terasa sedikit resmi dan menekankan."
+     ]
+    },
+    {
+     "title": "Urutan kejadian — ～前に, ～てから, ～あとで",
+     "body": [
+      "Tiga penghubung waktu yang menuntut tiga bentuk kata kerja berbeda. Menghafal bentuknya sekali di sini akan menyelamatkanmu di sembilan unit berikutnya."
+     ],
+     "table": {
+      "head": ["Pola", "Bentuk yang dituntut", "Contoh", "Arti"],
+      "rows": [
+       ["～[前|mae]に", "bentuk kamus", "[寝|ne]る[前|mae]に[本|hon]を[読|yo]む。", "Sebelum tidur saya membaca buku."],
+       ["～てから", "bentuk て", "[手|Te]を[洗|ara]ってから[食|ta]べる。", "Setelah cuci tangan baru makan."],
+       ["～[後|ato]で", "bentuk た", "[食|Ta]べた[後|ato]で[歯|ha]を[磨|miga]く。", "Setelah makan saya gosok gigi."],
+       ["kata benda + の[前|mae]に", "kata benda", "[食事|Shokuji]の[前|mae]に", "sebelum makan"],
+       ["kata benda + の[後|ato]で", "kata benda", "[会議|Kaigi]の[後|ato]で", "sesudah rapat"]
+      ]
+     },
+     "after": [
+      "**Bentuk kata kerja di depan penghubung TIDAK menunjukkan waktu.** [寝|Ne]る[前|mae]に[読|yo]んだ (kemarin, sebelum tidur, aku membaca) memakai bentuk kamus [寝|ne]る walau seluruh kalimatnya lampau. Waktu hanya ditentukan kata kerja terakhir.",
+      "**～てから menekankan urutan, ～[後|ato]で cuma menyatakan sesudah.** [仕事|Shigoto]が[終|o]わってから[行|i]く terdengar seperti “baru setelah selesai, aku pergi”. [仕事|Shigoto]の[後|ato]で[行|i]く sekadar menyebut waktunya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Membicarakan hobi",
+   "intro": "Di ruang ganti, Ani berkenalan dengan Miki. Perhatikan の yang menggantikan こと, dan alasan kenapa ia lebih sering muncul.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "[初|Haji]めてですか。", "id": "Baru pertama kali?", "literal": "pertama-kali — adalah — kah." },
+    { "speaker": "アニ:", "text": "はい。[泳|Oyo]ぐのがずっと[苦手|nigate]で。", "id": "Iya. Saya dari dulu nggak jago berenang.", "literal": "ya. berenang — hal — yang — terus — tidak-mahir — adalah-dan." },
+    { "speaker": "ミキ:", "text": "[私|Watashi]も[最初|saisho]はそうでした。[今|Ima]は[泳|oyo]ぐのが[一番|ichiban][好|su]きです。", "id": "Saya juga awalnya begitu. Sekarang berenang yang paling saya suka.", "literal": "saya — juga — awal — mengenai — begitu — adalah-dulu. sekarang — mengenai — berenang — hal — yang — nomor-satu — suka — adalah." },
+    { "speaker": "アニ:", "text": "[どのぐらい|Dono gurai][習|nara]っていますか。", "id": "Sudah berapa lama belajar?", "literal": "berapa-kira-kira — belajar-sedang — kah." },
+    { "speaker": "ミキ:", "text": "3[年|nen]ぐらい。[毎週|Maishū][来|ku]ることにしています。", "id": "Sekitar 3 tahun. Saya membiasakan diri datang tiap minggu.", "literal": "3 — tahun — kira-kira. tiap-minggu — datang — hal — pada — melakukan-sedang." },
+    { "speaker": "アニ:", "text": "すごい。[続|Tsuzu]けるのは[難|muzuka]しくないですか。", "id": "Hebat. Tidak sulit melanjutkannya?", "literal": "hebat. melanjutkan — hal — mengenai — sulit-tidak — adalah — kah." },
+    { "speaker": "ミキ:", "text": "[最初|Saisho]は[大変|taihen]でした。でも[泳|oyo]いだ[後|ato]でよく[眠|nemu]れるんです。", "id": "Awalnya berat. Tapi setelah berenang saya jadi bisa tidur nyenyak.", "literal": "awal — mengenai — berat — adalah-dulu. tapi — berenang-sesudah — baik — tidur-bisa — hal-adalah." },
+    { "speaker": "アニ:", "text": "それはいいですね。[私|Watashi]も[早|haya]く[寝|ne]るのが[苦手|nigate]で。", "id": "Wah bagus. Saya juga susah tidur cepat.", "literal": "itu — mengenai — baik — adalah — ya. saya — juga — cepat — tidur — hal — yang — tidak-mahir — adalah-dan." },
+    { "speaker": "ミキ:", "text": "[水|Mizu]に[入|hai]る[前|mae]に[温|atata]かいシャワーを[浴|a]びるといいですよ。", "id": "Sebelum masuk air, sebaiknya mandi air hangat dulu lho.", "literal": "air — pada — masuk — sebelum — pada — hangat — pancuran — akan — mandi — kalau — baik — adalah — lho." },
+    { "speaker": "アニ:", "text": "[覚|Obo]えておきます。ありがとうございます。", "id": "Saya ingat-ingat. Terima kasih.", "literal": "mengingat-menyiapkan. terima-kasih." },
+    { "speaker": "ミキ:", "text": "[途中|Tochū]でやめないでくださいね。3[か月|kagetsu][続|tsuzu]けると[変|ka]わりますから。", "id": "Jangan berhenti di tengah jalan ya. Kalau lanjut 3 bulan pasti berubah.", "literal": "tengah-jalan — di — berhenti-jangan — silakan — ya. 3 — bulan — melanjutkan — kalau — berubah — karena." }
+   ],
+   "notes": [
+    "**の menggantikan こと, dan lebih sering dipakai.** [泳|Oyo]ぐ**の**が[好|su]き dan [泳|oyo]ぐ**こと**が[好|su]き sama-sama benar. Aturan kasarnya: kalau kalimatnya soal pengalaman, perasaan, atau pengamatan langsung, pakai の. Kalau soal gagasan abstrak, pakai こと.",
+    "**こと WAJIB, bukan の, sesudah できる.** [泳|Oyo]ぐの ⚠️ ができる salah. Sebaliknya の WAJIB sesudah [見|mi]る、[聞|ki]く、[待|ma]つ: [子供|Kodomo]が[遊|aso]ぶ**の**を[見|mi]た.",
+    "**[苦手|Nigate] bukan “tidak bisa”, melainkan “tidak jago dan tidak suka”.** Lawan katanya [得意|tokui]. Orang Jepang memakainya juga untuk makanan ([納豆|nattō]が[苦手|nigate]) dan untuk orang ([あの人|Ano hito]が[苦手|nigate] = aku kurang cocok dengan dia) — cara halus mengatakan hal yang tak enak.",
+    "**～ことにしています ≠ ～ことにしました.** Yang pertama = kebiasaan yang kamu tetapkan sendiri dan jalankan terus (“saya membiasakan diri …”). Yang kedua = keputusan sekali, baru diambil (“saya putuskan …”).",
+    "**～んです / ～んだ** melekat di banyak baris dialog ini. Fungsinya menjelaskan latar atau alasan, bukan menyatakan fakta baru. [眠|Nemu]れる**んです** = “soalnya jadi bisa tidur”. Tanpa んです kalimatnya benar tapi terasa terputus dari percakapan.",
+    "**やめないでください** = jangan berhenti. Bentuk ない + でください adalah larangan halus. Pasangannya やめてください (tolong hentikan) yang justru berarti sebaliknya — perhatikan ない-nya."
+   ],
+   "grammars": [
+    {
+     "title": "～のが好き・上手・下手 — menyatakan selera dan kemahiran",
+     "body": [
+      "Semua kata sifat berikut menuntut partikel **が**, bukan を. Kata kerjanya dijadikan kata benda dulu dengan の atau こと."
+     ],
+     "table": {
+      "head": ["Kata sifat", "Arti", "Contoh"],
+      "rows": [
+       ["[好|su]き", "suka", "[歌|Uta]を[歌|uta]うのが[好|su]きです。"],
+       ["[嫌|kira]い", "benci, tidak suka", "[早|Haya]く[起|o]きるのが[嫌|kira]いです。"],
+       ["[上手|jōzu]", "mahir (untuk orang lain)", "[彼|Kare]は[料理|ryōri]をするのが[上手|jōzu]です。"],
+       ["[下手|heta]", "tidak mahir", "[歌|Uta]うのが[下手|heta]です。"],
+       ["[得意|tokui]", "jago (boleh untuk diri sendiri)", "[数学|Sūgaku]が[得意|tokui]です。"],
+       ["[苦手|nigate]", "kurang jago, kurang suka", "[人|Hito]の[前|mae]で[話|hana]すのが[苦手|nigate]です。"]
+      ]
+     },
+     "after": [
+      "**Jangan memakai [上手|jōzu] untuk diri sendiri.** [私|Watashi]は[日本語|nihongo]が[上手|jōzu]です terdengar sombong bagi telinga Jepang. Pakai [得意|tokui], atau lebih aman lagi [少|suko]しできます.",
+      "**Kalau orang Jepang memuji [日本語|nihongo][上手|jōzu]ですね**, jawaban yang lazim bukan ありがとう melainkan いいえ、まだまだです (belum, masih jauh). Merendah adalah bagian dari tata krama percakapannya."
+     ]
+    },
+    {
+     "title": "～ことにする dan ～ことになる — keputusan siapa?",
+     "body": [
+      "Dua pola yang bentuknya mirip tapi maknanya berlawanan arah. Yang membedakan: siapa yang memutuskan."
+     ],
+     "table": {
+      "head": ["Pola", "Siapa yang memutuskan", "Contoh", "Arti"],
+      "rows": [
+       ["～ことにする", "aku sendiri", "[来週|Raishū]から[始|haji]めることにします。", "Saya putuskan mulai minggu depan."],
+       ["～ないことにする", "aku sendiri", "[今日|Kyō]は[行|i]かないことにした。", "Saya putuskan tidak pergi hari ini."],
+       ["～ことにしている", "kebiasaan yang kutetapkan", "[毎朝|Maiasa][走|hashi]ることにしている。", "Saya biasakan lari tiap pagi."],
+       ["～ことになる", "keadaan atau orang lain", "[来月|Raigetsu][大阪|Ōsaka]に[行|i]くことになりました。", "Ternyata saya jadi ke Osaka bulan depan."],
+       ["～ことになっている", "aturan yang berlaku", "ここでは[靴|kutsu]を[脱|nu]ぐことになっています。", "Di sini aturannya melepas sepatu."]
+      ]
+     },
+     "after": [
+      "**～ことになりました dipakai bahkan saat kamu sendiri yang memutuskan.** [結婚|Kekkon]することになりました (saya akan menikah) jauh lebih sering terdengar daripada [結婚|kekkon]することにしました, karena menonjolkan diri sendiri terasa kurang santun. Bahasa Jepang lebih suka menyampaikan kabar seolah keadaan yang membawanya.",
+      "**～ことになっている sangat berguna untuk menerangkan aturan** tanpa terdengar memerintah: [9時|Kuji]までに[来|ku]ることになっています = “aturannya datang sebelum jam 9”, bukan “kamu harus datang”."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang paling sering bertemu bentuk kamus",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk kamus muncul di hampir tiap pola A2. Daftar ini memuat kata kerja yang paling sering kamu butuhkan, sekaligus melatih matamu mengenali kelompoknya."
+    },
+    {
+     "type": "tabel",
+     "head": ["Bentuk kamus", "Bentuk ます", "Arti", "Kelompok"],
+     "rows": [
+      ["[行|i]く", "[行|i]きます", "pergi", "godan"],
+      ["[来|ku]る", "[来|ki]ます", "datang", "menyimpang"],
+      ["する", "します", "melakukan", "menyimpang"],
+      ["[見|mi]る", "[見|mi]ます", "melihat", "ichidan"],
+      ["[食|ta]べる", "[食|ta]べます", "makan", "ichidan"],
+      ["[飲|no]む", "[飲|no]みます", "minum", "godan"],
+      ["[読|yo]む", "[読|yo]みます", "membaca", "godan"],
+      ["[書|ka]く", "[書|ka]きます", "menulis", "godan"],
+      ["[話|hana]す", "[話|hana]します", "berbicara", "godan"],
+      ["[聞|ki]く", "[聞|ki]きます", "mendengar", "godan"],
+      ["[買|ka]う", "[買|ka]います", "membeli", "godan"],
+      ["[待|ma]つ", "[待|ma]ちます", "menunggu", "godan"],
+      ["[帰|kae]る", "[帰|kae]ります", "pulang", "godan ⚠️"],
+      ["[入|hai]る", "[入|hai]ります", "masuk", "godan ⚠️"],
+      ["[起|o]きる", "[起|o]きます", "bangun", "ichidan"],
+      ["[寝|ne]る", "[寝|ne]ます", "tidur", "ichidan"],
+      ["[覚|obo]える", "[覚|obo]えます", "mengingat", "ichidan"],
+      ["[忘|wasu]れる", "[忘|wasu]れます", "lupa", "ichidan"],
+      ["[続|tsuzu]ける", "[続|tsuzu]けます", "melanjutkan", "ichidan"],
+      ["[始|haji]める", "[始|haji]めます", "memulai", "ichidan"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua kata kerja yang berpura-pura ichidan",
+     "items": [
+      "[帰|Kae]る dan [入|hai]る berujung -eru dan -iru, jadi tampak seperti kata kerja ichidan. Padahal keduanya **godan**: [帰|kae]らない (bukan [帰|kae]ない ⚠️), [入|hai]らない (bukan [入|hai]ない ⚠️).",
+      "Kawanan yang sama: [切|ki]る (memotong), [走|hashi]る (lari), [知|shi]る (tahu), [要|i]る (perlu), [減|he]る (berkurang). Enam kata ini muncul terus, jadi hafalkan sebagai satu paket sekali saja.",
+      "Cara menguji: coba buat bentuk ないnya. Kalau terdengar aneh tanpa ら, dia godan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyusun satu paragraf tentang kebiasaanmu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua pola unit ini bisa dipakai sekaligus untuk menjelaskan rutinitas. Bacalah contoh berikut, lalu ganti isinya dengan kegiatanmu sendiri."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[私|Watashi]は[毎朝|maiasa]6[時|ji]に[起|o]きることにしています。",
+      "[会社|Kaisha]に[行|i]く[前|mae]に、30[分|pun][走|hashi]ります。",
+      "[走|Hashi]るのは[好|su]きじゃありませんが、[体|karada]にいいですから。",
+      "[走|Hashi]った[後|ato]でシャワーを[浴|a]びて、[朝|asa]ごはんを[食|ta]べます。",
+      "[夜|Yoru]は12[時|ji]までに[寝|ne]ることにしています。でも、なかなかできません。",
+      "Saya membiasakan bangun jam 6 tiap pagi. Sebelum berangkat ke kantor, saya lari 30 menit. Saya tidak suka lari, tapi karena baik untuk badan. Setelah lari saya mandi lalu sarapan. Malamnya saya biasakan tidur sebelum jam 12. Tapi susah sekali."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan kalimat terakhir: **なかなか + bentuk sangkal** berarti “susah sekali untuk …”, “tidak kunjung …”. なかなか[できません|dekimasen] = tidak kunjung berhasil. Kata ini hampir selalu berpasangan dengan kalimat sangkal, dan sangat sering dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": ["Penanda waktu", "Contoh", "Arti"],
+     "rows": [
+      ["[毎朝|maiasa]", "[毎朝|Maiasa][走|hashi]る", "tiap pagi"],
+      ["[毎晩|maiban]", "[毎晩|Maiban][読|yo]む", "tiap malam"],
+      ["[週|shū]に2[回|kai]", "[週|Shū]に2[回|kai][行|i]く", "dua kali seminggu"],
+      ["たまに", "たまに[飲|no]む", "sesekali"],
+      ["いつも", "いつも[遅|oso]い", "selalu"],
+      ["なかなか～ない", "なかなか[寝|ne]られない", "tidak kunjung bisa tidur"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[受付|Uketsuke]", "baca": "うけつけ · uketsuke", "id": "resepsionis, penerimaan" },
+  { "ja": "[探|Saga]す", "baca": "さがす · sagasu", "id": "mencari" },
+  { "ja": "[水泳|Suiei]", "baca": "すいえい · suiei", "id": "renang" },
+  { "ja": "[習|Nara]う", "baca": "ならう · narau", "id": "belajar (dari guru)" },
+  { "ja": "[泳|Oyo]ぐ", "baca": "およぐ · oyogu", "id": "berenang" },
+  { "ja": "[顔|Kao]", "baca": "かお · kao", "id": "wajah" },
+  { "ja": "つける", "baca": "つける · tsukeru", "id": "menempelkan, memasukkan" },
+  { "ja": "[初級|Shokyū]", "baca": "しょきゅう · shokyū", "id": "tingkat pemula" },
+  { "ja": "[準備|Junbi]", "baca": "じゅんび · junbi", "id": "persiapan" },
+  { "ja": "[運動|Undō]", "baca": "うんどう · undō", "id": "olahraga, gerak badan" },
+  { "ja": "[曜日|Yōbi]", "baca": "ようび · yōbi", "id": "hari (dalam minggu)" },
+  { "ja": "[着|Tsu]く", "baca": "つく · tsuku", "id": "tiba, sampai" },
+  { "ja": "～までに", "baca": "～までに · made ni", "id": "paling lambat, sebelum" },
+  { "ja": "[紙|Kami]", "baca": "かみ · kami", "id": "kertas" },
+  { "ja": "[電話番号|Denwa bangō]", "baca": "でんわばんごう · denwa bangō", "id": "nomor telepon" },
+  { "ja": "[水着|Mizugi]", "baca": "みずぎ · mizugi", "id": "baju renang" },
+  { "ja": "[借|Ka]りる", "baca": "かりる · kariru", "id": "meminjam" },
+  { "ja": "[貸|Ka]す", "baca": "かす · kasu", "id": "meminjamkan" },
+  { "ja": "[無理|Muri]", "baca": "むり · muri", "id": "mustahil, tidak bisa" },
+  { "ja": "[始|Haji]める", "baca": "はじめる · hajimeru", "id": "memulai" },
+  { "ja": "[初|Haji]めて", "baca": "はじめて · hajimete", "id": "untuk pertama kali" },
+  { "ja": "[苦手|Nigate]", "baca": "にがて · nigate", "id": "kurang jago, kurang suka" },
+  { "ja": "[得意|Tokui]", "baca": "とくい · tokui", "id": "jago, andalan" },
+  { "ja": "[上手|Jōzu]", "baca": "じょうず · jōzu", "id": "mahir" },
+  { "ja": "[下手|Heta]", "baca": "へた · heta", "id": "tidak mahir" },
+  { "ja": "[最初|Saisho]", "baca": "さいしょ · saisho", "id": "mula-mula, awalnya" },
+  { "ja": "[一番|Ichiban]", "baca": "いちばん · ichiban", "id": "paling, nomor satu" },
+  { "ja": "どのぐらい", "baca": "どのぐらい · dono gurai", "id": "berapa lama, seberapa" },
+  { "ja": "[毎週|Maishū]", "baca": "まいしゅう · maishū", "id": "tiap minggu" },
+  { "ja": "[続|Tsuzu]ける", "baca": "つづける · tsuzukeru", "id": "melanjutkan" },
+  { "ja": "[難|Muzuka]しい", "baca": "むずかしい · muzukashii", "id": "sulit" },
+  { "ja": "[眠|Nemu]る", "baca": "ねむる · nemuru", "id": "tidur, terlelap" },
+  { "ja": "[早|Haya]く", "baca": "はやく · hayaku", "id": "cepat, lebih awal" },
+  { "ja": "[温|Atata]かい", "baca": "あたたかい · atatakai", "id": "hangat" },
+  { "ja": "シャワーを[浴|a]びる", "baca": "しゃわーをあびる · shawā o abiru", "id": "mandi pancuran" },
+  { "ja": "[覚|Obo]える", "baca": "おぼえる · oboeru", "id": "mengingat, menghafal" },
+  { "ja": "[途中|Tochū]", "baca": "とちゅう · tochū", "id": "di tengah jalan" },
+  { "ja": "やめる", "baca": "やめる · yameru", "id": "berhenti, membatalkan" },
+  { "ja": "[か月|Kagetsu]", "baca": "かげつ · kagetsu", "id": "bulan (lama waktu)" },
+  { "ja": "[変|Ka]わる", "baca": "かわる · kawaru", "id": "berubah" },
+  { "ja": "[歯|Ha]を[磨|miga]く", "baca": "はをみがく · ha o migaku", "id": "menggosok gigi" },
+  { "ja": "[会議|Kaigi]", "baca": "かいぎ · kaigi", "id": "rapat" },
+  { "ja": "[靴|Kutsu]", "baca": "くつ · kutsu", "id": "sepatu" },
+  { "ja": "[脱|Nu]ぐ", "baca": "ぬぐ · nugu", "id": "melepas (pakaian)" },
+  { "ja": "なかなか", "baca": "なかなか · nakanaka", "id": "tidak kunjung (dengan sangkal)" },
+  { "ja": "たまに", "baca": "たまに · tama ni", "id": "sesekali" },
+  { "ja": "[体|Karada]", "baca": "からだ · karada", "id": "badan" },
+  { "ja": "[説明|Setsumei]する", "baca": "せつめいする · setsumei suru", "id": "menjelaskan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang dituntut pola di sebelahnya.",
+   "items": [
+    "[寝|ne]る[前|mae]に[本|hon]を ___ 。(baca: [読|yo]む)",
+    "[手|Te]を ___ から[食|ta]べます。(cuci: [洗|ara]う)",
+    "[映画|Eiga]を ___ [後|ato]で[話|hana]しましょう。(lihat: [見|mi]る)",
+    "[日本語|Nihongo]で ___ ことができます。(bicara: [話|hana]す)",
+    "[毎朝|Maiasa] ___ ことにしています。(lari: [走|hashi]る)",
+    "ここで[写真|shashin]を ___ ことができますか。(memotret: [撮|to]る)"
+   ]
+  },
+  {
+   "prompt": "Pilih partikel yang tepat.",
+   "items": [
+    "[日本語|Nihongo] ___ できます。",
+    "[泳|Oyo]ぐの ___ [好|su]きです。",
+    "[歌|Uta]を[歌|uta]うの ___ [下手|heta]です。",
+    "7[時|ji] ___ [着|tsu]きます。(tenggat)",
+    "[子供|Kodomo]が[遊|aso]ぶの ___ [見|mi]ました。",
+    "[水|Mizu] ___ [入|hai]る[前|mae]にシャワーを[浴|a]びます。"
+   ]
+  },
+  {
+   "prompt": "Pilih ことにする atau ことになる sesuai maknanya.",
+   "items": [
+    "[来週|Raishū]から[始|haji]める ___ 。(aku yang memutuskan)",
+    "[来月|Raigetsu][大阪|Ōsaka]に[転勤|tenkin]する ___ 。(kantor yang memutuskan)",
+    "ここでは[靴|kutsu]を[脱|nu]ぐ ___ 。(aturan yang berlaku)",
+    "[今日|Kyō]は[行|i]かない ___ 。(aku yang memutuskan)",
+    "[毎週|Maishū][来|ku]る ___ 。(kebiasaan yang kutetapkan)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "漢字 / を / 読む / こと / が / できません",
+    "食べる / 前 / に / 手 / を / 洗う",
+    "走る / の / は / 好き / じゃ / ありません",
+    "毎週 / 来る / こと / に / して / います",
+    "3か月 / 続ける / と / 変わります"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[顔|Kao]を[水|mizu]につけることができません。",
+    "[仕事|Shigoto]が[終|o]わってから[来|ko]られますか。",
+    "[人|Hito]の[前|mae]で[話|hana]すのが[苦手|nigate]です。",
+    "ここでは[靴|kutsu]を[脱|nu]ぐことになっています。",
+    "なかなか[早|haya]く[寝|ne]られません。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Saya bisa berenang sedikit.",
+    "Sebelum tidur saya membaca buku.",
+    "Saya suka memasak.",
+    "Saya putuskan mulai minggu depan.",
+    "Handuk bisa dipinjam?"
+   ]
+  }
+ ],
+ "answers": [
+  "[読|yo]む — [洗|ara]って — [見|mi]た — [話|hana]す — [走|hashi]る — [撮|to]る",
+  "が — が — が — までに — を — に",
+  "ことにします — ことになりました — ことになっています — ことにした — ことにしています",
+  "[漢字|Kanji]を[読|yo]むことができません — [食|Ta]べる[前|mae]に[手|te]を[洗|ara]う — [走|Hashi]るのは[好|su]きじゃありません — [毎週|Maishū][来|ku]ることにしています — 3[か月|kagetsu][続|tsuzu]けると[変|ka]わります",
+  "Saya tidak bisa memasukkan wajah ke dalam air. — Bisakah kamu datang setelah pekerjaan selesai? — Saya kurang jago berbicara di depan orang. — Di sini aturannya melepas sepatu. — Saya tidak kunjung bisa tidur cepat.",
+  "[少|Suko]し[泳|oyo]ぐことができます。 — [寝|Ne]る[前|mae]に[本|hon]を[読|yo]みます。 — [料理|Ryōri]をするのが[好|su]きです。 — [来週|Raishū]から[始|haji]めることにします。 — タオルは[借|ka]りることができますか。"
+ ],
+ "wave": "Ambil lima kalimat mana pun dari Unit 1, lalu pasangkan ～前に atau ～てから di depannya sehingga jadi kalimat baru. Latihan ini memaksa bentuk kamus dan bentuk て muncul bergantian — dua bentuk yang akan dipakai terus sampai unit terakhir."
+}

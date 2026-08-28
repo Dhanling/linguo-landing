@@ -1,0 +1,312 @@
+{
+ "title": "Kelihatannya, katanya, sepertinya",
+ "title_target": "雨が降りそうです — Ame ga furisō desu",
+ "goal": "Membedakan empat cara menyampaikan sesuatu yang tidak kamu ketahui pasti: ～そう (dari penampilan), ～そうだ (kabar dari orang), ～ようだ・～みたい (dari bukti), dan ～らしい (dari desas-desus).",
+ "bekal": [
+  "menyatakan kesan dari penampilan dengan ～そう",
+  "meneruskan kabar dengan ～そうです",
+  "menyimpulkan dari bukti dengan ～ようです dan ～みたい",
+  "menyampaikan desas-desus dengan ～らしい",
+  "menyatakan perasaan orang lain tanpa mengaku tahu isi hatinya"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Menebak dari yang terlihat",
+   "intro": "Ani dan Miki di jendela kantor. Perhatikan ～そう yang menempel di batang kata, bukan di kalimat.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "[空|Sora]、[暗|kura]くなってきたね。[雨|Ame]が[降|fu]りそう。", "id": "Langitnya mulai gelap ya. Kelihatannya mau hujan.", "literal": "langit, gelap-menjadi-datang-sudah — ya. hujan — yang — turun-kelihatan." },
+    { "speaker": "アニ:", "text": "[天気予報|Tenki yohō]では[晴|ha]れだって[言|i]ってたのに。", "id": "Padahal ramalan cuaca bilangnya cerah.", "literal": "cuaca-ramalan — di-mengenai — cerah — begitu — berkata-sedang-dulu — padahal." },
+    { "speaker": "ミキ:", "text": "[外|Soto]れることもあるよ。[傘|Kasa][持|mo]ってる？", "id": "Kadang meleset juga kok. Bawa payung?", "literal": "meleset — hal — juga — ada — lho. payung — membawa-sedang?" },
+    { "speaker": "アニ:", "text": "[持|Mo]ってない。コンビニで[買|ka]おうかな。", "id": "Nggak bawa. Beli di minimarket kali ya.", "literal": "membawa-sedang-tidak. minimarket — di — membeli-mari — kah-ya." },
+    { "speaker": "ミキ:", "text": "[私|Watashi]の[貸|ka]そうか？[今日|Kyō]は[車|kuruma]だから[要|i]らない。", "id": "Mau kupinjamkan punyaku? Hari ini aku bawa mobil jadi nggak butuh.", "literal": "saya — punya — meminjamkan-mari — kah? hari-ini — mengenai — mobil — karena — perlu-tidak." },
+    { "speaker": "アニ:", "text": "[本当|Hontō]？[助|Tasu]かる。あ、[佐藤|Satō]さん、[忙|isoga]しそうだね。", "id": "Serius? Terbantu banget. Eh, Pak Sato kelihatannya sibuk ya.", "literal": "sungguh? tertolong. ah, Sato-tuan, sibuk-kelihatan — ya." },
+    { "speaker": "ミキ:", "text": "[来週|Raishū]の[発表|happyō]の[準備|junbi]らしいよ。", "id": "Katanya persiapan presentasi minggu depan.", "literal": "minggu-depan — punya — presentasi — punya — persiapan — sepertinya — lho." },
+    { "speaker": "アニ:", "text": "[大変|Taihen]そう。[手伝|Tetsuda]ったほうがいいかな。", "id": "Kelihatannya berat. Sebaiknya aku bantu nggak ya.", "literal": "berat-kelihatan. membantu-sudah — arah — yang — baik — kah-ya." },
+    { "speaker": "ミキ:", "text": "[聞|Ki]いてみたら？[断|Kotowa]られたら[断|kotowa]られたで[仕方|shikata]ない。", "id": "Coba tanya aja? Kalau ditolak ya sudah.", "literal": "bertanya-mencoba-kalau? ditolak-kalau — ditolak-dengan — cara-tidak-ada." },
+    { "speaker": "アニ:", "text": "そうだね。あ、[今|ima][立|ta]ち[上|a]がった。[休憩|Kyūkei]するみたい。", "id": "Iya ya. Ah, dia baru berdiri. Kayaknya mau istirahat.", "literal": "begitu — ya. ah, sekarang — berdiri-naik-sudah. istirahat-melakukan — sepertinya." },
+    { "speaker": "ミキ:", "text": "[今|Ima]がチャンス。[行|I]っておいで。", "id": "Sekarang kesempatannya. Sana samperin.", "literal": "sekarang — yang — kesempatan. pergi-menyiapkan-datang." },
+    { "speaker": "アニ:", "text": "[行|I]ってくる。", "id": "Aku ke sana dulu.", "literal": "pergi-datang." }
+   ],
+   "notes": [
+    "**～そう dari penampilan menempel di BATANG, bukan di kalimat lengkap.** [降|Fu]ります → [降|fu]り**そう**、おいしい → おいし**そう**、[元気|genki]だ → [元気|genki]**そう**. Kata sifat い membuang い-nya.",
+    "**Dua yang menyimpang:** いい → **よさ**そう ⚠️、ない → **なさ**そう ⚠️. Keduanya menyisipkan さ, dan keduanya sangat sering dipakai.",
+    "**～そう penampilan tidak boleh dipakai untuk hal yang jelas terlihat.** [きれい|Kirei]そう ⚠️ terdengar aneh, karena keindahan memang langsung terlihat — cukup [きれい|kirei]です. Pola ini untuk hal yang kamu **duga** dari yang terlihat: rasanya, perasaannya, kemungkinannya.",
+    "**～のに = padahal**, dari Unit 7, muncul lagi di sini. [言|I]ってた**のに** = padahal (mereka) bilang begitu. Kalimatnya sengaja berhenti di のに, dan itu menyampaikan kekecewaan tanpa mengatakannya.",
+    "**[断|Kotowa]られたら[断|kotowa]られたで** — pola “kalau X ya X saja” yang menyatakan pasrah dengan tenang. Sangat sering dipakai orang Jepang untuk meredakan kekhawatiran.",
+    "**みたい adalah versi santai dari ようだ.** [休憩|Kyūkei]する**みたい** = kayaknya mau istirahat. Ia menempel langsung pada bentuk biasa, dan pada kata benda tanpa の: [学生|Gakusei]みたい.",
+    "**[行|I]っておいで** = “sana pergilah (lalu kembali)”. Bentuk perintah lembut dari [行|i]ってくる, dipakai kepada orang yang lebih muda atau akrab."
+   ],
+   "grammars": [
+    {
+     "title": "～そう dari penampilan — bentuk dan batasnya",
+     "body": [
+      "Pola ini melaporkan kesan yang kamu tangkap dengan mata sendiri, dan hampir selalu tentang hal yang belum terjadi atau belum kamu buktikan."
+     ],
+     "table": {
+      "head": ["Jenis kata", "Bentuk", "Contoh", "Arti"],
+      "rows": [
+       ["Kata kerja", "batang ます + そう", "[降|Fu]りそうです。", "Kelihatannya akan turun."],
+       ["", "", "[落|O]ちそう！", "Mau jatuh!"],
+       ["Kata sifat い", "buang い + そう", "おいしそうですね。", "Kelihatannya enak."],
+       ["", "", "[忙|Isoga]しそう。", "Kelihatannya sibuk."],
+       ["Kata sifat な", "apa adanya + そう", "[元気|Genki]そうですね。", "Kelihatannya sehat."],
+       ["Menyimpang", "いい → よさそう", "よさそうな[店|mise]。", "Toko yang kelihatannya bagus."],
+       ["", "ない → なさそう", "[時間|Jikan]がなさそう。", "Kelihatannya tidak ada waktu."],
+       ["Sangkal", "～なさそう / ～そうにない", "[降|Fu]りそうにない。", "Kelihatannya tidak akan turun."]
+      ]
+     },
+     "after": [
+      "**Kata benda TIDAK bisa memakai ～そう.** [学生|Gakusei]そう ⚠️ salah; pakai [学生|gakusei]**のよう**です atau [学生|gakusei]**みたい**です.",
+      "**Ia berfungsi seperti kata sifat な.** おいしそう**な**ケーキ (kue yang kelihatannya enak)、[元気|genki]そう**に**[歩|aru]く (berjalan dengan tampak bersemangat).",
+      "**Pemakaian yang paling sering di kehidupan nyata:** おいしそう (kelihatan enak, diucapkan sebelum makan)、[大変|taihen]そう (kelihatan repot)、[楽|tano]しそう (kelihatan senang)、[危|abu]なそう (kelihatan bahaya)."
+     ]
+    },
+    {
+     "title": "Empat penanda ketidakpastian berdampingan",
+     "body": [
+      "Keempatnya diterjemahkan mirip dalam bahasa Indonesia, tapi sumber informasinya berbeda — dan orang Jepang mendengar bedanya."
+     ],
+     "table": {
+      "head": ["Pola", "Sumbernya", "Menempel pada", "Contoh"],
+      "rows": [
+       ["～そう (penampilan)", "mataku sendiri", "batang / kata sifat", "[雨|Ame]が[降|fu]りそうです。"],
+       ["～そうだ (kabar)", "kudengar dari orang", "bentuk biasa", "[雨|Ame]が[降|fu]るそうです。"],
+       ["～ようだ", "kesimpulan dari bukti", "bentuk biasa / kata benda + の", "[雨|Ame]が[降|fu]ったようです。"],
+       ["～みたいだ", "sama, lebih santai", "bentuk biasa / kata benda", "[雨|Ame]が[降|fu]ったみたい。"],
+       ["～らしい", "desas-desus, kabar umum", "bentuk biasa / kata benda", "[雨|Ame]が[降|fu]るらしいよ。"]
+      ]
+     },
+     "after": [
+      "**Perhatikan dua yang bentuknya nyaris sama:** [降|Fu]り**そうです** (kelihatannya mau hujan — aku melihat langit) vs [降|fu]る**そうです** (katanya akan hujan — aku dengar dari ramalan). Satu suku kata yang mengubah seluruh sumber informasinya.",
+      "**～そうだ (kabar) tidak punya bentuk lampau di ujungnya.** [降|Fu]った**そうです** benar; [降|fu]る**そうでした** ⚠️ salah. Waktunya ditandai di bagian dalam, sama seperti ～と[言|i]う di Unit 6.",
+      "**らしい bisa berarti dua hal:** desas-desus ([来|Ku]るらしい = katanya dia datang) dan “khas, sebagaimana mestinya” ([男|Otoko]らしい = jantan、[春|haru]らしい[天気|tenki] = cuaca yang khas musim semi). Konteks yang memilahnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menyimpulkan dari bukti",
+   "intro": "Ani pulang dan menemukan apartemennya aneh. Perhatikan ～ようだ dan ～みたい, yang selalu bertumpu pada bukti yang ada di depan mata.",
+   "lines": [
+    { "speaker": "アニ:", "text": "[電気|Denki]がついてる。ミキ、[帰|kae]ってるみたい。", "id": "Lampunya nyala. Kayaknya Miki sudah pulang.", "literal": "listrik — yang — menyala-sedang. Miki, pulang-sedang — sepertinya." },
+    { "speaker": "ミキ:", "text": "おかえり。[早|Haya]かったね。", "id": "Selamat datang. Cepat ya.", "literal": "selamat-pulang. cepat-dulu — ya." },
+    { "speaker": "アニ:", "text": "ただいま。[廊下|Rōka]が[濡|nu]れてた。[雨|Ame]が[降|fu]ったようだね。", "id": "Aku pulang. Koridornya basah. Sepertinya tadi hujan.", "literal": "aku-pulang. koridor — yang — basah-sedang-dulu. hujan — yang — turun-sudah — sepertinya — ya." },
+    { "speaker": "ミキ:", "text": "うん、30[分|pun]ぐらい。すごい[音|oto]だった。", "id": "Iya, sekitar 30 menit. Suaranya luar biasa.", "literal": "iya, 30 — menit — kira-kira. hebat — suara — adalah-dulu." },
+    { "speaker": "アニ:", "text": "[全然|Zenzen][気|ki]づかなかった。[会議室|Kaigishitsu]、[窓|mado]がないから。", "id": "Aku sama sekali nggak sadar. Ruang rapatnya nggak ada jendela soalnya.", "literal": "sama-sekali — sadar-tidak-dulu. ruang-rapat, jendela — yang — tidak-ada — karena." },
+    { "speaker": "ミキ:", "text": "そういえば、[隣|tonari]の[部屋|heya]、[誰|dare]か[引|hi]っ[越|ko]してきたらしいよ。", "id": "Ngomong-ngomong, kamar sebelah katanya ada yang pindah masuk.", "literal": "begitu-berkata-kalau, sebelah — punya — kamar, siapa — pun — pindah-datang-sudah — katanya — lho." },
+    { "speaker": "アニ:", "text": "どんな[人|hito]？", "id": "Orangnya gimana?", "literal": "bagaimana — orang?" },
+    { "speaker": "ミキ:", "text": "[会|A]ってないけど、[音|oto]から[考|kanga]えると[子供|kodomo]がいるようだね。", "id": "Belum ketemu sih, tapi kalau dipikir dari suaranya sepertinya ada anak kecil.", "literal": "bertemu-sedang-tidak-tapi, suara — dari — berpikir — kalau — anak — yang — ada — sepertinya — ya." },
+    { "speaker": "アニ:", "text": "[挨拶|Aisatsu]に[行|i]ったほうがいいかな。", "id": "Sebaiknya kita ke sana untuk sapa nggak ya.", "literal": "salam — untuk — pergi-sudah — arah — yang — baik — kah-ya." },
+    { "speaker": "ミキ:", "text": "[最近|Saikin]は[挨拶|aisatsu]しない[人|hito]も[多|ō]いらしい。でも[私|watashi]たちはしよう。", "id": "Katanya belakangan banyak juga yang tidak menyapa. Tapi kita sapa saja.", "literal": "belakangan — mengenai — salam-melakukan-tidak — orang — juga — banyak — katanya. tapi — saya-jamak — mengenai — melakukan-mari." },
+    { "speaker": "アニ:", "text": "[何|Nani]か[持|mo]って[行|i]く？お[菓子|kashi]とか。", "id": "Bawa sesuatu? Camilan misalnya.", "literal": "apa — pun — membawa-pergi? camilan — semacam." },
+    { "speaker": "ミキ:", "text": "いいね。[明日|Ashita]の[夜|yoru]なら[家|ie]にいそうだから、[明日|ashita][行|i]こう。", "id": "Bagus. Kalau besok malam kayaknya mereka di rumah, jadi besok saja.", "literal": "baik — ya. besok — punya — malam — kalau — rumah — pada — ada-kelihatan — karena, besok — pergi-mari." }
+   ],
+   "notes": [
+    "**ようだ selalu berpijak pada bukti yang bisa ditunjuk.** [廊下|Rōka]が[濡|nu]れてた → [雨|ame]が[降|fu]った**ようだ**. Kalau kamu tidak bisa menyebutkan buktinya, pakai らしい atau ～かもしれない.",
+    "**ようだ menempel pada kata benda dengan の:** [学生|Gakusei]**の**ようです. みたい tanpa apa-apa: [学生|Gakusei]みたいです. Ini satu-satunya perbedaan bentuk di antara keduanya.",
+    "**らしい mengambil jarak dari kabarnya.** Ia berarti “kudengar begitu, tapi bukan aku yang memastikan”. Karena itu ia terdengar sedikit tidak bertanggung jawab — jangan memakainya untuk hal yang seharusnya kamu tahu pasti.",
+    "**[気|Ki]づく = menyadari.** Sering dipakai dalam bentuk sangkal lampau: [気|ki]づかなかった (aku tidak sadar). Objeknya memakai **に**: [間違|machiga]い**に**[気|ki]づいた.",
+    "**そういえば = “ngomong-ngomong, jadi ingat”.** Kata pembuka yang dipakai saat sesuatu tiba-tiba teringat di tengah percakapan. Sangat sering, dan sangat berguna untuk mengganti topik dengan halus.",
+    "**～から[考|kanga]えると = kalau dipikir dari ~.** Cara menyebutkan dasar kesimpulanmu. Sekeluarga dengan ～によると (menurut ~) yang dipakai untuk sumber berita: [天気予報|Tenki yohō]によると.",
+    "**～とか = misalnya, semacam.** お[菓子|kashi]**とか** = camilan misalnya. Lebih santai daripada ～など, dan sengaja tidak menutup daftarnya."
+   ],
+   "grammars": [
+    {
+     "title": "～ようだ, ～みたい, ～らしい — memilih menurut sumbernya",
+     "body": [
+      "Ketiganya bisa dipakai untuk kalimat yang sama, dan pilihanmu memberitahu lawan bicara dari mana kamu tahu."
+     ],
+     "table": {
+      "head": ["Kalimat", "Menyiratkan"],
+      "rows": [
+       ["[彼|Kare]は[病気|byōki]のようです。", "Aku melihat sendiri tandanya dan menyimpulkan."],
+       ["[彼|Kare]は[病気|byōki]みたい。", "Sama, tapi santai, antarteman."],
+       ["[彼|Kare]は[病気|byōki]らしいです。", "Kudengar begitu dari orang lain."],
+       ["[彼|Kare]は[病気|byōki]だそうです。", "Kabar yang jelas sumbernya, aku meneruskannya."],
+       ["[彼|Kare]は[病気|byōki]かもしれません。", "Aku menduga, tanpa bukti khusus."],
+       ["[彼|Kare]は[病気|byōki]でしょう。", "Aku cukup yakin, berdasarkan penalaran."]
+      ]
+     },
+     "after": [
+      "**Kalau kamu punya bukti di depan mata: ようだ / みたい.** Kalau kamu mendengar dari orang: そうだ / らしい. Kalau kamu hanya menduga: かもしれない / でしょう.",
+      "**ようだ punya pemakaian kedua: perumpamaan.** [夢|Yume]のようです (seperti mimpi)、[彼|kare]は[子供|kodomo]のように[笑|wara]った (dia tertawa seperti anak kecil). Dalam pemakaian ini, みたい juga bisa dan lebih santai.",
+      "**でしょう melembutkan pernyataan sekaligus menyatakan keyakinan.** [明日|Ashita]は[晴|ha]れるでしょう adalah kalimat ramalan cuaca yang baku — cukup yakin, tapi tidak memastikan."
+     ]
+    },
+    {
+     "title": "Menyatakan perasaan orang lain",
+     "body": [
+      "Bahasa Jepang melarangmu mengaku tahu isi hati orang lain. Unit 6 sudah menyebutnya; sekarang alat lengkapnya sudah ada di tanganmu."
+     ],
+     "table": {
+      "head": ["Untuk diri sendiri", "Untuk orang lain", "Arti"],
+      "rows": [
+       ["[嬉|Ure]しいです。", "[嬉|Ure]しそうです。", "senang"],
+       ["[寂|Sabi]しいです。", "[寂|Sabi]しそうです。", "kesepian"],
+       ["[行|I]きたいです。", "[行|I]きたそうです。", "ingin pergi"],
+       ["[痛|Ita]いです。", "[痛|Ita]そうです。", "sakit"],
+       ["[分|Wa]かりません。", "[分|Wa]からないようです。", "tidak paham"],
+       ["[疲|Tsuka]れています。", "[疲|Tsuka]れているみたいです。", "lelah"]
+      ]
+     },
+     "after": [
+      "**～たがっている adalah bentuk lain untuk keinginan orang lain:** [彼|Kare]は[行|i]きたがっています (dia kepingin pergi). Ia menekankan bahwa keinginan itu terlihat dari perilakunya.",
+      "**Untuk lawan bicara langsung, pakai pertanyaan, bukan dugaan.** [行|I]きたいですか？ jauh lebih wajar daripada menebak-nebak. Larangan ini hanya berlaku untuk orang ketiga."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dugaan dalam percakapan sehari-hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian besar kalimat berikut diucapkan puluhan kali sehari di Jepang. Hafalkan sebagai kalimat utuh; polanya akan menempel sendiri."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jepang", "Arti", "Kapan"],
+     "rows": [
+      ["おいしそう！", "Kelihatannya enak!", "Sebelum menyantap."],
+      ["[楽|Tano]しそうですね。", "Kelihatannya menyenangkan ya.", "Menanggapi cerita orang."],
+      ["[大変|Taihen]そうですね。", "Kelihatannya berat ya.", "Menunjukkan simpati."],
+      ["よさそうですね。", "Kelihatannya bagus.", "Menilai barang atau rencana."],
+      ["[雨|Ame]が[降|fu]りそうです。", "Kelihatannya mau hujan.", "Melihat langit."],
+      ["[明日|Ashita]は[休|yasu]みだそうです。", "Katanya besok libur.", "Meneruskan kabar."],
+      ["[間|Ma]に[合|a]いそうにないです。", "Kelihatannya tidak akan keburu.", "Melaporkan keterlambatan."],
+      ["[誰|Dare]もいないようです。", "Sepertinya tidak ada siapa-siapa.", "Menyimpulkan dari sepi."],
+      ["[道|Michi]が[混|ko]んでいるみたいです。", "Sepertinya jalanan macet.", "Melihat peta atau berita."],
+      ["[今日|Kyō]は[来|ko]ないらしいよ。", "Katanya hari ini dia tidak datang.", "Meneruskan desas-desus."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kesalahan yang paling sering",
+     "items": [
+      "**[降|Fu]りそう vs [降|fu]るそう** ⚠️ — yang pertama dari mata sendiri, yang kedua dari kabar. Ucapkan berkali-kali sampai telingamu memisahkannya.",
+      "**[きれい|Kirei]そう** ⚠️ — keindahan langsung terlihat, jadi dugaan tidak masuk akal. Begitu juga [赤|aka]そう、[大|ō]きそう ⚠️ untuk hal yang jelas terlihat.",
+      "**[学生|Gakusei]そう** ⚠️ — kata benda tidak memakai ～そう. Pakai [学生|gakusei]のようです atau [学生|gakusei]みたいです."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu latihan yang cepat membuahkan hasil: setiap kali kamu melihat foto orang, ucapkan satu kalimat ～そう tentangnya. [楽|Tano]しそう。[忙|Isoga]しそう。[眠|Nemu]そう。[美味|Oi]しそう。Dalam seminggu bentuk ini akan keluar tanpa dipikir."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka", "Contoh"],
+     "rows": [
+      ["… そうですね。", "[忙|Isoga]しそうですね。"],
+      ["… そうです。(kabar)", "[明日|Ashita]は[雨|ame]だそうです。"],
+      ["… ようです。", "[誰|Dare]もいないようです。"],
+      ["… みたいです。", "[道|Michi]が[混|ko]んでいるみたいです。"],
+      ["… らしいですよ。", "[新|Atara]しい[店|mise]ができるらしいですよ。"],
+      ["… かもしれません。", "[遅|Oku]れるかもしれません。"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[外|Hazu]れる", "baca": "はずれる · hazureru", "id": "meleset" },
+  { "ja": "[発表|Happyō]", "baca": "はっぴょう · happyō", "id": "presentasi, pengumuman" },
+  { "ja": "[断|Kotowa]る", "baca": "ことわる · kotowaru", "id": "menolak" },
+  { "ja": "[立|Ta]ち[上|a]がる", "baca": "たちあがる · tachiagaru", "id": "berdiri" },
+  { "ja": "チャンス", "baca": "ちゃんす · chansu", "id": "kesempatan" },
+  { "ja": "[廊下|Rōka]", "baca": "ろうか · rōka", "id": "koridor, lorong" },
+  { "ja": "[気|Ki]づく", "baca": "きづく · kizuku", "id": "menyadari" },
+  { "ja": "そういえば", "baca": "そういえば · sō ieba", "id": "ngomong-ngomong" },
+  { "ja": "[引|Hi]っ[越|ko]す", "baca": "ひっこす · hikkosu", "id": "pindah rumah" },
+  { "ja": "どんな", "baca": "どんな · donna", "id": "yang bagaimana" },
+  { "ja": "[最近|Saikin]", "baca": "さいきん · saikin", "id": "belakangan ini" },
+  { "ja": "～とか", "baca": "～とか · toka", "id": "misalnya, semacam" },
+  { "ja": "[病気|Byōki]", "baca": "びょうき · byōki", "id": "sakit, penyakit" },
+  { "ja": "[夢|Yume]", "baca": "ゆめ · yume", "id": "mimpi" },
+  { "ja": "[笑|Wara]う", "baca": "わらう · warau", "id": "tertawa" },
+  { "ja": "[眠|Nemu]い", "baca": "ねむい · nemui", "id": "mengantuk" },
+  { "ja": "～によると", "baca": "～によると · ni yoru to", "id": "menurut ~" },
+  { "ja": "[間違|Machiga]い", "baca": "まちがい · machigai", "id": "kesalahan" },
+  { "ja": "～らしい", "baca": "～らしい · rashii", "id": "katanya, khas" },
+  { "ja": "～みたい", "baca": "～みたい · mitai", "id": "sepertinya" },
+  { "ja": "～よう", "baca": "～よう · yō", "id": "sepertinya, seperti" },
+  { "ja": "でしょう", "baca": "でしょう · deshō", "id": "kiranya, mungkin" },
+  { "ja": "おかえり", "baca": "おかえり · okaeri", "id": "selamat datang kembali" },
+  { "ja": "ただいま", "baca": "ただいま · tadaima", "id": "aku pulang" },
+  { "ja": "[美味|Oi]しい", "baca": "おいしい · oishii", "id": "enak" },
+  { "ja": "[忙|Isoga]しい", "baca": "いそがしい · isogashii", "id": "sibuk" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk ～そう (dari penampilan).",
+   "items": [
+    "[降|Fu]ります ___",
+    "おいしい ___",
+    "[忙|Isoga]しい ___",
+    "[元気|Genki]だ ___",
+    "いい ___",
+    "ない ___"
+   ]
+  },
+  {
+   "prompt": "Pilih ～そうです (penampilan) atau ～そうです (kabar) sesuai petunjuk.",
+   "items": [
+    "[雨|Ame]が ___ 。(aku melihat langit)",
+    "[雨|Ame]が ___ 。(kudengar dari ramalan)",
+    "[明日|Ashita]は[休|yasu]み ___ 。(kudengar)",
+    "ケーキが ___ 。(kelihatan enak)",
+    "[彼|Kare]は[来|ko]ない ___ 。(kudengar)"
+   ]
+  },
+  {
+   "prompt": "Pilih ようです, みたい, atau らしい yang paling tepat.",
+   "items": [
+    "[廊下|Rōka]が[濡|nu]れている。[雨|Ame]が[降|fu]った ___ 。(bukti langsung)",
+    "[隣|Tonari]に[誰|dare]か[引|hi]っ[越|ko]してきた ___ 。(desas-desus)",
+    "[電気|Denki]がついてる。ミキ、[帰|kae]ってる ___ 。(santai, bukti)",
+    "[彼|Kare]は[病気|byōki] ___ 。(kudengar dari orang)",
+    "[夢|Yume]の ___ です。(perumpamaan)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kalimat tentang perasaan ORANG LAIN.",
+   "items": [
+    "[嬉|Ure]しいです ___",
+    "[行|I]きたいです ___",
+    "[痛|Ita]いです ___",
+    "[疲|Tsuka]れています ___",
+    "[分|Wa]かりません ___"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "空 / 暗く / なって / きた / 雨 / が / 降り / そう",
+    "来週 / の / 発表 / の / 準備 / らしい / よ",
+    "音 / から / 考える / と / 子供 / が / いる / よう / だ",
+    "間 / に / 合い / そう / に / ない / です",
+    "彼 / は / 行き / たがって / います"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Kelihatannya mau hujan.",
+    "Katanya besok libur.",
+    "Sepertinya tidak ada siapa-siapa.",
+    "Kelihatannya berat ya.",
+    "Katanya dia tidak datang hari ini."
+   ]
+  }
+ ],
+ "answers": [
+  "[降|Fu]りそう — おいしそう — [忙|Isoga]しそう — [元気|Genki]そう — よさそう — なさそう",
+  "[降|fu]りそうです — [降|fu]るそうです — だそうです — おいしそうです — そうです",
+  "ようだ — らしい — みたい — らしい — よう",
+  "[嬉|Ure]しそうです — [行|I]きたそうです — [痛|Ita]そうです — [疲|Tsuka]れているみたいです — [分|Wa]からないようです",
+  "[空|Sora][暗|kura]くなってきた[雨|ame]が[降|fu]りそう — [来週|Raishū]の[発表|happyō]の[準備|junbi]らしいよ — [音|Oto]から[考|kanga]えると[子供|kodomo]がいるようだ — [間|Ma]に[合|a]いそうにないです — [彼|Kare]は[行|i]きたがっています",
+  "[雨|Ame]が[降|fu]りそうです。 — [明日|Ashita]は[休|yasu]みだそうです。 — [誰|Dare]もいないようです。 — [大変|Taihen]そうですね。 — [今日|Kyō]は[来|ko]ないらしいですよ。"
+ ],
+ "wave": "Buka Unit 6 dan bandingkan ～と[思|omo]います dengan keempat pola unit ini. Semuanya menyatakan sesuatu yang tidak pasti, tapi dari sumber yang berbeda. Lalu ambil sepuluh kalimat mana pun dari Unit 3 dan pasangkan ～そう、～ようだ、～らしい pada masing-masing sambil menyebutkan sendiri dari mana kamu tahu."
+}

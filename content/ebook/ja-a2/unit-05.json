@@ -1,0 +1,351 @@
+{
+ "title": "Bisa dan tidak bisa, versi pendek",
+ "title_target": "日本語が話せる — Nihongo ga hanaseru",
+ "goal": "Membentuk bentuk potensial dari kata kerja mana pun, memakainya untuk kesanggupan dan izin, dan membedakannya dari [見|mi]える dan [聞|ki]こえる yang terjadi tanpa niat.",
+ "bekal": [
+  "membentuk bentuk potensial untuk ketiga kelompok kata kerja",
+  "mengganti partikel を jadi が pada kalimat potensial",
+  "membedakan [見|mi]える dari [見|mi]られる, [聞|ki]こえる dari [聞|ki]ける",
+  "menyatakan kemampuan yang berubah dengan ～ようになる",
+  "menolak dan meminta maaf dengan halus memakai bentuk potensial"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Wawancara kerja paruh waktu",
+   "intro": "Ani melamar di sebuah kafe. Perhatikan bahwa hampir semua pertanyaan pewawancara memakai bentuk potensial.",
+   "lines": [
+    { "speaker": "[店長|Tenchō]:", "text": "[履歴書|Rirekisho]、ありがとうございます。[日本語|Nihongo]は[話|hana]せますね。", "id": "Terima kasih untuk CV-nya. Bisa bahasa Jepang ya.", "literal": "riwayat-hidup, terima-kasih. bahasa-Jepang — mengenai — bicara-bisa — ya." },
+    { "speaker": "アニ:", "text": "[話|Hana]せますが、[敬語|keigo]はまだあまり[使|tsuka]えません。", "id": "Bisa bicara, tapi bahasa sopan belum begitu bisa saya pakai.", "literal": "bicara-bisa-tapi, bahasa-hormat — mengenai — belum — begitu — pakai-bisa-tidak." },
+    { "speaker": "[店長|Tenchō]:", "text": "[大丈夫|Daijōbu]ですよ。ここで[覚|obo]えられます。[漢字|Kanji]は[読|yo]めますか。", "id": "Tidak apa-apa. Bisa dipelajari di sini. Kanji bisa baca?", "literal": "tidak-apa-apa — adalah — lho. sini — di — mengingat-bisa. kanji — mengenai — baca-bisa — kah." },
+    { "speaker": "アニ:", "text": "メニューの[漢字|kanji]なら[読|yo]めると[思|omo]います。", "id": "Kalau kanji di menu, saya rasa bisa saya baca.", "literal": "menu — punya — kanji — kalau — baca-bisa — begitu — berpikir." },
+    { "speaker": "[店長|Tenchō]:", "text": "[週|Shū]に[何日|nannichi][来|ko]られますか。", "id": "Seminggu bisa datang berapa hari?", "literal": "minggu — pada — berapa-hari — datang-bisa — kah." },
+    { "speaker": "アニ:", "text": "[火|Ka]・[木|Moku]・[土|Do]なら[来|ko]られます。[月|Getsu]と[水|Sui]は[授業|jugyō]があって、[来|ko]られません。", "id": "Selasa, Kamis, Sabtu bisa. Senin dan Rabu ada kuliah, jadi tidak bisa.", "literal": "Selasa, Kamis, Sabtu — kalau — datang-bisa. Senin — dan — Rabu — mengenai — kuliah — yang — ada-dan, datang-bisa-tidak." },
+    { "speaker": "[店長|Tenchō]:", "text": "[朝|Asa]は[早|haya]く[起|o]きられますか。7[時|ji]からのシフトもあります。", "id": "Pagi bisa bangun cepat? Ada juga sif mulai jam 7.", "literal": "pagi — mengenai — cepat — bangun-bisa — kah. 7 — jam — dari — punya — sif — juga — ada." },
+    { "speaker": "アニ:", "text": "[起|O]きられますが、[電車|densha]が7[時|ji]に[間|ma]に[合|a]わないかもしれません。", "id": "Bisa bangun, tapi keretanya mungkin tidak keburu jam 7.", "literal": "bangun-bisa-tapi, kereta — yang — 7 — jam — pada — sela — pada — bertemu-tidak — mungkin." },
+    { "speaker": "[店長|Tenchō]:", "text": "では8[時|ji]からにしましょう。コーヒーは[作|tsuku]れますか。", "id": "Kalau begitu dari jam 8 saja. Bisa bikin kopi?", "literal": "kalau-begitu — 8 — jam — dari — pada — melakukan-mari. kopi — mengenai — membuat-bisa — kah." },
+    { "speaker": "アニ:", "text": "[家|Ie]では[作|tsuku]れますが、マシンは[使|tsuka]ったことがありません。", "id": "Kalau di rumah bisa, tapi mesinnya belum pernah saya pakai.", "literal": "rumah — di-mengenai — membuat-bisa-tapi, mesin — mengenai — memakai-sudah — hal — yang — tidak-ada." },
+    { "speaker": "[店長|Tenchō]:", "text": "[一週間|Isshūkan]で[誰|dare]でも[使|tsuka]えるようになります。[心配|Shinpai]しないでください。", "id": "Dalam seminggu siapa pun jadi bisa memakainya. Jangan khawatir.", "literal": "satu-minggu — dengan — siapa — pun — pakai-bisa — begitu — menjadi. khawatir-jangan — silakan." },
+    { "speaker": "アニ:", "text": "ありがとうございます。[頑張|Ganba]ります。", "id": "Terima kasih. Saya akan berusaha.", "literal": "terima-kasih. berusaha." }
+   ],
+   "notes": [
+    "**Partikel を berubah jadi が di kalimat potensial.** [漢字|Kanji]**を**[読|yo]みます → [漢字|kanji]**が**[読|yo]めます. Perubahan ini wajib dan jadi penanda paling gampang bahwa kalimatnya potensial. Dalam percakapan santai を kadang bertahan, tapi が selalu aman.",
+    "**[来|Ko]られます** — bentuk potensial [来|ku]る. Bacaannya berpindah ke こ, sama seperti bentuk ない [来|ko]ない. Kata kerja ini memang satu-satunya yang bacaannya berpindah-pindah.",
+    "**なら = kalau soal itu.** メニューの[漢字|kanji]**なら** = “kalau kanji menu sih …”. Ia menyaring topik, bukan menyatakan syarat waktu. Dibongkar bersama ～たら dan ～と di Unit 10.",
+    "**[間|Ma]に[合|a]う** = keburu, sempat. Salah satu ungkapan yang paling sering dipakai di Jepang, dan tidak bisa diterka dari kanjinya. [電車|Densha]に[間|ma]に[合|a]わなかった = ketinggalan kereta.",
+    "**～ようになります** dari Unit 4 muncul lagi di sini, kali ini dengan bentuk potensial: [使|tsuka]え**る**ようになります (jadi bisa memakai). Ini pasangan yang paling sering dipakai dari pola tersebut.",
+    "**[頑張|Ganba]ります** harfiahnya “saya akan bertahan keras”. Diucapkan di akhir wawancara, sebelum mulai bekerja, sebelum ujian. Tidak ada padanan pas di bahasa Indonesia, dan tidak ada percakapan Jepang yang lengkap tanpanya.",
+    "**[敬語|Keigo]はまだあまり[使|tsuka]えません** menunjukkan cara sopan mengakui keterbatasan: **まだ** (belum) + **あまり** (tidak begitu). Dua kata pelunak yang membuat pengakuan tidak terdengar seperti menolak."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk potensial — tiga kelompok, tiga aturan",
+     "body": [
+      "Bentuk potensial dibuat dari bentuk kamus. Setelah jadi, ia berperilaku persis seperti kata kerja ichidan: [読|yo]める → [読|yo]めない、[読|yo]めた、[読|yo]めて."
+     ],
+     "table": {
+      "head": ["Kelompok", "Aturan", "Contoh", "Potensial"],
+      "rows": [
+       ["godan", "ujung -u jadi -eru", "[読|yo]む", "[読|yo]める"],
+       ["", "", "[書|ka]く", "[書|ka]ける"],
+       ["", "", "[話|hana]す", "[話|hana]せる"],
+       ["", "", "[買|ka]う", "[買|ka]える"],
+       ["", "", "[待|ma]つ", "[待|ma]てる"],
+       ["", "", "[泳|oyo]ぐ", "[泳|oyo]げる"],
+       ["ichidan", "る jadi られる", "[食|ta]べる", "[食|ta]べられる"],
+       ["", "", "[見|mi]る", "[見|mi]られる"],
+       ["", "", "[起|o]きる", "[起|o]きられる"],
+       ["menyimpang", "—", "する", "できる"],
+       ["", "—", "[来|ku]る", "[来|ko]られる"]
+      ]
+     },
+     "after": [
+      "**Bentuk ら-nuki.** Anak muda Jepang sering membuang ら dari kata kerja ichidan: [食|ta]べ**れる**、[見|mi]**れる**、[来|ko]**れる**. Kamu akan mendengarnya terus-menerus, dan sebagian orang menganggapnya salah. Untuk tulisan dan situasi resmi, tetap pakai られる.",
+      "**する tidak pernah jadi される untuk arti “bisa”.** Kata kerja ～する memakai できる: [勉強|Benkyō]できます、[運転|unten]できます、[説明|setsumei]できます.",
+      "**Bentuk potensial vs ことができる (Unit 2).** Artinya sama; bentuk potensial jauh lebih sering dipakai dan lebih pendek. ことができる terasa lebih resmi dan sedikit menekankan."
+     ]
+    },
+    {
+     "title": "Kalimat potensial yang sopan — meminta, menolak, mengaku",
+     "body": [
+      "Bentuk potensial bukan cuma soal kemampuan. Ia juga alat kesantunan: menolak dengan “tidak bisa” jauh lebih halus daripada menolak dengan “tidak mau”."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti", "Kapan dipakai"],
+      "rows": [
+       ["すみません、[今日|kyō]は[行|i]けません。", "Maaf, hari ini saya tidak bisa datang.", "Menolak ajakan."],
+       ["ちょっと[今|ima]は[話|hana]せなくて。", "Sekarang agak tidak bisa bicara.", "Menghentikan percakapan dengan halus."],
+       ["まだ[慣|na]れていないので、[早|haya]くできません。", "Karena belum terbiasa, saya belum bisa cepat.", "Mengakui keterbatasan."],
+       ["もう[少|suko]し[待|ma]てますか。", "Bisa tunggu sebentar lagi?", "Meminta dengan halus."],
+       ["[明日|Ashita]なら[来|ko]られます。", "Kalau besok saya bisa datang.", "Menolak sambil menawarkan gantinya."]
+      ]
+     },
+     "after": [
+      "**Menolak dengan [行|i]きたくないです (tidak mau pergi) terdengar kasar** di hampir semua situasi Jepang. [行|I]けません (tidak bisa pergi) menyelamatkan muka kedua pihak, dan tidak ada yang akan menanyakan alasan sebenarnya.",
+      "**Pola “tidak bisa … + tawaran ganti” adalah bentuk penolakan yang paling aman:** [今日|Kyō]は[行|i]けませんが、[明日|ashita]なら[大丈夫|daijōbu]です."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Di puncak bukit",
+   "intro": "Ani dan Miki mendaki bukit kecil. Perhatikan [見|mi]える dan [聞|ki]こえる: keduanya potensial, tapi bukan soal kemampuanmu.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "[着|Tsu]いた！[ここ|Koko]から[海|umi]が[見|mi]えるよ。", "id": "Sampai! Dari sini laut kelihatan lho.", "literal": "tiba-sudah! sini — dari — laut — yang — terlihat — lho." },
+    { "speaker": "アニ:", "text": "[本当|Hontō]だ。[きれい|Kirei]。[あの|Ano][白|shiro]いのは[何|nan]？", "id": "Iya benar. Indah. Yang putih itu apa?", "literal": "sungguh — adalah. indah. itu — putih — yang — mengenai — apa?" },
+    { "speaker": "ミキ:", "text": "[灯台|Tōdai]。[夜|Yoru]になると[光|hikari]が[見|mi]えるの。", "id": "Mercusuar. Kalau malam, cahayanya kelihatan.", "literal": "mercusuar. malam — menjadi — kalau — cahaya — yang — terlihat — lho." },
+    { "speaker": "アニ:", "text": "[夜|Yoru]も[来|ko]られる？", "id": "Malam juga bisa ke sini?", "literal": "malam — juga — datang-bisa?" },
+    { "speaker": "ミキ:", "text": "[来|Ko]られるけど、[道|michi]が[暗|kura]くて[危|abu]ないよ。", "id": "Bisa sih, tapi jalannya gelap dan bahaya lho.", "literal": "datang-bisa-tapi, jalan — yang — gelap-dan — berbahaya — lho." },
+    { "speaker": "アニ:", "text": "[静|Shizu]かだね。[鳥|Tori]の[声|koe]しか[聞|ki]こえない。", "id": "Sunyi ya. Cuma suara burung yang terdengar.", "literal": "sunyi — ya. burung — punya — suara — kecuali — terdengar-tidak." },
+    { "speaker": "ミキ:", "text": "[平日|Heijitsu]だから。[週末|Shūmatsu]は[人|hito]が[多|ō]くて、こんなに[静|shizu]かじゃない。", "id": "Karena hari kerja. Akhir pekan orangnya banyak, nggak sesunyi ini.", "literal": "hari-biasa — karena. akhir-pekan — mengenai — orang — yang — banyak-dan, sebegini — sunyi — bukan." },
+    { "speaker": "アニ:", "text": "[写真|Shashin]、[撮|to]ってもいい？", "id": "Boleh aku foto?", "literal": "foto, memotret-pun — baik?" },
+    { "speaker": "ミキ:", "text": "もちろん。[私|Watashi]も[撮|to]って。", "id": "Tentu. Fotoin aku juga dong.", "literal": "tentu. saya — juga — memotret." },
+    { "speaker": "アニ:", "text": "[逆光|Gyakkō]で[顔|kao]が[見|mi]えないな。[こっち|Kotchi]に[来|ki]て。", "id": "Kena cahaya belakang jadi wajahnya nggak kelihatan. Sini deh.", "literal": "cahaya-lawan — dengan — wajah — yang — terlihat-tidak — ya. sini — ke — datang." },
+    { "speaker": "ミキ:", "text": "[こう|Kō]？[聞|Ki]こえる？[風|Kaze]が[強|tsuyo]くて[声|koe]が[届|todo]かない。", "id": "Begini? Kedengaran? Anginnya kencang jadi suaraku nggak sampai.", "literal": "begini? terdengar? angin — yang — kuat-dan — suara — yang — tidak-sampai." },
+    { "speaker": "アニ:", "text": "[聞|Ki]こえる！はい、[撮|to]るよ。[三|San]、[二|ni]、[一|ichi]。", "id": "Kedengaran! Oke, aku foto ya. Tiga, dua, satu.", "literal": "terdengar! ya, memotret — lho. tiga, dua, satu." }
+   ],
+   "notes": [
+    "**[見|Mi]える ≠ [見|mi]られる.** [見|Mi]える = terlihat, masuk ke matamu tanpa kamu berusaha. [見|Mi]られる = bisa menonton, karena ada kesempatan atau izin. [海|Umi]が[見|mi]える (lautnya terlihat) vs [映画|eiga]が[見|mi]られる (filmnya bisa ditonton).",
+    "**Begitu juga [聞|ki]こえる vs [聞|ki]ける.** [聞|Ki]こえる = terdengar sendiri. [聞|Ki]ける = bisa mendengarkan, ada kesempatan. [音|Oto]が[聞|ki]こえる vs コンサートが[聞|ki]ける.",
+    "**しか + bentuk sangkal = hanya.** [声|Koe]**しか**[聞|ki]こえ**ない** = hanya suara yang terdengar. しか SELALU berpasangan dengan sangkal, dan artinya justru positif. Bandingkan dengan だけ yang dipakai dengan kalimat biasa: [声|koe]だけ[聞|ki]こえる.",
+    "**[暗|Kura]くて[危|abu]ない** — bentuk て pada kata sifat い dibuat dengan mengganti い jadi くて: [暗|kura]い → [暗|kura]くて、[高|taka]い → [高|taka]くて. Untuk kata sifat な: [静|shizu]か → [静|shizu]かで.",
+    "**こんなに = sebegini.** Sekeluarga dengan そんなに (segitu) dan あんなに (sebegitu, yang jauh). こんなに[静|shizu]かじゃない = tidak sesunyi ini.",
+    "**[撮|To]ってもいい？** = boleh aku foto? Versi santai dari ～てもいいですか di 101 Unit 9. Menjatuhkannya ke bentuk biasa cukup dengan membuang ですか.",
+    "**[撮|To]って** sendirian di akhir kalimat Miki adalah permintaan santai — potongan dari [撮|to]ってください. Sudah muncul di Unit 1, dan sekarang kamu bisa mengenalinya tanpa penjelasan."
+   ],
+   "grammars": [
+    {
+     "title": "[見|Mi]える, [聞|Ki]こえる, できる — potensial yang tidak butuh niatmu",
+     "body": [
+      "Tiga kata kerja ini sudah berbentuk potensial sejak lahir. Mereka tidak dibuat dari kata kerja lain, dan tidak menyangkut kemampuanmu — melainkan keadaan dunia di sekitarmu."
+     ],
+     "table": {
+      "head": ["Kata kerja", "Arti", "Contoh", "Bandingkan dengan"],
+      "rows": [
+       ["[見|Mi]える", "terlihat (sendirinya)", "[窓|Mado]から[山|yama]が[見|mi]えます。", "[見|Mi]られる = bisa menonton"],
+       ["[聞|Ki]こえる", "terdengar (sendirinya)", "[音楽|Ongaku]が[聞|ki]こえます。", "[聞|Ki]ける = bisa mendengarkan"],
+       ["できる", "bisa, jadi, selesai", "[食事|Shokuji]ができました。", "する = melakukan"],
+       ["[分|Wa]かる", "paham (sendirinya)", "[意味|Imi]が[分|wa]かりません。", "[知|Shi]る = jadi tahu"],
+       ["[要|I]る", "perlu", "お[金|kane]が[要|i]ります。", "[必要|Hitsuyō] = keperluan"]
+      ]
+     },
+     "after": [
+      "**Semuanya memakai が, tidak pernah を.** [意味|Imi]**が**[分|wa]かりません、お[金|kane]**が**[要|i]ります. Ini kelompok kata kerja yang subjeknya adalah hal, bukan orang.",
+      "**[分|Wa]かる ≠ [知|shi]る.** [分|Wa]かる adalah pemahaman yang muncul di kepalamu; [知|shi]る adalah informasi yang masuk dari luar. Karena itu “saya tidak tahu” = [知|shi]りません, sementara “saya tidak paham” = [分|wa]かりません — dan menukarnya terdengar aneh."
+     ]
+    },
+    {
+     "title": "Bentuk て pada kata sifat — menyambung dua sifat",
+     "body": [
+      "Untuk menyambung dua kata sifat, atau memberi alasan ringan, kata sifat pun punya bentuk て."
+     ],
+     "table": {
+      "head": ["Jenis", "Bentuk biasa", "Bentuk て", "Contoh"],
+      "rows": [
+       ["Kata sifat い", "[暗|kura]い", "[暗|kura]くて", "[道|Michi]が[暗|kura]くて[危|abu]ない。"],
+       ["", "[安|yasu]い", "[安|yasu]くて", "[安|Yasu]くておいしいです。"],
+       ["Menyimpang", "いい", "よくて ⚠️", "[天気|Tenki]がよくて[気持|kimo]ちいい。"],
+       ["Kata sifat な", "[静|shizu]か", "[静|shizu]かで", "[静|Shizu]かで[きれい|kirei]な[町|machi]。"],
+       ["Kata benda", "[学生|gakusei]", "[学生|gakusei]で", "[彼|Kare]は[学生|gakusei]で、22[歳|sai]です。"],
+       ["Sangkal", "[高|taka]くない", "[高|taka]くなくて", "[高|Taka]くなくて[良|yo]かった。"]
+      ]
+     },
+     "after": [
+      "**Bentuk て pada kata sifat sering membawa arti sebab yang ringan.** [人|Hito]が[多|ō]くて[疲|tsuka]れた = orangnya banyak, jadi (aku) capek. Ini sebab yang tidak disengaja — untuk sebab yang disadari, pakai から atau ので.",
+      "**いい adalah satu-satunya kata sifat yang menyimpang**, dan ia menyimpang di semua bentuk: よくて、よくない、よかった、よくなかった. Bentuk いくない ⚠️ tidak ada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat potensial untuk hidup sehari-hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk potensial muncul di hampir setiap urusan praktis di Jepang: memesan, bertanya di toko, mengurus dokumen. Daftar ini bisa langsung dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jepang", "Arti"],
+     "rows": [
+      ["カードで[払|hara]えますか。", "Bisa bayar pakai kartu?"],
+      ["ここでWi-Fiが[使|tsuka]えますか。", "Di sini bisa pakai Wi-Fi?"],
+      ["[予約|Yoyaku]なしで[入|hai]れますか。", "Bisa masuk tanpa reservasi?"],
+      ["[持|Mo]ち[帰|kae]れますか。", "Bisa dibungkus dibawa pulang?"],
+      ["[何時|Nanji]まで[置|o]いておけますか。", "Bisa dititipkan sampai jam berapa?"],
+      ["もう[一度|ichido][言|i]ってもらえますか。", "Bisa tolong diulang sekali lagi?"],
+      ["ゆっくり[話|hana]してもらえますか。", "Bisa tolong bicara pelan-pelan?"],
+      ["これ、[変更|henkō]できますか。", "Ini bisa diubah?"],
+      ["[明日|Ashita]までに[終|o]わりますか。", "Sampai besok bisa selesai?"],
+      ["[日本語|Nihongo]でメールが[書|ka]けません。", "Saya tidak bisa menulis email dalam bahasa Jepang."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "～てもらえますか — permintaan yang paling berguna di modul ini",
+     "items": [
+      "Bentuknya: **bentuk て + もらえますか**. Harfiahnya “bisakah saya menerima (kebaikan) …”, dan itu cara Jepang meminta tolong tanpa memerintah.",
+      "Tangga kesopanannya: [言|i]って (teman) → [言|i]ってください (netral) → [言|i]ってもらえますか (sopan) → [言|i]っていただけますか (sangat sopan).",
+      "Pola ini dibongkar penuh di Unit 9 bersama あげる・もらう・くれる. Sekarang cukup hafalkan dua kalimat: もう[一度|ichido][言|i]ってもらえますか dan ゆっくり[話|hana]してもらえますか. Dua kalimat itu akan menyelamatkanmu berkali-kali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menceritakan apa yang berubah pada dirimu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk potensial paling hidup ketika dipakai untuk menceritakan kemajuan. Ini juga jawaban yang paling sering diminta orang Jepang saat tahu kamu belajar bahasanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[去年|Kyonen]は[ひらがな|hiragana]しか[読|yo]めませんでした。",
+      "[今|Ima]はメニューの[漢字|kanji]が[少|suko]し[読|yo]めるようになりました。",
+      "でも[新聞|shinbun]はまだ[読|yo]めません。",
+      "[話|Hana]すのは[読|yo]むより[難|muzuka]しいです。[言葉|Kotoba]がすぐ[出|de]てこないから。",
+      "[来年|Rainen]までに[電話|denwa]で[話|hana]せるようになりたいです。",
+      "Tahun lalu saya cuma bisa membaca hiragana. Sekarang saya jadi bisa membaca sedikit kanji di menu. Tapi koran masih belum bisa. Berbicara lebih sulit daripada membaca, karena katanya tidak langsung keluar. Sampai tahun depan saya ingin jadi bisa bicara lewat telepon."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan **[出|de]てこない** di kalimat keempat — gabungan bentuk て dengan [来|ku]る, yang berarti “muncul ke arah pembicara”. Pola ～てくる dan ～ていく dibongkar di Unit 11."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka", "Contoh isian"],
+     "rows": [
+      ["[去年|Kyonen]は … しか … ませんでした。", "kemampuanmu dulu"],
+      ["[今|Ima]は … られるようになりました。", "yang sudah berubah"],
+      ["でも … はまだ … ません。", "yang masih belum"],
+      ["… のは … より[難|muzuka]しいです。", "perbandingan dua keterampilan"],
+      ["… までに … られるようになりたいです。", "sasaran berikutnya"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[店長|Tenchō]", "baca": "てんちょう · tenchō", "id": "manajer toko" },
+  { "ja": "[履歴書|Rirekisho]", "baca": "りれきしょ · rirekisho", "id": "daftar riwayat hidup" },
+  { "ja": "[敬語|Keigo]", "baca": "けいご · keigo", "id": "bahasa hormat" },
+  { "ja": "[使|Tsuka]う", "baca": "つかう · tsukau", "id": "memakai" },
+  { "ja": "メニュー", "baca": "めにゅー · menyū", "id": "menu" },
+  { "ja": "～なら", "baca": "～なら · nara", "id": "kalau soal ~" },
+  { "ja": "[週|Shū]に", "baca": "しゅうに · shū ni", "id": "per minggu" },
+  { "ja": "[授業|Jugyō]", "baca": "じゅぎょう · jugyō", "id": "kuliah, pelajaran" },
+  { "ja": "シフト", "baca": "しふと · shifuto", "id": "sif kerja" },
+  { "ja": "[間|Ma]に[合|a]う", "baca": "まにあう · ma ni au", "id": "keburu, sempat" },
+  { "ja": "[一週間|Isshūkan]", "baca": "いっしゅうかん · isshūkan", "id": "satu minggu" },
+  { "ja": "[心配|Shinpai]する", "baca": "しんぱいする · shinpai suru", "id": "khawatir" },
+  { "ja": "[頑張|Ganba]る", "baca": "がんばる · ganbaru", "id": "berusaha keras" },
+  { "ja": "[慣|Na]れる", "baca": "なれる · nareru", "id": "terbiasa" },
+  { "ja": "[運転|Unten]する", "baca": "うんてんする · unten suru", "id": "menyetir" },
+  { "ja": "[海|Umi]", "baca": "うみ · umi", "id": "laut" },
+  { "ja": "[見|Mi]える", "baca": "みえる · mieru", "id": "terlihat" },
+  { "ja": "[灯台|Tōdai]", "baca": "とうだい · tōdai", "id": "mercusuar" },
+  { "ja": "[光|Hikari]", "baca": "ひかり · hikari", "id": "cahaya" },
+  { "ja": "[道|Michi]", "baca": "みち · michi", "id": "jalan" },
+  { "ja": "[暗|Kura]い", "baca": "くらい · kurai", "id": "gelap" },
+  { "ja": "[危|Abu]ない", "baca": "あぶない · abunai", "id": "berbahaya" },
+  { "ja": "[鳥|Tori]", "baca": "とり · tori", "id": "burung" },
+  { "ja": "[声|Koe]", "baca": "こえ · koe", "id": "suara (makhluk hidup)" },
+  { "ja": "[聞|Ki]こえる", "baca": "きこえる · kikoeru", "id": "terdengar" },
+  { "ja": "～しか", "baca": "～しか · shika", "id": "hanya (dengan sangkal)" },
+  { "ja": "こんなに", "baca": "こんなに · konna ni", "id": "sebegini" },
+  { "ja": "もちろん", "baca": "もちろん · mochiron", "id": "tentu saja" },
+  { "ja": "[逆光|Gyakkō]", "baca": "ぎゃっこう · gyakkō", "id": "cahaya dari belakang" },
+  { "ja": "[風|Kaze]", "baca": "かぜ · kaze", "id": "angin" },
+  { "ja": "[強|Tsuyo]い", "baca": "つよい · tsuyoi", "id": "kuat" },
+  { "ja": "[届|Todo]く", "baca": "とどく · todoku", "id": "sampai, tiba (barang, suara)" },
+  { "ja": "[意味|Imi]", "baca": "いみ · imi", "id": "arti, makna" },
+  { "ja": "[要|I]る", "baca": "いる · iru", "id": "perlu, butuh" },
+  { "ja": "[気持|Kimo]ち", "baca": "きもち · kimochi", "id": "perasaan" },
+  { "ja": "[払|Hara]う", "baca": "はらう · harau", "id": "membayar" },
+  { "ja": "[予約|Yoyaku]", "baca": "よやく · yoyaku", "id": "reservasi" },
+  { "ja": "[持|Mo]ち[帰|kae]る", "baca": "もちかえる · mochikaeru", "id": "membawa pulang" },
+  { "ja": "[変更|Henkō]する", "baca": "へんこうする · henkō suru", "id": "mengubah" },
+  { "ja": "[新聞|Shinbun]", "baca": "しんぶん · shinbun", "id": "koran" },
+  { "ja": "[言葉|Kotoba]", "baca": "ことば · kotoba", "id": "kata, bahasa" },
+  { "ja": "[山|Yama]", "baca": "やま · yama", "id": "gunung" },
+  { "ja": "[白|Shiro]い", "baca": "しろい · shiroi", "id": "putih" },
+  { "ja": "[食事|Shokuji]", "baca": "しょくじ · shokuji", "id": "santapan, makan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk potensial (bentuk kamus).",
+   "items": [
+    "[読|yo]む ___",
+    "[書|ka]く ___",
+    "[話|hana]す ___",
+    "[食|ta]べる ___",
+    "する ___",
+    "[来|ku]る ___"
+   ]
+  },
+  {
+   "prompt": "Isi partikel yang tepat.",
+   "items": [
+    "[漢字|Kanji] ___ [読|yo]めます。",
+    "[窓|Mado]から[山|yama] ___ [見|mi]えます。",
+    "[意味|Imi] ___ [分|wa]かりません。",
+    "お[金|kane] ___ [要|i]ります。",
+    "[鳥|Tori]の[声|koe] ___ [聞|ki]こえない。(hanya)",
+    "[週|Shū] ___ [三日|mikka][来|ko]られます。"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja yang tepat.",
+   "items": [
+    "ここから[海|umi]が ___ 。([見|mi]える / [見|mi]られる)",
+    "その[映画|eiga]はネットで ___ 。([見|mi]える / [見|mi]られる)",
+    "[音|Oto]が ___ 。([聞|ki]こえる / [聞|ki]ける)",
+    "[彼|Kare]の[名前|namae]を ___ 。([知|shi]りません / [分|wa]かりません)",
+    "[意味|Imi]が ___ 。([知|shi]りません / [分|wa]かりません)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "日本語 / は / 話せます / が / 敬語 / は / 使えません",
+    "一週間 / で / 誰 / でも / 使える / よう / に / なります",
+    "道 / が / 暗くて / 危ない",
+    "鳥 / の / 声 / しか / 聞こえない",
+    "もう / 一度 / 言って / もらえます / か"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[朝|Asa][早|haya]く[起|o]きられますか。",
+    "[電車|Densha]が[間|ma]に[合|a]わないかもしれません。",
+    "カードで[払|hara]えますか。",
+    "[去年|Kyonen]は[ひらがな|hiragana]しか[読|yo]めませんでした。",
+    "[今日|Kyō]は[行|i]けませんが、[明日|ashita]なら[大丈夫|daijōbu]です。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Saya bisa bicara bahasa Jepang sedikit.",
+    "Dari sini laut kelihatan.",
+    "Bisa bayar pakai kartu?",
+    "Saya jadi bisa membaca kanji.",
+    "Maaf, hari ini saya tidak bisa datang."
+   ]
+  }
+ ],
+ "answers": [
+  "[読|yo]める — [書|ka]ける — [話|hana]せる — [食|ta]べられる — できる — [来|ko]られる",
+  "が — が — が — が — しか — に",
+  "[見|mi]える — [見|mi]られる — [聞|ki]こえる — [知|shi]りません — [分|wa]かりません",
+  "[日本語|Nihongo]は[話|hana]せますが[敬語|keigo]は[使|tsuka]えません — [一週間|Isshūkan]で[誰|dare]でも[使|tsuka]えるようになります — [道|Michi]が[暗|kura]くて[危|abu]ない — [鳥|Tori]の[声|koe]しか[聞|ki]こえない — もう[一度|ichido][言|i]ってもらえますか",
+  "Bisakah kamu bangun pagi-pagi? — Keretanya mungkin tidak keburu. — Bisa bayar pakai kartu? — Tahun lalu saya cuma bisa membaca hiragana. — Hari ini saya tidak bisa pergi, tapi kalau besok tidak masalah.",
+  "[日本語|Nihongo]が[少|suko]し[話|hana]せます。 — ここから[海|umi]が[見|mi]えます。 — カードで[払|hara]えますか。 — [漢字|Kanji]が[読|yo]めるようになりました。 — すみません、[今日|kyō]は[行|i]けません。"
+ ],
+ "wave": "Ambil daftar kata kerja di bagian akhir Unit 2, lalu ubah kedua puluhnya ke bentuk potensial dengan suara keras. Setelah itu buka Unit 4 dan ubah lima kalimat ～たことがある di sana jadi ～られる. Dua unit yang bertumpuk dalam satu latihan."
+}

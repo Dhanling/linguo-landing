@@ -1,0 +1,359 @@
+{
+ "title": "Sedang, sudah, dan sedang begitu",
+ "title_target": "何をしているの — Nani o shite iru no",
+ "goal": "Memakai ～ている untuk tiga hal yang berbeda: kegiatan yang sedang berlangsung, kebiasaan yang berulang, dan keadaan yang sudah jadi — lalu membedakannya dari ～てある.",
+ "bekal": [
+  "menyatakan kegiatan yang sedang berlangsung dengan ～ている",
+  "menyatakan kebiasaan dan pekerjaan dengan ～ている",
+  "menyatakan keadaan tetap dengan [住|su]んでいる, [結婚|kekkon]している, [持|mo]っている",
+  "membedakan kata kerja yang berpasangan seperti [開|a]く dan [開|a]ける",
+  "menyangkal dengan ～ていない dan mengerti kenapa ia berarti “belum”"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Menelepon di tengah hari",
+   "intro": "Miki menelepon Ani di siang hari. Hitung berapa kali ～ている muncul, dan perhatikan bahwa artinya tidak selalu “sedang”.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "もしもし、[今|ima][何|nani]してる？", "id": "Halo, sekarang lagi ngapain?", "literal": "halo, sekarang — apa — melakukan-sedang?" },
+    { "speaker": "アニ:", "text": "[図書館|Toshokan]で[勉強|benkyō]してる。[来週|Raishū][試験|shiken]があるから。", "id": "Lagi belajar di perpustakaan. Soalnya minggu depan ada ujian.", "literal": "perpustakaan — di — belajar-sedang. minggu-depan — ujian — yang — ada — karena." },
+    { "speaker": "ミキ:", "text": "そっか。[邪魔|Jama]して[ごめん|gomen]。", "id": "Oh gitu. Maaf mengganggu.", "literal": "begitu-ya. mengganggu-melakukan — maaf." },
+    { "speaker": "アニ:", "text": "ううん、[ちょうど|chōdo][休|yasu]んでたところ。[何|Nani]かあった？", "id": "Nggak kok, aku barusan lagi istirahat. Ada apa?", "literal": "tidak, tepat — istirahat-sedang-dulu — saat. apa — pun — ada-dulu?" },
+    { "speaker": "ミキ:", "text": "[田中|Tanaka]さん、[知|shi]ってる？[同|Ona]じクラスの。", "id": "Kamu kenal Tanaka? Yang sekelas itu.", "literal": "Tanaka-tuan, tahu-sedang? sama — kelas — punya." },
+    { "speaker": "アニ:", "text": "[知|Shi]ってる。[大阪|Ōsaka]に[住|su]んでる[人|hito]でしょ。", "id": "Kenal. Yang tinggal di Osaka kan.", "literal": "tahu-sedang. Osaka — di — tinggal-sedang — orang — kan." },
+    { "speaker": "ミキ:", "text": "そう。[結婚|Kekkon]してるって[知|shi]ってた？", "id": "Iya. Kamu tahu dia sudah menikah?", "literal": "begitu. menikah-sedang — begitu — tahu-sedang-dulu?" },
+    { "speaker": "アニ:", "text": "[えっ|E]、[知|shi]らなかった。[指輪|Yubiwa]してなかったよね。", "id": "Eh, nggak tahu. Dia nggak pakai cincin kan.", "literal": "eh, tahu-tidak-dulu. cincin — melakukan-sedang-tidak-dulu — ya-kan." },
+    { "speaker": "ミキ:", "text": "[仕事|Shigoto]の[時|toki]は[外|hazu]してるみたい。", "id": "Kayaknya kalau kerja dilepas.", "literal": "pekerjaan — punya — waktu — mengenai — melepas-sedang — sepertinya." },
+    { "speaker": "アニ:", "text": "[へえ|Hē]。[じゃあ|Jā][子供|kodomo]も[いる|iru]の？", "id": "Oh ya. Terus anaknya juga ada?", "literal": "oh. kalau-begitu — anak — juga — ada — kah?" },
+    { "speaker": "ミキ:", "text": "ううん、まだ。[奥|Oku]さんは[病院|byōin]で[働|hatara]いてるらしい。", "id": "Belum. Istrinya katanya kerja di rumah sakit.", "literal": "tidak, belum. istri-orang — mengenai — rumah-sakit — di — bekerja-sedang — katanya." },
+    { "speaker": "アニ:", "text": "[へえ|Hē]、[全然|zenzen][知|shi]らなかった。[今度|Kondo][聞|ki]いてみる。", "id": "Wah, aku sama sekali nggak tahu. Nanti aku tanya deh.", "literal": "oh, sama-sekali — tahu-tidak-dulu. lain-kali — bertanya-mencoba." }
+   ],
+   "notes": [
+    "**[知|Shi]っている, bukan [知|shi]る.** Ini yang paling sering salah. “Saya tahu” = [知|shi]**っています**; “saya tidak tahu” = [知|shi]**りません** ⚠️ (bukan [知|shi]っていません). Sepasang bentuk yang tidak setangkup, dan tidak ada penjelasan logisnya — hafalkan apa adanya.",
+    "**[結婚|Kekkon]している = sudah menikah**, bukan sedang menikah. Kata kerja yang menandai perubahan sekali jadi ([結婚|kekkon]する、[死|shi]ぬ、[始|haji]まる) memakai ～ている untuk menyatakan **keadaan hasilnya**, bukan prosesnya.",
+    "**[住|Su]んでいる = tinggal.** Bentuk [住|su]みます nyaris tak pernah dipakai untuk menyatakan tempat tinggal sekarang. Kalau kamu berkata [東京|Tōkyō]に[住|su]みます, orang Jepang akan mengira kamu baru akan pindah.",
+    "**～てる = ～ている dengan い dibuang.** Di seluruh dialog santai, い hampir selalu hilang: してる、[知|shi]ってる、[住|su]んでる、[働|hatara]いてる. Dalam tulisan resmi い tetap ditulis.",
+    "**～てた = ～ていた**, bentuk lampaunya. [休|Yasu]んでた = tadi sedang istirahat. [知|Shi]ってた = tadi sudah tahu.",
+    "**って di [結婚|kekkon]してるって** adalah versi santai dari と, penanda kutipan yang dibongkar di Unit 6. Untuk sekarang: って ≈ “bahwa”.",
+    "**でしょ (dari でしょう) mengajak lawan bicara membenarkan.** [人|Hito]でしょ = “orang itu kan?”. Nadanya turun, bukan naik — kalau naik, ia berubah jadi dugaan yang benar-benar tidak yakin."
+   ],
+   "grammars": [
+    {
+     "title": "～ている — satu bentuk, tiga pekerjaan",
+     "body": [
+      "Kesalahan terbesar pembelajar adalah menerjemahkan ～ている selalu jadi “sedang”. Ia mengerjakan tiga hal yang berbeda, dan jenis kata kerjanya yang menentukan yang mana."
+     ],
+     "table": {
+      "head": ["Pekerjaan", "Contoh", "Arti", "Jenis kata kerjanya"],
+      "rows": [
+       ["1. Sedang berlangsung", "[今|Ima][食|ta]べています。", "Sekarang sedang makan.", "kegiatan berdurasi"],
+       ["", "[雨|Ame]が[降|fu]っています。", "Hujan sedang turun.", ""],
+       ["2. Kebiasaan atau pekerjaan", "[銀行|Ginkō]で[働|hatara]いています。", "Saya bekerja di bank.", "kegiatan berulang"],
+       ["", "[毎朝|Maiasa][走|hashi]っています。", "Saya lari tiap pagi.", ""],
+       ["3. Keadaan hasil", "[結婚|Kekkon]しています。", "Saya sudah menikah.", "perubahan sekali jadi"],
+       ["", "[窓|Mado]が[開|a]いています。", "Jendelanya terbuka.", ""],
+       ["", "[彼|Kare]はもう[来|ki]ています。", "Dia sudah datang (dan masih di sini).", ""]
+      ]
+     },
+     "after": [
+      "**Cara memilah tanpa menghafal daftar:** tanyakan apakah kata kerjanya bisa berlangsung lama. [食|Ta]べる bisa (lima menit); jadi [食|ta]べている = sedang. [結婚|Kekkon]する tidak bisa (satu detik, lalu selesai); jadi [結婚|kekkon]している = keadaan sesudahnya.",
+      "**Kata kerja perubahan sekali jadi yang paling sering:** [結婚|kekkon]する (menikah)、[死|shi]ぬ (mati)、[知|shi]る (jadi tahu)、[持|mo]つ (memegang)、[住|su]む (menetap)、[覚|obo]える (jadi ingat)、[疲|tsuka]れる (jadi lelah)、[太|futo]る (jadi gemuk)、[座|suwa]る (duduk)、[立|ta]つ (berdiri).",
+      "**[疲|Tsuka]れています = saya lelah**, bukan “sedang melelahkan diri”. Begitu juga [お腹|onaka]が[空|su]いています = saya lapar. Dua kalimat ini dipakai tiap hari, dan bentuk [疲|tsuka]れます ⚠️ justru terdengar salah."
+     ]
+    },
+    {
+     "title": "～ていない — kenapa ia berarti “belum”",
+     "body": [
+      "Menyangkal ～ている sering diterjemahkan salah. Bandingkan dua kalimat berikut, yang di bahasa Indonesia bisa sama-sama jadi “saya tidak makan”:"
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti sebenarnya", "Kapan dipakai"],
+      "rows": [
+       ["[食|Ta]べません。", "Saya tidak (akan) makan.", "Menolak, atau kebiasaan."],
+       ["[食|Ta]べませんでした。", "Saya tidak makan (dulu).", "Kejadian yang sudah lewat dan selesai."],
+       ["[食|Ta]べていません。", "Saya belum makan.", "Sampai detik ini belum terjadi."],
+       ["まだ[食|ta]べていません。", "Saya belum makan.", "Sama, dengan penekanan."],
+       ["[結婚|Kekkon]していません。", "Saya belum menikah.", "Keadaan sekarang."]
+      ]
+     },
+     "after": [
+      "**まだ + ～ていない adalah pasangan tetap.** まだ[終|o]わっていません (belum selesai)、まだ[決|ki]めていません (belum memutuskan)、まだ[読|yo]んでいません (belum membaca). Kalau kamu ditanya sesuatu dan jawabannya “belum”, hampir pasti pola inilah yang kamu butuhkan.",
+      "**Jawaban singkatnya まだです.** Sopan, aman, dan menutup pertanyaan tanpa terdengar menolak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Ada yang salah di kamar",
+   "intro": "Ani pulang ke apartemen dan menemukan sesuatu yang aneh. Perhatikan pasangan kata kerja yang bentuknya mirip tapi bekerja berbeda.",
+   "lines": [
+    { "speaker": "アニ:", "text": "あれ？[窓|Mado]が[開|a]いている。", "id": "Lho? Jendelanya terbuka.", "literal": "lho? jendela — yang — terbuka-keadaan." },
+    { "speaker": "ミキ:", "text": "[私|Watashi]が[開|a]けたよ。[暑|Atsu]かったから。", "id": "Aku yang buka. Soalnya tadi panas.", "literal": "saya — yang — membuka-sudah — lho. panas-dulu — karena." },
+    { "speaker": "アニ:", "text": "あ、そうか。[電気|Denki]も[ついている|tsuite iru]ね。", "id": "Oh gitu. Lampunya juga nyala ya.", "literal": "ah, begitu — ya. listrik — juga — menyala-keadaan — ya." },
+    { "speaker": "ミキ:", "text": "[ごめん|Gomen]、[消|ke]すのを[忘|wasu]れてた。", "id": "Maaf, aku lupa mematikannya.", "literal": "maaf, memadamkan — hal — akan — lupa-sedang-dulu." },
+    { "speaker": "アニ:", "text": "[大丈夫|Daijōbu]。あ、[冷蔵庫|reizōko]の[中|naka]に[何|nani]か[入|hai]ってる？", "id": "Nggak apa-apa. Eh, ada isinya nggak di kulkas?", "literal": "tidak-apa-apa. ah, kulkas — punya — dalam — pada — apa — pun — masuk-keadaan?" },
+    { "speaker": "ミキ:", "text": "[牛乳|Gyūnyū]と[卵|tamago]が[入|hai]ってる。あと、ケーキも[買|ka]ってある。", "id": "Ada susu dan telur. Terus, kue juga sudah aku belikan.", "literal": "susu — dan — telur — yang — masuk-keadaan. lalu, kue — juga — membeli-tersedia." },
+    { "speaker": "アニ:", "text": "ケーキ？[何|Nan]かの[お祝|oiwa]い？", "id": "Kue? Ada yang dirayakan?", "literal": "kue? apa — pun — punya — perayaan?" },
+    { "speaker": "ミキ:", "text": "[覚|Obo]えてないの？[今日|Kyō]、[アニ|Ani]の[誕生日|tanjōbi]でしょ。", "id": "Kamu nggak ingat? Hari ini kan ulang tahunmu.", "literal": "mengingat-sedang-tidak — kah? hari-ini, Ani — punya — hari-lahir — kan." },
+    { "speaker": "アニ:", "text": "[本当|Hontō]だ。[自分|Jibun]で[忘|wasu]れてた。", "id": "Iya benar. Aku sendiri lupa.", "literal": "sungguh — adalah. diri-sendiri — dengan — lupa-sedang-dulu." },
+    { "speaker": "ミキ:", "text": "テーブルの[上|ue]に[置|o]いてあるよ。[箱|Hako]、[開|a]けてみて。", "id": "Sudah aku taruh di atas meja lho. Coba buka kotaknya.", "literal": "meja — punya — atas — pada — meletakkan-tersedia — lho. kotak, membuka-coba." },
+    { "speaker": "アニ:", "text": "ありがとう。[本当|Hontō]に[嬉|ureshi]しい。", "id": "Terima kasih. Aku senang sekali.", "literal": "terima-kasih. sungguh — pada — senang." },
+    { "speaker": "ミキ:", "text": "[写真|Shashin][撮|to]ろう。[電気|Denki]、[消|ke]さないでね。", "id": "Foto yuk. Lampunya jangan dimatikan ya.", "literal": "foto — memotret-mari. listrik, memadamkan-jangan — ya." }
+   ],
+   "notes": [
+    "**[開|A]く dan [開|a]ける adalah dua kata kerja berbeda**, bukan dua bentuk. [開|A]く = terbuka (sendirinya), tanpa pelaku. [開|A]ける = membuka (oleh seseorang), butuh objek dengan を. Pasangan seperti ini disebut kata kerja **[自動詞|jidōshi]** (tak berpelaku) dan **[他動詞|tadōshi]** (berpelaku).",
+    "**～てある vs ～ている.** [窓|Mado]が[開|a]い**ている** = jendelanya terbuka (kita tak tahu kenapa). [窓|Mado]が[開|a]け**てある** = jendelanya sengaja dibuka orang dan dibiarkan begitu. ～てある selalu memakai kata kerja berpelaku, dan selalu menyiratkan ada niat di baliknya.",
+    "**[電気|Denki]がついている** = lampunya menyala. Pasangannya [電気|denki]をつける (menyalakan) dan [電気|denki]を[消|ke]す (mematikan). Ketiganya dipakai tiap hari, jadi hafalkan sebagai satu paket.",
+    "**[忘|Wasu]れてた** bukan “sedang lupa”. Ini keadaan: “tadi dalam keadaan lupa (dan baru sadar sekarang)”. Bandingkan [忘|wasu]れました yang cuma melaporkan bahwa peristiwa lupa terjadi.",
+    "**[覚|Obo]えてない？** = “kamu nggak ingat?”. Sekali lagi keadaan, bukan kegiatan. [覚|Obo]えます sendirian berarti “menghafal”, sebuah proses.",
+    "**[撮|To]ろう** adalah bentuk ajakan biasa dari [撮|to]りましょう. Pola bentuk ini: godan ganti ujung -u jadi -ou ([行|i]く → [行|i]こう), ichidan ganti る jadi よう ([食|ta]べる → [食|ta]べよう), する → しよう, [来|ku]る → [来|ko]よう."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja berpasangan — [自動詞|jidōshi] dan [他動詞|tadōshi]",
+     "body": [
+      "Bahasa Jepang sering punya dua kata kerja untuk satu peristiwa: satu untuk “terjadi”, satu untuk “membuat terjadi”. Bahasa Indonesia memakai imbuhan (ter- vs mem-); bahasa Jepang memakai kata yang berbeda."
+     ],
+     "table": {
+      "head": ["Tak berpelaku (が)", "Berpelaku (を)", "Arti"],
+      "rows": [
+       ["[開|A]く", "[開|A]ける", "terbuka / membuka"],
+       ["[閉|Shi]まる", "[閉|Shi]める", "tertutup / menutup"],
+       ["つく", "つける", "menyala / menyalakan"],
+       ["[消|Ki]える", "[消|Ke]す", "padam / memadamkan"],
+       ["[入|Hai]る", "[入|I]れる", "masuk / memasukkan"],
+       ["[出|De]る", "[出|Da]す", "keluar / mengeluarkan"],
+       ["[始|Haji]まる", "[始|Haji]める", "mulai / memulai"],
+       ["[終|O]わる", "[終|O]える", "selesai / menyelesaikan"],
+       ["[止|To]まる", "[止|To]める", "berhenti / menghentikan"],
+       ["[落|O]ちる", "[落|O]とす", "jatuh / menjatuhkan"],
+       ["[壊|Kowa]れる", "[壊|Kowa]す", "rusak / merusak"],
+       ["[変|Ka]わる", "[変|Ka]える", "berubah / mengubah"],
+       ["[集|Atsu]まる", "[集|Atsu]める", "berkumpul / mengumpulkan"],
+       ["[決|Ki]まる", "[決|Ki]める", "ditentukan / menentukan"]
+      ]
+     },
+     "after": [
+      "**Petunjuk bunyi yang cukup sering benar:** yang berujung **-aru** biasanya tak berpelaku, yang berujung **-eru** biasanya berpelaku ([始|haji]まる vs [始|haji]める、[集|atsu]まる vs [集|atsu]める). Kelompok **-su** hampir selalu berpelaku ([消|ke]す、[出|da]す、[落|o]とす).",
+      "**Partikelnya yang menentukan, bukan kata kerjanya.** Kata kerja tak berpelaku memakai が dan tidak pernah memakai を. Kalau kamu mendengar を, kata kerjanya pasti berpelaku."
+     ]
+    },
+    {
+     "title": "～ておく, ～てある, ～ている — tiga cara berkata “sudah begitu”",
+     "body": [
+      "Ketiganya menyangkut keadaan, tapi menyorot sisi yang berbeda. Bacalah tabel ini sambil membayangkan satu jendela yang sama."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Yang disorot"],
+      "rows": [
+       ["～ている", "[窓|Mado]が[開|a]いている。", "Keadaannya sekarang. Tak peduli siapa yang membuka."],
+       ["～てある", "[窓|Mado]が[開|a]けてある。", "Keadaannya sekarang, dan ada yang sengaja membuatnya."],
+       ["～ておく", "[窓|Mado]を[開|a]けておく。", "Tindakannya, dilakukan demi persiapan."],
+       ["～ておいた", "[窓|Mado]を[開|a]けておいた。", "Sudah kusiapkan sebelumnya."]
+      ]
+     },
+     "after": [
+      "**～ておく adalah pola yang paling berguna dari ketiganya** dalam percakapan sehari-hari: [買|Ka]っておく (aku belikan dulu ya)、[調|shira]べておきます (saya cari tahu dulu)、[言|i]っておいた (sudah kubilang sebelumnya). Bentuk pendeknya ～とく: [買|ka]っとく、[言|i]っといた.",
+      "**～てある dipakai untuk barang, bukan orang.** [予約|Yoyaku]してある (sudah dipesankan)、[書|ka]いてある (tertulis di situ). Kalau subjeknya orang, pakai ～ている.",
+      "**Pola lengkapnya dibongkar lagi di Unit 11**, bersama ～てしまう dan ～ていく・～てくる. Di sini cukup mengenali bentuknya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat ～ている yang dipakai setiap hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kalimat berikut begitu sering dipakai sampai orang Jepang tidak lagi merasa memakai pola tata bahasa. Hafalkan sebagai kalimat utuh, bukan sebagai rumus."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jepang", "Arti", "Jepang", "Arti"],
+     "rows": [
+      ["[知|Shi]っています。", "Saya tahu.", "[知|Shi]りません。", "Saya tidak tahu."],
+      ["[疲|Tsuka]れています。", "Saya lelah.", "[お腹|Onaka]が[空|su]いています。", "Saya lapar."],
+      ["[持|Mo]っています。", "Saya punya (bawa).", "[持|Mo]っていません。", "Saya tidak punya."],
+      ["[分|Wa]かっています。", "Saya paham kok.", "まだ[分|wa]かっていません。", "Saya belum paham."],
+      ["[住|Su]んでいます。", "Saya tinggal (di).", "[通|Kayo]っています。", "Saya rutin ke sana."],
+      ["[覚|Obo]えています。", "Saya ingat.", "[忘|Wasu]れています。", "Saya lupa."],
+      ["[混|Ko]んでいます。", "Ramai, penuh sesak.", "[空|Su]いています。", "Sepi, longgar."],
+      ["[開|A]いています。", "Bukanya sedang buka.", "[閉|Shi]まっています。", "Tutup."],
+      ["[似|Ni]ています。", "Mirip.", "[違|Chiga]っています。", "Berbeda, salah."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua kalimat yang menyelamatkanmu di toko",
+     "items": [
+      "**すみません、[開|a]いていますか。** — “Permisi, sedang buka?” Papan 営業中 berarti sedang buka; 準備中 berarti sedang siap-siap, belum menerima tamu.",
+      "**[この|Kono][席|seki]、[空|a]いていますか。** — “Kursi ini kosong?” Jawabannya はい、どうぞ atau すみません、[人|hito]がいます.",
+      "**[混|Ko]んでいますね。** — “Ramai ya.” Kalimat basa-basi yang aman diucapkan kepada siapa pun di antrean."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menerangkan foto — latihan yang memaksa ～ている keluar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cara tercepat membuat ～ている otomatis adalah menerangkan gambar. Ambil foto apa pun di ponselmu, lalu susun lima kalimat seperti contoh berikut."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[これは|Kore wa][先週|senshū]の[写真|shashin]です。",
+      "[公園|Kōen]で[友達|tomodachi]が[三人|sannin][座|suwa]っています。",
+      "[真|Ma]ん[中|naka]の[人|hito]は[赤|aka]いシャツを[着|ki]ています。",
+      "[右|Migi]の[人|hito]は[何|nani]か[食|ta]べています。",
+      "[後|Ushi]ろで[子供|kodomo]たちが[走|hashi]っています。",
+      "[空|Sora]が[曇|kumo]っていますが、[雨|ame]は[降|fu]っていません。",
+      "Ini foto minggu lalu. Di taman ada tiga teman sedang duduk. Orang yang di tengah memakai kaus merah. Orang yang di kanan sedang makan sesuatu. Di belakang anak-anak sedang berlari. Langitnya mendung, tapi hujannya tidak turun."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan [着|ki]ています (memakai baju) — sekali lagi keadaan, bukan kegiatan. Kata kerja berpakaian dalam bahasa Jepang dipilah menurut bagian badan, dan ini termasuk hal yang sering meleset:"
+    },
+    {
+     "type": "tabel",
+     "head": ["Kata kerja", "Untuk apa", "Contoh"],
+     "rows": [
+      ["[着|ki]る", "badan atas dan pakaian utuh", "シャツを[着|ki]る · コートを[着|ki]る"],
+      ["はく", "badan bawah dan kaki", "ズボンをはく · [靴|kutsu]をはく"],
+      ["かぶる", "kepala", "[帽子|Bōshi]をかぶる"],
+      ["かける", "kacamata", "めがねをかける"],
+      ["する", "aksesori kecil", "[時計|Tokei]をする · [指輪|yubiwa]をする"],
+      ["しめる", "yang diikat", "ネクタイをしめる"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[図書館|Toshokan]", "baca": "としょかん · toshokan", "id": "perpustakaan" },
+  { "ja": "[試験|Shiken]", "baca": "しけん · shiken", "id": "ujian" },
+  { "ja": "[邪魔|Jama]する", "baca": "じゃまする · jama suru", "id": "mengganggu" },
+  { "ja": "ちょうど", "baca": "ちょうど · chōdo", "id": "tepat, barusan" },
+  { "ja": "[休|Yasu]む", "baca": "やすむ · yasumu", "id": "istirahat, libur" },
+  { "ja": "[同|Ona]じ", "baca": "おなじ · onaji", "id": "sama" },
+  { "ja": "[住|Su]む", "baca": "すむ · sumu", "id": "tinggal, menetap" },
+  { "ja": "[結婚|Kekkon]する", "baca": "けっこんする · kekkon suru", "id": "menikah" },
+  { "ja": "[指輪|Yubiwa]", "baca": "ゆびわ · yubiwa", "id": "cincin" },
+  { "ja": "[外|Hazu]す", "baca": "はずす · hazusu", "id": "melepas (aksesori)" },
+  { "ja": "[奥|Oku]さん", "baca": "おくさん · okusan", "id": "istri (orang lain)" },
+  { "ja": "[病院|Byōin]", "baca": "びょういん · byōin", "id": "rumah sakit" },
+  { "ja": "[全然|Zenzen]", "baca": "ぜんぜん · zenzen", "id": "sama sekali (tidak)" },
+  { "ja": "[今度|Kondo]", "baca": "こんど · kondo", "id": "lain kali, kali ini" },
+  { "ja": "[窓|Mado]", "baca": "まど · mado", "id": "jendela" },
+  { "ja": "[開|A]く", "baca": "あく · aku", "id": "terbuka" },
+  { "ja": "[開|A]ける", "baca": "あける · akeru", "id": "membuka" },
+  { "ja": "[閉|Shi]まる", "baca": "しまる · shimaru", "id": "tertutup" },
+  { "ja": "[閉|Shi]める", "baca": "しめる · shimeru", "id": "menutup" },
+  { "ja": "[電気|Denki]", "baca": "でんき · denki", "id": "listrik, lampu" },
+  { "ja": "つく", "baca": "つく · tsuku", "id": "menyala" },
+  { "ja": "つける", "baca": "つける · tsukeru", "id": "menyalakan" },
+  { "ja": "[消|Ke]す", "baca": "けす · kesu", "id": "memadamkan, menghapus" },
+  { "ja": "[消|Ki]える", "baca": "きえる · kieru", "id": "padam, hilang" },
+  { "ja": "[忘|Wasu]れる", "baca": "わすれる · wasureru", "id": "lupa" },
+  { "ja": "[冷蔵庫|Reizōko]", "baca": "れいぞうこ · reizōko", "id": "kulkas" },
+  { "ja": "[牛乳|Gyūnyū]", "baca": "ぎゅうにゅう · gyūnyū", "id": "susu" },
+  { "ja": "[卵|Tamago]", "baca": "たまご · tamago", "id": "telur" },
+  { "ja": "[お祝|Oiwa]い", "baca": "おいわい · oiwai", "id": "perayaan" },
+  { "ja": "[誕生日|Tanjōbi]", "baca": "たんじょうび · tanjōbi", "id": "hari ulang tahun" },
+  { "ja": "[自分|Jibun]", "baca": "じぶん · jibun", "id": "diri sendiri" },
+  { "ja": "[置|O]く", "baca": "おく · oku", "id": "meletakkan" },
+  { "ja": "[箱|Hako]", "baca": "はこ · hako", "id": "kotak" },
+  { "ja": "[嬉|Ure]しい", "baca": "うれしい · ureshii", "id": "senang, gembira" },
+  { "ja": "[撮|To]る", "baca": "とる · toru", "id": "memotret" },
+  { "ja": "[疲|Tsuka]れる", "baca": "つかれる · tsukareru", "id": "lelah" },
+  { "ja": "[混|Ko]む", "baca": "こむ · komu", "id": "ramai, penuh sesak" },
+  { "ja": "[似|Ni]る", "baca": "にる · niru", "id": "mirip" },
+  { "ja": "[違|Chiga]う", "baca": "ちがう · chigau", "id": "berbeda, salah" },
+  { "ja": "[通|Kayo]う", "baca": "かよう · kayou", "id": "rutin bolak-balik ke" },
+  { "ja": "[着|Ki]る", "baca": "きる · kiru", "id": "memakai (baju atas)" },
+  { "ja": "はく", "baca": "はく · haku", "id": "memakai (celana, sepatu)" },
+  { "ja": "かぶる", "baca": "かぶる · kaburu", "id": "memakai (topi)" },
+  { "ja": "[帽子|Bōshi]", "baca": "ぼうし · bōshi", "id": "topi" },
+  { "ja": "[曇|Kumo]る", "baca": "くもる · kumoru", "id": "mendung" },
+  { "ja": "[真|Ma]ん[中|naka]", "baca": "まんなか · mannaka", "id": "tengah-tengah" },
+  { "ja": "[座|Suwa]る", "baca": "すわる · suwaru", "id": "duduk" },
+  { "ja": "[席|Seki]", "baca": "せき · seki", "id": "kursi, tempat duduk" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk ～ている dan tentukan artinya: sedang, kebiasaan, atau keadaan.",
+   "items": [
+    "[今|Ima][雨|ame]が[降|fu]ります ___",
+    "[銀行|Ginkō]で[働|hatara]きます ___",
+    "[彼|Kare]は[結婚|kekkon]します ___",
+    "[窓|Mado]が[開|a]きます ___",
+    "[毎朝|Maiasa][走|hashi]ります ___",
+    "[お腹|Onaka]が[空|su]きます ___"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja yang tepat dari pasangannya.",
+   "items": [
+    "[窓|Mado]が ___ 。(terbuka: [開|a]く / [開|a]ける)",
+    "[私|Watashi]が[窓|mado]を ___ 。(membuka)",
+    "[電気|Denki]が ___ 。(menyala: つく / つける)",
+    "[電気|Denki]を ___ ください。(matikan: [消|ke]す / [消|ki]える)",
+    "[授業|Jugyō]が ___ 。(mulai: [始|haji]まる / [始|haji]める)",
+    "[お金|Okane]が ___ 。(jatuh: [落|o]ちる / [落|o]とす)"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk sangkal yang tepat.",
+   "items": [
+    "まだ[ご飯|gohan]を ___ 。(belum makan)",
+    "[明日|Ashita]は ___ 。(tidak akan pergi)",
+    "[昨日|Kinō]は ___ 。(kemarin tidak datang)",
+    "[彼|Kare]の[名前|namae]を ___ 。(tidak tahu)",
+    "まだ ___ 。(belum menikah)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "大阪 / に / 住んで / いる / 人 / です",
+    "テーブル / の / 上 / に / 置いて / ある",
+    "電気 / を / 消す / の / を / 忘れて / いた",
+    "冷蔵庫 / の / 中 / に / 牛乳 / が / 入って / いる",
+    "まだ / 何 / も / 決めて / いません"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[田中|Tanaka]さんは[結婚|kekkon]していますか。",
+    "すみません、まだ[終|o]わっていません。",
+    "[窓|Mado]が[開|a]けてありますね。",
+    "[彼|Kare]は[赤|aka]いシャツを[着|ki]ています。",
+    "[今日|Kyō]は[電車|densha]が[混|ko]んでいます。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Saya tinggal di Tokyo.",
+    "Saya sudah tahu.",
+    "Saya belum makan.",
+    "Lampunya menyala.",
+    "Saya lelah."
+   ]
+  }
+ ],
+ "answers": [
+  "[降|fu]っています · sedang — [働|hatara]いています · kebiasaan — [結婚|kekkon]しています · keadaan — [開|a]いています · keadaan — [走|hashi]っています · kebiasaan — [空|su]いています · keadaan",
+  "[開|a]く — [開|a]ける — つく — [消|ke]して — [始|haji]まる — [落|o]ちる",
+  "[食|ta]べていません — [行|i]きません — [来|ki]ませんでした — [知|shi]りません — [結婚|kekkon]していません",
+  "[大阪|Ōsaka]に[住|su]んでいる[人|hito]です — テーブルの[上|ue]に[置|o]いてある — [電気|Denki]を[消|ke]すのを[忘|wasu]れていた — [冷蔵庫|Reizōko]の[中|naka]に[牛乳|gyūnyū]が[入|hai]っている — まだ[何|nani]も[決|ki]めていません",
+  "Apakah Tanaka sudah menikah? — Maaf, belum selesai. — Jendelanya sengaja dibuka ya. — Dia memakai kaus merah. — Hari ini keretanya penuh sesak.",
+  "[東京|Tōkyō]に[住|su]んでいます。 — [知|Shi]っています。 — まだ[食|ta]べていません。 — [電気|Denki]がついています。 — [疲|Tsuka]れています。"
+ ],
+ "wave": "Kembali ke Unit 1 dan ubah setiap kalimat ～ている di sana ke bentuk santai ～てる, lalu ucapkan keras-keras. Lalu buka Unit 2 dan gabungkan: [走|Hashi]る[前|mae]に…、[走|hashi]ってから… dengan ～ている di ujungnya. Menumpuk dua unit dalam satu kalimat adalah cara tercepat membuat keduanya tinggal."
+}

@@ -1,0 +1,343 @@
+{
+ "title": "Menerangkan kata benda dengan satu kalimat",
+ "title_target": "昨日買った本 — Kinō katta hon",
+ "goal": "Menempelkan seluruh kalimat di depan kata benda untuk menerangkannya, dan memakai の sebagai pengganti kata benda yang sudah jelas.",
+ "bekal": [
+  "menempelkan kata kerja bentuk biasa langsung di depan kata benda",
+  "mengubah が jadi の di dalam klausa penerang",
+  "memakai の sebagai kata benda pengganti",
+  "menerangkan orang dan benda tanpa mengulang kata bendanya",
+  "membedakan klausa penerang dari kalimat berdiri sendiri"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Mencari barang yang hilang",
+   "intro": "Ani kehilangan payung di kafe. Perhatikan bahwa setiap keterangan panjang ditaruh DI DEPAN kata bendanya, bukan di belakang.",
+   "lines": [
+    { "speaker": "アニ:", "text": "すみません、[昨日|kinō]ここに[置|o]いた[傘|kasa]、ありませんか。", "id": "Permisi, payung yang kemarin saya taruh di sini ada?", "literal": "maaf, kemarin — sini — pada — meletakkan-sudah — payung, tidak-ada — kah." },
+    { "speaker": "[店員|Ten'in]:", "text": "[何|Nani][色|iro]の[傘|kasa]ですか。", "id": "Payung warna apa?", "literal": "apa — warna — punya — payung — adalah — kah." },
+    { "speaker": "アニ:", "text": "[青|Ao]くて、[持|mo]つところが[木|ki]でできているものです。", "id": "Yang biru, dan gagangnya terbuat dari kayu.", "literal": "biru-dan, memegang — tempat — yang — kayu — dengan — terbuat-sedang — benda — adalah." },
+    { "speaker": "[店員|Ten'in]:", "text": "[少|Shō][々|shō]お[待|ma]ちください。… これですか。", "id": "Mohon tunggu sebentar. … Ini?", "literal": "sedikit-sedikit — menunggu — silakan. … ini — adalah — kah." },
+    { "speaker": "アニ:", "text": "あ、それです！[本当|Hontō]にありがとうございます。", "id": "Ah, itu! Terima kasih banyak.", "literal": "ah, itu — adalah! sungguh — pada — terima-kasih." },
+    { "speaker": "[店員|Ten'in]:", "text": "よかったです。[忘|Wasu]れ[物|mono]は[一|isshū][週間|kan][預|azu]かっています。", "id": "Syukurlah. Barang tertinggal kami simpan selama satu minggu.", "literal": "baik-dulu — adalah. lupa-barang — mengenai — satu-minggu — menyimpan-sedang." },
+    { "speaker": "アニ:", "text": "そうなんですか。[知|Shi]らなかったです。", "id": "Oh begitu. Saya tidak tahu.", "literal": "begitu — hal-adalah — kah. tahu-tidak-dulu — adalah." },
+    { "speaker": "[店員|Ten'in]:", "text": "[一週間|Isshūkan][経|ta]っても[誰|dare]も[取|to]りに[来|ko]ないものは、[市|shi]の[施設|shisetsu]に[送|oku]ります。", "id": "Barang yang setelah seminggu tidak ada yang mengambil, kami kirim ke fasilitas kota.", "literal": "satu-minggu — berlalu-pun — siapa — pun — mengambil — untuk — datang-tidak — benda — mengenai, kota — punya — fasilitas — ke — mengirim." },
+    { "speaker": "アニ:", "text": "[傘|Kasa]を[忘|wasu]れる[人|hito]、[多|ō]いですか。", "id": "Orang yang lupa payung banyak?", "literal": "payung — akan — lupa — orang, banyak — adalah — kah." },
+    { "speaker": "[店員|Ten'in]:", "text": "[雨|Ame]が[降|fu]った[次|tsugi]の[日|hi]は[特|toku]に[多|ō]いですね。", "id": "Hari sesudah hujan turun terutama banyak ya.", "literal": "hujan — yang — turun-sudah — berikut — punya — hari — mengenai — khusus — pada — banyak — adalah — ya." },
+    { "speaker": "アニ:", "text": "わかる[気|ki]がします。[晴|Ha]れると[忘|wasu]れちゃうんですよね。", "id": "Saya bisa mengerti. Kalau cerah jadi lupa ya.", "literal": "mengerti — perasaan — yang — melakukan. cerah — kalau — lupa-keburu — hal-adalah — ya — kan." },
+    { "speaker": "[店員|Ten'in]:", "text": "そうなんです。[名前|Namae]を[書|ka]いてある[傘|kasa]は[戻|modo]りやすいですよ。", "id": "Betul. Payung yang ada namanya lebih mudah kembali lho.", "literal": "begitu — hal-adalah. nama — akan — menulis-tersedia — payung — mengenai — kembali-mudah — adalah — lho." }
+   ],
+   "notes": [
+    "**Keterangan panjang selalu di DEPAN kata bendanya.** [昨日|Kinō]ここに[置|o]いた**[傘|kasa]** = payung yang kemarin kutaruh di sini. Bahasa Indonesia menaruhnya di belakang dengan “yang”; bahasa Jepang menaruhnya di depan, tanpa kata penghubung apa pun.",
+    "**Tidak ada kata seperti “yang”.** Yang menandai bahwa satu kalimat sedang menerangkan kata benda adalah **letaknya**, dan bentuk biasa kata kerjanya. Ini murni soal urutan.",
+    "**[持|Mo]つところが[木|ki]でできている** — でできている = terbuat dari. Untuk bahan yang masih kelihatan ([木|ki]、[紙|kami]、ガラス) pakai で; untuk bahan yang berubah lewat proses ([ぶどう|budō]からワイン) pakai から.",
+    "**もの vs こと.** もの = benda berwujud. こと = hal, perkara. [青|Ao]い**もの** (benda biru) vs [大事|daiji]な**こと** (hal penting). Di dialog ini もの dipakai karena yang dibicarakan payung.",
+    "**～ても = meskipun.** [一週間|Isshūkan][経|ta]っ**ても** = meskipun sudah lewat seminggu. Bentuknya: bentuk て + も. Untuk kata sifat い: [高|taka]く**ても**; untuk kata benda: [学生|gakusei]**でも**.",
+    "**[忘|Wasu]れちゃう** adalah [忘|wasu]れてしまう yang dipendekkan — “keburu lupa”, dengan nada menyesal. Pola ～てしまう dibongkar di Unit 11; bentuk pendek ～ちゃう muncul di mana-mana dalam percakapan.",
+    "**わかる[気|ki]がします** = “rasanya saya mengerti”. ～[気|ki]がする menempel pada bentuk biasa dan menyatakan firasat: いい[気|ki]がする (rasanya bagus)、[忘|wasu]れた[気|ki]がする (rasanya aku lupa)."
+   ],
+   "grammars": [
+    {
+     "title": "Klausa penerang — satu kalimat menempel di depan kata benda",
+     "body": [
+      "Aturan tunggalnya: **kalimat lengkap dalam bentuk biasa + kata benda**. Tidak ada penghubung, tidak ada perubahan bentuk lain."
+     ],
+     "table": {
+      "head": ["Kalimat berdiri sendiri", "Menjadi penerang", "Arti"],
+      "rows": [
+       ["[昨日|Kinō][本|hon]を[買|ka]った。", "[昨日|kinō][買|ka]った[本|hon]", "buku yang kemarin kubeli"],
+       ["[父|Chichi]が[作|tsuku]った。", "[父|chichi]が[作|tsuku]った[料理|ryōri]", "masakan yang dibuat ayah"],
+       ["[今|Ima][住|su]んでいる。", "[今|ima][住|su]んでいる[町|machi]", "kota tempat aku tinggal sekarang"],
+       ["[誰|Dare]も[来|ko]ない。", "[誰|dare]も[来|ko]ない[日|hi]", "hari yang tidak ada tamunya"],
+       ["[背|Se]が[高|taka]い。", "[背|se]が[高|taka]い[人|hito]", "orang yang tinggi"],
+       ["[有名|Yūmei]じゃない。", "[有名|yūmei]じゃない[店|mise]", "toko yang tidak terkenal"],
+       ["[前|Mae]は[学生|gakusei]だった。", "[前|mae]は[学生|gakusei]だった[人|hito]", "orang yang dulu mahasiswa"]
+      ]
+     },
+     "after": [
+      "**Kata benda yang diterangkan bisa berperan apa saja di kalimat besarnya.** [昨日|Kinō][買|ka]った[本|hon]**は**[面白|omoshiro]い (subjek)、[昨日|kinō][買|ka]った[本|hon]**を**[読|yo]んだ (objek)、[昨日|kinō][買|ka]った[本|hon]**の**[値段|nedan] (pemilik).",
+      "**です・ます tidak pernah masuk ke dalam klausa penerang.** [買|Ka]いました[本|hon] ⚠️ salah. Sekali lagi: apa pun yang ada di tengah kalimat memakai bentuk biasa.",
+      "**Untuk kata sifat な dan kata benda, hati-hati dengan bentuk positifnya:** [静|shizu]か**な**[町|machi] (memakai な, bukan だ), [学生|gakusei]**の**[人|hito] (memakai の, bukan だ). Tapi bentuk lampau dan sangkalnya kembali normal: [静|shizu]か**だった**[町|machi]、[学生|gakusei]**じゃない**[人|hito]."
+     ]
+    },
+    {
+     "title": "が berubah jadi の di dalam klausa penerang",
+     "body": [
+      "Kalau subjek klausa penerang ditandai が, ia boleh — dan sering — diganti の. Artinya sama persis; の terdengar sedikit lebih halus dan lebih pendek."
+     ],
+     "table": {
+      "head": ["Dengan が", "Dengan の", "Arti"],
+      "rows": [
+       ["[父|Chichi]が[作|tsuku]った[料理|ryōri]", "[父|Chichi]の[作|tsuku]った[料理|ryōri]", "masakan buatan ayah"],
+       ["[背|Se]が[高|taka]い[人|hito]", "[背|Se]の[高|taka]い[人|hito]", "orang yang tinggi"],
+       ["[目|Me]が[大|ō]きい[子|ko]", "[目|Me]の[大|ō]きい[子|ko]", "anak yang matanya besar"],
+       ["[値段|Nedan]が[安|yasu]い[店|mise]", "[値段|Nedan]の[安|yasu]い[店|mise]", "toko yang harganya murah"],
+       ["[私|Watashi]が[生|u]まれた[町|machi]", "[私|Watashi]の[生|u]まれた[町|machi]", "kota tempat saya lahir"]
+      ]
+     },
+     "after": [
+      "**Penggantian ini hanya berlaku DI DALAM klausa penerang.** Kalimat berdiri sendiri tetap memakai が: [父|Chichi]**が**[作|tsuku]りました. Menaruh の di situ ⚠️ mengubahnya jadi “milik ayah”.",
+      "**Ia berguna ketika kalimatnya panjang**, karena が yang menumpuk membingungkan: [私|Watashi]**の**[昨日|kinō][買|ka]った[本|hon] lebih enak dibaca daripada dua が berturut-turut."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Merekomendasikan tempat makan",
+   "intro": "Miki minta rekomendasi. Perhatikan の yang berdiri sendiri, menggantikan kata benda yang sudah jelas.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "この[辺|hen]で[安|yasu]くておいしい[店|mise]、[知|shi]らない？", "id": "Di sekitar sini ada toko yang murah dan enak, nggak tahu?", "literal": "ini — sekitar — di — murah-dan — enak — toko, tahu-tidak?" },
+    { "speaker": "アニ:", "text": "[駅|Eki]の[近|chika]くにある[小|chii]さい[店|mise]がいいよ。", "id": "Toko kecil yang ada di dekat stasiun bagus lho.", "literal": "stasiun — punya — dekat — pada — ada — kecil — toko — yang — baik — lho." },
+    { "speaker": "ミキ:", "text": "[看板|Kanban]が[黄色|kiiro]いの？", "id": "Yang papan namanya kuning?", "literal": "papan-nama — yang — kuning — yang?" },
+    { "speaker": "アニ:", "text": "ううん、[黄色|kiiro]いのじゃなくて、[隣|tonari]の[白|shiro]いの。", "id": "Bukan, bukan yang kuning, yang putih di sebelahnya.", "literal": "tidak, kuning — yang — bukan-dan, sebelah — punya — putih — yang." },
+    { "speaker": "ミキ:", "text": "[分|Wa]かった。[何|Nani]がおすすめ？", "id": "Oke paham. Apa yang direkomendasikan?", "literal": "mengerti-sudah. apa — yang — rekomendasi?" },
+    { "speaker": "アニ:", "text": "[私|Watashi]がいつも[頼|tano]むのは[焼|ya]き[魚|zakana]の[定食|teishoku]。", "id": "Yang selalu aku pesan itu paket ikan bakar.", "literal": "saya — yang — selalu — memesan — yang — mengenai — bakar-ikan — punya — set-makan." },
+    { "speaker": "ミキ:", "text": "[魚|Sakana][好|su]きじゃない[人|hito]でも[食|ta]べられるものある？", "id": "Ada yang bisa dimakan orang yang nggak suka ikan?", "literal": "ikan — suka — bukan — orang — pun — makan-bisa — benda — ada?" },
+    { "speaker": "アニ:", "text": "[鶏|tori]の[唐揚|kara-a]げがある。[量|Ryō]が[多|ō]いのに[安|yasu]い。", "id": "Ada ayam goreng. Porsinya banyak padahal murah.", "literal": "ayam — punya — goreng — yang — ada. porsi — yang — banyak — padahal — murah." },
+    { "speaker": "ミキ:", "text": "[混|Ko]んでる[時間|jikan]はいつ？", "id": "Jam ramainya kapan?", "literal": "ramai-sedang — waktu — mengenai — kapan?" },
+    { "speaker": "アニ:", "text": "12[時|ji]から1[時|ji]。[それ|Sore][以外|igai]なら[待|ma]たないで[入|hai]れる。", "id": "Jam 12 sampai 1. Selain itu bisa masuk tanpa menunggu.", "literal": "12 — jam — dari — 1 — jam. itu — selain — kalau — menunggu-tanpa — masuk-bisa." },
+    { "speaker": "ミキ:", "text": "[じゃあ|Jā]11[時|ji][半|han]に[行|i]く。[一緒|Issho]に[行|i]ける[日|hi]ある？", "id": "Kalau gitu aku ke sana jam setengah 12. Ada hari kita bisa pergi bareng?", "literal": "kalau-begitu — 11 — jam — setengah — pada — pergi. bersama — pada — pergi-bisa — hari — ada?" },
+    { "speaker": "アニ:", "text": "[木曜日|Mokuyōbi]なら[授業|jugyō]がない[日|hi]だから[大丈夫|daijōbu]。", "id": "Kalau Kamis itu hari yang nggak ada kuliah jadi bisa.", "literal": "Kamis — kalau — kuliah — yang — tidak-ada — hari — adalah-karena — tidak-apa-apa." }
+   ],
+   "notes": [
+    "**の menggantikan kata benda yang sudah jelas dari konteks.** [黄色|Kiiro]い**の** = yang kuning ([店|mise] dibuang). Persis seperti “yang” dalam bahasa Indonesia ketika berdiri sendiri: “yang merah”, “yang murah”.",
+    "**の bisa menggantikan orang juga**, tapi terasa santai. [背|Se]が[高|taka]い**の**が[彼|kare]です dipakai antarteman; di situasi resmi pakai [人|hito] atau [方|kata].",
+    "**[私|Watashi]がいつも[頼|tano]むのは…** — di sini の membungkus seluruh klausa jadi satu kata benda: “yang selalu kupesan”. Pola … のは … です adalah cara Jepang menyorot satu bagian kalimat.",
+    "**～のに = padahal.** [量|Ryō]が[多|ō]い**のに**[安|yasu]い = porsinya banyak padahal murah. Bentuk di depannya bentuk biasa, dan kata benda / kata sifat な memakai な: [便利|benri]**な**のに.",
+    "**[待|Ma]たないで = tanpa menunggu.** Bentuk ない + で berarti “tanpa melakukan”. Bandingkan [待|ma]たなくて yang berarti “karena tidak menunggu” — dua bentuk yang sering tertukar.",
+    "**[以外|Igai] = selain.** [それ|Sore][以外|igai] = selain itu. Pasangannya [以上|ijō] (lebih dari), [以下|ika] (kurang dari), [以内|inai] (dalam batas).",
+    "**[授業|Jugyō]がない[日|hi]** — klausa penerang dengan kata kerja sangkal. Perhatikan bahwa がない tetap がない, tidak berubah jadi のない di sini karena [授業|jugyō] adalah subjeknya; kedua bentuk sebetulnya sama-sama benar."
+   ],
+   "grammars": [
+    {
+     "title": "の sebagai kata benda pengganti",
+     "body": [
+      "Setelah kata sifat atau klausa, の bisa berdiri menggantikan kata benda apa pun yang sudah jelas dari pembicaraan."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti", "Yang digantikan の"],
+      "rows": [
+       ["[赤|Aka]いのをください。", "Tolong yang merah.", "barang yang sedang dibicarakan"],
+       ["もっと[安|yasu]いのはありますか。", "Ada yang lebih murah?", "barang"],
+       ["[昨日|Kinō][買|ka]ったのはこれです。", "Yang kemarin kubeli ini.", "barang"],
+       ["[私|Watashi]が[好|su]きなのは[夏|natsu]です。", "Yang saya suka adalah musim panas.", "hal"],
+       ["[大|Ō]きいのより[小|chii]さいのがいい。", "Lebih baik yang kecil daripada yang besar.", "barang"],
+       ["[彼|Kare]が[言|i]ったのは[本当|hontō]です。", "Yang dia katakan itu benar.", "isi ucapan"]
+      ]
+     },
+     "after": [
+      "**Sesudah kata sifat な, pakai な, bukan の dua kali:** [好|Su]き**な**の (yang disukai), [便利|benri]**な**の (yang praktis). Bentuk [好|su]きのの ⚠️ tidak ada.",
+      "**の tidak bisa menggantikan kata benda abstrak yang belum disebut.** Kalau lawan bicaramu belum tahu kamu sedang membicarakan apa, sebutkan kata bendanya.",
+      "**Untuk barang di toko, penjual memakai もの atau そちら**, bukan の: [こちらの|Kochira no]ほうが[人気|ninki]です. の terasa terlalu akrab dalam pelayanan."
+     ]
+    },
+    {
+     "title": "Klausa penerang yang paling sering kamu butuhkan",
+     "body": [
+      "Empat kerangka berikut menutup sebagian besar keperluan sehari-hari. Hafalkan kerangkanya, isinya tinggal diganti."
+     ],
+     "table": {
+      "head": ["Kerangka", "Contoh", "Arti"],
+      "rows": [
+       ["[…する][人|hito]", "[日本語|Nihongo]が[話|hana]せる[人|hito]", "orang yang bisa bahasa Jepang"],
+       ["[…した][もの]", "[母|Haha]が[送|oku]ってくれたもの", "barang yang dikirimkan ibu"],
+       ["[…する][時|toki]", "[日本|Nihon]に[行|i]く[時|toki]", "waktu (akan) pergi ke Jepang"],
+       ["[…した][時|toki]", "[日本|Nihon]に[行|i]った[時|toki]", "waktu (sudah) sampai di Jepang"],
+       ["[…する][所|tokoro]", "[働|Hatara]いている[所|tokoro]", "tempat aku bekerja"],
+       ["[…する][理由|riyū]", "[来|Ko]なかった[理由|riyū]", "alasan dia tidak datang"]
+      ]
+     },
+     "after": [
+      "**～[時|toki] menyimpan jebakan waktu.** [日本|Nihon]に**[行|i]く**[時|toki]、カメラを[買|ka]った = kamera dibeli **sebelum** berangkat (masih di negara asal). [日本|Nihon]に**[行|i]った**[時|toki]、カメラを[買|ka]った = kamera dibeli **setelah sampai** di Jepang. Bentuk kata kerjanya yang menentukan, bukan kalimat besarnya.",
+      "**[所|Tokoro] bisa berarti tempat maupun saat.** [今|Ima][着|tsu]いたところです = saya baru saja tiba. Arti “saat” ini muncul hanya dengan bentuk た atau bentuk kamus di depannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerangkan orang tanpa menyebut namanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kemampuan yang paling terasa berguna dari unit ini adalah menerangkan orang atau barang yang namanya tidak kamu tahu. Berikut kerangka yang bisa langsung dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jepang", "Arti"],
+     "rows": [
+      ["[眼鏡|Megane]をかけている[人|hito]", "orang yang berkacamata"],
+      ["[青|Ao]いシャツを[着|ki]ている[人|hito]", "orang yang memakai kemeja biru"],
+      ["[背|Se]が[高|taka]くて[髪|kami]が[長|naga]い[人|hito]", "orang tinggi berambut panjang"],
+      ["[隣|Tonari]に[座|suwa]っていた[人|hito]", "orang yang tadi duduk di sebelah"],
+      ["[日本語|Nihongo]が[分|wa]かる[人|hito]", "orang yang mengerti bahasa Jepang"],
+      ["[昨日|Kinō][電話|denwa]した[人|hito]", "orang yang kemarin menelepon"],
+      ["[一緒|Issho]に[来|ki]た[人|hito]", "orang yang datang bersama saya"],
+      ["[名前|Namae]を[忘|wasu]れた[人|hito]", "orang yang namanya saya lupa"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat penyelamat ketika kata bendanya tidak kamu tahu",
+     "items": [
+      "**[髪|Kami]を[切|ki]るところ、[何|nan]と[言|i]いますか。** — “Tempat memotong rambut, disebut apa?” Pola … ところ、[何|nan]と[言|i]いますか bekerja untuk hampir semua benda dan tempat.",
+      "**[パン|Pan]を[焼|ya]く[機械|kikai]です。** — “Alat untuk memanggang roti.” Kalau kamu bisa menerangkan fungsinya, kamu tidak perlu tahu namanya.",
+      "**[これ|Kore]を[入|i]れるものはありますか。** — “Ada wadah untuk memasukkan ini?” Klausa penerang mengubah kosakata yang terbatas jadi kemampuan yang tak terbatas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Memperkenalkan tempat asalmu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Percakapan yang paling sering kamu alami di Jepang adalah menjelaskan dari mana kamu berasal. Klausa penerang mengubah jawaban satu kata jadi cerita."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[私|Watashi]が[生|u]まれたのは[インドネシア|Indoneshia]の[小|chii]さい[町|machi]です。",
+      "[海|Umi]の[近|chika]くにある[町|machi]で、[人口|jinkō]は5[万人|manin]ぐらいです。",
+      "[有名|Yūmei]なものは[何|nani]もありませんが、[果物|kudamono]がおいしいところです。",
+      "[私|Watashi]が[一番|ichiban][好|su]きなのは[朝|asa]の[市場|ichiba]です。",
+      "[日本|Nihon]に[来|ki]た[時|toki]、[一番|ichiban][驚|odoro]いたのは[電車|densha]が[時間|jikan][通|dō]りに[来|ku]ることでした。",
+      "Saya lahir di sebuah kota kecil di Indonesia. Kota yang terletak dekat laut, penduduknya sekitar 50 ribu. Tidak ada yang terkenal, tapi tempat yang buahnya enak. Yang paling saya suka adalah pasar pagi. Waktu datang ke Jepang, yang paling mengejutkan saya adalah keretanya datang tepat waktu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan kalimat terakhir: **… のは … ことでした**. Ketika yang disorot adalah sebuah peristiwa (bukan benda), の di ujungnya berubah jadi こと. Ini pembedaan yang sama seperti di Unit 2, dan sekarang kamu memakainya dari dua arah."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka", "Isian"],
+     "rows": [
+      ["[私|Watashi]が[生|u]まれたのは … です。", "tempat lahir"],
+      ["… にある[町|machi]で、… です。", "letak dan ukuran"],
+      ["[有名|Yūmei]なものは … が、… ところです。", "kelebihan yang sebenarnya"],
+      ["[私|Watashi]が[一番|ichiban][好|su]きなのは … です。", "hal yang paling kamu sukai"],
+      ["[一番|Ichiban][驚|odoro]いたのは … ことでした。", "kejutan terbesar"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[傘|Kasa]", "baca": "かさ · kasa", "id": "payung" },
+  { "ja": "[店員|Ten'in]", "baca": "てんいん · ten'in", "id": "pegawai toko" },
+  { "ja": "[色|Iro]", "baca": "いろ · iro", "id": "warna" },
+  { "ja": "[青|Ao]い", "baca": "あおい · aoi", "id": "biru" },
+  { "ja": "[黄色|Kiiro]い", "baca": "きいろい · kiiroi", "id": "kuning" },
+  { "ja": "[木|Ki]", "baca": "き · ki", "id": "kayu, pohon" },
+  { "ja": "でできている", "baca": "でできている · de dekite iru", "id": "terbuat dari" },
+  { "ja": "[忘|Wasu]れ[物|mono]", "baca": "わすれもの · wasuremono", "id": "barang tertinggal" },
+  { "ja": "[預|Azu]かる", "baca": "あずかる · azukaru", "id": "menyimpankan, menerima titipan" },
+  { "ja": "[経|Ta]つ", "baca": "たつ · tatsu", "id": "berlalu (waktu)" },
+  { "ja": "[取|To]る", "baca": "とる · toru", "id": "mengambil" },
+  { "ja": "[施設|Shisetsu]", "baca": "しせつ · shisetsu", "id": "fasilitas" },
+  { "ja": "[晴|Ha]れる", "baca": "はれる · hareru", "id": "cerah" },
+  { "ja": "[戻|Modo]る", "baca": "もどる · modoru", "id": "kembali" },
+  { "ja": "～のに", "baca": "～のに · noni", "id": "padahal" },
+  { "ja": "～ても", "baca": "～ても · te mo", "id": "meskipun" },
+  { "ja": "[気|Ki]がする", "baca": "きがする · ki ga suru", "id": "rasanya, ada firasat" },
+  { "ja": "[辺|Hen]", "baca": "へん · hen", "id": "sekitar" },
+  { "ja": "[看板|Kanban]", "baca": "かんばん · kanban", "id": "papan nama" },
+  { "ja": "[隣|Tonari]", "baca": "となり · tonari", "id": "sebelah" },
+  { "ja": "おすすめ", "baca": "おすすめ · osusume", "id": "rekomendasi" },
+  { "ja": "[頼|Tano]む", "baca": "たのむ · tanomu", "id": "memesan, meminta tolong" },
+  { "ja": "[焼|Ya]く", "baca": "やく · yaku", "id": "membakar, memanggang" },
+  { "ja": "[定食|Teishoku]", "baca": "ていしょく · teishoku", "id": "paket makanan" },
+  { "ja": "[唐揚|Kara-a]げ", "baca": "からあげ · kara-age", "id": "ayam goreng tepung" },
+  { "ja": "[量|Ryō]", "baca": "りょう · ryō", "id": "porsi, jumlah" },
+  { "ja": "[以外|Igai]", "baca": "いがい · igai", "id": "selain" },
+  { "ja": "[半|Han]", "baca": "はん · han", "id": "setengah" },
+  { "ja": "[眼鏡|Megane]", "baca": "めがね · megane", "id": "kacamata" },
+  { "ja": "[髪|Kami]", "baca": "かみ · kami", "id": "rambut" },
+  { "ja": "[背|Se]", "baca": "せ · se", "id": "tinggi badan" },
+  { "ja": "[機械|Kikai]", "baca": "きかい · kikai", "id": "mesin, alat" },
+  { "ja": "[生|U]まれる", "baca": "うまれる · umareru", "id": "lahir" },
+  { "ja": "[人口|Jinkō]", "baca": "じんこう · jinkō", "id": "jumlah penduduk" },
+  { "ja": "[万人|Mannin]", "baca": "まんにん · mannin", "id": "puluh ribu orang" },
+  { "ja": "[市場|Ichiba]", "baca": "いちば · ichiba", "id": "pasar" },
+  { "ja": "[驚|Odoro]く", "baca": "おどろく · odoroku", "id": "terkejut" },
+  { "ja": "[時間|Jikan][通|dō]り", "baca": "じかんどおり · jikan dōri", "id": "tepat waktu" },
+  { "ja": "[所|Tokoro]", "baca": "ところ · tokoro", "id": "tempat, saat" },
+  { "ja": "[人気|Ninki]", "baca": "にんき · ninki", "id": "populer" },
+  { "ja": "[値段|Nedan]", "baca": "ねだん · nedan", "id": "harga" },
+  { "ja": "[夏|Natsu]", "baca": "なつ · natsu", "id": "musim panas" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Gabungkan menjadi satu kalimat dengan klausa penerang.",
+   "items": [
+    "[昨日|Kinō][本|hon]を[買|ka]った · その[本|hon]は[面白|omoshiro]い ___",
+    "[父|Chichi]が[料理|ryōri]を[作|tsuku]った · その[料理|ryōri]はおいしい ___",
+    "[駅|Eki]の[近|chika]くに[店|mise]がある · その[店|mise]は[安|yasu]い ___",
+    "[彼|Kare]は[日本語|nihongo]が[話|hana]せる · その[人|hito]を[知|shi]っている ___",
+    "[私|Watashi]は[町|machi]に[住|su]んでいる · その[町|machi]は[静|shizu]かだ ___"
+   ]
+  },
+  {
+   "prompt": "Ganti が dengan の bila boleh; tulis “tetap” bila tidak.",
+   "items": [
+    "[背|Se]が[高|taka]い[人|hito] ___",
+    "[父|Chichi]が[作|tsuku]った[料理|ryōri] ___",
+    "[父|Chichi]が[作|tsuku]りました。 ___",
+    "[値段|Nedan]が[安|yasu]い[店|mise] ___",
+    "[雨|Ame]が[降|fu]っています。 ___"
+   ]
+  },
+  {
+   "prompt": "Isi dengan の, もの, atau こと.",
+   "items": [
+    "[赤|Aka]い ___ をください。",
+    "[私|Watashi]が[好|su]きな ___ は[夏|natsu]です。",
+    "[大事|Daiji]な ___ を[話|hana]します。",
+    "[木|Ki]でできている ___ です。",
+    "[一番|Ichiban][驚|odoro]いたのは[電車|densha]が[時間|jikan][通|dō]りに[来|ku]る ___ でした。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "昨日 / ここ / に / 置いた / 傘 / あります / か",
+    "名前 / を / 書いて / ある / 傘 / は / 戻り / やすい",
+    "私 / が / いつも / 頼む / の / は / 焼き魚 / の / 定食 / です",
+    "量 / が / 多い / のに / 安い",
+    "日本 / に / 行った / 時 / カメラ / を / 買った"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[眼鏡|Megane]をかけている[人|hito]は[誰|dare]ですか。",
+    "もっと[安|yasu]いのはありますか。",
+    "[彼|Kare]が[言|i]ったのは[本当|hontō]です。",
+    "[授業|Jugyō]がない[日|hi]は[木曜日|mokuyōbi]です。",
+    "[待|Ma]たないで[入|hai]れます。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Buku yang kemarin saya beli.",
+    "Orang yang bisa bahasa Jepang.",
+    "Tolong yang merah.",
+    "Toko yang ada di dekat stasiun.",
+    "Yang paling saya suka adalah pasar pagi."
+   ]
+  }
+ ],
+ "answers": [
+  "[昨日|Kinō][買|ka]った[本|hon]は[面白|omoshiro]い — [父|Chichi]が[作|tsuku]った[料理|ryōri]はおいしい — [駅|Eki]の[近|chika]くにある[店|mise]は[安|yasu]い — [日本語|Nihongo]が[話|hana]せる[人|hito]を[知|shi]っている — [私|Watashi]が[住|su]んでいる[町|machi]は[静|shizu]かだ",
+  "[背|Se]の[高|taka]い[人|hito] — [父|Chichi]の[作|tsuku]った[料理|ryōri] — tetap — [値段|Nedan]の[安|yasu]い[店|mise] — tetap",
+  "の — の — こと — もの — こと",
+  "[昨日|Kinō]ここに[置|o]いた[傘|kasa]ありますか — [名前|Namae]を[書|ka]いてある[傘|kasa]は[戻|modo]りやすい — [私|Watashi]がいつも[頼|tano]むのは[焼|ya]き[魚|zakana]の[定食|teishoku]です — [量|Ryō]が[多|ō]いのに[安|yasu]い — [日本|Nihon]に[行|i]った[時|toki]カメラを[買|ka]った",
+  "Siapa orang yang berkacamata itu? — Ada yang lebih murah? — Yang dia katakan itu benar. — Hari yang tidak ada kuliah adalah hari Kamis. — Bisa masuk tanpa menunggu.",
+  "[昨日|Kinō][買|ka]った[本|hon]。 — [日本語|Nihongo]が[話|hana]せる[人|hito]。 — [赤|Aka]いのをください。 — [駅|Eki]の[近|chika]くにある[店|mise]。 — [私|Watashi]が[一番|ichiban][好|su]きなのは[朝|asa]の[市場|ichiba]です。"
+ ],
+ "wave": "Buka Unit 5 dan ubah lima kalimat potensial di sana jadi klausa penerang: [日本語|Nihongo]が[話|hana]せる[人|hito]、[漢字|kanji]が[読|yo]める[人|hito]. Lalu buka Unit 6 dan gabungkan keduanya: [来|Ko]られる[人|hito]が[何人|nannin]いるか[知|shi]りたいと[思|omo]います. Tiga unit dalam satu kalimat adalah patokan bahwa modul ini sudah menempel."
+}

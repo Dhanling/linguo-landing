@@ -1,0 +1,822 @@
+{
+ "title": "Harus, boleh, dan dilarang",
+ "title_target": "行かなければならない — Ikanakereba naranai",
+ "goal": "Menyatakan kewajiban, kebebasan, izin, dan larangan — empat sudut yang bentuk Jepangnya panjang dan mudah tertukar.",
+ "bekal": [
+  "menyatakan keharusan dengan ～なければならない dan ～なきゃ",
+  "menyatakan “tidak perlu” dengan ～なくてもいい",
+  "meminta dan memberi izin dengan ～てもいい",
+  "melarang dengan ～てはいけない dan ～ないでください",
+  "memberi saran dengan ～たほうがいい"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Hari pertama di tempat kerja",
+   "intro": "Ani mendengarkan aturan kafe. Perhatikan bahwa semua bentuk kewajiban dan larangan dibangun dari bentuk ない dan bentuk て.",
+   "lines": [
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "まず、[来|ki]たら[必|kanara]ず[手|te]を[洗|ara]わなければなりません。",
+     "id": "Pertama, begitu datang harus cuci tangan.",
+     "literal": "pertama, datang-kalau — pasti — tangan — akan — mencuci-tanpa — tidak-jadi."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "はい。[制服|Seifuku]は[毎日|mainichi][洗|ara]わなければいけませんか。",
+     "id": "Baik. Seragamnya harus dicuci tiap hari?",
+     "literal": "ya. seragam — mengenai — tiap-hari — mencuci-tanpa — tidak-boleh — kah."
+    },
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "いいえ、[毎日|mainichi]じゃなくてもいいです。[汚|Yogo]れたら[洗|ara]ってください。",
+     "id": "Tidak, tidak harus tiap hari. Kalau kotor baru dicuci.",
+     "literal": "tidak, tiap-hari — bukan-pun — baik — adalah. kotor-kalau — mencuci — silakan."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[分|Wa]かりました。[休憩|Kyūkei]は[取|to]ってもいいですか。",
+     "id": "Baik. Boleh ambil istirahat?",
+     "literal": "mengerti-sudah. istirahat — mengenai — mengambil-pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "6[時間|jikan][以上|ijō][働|hatara]く[日|hi]は、45[分|fun][休|yasu]まなければなりません。",
+     "id": "Hari yang kerjanya lebih dari 6 jam, harus istirahat 45 menit.",
+     "literal": "6 — jam — lebih — bekerja — hari — mengenai, 45 — menit — istirahat-tanpa — tidak-jadi."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[携帯|Keitai]は[持|mo]っていてもいいですか。",
+     "id": "Boleh bawa ponsel?",
+     "literal": "ponsel — mengenai — membawa-sedang-pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "[持|Mo]っていてもいいですが、[店内|tennai]で[使|tsuka]ってはいけません。",
+     "id": "Boleh dibawa, tapi tidak boleh dipakai di dalam toko.",
+     "literal": "membawa-sedang-pun — baik — adalah-tapi, dalam-toko — di — memakai-mengenai — tidak-boleh."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[休憩室|Kyūkeishitsu]では[大丈夫|daijōbu]ですか。",
+     "id": "Kalau di ruang istirahat boleh?",
+     "literal": "ruang-istirahat — di-mengenai — tidak-apa-apa — adalah — kah."
+    },
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "はい、[休憩室|kyūkeishitsu]なら[問題|mondai]ありません。あと、[遅|oku]れる[時|toki]は[必|kanara]ず[連絡|renraku]してください。",
+     "id": "Ya, kalau di ruang istirahat tidak masalah. Lalu, kalau terlambat harus menghubungi.",
+     "literal": "ya, ruang-istirahat — kalau — masalah — tidak-ada. lalu, terlambat — waktu — mengenai — pasti — menghubungi — silakan."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[何分|Nanpun][前|mae]までに[連絡|renraku]したほうがいいですか。",
+     "id": "Sebaiknya menghubungi paling lambat berapa menit sebelumnya?",
+     "literal": "berapa-menit — sebelum — sampai-pada — menghubungi-sudah — arah — yang — baik — adalah — kah."
+    },
+    {
+     "speaker": "[店長|Tenchō]:",
+     "text": "[分|Wa]かった[時点|jiten]ですぐ[連絡|renraku]したほうがいいですね。[早|Haya]ければ[早|haya]いほどいいです。",
+     "id": "Sebaiknya langsung menghubungi begitu tahu. Makin cepat makin baik.",
+     "literal": "mengerti-sudah — titik-waktu — pada — segera — menghubungi-sudah — arah — yang — baik — ya. cepat-kalau — cepat — makin — baik — adalah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[覚|Obo]えておきます。よろしくお[願|nega]いします。",
+     "id": "Saya ingat-ingat. Mohon bantuannya.",
+     "literal": "mengingat-menyiapkan. baik-mohon-melakukan."
+    }
+   ],
+   "notes": [
+    "**～なければならない dibuat dari bentuk ない.** [洗|Ara]**わない** → buang い, tambah **ければならない** → [洗|ara]わ**なければならない**. Harfiahnya “kalau tidak mencuci, tidak jadi” — bahasa Jepang menyatakan kewajiban lewat sangkal ganda, dan tidak punya kata seperti “harus”.",
+    "**ならない dan いけない sama-sama benar.** ～なければ**なりません** sedikit lebih resmi dan sering dipakai untuk aturan umum; ～なければ**いけません** terasa lebih pribadi. Di percakapan sehari-hari keduanya bertukar bebas.",
+    "**～なくてもいい = tidak perlu.** [洗|Ara]わ**なくてもいい** = tidak harus dicuci. Bentuknya: bentuk ない → buang い, tambah **くてもいい**. Perhatikan bahwa ia dibangun dari bentuk て kata sifat sangkal.",
+    "**[必|Kanara]ず = pasti, tanpa kecuali.** Berbeda dari [多分|tabun] (mungkin) dan きっと (pasti, dalam arti “aku yakin”). [必|Kanara]ず dipakai untuk aturan yang tidak boleh dilanggar.",
+    "**[持|Mo]っていてもいい** — perhatikan bahwa yang dipasangi ～てもいい adalah [持|mo]っている (keadaan membawa), bukan [持|mo]つ. Bentuknya jadi [持|mo]ってい**て**もいい.",
+    "**[早|Haya]ければ[早|haya]いほどいい = makin cepat makin baik.** Pola “makin … makin …” dibuat dari bentuk ば + bentuk kamus + ほど. Bentuk ば sendiri dibongkar di Unit 10.",
+    "**[分|Wa]かった[時点|jiten]で = begitu diketahui.** [時点|Jiten] (titik waktu) adalah kata benda kantor yang sering dipakai, dan di sini ia diterangkan klausa dari Unit 7."
+   ],
+   "grammars": [
+    {
+     "title": "Empat sudut kewajiban dan izin",
+     "body": [
+      "Empat pola berikut membagi seluruh wilayah “boleh dan tidak boleh”. Semuanya dibangun dari bentuk て atau bentuk ない, jadi tidak ada yang benar-benar baru — hanya panjang."
+     ],
+     "table": {
+      "head": [
+       "Makna",
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Harus",
+        "bentuk ない − い + ければならない",
+        "[行|I]かなければなりません。",
+        "Saya harus pergi."
+       ],
+       [
+        "Tidak perlu",
+        "bentuk ない − い + くてもいい",
+        "[行|I]かなくてもいいです。",
+        "Tidak perlu pergi."
+       ],
+       [
+        "Boleh",
+        "bentuk て + もいい",
+        "[行|I]ってもいいです。",
+        "Boleh pergi."
+       ],
+       [
+        "Tidak boleh",
+        "bentuk て + はいけない",
+        "[行|I]ってはいけません。",
+        "Tidak boleh pergi."
+       ],
+       [
+        "Jangan (permintaan)",
+        "bentuk ない + でください",
+        "[行|I]かないでください。",
+        "Tolong jangan pergi."
+       ],
+       [
+        "Sebaiknya",
+        "bentuk た + ほうがいい",
+        "[行|I]ったほうがいいです。",
+        "Sebaiknya pergi."
+       ],
+       [
+        "Sebaiknya jangan",
+        "bentuk ない + ほうがいい",
+        "[行|I]かないほうがいいです。",
+        "Sebaiknya jangan pergi."
+       ]
+      ]
+     },
+     "after": [
+      "**Perhatikan dua yang paling mirip dan paling sering tertukar:** [行|I]か**なくてもいい** (tidak perlu pergi) vs [行|i]っ**てもいい** (boleh pergi). Yang pertama dari bentuk ない, yang kedua dari bentuk て.",
+      "**～たほうがいい memakai bentuk た, bukan bentuk kamus.** [行|I]く ⚠️ ほうがいい terdengar salah; [行|i]った ほうがいい yang benar. Tapi bentuk sangkalnya justru memakai bentuk ない: [行|i]かない ほうがいい.",
+      "**Kata sifat dan kata benda ikut pola yang sama:** [高|Taka]く**なくてもいい** (tidak harus mahal)、[学生|gakusei]**じゃなくてもいい** (tidak harus mahasiswa)、[静|shizu]か**でなければならない** (harus sunyi)."
+     ]
+    },
+    {
+     "title": "Bentuk pendek yang kamu dengar sehari-hari",
+     "body": [
+      "Pola kewajiban di atas panjang sekali, dan orang Jepang memendekkannya habis-habisan dalam percakapan. Kamu perlu mengenalinya walau belum memakainya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk panjang",
+       "Bentuk pendek",
+       "Arti",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "[行|I]かなければならない",
+        "[行|I]かなきゃ",
+        "harus pergi",
+        "santai, sangat lazim"
+       ],
+       [
+        "[行|I]かなくてはいけない",
+        "[行|I]かなくちゃ",
+        "harus pergi",
+        "santai"
+       ],
+       [
+        "[行|I]かなければなりません",
+        "[行|I]かないと",
+        "harus pergi",
+        "santai, agak mendesak"
+       ],
+       [
+        "[行|I]ってもいい",
+        "[行|I]っていい",
+        "boleh pergi",
+        "santai"
+       ],
+       [
+        "[行|I]ってはいけない",
+        "[行|I]っちゃだめ",
+        "tidak boleh pergi",
+        "santai, tegas"
+       ],
+       [
+        "[食|Ta]べてしまった",
+        "[食|Ta]べちゃった",
+        "keburu termakan",
+        "santai"
+       ]
+      ]
+     },
+     "after": [
+      "**Bentuk pendek sering berhenti di tengah:** もう[行|i]かなきゃ (aku harus pergi sekarang) tidak diselesaikan dengan ならない. Kalimat menggantung ini justru yang paling sering kamu dengar.",
+      "**だめ = tidak boleh.** Kata pendek yang dipakai orang tua kepada anak, teman kepada teman: だめ！ atau [食|ta]べちゃだめ. Terlalu langsung untuk situasi kerja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Aturan di apartemen",
+   "intro": "Ani menerima penjelasan dari pengelola apartemen. Perhatikan campuran larangan tegas dan saran yang halus.",
+   "lines": [
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "ゴミは[月|getsu]・[水|sui]・[金|kin]の[朝|asa]8[時|ji]までに[出|da]してください。",
+     "id": "Sampah harus dikeluarkan paling lambat jam 8 pagi Senin, Rabu, Jumat.",
+     "literal": "sampah — mengenai — Senin, Rabu, Jumat — punya — pagi — 8 — jam — sampai-pada — mengeluarkan — silakan."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[前|Mae]の[晩|ban]に[出|da]してもいいですか。",
+     "id": "Boleh dikeluarkan malam sebelumnya?",
+     "literal": "sebelum — punya — malam — pada — mengeluarkan-pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "いえ、[前|mae]の[晩|ban]は[出|da]してはいけません。[猫|Neko]が[開|a]けてしまうので。",
+     "id": "Tidak, malam sebelumnya tidak boleh. Karena kucing membukanya.",
+     "literal": "tidak, sebelum — punya — malam — mengenai — mengeluarkan-mengenai — tidak-boleh. kucing — yang — membuka-keburu — karena."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "なるほど。[分|Wa]けなければなりませんか。",
+     "id": "Oh begitu. Harus dipisah-pisah?",
+     "literal": "begitu-adanya. memisahkan-tanpa — tidak-jadi — kah."
+    },
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "はい、[燃|mo]えるゴミと[燃|mo]えないゴミは[必|kanara]ず[分|wa]けてください。ペットボトルは[洗|ara]ったほうがいいです。",
+     "id": "Ya, sampah yang bisa dibakar dan yang tidak harus dipisah. Botol plastik sebaiknya dicuci.",
+     "literal": "ya, terbakar — sampah — dan — terbakar-tidak — sampah — mengenai — pasti — memisahkan — silakan. botol-plastik — mengenai — mencuci-sudah — arah — yang — baik — adalah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[洗|Ara]わなくてもいい[物|mono]もありますか。",
+     "id": "Ada juga barang yang tidak perlu dicuci?",
+     "literal": "mencuci-tidak-pun — baik — barang — juga — ada — kah."
+    },
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "[紙|Kami]は[洗|ara]わなくてもいいです。でも[濡|nu]れていると[燃|mo]えないので、[乾|kawa]かしてください。",
+     "id": "Kertas tidak perlu dicuci. Tapi kalau basah tidak bisa terbakar, jadi tolong dikeringkan.",
+     "literal": "kertas — mengenai — mencuci-tidak-pun — baik — adalah. tapi — basah-sedang — kalau — terbakar-tidak — karena, mengeringkan — silakan."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[夜|Yoru]、[洗濯機|sentakuki]を[使|tsuka]ってもいいですか。",
+     "id": "Malam boleh pakai mesin cuci?",
+     "literal": "malam, mesin-cuci — akan — memakai-pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "9[時|ji][以降|ikō]は[使|tsuka]わないほうがいいですね。[音|Oto]が[響|hibi]きますから。",
+     "id": "Setelah jam 9 sebaiknya jangan dipakai. Karena suaranya menggema.",
+     "literal": "9 — jam — sesudah — mengenai — memakai-tidak — arah — yang — baik — ya. suara — yang — bergema — karena."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[友達|Tomodachi]を[呼|yo]んでもいいですか。",
+     "id": "Boleh mengundang teman?",
+     "literal": "teman — akan — memanggil-pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "[管理人|Kanrinin]:",
+     "text": "もちろんです。ただ、[泊|to]める[場合|baai]は[事前|jizen]に[知|shi]らせてもらえますか。",
+     "id": "Tentu saja. Hanya, kalau menginapkan, bisa tolong beritahu sebelumnya?",
+     "literal": "tentu — adalah. hanya, menginapkan — kasus — mengenai — sebelumnya — pada — memberitahu-menerima-bisa — kah."
+    },
+    {
+     "speaker": "アニ:",
+     "text": "[分|Wa]かりました。[気|Ki]をつけます。",
+     "id": "Baik. Saya akan berhati-hati.",
+     "literal": "mengerti-sudah. perhatian — akan — memasang."
+    }
+   ],
+   "notes": [
+    "**[燃|Mo]えるゴミ / [燃|mo]えないゴミ** — dua klausa penerang dari Unit 7 yang dipakai sebagai istilah tetap. Sampah di Jepang dipilah dengan sungguh-sungguh, dan istilah ini akan kamu temui di setiap tempat sampah.",
+    "**[開|A]けてしまう** = keburu terbuka, dengan nada tidak diinginkan. ～てしまう dibongkar di Unit 11, tapi sudah muncul tiga kali di modul ini — sengaja, supaya bentuknya sudah akrab sebelum dijelaskan.",
+    "**ただ、… = “hanya saja, …”.** Kata penghubung yang dipakai untuk menambahkan satu syarat setelah menyetujui. Lebih halus daripada でも.",
+    "**～[場合|baai]は = kalau (dalam kasus).** Dipakai untuk situasi resmi, aturan, dan petunjuk. [遅|Oku]れる[場合|baai]は[連絡|renraku]してください adalah kalimat yang tertulis di hampir semua tempat kerja Jepang.",
+    "**[知|Shi]らせてもらえますか** — bentuk て + もらえますか dari Unit 5. Permintaan sopan yang lebih halus daripada [知|shi]らせてください.",
+    "**[気|Ki]をつけます** = saya akan berhati-hati. Sepasang dengan [気|ki]をつけて (hati-hati ya) yang dipakai untuk melepas orang pergi.",
+    "**[以降|Ikō] = sesudah (waktu tertentu).** Sekeluarga dengan [以前|izen] (sebelum), [以上|ijō] (lebih dari), [以内|inai] (dalam waktu). Semuanya kata resmi yang muncul di pengumuman."
+   ],
+   "grammars": [
+    {
+     "title": "～たほうがいい — memberi saran tanpa memerintah",
+     "body": [
+      "Pola saran yang paling sering dipakai. Harfiahnya “sisi yang melakukan … lebih baik”, jadi ia membandingkan dua pilihan, bukan menyuruh."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Arti",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "[早|Haya]く[寝|ne]たほうがいいですよ。",
+        "Sebaiknya tidur lebih awal lho.",
+        "Perhatian, ramah."
+       ],
+       [
+        "[病院|Byōin]に[行|i]ったほうがいいと[思|omo]います。",
+        "Saya rasa sebaiknya ke dokter.",
+        "Sangat halus."
+       ],
+       [
+        "[今|Ima]は[言|i]わないほうがいいです。",
+        "Sebaiknya jangan dikatakan sekarang.",
+        "Saran menahan diri."
+       ],
+       [
+        "[傘|Kasa]を[持|mo]って[行|i]ったほうがいい。",
+        "Sebaiknya bawa payung.",
+        "Santai."
+       ],
+       [
+        "[無理|Muri]しないほうがいいよ。",
+        "Jangan memaksakan diri lho.",
+        "Peduli."
+       ]
+      ]
+     },
+     "after": [
+      "**Menambahkan よ membuatnya terdengar peduli**, bukan menggurui. Tanpa よ, [早|haya]く[寝|ne]たほうがいいです bisa terdengar seperti penilaian.",
+      "**Kalau kamu ingin lebih halus lagi, bungkus dengan と[思|omo]います** dari Unit 6: …ほうがいいと[思|omo]います. Dua lapis pelunak sekaligus.",
+      "**Bandingkan dengan ～なければならない.** Yang satu saran, yang satu kewajiban. Memakai ～なければなりません kepada orang lain terdengar seperti memerintah; hampir selalu pakai ～たほうがいい."
+     ]
+    },
+    {
+     "title": "Kalimat yang tertulis di papan pengumuman",
+     "body": [
+      "Larangan resmi di Jepang jarang memakai ～てはいけません; ia memakai bentuk yang lebih pendek dan lebih dingin. Mengenalinya penting karena kamu akan membacanya tiap hari."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Bacaan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "禁煙",
+        "[きんえん|kin'en]",
+        "dilarang merokok"
+       ],
+       [
+        "立入禁止",
+        "[たちいりきんし|tachiiri kinshi]",
+        "dilarang masuk"
+       ],
+       [
+        "使用禁止",
+        "[しようきんし|shiyō kinshi]",
+        "dilarang dipakai"
+       ],
+       [
+        "土足厳禁",
+        "[どそくげんきん|dosoku genkin]",
+        "dilarang masuk beralas kaki"
+       ],
+       [
+        "ご遠慮ください",
+        "[ごえんりょください|goenryo kudasai]",
+        "mohon tidak melakukan"
+       ],
+       [
+        "お願いします",
+        "[おねがいします|onegaishimasu]",
+        "mohon dilakukan"
+       ],
+       [
+        "準備中",
+        "[じゅんびちゅう|junbichū]",
+        "sedang bersiap, belum buka"
+       ],
+       [
+        "営業中",
+        "[えいぎょうちゅう|eigyōchū]",
+        "sedang buka"
+       ]
+      ]
+     },
+     "after": [
+      "**ご[遠慮|enryo]ください harfiahnya “mohon menahan diri”** dan merupakan larangan yang paling halus sekaligus paling mengikat dalam bahasa Jepang. Kamu akan melihatnya di kereta, restoran, dan rumah sakit.",
+      "**[禁止|Kinshi] adalah larangan tegas.** Kalau kamu melihat 禁止, tidak ada ruang tafsir sama sekali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kewajiban sehari-hari — kalimat yang bisa langsung dipakai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pola-pola panjang unit ini terasa berat sampai kamu memakainya dalam kalimat utuh. Berikut kalimat yang paling sering dibutuhkan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jepang",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "[明日|Ashita][早|haya]く[起|o]きなければなりません。",
+       "Besok saya harus bangun pagi."
+      ],
+      [
+       "[今日|Kyō]は[残業|zangyō]しなくてもいいです。",
+       "Hari ini tidak perlu lembur."
+      ],
+      [
+       "[靴|Kutsu]を[脱|nu]がなければなりませんか。",
+       "Apakah harus melepas sepatu?"
+      ],
+      [
+       "ここに[座|suwa]ってもいいですか。",
+       "Boleh saya duduk di sini?"
+      ],
+      [
+       "[写真|Shashin]を[撮|to]ってはいけません。",
+       "Tidak boleh memotret."
+      ],
+      [
+       "[中|Naka]に[入|hai]らないでください。",
+       "Tolong jangan masuk ke dalam."
+      ],
+      [
+       "[休|Yasu]んだほうがいいですよ。",
+       "Sebaiknya kamu istirahat lho."
+      ],
+      [
+       "[無理|Muri]しないほうがいいです。",
+       "Sebaiknya jangan memaksakan diri."
+      ],
+      [
+       "[予約|Yoyaku]しなくても[大丈夫|daijōbu]です。",
+       "Tanpa reservasi pun tidak masalah."
+      ],
+      [
+       "[身分証|Mibunshō]を[見|mi]せなければなりません。",
+       "Harus menunjukkan kartu identitas."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara bertanya soal aturan tanpa terdengar mencari celah",
+     "items": [
+      "**… てもいいですか。** — “Boleh …?” Pertanyaan netral, aman di mana saja.",
+      "**… なくても[大丈夫|daijōbu]ですか。** — “Tidak apa-apa kalau tidak …?” Lebih halus daripada bertanya apakah wajib.",
+      "**[何|Nani]か[気|ki]をつけることはありますか。** — “Ada hal yang perlu diperhatikan?” Pertanyaan pembuka yang membuat lawan bicara menyebutkan aturannya sendiri, dan sangat disukai di tempat kerja Jepang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menerangkan aturan tempatmu sendiri",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Latihan terbaik untuk unit ini adalah menerangkan aturan tempat yang kamu kenal — kantor, kos, kampus. Susunannya hampir selalu sama."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[私|Watashi]の[大学|daigaku]では、[授業|jugyō]に10[分|pun][以上|ijō][遅|oku]れてはいけません。",
+      "[休|Yasu]む[場合|baai]は、[前|mae]の[日|hi]までに[連絡|renraku]しなければなりません。",
+      "[試験|Shiken]の[時|toki]は[学生証|gakuseishō]を[持|mo]って[来|ko]なければなりません。",
+      "でも[教科書|kyōkasho]は[持|mo]って[来|ko]なくてもいいです。",
+      "[図書館|Toshokan]では[飲|no]み[物|mono]を[飲|no]んでもいいですが、[食|ta]べ[物|mono]はだめです。",
+      "[初|Haji]めての[人|hito]は、[受付|uketsuke]で[聞|ki]いたほうがいいと[思|omo]います。",
+      "Di kampus saya, tidak boleh terlambat lebih dari 10 menit ke kuliah. Kalau mau absen, harus menghubungi paling lambat sehari sebelumnya. Waktu ujian harus membawa kartu mahasiswa. Tapi buku teks tidak perlu dibawa. Di perpustakaan boleh minum, tapi makanan tidak boleh. Untuk yang pertama kali, saya rasa sebaiknya bertanya di resepsionis."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa satu paragraf ini memakai kelima pola unit ini sekaligus. Kalau kamu bisa menyusun paragraf serupa tentang tempatmu sendiri, unit ini sudah selesai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kerangka",
+      "Isian"
+     ],
+     "rows": [
+      [
+       "… では、… てはいけません。",
+       "larangan paling keras"
+      ],
+      [
+       "… [場合|baai]は、… なければなりません。",
+       "kewajiban bersyarat"
+      ],
+      [
+       "… [時|toki]は … なければなりません。",
+       "kewajiban di situasi tertentu"
+      ],
+      [
+       "でも … なくてもいいです。",
+       "yang justru tidak wajib"
+      ],
+      [
+       "… てもいいですが、… はだめです。",
+       "boleh sebagian, tidak boleh sebagian"
+      ],
+      [
+       "… たほうがいいと[思|omo]います。",
+       "saran penutup"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "[必|Kanara]ず",
+   "baca": "かならず · kanarazu",
+   "id": "pasti, wajib"
+  },
+  {
+   "ja": "[洗|Ara]う",
+   "baca": "あらう · arau",
+   "id": "mencuci"
+  },
+  {
+   "ja": "[制服|Seifuku]",
+   "baca": "せいふく · seifuku",
+   "id": "seragam"
+  },
+  {
+   "ja": "[汚|Yogo]れる",
+   "baca": "よごれる · yogoreru",
+   "id": "menjadi kotor"
+  },
+  {
+   "ja": "[休憩|Kyūkei]",
+   "baca": "きゅうけい · kyūkei",
+   "id": "istirahat"
+  },
+  {
+   "ja": "[以上|Ijō]",
+   "baca": "いじょう · ijō",
+   "id": "lebih dari"
+  },
+  {
+   "ja": "[以降|Ikō]",
+   "baca": "いこう · ikō",
+   "id": "sesudah (waktu)"
+  },
+  {
+   "ja": "[以内|Inai]",
+   "baca": "いない · inai",
+   "id": "dalam waktu"
+  },
+  {
+   "ja": "[携帯|Keitai]",
+   "baca": "けいたい · keitai",
+   "id": "ponsel"
+  },
+  {
+   "ja": "[店内|Tennai]",
+   "baca": "てんない · tennai",
+   "id": "dalam toko"
+  },
+  {
+   "ja": "[問題|Mondai]",
+   "baca": "もんだい · mondai",
+   "id": "masalah, soal"
+  },
+  {
+   "ja": "[遅|Oku]れる",
+   "baca": "おくれる · okureru",
+   "id": "terlambat"
+  },
+  {
+   "ja": "[連絡|Renraku]する",
+   "baca": "れんらくする · renraku suru",
+   "id": "menghubungi"
+  },
+  {
+   "ja": "[時点|Jiten]",
+   "baca": "じてん · jiten",
+   "id": "titik waktu"
+  },
+  {
+   "ja": "[管理人|Kanrinin]",
+   "baca": "かんりにん · kanrinin",
+   "id": "pengelola gedung"
+  },
+  {
+   "ja": "ゴミ",
+   "baca": "ごみ · gomi",
+   "id": "sampah"
+  },
+  {
+   "ja": "[晩|Ban]",
+   "baca": "ばん · ban",
+   "id": "malam"
+  },
+  {
+   "ja": "[猫|Neko]",
+   "baca": "ねこ · neko",
+   "id": "kucing"
+  },
+  {
+   "ja": "[分|Wa]ける",
+   "baca": "わける · wakeru",
+   "id": "memisahkan, membagi"
+  },
+  {
+   "ja": "[燃|Mo]える",
+   "baca": "もえる · moeru",
+   "id": "terbakar"
+  },
+  {
+   "ja": "ペットボトル",
+   "baca": "ぺっとぼとる · petto botoru",
+   "id": "botol plastik"
+  },
+  {
+   "ja": "[濡|Nu]れる",
+   "baca": "ぬれる · nureru",
+   "id": "basah"
+  },
+  {
+   "ja": "[乾|Kawa]かす",
+   "baca": "かわかす · kawakasu",
+   "id": "mengeringkan"
+  },
+  {
+   "ja": "[洗濯機|Sentakuki]",
+   "baca": "せんたくき · sentakuki",
+   "id": "mesin cuci"
+  },
+  {
+   "ja": "[響|Hibi]く",
+   "baca": "ひびく · hibiku",
+   "id": "bergema"
+  },
+  {
+   "ja": "[呼|Yo]ぶ",
+   "baca": "よぶ · yobu",
+   "id": "memanggil, mengundang"
+  },
+  {
+   "ja": "ただ",
+   "baca": "ただ · tada",
+   "id": "hanya saja"
+  },
+  {
+   "ja": "[泊|To]める",
+   "baca": "とめる · tomeru",
+   "id": "menginapkan"
+  },
+  {
+   "ja": "[場合|Baai]",
+   "baca": "ばあい · baai",
+   "id": "kasus, kalau"
+  },
+  {
+   "ja": "[事前|Jizen]に",
+   "baca": "じぜんに · jizen ni",
+   "id": "sebelumnya"
+  },
+  {
+   "ja": "[知|Shi]らせる",
+   "baca": "しらせる · shiraseru",
+   "id": "memberitahu"
+  },
+  {
+   "ja": "[気|Ki]をつける",
+   "baca": "きをつける · ki o tsukeru",
+   "id": "berhati-hati"
+  },
+  {
+   "ja": "[禁止|Kinshi]",
+   "baca": "きんし · kinshi",
+   "id": "larangan"
+  },
+  {
+   "ja": "[遠慮|Enryo]する",
+   "baca": "えんりょする · enryo suru",
+   "id": "menahan diri"
+  },
+  {
+   "ja": "だめ",
+   "baca": "だめ · dame",
+   "id": "tidak boleh"
+  },
+  {
+   "ja": "[無理|Muri]する",
+   "baca": "むりする · muri suru",
+   "id": "memaksakan diri"
+  },
+  {
+   "ja": "[身分証|Mibunshō]",
+   "baca": "みぶんしょう · mibunshō",
+   "id": "kartu identitas"
+  },
+  {
+   "ja": "[学生証|Gakuseishō]",
+   "baca": "がくせいしょう · gakuseishō",
+   "id": "kartu mahasiswa"
+  },
+  {
+   "ja": "[教科書|Kyōkasho]",
+   "baca": "きょうかしょ · kyōkasho",
+   "id": "buku teks"
+  },
+  {
+   "ja": "[見|Mi]せる",
+   "baca": "みせる · miseru",
+   "id": "menunjukkan"
+  },
+  {
+   "ja": "きっと",
+   "baca": "きっと · kitto",
+   "id": "pasti (yakin)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat kewajiban dengan ～なければなりません.",
+   "items": [
+    "[手|Te]を[洗|ara]う ___",
+    "[早|Haya]く[起|o]きる ___",
+    "[連絡|Renraku]する ___",
+    "[靴|Kutsu]を[脱|nu]ぐ ___",
+    "[学生証|Gakuseishō]を[持|mo]って[来|ku]る ___",
+    "[待|Ma]つ ___"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kalimat “tidak perlu” dengan ～なくてもいいです.",
+   "items": [
+    "[毎日|Mainichi][洗|ara]う ___",
+    "[予約|Yoyaku]する ___",
+    "[教科書|Kyōkasho]を[持|mo]って[来|ku]る ___",
+    "[早|Haya]く[来|ku]る ___",
+    "[高|Taka]い ___"
+   ]
+  },
+  {
+   "prompt": "Pilih ～てもいい, ～てはいけない, atau ～たほうがいい sesuai maknanya.",
+   "items": [
+    "ここに[座|suwa]っ ___ ですか。(izin)",
+    "[店内|Tennai]で[使|tsuka]っ ___ 。(larangan)",
+    "[早|Haya]く[寝|ne] ___ ですよ。(saran)",
+    "[写真|Shashin]を[撮|to]っ ___ 。(larangan)",
+    "[病院|Byōin]に[行|i]っ ___ と[思|omo]います。(saran)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "来たら / 必ず / 手 / を / 洗わ / なければ / なりません",
+    "毎日 / じゃ / なくて / も / いい / です",
+    "9時 / 以降 / は / 使わない / ほう / が / いい",
+    "遅れる / 場合 / は / 事前 / に / 連絡 / して / ください",
+    "早ければ / 早い / ほど / いい / です"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[今日|Kyō]は[残業|zangyō]しなくてもいいです。",
+    "[携帯|Keitai]は[持|mo]っていてもいいですが、[使|tsuka]ってはいけません。",
+    "[燃|Mo]えるゴミと[燃|mo]えないゴミは[必|kanara]ず[分|wa]けてください。",
+    "[無理|Muri]しないほうがいいよ。",
+    "[何|Nani]か[気|ki]をつけることはありますか。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Besok saya harus bangun pagi.",
+    "Boleh saya duduk di sini?",
+    "Tidak boleh memotret.",
+    "Tidak perlu reservasi.",
+    "Sebaiknya kamu istirahat."
+   ]
+  }
+ ],
+ "answers": [
+  "[手|Te]を[洗|ara]わなければなりません — [早|Haya]く[起|o]きなければなりません — [連絡|Renraku]しなければなりません — [靴|Kutsu]を[脱|nu]がなければなりません — [学生証|Gakuseishō]を[持|mo]って[来|ko]なければなりません — [待|Ma]たなければなりません",
+  "[毎日|Mainichi][洗|ara]わなくてもいいです — [予約|Yoyaku]しなくてもいいです — [教科書|Kyōkasho]を[持|mo]って[来|ko]なくてもいいです — [早|Haya]く[来|ko]なくてもいいです — [高|Taka]くなくてもいいです",
+  "てもいい — てはいけません — たほうがいい — てはいけません — たほうがいい",
+  "[来|Ki]たら[必|kanara]ず[手|te]を[洗|ara]わなければなりません — [毎日|Mainichi]じゃなくてもいいです — 9[時|ji][以降|ikō]は[使|tsuka]わないほうがいい — [遅|Oku]れる[場合|baai]は[事前|jizen]に[連絡|renraku]してください — [早|Haya]ければ[早|haya]いほどいいです",
+  "Hari ini tidak perlu lembur. — Ponsel boleh dibawa, tapi tidak boleh dipakai. — Sampah yang bisa dibakar dan yang tidak wajib dipisahkan. — Sebaiknya jangan memaksakan diri lho. — Ada hal yang perlu diperhatikan?",
+  "[明日|Ashita][早|haya]く[起|o]きなければなりません。 — ここに[座|suwa]ってもいいですか。 — [写真|Shashin]を[撮|to]ってはいけません。 — [予約|Yoyaku]しなくてもいいです。 — [休|Yasu]んだほうがいいですよ。"
+ ],
+ "wave": "Buka Unit 2 dan ambil daftar dua puluh kata kerjanya. Untuk sepuluh di antaranya, buat dua kalimat: satu dengan ～なければなりません, satu dengan ～なくてもいいです. Latihan ini memaksa bentuk ない keluar berulang-ulang, dan bentuk ない adalah bahan baku tiga unit berikutnya."
+}

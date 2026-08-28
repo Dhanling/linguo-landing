@@ -1,0 +1,348 @@
+{
+ "title": "Berpendapat dan mengutip",
+ "title_target": "そうだと思う — Sō da to omou",
+ "goal": "Menyampaikan pendapat dengan ～と思う, meneruskan ucapan orang lain dengan ～と言っていた, dan memakai ～と dengan bentuk biasa tanpa keliru menaruh だ.",
+ "bekal": [
+  "menyatakan pendapat dan dugaan dengan ～と[思|omo]う",
+  "mengutip ucapan orang lain dengan ～と[言|i]う dan ～と[言|i]っていた",
+  "meletakkan だ dengan benar sebelum と",
+  "melunakkan pendapat dengan ～と[思|omo]うんですが dan ～んじゃない",
+  "menyampaikan pertanyaan tak langsung dengan ～かどうか"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Rapat kecil di kantor",
+   "intro": "Tiga orang membahas tanggal acara. Hitung berapa kali と muncul, dan perhatikan bentuk kata di depannya.",
+   "lines": [
+    { "speaker": "[佐藤|Satō]:", "text": "[来月|Raigetsu]のイベント、[日曜日|nichiyōbi]がいいと[思|omo]いますが、どうですか。", "id": "Acara bulan depan, saya rasa Minggu bagus, bagaimana?", "literal": "bulan-depan — punya — acara, Minggu — yang — baik — begitu — berpikir-tapi, bagaimana — adalah — kah." },
+    { "speaker": "アニ:", "text": "[私|Watashi]も[日曜日|nichiyōbi]がいいと[思|omo]います。[人|Hito]が[集|atsu]まりやすいので。", "id": "Saya juga rasa Minggu bagus. Karena orang lebih mudah berkumpul.", "literal": "saya — juga — Minggu — yang — baik — begitu — berpikir. orang — yang — berkumpul-mudah — karena." },
+    { "speaker": "[山田|Yamada]:", "text": "でも[田中|Tanaka]さんは[土曜日|doyōbi]のほうがいいと[言|i]っていましたよ。", "id": "Tapi Tanaka bilang Sabtu lebih baik lho.", "literal": "tapi — Tanaka-tuan — mengenai — Sabtu — punya — arah — yang — baik — begitu — berkata-sedang-dulu — lho." },
+    { "speaker": "[佐藤|Satō]:", "text": "そうですか。[理由|Riyū]は[何|nan]だと[言|i]っていましたか。", "id": "Oh ya? Alasannya apa katanya?", "literal": "begitu — adalah — kah. alasan — mengenai — apa — adalah — begitu — berkata-sedang-dulu — kah." },
+    { "speaker": "[山田|Yamada]:", "text": "[日曜日|Nichiyōbi]は[家族|kazoku]と[過|su]ごす[人|hito]が[多|ō]いからだと[言|i]っていました。", "id": "Katanya karena hari Minggu banyak orang menghabiskan waktu dengan keluarga.", "literal": "Minggu — mengenai — keluarga — dengan — melewatkan — orang — yang — banyak — karena — adalah — begitu — berkata-sedang-dulu." },
+    { "speaker": "アニ:", "text": "[確|Tashi]かにそうかもしれませんね。", "id": "Memang mungkin begitu ya.", "literal": "pasti — pada — begitu — mungkin — ya." },
+    { "speaker": "[佐藤|Satō]:", "text": "じゃあ、みんなが[来|ko]られるかどうか[聞|ki]いてみましょうか。", "id": "Kalau begitu, coba kita tanya semua orang bisa datang atau tidak?", "literal": "kalau-begitu, semua — yang — datang-bisa — atau-tidak — bertanya-mencoba-mari — kah." },
+    { "speaker": "[山田|Yamada]:", "text": "そうしましょう。[私|Watashi]がメールを[送|oku]ります。", "id": "Ayo begitu. Saya yang kirim email.", "literal": "begitu — melakukan-mari. saya — yang — surel — akan — mengirim." },
+    { "speaker": "アニ:", "text": "[場所|Basho]はもう[決|ki]まったんですか。", "id": "Tempatnya sudah ditentukan?", "literal": "tempat — mengenai — sudah — ditentukan-sudah — hal-adalah — kah." },
+    { "speaker": "[佐藤|Satō]:", "text": "まだです。[会議室|Kaigishitsu]じゃ[狭|sema]すぎるんじゃないかと[思|omo]っています。", "id": "Belum. Saya rasa ruang rapat terlalu sempit.", "literal": "belum — adalah. ruang-rapat — kalau — sempit-terlalu — bukan — kah — begitu — berpikir-sedang." },
+    { "speaker": "アニ:", "text": "[何人|Nannin]ぐらい[来|ku]ると[思|omo]いますか。", "id": "Kira-kira berapa orang yang akan datang menurut Anda?", "literal": "berapa-orang — kira-kira — datang — begitu — berpikir — kah." },
+    { "speaker": "[佐藤|Satō]:", "text": "30[人|nin]は[来|ku]ると[思|omo]います。だから[大|ō]きい[部屋|heya]が[必要|hitsuyō]です。", "id": "Saya rasa 30 orang akan datang. Karena itu perlu ruangan besar.", "literal": "30 — orang — mengenai — datang — begitu — berpikir. karena-itu — besar — kamar — yang — perlu — adalah." }
+   ],
+   "notes": [
+    "**と selalu didahului bentuk biasa, bukan bentuk ます.** いいと[思|omo]います、[来|ku]ると[思|omo]います、[行|i]ったと[言|i]っていました. Kalimat yang masuk ke dalam と dijatuhkan ke bentuk biasa, apa pun kesopanan kalimat luarnya. Inilah alasan Unit 1 diletakkan paling depan.",
+    "**だ WAJIB hadir untuk kata benda dan kata sifat な.** [学生|Gakusei]**だ**と[思|omo]います、[静|shizu]か**だ**と[思|omo]います. Membuang だ di sini ⚠️ adalah kesalahan A2 yang paling sering. Bandingkan dengan kalimat berdiri sendiri, di mana だ justru sering dibuang (Unit 1).",
+    "**Kata sifat い TIDAK memakai だ.** いい**だ** ⚠️ と[思|omo]います salah; いいと[思|omo]います benar. Sekali lagi: だ hanya untuk kata benda dan kata sifat な.",
+    "**[言|I]っていました, bukan [言|i]いました.** Untuk meneruskan ucapan orang lain, bahasa Jepang memakai bentuk ～ていた. [田中|Tanaka]さんが[言|i]いました terdengar seperti laporan kejadian (“Tanaka berbicara”), bukan penyampaian isi ucapannya.",
+    "**～かどうか = apakah … atau tidak.** [来|Ko]られる**かどうか**[聞|ki]く = menanyakan apakah bisa datang atau tidak. Kalau pertanyaannya memakai kata tanya, かどうか diganti か saja: [何時|nanji]に[来|ku]る**か**[聞|ki]く.",
+    "**～んじゃないか(と[思|omo]う) = jangan-jangan …, bukankah ….** Cara paling lazim menyampaikan pendapat yang belum yakin tanpa terdengar memaksa. [狭|Sema]すぎるんじゃないかと[思|omo]います = saya rasa jangan-jangan terlalu sempit.",
+    "**～やすい dan ～にくい** menempel di batang ます: [集|atsu]まり**やすい** (mudah berkumpul)、[読|yo]み**にくい** (susah dibaca)、[使|tsuka]い**やすい** (mudah dipakai). Sangat produktif, dan bisa langsung kamu pakai."
+   ],
+   "grammars": [
+    {
+     "title": "～と思う — pendapat, dugaan, dan siapa yang berpikir",
+     "body": [
+      "Pola ini menampung seluruh urusan “menurut saya”, “saya rasa”, “saya kira”. Bentuk kata di depan と menentukan waktunya, bukan [思|omo]う."
+     ],
+     "table": {
+      "head": ["Jenis kata", "Bentuk di depan と", "Contoh"],
+      "rows": [
+       ["Kata kerja", "bentuk biasa", "[来|Ku]ると[思|omo]います。 (Saya rasa dia akan datang.)"],
+       ["", "bentuk た", "もう[来|ki]たと[思|omo]います。 (Saya rasa dia sudah datang.)"],
+       ["", "bentuk ない", "[来|Ko]ないと[思|omo]います。 (Saya rasa dia tidak datang.)"],
+       ["Kata sifat い", "apa adanya", "[高|Taka]いと[思|omo]います。"],
+       ["Kata sifat な", "+ だ ⚠️", "[便利|Benri]だと[思|omo]います。"],
+       ["Kata benda", "+ だ ⚠️", "[学生|Gakusei]だと[思|omo]います。"],
+       ["Lampau kata benda", "+ だった", "[学生|Gakusei]だったと[思|omo]います。"]
+      ]
+     },
+     "after": [
+      "**[思|Omo]う vs [思|omo]っている.** [思|Omo]います = pendapatku sekarang. [思|Omo]っています = pendapat yang kupegang sejak lama. Untuk pendapat orang KETIGA, bahasa Jepang **mewajibkan** ～と[思|omo]っています: [彼|Kare]は[高|taka]いと[思|omo]っています ⚠️ — [彼|kare]は…[思|omo]います terdengar salah, karena kamu tidak bisa melihat isi kepala orang lain secara langsung.",
+      "**Menyangkal di dalam, bukan di luar.** “Saya rasa dia tidak datang” = [来|Ko]**ない**と[思|omo]います, bukan [来|ku]ると[思|omo]い**ません** ⚠️. Yang kedua berarti “saya tidak berpendapat bahwa dia datang” — terdengar seperti menghindar.",
+      "**Melunakkan lebih jauh dengan んですが:** [日曜日|Nichiyōbi]がいいと[思|omo]うんですが… Kalimat menggantung ini adalah cara paling aman menyampaikan usul di rapat Jepang."
+     ]
+    },
+    {
+     "title": "Mengutip — ～と言う, ～と聞く, ～と書いてある",
+     "body": [
+      "Partikel と membungkus apa pun yang dikatakan, ditanyakan, atau tertulis. Isinya tidak berubah; yang berubah cuma kata kerja di ujung."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["～と[言|i]っていました", "[田中|Tanaka]さんは[来|ko]ないと[言|i]っていました。", "Tanaka bilang dia tidak datang."],
+       ["～と[言|i]われています", "[体|Karada]にいいと[言|i]われています。", "Katanya (umum) baik untuk badan."],
+       ["～と[聞|ki]きました", "[今日|Kyō]は[休|yasu]みだと[聞|ki]きました。", "Saya dengar hari ini libur."],
+       ["～と[書|ka]いてあります", "ここに[禁煙|kin'en]だと[書|ka]いてあります。", "Di sini tertulis dilarang merokok."],
+       ["～と[伝|tsuta]えてください", "[明日|Ashita][来|ku]ると[伝|tsuta]えてください。", "Tolong sampaikan bahwa saya akan datang besok."],
+       ["って (santai)", "[来|Ko]ないって。", "Katanya nggak datang."]
+      ]
+     },
+     "after": [
+      "**Kutipan langsung memakai tanda kurung 「」**, dan isinya tidak diubah sama sekali: [田中|Tanaka]さんは「[明日|ashita][来|ki]ます」と[言|i]っていました. Kutipan tak langsung menjatuhkannya ke bentuk biasa: [田中|Tanaka]さんは[明日|ashita][来|ku]ると[言|i]っていました.",
+      "**Kata ganti orang ikut berubah di kutipan tak langsung**, sama seperti bahasa Indonesia. Kalau Tanaka berkata [私|watashi]が[行|i]きます, kamu meneruskannya sebagai [田中|Tanaka]さんが[行|i]くと[言|i]っていました.",
+      "**って adalah と versi santai** dan bisa muncul di dua tempat: [来|Ko]ない**って**[言|i]ってた atau cukup [来|Ko]ない**って** dengan kata kerjanya dibuang sekalian."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Bertukar pendapat soal film",
+   "intro": "Ani dan Miki keluar dari bioskop. Perhatikan cara mereka tidak setuju tanpa membantah langsung.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "どうだった？[面白|Omoshiro]かった？", "id": "Gimana? Seru?", "literal": "bagaimana — adalah-dulu? menarik-dulu?" },
+    { "speaker": "アニ:", "text": "うーん、[思|omo]ったより[長|naga]かったかな。", "id": "Hmm, kayaknya lebih panjang dari yang aku kira.", "literal": "hmm, berpikir-sudah — daripada — panjang-dulu — kah-ya." },
+    { "speaker": "ミキ:", "text": "そう？[私|Watashi]は[短|mijika]く[感|kan]じたけど。", "id": "Masa? Kalau aku terasa pendek sih.", "literal": "begitu? saya — mengenai — pendek — merasa-sudah — tapi." },
+    { "speaker": "アニ:", "text": "[最後|Saigo]の30[分|pun]、いらないんじゃないかと[思|omo]った。", "id": "30 menit terakhir kayaknya nggak perlu deh.", "literal": "terakhir — punya — 30 — menit, tidak-perlu — bukan — kah — begitu — berpikir-sudah." },
+    { "speaker": "ミキ:", "text": "[確|Tashi]かに[長|naga]かったけど、あれがないと[意味|imi]が[分|wa]からないと[思|omo]う。", "id": "Memang panjang sih, tapi kalau nggak ada itu artinya jadi nggak jelas menurutku.", "literal": "pasti — pada — panjang-dulu — tapi, itu — yang — tidak-ada — kalau — makna — yang — mengerti-tidak — begitu — berpikir." },
+    { "speaker": "アニ:", "text": "そう[言|i]われると、そうかもね。", "id": "Kalau dibilang gitu, mungkin iya juga ya.", "literal": "begitu — dikatakan — kalau, begitu — mungkin — ya." },
+    { "speaker": "ミキ:", "text": "[評価|Hyōka]、ネットでは[高|taka]いって[書|ka]いてあったよ。", "id": "Penilaiannya di internet tertulis tinggi lho.", "literal": "penilaian, internet — di-mengenai — tinggi — begitu — tertulis-dulu — lho." },
+    { "speaker": "アニ:", "text": "[へえ|Hē]。[私|Watashi]は[音楽|ongaku]が[一番|ichiban]よかったと[思|omo]う。", "id": "Oh ya. Menurutku musiknya yang paling bagus.", "literal": "oh. saya — mengenai — musik — yang — nomor-satu — baik-dulu — begitu — berpikir." },
+    { "speaker": "ミキ:", "text": "それは[同|ona]じ。[誰|Dare]が[作|tsuku]ったか[知|shi]ってる？", "id": "Itu sama. Kamu tahu siapa yang bikin?", "literal": "itu — mengenai — sama. siapa — yang — membuat-sudah — kah — tahu-sedang?" },
+    { "speaker": "アニ:", "text": "ううん。[後|Ato]で[調|shira]べてみる。", "id": "Nggak. Nanti aku cari tahu.", "literal": "tidak. nanti — di — memeriksa-mencoba." },
+    { "speaker": "ミキ:", "text": "[次|Tsugi]は[何|nani]を[見|mi]る？[来週|Raishū]も[行|i]けると[思|omo]う？", "id": "Berikutnya nonton apa? Minggu depan kamu bisa ikut nggak?", "literal": "berikut — mengenai — apa — akan — melihat? minggu-depan — juga — pergi-bisa — begitu — berpikir?" },
+    { "speaker": "アニ:", "text": "[多分|Tabun][大丈夫|daijōbu]だと[思|omo]う。[試験|Shiken]が[終|o]わるから。", "id": "Kayaknya bisa. Soalnya ujiannya selesai.", "literal": "mungkin — tidak-apa-apa — adalah — begitu — berpikir. ujian — yang — selesai — karena." }
+   ],
+   "notes": [
+    "**～かな = “ya nggak sih?”** Ditempel di ujung kalimat bentuk biasa untuk menyatakan pendapat yang tidak yakin, sering ditujukan pada diri sendiri. [長|Naga]かったかな = kayaknya panjang deh. Versi perempuan sering memakai ～かしら.",
+    "**そう？ dengan nada naik adalah bantahan paling halus dalam bahasa Jepang.** Ia berarti “oh ya?” dan sekaligus “aku tidak sependapat”, tanpa satu pun kata bantahan.",
+    "**けど di ujung kalimat menggantung**, sama seperti が. [短|Mijika]く[感|kan]じたけど = “kalau aku sih terasa pendek …”, dan sisanya diserahkan kepada lawan bicara. Ini pola tidak-setuju yang sopan.",
+    "**[確|Tashi]かに…けど = “memang benar …, tapi ….”** Rumus perbedaan pendapat yang paling aman: akui dulu, baru bantah. Orang Jepang hampir selalu memakainya sebelum menyanggah.",
+    "**そう[言|i]われると = “kalau dikatakan begitu”.** Bentuk pasif yang dipakai sebagai ungkapan tetap. Ia menandakan kamu menerima sudut pandang lawan bicara — cara menyerah yang terhormat.",
+    "**[誰|Dare]が[作|tsuku]ったか[知|shi]ってる？** — pertanyaan tak langsung dengan kata tanya memakai **か**, bukan かどうか. Bandingkan [来|ko]られる**かどうか** (tanpa kata tanya) di dialog pertama.",
+    "**[調|Shira]べてみる = coba cari tahu.** ～てみる (mencoba) menempel di bentuk て dan sudah beberapa kali muncul: [行|i]ってみたい (ingin coba pergi)、[聞|ki]いてみましょう (coba tanya). Sangat sering dipakai."
+   ],
+   "grammars": [
+    {
+     "title": "Pertanyaan di dalam kalimat — ～かどうか dan ～か",
+     "body": [
+      "Untuk menempelkan pertanyaan ke dalam kalimat lain, bahasa Jepang tidak memakai kata seperti “apakah”. Ia memakai か, dan bentuk kata di depannya tetap bentuk biasa."
+     ],
+     "table": {
+      "head": ["Pertanyaan aslinya", "Di dalam kalimat", "Arti"],
+      "rows": [
+       ["[来|Ko]られますか。", "[来|Ko]られるかどうか[聞|ki]きます。", "Saya tanyakan apakah bisa datang."],
+       ["[誰|Dare]が[作|tsuku]りましたか。", "[誰|Dare]が[作|tsuku]ったか[知|shi]っていますか。", "Kamu tahu siapa yang membuatnya?"],
+       ["[何時|Nanji]に[始|haji]まりますか。", "[何時|Nanji]に[始|haji]まるか[調|shira]べます。", "Saya cari tahu mulai jam berapa."],
+       ["[学生|Gakusei]ですか。", "[学生|Gakusei]かどうか[分|wa]かりません。", "Saya tidak tahu dia mahasiswa atau bukan."],
+       ["[静|Shizu]かですか。", "[静|Shizu]かかどうか[分|wa]かりません。", "Tidak tahu apakah sunyi atau tidak."]
+      ]
+     },
+     "after": [
+      "**だ hilang di depan か.** [学生|Gakusei]**だ**かどうか ⚠️ salah; [学生|gakusei]かどうか benar. Ini kebalikan dari aturan だ sebelum と — dan justru karena berlawanan, keduanya sering tertukar.",
+      "**Kata kerja yang sering mengikuti pola ini:** [知|shi]る、[分|wa]かる、[聞|ki]く、[調|shira]べる、[覚|obo]えている、[教|oshi]える、[決|ki]める. Semua kata kerja yang berurusan dengan informasi."
+     ]
+    },
+    {
+     "title": "Tidak setuju tanpa membantah",
+     "body": [
+      "Menyanggah langsung ([違|chiga]います、そうじゃないです) terdengar keras di hampir semua situasi Jepang. Ada tangga yang dipakai sehari-hari, dari yang paling halus."
+     ],
+     "table": {
+      "head": ["Ungkapan", "Kekuatan", "Arti kira-kira"],
+      "rows": [
+       ["そうですか…", "paling halus", "Hmm, begitu ya… (sebenarnya tidak setuju)"],
+       ["そうかもしれませんね。", "halus", "Mungkin begitu ya."],
+       ["[確|Tashi]かに…ですが、", "halus", "Memang benar …, tapi"],
+       ["…んじゃないでしょうか。", "sedang", "Bukankah sebenarnya …?"],
+       ["[私|Watashi]は…と[思|omo]いますけど。", "sedang", "Kalau saya sih berpendapat …"],
+       ["ちょっと[違|chiga]うと[思|omo]います。", "agak tegas", "Saya rasa agak berbeda."],
+       ["[違|Chiga]います。", "tegas", "Salah. (hanya untuk fakta, bukan pendapat)"]
+      ]
+     },
+     "after": [
+      "**[違|Chiga]います dipakai untuk fakta, bukan pendapat.** Kalau seseorang salah menyebut namamu, [違|chiga]います tepat. Kalau ia berpendapat berbeda soal film, [違|chiga]います terdengar seperti menghardik.",
+      "**Pola paling berguna adalah [確|Tashi]かに…けど.** Ia mengakui separuh pendapat lawan bicara sebelum menawarkan yang lain, dan hampir tidak pernah salah dipakai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat perasaan — dan siapa yang boleh memakainya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Jepang memisahkan perasaan yang bisa kamu rasakan langsung dari perasaan yang cuma bisa kamu duga. Untuk perasaan orang lain, kamu wajib memakai penanda dugaan — dan di sinilah ～と[思|omo]う paling sering dibutuhkan."
+    },
+    {
+     "type": "tabel",
+     "head": ["Untuk diri sendiri", "Untuk orang lain", "Arti"],
+     "rows": [
+      ["[嬉|Ure]しい", "[嬉|Ure]しそう / [嬉|ure]しがっている", "senang"],
+      ["[悲|Kana]しい", "[悲|Kana]しそう", "sedih"],
+      ["[寂|Sabi]しい", "[寂|Sabi]しそう", "kesepian"],
+      ["[痛|Ita]い", "[痛|Ita]そう", "sakit"],
+      ["[怖|Kowa]い", "[怖|Kowa]がっている", "takut"],
+      ["～たい", "～たがっている", "ingin"],
+      ["[欲|Ho]しい", "[欲|Ho]しがっている", "menginginkan"]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aturannya: kalimat [彼|kare]は[嬉|ure]しいです ⚠️ terdengar salah bagi orang Jepang, karena kamu mengaku tahu isi hati orang lain. Yang benar: [彼|Kare]は[嬉|ure]し**そう**です (kelihatannya senang) atau [彼|kare]は[嬉|ure]しいと[思|omo]います (kurasa dia senang). Pola ～そう dibongkar penuh di Unit 12."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat yang menyelamatkanmu di percakapan",
+     "items": [
+      "**そうですね…** — jeda sah untuk berpikir. Bukan berarti setuju; ia cuma mengisi waktu sambil kamu menyusun kalimat.",
+      "**なるほど。** — “oh, begitu”. Menunjukkan kamu mengikuti pembicaraan tanpa harus setuju.",
+      "**[私|Watashi]もそう[思|omo]います。** — “saya juga berpendapat begitu”. Kalimat persetujuan paling aman di rapat mana pun."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyampaikan pesan dari orang lain",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Salah satu pekerjaan sehari-hari yang paling sering di kantor Jepang adalah meneruskan pesan. Susunannya hampir selalu sama."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[お疲|Otsuka]れさまです。[田中|Tanaka]さんから[伝言|dengon]です。",
+      "[会議|Kaigi]は3[時|ji]からだと[言|i]っていました。",
+      "[場所|Basho]は5[階|kai]の[会議室|kaigishitsu]に[変|ka]わったそうです。",
+      "[資料|Shiryō]は[印刷|insatsu]しなくてもいいと[言|i]っていました。",
+      "[何|Nani]か[質問|shitsumon]があったら、[直接|chokusetsu][聞|ki]いてほしいそうです。",
+      "Permisi. Ada pesan dari Tanaka. Katanya rapatnya dari jam 3. Tempatnya katanya berubah ke ruang rapat lantai 5. Katanya dokumennya tidak perlu dicetak. Kalau ada pertanyaan, katanya beliau ingin ditanya langsung."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan dua cara meneruskan yang muncul bergantian: **と[言|i]っていました** (kudengar langsung dari orangnya) dan **そうです** (kabar yang kudengar, entah dari mana). Yang kedua dibongkar di Unit 12."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka pesan", "Contoh isian"],
+     "rows": [
+      ["… さんから[伝言|dengon]です。", "siapa yang menitipkan"],
+      ["… と[言|i]っていました。", "isi pokok pesannya"],
+      ["… そうです。", "keterangan tambahan"],
+      ["… なくてもいいと[言|i]っていました。", "hal yang tidak perlu dikerjakan"],
+      ["[何|Nani]か[質問|shitsumon]があったら…", "apa yang harus dilakukan kalau ada pertanyaan"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "イベント", "baca": "いべんと · ibento", "id": "acara" },
+  { "ja": "[集|Atsu]まる", "baca": "あつまる · atsumaru", "id": "berkumpul" },
+  { "ja": "～やすい", "baca": "～やすい · yasui", "id": "mudah di~" },
+  { "ja": "～にくい", "baca": "～にくい · nikui", "id": "susah di~" },
+  { "ja": "[理由|Riyū]", "baca": "りゆう · riyū", "id": "alasan" },
+  { "ja": "[家族|Kazoku]", "baca": "かぞく · kazoku", "id": "keluarga" },
+  { "ja": "[過|Su]ごす", "baca": "すごす · sugosu", "id": "menghabiskan waktu" },
+  { "ja": "[確|Tashi]かに", "baca": "たしかに · tashika ni", "id": "memang benar" },
+  { "ja": "～かどうか", "baca": "～かどうか · ka dō ka", "id": "apakah ~ atau tidak" },
+  { "ja": "[決|Ki]まる", "baca": "きまる · kimaru", "id": "ditentukan" },
+  { "ja": "[会議室|Kaigishitsu]", "baca": "かいぎしつ · kaigishitsu", "id": "ruang rapat" },
+  { "ja": "[狭|Sema]い", "baca": "せまい · semai", "id": "sempit" },
+  { "ja": "[部屋|Heya]", "baca": "へや · heya", "id": "kamar, ruangan" },
+  { "ja": "[必要|Hitsuyō]", "baca": "ひつよう · hitsuyō", "id": "perlu" },
+  { "ja": "[禁煙|Kin'en]", "baca": "きんえん · kin'en", "id": "dilarang merokok" },
+  { "ja": "[伝|Tsuta]える", "baca": "つたえる · tsutaeru", "id": "menyampaikan" },
+  { "ja": "[伝言|Dengon]", "baca": "でんごん · dengon", "id": "pesan titipan" },
+  { "ja": "[長|Naga]い", "baca": "ながい · nagai", "id": "panjang, lama" },
+  { "ja": "[短|Mijika]い", "baca": "みじかい · mijikai", "id": "pendek" },
+  { "ja": "[感|Kan]じる", "baca": "かんじる · kanjiru", "id": "merasa" },
+  { "ja": "[最後|Saigo]", "baca": "さいご · saigo", "id": "terakhir" },
+  { "ja": "[評価|Hyōka]", "baca": "ひょうか · hyōka", "id": "penilaian" },
+  { "ja": "[調|Shira]べる", "baca": "しらべる · shiraberu", "id": "mencari tahu, memeriksa" },
+  { "ja": "[次|Tsugi]", "baca": "つぎ · tsugi", "id": "berikutnya" },
+  { "ja": "～かな", "baca": "～かな · kana", "id": "ya nggak sih (dugaan)" },
+  { "ja": "なるほど", "baca": "なるほど · naruhodo", "id": "oh begitu" },
+  { "ja": "[嬉|Ure]しい", "baca": "うれしい · ureshii", "id": "senang" },
+  { "ja": "[悲|Kana]しい", "baca": "かなしい · kanashii", "id": "sedih" },
+  { "ja": "[寂|Sabi]しい", "baca": "さびしい · sabishii", "id": "kesepian" },
+  { "ja": "[痛|Ita]い", "baca": "いたい · itai", "id": "sakit" },
+  { "ja": "[欲|Ho]しい", "baca": "ほしい · hoshii", "id": "menginginkan" },
+  { "ja": "[資料|Shiryō]", "baca": "しりょう · shiryō", "id": "dokumen, bahan" },
+  { "ja": "[印刷|Insatsu]する", "baca": "いんさつする · insatsu suru", "id": "mencetak" },
+  { "ja": "[質問|Shitsumon]", "baca": "しつもん · shitsumon", "id": "pertanyaan" },
+  { "ja": "[直接|Chokusetsu]", "baca": "ちょくせつ · chokusetsu", "id": "langsung" },
+  { "ja": "[階|Kai]", "baca": "かい · kai", "id": "lantai" },
+  { "ja": "[お疲|Otsuka]れさま", "baca": "おつかれさま · otsukaresama", "id": "salam sesama pekerja" },
+  { "ja": "[教|Oshi]える", "baca": "おしえる · oshieru", "id": "mengajari, memberitahu" },
+  { "ja": "[決|Ki]める", "baca": "きめる · kimeru", "id": "memutuskan" },
+  { "ja": "[何人|Nannin]", "baca": "なんにん · nannin", "id": "berapa orang" },
+  { "ja": "ネット", "baca": "ねっと · netto", "id": "internet" },
+  { "ja": "[違|Chiga]う", "baca": "ちがう · chigau", "id": "berbeda, salah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tambahkan だ kalau perlu, lalu lengkapi dengan と[思|omo]います.",
+   "items": [
+    "[明日|Ashita][雨|ame]が[降|fu]る ___",
+    "[彼|Kare]は[学生|gakusei] ___",
+    "[この|Kono][店|mise]は[便利|benri] ___",
+    "[値段|Nedan]が[高|taka]い ___",
+    "もう[終|o]わった ___",
+    "[彼|Kare]は[来|ko]ない ___"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi kutipan tak langsung dengan ～と[言|i]っていました.",
+   "items": [
+    "[田中|Tanaka]さん:「[明日|Ashita][来|ki]ます」 ___",
+    "[山田|Yamada]さん:「[土曜日|Doyōbi]のほうがいいです」 ___",
+    "[店長|Tenchō]:「[今日|Kyō]は[休|yasu]みです」 ___",
+    "[先生|Sensei]:「[宿題|Shukudai]はありません」 ___",
+    "[母|Haha]:「[早|Haya]く[帰|kae]りなさい」 ___"
+   ]
+  },
+  {
+   "prompt": "Pilih か atau かどうか.",
+   "items": [
+    "[来|Ko]られる ___ [聞|ki]いてみます。",
+    "[誰|Dare]が[作|tsuku]った ___ [知|shi]っていますか。",
+    "[何時|Nanji]に[始|haji]まる ___ [調|shira]べます。",
+    "[学生|Gakusei] ___ [分|wa]かりません。",
+    "この[店|mise]が[安|yasu]い ___ [知|shi]りません。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "日曜日 / が / いい / と / 思います",
+    "田中さん / は / 土曜日 / の / ほう / が / いい / と / 言って / いました",
+    "みんな / が / 来られる / か / どう / か / 聞いて / みましょう",
+    "確かに / 長かった / けど / 意味 / が / 分かる / と / 思う",
+    "この / 本 / は / 読み / にくい / と / 思います"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[彼|Kare]は[来|ko]ないと[思|omo]います。",
+    "[体|Karada]にいいと[言|i]われています。",
+    "ここに[禁煙|kin'en]だと[書|ka]いてあります。",
+    "[狭|Sema]すぎるんじゃないかと[思|omo]います。",
+    "[私|Watashi]もそう[思|omo]います。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Saya rasa besok akan hujan.",
+    "Tanaka bilang dia tidak datang.",
+    "Saya akan tanyakan apakah dia bisa datang atau tidak.",
+    "Memang benar mahal, tapi saya rasa bagus.",
+    "Saya dengar hari ini libur."
+   ]
+  }
+ ],
+ "answers": [
+  "[明日|Ashita][雨|ame]が[降|fu]ると[思|omo]います — [彼|Kare]は[学生|gakusei]だと[思|omo]います — [この|Kono][店|mise]は[便利|benri]だと[思|omo]います — [値段|Nedan]が[高|taka]いと[思|omo]います — もう[終|o]わったと[思|omo]います — [彼|Kare]は[来|ko]ないと[思|omo]います",
+  "[田中|Tanaka]さんは[明日|ashita][来|ku]ると[言|i]っていました — [山田|Yamada]さんは[土曜日|doyōbi]のほうがいいと[言|i]っていました — [店長|Tenchō]は[今日|kyō]は[休|yasu]みだと[言|i]っていました — [先生|Sensei]は[宿題|shukudai]はないと[言|i]っていました — [母|Haha]は[早|haya]く[帰|kae]りなさいと[言|i]っていました",
+  "かどうか — か — か — かどうか — かどうか",
+  "[日曜日|Nichiyōbi]がいいと[思|omo]います — [田中|Tanaka]さんは[土曜日|doyōbi]のほうがいいと[言|i]っていました — みんなが[来|ko]られるかどうか[聞|ki]いてみましょう — [確|Tashi]かに[長|naga]かったけど[意味|imi]が[分|wa]かると[思|omo]う — この[本|hon]は[読|yo]みにくいと[思|omo]います",
+  "Saya rasa dia tidak datang. — Katanya baik untuk badan. — Di sini tertulis dilarang merokok. — Saya rasa jangan-jangan terlalu sempit. — Saya juga berpendapat begitu.",
+  "[明日|Ashita][雨|ame]が[降|fu]ると[思|omo]います。 — [田中|Tanaka]さんは[来|ko]ないと[言|i]っていました。 — [来|Ko]られるかどうか[聞|ki]いてみます。 — [確|Tashi]かに[高|taka]いですが、いいと[思|omo]います。 — [今日|Kyō]は[休|yasu]みだと[聞|ki]きました。"
+ ],
+ "wave": "Buka Unit 4 dan ubah lima kalimat pengalaman di sana jadi kutipan: [彼|Kare]は[北海道|Hokkaidō]に[行|i]ったことがあると[言|i]っていました. Lalu ambil lima kalimat dari Unit 3 dan bungkus dengan ～と[思|omo]います, sambil memeriksa sendiri kapan だ harus muncul."
+}

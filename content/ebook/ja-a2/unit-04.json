@@ -1,0 +1,347 @@
+{
+ "title": "Pengalaman dan daftar kegiatan",
+ "title_target": "行ったことがある — Itta koto ga aru",
+ "goal": "Menceritakan pengalaman hidup dengan ～たことがある, menyebut beberapa kegiatan tanpa mengurutkannya dengan ～たり～たり, dan membandingkan dua atau lebih hal.",
+ "bekal": [
+  "menyatakan pernah atau belum pernah dengan ～たことがある",
+  "menyebut kegiatan sebagai contoh dengan ～たり～たりする",
+  "membandingkan dua hal dengan ～より dan ～のほうが",
+  "menyatakan yang paling dengan [一番|ichiban]",
+  "menyusun cerita perjalanan dalam lima sampai enam kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Ditanya soal pengalaman",
+   "intro": "Di kantor, Ani ditanya rekan kerjanya soal jalan-jalan. Perhatikan bahwa ～たことがある memakai bentuk た, bukan bentuk kamus.",
+   "lines": [
+    { "speaker": "[佐藤|Satō]:", "text": "[アニ|Ani]さんは[北海道|Hokkaidō]に[行|i]ったことがありますか。", "id": "Ani pernah pergi ke Hokkaido?", "literal": "Ani-tuan — mengenai — Hokkaido — ke — pergi-sudah — hal — yang — ada — kah." },
+    { "speaker": "アニ:", "text": "いいえ、まだありません。[一度|Ichido][行|i]ってみたいです。", "id": "Belum pernah. Sekali saja saya ingin coba ke sana.", "literal": "tidak, belum — tidak-ada. satu-kali — pergi-mencoba-ingin — adalah." },
+    { "speaker": "[佐藤|Satō]:", "text": "[冬|Fuyu]は[本当|hontō]に[寒|samu]いですよ。[雪|Yuki]を[見|mi]たことは？", "id": "Musim dingin dingin sekali lho. Kalau melihat salju, pernah?", "literal": "musim-dingin — mengenai — sungguh — pada — dingin — adalah — lho. salju — akan — melihat-sudah — hal — mengenai?" },
+    { "speaker": "アニ:", "text": "[一度|Ichido]だけ。[去年|Kyonen][長野|Nagano]で[見|mi]ました。", "id": "Cuma sekali. Tahun lalu saya lihat di Nagano.", "literal": "satu-kali — hanya. tahun-lalu — Nagano — di — melihat-sudah." },
+    { "speaker": "[佐藤|Satō]:", "text": "どうでしたか。", "id": "Bagaimana rasanya?", "literal": "bagaimana — adalah-dulu — kah." },
+    { "speaker": "アニ:", "text": "[思|Omo]ったより[静|shizu]かでした。[音|Oto]が[全然|zenzen]しないんです。", "id": "Lebih sunyi dari yang saya kira. Sama sekali tidak ada suara.", "literal": "berpikir-sudah — daripada — sunyi — adalah-dulu. suara — yang — sama-sekali — tidak-berbunyi — hal-adalah." },
+    { "speaker": "[佐藤|Satō]:", "text": "そうなんですよ。[雪|Yuki]の[日|hi]は[町|machi][全体|zentai]が[静|shizu]かになります。", "id": "Benar sekali. Kalau hari bersalju, seluruh kota jadi sunyi.", "literal": "begitu — hal-adalah — lho. salju — punya — hari — mengenai — kota — keseluruhan — yang — sunyi — menjadi." },
+    { "speaker": "アニ:", "text": "[北海道|Hokkaidō]と[長野|Nagano]では、どちらのほうが[寒|samu]いですか。", "id": "Antara Hokkaido dan Nagano, mana yang lebih dingin?", "literal": "Hokkaido — dan — Nagano — di-mengenai, mana — punya — arah — yang — dingin — adalah — kah." },
+    { "speaker": "[佐藤|Satō]:", "text": "[北海道|Hokkaidō]のほうがずっと[寒|samu]いです。マイナス20[度|do]になることもあります。", "id": "Hokkaido jauh lebih dingin. Kadang bisa sampai minus 20 derajat.", "literal": "Hokkaido — punya — arah — yang — jauh — dingin — adalah. minus-20 — derajat — menjadi — hal — juga — ada." },
+    { "speaker": "アニ:", "text": "マイナス20！[経験|Keiken]したことがありません。", "id": "Minus 20! Saya belum pernah mengalaminya.", "literal": "minus-20! mengalami-sudah — hal — yang — tidak-ada." },
+    { "speaker": "[佐藤|Satō]:", "text": "[今度|Kondo][一緒|issho]に[行|i]きましょう。[雪祭|Yuki matsu]りが[有名|yūmei]です。", "id": "Lain kali ayo pergi bersama. Festival saljunya terkenal.", "literal": "lain-kali — bersama — pada — pergi-mari. salju-festival — yang — terkenal — adalah." },
+    { "speaker": "アニ:", "text": "ぜひ！[写真|Shashin]で[見|mi]たことはありますが、[本物|honmono]は[見|mi]たことがなくて。", "id": "Boleh sekali! Saya pernah lihat di foto, tapi aslinya belum pernah.", "literal": "tentu! foto — dengan — melihat-sudah — hal — mengenai — ada-tapi, barang-asli — mengenai — melihat-sudah — hal — yang — tidak-ada-dan." }
+   ],
+   "notes": [
+    "**～たことがある memakai bentuk た, dan ini titik yang paling sering meleset.** [行|I]く**ことがある** (kadang-kadang pergi) berbeda total dari [行|i]っ**たことがある** (pernah pergi). Bentuk kamus = kebiasaan sesekali; bentuk た = pengalaman seumur hidup.",
+    "**Jawaban “belum pernah” yang paling wajar adalah まだありません**, bukan ありません saja. まだ menyiratkan pintunya masih terbuka — bahasa Jepang lebih suka begitu daripada menutup rapat.",
+    "**[一度|Ichido]、[二度|nido]、[何度|nando]も** = sekali, dua kali, berkali-kali. Pasangan tetap untuk pola pengalaman. [何度|Nando]も[行|i]ったことがあります = sudah berkali-kali ke sana.",
+    "**[思|Omo]ったより = lebih … dari yang dikira.** Pola yang sangat sering dipakai untuk kesan pertama: [思|omo]ったより[安|yasu]かった (lebih murah dari dugaan)、[思|omo]ったより[遠|tō]い (lebih jauh dari yang kubayangkan).",
+    "**[静|Shizu]かになります** = jadi sunyi. ～になる untuk kata sifat な dan kata benda; ～くなる untuk kata sifat い ([寒|samu]**く**なる = jadi dingin). Pola perubahan ini kembali di Unit 8 dan 10.",
+    "**～ことがあります (bentuk kamus) berarti “kadang-kadang terjadi”.** マイナス20[度|do]になる**ことがあります** = kadang bisa sampai minus 20. Perhatikan bahwa dua pola dengan こと ini hanya dibedakan oleh bentuk kata kerjanya.",
+    "**～なくて di ujung kalimat terakhir** menggantung dengan sengaja, sama seperti ～んだけど di Unit 1. Menggantungkan kalimat adalah cara halus menyerahkan sisanya kepada lawan bicara."
+   ],
+   "grammars": [
+    {
+     "title": "～たことがある — pengalaman seumur hidup",
+     "body": [
+      "Pola ini menyatakan bahwa sesuatu pernah terjadi, sekali pun, kapan pun. Ia **tidak** dipakai untuk kejadian yang baru saja atau yang punya waktu tertentu."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti"],
+      "rows": [
+       ["[日本|Nihon]に[行|i]ったことがあります。", "Saya pernah ke Jepang."],
+       ["[寿司|Sushi]を[食|ta]べたことがありますか。", "Kamu pernah makan sushi?"],
+       ["[一度|Ichido]も[乗|no]ったことがありません。", "Sekali pun belum pernah naik."],
+       ["[何度|Nando]も[聞|ki]いたことがある。", "Sudah berkali-kali kudengar."],
+       ["[富士山|Fujisan]に[登|nobo]ったことは？", "Kalau naik Gunung Fuji, pernah?"]
+      ]
+     },
+     "after": [
+      "**Jangan pakai pola ini dengan waktu tertentu.** [昨日|Kinō][行|i]ったことがあります ⚠️ salah — kalau waktunya jelas, cukup [昨日|kinō][行|i]きました. Pola pengalaman justru menghapus waktunya.",
+      "**Menyangkal dengan [一度|ichido]も + ～ない** memperkuatnya jadi “sekali pun tidak”: [一度|Ichido]も[会|a]ったことがありません.",
+      "**Untuk pengalaman yang baru saja terjadi, pakai ～たばかり:** [来|ki]たばかりです = baru saja datang. Bentuknya mirip, artinya berlawanan arah."
+     ]
+    },
+    {
+     "title": "Membandingkan — ～より, ～のほうが, [一番|ichiban]",
+     "body": [
+      "Bahasa Jepang tidak punya akhiran pembanding seperti *-er* atau kata seperti “lebih”. Perbandingan dikerjakan seluruhnya oleh partikel dan urutan kata."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["A は B より …", "[電車|Densha]はバスより[速|haya]いです。", "Kereta lebih cepat daripada bus."],
+       ["A のほうが … ", "[電車|Densha]のほうが[速|haya]いです。", "Keretalah yang lebih cepat."],
+       ["A と B と、どちらが …", "[肉|Niku]と[魚|sakana]と、どちらが[好|su]きですか。", "Daging atau ikan, mana yang lebih kamu suka?"],
+       ["… の[中|naka]で[一番|ichiban] …", "[果物|Kudamono]の[中|naka]で[一番|ichiban][好|su]きです。", "Paling suka di antara buah-buahan."],
+       ["[一番|ichiban] + kata sifat", "[富士山|Fujisan]が[一番|ichiban][高|taka]いです。", "Gunung Fuji yang paling tinggi."]
+      ]
+     },
+     "after": [
+      "**Untuk dua benda, pertanyaannya selalu どちら, bukan どれ.** どれ dipakai kalau pilihannya tiga atau lebih. Ini pembedaan yang orang Jepang jaga dengan ketat.",
+      "**ずっと memperkuat perbandingan:** ずっと[寒|samu]い = jauh lebih dingin. Pasangannya [少|suko]し (sedikit lebih) dan [ちょっと|chotto] (agak lebih).",
+      "**Jawaban atas pertanyaan どちら hampir selalu memakai のほうが:** [肉|Niku]のほうが[好|su]きです. Menjawab dengan [肉|niku]が[好|su]きです juga benar, tapi terdengar seperti tidak menjawab perbandingannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menceritakan akhir pekan",
+   "intro": "Senin pagi di ruang istirahat. Perhatikan ～たり～たり: ia menyebut contoh, bukan urutan.",
+   "lines": [
+    { "speaker": "[佐藤|Satō]:", "text": "[週末|Shūmatsu]、[何|nani]をしましたか。", "id": "Akhir pekan ngapain saja?", "literal": "akhir-pekan, apa — akan — melakukan-sudah — kah." },
+    { "speaker": "アニ:", "text": "[家|Ie]で[本|hon]を[読|yo]んだり、[映画|eiga]を[見|mi]たりしました。", "id": "Di rumah baca buku, nonton film, dan sebagainya.", "literal": "rumah — di — buku — akan — membaca-dan-lain, film — akan — melihat-dan-lain — melakukan-sudah." },
+    { "speaker": "[佐藤|Satō]:", "text": "[外|Soto]には[出|de]なかったんですか。", "id": "Nggak keluar sama sekali?", "literal": "luar — ke-mengenai — keluar-tidak-dulu — hal-adalah — kah." },
+    { "speaker": "アニ:", "text": "[土曜日|Doyōbi]は[買|ka]い[物|mono]に[行|i]きました。でも[日曜日|nichiyōbi]はずっと[家|ie]でした。", "id": "Sabtu pergi belanja. Tapi Minggu di rumah terus.", "literal": "Sabtu — mengenai — beli-barang — untuk — pergi-sudah. tapi — Minggu — mengenai — terus — rumah — adalah-dulu." },
+    { "speaker": "[佐藤|Satō]:", "text": "いいですね。[私|Watashi]は[子供|kodomo]と[公園|kōen]に[行|i]ったり、[掃除|sōji]をしたりして、[全然|zenzen][休|yasu]めませんでした。", "id": "Enak ya. Saya ke taman sama anak, bersih-bersih, jadi sama sekali tidak bisa istirahat.", "literal": "saya — mengenai — anak — dengan — taman — ke — pergi-dan-lain, bersih-bersih — akan — melakukan-dan-lain — melakukan-dan, sama-sekali — istirahat-bisa-tidak-dulu." },
+    { "speaker": "アニ:", "text": "[お子|Oko]さんは[何|nan][歳|sai]ですか。", "id": "Anaknya umur berapa?", "literal": "anak-tuan — mengenai — berapa — tahun-umur — adalah — kah." },
+    { "speaker": "[佐藤|Satō]:", "text": "5[歳|sai]と8[歳|sai]です。[週末|Shūmatsu]は[平日|heijitsu]より[疲|tsuka]れますよ。", "id": "5 tahun dan 8 tahun. Akhir pekan lebih melelahkan daripada hari kerja lho.", "literal": "5 — tahun — dan — 8 — tahun — adalah. akhir-pekan — mengenai — hari-biasa — daripada — lelah — adalah — lho." },
+    { "speaker": "アニ:", "text": "そうかもしれませんね。[子供|Kodomo]は[元気|genki]ですから。", "id": "Mungkin memang begitu ya. Anak-anak kan enerjik.", "literal": "begitu — mungkin — ya. anak — mengenai — bersemangat — adalah — karena." },
+    { "speaker": "[佐藤|Satō]:", "text": "[アニ|Ani]さんは[料理|ryōri]をしたりしますか。", "id": "Ani suka masak-masak juga?", "literal": "Ani-tuan — mengenai — masakan — akan — melakukan-dan-lain — melakukan — kah." },
+    { "speaker": "アニ:", "text": "たまに。でも[作|tsuku]るより[食|ta]べるほうが[好|su]きです。", "id": "Sesekali. Tapi saya lebih suka makan daripada memasak.", "literal": "sesekali. tapi — membuat — daripada — makan — arah — yang — suka — adalah." },
+    { "speaker": "[佐藤|Satō]:", "text": "[同|Ona]じです。[私|Watashi]も[片付|katazu]けるのが[一番|ichiban][嫌|kira]いです。", "id": "Sama. Saya juga paling benci beres-beres.", "literal": "sama — adalah. saya — juga — membereskan — hal — yang — nomor-satu — benci — adalah." },
+    { "speaker": "アニ:", "text": "それは[みんな|minna][同|ona]じだと[思|omo]います。", "id": "Saya rasa itu sama untuk semua orang.", "literal": "itu — mengenai — semua-orang — sama — adalah — begitu — berpikir." }
+   ],
+   "notes": [
+    "**～たり～たりする menyebut CONTOH, bukan urutan.** Kalau kamu ingin mengurutkan kejadian, pakai bentuk て ([読|yo]んで、[見|mi]て). ～たり berkata “antara lain begini dan begitu; masih ada yang lain”.",
+    "**する di ujung wajib, dan ia yang membawa waktu.** [読|Yo]んだり[見|mi]たり**しました** (lampau)、[読|yo]んだり[見|mi]たり**します** (kebiasaan). Melupakan する adalah kesalahan paling sering di pola ini.",
+    "**Boleh cuma satu ～たり.** [料理|Ryōri]をしたりしますか = “suka masak-masak (dan semacamnya)?” Satu ～たり justru melembutkan pertanyaan: ia tidak menuntut jawaban yang tepat.",
+    "**[休|Yasu]めませんでした** adalah bentuk potensial dari [休|yasu]む — “tidak bisa istirahat”. Bentuk potensial dibongkar di Unit 5; di sini kamu cuma perlu mengenalinya.",
+    "**[お子|Oko]さん** dipakai untuk anak orang lain; anak sendiri disebut [子供|kodomo] atau [うち|uchi]の[子|ko]. Pasangan sopan-biasa ini sama seperti [奥|oku]さん vs [妻|tsuma] di Unit 3.",
+    "**[作|Tsuku]るより[食|ta]べるほうが[好|su]きです** — perhatikan bahwa kedua kata kerjanya memakai bentuk kamus. Kata kerja bisa langsung dipasang di pola perbandingan tanpa の atau こと.",
+    "**そうかもしれませんね** adalah kalimat pelunak yang sangat berguna: “mungkin memang begitu ya”. Ia menyetujui tanpa memastikan, dan orang Jepang memakainya terus-menerus."
+   ],
+   "grammars": [
+    {
+     "title": "～たり～たりする — menyebut beberapa hal sebagai contoh",
+     "body": [
+      "Bentuknya dibuat dari bentuk た: tambahkan り. [読|Yo]んだ → [読|yo]んだり、[見|mi]た → [見|mi]たり、した → したり."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti", "Yang disiratkan"],
+      "rows": [
+       ["[本|Hon]を[読|yo]んだり[音楽|ongaku]を[聞|ki]いたりします。", "Baca buku, dengar musik, dan sebagainya.", "Masih ada kegiatan lain."],
+       ["[週末|Shūmatsu]は[掃除|sōji]したり[洗濯|sentaku]したりしました。", "Akhir pekan bersih-bersih, mencuci, dan lain-lain.", "Bukan urutan waktu."],
+       ["[雨|Ame]が[降|fu]ったり[止|ya]んだりしています。", "Hujannya turun lalu berhenti bergantian.", "Dua hal berganti-ganti."],
+       ["[高|Taka]かったり[安|yasu]かったりします。", "Kadang mahal kadang murah.", "Kata sifat juga bisa."],
+       ["[日曜日|Nichiyōbi]だったり[月曜日|getsuyōbi]だったりします。", "Kadang Minggu, kadang Senin.", "Kata benda juga bisa."]
+      ]
+     },
+     "after": [
+      "**Beda tajam dengan bentuk て:** [起|O]きて、[顔|kao]を[洗|ara]って、[食|ta]べました = bangun, cuci muka, lalu makan — urutan yang sungguhan. [起|O]きたり[食|ta]べたりしました ⚠️ terdengar aneh karena bangun dan makan memang berurutan, bukan contoh acak.",
+      "**Pemakaian kedua: dua hal yang bergantian.** [行|I]ったり[来|ki]たり (mondar-mandir)、[つけたり|tsuketari][消|ke]したり (nyala-mati)、[上|a]がったり[下|sa]がったり (naik-turun). Idiom yang sering muncul."
+     ]
+    },
+    {
+     "title": "～ようになる, ～なくなる — perubahan yang bertahap",
+     "body": [
+      "Sepasang pola yang melengkapi ～たことがある: yang satu bicara pengalaman, yang ini bicara perubahan kemampuan atau kebiasaan."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["bentuk kamus + ようになる", "[漢字|Kanji]が[読|yo]めるようになりました。", "Jadi bisa membaca kanji."],
+       ["bentuk ない + なくなる", "テレビを[見|mi]なくなりました。", "Jadi tidak menonton TV lagi."],
+       ["kata sifat い + くなる", "[寒|Samu]くなりました。", "Jadi dingin."],
+       ["kata sifat な + になる", "[静|Shizu]かになりました。", "Jadi sunyi."],
+       ["kata benda + になる", "[先生|Sensei]になりました。", "Jadi guru."]
+      ]
+     },
+     "after": [
+      "**～ようになる selalu menyiratkan perubahan yang perlahan**, bukan seketika. Ia pasangan alami untuk cerita belajar: [話|Hana]せるようになった (jadi bisa bicara)、[分|wa]かるようになった (jadi paham).",
+      "**Bandingkan tiga kalimat yang mirip:** [食|Ta]べられます (bisa makan)、[食|ta]べられるようになりました (jadi bisa makan)、[食|ta]べたことがあります (pernah makan). Tiga hal yang berbeda, dan orang Jepang tidak mencampurnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pertanyaan pengalaman yang sering kamu terima",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu orang asing di Jepang, sebagian besar pertanyaan yang kamu terima berbentuk ～たことがありますか. Siapkan jawabannya sekali, dan percakapan jadi jauh lebih ringan."
+    },
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Arti", "Jawaban singkat"],
+     "rows": [
+      ["[納豆|Nattō]を[食|ta]べたことがありますか。", "Pernah makan nattō?", "はい、あります。 / いいえ、まだです。"],
+      ["[温泉|Onsen]に[入|hai]ったことは？", "Kalau berendam di onsen?", "[一度|Ichido]だけあります。"],
+      ["[富士山|Fujisan]に[登|nobo]ったことがありますか。", "Pernah naik Gunung Fuji?", "いいえ、[一度|ichido]もありません。"],
+      ["[新幹線|Shinkansen]に[乗|no]ったことは？", "Pernah naik shinkansen?", "[何度|Nando]もあります。"],
+      ["[着物|Kimono]を[着|ki]たことがありますか。", "Pernah pakai kimono?", "[写真|Shashin]でだけあります。"],
+      ["[地震|Jishin]を[経験|keiken]したことがありますか。", "Pernah mengalami gempa?", "はい、[怖|kowa]かったです。"],
+      ["[日本|Nihon]の[映画|eiga]を[見|mi]たことは？", "Pernah nonton film Jepang?", "[何本|Nanbon]か[見|mi]ました。"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Jawaban yang membuat percakapan berlanjut",
+     "items": [
+      "Jangan berhenti di はい atau いいえ. Tambahkan satu kalimat: **いいえ、まだありません。でも[食|ta]べてみたいです。**",
+      "Kalau pernah, sebutkan kapan dan kesanmu: **はい、[去年|kyonen][京都|Kyōto]で。[思|Omo]ったより[高|taka]かったです。**",
+      "Kalau tidak ingin bercerita panjang: **[一度|Ichido]だけ。** — dua kata, sudah cukup sopan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menceritakan satu perjalanan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua pola unit ini berkumpul di jenis cerita yang sama: liburan. Susunan berikut bisa kamu tiru untuk perjalanan apa pun."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh utuh",
+     "items": [
+      "[去年|Kyonen]の[夏|natsu]、[初|haji]めて[京都|Kyōto]に[行|i]きました。",
+      "[新幹線|Shinkansen]に[乗|no]ったのはその[時|toki]が[初|haji]めてでした。",
+      "[京都|Kyōto]では[お寺|otera]を[見|mi]たり、[川|kawa]の[近|chika]くを[歩|aru]いたりしました。",
+      "[東京|Tōkyō]より[静|shizu]かで、[人|hito]も[少|suku]なかったです。",
+      "[一番|Ichiban][良|yo]かったのは[朝|asa]の[散歩|sanpo]です。",
+      "また[行|i]きたいです。[今度|Kondo]は[秋|aki]に[行|i]ってみたいと[思|omo]っています。",
+      "Musim panas lalu saya pertama kali ke Kyoto. Naik shinkansen juga baru kali itu. Di Kyoto saya melihat kuil, berjalan di dekat sungai, dan sebagainya. Lebih tenang daripada Tokyo, orangnya juga lebih sedikit. Yang paling menyenangkan adalah jalan pagi. Saya ingin ke sana lagi. Kali ini saya ingin coba pergi di musim gugur."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan kalimat kedua dan kelima: **[乗|no]ったの** dan **[良|yo]かったの** memakai の untuk membendakan seluruh klausa. Pola “yang …” ini dibongkar penuh di Unit 7, dan sudah bisa kamu tiru sekarang."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka kalimat", "Isi yang bisa kamu ganti"],
+     "rows": [
+      ["[去年|Kyonen]の … 、[初|haji]めて … に[行|i]きました。", "waktu dan tempat"],
+      ["… では … たり … たりしました。", "dua kegiatan"],
+      ["… より … で、… も … かったです。", "satu perbandingan"],
+      ["[一番|Ichiban] … かったのは … です。", "kesan paling kuat"],
+      ["[今度|Kondo]は … てみたいと[思|omo]っています。", "rencana berikutnya"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[北海道|Hokkaidō]", "baca": "ほっかいどう · Hokkaidō", "id": "Hokkaido" },
+  { "ja": "[一度|Ichido]", "baca": "いちど · ichido", "id": "sekali" },
+  { "ja": "[何度|Nando]も", "baca": "なんども · nando mo", "id": "berkali-kali" },
+  { "ja": "[冬|Fuyu]", "baca": "ふゆ · fuyu", "id": "musim dingin" },
+  { "ja": "[寒|Samu]い", "baca": "さむい · samui", "id": "dingin (cuaca)" },
+  { "ja": "[雪|Yuki]", "baca": "ゆき · yuki", "id": "salju" },
+  { "ja": "[去年|Kyonen]", "baca": "きょねん · kyonen", "id": "tahun lalu" },
+  { "ja": "[音|Oto]", "baca": "おと · oto", "id": "suara, bunyi" },
+  { "ja": "[全体|Zentai]", "baca": "ぜんたい · zentai", "id": "keseluruhan" },
+  { "ja": "どちら", "baca": "どちら · dochira", "id": "yang mana (dari dua)" },
+  { "ja": "～のほうが", "baca": "～のほうが · no hō ga", "id": "yang lebih ~" },
+  { "ja": "ずっと", "baca": "ずっと · zutto", "id": "jauh lebih, terus-menerus" },
+  { "ja": "[度|Do]", "baca": "ど · do", "id": "derajat" },
+  { "ja": "[経験|Keiken]する", "baca": "けいけんする · keiken suru", "id": "mengalami" },
+  { "ja": "[一緒|Issho]に", "baca": "いっしょに · issho ni", "id": "bersama-sama" },
+  { "ja": "[祭|Matsu]り", "baca": "まつり · matsuri", "id": "festival" },
+  { "ja": "[有名|Yūmei]", "baca": "ゆうめい · yūmei", "id": "terkenal" },
+  { "ja": "ぜひ", "baca": "ぜひ · zehi", "id": "tentu saja, sangat ingin" },
+  { "ja": "[本物|Honmono]", "baca": "ほんもの · honmono", "id": "barang asli" },
+  { "ja": "[掃除|Sōji]する", "baca": "そうじする · sōji suru", "id": "membersihkan" },
+  { "ja": "[洗濯|Sentaku]する", "baca": "せんたくする · sentaku suru", "id": "mencuci baju" },
+  { "ja": "[片付|Katazu]ける", "baca": "かたづける · katazukeru", "id": "membereskan" },
+  { "ja": "[平日|Heijitsu]", "baca": "へいじつ · heijitsu", "id": "hari kerja" },
+  { "ja": "[歳|Sai]", "baca": "さい · sai", "id": "tahun (umur)" },
+  { "ja": "かもしれない", "baca": "かもしれない · kamoshirenai", "id": "mungkin" },
+  { "ja": "[作|Tsuku]る", "baca": "つくる · tsukuru", "id": "membuat" },
+  { "ja": "[嫌|Kira]い", "baca": "きらい · kirai", "id": "benci, tidak suka" },
+  { "ja": "[止|Ya]む", "baca": "やむ · yamu", "id": "berhenti (hujan)" },
+  { "ja": "[音楽|Ongaku]", "baca": "おんがく · ongaku", "id": "musik" },
+  { "ja": "[納豆|Nattō]", "baca": "なっとう · nattō", "id": "nattō" },
+  { "ja": "[温泉|Onsen]", "baca": "おんせん · onsen", "id": "pemandian air panas" },
+  { "ja": "[登|Nobo]る", "baca": "のぼる · noboru", "id": "mendaki, naik" },
+  { "ja": "[新幹線|Shinkansen]", "baca": "しんかんせん · shinkansen", "id": "shinkansen" },
+  { "ja": "[乗|No]る", "baca": "のる · noru", "id": "naik (kendaraan)" },
+  { "ja": "[着物|Kimono]", "baca": "きもの · kimono", "id": "kimono" },
+  { "ja": "[地震|Jishin]", "baca": "じしん · jishin", "id": "gempa bumi" },
+  { "ja": "[怖|Kowa]い", "baca": "こわい · kowai", "id": "menakutkan" },
+  { "ja": "[お寺|Otera]", "baca": "おてら · otera", "id": "kuil Buddha" },
+  { "ja": "[川|Kawa]", "baca": "かわ · kawa", "id": "sungai" },
+  { "ja": "[歩|Aru]く", "baca": "あるく · aruku", "id": "berjalan kaki" },
+  { "ja": "[少|Suku]ない", "baca": "すくない · sukunai", "id": "sedikit (jumlahnya)" },
+  { "ja": "[散歩|Sanpo]", "baca": "さんぽ · sanpo", "id": "jalan-jalan santai" },
+  { "ja": "[秋|Aki]", "baca": "あき · aki", "id": "musim gugur" },
+  { "ja": "[果物|Kudamono]", "baca": "くだもの · kudamono", "id": "buah-buahan" },
+  { "ja": "[速|Haya]い", "baca": "はやい · hayai", "id": "cepat (kecepatan)" },
+  { "ja": "～ようになる", "baca": "～ようになる · yō ni naru", "id": "jadi bisa ~" },
+  { "ja": "～ばかり", "baca": "～ばかり · bakari", "id": "baru saja ~" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke pola ～たことがあります.",
+   "items": [
+    "[日本|Nihon]に[行|i]きます ___",
+    "[寿司|Sushi]を[食|ta]べます ___",
+    "[富士山|Fujisan]に[登|nobo]ります ___",
+    "[着物|Kimono]を[着|ki]ます ___",
+    "[地震|Jishin]を[経験|keiken]します ___",
+    "[新幹線|Shinkansen]に[乗|no]ります ___"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kegiatan dengan ～たり～たりしました.",
+   "items": [
+    "[本|Hon]を[読|yo]む · [音楽|ongaku]を[聞|ki]く ___",
+    "[掃除|Sōji]をする · [洗濯|sentaku]をする ___",
+    "[公園|Kōen]に[行|i]く · [買|ka]い[物|mono]をする ___",
+    "[映画|Eiga]を[見|mi]る · [友達|tomodachi]と[話|hana]す ___",
+    "[写真|Shashin]を[撮|to]る · [散歩|sanpo]する ___"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat perbandingan.",
+   "items": [
+    "[電車|Densha]はバス ___ [速|haya]いです。",
+    "[電車|Densha] ___ が[速|haya]いです。",
+    "[肉|Niku]と[魚|sakana]と、___ が[好|su]きですか。",
+    "[果物|Kudamono]の[中|naka]で ___ [好|su]きなのはバナナです。",
+    "[思|Omo]った ___ [安|yasu]かったです。",
+    "[北海道|Hokkaidō]のほうが ___ [寒|samu]いです。(jauh lebih)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "北海道 / に / 行った / こと / が / あります / か",
+    "一度 / も / 乗った / こと / が / ありません",
+    "作る / より / 食べる / ほう / が / 好き / です",
+    "漢字 / が / 読める / よう / に / なりました",
+    "雨 / が / 降ったり / 止んだり / して / います"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[一度|Ichido]も[会|a]ったことがありません。",
+    "[週末|Shūmatsu]は[平日|heijitsu]より[疲|tsuka]れます。",
+    "[思|Omo]ったより[静|shizu]かでした。",
+    "テレビを[見|mi]なくなりました。",
+    "マイナス20[度|do]になることもあります。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Kamu pernah makan nattō?",
+    "Belum pernah, tapi ingin coba.",
+    "Kereta lebih cepat daripada bus.",
+    "Akhir pekan saya baca buku, nonton film, dan sebagainya.",
+    "Saya jadi bisa membaca kanji."
+   ]
+  }
+ ],
+ "answers": [
+  "[日本|Nihon]に[行|i]ったことがあります — [寿司|Sushi]を[食|ta]べたことがあります — [富士山|Fujisan]に[登|nobo]ったことがあります — [着物|Kimono]を[着|ki]たことがあります — [地震|Jishin]を[経験|keiken]したことがあります — [新幹線|Shinkansen]に[乗|no]ったことがあります",
+  "[本|Hon]を[読|yo]んだり[音楽|ongaku]を[聞|ki]いたりしました — [掃除|Sōji]をしたり[洗濯|sentaku]をしたりしました — [公園|Kōen]に[行|i]ったり[買|ka]い[物|mono]をしたりしました — [映画|Eiga]を[見|mi]たり[友達|tomodachi]と[話|hana]したりしました — [写真|Shashin]を[撮|to]ったり[散歩|sanpo]したりしました",
+  "より — のほう — どちら — [一番|ichiban] — より — ずっと",
+  "[北海道|Hokkaidō]に[行|i]ったことがありますか — [一度|Ichido]も[乗|no]ったことがありません — [作|Tsuku]るより[食|ta]べるほうが[好|su]きです — [漢字|Kanji]が[読|yo]めるようになりました — [雨|Ame]が[降|fu]ったり[止|ya]んだりしています",
+  "Sekali pun saya belum pernah bertemu dengannya. — Akhir pekan lebih melelahkan daripada hari kerja. — Lebih sunyi daripada yang saya kira. — Saya jadi tidak menonton TV lagi. — Kadang bisa sampai minus 20 derajat."
+  ,
+  "[納豆|Nattō]を[食|ta]べたことがありますか。 — まだありませんが、[食|ta]べてみたいです。 — [電車|Densha]はバスより[速|haya]いです。 — [週末|Shūmatsu]は[本|hon]を[読|yo]んだり[映画|eiga]を[見|mi]たりしました。 — [漢字|Kanji]が[読|yo]めるようになりました。"
+ ],
+ "wave": "Buka Unit 3 dan ubah lima kalimat ～ている di sana jadi kalimat pengalaman ～たことがある. Perhatikan bahwa sebagian tidak bisa diubah — [知|shi]っている、[住|su]んでいる、[疲|tsuka]れている menolak pola pengalaman. Menemukan sendiri kata mana yang menolak jauh lebih berguna daripada membaca daftarnya."
+}

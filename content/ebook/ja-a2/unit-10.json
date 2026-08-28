@@ -1,0 +1,316 @@
+{
+ "title": "Kalau begini, maka begitu",
+ "title_target": "雨が降ったら — Ame ga futtara",
+ "goal": "Memilih di antara empat cara berkata “kalau” dalam bahasa Jepang — ～たら, ～と, ～ば, dan ～なら — yang masing-masing punya wilayahnya sendiri.",
+ "bekal": [
+  "membentuk dan memakai ～たら untuk syarat umum",
+  "memakai ～と untuk akibat yang selalu terjadi",
+  "membentuk ～ば dan memakainya untuk pengandaian",
+  "memakai ～なら untuk menanggapi ucapan lawan bicara",
+  "mengetahui kalimat mana yang tidak boleh mengikuti ～と"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Rencana yang bergantung cuaca",
+   "intro": "Ani dan Kenta menyusun rencana akhir pekan. Perhatikan bahwa hampir semua “kalau” di sini memakai ～たら.",
+   "lines": [
+    { "speaker": "アニ:", "text": "[土曜日|Doyōbi]、[晴|ha]れたら[海|umi]に[行|i]かない？", "id": "Sabtu, kalau cerah mau ke laut nggak?", "literal": "Sabtu, cerah-kalau — laut — ke — pergi-tidak?" },
+    { "speaker": "健太:", "text": "いいね。[雨|Ame]が[降|fu]ったらどうする？", "id": "Boleh. Kalau hujan gimana?", "literal": "baik — ya. hujan — yang — turun-kalau — bagaimana — melakukan?" },
+    { "speaker": "アニ:", "text": "[降|Fu]ったら[映画|eiga]でも[見|mi]よう。[家|Ie]でもいいし。", "id": "Kalau hujan nonton film saja. Di rumah juga boleh.", "literal": "turun-kalau — film — pun — melihat-mari. rumah — pun — baik — dan." },
+    { "speaker": "健太:", "text": "[天気予報|Tenki yohō][見|mi]てみる。… あ、[土曜日|doyōbi]は50パーセントだって。", "id": "Aku cek ramalan cuaca. … Ah, Sabtu katanya 50 persen.", "literal": "cuaca-ramalan — melihat-mencoba. … ah, Sabtu — mengenai — 50 — persen — katanya." },
+    { "speaker": "アニ:", "text": "[微妙|Bimyō]だね。[朝|Asa][起|o]きて[空|sora]を[見|mi]たら[決|ki]めよう。", "id": "Nggak jelas ya. Bangun pagi, lihat langit, baru kita putuskan.", "literal": "samar — ya. pagi — bangun-dan — langit — akan — melihat-kalau — memutuskan-mari." },
+    { "speaker": "健太:", "text": "[了解|Ryōkai]。[電車|Densha]で[行|i]くと1[時間|jikan][半|han]かかるよ。", "id": "Oke. Kalau naik kereta makan waktu satu setengah jam lho.", "literal": "paham. kereta — dengan — pergi — kalau — 1 — jam — setengah — memakan — lho." },
+    { "speaker": "アニ:", "text": "[車|Kuruma]なら[早|haya]い？", "id": "Kalau naik mobil lebih cepat?", "literal": "mobil — kalau — cepat?" },
+    { "speaker": "健太:", "text": "[早|Haya]いけど、[土曜日|doyōbi]は[道|michi]が[混|ko]むと[逆|gyaku]に[遅|oso]くなる。", "id": "Cepat sih, tapi Sabtu kalau jalanan macet malah jadi lebih lambat.", "literal": "cepat-tapi, Sabtu — mengenai — jalan — yang — macet — kalau — sebaliknya — pada — lambat-menjadi." },
+    { "speaker": "アニ:", "text": "[じゃあ|Jā][電車|densha]にしよう。[早|Haya]く[出|de]れば[座|suwa]れるよね。", "id": "Kalau gitu pakai kereta. Kalau berangkat cepat bisa dapat duduk kan.", "literal": "kalau-begitu — kereta — pada — melakukan-mari. cepat — keluar-kalau — duduk-bisa — ya-kan." },
+    { "speaker": "健太:", "text": "7[時|ji]の[電車|densha]に[乗|no]れば[確実|kakujitsu]に[座|suwa]れる。", "id": "Kalau naik kereta jam 7 pasti bisa duduk.", "literal": "7 — jam — punya — kereta — pada — naik-kalau — pasti — pada — duduk-bisa." },
+    { "speaker": "アニ:", "text": "[早|Haya]すぎない？[起|O]きられるかな。", "id": "Nggak terlalu pagi? Bisa bangun nggak ya.", "literal": "cepat-terlalu-tidak? bangun-bisa — kah-ya." },
+    { "speaker": "健太:", "text": "[起|O]きられなかったら[連絡|renraku]して。[待|Ma]ってるから。", "id": "Kalau nggak bisa bangun, kabari. Aku tunggu kok.", "literal": "bangun-bisa-tidak-kalau — menghubungi. menunggu-sedang — karena." }
+   ],
+   "notes": [
+    "**～たら dibuat dari bentuk た + ら.** [降|Fu]った → [降|fu]った**ら**、[晴|ha]れた → [晴|ha]れた**ら**、[高|taka]かった → [高|taka]かった**ら**、[学生|gakusei]だった → [学生|gakusei]だった**ら**. Satu aturan untuk semua jenis kata, dan itulah kenapa ～たら paling aman dipakai.",
+    "**～と menyatakan akibat yang SELALU terjadi.** [道|Michi]が[混|ko]む**と**[遅|oso]くなる = kalau jalanan macet, pasti jadi lambat. Ia dipakai untuk hukum alam, mesin, dan jalan — bukan untuk rencana.",
+    "**～ば menekankan syarat.** [早|Haya]く[出|de]**れば**[座|suwa]れる = asalkan berangkat cepat, bisa duduk. Ia menyoroti apa yang harus dipenuhi, dan sering diterjemahkan “asalkan”.",
+    "**なら menanggapi apa yang baru disebut.** [車|Kuruma]**なら**[早|haya]い？ = kalau soal mobil, lebih cepat? Ia tidak menyatakan syarat waktu sama sekali; ia menyaring topik.",
+    "**[映画|Eiga]でも[見|mi]よう** — でも di sini berarti “atau semacamnya”, melembutkan usul. お[茶|cha]**でも**[飲|no]みませんか (mau minum teh atau apa gitu?) adalah ajakan paling lazim dalam bahasa Jepang.",
+    "**～し menyebut alasan tambahan.** [家|Ie]でもいい**し** = lagi pula di rumah juga boleh. Sering dipakai berpasangan: [安|Yasu]い**し**、おいしい**し**、[近|chika]い (murah, enak, dekat pula).",
+    "**～だって = katanya**, versi paling santai dari そうです. 50パーセント**だって** = katanya 50 persen. Muncul terus di percakapan anak muda."
+   ],
+   "grammars": [
+    {
+     "title": "Empat “kalau” dan wilayahnya masing-masing",
+     "body": [
+      "Semua diterjemahkan “kalau”, tapi tidak bisa saling menggantikan. Tabel ini adalah inti seluruh unit."
+     ],
+     "table": {
+      "head": ["Pola", "Bentuknya", "Wilayahnya", "Contoh"],
+      "rows": [
+       ["～たら", "bentuk た + ら", "paling luas; syarat, waktu, penemuan", "[雨|Ame]が[降|fu]ったら[行|i]きません。"],
+       ["～と", "bentuk kamus + と", "akibat yang selalu terjadi", "[春|Haru]になると[桜|sakura]が[咲|sa]きます。"],
+       ["～ば", "ujung -u jadi -eba", "syarat yang ditekankan", "[安|Yasu]ければ[買|ka]います。"],
+       ["～なら", "kata benda / bentuk biasa + なら", "menanggapi topik yang baru disebut", "[京都|Kyōto]なら[秋|aki]がいいですよ。"]
+      ]
+     },
+     "after": [
+      "**Kalau ragu, pakai ～たら.** Ia hampir selalu benar. Tiga yang lain punya batasan; ～たら tidak.",
+      "**Bentuk ば:** godan ganti ujung -u jadi -eba ([行|i]く → [行|i]けば、[飲|no]む → [飲|no]めば); ichidan buang る tambah れば ([食|ta]べる → [食|ta]べれば); する → すれば; [来|ku]る → [来|ku]れば. Kata sifat い: い → ければ ([安|yasu]い → [安|yasu]ければ). Sangkalnya ～なければ, yang sudah kamu pakai sejak Unit 8.",
+      "**～なら sering dipakai untuk memberi saran.** [日本|Nihon]に[行|i]く**なら**、[春|haru]がいいですよ = kalau (memang) mau ke Jepang, musim semi bagus. Ia menanggapi rencana lawan bicara, bukan mengandaikan."
+     ]
+    },
+    {
+     "title": "Larangan yang menempel pada ～と",
+     "body": [
+      "～と adalah satu-satunya dari keempatnya yang punya larangan keras: **kalimat setelah と tidak boleh berisi kehendak pembicara**. Tidak boleh ada ajakan, permintaan, izin, atau perintah."
+     ],
+     "table": {
+      "head": ["Kalimat", "Benar?", "Kenapa"],
+      "rows": [
+       ["[春|Haru]になると[暖|atata]かくなります。", "benar", "Akibat alami, bukan kehendak."],
+       ["ボタンを[押|o]すと[水|mizu]が[出|de]ます。", "benar", "Sebab-akibat mesin."],
+       ["[右|Migi]に[曲|ma]がると[駅|eki]があります。", "benar", "Petunjuk arah, penemuan."],
+       ["[雨|Ame]が[降|fu]ると[行|i]きません。 ⚠️", "meragukan", "Ini keputusan, bukan hukum alam."],
+       ["[時間|Jikan]があると[来|ki]てください。 ⚠️", "salah", "Ada permintaan sesudah と."],
+       ["[安|Yasu]いと[買|ka]いましょう。 ⚠️", "salah", "Ada ajakan sesudah と."]
+      ]
+     },
+     "after": [
+      "**Kalau kalimat keduamu mengandung ください、～ましょう、～たい、～てもいい — buang と, ganti ～たら.** [時間|Jikan]があっ**たら**[来|ki]てください benar.",
+      "**Pemakaian ～と yang paling sering kamu dengar adalah petunjuk arah:** この[道|michi]をまっすぐ[行|i]くと[右|migi]に[見|mi]えます. Dan mesin: このボタンを[押|o]すと[開|a]きます."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Minta saran soal belanja",
+   "intro": "Miki bertanya soal laptop. Perhatikan なら, yang muncul setiap kali ia menanggapi ucapan Ani.",
+   "lines": [
+    { "speaker": "ミキ:", "text": "パソコンを[買|ka]おうと[思|omo]ってるんだけど。", "id": "Aku lagi kepikiran mau beli laptop.", "literal": "komputer — akan — membeli-mari — begitu — berpikir-sedang — hal-adalah-tapi." },
+    { "speaker": "アニ:", "text": "パソコンなら[駅前|ekimae]の[店|mise]が[安|yasu]いよ。", "id": "Kalau laptop, toko depan stasiun murah lho.", "literal": "komputer — kalau — depan-stasiun — punya — toko — yang — murah — lho." },
+    { "speaker": "ミキ:", "text": "[学生証|Gakuseishō]を[見|mi]せると[安|yasu]くなる？", "id": "Kalau menunjukkan kartu mahasiswa jadi lebih murah?", "literal": "kartu-mahasiswa — akan — menunjukkan — kalau — murah-menjadi?" },
+    { "speaker": "アニ:", "text": "うん、10パーセント[引|bi]きになる。[持|Mo]って[行|i]ったほうがいい。", "id": "Iya, jadi diskon 10 persen. Sebaiknya dibawa.", "literal": "iya, 10 — persen — potongan — pada — menjadi. membawa-pergi-sudah — arah — yang — baik." },
+    { "speaker": "ミキ:", "text": "[軽|Karu]いのがいいんだけど、[軽|karu]ければ[高|taka]いよね。", "id": "Aku mau yang ringan, tapi kalau ringan jadi mahal ya.", "literal": "ringan — yang — yang — baik — hal-adalah-tapi, ringan-kalau — mahal — ya-kan." },
+    { "speaker": "アニ:", "text": "[去年|Kyonen]のモデルなら[安|yasu]いよ。[性能|Seinō]もほとんど[同|ona]じだし。", "id": "Kalau model tahun lalu murah kok. Performanya juga hampir sama.", "literal": "tahun-lalu — punya — model — kalau — murah — lho. performa — juga — hampir — sama — dan." },
+    { "speaker": "ミキ:", "text": "そっか。[実物|Jitsubutsu]を[見|mi]てから[決|ki]めたい。", "id": "Oh gitu. Aku mau lihat barang aslinya dulu baru putuskan.", "literal": "begitu-ya. barang-nyata — akan — melihat-sesudah — memutuskan-ingin." },
+    { "speaker": "アニ:", "text": "[土曜日|Doyōbi]に[行|i]くなら[一緒|issho]に[行|i]くけど。", "id": "Kalau kamu pergi Sabtu, aku ikut deh.", "literal": "Sabtu — pada — pergi — kalau — bersama — pada — pergi-tapi." },
+    { "speaker": "ミキ:", "text": "[本当|Hontō]？[助|Tasu]かる。[私|Watashi][一人|hitori]だと[絶対|zettai][迷|mayo]う。", "id": "Serius? Terbantu banget. Kalau aku sendirian pasti bingung.", "literal": "sungguh? tertolong. saya — satu-orang — kalau — pasti — tersesat." },
+    { "speaker": "アニ:", "text": "[予算|Yosan]はどのぐらい？[決|Ki]めておけば[早|haya]く[選|era]べる。", "id": "Anggarannya berapa? Kalau ditentukan dulu, milihnya lebih cepat.", "literal": "anggaran — mengenai — berapa-kira-kira? memutuskan-menyiapkan-kalau — cepat — memilih-bisa." },
+    { "speaker": "ミキ:", "text": "10[万|man][円|en]まで。それ[以上|ijō]だったら[諦|akira]める。", "id": "Sampai 100 ribu yen. Kalau lebih dari itu aku menyerah.", "literal": "10 — puluh-ribu — yen — sampai. itu — lebih — kalau — menyerah." },
+    { "speaker": "アニ:", "text": "10[万|man]あれば[十分|jūbun][良|i]いのが[買|ka]えるよ。", "id": "Kalau ada 100 ribu, bisa beli yang cukup bagus kok.", "literal": "10 — puluh-ribu — ada-kalau — cukup — baik — yang — yang — membeli-bisa — lho." }
+   ],
+   "notes": [
+    "**なら menempel langsung pada kata benda tanpa だ.** パソコン**なら**、[京都|Kyōto]**なら**、[土曜日|doyōbi]**なら**. Untuk kata kerja, ia menempel pada bentuk biasa: [行|i]く**なら**.",
+    "**なら selalu menanggapi sesuatu yang baru disebut**, entah oleh lawan bicara atau oleh keadaan. Karena itu ia hampir tak pernah membuka percakapan; ia selalu jawaban.",
+    "**Urutan waktu なら terbalik dari ～たら.** [日本|Nihon]に[行|i]く**なら**カメラを[買|ka]ったほうがいい = beli kamera **sebelum** berangkat. [日本|Nihon]に[行|i]っ**たら**カメラを[買|ka]ったほうがいい = beli **setelah** sampai. Perbedaan yang menentukan, dan sering dilewatkan.",
+    "**[一人|Hitori]だと** — ～だと adalah ～と untuk kata benda: [一人|hitori]**だと** (kalau sendirian)、[雨|ame]**だと** (kalau hujan). Perhatikan bahwa akibatnya ([迷|mayo]う) memang bukan kehendak, jadi と sah di sini.",
+    "**10[万|man]あれば** — bentuk ば dari ある. Pola “kalau ada X, bisa Y” sangat sering dipakai untuk anggaran dan waktu: [時間|Jikan]があれば[行|i]きます.",
+    "**～[引|bi]き = potongan harga.** 10パーセント[引|bi]き = diskon 10 persen. Kata yang muncul di setiap papan diskon di Jepang, bersama [半額|hangaku] (setengah harga) dan [お買|okai][得|doku] (harga untung).",
+    "**[諦|Akira]める = menyerah, merelakan.** Kata yang sangat sering dipakai dan tidak selalu bernada kalah — ia juga berarti “ya sudah, tidak jadi”."
+   ],
+   "grammars": [
+    {
+     "title": "～たら yang bukan syarat — penemuan dan urutan",
+     "body": [
+      "Selain “kalau”, ～たら punya pemakaian kedua yang sama sering: menyatakan bahwa sesudah melakukan sesuatu, kamu menemukan sesuatu yang tak terduga. Di sini ～たら berarti “ketika”, bukan “kalau”."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti", "Jenisnya"],
+      "rows": [
+       ["[家|Ie]に[帰|kae]ったら[誰|dare]もいなかった。", "Waktu pulang ke rumah, ternyata tidak ada siapa-siapa.", "penemuan"],
+       ["[窓|Mado]を[開|a]けたら[雨|ame]が[降|fu]っていた。", "Waktu membuka jendela, ternyata sedang hujan.", "penemuan"],
+       ["[授業|Jugyō]が[終|o]わったら[電話|denwa]します。", "Setelah kuliah selesai saya telepon.", "urutan pasti"],
+       ["20[歳|sai]になったら[お酒|osake]が[飲|no]めます。", "Setelah umur 20 boleh minum alkohol.", "urutan pasti"],
+       ["[雨|Ame]が[降|fu]ったら[行|i]きません。", "Kalau hujan saya tidak pergi.", "syarat sungguhan"]
+      ]
+     },
+     "after": [
+      "**Kalau kalimat keduanya bentuk た, itu penemuan** — dan yang ditemukan selalu di luar dugaan. Kalimat penemuan tidak pernah memakai ～ば atau ～なら.",
+      "**Kalau kejadiannya pasti terjadi (waktu, umur, jadwal), ～たら berarti “setelah”.** [春|Haru]になったら (setelah musim semi tiba) — bukan “kalau musim semi tiba”, karena musim semi pasti datang."
+     ]
+    },
+    {
+     "title": "Memilih di antara empat — tiga pertanyaan penyaring",
+     "body": [
+      "Alih-alih menghafal empat aturan, tanyakan tiga hal ini secara berurutan setiap kali kamu hendak berkata “kalau”."
+     ],
+     "table": {
+      "head": ["Pertanyaan", "Kalau jawabannya ya", "Contoh"],
+      "rows": [
+       ["Apakah aku menanggapi ucapan lawan bicara?", "pakai なら", "「[京都|Kyōto]に[行|i]きます」→「[京都|Kyōto]なら…」"],
+       ["Apakah akibatnya SELALU terjadi, tanpa kehendak siapa pun?", "pakai と", "[春|Haru]になると[暖|atata]かくなる。"],
+       ["Apakah aku ingin menekankan syaratnya saja?", "pakai ば", "[安|Yasu]ければ[買|ka]う。"],
+       ["Selain itu semua", "pakai たら", "[時間|Jikan]があったら[行|i]きます。"]
+      ]
+     },
+     "after": [
+      "**Dalam percakapan sehari-hari, ～たら menutup sekitar tujuh dari sepuluh kebutuhan.** Kalau kamu cuma sempat menguasai satu, kuasai ～たら.",
+      "**～ば paling sering muncul dalam ungkapan tetap:** ～ばいい (sebaiknya begini)、～ば～ほど (makin … makin)、[そうすれば|sō sureba] (kalau begitu). Hafalkan ketiganya sebagai satuan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat “kalau” yang dipakai setiap hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Daripada menyusun kalimat pengandaian dari nol, hafalkan kerangka yang sudah terbukti. Sebagian besar keperluan sehari-hari tertutup oleh sepuluh kalimat berikut."
+    },
+    {
+     "type": "tabel",
+     "head": ["Jepang", "Arti"],
+     "rows": [
+      ["[時間|Jikan]があったら[行|i]きます。", "Kalau ada waktu saya pergi."],
+      ["[終|O]わったら[教|oshi]えてください。", "Kalau sudah selesai tolong beritahu."],
+      ["[分|Wa]からなかったら[聞|ki]いてください。", "Kalau tidak paham silakan bertanya."],
+      ["[何|Nani]かあったら[連絡|renraku]します。", "Kalau ada apa-apa saya hubungi."],
+      ["[高|Taka]かったら[買|ka]いません。", "Kalau mahal saya tidak beli."],
+      ["[明日|Ashita]なら[大丈夫|daijōbu]です。", "Kalau besok tidak masalah."],
+      ["[私|Watashi]なら[そうしません|sō shimasen]。", "Kalau saya, saya tidak akan begitu."],
+      ["[早|Haya]く[出|de]ればいい。", "Cukup berangkat lebih awal."],
+      ["どうすればいいですか。", "Sebaiknya saya bagaimana?"],
+      ["このボタンを[押|o]すと[開|a]きます。", "Kalau tombol ini ditekan, terbuka."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "どうすればいいですか — kalimat penyelamat",
+     "items": [
+      "Harfiahnya “kalau melakukan bagaimana, baik?” — dan ia adalah cara paling sopan meminta petunjuk tanpa mengaku bingung total.",
+      "Sekeluarga: **[何|Nani]を[持|mo]って[行|i]けばいいですか。** (Apa yang sebaiknya saya bawa?) · **[何時|Nanji]に[来|ku]ればいいですか。** (Sebaiknya saya datang jam berapa?) · **[誰|Dare]に[聞|ki]けばいいですか。** (Sebaiknya bertanya kepada siapa?)",
+      "Jawaban atas pertanyaan ini biasanya memakai ～たら atau ～てください: **3[時|ji]に[来|ki]てください。** atau **[終|O]わったら[言|i]ってください。**"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan satu hal yang membedakan bahasa Jepang dari bahasa Indonesia: **kalimat setelah “kalau” tidak boleh memakai bentuk masa depan yang eksplisit.** Bahasa Jepang memang tidak punya bentuk masa depan (Unit “Bekal dari 101”), jadi [時間|jikan]があったら[行|i]きます sudah otomatis berarti “kalau nanti ada waktu, saya akan pergi”."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka", "Isian", "Contoh"],
+     "rows": [
+      ["… たら … ください。", "syarat + permintaan", "[着|Tsu]いたら[電話|denwa]してください。"],
+      ["… たら … ましょう。", "syarat + ajakan", "[晴|Ha]れたら[行|i]きましょう。"],
+      ["… なら … がいいですよ。", "tanggapan + saran", "[京都|Kyōto]なら[秋|aki]がいいですよ。"],
+      ["… ばいいですか。", "meminta petunjuk", "どこで[買|ka]えばいいですか。"],
+      ["… と … ます。", "sebab-akibat pasti", "[押|O]すと[止|to]まります。"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[晴|Ha]れる", "baca": "はれる · hareru", "id": "cerah" },
+  { "ja": "[天気予報|Tenki yohō]", "baca": "てんきよほう · tenki yohō", "id": "ramalan cuaca" },
+  { "ja": "パーセント", "baca": "ぱーせんと · pāsento", "id": "persen" },
+  { "ja": "[微妙|Bimyō]", "baca": "びみょう · bimyō", "id": "samar, sulit dipastikan" },
+  { "ja": "[空|Sora]", "baca": "そら · sora", "id": "langit" },
+  { "ja": "かかる", "baca": "かかる · kakaru", "id": "memakan (waktu, biaya)" },
+  { "ja": "[逆|Gyaku]に", "baca": "ぎゃくに · gyaku ni", "id": "sebaliknya, malah" },
+  { "ja": "[確実|Kakujitsu]に", "baca": "かくじつに · kakujitsu ni", "id": "dengan pasti" },
+  { "ja": "[春|Haru]", "baca": "はる · haru", "id": "musim semi" },
+  { "ja": "[暖|Atata]かい", "baca": "あたたかい · atatakai", "id": "hangat (cuaca)" },
+  { "ja": "ボタン", "baca": "ぼたん · botan", "id": "tombol" },
+  { "ja": "[押|O]す", "baca": "おす · osu", "id": "menekan, mendorong" },
+  { "ja": "[曲|Ma]がる", "baca": "まがる · magaru", "id": "berbelok" },
+  { "ja": "[駅前|Ekimae]", "baca": "えきまえ · ekimae", "id": "depan stasiun" },
+  { "ja": "～[引|bi]き", "baca": "～びき · biki", "id": "potongan harga" },
+  { "ja": "[軽|Karu]い", "baca": "かるい · karui", "id": "ringan" },
+  { "ja": "モデル", "baca": "もでる · moderu", "id": "model, tipe" },
+  { "ja": "[性能|Seinō]", "baca": "せいのう · seinō", "id": "performa" },
+  { "ja": "ほとんど", "baca": "ほとんど · hotondo", "id": "hampir" },
+  { "ja": "[実物|Jitsubutsu]", "baca": "じつぶつ · jitsubutsu", "id": "barang aslinya" },
+  { "ja": "[絶対|Zettai]", "baca": "ぜったい · zettai", "id": "pasti, mutlak" },
+  { "ja": "[迷|Mayo]う", "baca": "まよう · mayou", "id": "bingung, tersesat" },
+  { "ja": "[予算|Yosan]", "baca": "よさん · yosan", "id": "anggaran" },
+  { "ja": "[選|Era]ぶ", "baca": "えらぶ · erabu", "id": "memilih" },
+  { "ja": "[万|Man]", "baca": "まん · man", "id": "sepuluh ribu" },
+  { "ja": "[円|En]", "baca": "えん · en", "id": "yen" },
+  { "ja": "[諦|Akira]める", "baca": "あきらめる · akirameru", "id": "menyerah, merelakan" },
+  { "ja": "[十分|Jūbun]", "baca": "じゅうぶん · jūbun", "id": "cukup, memadai" },
+  { "ja": "[半額|Hangaku]", "baca": "はんがく · hangaku", "id": "setengah harga" },
+  { "ja": "[お酒|Osake]", "baca": "おさけ · osake", "id": "minuman beralkohol" },
+  { "ja": "～し", "baca": "～し · shi", "id": "lagi pula, dan" },
+  { "ja": "～だって", "baca": "～だって · datte", "id": "katanya (santai)" },
+  { "ja": "[止|To]まる", "baca": "とまる · tomaru", "id": "berhenti" },
+  { "ja": "[一人|Hitori]", "baca": "ひとり · hitori", "id": "sendirian" },
+  { "ja": "パソコン", "baca": "ぱそこん · pasokon", "id": "komputer, laptop" },
+  { "ja": "[良|I]い", "baca": "いい · ii", "id": "bagus, baik" },
+  { "ja": "そうすれば", "baca": "そうすれば · sō sureba", "id": "kalau begitu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk ～たら.",
+   "items": [
+    "[雨|Ame]が[降|fu]る ___",
+    "[終|O]わる ___",
+    "[分|Wa]からない ___",
+    "[高|Taka]い ___",
+    "[学生|Gakusei]だ ___",
+    "[来|Ku]る ___"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk ～ば.",
+   "items": [
+    "[行|I]く ___",
+    "[飲|No]む ___",
+    "[食|Ta]べる ___",
+    "する ___",
+    "[安|Yasu]い ___",
+    "ある ___"
+   ]
+  },
+  {
+   "prompt": "Pilih たら, と, ば, atau なら.",
+   "items": [
+    "[春|Haru]になる ___ [桜|sakura]が[咲|sa]きます。",
+    "[時間|Jikan]があっ ___ [行|i]きます。",
+    "[京都|Kyōto] ___ [秋|aki]がいいですよ。",
+    "[早|Haya]く[出|de]れ ___ [座|suwa]れます。",
+    "このボタンを[押|o]す ___ [開|a]きます。",
+    "[日本|Nihon]に[行|i]く ___ カメラを[買|ka]ったほうがいい。(sebelum berangkat)"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah; tulis “benar” bila sudah benar.",
+   "items": [
+    "[時間|Jikan]があると[来|ki]てください。",
+    "[春|Haru]になると[暖|atata]かくなります。",
+    "[安|Yasu]いと[買|ka]いましょう。",
+    "[右|Migi]に[曲|ma]がると[駅|eki]があります。",
+    "[終|O]わると[教|oshi]えてください。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "土曜日 / 晴れたら / 海 / に / 行かない",
+    "学生証 / を / 見せる / と / 安く / なる",
+    "7時 / の / 電車 / に / 乗れば / 確実 / に / 座れる",
+    "家 / に / 帰ったら / 誰 / も / いなかった",
+    "どう / すれば / いい / です / か"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Kalau ada waktu saya pergi.",
+    "Kalau tidak paham silakan bertanya.",
+    "Kalau musim semi tiba, sakura mekar.",
+    "Kalau besok tidak masalah.",
+    "Sebaiknya saya bagaimana?"
+   ]
+  }
+ ],
+ "answers": [
+  "[降|Fu]ったら — [終|O]わったら — [分|Wa]からなかったら — [高|Taka]かったら — [学生|Gakusei]だったら — [来|Ki]たら",
+  "[行|I]けば — [飲|No]めば — [食|Ta]べれば — すれば — [安|Yasu]ければ — あれば",
+  "と — たら — なら — ば — と — なら",
+  "[時間|Jikan]があったら[来|ki]てください。 — benar — [安|Yasu]かったら[買|ka]いましょう。 — benar — [終|O]わったら[教|oshi]えてください。",
+  "[土曜日|Doyōbi][晴|ha]れたら[海|umi]に[行|i]かない — [学生証|Gakuseishō]を[見|mi]せると[安|yasu]くなる — 7[時|ji]の[電車|densha]に[乗|no]れば[確実|kakujitsu]に[座|suwa]れる — [家|Ie]に[帰|kae]ったら[誰|dare]もいなかった — どうすればいいですか",
+  "[時間|Jikan]があったら[行|i]きます。 — [分|Wa]からなかったら[聞|ki]いてください。 — [春|Haru]になると[桜|sakura]が[咲|sa]きます。 — [明日|Ashita]なら[大丈夫|daijōbu]です。 — どうすればいいですか。"
+ ],
+ "wave": "Buka Unit 8 dan ambil semua kalimat kewajiban di sana. Pasangkan tiap kalimat dengan syarat memakai ～たら: [遅|Oku]れたら[連絡|renraku]しなければなりません. Lalu ubah lima di antaranya jadi ～ば dan rasakan bedanya. Pola pengandaian tinggal jauh lebih baik kalau dilatih di atas kalimat yang sudah kamu kuasai."
+}

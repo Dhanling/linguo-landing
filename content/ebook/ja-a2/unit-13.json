@@ -1,0 +1,326 @@
+{
+ "title": "Sopan santun di tempat kerja",
+ "title_target": "お待ちしております — Omachi shite orimasu",
+ "goal": "Mengenali dan memakai dasar 敬語: bentuk hormat untuk perbuatan orang lain, bentuk merendah untuk perbuatanmu sendiri, dan awalan お・ご yang menyertainya.",
+ "bekal": [
+  "membedakan [尊敬語|sonkeigo], [謙譲語|kenjōgo], dan [丁寧語|teineigo]",
+  "membentuk お～になる dan お～する dari kata kerja biasa",
+  "memakai sepuluh bentuk keigo menyimpang yang paling sering",
+  "menjawab telepon kantor dengan susunan yang baku",
+  "memilih kapan keigo justru tidak perlu dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Menerima tamu di kantor",
+   "intro": "Ani menerima tamu dari perusahaan lain. Perhatikan dua arah keigo: meninggikan tamu, merendahkan diri sendiri dan rekan sekantor.",
+   "lines": [
+    { "speaker": "[客|Kyaku]:", "text": "[失礼|Shitsurei]します。[山川商事|Yamakawa Shōji]の[中村|Nakamura]と[申|mō]します。", "id": "Permisi. Saya Nakamura dari Yamakawa Shoji.", "literal": "tidak-sopan-melakukan. Yamakawa-Shoji — punya — Nakamura — begitu — menyebut-diri." },
+    { "speaker": "アニ:", "text": "いらっしゃいませ。[お待|Oma]ちしておりました。", "id": "Selamat datang. Kami sudah menunggu.", "literal": "datang-silakan. menunggu-merendah-sedang-dulu." },
+    { "speaker": "[客|Kyaku]:", "text": "[佐藤|Satō][様|sama]はいらっしゃいますか。", "id": "Apakah Bapak Sato ada?", "literal": "Sato-tuan — mengenai — ada-hormat — kah." },
+    { "speaker": "アニ:", "text": "[佐藤|Satō]は[只今|tadaima][会議|kaigi][中|chū]でございます。5[分|fun]ほどお[待|ma]ちいただけますでしょうか。", "id": "Sato sedang rapat. Bisakah Anda menunggu sekitar 5 menit?", "literal": "Sato — mengenai — sekarang — rapat — tengah — adalah-sopan. 5 — menit — kira-kira — menunggu-menerima-bisa — mungkin — kah." },
+    { "speaker": "[客|Kyaku]:", "text": "はい、[構|kama]いません。", "id": "Ya, tidak masalah.", "literal": "ya, peduli-tidak." },
+    { "speaker": "アニ:", "text": "こちらへどうぞ。お[飲|no]み[物|mono]は[何|nani]になさいますか。", "id": "Silakan ke sini. Minumnya Anda pilih apa?", "literal": "sini — ke — silakan. minum-barang — mengenai — apa — pada — melakukan-hormat — kah." },
+    { "speaker": "[客|Kyaku]:", "text": "お[構|kama]いなく。", "id": "Tidak usah repot-repot.", "literal": "peduli-tanpa." },
+    { "speaker": "アニ:", "text": "[お茶|Ocha]をお[持|mo]ちします。[少|shō][々|shō]お[待|ma]ちください。", "id": "Saya bawakan teh. Mohon tunggu sebentar.", "literal": "teh — akan — membawa-merendah. sedikit-sedikit — menunggu — silakan." },
+    { "speaker": "[客|Kyaku]:", "text": "ありがとうございます。[恐|Oso]れ[入|i]ります。", "id": "Terima kasih. Merepotkan Anda.", "literal": "terima-kasih. takut-masuk." },
+    { "speaker": "アニ:", "text": "[佐藤|Satō]が[参|mai]りましたら、すぐにご[案内|annai]いたします。", "id": "Begitu Sato datang, saya akan segera mengantar Anda.", "literal": "Sato — yang — datang-merendah-kalau, segera — pada — pengantaran — melakukan-merendah." },
+    { "speaker": "[客|Kyaku]:", "text": "よろしくお[願|nega]いいたします。", "id": "Mohon bantuannya.", "literal": "baik — mohon-melakukan-merendah." },
+    { "speaker": "アニ:", "text": "[本日|Honjitsu]はお[越|ko]しいただき、ありがとうございます。", "id": "Terima kasih sudah datang hari ini.", "literal": "hari-ini — mengenai — datang-menerima-dan, terima-kasih." }
+   ],
+   "notes": [
+    "**Keigo bekerja dua arah sekaligus.** Perbuatan lawan bicara **dinaikkan** (いらっしゃいますか), perbuatanmu sendiri **direndahkan** (お[待|ma]ちしておりました). Tidak ada bentuk netral di antaranya.",
+    "**Rekan sekantor direndahkan di depan tamu**, meski dia atasanmu. [佐藤|Satō]**は** — tanpa さん — dan [参|mai]りました, bukan いらっしゃいました. Dari sudut pandang tamu, seluruh kantormu adalah satu kelompok “dalam”.",
+    "**[申|Mō]します adalah bentuk merendah dari [言|i]う** yang dipakai saat menyebut nama sendiri. [中村|Nakamura]と[申|mō]します adalah cara baku memperkenalkan diri di situasi resmi.",
+    "**でございます = です versi paling sopan.** Dipakai oleh pelayan, resepsionis, dan siapa pun yang melayani. Kamu akan sering mendengarnya, dan memakainya sendiri hanya perlu di pekerjaan pelayanan.",
+    "**お[構|kama]いなく** = “tidak usah repot-repot”. Jawaban baku ketika ditawari sesuatu. Tuan rumah biasanya tetap menyajikan; penolakan ini bagian dari tata krama, bukan penolakan sungguhan.",
+    "**[恐|Oso]れ[入|i]ります** dipakai untuk dua hal sekaligus: berterima kasih dan minta maaf karena merepotkan. Sangat berguna di situasi resmi karena ia menutup keduanya.",
+    "**～いただけますでしょうか** adalah bentuk permintaan paling sopan yang lazim — tiga lapis pelunak: いただく (merendah) + bentuk potensial + でしょうか. Panjangnya memang disengaja."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga lapis keigo",
+     "body": [
+      "Bahasa Jepang membagi kesopanan jadi tiga sistem yang berdiri sendiri. Kamu sudah memakai yang ketiga sejak halaman pertama modul pemula."
+     ],
+     "table": {
+      "head": ["Sistem", "Untuk siapa", "Contoh", "Arti"],
+      "rows": [
+       ["[尊敬語|sonkeigo] hormat", "perbuatan ORANG LAIN", "[先生|Sensei]がいらっしゃいます。", "Guru datang."],
+       ["", "", "お[読|yo]みになりますか。", "Apakah Anda membacanya?"],
+       ["[謙譲語|kenjōgo] merendah", "perbuatan SAYA", "[私|Watashi]が[参|mai]ります。", "Saya yang datang."],
+       ["", "", "お[持|mo]ちします。", "Saya bawakan."],
+       ["[丁寧語|teineigo] sopan", "seluruh kalimat", "[行|I]きます。/ です。", "Bentuk ます dan です."]
+      ]
+     },
+     "after": [
+      "**Kesalahan paling berbahaya adalah memakai bentuk hormat untuk diri sendiri.** [私|Watashi]がいらっしゃいます ⚠️ terdengar seperti kamu meninggikan dirimu — kesalahan yang langsung terasa. Untuk diri sendiri, selalu merendah.",
+      "**Bentuk beraturan:** hormat = **お + batang ます + になる**; merendah = **お + batang ます + する**. [書|Ka]く → お[書|ka]きになる (hormat) / お[書|ka]きする (merendah). Untuk kata kerja ～する, awalannya ご: ご[説明|setsumei]になる / ご[説明|setsumei]する.",
+      "**Kata kerja yang paling sering justru menyimpang**, dan itulah yang perlu kamu hafal — daftarnya di kotak berikutnya."
+     ]
+    },
+    {
+     "title": "Sepuluh bentuk menyimpang yang wajib dikenali",
+     "body": [
+      "Kata kerja yang paling sering dipakai punya bentuk keigo sendiri yang tidak mengikuti aturan. Sepuluh baris ini menutup sebagian besar percakapan resmi."
+     ],
+     "table": {
+      "head": ["Biasa", "Hormat (orang lain)", "Merendah (saya)", "Arti"],
+      "rows": [
+       ["[行|i]く / [来|ku]る / いる", "いらっしゃる", "[参|mai]る / おる", "pergi / datang / ada"],
+       ["する", "なさる", "いたす", "melakukan"],
+       ["[言|i]う", "おっしゃる", "[申|mō]す / [申|mō]し[上|a]げる", "berkata"],
+       ["[見|mi]る", "ご[覧|ran]になる", "[拝見|haiken]する", "melihat"],
+       ["[食|ta]べる / [飲|no]む", "[召|me]し[上|a]がる", "いただく", "makan / minum"],
+       ["[知|shi]っている", "ご[存|zon]じだ", "[存|zon]じております", "tahu"],
+       ["[聞|ki]く", "お[聞|ki]きになる", "[伺|ukaga]う", "bertanya / mendengar"],
+       ["[会|a]う", "お[会|a]いになる", "お[目|me]にかかる", "bertemu"],
+       ["あげる", "くださる", "さしあげる", "memberi"],
+       ["もらう", "—", "いただく", "menerima"]
+      ]
+     },
+     "after": [
+      "**いらっしゃる menutup tiga kata kerja sekaligus** ([行|i]く、[来|ku]る、いる), dan itu membuatnya bentuk keigo yang paling sering kamu dengar. Bentuk ます-nya menyimpang: いらっしゃ**います** (bukan いらっしゃります ⚠️). Begitu juga なさいます、おっしゃいます、くださいます.",
+      "**Kalau kamu hanya sempat menghafal tiga, hafalkan:** いらっしゃいます (Anda datang/ada)、[申|mō]します (saya menyebut)、いたします (saya melakukan). Ketiganya muncul di hampir setiap percakapan resmi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menerima telepon",
+   "intro": "Ani menjawab telepon kantor. Susunan percakapan telepon Jepang hampir seluruhnya baku — hafalkan kerangkanya.",
+   "lines": [
+    { "speaker": "アニ:", "text": "はい、[みどり社|Midori-sha]でございます。", "id": "Ya, dengan Midori-sha.", "literal": "ya, Midori-perusahaan — adalah-sopan." },
+    { "speaker": "[相手|Aite]:", "text": "[山川商事|Yamakawa Shōji]の[中村|Nakamura]と[申|mō]しますが、[佐藤|Satō][様|sama]はいらっしゃいますか。", "id": "Saya Nakamura dari Yamakawa Shoji, apakah Bapak Sato ada?", "literal": "Yamakawa-Shoji — punya — Nakamura — begitu — menyebut-diri-tapi, Sato-tuan — mengenai — ada-hormat — kah." },
+    { "speaker": "アニ:", "text": "いつもお[世話|sewa]になっております。[申|Mō]し[訳|wake]ございません、[佐藤|Satō]は[外出|gaishutsu]しております。", "id": "Terima kasih atas kerja samanya selama ini. Mohon maaf, Sato sedang keluar.", "literal": "selalu — bantuan — pada — menjadi-merendah-sedang. mohon-maaf-tidak-ada, Sato — mengenai — keluar-melakukan-merendah-sedang." },
+    { "speaker": "[相手|Aite]:", "text": "[何時|Nanji]ごろお[戻|modo]りになりますか。", "id": "Kira-kira jam berapa beliau kembali?", "literal": "jam-berapa — kira-kira — kembali-hormat-menjadi — kah." },
+    { "speaker": "アニ:", "text": "3[時|ji]ごろ[戻|modo]る[予定|yotei]でございます。", "id": "Rencananya kembali sekitar jam 3.", "literal": "3 — jam — kira-kira — kembali — rencana — adalah-sopan." },
+    { "speaker": "[相手|Aite]:", "text": "でしたら、また[後|nochi]ほどお[電話|denwa]いたします。", "id": "Kalau begitu, saya akan menelepon lagi nanti.", "literal": "kalau-begitu, lagi — kemudian — kira-kira — telepon — melakukan-merendah." },
+    { "speaker": "アニ:", "text": "[承知|Shōchi]いたしました。お[電話|denwa]があったこと、[伝|tsuta]えておきます。", "id": "Baik, saya mengerti. Saya akan sampaikan bahwa ada telepon dari Anda.", "literal": "paham — melakukan-merendah-sudah. telepon — yang — ada-sudah — hal, menyampaikan-menyiapkan." },
+    { "speaker": "[相手|Aite]:", "text": "[恐|Oso]れ[入|i]ります。よろしくお[願|nega]いいたします。", "id": "Merepotkan Anda. Mohon bantuannya.", "literal": "takut-masuk. baik — mohon-melakukan-merendah." },
+    { "speaker": "アニ:", "text": "[失礼|Shitsurei]ですが、お[名前|namae]をもう[一度|ichido][伺|ukaga]ってもよろしいでしょうか。", "id": "Maaf, boleh saya tanyakan nama Anda sekali lagi?", "literal": "tidak-sopan — adalah-tapi, nama — akan — sekali-lagi — bertanya-merendah-pun — baik — mungkin — kah." },
+    { "speaker": "[相手|Aite]:", "text": "[山川商事|Yamakawa Shōji]の[中村|Nakamura]です。[中|naka]に[村|mura]と[書|ka]きます。", "id": "Nakamura dari Yamakawa Shoji. Ditulis dengan naka dan mura.", "literal": "Yamakawa-Shoji — punya — Nakamura — adalah. tengah — pada — desa — begitu — menulis." },
+    { "speaker": "アニ:", "text": "[山川商事|Yamakawa Shōji]の[中村|Nakamura][様|sama]ですね。[確|tashi]かに[承|uketamawa]りました。", "id": "Bapak Nakamura dari Yamakawa Shoji, ya. Sudah saya catat dengan pasti.", "literal": "Yamakawa-Shoji — punya — Nakamura-tuan — adalah — ya. pasti — pada — menerima-merendah-sudah." },
+    { "speaker": "[相手|Aite]:", "text": "[失礼|Shitsurei]いたします。", "id": "Permisi, saya tutup.", "literal": "tidak-sopan — melakukan-merendah." }
+   ],
+   "notes": [
+    "**いつもお[世話|sewa]になっております** adalah kalimat pembuka wajib di telepon bisnis Jepang, bahkan kepada orang yang belum pernah kamu temui. Ia berarti “terima kasih atas kerja sama selama ini” dan diucapkan hampir otomatis.",
+    "**おります adalah bentuk merendah dari います.** [外出|Gaishutsu]して**おります** = (dia dari kantorku) sedang keluar. Perhatikan bahwa Sato direndahkan, karena di telepon ini ia bagian dari kelompok “dalam”.",
+    "**[申|Mō]し[訳|wake]ございません** adalah bentuk paling sopan dari すみません. Tangga lengkapnya: ごめん → すみません → [申|mō]し[訳|wake]ありません → [申|mō]し[訳|wake]ございません.",
+    "**[伺|Ukaga]う menutup dua arti: bertanya dan mengunjungi.** お[名前|namae]を[伺|ukaga]う (menanyakan nama)、[明日|ashita][伺|ukaga]います (besok saya berkunjung). Keduanya bentuk merendah.",
+    "**[中|naka]に[村|mura]と[書|ka]きます** — cara orang Jepang mengeja namanya lewat telepon, dengan menyebut kanji penyusunnya. Kamu akan sering mendengar ini, dan boleh memintanya: [どんな|Donna][漢字|kanji]でしょうか。",
+    "**[承知|Shōchi]いたしました** = “saya mengerti” versi bisnis. Pengganti [分|wa]かりました yang terlalu ringan untuk situasi resmi. Di percakapan biasa, かしこまりました dipakai di toko dan restoran.",
+    "**[失礼|Shitsurei]いたします** menutup telepon dan juga dipakai saat masuk atau keluar ruangan. Harfiahnya “saya melakukan ketidaksopanan”, dan itulah cara Jepang meminta izin."
+   ],
+   "grammars": [
+    {
+     "title": "Awalan お dan ご",
+     "body": [
+      "Dua awalan ini menempel pada kata benda untuk menaikkan kesopanannya. Aturannya bertumpu pada asal kata, bukan pada artinya."
+     ],
+     "table": {
+      "head": ["Awalan", "Untuk kata", "Contoh"],
+      "rows": [
+       ["お", "kata asli Jepang (kun'yomi)", "お[名前|namae] · お[金|kane] · お[水|mizu] · お[電話|denwa] ⚠️"],
+       ["ご", "kata serapan Cina (on'yomi)", "ご[家族|kazoku] · ご[住所|jūsho] · ご[連絡|renraku] · ご[説明|setsumei]"],
+       ["tanpa", "kata serapan Barat", "コーヒー · メール ⚠️ (bukan おコーヒー)"],
+       ["melekat tetap", "sudah menyatu dengan katanya", "お[茶|cha] · ご[飯|han] · お[金|kane] · お[菓子|kashi]"]
+      ]
+     },
+     "after": [
+      "**Ada perkecualian yang perlu dihafal:** お[電話|denwa]、お[時間|jikan]、お[食事|shokuji]、お[返事|henji] memakai お meski kata serapan Cina. Tidak ada penjelasan yang rapi; keempatnya memang begitu.",
+      "**Jangan memasang お pada barangmu sendiri.** [私|Watashi]のお[名前|namae] ⚠️ salah — awalan itu menaikkan milik orang lain. Untuk dirimu: [私|watashi]の[名前|namae].",
+      "**Sebagian kata sudah menyatu dan tidak bisa dilepas:** ご[飯|han] (nasi) tanpa ご terdengar aneh; お[茶|cha] tanpa お bukan lagi teh yang dimaksud. Perlakukan sebagai satu kata."
+     ]
+    },
+    {
+     "title": "Kapan keigo justru tidak dipakai",
+     "body": [
+      "Berlebihan memakai keigo membuat jarak, dan di sebagian situasi justru terasa dingin atau menyindir. Batasnya perlu kamu tahu."
+     ],
+     "table": {
+      "head": ["Situasi", "Bentuk yang tepat", "Kenapa"],
+      "rows": [
+       ["Kepada teman seangkatan", "bentuk biasa", "Keigo menciptakan jarak."],
+       ["Kepada keluarga sendiri", "bentuk biasa", "Bahkan kepada orang tua."],
+       ["Menyebut rekan sekantor di depan tamu", "merendah, tanpa さん", "Kantormu adalah kelompok dalam."],
+       ["Kepada atasan sehari-hari", "です・ます", "Keigo penuh terasa berlebihan di obrolan biasa."],
+       ["Kepada pelanggan, tamu, dosen", "keigo penuh", "Situasi resmi."],
+       ["Menulis email kerja", "keigo penuh", "Tulisan selalu lebih sopan."]
+      ]
+     },
+     "after": [
+      "**Kalau kamu baru mulai, [丁寧語|teineigo] (です・ます) sudah menutup 90 persen kebutuhan.** Tidak ada orang Jepang yang tersinggung karena kamu memakai です・ます; yang menimbulkan masalah justru bentuk biasa di tempat yang salah.",
+      "**Yang paling penting dari seluruh unit ini adalah MENGENALI, bukan memakai.** Kamu akan mendengar keigo dari petugas, pelayan, dan pengumuman kereta setiap hari. Memahaminya jauh lebih mendesak daripada memproduksinya.",
+      "**Bentuk keigo yang berlebihan juga ada dan dianggap salah:** お[読|yo]みになられる ⚠️ menumpuk dua tanda hormat sekaligus. Satu lapis sudah cukup."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat baku yang akan kamu dengar setiap hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalimat berikut diucapkan kepadamu, bukan olehmu. Mengenalinya adalah hasil paling berguna dari unit ini — dan sebagian besar bisa dijawab dengan satu kata."
+    },
+    {
+     "type": "tabel",
+     "head": ["Yang kamu dengar", "Arti", "Di mana"],
+     "rows": [
+      ["いらっしゃいませ。", "Selamat datang.", "Semua toko."],
+      ["[少|Shō][々|shō]お[待|ma]ちください。", "Mohon tunggu sebentar.", "Kasir, kantor."],
+      ["かしこまりました。", "Baik, saya mengerti.", "Restoran, toko."],
+      ["[こちら|Kochira]でよろしいでしょうか。", "Apakah yang ini sudah sesuai?", "Kasir."],
+      ["お[会計|kaikei]は[以上|ijō]でよろしいですか。", "Apakah pembayarannya sudah semua?", "Kasir."],
+      ["[袋|Fukuro]はご[利用|riyō]になりますか。", "Apakah Anda memerlukan kantong?", "Minimarket."],
+      ["[温|Atata]めますか。", "Mau dihangatkan?", "Minimarket."],
+      ["[何名様|Nanmei-sama]でしょうか。", "Berapa orang?", "Restoran."],
+      ["ご[注文|chūmon]はお[決|ki]まりですか。", "Sudah menentukan pesanan?", "Restoran."],
+      ["[恐|Oso]れ[入|i]りますが…", "Mohon maaf, tapi…", "Sebelum permintaan."],
+      ["[少々|Shōshō]お[時間|jikan]をいただけますか。", "Boleh minta waktu sebentar?", "Kantor."],
+      ["お[足元|ashimoto]にお[気|ki]をつけください。", "Hati-hati dengan langkah Anda.", "Kereta, tangga."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Jawaban singkat yang selalu aman",
+     "items": [
+      "**はい、お[願|nega]いします。** — “Ya, tolong.” Menjawab semua tawaran.",
+      "**[大丈夫|Daijōbu]です。** — “Tidak usah.” Menolak semua tawaran dengan halus.",
+      "**すみません、もう[一度|ichido]お[願|nega]いします。** — “Maaf, sekali lagi.” Kalau kamu tidak menangkap.",
+      "**[結構|Kekkō]です。** — “Cukup, tidak perlu.” Sopan, tapi hati-hati: nadanya bisa terdengar dingin kalau terlalu datar."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semua kalimat pelayanan berakhir dengan **でしょうか** atau **ますか**, dan hampir semua bisa dijawab dengan はい atau [大丈夫|daijōbu]です. Kamu tidak perlu menguasai keigo untuk bertahan di Jepang; kamu perlu mengenalinya dan punya dua jawaban siap pakai."
+    },
+    {
+     "type": "tabel",
+     "head": ["Kerangka telepon kantor", "Kalimat"],
+     "rows": [
+      ["Menjawab", "はい、… でございます。"],
+      ["Salam pembuka", "いつもお[世話|sewa]になっております。"],
+      ["Kalau orangnya tidak ada", "[申|Mō]し[訳|wake]ございません、… は[外出|gaishutsu]しております。"],
+      ["Menawarkan pesan", "よろしければご[伝言|dengon]を[承|uketamawa]ります。"],
+      ["Memastikan nama", "お[名前|namae]をもう[一度|ichido][伺|ukaga]ってもよろしいでしょうか。"],
+      ["Menutup", "[失礼|Shitsurei]いたします。"]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ja": "[失礼|Shitsurei]する", "baca": "しつれいする · shitsurei suru", "id": "permisi, mohon maaf" },
+  { "ja": "[申|Mō]す", "baca": "もうす · mōsu", "id": "berkata (merendah)" },
+  { "ja": "いらっしゃる", "baca": "いらっしゃる · irassharu", "id": "datang, ada (hormat)" },
+  { "ja": "[参|Mai]る", "baca": "まいる · mairu", "id": "datang, pergi (merendah)" },
+  { "ja": "おる", "baca": "おる · oru", "id": "ada (merendah)" },
+  { "ja": "なさる", "baca": "なさる · nasaru", "id": "melakukan (hormat)" },
+  { "ja": "いたす", "baca": "いたす · itasu", "id": "melakukan (merendah)" },
+  { "ja": "おっしゃる", "baca": "おっしゃる · ossharu", "id": "berkata (hormat)" },
+  { "ja": "ご[覧|ran]になる", "baca": "ごらんになる · goran ni naru", "id": "melihat (hormat)" },
+  { "ja": "[拝見|Haiken]する", "baca": "はいけんする · haiken suru", "id": "melihat (merendah)" },
+  { "ja": "[召|Me]し[上|a]がる", "baca": "めしあがる · meshiagaru", "id": "makan, minum (hormat)" },
+  { "ja": "[伺|Ukaga]う", "baca": "うかがう · ukagau", "id": "bertanya, berkunjung (merendah)" },
+  { "ja": "[承|Uketamawa]る", "baca": "うけたまわる · uketamawaru", "id": "menerima, mendengar (merendah)" },
+  { "ja": "[承知|Shōchi]いたす", "baca": "しょうちいたす · shōchi itasu", "id": "mengerti (bisnis)" },
+  { "ja": "かしこまりました", "baca": "かしこまりました · kashikomarimashita", "id": "baik, siap (pelayanan)" },
+  { "ja": "でございます", "baca": "でございます · de gozaimasu", "id": "adalah (paling sopan)" },
+  { "ja": "[只今|Tadaima]", "baca": "ただいま · tadaima", "id": "sekarang, baru saja" },
+  { "ja": "[構|Kama]う", "baca": "かまう · kamau", "id": "peduli, mempermasalahkan" },
+  { "ja": "[案内|Annai]する", "baca": "あんないする · annai suru", "id": "mengantar, memandu" },
+  { "ja": "[本日|Honjitsu]", "baca": "ほんじつ · honjitsu", "id": "hari ini (resmi)" },
+  { "ja": "お[越|ko]しいただく", "baca": "おこしいただく · okoshi itadaku", "id": "berkenan datang" },
+  { "ja": "[外出|Gaishutsu]する", "baca": "がいしゅつする · gaishutsu suru", "id": "keluar (dari kantor)" },
+  { "ja": "[後|Nochi]ほど", "baca": "のちほど · nochihodo", "id": "nanti (resmi)" },
+  { "ja": "[相手|Aite]", "baca": "あいて · aite", "id": "lawan bicara" },
+  { "ja": "[客|Kyaku]", "baca": "きゃく · kyaku", "id": "tamu, pelanggan" },
+  { "ja": "[会計|Kaikei]", "baca": "かいけい · kaikei", "id": "pembayaran" },
+  { "ja": "[袋|Fukuro]", "baca": "ふくろ · fukuro", "id": "kantong" },
+  { "ja": "[利用|Riyō]する", "baca": "りようする · riyō suru", "id": "memakai, memanfaatkan" },
+  { "ja": "[注文|Chūmon]", "baca": "ちゅうもん · chūmon", "id": "pesanan" },
+  { "ja": "[何名様|Nanmei-sama]", "baca": "なんめいさま · nanmei-sama", "id": "berapa orang (sopan)" },
+  { "ja": "[足元|Ashimoto]", "baca": "あしもと · ashimoto", "id": "sekitar kaki, langkah" },
+  { "ja": "[結構|Kekkō]です", "baca": "けっこうです · kekkō desu", "id": "cukup, tidak perlu" },
+  { "ja": "[住所|Jūsho]", "baca": "じゅうしょ · jūsho", "id": "alamat" },
+  { "ja": "[返事|Henji]", "baca": "へんじ · henji", "id": "jawaban, balasan" },
+  { "ja": "[存|Zon]じる", "baca": "ぞんじる · zonjiru", "id": "tahu (merendah)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis bentuk hormat ([尊敬語|sonkeigo]) dari kata kerja berikut.",
+   "items": [
+    "[行|I]く ___",
+    "する ___",
+    "[言|I]う ___",
+    "[見|Mi]る ___",
+    "[食|Ta]べる ___",
+    "[知|Shi]っている ___"
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk merendah ([謙譲語|kenjōgo]) dari kata kerja berikut.",
+   "items": [
+    "[行|I]く ___",
+    "する ___",
+    "[言|I]う ___",
+    "[見|Mi]る ___",
+    "[聞|Ki]く ___",
+    "もらう ___"
+   ]
+  },
+  {
+   "prompt": "Pilih お atau ご.",
+   "items": [
+    "___ [名前|namae]",
+    "___ [家族|kazoku]",
+    "___ [住所|jūsho]",
+    "___ [金|kane]",
+    "___ [連絡|renraku]",
+    "___ [電話|denwa]"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah; tulis “benar” bila sudah benar.",
+   "items": [
+    "[私|Watashi]がいらっしゃいます。",
+    "[先生|Sensei]がおっしゃいました。",
+    "[私|Watashi]のお[名前|namae]は[アニ|Ani]です。",
+    "[佐藤|Satō]さんは[会議|kaigi][中|chū]でございます。(di depan tamu luar)",
+    "お[読|yo]みになられますか。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "山川商事 / の / 中村 / と / 申します",
+    "佐藤 / は / 只今 / 会議中 / で / ございます",
+    "少々 / お / 待ち / ください",
+    "お名前 / を / もう / 一度 / 伺って / も / よろしい / でしょう / か",
+    "いつも / お / 世話 / に / なって / おります"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang. Tulis dengan kana atau rōmaji.",
+   "items": [
+    "Apakah Bapak Sato ada?",
+    "Saya Nakamura dari Yamakawa Shoji.",
+    "Mohon tunggu sebentar.",
+    "Mohon maaf, dia sedang keluar.",
+    "Saya akan menyampaikannya."
+   ]
+  }
+ ],
+ "answers": [
+  "いらっしゃる — なさる — おっしゃる — ご[覧|ran]になる — [召|Me]し[上|a]がる — ご[存|zon]じだ",
+  "[参|Mai]る — いたす — [申|Mō]す — [拝見|Haiken]する — [伺|Ukaga]う — いただく",
+  "お — ご — ご — お — ご — お",
+  "[私|Watashi]が[参|mai]ります。 — benar — [私|Watashi]の[名前|namae]は[アニ|Ani]です。 — [佐藤|Satō]は[会議|kaigi][中|chū]でございます。 — お[読|yo]みになりますか。",
+  "[山川商事|Yamakawa Shōji]の[中村|Nakamura]と[申|mō]します — [佐藤|Satō]は[只今|tadaima][会議|kaigi][中|chū]でございます — [少々|Shōshō]お[待|ma]ちください — お[名前|namae]をもう[一度|ichido][伺|ukaga]ってもよろしいでしょうか — いつもお[世話|sewa]になっております",
+  "[佐藤|Satō][様|sama]はいらっしゃいますか。 — [山川商事|Yamakawa Shōji]の[中村|Nakamura]と[申|mō]します。 — [少々|Shōshō]お[待|ma]ちください。 — [申|Mō]し[訳|wake]ございません、[外出|gaishutsu]しております。 — [伝|Tsuta]えておきます。"
+ ],
+ "wave": "Buka Unit 9 dan lihat lagi tangga permintaannya. Sekarang kamu punya anak tangga paling atas: ～ていただけますでしょうか. Lalu buka Unit 1 dan bandingkan ujung yang paling santai dengan ujung yang paling sopan dari modul ini — [元気|Genki]だった？ dan お[元気|genki]でいらっしゃいますか。 Dua kalimat itu menandai batas atas dan batas bawah bahasa Jepang yang kamu kuasai sekarang."
+}
