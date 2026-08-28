@@ -1,0 +1,573 @@
+{
+  "title": "Internetnya mati tiga minggu",
+  "title_target": "Ma connexion est coupée depuis trois semaines",
+  "goal": "Mengurus keluhan dari awal sampai selesai: menelepon layanan pelanggan, menulis surat keluhan resmi, dan bertahan menghadapi bahasa administrasi Prancis.",
+  "bekal": [
+    "menjelaskan masalah dengan urutan yang jelas",
+    "menyusun surat keluhan resmi lengkap dengan rumus bakunya",
+    "memakai kata kerja administrasi: *constater*, *signaler*, *joindre*",
+    "mengenali kosakata berkas dan bukti yang selalu diminta"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Service client, bonjour",
+      "intro": "Dewi menelepon operator internet untuk kelima kalinya. Perhatikan bahwa ia tetap memakai bentuk sopan dari unit 8 sepanjang percakapan — dan bahwa justru itulah yang membuat keluhannya efektif.",
+      "lines": [
+        {
+          "speaker": "L'opérateur :",
+          "text": "Service client, bonjour. Que puis-je faire pour vous ?",
+          "id": "Layanan pelanggan, selamat siang. Ada yang bisa saya bantu?",
+          "literal": "layanan klien, selamat-hari. apa bisa-saya membuat untuk Anda?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Bonjour. Ma connexion est coupée depuis le 3, malgré trois signalements.",
+          "id": "Selamat siang. Koneksi saya mati sejak tanggal 3, padahal sudah tiga kali dilaporkan.",
+          "literal": "selamat-hari. kepunyaanku koneksi adalah terputus sejak itu 3, meskipun tiga pelaporan."
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Je suis désolé. Pourriez-vous me communiquer votre numéro de dossier ?",
+          "id": "Mohon maaf. Bisa sebutkan nomor tiket Anda?",
+          "literal": "saya adalah menyesal. akan-bisakah-Anda kepadaku menyampaikan kepunyaan-Anda nomor dari berkas?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "J'en ai trois, justement. C'est bien le problème.",
+          "id": "Justru saya punya tiga. Itu masalahnya.",
+          "literal": "saya darinya punya tiga, justru. itu-adalah baik itu masalah."
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Je vois. Un technicien devait passer la semaine dernière, semble-t-il.",
+          "id": "Saya lihat. Sepertinya teknisi seharusnya datang minggu lalu.",
+          "literal": "saya melihat. satu teknisi harus melewati itu minggu terakhir, tampak-dia."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Il n'est jamais venu. J'ai pris une journée de congé pour rien.",
+          "id": "Tidak pernah datang. Saya ambil cuti sehari sia-sia.",
+          "literal": "dia tidak-adalah tak-pernah datang. saya punya diambil satu hari dari cuti untuk tak-apa-apa."
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Je comprends votre agacement. Je vais programmer une nouvelle intervention.",
+          "id": "Saya paham kekesalan Anda. Saya akan jadwalkan kunjungan baru.",
+          "literal": "saya memahami kepunyaan-Anda kejengkelan. saya pergi memprogram satu baru intervensi."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Avant de programmer, j'aimerais savoir ce qui a échoué les trois fois.",
+          "id": "Sebelum dijadwalkan, saya ingin tahu apa yang gagal tiga kali itu.",
+          "literal": "sebelum dari memprogram, saya akan-menyukai mengetahui itu-yang yang punya digagalkan itu tiga kali."
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Le dossier indique « client absent ». C'est ce qui est noté.",
+          "id": "Di berkas tertulis \"pelanggan tidak ada di tempat\". Itu yang tercatat.",
+          "literal": "itu berkas menunjukkan \"klien tak-hadir\". itu-adalah itu-yang yang adalah dicatat."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "J'étais chez moi toute la journée. Personne n'a sonné.",
+          "id": "Saya di rumah seharian. Tidak ada yang membunyikan bel.",
+          "literal": "saya adalah di-rumah aku seluruh itu hari. tak-seorang-pun tidak-punya dibunyikan."
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Dans ce cas, je note une réclamation. Vous serez recontactée sous 48 heures.",
+          "id": "Kalau begitu, saya catat sebagai keluhan. Anda akan dihubungi dalam 48 jam.",
+          "literal": "dalam ini kasus, saya mencatat satu keluhan. Anda akan-adalah dihubungi-ulang di-bawah 48 jam."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Pourriez-vous me confirmer cela par écrit, s'il vous plaît ?",
+          "id": "Bisakah dikonfirmasi tertulis?",
+          "literal": "akan-bisakah-Anda kepadaku memastikan itu oleh tertulis, jika kepada-Anda itu-berkenan?"
+        },
+        {
+          "speaker": "L'opérateur :",
+          "text": "Bien sûr. Vous recevrez un courriel récapitulatif dans l'heure.",
+          "id": "Tentu. Anda akan menerima e-mail ringkasan dalam sejam.",
+          "literal": "baik yakin. Anda akan-menerima satu surel ringkasan dalam itu-jam."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Merci. Et je demanderai un geste commercial pour les trois semaines perdues.",
+          "id": "Terima kasih. Dan saya akan minta kompensasi untuk tiga minggu yang hilang.",
+          "literal": "terima-kasih. dan saya akan-meminta satu isyarat dagang untuk itu tiga minggu hilang."
+        }
+      ],
+      "notes": [
+        "***Que puis-je faire pour vous ?*** memakai bentuk terbalik *puis-je* yang khusus — *je peux* menjadi *puis-je* ketika dibalik, tak pernah *peux-je*. Ini satu-satunya kata kerja yang berubah bentuk demi pembalikan.",
+        "**Perhatikan bahwa Dewi tidak pernah meninggikan suara, tapi tetap tegas.** Kekuatan keluhan Prancis terletak pada **ketepatan** — tanggal, jumlah, nomor berkas — bukan pada nada. Menyebut \"sejak tanggal 3\" dan \"tiga pelaporan\" jauh lebih efektif daripada mengatakan \"sudah lama sekali\".",
+        "***Un geste commercial*** adalah istilah baku untuk kompensasi atau potongan yang diberikan perusahaan sebagai permintaan maaf. Memintanya dengan nama itu langsung menandai bahwa kamu tahu caranya.",
+        "***Sous 48 heures* berarti \"dalam waktu 48 jam\"** — bahasa administrasi memakai *sous*, bukan *dans*. Kembarannya: *sous huitaine* (dalam delapan hari), *sous quinzaine*.",
+        "***Le courriel*** adalah kata resmi untuk *e-mail*, dipakai di administrasi Prancis dan wajib di Québec. Dalam percakapan sehari-hari, orang tetap berkata *un mail* atau *un e-mail*.",
+        "***Semble-t-il* dan *paraît-il*** disisipkan di ujung kalimat untuk menandai bahwa yang dikatakan berasal dari catatan, bukan dari pengetahuan langsung. Petugas memakainya untuk menjaga jarak dari kesalahan perusahaannya sendiri.",
+        "***Vous serez recontactée*** adalah pasif dari unit 13 dalam futur, dan participe-nya cocok dengan Dewi (feminin). Bahasa layanan pelanggan hampir seluruhnya pasif — itu cara menghindari menyebut siapa yang bertanggung jawab.",
+        "***Avant de programmer, j'aimerais savoir…*** memakai *avant de* + infinitif karena pelakunya sama. Kalau pelakunya berbeda, yang dipakai *avant que* + subjonctif — aturan unit 11 yang muncul lagi di dunia nyata."
+      ],
+      "grammars": [
+        {
+          "title": "Susunan surat keluhan resmi",
+          "body": [
+            "Surat resmi Prancis punya urutan tetap. Menyimpang darinya membuat suratmu terbaca sebagai surat amatir."
+          ],
+          "table": {
+            "head": [
+              "Bagian",
+              "Isinya",
+              "Rumus baku"
+            ],
+            "rows": [
+              [
+                "kepala",
+                "nama & alamatmu, lalu penerima",
+                "kiri atas, lalu kanan"
+              ],
+              [
+                "tempat & tanggal",
+                "kanan, sebelum isi",
+                "Lyon, le 12 mars 2026"
+              ],
+              [
+                "objek",
+                "satu baris ringkas",
+                "**Objet :** réclamation — ligne n° 04…"
+              ],
+              [
+                "sapaan",
+                "tanpa nama kalau tak dikenal",
+                "**Madame, Monsieur,**"
+              ],
+              [
+                "pembuka",
+                "menyebut sebab menulis",
+                "**Je me permets de vous écrire au sujet de…**"
+              ],
+              [
+                "fakta",
+                "urutan waktu, tanggal jelas",
+                "**Le 3 mars, j'ai constaté que…**"
+              ],
+              [
+                "riwayat",
+                "apa yang sudah dicoba",
+                "**Malgré trois signalements, …**"
+              ],
+              [
+                "tuntutan",
+                "apa yang kamu minta",
+                "**Je vous demande donc de…**"
+              ],
+              [
+                "batas waktu",
+                "tenggat yang wajar",
+                "**dans un délai de quinze jours**"
+              ],
+              [
+                "lampiran",
+                "daftar bukti",
+                "**Vous trouverez ci-joint…**"
+              ],
+              [
+                "penutup",
+                "rumus baku",
+                "**Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.**"
+              ],
+              [
+                "tanda tangan",
+                "nama lengkap",
+                "kanan bawah"
+              ]
+            ]
+          },
+          "after": [
+            "**Objet adalah baris terpenting.** Ia menentukan berkasmu masuk ke tumpukan mana. Tulis jenis suratnya dan nomor pelangganmu di situ, bukan penjelasan panjang.",
+            "**Sebutkan tenggat.** Surat tanpa batas waktu bisa dibiarkan selamanya. *Dans un délai de quinze jours* adalah rumus standar, dan *à défaut de réponse de votre part* (kalau tak ada jawaban) adalah pembuka kalimat berikutnya."
+          ]
+        },
+        {
+          "title": "Kata kerja dan rumus administrasi",
+          "body": [
+            "Kata-kata ini nyaris tak pernah muncul dalam percakapan, tapi ada di tiap surat resmi."
+          ],
+          "table": {
+            "head": [
+              "Ungkapan",
+              "Arti",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "constater",
+                "mendapati, mencatat kenyataan",
+                "J'ai **constaté** que la ligne était coupée."
+              ],
+              [
+                "signaler",
+                "melaporkan",
+                "J'ai **signalé** le problème trois fois."
+              ],
+              [
+                "faire suite à",
+                "menindaklanjuti",
+                "**Faisant suite à** notre entretien du 5 mars…"
+              ],
+              [
+                "joindre / ci-joint",
+                "melampirkan",
+                "Vous trouverez **ci-joint** la facture."
+              ],
+              [
+                "solliciter",
+                "memohon",
+                "Je **sollicite** un remboursement."
+              ],
+              [
+                "réclamer",
+                "menuntut",
+                "Je **réclame** le remboursement des trois semaines."
+              ],
+              [
+                "dans un délai de",
+                "dalam waktu",
+                "**dans un délai de** quinze jours"
+              ],
+              [
+                "à défaut de",
+                "kalau tidak ada",
+                "**À défaut de** réponse, je saisirai…"
+              ],
+              [
+                "saisir",
+                "mengadu ke lembaga",
+                "je **saisirai** le médiateur"
+              ],
+              [
+                "rester à disposition",
+                "siap dihubungi",
+                "Je **reste à votre disposition**."
+              ],
+              [
+                "veuillez",
+                "mohon (perintah sopan)",
+                "**Veuillez** trouver ci-joint…"
+              ],
+              [
+                "je vous prie d'agréer",
+                "hormat saya",
+                "penutup surat baku"
+              ]
+            ]
+          },
+          "after": [
+            "***Veuillez* adalah bentuk perintah dari *vouloir*** dan satu-satunya perintah yang sopan dalam surat resmi. *Veuillez trouver ci-joint*, *veuillez agréer*, *veuillez nous excuser*. Memakai *trouvez* biasa di situ terdengar seperti perintah kasar.",
+            "***Ci-joint* tidak berubah kalau berdiri sebelum kata bendanya** (*ci-joint la facture*), tapi ikut cocok kalau berdiri sesudahnya (*la facture ci-**jointe***). Aturan kecil ini muncul di hampir tiap e-mail kerja."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — La lettre, deux semaines plus tard",
+      "intro": "Telepon tak membuahkan hasil. Dewi menulis surat. Bacalah keras-keras — dan perhatikan bahwa tiap kalimatnya membawa satu tanggal atau satu angka.",
+      "lines": [
+        {
+          "speaker": "Lettre:",
+          "text": "Objet : réclamation — interruption de service depuis le 3 mars",
+          "id": "Perihal: keluhan — layanan terputus sejak 3 Maret",
+          "literal": "objek: keluhan — penghentian dari layanan sejak itu 3 maret"
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Madame, Monsieur, je me permets de vous écrire au sujet de ma ligne.",
+          "id": "Kepada Yth., saya menulis mengenai sambungan saya.",
+          "literal": "Nyonya, Tuan, saya kepadaku mengizinkan untuk kepada-Anda menulis pada itu subjek dari kepunyaanku sambungan."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Le 3 mars, j'ai constaté que ma connexion était totalement interrompue.",
+          "id": "Pada 3 Maret, saya mendapati koneksi saya benar-benar terputus.",
+          "literal": "itu 3 maret, saya punya didapati bahwa kepunyaanku koneksi adalah sepenuhnya terhentikan."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Malgré trois signalements, aucune intervention n'a eu lieu à ce jour.",
+          "id": "Meskipun sudah tiga kali dilaporkan, sampai hari ini belum ada kunjungan.",
+          "literal": "meskipun tiga pelaporan, tak-satu-pun intervensi tidak-punya punya tempat pada ini hari."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Je vous demande donc de rétablir la ligne dans un délai de quinze jours.",
+          "id": "Karena itu saya meminta sambungan dipulihkan dalam lima belas hari.",
+          "literal": "saya kepada-Anda meminta jadi untuk memulihkan itu sambungan dalam satu tenggat dari lima-belas hari."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Je sollicite également le remboursement des trois semaines concernées.",
+          "id": "Saya juga memohon pengembalian biaya untuk tiga minggu tersebut.",
+          "literal": "saya memohon juga itu pengembalian dari-itu tiga minggu bersangkutan."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Vous trouverez ci-joint les copies de mes trois signalements.",
+          "id": "Terlampir salinan tiga laporan saya.",
+          "literal": "Anda akan-menemukan di-sini-terlampir itu salinan dari kepunyaanku tiga pelaporan."
+        },
+        {
+          "speaker": "Lettre:",
+          "text": "Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.",
+          "id": "Hormat saya.",
+          "literal": "saya kepada-Anda memohon untuk-menerima, Nyonya, Tuan, kepunyaanku salam terhormat."
+        }
+      ],
+      "notes": [
+        "**Surat ini punya tepat delapan kalimat, dan tiap kalimat punya satu tugas.** Panjang bukan tanda kesungguhan; ketepatan yang menentukan. Surat keluhan Prancis yang efektif jarang lebih dari satu halaman.",
+        "***Avoir lieu* berarti \"terjadi, berlangsung\"** dan dipakai untuk acara dan tindakan resmi: *aucune intervention n'a **eu lieu***, *la réunion **aura lieu** lundi*.",
+        "***Concerné* berarti \"yang bersangkutan\"** dan sangat sering dipakai di bahasa administrasi: *les semaines concernées*, *les personnes concernées*, *le service concerné*.",
+        "**Simpan tanda terima pengirimannya.** Untuk keluhan resmi di Prancis, surat dikirim *en recommandé avec accusé de réception* (tercatat dengan tanda terima). Tanpa itu, perusahaan bisa mengaku tak pernah menerimanya — dan itu terjadi."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kosakata administrasi yang akan kamu butuhkan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "le justificatif",
+              "l' jüs-ti-fi-ka-TIF",
+              "bukti pendukung"
+            ],
+            [
+              "l'attestation",
+              "la-tès-ta-SYON",
+              "surat keterangan"
+            ],
+            [
+              "le récépissé",
+              "l' re-se-pi-SE",
+              "tanda terima"
+            ],
+            [
+              "le formulaire",
+              "l' for-mü-LÈR",
+              "formulir"
+            ],
+            [
+              "la pièce d'identité",
+              "la PYÈS di-dan-ti-TE",
+              "kartu identitas"
+            ],
+            [
+              "le justificatif de domicile",
+              "… d' do-mi-SIL",
+              "bukti tempat tinggal"
+            ],
+            [
+              "le relevé bancaire",
+              "l' r'-l'-VE ban-KÈR",
+              "rekening koran"
+            ],
+            [
+              "la démarche",
+              "la de-MARSY",
+              "prosedur, langkah pengurusan"
+            ],
+            [
+              "le guichet",
+              "l' gi-SYÈ",
+              "loket"
+            ],
+            [
+              "le rendez-vous",
+              "l' ran-de-VU",
+              "janji temu"
+            ],
+            [
+              "en recommandé",
+              "an r'-ko-man-DE",
+              "pos tercatat"
+            ],
+            [
+              "l'accusé de réception",
+              "la-kü-ZE d' re-sèp-SYON",
+              "tanda terima"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lima aturan bertahan menghadapi administrasi Prancis",
+          "items": [
+            "**Simpan segalanya.** Tiap surat, tiap tanda terima, tiap nomor berkas. Administrasi Prancis bekerja dengan bukti tertulis, dan lembaga yang berbeda tidak saling melihat berkasmu.",
+            "**Selalu minta konfirmasi tertulis.** *Pourriez-vous me confirmer cela par écrit ?* adalah kalimat terpenting di seluruh unit ini. Janji lewat telepon tak punya nilai apa pun kalau perlu diadukan.",
+            "**Catat nama petugas dan tanggal tiap percakapan.** *Puis-je avoir votre nom, s'il vous plaît ?* wajar ditanyakan dan tidak dianggap kasar. Menyebut nama itu di surat berikutnya mengubah nada seluruh berkas.",
+            "**Sebutkan tenggat, dan sebutkan langkah berikutnya.** *À défaut de réponse sous quinze jours, je saisirai le médiateur.* Kalimat ini sering menyelesaikan masalah yang tiga telepon gagal selesaikan.",
+            "**Jangan meninggikan suara.** Petugas loket tidak membuat aturannya. Yang menggerakkan berkas adalah tanggal, nomor, dan surat tercatat — bukan kemarahan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "la connexion",
+      "baca": "la ko-nèk-SYON",
+      "id": "koneksi"
+    },
+    {
+      "fr": "couper",
+      "baca": "ku-PE",
+      "id": "memutus"
+    },
+    {
+      "fr": "le signalement",
+      "baca": "l' si-nyal-MAN",
+      "id": "laporan gangguan"
+    },
+    {
+      "fr": "communiquer",
+      "baca": "ko-mü-ni-KE",
+      "id": "menyampaikan"
+    },
+    {
+      "fr": "le technicien",
+      "baca": "l' tèk-ni-SYAN",
+      "id": "teknisi"
+    },
+    {
+      "fr": "l'agacement",
+      "baca": "la-gas-MAN",
+      "id": "kekesalan"
+    },
+    {
+      "fr": "programmer",
+      "baca": "pro-gra-ME",
+      "id": "menjadwalkan"
+    },
+    {
+      "fr": "l'intervention",
+      "baca": "lan-tèr-van-SYON",
+      "id": "kunjungan teknisi"
+    },
+    {
+      "fr": "échouer",
+      "baca": "e-syu-E",
+      "id": "gagal"
+    },
+    {
+      "fr": "absent",
+      "baca": "ap-SAN",
+      "id": "tidak ada di tempat"
+    },
+    {
+      "fr": "sonner",
+      "baca": "so-NE",
+      "id": "membunyikan bel"
+    },
+    {
+      "fr": "la réclamation",
+      "baca": "la re-kla-ma-SYON",
+      "id": "keluhan resmi"
+    },
+    {
+      "fr": "le courriel",
+      "baca": "l' kur-YÈL",
+      "id": "surel, e-mail"
+    },
+    {
+      "fr": "le geste commercial",
+      "baca": "l' JÈST ko-mèr-SYAL",
+      "id": "kompensasi"
+    },
+    {
+      "fr": "constater",
+      "baca": "kons-ta-TE",
+      "id": "mendapati"
+    },
+    {
+      "fr": "interrompu",
+      "baca": "an-tè-ron-PÜ",
+      "id": "terputus"
+    },
+    {
+      "fr": "avoir lieu",
+      "baca": "a-VWAR LYÖ",
+      "id": "terjadi, berlangsung"
+    },
+    {
+      "fr": "le délai",
+      "baca": "l' de-LÈ",
+      "id": "tenggat"
+    },
+    {
+      "fr": "le remboursement",
+      "baca": "l' ran-burs'-MAN",
+      "id": "pengembalian uang"
+    },
+    {
+      "fr": "ci-joint",
+      "baca": "si-JWAN",
+      "id": "terlampir"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata kerja administrasi yang tepat: *constater*, *signaler*, *solliciter*, *joindre*, *rétablir*, *avoir lieu*.",
+      "items": [
+        "Le 3 mars, j'ai ____ que ma connexion était coupée.",
+        "J'ai ____ le problème trois fois au service client.",
+        "Je ____ le remboursement des trois semaines concernées.",
+        "Vous trouverez ci-____ les copies de mes signalements.",
+        "Aucune intervention n'a eu ____ à ce jour.",
+        "Je vous demande de ____ la ligne dans un délai de quinze jours."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kosakata administrasi yang tepat.",
+      "items": [
+        "Pour ouvrir le dossier, il faut un ____ de domicile. (bukti tempat tinggal)",
+        "Gardez le ____ : c'est la preuve que vous avez déposé le dossier. (tanda terima)",
+        "J'ai envoyé la lettre en ____ avec accusé de réception. (pos tercatat)",
+        "Il faut remplir ce ____ et le signer en bas. (formulir)",
+        "J'ai pris ____ au guichet pour mardi matin. (janji temu)"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi bentuk sopan yang dipakai di telepon atau surat.",
+      "items": [
+        "Donnez-moi votre numéro de dossier.",
+        "Confirmez-moi ça par écrit.",
+        "Je veux un remboursement.",
+        "Trouvez ci-joint la facture.",
+        "Répondez-moi avant quinze jours."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Koneksi saya mati sejak tanggal 3, padahal sudah tiga kali dilaporkan.",
+        "Saya ambil cuti sehari sia-sia.",
+        "Bisakah Anda konfirmasi itu secara tertulis?",
+        "Meskipun tiga laporan, sampai hari ini belum ada kunjungan.",
+        "Terlampir salinan tiga laporan saya."
+      ]
+    }
+  ],
+  "answers": [
+    "constaté — signalé — sollicite — joint — lieu — rétablir",
+    "justificatif — récépissé — recommandé — formulaire — rendez-vous",
+    "Pourriez-vous me communiquer votre numéro de dossier ? — Pourriez-vous me confirmer cela par écrit ? — Je sollicite un remboursement. — Veuillez trouver ci-joint la facture. — Je vous serais reconnaissante de me répondre dans un délai de quinze jours.",
+    "Ma connexion est coupée depuis le 3, malgré trois signalements. — J'ai pris une journée de congé pour rien. — Pourriez-vous me confirmer cela par écrit ? — Malgré trois signalements, aucune intervention n'a eu lieu à ce jour. — Vous trouverez ci-joint les copies de mes trois signalements."
+  ],
+  "wave": "Ulangi **unit 18**: ambil satu keluhan sungguhan yang pernah kamu alami, lalu ceritakan dua kali — sekali kepada teman dalam ragam lisan, sekali lagi sebagai surat resmi delapan kalimat dengan objet, fakta bertanggal, tuntutan, tenggat, dan penutup baku."
+}

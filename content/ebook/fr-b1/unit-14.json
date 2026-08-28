@@ -1,0 +1,562 @@
+{
+  "title": "Katanya dia bakal telat",
+  "title_target": "Il a dit qu'il serait en retard",
+  "goal": "Menyampaikan ulang perkataan orang: pergeseran bentuk waktu, pergeseran pertanyaan dan perintah, dan pergeseran keterangan waktu.",
+  "bekal": [
+    "menggeser présent, passé composé, dan futur di kalimat tak langsung",
+    "menyampaikan ulang pertanyaan dengan *si*, *ce que*, dan *ce qui*",
+    "mengubah perintah menjadi *de* + infinitif",
+    "mengganti *hier* dan *demain* dengan *la veille* dan *le lendemain*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Qu'est-ce qu'elle a dit exactement ?",
+      "intro": "Dewi menerima telepon untuk Marc yang sedang keluar, lalu meneruskan isinya. Dialog ini hampir seluruhnya berisi kalimat tak langsung — bandingkan tiap kalimat Dewi dengan kalimat asli yang ia ulang.",
+      "lines": [
+        {
+          "speaker": "Marc:",
+          "text": "Claire a appelé ? Qu'est-ce qu'elle a dit exactement ?",
+          "id": "Claire nelepon? Dia bilang apa persisnya?",
+          "literal": "Claire punya ditelepon? apa itu-yang yang dia punya dikatakan tepatnya?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a dit qu'elle était en réunion jusqu'à quatre heures.",
+          "id": "Dia bilang dia rapat sampai jam empat.",
+          "literal": "dia punya dikatakan bahwa-dia adalah dalam rapat sampai pada empat jam."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Et pour le dossier ? Elle avait promis de le relire.",
+          "id": "Terus soal berkasnya? Dia kan janji mau baca ulang.",
+          "literal": "dan untuk itu berkas? dia punyalah dijanjikan untuk itu membaca-ulang."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a expliqué qu'elle l'avait lu mais qu'elle n'avait pas fini.",
+          "id": "Dia jelasin udah dibaca tapi belum selesai.",
+          "literal": "dia punya dijelaskan bahwa-dia itu punyalah dibaca tapi bahwa-dia tidak punyalah bukan diselesaikan."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Elle a dit quand elle le finirait ?",
+          "id": "Dia bilang kapan bakal selesai?",
+          "literal": "dia punya dikatakan kapan dia itu akan-menyelesaikan?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a répondu qu'elle nous l'enverrait le lendemain matin.",
+          "id": "Dia jawab bakal dikirim ke kita besok paginya.",
+          "literal": "dia punya dijawab bahwa-dia kepada-kami itu akan-mengirim itu keesokan-hari pagi."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Elle a demandé si j'étais au bureau ?",
+          "id": "Dia nanya saya ada di kantor nggak?",
+          "literal": "dia punya diminta jika saya adalah pada itu kantor?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Oui, et je lui ai dit que tu étais sorti déjeuner.",
+          "id": "Iya, dan saya bilang kamu keluar makan siang.",
+          "literal": "ya, dan saya kepadanya punya dikatakan bahwa kamu adalah keluar makan-siang."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Elle a voulu savoir autre chose ?",
+          "id": "Dia mau tahu hal lain?",
+          "literal": "dia punya dimau mengetahui lain hal?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a demandé ce que tu pensais du budget révisé.",
+          "id": "Dia nanya kamu pikir gimana soal anggaran revisi.",
+          "literal": "dia punya diminta itu-yang yang kamu memikirkan dari-itu anggaran direvisi."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Aïe. Et tu as répondu quoi ?",
+          "id": "Aduh. Kamu jawab apa?",
+          "literal": "aduh. dan kamu punya dijawab apa?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Que je n'en savais rien. Elle m'a demandé de te prévenir.",
+          "id": "Kalau saya nggak tahu apa-apa. Dia minta saya kabarin kamu.",
+          "literal": "bahwa saya tidak darinya tahu tak-satu-pun. dia kepadaku-punya diminta untuk kepadamu memberitahu."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Elle a dit de la rappeler avant ce soir, j'imagine.",
+          "id": "Dia minta ditelepon balik sebelum malam ini, saya rasa.",
+          "literal": "dia punya dikatakan untuk itu menelepon-balik sebelum ini malam, saya membayangkan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a dit de ne pas la rappeler avant seize heures. Nuance.",
+          "id": "Dia minta jangan ditelepon sebelum jam empat. Beda tipis.",
+          "literal": "dia punya dikatakan untuk tidak bukan itu menelepon-balik sebelum enam-belas jam. nuansa."
+        }
+      ],
+      "notes": [
+        "**Kalau kata kerja pelapornya lampau, semuanya bergeser satu langkah ke belakang.** *« Je suis en réunion »* → *elle a dit qu'elle **était** en réunion*. *« Je l'ai lu »* → *elle a dit qu'elle l'**avait lu***. *« Je l'enverrai »* → *elle a dit qu'elle l'**enverrait***.",
+        "**Kalau kata kerja pelapornya SEKARANG, tak ada yang bergeser**: *elle dit qu'elle **est** en réunion*. Pergeseran hanya terjadi karena laporannya sendiri sudah menjadi masa lalu.",
+        "***Que* wajib diulang di tiap anak kalimat**: *elle a expliqué **qu'**elle l'avait lu mais **qu'**elle n'avait pas fini*. Bahasa Indonesia membuang kata sambungnya; bahasa Prancis tidak boleh.",
+        "**Pertanyaan ya/tidak menjadi *si***: *« Tu es au bureau ? »* → *elle a demandé **si** j'étais au bureau*. Perhatikan bahwa *si* ini **bukan** *si* syarat — karena itu ia boleh diikuti futur dan conditionnel.",
+        "***Qu'est-ce que* menjadi *ce que*, dan *qu'est-ce qui* menjadi *ce qui***: *« Qu'est-ce que tu penses ? »* → *elle a demandé **ce que** tu pensais*. Kata tanya lain (*où*, *quand*, *comment*, *pourquoi*, *combien*) tetap apa adanya.",
+        "**Perintah menjadi *de* + infinitif**: *« Préviens-le. »* → *elle m'a demandé **de le prévenir***. Dan perintah yang disangkal menjadi *de ne pas* + infinitif: *elle a dit **de ne pas** la rappeler*. Perhatikan bahwa *ne pas* berdiri utuh di depan infinitif, tidak memagarinya.",
+        "**Keterangan waktu ikut bergeser**: *hier* → *la veille*, *demain* → *le lendemain*, *aujourd'hui* → *ce jour-là*, *maintenant* → *à ce moment-là*. Ini pergeseran yang paling sering lupa dilakukan, dan hasilnya kalimat yang membingungkan pembaca.",
+        "**Kata gantinya juga bergeser** — dan ini yang paling mudah keliru: *« Je te l'enverrai »* diucapkan Claire kepada Dewi menjadi *elle a dit qu'elle **nous** l'enverrait* ketika Dewi menceritakannya kepada Marc. Selalu periksa dari sudut siapa kamu sedang bercerita."
+      ],
+      "grammars": [
+        {
+          "title": "Pergeseran bentuk waktu",
+          "body": [
+            "Kolom kiri adalah kalimat aslinya; kolom kanan adalah bentuknya sesudah *il a dit que*."
+          ],
+          "table": {
+            "head": [
+              "Kalimat langsung",
+              "Sesudah pelapor lampau",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "présent",
+                "**imparfait**",
+                "« Je suis prêt » → qu'il **était** prêt"
+              ],
+              [
+                "passé composé",
+                "**plus-que-parfait**",
+                "« J'ai fini » → qu'il **avait fini**"
+              ],
+              [
+                "imparfait",
+                "**tetap imparfait**",
+                "« Je dormais » → qu'il **dormait**"
+              ],
+              [
+                "plus-que-parfait",
+                "**tetap**",
+                "« J'avais fini » → qu'il **avait fini**"
+              ],
+              [
+                "futur simple",
+                "**conditionnel**",
+                "« Je viendrai » → qu'il **viendrait**"
+              ],
+              [
+                "futur proche",
+                "**allait** + infinitif",
+                "« Je vais partir » → qu'il **allait partir**"
+              ],
+              [
+                "futur antérieur",
+                "**conditionnel passé**",
+                "« J'aurai fini » → qu'il **aurait fini**"
+              ],
+              [
+                "conditionnel",
+                "**tetap**",
+                "« Je viendrais » → qu'il **viendrait**"
+              ],
+              [
+                "impératif",
+                "**de** + infinitif",
+                "« Viens ! » → **de venir**"
+              ],
+              [
+                "impératif disangkal",
+                "**de ne pas** + infinitif",
+                "« Ne viens pas ! » → **de ne pas venir**"
+              ]
+            ]
+          },
+          "after": [
+            "**Tiga bentuk tidak bergeser sama sekali**: imparfait, plus-que-parfait, dan conditionnel. Alasannya sederhana — ketiganya sudah berada di lapisan paling belakang, jadi tak ada lagi tempat untuk mundur.",
+            "**Kalau isi kalimatnya masih berlaku sekarang, penutur asli sering tidak menggesernya**: *Il m'a dit qu'il **habite** à Lyon* terdengar wajar kalau dia memang masih tinggal di sana. Di ujian tulis, geserlah; dalam percakapan, keduanya diterima."
+          ]
+        },
+        {
+          "title": "Pertanyaan, perintah, dan keterangan waktu",
+          "body": [
+            "Bagian ini yang paling sering luput, karena bahasa Indonesia tidak mengubah apa pun."
+          ],
+          "table": {
+            "head": [
+              "Jenis kalimat asli",
+              "Menjadi",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "pertanyaan ya/tidak",
+                "**si**",
+                "« Tu viens ? » → s'il **venait**"
+              ],
+              [
+                "qu'est-ce que / que",
+                "**ce que**",
+                "« Que fais-tu ? » → **ce qu'**il faisait"
+              ],
+              [
+                "qu'est-ce qui",
+                "**ce qui**",
+                "« Qu'est-ce qui se passe ? » → **ce qui** se passait"
+              ],
+              [
+                "où, quand, comment, pourquoi",
+                "**tetap**",
+                "« Où vas-tu ? » → **où** il allait"
+              ],
+              [
+                "quel / quelle",
+                "**tetap**",
+                "« Quelle heure est-il ? » → **quelle** heure il était"
+              ],
+              [
+                "hier",
+                "**la veille**",
+                "« Je l'ai vu hier » → **la veille**"
+              ],
+              [
+                "demain",
+                "**le lendemain**",
+                "« Je pars demain » → **le lendemain**"
+              ],
+              [
+                "aujourd'hui",
+                "**ce jour-là**",
+                "« C'est aujourd'hui » → **ce jour-là**"
+              ],
+              [
+                "maintenant",
+                "**à ce moment-là**",
+                "« Viens maintenant » → **à ce moment-là**"
+              ],
+              [
+                "la semaine prochaine",
+                "**la semaine suivante**",
+                "→ **la semaine suivante**"
+              ],
+              [
+                "l'année dernière",
+                "**l'année précédente**",
+                "→ **l'année précédente**"
+              ],
+              [
+                "ici",
+                "**là**",
+                "« Viens ici » → **là**"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Dalam pertanyaan tak langsung, susunan kalimatnya kembali normal** — subjek dulu, baru kata kerja. *« Où vas-tu ? »* menjadi *il a demandé **où tu allais***, bukan *où allais-tu*. Membiarkan susunan terbaliknya adalah kesalahan yang paling sering muncul di tulisan.",
+            "**Dan tanda tanyanya hilang**: *Il a demandé si tu venais.* — titik, bukan tanda tanya. Kalimat itu sudah menjadi laporan, bukan pertanyaan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Je te répète ce qu'elle m'a dit",
+      "intro": "Marc masih penasaran, dan Dewi mengulang kalimat aslinya satu per satu. Bandingkan tiap pasangan baris — di sinilah pergeserannya terlihat paling jelas.",
+      "lines": [
+        {
+          "speaker": "Marc:",
+          "text": "Dis-moi ses mots exacts. Ça change tout.",
+          "id": "Kasih tahu kata persisnya. Beda banget nanti.",
+          "literal": "katakan-kepadaku kepunyaannya kata tepat. itu mengubah semua."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a dit : « Je ne pourrai rien valider avant lundi. »",
+          "id": "Dia bilang: \"Saya nggak bisa menyetujui apa pun sebelum Senin.\"",
+          "literal": "dia punya dikatakan: \"saya tidak akan-bisa tak-satu-pun mengesahkan sebelum senin.\""
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Donc elle a dit qu'elle ne pourrait rien valider avant lundi.",
+          "id": "Jadi dia bilang dia nggak bakal bisa menyetujui apa pun sebelum Senin.",
+          "literal": "jadi dia punya dikatakan bahwa-dia tidak akan-bisa tak-satu-pun mengesahkan sebelum senin."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Voilà. Et puis : « Demandez à Marc de préparer la version courte. »",
+          "id": "Nah. Terus: \"Minta Marc siapkan versi pendeknya.\"",
+          "literal": "itulah. dan lalu: \"minta kepada Marc untuk menyiapkan itu versi pendek.\""
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Elle t'a demandé de me demander de la préparer. Charmant.",
+          "id": "Dia minta kamu minta saya nyiapin. Manis sekali.",
+          "literal": "dia kepadamu-punya diminta untuk kepadaku meminta untuk itu menyiapkan. mempesona."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a ajouté qu'elle avait déjà envoyé le modèle la veille.",
+          "id": "Dia nambahin dia udah kirim templatenya sehari sebelumnya.",
+          "literal": "dia punya ditambahkan bahwa-dia punyalah sudah dikirim itu model itu malam-sebelumnya."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Je n'ai rien reçu. Tu es sûre qu'elle a dit « envoyé » ?",
+          "id": "Saya nggak terima apa-apa. Kamu yakin dia bilang \"sudah dikirim\"?",
+          "literal": "saya tidak-punya tak-satu-pun diterima. kamu adalah yakin bahwa-dia punya dikatakan \"dikirim\"?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Elle a dit « je l'ai envoyé ». Vérifie tes spams avant de l'accuser.",
+          "id": "Dia bilang \"sudah saya kirim\". Cek spam dulu sebelum nuduh.",
+          "literal": "dia punya dikatakan \"saya itu-punya dikirim\". periksa kepunyaanmu spam sebelum dari itu menuduh."
+        }
+      ],
+      "notes": [
+        "**Bandingkan baris kedua dan ketiga.** Kalimat asli *« Je ne pourrai rien valider »* memakai futur; laporannya memakai conditionnel *ne pourrait rien valider*. Itulah pergeseran yang paling sering diuji di DELF B1.",
+        "***Ajouter que*, *expliquer que*, *répondre que*, *préciser que*** semuanya menggeser bentuk waktu persis seperti *dire que*. Yang berbeda hanya nuansanya, bukan aturannya.",
+        "***Demander à quelqu'un de faire quelque chose*** adalah susunan tetap untuk meneruskan permintaan. Perhatikan dua preposisinya: *à* untuk orangnya, *de* untuk perbuatannya. Salah satu saja tertukar, kalimatnya rusak.",
+        "**Mengutip langsung tetap boleh, dan justru sering dipakai** kalau kata persisnya penting. Bahasa Prancis memakai tanda kutip berbentuk « … » dengan spasi di dalamnya, bukan tanda kutip lurus."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja pelapor dan susunannya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Susunan",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "dire que",
+              "berita",
+              "Il a dit **qu'**il viendrait."
+            ],
+            [
+              "dire de",
+              "perintah",
+              "Il a dit **de** venir."
+            ],
+            [
+              "demander si",
+              "pertanyaan ya/tidak",
+              "Il a demandé **si** je venais."
+            ],
+            [
+              "demander à … de",
+              "permintaan",
+              "Il m'a demandé **de** venir."
+            ],
+            [
+              "répondre que",
+              "jawaban",
+              "Elle a répondu **qu'**elle ne savait pas."
+            ],
+            [
+              "expliquer que",
+              "penjelasan",
+              "Elle a expliqué **qu'**elle l'avait lu."
+            ],
+            [
+              "ajouter que",
+              "tambahan",
+              "Il a ajouté **qu'**il rappellerait."
+            ],
+            [
+              "préciser que",
+              "penegasan",
+              "Elle a précisé **que** c'était urgent."
+            ],
+            [
+              "prévenir que",
+              "peringatan",
+              "Il m'a prévenue **qu'**il serait en retard."
+            ],
+            [
+              "proposer de",
+              "usulan",
+              "Elle a proposé **de** reporter."
+            ],
+            [
+              "conseiller à … de",
+              "saran",
+              "Il m'a conseillé **de** attendre."
+            ],
+            [
+              "promettre de",
+              "janji",
+              "Elle a promis **de** le relire."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang membuat laporanmu terdengar asing",
+          "items": [
+            "**Membiarkan susunan pertanyaan.** *Il a demandé où allais-tu* langsung terdengar salah. Dalam pertanyaan tak langsung, susunannya kembali biasa: *où tu allais*. Ini kesalahan nomor satu pelajar Indonesia karena bahasa kita tak pernah membalik susunan sejak awal.",
+            "**Lupa menggeser keterangan waktu.** *Il a dit qu'il partait demain* terdengar aneh kalau kejadiannya minggu lalu — pembaca tak tahu \"besok\" yang mana. Yang benar: *qu'il partait le lendemain*.",
+            "**Menerjemahkan \"katanya\" menjadi *on dit*.** Bahasa Indonesia memakai \"katanya\" untuk dua hal berbeda: laporan dari orang tertentu (*il a dit que…*) dan desas-desus umum (*on dit que…*, *il paraît que…*). Memilih yang salah mengubah siapa yang bertanggung jawab atas kabarnya.",
+            "**Satu kebiasaan yang membantu:** sebelum melaporkan, ucapkan dulu kalimat aslinya dalam hati, lengkap dengan tanda kutipnya. Pergeserannya jadi jauh lebih mudah dilihat daripada kalau kamu langsung menyusun laporannya."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "exactement",
+      "baca": "èg-zak-t'-MAN",
+      "id": "tepatnya"
+    },
+    {
+      "fr": "promettre de",
+      "baca": "pro-MÈTR d'",
+      "id": "berjanji untuk"
+    },
+    {
+      "fr": "expliquer",
+      "baca": "èks-pli-KE",
+      "id": "menjelaskan"
+    },
+    {
+      "fr": "le lendemain",
+      "baca": "l' land-MAN",
+      "id": "keesokan harinya"
+    },
+    {
+      "fr": "déjeuner",
+      "baca": "de-jö-NE",
+      "id": "makan siang"
+    },
+    {
+      "fr": "le budget",
+      "baca": "l' büd-JÈ",
+      "id": "anggaran"
+    },
+    {
+      "fr": "révisé",
+      "baca": "re-vi-ZE",
+      "id": "direvisi"
+    },
+    {
+      "fr": "rappeler",
+      "baca": "ra-p'-LE",
+      "id": "menelepon balik"
+    },
+    {
+      "fr": "la nuance",
+      "baca": "la nü-ANS",
+      "id": "beda halus"
+    },
+    {
+      "fr": "valider",
+      "baca": "va-li-DE",
+      "id": "menyetujui, mengesahkan"
+    },
+    {
+      "fr": "la version courte",
+      "baca": "la vèr-SYON KURT",
+      "id": "versi pendek"
+    },
+    {
+      "fr": "ajouter",
+      "baca": "a-ju-TE",
+      "id": "menambahkan"
+    },
+    {
+      "fr": "le modèle",
+      "baca": "l' mo-DÈL",
+      "id": "contoh, templat"
+    },
+    {
+      "fr": "recevoir",
+      "baca": "r'-s'-VWAR",
+      "id": "menerima"
+    },
+    {
+      "fr": "accuser",
+      "baca": "a-kü-ZE",
+      "id": "menuduh"
+    },
+    {
+      "fr": "préciser",
+      "baca": "pre-si-ZE",
+      "id": "menegaskan, memperjelas"
+    },
+    {
+      "fr": "proposer de",
+      "baca": "pro-po-ZE d'",
+      "id": "mengusulkan"
+    },
+    {
+      "fr": "conseiller de",
+      "baca": "kon-sè-YE d'",
+      "id": "menyarankan"
+    },
+    {
+      "fr": "urgent",
+      "baca": "ür-JAN",
+      "id": "mendesak"
+    },
+    {
+      "fr": "il paraît que",
+      "baca": "il pa-RÈ k'",
+      "id": "katanya, konon"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi kalimat tak langsung. Mulai dengan *Elle a dit que…*",
+      "items": [
+        "« Je suis en réunion. »",
+        "« J'ai lu le dossier. »",
+        "« Je vous l'enverrai demain. »",
+        "« Je ne pourrai rien valider avant lundi. »",
+        "« Je l'avais déjà envoyé. »",
+        "« Je vais partir tôt. »"
+      ]
+    },
+    {
+      "prompt": "Ubah pertanyaan dan perintah berikut menjadi kalimat tak langsung.",
+      "items": [
+        "« Tu es au bureau ? » → Elle a demandé ____.",
+        "« Qu'est-ce que tu penses du budget ? » → Elle a demandé ____.",
+        "« Qu'est-ce qui se passe ? » → Il a demandé ____.",
+        "« Où vas-tu ? » → Il a demandé ____.",
+        "« Ne me rappelle pas avant seize heures. » → Elle a dit ____."
+      ]
+    },
+    {
+      "prompt": "Isi dengan keterangan waktu yang sudah digeser.",
+      "items": [
+        "« Je l'ai vu hier. » → Il a dit qu'il l'avait vu ____.",
+        "« Je pars demain. » → Elle a dit qu'elle partait ____.",
+        "« C'est aujourd'hui. » → Il a précisé que c'était ____.",
+        "« Viens maintenant. » → Elle a dit de venir ____.",
+        "« Je reviens la semaine prochaine. » → Il a dit qu'il revenait ____."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Dia bilang dia rapat sampai jam empat.",
+        "Dia jawab akan dikirim ke kita besok paginya.",
+        "Dia nanya saya ada di kantor atau tidak.",
+        "Dia minta saya kabarin kamu.",
+        "Dia minta jangan ditelepon sebelum jam empat."
+      ]
+    }
+  ],
+  "answers": [
+    "Elle a dit qu'elle était en réunion. — Elle a dit qu'elle avait lu le dossier. — Elle a dit qu'elle nous l'enverrait le lendemain. — Elle a dit qu'elle ne pourrait rien valider avant lundi. — Elle a dit qu'elle l'avait déjà envoyé. — Elle a dit qu'elle allait partir tôt.",
+    "si j'étais au bureau — ce que je pensais du budget — ce qui se passait — où j'allais — de ne pas la rappeler avant seize heures",
+    "la veille — le lendemain — ce jour-là — à ce moment-là — la semaine suivante",
+    "Elle a dit qu'elle était en réunion jusqu'à quatre heures. — Elle a répondu qu'elle nous l'enverrait le lendemain matin. — Elle a demandé si j'étais au bureau. — Elle m'a demandé de te prévenir. — Elle a dit de ne pas la rappeler avant seize heures."
+  ],
+  "wave": "Ulangi **unit 13**: ambil lima kalimat pasif atau ber-*on* yang kamu susun, lalu laporkan masing-masing seolah orang lain yang mengucapkannya — *On a modifié les horaires* menjadi *Il a dit qu'on avait modifié les horaires.*"
+}

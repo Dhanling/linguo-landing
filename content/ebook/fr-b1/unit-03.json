@@ -1,0 +1,469 @@
+{
+  "title": "Sudah saya tulis surat ke dia pagi ini",
+  "title_target": "Je lui ai écrit ce matin",
+  "goal": "Berhenti mengulang kata benda: mengganti sasaran dengan le, la, les dan penerima dengan lui, leur, lalu menaruhnya di tempat yang benar.",
+  "bekal": [
+    "membedakan sasaran langsung (COD) dan penerima (COI)",
+    "memilih *le/la/les* melawan *lui/leur*",
+    "menaruh kata ganti sebelum kata kerja yang tepat",
+    "mencocokkan participe passé dengan COD yang berdiri di depannya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tu l'as envoyé au client ?",
+      "intro": "Dewi dan Marc mengurus satu berkas di kantor. Hitunglah berapa kali mereka menyebut kata *le dossier* dan *le client* — jauh lebih jarang daripada yang akan kamu lakukan dalam bahasa Indonesia.",
+      "lines": [
+        {
+          "speaker": "Marc:",
+          "text": "Le dossier Legrand, tu l'as fini ?",
+          "id": "Berkas Legrand, sudah kamu selesaikan?",
+          "literal": "itu berkas Legrand, kamu itu-punya diselesaikan?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je l'ai fini hier soir. Je te l'ai laissé sur le bureau.",
+          "id": "Sudah saya selesaikan tadi malam. Saya taruh di mejamu.",
+          "literal": "saya itu-punya diselesaikan kemarin malam. saya kepadamu itu-punya ditinggalkan di-atas itu meja."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Ah, je ne l'ai pas vu. Et le client, tu l'as prévenu ?",
+          "id": "Ah, saya nggak lihat. Terus kliennya, sudah kamu kabari?",
+          "literal": "ah, saya tidak itu-punya bukan dilihat. dan itu klien, kamu itu-punya diberitahu?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je lui ai écrit ce matin, mais il ne m'a pas encore répondu.",
+          "id": "Saya sudah tulis surat ke dia pagi ini, tapi dia belum balas.",
+          "literal": "saya kepadanya punya ditulis ini pagi, tapi dia tidak kepadaku-punya bukan lagi dijawab."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Tu l'as appelé aussi ?",
+          "id": "Kamu telepon dia juga?",
+          "literal": "kamu itu-punya ditelepon juga?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Deux fois. Sa secrétaire m'a dit qu'il était en réunion.",
+          "id": "Dua kali. Sekretarisnya bilang dia lagi rapat.",
+          "literal": "dua kali. kepunyaannya sekretaris kepadaku-punya dikatakan bahwa-dia adalah dalam rapat."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Bon. Envoie-lui un message, c'est plus rapide.",
+          "id": "Oke. Kirim pesan aja ke dia, lebih cepat.",
+          "literal": "baik. kirim-kepadanya satu pesan, itu-adalah lebih cepat."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je l'ai déjà fait. Je ne veux pas le déranger trois fois.",
+          "id": "Sudah saya lakukan. Saya nggak mau ganggu dia tiga kali.",
+          "literal": "saya itu-punya sudah dilakukan. saya tidak mau bukan dia mengganggu tiga kali."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Tu as raison. Les factures, tu les as vérifiées ?",
+          "id": "Betul kamu. Faktur-fakturnya, sudah kamu periksa?",
+          "literal": "kamu punya kebenaran. itu faktur, kamu mereka-punya diperiksa?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Toutes. J'en ai trouvé deux qui ne correspondaient pas.",
+          "id": "Semuanya. Saya nemu dua yang nggak cocok.",
+          "literal": "semua. saya darinya punya ditemukan dua yang tidak bersesuaian bukan."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Montre-les-moi. Non, attends, envoie-les à la comptable.",
+          "id": "Tunjukkan ke saya. Eh nggak, kirim aja ke bagian keuangan.",
+          "literal": "tunjukkan-mereka-kepadaku. tidak, tunggu, kirim-mereka kepada itu akuntan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je les lui ai déjà transmises ce matin.",
+          "id": "Sudah saya teruskan ke dia pagi ini.",
+          "literal": "saya mereka kepadanya punya sudah diteruskan ini pagi."
+        },
+        {
+          "speaker": "Marc:",
+          "text": "Tu me devances toujours. C'est agaçant.",
+          "id": "Kamu selalu mendahului saya. Nyebelin.",
+          "literal": "kamu kepadaku mendahului selalu. itu-adalah menjengkelkan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je le prends comme un compliment.",
+          "id": "Saya anggap itu pujian.",
+          "literal": "saya itu mengambil seperti satu pujian."
+        }
+      ],
+      "notes": [
+        "**COD menjawab pertanyaan \"apa/siapa?\", COI menjawab \"kepada siapa?\"** *J'ai fini **le dossier*** → *je **l'**ai fini*. *J'ai écrit **au client*** → *je **lui** ai écrit*. Yang menentukan bukan artinya, melainkan **ada tidaknya preposisi *à*** di antara kata kerja dan kata bendanya.",
+        "***Le*, *la*, *les* menggantikan benda maupun orang** — semuanya sama. *Je **l'**ai appelé* bisa berarti \"saya menelepon dia\" atau \"saya menelepon nomor itu\", dan konteks yang memilah. Sebaliknya *lui* dan *leur* **hanya untuk orang**.",
+        "***Lui* tidak punya jenis kelamin.** *Je lui ai écrit* bisa berarti kepada dia laki-laki atau dia perempuan. Kalau perlu diperjelas, orang Prancis menambahkan bentuk penegasnya: *Je lui ai écrit, **à elle**.*",
+        "**Letaknya selalu SEBELUM kata kerja**, termasuk di kalimat lampau, di mana ia berdiri sebelum kata bantu: *je **l'**ai fini*, bukan *j'ai fini le*. Dan sangkalannya memagari seluruhnya: *je **ne l'**ai **pas** vu*.",
+        "***Les factures, tu **les** as vérifié**es*** — inilah kecocokan yang paling sering luput. Kalau COD-nya berdiri **di depan** kata kerja, participe passé-nya ikut cocok dengannya: *les factures* jamak feminin, maka *vérifié**es***. Tanpa COD di depan, tak ada kecocokan sama sekali: *j'ai vérifié les factures*.",
+        "***Envoie-lui*** memperlihatkan satu-satunya pengecualian letak: di **kalimat perintah yang positif**, kata gantinya pindah ke belakang dan disambung tanda hubung. Begitu kalimatnya disangkal, letaknya kembali normal: *Ne **lui** envoie pas de message.*",
+        "***Je **le** prends comme un compliment*** — *le* di sini tidak menggantikan kata benda apa pun, melainkan **seluruh kalimat sebelumnya**. Bahasa Prancis sering memakai *le* netral untuk itu: *Je **le** sais*, *Je **le** crois*, *Tu **l'**as dit*.",
+        "***J'**en** ai trouvé deux*** memakai *en*, kata ganti yang akan dibedah tuntas di unit 4. Untuk sekarang cukup ingat: begitu ada jumlah atau kata *de*, *en* muncul."
+      ],
+      "grammars": [
+        {
+          "title": "COD dan COI",
+          "body": [
+            "Cara mengenalinya bukan lewat arti, melainkan lewat ada tidaknya preposisi *à*."
+          ],
+          "table": {
+            "head": [
+              "Orang",
+              "COD (apa/siapa)",
+              "COI (kepada siapa)",
+              "Penegas"
+            ],
+            "rows": [
+              [
+                "1 tunggal",
+                "me / m'",
+                "me / m'",
+                "moi"
+              ],
+              [
+                "2 tunggal",
+                "te / t'",
+                "te / t'",
+                "toi"
+              ],
+              [
+                "3 tunggal",
+                "**le / la / l'**",
+                "**lui**",
+                "lui / elle"
+              ],
+              [
+                "1 jamak",
+                "nous",
+                "nous",
+                "nous"
+              ],
+              [
+                "2 jamak",
+                "vous",
+                "vous",
+                "vous"
+              ],
+              [
+                "3 jamak",
+                "**les**",
+                "**leur**",
+                "eux / elles"
+              ]
+            ]
+          },
+          "after": [
+            "**Perhatikan bahwa bentuk 1 dan 2 sama saja** untuk COD maupun COI — *me*, *te*, *nous*, *vous*. Perbedaan itu hanya muncul di orang ketiga, dan di situlah seluruh kesulitannya terkumpul.",
+            "⚠️ **Jangan tertukar antara *leur* kata ganti dan *leurs* kata milik.** *Je **leur** parle* (saya bicara kepada mereka) tak pernah berakhiran *-s*; ***leurs** enfants* (anak-anak mereka) ikut jamak. Yang pertama berdiri di depan kata kerja, yang kedua di depan kata benda."
+          ]
+        },
+        {
+          "title": "Di mana kata ganti itu berdiri",
+          "body": [
+            "Satu aturan menutup hampir semuanya: **tepat sebelum kata kerja yang ia layani**."
+          ],
+          "table": {
+            "head": [
+              "Bentuk kalimat",
+              "Letaknya",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "présent",
+                "sebelum kata kerja",
+                "Je **le** vois."
+              ],
+              [
+                "disangkal",
+                "di dalam *ne … pas*",
+                "Je **ne le** vois **pas**."
+              ],
+              [
+                "passé composé",
+                "sebelum **kata bantu**",
+                "Je **l'**ai vu."
+              ],
+              [
+                "PC disangkal",
+                "di dalam pagar sangkalan",
+                "Je **ne l'**ai **pas** vu."
+              ],
+              [
+                "dua kata kerja",
+                "sebelum **infinitif**",
+                "Je veux **le** voir."
+              ],
+              [
+                "futur proche",
+                "sebelum infinitif",
+                "Je vais **le** voir."
+              ],
+              [
+                "perintah positif",
+                "**sesudah**, dengan tanda hubung",
+                "Regarde-**le** !"
+              ],
+              [
+                "perintah disangkal",
+                "kembali ke depan",
+                "Ne **le** regarde pas !"
+              ]
+            ]
+          },
+          "after": [
+            "**Di kalimat berkata kerja dua, kata gantinya menempel pada infinitif, bukan pada kata kerja pertama.** *Je veux **le** voir*, bukan *je le veux voir*. Bahasa Indonesia tidak punya kebiasaan ini, dan menaruhnya terlalu ke depan adalah kesalahan pelajar yang paling sering terdengar.",
+            "**Di kalimat perintah positif, *me* dan *te* berganti wujud** menjadi *moi* dan *toi*: *Donne-**moi** ça*, *Assieds-**toi***. Begitu disangkal, mereka kembali: *Ne **me** donne pas ça.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja yang menuntut à quelqu'un",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Arti",
+            "Contoh dengan kata ganti"
+          ],
+          "rows": [
+            [
+              "parler à",
+              "berbicara kepada",
+              "Je **lui** parle."
+            ],
+            [
+              "écrire à",
+              "menulis kepada",
+              "Je **lui** écris."
+            ],
+            [
+              "téléphoner à",
+              "menelepon",
+              "Je **lui** téléphone."
+            ],
+            [
+              "répondre à",
+              "menjawab",
+              "Je **lui** réponds."
+            ],
+            [
+              "demander à",
+              "bertanya, meminta kepada",
+              "Je **lui** demande."
+            ],
+            [
+              "dire à",
+              "mengatakan kepada",
+              "Je **lui** dis."
+            ],
+            [
+              "donner à",
+              "memberi kepada",
+              "Je **lui** donne."
+            ],
+            [
+              "offrir à",
+              "menghadiahkan kepada",
+              "Je **lui** offre."
+            ],
+            [
+              "envoyer à",
+              "mengirim kepada",
+              "Je **lui** envoie."
+            ],
+            [
+              "ressembler à",
+              "mirip dengan",
+              "Je **lui** ressemble."
+            ],
+            [
+              "plaire à",
+              "berkenan bagi",
+              "Ça **lui** plaît."
+            ],
+            [
+              "manquer à",
+              "dirindukan oleh",
+              "Tu **lui** manques."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kata kerja yang menjebak",
+          "items": [
+            "***Téléphoner* dan *répondre* memakai *à*** dalam bahasa Prancis, padahal bahasa Indonesia memperlakukannya sebagai sasaran langsung. Jadi *je **lui** téléphone*, bukan *je le téléphone*.",
+            "***Écouter*, *regarder*, *attendre*, *chercher*, dan *payer* justru sebaliknya** — tanpa preposisi sama sekali: *je **l'**écoute*, *je **l'**attends*. Menambahkan *à* di sini adalah kesalahan yang muncul justru karena bahasa Indonesia memakai kata \"kepada\".",
+            "***Plaire* membalik susunan.** *Ce film **lui** plaît* secara harfiah berarti \"film ini berkenan baginya\" — jadi yang menjadi subjek adalah filmnya, bukan orangnya. Inilah cara paling alami mengatakan \"dia suka film ini\" selain *il aime ce film*.",
+            "***Manquer* lebih ekstrem lagi.** *Tu **me** manques* = **saya** kangen **kamu**, bukan sebaliknya. Bacalah harfiah: \"kamu kurang bagiku\". Kalimat ini adalah kalimat Prancis yang paling sering dibalik oleh pelajar Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "le dossier",
+      "baca": "l' do-SYE",
+      "id": "berkas"
+    },
+    {
+      "fr": "le client",
+      "baca": "l' kli-YAN",
+      "id": "klien, pelanggan"
+    },
+    {
+      "fr": "laisser",
+      "baca": "lè-SE",
+      "id": "meninggalkan, membiarkan"
+    },
+    {
+      "fr": "le bureau",
+      "baca": "l' bü-RO",
+      "id": "meja kerja; kantor"
+    },
+    {
+      "fr": "répondre à",
+      "baca": "re-PONDR a",
+      "id": "menjawab"
+    },
+    {
+      "fr": "la secrétaire",
+      "baca": "la s'-kre-TÈR",
+      "id": "sekretaris"
+    },
+    {
+      "fr": "la réunion",
+      "baca": "la re-ü-NYON",
+      "id": "rapat"
+    },
+    {
+      "fr": "le message",
+      "baca": "l' mè-SAJ",
+      "id": "pesan"
+    },
+    {
+      "fr": "déranger",
+      "baca": "de-ran-JE",
+      "id": "mengganggu"
+    },
+    {
+      "fr": "avoir raison",
+      "baca": "a-VWAR rè-ZON",
+      "id": "benar, betul"
+    },
+    {
+      "fr": "la facture",
+      "baca": "la fak-TÜR",
+      "id": "faktur, tagihan"
+    },
+    {
+      "fr": "vérifier",
+      "baca": "ve-ri-FYE",
+      "id": "memeriksa"
+    },
+    {
+      "fr": "correspondre",
+      "baca": "ko-rès-PONDR",
+      "id": "sesuai, cocok"
+    },
+    {
+      "fr": "montrer",
+      "baca": "mon-TRE",
+      "id": "menunjukkan"
+    },
+    {
+      "fr": "la comptable",
+      "baca": "la kon-TABL",
+      "id": "akuntan"
+    },
+    {
+      "fr": "transmettre",
+      "baca": "trans-MÈTR",
+      "id": "meneruskan"
+    },
+    {
+      "fr": "devancer",
+      "baca": "d'-van-SE",
+      "id": "mendahului"
+    },
+    {
+      "fr": "agaçant",
+      "baca": "a-ga-SAN",
+      "id": "menjengkelkan"
+    },
+    {
+      "fr": "le compliment",
+      "baca": "l' kon-pli-MAN",
+      "id": "pujian"
+    },
+    {
+      "fr": "offrir",
+      "baca": "o-FRIR",
+      "id": "menghadiahkan, menawarkan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata ganti yang menggantikan bagian bercetak miring.",
+      "items": [
+        "J'ai fini *le dossier*. → Je ____ ai fini.",
+        "J'ai écrit *au client*. → Je ____ ai écrit.",
+        "Nous avons vérifié *les factures*. → Nous ____ avons vérifiées.",
+        "Elle téléphone *à ses parents*. → Elle ____ téléphone.",
+        "Il attend *sa sœur*. → Il ____ attend.",
+        "Je veux voir *ce film*. → Je veux ____ voir."
+      ]
+    },
+    {
+      "prompt": "Isi dengan *le*, *la*, *l'*, *les*, *lui*, atau *leur*.",
+      "items": [
+        "Ce film ne ____ plaît pas du tout. (à Marc)",
+        "Les enfants ? Je ____ ai emmenés à l'école.",
+        "Tes clés, je ____ ai posées sur la table.",
+        "J'ai vu mes collègues, mais je ne ____ ai rien dit du problème.",
+        "Cette chanson, je ____ écoute tous les matins."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "je / ne / l' / ai / pas / vu",
+        "envoie / lui / un / message",
+        "je / ne / veux / pas / le / déranger",
+        "les / factures / je / les / ai / vérifiées",
+        "ne / me / donne / pas / ça"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya sudah menulis surat ke dia pagi ini.",
+        "Dia belum menjawab saya.",
+        "Kirim pesan ke dia, lebih cepat.",
+        "Faktur-fakturnya sudah saya periksa semua.",
+        "Saya kangen kamu."
+      ]
+    }
+  ],
+  "answers": [
+    "l' — lui — les — leur — l' — le",
+    "lui — les — les — leur — l'",
+    "Je ne l'ai pas vu. — Envoie-lui un message. — Je ne veux pas le déranger. — Les factures, je les ai vérifiées. — Ne me donne pas ça.",
+    "Je lui ai écrit ce matin. — Il ne m'a pas encore répondu. — Envoie-lui un message, c'est plus rapide. — Les factures, je les ai toutes vérifiées. — Tu me manques."
+  ],
+  "wave": "Ulangi **unit 2**: ceritakan ulang kisah ketinggalan kereta itu dengan kata-katamu sendiri, lalu bacalah ulang ceritamu dan ganti tiap kata benda yang muncul dua kali dengan kata ganti. Kalimat yang tersisa itulah bahasa Prancis yang wajar."
+}

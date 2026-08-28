@@ -1,0 +1,444 @@
+{
+  "title": "Sudah saya kasih ke dia kemarin",
+  "title_target": "Je le lui ai donné hier",
+  "goal": "Memasang dua kata ganti sekaligus dalam satu kalimat, membaliknya di kalimat perintah, dan mencocokkan participe passé tanpa ragu.",
+  "bekal": [
+    "mengurutkan dua kata ganti di depan kata kerja",
+    "membalik urutannya di kalimat perintah yang positif",
+    "mengembalikan urutan normal begitu kalimatnya disangkal",
+    "mencocokkan participe passé dengan COD yang mendahului"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tu les lui as rendues ?",
+      "intro": "Dewi dan Léa mencari kunci apartemen yang hilang entah di mana. Dalam empat belas baris ini muncul hampir semua pasangan kata ganti yang mungkin — bacalah keras-keras sampai rangkaiannya terdengar seperti satu kata.",
+      "lines": [
+        {
+          "speaker": "Léa:",
+          "text": "Les clés de la cave, tu les as rendues à Madame Petit ?",
+          "id": "Kunci gudang bawah, sudah kamu kembalikan ke Bu Petit?",
+          "literal": "itu kunci dari itu gudang, kamu mereka-punya dikembalikan kepada Nyonya Petit?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je les lui ai rendues samedi. Elle me les avait prêtées lundi.",
+          "id": "Sudah saya kembalikan ke dia Sabtu. Dia pinjamkan ke saya hari Senin.",
+          "literal": "saya mereka kepadanya punya dikembalikan sabtu. dia kepadaku mereka punyalah dipinjamkan senin."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Alors pourquoi elle m'en a reparlé ce matin ?",
+          "id": "Terus kenapa dia ngungkit itu lagi ke saya pagi ini?",
+          "literal": "kalau-begitu kenapa dia kepadaku darinya punya dibicarakan-lagi ini pagi?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Aucune idée. Demande-le-lui directement.",
+          "id": "Nggak tahu. Tanya langsung aja ke dia.",
+          "literal": "tak-satu-pun gagasan. tanyakan-itu-kepadanya langsung."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Je n'ose pas. Tu ne peux pas le lui demander, toi ?",
+          "id": "Saya nggak berani. Kamu nggak bisa tanya ke dia?",
+          "literal": "saya tidak berani bukan. kamu tidak bisa bukan itu kepadanya menanyakan, kamu?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je peux, mais ne me le reproche pas après.",
+          "id": "Bisa, tapi nanti jangan salahkan saya.",
+          "literal": "saya bisa, tapi jangan kepadaku itu menyalahkan bukan sesudah."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Promis. Au fait, mon parapluie, tu me l'as rapporté ?",
+          "id": "Janji. Eh ngomong-ngomong, payung saya sudah kamu balikin?",
+          "literal": "dijanjikan. pada fakta, kepunyaanku payung, kamu kepadaku itu-punya dikembalikan?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je te l'ai rendu jeudi. Il est dans l'entrée.",
+          "id": "Sudah saya kembalikan Kamis. Ada di lorong depan.",
+          "literal": "saya kepadamu itu-punya dikembalikan kamis. dia adalah dalam itu-lorong-depan."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Ah oui. Bon, et les documents, je les envoie à qui ?",
+          "id": "Oh iya. Oke, terus dokumennya saya kirim ke siapa?",
+          "literal": "ah ya. baik, dan itu dokumen, saya mereka kirim kepada siapa?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "À l'agence. Envoie-les-leur avant vendredi, sinon c'est trop tard.",
+          "id": "Ke agennya. Kirim ke mereka sebelum Jumat, kalau nggak telat.",
+          "literal": "kepada itu-agen. kirim-mereka-kepada-mereka sebelum jumat, kalau-tidak itu-adalah terlalu terlambat."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Et la copie, je la leur envoie aussi ?",
+          "id": "Salinannya juga saya kirim ke mereka?",
+          "literal": "dan itu salinan, saya itu kepada-mereka kirim juga?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Non, ne la leur envoie pas. Garde-la pour toi.",
+          "id": "Jangan, jangan kirim ke mereka. Simpan buat kamu sendiri.",
+          "literal": "tidak, jangan itu kepada-mereka kirim bukan. simpan-itu untuk kamu."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "D'accord. Tu me rappelles tout ça demain ?",
+          "id": "Oke. Besok ingetin lagi semuanya ya?",
+          "literal": "dari-kesepakatan. kamu kepadaku mengingatkan semua ini besok?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Je te l'écris. Comme ça, tu ne me le redemanderas pas.",
+          "id": "Saya tulisin. Biar kamu nggak nanya ke saya lagi.",
+          "literal": "saya kepadamu itu menulis. seperti itu, kamu tidak kepadaku itu akan-menanyakan-lagi bukan."
+        }
+      ],
+      "notes": [
+        "**Urutan dua kata ganti tidak pernah berubah** di kalimat biasa: *me/te/se/nous/vous* → *le/la/les* → *lui/leur* → *y* → *en*. *Je **te le** dis*, *je **le lui** donne*, *il **m'en** parle*. Tabel lengkapnya ada di kotak berikutnya dan di halaman belakang.",
+        "**Perhatikan bahwa urutannya berganti tergantung orangnya.** Dengan orang pertama dan kedua, penerima duluan: *je **te le** donne*. Dengan orang ketiga, sasaran duluan: *je **le lui** donne*. Inilah satu-satunya keanehan dalam sistem itu, dan sayangnya ia justru yang paling sering dipakai.",
+        "***Elle me les avait prêtées*** — dua kata ganti, plus-que-parfait, plus kecocokan sekaligus. *Les* menggantikan *les clés* (jamak feminin), berdiri di depan, maka *prêté**es***. Baris seperti inilah yang membedakan tulisan B1 dari tulisan A2.",
+        "***Demande-le-lui*** — di kalimat perintah positif, kedua kata ganti pindah ke belakang, **COD dulu, baru COI**, dan semuanya disambung tanda hubung. Urutannya justru berbeda dari kalimat biasa, dan tak ada jalan lain selain menghafal contohnya.",
+        "***Ne me le reproche pas*** — begitu kalimat perintahnya disangkal, semuanya kembali ke urutan normal dan kembali ke depan kata kerja. Bandingkan langsung: *Dis-**le-moi*** melawan *Ne **me le** dis pas*.",
+        "***Aucune idée*** adalah potongan dari *je n'ai aucune idée*, dan dalam percakapan bagian pertamanya memang dibuang. Perhatikan bahwa *aucun* selalu tunggal: *aucune idée*, *aucun problème* — tak pernah jamak.",
+        "***Sinon* berarti \"kalau tidak\"** dan menyambungkan akibat: *Envoie-les-leur avant vendredi, **sinon** c'est trop tard.* Ia jauh lebih sering dipakai daripada *si non* yang panjang, dan wajib ditulis serangkai.",
+        "***Comme ça* berarti \"dengan begitu\"** di awal kalimat akibat — bukan \"seperti itu\". *Je te l'écris. **Comme ça**, tu ne me le redemanderas pas.* Ia salah satu penyambung paling sering terdengar dalam percakapan sehari-hari."
+      ],
+      "grammars": [
+        {
+          "title": "Urutan dua kata ganti",
+          "body": [
+            "Bacalah tabel ini dari kiri ke kanan: kata ganti dari kolom kiri selalu berdiri sebelum kata ganti dari kolom kanan."
+          ],
+          "table": {
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "me",
+                "le",
+                "lui",
+                "y",
+                "en"
+              ],
+              [
+                "te",
+                "la",
+                "leur",
+                "",
+                ""
+              ],
+              [
+                "se",
+                "les",
+                "",
+                "",
+                ""
+              ],
+              [
+                "nous",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "vous",
+                "",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "**Contoh untuk tiap pasangan yang mungkin:** *Je **te le** donne.* · *Je **le lui** donne.* · *Il **nous les** a envoyés.* · *Elle **m'en** parle.* · *Je **l'y** ai vu.* · *Il **y en** a trois.* · *Je **les leur** ai transmises.*",
+            "⚠️ **Dua kata ganti dari kolom yang sama tak pernah berdampingan.** Untuk \"saya memperkenalkanmu kepadanya\", bahasa Prancis tidak bisa berkata *je te lui présente*; ia memakai bentuk penegas: *je **te** présente **à lui***."
+          ]
+        },
+        {
+          "title": "Kalimat perintah",
+          "body": [
+            "Perintah positif membalik segalanya; perintah yang disangkal mengembalikan segalanya."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Susunan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "positif, satu kata ganti",
+                "kata kerja + kata ganti",
+                "Donne-**le** !"
+              ],
+              [
+                "positif, *me* → *moi*",
+                "kata kerja + moi/toi",
+                "Donne-**moi** ça !"
+              ],
+              [
+                "positif, dua kata ganti",
+                "kata kerja + **COD** + COI",
+                "Donne-**le-moi** !"
+              ],
+              [
+                "positif, orang ketiga",
+                "kata kerja + COD + lui/leur",
+                "Demande-**le-lui** !"
+              ],
+              [
+                "positif dengan *y*/*en*",
+                "keduanya paling belakang",
+                "Donne-m'**en** ! · Vas-**y** !"
+              ],
+              [
+                "disangkal",
+                "**urutan normal**, di depan",
+                "Ne **me le** donne pas !"
+              ],
+              [
+                "disangkal dengan *y*/*en*",
+                "urutan normal",
+                "N'**y** va pas ! · N'**en** parle pas !"
+              ]
+            ]
+          },
+          "after": [
+            "**Kata kerja berakhiran *-er* kehilangan *-s*-nya di perintah *tu***: *tu parles* → *parle !*, *tu vas* → *va !*. Tapi *-s*-nya kembali di depan *y* dan *en* semata-mata demi bunyi: *va**s**-y !*, *donne**s**-en !*",
+            "**Tiga kata kerja punya bentuk perintah sendiri**: *être* → *sois, soyons, soyez*; *avoir* → *aie, ayons, ayez*; *savoir* → *sache, sachons, sachez*. Ketiganya muncul dalam ungkapan sehari-hari: *Sois sage !*, *N'aie pas peur !*, *Sachez que…*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kecocokan participe passé — tiga aturan, tak lebih",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Keadaan",
+            "Cocok dengan",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "*avoir*, COD di belakang",
+              "**tidak cocok**",
+              "J'ai rendu **les clés**."
+            ],
+            [
+              "*avoir*, COD di depan",
+              "COD",
+              "Les clés, je **les** ai rendu**es**."
+            ],
+            [
+              "*avoir* + *que*",
+              "kata benda di depan *que*",
+              "Les clés **que** j'ai rendu**es**."
+            ],
+            [
+              "*avoir* + *en*",
+              "**tidak cocok**",
+              "Des clés ? J'**en** ai rendu deux."
+            ],
+            [
+              "*être* (14 kata kerja)",
+              "subjek",
+              "Elle est parti**e**."
+            ],
+            [
+              "ber-*se*, COD di belakang",
+              "**tidak cocok**",
+              "Elle s'est lavé **les mains**."
+            ],
+            [
+              "ber-*se*, tanpa COD lain",
+              "subjek",
+              "Elle s'est lavé**e**."
+            ],
+            [
+              "ber-*se* dengan COI",
+              "**tidak cocok**",
+              "Elles se sont **parlé**."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Cara memeriksanya dalam dua detik",
+          "items": [
+            "**Tanyakan satu hal saja: apakah ada sasaran (COD) yang berdiri SEBELUM kata kerjanya?** Kalau ya, cocokkan. Kalau tidak, jangan sentuh. Aturan itu menutup enam dari delapan baris tabel di atas.",
+            "Sasaran yang berdiri di depan hanya muncul lewat tiga pintu: **kata ganti** (*je **les** ai vues*), **kata *que*** (*la lettre **que** j'ai écrite*), dan **pertanyaan** (***Quelles** photos as-tu prises ?*). Di luar ketiganya, kecocokan dengan *avoir* praktis tak pernah terjadi.",
+            "**Kata kerja ber-*se* menipu.** *Elles se sont **parlé*** tidak cocok, karena *parler **à** quelqu'un* — *se* di situ COI, bukan COD. Ujinya: ganti *se* dengan kata benda dan lihat apakah butuh *à*. Butuh *à* berarti tak ada kecocokan.",
+            "**Dalam percakapan, hampir semuanya tak terdengar.** *Rendu* dan *rendues* berbunyi sama persis. Kecocokan penting di tulisan — surat, e-mail, ujian — dan di situlah ia dinilai. Kecuali untuk participe berakhiran huruf mati seperti *fait*, *mis*, *pris*, *ouvert*: di situ *faite*, *mise*, *prise*, *ouverte* memang **berbeda bunyinya**."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "la clé / la clef",
+      "baca": "la KLE",
+      "id": "kunci"
+    },
+    {
+      "fr": "la cave",
+      "baca": "la KAV",
+      "id": "gudang bawah tanah"
+    },
+    {
+      "fr": "rendre",
+      "baca": "RANDR",
+      "id": "mengembalikan"
+    },
+    {
+      "fr": "prêter",
+      "baca": "prè-TE",
+      "id": "meminjamkan"
+    },
+    {
+      "fr": "emprunter",
+      "baca": "an-prun-TE",
+      "id": "meminjam"
+    },
+    {
+      "fr": "reparler de",
+      "baca": "r'-par-LE d'",
+      "id": "membicarakan lagi"
+    },
+    {
+      "fr": "aucun / aucune",
+      "baca": "o-KUN / o-KÜN",
+      "id": "tak satu pun"
+    },
+    {
+      "fr": "oser",
+      "baca": "o-ZE",
+      "id": "berani"
+    },
+    {
+      "fr": "reprocher",
+      "baca": "r'-pro-SYE",
+      "id": "menyalahkan, mencela"
+    },
+    {
+      "fr": "au fait",
+      "baca": "o FÈT",
+      "id": "ngomong-ngomong"
+    },
+    {
+      "fr": "rapporter",
+      "baca": "ra-por-TE",
+      "id": "membawa kembali"
+    },
+    {
+      "fr": "l'entrée",
+      "baca": "lan-TRE",
+      "id": "lorong depan; masuk"
+    },
+    {
+      "fr": "le document",
+      "baca": "l' do-kü-MAN",
+      "id": "dokumen"
+    },
+    {
+      "fr": "l'agence",
+      "baca": "la-JANS",
+      "id": "agen, biro"
+    },
+    {
+      "fr": "sinon",
+      "baca": "si-NON",
+      "id": "kalau tidak"
+    },
+    {
+      "fr": "trop tard",
+      "baca": "tro TAR",
+      "id": "terlambat"
+    },
+    {
+      "fr": "la copie",
+      "baca": "la ko-PI",
+      "id": "salinan"
+    },
+    {
+      "fr": "garder",
+      "baca": "gar-DE",
+      "id": "menyimpan, menahan"
+    },
+    {
+      "fr": "rappeler",
+      "baca": "ra-p'-LE",
+      "id": "mengingatkan; menelepon balik"
+    },
+    {
+      "fr": "comme ça",
+      "baca": "kom SA",
+      "id": "dengan begitu"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ganti kedua bagian bercetak miring dengan kata ganti.",
+      "items": [
+        "Je donne *le livre* *à Marc*. → Je ____ donne.",
+        "Elle envoie *les documents* *à ses parents*. → Elle ____ envoie.",
+        "Tu me prêtes *ta voiture* ? → Tu ____ prêtes ?",
+        "Il nous a rendu *les clés*. → Il ____ a rendues.",
+        "Je te parle *de ce problème*. → Je ____ parle.",
+        "Nous avons vu Marc *à Paris*. → Nous ____ avons vu."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi kalimat perintah yang positif (pakai *tu*).",
+      "items": [
+        "Tu me donnes le dossier.",
+        "Tu lui demandes la réponse.",
+        "Tu leur envoies les copies.",
+        "Tu y vas.",
+        "Tu m'en parles."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan participe passé, dengan kecocokan kalau perlu.",
+      "items": [
+        "Les clés, je les ai ____ samedi. (rendre)",
+        "J'ai ____ les clés samedi. (rendre)",
+        "Elle est ____ à six heures. (partir)",
+        "Les lettres qu'il a ____ sont sur la table. (écrire)",
+        "Des photos ? J'en ai ____ beaucoup. (prendre)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Sudah saya kembalikan ke dia hari Sabtu.",
+        "Tanyakan langsung ke dia.",
+        "Jangan kirim salinannya ke mereka.",
+        "Saya tulisin buat kamu, biar kamu nggak nanya lagi.",
+        "Dia meminjamkannya ke saya hari Senin."
+      ]
+    }
+  ],
+  "answers": [
+    "le lui — les leur — te la — nous les — t'en — l'y",
+    "Donne-le-moi ! — Demande-la-lui ! — Envoie-les-leur ! — Vas-y ! — Parle-m'en !",
+    "rendues — rendu — partie — écrites — pris",
+    "Je les lui ai rendues samedi. — Demande-le-lui directement. — Ne la leur envoie pas. — Je te l'écris, comme ça tu ne me le redemanderas pas. — Elle me les a prêtées lundi."
+  ],
+  "wave": "Ulangi **unit 4**: ambil lima kalimat ber-*y* atau ber-*en* yang kamu susun, lalu tambahkan satu kata ganti lagi di masing-masing sampai keduanya berdampingan — *Il m'en a parlé*, *Je l'y ai vu*, *Il y en a trois*."
+}

@@ -1,0 +1,471 @@
+{
+  "title": "Saya sudah pernah ke sana, dan saya beli tiga",
+  "title_target": "J'y suis déjà allée, et j'en ai acheté trois",
+  "goal": "Menguasai dua kata ganti yang tidak punya padanan sama sekali dalam bahasa Indonesia: y untuk tempat dan à, en untuk de dan jumlah.",
+  "bekal": [
+    "memakai *y* untuk tempat dan untuk *à* + benda",
+    "memakai *en* untuk *de* + benda, jumlah, dan bagian",
+    "menyisakan angka di ujung kalimat ber-*en*",
+    "mengenali ungkapan beku yang mengandung *y* atau *en*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Tu y es déjà allée ?",
+      "intro": "Léa merencanakan akhir pekan di Marseille dan bertanya kepada Dewi yang pernah ke sana. Perhatikan bahwa hampir tiap balasan Dewi mengandung *y* atau *en* — dan bahwa keduanya menghilang sama sekali dari terjemahan Indonesianya.",
+      "lines": [
+        {
+          "speaker": "Léa:",
+          "text": "On pense aller à Marseille ce week-end. Tu y es déjà allée ?",
+          "id": "Kami kepikiran ke Marseille akhir pekan ini. Kamu udah pernah ke sana?",
+          "literal": "orang berpikir pergi ke Marseille ini akhir-pekan. kamu ke-sana adalah sudah pergi?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Deux fois. J'y suis restée une semaine la dernière fois.",
+          "id": "Dua kali. Terakhir saya di sana seminggu.",
+          "literal": "dua kali. saya di-sana adalah tinggal satu minggu itu terakhir kali."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Il y a des choses à voir absolument ?",
+          "id": "Ada yang wajib dilihat?",
+          "literal": "dia di-sana punya beberapa hal untuk melihat mutlak?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Les calanques. Il y en a une dizaine, mais deux suffisent.",
+          "id": "Calanques-nya. Ada sekitar sepuluh, tapi dua saja cukup.",
+          "literal": "itu calanque. dia di-sana darinya punya satu sepuluhan, tapi dua mencukupi."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "On peut y aller à pied ?",
+          "id": "Bisa jalan kaki ke sana?",
+          "literal": "orang bisa ke-sana pergi dengan kaki?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Pour deux d'entre elles, oui. Pour les autres, il faut un bateau.",
+          "id": "Untuk dua di antaranya, bisa. Sisanya butuh perahu.",
+          "literal": "untuk dua dari-antara mereka, ya. untuk itu lain, dia perlu satu perahu."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Et le vieux port ? Tout le monde en parle.",
+          "id": "Terus pelabuhan tuanya? Semua orang ngomongin itu.",
+          "literal": "dan itu tua pelabuhan? semua itu dunia darinya berbicara."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "On y passe forcément. Mais n'y mange pas, c'est trop cher.",
+          "id": "Pasti lewat situ. Tapi jangan makan di situ, kemahalan.",
+          "literal": "orang di-sana melewati terpaksa. tapi jangan-di-sana makan bukan, itu-adalah terlalu mahal."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Tu as des adresses, alors ?",
+          "id": "Kamu punya rekomendasi tempat, dong?",
+          "literal": "kamu punya beberapa alamat, kalau-begitu?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "J'en ai trois. Je te les envoie ce soir.",
+          "id": "Ada tiga. Nanti malam saya kirim ke kamu.",
+          "literal": "saya darinya punya tiga. saya kepadamu mereka mengirim ini malam."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Et la bouillabaisse, ça vaut le coup ?",
+          "id": "Terus bouillabaisse-nya, worth it nggak?",
+          "literal": "dan itu bouillabaisse, itu bernilai itu pukulan?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "J'en ai mangé une fois. Franchement, je m'en souviens surtout du prix.",
+          "id": "Saya pernah makan sekali. Jujur, yang saya ingat malah harganya.",
+          "literal": "saya darinya punya dimakan satu kali. terus-terang, saya diriku darinya mengingat terutama dari-itu harga."
+        },
+        {
+          "speaker": "Léa:",
+          "text": "Bon, on n'y va pas pour la cuisine, alors.",
+          "id": "Oke, jadi ke sananya bukan buat makanannya.",
+          "literal": "baik, orang tidak-ke-sana pergi bukan untuk itu masakan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Non. On y va pour la mer et pour la lumière. Ça, personne n'en parle assez.",
+          "id": "Bukan. Ke sananya buat laut dan cahayanya. Nah itu, nggak ada yang cukup membicarakannya.",
+          "literal": "tidak. orang ke-sana pergi untuk itu laut dan untuk itu cahaya. itu, tak-seorang-pun tidak-darinya berbicara cukup."
+        }
+      ],
+      "notes": [
+        "***Y* menggantikan tempat.** *Je vais **à Marseille*** → *j'**y** vais*. *Je suis restée **là-bas*** → *j'**y** suis restée*. Bahasa Indonesia berkata \"ke sana\" atau \"di situ\", dan sering menghilangkannya sama sekali — sementara bahasa Prancis nyaris tak pernah membuangnya.",
+        "***Y* juga menggantikan *à* + benda** (bukan orang): *je pense **à mon travail*** → *j'**y** pense*; *je réponds **à sa lettre*** → *j'**y** réponds*. Untuk orang, yang dipakai tetap *lui*/*leur* dari unit 3.",
+        "***En* menggantikan *de* + sesuatu**: *tout le monde parle **du vieux port*** → *tout le monde **en** parle*. Ia juga menggantikan kata sandang sebagian: *j'ai mangé **de la** bouillabaisse* → *j'**en** ai mangé*.",
+        "**Kalau ada jumlah, jumlahnya tetap tinggal** di ujung kalimat: *j'ai trois adresses* → *j'**en** ai **trois***. Membuang angkanya adalah kesalahan yang paling sering muncul, karena bahasa Indonesia memang membuangnya: kita cukup berkata \"ada\".",
+        "***Il y en a une dizaine*** memperlihatkan *y* dan *en* berdampingan. Urutannya tak pernah berubah: **y sebelum en**. Hafalkan bunyinya (*i-ya-na*, ditulis *il y en a*) — ia salah satu rangkaian yang paling sering terdengar dalam bahasa Prancis sehari-hari.",
+        "***N'y mange pas*** — di kalimat perintah yang disangkal, *y* kembali ke tempat normalnya, sebelum kata kerja. Di perintah positif ia pindah ke belakang: *Vas-**y** !* (dengan *-s* yang muncul khusus demi bunyi).",
+        "***Je m'en souviens*** memakai keduanya sekaligus: *se souvenir **de*** menuntut *en*, dan *me* adalah bagian dari kata kerjanya. Urutannya *me* dulu, baru *en* — sesuai tabel urutan di halaman belakang.",
+        "***Personne n'en parle assez*** memperlihatkan bahwa *personne* menggantikan *pas*: sangkalannya cukup *ne*, tanpa *pas*. Hal yang sama berlaku untuk *rien*, *jamais*, *plus*, dan *aucun* — dua penyangkal tidak pernah ditumpuk."
+      ],
+      "grammars": [
+        {
+          "title": "Y",
+          "body": [
+            "Satu kata pendek yang menggantikan seluruh keterangan tempat atau seluruh kelompok *à* + benda."
+          ],
+          "table": {
+            "head": [
+              "Yang digantikan",
+              "Kalimat penuh",
+              "Dengan *y*"
+            ],
+            "rows": [
+              [
+                "à + tempat",
+                "Je vais **à Paris**.",
+                "J'**y** vais."
+              ],
+              [
+                "en / dans / sur / chez",
+                "Il est **chez lui**.",
+                "Il **y** est."
+              ],
+              [
+                "à + benda",
+                "Je pense **à mon travail**.",
+                "J'**y** pense."
+              ],
+              [
+                "à + kegiatan",
+                "Elle participe **au projet**.",
+                "Elle **y** participe."
+              ],
+              [
+                "dengan infinitif",
+                "Je vais **aller à Lyon**.",
+                "Je vais **y** aller."
+              ],
+              [
+                "passé composé",
+                "Je suis allée **à Marseille**.",
+                "J'**y** suis allée."
+              ],
+              [
+                "perintah positif",
+                "Va **au marché** !",
+                "Vas-**y** !"
+              ],
+              [
+                "perintah disangkal",
+                "Ne va pas **là-bas** !",
+                "N'**y** va pas !"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ ***Y* tidak dipakai untuk orang.** *Je pense à **Marc*** tetap *je pense **à lui***, bukan *j'y pense*. Kata kerja yang mengandung *à* + orang selalu memakai bentuk penegas atau *lui/leur*.",
+            "**Kalau tempatnya diawali *de*, yang dipakai bukan *y* melainkan *en***: *je viens **de** Marseille* → *j'**en** viens*. Inilah satu-satunya keadaan di mana *en* pun berarti tempat."
+          ]
+        },
+        {
+          "title": "En",
+          "body": [
+            "*En* menutup tiga pekerjaan sekaligus: menggantikan *de*, menggantikan jumlah, dan menggantikan bagian."
+          ],
+          "table": {
+            "head": [
+              "Yang digantikan",
+              "Kalimat penuh",
+              "Dengan *en*"
+            ],
+            "rows": [
+              [
+                "de + benda",
+                "Il parle **du film**.",
+                "Il **en** parle."
+              ],
+              [
+                "kata sandang sebagian",
+                "Je bois **du café**.",
+                "J'**en** bois."
+              ],
+              [
+                "dengan jumlah",
+                "J'ai **trois** adresses.",
+                "J'**en** ai **trois**."
+              ],
+              [
+                "dengan *beaucoup de*",
+                "J'ai **beaucoup de** travail.",
+                "J'**en** ai **beaucoup**."
+              ],
+              [
+                "disangkal",
+                "Je ne bois pas **de café**.",
+                "Je n'**en** bois pas."
+              ],
+              [
+                "kata kerja + de",
+                "Il a besoin **d'argent**.",
+                "Il **en** a besoin."
+              ],
+              [
+                "asal tempat",
+                "Je viens **de Lyon**.",
+                "J'**en** viens."
+              ],
+              [
+                "perintah positif",
+                "Prends **du pain** !",
+                "Prends-**en** !"
+              ]
+            ]
+          },
+          "after": [
+            "**Yang paling sering keliru: membuang angkanya.** *Combien de frères as-tu ? — J'**en** ai **deux**.* Menjawab *j'ai deux* atau *j'en ai* saja sama-sama salah; keduanya wajib hadir.",
+            "**Sesudah *un* dan *une*, angkanya juga tetap tinggal**: *Tu as une voiture ? — Oui, j'**en** ai **une**.* Jangan menjawab *j'en ai un* kalau bendanya feminin."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ungkapan beku yang mengandung y atau en",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Ungkapan",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "il y a",
+              "i-li-YA",
+              "ada; … yang lalu"
+            ],
+            [
+              "on y va !",
+              "o-ni-VA",
+              "ayo berangkat!"
+            ],
+            [
+              "vas-y / allez-y",
+              "va-ZI / a-le-ZI",
+              "silakan, ayo, lanjut"
+            ],
+            [
+              "ça y est",
+              "sa-i-YÈ",
+              "nah, selesai / akhirnya"
+            ],
+            [
+              "je m'y attendais",
+              "j' mi-ya-tan-DÈ",
+              "saya sudah menduganya"
+            ],
+            [
+              "il s'y connaît",
+              "il si-ko-NÈ",
+              "dia ahli soal itu"
+            ],
+            [
+              "s'en aller",
+              "san-na-LE",
+              "pergi, berlalu"
+            ],
+            [
+              "j'en ai marre",
+              "jan-nè MAR",
+              "saya muak, sudah bosan"
+            ],
+            [
+              "je m'en fiche",
+              "j' man FISY",
+              "saya tidak peduli"
+            ],
+            [
+              "ne t'en fais pas",
+              "n' tan fè PA",
+              "jangan khawatir"
+            ],
+            [
+              "j'en ai assez",
+              "jan-nè a-SE",
+              "saya sudah cukup / sudah muak"
+            ],
+            [
+              "où en es-tu ?",
+              "u an nè-TÜ",
+              "sudah sampai mana kamu?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa ungkapan ini perlu dihafal utuh",
+          "items": [
+            "Dalam ungkapan beku, *y* dan *en* sudah **tak menggantikan apa pun lagi**. Tak ada gunanya bertanya \"*en* di *j'en ai marre* menggantikan apa\" — jawabannya tak ada, dan mencarinya justru memperlambatmu.",
+            "Semuanya diucapkan sebagai **satu kata**, bukan tiga. *Il y a* menjadi *ya* dalam percakapan cepat; *je m'en fiche* menjadi *j'm'en fiche*. Kalau kamu mengucapkannya kata demi kata, kalimatmu terdengar seperti dibaca, bukan diucapkan.",
+            "Dua di antaranya kasar kalau salah tempat: *j'en ai marre* dan *je m'en fiche* dipakai di antara teman, bukan kepada atasan atau petugas. Padanan sopannya: *je suis un peu fatigué de …* dan *ça m'est égal*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "la calanque",
+      "baca": "la ka-LANK",
+      "id": "teluk sempit berkarang"
+    },
+    {
+      "fr": "absolument",
+      "baca": "ap-so-lü-MAN",
+      "id": "mutlak, wajib"
+    },
+    {
+      "fr": "une dizaine",
+      "baca": "ün di-ZÈN",
+      "id": "sekitar sepuluh"
+    },
+    {
+      "fr": "suffire",
+      "baca": "sü-FIR",
+      "id": "cukup, memadai"
+    },
+    {
+      "fr": "à pied",
+      "baca": "a PYE",
+      "id": "jalan kaki"
+    },
+    {
+      "fr": "le bateau",
+      "baca": "l' ba-TO",
+      "id": "perahu, kapal"
+    },
+    {
+      "fr": "le port",
+      "baca": "l' POR",
+      "id": "pelabuhan"
+    },
+    {
+      "fr": "forcément",
+      "baca": "for-se-MAN",
+      "id": "pasti, mau tak mau"
+    },
+    {
+      "fr": "cher / chère",
+      "baca": "SYÈR",
+      "id": "mahal"
+    },
+    {
+      "fr": "l'adresse",
+      "baca": "la-DRÈS",
+      "id": "alamat; rekomendasi tempat"
+    },
+    {
+      "fr": "valoir le coup",
+      "baca": "va-LWAR l' KU",
+      "id": "sepadan, layak dicoba"
+    },
+    {
+      "fr": "franchement",
+      "baca": "fransy-MAN",
+      "id": "terus terang"
+    },
+    {
+      "fr": "le prix",
+      "baca": "l' PRI",
+      "id": "harga"
+    },
+    {
+      "fr": "la cuisine",
+      "baca": "la küi-ZIN",
+      "id": "masakan; dapur"
+    },
+    {
+      "fr": "la lumière",
+      "baca": "la lü-MYÈR",
+      "id": "cahaya"
+    },
+    {
+      "fr": "assez",
+      "baca": "a-SE",
+      "id": "cukup"
+    },
+    {
+      "fr": "avoir besoin de",
+      "baca": "a-VWAR b'-ZWAN d'",
+      "id": "membutuhkan"
+    },
+    {
+      "fr": "participer à",
+      "baca": "par-ti-si-PE a",
+      "id": "ikut serta dalam"
+    },
+    {
+      "fr": "s'en aller",
+      "baca": "san-na-LE",
+      "id": "pergi, berlalu"
+    },
+    {
+      "fr": "en avoir marre",
+      "baca": "an-na-VWAR MAR",
+      "id": "muak, bosan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ganti bagian bercetak miring dengan *y* atau *en*.",
+      "items": [
+        "Je vais *à Marseille*. → J'____ vais.",
+        "Il parle *du film*. → Il ____ parle.",
+        "Elle pense *à son travail*. → Elle ____ pense.",
+        "Nous avons besoin *d'argent*. → Nous ____ avons besoin.",
+        "Je suis restée *à Lyon* une semaine. → J'____ suis restée une semaine.",
+        "Tu viens *de la gare* ? → Tu ____ viens ?"
+      ]
+    },
+    {
+      "prompt": "Jawab dengan *en* dan jangan lupa jumlahnya.",
+      "items": [
+        "Combien de frères as-tu ? (deux) → J'____.",
+        "Tu as une voiture ? (oui, une) → Oui, j'____.",
+        "Vous avez des enfants ? (trois) → Nous ____.",
+        "Il reste du pain ? (beaucoup) → Oui, il ____.",
+        "Tu bois du café ? (non) → Non, je ____."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "j' / y / suis / déjà / allée",
+        "il / y / en / a / une / dizaine",
+        "n' / y / mange / pas",
+        "je / m' / en / souviens / très / bien",
+        "on / n' / y / va / pas / pour / la / cuisine"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Prancis.",
+      "items": [
+        "Saya sudah pernah ke sana dua kali.",
+        "Ada sekitar sepuluh, tapi dua saja cukup.",
+        "Saya punya tiga.",
+        "Jangan makan di situ, kemahalan.",
+        "Semua orang membicarakannya."
+      ]
+    }
+  ],
+  "answers": [
+    "y — en — y — en — y — en",
+    "en ai deux — en ai une — en avons trois — en reste beaucoup — n'en bois pas",
+    "J'y suis déjà allée. — Il y en a une dizaine. — N'y mange pas. — Je m'en souviens très bien. — On n'y va pas pour la cuisine.",
+    "J'y suis déjà allée deux fois. — Il y en a une dizaine, mais deux suffisent. — J'en ai trois. — N'y mange pas, c'est trop cher. — Tout le monde en parle."
+  ],
+  "wave": "Ulangi **unit 3**: ambil lima kalimat berkata ganti yang kamu susun di unit lalu, lalu tambahkan satu kalimat ber-*y* dan satu ber-*en* di belakang masing-masing — misalnya *Je lui ai écrit. J'y ai pensé toute la journée.*"
+}
