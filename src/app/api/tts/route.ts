@@ -231,10 +231,44 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
   return { status: 200, body: { audioContent: j.audioContent }, abadi: true };
 }
 
-function balas(h: Hasil, boleh_cdn: boolean) {
+/* [pustaka-pengajar-tts-v1] Dashboard pengajar (teach.linguo.id) itu SPA Vite di
+   repo lain — ia tak punya rute TTS sendiri, jadi reader modulnya memanggil rute
+   ini lintas asal. Yang diizinkan cuma asal milik Linguo: rute ini menagih Chirp
+   per karakter, jadi membukanya untuk semua orang sama dengan membuka tagihan.
+   Ketukan yang mp3-nya sudah ada tak pernah sampai ke sini — klien mengambilnya
+   langsung dari CDN Storage (lihat dariCdn di src/lib/ebookTts.ts). */
+const ASAL_BOLEH = [
+  /^https:\/\/teach\.linguo\.id$/,
+  /^https:\/\/([a-z0-9-]+\.)?linguo\.id$/,
+  /^https:\/\/linguo-admin-dashboard[a-z0-9-]*\.vercel\.app$/,
+  /^http:\/\/localhost:\d+$/,
+];
+
+function headerAsal(req: NextRequest): Record<string, string> {
+  const asal = req.headers.get("origin") || "";
+  if (!asal || !ASAL_BOLEH.some((p) => p.test(asal))) return {};
+  // Vary WAJIB: tanpa itu CDN bisa menyajikan balasan ber-ACAO satu asal kepada
+  // asal lain (atau sebaliknya, balasan tanpa ACAO ke pemanggil lintas asal).
+  return { "Access-Control-Allow-Origin": asal, Vary: "Origin" };
+}
+
+function balas(h: Hasil, boleh_cdn: boolean, cors: Record<string, string> = {}) {
   return NextResponse.json(h.body, {
     status: h.status,
-    headers: h.abadi && boleh_cdn ? HEADER_ABADI : { "Cache-Control": "no-store" },
+    headers: {
+      ...(h.abadi && boleh_cdn ? HEADER_ABADI : { "Cache-Control": "no-store" }),
+      ...cors,
+    },
+  });
+}
+
+export async function OPTIONS(req: NextRequest) {
+  const cors = headerAsal(req);
+  return new NextResponse(null, {
+    status: 204,
+    headers: Object.keys(cors).length
+      ? { ...cors, "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "content-type", "Access-Control-Max-Age": "86400" }
+      : {},
   });
 }
 
@@ -242,7 +276,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     // POST tak pernah disimpan browser/CDN — headernya sekadar tak menghalangi.
-    return balas(await sintesis(body?.text, body?.lang), false);
+    return balas(await sintesis(body?.text, body?.lang), false, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
@@ -255,7 +289,7 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   try {
     const q = req.nextUrl.searchParams;
-    return balas(await sintesis(q.get("text"), q.get("lang")), true);
+    return balas(await sintesis(q.get("text"), q.get("lang")), true, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }

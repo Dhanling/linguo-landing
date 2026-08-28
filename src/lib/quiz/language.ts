@@ -78,6 +78,21 @@ const NAME_TO_CODE: Record<string, string> = {
   batak: "bbc",
   bugis: "bug",
   madurese: "mad", madura: "mad",
+  /* [pustaka-pengajar-tts-v1] Modul 101 yang kolom `language`-nya sudah terbit
+     tapi belum pernah punya alias di sini. Tanpa entrinya kodeBahasaEbook()
+     balik null dan reader e-book kehilangan ketuk-kata + suaranya DIAM-DIAM —
+     tak ada galat, tak ada tombol mati, cuma halaman yang tak pernah berbunyi.
+     Diperiksa langsung ke `digital_products` 28 Agu 2026. */
+  bengali: "bn", bangla: "bn",
+  estonian: "et", estonia: "et",
+  mongolian: "mn", mongolia: "mn",
+  pashto: "ps", pashtu: "ps",
+  serbian: "sr", serbia: "sr",
+  slovak: "sk", slovakia: "sk", slowakia: "sk",
+  slovenian: "sl", slovenia: "sl",
+  /* Uzbek belum punya voice Chirp sama sekali — dipetakan supaya labelnya benar,
+     suaranya tetap mati sendiri lewat bisaDibunyikan(). */
+  uzbek: "uz", uzbekistan: "uz",
 };
 
 /** Nama tampil (Bahasa Indonesia) per kode — dipakai judul halaman kuis & pesan WA. */
@@ -92,6 +107,8 @@ const CODE_TO_LABEL: Record<string, string> = {
   my: "Myanmar", ur: "Urdu", sw: "Swahili", ms: "Melayu", id: "Indonesia",
   jv: "Jawa", su: "Sunda", ban: "Bali", bbc: "Batak", bug: "Bugis", mad: "Madura",
   eu: "Basque",
+  bn: "Bengali", et: "Estonia", mn: "Mongolia", ps: "Pashto", sr: "Serbia",
+  sk: "Slovakia", sl: "Slovenia", uz: "Uzbek",
 };
 
 /**
@@ -144,6 +161,8 @@ const CODE_TO_EN: Record<string, string> = {
   km: "Khmer", lo: "Lao", my: "Burmese", ur: "Urdu", sw: "Swahili",
   ms: "Malay", id: "Indonesian", jv: "Javanese", su: "Sundanese",
   ban: "Balinese", bbc: "Batak Toba", bug: "Buginese", mad: "Madurese",
+  bn: "Bengali", et: "Estonian", mn: "Mongolian", ps: "Pashto", sr: "Serbian",
+  sk: "Slovak", sl: "Slovenian", uz: "Uzbek",
 };
 
 export function langEnglishName(code?: string | null): string {
