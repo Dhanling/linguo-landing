@@ -1,0 +1,367 @@
+{
+ "title": "Tubuh, rumah sakit, dan kesehatan jiwa",
+ "title_target": "先挂号，再看病 — Xiān guà hào, zài kàn bìng",
+ "goal": "Menjelaskan gejala dengan tepat, memahami alur rumah sakit Tiongkok dari pendaftaran sampai pengambilan obat, membicarakan kesehatan jiwa tanpa berputar-putar, dan memakai 以免/免得 serta 万一 dalam urusan yang benar-benar penting.",
+ "bekal": [
+  "menjelaskan gejala: sejak kapan, seberapa sering, seberapa berat",
+  "melewati alur rumah sakit: 挂号 · 就诊 · 检查 · 取药",
+  "membaca aturan pakai obat dan hasil pemeriksaan",
+  "membicarakan tekanan batin dan tidur tanpa berputar-putar",
+  "kosakata asuransi, rawat inap, dan pemeriksaan berkala"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Di poliklinik",
+   "intro": "Andi datang ke rumah sakit dengan sakit perut yang berulang. Dokter Tiongkok biasanya bekerja cepat dan bertanya dengan urutan yang tetap; kalau kamu menjawab dengan urutan itu juga, konsultasimu akan jauh lebih berguna.",
+   "lines": [
+    { "speaker": "医生:", "text": "[哪里不舒服|Nǎlǐ bù shūfu]？", "id": "Bagian mana yang tidak enak?", "literal": "mana — tidak — nyaman?" },
+    { "speaker": "安迪:", "text": "[肚子疼|Dùzi téng]，[主要是这儿|zhǔyào shì zhèr]，[右上边|yòu shàngbian]。", "id": "Perut sakit, terutama di sini, bagian kanan atas.", "literal": "perut — sakit, terutama — adalah — sini, kanan — atas — sisi." },
+    { "speaker": "医生:", "text": "[疼了多久了|Téng le duōjiǔ le]？[是一直疼还是一阵一阵的|Shì yìzhí téng háishi yí zhèn yí zhèn de]？", "id": "Sudah berapa lama sakitnya? Terus-menerus atau hilang timbul?", "literal": "sakit — sudah — berapa lama — sudah? adalah — terus — sakit — atau — satu — periode — satu — periode — punya?" },
+    { "speaker": "安迪:", "text": "[断断续续三个星期了|Duànduàn-xùxù sān ge xīngqī le]。[一阵一阵的|Yí zhèn yí zhèn de]，[吃完饭以后比较明显|chī wán fàn yǐhòu bǐjiào míngxiǎn]。", "id": "Putus-nyambung sudah tiga minggu. Hilang timbul, setelah selesai makan lebih terasa.", "literal": "putus-putus-sambung-sambung — tiga — penggolong — minggu — sudah. satu — periode — satu — periode — punya, makan — habis — nasi — sesudah — cukup — jelas." },
+    { "speaker": "医生:", "text": "[有没有发烧|Yǒu méiyǒu fā shāo]？[恶心|Ěxīn]？[拉肚子|Lā dùzi]？", "id": "Ada demam? Mual? Diare?", "literal": "ada — tidak ada — keluar — panas? mual? tarik — perut?" },
+    { "speaker": "安迪:", "text": "[没发烧|Méi fā shāo]。[偶尔恶心|Ǒu'ěr ěxīn]，[没吐过|méi tù guo]。[大便正常|Dàbiàn zhèngcháng]。", "id": "Tidak demam. Kadang mual, belum pernah muntah. BAB normal.", "literal": "tidak — keluar — panas. sekali-sekali — mual, belum — muntah — pernah. besar — buang — normal." },
+    { "speaker": "医生:", "text": "[最近饮食有变化吗|Zuìjìn yǐnshí yǒu biànhuà ma]？[喝酒吗|Hē jiǔ ma]？[以前查过肝胆没有|Yǐqián chá guo gān dǎn méiyǒu]？", "id": "Belakangan ada perubahan pola makan? Minum alkohol? Sebelumnya pernah memeriksa hati dan empedu?", "literal": "belakangan — makan minum — ada — perubahan — kah? minum — arak — kah? dahulu — periksa — pernah — hati — empedu — belum?" },
+    { "speaker": "安迪:", "text": "[最近应酬比较多|Zuìjìn yìngchou bǐjiào duō]，[油腻的东西吃得多|yóunì de dōngxi chī de duō]。[肝胆没查过|Gān dǎn méi chá guo]。", "id": "Belakangan cukup banyak jamuan, makan makanan berminyak banyak. Hati dan empedu belum pernah diperiksa.", "literal": "belakangan — jamuan — cukup — banyak, berminyak — punya — barang — makan — secara — banyak. hati — empedu — belum — periksa — pernah." },
+    { "speaker": "医生:", "text": "[先做个腹部B超|Xiān zuò ge fùbù B chāo]，[再抽个血|zài chōu ge xiě]。[单子我给你开好了|Dānzi wǒ gěi nǐ kāi hǎo le]，[先去二楼缴费|xiān qù èr lóu jiǎo fèi]，[然后去三楼|ránhòu qù sān lóu]。[B超要空腹|B chāo yào kōngfù]，[你今天早上吃东西了吗|nǐ jīntiān zǎoshang chī dōngxi le ma]？", "id": "Lakukan dulu USG perut, lalu ambil darah. Suratnya sudah saya tuliskan, bayar dulu di lantai dua, lalu ke lantai tiga. USG harus dalam keadaan puasa, pagi ini kamu sudah makan?", "literal": "dulu — buat — penggolong — perut — bagian — B — ultra, lagi — tarik — penggolong — darah. lembar — saya — kepada — kamu — buka — baik — sudah, dulu — pergi — dua — lantai — bayar — biaya, sesudah itu — pergi — tiga — lantai. B — ultra — perlu — kosong — perut, kamu — hari ini — pagi — makan — barang — sudah — kah?" },
+    { "speaker": "安迪:", "text": "[吃了一个包子|Chī le yí ge bāozi]……", "id": "Sudah makan satu bakpau…", "literal": "makan — sudah — satu — penggolong — bakpau……" },
+    { "speaker": "医生:", "text": "[那B超明天早上再来|Nà B chāo míngtiān zǎoshang zài lái]，[空腹八小时|kōngfù bā xiǎoshí]。[血今天可以先抽|Xiě jīntiān kěyǐ xiān chōu]。[结果出来以后挂我的号复诊|Jiéguǒ chūlái yǐhòu guà wǒ de hào fùzhěn]，[不用重新排队|búyòng chóngxīn pái duì]。", "id": "Kalau begitu USG-nya besok pagi datang lagi, puasa delapan jam. Darahnya hari ini boleh diambil dulu. Setelah hasilnya keluar, daftar ke nomor saya untuk kontrol, tidak perlu antre ulang.", "literal": "kalau begitu — B — ultra — besok — pagi — lagi — datang, kosong — perut — delapan — jam. darah — hari ini — bisa — dulu — tarik. hasil — keluar-datang — sesudah — daftar — saya — punya — nomor — kontrol, tidak perlu — ulang — antre." },
+    { "speaker": "安迪:", "text": "[这几天需要注意什么|Zhè jǐ tiān xūyào zhùyì shénme]？", "id": "Beberapa hari ini perlu memperhatikan apa?", "literal": "ini — beberapa — hari — perlu — perhatikan — apa?" },
+    { "speaker": "医生:", "text": "[清淡饮食|Qīngdàn yǐnshí]，[别喝酒|bié hē jiǔ]，[少吃油炸的|shǎo chī yóuzhá de]。[如果疼得厉害或者发烧|Rúguǒ téng de lìhai huòzhě fā shāo]，[马上来急诊|mǎshàng lái jízhěn]，[以免耽误|yǐmiǎn dānwu]。", "id": "Makanan yang ringan, jangan minum alkohol, kurangi gorengan. Kalau sakitnya parah atau demam, langsung datang ke UGD, supaya jangan sampai terlambat.", "literal": "hambar — makan minum, jangan — minum — arak, sedikit — makan — goreng minyak — punya. kalau — sakit — secara — hebat — atau — keluar — panas, segera — datang — darurat — periksa, supaya jangan — tertunda." }
+   ],
+   "notes": [
+    "**Urutan pertanyaan dokter selalu sama:** di mana → sejak kapan → terus-menerus atau hilang timbul → gejala penyerta → kebiasaan. Menjawab dengan urutan yang sama membuat konsultasimu selesai dalam lima menit alih-alih lima belas.",
+    "**疼 vs 痛.** Keduanya berarti sakit; 疼 lebih lisan dan lebih umum di Tiongkok utara, 痛 sedikit lebih 【书】 dan lazim di selatan. Untuk bagian tubuh: [头疼|tóu téng], [肚子疼|dùzi téng], [嗓子疼|sǎngzi téng]。",
+    "**一阵一阵的 — “hilang timbul”.** Bentuk pengulangan penggolong yang menandai kejadian berulang: [一阵一阵|yí zhèn yí zhèn] sebentar-sebentar, [一天一天|yì tiān yì tiān] hari demi hari, [一点一点|yì diǎn yì diǎn] sedikit demi sedikit.",
+    "**断断续续 — “putus-nyambung”.** Bentuk AABB yang sangat lazim untuk menggambarkan sesuatu yang tidak menerus. Saudaranya: 反反复复 berulang-ulang, 忙忙碌碌 sibuk terus, 明明白白 jelas sekali.",
+    "**应酬 — “jamuan kerja”.** Kata yang penting secara budaya: makan malam bersama klien atau atasan yang sulit ditolak, sering disertai alkohol. Ia hampir selalu disebut dengan nada mengeluh, dan menyebutnya kepada dokter langsung dipahami.",
+    "**开单子 — “menuliskan surat rujukan/resep”.** 开 dipakai untuk semua dokumen yang dikeluarkan resmi: 开药 meresepkan obat, 开发票 menerbitkan kuitansi, 开证明 mengeluarkan surat keterangan.",
+    "**空腹 — “perut kosong, puasa”.** Persyaratan yang muncul di hampir semua pemeriksaan darah dan USG perut. Kalimat yang perlu kamu pahami: [检查前八小时不要进食|jiǎnchá qián bā xiǎoshí búyào jìnshí]。",
+    "**⚠️ 挂号 dan 复诊 — kunci alur rumah sakit Tiongkok.** 挂号 = mendaftar dan membeli nomor antrean untuk dokter tertentu; 复诊 = kontrol ulang ke dokter yang sama. Banyak rumah sakit menyediakan nomor kontrol terpisah yang lebih mudah didapat — pertanyaan [复诊需要重新挂号吗|Fùzhěn xūyào chóngxīn guà hào ma]？ menghemat berjam-jam antre."
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan gejala dengan tepat",
+     "body": [
+      "Kata sifat saja tidak cukup. Yang dicari dokter adalah **empat sumbu**: tempat, lama, pola, dan pemicunya."
+     ],
+     "tables": [
+      {
+       "head": ["Sumbu", "Rangka", "Contoh"],
+       "rows": [
+        ["Tempat", "…疼 · 主要是…", "[肚子疼|Dùzi téng]，[主要是右上边|zhǔyào shì yòu shàngbian]。"],
+        ["Lama", "…了 + waktu + 了", "[疼了三个星期了|Téng le sān ge xīngqī le]。"],
+        ["Pola", "一直 / 一阵一阵 / 断断续续", "[一阵一阵的|Yí zhèn yí zhèn de]。"],
+        ["Pemicu", "…的时候 / …以后", "[吃完饭以后比较明显|Chī wán fàn yǐhòu bǐjiào míngxiǎn]。"],
+        ["Kadar", "…得厉害 / 受不了 / 还能忍", "[疼得受不了|Téng de shòu bu liǎo]。"],
+        ["Perubahan", "越来越… / 好一点了", "[越来越严重|Yuè lái yuè yánzhòng]。"]
+       ]
+      },
+      {
+       "head": ["Gejala", "Mandarin", "Catatan"],
+       "rows": [
+        ["demam", "[发烧|fā shāo]", "[低烧|dī shāo] demam ringan"],
+        ["batuk", "[咳嗽|késou]", "[干咳|gān ké] batuk kering"],
+        ["pilek", "[流鼻涕|liú bítì]", "[鼻塞|bísè] hidung tersumbat"],
+        ["mual", "[恶心|ěxīn]", "[想吐|xiǎng tù] mau muntah"],
+        ["diare", "[拉肚子|lā dùzi]", "【书】 [腹泻|fùxiè]"],
+        ["pusing", "[头晕|tóu yūn]", "≠ [头疼|tóu téng] sakit kepala"],
+        ["lemas", "[没力气|méi lìqi]", "【书】 [乏力|fálì]"],
+        ["susah tidur", "[失眠|shīmián]", "—"],
+        ["nyeri sendi", "[关节疼|guānjié téng]", "—"],
+        ["ruam", "[出疹子|chū zhěnzi]", "[过敏|guòmǐn] alergi"]
+       ]
+      }
+     ],
+     "after": [
+      "**Kalimat pembuka terbaik di ruang periksa** menggabungkan keempat sumbu sekaligus: [我肚子疼|Wǒ dùzi téng]，[右上边|yòu shàngbian]，[断断续续三个星期了|duànduàn-xùxù sān ge xīngqī le]，[吃完饭以后比较明显|chī wán fàn yǐhòu bǐjiào míngxiǎn]。 Satu kalimat, dan dokter sudah punya separuh yang ia butuhkan."
+     ]
+    },
+    {
+     "title": "以免 · 免得 · 万一 dalam urusan kesehatan",
+     "body": [
+      "Ketiganya sudah kamu pelajari di unit 4. Di sini mereka muncul lagi karena instruksi medis hampir seluruhnya berbentuk peringatan — dan salah membaca satu di antaranya bisa berakibat nyata."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat instruksi", "Arti", "Perhatikan"],
+       "rows": [
+        ["[按时服药|Ànshí fú yào]，[以免复发|yǐmiǎn fùfā]。", "minum obat tepat waktu supaya tidak kambuh", "以免 = supaya JANGAN"],
+        ["[饭后服用|Fàn hòu fúyòng]，[免得刺激胃|miǎnde cìjī wèi]。", "diminum sesudah makan supaya tidak melukai lambung", "免得 【口】"],
+        ["[万一出现皮疹|Wànyī chūxiàn pízhěn]，[立即停药|lìjí tíng yào]。", "kalau muncul ruam, segera hentikan obatnya", "万一 = kemungkinan buruk"],
+        ["[如有不适|Rú yǒu bú shì]，[请及时就医|qǐng jíshí jiùyī]。", "jika ada keluhan, segera berobat", "如 = 如果 【书】"],
+        ["[切勿超量服用|Qiè wù chāo liàng fúyòng]。", "jangan sekali-kali melebihi takaran", "切勿 = larangan keras 【书】"]
+       ]
+      },
+      {
+       "head": ["Aturan pakai obat", "Mandarin", "Arti"],
+       "rows": [
+        ["takaran", "[一次两片|yí cì liǎng piàn]", "sekali dua tablet"],
+        ["frekuensi", "[一日三次|yí rì sān cì]", "tiga kali sehari"],
+        ["waktu", "[饭前|fàn qián] / [饭后|fàn hòu]", "sebelum / sesudah makan"],
+        ["cara", "[口服|kǒufú] / [外用|wàiyòng]", "diminum / dipakai luar"],
+        ["lama", "[连服五天|lián fú wǔ tiān]", "diminum lima hari berturut-turut"],
+        ["peringatan", "[忌辛辣|jì xīnlà]", "pantang pedas"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **切勿 dan 忌 adalah larangan medis yang keras.** [切勿|qiè wù] “jangan sekali-kali”, [忌|jì] “pantang”. Keduanya tidak dipakai dalam percakapan biasa, tetapi wajib dikenali di kemasan obat.",
+      "**服 bukan 吃 untuk obat di teks resmi.** [服药|fú yào] 【书】 vs [吃药|chī yào] 【口】. Keduanya benar; yang di kemasan selalu 服."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — “Aku tidak bisa tidur, tapi bukan karena tidak capek”",
+   "intro": "Xiao Lin berbicara dengan Wang Li tentang tekanan kerja dan susah tidur. Percakapan kesehatan jiwa di Tiongkok masih sering berputar-putar; perhatikan bagaimana Wang Li memindahkannya ke hal-hal yang konkret.",
+   "lines": [
+    { "speaker": "小林:", "text": "[我最近老睡不着|Wǒ zuìjìn lǎo shuì bu zháo]，[躺下两三个小时都醒着|tǎng xià liǎng sān ge xiǎoshí dōu xǐng zhe]。", "id": "Belakangan aku sering tidak bisa tidur, sudah berbaring dua tiga jam masih terjaga.", "literal": "saya — belakangan — selalu — tidur — tidak — sampai, baring — turun — dua — tiga — penggolong — jam — semua — terjaga — sedang." },
+    { "speaker": "王丽:", "text": "[多久了|Duōjiǔ le]？", "id": "Sudah berapa lama?", "literal": "berapa lama — sudah?" },
+    { "speaker": "小林:", "text": "[快两个月了吧|Kuài liǎng ge yuè le ba]。[白天特别累|Báitiān tèbié lèi]，[一到晚上脑子反而特别清醒|yí dào wǎnshang nǎozi fǎn'ér tèbié qīngxǐng]。", "id": "Hampir dua bulan mungkin. Siang hari capek sekali, begitu malam otakku justru sangat jernih.", "literal": "hampir — dua — penggolong — bulan — sudah — kan. siang — khusus — capek, sekali — sampai — malam — otak — sebaliknya — khusus — jernih." },
+    { "speaker": "王丽:", "text": "[两个月不算短了|Liǎng ge yuè bú suàn duǎn le]。[除了睡不着|Chúle shuì bu zháo]，[有没有别的|yǒu méiyǒu bié de]？[比如没胃口|Bǐrú méi wèikǒu]、[不想见人|bù xiǎng jiàn rén]、[对以前喜欢的事也提不起兴趣|duì yǐqián xǐhuan de shì yě tí bu qǐ xìngqù]？", "id": "Dua bulan tidak terhitung sebentar. Selain tidak bisa tidur, ada yang lain? Misalnya tidak nafsu makan, tidak mau bertemu orang, terhadap hal yang dulu disukai pun tidak bisa membangkitkan minat?", "literal": "dua — penggolong — bulan — tidak — hitung — pendek — sudah. selain — tidur — tidak — sampai, ada — tidak ada — lain — punya? misalnya — tidak ada — selera makan, tidak — ingin — temu — orang, terhadap — dulu — suka — punya — hal — juga — angkat — tidak — bangkit — minat?" },
+    { "speaker": "小林:", "text": "[……都有一点|……Dōu yǒu yìdiǎn]。[但我觉得就是工作压力大|Dàn wǒ juéde jiùshì gōngzuò yālì dà]，[过一阵就好了|guò yí zhèn jiù hǎo le]。", "id": "…Semuanya ada sedikit. Tapi menurutku ini cuma tekanan kerja yang besar, lewat beberapa waktu juga akan membaik.", "literal": "…… semua — ada — sedikit. tapi — saya — merasa — justru adalah — kerja — tekanan — besar, lewat — satu — periode — langsung — baik — sudah." },
+    { "speaker": "王丽:", "text": "[也许是|Yěxǔ shì]。[但两个月已经不是“一阵”了|Dàn liǎng ge yuè yǐjīng bú shì “yí zhèn” le]。[我不是说你有病|Wǒ bú shì shuō nǐ yǒu bìng]，[我是说这个已经影响到你的生活了|wǒ shì shuō zhège yǐjīng yǐngxiǎng dào nǐ de shēnghuó le]。[影响到生活|Yǐngxiǎng dào shēnghuó]，[就值得去看一次|jiù zhídé qù kàn yí cì]。", "id": "Mungkin saja. Tapi dua bulan sudah bukan “beberapa waktu”. Aku bukan bilang kamu sakit, aku bilang ini sudah memengaruhi hidupmu. Kalau sudah memengaruhi hidup, itu layak diperiksakan sekali.", "literal": "mungkin — adalah. tapi — dua — penggolong — bulan — sudah — bukan — adalah — “satu — periode” — sudah. saya — bukan — bilang — kamu — ada — penyakit, saya — adalah — bilang — ini — sudah — memengaruhi — sampai — kamu — punya — hidup — sudah. memengaruhi — sampai — hidup, langsung — layak — pergi — lihat — satu — kali." },
+    { "speaker": "小林:", "text": "[看什么科|Kàn shénme kē]？[精神科听着挺吓人的|Jīngshénkē tīng zhe tǐng xiàrén de]。", "id": "Periksa ke poli apa? Poli kejiwaan kedengarannya cukup menakutkan.", "literal": "lihat — apa — bagian? jiwa — bagian — dengar — sedang — cukup — menakutkan — punya." },
+    { "speaker": "王丽:", "text": "[现在很多医院有“心理科”或者“睡眠门诊”|Xiànzài hěn duō yīyuàn yǒu “xīnlǐkē” huòzhě “shuìmián ménzhěn”]，[名字温和一些|míngzi wēnhé yìxiē]。[第一次去主要是评估|Dì-yī cì qù zhǔyào shì pínggū]，[不一定开药|bù yídìng kāi yào]。", "id": "Sekarang banyak rumah sakit punya “poli psikologi” atau “klinik tidur”, namanya lebih lembut. Kunjungan pertama terutama untuk penilaian, belum tentu diresepkan obat.", "literal": "sekarang — sangat — banyak — rumah sakit — ada — “psikologi — bagian” — atau — “tidur — poliklinik”, nama — lembut — sedikit. ke-satu — kali — pergi — terutama — adalah — penilaian, tidak — pasti — buka — obat." },
+    { "speaker": "小林:", "text": "[要是同事知道了呢|Yàoshi tóngshì zhīdào le ne]？", "id": "Kalau rekan kerja tahu bagaimana?", "literal": "kalau — rekan kerja — tahu — sudah — bagaimana?" },
+    { "speaker": "王丽:", "text": "[病历是保密的|Bìnglì shì bǎomì de]。[而且说句实话|Érqiě shuō jù shíhuà]，[你现在这个状态|nǐ xiànzài zhège zhuàngtài]，[同事早就看出来了|tóngshì zǎo jiù kàn chūlái le]。[他们看到的不是“你去看医生”|Tāmen kàndào de bú shì “nǐ qù kàn yīshēng”]，[是“你最近不太对劲”|shì “nǐ zuìjìn bú tài duìjìn”]。", "id": "Rekam medis itu rahasia. Lagi pula sejujurnya, keadaanmu sekarang, rekan kerja sudah lama melihatnya. Yang mereka lihat bukan “kamu pergi ke dokter”, melainkan “kamu belakangan agak tidak beres”.", "literal": "rekam medis — adalah — rahasia — punya. lagi pula — bilang — penggolong — kata jujur, kamu — sekarang — ini — keadaan, rekan kerja — awal — sudah — lihat — keluar-datang — sudah. mereka — lihat — sampai — punya — bukan — adalah — “kamu — pergi — lihat — dokter”, adalah — “kamu — belakangan — tidak — terlalu — beres”." },
+    { "speaker": "小林:", "text": "[……那我周末去挂个号|……Nà wǒ zhōumò qù guà ge hào]。", "id": "…Kalau begitu akhir pekan aku daftar saja.", "literal": "…… kalau begitu — saya — akhir pekan — pergi — daftar — penggolong — nomor." },
+    { "speaker": "王丽:", "text": "[我陪你去|Wǒ péi nǐ qù]。[另外在那之前|Lìngwài zài nà zhīqián]，[有三件事你今天就能做|yǒu sān jiàn shì nǐ jīntiān jiù néng zuò]：[晚上十一点以后不看手机|wǎnshang shíyī diǎn yǐhòu bú kàn shǒujī]，[下午三点以后不喝咖啡|xiàwǔ sān diǎn yǐhòu bù hē kāfēi]，[睡不着就起来|shuì bu zháo jiù qǐlái]，[别躺着跟自己较劲|bié tǎng zhe gēn zìjǐ jiàojìn]。", "id": "Aku temani. Selain itu sebelum itu, ada tiga hal yang hari ini juga bisa kamu lakukan: setelah jam sebelas malam jangan lihat ponsel, setelah jam tiga sore jangan minum kopi, kalau tidak bisa tidur ya bangun saja, jangan berbaring beradu dengan diri sendiri.", "literal": "saya — temani — kamu — pergi. selain itu — di — itu — sebelum, ada — tiga — penggolong — perkara — kamu — hari ini — langsung — bisa — buat: malam — sebelas — jam — sesudah — tidak — lihat — ponsel, sore — tiga — jam — sesudah — tidak — minum — kopi, tidur — tidak — sampai — langsung — bangun, jangan — baring — sedang — dengan — diri sendiri — beradu tenaga." }
+   ],
+   "notes": [
+    "**睡不着 vs 睡不好 vs 没睡够.** 睡不着 tidak bisa tertidur; 睡不好 tidurnya tidak nyenyak; 没睡够 kurang jamnya. Ketiganya masalah yang berbeda dan penanganannya berbeda — dokter akan menanyakan yang mana.",
+    "**提不起兴趣 — “tidak bisa membangkitkan minat”.** Pelengkap kemungkinan 提不起. Bersama 没胃口 dan 不想见人, ketiganya adalah tiga pertanyaan penyaring yang dipakai orang untuk memeriksa apakah kelelahan biasa sudah berubah menjadi sesuatu yang lain.",
+    "**我不是说你有病，我是说… — memisahkan penilaian dari saran.** Kalimat ini menyelamatkan banyak percakapan tentang kesehatan jiwa. Ia membuang tafsiran yang paling ditakuti lawan bicara sebelum ia sempat memasangnya.",
+    "**影响到生活 — ukuran yang bisa dipakai siapa pun.** Bukan “separah apa perasaanmu”, melainkan “apakah ia sudah mengganggu tidur, makan, kerja, dan hubunganmu”. Ukuran ini nyata dan tidak menuntut orang mendiagnosis dirinya.",
+    "**科 — “poli, departemen”.** [内科|nèikē] penyakit dalam, [外科|wàikē] bedah, [儿科|érkē] anak, [皮肤科|pífūkē] kulit, [牙科|yákē] gigi, [眼科|yǎnkē] mata, [心理科|xīnlǐkē] psikologi, [急诊|jízhěn] gawat darurat.",
+    "**不对劲 — “ada yang tidak beres”.** 【口】 Dipakai untuk orang maupun benda: [他今天不太对劲|Tā jīntiān bú tài duìjìn] dia hari ini agak aneh; [这个数字不对劲|Zhège shùzì bú duìjìn] angka ini janggal.",
+    "**跟自己较劲 — “beradu dengan diri sendiri”.** Ungkapan yang sangat hidup: memaksakan diri melawan sesuatu yang tidak bisa dipaksa. Sering dipakai untuk tidur, perfeksionisme, dan penyesalan.",
+    "**⚠️ 病历是保密的 — rekam medis bersifat rahasia.** Kekhawatiran yang disebut Xiao Lin nyata dan umum di Tiongkok. Yang perlu diketahui: rekam medis rumah sakit umum tidak terhubung ke tempat kerja, dan sebagian besar rumah sakit besar kini menyediakan poli dengan nama yang lebih netral justru karena alasan ini."
+   ],
+   "grammars": [
+    {
+     "title": "Alur rumah sakit Tiongkok, langkah demi langkah",
+     "body": [
+      "Rumah sakit besar di Tiongkok bekerja seperti bandara: kamu bergerak dari loket ke loket. Menghafal urutannya sekali menghemat waktu berjam-jam."
+     ],
+     "tables": [
+      {
+       "head": ["Langkah", "Mandarin", "Keterangan"],
+       "rows": [
+        ["1", "[挂号|guà hào]", "mendaftar & memilih poli; kini biasanya lewat aplikasi"],
+        ["2", "[候诊|hòuzhěn]", "menunggu giliran; layar memanggil nomor"],
+        ["3", "[就诊|jiùzhěn]", "masuk ruang periksa"],
+        ["4", "[缴费|jiǎo fèi]", "membayar sebelum pemeriksaan"],
+        ["5", "[检查|jiǎnchá]", "[验血|yàn xiě] · [B超|B chāo] · [拍片|pāi piàn] rontgen"],
+        ["6", "[取报告|qǔ bàogào]", "mengambil hasil"],
+        ["7", "[复诊|fùzhěn]", "kembali ke dokter dengan hasilnya"],
+        ["8", "[取药|qǔ yào]", "mengambil obat di apotek rumah sakit"]
+       ]
+      },
+      {
+       "head": ["Kalimat yang perlu di tiap loket", "Mandarin"],
+       "rows": [
+        ["Saya mau daftar ke poli penyakit dalam.", "[我要挂内科|Wǒ yào guà nèikē]。"],
+        ["Hari ini masih ada nomor?", "[今天还有号吗|Jīntiān hái yǒu hào ma]？"],
+        ["Bayar di mana?", "[在哪儿缴费|Zài nǎr jiǎo fèi]？"],
+        ["Hasilnya kapan keluar?", "[结果什么时候出来|Jiéguǒ shénme shíhou chūlái]？"],
+        ["Kontrol perlu daftar ulang?", "[复诊需要重新挂号吗|Fùzhěn xūyào chóngxīn guà hào ma]？"],
+        ["Obat ini ditanggung asuransi?", "[这个药医保报销吗|Zhège yào yībǎo bàoxiāo ma]？"],
+        ["Tolong tuliskan surat keterangan sakit.", "[麻烦开一张病假条|Máfan kāi yì zhāng bìngjiàtiáo]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**医保 — asuransi kesehatan negara.** [报销|bàoxiāo] berarti “diganti/diklaim”. Orang asing pemegang izin tinggal kerja umumnya ikut serta lewat perusahaannya; tanpa itu, biaya dibayar penuh. Simpan semua [发票|fāpiào] kuitansi resmi — tanpa itu klaim asuransi swasta pun tidak bisa diproses."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh dan kata kerja tubuh",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Mandarin", "Arti"],
+      "rows": [
+       ["[头|tóu]", "kepala", "[嗓子|sǎngzi]", "tenggorokan"],
+       ["[脖子|bózi]", "leher", "[肩膀|jiānbǎng]", "bahu"],
+       ["[胸|xiōng]", "dada", "[背|bèi]", "punggung"],
+       ["[腰|yāo]", "pinggang", "[肚子|dùzi]", "perut"],
+       ["[胃|wèi]", "lambung", "[肝|gān]", "hati"],
+       ["[肾|shèn]", "ginjal", "[肺|fèi]", "paru-paru"],
+       ["[心脏|xīnzàng]", "jantung", "[血压|xuèyā]", "tekanan darah"],
+       ["[关节|guānjié]", "sendi", "[肌肉|jīròu]", "otot"],
+       ["[膝盖|xīgài]", "lutut", "[脚踝|jiǎohuái]", "pergelangan kaki"],
+       ["[皮肤|pífū]", "kulit", "[牙|yá]", "gigi"]
+      ] },
+    { "type": "sub", "text": "Kata kerja dan sifat yang menyertainya" },
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Contoh"],
+      "rows": [
+       ["[酸|suān]", "pegal", "[肩膀发酸|jiānbǎng fā suān]"],
+       ["[胀|zhàng]", "kembung, sesak", "[肚子胀|dùzi zhàng]"],
+       ["[麻|má]", "kesemutan", "[手发麻|shǒu fā má]"],
+       ["[肿|zhǒng]", "bengkak", "[脚肿了|jiǎo zhǒng le]"],
+       ["[扭|niǔ]", "terkilir", "[扭伤了脚|niǔ shāng le jiǎo]"],
+       ["[摔|shuāi]", "jatuh", "[摔了一跤|shuāi le yì jiāo]"],
+       ["[烫|tàng]", "kena panas", "[烫伤|tàngshāng]"],
+       ["[划|huá]", "tergores", "[划破了手|huá pò le shǒu]"],
+       ["[发|fā]", "mulai timbul", "[发烧|fā shāo] · [发炎|fā yán] radang"],
+       ["[恢复|huīfù]", "pulih", "[恢复得不错|huīfù de búcuò]"]
+      ] }
+   ]
+  },
+  {
+   "title": "Membicarakan kesehatan jiwa tanpa berputar-putar",
+   "blocks": [
+    { "type": "p", "text": "Bahasa untuk topik ini masih berkembang di Tiongkok, dan banyak orang menghindarinya karena tidak tahu kata yang tepat. Daftar ini memberi kata-katanya; kalimat di bawahnya memberi cara memakainya." },
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Catatan"],
+      "rows": [
+       ["[压力|yālì]", "tekanan", "[压力大|yālì dà]"],
+       ["[焦虑|jiāolǜ]", "cemas", "istilah medis & sehari-hari"],
+       ["[抑郁|yìyù]", "depresi", "[抑郁症|yìyùzhèng] gangguan depresi"],
+       ["[情绪|qíngxù]", "suasana hati", "[情绪低落|qíngxù dīluò] murung"],
+       ["[失眠|shīmián]", "insomnia", "—"],
+       ["[疲惫|píbèi]", "letih batin 【书】", "≠ [累|lèi] capek fisik"],
+       ["[倦怠|juàndài]", "jenuh, burnout", "[职业倦怠|zhíyè juàndài]"],
+       ["[心理咨询|xīnlǐ zīxún]", "konseling", "—"],
+       ["[评估|pínggū]", "penilaian", "kunjungan pertama"],
+       ["[保密|bǎomì]", "rahasia", "[病历保密|bìnglì bǎomì]"]
+      ] },
+    { "type": "kotak", "title": "Lima kalimat yang membuat percakapannya mungkin", "items": [
+     "[我最近状态不太好|Wǒ zuìjìn zhuàngtài bú tài hǎo]。 — Pembuka paling aman; tidak menuntutmu menamai apa pun.",
+     "[已经影响到我的睡眠和工作了|Yǐjīng yǐngxiǎng dào wǒ de shuìmián hé gōngzuò le]。 — Memindahkan pembicaraan ke hal yang bisa diukur.",
+     "[我不是说你有病|Wǒ bú shì shuō nǐ yǒu bìng]，[我是担心你太久了|wǒ shì dānxīn nǐ tài jiǔ le]。 — Untuk dipakai kepada orang lain; membuang tafsiran yang paling ditakuti.",
+     "[你愿意的话|Nǐ yuànyì dehuà]，[我陪你去|wǒ péi nǐ qù]。 — Menawarkan menemani lebih berguna daripada menyarankan.",
+     "[你不用现在决定|Nǐ búyòng xiànzài juédìng]，[我们先吃个饭|wǒmen xiān chī ge fàn]。 — Menurunkan taruhannya; percakapan semacam ini jarang selesai sekali duduk."
+    ] },
+    { "type": "p", "text": "⚠️ Satu hal yang perlu diketahui pemelajar asing: dalam bahasa Mandarin sehari-hari, [想开点|xiǎng kāi diǎn] “pikir yang longgar sedikit” dan [别多想|bié duō xiǎng] “jangan banyak pikiran” diucapkan dengan maksud baik, tetapi ia menutup percakapan alih-alih membukanya. Kalau kamu ingin benar-benar membantu, pakailah kelima kalimat di kotak atas." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "挂号", "baca": "guà hào", "id": "mendaftar (rumah sakit)" },
+  { "zh": "就诊", "baca": "jiùzhěn", "id": "masuk periksa" },
+  { "zh": "复诊", "baca": "fùzhěn", "id": "kontrol ulang" },
+  { "zh": "急诊", "baca": "jízhěn", "id": "gawat darurat" },
+  { "zh": "门诊", "baca": "ménzhěn", "id": "poliklinik" },
+  { "zh": "内科", "baca": "nèikē", "id": "penyakit dalam" },
+  { "zh": "心理科", "baca": "xīnlǐkē", "id": "poli psikologi" },
+  { "zh": "缴费", "baca": "jiǎo fèi", "id": "membayar biaya" },
+  { "zh": "取药", "baca": "qǔ yào", "id": "mengambil obat" },
+  { "zh": "验血", "baca": "yàn xiě", "id": "periksa darah" },
+  { "zh": "B超", "baca": "B chāo", "id": "USG" },
+  { "zh": "空腹", "baca": "kōngfù", "id": "perut kosong, puasa" },
+  { "zh": "病历", "baca": "bìnglì", "id": "rekam medis" },
+  { "zh": "医保", "baca": "yībǎo", "id": "asuransi kesehatan" },
+  { "zh": "报销", "baca": "bàoxiāo", "id": "diklaim, diganti" },
+  { "zh": "病假条", "baca": "bìngjiàtiáo", "id": "surat sakit" },
+  { "zh": "疼", "baca": "téng", "id": "sakit, nyeri" },
+  { "zh": "发烧", "baca": "fā shāo", "id": "demam" },
+  { "zh": "恶心", "baca": "ěxīn", "id": "mual" },
+  { "zh": "拉肚子", "baca": "lā dùzi", "id": "diare 【口】" },
+  { "zh": "咳嗽", "baca": "késou", "id": "batuk" },
+  { "zh": "头晕", "baca": "tóu yūn", "id": "pusing berputar" },
+  { "zh": "过敏", "baca": "guòmǐn", "id": "alergi" },
+  { "zh": "发炎", "baca": "fā yán", "id": "radang" },
+  { "zh": "断断续续", "baca": "duànduàn-xùxù", "id": "putus-nyambung" },
+  { "zh": "一阵一阵", "baca": "yí zhèn yí zhèn", "id": "hilang timbul" },
+  { "zh": "饮食", "baca": "yǐnshí", "id": "pola makan" },
+  { "zh": "应酬", "baca": "yìngchou", "id": "jamuan kerja" },
+  { "zh": "油腻", "baca": "yóunì", "id": "berminyak" },
+  { "zh": "清淡", "baca": "qīngdàn", "id": "ringan (makanan)" },
+  { "zh": "服药", "baca": "fú yào", "id": "minum obat 【书】" },
+  { "zh": "一日三次", "baca": "yí rì sān cì", "id": "tiga kali sehari" },
+  { "zh": "切勿", "baca": "qiè wù", "id": "jangan sekali-kali 【书】" },
+  { "zh": "忌", "baca": "jì", "id": "pantang" },
+  { "zh": "复发", "baca": "fùfā", "id": "kambuh" },
+  { "zh": "住院", "baca": "zhù yuàn", "id": "rawat inap" },
+  { "zh": "体检", "baca": "tǐjiǎn", "id": "pemeriksaan berkala" },
+  { "zh": "睡不着", "baca": "shuì bu zháo", "id": "tak bisa tertidur" },
+  { "zh": "失眠", "baca": "shīmián", "id": "insomnia" },
+  { "zh": "焦虑", "baca": "jiāolǜ", "id": "cemas" },
+  { "zh": "抑郁", "baca": "yìyù", "id": "depresi" },
+  { "zh": "情绪", "baca": "qíngxù", "id": "suasana hati" },
+  { "zh": "疲惫", "baca": "píbèi", "id": "letih batin 【书】" },
+  { "zh": "倦怠", "baca": "juàndài", "id": "jenuh, burnout" },
+  { "zh": "心理咨询", "baca": "xīnlǐ zīxún", "id": "konseling" },
+  { "zh": "评估", "baca": "pínggū", "id": "penilaian" },
+  { "zh": "保密", "baca": "bǎomì", "id": "dirahasiakan" },
+  { "zh": "状态", "baca": "zhuàngtài", "id": "keadaan, kondisi" },
+  { "zh": "不对劲", "baca": "bú duìjìn", "id": "ada yang tidak beres 【口】" },
+  { "zh": "较劲", "baca": "jiàojìn", "id": "beradu, memaksakan" },
+  { "zh": "陪", "baca": "péi", "id": "menemani" },
+  { "zh": "恢复", "baca": "huīfù", "id": "pulih" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun keluhan lengkap empat sumbu (tempat → lama → pola → pemicu).",
+   "items": [
+    "Sakit kepala, sudah seminggu, tiap sore, setelah lama menatap layar.",
+    "Nyeri pinggang, dua bulan, terus-menerus, lebih parah setelah duduk lama.",
+    "Batuk, sepuluh hari, terutama malam hari, kering tanpa dahak.",
+    "Nyeri lutut, sejak bulan lalu, hilang timbul, setelah naik tangga.",
+    "Perut kembung, dua minggu, setelah makan, disertai mual."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan aturan pakai obat berikut ke bahasa Indonesia.",
+   "items": [
+    "[一次两片|Yí cì liǎng piàn]，[一日三次|yí rì sān cì]，[饭后口服|fàn hòu kǒufú]。",
+    "[连服五天|Lián fú wǔ tiān]，[症状消失后仍应服完|zhèngzhuàng xiāoshī hòu réng yīng fú wán]。",
+    "[服药期间忌辛辣及酒|Fú yào qījiān jì xīnlà jí jiǔ]。",
+    "[万一出现皮疹|Wànyī chūxiàn pízhěn]，[立即停药并就医|lìjí tíng yào bìng jiùyī]。",
+    "[切勿超量服用|Qiè wù chāo liàng fúyòng]，[儿童须在成人监护下使用|értóng xū zài chéngrén jiānhù xià shǐyòng]。"
+   ]
+  },
+  {
+   "prompt": "Urutkan langkah rumah sakit dan tulis kalimat Mandarin untuk tiap loket.",
+   "items": [
+    "取药",
+    "挂号",
+    "缴费",
+    "检查",
+    "就诊"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 以免 · 免得 · 万一 · 如有 · 切勿.",
+   "items": [
+    "[请按时服药|Qǐng ànshí fú yào]，____ [复发|fùfā]。",
+    "____ [不适|bú shì]，[请及时就医|qǐng jíshí jiùyī]。",
+    "____ [超量服用|chāo liàng fúyòng]。",
+    "[我提前一天去排队|Wǒ tíqián yì tiān qù pái duì]，____ [挂不上号|guà bu shàng hào]。",
+    "____ [晚上疼得厉害|wǎnshang téng de lìhai]，[就去急诊|jiù qù jízhěn]。"
+   ]
+  },
+  {
+   "prompt": "Tulis tanggapanmu dalam bahasa Mandarin untuk keadaan berikut. Pakai kalimat dari kotak “lima kalimat”.",
+   "items": [
+    "Temanmu sudah tiga bulan tidak bisa tidur dan menolak ke dokter karena takut ketahuan kantornya.",
+    "Rekan kerjamu sudah dua bulan tidak berbicara di rapat dan mulai sering izin. Kamu ingin bertanya tanpa membuatnya tersinggung."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Sudah tiga minggu putus-nyambung, lebih terasa setelah makan.",
+    "USG harus dalam keadaan puasa delapan jam.",
+    "Kontrol ulang perlu daftar ulang tidak?",
+    "Obat ini ditanggung asuransi tidak?",
+    "Kalau sudah memengaruhi hidupmu, itu layak diperiksakan sekali."
+   ]
+  }
+ ],
+ "answers": [
+  "[我头疼|Wǒ tóu téng]，[一个星期了|yí ge xīngqī le]，[每天下午都疼|měi tiān xiàwǔ dōu téng]，[看屏幕时间长了以后更明显|kàn píngmù shíjiān cháng le yǐhòu gèng míngxiǎn]。 — [我腰疼|Wǒ yāo téng]，[两个月了|liǎng ge yuè le]，[一直疼|yìzhí téng]，[久坐以后更严重|jiǔ zuò yǐhòu gèng yánzhòng]。 — [我咳嗽|Wǒ késou]，[十天了|shí tiān le]，[主要是晚上|zhǔyào shì wǎnshang]，[是干咳|shì gān ké]，[没有痰|méiyǒu tán]。 — [我膝盖疼|Wǒ xīgài téng]，[从上个月开始|cóng shàng ge yuè kāishǐ]，[一阵一阵的|yí zhèn yí zhèn de]，[上楼梯以后疼|shàng lóutī yǐhòu téng]。 — [我肚子胀|Wǒ dùzi zhàng]，[两个星期了|liǎng ge xīngqī le]，[吃完饭以后明显|chī wán fàn yǐhòu míngxiǎn]，[还有点恶心|hái yǒudiǎn ěxīn]。",
+  "“Sekali dua tablet, tiga kali sehari, diminum sesudah makan.” — “Diminum lima hari berturut-turut; setelah gejalanya hilang pun tetap harus dihabiskan.” — “Selama minum obat, pantang makanan pedas dan alkohol.” — “Kalau muncul ruam kulit, segera hentikan obat dan berobat.” — “Jangan sekali-kali melebihi takaran; anak-anak harus memakainya di bawah pengawasan orang dewasa.”",
+  "Urutan: 挂号 → 就诊 → 缴费 → 检查 → 取药 · [我要挂内科|Wǒ yào guà nèikē]。 — [医生|Yīshēng]，[我肚子疼三个星期了|wǒ dùzi téng sān ge xīngqī le]。 — [请问在哪儿缴费|Qǐngwèn zài nǎr jiǎo fèi]？ — [检查结果什么时候出来|Jiǎnchá jiéguǒ shénme shíhou chūlái]？ — [取药窗口在几楼|Qǔ yào chuāngkǒu zài jǐ lóu]？",
+  "以免 — 如有 — 切勿 — 免得 — 万一",
+  "Contoh 1: [我不是说你有病|Wǒ bú shì shuō nǐ yǒu bìng]，[我是担心已经三个月了|wǒ shì dānxīn yǐjīng sān ge yuè le]。[病历是保密的|Bìnglì shì bǎomì de]，[单位看不到|dānwèi kàn bu dào]。[第一次去主要是评估|Dì-yī cì qù zhǔyào shì pínggū]，[不一定开药|bù yídìng kāi yào]。[你愿意的话|Nǐ yuànyì dehuà]，[我陪你去|wǒ péi nǐ qù]。 — Contoh 2: [最近还好吗|Zuìjìn hái hǎo ma]？[我不是要打听什么|Wǒ bú shì yào dǎtīng shénme]，[就是觉得你这两个月状态不太一样|jiùshì juéde nǐ zhè liǎng ge yuè zhuàngtài bú tài yíyàng]。[你不用现在说|Nǐ búyòng xiànzài shuō]，[有需要随时找我|yǒu xūyào suíshí zhǎo wǒ]。[要不我们中午一起吃个饭|Yàobù wǒmen zhōngwǔ yìqǐ chī ge fàn]？",
+  "[断断续续三个星期了|Duànduàn-xùxù sān ge xīngqī le]，[吃完饭以后比较明显|chī wán fàn yǐhòu bǐjiào míngxiǎn]。 — [B超要空腹八个小时|B chāo yào kōngfù bā ge xiǎoshí]。 — [复诊需要重新挂号吗|Fùzhěn xūyào chóngxīn guà hào ma]？ — [这个药医保报销吗|Zhège yào yībǎo bàoxiāo ma]？ — [已经影响到你的生活了|Yǐjīng yǐngxiǎng dào nǐ de shēnghuó le]，[就值得去看一次|jiù zhídé qù kàn yí cì]。"
+ ],
+ "wave": "Tulis satu keluhan kesehatan yang pernah kamu alami — apa saja, termasuk yang kecil — dalam satu kalimat Mandarin empat sumbu. Lalu tulis tiga pertanyaan yang akan kamu ajukan di loket. Simpan keduanya di catatan ponselmu; ini bagian dari modul ini yang paling mungkin kamu butuhkan mendadak, dan mencarinya saat sedang sakit bukan waktu yang baik untuk belajar."
+}

@@ -1,0 +1,357 @@
+{
+ "title": "Melapor, menugaskan, dan menulis surel kantor",
+ "title_target": "汇报工作 — Huìbào gōngzuò",
+ "goal": "Memindahkan seluruh alat unit 1–6 ke dunia kerja: melapor dengan urutan yang benar, menugaskan tanpa terdengar memerintah, memakai kata kerja pembawa ragam resmi (予以 · 加以 · 进行), dan menulis surel Mandarin yang tidak terdengar seperti terjemahan.",
+ "bekal": [
+  "melaporkan pekerjaan dengan urutan kesimpulan-dulu",
+  "menugaskan dan menagih tanpa merusak hubungan: 麻烦你, 辛苦你, 能不能",
+  "memakai kata kerja pembawa ragam resmi: 进行, 予以, 加以, 作出",
+  "menulis surel kantor: sapaan, badan, penutup",
+  "kosakata rapat, jabatan, dan alur persetujuan"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Laporan mingguan yang tidak bertele-tele",
+   "intro": "Xiao Lin melaporkan kemajuan proyek kepada manajernya. Pertama ia melakukannya dengan cara yang salah, lalu diperbaiki. Perhatikan urutan kalimatnya — di dunia kerja Tiongkok, urutan lebih menentukan daripada kosakata.",
+   "lines": [
+    { "speaker": "李经理:", "text": "[小林|Xiǎo Lín]，[项目现在什么情况|xiàngmù xiànzài shénme qíngkuàng]？", "id": "Xiao Lin, proyeknya sekarang bagaimana keadaannya?", "literal": "Xiao — Lin, proyek — sekarang — apa — keadaan?" },
+    { "speaker": "小林:", "text": "[上周三我们跟供应商开了会|Shàng zhōu sān wǒmen gēn gōngyìngshāng kāi le huì]，[然后周四对方发来了报价|ránhòu zhōu sì duìfāng fā lái le bàojià]，[周五我又跟财务核对了一遍|zhōu wǔ wǒ yòu gēn cáiwù héduì le yí biàn]……", "id": "Rabu lalu kami rapat dengan pemasok, lalu Kamis pihak sana mengirim penawaran, Jumat saya mencocokkannya lagi dengan keuangan…", "literal": "lalu — minggu — tiga — kami — dengan — pemasok — buka — sudah — rapat, lalu — minggu — empat — pihak lain — kirim — datang — sudah — penawaran, minggu — lima — saya — lagi — dengan — keuangan — cocokkan — sudah — satu — kali……" },
+    { "speaker": "李经理:", "text": "[停|Tíng]。[我要的不是过程|Wǒ yào de bú shì guòchéng]，[是结论|shì jiélùn]。[现在能不能按时上线|Xiànzài néng bu néng ànshí shàngxiàn]？", "id": "Stop. Yang saya mau bukan prosesnya, melainkan kesimpulannya. Sekarang bisa diluncurkan tepat waktu atau tidak?", "literal": "berhenti. saya — mau — punya — bukan — adalah — proses, adalah — kesimpulan. sekarang — bisa — tidak — bisa — tepat waktu — naik-daring?" },
+    { "speaker": "小林:", "text": "[……能|……Néng]，[但有一个条件|dàn yǒu yí ge tiáojiàn]。", "id": "…Bisa, tapi ada satu syarat.", "literal": "…… bisa, tapi — ada — satu — penggolong — syarat." },
+    { "speaker": "李经理:", "text": "[这样说就对了|Zhèyàng shuō jiù duì le]。[什么条件|Shénme tiáojiàn]？", "id": "Nah begitu baru betul cara bicaranya. Syarat apa?", "literal": "begini — bilang — langsung — benar — sudah. apa — syarat?" },
+    { "speaker": "小林:", "text": "[采购的付款流程要提前一周走|Cǎigòu de fùkuǎn liúchéng yào tíqián yì zhōu zǒu]。[如果卡在审批上|Rúguǒ kǎ zài shěnpī shàng]，[设备到不了|shèbèi dào bu liǎo]，[后面全都要顺延|hòumiàn quán dōu yào shùnyán]。", "id": "Alur pembayaran pengadaan harus dijalankan seminggu lebih awal. Kalau tersangkut di persetujuan, alatnya tidak akan sampai, dan seluruh yang di belakangnya harus mundur berurutan.", "literal": "pengadaan — punya — bayar — alur — harus — lebih awal — satu — minggu — jalan. kalau — tersangkut — di — persetujuan — atas, peralatan — sampai — tidak — sanggup, belakang — semua — semua — harus — mundur berurutan." },
+    { "speaker": "李经理:", "text": "[审批卡在谁那儿|Shěnpī kǎ zài shéi nàr]？", "id": "Persetujuannya tersangkut di siapa?", "literal": "persetujuan — tersangkut — di — siapa — sana?" },
+    { "speaker": "小林:", "text": "[目前在财务副总那儿|Mùqián zài cáiwù fùzǒng nàr]，[已经三天了|yǐjīng sān tiān le]。", "id": "Saat ini di wakil direktur keuangan, sudah tiga hari.", "literal": "sekarang — di — keuangan — wakil direktur — sana, sudah — tiga — hari — sudah." },
+    { "speaker": "李经理:", "text": "[行|Xíng]，[这个我来推|zhège wǒ lái tuī]。[你把风险和时间点整理成一页纸|Nǐ bǎ fēngxiǎn hé shíjiān diǎn zhěnglǐ chéng yí yè zhǐ]，[今天下班前发我|jīntiān xià bān qián fā wǒ]。", "id": "Baik, yang ini saya yang dorong. Kamu rapikan risiko dan titik waktunya jadi satu halaman, kirim ke saya sebelum jam pulang hari ini.", "literal": "boleh, ini — saya — datang — dorong. kamu — ambil — risiko — dan — waktu — titik — rapikan — jadi — satu — halaman — kertas, hari ini — turun — kerja — sebelum — kirim — saya." },
+    { "speaker": "小林:", "text": "[好的|Hǎo de]。[需要写解决方案吗|Xūyào xiě jiějué fāng'àn ma]？", "id": "Baik. Perlu ditulis solusinya juga?", "literal": "baik — punya. perlu — tulis — selesaikan — rencana — kah?" },
+    { "speaker": "李经理:", "text": "[要|Yào]。[每个风险后面跟一个建议|Měi ge fēngxiǎn hòumiàn gēn yí ge jiànyì]，[哪怕是不成熟的建议|nǎpà shì bù chéngshú de jiànyì]。[只报问题不给方案|Zhǐ bào wèntí bù gěi fāng'àn]，[等于把活儿推给上级|děngyú bǎ huór tuī gěi shàngjí]。", "id": "Perlu. Setiap risiko diikuti satu saran, sekalipun saran yang belum matang. Hanya melaporkan masalah tanpa memberi solusi sama saja mendorong pekerjaannya ke atasan.", "literal": "perlu. tiap — penggolong — risiko — belakang — ikuti — satu — penggolong — saran, sekalipun — adalah — tidak — matang — punya — saran. hanya — lapor — masalah — tidak — beri — rencana, sama dengan — ambil — pekerjaan — dorong — kepada — atasan." },
+    { "speaker": "小林:", "text": "[明白了|Míngbai le]。[那我按“结论—风险—建议—时间”这个顺序写|Nà wǒ àn “jiélùn—fēngxiǎn—jiànyì—shíjiān” zhège shùnxù xiě]。", "id": "Paham. Kalau begitu saya tulis mengikuti urutan “kesimpulan–risiko–saran–waktu” ini.", "literal": "paham — sudah. kalau begitu — saya — menurut — “kesimpulan—risiko—saran—waktu” — ini — urutan — tulis." },
+    { "speaker": "李经理:", "text": "[对|Duì]。[另外辛苦你了|Lìngwài xīnkǔ nǐ le]，[这两周确实压得比较狠|zhè liǎng zhōu quèshí yā de bǐjiào hěn]。", "id": "Betul. Selain itu terima kasih atas kerja kerasmu, dua minggu ini memang tekanannya cukup berat.", "literal": "selain itu — susah payah — kamu — sudah, ini — dua — minggu — memang — tekan — secara — cukup — keras." }
+   ],
+   "notes": [
+    "**Urutan laporan yang benar: kesimpulan dulu.** Ini bukan sekadar gaya. Di rapat Tiongkok, atasan hampir selalu memotong laporan berurut-waktu, karena ia harus memutuskan, bukan mengikuti cerita. Urutan yang berhasil: **结论 → 风险 → 建议 → 时间**.",
+    "**我要的不是…，是… — rangka unit 1 di tempat kerja.** Perhatikan bahwa 而 dihilangkan di sini: dalam percakapan cepat, [不是A，是B|bú shì A, shì B] sangat lazim dan terdengar tegas.",
+    "**卡 — “tersangkut”.** [卡在审批上|kǎ zài shěnpī shàng] tersangkut di persetujuan; [卡住了|kǎ zhù le] macet. Kata ini adalah kosakata kantor yang paling sering dipakai untuk menyebut hambatan tanpa menyalahkan orang tertentu.",
+    "**顺延 — “mundur berurutan”.** 【书】 Kalau satu tahap mundur, semua tahap sesudahnya ikut mundur. Kata tunggal yang menggantikan satu kalimat penuh, dan sangat sering muncul dalam laporan jadwal.",
+    "**我来 + kata kerja — “biar saya yang…”.** [这个我来推|Zhège wǒ lái tuī] “yang ini biar saya yang mendorongnya”. 来 di sini tidak berarti “datang”, melainkan menandai kesediaan mengambil alih. Sangat lazim: [我来说|Wǒ lái shuō] biar saya yang bicara, [你来|Nǐ lái] kamu saja.",
+    "**整理成一页纸 — “rapikan jadi satu halaman”.** Pelengkap 成 menandai perubahan bentuk: 翻译成中文 diterjemahkan ke bahasa Mandarin, 改成 diubah menjadi, 分成两组 dibagi jadi dua kelompok.",
+    "**辛苦你了 — “terima kasih sudah bersusah payah”.** Bukan “kamu capek ya”. Ini ucapan penghargaan dari atasan ke bawahan atau antar rekan sejajar. Ke atasan, yang dipakai [您辛苦了|Nín xīnkǔ le] — dan ini justru terdengar wajar dan hangat.",
+    "**⚠️ 只报问题不给方案 adalah kritik yang serius.** Dalam budaya kerja Tiongkok, membawa masalah tanpa usulan dianggap memindahkan beban ke atasan. Bahkan usulan yang jelas-jelas belum matang lebih dihargai daripada tidak ada usulan sama sekali — dan itulah gunanya kalimat merendah [一个不成熟的建议|yí ge bù chéngshú de jiànyì]。"
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pembawa: 进行 · 予以 · 加以 · 作出 · 给予",
+     "body": [
+      "Ragam resmi bahasa Mandarin sering mengubah kata kerja menjadi kata benda, lalu memasang kata kerja “pembawa” yang kosong di depannya. Hasilnya terdengar resmi dan berjarak — persis yang diinginkan dalam laporan dan surat.",
+      "**Denah tempat duduk:** kata kerja pembawa + kata benda dua aksara。"
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk 【口】", "Bentuk 【书】", "Catatan"],
+       "rows": [
+        ["[讨论一下|tǎolùn yíxià]", "[进行讨论|jìnxíng tǎolùn]", "进行 paling umum"],
+        ["[检查|jiǎnchá]", "[进行检查|jìnxíng jiǎnchá]", "—"],
+        ["[帮助|bāngzhù]", "[予以帮助|yǔyǐ bāngzhù]", "予以 sangat resmi"],
+        ["[说明|shuōmíng]", "[加以说明|jiāyǐ shuōmíng]", "加以 + kata kerja dua aksara"],
+        ["[决定|juédìng]", "[作出决定|zuòchū juédìng]", "作出 + hasil"],
+        ["[回应|huíyìng]", "[作出回应|zuòchū huíyìng]", "berita"],
+        ["[支持|zhīchí]", "[给予支持|jǐyǔ zhīchí]", "给予 = memberi 【书】"]
+       ]
+      },
+      {
+       "head": ["⚠️ Batasnya", "Salah", "Benar"],
+       "rows": [
+        ["objeknya wajib dua aksara", "[进行吃|jìnxíng chī]", "[进行讨论|jìnxíng tǎolùn]"],
+        ["tidak dipakai di obrolan", "[我们进行吃饭吧|Wǒmen jìnxíng chī fàn ba]。", "[我们吃饭吧|Wǒmen chī fàn ba]。"],
+        ["予以 butuh objek abstrak", "[予以苹果|yǔyǐ píngguǒ]", "[予以批准|yǔyǐ pīzhǔn]"]
+       ]
+      }
+     ],
+     "after": [
+      "**Jangan berlebihan.** Menumpuk kata kerja pembawa di setiap kalimat membuat tulisanmu terdengar seperti pengumuman yang menghindari tanggung jawab — dan penutur asli menyadarinya. Aturan praktis: satu atau dua per paragraf, dan hanya kalau isinya memang resmi.",
+      "**Kata kerja pembawa adalah tanda pengenal 书面语.** Begitu kamu melihat 进行/予以/加以 di sebuah teks, kamu tahu bahwa kata sambungnya juga akan memakai 由于/因而/然而, bukan 因为/所以/但是. Laci-lacinya berjalan bersama."
+     ]
+    },
+    {
+     "title": "Menugaskan tanpa terdengar memerintah",
+     "body": [
+      "Bahasa Mandarin punya tangga kesopanan yang jelas untuk menyuruh orang. Yang menentukan bukan kata kerjanya, melainkan **bingkai** di sekelilingnya."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Dipakai kepada"],
+       "rows": [
+        ["kata kerja telanjang", "[发给我|Fā gěi wǒ]。", "sangat akrab / mendesak"],
+        ["…一下", "[发我一下|Fā wǒ yíxià]。", "rekan sejajar"],
+        ["麻烦你…", "[麻烦你发我一下|Máfan nǐ fā wǒ yíxià]。", "aman untuk semua"],
+        ["能不能…", "[能不能今天发我|Néng bu néng jīntiān fā wǒ]？", "meminta, memberi ruang"],
+        ["你看…方便吗", "[你看今天方便吗|Nǐ kàn jīntiān fāngbiàn ma]？", "kepada atasan / klien"],
+        ["请…（书面）", "[请于今日下班前提交|Qǐng yú jīnrì xià bān qián tíjiāo]。", "surel resmi, ke banyak orang"]
+       ]
+      },
+      {
+       "head": ["Menagih pekerjaan", "Kalimat", "Nada"],
+       "rows": [
+        ["netral", "[那个文件有进展了吗|Nàge wénjiàn yǒu jìnzhǎn le ma]？", "aman"],
+        ["mengingatkan tenggat", "[我这边周三要用|Wǒ zhèbiān zhōu sān yào yòng]。", "menyebut kebutuhanmu, bukan kelalaiannya"],
+        ["menawarkan bantuan", "[需要我帮着推一下吗|Xūyào wǒ bāng zhe tuī yíxià ma]？", "paling efektif"],
+        ["menaikkan tingkat", "[我把这件事同步给经理了|Wǒ bǎ zhè jiàn shì tóngbù gěi jīnglǐ le]。", "keras — hanya kalau perlu"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **请 dalam percakapan lisan terdengar berjarak, bukan sopan.** [请你把门关上|Qǐng nǐ bǎ mén guān shàng] kepada rekan kerja terdengar dingin, hampir seperti teguran. Untuk lisan pakai 麻烦你; simpan 请 untuk tulisan dan pengumuman.",
+      "**辛苦了 menutup hampir semua penugasan dengan baik.** Diucapkan sesudah orang mengerjakan sesuatu, ia bekerja seperti “terima kasih” tetapi mengakui kerja kerasnya, bukan cuma hasilnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membahas surel yang salah kirim nada",
+   "intro": "Wang Li membantu Andi memperbaiki surel yang sudah terlanjur ia tulis kepada klien. Dialog ini sekaligus mengajarkan kerangka surel Mandarin, yang berbeda cukup jauh dari surel bahasa Indonesia.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[丽姐|Lì jiě]，[你帮我看看这封邮件|nǐ bāng wǒ kànkan zhè fēng yóujiàn]，[发出去之前|fā chūqù zhīqián]。", "id": "Kak Li, tolong lihatkan surel ini sebelum dikirim.", "literal": "Li — kakak, kamu — bantu — saya — lihat-lihat — ini — penggolong — surel, kirim — keluar-pergi — sebelum." },
+    { "speaker": "王丽:", "text": "[我看看|Wǒ kànkan]……[第一句就得改|……Dì-yī jù jiù děi gǎi]。[你写的是“你好|Nǐ xiě de shì “Nǐ hǎo]，[请尽快回复|qǐng jǐnkuài huífù]”。", "id": "Coba lihat… kalimat pertamanya saja sudah harus diubah. Yang kamu tulis itu “Halo, mohon segera dibalas”.", "literal": "saya — lihat-lihat…… ke-satu — penggolong — langsung — harus — ubah. kamu — tulis — punya — adalah — “kamu — baik, mohon — sesegera mungkin — balas”." },
+    { "speaker": "安迪:", "text": "[这有什么问题|Zhè yǒu shénme wèntí]？[很客气啊|Hěn kèqi a]。", "id": "Ini ada masalah apa? Sopan kok.", "literal": "ini — ada — apa — masalah? sangat — sopan — lah." },
+    { "speaker": "王丽:", "text": "[对客户要用“您好”|Duì kèhù yào yòng “nín hǎo”]，[而且要带称呼|érqiě yào dài chēnghu]：[“陈总|“Chén zǒng]，[您好|nín hǎo]”。[另外“尽快”在中文邮件里是催促|Lìngwài “jǐnkuài” zài Zhōngwén yóujiàn lǐ shì cuīcù]，[写给客户会有点冲|xiě gěi kèhù huì yǒudiǎn chòng]。", "id": "Kepada klien harus pakai “nín hǎo”, dan harus membawa sapaan: “Pak Chen, selamat siang”. Selain itu “sesegera mungkin” dalam surel Mandarin adalah desakan, ditulis kepada klien terasa agak kasar.", "literal": "terhadap — klien — harus — pakai — “Anda — baik”, lagi pula — harus — bawa — sapaan: “Chen — direktur, Anda — baik”. selain itu — “sesegera mungkin” — di — Mandarin — surel — dalam — adalah — mendesak, tulis — kepada — klien — akan — sedikit — menusuk." },
+    { "speaker": "安迪:", "text": "[那我怎么表示我着急|Nà wǒ zěnme biǎoshì wǒ zháojí]？", "id": "Lalu bagaimana saya menunjukkan bahwa saya buru-buru?", "literal": "kalau begitu — saya — bagaimana — menyatakan — saya — cemas?" },
+    { "speaker": "王丽:", "text": "[说时间点|Shuō shíjiān diǎn]，[别说“尽快”|bié shuō “jǐnkuài”]。[写“为了不影响下周一的评审|Xiě “wèile bù yǐngxiǎng xià zhōu yī de píngshěn]，[如能在本周四前答复|rú néng zài běn zhōu sì qián dáfù]，[我们将非常感谢|wǒmen jiāng fēicháng gǎnxiè]”。", "id": "Sebutkan titik waktunya, jangan bilang “sesegera mungkin”. Tulis “agar tidak memengaruhi penilaian Senin depan, jika dapat dijawab sebelum Kamis pekan ini, kami akan sangat berterima kasih”.", "literal": "bilang — waktu — titik, jangan — bilang — “sesegera mungkin”. tulis — “demi — tidak — memengaruhi — depan — minggu — satu — punya — penilaian, jika — bisa — di — ini — minggu — empat — sebelum — menjawab, kami — akan — sangat — berterima kasih”." },
+    { "speaker": "安迪:", "text": "[“如能……将……”|“Rú néng…… jiāng……”]？[这听着好正式|Zhè tīng zhe hǎo zhèngshì]。", "id": "“Jika dapat… akan…”? Ini kedengarannya resmi sekali.", "literal": "“jika — bisa…… akan……”? ini — dengar — sedang — sangat — resmi." },
+    { "speaker": "王丽:", "text": "[邮件就该正式|Yóujiàn jiù gāi zhèngshì]。[微信可以随便|Wēixìn kěyǐ suíbiàn]，[邮件是留档的|yóujiàn shì liú dàng de]。[还有|Hái yǒu]，[你最后写“谢谢|nǐ zuìhòu xiě “xièxie]”[太单薄了|tài dānbó le]，[改成“顺祝商祺”|gǎi chéng “shùn zhù shāng qí”]。", "id": "Surel memang seharusnya resmi. WeChat boleh santai, surel itu diarsipkan. Lagi pula, di bagian akhir kamu menulis “terima kasih” terlalu tipis, ganti jadi “semoga usaha Anda lancar”.", "literal": "surel — memang — seharusnya — resmi. WeChat — bisa — seenaknya, surel — adalah — tinggalkan — arsip — punya. masih — ada, kamu — paling akhir — tulis — “terima kasih” — terlalu — tipis — sudah, ubah — jadi — “sekaligus — doa — dagang — beruntung”." },
+    { "speaker": "安迪:", "text": "[“顺祝商祺”|“Shùn zhù shāng qí”]？[我连怎么念都不确定|Wǒ lián zěnme niàn dōu bú quèdìng]。", "id": "“Shùn zhù shāng qí”? Cara membacanya saja saya tidak yakin.", "literal": "“sekaligus — doa — dagang — beruntung”? saya — bahkan — bagaimana — baca — pun — tidak — yakin." },
+    { "speaker": "王丽:", "text": "[shùn zhù shāng qí|shùn zhù shāng qí]。[是给做生意的人的祝语|Shì gěi zuò shēngyi de rén de zhùyǔ]。[对同事就写“祝好”|Duì tóngshì jiù xiě “zhù hǎo”]，[对老师写“此致敬礼”|duì lǎoshī xiě “cǐ zhì jìnglǐ”]。[记三个就够用一辈子|Jì sān ge jiù gòu yòng yíbèizi]。", "id": "Shùn zhù shāng qí. Itu ucapan penutup untuk orang yang berbisnis. Kepada rekan kerja cukup tulis “zhù hǎo”, kepada guru tulis “cǐ zhì jìnglǐ”. Hafal tiga saja sudah cukup seumur hidup.", "literal": "shùn zhù shāng qí. adalah — kepada — buat — usaha — punya — orang — punya — doa-kata. terhadap — rekan kerja — langsung — tulis — “doa — baik”, terhadap — guru — tulis — “ini — sampaikan — hormat”. ingat — tiga — penggolong — langsung — cukup — pakai — seumur hidup." },
+    { "speaker": "安迪:", "text": "[那正文呢|Nà zhèngwén ne]？[我写了六段|Wǒ xiě le liù duàn]。", "id": "Lalu badan suratnya? Saya menulis enam paragraf.", "literal": "kalau begitu — badan naskah — bagaimana? saya — tulis — sudah — enam — paragraf." },
+    { "speaker": "王丽:", "text": "[六段太多|Liù duàn tài duō]。[中文商务邮件一般三段|Zhōngwén shāngwù yóujiàn yìbān sān duàn]：[第一段说来意|dì-yī duàn shuō láiyì]，[第二段说具体事项|dì-èr duàn shuō jùtǐ shìxiàng]，[第三段说需要对方做什么|dì-sān duàn shuō xūyào duìfāng zuò shénme]。[超过一屏|Chāoguò yì píng]，[对方就会跳着看|duìfāng jiù huì tiào zhe kàn]。", "id": "Enam paragraf terlalu banyak. Surel bisnis Mandarin biasanya tiga paragraf: paragraf pertama menyebut maksud kedatangan, kedua menyebut hal-hal rincinya, ketiga menyebut apa yang perlu dilakukan pihak lain. Lewat satu layar, pihak sana akan membacanya melompat-lompat.", "literal": "enam — paragraf — terlalu — banyak. Mandarin — bisnis — surel — biasanya — tiga — paragraf: ke-satu — paragraf — bilang — datang-maksud, ke-dua — paragraf — bilang — konkret — hal, ke-tiga — paragraf — bilang — perlu — pihak lain — buat — apa. lewat — satu — layar, pihak lain — langsung — akan — lompat — sedang — lihat." }
+   ],
+   "notes": [
+    "**Kerangka surel Mandarin: sapaan + jabatan.** [陈总，您好|Chén zǒng, nín hǎo]。 Jabatan hampir selalu dipakai sebagai sapaan: 王经理, 李老师, 张律师, 陈总 (singkatan 总经理). Menyapa klien hanya dengan namanya terasa kurang hormat.",
+    "**尽快 adalah kata yang menekan.** Ia sah dipakai ke bawahan atau rekan sejajar, tetapi ke klien atau atasan ia terdengar mendesak. Gantinya selalu **titik waktu yang pasti** ditambah alasannya.",
+    "**如…，将… — rangka surel resmi.** 如 = 如果 【书】, 将 = 会/要 【书】. Sepasang kata satu aksara ini langsung menaikkan seluruh kalimat ke ragam tulis, dan sangat sering muncul di surel bisnis.",
+    "**留档 — “diarsipkan”.** Alasan sesungguhnya mengapa surel lebih resmi daripada pesan WeChat: ia disimpan dan bisa dibuka lagi bertahun-tahun kemudian. Kalimat [这个我们邮件确认一下|Zhège wǒmen yóujiàn quèrèn yíxià] berarti “mari kita catatkan ini secara resmi”.",
+    "**Tiga penutup surat yang cukup untuk seumur hidup:** 顺祝商祺 (mitra bisnis), 祝好 (rekan kerja, netral), 此致敬礼 (guru, lembaga, sangat resmi). Ketiganya diletakkan di baris tersendiri sebelum nama.",
+    "**冲 — “menusuk, kasar”.** 【口】 [说话有点冲|shuō huà yǒudiǎn chòng] bicaranya agak kasar. Berbeda dari 凶 “galak” dan 直接 “langsung”. Kata yang berguna untuk menilai nada tulisan.",
+    "**单薄 — “tipis”.** Dipakai untuk sesuatu yang kurang berisi: [理由太单薄|lǐyóu tài dānbó] alasannya terlalu tipis, [内容单薄|nèiróng dānbó] isinya kurang. Berbeda dari 薄 yang berarti tipis secara fisik.",
+    "**⚠️ 一屏 — “satu layar”.** Ukuran panjang yang nyata dalam budaya kerja daring Tiongkok. Surel, laporan, dan pesan yang lebih panjang dari satu layar ponsel dianggap tidak dibaca utuh — dan itu bukan keluhan, melainkan kenyataan yang perlu dipakai sebagai ukuran menulis."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka surel kantor Mandarin",
+     "body": [
+      "Susunannya tetap dan bisa disalin. Yang berubah hanya isi kolom kanan."
+     ],
+     "tables": [
+      {
+       "head": ["Bagian", "Rumus", "Contoh"],
+       "rows": [
+        ["Sapaan", "jabatan + 您好", "[陈总|Chén zǒng]，[您好|nín hǎo]："],
+        ["Paragraf 1 — maksud", "我是…，就…事与您联系", "[我是林工的同事小安|Wǒ shì Lín gōng de tóngshì Xiǎo Ān]，[就报价一事与您联系|jiù bàojià yí shì yǔ nín liánxì]。"],
+        ["Paragraf 2 — rincian", "关于…，情况如下：", "[关于第二版方案|Guānyú dì-èr bǎn fāng'àn]，[情况如下|qíngkuàng rúxià]："],
+        ["Paragraf 3 — permintaan", "如能…，我们将…", "[如能在本周四前答复|Rú néng zài běn zhōu sì qián dáfù]，[我们将非常感谢|wǒmen jiāng fēicháng gǎnxiè]。"],
+        ["Penutup", "祝语", "[顺祝商祺|Shùn zhù shāng qí]"],
+        ["Tanda tangan", "nama + jabatan + perusahaan + telepon", "[安迪|Āndí] · [项目组|Xiàngmùzǔ]"]
+       ]
+      },
+      {
+       "head": ["Kata 【书】 khas surel", "Arti", "Padanan 【口】"],
+       "rows": [
+        ["[就…一事|jiù…yí shì]", "mengenai perkara…", "关于…的事"],
+        ["[如下|rúxià]", "sebagai berikut", "下面是"],
+        ["[烦请|fánqǐng]", "mohon dengan hormat", "麻烦你"],
+        ["[附件|fùjiàn]", "lampiran", "—"],
+        ["[敬请|jìngqǐng]", "mohon (sangat hormat)", "请"],
+        ["[另|lìng]", "selain itu", "另外"],
+        ["[即|jí]", "yaitu", "就是"],
+        ["[望|wàng]", "berharap", "希望"]
+       ]
+      }
+     ],
+     "after": [
+      "**Satu surel = satu perkara.** Menggabungkan tiga urusan berbeda dalam satu surel hampir selalu berakhir dengan hanya satu yang dijawab. Kalau urusanmu tiga, kirim tiga surel dengan judul yang berbeda.",
+      "**Judul surel Mandarin menyebut isi, bukan salam.** [关于第二版报价的确认|Guānyú dì-èr bǎn bàojià de quèrèn] ✅ · [你好|Nǐ hǎo] ❌ · [重要|Zhòngyào] ❌"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Jabatan, bagian, dan alur persetujuan",
+   "blocks": [
+    { "type": "p", "text": "Tanpa daftar ini, separuh percakapan kantor akan lewat begitu saja. Perhatikan bahwa hampir semua jabatan dipakai langsung sebagai sapaan." },
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Sebagai sapaan"],
+      "rows": [
+       ["[总经理|zǒngjīnglǐ]", "direktur utama", "[陈总|Chén zǒng]"],
+       ["[副总|fùzǒng]", "wakil direktur", "[李副总|Lǐ fùzǒng]"],
+       ["[总监|zǒngjiān]", "direktur bidang", "[王总监|Wáng zǒngjiān]"],
+       ["[经理|jīnglǐ]", "manajer", "[张经理|Zhāng jīnglǐ]"],
+       ["[主管|zhǔguǎn]", "penyelia", "[刘主管|Liú zhǔguǎn]"],
+       ["[同事|tóngshì]", "rekan kerja", "—"],
+       ["[下属|xiàshǔ]", "bawahan", "—"],
+       ["[上级|shàngjí]", "atasan (lembaga)", "—"],
+       ["[人事|rénshì]", "HRD", "[人事部|rénshìbù]"],
+       ["[财务|cáiwù]", "keuangan", "[财务部|cáiwùbù]"],
+       ["[采购|cǎigòu]", "pengadaan", "—"],
+       ["[行政|xíngzhèng]", "umum, administrasi", "—"],
+       ["[法务|fǎwù]", "hukum", "—"],
+       ["[审批|shěnpī]", "persetujuan berjenjang", "[走审批|zǒu shěnpī]"],
+       ["[签字|qiān zì]", "menandatangani", "[等签字|děng qiān zì]"],
+       ["[同步|tóngbù]", "menyelaraskan, memberi tahu", "[同步给经理|tóngbù gěi jīnglǐ]"]
+      ] },
+    { "type": "sub", "text": "Kalimat rapat yang dipakai setiap hari" },
+    { "type": "kotak", "title": "Delapan kalimat rapat", "items": [
+     "[我先同步一下进展|Wǒ xiān tóngbù yíxià jìnzhǎn]。 — “Saya sinkronkan dulu kemajuannya.” Pembuka laporan yang paling lazim.",
+     "[这个我记一下|Zhège wǒ jì yíxià]，[会后跟进|huì hòu gēnjìn]。 — Mencatat dan menindaklanjuti sesudah rapat.",
+     "[我们对齐一下时间|Wǒmen duìqí yíxià shíjiān]。 — “Kita samakan dulu waktunya.” 对齐 sangat sering dipakai untuk menyamakan pemahaman.",
+     "[这个需要谁拍板|Zhège xūyào shéi pāibǎn]？ — “Ini siapa yang memutuskan?” 拍板 = mengetuk palu keputusan.",
+     "[会后我出个纪要|Huì hòu wǒ chū ge jìyào]。 — “Sesudah rapat saya keluarkan notulennya.”",
+     "[这块儿归谁负责|Zhè kuàir guī shéi fùzé]？ — “Bagian ini di bawah tanggung jawab siapa?”",
+     "[我有个不成熟的想法|Wǒ yǒu ge bù chéngshú de xiǎngfǎ]。 — Merendah sebelum mengusulkan; sering mendahului usulan yang justru paling tajam.",
+     "[时间关系|Shíjiān guānxì]，[这个我们会后单独聊|zhège wǒmen huì hòu dāndú liáo]。 — Menutup pembahasan yang melebar tanpa menyinggung siapa pun."
+    ] }
+   ]
+  },
+  {
+   "title": "Laporan satu halaman: kerangka yang selalu berhasil",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Bagian", "Isi", "Panjang"],
+      "rows": [
+       ["[结论|jiélùn]", "Bisa/tidak bisa, tepat waktu/tidak, angka pokoknya", "1–2 kalimat"],
+       ["[风险|fēngxiǎn]", "Maksimal tiga, diurut dari yang paling berat", "3 poin"],
+       ["[建议|jiànyì]", "Satu saran untuk tiap risiko", "3 poin"],
+       ["[时间|shíjiān]", "Tanggal pasti dan siapa yang mengerjakan", "tabel kecil"],
+       ["[需要的支持|xūyào de zhīchí]", "Apa yang kamu minta dari atasan", "1 kalimat"]
+      ] },
+    { "type": "p", "text": "Bagian terakhir adalah yang paling sering dilewatkan orang, dan justru yang paling menentukan. Laporan tanpa **需要的支持** membuat atasan harus menebak apa yang kamu inginkan darinya; laporan yang menyebutkannya secara jelas hampir selalu mendapat jawaban lebih cepat." },
+    { "type": "sub", "text": "Contoh utuh" },
+    { "type": "kotak", "title": "结论 → 风险 → 建议 → 时间 → 支持", "items": [
+     "**结论：**[项目可以按时上线|Xiàngmù kěyǐ ànshí shàngxiàn]，[但采购付款须提前一周完成|dàn cǎigòu fùkuǎn xū tíqián yì zhōu wánchéng]。",
+     "**风险 1：**[审批已在财务副总处停留三天|Shěnpī yǐ zài cáiwù fùzǒng chù tíngliú sān tiān]。",
+     "**建议 1：**[由李经理直接沟通|Yóu Lǐ jīnglǐ zhíjiē gōutōng]，[或改走加急流程|huò gǎi zǒu jiājí liúchéng]。",
+     "**时间：**[本周五完成付款|Běn zhōu wǔ wánchéng fùkuǎn]，[下周三设备到位|xià zhōu sān shèbèi dàowèi]，[下周五上线|xià zhōu wǔ shàngxiàn]。",
+     "**需要的支持：**[请李经理今日内推动审批|Qǐng Lǐ jīnglǐ jīnrì nèi tuīdòng shěnpī]。"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "汇报", "baca": "huìbào", "id": "melaporkan (ke atasan)" },
+  { "zh": "项目", "baca": "xiàngmù", "id": "proyek" },
+  { "zh": "供应商", "baca": "gōngyìngshāng", "id": "pemasok" },
+  { "zh": "报价", "baca": "bàojià", "id": "penawaran harga" },
+  { "zh": "核对", "baca": "héduì", "id": "mencocokkan" },
+  { "zh": "结论", "baca": "jiélùn", "id": "kesimpulan" },
+  { "zh": "过程", "baca": "guòchéng", "id": "proses" },
+  { "zh": "上线", "baca": "shàngxiàn", "id": "diluncurkan (sistem)" },
+  { "zh": "采购", "baca": "cǎigòu", "id": "pengadaan" },
+  { "zh": "付款", "baca": "fùkuǎn", "id": "pembayaran" },
+  { "zh": "审批", "baca": "shěnpī", "id": "persetujuan berjenjang" },
+  { "zh": "卡", "baca": "kǎ", "id": "tersangkut" },
+  { "zh": "设备", "baca": "shèbèi", "id": "peralatan" },
+  { "zh": "顺延", "baca": "shùnyán", "id": "mundur berurutan 【书】" },
+  { "zh": "副总", "baca": "fùzǒng", "id": "wakil direktur" },
+  { "zh": "整理", "baca": "zhěnglǐ", "id": "merapikan" },
+  { "zh": "时间点", "baca": "shíjiān diǎn", "id": "titik waktu" },
+  { "zh": "解决方案", "baca": "jiějué fāng'àn", "id": "solusi" },
+  { "zh": "上级", "baca": "shàngjí", "id": "atasan" },
+  { "zh": "顺序", "baca": "shùnxù", "id": "urutan" },
+  { "zh": "辛苦", "baca": "xīnkǔ", "id": "bersusah payah" },
+  { "zh": "进行", "baca": "jìnxíng", "id": "melakukan 【书】" },
+  { "zh": "予以", "baca": "yǔyǐ", "id": "memberikan 【书】" },
+  { "zh": "加以", "baca": "jiāyǐ", "id": "melakukan atas 【书】" },
+  { "zh": "作出", "baca": "zuòchū", "id": "membuat (keputusan) 【书】" },
+  { "zh": "给予", "baca": "jǐyǔ", "id": "memberi 【书】" },
+  { "zh": "批准", "baca": "pīzhǔn", "id": "menyetujui" },
+  { "zh": "麻烦你", "baca": "máfan nǐ", "id": "tolong ya" },
+  { "zh": "进展", "baca": "jìnzhǎn", "id": "kemajuan" },
+  { "zh": "同步", "baca": "tóngbù", "id": "menyelaraskan; memberi tahu" },
+  { "zh": "邮件", "baca": "yóujiàn", "id": "surel" },
+  { "zh": "客户", "baca": "kèhù", "id": "klien" },
+  { "zh": "称呼", "baca": "chēnghu", "id": "sapaan" },
+  { "zh": "尽快", "baca": "jǐnkuài", "id": "sesegera mungkin" },
+  { "zh": "催促", "baca": "cuīcù", "id": "mendesak" },
+  { "zh": "冲", "baca": "chòng", "id": "kasar (nada) 【口】" },
+  { "zh": "答复", "baca": "dáfù", "id": "menjawab (resmi)" },
+  { "zh": "正式", "baca": "zhèngshì", "id": "resmi" },
+  { "zh": "留档", "baca": "liú dàng", "id": "diarsipkan" },
+  { "zh": "单薄", "baca": "dānbó", "id": "tipis, kurang berisi" },
+  { "zh": "正文", "baca": "zhèngwén", "id": "badan naskah" },
+  { "zh": "来意", "baca": "láiyì", "id": "maksud kedatangan" },
+  { "zh": "事项", "baca": "shìxiàng", "id": "hal, butir 【书】" },
+  { "zh": "附件", "baca": "fùjiàn", "id": "lampiran" },
+  { "zh": "烦请", "baca": "fánqǐng", "id": "mohon dengan hormat 【书】" },
+  { "zh": "如下", "baca": "rúxià", "id": "sebagai berikut 【书】" },
+  { "zh": "纪要", "baca": "jìyào", "id": "notulen" },
+  { "zh": "跟进", "baca": "gēnjìn", "id": "menindaklanjuti" },
+  { "zh": "对齐", "baca": "duìqí", "id": "menyamakan pemahaman" },
+  { "zh": "拍板", "baca": "pāibǎn", "id": "mengetuk keputusan" },
+  { "zh": "到位", "baca": "dàowèi", "id": "sampai di tempat; memadai" },
+  { "zh": "推动", "baca": "tuīdòng", "id": "mendorong (proses)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun ulang laporan berikut ke urutan 结论 → 风险 → 建议 → 时间.",
+   "items": [
+    "Rabu kami rapat, Kamis dapat penawaran, Jumat cek keuangan, sekarang kemungkinan mundur satu minggu karena persetujuan macet.",
+    "Ada tiga kandidat, dua sudah wawancara, satu batal; kesimpulannya posisi ini bisa diisi akhir bulan kalau gajinya dinaikkan sepuluh persen."
+   ]
+  },
+  {
+   "prompt": "Naikkan ke ragam tulis dengan 进行 · 予以 · 加以 · 作出 · 给予.",
+   "items": [
+    "[我们讨论了这个问题|Wǒmen tǎolùn le zhège wèntí]。",
+    "[公司决定了|Gōngsī juédìng le]。",
+    "[这个部分要说明一下|Zhège bùfen yào shuōmíng yíxià]。",
+    "[银行帮助了这些企业|Yínháng bāngzhù le zhèxiē qǐyè]。",
+    "[领导支持了这个计划|Lǐngdǎo zhīchí le zhège jìhuà]。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk yang pantas untuk penerima yang disebutkan.",
+   "items": [
+    "[发给我|Fā gěi wǒ]。→ kepada klien",
+    "[你今天做完|Nǐ jīntiān zuò wán]。→ kepada rekan sejajar",
+    "[快点回复|Kuài diǎn huífù]。→ kepada atasan",
+    "[把报告改一下|Bǎ bàogào gǎi yíxià]。→ kepada bawahan, tetap ramah",
+    "[明天之前交|Míngtiān zhīqián jiāo]。→ pengumuman tertulis untuk seluruh tim"
+   ]
+  },
+  {
+   "prompt": "Betulkan surel berikut: sebutkan apa yang salah pada tiap barisnya.",
+   "items": [
+    "Judul: [你好|Nǐ hǎo]",
+    "Sapaan: [陈|Chén]，[你好|nǐ hǎo]",
+    "Isi: [请尽快回复|Qǐng jǐnkuài huífù]。",
+    "Isi: enam paragraf tentang tiga urusan berbeda",
+    "Penutup: [谢谢|Xièxie]"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin (ragam surel).",
+   "items": [
+    "Saya menghubungi Anda mengenai perkara penawaran versi kedua.",
+    "Keadaannya sebagai berikut.",
+    "Jika dapat dijawab sebelum Kamis pekan ini, kami akan sangat berterima kasih.",
+    "Mohon dengan hormat dibantu diperiksa lampirannya.",
+    "Selain itu, ada satu hal yang perlu dikonfirmasi terlebih dahulu."
+   ]
+  },
+  {
+   "prompt": "Tulis surel tiga paragraf lengkap (sapaan, maksud, rincian, permintaan, penutup) untuk keadaan berikut.",
+   "items": [
+    "Meminta klien mengonfirmasi jadwal rapat penilaian dan mengirimkan daftar peserta.",
+    "Memberi tahu pemasok bahwa jumlah pesanan berubah dan meminta penawaran baru."
+   ]
+  }
+ ],
+ "answers": [
+  "结论: [项目可能推迟一周|Xiàngmù kěnéng tuīchí yì zhōu]。 风险: [审批卡住了|Shěnpī kǎ zhù le]。 建议: [请经理直接推动或改走加急|Qǐng jīnglǐ zhíjiē tuīdòng huò gǎi zǒu jiājí]。 时间: [本周五前完成审批|Běn zhōu wǔ qián wánchéng shěnpī]。 — 结论: [月底可以到岗|Yuèdǐ kěyǐ dàogǎng]，[前提是薪资上浮百分之十|qiántí shì xīnzī shàngfú bǎi fēn zhī shí]。 风险: [三名候选人中一人已放弃|Sān míng hòuxuǎnrén zhōng yì rén yǐ fàngqì]。 建议: [同时启动第二轮招聘|Tóngshí qǐdòng dì-èr lún zhāopìn]。 时间: [下周完成终面|Xià zhōu wánchéng zhōng miàn]。",
+  "[我们对这个问题进行了讨论|Wǒmen duì zhège wèntí jìnxíng le tǎolùn]。 — [公司作出了决定|Gōngsī zuòchū le juédìng]。 — [这个部分需要加以说明|Zhège bùfen xūyào jiāyǐ shuōmíng]。 — [银行对这些企业予以帮助|Yínháng duì zhèxiē qǐyè yǔyǐ bāngzhù]。 — [领导给予了这个计划支持|Lǐngdǎo jǐyǔ le zhège jìhuà zhīchí]。",
+  "[烦请发我一份|Fánqǐng fā wǒ yí fèn]，[谢谢|xièxie]。 — [麻烦你今天做完|Máfan nǐ jīntiān zuò wán]，[辛苦了|xīnkǔ le]。 — [您看今天方便答复吗|Nín kàn jīntiān fāngbiàn dáfù ma]？ — [麻烦你把报告改一下|Máfan nǐ bǎ bàogào gǎi yíxià]，[改完发我就行|gǎi wán fā wǒ jiù xíng]。 — [请于明日前提交|Qǐng yú míngrì qián tíjiāo]。",
+  "Judul tidak menyebut isi → [关于第二版报价的确认|Guānyú dì-èr bǎn bàojià de quèrèn] — Sapaan kurang jabatan dan kurang hormat → [陈总|Chén zǒng]，[您好|nín hǎo] — 尽快 terdengar mendesak → sebut titik waktu: [如能在本周四前答复|Rú néng zài běn zhōu sì qián dáfù] — Tiga urusan dalam satu surel; pecah jadi tiga surel dengan judul berbeda — Penutup terlalu tipis → [顺祝商祺|Shùn zhù shāng qí]",
+  "[就第二版报价一事与您联系|Jiù dì-èr bǎn bàojià yí shì yǔ nín liánxì]。 — [情况如下|Qíngkuàng rúxià]： — [如能在本周四前答复|Rú néng zài běn zhōu sì qián dáfù]，[我们将非常感谢|wǒmen jiāng fēicháng gǎnxiè]。 — [烦请协助查看附件|Fánqǐng xiézhù chákàn fùjiàn]。 — [另有一事需先行确认|Lìng yǒu yí shì xū xiānxíng quèrèn]。",
+  "Contoh 1: [陈总|Chén zǒng]，[您好|nín hǎo]：[我是项目组的小安|Wǒ shì xiàngmùzǔ de Xiǎo Ān]，[就下周评审会一事与您联系|jiù xià zhōu píngshěnhuì yí shì yǔ nín liánxì]。[目前会议暂定于下周一上午十点|Mùqián huìyì zàndìng yú xià zhōu yī shàngwǔ shí diǎn]，[地点在贵司会议室|dìdiǎn zài guì sī huìyìshì]。[如能在本周四前确认时间并提供参会名单|Rú néng zài běn zhōu sì qián quèrèn shíjiān bìng tígōng cān huì míngdān]，[我们将非常感谢|wǒmen jiāng fēicháng gǎnxiè]。[顺祝商祺|Shùn zhù shāng qí]。 — Contoh 2: [王经理|Wáng jīnglǐ]，[您好|nín hǎo]：[就本月订单一事与您联系|Jiù běn yuè dìngdān yí shì yǔ nín liánxì]。[因客户需求变更|Yīn kèhù xūqiú biàngēng]，[订购数量由五百件调整为八百件|dìnggòu shùliàng yóu wǔ bǎi jiàn tiáozhěng wéi bā bǎi jiàn]，[其余规格不变|qíyú guīgé bú biàn]。[烦请重新报价|Fánqǐng chóngxīn bàojià]，[如能于本周五前发来|rú néng yú běn zhōu wǔ qián fā lái]，[我们将非常感谢|wǒmen jiāng fēicháng gǎnxiè]。[顺祝商祺|Shùn zhù shāng qí]。"
+ ],
+ "wave": "Ambil satu pesan kerja yang benar-benar kamu kirim minggu ini — dalam bahasa apa pun. Tulis ulang dalam bahasa Mandarin dengan tiga aturan unit ini: kesimpulan di kalimat pertama, satu perkara saja, dan titik waktu yang pasti alih-alih “secepatnya”. Bandingkan panjangnya dengan yang asli; hampir selalu jadi separuh."
+}

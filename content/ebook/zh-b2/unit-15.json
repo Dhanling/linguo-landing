@@ -1,0 +1,341 @@
+{
+ "title": "Teknologi, algoritme, dan pekerjaan yang berubah",
+ "title_target": "会不会被取代 — Huì bu huì bèi qǔdài",
+ "goal": "Berbicara tentang teknologi tanpa terdengar seperti menerjemahkan artikel: memakai 被 dalam arti “tergantikan”, membedakan 取代 dan 替代, menyusun perkiraan dengan 未必/迟早/早晚, serta seluruh kosakata algoritme, data, dan keamanan.",
+ "bekal": [
+  "menyatakan sesuatu digantikan: 被取代, 被替代, 淘汰",
+  "menakar masa depan: 迟早, 早晚, 未必, 说不定",
+  "membicarakan algoritme dan rekomendasi: 推荐, 推送, 信息茧房",
+  "menyatakan kekhawatiran data tanpa berlebihan",
+  "kosakata perangkat, akun, dan keamanan"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — “Pekerjaanku akan digantikan?”",
+   "intro": "Xiao Zhou baru membaca artikel tentang kecerdasan buatan dan cemas. Perhatikan bagaimana Wang Li memecah pertanyaan besar yang tidak bisa dijawab menjadi tiga pertanyaan kecil yang bisa.",
+   "lines": [
+    { "speaker": "小周:", "text": "[你说翻译这行五年后还在吗|Nǐ shuō fānyì zhè háng wǔ nián hòu hái zài ma]？", "id": "Menurutmu bidang penerjemahan lima tahun lagi masih ada tidak?", "literal": "kamu — bilang — terjemah — ini — bidang — lima — tahun — sesudah — masih — ada — kah?" },
+    { "speaker": "王丽:", "text": "[这个问题太大了|Zhège wèntí tài dà le]，[没法回答|méi fǎ huídá]。[我们拆开问|Wǒmen chāi kāi wèn]：[你具体做哪一类翻译|nǐ jùtǐ zuò nǎ yí lèi fānyì]？", "id": "Pertanyaan ini terlalu besar, tidak bisa dijawab. Kita pecah dulu: kamu tepatnya mengerjakan penerjemahan jenis apa?", "literal": "ini — masalah — terlalu — besar — sudah, tidak — cara — jawab. kami — bongkar — buka — tanya: kamu — konkret — buat — mana — satu — jenis — terjemah?" },
+    { "speaker": "小周:", "text": "[主要是产品说明书和合同|Zhǔyào shì chǎnpǐn shuōmíngshū hé hétong]。", "id": "Terutama buku petunjuk produk dan kontrak.", "literal": "terutama — adalah — produk — petunjuk — buku — dan — kontrak." },
+    { "speaker": "王丽:", "text": "[说明书那部分|Shuōmíngshū nà bùfen]，[老实说|lǎoshí shuō]，[迟早会被机器翻译大部分取代|chízǎo huì bèi jīqì fānyì dàbùfen qǔdài]。[但合同不一样|Dàn hétong bù yíyàng]。[合同错一个字要赔钱|Hétong cuò yí ge zì yào péi qián]，[所以一定有人签字负责|suǒyǐ yídìng yǒu rén qiān zì fùzé]。", "id": "Bagian buku petunjuk, jujur saja, cepat atau lambat sebagian besarnya akan digantikan mesin penerjemah. Tapi kontrak berbeda. Kontrak salah satu aksara harus ganti rugi, jadi pasti ada orang yang tanda tangan dan bertanggung jawab.", "literal": "petunjuk — buku — itu — bagian, jujur — bilang, cepat lambat — akan — kena — mesin — terjemah — sebagian besar — gantikan. tapi — kontrak — tidak — sama. kontrak — salah — satu — penggolong — aksara — harus — ganti — uang, jadi — pasti — ada — orang — tanda — tangan — bertanggung jawab." },
+    { "speaker": "小周:", "text": "[所以关键是有没有责任|Suǒyǐ guānjiàn shì yǒu méiyǒu zérèn]？", "id": "Jadi kuncinya ada tidaknya tanggung jawab?", "literal": "jadi — kunci — adalah — ada — tidak ada — tanggung jawab?" },
+    { "speaker": "王丽:", "text": "[这是三个问题之一|Zhè shì sān ge wèntí zhī yī]。[第一|Dì-yī]，[出错的代价有多大|chū cuò de dàijià yǒu duō dà]？[第二|Dì-èr]，[需不需要现场判断|xū bu xūyào xiànchǎng pànduàn]？[第三|Dì-sān]，[客户愿不愿意为“有人负责”多付钱|kèhù yuàn bu yuànyì wèi “yǒu rén fùzé” duō fù qián]？[三个都是“是”的工作|Sān ge dōu shì “shì” de gōngzuò]，[五年内很难被完全取代|wǔ nián nèi hěn nán bèi wánquán qǔdài]。", "id": "Ini salah satu dari tiga pertanyaan. Pertama, seberapa besar harga sebuah kesalahan? Kedua, perlu tidak penilaian di tempat? Ketiga, klien mau tidak membayar lebih demi “ada orang yang bertanggung jawab”? Pekerjaan yang ketiganya “ya”, dalam lima tahun sulit tergantikan sepenuhnya.", "literal": "ini — adalah — tiga — penggolong — masalah — di antara — satu. ke-satu, keluar — salah — punya — harga — ada — berapa — besar? ke-dua, perlu — tidak — perlu — lapangan — penilaian? ke-tiga, klien — rela — tidak — rela — demi — “ada — orang — bertanggung jawab” — banyak — bayar — uang? tiga — penggolong — semua — adalah — “ya” — punya — pekerjaan, lima — tahun — dalam — sangat — sulit — kena — sepenuhnya — gantikan." },
+    { "speaker": "小周:", "text": "[那我现在该做什么|Nà wǒ xiànzài gāi zuò shénme]？", "id": "Lalu sekarang aku harus melakukan apa?", "literal": "kalau begitu — saya — sekarang — harus — buat — apa?" },
+    { "speaker": "王丽:", "text": "[两件事|Liǎng jiàn shì]。[第一|Dì-yī]，[把机器当工具用|bǎ jīqì dāng gōngjù yòng]，[别跟它比速度|bié gēn tā bǐ sùdù]。[你比它快不了|Nǐ bǐ tā kuài bu liǎo]。[第二|Dì-èr]，[往有责任的那一头走|wǎng yǒu zérèn de nà yì tóu zǒu]：[法律翻译|fǎlǜ fānyì]、[医疗翻译|yīliáo fānyì]、[同声传译|tóngshēng chuányì]。", "id": "Dua hal. Pertama, pakai mesin sebagai alat, jangan mengadu kecepatan dengannya. Kamu tidak akan bisa lebih cepat darinya. Kedua, bergeraklah ke ujung yang ada tanggung jawabnya: penerjemahan hukum, medis, penjurubahasaan simultan.", "literal": "dua — penggolong — perkara. ke-satu, ambil — mesin — jadikan — alat — pakai, jangan — dengan — dia — banding — kecepatan. kamu — dibanding — dia — cepat — tidak — sanggup. ke-dua, ke — ada — tanggung jawab — punya — itu — satu — ujung — jalan: hukum — terjemah, medis — terjemah, bersamaan — bunyi — sampaikan — terjemah." },
+    { "speaker": "小周:", "text": "[可是很多人说这些迟早也会被取代|Kěshì hěn duō rén shuō zhèxiē chízǎo yě huì bèi qǔdài]。", "id": "Tapi banyak orang bilang ini pun cepat atau lambat akan tergantikan.", "literal": "tapi — sangat — banyak — orang — bilang — ini semua — cepat lambat — juga — akan — kena — gantikan." },
+    { "speaker": "王丽:", "text": "[也许|Yěxǔ]。[但“迟早”这个词很危险|Dàn “chízǎo” zhège cí hěn wēixiǎn]：[它可能是三年|tā kěnéng shì sān nián]，[也可能是三十年|yě kěnéng shì sānshí nián]。[用三十年的事情吓自己|Yòng sānshí nián de shìqing xià zìjǐ]，[然后今年什么都不做|ránhòu jīnnián shénme dōu bú zuò]——[这才是真的风险|zhè cái shì zhēn de fēngxiǎn]。", "id": "Mungkin. Tapi kata “cepat atau lambat” itu berbahaya: bisa jadi tiga tahun, bisa juga tiga puluh tahun. Menakuti diri sendiri dengan hal yang tiga puluh tahun lagi, lalu tahun ini tidak melakukan apa-apa — inilah risiko yang sebenarnya.", "literal": "mungkin. tapi — “cepat lambat” — ini — kata — sangat — berbahaya: dia — mungkin — adalah — tiga — tahun, juga — mungkin — adalah — tiga puluh — tahun. pakai — tiga puluh — tahun — punya — perkara — takuti — diri sendiri, sesudah itu — tahun ini — apa — pun — tidak — buat — ini — baru — adalah — sungguh — punya — risiko." },
+    { "speaker": "小周:", "text": "[……说得有道理|……Shuō de yǒu dàolǐ]。", "id": "…Masuk akal juga.", "literal": "…… bilang — secara — ada — logika." },
+    { "speaker": "王丽:", "text": "[还有一句|Hái yǒu yí jù]：[被取代的往往不是这个职业|bèi qǔdài de wǎngwǎng bú shì zhège zhíyè]，[而是不用工具的那批人|ér shì bú yòng gōngjù de nà pī rén]。", "id": "Ada satu kalimat lagi: yang tergantikan seringnya bukan profesinya, melainkan rombongan orang yang tidak memakai alatnya.", "literal": "masih — ada — satu — penggolong: kena — gantikan — punya — sering — bukan — adalah — ini — profesi, melainkan — adalah — tidak — pakai — alat — punya — itu — rombongan — orang." }
+   ],
+   "notes": [
+    "**被取代 — “digantikan”.** Rangka 被 dalam arti modern dan netral, bukan hanya untuk hal buruk yang menimpa. Saudaranya: [被淘汰|bèi táotài] tersingkir, [被替代|bèi tìdài] disubstitusi, [被裁|bèi cái] di-PHK.",
+    "**取代 vs 替代.** 取代 “menggantikan tempatnya sepenuhnya” — yang lama menghilang. 替代 “menjadi pengganti” — sering sementara atau sebagian. Mesin 取代 pekerjaan; bahan A 替代 bahan B.",
+    "**拆开问 — “memecahnya lalu bertanya”.** Gerakan yang dipakai Wang Li di baris kedua adalah salah satu kebiasaan berpikir yang paling berguna: pertanyaan yang terlalu besar tidak dijawab, tetapi dipecah. Kalimatnya bisa dipakai apa adanya: [这个问题太大了|Zhège wèntí tài dà le]，[我们拆开看|wǒmen chāi kāi kàn]。",
+    "**迟早 · 早晚 — “cepat atau lambat”.** Keduanya sama; 早晚 sedikit lebih lisan. Perhatikan kritik Wang Li terhadap kata ini di baris kesepuluh: ia benar tetapi tidak memberi tahu apa pun tentang waktunya, dan karena itu tidak bisa dipakai untuk mengambil keputusan.",
+    "**快不了 — “tidak akan bisa lebih cepat”.** Pelengkap kemungkinan dengan 了 (liǎo) pada kata sifat: [好不了|hǎo bu liǎo] tidak akan membaik, [便宜不了|piányi bu liǎo] tidak akan bisa murah.",
+    "**往…走 — “bergerak ke arah…”.** [往有责任的那一头走|wǎng yǒu zérèn de nà yì tóu zǒu]. 往 + arah + kata kerja adalah rangka arah baku: [往前走|wǎng qián zǒu] maju, [往回看|wǎng huí kàn] melihat ke belakang.",
+    "**把 A 当 B 用 — “memakai A sebagai B”.** [把机器当工具用|bǎ jīqì dāng gōngjù yòng]. Rangka 把…当…用/看/使 sudah muncul di unit 12 dalam 把 A 当成 B.",
+    "**⚠️ Kalimat terakhir Wang Li layak dihafal utuh.** Ia memakai rangka 不是…而是 (unit 1) untuk memindahkan kecemasan dari sesuatu yang tak bisa dikendalikan (profesinya) ke sesuatu yang bisa (kebiasaanmu sendiri). Ini pola yang sama dengan seluruh nasihat baik: pindahkan pertanyaannya ke tempat yang punya jawaban."
+   ],
+   "grammars": [
+    {
+     "title": "Menakar masa depan tanpa berbohong",
+     "body": [
+      "Bahasa Mandarin punya tangga perkiraan yang cukup halus. Memilih anak tangga yang tepat adalah selisih antara terdengar berwawasan dan terdengar seperti mengulang artikel."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Contoh", "Kepastiannya"],
+       "rows": [
+        ["[一定会|yídìng huì]", "[一定会变|Yídìng huì biàn]。", "sangat yakin"],
+        ["[迟早会|chízǎo huì]", "[迟早会被取代|Chízǎo huì bèi qǔdài]。", "yakin, waktunya tak jelas"],
+        ["[很可能|hěn kěnéng]", "[很可能三年内|Hěn kěnéng sān nián nèi]。", "kemungkinan besar"],
+        ["[说不定|shuōbudìng]", "[说不定明年就有了|Shuōbudìng míngnián jiù yǒu le]。", "boleh jadi 【口】"],
+        ["[未必|wèibì]", "[未必那么快|Wèibì nàme kuài]。", "belum tentu"],
+        ["[不见得|bú jiàn de]", "[不见得是坏事|Bú jiàn de shì huàishì]。", "belum tentu 【口】"],
+        ["[短期内不会|duǎnqī nèi bú huì]", "[短期内不会|Duǎnqī nèi bú huì]。", "menyangkal dengan batas waktu"],
+        ["[在可预见的将来|zài kě yùjiàn de jiānglái]", "…", "【书】, laporan"]
+       ]
+      },
+      {
+       "head": ["⚠️ Dua kesalahan menakar", "Kalimat", "Mengapa lemah"],
+       "rows": [
+        ["tanpa batas waktu", "[迟早会被取代|Chízǎo huì bèi qǔdài]。", "benar tetapi tidak bisa dipakai memutuskan"],
+        ["tanpa syarat", "[AI 会取代所有工作|AI huì qǔdài suǒyǒu gōngzuò]。", "tak ada pembatas (lihat unit 11)"],
+        ["lebih baik", "[就现有技术而言|Jiù xiànyǒu jìshù ér yán]，[三年内很难完全取代|sān nián nèi hěn nán wánquán qǔdài]。", "punya cakupan dan tenggat"]
+       ]
+      }
+     ],
+     "after": [
+      "**Gabungkan pembatas unit 11 dengan penakar di sini**, dan kalimat perkiraanmu langsung terdengar seperti orang yang benar-benar berpikir: cakupan (就…而言) + tenggat (三年内) + kadar (很难完全)."
+     ]
+    },
+    {
+     "title": "Kosakata teknologi yang benar-benar dipakai",
+     "body": [
+      "Daftar ini menghindari istilah yang cuma muncul di makalah, dan berisi kata yang benar-benar terdengar di kantor dan percakapan sehari-hari Tiongkok."
+     ],
+     "tables": [
+      {
+       "head": ["Mandarin", "Arti", "Contoh"],
+       "rows": [
+        ["[人工智能|réngōng zhìnéng]", "kecerdasan buatan", "singkatan: AI"],
+        ["[算法|suànfǎ]", "algoritme", "[算法推荐|suànfǎ tuījiàn]"],
+        ["[推送|tuīsòng]", "mendorong konten ke pengguna", "[推送消息|tuīsòng xiāoxi]"],
+        ["[大数据|dà shùjù]", "big data", "—"],
+        ["[数据隐私|shùjù yǐnsī]", "privasi data", "—"],
+        ["[后台|hòutái]", "sistem di belakang layar", "[后台运行|hòutái yùnxíng]"],
+        ["[云|yún]", "awan (cloud)", "[云存储|yún cúnchǔ]"],
+        ["[自动化|zìdònghuà]", "otomatisasi", "—"],
+        ["[取代|qǔdài]", "menggantikan", "[被取代|bèi qǔdài]"],
+        ["[淘汰|táotài]", "menyingkirkan", "[被淘汰|bèi táotài]"],
+        ["[效率|xiàolǜ]", "efisiensi", "[提高效率|tígāo xiàolǜ]"],
+        ["[门槛|ménkǎn]", "ambang masuk", "[降低门槛|jiàngdī ménkǎn]"],
+        ["[信息茧房|xìnxī jiǎnfáng]", "gelembung informasi", "harfiah “kepompong informasi”"],
+        ["[沉迷|chénmí]", "kecanduan", "[沉迷手机|chénmí shǒujī]"],
+        ["[卡顿|kǎdùn]", "tersendat (perangkat)", "【口】"],
+        ["[死机|sǐjī]", "hang, macet total", "【口】"]
+       ]
+      }
+     ],
+     "after": [
+      "**信息茧房 adalah salah satu istilah yang paling sering muncul dalam perdebatan Tiongkok tentang algoritme.** Harfiahnya “rumah kepompong informasi”: kamu hanya melihat apa yang sudah kamu sukai, sampai dunia tampak seperti kepompong yang kamu pintal sendiri. Ia dipakai di media resmi maupun percakapan sehari-hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Algoritme dan orang tua",
+   "intro": "Seorang anak khawatir melihat ayahnya kecanduan video pendek dan mempercayai apa pun yang muncul di layarnya. Percakapan ini menggabungkan unit 12 (media sosial) dengan unit 13 (bahasa perasaan).",
+   "lines": [
+    { "speaker": "女儿:", "text": "[妈|Mā]，[爸昨天又转了一条说吃某种水果能治高血压的|bà zuótiān yòu zhuǎn le yì tiáo shuō chī mǒu zhǒng shuǐguǒ néng zhì gāo xuèyā de]。", "id": "Bu, kemarin Ayah meneruskan lagi satu unggahan yang bilang makan buah tertentu bisa menyembuhkan darah tinggi.", "literal": "ibu, ayah — kemarin — lagi — teruskan — sudah — satu — penggolong — bilang — makan — suatu — jenis — buah — bisa — sembuhkan — tinggi — darah — tekanan — punya." },
+    { "speaker": "妈妈:", "text": "[我说过他好几次了|Wǒ shuō guo tā hǎojǐ cì le]，[没用|méiyòng]。", "id": "Aku sudah menegurnya beberapa kali, tidak ada gunanya.", "literal": "saya — bilang — pernah — dia — beberapa — kali — sudah, tidak berguna." },
+    { "speaker": "女儿:", "text": "[我觉得问题不在他信不信|Wǒ juéde wèntí bú zài tā xìn bu xìn]，[在于他一天刷四个小时|zàiyú tā yì tiān shuā sì ge xiǎoshí]。[刷得越多|Shuā de yuè duō]，[算法推给他的越极端|suànfǎ tuī gěi tā de yuè jíduān]。", "id": "Menurutku masalahnya bukan pada dia percaya atau tidak, melainkan pada dia menggulir empat jam sehari. Makin banyak menggulir, makin ekstrem yang didorong algoritme kepadanya.", "literal": "saya — merasa — masalah — tidak — berada — dia — percaya — tidak — percaya, terletak pada — dia — satu — hari — gulir — empat — penggolong — jam. gulir — secara — makin — banyak, algoritme — dorong — kepada — dia — punya — makin — ekstrem." },
+    { "speaker": "妈妈:", "text": "[那怎么办|Nà zěnme bàn]？[总不能把他手机没收吧|Zǒng bù néng bǎ tā shǒujī mòshōu ba]。", "id": "Lalu bagaimana? Masa ponselnya mau disita.", "literal": "kalau begitu — bagaimana — urus? sama sekali — tidak — bisa — ambil — dia — ponsel — sita — kan." },
+    { "speaker": "女儿:", "text": "[当然不能|Dāngrán bù néng]。[而且说实话|Érqiě shuō shíhuà]，[他刷手机是因为退休以后没事做|tā shuā shǒujī shì yīnwèi tuìxiū yǐhòu méi shì zuò]。[你把手机拿走|Nǐ bǎ shǒujī ná zǒu]，[空出来的四个小时给他什么|kòng chūlái de sì ge xiǎoshí gěi tā shénme]？", "id": "Tentu tidak boleh. Lagi pula sejujurnya, dia menggulir ponsel karena setelah pensiun tidak ada yang dikerjakan. Ponselnya kamu ambil, empat jam yang kosong itu mau diisi apa untuknya?", "literal": "tentu — tidak — bisa. lagi pula — bilang — kata jujur, dia — gulir — ponsel — adalah — karena — pensiun — sesudah — tidak ada — perkara — buat. kamu — ambil — ponsel — ambil — pergi, kosong — keluar-datang — punya — empat — penggolong — jam — beri — dia — apa?" },
+    { "speaker": "妈妈:", "text": "[……这倒是|……Zhè dào shì]。", "id": "…Itu memang benar.", "literal": "…… ini — justru — adalah." },
+    { "speaker": "女儿:", "text": "[我想了三个办法|Wǒ xiǎng le sān ge bànfǎ]。[第一|Dì-yī]，[给他手机装个健康提醒|gěi tā shǒujī zhuāng ge jiànkāng tíxǐng]，[但不设限制|dàn bú shè xiànzhì]——[限制会让他反感|xiànzhì huì ràng tā fǎngǎn]。", "id": "Aku memikirkan tiga cara. Pertama, pasangkan pengingat kesehatan di ponselnya, tapi jangan pasang pembatas — pembatasan akan membuatnya tidak suka.", "literal": "saya — pikir — sudah — tiga — penggolong — cara. ke-satu, beri — dia — ponsel — pasang — penggolong — kesehatan — pengingat, tapi — tidak — pasang — batasan — batasan — akan — buat — dia — tidak suka." },
+    { "speaker": "妈妈:", "text": "[第二呢|Dì-èr ne]？", "id": "Yang kedua?", "literal": "ke-dua — bagaimana?" },
+    { "speaker": "女儿:", "text": "[第二|Dì-èr]，[我每周给他发两条靠谱的健康视频|wǒ měi zhōu gěi tā fā liǎng tiáo kàopǔ de jiànkāng shìpín]，[让算法看到他也看这类内容|ràng suànfǎ kàndào tā yě kàn zhè lèi nèiróng]。[算法学得很快|Suànfǎ xué de hěn kuài]，[你喂它什么|nǐ wèi tā shénme]，[它就给你什么|tā jiù gěi nǐ shénme]。", "id": "Kedua, tiap minggu aku kirimi dia dua video kesehatan yang bisa dipercaya, supaya algoritmenya melihat dia juga menonton jenis konten ini. Algoritme belajar cepat sekali; kamu memberinya makan apa, dia memberimu apa.", "literal": "ke-dua, saya — tiap — minggu — beri — dia — kirim — dua — penggolong — andal — punya — kesehatan — video, buat — algoritme — lihat — sampai — dia — juga — lihat — ini — jenis — isi. algoritme — belajar — secara — sangat — cepat, kamu — beri makan — dia — apa, dia — langsung — beri — kamu — apa." },
+    { "speaker": "妈妈:", "text": "[这个我倒没想过|Zhège wǒ dào méi xiǎng guo]。[第三呢|Dì-sān ne]？", "id": "Ini justru tidak pernah terpikirkan olehku. Yang ketiga?", "literal": "ini — saya — justru — tidak — pikir — pernah. ke-tiga — bagaimana?" },
+    { "speaker": "女儿:", "text": "[第三最重要|Dì-sān zuì zhòngyào]：[给他找点事做|gěi tā zhǎo diǎn shì zuò]。[社区有老年合唱团|Shèqū yǒu lǎonián héchàngtuán]，[他年轻的时候唱过|tā niánqīng de shíhou chàng guo]。[人有事做的时候|Rén yǒu shì zuò de shíhou]，[没人愿意一天刷四个小时|méi rén yuànyì yì tiān shuā sì ge xiǎoshí]。", "id": "Yang ketiga paling penting: carikan dia sesuatu untuk dikerjakan. Di lingkungan ada paduan suara lansia, waktu muda dia pernah bernyanyi. Kalau orang punya sesuatu untuk dikerjakan, tidak ada yang mau menggulir empat jam sehari.", "literal": "ke-tiga — paling — penting: beri — dia — cari — sedikit — perkara — buat. komunitas — ada — lanjut usia — paduan suara, dia — muda — punya — waktu — nyanyi — pernah. orang — ada — perkara — buat — punya — waktu, tidak ada — orang — rela — satu — hari — gulir — empat — penggolong — jam." },
+    { "speaker": "妈妈:", "text": "[你这三条|Nǐ zhè sān tiáo]，[一条比一条难|yì tiáo bǐ yì tiáo nán]。", "id": "Tiga butirmu ini, satu lebih sulit daripada yang lain.", "literal": "kamu — ini — tiga — penggolong, satu — penggolong — dibanding — satu — penggolong — sulit." },
+    { "speaker": "女儿:", "text": "[对|Duì]。[但只做第一条|Dàn zhǐ zuò dì-yī tiáo]，[等于什么都没做|děngyú shénme dōu méi zuò]。", "id": "Betul. Tapi hanya mengerjakan yang pertama sama saja dengan tidak melakukan apa-apa.", "literal": "benar. tapi — hanya — buat — ke-satu — penggolong, sama dengan — apa — pun — tidak — buat." }
+   ],
+   "notes": [
+    "**问题不在…，在于… — “masalahnya bukan pada…, melainkan terletak pada…”.** 在于 【书】 lebih tegas daripada 是 dan sering dipakai untuk menunjuk letak masalah. Bentuk lisan: [问题不是…，是…|Wèntí bú shì…, shì…]。",
+    "**越…，越… — “makin…, makin…”.** [刷得越多|Shuā de yuè duō]，[推的越极端|tuī de yuè jíduān]。 Berbeda dari 越来越 (unit 14) yang menandai perubahan seiring waktu: 越…越… menghubungkan **dua hal** yang naik bersamaan.",
+    "**总不能…吧 — “masa mau…”.** Rangka penolakan lunak berbentuk pertanyaan: [总不能把他手机没收吧|Zǒng bù néng bǎ tā shǒujī mòshōu ba]。 Ia menyebut jalan keluar yang jelas-jelas berlebihan untuk menunjukkan bahwa jalan itu tidak ada.",
+    "**你喂它什么，它就给你什么 — rangka kata tanya berulang.** Sudah muncul di unit 12: [想发多少发多少|xiǎng fā duōshao fā duōshao]。 Di sini bentuknya 什么…就…什么, dan hasilnya kalimat yang padat dan mudah diingat — persis yang dibutuhkan untuk menjelaskan sesuatu kepada orang tua.",
+    "**反感 — “tidak suka, muak”.** Berbeda dari 讨厌 yang lebih keras dan pribadi. 反感 sering muncul untuk cara, sikap, dan aturan: [他对被管着很反感|Tā duì bèi guǎn zhe hěn fǎngǎn] dia tidak suka diatur.",
+    "**一条比一条难 — “satu lebih sulit daripada yang lain”.** Rangka A 比 A 强/难/好 menandai deret yang meningkat: [一天比一天冷|yì tiān bǐ yì tiān lěng] hari demi hari makin dingin, [一次比一次好|yí cì bǐ yí cì hǎo] tiap kali makin baik.",
+    "**等于什么都没做 — “sama saja tidak melakukan apa-apa”.** 等于 sudah muncul di unit 6 dan 8. Ia rangka penilaian yang tajam dan sering dipakai untuk menolak setengah-langkah.",
+    "**⚠️ Perhatikan diagnosis di baris kelima.** Percakapan ini tidak berakhir pada “orang tua mudah percaya hoaks”, melainkan pada “dia punya empat jam kosong setiap hari”. Memindahkan masalah dari watak ke keadaan adalah gerakan yang sama dengan seluruh unit 13 — dan hampir selalu menghasilkan jalan keluar yang lebih baik."
+   ],
+   "grammars": [
+    {
+     "title": "Rangka menjelaskan hal teknis kepada orang yang tidak teknis",
+     "body": [
+      "Kemampuan ini diuji di HSK 6, ditanyakan di wawancara kerja, dan dibutuhkan setiap hari. Rangkanya empat langkah dan bisa dipakai untuk apa pun."
+     ],
+     "tables": [
+      {
+       "head": ["Langkah", "Rangka", "Contoh"],
+       "rows": [
+        ["1. Kiaskan", "…就像…一样", "[算法就像餐厅服务员|Suànfǎ jiù xiàng cāntīng fúwùyuán]，[记住你点过什么|jì zhù nǐ diǎn guo shénme]。"],
+        ["2. Padatkan", "kalimat berulang", "[你喂它什么|Nǐ wèi tā shénme]，[它就给你什么|tā jiù gěi nǐ shénme]。"],
+        ["3. Contohkan", "比如说…", "[比如说你看了一条钓鱼视频|Bǐrú shuō nǐ kàn le yì tiáo diàoyú shìpín]，[第二天全是钓鱼|dì-èr tiān quán shì diàoyú]。"],
+        ["4. Beri satu tindakan", "你只要…就…", "[你只要每周主动搜两次别的|Nǐ zhǐyào měi zhōu zhǔdòng sōu liǎng cì bié de]，[它就会变|tā jiù huì biàn]。"]
+       ]
+      },
+      {
+       "head": ["Kiasan yang benar-benar dipakai penutur asli", "Untuk menjelaskan"],
+       "rows": [
+        ["[就像滚雪球一样|jiù xiàng gǔn xuěqiú yíyàng]", "sesuatu yang membesar sendiri"],
+        ["[像水一样|xiàng shuǐ yíyàng]", "sesuatu yang mencari celah"],
+        ["[跟点菜一个道理|gēn diǎn cài yí ge dàolǐ]", "pilihan yang membentuk rekomendasi"],
+        ["[相当于|xiāngdāng yú]", "setara dengan"],
+        ["[打个比方|dǎ ge bǐfang]", "“umpamanya begini”"]
+       ]
+      }
+     ],
+     "after": [
+      "**打个比方 adalah pembuka yang sangat berguna.** Ia memberi tahu pendengar bahwa yang menyusul bukan kenyataan harfiah, sehingga ia tidak akan menyanggah kiasanmu sebagai fakta — kesalahpahaman yang sering merusak penjelasan teknis."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata perangkat, akun, dan keamanan",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Mandarin", "Arti"],
+      "rows": [
+       ["[账号|zhànghào]", "akun", "[密码|mìmǎ]", "kata sandi"],
+       ["[验证码|yànzhèngmǎ]", "kode verifikasi", "[双重验证|shuāngchóng yànzhèng]", "verifikasi dua langkah"],
+       ["[登录|dēnglù]", "masuk", "[退出|tuìchū]", "keluar"],
+       ["[注册|zhùcè]", "mendaftar", "[注销|zhùxiāo]", "menutup akun"],
+       ["[更新|gēngxīn]", "memperbarui", "[卸载|xièzài]", "menghapus aplikasi"],
+       ["[备份|bèifèn]", "cadangan", "[恢复|huīfù]", "memulihkan"],
+       ["[缓存|huǎncún]", "cache", "[清理|qīnglǐ]", "membersihkan"],
+       ["[病毒|bìngdú]", "virus", "[钓鱼链接|diàoyú liànjiē]", "tautan penipuan"],
+       ["[诈骗|zhàpiàn]", "penipuan", "[被骗|bèi piàn]", "tertipu"],
+       ["[泄露|xièlù]", "bocor (data)", "[加密|jiāmì]", "enkripsi"],
+       ["[权限|quánxiàn]", "izin akses", "[定位|dìngwèi]", "lokasi"],
+       ["[联网|lián wǎng]", "terhubung internet", "[断网|duàn wǎng]", "internet putus"],
+       ["[卡顿|kǎdùn]", "tersendat", "[死机|sǐjī]", "hang"],
+       ["[充电|chōngdiàn]", "mengisi daya", "[电量|diànliàng]", "sisa baterai"]
+      ] },
+    { "type": "sub", "text": "Kalimat yang dibutuhkan saat ada masalah" },
+    { "type": "kotak", "title": "Enam kalimat", "items": [
+     "[我的账号登录不上了|Wǒ de zhànghào dēnglù bu shàng le]。 — Pelengkap kemungkinan 不上: tidak berhasil masuk.",
+     "[没收到验证码|Méi shōudào yànzhèngmǎ]，[能换个方式吗|néng huàn ge fāngshì ma]？ — Masalah paling sering bagi orang asing di Tiongkok.",
+     "[这个应用要定位权限|Zhège yìngyòng yào dìngwèi quánxiàn]，[能不能关掉|néng bu néng guān diào]？ — Menutup izin lokasi.",
+     "[我怀疑这是钓鱼链接|Wǒ huáiyí zhè shì diàoyú liànjiē]，[你别点|nǐ bié diǎn]。 — Kalimat yang perlu bisa kamu kirim cepat.",
+     "[信息可能泄露了|Xìnxī kěnéng xièlù le]，[建议马上改密码|jiànyì mǎshàng gǎi mìmǎ]。 — Menyarankan tanpa menakut-nakuti.",
+     "[手机最近特别卡|Shǒujī zuìjìn tèbié kǎ]，[清理一下缓存试试|qīnglǐ yíxià huǎncún shìshi]。 — 试试 di ujung membuat saran terdengar ringan."
+    ] }
+   ]
+  },
+  {
+   "title": "Berdebat tentang teknologi: empat rangka",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Rangka", "Contoh", "Fungsinya"],
+      "rows": [
+       ["工具本身没有…，问题在于…", "[工具本身没有对错|Gōngjù běnshēn méiyǒu duì cuò]，[问题在于怎么用|wèntí zàiyú zěnme yòng]。", "memisahkan alat dari pemakaiannya"],
+       ["被取代的不是…，而是…", "[被取代的不是这个职业|Bèi qǔdài de bú shì zhège zhíyè]，[而是不用工具的人|ér shì bú yòng gōngjù de rén]。", "memindahkan kecemasan ke hal yang bisa diubah"],
+       ["短期…，长期…", "[短期会有阵痛|Duǎnqī huì yǒu zhèntòng]，[长期看是好事|chángqī kàn shì hǎoshì]。", "memisahkan dua rentang waktu"],
+       ["…的前提是…", "[效率提升的前提是有人负责|Xiàolǜ tíshēng de qiántí shì yǒu rén fùzé]。", "menyebut syarat yang sering dilupakan"]
+      ] },
+    { "type": "p", "text": "**前提 — “prasyarat”.** Kata yang sangat kuat dalam berargumen: ia menerima kesimpulan lawan bicara tetapi memasang syarat yang belum terpenuhi. [我同意|Wǒ tóngyì]，[但前提是…|dàn qiántí shì…] adalah salah satu kalimat paling berguna yang bisa kamu bawa ke rapat mana pun." },
+    { "type": "kotak", "title": "Kerjakan sendiri", "items": [
+     "Tulis empat kalimat tentang kecerdasan buatan di bidang pekerjaanmu sendiri, satu untuk tiap rangka di tabel atas.",
+     "Lalu tulis satu kalimat perkiraan yang menggabungkan pembatas dan tenggat: [就…而言|Jiù…ér yán]，[…年内…|…nián nèi…]。",
+     "Bacakan kelimanya keras-keras. Kalau ada yang terdengar seperti kutipan artikel, ganti dengan contoh dari pekerjaanmu sendiri — itu satu-satunya yang membedakan pendapat dari hafalan."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "人工智能", "baca": "réngōng zhìnéng", "id": "kecerdasan buatan" },
+  { "zh": "算法", "baca": "suànfǎ", "id": "algoritme" },
+  { "zh": "推送", "baca": "tuīsòng", "id": "mendorong konten" },
+  { "zh": "推荐", "baca": "tuījiàn", "id": "merekomendasikan" },
+  { "zh": "取代", "baca": "qǔdài", "id": "menggantikan sepenuhnya" },
+  { "zh": "替代", "baca": "tìdài", "id": "menjadi pengganti" },
+  { "zh": "淘汰", "baca": "táotài", "id": "menyingkirkan" },
+  { "zh": "自动化", "baca": "zìdònghuà", "id": "otomatisasi" },
+  { "zh": "效率", "baca": "xiàolǜ", "id": "efisiensi" },
+  { "zh": "门槛", "baca": "ménkǎn", "id": "ambang masuk" },
+  { "zh": "迟早", "baca": "chízǎo", "id": "cepat atau lambat" },
+  { "zh": "早晚", "baca": "zǎowǎn", "id": "cepat atau lambat 【口】" },
+  { "zh": "说不定", "baca": "shuōbudìng", "id": "boleh jadi" },
+  { "zh": "未必", "baca": "wèibì", "id": "belum tentu 【书】" },
+  { "zh": "拆开", "baca": "chāi kāi", "id": "memecah, membongkar" },
+  { "zh": "现场", "baca": "xiànchǎng", "id": "di tempat, lapangan" },
+  { "zh": "说明书", "baca": "shuōmíngshū", "id": "buku petunjuk" },
+  { "zh": "同声传译", "baca": "tóngshēng chuányì", "id": "penjurubahasaan simultan" },
+  { "zh": "工具", "baca": "gōngjù", "id": "alat" },
+  { "zh": "前提", "baca": "qiántí", "id": "prasyarat" },
+  { "zh": "在于", "baca": "zàiyú", "id": "terletak pada 【书】" },
+  { "zh": "极端", "baca": "jíduān", "id": "ekstrem" },
+  { "zh": "信息茧房", "baca": "xìnxī jiǎnfáng", "id": "gelembung informasi" },
+  { "zh": "沉迷", "baca": "chénmí", "id": "kecanduan" },
+  { "zh": "反感", "baca": "fǎngǎn", "id": "tidak suka, muak" },
+  { "zh": "没收", "baca": "mòshōu", "id": "menyita" },
+  { "zh": "退休", "baca": "tuìxiū", "id": "pensiun" },
+  { "zh": "社区", "baca": "shèqū", "id": "lingkungan, komunitas" },
+  { "zh": "合唱团", "baca": "héchàngtuán", "id": "paduan suara" },
+  { "zh": "喂", "baca": "wèi", "id": "memberi makan" },
+  { "zh": "账号", "baca": "zhànghào", "id": "akun" },
+  { "zh": "密码", "baca": "mìmǎ", "id": "kata sandi" },
+  { "zh": "验证码", "baca": "yànzhèngmǎ", "id": "kode verifikasi" },
+  { "zh": "登录", "baca": "dēnglù", "id": "masuk (akun)" },
+  { "zh": "注册", "baca": "zhùcè", "id": "mendaftar" },
+  { "zh": "更新", "baca": "gēngxīn", "id": "memperbarui" },
+  { "zh": "卸载", "baca": "xièzài", "id": "menghapus aplikasi" },
+  { "zh": "备份", "baca": "bèifèn", "id": "cadangan" },
+  { "zh": "缓存", "baca": "huǎncún", "id": "cache" },
+  { "zh": "病毒", "baca": "bìngdú", "id": "virus" },
+  { "zh": "诈骗", "baca": "zhàpiàn", "id": "penipuan" },
+  { "zh": "钓鱼链接", "baca": "diàoyú liànjiē", "id": "tautan penipuan" },
+  { "zh": "泄露", "baca": "xièlù", "id": "bocor" },
+  { "zh": "加密", "baca": "jiāmì", "id": "enkripsi" },
+  { "zh": "权限", "baca": "quánxiàn", "id": "izin akses" },
+  { "zh": "定位", "baca": "dìngwèi", "id": "penentuan lokasi" },
+  { "zh": "卡顿", "baca": "kǎdùn", "id": "tersendat 【口】" },
+  { "zh": "死机", "baca": "sǐjī", "id": "hang 【口】" },
+  { "zh": "云存储", "baca": "yún cúnchǔ", "id": "penyimpanan awan" },
+  { "zh": "大数据", "baca": "dà shùjù", "id": "big data" },
+  { "zh": "打个比方", "baca": "dǎ ge bǐfang", "id": "umpamanya" },
+  { "zh": "阵痛", "baca": "zhèntòng", "id": "nyeri peralihan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Perkuat kalimat perkiraan berikut dengan menambahkan cakupan dan tenggat.",
+   "items": [
+    "[这个工作迟早会被取代|Zhège gōngzuò chízǎo huì bèi qǔdài]。",
+    "[以后没人会学外语了|Yǐhòu méi rén huì xué wàiyǔ le]。",
+    "[纸质书会消失|Zhǐzhì shū huì xiāoshī]。",
+    "[所有客服都会变成机器人|Suǒyǒu kèfú dōu huì biàn chéng jīqìrén]。",
+    "[写代码的人会越来越少|Xiě dàimǎ de rén huì yuè lái yuè shǎo]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 取代 · 替代 · 淘汰 yang tepat.",
+   "items": [
+    "[胶卷相机已经被数码相机|Jiāojuǎn xiàngjī yǐjīng bèi shùmǎ xiàngjī] ____ [了|le]。",
+    "[这种材料可以|Zhè zhǒng cáiliào kěyǐ] ____ [塑料|sùliào]。",
+    "[跟不上技术的人容易被|Gēn bu shàng jìshù de rén róngyì bèi] ____ 。",
+    "[机器很难完全|Jīqì hěn nán wánquán] ____ [需要现场判断的工作|xūyào xiànchǎng pànduàn de gōngzuò]。",
+    "[老款手机三年就被市场|Lǎo kuǎn shǒujī sān nián jiù bèi shìchǎng] ____ [了|le]。"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dengan 越…，越….",
+   "items": [
+    "Makin banyak menggulir; yang direkomendasikan makin ekstrem.",
+    "Makin sibuk; makin gampang salah.",
+    "Makin sering dipakai; makin akurat.",
+    "Makin lama menunda; makin sulit dimulai.",
+    "Makin murah harganya; makin banyak yang membeli."
+   ]
+  },
+  {
+   "prompt": "Jelaskan hal berikut kepada orang yang tidak paham teknologi, dengan rangka empat langkah (kiaskan → padatkan → contohkan → beri satu tindakan).",
+   "items": [
+    "Cara kerja rekomendasi algoritme di aplikasi video pendek.",
+    "Mengapa kata sandi yang sama untuk semua akun berbahaya."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Pertanyaan ini terlalu besar, mari kita pecah dulu.",
+    "Kamu memberinya makan apa, dia memberimu apa.",
+    "Yang tergantikan seringnya bukan profesinya, melainkan orang yang tidak memakai alatnya.",
+    "Alatnya sendiri tidak ada benar-salahnya; masalahnya terletak pada cara memakainya.",
+    "Saya setuju, tapi prasyaratnya harus ada orang yang bertanggung jawab."
+   ]
+  },
+  {
+   "prompt": "Tulis tanggapanmu dalam bahasa Mandarin untuk keadaan berikut.",
+   "items": [
+    "Orang tuamu meneruskan unggahan kesehatan yang jelas keliru setiap hari, dan tersinggung kalau ditegur.",
+    "Rekan kerjamu berkata pekerjaan kalian akan habis dalam dua tahun dan berhenti belajar apa pun."
+   ]
+  }
+ ],
+ "answers": [
+  "[就现有技术而言|Jiù xiànyǒu jìshù ér yán]，[这类工作在三到五年内很可能被大部分取代|zhè lèi gōngzuò zài sān dào wǔ nián nèi hěn kěnéng bèi dàbùfen qǔdài]。 — [就旅游场景而言|Jiù lǚyóu chǎngjǐng ér yán]，[短期内学外语的需求可能下降|duǎnqī nèi xué wàiyǔ de xūqiú kěnéng xiàjiàng]，[但专业场景未必|dàn zhuānyè chǎngjǐng wèibì]。 — [就销量来看|Jiù xiāoliàng lái kàn]，[纸质书十年内不会消失|zhǐzhì shū shí nián nèi bú huì xiāoshī]，[但份额会继续下降|dàn fèn'é huì jìxù xiàjiàng]。 — [就标准问题而言|Jiù biāozhǔn wèntí ér yán]，[机器客服会占大部分|jīqì kèfú huì zhàn dàbùfen]，[复杂投诉短期内仍需人工|fùzá tóusù duǎnqī nèi réng xū réngōng]。 — [就入门岗位而言|Jiù rùmén gǎngwèi ér yán]，[数量可能减少|shùliàng kěnéng jiǎnshǎo]，[但整体未必|dàn zhěngtǐ wèibì]。",
+  "取代 — 替代 — 淘汰 — 取代 — 淘汰",
+  "[刷得越多|Shuā de yuè duō]，[推荐的就越极端|tuījiàn de jiù yuè jíduān]。 — [越忙越容易出错|Yuè máng yuè róngyì chū cuò]。 — [用得越多|Yòng de yuè duō]，[越准确|yuè zhǔnquè]。 — [拖得越久|Tuō de yuè jiǔ]，[越难开始|yuè nán kāishǐ]。 — [价格越便宜|Jiàgé yuè piányi]，[买的人越多|mǎi de rén yuè duō]。",
+  "Contoh 1: [算法就像餐厅服务员|Suànfǎ jiù xiàng cāntīng fúwùyuán]，[记住你点过什么|jì zhù nǐ diǎn guo shénme]。[你喂它什么|Nǐ wèi tā shénme]，[它就给你什么|tā jiù gěi nǐ shénme]。[比如说你看了一条钓鱼视频|Bǐrú shuō nǐ kàn le yì tiáo diàoyú shìpín]，[第二天满屏都是钓鱼|dì-èr tiān mǎn píng dōu shì diàoyú]。[你只要每周主动搜两次别的内容|Nǐ zhǐyào měi zhōu zhǔdòng sōu liǎng cì bié de nèiróng]，[它推的东西就会慢慢变|tā tuī de dōngxi jiù huì mànmàn biàn]。 — Contoh 2: [同一个密码就像一把钥匙开所有的门|Tóng yí ge mìmǎ jiù xiàng yì bǎ yàoshi kāi suǒyǒu de mén]。[一把丢了|Yì bǎ diū le]，[全部都开了|quánbù dōu kāi le]。[比如说一个小网站被黑|Bǐrú shuō yí ge xiǎo wǎngzhàn bèi hēi]，[对方就拿这个密码去试你的银行账号|duìfāng jiù ná zhège mìmǎ qù shì nǐ de yínháng zhànghào]。[你只要把银行和邮箱这两个换成单独的密码|Nǐ zhǐyào bǎ yínháng hé yóuxiāng zhè liǎng ge huàn chéng dāndú de mìmǎ]，[风险就小很多|fēngxiǎn jiù xiǎo hěn duō]。",
+  "[这个问题太大了|Zhège wèntí tài dà le]，[我们拆开看|wǒmen chāi kāi kàn]。 — [你喂它什么|Nǐ wèi tā shénme]，[它就给你什么|tā jiù gěi nǐ shénme]。 — [被取代的往往不是这个职业|Bèi qǔdài de wǎngwǎng bú shì zhège zhíyè]，[而是不用工具的那批人|ér shì bú yòng gōngjù de nà pī rén]。 — [工具本身没有对错|Gōngjù běnshēn méiyǒu duì cuò]，[问题在于怎么用|wèntí zàiyú zěnme yòng]。 — [我同意|Wǒ tóngyì]，[但前提是有人负责|dàn qiántí shì yǒu rén fùzé]。",
+  "Contoh 1: [我不是说您转的都不对|Wǒ bú shì shuō nín zhuǎn de dōu bú duì]。[问题不在信不信|Wèntí bú zài xìn bu xìn]，[在于算法会越推越极端|zàiyú suànfǎ huì yuè tuī yuè jíduān]。[我每周给您发两条医院官方号的视频|Wǒ měi zhōu gěi nín fā liǎng tiáo yīyuàn guānfāng hào de shìpín]，[您看一看|nín kàn yi kàn]，[它推的内容慢慢就会变|tā tuī de nèiróng mànmàn jiù huì biàn]。 — Contoh 2: [“迟早”这个词很危险|“Chízǎo” zhège cí hěn wēixiǎn]：[可能是三年|kěnéng shì sān nián]，[也可能是三十年|yě kěnéng shì sānshí nián]。[被取代的往往不是这个职业|Bèi qǔdài de wǎngwǎng bú shì zhège zhíyè]，[而是不用工具的那批人|ér shì bú yòng gōngjù de nà pī rén]。[与其今年什么都不做|Yǔqí jīnnián shénme dōu bú zuò]，[不如先把工具用熟|bùrú xiān bǎ gōngjù yòng shú]。"
+ ],
+ "wave": "Ambil pekerjaanmu sendiri dan jawab tiga pertanyaan dari dialog 1 dengan jujur: seberapa besar harga sebuah kesalahan, perlukah penilaian di tempat, dan maukah orang membayar lebih supaya ada yang bertanggung jawab. Tulis jawabannya dalam tiga kalimat Mandarin. Ini latihan bahasa yang kebetulan juga latihan karier — dan tidak ada artikel yang bisa menjawabnya untukmu."
+}

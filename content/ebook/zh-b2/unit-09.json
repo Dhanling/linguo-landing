@@ -1,0 +1,885 @@
+{
+ "title": "Aturan, kontrak, dan hak",
+ "title_target": "依法办事 — Yī fǎ bàn shì",
+ "goal": "Membaca dan berbicara dalam ragam aturan: kata kerja bantu hukum (应当 · 不得 · 须 · 可), rangka menyeluruh 凡是…一律, penunjuk dasar hukum 依照/按照/根据, serta cara menuntut hak tanpa bertengkar.",
+ "bekal": [
+  "membaca pasal kontrak: 应当, 不得, 须, 可, 视…而定",
+  "menyebut dasar aturan: 依照, 按照, 根据, 依法",
+  "menyatakan hak dan kewajiban: 有权, 有义务, 承担责任",
+  "menuntut sesuatu dengan mengutip aturannya, bukan dengan marah",
+  "kosakata sewa rumah, kontrak kerja, dan penyelesaian sengketa"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Uang jaminan sewa yang tidak dikembalikan",
+   "intro": "Andi pindah dari apartemennya dan pemilik menahan uang jaminannya. Perhatikan bahwa Andi menang bukan karena marah, melainkan karena ia mengutip pasal kontraknya sendiri.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[张先生|Zhāng xiānsheng]，[房子我已经退了|fángzi wǒ yǐjīng tuì le]，[押金什么时候能退给我|yājīn shénme shíhou néng tuì gěi wǒ]？",
+     "id": "Pak Zhang, rumahnya sudah saya kembalikan, uang jaminannya kapan bisa dikembalikan ke saya?",
+     "literal": "Zhang — tuan, rumah — saya — sudah — kembalikan — sudah, uang jaminan — kapan — bisa — kembalikan — kepada — saya?"
+    },
+    {
+     "speaker": "房东:",
+     "text": "[墙上有几个钉子孔|Qiáng shàng yǒu jǐ ge dīngzi kǒng]，[还有厨房的柜门松了|hái yǒu chúfáng de guì mén sōng le]。[这些都要扣钱|Zhèxiē dōu yào kòu qián]。",
+     "id": "Di temboknya ada beberapa lubang paku, lalu pintu lemari dapur longgar. Semua ini harus dipotong dari uangnya.",
+     "literal": "tembok — atas — ada — beberapa — penggolong — paku — lubang, masih — ada — dapur — punya — lemari — pintu — longgar — sudah. ini semua — semua — harus — potong — uang."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[扣多少|Kòu duōshao]？",
+     "id": "Dipotong berapa?",
+     "literal": "potong — berapa?"
+    },
+    {
+     "speaker": "房东:",
+     "text": "[两千|Liǎng qiān]。",
+     "id": "Dua ribu.",
+     "literal": "dua — ribu."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[张先生|Zhāng xiānsheng]，[我们看一下合同第八条|wǒmen kàn yíxià hétong dì-bā tiáo]。[上面写着|Shàngmiàn xiě zhe]：“[房屋的正常损耗|fángwū de zhèngcháng sǔnhào]，[承租方不承担赔偿责任|chéngzūfāng bù chéngdān péicháng zérèn]。”",
+     "id": "Pak Zhang, mari kita lihat pasal delapan kontraknya. Di sana tertulis: “Atas keausan wajar bangunan, pihak penyewa tidak memikul tanggung jawab ganti rugi.”",
+     "literal": "Zhang — tuan, kita — lihat — sebentar — kontrak — ke-delapan — pasal. atas — tulis — sedang: “rumah — bangunan — punya — normal — keausan, pihak penyewa — tidak — memikul — ganti rugi — tanggung jawab.”"
+    },
+    {
+     "speaker": "房东:",
+     "text": "[钉子孔算正常损耗吗|Dīngzi kǒng suàn zhèngcháng sǔnhào ma]？",
+     "id": "Lubang paku terhitung keausan wajar?",
+     "literal": "paku — lubang — hitung — normal — keausan — kah?"
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[挂钟表和照片是正常居住行为|Guà zhōngbiǎo hé zhàopiàn shì zhèngcháng jūzhù xíngwéi]。[而且交房的时候|Érqiě jiāo fáng de shíhou]，[我们一起拍了照|wǒmen yìqǐ pāi le zhào]。[柜门那时候就已经松了|Guì mén nà shíhou jiù yǐjīng sōng le]，[照片上看得很清楚|zhàopiàn shàng kàn de hěn qīngchu]。",
+     "id": "Menggantung jam dan foto adalah perilaku tinggal yang wajar. Lagi pula waktu serah terima rumah, kita memotret bersama. Pintu lemari waktu itu memang sudah longgar, di fotonya terlihat sangat jelas.",
+     "literal": "gantung — jam — dan — foto — adalah — normal — tinggal — perilaku. lagi pula — serah — rumah — punya — waktu, kita — bersama — potret — sudah — foto. lemari — pintu — waktu itu — langsung — sudah — longgar — sudah, foto — atas — lihat — secara — sangat — jelas."
+    },
+    {
+     "speaker": "房东:",
+     "text": "[……照片你还留着|……Zhàopiàn nǐ hái liú zhe]？",
+     "id": "…Fotonya masih kamu simpan?",
+     "literal": "…… foto — kamu — masih — simpan — sedang?"
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[留着|Liú zhe]，[带时间戳的|dài shíjiān chuō de]。[另外合同第九条写了|Lìngwài hétong dì-jiǔ tiáo xiě le]：“[租赁关系终止后十五日内|zūlìn guānxi zhōngzhǐ hòu shíwǔ rì nèi]，[出租方应当退还押金|chūzūfāng yīngdāng tuìhuán yājīn]。”[今天是第十二天|Jīntiān shì dì-shí'èr tiān]。",
+     "id": "Masih, yang berstempel waktu. Selain itu pasal sembilan kontrak menulis: “Dalam lima belas hari setelah hubungan sewa berakhir, pihak yang menyewakan wajib mengembalikan uang jaminan.” Hari ini hari kedua belas.",
+     "literal": "simpan — sedang, bawa — waktu — cap — punya. selain itu — kontrak — ke-sembilan — pasal — tulis — sudah: “sewa — hubungan — berakhir — sesudah — lima belas — hari — dalam, pihak yang menyewakan — wajib — mengembalikan — uang jaminan.” hari ini — adalah — ke-dua belas — hari."
+    },
+    {
+     "speaker": "房东:",
+     "text": "[你这是要跟我打官司啊|Nǐ zhè shì yào gēn wǒ dǎ guānsi a]？",
+     "id": "Kamu ini mau berperkara denganku?",
+     "literal": "kamu — ini — adalah — akan — dengan — saya — pukul — perkara — lho?"
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[完全不是|Wánquán bú shì]。[我只是按合同说话|Wǒ zhǐshì àn hétong shuō huà]。[柜门如果您觉得该修|Guì mén rúguǒ nín juéde gāi xiū]，[我可以出一半|wǒ kěyǐ chū yíbàn]，[两百块|liǎng bǎi kuài]。[剩下的今天转给我|Shèng xià de jīntiān zhuǎn gěi wǒ]，[这事儿就算过去了|zhè shìr jiù suàn guòqù le]。",
+     "id": "Sama sekali bukan. Saya cuma berbicara menurut kontrak. Pintu lemari kalau menurut Anda memang perlu diperbaiki, saya bisa keluar separuh, dua ratus. Sisanya hari ini ditransfer ke saya, urusan ini dianggap selesai.",
+     "literal": "sepenuhnya — bukan. saya — hanya — menurut — kontrak — bicara — kata. lemari — pintu — kalau — Anda — merasa — seharusnya — perbaiki, saya — bisa — keluarkan — separuh, dua — ratus — keping. sisa — turun — punya — hari ini — transfer — kepada — saya, ini — perkara — langsung — hitung — lewat — sudah."
+    },
+    {
+     "speaker": "房东:",
+     "text": "[……行吧|……Xíng ba]。[你把账号发我|Nǐ bǎ zhànghào fā wǒ]。",
+     "id": "…Baiklah. Kirimkan nomor rekeningmu.",
+     "literal": "…… boleh — lah. kamu — ambil — rekening — nomor — kirim — saya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[好|Hǎo]，[谢谢张先生|xièxie Zhāng xiānsheng]。[以后有朋友租房|Yǐhòu yǒu péngyou zū fáng]，[我还会介绍过来|wǒ hái huì jièshào guòlái]。",
+     "id": "Baik, terima kasih Pak Zhang. Ke depan kalau ada teman menyewa rumah, saya tetap akan mengantarkannya ke sini.",
+     "literal": "baik, terima kasih — Zhang — tuan. nanti — ada — teman — sewa — rumah, saya — masih — akan — kenalkan — lewat-datang."
+    }
+   ],
+   "notes": [
+    "**应当 = 必须, tetapi khusus ragam aturan.** Di dalam undang-undang, kontrak, dan peraturan, kewajiban ditulis 应当, bukan 必须 atau 得. Kalau kamu melihat 应当 dalam sebuah teks, kamu sedang membaca sesuatu yang mengikat.",
+    "**不得 = “dilarang”.** Bentuk larangan resmi. [不得转租|bù dé zhuǎn zū] dilarang menyewakan ulang; [不得携带宠物|bù dé xiédài chǒngwù] dilarang membawa hewan peliharaan. Perhatikan bacanya **bù dé**, bukan *bù děi*.",
+    "**承租方 · 出租方 — “pihak penyewa · pihak yang menyewakan”.** Akhiran 方 “pihak” membentuk seluruh perbendaharaan kontrak: 甲方 pihak pertama, 乙方 pihak kedua, 双方 kedua pihak, 第三方 pihak ketiga.",
+    "**日 menggantikan 天 di teks resmi.** [十五日内|shíwǔ rì nèi] dalam lima belas hari. Ini tanda pengenal ragam tulis: 日 di dokumen, 天 di percakapan. Saudaranya: 时 untuk 小时, 月 untuk 个月.",
+    "**按合同说话 — “berbicara menurut kontrak”.** Kalimat yang mengubah pertengkaran menjadi pemeriksaan berkas. Nada yang dibawanya penting: ia tidak menuduh pihak lain berbuat curang, hanya memindahkan pembicaraan ke teks.",
+    "**打官司 — “berperkara di pengadilan”.** 【口】 Kata yang di Tiongkok masih terasa berat dan mengancam hubungan, jadi menyebutnya lebih dini daripada perlu sering merugikan posisimu. Perhatikan bagaimana Andi langsung menolaknya dan menawarkan jalan tengah.",
+    "**出一半 — “menanggung separuh”.** 出 di sini berarti mengeluarkan uang atau tenaga: [出钱|chū qián] mengeluarkan uang, [出力|chū lì] mengerahkan tenaga, [出人|chū rén] menyediakan orang.",
+    "**⚠️ Kalimat terakhir Andi bukan basa-basi.** Menutup sengketa dengan menawarkan sesuatu untuk masa depan adalah kebiasaan yang sangat dihargai dalam budaya Tiongkok; ia memberi tahu lawan bicara bahwa hubungannya tidak putus. Sengketa yang selesai tanpa kalimat semacam ini sering meninggalkan sisa yang muncul lagi kemudian."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja bantu ragam hukum",
+     "body": [
+      "Enam kata di bawah ini menggantikan kata bantu sehari-hari begitu teksnya menjadi mengikat. Mengenalinya membuatmu bisa membaca kontrak; memakainya membuat tulisanmu terdengar resmi."
+     ],
+     "tables": [
+      {
+       "head": [
+        "【书】 hukum",
+        "【口】 sehari-hari",
+        "Arti",
+        "Contoh"
+       ],
+       "rows": [
+        [
+         "[应当|yīngdāng]",
+         "必须 · 得",
+         "wajib",
+         "[应当提前三十日通知|yīngdāng tíqián sānshí rì tōngzhī]"
+        ],
+        [
+         "[不得|bù dé]",
+         "不能 · 不许",
+         "dilarang",
+         "[不得擅自转租|bù dé shànzì zhuǎn zū]"
+        ],
+        [
+         "[须|xū]",
+         "需要",
+         "harus",
+         "[须经双方同意|xū jīng shuāngfāng tóngyì]"
+        ],
+        [
+         "[可|kě]",
+         "可以",
+         "boleh",
+         "[可提前解除合同|kě tíqián jiěchú hétong]"
+        ],
+        [
+         "[应予|yīng yǔ]",
+         "应该给予",
+         "harus diberikan",
+         "[应予退还|yīng yǔ tuìhuán]"
+        ],
+        [
+         "[有权|yǒu quán]",
+         "可以",
+         "berhak",
+         "[有权要求赔偿|yǒu quán yāoqiú péicháng]"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Dasar aturan",
+        "Contoh",
+        "Catatan"
+       ],
+       "rows": [
+        [
+         "[依照|yīzhào]",
+         "[依照本合同第八条|yīzhào běn hétong dì-bā tiáo]",
+         "paling resmi"
+        ],
+        [
+         "[按照|ànzhào]",
+         "[按照公司规定|ànzhào gōngsī guīdìng]",
+         "umum"
+        ],
+        [
+         "[根据|gēnjù]",
+         "[根据相关法律|gēnjù xiāngguān fǎlǜ]",
+         "umum"
+        ],
+        [
+         "[依法|yī fǎ]",
+         "[依法处理|yī fǎ chǔlǐ]",
+         "singkatan dari 依照法律"
+        ],
+        [
+         "[按|àn]",
+         "[按合同办|àn hétong bàn]",
+         "【口】, singkat"
+        ],
+        [
+         "[视…而定|shì…ér dìng]",
+         "[视情况而定|shì qíngkuàng ér dìng]",
+         "tergantung keadaan"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**凡是…一律… — rangka menyeluruh.** [凡是超过一万元的支出|Fánshì chāoguò yí wàn yuán de zhīchū]，[一律须经总经理批准|yílǜ xū jīng zǒngjīnglǐ pīzhǔn]。 凡是 memayungi seluruh golongan tanpa kecuali, 一律 menyeragamkan perlakuannya. Sangat lazim di peraturan internal.",
+      "**除…外 — “kecuali…”.** [除不可抗力外|Chú bùkěkànglì wài]，[任何一方不得单方面解除合同|rènhé yìfāng bù dé dānfāngmiàn jiěchú hétong]。 Rangka pengecualian baku; 不可抗力 “keadaan kahar” adalah istilah yang hampir selalu muncul di sampingnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Kontrak kerja dan lembur yang tidak dibayar",
+   "intro": "Xiao Zhou bertanya kepada temannya yang bekerja di bagian hukum tentang lembur. Dialog ini memperkenalkan kosakata ketenagakerjaan sekaligus memperlihatkan bagaimana orang Tiongkok membicarakan hak tanpa menyebut kata “menuntut”.",
+   "lines": [
+    {
+     "speaker": "小周:",
+     "text": "[我们公司最近搞“大小周”|Wǒmen gōngsī zuìjìn gǎo “dà xiǎo zhōu”]，[一周休一天|yì zhōu xiū yì tiān]，[一周休两天|yì zhōu xiū liǎng tiān]。[这合法吗|Zhè héfǎ ma]？",
+     "id": "Perusahaan kami belakangan menerapkan “minggu besar-minggu kecil”, satu minggu libur sehari, satu minggu libur dua hari. Ini sah tidak?",
+     "literal": "kami — perusahaan — belakangan — jalankan — “besar — kecil — minggu”, satu — minggu — libur — satu — hari, satu — minggu — libur — dua — hari. ini — sah hukum — kah?"
+    },
+    {
+     "speaker": "法务朋友:",
+     "text": "[要看两件事|Yào kàn liǎng jiàn shì]：[第一|dì-yī]，[你合同上写的工时制度是哪一种|nǐ hétong shàng xiě de gōngshí zhìdù shì nǎ yì zhǒng]；[第二|dì-èr]，[加班有没有按规定支付加班费|jiā bān yǒu méiyǒu àn guīdìng zhīfù jiābānfèi]。",
+     "id": "Harus lihat dua hal: pertama, sistem jam kerja yang tertulis di kontrakmu jenis yang mana; kedua, lemburnya dibayar sesuai ketentuan atau tidak.",
+     "literal": "harus — lihat — dua — penggolong — perkara: ke-satu, kamu — kontrak — atas — tulis — punya — jam kerja — sistem — adalah — mana — satu — jenis; ke-dua, lembur — ada — tidak ada — menurut — ketentuan — bayar — lembur — biaya."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[合同上写的是“标准工时”|Hétong shàng xiě de shì “biāozhǔn gōngshí”]。[加班费从来没发过|Jiābānfèi cónglái méi fā guo]，[只有调休|zhǐ yǒu tiáoxiū]。",
+     "id": "Di kontrak tertulis “jam kerja standar”. Uang lembur belum pernah dikeluarkan sama sekali, cuma ada tukar libur.",
+     "literal": "kontrak — atas — tulis — punya — adalah — “standar — jam kerja”. lembur — biaya — selama ini — tidak — keluarkan — pernah, hanya — ada — tukar — libur."
+    },
+    {
+     "speaker": "法务朋友:",
+     "text": "[那就有问题了|Nà jiù yǒu wèntí le]。[标准工时是每周不超过四十小时|Biāozhǔn gōngshí shì měi zhōu bù chāoguò sìshí xiǎoshí]。[休息日加班|Xiūxīrì jiā bān]，[单位应当安排补休|dānwèi yīngdāng ānpái bǔxiū]；[不能补休的|bù néng bǔxiū de]，[应当支付不低于百分之二百的工资|yīngdāng zhīfù bù dī yú bǎi fēn zhī èr bǎi de gōngzī]。",
+     "id": "Kalau begitu memang ada masalah. Jam kerja standar itu tidak lebih dari empat puluh jam per minggu. Lembur di hari libur, unit kerja wajib mengatur libur pengganti; yang tidak bisa diganti liburnya, wajib membayar upah tidak kurang dari dua ratus persen.",
+     "literal": "kalau begitu — langsung — ada — masalah — sudah. standar — jam kerja — adalah — tiap — minggu — tidak — lewat — empat puluh — jam. libur — hari — lembur, unit kerja — wajib — atur — libur pengganti; tidak — bisa — libur pengganti — punya, wajib — bayar — tidak — rendah — dari — seratus — bagi — dua — ratus — punya — gaji."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[那我该怎么办|Nà wǒ gāi zěnme bàn]？[直接去劳动局告他们|Zhíjiē qù láodòngjú gào tāmen]？",
+     "id": "Lalu saya harus bagaimana? Langsung ke dinas ketenagakerjaan melaporkan mereka?",
+     "literal": "kalau begitu — saya — harus — bagaimana — urus? langsung — pergi — tenaga kerja — biro — adukan — mereka?"
+    },
+    {
+     "speaker": "法务朋友:",
+     "text": "[先别|Xiān bié]。[顺序很重要|Shùnxù hěn zhòngyào]。[第一步是留证据|Dì-yī bù shì liú zhèngjù]：[考勤记录|kǎoqín jìlù]、[工作群的消息|gōngzuò qún de xiāoxi]、[邮件|yóujiàn]。[没有证据|Méiyǒu zhèngjù]，[后面所有的步骤都没用|hòumiàn suǒyǒu de bùzhòu dōu méiyòng]。",
+     "id": "Jangan dulu. Urutannya sangat penting. Langkah pertama adalah menyimpan bukti: catatan absensi, pesan di grup kerja, surel. Tanpa bukti, semua langkah berikutnya tidak berguna.",
+     "literal": "dulu — jangan. urutan — sangat — penting. ke-satu — langkah — adalah — simpan — bukti: absensi — catatan, kerja — grup — punya — pesan, surel. tidak ada — bukti, belakang — semua — punya — langkah — semua — tidak berguna."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[然后呢|Ránhòu ne]？",
+     "id": "Lalu?",
+     "literal": "sesudah itu — bagaimana?"
+    },
+    {
+     "speaker": "法务朋友:",
+     "text": "[第二步|Dì-èr bù]，[书面向公司提出|shūmiàn xiàng gōngsī tíchū]，[不要只在群里说|búyào zhǐ zài qún lǐ shuō]。[第三步|Dì-sān bù]，[如果协商不成|rúguǒ xiéshāng bù chéng]，[可以申请劳动仲裁|kěyǐ shēnqǐng láodòng zhòngcái]。[仲裁是免费的|Zhòngcái shì miǎnfèi de]，[也不用请律师|yě búyòng qǐng lǜshī]。",
+     "id": "Langkah kedua, ajukan ke perusahaan secara tertulis, jangan cuma bicara di grup. Langkah ketiga, kalau perundingannya tidak berhasil, bisa mengajukan arbitrase ketenagakerjaan. Arbitrase itu gratis, dan tidak perlu menyewa pengacara.",
+     "literal": "ke-dua — langkah, tertulis — kepada — perusahaan — ajukan, jangan — hanya — di — grup — dalam — bilang. ke-tiga — langkah, kalau — berunding — tidak — jadi, bisa — mengajukan — tenaga kerja — arbitrase. arbitrase — adalah — gratis — punya, juga — tidak perlu — undang — pengacara."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[可是这样一来|Kěshì zhèyàng yì lái]，[我在公司还待得下去吗|wǒ zài gōngsī hái dāi de xiàqù ma]？",
+     "id": "Tapi kalau begitu, saya masih bisa bertahan di perusahaan itu?",
+     "literal": "tapi — begini — sekali — datang, saya — di — perusahaan — masih — tinggal — bisa — turun-pergi — kah?"
+    },
+    {
+     "speaker": "法务朋友:",
+     "text": "[这是最实际的问题|Zhè shì zuì shíjì de wèntí]，[也是大部分人最后放弃的原因|yě shì dàbùfen rén zuìhòu fàngqì de yuányīn]。[所以我一般建议|Suǒyǐ wǒ yìbān jiànyì]：[先留证据|xiān liú zhèngjù]，[等到你决定要走的时候再启动|děngdào nǐ juédìng yào zǒu de shíhou zài qǐdòng]。[证据的有效期是一年|Zhèngjù de yǒuxiàoqī shì yì nián]。",
+     "id": "Ini pertanyaan yang paling nyata, sekaligus alasan kebanyakan orang akhirnya menyerah. Karena itu saya biasanya menyarankan: simpan bukti dulu, tunggu sampai kamu memutuskan mau keluar baru dijalankan. Masa berlaku buktinya satu tahun.",
+     "literal": "ini — adalah — paling — nyata — punya — masalah, juga — adalah — sebagian besar — orang — akhirnya — menyerah — punya — sebab. jadi — saya — biasanya — menyarankan: dulu — simpan — bukti, tunggu — sampai — kamu — memutuskan — akan — pergi — punya — waktu — baru — jalankan. bukti — punya — masa berlaku — adalah — satu — tahun."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[明白了|Míngbai le]。[那我从今天开始每天截图考勤|Nà wǒ cóng jīntiān kāishǐ měi tiān jiétú kǎoqín]。",
+     "id": "Paham. Kalau begitu mulai hari ini saya tangkap layar absensinya setiap hari.",
+     "literal": "paham — sudah. kalau begitu — saya — dari — hari ini — mulai — tiap — hari — tangkap — gambar — absensi."
+    }
+   ],
+   "notes": [
+    "**不低于 / 不超过 / 不少于 — rangka batas resmi.** [不低于百分之二百|bù dī yú bǎi fēn zhī èr bǎi] tidak kurang dari 200%; [不超过四十小时|bù chāoguò sìshí xiǎoshí] tidak melebihi 40 jam. Bentuk ini menggantikan 至少/最多 di teks aturan.",
+    "**单位 — “unit kerja, instansi”.** Kata yang sangat khas Tiongkok. Ia berarti tempat kerjamu secara kelembagaan, dan dipakai baik untuk kantor pemerintah maupun perusahaan. [你在哪个单位|Nǐ zài nǎ ge dānwèi]？ = “Kamu kerja di mana?”",
+    "**调休 dan 补休 — dua hal berbeda.** 调休 “tukar libur” (bekerja di hari libur, libur di hari kerja); 补休 “libur pengganti” untuk lembur. Perusahaan sering menyebut yang kedua dengan istilah yang pertama, dan selisih istilah itu membawa akibat hukum.",
+    "**协商不成 — “kalau perundingannya tidak berhasil”.** 不成 sebagai pelengkap berarti “tidak jadi, gagal”: 谈不成 gagal berunding, 办不成 tak jadi terurus. Ini bentuk baku dalam kontrak: [协商不成的|xiéshāng bù chéng de]，[可依法提起诉讼|kě yī fǎ tíqǐ sùsòng]。",
+    "**这样一来 — “kalau begitu jadinya…”.** Penanda yang menarik akibat dari apa yang baru disebutkan. Sangat berguna untuk memindahkan pembicaraan dari aturan ke kenyataan, persis seperti yang dilakukan Xiao Zhou.",
+    "**待得下去 — pelengkap kemungkinan dengan 下去.** 下去 menandai kelanjutan: 待得下去 sanggup bertahan tinggal, 说不下去 tak sanggup melanjutkan bicara, 学下去 terus belajar.",
+    "**截图 — “tangkapan layar”.** Kata sehari-hari yang penting: [截个图|jié ge tú] ambil tangkapan layar, [截图为证|jiétú wéi zhèng] tangkapan layar sebagai bukti.",
+    "**⚠️ Nasihat di baris kedua dari akhir adalah budaya, bukan hukum.** Menyarankan seseorang menyimpan bukti dan menunggu sampai ia siap keluar bukan sikap sinis; itu pengakuan jujur bahwa menuntut hak sambil tetap bekerja di tempat yang sama jarang berjalan mulus di mana pun. Perhatikan bagaimana temannya menyebutkan kenyataan itu secara terbuka alih-alih menghindarinya."
+   ],
+   "grammars": [
+    {
+     "title": "Menuntut hak: rangka empat langkah",
+     "body": [
+      "Baik dalam sengketa sewa maupun ketenagakerjaan, urutannya sama, dan urutannya menentukan hasilnya."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Langkah",
+        "Rangka",
+        "Contoh"
+       ],
+       "rows": [
+        [
+         "1. Kutip pasalnya",
+         "我们看一下…第 N 条",
+         "[我们看一下合同第八条|Wǒmen kàn yíxià hétong dì-bā tiáo]。"
+        ],
+        [
+         "2. Sebut faktanya",
+         "…的时候，我们…",
+         "[交房的时候我们一起拍了照|Jiāo fáng de shíhou wǒmen yìqǐ pāi le zhào]。"
+        ],
+        [
+         "3. Tolak tuduhan balik",
+         "完全不是。我只是按…说话",
+         "[我只是按合同说话|Wǒ zhǐshì àn hétong shuō huà]。"
+        ],
+        [
+         "4. Tawarkan jalan keluar",
+         "…我可以…，剩下的…",
+         "[我可以出一半|Wǒ kěyǐ chū yíbàn]，[剩下的今天转给我|shèng xià de jīntiān zhuǎn gěi wǒ]。"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Kalimat yang merusak posisimu",
+        "Mengapa"
+       ],
+       "rows": [
+        [
+         "[你这是骗人|Nǐ zhè shì piàn rén]！",
+         "menuduh niat; pihak lain berhenti berunding"
+        ],
+        [
+         "[我要告你|Wǒ yào gào nǐ]！",
+         "menaikkan taruhan terlalu dini"
+        ],
+        [
+         "[算了算了|Suàn le suàn le]。",
+         "melepaskan hak tanpa perlu"
+        ],
+        [
+         "[你们都这样|Nǐmen dōu zhèyàng]。",
+         "menggeneralisasi; memancing pembelaan diri"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Kunci langkah 4: tawarkan sesuatu yang kecil.** Memberi lawan bicara jalan untuk mundur tanpa kehilangan muka — [给对方一个台阶下|gěi duìfāng yí ge táijiē xià] “memberi orang lain anak tangga untuk turun” — adalah ungkapan yang sangat sering dipakai dan sangat sering menentukan.",
+      "**Simpan bukti sejak awal, bukan sejak ada masalah.** Foto serah terima, tangkapan layar percakapan, dan surel konfirmasi hampir tidak memakan waktu untuk disimpan, dan tidak bisa dibuat ulang di kemudian hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata kontrak dan sengketa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Mandarin",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "[合同|hétong]",
+       "kontrak",
+       "[签合同|qiān hétong]"
+      ],
+      [
+       "[条款|tiáokuǎn]",
+       "pasal & ayat",
+       "[第八条|dì-bā tiáo]"
+      ],
+      [
+       "[甲方|jiǎfāng] / [乙方|yǐfāng]",
+       "pihak pertama / kedua",
+       "—"
+      ],
+      [
+       "[生效|shēngxiào]",
+       "mulai berlaku",
+       "[自签字之日起生效|zì qiān zì zhī rì qǐ shēngxiào]"
+      ],
+      [
+       "[解除|jiěchú]",
+       "memutus (kontrak)",
+       "[单方面解除|dānfāngmiàn jiěchú]"
+      ],
+      [
+       "[终止|zhōngzhǐ]",
+       "berakhir",
+       "[租赁关系终止|zūlìn guānxi zhōngzhǐ]"
+      ],
+      [
+       "[违约|wéiyuē]",
+       "wanprestasi",
+       "[违约金|wéiyuējīn] denda"
+      ],
+      [
+       "[赔偿|péicháng]",
+       "ganti rugi",
+       "[承担赔偿责任|chéngdān péicháng zérèn]"
+      ],
+      [
+       "[押金|yājīn]",
+       "uang jaminan",
+       "[退押金|tuì yājīn]"
+      ],
+      [
+       "[损耗|sǔnhào]",
+       "keausan",
+       "[正常损耗|zhèngcháng sǔnhào]"
+      ],
+      [
+       "[证据|zhèngjù]",
+       "bukti",
+       "[留证据|liú zhèngjù]"
+      ],
+      [
+       "[协商|xiéshāng]",
+       "berunding",
+       "[协商不成|xiéshāng bù chéng]"
+      ],
+      [
+       "[仲裁|zhòngcái]",
+       "arbitrase",
+       "[劳动仲裁|láodòng zhòngcái]"
+      ],
+      [
+       "[诉讼|sùsòng]",
+       "gugatan 【书】",
+       "[提起诉讼|tíqǐ sùsòng]"
+      ],
+      [
+       "[不可抗力|bùkěkànglì]",
+       "keadaan kahar",
+       "bencana, perang, wabah"
+      ],
+      [
+       "[有效期|yǒuxiàoqī]",
+       "masa berlaku",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kosakata ketenagakerjaan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Mandarin",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "[劳动合同|láodòng hétong]",
+       "kontrak kerja",
+       "wajib tertulis"
+      ],
+      [
+       "[试用期|shìyòngqī]",
+       "masa percobaan",
+       "ada batas hukumnya"
+      ],
+      [
+       "[工时|gōngshí]",
+       "jam kerja",
+       "[标准工时|biāozhǔn gōngshí]"
+      ],
+      [
+       "[加班费|jiābānfèi]",
+       "uang lembur",
+       "—"
+      ],
+      [
+       "[补休|bǔxiū]",
+       "libur pengganti",
+       "≠ [调休|tiáoxiū]"
+      ],
+      [
+       "[考勤|kǎoqín]",
+       "absensi",
+       "[考勤记录|kǎoqín jìlù]"
+      ],
+      [
+       "[社保|shèbǎo]",
+       "jaminan sosial",
+       "wajib dibayar perusahaan"
+      ],
+      [
+       "[公积金|gōngjījīn]",
+       "dana perumahan",
+       "—"
+      ],
+      [
+       "[离职|lízhí]",
+       "berhenti kerja",
+       "[提出离职|tíchū lízhí]"
+      ],
+      [
+       "[辞退|cítuì]",
+       "diberhentikan",
+       "[被辞退|bèi cítuì]"
+      ],
+      [
+       "[裁员|cái yuán]",
+       "PHK",
+       "[补偿金|bǔchángjīn] pesangon"
+      ],
+      [
+       "[单位|dānwèi]",
+       "unit kerja, instansi",
+       "khas Tiongkok"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca satu pasal kontrak sungguhan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Berikut satu pasal sewa yang khas. Bacalah pelan-pelan; hampir setiap kata di dalamnya sudah ada di unit ini."
+    },
+    {
+     "type": "kotak",
+     "title": "第九条 押金退还",
+     "items": [
+      "[租赁关系终止后十五日内|Zūlìn guānxi zhōngzhǐ hòu shíwǔ rì nèi]，[出租方应当退还全部押金|chūzūfāng yīngdāng tuìhuán quánbù yājīn]。",
+      "[房屋的正常损耗|Fángwū de zhèngcháng sǔnhào]，[承租方不承担赔偿责任|chéngzūfāng bù chéngdān péicháng zérèn]。",
+      "[因承租方原因造成的损坏|Yīn chéngzūfāng yuányīn zàochéng de sǔnhuài]，[可从押金中扣除|kě cóng yājīn zhōng kòuchú]；[扣除金额应当提供凭证|kòuchú jīn'é yīngdāng tígōng píngzhèng]。",
+      "[协商不成的|Xiéshāng bù chéng de]，[双方可依法申请仲裁或提起诉讼|shuāngfāng kě yī fǎ shēnqǐng zhòngcái huò tíqǐ sùsòng]。"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Yang perlu kamu perhatikan di pasal mana pun"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Cari 应当 dan 不得.** Keduanya menandai kewajiban dan larangan — inilah tulang punggung pasalnya. Kalimat yang memakai 可 hanya memberi pilihan.",
+      "**Cari batas waktunya.** [十五日内|shíwǔ rì nèi], [三十日前|sānshí rì qián], [自…之日起|zì…zhī rì qǐ]. Sengketa paling sering diselesaikan oleh tanggal, bukan oleh argumen.",
+      "**Cari siapa yang wajib membuktikan.** Kalimat ketiga di kotak atas menaruh beban pembuktian pada pihak yang memotong — itu kalimat paling berharga bagi penyewa, dan sering tidak dibaca sampai habis.",
+      "**Cari klausa penyelesaian sengketa.** Ia selalu di bagian akhir dan menentukan ke mana kamu pergi kalau berselisih.",
+      "⚠️ **Kalau ada pasal yang tidak kamu pahami, tanyakan sebelum menandatangani, bukan sesudah.** Kalimat yang bisa dipakai: [这一条能麻烦您解释一下吗|Zhè yì tiáo néng máfan nín jiěshì yíxià ma]？ Tidak ada yang menganggapnya aneh; yang dianggap aneh justru menandatangani tanpa bertanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "依法",
+   "baca": "yī fǎ",
+   "id": "menurut hukum"
+  },
+  {
+   "zh": "依照",
+   "baca": "yīzhào",
+   "id": "menurut 【书】"
+  },
+  {
+   "zh": "按照",
+   "baca": "ànzhào",
+   "id": "menurut, sesuai"
+  },
+  {
+   "zh": "应当",
+   "baca": "yīngdāng",
+   "id": "wajib 【书】"
+  },
+  {
+   "zh": "不得",
+   "baca": "bù dé",
+   "id": "dilarang 【书】"
+  },
+  {
+   "zh": "须",
+   "baca": "xū",
+   "id": "harus 【书】"
+  },
+  {
+   "zh": "可",
+   "baca": "kě",
+   "id": "boleh 【书】"
+  },
+  {
+   "zh": "有权",
+   "baca": "yǒu quán",
+   "id": "berhak"
+  },
+  {
+   "zh": "有义务",
+   "baca": "yǒu yìwù",
+   "id": "berkewajiban"
+  },
+  {
+   "zh": "凡是",
+   "baca": "fánshì",
+   "id": "setiap, semua yang"
+  },
+  {
+   "zh": "一律",
+   "baca": "yílǜ",
+   "id": "semuanya seragam"
+  },
+  {
+   "zh": "视…而定",
+   "baca": "shì…ér dìng",
+   "id": "tergantung pada"
+  },
+  {
+   "zh": "合同",
+   "baca": "hétong",
+   "id": "kontrak"
+  },
+  {
+   "zh": "条款",
+   "baca": "tiáokuǎn",
+   "id": "pasal dan ayat"
+  },
+  {
+   "zh": "甲方",
+   "baca": "jiǎfāng",
+   "id": "pihak pertama"
+  },
+  {
+   "zh": "乙方",
+   "baca": "yǐfāng",
+   "id": "pihak kedua"
+  },
+  {
+   "zh": "承租方",
+   "baca": "chéngzūfāng",
+   "id": "pihak penyewa"
+  },
+  {
+   "zh": "出租方",
+   "baca": "chūzūfāng",
+   "id": "pihak yang menyewakan"
+  },
+  {
+   "zh": "租赁",
+   "baca": "zūlìn",
+   "id": "sewa-menyewa 【书】"
+  },
+  {
+   "zh": "终止",
+   "baca": "zhōngzhǐ",
+   "id": "berakhir"
+  },
+  {
+   "zh": "解除",
+   "baca": "jiěchú",
+   "id": "memutus (kontrak)"
+  },
+  {
+   "zh": "生效",
+   "baca": "shēngxiào",
+   "id": "mulai berlaku"
+  },
+  {
+   "zh": "违约",
+   "baca": "wéiyuē",
+   "id": "wanprestasi"
+  },
+  {
+   "zh": "赔偿",
+   "baca": "péicháng",
+   "id": "ganti rugi"
+  },
+  {
+   "zh": "损耗",
+   "baca": "sǔnhào",
+   "id": "keausan"
+  },
+  {
+   "zh": "损坏",
+   "baca": "sǔnhuài",
+   "id": "kerusakan"
+  },
+  {
+   "zh": "扣除",
+   "baca": "kòuchú",
+   "id": "memotong (dari jumlah)"
+  },
+  {
+   "zh": "凭证",
+   "baca": "píngzhèng",
+   "id": "bukti tertulis"
+  },
+  {
+   "zh": "证据",
+   "baca": "zhèngjù",
+   "id": "bukti"
+  },
+  {
+   "zh": "协商",
+   "baca": "xiéshāng",
+   "id": "berunding"
+  },
+  {
+   "zh": "仲裁",
+   "baca": "zhòngcái",
+   "id": "arbitrase"
+  },
+  {
+   "zh": "诉讼",
+   "baca": "sùsòng",
+   "id": "gugatan 【书】"
+  },
+  {
+   "zh": "打官司",
+   "baca": "dǎ guānsi",
+   "id": "berperkara 【口】"
+  },
+  {
+   "zh": "不可抗力",
+   "baca": "bùkěkànglì",
+   "id": "keadaan kahar"
+  },
+  {
+   "zh": "劳动合同",
+   "baca": "láodòng hétong",
+   "id": "kontrak kerja"
+  },
+  {
+   "zh": "试用期",
+   "baca": "shìyòngqī",
+   "id": "masa percobaan"
+  },
+  {
+   "zh": "工时",
+   "baca": "gōngshí",
+   "id": "jam kerja"
+  },
+  {
+   "zh": "加班费",
+   "baca": "jiābānfèi",
+   "id": "uang lembur"
+  },
+  {
+   "zh": "补休",
+   "baca": "bǔxiū",
+   "id": "libur pengganti"
+  },
+  {
+   "zh": "调休",
+   "baca": "tiáoxiū",
+   "id": "tukar libur"
+  },
+  {
+   "zh": "考勤",
+   "baca": "kǎoqín",
+   "id": "absensi"
+  },
+  {
+   "zh": "单位",
+   "baca": "dānwèi",
+   "id": "unit kerja, instansi"
+  },
+  {
+   "zh": "社保",
+   "baca": "shèbǎo",
+   "id": "jaminan sosial"
+  },
+  {
+   "zh": "公积金",
+   "baca": "gōngjījīn",
+   "id": "dana perumahan"
+  },
+  {
+   "zh": "离职",
+   "baca": "lízhí",
+   "id": "berhenti kerja"
+  },
+  {
+   "zh": "辞退",
+   "baca": "cítuì",
+   "id": "memberhentikan"
+  },
+  {
+   "zh": "补偿金",
+   "baca": "bǔchángjīn",
+   "id": "pesangon"
+  },
+  {
+   "zh": "合法",
+   "baca": "héfǎ",
+   "id": "sah menurut hukum"
+  },
+  {
+   "zh": "截图",
+   "baca": "jiétú",
+   "id": "tangkapan layar"
+  },
+  {
+   "zh": "台阶",
+   "baca": "táijiē",
+   "id": "anak tangga; jalan mundur"
+  },
+  {
+   "zh": "劳动局",
+   "baca": "láodòngjú",
+   "id": "dinas ketenagakerjaan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Naikkan ke ragam aturan: ganti dengan 应当 · 不得 · 须 · 可 · 有权.",
+   "items": [
+    "[你必须提前三十天告诉房东|Nǐ bìxū tíqián sānshí tiān gàosu fángdōng]。",
+    "[不能自己把房子租给别人|Bù néng zìjǐ bǎ fángzi zū gěi biérén]。",
+    "[这个需要两边都同意|Zhège xūyào liǎng biān dōu tóngyì]。",
+    "[你可以提前结束合同|Nǐ kěyǐ tíqián jiéshù hétong]。",
+    "[租客可以要求赔钱|Zūkè kěyǐ yāoqiú péi qián]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 依照 · 根据 · 按 · 依法 · 视…而定.",
+   "items": [
+    "____ [本合同第八条|běn hétong dì-bā tiáo]，[押金应当全额退还|yājīn yīngdāng quán'é tuìhuán]。",
+    "____ [公司规定|gōngsī guīdìng]，[请假需要提前一天申请|qǐng jià xūyào tíqián yì tiān shēnqǐng]。",
+    "[协商不成的|Xiéshāng bù chéng de]，[双方可|shuāngfāng kě] ____ [申请仲裁|shēnqǐng zhòngcái]。",
+    "[具体金额|Jùtǐ jīn'é] ____ [损坏情况|sǔnhuài qíngkuàng] ____ 。",
+    "[咱们|Zánmen] ____ [合同办|hétong bàn]，[别吵|bié chǎo]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan pasal berikut ke bahasa Indonesia.",
+   "items": [
+    "[租赁关系终止后十五日内|Zūlìn guānxi zhōngzhǐ hòu shíwǔ rì nèi]，[出租方应当退还全部押金|chūzūfāng yīngdāng tuìhuán quánbù yājīn]。",
+    "[房屋的正常损耗|Fángwū de zhèngcháng sǔnhào]，[承租方不承担赔偿责任|chéngzūfāng bù chéngdān péicháng zérèn]。",
+    "[扣除金额应当提供凭证|Kòuchú jīn'é yīngdāng tígōng píngzhèng]。",
+    "[除不可抗力外|Chú bùkěkànglì wài]，[任何一方不得单方面解除合同|rènhé yìfāng bù dé dānfāngmiàn jiěchú hétong]。",
+    "[凡是超过一万元的支出|Fánshì chāoguò yí wàn yuán de zhīchū]，[一律须经总经理批准|yílǜ xū jīng zǒngjīnglǐ pīzhǔn]。"
+   ]
+  },
+  {
+   "prompt": "Tulis tanggapan empat langkah (kutip pasal → sebut fakta → tolak tuduhan → tawarkan jalan keluar).",
+   "items": [
+    "Pemilik kos menahan uang jaminanmu dengan alasan cat tembok kusam setelah kamu tinggal dua tahun.",
+    "Perusahaan memotong gajimu karena kamu izin sakit dua hari dengan surat dokter."
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat yang memperkuat posisimu, dan jelaskan mengapa yang lain tidak.",
+   "items": [
+    "[你这是骗人|Nǐ zhè shì piàn rén]！",
+    "[我们看一下合同第九条|Wǒmen kàn yíxià hétong dì-jiǔ tiáo]。",
+    "[我要去劳动局告你们|Wǒ yào qù láodòngjú gào nǐmen]！",
+    "[交房的时候我们一起拍了照|Jiāo fáng de shíhou wǒmen yìqǐ pāi le zhào]。",
+    "[算了算了|Suàn le suàn le]，[不要了|bú yào le]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Saya hanya berbicara menurut kontrak.",
+    "Tanpa bukti, semua langkah berikutnya tidak berguna.",
+    "Lembur di hari libur wajib diberi libur pengganti atau uang lembur.",
+    "Kalau perundingannya tidak berhasil, bisa mengajukan arbitrase.",
+    "Pasal ini bisa tolong Anda jelaskan sebentar?"
+   ]
+  }
+ ],
+ "answers": [
+  "[承租方应当提前三十日通知出租方|Chéngzūfāng yīngdāng tíqián sānshí rì tōngzhī chūzūfāng]。 — [不得擅自转租|Bù dé shànzì zhuǎn zū]。 — [须经双方同意|Xū jīng shuāngfāng tóngyì]。 — [可提前解除合同|Kě tíqián jiěchú hétong]。 — [承租方有权要求赔偿|Chéngzūfāng yǒu quán yāoqiú péicháng]。",
+  "依照 — 根据 — 依法 — 视 · 而定 — 按",
+  "“Dalam lima belas hari setelah hubungan sewa berakhir, pihak yang menyewakan wajib mengembalikan seluruh uang jaminan.” — “Atas keausan wajar bangunan, pihak penyewa tidak memikul tanggung jawab ganti rugi.” — “Jumlah yang dipotong wajib disertai bukti.” — “Kecuali keadaan kahar, pihak mana pun dilarang memutus kontrak secara sepihak.” — “Setiap pengeluaran di atas sepuluh ribu yuan, semuanya harus melalui persetujuan direktur utama.”",
+  "Contoh 1: [我们看一下合同第九条|Wǒmen kàn yíxià hétong dì-jiǔ tiáo]，[上面写着正常损耗不承担赔偿责任|shàngmiàn xiě zhe zhèngcháng sǔnhào bù chéngdān péicháng zérèn]。[住了两年墙面变旧是正常使用|Zhù le liǎng nián qiángmiàn biàn jiù shì zhèngcháng shǐyòng]，[入住时的照片我也留着|rùzhù shí de zhàopiàn wǒ yě liú zhe]。[我不是想为难您|Wǒ bú shì xiǎng wéinán nín]，[我只是按合同说话|wǒ zhǐshì àn hétong shuō huà]。[如果您觉得需要简单补漆|Rúguǒ nín juéde xūyào jiǎndān bǔ qī]，[我可以出两百|wǒ kěyǐ chū liǎng bǎi]，[剩下的今天退给我就行|shèng xià de jīntiān tuì gěi wǒ jiù xíng]。 — Contoh 2: [我想请人事帮忙看一下劳动合同和公司考勤制度|Wǒ xiǎng qǐng rénshì bāngmáng kàn yíxià láodòng hétong hé gōngsī kǎoqín zhìdù]。[这两天我提交了医院的病假证明|Zhè liǎng tiān wǒ tíjiāo le yīyuàn de bìngjià zhèngmíng]，[群里的记录我也保存了|qún lǐ de jìlù wǒ yě bǎocún le]。[我不是要跟公司对立|Wǒ bú shì yào gēn gōngsī duìlì]，[只是想把计算方式弄清楚|zhǐshì xiǎng bǎ jìsuàn fāngshì nòng qīngchu]。[如果确实是我理解错了|Rúguǒ quèshí shì wǒ lǐjiě cuò le]，[我接受|wǒ jiēshòu]；[如果是系统算错了|rúguǒ shì xìtǒng suàn cuò le]，[麻烦下个月一起补上|máfan xià ge yuè yìqǐ bǔ shàng]。",
+  "Melemahkan · menuduh niat, pihak lain langsung berhenti berunding — Menguatkan · memindahkan pembicaraan ke teks kontrak — Melemahkan · menaikkan taruhan terlalu dini sehingga pihak lain bertahan mati-matian — Menguatkan · menyodorkan bukti tanpa menuduh siapa pun — Melemahkan · melepaskan hak tanpa perlu",
+  "[我只是按合同说话|Wǒ zhǐshì àn hétong shuō huà]。 — [没有证据|Méiyǒu zhèngjù]，[后面所有的步骤都没用|hòumiàn suǒyǒu de bùzhòu dōu méiyòng]。 — [休息日加班应当安排补休或支付加班费|Xiūxīrì jiā bān yīngdāng ānpái bǔxiū huò zhīfù jiābānfèi]。 — [协商不成的|Xiéshāng bù chéng de]，[可以申请仲裁|kěyǐ shēnqǐng zhòngcái]。 — [这一条能麻烦您解释一下吗|Zhè yì tiáo néng máfan nín jiěshì yíxià ma]？"
+ ],
+ "wave": "Cari satu dokumen berbahasa Mandarin yang benar-benar mengikatmu — kontrak kerja, perjanjian sewa, syarat dan ketentuan aplikasi. Tandai semua 应当 dan 不得 di dalamnya, lalu tulis ulang tiga di antaranya dalam bahasa Indonesia. Kalau kamu belum punya dokumen semacam itu, pakai syarat layanan salah satu aplikasi Tiongkok di ponselmu — semuanya tersedia dalam bahasa Mandarin dan ditulis dengan pola yang persis sama."
+}

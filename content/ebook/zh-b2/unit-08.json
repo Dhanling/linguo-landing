@@ -1,0 +1,360 @@
+{
+ "title": "Angka, uang, dan membaca grafik",
+ "title_target": "同比增长百分之十二 — Tóngbǐ zēngzhǎng bǎi fēn zhī shí'èr",
+ "goal": "Membaca dan mengucapkan angka seperti penutur asli: naik-turun dengan 增长/下降, bagian dengan 占…比例, kelipatan dengan 倍 dan 成, perbandingan waktu dengan 同比/环比, serta seluruh kosakata grafik, tabel, dan laporan keuangan.",
+ "bekal": [
+  "menyebut kenaikan dan penurunan dengan tepat: 增长 · 上升 · 下降 · 回落",
+  "membedakan 增加了三倍 dan 增加到三倍 — selisih yang mengubah angkanya",
+  "menyebut porsi dan pangsa: 占…的百分之…, 比重, 份额",
+  "membaca grafik: sumbu, tren, puncak, titik terendah",
+  "kosakata uang pribadi: menabung, mencicil, berinvestasi, inflasi"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Menutup angka kuartal",
+   "intro": "Tiga orang membahas laporan penjualan kuartal ketiga. Dialog ini padat angka; bacalah keras-keras sampai angka-angkanya keluar tanpa tersendat, karena di situlah letak latihannya.",
+   "lines": [
+    { "speaker": "李经理:", "text": "[三季度的数字出来了|Sān jìdù de shùzì chūlái le]。[整体销售额同比增长了百分之十二|Zhěngtǐ xiāoshòu'é tóngbǐ zēngzhǎng le bǎi fēn zhī shí'èr]。", "id": "Angka kuartal ketiga sudah keluar. Total nilai penjualan naik 12 persen dibanding tahun lalu.", "literal": "tiga — kuartal — punya — angka — keluar-datang — sudah. keseluruhan — penjualan — nilai — banding tahun — tumbuh — sudah — seratus — bagi — dua belas." },
+    { "speaker": "小林:", "text": "[环比呢|Huánbǐ ne]？", "id": "Kalau dibanding kuartal sebelumnya?", "literal": "banding lingkaran — bagaimana?" },
+    { "speaker": "李经理:", "text": "[环比只涨了百分之一点五|Huánbǐ zhǐ zhǎng le bǎi fēn zhī yī diǎn wǔ]。[也就是说|Yě jiùshì shuō]，[跟去年比不错|gēn qùnián bǐ búcuò]，[跟上个季度比基本持平|gēn shàng ge jìdù bǐ jīběn chípíng]。", "id": "Dibanding kuartal sebelumnya hanya naik 1,5 persen. Artinya, dibanding tahun lalu bagus, dibanding kuartal lalu pada dasarnya datar.", "literal": "banding lingkaran — hanya — naik — sudah — seratus — bagi — satu — koma — lima. juga — yaitu — bilang, dengan — tahun lalu — banding — tidak buruk, dengan — lalu — penggolong — kuartal — banding — dasarnya — rata." },
+    { "speaker": "小周:", "text": "[线上和线下分别是多少|Xiànshàng hé xiànxià fēnbié shì duōshao]？", "id": "Daring dan luring masing-masing berapa?", "literal": "atas garis — dan — bawah garis — masing-masing — adalah — berapa?" },
+    { "speaker": "李经理:", "text": "[线上占了总额的百分之六十八|Xiànshàng zhàn le zǒng'é de bǎi fēn zhī liùshíbā]，[比去年同期高了将近十个百分点|bǐ qùnián tóngqī gāo le jiāngjìn shí ge bǎifēndiǎn]。", "id": "Daring menyumbang 68 persen dari total, hampir sepuluh poin persen lebih tinggi daripada periode yang sama tahun lalu.", "literal": "atas garis — menempati — sudah — total — nilai — punya — seratus — bagi — enam puluh delapan, dibanding — tahun lalu — periode sama — tinggi — sudah — hampir — sepuluh — penggolong — poin persen." },
+    { "speaker": "小林:", "text": "[等一下|Děng yíxià]，[“高了十个百分点”和“高了百分之十”不一样吧|“gāo le shí ge bǎifēndiǎn” hé “gāo le bǎi fēn zhī shí” bù yíyàng ba]？", "id": "Tunggu, “lebih tinggi sepuluh poin persen” dengan “lebih tinggi sepuluh persen” itu tidak sama kan?", "literal": "tunggu — sebentar, “tinggi — sudah — sepuluh — penggolong — poin persen” — dan — “tinggi — sudah — seratus — bagi — sepuluh” — tidak — sama — kan?" },
+    { "speaker": "李经理:", "text": "[完全不一样|Wánquán bù yíyàng]。[去年是百分之五十八|Qùnián shì bǎi fēn zhī wǔshíbā]，[今年百分之六十八|jīnnián bǎi fēn zhī liùshíbā]——[差十个百分点|chà shí ge bǎifēndiǎn]。[如果说“高了百分之十”|Rúguǒ shuō “gāo le bǎi fēn zhī shí”]，[那应该是六十三点八|nà yīnggāi shì liùshísān diǎn bā]。", "id": "Sama sekali berbeda. Tahun lalu 58 persen, tahun ini 68 persen — selisihnya sepuluh poin persen. Kalau dikatakan “lebih tinggi sepuluh persen”, itu seharusnya 63,8.", "literal": "sepenuhnya — tidak — sama. tahun lalu — adalah — seratus — bagi — lima puluh delapan, tahun ini — seratus — bagi — enam puluh delapan — selisih — sepuluh — penggolong — poin persen. kalau — bilang — “tinggi — sudah — seratus — bagi — sepuluh”, itu — seharusnya — adalah — enam puluh tiga — koma — delapan." },
+    { "speaker": "小周:", "text": "[难怪上次跟客户对数的时候他们愣了一下|Nánguài shàng cì gēn kèhù duì shù de shíhou tāmen lèng le yíxià]。", "id": "Pantas saja waktu terakhir mencocokkan angka dengan klien mereka sempat tertegun.", "literal": "pantas — lalu — kali — dengan — klien — cocokkan — angka — punya — waktu — mereka — terpaku — sudah — sebentar." },
+    { "speaker": "李经理:", "text": "[这个错误在报告里是致命的|Zhège cuòwù zài bàogào lǐ shì zhìmìng de]。[以后凡是涉及比例变化|Yǐhòu fánshì shèjí bǐlì biànhuà]，[一律写“百分点”|yílǜ xiě “bǎifēndiǎn”]。", "id": "Kesalahan ini di dalam laporan itu fatal. Ke depan setiap kali menyangkut perubahan proporsi, semuanya tulis “poin persen”.", "literal": "ini — kesalahan — di — laporan — dalam — adalah — mematikan — punya. nanti — setiap — menyangkut — proporsi — perubahan, semuanya — tulis — “poin persen”." },
+    { "speaker": "小林:", "text": "[利润率呢|Lìrùnlǜ ne]？[销售额涨了|Xiāoshòu'é zhǎng le]，[利润跟上了吗|lìrùn gēn shàng le ma]？", "id": "Kalau margin labanya? Nilai penjualan naik, labanya ikut menyusul tidak?", "literal": "laba — rasio — bagaimana? penjualan — nilai — naik — sudah, laba — ikut — atas — sudah — kah?" },
+    { "speaker": "李经理:", "text": "[没有|Méiyǒu]。[利润率从百分之十八降到了百分之十四|Lìrùnlǜ cóng bǎi fēn zhī shíbā jiàng dào le bǎi fēn zhī shísì]。[原因是物流成本涨了将近三成|Yuányīn shì wùliú chéngběn zhǎng le jiāngjìn sān chéng]。", "id": "Tidak. Margin laba turun dari 18 persen ke 14 persen. Sebabnya biaya logistik naik hampir 30 persen.", "literal": "tidak ada. laba — rasio — dari — seratus — bagi — delapan belas — turun — sampai — sudah — seratus — bagi — empat belas. sebab — adalah — logistik — biaya — naik — sudah — hampir — tiga — persepuluh." },
+    { "speaker": "小周:", "text": "[三成|Sān chéng]？[那等于涨了百分之三十|Nà děngyú zhǎng le bǎi fēn zhī sānshí]。", "id": "Tiga cheng? Itu sama saja naik 30 persen.", "literal": "tiga — persepuluh? itu — sama dengan — naik — sudah — seratus — bagi — tiga puluh." },
+    { "speaker": "李经理:", "text": "[对|Duì]。[所以下个季度的重点不是冲销量|Suǒyǐ xià ge jìdù de zhòngdiǎn bú shì chōng xiāoliàng]，[而是把物流成本压下来|ér shì bǎ wùliú chéngběn yā xiàlái]。", "id": "Betul. Karena itu fokus kuartal depan bukan mengejar volume penjualan, melainkan menekan biaya logistik.", "literal": "benar. jadi — depan — penggolong — kuartal — punya — titik berat — bukan — adalah — serbu — volume penjualan, melainkan — ambil — logistik — biaya — tekan — turun-datang." }
+   ],
+   "notes": [
+    "**百分点 vs 百分之.** Ini kesalahan angka yang paling sering dan paling mahal. **百分之十** = 10%, sebuah nisbah. **十个百分点** = 10 poin persen, selisih antara dua persentase. Dari 58% ke 68% adalah naik **sepuluh poin persen**, bukan naik sepuluh persen.",
+    "**成 = sepersepuluh.** [三成|sān chéng] = 30%, [七成|qī chéng] = 70%, [九成半|jiǔ chéng bàn] = 95%. Kata ini sangat lazim di berita dan percakapan bisnis, dan lebih cepat diucapkan daripada 百分之三十.",
+    "**同比 vs 环比 — diulang karena penting.** 同比 membandingkan dengan periode yang sama tahun sebelumnya (Q3 tahun ini vs Q3 tahun lalu); 环比 membandingkan dengan periode yang persis sebelumnya (Q3 vs Q2). Angka yang sama bisa terlihat bagus atau buruk tergantung pembandingnya.",
+    "**持平 — “datar, sama saja”.** [基本持平|jīběn chípíng] pada dasarnya tidak berubah. Kata yang berguna untuk melaporkan hasil yang tidak naik maupun turun tanpa terdengar seperti kegagalan.",
+    "**占 — “menempati, menyumbang”.** [占总额的百分之六十八|zhàn zǒng'é de bǎi fēn zhī liùshíbā] menyumbang 68% dari total. Rangkanya: A + 占 + B + 的 + porsi. Saudaranya: 比重 “bobot”, 份额 “pangsa”.",
+    "**从 A 降到 B — “turun dari A ke B”.** Pasangan 从…到… wajib lengkap. Saudaranya: 从…涨到…, 由…增至… 【书】. Perhatikan bahwa 到 di sini pelengkap arah pada kata kerjanya, bukan kata depan berdiri sendiri.",
+    "**愣了一下 — “tertegun sejenak”.** 愣 berarti terpaku karena bingung atau kaget. Sangat lazim untuk menggambarkan reaksi orang di rapat.",
+    "**⚠️ 凡是…一律… — “setiap kali…, semuanya…”.** Rangka aturan: 凡是 memayungi seluruh golongan, 一律 menyeragamkan perlakuannya. Sangat sering muncul di pengumuman, peraturan, dan instruksi kerja. Lihat unit 9."
+   ],
+   "grammars": [
+    {
+     "title": "Naik, turun, dan kelipatan: rangka yang mudah salah",
+     "body": [
+      "Bagian ini pendek tetapi menentukan. Empat rangka di bawah terlihat mirip dan artinya berbeda-beda; menukarnya membuat laporanmu salah, bukan cuma janggal."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Contoh", "Artinya"],
+       "rows": [
+        ["增加了 N 倍", "[增加了两倍|zēngjiā le liǎng bèi]", "menjadi **3×** semula"],
+        ["增加到 N 倍", "[增加到两倍|zēngjiā dào liǎng bèi]", "menjadi **2×** semula"],
+        ["是…的 N 倍", "[是去年的三倍|shì qùnián de sān bèi]", "**3×** tahun lalu"],
+        ["翻了一番", "[翻了一番|fān le yì fān]", "menjadi **2×** — berlipat ganda"],
+        ["翻了两番", "[翻了两番|fān le liǎng fān]", "menjadi **4×**"],
+        ["增长了百分之 N", "[增长了百分之二十|zēngzhǎng le bǎi fēn zhī èrshí]", "naik 20%"],
+        ["下降了 N 个百分点", "[下降了三个百分点|xiàjiàng le sān ge bǎifēndiǎn]", "turun 3 poin persen"]
+       ]
+      },
+      {
+       "head": ["Kata kerja", "Dipakai untuk", "Ragam"],
+       "rows": [
+        ["[增长|zēngzhǎng] / [下降|xiàjiàng]", "angka, ekonomi", "【书】 netral"],
+        ["[上升|shàngshēng] / [下滑|xiàhuá]", "tren, kurva", "【书】"],
+        ["[涨|zhǎng] / [跌|diē]", "harga, saham", "【口】 & berita"],
+        ["[提高|tígāo] / [降低|jiàngdī]", "yang bisa dikendalikan (mutu, biaya)", "netral"],
+        ["[回升|huíshēng] / [回落|huíluò]", "naik/turun kembali sesudah bergerak", "【书】"],
+        ["[持平|chípíng]", "tidak berubah", "【书】"],
+        ["[波动|bōdòng]", "naik turun tak menentu", "【书】"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **增加了两倍 dan 增加到两倍 hanya berbeda satu aksara, tetapi selisihnya 50%.** Bahasa Mandarin menghitung 了 N 倍 sebagai **tambahan** di atas jumlah semula. Kalau ragu, hindari sama sekali dan pakai 是…的 N 倍 atau persentase — dua bentuk itu tidak bisa ditafsirkan ganda.",
+      "**翻番 hanya untuk kelipatan dua.** [翻一番|fān yì fān] = 2×, [翻两番|fān liǎng fān] = 4×, [翻三番|fān sān fān] = 8×. Ia menggandakan, bukan menambah."
+     ]
+    },
+    {
+     "title": "Porsi, kisaran, dan perkiraan",
+     "body": [
+      "Angka dalam laporan jarang berdiri telanjang. Ia hampir selalu dibungkus penanda kisaran atau perkiraan, dan penanda itulah yang membuat kalimatmu terdengar terlatih."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Arti"],
+       "rows": [
+        ["[左右|zuǒyòu]", "[三百左右|sān bǎi zuǒyòu]", "sekitar 300"],
+        ["[上下|shàngxià]", "[五十岁上下|wǔshí suì shàngxià]", "sekitar 50 tahun"],
+        ["[以上|yǐshàng] / [以下|yǐxià]", "[十人以上|shí rén yǐshàng]", "10 orang ke atas"],
+        ["[不到|bú dào]", "[不到一半|bú dào yíbàn]", "kurang dari separuh"],
+        ["[超过|chāoguò]", "[超过两万|chāoguò liǎng wàn]", "lebih dari 20.000"],
+        ["[将近|jiāngjìn]", "[将近三成|jiāngjìn sān chéng]", "hampir 30%"],
+        ["[约|yuē] 【书】", "[约百分之十|yuē bǎi fēn zhī shí]", "kira-kira 10%"],
+        ["[高达|gāodá] 【书】", "[高达八成|gāodá bā chéng]", "mencapai setinggi 80%"],
+        ["[仅|jǐn] 【书】", "[仅百分之三|jǐn bǎi fēn zhī sān]", "hanya 3%"]
+       ]
+      },
+      {
+       "head": ["Bagian & pangsa", "Contoh", "Catatan"],
+       "rows": [
+        ["A 占 B 的 N", "[线上占总额的六成|Xiànshàng zhàn zǒng'é de liù chéng]。", "paling umum"],
+        ["A 的比重为 N 【书】", "[出口的比重为三成|Chūkǒu de bǐzhòng wéi sān chéng]。", "laporan"],
+        ["市场份额", "[市场份额第一|shìchǎng é'r dì-yī]", "pangsa pasar"],
+        ["每 N 人中有 M 人", "[每十人中有三人|měi shí rén zhōng yǒu sān rén]", "cara lisan yang jelas"]
+       ]
+      }
+     ],
+     "after": [
+      "**以上 dan 以下 termasuk angkanya sendiri dalam pemakaian resmi Tiongkok.** [十人以上|shí rén yǐshàng] mencakup tepat sepuluh orang. Dalam kontrak dan peraturan ini penting; kalau perlu tegas, tulis [十人（含）以上|shí rén (hán) yǐshàng]。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Uang pribadi dan bunga yang tidak kelihatan",
+   "intro": "Andi bertanya kepada Wang Li tentang cicilan dan tabungan. Perhatikan bahwa hampir seluruh nasihatnya berbentuk perbandingan angka — dan bahwa Wang Li memaksa Andi mengubah cara menghitungnya, bukan mengubah keputusannya.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[商场的分期免息看起来挺划算的|Shāngchǎng de fēnqī miǎnxī kàn qǐlái tǐng huásuàn de]，[十二期零利息|shí'èr qī líng lìxī]。", "id": "Cicilan tanpa bunga di mal kelihatannya cukup menguntungkan, dua belas kali tanpa bunga.", "literal": "mal — punya — cicilan — bebas bunga — lihat — bangkit-datang — cukup — untung — punya, dua belas — termin — nol — bunga." },
+    { "speaker": "王丽:", "text": "[你先问一句|Nǐ xiān wèn yí jù]：[一次性付款有没有折扣|yí cì xìng fùkuǎn yǒu méiyǒu zhékòu]？", "id": "Kamu tanya dulu satu hal: kalau bayar sekali penuh ada diskon tidak?", "literal": "kamu — dulu — tanya — satu — penggolong: satu — kali — sifat — bayar — ada — tidak ada — potongan?" },
+    { "speaker": "安迪:", "text": "[有|Yǒu]，[一次性付九五折|yí cì xìng fù jiǔ wǔ zhé]。", "id": "Ada, bayar sekali penuh dapat 95 persen dari harga.", "literal": "ada, satu — kali — sifat — bayar — sembilan — lima — potongan." },
+    { "speaker": "王丽:", "text": "[那就不是免息|Nà jiù bú shì miǎnxī]。[你放弃了百分之五的折扣|Nǐ fàngqì le bǎi fēn zhī wǔ de zhékòu]，[等于付了百分之五的利息|děngyú fù le bǎi fēn zhī wǔ de lìxī]，[只是名字不叫利息|zhǐshì míngzi bú jiào lìxī]。", "id": "Kalau begitu itu bukan bebas bunga. Kamu melepaskan diskon lima persen, sama saja membayar bunga lima persen, cuma namanya tidak disebut bunga.", "literal": "kalau begitu — langsung — bukan — adalah — bebas bunga. kamu — lepas — sudah — seratus — bagi — lima — punya — potongan, sama dengan — bayar — sudah — seratus — bagi — lima — punya — bunga, hanya — nama — tidak — disebut — bunga." },
+    { "speaker": "安迪:", "text": "[……我从来没这么想过|……Wǒ cónglái méi zhème xiǎng guo]。", "id": "…Aku belum pernah berpikir begitu.", "literal": "…… saya — selama ini — belum — begini — pikir — pernah." },
+    { "speaker": "王丽:", "text": "[大部分人都没有|Dàbùfen rén dōu méiyǒu]。[而且五个百分点是一年的|Érqiě wǔ ge bǎifēndiǎn shì yì nián de]，[但你的钱是一个月一个月还的|dàn nǐ de qián shì yí ge yuè yí ge yuè huán de]。[实际年化利率大概是九点几|Shíjì niánhuà lìlǜ dàgài shì jiǔ diǎn jǐ]。", "id": "Kebanyakan orang juga tidak. Lagi pula lima poin persen itu untuk setahun, tapi uangmu dikembalikan bulan demi bulan. Suku bunga tahunan sesungguhnya kira-kira sembilan koma sekian.", "literal": "sebagian besar — orang — semua — tidak ada. lagi pula — lima — penggolong — poin persen — adalah — satu — tahun — punya, tapi — kamu — punya — uang — adalah — satu — penggolong — bulan — satu — penggolong — bulan — kembalikan — punya. nyata — tahunan — bunga — rasio — kira-kira — adalah — sembilan — koma — berapa." },
+    { "speaker": "安迪:", "text": "[九点几|Jiǔ diǎn jǐ]？[比信用卡还高|Bǐ xìnyòngkǎ hái gāo]。", "id": "Sembilan koma sekian? Lebih tinggi daripada kartu kredit.", "literal": "sembilan — koma — berapa? dibanding — kartu kredit — malah — tinggi." },
+    { "speaker": "王丽:", "text": "[对|Duì]。[所以判断分期的唯一标准|Suǒyǐ pànduàn fēnqī de wéiyī biāozhǔn]，[不是有没有利息|bú shì yǒu méiyǒu lìxī]，[而是一次性付款能便宜多少|ér shì yí cì xìng fùkuǎn néng piányi duōshao]。", "id": "Betul. Karena itu satu-satunya ukuran menilai cicilan bukan ada bunga atau tidak, melainkan bayar sekali penuh bisa lebih murah berapa.", "literal": "benar. jadi — menilai — cicilan — punya — satu-satunya — standar, bukan — adalah — ada — tidak ada — bunga, melainkan — adalah — satu — kali — sifat — bayar — bisa — murah — berapa." },
+    { "speaker": "安迪:", "text": "[那存钱呢|Nà cún qián ne]？[定期存款利率才百分之一点几|Dìngqī cúnkuǎn lìlǜ cái bǎi fēn zhī yī diǎn jǐ]，[感觉存了也白存|gǎnjué cún le yě bái cún]。", "id": "Lalu menabung bagaimana? Bunga deposito cuma satu koma sekian persen, rasanya menabung pun percuma.", "literal": "kalau begitu — simpan — uang — bagaimana? berjangka — simpanan — bunga — rasio — cuma — seratus — bagi — satu — koma — berapa, rasa — simpan — sudah — juga — sia-sia — simpan." },
+    { "speaker": "王丽:", "text": "[存款的作用不是赚钱|Cúnkuǎn de zuòyòng bú shì zhuàn qián]，[是让你在出事的时候不用借钱|shì ràng nǐ zài chū shì de shíhou búyòng jiè qián]。[六个月的生活费|Liù ge yuè de shēnghuófèi]，[放着别动|fàng zhe bié dòng]。[剩下的再谈投资|Shèng xià de zài tán tóuzī]。", "id": "Kegunaan tabungan bukan menghasilkan uang, melainkan membuatmu tidak perlu berutang saat ada masalah. Biaya hidup enam bulan, taruh dan jangan disentuh. Sisanya baru bicara investasi.", "literal": "simpanan — punya — kegunaan — bukan — adalah — hasilkan — uang, adalah — buat — kamu — di — keluar — perkara — punya — waktu — tidak perlu — pinjam — uang. enam — penggolong — bulan — punya — biaya hidup, taruh — sedang — jangan — bergerak. sisa — turun — punya — baru — bicara — investasi." },
+    { "speaker": "安迪:", "text": "[六个月|Liù ge yuè]？[那得存不少|Nà děi cún bù shǎo]。", "id": "Enam bulan? Itu harus menabung tidak sedikit.", "literal": "enam — penggolong — bulan? itu — harus — simpan — tidak — sedikit." },
+    { "speaker": "王丽:", "text": "[所以从三个月开始|Suǒyǐ cóng sān ge yuè kāishǐ]。[目标定得太大|Mùbiāo dìng de tài dà]，[坚持不到第三个月|jiānchí bu dào dì-sān ge yuè]。[这跟学中文一个道理|Zhè gēn xué Zhōngwén yí ge dàolǐ]。", "id": "Karena itu mulai dari tiga bulan. Kalau sasarannya ditetapkan terlalu besar, tidak akan bertahan sampai bulan ketiga. Ini satu prinsip yang sama dengan belajar bahasa Mandarin.", "literal": "jadi — dari — tiga — penggolong — bulan — mulai. sasaran — tetapkan — secara — terlalu — besar, bertahan — tidak — sampai — ke-tiga — penggolong — bulan. ini — dengan — belajar — Mandarin — satu — penggolong — prinsip." }
+   ],
+   "notes": [
+    "**九五折 dihitung terbalik dari kebiasaan kita.** Angka di depan 折 adalah **berapa persen yang kamu bayar**: 九五折 = bayar 95%, yaitu diskon 5%. 八折 = diskon 20%. Kesalahan ini membuat banyak orang asing mengira menemukan obral besar.",
+    "**一次性 — “sekali sekaligus”.** [一次性付款|yí cì xìng fùkuǎn] bayar lunas sekali; [一次性用品|yí cì xìng yòngpǐn] barang sekali pakai. Akhiran 性 mengubah kata menjadi sifat: 临时性 bersifat sementara, 长期性 bersifat jangka panjang.",
+    "**年化利率 — “suku bunga tahunan setara”.** Istilah yang wajib diketahui siapa pun yang membaca tawaran cicilan di Tiongkok, karena promosi hampir selalu menyebut bunga per bulan atau “bebas bunga” dan menyembunyikan angka tahunannya.",
+    "**九点几 — “sembilan koma sekian”.** Rangka angka + 点 + 几 dipakai ketika kamu tahu bilangan bulatnya tetapi tidak desimalnya. Saudaranya: [二十几|èrshí jǐ] dua puluh sekian, [几百块|jǐ bǎi kuài] beberapa ratus.",
+    "**白 + kata kerja — “sia-sia”.** [白存|bái cún] menabung percuma, [白跑一趟|bái pǎo yí tàng] pergi sia-sia, [白干|bái gàn] bekerja tanpa hasil. Berbeda dari 白 “putih”.",
+    "**放着别动 — “taruh dan jangan disentuh”.** Bentuk 着 di sini menandai keadaan yang dibiarkan berlangsung. Kalimat perintah pendek yang sangat lazim.",
+    "**唯一标准 — “satu-satunya ukuran”.** Rangka yang sangat berguna untuk menyederhanakan keputusan rumit: [判断 X 的唯一标准是 Y|Pànduàn X de wéiyī biāozhǔn shì Y]。",
+    "**⚠️ 一个道理 — “prinsipnya satu”.** [这跟…一个道理|Zhè gēn… yí ge dàolǐ] “ini prinsipnya sama dengan…”. Cara paling ringkas untuk memindahkan penjelasan dari satu bidang ke bidang lain, dan sangat sering dipakai penutur asli untuk mengajar."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca grafik dan tabel",
+     "body": [
+      "Kosakata ini muncul di ujian HSK 5–6, presentasi kerja, dan berita ekonomi. Menghafalnya sekali menutup ketiganya."
+     ],
+     "tables": [
+      {
+       "head": ["Mandarin", "Arti", "Contoh"],
+       "rows": [
+        ["[图表|túbiǎo]", "grafik & tabel", "[如图所示|rú tú suǒ shì] seperti terlihat pada gambar"],
+        ["[柱状图|zhùzhuàngtú]", "diagram batang", "—"],
+        ["[折线图|zhéxiàntú]", "diagram garis", "—"],
+        ["[饼图|bǐngtú]", "diagram lingkaran", "—"],
+        ["[横轴|héngzhóu] / [纵轴|zòngzhóu]", "sumbu datar / tegak", "—"],
+        ["[趋势|qūshì]", "tren", "[上升趋势|shàngshēng qūshì]"],
+        ["[峰值|fēngzhí]", "puncak", "[出现在七月|chūxiàn zài qīyuè]"],
+        ["[谷底|gǔdǐ]", "titik terendah", "—"],
+        ["[平稳|píngwěn]", "stabil", "[保持平稳|bǎochí píngwěn]"],
+        ["[明显|míngxiǎn]", "jelas terlihat", "[明显下滑|míngxiǎn xiàhuá]"],
+        ["[略|lüè] 【书】", "sedikit", "[略有上升|lüè yǒu shàngshēng]"],
+        ["[大幅|dàfú]", "secara tajam", "[大幅下降|dàfú xiàjiàng]"]
+       ]
+      },
+      {
+       "head": ["Rangka menjelaskan grafik", "Contoh"],
+       "rows": [
+        ["如图所示，…", "[如图所示|Rú tú suǒ shì]，[销量呈上升趋势|xiāoliàng chéng shàngshēng qūshì]。"],
+        ["从 A 到 B，…", "[从一月到六月|Cóng yīyuè dào liùyuè]，[数字持续上升|shùzì chíxù shàngshēng]。"],
+        ["…在 N 达到峰值", "[在七月达到峰值|Zài qīyuè dádào fēngzhí]。"],
+        ["随后…", "[随后开始回落|Suíhòu kāishǐ huíluò]。"],
+        ["总体来看，…", "[总体来看|Zǒngtǐ lái kàn]，[全年保持增长|quán nián bǎochí zēngzhǎng]。"],
+        ["值得注意的是，…", "[值得注意的是|Zhídé zhùyì de shì]，[三季度环比几乎持平|sān jìdù huánbǐ jīhū chípíng]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**呈 + tren + 趋势 adalah rangka baku.** [呈上升趋势|chéng shàngshēng qūshì] menunjukkan tren naik. 呈 【书】 berarti “menampakkan”, dan hampir hanya dipakai dalam rangka ini.",
+      "**Urutan menjelaskan grafik yang selalu berhasil:** (1) apa yang digambarkan, (2) tren keseluruhan, (3) titik puncak dan terendah, (4) satu hal yang layak diperhatikan, (5) satu kesimpulan. Lima kalimat, dan itu cukup untuk soal HSK 6 maupun rapat sungguhan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata uang: pribadi dan perusahaan",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Catatan"],
+      "rows": [
+       ["[销售额|xiāoshòu'é]", "nilai penjualan", "额 = jumlah nominal"],
+       ["[营业额|yíngyè'é]", "omzet", "—"],
+       ["[利润|lìrùn]", "laba", "[利润率|lìrùnlǜ] margin"],
+       ["[成本|chéngběn]", "biaya pokok", "—"],
+       ["[毛利|máolì] / [净利|jìnglì]", "laba kotor / bersih", "—"],
+       ["[季度|jìdù]", "kuartal", "[三季度|sān jìdù]"],
+       ["[同期|tóngqī]", "periode yang sama", "[去年同期|qùnián tóngqī]"],
+       ["[份额|fèn'é]", "pangsa", "[市场份额|shìchǎng fèn'é]"],
+       ["[比重|bǐzhòng]", "bobot, proporsi 【书】", "—"],
+       ["[存款|cúnkuǎn]", "simpanan", "[定期|dìngqī] berjangka"],
+       ["[利率|lìlǜ]", "suku bunga", "[年化利率|niánhuà lìlǜ]"],
+       ["[分期|fēnqī]", "cicilan", "[十二期|shí'èr qī]"],
+       ["[免息|miǎnxī]", "bebas bunga", "—"],
+       ["[折扣|zhékòu]", "diskon", "[九五折|jiǔ wǔ zhé] bayar 95%"],
+       ["[投资|tóuzī]", "investasi", "[理财|lǐcái] mengelola keuangan"],
+       ["[通货膨胀|tōnghuò péngzhàng]", "inflasi", "singkatannya [通胀|tōngzhàng]"]
+      ] },
+    { "type": "sub", "text": "⚠️ Membaca angka besar Mandarin" },
+    { "type": "p", "text": "Bahasa Mandarin mengelompokkan angka per **empat digit**, bukan per tiga seperti bahasa Indonesia. Ini sumber kebingungan yang tidak pernah hilang sendiri; satu-satunya obatnya adalah menghafal titik potongnya." },
+    { "type": "tabel",
+      "head": ["Angka", "Mandarin", "Bahasa Indonesia"],
+      "rows": [
+       ["10.000", "[一万|yí wàn]", "sepuluh ribu"],
+       ["100.000", "[十万|shí wàn]", "seratus ribu"],
+       ["1.000.000", "[一百万|yì bǎi wàn]", "satu juta"],
+       ["10.000.000", "[一千万|yì qiān wàn]", "sepuluh juta"],
+       ["100.000.000", "[一亿|yí yì]", "seratus juta"],
+       ["1.000.000.000", "[十亿|shí yì]", "satu miliar"]
+      ] },
+    { "type": "p", "text": "Aturan praktisnya: **万 = 10.000** dan **亿 = 100.000.000**. Begitu kamu melihat 亿 dalam berita, kalikan dengan seratus juta — bukan dengan satu miliar. Kesalahan sepuluh kali lipat di sini terjadi bahkan pada penerjemah berpengalaman." }
+   ]
+  },
+  {
+   "title": "Lima kalimat untuk menyajikan angka dengan jujur",
+   "blocks": [
+    { "type": "kotak", "title": "Simpan kelimanya", "items": [
+     "[这个数字是同比还是环比|Zhège shùzì shì tóngbǐ háishi huánbǐ]？ — Pertanyaan pertama yang perlu ditanyakan pada angka mana pun.",
+     "[基数是多少|Jīshù shì duōshao]？ — “Angka dasarnya berapa?” Kenaikan 300% dari angka dua tetap kecil.",
+     "[这是绝对值还是比例|Zhè shì juéduìzhí háishi bǐlì]？ — Memisahkan jumlah dari nisbah.",
+     "[样本量够吗|Yàngběnliàng gòu ma]？ — “Ukuran sampelnya cukup?” Berguna untuk survei dan riset pasar.",
+     "[口径变过吗|Kǒujìng biàn guo ma]？ — “Cara menghitungnya pernah berubah?” Pertanyaan yang paling sering membongkar angka yang tampak melonjak."
+    ] },
+    { "type": "p", "text": "Kelima pertanyaan ini adalah bahasa, tetapi juga cara berpikir. Dalam rapat berbahasa Mandarin, orang yang menanyakan 口径变过吗 hampir selalu dianggap tahu apa yang sedang dibicarakan — dan itu bukan karena pertanyaannya sulit, melainkan karena hampir tidak ada yang menanyakannya." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "季度", "baca": "jìdù", "id": "kuartal" },
+  { "zh": "整体", "baca": "zhěngtǐ", "id": "keseluruhan" },
+  { "zh": "销售额", "baca": "xiāoshòu'é", "id": "nilai penjualan" },
+  { "zh": "增长", "baca": "zēngzhǎng", "id": "tumbuh, naik 【书】" },
+  { "zh": "下降", "baca": "xiàjiàng", "id": "turun 【书】" },
+  { "zh": "上升", "baca": "shàngshēng", "id": "naik (tren)" },
+  { "zh": "下滑", "baca": "xiàhuá", "id": "merosot" },
+  { "zh": "回落", "baca": "huíluò", "id": "turun kembali" },
+  { "zh": "回升", "baca": "huíshēng", "id": "naik kembali" },
+  { "zh": "持平", "baca": "chípíng", "id": "datar, tidak berubah" },
+  { "zh": "波动", "baca": "bōdòng", "id": "naik turun" },
+  { "zh": "百分点", "baca": "bǎifēndiǎn", "id": "poin persen" },
+  { "zh": "成", "baca": "chéng", "id": "sepersepuluh (10%)" },
+  { "zh": "倍", "baca": "bèi", "id": "kali lipat" },
+  { "zh": "翻一番", "baca": "fān yì fān", "id": "berlipat dua" },
+  { "zh": "占", "baca": "zhàn", "id": "menempati, menyumbang" },
+  { "zh": "比重", "baca": "bǐzhòng", "id": "proporsi 【书】" },
+  { "zh": "份额", "baca": "fèn'é", "id": "pangsa" },
+  { "zh": "总额", "baca": "zǒng'é", "id": "jumlah total" },
+  { "zh": "同期", "baca": "tóngqī", "id": "periode yang sama" },
+  { "zh": "将近", "baca": "jiāngjìn", "id": "hampir" },
+  { "zh": "高达", "baca": "gāodá", "id": "mencapai setinggi 【书】" },
+  { "zh": "仅", "baca": "jǐn", "id": "hanya 【书】" },
+  { "zh": "约", "baca": "yuē", "id": "kira-kira 【书】" },
+  { "zh": "左右", "baca": "zuǒyòu", "id": "sekitar" },
+  { "zh": "以上", "baca": "yǐshàng", "id": "ke atas, lebih dari" },
+  { "zh": "线上", "baca": "xiànshàng", "id": "daring" },
+  { "zh": "线下", "baca": "xiànxià", "id": "luring" },
+  { "zh": "利润率", "baca": "lìrùnlǜ", "id": "margin laba" },
+  { "zh": "物流", "baca": "wùliú", "id": "logistik" },
+  { "zh": "销量", "baca": "xiāoliàng", "id": "volume penjualan" },
+  { "zh": "凡是", "baca": "fánshì", "id": "setiap, semua yang" },
+  { "zh": "一律", "baca": "yílǜ", "id": "seragam, semuanya" },
+  { "zh": "致命", "baca": "zhìmìng", "id": "fatal" },
+  { "zh": "分期", "baca": "fēnqī", "id": "cicilan" },
+  { "zh": "免息", "baca": "miǎnxī", "id": "bebas bunga" },
+  { "zh": "利息", "baca": "lìxī", "id": "bunga" },
+  { "zh": "利率", "baca": "lìlǜ", "id": "suku bunga" },
+  { "zh": "年化", "baca": "niánhuà", "id": "disetarakan per tahun" },
+  { "zh": "折扣", "baca": "zhékòu", "id": "diskon" },
+  { "zh": "一次性", "baca": "yí cì xìng", "id": "sekali sekaligus" },
+  { "zh": "划算", "baca": "huásuàn", "id": "menguntungkan" },
+  { "zh": "存款", "baca": "cúnkuǎn", "id": "simpanan" },
+  { "zh": "定期", "baca": "dìngqī", "id": "berjangka" },
+  { "zh": "投资", "baca": "tóuzī", "id": "investasi" },
+  { "zh": "理财", "baca": "lǐcái", "id": "mengelola keuangan" },
+  { "zh": "趋势", "baca": "qūshì", "id": "tren" },
+  { "zh": "峰值", "baca": "fēngzhí", "id": "nilai puncak" },
+  { "zh": "如图所示", "baca": "rú tú suǒ shì", "id": "seperti terlihat pada gambar" },
+  { "zh": "值得注意", "baca": "zhídé zhùyì", "id": "layak diperhatikan" },
+  { "zh": "基数", "baca": "jīshù", "id": "angka dasar" },
+  { "zh": "样本量", "baca": "yàngběnliàng", "id": "ukuran sampel" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ucapkan dan tulis dalam bahasa Mandarin.",
+   "items": [
+    "Naik 12 persen dibanding periode yang sama tahun lalu.",
+    "Turun tiga poin persen dibanding kuartal sebelumnya.",
+    "Daring menyumbang 68 persen dari total.",
+    "Biayanya naik hampir 30 persen.",
+    "Jumlahnya melebihi 120 juta."
+   ]
+  },
+  {
+   "prompt": "Berapa hasilnya? Tulis angkanya.",
+   "items": [
+    "[原来是100|Yuánlái shì 100]，[增加了两倍|zēngjiā le liǎng bèi]。",
+    "[原来是100|Yuánlái shì 100]，[增加到两倍|zēngjiā dào liǎng bèi]。",
+    "[原来是100|Yuánlái shì 100]，[翻了两番|fān le liǎng fān]。",
+    "[原来是58%|Yuánlái shì 58%]，[上升了十个百分点|shàngshēng le shí ge bǎifēndiǎn]。",
+    "[原价200|Yuánjià 200]，[打八折|dǎ bā zhé]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 同比 · 环比 · 持平 · 占 · 百分点.",
+   "items": [
+    "[今年三季度比去年三季度|Jīnnián sān jìdù bǐ qùnián sān jìdù] — [这是|zhè shì] ____ 。",
+    "[三季度比二季度|Sān jìdù bǐ èr jìdù] — [这是|zhè shì] ____ 。",
+    "[数字跟上个月一样|Shùzì gēn shàng ge yuè yíyàng]，[基本|jīběn] ____ 。",
+    "[出口|Chūkǒu] ____ [总额的三成|zǒng'é de sān chéng]。",
+    "[比例从58%升到68%|Bǐlì cóng 58% shēng dào 68%]，[上升了十个|shàngshēng le shí ge] ____ 。"
+   ]
+  },
+  {
+   "prompt": "Jelaskan grafik berikut dalam lima kalimat Mandarin (如图所示 → tren → puncak → 随后 → 总体来看).",
+   "items": [
+    "Penjualan Januari–Desember: naik terus dari Januari sampai Juli, puncak di Juli, turun perlahan sampai Oktober, naik lagi di Desember.",
+    "Jumlah pengguna aplikasi: datar tiga bulan pertama, melonjak tajam di April setelah promosi, turun pelan-pelan sesudahnya, akhir tahun tetap dua kali lipat awal tahun."
+   ]
+  },
+  {
+   "prompt": "Betulkan kesalahan angkanya.",
+   "items": [
+    "[比例从58%升到68%|Bǐlì cóng 58% shēng dào 68%]，[增长了百分之十|zēngzhǎng le bǎi fēn zhī shí]。",
+    "[一亿等于十亿印尼盾的十倍|Yí yì děngyú shí yì Yìnnídùn de shí bèi]。(hitung ulang: 一亿 = ?)",
+    "[打八折就是便宜百分之八十|Dǎ bā zhé jiùshì piányi bǎi fēn zhī bāshí]。",
+    "[增加了三倍就是变成三倍|Zēngjiā le sān bèi jiùshì biàn chéng sān bèi]。",
+    "[三成就是百分之三|Sān chéng jiùshì bǎi fēn zhī sān]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[值得注意的是|Zhídé zhùyì de shì]，[三季度环比几乎持平|sān jìdù huánbǐ jīhū chípíng]。",
+    "[利润率从百分之十八降到了百分之十四|Lìrùnlǜ cóng bǎi fēn zhī shíbā jiàng dào le bǎi fēn zhī shísì]。",
+    "[凡是涉及比例变化|Fánshì shèjí bǐlì biànhuà]，[一律写“百分点”|yílǜ xiě “bǎifēndiǎn”]。",
+    "[判断分期的唯一标准|Pànduàn fēnqī de wéiyī biāozhǔn]，[是一次性付款能便宜多少|shì yí cì xìng fùkuǎn néng piányi duōshao]。",
+    "[存款的作用不是赚钱|Cúnkuǎn de zuòyòng bú shì zhuàn qián]，[是让你在出事的时候不用借钱|shì ràng nǐ zài chū shì de shíhou búyòng jiè qián]。"
+   ]
+  }
+ ],
+ "answers": [
+  "[同比增长了百分之十二|Tóngbǐ zēngzhǎng le bǎi fēn zhī shí'èr]。 — [环比下降了三个百分点|Huánbǐ xiàjiàng le sān ge bǎifēndiǎn]。 — [线上占总额的百分之六十八|Xiànshàng zhàn zǒng'é de bǎi fēn zhī liùshíbā]。 — [成本涨了将近三成|Chéngběn zhǎng le jiāngjìn sān chéng]。 — [数量超过一点二亿|Shùliàng chāoguò yī diǎn èr yì]。",
+  "300 — 200 — 400 — 68% — 160",
+  "同比 — 环比 — 持平 — 占 — 百分点",
+  "Contoh 1: [如图所示|Rú tú suǒ shì]，[全年销量呈先升后降再回升的走势|quán nián xiāoliàng chéng xiān shēng hòu jiàng zài huíshēng de zǒushì]。[从一月到七月持续上升|Cóng yīyuè dào qīyuè chíxù shàngshēng]。[七月达到峰值|Qīyuè dádào fēngzhí]。[随后缓慢回落至十月|Suíhòu huǎnmàn huíluò zhì shíyuè]。[总体来看|Zǒngtǐ lái kàn]，[年底有所反弹|niándǐ yǒusuǒ fǎntán]。 — Contoh 2: [如图所示|Rú tú suǒ shì]，[用户数在推广后出现明显跳升|yònghùshù zài tuīguǎng hòu chūxiàn míngxiǎn tiàoshēng]。[前三个月基本持平|Qián sān ge yuè jīběn chípíng]。[四月大幅上升|Sìyuè dàfú shàngshēng]，[达到峰值|dádào fēngzhí]。[随后逐月小幅回落|Suíhòu zhú yuè xiǎofú huíluò]。[总体来看|Zǒngtǐ lái kàn]，[年末仍是年初的两倍|niánmò réng shì niánchū de liǎng bèi]。",
+  "Salah: itu naik sepuluh **poin persen**, bukan sepuluh persen — Salah: 一亿 = 100.000.000, sedangkan 十亿 = 1.000.000.000; jadi 十亿 yang sepuluh kali 一亿 — Salah: 八折 berarti membayar 80%, jadi diskonnya 20% — Benar untuk maknanya, tapi angkanya keliru: 增加了三倍 berarti menjadi **empat kali** semula — Salah: 三成 = 30%, bukan 3%",
+  "“Yang layak diperhatikan, kuartal ketiga dibanding kuartal sebelumnya nyaris datar.” — “Margin laba turun dari 18 persen ke 14 persen.” — “Setiap kali menyangkut perubahan proporsi, semuanya ditulis ‘poin persen’.” — “Satu-satunya ukuran menilai cicilan adalah bayar sekali penuh bisa lebih murah berapa.” — “Kegunaan tabungan bukan menghasilkan uang, melainkan membuatmu tidak perlu berutang saat ada masalah.”"
+ ],
+ "wave": "Buka satu berita ekonomi berbahasa Mandarin dan cari satu angka. Jawab kelima pertanyaan di halaman terakhir unit ini untuk angka itu: 同比还是环比 · 基数多少 · 绝对值还是比例 · 样本量 · 口径变过吗. Kalau beritanya tidak menjawab tiga di antaranya, itu bukan kesalahanmu membaca — itu memang beritanya yang tidak lengkap, dan sekarang kamu bisa melihatnya."
+}

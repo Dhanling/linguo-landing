@@ -1,0 +1,342 @@
+{
+ "title": "Bahasa yang melunakkan: menolak, mengeluh, menuntut",
+ "title_target": "恐怕不太合适 — Kǒngpà bú tài héshì",
+ "goal": "Menguasai lapisan penghalus bahasa Mandarin: 恐怕 dan 未免 untuk melunakkan kritik, 不见得 untuk meragukan tanpa membantah, 也不是不… untuk setengah setuju, serta cara menolak, mengeluh, dan menuntut tanpa merusak hubungan.",
+ "bekal": [
+  "melunakkan kabar buruk dan kritik: 恐怕, 未免, 有点儿",
+  "meragukan pernyataan orang tanpa membantahnya: 不见得, 未必",
+  "setengah setuju sebelum mengajukan syarat: 也不是不…，只是…",
+  "menolak permintaan tanpa mengatakan 不",
+  "kosakata negosiasi, tenggat, dan permintaan maaf"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Meminta perpanjangan tenggat kepada klien",
+   "intro": "Wang Li harus memberi tahu klien bahwa pekerjaannya tidak akan selesai tepat waktu. Perhatikan bahwa kata 不 hampir tidak muncul sama sekali di sepanjang dialog — dan bahwa kabar buruknya tetap tersampaikan dengan jelas.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[陈总|Chén zǒng]，[有件事我想提前跟您通个气|yǒu jiàn shì wǒ xiǎng tíqián gēn nín tōng ge qì]。", "id": "Pak Chen, ada satu hal yang ingin saya sampaikan lebih awal kepada Anda.", "literal": "Chen — direktur, ada — penggolong — perkara — saya — ingin — lebih awal — dengan — Anda — alirkan — penggolong — udara." },
+    { "speaker": "陈总:", "text": "[你说|Nǐ shuō]。", "id": "Silakan.", "literal": "kamu — bilang." },
+    { "speaker": "王丽:", "text": "[原定这周五交的第二版|Yuán dìng zhè zhōu wǔ jiāo de dì-èr bǎn]，[恐怕要往后挪两天|kǒngpà yào wǎng hòu nuó liǎng tiān]。", "id": "Versi kedua yang semula dijadwalkan diserahkan Jumat ini, sepertinya harus digeser mundur dua hari.", "literal": "semula — tetapkan — ini — minggu — lima — serahkan — punya — ke-dua — versi, khawatirnya — akan — ke — belakang — geser — dua — hari." },
+    { "speaker": "陈总:", "text": "[两天|Liǎng tiān]？[我们下周一要开评审会的|Wǒmen xià zhōu yī yào kāi píngshěnhuì de]。", "id": "Dua hari? Senin depan kami harus mengadakan rapat penilaian.", "literal": "dua — hari? kami — depan — minggu — satu — akan — buka — penilaian rapat — punya." },
+    { "speaker": "王丽:", "text": "[我明白|Wǒ míngbai]。[所以我今天就说|Suǒyǐ wǒ jīntiān jiù shuō]，[而不是周五再说|ér bú shì zhōu wǔ zài shuō]。[您看这样行不行|Nín kàn zhèyàng xíng bu xíng]：[周五先给您一版能用的|zhōu wǔ xiān gěi nín yì bǎn néng yòng de]，[周二再给完整版|zhōu èr zài gěi wánzhěng bǎn]。", "id": "Saya paham. Karena itu saya menyampaikannya hari ini, bukan menunggu Jumat baru bicara. Coba Anda lihat begini bisa atau tidak: Jumat saya berikan dulu satu versi yang sudah bisa dipakai, Selasa baru versi lengkapnya.", "literal": "saya — paham. jadi — saya — hari ini — langsung — bilang, dan — bukan — Jumat — baru — bilang. Anda — lihat — begini — boleh — tidak — boleh: Jumat — dulu — beri — Anda — satu — versi — bisa — pakai — punya, Selasa — baru — beri — lengkap — versi." },
+    { "speaker": "陈总:", "text": "[能用的版本是什么意思|Néng yòng de bǎnběn shì shénme yìsi]？[缺哪部分|Quē nǎ bùfen]？", "id": "Versi yang bisa dipakai itu maksudnya apa? Kurang bagian mana?", "literal": "bisa — pakai — punya — versi — adalah — apa — maksud? kurang — mana — bagian?" },
+    { "speaker": "王丽:", "text": "[主体全都有|Zhǔtǐ quán dōu yǒu]，[缺的是附录里的三张对比图|quē de shì fùlù lǐ de sān zhāng duìbǐtú]。[评审会上应该用不到|Píngshěnhuì shàng yīnggāi yòng bu dào]。", "id": "Bagian utamanya semua ada, yang kurang tiga bagan perbandingan di lampiran. Di rapat penilaian seharusnya tidak akan terpakai.", "literal": "badan utama — semua — semua — ada, kurang — punya — adalah — lampiran — dalam — punya — tiga — lembar — perbandingan gambar. penilaian rapat — atas — seharusnya — pakai — tidak — sampai." },
+    { "speaker": "陈总:", "text": "[你们这次的进度未免有点慢|Nǐmen zhè cì de jìndù wèimiǎn yǒudiǎn màn]。[上一版也推了三天|Shàng yì bǎn yě tuī le sān tiān]。", "id": "Kemajuan kalian kali ini agak terlalu lambat. Versi sebelumnya juga mundur tiga hari.", "literal": "kalian — ini — kali — punya — kemajuan — tak urung — sedikit — lambat. lalu — satu — versi — juga — dorong — sudah — tiga — hari." },
+    { "speaker": "王丽:", "text": "[这个批评我接受|Zhège pīpíng wǒ jiēshòu]。[不过说句实在的|Búguò shuō jù shízài de]，[两次延期都跟需求变更有关|liǎng cì yánqī dōu gēn xūqiú biàngēng yǒu guān]。[上一版是加了两个模块|Shàng yì bǎn shì jiā le liǎng ge mókuài]，[这一版是改了统计口径|zhè yì bǎn shì gǎi le tǒngjì kǒujìng]。", "id": "Kritik ini saya terima. Tapi kalau bicara jujur, kedua kemunduran itu berhubungan dengan perubahan kebutuhan. Versi lalu ada penambahan dua modul, versi ini ada perubahan cara penghitungan statistiknya.", "literal": "ini — kritik — saya — terima. namun — bilang — penggolong — nyata — punya, dua — kali — penundaan — semua — dengan — kebutuhan — perubahan — ada — hubungan. lalu — satu — versi — adalah — tambah — sudah — dua — penggolong — modul, ini — satu — versi — adalah — ubah — sudah — statistik — patokan." },
+    { "speaker": "陈总:", "text": "[……这倒也是|……Zhè dào yě shì]。", "id": "…Itu memang benar juga.", "literal": "…… ini — justru — juga — adalah." },
+    { "speaker": "王丽:", "text": "[以后需求有变|Yǐhòu xūqiú yǒu biàn]，[我们书面确认一次工期|wǒmen shūmiàn quèrèn yí cì gōngqī]，[您看可以吗|nín kàn kěyǐ ma]？[这样对双方都清楚|Zhèyàng duì shuāngfāng dōu qīngchu]。", "id": "Ke depan kalau kebutuhannya berubah, kita konfirmasi tenggatnya sekali secara tertulis, menurut Anda boleh? Begini lebih jelas bagi kedua pihak.", "literal": "nanti — kebutuhan — ada — ubah, kami — tertulis — konfirmasi — satu — kali — masa kerja, Anda — lihat — boleh — kah? begini — terhadap — dua pihak — semua — jelas." },
+    { "speaker": "陈总:", "text": "[可以|Kěyǐ]。[那周五那版你别耽误了|Nà zhōu wǔ nà bǎn nǐ bié dānwu le]。", "id": "Boleh. Kalau begitu versi Jumat itu jangan sampai kamu tunda.", "literal": "boleh. kalau begitu — Jumat — itu — versi — kamu — jangan — tertunda — sudah." },
+    { "speaker": "王丽:", "text": "[周五中午之前一定发到您邮箱|Zhōu wǔ zhōngwǔ zhīqián yídìng fā dào nín yóuxiāng]。", "id": "Sebelum Jumat siang pasti saya kirim ke kotak surel Anda.", "literal": "Jumat — tengah hari — sebelum — pasti — kirim — sampai — Anda — kotak surel." }
+   ],
+   "notes": [
+    "**恐怕 — “khawatirnya, sepertinya”.** Ini kata penghalus yang paling penting di seluruh unit. Ia menandai kabar buruk **sebelum** isinya keluar, sehingga pendengar sempat bersiap. Berbeda dari 害怕 “takut”: 恐怕 tidak menyatakan perasaan, melainkan meredam berita.",
+    "**通个气 — “memberi kabar awal”.** 【口】 Harfiahnya “mengalirkan udara”. Memberi tahu seseorang lebih dulu secara tidak resmi supaya ia tidak terkejut. Sangat khas budaya kerja Tiongkok, dan tidak punya padanan langsung dalam bahasa Indonesia.",
+    "**未免 — “agak terlalu…, tak urung”.** Menyampaikan kritik dengan menahan setengahnya. [未免有点慢|wèimiǎn yǒudiǎn màn] jauh lebih ringan daripada [太慢了|tài màn le]，tetapi tetap terdengar sebagai teguran. Selalu diikuti kata yang bernada negatif.",
+    "**有点儿 + kata sifat negatif.** Aturan yang sering dilupakan: 有点儿 hanya dipakai untuk hal yang **tidak diinginkan**. [有点儿贵|yǒudiǎnr guì] ✅, [有点儿便宜|yǒudiǎnr piányi] ❌ (kecuali kamu memang tidak menginginkannya murah). Untuk hal yang diinginkan pakai 一点儿 di belakang: [便宜一点儿|piányi yìdiǎnr]。",
+    "**说句实在的 — “kalau bicara jujur”.** Penanda wacana yang menyiapkan pendengar untuk pembelaan diri atau kritik balik. Saudaranya: [说句不好听的|shuō jù bù hǎotīng de] “maaf kalau tidak enak didengar”, [恕我直言|shù wǒ zhí yán] 【书】 “maafkan saya bicara terus terang”.",
+    "**这个批评我接受 — mengakui dulu, membantah kemudian.** Ini gerakan yang persis sama dengan rangka empat langkah di unit 1, tetapi dalam bentuk yang lebih tajam: menerima kritiknya secara terbuka membuat pembelaan berikutnya jauh lebih sulit ditolak.",
+    "**您看…行不行/可以吗 — mengubah usulan menjadi pertanyaan.** Rangka ini melunakkan usulan apa pun. Bahkan permintaan yang keras berubah menjadi ajakan berunding begitu diakhiri [您看可以吗|nín kàn kěyǐ ma]？",
+    "**⚠️ 别耽误了 — perhatikan siapa yang mengucapkannya.** Kalimat ini boleh diucapkan atasan atau klien kepada pelaksana, tetapi tidak sebaliknya. Ke arah atas, yang dipakai [麻烦您留意一下时间|máfan nín liúyì yíxià shíjiān] atau [到时候我再提醒您|dào shíhou wǒ zài tíxǐng nín]。"
+   ],
+   "grammars": [
+    {
+     "title": "Lapisan penghalus: dari paling lembut ke paling keras",
+     "body": [
+      "Dalam bahasa Indonesia kita melunakkan dengan “agak”, “kayaknya”, “mungkin”. Bahasa Mandarin punya alat yang jauh lebih banyak, dan tiap alat punya tempat duduk yang tetap dalam kalimat."
+     ],
+     "tables": [
+      {
+       "head": ["Alat", "Letak", "Contoh", "Kadar"],
+       "rows": [
+        ["[有点儿|yǒudiǎnr]", "sebelum kata sifat", "[有点儿麻烦|yǒudiǎnr máfan]", "paling lembut"],
+        ["[恐怕|kǒngpà]", "kepala klausa", "[恐怕来不及了|Kǒngpà láibují le]。", "lembut, kabar buruk"],
+        ["[不太|bú tài]", "sebelum kata sifat", "[不太合适|bú tài héshì]", "penolakan halus"],
+        ["[未免|wèimiǎn]", "sebelum 有点儿/太", "[未免太急了|wèimiǎn tài jí le]", "kritik tertahan"],
+        ["[不见得|bú jiàn de]", "sebelum predikat", "[不见得有用|bú jiàn de yǒuyòng]", "meragukan"],
+        ["[未必|wèibì]", "sama, 【书】", "[未必可行|wèibì kěxíng]", "meragukan 【书】"],
+        ["[实在|shízài]", "sebelum predikat", "[实在抽不出时间|shízài chōu bu chū shíjiān]", "penolakan tegas tapi sopan"],
+        ["[根本|gēnběn]", "sebelum sangkalan", "[根本不可能|gēnběn bù kěnéng]", "keras — hati-hati"]
+       ]
+      },
+      {
+       "head": ["Kalimat asli", "Versi halus", "Yang berubah"],
+       "rows": [
+        ["[你错了|Nǐ cuò le]。", "[这里可能有点儿出入|Zhèlǐ kěnéng yǒudiǎnr chūrù]。", "“salah” → “ada sedikit selisih”"],
+        ["[我不同意|Wǒ bù tóngyì]。", "[我有个不同的看法|Wǒ yǒu ge bùtóng de kànfǎ]。", "menolak → punya pandangan lain"],
+        ["[做不完|Zuò bu wán]。", "[恐怕要往后挪两天|Kǒngpà yào wǎng hòu nuó liǎng tiān]。", "tak bisa → perlu digeser"],
+        ["[太贵了|Tài guì le]。", "[价格上还有商量的余地吗|Jiàgé shàng hái yǒu shāngliang de yúdì ma]？", "keluhan → pertanyaan"],
+        ["[你没做|Nǐ méi zuò]。", "[这部分是不是还没来得及|Zhè bùfen shì bu shì hái méi láidejí]？", "tuduhan → dugaan"]
+       ]
+      }
+     ],
+     "after": [
+      "**Perhatikan pola di kolom kanan tabel kedua: hampir semua pelunakan bekerja dengan mengubah pernyataan menjadi pertanyaan atau dugaan.** Ini kunci seluruh unit. Kalau kamu hanya ingat satu hal, ingat ini.",
+      "⚠️ **根本 bukan penghalus.** Ia justru penguat sangkalan dan terdengar sangat keras: [我根本没说过|Wǒ gēnběn méi shuō guo] “saya sama sekali tidak pernah bilang”. Ia dimasukkan ke tabel supaya kamu tidak salah memakainya sebagai pelembut."
+     ]
+    },
+    {
+     "title": "也不是不… — setengah setuju sebelum mengajukan syarat",
+     "body": [
+      "Rangka penyangkalan ganda ini sangat khas bahasa Mandarin lisan dan hampir mustahil diterjemahkan mentah-mentah. Artinya kira-kira: “bukannya tidak bisa, cuma…”."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Contoh", "Maksudnya"],
+       "rows": [
+        ["也不是不 + V，只是…", "[也不是不能改|Yě bú shì bù néng gǎi]，[只是要重新测试|zhǐshì yào chóngxīn cèshì]。", "bisa, tapi ada harganya"],
+        ["不是不…，而是…", "[我不是不想帮|Wǒ bú shì bù xiǎng bāng]，[而是真的没时间|ér shì zhēn de méi shíjiān]。", "membetulkan tafsiran"],
+        ["…是…，就是…", "[东西好是好|Dōngxi hǎo shì hǎo]，[就是贵了点|jiùshì guì le diǎn]。", "mengakui lalu mengeluh"],
+        ["倒不是…，主要是…", "[倒不是钱的问题|Dào bú shì qián de wèntí]，[主要是时间|zhǔyào shì shíjiān]。", "memindahkan pokok masalah"],
+        ["不是我不…，实在是…", "[不是我不帮|Bú shì wǒ bù bāng]，[实在是权限不够|shízài shì quánxiàn bú gòu]。", "menolak dengan alasan di luar kendali"]
+       ]
+      }
+     ],
+     "after": [
+      "**Kelima rangka ini adalah bahasa negosiasi.** Semuanya berkata “aku tidak menolakmu, aku sedang menyebutkan harganya”. Dipakai dengan tepat, ia mengubah penolakan menjadi tawar-menawar — dan tawar-menawar jauh lebih mudah diselesaikan daripada penolakan.",
+      "**Perhatikan bahwa semuanya punya bagian kedua.** Rangka ini tidak boleh berhenti di tengah: [也不是不能改|Yě bú shì bù néng gǎi] tanpa lanjutan membuat lawan bicara mengira kamu setuju penuh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Menolak permintaan teman",
+   "intro": "Xiao Zhou meminta Wang Li menjadi penjamin pinjaman. Ini permintaan yang berat, dan menolaknya bisa merusak persahabatan. Perhatikan bahwa Wang Li menolak dengan tuntas tanpa sekali pun mengucapkan 不行.",
+   "lines": [
+    { "speaker": "小周:", "text": "[丽姐|Lì jiě]，[有件事想麻烦你|yǒu jiàn shì xiǎng máfan nǐ]，[但你别有压力|dàn nǐ bié yǒu yālì]。", "id": "Kak Li, ada satu hal yang ingin aku minta tolong, tapi jangan merasa tertekan ya.", "literal": "Li — kakak, ada — penggolong — perkara — ingin — merepotkan — kamu, tapi — kamu — jangan — ada — tekanan." },
+    { "speaker": "王丽:", "text": "[你说吧|Nǐ shuō ba]。", "id": "Bilang saja.", "literal": "kamu — bilang — lah." },
+    { "speaker": "小周:", "text": "[我想贷一笔款开店|Wǒ xiǎng dài yì bǐ kuǎn kāi diàn]，[银行说需要一个担保人|yínháng shuō xūyào yí ge dānbǎorén]。", "id": "Aku mau mengambil pinjaman untuk buka toko, banknya bilang perlu satu penjamin.", "literal": "saya — ingin — pinjam — satu — penggolong — dana — buka — toko, bank — bilang — perlu — satu — penggolong — penjamin — orang." },
+    { "speaker": "王丽:", "text": "[……担保人|……Dānbǎorén]。[金额多少|Jīn'é duōshao]？", "id": "…Penjamin. Jumlahnya berapa?", "literal": "…… penjamin. jumlah uang — berapa?" },
+    { "speaker": "小周:", "text": "[三十万|Sānshí wàn]，[三年还清|sān nián huán qīng]。", "id": "Tiga ratus ribu, dilunasi dalam tiga tahun.", "literal": "tiga puluh — puluh ribu, tiga — tahun — kembalikan — bersih." },
+    { "speaker": "王丽:", "text": "[小周|Xiǎo Zhōu]，[我先说一句心里话|wǒ xiān shuō yí jù xīnlǐhuà]：[我很想帮你|wǒ hěn xiǎng bāng nǐ]，[这个我不骗你|zhège wǒ bù piàn nǐ]。[但担保这件事|Dàn dānbǎo zhè jiàn shì]，[我恐怕做不了|wǒ kǒngpà zuò bu liǎo]。", "id": "Xiao Zhou, aku bicara dari hati dulu: aku sangat ingin membantumu, ini aku tidak berbohong. Tapi soal penjaminan, sepertinya aku tidak bisa.", "literal": "Xiao — Zhou, saya — dulu — bilang — satu — penggolong — dalam hati — kata: saya — sangat — ingin — bantu — kamu, ini — saya — tidak — bohongi — kamu. tapi — menjamin — ini — penggolong — perkara, saya — khawatirnya — buat — tidak — sanggup." },
+    { "speaker": "小周:", "text": "[是因为担心我还不上吗|Shì yīnwèi dānxīn wǒ huán bu shàng ma]？", "id": "Apa karena khawatir aku tidak sanggup melunasinya?", "literal": "adalah — karena — khawatir — saya — kembalikan — tidak — naik — kah?" },
+    { "speaker": "王丽:", "text": "[不是|Bú shì]。[我不是不信你|Wǒ bú shì bú xìn nǐ]，[而是我家的房贷也还在还|ér shì wǒ jiā de fángdài yě hái zài huán]。[我做担保|Wǒ zuò dānbǎo]，[等于把两家人的风险绑在一起|děngyú bǎ liǎng jiā rén de fēngxiǎn bǎng zài yìqǐ]。[这个我承担不起|Zhège wǒ chéngdān bu qǐ]。", "id": "Bukan. Aku bukan tidak percaya padamu, melainkan cicilan rumah keluargaku juga masih berjalan. Kalau aku jadi penjamin, sama saja mengikat risiko dua keluarga jadi satu. Ini aku tidak sanggup memikulnya.", "literal": "bukan. saya — bukan — adalah — tidak — percaya — kamu, melainkan — saya — rumah — punya — KPR — juga — masih — sedang — kembalikan. saya — buat — jaminan, sama dengan — ambil — dua — penggolong — orang — punya — risiko — ikat — di — bersama. ini — saya — pikul — tidak — bangkit." },
+    { "speaker": "小周:", "text": "[我理解|Wǒ lǐjiě]……[是我考虑得不周到|shì wǒ kǎolǜ de bù zhōudào]。", "id": "Aku paham… akulah yang kurang matang memikirkannya.", "literal": "saya — paham…… adalah — saya — pertimbangkan — secara — tidak — menyeluruh." },
+    { "speaker": "王丽:", "text": "[别这么说|Bié zhème shuō]。[担保这事儿|Dānbǎo zhè shìr]，[说实话谁都不该轻易答应|shuō shíhuà shéi dōu bù gāi qīngyì dāying]，[包括亲兄弟|bāokuò qīn xiōngdì]。[但别的忙我能帮|Dàn bié de máng wǒ néng bāng]：[开店的执照流程我熟|kāi diàn de zhízhào liúchéng wǒ shú]，[前期的账我可以帮你做三个月|qiánqī de zhàng wǒ kěyǐ bāng nǐ zuò sān ge yuè]。", "id": "Jangan bilang begitu. Soal penjaminan ini, jujur saja siapa pun tidak seharusnya menyanggupinya dengan gampang, termasuk kepada saudara kandung. Tapi bantuan lain aku bisa: alur perizinan buka toko aku hafal, pembukuan tahap awal bisa aku bantu tiga bulan.", "literal": "jangan — begini — bilang. menjamin — ini — perkara, bilang — kata jujur — siapa — pun — tidak — seharusnya — mudah — menyanggupi, termasuk — kandung — saudara. tapi — lain — punya — bantuan — saya — bisa — bantu: buka — toko — punya — izin — alur — saya — akrab, tahap awal — punya — pembukuan — saya — bisa — bantu — kamu — buat — tiga — penggolong — bulan." },
+    { "speaker": "小周:", "text": "[这个反而更实在|Zhège fǎn'ér gèng shízài]。[谢谢丽姐|Xièxie Lì jiě]。", "id": "Ini justru malah lebih nyata. Terima kasih Kak Li.", "literal": "ini — sebaliknya — lebih — nyata. terima kasih — Li — kakak." },
+    { "speaker": "王丽:", "text": "[还有|Hái yǒu]，[你去银行之前|nǐ qù yínháng zhīqián]，[先把三年的现金流做一遍|xiān bǎ sān nián de xiànjīnliú zuò yí biàn]。[做完你可能会发现|Zuò wán nǐ kěnéng huì fāxiàn]，[你需要的其实不是三十万|nǐ xūyào de qíshí bú shì sānshí wàn]。", "id": "Lagi pula, sebelum kamu ke bank, susun dulu arus kas tiga tahun sekali jalan. Setelah selesai kamu mungkin akan menemukan bahwa yang kamu butuhkan sebenarnya bukan tiga ratus ribu.", "literal": "masih — ada, kamu — pergi — bank — sebelum, dulu — ambil — tiga — tahun — punya — arus kas — buat — satu — kali. buat — selesai — kamu — mungkin — akan — menemukan, kamu — perlu — punya — sebenarnya — bukan — tiga puluh — puluh ribu." }
+   ],
+   "notes": [
+    "**Susunan penolakan yang berhasil ada empat keping**, dan Wang Li memakai keempatnya berurutan: (1) menyatakan keinginan membantu itu tulus, (2) menolak dengan 恐怕 + pelengkap kemungkinan, (3) menyebut alasan yang **di luar hubungan kalian**, (4) menawarkan bantuan lain yang nyata. Tanpa keping keempat, penolakan tetap terasa sebagai penolakan.",
+    "**说句心里话 — “bicara dari hati”.** Penanda yang menaikkan bobot kalimat berikutnya. Saudaranya: 说实话 “sejujurnya”, 老实说 “terus terang”, 不瞒你说 “tak usah kusembunyikan”.",
+    "**我不是不信你，而是…** Rangka unit 1 muncul lagi, dan di sinilah ia paling berguna: menolak sambil membuang tafsiran yang paling menyakitkan (“kamu tidak percaya padaku”) sebelum lawan bicara sempat memikirkannya.",
+    "**承担不起 — pelengkap kemungkinan dengan 起.** 起 di sini berarti “mampu menanggung (biaya/beban)”: 买不起 tak mampu beli, 住不起 tak mampu tinggal, 输不起 tak sanggup kalah. Berbeda dari 不能 yang berarti “tidak boleh”.",
+    "**做不了 vs 不能做 vs 不做.** 做不了 “tidak sanggup melakukannya” (kemampuan/keadaan), 不能做 “tidak boleh melakukannya” (izin), 不做 “tidak melakukannya” (kehendak). Menolak dengan 做不了 jauh lebih lembut karena ia menunjuk keadaan, bukan kehendak.",
+    "**谁都不该… — “siapa pun tidak seharusnya…”.** Menggeneralisasi penolakan sehingga tidak terasa pribadi. Alat yang sangat halus: ia berkata “ini bukan tentang kamu”.",
+    "**反而 — “justru malah”.** Menandai hasil yang berlawanan dengan dugaan. [这个反而更实在|Zhège fǎn'ér gèng shízài] — tawaran pengganti itu malah lebih berguna daripada yang diminta. Letaknya sesudah pokok kalimat.",
+    "**⚠️ Menawarkan bantuan pengganti bukan basa-basi.** Dalam budaya kerja dan pertemanan Tiongkok, penolakan yang tidak diiringi tawaran pengganti dianggap menutup pintu. Kalau kamu tidak punya penggantinya, setidaknya tawarkan waktu: [有什么我能帮上的|Yǒu shénme wǒ néng bāng shàng de]，[随时说|suíshí shuō]。"
+   ],
+   "grammars": [
+    {
+     "title": "Menolak tanpa mengucapkan 不",
+     "body": [
+      "Delapan bentuk penolakan, disusun dari yang paling lembut sampai yang paling jelas. Semuanya sopan; yang berbeda adalah seberapa banyak ruang yang mereka sisakan."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Ruang tersisa"],
+       "rows": [
+        ["menunda", "[我再想想|Wǒ zài xiǎngxiang]。", "banyak — sering berarti tidak"],
+        ["menanyakan syarat", "[得看时间安排|Děi kàn shíjiān ānpái]。", "banyak"],
+        ["恐怕 + pelengkap", "[恐怕做不了|Kǒngpà zuò bu liǎo]。", "sedikit — sudah jelas menolak"],
+        ["不太 + kata sifat", "[不太方便|Bú tài fāngbiàn]。", "sedikit"],
+        ["实在 + sangkalan", "[实在抽不出时间|Shízài chōu bu chū shíjiān]。", "hampir tidak ada"],
+        ["alasan di luar diri", "[公司规定不允许|Gōngsī guīdìng bù yǔnxǔ]。", "tidak ada — tapi tidak melukai"],
+        ["menawarkan pengganti", "[这个我帮不上|Zhège wǒ bāng bu shàng]，[但…|dàn…]", "tidak ada — hubungan terjaga"],
+        ["menolak langsung", "[不行|Bù xíng]。", "tidak ada — hati-hati"]
+       ]
+      },
+      {
+       "head": ["⚠️ Yang perlu diketahui pendengar Indonesia", "Kalimat", "Artinya sering"],
+       "rows": [
+        ["再说吧", "[以后再说吧|Yǐhòu zài shuō ba]。", "tidak, tapi sopan"],
+        ["有机会的话", "[有机会的话一起吃饭|Yǒu jīhuì dehuà yìqǐ chī fàn]。", "basa-basi perpisahan"],
+        ["我尽量", "[我尽量|Wǒ jǐnliàng]。", "belum tentu; bukan janji"],
+        ["看情况", "[看情况吧|Kàn qíngkuàng ba]。", "belum diputuskan, condong tidak"],
+        ["研究研究", "[我们研究研究|Wǒmen yánjiū yánjiū]。", "ditunda tanpa batas"]
+       ]
+      }
+     ],
+     "after": [
+      "**Tabel kedua berlaku dua arah.** Ia berguna bukan hanya supaya kamu bisa memakainya, melainkan supaya kamu bisa **membacanya** ketika ditujukan kepadamu. Banyak orang asing menunggu berminggu-minggu atas jawaban [我们研究研究|Wǒmen yánjiū yánjiū] yang sebenarnya sudah selesai sejak hari itu.",
+      "**Kalau kamu benar-benar butuh jawaban pasti, tanyakan tenggatnya, bukan jawabannya**: [大概什么时候能有结果|Dàgài shénme shíhou néng yǒu jiéguǒ]？ Pertanyaan ini sopan, tetapi tidak bisa dijawab dengan basa-basi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta maaf: enam kadar",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Indonesia hampir selalu memakai satu kata: “maaf”. Bahasa Mandarin membedakan kadar dengan cukup tegas, dan memakai yang terlalu berat justru membuat orang tidak nyaman — seolah kesalahannya lebih besar daripada yang mereka kira." },
+    { "type": "tabel",
+      "head": ["Kadar", "Mandarin", "Dipakai untuk"],
+      "rows": [
+       ["1 — ringan", "[不好意思|Bù hǎoyìsi]。", "menyenggol orang, terlambat lima menit"],
+       ["2 — biasa", "[对不起|Duìbuqǐ]。", "kesalahan kecil yang jelas"],
+       ["3 — resmi", "[很抱歉|Hěn bàoqiàn]。", "surel, layanan pelanggan"],
+       ["4 — resmi berat", "[非常抱歉|Fēicháng bàoqiàn]，[给您添麻烦了|gěi nín tiān máfan le]。", "merepotkan klien"],
+       ["5 — mengakui salah", "[是我的疏忽|Shì wǒ de shūhu]。", "mengambil tanggung jawab"],
+       ["6 — paling berat", "[这次是我们的责任|Zhè cì shì wǒmen de zérèn]，[我们会负责到底|wǒmen huì fùzé dào dǐ]。", "kesalahan besar organisasi"]
+      ] },
+    { "type": "sub", "text": "⚠️ Permintaan maaf yang berhasil selalu punya tiga bagian" },
+    { "type": "list", "items": [
+     "**Menyebut kesalahannya dengan tepat.** [这次的数据我核对得不够仔细|Zhè cì de shùjù wǒ héduì de bú gòu zǐxì]。 Bukan “maaf atas ketidaknyamanannya”, melainkan apa persisnya yang salah.",
+     "**Menyebut akibatnya bagi lawan bicara.** [让您多花了一天时间|Ràng nín duō huā le yì tiān shíjiān]。 Ini yang paling sering dilewatkan, dan justru bagian ini yang membuat maafnya terasa sungguh-sungguh.",
+     "**Menyebut apa yang berubah.** [以后我会在提交前请人复核|Yǐhòu wǒ huì zài tíjiāo qián qǐng rén fùhé]。 Tanpa bagian ini, permintaan maaf terdengar seperti upacara."
+    ] },
+    { "type": "kotak", "title": "Kalimat yang justru memperburuk keadaan", "items": [
+     "[如果给您带来不便|Rúguǒ gěi nín dàilái bú biàn]，[我很抱歉|wǒ hěn bàoqiàn]。 — “Kalau” di depan membuatnya terdengar seperti kamu meragukan bahwa ada masalah.",
+     "[这不是我的问题|Zhè bú shì wǒ de wèntí]，[但是…|dànshì…] — Membela diri sebelum meminta maaf membatalkan maafnya.",
+     "[我已经说了对不起了|Wǒ yǐjīng shuō le duìbuqǐ le]。 — Menagih penerimaan maaf mengubah kamu dari pihak yang salah menjadi pihak yang menuntut."
+    ] }
+   ]
+  },
+  {
+   "title": "Kosakata negosiasi dan tenggat",
+   "blocks": [
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Contoh"],
+      "rows": [
+       ["[工期|gōngqī]", "masa pengerjaan", "[工期紧|gōngqī jǐn] tenggatnya ketat"],
+       ["[进度|jìndù]", "kemajuan", "[进度落后|jìndù luòhòu] tertinggal"],
+       ["[延期|yánqī]", "penundaan", "[申请延期|shēnqǐng yánqī]"],
+       ["[提交|tíjiāo]", "menyerahkan 【书】", "[提交材料|tíjiāo cáiliào]"],
+       ["[需求|xūqiú]", "kebutuhan (proyek)", "[需求变更|xūqiú biàngēng]"],
+       ["[版本|bǎnběn]", "versi", "[第二版|dì-èr bǎn]"],
+       ["[评审|píngshěn]", "penilaian, review", "[评审会|píngshěnhuì]"],
+       ["[余地|yúdì]", "ruang gerak", "[还有商量的余地|hái yǒu shāngliang de yúdì]"],
+       ["[让步|ràngbù]", "mengalah", "[各让一步|gè ràng yí bù]"],
+       ["[底线|dǐxiàn]", "batas terbawah", "[这是我们的底线|Zhè shì wǒmen de dǐxiàn]"],
+       ["[双方|shuāngfāng]", "kedua pihak", "[对双方都好|duì shuāngfāng dōu hǎo]"],
+       ["[书面|shūmiàn]", "tertulis", "[书面确认|shūmiàn quèrèn]"],
+       ["[担保|dānbǎo]", "menjamin; jaminan", "[担保人|dānbǎorén]"],
+       ["[贷款|dàikuǎn]", "pinjaman", "[申请贷款|shēnqǐng dàikuǎn]"],
+       ["[现金流|xiànjīnliú]", "arus kas", "[做现金流|zuò xiànjīnliú]"],
+       ["[承担|chéngdān]", "memikul (tanggung jawab)", "[承担风险|chéngdān fēngxiǎn]"]
+      ] },
+    { "type": "sub", "text": "Rangka meminta perpanjangan yang biasanya diterima" },
+    { "type": "p", "text": "Urutannya sama seperti yang dipakai Wang Li di dialog 1, dan bisa langsung disalin: (1) beri tahu **lebih awal**, dan katakan bahwa kamu sengaja memberitahu lebih awal; (2) sebut tenggat baru yang **pasti**, bukan “secepatnya”; (3) tawarkan **versi sebagian** untuk tenggat lama; (4) sebutkan apa yang kamu ubah supaya tidak terulang. Yang paling menentukan justru bagian pertama: keterlambatan yang diberitahukan seminggu sebelumnya adalah masalah jadwal, keterlambatan yang diberitahukan pada hari-H adalah masalah kepercayaan." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "恐怕", "baca": "kǒngpà", "id": "khawatirnya, sepertinya" },
+  { "zh": "未免", "baca": "wèimiǎn", "id": "agak terlalu, tak urung" },
+  { "zh": "不见得", "baca": "bú jiàn de", "id": "belum tentu 【口】" },
+  { "zh": "未必", "baca": "wèibì", "id": "belum tentu 【书】" },
+  { "zh": "实在", "baca": "shízài", "id": "sungguh-sungguh; nyata" },
+  { "zh": "根本", "baca": "gēnběn", "id": "sama sekali (penguat sangkalan)" },
+  { "zh": "通气", "baca": "tōng qì", "id": "memberi kabar awal 【口】" },
+  { "zh": "原定", "baca": "yuán dìng", "id": "semula dijadwalkan" },
+  { "zh": "挪", "baca": "nuó", "id": "menggeser" },
+  { "zh": "评审会", "baca": "píngshěnhuì", "id": "rapat penilaian" },
+  { "zh": "完整", "baca": "wánzhěng", "id": "lengkap, utuh" },
+  { "zh": "主体", "baca": "zhǔtǐ", "id": "bagian utama" },
+  { "zh": "附录", "baca": "fùlù", "id": "lampiran" },
+  { "zh": "对比图", "baca": "duìbǐtú", "id": "bagan perbandingan" },
+  { "zh": "进度", "baca": "jìndù", "id": "kemajuan" },
+  { "zh": "批评", "baca": "pīpíng", "id": "kritik; mengkritik" },
+  { "zh": "接受", "baca": "jiēshòu", "id": "menerima" },
+  { "zh": "延期", "baca": "yánqī", "id": "penundaan" },
+  { "zh": "需求", "baca": "xūqiú", "id": "kebutuhan" },
+  { "zh": "变更", "baca": "biàngēng", "id": "perubahan 【书】" },
+  { "zh": "模块", "baca": "mókuài", "id": "modul" },
+  { "zh": "口径", "baca": "kǒujìng", "id": "patokan penghitungan" },
+  { "zh": "书面", "baca": "shūmiàn", "id": "tertulis" },
+  { "zh": "确认", "baca": "quèrèn", "id": "mengonfirmasi" },
+  { "zh": "工期", "baca": "gōngqī", "id": "masa pengerjaan" },
+  { "zh": "双方", "baca": "shuāngfāng", "id": "kedua pihak" },
+  { "zh": "耽误", "baca": "dānwu", "id": "menunda, membuat tertunda" },
+  { "zh": "邮箱", "baca": "yóuxiāng", "id": "kotak surel" },
+  { "zh": "压力", "baca": "yālì", "id": "tekanan" },
+  { "zh": "贷款", "baca": "dàikuǎn", "id": "pinjaman" },
+  { "zh": "担保人", "baca": "dānbǎorén", "id": "penjamin" },
+  { "zh": "金额", "baca": "jīn'é", "id": "jumlah uang" },
+  { "zh": "还清", "baca": "huán qīng", "id": "melunasi" },
+  { "zh": "心里话", "baca": "xīnlǐhuà", "id": "kata dari hati" },
+  { "zh": "房贷", "baca": "fángdài", "id": "cicilan rumah" },
+  { "zh": "绑", "baca": "bǎng", "id": "mengikat" },
+  { "zh": "承担", "baca": "chéngdān", "id": "memikul" },
+  { "zh": "周到", "baca": "zhōudào", "id": "matang, menyeluruh" },
+  { "zh": "轻易", "baca": "qīngyì", "id": "dengan gampang" },
+  { "zh": "包括", "baca": "bāokuò", "id": "termasuk" },
+  { "zh": "执照", "baca": "zhízhào", "id": "izin usaha" },
+  { "zh": "前期", "baca": "qiánqī", "id": "tahap awal" },
+  { "zh": "反而", "baca": "fǎn'ér", "id": "justru malah" },
+  { "zh": "现金流", "baca": "xiànjīnliú", "id": "arus kas" },
+  { "zh": "抱歉", "baca": "bàoqiàn", "id": "menyesal, maaf 【书】" },
+  { "zh": "疏忽", "baca": "shūhu", "id": "kelalaian" },
+  { "zh": "复核", "baca": "fùhé", "id": "memeriksa ulang" },
+  { "zh": "余地", "baca": "yúdì", "id": "ruang gerak" },
+  { "zh": "让步", "baca": "ràngbù", "id": "mengalah" },
+  { "zh": "底线", "baca": "dǐxiàn", "id": "batas terbawah" },
+  { "zh": "尽量", "baca": "jǐnliàng", "id": "sebisa mungkin" },
+  { "zh": "允许", "baca": "yǔnxǔ", "id": "mengizinkan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lunakkan kalimat berikut. Pakai 恐怕 · 不太 · 有点儿 · 未免 · 是不是.",
+   "items": [
+    "[你错了|Nǐ cuò le]。",
+    "[这个价格太贵了|Zhège jiàgé tài guì le]。",
+    "[我们做不完|Wǒmen zuò bu wán]。",
+    "[你的要求太多了|Nǐ de yāoqiú tài duō le]。",
+    "[你没交报告|Nǐ méi jiāo bàogào]。"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan rangka 也不是不…，只是… atau 不是…，而是….",
+   "items": [
+    "Bisa saja diubah, cuma harus diuji ulang.",
+    "Saya bukan tidak mau datang, melainkan hari itu ada rapat.",
+    "Bukannya tidak murah, cuma kualitasnya tidak terjamin.",
+    "Bukan soal uangnya, terutama soal waktunya.",
+    "Bukan saya tidak mau membantu, sungguh wewenang saya tidak cukup."
+   ]
+  },
+  {
+   "prompt": "Baca dan tafsirkan: apa arti sebenarnya kalimat-kalimat ini?",
+   "items": [
+    "[我们研究研究|Wǒmen yánjiū yánjiū]。",
+    "[有机会一起吃饭|Yǒu jīhuì yìqǐ chī fàn]。",
+    "[我尽量|Wǒ jǐnliàng]。",
+    "[这个恐怕不太合适|Zhège kǒngpà bú tài héshì]。",
+    "[以后再说吧|Yǐhòu zài shuō ba]。"
+   ]
+  },
+  {
+   "prompt": "Tulis penolakan empat keping (ingin membantu → 恐怕 + pelengkap → alasan di luar hubungan → tawaran pengganti).",
+   "items": [
+    "Temanmu memintamu meminjamkan mobil untuk perjalanan tiga hari.",
+    "Rekan kerjamu memintamu mengambil alih presentasinya besok."
+   ]
+  },
+  {
+   "prompt": "Susun permintaan maaf tiga bagian (kesalahannya → akibatnya → apa yang berubah).",
+   "items": [
+    "Kamu mengirim laporan dengan angka bulan lalu, bukan bulan ini.",
+    "Kamu lupa memberitahukan perubahan jam rapat kepada dua orang."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Kemajuan kali ini agak terlalu lambat.",
+    "Soal ini sepertinya saya tidak sanggup melakukannya.",
+    "Belum tentu berguna, tapi boleh dicoba dulu.",
+    "Masih ada ruang untuk berunding soal harganya?",
+    "Kalau kebutuhannya berubah, kita konfirmasi tenggatnya secara tertulis."
+   ]
+  }
+ ],
+ "answers": [
+  "[这里可能有点儿出入|Zhèlǐ kěnéng yǒudiǎnr chūrù]。 — [价格上还有商量的余地吗|Jiàgé shàng hái yǒu shāngliang de yúdì ma]？ — [恐怕要往后挪几天|Kǒngpà yào wǎng hòu nuó jǐ tiān]。 — [您的要求未免有点多|Nín de yāoqiú wèimiǎn yǒudiǎn duō]。 — [报告是不是还没来得及交|Bàogào shì bu shì hái méi láidejí jiāo]？",
+  "[也不是不能改|Yě bú shì bù néng gǎi]，[只是要重新测试|zhǐshì yào chóngxīn cèshì]。 — [我不是不想来|Wǒ bú shì bù xiǎng lái]，[而是那天有会|ér shì nà tiān yǒu huì]。 — [也不是不便宜|Yě bú shì bù piányi]，[只是质量没保证|zhǐshì zhìliàng méi bǎozhèng]。 — [倒不是钱的问题|Dào bú shì qián de wèntí]，[主要是时间|zhǔyào shì shíjiān]。 — [不是我不帮|Bú shì wǒ bù bāng]，[实在是权限不够|shízài shì quánxiàn bú gòu]。",
+  "Ditunda tanpa batas; hampir selalu berarti tidak — Basa-basi perpisahan, bukan ajakan sungguhan — Bukan janji; kemungkinannya terbuka ke dua arah — Penolakan yang sudah jelas, meski terdengar lembut — Penolakan sopan; “nanti” di sini jarang benar-benar datang",
+  "Contoh 1: [我特别想帮你|Wǒ tèbié xiǎng bāng nǐ]。[但车这几天恐怕借不了|Dàn chē zhè jǐ tiān kǒngpà jiè bu liǎo]，[保险上只保了我一个驾驶人|bǎoxiǎn shàng zhǐ bǎo le wǒ yí ge jiàshǐrén]。[要不我帮你查一下租车|Yàobù wǒ bāng nǐ chá yíxià zū chē]？[我有个熟悉的店|Wǒ yǒu ge shúxī de diàn]。 — Contoh 2: [我很想替你顶一下|Wǒ hěn xiǎng tì nǐ dǐng yíxià]。[但明天这个我恐怕接不了|Dàn míngtiān zhège wǒ kǒngpà jiē bu liǎo]，[同一时间我要陪客户开评审会|tóng yì shíjiān wǒ yào péi kèhù kāi píngshěnhuì]。[不过今晚我可以帮你过一遍稿子|Búguò jīnwǎn wǒ kěyǐ bāng nǐ guò yí biàn gǎozi]，[把可能被问到的问题列出来|bǎ kěnéng bèi wèn dào de wèntí liè chūlái]。",
+  "Contoh 1: [报告里的数字我用成了上个月的|Bàogào lǐ de shùzì wǒ yòng chéng le shàng ge yuè de]。[让您在会上多解释了一轮|Ràng nín zài huì shàng duō jiěshì le yì lún]。[以后提交前我会请同事复核一遍数据来源|Yǐhòu tíjiāo qián wǒ huì qǐng tóngshì fùhé yí biàn shùjù láiyuán]。 — Contoh 2: [会议时间改了|Huìyì shíjiān gǎi le]，[我漏通知了两位同事|wǒ lòu tōngzhī le liǎng wèi tóngshì]。[他们白等了半个小时|Tāmen bái děng le bàn ge xiǎoshí]。[以后改时间我会直接在群里发|Yǐhòu gǎi shíjiān wǒ huì zhíjiē zài qún lǐ fā]，[并且逐个确认|bìngqiě zhúgè quèrèn]。",
+  "[这次的进度未免有点慢|Zhè cì de jìndù wèimiǎn yǒudiǎn màn]。 — [这件事我恐怕做不了|Zhè jiàn shì wǒ kǒngpà zuò bu liǎo]。 — [不见得有用|Bú jiàn de yǒuyòng]，[但可以先试试|dàn kěyǐ xiān shìshi]。 — [价格上还有商量的余地吗|Jiàgé shàng hái yǒu shāngliang de yúdì ma]？ — [如果需求有变|Rúguǒ xūqiú yǒu biàn]，[我们书面确认一次工期|wǒmen shūmiàn quèrèn yí cì gōngqī]。"
+ ],
+ "wave": "Ingat satu kali kamu pernah menolak sesuatu dan hubungannya jadi canggung sesudahnya. Tulis ulang penolakan itu dalam bahasa Mandarin dengan empat keping dari unit ini. Lalu bandingkan: bagian mana yang dulu hilang? Pada hampir semua orang, jawabannya keping keempat — tawaran pengganti."
+}

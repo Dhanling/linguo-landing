@@ -1,0 +1,341 @@
+{
+ "title": "Menyorot satu bagian kalimat",
+ "title_target": "连他都不知道 — Lián tā dōu bù zhīdào",
+ "goal": "Memindahkan penekanan ke bagian kalimat yang kamu maksud: 连…都/也 untuk hal yang paling tak terduga, 甚至 untuk menaikkan kadar, 是…的 untuk menyorot keterangan kejadian lampau, dan 就是…也 untuk membantah pengandaian lawan bicara.",
+ "bekal": [
+  "menyorot hal yang paling tak terduga: 连…都/也",
+  "menaikkan kadar sampai puncaknya: 甚至, 尤其, 特别是",
+  "menyorot siapa, kapan, di mana, dan bagaimana sebuah kejadian lampau: 是…的",
+  "menegaskan dengan mengulang kata kerjanya: 想都没想, 看也不看",
+  "kosakata pelayanan, keluhan, dan penyelesaian masalah"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Menelepon layanan pelanggan",
+   "intro": "Andi menelepon layanan pelanggan operator telepon karena tagihannya membengkak. Perhatikan bahwa hampir setiap kalimat penting di sini memakai satu alat penyorot — dan bahwa petugasnya membalas dengan alat yang sama.",
+   "lines": [
+    { "speaker": "客服:", "text": "[您好|Nín hǎo]，[请问有什么可以帮您|qǐngwèn yǒu shénme kěyǐ bāng nín]？", "id": "Halo, ada yang bisa saya bantu?", "literal": "Anda — baik, boleh tanya — ada — apa — bisa — bantu — Anda?" },
+    { "speaker": "安迪:", "text": "[我这个月的账单是三百八|Wǒ zhège yuè de zhàngdān shì sān bǎi bā]，[比上个月多了两百|bǐ shàng ge yuè duō le liǎng bǎi]。[我连套餐都没换过|Wǒ lián tàocān dōu méi huàn guo]。", "id": "Tagihan saya bulan ini 380, lebih banyak 200 dari bulan lalu. Paket saja saya tidak pernah ganti.", "literal": "saya — ini — bulan — punya — tagihan — adalah — tiga — ratus — delapan, dibanding — lalu — bulan — lebih — sudah — dua — ratus. saya — bahkan — paket — pun — tidak — ganti — pernah." },
+    { "speaker": "客服:", "text": "[我帮您查一下|Wǒ bāng nín chá yíxià]……[先生|Xiānsheng]，[系统显示您本月使用了三十八个G的流量|xìtǒng xiǎnshì nín běn yuè shǐyòng le sānshíbā ge G de liúliàng]。", "id": "Saya cek dulu… Bapak, sistem menunjukkan bulan ini Anda memakai 38 GB kuota.", "literal": "saya — bantu — Anda — periksa — sebentar…… tuan, sistem — menampilkan — Anda — ini — bulan — pakai — sudah — tiga puluh delapan — penggolong — G — punya — kuota." },
+    { "speaker": "安迪:", "text": "[三十八个G|Sānshíbā ge G]？[我平时连十个G都用不完|Wǒ píngshí lián shí ge G dōu yòng bu wán]。", "id": "38 GB? Biasanya sepuluh GB saja saya tidak habis.", "literal": "tiga puluh delapan — penggolong — G? saya — biasanya — bahkan — sepuluh — penggolong — G — pun — pakai — tidak — habis." },
+    { "speaker": "客服:", "text": "[您本月是不是出过国|Nín běn yuè shì bu shì chū guo guó]？", "id": "Bulan ini Anda pernah ke luar negeri?", "literal": "Anda — ini — bulan — adalah — tidak — adalah — keluar — pernah — negara?" },
+    { "speaker": "安迪:", "text": "[去过一趟马来西亚|Qù guo yí tàng Mǎláixīyà]，[五天|wǔ tiān]。", "id": "Pernah sekali ke Malaysia, lima hari.", "literal": "pergi — pernah — satu — kali — Malaysia, lima — hari." },
+    { "speaker": "客服:", "text": "[那就对上了|Nà jiù duì shàng le]。[您是在国外用的|Nín shì zài guówài yòng de]，[国际漫游是单独计费的|guójì mànyóu shì dāndú jì fèi de]。", "id": "Nah, itu cocok. Anda memakainya di luar negeri, dan roaming internasional dihitung terpisah.", "literal": "kalau begitu — langsung — cocok — atas — sudah. Anda — adalah — di — luar negeri — pakai — punya, internasional — roaming — adalah — sendiri — hitung — biaya — punya." },
+    { "speaker": "安迪:", "text": "[等一下|Děng yíxià]。[我出发前特意问过你们的客服|Wǒ chūfā qián tèyì wèn guo nǐmen de kèfú]，[对方说我的套餐包含东南亚流量|duìfāng shuō wǒ de tàocān bāohán Dōngnányà liúliàng]。", "id": "Tunggu dulu. Sebelum berangkat saya sengaja bertanya ke layanan pelanggan kalian, orangnya bilang paket saya sudah termasuk kuota Asia Tenggara.", "literal": "tunggu — sebentar. saya — berangkat — sebelum — sengaja — tanya — pernah — kalian — punya — layanan pelanggan, pihak lain — bilang — saya — punya — paket — mencakup — Asia Tenggara — kuota." },
+    { "speaker": "客服:", "text": "[请问您是哪天打的电话|Qǐngwèn nín shì nǎ tiān dǎ de diànhuà]？", "id": "Boleh tahu Anda meneleponnya hari apa?", "literal": "boleh tanya — Anda — adalah — mana — hari — telepon — punya — telepon?" },
+    { "speaker": "安迪:", "text": "[三号下午|Sān hào xiàwǔ]，[大概三点|dàgài sān diǎn]。[是用这个号码打的|Shì yòng zhège hàomǎ dǎ de]。", "id": "Tanggal tiga sore, kira-kira jam tiga. Meneleponnya pakai nomor ini.", "literal": "tiga — tanggal — sore, kira-kira — tiga — jam. adalah — pakai — ini — nomor — telepon — punya." },
+    { "speaker": "客服:", "text": "[我查到通话记录了|Wǒ chá dào tōnghuà jìlù le]。[……确实有这通电话|……Quèshí yǒu zhè tōng diànhuà]。[那这个情况我需要上报|Nà zhège qíngkuàng wǒ xūyào shàngbào]。", "id": "Saya menemukan catatan percakapannya. …Memang ada telepon ini. Kalau begitu keadaan ini perlu saya laporkan ke atas.", "literal": "saya — periksa — sampai — percakapan — catatan — sudah. …… memang — ada — ini — penggolong — telepon. kalau begitu — ini — keadaan — saya — perlu — lapor-atas." },
+    { "speaker": "安迪:", "text": "[要多久|Yào duōjiǔ]？[我不是想省这两百块|Wǒ bú shì xiǎng shěng zhè liǎng bǎi kuài]，[我是想知道以后该信谁|wǒ shì xiǎng zhīdào yǐhòu gāi xìn shéi]。", "id": "Perlu berapa lama? Saya bukan ingin menghemat dua ratus ini, saya ingin tahu ke depan harus percaya siapa.", "literal": "perlu — berapa lama? saya — bukan — adalah — ingin — hemat — ini — dua — ratus — keping, saya — adalah — ingin — tahu — nanti — harus — percaya — siapa." },
+    { "speaker": "客服:", "text": "[我理解|Wǒ lǐjiě]。[三个工作日内会有专人回电|Sān ge gōngzuòrì nèi huì yǒu zhuānrén huí diàn]。[如果核实属实|Rúguǒ héshí shǔshí]，[这部分费用会全额退还|zhè bùfen fèiyòng huì quán'é tuìhuán]。", "id": "Saya paham. Dalam tiga hari kerja akan ada petugas khusus menelepon balik. Kalau setelah diperiksa benar, biaya bagian ini akan dikembalikan penuh.", "literal": "saya — paham. tiga — penggolong — hari kerja — dalam — akan — ada — orang khusus — kembali — telepon. kalau — verifikasi — sesuai fakta, ini — bagian — biaya — akan — penuh — jumlah — kembalikan." },
+    { "speaker": "安迪:", "text": "[麻烦把工单号发到我手机上|Máfan bǎ gōngdānhào fā dào wǒ shǒujī shàng]，[谢谢|xièxie]。", "id": "Tolong kirimkan nomor tiketnya ke ponsel saya, terima kasih.", "literal": "merepotkan — ambil — tiket kerja — nomor — kirim — sampai — saya — ponsel — atas, terima kasih." }
+   ],
+   "notes": [
+    "**连 A 都/也 B — “bahkan A pun B”.** Rangka penyorot yang paling sering dipakai. A adalah hal yang **paling tak terduga**, dan justru karena itu kalimatnya berbunyi keras. [我连套餐都没换过|Wǒ lián tàocān dōu méi huàn guo] berarti: jangankan yang lain, paketnya saja tidak diganti.",
+    "**连 memindahkan objek ke depan kata kerja.** [我连他都不认识|Wǒ lián tā dōu bú rènshi] — 他 adalah objek, tetapi ia duduk di depan 认识 karena ditarik 连. Ini persis mekanisme yang sama dengan 把 di A2.",
+    "**是…的 menyorot keterangan kejadian yang SUDAH terjadi.** Tiga baris berturut-turut memakainya: [您是在国外用的|Nín shì zài guówài yòng de] (di mana), [您是哪天打的电话|Nín shì nǎ tiān dǎ de diànhuà] (kapan), [是用这个号码打的|Shì yòng zhège hàomǎ dǎ de] (dengan apa). Semuanya menanyakan bukan “apakah terjadi”, melainkan **bagaimana** terjadinya.",
+    "**对上了 — “cocok, klop”.** Pelengkap arah 上 di sini berarti dua hal bertemu: 对上 cocok, 接上 tersambung, 想不上来 tidak teringat. Ungkapan lisan yang sangat sering muncul saat orang menemukan penjelasan.",
+    "**特意 — “sengaja, khusus untuk itu”.** Berbeda dari 故意 “sengaja” yang hampir selalu berkonotasi buruk. [特意去问|tèyì qù wèn] sengaja pergi bertanya (baik); [故意不说|gùyì bù shuō] sengaja tidak bilang (buruk).",
+    "**对方 — “pihak lain, lawan bicara”.** Kata yang sangat berguna ketika kamu tidak tahu atau tidak ingin menyebut nama orangnya. Dipakai di keluhan, negosiasi, dan laporan.",
+    "**⚠️ 我不是…，我是… mengulang rangka unit 1 sebagai alat penyorot.** Di baris kedua belas, Andi memakainya untuk memindahkan pokok pembicaraan dari uang ke kepercayaan. Ini gerakan yang sangat kuat dalam keluhan: begitu kamu berkata “ini bukan soal uang”, tuntutanmu berubah bentuk.",
+    "**上报 · 核实 · 属实 · 全额退还 — kosakata penyelesaian keluhan.** Keempatnya ragam resmi dan hampir selalu muncul bersama. Kalau petugas mulai memakai kata-kata ini, keluhanmu sudah naik ke jalur formal."
+   ],
+   "grammars": [
+    {
+     "title": "连…都/也… — menyorot hal yang paling tak terduga",
+     "body": [
+      "**Denah tempat duduk:** （pelaku）+ 连 + yang disorot + 都/也 + sisa kalimat。",
+      "Yang disorot boleh berupa pelaku, objek, kata kerja, bahkan angka. Yang penting: ia harus terasa **ekstrem** — kalau tidak, kalimatnya terdengar aneh tanpa alasan."
+     ],
+     "tables": [
+      {
+       "head": ["Yang disorot", "Contoh", "Arti"],
+       "rows": [
+        ["objek", "[他连饭都没吃|Tā lián fàn dōu méi chī]。", "Makan pun dia tidak."],
+        ["pelaku", "[连老师都不知道|Lián lǎoshī dōu bù zhīdào]。", "Guru pun tidak tahu."],
+        ["kata kerja diulang", "[他连想都没想|Tā lián xiǎng dōu méi xiǎng]。", "Berpikir pun tidak — langsung."],
+        ["angka terkecil", "[我连一块钱都没有|Wǒ lián yí kuài qián dōu méiyǒu]。", "Sepeser pun tak punya."],
+        ["waktu terpendek", "[连一分钟都等不了|Lián yì fēnzhōng dōu děng bu liǎo]。", "Semenit pun tak sanggup menunggu."],
+        ["dengan 也 (sama saja)", "[连他也走了|Lián tā yě zǒu le]。", "Bahkan dia pun pergi."]
+       ]
+      },
+      {
+       "head": ["Bentuk khas", "Rangka", "Contoh"],
+       "rows": [
+        ["kata kerja + 都/也 + 不/没 + kata kerja", "V 都不 V", "[看都不看|kàn dōu bú kàn] tak melirik sedikit pun"],
+        ["kata kerja + 一 + penggolong + 都不", "V 一 M 都不", "[一句话都不说|yí jù huà dōu bù shuō]"],
+        ["连 + 什么 + 都", "menyeluruh", "[他连什么都不懂|Tā lián shénme dōu bù dǒng]。"],
+        ["连…带…", "sekaligus dua hal", "[连人带车都不见了|Lián rén dài chē dōu bú jiàn le]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**连 boleh dihilangkan, 都/也 tidak boleh.** [我一块钱都没有|Wǒ yí kuài qián dōu méiyǒu] tetap benar dan tetap menyorot. Tetapi tanpa 都/也, kalimatnya rusak.",
+      "⚠️ **Jangan memakai 连 untuk hal yang biasa saja.** [我连饭都吃了|Wǒ lián fàn dōu chī le] terdengar aneh, karena makan bukan hal yang mengejutkan. 连 menuntut kejutan; kalau tidak ada kejutan, pakai kalimat biasa."
+     ]
+    },
+    {
+     "title": "是…的 di tingkat B2: menyorot keterangan, bukan kejadian",
+     "body": [
+      "Di A2 kamu belajar bahwa 是…的 dipakai untuk kejadian **yang sudah pasti terjadi**, dan yang ditanyakan adalah keterangannya. Di B2 yang perlu ditambahkan adalah letak 的 dan apa yang boleh berdiri di antara 是 dan 的."
+     ],
+     "tables": [
+      {
+       "head": ["Yang disorot", "Contoh", "Pertanyaannya"],
+       "rows": [
+        ["waktu", "[我是去年来的|Wǒ shì qùnián lái de]。", "kapan datang"],
+        ["tempat", "[他是在上海认识的|Tā shì zài Shànghǎi rènshi de]。", "di mana"],
+        ["cara / alat", "[我是坐高铁来的|Wǒ shì zuò gāotiě lái de]。", "naik apa"],
+        ["pelaku", "[这是他写的|Zhè shì tā xiě de]。", "siapa yang menulis"],
+        ["tujuan", "[我是来办签证的|Wǒ shì lái bàn qiānzhèng de]。", "untuk apa"],
+        ["penyangkalan", "[我不是这个意思|Wǒ bú shì zhège yìsi]。", "membetulkan tafsiran"]
+       ]
+      },
+      {
+       "head": ["Letak 的", "Kalimat", "Catatan"],
+       "rows": [
+        ["objek benda: 的 boleh di depan objek", "[我是昨天买的书|Wǒ shì zuótiān mǎi de shū]。", "lebih lazim"],
+        ["objek benda: 的 boleh di ujung", "[我是昨天买书的|Wǒ shì zuótiān mǎi shū de]。", "juga benar"],
+        ["objek orang: 的 hampir selalu di ujung", "[我是在北京认识他的|Wǒ shì zài Běijīng rènshi tā de]。", "❗ bukan 认识的他"],
+        ["kalimat sangkal", "[我不是坐飞机来的|Wǒ bú shì zuò fēijī lái de]。", "不是 menggantikan 是"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **是…的 tidak dipakai untuk kejadian yang belum terjadi atau yang belum pasti terjadi.** [我是明天去的|Wǒ shì míngtiān qù de] salah. Untuk masa depan cukup [我明天去|Wǒ míngtiān qù]。",
+      "**是 boleh dihilangkan dalam kalimat positif, 的 tidak boleh.** [我昨天来的|Wǒ zuótiān lái de] tetap benar dan sangat lazim dalam percakapan. Tetapi dalam kalimat sangkal, 不是 wajib utuh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — “Kota itu bagus, tapi…”",
+   "intro": "Dua teman membandingkan dua kota untuk pindah kerja. Dialog ini berputar di sekitar 甚至, 尤其, dan 就是…也 — tiga alat untuk menaikkan kadar dan membantah pengandaian.",
+   "lines": [
+    { "speaker": "小林:", "text": "[你去过成都吧|Nǐ qù guo Chéngdū ba]？[那边生活是不是特别舒服|Nàbiān shēnghuó shì bu shì tèbié shūfu]？", "id": "Kamu pernah ke Chengdu kan? Hidup di sana nyaman sekali ya?", "literal": "kamu — pergi — pernah — Chengdu — kan? sana — hidup — adalah — tidak — adalah — khusus — nyaman?" },
+    { "speaker": "王丽:", "text": "[舒服是真舒服|Shūfu shì zhēn shūfu]。[房价比这边低一半|Fángjià bǐ zhèbiān dī yíbàn]，[吃的东西尤其好|chī de dōngxi yóuqí hǎo]，[晚上十一点还有火锅店开着|wǎnshang shíyī diǎn hái yǒu huǒguōdiàn kāi zhe]。", "id": "Nyaman memang benar-benar nyaman. Harga rumah setengah dari sini, makanannya terutama enak, jam sebelas malam masih ada kedai hotpot yang buka.", "literal": "nyaman — memang — sungguh — nyaman. harga rumah — dibanding — sini — rendah — separuh, makan — punya — barang — terutama — bagus, malam — sebelas — jam — masih — ada — hotpot — kedai — buka — sedang." },
+    { "speaker": "小林:", "text": "[那你为什么没留下|Nà nǐ wèishénme méi liú xià]？", "id": "Lalu kenapa kamu tidak tinggal di sana?", "literal": "kalau begitu — kamu — mengapa — tidak — tinggal — turun?" },
+    { "speaker": "王丽:", "text": "[工作机会太少了|Gōngzuò jīhuì tài shǎo le]。[我那个专业|Wǒ nàge zhuānyè]，[整个城市甚至找不出十家对口的公司|zhěnggè chéngshì shènzhì zhǎo bu chū shí jiā duìkǒu de gōngsī]。", "id": "Kesempatan kerjanya terlalu sedikit. Jurusanku itu, di seluruh kota bahkan tidak bisa ditemukan sepuluh perusahaan yang sesuai.", "literal": "kerja — kesempatan — terlalu — sedikit — sudah. saya — itu — jurusan, seluruh — kota — bahkan — cari — tidak — keluar — sepuluh — penggolong — sesuai mulut — punya — perusahaan." },
+    { "speaker": "小林:", "text": "[那可以远程啊|Nà kěyǐ yuǎnchéng a]。", "id": "Kan bisa kerja jarak jauh.", "literal": "kalau begitu — bisa — jarak jauh — lah." },
+    { "speaker": "王丽:", "text": "[远程听着美|Yuǎnchéng tīng zhe měi]。[可是就是能远程|Kěshì jiùshì néng yuǎnchéng]，[工资也会按当地标准给|gōngzī yě huì àn dāngdì biāozhǔn gěi]。[省下的房租|Shěng xià de fángzū]，[基本上被降下来的工资吃掉了|jīběn shàng bèi jiàng xiàlái de gōngzī chī diào le]。", "id": "Kerja jarak jauh kedengarannya indah. Tapi sekalipun bisa jarak jauh, gajinya juga akan diberikan menurut standar setempat. Sewa yang dihemat pada dasarnya dimakan oleh gaji yang diturunkan.", "literal": "jarak jauh — dengar — sedang — indah. tapi — sekalipun — bisa — jarak jauh, gaji — juga — akan — menurut — setempat — standar — beri. hemat — turun — punya — sewa rumah, dasar — atas — kena — turun — datang — punya — gaji — makan — habis — sudah." },
+    { "speaker": "小林:", "text": "[这我倒没想到|Zhè wǒ dào méi xiǎngdào]。", "id": "Ini justru tidak terpikirkan olehku.", "literal": "ini — saya — justru — tidak — pikir — sampai." },
+    { "speaker": "王丽:", "text": "[大部分人都没想到|Dàbùfen rén dōu méi xiǎngdào]。[大家看的是房价|Dàjiā kàn de shì fángjià]，[很少有人算工资差|hěn shǎo yǒu rén suàn gōngzī chā]。[尤其是刚工作两三年的人|Yóuqí shì gāng gōngzuò liǎng sān nián de rén]。", "id": "Kebanyakan orang tidak terpikir. Yang dilihat semua orang itu harga rumah, sedikit sekali yang menghitung selisih gaji. Terutama orang yang baru bekerja dua tiga tahun.", "literal": "sebagian besar — orang — semua — tidak — pikir — sampai. semua orang — lihat — punya — adalah — harga rumah, sangat — sedikit — ada — orang — hitung — gaji — selisih. terutama — adalah — baru saja — kerja — dua — tiga — tahun — punya — orang." },
+    { "speaker": "小林:", "text": "[那按你的算法|Nà àn nǐ de suànfǎ]，[什么样的人适合去|shénmeyàng de rén shìhé qù]？", "id": "Kalau begitu menurut hitunganmu, orang seperti apa yang cocok pergi ke sana?", "literal": "kalau begitu — menurut — kamu — punya — cara hitung, apa — macam — punya — orang — cocok — pergi?" },
+    { "speaker": "王丽:", "text": "[两种|Liǎng zhǒng]：[一种是本来就打算换行业的|yì zhǒng shì běnlái jiù dǎsuàn huàn hángyè de]，[另一种是收入跟地点没关系的|lìng yì zhǒng shì shōurù gēn dìdiǎn méi guānxi de]。[除了这两种|Chúle zhè liǎng zhǒng]，[我建议先去住两个月再决定|wǒ jiànyì xiān qù zhù liǎng ge yuè zài juédìng]。", "id": "Dua macam: satu, orang yang memang sejak awal berniat pindah industri; satu lagi, orang yang penghasilannya tidak berhubungan dengan tempat. Selain kedua macam itu, saranku tinggal dulu dua bulan di sana baru memutuskan.", "literal": "dua — macam: satu — macam — adalah — memang dari awal — langsung — berniat — ganti — industri — punya, lain — satu — macam — adalah — pemasukan — dengan — tempat — tidak ada — hubungan — punya. selain — ini — dua — macam, saya — menyarankan — dulu — pergi — tinggal — dua — penggolong — bulan — baru — memutuskan." },
+    { "speaker": "小林:", "text": "[住两个月|Zhù liǎng ge yuè]？[连房子都要租|Lián fángzi dōu yào zū]，[成本不低啊|chéngběn bù dī a]。", "id": "Tinggal dua bulan? Rumah saja harus disewa, biayanya tidak rendah lho.", "literal": "tinggal — dua — penggolong — bulan? bahkan — rumah — pun — harus — sewa, biaya — tidak — rendah — lho." },
+    { "speaker": "王丽:", "text": "[跟搬错城市比起来|Gēn bān cuò chéngshì bǐ qǐlái]，[两个月的房租便宜得多|liǎng ge yuè de fángzū piányi de duō]。", "id": "Dibandingkan salah pindah kota, sewa dua bulan jauh lebih murah.", "literal": "dengan — pindah — salah — kota — banding — bangkit-datang, dua — penggolong — bulan — punya — sewa — murah — secara — banyak." }
+   ],
+   "notes": [
+    "**A 是真 A — “memang benar-benar A”.** [舒服是真舒服|Shūfu shì zhēn shūfu] mengakui sepenuhnya sebelum membantah. Rangkanya: kata sifat + 是 + 真 + kata sifat yang sama. Saudaranya: [好是好|hǎo shì hǎo]，[就是贵|jiùshì guì] “bagus sih bagus, cuma mahal”.",
+    "**甚至 — “bahkan, sampai-sampai”.** Menaikkan kadar ke contoh yang paling ekstrem. Berbeda dari 连…都 yang menyorot satu keping kalimat, 甚至 menyambung **seluruh klausa**: [他很忙|Tā hěn máng]，[甚至周末也要上班|shènzhì zhōumò yě yào shàng bān]。",
+    "**尤其（是）· 特别是 — “terutama”.** Menyempitkan pernyataan umum ke satu bagian yang paling menonjol. 尤其 sedikit lebih 【书】, 特别是 lebih 【口】; keduanya diletakkan di depan bagian yang disempitkan.",
+    "**就是…也… — “sekalipun…, tetap…”.** Ini saudara 即使 (unit 4), tetapi dengan tugas tambahan: ia **membantah pengandaian lawan bicara**. Perhatikan letaknya dalam dialog — 小林 mengusulkan kerja jarak jauh, dan 王丽 membalas dengan 就是能远程，工资也….",
+    "**对口 — “sesuai jurusan/bidang”.** [专业对口|zhuānyè duìkǒu] pekerjaan yang sesuai jurusan. Kata yang sangat sering muncul dalam pembicaraan karier di Tiongkok.",
+    "**被…吃掉了 — kalimat 被 dengan makna kiasan.** Gaji yang dihemat “dimakan” oleh penurunan gaji. Kiasan ini hidup dan sering dipakai untuk biaya: [被通货膨胀吃掉了|bèi tōnghuò péngzhàng chī diào le] “dimakan inflasi”.",
+    "**听着美 — “kedengarannya indah”.** Rangka kata kerja + 着 + kata sifat: 听着好听 kedengarannya enak, 说着容易 gampang diucapkan, 看着简单 kelihatannya sederhana. Hampir selalu diikuti bantahan.",
+    "**⚠️ 除了 punya dua arti yang berlawanan.** [除了他，都来了|Chúle tā, dōu lái le] “selain dia, semua datang” — dia TIDAK termasuk. [除了他，还有小王|Chúle tā, hái yǒu Xiǎo Wáng] “selain dia, masih ada Xiao Wang” — dia termasuk. Penentunya kata di klausa kedua: 都 mengeluarkan, 还/也 memasukkan."
+   ],
+   "grammars": [
+    {
+     "title": "甚至 · 尤其 · 特别是 — menaikkan dan menyempitkan",
+     "body": [
+      "Ketiganya bekerja pada kadar, tetapi arahnya berbeda: 甚至 menaikkan sampai ke contoh paling ekstrem, 尤其/特别是 menyempitkan dari yang umum ke yang paling menonjol."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Arah", "Contoh"],
+       "rows": [
+        ["[甚至|shènzhì]", "naik ke yang ekstrem", "[他忙得甚至忘了吃饭|Tā máng de shènzhì wàng le chī fàn]。"],
+        ["[甚至连…都|shènzhì lián…dōu]", "gabungan dua alat", "[他甚至连自己的生日都忘了|Tā shènzhì lián zìjǐ de shēngrì dōu wàng le]。"],
+        ["[尤其|yóuqí]", "menyempit ke yang menonjol", "[夏天很热|Xiàtiān hěn rè]，[尤其是七月|yóuqí shì qīyuè]。"],
+        ["[特别是|tèbié shì]", "sama, 【口】", "[大家都累|Dàjiā dōu lèi]，[特别是他|tèbié shì tā]。"],
+        ["[何况|hékuàng]", "apalagi (menambah alasan)", "[大人都搬不动|Dàrén dōu bān bu dòng]，[何况孩子|hékuàng háizi]。"],
+        ["[更别说|gèng bié shuō]", "jangankan… 【口】", "[我连听都听不懂|Wǒ lián tīng dōu tīng bu dǒng]，[更别说说了|gèng bié shuō shuō le]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**何况 dan 更别说 menyusun tangga.** Keduanya dipakai sesudah satu contoh yang sudah berat, untuk menambahkan contoh yang lebih berat lagi. Rangka lengkapnya sering: [连 A 都…|Lián A dōu…]，[更别说 B 了|gèng bié shuō B le]。",
+      "⚠️ **尤其 tidak berdiri di kepala kalimat sendirian.** Ia menempel pada bagian yang disempitkan, dan bagian itu harus sudah punya induk kalimat sebelumnya. [尤其是七月很热|Yóuqí shì qīyuè hěn rè] tanpa kalimat pendahulu terdengar menggantung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata layanan pelanggan dan keluhan",
+   "blocks": [
+    { "type": "p", "text": "Perbendaharaan ini akan langsung terpakai kalau kamu tinggal di Tiongkok, dan sebagian besar sama persis di bank, operator telepon, e-commerce, dan maskapai." },
+    { "type": "tabel",
+      "head": ["Mandarin", "Arti", "Catatan"],
+      "rows": [
+       ["[客服|kèfú]", "layanan pelanggan", "[人工客服|réngōng kèfú] petugas manusia"],
+       ["[账单|zhàngdān]", "tagihan", "[电子账单|diànzǐ zhàngdān]"],
+       ["[套餐|tàocān]", "paket (layanan)", "juga: paket makanan"],
+       ["[流量|liúliàng]", "kuota data", "[流量超了|liúliàng chāo le] kuota lewat"],
+       ["[漫游|mànyóu]", "roaming", "[国际漫游|guójì mànyóu]"],
+       ["[计费|jì fèi]", "penghitungan biaya", "[单独计费|dāndú jì fèi]"],
+       ["[扣费|kòu fèi]", "pemotongan biaya", "[自动扣费|zìdòng kòu fèi]"],
+       ["[退款|tuì kuǎn]", "pengembalian dana", "[全额退款|quán'é tuì kuǎn]"],
+       ["[工单|gōngdān]", "tiket laporan", "[工单号|gōngdānhào]"],
+       ["[上报|shàngbào]", "melaporkan ke atasan", "【书】"],
+       ["[核实|héshí]", "memverifikasi", "【书】"],
+       ["[属实|shǔshí]", "terbukti benar", "【书】"],
+       ["[投诉|tóusù]", "mengajukan keluhan resmi", "[我要投诉|Wǒ yào tóusù]"],
+       ["[售后|shòuhòu]", "layanan purnajual", "[售后服务|shòuhòu fúwù]"],
+       ["[记录|jìlù]", "catatan; mencatat", "[通话记录|tōnghuà jìlù]"],
+       ["[凭证|píngzhèng]", "bukti", "[保留凭证|bǎoliú píngzhèng] 【书】"]
+      ] },
+    { "type": "sub", "text": "Urutan yang berhasil ketika mengeluh" },
+    { "type": "kotak", "title": "Empat langkah, dan mengapa urutannya penting", "items": [
+     "**1. Fakta dulu, tanpa perasaan.** [我这个月的账单是三百八|Wǒ zhège yuè de zhàngdān shì sān bǎi bā]，[比上个月多两百|bǐ shàng ge yuè duō liǎng bǎi]。 Angka membuat petugas bisa mencari; kemarahan tidak.",
+     "**2. Sorot yang janggal dengan 连…都.** [我连套餐都没换过|Wǒ lián tàocān dōu méi huàn guo]。 Ini memberi tahu petugas di mana harus mencari.",
+     "**3. Sebut bukti dengan 是…的.** [我是三号打的电话|Wǒ shì sān hào dǎ de diànhuà]。 Kalimat berbentuk 是…的 memaksa pihak lain memeriksa catatan.",
+     "**4. Minta nomor tiket, bukan janji.** [麻烦给我一个工单号|Máfan gěi wǒ yí ge gōngdānhào]。 Ini satu-satunya kalimat yang benar-benar mengubah keluhan lisan menjadi perkara yang tercatat."
+    ] }
+   ]
+  },
+  {
+   "title": "Enam cara menekankan tanpa menaikkan suara",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Mandarin punya banyak sekali alat penekan, dan hampir semuanya bekerja dengan memindahkan kata, bukan dengan mengeraskan suara. Daftar ini merangkum yang sudah kamu pelajari plus tiga yang baru." },
+    { "type": "tabel",
+      "head": ["Alat", "Contoh", "Yang tersorot"],
+      "rows": [
+       ["连…都/也", "[连他都不知道|Lián tā dōu bù zhīdào]。", "hal tak terduga"],
+       ["是…的", "[我是昨天到的|Wǒ shì zuótiān dào de]。", "keterangan"],
+       ["V 都不 V", "[看都不看|kàn dōu bú kàn]", "penolakan mutlak"],
+       ["一 + penggolong + 都不/也没", "[一句话都没说|yí jù huà dōu méi shuō]", "nol mutlak"],
+       ["的确 · 确实", "[他确实来过|Tā quèshí lái guo]。", "kebenaran pernyataan"],
+       ["就是…也", "[就是下雨也去|Jiùshì xià yǔ yě qù]。", "membantah pengandaian"],
+       ["再…也", "[再忙也要吃饭|Zài máng yě yào chī fàn]。", "batas yang tak dilewati"],
+       ["A 是真 A", "[累是真累|Lèi shì zhēn lèi]。", "mengakui sebelum membantah"]
+      ] },
+    { "type": "sub", "text": "⚠️ Satu kalimat, satu alat" },
+    { "type": "p", "text": "Menumpuk dua atau tiga alat penekan dalam satu kalimat adalah kesalahan khas pemelajar B2 yang baru menemukannya. [他甚至连一句话都真的没说|Tā shènzhì lián yí jù huà dōu zhēn de méi shuō] secara tata bahasa bisa dibela, tetapi terdengar seperti orang yang sedang berusaha keras. Penutur asli memilih satu, lalu berhenti. Gabungan yang benar-benar lazim cuma satu: 甚至连…都." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "连…都", "baca": "lián…dōu", "id": "bahkan… pun" },
+  { "zh": "甚至", "baca": "shènzhì", "id": "bahkan, sampai-sampai" },
+  { "zh": "尤其", "baca": "yóuqí", "id": "terutama 【书】" },
+  { "zh": "特别是", "baca": "tèbié shì", "id": "terutama 【口】" },
+  { "zh": "何况", "baca": "hékuàng", "id": "apalagi" },
+  { "zh": "更别说", "baca": "gèng bié shuō", "id": "jangankan 【口】" },
+  { "zh": "就是…也", "baca": "jiùshì…yě", "id": "sekalipun… tetap" },
+  { "zh": "客服", "baca": "kèfú", "id": "layanan pelanggan" },
+  { "zh": "账单", "baca": "zhàngdān", "id": "tagihan" },
+  { "zh": "套餐", "baca": "tàocān", "id": "paket" },
+  { "zh": "流量", "baca": "liúliàng", "id": "kuota data" },
+  { "zh": "漫游", "baca": "mànyóu", "id": "roaming" },
+  { "zh": "计费", "baca": "jì fèi", "id": "menghitung biaya" },
+  { "zh": "扣费", "baca": "kòu fèi", "id": "memotong biaya" },
+  { "zh": "单独", "baca": "dāndú", "id": "sendiri, terpisah" },
+  { "zh": "显示", "baca": "xiǎnshì", "id": "menunjukkan (sistem)" },
+  { "zh": "系统", "baca": "xìtǒng", "id": "sistem" },
+  { "zh": "特意", "baca": "tèyì", "id": "sengaja (baik)" },
+  { "zh": "故意", "baca": "gùyì", "id": "sengaja (buruk)" },
+  { "zh": "对方", "baca": "duìfāng", "id": "pihak lain" },
+  { "zh": "包含", "baca": "bāohán", "id": "mencakup" },
+  { "zh": "通话记录", "baca": "tōnghuà jìlù", "id": "catatan panggilan" },
+  { "zh": "上报", "baca": "shàngbào", "id": "melaporkan ke atas 【书】" },
+  { "zh": "核实", "baca": "héshí", "id": "memverifikasi 【书】" },
+  { "zh": "属实", "baca": "shǔshí", "id": "terbukti benar 【书】" },
+  { "zh": "全额", "baca": "quán'é", "id": "jumlah penuh" },
+  { "zh": "退还", "baca": "tuìhuán", "id": "mengembalikan 【书】" },
+  { "zh": "工单号", "baca": "gōngdānhào", "id": "nomor tiket laporan" },
+  { "zh": "投诉", "baca": "tóusù", "id": "mengajukan keluhan resmi" },
+  { "zh": "售后", "baca": "shòuhòu", "id": "purnajual" },
+  { "zh": "凭证", "baca": "píngzhèng", "id": "bukti 【书】" },
+  { "zh": "房价", "baca": "fángjià", "id": "harga rumah" },
+  { "zh": "火锅", "baca": "huǒguō", "id": "hotpot" },
+  { "zh": "专业", "baca": "zhuānyè", "id": "jurusan; profesional" },
+  { "zh": "对口", "baca": "duìkǒu", "id": "sesuai bidang" },
+  { "zh": "远程", "baca": "yuǎnchéng", "id": "jarak jauh (kerja)" },
+  { "zh": "当地", "baca": "dāngdì", "id": "setempat" },
+  { "zh": "省下", "baca": "shěng xià", "id": "menghemat (sisa)" },
+  { "zh": "行业", "baca": "hángyè", "id": "industri, bidang" },
+  { "zh": "收入", "baca": "shōurù", "id": "penghasilan" },
+  { "zh": "地点", "baca": "dìdiǎn", "id": "lokasi" },
+  { "zh": "建议", "baca": "jiànyì", "id": "menyarankan; saran" },
+  { "zh": "算法", "baca": "suànfǎ", "id": "cara hitung; algoritme" },
+  { "zh": "本来", "baca": "běnlái", "id": "sedari awal" },
+  { "zh": "大部分", "baca": "dàbùfen", "id": "sebagian besar" },
+  { "zh": "整个", "baca": "zhěnggè", "id": "seluruh" },
+  { "zh": "机会", "baca": "jīhuì", "id": "kesempatan" },
+  { "zh": "通货膨胀", "baca": "tōnghuò péngzhàng", "id": "inflasi" },
+  { "zh": "舒服", "baca": "shūfu", "id": "nyaman" },
+  { "zh": "低", "baca": "dī", "id": "rendah" },
+  { "zh": "理解", "baca": "lǐjiě", "id": "memahami" },
+  { "zh": "专人", "baca": "zhuānrén", "id": "petugas khusus" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis ulang dengan 连…都/也 untuk menyorot bagian yang bergaris bawah dalam terjemahannya.",
+   "items": [
+    "Dia tidak mengenal orang itu. (bahkan orang itu pun)",
+    "Saya tidak punya uang seribu rupiah pun.",
+    "Anak kecil pun tahu hal ini.",
+    "Dia pergi tanpa berpikir sedikit pun.",
+    "Semenit pun saya tidak sanggup menunggu lagi."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat 是…的 yang menyorot keterangan dalam kurung.",
+   "items": [
+    "[他来了|Tā lái le]。(naik kereta)",
+    "[我们认识了|Wǒmen rènshi le]。(di Shanghai)",
+    "[这本书写完了|Zhè běn shū xiě wán le]。(dia yang menulis)",
+    "[她回国了|Tā huí guó le]。(tahun lalu)",
+    "[我来了|Wǒ lái le]。(untuk mengurus visa)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 甚至 · 尤其是 · 何况 · 更别说 · 就是…也.",
+   "items": [
+    "[他忙得|Tā máng de] ____ [连饭都忘了吃|lián fàn dōu wàng le chī]。",
+    "[这里的夏天很热|Zhèlǐ de xiàtiān hěn rè]，____ [八月|bāyuè]。",
+    "[这个箱子大人都搬不动|Zhège xiāngzi dàrén dōu bān bu dòng]，____ [孩子|háizi]。",
+    "[我连汉字都认不全|Wǒ lián Hànzì dōu rèn bu quán]，____ [写文章了|xiě wénzhāng le]。",
+    "____ [他不同意|tā bù tóngyì]，[我们|wǒmen] ____ [要试一次|yào shì yí cì]。"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat yang salah, tulis 对 kalau sudah benar.",
+   "items": [
+    "[我是明天去北京的|Wǒ shì míngtiān qù Běijīng de]。",
+    "[他连饭都吃了|Tā lián fàn dōu chī le]。",
+    "[我是在上海认识的他|Wǒ shì zài Shànghǎi rènshi de tā]。",
+    "[连一句话他都没说|Lián yí jù huà tā dōu méi shuō]。",
+    "[尤其是七月很热|Yóuqí shì qīyuè hěn rè]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin.",
+   "items": [
+    "Sekalipun bisa bekerja jarak jauh, gajinya tetap dihitung menurut standar setempat.",
+    "Bahkan penanggung jawabnya pun tidak tahu kapan akan diumumkan.",
+    "Saya menanyakannya lewat telepon tanggal tiga, bukan lewat aplikasi.",
+    "Dia pergi tanpa melirik sedikit pun.",
+    "Musim panas di sini panas sekali, terutama bulan Juli dan Agustus."
+   ]
+  },
+  {
+   "prompt": "Tulis keluhan empat langkah (fakta → 连…都 → 是…的 → minta nomor tiket) untuk keadaan berikut.",
+   "items": [
+    "Paket yang kamu pesan ditandai “sudah diterima” padahal belum sampai.",
+    "Kartu kreditmu dipotong dua kali untuk satu transaksi yang sama."
+   ]
+  }
+ ],
+ "answers": [
+  "[他连那个人都不认识|Tā lián nàge rén dōu bú rènshi]。 — [我连一千印尼盾都没有|Wǒ lián yìqiān Yìnnídùn dōu méiyǒu]。 — [连小孩子都知道这件事|Lián xiǎo háizi dōu zhīdào zhè jiàn shì]。 — [他连想都没想就走了|Tā lián xiǎng dōu méi xiǎng jiù zǒu le]。 — [我连一分钟都等不下去了|Wǒ lián yì fēnzhōng dōu děng bu xiàqù le]。",
+  "[他是坐火车来的|Tā shì zuò huǒchē lái de]。 — [我们是在上海认识的|Wǒmen shì zài Shànghǎi rènshi de]。 — [这本书是他写的|Zhè běn shū shì tā xiě de]。 — [她是去年回国的|Tā shì qùnián huí guó de]。 — [我是来办签证的|Wǒ shì lái bàn qiānzhèng de]。",
+  "甚至 — 尤其是 — 何况 — 更别说 — 就是 · 也",
+  "salah → [我明天去北京|Wǒ míngtiān qù Běijīng]。 是…的 tidak untuk masa depan — salah → 连 menuntut hal yang mengejutkan; pakai [他吃饭了|Tā chī fàn le]。 — salah → [我是在上海认识他的|Wǒ shì zài Shànghǎi rènshi tā de]。 objek orang: 的 di ujung — 对 — salah → perlu induk kalimat lebih dulu: [这里的夏天很热|Zhèlǐ de xiàtiān hěn rè]，[尤其是七月|yóuqí shì qīyuè]。",
+  "[就是能远程工作|Jiùshì néng yuǎnchéng gōngzuò]，[工资也是按当地标准算的|gōngzī yě shì àn dāngdì biāozhǔn suàn de]。 — [连负责人都不知道什么时候宣布|Lián fùzérén dōu bù zhīdào shénme shíhou xuānbù]。 — [我是三号打电话问的|Wǒ shì sān hào dǎ diànhuà wèn de]，[不是用手机应用问的|bú shì yòng shǒujī yìngyòng wèn de]。 — [他看都不看就走了|Tā kàn dōu bú kàn jiù zǒu le]。 — [这儿的夏天特别热|Zhèr de xiàtiān tèbié rè]，[尤其是七月和八月|yóuqí shì qīyuè hé bāyuè]。",
+  "Contoh 1: [我的包裹显示已签收|Wǒ de bāoguǒ xiǎnshì yǐ qiān shōu]，[但我根本没收到|dàn wǒ gēnběn méi shōudào]。[我连快递员的电话都没接到过|Wǒ lián kuàidìyuán de diànhuà dōu méi jiē dào guo]。[我是今天上午十点在系统里看到的|Wǒ shì jīntiān shàngwǔ shí diǎn zài xìtǒng lǐ kàndào de]。[麻烦给我一个工单号|Máfan gěi wǒ yí ge gōngdānhào]。 — Contoh 2: [同一笔消费被扣了两次费|Tóng yì bǐ xiāofèi bèi kòu le liǎng cì fèi]，[一共多扣了三百块|yígòng duō kòu le sān bǎi kuài]。[我连第二条短信都收到了|Wǒ lián dì-èr tiáo duǎnxìn dōu shōudào le]，[金额一模一样|jīn'é yìmúyíyàng]。[我是昨天下午在商场用信用卡付的|Wǒ shì zuótiān xiàwǔ zài shāngchǎng yòng xìnyòngkǎ fù de]。[请帮我登记工单并告诉我处理时限|Qǐng bāng wǒ dēngjì gōngdān bìng gàosu wǒ chǔlǐ shíxiàn]。"
+ ],
+ "wave": "Ambil dialog unit 1 dan unit 3, baca ulang keras-keras satu kali masing-masing, lalu cari semua alat penyorot di dalamnya — 连, 是…的, 并不是, 再…也. Tandai dengan pensil. Kamu akan menemukan setidaknya delapan, dan hampir semuanya lewat begitu saja waktu kamu membacanya pertama kali. Itulah bedanya membaca untuk paham dan membaca untuk menirukan."
+}

@@ -1,0 +1,861 @@
+{
+ "title": "Meneruskan kabar orang lain",
+ "title_target": "据说和所谓 — Jùshuō hé suǒwèi",
+ "goal": "Menyampaikan perkataan, laporan, dan desas-desus orang lain dengan jarak yang tepat: 据说 untuk kabar tanpa sumber, 据…报道 untuk kutipan resmi, 表示/指出/强调 untuk siapa berkata apa, dan 所谓 untuk menandai istilah yang kamu ragukan.",
+ "bekal": [
+  "meneruskan kabar tanpa ikut bertanggung jawab atasnya: 据说, 听说, 有人说",
+  "mengutip sumber resmi seperti berita: 据…报道, 根据…的数据",
+  "memilih kata kerja pelapor yang tepat: 表示, 认为, 指出, 强调, 否认",
+  "menandai istilah yang kamu ragukan: 所谓的…",
+  "kosakata berita: sumber, kutipan, bantahan, klarifikasi"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Desas-desus di kantor",
+   "intro": "Kabar tentang penggabungan dua kantor cabang beredar sejak pagi. Perhatikan bagaimana ketiga orang di sini memakai kata yang berbeda-beda untuk menandai seberapa jauh mereka berani menjamin kabarnya.",
+   "lines": [
+    {
+     "speaker": "小周:",
+     "text": "[听说咱们分公司要跟广州那边合并|Tīngshuō zánmen fēngōngsī yào gēn Guǎngzhōu nàbiān hébìng]？",
+     "id": "Katanya kantor cabang kita mau digabung dengan yang di Guangzhou?",
+     "literal": "dengar-bilang — kita — kantor cabang — akan — dengan — Guangzhou — sana — gabung?"
+    },
+    {
+     "speaker": "小林:",
+     "text": "[我也听说了|Wǒ yě tīngshuō le]，[但是消息来源不太靠谱|dànshì xiāoxi láiyuán bú tài kàopǔ]。",
+     "id": "Aku juga dengar, tapi sumber kabarnya kurang bisa dipegang.",
+     "literal": "saya — juga — dengar-bilang — sudah, tapi — kabar — sumber — tidak — terlalu — dapat diandalkan."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[据说下个月就宣布|Jùshuō xià ge yuè jiù xuānbù]。",
+     "id": "Konon bulan depan langsung diumumkan.",
+     "literal": "menurut-bilang — bulan — depan — langsung — umumkan."
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[“据说”是谁说的|“Jùshuō” shì shéi shuō de]？[这种事没有出处就等于没有|Zhè zhǒng shì méiyǒu chūchù jiù děngyú méiyǒu]。",
+     "id": "“Konon” itu siapa yang bilang? Urusan semacam ini tanpa sumber sama saja dengan tidak ada.",
+     "literal": "“menurut-bilang” — adalah — siapa — bilang — punya? ini — jenis — perkara — tidak ada — sumber — langsung — sama dengan — tidak ada."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[人事部的一个朋友|Rénshìbù de yí ge péngyou]……",
+     "id": "Seorang teman di bagian HRD…",
+     "literal": "personalia — punya — satu — penggolong — teman……"
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[那就叫“有人说”|Nà jiù jiào “yǒu rén shuō”]，[不叫“据说”|bú jiào “jùshuō”]。[昨天总部倒是发了一份通知|Zuótiān zǒngbù dào shì fā le yí fèn tōngzhī]，[你们看了吗|nǐmen kàn le ma]？",
+     "id": "Kalau begitu namanya “ada yang bilang”, bukan “konon”. Kemarin kantor pusat justru mengeluarkan satu pengumuman, kalian sudah baca?",
+     "literal": "kalau begitu — langsung — disebut — “ada — orang — bilang”, bukan — disebut — “menurut-bilang”. kemarin — kantor pusat — justru — keluarkan — sudah — satu — lembar — pengumuman, kalian — baca — sudah — kah?"
+    },
+    {
+     "speaker": "小林:",
+     "text": "[通知上写了什么|Tōngzhī shàng xiě le shénme]？",
+     "id": "Di pengumumannya tertulis apa?",
+     "literal": "pengumuman — atas — tulis — sudah — apa?"
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[总部表示|Zǒngbù biǎoshì]，[目前没有合并的计划|mùqián méiyǒu hébìng de jìhuà]；[但同时又强调|dàn tóngshí yòu qiángdiào]，[组织结构会“持续优化”|zǔzhī jiégòu huì “chíxù yōuhuà”]。",
+     "id": "Kantor pusat menyatakan saat ini tidak ada rencana penggabungan; tetapi sekaligus menekankan bahwa struktur organisasi akan “terus dioptimalkan”.",
+     "literal": "kantor pusat — menyatakan, sekarang — tidak ada — gabung — punya — rencana; tetapi — bersamaan — lagi — menekankan, organisasi — struktur — akan — “terus — optimalkan”."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[所谓的“持续优化”|Suǒwèi de “chíxù yōuhuà”]，[不就是合并的另一种说法吗|bú jiùshì hébìng de lìng yì zhǒng shuōfǎ ma]？",
+     "id": "Yang disebut “terus dioptimalkan” itu, bukankah cuma cara lain mengatakan penggabungan?",
+     "literal": "yang disebut — punya — “terus — optimalkan”, bukan — justru adalah — gabung — punya — lain — satu — jenis — cara bilang — kah?"
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[有可能|Yǒu kěnéng]，[但我们不能这么写在群里|dàn wǒmen bù néng zhème xiě zài qún lǐ]。[猜测和消息是两回事|Cāicè hé xiāoxi shì liǎng huí shì]。",
+     "id": "Mungkin saja, tapi kita tidak boleh menulisnya begitu di grup. Dugaan dan kabar itu dua hal yang berbeda.",
+     "literal": "ada — mungkin, tapi — kami — tidak — bisa — begini — tulis — di — grup — dalam. dugaan — dan — kabar — adalah — dua — kali — perkara."
+    },
+    {
+     "speaker": "小林:",
+     "text": "[那要是同事问我呢|Nà yàoshi tóngshì wèn wǒ ne]？",
+     "id": "Lalu kalau rekan kerja bertanya padaku bagaimana?",
+     "literal": "kalau begitu — kalau — rekan kerja — tanya — saya — bagaimana?"
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[你就说|Nǐ jiù shuō]：[“据总部昨天的通知|“Jù zǒngbù zuótiān de tōngzhī]，[目前没有合并计划|mùqián méiyǒu hébìng jìhuà]。”[后面一句话都别加|Hòumiàn yí jù huà dōu bié jiā]。",
+     "id": "Kamu bilang saja: “Menurut pengumuman kantor pusat kemarin, saat ini tidak ada rencana penggabungan.” Satu kalimat pun jangan ditambahkan di belakangnya.",
+     "literal": "kamu — langsung — bilang: “menurut — kantor pusat — kemarin — punya — pengumuman, sekarang — tidak ada — gabung — rencana.” belakang — satu — penggolong — kata — pun — jangan — tambah."
+    },
+    {
+     "speaker": "小周:",
+     "text": "[明白了|Míngbai le]。[说话得有出处|Shuō huà děi yǒu chūchù]，[不然就成了传谣|bùrán jiù chéng le chuán yáo]。",
+     "id": "Paham. Bicara harus ada sumbernya, kalau tidak jadinya menyebarkan hoaks.",
+     "literal": "paham — sudah. bicara — kata — harus — ada — sumber, kalau tidak — langsung — jadi — sudah — sebar — desas-desus."
+    }
+   ],
+   "notes": [
+    "**听说 · 据说 · 有人说 — tiga jarak yang berbeda.** 听说 “aku dengar” (aku pernah mendengarnya sendiri), 据说 “konon, menurut kabar” (tanpa menyebut siapa, terdengar lebih netral dan sedikit lebih resmi), 有人说 “ada yang bilang” (jelas-jelas menunjuk orang yang tak disebut). Ketiganya melepas tanggung jawab, tetapi 据说 melepasnya paling rapi.",
+    "**据 + sumber + 的 + laporan.** Bentuk resminya menyebut sumbernya: [据总部的通知|jù zǒngbù de tōngzhī]，[据新华社报道|jù Xīnhuáshè bàodào]，[据统计|jù tǒngjì]。 Perhatikan 据 tidak diikuti 说 di sini — 据说 hanyalah salah satu anggotanya.",
+    "**靠谱 — “bisa dipegang”.** 【口】 Kata gaul yang sudah masuk percakapan sehari-hari semua kalangan: 靠谱 dapat diandalkan, 不靠谱 tidak bisa dipercaya. Ragam tulisnya: 可靠 / 不可靠.",
+    "**表示 vs 说 vs 认为.** 说 netral dan lisan. 表示 “menyatakan” — dipakai ketika yang berbicara adalah lembaga atau orang resmi, dan isinya sikap. 认为 “berpendapat” — isinya penilaian. 强调 “menekankan”, 指出 “menunjuk, mengemukakan”, 否认 “membantah”. Berita Tiongkok memilih di antara keenamnya dengan sangat sengaja.",
+    "**所谓（的）— penanda ragu.** [所谓的“优化”|suǒwèi de “yōuhuà”] berarti “yang katanya optimalisasi”. Ia menaruh tanda kutip pada istilahnya dan berkata “bukan aku yang menamainya begitu”. Nadanya hampir selalu sinis; jangan memakainya untuk istilah yang kamu setujui.",
+    "**倒是 menandai kejutan halus.** [总部倒是发了一份通知|Zǒngbù dào shì fā le yí fèn tōngzhī] — “kantor pusat justru (di luar dugaan) mengeluarkan pengumuman”. Sama seperti 倒 di unit 1, ia membalik dugaan lawan bicara.",
+    "**两回事 — “dua hal yang berbeda”.** [这是两回事|Zhè shì liǎng huí shì]。 Kalimat siap pakai untuk memisahkan dua hal yang sedang dicampuradukkan orang. Saudaranya: [一回事|yì huí shì] “hal yang sama”.",
+    "**⚠️ 传谣 — menyebar desas-desus — bukan kata ringan.** Di Tiongkok ia punya arti hukum: menyebarkan kabar bohong bisa dikenai sanksi. Karena itu percakapan kantor sering berhenti mendadak begitu kata ini disebut."
+   ],
+   "grammars": [
+    {
+     "title": "据 — memasang sumber di depan kalimat",
+     "body": [
+      "Semua bentuk di bawah ini menempati **kepala kalimat**, sebelum pelaku, dan diikuti koma. Ia mengatakan: yang menyusul bukan pendapatku, melainkan laporan pihak lain.",
+      "**Denah tempat duduk:** 据 + sumber，+ kalimat lengkap。"
+     ],
+     "tables": [
+      {
+       "head": [
+        "Bentuk",
+        "Contoh",
+        "Dipakai untuk"
+       ],
+       "rows": [
+        [
+         "据说",
+         "[据说他已经辞职了|Jùshuō tā yǐjīng cízhí le]。",
+         "kabar tanpa sumber · netral"
+        ],
+        [
+         "听说",
+         "[听说你要去北京|Tīngshuō nǐ yào qù Běijīng]？",
+         "yang kamu dengar sendiri · 【口】"
+        ],
+        [
+         "据…报道",
+         "[据新华社报道|Jù Xīnhuáshè bàodào]，…",
+         "kutipan media · 【书】"
+        ],
+        [
+         "据…介绍",
+         "[据负责人介绍|Jù fùzérén jièshào]，…",
+         "keterangan narasumber · 【书】"
+        ],
+        [
+         "据统计",
+         "[据统计|Jù tǒngjì]，[人数超过两万|rénshù chāoguò liǎng wàn]。",
+         "angka resmi"
+        ],
+        [
+         "根据…的数据",
+         "[根据去年的数据|Gēnjù qùnián de shùjù]，…",
+         "dasar perhitungan"
+        ],
+        [
+         "据我所知",
+         "[据我所知|Jù wǒ suǒ zhī]，[他没参加|tā méi cānjiā]。",
+         "sejauh yang saya tahu · merendah"
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Jangan tertukar",
+        "Salah",
+        "Benar"
+       ],
+       "rows": [
+        [
+         "据说 tidak dipakai untuk dirimu sendiri",
+         "[据说我明天有会|Jùshuō wǒ míngtiān yǒu huì]。",
+         "[听说我明天有会|Tīngshuō wǒ míngtiān yǒu huì]。"
+        ],
+        [
+         "据 wajib punya sumber",
+         "[据|Jù]，[他走了|tā zǒu le]。",
+         "[据说|Jùshuō]，[他走了|tā zǒu le]。"
+        ],
+        [
+         "根据 diikuti benda, bukan klausa",
+         "[根据他说|Gēnjù tā shuō]…",
+         "[据他说|Jù tā shuō]… / [根据他的说法|Gēnjù tā de shuōfǎ]…"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**据我所知 adalah kalimat penyelamat di rapat.** Ia berarti “sejauh yang saya tahu” dan memberi ruang kalau ternyata kamu keliru. Saudaranya: [就我个人而言|jiù wǒ gèrén ér yán] “bagi saya pribadi” (lihat unit 11).",
+      "⚠️ 据说 diletakkan **di depan seluruh kalimat**, bukan di tengah seperti “katanya” dalam bahasa Indonesia. [他据说明天来|Tā jùshuō míngtiān lái] terdengar janggal; yang wajar [据说他明天来|Jùshuō tā míngtiān lái]。"
+     ]
+    },
+    {
+     "title": "Kata kerja pelapor: siapa berkata apa, dan seberapa keras",
+     "body": [
+      "Dalam bahasa Indonesia hampir semua kutipan memakai “mengatakan”. Bahasa Mandarin berita membedakan enam, dan pilihan katanya sendiri sudah menyampaikan sikap penulisnya."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Kata kerja",
+        "Arti",
+        "Contoh"
+       ],
+       "rows": [
+        [
+         "[说|shuō]",
+         "berkata · netral, lisan",
+         "[他说他不来|Tā shuō tā bù lái]。"
+        ],
+        [
+         "[表示|biǎoshì]",
+         "menyatakan · resmi, sikap",
+         "[公司表示将尽快回应|Gōngsī biǎoshì jiāng jǐnkuài huíyìng]。"
+        ],
+        [
+         "[认为|rènwéi]",
+         "berpendapat · penilaian",
+         "[专家认为风险可控|Zhuānjiā rènwéi fēngxiǎn kěkòng]。"
+        ],
+        [
+         "[指出|zhǐchū]",
+         "mengemukakan · menunjuk masalah",
+         "[报告指出三个问题|Bàogào zhǐchū sān ge wèntí]。"
+        ],
+        [
+         "[强调|qiángdiào]",
+         "menekankan · mengulangi keras",
+         "[他再次强调时间紧|Tā zàicì qiángdiào shíjiān jǐn]。"
+        ],
+        [
+         "[否认|fǒurèn]",
+         "membantah",
+         "[对方否认收到通知|Duìfāng fǒurèn shōudào tōngzhī]。"
+        ],
+        [
+         "[透露|tòulù]",
+         "membocorkan · tak resmi",
+         "[知情人士透露|Zhīqíng rénshì tòulù]，…"
+        ],
+        [
+         "[承认|chéngrèn]",
+         "mengakui",
+         "[他承认自己弄错了|Tā chéngrèn zìjǐ nòng cuò le]。"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Kutipan tak langsung dalam bahasa Mandarin tidak mengubah bentuk apa pun.** Tidak ada perubahan kala seperti dalam bahasa Inggris, dan kata gantinya tetap sesuai sudut pandang pembicara: [他说他明天来|Tā shuō tā míngtiān lái]。 Yang berubah hanya 我 → 他 kalau perlu.",
+      "**表示 tidak dipakai untuk orang biasa dalam obrolan.** [我妈表示她不喜欢|Wǒ mā biǎoshì tā bù xǐhuan] terdengar lucu — seolah ibumu sedang mengeluarkan siaran pers. Untuk orang biasa: 说, 觉得, 抱怨."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membaca berita bersama",
+   "intro": "Wang Li dan Andi membaca satu berita pendek di ponsel. Dialog ini memperlihatkan bagaimana pembaca yang terlatih memisahkan angka, sumber, dan tafsiran — tiga hal yang di dalam berita sengaja ditulis berdampingan.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[这条新闻说房价又涨了|Zhè tiáo xīnwén shuō fángjià yòu zhǎng le]。",
+     "id": "Berita ini bilang harga rumah naik lagi.",
+     "literal": "ini — penggolong — berita — bilang — harga rumah — lagi — naik — sudah."
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[涨了多少|Zhǎng le duōshao]？[有没有具体数字|Yǒu méiyǒu jùtǐ shùzì]？",
+     "id": "Naik berapa? Ada angka pastinya tidak?",
+     "literal": "naik — sudah — berapa? ada — tidak ada — konkret — angka?"
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[有|Yǒu]。[据国家统计局的数据|Jù guójiā tǒngjìjú de shùjù]，[上个月同比上涨百分之二点一|shàng ge yuè tóngbǐ shàngzhǎng bǎi fēn zhī èr diǎn yī]。",
+     "id": "Ada. Menurut data Biro Statistik Nasional, bulan lalu naik 2,1 persen dibanding tahun lalu.",
+     "literal": "ada. menurut — negara — statistik biro — punya — data, bulan — lalu — banding tahun — naik — seratus — bagi — dua — koma — satu."
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[那是全国平均|Nà shì quánguó píngjūn]，[跟咱们这个城市不一定有关系|gēn zánmen zhège chéngshì bù yídìng yǒu guānxi]。",
+     "id": "Itu rata-rata nasional, belum tentu ada hubungannya dengan kota kita.",
+     "literal": "itu — adalah — seluruh negara — rata-rata, dengan — kita — ini — kota — tidak — pasti — ada — hubungan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[后面还有一句|Hòumiàn hái yǒu yí jù]：[有专家认为|yǒu zhuānjiā rènwéi]，[明年可能继续上涨|míngnián kěnéng jìxù shàngzhǎng]。",
+     "id": "Di belakangnya masih ada satu kalimat: ada pakar berpendapat tahun depan mungkin terus naik.",
+     "literal": "belakang — masih — ada — satu — kalimat: ada — pakar — berpendapat, tahun depan — mungkin — terus — naik."
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[“有专家”是哪位专家|“Yǒu zhuānjiā” shì nǎ wèi zhuānjiā]？[新闻里最不值钱的三个字|Xīnwén lǐ zuì bù zhí qián de sān ge zì]。",
+     "id": "“Ada pakar” itu pakar yang mana? Tiga aksara paling tidak berharga di dalam berita.",
+     "literal": "“ada — pakar” — adalah — mana — penggolong — pakar? berita — dalam — paling — tidak — bernilai — uang — punya — tiga — penggolong — aksara."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[哈哈|Hāhā]，[那怎么判断一条新闻靠不靠谱|nà zěnme pànduàn yì tiáo xīnwén kào bu kàopǔ]？",
+     "id": "Haha, lalu bagaimana menilai satu berita bisa dipegang atau tidak?",
+     "literal": "haha, kalau begitu — bagaimana — menilai — satu — penggolong — berita — andal — tidak — andal?"
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[看三样|Kàn sān yàng]：[数字有没有出处|shùzì yǒu méiyǒu chūchù]、[说话的人有没有名字|shuō huà de rén yǒu méiyǒu míngzi]、[还有原文能不能找到|hái yǒu yuánwén néng bu néng zhǎodào]。",
+     "id": "Lihat tiga hal: angkanya ada sumbernya tidak, orang yang berbicara ada namanya tidak, dan naskah aslinya bisa ditemukan tidak.",
+     "literal": "lihat — tiga — macam: angka — ada — tidak ada — sumber, bicara — kata — punya — orang — ada — tidak ada — nama, masih — ada — naskah asli — bisa — tidak — bisa — temukan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[这条三样都没有|Zhè tiáo sān yàng dōu méiyǒu]……[只有统计局那一句有|zhǐyǒu tǒngjìjú nà yí jù yǒu]。",
+     "id": "Berita ini ketiganya tidak ada… cuma kalimat tentang biro statistik itu yang ada.",
+     "literal": "ini — penggolong — tiga — macam — semua — tidak ada…… hanya — ada — statistik biro — itu — satu — kalimat — ada."
+    },
+    {
+     "speaker": "王丽:",
+     "text": "[那你转发的时候|Nà nǐ zhuǎnfā de shíhou]，[就只转发那一句|jiù zhǐ zhuǎnfā nà yí jù]。[其余的都是评论|Qíyú de dōu shì pínglùn]，[不是新闻|bú shì xīnwén]。",
+     "id": "Kalau begitu waktu kamu meneruskannya, teruskan kalimat itu saja. Sisanya semua komentar, bukan berita.",
+     "literal": "kalau begitu — kamu — teruskan-kirim — punya — waktu, langsung — hanya — teruskan — itu — satu — kalimat. sisa — punya — semua — adalah — komentar, bukan — berita."
+    }
+   ],
+   "notes": [
+    "**同比 dan 环比 — dua pembanding yang wajib dibedakan.** 同比 membandingkan dengan **periode yang sama tahun lalu**; 环比 membandingkan dengan **periode sebelumnya** (bulan lalu, kuartal lalu). Berita ekonomi Tiongkok memakainya di hampir setiap kalimat, dan menukarnya mengubah artinya sepenuhnya.",
+    "**百分之 + angka.** Persen ditulis terbalik dari bahasa Indonesia: [百分之二十|bǎi fēn zhī èrshí] = 20%. Harfiahnya “dari seratus bagian, dua puluh”. Untuk pecahan: [三分之二|sān fēn zhī èr] = 2/3 — penyebut lebih dulu.",
+    "**点 untuk koma desimal.** 2,1 dibaca [二点一|èr diǎn yī]。 Perhatikan bahwa Tiongkok memakai titik desimal seperti bahasa Inggris, bukan koma seperti bahasa Indonesia.",
+    "**不一定 — “belum tentu”.** Berbeda dari 一定不 “pasti tidak”. [他不一定来|Tā bù yídìng lái] belum tentu datang; [他一定不来|Tā yídìng bù lái] pasti tidak datang. Letak 不 menentukan seluruh artinya.",
+    "**看三样 — “lihat tiga hal”.** 样 sebagai penggolong untuk “macam, hal”: [三样东西|sān yàng dōngxi]。 Dalam percakapan, menyusun daftar dengan 看…样 / 有…点 membuat penjelasanmu terdengar tertata.",
+    "**转发 — meneruskan (pesan, unggahan).** Kata ini hidup sepenuhnya di dunia WeChat dan Weibo. Saudaranya: 分享 membagikan, 点赞 menyukai, 拉黑 memblokir, 屏蔽 membisukan.",
+    "**⚠️ 评论 dan 新闻 dipisahkan dengan tegas.** Membedakan laporan dari tafsiran adalah kebiasaan membaca, bukan kosakata — tetapi bahasa Mandarin memberimu penandanya: kalimat berpenanda 据 adalah laporan, kalimat berpenanda 认为/可能/或许 adalah tafsiran."
+   ],
+   "grammars": [
+    {
+     "title": "所谓 — memasang tanda kutip pada istilah orang lain",
+     "body": [
+      "所谓 berarti “yang disebut(-sebut)”, dan hampir selalu membawa jarak: penulis memakai istilah itu tanpa mengakuinya. Ia berdiri **di depan kata benda**, sering dengan 的 dan tanda kutip."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Bentuk",
+        "Contoh",
+        "Nada"
+       ],
+       "rows": [
+        [
+         "所谓的 + benda",
+         "[所谓的“专家”|suǒwèi de “zhuānjiā”]",
+         "sinis — pakar apanya"
+        ],
+        [
+         "所谓 + benda",
+         "[所谓自由|suǒwèi zìyóu]",
+         "sinis, lebih 【书】"
+        ],
+        [
+         "所谓…，就是…",
+         "[所谓“优化”|Suǒwèi “yōuhuà”]，[就是裁员|jiùshì cái yuán]。",
+         "membongkar istilah"
+        ],
+        [
+         "所谓…，是指…",
+         "[所谓B2|Suǒwèi B2]，[是指能自如讨论抽象话题|shì zhǐ néng zìrú tǎolùn chōuxiàng huàtí]。",
+         "netral — mendefinisikan"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Bentuk 所谓…，是指… adalah satu-satunya yang netral.** Ia dipakai di tulisan ilmiah untuk mendefinisikan istilah. Tiga bentuk lainnya membawa sikap, jadi berhati-hatilah memakainya dalam surat resmi atau kepada pelanggan.",
+      "⚠️ Jangan memakai 所谓 untuk istilah yang kamu pakai sendiri dengan sungguh-sungguh. [我在所谓的大学工作|Wǒ zài suǒwèi de dàxué gōngzuò] terbaca “saya bekerja di tempat yang katanya universitas” — hampir pasti bukan maksudmu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata berita dan sumber",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Berita berbahasa Mandarin memakai perbendaharaan yang seragam. Setelah menghafal daftar ini sekali, hampir semua judul berita akan terbuka sendiri — bahkan yang topiknya belum kamu kenal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Mandarin",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "[消息|xiāoxi]",
+       "kabar, berita",
+       "juga berarti “pesan”"
+      ],
+      [
+       "[来源|láiyuán]",
+       "sumber",
+       "[消息来源|xiāoxi láiyuán]"
+      ],
+      [
+       "[出处|chūchù]",
+       "sumber kutipan",
+       "untuk angka & kalimat"
+      ],
+      [
+       "[原文|yuánwén]",
+       "naskah asli",
+       "[找到原文|zhǎodào yuánwén]"
+      ],
+      [
+       "[报道|bàodào]",
+       "memberitakan; laporan",
+       "[据…报道|jù…bàodào]"
+      ],
+      [
+       "[通知|tōngzhī]",
+       "pengumuman resmi",
+       "internal lembaga"
+      ],
+      [
+       "[公告|gōnggào]",
+       "maklumat",
+       "untuk publik 【书】"
+      ],
+      [
+       "[声明|shēngmíng]",
+       "pernyataan resmi",
+       "[发表声明|fābiǎo shēngmíng]"
+      ],
+      [
+       "[澄清|chéngqīng]",
+       "meluruskan, klarifikasi",
+       "[澄清谣言|chéngqīng yáoyán]"
+      ],
+      [
+       "[辟谣|pì yáo]",
+       "membantah hoaks",
+       "kata resmi, sangat sering dipakai"
+      ],
+      [
+       "[谣言|yáoyán]",
+       "kabar bohong",
+       "[传谣|chuán yáo] menyebarkannya"
+      ],
+      [
+       "[知情人士|zhīqíng rénshì]",
+       "sumber yang mengetahui",
+       "narasumber anonim 【书】"
+      ],
+      [
+       "[匿名|nìmíng]",
+       "anonim",
+       "[匿名爆料|nìmíng bàoliào]"
+      ],
+      [
+       "[爆料|bàoliào]",
+       "membocorkan",
+       "【口】, media sosial"
+      ],
+      [
+       "[回应|huíyìng]",
+       "menanggapi",
+       "[尚未回应|shàng wèi huíyìng] belum menanggapi"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Rangka satu kalimat untuk meneruskan kabar dengan aman"
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga bentuk yang tak akan membuatmu repot",
+     "items": [
+      "[据 + sumber，+ fakta。|Jù + sumber，+ fakta。] — [据公司昨天的通知|Jù gōngsī zuótiān de tōngzhī]，[会议改到周四|huìyì gǎi dào zhōu sì]。",
+      "[我不确定，但听说…|Wǒ bú quèdìng]，[dàn tīngshuō…] — mengaku tidak yakin lebih dulu, baru meneruskan.",
+      "[这是我个人的猜测，不是消息。|Zhè shì wǒ gèrén de cāicè]，[bú shì xiāoxi]。 — memisahkan dugaan dari kabar secara terbuka. Kalimat ini menyelamatkan banyak orang di grup kerja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca judul berita: enam pola yang berulang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Judul berita Mandarin memampatkan kalimat dengan cara yang tetap. Enam pola di bawah menutupi sebagian besar judul yang akan kamu temui."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pola judul",
+      "Contoh",
+      "Kalimat penuhnya"
+     ],
+     "rows": [
+      [
+       "A 或 B",
+       "[明年或将放开|Míngnián huò jiāng fàng kāi]",
+       "或 = 或许 mungkin; 将 = akan"
+      ],
+      [
+       "A：B",
+       "[专家：风险可控|Zhuānjiā: fēngxiǎn kěkòng]",
+       "[专家认为风险可控|Zhuānjiā rènwéi fēngxiǎn kěkòng]"
+      ],
+      [
+       "A 回应 B",
+       "[公司回应裁员传闻|Gōngsī huíyìng cái yuán chuánwén]",
+       "menanggapi desas-desus PHK"
+      ],
+      [
+       "A 因 B 而 C",
+       "[航班因大雾而取消|Hángbān yīn dàwù ér qǔxiāo]",
+       "因…而 = karena…maka 【书】"
+      ],
+      [
+       "A 达 B",
+       "[人数达三万|Rénshù dá sān wàn]",
+       "达 = 达到 mencapai"
+      ],
+      [
+       "A 拟 B",
+       "[政府拟出台新规|Zhèngfǔ nǐ chūtái xīn guī]",
+       "拟 = 打算 berencana 【书】"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semua kata di kolom tengah adalah **satu aksara yang menggantikan dua**: 或 untuk 或许, 将 untuk 将要, 达 untuk 达到, 拟 untuk 打算, 因 untuk 因为, 而 untuk 所以. Inilah 书面语 dalam bentuknya yang paling padat — dan judul berita adalah tempat terbaik untuk melatihnya, karena panjangnya cuma sebaris."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "合并",
+   "baca": "hébìng",
+   "id": "menggabungkan; merger"
+  },
+  {
+   "zh": "分公司",
+   "baca": "fēngōngsī",
+   "id": "kantor cabang"
+  },
+  {
+   "zh": "总部",
+   "baca": "zǒngbù",
+   "id": "kantor pusat"
+  },
+  {
+   "zh": "人事部",
+   "baca": "rénshìbù",
+   "id": "bagian personalia"
+  },
+  {
+   "zh": "消息",
+   "baca": "xiāoxi",
+   "id": "kabar, pesan"
+  },
+  {
+   "zh": "来源",
+   "baca": "láiyuán",
+   "id": "sumber"
+  },
+  {
+   "zh": "出处",
+   "baca": "chūchù",
+   "id": "sumber kutipan"
+  },
+  {
+   "zh": "靠谱",
+   "baca": "kàopǔ",
+   "id": "bisa diandalkan 【口】"
+  },
+  {
+   "zh": "宣布",
+   "baca": "xuānbù",
+   "id": "mengumumkan"
+  },
+  {
+   "zh": "通知",
+   "baca": "tōngzhī",
+   "id": "pengumuman; memberitahu"
+  },
+  {
+   "zh": "公告",
+   "baca": "gōnggào",
+   "id": "maklumat 【书】"
+  },
+  {
+   "zh": "声明",
+   "baca": "shēngmíng",
+   "id": "pernyataan resmi"
+  },
+  {
+   "zh": "表示",
+   "baca": "biǎoshì",
+   "id": "menyatakan"
+  },
+  {
+   "zh": "认为",
+   "baca": "rènwéi",
+   "id": "berpendapat"
+  },
+  {
+   "zh": "指出",
+   "baca": "zhǐchū",
+   "id": "mengemukakan"
+  },
+  {
+   "zh": "强调",
+   "baca": "qiángdiào",
+   "id": "menekankan"
+  },
+  {
+   "zh": "否认",
+   "baca": "fǒurèn",
+   "id": "membantah"
+  },
+  {
+   "zh": "承认",
+   "baca": "chéngrèn",
+   "id": "mengakui"
+  },
+  {
+   "zh": "透露",
+   "baca": "tòulù",
+   "id": "membocorkan"
+  },
+  {
+   "zh": "所谓",
+   "baca": "suǒwèi",
+   "id": "yang disebut(-sebut)"
+  },
+  {
+   "zh": "组织结构",
+   "baca": "zǔzhī jiégòu",
+   "id": "struktur organisasi"
+  },
+  {
+   "zh": "优化",
+   "baca": "yōuhuà",
+   "id": "mengoptimalkan"
+  },
+  {
+   "zh": "裁员",
+   "baca": "cái yuán",
+   "id": "PHK, memangkas karyawan"
+  },
+  {
+   "zh": "猜测",
+   "baca": "cāicè",
+   "id": "dugaan; menduga"
+  },
+  {
+   "zh": "谣言",
+   "baca": "yáoyán",
+   "id": "kabar bohong"
+  },
+  {
+   "zh": "传谣",
+   "baca": "chuán yáo",
+   "id": "menyebar hoaks"
+  },
+  {
+   "zh": "辟谣",
+   "baca": "pì yáo",
+   "id": "membantah hoaks"
+  },
+  {
+   "zh": "澄清",
+   "baca": "chéngqīng",
+   "id": "meluruskan"
+  },
+  {
+   "zh": "回应",
+   "baca": "huíyìng",
+   "id": "menanggapi"
+  },
+  {
+   "zh": "报道",
+   "baca": "bàodào",
+   "id": "memberitakan; laporan"
+  },
+  {
+   "zh": "新华社",
+   "baca": "Xīnhuáshè",
+   "id": "Kantor Berita Xinhua"
+  },
+  {
+   "zh": "统计局",
+   "baca": "tǒngjìjú",
+   "id": "biro statistik"
+  },
+  {
+   "zh": "数据",
+   "baca": "shùjù",
+   "id": "data"
+  },
+  {
+   "zh": "同比",
+   "baca": "tóngbǐ",
+   "id": "dibanding periode sama tahun lalu"
+  },
+  {
+   "zh": "环比",
+   "baca": "huánbǐ",
+   "id": "dibanding periode sebelumnya"
+  },
+  {
+   "zh": "上涨",
+   "baca": "shàngzhǎng",
+   "id": "naik (harga, angka)"
+  },
+  {
+   "zh": "百分之",
+   "baca": "bǎi fēn zhī",
+   "id": "persen"
+  },
+  {
+   "zh": "平均",
+   "baca": "píngjūn",
+   "id": "rata-rata"
+  },
+  {
+   "zh": "具体",
+   "baca": "jùtǐ",
+   "id": "konkret, terperinci"
+  },
+  {
+   "zh": "判断",
+   "baca": "pànduàn",
+   "id": "menilai, memutuskan"
+  },
+  {
+   "zh": "专家",
+   "baca": "zhuānjiā",
+   "id": "pakar"
+  },
+  {
+   "zh": "原文",
+   "baca": "yuánwén",
+   "id": "naskah asli"
+  },
+  {
+   "zh": "转发",
+   "baca": "zhuǎnfā",
+   "id": "meneruskan (unggahan)"
+  },
+  {
+   "zh": "评论",
+   "baca": "pínglùn",
+   "id": "komentar; mengomentari"
+  },
+  {
+   "zh": "其余",
+   "baca": "qíyú",
+   "id": "sisanya 【书】"
+  },
+  {
+   "zh": "知情人士",
+   "baca": "zhīqíng rénshì",
+   "id": "sumber yang mengetahui"
+  },
+  {
+   "zh": "匿名",
+   "baca": "nìmíng",
+   "id": "anonim"
+  },
+  {
+   "zh": "爆料",
+   "baca": "bàoliào",
+   "id": "membocorkan 【口】"
+  },
+  {
+   "zh": "两回事",
+   "baca": "liǎng huí shì",
+   "id": "dua hal yang berbeda"
+  },
+  {
+   "zh": "尚未",
+   "baca": "shàng wèi",
+   "id": "belum 【书】"
+  },
+  {
+   "zh": "持续",
+   "baca": "chíxù",
+   "id": "terus-menerus"
+  },
+  {
+   "zh": "或",
+   "baca": "huò",
+   "id": "atau; mungkin 【书】"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih 听说 · 据说 · 有人说 · 据我所知 yang paling tepat.",
+   "items": [
+    "____，[他下个月就调到上海去|tā xià ge yuè jiù diào dào Shànghǎi qù]。(kabar umum tanpa sumber)",
+    "____，[你昨天见到他了|nǐ zuótiān jiàndào tā le]？(kamu mendengarnya sendiri)",
+    "____，[公司没有这个计划|gōngsī méiyǒu zhège jìhuà]。(sejauh yang kamu tahu)",
+    "____ [这次考试很难|zhè cì kǎoshì hěn nán]，[但我不知道是谁说的|dàn wǒ bù zhīdào shì shéi shuō de]。",
+    "____ [明天会下雪|míngtiān huì xià xuě]。(ramalan yang beredar)"
+   ]
+  },
+  {
+   "prompt": "Ganti 说 dengan kata kerja pelapor yang lebih tepat: 表示 · 认为 · 指出 · 强调 · 否认 · 承认.",
+   "items": [
+    "[公司说会尽快处理|Gōngsī shuō huì jǐnkuài chǔlǐ]。",
+    "[报告说这个方法有三个问题|Bàogào shuō zhège fāngfǎ yǒu sān ge wèntí]。",
+    "[他说他没有收到通知|Tā shuō tā méiyǒu shōudào tōngzhī]。(dia membantahnya)",
+    "[老师又说了一次时间很紧|Lǎoshī yòu shuō le yí cì shíjiān hěn jǐn]。",
+    "[他说自己算错了|Tā shuō zìjǐ suàn cuò le]。(dia mengakuinya)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin dengan rangka 据…。",
+   "items": [
+    "Menurut data tahun lalu, jumlah siswanya bertambah 12 persen.",
+    "Menurut pemberitaan Xinhua, pertemuan itu ditunda ke bulan depan.",
+    "Menurut keterangan penanggung jawabnya, masalahnya sudah diselesaikan.",
+    "Sejauh yang saya tahu, dia belum pernah ke Beijing.",
+    "Menurut statistik, lebih dari separuh orang memilih membeli secara daring."
+   ]
+  },
+  {
+   "prompt": "Tulis ulang memakai 所谓, lalu tandai apakah nadanya sinis atau netral.",
+   "items": [
+    "Yang mereka namakan “promo besar” itu sebenarnya cuma potongan lima persen.",
+    "Yang dimaksud B2 adalah mampu berdiskusi tentang hal yang abstrak.",
+    "Yang katanya “layanan gratis” itu ternyata berbayar setelah satu bulan.",
+    "Yang dimaksud kerja lembur di sini adalah bekerja lebih dari sepuluh jam sehari.",
+    "Yang mereka sebut “pakar” itu ternyata belum pernah bekerja di bidang ini."
+   ]
+  },
+  {
+   "prompt": "Baca dan jawab: bagian mana yang laporan, bagian mana yang tafsiran?",
+   "items": [
+    "[据统计局数据|Jù tǒngjìjú shùjù]，[上月失业率为百分之五点一|shàng yuè shīyèlǜ wéi bǎi fēn zhī wǔ diǎn yī]。",
+    "[有分析认为|Yǒu fēnxī rènwéi]，[这个数字明年可能继续上升|zhège shùzì míngnián kěnéng jìxù shàngshēng]。",
+    "[公司尚未对此作出回应|Gōngsī shàng wèi duì cǐ zuòchū huíyìng]。",
+    "[所谓的“结构性调整”|Suǒwèi de “jiégòuxìng tiáozhěng”]，[恐怕就是裁员|kǒngpà jiùshì cái yuán]。",
+    "[据知情人士透露|Jù zhīqíng rénshì tòulù]，[谈判已经进行了三轮|tánpàn yǐjīng jìnxíng le sān lún]。"
+   ]
+  },
+  {
+   "prompt": "Tulis tiga kalimat untuk situasi ini: kamu mendengar kabar kantormu akan pindah gedung, tetapi belum ada pengumuman resmi. Seorang rekan bertanya kepadamu. Jawablah dengan (1) mengaku tidak yakin, (2) memisahkan dugaan dari kabar, (3) menyebut satu-satunya sumber yang benar-benar ada.",
+   "items": [
+    "Tulis jawabanmu dalam tiga kalimat Mandarin."
+   ]
+  }
+ ],
+ "answers": [
+  "据说 — 听说 — 据我所知 — 有人说 — 据说",
+  "[公司表示会尽快处理|Gōngsī biǎoshì huì jǐnkuài chǔlǐ]。 — [报告指出这个方法有三个问题|Bàogào zhǐchū zhège fāngfǎ yǒu sān ge wèntí]。 — [他否认收到通知|Tā fǒurèn shōudào tōngzhī]。 — [老师再次强调时间很紧|Lǎoshī zàicì qiángdiào shíjiān hěn jǐn]。 — [他承认自己算错了|Tā chéngrèn zìjǐ suàn cuò le]。",
+  "[据去年的数据|Jù qùnián de shùjù]，[学生人数增加了百分之十二|xuéshēng rénshù zēngjiā le bǎi fēn zhī shí'èr]。 — [据新华社报道|Jù Xīnhuáshè bàodào]，[会议推迟到下个月|huìyì tuīchí dào xià ge yuè]。 — [据负责人介绍|Jù fùzérén jièshào]，[问题已经解决了|wèntí yǐjīng jiějué le]。 — [据我所知|Jù wǒ suǒ zhī]，[他还没去过北京|tā hái méi qù guo Běijīng]。 — [据统计|Jù tǒngjì]，[超过一半的人选择网上购买|chāoguò yíbàn de rén xuǎnzé wǎng shàng gòumǎi]。",
+  "[所谓的“大促销”|Suǒwèi de “dà cùxiāo”]，[其实只打九五折|qíshí zhǐ dǎ jiǔ wǔ zhé]。→ sinis — [所谓B2|Suǒwèi B2]，[是指能讨论抽象的话题|shì zhǐ néng tǎolùn chōuxiàng de huàtí]。→ netral — [所谓的“免费服务”|Suǒwèi de “miǎnfèi fúwù”]，[一个月以后就要收费了|yí ge yuè yǐhòu jiù yào shōu fèi le]。→ sinis — [所谓加班|Suǒwèi jiā bān]，[在这里是指一天工作十个小时以上|zài zhèlǐ shì zhǐ yì tiān gōngzuò shí ge xiǎoshí yǐshàng]。→ netral — [他们所谓的“专家”|Tāmen suǒwèi de “zhuānjiā”]，[原来没在这个行业干过|yuánlái méi zài zhège hángyè gàn guo]。→ sinis",
+  "laporan · angka punya sumber jelas — tafsiran · 有分析认为 + 可能 — laporan · fakta bahwa perusahaan belum menanggapi — tafsiran · 所谓 + 恐怕 membawa sikap penulis — laporan, tetapi sumbernya anonim; perlakukan dengan hati-hati",
+  "Contoh jawaban: [我不太确定|Wǒ bú tài quèdìng]，[只是听说|zhǐshì tīngshuō]。[这是我个人的猜测|Zhè shì wǒ gèrén de cāicè]，[不是正式消息|bú shì zhèngshì xiāoxi]。[据行政部上周的通知|Jù xíngzhèngbù shàng zhōu de tōngzhī]，[目前只是在看新的办公室|mùqián zhǐshì zài kàn xīn de bàngōngshì]，[还没有决定|hái méiyǒu juédìng]。"
+ ],
+ "wave": "Buka satu berita berbahasa Mandarin di ponselmu — apa saja. Tandai dengan pensil: mana kalimat yang punya 据/根据, mana yang punya 认为/可能/或许, dan mana yang punya 所谓. Lalu ceritakan isi beritanya kepada seseorang dalam tiga kalimat, dengan aturan: kalimat pertama wajib memakai 据, kalimat ketiga wajib menyebut apa yang belum jelas."
+}
