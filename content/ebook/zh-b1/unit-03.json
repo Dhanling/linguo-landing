@@ -1,0 +1,456 @@
+{
+ "title": "Di rumah sakit",
+ "title_target": "看病 — Kàn bìng",
+ "goal": "Menguasai pasangan 就 dan 才 — dua kata sependek satu suku kata yang menentukan apakah kalimatmu berarti “cepat sekali” atau “lama sekali” — serta 一…就, 竟然, dan 居然 untuk menandai hal yang di luar dugaan.",
+ "bekal": [
+  "mendaftar, menjelaskan keluhan, dan memahami perintah dokter di rumah sakit Tiongkok",
+  "membedakan 就 dan 才 dengan tepat dalam kalimat waktu, syarat, dan jumlah",
+  "menyambung dua kejadian yang beruntun dengan 一…就",
+  "menandai hal yang di luar dugaan dengan 竟然 dan 居然",
+  "menanyakan obat, dosis, dan pantangan tanpa salah paham"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Di ruang pendaftaran",
+   "intro": "Andi demam sejak dua hari dan akhirnya pergi ke rumah sakit. Sistemnya berbeda dengan di Indonesia: mendaftar dulu, baru bertemu dokter. Perhatikan berapa kali 就 dan 才 muncul, dan bandingkan artinya.",
+   "lines": [
+    {
+     "speaker": "护士:",
+     "text": "[您好|Nín hǎo]，[挂什么科|guà shénme kē]？[有医保卡吗|Yǒu yībǎokǎ ma]？",
+     "id": "Selamat siang, daftar ke poli apa? Ada kartu asuransi kesehatan?",
+     "literal": "Anda — baik, gantung — apa — poli. ada — asuransi-medis — kartu — kah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我没有医保卡|Wǒ méiyǒu yībǎokǎ]，[只有护照|zhǐ yǒu hùzhào]。[我发烧两天了|Wǒ fāshāo liǎng tiān le]，[挂内科可以吗|guà nèikē kěyǐ ma]？",
+     "id": "Saya tidak punya kartu asuransi, hanya paspor. Saya demam sudah dua hari, daftar ke poli penyakit dalam boleh?",
+     "literal": "saya — tidak-ada — asuransi-medis — kartu, hanya — ada — paspor. saya — demam — dua — hari — sudah, gantung — dalam-poli — boleh — kah."
+    },
+    {
+     "speaker": "护士:",
+     "text": "[可以|Kěyǐ]。[普通号十五块|Pǔtōng hào shíwǔ kuài]，[专家号五十|zhuānjiā hào wǔshí]。[您挂哪个|Nín guà nǎ ge]？",
+     "id": "Bisa. Nomor biasa lima belas yuan, nomor dokter spesialis lima puluh. Mau yang mana?",
+     "literal": "boleh. biasa — nomor — lima-belas — yuan, ahli — nomor — lima-puluh. Anda — gantung — mana — penggolong."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[普通号就行|Pǔtōng hào jiù xíng]。[请问要等多久|Qǐngwèn yào děng duō jiǔ]？",
+     "id": "Nomor biasa saja cukup. Boleh saya tanya, harus menunggu berapa lama?",
+     "literal": "biasa — nomor — langsung — boleh. mohon-tanya — harus — tunggu — berapa — lama."
+    },
+    {
+     "speaker": "护士:",
+     "text": "[前面还有八个人|Qiánmiàn hái yǒu bā ge rén]，[大概四十分钟|dàgài sìshí fēnzhōng]。[叫到号您再进去|Jiào dào hào nín zài jìnqu]。",
+     "id": "Di depan masih ada delapan orang, kira-kira empat puluh menit. Kalau nomornya dipanggil baru Anda masuk.",
+     "literal": "depan — masih — ada — delapan — penggolong — orang, kira-kira — empat-puluh — menit. panggil — sampai — nomor — Anda — baru — masuk-pergi."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[好的|Hǎo de]。[对了|Duì le]，[我上午八点就来了|wǒ shàngwǔ bā diǎn jiù lái le]，[怎么现在才排到|zěnme xiànzài cái pái dào]？",
+     "id": "Baik. Oh iya, saya jam delapan pagi sudah datang, kok baru sekarang antreannya sampai?",
+     "literal": "baik — punya. betul — sudah, saya — pagi — delapan — jam — langsung — datang — sudah, mengapa — sekarang — baru — antre — sampai."
+    },
+    {
+     "speaker": "护士:",
+     "text": "[今天人特别多|Jīntiān rén tèbié duō]。[流感季节|Liúgǎn jìjié]，[一到冬天就这样|yí dào dōngtiān jiù zhèyàng]。",
+     "id": "Hari ini orangnya sangat banyak. Musim flu, begitu masuk musim dingin selalu begini.",
+     "literal": "hari-ini — orang — sangat — banyak. arus-flu — musim, begitu — sampai — musim-dingin — langsung — begini."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[原来这样|Yuánlái zhèyàng]。[那我在外面等|Nà wǒ zài wàimian děng]，[叫我名字就行|jiào wǒ míngzi jiù xíng]。",
+     "id": "Oh begitu rupanya. Kalau begitu saya tunggu di luar, panggil nama saya saja cukup.",
+     "literal": "asalnya — begini. itu — saya — di — luar — tunggu, panggil — saya — nama — langsung — boleh."
+    },
+    {
+     "speaker": "护士:",
+     "text": "[屏幕上会显示号码|Píngmù shang huì xiǎnshì hàomǎ]。[您别走远|Nín bié zǒu yuǎn]，[叫三次没人应就跳过去了|jiào sān cì méi rén yìng jiù tiào guòqu le]。",
+     "id": "Nomornya akan muncul di layar. Jangan pergi jauh, kalau dipanggil tiga kali tak ada yang menyahut langsung dilewati.",
+     "literal": "layar — atas — akan — menampilkan — nomor. Anda — jangan — jalan — jauh, panggil — tiga — kali — tidak-ada — orang — menyahut — langsung — lompat — lewat — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[明白了|Míngbai le]，[谢谢|xièxie]。[对了|Duì le]，[化验单也在这儿交吗|huàyàndān yě zài zhèr jiāo ma]？",
+     "id": "Saya mengerti, terima kasih. Oh iya, formulir tes lab juga diserahkan di sini?",
+     "literal": "paham — sudah, terima-kasih. betul — sudah, uji-lab — lembar — juga — di — sini — serahkan — kah."
+    },
+    {
+     "speaker": "护士:",
+     "text": "[不是|Bú shì]，[化验在二楼|huàyàn zài èr lóu]。[医生开单子以后您才去|Yīshēng kāi dānzi yǐhòu nín cái qù]，[现在去也没用|xiànzài qù yě méi yòng]。",
+     "id": "Bukan, laboratorium di lantai dua. Setelah dokter menuliskan lembarnya baru Anda ke sana, sekarang ke sana pun tidak ada gunanya.",
+     "literal": "bukan, uji-lab — di — dua — lantai. dokter — buka — lembar — sesudah — Anda — baru — pergi, sekarang — pergi — juga — tidak-ada — guna."
+    }
+   ],
+   "notes": [
+    "**[就|jiù] berarti “lebih cepat/sedikit/mudah daripada yang diduga”; [才|cái] berarti “lebih lambat/banyak/sulit”.** Inilah inti unit ini. [我八点就来了|Wǒ bā diǎn jiù lái le] = saya sudah datang sejak jam delapan (cepat sekali). [我八点才来|Wǒ bā diǎn cái lái] = saya baru datang jam delapan (telat). Kalimatnya identik kecuali satu suku kata, dan artinya berlawanan. ⚠️ Ini kesalahan paling mahal di B1 karena tidak pernah menghasilkan kalimat yang salah — hanya kalimat yang bermakna kebalikannya.",
+    "**Kalimat ber-才 hampir tidak pernah memakai 了.** ✅ [他昨天才到|Tā zuótiān cái dào]。 ❌ 他昨天才到了。 Sebabnya masuk akal: 了 menandai sesuatu yang tuntas dan memuaskan, sedangkan 才 justru menandai bahwa hal itu terjadi lebih lambat dari yang seharusnya — dua rasa yang bertabrakan. Kalimat ber-就 sebaliknya sangat sering memakai 了.",
+    "**[一…就…|yī…jiù…] = begitu … langsung ….** Dua kejadian yang menempel tanpa jeda: [一到冬天就这样|Yí dào dōngtiān jiù zhèyàng]。 Pelakunya boleh sama atau berbeda; kalau berbeda, pelaku kedua berdiri sebelum 就: [我一说|Wǒ yì shuō]，[他就笑了|tā jiù xiào le]。 ⚠️ Jangan memakai 了 sesudah bagian 一: ❌ 我一到了家就睡了。",
+    "**[挂号|guàhào] harfiahnya “menggantung nomor”.** Ini istilah baku untuk mendaftar berobat, dan bagian 号 sering dipisah: [挂内科|guà nèikē] daftar poli penyakit dalam, [挂专家号|guà zhuānjiā hào] ambil nomor dokter spesialis. Urutan berobat di rumah sakit Tiongkok: 挂号 daftar → 候诊 menunggu → 就诊 diperiksa → 化验 tes lab → 取药 ambil obat → 缴费 bayar, yang sering diselipkan beberapa kali di antaranya.",
+    "**[原来|yuánlái] menandai kamu baru saja mengerti sesuatu.** [原来这样|Yuánlái zhèyàng] = oh begitu rupanya. Ia menyatakan bahwa dugaanmu sebelumnya keliru dan sekarang baru terbuka. ⚠️ 原来 juga berarti “semula, dulunya”: [我原来住在上海|Wǒ yuánlái zhù zài Shànghǎi]。 Yang membedakan cuma letaknya: di awal kalimat berarti “ternyata”, sesudah pelaku berarti “dulunya”."
+   ],
+   "grammars": [
+    {
+     "title": "就 dan 才 — satu suku kata yang membalik makna",
+     "body": [
+      "Keduanya berdiri **tepat sebelum kata kerja**. Yang menentukan artinya adalah keterangan yang mendahuluinya."
+     ],
+     "table": {
+      "head": ["Jenis", "就 = lebih dari cukup", "才 = kurang dari harapan"],
+      "rows": [
+       ["Waktu", "[他六点就起床了|Tā liù diǎn jiù qǐchuáng le]。 Jam enam dia sudah bangun.", "[他十点才起床|Tā shí diǎn cái qǐchuáng]。 Jam sepuluh dia baru bangun."],
+       ["Lama", "[三天就学会了|Sān tiān jiù xuéhuì le]。 Tiga hari sudah bisa.", "[三年才学会|Sān nián cái xuéhuì]。 Tiga tahun baru bisa."],
+       ["Jumlah", "[一百块就够了|Yìbǎi kuài jiù gòu le]。 Seratus yuan sudah cukup.", "[一百块才够|Yìbǎi kuài cái gòu]。 Baru cukup kalau seratus yuan."],
+       ["Syarat", "[你来我就去|Nǐ lái wǒ jiù qù]。 Kalau kamu datang saya pergi.", "[你来我才去|Nǐ lái wǒ cái qù]。 Saya pergi hanya kalau kamu datang."],
+       ["Cukup", "[普通号就行|Pǔtōng hào jiù xíng]。 Nomor biasa saja cukup.", "—"]
+      ]
+     },
+     "after": [
+      "⚠️ Aturan 了: kalimat ber-就 sering berakhir dengan 了; kalimat ber-才 hampir tidak pernah.",
+      "Pasangan tetapnya: [只要…就…|zhǐyào…jiù…] asalkan … maka … · [只有…才…|zhǐyǒu…cái…] hanya kalau … barulah …. Perbedaan keduanya persis sama dengan perbedaan 就 dan 才: 只要 = syarat yang mudah, 只有 = syarat yang satu-satunya.",
+      "[只要你来|Zhǐyào nǐ lái]，[我就高兴|wǒ jiù gāoxìng]。 Asal kamu datang, saya senang. · [只有努力|Zhǐyǒu nǔlì]，[才能成功|cái néng chénggōng]。 Hanya dengan berusaha barulah bisa berhasil."
+     ]
+    },
+    {
+     "title": "一…就… — begitu … langsung …",
+     "body": [
+      "Rangkanya: **(pelaku) + 一 + kejadian pertama，(pelaku) + 就 + kejadian kedua。** Jarak antara keduanya nol."
+     ],
+     "table": {
+      "head": ["Contoh", "Arti", "Catatan"],
+      "rows": [
+       ["[我一到家就睡了|Wǒ yí dào jiā jiù shuì le]。", "Begitu sampai rumah saya langsung tidur.", "Pelaku sama, disebut sekali"],
+       ["[我一说|Wǒ yì shuō]，[他就笑了|tā jiù xiào le]。", "Begitu saya bilang, dia langsung tertawa.", "Pelaku berbeda, disebut dua kali"],
+       ["[他一喝酒就脸红|Tā yì hē jiǔ jiù liǎn hóng]。", "Begitu minum alkohol mukanya langsung merah.", "Kebiasaan, tanpa 了"],
+       ["[一到冬天就这样|Yí dào dōngtiān jiù zhèyàng]。", "Begitu masuk musim dingin selalu begini.", "Berulang tiap tahun"]
+      ]
+     },
+     "after": [
+      "⚠️ Nada 一 berubah: *yí* di depan nada empat ([一到|yí dào]), *yì* di depan nada 1–3 ([一说|yì shuō]).",
+      "⚠️ Kalau kejadiannya berulang atau berupa kebiasaan, jangan pakai 了 di ujung: ❌ 他一喝酒就脸红了。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Di ruang periksa",
+   "intro": "Nomor Andi dipanggil. Dokter, 陈医生, memeriksanya. Bahasa dokter Tiongkok sangat singkat dan langsung — bukan karena tidak ramah, tapi karena antrean di luar masih panjang.",
+   "lines": [
+    {
+     "speaker": "陈医生:",
+     "text": "[怎么了|Zěnme le]？[哪儿不舒服|Nǎr bù shūfu]？",
+     "id": "Kenapa? Bagian mana yang tidak enak?",
+     "literal": "bagaimana — sudah. mana — tidak — nyaman."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[前天晚上开始发烧|Qiántiān wǎnshang kāishǐ fāshāo]，[三十八度五|sānshíbā dù wǔ]。[嗓子疼|Sǎngzi téng]，[还咳嗽|hái késou]。",
+     "id": "Mulai demam kemarin lusa malam, tiga puluh delapan koma lima. Tenggorokan sakit, batuk juga.",
+     "literal": "kemarin-lusa — malam — mulai — demam, tiga-puluh-delapan — derajat — lima. tenggorokan — nyeri, masih — batuk."
+    },
+    {
+     "speaker": "陈医生:",
+     "text": "[吃过药没有|Chī guo yào méiyǒu]？",
+     "id": "Sudah minum obat belum?",
+     "literal": "makan — pernah — obat — belum-ada."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[吃了退烧药|Chī le tuìshāoyào]。[吃了以后就退|Chī le yǐhòu jiù tuì]，[可是过几个小时又烧起来|kěshì guò jǐ ge xiǎoshí yòu shāo qǐlai]。",
+     "id": "Sudah minum obat penurun panas. Setelah diminum langsung turun, tapi beberapa jam kemudian naik lagi.",
+     "literal": "makan — sudah — turun-panas — obat. makan — sudah — sesudah — langsung — turun, tetapi — lewat — beberapa — penggolong — jam — lagi — panas — naik-datang."
+    },
+    {
+     "speaker": "陈医生:",
+     "text": "[张嘴|Zhāng zuǐ]，[我看看|wǒ kànkan]。[嗯|Èn]，[扁桃体发炎了|biǎntáotǐ fāyán le]，[挺严重的|tǐng yánzhòng de]。[先去化验一下血|Xiān qù huàyàn yíxià xiě]。",
+     "id": "Buka mulut, saya lihat. Hm, amandelnya meradang, cukup parah. Periksa darah dulu ke lab.",
+     "literal": "buka — mulut, saya — lihat-lihat. hm, amandel — meradang — sudah, cukup — parah — punya. dulu — pergi — uji-lab — sekali — darah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[化验要多长时间|Huàyàn yào duō cháng shíjiān]？[我下午还有会|Wǒ xiàwǔ hái yǒu huì]。",
+     "id": "Tes lab butuh berapa lama? Sore ini saya masih ada rapat.",
+     "literal": "uji-lab — perlu — berapa — panjang — waktu. saya — sore — masih — ada — rapat."
+    },
+    {
+     "speaker": "陈医生:",
+     "text": "[二十分钟就出结果|Èrshí fēnzhōng jiù chū jiéguǒ]。[不过说实话|Búguò shuō shíhuà]，[烧到三十八度五还去开会|shāo dào sānshíbā dù wǔ hái qù kāihuì]，[你竟然还想上班|nǐ jìngrán hái xiǎng shàngbān]？",
+     "id": "Dua puluh menit hasilnya sudah keluar. Tapi terus terang, panas sampai tiga puluh delapan koma lima masih mau rapat, kamu malah masih ingin masuk kerja?",
+     "literal": "dua-puluh — menit — langsung — keluar — hasil. tetapi — bilang — sungguh-kata, panas — sampai — tiga-puluh-delapan — derajat — lima — masih — pergi — rapat, kamu — sungguh-tak-disangka — masih — ingin — masuk-kerja."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我刚入职|Wǒ gāng rùzhí]，[不太好意思请假|bú tài hǎoyìsi qǐng jià]。",
+     "id": "Saya baru masuk kerja, agak sungkan minta izin.",
+     "literal": "saya — baru-saja — masuk-jabatan, tidak — terlalu — enak-hati — minta — cuti."
+    },
+    {
+     "speaker": "陈医生:",
+     "text": "[我给你开病假条|Wǒ gěi nǐ kāi bìngjiàtiáo]。[两天|Liǎng tiān]。[你今天要是去开会|Nǐ jīntiān yàoshi qù kāihuì]，[全办公室一星期以后都得来找我|quán bàngōngshì yí xīngqī yǐhòu dōu děi lái zhǎo wǒ]。",
+     "id": "Saya buatkan surat sakit. Dua hari. Kalau hari ini kamu tetap rapat, seluruh kantor seminggu lagi akan datang ke saya semua.",
+     "literal": "saya — kepada — kamu — buka — sakit-cuti — lembar. dua — hari. kamu — hari-ini — kalau — pergi — rapat, seluruh — kantor — satu — minggu — sesudah — semua — harus — datang — cari — saya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[好吧|Hǎo ba]，[我请假|wǒ qǐng jià]。[药怎么吃|Yào zěnme chī]？",
+     "id": "Baiklah, saya minta izin. Obatnya diminum bagaimana?",
+     "literal": "baik — ya, saya — minta — cuti. obat — bagaimana — makan."
+    },
+    {
+     "speaker": "陈医生:",
+     "text": "[化验完再说|Huàyàn wán zài shuō]。[如果是细菌感染|Rúguǒ shì xìjūn gǎnrǎn]，[才用抗生素|cái yòng kàngshēngsù]；[如果是病毒|rúguǒ shì bìngdú]，[多喝水多休息就行|duō hē shuǐ duō xiūxi jiù xíng]。",
+     "id": "Setelah tes lab baru kita bicara. Kalau infeksi bakteri, barulah pakai antibiotik; kalau virus, banyak minum banyak istirahat saja cukup.",
+     "literal": "uji-lab — selesai — baru — bilang. jika — adalah — bakteri — infeksi, barulah — pakai — anti-hidup-unsur; jika — adalah — virus, banyak — minum — air — banyak — istirahat — langsung — boleh."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[明白|Míngbai]。[居然这么快就能知道|Jūrán zhème kuài jiù néng zhīdào]，[我还以为要等一天|wǒ hái yǐwéi yào děng yì tiān]。",
+     "id": "Paham. Tak disangka secepat ini sudah bisa tahu, saya kira harus menunggu sehari.",
+     "literal": "paham. sungguh-tak-disangka — begini — cepat — langsung — bisa — tahu, saya — malah — mengira — harus — tunggu — satu — hari."
+    }
+   ],
+   "notes": [
+    "**[竟然|jìngrán] dan [居然|jūrán] sama artinya: “tak disangka, ternyata malah”.** Dua-duanya berdiri sesudah pelaku, tepat sebelum kata kerja, dan menandai bahwa kenyataannya bertentangan dengan yang wajar. 居然 sedikit lebih kuat dan lebih sering di lisan; 竟然 sedikit lebih rapi dan lebih sering di tulisan. ⚠️ Keduanya membawa rasa **tidak setuju atau heran**, bukan sekadar terkejut senang — jangan memakainya untuk memuji, kecuali kamu memang bermaksud bilang “kok bisa sih”.",
+    "**[还以为|hái yǐwéi] = saya kira (dan ternyata salah).** 以为 selalu menandai dugaan yang keliru, tidak pernah dugaan yang benar. ✅ [我以为你不来了|Wǒ yǐwéi nǐ bù lái le]。 (ternyata kamu datang) ⚠️ Untuk dugaan yang benar, pakai [我想|wǒ xiǎng] atau [我觉得|wǒ juéde]. Menjawab pertanyaan dengan 我以为… berarti kamu mengaku salah paham.",
+    "**Suhu badan dan angka desimal.** 38.5 derajat dibaca [三十八度五|sānshíbā dù wǔ] — satuannya disisipkan di tengah, dan angka desimalnya menyusul tanpa kata “koma”. Cara ini juga dipakai untuk uang ([三块五|sān kuài wǔ] 3,5 yuan) dan tinggi badan ([一米七五|yì mǐ qī wǔ] 1,75 m). Bentuk resmi dengan [点|diǎn] juga ada: [三十八点五度|sānshíbā diǎn wǔ dù], dipakai di laporan tertulis.",
+    "**[再说|zài shuō] punya dua arti yang jauh berbeda.** Sesudah kata kerja: “nanti saja dibicarakan” — [化验完再说|Huàyàn wán zài shuō]。 Di awal kalimat: “lagi pula” — [再说|Zài shuō]，[今天太晚了|jīntiān tài wǎn le]。 Letaknya yang menentukan, bukan nadanya.",
+    "**[要是|yàoshi] adalah bentuk lisan dari 如果.** Keduanya sama artinya dan sama-sama berpasangan dengan 就. 要是 terdengar lebih santai dan lebih sering muncul di percakapan; 如果 lebih netral dan wajib di tulisan. Bentuk singkat yang juga sering terdengar: kalimat pengandaian tanpa kata pengandaian sama sekali, cuma dengan 就: [你不去|Nǐ bú qù]，[我也不去|wǒ yě bú qù]。"
+   ],
+   "grammars": [
+    {
+     "title": "竟然 · 居然 · 反而 — tiga penanda “di luar dugaan”",
+     "body": [
+      "Ketiganya berdiri sesudah pelaku dan sebelum kata kerja. Bedanya bukan kekuatan, melainkan **apa yang dilanggar**."
+     ],
+     "table": {
+      "head": ["Kata", "Yang dilanggar", "Contoh"],
+      "rows": [
+       ["[竟然|jìngrán]", "Kewajaran umum", "[他竟然不知道自己的生日|Tā jìngrán bù zhīdào zìjǐ de shēngrì]。 Dia sampai tidak tahu ulang tahunnya sendiri."],
+       ["[居然|jūrán]", "Sama, nada lebih kuat", "[这么贵的东西他居然买了|Zhème guì de dōngxi tā jūrán mǎi le]。 Barang semahal itu dia beli juga."],
+       ["[反而|fǎn'ér]", "Arah yang diharapkan", "[吃了药|Chī le yào]，[反而更难受了|fǎn'ér gèng nánshòu le]。 Sudah minum obat, malah tambah tidak enak."],
+       ["[没想到|méi xiǎngdào]", "Dugaan si pembicara", "[没想到他来了|Méi xiǎngdào tā lái le]。 Tak kusangka dia datang."]
+      ]
+     },
+     "after": [
+      "⚠️ 没想到 berdiri di **awal kalimat** dan tidak butuh pelaku; 竟然/居然/反而 berdiri di **tengah**, sesudah pelaku. ❌ 竟然他来了。 ✅ [他竟然来了|Tā jìngrán lái le]。",
+      "Ketiganya boleh ditumpuk untuk menekankan: [没想到他居然反而怪我|Méi xiǎngdào tā jūrán fǎn'ér guài wǒ]。 Tak kusangka dia malah menyalahkan saya."
+     ]
+    },
+    {
+     "title": "📄 Kotak 书面语 — bahasa surat izin sakit",
+     "body": [
+      "Surat izin sakit yang kamu kirim ke atasan memakai ragam tulis. Ini rangkanya, tinggal ganti isinya."
+     ],
+     "table": {
+      "head": ["Bagian", "Kalimatnya", "Arti"],
+      "rows": [
+       ["Sapaan", "[周主管|Zhōu zhǔguǎn]，[您好|nín hǎo]：", "Bapak/Ibu Zhou, selamat pagi:"],
+       ["Sebab", "[本人今日因发烧就医|Běnrén jīnrì yīn fāshāo jiùyī]，[医生建议休息两天|yīshēng jiànyì xiūxi liǎng tiān]。", "Saya hari ini berobat karena demam, dokter menyarankan istirahat dua hari."],
+       ["Permohonan", "[特此申请病假两天|Tècǐ shēnqǐng bìngjià liǎng tiān]，[自本周三至周四|zì běn zhōusān zhì zhōusì]。", "Dengan ini mengajukan izin sakit dua hari, dari Rabu sampai Kamis."],
+       ["Serah tugas", "[手头工作已交接给小李|Shǒutóu gōngzuò yǐ jiāojiē gěi Xiǎo Lǐ]。", "Pekerjaan yang di tangan sudah diserahterimakan ke Xiao Li."],
+       ["Lampiran", "[病假条见附件|Bìngjiàtiáo jiàn fùjiàn]。", "Surat sakit terlampir."],
+       ["Penutup", "[请批准|Qǐng pīzhǔn]，[谢谢|xièxie]。", "Mohon disetujui, terima kasih."]
+      ]
+     },
+     "after": [
+      "Kata tulis yang muncul di sini: [因|yīn] karena (= 因为), [自…至…|zì…zhì…] dari … sampai … (= 从…到…), [已|yǐ] sudah (= 已经), [特此|tècǐ] dengan ini. Semuanya satu suku kata — itulah tanda ragam tulis Mandarin."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bagian tubuh dan keluhan",
+   "blocks": [
+    { "type": "p", "text": "Menyebut keluhan dalam bahasa Mandarin memakai rangka yang tetap: **bagian tubuh + keadaannya**, tanpa kata kerja penghubung. [我头疼|Wǒ tóu téng] harfiahnya “saya kepala nyeri”, dan itu memang bentuk yang benar." },
+    { "type": "tabel", "head": ["Keluhan", "Pīnyīn", "Arti"], "rows": [
+     ["头疼 / 头晕", "tóu téng / tóu yūn", "sakit kepala / pusing berputar"],
+     ["嗓子疼", "sǎngzi téng", "tenggorokan sakit"],
+     ["肚子疼 / 拉肚子", "dùzi téng / lā dùzi", "sakit perut / diare"],
+     ["恶心 / 想吐", "ěxin / xiǎng tù", "mual / ingin muntah"],
+     ["发烧 / 退烧", "fāshāo / tuìshāo", "demam / panasnya turun"],
+     ["咳嗽 / 流鼻涕", "késou / liú bítì", "batuk / pilek berair"],
+     ["浑身没劲儿", "húnshēn méi jìnr", "badan lemas sekujur"],
+     ["过敏", "guòmǐn", "alergi"],
+     ["失眠", "shīmián", "susah tidur"],
+     ["伤口发炎", "shāngkǒu fāyán", "lukanya meradang"]
+    ] },
+    { "type": "sub", "text": "Kalimat yang ditanyakan dokter" },
+    { "type": "list", "items": [
+     "[哪儿不舒服|Nǎr bù shūfu]？ Bagian mana yang tidak enak?",
+     "[什么时候开始的|Shénme shíhou kāishǐ de]？ Mulai kapan? — jawab dengan rangka 是…的.",
+     "[有没有药物过敏|Yǒu méiyǒu yàowù guòmǐn]？ Ada alergi obat?",
+     "[以前有过这种情况吗|Yǐqián yǒu guo zhè zhǒng qíngkuàng ma]？ Sebelumnya pernah begini?",
+     "[量过体温吗|Liáng guo tǐwēn ma]？ Sudah diukur suhunya?"
+    ] },
+    { "type": "kotak", "title": "⚠️ Aturan minum obat yang wajib kamu pahami", "items": [
+     "[一天三次|yì tiān sān cì]，[一次两片|yí cì liǎng piàn] — tiga kali sehari, sekali dua tablet.",
+     "[饭后服用|fàn hòu fúyòng] sesudah makan · [饭前|fàn qián] sebelum makan · [空腹|kōngfù] perut kosong.",
+     "[忌辛辣|jì xīnlà] pantang pedas · [忌烟酒|jì yān jiǔ] pantang rokok dan alkohol.",
+     "[连服三天|lián fú sān tiān] diminum berturut-turut tiga hari — antibiotik harus dihabiskan meski sudah membaik.",
+     "[外用|wàiyòng] obat luar, JANGAN diminum. Salah membaca yang satu ini benar-benar berbahaya."
+    ] }
+   ]
+  },
+  {
+   "title": "Alur rumah sakit Tiongkok",
+   "blocks": [
+    { "type": "p", "text": "Rumah sakit umum di Tiongkok berjalan dengan urutan yang tetap dan hampir semuanya lewat aplikasi sekarang. Kalau kamu tahu urutannya, empat jam bisa berubah jadi satu jam." },
+    { "type": "tabel", "head": ["Langkah", "Istilah", "Catatan"], "rows": [
+     ["1. Daftar", "[挂号|guàhào]", "Sekarang hampir semua lewat aplikasi rumah sakit atau WeChat, sehari sebelumnya"],
+     ["2. Menunggu", "[候诊|hòuzhěn]", "Nomor muncul di layar; dipanggil tiga kali tanpa jawaban akan dilewati"],
+     ["3. Diperiksa", "[就诊|jiùzhěn]", "Rata-rata lima sampai delapan menit — siapkan keluhanmu dalam tiga kalimat"],
+     ["4. Bayar", "[缴费|jiǎofèi]", "Tiap tindakan dibayar dulu, baru dikerjakan"],
+     ["5. Tes", "[化验 / 拍片|huàyàn / pāipiàn]", "Darah di lantai lab, rontgen di ruang pencitraan"],
+     ["6. Kembali ke dokter", "[复诊|fùzhěn]", "Bawa hasilnya, biasanya tanpa antre ulang"],
+     ["7. Ambil obat", "[取药|qǔyào]", "Di apotek rumah sakit, tunjukkan nomor resepnya"]
+    ] },
+    { "type": "sub", "text": "Kalimat penyelamat" },
+    { "type": "list", "items": [
+     "[我是外国人|Wǒ shì wàiguórén]，[没有医保卡|méiyǒu yībǎokǎ]，[能用护照挂号吗|néng yòng hùzhào guàhào ma]？",
+     "[请问缴费在几楼|Qǐngwèn jiǎofèi zài jǐ lóu]？ Boleh tanya, kasir di lantai berapa?",
+     "[这个药一天吃几次|Zhè ge yào yì tiān chī jǐ cì]？ Obat ini sehari berapa kali?",
+     "[能开英文的诊断证明吗|Néng kāi Yīngwén de zhěnduàn zhèngmíng ma]？ Bisa dibuatkan surat keterangan diagnosis berbahasa Inggris? — perlu untuk klaim asuransi.",
+     "[我对青霉素过敏|Wǒ duì qīngméisù guòmǐn]。 Saya alergi penisilin. — hafalkan nama alergimu sendiri sebelum kamu membutuhkannya."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik tentang sakit terakhirmu", "items": [
+     "Kapan mulainya, apa keluhannya, berapa lama berlangsung.",
+     "Satu kalimat dengan 就: berapa cepat kamu sembuh atau berapa cepat kamu ke dokter.",
+     "Satu kalimat dengan 才: apa yang justru lama.",
+     "Satu kalimat dengan 一…就: apa yang selalu terjadi begitu kamu kelelahan atau kurang tidur.",
+     "Tutup dengan 竟然 atau 居然: satu hal yang di luar dugaanmu."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "挂号", "baca": "guàhào", "id": "mendaftar berobat" },
+  { "zh": "内科", "baca": "nèikē", "id": "poli penyakit dalam" },
+  { "zh": "专家号", "baca": "zhuānjiā hào", "id": "nomor dokter spesialis" },
+  { "zh": "医保卡", "baca": "yībǎokǎ", "id": "kartu asuransi kesehatan" },
+  { "zh": "护照", "baca": "hùzhào", "id": "paspor" },
+  { "zh": "发烧", "baca": "fāshāo", "id": "demam" },
+  { "zh": "退烧药", "baca": "tuìshāoyào", "id": "obat penurun panas" },
+  { "zh": "嗓子", "baca": "sǎngzi", "id": "tenggorokan" },
+  { "zh": "咳嗽", "baca": "késou", "id": "batuk" },
+  { "zh": "扁桃体", "baca": "biǎntáotǐ", "id": "amandel" },
+  { "zh": "发炎", "baca": "fāyán", "id": "meradang" },
+  { "zh": "严重", "baca": "yánzhòng", "id": "parah, serius" },
+  { "zh": "化验", "baca": "huàyàn", "id": "tes laboratorium" },
+  { "zh": "结果", "baca": "jiéguǒ", "id": "hasil" },
+  { "zh": "细菌", "baca": "xìjūn", "id": "bakteri" },
+  { "zh": "病毒", "baca": "bìngdú", "id": "virus" },
+  { "zh": "感染", "baca": "gǎnrǎn", "id": "infeksi" },
+  { "zh": "抗生素", "baca": "kàngshēngsù", "id": "antibiotik" },
+  { "zh": "病假条", "baca": "bìngjiàtiáo", "id": "surat keterangan sakit" },
+  { "zh": "请假", "baca": "qǐng jià", "id": "minta izin tidak masuk" },
+  { "zh": "流感", "baca": "liúgǎn", "id": "influenza" },
+  { "zh": "季节", "baca": "jìjié", "id": "musim" },
+  { "zh": "屏幕", "baca": "píngmù", "id": "layar" },
+  { "zh": "显示", "baca": "xiǎnshì", "id": "menampilkan" },
+  { "zh": "号码", "baca": "hàomǎ", "id": "nomor" },
+  { "zh": "应", "baca": "yìng", "id": "menyahut" },
+  { "zh": "普通", "baca": "pǔtōng", "id": "biasa, umum" },
+  { "zh": "竟然", "baca": "jìngrán", "id": "tak disangka" },
+  { "zh": "居然", "baca": "jūrán", "id": "kok malah, tak disangka" },
+  { "zh": "以为", "baca": "yǐwéi", "id": "mengira (keliru)" },
+  { "zh": "原来", "baca": "yuánlái", "id": "ternyata; semula" },
+  { "zh": "要是", "baca": "yàoshi", "id": "kalau (lisan)" },
+  { "zh": "再说", "baca": "zài shuō", "id": "nanti dibicarakan; lagi pula" },
+  { "zh": "只要", "baca": "zhǐyào", "id": "asalkan" },
+  { "zh": "只有", "baca": "zhǐyǒu", "id": "hanya kalau" },
+  { "zh": "头晕", "baca": "tóu yūn", "id": "pusing berputar" },
+  { "zh": "恶心", "baca": "ěxin", "id": "mual" },
+  { "zh": "拉肚子", "baca": "lā dùzi", "id": "diare" },
+  { "zh": "过敏", "baca": "guòmǐn", "id": "alergi" },
+  { "zh": "失眠", "baca": "shīmián", "id": "susah tidur" },
+  { "zh": "体温", "baca": "tǐwēn", "id": "suhu badan" },
+  { "zh": "量", "baca": "liáng", "id": "mengukur" },
+  { "zh": "片", "baca": "piàn", "id": "tablet (penggolong obat)" },
+  { "zh": "服用", "baca": "fúyòng", "id": "meminum obat (ragam tulis)" },
+  { "zh": "空腹", "baca": "kōngfù", "id": "perut kosong" },
+  { "zh": "忌", "baca": "jì", "id": "pantang" },
+  { "zh": "辛辣", "baca": "xīnlà", "id": "pedas menyengat" },
+  { "zh": "外用", "baca": "wàiyòng", "id": "obat luar" },
+  { "zh": "缴费", "baca": "jiǎofèi", "id": "membayar biaya" },
+  { "zh": "取药", "baca": "qǔyào", "id": "mengambil obat" },
+  { "zh": "诊断", "baca": "zhěnduàn", "id": "diagnosis" },
+  { "zh": "交接", "baca": "jiāojiē", "id": "serah terima" },
+  { "zh": "批准", "baca": "pīzhǔn", "id": "menyetujui" },
+  { "zh": "青霉素", "baca": "qīngméisù", "id": "penisilin" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 就 atau 才.",
+   "items": [
+    "[他六点|Tā liù diǎn] ____ [起床了|qǐchuáng le]，[真早|zhēn zǎo]。",
+    "[我等了两个小时|Wǒ děng le liǎng ge xiǎoshí]，[医生|yīshēng] ____ [来|lái]。",
+    "[这个药吃三天|Zhè ge yào chī sān tiān] ____ [好了|hǎo le]，[很有效|hěn yǒuxiào]。",
+    "[只有化验以后|Zhǐyǒu huàyàn yǐhòu]，[医生|yīshēng] ____ [能开药|néng kāi yào]。",
+    "[普通号十五块|Pǔtōng hào shíwǔ kuài] ____ [够了|gòu le]。",
+    "[他学了五年中文|Tā xué le wǔ nián Zhōngwén]，[今年|jīnnián] ____ [敢开口|gǎn kāikǒu]。"
+   ]
+  },
+  {
+   "prompt": "Gabungkan menjadi satu kalimat dengan 一…就….",
+   "items": [
+    "[我到家|Wǒ dào jiā]。[我睡觉|Wǒ shuìjiào]。",
+    "[他喝酒|Tā hē jiǔ]。[他脸红|Tā liǎn hóng]。",
+    "[冬天来了|Dōngtiān lái le]。[医院人很多|Yīyuàn rén hěn duō]。",
+    "[我说了|Wǒ shuō le]。[他笑了|Tā xiào le]。",
+    "[吃了退烧药|Chī le tuìshāoyào]。[烧退了|Shāo tuì le]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "他 / 竟然 / 自己的 / 不知道 / 生日",
+    "医生 / 单子 / 以后 / 开 / 才 / 您 / 去",
+    "只要 / 就 / 你 / 我 / 来 / 高兴",
+    "我 / 以为 / 还 / 要 / 一天 / 等",
+    "扁桃体 / 挺 / 了 / 发炎 / 的 / 严重",
+    "吃了药 / 反而 / 更 / 了 / 难受"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia. Perhatikan 就 dan 才.",
+   "items": [
+    "[我八点就来了|Wǒ bā diǎn jiù lái le]。",
+    "[我八点才来|Wǒ bā diǎn cái lái]。",
+    "[一百块就够了|Yìbǎi kuài jiù gòu le]。",
+    "[一百块才够|Yìbǎi kuài cái gòu]。",
+    "[你来我才去|Nǐ lái wǒ cái qù]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Saya demam sudah dua hari, tenggorokan sakit juga.",
+    "Begitu masuk musim dingin rumah sakitnya selalu penuh.",
+    "Dua puluh menit hasilnya sudah keluar.",
+    "Hanya kalau infeksi bakteri barulah dipakai antibiotik.",
+    "Tak disangka dia masih mau masuk kerja.",
+    "Saya kira harus menunggu sehari."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[他昨天才到了|Tā zuótiān cái dào le]。",
+    "[我一到了家就睡了|Wǒ yí dào le jiā jiù shuì le]。",
+    "[竟然他不知道|Jìngrán tā bù zhīdào]。",
+    "[他一喝酒就脸红了|Tā yì hē jiǔ jiù liǎn hóng le]。",
+    "[我以为你来了|Wǒ yǐwéi nǐ lái le]，[所以我很高兴|suǒyǐ wǒ hěn gāoxìng]。"
+   ]
+  }
+ ],
+ "answers": [
+  "就 — 才 — 就 — 才 — 就 — 才",
+  "我一到家就睡觉。 — 他一喝酒就脸红。 — 一到冬天医院人就很多。 — 我一说他就笑了。 — 一吃退烧药烧就退了。",
+  "他 竟然 不知道 自己的 生日 — 医生 开 单子 以后 您 才 去 — 只要 你 来 我 就 高兴 — 我 还 以为 要 等 一天 — 扁桃体 发炎 得 挺 严重 的 — 吃了药 反而 更 难受 了",
+  "Saya sudah datang sejak jam delapan. — Saya baru datang jam delapan. — Seratus yuan saja sudah cukup. — Baru cukup kalau seratus yuan. — Saya pergi hanya kalau kamu datang.",
+  "Wǒ fāshāo liǎng tiān le, sǎngzi yě téng. — Yí dào dōngtiān yīyuàn rén jiù hěn duō. — Èrshí fēnzhōng jiù chū jiéguǒ. — Zhǐyǒu xìjūn gǎnrǎn cái yòng kàngshēngsù. — Tā jìngrán hái xiǎng shàngbān. — Wǒ hái yǐwéi yào děng yì tiān.",
+  "Tā zuótiān cái dào. (才 tak memakai 了) — Wǒ yí dào jiā jiù shuì le. (bagian 一 tanpa 了) — Tā jìngrán bù zhīdào. (竟然 sesudah pelaku) — Tā yì hē jiǔ jiù liǎn hóng. (kebiasaan tanpa 了) — Wǒ xiǎng nǐ lái le, suǒyǐ wǒ hěn gāoxìng. (以为 hanya untuk dugaan keliru)"
+ ],
+ "wave": "Lima menit sebelum Unit 4: ambil satu hari biasa dalam hidupmu dan ceritakan dalam empat puluh detik, wajib memakai 就 dua kali dan 才 dua kali. Contoh rangka: jam berapa kamu sudah bangun, jam berapa kamu baru sampai kantor, berapa lama satu pekerjaan sudah selesai, berapa lama satu pekerjaan baru selesai. Kalau dua kalimat 才-mu terdengar seperti keluhan, kamu memakainya dengan benar."
+}

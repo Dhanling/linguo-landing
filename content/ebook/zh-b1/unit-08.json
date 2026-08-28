@@ -1,0 +1,415 @@
+{
+ "title": "Uang, cicilan, dan pilihan sulit",
+ "title_target": "钱的事 — Qián de shì",
+ "goal": "Menimbang dua pilihan yang sama-sama tidak enak: 与其…不如 (daripada … lebih baik …), 宁可…也不 (lebih baik … daripada …), serta menaikkan taruhan dengan 甚至 dan 更别说.",
+ "bekal": [
+  "membicarakan gaji, tabungan, cicilan, dan pinjaman tanpa canggung",
+  "membandingkan dua pilihan dengan 与其…不如 dan 宁可…也不",
+  "menaikkan tingkat dengan 甚至 dan 更别说 / 何况",
+  "meminjam dan menagih uang kepada teman dengan cara yang tidak merusak hubungan",
+  "memahami istilah cicilan, bunga, dan potongan di aplikasi pembayaran Tiongkok"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Beli laptop atau tidak",
+   "intro": "Andi ingin mengganti laptopnya yang sudah lambat. Ia bertanya kepada 小李 soal cicilan tanpa bunga. Perhatikan bagaimana keduanya membandingkan pilihan, bukan sekadar menyebutkan.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[我的电脑越来越慢了|Wǒ de diànnǎo yuè lái yuè màn le]，[开个表格都要等半天|kāi ge biǎogé dōu yào děng bàn tiān]。",
+     "id": "Laptop saya makin lama makin lambat, buka satu tabel saja harus menunggu lama sekali.",
+     "literal": "saya — punya — komputer — makin — datang — makin — lambat — sudah, buka — penggolong — tabel — bahkan — harus — tunggu — setengah — hari."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[用了几年了|Yòng le jǐ nián le]？[与其修|Yǔqí xiū]，[不如直接换一台|bùrú zhíjiē huàn yì tái]。[修一次也要一两千|Xiū yí cì yě yào yì liǎng qiān]。",
+     "id": "Sudah dipakai berapa tahun? Daripada diperbaiki, lebih baik langsung ganti satu unit. Sekali servis juga habis seribu dua ribu.",
+     "literal": "pakai — sudah — berapa — tahun — sudah. daripada — perbaiki, tidak-sebaik — langsung — ganti — satu — penggolong. perbaiki — satu — kali — juga — perlu — satu — dua — ribu."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[快六年了|Kuài liù nián le]。[可是新的要一万多|Kěshì xīn de yào yí wàn duō]，[我这个月刚交了房租和押金|wǒ zhè ge yuè gāng jiāo le fángzū hé yājīn]。",
+     "id": "Hampir enam tahun. Tapi yang baru butuh sepuluh ribu lebih, bulan ini saya baru saja bayar sewa dan deposit.",
+     "literal": "hampir — enam — tahun — sudah. tetapi — baru — punya — perlu — satu — puluh-ribu — lebih, saya — ini — penggolong — bulan — baru-saja — bayar — sudah — sewa-rumah — dan — jaminan."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[可以分期啊|Kěyǐ fēnqī a]。[很多店支持十二期免息|Hěn duō diàn zhīchí shí'èr qī miǎnxī]，[一个月不到一千|yí ge yuè bú dào yì qiān]。",
+     "id": "Bisa dicicil kok. Banyak toko mendukung dua belas kali tanpa bunga, sebulan tidak sampai seribu.",
+     "literal": "boleh — bagi-tempo — lho. banyak — toko — mendukung — dua-belas — tempo — bebas-bunga, satu — penggolong — bulan — tidak — sampai — satu — ribu."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[免息真的免息吗|Miǎnxī zhēn de miǎnxī ma]？[我怕有手续费|Wǒ pà yǒu shǒuxùfèi]。",
+     "id": "Tanpa bunga itu benar-benar tanpa bunga? Saya takut ada biaya administrasi.",
+     "literal": "bebas-bunga — sungguh — punya — bebas-bunga — kah. saya — takut — ada — prosedur-biaya."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[要看清楚|Yào kàn qīngchu]。[有的写免息|Yǒu de xiě miǎnxī]，[其实收手续费|qíshí shōu shǒuxùfèi]，[甚至比利息还高|shènzhì bǐ lìxī hái gāo]。",
+     "id": "Harus dilihat dengan jelas. Ada yang menulis tanpa bunga, sebenarnya menarik biaya administrasi, bahkan lebih tinggi daripada bunganya.",
+     "literal": "harus — lihat — jelas. ada — punya — tulis — bebas-bunga, sebenarnya — ambil — prosedur-biaya, bahkan — dibanding — bunga — masih — tinggi."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那算下来还不如全款|Nà suàn xiàlai hái bùrú quánkuǎn]。[我宁可等两个月|Wǒ nìngkě děng liǎng ge yuè]，[也不想每个月背着一笔账|yě bù xiǎng měi ge yuè bēi zhe yì bǐ zhàng]。",
+     "id": "Kalau dihitung malah tidak sebaik bayar lunas. Saya lebih baik menunggu dua bulan, daripada tiap bulan menggendong satu utang.",
+     "literal": "itu — hitung — turun-datang — masih — tidak-sebaik — penuh-uang. saya — lebih-baik — tunggu — dua — penggolong — bulan, juga — tidak — ingin — tiap — penggolong — bulan — memikul — dalam-keadaan — satu — penggolong — utang."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[你这个想法挺健康的|Nǐ zhè ge xiǎngfǎ tǐng jiànkāng de]。[我身边好多人|Wǒ shēnbiān hǎo duō rén]，[分期买手机|fēnqī mǎi shǒujī]、[分期买相机|fēnqī mǎi xiàngjī]，[最后连吃饭都要分期|zuìhòu lián chī fàn dōu yào fēnqī]。",
+     "id": "Pemikiranmu ini cukup sehat. Di sekitar saya banyak sekali orang, cicil beli HP, cicil beli kamera, akhirnya makan pun harus dicicil.",
+     "literal": "kamu — ini — penggolong — pemikiran — cukup — sehat — punya. saya — sisi-badan — sangat — banyak — orang, bagi-tempo — beli — ponsel, bagi-tempo — beli — kamera, akhirnya — bahkan — makan — nasi — pun — harus — bagi-tempo."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那太可怕了|Nà tài kěpà le]。[不过说回来|Búguò shuō huílai]，[电脑是工作工具|diànnǎo shì gōngzuò gōngjù]，[跟买相机不一样|gēn mǎi xiàngjī bù yíyàng]。",
+     "id": "Wah itu menakutkan. Tapi kembali lagi, laptop itu alat kerja, tidak sama dengan beli kamera.",
+     "literal": "itu — terlalu — menakutkan — sudah. tetapi — bilang — kembali-datang, komputer — adalah — kerja — alat, dengan — beli — kamera — tidak — sama."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[对|Duì]。[能挣钱的东西|Néng zhèng qián de dōngxi]，[早买早受益|zǎo mǎi zǎo shòuyì]；[不能挣钱的|bù néng zhèng qián de]，[晚买晚吃亏|wǎn mǎi wǎn chīkuī]。",
+     "id": "Betul. Barang yang bisa menghasilkan uang, makin cepat dibeli makin cepat menguntungkan; yang tidak bisa menghasilkan uang, makin lambat dibeli makin sedikit ruginya.",
+     "literal": "betul. bisa — cari — uang — punya — barang, awal — beli — awal — menerima-manfaat; tidak — bisa — cari — uang — punya, lambat — beli — lambat — makan-rugi."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[这句话我要记下来|Zhè jù huà wǒ yào jì xiàlai]。[好|Hǎo]，[那我下周去看看实体店|nà wǒ xià zhōu qù kànkan shítǐdiàn]。",
+     "id": "Kalimat ini akan saya catat. Baik, kalau begitu minggu depan saya lihat-lihat toko fisiknya.",
+     "literal": "ini — penggolong — kata — saya — harus — catat — turun-datang. baik, itu — saya — bawah — minggu — pergi — lihat-lihat — nyata-wujud — toko."
+    }
+   ],
+   "notes": [
+    "**[与其…不如…|yǔqí…bùrú…] = daripada …, lebih baik ….** Kepingan pertamanya berisi pilihan yang **ditolak**, kepingan keduanya pilihan yang **diambil**. ⚠️ Ini kebalikan dari urutan bahasa Indonesia yang sering menaruh pilihan terbaik lebih dulu. Bentuk singkatnya cuma memakai 不如: [不如直接换一台|Bùrú zhíjiē huàn yì tái]。 Bentuk ini juga berarti “tidak sebaik”: [这个不如那个|Zhè ge bùrú nà ge]。",
+    "**[宁可…也不…|nìngkě…yě bù…] = lebih baik … daripada ….** Bedanya dengan 与其…不如: 宁可 menyatakan **kesediaan menanggung yang tidak enak** demi menghindari yang lebih tidak enak. [我宁可等两个月|Wǒ nìngkě děng liǎng ge yuè]，[也不想背着账|yě bù xiǎng bēi zhe zhàng]。 Bentuk terbaliknya juga ada: [宁可…也要…|nìngkě…yě yào…] rela menanggung demi tetap melakukan sesuatu.",
+    "**[甚至|shènzhì] = bahkan, sampai-sampai.** Ia menaikkan tingkat ke contoh yang paling ekstrem, dan sering bekerja sama dengan 连…都: [最后连吃饭都要分期|zuìhòu lián chī fàn dōu yào fēnqī]。 ⚠️ 甚至 tidak berdiri sendiri sebagai kata sambung sebab-akibat; ia selalu melanjutkan daftar yang sudah dimulai.",
+    "**[说回来|shuō huílai] = kembali lagi, ngomong-ngomong soal tadi.** Bentuk lengkapnya [话说回来|huà shuō huílai], dipakai untuk mengoreksi arah pembicaraan sendiri, biasanya untuk mengakui sisi lain: [不过话说回来|Búguò huà shuō huílai]，[他也不容易|tā yě bù róngyì]。 Ini alat penting untuk terdengar berimbang, bukan keras kepala.",
+    "**[早买早受益|zǎo mǎi zǎo shòuyì] adalah bentuk peribahasa modern berpola “早A早B”.** Polanya sangat produktif: [早睡早起|zǎo shuì zǎo qǐ] tidur cepat bangun cepat, [早说早解决|zǎo shuō zǎo jiějué] cepat bilang cepat selesai, [晚说晚麻烦|wǎn shuō wǎn máfan]. Empat aksara, dua bagian sejajar — inilah bentuk kalimat yang paling khas bahasa Mandarin."
+   ],
+   "grammars": [
+    {
+     "title": "与其…不如 dan 宁可…也不 — memilih di antara dua yang sulit",
+     "body": [
+      "Dua pasangan ini sering tertukar. Yang menentukan: apakah kamu sedang **menyarankan yang lebih baik** atau **rela menanggung yang lebih berat**."
+     ],
+     "table": {
+      "head": ["Pasangan", "Isinya", "Contoh"],
+      "rows": [
+       ["与其 A，不如 B", "A ditolak, B disarankan", "[与其在家等|Yǔqí zài jiā děng]，[不如自己去问|bùrú zìjǐ qù wèn]。"],
+       ["与其 A，还不如 B", "Sama, lebih tegas", "[与其买这个|Yǔqí mǎi zhè ge]，[还不如省下来|hái bùrú shěng xiàlai]。"],
+       ["宁可 A，也不 B", "Rela A demi menghindari B", "[我宁可走路|Wǒ nìngkě zǒulù]，[也不坐他的车|yě bù zuò tā de chē]。"],
+       ["宁可 A，也要 B", "Rela A demi tetap melakukan B", "[他宁可不睡觉|Tā nìngkě bú shuìjiào]，[也要做完|yě yào zuò wán]。"],
+       ["A 不如 B", "A tidak sebaik B", "[今天不如昨天热|Jīntiān bùrú zuótiān rè]。"]
+      ]
+     },
+     "after": [
+      "⚠️ 不如 diikuti kata kerja atau benda, bukan kalimat lengkap dengan pelaku baru. ❌ 不如你去问。 ✅ [不如你自己去问|Bùrú nǐ zìjǐ qù wèn] boleh, tapi lebih wajar [你不如自己去问|Nǐ bùrú zìjǐ qù wèn]。",
+      "⚠️ 宁可 tidak pernah dipakai untuk pilihan yang menyenangkan. Ia selalu berisi pengorbanan."
+     ]
+    },
+    {
+     "title": "甚至 · 更别说 · 何况 — menaikkan taruhan",
+     "body": [
+      "Ketiganya menambahkan contoh yang lebih ekstrem sesudah contoh yang sudah disebut. Bedanya arah dan nadanya."
+     ],
+     "table": {
+      "head": ["Kata", "Arah", "Contoh"],
+      "rows": [
+       ["[甚至|shènzhì]", "Naik ke yang paling ekstrem", "[他会说五种语言|Tā huì shuō wǔ zhǒng yǔyán]，[甚至会说阿拉伯语|shènzhì huì shuō Ālābóyǔ]。"],
+       ["[更别说|gèng bié shuō]", "Turun: yang lebih mudah pun tidak", "[我连中文报纸都看不懂|Wǒ lián Zhōngwén bàozhǐ dōu kàn bu dǒng]，[更别说古文了|gèng bié shuō gǔwén le]。"],
+       ["[何况|hékuàng]", "Menambah alasan yang lebih kuat", "[他自己都不会|Tā zìjǐ dōu bú huì]，[何况教别人|hékuàng jiāo biérén]。"],
+       ["[更何况|gèng hékuàng]", "Sama, lebih tegas", "[这么远我都去了|Zhème yuǎn wǒ dōu qù le]，[更何况就在楼下|gèng hékuàng jiù zài lóu xià]。"]
+      ]
+     },
+     "after": [
+      "⚠️ 更别说 dan 何况 hampir selalu didahului kalimat ber-连…都. Tanpa kalimat pertama itu, keduanya menggantung.",
+      "Bentuk beku yang sering terdengar: [别说…了|bié shuō…le] — [别说一万|Bié shuō yí wàn]，[一千我都没有|yì qiān wǒ dōu méiyǒu]。 Jangankan sepuluh ribu, seribu pun saya tidak punya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Menagih pinjaman",
+   "intro": "Enam bulan lalu Andi meminjamkan uang kepada temannya, 张伟, dan sampai sekarang belum dikembalikan. Menagih adalah salah satu percakapan paling sulit dalam bahasa apa pun. Perhatikan bagaimana Andi membuka percakapannya.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[张伟|Zhāng Wěi]，[有件事我一直不好意思开口|yǒu jiàn shì wǒ yìzhí bù hǎoyìsi kāikǒu]。",
+     "id": "Zhang Wei, ada satu hal yang dari dulu saya tidak enak untuk membukanya.",
+     "literal": "Zhang Wei, ada — penggolong — perkara — saya — terus — tidak — enak-hati — buka-mulut."
+    },
+    {
+     "speaker": "张伟:",
+     "text": "[你说|Nǐ shuō]。[咱俩还客气什么|Zán liǎ hái kèqi shénme]。",
+     "id": "Bilang saja. Kita berdua masih sungkan-sungkanan segala.",
+     "literal": "kamu — bilang. kita — dua-orang — masih — sungkan — apa."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[就是上次那五千块|Jiùshì shàng cì nà wǔ qiān kuài]。[我最近手头有点紧|Wǒ zuìjìn shǒutóu yǒudiǎn jǐn]，[想问问你什么时候方便|xiǎng wènwen nǐ shénme shíhou fāngbiàn]。",
+     "id": "Soal lima ribu yang waktu itu. Belakangan keuangan saya agak seret, ingin tanya kapan kamu ada kelonggaran.",
+     "literal": "justru-adalah — atas — kali — itu — lima — ribu — yuan. saya — belakangan — tangan-kepala — agak — ketat, ingin — tanya-tanya — kamu — apa — waktu — nyaman."
+    },
+    {
+     "speaker": "张伟:",
+     "text": "[哎呀|Āiyā]，[真对不起|zhēn duìbuqǐ]。[我完全忘了|Wǒ wánquán wàng le]，[不是不想还|bú shì bù xiǎng huán]。",
+     "id": "Aduh, benar-benar maaf. Saya sama sekali lupa, bukan tidak mau mengembalikan.",
+     "literal": "aduh, sungguh — maaf. saya — sepenuhnya — lupa — sudah, bukan — tidak — ingin — kembalikan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我知道你不是那种人|Wǒ zhīdào nǐ bú shì nà zhǒng rén]。[要是这个月不方便|Yàoshi zhè ge yuè bù fāngbiàn]，[下个月也行|xià ge yuè yě xíng]，[你跟我说一声就好|nǐ gēn wǒ shuō yì shēng jiù hǎo]。",
+     "id": "Saya tahu kamu bukan orang yang seperti itu. Kalau bulan ini tidak longgar, bulan depan juga boleh, cukup kamu kabari saya.",
+     "literal": "saya — tahu — kamu — bukan — itu — jenis — orang. kalau — ini — penggolong — bulan — tidak — nyaman, bawah — penggolong — bulan — juga — boleh, kamu — dengan — saya — bilang — satu — suara — langsung — baik."
+    },
+    {
+     "speaker": "张伟:",
+     "text": "[这个月能还三千|Zhè ge yuè néng huán sān qiān]，[剩下的两千下个月十号发工资就转你|shèng xià de liǎng qiān xià ge yuè shí hào fā gōngzī jiù zhuǎn nǐ]。",
+     "id": "Bulan ini bisa kembalikan tiga ribu, sisa dua ribunya bulan depan tanggal sepuluh begitu gajian langsung saya transfer.",
+     "literal": "ini — penggolong — bulan — bisa — kembalikan — tiga — ribu, sisa — turun — punya — dua — ribu — bawah — penggolong — bulan — sepuluh — tanggal — keluar — gaji — langsung — pindah — kamu."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[完全没问题|Wánquán méi wèntí]。[说实话|Shuō shíhuà]，[我宁可晚点儿拿到|wǒ nìngkě wǎn diǎnr ná dào]，[也不想让你去借别的钱来还我|yě bù xiǎng ràng nǐ qù jiè bié de qián lái huán wǒ]。",
+     "id": "Sama sekali tidak masalah. Terus terang, saya lebih baik menerimanya agak telat, daripada membuatmu pinjam uang lain untuk mengembalikan ke saya.",
+     "literal": "sepenuhnya — tidak-ada — masalah. bilang — sungguh-kata, saya — lebih-baik — lambat — sedikit — ambil — sampai, juga — tidak — ingin — membuat — kamu — pergi — pinjam — lain — punya — uang — datang — kembalikan — saya."
+    },
+    {
+     "speaker": "张伟:",
+     "text": "[谢谢你这么说|Xièxie nǐ zhème shuō]。[其实我这半年真的挺难的|Qíshí wǒ zhè bàn nián zhēn de tǐng nán de]，[房贷|fángdài]、[孩子|háizi]、[老人看病|lǎorén kàn bìng]……",
+     "id": "Terima kasih kamu bilang begitu. Sebenarnya setengah tahun ini saya benar-benar sulit, cicilan rumah, anak, orang tua berobat…",
+     "literal": "terima-kasih — kamu — begini — bilang. sebenarnya — saya — ini — setengah — tahun — sungguh — punya — cukup — sulit — punya, rumah-pinjaman, anak, orang-tua — lihat — sakit……"
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我明白|Wǒ míngbai]。[以后有困难就说|Yǐhòu yǒu kùnnan jiù shuō]，[别一个人扛着|bié yí ge rén káng zhe]。[朋友不就是为了这个吗|Péngyou bú jiùshì wèile zhè ge ma]？",
+     "id": "Saya paham. Nanti kalau ada kesulitan bilang saja, jangan dipikul sendirian. Bukankah teman memang untuk ini?",
+     "literal": "saya — paham. kelak — ada — kesulitan — langsung — bilang, jangan — satu — penggolong — orang — memikul — dalam-keadaan. teman — bukan — justru-adalah — demi — ini — penggolong — kah."
+    },
+    {
+     "speaker": "张伟:",
+     "text": "[等我缓过来|Děng wǒ huǎn guòlai]，[请你吃顿好的|qǐng nǐ chī dùn hǎo de]。[这次真是欠你一个人情|Zhè cì zhēn shì qiàn nǐ yí ge rénqíng]。",
+     "id": "Tunggu saya pulih, saya traktir kamu makan yang enak. Kali ini benar-benar berutang budi padamu.",
+     "literal": "tunggu — saya — pulih — lewat-datang, undang — kamu — makan — penggolong — baik — punya. ini — kali — sungguh — adalah — berutang — kamu — satu — penggolong — budi."
+    }
+   ],
+   "notes": [
+    "**Menagih utang dalam bahasa Mandarin punya rangka baku empat langkah.** (1) Mengakui canggung: [有件事我一直不好意思开口|yǒu jiàn shì wǒ yìzhí bù hǎoyìsi kāikǒu]. (2) Menyebut alasanmu sendiri, bukan kesalahannya: [我最近手头有点紧|wǒ zuìjìn shǒutóu yǒudiǎn jǐn]. (3) Bertanya kapan, bukan menuntut sekarang: [什么时候方便|shénme shíhou fāngbiàn]. (4) Memberi jalan keluar: [下个月也行|xià ge yuè yě xíng]. ⚠️ Yang merusak hubungan bukan menagihnya, melainkan menagih dengan menyebut lupa atau tidak jujur.",
+    "**[手头紧|shǒutóu jǐn] = sedang seret keuangannya.** Harfiahnya “di tangan sempit”. Ini cara paling halus mengatakan sedang tidak punya uang, dan ia tidak memalukan karena menandakan keadaan sementara. Lawannya: [手头宽裕|shǒutóu kuānyu]. Ungkapan sejenis: [周转不开|zhōuzhuǎn bù kāi] perputaran uangnya macet, [紧巴巴的|jǐnbābā de] serba pas-pasan.",
+    "**[不是不想…|bú shì bù xiǎng…] = bukannya tidak mau ….** Rangka penyangkalan ganda yang sangat sering dipakai untuk membela diri: [我不是不想去|Wǒ bú shì bù xiǎng qù]，[是实在没时间|shì shízài méi shíjiān]。 Kepingan keduanya hampir selalu dimulai dengan 是, yang menyodorkan alasan sebenarnya.",
+    "**[扛|káng] = memikul di bahu, dan kiasannya menanggung sendirian.** [别一个人扛着|Bié yí ge rén káng zhe]。 Kata ini membawa rasa berat dan kesepian, dan sering muncul dalam percakapan tentang tekanan hidup. Saudaranya: [撑|chēng] bertahan, [熬|áo] merebus, kiasannya bertahan lewat masa sulit: [熬过去就好了|Áo guòqu jiù hǎo le]。",
+    "**[人情|rénqíng] adalah utang budi yang tidak berbentuk uang.** [欠你一个人情|Qiàn nǐ yí ge rénqíng] berutang budi padamu, [还人情|huán rénqíng] membalas budi, [人情往来|rénqíng wǎnglái] pergaulan saling membalas budi. Dalam masyarakat Tiongkok, 人情 dilacak dengan sangat teliti meski tidak pernah dicatat — dan lebih mahal daripada uangnya sendiri."
+   ],
+   "grammars": [
+    {
+     "title": "Penyangkalan ganda — cara halus menegaskan",
+     "body": [
+      "Bahasa Mandarin sangat sering memakai dua penyangkalan untuk membuat pernyataan yang lebih halus atau lebih kuat, tergantung bentuknya."
+     ],
+     "table": {
+      "head": ["Bentuk", "Arti sebenarnya", "Contoh"],
+      "rows": [
+       ["不是不…", "Bukannya tidak (ada alasannya)", "[我不是不想帮|Wǒ bú shì bù xiǎng bāng]，[是真的没办法|shì zhēn de méi bànfǎ]。"],
+       ["没有…不…", "Semua tanpa kecuali", "[没有人不喜欢他|Méiyǒu rén bù xǐhuan tā]。"],
+       ["不能不…", "Mau tidak mau harus", "[这件事不能不说|Zhè jiàn shì bù néng bù shuō]。"],
+       ["不得不…", "Terpaksa harus", "[我不得不同意|Wǒ bùdébù tóngyì]。"],
+       ["非…不可", "Harus, tidak ada pilihan lain", "[今天非去不可|Jīntiān fēi qù bùkě]。"]
+      ]
+     },
+     "after": [
+      "⚠️ [不得不|bùdébù] membawa rasa terpaksa; [必须|bìxū] netral; [得|děi] santai. Tiga tingkat yang berbeda untuk “harus”.",
+      "⚠️ [非…不可|fēi…bùkě] adalah rangka beku dan tidak boleh dipisah: [他非要去不可|Tā fēi yào qù bùkě]。 Dia bersikeras harus pergi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang sehari-hari di Tiongkok",
+   "blocks": [
+    { "type": "p", "text": "Hampir semua pembayaran di Tiongkok berjalan lewat ponsel, dan istilahnya berbeda dari istilah bank yang diajarkan di buku pelajaran." },
+    { "type": "tabel", "head": ["Istilah", "Pīnyīn", "Arti"], "rows": [
+     ["转账", "zhuǎnzhàng", "transfer antar rekening"],
+     ["扫码", "sǎo mǎ", "memindai kode QR"],
+     ["付款码", "fùkuǎnmǎ", "kode bayar milikmu"],
+     ["收款码", "shōukuǎnmǎ", "kode terima milik penjual"],
+     ["余额", "yú'é", "saldo"],
+     ["分期", "fēnqī", "cicilan"],
+     ["免息", "miǎnxī", "tanpa bunga"],
+     ["手续费", "shǒuxùfèi", "biaya administrasi"],
+     ["利息 / 利率", "lìxī / lìlǜ", "bunga / suku bunga"],
+     ["房贷 / 车贷", "fángdài / chēdài", "cicilan rumah / mobil"],
+     ["花呗 / 白条", "huābei / báitiáo", "fitur bayar nanti di aplikasi belanja"],
+     ["还款日", "huánkuǎnrì", "tanggal jatuh tempo"],
+     ["逾期", "yúqī", "melewati jatuh tempo"],
+     ["额度", "édù", "limit kredit"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga jebakan yang sering menjerat pendatang", "items": [
+     "**免息 belum tentu gratis.** Periksa 手续费. Hitung total yang dibayar, bukan angka bulanannya.",
+     "**逾期 masuk catatan kredit nasional** ([征信|zhēngxìn]). Satu keterlambatan bisa menyulitkanmu menyewa rumah atau membeli tiket kereta cepat tertentu bertahun-tahun kemudian.",
+     "**Jangan meminjamkan identitasmu.** [借身份证|jiè shēnfènzhèng] atau membuka rekening atas namamu untuk orang lain adalah tindak pidana, apa pun alasannya."
+    ] }
+   ]
+  },
+  {
+   "title": "Meminjam dan menagih tanpa merusak hubungan",
+   "blocks": [
+    { "type": "p", "text": "Aturan tak tertulisnya sederhana dan berlaku di mana-mana: **jumlah yang kamu pinjamkan sebaiknya jumlah yang kamu sanggup relakan.** Sisanya soal kalimat." },
+    { "type": "tabel", "head": ["Keperluan", "Kalimatnya", "Arti"], "rows": [
+     ["Meminjam", "[我能不能跟你借五千|Wǒ néng bu néng gēn nǐ jiè wǔ qiān]？[下个月十号一定还|Xià ge yuè shí hào yídìng huán]。", "Bisa saya pinjam lima ribu? Bulan depan tanggal sepuluh pasti dikembalikan."],
+     ["Menyebut tenggat sendiri", "[我先说好还款时间|Wǒ xiān shuō hǎo huánkuǎn shíjiān]。", "Saya sebutkan dulu waktu pengembaliannya."],
+     ["Menolak halus", "[真不巧|Zhēn bù qiǎo]，[我这个月也紧|wǒ zhè ge yuè yě jǐn]。", "Sayang sekali, bulan ini saya juga seret."],
+     ["Menolak tegas", "[我有个原则|Wǒ yǒu ge yuánzé]，[不借钱给朋友|bú jiè qián gěi péngyou]，[免得伤感情|miǎnde shāng gǎnqíng]。", "Saya punya prinsip, tidak meminjamkan uang ke teman, supaya tidak merusak perasaan."],
+     ["Menagih pertama kali", "[最近手头紧|Zuìjìn shǒutóu jǐn]，[想问问你什么时候方便|xiǎng wènwen nǐ shénme shíhou fāngbiàn]。", "Belakangan keuangan saya seret, ingin tanya kapan kamu longgar."],
+     ["Menagih kedua kali", "[上次说的那笔|Shàng cì shuō de nà bǐ]，[这个月还方便吗|zhè ge yuè hái fāngbiàn ma]？", "Yang waktu itu, bulan ini masih memungkinkan?"],
+     ["Membalas budi", "[等我缓过来请你吃饭|Děng wǒ huǎn guòlai qǐng nǐ chī fàn]。", "Tunggu saya pulih saya traktir makan."]
+    ] },
+    { "type": "sub", "text": "Kalimat yang sebaiknya tidak kamu ucapkan" },
+    { "type": "list", "items": [
+     "❌ [你怎么还不还钱|Nǐ zěnme hái bù huán qián]？ — Menuduh, dan hampir pasti memutus hubungan.",
+     "❌ [你是不是不想还了|Nǐ shì bu shì bù xiǎng huán le]？ — Menyerang niatnya, bukan meminta uangnya.",
+     "✅ [我知道你不是那种人|Wǒ zhīdào nǐ bú shì nà zhǒng rén]。 — Memberi jalan keluar yang terhormat; hampir selalu berhasil.",
+     "⚠️ Untuk jumlah besar, tetap tulis [借条|jiètiáo] surat pengakuan utang. Ditulis tangan, disebut jumlahnya, tanggalnya, dan tanda tangan. Ini kebiasaan yang normal di Tiongkok, bukan tanda kamu tidak percaya."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik tentang satu keputusan uang", "items": [
+     "Pilih satu pembelian besar yang sedang atau pernah kamu pertimbangkan.",
+     "Satu kalimat 与其…不如: dua pilihan yang kamu bandingkan.",
+     "Satu kalimat 宁可…也不: apa yang rela kamu tanggung, apa yang tidak.",
+     "Satu kalimat 甚至 atau 更别说: seberapa jauh keadaannya.",
+     "Tutup dengan keputusanmu dan alasannya: [最后我决定…|Zuìhòu wǒ juédìng…]，[因为…|yīnwèi…]"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "与其", "baca": "yǔqí", "id": "daripada" },
+  { "zh": "不如", "baca": "bùrú", "id": "lebih baik; tidak sebaik" },
+  { "zh": "宁可", "baca": "nìngkě", "id": "lebih baik (rela menanggung)" },
+  { "zh": "甚至", "baca": "shènzhì", "id": "bahkan" },
+  { "zh": "更别说", "baca": "gèng bié shuō", "id": "jangankan" },
+  { "zh": "何况", "baca": "hékuàng", "id": "apalagi" },
+  { "zh": "表格", "baca": "biǎogé", "id": "tabel, formulir" },
+  { "zh": "分期", "baca": "fēnqī", "id": "cicilan" },
+  { "zh": "免息", "baca": "miǎnxī", "id": "tanpa bunga" },
+  { "zh": "手续费", "baca": "shǒuxùfèi", "id": "biaya administrasi" },
+  { "zh": "利息", "baca": "lìxī", "id": "bunga" },
+  { "zh": "利率", "baca": "lìlǜ", "id": "suku bunga" },
+  { "zh": "全款", "baca": "quánkuǎn", "id": "bayar lunas di muka" },
+  { "zh": "账", "baca": "zhàng", "id": "utang, tagihan" },
+  { "zh": "背", "baca": "bēi", "id": "memikul (utang, tanggungan)" },
+  { "zh": "扛", "baca": "káng", "id": "memikul sendirian" },
+  { "zh": "想法", "baca": "xiǎngfǎ", "id": "pemikiran" },
+  { "zh": "身边", "baca": "shēnbiān", "id": "di sekitar (orang)" },
+  { "zh": "可怕", "baca": "kěpà", "id": "menakutkan" },
+  { "zh": "工具", "baca": "gōngjù", "id": "alat" },
+  { "zh": "挣钱", "baca": "zhèng qián", "id": "menghasilkan uang" },
+  { "zh": "受益", "baca": "shòuyì", "id": "mendapat manfaat" },
+  { "zh": "吃亏", "baca": "chīkuī", "id": "rugi, dirugikan" },
+  { "zh": "实体店", "baca": "shítǐdiàn", "id": "toko fisik" },
+  { "zh": "手头紧", "baca": "shǒutóu jǐn", "id": "keuangan sedang seret" },
+  { "zh": "方便", "baca": "fāngbiàn", "id": "leluasa, memungkinkan" },
+  { "zh": "还", "baca": "huán", "id": "mengembalikan" },
+  { "zh": "转", "baca": "zhuǎn", "id": "mentransfer" },
+  { "zh": "剩下", "baca": "shèng xià", "id": "sisa" },
+  { "zh": "发工资", "baca": "fā gōngzī", "id": "gajian" },
+  { "zh": "房贷", "baca": "fángdài", "id": "cicilan rumah" },
+  { "zh": "困难", "baca": "kùnnan", "id": "kesulitan" },
+  { "zh": "缓过来", "baca": "huǎn guòlai", "id": "pulih, bernapas lagi" },
+  { "zh": "欠", "baca": "qiàn", "id": "berutang" },
+  { "zh": "人情", "baca": "rénqíng", "id": "utang budi" },
+  { "zh": "不得不", "baca": "bùdébù", "id": "terpaksa harus" },
+  { "zh": "非…不可", "baca": "fēi…bùkě", "id": "harus, tak ada pilihan" },
+  { "zh": "转账", "baca": "zhuǎnzhàng", "id": "transfer" },
+  { "zh": "扫码", "baca": "sǎo mǎ", "id": "memindai kode QR" },
+  { "zh": "余额", "baca": "yú'é", "id": "saldo" },
+  { "zh": "还款日", "baca": "huánkuǎnrì", "id": "tanggal jatuh tempo" },
+  { "zh": "逾期", "baca": "yúqī", "id": "lewat jatuh tempo" },
+  { "zh": "额度", "baca": "édù", "id": "limit kredit" },
+  { "zh": "征信", "baca": "zhēngxìn", "id": "catatan kredit" },
+  { "zh": "借条", "baca": "jiètiáo", "id": "surat pengakuan utang" },
+  { "zh": "原则", "baca": "yuánzé", "id": "prinsip" },
+  { "zh": "伤感情", "baca": "shāng gǎnqíng", "id": "merusak hubungan perasaan" },
+  { "zh": "周转", "baca": "zhōuzhuǎn", "id": "perputaran uang" },
+  { "zh": "熬", "baca": "áo", "id": "bertahan lewat masa sulit" },
+  { "zh": "撑", "baca": "chēng", "id": "menahan, bertahan" },
+  { "zh": "话说回来", "baca": "huà shuō huílai", "id": "kembali lagi, di sisi lain" },
+  { "zh": "完全", "baca": "wánquán", "id": "sepenuhnya" },
+  { "zh": "身份证", "baca": "shēnfènzhèng", "id": "kartu identitas" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan 与其…不如… atau 宁可…也不….",
+   "items": [
+    "____ [在家等|zài jiā děng]，____ [自己去问|zìjǐ qù wèn]。",
+    "[我|Wǒ] ____ [走路|zǒulù]，____ [坐他的车|zuò tā de chē]。",
+    "____ [买这个|mǎi zhè ge]，____ [把钱省下来|bǎ qián shěng xiàlai]。",
+    "[他|Tā] ____ [不睡觉|bú shuìjiào]，[也要把工作做完|yě yào bǎ gōngzuò zuò wán]。",
+    "[我|Wǒ] ____ [晚点儿拿到钱|wǎn diǎnr ná dào qián]，____ [让你去借别的钱|ràng nǐ qù jiè bié de qián]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 甚至, 更别说, atau 何况.",
+   "items": [
+    "[他会说五种语言|Tā huì shuō wǔ zhǒng yǔyán]，____ [会说阿拉伯语|huì shuō Ālābóyǔ]。",
+    "[我连中文报纸都看不懂|Wǒ lián Zhōngwén bàozhǐ dōu kàn bu dǒng]，____ [古文了|gǔwén le]。",
+    "[他自己都不会|Tā zìjǐ dōu bú huì]，____ [教别人|jiāo biérén]。",
+    "[很多人分期买手机|Hěn duō rén fēnqī mǎi shǒujī]，[最后|zuìhòu] ____ [连吃饭都要分期|lián chī fàn dōu yào fēnqī]。",
+    "[这么远我都去了|Zhème yuǎn wǒ dōu qù le]，____ [就在楼下|jiù zài lóu xià]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "与其 / 不如 / 修 / 换 / 一台 / 直接",
+    "我 / 宁可 / 两个月 / 等 / 也 / 想 / 不 / 背着 / 一笔账",
+    "有件事 / 我 / 不好意思 / 一直 / 开口",
+    "我 / 是 / 不 / 不想 / 还 / 忘了 / 是 / 完全",
+    "别 / 扛着 / 一个人",
+    "早 / 早 / 买 / 受益"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我最近手头有点紧|Wǒ zuìjìn shǒutóu yǒudiǎn jǐn]。",
+    "[这次真是欠你一个人情|Zhè cì zhēn shì qiàn nǐ yí ge rénqíng]。",
+    "[今天非去不可|Jīntiān fēi qù bùkě]。",
+    "[我不得不同意|Wǒ bùdébù tóngyì]。",
+    "[别说一万|Bié shuō yí wàn]，[一千我都没有|yì qiān wǒ dōu méiyǒu]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Daripada diperbaiki, lebih baik langsung ganti satu unit.",
+    "Ada yang menulis tanpa bunga, sebenarnya menarik biaya administrasi.",
+    "Saya tahu kamu bukan orang yang seperti itu.",
+    "Kalau bulan ini tidak longgar, bulan depan juga boleh.",
+    "Nanti kalau ada kesulitan bilang saja, jangan dipikul sendirian.",
+    "Bukannya tidak mau membantu, benar-benar tidak ada jalan."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[不如修|Bùrú xiū]，[与其换一台|yǔqí huàn yì tái]。",
+    "[我宁可买新的|Wǒ nìngkě mǎi xīn de]，[也要很高兴|yě yào hěn gāoxìng]。",
+    "[更别说古文了|Gèng bié shuō gǔwén le]。 (berdiri sendiri tanpa kalimat pertama)",
+    "[他非去不|Tā fēi qù bù]。",
+    "[我不是想还|Wǒ bú shì xiǎng huán]，[是忘了|shì wàng le]。"
+   ]
+  }
+ ],
+ "answers": [
+  "与其…不如 — 宁可…也不 — 与其…不如 — 宁可 — 宁可…也不",
+  "甚至 — 更别说 — 何况 — 甚至 — 更何况",
+  "与其 修 不如 直接 换 一台 — 我 宁可 等 两个月 也 不 想 背着 一笔账 — 有件事 我 一直 不好意思 开口 — 我 不 是 不想 还 是 完全 忘了 — 别 一个人 扛着 — 早 买 早 受益",
+  "Belakangan keuangan saya agak seret. — Kali ini benar-benar berutang budi padamu. — Hari ini harus pergi, tidak ada pilihan. — Saya terpaksa setuju. — Jangankan sepuluh ribu, seribu pun saya tidak punya.",
+  "Yǔqí xiū, bùrú zhíjiē huàn yì tái. — Yǒu de xiě miǎnxī, qíshí shōu shǒuxùfèi. — Wǒ zhīdào nǐ bú shì nà zhǒng rén. — Yàoshi zhè ge yuè bù fāngbiàn, xià ge yuè yě xíng. — Yǐhòu yǒu kùnnan jiù shuō, bié yí ge rén káng zhe. — Bú shì bù xiǎng bāng, shì zhēn de méi bànfǎ.",
+  "Yǔqí xiū, bùrú huàn yì tái. (与其 di kepingan pertama) — Wǒ nìngkě mǎi jiù de, yě bù xiǎng jiè qián. (宁可 selalu berisi pengorbanan) — Wǒ lián bàozhǐ dōu kàn bu dǒng, gèng bié shuō gǔwén le. (butuh kalimat 连…都 lebih dulu) — Tā fēi qù bùkě. (rangka beku tak boleh dipotong) — Wǒ bú shì bù xiǎng huán, shì wàng le. (penyangkalan ganda)"
+ ],
+ "wave": "Lima menit sebelum Unit 9: pilih satu keputusan uang yang sedang menggantung dalam hidupmu — pindah kos, ganti ponsel, ambil kursus, apa pun. Ucapkan empat puluh detik yang menimbangnya dari dua sisi, wajib memakai 与其…不如 dan 宁可…也不. Kalau kedua pasangan itu keluar tanpa berhenti, kamu sudah bisa berdebat dengan dirimu sendiri dalam bahasa Mandarin — dan itu kemampuan B1 yang sesungguhnya."
+}

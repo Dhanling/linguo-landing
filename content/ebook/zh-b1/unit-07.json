@@ -1,0 +1,416 @@
+{
+ "title": "Rapat, surel, dan laporan",
+ "title_target": "会议和邮件 — Huìyì hé yóujiàn",
+ "goal": "Masuk ke ragam kerja: menempatkan pokok bahasan dengan 关于, 针对, 根据, dan 按照; memadatkan kalimat dengan 进行 dan 予以; serta menyusun surel yang dibalas dalam sehari.",
+ "bekal": [
+  "mengikuti rapat: menyela, meminta pengulangan, menyimpulkan, membagi tugas",
+  "memakai 关于 / 针对 / 根据 / 按照 di tempat duduknya masing-masing",
+  "memadatkan kalimat kerja dengan 进行, 加以, 予以",
+  "menulis surel yang lengkap dalam enam baris",
+  "menyatakan tidak setuju di rapat tanpa membuat orang kehilangan muka"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Rapat mingguan",
+   "intro": "Rapat tim pertama Andi. 周主管 memimpin. Bahasa rapat Tiongkok padat dan penuh kata dua suku kata — perhatikan berapa sedikit partikel yang muncul dibanding dialog unit-unit sebelumnya.",
+   "lines": [
+    {
+     "speaker": "周主管:",
+     "text": "[人到齐了|Rén dào qí le]，[我们开始|wǒmen kāishǐ]。[今天主要谈三件事|Jīntiān zhǔyào tán sān jiàn shì]：[上月数据|shàng yuè shùjù]、[客户投诉|kèhù tóusù]、[下季度计划|xià jìdù jìhuà]。",
+     "id": "Orangnya sudah lengkap, kita mulai. Hari ini terutama membahas tiga hal: data bulan lalu, komplain klien, rencana kuartal depan.",
+     "literal": "orang — sampai — lengkap — sudah, kami — mulai. hari-ini — terutama — bicarakan — tiga — penggolong — perkara: atas — bulan — data, klien — komplain, bawah — kuartal — rencana."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[关于上月数据|Guānyú shàng yuè shùjù]，[我做了一份简报|wǒ zuò le yí fèn jiǎnbào]。[总体来看|Zǒngtǐ lái kàn]，[活跃用户增长了百分之十二|huóyuè yònghù zēngzhǎng le bǎi fēn zhī shí'èr]。",
+     "id": "Mengenai data bulan lalu, saya sudah membuat satu ringkasan. Secara keseluruhan, pengguna aktif tumbuh dua belas persen.",
+     "literal": "mengenai — atas — bulan — data, saya — buat — sudah — satu — rangkap — ringkas-laporan. keseluruhan — datang — lihat, aktif — pengguna — bertumbuh — sudah — seratus — bagi — ke — sepuluh — dua."
+    },
+    {
+     "speaker": "周主管:",
+     "text": "[增长不错|Zēngzhǎng búcuò]。[不过留存率呢|Búguò liúcúnlǜ ne]？[光看增长没意义|Guāng kàn zēngzhǎng méi yìyì]。",
+     "id": "Pertumbuhannya lumayan. Tapi tingkat retensinya bagaimana? Cuma melihat pertumbuhan tidak ada artinya.",
+     "literal": "bertumbuh — tidak-buruk. tetapi — tinggal-simpan-rasio — bagaimana. hanya — lihat — bertumbuh — tidak-ada — makna."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[七日留存是百分之三十一|Qī rì liúcún shì bǎi fēn zhī sānshíyī]，[比上个月低了两个点|bǐ shàng ge yuè dī le liǎng ge diǎn]。",
+     "id": "Retensi tujuh hari tiga puluh satu persen, dua poin lebih rendah daripada bulan lalu.",
+     "literal": "tujuh — hari — tinggal-simpan — adalah — seratus — bagi — ke — tiga-puluh — satu, dibanding — atas — penggolong — bulan — rendah — sudah — dua — penggolong — titik."
+    },
+    {
+     "speaker": "周主管:",
+     "text": "[这个要重视|Zhè ge yào zhòngshì]。[针对留存下降|Zhēnduì liúcún xiàjiàng]，[下周之前给我一个分析|xià zhōu zhī qián gěi wǒ yí ge fēnxī]。[安迪|Āndí]，[你也参与一下|nǐ yě cānyù yíxià]。",
+     "id": "Ini harus diperhatikan. Terkait turunnya retensi, sebelum minggu depan beri saya satu analisis. Andi, kamu ikut terlibat juga.",
+     "literal": "ini — penggolong — harus — memandang-penting. tertuju-pada — tinggal-simpan — turun, bawah — minggu — sebelum — beri — saya — satu — penggolong — analisis. Andi, kamu — juga — ikut-serta — sekali."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[好的|Hǎo de]。[不好意思|Bù hǎoyìsi]，[我确认一下|wǒ quèrèn yíxià]：[是分析下降的原因|shì fēnxī xiàjiàng de yuányīn]，[还是提出解决方案|háishi tíchū jiějué fāng'àn]？",
+     "id": "Baik. Maaf, saya konfirmasi sebentar: menganalisis penyebab turunnya, atau mengajukan solusinya?",
+     "literal": "baik — punya. tidak — enak-hati, saya — memastikan — sekali: adalah — analisis — turun — punya — sebab, atau — mengajukan — memecahkan — rencana."
+    },
+    {
+     "speaker": "周主管:",
+     "text": "[两个都要|Liǎng ge dōu yào]，[但原因优先|dàn yuányīn yōuxiān]。[根据以往的经验|Gēnjù yǐwǎng de jīngyàn]，[留存下降一般出在新手引导上|liúcún xiàjiàng yìbān chū zài xīnshǒu yǐndǎo shang]。",
+     "id": "Dua-duanya perlu, tapi penyebab lebih dulu. Berdasarkan pengalaman sebelumnya, turunnya retensi biasanya bersumber pada panduan pengguna baru.",
+     "literal": "dua — penggolong — semua — perlu, tetapi — sebab — didahulukan. berdasarkan — masa-lalu — punya — pengalaman, tinggal-simpan — turun — umumnya — keluar — di — pemula — pemanduan — atas."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[我有不同看法|Wǒ yǒu bù tóng kànfǎ]。[这次下降可能跟三月的改版有关|Zhè cì xiàjiàng kěnéng gēn sān yuè de gǎibǎn yǒu guān]，[不一定是引导的问题|bù yídìng shì yǐndǎo de wèntí]。",
+     "id": "Saya punya pandangan berbeda. Penurunan kali ini mungkin berhubungan dengan perombakan bulan Maret, belum tentu masalah panduan.",
+     "literal": "saya — ada — tidak — sama — pandangan. ini — kali — turun — mungkin — dengan — tiga — bulan — punya — ubah-versi — ada — hubungan, tidak — pasti — adalah — pemanduan — punya — masalah."
+    },
+    {
+     "speaker": "周主管:",
+     "text": "[有道理|Yǒu dàolǐ]。[那你们两个分头查|Nà nǐmen liǎng ge fēntóu chá]：[小李看改版|Xiǎo Lǐ kàn gǎibǎn]，[安迪看引导|Āndí kàn yǐndǎo]。[周五之前各出一页结论|Zhōuwǔ zhī qián gè chū yí yè jiélùn]。",
+     "id": "Masuk akal. Kalau begitu kalian berdua periksa terpisah: Xiao Li lihat perombakannya, Andi lihat panduannya. Sebelum Jumat masing-masing keluarkan satu halaman kesimpulan.",
+     "literal": "ada — alasan. itu — kalian — dua — penggolong — pisah-kepala — periksa: Xiao Li — lihat — ubah-versi, Andi — lihat — pemanduan. Jumat — sebelum — masing-masing — keluarkan — satu — halaman — kesimpulan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[一页够吗|Yí yè gòu ma]？[数据可能比较多|Shùjù kěnéng bǐjiào duō]。",
+     "id": "Satu halaman cukup? Datanya mungkin cukup banyak.",
+     "literal": "satu — halaman — cukup — kah. data — mungkin — agak — banyak."
+    },
+    {
+     "speaker": "周主管:",
+     "text": "[就是要你压缩到一页|Jiùshì yào nǐ yāsuō dào yí yè]。[写不完一页的人|Xiě bu wán yí yè de rén]，[通常是自己还没想清楚|tōngcháng shì zìjǐ hái méi xiǎng qīngchu]。",
+     "id": "Justru itu, kamu harus memampatkannya jadi satu halaman. Orang yang tidak selesai menulis dalam satu halaman, biasanya dirinya sendiri belum berpikir jernih.",
+     "literal": "justru-adalah — perlu — kamu — memampatkan — sampai — satu — halaman. tulis — tidak — habis — satu — halaman — punya — orang, biasanya — adalah — diri-sendiri — masih — belum — pikir — jelas."
+    }
+   ],
+   "notes": [
+    "**Empat penanda pokok bahasan yang tidak boleh tertukar.** [关于|guānyú] mengenai — memperkenalkan topik. [针对|zhēnduì] tertuju pada — memperkenalkan **masalah yang mau ditangani**. [根据|gēnjù] berdasarkan — memperkenalkan **sumber atau bukti**. [按照|ànzhào] sesuai dengan — memperkenalkan **aturan yang diikuti**. ⚠️ Empat-empatnya berdiri di awal kalimat dan diikuti benda, bukan kalimat lengkap. ❌ 关于他来了，我很高兴。 ✅ [关于他来的事|Guānyú tā lái de shì]，[我很高兴|wǒ hěn gāoxìng]。",
+    "**[光|guāng] = cuma, semata-mata.** [光看增长没意义|Guāng kàn zēngzhǎng méi yìyì]。 Ia lebih tajam daripada 只 dan membawa nada tidak setuju: yang lain diabaikan padahal penting. Bentuk yang sering terdengar: [光说不做|guāng shuō bú zuò] cuma bicara tak berbuat, [光吃不动|guāng chī bú dòng] cuma makan tak bergerak.",
+    "**[我有不同看法|Wǒ yǒu bù tóng kànfǎ] adalah cara paling aman menyatakan tidak setuju di rapat Tiongkok.** Ia tidak menyerang orangnya dan tidak memaksa siapa pun mengaku salah. Saudaranya, dari yang paling halus ke yang paling keras: [我补充一点|Wǒ bǔchōng yì diǎn] saya menambahkan sedikit · [我理解|Wǒ lǐjiě]，[不过…|búguò…] saya paham, tapi … · [我有不同看法|Wǒ yǒu bù tóng kànfǎ] saya berpandangan lain · [我不太同意|Wǒ bú tài tóngyì] saya kurang setuju. ⚠️ [你错了|Nǐ cuò le] hampir tidak pernah dipakai di rapat, bahkan oleh atasan.",
+    "**[不一定|bù yídìng] = belum tentu, dan [一定不|yídìng bù] = pasti tidak.** Dua kata ini sering tertukar dan artinya jauh berbeda. [他不一定来|Tā bù yídìng lái] dia belum tentu datang. [他一定不来|Tā yídìng bù lái] dia pasti tidak datang. Aturannya sederhana: yang di depan menguasai yang di belakang.",
+    "**[分头|fēntóu] = terpisah, masing-masing mengurus bagiannya.** [分头查|fēntóu chá] periksa terpisah, [分头行动|fēntóu xíngdòng] bergerak masing-masing. Sangat sering muncul di rapat pembagian tugas. Saudaranya: [各自|gèzì] masing-masing sendiri, [分别|fēnbié] secara terpisah (lebih rapi, ragam tulis)."
+   ],
+   "grammars": [
+    {
+     "title": "关于 · 针对 · 根据 · 按照 — empat pintu masuk kalimat kerja",
+     "body": [
+      "Semuanya berdiri di awal kalimat, diikuti benda atau perkara, lalu koma. Bedanya ada pada hubungan yang mereka tandai."
+     ],
+     "table": {
+      "head": ["Kata", "Menandai", "Contoh"],
+      "rows": [
+       ["[关于|guānyú]", "Topik", "[关于这个项目|Guānyú zhè ge xiàngmù]，[我有几点意见|wǒ yǒu jǐ diǎn yìjiàn]。"],
+       ["[针对|zhēnduì]", "Masalah yang ditangani", "[针对客户投诉|Zhēnduì kèhù tóusù]，[我们调整了流程|wǒmen tiáozhěng le liúchéng]。"],
+       ["[根据|gēnjù]", "Bukti atau sumber", "[根据最新数据|Gēnjù zuì xīn shùjù]，[销量在回升|xiāoliàng zài huíshēng]。"],
+       ["[按照|ànzhào]", "Aturan yang diikuti", "[按照公司规定|Ànzhào gōngsī guīdìng]，[加班需提前申请|jiābān xū tíqián shēnqǐng]。"],
+       ["[至于|zhìyú]", "Menunda urusan lain", "[至于预算|Zhìyú yùsuàn]，[下周再谈|xià zhōu zài tán]。"]
+      ]
+     },
+     "after": [
+      "⚠️ Keempatnya diikuti **benda**, bukan kalimat. Untuk menjadikan kalimat sebagai benda, tambahkan 的事 atau 的问题: [关于他辞职的事|Guānyú tā cízhí de shì]…",
+      "📄 Di judul dokumen, 关于 muncul di depan: [关于调整考勤制度的通知|Guānyú tiáozhěng kǎoqín zhìdù de tōngzhī] Pemberitahuan mengenai penyesuaian sistem absensi. Susunan “关于…的通知/说明/规定” adalah bentuk baku judul dokumen resmi Tiongkok."
+     ]
+    },
+    {
+     "title": "进行 · 加以 · 予以 — memadatkan kalimat menjadi ragam kerja",
+     "body": [
+      "Ketiganya adalah kata kerja kosong yang menggandeng kata kerja dua suku kata dan mengubahnya jadi ragam resmi. Isinya sama dengan kalimat biasa; nadanya yang berbeda."
+     ],
+     "table": {
+      "head": ["Lisan", "Ragam kerja", "Arti"],
+      "rows": [
+       ["[我们讨论一下|Wǒmen tǎolùn yíxià]。", "[我们进行讨论|Wǒmen jìnxíng tǎolùn]。", "Kita berdiskusi"],
+       ["[要检查设备|Yào jiǎnchá shèbèi]。", "[对设备进行检查|Duì shèbèi jìnxíng jiǎnchá]。", "Melakukan pemeriksaan atas peralatan"],
+       ["[这个问题要解决|Zhè ge wèntí yào jiějué]。", "[该问题需加以解决|Gāi wèntí xū jiāyǐ jiějué]。", "Masalah tersebut perlu ditangani"],
+       ["[会给你答复|Huì gěi nǐ dáfù]。", "[将予以答复|Jiāng yǔyǐ dáfù]。", "Akan diberikan jawaban"]
+      ]
+     },
+     "after": [
+      "⚠️ Jangan berlebihan. Kalimat rapat yang terlalu padat justru terdengar seperti robot birokrasi, dan orang Tiongkok sendiri menertawakannya. Aturan praktis: **surel dan laporan boleh, percakapan rapat jangan.**",
+      "⚠️ 进行 hanya menggandeng kata kerja dua suku kata yang “berproses” (讨论, 检查, 研究, 分析). ❌ 进行吃。 ❌ 进行看。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Surel yang salah kirim",
+   "intro": "Andi mengirim laporan ke klien, tapi salah melampirkan berkas versi lama. Ia harus memperbaikinya cepat tanpa memperbesar masalah. Ia berbicara dengan 小李 dulu.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[小李|Xiǎo Lǐ]，[我闯祸了|wǒ chuǎnghuò le]。[刚才发给客户的附件是旧版|Gāngcái fā gěi kèhù de fùjiàn shì jiùbǎn]，[里面还有内部备注|lǐmiàn hái yǒu nèibù bèizhù]。",
+     "id": "Xiao Li, saya bikin masalah. Lampiran yang tadi dikirim ke klien itu versi lama, di dalamnya masih ada catatan internal.",
+     "literal": "Xiao Li, saya — menerjang-bencana — sudah. barusan — kirim — kepada — klien — punya — lampiran — adalah — lama-versi, dalam — masih — ada — internal — catatan."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[发出去多久了|Fā chūqu duō jiǔ le]？[公司邮箱两分钟内可以撤回|Gōngsī yóuxiāng liǎng fēnzhōng nèi kěyǐ chèhuí]。",
+     "id": "Sudah berapa lama terkirim? Surel kantor bisa ditarik kembali dalam dua menit.",
+     "literal": "kirim — keluar-pergi — berapa — lama — sudah. perusahaan — kotak-surat — dua — menit — dalam — boleh — tarik-kembali."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[快十分钟了|Kuài shí fēnzhōng le]。[撤不回来了|Chè bu huílai le]。",
+     "id": "Hampir sepuluh menit. Sudah tidak bisa ditarik kembali.",
+     "literal": "hampir — sepuluh — menit — sudah. tarik — tidak — kembali-datang — sudah."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[那就别慌|Nà jiù bié huāng]。[马上再发一封|Mǎshàng zài fā yì fēng]，[标题写更正|biāotí xiě gēngzhèng]，[正文一句话说明|zhèngwén yí jù huà shuōmíng]，[附上正确版本|fù shàng zhèngquè bǎnběn]。",
+     "id": "Kalau begitu jangan panik. Segera kirim satu surel lagi, judulnya tulis koreksi, isinya satu kalimat penjelasan, lampirkan versi yang benar.",
+     "literal": "itu — langsung — jangan — panik. segera — lagi — kirim — satu — penggolong, judul — tulis — mengoreksi, isi-teks — satu — penggolong — kata — menjelaskan, lampir — atas — benar — versi."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[要不要解释为什么发错|Yào bu yào jiěshì wèi shénme fā cuò]？",
+     "id": "Perlu tidak menjelaskan kenapa salah kirim?",
+     "literal": "perlu — tidak — perlu — menjelaskan — mengapa — kirim — salah."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[千万别|Qiānwàn bié]。[解释越多|Jiěshì yuè duō]，[对方越注意|duìfāng yuè zhùyì]。[一句抱歉|Yí jù bàoqiàn]，[一句更正|yí jù gēngzhèng]，[就够了|jiù gòu le]。",
+     "id": "Jangan sekali-kali. Makin banyak penjelasan, makin diperhatikan pihak sana. Satu kalimat maaf, satu kalimat koreksi, sudah cukup.",
+     "literal": "seribu-puluh-ribu — jangan. menjelaskan — makin — banyak, pihak-lawan — makin — memperhatikan. satu — penggolong — maaf, satu — penggolong — mengoreksi, langsung — cukup — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那内部备注的事呢|Nà nèibù bèizhù de shì ne]？[里面写了我们的成本|Lǐmiàn xiě le wǒmen de chéngběn]。",
+     "id": "Kalau soal catatan internalnya bagaimana? Di dalamnya tertulis biaya kita.",
+     "literal": "itu — internal — catatan — punya — perkara — bagaimana. dalam — tulis — sudah — kami — punya — modal-biaya."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[这个必须跟周主管说|Zhè ge bìxū gēn Zhōu zhǔguǎn shuō]，[越早越好|yuè zǎo yuè hǎo]。[瞒不住的|Mán bu zhù de]，[一旦客户提起来就更难看|yídàn kèhù tí qǐlai jiù gèng nánkàn]。",
+     "id": "Yang ini wajib disampaikan ke Pak Zhou, makin cepat makin baik. Tidak akan bisa ditutupi, begitu kliennya menyinggung malah lebih memalukan.",
+     "literal": "ini — penggolong — wajib — dengan — Zhou — penyelia — bilang, makin — awal — makin — baik. sembunyi — tidak — tahan — punya, begitu — klien — angkat — naik-datang — langsung — lebih — sulit-dilihat."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[你说得对|Nǐ shuō de duì]。[我这就去|Wǒ zhè jiù qù]。[怎么说比较好|Zěnme shuō bǐjiào hǎo]？",
+     "id": "Kamu benar. Saya langsung ke sana sekarang. Bagaimana cara bilangnya yang lebih baik?",
+     "literal": "kamu — bilang — tingkat — benar. saya — ini — langsung — pergi. bagaimana — bilang — agak — baik."
+    },
+    {
+     "speaker": "小李:",
+     "text": "[三句话|Sān jù huà]：[发生了什么|fāshēng le shénme]，[我已经做了什么|wǒ yǐjīng zuò le shénme]，[需要您帮什么|xūyào nín bāng shénme]。[别说对不起说三遍|Bié shuō duìbuqǐ shuō sān biàn]。",
+     "id": "Tiga kalimat: apa yang terjadi, apa yang sudah saya lakukan, apa yang perlu bantuan Anda. Jangan bilang maaf sampai tiga kali.",
+     "literal": "tiga — penggolong — kata: terjadi — sudah — apa, saya — sudah — buat — sudah — apa, perlu — Anda — bantu — apa. jangan — bilang — maaf — bilang — tiga — kali."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[记住了|Jì zhù le]。[谢谢你|Xièxie nǐ]，[真的|zhēn de]。",
+     "id": "Sudah saya ingat. Terima kasih, sungguh.",
+     "literal": "ingat — tahan — sudah. terima-kasih — kamu, sungguh — punya."
+    }
+   ],
+   "notes": [
+    "**[闯祸|chuǎnghuò] = membuat masalah karena kecerobohan.** Berbeda dari [犯错|fàncuò] berbuat salah, yang lebih netral, dan [出事|chūshì] terjadi kecelakaan. 闯祸 selalu berarti kamu yang menyebabkannya dan akibatnya merepotkan orang lain — dan justru karena jujur, kata ini justru sering meredakan suasana.",
+    "**[瞒不住|mán bu zhù] = tidak akan bisa ditutupi.** Pelengkap kemungkinan lagi, dari 住 “tertahan”. Kelompok ini sangat berguna: [记不住|jì bu zhù] tidak bisa diingat, [忍不住|rěn bu zhù] tidak tertahan, [靠不住|kào bu zhù] tidak bisa diandalkan, [挡不住|dǎng bu zhù] tidak terbendung.",
+    "**[难看|nánkàn] tidak selalu berarti jelek dipandang.** Dalam konteks kantor ia berarti memalukan atau bikin malu: [场面很难看|Chǎngmiàn hěn nánkàn] suasananya jadi memalukan. Saudaranya: [丢脸|diūliǎn] kehilangan muka, [没面子|méi miànzi] tidak punya muka, [下不来台|xià bu lái tái] tidak bisa turun panggung, tidak punya jalan keluar yang terhormat.",
+    "**Rangka tiga kalimat untuk melapor masalah** — yang disebut Xiao Li — berlaku di hampir semua kantor Tiongkok, dan sebaiknya kamu hafalkan: (1) [发生了什么|fāshēng le shénme] apa yang terjadi, (2) [我已经做了什么|wǒ yǐjīng zuò le shénme] apa yang sudah saya lakukan, (3) [需要您帮什么|xūyào nín bāng shénme] apa yang perlu bantuan Anda. ⚠️ Yang membuat atasan marah bukan masalahnya, melainkan laporan yang cuma berisi bagian pertama.",
+    "**[这就|zhè jiù] = sekarang juga, langsung.** [我这就去|Wǒ zhè jiù qù]。 Bentuk singkat yang menandai tindakan segera dan sering dipakai untuk menunjukkan kesungguhan. Saudaranya: [马上|mǎshàng] segera, [立刻|lìkè] seketika (lebih resmi), [赶紧|gǎnjǐn] buru-buru (lebih santai dan mendesak)."
+   ],
+   "grammars": [
+    {
+     "title": "📄 Kotak 书面语 — enam baris surel kerja",
+     "body": [
+      "Surel kerja bahasa Mandarin pendek dan berurutan. Enam baris ini menutup hampir semua keperluan sehari-hari."
+     ],
+     "table": {
+      "head": ["Baris", "Kalimatnya", "Arti"],
+      "rows": [
+       ["Sapaan", "[王经理|Wáng jīnglǐ]，[您好|nín hǎo]：", "Bapak/Ibu Wang, salam."],
+       ["Maksud", "[现就上月数据向您汇报如下|Xiàn jiù shàng yuè shùjù xiàng nín huìbào rúxià]。", "Berikut saya laporkan mengenai data bulan lalu."],
+       ["Isi", "[一、活跃用户增长12%|Yī, huóyuè yònghù zēngzhǎng 12%]；[二、留存率下降2个点|èr, liúcúnlǜ xiàjiàng 2 ge diǎn]。", "Satu, …; dua, …"],
+       ["Permintaan", "[针对第二点|Zhēnduì dì èr diǎn]，[拟于本周五前提交分析|nǐ yú běn zhōuwǔ qián tíjiāo fēnxī]。", "Terkait poin kedua, direncanakan menyerahkan analisis sebelum Jumat ini."],
+       ["Lampiran", "[详见附件|Xiáng jiàn fùjiàn]。", "Rinciannya lihat lampiran."],
+       ["Penutup", "[如有疑问|Rú yǒu yíwèn]，[请随时联系|qǐng suíshí liánxì]。[此致|Cǐ zhì]", "Bila ada pertanyaan, silakan hubungi kapan saja. Hormat saya."]
+      ]
+     },
+     "after": [
+      "Kata tulis yang muncul: [现|xiàn] sekarang ini, [就|jiù] mengenai, [向|xiàng] kepada, [汇报|huìbào] melaporkan ke atas, [如下|rúxià] sebagai berikut, [拟|nǐ] berencana, [于|yú] pada, [详见|xiáng jiàn] rinciannya lihat, [如|rú] bila.",
+      "⚠️ Surel koreksi: judulnya diawali [更正|Gēngzhèng] atau [补充|Bǔchōng], isinya satu kalimat: [抱歉|Bàoqiàn]，[上一封附件版本有误|shàng yì fēng fùjiàn bǎnběn yǒu wù]，[正确版本见附件|zhèngquè bǎnběn jiàn fùjiàn]。 Tidak lebih."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang menyelamatkanmu di rapat",
+   "blocks": [
+    { "type": "p", "text": "Rapat berjalan cepat dan tidak menunggu. Yang membedakan orang yang bisa ikut rapat dari yang cuma duduk bukan kosakata teknisnya, melainkan enam kalimat pendek ini." },
+    { "type": "tabel", "head": ["Keperluan", "Kalimatnya", "Arti"], "rows": [
+     ["Tidak dengar", "[不好意思|Bù hǎoyìsi]，[您刚才说的是…吗|nín gāngcái shuō de shì … ma]？", "Maaf, yang tadi Anda katakan itu … ya?"],
+     ["Minta pelan", "[能麻烦您说慢一点儿吗|Néng máfan nín shuō màn yìdiǎnr ma]？", "Boleh minta tolong bicara lebih pelan?"],
+     ["Konfirmasi tugas", "[我确认一下|Wǒ quèrèn yíxià]：[是…还是…|shì … háishi …]？", "Saya konfirmasi: … atau …?"],
+     ["Menyela", "[我插一句|Wǒ chā yí jù]。", "Saya sela sebentar."],
+     ["Menambahkan", "[我补充一点|Wǒ bǔchōng yì diǎn]。", "Saya menambahkan sedikit."],
+     ["Menyimpulkan", "[我总结一下|Wǒ zǒngjié yíxià]：…", "Saya simpulkan: …"],
+     ["Minta waktu", "[这个我需要再看看|Zhè ge wǒ xūyào zài kànkan]，[明天回复您|míngtiān huífù nín]。", "Yang ini saya perlu lihat lagi, besok saya kabari."],
+     ["Menolak halus", "[从时间上看恐怕比较紧|Cóng shíjiān shang kàn kǒngpà bǐjiào jǐn]。", "Dari sisi waktu sepertinya agak mepet."]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga kebiasaan rapat yang perlu kamu ketahui", "items": [
+     "**Diam bukan berarti setuju.** Di banyak tim Tiongkok, keberatan disampaikan sesudah rapat, empat mata. Kalau kamu memimpin, tanyakan langsung: [小李|Xiǎo Lǐ]，[你觉得呢|nǐ juéde ne]？",
+     "**Tugas tanpa nama dan tanpa tanggal berarti tidak akan dikerjakan.** Tutup tiap keputusan dengan [谁|shéi]、[什么时候|shénme shíhou]、[交给谁|jiāo gěi shéi].",
+     "**Catatan rapat dikirim di hari yang sama.** Judulnya [X月X日会议纪要|X yuè X rì huìyì jìyào]. Yang tidak tertulis di 纪要 dianggap tidak pernah diputuskan."
+    ] }
+   ]
+  },
+  {
+   "title": "Angka, persentase, dan tren",
+   "blocks": [
+    { "type": "p", "text": "Laporan mana pun berisi angka, dan angka punya kata kerjanya sendiri. Salah memilih kata kerja membuat laporanmu terdengar seperti terjemahan mesin." },
+    { "type": "tabel", "head": ["Arah", "Kata kerjanya", "Contoh"], "rows": [
+     ["Naik", "[增长|zēngzhǎng] · [上升|shàngshēng] · [提高|tígāo]", "[销量增长了百分之十|Xiāoliàng zēngzhǎng le bǎi fēn zhī shí]。"],
+     ["Turun", "[下降|xiàjiàng] · [减少|jiǎnshǎo] · [回落|huíluò]", "[留存率下降了两个点|Liúcúnlǜ xiàjiàng le liǎng ge diǎn]。"],
+     ["Stabil", "[持平|chípíng] · [稳定|wěndìng]", "[跟上月基本持平|Gēn shàng yuè jīběn chípíng]。"],
+     ["Berbalik", "[回升|huíshēng] · [反弹|fǎntán]", "[三月开始回升|Sān yuè kāishǐ huíshēng]。"],
+     ["Melonjak", "[大幅上涨|dàfú shàngzhǎng] · [翻倍|fānbèi]", "[订单量翻了一倍|Dìngdānliàng fān le yí bèi]。"]
+    ] },
+    { "type": "sub", "text": "Membaca persentase dan perbandingan" },
+    { "type": "list", "items": [
+     "[百分之十二|bǎi fēn zhī shí'èr] 12% — susunannya “dari seratus, bagian dua belas”.",
+     "[两个点|liǎng ge diǎn] dua poin persentase — beda dengan [百分之二|bǎi fēn zhī èr] dua persen.",
+     "[同比|tóngbǐ] dibandingkan periode yang sama tahun lalu · [环比|huánbǐ] dibandingkan periode sebelumnya. ⚠️ Dua istilah ini muncul di semua laporan Tiongkok dan tidak punya padanan pendek dalam bahasa Indonesia.",
+     "[翻一倍|fān yí bèi] menjadi dua kali lipat · [增加了一倍|zēngjiā le yí bèi] bertambah satu kali lipat, artinya juga jadi dua kali. ⚠️ [增加到一倍|zēngjiā dào yí bèi] salah — 到 dipakai untuk hasil akhirnya."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik melaporkan angka", "items": [
+     "Pilih satu angka nyata dari pekerjaan atau kuliahmu.",
+     "Sebut sumbernya: [根据…|Gēnjù…]",
+     "Sebut arahnya: naik atau turun, berapa banyak, dibanding apa.",
+     "Sebut dugaan sebabnya: [可能跟…有关|kěnéng gēn … yǒu guān]",
+     "Tutup dengan tindakan: [针对这一点|Zhēnduì zhè yì diǎn]，[我打算…|wǒ dǎsuàn…]"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "会议", "baca": "huìyì", "id": "rapat" },
+  { "zh": "纪要", "baca": "jìyào", "id": "notulen, catatan rapat" },
+  { "zh": "到齐", "baca": "dào qí", "id": "hadir lengkap" },
+  { "zh": "主要", "baca": "zhǔyào", "id": "terutama, utama" },
+  { "zh": "季度", "baca": "jìdù", "id": "kuartal" },
+  { "zh": "关于", "baca": "guānyú", "id": "mengenai" },
+  { "zh": "针对", "baca": "zhēnduì", "id": "tertuju pada" },
+  { "zh": "根据", "baca": "gēnjù", "id": "berdasarkan" },
+  { "zh": "按照", "baca": "ànzhào", "id": "sesuai dengan" },
+  { "zh": "简报", "baca": "jiǎnbào", "id": "ringkasan laporan" },
+  { "zh": "总体", "baca": "zǒngtǐ", "id": "keseluruhan" },
+  { "zh": "活跃", "baca": "huóyuè", "id": "aktif" },
+  { "zh": "增长", "baca": "zēngzhǎng", "id": "bertumbuh" },
+  { "zh": "留存率", "baca": "liúcúnlǜ", "id": "tingkat retensi" },
+  { "zh": "下降", "baca": "xiàjiàng", "id": "menurun" },
+  { "zh": "回升", "baca": "huíshēng", "id": "naik kembali" },
+  { "zh": "持平", "baca": "chípíng", "id": "setara, tidak berubah" },
+  { "zh": "光", "baca": "guāng", "id": "cuma, semata" },
+  { "zh": "意义", "baca": "yìyì", "id": "makna, arti penting" },
+  { "zh": "重视", "baca": "zhòngshì", "id": "menganggap penting" },
+  { "zh": "参与", "baca": "cānyù", "id": "ikut serta" },
+  { "zh": "方案", "baca": "fāng'àn", "id": "rencana penyelesaian" },
+  { "zh": "优先", "baca": "yōuxiān", "id": "didahulukan" },
+  { "zh": "以往", "baca": "yǐwǎng", "id": "masa lalu, selama ini" },
+  { "zh": "新手引导", "baca": "xīnshǒu yǐndǎo", "id": "panduan pengguna baru" },
+  { "zh": "看法", "baca": "kànfǎ", "id": "pandangan, pendapat" },
+  { "zh": "改版", "baca": "gǎibǎn", "id": "perombakan versi" },
+  { "zh": "不一定", "baca": "bù yídìng", "id": "belum tentu" },
+  { "zh": "道理", "baca": "dàolǐ", "id": "alasan yang masuk akal" },
+  { "zh": "分头", "baca": "fēntóu", "id": "terpisah, masing-masing" },
+  { "zh": "结论", "baca": "jiélùn", "id": "kesimpulan" },
+  { "zh": "压缩", "baca": "yāsuō", "id": "memampatkan" },
+  { "zh": "进行", "baca": "jìnxíng", "id": "melakukan (ragam kerja)" },
+  { "zh": "加以", "baca": "jiāyǐ", "id": "menanganinya (ragam tulis)" },
+  { "zh": "予以", "baca": "yǔyǐ", "id": "memberikan (ragam tulis)" },
+  { "zh": "闯祸", "baca": "chuǎnghuò", "id": "membuat masalah" },
+  { "zh": "旧版", "baca": "jiùbǎn", "id": "versi lama" },
+  { "zh": "内部", "baca": "nèibù", "id": "internal" },
+  { "zh": "备注", "baca": "bèizhù", "id": "catatan tambahan" },
+  { "zh": "撤回", "baca": "chèhuí", "id": "menarik kembali" },
+  { "zh": "慌", "baca": "huāng", "id": "panik" },
+  { "zh": "标题", "baca": "biāotí", "id": "judul" },
+  { "zh": "更正", "baca": "gēngzhèng", "id": "koreksi" },
+  { "zh": "正文", "baca": "zhèngwén", "id": "isi surat" },
+  { "zh": "版本", "baca": "bǎnběn", "id": "versi" },
+  { "zh": "成本", "baca": "chéngběn", "id": "biaya pokok" },
+  { "zh": "瞒", "baca": "mán", "id": "menyembunyikan dari" },
+  { "zh": "难看", "baca": "nánkàn", "id": "memalukan" },
+  { "zh": "丢脸", "baca": "diūliǎn", "id": "kehilangan muka" },
+  { "zh": "汇报", "baca": "huìbào", "id": "melaporkan kepada atasan" },
+  { "zh": "如下", "baca": "rúxià", "id": "sebagai berikut" },
+  { "zh": "提交", "baca": "tíjiāo", "id": "menyerahkan" },
+  { "zh": "疑问", "baca": "yíwèn", "id": "pertanyaan, keraguan" },
+  { "zh": "同比", "baca": "tóngbǐ", "id": "dibanding periode sama tahun lalu" },
+  { "zh": "环比", "baca": "huánbǐ", "id": "dibanding periode sebelumnya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 关于, 针对, 根据, atau 按照.",
+   "items": [
+    "____ [最新数据|zuì xīn shùjù]，[销量在回升|xiāoliàng zài huíshēng]。",
+    "____ [公司规定|gōngsī guīdìng]，[加班需提前申请|jiābān xū tíqián shēnqǐng]。",
+    "____ [这个项目|zhè ge xiàngmù]，[我有几点意见|wǒ yǒu jǐ diǎn yìjiàn]。",
+    "____ [客户投诉|kèhù tóusù]，[我们调整了流程|wǒmen tiáozhěng le liúchéng]。",
+    "____ [以往的经验|yǐwǎng de jīngyàn]，[问题一般出在引导上|wèntí yìbān chū zài yǐndǎo shang]。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi ragam kerja memakai 进行, 加以, atau 予以.",
+   "items": [
+    "[我们讨论一下这个问题|Wǒmen tǎolùn yíxià zhè ge wèntí]。",
+    "[要检查所有设备|Yào jiǎnchá suǒyǒu shèbèi]。",
+    "[这个问题一定要解决|Zhè ge wèntí yídìng yào jiějué]。",
+    "[我们会给你答复|Wǒmen huì gěi nǐ dáfù]。",
+    "[要研究一下市场|Yào yánjiū yíxià shìchǎng]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "针对 / 下降 / 留存 / 之前 / 下周 / 一个 / 给 / 我 / 分析",
+    "光 / 增长 / 看 / 没 / 意义",
+    "我 / 不同 / 有 / 看法",
+    "这次 / 可能 / 下降 / 三月的 / 跟 / 有关 / 改版",
+    "写不完 / 一页 / 的 / 人 / 通常 / 想清楚 / 还没 / 是 / 自己",
+    "如有 / 联系 / 疑问 / 随时 / 请"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[他不一定来|Tā bù yídìng lái]。",
+    "[他一定不来|Tā yídìng bù lái]。",
+    "[瞒不住的|Mán bu zhù de]。",
+    "[从时间上看恐怕比较紧|Cóng shíjiān shang kàn kǒngpà bǐjiào jǐn]。",
+    "[跟上月基本持平|Gēn shàng yuè jīběn chípíng]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Mengenai data bulan lalu, saya sudah membuat satu ringkasan.",
+    "Berdasarkan pengalaman sebelumnya, masalahnya biasanya ada di panduan.",
+    "Saya konfirmasi sebentar: menganalisis penyebabnya atau mengajukan solusinya?",
+    "Makin banyak penjelasan, makin diperhatikan pihak sana.",
+    "Retensi tujuh hari dua poin lebih rendah daripada bulan lalu.",
+    "Bila ada pertanyaan, silakan hubungi kapan saja."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[关于他来了|Guānyú tā lái le]，[我很高兴|wǒ hěn gāoxìng]。",
+    "[我们进行吃饭|Wǒmen jìnxíng chī fàn]。",
+    "[销量增加到一倍|Xiāoliàng zēngjiā dào yí bèi]。",
+    "[根据公司规定|Gēnjù gōngsī guīdìng]，[加班需提前申请|jiābān xū tíqián shēnqǐng]。",
+    "[你错了|Nǐ cuò le]，[这个数据不对|zhè ge shùjù bú duì]。"
+   ]
+  }
+ ],
+ "answers": [
+  "根据 — 按照 — 关于 — 针对 — 根据",
+  "我们对这个问题进行讨论。 — 对所有设备进行检查。 — 该问题必须加以解决。 — 我们将予以答复。 — 要对市场进行研究。",
+  "针对 留存 下降 下周 之前 给 我 一个 分析 — 光 看 增长 没 意义 — 我 有 不同 看法 — 这次 下降 可能 跟 三月的 改版 有关 — 写不完 一页 的 人 通常 是 自己 还没 想清楚 — 如有 疑问 请 随时 联系",
+  "Dia belum tentu datang. — Dia pasti tidak datang. — Tidak akan bisa ditutupi. — Dari sisi waktu sepertinya agak mepet. — Pada dasarnya sama dengan bulan lalu.",
+  "Guānyú shàng yuè shùjù, wǒ zuò le yí fèn jiǎnbào. — Gēnjù yǐwǎng de jīngyàn, wèntí yìbān chū zài yǐndǎo shang. — Wǒ quèrèn yíxià: shì fēnxī yuányīn háishi tíchū fāng'àn? — Jiěshì yuè duō, duìfāng yuè zhùyì. — Qī rì liúcún bǐ shàng ge yuè dī le liǎng ge diǎn. — Rú yǒu yíwèn, qǐng suíshí liánxì.",
+  "Guānyú tā lái de shì, wǒ hěn gāoxìng. (关于 diikuti benda) — Wǒmen chī fàn. (进行 tak menggandeng kata kerja sehari-hari) — Xiāoliàng fān le yí bèi. (增加到 salah untuk kelipatan) — Ànzhào gōngsī guīdìng, jiābān xū tíqián shēnqǐng. (aturan pakai 按照) — Wǒ yǒu bù tóng kànfǎ, zhè ge shùjù kěnéng yǒu wèntí. (jangan menyerang orangnya)"
+ ],
+ "wave": "Lima menit sebelum Unit 8: tulis satu surel enam baris memakai rangka di kotak 书面语 unit ini — laporkan apa pun yang benar-benar kamu kerjakan minggu ini, kepada siapa pun. Setelah selesai, baca keras-keras. Kalau ada satu kalimat yang terdengar seperti percakapan santai, kamu mencampur dua ragam; ganti kata itu dengan pasangannya di kolom tulis."
+}

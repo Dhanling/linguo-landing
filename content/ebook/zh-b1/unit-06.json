@@ -1,0 +1,409 @@
+{
+ "title": "Perjalanan yang tidak berjalan mulus",
+ "title_target": "旅途上的麻烦 — Lǚtú shang de máfan",
+ "goal": "Menceritakan rangkaian kejadian dengan 于是, 结果, 因此, dan 由于 — empat penanda arah cerita yang membuat ceritamu punya alur — serta berjaga-jaga dengan 万一 dan 一旦.",
+ "bekal": [
+  "menceritakan satu kejadian panjang dengan alur yang jelas, bukan daftar kalimat",
+  "membedakan 于是 (lalu), 结果 (ternyata hasilnya), 因此 (oleh karena itu), 由于 (berhubung)",
+  "berjaga-jaga terhadap kemungkinan buruk dengan 万一 dan 一旦",
+  "mengurus kereta, pesawat, dan penginapan yang bermasalah",
+  "meminta bantuan orang asing di jalan dengan kalimat yang efektif"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Kereta yang tertunda",
+   "intro": "Andi hendak ke Xi'an naik kereta cepat, tapi ada badai salju. Ia bertanya di loket. Perhatikan bagaimana petugas merangkai kejadian: sebab, lalu, hasilnya.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[您好|Nín hǎo]，[我这趟车显示晚点|wǒ zhè tàng chē xiǎnshì wǎndiǎn]，[大概几点能走|dàgài jǐ diǎn néng zǒu]？",
+     "id": "Selamat siang, kereta saya ini tertulis terlambat, kira-kira jam berapa bisa berangkat?",
+     "literal": "Anda — baik, saya — ini — penggolong — kereta — menampilkan — telat — titik, kira-kira — berapa — jam — bisa — jalan."
+    },
+    {
+     "speaker": "工作人员:",
+     "text": "[由于西安那边下大雪|Yóuyú Xī'ān nàbiān xià dà xuě]，[全线都在等调度|quánxiàn dōu zài děng diàodù]。[目前还没有确切时间|Mùqián hái méiyǒu quèqiè shíjiān]。",
+     "id": "Berhubung di Xi'an sana turun salju lebat, seluruh jalur sedang menunggu pengaturan. Sampai sekarang belum ada waktu pasti.",
+     "literal": "berhubung — Xi'an — sana — turun — besar — salju, seluruh-jalur — semua — sedang — tunggu — pengaturan. saat-ini — masih — tidak-ada — pasti — waktu."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那我能改签吗|Nà wǒ néng gǎiqiān ma]？[我明天上午有个会|Wǒ míngtiān shàngwǔ yǒu ge huì]，[必须赶到|bìxū gǎn dào]。",
+     "id": "Kalau begitu saya bisa ganti tiket? Besok pagi saya ada rapat, harus sampai tepat waktu.",
+     "literal": "itu — saya — bisa — ubah-tanda — kah. saya — besok — pagi — ada — penggolong — rapat, wajib — kejar — sampai."
+    },
+    {
+     "speaker": "工作人员:",
+     "text": "[晚点超过两小时可以免费改签或者退票|Wǎndiǎn chāoguò liǎng xiǎoshí kěyǐ miǎnfèi gǎiqiān huòzhě tuìpiào]。[不过今天去西安的车基本都停了|Búguò jīntiān qù Xī'ān de chē jīběn dōu tíng le]。",
+     "id": "Kalau keterlambatan lebih dari dua jam bisa ganti tiket atau refund gratis. Tapi kereta ke Xi'an hari ini pada dasarnya berhenti semua.",
+     "literal": "telat — titik — melebihi — dua — jam — boleh — bebas-biaya — ubah-tanda — atau — mundur-tiket. tetapi — hari-ini — pergi — Xi'an — punya — kereta — dasarnya — semua — berhenti — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[飞机呢|Fēijī ne]？[飞机能飞吗|Fēijī néng fēi ma]？",
+     "id": "Kalau pesawat? Pesawat bisa terbang?",
+     "literal": "pesawat — bagaimana. pesawat — bisa — terbang — kah."
+    },
+    {
+     "speaker": "工作人员:",
+     "text": "[雪天飞机更悬|Xuě tiān fēijī gèng xuán]。[我建议您改签明天早上第一班|Wǒ jiànyì nín gǎiqiān míngtiān zǎoshang dì yī bān]，[六点二十|liù diǎn èrshí]，[十点半就能到|shí diǎn bàn jiù néng dào]。",
+     "id": "Kalau hari bersalju pesawat malah lebih tidak pasti. Saya sarankan Anda ganti ke keberangkatan pertama besok pagi, jam enam dua puluh, jam setengah sebelas sudah bisa sampai.",
+     "literal": "salju — hari — pesawat — lebih — tergantung-nasib. saya — menyarankan — Anda — ubah-tanda — besok — pagi — ke — satu — jadwal, enam — jam — dua-puluh, sepuluh — jam — setengah — langsung — bisa — sampai."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[会是十一点|Huì shì shíyī diǎn]，[那正好赶得上|nà zhènghǎo gǎn de shàng]。[就改这班吧|Jiù gǎi zhè bān ba]。",
+     "id": "Rapatnya jam sebelas, kalau begitu pas keburu. Ganti ke keberangkatan ini saja.",
+     "literal": "rapat — adalah — sebelas — jam, itu — tepat-baik — kejar — bisa — naik. langsung — ubah — ini — jadwal — ya."
+    },
+    {
+     "speaker": "工作人员:",
+     "text": "[好的|Hǎo de]。[改签费不用交|Gǎiqiānfèi bú yòng jiāo]，[差价也不用补|chàjià yě bú yòng bǔ]。[新票发到您手机上了|Xīn piào fā dào nín shǒujī shang le]。",
+     "id": "Baik. Biaya ganti tiket tidak perlu dibayar, selisih harganya juga tidak perlu ditambah. Tiket baru sudah dikirim ke ponsel Anda.",
+     "literal": "baik — punya. ubah-tanda — biaya — tidak — perlu — bayar, selisih-harga — juga — tidak — perlu — tambal. baru — tiket — kirim — sampai — Anda — ponsel — atas — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[太感谢了|Tài gǎnxiè le]。[万一明天还停呢|Wànyī míngtiān hái tíng ne]？",
+     "id": "Terima kasih banyak. Kalau-kalau besok masih berhenti bagaimana?",
+     "literal": "terlalu — berterima-kasih — sudah. seandainya — besok — masih — berhenti — bagaimana."
+    },
+    {
+     "speaker": "工作人员:",
+     "text": "[万一还停|Wànyī hái tíng]，[您可以在十二小时内再改一次|nín kěyǐ zài shí'èr xiǎoshí nèi zài gǎi yí cì]。[一旦确定停运|Yídàn quèdìng tíngyùn]，[系统会自动发短信|xìtǒng huì zìdòng fā duǎnxìn]。",
+     "id": "Kalau-kalau masih berhenti, Anda bisa mengubah lagi sekali dalam dua belas jam. Begitu dipastikan operasinya dihentikan, sistem akan otomatis mengirim SMS.",
+     "literal": "seandainya — masih — berhenti, Anda — boleh — di — dua-belas — jam — dalam — lagi — ubah — satu — kali. begitu — memastikan — hentikan-operasi, sistem — akan — otomatis — kirim — pesan-pendek."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[明白了|Míngbai le]。[那我今晚在附近找个酒店|Nà wǒ jīnwǎn zài fùjìn zhǎo ge jiǔdiàn]，[明早直接过来|míngzǎo zhíjiē guòlai]。",
+     "id": "Saya mengerti. Kalau begitu malam ini saya cari hotel di sekitar sini, besok pagi langsung ke sini.",
+     "literal": "paham — sudah. itu — saya — malam-ini — di — dekat — cari — penggolong — hotel, besok-pagi — langsung — datang-lewat."
+    }
+   ],
+   "notes": [
+    "**[由于|yóuyú] = berhubung, dikarenakan.** Ia bersaudara dengan 因为 tapi lebih rapi dan lebih sering di tulisan dan pengumuman. Aturan yang membedakan: 由于 hanya boleh berdiri **di awal kalimat**, sedangkan 因为 boleh di awal maupun di tengah. ✅ [我没去|Wǒ méi qù]，[因为下雨|yīnwèi xià yǔ]。 ❌ 我没去，由于下雨。 Kepingan keduanya boleh 所以 atau 因此.",
+    "**[万一|wànyī] = seandainya (yang buruk) terjadi.** Harfiahnya “satu dari sepuluh ribu” — kemungkinan kecil tapi akibatnya besar. Ia dipakai untuk berjaga-jaga: [万一他不来呢|Wànyī tā bù lái ne]？ ⚠️ Jangan memakainya untuk hal netral atau baik. ❌ 万一我中奖了。 Untuk itu pakai [如果|rúguǒ] atau [要是|yàoshi].",
+    "**[一旦|yídàn] = begitu (sesuatu terjadi), maka seterusnya begini.** Bedanya dengan 一…就: 一旦 menandai **titik balik yang tidak bisa dibalik lagi**, bukan sekadar dua kejadian yang beruntun. [一旦确定停运|Yídàn quèdìng tíngyùn]，[系统会自动发短信|xìtǒng huì zìdòng fā duǎnxìn]。 [一旦签了合同|Yídàn qiān le hétong]，[就不能反悔了|jiù bù néng fǎnhuǐ le]。 Nadanya selalu agak serius.",
+    "**[悬|xuán] = tidak pasti, bergantung nasib.** Kata santai yang sangat sering dipakai orang Beijing: [这事儿有点儿悬|Zhè shìr yǒudiǎnr xuán]。 Urusan ini agak riskan. Saudaranya: [不好说|bù hǎo shuō] susah dibilang, [说不准|shuō bu zhǔn] tidak bisa dipastikan.",
+    "**Kosakata perjalanan kereta yang wajib.** [晚点|wǎndiǎn] terlambat, [正点|zhèngdiǎn] tepat waktu, [停运|tíngyùn] operasi dihentikan, [改签|gǎiqiān] ganti jadwal tiket, [退票|tuìpiào] refund tiket, [候车|hòuchē] menunggu kereta, [检票|jiǎnpiào] pemeriksaan tiket, [车次|chēcì] nomor kereta, [班|bān] penggolong untuk keberangkatan. ⚠️ Tiket kereta di Tiongkok terikat pada identitas: paspormu adalah tiketmu, dan nama di tiket tidak bisa diganti."
+   ],
+   "grammars": [
+    {
+     "title": "于是 · 结果 · 因此 · 后来 — empat penanda arah cerita",
+     "body": [
+      "Keempatnya berdiri di awal kalimat kedua. Yang membedakan adalah **hubungan apa** yang mereka tandai. Salah memilih tidak membuat kalimatmu salah, tapi membuat ceritamu terdengar aneh."
+     ],
+     "table": {
+      "head": ["Kata", "Menandai", "Contoh"],
+      "rows": [
+       ["[于是|yúshì]", "Lalu — tindakan yang wajar menyusul", "[没有票了|Méiyǒu piào le]，[于是我们坐大巴|yúshì wǒmen zuò dàbā]。"],
+       ["[结果|jiéguǒ]", "Hasilnya ternyata, sering di luar dugaan", "[我等了两个小时|Wǒ děng le liǎng ge xiǎoshí]，[结果他没来|jiéguǒ tā méi lái]。"],
+       ["[因此|yīncǐ]", "Oleh karena itu — sebab akibat rapi", "[该路段施工|Gāi lùduàn shīgōng]，[因此改道|yīncǐ gǎidào]。"],
+       ["[后来|hòulái]", "Kemudian — hanya untuk cerita masa lalu", "[后来我们就没联系了|Hòulái wǒmen jiù méi liánxì le]。"]
+      ]
+     },
+     "after": [
+      "⚠️ 于是 dipakai untuk **tindakan** yang menyusul, bukan untuk keadaan. ❌ 下雨了，于是很冷。 ✅ [下雨了|Xià yǔ le]，[于是我们回家了|yúshì wǒmen huí jiā le]。",
+      "⚠️ 后来 hanya untuk masa lalu. ❌ 明天我先去银行，后来去公司。 Untuk masa depan pakai [然后|ránhòu].",
+      "📄 因此 dan 因而 adalah ragam tulis; di percakapan hampir selalu 所以."
+     ]
+    },
+    {
+     "title": "万一 dan 一旦 — dua cara berjaga-jaga",
+     "body": [
+      "Keduanya mengandaikan sesuatu yang belum terjadi, tapi rasanya berbeda: 万一 = kecil kemungkinannya tapi bahaya; 一旦 = kalau sampai terjadi, akibatnya menetap."
+     ],
+     "table": {
+      "head": ["Contoh", "Arti", "Catatan"],
+      "rows": [
+       ["[万一下雨怎么办|Wànyī xià yǔ zěnme bàn]？", "Kalau-kalau hujan bagaimana?", "Sering ditutup 怎么办 atau 呢"],
+       ["[带把伞吧|Dài bǎ sǎn ba]，[万一下雨呢|wànyī xià yǔ ne]。", "Bawa payung deh, siapa tahu hujan.", "Berjaga-jaga"],
+       ["[一旦开始|Yídàn kāishǐ]，[就不能停|jiù bù néng tíng]。", "Begitu dimulai, tidak bisa berhenti.", "Titik yang tak bisa dibalik"],
+       ["[一旦被发现|Yídàn bèi fāxiàn]，[后果很严重|hòuguǒ hěn yánzhòng]。", "Kalau sampai ketahuan, akibatnya berat.", "Sering dengan 被"]
+      ]
+     },
+     "after": [
+      "⚠️ Kepingan kedua 一旦 hampir selalu memakai 就.",
+      "⚠️ 万一 tidak untuk hal yang menyenangkan. ❌ 万一我升职了。 ✅ [如果我升职了|Rúguǒ wǒ shēngzhí le]…"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Kamar hotel yang bermasalah",
+   "intro": "Malam itu Andi menginap di hotel dekat stasiun. Kamarnya tidak seperti di foto. Ia turun ke resepsionis. Perhatikan alur ceritanya: sebab, lalu, hasilnya.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[您好|Nín hǎo]，[我住三零八|wǒ zhù sān líng bā]。[房间的暖气好像不热|Fángjiān de nuǎnqì hǎoxiàng bú rè]，[屋里特别冷|wū lǐ tèbié lěng]。",
+     "id": "Selamat malam, saya menginap di 308. Pemanas kamarnya sepertinya tidak panas, di dalam dingin sekali.",
+     "literal": "Anda — baik, saya — tinggal — tiga — nol — delapan. kamar — punya — pemanas — sepertinya — tidak — panas, ruang — dalam — sangat — dingin."
+    },
+    {
+     "speaker": "前台:",
+     "text": "[不好意思|Bù hǎoyìsi]。[由于今天降温|Yóuyú jīntiān jiàngwēn]，[整栋楼的暖气压力不够|zhěng dòng lóu de nuǎnqì yālì bú gòu]。[维修师傅已经来了|Wéixiū shīfu yǐjīng lái le]。",
+     "id": "Mohon maaf. Berhubung hari ini suhunya turun, tekanan pemanas seluruh gedung tidak cukup. Teknisinya sudah datang.",
+     "literal": "tidak — enak-hati. berhubung — hari-ini — turun-suhu, seluruh — penggolong — gedung — punya — pemanas — tekanan — tidak — cukup. perbaikan — tukang — sudah — datang — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[大概什么时候能修好|Dàgài shénme shíhou néng xiū hǎo]？[我明天五点就得起床|Wǒ míngtiān wǔ diǎn jiù děi qǐchuáng]，[今晚必须睡好|jīnwǎn bìxū shuì hǎo]。",
+     "id": "Kira-kira kapan bisa selesai diperbaiki? Besok jam lima saya sudah harus bangun, malam ini harus bisa tidur nyenyak.",
+     "literal": "kira-kira — apa — waktu — bisa — perbaiki — baik. saya — besok — lima — jam — langsung — harus — bangun-ranjang, malam-ini — wajib — tidur — baik."
+    },
+    {
+     "speaker": "前台:",
+     "text": "[说不准|Shuō bu zhǔn]。[要不这样|Yàobù zhèyàng]：[我给您换到南边的房间|wǒ gěi nín huàn dào nánbiān de fángjiān]，[那边朝阳|nàbiān cháoyáng]，[暖和不少|nuǎnhuo bù shǎo]。",
+     "id": "Tidak bisa dipastikan. Bagaimana kalau begini: saya pindahkan Anda ke kamar sisi selatan, sana menghadap matahari, jauh lebih hangat.",
+     "literal": "bilang — tidak — tepat. atau-tidak — begini: saya — kepada — Anda — ganti — sampai — selatan-sisi — punya — kamar, sana — menghadap-matahari, hangat — tidak — sedikit."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那太好了|Nà tài hǎo le]。[另外能不能加一床被子|Lìngwài néng bu néng jiā yì chuáng bèizi]？",
+     "id": "Wah bagus sekali. Selain itu bisa tidak ditambah satu selimut?",
+     "literal": "itu — terlalu — baik — sudah. selain-itu — bisa — tidak — bisa — tambah — satu — penggolong — selimut."
+    },
+    {
+     "speaker": "前台:",
+     "text": "[当然可以|Dāngrán kěyǐ]。[我再送一个电暖器上去|Wǒ zài sòng yí ge diànnuǎnqì shàngqu]。[您把行李收一下|Nín bǎ xíngli shōu yíxià]，[我十分钟后上来帮您搬|wǒ shí fēnzhōng hòu shànglai bāng nín bān]。",
+     "id": "Tentu bisa. Saya kirimkan satu pemanas listrik ke atas juga. Tolong Anda rapikan barangnya, sepuluh menit lagi saya naik membantu memindahkan.",
+     "literal": "tentu — boleh. saya — lagi — antar — satu — penggolong — listrik-pemanas — naik-pergi. Anda — ambil — barang-bawaan — rapikan — sekali, saya — sepuluh — menit — sesudah — naik-datang — bantu — Anda — pindah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[谢谢|Xièxie]。[对了|Duì le]，[明天早上五点半有早餐吗|míngtiān zǎoshang wǔ diǎn bàn yǒu zǎocān ma]？",
+     "id": "Terima kasih. Oh iya, besok pagi jam setengah enam ada sarapan?",
+     "literal": "terima-kasih. betul — sudah, besok — pagi — lima — jam — setengah — ada — pagi-makan — kah."
+    },
+    {
+     "speaker": "前台:",
+     "text": "[餐厅六点半才开|Cāntīng liù diǎn bàn cái kāi]。[不过我可以给您准备一份打包早餐|Búguò wǒ kěyǐ gěi nín zhǔnbèi yí fèn dǎbāo zǎocān]，[您走的时候在前台拿|nín zǒu de shíhou zài qiántái ná]。",
+     "id": "Restorannya baru buka jam setengah tujuh. Tapi saya bisa siapkan satu paket sarapan bungkus untuk Anda, waktu Anda berangkat ambil di resepsionis.",
+     "literal": "ruang-makan — enam — jam — setengah — baru — buka. tetapi — saya — boleh — kepada — Anda — menyiapkan — satu — rangkap — bungkus — pagi-makan, Anda — jalan — punya — waktu — di — depan-meja — ambil."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[你们服务真好|Nǐmen fúwù zhēn hǎo]。[本来我还想投诉|Běnlái wǒ hái xiǎng tóusù]，[结果被你说得不好意思了|jiéguǒ bèi nǐ shuō de bù hǎoyìsi le]。",
+     "id": "Layanan kalian bagus sekali. Tadinya saya malah mau komplain, ternyata malah jadi tidak enak hati karena omongan Anda.",
+     "literal": "kalian — layanan — sungguh — baik. asalnya — saya — masih — ingin — mengadu, hasilnya — kena — kamu — bilang — tingkat — tidak — enak-hati — sudah."
+    },
+    {
+     "speaker": "前台:",
+     "text": "[您别客气|Nín bié kèqi]。[出门在外都不容易|Chūmén zài wài dōu bù róngyì]。[一旦有什么问题|Yídàn yǒu shénme wèntí]，[随时打前台电话|suíshí dǎ qiántái diànhuà]。",
+     "id": "Jangan sungkan. Orang yang sedang jauh dari rumah sama-sama tidak mudah. Begitu ada masalah apa pun, telepon resepsionis kapan saja.",
+     "literal": "Anda — jangan — sungkan. keluar-pintu — di — luar — semua — tidak — mudah. begitu — ada — apa — masalah, kapan-saja — telepon — depan-meja — telepon."
+    }
+   ],
+   "notes": [
+    "**[本来|běnlái] = tadinya, semula (dan sekarang berubah).** Ia hampir selalu diikuti kejadian yang membatalkan rencana semula: [本来我想投诉|Běnlái wǒ xiǎng tóusù]，[结果…|jiéguǒ…] ⚠️ 本来 dan 原来 sering tertukar. 本来 = rencana semula yang berubah. 原来 = kenyataan yang baru kamu ketahui (“ternyata”). [原来你也在这儿|Yuánlái nǐ yě zài zhèr]！ Ternyata kamu juga di sini!",
+    "**[要不|yàobù] = kalau tidak begitu, bagaimana kalau ….** Ia memperkenalkan usulan pengganti dan sangat sering muncul dalam negosiasi kecil sehari-hari: [要不这样|Yàobù zhèyàng]，… [要不我们改天|Yàobù wǒmen gǎitiān]。 Bentuk lengkapnya [要不然|yàoburán], yang juga berarti “kalau tidak, akibatnya …”: [快走吧|Kuài zǒu ba]，[要不然赶不上了|yàoburán gǎn bu shàng le]。",
+    "**[出门在外|chūmén zài wài] adalah ungkapan tetap empat aksara.** Artinya “sedang berada jauh dari rumah”, dan ia hampir selalu dipakai untuk membenarkan sikap saling menolong: [出门在外都不容易|Chūmén zài wài dōu bù róngyì]，[互相帮助嘛|hùxiāng bāngzhù ma]。 Kalimat ini adalah cara paling cepat mencairkan suasana dengan orang asing di jalan.",
+    "**[被你说得不好意思了|bèi nǐ shuō de bù hǎoyìsi le] adalah kalimat pasif yang tidak menandai hal buruk.** Ini pengecualian yang wajar: 被 dipakai karena perasaan si pembicara memang diubah oleh perbuatan orang lain, meski hasilnya tidak buruk. Bentuk begini banyak muncul di percakapan: [被他说服了|bèi tā shuōfú le] terbujuk olehnya, [被感动了|bèi gǎndòng le] terharu.",
+    "**Kosakata penginapan.** [前台|qiántái] resepsionis, [入住|rùzhù] check in, [退房|tuìfáng] check out, [押金|yājīn] deposit, [大床房|dàchuángfáng] kamar ranjang besar, [标间|biāojiān] kamar dua ranjang, [含早|hán zǎo] termasuk sarapan, [叫醒服务|jiàoxǐng fúwù] layanan bangun pagi. ⚠️ Hotel Tiongkok tidak semuanya menerima tamu asing — istilah yang perlu kamu cari: [涉外酒店|shèwài jiǔdiàn]."
+   ],
+   "grammars": [
+    {
+     "title": "📄 Kotak 书面语 — bahasa pengumuman perjalanan",
+     "body": [
+      "Pengumuman stasiun, bandara, dan aplikasi memakai ragam tulis yang padat. Kalau kamu mengenalinya, kamu berhenti bergantung pada terjemahan otomatis."
+     ],
+     "table": {
+      "head": ["Pengumuman", "Pīnyīn", "Artinya"],
+      "rows": [
+       ["因天气原因，本次列车晚点", "Yīn tiānqì yuányīn, běn cì lièchē wǎndiǎn", "Karena alasan cuaca, kereta ini terlambat"],
+       ["请旅客们注意", "Qǐng lǚkèmen zhùyì", "Mohon perhatian para penumpang"],
+       ["开始检票", "Kāishǐ jiǎnpiào", "Pemeriksaan tiket dimulai"],
+       ["停止检票", "Tíngzhǐ jiǎnpiào", "Pemeriksaan tiket ditutup"],
+       ["由此上车", "Yóu cǐ shàng chē", "Naik kereta dari sini"],
+       ["前方到站", "Qiánfāng dàozhàn", "Stasiun berikutnya"],
+       ["请提前做好下车准备", "Qǐng tíqián zuò hǎo xiàchē zhǔnbèi", "Mohon bersiap turun lebih awal"],
+       ["给您带来不便，敬请谅解", "Gěi nín dàilái búbiàn, jìngqǐng liàngjiě", "Atas ketidaknyamanannya, mohon dimaklumi"]
+      ]
+     },
+     "after": [
+      "Kata tulis di sini: [因|yīn] karena, [本次|běn cì] ini (perjalanan ini), [由此|yóu cǐ] dari sini, [敬请|jìngqǐng] mohon dengan hormat. Semuanya satu atau dua suku kata, tanpa partikel."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menceritakan kejadian dengan alur",
+   "blocks": [
+    { "type": "p", "text": "Inilah keterampilan utama unit ini: mengubah lima kalimat lepas menjadi satu cerita. Rangkanya tetap dan bisa kamu pakai untuk kejadian apa pun." },
+    { "type": "tabel", "head": ["Bagian", "Penandanya", "Contoh"], "rows": [
+     ["Latar", "[那天|nà tiān] · [本来|běnlái]", "[那天我本来要坐高铁去西安|Nà tiān wǒ běnlái yào zuò gāotiě qù Xī'ān]。"],
+     ["Sebab", "[由于|yóuyú] · [因为|yīnwèi]", "[由于西安下大雪|Yóuyú Xī'ān xià dà xuě]，[车都停了|chē dōu tíng le]。"],
+     ["Tindakan", "[于是|yúshì]", "[于是我改签了第二天早上的车|Yúshì wǒ gǎiqiān le dì èr tiān zǎoshang de chē]。"],
+     ["Kejutan", "[结果|jiéguǒ] · [没想到|méi xiǎngdào]", "[结果酒店的暖气也坏了|Jiéguǒ jiǔdiàn de nuǎnqì yě huài le]。"],
+     ["Penyelesaian", "[后来|hòulái] · [最后|zuìhòu]", "[后来前台给我换了房间|Hòulái qiántái gěi wǒ huàn le fángjiān]。"],
+     ["Penutup", "[反正|fǎnzhèng] · [总之|zǒngzhī]", "[反正第二天早上还是赶上了会|Fǎnzhèng dì èr tiān zǎoshang háishi gǎn shàng le huì]。"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga kesalahan alur yang paling sering", "items": [
+     "Memakai 于是 untuk keadaan, bukan tindakan. ❌ 下雨了，于是很冷。",
+     "Memakai 后来 untuk masa depan. ❌ 明天先去银行，后来去公司。 Pakai [然后|ránhòu].",
+     "Menumpuk 因为…所以… di setiap kalimat. Dua kali sudah cukup dalam satu cerita; sisanya dibiarkan tersambung sendiri."
+    ] }
+   ]
+  },
+  {
+   "title": "Meminta bantuan orang asing di jalan",
+   "blocks": [
+    { "type": "p", "text": "Kalimat pertamamu menentukan apakah orang berhenti atau berjalan terus. Yang paling berhasil bukan yang paling sopan, melainkan yang paling jelas apa yang kamu butuhkan." },
+    { "type": "tabel", "head": ["Situasi", "Kalimatnya", "Arti"], "rows": [
+     ["Membuka", "[不好意思|Bù hǎoyìsi]，[打扰一下|dǎrǎo yíxià]。", "Permisi, mengganggu sebentar."],
+     ["Arah", "[请问去火车站怎么走|Qǐngwèn qù huǒchēzhàn zěnme zǒu]？", "Boleh tanya, ke stasiun lewat mana?"],
+     ["Konfirmasi", "[这趟车到西安吗|Zhè tàng chē dào Xī'ān ma]？", "Kereta ini sampai Xi'an?"],
+     ["Kehilangan", "[我的手机丢了|Wǒ de shǒujī diū le]，[能借您的打个电话吗|néng jiè nín de dǎ ge diànhuà ma]？", "HP saya hilang, boleh pinjam untuk menelepon?"],
+     ["Bahasa", "[我中文不太好|Wǒ Zhōngwén bú tài hǎo]，[您能说慢一点儿吗|nín néng shuō màn yìdiǎnr ma]？", "Mandarin saya kurang baik, bisa bicara lebih pelan?"],
+     ["Darurat", "[请帮我叫一下救护车|Qǐng bāng wǒ jiào yíxià jiùhùchē]。", "Tolong panggilkan ambulans."]
+    ] },
+    { "type": "sub", "text": "Nomor darurat di Tiongkok" },
+    { "type": "list", "items": [
+     "110 — [报警|bàojǐng] polisi",
+     "120 — [急救|jíjiù] ambulans",
+     "119 — [火警|huǒjǐng] pemadam kebakaran",
+     "12306 — [铁路客服|tiělù kèfú] layanan kereta api",
+     "⚠️ Simpan nomor kedutaan negaramu di ponsel sebelum berangkat, bukan sesudah kamu membutuhkannya."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik tentang perjalanan yang berantakan", "items": [
+     "Pilih satu perjalanan yang tidak berjalan mulus: apa rencananya semula (本来).",
+     "Apa sebabnya berantakan (由于 atau 因为).",
+     "Apa yang kamu lakukan (于是).",
+     "Apa yang di luar dugaan (结果 atau 没想到).",
+     "Bagaimana akhirnya (后来 atau 最后), lalu tutup dengan 反正."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "旅途", "baca": "lǚtú", "id": "perjalanan" },
+  { "zh": "晚点", "baca": "wǎndiǎn", "id": "terlambat (jadwal)" },
+  { "zh": "正点", "baca": "zhèngdiǎn", "id": "tepat waktu" },
+  { "zh": "停运", "baca": "tíngyùn", "id": "operasi dihentikan" },
+  { "zh": "由于", "baca": "yóuyú", "id": "berhubung, dikarenakan" },
+  { "zh": "全线", "baca": "quánxiàn", "id": "seluruh jalur" },
+  { "zh": "调度", "baca": "diàodù", "id": "pengaturan operasional" },
+  { "zh": "目前", "baca": "mùqián", "id": "saat ini" },
+  { "zh": "确切", "baca": "quèqiè", "id": "pasti, tepat" },
+  { "zh": "改签", "baca": "gǎiqiān", "id": "mengubah jadwal tiket" },
+  { "zh": "退票", "baca": "tuìpiào", "id": "refund tiket" },
+  { "zh": "免费", "baca": "miǎnfèi", "id": "gratis" },
+  { "zh": "差价", "baca": "chàjià", "id": "selisih harga" },
+  { "zh": "赶得上", "baca": "gǎn de shàng", "id": "masih terkejar" },
+  { "zh": "赶不上", "baca": "gǎn bu shàng", "id": "tidak terkejar" },
+  { "zh": "班", "baca": "bān", "id": "jadwal keberangkatan" },
+  { "zh": "车次", "baca": "chēcì", "id": "nomor kereta" },
+  { "zh": "检票", "baca": "jiǎnpiào", "id": "pemeriksaan tiket" },
+  { "zh": "候车", "baca": "hòuchē", "id": "menunggu kereta" },
+  { "zh": "悬", "baca": "xuán", "id": "riskan, belum pasti" },
+  { "zh": "说不准", "baca": "shuō bu zhǔn", "id": "tidak bisa dipastikan" },
+  { "zh": "万一", "baca": "wànyī", "id": "seandainya (yang buruk)" },
+  { "zh": "一旦", "baca": "yídàn", "id": "begitu (terjadi)" },
+  { "zh": "系统", "baca": "xìtǒng", "id": "sistem" },
+  { "zh": "自动", "baca": "zìdòng", "id": "otomatis" },
+  { "zh": "短信", "baca": "duǎnxìn", "id": "SMS" },
+  { "zh": "于是", "baca": "yúshì", "id": "lalu, maka" },
+  { "zh": "结果", "baca": "jiéguǒ", "id": "hasilnya ternyata" },
+  { "zh": "因此", "baca": "yīncǐ", "id": "oleh karena itu (tulis)" },
+  { "zh": "后来", "baca": "hòulái", "id": "kemudian (masa lalu)" },
+  { "zh": "本来", "baca": "běnlái", "id": "tadinya, semula" },
+  { "zh": "要不", "baca": "yàobù", "id": "bagaimana kalau" },
+  { "zh": "要不然", "baca": "yàoburán", "id": "kalau tidak, nanti" },
+  { "zh": "暖气", "baca": "nuǎnqì", "id": "pemanas ruangan" },
+  { "zh": "降温", "baca": "jiàngwēn", "id": "suhu turun" },
+  { "zh": "压力", "baca": "yālì", "id": "tekanan" },
+  { "zh": "维修", "baca": "wéixiū", "id": "perbaikan" },
+  { "zh": "师傅", "baca": "shīfu", "id": "tukang, ahli" },
+  { "zh": "被子", "baca": "bèizi", "id": "selimut" },
+  { "zh": "电暖器", "baca": "diànnuǎnqì", "id": "pemanas listrik" },
+  { "zh": "行李", "baca": "xíngli", "id": "barang bawaan" },
+  { "zh": "前台", "baca": "qiántái", "id": "resepsionis" },
+  { "zh": "入住", "baca": "rùzhù", "id": "check in" },
+  { "zh": "退房", "baca": "tuìfáng", "id": "check out" },
+  { "zh": "打包", "baca": "dǎbāo", "id": "dibungkus" },
+  { "zh": "出门在外", "baca": "chūmén zài wài", "id": "sedang jauh dari rumah" },
+  { "zh": "互相", "baca": "hùxiāng", "id": "saling" },
+  { "zh": "打扰", "baca": "dǎrǎo", "id": "mengganggu" },
+  { "zh": "救护车", "baca": "jiùhùchē", "id": "ambulans" },
+  { "zh": "报警", "baca": "bàojǐng", "id": "melapor polisi" },
+  { "zh": "谅解", "baca": "liàngjiě", "id": "memaklumi" },
+  { "zh": "反正", "baca": "fǎnzhèng", "id": "pokoknya, lagi pula" },
+  { "zh": "总之", "baca": "zǒngzhī", "id": "singkatnya" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 于是, 结果, 因此, atau 后来.",
+   "items": [
+    "[没有票了|Méiyǒu piào le]，____ [我们坐大巴去了|wǒmen zuò dàbā qù le]。",
+    "[我等了两个小时|Wǒ děng le liǎng ge xiǎoshí]，____ [他根本没来|tā gēnběn méi lái]。",
+    "[该路段正在施工|Gāi lùduàn zhèngzài shīgōng]，____ [车辆需改道|chēliàng xū gǎidào]。",
+    "[我们本来是同事|Wǒmen běnlái shì tóngshì]，____ [他去了别的城市|tā qù le bié de chéngshì]。",
+    "[房间太冷|Fángjiān tài lěng]，____ [我下楼找前台|wǒ xià lóu zhǎo qiántái]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 万一, 一旦, atau 如果.",
+   "items": [
+    "[带把伞吧|Dài bǎ sǎn ba]，____ [下雨呢|xià yǔ ne]。",
+    "____ [签了合同|qiān le hétong]，[就不能反悔了|jiù bù néng fǎnhuǐ le]。",
+    "____ [我升职了|wǒ shēngzhí le]，[我请你吃饭|wǒ qǐng nǐ chī fàn]。",
+    "____ [被发现|bèi fāxiàn]，[后果很严重|hòuguǒ hěn yánzhòng]。",
+    "____ [他明天还不来怎么办|tā míngtiān hái bù lái zěnme bàn]？"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "由于 / 下大雪 / 西安 / 都 / 车 / 停了",
+    "本来 / 我 / 想 / 投诉 / 结果 / 被 / 说得 / 你 / 不好意思了",
+    "一旦 / 停运 / 确定 / 系统 / 会 / 发 / 自动 / 短信",
+    "要不 / 我 / 这样 / 给 / 换 / 您 / 南边的 / 到 / 房间",
+    "晚点 / 两小时 / 超过 / 可以 / 改签 / 免费",
+    "出门在外 / 不容易 / 都"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[这事儿有点儿悬|Zhè shìr yǒudiǎnr xuán]。",
+    "[给您带来不便|Gěi nín dàilái búbiàn]，[敬请谅解|jìngqǐng liàngjiě]。",
+    "[快走吧|Kuài zǒu ba]，[要不然赶不上了|yàoburán gǎn bu shàng le]。",
+    "[原来你也在这儿|Yuánlái nǐ yě zài zhèr]！",
+    "[反正第二天还是赶上了会|Fǎnzhèng dì èr tiān háishi gǎn shàng le huì]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Berhubung turun salju lebat, seluruh jalur menunggu pengaturan.",
+    "Kalau-kalau besok masih berhenti bagaimana?",
+    "Begitu dipastikan, sistem akan otomatis mengirim SMS.",
+    "Tadinya saya mau komplain, ternyata malah jadi tidak enak hati.",
+    "Tidak ada tiket lagi, lalu kami naik bus.",
+    "Bagaimana kalau begini: saya pindahkan Anda ke kamar sisi selatan."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我没去|Wǒ méi qù]，[由于下雨|yóuyú xià yǔ]。",
+    "[下雨了|Xià yǔ le]，[于是很冷|yúshì hěn lěng]。",
+    "[明天我先去银行|Míngtiān wǒ xiān qù yínháng]，[后来去公司|hòulái qù gōngsī]。",
+    "[万一我中奖了|Wànyī wǒ zhòngjiǎng le]，[我请大家吃饭|wǒ qǐng dàjiā chī fàn]。",
+    "[一旦开始|Yídàn kāishǐ]，[不能停|bù néng tíng]。"
+   ]
+  }
+ ],
+ "answers": [
+  "于是 — 结果 — 因此 — 后来 — 于是",
+  "万一 — 一旦 — 如果 — 一旦 — 万一",
+  "由于 西安 下大雪 车 都 停了 — 本来 我 想 投诉 结果 被 你 说得 不好意思了 — 一旦 确定 停运 系统 会 自动 发 短信 — 要不 这样 我 给 您 换 到 南边的 房间 — 晚点 超过 两小时 可以 免费 改签 — 出门在外 都 不容易",
+  "Urusan ini agak riskan. — Atas ketidaknyamanan yang ditimbulkan, mohon dimaklumi. — Cepat berangkat, kalau tidak nanti tidak terkejar. — Ternyata kamu juga di sini! — Pokoknya hari berikutnya rapatnya tetap terkejar.",
+  "Yóuyú xià dà xuě, quánxiàn dōu zài děng diàodù. — Wànyī míngtiān hái tíng ne? — Yídàn quèdìng, xìtǒng jiù huì zìdòng fā duǎnxìn. — Běnlái wǒ xiǎng tóusù, jiéguǒ bèi shuō de bù hǎoyìsi le. — Méiyǒu piào le, yúshì wǒmen zuò dàbā. — Yàobù zhèyàng: wǒ gěi nín huàn dào nánbiān de fángjiān.",
+  "Wǒ méi qù, yīnwèi xià yǔ. (由于 hanya di awal kalimat) — Xià yǔ le, yúshì wǒmen huí jiā le. (于是 untuk tindakan) — Míngtiān wǒ xiān qù yínháng, ránhòu qù gōngsī. (后来 hanya masa lalu) — Rúguǒ wǒ zhòngjiǎng le, wǒ qǐng dàjiā chī fàn. (万一 hanya untuk hal buruk) — Yídàn kāishǐ, jiù bù néng tíng. (kepingan kedua 一旦 pakai 就)"
+ ],
+ "wave": "Lima menit sebelum Unit 7: ceritakan satu perjalanan yang berantakan dalam empat puluh detik, memakai rangka enam langkah di bagian tambahan unit ini — 本来, 由于, 于是, 结果, 后来, 反正. Rekam dan dengarkan. Kalau keenam penandanya keluar tanpa kamu pikirkan, alur ceritamu sudah setara penutur asli, meskipun kosakatamu belum."
+}

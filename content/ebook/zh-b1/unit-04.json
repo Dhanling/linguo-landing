@@ -1,0 +1,425 @@
+{
+ "title": "Belanja daring dan komplain",
+ "title_target": "网购和投诉 — Wǎnggòu hé tóusù",
+ "goal": "Memakai seluruh keluarga kalimat pasif — 被, 让, 叫, 给 — dan memindahkan objek ke depan dengan 把 dalam kalimat yang benar-benar kamu butuhkan: barang rusak, paket hilang, uang belum kembali.",
+ "bekal": [
+  "memesan, melacak, dan mengembalikan barang di toko daring Tiongkok",
+  "memakai 被 / 让 / 叫 / 给 sesuai tingkat kesantunannya",
+  "memakai 把 dalam perintah, keluhan, dan permintaan",
+  "memakai kata kerja serba guna 弄 waktu kamu tidak tahu kata kerjanya",
+  "menuliskan komplain yang menghasilkan jawaban, bukan balasan otomatis"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Paket yang tidak sampai",
+   "intro": "Andi memesan monitor lewat toko daring. Aplikasi menyatakan paketnya sudah diterima, padahal ia tidak menerima apa pun. Ia menelepon layanan pelanggan, 客服.",
+   "lines": [
+    {
+     "speaker": "客服:",
+     "text": "[您好|Nín hǎo]，[请问有什么可以帮您|qǐngwèn yǒu shénme kěyǐ bāng nín]？",
+     "id": "Selamat siang, ada yang bisa saya bantu?",
+     "literal": "Anda — baik, mohon-tanya — ada — apa — boleh — bantu — Anda."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我的包裹显示已签收|Wǒ de bāoguǒ xiǎnshì yǐ qiānshōu]，[可是我根本没收到|kěshì wǒ gēnběn méi shōu dào]。",
+     "id": "Paket saya tertulis sudah diterima, padahal saya sama sekali tidak menerimanya.",
+     "literal": "saya — punya — paket — menampilkan — sudah — tanda-terima, tetapi — saya — sama-sekali — tidak — terima — sampai."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[请把订单号告诉我|Qǐng bǎ dìngdānhào gàosu wǒ]，[我帮您查一下|wǒ bāng nín chá yíxià]。",
+     "id": "Tolong beri tahu saya nomor pesanannya, saya bantu cek.",
+     "literal": "silakan — ambil — pesanan — nomor — beritahu — saya, saya — bantu — Anda — periksa — sekali."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[尾号八八三七|Wěihào bā bā sān qī]。[快递员说放在门口了|Kuàidìyuán shuō fàng zài ménkǒu le]，[但是门口什么都没有|dànshì ménkǒu shénme dōu méiyǒu]。",
+     "id": "Empat angka terakhir delapan delapan tiga tujuh. Kurirnya bilang ditaruh di depan pintu, tapi di depan pintu tidak ada apa-apa.",
+     "literal": "ekor-nomor — delapan — delapan — tiga — tujuh. kurir — bilang — taruh — di — pintu-mulut — sudah, tetapi — pintu-mulut — apa — semua — tidak-ada."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[查到了|Chá dào le]。[显示昨天下午三点十分放在您单元门口|Xiǎnshì zuótiān xiàwǔ sān diǎn shí fēn fàng zài nín dānyuán ménkǒu]。[会不会被邻居拿走了|Huì bu huì bèi línjū ná zǒu le]？",
+     "id": "Sudah ketemu. Tertulis kemarin sore jam tiga lewat sepuluh ditaruh di depan pintu gedung Anda. Mungkin diambil tetangga?",
+     "literal": "periksa — sampai — sudah. menampilkan — kemarin — sore — tiga — jam — sepuluh — menit — taruh — di — Anda — unit — pintu-mulut. akan — tidak — akan — kena — tetangga — ambil — pergi — sudah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[有可能|Yǒu kěnéng]，[不过快递员应该放到快递柜|búguò kuàidìyuán yīnggāi fàng dào kuàidìguì]，[不能就那么放在门口|bù néng jiù nàme fàng zài ménkǒu]。",
+     "id": "Mungkin saja, tapi kurirnya seharusnya menaruh di loker paket, tidak boleh begitu saja ditaruh di depan pintu.",
+     "literal": "ada — kemungkinan, tetapi — kurir — seharusnya — taruh — sampai — kurir-loker, tidak — boleh — begitu-saja — taruh — di — pintu-mulut."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[您说得对|Nín shuō de duì]。[我先帮您发起赔付申请|Wǒ xiān bāng nín fāqǐ péifù shēnqǐng]，[同时联系快递公司调监控|tóngshí liánxì kuàidì gōngsī diào jiānkòng]。",
+     "id": "Anda benar. Saya bantu ajukan permohonan ganti rugi dulu, sekaligus menghubungi perusahaan ekspedisi untuk menarik rekaman CCTV.",
+     "literal": "Anda — bilang — tingkat — benar. saya — dulu — bantu — Anda — memulai — ganti-bayar — permohonan, bersamaan — menghubungi — kurir — perusahaan — menarik — pemantauan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[大概要多久|Dàgài yào duō jiǔ]？[这个显示器我下周开会要用|Zhè ge xiǎnshìqì wǒ xià zhōu kāihuì yào yòng]。",
+     "id": "Kira-kira butuh berapa lama? Monitor ini minggu depan saya perlukan untuk rapat.",
+     "literal": "kira-kira — perlu — berapa — lama. ini — penggolong — layar-alat — saya — bawah — minggu — rapat — harus — pakai."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[调监控一般两个工作日|Diào jiānkòng yìbān liǎng ge gōngzuòrì]。[不过我可以先给您补发一台|Búguò wǒ kěyǐ xiān gěi nín bǔfā yì tái]，[明天就能到|míngtiān jiù néng dào]。",
+     "id": "Menarik rekaman biasanya dua hari kerja. Tapi saya bisa kirimkan penggantinya dulu untuk Anda, besok sudah bisa sampai.",
+     "literal": "menarik — pemantauan — umumnya — dua — penggolong — kerja-hari. tetapi — saya — boleh — dulu — kepada — Anda — susul-kirim — satu — penggolong, besok — langsung — bisa — sampai."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那太好了|Nà tài hǎo le]。[麻烦您把补发的单号发我微信|Máfan nín bǎ bǔfā de dānhào fā wǒ wēixìn]，[我盯着点儿|wǒ dīng zhe diǎnr]。",
+     "id": "Wah bagus sekali. Merepotkan Anda, tolong kirim nomor resi penggantinya ke WeChat saya, biar saya pantau.",
+     "literal": "itu — terlalu — baik — sudah. merepotkan — Anda — ambil — susul-kirim — punya — resi-nomor — kirim — saya — WeChat, saya — mengawasi — dalam-keadaan — sedikit."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[没问题|Méi wèntí]。[另外|Lìngwài]，[如果原来那个包裹被找到了|rúguǒ yuánlái nà ge bāoguǒ bèi zhǎodào le]，[麻烦您拒收就行|máfan nín jùshōu jiù xíng]。",
+     "id": "Tidak masalah. Selain itu, kalau paket yang semula ternyata ditemukan, Anda cukup menolak menerimanya saja.",
+     "literal": "tidak-ada — masalah. selain-itu, jika — asalnya — itu — penggolong — paket — kena — cari-sampai — sudah, merepotkan — Anda — tolak-terima — langsung — boleh."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[明白|Míngbai]。[谢谢您处理得这么快|Xièxie nín chǔlǐ de zhème kuài]。",
+     "id": "Paham. Terima kasih Anda menanganinya secepat ini.",
+     "literal": "paham. terima-kasih — Anda — menangani — tingkat — begini — cepat."
+    }
+   ],
+   "notes": [
+    "**[被|bèi] tidak selalu berarti hal buruk, tapi hampir selalu.** [被邻居拿走了|bèi línjū ná zǒu le] diambil tetangga, [被偷了|bèi tōu le] dicuri, [被骂了|bèi mà le] dimarahi. Untuk hal netral atau baik, bahasa Mandarin lebih suka kalimat biasa: ✅ [公司录用我了|Gōngsī lùyòng wǒ le]。 ❌ 我被公司录用了。 (terdengar seperti kamu terpaksa). ⚠️ Ini kebalikan bahasa Indonesia, yang memakai bentuk “di-” untuk apa saja.",
+    "**Kata kerja di kalimat 被 wajib berekor.** Tidak boleh berdiri sendiri: ❌ 我的自行车被偷。 ✅ [我的自行车被偷了|Wǒ de zìxíngchē bèi tōu le]。 Ekornya boleh berupa 了, pelengkap hasil (走, 掉, 坏), atau keterangan. Ini aturan yang sama dengan kalimat 把 — dan memang keduanya bersaudara: dua-duanya memindahkan kepingan kalimat dari tempat biasanya.",
+    "**[把|bǎ] dipakai kalau kamu ingin mengatakan apa yang TERJADI pada bendanya.** [请把订单号告诉我|Qǐng bǎ dìngdānhào gàosu wǒ]。 Kalimat perintah dan permintaan sangat sering memakai 把 karena memang itu intinya: benda ini, lakukan sesuatu padanya. ⚠️ Kata kerja yang tidak mengubah apa pun tidak bisa memakai 把: ❌ 我把这本书看见了。 ❌ 我把他喜欢。",
+    "**[根本|gēnběn] = sama sekali, dari akarnya.** Ia hampir selalu dipakai dengan penyangkalan: [我根本没收到|Wǒ gēnběn méi shōu dào]。 Nadanya keras dan menandai bahwa dugaan lawan bicara meleset sepenuhnya — cocok untuk komplain, berbahaya untuk atasan. Saudara yang lebih halus: [其实我没收到|Qíshí wǒ méi shōu dào]。",
+    "**[麻烦您|máfan nín] adalah pelunak permintaan yang paling sering dipakai orang Tiongkok.** Harfiahnya “merepotkan Anda”, dan ia berdiri di depan permintaan: [麻烦您把单号发我|Máfan nín bǎ dānhào fā wǒ]。 Tanpa ini, kalimat 把 yang berupa perintah bisa terdengar seperti majikan menyuruh. Saudaranya: [劳驾|láojià] permisi (Beijing), [有劳|yǒuláo] resmi dan agak kuno."
+   ],
+   "grammars": [
+    {
+     "title": "被 · 让 · 叫 · 给 — empat pintu masuk kalimat pasif",
+     "body": [
+      "Rangkanya sama: **korban + penanda + pelaku + kata kerja + ekor。** Yang berbeda cuma ragam dan seberapa wajib pelakunya disebut."
+     ],
+     "table": {
+      "head": ["Penanda", "Ragam", "Pelaku boleh dibuang?", "Contoh"],
+      "rows": [
+       ["[被|bèi]", "Netral, boleh tulis boleh lisan", "Boleh", "[我的手机被偷了|Wǒ de shǒujī bèi tōu le]。"],
+       ["[让|ràng]", "Lisan, sehari-hari", "Tidak boleh", "[我的手机让人偷了|Wǒ de shǒujī ràng rén tōu le]。"],
+       ["[叫|jiào]", "Lisan, lebih kasar", "Tidak boleh", "[杯子叫他打破了|Bēizi jiào tā dǎ pò le]。"],
+       ["[给|gěi]", "Lisan, sangat santai", "Boleh", "[钱给花光了|Qián gěi huā guāng le]。"]
+      ]
+     },
+     "after": [
+      "⚠️ Kalau pelakunya tidak diketahui, 让 dan 叫 tetap butuh kata pengisi [人|rén]: [让人偷了|ràng rén tōu le], bukan ❌ 让偷了.",
+      "⚠️ Penyangkalan dan kata bantu berdiri di DEPAN penandanya: [我的手机没被偷|Wǒ de shǒujī méi bèi tōu]。 ❌ 我的手机被没偷。",
+      "Bentuk tulis yang lebih halus: [受到|shòudào] menerima (perlakuan), [遭到|zāodào] mengalami (hal buruk), [由|yóu] oleh. 📄 [该问题已受到重视|Gāi wèntí yǐ shòudào zhòngshì]。 Masalah tersebut sudah mendapat perhatian."
+     ]
+    },
+    {
+     "title": "把 — memindahkan objek ke depan kata kerja",
+     "body": [
+      "Rangkanya: **pelaku + 把 + objek + kata kerja + ekor。** Objeknya wajib benda yang sudah jelas bagi kedua pihak, dan kata kerjanya wajib berekor."
+     ],
+     "table": {
+      "head": ["Jenis ekor", "Contoh", "Arti"],
+      "rows": [
+       ["Pelengkap hasil", "[请把门关上|Qǐng bǎ mén guānshang]。", "Tolong tutup pintunya."],
+       ["Pelengkap arah", "[把书拿回来|Bǎ shū ná huílai]。", "Bawa kembali bukunya."],
+       ["Penerima dengan 给", "[把单号发给我|Bǎ dānhào fā gěi wǒ]。", "Kirimkan nomor resinya ke saya."],
+       ["Tempat dengan 在/到", "[别把包裹放在门口|Bié bǎ bāoguǒ fàng zài ménkǒu]。", "Jangan taruh paketnya di depan pintu."],
+       ["Perubahan dengan 成", "[把人民币换成美元|Bǎ rénmínbì huàn chéng měiyuán]。", "Tukar yuan jadi dolar."],
+       ["了 saja", "[我把钱花了|Wǒ bǎ qián huā le]。", "Uangnya sudah saya habiskan."]
+      ]
+     },
+     "after": [
+      "⚠️ Kata kerja yang TIDAK bisa memakai 把: perasaan (喜欢, 爱, 怕), penginderaan (看见, 听见, 知道), keberadaan (有, 在, 是). Semuanya tidak mengubah apa pun pada bendanya.",
+      "⚠️ Penyangkalan dan kata bantu berdiri di DEPAN 把: [我没把门关上|Wǒ méi bǎ mén guānshang]。 [你应该把这件事告诉他|Nǐ yīnggāi bǎ zhè jiàn shì gàosu tā]。",
+      "Kalimat 把 dan 被 boleh bertemu: [我的手机被他把屏幕摔碎了|Wǒ de shǒujī bèi tā bǎ píngmù shuāi suì le] terlalu berat — dalam praktik pilih salah satu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Mengembalikan barang",
+   "intro": "Penggantinya datang, tapi ada masalah baru: layarnya retak. Andi mengurus pengembalian barang lewat obrolan layanan pelanggan. Perhatikan kata kerja 弄, yang dipakai untuk apa saja.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[补发的显示器今天到了|Bǔfā de xiǎnshìqì jīntiān dào le]，[可是屏幕右下角裂了一道|kěshì píngmù yòu xià jiǎo liè le yí dào]。",
+     "id": "Monitor pengganti hari ini sampai, tapi layar sudut kanan bawahnya retak satu garis.",
+     "literal": "susul-kirim — punya — layar-alat — hari-ini — sampai — sudah, tetapi — layar — kanan — bawah — sudut — retak — sudah — satu — penggolong."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[非常抱歉|Fēicháng bàoqiàn]。[请问是拆开就发现的吗|Qǐngwèn shì chāikāi jiù fāxiàn de ma]？[外包装有没有破损|Wàibāozhuāng yǒu méiyǒu pòsǔn]？",
+     "id": "Mohon maaf sekali. Boleh saya tanya, ketahuannya begitu dibuka? Kemasan luarnya ada kerusakan?",
+     "literal": "sangat — mohon-maaf. mohon-tanya — adalah — bongkar-buka — langsung — menemukan — punya — kah. luar-kemasan — ada — tidak-ada — pecah-rusak."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[外箱有点儿瘪|Wài xiāng yǒudiǎnr biě]。[我拆的时候拍了视频|Wǒ chāi de shíhou pāi le shìpín]，[全程都有|quánchéng dōu yǒu]。",
+     "id": "Kardus luarnya agak penyok. Waktu saya buka saya merekam video, dari awal sampai akhir ada semua.",
+     "literal": "luar — kotak — agak — penyok. saya — bongkar — punya — waktu — memotret — sudah — video, seluruh-jalan — semua — ada."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[太好了|Tài hǎo le]，[开箱视频是最有力的证据|kāixiāng shìpín shì zuì yǒulì de zhèngjù]。[您把视频发到这个对话框里|Nín bǎ shìpín fā dào zhè ge duìhuàkuàng lǐ]。",
+     "id": "Bagus sekali, video pembukaan kardus adalah bukti yang paling kuat. Tolong kirim videonya ke kotak obrolan ini.",
+     "literal": "terlalu — baik — sudah, buka-kotak — video — adalah — paling — berkekuatan — punya — bukti. Anda — ambil — video — kirim — sampai — ini — penggolong — dialog-kotak — dalam."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[发过去了|Fā guòqu le]。[是运输弄坏的|Shì yùnshū nòng huài de]，[不是我弄的|bú shì wǒ nòng de]。",
+     "id": "Sudah saya kirim. Ini rusak karena pengangkutan, bukan saya yang merusakkan.",
+     "literal": "kirim — lewat-pergi — sudah. adalah — angkutan — bikin — rusak — punya, bukan — saya — bikin — punya."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[我看到了|Wǒ kàndào le]，[外箱确实被压过|wài xiāng quèshí bèi yā guo]。[这种情况可以直接退货退款|Zhè zhǒng qíngkuàng kěyǐ zhíjiē tuìhuò tuìkuǎn]，[运费我们承担|yùnfèi wǒmen chéngdān]。",
+     "id": "Sudah saya lihat, kardus luarnya memang pernah tertindih. Kasus seperti ini bisa langsung retur dan refund, ongkos kirim kami yang tanggung.",
+     "literal": "saya — lihat — sampai — sudah, luar — kotak — memang — kena — tekan — pernah. ini — jenis — keadaan — boleh — langsung — mundur-barang — mundur-uang, ongkos-kirim — kami — memikul."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我不想退款|Wǒ bù xiǎng tuìkuǎn]，[我想换一台|wǒ xiǎng huàn yì tái]。[我下周真的要用|Wǒ xià zhōu zhēn de yào yòng]。",
+     "id": "Saya tidak ingin refund, saya ingin tukar satu unit. Minggu depan saya benar-benar memerlukannya.",
+     "literal": "saya — tidak — ingin — mundur-uang, saya — ingin — ganti — satu — penggolong. saya — bawah — minggu — sungguh — punya — harus — pakai."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[可以换货|Kěyǐ huànhuò]。[不过新的要等仓库确认收到旧的以后才发|Búguò xīn de yào děng cāngkù quèrèn shōu dào jiù de yǐhòu cái fā]。",
+     "id": "Bisa tukar barang. Tapi yang baru harus menunggu gudang memastikan menerima yang lama, baru dikirim.",
+     "literal": "boleh — ganti-barang. tetapi — baru — punya — harus — tunggu — gudang — memastikan — terima — sampai — lama — punya — sesudah — barulah — kirim."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那就来不及了|Nà jiù láibují le]。[能不能先发新的|Néng bu néng xiān fā xīn de]？[我保证收到以后马上把坏的寄回去|Wǒ bǎozhèng shōu dào yǐhòu mǎshàng bǎ huài de jì huíqu]。",
+     "id": "Kalau begitu tidak keburu. Bisa tidak yang baru dikirim duluan? Saya jamin begitu diterima langsung saya kirim balik yang rusak.",
+     "literal": "itu — langsung — datang — tidak — sampai — sudah. bisa — tidak — bisa — dulu — kirim — baru — punya. saya — menjamin — terima — sampai — sesudah — segera — ambil — rusak — punya — kirim — kembali-pergi."
+    },
+    {
+     "speaker": "客服:",
+     "text": "[稍等|Shāo děng]，[我申请一下|wǒ shēnqǐng yíxià]…… [好了|Hǎo le]，[主管同意了|zhǔguǎn tóngyì le]。[新的今天下午就发出|Xīn de jīntiān xiàwǔ jiù fāchū]。",
+     "id": "Tunggu sebentar, saya ajukan dulu… Sudah, atasan setuju. Yang baru sore ini juga dikirim.",
+     "literal": "sedikit — tunggu, saya — mengajukan — sekali… baik — sudah, penyelia — setuju — sudah. baru — punya — hari-ini — sore — langsung — kirim-keluar."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[太感谢了|Tài gǎnxiè le]！[没想到这么顺利|Méi xiǎngdào zhème shùnlì]。[评价我一定给五星|Píngjià wǒ yídìng gěi wǔ xīng]。",
+     "id": "Terima kasih banyak! Tak kusangka selancar ini. Penilaian pasti saya beri bintang lima.",
+     "literal": "terlalu — berterima-kasih — sudah. tidak — mengira — sampai — begini — lancar. penilaian — saya — pasti — beri — lima — bintang."
+    }
+   ],
+   "notes": [
+    "**[弄|nòng] adalah kata kerja serba guna yang menyelamatkan percakapan.** Ia berarti “melakukan sesuatu pada benda” tanpa menyebut apa. [弄坏|nòng huài] merusakkan, [弄丢|nòng diū] menghilangkan, [弄脏|nòng zāng] mengotori, [弄好|nòng hǎo] membereskan, [弄清楚|nòng qīngchu] memperjelas. Kalau kamu tidak tahu kata kerjanya, pakai 弄 dan tambahkan hasilnya — orang Tiongkok sendiri melakukan ini sepanjang hari. ⚠️ Di ragam tulis resmi, 弄 diganti kata yang lebih tepat.",
+    "**[是…的|shì…de] dipakai untuk menyorot siapa yang melakukannya.** [是运输弄坏的|Shì yùnshū nòng huài de]，[不是我弄的|bú shì wǒ nòng de]。 Rangka ini persis yang kamu pelajari di 102, dan di sini gunanya jelas: yang diperdebatkan bukan apakah rusak, melainkan siapa penyebabnya. Dalam komplain, rangka 是…的 adalah senjata utamamu.",
+    "**[来不及|láibují] = tidak keburu; [来得及|láidejí] = masih keburu.** Bentuk pelengkap kemungkinan yang sudah beku jadi satu kata. [现在去还来得及吗|Xiànzài qù hái láidejí ma]？ Pergi sekarang masih keburu? Saudaranya di keluarga waktu: [赶得上|gǎn de shàng] terkejar (kereta, pesawat), [赶不上|gǎn bu shàng] tidak terkejar.",
+    "**[承担|chéngdān] dan [负责|fùzé] tidak sama.** 承担 = memikul beban atau biaya: [运费我们承担|Yùnfèi wǒmen chéngdān]。 负责 = bertanggung jawab mengurus: [这件事由我负责|Zhè jiàn shì yóu wǒ fùzé]。 Dalam komplain, yang kamu inginkan adalah pihak lain 承担 biayanya, bukan sekadar 负责 mengurusnya.",
+    "**Kosakata belanja daring wajib.** [下单|xiàdān] memesan, [发货|fāhuò] mengirim barang, [签收|qiānshōu] menerima dengan tanda tangan, [拒收|jùshōu] menolak menerima, [退货|tuìhuò] retur barang, [退款|tuìkuǎn] pengembalian uang, [换货|huànhuò] tukar barang, [七天无理由退货|qī tiān wú lǐyóu tuìhuò] retur tujuh hari tanpa alasan — hak pembeli yang dijamin undang-undang di Tiongkok."
+   ],
+   "grammars": [
+    {
+     "title": "弄 dan keluarga kata kerja serba guna",
+     "body": [
+      "Tiga kata kerja ini bisa menggantikan hampir semua kata kerja yang tidak kamu ingat. Yang menentukan artinya adalah pelengkap hasil di belakangnya."
+     ],
+     "table": {
+      "head": ["Kata", "Ragam", "Contoh"],
+      "rows": [
+       ["[弄|nòng]", "Netral, paling luas", "[弄坏|nòng huài] · [弄丢|nòng diū] · [弄清楚|nòng qīngchu] · [弄好|nòng hǎo]"],
+       ["[搞|gǎo]", "Lebih santai, kadang negatif", "[搞错|gǎo cuò] salah paham · [搞定|gǎo dìng] beres · [搞不懂|gǎo bu dǒng] tak habis pikir"],
+       ["[整|zhěng]", "Sangat santai, khas utara", "[整明白|zhěng míngbai] · [整坏了|zhěng huài le]"],
+       ["[打|dǎ]", "Beku dalam banyak gabungan", "[打电话|dǎ diànhuà] · [打车|dǎ chē] · [打印|dǎyìn] · [打交道|dǎ jiāodào]"]
+      ]
+     },
+     "after": [
+      "⚠️ 搞 di Tiongkok daratan netral, tapi di Taiwan dan Hong Kong bisa terdengar kasar. Kalau ragu, pakai 弄.",
+      "Bentuk yang paling berguna dalam komplain: [是谁弄的|Shì shéi nòng de]？ Siapa yang melakukannya? · [不是我弄的|Bú shì wǒ nòng de]。 Bukan saya yang melakukannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa toko daring",
+   "blocks": [
+    { "type": "p", "text": "Antarmuka toko daring Tiongkok memakai istilah yang tidak diajarkan di kelas mana pun, padahal kamu akan melihatnya setiap hari. Ini yang paling sering muncul." },
+    { "type": "tabel", "head": ["Istilah", "Pīnyīn", "Arti"], "rows": [
+     ["下单", "xiàdān", "memesan"],
+     ["订单号", "dìngdānhào", "nomor pesanan"],
+     ["发货 / 待发货", "fāhuò / dài fāhuò", "dikirim / menunggu dikirim"],
+     ["运单号", "yùndānhào", "nomor resi"],
+     ["签收", "qiānshōu", "diterima dan ditandatangani"],
+     ["拒收", "jùshōu", "menolak menerima"],
+     ["退货 / 退款", "tuìhuò / tuìkuǎn", "retur barang / pengembalian uang"],
+     ["换货", "huànhuò", "tukar barang"],
+     ["运费险", "yùnfèixiǎn", "asuransi ongkos kirim retur"],
+     ["七天无理由", "qī tiān wú lǐyóu", "retur tujuh hari tanpa alasan"],
+     ["秒杀 / 满减", "miǎoshā / mǎnjiǎn", "flash sale / potongan bila belanja mencapai jumlah tertentu"],
+     ["差评 / 好评", "chàpíng / hǎopíng", "ulasan buruk / ulasan baik"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga kebiasaan yang menyelamatkanmu", "items": [
+     "**Rekam video waktu membuka paket.** [开箱视频|Kāixiāng shìpín] adalah bukti yang diterima semua platform besar. Tanpa itu, klaim barang rusak hampir selalu ditolak.",
+     "**Jangan menandatangani sebelum memeriksa.** Setelah 签收, tanggung jawab pindah ke kamu. Kalau kardusnya penyok, katakan [我要开箱验货再签|Wǒ yào kāixiāng yànhuò zài qiān]。",
+     "**Simpan seluruh percakapan layanan pelanggan.** Janji lisan di telepon tidak berlaku; janji di kotak obrolan tercatat dan bisa dipakai waktu naik banding."
+    ] }
+   ]
+  },
+  {
+   "title": "Menulis komplain yang dijawab manusia",
+   "blocks": [
+    { "type": "p", "text": "Komplain yang panjang dan marah dijawab robot. Komplain yang pendek, berurutan, dan menyebut angka dijawab manusia. Susunannya lima kalimat, tidak lebih." },
+    { "type": "tabel", "head": ["Kalimat", "Isinya", "Contoh"], "rows": [
+     ["1. Fakta", "Nomor pesanan dan tanggal", "[订单尾号八八三七|Dìngdān wěihào bā bā sān qī]，[三月五日下单|sān yuè wǔ rì xiàdān]。"],
+     ["2. Masalah", "Satu kalimat, tanpa perasaan", "[收到时屏幕右下角已裂|Shōu dào shí píngmù yòu xià jiǎo yǐ liè]。"],
+     ["3. Bukti", "Apa yang kamu punya", "[有开箱视频为证|Yǒu kāixiāng shìpín wéi zhèng]。"],
+     ["4. Permintaan", "Apa yang kamu mau, konkret", "[希望换货|Xīwàng huànhuò]，[并先行发货|bìng xiānxíng fāhuò]。"],
+     ["5. Batas waktu", "Kapan kamu butuh jawabannya", "[请于两个工作日内答复|Qǐng yú liǎng ge gōngzuòrì nèi dáfù]。"]
+    ] },
+    { "type": "sub", "text": "Kalimat yang menaikkan tekanan tanpa kasar" },
+    { "type": "list", "items": [
+     "[这已经是第二次了|Zhè yǐjīng shì dì èr cì le]。 Ini sudah yang kedua kalinya.",
+     "[我希望能得到一个合理的解释|Wǒ xīwàng néng dédào yí ge hélǐ de jiěshì]。 Saya berharap bisa mendapat penjelasan yang masuk akal.",
+     "[如果两天内没有答复|Rúguǒ liǎng tiān nèi méiyǒu dáfù]，[我只能向平台投诉|wǒ zhǐ néng xiàng píngtái tóusù]。 Kalau dua hari tak ada jawaban, saya terpaksa mengadu ke platform.",
+     "⚠️ Yang TIDAK menolong: [你们太差了|Nǐmen tài chà le]！ Ini menghasilkan permintaan maaf, bukan penyelesaian."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik tentang barang yang bermasalah", "items": [
+     "Ceritakan satu barang yang pernah kamu beli dan bermasalah: apa, kapan, apa masalahnya.",
+     "Satu kalimat pasif dengan 被 atau 让: apa yang terjadi pada barangnya.",
+     "Satu kalimat 把: apa yang kamu minta pihak penjual lakukan.",
+     "Satu kalimat 是…的: siapa penyebabnya menurutmu.",
+     "Tutup dengan hasilnya: [最后他们给我换了一台|Zuìhòu tāmen gěi wǒ huàn le yì tái]。 atau [最后我只好自己修|Zuìhòu wǒ zhǐhǎo zìjǐ xiū]。"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "网购", "baca": "wǎnggòu", "id": "belanja daring" },
+  { "zh": "投诉", "baca": "tóusù", "id": "mengadu, komplain" },
+  { "zh": "客服", "baca": "kèfú", "id": "layanan pelanggan" },
+  { "zh": "包裹", "baca": "bāoguǒ", "id": "paket" },
+  { "zh": "快递员", "baca": "kuàidìyuán", "id": "kurir" },
+  { "zh": "快递柜", "baca": "kuàidìguì", "id": "loker paket" },
+  { "zh": "订单号", "baca": "dìngdānhào", "id": "nomor pesanan" },
+  { "zh": "尾号", "baca": "wěihào", "id": "empat angka terakhir" },
+  { "zh": "签收", "baca": "qiānshōu", "id": "menerima dan menandatangani" },
+  { "zh": "拒收", "baca": "jùshōu", "id": "menolak menerima" },
+  { "zh": "根本", "baca": "gēnběn", "id": "sama sekali" },
+  { "zh": "邻居", "baca": "línjū", "id": "tetangga" },
+  { "zh": "赔付", "baca": "péifù", "id": "ganti rugi" },
+  { "zh": "申请", "baca": "shēnqǐng", "id": "mengajukan permohonan" },
+  { "zh": "监控", "baca": "jiānkòng", "id": "rekaman pemantauan, CCTV" },
+  { "zh": "补发", "baca": "bǔfā", "id": "mengirim ulang sebagai pengganti" },
+  { "zh": "显示器", "baca": "xiǎnshìqì", "id": "monitor" },
+  { "zh": "工作日", "baca": "gōngzuòrì", "id": "hari kerja" },
+  { "zh": "麻烦", "baca": "máfan", "id": "merepotkan; repot" },
+  { "zh": "处理", "baca": "chǔlǐ", "id": "menangani" },
+  { "zh": "拆", "baca": "chāi", "id": "membongkar, membuka" },
+  { "zh": "外包装", "baca": "wàibāozhuāng", "id": "kemasan luar" },
+  { "zh": "破损", "baca": "pòsǔn", "id": "rusak, pecah" },
+  { "zh": "瘪", "baca": "biě", "id": "penyok" },
+  { "zh": "视频", "baca": "shìpín", "id": "video" },
+  { "zh": "全程", "baca": "quánchéng", "id": "sepanjang prosesnya" },
+  { "zh": "证据", "baca": "zhèngjù", "id": "bukti" },
+  { "zh": "运输", "baca": "yùnshū", "id": "pengangkutan" },
+  { "zh": "弄坏", "baca": "nòng huài", "id": "merusakkan" },
+  { "zh": "弄丢", "baca": "nòng diū", "id": "menghilangkan" },
+  { "zh": "弄清楚", "baca": "nòng qīngchu", "id": "memperjelas" },
+  { "zh": "搞错", "baca": "gǎo cuò", "id": "salah, keliru" },
+  { "zh": "搞定", "baca": "gǎo dìng", "id": "beres, kelar" },
+  { "zh": "退货", "baca": "tuìhuò", "id": "retur barang" },
+  { "zh": "退款", "baca": "tuìkuǎn", "id": "pengembalian uang" },
+  { "zh": "换货", "baca": "huànhuò", "id": "tukar barang" },
+  { "zh": "运费", "baca": "yùnfèi", "id": "ongkos kirim" },
+  { "zh": "承担", "baca": "chéngdān", "id": "memikul, menanggung" },
+  { "zh": "仓库", "baca": "cāngkù", "id": "gudang" },
+  { "zh": "确认", "baca": "quèrèn", "id": "memastikan" },
+  { "zh": "来不及", "baca": "láibují", "id": "tidak keburu" },
+  { "zh": "来得及", "baca": "láidejí", "id": "masih keburu" },
+  { "zh": "保证", "baca": "bǎozhèng", "id": "menjamin" },
+  { "zh": "寄", "baca": "jì", "id": "mengirim lewat pos" },
+  { "zh": "主管", "baca": "zhǔguǎn", "id": "penyelia, atasan langsung" },
+  { "zh": "顺利", "baca": "shùnlì", "id": "lancar" },
+  { "zh": "评价", "baca": "píngjià", "id": "penilaian, ulasan" },
+  { "zh": "差评", "baca": "chàpíng", "id": "ulasan buruk" },
+  { "zh": "平台", "baca": "píngtái", "id": "platform" },
+  { "zh": "合理", "baca": "hélǐ", "id": "masuk akal" },
+  { "zh": "解释", "baca": "jiěshì", "id": "penjelasan, menjelaskan" },
+  { "zh": "受到", "baca": "shòudào", "id": "menerima (perlakuan)" },
+  { "zh": "遭到", "baca": "zāodào", "id": "mengalami (hal buruk)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kalimat pasif dengan 被.",
+   "items": [
+    "[小偷偷了我的手机|Xiǎotōu tōu le wǒ de shǒujī]。",
+    "[邻居拿走了我的包裹|Línjū ná zǒu le wǒ de bāoguǒ]。",
+    "[运输弄坏了屏幕|Yùnshū nòng huài le píngmù]。",
+    "[老板骂了他一顿|Lǎobǎn mà le tā yí dùn]。",
+    "[雨淋湿了我的书|Yǔ lín shī le wǒ de shū]。"
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi kalimat 把.",
+   "items": [
+    "[请告诉我订单号|Qǐng gàosu wǒ dìngdānhào]。",
+    "[你应该关上门|Nǐ yīnggāi guānshang mén]。",
+    "[别放包裹在门口|Bié fàng bāoguǒ zài ménkǒu]。",
+    "[我花了那些钱|Wǒ huā le nàxiē qián]。",
+    "[他发给我视频了|Tā fā gěi wǒ shìpín le]。"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "我 / 没 / 把 / 关上 / 门",
+    "麻烦 / 单号 / 您 / 把 / 我 / 发 / 微信",
+    "外箱 / 被 / 确实 / 压 / 过",
+    "是 / 弄坏 / 运输 / 的 / 不是 / 我 / 弄 / 的",
+    "运费 / 承担 / 我们",
+    "我 / 收到 / 保证 / 以后 / 把 / 寄 / 坏的 / 马上 / 回去"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我的自行车让人偷了|Wǒ de zìxíngchē ràng rén tōu le]。",
+    "[钱都给花光了|Qián dōu gěi huā guāng le]。",
+    "[我根本没收到|Wǒ gēnběn méi shōu dào]。",
+    "[现在去还来得及吗|Xiànzài qù hái láidejí ma]？",
+    "[这种情况可以直接退货退款|Zhè zhǒng qíngkuàng kěyǐ zhíjiē tuìhuò tuìkuǎn]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Paket saya tertulis sudah diterima, padahal saya sama sekali tidak menerimanya.",
+    "Tolong kirim nomor resinya ke WeChat saya.",
+    "Bukan saya yang merusakkan, pengangkutan yang merusakkannya.",
+    "Ongkos kirimnya kami yang tanggung.",
+    "Jangan taruh paketnya di depan pintu.",
+    "Saya jamin begitu diterima langsung saya kirim balik yang rusak."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我的自行车被偷|Wǒ de zìxíngchē bèi tōu]。",
+    "[我把这本书看见了|Wǒ bǎ zhè běn shū kànjiàn le]。",
+    "[我的手机被没偷|Wǒ de shǒujī bèi méi tōu]。",
+    "[我的手机让偷了|Wǒ de shǒujī ràng tōu le]。",
+    "[我被公司录用了|Wǒ bèi gōngsī lùyòng le]，[很高兴|hěn gāoxìng]。"
+   ]
+  }
+ ],
+ "answers": [
+  "我的手机被小偷偷了。 — 我的包裹被邻居拿走了。 — 屏幕被运输弄坏了。 — 他被老板骂了一顿。 — 我的书被雨淋湿了。",
+  "请把订单号告诉我。 — 你应该把门关上。 — 别把包裹放在门口。 — 我把那些钱花了。 — 他把视频发给我了。",
+  "我 没 把 门 关上 — 麻烦 您 把 单号 发 我 微信 — 外箱 确实 被 压 过 — 是 运输 弄坏 的 不是 我 弄 的 — 运费 我们 承担 — 我 保证 收到 以后 马上 把 坏的 寄 回去",
+  "Sepeda saya diambil orang. — Uangnya habis terpakai semua. — Saya sama sekali tidak menerimanya. — Pergi sekarang masih keburu? — Kasus seperti ini bisa langsung retur dan refund.",
+  "Wǒ de bāoguǒ xiǎnshì yǐ qiānshōu, kěshì wǒ gēnběn méi shōu dào. — Máfan nín bǎ dānhào fā wǒ wēixìn. — Bú shì wǒ nòng de, shì yùnshū nòng huài de. — Yùnfèi wǒmen chéngdān. — Bié bǎ bāoguǒ fàng zài ménkǒu. — Wǒ bǎozhèng shōu dào yǐhòu mǎshàng bǎ huài de jì huíqu.",
+  "Wǒ de zìxíngchē bèi tōu le. (kata kerja wajib berekor) — Wǒ kànjiàn zhè běn shū le. (看见 tak bisa memakai 把) — Wǒ de shǒujī méi bèi tōu. (penyangkalan di depan 被) — Wǒ de shǒujī ràng rén tōu le. (让 wajib menyebut pelaku) — Gōngsī lùyòng wǒ le, wǒ hěn gāoxìng. (被 untuk hal buruk)"
+ ],
+ "wave": "Lima menit sebelum Unit 5: buka riwayat belanja daringmu sendiri dan pilih satu pesanan. Ceritakan dalam empat puluh detik: apa yang kamu beli, kapan, berapa lama sampai, dan apakah ada masalah. Wajib satu kalimat 把 dan satu kalimat pasif. Kalau kamu tidak tahu kata kerjanya, pakai 弄 dan tambahkan hasilnya — itulah gunanya."
+}

@@ -1,0 +1,425 @@
+{
+ "title": "Mencari tempat tinggal",
+ "title_target": "租房子 — Zū fángzi",
+ "goal": "Menyebut satu hal yang menonjol dari sekumpulan hal lain dengan 连…都/也, mengeluarkan pengecualian dengan 除了…以外, dan menunda satu urusan ke belakang dengan 至于 — tiga alat yang membuat kalimatmu berhenti terdengar seperti daftar.",
+ "bekal": [
+  "menanyakan dan memahami iklan sewa rumah, kamar kos, dan apartemen",
+  "menonjolkan satu hal yang ekstrem dengan 连…都/也",
+  "mengeluarkan atau menambahkan satu hal dengan 除了…以外…都/还",
+  "menunda satu urusan dengan 至于 supaya percakapanmu tidak melompat",
+  "menawar sewa dan menanyakan biaya yang tersembunyi tanpa terdengar curiga"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Melihat kamar",
+   "intro": "Andi mencari kamar dekat kantornya di Beijing. Perantara rumah, 李经理, mengantarnya melihat satu kamar. Perhatikan berapa kali 除了 dan 连 muncul — dua-duanya dipakai untuk membandingkan kamar ini dengan yang lain.",
+   "lines": [
+    {
+     "speaker": "李经理:",
+     "text": "[这就是我上午跟你说的那间|Zhè jiù shì wǒ shàngwǔ gēn nǐ shuō de nà jiān]。[你先看看|Nǐ xiān kànkan]。",
+     "id": "Nah ini kamar yang tadi pagi saya ceritakan. Silakan dilihat dulu.",
+     "literal": "ini — justru — adalah — saya — pagi — dengan — kamu — bilang — punya — itu — penggolong. kamu — dulu — lihat-lihat."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[比照片小一点|Bǐ zhàopiàn xiǎo yìdiǎn]，[不过采光挺好的|búguò cǎiguāng tǐng hǎo de]。[家具都是新的吗|Jiājù dōu shì xīn de ma]？",
+     "id": "Sedikit lebih kecil daripada di foto, tapi cahayanya bagus juga. Perabotnya baru semua?",
+     "literal": "dibanding — foto — kecil — sedikit, tetapi — cahaya-masuk — cukup — bagus — punya. perabot — semua — adalah — baru — punya — kah."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[除了那张床以外|Chúle nà zhāng chuáng yǐwài]，[其他都是去年换的|qítā dōu shì qùnián huàn de]。",
+     "id": "Kecuali ranjang itu, yang lain semuanya diganti tahun lalu.",
+     "literal": "kecuali — itu — penggolong — ranjang — di-luar, lain — semua — adalah — tahun-lalu — ganti — punya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[房租一个月多少|Fángzū yí ge yuè duōshao]？[包不包水电|Bāo bu bāo shuǐdiàn]？",
+     "id": "Sewanya sebulan berapa? Sudah termasuk air dan listrik belum?",
+     "literal": "sewa-rumah — satu — penggolong — bulan — berapa. termasuk — tidak — termasuk — air-listrik."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[四千五|Sì qiān wǔ]，[包物业费和网费|bāo wùyèfèi hé wǎngfèi]，[水电自己交|shuǐdiàn zìjǐ jiāo]。",
+     "id": "Empat ribu lima, sudah termasuk iuran gedung dan internet, air-listrik bayar sendiri.",
+     "literal": "empat — ribu — lima, termasuk — iuran-pengelola — dan — biaya-jaringan, air-listrik — sendiri — bayar."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[四千五有点儿超预算|Sì qiān wǔ yǒudiǎnr chāo yùsuàn]。[我朋友在隔壁小区|Wǒ péngyou zài gébì xiǎoqū]，[才三千八|cái sān qiān bā]。",
+     "id": "Empat ribu lima agak lewat dari anggaran saya. Teman saya di kompleks sebelah cuma tiga ribu delapan.",
+     "literal": "empat — ribu — lima — agak — lewat — anggaran. saya — teman — di — sebelah — kompleks, baru — tiga — ribu — delapan."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[那边楼旧|Nàbiān lóu jiù]，[连电梯都没有|lián diàntī dōu méiyǒu]。[您可以去看看|Nín kěyǐ qù kànkan]，[看完再回来|kàn wán zài huílai]。",
+     "id": "Gedung sana tua, lift saja tidak ada. Silakan Bapak lihat dulu ke sana, setelah lihat baru kembali ke sini.",
+     "literal": "sana — gedung — tua, bahkan — lift — pun — tidak-ada. Anda — boleh — pergi — lihat-lihat, lihat — selesai — baru — kembali."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[您别急|Nín bié jí]。[我是真的想租|Wǒ shì zhēn de xiǎng zū]，[就是想问问能不能少一点|jiùshì xiǎng wènwen néng bu néng shǎo yìdiǎn]。",
+     "id": "Jangan buru-buru dulu. Saya memang benar-benar mau menyewa, cuma mau tanya bisa kurang sedikit atau tidak.",
+     "literal": "Anda — jangan — terburu. saya — adalah — sungguh — punya — ingin — sewa, justru-adalah — ingin — tanya-tanya — bisa — tidak — bisa — kurang — sedikit."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[如果您签两年|Rúguǒ nín qiān liǎng nián]，[我可以跟房东商量到四千三|wǒ kěyǐ gēn fángdōng shāngliang dào sì qiān sān]。",
+     "id": "Kalau Bapak tanda tangan dua tahun, saya bisa bicarakan dengan pemiliknya sampai empat ribu tiga.",
+     "literal": "jika — Anda — tanda-tangan — dua — tahun, saya — boleh — dengan — pemilik-rumah — berunding — sampai — empat — ribu — tiga."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[押金呢|Yājīn ne]？[我听说这边一般是押一付三|Wǒ tīngshuō zhèbiān yìbān shì yā yī fù sān]。",
+     "id": "Depositnya bagaimana? Saya dengar di sini biasanya deposit satu bulan, bayar tiga bulan di muka.",
+     "literal": "uang-jaminan — bagaimana. saya — dengar-kata — sini — umumnya — adalah — jamin — satu — bayar — tiga."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[对|Duì]，[押一付三|yā yī fù sān]。[至于中介费|Zhìyú zhōngjièfèi]，[我们收半个月的房租|wǒmen shōu bàn ge yuè de fángzū]。",
+     "id": "Betul, deposit satu bayar tiga. Adapun soal komisi perantara, kami ambil setengah bulan sewa.",
+     "literal": "betul, jamin — satu — bayar — tiga. adapun — biaya-perantara, kami — ambil — setengah — penggolong — bulan — punya — sewa-rumah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那我今天晚上给您答复|Nà wǒ jīntiān wǎnshang gěi nín dáfù]，[行吗|xíng ma]？",
+     "id": "Kalau begitu nanti malam saya kabari Bapak, boleh?",
+     "literal": "itu — saya — hari-ini — malam — kepada — Anda — jawaban, boleh — kah."
+    }
+   ],
+   "notes": [
+    "**[除了…以外|chúle…yǐwài] punya DUA arti yang berlawanan, dan yang menentukan adalah kata di kalimat kedua.** Kalau kepingan keduanya 都 atau 也, artinya “kecuali” — hal itu dikeluarkan: [除了那张床以外|chúle nà zhāng chuáng yǐwài]，[其他都是新的|qítā dōu shì xīn de] (ranjang tidak baru). Kalau kepingan keduanya 还 atau 也…还, artinya “selain” — hal itu ikut masuk: [除了汉语以外|chúle Hànyǔ yǐwài]，[他还会说日语|tā hái huì shuō Rìyǔ] (dia bisa Mandarin DAN Jepang). ⚠️ Ini kesalahan nomor satu penutur Indonesia di unit ini, karena bahasa kita memakai satu kata “selain” untuk dua-duanya.",
+    "**[连…都/也|lián…dōu/yě] menonjolkan hal yang paling ekstrem.** [连电梯都没有|Lián diàntī dōu méiyǒu] bukan sekadar “tidak ada lift”; ia berarti “lift pun tidak ada” — bahkan hal sedasar itu tidak ada. Bahasa Indonesia menaruh penekanan pada kata “pun”; bahasa Mandarin memasangnya di dua tempat: 连 di depan bendanya, 都 atau 也 tepat sebelum kata kerjanya. Menghilangkan 都 membuat kalimatnya terdengar patah.",
+    "**[至于|zhìyú] memindahkan pokok pembicaraan ke urusan berikutnya.** Ia selalu berdiri di awal kalimat dan diikuti benda atau perkara, bukan kata kerja: [至于中介费|Zhìyú zhōngjièfèi]，… Gunanya menandai bahwa urusan sebelumnya sudah selesai dibahas. Dalam percakapan sewa-menyewa, tawar-menawar, dan rapat, kata ini membuatmu terdengar teratur — dan orang yang teratur lebih mudah ditawari harga.",
+    "**[才|cái] di sini berarti “cuma”, bukan “baru”.** [才三千八|Cái sān qiān bā] = cuma tiga ribu delapan. 才 di depan angka selalu berarti jumlahnya lebih kecil dari yang diduga. Bandingkan dengan 就: [就三千八|jiù sān qiān bā] terdengar seperti “sudah tiga ribu delapan” — mahal. Satu suku kata membalik seluruh maksud kalimat. Unit 3 membongkar pasangan 就/才 sampai tuntas.",
+    "**[押一付三|yā yī fù sān] adalah istilah beku, bukan kalimat.** Empat aksara berarti “jaminan satu bulan, bayar tiga bulan di muka”. Bentuk lain yang sering kamu lihat di iklan: [押一付一|yā yī fù yī] dan [押二付三|yā èr fù sān]. Angka pertama selalu deposit, angka kedua selalu berapa bulan yang dibayar sekaligus."
+   ],
+   "grammars": [
+    {
+     "title": "连…都/也 — bahkan … pun",
+     "body": [
+      "Rangkanya: **连 + yang ditonjolkan + 都/也 + (tidak) kata kerja.** Yang ditonjolkan bisa berupa objek, pelaku, atau bahkan seluruh perbuatannya."
+     ],
+     "table": {
+      "head": ["Yang ditonjolkan", "Contoh", "Arti"],
+      "rows": [
+       ["Objek", "[他连水都没喝|Tā lián shuǐ dōu méi hē]。", "Air pun dia tidak minum."],
+       ["Pelaku", "[连老师都不知道|Lián lǎoshī dōu bù zhīdào]。", "Gurunya pun tidak tahu."],
+       ["Perbuatan", "[我连想都没想|Wǒ lián xiǎng dōu méi xiǎng]。", "Berpikir pun saya tidak."],
+       ["Angka terkecil", "[连一块钱都没有|Lián yí kuài qián dōu méiyǒu]。", "Satu yuan pun tidak punya."],
+       ["Dengan 也", "[连他也来了|Lián tā yě lái le]。", "Dia pun ikut datang."]
+      ]
+     },
+     "after": [
+      "⚠️ 都 dan 也 tidak boleh hilang. ❌ 他连水没喝。 ✅ [他连水都没喝|Tā lián shuǐ dōu méi hē]。",
+      "⚠️ Kalau objeknya ditonjolkan, ia naik ke depan kata kerja — persis seperti 把. ❌ 他连没喝水。",
+      "Bentuk “berpikir pun tidak” punya rumus tetap: **连 + kata kerja + 都 + 没 + kata kerja yang sama**. [连看都没看|Lián kàn dōu méi kàn]。 Lihat pun tidak."
+     ]
+    },
+    {
+     "title": "除了…以外 — kecuali, atau justru selain",
+     "body": [
+      "Kepingan pertamanya sama; yang menentukan artinya adalah penanda di kepingan kedua. 以外 boleh dihilangkan dalam percakapan santai, 除了-nya tidak."
+     ],
+     "table": {
+      "head": ["Penanda kedua", "Arti", "Contoh"],
+      "rows": [
+       ["都 / 全", "kecuali (dikeluarkan)", "[除了小王以外|Chúle Xiǎo Wáng yǐwài]，[我们都去了|wǒmen dōu qù le]。 Semua pergi kecuali Xiao Wang."],
+       ["还 / 也", "selain (ikut masuk)", "[除了小王以外|Chúle Xiǎo Wáng yǐwài]，[小李也去了|Xiǎo Lǐ yě qù le]。 Selain Xiao Wang, Xiao Li juga pergi."],
+       ["就 / 只", "selain itu tidak ada lagi", "[除了他以外|Chúle tā yǐwài]，[没人知道|méi rén zhīdào]。 Selain dia tidak ada yang tahu."],
+       ["Diikuti kata kerja", "selain melakukan …", "[除了工作以外|Chúle gōngzuò yǐwài]，[他什么都不想|tā shénme dōu bù xiǎng]。"]
+      ]
+     },
+     "after": [
+      "Bentuk singkat yang sering terdengar: 除了…，就是… = “tidak ada selain … dan …”. [他每天除了上班|Tā měi tiān chúle shàngbān]，[就是睡觉|jiùshì shuìjiào]。 Tiap hari dia cuma kerja dan tidur.",
+      "📄 Di ragam tulis, 除了…以外 sering diganti [除…外|chú…wài]: [除周日外|chú zhōurì wài]，[本店每天营业|běn diàn měi tiān yíngyè]。 Kecuali Minggu, toko ini buka setiap hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membaca kontrak",
+   "intro": "Andi memutuskan mengambil kamar itu dan datang menandatangani kontrak. Kali ini bahasanya lebih resmi — perhatikan kata-kata yang tidak pernah muncul di percakapan santai.",
+   "lines": [
+    {
+     "speaker": "李经理:",
+     "text": "[合同一共两份|Hétong yígòng liǎng fèn]，[您一份|nín yí fèn]，[房东一份|fángdōng yí fèn]。[您先看第三条|Nín xiān kàn dì sān tiáo]。",
+     "id": "Kontraknya ada dua rangkap, satu untuk Bapak, satu untuk pemilik. Silakan lihat pasal tiga dulu.",
+     "literal": "kontrak — seluruhnya — dua — rangkap, Anda — satu — rangkap, pemilik-rumah — satu — rangkap. Anda — dulu — lihat — ke — tiga — pasal."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[第三条写着|Dì sān tiáo xiě zhe]：[提前退租需付一个月房租作为违约金|tíqián tuìzū xū fù yí ge yuè fángzū zuòwéi wéiyuējīn]。",
+     "id": "Pasal tiga tertulis: keluar sebelum waktunya wajib membayar satu bulan sewa sebagai denda pelanggaran.",
+     "literal": "ke — tiga — pasal — tulis — dalam-keadaan: lebih-awal — mundur-sewa — perlu — bayar — satu — penggolong — bulan — sewa — sebagai — denda-ingkar-janji."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[对|Duì]。[不过如果您提前一个月通知我们|Búguò rúguǒ nín tíqián yí ge yuè tōngzhī wǒmen]，[而且找到下一位租客|érqiě zhǎodào xià yí wèi zūkè]，[这一条可以免|zhè yì tiáo kěyǐ miǎn]。",
+     "id": "Betul. Tapi kalau Bapak memberi tahu kami sebulan sebelumnya, dan juga menemukan penyewa berikutnya, pasal ini bisa dibebaskan.",
+     "literal": "betul. tetapi — jika — Anda — lebih-awal — satu — penggolong — bulan — memberitahu — kami, dan-lagi — cari-sampai-ketemu — bawah — satu — penggolong — penyewa, ini — satu — pasal — boleh — bebas."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[这个能写进合同里吗|Zhè ge néng xiě jìn hétong lǐ ma]？[口头说的|Kǒutóu shuō de]，[以后不好证明|yǐhòu bù hǎo zhèngmíng]。",
+     "id": "Ini bisa ditulis masuk ke dalam kontrak? Kalau cuma diucapkan, nanti susah dibuktikan.",
+     "literal": "ini — penggolong — bisa — tulis — masuk — kontrak — dalam — kah. mulut-kepala — bilang — punya, kelak — tidak — bagus — membuktikan."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[您考虑得很周到|Nín kǎolǜ de hěn zhōudào]。[我加在补充条款里|Wǒ jiā zài bǔchōng tiáokuǎn lǐ]，[双方签字就有效|shuāngfāng qiānzì jiù yǒuxiào]。",
+     "id": "Pemikiran Bapak sangat teliti. Saya tambahkan di pasal tambahan, begitu kedua pihak menandatangani langsung berlaku.",
+     "literal": "Anda — mempertimbangkan — tingkat — sangat — menyeluruh. saya — tambah — di — tambahan — pasal — dalam, dua-pihak — tanda-tangan — langsung — berlaku."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[还有|Hái yǒu]，[房子里的东西|fángzi lǐ de dōngxi]，[如果坏了|rúguǒ huài le]，[谁负责修|shéi fùzé xiū]？",
+     "id": "Lalu, barang-barang di dalam rumah, kalau rusak, siapa yang bertanggung jawab memperbaiki?",
+     "literal": "masih — ada, rumah — dalam — punya — barang, jika — rusak — sudah, siapa — bertanggung-jawab — perbaiki."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[除了人为损坏以外|Chúle rénwéi sǔnhuài yǐwài]，[都由房东负责|dōu yóu fángdōng fùzé]。[空调|Kōngtiáo]、[热水器|rèshuǐqì]、[马桶|mǎtǒng]，[都算|dōu suàn]。",
+     "id": "Kecuali kerusakan karena kesalahan orang, semuanya jadi tanggung jawab pemilik. AC, pemanas air, kloset, semuanya termasuk.",
+     "literal": "kecuali — buatan-manusia — kerusakan — di-luar, semua — oleh — pemilik-rumah — bertanggung-jawab. AC, pemanas-air, kloset, semua — terhitung."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[那我们现在拍照吧|Nà wǒmen xiànzài pāizhào ba]。[连墙上的那道裂缝我也拍下来|Lián qiáng shang de nà dào lièfèng wǒ yě pāi xiàlai]，[免得以后说不清|miǎnde yǐhòu shuō bu qīng]。",
+     "id": "Kalau begitu sekarang kita foto-foto ya. Retakan di dinding itu pun saya foto sekalian, supaya nanti tidak jadi urusan yang tidak jelas.",
+     "literal": "itu — kami — sekarang — memotret — ayo. bahkan — dinding — atas — punya — itu — penggolong — retak — saya — juga — potret — turun-datang, supaya-jangan — kelak — bilang — tak-sampai — jelas."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[应该的|Yīnggāi de]。[水表电表也拍一下|Shuǐbiǎo diànbiǎo yě pāi yíxià]，[数字要清楚|shùzì yào qīngchu]。",
+     "id": "Memang sudah semestinya. Meteran air dan listrik difoto juga ya, angkanya harus jelas.",
+     "literal": "seharusnya — punya. meteran-air — meteran-listrik — juga — potret — sekali, angka — harus — jelas."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[钥匙一共几把|Yàoshi yígòng jǐ bǎ]？[单元门的呢|Dānyuánmén de ne]？",
+     "id": "Kuncinya semuanya berapa buah? Yang untuk pintu gedung bagaimana?",
+     "literal": "kunci — seluruhnya — berapa — penggolong. unit — pintu — punya — bagaimana."
+    },
+    {
+     "speaker": "李经理:",
+     "text": "[三把|Sān bǎ]：[房门两把|fángmén liǎng bǎ]，[单元门一把|dānyuánmén yì bǎ]。[退租的时候一起还|Tuìzū de shíhou yìqǐ huán]。",
+     "id": "Tiga buah: pintu kamar dua, pintu gedung satu. Waktu keluar dikembalikan sekaligus.",
+     "literal": "tiga — penggolong: pintu-rumah — dua — penggolong, unit-pintu — satu — penggolong. mundur-sewa — punya — waktu — bersama — kembalikan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[好|Hǎo]，[那我签了|nà wǒ qiān le]。[至于水电|Zhìyú shuǐdiàn]，[我这周去营业厅办过户|wǒ zhè zhōu qù yíngyètīng bàn guòhù]。",
+     "id": "Baik, kalau begitu saya tanda tangan. Adapun air dan listrik, minggu ini saya ke kantor layanan mengurus balik nama.",
+     "literal": "baik, itu — saya — tanda-tangan — sudah. adapun — air-listrik, saya — ini — minggu — pergi — kantor-layanan — urus — pindah-nama."
+    }
+   ],
+   "notes": [
+    "**[需|xū] adalah bentuk tulis dari 需要, dan 作为 dari 当作.** Kalimat kontrak memadatkan semua yang bisa dipadatkan: [提前退租需付…作为违约金|tíqián tuìzū xū fù … zuòwéi wéiyuējīn]. Dalam percakapan kamu akan mengatakan hal yang sama dengan [如果你提前搬走|rúguǒ nǐ tíqián bān zǒu]，[要多付一个月的房租|yào duō fù yí ge yuè de fángzū]。 Dua-duanya benar; yang salah adalah memakai bentuk tulis waktu mengobrol, dan bentuk lisan waktu menulis surel resmi.",
+    "**[由|yóu] menandai siapa yang bertanggung jawab, bukan siapa yang melakukan.** [由房东负责|Yóu fángdōng fùzé] = pihak pemiliklah yang menanggungnya. Bandingkan dengan 被, yang menandai korban perbuatan. 由 terdengar netral dan resmi; ia sangat sering muncul di kontrak, pengumuman, dan pembagian tugas kantor: [这件事由我来办|Zhè jiàn shì yóu wǒ lái bàn]。 Urusan ini saya yang tangani.",
+    "**[免得|miǎnde] = supaya jangan sampai.** Ia selalu memperkenalkan hal buruk yang ingin dihindari, dan berdiri di kalimat kedua: [多拍几张照片|Duō pāi jǐ zhāng zhàopiàn]，[免得以后说不清|miǎnde yǐhòu shuō bu qīng]。 ⚠️ Jangan menambahkan 不 sesudahnya — “jangan”-nya sudah ada di dalam 免得 itu sendiri. ❌ 免得以后不说不清。 Saudara resminya adalah [以免|yǐmiǎn], yang dipakai di tulisan.",
+    "**[说不清|shuō bu qīng] adalah pelengkap kemungkinan dari 102.** 清 = jelas; 说不清 = tidak bisa dijelaskan sampai jelas. Kelompok ini sangat produktif dan akan muncul terus di modul ini: [看不清|kàn bu qīng] tidak terlihat jelas, [听不清|tīng bu qīng] tidak terdengar jelas, [算不清|suàn bu qīng] tidak bisa dihitung tuntas.",
+    "**Kata penggolong yang wajib di unit ini.** [一份合同|yí fèn hétong] rangkap kontrak, [一条|yì tiáo] untuk pasal, [一把钥匙|yì bǎ yàoshi] untuk kunci, [一道裂缝|yí dào lièfèng] untuk retakan atau garis. ⚠️ 一个合同 tidak sepenuhnya salah dalam percakapan sangat santai, tapi di kantor ia langsung terdengar seperti bahasa orang asing."
+   ],
+   "grammars": [
+    {
+     "title": "至于 — adapun, soal …",
+     "body": [
+      "至于 memindahkan pokok pembicaraan. Ia berdiri di awal kalimat, diikuti **benda atau perkara**, lalu koma, lalu kalimat lengkap."
+     ],
+     "table": {
+      "head": ["Contoh", "Arti", "Kapan dipakai"],
+      "rows": [
+       ["[至于价格|Zhìyú jiàgé]，[我们可以再谈|wǒmen kěyǐ zài tán]。", "Soal harga, bisa kita bicarakan lagi.", "Menunda urusan yang belum siap dibahas"],
+       ["[至于他为什么走|Zhìyú tā wèi shénme zǒu]，[没人知道|méi rén zhīdào]。", "Adapun kenapa dia pergi, tak ada yang tahu.", "Perkara yang tak terjawab"],
+       ["[至于我|Zhìyú wǒ]，[我无所谓|wǒ wúsuǒwèi]。", "Kalau saya sih, terserah saja.", "Membedakan pendapat sendiri dari orang lain"]
+      ]
+     },
+     "after": [
+      "⚠️ 至于 BUKAN “sampai-sampai”. Untuk itu bahasa Mandarin memakai [以至于|yǐzhìyú] atau [甚至|shènzhì]. [他忙得甚至忘了吃饭|Tā máng de shènzhì wàng le chī fàn]。 Dia sibuk sampai lupa makan.",
+      "Bentuk sanggahan yang sangat sering terdengar: [不至于吧|Bú zhìyú ba]？ = “Masa sampai segitunya?” Ini ungkapan tetap, artinya kamu menganggap reaksi lawan bicara berlebihan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa iklan sewa rumah",
+   "blocks": [
+    { "type": "p", "text": "Iklan sewa ditulis dengan singkatan dan istilah beku. Kalau kamu bisa membacanya, kamu menghemat separuh waktu mencari — dan tidak bisa dibohongi soal biaya yang tidak disebut di depan." },
+    { "type": "tabel", "head": ["Istilah", "Pīnyīn", "Artinya"], "rows": [
+     ["整租", "zhěngzū", "Sewa satu unit penuh"],
+     ["合租", "hézū", "Sewa bareng, kamar sendiri, dapur bersama"],
+     ["一室一厅", "yì shì yì tīng", "Satu kamar tidur, satu ruang tamu"],
+     ["朝南", "cháo nán", "Menghadap selatan (paling dicari: hangat dan terang)"],
+     ["精装修", "jīng zhuāngxiū", "Interior sudah jadi dan rapi"],
+     ["拎包入住", "līn bāo rùzhù", "Tinggal bawa tas, semua perabot ada"],
+     ["押一付三", "yā yī fù sān", "Deposit sebulan, bayar tiga bulan sekaligus"],
+     ["物业费", "wùyèfèi", "Iuran pengelola gedung"],
+     ["中介费", "zhōngjièfèi", "Komisi perantara"],
+     ["随时看房", "suíshí kàn fáng", "Bisa dilihat kapan saja"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Empat pertanyaan yang wajib kamu ajukan", "items": [
+     "[水电费怎么算|Shuǐdiànfèi zěnme suàn]？ Air dan listrik dihitung bagaimana? Tarif komersial bisa dua kali lipat tarif rumah tangga.",
+     "[中介费是多少|Zhōngjièfèi shì duōshao]？ Komisinya berapa? Biasanya setengah sampai satu bulan sewa.",
+     "[能签一年吗|Néng qiān yì nián ma]？ Bisa satu tahun? Kontrak dua tahun sering menurunkan harga, tapi mengunci kamu.",
+     "[房东是本人吗|Fángdōng shì běnrén ma]？ Yang tanda tangan pemiliknya sendiri? Kalau bukan, minta surat kuasa."
+    ] }
+   ]
+  },
+  {
+   "title": "Menawar tanpa terdengar kasar",
+   "blocks": [
+    { "type": "p", "text": "Menawar dalam bahasa Mandarin bukan adu keras; ia adu alasan. Yang berhasil hampir selalu memakai rangka yang sama: puji dulu, sebut halangan, sodorkan angka, tawarkan imbalan." },
+    { "type": "tabel", "head": ["Langkah", "Kalimatnya", "Arti"], "rows": [
+     ["1. Puji dulu", "[房子确实不错|Fángzi quèshí búcuò]。", "Rumahnya memang bagus."],
+     ["2. Sebut halangan", "[就是有点儿超预算|Jiùshì yǒudiǎnr chāo yùsuàn]。", "Cuma agak lewat anggaran."],
+     ["3. Sodorkan angka", "[四千二我马上签|Sì qiān èr wǒ mǎshàng qiān]。", "Empat ribu dua saya langsung tanda tangan."],
+     ["4. Tawarkan imbalan", "[我可以签两年|Wǒ kěyǐ qiān liǎng nián]。", "Saya bisa tanda tangan dua tahun."],
+     ["5. Beri jalan keluar", "[您跟房东商量一下|Nín gēn fángdōng shāngliang yíxià]。", "Bapak bicarakan dulu dengan pemiliknya."]
+    ] },
+    { "type": "sub", "text": "Kalimat yang membuat tawaranmu gagal" },
+    { "type": "list", "items": [
+     "❌ [太贵了|Tài guì le]！ Terlalu mahal! — Menutup pembicaraan, tidak memberi angka.",
+     "❌ [别人才三千|Biérén cái sān qiān]。 Orang lain cuma tiga ribu. — Membandingkan tanpa menyebut apa bedanya; perantara akan langsung menyebut kekurangan tempat itu.",
+     "✅ [隔壁小区差不多的房子三千八|Gébì xiǎoqū chàbuduō de fángzi sān qiān bā]，[不过那边楼旧|búguò nàbiān lóu jiù]。 — Memperlihatkan kamu tahu pasar DAN tahu bedanya. Ini yang menghasilkan potongan."
+    ] },
+    { "type": "kotak", "title": "Empat puluh detik tentang tempat tinggalmu", "items": [
+     "Di mana kamu tinggal sekarang, berapa lama, dan apa yang paling kamu suka darinya.",
+     "Satu hal yang kurang: pakai 连…都/也. Contoh: [连热水器都经常坏|Lián rèshuǐqì dōu jīngcháng huài]。",
+     "Satu perbandingan dengan tempat sebelumnya: pakai 比 atau 没有…那么.",
+     "Tutup dengan rencana: [至于明年|Zhìyú míngnián]，[我打算…|wǒ dǎsuàn…]"
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "租", "baca": "zū", "id": "menyewa" },
+  { "zh": "房租", "baca": "fángzū", "id": "uang sewa rumah" },
+  { "zh": "房东", "baca": "fángdōng", "id": "pemilik rumah" },
+  { "zh": "租客", "baca": "zūkè", "id": "penyewa" },
+  { "zh": "中介", "baca": "zhōngjiè", "id": "perantara, agen properti" },
+  { "zh": "中介费", "baca": "zhōngjièfèi", "id": "komisi perantara" },
+  { "zh": "押金", "baca": "yājīn", "id": "uang jaminan, deposit" },
+  { "zh": "合同", "baca": "hétong", "id": "kontrak" },
+  { "zh": "条款", "baca": "tiáokuǎn", "id": "pasal, klausul" },
+  { "zh": "补充", "baca": "bǔchōng", "id": "tambahan, melengkapi" },
+  { "zh": "签字", "baca": "qiānzì", "id": "menandatangani" },
+  { "zh": "有效", "baca": "yǒuxiào", "id": "berlaku, sah" },
+  { "zh": "违约金", "baca": "wéiyuējīn", "id": "denda pelanggaran kontrak" },
+  { "zh": "提前", "baca": "tíqián", "id": "lebih awal dari waktunya" },
+  { "zh": "退租", "baca": "tuìzū", "id": "mengakhiri sewa" },
+  { "zh": "通知", "baca": "tōngzhī", "id": "memberi tahu, pemberitahuan" },
+  { "zh": "采光", "baca": "cǎiguāng", "id": "cahaya yang masuk" },
+  { "zh": "家具", "baca": "jiājù", "id": "perabot" },
+  { "zh": "物业费", "baca": "wùyèfèi", "id": "iuran pengelola gedung" },
+  { "zh": "水电", "baca": "shuǐdiàn", "id": "air dan listrik" },
+  { "zh": "水表", "baca": "shuǐbiǎo", "id": "meteran air" },
+  { "zh": "电表", "baca": "diànbiǎo", "id": "meteran listrik" },
+  { "zh": "超", "baca": "chāo", "id": "melebihi" },
+  { "zh": "预算", "baca": "yùsuàn", "id": "anggaran" },
+  { "zh": "小区", "baca": "xiǎoqū", "id": "kompleks perumahan" },
+  { "zh": "电梯", "baca": "diàntī", "id": "lift" },
+  { "zh": "单元门", "baca": "dānyuánmén", "id": "pintu utama gedung" },
+  { "zh": "钥匙", "baca": "yàoshi", "id": "kunci" },
+  { "zh": "商量", "baca": "shāngliang", "id": "berunding, membicarakan" },
+  { "zh": "答复", "baca": "dáfù", "id": "jawaban resmi, mengabari" },
+  { "zh": "人为", "baca": "rénwéi", "id": "disebabkan manusia" },
+  { "zh": "损坏", "baca": "sǔnhuài", "id": "kerusakan" },
+  { "zh": "负责", "baca": "fùzé", "id": "bertanggung jawab" },
+  { "zh": "空调", "baca": "kōngtiáo", "id": "AC" },
+  { "zh": "热水器", "baca": "rèshuǐqì", "id": "pemanas air" },
+  { "zh": "马桶", "baca": "mǎtǒng", "id": "kloset duduk" },
+  { "zh": "裂缝", "baca": "lièfèng", "id": "retakan" },
+  { "zh": "免得", "baca": "miǎnde", "id": "supaya jangan sampai" },
+  { "zh": "以免", "baca": "yǐmiǎn", "id": "supaya terhindar dari (ragam tulis)" },
+  { "zh": "证明", "baca": "zhèngmíng", "id": "membuktikan, bukti" },
+  { "zh": "口头", "baca": "kǒutóu", "id": "lisan" },
+  { "zh": "周到", "baca": "zhōudào", "id": "teliti, terpikir menyeluruh" },
+  { "zh": "双方", "baca": "shuāngfāng", "id": "kedua belah pihak" },
+  { "zh": "由", "baca": "yóu", "id": "oleh (yang menanggung)" },
+  { "zh": "至于", "baca": "zhìyú", "id": "adapun, soal" },
+  { "zh": "无所谓", "baca": "wúsuǒwèi", "id": "terserah, tidak masalah" },
+  { "zh": "整租", "baca": "zhěngzū", "id": "menyewa satu unit penuh" },
+  { "zh": "合租", "baca": "hézū", "id": "menyewa bersama" },
+  { "zh": "朝南", "baca": "cháo nán", "id": "menghadap selatan" },
+  { "zh": "拎包入住", "baca": "līn bāo rùzhù", "id": "tinggal bawa tas, langsung huni" },
+  { "zh": "营业厅", "baca": "yíngyètīng", "id": "kantor layanan pelanggan" },
+  { "zh": "过户", "baca": "guòhù", "id": "balik nama" },
+  { "zh": "确实", "baca": "quèshí", "id": "memang, sungguh" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 都 atau 也 sebagai kepingan kedua 连.",
+   "items": [
+    "[他连一句中文|Tā lián yí jù Zhōngwén] ____ [不会说|bú huì shuō]。",
+    "[连房东|Lián fángdōng] ____ [不知道那道裂缝|bù zhīdào nà dào lièfèng]。",
+    "[我连合同|Wǒ lián hétong] ____ [没看就签了|méi kàn jiù qiān le]。",
+    "[那个小区连电梯|Nà ge xiǎoqū lián diàntī] ____ [没有|méiyǒu]。",
+    "[连他|Lián tā] ____ [来了|lái le]，[你怎么没来|nǐ zěnme méi lái]？"
+   ]
+  },
+  {
+   "prompt": "Pilih kepingan kedua yang benar untuk 除了…以外: 都, 还, atau 就.",
+   "items": [
+    "[除了小李以外|Chúle Xiǎo Lǐ yǐwài]，[我们|wǒmen] ____ [去过北京|qù guo Běijīng]。 (Xiao Li belum pernah)",
+    "[除了汉语以外|Chúle Hànyǔ yǐwài]，[他|tā] ____ [会说日语|huì shuō Rìyǔ]。 (dia bisa dua-duanya)",
+    "[除了房租以外|Chúle fángzū yǐwài]，[我|wǒ] ____ [要交物业费|yào jiāo wùyèfèi]。 (ada tambahan)",
+    "[除了周末以外|Chúle zhōumò yǐwài]，[他每天|tā měi tiān] ____ [加班|jiābān]。 (akhir pekan libur)",
+    "[除了他以外|Chúle tā yǐwài]，____ [没人知道这件事|méi rén zhīdào zhè jiàn shì]。 (cuma dia)"
+   ]
+  },
+  {
+   "prompt": "Susun kepingan menjadi kalimat yang benar.",
+   "items": [
+    "他 / 连 / 都 / 没 / 说 / 一句话",
+    "除了 / 以外 / 我们 / 那张床 / 都 / 换了 / 新的",
+    "至于 / 我们 / 押金 / 明天 / 再 / 谈",
+    "多 / 免得 / 拍 / 几张照片 / 以后 / 说不清",
+    "这件事 / 由 / 负责 / 房东",
+    "如果 / 就 / 您 / 便宜一点 / 两年 / 签 / 可以"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia. Perhatikan arti 除了 di tiap kalimat.",
+   "items": [
+    "[除了他以外|Chúle tā yǐwài]，[我们都签了合同|wǒmen dōu qiān le hétong]。",
+    "[除了他以外|Chúle tā yǐwài]，[小王也签了合同|Xiǎo Wáng yě qiān le hétong]。",
+    "[他每天除了上班|Tā měi tiān chúle shàngbān]，[就是睡觉|jiùshì shuìjiào]。",
+    "[连热水器都坏了|Lián rèshuǐqì dōu huài le]，[我怎么住|wǒ zěnme zhù]？",
+    "[至于中介费|Zhìyú zhōngjièfèi]，[我们下次再说吧|wǒmen xià cì zài shuō ba]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Kecuali ranjang itu, perabotnya baru semua.",
+    "Kompleks itu lift saja tidak ada.",
+    "Adapun soal deposit, kita bicarakan besok.",
+    "Foto meteran airnya, supaya nanti tidak jadi urusan yang tidak jelas.",
+    "Selain sewa, saya juga harus membayar iuran gedung.",
+    "Kalau Anda tanda tangan dua tahun, saya bisa bicarakan dengan pemiliknya."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[他连水没喝|Tā lián shuǐ méi hē]。",
+    "[除了小王以外|Chúle Xiǎo Wáng yǐwài]，[我们去了|wǒmen qù le]。",
+    "[多穿点儿|Duō chuān diǎnr]，[免得不感冒|miǎnde bù gǎnmào]。",
+    "[至于他很累|Zhìyú tā hěn lèi]，[所以没来|suǒyǐ méi lái]。",
+    "[他连没看合同就签了|Tā lián méi kàn hétong jiù qiān le]。"
+   ]
+  }
+ ],
+ "answers": [
+  "都 — 都 — 都 — 都 — 也",
+  "都 — 还 — 还 — 都 — 就",
+  "他 连 一句话 都 没 说 — 除了 那张床 以外 我们 都 换了 新的 — 至于 押金 我们 明天 再 谈 — 多 拍 几张照片 免得 以后 说不清 — 这件事 由 房东 负责 — 如果 您 签 两年 就 可以 便宜一点",
+  "Kami semua menandatangani kontrak kecuali dia. — Selain dia, Xiao Wang juga menandatangani kontrak. — Tiap hari dia cuma kerja dan tidur. — Pemanas airnya saja rusak, bagaimana saya bisa tinggal di situ? — Soal komisi perantara, kita bicarakan lain kali saja.",
+  "Chúle nà zhāng chuáng yǐwài, jiājù dōu shì xīn de. — Nà ge xiǎoqū lián diàntī dōu méiyǒu. — Zhìyú yājīn, wǒmen míngtiān zài tán. — Bǎ shuǐbiǎo pāi xiàlai, miǎnde yǐhòu shuō bu qīng. — Chúle fángzū yǐwài, wǒ hái yào jiāo wùyèfèi. — Rúguǒ nín qiān liǎng nián, wǒ kěyǐ gēn fángdōng shāngliang.",
+  "Tā lián shuǐ dōu méi hē. (都 tak boleh hilang) — Chúle Xiǎo Wáng yǐwài, wǒmen dōu qù le. (butuh 都) — Duō chuān diǎnr, miǎnde gǎnmào. (免得 sudah bermakna jangan) — Yīnwèi tā hěn lèi, suǒyǐ méi lái. (至于 tidak dipakai untuk sebab) — Tā lián kàn dōu méi kàn hétong jiù qiān le. (连 + kata kerja + 都 + 没 + kata kerja)"
+ ],
+ "wave": "Lima menit sebelum Unit 2: ceritakan kamar atau rumah tempat kamu tinggal sekarang dalam empat puluh detik tanpa berhenti. Wajib memakai satu 连…都, satu 除了…以外, dan ditutup dengan 至于. Kalau kamu tersendat, jangan ulang dari awal — sambung saja dengan 反正 lalu teruskan. Kemampuan menyambung setelah tersendat itu justru yang dilatih seluruh modul ini."
+}
