@@ -834,6 +834,12 @@ const EN: Record<string, string> = {
   "Belum ada video ketemu": "No video found yet",
   "Belum ada video siap": "No ready video yet",
   "Bersihkan pencarian": "Clear search",
+  /* [pustaka-terakhir-dibuka-v1] baris pintas modul yang sedang dibaca */
+  "Terakhir dibuka": "Recently opened",
+  "Bersihkan": "Clear",
+  "Hapus dari daftar": "Remove from list",
+  "Hal.": "p.",
+  "halaman": "page",
   "Buang": "Discard",
   "Buka di tab baru": "Open in a new tab",
   "Buka gambar": "Open image",

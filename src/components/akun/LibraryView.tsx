@@ -13,7 +13,7 @@ import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
-  Lock, Ticket, ShoppingCart, Trash2, Plus,
+  Lock, Ticket, ShoppingCart, Trash2, Plus, History,
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -36,6 +36,9 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG, masihDijual } from "@/lib/elearningBundle";
+/* [pustaka-terakhir-dibuka-v1] baris pintas "Terakhir dibuka" — sama seperti di
+   Perpustakaan dashboard pengajar, dirakit dari jejak reader di perangkat ini */
+import { bacaTerakhirDibuka, hapusTerakhirDibuka, type JejakPustaka } from "@/lib/pustakaTerakhir";
 // [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
@@ -577,6 +580,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     { purchaseId: string; title: string; accessToken: string; watermark: string; language: string | null } | null
   >(null);
 
+  /* [pustaka-terakhir-dibuka-v1] Baris "Terakhir dibuka". Jejaknya hidup di
+     localStorage, jadi WAJIB dibaca sesudah mount — dibaca saat render, server
+     dan klien menghasilkan HTML yang berbeda dan React membuang seluruh pohonnya.
+     Dibaca ulang tiap reader ditutup supaya nomor halamannya ikut maju. */
+  const [terakhir, setTerakhir] = useState<JejakPustaka[]>([]);
+  useEffect(() => { if (!reading) setTerakhir(bacaTerakhirDibuka()); }, [reading]);
+
   /* bookmarks (localStorage — tanpa ubah skema DB) */
   useEffect(() => {
     try {
@@ -964,6 +974,24 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     );
   }
 
+  /* [pustaka-terakhir-dibuka-v1] Jejak dipasangkan dengan baris beliannya, karena
+     yang dibutuhkan tombolnya (token akses, file_url, sampul produk) cuma ada di
+     sana. Jejak tanpa pasangan DIBUANG diam-diam: modul yang aksesnya sudah habis
+     atau pembeliannya diarsipkan admin tak bisa dibuka lagi, dan kartu yang
+     diklik lalu menolak membuka lebih buruk daripada kartu yang tak ada.
+
+     Judul & sampulnya sengaja diambil dari produk, bukan dari salinan di jejak —
+     modul yang dirakit ulang berganti sampul dan kadang berganti judul, dan kartu
+     yang memakai salinannya sendiri akan memperlihatkan versi lama. Salinan di
+     jejak cuma dipakai sebagai cadangan terakhir. */
+  const terakhirKartu = useMemo(
+    () => terakhir
+      .map((j) => ({ j, p: purchases.find((x) => x.id === j.purchaseId) }))
+      .filter((x): x is { j: JejakPustaka; p: Purchase } =>
+        !!x.p && x.p.digital_products?.type === "ebook" && accessInfo(x.p).kind !== "expired"),
+    [terakhir, purchases],
+  );
+
   return (
     <div className="space-y-7">
       {/* ===== HEADER ===== */}
@@ -1052,6 +1080,98 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                 <AccessChip a={accessInfo(hero.p)} />
               </div>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ===== [pustaka-terakhir-dibuka-v1] TERAKHIR DIBUKA =====
+          Baris pintas ke modul yang sedang dibaca, kembar dengan baris yang sama
+          di Perpustakaan dashboard pengajar. Yang membuatnya hemat waktu bukan
+          cuma tempatnya di paling atas, tapi nomor halamannya: satu ketukan
+          mendarat kembali di unit yang kemarin dibaca — readernya sendiri yang
+          memulihkan posisi dari jejak yang sama. */}
+      {terakhirKartu.length > 0 && (
+        <section className="rounded-3xl bg-white p-4 shadow-sm sm:p-5">
+          <div className="mb-3 flex items-center gap-2">
+            <History className="h-[18px] w-[18px] text-[#12A37E]" strokeWidth={2.4} />
+            <h2 className="text-[15px] font-extrabold text-[#12172B]">{t("Terakhir dibuka")}</h2>
+            <button
+              type="button"
+              onClick={() => setTerakhir(hapusTerakhirDibuka())}
+              className="ml-auto text-[12px] font-bold text-slate-400 transition hover:text-slate-600"
+            >
+              {t("Bersihkan")}
+            </button>
+          </div>
+
+          {/* Digulir mendatar di layar sempit — kartunya sengaja tak dibungkus ke
+              baris berikutnya supaya blok ini tak pernah menelan tinggi rak di bawahnya. */}
+          <div className="-mx-1 flex gap-2.5 overflow-x-auto px-1 pb-1">
+            {terakhirKartu.map(({ j, p: pur }) => {
+              const prod = pur.digital_products;
+              const sampul = j.sampul || fotoSampul(prod);
+              return (
+                <div
+                  key={pur.id}
+                  className="group relative flex w-[240px] shrink-0 items-center gap-3 rounded-2xl border border-slate-200/80 bg-white p-2.5 text-left transition hover:border-[#12A37E]/40 hover:shadow-sm"
+                  onPointerEnter={() => panaskanEbook(pur)}
+                  onTouchStart={() => panaskanEbook(pur)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => openProduct(pur)}
+                    disabled={busy === pur.id}
+                    title={`${prod.title} — ${t("halaman")} ${j.hal}`}
+                    className="flex min-w-0 flex-1 items-center gap-3 text-left disabled:cursor-wait"
+                  >
+                    <span
+                      className="relative block h-[58px] w-[42px] shrink-0 overflow-hidden rounded-lg bg-slate-100"
+                      style={sampul ? undefined : { background: gradFor(prod.id) }}
+                    >
+                      {sampul ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img src={sampul} alt="" loading="lazy" className={`h-full w-full object-cover${jangkarSampul(prod)}`} />
+                      ) : (
+                        <span className="absolute inset-0 grid place-items-center text-[13px] font-black text-white/80">
+                          {glyphFor(prod)}
+                        </span>
+                      )}
+                      {busy === pur.id && (
+                        <span className="absolute inset-0 grid place-items-center bg-black/40">
+                          <Loader2 className="h-4 w-4 animate-spin text-white" />
+                        </span>
+                      )}
+                    </span>
+
+                    <span className="min-w-0 flex-1">
+                      <span className="flex min-w-0 items-center gap-1.5">
+                        <TitleFlag language={prod.language} h={11} />
+                        <span className="truncate text-[12.5px] font-extrabold leading-snug text-[#12172B]">
+                          {judulRingkas(prod.title || j.title || "")}
+                        </span>
+                      </span>
+                      <span className="mt-1 block truncate text-[11.5px] font-bold text-slate-400">
+                        <span className="text-[#12A37E]">{t("Hal.")} {j.hal}</span>
+                        {j.total > 0 ? ` / ${j.total}` : ""}
+                      </span>
+                    </span>
+                  </button>
+
+                  {/* Tombolnya cuma muncul waktu ditunjuk; di layar sentuh (tak ada
+                      hover) ia selalu tampak — di sana tak ada cara lain membuang
+                      satu kartu. */}
+                  <button
+                    type="button"
+                    onClick={() => setTerakhir(hapusTerakhirDibuka(pur.id))}
+                    aria-label={t("Hapus dari daftar")}
+                    title={t("Hapus dari daftar")}
+                    className="absolute right-1 top-1 rounded-md p-1 text-slate-300 transition hover:bg-slate-100 hover:text-slate-600 focus-visible:opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
+                  >
+                    <X className="h-3.5 w-3.5" strokeWidth={2.6} />
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
