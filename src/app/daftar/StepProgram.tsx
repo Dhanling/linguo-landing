@@ -38,12 +38,30 @@ function programMeta(slug: ProgramSlug, langEn: string) {
         note: "",
       };
     case "semi-private": {
-      const per = getSemiPrivatePrice(langEn, "A1", 10, 60).perStudent;
+      // [aeo-semi-private-mulai-dari-v1] Dulu angka "Mulai dari" di sini diambil
+      // dari grup 10 orang — grup TERBESAR, alias harga per orang paling murah
+      // yang mungkin. Hasilnya halaman ini menulis "Mulai Rp 25.000/orang/sesi"
+      // sementara brand-facts.ts, /harga, dan homepage menulis "mulai
+      // Rp 75.000/siswa/sesi" (grup terkecil, 2 orang). Dua-duanya dihitung
+      // benar dari pricelist yang sama, tapi publik jadi melihat dua angka
+      // "mulai dari" yang berbeda untuk produk yang sama — persis inkonsistensi
+      // yang bikin mesin jawaban berhenti mengutip angka kita.
+      //
+      // Sekarang "Mulai" memakai dasar yang sama dengan seluruh situs (grup 2),
+      // dan harga termurahnya tetap dipajang di note lengkap dengan syaratnya
+      // supaya daya tariknya tidak hilang tapi juga tidak menyamar jadi klaim
+      // "mulai dari".
+      const perDua = getSemiPrivatePrice(langEn, "A1", 2, 60).perStudent;
+      const perSepuluh = getSemiPrivatePrice(langEn, "A1", 10, 60).perStudent;
       return {
         desc: "Grup kecil 2–10 orang, lebih hemat per orang",
-        price: per > 0 ? "Mulai " + fmtRp(per) + "/orang/sesi" : "Patungan grup — hemat per orang",
+        price:
+          perDua > 0 ? "Mulai " + fmtRp(perDua) + "/orang/sesi" : "Patungan grup — hemat per orang",
         highlight: false,
-        note: "",
+        note:
+          perSepuluh > 0
+            ? `*Makin ramai makin hemat — sampai ${fmtRp(perSepuluh)}/orang di grup 10`
+            : "",
       };
     }
     case "reguler":

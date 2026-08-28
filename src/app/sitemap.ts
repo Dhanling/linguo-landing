@@ -95,6 +95,11 @@ const STATIC_ROUTES: Array<{
 
   // Rekrutmen & kemitraan
   { path: "/jadi-pengajar", priority: 0.7, changeFrequency: "monthly" },
+  // [seo-halaman-yatim-v1] Versi Inggris halaman rekrutmen pengajar. Sudah
+  // punya judul, deskripsi, dan canonical sendiri serta boleh diindeks, tapi
+  // tidak pernah diumumkan di sitemap mana pun — padahal justru halaman ini
+  // yang menyasar pelamar non-Indonesia (banyak pengajar Linguo penutur asli).
+  { path: "/jadi-pengajar/en", priority: 0.6, changeFrequency: "monthly" },
   { path: "/jadi-interpreter", priority: 0.6, changeFrequency: "monthly" },
   { path: "/jadi-penerjemah-tersumpah", priority: 0.6, changeFrequency: "monthly" },
   { path: "/afiliator", priority: 0.6, changeFrequency: "monthly" },
