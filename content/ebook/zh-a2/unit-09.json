@@ -1,0 +1,397 @@
+{
+ "title": "Badan tidak enak",
+ "title_target": "我有点儿不舒服 — Wǒ yǒudiǎnr bù shūfu",
+ "goal": "Menyelesaikan urusan 有点儿 dan 一点儿 — dua kata yang bunyinya nyaris sama tapi tempat duduknya berlawanan — lalu memakai 好像, 看起来, dan 可能 untuk menduga sesuatu tanpa memastikannya.",
+ "bekal": [
+  "mengeluh tentang badan dengan takaran yang tepat: 有点儿疼, 好一点儿了",
+  "membedakan 有点儿 (mengeluh) dari 一点儿 (membandingkan)",
+  "menduga dengan 好像, 看起来, 可能, 应该 tanpa terdengar memastikan",
+  "menceritakan gejala kepada dokter dan memahami instruksi obat",
+  "menanyakan kabar orang sakit dan menanggapinya"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Pagi yang salah",
+   "intro": "Senin pagi. Andi datang ke kantor dengan wajah yang tidak beres. Xiao Zhang memperhatikannya. Perhatikan pasangan 有点儿 dan 一点儿 — ada delapan di dialog ini, dan tidak satu pun bisa ditukar.",
+   "lines": [
+    { "speaker": "小张:", "text": "[你今天脸色不太好|Nǐ jīntiān liǎnsè bú tài hǎo]。[没睡好吗|Méi shuì hǎo ma]？", "id": "Mukamu hari ini kurang enak dilihat. Kurang tidur?", "literal": "kamu — hari-ini — muka — warna — tidak — terlalu — baik. tidak — tidur — beres — kah." },
+    { "speaker": "安迪:", "text": "[睡是睡了|Shuì shì shuì le]，[但是半夜醒了三次|dànshì bànyè xǐng le sān cì]。[嗓子有点儿疼|Sǎngzi yǒudiǎnr téng]，[头也有点儿晕|tóu yě yǒudiǎnr yūn]。", "id": "Tidur sih tidur, tapi tengah malam bangun tiga kali. Tenggorokan agak sakit, kepala juga agak pusing.", "literal": "tidur — adalah — tidur — sudah, tetapi — tengah — malam — bangun — sudah — tiga — kali. tenggorokan — ada-sedikit — sakit, kepala — juga — ada-sedikit — pusing." },
+    { "speaker": "小张:", "text": "[发烧了吗|Fā shāo le ma]？[我这儿有体温计|Wǒ zhèr yǒu tǐwēnjì]。", "id": "Demam? Aku ada termometer di sini.", "literal": "keluar — panas — sudah — kah. saya — sini — ada — badan — suhu — alat." },
+    { "speaker": "安迪:", "text": "[量了|Liáng le]，[三十七度五|sānshíqī dù wǔ]。[不算高|Bú suàn gāo]，[但是浑身没劲儿|dànshì húnshēn méi jìnr]。", "id": "Sudah diukur, tiga puluh tujuh koma lima. Tidak terhitung tinggi, tapi seluruh badan lemas.", "literal": "ukur — sudah, tiga-puluh-tujuh — derajat — lima. tidak — dihitung — tinggi, tetapi — seluruh — badan — tidak-ada — tenaga." },
+    { "speaker": "小张:", "text": "[那还是低烧|Nà háishi dī shāo]。[最近办公室好几个人都感冒了|Zuìjìn bàngōngshì hǎo jǐ ge rén dōu gǎnmào le]，[你八成是被传染的|nǐ bāchéng shì bèi chuánrǎn de]。", "id": "Berarti demam ringan. Belakangan beberapa orang di kantor kena flu, kamu kemungkinan besar ketularan.", "literal": "itu — masih — adalah — rendah — panas. belakangan — kantor — ruang — baik — beberapa — penggolong — orang — semua — kena-flu — sudah, kamu — delapan — bagian — adalah — kena — menular — punya." },
+    { "speaker": "安迪:", "text": "[好像是|Hǎoxiàng shì]。[上周开会的时候旁边那位一直咳嗽|Shàng zhōu kāi huì de shíhou pángbiān nà wèi yìzhí késou]。", "id": "Sepertinya iya. Minggu lalu waktu rapat, orang di sebelah saya batuk terus.", "literal": "sepertinya — adalah. atas — minggu — buka — rapat — punya — waktu — samping — itu — penggolong — terus — batuk." },
+    { "speaker": "小张:", "text": "[你要不要去医院看看|Nǐ yào bu yào qù yīyuàn kànkan]？[楼下就有个社区医院|Lóuxià jiù yǒu ge shèqū yīyuàn]，[人不多|rén bù duō]。", "id": "Mau ke rumah sakit tidak? Di bawah ada klinik komunitas, orangnya tidak banyak.", "literal": "kamu — mau — tidak — mau — pergi — rumah-sakit — lihat — lihat. lantai-bawah — langsung — ada — penggolong — komunitas — rumah-sakit, orang — tidak — banyak." },
+    { "speaker": "安迪:", "text": "[我先看看下午会不会好一点儿|Wǒ xiān kànkan xiàwǔ huì bu huì hǎo yìdiǎnr]。[要是不行再去|Yàoshi bù xíng zài qù]。", "id": "Aku lihat dulu sore nanti agak mendingan atau tidak. Kalau tidak baru pergi.", "literal": "saya — dulu — lihat — lihat — sore — akan — tidak — akan — baik — satu — sedikit. kalau — tidak — boleh — lagi — pergi." },
+    { "speaker": "小张:", "text": "[别硬撑|Bié yìng chēng]。[你这样又传给别人|Nǐ zhèyàng yòu chuán gěi biérén]，[整个办公室都得倒|zhěng ge bàngōngshì dōu děi dǎo]。", "id": "Jangan dipaksakan. Kamu begini nanti menularkan ke orang lain, satu kantor bisa tumbang semua.", "literal": "jangan — keras — menopang. kamu — begini — lagi — menular — kepada — orang-lain, seluruh — penggolong — kantor — semua — harus — roboh." },
+    { "speaker": "安迪:", "text": "[说得也是|Shuō de yě shì]。[那我去看一下|Nà wǒ qù kàn yíxià]，[顺便请半天病假|shùnbiàn qǐng bàn tiān bìngjià]。", "id": "Benar juga. Kalau begitu aku periksa, sekalian ambil izin sakit setengah hari.", "literal": "bicara — tingkat — juga — adalah. itu — saya — pergi — lihat — sekali, sekalian — minta — setengah — hari — sakit — cuti." },
+    { "speaker": "小张:", "text": "[对了|Duì le]，[多喝热水|duō hē rè shuǐ]。", "id": "Oh iya, banyak minum air hangat.", "literal": "betul — sudah, banyak — minum — panas — air." },
+    { "speaker": "安迪:", "text": "[你们中国人是不是都会说这句|Nǐmen Zhōngguó rén shì bu shì dōu huì shuō zhè jù]？[我妈也这么说|Wǒ mā yě zhème shuō]。", "id": "Kalian orang Tiongkok semuanya bisa bilang kalimat ini ya? Ibu saya juga bilang begitu.", "literal": "kalian — Tiongkok — orang — adalah — tidak — adalah — semua — bisa — bicara — ini — kalimat. saya — ibu — juga — begini — bicara." }
+   ],
+   "notes": [
+    "**[脸色|liǎnsè] harfiah “warna wajah”, artinya rona muka.** [脸色不好|liǎnsè bù hǎo] mukanya pucat/tidak sehat. [脸色很好|liǎnsè hěn hǎo] kelihatan sehat. Pujian yang aman untuk siapa pun.",
+    "**⚠️ [睡是睡了|Shuì shì shuì le] — rangka 「A 是 A 了，但是…」 mengakui sesuatu sebelum menyanggahnya.** [好是好|hǎo shì hǎo]，[但是太贵了|dànshì tài guì le]。 Bagus sih bagus, tapi kemahalan. Pola yang membuat kalimatmu terdengar sangat dewasa dan sangat Tionghoa.",
+    "**[有点儿疼|yǒudiǎnr téng] dan [好一点儿|hǎo yìdiǎnr] adalah dua kata yang berbeda meskipun terdengar mirip.** Yang pertama di DEPAN kata sifat dan untuk hal yang tidak diinginkan; yang kedua di BELAKANG dan untuk perbandingan. Kotak tata bahasa pertama membongkarnya.",
+    "**[没劲儿|méi jìnr] = tidak bertenaga, lemas.** Juga berarti “membosankan”: [这个电影真没劲|Zhège diànyǐng zhēn méi jìn]。 Konteksnya yang membedakan.",
+    "**[不算高|bú suàn gāo] = tidak terhitung tinggi.** 算 berarti “dihitung sebagai”, dan ia sangat berguna untuk memberi penilaian yang hati-hati: [不算贵|bú suàn guì] tidak terhitung mahal, [算便宜的|suàn piányi de] termasuk yang murah.",
+    "**[硬撑|yìng chēng] = memaksakan diri bertahan.** Harfiah “menopang dengan keras”. Kata yang sangat sering terdengar dari orang yang menyayangimu.",
+    "**[多喝热水|duō hē rè shuǐ] — “banyak minum air hangat” — adalah nasihat kesehatan paling terkenal di Tiongkok**, sampai jadi bahan lelucon. Ia diucapkan kepada segala keluhan, dari flu sampai patah hati. ⚠️ Perhatikan bahwa 多 di depan kata kerja berarti “lebih banyak melakukan”: [多喝水|duō hē shuǐ] banyak-banyak minum, [少吃辣|shǎo chī là] kurangi makan pedas."
+   ],
+   "grammars": [
+    {
+     "title": "有点儿 dan 一点儿 — dua kata, dua tempat duduk",
+     "body": [
+      "Keduanya berarti “sedikit”, tapi mereka bukan saudara — mereka bekerja di dua posisi yang berbeda dan membawa nada yang berbeda. Ini salah satu kesalahan paling awet pada pemelajar Indonesia, dan sekali kamu melihat tabelnya, ia selesai untuk selamanya."
+     ],
+     "tables": [
+      {
+       "head": ["", "有点儿", "一点儿"],
+       "rows": [
+        ["Tempat duduk", "**DI DEPAN** kata sifat", "**DI BELAKANG** kata sifat"],
+        ["Rangka", "有点儿 + kata sifat", "kata sifat + 一点儿"],
+        ["Nada", "Mengeluh — biasanya hal yang tak diinginkan", "Membandingkan — netral"],
+        ["Contoh", "[有点儿贵|yǒudiǎnr guì] agak mahal (keluhan)", "[便宜一点儿|piányi yìdiǎnr] agak lebih murah"],
+        ["Contoh", "[有点儿累|yǒudiǎnr lèi] agak capek", "[好一点儿|hǎo yìdiǎnr] agak mendingan"],
+        ["Contoh", "[有点儿不舒服|yǒudiǎnr bù shūfu] agak tidak enak badan", "[快一点儿|kuài yìdiǎnr] agak lebih cepat"]
+       ]
+      },
+      {
+       "head": ["Benar", "Salah", "Kenapa"],
+       "rows": [
+        ["[这件衣服有点儿贵|Zhè jiàn yīfu yǒudiǎnr guì]。", "❌ 这件衣服贵有点儿。", "有点儿 selalu di depan"],
+        ["[能不能便宜一点儿|Néng bu néng piányi yìdiǎnr]？", "❌ 能不能有点儿便宜？", "Permintaan = perbandingan"],
+        ["[我今天有点儿忙|Wǒ jīntiān yǒudiǎnr máng]。", "❌ 我今天一点儿忙。", "一点儿 tak berdiri di depan"],
+        ["[今天比昨天冷一点儿|Jīntiān bǐ zuótiān lěng yìdiǎnr]。", "❌ 今天比昨天有点儿冷。", "Dalam kalimat 比 selalu 一点儿"],
+        ["❓ 这个菜有点儿好吃。", "—", "❌ Janggal: 有点儿 tak dipakai untuk hal baik"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ 有点儿 hampir selalu untuk hal yang kamu keluhkan**",
+      "✅ [有点儿贵|yǒudiǎnr guì] · [有点儿远|yǒudiǎnr yuǎn] · [有点儿难|yǒudiǎnr nán] · [有点儿冷|yǒudiǎnr lěng]",
+      "❌ 有点儿便宜 · ❌ 有点儿好 · ❌ 有点儿漂亮 — untuk hal baik, orang berkata [挺便宜的|tǐng piányi de] atau [还不错|hái búcuò]。",
+      "Pengecualiannya: kalau hal “baik” itu justru masalah bagimu. [这个菜有点儿甜|Zhège cài yǒudiǎnr tián]。 masakannya agak kemanisan — di situ manis memang keluhan.",
+      "**一点儿 juga berdiri sendiri sebagai kata benda:** [吃一点儿吧|Chī yìdiǎnr ba]。 makan sedikit saja. [再来一点儿|Zài lái yìdiǎnr]。 tambah sedikit lagi.",
+      "**⚠️ Dan satu lagi: [一点儿也不|yìdiǎnr yě bù] / [一点儿都不|yìdiǎnr dōu bù] berarti “sama sekali tidak”** — ingat rangka 连…都 dari Unit 4. [我一点儿都不累|Wǒ yìdiǎnr dōu bú lèi]。 Saya sama sekali tidak capek."
+     ]
+    },
+    {
+     "title": "Menduga: 好像 · 看起来 · 可能 · 应该 · 大概",
+     "body": [
+      "Bahasa Mandarin sangat berhati-hati soal memastikan sesuatu yang belum pasti, dan menyediakan lima alat untuk mengambil jarak dari pernyataanmu sendiri. Memilih yang tepat membuat kalimatmu terdengar jauh lebih matang."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Seberapa yakin", "Contoh"],
+       "rows": [
+        ["[好像|hǎoxiàng]", "Kesan — “rasanya, sepertinya”", "[他好像不太高兴|Tā hǎoxiàng bú tài gāoxìng]。"],
+        ["[看起来|kàn qǐlai]", "Dari yang terlihat", "[看起来要下雨了|Kàn qǐlai yào xià yǔ le]。"],
+        ["[可能|kěnéng]", "Mungkin — kemungkinan terbuka", "[他可能忘了|Tā kěnéng wàng le]。"],
+        ["[应该|yīnggāi]", "Semestinya begitu — dugaan cukup kuat", "[他应该到了|Tā yīnggāi dào le]。"],
+        ["[大概|dàgài] / [大约|dàyuē]", "Kira-kira — untuk angka dan waktu", "[大概二十个人|dàgài èrshí ge rén]"],
+        ["[肯定|kěndìng] / [一定|yídìng]", "Pasti — tidak ragu lagi", "[他肯定知道|Tā kěndìng zhīdào]。"]
+       ]
+      },
+      {
+       "head": ["Rangka tambahan", "Contoh", "Catatan"],
+       "rows": [
+        ["好像 … 似的", "[好像发烧了似的|hǎoxiàng fā shāo le shìde]", "Menguatkan kesan; sangat lisan"],
+        ["看起来 / 听起来 / 闻起来", "[听起来不错|Tīng qǐlai búcuò]。", "Terdengar bagus"],
+        ["说不定", "[说不定他已经走了|Shuō bu dìng tā yǐjīng zǒu le]。", "Siapa tahu — Unit 4"],
+        ["…吧", "[他是老师吧|Tā shì lǎoshī ba]？", "Dugaan yang minta dibenarkan"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **应该 punya dua pekerjaan yang berbeda** dan hanya konteks yang memisahkannya:",
+      "[你应该去看医生|Nǐ yīnggāi qù kàn yīshēng]。 Kamu **sebaiknya** ke dokter. (nasihat — Unit 7)",
+      "[他应该到了|Tā yīnggāi dào le]。 Dia **semestinya** sudah sampai. (dugaan)",
+      "Yang membedakan: kalau pokoknya orang kedua dan isinya perbuatan, biasanya nasihat. Kalau isinya keadaan yang sudah atau belum terjadi, biasanya dugaan.",
+      "**看起来 vs 好像:** 看起来 bersandar pada apa yang terlihat, 好像 pada kesan umum. [他看起来很累|Tā kàn qǐlai hěn lèi]。 dari wajahnya kelihatan capek. [他好像很累|Tā hǎoxiàng hěn lèi]。 rasanya dia capek — mungkin dari caranya bicara, mungkin dari hal lain."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Di klinik",
+   "intro": "Siang harinya, di klinik komunitas di bawah kantor. Perhatikan bagaimana dokter memakai kalimat dugaan, dan bagaimana Andi menggambarkan gejalanya dengan takaran — bukan “sakit”, tapi seberapa sakit dan sejak kapan.",
+   "lines": [
+    { "speaker": "医生:", "text": "[哪儿不舒服|Nǎr bù shūfu]？", "id": "Bagian mana yang tidak enak?", "literal": "mana — tidak — nyaman." },
+    { "speaker": "安迪:", "text": "[从星期六开始嗓子疼|Cóng xīngqīliù kāishǐ sǎngzi téng]，[昨天晚上开始有点儿发烧|zuótiān wǎnshang kāishǐ yǒudiǎnr fā shāo]。[今天早上量是三十七度五|Jīntiān zǎoshang liáng shì sānshíqī dù wǔ]。", "id": "Dari Sabtu tenggorokan sakit, tadi malam mulai agak demam. Tadi pagi diukur tiga puluh tujuh koma lima.", "literal": "dari — minggu-enam — mulai — tenggorokan — sakit, kemarin — malam — mulai — ada-sedikit — keluar — panas. hari-ini — pagi — ukur — adalah — tiga-puluh-tujuh — derajat — lima." },
+    { "speaker": "医生:", "text": "[咳嗽吗|Késou ma]？[有痰没有|Yǒu tán méiyǒu]？", "id": "Batuk? Ada dahak tidak?", "literal": "batuk — kah. ada — dahak — tidak-ada." },
+    { "speaker": "安迪:", "text": "[咳|Ké]，[但是不多|dànshì bù duō]。[有一点儿痰|Yǒu yìdiǎnr tán]，[黄色的|huángsè de]。", "id": "Batuk, tapi tidak banyak. Ada sedikit dahak, warnanya kuning.", "literal": "batuk, tetapi — tidak — banyak. ada — satu — sedikit — dahak, kuning — warna — punya." },
+    { "speaker": "医生:", "text": "[张嘴我看看|Zhāng zuǐ wǒ kànkan]……[嗯|Èn]，[嗓子有点儿红|sǎngzi yǒudiǎnr hóng]，[但是不严重|dànshì bù yánzhòng]。[应该是普通感冒|Yīnggāi shì pǔtōng gǎnmào]，[不像是流感|bú xiàng shì liúgǎn]。", "id": "Buka mulut saya lihat… Hm, tenggorokannya agak merah, tapi tidak parah. Semestinya flu biasa, tidak seperti influenza.", "literal": "buka — mulut — saya — lihat — lihat… hm, tenggorokan — ada-sedikit — merah, tetapi — tidak — parah. seharusnya — adalah — biasa — kena-flu, tidak — mirip — adalah — arus — flu." },
+    { "speaker": "安迪:", "text": "[需要吃药吗|Xūyào chī yào ma]？", "id": "Perlu minum obat?", "literal": "perlu — makan — obat — kah." },
+    { "speaker": "医生:", "text": "[开点儿药吧|Kāi diǎnr yào ba]。[一种是退烧的|Yì zhǒng shì tuì shāo de]，[三十八度五以上再吃|sānshíbā dù wǔ yǐshàng zài chī]，[不到就别吃|bú dào jiù bié chī]。[另一种是含片|Lìng yì zhǒng shì hánpiàn]，[嗓子疼的时候含一片|sǎngzi téng de shíhou hán yí piàn]。", "id": "Saya resepkan sedikit obat. Satu untuk turun demam, minum kalau di atas 38,5 derajat, kalau belum jangan diminum. Satu lagi tablet isap, kalau tenggorokan sakit isap satu.", "literal": "buka — sedikit — obat — lah. satu — jenis — adalah — turun — panas — punya, tiga-puluh-delapan — derajat — lima — atas — baru — makan, tidak — sampai — langsung — jangan — makan. lain — satu — jenis — adalah — isap — keping, tenggorokan — sakit — punya — waktu — isap — satu — keping." },
+    { "speaker": "安迪:", "text": "[需要打点滴吗|Xūyào dǎ diǎndī ma]？[我同事说打了好得快|Wǒ tóngshì shuō dǎ le hǎo de kuài]。", "id": "Perlu diinfus? Rekan saya bilang kalau diinfus sembuhnya cepat.", "literal": "perlu — pukul — titik — tetes — kah. saya — rekan — bicara — pukul — sudah — baik — tingkat — cepat." },
+    { "speaker": "医生:", "text": "[不需要|Bù xūyào]。[普通感冒打点滴没有好处|Pǔtōng gǎnmào dǎ diǎndī méiyǒu hǎochu]。[多休息|Duō xiūxi]，[多喝水|duō hē shuǐ]，[一个星期左右自己就好了|yí ge xīngqī zuǒyòu zìjǐ jiù hǎo le]。", "id": "Tidak perlu. Flu biasa diinfus tidak ada gunanya. Banyak istirahat, banyak minum, sekitar seminggu sembuh sendiri.", "literal": "tidak — perlu. biasa — kena-flu — pukul — titik — tetes — tidak-ada — baik — bagian. banyak — istirahat, banyak — minum — air, satu — penggolong — minggu — kiri-kanan — sendiri — langsung — baik — sudah." },
+    { "speaker": "安迪:", "text": "[那我明天还能上班吗|Nà wǒ míngtiān hái néng shàng bān ma]？", "id": "Kalau begitu besok saya masih bisa masuk kerja?", "literal": "itu — saya — besok — masih — bisa — naik — kerja — kah." },
+    { "speaker": "医生:", "text": "[能|Néng]，[但是戴口罩|dànshì dài kǒuzhào]。[今天下午回去睡一觉|Jīntiān xiàwǔ huíqu shuì yí jiào]，[明天看起来会好一点儿|míngtiān kàn qǐlai huì hǎo yìdiǎnr]。[如果烧到三十九度|Rúguǒ shāo dào sānshíjiǔ dù]，[马上来|mǎshàng lái]。", "id": "Bisa, tapi pakai masker. Sore ini pulang tidur, besok kelihatannya akan agak mendingan. Kalau demamnya sampai tiga puluh sembilan derajat, segera datang.", "literal": "bisa, tetapi — pakai — mulut — penutup. hari-ini — sore — kembali — pergi — tidur — satu — tidur, besok — lihat — bangun — datang — akan — baik — satu — sedikit. kalau — panas — sampai — tiga-puluh-sembilan — derajat, segera — datang." },
+    { "speaker": "安迪:", "text": "[好的|Hǎo de]，[谢谢医生|xièxie yīshēng]。[药在哪儿取|Yào zài nǎr qǔ]？", "id": "Baik, terima kasih Dok. Obatnya diambil di mana?", "literal": "baik — punya, terima-kasih — dokter. obat — di — mana — ambil." },
+    { "speaker": "医生:", "text": "[先去一楼交费|Xiān qù yī lóu jiāo fèi]，[然后在药房取|ránhòu zài yàofáng qǔ]。[单子拿好|Dānzi ná hǎo]。", "id": "Ke lantai satu bayar dulu, lalu ambil di apotek. Bawa kertasnya baik-baik.", "literal": "dulu — pergi — satu — lantai — serahkan — biaya, sesudah-itu — di — obat — kamar — ambil. lembar — pegang — beres." }
+   ],
+   "notes": [
+    "**[哪儿不舒服|Nǎr bù shūfu]？ adalah pertanyaan pembuka semua dokter di Tiongkok.** Harfiah “bagian mana yang tidak nyaman”. Jawabannya menyebut bagian tubuh + keluhan: [嗓子疼|sǎngzi téng] · [肚子疼|dùzi téng] · [头晕|tóu yūn]。",
+    "**⚠️ Urutan menceritakan gejala: kapan mulai → apa gejalanya → seberapa berat.** [从星期六开始|cóng xīngqīliù kāishǐ] … Ini urutan yang diharapkan dokter, dan menyebutkannya lengkap akan menghemat lima pertanyaan berikutnya.",
+    "**[有痰没有|Yǒu tán méiyǒu]？ — bentuk tanya “ada tidak”.** Kembaran 有没有 yang dipecah, sangat sering dipakai. Sama artinya dengan [有没有痰|yǒu méiyǒu tán]？",
+    "**[不像是流感|bú xiàng shì liúgǎn] — [像|xiàng] berarti “mirip, seperti”.** [他很像他爸爸|Tā hěn xiàng tā bàba]。 dia mirip ayahnya. [好像|hǎoxiàng] yang kamu pelajari di kotak tata bahasa memang berasal dari sini.",
+    "**[开药|kāi yào] = meresepkan obat.** 开 di sini berarti “mengeluarkan secara resmi”: [开发票|kāi fāpiào] mengeluarkan kuitansi, [开证明|kāi zhèngmíng] membuat surat keterangan, [开会|kāi huì] mengadakan rapat.",
+    "**[打点滴|dǎ diǎndī] = diinfus.** Di Tiongkok, infus untuk flu biasa dulu sangat umum dan sekarang sedang dikurangi karena tidak berguna. Kalau ada dokter yang menawarkannya untuk pilek, kamu boleh menolak: [我想先吃药试试|Wǒ xiǎng xiān chī yào shìshi]。",
+    "**[睡一觉|shuì yí jiào] = tidur sekali, tidur sebentar.** Ingat 睡觉 adalah kata kerja yang menelan objeknya (Unit 2) — jumlahnya disisipkan di tengah: 睡一觉, 睡了八个小时的觉。"
+   ],
+   "grammars": [
+    {
+     "title": "多 dan 少 di depan kata kerja",
+     "body": [
+      "Dalam bahasa Indonesia kita berkata “minum lebih banyak air”. Bahasa Mandarin memindahkan “lebih banyak” ke depan kata kerjanya: [多喝水|duō hē shuǐ]. Ini rangka pendek yang muncul di hampir semua nasihat, perintah, dan usulan."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti", "Catatan"],
+       "rows": [
+        ["[多喝水|Duō hē shuǐ]。", "Banyak-banyak minum air.", "Nasihat paling sering di Tiongkok"],
+        ["[少吃点儿辣的|Shǎo chī diǎnr là de]。", "Kurangi makan yang pedas.", "少 + kata kerja"],
+        ["[多穿点儿|Duō chuān diǎnr]。", "Pakai baju lebih tebal.", "Ucapan sayang saat dingin"],
+        ["[你多注意身体|Nǐ duō zhùyì shēntǐ]。", "Jaga kesehatanmu baik-baik.", "Penutup percakapan yang hangat"],
+        ["[我多买了一个|Wǒ duō mǎi le yí ge]。", "Saya beli satu kelebihan.", "⚠️ Dengan 了 = kelebihan, bukan nasihat"],
+        ["[你少说两句|Nǐ shǎo shuō liǎng jù]。", "Kurangi bicaramu.", "Peringatan halus"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **Dengan 了, artinya berubah dari “lebih banyak” jadi “kelebihan / kekurangan”**",
+      "[我多买了一个|Wǒ duō mǎi le yí ge]。 Saya kelebihan beli satu.",
+      "[你少给了我十块|Nǐ shǎo gěi le wǒ shí kuài]。 Kamu kurang memberi saya sepuluh yuan.",
+      "[他多写了一个字|Tā duō xiě le yí ge zì]。 Dia menulis satu aksara berlebih.",
+      "**Kembarannya untuk sifat:** [早点儿|zǎo diǎnr] lebih awal, [慢点儿|màn diǎnr] pelan sedikit, [大点儿声|dà diǎnr shēng] suaranya keraskan. Semuanya rangka 「kata sifat + 点儿」 dari kotak tata bahasa pertama."
+     ]
+    },
+    {
+     "title": "Bertanya kabar orang sakit dan menanggapinya",
+     "body": [
+      "Ini bagian yang selalu terasa canggung dalam bahasa asing, karena kalimatnya bukan hasil susunan tata bahasa melainkan kebiasaan. Berikut yang benar-benar dipakai."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Kapan dipakai"],
+       "rows": [
+        ["[你怎么了|Nǐ zěnme le]？", "Melihat ada yang tidak beres — pertanyaan pembuka"],
+        ["[你没事吧|Nǐ méi shì ba]？", "Khawatir — “kamu tidak apa-apa kan?”"],
+        ["[好点儿了吗|Hǎo diǎnr le ma]？", "Kepada orang yang sudah beberapa hari sakit"],
+        ["[看医生了吗|Kàn yīshēng le ma]？", "Menanyakan apakah sudah berobat"],
+        ["[你多休息|Nǐ duō xiūxi]。", "Nasihat penutup"],
+        ["[早点儿好起来|Zǎo diǎnr hǎo qǐlai]。", "Semoga cepat sembuh"],
+        ["[注意身体|Zhùyì shēntǐ]。", "Jaga kesehatan — bisa untuk siapa saja"],
+        ["[有什么需要就跟我说|Yǒu shénme xūyào jiù gēn wǒ shuō]。", "Menawarkan bantuan"]
+       ]
+      },
+      {
+       "head": ["Menjawab", "Arti", "Nada"],
+       "rows": [
+        ["[没事|Méi shì]。", "Tidak apa-apa.", "Menenangkan"],
+        ["[好多了|Hǎo duō le]。", "Sudah jauh lebih baik.", "Positif"],
+        ["[好一点儿了|Hǎo yìdiǎnr le]。", "Sudah agak mendingan.", "Jujur, belum sembuh"],
+        ["[还是老样子|Háishi lǎo yàngzi]。", "Masih begitu-begitu saja.", "Belum ada kemajuan"],
+        ["[谢谢关心|Xièxie guānxīn]。", "Terima kasih perhatiannya.", "Penutup wajib"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ [你怎么了|Nǐ zěnme le]？ dan [你怎么样|Nǐ zěnmeyàng]？ berbeda jauh. Yang pertama menanyakan **apa yang terjadi** (ada masalah); yang kedua menanyakan **bagaimana kabarmu** (netral). Menyapa teman yang sehat dengan 你怎么了？ akan membuatnya khawatir dirinya kelihatan buruk.",
+      "Dan satu penutup yang selalu tepat: **[谢谢关心|Xièxie guānxīn]。** Terima kasih sudah peduli. Dua kata ini menutup percakapan tentang sakit dengan hangat dan tanpa membuat siapa pun canggung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Badan, gejala, dan obat",
+   "blocks": [
+    { "type": "p", "text": "Daftar ini disusun menurut cara dokter bertanya: bagian mana, rasanya bagaimana, sudah berapa lama." },
+    { "type": "sub", "text": "Bagian tubuh" },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Mandarin", "Arti"], "rows": [
+     ["[头|tóu]", "kepala", "[肚子|dùzi]", "perut"],
+     ["[嗓子|sǎngzi]", "tenggorokan", "[胃|wèi]", "lambung"],
+     ["[眼睛|yǎnjing]", "mata", "[背|bèi]", "punggung"],
+     ["[耳朵|ěrduo]", "telinga", "[腰|yāo]", "pinggang"],
+     ["[鼻子|bízi]", "hidung", "[腿|tuǐ]", "kaki (paha–betis)"],
+     ["[牙|yá]", "gigi", "[脚|jiǎo]", "telapak kaki"],
+     ["[脖子|bózi]", "leher", "[手|shǒu]", "tangan"]
+    ] },
+    { "type": "sub", "text": "Gejala" },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh"], "rows": [
+     ["[疼|téng]", "sakit, nyeri", "[头疼|tóu téng] · [肚子疼|dùzi téng]"],
+     ["[晕|yūn]", "pusing berputar", "[有点儿头晕|yǒudiǎnr tóu yūn]"],
+     ["[发烧|fā shāo]", "demam", "[发烧三十八度|fā shāo sānshíbā dù]"],
+     ["[咳嗽|késou]", "batuk", "[一直咳嗽|yìzhí késou]"],
+     ["[流鼻涕|liú bítì]", "pilek, ingus", "[流鼻涕流了三天|liú bítì liú le sān tiān]"],
+     ["[拉肚子|lā dùzi]", "diare", "[昨天晚上拉肚子|zuótiān wǎnshang lā dùzi]"],
+     ["[吐|tù]", "muntah", "[想吐|xiǎng tù] mual"],
+     ["[没胃口|méi wèikǒu]", "tidak nafsu makan", "[这两天没胃口|zhè liǎng tiān méi wèikǒu]"],
+     ["[过敏|guòmǐn]", "alergi", "[我对花生过敏|Wǒ duì huāshēng guòmǐn]。"],
+     ["[感冒|gǎnmào]", "flu, masuk angin", "[我感冒了|Wǒ gǎnmào le]。"]
+    ] },
+    { "type": "kotak", "title": "Membaca aturan pakai obat", "items": [
+     "[一天三次|yì tiān sān cì] — tiga kali sehari · [一次两片|yí cì liǎng piàn] — sekali dua tablet",
+     "[饭前|fàn qián] sebelum makan · [饭后|fàn hòu] sesudah makan · [睡前|shuì qián] sebelum tidur",
+     "[口服|kǒufú] diminum · [外用|wàiyòng] pemakaian luar · [温水送服|wēnshuǐ sòng fú] diminum dengan air hangat",
+     "⚠️ [遵医嘱|zūn yīzhǔ] = ikuti petunjuk dokter. Kalau ini yang tertulis di kotak obat dan kamu tidak yakin, tanyakan di apotek — apoteker Tiongkok terbiasa menjelaskan."
+    ] }
+   ]
+  },
+  {
+   "title": "Berobat di Tiongkok: yang perlu kamu tahu sebelum sakit",
+   "blocks": [
+    { "type": "p", "text": "Alur rumah sakit di Tiongkok berbeda dari kebiasaan kita, dan mengetahuinya sebelum sakit jauh lebih baik daripada mencari tahu sambil demam." },
+    { "type": "tabel", "head": ["Tahap", "Mandarin", "Yang terjadi"], "rows": [
+     ["1. Daftar", "[挂号|guà hào]", "Pilih poli, bayar biaya pendaftaran. Bisa lewat aplikasi"],
+     ["2. Tunggu", "[候诊|hòu zhěn]", "Nomor antrean muncul di layar"],
+     ["3. Diperiksa", "[看诊|kàn zhěn]", "Dokter memeriksa, biasanya cepat"],
+     ["4. Bayar", "[交费|jiāo fèi]", "⚠️ Bayar dulu, baru dapat obat atau pemeriksaan"],
+     ["5. Periksa lab", "[化验|huàyàn] · [拍片|pāi piàn]", "Tes darah · rontgen"],
+     ["6. Balik ke dokter", "[复诊|fù zhěn]", "Bawa hasilnya kembali ke dokter yang sama"],
+     ["7. Ambil obat", "[取药|qǔ yào]", "Di apotek rumah sakit, tunjukkan struk"]
+    ] },
+    { "type": "sub", "text": "Memilih tempat berobat" },
+    { "type": "tabel", "head": ["Tempat", "Untuk", "Catatan"], "rows": [
+     ["[社区医院|shèqū yīyuàn]", "Flu, luka kecil, obat rutin", "Antrean pendek, dekat, murah"],
+     ["[三甲医院|sān jiǎ yīyuàn]", "Penyakit serius", "Rumah sakit tingkat tertinggi; sangat ramai"],
+     ["[药店|yàodiàn]", "Obat bebas", "Apotekernya bisa memberi saran sederhana"],
+     ["[急诊|jízhěn]", "Gawat darurat", "Buka 24 jam"],
+     ["[国际部|guójìbù]", "Layanan berbahasa Inggris", "Ada di rumah sakit besar; jauh lebih mahal"]
+    ] },
+    { "type": "p", "text": "⚠️ Nomor darurat di Tiongkok: **120** untuk ambulans, **110** untuk polisi, **119** untuk pemadam kebakaran. Kalimat yang perlu kamu hafal apa adanya: **[快叫救护车|Kuài jiào jiùhùchē]！** Cepat panggil ambulans! dan **[这里有人晕倒了|Zhèlǐ yǒu rén yūn dǎo le]！** Ada orang pingsan di sini!" }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "脸色", "baca": "liǎnsè", "id": "rona wajah" },
+  { "zh": "半夜", "baca": "bànyè", "id": "tengah malam" },
+  { "zh": "醒", "baca": "xǐng", "id": "bangun, terjaga" },
+  { "zh": "嗓子", "baca": "sǎngzi", "id": "tenggorokan" },
+  { "zh": "疼", "baca": "téng", "id": "sakit, nyeri" },
+  { "zh": "晕", "baca": "yūn", "id": "pusing" },
+  { "zh": "发烧", "baca": "fā shāo", "id": "demam" },
+  { "zh": "体温计", "baca": "tǐwēnjì", "id": "termometer" },
+  { "zh": "量", "baca": "liáng", "id": "mengukur" },
+  { "zh": "算", "baca": "suàn", "id": "dihitung sebagai" },
+  { "zh": "浑身", "baca": "húnshēn", "id": "seluruh badan" },
+  { "zh": "没劲儿", "baca": "méi jìnr", "id": "lemas; membosankan" },
+  { "zh": "低烧", "baca": "dī shāo", "id": "demam ringan" },
+  { "zh": "办公室", "baca": "bàngōngshì", "id": "kantor (ruang)" },
+  { "zh": "感冒", "baca": "gǎnmào", "id": "flu, masuk angin" },
+  { "zh": "传染", "baca": "chuánrǎn", "id": "menular" },
+  { "zh": "咳嗽", "baca": "késou", "id": "batuk" },
+  { "zh": "社区", "baca": "shèqū", "id": "komunitas, permukiman" },
+  { "zh": "要是", "baca": "yàoshi", "id": "kalau" },
+  { "zh": "硬撑", "baca": "yìng chēng", "id": "memaksakan diri" },
+  { "zh": "整个", "baca": "zhěng ge", "id": "seluruh" },
+  { "zh": "倒", "baca": "dǎo", "id": "roboh, tumbang" },
+  { "zh": "痰", "baca": "tán", "id": "dahak" },
+  { "zh": "黄色", "baca": "huángsè", "id": "kuning" },
+  { "zh": "张嘴", "baca": "zhāng zuǐ", "id": "membuka mulut" },
+  { "zh": "严重", "baca": "yánzhòng", "id": "parah, serius" },
+  { "zh": "像", "baca": "xiàng", "id": "mirip, seperti" },
+  { "zh": "流感", "baca": "liúgǎn", "id": "influenza" },
+  { "zh": "药", "baca": "yào", "id": "obat" },
+  { "zh": "开药", "baca": "kāi yào", "id": "meresepkan obat" },
+  { "zh": "退烧", "baca": "tuì shāo", "id": "menurunkan demam" },
+  { "zh": "含片", "baca": "hánpiàn", "id": "tablet isap" },
+  { "zh": "片", "baca": "piàn", "id": "keping, tablet" },
+  { "zh": "打点滴", "baca": "dǎ diǎndī", "id": "diinfus" },
+  { "zh": "好处", "baca": "hǎochu", "id": "manfaat" },
+  { "zh": "戴", "baca": "dài", "id": "memakai (aksesori)" },
+  { "zh": "口罩", "baca": "kǒuzhào", "id": "masker" },
+  { "zh": "交费", "baca": "jiāo fèi", "id": "membayar biaya" },
+  { "zh": "药房", "baca": "yàofáng", "id": "apotek" },
+  { "zh": "单子", "baca": "dānzi", "id": "lembar, formulir" },
+  { "zh": "有点儿", "baca": "yǒudiǎnr", "id": "agak (keluhan)" },
+  { "zh": "一点儿", "baca": "yìdiǎnr", "id": "sedikit (perbandingan)" },
+  { "zh": "好像", "baca": "hǎoxiàng", "id": "sepertinya" },
+  { "zh": "看起来", "baca": "kàn qǐlai", "id": "kelihatannya" },
+  { "zh": "可能", "baca": "kěnéng", "id": "mungkin" },
+  { "zh": "大概", "baca": "dàgài", "id": "kira-kira" },
+  { "zh": "注意", "baca": "zhùyì", "id": "memperhatikan, menjaga" },
+  { "zh": "关心", "baca": "guānxīn", "id": "peduli, perhatian" },
+  { "zh": "拉肚子", "baca": "lā dùzi", "id": "diare" },
+  { "zh": "流鼻涕", "baca": "liú bítì", "id": "pilek" },
+  { "zh": "没胃口", "baca": "méi wèikǒu", "id": "tidak nafsu makan" },
+  { "zh": "过敏", "baca": "guòmǐn", "id": "alergi" },
+  { "zh": "挂号", "baca": "guà hào", "id": "mendaftar berobat" },
+  { "zh": "急诊", "baca": "jízhěn", "id": "gawat darurat" },
+  { "zh": "救护车", "baca": "jiùhùchē", "id": "ambulans" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 有点儿 atau 一点儿, di tempat yang benar.",
+   "items": [
+    "[这件衣服| Zhè jiàn yīfu] ___ [贵|guì]，[能不能便宜| néng bu néng piányi] ___？",
+    "[我今天| Wǒ jīntiān] ___ [累|lèi]，[想早| xiǎng zǎo] ___ [睡|shuì]。",
+    "[今天比昨天冷| Jīntiān bǐ zuótiān lěng] ___。",
+    "[你说慢| Nǐ shuō màn] ___，[我听不清楚|wǒ tīng bu qīngchu]。",
+    "[他| Tā] ___ [不高兴|bù gāoxìng]，[你别说了|nǐ bié shuō le]。"
+   ]
+  },
+  {
+   "prompt": "Pilih kata dugaan yang paling tepat: 好像 · 看起来 · 可能 · 应该 · 肯定.",
+   "items": [
+    "[天上乌云很多|Tiān shang wūyún hěn duō]，___ [要下雨了|yào xià yǔ le]。",
+    "[他已经走了半个小时了|Tā yǐjīng zǒu le bàn ge xiǎoshí le]，___ [到了|dào le]。",
+    "[我| Wǒ] ___ [在哪儿见过你|zài nǎr jiàn guo nǐ]。",
+    "[他是这方面的专家|Tā shì zhè fāngmiàn de zhuānjiā]，___ [知道答案|zhīdào dá'àn]。",
+    "[他今天没来|Tā jīntiān méi lái]，___ [是病了|shì bìng le]。"
+   ]
+  },
+  {
+   "prompt": "Susun ulang dengan 多 atau 少 di depan kata kerja.",
+   "items": [
+    "[你应该喝水|Nǐ yīnggāi hē shuǐ]。（lebih banyak）",
+    "[你应该吃辣的|Nǐ yīnggāi chī là de]。（lebih sedikit）",
+    "[今天很冷|Jīntiān hěn lěng]，[你穿衣服|nǐ chuān yīfu]。（lebih tebal）",
+    "[我买了一个|Wǒ mǎi le yí ge]。（kelebihan satu）",
+    "[你给了我十块|Nǐ gěi le wǒ shí kuài]。（kurang sepuluh）"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[睡是睡了|Shuì shì shuì le]，[但是半夜醒了三次|dànshì bànyè xǐng le sān cì]。",
+    "[你八成是被传染的|Nǐ bāchéng shì bèi chuánrǎn de]。",
+    "[三十八度五以上再吃|Sānshíbā dù wǔ yǐshàng zài chī]，[不到就别吃|bú dào jiù bié chī]。",
+    "[普通感冒打点滴没有好处|Pǔtōng gǎnmào dǎ diǎndī méiyǒu hǎochu]。",
+    "[我一点儿都不累|Wǒ yìdiǎnr dōu bú lèi]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Tenggorokan saya agak sakit.",
+    "Bisa agak lebih murah?",
+    "Sepertinya dia kurang senang.",
+    "Kelihatannya mau hujan.",
+    "Banyak istirahat, banyak minum air.",
+    "Sudah agak mendingan, terima kasih perhatiannya."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[这件衣服贵有点儿|Zhè jiàn yīfu guì yǒudiǎnr]。",
+    "[能不能有点儿便宜|Néng bu néng yǒudiǎnr piányi]？",
+    "[今天比昨天有点儿冷|Jīntiān bǐ zuótiān yǒudiǎnr lěng]。",
+    "[这个菜有点儿好吃|Zhège cài yǒudiǎnr hǎochī]。",
+    "[你应该喝多水|Nǐ yīnggāi hē duō shuǐ]。",
+    "[我睡了一觉觉|Wǒ shuì le yí jiào jiào]。"
+   ]
+  }
+ ],
+ "answers": [
+  "有点儿贵 … 便宜一点儿 — 有点儿累 … 早一点儿睡 — 冷一点儿 — 慢一点儿 — 有点儿不高兴",
+  "看起来 — 应该 — 好像 — 肯定 — 可能",
+  "你应该多喝水。 — 你应该少吃辣的。 — 今天很冷，你多穿点儿衣服。 — 我多买了一个。 — 你少给了我十块。",
+  "Tidur sih tidur, tapi tengah malam terbangun tiga kali. — Kamu kemungkinan besar ketularan. — Minum kalau di atas 38,5 derajat; kalau belum sampai, jangan diminum. — Flu biasa diinfus tidak ada manfaatnya. — Saya sama sekali tidak capek.",
+  "Wǒ sǎngzi yǒudiǎnr téng. — Néng bu néng piányi yìdiǎnr? — Tā hǎoxiàng bú tài gāoxìng. — Kàn qǐlai yào xià yǔ le. — Duō xiūxi, duō hē shuǐ. — Hǎo yìdiǎnr le, xièxie guānxīn.",
+  "这件衣服有点儿贵。 — 能不能便宜一点儿？ — 今天比昨天冷一点儿。 — 这个菜挺好吃的。 (有点儿 tak untuk hal baik) — 你应该多喝水。 (多 di depan kata kerja) — 我睡了一觉。 (睡觉 sudah punya objek)"
+ ],
+ "wave": "Lima menit sebelum Unit 10: bayangkan kamu sedang di depan dokter dan ceritakan satu penyakit yang benar-benar pernah kamu alami — kapan mulai, bagian mana, seberapa berat, sudah minum obat apa. Empat kalimat, dan paksakan dirimu memakai 有点儿 sekali dan 一点儿 sekali. Kalau kedua kata itu keluar di tempat yang benar tanpa berpikir, unit ini sudah selesai tugasnya."
+}

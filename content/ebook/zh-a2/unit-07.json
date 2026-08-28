@@ -1,0 +1,380 @@
+{
+ "title": "Menyuruh, meminta, dan harus",
+ "title_target": "老板让我加班 — Lǎobǎn ràng wǒ jiā bān",
+ "goal": "Menguasai kalimat bertingkat 让/叫/请 — satu kalimat dengan dua kata kerja dan dua pelaku — lalu memilih dengan tepat di antara 得, 应该, 必须, 要, dan 不用 ketika bicara tentang keharusan.",
+ "bekal": [
+  "mengatakan siapa menyuruh siapa melakukan apa dengan 让, 叫, 请",
+  "memilih di antara lima cara mengatakan “harus” menurut beratnya",
+  "menolak, menyanggupi, dan menunda permintaan di lingkungan kerja",
+  "memakai 帮, 替, 为, dan 给 untuk mengatakan “untuk siapa”",
+  "mengurus izin, cuti, lembur, dan pergantian jadwal"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Minta izin ke atasan",
+   "intro": "Ibu Andi masih di Beijing dan besok harus ke rumah sakit untuk pemeriksaan. Andi menemui atasannya, 李经理. Perhatikan berapa banyak kalimat yang punya dua kata kerja berturut-turut — itulah kalimat bertingkat.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[李经理|Lǐ jīnglǐ]，[您现在方便吗|nín xiànzài fāngbiàn ma]？[我想请您批个假|Wǒ xiǎng qǐng nín pī ge jià]。", "id": "Pak Li, sekarang senggang? Saya mau minta izin cuti.", "literal": "Li — manajer, Anda — sekarang — leluasa — kah. saya — ingin — minta — Anda — setujui — penggolong — cuti." },
+    { "speaker": "李经理:", "text": "[你说|Nǐ shuō]。[什么事|Shénme shì]？", "id": "Silakan. Ada apa?", "literal": "kamu — bicara. apa — urusan." },
+    { "speaker": "安迪:", "text": "[我妈妈来北京了|Wǒ māma lái Běijīng le]，[明天要去医院做个检查|míngtiān yào qù yīyuàn zuò ge jiǎnchá]。[她一个人去我不放心|Tā yí ge rén qù wǒ bú fàngxīn]。", "id": "Ibu saya datang ke Beijing, besok harus ke rumah sakit untuk pemeriksaan. Kalau dia pergi sendirian saya tidak tenang.", "literal": "saya — ibu — datang — Beijing — sudah, besok — akan — pergi — rumah-sakit — melakukan — penggolong — periksa. dia — satu — penggolong — orang — pergi — saya — tidak — lepas — hati." },
+    { "speaker": "李经理:", "text": "[应该的|Yīnggāi de]。[要请一天还是半天|Yào qǐng yì tiān háishi bàn tiān]？", "id": "Sudah semestinya. Mau ambil sehari atau setengah hari?", "literal": "seharusnya — punya. mau — minta — satu — hari — atau — setengah — hari." },
+    { "speaker": "安迪:", "text": "[半天就够了|Bàn tiān jiù gòu le]。[上午去|Shàngwǔ qù]，[下午我回来|xiàwǔ wǒ huílai]。", "id": "Setengah hari sudah cukup. Pagi pergi, sore saya kembali.", "literal": "setengah — hari — langsung — cukup — sudah. pagi — pergi, sore — saya — kembali." },
+    { "speaker": "李经理:", "text": "[不用赶|Búyòng gǎn]。[你先陪你妈|Nǐ xiān péi nǐ mā]，[下午的会我让小张替你去|xiàwǔ de huì wǒ ràng Xiǎo Zhāng tì nǐ qù]。", "id": "Tak usah buru-buru. Temani ibumu dulu, rapat sore saya suruh Xiao Zhang menggantikan kamu.", "literal": "tidak-perlu — mengejar. kamu — dulu — temani — kamu — ibu, sore — punya — rapat — saya — menyuruh — Kecil — Zhang — menggantikan — kamu — pergi." },
+    { "speaker": "安迪:", "text": "[那太麻烦他了|Nà tài máfan tā le]。[会议记录我可以晚上补|Huìyì jìlù wǒ kěyǐ wǎnshang bǔ]。", "id": "Wah itu merepotkan dia. Notulennya bisa saya susulkan malam hari.", "literal": "itu — terlalu — merepotkan — dia — sudah. rapat — catatan — saya — boleh — malam — menambal." },
+    { "speaker": "李经理:", "text": "[不用|Búyòng]。[晚上应该休息|Wǎnshang yīnggāi xiūxi]，[不应该补东西|bù yīnggāi bǔ dōngxi]。[小张下周也要请假|Xiǎo Zhāng xià zhōu yě yào qǐng jià]，[到时候你替他就行了|dào shíhou nǐ tì tā jiù xíng le]。", "id": "Tak perlu. Malam itu buat istirahat, bukan buat menyusul kerjaan. Xiao Zhang minggu depan juga mau ambil cuti, nanti kamu yang gantikan dia.", "literal": "tidak-perlu. malam — seharusnya — istirahat, tidak — seharusnya — menambal — barang. Kecil — Zhang — bawah — minggu — juga — akan — minta — cuti, sampai — waktu — kamu — menggantikan — dia — langsung — boleh — sudah." },
+    { "speaker": "安迪:", "text": "[好的|Hǎo de]，[谢谢经理|xièxie jīnglǐ]。[那我现在在系统里提交请假申请|Nà wǒ xiànzài zài xìtǒng lǐ tíjiāo qǐngjià shēnqǐng]。", "id": "Baik, terima kasih Pak. Kalau begitu saya ajukan permohonan cutinya di sistem sekarang.", "literal": "baik — punya, terima-kasih — manajer. itu — saya — sekarang — di — sistem — dalam — mengajukan — minta — cuti — permohonan." },
+    { "speaker": "李经理:", "text": "[提交完叫我一声|Tíjiāo wán jiào wǒ yì shēng]，[我马上批|wǒ mǎshàng pī]。[对了|Duì le]，[你妈妈身体没什么大问题吧|nǐ māma shēntǐ méi shénme dà wèntí ba]？", "id": "Kalau sudah diajukan panggil saya, langsung saya setujui. Oh iya, ibumu tidak ada masalah serius kan?", "literal": "ajukan — habis — panggil — saya — satu — suara, saya — segera — setujui. betul — sudah, kamu — ibu — badan — tidak-ada — apa — besar — masalah — kan." },
+    { "speaker": "安迪:", "text": "[就是常规体检|Jiù shì chángguī tǐjiǎn]。[她五十多了|Tā wǔshí duō le]，[医生让她每年查一次|yīshēng ràng tā měi nián chá yí cì]。", "id": "Cuma cek kesehatan rutin. Umurnya lima puluhan, dokter menyuruhnya periksa setahun sekali.", "literal": "hanya — adalah — rutin — badan — periksa. dia — lima-puluh — lebih — sudah, dokter — menyuruh — dia — tiap — tahun — periksa — satu — kali." },
+    { "speaker": "李经理:", "text": "[那就好|Nà jiù hǎo]。[你也别老加班|Nǐ yě bié lǎo jiā bān]，[年轻的时候不觉得|niánqīng de shíhou bù juéde]，[以后就知道了|yǐhòu jiù zhīdào le]。", "id": "Syukurlah. Kamu juga jangan lembur terus, waktu muda tidak terasa, nanti baru tahu.", "literal": "itu — langsung — baik. kamu — juga — jangan — selalu — tambah — kerja, muda — punya — waktu — tidak — merasa, sesudah — langsung — tahu — sudah." }
+   ],
+   "notes": [
+    "**[您现在方便吗|Nín xiànzài fāngbiàn ma]？ adalah pembuka wajib sebelum meminta sesuatu dari orang yang lebih senior.** Harfiahnya “Anda sekarang leluasa?”. Menyerbu langsung ke pokok masalah tanpa kalimat ini terdengar kasar di lingkungan kerja Tiongkok.",
+    "**[批假|pī jià] = menyetujui cuti.** 批 berarti memberi persetujuan tertulis. Kata yang akan kamu lihat di semua sistem HR Tiongkok: [审批|shěnpī] persetujuan, [批准|pīzhǔn] menyetujui.",
+    "**[不放心|bú fàngxīn] harfiah “hatinya tidak bisa diletakkan”, artinya tidak tenang, khawatir.** Lawannya [放心|fàngxīn] tenang — dan [你放心|Nǐ fàngxīn]。 adalah salah satu kalimat paling menenangkan dalam bahasa Mandarin.",
+    "**[应该的|Yīnggāi de] = sudah semestinya.** Jawaban standar untuk ucapan terima kasih atau permintaan yang memang wajar. Lebih hangat daripada [不客气|bú kèqi].",
+    "**⚠️ [我让小张替你去|wǒ ràng Xiǎo Zhāng tì nǐ qù] punya dua kata kerja dan dua pelaku.** Saya menyuruh Xiao Zhang; Xiao Zhang pergi. Ini kalimat bertingkat, dan kotak tata bahasa pertama membongkarnya.",
+    "**[替|tì] = menggantikan, sebagai ganti.** [我替你去|Wǒ tì nǐ qù]。 saya pergi menggantikan kamu. Bandingkan dengan [帮|bāng] menolong: [我帮你去|Wǒ bāng nǐ qù]。 saya pergi untuk membantumu. Bagian tambahan kedua menyusun keempatnya.",
+    "**[叫我一声|jiào wǒ yì shēng] = panggil saya sebentar.** 一声 harfiah “satu suara” — cara mengecilkan permintaan yang sangat khas. [说一声|shuō yì shēng] bilang saja sepatah kata."
+   ],
+   "grammars": [
+    {
+     "title": "让 · 叫 · 请 — kalimat bertingkat",
+     "body": [
+      "Kalimat bertingkat (兼语句) adalah kalimat yang punya **dua kata kerja dan dua pelaku**, dengan satu kata yang menjadi objek kata kerja pertama sekaligus pelaku kata kerja kedua.",
+      "Rangkanya: **A + 让/叫/请 + B + kata kerja + …** — A menyuruh B melakukan sesuatu. Kata di posisi B mengerjakan dua tugas sekaligus, dan itulah sebabnya pola ini terasa aneh pada awalnya."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Nada", "Contoh"],
+       "rows": [
+        ["[让|ràng]", "Netral: menyuruh, membiarkan, membuat", "[老板让我加班|Lǎobǎn ràng wǒ jiā bān]。 Bos menyuruh saya lembur."],
+        ["[叫|jiào]", "Lebih santai, kadang lebih keras", "[妈妈叫我早点回家|Māma jiào wǒ zǎo diǎn huí jiā]。 Ibu menyuruh saya pulang cepat."],
+        ["[请|qǐng]", "Sopan: mempersilakan, mengundang, meminta", "[我请他吃饭|Wǒ qǐng tā chī fàn]。 Saya mengundangnya makan."],
+        ["[派|pài]", "Menugaskan (resmi)", "[公司派我来北京|Gōngsī pài wǒ lái Běijīng]。"],
+        ["[劝|quàn]", "Menasihati, membujuk", "[我劝他别去|Wǒ quàn tā bié qù]。"]
+       ]
+      },
+      {
+       "head": ["Bentuk", "Contoh"],
+       "rows": [
+        ["Sangkalan di depan 让", "[老板不让我请假|Lǎobǎn bú ràng wǒ qǐng jià]。 Bos tidak mengizinkan saya cuti."],
+        ["Sangkalan di depan kata kerja kedua", "[老板让我别加班|Lǎobǎn ràng wǒ bié jiā bān]。 Bos menyuruh saya jangan lembur."],
+        ["Dengan 了", "[他让我等了半个小时|Tā ràng wǒ děng le bàn ge xiǎoshí]。 Dia membuat saya menunggu setengah jam."],
+        ["让 = membiarkan", "[让我想想|Ràng wǒ xiǎngxiang]。 Biar saya pikir dulu."],
+        ["让 = membuat merasa", "[这件事让我很生气|Zhè jiàn shì ràng wǒ hěn shēngqì]。 Hal ini membuat saya marah."]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Perhatikan letak sangkalannya — artinya berubah total**",
+      "[妈妈不让我去|Māma bú ràng wǒ qù]。 Ibu tidak mengizinkan saya pergi.",
+      "[妈妈让我不去|Māma ràng wǒ bú qù]。 Ibu menyuruh saya tidak pergi. (jarang; lebih wajar 让我别去)",
+      "**让 juga dipakai untuk pasif sehari-hari** — dibongkar di Unit 8: [我的车让人撞了|Wǒ de chē ràng rén zhuàng le]。 Mobil saya ditabrak orang.",
+      "**Yang tidak boleh:** menaruh kata bantu di depan kata kerja kedua tanpa alasan. ❌ 老板让我要加班。 ✅ [老板让我加班|Lǎobǎn ràng wǒ jiā bān]。"
+     ]
+    },
+    {
+     "title": "Lima cara mengatakan “harus”",
+     "body": [
+      "Bahasa Indonesia hanya punya “harus” dan “perlu”. Bahasa Mandarin punya lima, dan masing-masing membawa beban yang berbeda — dari sekadar sebaiknya sampai tidak ada pilihan lain."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Beratnya", "Contoh"],
+       "rows": [
+        ["[应该|yīnggāi]", "Sebaiknya, sudah semestinya", "[你应该早点睡|Nǐ yīnggāi zǎo diǎn shuì]。"],
+        ["[要|yào]", "Perlu, akan, mesti — paling netral", "[明天要开会|Míngtiān yào kāi huì]。"],
+        ["[得|děi]", "Harus, mau tak mau — sangat lisan", "[我得走了|Wǒ děi zǒu le]。 Saya harus pergi."],
+        ["[必须|bìxū]", "Wajib — aturan, tidak ada pilihan", "[必须带护照|Bìxū dài hùzhào]。"],
+        ["[非…不可|fēi…bù kě]", "Mutlak harus — nada tegas", "[今天非做完不可|Jīntiān fēi zuò wán bù kě]。"]
+       ]
+      },
+      {
+       "head": ["Sangkalannya", "Bentuk", "Arti"],
+       "rows": [
+        ["应该 →", "[不应该|bù yīnggāi]", "Seharusnya tidak — ada penilaian salah"],
+        ["要 →", "[不用|búyòng]", "Tidak perlu"],
+        ["得 →", "[不用|búyòng]", "⚠️ **Bukan** 不得"],
+        ["必须 →", "[不必|búbì] / [不用|búyòng]", "Tidak wajib"],
+        ["可以 →", "[不能|bù néng] / [不可以|bù kěyǐ]", "Tidak boleh — larangan"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Jebakan terbesar: sangkalan 得 dan 必须**",
+      "❌ 我不得走。 ❌ 我不必须走。",
+      "✅ [我不用走|Wǒ búyòng zǒu]。 Saya tidak perlu pergi.",
+      "✅ [我不能走|Wǒ bù néng zǒu]。 Saya tidak boleh pergi.",
+      "Perhatikan bahwa “tidak harus” dan “harus tidak” adalah dua hal yang sama sekali berbeda, dan bahasa Mandarin memisahkannya dengan tegas: 不用 (tidak perlu) vs 不能 (tidak boleh).",
+      "**得 dibaca *děi* di sini.** Tiga bacaan satu aksara: 得 *děi* harus · 得 *de* penanda pelengkap (Unit 3) · 得 *dé* memperoleh, seperti [得到|dédào]。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Diminta lembur di hari yang salah",
+   "intro": "Tiga hari kemudian. Rekan kerja Andi, 小张, meminta bantuan pada waktu yang paling tidak tepat. Perhatikan bagaimana Andi menolak tanpa mengatakan 不 sekali pun di awal.",
+   "lines": [
+    { "speaker": "小张:", "text": "[安迪|Āndí]，[今天晚上有空吗|jīntiān wǎnshang yǒu kòng ma]？[经理让我们把方案改完|Jīnglǐ ràng wǒmen bǎ fāng'àn gǎi wán]，[明天上午要交|míngtiān shàngwǔ yào jiāo]。", "id": "Andi, malam ini luang? Manajer menyuruh kita menyelesaikan revisi proposalnya, besok pagi harus diserahkan.", "literal": "Andi, hari-ini — malam — ada — waktu-luang — kah. manajer — menyuruh — kami — ambil — usulan — ubah — habis, besok — pagi — mau — serahkan." },
+    { "speaker": "安迪:", "text": "[今天晚上恐怕不行|Jīntiān wǎnshang kǒngpà bù xíng]。[我妈后天回国|Wǒ mā hòutiān huí guó]，[今天是最后一个晚上|jīntiān shì zuìhòu yí ge wǎnshang]。", "id": "Malam ini kayaknya tidak bisa. Ibu saya lusa pulang, malam ini malam terakhir.", "literal": "hari-ini — malam — khawatir — tidak — boleh. saya — ibu — lusa — kembali — negara, hari-ini — adalah — paling — akhir — satu — penggolong — malam." },
+    { "speaker": "小张:", "text": "[哎呀|Āiya]，[那怎么办|nà zěnme bàn]。[方案一个人肯定改不完|Fāng'àn yí ge rén kěndìng gǎi bu wán]。", "id": "Aduh, terus gimana. Proposal ini sendirian pasti tidak selesai direvisi.", "literal": "aduh, itu — bagaimana — mengurus. usulan — satu — penggolong — orang — pasti — ubah — tak-bisa — habis." },
+    { "speaker": "安迪:", "text": "[这样吧|Zhèyàng ba]，[我现在就开始改前面三部分|wǒ xiànzài jiù kāishǐ gǎi qiánmiàn sān bùfen]，[六点前发给你|liù diǎn qián fā gěi nǐ]。[剩下的你晚上弄|Shèngxià de nǐ wǎnshang nòng]，[有问题随时给我发消息|yǒu wèntí suíshí gěi wǒ fā xiāoxi]。", "id": "Begini saja, saya mulai revisi tiga bagian depan sekarang, sebelum jam enam saya kirim ke kamu. Sisanya kamu kerjakan malam, ada masalah kapan saja kirim pesan ke saya.", "literal": "begini — lah, saya — sekarang — langsung — mulai — ubah — depan — tiga — bagian, enam — jam — sebelum — kirim — kepada — kamu. sisa — turun — punya — kamu — malam — kerjakan, ada — masalah — kapan-saja — kepada — saya — kirim — pesan." },
+    { "speaker": "小张:", "text": "[那真是太感谢了|Nà zhēn shì tài gǎnxiè le]。[要不我请你吃饭|Yàobù wǒ qǐng nǐ chī fàn]？", "id": "Wah terima kasih banyak. Gimana kalau saya traktir kamu makan?", "literal": "itu — sungguh — adalah — terlalu — berterima-kasih — sudah. atau-tidak — saya — mengundang — kamu — makan — nasi." },
+    { "speaker": "安迪:", "text": "[不用不用|Búyòng búyòng]。[下周你不是要请假吗|Xià zhōu nǐ bú shì yào qǐng jià ma]？[经理已经说了让我替你|Jīnglǐ yǐjīng shuō le ràng wǒ tì nǐ]。[算扯平了|Suàn chě píng le]。", "id": "Tak usah. Minggu depan kamu mau ambil cuti kan? Manajer sudah bilang saya yang gantikan. Anggap saja impas.", "literal": "tidak-perlu — tidak-perlu. bawah — minggu — kamu — bukan — adalah — akan — minta — cuti — kah. manajer — sudah — bicara — sudah — menyuruh — saya — menggantikan — kamu. dihitung — tarik — rata — sudah." },
+    { "speaker": "小张:", "text": "[你怎么什么都知道|Nǐ zěnme shénme dōu zhīdào]。", "id": "Kok kamu tahu segalanya sih.", "literal": "kamu — bagaimana — apa — semua — tahu." },
+    { "speaker": "安迪:", "text": "[经理跟我说的|Jīnglǐ gēn wǒ shuō de]。[你是不是要回老家|Nǐ shì bu shì yào huí lǎojiā]？", "id": "Manajer yang bilang. Kamu mau pulang kampung, ya?", "literal": "manajer — dengan — saya — bicara — punya. kamu — adalah — tidak — adalah — akan — kembali — tua — rumah." },
+    { "speaker": "小张:", "text": "[我爷爷八十大寿|Wǒ yéye bāshí dàshòu]。[全家人都得回去|Quán jiā rén dōu děi huíqu]，[我姐从广州飞|wǒ jiě cóng Guǎngzhōu fēi]，[我哥从深圳开车|wǒ gē cóng Shēnzhèn kāichē]。", "id": "Kakek saya ulang tahun kedelapan puluh. Seluruh keluarga harus pulang, kakak perempuan saya terbang dari Guangzhou, kakak laki-laki saya menyetir dari Shenzhen.", "literal": "saya — kakek — delapan-puluh — besar — usia. seluruh — rumah — orang — semua — harus — kembali — pergi, saya — kakak-perempuan — dari — Guangzhou — terbang, saya — kakak-laki-laki — dari — Shenzhen — kemudi — mobil." },
+    { "speaker": "安迪:", "text": "[八十大寿是大事|Bāshí dàshòu shì dà shì]。[你必须去|Nǐ bìxū qù]，[工作让我们来分|gōngzuò ràng wǒmen lái fēn]。", "id": "Ulang tahun kedelapan puluh itu urusan besar. Kamu wajib pergi, kerjaannya biar kami yang bagi.", "literal": "delapan-puluh — besar — usia — adalah — besar — urusan. kamu — wajib — pergi, pekerjaan — biar — kami — datang — bagi." },
+    { "speaker": "小张:", "text": "[行|Xíng]，[那我先去改后面的部分|nà wǒ xiān qù gǎi hòumiàn de bùfen]。[你早点回去陪阿姨|Nǐ zǎo diǎn huíqu péi āyí]，[别在这儿磨蹭|bié zài zhèr móceng]。", "id": "Oke, saya duluan mengerjakan bagian belakang. Kamu pulang lebih cepat menemani tantenya, jangan berlama-lama di sini.", "literal": "boleh, itu — saya — dulu — pergi — ubah — belakang — punya — bagian. kamu — awal — sedikit — kembali — pergi — temani — bibi, jangan — di — sini — bertele-tele." }
+   ],
+   "notes": [
+    "**[恐怕|kǒngpà] harfiah “takut kalau-kalau”, dipakai untuk menolak dengan halus.** [恐怕不行|Kǒngpà bù xíng]。 sepertinya tidak bisa. Ia melunakkan penolakan tanpa mengaburkannya — jauh lebih baik daripada mengatakan 不可以.",
+    "**[怎么办|zěnme bàn] = gimana ini, bagaimana mengurusnya.** Salah satu kalimat paling sering di seluruh bahasa Mandarin. ⚠️ Bukan 怎么做 — 做 berarti mengerjakan sesuatu yang konkret, 办 berarti mengurus sebuah persoalan.",
+    "**[这样吧|Zhèyàng ba] = begini saja.** Pembuka usulan penengah. Kalimat ini yang mengubah percakapan dari menolak menjadi menawarkan jalan keluar, dan ia sangat dihargai di lingkungan kerja Tiongkok.",
+    "**[弄|nòng] = mengerjakan, mengurus, membuat — kata kerja serba guna.** Kalau kamu tidak tahu kata kerja yang tepat, 弄 hampir selalu bisa dipakai: [弄好了|nòng hǎo le] sudah beres, [弄坏了|nòng huài le] rusak dibuatnya (Unit 13), [弄清楚|nòng qīngchu] membuatnya jelas.",
+    "**⚠️ [你不是要请假吗|Nǐ bú shì yào qǐng jià ma]？ bukan pertanyaan sungguhan.** Rangka 「不是…吗」 dipakai untuk mengingatkan sesuatu yang sudah sama-sama diketahui: “kamu kan mau cuti?”. Nadanya ramah, bukan menuduh.",
+    "**[扯平|chě píng] = impas, seri.** Sangat lisan. Padanan yang lebih halus: [两清了|liǎng qīng le] sudah lunas dua-duanya.",
+    "**[大寿|dàshòu] = ulang tahun besar orang tua, biasanya kelipatan sepuluh mulai enam puluh.** Ini peristiwa keluarga yang berat di Tiongkok — tidak hadir tanpa alasan kuat dianggap serius. Perhatikan Andi langsung berkata 你必须去 dan bukan 你应该去."
+   ],
+   "grammars": [
+    {
+     "title": "帮 · 替 · 为 · 给 — “untuk siapa”",
+     "body": [
+      "Empat kata yang semuanya diterjemahkan “untuk” atau “buat”, dan semuanya berdiri **di depan kata kerja**. Selisihnya soal hubungan antara kamu dan orang itu."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Artinya", "Contoh"],
+       "rows": [
+        ["[帮|bāng]", "Menolong — pekerjaannya tetap miliknya", "[我帮你搬箱子|Wǒ bāng nǐ bān xiāngzi]。 Saya bantu kamu angkat kardus."],
+        ["[替|tì]", "Menggantikan — kamu mengambil alih seluruhnya", "[我替你去开会|Wǒ tì nǐ qù kāi huì]。 Saya rapat menggantikan kamu."],
+        ["[为|wèi]", "Demi — untuk kepentingan orang itu", "[我为你担心|Wǒ wèi nǐ dānxīn]。 Saya khawatir demi kamu."],
+        ["[给|gěi]", "Kepada / untuk — penerimanya", "[我给你打电话|Wǒ gěi nǐ dǎ diànhuà]。 Saya telepon kamu."]
+       ]
+      },
+      {
+       "head": ["Pasangan yang sering tertukar", "Selisihnya"],
+       "rows": [
+        ["[我帮你写|Wǒ bāng nǐ xiě]。 vs [我替你写|Wǒ tì nǐ xiě]。", "Membantu menulis vs menulis sepenuhnya sebagai gantimu"],
+        ["[给他买|gěi tā mǎi] vs [帮他买|bāng tā mǎi]", "Membelikan untuk dia vs membeli atas namanya"],
+        ["[为了|wèile] vs [为|wèi]", "为了 diikuti tujuan; 为 diikuti orang"],
+        ["[给我看|gěi wǒ kàn] vs [让我看|ràng wǒ kàn]", "Tunjukkan ke saya vs biarkan saya lihat"]
+       ]
+      }
+     ],
+     "after": [
+      "**给 juga punya pekerjaan lain: berdiri SESUDAH kata kerja sebagai penerima**",
+      "[把钱还给他|bǎ qián huán gěi tā] mengembalikan uangnya kepada dia · [发给你|fā gěi nǐ] kirim ke kamu · [送给妈妈|sòng gěi māma] hadiahkan kepada ibu.",
+      "⚠️ Dua rangka ini tidak selalu bisa ditukar. ✅ [我给你发消息|Wǒ gěi nǐ fā xiāoxi]。 ✅ [我发消息给你|Wǒ fā xiāoxi gěi nǐ]。 keduanya benar. Tapi ✅ [我给你打电话|Wǒ gěi nǐ dǎ diànhuà]。 sementara ❓ 我打电话给你。 terdengar seperti terjemahan dari bahasa lain — dimengerti, tapi bukan bentuk yang paling wajar di Tiongkok daratan."
+     ]
+    },
+    {
+     "title": "Menolak permintaan tanpa mengatakan 不",
+     "body": [
+      "Penolakan langsung dianggap kasar dalam banyak situasi kerja di Tiongkok. Yang dipakai orang bukan kebohongan, melainkan susunan tiga langkah: **akui — jelaskan — tawarkan sebagian**."
+     ],
+     "tables": [
+      {
+       "head": ["Langkah", "Kalimat", "Kenapa berhasil"],
+       "rows": [
+        ["Melunakkan", "[恐怕不行|Kǒngpà bù xíng]。 / [今天可能有点难|Jīntiān kěnéng yǒudiǎn nán]。", "Memberi tanda sebelum menolak"],
+        ["Menjelaskan", "[我妈后天回国|Wǒ mā hòutiān huí guó]。", "Alasan nyata, bukan minta maaf berulang"],
+        ["Menawarkan sebagian", "[这样吧|Zhèyàng ba]，[我先改三部分|wǒ xiān gǎi sān bùfen]。", "Mengubah penolakan jadi tawar-menawar"],
+        ["Menutup", "[有问题随时找我|Yǒu wèntí suíshí zhǎo wǒ]。", "Menjaga pintu tetap terbuka"]
+       ]
+      },
+      {
+       "head": ["Untuk ditolak halus", "Untuk menerima", "Untuk menunda"],
+       "rows": [
+        ["[恐怕不太方便|Kǒngpà bú tài fāngbiàn]。", "[没问题|Méi wèntí]。", "[我看一下时间再回你|Wǒ kàn yíxià shíjiān zài huí nǐ]。"],
+        ["[今天实在抽不开身|Jīntiān shízài chōu bu kāi shēn]。", "[交给我吧|Jiāo gěi wǒ ba]。", "[明天给你答复行吗|Míngtiān gěi nǐ dáfù xíng ma]？"],
+        ["[要不你问问小李|Yàobù nǐ wènwen Xiǎo Lǐ]？", "[包在我身上|Bāo zài wǒ shēnshang]。", "[让我想想|Ràng wǒ xiǎngxiang]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ Yang perlu dihindari: menjawab [不行|bù xíng]。 telanjang tanpa penjelasan, atau sebaliknya menyanggupi hal yang tidak akan kamu kerjakan. Yang kedua jauh lebih merusak — di lingkungan kerja Tiongkok, orang yang berkata “iya” lalu tidak mengerjakan dianggap jauh lebih bermasalah daripada orang yang menolak sejak awal.",
+      "[包在我身上|Bāo zài wǒ shēnshang]。 harfiah “bungkus di badan saya” = serahkan pada saya, beres. Kalimat yang sangat meyakinkan — pakai hanya kalau kamu benar-benar akan mengerjakannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Izin, cuti, dan lembur",
+   "blocks": [
+    { "type": "p", "text": "Kosakata yang akan kamu pakai di sistem HR mana pun di Tiongkok, dan di percakapan sehari-hari tentang pekerjaan." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh"], "rows": [
+     ["[请假|qǐng jià]", "mengambil izin/cuti", "[我想请两天假|Wǒ xiǎng qǐng liǎng tiān jià]。"],
+     ["[事假|shìjià]", "izin urusan pribadi", "[请一天事假|qǐng yì tiān shìjià]"],
+     ["[病假|bìngjià]", "izin sakit", "[他今天请病假|Tā jīntiān qǐng bìngjià]。"],
+     ["[年假|niánjià]", "cuti tahunan", "[年假还剩五天|Niánjià hái shèng wǔ tiān]。"],
+     ["[调休|tiáoxiū]", "tukar hari libur", "[周末加班可以调休|Zhōumò jiā bān kěyǐ tiáoxiū]。"],
+     ["[批|pī]", "menyetujui", "[经理批了吗|Jīnglǐ pī le ma]？"],
+     ["[申请|shēnqǐng]", "mengajukan; permohonan", "[提交申请|tíjiāo shēnqǐng]"],
+     ["[加班|jiā bān]", "lembur", "[今天又要加班|Jīntiān yòu yào jiā bān]。"],
+     ["[值班|zhí bān]", "piket, jaga giliran", "[这个周末谁值班|Zhège zhōumò shéi zhí bān]？"],
+     ["[迟到|chídào]", "terlambat", "[路上堵车迟到了|Lù shang dǔchē chídào le]。"],
+     ["[早退|zǎotuì]", "pulang lebih awal", "[今天我得早退一会儿|Jīntiān wǒ děi zǎotuì yíhuìr]。"],
+     ["[交接|jiāojiē]", "serah terima pekerjaan", "[走之前先交接一下|Zǒu zhī qián xiān jiāojiē yíxià]。"]
+    ] },
+    { "type": "kotak", "title": "Kalimat pengajuan izin yang aman dipakai", "items": [
+     "**Lisan:** [经理|Jīnglǐ]，[我明天想请半天假|wǒ míngtiān xiǎng qǐng bàn tiān jià]，[家里有点事|jiā lǐ yǒudiǎn shì]。[工作我会提前安排好|Gōngzuò wǒ huì tíqián ānpái hǎo]。",
+     "**Tertulis:** [您好|Nín hǎo]，[因为家里有事|yīnwèi jiā lǐ yǒu shì]，[申请三月五号请一天事假|shēnqǐng sān yuè wǔ hào qǐng yì tiān shìjià]，[工作已交接给小张|gōngzuò yǐ jiāojiē gěi Xiǎo Zhāng]。[请批准|Qǐng pīzhǔn]，[谢谢|xièxie]。",
+     "⚠️ [家里有点事|jiā lǐ yǒudiǎn shì] “ada urusan keluarga” adalah alasan yang diterima tanpa perlu dirinci. Kamu tidak wajib menjelaskan lebih jauh."
+    ] }
+   ]
+  },
+  {
+   "title": "Sapaan di kantor dan hierarki",
+   "blocks": [
+    { "type": "p", "text": "Memanggil orang dengan tepat di lingkungan kerja Tiongkok lebih penting daripada tata bahasa yang sempurna. Untungnya aturannya sedikit dan tetap." },
+    { "type": "tabel", "head": ["Cara memanggil", "Kepada siapa", "Catatan"], "rows": [
+     ["Marga + jabatan", "Atasan, siapa pun yang punya jabatan", "[李经理|Lǐ jīnglǐ] · [王总|Wáng zǒng] · [张老师|Zhāng lǎoshī]"],
+     ["[小|Xiǎo] + marga", "Rekan seusia atau lebih muda", "[小张|Xiǎo Zhāng] · [小李|Xiǎo Lǐ]"],
+     ["[老|Lǎo] + marga", "Rekan yang lebih tua, akrab", "[老王|Lǎo Wáng] — hangat, bukan menghina"],
+     ["Nama lengkap", "Rekan sejajar, netral", "[王丽|Wáng Lì]"],
+     ["Marga + [总|zǒng]", "Direktur, bos besar", "[陈总|Chén zǒng] — dari 总经理"],
+     ["[师傅|shīfu]", "Sopir, teknisi, satpam", "Selalu aman"],
+     ["[老师|lǎoshī]", "Guru, dan siapa pun yang mengajarimu", "Dipakai luas, tanda hormat"]
+    ] },
+    { "type": "sub", "text": "Yang sebaiknya dihindari" },
+    { "type": "tabel", "head": ["Jangan", "Kenapa", "Pakai ini"], "rows": [
+     ["[先生|xiānsheng] / [女士|nǚshì]", "Terlalu dingin untuk rekan sehari-hari", "Marga + jabatan"],
+     ["Nama diri saja (tanpa marga)", "Terlalu akrab kecuali kalian dekat", "Nama lengkap"],
+     ["[老|lǎo] + marga kepada perempuan", "Bisa disalahartikan soal usia", "[小|Xiǎo] + marga, atau nama lengkap"],
+     ["[同志|tóngzhì]", "Sudah sangat kuno, dan punya arti lain sekarang", "—"]
+    ] },
+    { "type": "p", "text": "Dan satu kebiasaan yang sangat dihargai: **[辛苦了|Xīnkǔ le]。** diucapkan kepada siapa pun yang baru menyelesaikan pekerjaan — kurir yang mengantar paket, rekan yang baru pulang dinas, kolega yang lembur semalaman. Tiga suku kata ini melakukan lebih banyak untuk hubunganmu di kantor daripada seluruh tata bahasa di unit ini." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "经理", "baca": "jīnglǐ", "id": "manajer" },
+  { "zh": "方便", "baca": "fāngbiàn", "id": "leluasa; praktis" },
+  { "zh": "批", "baca": "pī", "id": "menyetujui" },
+  { "zh": "医院", "baca": "yīyuàn", "id": "rumah sakit" },
+  { "zh": "检查", "baca": "jiǎnchá", "id": "pemeriksaan; memeriksa" },
+  { "zh": "放心", "baca": "fàngxīn", "id": "tenang, tidak khawatir" },
+  { "zh": "赶", "baca": "gǎn", "id": "mengejar, terburu-buru" },
+  { "zh": "替", "baca": "tì", "id": "menggantikan" },
+  { "zh": "系统", "baca": "xìtǒng", "id": "sistem" },
+  { "zh": "提交", "baca": "tíjiāo", "id": "mengajukan, submit" },
+  { "zh": "申请", "baca": "shēnqǐng", "id": "permohonan; mengajukan" },
+  { "zh": "马上", "baca": "mǎshàng", "id": "segera" },
+  { "zh": "常规", "baca": "chángguī", "id": "rutin, biasa" },
+  { "zh": "体检", "baca": "tǐjiǎn", "id": "cek kesehatan" },
+  { "zh": "查", "baca": "chá", "id": "memeriksa, mencari tahu" },
+  { "zh": "年轻", "baca": "niánqīng", "id": "muda" },
+  { "zh": "老", "baca": "lǎo", "id": "selalu, terus-menerus (lisan)" },
+  { "zh": "恐怕", "baca": "kǒngpà", "id": "sepertinya, khawatir" },
+  { "zh": "改", "baca": "gǎi", "id": "mengubah, merevisi" },
+  { "zh": "交", "baca": "jiāo", "id": "menyerahkan" },
+  { "zh": "后天", "baca": "hòutiān", "id": "lusa" },
+  { "zh": "最后", "baca": "zuìhòu", "id": "terakhir" },
+  { "zh": "怎么办", "baca": "zěnme bàn", "id": "bagaimana ini" },
+  { "zh": "部分", "baca": "bùfen", "id": "bagian" },
+  { "zh": "发", "baca": "fā", "id": "mengirim" },
+  { "zh": "剩下", "baca": "shèngxià", "id": "sisa" },
+  { "zh": "弄", "baca": "nòng", "id": "mengerjakan, mengurus" },
+  { "zh": "随时", "baca": "suíshí", "id": "kapan saja" },
+  { "zh": "消息", "baca": "xiāoxi", "id": "pesan, kabar" },
+  { "zh": "感谢", "baca": "gǎnxiè", "id": "berterima kasih" },
+  { "zh": "要不", "baca": "yàobù", "id": "atau begini, kalau tidak" },
+  { "zh": "扯平", "baca": "chě píng", "id": "impas" },
+  { "zh": "老家", "baca": "lǎojiā", "id": "kampung halaman" },
+  { "zh": "大寿", "baca": "dàshòu", "id": "ulang tahun besar orang tua" },
+  { "zh": "全家", "baca": "quán jiā", "id": "seluruh keluarga" },
+  { "zh": "分", "baca": "fēn", "id": "membagi" },
+  { "zh": "磨蹭", "baca": "móceng", "id": "bertele-tele, lambat" },
+  { "zh": "应该", "baca": "yīnggāi", "id": "seharusnya" },
+  { "zh": "必须", "baca": "bìxū", "id": "wajib" },
+  { "zh": "不用", "baca": "búyòng", "id": "tidak perlu" },
+  { "zh": "让", "baca": "ràng", "id": "menyuruh, membiarkan" },
+  { "zh": "劝", "baca": "quàn", "id": "menasihati, membujuk" },
+  { "zh": "担心", "baca": "dānxīn", "id": "khawatir" },
+  { "zh": "生气", "baca": "shēngqì", "id": "marah" },
+  { "zh": "事假", "baca": "shìjià", "id": "izin urusan pribadi" },
+  { "zh": "病假", "baca": "bìngjià", "id": "izin sakit" },
+  { "zh": "年假", "baca": "niánjià", "id": "cuti tahunan" },
+  { "zh": "调休", "baca": "tiáoxiū", "id": "tukar hari libur" },
+  { "zh": "值班", "baca": "zhí bān", "id": "piket" },
+  { "zh": "迟到", "baca": "chídào", "id": "terlambat" },
+  { "zh": "交接", "baca": "jiāojiē", "id": "serah terima pekerjaan" },
+  { "zh": "答复", "baca": "dáfù", "id": "jawaban resmi" },
+  { "zh": "堵车", "baca": "dǔchē", "id": "macet" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Gabungkan menjadi satu kalimat bertingkat dengan 让, 叫, atau 请.",
+   "items": [
+    "[老板说|Lǎobǎn shuō]。[我加班|Wǒ jiā bān]。",
+    "[妈妈说|Māma shuō]。[我早点回家|Wǒ zǎo diǎn huí jiā]。",
+    "[我想邀请他|Wǒ xiǎng yāoqǐng tā]。[他吃饭|Tā chī fàn]。",
+    "[医生说|Yīshēng shuō]。[她每年检查一次|Tā měi nián jiǎnchá yí cì]。",
+    "[公司决定|Gōngsī juédìng]。[我来北京|Wǒ lái Běijīng]。（pakai 派）"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 应该 · 得 · 必须 · 不用 · 不能.",
+   "items": [
+    "[出国| Chū guó] ___ [带护照|dài hùzhào]，[这是规定|zhè shì guīdìng]。",
+    "[你脸色不好| Nǐ liǎnsè bù hǎo]，___ [早点休息|zǎo diǎn xiūxi]。",
+    "[已经晚了| Yǐjīng wǎn le]，[我| wǒ] ___ [走了|zǒu le]。",
+    "[东西我买好了| Dōngxi wǒ mǎi hǎo le]，[你| nǐ] ___ [去了|qù le]。",
+    "[这里| Zhèlǐ] ___ [抽烟|chōuyān]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 帮 · 替 · 为 · 给.",
+   "items": [
+    "[我| Wǒ] ___ [你打电话|nǐ dǎ diànhuà]。",
+    "[我| Wǒ] ___ [你搬箱子|nǐ bān xiāngzi]，[你在旁边指挥就行|nǐ zài pángbiān zhǐhuī jiù xíng]。",
+    "[今天你不用来| Jīntiān nǐ búyòng lái]，[我| wǒ] ___ [你去开会|nǐ qù kāi huì]。",
+    "[妈妈总是| Māma zǒngshì] ___ [我担心|wǒ dānxīn]。",
+    "[我| Wǒ] ___ [他买了一杯咖啡|tā mǎi le yì bēi kāfēi]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[老板不让我请假|Lǎobǎn bú ràng wǒ qǐng jià]。",
+    "[这件事让我很生气|Zhè jiàn shì ràng wǒ hěn shēngqì]。",
+    "[今天晚上恐怕不行|Jīntiān wǎnshang kǒngpà bù xíng]。",
+    "[下周你不是要请假吗|Xià zhōu nǐ bú shì yào qǐng jià ma]？",
+    "[工作我会提前安排好|Gōngzuò wǒ huì tíqián ānpái hǎo]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Manajer menyuruh saya lembur.",
+    "Ibu saya tidak mengizinkan saya pergi.",
+    "Saya harus pergi sekarang.",
+    "Kamu tidak perlu datang.",
+    "Biar saya pikir dulu.",
+    "Saya rapat menggantikan kamu."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我不得走|Wǒ bù děi zǒu]。",
+    "[我不必须去|Wǒ bù bìxū qù]。",
+    "[老板让我要加班|Lǎobǎn ràng wǒ yào jiā bān]。",
+    "[请假两天|Qǐng jià liǎng tiān]。",
+    "[我帮忙你搬东西|Wǒ bāng máng nǐ bān dōngxi]。"
+   ]
+  }
+ ],
+ "answers": [
+  "老板让我加班。 — 妈妈叫我早点回家。 — 我想请他吃饭。 — 医生让她每年检查一次。 — 公司派我来北京。",
+  "必须 — 应该 — 得 — 不用 — 不能",
+  "给 — 帮 — 替 — 为 — 给 (atau 帮)",
+  "Bos tidak mengizinkan saya cuti. — Hal ini membuat saya sangat marah. — Malam ini sepertinya tidak bisa. — Minggu depan kamu kan mau ambil cuti? — Pekerjaannya akan saya atur lebih dulu supaya beres.",
+  "Jīnglǐ ràng wǒ jiā bān. — Wǒ māma bú ràng wǒ qù. — Wǒ děi zǒu le. — Nǐ búyòng lái. — Ràng wǒ xiǎngxiang. — Wǒ tì nǐ qù kāi huì.",
+  "我不用走。 / 我不能走。 (得 tak disangkal dengan 不) — 我不用去。 / 我不必去。 — 老板让我加班。 (tak perlu 要) — 请两天假。 (请假 sudah punya objek) — 我帮你搬东西。 (帮忙 sudah punya objek)"
+ ],
+ "wave": "Lima menit sebelum Unit 8: tulis satu pesan izin cuti dalam bahasa Mandarin yang benar-benar bisa kamu kirim ke atasanmu — alasan, tanggal, siapa yang mengambil alih pekerjaanmu, penutup. Empat kalimat. Simpan di catatan HP-mu; suatu hari kamu akan tinggal menyalinnya, dan hari itu unit ini terbayar seluruhnya."
+}

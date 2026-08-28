@@ -1,0 +1,952 @@
+{
+ "title": "Menyorot satu bagian dari kejadian yang sudah lewat",
+ "title_target": "是坐飞机来的 — Shì zuò fēijī lái de",
+ "goal": "Menguasai rangka 是…的 — cara Mandarin menanyakan dan menegaskan kapan, di mana, dengan apa, atau bersama siapa sesuatu terjadi — lalu menyelesaikan urusan 就 dan 才 yang sudah tiga kali muncul sejak Unit 1.",
+ "bekal": [
+  "bertanya “naik apa kamu ke sini?”, “kapan kamu tiba?”, “siapa yang bilang?” dengan rangka 是…的",
+  "membedakan kalimat 了 dari kalimat 是…的 — keduanya tentang masa lalu, tapi menjawab pertanyaan yang berbeda",
+  "memakai 就 untuk cepat dan 才 untuk lambat, di kalimat yang sudah maupun belum terjadi",
+  "mengurus kedatangan: bandara, kereta, taksi, penginapan",
+  "bertanya asal-usul sesuatu tanpa terdengar menginterogasi"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Menjemput di bandara",
+   "intro": "Ibu Andi, 妈妈, datang berkunjung ke Beijing untuk pertama kalinya. Andi menjemput di Bandara Daxing. Perhatikan: hampir setiap pertanyaan tentang perjalanan yang sudah selesai memakai rangka 是…的, bukan 了.",
+   "lines": [
+    {
+     "speaker": "安迪:",
+     "text": "[妈|Mā]！[这边|Zhèbiān]！[你是几点到的|Nǐ shì jǐ diǎn dào de]？",
+     "id": "Ibu! Sini! Ibu sampai jam berapa?",
+     "literal": "ibu. sini — sisi. kamu — adalah — berapa — jam — sampai — punya."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[飞机十点半就落地了|Fēijī shí diǎn bàn jiù luòdì le]，[可是行李等了四十分钟|kěshì xíngli děng le sìshí fēnzhōng]。",
+     "id": "Pesawatnya sudah mendarat jam setengah sebelas, tapi bagasinya nunggu empat puluh menit.",
+     "literal": "pesawat — sepuluh — jam — setengah — langsung — jatuh-tanah — sudah, tetapi — bagasi — tunggu — sudah — empat-puluh — menit."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[怪不得|Guàibude]。[我十一点就到了|Wǒ shíyī diǎn jiù dào le]，[等到现在|děng dào xiànzài]。[你是坐哪家航空公司的|Nǐ shì zuò nǎ jiā hángkōng gōngsī de]？",
+     "id": "Pantas. Aku sudah sampai jam sebelas, nunggu sampai sekarang. Ibu naik maskapai apa?",
+     "literal": "aneh — tidak — bisa. saya — sebelas — jam — langsung — sampai — sudah, tunggu — sampai — sekarang. kamu — adalah — duduk — mana — penggolong — penerbangan — perusahaan — punya."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[南航|Nánháng]。[直飞|Zhí fēi]，[没有转机|méiyǒu zhuǎnjī]。[六个多小时|Liù ge duō xiǎoshí]。",
+     "id": "China Southern. Langsung, tidak transit. Enam jam lebih.",
+     "literal": "selatan — terbang. lurus — terbang, tidak-ada — pindah — pesawat. enam — penggolong — lebih — jam."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[累不累|Lèi bu lèi]？[我们先坐机场快线|Wǒmen xiān zuò jīchǎng kuàixiàn]，[还是打车|háishi dǎ chē]？",
+     "id": "Capek tidak? Kita naik kereta bandara dulu, atau naik taksi?",
+     "literal": "lelah — tidak — lelah. kami — dulu — duduk — bandara — cepat — jalur, atau — pukul — mobil."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[打车吧|Dǎ chē ba]，[行李太多了|xíngli tài duō le]。[对了|Duì le]，[你上次说的那个朋友|nǐ shàng cì shuō de nàge péngyou]，[是谁介绍你们认识的|shì shéi jièshào nǐmen rènshi de]？",
+     "id": "Naik taksi saja, bagasinya kebanyakan. Oh iya, teman yang kamu ceritakan kemarin itu, siapa yang mengenalkan kalian?",
+     "literal": "pukul — mobil — lah, bagasi — terlalu — banyak — sudah. betul — sudah, kamu — atas — kali — bicara — punya — itu — penggolong — teman, adalah — siapa — memperkenalkan — kalian — mengenal — punya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[没有人介绍|Méiyǒu rén jièshào]，[我们是在同一个班上认识的|wǒmen shì zài tóng yí ge bān shang rènshi de]。[两年前|Liǎng nián qián]。",
+     "id": "Tidak ada yang mengenalkan, kami kenal di kelas yang sama. Dua tahun lalu.",
+     "literal": "tidak-ada — orang — memperkenalkan, kami — adalah — di — sama — satu — penggolong — kelas — atas — mengenal — punya. dua — tahun — lalu."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[哦|Ò]。[那她是中国人吗|Nà tā shì Zhōngguó rén ma]？",
+     "id": "Oh. Jadi dia orang Tiongkok?",
+     "literal": "oh. itu — dia — adalah — Tiongkok — orang — kah."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[妈|Mā]，[是同学|shì tóngxué]，[不是女朋友|bú shì nǚpéngyou]。[你怎么一下飞机就问这个|Nǐ zěnme yí xià fēijī jiù wèn zhège]？",
+     "id": "Ibu, itu teman sekelas, bukan pacar. Kok begitu turun pesawat langsung tanya itu?",
+     "literal": "ibu, adalah — se-kelas, bukan — perempuan — teman. kamu — bagaimana — satu — turun — pesawat — langsung — tanya — ini."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[我随便问问|Wǒ suíbiàn wènwen]。[你爸让我问的|Nǐ bà ràng wǒ wèn de]。",
+     "id": "Iseng tanya saja. Ayahmu yang menyuruh nanya.",
+     "literal": "saya — sembarang — tanya — tanya. kamu — ayah — menyuruh — saya — tanya — punya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我就知道|Wǒ jiù zhīdào]。[走吧|Zǒu ba]，[出租车在那边|chūzūchē zài nàbiān]。[酒店我已经订好了|Jiǔdiàn wǒ yǐjīng dìng hǎo le]。",
+     "id": "Sudah kuduga. Ayo, taksinya di sebelah sana. Hotelnya sudah aku pesan.",
+     "literal": "saya — langsung — tahu. jalan — lah, sewa — mobil — di — itu — sisi. hotel — saya — sudah — pesan — beres — sudah."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[酒店是你订的还是公司订的|Jiǔdiàn shì nǐ dìng de háishi gōngsī dìng de]？",
+     "id": "Hotelnya kamu yang pesan atau kantor?",
+     "literal": "hotel — adalah — kamu — pesan — punya — atau — perusahaan — pesan — punya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[我订的|Wǒ dìng de]。[妈|Mā]，[你才刚到|nǐ cái gāng dào]，[先休息一下再审问我吧|xiān xiūxi yíxià zài shěnwèn wǒ ba]。",
+     "id": "Aku yang pesan. Bu, Ibu baru saja sampai, istirahat dulu baru interogasi aku.",
+     "literal": "saya — pesan — punya. ibu, kamu — baru — barusan — sampai, dulu — istirahat — sekali — lagi — memeriksa-tanya — saya — lah."
+    }
+   ],
+   "notes": [
+    "**[你是几点到的|Nǐ shì jǐ diǎn dào de]？ bukan 你几点到了？** Keduanya benar tata bahasanya, tapi menanyakan hal yang berbeda. Yang pertama mengandaikan si ibu **sudah pasti sampai** dan menanyakan **jamnya**. Yang kedua menanyakan apakah peristiwanya terjadi. Ini inti seluruh unit — kotak tata bahasa pertama membongkarnya.",
+    "**[怪不得|guàibude] = pantas saja.** Harfiahnya “tidak bisa disalahkan”. Dipakai persis seperti dalam bahasa kita, sesudah baru mengetahui sebabnya.",
+    "**⚠️ Dua 就 di dialog ini punya arti yang berbeda.** [十点半就落地了|shí diǎn bàn jiù luòdì le] = sudah mendarat sedini itu. [一下飞机就问|yí xià fēijī jiù wèn] = begitu turun pesawat langsung bertanya. Kotak tata bahasa kedua menyusun semuanya.",
+    "**[六个多小时|liù ge duō xiǎoshí] = enam jam lebih.** 多 dipasang **sesudah penggolong** kalau angkanya bulat kecil: [三个多月|sān ge duō yuè] tiga bulan lebih. Tapi sesudah angka besar, 多 masuk sebelum penggolong: [三十多个人|sānshí duō ge rén] tiga puluhan orang.",
+    "**[还是|háishi] dipakai untuk pertanyaan “A atau B”, [或者|huòzhě] untuk pernyataan.** ✅ [你喝茶还是喝咖啡|Nǐ hē chá háishi hē kāfēi]？ ✅ [茶或者咖啡都行|Chá huòzhě kāfēi dōu xíng]。 ❌ 你喝茶或者咖啡？ Ini kesalahan yang bertahan sangat lama pada pemelajar Indonesia.",
+    "**[随便|suíbiàn] = terserah, sembarangan, asal saja.** [随便问问|suíbiàn wènwen] cuma iseng tanya. [随便你|Suíbiàn nǐ]。 terserah kamu. Salah satu kata paling sering dipakai di Tiongkok, dan sering jadi jawaban yang bikin frustrasi ketika ditanya mau makan apa.",
+    "**[我就知道|Wǒ jiù zhīdào] = sudah kuduga.** Bentuk beku, dipakai dengan nada pasrah atau menang. Perhatikan 就 di sini artinya “memang sudah dari tadi”."
+   ],
+   "grammars": [
+    {
+     "title": "是…的 — menyorot keadaan sebuah kejadian yang pasti sudah terjadi",
+     "body": [
+      "Rangka ini dipakai ketika kedua pihak **sudah sama-sama tahu bahwa peristiwanya terjadi**, dan yang sedang dibicarakan adalah salah satu keadaannya: kapan, di mana, dengan apa, dengan siapa, kenapa, atau oleh siapa.",
+      "Rangkanya: **Pelaku + 是 + [yang disorot] + kata kerja + 的**. Bagian yang disorot berdiri tepat sesudah 是.",
+      "是 boleh dilepas dalam kalimat positif ([我坐飞机来的|Wǒ zuò fēijī lái de]。), tapi **tidak boleh** dilepas dalam kalimat negatif."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Yang disorot",
+        "Contoh",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "Waktu",
+         "[你是什么时候来的|Nǐ shì shénme shíhou lái de]？",
+         "Kamu datangnya kapan?"
+        ],
+        [
+         "Tempat",
+         "[我是在北京学的|Wǒ shì zài Běijīng xué de]。",
+         "Saya belajarnya di Beijing."
+        ],
+        [
+         "Cara / alat",
+         "[他是坐高铁来的|Tā shì zuò gāotiě lái de]。",
+         "Dia datangnya naik kereta cepat."
+        ],
+        [
+         "Pelaku",
+         "[这是我做的|Zhè shì wǒ zuò de]。",
+         "Ini saya yang membuat."
+        ],
+        [
+         "Bersama siapa",
+         "[我是跟朋友一起去的|Wǒ shì gēn péngyou yìqǐ qù de]。",
+         "Saya perginya bersama teman."
+        ],
+        [
+         "Alasan",
+         "[他是为了工作来的|Tā shì wèile gōngzuò lái de]。",
+         "Dia datangnya demi pekerjaan."
+        ]
+       ]
+      },
+      {
+       "head": [
+        "Kalimat 了",
+        "Kalimat 是…的",
+        "Selisihnya"
+       ],
+       "rows": [
+        [
+         "[他来了|Tā lái le]。",
+         "[他是昨天来的|Tā shì zuótiān lái de]。",
+         "Yang pertama: dia datang. Yang kedua: datangnya kemarin"
+        ],
+        [
+         "[我买了这本书|Wǒ mǎi le zhè běn shū]。",
+         "[这本书是我在网上买的|Zhè běn shū shì wǒ zài wǎng shang mǎi de]。",
+         "Yang kedua mengandaikan bukunya sudah ada di meja"
+        ],
+        [
+         "[你吃饭了吗|Nǐ chī fàn le ma]？",
+         "[你是在哪儿吃的|Nǐ shì zài nǎr chī de]？",
+         "Yang kedua sudah tahu kamu makan"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Di mana objeknya berdiri?**",
+      "Kalau objeknya kata benda biasa, 的 boleh berdiri **sebelum atau sesudah** objek — keduanya benar.",
+      "[我是在北京学的中文|Wǒ shì zài Běijīng xué de Zhōngwén]。 ✅ (lebih sering)",
+      "[我是在北京学中文的|Wǒ shì zài Běijīng xué Zhōngwén de]。 ✅",
+      "Tapi kalau objeknya kata ganti orang, 的 **wajib** di ujung: [我是昨天见的他|Wǒ shì zuótiān jiàn de tā]。 terdengar aneh; yang wajar [我是昨天见他的|Wǒ shì zuótiān jiàn tā de]。",
+      "**Bentuk negatifnya:** [我不是坐飞机来的|Wǒ bú shì zuò fēijī lái de]。 Saya datangnya bukan naik pesawat. Di sini 是 tidak boleh dilepas, dan 不 selalu di depan 是 — **bukan** 没."
+     ]
+    },
+    {
+     "title": "就 dan 才 — cepat dan lambat menurut si pembicara",
+     "body": [
+      "Keduanya berdiri di depan kata kerja, keduanya tentang waktu, dan keduanya **tidak menyebut angka sama sekali** — yang mereka sampaikan adalah pendapat pembicara tentang angka itu.",
+      "[就|jiù] = lebih cepat / lebih mudah / lebih sedikit daripada yang diduga. [才|cái] = lebih lambat / lebih sulit / lebih banyak daripada yang diduga."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Kalimat",
+        "Arti",
+        "Sikap pembicara"
+       ],
+       "rows": [
+        [
+         "[他六点就来了|Tā liù diǎn jiù lái le]。",
+         "Dia sudah datang jam enam.",
+         "Kepagian — lebih cepat dari dugaan"
+        ],
+        [
+         "[他九点才来|Tā jiǔ diǎn cái lái]。",
+         "Dia baru datang jam sembilan.",
+         "Kesiangan — lebih lambat dari dugaan"
+        ],
+        [
+         "[我看了一遍就懂了|Wǒ kàn le yí biàn jiù dǒng le]。",
+         "Sekali baca saya langsung paham.",
+         "Gampang"
+        ],
+        [
+         "[我看了五遍才懂|Wǒ kàn le wǔ biàn cái dǒng]。",
+         "Lima kali baca baru saya paham.",
+         "Susah"
+        ],
+        [
+         "[三十块就够了|Sānshí kuài jiù gòu le]。",
+         "Tiga puluh yuan sudah cukup.",
+         "Murah"
+        ],
+        [
+         "[三百块才够|Sānbǎi kuài cái gòu]。",
+         "Tiga ratus yuan baru cukup.",
+         "Mahal"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Aturan 了 yang membedakan keduanya**",
+      "Kalimat ber-就 untuk kejadian yang sudah lewat **memakai 了**: [他六点就走了|Tā liù diǎn jiù zǒu le]。",
+      "Kalimat ber-才 untuk kejadian yang sudah lewat **tidak memakai 了**: [他九点才走|Tā jiǔ diǎn cái zǒu]。 ❌ 他九点才走了。",
+      "**就 juga berarti “begitu … langsung …”**",
+      "Rangka [一…就…|yī…jiù…]: [我一到家就睡觉|Wǒ yí dào jiā jiù shuìjiào]。 Begitu sampai rumah saya langsung tidur. [他一喝酒就脸红|Tā yì hē jiǔ jiù liǎn hóng]。 Begitu minum alkohol wajahnya langsung merah.",
+      "**才 juga berarti “baru saja” dan “barulah”**: [我才来五分钟|Wǒ cái lái wǔ fēnzhōng]。 Saya baru lima menit di sini. [只有努力才能成功|Zhǐyǒu nǔlì cái néng chénggōng]。 Hanya dengan berusaha barulah bisa berhasil."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Di dalam taksi",
+   "intro": "Perjalanan satu jam dari bandara ke pusat kota. Ibu Andi bertanya tentang segala hal, dan hampir semuanya soal asal-usul: kapan, di mana, siapa, dari mana. Rangka 是…的 muncul sembilan kali.",
+   "lines": [
+    {
+     "speaker": "司机:",
+     "text": "[去哪儿|Qù nǎr]？",
+     "id": "Ke mana?",
+     "literal": "pergi — mana."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[师傅|Shīfu]，[去建国门那边的如家酒店|qù Jiànguómén nàbiān de Rújiā jiǔdiàn]，[麻烦您|máfan nín]。",
+     "id": "Pak, ke Hotel Home Inn di daerah Jianguomen, ya.",
+     "literal": "guru, pergi — Jianguomen — itu — sisi — punya — Rujia — hotel, merepotkan — Anda."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[好嘞|Hǎo lei]。[小伙子中文说得不错啊|Xiǎohuǒzi Zhōngwén shuō de búcuò a]，[在哪儿学的|zài nǎr xué de]？",
+     "id": "Siap. Bahasa Mandarin anak muda ini bagus juga, belajarnya di mana?",
+     "literal": "baik — lah. kecil — orang — Mandarin — bicara — tingkat — tidak — salah — lho, di — mana — belajar — punya."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[在印尼学的|Zài Yìnní xué de]，[来北京以后才开始说|lái Běijīng yǐhòu cái kāishǐ shuō]。",
+     "id": "Belajarnya di Indonesia, baru mulai bicara setelah datang ke Beijing.",
+     "literal": "di — Indonesia — belajar — punya, datang — Beijing — sesudah — baru — mulai — bicara."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[印尼|Yìnní]？[我拉过好几个印尼客人|Wǒ lā guo hǎo jǐ ge Yìnní kèrén]。[你们那边热吧|Nǐmen nàbiān rè ba]？",
+     "id": "Indonesia? Saya pernah mengantar beberapa penumpang Indonesia. Di sana panas ya?",
+     "literal": "Indonesia. saya — tarik — pernah — baik — beberapa — penggolong — Indonesia — tamu. kalian — itu — sisi — panas — kan."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[一年到头都是三十度|Yì nián dào tóu dōu shì sānshí dù]。[我第一次看见雪就是在北京|Wǒ dì-yī cì kàn jiàn xuě jiù shì zài Běijīng]。",
+     "id": "Sepanjang tahun tiga puluh derajat. Pertama kali saya melihat salju justru di Beijing.",
+     "literal": "satu — tahun — sampai — ujung — semua — adalah — tiga-puluh — derajat. saya — ke-satu — kali — lihat — kena — salju — justru — adalah — di — Beijing."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[他打电话回家|Tā dǎ diànhuà huí jiā]，[高兴得话都说不清楚了|gāoxìng de huà dōu shuō bu qīngchu le]。",
+     "id": "Dia telepon ke rumah, saking senangnya sampai bicaranya tidak jelas.",
+     "literal": "dia — pukul — telepon — kembali — rumah, gembira — tingkat — kata — semua — bicara — tak-bisa — jelas — sudah."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[哈哈|Hāha]，[头一回见雪都这样|tóu yì huí jiàn xuě dōu zhèyàng]。[您是第一次来中国吗|Nín shì dì-yī cì lái Zhōngguó ma]？",
+     "id": "Haha, pertama kali lihat salju memang begitu semua. Ibu pertama kali ke Tiongkok?",
+     "literal": "haha, kepala — satu — kali — lihat — salju — semua — begini. Anda — adalah — ke-satu — kali — datang — Tiongkok — kah."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[第一次|Dì-yī cì]。[我是为了看儿子来的|Wǒ shì wèile kàn érzi lái de]。[顺便看看长城|Shùnbiàn kànkan Chángchéng]。",
+     "id": "Pertama kali. Saya datang untuk menengok anak saya. Sekalian lihat Tembok Besar.",
+     "literal": "ke-satu — kali. saya — adalah — demi — lihat — anak — datang — punya. sekalian — lihat — lihat — Panjang — Tembok."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[长城得去|Chángchéng děi qù]。[不过别去八达岭|Búguò bié qù Bādálǐng]，[人太多|rén tài duō]。[去慕田峪|Qù Mùtiányù]，[人少|rén shǎo]，[景色更好|jǐngsè gèng hǎo]。",
+     "id": "Tembok Besar wajib. Tapi jangan ke Badaling, terlalu ramai. Ke Mutianyu saja, orangnya sedikit, pemandangannya lebih bagus.",
+     "literal": "Panjang — Tembok — harus — pergi. tetapi — jangan — pergi — Badaling, orang — terlalu — banyak. pergi — Mutianyu, orang — sedikit, pemandangan — lebih — bagus."
+    },
+    {
+     "speaker": "安迪:",
+     "text": "[您是本地人吗|Nín shì běndì rén ma]？[对北京这么熟|Duì Běijīng zhème shú]。",
+     "id": "Bapak orang sini? Kok hafal sekali soal Beijing.",
+     "literal": "Anda — adalah — asal — tempat — orang — kah. terhadap — Beijing — begini — akrab."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[我是河北的|Wǒ shì Héběi de]，[九零年来的北京|jiǔ líng nián lái de Běijīng]。[三十多年了|Sānshí duō nián le]，[比本地人还熟|bǐ běndì rén hái shú]。",
+     "id": "Saya orang Hebei, datang ke Beijing tahun sembilan puluh. Sudah tiga puluh tahun lebih, lebih hafal daripada orang aslinya.",
+     "literal": "saya — adalah — Hebei — punya, sembilan — nol — tahun — datang — punya — Beijing. tiga-puluh — lebih — tahun — sudah, dibanding — asal — tempat — orang — malah — akrab."
+    },
+    {
+     "speaker": "妈妈:",
+     "text": "[那您孩子也在北京吗|Nà nín háizi yě zài Běijīng ma]？",
+     "id": "Kalau begitu anak Bapak juga di Beijing?",
+     "literal": "itu — Anda — anak — juga — di — Beijing — kah."
+    },
+    {
+     "speaker": "司机:",
+     "text": "[闺女在上海|Guīnü zài Shànghǎi]，[去年才结的婚|qùnián cái jié de hūn]。[一年就回来一次|Yì nián jiù huílai yí cì]。",
+     "id": "Anak perempuan saya di Shanghai, baru menikah tahun lalu. Setahun pulang cuma sekali.",
+     "literal": "anak-perempuan — di — Shanghai, tahun-lalu — baru — mengikat — punya — pernikahan. satu — tahun — hanya — kembali — datang — satu — kali."
+    }
+   ],
+   "notes": [
+    "**[师傅|shīfu] adalah panggilan untuk sopir, tukang, dan pekerja terampil mana pun.** Harfiah “guru/ahli”. Memanggil sopir taksi dengan 先生 terdengar aneh; 师傅 selalu tepat. Untuk pelayan restoran pakai [服务员|fúwùyuán], untuk pemilik toko pakai [老板|lǎobǎn].",
+    "**[好嘞|Hǎo lei] = siap, oke.** Bentuk santai khas Beijing dari 好了. Kamu akan mendengarnya dari sopir, pedagang, dan pelayan setiap hari.",
+    "**⚠️ [九零年来的北京|jiǔ líng nián lái de Běijīng] menaruh 的 SEBELUM objeknya, dan [去年才结的婚|qùnián cái jié de hūn] menyisipkan 的 di tengah kata 结婚.** Keduanya bentuk yang sangat lisan dan sangat wajar. Perhatikan bahwa 结婚 memang bisa dibelah — ingat Unit 2, kata kerja yang sudah menelan objeknya.",
+    "**[一年到头|yì nián dào tóu] = sepanjang tahun, dari ujung ke ujung.** Ungkapan tetap. Kembarannya [从头到尾|cóng tóu dào wěi] dari awal sampai akhir.",
+    "**[我第一次看见雪就是在北京|Wǒ dì-yī cì kàn jiàn xuě jiù shì zài Běijīng] — 就是 di sini menegaskan “justru, tepatnya”.** Bandingkan 就是 dalam [我就是不去|Wǒ jiù shì bú qù]。 saya memang tidak mau pergi, titik.",
+    "**[熟|shú] = akrab, hafal, kenal betul.** [我跟他很熟|Wǒ gēn tā hěn shú]。 saya akrab dengan dia. [路我很熟|Lù wǒ hěn shú]。 jalannya saya hafal. Aksara yang sama juga berarti “matang” untuk makanan: [肉熟了|Ròu shú le]。",
+    "**[闺女|guīnü] = anak perempuan, dalam bahasa lisan utara.** Padanan bakunya [女儿|nǚ'ér]. Kata-kata seperti ini tidak muncul di buku pelajaran tapi terdengar di jalan setiap hari."
+   ],
+   "grammars": [
+    {
+     "title": "Empat pekerjaan 就 yang perlu kamu pisahkan",
+     "body": [
+      "就 adalah salah satu kata paling sering dalam bahasa Mandarin, dan ia mengerjakan setidaknya empat hal yang berbeda. Menghafalnya sebagai satu arti tidak akan berhasil; menghafalnya sebagai empat pola akan."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Pekerjaan",
+        "Contoh",
+        "Arti"
+       ],
+       "rows": [
+        [
+         "Lebih cepat dari dugaan",
+         "[他六点就走了|Tā liù diǎn jiù zǒu le]。",
+         "Dia sudah pergi jam enam"
+        ],
+        [
+         "一…就… begitu … langsung …",
+         "[我一累就想吃甜的|Wǒ yí lèi jiù xiǎng chī tián de]。",
+         "Begitu capek saya ingin yang manis"
+        ],
+        [
+         "Penegas: justru, memang",
+         "[我就是这个意思|Wǒ jiù shì zhège yìsi]。",
+         "Persis itu maksud saya"
+        ],
+        [
+         "Hanya, tak lebih dari",
+         "[我就带了五十块|Wǒ jiù dài le wǔshí kuài]。",
+         "Saya cuma bawa lima puluh yuan"
+        ],
+        [
+         "Kalau begitu, ya sudah",
+         "[你不去我就自己去|Nǐ bú qù wǒ jiù zìjǐ qù]。",
+         "Kalau kamu tidak pergi, saya pergi sendiri"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "Yang terakhir adalah pekerjaan 就 yang paling sering muncul di modul ini mulai Unit 11: **就 sebagai penutup kalimat bersyarat**. [如果下雨|Rúguǒ xià yǔ]，[我们就不去了|wǒmen jiù bú qù le]。 Kalau hujan, ya kita tidak jadi pergi.",
+      "⚠️ Satu kebiasaan yang menolong: setiap kali kamu melihat 就 dalam bacaan, tanyakan “ini 就 yang mana dari lima?” Sesudah dua minggu, pertanyaan itu berhenti diperlukan."
+     ]
+    },
+    {
+     "title": "Bertanya asal-usul tanpa terdengar menginterogasi",
+     "body": [
+      "Rangka 是…的 sangat berguna, tapi ia juga bisa terdengar seperti pemeriksaan kalau dipakai berturut-turut — persis seperti yang dikeluhkan Andi kepada ibunya. Ada dua cara melunakkannya."
+     ],
+     "tables": [
+      {
+       "head": [
+        "Terdengar keras",
+        "Lebih lunak",
+        "Kenapa"
+       ],
+       "rows": [
+        [
+         "[你是跟谁去的|Nǐ shì gēn shéi qù de]？",
+         "[你是一个人去的吗|Nǐ shì yí ge rén qù de ma]？",
+         "Pertanyaan ya/tidak lebih ringan daripada kata tanya"
+        ],
+        [
+         "[你是花多少钱买的|Nǐ shì huā duōshao qián mǎi de]？",
+         "[贵不贵|Guì bu guì]？",
+         "Tidak menuntut angka"
+        ],
+        [
+         "[这是谁做的|Zhè shì shéi zuò de]？",
+         "[这是你自己做的吧|Zhè shì nǐ zìjǐ zuò de ba]？",
+         "吧 mengubahnya jadi dugaan, bukan tuntutan"
+        ],
+        [
+         "[你是什么时候回来的|Nǐ shì shénme shíhou huílai de]？",
+         "[你刚回来吗|Nǐ gāng huílai ma]？",
+         "Menawarkan jawaban, bukan meminta"
+        ]
+       ]
+      }
+     ],
+     "after": [
+      "**Dua kata kecil yang melunakkan hampir semua pertanyaan**",
+      "**[吧|ba]** — mengubah pertanyaan jadi dugaan yang tinggal dibenarkan. [你是坐飞机来的吧|Nǐ shì zuò fēijī lái de ba]？",
+      "**[随便问问|suíbiàn wènwen]** — dipasang sesudahnya untuk mengaku bahwa kamu cuma iseng. Ini yang dipakai ibu Andi, dan ia dipakai justru ketika pertanyaannya tidak iseng sama sekali.",
+      "⚠️ Beberapa pertanyaan yang wajar di Tiongkok terasa terlalu pribadi bagi orang Indonesia, dan sebaliknya. [你一个月挣多少钱|Nǐ yí ge yuè zhèng duōshao qián]？ berapa gajimu sebulan — pertanyaan biasa di antara kenalan di Tiongkok. Kamu tidak wajib menjawab; [还行吧|Hái xíng ba]。 lumayanlah, sudah cukup sebagai jawaban."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Datang dan pergi: bandara, kereta, taksi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Seluruh kosakata perjalanan yang kamu perlukan untuk sampai dari bandara ke tempat tidur, disusun menurut urutan kejadiannya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tahap",
+      "Mandarin",
+      "Kalimat yang kamu butuhkan"
+     ],
+     "rows": [
+      [
+       "Turun pesawat",
+       "[下飞机|xià fēijī]",
+       "[请问行李在哪儿取|Qǐngwèn xíngli zài nǎr qǔ]？"
+      ],
+      [
+       "Imigrasi",
+       "[入境|rùjìng]",
+       "[我是来出差的|Wǒ shì lái chūchāi de]。"
+      ],
+      [
+       "Bagasi",
+       "[行李|xíngli]",
+       "[我的行李没出来|Wǒ de xíngli méi chūlai]。"
+      ],
+      [
+       "Kartu SIM",
+       "[电话卡|diànhuàkǎ]",
+       "[我要办一张手机卡|Wǒ yào bàn yì zhāng shǒujīkǎ]。"
+      ],
+      [
+       "Taksi",
+       "[出租车|chūzūchē] / [打车|dǎ chē]",
+       "[师傅|Shīfu]，[去这个地址|qù zhège dìzhǐ]。"
+      ],
+      [
+       "Kereta bandara",
+       "[机场快线|jīchǎng kuàixiàn]",
+       "[快线在哪儿坐|Kuàixiàn zài nǎr zuò]？"
+      ],
+      [
+       "Kereta cepat",
+       "[高铁|gāotiě]",
+       "[我买了明天的高铁票|Wǒ mǎi le míngtiān de gāotiě piào]。"
+      ],
+      [
+       "Kereta bawah tanah",
+       "[地铁|dìtiě]",
+       "[几号线|Jǐ hào xiàn]？ Jalur berapa?"
+      ],
+      [
+       "Hotel",
+       "[酒店|jiǔdiàn] / [宾馆|bīnguǎn]",
+       "[我订了一个标准间|Wǒ dìng le yí ge biāozhǔnjiān]。"
+      ],
+      [
+       "Check in",
+       "[入住|rùzhù]",
+       "[几点可以入住|Jǐ diǎn kěyǐ rùzhù]？"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat taksi yang wajib hafal",
+     "items": [
+      "[师傅|Shīfu]，[去这个地址|qù zhège dìzhǐ]。 — sambil menunjukkan layar HP. Cara paling aman.",
+      "[能不能开发票|Néng bu néng kāi fāpiào]？ — Bisa minta kuitansi? Diperlukan untuk klaim kantor.",
+      "[前面路口停就行|Qiánmiàn lùkǒu tíng jiù xíng]。 — Berhenti di persimpangan depan saja.",
+      "[打表吗|Dǎ biǎo ma]？ — Pakai argo? Kalau jawabannya ragu-ragu, turun dan cari yang lain."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Angka besar, tanggal, dan tahun",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kamu sudah bisa menghitung sampai puluhan ribu di 中文 101. Yang belum: menyebut tahun, umur kejadian, dan angka perkiraan — semuanya muncul begitu kamu mulai bercerita tentang masa lalu, yang persis dilakukan rangka 是…的."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Cara membaca",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Tahun 1990",
+       "[一九九零年|yī jiǔ jiǔ líng nián]",
+       "⚠️ Dibaca angka per angka, bukan “seribu sembilan ratus…”"
+      ],
+      [
+       "Tahun 2026",
+       "[二零二六年|èr líng èr liù nián]",
+       "Sama — satu per satu"
+      ],
+      [
+       "Tahun 90-an",
+       "[九十年代|jiǔshí niándài]",
+       "年代 = dasawarsa"
+      ],
+      [
+       "Sekitar tiga puluh orang",
+       "[三十多个人|sānshí duō ge rén]",
+       "多 sesudah angka besar"
+      ],
+      [
+       "Tiga bulan lebih",
+       "[三个多月|sān ge duō yuè]",
+       "多 sesudah penggolong untuk angka kecil"
+      ],
+      [
+       "Kira-kira lima puluh",
+       "[五十左右|wǔshí zuǒyòu]",
+       "左右 harfiah “kiri kanan”"
+      ],
+      [
+       "Hampir seratus",
+       "[差不多一百|chàbuduō yìbǎi]",
+       "Bisa juga [将近一百|jiāngjìn yìbǎi]"
+      ],
+      [
+       "Lebih dari sepuluh tahun",
+       "[十几年|shí jǐ nián]",
+       "几 di tengah = belasan"
+      ],
+      [
+       "Ratusan",
+       "[好几百|hǎo jǐ bǎi]",
+       "好几 = cukup banyak"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyebut lamanya sesuatu"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "[我来了两年了|Wǒ lái le liǎng nián le]。",
+       "Saya sudah dua tahun di sini (dan masih)"
+      ],
+      [
+       "[我在这儿住了两年|Wǒ zài zhèr zhù le liǎng nián]。",
+       "Saya pernah tinggal dua tahun (sudah tidak)"
+      ],
+      [
+       "[我学中文学了三年|Wǒ xué Zhōngwén xué le sān nián]。",
+       "Objeknya ada — kata kerjanya diulang, seperti aturan 得"
+      ],
+      [
+       "[我们认识十年了|Wǒmen rènshi shí nián le]。",
+       "Kami sudah sepuluh tahun saling kenal"
+      ],
+      [
+       "[他走了半个小时了|Tā zǒu le bàn ge xiǎoshí le]。",
+       "Dia sudah pergi setengah jam yang lalu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Perhatikan baris ketiga: aturan “kata kerja diulang kalau ada objek” yang kamu pelajari untuk 得 di Unit 3 **berlaku juga untuk lamanya waktu**. ❌ 我学中文了三年。 ✅ [我学中文学了三年|Wǒ xué Zhōngwén xué le sān nián]。 atau [我学了三年中文|Wǒ xué le sān nián Zhōngwén]。"
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "zh": "落地",
+   "baca": "luòdì",
+   "id": "mendarat"
+  },
+  {
+   "zh": "行李",
+   "baca": "xíngli",
+   "id": "bagasi, koper"
+  },
+  {
+   "zh": "怪不得",
+   "baca": "guàibude",
+   "id": "pantas saja"
+  },
+  {
+   "zh": "航空公司",
+   "baca": "hángkōng gōngsī",
+   "id": "maskapai"
+  },
+  {
+   "zh": "直飞",
+   "baca": "zhí fēi",
+   "id": "penerbangan langsung"
+  },
+  {
+   "zh": "转机",
+   "baca": "zhuǎnjī",
+   "id": "transit pesawat"
+  },
+  {
+   "zh": "小时",
+   "baca": "xiǎoshí",
+   "id": "jam (lamanya)"
+  },
+  {
+   "zh": "机场",
+   "baca": "jīchǎng",
+   "id": "bandara"
+  },
+  {
+   "zh": "快线",
+   "baca": "kuàixiàn",
+   "id": "jalur cepat"
+  },
+  {
+   "zh": "打车",
+   "baca": "dǎ chē",
+   "id": "naik taksi"
+  },
+  {
+   "zh": "同学",
+   "baca": "tóngxué",
+   "id": "teman sekelas"
+  },
+  {
+   "zh": "随便",
+   "baca": "suíbiàn",
+   "id": "terserah; sembarangan"
+  },
+  {
+   "zh": "让",
+   "baca": "ràng",
+   "id": "menyuruh, membiarkan"
+  },
+  {
+   "zh": "出租车",
+   "baca": "chūzūchē",
+   "id": "taksi"
+  },
+  {
+   "zh": "酒店",
+   "baca": "jiǔdiàn",
+   "id": "hotel"
+  },
+  {
+   "zh": "订",
+   "baca": "dìng",
+   "id": "memesan"
+  },
+  {
+   "zh": "审问",
+   "baca": "shěnwèn",
+   "id": "menginterogasi"
+  },
+  {
+   "zh": "师傅",
+   "baca": "shīfu",
+   "id": "panggilan untuk sopir/tukang"
+  },
+  {
+   "zh": "小伙子",
+   "baca": "xiǎohuǒzi",
+   "id": "anak muda laki-laki"
+  },
+  {
+   "zh": "不错",
+   "baca": "búcuò",
+   "id": "lumayan bagus"
+  },
+  {
+   "zh": "拉",
+   "baca": "lā",
+   "id": "menarik; mengangkut penumpang"
+  },
+  {
+   "zh": "客人",
+   "baca": "kèrén",
+   "id": "tamu, penumpang"
+  },
+  {
+   "zh": "度",
+   "baca": "dù",
+   "id": "derajat"
+  },
+  {
+   "zh": "雪",
+   "baca": "xuě",
+   "id": "salju"
+  },
+  {
+   "zh": "为了",
+   "baca": "wèile",
+   "id": "demi, untuk"
+  },
+  {
+   "zh": "长城",
+   "baca": "Chángchéng",
+   "id": "Tembok Besar"
+  },
+  {
+   "zh": "景色",
+   "baca": "jǐngsè",
+   "id": "pemandangan"
+  },
+  {
+   "zh": "本地",
+   "baca": "běndì",
+   "id": "setempat"
+  },
+  {
+   "zh": "熟",
+   "baca": "shú",
+   "id": "akrab, hafal; matang"
+  },
+  {
+   "zh": "闺女",
+   "baca": "guīnü",
+   "id": "anak perempuan (lisan)"
+  },
+  {
+   "zh": "还是",
+   "baca": "háishi",
+   "id": "atau (dalam pertanyaan)"
+  },
+  {
+   "zh": "或者",
+   "baca": "huòzhě",
+   "id": "atau (dalam pernyataan)"
+  },
+  {
+   "zh": "左右",
+   "baca": "zuǒyòu",
+   "id": "kurang lebih"
+  },
+  {
+   "zh": "年代",
+   "baca": "niándài",
+   "id": "dasawarsa"
+  },
+  {
+   "zh": "地址",
+   "baca": "dìzhǐ",
+   "id": "alamat"
+  },
+  {
+   "zh": "发票",
+   "baca": "fāpiào",
+   "id": "kuitansi resmi"
+  },
+  {
+   "zh": "路口",
+   "baca": "lùkǒu",
+   "id": "persimpangan"
+  },
+  {
+   "zh": "打表",
+   "baca": "dǎ biǎo",
+   "id": "pakai argo"
+  },
+  {
+   "zh": "地铁",
+   "baca": "dìtiě",
+   "id": "kereta bawah tanah"
+  },
+  {
+   "zh": "高铁",
+   "baca": "gāotiě",
+   "id": "kereta cepat"
+  },
+  {
+   "zh": "入住",
+   "baca": "rùzhù",
+   "id": "check in hotel"
+  },
+  {
+   "zh": "标准间",
+   "baca": "biāozhǔnjiān",
+   "id": "kamar standar"
+  },
+  {
+   "zh": "电话卡",
+   "baca": "diànhuàkǎ",
+   "id": "kartu SIM"
+  },
+  {
+   "zh": "取",
+   "baca": "qǔ",
+   "id": "mengambil"
+  },
+  {
+   "zh": "入境",
+   "baca": "rùjìng",
+   "id": "masuk negara, imigrasi"
+  },
+  {
+   "zh": "挣",
+   "baca": "zhèng",
+   "id": "menghasilkan uang"
+  },
+  {
+   "zh": "努力",
+   "baca": "nǔlì",
+   "id": "berusaha keras"
+  },
+  {
+   "zh": "成功",
+   "baca": "chénggōng",
+   "id": "berhasil"
+  },
+  {
+   "zh": "脸红",
+   "baca": "liǎn hóng",
+   "id": "wajah memerah"
+  },
+  {
+   "zh": "甜",
+   "baca": "tián",
+   "id": "manis"
+  },
+  {
+   "zh": "够",
+   "baca": "gòu",
+   "id": "cukup"
+  },
+  {
+   "zh": "遍",
+   "baca": "biàn",
+   "id": "kali (dari awal sampai akhir)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kalimat 是…的, dengan bagian bercetak tebal sebagai yang disorot.",
+   "items": [
+    "[他昨天来了|Tā zuótiān lái le]。（**昨天**）",
+    "[我在北京学中文|Wǒ zài Běijīng xué Zhōngwén]。（**在北京**）",
+    "[她坐高铁去上海|Tā zuò gāotiě qù Shànghǎi]。（**坐高铁**）",
+    "[这个菜我妈妈做|Zhège cài wǒ māma zuò]。（**我妈妈**）",
+    "[我跟同事一起去|Wǒ gēn tóngshì yìqǐ qù]。（**跟同事一起**）"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 就 atau 才, lalu putuskan apakah kalimatnya butuh 了.",
+   "items": [
+    "[他六点| Tā liù diǎn] ___ [起床|qǐchuáng] ___。（sangat pagi）",
+    "[我等了一个小时他| Wǒ děng le yí ge xiǎoshí tā] ___ [来|lái] ___。（kelamaan）",
+    "[这本书我看了两遍| Zhè běn shū wǒ kàn le liǎng biàn] ___ [看懂|kàn dǒng] ___。（susah）",
+    "[五十块| Wǔshí kuài] ___ [够| gòu] ___。（murah）",
+    "[我一到家| Wǒ yí dào jiā] ___ [睡觉|shuìjiào]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 还是 atau 或者.",
+   "items": [
+    "[你喝茶| Nǐ hē chá] ___ [喝咖啡|hē kāfēi]？",
+    "[茶| Chá] ___ [咖啡都可以|kāfēi dōu kěyǐ]。",
+    "[我们坐地铁| Wǒmen zuò dìtiě] ___ [打车|dǎ chē]？",
+    "[明天| Míngtiān] ___ [后天我都有空|hòutiān wǒ dōu yǒu kòng]。",
+    "[这是你的| Zhè shì nǐ de] ___ [他的|tā de]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我是为了看儿子来的|Wǒ shì wèile kàn érzi lái de]。",
+    "[他是河北的|Tā shì Héběi de]，[九零年来的北京|jiǔ líng nián lái de Běijīng]。",
+    "[我看了五遍才懂|Wǒ kàn le wǔ biàn cái dǒng]。",
+    "[他一喝酒就脸红|Tā yì hē jiǔ jiù liǎn hóng]。",
+    "[我学中文学了三年|Wǒ xué Zhōngwén xué le sān nián]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Kamu datangnya naik apa?",
+    "Saya belajarnya di Indonesia.",
+    "Bukan saya yang bilang.",
+    "Dia sudah pergi jam enam.",
+    "Lima kali baca baru saya paham.",
+    "Begitu sampai rumah saya langsung tidur."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[他九点才来了|Tā jiǔ diǎn cái lái le]。",
+    "[我没是坐飞机来的|Wǒ méi shì zuò fēijī lái de]。",
+    "[你喝茶或者喝咖啡|Nǐ hē chá huòzhě hē kāfēi]？",
+    "[我学中文了三年|Wǒ xué Zhōngwén le sān nián]。",
+    "[我是昨天见的他|Wǒ shì zuótiān jiàn de tā]。"
+   ]
+  }
+ ],
+ "answers": [
+  "他是昨天来的。 — 我是在北京学的中文。 — 她是坐高铁去上海的。 — 这个菜是我妈妈做的。 — 我是跟同事一起去的。",
+  "就…了 — 才…（tanpa 了） — 才…（tanpa 了） — 就…了 — 就",
+  "还是 — 或者 — 还是 — 或者 — 还是",
+  "Saya datang demi menengok anak saya. — Dia orang Hebei, datang ke Beijing tahun sembilan puluh. — Lima kali baca barulah saya paham. — Begitu minum alkohol wajahnya langsung merah. — Saya sudah belajar Mandarin selama tiga tahun.",
+  "Nǐ shì zuò shénme lái de? — Wǒ shì zài Yìnní xué de. — Bú shì wǒ shuō de. — Tā liù diǎn jiù zǒu le. — Wǒ kàn le wǔ biàn cái dǒng. — Wǒ yí dào jiā jiù shuìjiào.",
+  "他九点才来。 (kalimat ber-才 tak memakai 了) — 我不是坐飞机来的。 (sangkalannya 不, bukan 没) — 你喝茶还是喝咖啡？ (pertanyaan pakai 还是) — 我学中文学了三年。 / 我学了三年中文。 — 我是昨天见他的。 (objek kata ganti: 的 di ujung)"
+ ],
+ "wave": "Lima menit sebelum Unit 6: ceritakan kepada dirimu sendiri bagaimana kamu sampai di tempat tinggalmu yang sekarang, hanya dengan kalimat 是…的 — 我是二零二三年来的, 我是坐火车来的, 房子是我朋友介绍的, 我是一个人搬来的. Lima kalimat cukup. Rangka ini adalah cara utama orang Tiongkok menanyakan riwayat orang baru, dan kamu akan ditanya begitu terus sepanjang tinggal di sana."
+}

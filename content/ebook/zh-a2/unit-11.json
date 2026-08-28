@@ -1,0 +1,379 @@
+{
+ "title": "Kalau begini, maka begitu",
+ "title_target": "如果明天下雨 — Rúguǒ míngtiān xià yǔ",
+ "goal": "Menguasai seluruh keluarga kalimat bersyarat — 如果…就, 要是…的话, 只要…就, 只有…才, 不管…都 — dan mengetahui persis kata mana yang menjadi pasangan wajibnya di bagian kedua.",
+ "bekal": [
+  "menyusun rencana bersyarat: kalau hujan, kalau tidak sempat, kalau ternyata mahal",
+  "membedakan 只要…就 (asal saja) dari 只有…才 (hanya dengan)",
+  "memakai 不管/无论…都 untuk “apa pun yang terjadi”",
+  "bicara tentang cuaca, musim, dan ramalan",
+  "membuat, mengubah, dan membatalkan janji"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Menyusun rencana akhir pekan",
+   "intro": "Kamis malam. Andi, Wang Li, dan 小陈 merencanakan perjalanan ke Tembok Besar akhir pekan ini. Cuacanya belum jelas. Hitung ada berapa kalimat bersyarat di dialog ini — hampir semua rencana manusia memang berbentuk begitu.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[周六去慕田峪|Zhōuliù qù Mùtiányù]，[你们几点出发方便|nǐmen jǐ diǎn chūfā fāngbiàn]？", "id": "Sabtu ke Mutianyu, jam berapa berangkatnya enak buat kalian?", "literal": "minggu-enam — pergi — Mutianyu, kalian — berapa — jam — berangkat — leluasa." },
+    { "speaker": "小陈:", "text": "[越早越好|Yuè zǎo yuè hǎo]。[如果七点出发|Rúguǒ qī diǎn chūfā]，[九点前就能到|jiǔ diǎn qián jiù néng dào]，[人还不多|rén hái bù duō]。", "id": "Makin pagi makin bagus. Kalau berangkat jam tujuh, sebelum jam sembilan sudah sampai, orangnya belum banyak.", "literal": "makin — awal — makin — bagus. kalau — tujuh — jam — berangkat, sembilan — jam — sebelum — langsung — bisa — sampai, orang — masih — tidak — banyak." },
+    { "speaker": "安迪:", "text": "[七点啊|Qī diǎn a]……[要是我起不来怎么办|Yàoshi wǒ qǐ bu lái zěnme bàn]？", "id": "Jam tujuh ya… kalau saya tidak bangun bagaimana?", "literal": "tujuh — jam — ya… kalau — saya — bangun — tak-bisa — datang — bagaimana — mengurus." },
+    { "speaker": "王丽:", "text": "[我给你打电话|Wǒ gěi nǐ dǎ diànhuà]。[打三次你还不接的话|Dǎ sān cì nǐ hái bù jiē de huà]，[我们就先走|wǒmen jiù xiān zǒu]。", "id": "Aku telepon kamu. Kalau ditelepon tiga kali masih tidak diangkat, kami berangkat duluan.", "literal": "saya — kepada — kamu — pukul — telepon. pukul — tiga — kali — kamu — masih — tidak — angkat — punya — kata, kami — langsung — dulu — jalan." },
+    { "speaker": "安迪:", "text": "[这么狠|Zhème hěn]？[好吧|Hǎo ba]，[我定三个闹钟|wǒ dìng sān ge nàozhōng]。", "id": "Tega amat. Ya sudah, aku pasang tiga alarm.", "literal": "begini — kejam. baik — lah, saya — tetapkan — tiga — penggolong — jam-alarm." },
+    { "speaker": "小陈:", "text": "[天气预报说周六可能有雨|Tiānqì yùbào shuō zhōuliù kěnéng yǒu yǔ]。[要是下雨的话|Yàoshi xià yǔ de huà]，[还去吗|hái qù ma]？", "id": "Ramalan cuaca bilang Sabtu mungkin hujan. Kalau hujan, jadi pergi?", "literal": "cuaca — ramalan — bicara — minggu-enam — mungkin — ada — hujan. kalau — turun — hujan — punya — kata, masih — pergi — kah." },
+    { "speaker": "王丽:", "text": "[小雨照去|Xiǎo yǔ zhào qù]。[长城下雨的时候特别好看|Chángchéng xià yǔ de shíhou tèbié hǎokàn]，[人也少|rén yě shǎo]。[不过要是下大雨|Búguò yàoshi xià dà yǔ]，[那就改到下周|nà jiù gǎi dào xià zhōu]。", "id": "Hujan kecil tetap jalan. Tembok Besar waktu hujan justru bagus sekali, orangnya juga sedikit. Tapi kalau hujan deras, ya kita ubah ke minggu depan.", "literal": "kecil — hujan — tetap — pergi. Panjang — Tembok — turun — hujan — punya — waktu — khusus — bagus — lihat, orang — juga — sedikit. tetapi — kalau — turun — besar — hujan, itu — langsung — ubah — sampai — bawah — minggu." },
+    { "speaker": "安迪:", "text": "[我们什么时候决定|Wǒmen shénme shíhou juédìng]？", "id": "Kapan kita putuskan?", "literal": "kami — apa — waktu — memutuskan." },
+    { "speaker": "小陈:", "text": "[周五晚上看预报|Zhōuwǔ wǎnshang kàn yùbào]。[只要不是暴雨|Zhǐyào bú shì bàoyǔ]，[我们就去|wǒmen jiù qù]。", "id": "Jumat malam lihat ramalannya. Asal bukan hujan badai, kita berangkat.", "literal": "minggu-lima — malam — lihat — ramalan. asal — bukan — adalah — deras — hujan, kami — langsung — pergi." },
+    { "speaker": "安迪:", "text": "[要带什么|Yào dài shénme]？", "id": "Perlu bawa apa?", "literal": "mau — bawa — apa." },
+    { "speaker": "王丽:", "text": "[水|Shuǐ]、[伞|sǎn]、[运动鞋|yùndòngxié]。[不管下不下雨|Bùguǎn xià bu xià yǔ]，[都得穿运动鞋|dōu děi chuān yùndòngxié]——[台阶特别陡|táijiē tèbié dǒu]。", "id": "Air, payung, sepatu olahraga. Hujan atau tidak, tetap harus pakai sepatu olahraga — anak tangganya curam sekali.", "literal": "air, payung, olahraga — sepatu. tidak-peduli — turun — tidak — turun — hujan, semua — harus — pakai — olahraga — sepatu — tangga — khusus — curam." },
+    { "speaker": "小陈:", "text": "[还有|Hái yǒu]，[万一堵车|wànyī dǔchē]，[我们可能中午才到|wǒmen kěnéng zhōngwǔ cái dào]。[所以早饭在车上吃|Suǒyǐ zǎofàn zài chē shang chī]。", "id": "Lagi pula, seandainya macet, kita mungkin baru sampai tengah hari. Jadi sarapan di mobil saja.", "literal": "masih — ada, sepuluh-ribu — satu — macet, kami — mungkin — tengah-hari — baru — sampai. maka — pagi — nasi — di — mobil — atas — makan." },
+    { "speaker": "安迪:", "text": "[我买点儿包子带上|Wǒ mǎi diǎnr bāozi dài shang]。[只有吃饱了我才能爬台阶|Zhǐyǒu chī bǎo le wǒ cái néng pá táijiē]。", "id": "Aku beli bakpao untuk dibawa. Cuma kalau sudah kenyang saya baru sanggup naik tangga.", "literal": "saya — beli — sedikit — bakpao — bawa — atas. hanya — makan — kenyang — sudah — saya — baru — bisa — panjat — tangga." }
+   ],
+   "notes": [
+    "**⚠️ Bagian kedua kalimat bersyarat hampir selalu memakai [就|jiù] atau [都|dōu].** Melupakannya adalah kesalahan A2 yang paling sering. [如果下雨|Rúguǒ xià yǔ]，[我们就不去|wǒmen jiù bú qù]。 — 就 wajib. Kotak tata bahasa pertama menyusun seluruh pasangannya.",
+    "**[…的话|…de huà] menutup syarat dari BELAKANG, dan ia bisa berdiri sendiri tanpa 如果.** [下雨的话|Xià yǔ de huà]，[我们就不去了|wǒmen jiù bú qù le]。 Ini bentuk paling lisan dan paling sering terdengar.",
+    "**[照去|zhào qù] = tetap pergi, jalan terus.** 照 berarti “tetap seperti semula”: [照做|zhào zuò] tetap dikerjakan, [照旧|zhào jiù] seperti biasa.",
+    "**[万一|wànyī] harfiah “satu dari sepuluh ribu”, artinya seandainya, kalau-kalau.** Dipakai untuk kemungkinan kecil yang buruk. [万一他不来呢|Wànyī tā bù lái ne]？ kalau-kalau dia tidak datang bagaimana? Berbeda dari 如果 yang netral.",
+    "**⚠️ [只要…就|zhǐyào…jiù] dan [只有…才|zhǐyǒu…cái] bukan saudara dekat.** 只要 = asal saja ini terpenuhi, sudah cukup. 只有 = ini satu-satunya jalan, tidak ada yang lain. Kotak tata bahasa kedua memisahkannya.",
+    "**[不管|bùguǎn] harfiah “tidak peduli”, dan ia butuh dua kemungkinan atau kata tanya di belakangnya.** [不管下不下雨|bùguǎn xià bu xià yǔ] hujan atau tidak. [不管谁来|bùguǎn shéi lái] siapa pun yang datang. Pasangannya wajib 都 atau 也.",
+    "**[吃饱|chī bǎo] = makan sampai kenyang.** Pelengkap hasil dari Unit 2 lagi. Kembarannya [喝醉|hē zuì] minum sampai mabuk, [睡够|shuì gòu] tidur sampai cukup."
+   ],
+   "grammars": [
+    {
+     "title": "Keluarga kalimat bersyarat",
+     "body": [
+      "Enam rangka, satu aturan yang sama: **bagian pertama memasang syaratnya, bagian kedua wajib dibuka dengan 就 atau 都/也.** Yang membedakan keenamnya adalah seberapa ketat syarat itu."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Arti", "Contoh"],
+       "rows": [
+        ["[如果|rúguǒ]…[就|jiù]…", "Kalau — netral, bisa lisan dan tulisan", "[如果你去|Rúguǒ nǐ qù]，[我就去|wǒ jiù qù]。"],
+        ["[要是|yàoshi]…[就|jiù]…", "Kalau — lebih lisan", "[要是下雨|Yàoshi xià yǔ]，[就别去了|jiù bié qù le]。"],
+        ["…[的话|de huà]，…[就|jiù]…", "Kalau — paling lisan, menutup dari belakang", "[累的话|Lèi de huà]，[就先休息|jiù xiān xiūxi]。"],
+        ["[只要|zhǐyào]…[就|jiù]…", "Asal saja — syarat minimum", "[只要不下雨|Zhǐyào bú xià yǔ]，[我们就去|wǒmen jiù qù]。"],
+        ["[只有|zhǐyǒu]…[才|cái]…", "Hanya dengan — satu-satunya jalan", "[只有努力才能成功|Zhǐyǒu nǔlì cái néng chénggōng]。"],
+        ["[不管|bùguǎn] / [无论|wúlùn]…[都|dōu]…", "Apa pun — syaratnya tidak berpengaruh", "[不管多贵|Bùguǎn duō guì]，[我都要买|wǒ dōu yào mǎi]。"],
+        ["[万一|wànyī]…[怎么办|zěnme bàn]", "Seandainya — kemungkinan kecil yang buruk", "[万一他忘了呢|Wànyī tā wàng le ne]？"],
+        ["[除非|chúfēi]…[否则|fǒuzé]…", "Kecuali kalau — kalau tidak", "[除非下暴雨|Chúfēi xià bàoyǔ]，[否则我们照去|fǒuzé wǒmen zhào qù]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Tiga hal yang harus diperhatikan**",
+      "**1. 就 wajib.** ❌ 如果下雨，我们不去。 ✅ [如果下雨|Rúguǒ xià yǔ]，[我们就不去|wǒmen jiù bú qù]。 Kalimat tanpa 就 terdengar terputus, seperti dua kalimat yang dijejerkan.",
+      "**2. Boleh melepas kata pertamanya, tidak boleh melepas yang kedua.** [下雨我们就不去|Xià yǔ wǒmen jiù bú qù]。 ✅ wajar. Sebaliknya tidak.",
+      "**3. Tidak ada bentuk kata kerja khusus untuk pengandaian.** Bahasa Mandarin tidak punya “seandainya saya adalah…”. [如果我是你|Rúguǒ wǒ shì nǐ]，[我就不去|wǒ jiù bú qù]。 Kalau saya jadi kamu, saya tidak akan pergi. Kata kerjanya sama persis dengan kalimat biasa."
+     ]
+    },
+    {
+     "title": "只要…就 vs 只有…才",
+     "body": [
+      "Dua rangka yang paling sering tertukar, dan selisihnya sebenarnya tajam: yang satu berkata “ini sudah cukup”, yang lain berkata “ini satu-satunya cara”."
+     ],
+     "tables": [
+      {
+       "head": ["", "只要…就", "只有…才"],
+       "rows": [
+        ["Arti", "Asal … sudah cukup", "Hanya dengan … barulah"],
+        ["Nada", "Menenangkan, memudahkan", "Menuntut, membatasi"],
+        ["Pasangannya", "就", "才"],
+        ["Contoh", "[只要你来|Zhǐyào nǐ lái]，[我就高兴|wǒ jiù gāoxìng]。", "[只有你来|Zhǐyǒu nǐ lái]，[我才高兴|wǒ cái gāoxìng]。"],
+        ["Artinya", "Asal kamu datang, saya senang.", "Cuma kalau kamu yang datang, saya baru senang."],
+        ["Contoh", "[只要努力就有希望|Zhǐyào nǔlì jiù yǒu xīwàng]。", "[只有努力才有希望|Zhǐyǒu nǔlì cái yǒu xīwàng]。"],
+        ["Artinya", "Asal berusaha, ada harapan.", "Hanya dengan berusaha, barulah ada harapan."]
+       ]
+      }
+     ],
+     "after": [
+      "**Uji cepat: apakah ada jalan lain?**",
+      "Kalau ada jalan lain dan ini cuma salah satu yang cukup → **只要…就**",
+      "Kalau tidak ada jalan lain sama sekali → **只有…才**",
+      "⚠️ Pasangan kedua rangka ini **tidak boleh ditukar**. ❌ 只要努力才有希望。 ❌ 只有努力就有希望。 Ini kesalahan yang langsung terdengar oleh penutur asli.",
+      "**Saudara ketiga: [除非|chúfēi]** — kecuali kalau. Pasangannya 否则 atau 不然. [除非你陪我去|Chúfēi nǐ péi wǒ qù]，[否则我不去|fǒuzé wǒ bú qù]。 Kecuali kamu menemani, saya tidak pergi. Nadanya lebih keras daripada 只有."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membatalkan dan mengatur ulang",
+   "intro": "Jumat malam. Hujan deras sejak sore, dan ramalan cuaca tidak membaik. Perhatikan bagaimana ketiganya mengubah rencana — dan perhatikan bahwa hampir semua kalimat pengaturan ulang berbentuk bersyarat.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[你们看预报了吗|Nǐmen kàn yùbào le ma]？[明天全天大雨|Míngtiān quán tiān dà yǔ]，[还有雷|hái yǒu léi]。", "id": "Kalian sudah lihat ramalannya? Besok hujan deras sepanjang hari, ada petir juga.", "literal": "kalian — lihat — ramalan — sudah — kah. besok — seluruh — hari — besar — hujan, masih — ada — petir." },
+    { "speaker": "小陈:", "text": "[那不能去|Nà bù néng qù]。[长城打雷很危险|Chángchéng dǎléi hěn wēixiǎn]，[台阶滑|táijiē huá]，[而且缆车会停|érqiě lǎnchē huì tíng]。", "id": "Berarti tidak bisa pergi. Di Tembok Besar kalau petir bahaya, tangganya licin, lagi pula keretanya akan berhenti beroperasi.", "literal": "itu — tidak — bisa — pergi. Panjang — Tembok — pukul — petir — sangat — bahaya, tangga — licin, lagipula — kabel — mobil — akan — berhenti." },
+    { "speaker": "安迪:", "text": "[改到下周六行吗|Gǎi dào xià zhōuliù xíng ma]？", "id": "Diubah ke Sabtu depan bisa?", "literal": "ubah — sampai — bawah — minggu-enam — boleh — kah." },
+    { "speaker": "王丽:", "text": "[下周六我要去参加婚礼|Xià zhōuliù wǒ yào qù cānjiā hūnlǐ]。[下下周呢|Xià xià zhōu ne]？", "id": "Sabtu depan aku harus ke pesta pernikahan. Dua minggu lagi bagaimana?", "literal": "bawah — minggu-enam — saya — mau — pergi — ikut — pernikahan — upacara. bawah — bawah — minggu — bagaimana." },
+    { "speaker": "小陈:", "text": "[下下周我出差|Xià xià zhōu wǒ chū chāi]。[要不这样|Yàobù zhèyàng]：[不管哪个周末|bùguǎn nǎge zhōumò]，[谁有空谁就定|shéi yǒu kòng shéi jiù dìng]，[提前三天在群里说一声|tíqián sān tiān zài qún lǐ shuō yì shēng]。", "id": "Dua minggu lagi aku dinas luar. Begini saja: akhir pekan mana pun, siapa yang luang dia yang menentukan, tiga hari sebelumnya kabari di grup.", "literal": "bawah — bawah — minggu — saya — keluar — tugas. atau-tidak — begini: tidak-peduli — mana — penggolong — akhir-pekan, siapa — ada — waktu-luang — siapa — langsung — tetapkan, maju — tiga — hari — di — grup — dalam — bicara — satu — suara." },
+    { "speaker": "安迪:", "text": "[好主意|Hǎo zhǔyi]。[那明天怎么办|Nà míngtiān zěnme bàn]？[我已经跟公司说了不加班|Wǒ yǐjīng gēn gōngsī shuō le bù jiā bān]。", "id": "Ide bagus. Terus besok bagaimana? Saya sudah bilang ke kantor tidak lembur.", "literal": "baik — ide. itu — besok — bagaimana — mengurus. saya — sudah — dengan — perusahaan — bicara — sudah — tidak — tambah — kerja." },
+    { "speaker": "王丽:", "text": "[下雨天在家做饭吧|Xià yǔ tiān zài jiā zuò fàn ba]。[你不是一直说想学做中国菜吗|Nǐ bú shì yìzhí shuō xiǎng xué zuò Zhōngguó cài ma]？", "id": "Hari hujan masak di rumah saja. Kamu kan terus bilang mau belajar masak masakan Tiongkok?", "literal": "turun — hujan — hari — di — rumah — masak — nasi — lah. kamu — bukan — adalah — terus — bicara — ingin — belajar — membuat — Tiongkok — masakan — kah." },
+    { "speaker": "安迪:", "text": "[真的可以教我吗|Zhēn de kěyǐ jiāo wǒ ma]？[我只会煮方便面|Wǒ zhǐ huì zhǔ fāngbiànmiàn]。", "id": "Benar mau ngajarin aku? Aku cuma bisa masak mi instan.", "literal": "sungguh — punya — boleh — mengajar — saya — kah. saya — hanya — bisa — merebus — praktis — mi." },
+    { "speaker": "小陈:", "text": "[只要你敢吃|Zhǐyào nǐ gǎn chī]，[我们就敢教|wǒmen jiù gǎn jiāo]。", "id": "Asal kamu berani makan, kami berani mengajari.", "literal": "asal — kamu — berani — makan, kami — langsung — berani — mengajar." },
+    { "speaker": "王丽:", "text": "[从最简单的开始|Cóng zuì jiǎndān de kāishǐ]：[番茄炒蛋|fānqié chǎo dàn]。[无论谁学中国菜|Wúlùn shéi xué Zhōngguó cài]，[都是从这个开始的|dōu shì cóng zhège kāishǐ de]。", "id": "Mulai dari yang paling gampang: telur tumis tomat. Siapa pun yang belajar masakan Tiongkok, semuanya mulai dari ini.", "literal": "dari — paling — sederhana — punya — mulai: tomat — tumis — telur. tidak-peduli — siapa — belajar — Tiongkok — masakan, semua — adalah — dari — ini — penggolong — mulai — punya." },
+    { "speaker": "安迪:", "text": "[需要买什么|Xūyào mǎi shénme]？[我下班顺路买|Wǒ xiàbān shùnlù mǎi]。", "id": "Perlu beli apa? Nanti pulang kerja aku beli sekalian lewat.", "literal": "perlu — beli — apa. saya — turun — kerja — searah — jalan — beli." },
+    { "speaker": "小陈:", "text": "[鸡蛋、番茄、葱|Jīdàn, fānqié, cōng]。[要是超市没有小葱|Yàoshi chāoshì méiyǒu xiǎo cōng]，[大葱也行|dà cōng yě xíng]。", "id": "Telur, tomat, daun bawang. Kalau di supermarket tidak ada daun bawang kecil, bawang batang juga boleh.", "literal": "ayam — telur, tomat, bawang. kalau — supermarket — tidak-ada — kecil — bawang, besar — bawang — juga — boleh." },
+    { "speaker": "安迪:", "text": "[明白|Míngbai]。[那明天中午见|Nà míngtiān zhōngwǔ jiàn]。[如果我做得太难吃|Rúguǒ wǒ zuò de tài nánchī]，[你们就点外卖|nǐmen jiù diǎn wàimài]。", "id": "Paham. Kalau begitu besok tengah hari ketemu. Kalau masakanku terlalu tidak enak, kalian pesan makanan online saja.", "literal": "jelas. itu — besok — tengah-hari — bertemu. kalau — saya — buat — tingkat — terlalu — sulit — makan, kalian — langsung — pesan — luar — kirim." }
+   ],
+   "notes": [
+    "**[谁有空谁就定|shéi yǒu kòng shéi jiù dìng] — kata tanya yang dipakai DUA KALI dalam satu kalimat.** Ini rangka yang sangat khas Mandarin: [谁…谁…|shéi…shéi…] siapa yang …, dia yang …; [什么好吃就点什么|shénme hǎochī jiù diǎn shénme] mana yang enak itu yang dipesan; [哪儿便宜去哪儿|nǎr piányi qù nǎr] mana yang murah ke situ. Bagian tambahan kedua unit ini mengurusnya.",
+    "**[提前|tíqián] = lebih awal, sebelumnya.** [提前三天|tíqián sān tiān] tiga hari sebelumnya. Lawannya [推迟|tuīchí] mengundur. Keduanya sering muncul dalam pengaturan jadwal.",
+    "**[说一声|shuō yì shēng] = kabari saja sepatah.** Sudah muncul di Unit 7. Perhatikan betapa seringnya orang Tiongkok mengecilkan permintaan dengan menambahkan satuan kecil: 一声, 一下, 一点儿.",
+    "**⚠️ [你不是一直说…吗|Nǐ bú shì yìzhí shuō…ma]？ — rangka 不是…吗 muncul untuk ketiga kalinya di modul ini.** Sekarang ia dipakai untuk menagih janji dengan lembut. Perhatikan bahwa ia hampir tidak pernah bermaksud bertanya.",
+    "**[只会煮方便面|zhǐ huì zhǔ fāngbiànmiàn] — 只 berdiri di depan kata bantu, bukan di depan objeknya.** ✅ [我只会做一个菜|Wǒ zhǐ huì zuò yí ge cài]。 ❌ 我会只做一个菜。",
+    "**[无论|wúlùn] adalah kembaran 不管 yang sedikit lebih tertulis.** Keduanya butuh 都 atau 也 di bagian kedua. Ada satu lagi: [不论|búlùn], juga sama.",
+    "**[顺路|shùnlù] = searah jalan, sambil lewat.** Keluarga 顺 yang berarti “sekalian”: [顺便|shùnbiàn] sekalian, [顺路|shùnlù] searah, [顺手|shùnshǒu] sambil tangan lewat."
+   ],
+   "grammars": [
+    {
+     "title": "Kata tanya yang dipakai dua kali",
+     "body": [
+      "Rangka yang tidak punya padanan sama sekali dalam bahasa Indonesia, dan yang langsung membuat kalimatmu terdengar seperti penutur asli. **Kata tanya yang sama muncul dua kali, dan yang kedua menunjuk kembali pada yang pertama.**",
+      "Bagian kedua hampir selalu memakai 就."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[谁想去谁就去|Shéi xiǎng qù shéi jiù qù]。", "Siapa yang mau pergi, dia yang pergi."],
+        ["[什么便宜就买什么|Shénme piányi jiù mǎi shénme]。", "Mana yang murah, itu yang dibeli."],
+        ["[哪儿人少就去哪儿|Nǎr rén shǎo jiù qù nǎr]。", "Mana yang sepi, ke situ perginya."],
+        ["[你想什么时候来就什么时候来|Nǐ xiǎng shénme shíhou lái jiù shénme shíhou lái]。", "Kapan pun kamu mau datang, datang saja."],
+        ["[你怎么方便就怎么做|Nǐ zěnme fāngbiàn jiù zěnme zuò]。", "Bagaimana enaknya buat kamu, begitu saja kerjakan."],
+        ["[多少钱就是多少钱|Duōshao qián jiù shì duōshao qián]。", "Berapa harganya ya segitu harganya."]
+       ]
+      }
+     ],
+     "after": [
+      "**Bandingkan dengan rangka 不管…都 yang mirip artinya:**",
+      "[不管谁想去|Bùguǎn shéi xiǎng qù]，[都可以去|dōu kěyǐ qù]。 Siapa pun yang mau pergi, boleh pergi.",
+      "[谁想去谁就去|Shéi xiǎng qù shéi jiù qù]。 Siapa yang mau pergi, dia yang pergi.",
+      "⚠️ Selisihnya halus: 不管…都 menekankan bahwa syaratnya tidak berpengaruh; kata tanya berganda menekankan bahwa pilihannya diserahkan sepenuhnya. Untuk keperluan A2, keduanya sering bisa saling menggantikan.",
+      "**Dan satu keluarga lagi yang sudah kamu temui sejak Unit 4: kata tanya + 都/也 + sangkalan** = sama sekali tidak. [我什么都不想吃|Wǒ shénme dōu bù xiǎng chī]。 Saya tidak ingin makan apa pun. Unit 12 membongkarnya."
+     ]
+    },
+    {
+     "title": "Membuat, mengubah, dan membatalkan janji",
+     "body": [
+      "Seluruh urusan janji dalam bahasa Mandarin berjalan lewat beberapa kalimat tetap. Menghafalnya sekali menghemat banyak kecanggungan, terutama karena membatalkan janji adalah hal yang paling tidak nyaman dilakukan dalam bahasa asing."
+     ],
+     "tables": [
+      {
+       "head": ["Tahap", "Kalimat", "Catatan"],
+       "rows": [
+        ["Mengusulkan", "[这个周末有空吗|Zhège zhōumò yǒu kòng ma]？", "Selalu tanya dulu sebelum mengusulkan"],
+        ["Menentukan", "[那就定在星期六上午吧|Nà jiù dìng zài xīngqīliù shàngwǔ ba]。", "定 = menetapkan"],
+        ["Menegaskan", "[明天九点|Míngtiān jiǔ diǎn]，[地铁站B口见|dìtiězhàn B kǒu jiàn]。", "Tempat + waktu + 见"],
+        ["Mengingatkan", "[别忘了明天的事|Bié wàng le míngtiān de shì]。", "Sehari sebelumnya, wajar"],
+        ["Mengundur", "[能不能改到下午|Néng bu néng gǎi dào xiàwǔ]？", "改到 = pindah ke"],
+        ["Membatalkan", "[不好意思|Bù hǎoyìsi]，[明天我可能去不了了|míngtiān wǒ kěnéng qù bu liǎo le]。", "去不了 = tak sanggup pergi"],
+        ["Meminta maaf", "[真不好意思|Zhēn bù hǎoyìsi]，[下次我请客|xià cì wǒ qǐng kè]。", "Menawar ganti = memulihkan"],
+        ["Terlambat", "[我可能会晚十分钟|Wǒ kěnéng huì wǎn shí fēnzhōng]。", "⚠️ Kabari sebelum terlambat, bukan sesudah"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ [去不了|qù bu liǎo] — 了 di sini dibaca *liǎo*, bukan *le*.** Ini pelengkap kemungkinan dari Unit 4: [做不了|zuò bu liǎo] tak sanggup mengerjakan, [吃不了|chī bu liǎo] tak sanggup menghabiskan, [受不了|shòu bu liǎo] tak tahan.",
+      "**Dan satu kebiasaan yang berbeda dari kebiasaan kita:** membatalkan janji di Tiongkok dianggap wajar **kalau dikabari lebih awal**, dan cukup mengganggu kalau dikabari di hari-H. Kalau kamu ragu bisa datang atau tidak, kalimat yang tepat bukan 我尽量去 melainkan [我明天上午给你确认|Wǒ míngtiān shàngwǔ gěi nǐ quèrèn]。 — dengan waktu yang jelas."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca, musim, dan ramalan",
+   "blocks": [
+    { "type": "p", "text": "Cuaca adalah bahan pembuka percakapan nomor satu di seluruh dunia, dan di Tiongkok utara ia benar-benar berubah drastis empat kali setahun — jadi selalu ada yang bisa dibicarakan." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh"], "rows": [
+     ["[晴|qíng]", "cerah", "[今天是晴天|Jīntiān shì qíngtiān]。"],
+     ["[阴|yīn]", "mendung", "[阴天|yīntiān] hari mendung"],
+     ["[下雨|xià yǔ]", "hujan", "[外面下雨了|Wàimian xià yǔ le]。"],
+     ["[下雪|xià xuě]", "turun salju", "[北京十二月开始下雪|Běijīng shí'èr yuè kāishǐ xià xuě]。"],
+     ["[刮风|guā fēng]", "berangin", "[今天风很大|Jīntiān fēng hěn dà]。"],
+     ["[打雷|dǎléi]", "ada petir", "[打雷的时候别出去|Dǎléi de shíhou bié chūqu]。"],
+     ["[雾霾|wùmái]", "kabut asap polusi", "[今天雾霾很严重|Jīntiān wùmái hěn yánzhòng]。"],
+     ["[潮湿|cháoshī]", "lembap", "[南方夏天很潮湿|Nánfāng xiàtiān hěn cháoshī]。"],
+     ["[干燥|gānzào]", "kering", "[北京冬天特别干燥|Běijīng dōngtiān tèbié gānzào]。"],
+     ["[闷热|mēnrè]", "gerah", "[今天闷热得很|Jīntiān mēnrè de hěn]。"]
+    ] },
+    { "type": "sub", "text": "Empat musim di Tiongkok utara" },
+    { "type": "tabel", "head": ["Musim", "Bulan", "Yang perlu kamu tahu"], "rows": [
+     ["[春天|chūntiān]", "Maret–Mei", "Pendek, berangin, banyak debu dari utara"],
+     ["[夏天|xiàtiān]", "Juni–Agustus", "Panas dan lembap; hujan deras mendadak"],
+     ["[秋天|qiūtiān]", "September–Oktober", "Musim terbaik — sejuk dan cerah"],
+     ["[冬天|dōngtiān]", "November–Februari", "Kering dan sangat dingin; pemanas menyala Nov–Mar"]
+    ] },
+    { "type": "kotak", "title": "Kalimat cuaca yang paling sering dipakai", "items": [
+     "[今天天气怎么样|Jīntiān tiānqì zěnmeyàng]？ — Cuaca hari ini bagaimana?",
+     "[今天多少度|Jīntiān duōshao dù]？ — Hari ini berapa derajat?",
+     "[外面冷不冷|Wàimian lěng bu lěng]？ — Di luar dingin tidak?",
+     "[天气预报说明天有雨|Tiānqì yùbào shuō míngtiān yǒu yǔ]。 — Ramalan bilang besok hujan.",
+     "[多穿点儿|Duō chuān diǎnr]，[外面冷|wàimian lěng]。 — Pakai lebih tebal, di luar dingin.",
+     "⚠️ Untuk orang Indonesia yang belum pernah mengalami musim dingin: **[室内有暖气|shìnèi yǒu nuǎnqì]** di dalam ruangan ada pemanas — artinya kamu akan berkeringat di dalam gedung dan membeku di luar. Berpakaian berlapis, bukan satu lapis tebal."
+    ] }
+   ]
+  },
+  {
+   "title": "Memasak: kata kerja dan bahan",
+   "blocks": [
+    { "type": "p", "text": "Bagian ini bukan sekadar kosakata. Resep Mandarin ditulis dengan susunan yang sangat tetap — kata kerja + bahan + waktu — dan bisa kamu baca segera setelah menghafal daftar ini." },
+    { "type": "tabel", "head": ["Kata kerja", "Arti", "Contoh"], "rows": [
+     ["[炒|chǎo]", "menumis", "[炒鸡蛋|chǎo jīdàn] telur orak-arik"],
+     ["[煮|zhǔ]", "merebus", "[煮面|zhǔ miàn] merebus mi"],
+     ["[蒸|zhēng]", "mengukus", "[蒸鱼|zhēng yú] ikan kukus"],
+     ["[炸|zhá]", "menggoreng banyak minyak", "[炸鸡|zhájī] ayam goreng"],
+     ["[炖|dùn]", "menyemur lama", "[炖排骨|dùn páigǔ] iga semur"],
+     ["[烤|kǎo]", "memanggang", "[烤鸭|kǎoyā] bebek panggang"],
+     ["[切|qiē]", "memotong", "[把番茄切成块|bǎ fānqié qiē chéng kuài]"],
+     ["[放|fàng]", "memasukkan", "[放一点儿盐|fàng yìdiǎnr yán]"],
+     ["[倒|dào]", "menuang", "[倒油|dào yóu] menuang minyak"],
+     ["[尝|cháng]", "mencicipi", "[你尝尝咸不咸|Nǐ chángchang xián bu xián]。"]
+    ] },
+    { "type": "sub", "text": "Bumbu dan rasa" },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Mandarin", "Arti"], "rows": [
+     ["[盐|yán]", "garam", "[咸|xián]", "asin"],
+     ["[糖|táng]", "gula", "[甜|tián]", "manis"],
+     ["[醋|cù]", "cuka", "[酸|suān]", "asam"],
+     ["[酱油|jiàngyóu]", "kecap asin", "[辣|là]", "pedas"],
+     ["[油|yóu]", "minyak", "[苦|kǔ]", "pahit"],
+     ["[葱|cōng]", "daun bawang", "[淡|dàn]", "hambar"],
+     ["[姜|jiāng]", "jahe", "[香|xiāng]", "harum, sedap"],
+     ["[蒜|suàn]", "bawang putih", "[油腻|yóunì]", "berminyak"]
+    ] },
+    { "type": "kotak", "title": "Resep pertama: 番茄炒蛋", "items": [
+     "[把两个鸡蛋打散|Bǎ liǎng ge jīdàn dǎ sàn]，[放一点儿盐|fàng yìdiǎnr yán]。 — Kocok dua telur, beri sedikit garam.",
+     "[锅里倒油|Guō lǐ dào yóu]，[油热了以后倒鸡蛋|yóu rè le yǐhòu dào jīdàn]，[炒到半熟盛出来|chǎo dào bàn shú chéng chūlai]。 — Tuang minyak, setelah panas masukkan telur, tumis sampai setengah matang lalu angkat.",
+     "[把番茄切成块|Bǎ fānqié qiē chéng kuài]，[下锅炒到出汁|xià guō chǎo dào chū zhī]。 — Potong tomat jadi bongkahan, tumis sampai keluar airnya.",
+     "[把鸡蛋倒回去|Bǎ jīdàn dào huíqu]，[放一点儿糖和盐|fàng yìdiǎnr táng hé yán]，[炒匀就好了|chǎo yún jiù hǎo le]。 — Masukkan telurnya kembali, beri sedikit gula dan garam, aduk rata, selesai.",
+     "**Perhatikan berapa banyak kalimat 把 di resep ini.** Seluruh bahasa resep Mandarin dibangun dari pola yang kamu pelajari di Unit 2 — dan inilah sebabnya resep adalah bahan bacaan terbaik untuk pemelajar A2."
+    ] }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "出发", "baca": "chūfā", "id": "berangkat" },
+  { "zh": "如果", "baca": "rúguǒ", "id": "kalau" },
+  { "zh": "要是", "baca": "yàoshi", "id": "kalau (lisan)" },
+  { "zh": "的话", "baca": "de huà", "id": "kalau (penutup syarat)" },
+  { "zh": "接", "baca": "jiē", "id": "mengangkat (telepon); menjemput" },
+  { "zh": "狠", "baca": "hěn", "id": "tega, kejam" },
+  { "zh": "闹钟", "baca": "nàozhōng", "id": "jam alarm" },
+  { "zh": "天气预报", "baca": "tiānqì yùbào", "id": "ramalan cuaca" },
+  { "zh": "照", "baca": "zhào", "id": "tetap seperti semula" },
+  { "zh": "只要", "baca": "zhǐyào", "id": "asal saja" },
+  { "zh": "只有", "baca": "zhǐyǒu", "id": "hanya dengan" },
+  { "zh": "暴雨", "baca": "bàoyǔ", "id": "hujan badai" },
+  { "zh": "伞", "baca": "sǎn", "id": "payung" },
+  { "zh": "运动鞋", "baca": "yùndòngxié", "id": "sepatu olahraga" },
+  { "zh": "不管", "baca": "bùguǎn", "id": "tidak peduli, apa pun" },
+  { "zh": "无论", "baca": "wúlùn", "id": "apa pun (lebih tertulis)" },
+  { "zh": "台阶", "baca": "táijiē", "id": "anak tangga" },
+  { "zh": "陡", "baca": "dǒu", "id": "curam" },
+  { "zh": "万一", "baca": "wànyī", "id": "seandainya" },
+  { "zh": "包子", "baca": "bāozi", "id": "bakpao" },
+  { "zh": "饱", "baca": "bǎo", "id": "kenyang" },
+  { "zh": "爬", "baca": "pá", "id": "memanjat, mendaki" },
+  { "zh": "雷", "baca": "léi", "id": "petir" },
+  { "zh": "危险", "baca": "wēixiǎn", "id": "berbahaya" },
+  { "zh": "滑", "baca": "huá", "id": "licin" },
+  { "zh": "缆车", "baca": "lǎnchē", "id": "kereta gantung" },
+  { "zh": "参加", "baca": "cānjiā", "id": "ikut serta" },
+  { "zh": "提前", "baca": "tíqián", "id": "lebih awal" },
+  { "zh": "群", "baca": "qún", "id": "grup (chat)" },
+  { "zh": "主意", "baca": "zhǔyi", "id": "ide" },
+  { "zh": "教", "baca": "jiāo", "id": "mengajar" },
+  { "zh": "煮", "baca": "zhǔ", "id": "merebus" },
+  { "zh": "方便面", "baca": "fāngbiànmiàn", "id": "mi instan" },
+  { "zh": "番茄", "baca": "fānqié", "id": "tomat" },
+  { "zh": "炒", "baca": "chǎo", "id": "menumis" },
+  { "zh": "鸡蛋", "baca": "jīdàn", "id": "telur ayam" },
+  { "zh": "葱", "baca": "cōng", "id": "daun bawang" },
+  { "zh": "顺路", "baca": "shùnlù", "id": "searah jalan" },
+  { "zh": "外卖", "baca": "wàimài", "id": "pesan-antar makanan" },
+  { "zh": "除非", "baca": "chúfēi", "id": "kecuali kalau" },
+  { "zh": "否则", "baca": "fǒuzé", "id": "kalau tidak" },
+  { "zh": "晴", "baca": "qíng", "id": "cerah" },
+  { "zh": "阴", "baca": "yīn", "id": "mendung" },
+  { "zh": "刮风", "baca": "guā fēng", "id": "berangin" },
+  { "zh": "雾霾", "baca": "wùmái", "id": "kabut asap polusi" },
+  { "zh": "潮湿", "baca": "cháoshī", "id": "lembap" },
+  { "zh": "干燥", "baca": "gānzào", "id": "kering" },
+  { "zh": "暖气", "baca": "nuǎnqì", "id": "pemanas ruangan" },
+  { "zh": "盐", "baca": "yán", "id": "garam" },
+  { "zh": "酱油", "baca": "jiàngyóu", "id": "kecap asin" },
+  { "zh": "咸", "baca": "xián", "id": "asin" },
+  { "zh": "辣", "baca": "là", "id": "pedas" },
+  { "zh": "淡", "baca": "dàn", "id": "hambar" },
+  { "zh": "切", "baca": "qiē", "id": "memotong" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan pasangan yang benar: 就 · 才 · 都.",
+   "items": [
+    "[如果明天下雨|Rúguǒ míngtiān xià yǔ]，[我们| wǒmen] ___ [不去了|bú qù le]。",
+    "[只要不下大雨|Zhǐyào bú xià dà yǔ]，[我们| wǒmen] ___ [去|qù]。",
+    "[只有努力|Zhǐyǒu nǔlì]，___ [能成功|néng chénggōng]。",
+    "[不管多贵|Bùguǎn duō guì]，[我| wǒ] ___ [要买|yào mǎi]。",
+    "[累的话|Lèi de huà]，___ [先休息一下|xiān xiūxi yíxià]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 只要…就 atau 只有…才.",
+   "items": [
+    "___ [你来|nǐ lái]，[我| wǒ] ___ [高兴|gāoxìng]。（asal kamu datang, saya senang）",
+    "___ [每天练习|měi tiān liànxí]，[发音| fāyīn] ___ [会变好|huì biàn hǎo]。（hanya dengan latihan tiap hari）",
+    "___ [有时间|yǒu shíjiān]，[我| wǒ] ___ [会去看你|huì qù kàn nǐ]。（asal ada waktu）",
+    "___ [他同意|tā tóngyì]，[这件事| zhè jiàn shì] ___ [能办|néng bàn]。（hanya kalau dia setuju）",
+    "___ [不迟到|bù chídào]，[老师| lǎoshī] ___ [不会说什么|bú huì shuō shénme]。（asal tidak telat）"
+   ]
+  },
+  {
+   "prompt": "Susun ulang memakai kata tanya berganda.",
+   "items": [
+    "[谁想去|Shéi xiǎng qù]，[那个人就去|nàge rén jiù qù]。",
+    "[哪个便宜|Nǎge piányi]，[我们买哪个|wǒmen mǎi nǎge]。",
+    "[你什么时候方便|Nǐ shénme shíhou fāngbiàn]，[你什么时候来|nǐ shénme shíhou lái]。",
+    "[哪儿人少|Nǎr rén shǎo]，[我们去哪儿|wǒmen qù nǎr]。",
+    "[你想吃什么|Nǐ xiǎng chī shénme]，[我们点什么|wǒmen diǎn shénme]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[打三次你还不接的话|Dǎ sān cì nǐ hái bù jiē de huà]，[我们就先走|wǒmen jiù xiān zǒu]。",
+    "[不管下不下雨|Bùguǎn xià bu xià yǔ]，[都得穿运动鞋|dōu děi chuān yùndòngxié]。",
+    "[万一堵车|Wànyī dǔchē]，[我们可能中午才到|wǒmen kěnéng zhōngwǔ cái dào]。",
+    "[只有吃饱了我才能爬台阶|Zhǐyǒu chī bǎo le wǒ cái néng pá táijiē]。",
+    "[无论谁学中国菜|Wúlùn shéi xué Zhōngguó cài]，[都是从这个开始的|dōu shì cóng zhège kāishǐ de]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Kalau hujan, kita tidak jadi pergi.",
+    "Asal kamu berani makan, kami berani mengajari.",
+    "Hanya dengan berusaha barulah bisa berhasil.",
+    "Apa pun yang terjadi, saya tetap akan datang.",
+    "Kalau saya jadi kamu, saya tidak akan pergi.",
+    "Maaf, besok saya mungkin tidak bisa datang."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[如果下雨|Rúguǒ xià yǔ]，[我们不去|wǒmen bú qù]。",
+    "[只要努力才有希望|Zhǐyào nǔlì cái yǒu xīwàng]。",
+    "[只有努力就有希望|Zhǐyǒu nǔlì jiù yǒu xīwàng]。",
+    "[不管多贵|Bùguǎn duō guì]，[我要买|wǒ yào mǎi]。",
+    "[我会只做一个菜|Wǒ huì zhǐ zuò yí ge cài]。"
+   ]
+  }
+ ],
+ "answers": [
+  "就 — 就 — 才 — 都 — 就",
+  "只要…就 — 只有…才 — 只要…就 — 只有…才 — 只要…就",
+  "谁想去谁就去。 — 哪个便宜我们就买哪个。 — 你什么时候方便就什么时候来。 — 哪儿人少我们就去哪儿。 — 你想吃什么我们就点什么。",
+  "Kalau ditelepon tiga kali kamu masih tidak mengangkat, kami berangkat duluan. — Hujan atau tidak, tetap harus memakai sepatu olahraga. — Seandainya macet, kita mungkin baru sampai tengah hari. — Hanya kalau sudah kenyang saya baru sanggup naik tangga. — Siapa pun yang belajar masakan Tiongkok, semuanya mulai dari yang ini.",
+  "Rúguǒ xià yǔ, wǒmen jiù bú qù le. — Zhǐyào nǐ gǎn chī, wǒmen jiù gǎn jiāo. — Zhǐyǒu nǔlì cái néng chénggōng. — Bùguǎn zěnmeyàng, wǒ dōu huì lái. — Rúguǒ wǒ shì nǐ, wǒ jiù bú qù. — Bù hǎoyìsi, míngtiān wǒ kěnéng qù bu liǎo le.",
+  "…我们就不去。 (就 wajib) — 只要努力就有希望。 — 只有努力才有希望。 — …我都要买。 (都 wajib) — 我只会做一个菜。 (只 di depan kata bantu)"
+ ],
+ "wave": "Lima menit sebelum Unit 12: tulis rencana akhir pekanmu dalam lima kalimat bersyarat yang berbeda rangkanya — satu 如果…就, satu …的话…就, satu 只要…就, satu 不管…都, satu 万一…怎么办. Semuanya tentang akhir pekan yang sama. Ini latihan yang memaksamu melihat bahwa satu keadaan bisa dikatakan dengan lima cara, dan itulah tanda kamu sudah punya pilihan — bukan sekadar satu pola yang selamat."
+}

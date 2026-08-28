@@ -1,0 +1,377 @@
+{
+ "title": "Pindahan rumah",
+ "title_target": "我搬家了 — Wǒ bān jiā le",
+ "goal": "Menguasai kalimat 把 — pola yang memindahkan objek ke depan kata kerja dan sama sekali tidak punya padanan di bahasa Indonesia — lalu memasang pelengkap hasil (放好, 搬完) dan pelengkap arah (搬进去, 拿出来) di belakang kata kerjanya.",
+ "bekal": [
+  "menyuruh orang melakukan sesuatu pada suatu benda dengan kalimat 把",
+  "mengatakan bukan cuma perbuatannya, tapi **hasilnya**: 做完, 放好, 找到, 洗干净",
+  "menunjukkan arah gerakan benda: 进去, 出来, 上来, 下去, 回去",
+  "menyebut isi rumah dan perabot, serta mengurus pindahan dari awal sampai akhir",
+  "membedakan 搬 dari 搬家 dan tahu kapan objeknya boleh dihilangkan"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Hari pindahan",
+   "intro": "Wang Li pindah ke apartemen baru di Chaoyang. Andi datang membantu. Hitung ada berapa 把 di dialog ini — kalimat perintah dalam bahasa Mandarin hampir selalu berbentuk begitu.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[安迪|Āndí]，[麻烦你把这个箱子搬进去|máfan nǐ bǎ zhège xiāngzi bān jìnqu]。", "id": "Andi, tolong angkut kardus ini ke dalam.", "literal": "Andi, merepotkan — kamu — ambil — ini — penggolong — kardus — angkut — masuk — pergi." },
+    { "speaker": "安迪:", "text": "[放哪儿|Fàng nǎr]？", "id": "Ditaruh di mana?", "literal": "letak — mana." },
+    { "speaker": "王丽:", "text": "[放在客厅就行|Fàng zài kètīng jiù xíng]。[小心点儿|Xiǎoxīn diǎnr]，[里面是碗|lǐmiàn shì wǎn]。", "id": "Taruh di ruang tamu saja. Hati-hati, isinya mangkuk.", "literal": "letak — di — ruang-tamu — langsung — boleh. hati-hati — sedikit, dalam — adalah — mangkuk." },
+    { "speaker": "安迪:", "text": "[好|Hǎo]。[哎|Āi]，[这个箱子怎么这么重|zhège xiāngzi zěnme zhème zhòng]？[我搬不动|Wǒ bān bu dòng]。", "id": "Oke. Aduh, kok kardus ini berat sekali? Aku tak sanggup mengangkatnya.", "literal": "baik. aduh, ini — penggolong — kardus — bagaimana — begini — berat. saya — angkut — tak-bisa — gerak." },
+    { "speaker": "王丽:", "text": "[那是书|Nà shì shū]。[你先把里面的书拿出来一半|Nǐ xiān bǎ lǐmiàn de shū ná chūlai yíbàn]。", "id": "Itu buku. Keluarkan dulu separuh bukunya.", "literal": "itu — adalah — buku. kamu — dulu — ambil — dalam — punya — buku — ambil — keluar — datang — separuh." },
+    { "speaker": "安迪:", "text": "[这样轻多了|Zhèyàng qīng duō le]。[书放在哪个房间|Shū fàng zài nǎge fángjiān]？", "id": "Begini jauh lebih ringan. Bukunya ditaruh di kamar mana?", "literal": "begini — ringan — banyak — sudah. buku — letak — di — mana — penggolong — kamar." },
+    { "speaker": "王丽:", "text": "[书房|Shūfáng]。[书架我昨天已经装好了|Shūjià wǒ zuótiān yǐjīng zhuāng hǎo le]。", "id": "Ruang baca. Rak bukunya sudah aku rakit kemarin.", "literal": "buku — kamar. rak-buku — saya — kemarin — sudah — pasang — beres — sudah." },
+    { "speaker": "安迪:", "text": "[你一个人装的|Nǐ yí ge rén zhuāng de]？[真厉害|Zhēn lìhai]。", "id": "Kamu rakit sendirian? Hebat.", "literal": "kamu — satu — penggolong — orang — pasang — punya. sungguh — hebat." },
+    { "speaker": "王丽:", "text": "[看说明书就会了|Kàn shuōmíngshū jiù huì le]。[对了|Duì le]，[你能不能帮我把沙发挪一下|nǐ néng bu néng bāng wǒ bǎ shāfā nuó yíxià]？", "id": "Baca petunjuknya juga langsung bisa. Oh iya, bisa bantu geser sofanya sebentar?", "literal": "lihat — buku-penjelasan — langsung — bisa — sudah. betul — sudah, kamu — bisa — tidak — bisa — bantu — saya — ambil — sofa — geser — sekali." },
+    { "speaker": "安迪:", "text": "[往哪边挪|Wǎng nǎ biān nuó]？", "id": "Digeser ke sebelah mana?", "literal": "menuju — mana — sisi — geser." },
+    { "speaker": "王丽:", "text": "[往左边挪一点|Wǎng zuǒbian nuó yìdiǎn]，[挡住窗户了|dǎng zhù chuānghu le]。", "id": "Geser sedikit ke kiri, sofanya menutupi jendela.", "literal": "menuju — kiri — sisi — geser — sedikit, menghalangi — melekat — jendela — sudah." },
+    { "speaker": "安迪:", "text": "[这样行吗|Zhèyàng xíng ma]？", "id": "Begini oke?", "literal": "begini — boleh — kah." },
+    { "speaker": "王丽:", "text": "[再往前一点|Zài wǎng qián yìdiǎn]…… [好|hǎo]，[就这样|jiù zhèyàng]。[累死我了|Lèi sǐ wǒ le]。", "id": "Maju sedikit lagi… nah, begitu saja. Capek sekali aku.", "literal": "lagi — menuju — depan — sedikit… baik, langsung — begini. lelah — mati — saya — sudah." },
+    { "speaker": "安迪:", "text": "[东西都搬完了吗|Dōngxi dōu bān wán le ma]？", "id": "Barangnya sudah diangkut semua?", "literal": "barang — semua — angkut — habis — sudah — kah." },
+    { "speaker": "王丽:", "text": "[还没|Hái méi]。[车里还有两个箱子没拿上来|Chē lǐ hái yǒu liǎng ge xiāngzi méi ná shànglai]。", "id": "Belum. Di mobil masih ada dua kardus yang belum dibawa naik.", "literal": "masih — belum. mobil — dalam — masih — ada — dua — penggolong — kardus — belum — ambil — atas — datang." }
+   ],
+   "notes": [
+    "**[麻烦你|máfan nǐ] harfiah “merepotkan kamu”, dan itulah cara paling wajar memulai permintaan.** Lebih halus daripada 请 dan jauh lebih sering dipakai di percakapan sehari-hari. [麻烦你把门关一下|Máfan nǐ bǎ mén guān yíxià]。 Tolong tutup pintunya sebentar.",
+    "**[搬不动|bān bu dòng] = mengangkat tapi tidak bergerak, alias tidak sanggup.** Ini pelengkap kemungkinan, yang akan dibongkar tuntas di Unit 4. Untuk sekarang cukup tahu bahwa 不 di tengah kata kerja berarti “tidak mampu”: 搬不动 tak sanggup mengangkat, 吃不完 tak habis dimakan, 看不见 tak terlihat.",
+    "**[一半|yíbàn] separuh berdiri SESUDAH kata kerja, bukan sebelum benda.** ✅ [拿出来一半|ná chūlai yíbàn] ❌ 拿出来一半的书 terdengar aneh dalam kalimat perintah. Bandingkan dengan [一半的人|yíbàn de rén] separuh orang, yang memang berdiri di depan.",
+    "**[装好了|zhuāng hǎo le] bukan “memasangnya dengan baik”.** 好 di situ pelengkap hasil dan artinya **beres, sampai jadi**. 写好了 sudah selesai ditulis. 准备好了 sudah siap. Ini keluarga yang sama dengan 完, 到, 见 — kotak tata bahasa kedua membongkarnya.",
+    "**[挡住|dǎng zhù] — 住 sebagai pelengkap berarti “sampai melekat / tidak lepas lagi”.** 记住 mengingat sampai nempel, 站住 berhenti di tempat, 抓住 memegang erat. Bunyinya *zhù*, sama dengan 住 “tinggal”, dan memang kata yang sama.",
+    "**⚠️ [往|wǎng] menunjukkan arah dan selalu berdiri DI DEPAN kata kerja.** [往左边挪|Wǎng zuǒbian nuó] geser ke kiri. ❌ 挪往左边。 Bandingkan dengan 到 yang berdiri di belakang: [搬到朝阳|bān dào Cháoyáng] pindah ke Chaoyang.",
+    "**[累死我了|Lèi sǐ wǒ le] harfiah “capek mati saya”.** Pola 「kata sifat + 死了」 dipakai untuk melebih-lebihkan dan sangat sering terdengar: [饿死了|è sǐ le] lapar sekali, [热死了|rè sǐ le] panas sekali, [气死我了|qì sǐ wǒ le] kesal sekali."
+   ],
+   "grammars": [
+    {
+     "title": "把 — memindahkan objek ke depan kata kerja",
+     "body": [
+      "Ini pola pertama di modul ini yang benar-benar tidak punya padanan dalam bahasa Indonesia, dan karena itu ia harus dihafalkan sebagai **denah tempat duduk**, bukan sebagai terjemahan.",
+      "Rangkanya: **Pelaku + 把 + objek + kata kerja + [sesuatu yang lain]**. Objek yang biasanya berdiri di belakang kata kerja ditarik ke depan oleh 把, dan tempat kosong di belakang kata kerja itu **wajib diisi** — oleh hasil, arah, tempat, jumlah, atau paling tidak 一下 atau 了.",
+      "Kapan dipakai? Ketika kamu bicara tentang **apa yang kamu lakukan PADA sebuah benda tertentu, sampai benda itu berubah keadaan atau berpindah tempat.** Kalau bendanya masih umum (belum tentu yang mana), 把 tidak dipakai."
+     ],
+     "tables": [
+      {
+       "head": ["Tanpa 把", "Dengan 把", "Kenapa 把 lebih baik"],
+       "rows": [
+        ["[我关门了|Wǒ guān mén le]。", "[我把门关上了|Wǒ bǎ mén guān shang le]。", "Yang kedua menyebut hasilnya: pintunya sekarang tertutup"],
+        ["[请给我书|Qǐng gěi wǒ shū]。", "[请把书给我|Qǐng bǎ shū gěi wǒ]。", "Buku yang mana sudah jelas bagi keduanya"],
+        ["[他吃了蛋糕|Tā chī le dàngāo]。", "[他把蛋糕吃完了|Tā bǎ dàngāo chī wán le]。", "Yang kedua: kuenya habis, tidak bersisa"],
+        ["—", "[把这个箱子搬进去|Bǎ zhège xiāngzi bān jìnqu]。", "Perintah dengan benda tertentu — hampir selalu pakai 把"]
+       ]
+      },
+      {
+       "head": ["Yang mengisi tempat di belakang kata kerja", "Contoh"],
+       "rows": [
+        ["Pelengkap hasil", "[把作业做完|bǎ zuòyè zuò wán] menyelesaikan PR"],
+        ["Pelengkap arah", "[把书拿出来|bǎ shū ná chūlai] mengeluarkan bukunya"],
+        ["在 + tempat", "[把箱子放在客厅|bǎ xiāngzi fàng zài kètīng] menaruh kardus di ruang tamu"],
+        ["到 + tujuan", "[把行李搬到楼上|bǎ xíngli bān dào lóushàng] mengangkut koper ke lantai atas"],
+        ["给 + orang", "[把钱还给他|bǎ qián huán gěi tā] mengembalikan uangnya kepada dia"],
+        ["一下 / 了", "[把窗户开一下|bǎ chuānghu kāi yíxià] buka jendelanya sebentar"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Empat larangan yang membuat kalimat 把 salah**",
+      "**Kata kerjanya tidak boleh berdiri telanjang.** ❌ 我把门关。 ✅ [我把门关上|Wǒ bǎ mén guān shang]。",
+      "**Objeknya harus tertentu — sesuatu yang sudah diketahui berdua.** ❌ 我把一本书看完了。 ✅ [我把那本书看完了|Wǒ bǎ nà běn shū kàn wán le]。",
+      "**不 dan 没 berdiri DI DEPAN 把, bukan di depan kata kerja.** ✅ [我没把作业做完|Wǒ méi bǎ zuòyè zuò wán]。 ❌ 我把作业没做完。",
+      "**Kata kerja yang tidak mengubah apa pun tidak boleh dipakai:** 是, 有, 知道, 喜欢, 看见, 觉得. ❌ 我把他喜欢。"
+     ]
+    },
+    {
+     "title": "结果补语 — hasil yang menempel di belakang kata kerja",
+     "body": [
+      "Bahasa Indonesia menaruh hasil di kalimat terpisah: “saya mencari, dan ketemu”. Bahasa Mandarin menempelkannya langsung: [找到|zhǎodào]. Satu suku kata tambahan, dan artinya berubah dari usaha menjadi hasil.",
+      "Ini keluarga yang harus kamu kenali sekarang juga, karena mulai unit ini ia muncul di hampir tiap halaman."
+     ],
+     "tables": [
+      {
+       "head": ["Pelengkap", "Arti yang ia tambahkan", "Contoh"],
+       "rows": [
+        ["[完|wán]", "habis, tuntas", "[吃完|chī wán] habis dimakan · [做完|zuò wán] selesai dikerjakan"],
+        ["[好|hǎo]", "beres, sampai jadi, siap", "[准备好|zhǔnbèi hǎo] sudah siap · [写好|xiě hǎo] selesai ditulis"],
+        ["[到|dào]", "berhasil sampai / kena sasaran", "[找到|zhǎo dào] ketemu · [买到|mǎi dào] berhasil dibeli"],
+        ["[见|jiàn]", "tertangkap indera", "[看见|kàn jiàn] terlihat · [听见|tīng jiàn] terdengar"],
+        ["[懂|dǒng]", "sampai paham", "[听懂|tīng dǒng] paham yang didengar · [看懂|kàn dǒng] paham yang dibaca"],
+        ["[错|cuò]", "salah", "[写错|xiě cuò] salah tulis · [走错|zǒu cuò] salah jalan"],
+        ["[清楚|qīngchu]", "sampai jelas", "[看清楚|kàn qīngchu] melihat dengan jelas"],
+        ["[干净|gānjìng]", "sampai bersih", "[洗干净|xǐ gānjìng] dicuci sampai bersih"],
+        ["[住|zhù]", "sampai melekat, tidak lepas", "[记住|jì zhù] hafal · [站住|zhàn zhù] berhenti"]
+       ]
+      }
+     ],
+     "after": [
+      "**Cara menyangkalnya: 没, bukan 不**",
+      "✅ [我没找到|Wǒ méi zhǎo dào]。 Saya tidak menemukannya.",
+      "❌ 我不找到。 tidak pernah benar — hasil yang belum terjadi selalu disangkal dengan 没.",
+      "**Cara bertanya:** [你听懂了吗|Nǐ tīng dǒng le ma]？ atau [你听懂了没有|Nǐ tīng dǒng le méiyǒu]？ Jawabannya [听懂了|Tīng dǒng le]。 atau [没听懂|Méi tīng dǒng]。",
+      "⚠️ Pelengkap hasil menempel rapat pada kata kerjanya — tidak ada yang boleh disisipkan di antaranya. ❌ 看了懂 ✅ [看懂了|kàn dǒng le]。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membereskan rumah baru",
+   "intro": "Malam harinya. Sebagian besar barang sudah masuk, tapi tak satu pun ada di tempatnya. Perhatikan pelengkap arah — 进来, 出去, 上来, 下去, 回去 — dan bagaimana masing-masing menunjukkan arah dari sudut pandang si pembicara.",
+   "lines": [
+    { "speaker": "王丽:", "text": "[你先坐下休息一会儿吧|Nǐ xiān zuò xia xiūxi yíhuìr ba]。[我去买点儿喝的|Wǒ qù mǎi diǎnr hē de]。", "id": "Duduk dulu, istirahat sebentar. Aku beli minuman.", "literal": "kamu — dulu — duduk — turun — istirahat — satu — sebentar — lah. saya — pergi — beli — sedikit — minum — punya." },
+    { "speaker": "安迪:", "text": "[别去了|Bié qù le]，[我带了两瓶水上来|wǒ dài le liǎng píng shuǐ shànglai]。[在门口|Zài ménkǒu]。", "id": "Tak usah, aku bawa dua botol air ke atas tadi. Ada di depan pintu.", "literal": "jangan — pergi — sudah, saya — bawa — sudah — dua — botol — air — atas — datang. di — pintu — mulut." },
+    { "speaker": "王丽:", "text": "[你太周到了|Nǐ tài zhōudào le]。[对了|Duì le]，[你把那个袋子递给我|nǐ bǎ nàge dàizi dì gěi wǒ]。", "id": "Kamu perhatian sekali. Oh iya, tolong ambilkan kantong itu.", "literal": "kamu — terlalu — teliti — sudah. betul — sudah, kamu — ambil — itu — penggolong — kantong — serahkan — kepada — saya." },
+    { "speaker": "安迪:", "text": "[这个吗|Zhège ma]？[里面装的什么|Lǐmiàn zhuāng de shénme]？", "id": "Yang ini? Isinya apa?", "literal": "ini — penggolong — kah. dalam — isi — punya — apa." },
+    { "speaker": "王丽:", "text": "[窗帘|Chuānglián]。[今天晚上得把窗帘挂上|Jīntiān wǎnshang děi bǎ chuānglián guà shang]，[不然睡不着|bùrán shuì bu zháo]。", "id": "Gorden. Malam ini harus dipasang, kalau tidak nanti tak bisa tidur.", "literal": "hari-ini — malam — harus — ambil — gorden — gantung — atas, kalau-tidak — tidur — tak-bisa — kena." },
+    { "speaker": "安迪:", "text": "[我来吧|Wǒ lái ba]。[你把梯子拿过来|Nǐ bǎ tīzi ná guòlai]。", "id": "Biar aku saja. Bawakan tangganya kemari.", "literal": "saya — datang — lah. kamu — ambil — tangga — ambil — lewat — datang." },
+    { "speaker": "王丽:", "text": "[梯子还在车里|Tīzi hái zài chē lǐ]，[我下去拿|wǒ xiàqu ná]。", "id": "Tangganya masih di mobil, aku turun mengambilnya.", "literal": "tangga — masih — di — mobil — dalam, saya — turun — pergi — ambil." },
+    { "speaker": "安迪:", "text": "[顺便把那两个箱子也搬上来|Shùnbiàn bǎ nà liǎng ge xiāngzi yě bān shànglai]。", "id": "Sekalian angkut dua kardus itu ke atas.", "literal": "sekalian — ambil — itu — dua — penggolong — kardus — juga — angkut — atas — datang." },
+    { "speaker": "王丽:", "text": "[一个人搬不上来|Yí ge rén bān bu shànglai]。[你跟我一起下去吧|Nǐ gēn wǒ yìqǐ xiàqu ba]。", "id": "Sendirian tak sanggup mengangkatnya ke atas. Turun bareng aku saja.", "literal": "satu — penggolong — orang — angkut — tak-bisa — atas — datang. kamu — dengan — saya — bersama — turun — pergi — lah." },
+    { "speaker": "安迪:", "text": "[走|Zǒu]。[对了|Duì le]，[垃圾要不要拿下去|lājī yào bu yào ná xiàqu]？", "id": "Ayo. Oh iya, sampahnya perlu dibawa turun tidak?", "literal": "jalan. betul — sudah, sampah — mau — tidak — mau — ambil — turun — pergi." },
+    { "speaker": "王丽:", "text": "[要|Yào]，[放在楼下的垃圾桶旁边就行|fàng zài lóuxià de lājītǒng pángbiān jiù xíng]。", "id": "Perlu. Taruh di samping tong sampah di bawah saja.", "literal": "mau, letak — di — lantai-bawah — punya — sampah-tong — samping — langsung — boleh." },
+    { "speaker": "安迪:", "text": "[今天肯定收拾不完|Jīntiān kěndìng shōushi bu wán]。", "id": "Hari ini pasti tak akan selesai dibereskan.", "literal": "hari-ini — pasti — beres-kan — tak-bisa — habis." },
+    { "speaker": "王丽:", "text": "[慢慢来|Mànmān lái]。[能睡觉、能洗澡就算搬完家了|Néng shuìjiào, néng xǐzǎo jiù suàn bān wán jiā le]。", "id": "Pelan-pelan saja. Kalau sudah bisa tidur dan bisa mandi, ya sudah dianggap selesai pindahan.", "literal": "pelan — pelan — datang. bisa — tidur, bisa — mandi — langsung — dihitung — pindah — habis — rumah — sudah." }
+   ],
+   "notes": [
+    "**[别…了|bié…le] = sudah, tak usah.** Lebih halus daripada 不要. [别去了|Bié qù le]。 tak usah pergi. [别说了|Bié shuō le]。 sudah, jangan diteruskan.",
+    "**[得|děi] berarti “harus”, dan dibaca *děi*, bukan *de*.** Aksaranya sama dengan 得 pelengkap tingkat (Unit 3) dan 得到 *dédào*. Tiga bacaan, satu aksara — ini salah satu aksara paling menjebak di seluruh bahasa Mandarin. ⚠️ Sangkalan 得 bukan 不得, melainkan [不用|búyòng] tidak perlu.",
+    "**[不然|bùrán] = kalau tidak, kalau tidak begitu.** Kembarannya 要不然 dan 否则 (lebih resmi). Selalu memulai anak kalimat kedua: […]，[不然|bùrán][…]。",
+    "**[睡不着|shuì bu zháo] = tidak bisa tertidur, meskipun sudah berbaring.** 着 di sini dibaca *zháo* dan berarti “kena, berhasil”. Bedakan dari 着 *zhe* di Unit 6 yang menandai keadaan berlangsung — aksaranya sama, bacaannya beda.",
+    "**[我来吧|Wǒ lái ba] harfiah “saya datang saja” tapi artinya “biar saya yang kerjakan”.** 来 di sini menggantikan kata kerja apa pun yang sedang dibicarakan. Sangat sering dipakai untuk menawarkan bantuan dan untuk merebut tagihan di restoran.",
+    "**⚠️ 上来 / 上去 dan 下来 / 下去 tergantung DI MANA SI PEMBICARA BERADA.** Andi ada di atas, jadi ia berkata [搬上来|bān shànglai] angkut ke atas (ke arahku). Kalau ia yang di bawah, ia akan berkata 搬上去. Ini titik yang paling sering keliru bagi penutur bahasa Indonesia, karena bahasa kita tidak memaksa kita memilih.",
+    "**[慢慢来|Mànmān lái] = pelan-pelan saja, tidak usah buru-buru.** Kalimat penghibur paling sering di Tiongkok. Perhatikan 慢慢 diucapkan *mànmān* — pengulangan kata sifat mengubah nada suku kata kedua jadi nada pertama di Beijing."
+   ],
+   "grammars": [
+    {
+     "title": "趋向补语 — arah yang menempel di belakang kata kerja",
+     "body": [
+      "Ada dua lapis. Lapis pertama cuma dua kata: [来|lái] mendekat ke pembicara, [去|qù] menjauh dari pembicara. Lapis kedua enam kata arah: 上 naik, 下 turun, 进 masuk, 出 keluar, 回 kembali, 过 melewati.",
+      "Gabungkan keduanya dan kamu punya pelengkap arah rangkap: 进来 masuk ke arahku, 进去 masuk menjauh dariku, 上来 naik ke arahku, 下去 turun menjauh dariku, dan seterusnya."
+     ],
+     "tables": [
+      {
+       "head": ["", "+ 来 (ke arahku)", "+ 去 (menjauh dariku)"],
+       "rows": [
+        ["[上|shàng] naik", "[上来|shànglai]", "[上去|shàngqu]"],
+        ["[下|xià] turun", "[下来|xiàlai]", "[下去|xiàqu]"],
+        ["[进|jìn] masuk", "[进来|jìnlai]", "[进去|jìnqu]"],
+        ["[出|chū] keluar", "[出来|chūlai]", "[出去|chūqu]"],
+        ["[回|huí] kembali", "[回来|huílai]", "[回去|huíqu]"],
+        ["[过|guò] melewati", "[过来|guòlai]", "[过去|guòqu]"]
+       ]
+      },
+      {
+       "head": ["Kalimat", "Arti", "Posisi pembicara"],
+       "rows": [
+        ["[请进来|Qǐng jìnlai]。", "Silakan masuk.", "Pembicara ada di dalam"],
+        ["[你进去吧|Nǐ jìnqu ba]。", "Kamu masuk saja.", "Pembicara ada di luar"],
+        ["[把书拿出来|Bǎ shū ná chūlai]。", "Keluarkan bukunya.", "Bukunya bergerak ke arah pembicara"],
+        ["[他跑上楼去了|Tā pǎo shàng lóu qu le]。", "Dia lari naik ke atas.", "⚠️ Tempatnya disisipkan di tengah"],
+        ["[我带了两瓶水上来|Wǒ dài le liǎng píng shuǐ shànglai]。", "Saya bawa dua botol air ke atas.", "Objek boleh berdiri sebelum arahnya"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Kalau ada tempat, ia disisipkan DI TENGAH pelengkap arah**",
+      "✅ [他走进房间来了|Tā zǒu jìn fángjiān lai le]。 Dia berjalan masuk ke kamar.",
+      "❌ 他走进来房间了。",
+      "Objek biasa (bukan tempat) boleh di dua posisi: [拿出一本书来|ná chū yì běn shū lai] atau [拿出来一本书|ná chūlai yì běn shū]。 Keduanya benar; yang kedua lebih santai."
+     ]
+    },
+    {
+     "title": "Kata kerja yang menelan objeknya: 搬家, 睡觉, 吃饭",
+     "body": [
+      "Sebagian kata kerja Mandarin sebenarnya sudah mengandung objek di dalamnya: 搬家 = mengangkut + rumah, 睡觉 = tidur + tidur, 吃饭 = makan + nasi, 结婚 = mengikat + pernikahan, 见面 = bertemu + muka.",
+      "Akibatnya nyata: **kamu tidak boleh menambahkan objek lagi di belakangnya**, dan segala sesuatu yang mau disisipkan harus masuk di antara kedua bagiannya."
+     ],
+     "tables": [
+      {
+       "head": ["Salah", "Benar", "Kenapa"],
+       "rows": [
+        ["❌ 我见面他。", "✅ [我跟他见面|Wǒ gēn tā jiànmiàn]。", "面 sudah jadi objeknya"],
+        ["❌ 他结婚小王。", "✅ [他跟小王结婚了|Tā gēn Xiǎo Wáng jiéhūn le]。", "婚 sudah jadi objeknya"],
+        ["❌ 我睡觉了八个小时。", "✅ [我睡了八个小时的觉|Wǒ shuì le bā ge xiǎoshí de jiào]。", "Keterangan disisipkan di tengah"],
+        ["❌ 我搬家了新房子。", "✅ [我搬到新房子去了|Wǒ bān dào xīn fángzi qu le]。", "Kalau tujuannya disebut, pakai 搬 saja"],
+        ["—", "✅ [我上个月搬的家|Wǒ shàng ge yuè bān de jiā]。", "了 dan 的 juga masuk di tengah"]
+       ]
+      }
+     ],
+     "after": [
+      "Daftar yang paling sering dipakai: [吃饭|chī fàn] · [睡觉|shuì jiào] · [见面|jiàn miàn] · [结婚|jié hūn] · [搬家|bān jiā] · [唱歌|chàng gē] · [跳舞|tiào wǔ] · [游泳|yóu yǒng] · [请假|qǐng jià] · [聊天|liáo tiān] · [帮忙|bāng máng]。",
+      "⚠️ [帮忙|bāng máng] adalah jebakan yang paling sering kena: ❌ 帮忙我 ✅ [帮我的忙|bāng wǒ de máng] atau lebih mudah, [帮我|bāng wǒ]。"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi rumah, kata demi kata",
+   "blocks": [
+    { "type": "p", "text": "Daftar ini terlihat seperti hafalan kosakata biasa, tapi ia dipakai di empat unit berikutnya — dan hampir semua contoh kalimat 把 di buku mana pun memakai benda-benda ini." },
+    { "type": "tabel", "head": ["Ruangan", "Mandarin", "Isinya yang perlu kamu tahu"], "rows": [
+     ["Ruang tamu", "[客厅|kètīng]", "[沙发|shāfā] sofa · [茶几|chájī] meja kecil · [电视|diànshì] TV"],
+     ["Kamar tidur", "[卧室|wòshì]", "[床|chuáng] ranjang · [衣柜|yīguì] lemari · [窗帘|chuānglián] gorden"],
+     ["Ruang baca", "[书房|shūfáng]", "[书架|shūjià] rak buku · [书桌|shūzhuō] meja tulis · [椅子|yǐzi] kursi"],
+     ["Dapur", "[厨房|chúfáng]", "[冰箱|bīngxiāng] kulkas · [锅|guō] wajan · [碗|wǎn] mangkuk"],
+     ["Kamar mandi", "[卫生间|wèishēngjiān]", "[马桶|mǎtǒng] kloset · [热水器|rèshuǐqì] pemanas air"],
+     ["Balkon", "[阳台|yángtái]", "[洗衣机|xǐyījī] mesin cuci · [晾衣架|liàngyījià] jemuran"]
+    ] },
+    { "type": "sub", "text": "Kata kerja yang dipakai bersamanya" },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh kalimat 把"], "rows": [
+     ["[放|fàng]", "meletakkan", "[把碗放进柜子里|Bǎ wǎn fàng jìn guìzi lǐ]。"],
+     ["[挂|guà]", "menggantung", "[把画挂在墙上|Bǎ huà guà zài qiáng shang]。"],
+     ["[搬|bān]", "mengangkut", "[把桌子搬到阳台去|Bǎ zhuōzi bān dào yángtái qu]。"],
+     ["[挪|nuó]", "menggeser", "[把沙发往左边挪一点|Bǎ shāfā wǎng zuǒbian nuó yìdiǎn]。"],
+     ["[收拾|shōushi]", "membereskan", "[把房间收拾干净|Bǎ fángjiān shōushi gānjìng]。"],
+     ["[扔|rēng]", "membuang", "[把垃圾扔出去|Bǎ lājī rēng chūqu]。"],
+     ["[装|zhuāng]", "merakit, mengisi", "[把书架装好|Bǎ shūjià zhuāng hǎo]。"]
+    ] }
+   ]
+  },
+  {
+   "title": "Menyuruh dan meminta tolong tanpa terdengar kasar",
+   "blocks": [
+    { "type": "p", "text": "Kalimat 把 adalah bentuk perintah paling wajar dalam bahasa Mandarin, dan justru karena itu ia mudah terdengar kasar kalau dilepas telanjang. Yang menghaluskannya bukan tata bahasa, tapi kata-kata kecil yang dipasang di depan dan di belakang." },
+    { "type": "tabel", "head": ["Kalimat", "Seberapa halus", "Kepada siapa"], "rows": [
+     ["[把门关上|Bǎ mén guān shang]。", "Datar — bisa terdengar seperti perintah", "Anak, bawahan, orang yang sangat akrab"],
+     ["[把门关上吧|Bǎ mén guān shang ba]。", "Melunak dengan 吧", "Teman"],
+     ["[把门关一下|Bǎ mén guān yíxià]。", "Melunak dengan 一下 — “sebentar saja”", "Teman, rekan kerja"],
+     ["[麻烦你把门关一下|Máfan nǐ bǎ mén guān yíxià]。", "Sopan dan wajar", "Hampir semua orang"],
+     ["[能不能麻烦你把门关一下|Néng bu néng máfan nǐ bǎ mén guān yíxià]？", "Sangat sopan", "Orang yang lebih tua, tamu, atasan"],
+     ["[请把门关上|Qǐng bǎ mén guān shang]。", "Resmi, agak dingin", "Pengumuman, tulisan, situasi resmi"]
+    ] },
+    { "type": "kotak", "title": "Tiga kata kecil yang mengubah nada", "items": [
+     "**[一下|yíxià]** — “sebentar saja”. Menempel di belakang kata kerja dan mengecilkan bebannya. Ini alat pelunak nomor satu dalam bahasa Mandarin.",
+     "**[吧|ba]** — mengubah perintah jadi usulan. [走吧|Zǒu ba]。 ayo jalan, bukan “jalan!”.",
+     "**[麻烦你|máfan nǐ]** — “merepotkan kamu”. Dipasang di depan seluruh kalimat, bukan di depan kata kerjanya."
+    ] },
+    { "type": "p", "text": "Dan satu kalimat penutup yang wajib diucapkan sesudah orang menolongmu: [麻烦你了|Máfan nǐ le]。 atau [辛苦了|Xīnkǔ le]。 Menjawab bantuan dengan 谢谢 saja tidak salah, tapi dua kalimat ini terdengar jauh lebih hangat." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "搬家", "baca": "bān jiā", "id": "pindah rumah" },
+  { "zh": "麻烦", "baca": "máfan", "id": "merepotkan; repot" },
+  { "zh": "箱子", "baca": "xiāngzi", "id": "kardus, peti" },
+  { "zh": "客厅", "baca": "kètīng", "id": "ruang tamu" },
+  { "zh": "小心", "baca": "xiǎoxīn", "id": "hati-hati" },
+  { "zh": "碗", "baca": "wǎn", "id": "mangkuk" },
+  { "zh": "重", "baca": "zhòng", "id": "berat" },
+  { "zh": "轻", "baca": "qīng", "id": "ringan" },
+  { "zh": "一半", "baca": "yíbàn", "id": "separuh" },
+  { "zh": "房间", "baca": "fángjiān", "id": "kamar" },
+  { "zh": "书房", "baca": "shūfáng", "id": "ruang baca" },
+  { "zh": "书架", "baca": "shūjià", "id": "rak buku" },
+  { "zh": "装", "baca": "zhuāng", "id": "merakit; mengisi" },
+  { "zh": "说明书", "baca": "shuōmíngshū", "id": "buku petunjuk" },
+  { "zh": "沙发", "baca": "shāfā", "id": "sofa" },
+  { "zh": "挪", "baca": "nuó", "id": "menggeser" },
+  { "zh": "往", "baca": "wǎng", "id": "menuju, ke arah" },
+  { "zh": "左边", "baca": "zuǒbian", "id": "sebelah kiri" },
+  { "zh": "挡", "baca": "dǎng", "id": "menghalangi" },
+  { "zh": "窗户", "baca": "chuānghu", "id": "jendela" },
+  { "zh": "累", "baca": "lèi", "id": "lelah" },
+  { "zh": "东西", "baca": "dōngxi", "id": "barang" },
+  { "zh": "休息", "baca": "xiūxi", "id": "istirahat" },
+  { "zh": "一会儿", "baca": "yíhuìr", "id": "sebentar" },
+  { "zh": "瓶", "baca": "píng", "id": "botol (penggolong)" },
+  { "zh": "门口", "baca": "ménkǒu", "id": "depan pintu" },
+  { "zh": "周到", "baca": "zhōudào", "id": "perhatian, teliti" },
+  { "zh": "袋子", "baca": "dàizi", "id": "kantong" },
+  { "zh": "递", "baca": "dì", "id": "menyerahkan, mengoper" },
+  { "zh": "窗帘", "baca": "chuānglián", "id": "gorden" },
+  { "zh": "得", "baca": "děi", "id": "harus" },
+  { "zh": "挂", "baca": "guà", "id": "menggantung" },
+  { "zh": "不然", "baca": "bùrán", "id": "kalau tidak" },
+  { "zh": "梯子", "baca": "tīzi", "id": "tangga (alat)" },
+  { "zh": "垃圾", "baca": "lājī", "id": "sampah" },
+  { "zh": "垃圾桶", "baca": "lājītǒng", "id": "tong sampah" },
+  { "zh": "楼下", "baca": "lóuxià", "id": "lantai bawah" },
+  { "zh": "肯定", "baca": "kěndìng", "id": "pasti" },
+  { "zh": "收拾", "baca": "shōushi", "id": "membereskan" },
+  { "zh": "慢慢来", "baca": "mànmān lái", "id": "pelan-pelan saja" },
+  { "zh": "洗澡", "baca": "xǐzǎo", "id": "mandi" },
+  { "zh": "算", "baca": "suàn", "id": "dihitung sebagai" },
+  { "zh": "放", "baca": "fàng", "id": "meletakkan" },
+  { "zh": "扔", "baca": "rēng", "id": "membuang" },
+  { "zh": "干净", "baca": "gānjìng", "id": "bersih" },
+  { "zh": "卧室", "baca": "wòshì", "id": "kamar tidur" },
+  { "zh": "厨房", "baca": "chúfáng", "id": "dapur" },
+  { "zh": "冰箱", "baca": "bīngxiāng", "id": "kulkas" },
+  { "zh": "衣柜", "baca": "yīguì", "id": "lemari pakaian" },
+  { "zh": "阳台", "baca": "yángtái", "id": "balkon" },
+  { "zh": "洗衣机", "baca": "xǐyījī", "id": "mesin cuci" },
+  { "zh": "卫生间", "baca": "wèishēngjiān", "id": "kamar mandi" },
+  { "zh": "帮忙", "baca": "bāng máng", "id": "menolong" },
+  { "zh": "记住", "baca": "jì zhù", "id": "hafal, ingat betul" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kalimat 把. Contoh: 我关门了。 → 我把门关上了。",
+   "items": [
+    "[我吃完那个蛋糕了|Wǒ chī wán nàge dàngāo le]。",
+    "[他做完作业了|Tā zuò wán zuòyè le]。",
+    "[请你放这本书在桌子上|Qǐng nǐ fàng zhè běn shū zài zhuōzi shang]。",
+    "[我还给他钱了|Wǒ huán gěi tā qián le]。",
+    "[你搬那个箱子进去|Nǐ bān nàge xiāngzi jìnqu]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan pelengkap hasil yang tepat: 完 · 好 · 到 · 见 · 懂 · 错 · 干净.",
+   "items": [
+    "[我找了半天|Wǒ zhǎo le bàntiān]，[还是没找|háishi méi zhǎo] ___。",
+    "[老师说的话你听|Lǎoshī shuō de huà nǐ tīng] ___ [了吗|le ma]？",
+    "[这个字你写|Zhège zì nǐ xiě] ___ [了|le]，[应该是这样|yīnggāi shì zhèyàng]。",
+    "[饭做|Fàn zuò] ___ [了|le]，[快来吃吧|kuài lái chī ba]。",
+    "[你把手洗|Nǐ bǎ shǒu xǐ] ___ [再吃饭|zài chī fàn]。",
+    "[我在门口看|Wǒ zài ménkǒu kàn] ___ [他了|tā le]。"
+   ]
+  },
+  {
+   "prompt": "Pilih pelengkap arah yang tepat menurut posisi pembicara.",
+   "items": [
+    "（Kamu di dalam kamar, temanmu di luar）[请|Qǐng] ___。 (进来 / 进去)",
+    "（Kamu di lantai satu, barangnya di lantai dua）[你把箱子拿|Nǐ bǎ xiāngzi ná] ___。 (下来 / 下去)",
+    "（Kamu di kantor, dia mau pulang ke kantor）[他马上就|Tā mǎshàng jiù] ___。 (回来 / 回去)",
+    "（Kalian berdua di dalam, sampahnya harus dibuang di luar）[把垃圾扔|Bǎ lājī rēng] ___。 (出来 / 出去)",
+    "（Kamu di atas tangga, dia di bawah membawa air）[你带水|Nǐ dài shuǐ] ___。 (上来 / 上去)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[我没把作业做完|Wǒ méi bǎ zuòyè zuò wán]。",
+    "[他走进房间来了|Tā zǒu jìn fángjiān lai le]。",
+    "[这个箱子太重了|Zhège xiāngzi tài zhòng le]，[我一个人搬不动|wǒ yí ge rén bān bu dòng]。",
+    "[今天晚上得把窗帘挂上|Jīntiān wǎnshang děi bǎ chuānglián guà shang]，[不然睡不着|bùrán shuì bu zháo]。",
+    "[能不能麻烦你把窗户关一下|Néng bu néng máfan nǐ bǎ chuānghu guān yíxià]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin dengan kalimat 把. Tulis dengan pīnyīn.",
+   "items": [
+    "Tolong taruh kardus ini di ruang tamu.",
+    "Saya sudah membereskan kamarnya sampai bersih.",
+    "Keluarkan dulu buku-bukunya.",
+    "Jangan buang kertas itu.",
+    "Bisa tolong geser mejanya sedikit ke kanan?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我把门关|Wǒ bǎ mén guān]。",
+    "[我把作业没做完|Wǒ bǎ zuòyè méi zuò wán]。",
+    "[我把他喜欢|Wǒ bǎ tā xǐhuan]。",
+    "[他走进来房间了|Tā zǒu jìnlai fángjiān le]。",
+    "[你能帮忙我吗|Nǐ néng bāng máng wǒ ma]？",
+    "[我不找到我的钥匙|Wǒ bù zhǎo dào wǒ de yàoshi]。"
+   ]
+  }
+ ],
+ "answers": [
+  "我把那个蛋糕吃完了。 — 他把作业做完了。 — 请你把这本书放在桌子上。 — 我把钱还给他了。 — 你把那个箱子搬进去。",
+  "到 — 懂 — 错 — 好 — 干净 — 见",
+  "进来 — 下来 — 回来 — 出去 — 上来",
+  "Saya belum menyelesaikan PR-nya. — Dia berjalan masuk ke kamar (ke arah pembicara). — Kardus ini berat sekali, sendirian saya tak sanggup mengangkatnya. — Malam ini gordennya harus dipasang, kalau tidak nanti tak bisa tidur. — Bisa tolong tutupkan jendelanya sebentar?",
+  "Qǐng bǎ zhège xiāngzi fàng zài kètīng. — Wǒ bǎ fángjiān shōushi gānjìng le. — Xiān bǎ shū ná chūlai. — Bié bǎ nà zhāng zhǐ rēng le. — Néng bu néng bǎ zhuōzi wǎng yòubian nuó yìdiǎn?",
+  "我把门关上。 (kata kerja tak boleh telanjang) — 我没把作业做完。 (没 di depan 把) — 我喜欢他。 (喜欢 tak boleh dipakai dengan 把) — 他走进房间来了。 (tempat disisipkan di tengah) — 你能帮我吗？ (帮忙 sudah punya objek) — 我没找到我的钥匙。 (hasil disangkal dengan 没)"
+ ],
+ "wave": "Lima menit sebelum Unit 3: berdiri di kamarmu sendiri dan ucapkan sepuluh kalimat 把 tentang benda yang benar-benar ada di depanmu — 把书放在书架上, 把窗户关上, 把衣服收拾好, dan seterusnya. Tiap kalimat wajib punya sesuatu di belakang kata kerjanya. Kalau ada satu yang keluar telanjang (把书放。), ulangi kotak tata bahasa pertama sebelum lanjut."
+}

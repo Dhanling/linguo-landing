@@ -1,0 +1,394 @@
+{
+ "title": "Berpendapat dan tidak setuju",
+ "title_target": "我觉得不一定 — Wǒ juéde bù yídìng",
+ "goal": "Menyatakan pendapat, setuju, dan terutama TIDAK setuju tanpa merusak percakapan — lalu menuntaskan keluarga kata tanya + 都/也 yang sudah muncul enam kali sejak Unit 4.",
+ "bekal": [
+  "membuka pendapat dengan 我觉得, 我认为, 在我看来, 对我来说",
+  "memakai kata tanya sebagai “apa pun / siapa pun / sama sekali tidak”",
+  "menyatakan ketidaksetujuan dengan lima tingkat kekerasan yang berbeda",
+  "memakai 其实, 反正, 倒是, 确实 untuk memberi warna pada pernyataanmu",
+  "bertahan di percakapan yang berisi perdebatan ringan"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Perdebatan di meja makan",
+   "intro": "Makan malam bersama tim setelah rapat panjang. Pembicaraan berpindah ke apakah anak-anak sebaiknya belajar bahasa asing sejak kecil. Perhatikan bahwa tidak seorang pun di dialog ini berkata “kamu salah” — dan semuanya tetap tidak setuju.",
+   "lines": [
+    { "speaker": "小张:", "text": "[我觉得孩子越早学外语越好|Wǒ juéde háizi yuè zǎo xué wàiyǔ yuè hǎo]。[三岁就应该开始|Sān suì jiù yīnggāi kāishǐ]。", "id": "Menurutku anak makin cepat belajar bahasa asing makin bagus. Tiga tahun sudah harus mulai.", "literal": "saya — merasa — anak — makin — awal — belajar — asing — bahasa — makin — bagus. tiga — tahun — langsung — seharusnya — mulai." },
+    { "speaker": "王丽:", "text": "[这个我不太同意|Zhège wǒ bú tài tóngyì]。[三岁连母语都说不清楚|Sān suì lián mǔyǔ dōu shuō bu qīngchu]，[再加一门语言|zài jiā yì mén yǔyán]，[孩子会乱|háizi huì luàn]。", "id": "Yang ini aku kurang setuju. Umur tiga tahun bahasa ibunya saja belum jelas, ditambah satu bahasa lagi, anaknya bisa kacau.", "literal": "ini — saya — tidak — terlalu — setuju. tiga — tahun — bahkan — ibu — bahasa — semua — bicara — tak-bisa — jelas, lagi — tambah — satu — penggolong — bahasa, anak — akan — kacau." },
+    { "speaker": "小张:", "text": "[可是研究不是说小孩子学语言最快吗|Kěshì yánjiū bú shì shuō xiǎo háizi xué yǔyán zuì kuài ma]？", "id": "Tapi penelitian bilang anak kecil paling cepat belajar bahasa, kan?", "literal": "tetapi — penelitian — bukan — adalah — bicara — kecil — anak — belajar — bahasa — paling — cepat — kah." },
+    { "speaker": "安迪:", "text": "[快是快|Kuài shì kuài]，[但是我小时候的经验不太一样|dànshì wǒ xiǎo shíhou de jīngyàn bú tài yíyàng]。[我五岁开始学英语|Wǒ wǔ suì kāishǐ xué Yīngyǔ]，[什么都记不住|shénme dōu jì bu zhù]。[真正学会是上大学以后|Zhēnzhèng xué huì shì shàng dàxué yǐhòu]。", "id": "Cepat sih cepat, tapi pengalaman saya waktu kecil agak berbeda. Saya mulai belajar Inggris umur lima tahun, sama sekali tidak ada yang nyangkut. Benar-benar bisa itu setelah kuliah.", "literal": "cepat — adalah — cepat, tetapi — saya — kecil — waktu — punya — pengalaman — tidak — terlalu — sama. saya — lima — tahun — mulai — belajar — Inggris, apa — semua — ingat — tak-bisa — lekat. sungguh — belajar — bisa — adalah — naik — universitas — sesudah." },
+    { "speaker": "小陈:", "text": "[那是因为方法不对|Nà shì yīnwèi fāngfǎ bú duì]，[跟年龄没关系|gēn niánlíng méi guānxi]。", "id": "Itu karena metodenya tidak tepat, tidak ada hubungannya dengan umur.", "literal": "itu — adalah — karena — cara — tidak — betul, dengan — umur — tidak-ada — hubungan." },
+    { "speaker": "王丽:", "text": "[这一点我倒是同意|Zhè yì diǎn wǒ dào shì tóngyì]。[对我来说|Duì wǒ lái shuō]，[什么时候开始不重要|shénme shíhou kāishǐ bú zhòngyào]，[重要的是有没有人跟他说|zhòngyào de shì yǒu méiyǒu rén gēn tā shuō]。", "id": "Yang satu ini aku justru setuju. Bagiku, kapan mulainya tidak penting, yang penting ada atau tidak orang yang mengajaknya bicara.", "literal": "ini — satu — titik — saya — malah — adalah — setuju. terhadap — saya — datang — bicara, apa — waktu — mulai — tidak — penting, penting — punya — adalah — ada — tidak-ada — orang — dengan — dia — bicara." },
+    { "speaker": "安迪:", "text": "[这话有道理|Zhè huà yǒu dàolǐ]。[我在印尼学了十年|Wǒ zài Yìnní xué le shí nián]，[进步还不如在北京住半年|jìnbù hái bùrú zài Běijīng zhù bàn nián]。", "id": "Ini masuk akal. Saya belajar sepuluh tahun di Indonesia, kemajuannya masih kalah dibanding tinggal setengah tahun di Beijing.", "literal": "ini — kata — ada — alasan. saya — di — Indonesia — belajar — sudah — sepuluh — tahun, kemajuan — masih — tidak — sebanding — di — Beijing — tinggal — setengah — tahun." },
+    { "speaker": "小张:", "text": "[那不是所有人都能出国啊|Nà bú shì suǒyǒu rén dōu néng chū guó a]。", "id": "Tapi kan tidak semua orang bisa ke luar negeri.", "literal": "itu — bukan — adalah — seluruh — orang — semua — bisa — keluar — negara — lho." },
+    { "speaker": "小陈:", "text": "[现在不一定要出国|Xiànzài bù yídìng yào chū guó]。[网上什么都有|Wǎng shang shénme dōu yǒu]——[你想跟谁练就跟谁练|nǐ xiǎng gēn shéi liàn jiù gēn shéi liàn]。", "id": "Sekarang tidak harus ke luar negeri. Di internet ada segalanya — mau latihan dengan siapa pun bisa.", "literal": "sekarang — tidak — pasti — mau — keluar — negara. jaring — atas — apa — semua — ada — kamu — ingin — dengan — siapa — latih — langsung — dengan — siapa — latih." },
+    { "speaker": "王丽:", "text": "[理论上是这样|Lǐlùn shang shì zhèyàng]。[实际上|Shíjìshang]，[大部分人下载了应用|dàbùfen rén xiàzài le yìngyòng]，[用三天就不用了|yòng sān tiān jiù bú yòng le]。", "id": "Secara teori memang begitu. Kenyataannya, sebagian besar orang mengunduh aplikasinya, dipakai tiga hari lalu tidak dipakai lagi.", "literal": "teori — atas — adalah — begini. nyata — atas, besar — bagian — orang — unduh — sudah — aplikasi, pakai — tiga — hari — langsung — tidak — pakai — sudah." },
+    { "speaker": "安迪:", "text": "[这个我最有发言权|Zhège wǒ zuì yǒu fāyánquán]。[我手机里有六个|Wǒ shǒujī lǐ yǒu liù ge]，[一个都没打开过|yí ge dōu méi dǎkāi guo]。", "id": "Soal ini saya yang paling berhak bicara. Di HP saya ada enam, satu pun belum pernah dibuka.", "literal": "ini — saya — paling — ada — bicara — hak. saya — telepon — dalam — ada — enam — penggolong, satu — penggolong — semua — belum — buka — pernah." },
+    { "speaker": "小张:", "text": "[哈哈|Hāha]，[那你怎么学的|nà nǐ zěnme xué de]？", "id": "Haha, terus kamu belajarnya bagaimana?", "literal": "haha, itu — kamu — bagaimana — belajar — punya." },
+    { "speaker": "安迪:", "text": "[跟你们吃饭|Gēn nǐmen chī fàn]。[这顿饭比十个应用管用|Zhè dùn fàn bǐ shí ge yìngyòng guǎnyòng]。", "id": "Makan bareng kalian. Satu kali makan ini lebih berguna daripada sepuluh aplikasi.", "literal": "dengan — kalian — makan — nasi. ini — penggolong — nasi — dibanding — sepuluh — penggolong — aplikasi — mengurus — guna." }
+   ],
+   "notes": [
+    "**⚠️ [我不太同意|Wǒ bú tài tóngyì] bukan [我不同意|Wǒ bù tóngyì].** Menambahkan 太 melunakkannya dari “saya tidak setuju” menjadi “saya kurang setuju”. Ini pelunak paling sering dan paling berguna dalam perdebatan Mandarin. Bagian tambahan kedua menyusun seluruh tingkatannya.",
+    "**[什么都记不住|shénme dōu jì bu zhù] = sama sekali tidak ada yang nyangkut.** Kata tanya 什么 dipakai bukan untuk bertanya, melainkan untuk menyapu seluruh kemungkinan. Kotak tata bahasa pertama membongkarnya.",
+    "**[快是快|Kuài shì kuài] — rangka 「A 是 A」 muncul lagi, ketiga kalinya dalam modul ini.** Ia sudah muncul di Unit 9 dan Unit 10. Kalau sekarang ia keluar sendiri dari mulutmu, itu tanda bagus.",
+    "**[跟…没关系|gēn…méi guānxi] = tidak ada hubungannya dengan.** [跟年龄没关系|gēn niánlíng méi guānxi]。 Lawannya [跟…有关系|gēn…yǒu guānxi] atau [跟…有关|gēn…yǒuguān]。",
+    "**[倒是|dào shì] menandai pengakuan yang berlawanan dengan sikap sebelumnya** — sudah dibahas di Unit 3, dan di sini Wang Li memakainya untuk setuju dengan orang yang baru saja ia bantah. Kata kecil ini yang membuat perdebatan tetap ramah.",
+    "**[还不如|hái bùrú] = malah kalah dibanding.** [进步还不如住半年|jìnbù hái bùrú zhù bàn nián] kemajuannya kalah dibanding tinggal setengah tahun. Rangka perbandingan yang tajam: A 不如 B = A kalah dari B.",
+    "**[理论上|lǐlùn shang] dan [实际上|shíjìshang] — sepasang.** Secara teori vs kenyataannya. Sangat sering dipakai berturut-turut persis seperti di dialog ini, dan hampir selalu untuk membantah dengan sopan."
+   ],
+   "grammars": [
+    {
+     "title": "Kata tanya yang bukan pertanyaan",
+     "body": [
+      "Ini rangka yang sudah menyusup enam kali sejak Unit 4, dan sekarang waktunya diselesaikan. **Kata tanya Mandarin, ketika dipasangkan dengan 都 atau 也, berhenti bertanya dan mulai menyapu seluruh kemungkinan.**",
+      "Rangkanya: **kata tanya + 都/也 + (sangkalan) + kata kerja**. Dengan sangkalan artinya “sama sekali tidak”; tanpa sangkalan artinya “apa pun juga”."
+     ],
+     "tables": [
+      {
+       "head": ["Kata tanya", "Dengan 都/也 + sangkalan", "Dengan 都/也 tanpa sangkalan"],
+       "rows": [
+        ["[什么|shénme]", "[什么都不想吃|shénme dōu bù xiǎng chī] tak ingin makan apa pun", "[什么都吃|shénme dōu chī] makan apa saja"],
+        ["[谁|shéi]", "[谁都不知道|shéi dōu bù zhīdào] tak seorang pun tahu", "[谁都知道|shéi dōu zhīdào] semua orang tahu"],
+        ["[哪儿|nǎr]", "[哪儿都没去|nǎr dōu méi qù] tak ke mana-mana", "[哪儿都去过|nǎr dōu qù guo] sudah ke mana-mana"],
+        ["[什么时候|shénme shíhou]", "[什么时候都不行|shénme shíhou dōu bù xíng] kapan pun tidak bisa", "[什么时候都可以|shénme shíhou dōu kěyǐ] kapan saja boleh"],
+        ["[怎么|zěnme]", "[怎么说都不听|zěnme shuō dōu bù tīng] dibilang bagaimanapun tak mendengar", "[怎么做都行|zěnme zuò dōu xíng] dikerjakan bagaimanapun boleh"],
+        ["[哪个|nǎge]", "[哪个都不要|nǎge dōu bú yào] tak mau yang mana pun", "[哪个都行|nǎge dōu xíng] yang mana saja boleh"]
+       ]
+      },
+      {
+       "head": ["Rangka penguat", "Contoh", "Arti"],
+       "rows": [
+        ["一 + penggolong + 都 + sangkalan", "[一个人都没有|Yí ge rén dōu méiyǒu]。", "Tidak ada seorang pun"],
+        ["一点儿 + 都 + sangkalan", "[一点儿都不累|Yìdiǎnr dōu bú lèi]。", "Sama sekali tidak capek"],
+        ["连 + … + 都 (Unit 4)", "[连一句都听不懂|Lián yí jù dōu tīng bu dǒng]。", "Satu kalimat pun tidak paham"],
+        ["从来 + 都 + sangkalan", "[我从来都不喝酒|Wǒ cónglái dōu bù hē jiǔ]。", "Saya tidak pernah minum alkohol"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ 都 wajib, dan letaknya sesudah kata tanya**",
+      "❌ 我不想吃什么。 (ini berarti “saya tidak ingin makan sesuatu” — janggal)",
+      "✅ [我什么都不想吃|Wǒ shénme dōu bù xiǎng chī]。",
+      "❌ 都我什么不想吃。",
+      "**⚠️ Objeknya pindah ke depan.** Perhatikan bahwa 什么 di kalimat di atas sebenarnya objek dari 吃, tapi ia berdiri di depan kata kerjanya. Ini sama seperti 把 dan 连 — bahasa Mandarin memindahkan apa pun yang sedang disorot ke depan.",
+      "**也 dipakai kalau kalimatnya menyangkal**, 都 dipakai untuk keduanya. [谁也不知道|Shéi yě bù zhīdào]。 = [谁都不知道|Shéi dōu bù zhīdào]。 Keduanya benar."
+     ]
+    },
+    {
+     "title": "Membuka pendapat: 觉得 · 认为 · 看来 · 对…来说",
+     "body": [
+      "Empat cara membuka pendapat, dengan bobot yang berbeda. Memilih yang terlalu berat membuatmu terdengar sedang berceramah; memilih yang terlalu ringan membuat pendapatmu diabaikan."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Bobotnya", "Contoh"],
+       "rows": [
+        ["[我觉得|Wǒ juéde]…", "Ringan — perasaan, kesan", "[我觉得这个不太合适|Wǒ juéde zhège bú tài héshì]。"],
+        ["[我认为|Wǒ rènwéi]…", "Berat — pendapat yang dipikirkan", "[我认为这个方案有问题|Wǒ rènwéi zhège fāng'àn yǒu wèntí]。"],
+        ["[在我看来|Zài wǒ kànlái]…", "Resmi — “menurut pandangan saya”", "[在我看来|Zài wǒ kànlái]，[问题不在这儿|wèntí bú zài zhèr]。"],
+        ["[对我来说|Duì wǒ lái shuō]…", "Bagi saya pribadi — tidak menuntut orang lain", "[对我来说|Duì wǒ lái shuō]，[这个更重要|zhège gèng zhòngyào]。"],
+        ["[我的看法是|Wǒ de kànfǎ shì]…", "Netral, sedikit resmi", "[我的看法是|Wǒ de kànfǎ shì]……"],
+        ["[要我说|Yào wǒ shuō]…", "Sangat lisan — “kalau menurutku sih”", "[要我说|Yào wǒ shuō]，[根本不用管|gēnběn búyòng guǎn]。"]
+       ]
+      },
+      {
+       "head": ["Rangka pendukung", "Arti", "Contoh"],
+       "rows": [
+        ["[对…来说|duì…lái shuō]", "Bagi …", "[对学生来说太贵了|Duì xuésheng lái shuō tài guì le]。"],
+        ["[关于|guānyú]", "Mengenai …", "[关于这个问题|Guānyú zhège wèntí]……"],
+        ["[至于|zhìyú]", "Adapun …", "[至于价格|Zhìyú jiàgé]，[我们可以再谈|wǒmen kěyǐ zài tán]。"],
+        ["[从…来看|cóng…lái kàn]", "Dilihat dari …", "[从时间来看|Cóng shíjiān lái kàn]，[来不及了|lái bu jí le]。"],
+        ["[重要的是|zhòngyào de shì]", "Yang penting adalah …", "[重要的是有人跟他说|Zhòngyào de shì yǒu rén gēn tā shuō]。"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **[我觉得|wǒ juéde] jauh lebih sering daripada [我认为|wǒ rènwéi] di percakapan sehari-hari.** 认为 terdengar seperti sedang menulis laporan. Kalau ragu, pakai 觉得.",
+      "⚠️ **Sangkalannya dipindahkan ke depan.** Dalam bahasa Indonesia kita berkata “saya rasa ini tidak benar”. Mandarin lebih sering berkata [我觉得这个不对|Wǒ juéde zhège bú duì]。 ✅ — sama seperti kita. Tapi untuk penolakan yang lebih halus, orang memindahkan sangkalannya: [我不觉得这样好|Wǒ bù juéde zhèyàng hǎo]。 saya tidak merasa ini bagus."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Tidak setuju dengan atasan",
+   "intro": "Rapat kecil. 陈总 mengusulkan sesuatu yang menurut Andi tidak akan berhasil. Ini situasi tersulit dalam bahasa asing mana pun: menyampaikan ketidaksetujuan ke atas. Perhatikan susunan kalimat Andi — ia tidak pernah membantah lebih dulu.",
+   "lines": [
+    { "speaker": "陈总:", "text": "[我的想法是|Wǒ de xiǎngfǎ shì]：[第一批产品直接投雅加达市场|dì-yī pī chǎnpǐn zhíjiē tóu Yǎjiādá shìchǎng]，[规模做大一点|guīmó zuò dà yìdiǎn]。[大家怎么看|Dàjiā zěnme kàn]？", "id": "Pemikiran saya: batch produk pertama langsung dilempar ke pasar Jakarta, skalanya dibuat agak besar. Bagaimana pendapat kalian?", "literal": "saya — punya — pemikiran — adalah: ke-satu — angkatan — produk — langsung — lempar — Jakarta — pasar, skala — buat — besar — sedikit. semua-orang — bagaimana — lihat." },
+    { "speaker": "小张:", "text": "[我觉得可以|Wǒ juéde kěyǐ]。[雅加达人口多|Yǎjiādá rénkǒu duō]，[市场大|shìchǎng dà]。", "id": "Saya rasa bisa. Penduduk Jakarta banyak, pasarnya besar.", "literal": "saya — merasa — boleh. Jakarta — penduduk — banyak, pasar — besar." },
+    { "speaker": "陈总:", "text": "[安迪|Āndí]，[你是印尼人|nǐ shì Yìnní rén]，[你怎么看|nǐ zěnme kàn]？", "id": "Andi, kamu orang Indonesia, bagaimana pendapatmu?", "literal": "Andi, kamu — adalah — Indonesia — orang, kamu — bagaimana — lihat." },
+    { "speaker": "安迪:", "text": "[方向我完全同意|Fāngxiàng wǒ wánquán tóngyì]。[雅加达确实是最大的市场|Yǎjiādá quèshí shì zuì dà de shìchǎng]。[不过有一点我有点儿担心|Búguò yǒu yì diǎn wǒ yǒudiǎnr dānxīn]。", "id": "Arahnya saya sepenuhnya setuju. Jakarta memang pasar terbesar. Tapi ada satu hal yang agak saya khawatirkan.", "literal": "arah — saya — sepenuhnya — setuju. Jakarta — sungguh — adalah — paling — besar — punya — pasar. tetapi — ada — satu — titik — saya — ada-sedikit — khawatir." },
+    { "speaker": "陈总:", "text": "[你说|Nǐ shuō]。", "id": "Silakan.", "literal": "kamu — bicara." },
+    { "speaker": "安迪:", "text": "[雅加达竞争特别激烈|Yǎjiādá jìngzhēng tèbié jīliè]。[第一批就投大量资源|Dì-yī pī jiù tóu dàliàng zīyuán]，[万一反应不好|wànyī fǎnyìng bù hǎo]，[损失会很大|sǔnshī huì hěn dà]。", "id": "Persaingan di Jakarta ketat sekali. Kalau batch pertama langsung menanamkan banyak sumber daya, seandainya responsnya tidak bagus, kerugiannya akan besar.", "literal": "Jakarta — persaingan — khusus — sengit. ke-satu — angkatan — langsung — lempar — besar — jumlah — sumber — daya, sepuluh-ribu — satu — reaksi — tidak — bagus, kerugian — akan — sangat — besar." },
+    { "speaker": "陈总:", "text": "[那你的建议呢|Nà nǐ de jiànyì ne]？", "id": "Lalu usulanmu?", "literal": "itu — kamu — punya — usulan — bagaimana." },
+    { "speaker": "安迪:", "text": "[要不先在泗水或者万隆试三个月|Yàobù xiān zài Sìshuǐ huòzhě Wànlóng shì sān ge yuè]？[规模小|Guīmó xiǎo]，[成本低|chéngběn dī]，[出问题也好改|chū wèntí yě hǎo gǎi]。[数据好看了再投雅加达|Shùjù hǎokàn le zài tóu Yǎjiādá]。", "id": "Bagaimana kalau coba dulu tiga bulan di Surabaya atau Bandung? Skalanya kecil, biayanya rendah, kalau ada masalah juga gampang diperbaiki. Kalau datanya bagus baru masuk Jakarta.", "literal": "atau-tidak — dulu — di — Surabaya — atau — Bandung — coba — tiga — penggolong — bulan. skala — kecil, biaya — rendah, keluar — masalah — juga — mudah — ubah. data — bagus — lihat — sudah — lagi — lempar — Jakarta." },
+    { "speaker": "陈总:", "text": "[慢是慢了点|Màn shì màn le diǎn]，[但是风险确实小很多|dànshì fēngxiǎn quèshí xiǎo hěn duō]。[小张，你觉得呢|Xiǎo Zhāng, nǐ juéde ne]？", "id": "Lambat sih agak lambat, tapi risikonya memang jauh lebih kecil. Xiao Zhang, menurutmu?", "literal": "lambat — adalah — lambat — sudah — sedikit, tetapi — risiko — sungguh — kecil — sangat — banyak. Kecil — Zhang, kamu — merasa — bagaimana." },
+    { "speaker": "小张:", "text": "[我改主意了|Wǒ gǎi zhǔyi le]。[安迪比我们了解当地情况|Āndí bǐ wǒmen liǎojiě dāngdì qíngkuàng]。[听他的|Tīng tā de]。", "id": "Saya berubah pikiran. Andi lebih paham keadaan setempat daripada kita. Ikut dia saja.", "literal": "saya — ubah — ide — sudah. Andi — dibanding — kami — memahami — setempat — keadaan. dengar — dia — punya." },
+    { "speaker": "陈总:", "text": "[那就这么定|Nà jiù zhème dìng]。[安迪|Āndí]，[下周你把试点方案做出来|xià zhōu nǐ bǎ shìdiǎn fāng'àn zuò chūlai]。[需要什么资源跟我说|Xūyào shénme zīyuán gēn wǒ shuō]。", "id": "Kalau begitu diputuskan begini. Andi, minggu depan kamu buat proposal uji cobanya. Perlu sumber daya apa pun bilang ke saya.", "literal": "itu — langsung — begini — tetapkan. Andi, bawah — minggu — kamu — ambil — coba — titik — usulan — buat — keluar — datang. perlu — apa — sumber — daya — dengan — saya — bicara." },
+    { "speaker": "安迪:", "text": "[好的|Hǎo de]，[我下周三之前发给您|wǒ xià zhōusān zhī qián fā gěi nín]。", "id": "Baik, sebelum Rabu depan saya kirim ke Bapak.", "literal": "baik — punya, saya — bawah — minggu-tiga — sebelum — kirim — kepada — Anda." }
+   ],
+   "notes": [
+    "**⚠️ Perhatikan susunan jawaban Andi: setuju dulu, baru khawatir, baru usul.** [方向我完全同意|Fāngxiàng wǒ wánquán tóngyì] … [不过有一点我有点儿担心|búguò yǒu yì diǎn wǒ yǒudiǎnr dānxīn] … [要不先…|Yàobù xiān…] Susunan tiga langkah ini adalah cara paling aman menyampaikan ketidaksetujuan ke atas, dalam bahasa apa pun, dan sangat dihargai di lingkungan kerja Tiongkok.",
+    "**[大家怎么看|Dàjiā zěnme kàn]？ = bagaimana pendapat kalian.** 看 di sini berarti “memandang, menilai”, bukan “melihat”. Kembarannya [你怎么看这件事|Nǐ zěnme kàn zhè jiàn shì]？",
+    "**[有一点|yǒu yì diǎn] ≠ [有点儿|yǒudiǎnr].** Yang pertama berarti “ada satu hal / satu butir”, yang kedua “agak”. Di kalimat Andi keduanya muncul berturut-turut: [有一点我有点儿担心|yǒu yì diǎn wǒ yǒudiǎnr dānxīn] ada satu hal yang agak saya khawatirkan.",
+    "**[出问题|chū wèntí] = timbul masalah.** 出 di sini berarti “keluar, timbul”: [出事|chū shì] terjadi sesuatu, [出错|chū cuò] terjadi kesalahan. Unit 13 memakainya sepanjang unit.",
+    "**[好改|hǎo gǎi] = gampang diperbaiki.** 好 + kata kerja berarti “mudah di-”: [好吃|hǎochī] enak dimakan, [好看|hǎokàn] enak dilihat, [好用|hǎoyòng] mudah dipakai, [好办|hǎobàn] gampang diurus. Lawannya 难: [难吃|nánchī] · [难办|nánbàn]。",
+    "**[慢是慢了点|Màn shì màn le diǎn] — rangka 「A 是 A」 sekali lagi, kali ini dengan tambahan 了点.** Bentuk penuhnya: A 是 A + 了点儿，但是… Lambat sih agak lambat, tapi…",
+    "**[听他的|Tīng tā de] = ikut dia saja.** Harfiah “dengarkan punyanya”. Ungkapan tetap: [听你的|Tīng nǐ de]。 terserah kamu, ikut kamu. [听我的|Tīng wǒ de]。 dengarkan saya."
+   ],
+   "grammars": [
+    {
+     "title": "其实 · 反正 · 倒是 · 确实 — kata pemberi warna",
+     "body": [
+      "Kata-kata ini tidak mengubah arti kalimat; mereka mengubah **sikap** pembicara terhadap kalimatnya sendiri. Tanpa mereka kalimatmu benar tapi datar; dengan mereka, kalimatmu terdengar seperti orang yang benar-benar sedang berpikir."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Yang ia sampaikan", "Contoh"],
+       "rows": [
+        ["[其实|qíshí]", "Sebenarnya — membetulkan kesan yang salah", "[其实我不太想去|Qíshí wǒ bú tài xiǎng qù]。"],
+        ["[确实|quèshí]", "Memang benar — mengakui", "[你说得确实有道理|Nǐ shuō de quèshí yǒu dàolǐ]。"],
+        ["[倒是|dào shì]", "Justru, malah — berlawanan dari dugaan", "[这个我倒是同意|Zhège wǒ dào shì tóngyì]。"],
+        ["[反正|fǎnzhèng]", "Toh, bagaimanapun — sudah pasti begitu", "[反正也来不及了|Fǎnzhèng yě lái bu jí le]。"],
+        ["[到底|dàodǐ]", "Sebenarnya sih (menuntut kejelasan)", "[你到底去不去|Nǐ dàodǐ qù bu qù]？"],
+        ["[难道|nándào]", "Masa iya — pertanyaan retoris", "[难道你不知道吗|Nándào nǐ bù zhīdào ma]？"],
+        ["[毕竟|bìjìng]", "Bagaimanapun juga — mengingatkan kenyataan", "[毕竟他还是个孩子|Bìjìng tā háishi ge háizi]。"],
+        ["[总之|zǒngzhī]", "Pokoknya, singkatnya", "[总之我不同意|Zǒngzhī wǒ bù tóngyì]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**Tiga yang paling berguna untuk dipakai mulai hari ini:**",
+      "**[其实|qíshí]** — membuka pengakuan yang berlawanan dengan yang orang duga. Sangat sering dipakai untuk membelokkan percakapan dengan halus.",
+      "**[确实|quèshí]** — mengakui sebelum menyanggah. Ia membeli banyak niat baik. [你说得确实有道理|Nǐ shuō de quèshí yǒu dàolǐ]，[不过…|búguò…]",
+      "**[反正|fǎnzhèng]** — “toh”, memotong perdebatan tanpa memenangkannya. [反正我们已经来了|Fǎnzhèng wǒmen yǐjīng lái le]。 Toh kita sudah telanjur di sini.",
+      "⚠️ [难道|nándào] berbentuk pertanyaan tapi bukan pertanyaan — ia menuduh dengan halus. Pakai hati-hati; kepada atasan, sebaiknya jangan sama sekali."
+     ]
+    },
+    {
+     "title": "Lima tingkat ketidaksetujuan",
+     "body": [
+      "Menolak pendapat adalah keterampilan yang harus punya takaran, dan bahasa Mandarin menyediakan tangga yang cukup jelas. Yang perlu kamu tahu: **di lingkungan kerja Tiongkok, tingkat 4 dan 5 hampir tidak pernah dipakai kepada orang yang lebih senior.**"
+     ],
+     "tables": [
+      {
+       "head": ["Tingkat", "Kalimat", "Kepada siapa"],
+       "rows": [
+        ["1 — Sangat halus", "[我有一点不太确定|Wǒ yǒu yì diǎn bú tài quèdìng]。", "Siapa pun, termasuk atasan"],
+        ["1 — Sangat halus", "[会不会有另一种可能|Huì bu huì yǒu lìng yì zhǒng kěnéng]？", "Mengusulkan tanpa membantah"],
+        ["2 — Halus", "[我不太同意这一点|Wǒ bú tài tóngyì zhè yì diǎn]。", "Rekan sejajar, atasan yang terbuka"],
+        ["2 — Halus", "[你说得有道理|Nǐ shuō de yǒu dàolǐ]，[不过…|búguò…]", "Mengakui dulu — paling aman"],
+        ["3 — Netral", "[我的看法不太一样|Wǒ de kànfǎ bú tài yíyàng]。", "Rekan sejajar"],
+        ["3 — Netral", "[我觉得可能不是这样|Wǒ juéde kěnéng bú shì zhèyàng]。", "Rekan sejajar"],
+        ["4 — Tegas", "[我不同意|Wǒ bù tóngyì]。", "Teman dekat, atau situasi penting"],
+        ["5 — Keras", "[这不对|Zhè bú duì]。 / [你错了|Nǐ cuò le]。", "⚠️ Hampir tidak pernah dipakai"]
+       ]
+      },
+      {
+       "head": ["Untuk menyetujui", "Nada"],
+       "rows": [
+        ["[对对对|Duì duì duì]。", "Setuju cepat, santai"],
+        ["[有道理|Yǒu dàolǐ]。", "Masuk akal"],
+        ["[我也这么觉得|Wǒ yě zhème juéde]。", "Saya juga merasa begitu"],
+        ["[完全同意|Wánquán tóngyì]。", "Setuju sepenuhnya"],
+        ["[这话说得对|Zhè huà shuō de duì]。", "Ini benar — sedikit lebih tegas"],
+        ["[听你的|Tīng nǐ de]。", "Ikut kamu saja"]
+       ]
+      }
+     ],
+     "after": [
+      "**Susunan tiga langkah yang berlaku hampir selalu:**",
+      "**1. Akui apa yang benar.** [方向我完全同意|Fāngxiàng wǒ wánquán tóngyì]。 / [你说得确实有道理|Nǐ shuō de quèshí yǒu dàolǐ]。",
+      "**2. Sebut kekhawatiranmu, bukan kesalahannya.** [不过有一点我有点儿担心|Búguò yǒu yì diǎn wǒ yǒudiǎnr dānxīn]。",
+      "**3. Tawarkan pilihan lain.** [要不我们先试试…|Yàobù wǒmen xiān shìshi…]？",
+      "⚠️ Yang membuat langkah ini berhasil bukan kesopanannya, melainkan **langkah ketiga**. Ketidaksetujuan tanpa usulan pengganti dianggap mengeluh; dengan usulan pengganti, ia dianggap sumbangan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Perbandingan lanjutan",
+   "blocks": [
+    { "type": "p", "text": "Kamu sudah punya 比 dari 中文 101. Yang berikut ini melengkapinya, dan semuanya muncul di dialog unit ini." },
+    { "type": "tabel", "head": ["Rangka", "Arti", "Contoh"], "rows": [
+     ["A 比 B + sifat", "A lebih … daripada B", "[他比我高|Tā bǐ wǒ gāo]。"],
+     ["A 比 B + sifat + 一点儿", "sedikit lebih", "[他比我高一点儿|Tā bǐ wǒ gāo yìdiǎnr]。"],
+     ["A 比 B + sifat + 多了 / 得多", "jauh lebih", "[风险比原来小多了|Fēngxiǎn bǐ yuánlái xiǎo duō le]。"],
+     ["A 比 B + sifat + angka", "lebih … sebanyak", "[他比我大三岁|Tā bǐ wǒ dà sān suì]。"],
+     ["A 没有 B + sifat", "A tidak se… B", "[我没有他高|Wǒ méiyǒu tā gāo]。"],
+     ["A 不如 B", "A kalah dibanding B", "[这个不如那个好|Zhège bùrú nàge hǎo]。"],
+     ["A 跟 B 一样 + sifat", "A sama … dengan B", "[这个跟那个一样贵|Zhège gēn nàge yíyàng guì]。"],
+     ["A 跟 B 差不多", "A kurang lebih sama dengan B", "[价格跟去年差不多|Jiàgé gēn qùnián chàbuduō]。"],
+     ["越来越 + sifat", "makin lama makin", "[越来越贵|yuè lái yuè guì] (Unit 1)"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga jebakan kalimat 比", "items": [
+     "**Jangan pakai 很 di dalam kalimat 比.** ❌ 他比我很高。 ✅ [他比我高|Tā bǐ wǒ gāo]。 Kalau ingin menguatkan, pakai [更|gèng] atau [还|hái]。",
+     "**Sangkalannya bukan 不比, melainkan 没有.** [我没有他高|Wǒ méiyǒu tā gāo]。 saya tidak setinggi dia. 我不比他高 juga ada, tapi artinya lebih tajam: “saya tidak lebih tinggi dari dia” — nadanya membantah.",
+     "**Kalimat 比 tidak dipakai dengan 得多 dan 一点儿 sekaligus.** ❌ 他比我高一点儿多了。"
+    ] }
+   ]
+  },
+  {
+   "title": "Kosakata berpendapat dan berdiskusi",
+   "blocks": [
+    { "type": "p", "text": "Kata benda abstrak — pendapat, alasan, kemungkinan, akibat — adalah lapisan kosakata yang membedakan A2 dari A1. Tanpa mereka kamu bisa bercerita tapi tidak bisa berdebat." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Contoh"], "rows": [
+     ["[看法|kànfǎ]", "pandangan, pendapat", "[你的看法呢|Nǐ de kànfǎ ne]？"],
+     ["[想法|xiǎngfǎ]", "pemikiran, gagasan", "[我有个想法|Wǒ yǒu ge xiǎngfǎ]。"],
+     ["[建议|jiànyì]", "usulan, saran", "[我有个建议|Wǒ yǒu ge jiànyì]。"],
+     ["[理由|lǐyóu]", "alasan", "[理由是什么|Lǐyóu shì shénme]？"],
+     ["[原因|yuányīn]", "sebab", "[主要原因是…|Zhǔyào yuányīn shì…]"],
+     ["[结果|jiéguǒ]", "hasil, akibat", "[结果不太好|Jiéguǒ bú tài hǎo]。"],
+     ["[影响|yǐngxiǎng]", "pengaruh; memengaruhi", "[这会影响进度|Zhè huì yǐngxiǎng jìndù]。"],
+     ["[可能性|kěnéngxìng]", "kemungkinan", "[有这个可能性|Yǒu zhège kěnéngxìng]。"],
+     ["[风险|fēngxiǎn]", "risiko", "[风险太大了|Fēngxiǎn tài dà le]。"],
+     ["[优势|yōushì]", "keunggulan", "[我们的优势是…|Wǒmen de yōushì shì…]"],
+     ["[问题|wèntí]", "masalah; pertanyaan", "[问题在于…|Wèntí zàiyú…]"],
+     ["[事实|shìshí]", "fakta", "[事实上|shìshí shang] kenyataannya"],
+     ["[经验|jīngyàn]", "pengalaman", "[根据我的经验|Gēnjù wǒ de jīngyàn]……"],
+     ["[标准|biāozhǔn]", "standar, tolok ukur", "[标准是什么|Biāozhǔn shì shénme]？"]
+    ] },
+    { "type": "sub", "text": "Kalimat penghubung untuk berdiskusi" },
+    { "type": "tabel", "head": ["Fungsi", "Kalimat"], "rows": [
+     ["Meminta pendapat", "[你怎么看|Nǐ zěnme kàn]？ / [你觉得呢|Nǐ juéde ne]？"],
+     ["Menahan giliran", "[我想想…|Wǒ xiǎngxiang…] / [让我想一下|Ràng wǒ xiǎng yíxià]。"],
+     ["Menambahkan", "[还有一点|Hái yǒu yì diǎn]…"],
+     ["Kembali ke pokok", "[回到刚才的问题|Huí dào gāngcái de wèntí]…"],
+     ["Merangkum", "[总的来说|Zǒng de lái shuō]… / [简单来说|Jiǎndān lái shuō]…"],
+     ["Menutup", "[那就这么定|Nà jiù zhème dìng]。"]
+    ] },
+    { "type": "p", "text": "⚠️ Satu kalimat yang menyelamatkan ketika kamu belum siap menjawab: **[让我想一下|Ràng wǒ xiǎng yíxià]。** Biar saya pikir sebentar. Diam beberapa detik lalu menjawab dengan baik jauh lebih dihargai daripada menjawab cepat dengan kalimat yang berantakan — di Tiongkok maupun di mana pun." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "外语", "baca": "wàiyǔ", "id": "bahasa asing" },
+  { "zh": "同意", "baca": "tóngyì", "id": "setuju" },
+  { "zh": "母语", "baca": "mǔyǔ", "id": "bahasa ibu" },
+  { "zh": "门", "baca": "mén", "id": "penggolong mata pelajaran/bahasa" },
+  { "zh": "语言", "baca": "yǔyán", "id": "bahasa" },
+  { "zh": "乱", "baca": "luàn", "id": "kacau" },
+  { "zh": "研究", "baca": "yánjiū", "id": "penelitian" },
+  { "zh": "经验", "baca": "jīngyàn", "id": "pengalaman" },
+  { "zh": "方法", "baca": "fāngfǎ", "id": "cara, metode" },
+  { "zh": "年龄", "baca": "niánlíng", "id": "umur" },
+  { "zh": "对…来说", "baca": "duì…lái shuō", "id": "bagi …" },
+  { "zh": "不如", "baca": "bùrú", "id": "kalah dibanding" },
+  { "zh": "出国", "baca": "chū guó", "id": "ke luar negeri" },
+  { "zh": "理论", "baca": "lǐlùn", "id": "teori" },
+  { "zh": "实际", "baca": "shíjì", "id": "kenyataan" },
+  { "zh": "下载", "baca": "xiàzài", "id": "mengunduh" },
+  { "zh": "应用", "baca": "yìngyòng", "id": "aplikasi" },
+  { "zh": "发言权", "baca": "fāyánquán", "id": "hak bicara" },
+  { "zh": "管用", "baca": "guǎnyòng", "id": "berguna, manjur" },
+  { "zh": "想法", "baca": "xiǎngfǎ", "id": "pemikiran" },
+  { "zh": "批", "baca": "pī", "id": "angkatan, batch" },
+  { "zh": "产品", "baca": "chǎnpǐn", "id": "produk" },
+  { "zh": "投", "baca": "tóu", "id": "menanamkan, melempar" },
+  { "zh": "规模", "baca": "guīmó", "id": "skala" },
+  { "zh": "人口", "baca": "rénkǒu", "id": "penduduk" },
+  { "zh": "方向", "baca": "fāngxiàng", "id": "arah" },
+  { "zh": "确实", "baca": "quèshí", "id": "memang benar" },
+  { "zh": "竞争", "baca": "jìngzhēng", "id": "persaingan" },
+  { "zh": "激烈", "baca": "jīliè", "id": "sengit" },
+  { "zh": "大量", "baca": "dàliàng", "id": "dalam jumlah besar" },
+  { "zh": "资源", "baca": "zīyuán", "id": "sumber daya" },
+  { "zh": "反应", "baca": "fǎnyìng", "id": "reaksi, respons" },
+  { "zh": "损失", "baca": "sǔnshī", "id": "kerugian" },
+  { "zh": "建议", "baca": "jiànyì", "id": "usulan" },
+  { "zh": "成本", "baca": "chéngběn", "id": "biaya, ongkos" },
+  { "zh": "数据", "baca": "shùjù", "id": "data" },
+  { "zh": "风险", "baca": "fēngxiǎn", "id": "risiko" },
+  { "zh": "了解", "baca": "liǎojiě", "id": "memahami, mengetahui" },
+  { "zh": "当地", "baca": "dāngdì", "id": "setempat" },
+  { "zh": "试点", "baca": "shìdiǎn", "id": "uji coba terbatas" },
+  { "zh": "其实", "baca": "qíshí", "id": "sebenarnya" },
+  { "zh": "反正", "baca": "fǎnzhèng", "id": "toh, bagaimanapun" },
+  { "zh": "到底", "baca": "dàodǐ", "id": "sebenarnya sih" },
+  { "zh": "难道", "baca": "nándào", "id": "masa iya" },
+  { "zh": "毕竟", "baca": "bìjìng", "id": "bagaimanapun juga" },
+  { "zh": "总之", "baca": "zǒngzhī", "id": "pokoknya" },
+  { "zh": "看法", "baca": "kànfǎ", "id": "pandangan" },
+  { "zh": "理由", "baca": "lǐyóu", "id": "alasan" },
+  { "zh": "原因", "baca": "yuányīn", "id": "sebab" },
+  { "zh": "影响", "baca": "yǐngxiǎng", "id": "pengaruh" },
+  { "zh": "优势", "baca": "yōushì", "id": "keunggulan" },
+  { "zh": "事实", "baca": "shìshí", "id": "fakta" },
+  { "zh": "认为", "baca": "rènwéi", "id": "berpendapat" },
+  { "zh": "从来", "baca": "cónglái", "id": "selama ini, sejak dulu" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun ulang memakai kata tanya + 都/也.",
+   "items": [
+    "[我不想吃东西|Wǒ bù xiǎng chī dōngxi]。（sama sekali tidak ingin makan apa pun）",
+    "[没有人知道这件事|Méiyǒu rén zhīdào zhè jiàn shì]。（tak seorang pun tahu）",
+    "[昨天我没去任何地方|Zuótiān wǒ méi qù rènhé dìfang]。（tidak ke mana-mana）",
+    "[他吃所有的东西|Tā chī suǒyǒu de dōngxi]。（makan apa saja）",
+    "[什么时间对我来说都可以|Shénme shíjiān duì wǒ lái shuō dōu kěyǐ]。（kapan saja boleh）"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 其实 · 确实 · 倒是 · 反正 · 毕竟.",
+   "items": [
+    "[你说得|Nǐ shuō de] ___ [有道理|yǒu dàolǐ]，[不过我还是有点儿担心|búguò wǒ háishi yǒudiǎnr dānxīn]。",
+    "___ [我不太想去|wǒ bú tài xiǎng qù]，[只是不好意思拒绝|zhǐshì bù hǎoyìsi jùjué]。",
+    "[这一点我| Zhè yì diǎn wǒ] ___ [同意|tóngyì]。",
+    "___ [已经来不及了|yǐjīng lái bu jí le]，[慢慢走吧|mànmān zǒu ba]。",
+    "[你别生他的气|Nǐ bié shēng tā de qì]，___ [他还是个孩子|tā háishi ge háizi]。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi ketidaksetujuan tingkat 1–2 (halus). Tulis dua versi untuk tiap kalimat.",
+   "items": [
+    "[你错了|Nǐ cuò le]。",
+    "[这个方案不行|Zhège fāng'àn bù xíng]。",
+    "[我不同意|Wǒ bù tóngyì]。",
+    "[这不可能|Zhè bù kěnéng]。",
+    "[你的理由不对|Nǐ de lǐyóu bú duì]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[三岁连母语都说不清楚|Sān suì lián mǔyǔ dōu shuō bu qīngchu]。",
+    "[进步还不如在北京住半年|Jìnbù hái bùrú zài Běijīng zhù bàn nián]。",
+    "[理论上是这样|Lǐlùn shang shì zhèyàng]。[实际上大部分人用三天就不用了|Shíjìshang dàbùfen rén yòng sān tiān jiù bú yòng le]。",
+    "[我手机里有六个|Wǒ shǒujī lǐ yǒu liù ge]，[一个都没打开过|yí ge dōu méi dǎkāi guo]。",
+    "[出问题也好改|Chū wèntí yě hǎo gǎi]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Saya sama sekali tidak ingin makan apa pun.",
+    "Bagi saya, yang ini lebih penting.",
+    "Yang ini saya justru setuju.",
+    "Sebenarnya saya kurang ingin pergi.",
+    "Arahnya saya sepenuhnya setuju, tapi ada satu hal yang agak saya khawatirkan.",
+    "Biar saya pikir sebentar."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[我不想吃什么|Wǒ bù xiǎng chī shénme]。",
+    "[什么我都不想吃|Shénme wǒ dōu bù xiǎng chī]。（susunannya?）",
+    "[他比我很高|Tā bǐ wǒ hěn gāo]。",
+    "[我不比他高|Wǒ bù bǐ tā gāo]。（maksudnya: saya tidak setinggi dia）",
+    "[谁不知道|Shéi bù zhīdào]。（maksudnya: tak seorang pun tahu）"
+   ]
+  }
+ ],
+ "answers": [
+  "我什么都不想吃。 — 谁都不知道这件事。 — 昨天我哪儿都没去。 — 他什么都吃。 — 什么时候都可以。",
+  "确实 — 其实 — 倒是 — 反正 — 毕竟",
+  "Contoh jawaban: 我有一点不太确定。 / 会不会有另一种可能？ — 这个方案我有点儿担心，要不我们再看看？ / 方向没问题，不过有一点… — 我不太同意这一点。 / 我的看法不太一样。 — 会不会还有别的可能？ / 我觉得可能不太容易。 — 你说得有道理，不过我在想…",
+  "Umur tiga tahun bahasa ibunya saja belum bisa diucapkan dengan jelas. — Kemajuannya malah kalah dibanding tinggal setengah tahun di Beijing. — Secara teori memang begitu. Kenyataannya sebagian besar orang memakainya tiga hari lalu berhenti. — Di HP saya ada enam, satu pun belum pernah dibuka. — Kalaupun timbul masalah, gampang diperbaiki.",
+  "Wǒ shénme dōu bù xiǎng chī. — Duì wǒ lái shuō, zhège gèng zhòngyào. — Zhège wǒ dào shì tóngyì. — Qíshí wǒ bú tài xiǎng qù. — Fāngxiàng wǒ wánquán tóngyì, búguò yǒu yì diǎn wǒ yǒudiǎnr dānxīn. — Ràng wǒ xiǎng yíxià.",
+  "我什么都不想吃。 (butuh 都, dan 什么 pindah ke depan) — 我什么都不想吃。 (pelaku tetap di depan) — 他比我高。 (buang 很) — 我没有他高。 — 谁都不知道。 (butuh 都/也)"
+ ],
+ "wave": "Lima menit sebelum Unit 13: pilih satu hal yang benar-benar kamu tidak setujui — kebijakan kantor, pendapat teman, kebiasaan umum — lalu susun tiga kalimat: akui apa yang benar, sebut kekhawatiranmu, tawarkan pilihan lain. Wajib memakai 确实 sekali dan 不过 sekali. Kalau tiga kalimat itu keluar berurutan tanpa berhenti, kamu sudah bisa berdebat dalam bahasa Mandarin — dan itu jauh lebih maju daripada yang dikira orang tentang tingkat A2."
+}

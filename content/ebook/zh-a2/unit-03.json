@@ -1,0 +1,353 @@
+{
+ "title": "Menilai cara orang melakukan sesuatu",
+ "title_target": "你说得真好 — Nǐ shuō de zhēn hǎo",
+ "goal": "Menguasai 得 — pelengkap tingkat yang menilai BAGAIMANA sebuah perbuatan dilakukan — beserta jebakan objeknya, lalu memakai pengulangan kata kerja (看看, 试一试) untuk membuat permintaanmu terdengar ringan.",
+ "bekal": [
+  "menilai cara orang melakukan sesuatu: 说得很好, 跑得很快, 做得不错",
+  "memasang objek di kalimat ber-得 tanpa membuatnya salah",
+  "bertanya “bagaimana dia melakukannya?” dengan 得怎么样",
+  "melunakkan permintaan dengan pengulangan kata kerja: 看看, 试一试, 商量商量",
+  "membedakan tiga 得/的/地 yang bunyinya sama persis"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Di kelas bahasa",
+   "intro": "Andi ikut kelas Mandarin dua kali seminggu di kantornya. Hari ini gurunya, 张老师, mengomentari kemajuannya. Hampir tiap kalimat penilaian di dialog ini memakai 得.",
+   "lines": [
+    { "speaker": "张老师:", "text": "[安迪|Āndí]，[你今天读得比上次好多了|nǐ jīntiān dú de bǐ shàng cì hǎo duō le]。", "id": "Andi, hari ini bacaanmu jauh lebih bagus daripada kali lalu.", "literal": "Andi, kamu — hari-ini — baca — tingkat — dibanding — atas — kali — bagus — banyak — sudah." },
+    { "speaker": "安迪:", "text": "[真的吗|Zhēn de ma]？[我在家练了很久|Wǒ zài jiā liàn le hěn jiǔ]。", "id": "Benarkah? Saya latihan lama di rumah.", "literal": "sungguh — punya — kah. saya — di — rumah — latih — sudah — sangat — lama." },
+    { "speaker": "张老师:", "text": "[看得出来|Kàn de chūlai]。[不过你说话说得太快了|Búguò nǐ shuōhuà shuō de tài kuài le]，[有几个字听不清楚|yǒu jǐ ge zì tīng bu qīngchu]。", "id": "Kelihatan kok. Tapi kamu bicara terlalu cepat, ada beberapa kata yang tidak terdengar jelas.", "literal": "lihat — bisa — keluar — datang. tetapi — kamu — bicara-omong — bicara — tingkat — terlalu — cepat — sudah, ada — beberapa — penggolong — huruf — dengar — tak-bisa — jelas." },
+    { "speaker": "安迪:", "text": "[我怕说慢了别人没耐心听|Wǒ pà shuō màn le biérén méi nàixīn tīng]。", "id": "Saya takut kalau bicara pelan orang lain tidak sabar mendengarkan.", "literal": "saya — takut — bicara — lambat — sudah — orang-lain — tidak-ada — kesabaran — dengar." },
+    { "speaker": "张老师:", "text": "[慢一点儿没关系|Màn yìdiǎnr méi guānxi]。[说得清楚比说得快重要得多|Shuō de qīngchu bǐ shuō de kuài zhòngyào de duō]。", "id": "Agak pelan tidak apa-apa. Bicara jelas jauh lebih penting daripada bicara cepat.", "literal": "lambat — sedikit — tidak-ada — hubungan. bicara — tingkat — jelas — dibanding — bicara — tingkat — cepat — penting — tingkat — banyak." },
+    { "speaker": "安迪:", "text": "[老师|Lǎoshī]，[我的声调是不是还有问题|wǒ de shēngdiào shì bu shì hái yǒu wèntí]？", "id": "Pak, nada saya masih bermasalah, ya?", "literal": "guru, saya — punya — nada — adalah — tidak — adalah — masih — ada — masalah." },
+    { "speaker": "张老师:", "text": "[第三声你发得不太准|Dì-sān shēng nǐ fā de bú tài zhǔn]。[你听听|Nǐ tīngting]：[买|mǎi]、[卖|mài]。[听出区别了吗|Tīng chū qūbié le ma]？", "id": "Nada ketigamu kurang tepat. Coba dengar: mǎi, mài. Terdengar bedanya?", "literal": "ke-tiga — nada — kamu — keluarkan — tingkat — tidak — terlalu — akurat. kamu — dengar — dengar: beli, jual. dengar — keluar — perbedaan — sudah — kah." },
+    { "speaker": "安迪:", "text": "[听出来了|Tīng chūlai le]。[第一个往下再往上|Dì-yī ge wǎng xià zài wǎng shàng]，[第二个一直往下|dì-èr ge yìzhí wǎng xià]。", "id": "Terdengar. Yang pertama turun lalu naik, yang kedua terus turun.", "literal": "dengar — keluar — datang — sudah. ke-satu — penggolong — menuju — bawah — lagi — menuju — atas, ke-dua — penggolong — terus — menuju — bawah." },
+    { "speaker": "张老师:", "text": "[对|Duì]。[你分析得很准确|Nǐ fēnxī de hěn zhǔnquè]，[可是嘴还没跟上|kěshì zuǐ hái méi gēn shàng]。[这很正常|Zhè hěn zhèngcháng]。", "id": "Betul. Analisismu tepat sekali, tapi mulutmu belum menyusul. Itu wajar.", "literal": "betul. kamu — analisis — tingkat — sangat — akurat, tetapi — mulut — masih — belum — ikut — atas. ini — sangat — normal." },
+    { "speaker": "安迪:", "text": "[那我该怎么练|Nà wǒ gāi zěnme liàn]？", "id": "Lalu saya harus latihan bagaimana?", "literal": "itu — saya — seharusnya — bagaimana — latih." },
+    { "speaker": "张老师:", "text": "[每天录三分钟|Měi tiān lù sān fēnzhōng]，[然后自己听一听|ránhòu zìjǐ tīng yi tīng]。[你会发现问题在哪儿|Nǐ huì fāxiàn wèntí zài nǎr]。", "id": "Tiap hari rekam tiga menit, lalu dengarkan sendiri. Kamu akan tahu masalahnya di mana.", "literal": "tiap — hari — rekam — tiga — menit, sesudah-itu — sendiri — dengar — satu — dengar. kamu — akan — menemukan — masalah — di — mana." },
+    { "speaker": "安迪:", "text": "[录自己的声音有点儿别扭|Lù zìjǐ de shēngyīn yǒudiǎnr bièniu]。", "id": "Merekam suara sendiri agak canggung rasanya.", "literal": "rekam — sendiri — punya — suara — ada-sedikit — canggung." },
+    { "speaker": "张老师:", "text": "[所有人都这么觉得|Suǒyǒu rén dōu zhème juéde]。[但是进步最快的学生都这么做|Dànshì jìnbù zuì kuài de xuésheng dōu zhème zuò]。", "id": "Semua orang merasa begitu. Tapi murid yang kemajuannya paling cepat semuanya melakukan itu.", "literal": "seluruh — orang — semua — begini — merasa. tetapi — kemajuan — paling — cepat — punya — murid — semua — begini — melakukan." }
+   ],
+   "notes": [
+    "**[看得出来|kàn de chūlai] = kelihatan, terlihat dari luar.** Ini pelengkap kemungkinan (Unit 4) yang sudah menyusup lebih awal karena terlalu sering dipakai. Kembarannya [听得出来|tīng de chūlai] terdengar bedanya, dan [看不出来|kàn bu chūlai] tidak kelihatan.",
+    "**⚠️ [你说话说得太快了|Nǐ shuōhuà shuō de tài kuài le] mengulang kata kerjanya dua kali, dan itu WAJIB.** Kalau kata kerjanya punya objek, kata kerja itu harus ditulis dua kali sebelum 得. Ini jebakan nomor satu di seluruh unit ini — kotak tata bahasa di bawah membongkarnya.",
+    "**[说慢了|shuō màn le] = bicaranya jadi terlalu pelan.** Pola 「kata kerja + kata sifat + 了」 berarti kelewatan: [买多了|mǎi duō le] kebanyakan beli, [来早了|lái zǎo le] datang kepagian, [说错了|shuō cuò le] salah bicara.",
+    "**[重要得多|zhòngyào de duō] = jauh lebih penting.** Sesudah kata sifat dalam kalimat perbandingan, 得多 berarti “jauh lebih”. Bandingkan: [好一点|hǎo yìdiǎn] sedikit lebih baik · [好多了|hǎo duō le] jauh lebih baik · [好得多|hǎo de duō] jauh lebih baik (bentuk yang lebih tertulis).",
+    "**[是不是|shì bu shì] dipakai untuk bertanya sambil menduga jawabannya.** [你是不是累了|Nǐ shì bu shì lèi le]？ Kamu capek, ya? Nadanya lebih hangat daripada 吗, karena mengandaikan si penanya sudah memperhatikan.",
+    "**[听听|tīngting] dan [听一听|tīng yi tīng] artinya sama:** coba dengar sebentar. Pengulangan kata kerja adalah alat pelunak kedua terbesar dalam bahasa Mandarin sesudah 一下 — kotak tata bahasa kedua unit ini mengurusnya.",
+    "**[跟上|gēn shàng] = berhasil menyusul.** [嘴还没跟上|Zuǐ hái méi gēn shàng] mulutnya belum menyusul — kalimat yang sangat tepat untuk menggambarkan tahap belajar bahasa mana pun."
+   ],
+   "grammars": [
+    {
+     "title": "得 — menilai cara sebuah perbuatan dilakukan",
+     "body": [
+      "Kalau kata sifat menilai **benda** ([好书|hǎo shū] buku bagus), maka 得 menilai **perbuatan** ([写得好|xiě de hǎo] menulisnya bagus). Rangkanya: **kata kerja + 得 + penilaian**.",
+      "Penilaian di belakang 得 diperlakukan persis seperti kata sifat biasa — artinya ia butuh penyangga 很, sama seperti yang kamu pelajari di 中文 101."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti", "Catatan"],
+       "rows": [
+        ["[他跑得很快|Tā pǎo de hěn kuài]。", "Larinya cepat.", "很 di sini penyangga, bukan “sangat”"],
+        ["[他跑得不快|Tā pǎo de bú kuài]。", "Larinya tidak cepat.", "不 masuk SESUDAH 得"],
+        ["[他跑得快不快|Tā pǎo de kuài bu kuài]？", "Larinya cepat tidak?", "Bentuk tanya positif-negatif"],
+        ["[他跑得怎么样|Tā pǎo de zěnmeyàng]？", "Larinya bagaimana?", "Pertanyaan terbuka"],
+        ["[他跑得非常快|Tā pǎo de fēicháng kuài]。", "Larinya sangat cepat.", "Barulah ini benar-benar “sangat”"],
+        ["[他跑得比我快|Tā pǎo de bǐ wǒ kuài]。", "Larinya lebih cepat daripada saya.", "比 masuk sesudah 得"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Jebakan objek — kata kerjanya diulang**",
+      "Kalau kata kerjanya membawa objek, kamu **tidak boleh** menyelipkan 得 di antara keduanya. Kata kerjanya harus muncul dua kali.",
+      "❌ 他说中文得很好。",
+      "✅ [他说中文说得很好|Tā shuō Zhōngwén shuō de hěn hǎo]。 (bentuk lengkap)",
+      "✅ [他中文说得很好|Tā Zhōngwén shuō de hěn hǎo]。 (objek dimajukan — paling sering dipakai)",
+      "✅ [他的中文说得很好|Tā de Zhōngwén shuō de hěn hǎo]。 (juga wajar)",
+      "Aturan yang sama berlaku untuk 吃饭, 唱歌, 开车: [他开车开得很稳|Tā kāichē kāi de hěn wěn]。 Dia menyetirnya mulus."
+     ]
+    },
+    {
+     "title": "得 · 的 · 地 — tiga aksara, satu bunyi",
+     "body": [
+      "Ketiganya dibaca *de* tanpa nada, dan ketiganya menempel di tengah kalimat. Bedanya cuma pada apa yang ada di kiri dan kanannya. Kalau kamu hafal tiga baris tabel di bawah, kamu sudah selesai dengan salah satu masalah menulis paling besar dalam bahasa Mandarin."
+     ],
+     "tables": [
+      {
+       "head": ["Aksara", "Rangka", "Contoh"],
+       "rows": [
+        ["[的|de]", "penjelas + 的 + **benda**", "[我的书|wǒ de shū] · [很贵的车|hěn guì de chē] · [他买的东西|tā mǎi de dōngxi]"],
+        ["[得|de]", "**kata kerja** + 得 + penilaian", "[跑得快|pǎo de kuài] · [做得不错|zuò de búcuò]"],
+        ["[地|de]", "sifat + 地 + **kata kerja**", "[慢慢地走|mànmān de zǒu] · [认真地听|rènzhēn de tīng]"]
+       ]
+      },
+      {
+       "head": ["Pasangan yang sering tertukar", "Arti"],
+       "rows": [
+        ["[高兴地说|gāoxìng de shuō]", "berkata dengan gembira — sifatnya di DEPAN, menerangkan caranya"],
+        ["[说得很高兴|shuō de hěn gāoxìng]", "bicaranya asyik — penilaian di BELAKANG, sesudah perbuatannya"],
+        ["[快地写|kuài de xiě]", "menulis dengan cepat (jarang dipakai, terdengar tertulis)"],
+        ["[写得很快|xiě de hěn kuài]", "menulisnya cepat (bentuk lisan sehari-hari)"]
+       ]
+      }
+     ],
+     "after": [
+      "Untuk berbicara sehari-hari, 地 boleh kamu abaikan dulu — bentuk 得 jauh lebih sering dipakai. Yang tidak boleh diabaikan adalah selisih 的 dan 得, karena keduanya sama-sama muncul di tiap paragraf.",
+      "⚠️ Dalam pesan singkat, banyak orang Tiongkok menulis ketiganya sebagai 的 saja. Kamu akan sering melihatnya. Itu bukan alasan untuk ikut menulis begitu di ujian atau surat resmi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Membujuk teman ikut kelas",
+   "intro": "Andi mencoba membujuk Budi, rekan kerjanya sesama orang Indonesia, ikut kelas Mandarin. Perhatikan berapa banyak kata kerja yang diulang untuk melunakkan ajakan.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[你要不要跟我一起上中文课|Nǐ yào bu yào gēn wǒ yìqǐ shàng Zhōngwén kè]？[来试试嘛|Lái shìshi ma]。", "id": "Mau ikut kelas Mandarin bareng aku? Coba dulu lah.", "literal": "kamu — mau — tidak — mau — dengan — saya — bersama — naik — Mandarin — kelas. datang — coba — coba — dong." },
+    { "speaker": "布迪:", "text": "[我怕学不会|Wǒ pà xué bu huì]。[我记性特别差|Wǒ jìxìng tèbié chà]。", "id": "Aku takut tidak bisa. Ingatanku jelek sekali.", "literal": "saya — takut — belajar — tak-bisa — bisa. saya — daya-ingat — khusus — buruk." },
+    { "speaker": "安迪:", "text": "[我一开始也这么想|Wǒ yì kāishǐ yě zhème xiǎng]。[你先去听一节课看看|Nǐ xiān qù tīng yì jié kè kànkan]，[不喜欢再说|bù xǐhuan zài shuō]。", "id": "Awalnya aku juga berpikir begitu. Coba ikut satu sesi dulu, kalau tidak suka baru dipikirkan lagi.", "literal": "saya — satu — mulai — juga — begini — pikir. kamu — dulu — pergi — dengar — satu — penggolong — kelas — lihat — lihat, tidak — suka — lagi — bicara." },
+    { "speaker": "布迪:", "text": "[老师讲得怎么样|Lǎoshī jiǎng de zěnmeyàng]？[会不会讲得太快|Huì bu huì jiǎng de tài kuài]？", "id": "Gurunya mengajarnya bagaimana? Jangan-jangan menjelaskannya terlalu cepat?", "literal": "guru — menjelaskan — tingkat — bagaimana. akan — tidak — akan — menjelaskan — tingkat — terlalu — cepat." },
+    { "speaker": "安迪:", "text": "[讲得很清楚|Jiǎng de hěn qīngchu]，[而且他很有耐心|érqiě tā hěn yǒu nàixīn]。[我问了三次同样的问题|Wǒ wèn le sān cì tóngyàng de wèntí]，[他每次都重新解释一遍|tā měi cì dōu chóngxīn jiěshì yí biàn]。", "id": "Menjelaskannya jelas sekali, lagi pula dia sabar. Aku bertanya tiga kali pertanyaan yang sama, tiap kali dia menerangkan ulang dari awal.", "literal": "menjelaskan — tingkat — sangat — jelas, lagipula — dia — sangat — ada — kesabaran. saya — tanya — sudah — tiga — kali — sama — punya — pertanyaan, dia — tiap — kali — semua — ulang-baru — menjelaskan — satu — kali." },
+    { "speaker": "布迪:", "text": "[一节课多长时间|Yì jié kè duō cháng shíjiān]？", "id": "Satu sesi berapa lama?", "literal": "satu — penggolong — kelas — berapa — panjang — waktu." },
+    { "speaker": "安迪:", "text": "[九十分钟|Jiǔshí fēnzhōng]。[星期二和星期四晚上|Xīngqī'èr hé xīngqīsì wǎnshang]。", "id": "Sembilan puluh menit. Selasa dan Kamis malam.", "literal": "sembilan-puluh — menit. minggu-dua — dan — minggu-empat — malam." },
+    { "speaker": "布迪:", "text": "[晚上啊|Wǎnshang a]……[我下班回到家已经累得不想动了|wǒ xiàbān huí dào jiā yǐjīng lèi de bù xiǎng dòng le]。", "id": "Malam ya… pulang kerja sampai rumah aku sudah capek sampai tak mau gerak.", "literal": "malam — ya… saya — turun-kerja — kembali — sampai — rumah — sudah — lelah — tingkat — tidak — mau — bergerak — sudah." },
+    { "speaker": "安迪:", "text": "[所以才要去上课啊|Suǒyǐ cái yào qù shàng kè a]。[一个人在家肯定学不下去|Yí ge rén zài jiā kěndìng xué bu xiàqu]。", "id": "Justru karena itu harus ikut kelas. Sendirian di rumah pasti tidak akan bertahan belajar.", "literal": "maka — baru — mau — pergi — naik — kelas — lho. satu — penggolong — orang — di — rumah — pasti — belajar — tak-bisa — turun — pergi." },
+    { "speaker": "布迪:", "text": "[这倒是真的|Zhè dào shì zhēn de]。[我买的教材还没打开过|Wǒ mǎi de jiàocái hái méi dǎkāi guo]。", "id": "Itu sih memang benar. Buku pelajaran yang aku beli belum pernah dibuka.", "literal": "ini — malah — adalah — sungguh — punya. saya — beli — punya — buku-ajar — masih — belum — buka — pernah." },
+    { "speaker": "安迪:", "text": "[那就这么定了|Nà jiù zhème dìng le]。[明天晚上我们商量商量报名的事|Míngtiān wǎnshang wǒmen shāngliang shāngliang bàomíng de shì]。", "id": "Kalau begitu diputuskan begini saja. Besok malam kita bicarakan soal pendaftarannya.", "literal": "itu — langsung — begini — tetapkan — sudah. besok — malam — kami — bermusyawarah — bermusyawarah — mendaftar — punya — urusan." },
+    { "speaker": "布迪:", "text": "[等等|Děngdeng]，[我还没答应呢|wǒ hái méi dāying ne]！", "id": "Eh tunggu, aku belum bilang iya!", "literal": "tunggu — tunggu, saya — masih — belum — menyanggupi — lho." }
+   ],
+   "notes": [
+    "**[试试|shìshi] · [看看|kànkan] · [听一听|tīng yi tīng] · [商量商量|shāngliang shāngliang] — semuanya pengulangan kata kerja.** Artinya “sebentar saja, coba-coba, tidak berat”. Kotak tata bahasa di bawah memberi aturan lengkapnya.",
+    "**[学不会|xué bu huì] = belajar tapi tidak sampai bisa.** Bandingkan tiga saudara ini: [学不会|xué bu huì] tidak sampai bisa · [学不下去|xué bu xiàqu] tidak sanggup meneruskan · [学不好|xué bu hǎo] tidak bisa jadi bagus. Ketiganya pelengkap kemungkinan — Unit 4.",
+    "**[记性差|jìxìng chà] = daya ingatnya jelek.** 差 *chà* berarti kurang, buruk. Bandingkan dengan 不好 yang lebih halus. ⚠️ Jangan tertukar dengan [差不多|chàbuduō] yang sudah kamu pakai di Unit 1.",
+    "**[不喜欢再说|bù xǐhuan zài shuō] = kalau tidak suka, nanti dibicarakan lagi.** Pola 「…再说」 di ujung kalimat berarti “urusan itu ditunda dulu”. Sangat sering dipakai untuk menutup percakapan tanpa menolak: [到时候再说吧|Dào shíhou zài shuō ba]。 nanti saja kalau waktunya tiba.",
+    "**[累得不想动|lèi de bù xiǎng dòng] — 得 tidak selalu diikuti kata sifat.** Ia bisa diikuti seluruh anak kalimat yang menggambarkan akibat: capek **sampai** tidak mau bergerak. [高兴得说不出话来|Gāoxìng de shuō bu chū huà lai] gembira sampai tak bisa berkata-kata.",
+    "**[所以才|suǒyǐ cái] = justru karena itulah.** 才 di sini bukan “baru”, tapi penegas: itulah tepatnya alasannya. Nadanya sedikit membantah.",
+    "**⚠️ [这倒是真的|Zhè dào shì zhēn de] — [倒|dào] menandai pengakuan yang berlawanan dengan sikap sebelumnya.** Budi tadinya menolak, sekarang mengakui satu hal. Kata kecil ini membuat percakapan terdengar dewasa dan sulit dipalsukan; perhatikan tiap kali ia muncul."
+   ],
+   "grammars": [
+    {
+     "title": "Pengulangan kata kerja — “coba sebentar saja”",
+     "body": [
+      "Mengulang kata kerja adalah cara Mandarin mengecilkan sebuah perbuatan: mengubahnya dari tugas menjadi percobaan singkat. Ia melunakkan permintaan, menawarkan tanpa memaksa, dan membuat perintah terdengar seperti ajakan."
+     ],
+     "tables": [
+      {
+       "head": ["Bentuk", "Contoh", "Catatan"],
+       "rows": [
+        ["AA", "[看看|kànkan] · [试试|shìshi] · [想想|xiǎngxiang]", "Paling santai; suku kata kedua jadi 轻声"],
+        ["A 一 A", "[看一看|kàn yi kàn] · [试一试|shì yi shì]", "Sama artinya, sedikit lebih pelan"],
+        ["A 了 A", "[看了看|kàn le kàn] · [想了想|xiǎng le xiǎng]", "Untuk kejadian yang sudah lewat"],
+        ["ABAB", "[商量商量|shāngliang shāngliang] · [休息休息|xiūxi xiūxi]", "Untuk kata kerja dua suku kata"],
+        ["❌ AABB", "❌ 商商量量", "Kata KERJA dua suku kata tidak pernah begini"],
+        ["✅ AABB", "[高高兴兴|gāogāo-xìngxìng] · [干干净净|gāngān-jìngjìng]", "Ini untuk kata SIFAT, artinya menguatkan"]
+       ]
+      }
+     ],
+     "after": [
+      "**Tiga cara mengatakan hal yang sama**",
+      "[你看一下|Nǐ kàn yíxià]。 · [你看看|Nǐ kànkan]。 · [你看一看|Nǐ kàn yi kàn]。 — ketiganya “coba lihat sebentar”, ketiganya wajar.",
+      "⚠️ Pengulangan tidak dipakai untuk perbuatan yang sedang berlangsung atau yang panjang. ❌ 我正在看看电视。 ✅ [我正在看电视|Wǒ zhèngzài kàn diànshì]。",
+      "⚠️ Kata kerja yang mengandung objek diulang di bagian PERTAMA saja: [聊聊天|liáoliao tiān] · [散散步|sànsan bù] · [帮帮忙|bāngbang máng]。"
+     ]
+    },
+    {
+     "title": "得 + akibat — “sampai begitu”",
+     "body": [
+      "Bentuk kedua dari 得, dan yang paling sering membuat kalimat orang Indonesia terdengar hidup. Di belakang 得 kamu tidak menaruh kata sifat, melainkan **akibat**: seberapa jauh perbuatan atau keadaannya sampai membawamu."
+     ],
+     "tables": [
+      {
+       "head": ["Kalimat", "Arti"],
+       "rows": [
+        ["[我累得不想说话|Wǒ lèi de bù xiǎng shuōhuà]。", "Saya capek sampai tak mau bicara."],
+        ["[他笑得肚子疼|Tā xiào de dùzi téng]。", "Dia tertawa sampai perutnya sakit."],
+        ["[房间脏得没法住|Fángjiān zāng de méi fǎ zhù]。", "Kamarnya kotor sampai tak bisa ditinggali."],
+        ["[我饿得能吃下一头牛|Wǒ è de néng chī xià yì tóu niú]。", "Saya lapar sampai sanggup makan seekor sapi."],
+        ["[他高兴得跳了起来|Tā gāoxìng de tiào le qǐlai]。", "Dia gembira sampai melompat."]
+       ]
+      }
+     ],
+     "after": [
+      "Rangkanya persis sama dengan 得 penilaian: **kata kerja / kata sifat + 得 + apa yang terjadi**. Bedanya cuma isi di belakangnya — satu kata sifat, atau satu kalimat penuh.",
+      "⚠️ Jangan tertukar dengan [太…了|tài…le]. [我太累了|Wǒ tài lèi le]。 saya terlalu capek — berhenti di situ. [我累得不想动|Wǒ lèi de bù xiǎng dòng]。 memberitahu akibatnya, dan itulah yang membuat kalimatmu terdengar seperti orang yang benar-benar bicara Mandarin."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menilai orang: kata sifat yang paling sering dipakai sesudah 得",
+   "blocks": [
+    { "type": "p", "text": "Rangkanya sudah kamu punya; yang kurang cuma kata-kata untuk mengisinya. Daftar ini disusun berpasangan supaya kamu bisa memuji dan mengeluh dengan alat yang sama." },
+    { "type": "tabel", "head": ["Bagus", "Kurang", "Contoh"], "rows": [
+     ["[好|hǎo] bagus", "[不好|bù hǎo] tidak bagus", "[他中文说得很好|Tā Zhōngwén shuō de hěn hǎo]。"],
+     ["[快|kuài] cepat", "[慢|màn] lambat", "[你打字打得真快|Nǐ dǎzì dǎ de zhēn kuài]。"],
+     ["[清楚|qīngchu] jelas", "[不清楚|bù qīngchu] tidak jelas", "[老师讲得很清楚|Lǎoshī jiǎng de hěn qīngchu]。"],
+     ["[准|zhǔn] tepat", "[不准|bù zhǔn] meleset", "[他猜得很准|Tā cāi de hěn zhǔn]。"],
+     ["[认真|rènzhēn] sungguh-sungguh", "[马虎|mǎhu] ceroboh", "[你做得太马虎了|Nǐ zuò de tài mǎhu le]。"],
+     ["[流利|liúlì] lancar", "[结巴|jiēba] tersendat", "[她说得很流利|Tā shuō de hěn liúlì]。"],
+     ["[干净|gānjìng] bersih", "[脏|zāng] kotor", "[衣服洗得很干净|Yīfu xǐ de hěn gānjìng]。"],
+     ["[早|zǎo] awal", "[晚|wǎn] terlambat", "[你今天来得太晚了|Nǐ jīntiān lái de tài wǎn le]。"]
+    ] },
+    { "type": "kotak", "title": "Empat kalimat penilaian yang paling sering terdengar", "items": [
+     "[你做得很好|Nǐ zuò de hěn hǎo]。 — Kerjamu bagus. Kalimat pujian paling aman di kantor.",
+     "[还可以|Hái kěyǐ]。 / [还行|Hái xíng]。 — Lumayan. Jawaban netral untuk 怎么样.",
+     "[做得不错|Zuò de búcuò]。 — Lumayan bagus. 不错 lebih hangat daripada terjemahannya.",
+     "[你今天表现得特别好|Nǐ jīntiān biǎoxiàn de tèbié hǎo]。 — Penampilanmu hari ini bagus sekali."
+    ] }
+   ]
+  },
+  {
+   "title": "Kosakata kelas dan belajar",
+   "blocks": [
+    { "type": "p", "text": "Kalau kamu sedang membaca modul ini, kemungkinan besar kamu juga akan bicara tentang kegiatan belajarmu sendiri — kepada guru, teman kelas, atau orang yang bertanya “kamu belajar Mandarin di mana?”. Daftar ini untuk itu." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Catatan pemakaian"], "rows": [
+     ["[上课|shàng kè]", "masuk kelas, mengajar", "Dipakai guru maupun murid"],
+     ["[下课|xià kè]", "kelas selesai", "[下课了|Xià kè le]！"],
+     ["[一节课|yì jié kè]", "satu sesi", "节 penggolong untuk sesi pelajaran"],
+     ["[报名|bào míng]", "mendaftar", "Punya objek di dalamnya — ❌ 报名这个班"],
+     ["[教材|jiàocái]", "buku ajar", "[课本|kèběn] juga dipakai"],
+     ["[作业|zuòyè]", "PR", "[交作业|jiāo zuòyè] mengumpulkan PR"],
+     ["[复习|fùxí]", "mengulang pelajaran", "Lawan katanya [预习|yùxí] belajar sebelum kelas"],
+     ["[练习|liànxí]", "latihan; berlatih", "Kata benda sekaligus kata kerja"],
+     ["[进步|jìnbù]", "kemajuan; maju", "[你进步很大|Nǐ jìnbù hěn dà]。"],
+     ["[声调|shēngdiào]", "nada", "[第三声|dì-sān shēng] nada ketiga"],
+     ["[发音|fāyīn]", "pelafalan", "[发音很准|fāyīn hěn zhǔn]"],
+     ["[生词|shēngcí]", "kosakata baru", "[背生词|bèi shēngcí] menghafal kosakata"],
+     ["[考试|kǎoshì]", "ujian", "[考试考得不错|Kǎoshì kǎo de búcuò]。"]
+    ] },
+    { "type": "p", "text": "Satu catatan kecil yang sering menyelamatkan: kalau kamu tidak paham sesuatu di kelas, kalimat yang paling berguna bukan [我不懂|Wǒ bù dǒng] melainkan **[老师，能不能再说一遍|Lǎoshī, néng bu néng zài shuō yí biàn]？** Bisa diulang sekali lagi? Ia memberi gurunya sesuatu yang bisa dilakukan, bukan sekadar mengabarkan kegagalan." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "读", "baca": "dú", "id": "membaca (nyaring)" },
+  { "zh": "练", "baca": "liàn", "id": "berlatih" },
+  { "zh": "久", "baca": "jiǔ", "id": "lama" },
+  { "zh": "说话", "baca": "shuōhuà", "id": "berbicara" },
+  { "zh": "字", "baca": "zì", "id": "aksara, kata tertulis" },
+  { "zh": "怕", "baca": "pà", "id": "takut" },
+  { "zh": "别人", "baca": "biérén", "id": "orang lain" },
+  { "zh": "耐心", "baca": "nàixīn", "id": "kesabaran" },
+  { "zh": "没关系", "baca": "méi guānxi", "id": "tidak apa-apa" },
+  { "zh": "重要", "baca": "zhòngyào", "id": "penting" },
+  { "zh": "声调", "baca": "shēngdiào", "id": "nada" },
+  { "zh": "问题", "baca": "wèntí", "id": "masalah; pertanyaan" },
+  { "zh": "发音", "baca": "fāyīn", "id": "pelafalan" },
+  { "zh": "准", "baca": "zhǔn", "id": "tepat, akurat" },
+  { "zh": "区别", "baca": "qūbié", "id": "perbedaan" },
+  { "zh": "一直", "baca": "yìzhí", "id": "terus-menerus" },
+  { "zh": "分析", "baca": "fēnxī", "id": "menganalisis" },
+  { "zh": "准确", "baca": "zhǔnquè", "id": "akurat" },
+  { "zh": "嘴", "baca": "zuǐ", "id": "mulut" },
+  { "zh": "跟上", "baca": "gēn shàng", "id": "menyusul" },
+  { "zh": "正常", "baca": "zhèngcháng", "id": "normal" },
+  { "zh": "录", "baca": "lù", "id": "merekam" },
+  { "zh": "自己", "baca": "zìjǐ", "id": "sendiri" },
+  { "zh": "发现", "baca": "fāxiàn", "id": "menemukan, menyadari" },
+  { "zh": "声音", "baca": "shēngyīn", "id": "suara" },
+  { "zh": "别扭", "baca": "bièniu", "id": "canggung, tidak nyaman" },
+  { "zh": "所有", "baca": "suǒyǒu", "id": "seluruh" },
+  { "zh": "进步", "baca": "jìnbù", "id": "kemajuan; maju" },
+  { "zh": "试", "baca": "shì", "id": "mencoba" },
+  { "zh": "记性", "baca": "jìxìng", "id": "daya ingat" },
+  { "zh": "差", "baca": "chà", "id": "kurang, buruk" },
+  { "zh": "节", "baca": "jié", "id": "penggolong sesi pelajaran" },
+  { "zh": "讲", "baca": "jiǎng", "id": "menjelaskan, bercerita" },
+  { "zh": "而且", "baca": "érqiě", "id": "lagi pula" },
+  { "zh": "同样", "baca": "tóngyàng", "id": "sama" },
+  { "zh": "重新", "baca": "chóngxīn", "id": "sekali lagi dari awal" },
+  { "zh": "解释", "baca": "jiěshì", "id": "menjelaskan" },
+  { "zh": "遍", "baca": "biàn", "id": "kali (dari awal sampai akhir)" },
+  { "zh": "下班", "baca": "xiàbān", "id": "pulang kerja" },
+  { "zh": "动", "baca": "dòng", "id": "bergerak" },
+  { "zh": "倒", "baca": "dào", "id": "malah, justru (penanda pengakuan)" },
+  { "zh": "教材", "baca": "jiàocái", "id": "buku ajar" },
+  { "zh": "打开", "baca": "dǎkāi", "id": "membuka" },
+  { "zh": "定", "baca": "dìng", "id": "menetapkan" },
+  { "zh": "商量", "baca": "shāngliang", "id": "membicarakan, berunding" },
+  { "zh": "报名", "baca": "bào míng", "id": "mendaftar" },
+  { "zh": "答应", "baca": "dāying", "id": "menyanggupi, mengiyakan" },
+  { "zh": "流利", "baca": "liúlì", "id": "lancar" },
+  { "zh": "马虎", "baca": "mǎhu", "id": "ceroboh" },
+  { "zh": "认真", "baca": "rènzhēn", "id": "sungguh-sungguh" },
+  { "zh": "表现", "baca": "biǎoxiàn", "id": "penampilan; menampilkan diri" },
+  { "zh": "复习", "baca": "fùxí", "id": "mengulang pelajaran" },
+  { "zh": "生词", "baca": "shēngcí", "id": "kosakata baru" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun ulang menjadi kalimat ber-得 yang benar. Awas jebakan objek.",
+   "items": [
+    "他 / 中文 / 说 / 得 / 很 / 好",
+    "我 / 昨天 / 睡 / 得 / 不 / 太 / 好",
+    "你 / 写 / 字 / 写 / 得 / 真 / 漂亮",
+    "她 / 跑 / 得 / 比 / 我 / 快",
+    "老师 / 讲 / 得 / 清楚 / 很"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 的, 得, atau 地.",
+   "items": [
+    "[他跑|Tā pǎo] ___ [很快|hěn kuài]。",
+    "[这是我|Zhè shì wǒ] ___ [书|shū]。",
+    "[她高兴|Tā gāoxìng] ___ [说|shuō]：“[太好了|Tài hǎo le]！”",
+    "[你昨天买|Nǐ zuótiān mǎi] ___ [东西呢|dōngxi ne]？",
+    "[请你慢慢|Qǐng nǐ mànmān] ___ [说|shuō]。",
+    "[我累|Wǒ lèi] ___ [不想动了|bù xiǎng dòng le]。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk pengulangan kata kerja yang wajar.",
+   "items": [
+    "[你看这本书|Nǐ kàn zhè běn shū]。 → ",
+    "[我们商量这件事|Wǒmen shāngliang zhè jiàn shì]。 → ",
+    "[你试这件衣服|Nǐ shì zhè jiàn yīfu]。 → ",
+    "[我们休息一下|Wǒmen xiūxi yíxià]。 → ",
+    "[他想了想然后说|Tā xiǎng le xiǎng ránhòu shuō] …… （sudah benar atau salah?）"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[说得清楚比说得快重要得多|Shuō de qīngchu bǐ shuō de kuài zhòngyào de duō]。",
+    "[他笑得肚子都疼了|Tā xiào de dùzi dōu téng le]。",
+    "[你今天来得太晚了|Nǐ jīntiān lái de tài wǎn le]。",
+    "[我一个人在家肯定学不下去|Wǒ yí ge rén zài jiā kěndìng xué bu xiàqu]。",
+    "[老师，能不能再说一遍|Lǎoshī, néng bu néng zài shuō yí biàn]？"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Dia menyetirnya mulus sekali.",
+    "Bahasa Mandarinmu diucapkan dengan bagus.",
+    "Saya capek sampai tidak mau bicara.",
+    "Coba dengarkan sebentar.",
+    "Mari kita bicarakan dulu soal ini.",
+    "Kemarin saya tidur kurang nyenyak."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[他说中文得很好|Tā shuō Zhōngwén de hěn hǎo]。",
+    "[他跑得快|Tā pǎo de kuài]。（sebagai pernyataan biasa）",
+    "[他不跑得快|Tā bù pǎo de kuài]。",
+    "[我正在看看电视|Wǒ zhèngzài kànkan diànshì]。",
+    "[我们商商量量吧|Wǒmen shāngshangliangliang ba]。",
+    "[我要报名这个班|Wǒ yào bào míng zhège bān]。"
+   ]
+  }
+ ],
+ "answers": [
+  "他中文说得很好。 (atau 他说中文说得很好。) — 我昨天睡得不太好。 — 你写字写得真漂亮。 — 她跑得比我快。 — 老师讲得很清楚。",
+  "得 — 的 — 地 — 的 — 地 — 得",
+  "你看看这本书。 / 你看一看这本书。 — 我们商量商量这件事。 — 你试试这件衣服。 — 我们休息休息。 — Sudah benar: 想了想 adalah bentuk A了A untuk kejadian yang sudah lewat.",
+  "Bicara jelas jauh lebih penting daripada bicara cepat. — Dia tertawa sampai perutnya sakit. — Hari ini kamu datang terlalu terlambat. — Sendirian di rumah saya pasti tidak akan sanggup meneruskan belajar. — Pak/Bu, bisa diulang sekali lagi?",
+  "Tā kāichē kāi de hěn wěn. — Nǐ de Zhōngwén shuō de hěn hǎo. — Wǒ lèi de bù xiǎng shuōhuà. — Nǐ tīngting ba. / Nǐ tīng yi tīng. — Wǒmen xiān shāngliang shāngliang zhè jiàn shì ba. — Wǒ zuótiān shuì de bú tài hǎo.",
+  "他中文说得很好。 (kata kerja diulang atau objek dimajukan) — 他跑得很快。 (butuh penyangga 很) — 他跑得不快。 (不 sesudah 得) — 我正在看电视。 (perbuatan berlangsung tak diulang) — 我们商量商量吧。 (kata kerja dua suku kata pakai ABAB) — 我要报这个班的名。 / lebih mudah: 我要报名。 (报名 sudah punya objek)"
+ ],
+ "wave": "Lima menit sebelum Unit 4: rekam dirimu membaca 对话 1 unit ini, lalu dengarkan sambil menilai dirimu sendiri dengan kalimat ber-得 — 我读得太快了, 我的第三声发得不太准, 这句话我读得还不错. Rasanya akan canggung persis seperti kata Andi. Lakukan saja; ini latihan yang paling banyak menghasilkan per menitnya di seluruh modul."
+}

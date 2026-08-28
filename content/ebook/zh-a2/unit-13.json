@@ -1,0 +1,390 @@
+{
+ "title": "Ada yang tidak beres",
+ "title_target": "出了点问题 — Chū le diǎn wèntí",
+ "goal": "Menceritakan sesuatu yang rusak, hilang, atau salah dengan 弄 dan 搞 plus pelengkap hasil, lalu menyatakan penyesalan dan pengandaian dengan 本来, 原来, dan 早知道…就….",
+ "bekal": [
+  "mengatakan sesuatu rusak, hilang, salah, atau tumpah — dan siapa yang melakukannya",
+  "memakai 弄 dan 搞 sebagai kata kerja serba guna dengan pelengkap hasil",
+  "menyatakan penyesalan: 早知道就…, 本来想…, 应该…的",
+  "mengeluh di hotel, kos, dan tempat umum lalu meminta penyelesaian",
+  "meminta maaf dan menanggapi permintaan maaf dengan takaran yang tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "对话 1 — Kamar hotel yang bermasalah",
+   "intro": "Perjalanan dinas ke Shanghai. Andi tiba di hotel pukul sebelas malam dan kamarnya bermasalah. Perhatikan pola 弄 + pelengkap hasil, dan perhatikan bagaimana Andi tetap sopan meskipun kesal.",
+   "lines": [
+    { "speaker": "安迪:", "text": "[你好|Nǐ hǎo]，[我是1208的|wǒ shì yāo èr líng bā de]。[房间的热水器好像坏了|Fángjiān de rèshuǐqì hǎoxiàng huài le]，[放了十分钟都是凉的|fàng le shí fēnzhōng dōu shì liáng de]。", "id": "Halo, saya dari kamar 1208. Pemanas air di kamar sepertinya rusak, sudah sepuluh menit dinyalakan masih dingin semua.", "literal": "kamu — baik, saya — adalah — 1208 — punya. kamar — punya — panas — air — alat — sepertinya — rusak — sudah, lepas — sudah — sepuluh — menit — semua — adalah — dingin — punya." },
+    { "speaker": "前台:", "text": "[非常抱歉|Fēicháng bàoqiàn]。[我马上让维修师傅上去看看|Wǒ mǎshàng ràng wéixiū shīfu shàngqu kànkan]。[您稍等十分钟|Nín shāo děng shí fēnzhōng]。", "id": "Mohon maaf sekali. Saya segera minta teknisi naik untuk melihatnya. Mohon tunggu sepuluh menit.", "literal": "sangat — menyesal. saya — segera — menyuruh — pelihara — perbaiki — ahli — naik — pergi — lihat — lihat. Anda — sedikit — tunggu — sepuluh — menit." },
+    { "speaker": "安迪:", "text": "[好|Hǎo]。[另外还有一件事|Lìngwài hái yǒu yí jiàn shì]：[房间里有股味儿|fángjiān lǐ yǒu gǔ wèir]，[像是烟味|xiàng shì yān wèi]。[我订的是无烟房|Wǒ dìng de shì wúyānfáng]。", "id": "Baik. Selain itu ada satu hal lagi: di kamar ada bau, sepertinya bau rokok. Saya memesan kamar bebas rokok.", "literal": "lain — luar — masih — ada — satu — penggolong — urusan: kamar — dalam — ada — sekepul — bau, mirip — adalah — asap — bau. saya — pesan — punya — adalah — tanpa — asap — kamar." },
+    { "speaker": "前台:", "text": "[我查一下|Wǒ chá yíxià]……[不好意思|Bù hǎoyìsi]，[系统里显示的确实是无烟房|xìtǒng lǐ xiǎnshì de quèshí shì wúyānfáng]。[可能是之前的客人在里面抽烟了|Kěnéng shì zhīqián de kèrén zài lǐmiàn chōuyān le]。", "id": "Saya cek… Maaf, di sistem memang tercatat kamar bebas rokok. Mungkin tamu sebelumnya merokok di dalam.", "literal": "saya — periksa — sekali… tidak — baik — maksud, sistem — dalam — menampilkan — punya — sungguh — adalah — tanpa — asap — kamar. mungkin — adalah — sebelum — punya — tamu — di — dalam — hisap-asap — sudah." },
+    { "speaker": "安迪:", "text": "[能不能给我换个房间|Néng bu néng gěi wǒ huàn ge fángjiān]？[热水器和味道|Rèshuǐqì hé wèidao]，[两个问题一起解决|liǎng ge wèntí yìqǐ jiějué]。", "id": "Bisa tolong pindahkan saya ke kamar lain? Pemanas air dan baunya, dua masalah sekalian selesai.", "literal": "bisa — tidak — bisa — kepada — saya — tukar — penggolong — kamar. panas — air — alat — dan — bau — rasa, dua — penggolong — masalah — bersama — menyelesaikan." },
+    { "speaker": "前台:", "text": "[当然可以|Dāngrán kěyǐ]。[今天房间比较满|Jīntiān fángjiān bǐjiào mǎn]，[不过还有一间大床房|búguò hái yǒu yì jiān dàchuángfáng]。[要给您升级吗|Yào gěi nín shēngjí ma]？[不加钱|Bù jiā qián]。", "id": "Tentu bisa. Hari ini kamarnya cukup penuh, tapi masih ada satu kamar ranjang besar. Mau saya naikkan? Tidak ada tambahan biaya.", "literal": "tentu — boleh. hari-ini — kamar — agak — penuh, tetapi — masih — ada — satu — penggolong — besar — ranjang — kamar. mau — kepada — Anda — naik — tingkat — kah. tidak — tambah — uang." },
+    { "speaker": "安迪:", "text": "[那太好了|Nà tài hǎo le]，[谢谢|xièxie]。", "id": "Wah bagus sekali, terima kasih.", "literal": "itu — terlalu — bagus — sudah, terima-kasih." },
+    { "speaker": "前台:", "text": "[给您添麻烦了|Gěi nín tiān máfan le]。[您先别收拾|Nín xiān bié shōushi]，[我让行李员上去帮您搬|wǒ ràng xínglǐyuán shàngqu bāng nín bān]。", "id": "Maaf sudah merepotkan Anda. Jangan beres-beres dulu, saya minta petugas bagasi naik membantu memindahkan.", "literal": "kepada — Anda — tambah — repot — sudah. Anda — dulu — jangan — beres-kan, saya — menyuruh — bagasi — petugas — naik — pergi — bantu — Anda — angkut." },
+    { "speaker": "安迪:", "text": "[不用不用|Búyòng búyòng]，[我就一个箱子|wǒ jiù yí ge xiāngzi]。[对了|Duì le]，[新房间的房卡…|xīn fángjiān de fángkǎ…]", "id": "Tak usah, saya cuma satu koper. Oh iya, kartu kamar yang baru…", "literal": "tidak-perlu — tidak-perlu, saya — hanya — satu — penggolong — kardus. betul — sudah, baru — kamar — punya — kamar — kartu…" },
+    { "speaker": "前台:", "text": "[在这儿|Zài zhèr]。[1506|Yāo wǔ líng liù]。[旧的房卡麻烦还给我|Jiù de fángkǎ máfan huán gěi wǒ]。", "id": "Ini. 1506. Kartu yang lama tolong dikembalikan.", "literal": "di — sini. 1506. lama — punya — kamar — kartu — merepotkan — kembalikan — kepada — saya." },
+    { "speaker": "安迪:", "text": "[给|Gěi]。[哦对|Ò duì]，[我刚才不小心把杯子碰倒了|wǒ gāngcái bù xiǎoxīn bǎ bēizi pèng dǎo le]，[水洒在桌子上|shuǐ sǎ zài zhuōzi shang]。[没打碎|Méi dǎ suì]，[但是我想跟你们说一声|dànshì wǒ xiǎng gēn nǐmen shuō yì shēng]。", "id": "Ini. Oh iya, tadi saya tidak sengaja menyenggol gelasnya sampai jatuh, airnya tumpah di meja. Tidak pecah, tapi saya mau kasih tahu.", "literal": "beri. oh — betul, saya — barusan — tidak — hati-hati — ambil — gelas — senggol — roboh — sudah, air — tumpah — di — meja — atas. tidak — pukul — pecah, tetapi — saya — ingin — dengan — kalian — bicara — satu — suara." },
+    { "speaker": "前台:", "text": "[没关系的|Méi guānxi de]，[这种小事不用管|zhè zhǒng xiǎo shì búyòng guǎn]。[您早点休息|Nín zǎo diǎn xiūxi]。", "id": "Tidak apa-apa, hal kecil begini tidak usah dipikirkan. Silakan istirahat.", "literal": "tidak-ada — hubungan — punya, ini — jenis — kecil — urusan — tidak-perlu — urus. Anda — awal — sedikit — istirahat." }
+   ],
+   "notes": [
+    "**⚠️ Nomor kamar dan nomor telepon dibaca angka per angka, dan 1 dibaca [幺|yāo], bukan *yī*.** 1208 = *yāo èr líng bā*. Ini berlaku untuk semua nomor: telepon, kamar, kereta, penerbangan. Membaca 一 sebagai *yī* di telepon sering membuat orang salah dengar dengan 七 *qī*.",
+    "**[非常抱歉|Fēicháng bàoqiàn] lebih berat daripada [不好意思|bù hǎoyìsi] dan lebih resmi daripada [对不起|duìbuqǐ].** Ini bentuk permintaan maaf yang dipakai pegawai kepada pelanggan. Bagian tambahan kedua menyusun seluruh tingkatannya.",
+    "**[有股味儿|yǒu gǔ wèir] = ada bau.** 股 penggolong untuk bau, angin, dan asap. ⚠️ [味儿|wèir] netral (bau apa saja), [味道|wèidao] bisa berarti rasa maupun bau, [香味|xiāngwèi] bau harum, [臭味|chòuwèi] bau busuk.",
+    "**[碰倒|pèng dǎo] = menyenggol sampai jatuh.** Pelengkap hasil lagi, dan keluarganya besar sekali di unit ini: [打碎|dǎ suì] pecah dipukul, [撞坏|zhuàng huài] rusak ditabrak, [洒|sǎ] tumpah, [弄丢|nòng diū] hilang karena ulah kita.",
+    "**[添麻烦|tiān máfan] = menambah kerepotan.** [给您添麻烦了|Gěi nín tiān máfan le]。 adalah permintaan maaf khas pegawai layanan. Kamu juga bisa memakainya: [给你添麻烦了|Gěi nǐ tiān máfan le]。 maaf sudah merepotkan.",
+    "**[不用管|búyòng guǎn] = tidak usah dipikirkan / diurus.** 管 berarti mengurus, mengatur, peduli: [我不管|Wǒ bù guǎn]。 saya tidak mau tahu. [管不了|guǎn bu liǎo] tak sanggup mengurus. ⚠️ Sudah muncul di 不管…都 Unit 11, tapi di situ artinya “tidak peduli”.",
+    "**Perhatikan bahwa Andi melaporkan gelas yang tersenggol meskipun tidak pecah.** Ini bukan sekadar kesopanan: melaporkan kerusakan kecil di depan jauh lebih murah daripada dituduh menyembunyikannya saat check out."
+   ],
+   "grammars": [
+    {
+     "title": "弄 dan 搞 — kata kerja serba guna",
+     "body": [
+      "Dua kata kerja yang artinya hampir kosong: “melakukan sesuatu pada”. Justru karena kosong, mereka bisa dipasangi hampir semua pelengkap hasil — dan mereka menyelamatkanmu setiap kali kata kerja yang tepat tidak ada di kepalamu.",
+      "[弄|nòng] netral dan dipakai di mana-mana. [搞|gǎo] lebih santai, sedikit lebih kasar, dan lebih sering di selatan."
+     ],
+     "tables": [
+      {
+       "head": ["Gabungan", "Arti", "Contoh"],
+       "rows": [
+        ["[弄坏|nòng huài]", "merusakkan", "[我把手机弄坏了|Wǒ bǎ shǒujī nòng huài le]。"],
+        ["[弄丢|nòng diū]", "menghilangkan", "[我把钥匙弄丢了|Wǒ bǎ yàoshi nòng diū le]。"],
+        ["[弄错|nòng cuò]", "salah, keliru", "[你是不是弄错了|Nǐ shì bu shì nòng cuò le]？"],
+        ["[弄脏|nòng zāng]", "mengotori", "[我把衣服弄脏了|Wǒ bǎ yīfu nòng zāng le]。"],
+        ["[弄湿|nòng shī]", "membasahi", "[雨把书弄湿了|Yǔ bǎ shū nòng shī le]。"],
+        ["[弄好|nòng hǎo]", "menyelesaikan, membereskan", "[我已经弄好了|Wǒ yǐjīng nòng hǎo le]。"],
+        ["[弄清楚|nòng qīngchu]", "memperjelas", "[我得先弄清楚情况|Wǒ děi xiān nòng qīngchu qíngkuàng]。"],
+        ["[搞定|gǎo dìng]", "beres, selesai (santai)", "[搞定了|Gǎo dìng le]！"]
+       ]
+      },
+      {
+       "head": ["Kerusakan lain yang sering dipakai", "Arti"],
+       "rows": [
+        ["[坏了|huài le]", "rusak (dengan sendirinya) — [热水器坏了|Rèshuǐqì huài le]。"],
+        ["[打碎|dǎ suì] / [摔碎|shuāi suì]", "pecah karena terjatuh / terbanting"],
+        ["[撞坏|zhuàng huài]", "rusak karena tertabrak"],
+        ["[洒|sǎ] / [倒|dào]", "tumpah / tertumpah"],
+        ["[堵|dǔ] / [堵住了|dǔ zhù le]", "tersumbat — [下水道堵了|Xiàshuǐdào dǔ le]。"],
+        ["[漏|lòu]", "bocor — [水管漏水|Shuǐguǎn lòu shuǐ]。"],
+        ["[停|tíng]", "mati (listrik/air) — [停电了|Tíng diàn le]。 · [停水了|Tíng shuǐ le]。"],
+        ["[没电了|méi diàn le]", "habis baterai"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ Selisih penting: 坏了 vs 弄坏了**",
+      "[电视坏了|Diànshì huài le]。 TV-nya rusak — **rusak sendiri**, tidak ada yang disalahkan.",
+      "[我把电视弄坏了|Wǒ bǎ diànshì nòng huài le]。 TV-nya saya rusakkan — **ada pelakunya**, yaitu saya.",
+      "Selisih satu kata ini menentukan siapa yang membayar. Kalau memang rusak sendiri, jangan berkata 弄坏了 karena itu berarti mengaku.",
+      "**Dan bentuk pasifnya:** [电视被我弄坏了|Diànshì bèi wǒ nòng huài le]。 — kalimat 被 dari Unit 8, dengan pokoknya berpindah ke TV-nya."
+     ]
+    },
+    {
+     "title": "不小心 · 故意 — sengaja dan tidak sengaja",
+     "body": [
+      "Kata kecil yang menentukan seluruh nada cerita kerusakan. Keduanya berdiri **di depan kata kerja**, sesudah pelakunya."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Arti", "Contoh"],
+       "rows": [
+        ["[不小心|bù xiǎoxīn]", "tidak sengaja, kurang hati-hati", "[我不小心把杯子碰倒了|Wǒ bù xiǎoxīn bǎ bēizi pèng dǎo le]。"],
+        ["[故意|gùyì]", "sengaja", "[我不是故意的|Wǒ bú shì gùyì de]。"],
+        ["[没注意|méi zhùyì]", "tidak memperhatikan", "[我没注意就走了|Wǒ méi zhùyì jiù zǒu le]。"],
+        ["[忘了|wàng le]", "lupa", "[我忘了带钥匙|Wǒ wàng le dài yàoshi]。"],
+        ["[顺手|shùnshǒu]", "sambil lalu, refleks", "[顺手就关了|Shùnshǒu jiù guān le]。"]
+       ]
+      },
+      {
+       "head": ["Kalimat penjelas yang sering dipakai", "Arti"],
+       "rows": [
+        ["[我不是故意的|Wǒ bú shì gùyì de]。", "Saya tidak sengaja."],
+        ["[真的很抱歉|Zhēn de hěn bàoqiàn]。", "Saya benar-benar minta maaf."],
+        ["[我赔给你|Wǒ péi gěi nǐ]。", "Saya ganti."],
+        ["[多少钱我赔|Duōshao qián wǒ péi]。", "Berapa pun saya ganti."],
+        ["[怎么赔|Zěnme péi]？", "Bagaimana cara menggantinya?"],
+        ["[这个能修吗|Zhège néng xiū ma]？", "Ini bisa diperbaiki?"]
+       ]
+      }
+     ],
+     "after": [
+      "⚠️ **[我不是故意的|Wǒ bú shì gùyì de]。 penting diucapkan, tapi tidak cukup sendirian.** Di Tiongkok, permintaan maaf yang tidak disertai tawaran ganti sering dianggap belum selesai. Susunan yang lengkap: minta maaf → akui → tawarkan ganti. [真不好意思|Zhēn bù hǎoyìsi]，[我不小心弄坏了|wǒ bù xiǎoxīn nòng huài le]，[我赔给你吧|wǒ péi gěi nǐ ba]。",
+      "Dan sebaliknya, kalau kamu yang dirugikan dan tidak ingin diganti, kalimatnya: [没事|Méi shì]，[不用赔|búyòng péi]。 atau [算了算了|Suàn le suàn le]。 sudahlah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "对话 2 — Penyesalan pagi hari",
+   "intro": "Pagi berikutnya, sarapan bersama rekan dari cabang Shanghai. Andi menceritakan malamnya. Perhatikan kelompok kata baru yang muncul di sini: 本来, 原来, 早知道 — semuanya tentang hal yang tidak terjadi seperti yang direncanakan.",
+   "lines": [
+    { "speaker": "同事:", "text": "[昨天到得晚吧|Zuótiān dào de wǎn ba]？[看你眼睛都红了|Kàn nǐ yǎnjing dōu hóng le]。", "id": "Kemarin sampainya malam ya? Lihat matamu sampai merah.", "literal": "kemarin — sampai — tingkat — terlambat — kan. lihat — kamu — mata — semua — merah — sudah." },
+    { "speaker": "安迪:", "text": "[别提了|Bié tí le]。[本来订的是六点的航班|Běnlái dìng de shì liù diǎn de hángbān]，[结果延误了三个小时|jiéguǒ yánwù le sān ge xiǎoshí]。[到酒店已经十一点了|Dào jiǔdiàn yǐjīng shíyī diǎn le]。", "id": "Jangan ditanya. Aslinya pesan penerbangan jam enam, ternyata delay tiga jam. Sampai hotel sudah jam sebelas.", "literal": "jangan — sebut — sudah. asal — mula — pesan — punya — adalah — enam — jam — punya — penerbangan, hasil — tertunda — sudah — tiga — penggolong — jam. sampai — hotel — sudah — sebelas — jam — sudah." },
+    { "speaker": "同事:", "text": "[早知道你就坐高铁了|Zǎo zhīdào nǐ jiù zuò gāotiě le]。[北京到上海四个半小时|Běijīng dào Shànghǎi sì ge bàn xiǎoshí]，[从来不晚点|cónglái bù wǎndiǎn]。", "id": "Kalau tahu dari awal, kamu naik kereta cepat saja. Beijing ke Shanghai empat setengah jam, tidak pernah telat.", "literal": "awal — tahu — kamu — langsung — duduk — tinggi — rel — sudah. Beijing — sampai — Shanghai — empat — penggolong — setengah — jam, sejak-dulu — tidak — terlambat — titik." },
+    { "speaker": "安迪:", "text": "[我也这么想过|Wǒ yě zhème xiǎng guo]。[但是订票的时候机票便宜三百块|Dànshì dìng piào de shíhou jīpiào piányi sānbǎi kuài]，[我就选了飞机|wǒ jiù xuǎn le fēijī]。[早知道会延误|Zǎo zhīdào huì yánwù]，[我宁可多花三百|wǒ nìngkě duō huā sānbǎi]。", "id": "Saya juga pernah berpikir begitu. Tapi waktu pesan tiket, tiket pesawat lebih murah tiga ratus yuan, jadi saya pilih pesawat. Kalau tahu bakal delay, saya lebih rela keluar tiga ratus lebih.", "literal": "saya — juga — begini — pikir — pernah. tetapi — pesan — tiket — punya — waktu — pesawat — tiket — murah — tiga-ratus — yuan, saya — langsung — pilih — sudah — pesawat. awal — tahu — akan — tertunda, saya — lebih-rela — banyak — belanja — tiga-ratus." },
+    { "speaker": "同事:", "text": "[而且飞机还要提前两小时到机场|Érqiě fēijī hái yào tíqián liǎng xiǎoshí dào jīchǎng]。[算下来根本不省时间|Suàn xiàlai gēnběn bù shěng shíjiān]。", "id": "Lagi pula naik pesawat masih harus sampai bandara dua jam sebelumnya. Kalau dihitung sama sekali tidak menghemat waktu.", "literal": "lagipula — pesawat — masih — mau — maju — dua — jam — sampai — bandara. hitung — turun — datang — sama-sekali — tidak — hemat — waktu." },
+    { "speaker": "安迪:", "text": "[现在我知道了|Xiànzài wǒ zhīdào le]。[而且房间还出了问题|Érqiě fángjiān hái chū le wèntí]——[热水器坏了|rèshuǐqì huài le]，[还有烟味|hái yǒu yān wèi]。", "id": "Sekarang saya tahu. Lagi pula kamarnya masih bermasalah — pemanas airnya rusak, ada bau rokok juga.", "literal": "sekarang — saya — tahu — sudah. lagipula — kamar — masih — keluar — sudah — masalah — panas — air — alat — rusak — sudah, masih — ada — asap — bau." },
+    { "speaker": "同事:", "text": "[你投诉了没有|Nǐ tóusù le méiyǒu]？", "id": "Kamu komplain tidak?", "literal": "kamu — mengadukan — sudah — tidak-ada." },
+    { "speaker": "安迪:", "text": "[我下楼跟前台说了|Wǒ xià lóu gēn qiántái shuō le]。[原来那间房前一个客人在里面抽烟|Yuánlái nà jiān fáng qián yí ge kèrén zài lǐmiàn chōuyān]。[他们给我换了个大床房|Tāmen gěi wǒ huàn le ge dàchuángfáng]，[还免费升级|hái miǎnfèi shēngjí]。", "id": "Saya turun bilang ke resepsionis. Ternyata kamar itu tamu sebelumnya merokok di dalam. Mereka pindahkan saya ke kamar ranjang besar, malah naik kelas gratis.", "literal": "saya — turun — lantai — dengan — depan — meja — bicara — sudah. asal — mula — itu — penggolong — kamar — depan — satu — penggolong — tamu — di — dalam — hisap — asap. mereka — kepada — saya — tukar — sudah — penggolong — besar — ranjang — kamar, masih — bebas — biaya — naik — tingkat." },
+    { "speaker": "同事:", "text": "[这就对了|Zhè jiù duì le]。[有问题当场说|Yǒu wèntí dāngchǎng shuō]，[第二天再说就没用了|dì-èr tiān zài shuō jiù méi yòng le]。", "id": "Nah begitu. Ada masalah bilang di tempat, kalau besoknya baru bilang sudah tidak ada gunanya.", "literal": "ini — langsung — betul — sudah. ada — masalah — di-tempat — bicara, ke-dua — hari — lagi — bicara — langsung — tidak-ada — guna — sudah." },
+    { "speaker": "安迪:", "text": "[我本来不太想麻烦人家|Wǒ běnlái bú tài xiǎng máfan rénjia]。[后来想想|Hòulái xiǎngxiang]，[不说的话|bù shuō de huà]，[洗不了澡的还是我自己|xǐ bu liǎo zǎo de háishi wǒ zìjǐ]。", "id": "Aslinya saya kurang mau merepotkan orang. Lalu saya pikir-pikir, kalau tidak dibilang, yang tidak bisa mandi tetap saya sendiri.", "literal": "saya — asal-mula — tidak — terlalu — ingin — merepotkan — orang. sesudah — datang — pikir — pikir, tidak — bicara — punya — kata, cuci — tak-bisa — mandi — punya — masih — adalah — saya — sendiri." },
+    { "speaker": "同事:", "text": "[你这个想法特别印尼|Nǐ zhège xiǎngfǎ tèbié Yìnní]。[在中国|Zài Zhōngguó]，[有问题不说|yǒu wèntí bù shuō]，[别人会觉得你没问题|biérén huì juéde nǐ méi wèntí]。", "id": "Cara berpikirmu ini Indonesia sekali. Di Tiongkok, kalau ada masalah tidak dibilang, orang lain akan mengira kamu tidak bermasalah.", "literal": "kamu — ini — penggolong — pemikiran — khusus — Indonesia. di — Tiongkok, ada — masalah — tidak — bicara, orang-lain — akan — merasa — kamu — tidak-ada — masalah." },
+    { "speaker": "安迪:", "text": "[这个我得学|Zhège wǒ děi xué]。[比语法难多了|Bǐ yǔfǎ nán duō le]。", "id": "Ini saya harus belajar. Jauh lebih susah daripada tata bahasa.", "literal": "ini — saya — harus — belajar. dibanding — tata-bahasa — sulit — banyak — sudah." }
+   ],
+   "notes": [
+    "**⚠️ [本来|běnlái] dan [原来|yuánlái] sering tertukar, dan artinya berbeda.** 本来 = aslinya, rencananya begitu (tapi berubah). 原来 = ternyata, baru sekarang saya tahu. Kotak tata bahasa pertama memisahkannya.",
+    "**[早知道…就…|zǎo zhīdào…jiù…] = kalau tahu dari awal, pasti sudah….** Rangka pengandaian masa lalu, dan ia hampir selalu berisi penyesalan. Perhatikan bahwa Mandarin tidak punya bentuk kata kerja khusus untuk pengandaian; seluruh beban dipikul oleh 早知道 dan 就.",
+    "**[宁可|nìngkě] = lebih rela, lebih baik (memilih yang buruk untuk menghindari yang lebih buruk).** [我宁可多花三百|Wǒ nìngkě duō huā sānbǎi]。 Bentuk lengkapnya [宁可…也不…|nìngkě…yě bù…]: [我宁可走路也不坐他的车|Wǒ nìngkě zǒulù yě bù zuò tā de chē]。",
+    "**[算下来|suàn xiàlai] = kalau dihitung-hitung.** 下来 sebagai pelengkap di sini berarti “setelah dijalani sampai selesai”: [说下来|shuō xiàlai] setelah dibicarakan semua, [看下来|kàn xiàlai] setelah dilihat seluruhnya. Unit 14 membongkar keluarga ini.",
+    "**[投诉|tóusù] = mengajukan keluhan resmi.** Berbeda dari [抱怨|bàoyuàn] mengeluh (kepada siapa saja, tanpa tujuan). Kalau kamu berkata 我要投诉, orang akan menganggapnya serius.",
+    "**[洗不了澡|xǐ bu liǎo zǎo] — pelengkap kemungkinan dari Unit 4, dengan objek yang disisipkan.** 洗澡 kata kerja bermuatan objek (Unit 2), jadi 不了 masuk di tengahnya: 洗不了澡. Sama seperti [睡不了觉|shuì bu liǎo jiào] · [请不了假|qǐng bu liǎo jià]。",
+    "**Perhatikan komentar rekan Andi di baris kedua dari akhir.** Ini bukan sekadar bumbu cerita: kebiasaan diam demi tidak merepotkan orang memang sering merugikan orang Indonesia di lingkungan kerja Tiongkok, dan menyadarinya lebih berguna daripada tata bahasa mana pun di unit ini."
+   ],
+   "grammars": [
+    {
+     "title": "本来 · 原来 · 后来 — tiga kata yang menoleh ke belakang",
+     "body": [
+      "Ketiganya menunjuk ke masa lalu, dan ketiganya sering tertukar oleh pemelajar. Selisihnya sebenarnya jelas begitu dilihat berdampingan."
+     ],
+     "tables": [
+      {
+       "head": ["Kata", "Arti", "Contoh"],
+       "rows": [
+        ["[本来|běnlái]", "Aslinya, semula — **rencananya begitu tapi berubah**", "[我本来想去|Wǒ běnlái xiǎng qù]，[后来太累了|hòulái tài lèi le]。"],
+        ["[原来|yuánlái]", "Ternyata — **baru sekarang saya tahu**", "[原来他是老板|Yuánlái tā shì lǎobǎn]！"],
+        ["[原来|yuánlái]", "Dulunya (sama dengan 本来)", "[这儿原来是一家书店|Zhèr yuánlái shì yì jiā shūdiàn]。"],
+        ["[后来|hòulái]", "Kemudian — **untuk cerita masa lalu saja**", "[后来我就没再见过他|Hòulái wǒ jiù méi zài jiàn guo tā]。"],
+        ["[以后|yǐhòu]", "Nanti / sesudah itu — bisa masa depan", "[以后有机会再聊|Yǐhòu yǒu jīhuì zài liáo]。"]
+       ]
+      },
+      {
+       "head": ["Jangan tertukar", "Yang benar"],
+       "rows": [
+        ["❌ 后来我要去北京。", "✅ [以后我要去北京|Yǐhòu wǒ yào qù Běijīng]。 (后来 hanya untuk masa lalu)"],
+        ["❌ 本来他是老板！(sebagai penemuan)", "✅ [原来他是老板|Yuánlái tā shì lǎobǎn]！"],
+        ["❌ 原来我想去，但是没去。", "❓ Bisa, tapi [本来|běnlái] jauh lebih tepat"]
+       ]
+      }
+     ],
+     "after": [
+      "**[原来|yuánlái] sebagai penemuan sangat sering dipakai dan sangat berguna.** Ia menandai momen “oh, jadi begitu”: [原来你也在这儿|Yuánlái nǐ yě zài zhèr]！ Oh, ternyata kamu juga di sini! [原来是这样|Yuánlái shì zhèyàng]。 Oh begitu rupanya.",
+      "**Pasangan yang paling sering: 本来…后来…** [我本来打算去|Wǒ běnlái dǎsuàn qù]，[后来因为下雨就没去|hòulái yīnwèi xià yǔ jiù méi qù]。 Semula berencana pergi, kemudian karena hujan jadi tidak pergi."
+     ]
+    },
+    {
+     "title": "Menyatakan penyesalan",
+     "body": [
+      "Bahasa Mandarin tidak punya bentuk kata kerja pengandaian. Penyesalan disampaikan lewat beberapa rangka tetap, dan menghafalnya lebih mudah daripada mempelajari sistem yang tidak ada."
+     ],
+     "tables": [
+      {
+       "head": ["Rangka", "Arti", "Contoh"],
+       "rows": [
+        ["[早知道…就…了|zǎo zhīdào…jiù…le]", "Kalau tahu dari awal, pasti sudah …", "[早知道就不来了|Zǎo zhīdào jiù bù lái le]。"],
+        ["[应该…的|yīnggāi…de]", "Seharusnya tadi …", "[我应该早点走的|Wǒ yīnggāi zǎo diǎn zǒu de]。"],
+        ["[不应该…的|bù yīnggāi…de]", "Seharusnya tidak …", "[你不应该那么说的|Nǐ bù yīnggāi nàme shuō de]。"],
+        ["[要是…就好了|yàoshi…jiù hǎo le]", "Andai saja …", "[要是不下雨就好了|Yàoshi bú xià yǔ jiù hǎo le]。"],
+        ["[后悔|hòuhuǐ]", "menyesal", "[我有点后悔|Wǒ yǒudiǎn hòuhuǐ]。"],
+        ["[白…了|bái…le]", "Sia-sia …", "[白等了两个小时|Bái děng le liǎng ge xiǎoshí]。"],
+        ["[怪我|guài wǒ]", "Salah saya", "[怪我没提前问|Guài wǒ méi tíqián wèn]。"]
+       ]
+      }
+     ],
+     "after": [
+      "**⚠️ [应该…的|yīnggāi…de] wajib ditutup 的 untuk penyesalan.**",
+      "[我应该早点走|Wǒ yīnggāi zǎo diǎn zǒu]。 = Saya sebaiknya berangkat lebih awal. (nasihat untuk yang belum terjadi)",
+      "[我应该早点走的|Wǒ yīnggāi zǎo diǎn zǒu de]。 = Tadi seharusnya saya berangkat lebih awal. (penyesalan, sudah telanjur)",
+      "**[白|bái] harfiah “putih”, sebagai keterangan berarti sia-sia:** [白跑了一趟|bái pǎo le yí tàng] sia-sia satu kali perjalanan, [白花钱|bái huā qián] buang-buang uang, [白说了|bái shuō le] percuma dibilang.",
+      "Dan satu ungkapan penutup yang menghentikan penyesalan: **[算了|Suàn le]。** sudahlah, biarkan saja. Diucapkan dua kali — [算了算了|Suàn le suàn le] — ia berarti “ya sudah, tidak usah dipikirkan lagi”."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta maaf: lima tingkat",
+   "blocks": [
+    { "type": "p", "text": "Memilih permintaan maaf yang terlalu berat untuk hal kecil terdengar aneh; memilih yang terlalu ringan untuk hal besar terdengar tidak peduli. Tangganya cukup jelas." },
+    { "type": "tabel", "head": ["Tingkat", "Kalimat", "Untuk"], "rows": [
+     ["1", "[不好意思|Bù hǎoyìsi]。", "Menyerobot lewat, menyela, terlambat lima menit"],
+     ["2", "[对不起|Duìbuqǐ]。", "Kesalahan nyata tapi kecil"],
+     ["3", "[真不好意思|Zhēn bù hǎoyìsi]，[给你添麻烦了|gěi nǐ tiān máfan le]。", "Merepotkan orang"],
+     ["4", "[非常抱歉|Fēicháng bàoqiàn]。", "Resmi — pegawai ke pelanggan, surat"],
+     ["5", "[实在对不起|Shízài duìbuqǐ]，[是我的问题|shì wǒ de wèntí]。", "Kesalahan yang jelas milikmu"]
+    ] },
+    { "type": "sub", "text": "Menanggapi permintaan maaf" },
+    { "type": "tabel", "head": ["Jawaban", "Nada"], "rows": [
+     ["[没关系|Méi guānxi]。", "Netral, aman untuk semua"],
+     ["[没事儿|Méi shìr]。", "Santai"],
+     ["[不要紧|Bú yàojǐn]。", "Menenangkan — “tidak gawat kok”"],
+     ["[没什么|Méi shénme]。", "Bukan apa-apa"],
+     ["[别放在心上|Bié fàng zài xīn shang]。", "Jangan dimasukkan ke hati"],
+     ["[算了算了|Suàn le suàn le]。", "Sudahlah — sedikit tidak sabar"]
+    ] },
+    { "type": "kotak", "title": "⚠️ Tiga hal yang perlu kamu tahu", "items": [
+     "**[对不起|Duìbuqǐ] lebih berat daripada yang dikira orang Indonesia.** Untuk hal kecil sehari-hari — melangkah di depan orang, minta lewat, menyela — yang wajar adalah [不好意思|bù hǎoyìsi] atau [劳驾|láojià]。 Memakai 对不起 untuk hal remeh terdengar berlebihan.",
+     "**Permintaan maaf tanpa tawaran penyelesaian sering dianggap belum selesai.** Tambahkan apa yang akan kamu lakukan: [我赔给你|Wǒ péi gěi nǐ]。 · [我马上改|Wǒ mǎshàng gǎi]。 · [下次不会了|Xià cì bú huì le]。",
+     "**Jangan meminta maaf berulang-ulang.** Mengucapkan 对不起 lima kali untuk satu kesalahan membuat lawan bicara canggung, bukan lega. Sekali dengan jelas, lalu selesaikan."
+    ] }
+   ]
+  },
+  {
+   "title": "Mengurus masalah di tempat tinggal",
+   "blocks": [
+    { "type": "p", "text": "Apa pun yang rusak di kos, apartemen, atau hotel, kamu memerlukan tiga kalimat: apa yang rusak, sejak kapan, dan apa yang kamu minta. Daftar berikut mengisi bagian pertama." },
+    { "type": "tabel", "head": ["Mandarin", "Arti", "Kalimat"], "rows": [
+     ["[热水器|rèshuǐqì]", "pemanas air", "[热水器坏了|Rèshuǐqì huài le]，[没有热水|méiyǒu rè shuǐ]。"],
+     ["[空调|kōngtiáo]", "AC", "[空调不制冷|Kōngtiáo bú zhìlěng]。"],
+     ["[马桶|mǎtǒng]", "kloset", "[马桶堵了|Mǎtǒng dǔ le]。"],
+     ["[水管|shuǐguǎn]", "pipa air", "[水管漏水|Shuǐguǎn lòu shuǐ]。"],
+     ["[电灯|diàndēng]", "lampu", "[灯不亮了|Dēng bú liàng le]。"],
+     ["[网|wǎng] / [网络|wǎngluò]", "internet", "[网连不上|Wǎng lián bu shàng]。"],
+     ["[锁|suǒ]", "kunci", "[门锁打不开|Mén suǒ dǎ bu kāi]。"],
+     ["[窗户|chuānghu]", "jendela", "[窗户关不上|Chuānghu guān bu shàng]。"],
+     ["[电梯|diàntī]", "lift", "[电梯停了|Diàntī tíng le]。"],
+     ["[停电|tíng diàn] / [停水|tíng shuǐ]", "mati listrik / air", "[昨天晚上停电了|Zuótiān wǎnshang tíng diàn le]。"]
+    ] },
+    { "type": "sub", "text": "Susunan laporan yang berhasil" },
+    { "type": "tabel", "head": ["Bagian", "Contoh"], "rows": [
+     ["Sebutkan diri dan tempat", "[你好|Nǐ hǎo]，[我是1208的|wǒ shì yāo èr líng bā de]。"],
+     ["Apa yang bermasalah", "[热水器好像坏了|Rèshuǐqì hǎoxiàng huài le]。"],
+     ["Buktinya", "[放了十分钟都是凉的|Fàng le shí fēnzhōng dōu shì liáng de]。"],
+     ["Sejak kapan", "[从昨天晚上开始|Cóng zuótiān wǎnshang kāishǐ]。"],
+     ["Yang kamu minta", "[能不能派人来看一下|Néng bu néng pài rén lái kàn yíxià]？"],
+     ["Kalau perlu, batas waktu", "[今天晚上之前能修好吗|Jīntiān wǎnshang zhī qián néng xiū hǎo ma]？"]
+    ] },
+    { "type": "p", "text": "⚠️ Perhatikan pemakaian [好像|hǎoxiàng] di baris kedua: **melaporkan dengan “sepertinya” membuat percakapan lebih mudah daripada memastikan.** Kalau ternyata bukan pemanas airnya yang rusak melainkan katupnya salah putar, kamu tidak kehilangan muka. Ini kebiasaan kecil yang sangat berguna di semua bahasa." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "zh": "热水器", "baca": "rèshuǐqì", "id": "pemanas air" },
+  { "zh": "坏", "baca": "huài", "id": "rusak" },
+  { "zh": "凉", "baca": "liáng", "id": "dingin (tidak panas)" },
+  { "zh": "抱歉", "baca": "bàoqiàn", "id": "menyesal, minta maaf" },
+  { "zh": "维修", "baca": "wéixiū", "id": "perbaikan" },
+  { "zh": "股", "baca": "gǔ", "id": "penggolong bau/angin" },
+  { "zh": "味儿", "baca": "wèir", "id": "bau" },
+  { "zh": "烟", "baca": "yān", "id": "asap; rokok" },
+  { "zh": "无烟房", "baca": "wúyānfáng", "id": "kamar bebas rokok" },
+  { "zh": "显示", "baca": "xiǎnshì", "id": "menampilkan" },
+  { "zh": "抽烟", "baca": "chōuyān", "id": "merokok" },
+  { "zh": "味道", "baca": "wèidao", "id": "rasa; bau" },
+  { "zh": "解决", "baca": "jiějué", "id": "menyelesaikan" },
+  { "zh": "满", "baca": "mǎn", "id": "penuh" },
+  { "zh": "大床房", "baca": "dàchuángfáng", "id": "kamar ranjang besar" },
+  { "zh": "升级", "baca": "shēngjí", "id": "naik kelas, upgrade" },
+  { "zh": "添麻烦", "baca": "tiān máfan", "id": "merepotkan" },
+  { "zh": "行李员", "baca": "xínglǐyuán", "id": "petugas bagasi" },
+  { "zh": "房卡", "baca": "fángkǎ", "id": "kartu kamar" },
+  { "zh": "不小心", "baca": "bù xiǎoxīn", "id": "tidak sengaja" },
+  { "zh": "碰", "baca": "pèng", "id": "menyenggol" },
+  { "zh": "洒", "baca": "sǎ", "id": "tumpah" },
+  { "zh": "碎", "baca": "suì", "id": "pecah berkeping" },
+  { "zh": "管", "baca": "guǎn", "id": "mengurus; peduli" },
+  { "zh": "弄", "baca": "nòng", "id": "melakukan, mengerjakan" },
+  { "zh": "搞", "baca": "gǎo", "id": "melakukan (santai)" },
+  { "zh": "脏", "baca": "zāng", "id": "kotor" },
+  { "zh": "湿", "baca": "shī", "id": "basah" },
+  { "zh": "故意", "baca": "gùyì", "id": "sengaja" },
+  { "zh": "赔", "baca": "péi", "id": "mengganti rugi" },
+  { "zh": "修", "baca": "xiū", "id": "memperbaiki" },
+  { "zh": "航班", "baca": "hángbān", "id": "penerbangan" },
+  { "zh": "延误", "baca": "yánwù", "id": "tertunda, delay" },
+  { "zh": "本来", "baca": "běnlái", "id": "aslinya, semula" },
+  { "zh": "原来", "baca": "yuánlái", "id": "ternyata; dulunya" },
+  { "zh": "后来", "baca": "hòulái", "id": "kemudian (masa lalu)" },
+  { "zh": "早知道", "baca": "zǎo zhīdào", "id": "kalau tahu dari awal" },
+  { "zh": "晚点", "baca": "wǎndiǎn", "id": "terlambat (jadwal)" },
+  { "zh": "宁可", "baca": "nìngkě", "id": "lebih rela" },
+  { "zh": "花", "baca": "huā", "id": "membelanjakan" },
+  { "zh": "省", "baca": "shěng", "id": "menghemat" },
+  { "zh": "投诉", "baca": "tóusù", "id": "mengadu resmi" },
+  { "zh": "免费", "baca": "miǎnfèi", "id": "gratis" },
+  { "zh": "后悔", "baca": "hòuhuǐ", "id": "menyesal" },
+  { "zh": "白", "baca": "bái", "id": "sia-sia" },
+  { "zh": "怪", "baca": "guài", "id": "menyalahkan" },
+  { "zh": "算了", "baca": "suàn le", "id": "sudahlah" },
+  { "zh": "空调", "baca": "kōngtiáo", "id": "AC" },
+  { "zh": "马桶", "baca": "mǎtǒng", "id": "kloset" },
+  { "zh": "漏", "baca": "lòu", "id": "bocor" },
+  { "zh": "堵", "baca": "dǔ", "id": "tersumbat" },
+  { "zh": "锁", "baca": "suǒ", "id": "kunci" },
+  { "zh": "电梯", "baca": "diàntī", "id": "lift" },
+  { "zh": "停电", "baca": "tíng diàn", "id": "mati listrik" },
+  { "zh": "语法", "baca": "yǔfǎ", "id": "tata bahasa" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan 弄 + pelengkap yang tepat: 坏 · 丢 · 错 · 脏 · 湿 · 清楚.",
+   "items": [
+    "[我把手机| Wǒ bǎ shǒujī] ___ [了|le]，[现在开不了机|xiànzài kāi bu liǎo jī]。",
+    "[对不起| Duìbuqǐ]，[我是不是| wǒ shì bu shì] ___ [了|le]？[你不是小李吗|Nǐ bú shì Xiǎo Lǐ ma]？",
+    "[下雨了| Xià yǔ le]，[我的书都| wǒ de shū dōu] ___ [了|le]。",
+    "[我得先| Wǒ děi xiān] ___ [情况再决定|qíngkuàng zài juédìng]。",
+    "[我把钥匙| Wǒ bǎ yàoshi] ___ [了|le]，[进不了家门|jìn bu liǎo jiā mén]。"
+   ]
+  },
+  {
+   "prompt": "Pilih 坏了 atau 弄坏了, lalu jelaskan bedanya dalam satu kalimat.",
+   "items": [
+    "[电视突然没有画面了|Diànshì tūrán méiyǒu huàmiàn le]。（TV mati sendiri）",
+    "[我在打扫的时候把花瓶碰倒了|Wǒ zài dǎsǎo de shíhou bǎ huāpíng pèng dǎo le]。（saya yang menyenggol）",
+    "[空调用了十年|Kōngtiáo yòng le shí nián]，[今天不制冷了|jīntiān bú zhìlěng le]。",
+    "[孩子玩儿的时候把遥控器摔了|Háizi wánr de shíhou bǎ yáokòngqì shuāi le]。",
+    "[洗衣机响了一下就不动了|Xǐyījī xiǎng le yíxià jiù bú dòng le]。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 本来 · 原来 · 后来 · 以后.",
+   "items": [
+    "[我| Wǒ] ___ [想去|xiǎng qù]，___ [太累了就没去|tài lèi le jiù méi qù]。",
+    "___ [他是老板|tā shì lǎobǎn]！[我一直以为他是新来的|Wǒ yìzhí yǐwéi tā shì xīn lái de]。",
+    "___ [有机会我们再聊|yǒu jīhuì wǒmen zài liáo]。",
+    "[这儿| Zhèr] ___ [是一家书店|shì yì jiā shūdiàn]，[现在改成咖啡馆了|xiànzài gǎi chéng kāfēiguǎn le]。",
+    "[我们聊到十二点| Wǒmen liáo dào shí'èr diǎn]，___ [他就回去了|tā jiù huíqu le]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Indonesia.",
+   "items": [
+    "[早知道会延误|Zǎo zhīdào huì yánwù]，[我宁可多花三百|wǒ nìngkě duō huā sānbǎi]。",
+    "[算下来根本不省时间|Suàn xiàlai gēnběn bù shěng shíjiān]。",
+    "[有问题当场说|Yǒu wèntí dāngchǎng shuō]，[第二天再说就没用了|dì-èr tiān zài shuō jiù méi yòng le]。",
+    "[不说的话|Bù shuō de huà]，[洗不了澡的还是我自己|xǐ bu liǎo zǎo de háishi wǒ zìjǐ]。",
+    "[我应该早点走的|Wǒ yīnggāi zǎo diǎn zǒu de]。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Mandarin. Tulis dengan pīnyīn.",
+   "items": [
+    "Saya tidak sengaja merusakkan HP-nya.",
+    "Pemanas airnya rusak, tidak ada air panas.",
+    "Ternyata dia bosnya!",
+    "Kalau tahu dari awal, saya tidak akan datang.",
+    "Maaf, saya tidak sengaja. Saya ganti ya.",
+    "Bisa tolong kirim orang untuk melihatnya?"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah berikut, lalu tulis bentuk benarnya dengan pīnyīn.",
+   "items": [
+    "[后来我要去北京|Hòulái wǒ yào qù Běijīng]。",
+    "[本来他是老板|Běnlái tā shì lǎobǎn]！（maksudnya: ternyata）",
+    "[我应该早点走|Wǒ yīnggāi zǎo diǎn zǒu]。（maksudnya: penyesalan）",
+    "[我洗不了澡不了|Wǒ xǐ bu liǎo zǎo bu liǎo]。",
+    "[电视我弄坏了|Diànshì wǒ nòng huài le]。（sebagai kalimat pasif dengan 被）"
+   ]
+  }
+ ],
+ "answers": [
+  "弄坏 — 弄错 — 弄湿 — 弄清楚 — 弄丢",
+  "坏了 (rusak sendiri) — 弄坏了/碰倒了 (ada pelakunya) — 坏了 — 弄坏了/摔坏了 — 坏了。 Bedanya: 坏了 tak menyebut pelaku; 弄坏了 mengaku ada yang melakukannya.",
+  "本来…后来 — 原来 — 以后 — 原来 (atau 本来) — 后来",
+  "Kalau tahu dari awal bakal delay, saya lebih rela keluar tiga ratus lebih. — Kalau dihitung-hitung sama sekali tidak menghemat waktu. — Ada masalah bilang di tempat, kalau besoknya baru bilang sudah tidak ada gunanya. — Kalau tidak dibilang, yang tidak bisa mandi tetap saya sendiri. — Tadi seharusnya saya berangkat lebih awal.",
+  "Wǒ bù xiǎoxīn bǎ shǒujī nòng huài le. — Rèshuǐqì huài le, méiyǒu rè shuǐ. — Yuánlái tā shì lǎobǎn! — Zǎo zhīdào wǒ jiù bù lái le. — Bù hǎoyìsi, wǒ bú shì gùyì de. Wǒ péi gěi nǐ ba. — Néng bu néng pài rén lái kàn yíxià?",
+  "以后我要去北京。 (后来 hanya untuk masa lalu) — 原来他是老板！ — 我应该早点走的。 (butuh 的) — 我洗不了澡。 — 电视被我弄坏了。"
+ ],
+ "wave": "Lima menit sebelum Unit 14: ceritakan satu hal yang pernah kamu rusakkan atau hilangkan, dalam empat kalimat — apa yang terjadi, sengaja atau tidak, apa akibatnya, dan apa yang seharusnya kamu lakukan. Kalimat keempat wajib memakai 早知道…就… atau 应该…的. Ini rangka penyesalan, dan ia dipakai orang setiap hari, dalam bahasa apa pun."
+}
