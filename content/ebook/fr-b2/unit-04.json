@@ -1,0 +1,599 @@
+{
+ "title": "Dia bilang dia akan datang",
+ "title_target": "Il a dit qu'il viendrait",
+ "goal": "Melaporkan ucapan orang lain dengan pergeseran kala yang benar, dan memilih kata kerja pelapor yang membawa penilaianmu sendiri.",
+ "bekal": [
+  "menggeser présent ke imparfait dan futur ke conditionnel saat melapor",
+  "memakai *si*, *ce qui*, *ce que* untuk pertanyaan tak langsung",
+  "mengubah perintah menjadi *de* + infinitif",
+  "menggeser penanda waktu dan tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rapporter une conversation qu'on n'a pas eue soi-même",
+   "intro": "Ruang guru sebuah sekolah menengah di Toulouse, Jumat sore. Nour dan Bastien membicarakan hasil pertemuan orang tua yang cuma dihadiri salah satu dari mereka. Seluruh dialog ini adalah laporan atas perkataan orang ketiga — perhatikan bahwa hampir tak ada kata kerja yang tetap di kala aslinya.",
+   "lines": [
+    {
+     "speaker": "Nour:",
+     "text": "Alors, la mère de Yanis, elle a dit quoi ?",
+     "id": "Terus, ibunya Yanis bilang apa?",
+     "literal": "maka, itu ibu dari Yanis, dia punya dikatakan apa?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Elle a dit qu'elle était au courant et qu'elle avait déjà parlé au proviseur.",
+     "id": "Dia bilang dia sudah tahu dan sudah bicara ke kepala sekolah.",
+     "literal": "dia punya dikatakan bahwa dia adalah-dulu pada-itu arus dan bahwa dia punya-dulu sudah dibicarakan kepada-itu kepala-sekolah."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Elle a dit ça comme ça, sans détour ?",
+     "id": "Dia bilang gitu aja, tanpa basa-basi?",
+     "literal": "dia punya dikatakan itu seperti itu, tanpa belokan?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Presque. Elle a demandé pourquoi personne ne l'avait appelée en novembre.",
+     "id": "Hampir. Dia tanya kenapa nggak ada yang meneleponnya bulan November.",
+     "literal": "hampir. dia punya ditanya kenapa tak-seorang tidak kepadanya punya-dulu ditelepon di November."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Et tu as répondu quoi ?",
+     "id": "Terus kamu jawab apa?",
+     "literal": "dan kamu punya dijawab apa?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "J'ai expliqué qu'on avait envoyé deux courriers et qu'ils étaient restés sans réponse.",
+     "id": "Aku jelaskan kami sudah kirim dua surat dan keduanya tidak dijawab.",
+     "literal": "saya-punya dijelaskan bahwa-orang punya-dulu dikirim dua surat dan bahwa mereka adalah-dulu tinggal tanpa jawaban."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Elle a réagi comment ?",
+     "id": "Reaksinya gimana?",
+     "literal": "dia punya bereaksi bagaimana?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Elle a reconnu qu'elle ne les avait pas ouverts. Puis elle a demandé ce qu'on comptait faire.",
+     "id": "Dia mengakui surat-suratnya nggak dibuka. Lalu dia tanya kami berencana apa.",
+     "literal": "dia punya diakui bahwa dia tidak mereka punya-dulu tidak dibuka. lalu dia punya ditanya itu-yang orang hitung-dulu membuat."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Et là, tu lui as dit qu'on ferait un point mensuel ?",
+     "id": "Nah, di situ kamu bilang kami akan bikin evaluasi bulanan?",
+     "literal": "dan di-situ, kamu kepadanya punya dikatakan bahwa-orang akanlah-buat sebuah titik bulanan?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Je lui ai dit qu'on essaierait. Je n'ai rien promis, rassure-toi.",
+     "id": "Aku bilang kami akan coba. Aku nggak janji apa-apa, tenang.",
+     "literal": "saya kepadanya punya dikatakan bahwa-orang akanlah-coba. saya tidak-punya tidak-ada dijanjikan, tenangkan-diri."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Bien joué. Le proviseur, il en pense quoi ?",
+     "id": "Bagus. Kepala sekolah pikirnya gimana?",
+     "literal": "baik dimainkan. itu kepala-sekolah, dia dari-itu pikir apa?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Il prétend qu'il n'a jamais été informé. Ce qui, entre nous, est faux.",
+     "id": "Dia mengklaim nggak pernah diberi tahu. Yang, antara kita saja, salah.",
+     "literal": "dia klaim bahwa dia tidak-punya tak-pernah diada diberitahu. itu-yang, antara kami, ada palsu."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Il t'a dit de ne pas en parler en salle des profs ?",
+     "id": "Dia bilang jangan bahas ini di ruang guru?",
+     "literal": "dia kepadamu-punya dikatakan dari tidak tidak dari-itu berbicara di ruangan dari-itu guru?"
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Textuellement. Il m'a demandé de garder ça pour moi jusqu'au conseil de classe.",
+     "id": "Persis. Dia minta aku simpan ini sampai rapat dewan kelas.",
+     "literal": "secara-harfiah. dia kepadaku-punya diminta dari menyimpan itu untuk aku sampai-pada-itu dewan dari kelas."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Et tu me le racontes maintenant.",
+     "id": "Dan sekarang kamu ceritakan ke aku.",
+     "literal": "dan kamu kepadaku itu ceritakan sekarang."
+    },
+    {
+     "speaker": "Bastien:",
+     "text": "Je t'ai dit que j'avais un plan. Je ne t'ai pas dit que je le suivrais.",
+     "id": "Aku bilang aku punya rencana. Aku nggak bilang bakal mengikutinya.",
+     "literal": "saya kepadamu-punya dikatakan bahwa saya-punya-dulu sebuah rencana. saya tidak kepadamu-punya tidak dikatakan bahwa saya itu akanlah-ikuti."
+    },
+    {
+     "speaker": "Nour:",
+     "text": "Tu vas te faire remonter les bretelles, tu le sais ?",
+     "id": "Kamu bakal kena semprot, tahu nggak?",
+     "literal": "kamu pergi diri buat menaikkan itu tali-celana, kamu itu tahu?"
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 2: dua pergeseran sekaligus.** Ucapan aslinya *Je suis au courant et j'ai déjà parlé au proviseur*. Ketika dilaporkan sesudah *elle a dit que* (kala lampau), présent menjadi **imparfait** (*était*) dan passé composé menjadi **plus-que-parfait** (*avait parlé*). Bahasa Indonesia tak menggeser apa pun — \"dia bilang dia sudah tahu\" memakai kata yang sama persis dengan kalimat aslinya. Karena itu pergeseran ini harus dipasang secara sadar, bukan diandalkan pada rasa."
+    },
+    {
+     "text": "**Baris 9 dan 10: futur menjadi conditionnel.** *On fera un point* → *qu'on **ferait** un point*; *on essaiera* → *qu'on **essaierait***. Inilah alasan kedua conditionnel ada di bahasa Prancis, di samping pengandaian unit 3. Kalau kamu melihat *-rait* dalam kalimat berita, tanya dirimu dua hal: apakah ini pengandaian, ataukah ini **masa depan yang dilihat dari titik masa lampau**?"
+    },
+    {
+     "text": "**Baris 8: *ce que* menggantikan *qu'est-ce que*.** Pertanyaan langsung *Qu'est-ce que vous comptez faire ?* menjadi *elle a demandé **ce que** vous comptiez faire*. Pasangannya: *qu'est-ce qui* → ***ce qui***. Kesalahan lazim adalah membawa *est-ce que* masuk ke kalimat laporan — *elle a demandé qu'est-ce que…* selalu salah, dan sangat mudah terdengar."
+    },
+    {
+     "text": "**Baris 13 dan 14: perintah menjadi *de* + infinitif.** *Ne parlez pas de ça* → *il m'a dit **de ne pas** en parler*; *Gardez ça pour vous* → *il m'a demandé **de garder** ça pour moi*. Perhatikan sekali lagi bahwa *ne pas* berdiri berdampingan di depan infinitif. Perhatikan juga *pour vous* → *pour moi*: kata ganti kepunyaan ikut bergeser, dan ini yang paling sering dilupakan."
+    },
+    {
+     "text": "**Baris 12: *ce qui* tanpa induk.** *Ce qui, entre nous, est faux* menunjuk pada seluruh kalimat sebelumnya, bukan pada satu kata benda. Ini alat B2 yang sangat berguna untuk menempelkan komentar: *…, ce qui explique tout*, *…, ce qui n'est pas surprenant*, *…, ce dont je doute*. Unit 8 mengurus keluarga *ce qui / ce que / ce dont* sampai tuntas."
+    },
+    {
+     "text": "**Baris 17: *se faire remonter les bretelles*.** Harfiahnya \"dinaikkan tali celananya\" — artinya kena marah habis-habisan dari atasan. Perhatikan juga bentuknya: *se faire* + infinitif menandai bahwa subjeknya **mengalami**, bukan melakukan. Unit 6 membongkar seluruh keluarga ini."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Pergeseran kala saat melapor",
+     "body": [
+      "Pergeseran ini **cuma terjadi kalau kata kerja pelapornya di kala lampau** (*il a dit*, *il disait*, *il avait dit*). Kalau pelapornya présent (*il dit que…*), tak ada yang bergeser sama sekali: *Il dit qu'il viendra*."
+     ],
+     "table": {
+      "head": [
+       "Ucapan asli",
+       "Menjadi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "présent",
+        "imparfait",
+        "« Je suis prêt. » → Il a dit qu'il **était** prêt."
+       ],
+       [
+        "passé composé",
+        "plus-que-parfait",
+        "« J'ai fini. » → Il a dit qu'il **avait** fini."
+       ],
+       [
+        "imparfait",
+        "tetap imparfait",
+        "« Je dormais. » → Il a dit qu'il **dormait**."
+       ],
+       [
+        "futur simple",
+        "conditionnel présent",
+        "« Je viendrai. » → Il a dit qu'il **viendrait**."
+       ],
+       [
+        "futur antérieur",
+        "conditionnel passé",
+        "« J'aurai fini. » → …qu'il **aurait** fini."
+       ],
+       [
+        "futur proche",
+        "*allait* + infinitif",
+        "« Je vais partir. » → …qu'il **allait** partir."
+       ],
+       [
+        "conditionnel",
+        "tetap",
+        "« Je viendrais. » → …qu'il **viendrait**."
+       ],
+       [
+        "subjonctif",
+        "tetap",
+        "« Il faut que tu viennes. » → …qu'il fallait que je **vienne**."
+       ],
+       [
+        "impératif",
+        "*de* + infinitif",
+        "« Viens ! » → Il m'a dit **de venir**."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Pertanyaan, waktu, dan tempat yang ikut bergeser",
+     "body": [
+      "Bagian kedua ini yang paling sering dilewatkan. Kata tanya berubah bentuk, dan penanda waktu digeser supaya cocok dengan titik pandang pelapor."
+     ],
+     "table": {
+      "head": [
+       "Asli",
+       "Menjadi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Est-ce que…?",
+        "*si*",
+        "Il a demandé **si** je venais."
+       ],
+       [
+        "Qu'est-ce que…?",
+        "*ce que*",
+        "…**ce que** je faisais."
+       ],
+       [
+        "Qu'est-ce qui…?",
+        "*ce qui*",
+        "…**ce qui** se passait."
+       ],
+       [
+        "Qui / où / quand / pourquoi",
+        "tetap",
+        "…**pourquoi** j'étais parti."
+       ],
+       [
+        "aujourd'hui",
+        "ce jour-là",
+        "…qu'il était malade **ce jour-là**."
+       ],
+       [
+        "hier",
+        "la veille",
+        "…qu'il l'avait vu **la veille**."
+       ],
+       [
+        "demain",
+        "le lendemain",
+        "…qu'il viendrait **le lendemain**."
+       ],
+       [
+        "maintenant",
+        "à ce moment-là",
+        "…qu'il partait **à ce moment-là**."
+       ],
+       [
+        "ici",
+        "là",
+        "…qu'il m'attendait **là**."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Melapor tanpa *que*: bentuk yang dipakai pers",
+     "body": [
+      "Beberapa kata kerja pelapor bisa langsung diikuti **infinitif** tanpa *que*, asalkan pelakunya sama. Bentuk ini ringkas, sangat tertulis, dan muncul di hampir tiap berita hukum."
+     ],
+     "table": {
+      "head": [
+       "Dengan *que*",
+       "Dengan infinitif",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "Il nie qu'il l'a reçu.",
+        "Il nie **l'avoir reçu**.",
+        "*nier* — sangat lazim"
+       ],
+       [
+        "Il reconnaît qu'il a menti.",
+        "Il reconnaît **avoir menti**.",
+        "*reconnaître*"
+       ],
+       [
+        "Il admet qu'il s'est trompé.",
+        "Il admet **s'être trompé**.",
+        "*admettre*"
+       ],
+       [
+        "Il affirme qu'il est innocent.",
+        "Il affirme **être** innocent.",
+        "*affirmer*"
+       ],
+       [
+        "Il déclare qu'il n'a rien vu.",
+        "Il déclare **n'avoir rien vu**.",
+        "perhatikan letak *rien*"
+       ],
+       [
+        "Il prétend qu'il ne savait pas.",
+        "Il prétend **ne pas avoir su**.",
+        "*ne pas* berdampingan"
+       ],
+       [
+        "Il espère qu'il viendra.",
+        "Il espère **venir**.",
+        "subjek wajib sama"
+       ],
+       [
+        "⚠️ *dire*",
+        "*Il dit avoir vu* — sangat tertulis",
+        "di lisan pakai *que*"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sekolah, orang tua, dan kata kerja pelapor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Français",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "le proviseur",
+       "l' pro-vi-ZÖR",
+       "kepala sekolah menengah"
+      ],
+      [
+       "le conseil de classe",
+       "l' kon-SÈY d' KLAS",
+       "rapat dewan kelas"
+      ],
+      [
+       "le bulletin",
+       "l' bül-TAN",
+       "rapor"
+      ],
+      [
+       "le redoublement",
+       "l' r'-dubl'-MAN",
+       "tinggal kelas"
+      ],
+      [
+       "l'absentéisme",
+       "lab-san-te-ISM",
+       "kebiasaan membolos"
+      ],
+      [
+       "la salle des profs",
+       "la sal de PROF",
+       "ruang guru"
+      ],
+      [
+       "le courrier",
+       "l' ku-RIE",
+       "surat"
+      ],
+      [
+       "être au courant",
+       "ètr o ku-RAN",
+       "sudah tahu"
+      ],
+      [
+       "faire un point",
+       "fèr an PWAN",
+       "mengadakan evaluasi"
+      ],
+      [
+       "mensuel",
+       "man-sü-ÈL",
+       "bulanan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata kerja pelapor: masing-masing membawa penilaian"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Nada",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "dire",
+       "netral",
+       "Il a dit qu'il viendrait."
+      ],
+      [
+       "expliquer",
+       "menjelaskan, resmi",
+       "J'ai expliqué qu'on avait écrit."
+      ],
+      [
+       "préciser",
+       "menegaskan rinciannya",
+       "Elle a précisé que c'était urgent."
+      ],
+      [
+       "souligner",
+       "menekankan",
+       "Il a souligné qu'il n'y avait pas de budget."
+      ],
+      [
+       "reconnaître",
+       "mengakui hal yang memberatkan diri",
+       "Elle a reconnu qu'elle ne les avait pas lus."
+      ],
+      [
+       "admettre",
+       "mengakui sesudah bertahan",
+       "Il a admis qu'il s'était trompé."
+      ],
+      [
+       "prétendre",
+       "mengklaim — pelapornya ragu",
+       "Il prétend qu'il n'était pas informé."
+      ],
+      [
+       "nier",
+       "membantah",
+       "Elle nie avoir reçu le courrier."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang membuat laporanmu langsung terdengar Prancis",
+     "items": [
+      "**Jangan pakai *que* dua kali tanpa mengulangnya.** Bahasa Prancis mengulang *que* di tiap anak kalimat: *Il a dit **qu'**il était prêt et **qu'**il partirait*. Menghilangkan yang kedua terdengar seperti terjemahan.",
+      "**Beberapa kata kerja melapor lewat infinitif, bukan *que***: *nier avoir reçu*, *reconnaître avoir menti*, *affirmer être au courant*. Ini ragam tertulis dan sangat sering muncul di berita — kenali dulu, pakai kemudian.",
+      "***Prétendre* bukan \"berpura-pura\".** Ia berarti \"mengklaim\", dan pemakaiannya sudah menandai bahwa penulis tidak mempercayainya. Kata untuk berpura-pura adalah *faire semblant de*. Jebakan ini memakan korban tiap tahun di ujian."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fr": "sans détour",
+   "baca": "san de-TUR",
+   "id": "tanpa basa-basi"
+  },
+  {
+   "fr": "réagir",
+   "baca": "re-a-JIR",
+   "id": "bereaksi"
+  },
+  {
+   "fr": "reconnaître",
+   "baca": "r'-ko-NÈTR",
+   "id": "mengakui"
+  },
+  {
+   "fr": "compter faire",
+   "baca": "kon-TE FÈR",
+   "id": "berencana melakukan"
+  },
+  {
+   "fr": "promettre",
+   "baca": "pro-MÈTR",
+   "id": "berjanji"
+  },
+  {
+   "fr": "rassure-toi",
+   "baca": "ra-sür-TWA",
+   "id": "tenang saja"
+  },
+  {
+   "fr": "bien joué",
+   "baca": "biyan ju-E",
+   "id": "bagus, langkah tepat"
+  },
+  {
+   "fr": "prétendre",
+   "baca": "pre-TANDR",
+   "id": "mengklaim"
+  },
+  {
+   "fr": "informer",
+   "baca": "an-for-ME",
+   "id": "memberi tahu"
+  },
+  {
+   "fr": "faux",
+   "baca": "FO",
+   "id": "salah, tidak benar"
+  },
+  {
+   "fr": "textuellement",
+   "baca": "teks-tü-èl-MAN",
+   "id": "persis kata per kata"
+  },
+  {
+   "fr": "garder pour soi",
+   "baca": "gar-DE pur SWA",
+   "id": "menyimpan sendiri"
+  },
+  {
+   "fr": "raconter",
+   "baca": "ra-kon-TE",
+   "id": "menceritakan"
+  },
+  {
+   "fr": "suivre",
+   "baca": "SÜIVR",
+   "id": "mengikuti"
+  },
+  {
+   "fr": "nier",
+   "baca": "ni-YE",
+   "id": "membantah"
+  },
+  {
+   "fr": "admettre",
+   "baca": "ad-MÈTR",
+   "id": "mengakui"
+  },
+  {
+   "fr": "souligner",
+   "baca": "su-li-NYE",
+   "id": "menekankan"
+  },
+  {
+   "fr": "faire semblant de",
+   "baca": "fèr san-BLAN d'",
+   "id": "berpura-pura"
+  },
+  {
+   "fr": "le lendemain",
+   "baca": "l' land'-MAN",
+   "id": "keesokan harinya"
+  },
+  {
+   "fr": "se faire remonter les bretelles",
+   "baca": "s' fèr r'-mon-TE le br'-TÈL",
+   "id": "kena semprot atasan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Laporkan dengan pergeseran kala yang benar.",
+   "items": [
+    "« Je suis prêt. » → Il a dit qu'il ____ prêt.",
+    "« J'ai fini. » → Elle a dit qu'elle ____ fini.",
+    "« Je viendrai. » → Il a dit qu'il ____.",
+    "« Je vais partir. » → Elle a dit qu'elle ____ partir.",
+    "« Il faut que tu viennes. » → Il a dit qu'il fallait que je ____."
+   ]
+  },
+  {
+   "prompt": "Ubah pertanyaan langsung menjadi tak langsung.",
+   "items": [
+    "« Est-ce que tu viens ? » → Il m'a demandé ____",
+    "« Qu'est-ce que tu fais ? » → Il m'a demandé ____",
+    "« Qu'est-ce qui se passe ? » → Elle a demandé ____",
+    "« Pourquoi es-tu parti ? » → Elle a demandé ____",
+    "« Où as-tu mis le dossier ? » → Il a demandé ____"
+   ]
+  },
+  {
+   "prompt": "Ubah perintah menjadi laporan dengan *de* + infinitif.",
+   "items": [
+    "« Viens demain. » → Il m'a dit ____",
+    "« Ne parlez pas de ça. » → Il m'a dit ____",
+    "« Gardez ça pour vous. » → Il m'a demandé ____",
+    "« Appelle-moi ce soir. » → Elle m'a dit ____",
+    "« N'ouvrez pas le courrier. » → On nous a demandé ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Prancis.",
+   "items": [
+    "Dia bilang dia sudah tahu.",
+    "Dia tanya kenapa nggak ada yang meneleponnya bulan November.",
+    "Aku bilang kami akan coba.",
+    "Dia mengklaim tidak pernah diberi tahu.",
+    "Aku nggak bilang bakal mengikutinya."
+   ]
+  }
+ ],
+ "answers": [
+  "était — avait — viendrait — allait — vienne",
+  "si je venais. — ce que je faisais. — ce qui se passait. — pourquoi j'étais parti. — où j'avais mis le dossier.",
+  "de venir le lendemain. — de ne pas parler de ça. — de garder ça pour moi. — de l'appeler ce soir-là. — de ne pas ouvrir le courrier.",
+  "Elle a dit qu'elle était au courant. — Elle a demandé pourquoi personne ne l'avait appelée en novembre. — Je lui ai dit qu'on essaierait. — Il prétend qu'il n'a jamais été informé. — Je ne t'ai pas dit que je le suivrais."
+ ],
+ "wave": "Kembali ke unit 2, ke percekcokan Sonia dan Marc di koridor. Sekarang laporkan seluruhnya kepada rekan ketiga esok harinya, dalam gaya kantor: *Sonia lui a reproché d'avoir annoncé la nouvelle sans la prévenir. Marc a reconnu qu'il n'avait pas eu de confirmation écrite, mais il a soutenu qu'il croyait la décision actée.* Perhatikan berapa banyak emosi yang hilang begitu kalimatnya digeser ke kala lampau — dan bahwa yang membawa kembali penilaianmu adalah pilihan kata kerja pelapornya, bukan kata sifatnya."
+}

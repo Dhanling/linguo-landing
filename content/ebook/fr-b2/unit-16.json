@@ -1,0 +1,609 @@
+{
+ "title": "Berkas, loket, dan surat yang harus benar",
+ "title_target": "Veuillez trouver ci-joint les pièces demandées",
+ "goal": "Mengurus administrasi Prancis: memahami suratnya, menulis balasannya, dan menyusun permintaan resmi yang tidak terdengar seperti terjemahan.",
+ "bekal": [
+  "mengenali kosakata administrasi yang paling sering",
+  "menulis surel resmi dengan pembuka dan penutup yang benar",
+  "memakai *veuillez*, *ci-joint*, *dans les meilleurs délais*",
+  "menyusun permintaan dan sanggahan resmi tanpa terdengar menuntut"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Au guichet de la préfecture",
+   "intro": "Loket sebuah prefektur di pinggiran Paris, Kamis pagi. Adama datang untuk kesekian kalinya mengurus perpanjangan izin tinggalnya. Madame Roux di balik kaca membuka berkasnya. Perhatikan bahwa Adama beralih ragam dalam satu kalimat begitu ia mulai kesal — dan bahwa ia menariknya kembali.",
+   "lines": [
+    {
+     "speaker": "Mme Roux:",
+     "text": "Bonjour. Votre récépissé et votre convocation, s'il vous plaît.",
+     "id": "Selamat pagi. Tanda terima dan surat panggilan Anda, tolong.",
+     "literal": "hari-baik. kalian-punya tanda-terima dan kalian-punya panggilan, jika-itu kepada-kalian menyenangkan."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Les voici. J'ai également apporté les pièces justificatives demandées.",
+     "id": "Ini dia. Saya juga membawa dokumen pendukung yang diminta.",
+     "literal": "itu-mereka-di-sini. saya-punya juga dibawa itu bagian pembuktian diminta."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Justificatif de domicile de moins de trois mois ?",
+     "id": "Bukti tempat tinggal kurang dari tiga bulan?",
+     "literal": "pembuktian dari tempat-tinggal dari kurang dari tiga bulan?"
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Facture d'électricité de juillet. Et l'attestation d'hébergement de ma logeuse.",
+     "id": "Tagihan listrik Juli. Dan surat pernyataan tempat tinggal dari pemilik kos saya.",
+     "literal": "tagihan dari-listrik dari Juli. dan itu-pernyataan dari-penampungan dari aku-punya penyewa-perempuan."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Il manque sa pièce d'identité. L'attestation seule ne suffit pas.",
+     "id": "Kartu identitasnya kurang. Surat pernyataannya saja tidak cukup.",
+     "literal": "itu kurang dia-punya bagian dari-identitas. itu-pernyataan tunggal tidak cukup tidak."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "On ne me l'a pas demandé la dernière fois. J'ai la liste, elle n'y figure pas.",
+     "id": "Terakhir kali itu tidak diminta ke saya. Saya punya daftarnya, itu tidak tercantum.",
+     "literal": "orang tidak kepadaku itu-punya tidak diminta itu terakhir kali. saya-punya itu daftar, dia tidak di-situ tercantum tidak."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "La liste a changé au premier juillet. Elle est en ligne.",
+     "id": "Daftarnya berubah per 1 Juli. Ada di internet.",
+     "literal": "itu daftar punya diubah pada-itu pertama Juli. dia ada di jaringan."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Franchement, c'est pas possible de nous prévenir ? … Pardon. Je reformule.",
+     "id": "Jujur, apa nggak mungkin memberi tahu kami? … Maaf. Saya ulang.",
+     "literal": "terus-terang, itu-adalah tidak mungkin dari kepada-kami memberitahu? … maaf. saya rumuskan-ulang."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Je vous en prie. Je comprends, c'est la troisième fois que vous venez.",
+     "id": "Silakan. Saya paham, ini kali ketiga Anda datang.",
+     "literal": "saya kepada-kalian dari-itu mohon. saya mengerti, itu-adalah itu ketiga kali bahwa kalian datang."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Serait-il possible de déposer la pièce manquante par voie dématérialisée ?",
+     "id": "Apakah mungkin menyerahkan dokumen yang kurang secara daring?",
+     "literal": "akanlah-ada-dia mungkin dari menyerahkan itu bagian kurang lewat jalur tak-berwujud?"
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Oui. Vous téléversez le document sur votre espace personnel, rubrique « compléments ».",
+     "id": "Bisa. Anda unggah dokumennya di akun pribadi Anda, bagian \"pelengkap\".",
+     "literal": "ya. kalian unggah itu dokumen atas kalian-punya ruang pribadi, rubrik pelengkap."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Et mon récépissé expire dans onze jours. Il sera prorogé ?",
+     "id": "Dan tanda terima saya kedaluwarsa dalam sebelas hari. Akan diperpanjang?",
+     "literal": "dan aku-punya tanda-terima kedaluwarsa di sebelas hari. dia akan-ada diperpanjang?"
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Automatiquement, dès réception du complément. Comptez huit jours ouvrés.",
+     "id": "Otomatis, begitu pelengkapnya diterima. Perkirakan delapan hari kerja.",
+     "literal": "secara-otomatis, sejak penerimaan dari-itu pelengkap. hitung delapan hari kerja."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Huit jours ouvrés, donc onze jours calendaires. Ça passe de justesse.",
+     "id": "Delapan hari kerja, berarti sebelas hari kalender. Pas-pasan lolos.",
+     "literal": "delapan hari kerja, maka sebelas hari kalender. itu lewat dari ketepatan."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "Téléversez ce soir et ça passera large. Voici votre attestation de dépôt.",
+     "id": "Unggah malam ini dan bakal longgar. Ini surat keterangan penyerahan Anda.",
+     "literal": "unggah ini malam dan itu akan-lewat lebar. ini-dia kalian-punya keterangan dari penyerahan."
+    },
+    {
+     "speaker": "Adama:",
+     "text": "Merci. Sincèrement. Vous êtes la première à m'expliquer la procédure.",
+     "id": "Terima kasih. Sungguh. Anda orang pertama yang menjelaskan prosedurnya ke saya.",
+     "literal": "terima-kasih. dengan-tulus. kalian ada itu pertama untuk kepadaku menjelaskan itu prosedur."
+    },
+    {
+     "speaker": "Mme Roux:",
+     "text": "C'est mon métier. Bonne journée, et pensez à garder l'accusé de réception.",
+     "id": "Itu pekerjaan saya. Selamat siang, dan ingat simpan bukti penerimaannya.",
+     "literal": "itu-adalah aku-punya pekerjaan. baik hari, dan pikirkan kepada menyimpan itu-tanda dari penerimaan."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 8 adalah pelajaran nada yang paling penting di unit ini.** Adama mulai dengan *franchement, c'est pas possible de…* — ragam *familier*, dengan *ne* yang hilang — lalu menghentikan dirinya sendiri dan berkata *je reformule*. Di hadapan petugas administrasi Prancis, marah tidak dilarang, tapi turun ragam **selalu** merugikan: ia memberi lawan bicara alasan untuk berhenti membantu. Potongan *pardon, je reformule* dan *permettez-moi de reformuler* layak dihafal utuh."
+    },
+    {
+     "text": "**Baris 10 dan 12 memperlihatkan cara meminta yang benar di loket:** bukan *je veux* dan bukan *il faut que vous*, melainkan pertanyaan berpembalikan (*Serait-il possible de…*) atau kalimat pasif tanpa pelaku (*Il sera prorogé ?*). Dua bentuk ini menyingkirkan kesan menuntut sepenuhnya, dan keduanya sudah kaukuasai — dari unit 15 dan unit 6."
+    },
+    {
+     "text": "**Kosakata administrasi Prancis punya kata sendiri untuk hal sehari-hari, dan itu bukan kebetulan.** *Téléverser* (mengunggah), *proroger* (memperpanjang), *par voie dématérialisée* (secara daring), *jours ouvrés* (hari kerja), *dès réception de* (begitu diterima). Mempelajarinya bukan gaya-gayaan: ia satu-satunya cara membaca surat yang dikirimkan kepadamu."
+    },
+    {
+     "text": "**Baris 13 dan 14: *jours ouvrés* melawan *jours calendaires*.** *Jours ouvrés* = hari kerja (Senin-Jumat, tanpa hari libur); *jours ouvrables* = hari yang boleh bekerja (biasanya termasuk Sabtu); *jours calendaires* = hari kalender. Ketiganya muncul di surat resmi dan menentukan tenggat yang berbeda-beda. Salah membacanya berarti salah menghitung tanggal."
+    },
+    {
+     "text": "**Baris 9: *je vous en prie*.** Ia punya tiga arti tergantung tempatnya: menjawab terima kasih (\"sama-sama\"), mempersilakan (\"silakan\"), dan — seperti di sini — meredakan permintaan maaf lawan bicara (\"tidak apa-apa\"). Semuanya sopan, semuanya sangat sering."
+    },
+    {
+     "text": "**Baris 17: *l'accusé de réception*.** Bukti bahwa suratmu diterima. Ini kata yang wajib dihafal siapa pun yang berurusan dengan lembaga Prancis, bersama saudaranya: *le récépissé* (tanda terima sementara), *l'attestation* (surat keterangan), *le justificatif* (bukti pendukung), *la convocation* (surat panggilan), *le recours* (upaya banding)."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka surel resmi Prancis, baris demi baris",
+     "body": [
+      "Surel resmi Prancis jauh lebih berpola daripada surel bahasa Inggris. Menghafal enam baris ini berarti bisa menulis hampir semua surat yang akan kaubutuhkan — tinggal mengganti isi baris ketiga."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Potongan baku",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "sapaan",
+        "Madame, Monsieur,",
+        "tanpa nama kalau tak tahu; **tanpa** *Cher*"
+       ],
+       [
+        "sapaan (tahu nama)",
+        "Madame Roux,",
+        "tetap tanpa *Chère* di surat pertama"
+       ],
+       [
+        "pembuka",
+        "Je me permets de vous écrire au sujet de…",
+        "atau: *Suite à votre courrier du 12 août,…*"
+       ],
+       [
+        "isi — meminta",
+        "Je vous saurais gré de bien vouloir…",
+        "paling sopan"
+       ],
+       [
+        "isi — melampirkan",
+        "Veuillez trouver ci-joint…",
+        "*ci-joint* tak berubah kalau di depan"
+       ],
+       [
+        "isi — mendesak",
+        "Je vous remercie de bien vouloir me répondre dans les meilleurs délais.",
+        "mendesak tanpa terdengar menuntut"
+       ],
+       [
+        "penutup",
+        "Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.",
+        "rumus baku, jangan diubah"
+       ],
+       [
+        "penutup lebih ringan",
+        "Bien cordialement,",
+        "antar rekan kerja"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Tiga puluh kata administrasi yang wajib dikenali",
+     "body": [
+      "Kolom kanan bukan terjemahan harfiah melainkan **apa yang harus kaulakukan** begitu melihat kata itu di surat. Itu yang benar-benar berguna."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Yang harus kaulakukan"
+      ],
+      "rows": [
+       [
+        "le justificatif",
+        "bukti pendukung",
+        "lampirkan dokumen"
+       ],
+       [
+        "le récépissé",
+        "tanda terima sementara",
+        "simpan, ia menggantikan izin"
+       ],
+       [
+        "la convocation",
+        "surat panggilan",
+        "datang pada tanggal itu"
+       ],
+       [
+        "l'accusé de réception",
+        "bukti penerimaan",
+        "simpan sebagai bukti"
+       ],
+       [
+        "le complément",
+        "dokumen tambahan",
+        "kirim yang kurang"
+       ],
+       [
+        "proroger",
+        "memperpanjang",
+        "tak perlu mengajukan ulang"
+       ],
+       [
+        "téléverser",
+        "mengunggah",
+        "lewat akun daring"
+       ],
+       [
+        "dans les meilleurs délais",
+        "secepat mungkin",
+        "biasanya berarti seminggu"
+       ],
+       [
+        "sous quinzaine",
+        "dalam dua minggu",
+        "hitung 15 hari"
+       ],
+       [
+        "jours ouvrés",
+        "hari kerja",
+        "jangan hitung akhir pekan"
+       ],
+       [
+        "le recours gracieux",
+        "banding ke lembaga yang sama",
+        "surat, gratis"
+       ],
+       [
+        "le recours contentieux",
+        "banding ke pengadilan",
+        "ada tenggat, biasanya 2 bulan"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Menulis tanggal, angka, dan alamat secara resmi",
+     "body": [
+      "Bagian yang tak pernah diajarkan dan selalu dipakai. Kesalahan di sini membuat surat resmi langsung terbaca sebagai tulisan orang asing."
+     ],
+     "table": {
+      "head": [
+       "Hal",
+       "Bentuk baku",
+       "⚠️ Catatan"
+      ],
+      "rows": [
+       [
+        "tanggal di surat",
+        "le 28 août 2026",
+        "tanpa titik, bulan huruf kecil"
+       ],
+       [
+        "tempat + tanggal",
+        "Nantes, le 28 août 2026",
+        "di kanan atas"
+       ],
+       [
+        "desimal",
+        "12,5",
+        "koma, bukan titik"
+       ],
+       [
+        "ribuan",
+        "12 000",
+        "spasi, bukan titik"
+       ],
+       [
+        "mata uang",
+        "1 250 euros",
+        "kata *euros*, sesudah angka"
+       ],
+       [
+        "jam resmi",
+        "14 h 30",
+        "dengan *h*, bukan titik dua"
+       ],
+       [
+        "nomor telepon",
+        "06 12 34 56 78",
+        "berpasangan dua angka"
+       ],
+       [
+        "objet surel",
+        "Objet : demande de rendez-vous",
+        "spasi sebelum titik dua"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Prefektur, izin tinggal, dan berkas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Français",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "la préfecture",
+       "la pre-fèk-TÜR",
+       "prefektur"
+      ],
+      [
+       "le titre de séjour",
+       "l' titr' d' se-JUR",
+       "izin tinggal"
+      ],
+      [
+       "la pièce d'identité",
+       "la piès di-dan-ti-TE",
+       "kartu identitas"
+      ],
+      [
+       "le justificatif de domicile",
+       "l' jüs-ti-fi-ka-TIF d' do-mi-SIL",
+       "bukti tempat tinggal"
+      ],
+      [
+       "l'attestation d'hébergement",
+       "la-tès-ta-SIYON de-berj'-MAN",
+       "surat pernyataan tempat tinggal"
+      ],
+      [
+       "la facture",
+       "la fak-TÜR",
+       "tagihan"
+      ],
+      [
+       "figurer",
+       "fi-gü-RE",
+       "tercantum"
+      ],
+      [
+       "déposer",
+       "de-po-ZE",
+       "menyerahkan"
+      ],
+      [
+       "l'espace personnel",
+       "lès-PAS per-so-NÈL",
+       "akun pribadi"
+      ],
+      [
+       "la rubrique",
+       "la rü-BRIK",
+       "bagian, rubrik"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Meminta di loket dan lewat surat, dari paling ringan ke paling resmi"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Potongan",
+      "Ragam",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "Je peux…?",
+       "courant",
+       "antar rekan"
+      ],
+      [
+       "Est-ce que je pourrais…?",
+       "courant",
+       "loket, situasi biasa"
+      ],
+      [
+       "Serait-il possible de…?",
+       "soutenu",
+       "loket, permintaan tak biasa"
+      ],
+      [
+       "Auriez-vous l'amabilité de…?",
+       "soutenu",
+       "surat, permintaan besar"
+      ],
+      [
+       "Je vous saurais gré de bien vouloir…",
+       "très soutenu",
+       "surat resmi"
+      ],
+      [
+       "Je me permets de vous relancer.",
+       "soutenu",
+       "menagih balasan"
+      ],
+      [
+       "Sauf erreur de ma part,…",
+       "soutenu",
+       "menyanggah dengan sangat halus"
+      ],
+      [
+       "Je me vois contraint de…",
+       "très soutenu",
+       "mengumumkan langkah keras"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang menyelamatkan berkasmu",
+     "items": [
+      "**Simpan tiap *accusé de réception* dan tiap *attestation de dépôt*.** Di sistem administrasi Prancis, beban pembuktian ada padamu. Tanpa bukti kirim, sebuah berkas yang hilang di dalam sistem dianggap tak pernah dikirim.",
+      "**Jangan pernah turun ragam di loket atau di surel resmi**, bahkan ketika kamu benar dan mereka salah. Potongan yang menyelamatkan situasi: *Sauf erreur de ma part, la liste que j'ai reçue ne mentionne pas ce document.* Ia menyatakan hal yang sama dengan \"kalian tidak memberi tahu saya\" tanpa menuduh siapa pun.",
+      "**Perhatikan tenggat *recours*.** Sesudah keputusan yang merugikan, kamu biasanya punya **dua bulan** untuk mengajukan *recours gracieux* (ke lembaga yang sama) atau *recours contentieux* (ke *tribunal administratif*). Lewat dari itu, keputusannya menjadi final — dan tak ada yang akan mengingatkanmu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fr": "le récépissé",
+   "baca": "l' re-se-pi-SE",
+   "id": "tanda terima sementara"
+  },
+  {
+   "fr": "la convocation",
+   "baca": "la kon-vo-ka-SIYON",
+   "id": "surat panggilan"
+  },
+  {
+   "fr": "également",
+   "baca": "e-gal-MAN",
+   "id": "juga"
+  },
+  {
+   "fr": "la logeuse",
+   "baca": "la lo-JÖZ",
+   "id": "pemilik kos perempuan"
+  },
+  {
+   "fr": "manquer",
+   "baca": "man-KE",
+   "id": "kurang, tidak ada"
+  },
+  {
+   "fr": "reformuler",
+   "baca": "r'-for-mü-LE",
+   "id": "merumuskan ulang"
+  },
+  {
+   "fr": "je vous en prie",
+   "baca": "j' vu-zan PRI",
+   "id": "silakan, tidak apa-apa"
+  },
+  {
+   "fr": "dématérialisé",
+   "baca": "de-ma-te-ria-li-ZE",
+   "id": "daring, tanpa kertas"
+  },
+  {
+   "fr": "téléverser",
+   "baca": "te-le-ver-SE",
+   "id": "mengunggah"
+  },
+  {
+   "fr": "le complément",
+   "baca": "l' kon-ple-MAN",
+   "id": "dokumen pelengkap"
+  },
+  {
+   "fr": "expirer",
+   "baca": "èks-pi-RE",
+   "id": "kedaluwarsa"
+  },
+  {
+   "fr": "proroger",
+   "baca": "pro-ro-JE",
+   "id": "memperpanjang"
+  },
+  {
+   "fr": "dès réception de",
+   "baca": "dè re-sèp-SIYON d'",
+   "id": "begitu diterima"
+  },
+  {
+   "fr": "les jours ouvrés",
+   "baca": "le jur zu-VRE",
+   "id": "hari kerja"
+  },
+  {
+   "fr": "de justesse",
+   "baca": "d' jüs-TÈS",
+   "id": "pas-pasan"
+  },
+  {
+   "fr": "l'accusé de réception",
+   "baca": "la-kü-ZE d' re-sèp-SIYON",
+   "id": "bukti penerimaan"
+  },
+  {
+   "fr": "ci-joint",
+   "baca": "si-JWAN",
+   "id": "terlampir"
+  },
+  {
+   "fr": "dans les meilleurs délais",
+   "baca": "dan le mè-YÖR de-LÈ",
+   "id": "secepat mungkin"
+  },
+  {
+   "fr": "le recours",
+   "baca": "l' r'-KUR",
+   "id": "upaya banding"
+  },
+  {
+   "fr": "la procédure",
+   "baca": "la pro-se-DÜR",
+   "id": "prosedur"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi kerangka surel resmi.",
+   "items": [
+    "Je me ____ de vous écrire au sujet de mon dossier.",
+    "Veuillez trouver ____ les pièces demandées.",
+    "Je vous ____ gré de bien vouloir examiner ma demande.",
+    "Je vous remercie de bien vouloir me répondre dans les meilleurs ____.",
+    "Je vous prie d'____, Madame, Monsieur, mes salutations distinguées."
+   ]
+  },
+  {
+   "prompt": "Tulis arti kata administrasi ini dalam bahasa Indonesia.",
+   "items": [
+    "le justificatif de domicile → ____",
+    "l'accusé de réception → ____",
+    "proroger → ____",
+    "les jours ouvrés → ____",
+    "sous quinzaine → ____"
+   ]
+  },
+  {
+   "prompt": "Naikkan permintaan ini ke ragam resmi.",
+   "items": [
+    "Je peux déposer le document en ligne ? → ____ de déposer le document en ligne ?",
+    "Vous pouvez me répondre vite ? → Je vous remercie de bien vouloir me répondre ____",
+    "Vous ne m'avez pas prévenu. → ____ , je n'ai pas été informé.",
+    "Je vous renvoie un message. → Je me permets de vous ____",
+    "Je dois refuser. → Je me vois ____ de refuser."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Prancis.",
+   "items": [
+    "Saya juga membawa dokumen pendukung yang diminta.",
+    "Apakah mungkin menyerahkan dokumen yang kurang secara daring?",
+    "Otomatis, begitu pelengkapnya diterima.",
+    "Anda orang pertama yang menjelaskan prosedurnya ke saya.",
+    "Ingat simpan bukti penerimaannya."
+   ]
+  }
+ ],
+ "answers": [
+  "permets — ci-joint — saurais — délais — agréer",
+  "bukti tempat tinggal — bukti penerimaan — memperpanjang — hari kerja — dalam dua minggu",
+  "Serait-il possible — dans les meilleurs délais. — Sauf erreur de ma part — relancer. — contraint",
+  "J'ai également apporté les pièces justificatives demandées. — Serait-il possible de déposer la pièce manquante par voie dématérialisée ? — Automatiquement, dès réception du complément. — Vous êtes la première à m'expliquer la procédure. — Pensez à garder l'accusé de réception."
+ ],
+ "wave": "Kembali ke unit 10, ke pendaftaran anak Pauline yang ditolak. Sekarang tulis ulang keluhannya sebagai **surel resmi** kepada pusat olahraga, lengkap dengan enam baris kerangka unit ini: *Madame, Monsieur, Je me permets de vous écrire au sujet du dossier d'inscription de mon fils, déposé le 12 juin. Sauf erreur de ma part, le certificat médical y figurait bien…* Perhatikan bahwa surel resmi menang bukan karena lebih sopan, melainkan karena ia meninggalkan jejak tertulis."
+}

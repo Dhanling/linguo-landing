@@ -1,0 +1,968 @@
+{
+ "brand": "LINGUO",
+ "cover": "cover.png",
+ "title": "Français 104",
+ "subtitle": "Modul mahir bahasa Prancis untuk tingkat B2",
+ "level": "Level B2 (CEFR)",
+ "edition": "Edisi Bahasa Indonesia",
+ "ruby": false,
+ "vocab_columns": [
+  {
+   "head": "Français",
+   "key": "fr"
+  },
+  {
+   "head": "Cara baca",
+   "key": "baca"
+  },
+  {
+   "head": "Bahasa Indonesia",
+   "key": "id"
+  }
+ ],
+ "cover_design": {
+  "bg": "#26265E",
+  "accent": "#EE8B6B",
+  "label": "BAHASA PRANCIS",
+  "judul": "Français",
+  "judul_size": "180px",
+  "cap": "ç",
+  "pola_opacity": 0.45,
+  "pola": "background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.10) 0 2px, transparent 2px 46px),repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 46px);",
+  "merek_sub": "MODUL MAHIR · TINGKAT B2",
+  "ringkas": "Dua puluh unit yang membawamu dari bisa berbahasa Prancis ke terdengar seperti orang yang tahu apa yang ia lakukan: menyanggah tanpa menyinggung, meragukan tanpa menuduh, mengurus surat resmi, dan membaca Le Monde tanpa kamus.",
+  "catatan": "Tiap baris dialog dilengkapi terjemahan harfiah — di tingkat ini baris itulah yang membongkar kenapa satu kalimat terdengar sopan dan kalimat lain terdengar menghakimi.",
+  "angka": "104"
+ },
+ "product": {
+  "slug": "francais-104-b2-id",
+  "title": "French 104 - B2",
+  "type": "ebook",
+  "language": "French",
+  "level": "B2",
+  "file": "francais-104-b2-id.pdf",
+  "description": "Modul lanjutan bahasa Prancis tingkat B2. Dua puluh unit bergaya Assimil dengan dialog panjang berkecepatan penutur asli dan terjemahan harfiah: seluruh sistem subjonctif sampai bentuk lampaunya, kalimat pengandaian tiga lapis dengan conditionnel passé, kalimat tak langsung beserta pergeseran kalanya, passé simple untuk membaca, cara bahasa Prancis menghindari kalimat pasif, gaya nomina ala pers, kata ganti penghubung berpreposisi, penempatan y dan en, seluruh keluarga penghubung sebab-akibat-pertentangan, participe présent melawan gérondif, tiga tingkat ragam bahasa, bahasa administrasi Prancis, dunia kerja dan wawancara, membaca tajuk rencana, ragam Belgia Swiss Québec dan Afrika, sampai idiom dan ironi, plus latihan dan kunci jawaban. Ditulis khusus untuk penutur bahasa Indonesia.",
+  "pages": 168
+ },
+ "front": [
+  {
+   "title": "Kata pengantar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di tingkat pemula, bahasa Prancis terasa seperti daftar yang harus dihafal: *le* atau *la*, *avoir* atau *être*, huruf mana yang dibunyikan dan huruf mana yang cuma menumpang. Di B2 daftar itu sudah lewat, dan yang tersisa justru bagian yang tak pernah masuk tabel — **sikap**. Dua kalimat yang sama-sama benar tata bahasanya bisa membuatmu terdengar berhati-hati atau menuduh, terpelajar atau kaku, akrab atau lancang."
+    },
+    {
+     "type": "p",
+     "text": "Karena itu susunan modul ini berbeda dari modul pemula. Bentuk yang benar-benar baru cuma segelintir: subjonctif passé, conditionnel passé, passé simple, beberapa kata ganti penghubung berpreposisi. Sisanya sudah pernah kamu lihat. Yang baru adalah **pemakaiannya**: *je pense qu'il vient* dan *je ne pense pas qu'il vienne* dua-duanya soal kedatangan yang sama tapi satu menyatakan fakta dan satu menyatakan keraguan; *tu aurais pu me le dire* dan *tu pouvais me le dire* dua-duanya soal hal yang tak kamu katakan tapi cuma yang pertama terdengar seperti teguran; satu kata *quand même* yang diselipkan bisa mengubah keluhan menjadi gurauan."
+    },
+    {
+     "type": "p",
+     "text": "Dialog di modul ini juga berubah. Orang menelan *ne*, memotong ekor kalimatnya sendiri, memakai potongan yang tidak ada di kamus, dan sesekali mengatakan kebalikan dari yang mereka maksud. Itu bukan kecerobohan penulisan — begitulah bunyi bahasa Prancis yang sebenarnya, dan mulai unit satu kamu berlatih membacanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum mulai",
+     "items": [
+      "Modul ini menyasar pembaca yang sudah selesai di **tingkat B1**. Syarat masuknya tiga: passé composé dan imparfait keluar tanpa dipikir termasuk pilihan *avoir* atau *être*, kata ganti *le/la/les/lui/leur* serta *y* dan *en* sudah menempel di tempat yang benar, dan futur serta conditionnel present tidak lagi tertukar. Kalau salah satunya masih goyah, kerjakan dulu halaman \"Bekal dari B1\" berikut ini.",
+      "Kalau kamu datang langsung dari **Français 101 (A1)**, jangan lompat. Halaman bekal di depan adalah ringkasan, bukan pelajaran — ia memeriksa, bukan mengajarkan. Antara A1 dan modul ini masih ada dua tingkat yang perlu ditutup.",
+      "Berhentilah menerjemahkan dalam hati. Mulai modul ini, baca dialognya sampai habis dengan menutupi kolom Indonesianya, dan izinkan dirimu tidak paham dua-tiga kalimat. Tahan terhadap ketidakpastian adalah keterampilan B2 yang paling jarang diajarkan.",
+      "Kumpulkan **sikap**, bukan cuma kata. Tiap kali kamu menemukan potongan yang membuat kalimat terdengar lebih halus (*je dirais que…*, *je ne suis pas sûr que…*, *disons que…*, *cela dit…*), catat di satu halaman terpisah dan pakai satu tiap kali kamu bicara."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Selamat melanjutkan. *À partir d'ici, on n'apprend plus le français — on s'en sert.*"
+    }
+   ]
+  },
+  {
+   "type": "isi",
+   "title": "Daftar isi",
+   "intro": "Lima unit pertama menutup sistem subjonctif, pengandaian, dan kalimat tak langsung; enam unit berikutnya membangun alat menyusun kalimat panjang dan berargumen; sembilan unit sisanya membawanya ke dunia nyata — kantor, administrasi, pers, ragam lisan, bahasa Prancis di luar Prancis, sampai humor."
+  },
+  {
+   "title": "Cara memakai modul ini",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiap unit dirancang selesai dalam satu kali duduk, sekitar 50-60 menit. Lebih panjang daripada modul pemula: dialognya lebih panjang, catatannya lebih rinci, dan tiap unit membawa dua kotak tata bahasa plus satu bagian kosakata bertema."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Dialog** — baca keras-keras satu kali penuh tanpa berhenti, walau ada delapan kata asing. Baru lirik terjemahannya. Di B2, kebiasaan berhenti di tiap kata baru adalah penghambat terbesar.",
+      "**Terjemahan harfiah** — baris kecil miring di bawah tiap kalimat. Di tingkat ini ia bukan lagi alat untuk mengerti isinya, melainkan alat untuk melihat **rangkanya**: di mana kata kerjanya jatuh, kata ganti mana yang naik ke depan, potongan mana yang tak punya padanan Indonesia sama sekali.",
+      "**Dua tanda di baris harfiah** — akhiran **-lah** menandai *subjonctif* (*qu'il vienne* → \"bahwa dia datang**lah**\"), dan **akanlah** menandai *conditionnel* (*il viendrait* → \"dia **akanlah**-datang\"), supaya kelihatan mana yang dinyatakan sebagai fakta dan mana yang cuma dibayangkan. *ne … pas* tetap ditulis \"tidak … tidak\" seperti di modul pemula, karena memang dua kata.",
+      "**Catatan** — bacalah sesudah dialognya, bukan sambil membaca. Nomornya menunjuk baris dialog.",
+      "**Kotak tata bahasa** — dua per unit. Yang pertama membedah bentuk barunya, yang kedua hampir selalu soal ragam: kapan bentuk itu terdengar wajar dan kapan ia terdengar seperti buku pelajaran.",
+      "**Kosakata** — dua puluh kata dengan cara bacanya. Cara baca ditulis dengan ejaan Indonesia, bukan lambang fonetik: *ö* seperti \"e\" pada *sate* yang dibulatkan, *ü* seperti \"i\" dengan bibir monyong, *è* seperti \"è\" pada *bèbek*, dan huruf besar menandai suku kata yang ditekan.",
+      "**Latihan** — empat set. Kerjakan dengan menutup kunci jawaban; kalau salah, jangan langsung baca kuncinya, kembali dulu ke dialognya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ulangan berjenjang",
+     "items": [
+      "Tiap unit mulai unit 3 menyuruhmu kembali ke satu unit yang sudah lewat. Di B2 tugasnya bukan mengubah bentuk, melainkan **mengubah sikap**: ambil dialog lamanya, lalu ucapkan ulang seolah kamu sedang menahan kesal, atau seolah kamu sedang bicara dengan atasan, atau seolah kamu sedang menulisnya sebagai surat.",
+      "Bagian ini tak pernah dinilai benar-salah. Ia dipasang supaya bahan lama tidak mengendap sebagai catatan, melainkan tetap dipakai."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu saran tambahan khusus B2: **rekam suaramu sendiri sekali seminggu**. Dua menit, satu topik bebas, tanpa naskah. Dengarkan ulang bulan berikutnya. Yang naik di tingkat ini bukan jumlah kata yang kamu tahu, melainkan jumlah detik yang bisa kamu isi tanpa berhenti — dan itu cuma kelihatan pada rekaman."
+    }
+   ]
+  },
+  {
+   "title": "Bekal dari B1 — periksa dulu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Enam hal berikut dipakai di hampir tiap halaman modul ini. Kalau ada satu yang membuatmu ragu lebih dari dua detik, tutup dulu modul ini dan ulangi bahan B1-nya."
+    },
+    {
+     "type": "sub",
+     "text": "1. Kala dasar: apa yang sudah harus otomatis"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kala",
+      "Bentuk",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "présent",
+       "je travaille",
+       "sekarang, kebiasaan, kebenaran umum"
+      ],
+      [
+       "passé composé",
+       "j'ai travaillé / je suis allé",
+       "kejadian selesai, rangkaian peristiwa"
+      ],
+      [
+       "imparfait",
+       "je travaillais",
+       "latar, kebiasaan lama, keadaan"
+      ],
+      [
+       "plus-que-parfait",
+       "j'avais travaillé",
+       "yang lebih dulu daripada yang lampau"
+      ],
+      [
+       "futur simple",
+       "je travaillerai",
+       "masa depan"
+      ],
+      [
+       "conditionnel présent",
+       "je travaillerais",
+       "kesopanan, pengandaian, kabar tak pasti"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Yang paling sering keliru di tulisan pelajar Indonesia: **memakai passé composé untuk latar** (*il faisait froid*, bukan *il a fait froid*, ketika menceritakan suasana) dan **menaruh conditionnel sesudah *si*** — itu terlarang, lihat butir 4."
+    },
+    {
+     "type": "sub",
+     "text": "2. Kesesuaian participe passé"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kasus",
+      "Ikut siapa",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "être",
+       "subjek",
+       "Elle est **allée**. / Ils sont **partis**."
+      ],
+      [
+       "avoir + objek di belakang",
+       "tidak ikut siapa pun",
+       "J'ai **vu** les photos."
+      ],
+      [
+       "avoir + objek sudah lewat",
+       "objek langsung",
+       "Les photos que j'ai **vues**."
+      ],
+      [
+       "kata kerja berbalik",
+       "subjek (umumnya)",
+       "Elle s'est **levée**."
+      ],
+      [
+       "berbalik + objek langsung",
+       "tidak ikut subjek",
+       "Elle s'est **lavé** les mains."
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "3. Kata ganti dan urutannya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Golongan",
+      "Kata",
+      "Menggantikan"
+     ],
+     "rows": [
+      [
+       "objek langsung",
+       "me, te, le, la, nous, vous, les",
+       "benda/orang tanpa preposisi"
+      ],
+      [
+       "objek tak langsung",
+       "me, te, lui, nous, vous, leur",
+       "à + orang"
+      ],
+      [
+       "y",
+       "y",
+       "à + benda, atau tempat"
+      ],
+      [
+       "en",
+       "en",
+       "de + benda, atau jumlah"
+      ],
+      [
+       "urutan",
+       "me/te/nous/vous ‹ le/la/les ‹ lui/leur ‹ y ‹ en",
+       "*Je le lui en ai parlé* tak pernah lebih dari tiga"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**y** dan **en** tidak punya padanan sama sekali dalam bahasa Indonesia, dan itulah sebabnya pelajar Indonesia cenderung menghilangkannya. *J'y pense* bukan \"saya pikir\", melainkan \"saya memikirkannya\". Unit 9 mengurusnya sampai tuntas."
+    },
+    {
+     "type": "sub",
+     "text": "4. Kalimat pengandaian dengan *si*"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Sesudah *si*",
+      "Di induk kalimat",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "nyata",
+       "présent",
+       "présent / futur / impératif",
+       "Si tu veux, on y va."
+      ],
+      [
+       "tak nyata sekarang",
+       "imparfait",
+       "conditionnel présent",
+       "Si j'avais le temps, je viendrais."
+      ],
+      [
+       "tak nyata dulu",
+       "plus-que-parfait",
+       "conditionnel passé",
+       "Si j'avais su, je serais venu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Tidak pernah ada *-rais* langsung sesudah *si*.** *Si je serais…* adalah kesalahan yang bahkan penutur asli anak-anak diomeli karenanya. Unit 3 dan 13 memperluas seluruh keluarga pengandaian ini."
+    },
+    {
+     "type": "sub",
+     "text": "5. Subjonctif dasar"
+    },
+    {
+     "type": "p",
+     "text": "Bentuknya: ambil *ils* di présent, buang *-ent*, tambahkan *-e, -es, -e, -ions, -iez, -ent* — *ils finiss(ent)* → *que je finisse*. Yang tak beraturan tinggal segelintir: *être, avoir, aller, faire, pouvoir, savoir, vouloir, falloir, valoir*. Pemicu yang sudah harus otomatis: *il faut que*, *je veux que*, *pour que*, *bien que*, *avant que*. Unit 1 dan 2 membongkar sisanya."
+    },
+    {
+     "type": "kotak",
+     "title": "6. Dua hal yang harus otomatis",
+     "items": [
+      "**Kata kerja berpreposisi**: *penser **à***, *parler **de***, *s'occuper **de***, *réussir **à***, *empêcher **de***, *arriver **à***. Preposisinya bagian dari kata kerjanya, bukan pilihan bebas — dan ia yang menentukan *y* atau *en*, serta *auquel* atau *dont* di unit 8.",
+      "**Kata ganti penghubung dasar**: *qui* (subjek), *que* (objek), *où* (tempat/waktu), *dont* (menggantikan *de*). ⚠️ *qui* dan *que* dipilih menurut peran di anak kalimatnya, bukan menurut orang atau benda — kesalahan paling awet pelajar Indonesia. Unit 8 menambahkan *lequel* dan seluruh keluarganya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau keenamnya lancar, kamu siap. Yang menunggu di unit 1 bukan bentuk baru, melainkan **satu lapisan tambahan** di atas sistem yang sudah kamu kuasai: cara bahasa Prancis menandai bahwa sesuatu belum tentu terjadi — dan cara memakainya untuk bersikap."
+    }
+   ]
+  }
+ ],
+ "back": [
+  {
+   "title": "Ringkasan tata bahasa B2",
+   "blocks": [
+    {
+     "type": "sub",
+     "text": "Subjonctif: kapan wajib, kapan tidak"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pemicu",
+      "Contoh",
+      "Modus"
+     ],
+     "rows": [
+      [
+       "kehendak, perintah, larangan",
+       "Je veux que tu **viennes**.",
+       "subjonctif"
+      ],
+      [
+       "perasaan",
+       "Je suis content que tu **sois** là.",
+       "subjonctif"
+      ],
+      [
+       "keharusan",
+       "Il faut que tu **partes**.",
+       "subjonctif"
+      ],
+      [
+       "keraguan, penyangkalan",
+       "Je ne pense pas qu'il **vienne**.",
+       "subjonctif"
+      ],
+      [
+       "kemungkinan",
+       "Il est possible qu'il **pleuve**.",
+       "subjonctif"
+      ],
+      [
+       "pendapat yang diyakini",
+       "Je pense qu'il **vient**.",
+       "indicatif"
+      ],
+      [
+       "kepastian",
+       "Il est certain qu'il **viendra**.",
+       "indicatif"
+      ],
+      [
+       "*espérer*",
+       "J'espère qu'il **viendra**.",
+       "indicatif — jebakan"
+      ],
+      [
+       "*après que*",
+       "Après qu'il **est** parti.",
+       "indicatif — jebakan"
+      ],
+      [
+       "subjek sama",
+       "Je veux **partir**. (bukan *que je parte*)",
+       "infinitif"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Subjonctif passé dan urutan waktu"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang terjadi",
+      "Rumus",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "bersamaan atau sesudahnya",
+       "subjonctif présent",
+       "Je doute qu'il **vienne** demain."
+      ],
+      [
+       "sudah lewat",
+       "subjonctif passé",
+       "Je doute qu'il **soit venu** hier."
+      ],
+      [
+       "dengan *avant que*",
+       "selalu présent",
+       "Avant qu'il ne **parte**…"
+      ],
+      [
+       "dengan *après que*",
+       "indicatif",
+       "Après qu'il **est** parti…"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Pengandaian, tiga lapis penuh"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Lapis",
+      "Sesudah *si*",
+      "Induk kalimat",
+      "Nada"
+     ],
+     "rows": [
+      [
+       "nyata",
+       "présent",
+       "présent / futur",
+       "kemungkinan biasa"
+      ],
+      [
+       "tak nyata sekarang",
+       "imparfait",
+       "conditionnel présent",
+       "andai, saran"
+      ],
+      [
+       "tak nyata dulu",
+       "plus-que-parfait",
+       "conditionnel passé",
+       "penyesalan, teguran"
+      ],
+      [
+       "campur",
+       "plus-que-parfait",
+       "conditionnel présent",
+       "kalau dulu begitu, sekarang begini"
+      ],
+      [
+       "tanpa *si*",
+       "—",
+       "conditionnel",
+       "Moi, je **ferais** autrement."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pengganti *si* di tingkat B2: **au cas où** + conditionnel, **à condition que** + subjonctif, **à moins que** + subjonctif, **quand bien même** + conditionnel, dan **gérondif** (*en partant plus tôt, tu l'aurais eu*)."
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat tak langsung: apa yang bergeser"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Langsung",
+      "Tak langsung",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "présent",
+       "imparfait",
+       "Il a dit qu'il **venait**."
+      ],
+      [
+       "passé composé",
+       "plus-que-parfait",
+       "Il a dit qu'il **était venu**."
+      ],
+      [
+       "futur",
+       "conditionnel présent",
+       "Il a dit qu'il **viendrait**."
+      ],
+      [
+       "futur antérieur",
+       "conditionnel passé",
+       "…qu'il **serait parti**."
+      ],
+      [
+       "impératif",
+       "de + infinitif",
+       "Il m'a dit **de** venir."
+      ],
+      [
+       "pertanyaan tanpa kata tanya",
+       "*si*",
+       "Il m'a demandé **si** je venais."
+      ],
+      [
+       "*qu'est-ce qui / que*",
+       "*ce qui / ce que*",
+       "Il m'a demandé **ce que** je faisais."
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Cara bahasa Prancis menghindari kalimat pasif"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Contoh",
+      "Ragam"
+     ],
+     "rows": [
+      [
+       "passif penuh",
+       "Le dossier **a été** traité.",
+       "tertulis, resmi"
+      ],
+      [
+       "*on*",
+       "**On** a traité le dossier.",
+       "lisan — yang paling sering"
+      ],
+      [
+       "berbalik pasif",
+       "Ça **se** dit / ça **se** fait.",
+       "lisan, kebiasaan umum"
+      ],
+      [
+       "*se faire* + infinitif",
+       "Il **s'est fait** virer.",
+       "lisan, korban peristiwa"
+      ],
+      [
+       "*se voir* + infinitif",
+       "Elle **s'est vu** refuser le visa.",
+       "tertulis, resmi"
+      ],
+      [
+       "nomina",
+       "Le **traitement** du dossier…",
+       "pers, laporan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata ganti penghubung, lengkap"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Menggantikan",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "qui",
+       "subjek",
+       "le collègue **qui** travaille ici"
+      ],
+      [
+       "que",
+       "objek langsung",
+       "le dossier **que** j'ai lu"
+      ],
+      [
+       "où",
+       "tempat / waktu",
+       "le jour **où** il est parti"
+      ],
+      [
+       "dont",
+       "de + …",
+       "le projet **dont** je parle"
+      ],
+      [
+       "auquel / à laquelle",
+       "à + benda",
+       "la réunion **à laquelle** j'assiste"
+      ],
+      [
+       "duquel / de laquelle",
+       "de + … sesudah preposisi berjilid",
+       "au bout **duquel**…"
+      ],
+      [
+       "avec lequel / pour lesquels",
+       "preposisi lain + benda",
+       "l'outil **avec lequel** je travaille"
+      ],
+      [
+       "ce qui / ce que / ce dont",
+       "tanpa induk yang jelas",
+       "Je ne sais pas **ce dont** il s'agit."
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Penghubung menurut modus yang dituntutnya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Makna",
+      "+ indicatif",
+      "+ subjonctif",
+      "+ nomina/infinitif"
+     ],
+     "rows": [
+      [
+       "sebab",
+       "parce que, car, comme, puisque, étant donné que",
+       "—",
+       "à cause de, grâce à, en raison de, faute de"
+      ],
+      [
+       "akibat",
+       "si bien que, de sorte que, c'est pourquoi, donc",
+       "—",
+       "d'où, au point de"
+      ],
+      [
+       "tujuan",
+       "—",
+       "pour que, afin que, de peur que",
+       "pour, afin de, en vue de"
+      ],
+      [
+       "pertentangan",
+       "alors que, tandis que, or",
+       "bien que, quoique, encore que",
+       "malgré, en dépit de"
+      ],
+      [
+       "syarat",
+       "si, sauf si, selon que",
+       "à condition que, à moins que, pourvu que",
+       "en cas de, sans"
+      ],
+      [
+       "waktu",
+       "quand, lorsque, dès que, après que, pendant que",
+       "avant que, jusqu'à ce que, en attendant que",
+       "avant de, après + inf. lampau"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tiga bentuk berakhiran -ant yang tidak sama"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Rumus",
+      "Peran",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "participe présent",
+       "-ant, tak berubah",
+       "pengganti anak kalimat *qui*",
+       "les étudiants **parlant** français"
+      ],
+      [
+       "gérondif",
+       "*en* + -ant",
+       "cara, waktu, syarat — subjek sama",
+       "Il lit **en mangeant**."
+      ],
+      [
+       "adjectif verbal",
+       "-ant, ikut jenis & jumlah",
+       "kata sifat biasa",
+       "une soirée **fatigante**"
+      ],
+      [
+       "⚠️ ejaan berbeda",
+       "",
+       "",
+       "**fatiguant** (kata kerja) / **fatigante** (sifat)"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Passé simple: cukup dikenali, tak perlu diproduksi"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitif",
+      "Passé simple (il/elle)",
+      "Yang sudah kaukenal"
+     ],
+     "rows": [
+      [
+       "parler",
+       "il **parla**",
+       "il a parlé"
+      ],
+      [
+       "finir",
+       "il **finit**",
+       "il a fini"
+      ],
+      [
+       "prendre",
+       "il **prit**",
+       "il a pris"
+      ],
+      [
+       "être",
+       "il **fut**",
+       "il a été"
+      ],
+      [
+       "avoir",
+       "il **eut**",
+       "il a eu"
+      ],
+      [
+       "faire",
+       "il **fit**",
+       "il a fait"
+      ],
+      [
+       "venir",
+       "il **vint**",
+       "il est venu"
+      ],
+      [
+       "voir",
+       "il **vit**",
+       "il a vu"
+      ],
+      [
+       "mereka (ils)",
+       "-èrent / -irent / -urent / -inrent",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Potongan siap pakai tingkat B2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Empat puluh potongan berikut adalah yang paling sering membedakan pelajar B2 dari pelajar B1. Tak satu pun membawa tata bahasa baru; semuanya membawa **sikap**."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Potongan",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "Je dirais que…",
+       "berpendapat dengan hati-hati"
+      ],
+      [
+       "Disons que…",
+       "merumuskan ulang secara longgar"
+      ],
+      [
+       "Je ne suis pas sûr que ce soit…",
+       "menyanggah tanpa menabrak"
+      ],
+      [
+       "Je ne vois pas les choses comme ça.",
+       "menolak pendapat dengan sopan"
+      ],
+      [
+       "Oui et non.",
+       "menolak jawaban hitam-putih"
+      ],
+      [
+       "Ça dépend de ce qu'on entend par là.",
+       "meminta batasan istilah dulu"
+      ],
+      [
+       "Dans l'absolu, oui, mais…",
+       "setuju di atas kertas saja"
+      ],
+      [
+       "C'est justement là le problème.",
+       "menunjuk inti masalah"
+      ],
+      [
+       "C'est exactement ce que je voulais dire.",
+       "menegaskan lawan bicara membenarkanmu"
+      ],
+      [
+       "Comment dire…",
+       "mengulur waktu sambil mencari kata"
+      ],
+      [
+       "Franchement,…",
+       "membuka pendapat jujur"
+      ],
+      [
+       "Pour être honnête,…",
+       "sama, sedikit lebih tertulis"
+      ],
+      [
+       "J'ai l'impression que…",
+       "menyampaikan kesan, bukan fakta"
+      ],
+      [
+       "Pour autant que je sache,…",
+       "berhati-hati soal kabar"
+      ],
+      [
+       "On m'a dit que…",
+       "menyebut sumber tanpa menyebut orang"
+      ],
+      [
+       "Il paraît que…",
+       "kabar umum"
+      ],
+      [
+       "Soi-disant…",
+       "kabar yang tak kaupercayai penuh"
+      ],
+      [
+       "Cela dit,…",
+       "membalikkan arah sesudah mengakui"
+      ],
+      [
+       "Ceci dit, il faut reconnaître que…",
+       "mengakui sebagian sebelum menyanggah"
+      ],
+      [
+       "N'empêche que…",
+       "tetap bertahan sesudah dibantah"
+      ],
+      [
+       "Quand même !",
+       "kaget, kesal, atau kagum — nadanya menentukan"
+      ],
+      [
+       "Bon, écoute…",
+       "memotong perdebatan yang berputar"
+      ],
+      [
+       "Ce n'est pas faux.",
+       "mengakui separuh tanpa menyerah"
+      ],
+      [
+       "Là, tu marques un point.",
+       "mengakui lawan benar"
+      ],
+      [
+       "Ça se discute.",
+       "menolak dianggap sudah selesai"
+      ],
+      [
+       "Ça peut se faire.",
+       "menyanggupi dengan ringan"
+      ],
+      [
+       "On n'y peut rien.",
+       "menyerah pada keadaan"
+      ],
+      [
+       "Ce n'est pas la mer à boire.",
+       "meredakan yang dibesar-besarkan"
+      ],
+      [
+       "Pas de souci.",
+       "\"gampang, tak masalah\""
+      ],
+      [
+       "Ça marche.",
+       "\"oke, sepakat\" (lisan)"
+      ],
+      [
+       "Voilà, c'est tout.",
+       "menutup daftar atau rapat"
+      ],
+      [
+       "Si cela vous convient,…",
+       "meminta izin dengan sangat sopan"
+      ],
+      [
+       "Auriez-vous l'amabilité de…?",
+       "permintaan resmi"
+      ],
+      [
+       "Je me permets de vous rappeler que…",
+       "menagih tanpa terdengar menagih"
+      ],
+      [
+       "Je proposerais plutôt de…",
+       "mengusulkan tanpa memaksa"
+      ],
+      [
+       "Je peux me permettre une remarque ?",
+       "menyela dengan halus"
+      ],
+      [
+       "Laisse-moi finir, s'il te plaît.",
+       "meminta tidak dipotong"
+      ],
+      [
+       "Pour en revenir à ce que tu disais…",
+       "kembali ke pokok sebelumnya"
+      ],
+      [
+       "En gros / Grosso modo,…",
+       "menyimpulkan, gaya lisan"
+      ],
+      [
+       "En fin de compte,…",
+       "menyimpulkan sesudah semuanya ditimbang"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Apa selanjutnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu sampai di halaman ini setelah benar-benar mengerjakan dua puluh unitnya, kemampuanmu sekarang ada di **B2 penuh**: kamu bisa mengikuti rapat tentang topik yang tak kamu siapkan, berargumen dengan alasan yang tersusun, menulis surat resmi yang tidak terdengar seperti terjemahan, dan membaca *Le Monde* tanpa berhenti tiap dua kalimat."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga latihan yang membawamu ke C1",
+     "items": [
+      "**Baca yang tidak ditulis untukmu.** Bukan berita ringkas, melainkan tajuk rencana, resensi, dan *chronique* — tulisan yang penulisnya berasumsi pembacanya orang Prancis. Di situlah ironi, kiasan, dan kalimat berlapis hidup. Mulailah dari kolom pendek: *Le Monde*, *Libération*, *Courrier international*, dan *Le Devoir* dari Québec.",
+      "**Berlatih menyusun ulang.** Ambil satu paragraf bergaya nomina dari pers, tulis ulang sebagai kalimat lisan dengan anak kalimat — lalu balik lagi. Unit 7 memperkenalkan latihan ini; di C1 ia jadi keterampilan sehari-hari.",
+      "**Bicara lebih lama daripada yang nyaman.** Dua menit tanpa naskah adalah latihan B2. Sepuluh menit tanpa naskah, dengan susunan yang masih jelas di menit kesembilan, adalah C1 — dan itu persis yang diminta *exposé* pada ujian DALF."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Yang menunggu di C1: kalimat panjang yang tetap jernih, ragam akademis dan hukum, sastra tanpa terjemahan pendamping, susunan *thèse–antithèse–synthèse* yang menjadi tulang punggung tiap tulisan panjang Prancis, dan yang paling sulit sekaligus paling menyenangkan — bercanda dalam bahasa Prancis dan ditertawakan karena leluconnya, bukan karena aksennya."
+    },
+    {
+     "type": "p",
+     "text": "*Tu ne traduis plus — tu penses déjà en français.* Sampai jumpa di modul berikutnya."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,597 @@
+{
+ "title": "Sayang sekali kamu tidak bilang lebih awal",
+ "title_target": "Dommage que tu ne me l'aies pas dit plus tôt",
+ "goal": "Menempatkan subjonctif dalam waktu: membedakan yang belum terjadi dari yang sudah terjadi, dan mengenali *ne* yang bukan penyangkalan.",
+ "bekal": [
+  "membentuk subjonctif passé dengan *aie* dan *sois*",
+  "memilih subjonctif présent atau passé menurut urutan kejadiannya",
+  "mengenali *ne* explétif sesudah *avant que*, *à moins que*, *de peur que*",
+  "memakai *bien que* dan *quoique* tanpa tergoda memakai indicatif"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — À la sortie de la réunion",
+   "intro": "Koridor sebuah kantor arsitektur di Nantes, Selasa siang. Rapat baru bubar. Sonia, kepala proyek, mencegat Marc yang baru saja mengumumkan sesuatu di rapat tanpa memberitahunya lebih dulu. Perhatikan bahwa hampir semua kata kerja subjonctif di sini menunjuk hal yang **sudah** terjadi — dan bentuknya berubah karenanya.",
+   "lines": [
+    {
+     "speaker": "Sonia:",
+     "text": "Marc, deux minutes. Je suis surprise que tu aies annoncé ça en réunion.",
+     "id": "Marc, dua menit. Aku kaget kamu mengumumkan itu di rapat.",
+     "literal": "Marc, dua menit. saya ada terkejut bahwa kamu punyalah diumumkan itu di rapat."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Je croyais que c'était acté. Bien que je n'aie eu aucune confirmation écrite, c'est vrai.",
+     "id": "Kupikir itu sudah diputuskan. Walaupun memang aku belum dapat konfirmasi tertulis.",
+     "literal": "saya percaya-dulu bahwa itu-adalah-dulu diputuskan. walaupun bahwa saya tidak-punyalah didapat tak-satu-pun konfirmasi tertulis, itu-adalah benar."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "C'est dommage que tu ne me l'aies pas demandé avant. Une phrase suffisait.",
+     "id": "Sayang sekali kamu nggak nanya aku dulu. Satu kalimat saja cukup.",
+     "literal": "itu-adalah sayang bahwa kamu tidak kepadaku itu punyalah tidak ditanyakan sebelum. sebuah kalimat cukup-dulu."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Tu as raison. Je regrette de l'avoir dit comme ça.",
+     "id": "Kamu benar. Aku menyesal mengatakannya begitu.",
+     "literal": "kamu punya benar. saya menyesal dari itu-punya dikatakan seperti itu."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Le problème n'est pas que tu l'aies dit. C'est que le client l'ait entendu avant moi.",
+     "id": "Masalahnya bukan kamu mengatakannya. Masalahnya kliennya dengar duluan sebelum aku.",
+     "literal": "itu masalah tidak-ada tidak bahwa kamu itu punyalah dikatakan. itu-adalah bahwa itu klien itu punyalah didengar sebelum aku."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Je ne pensais pas qu'il soit resté dans la salle. Il était sorti prendre un appel.",
+     "id": "Kukira dia sudah nggak di ruangan. Dia tadi keluar angkat telepon.",
+     "literal": "saya tidak pikir-dulu tidak bahwa dia adalah-lah tinggal di itu ruangan. dia adalah-dulu keluar mengambil sebuah panggilan."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Il est revenu. Enfin bref. À moins que tu n'aies un plan, il va falloir rattraper.",
+     "id": "Dia balik lagi. Ya sudahlah. Kecuali kamu punya rencana, ini harus ditambal.",
+     "literal": "dia ada kembali. akhirnya singkat. kecuali bahwa kamu tidak-punyalah sebuah rencana, itu akan perlu menyusul."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "J'ai un plan. Mais il faudra que tu le portes, pas moi.",
+     "id": "Aku punya rencana. Tapi kamu yang harus membawanya, bukan aku.",
+     "literal": "saya-punya sebuah rencana. tapi itu akan-perlu bahwa kamu itu bawalah, tidak aku."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Évidemment. Vas-y, je t'écoute.",
+     "id": "Ya jelas. Silakan, aku dengar.",
+     "literal": "jelas-sekali. pergi-ke-situ, saya kamu dengar."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "On le rappelle aujourd'hui, avant qu'il n'en parle à son associé.",
+     "id": "Kita telepon dia hari ini, sebelum dia cerita ke partnernya.",
+     "literal": "orang itu telepon-lagi hari-ini, sebelum bahwa dia tidak-dari-itu bicara-lah kepada dia-punya rekan."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Et on lui dit quoi ? Que je suis ravie que la nouvelle soit sortie de cette façon ?",
+     "id": "Dan kita bilang apa? Bahwa aku senang beritanya keluar dengan cara begitu?",
+     "literal": "dan orang kepadanya bilang apa? bahwa saya ada gembira bahwa itu kabar adalah-lah keluar dari itu cara?"
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Non. Qu'on avance la présentation de deux semaines. Ça change tout.",
+     "id": "Bukan. Bahwa kita majukan presentasinya dua minggu. Itu mengubah segalanya.",
+     "literal": "tidak. bahwa-orang majukan-lah itu presentasi dari dua minggu. itu ubah semua."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Deux semaines ? Il faudrait que l'équipe travaille les week-ends.",
+     "id": "Dua minggu? Berarti tim harus kerja akhir pekan.",
+     "literal": "dua minggu? itu akanlah-perlu bahwa itu tim bekerjalah itu akhir-pekan."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Pas si on coupe la phase trois. Quoique ce soit toi qui décides, bien sûr.",
+     "id": "Nggak, kalau fase tiga kita potong. Meskipun tentu kamu yang memutuskan.",
+     "literal": "tidak jika orang potong itu fase tiga. meskipun bahwa itu adalah-lah kamu yang putuskan, tentu."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "Merci de le préciser. Envoie-moi le détail avant ce soir.",
+     "id": "Terima kasih sudah menegaskan. Kirim rinciannya sebelum nanti malam.",
+     "literal": "terima-kasih dari itu menegaskan. kirim-kepadaku itu rincian sebelum ini malam."
+    },
+    {
+     "speaker": "Marc:",
+     "text": "Ce sera fait. Et Sonia — désolé que ça se soit passé comme ça.",
+     "id": "Beres. Dan Sonia, maaf ini jadi begini.",
+     "literal": "itu akan-ada dibuat. dan Sonia — menyesal bahwa itu diri adalah-lah dilewatkan seperti itu."
+    },
+    {
+     "speaker": "Sonia:",
+     "text": "J'apprécie. Mais la prochaine fois, demande avant, pas après.",
+     "id": "Aku hargai. Tapi lain kali tanya dulu, bukan setelahnya.",
+     "literal": "saya hargai. tapi itu berikutnya kali, tanya sebelum, tidak sesudah."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 1, 3, 5: subjonctif passé.** Rumusnya *aie/sois* dalam subjonctif + participe passé: *que tu **aies annoncé***, *que le client **ait entendu***, *qu'il **soit resté***. Ia dipakai ketika kejadiannya **mendahului** induk kalimatnya. Bandingkan: *Je suis surprise qu'il vienne* (dia belum datang) dan *Je suis surprise qu'il soit venu* (dia sudah datang). Bahasa Indonesia menyelesaikan bedanya dengan \"sudah\"; bahasa Prancis menyelesaikannya dengan bentuk kata kerja."
+    },
+    {
+     "text": "**Baris 7 dan 10: *ne* yang bukan penyangkalan.** *À moins que tu **n'**aies un plan* tidak berarti \"kecuali kamu tidak punya rencana\" — artinya \"kecuali kamu punya rencana\". *Ne* di sini disebut ***ne* explétif**: sisa kebiasaan lama, tak membawa makna sama sekali, dan **tak pernah disertai *pas***. Ia muncul sesudah *avant que*, *à moins que*, *de peur que*, *de crainte que*, dan sesudah *craindre que*. Di lisan santai ia sering dibuang; di tulisan rapi ia dipakai. ⚠️ Begitu kamu melihat *pas*, itu penyangkalan sungguhan, bukan *ne* explétif."
+    },
+    {
+     "text": "**Baris 2 dan 14: *bien que* dan *quoique* selalu subjonctif.** Keduanya berarti \"walaupun\". Bedanya tipis: *bien que* lebih netral dan lebih sering; *quoique* sedikit lebih tertulis dan sering dipakai untuk menambahkan keberatan yang baru terpikir, persis seperti baris 14 — perhatikan bahwa Marc memakainya untuk menarik separuh ucapannya sendiri. ⚠️ Jangan tertukar dengan *quoi que* (dua kata) = \"apa pun yang\": *quoi que tu fasses*."
+    },
+    {
+     "text": "**Baris 4: *je regrette de l'avoir dit*, bukan *que je l'aie dit*.** Aturan subjek sama dari unit 1 tetap berlaku di bentuk lampau — hanya saja infinitifnya menjadi **infinitif lampau**: *de l'avoir dit*, *d'être venu*, *de ne pas avoir répondu*. Perhatikan letak penyangkalannya: *ne pas* berdiri berdampingan di depan infinitif, tidak mengapitnya."
+    },
+    {
+     "text": "**Baris 5: *Le problème n'est pas que tu l'aies dit*.** Sesudah *le problème, c'est que* biasa dipakai indicatif; tapi begitu disangkal (*ce n'est pas que*), ia menuntut subjonctif — pola yang sama persis dengan *je ne pense pas que* di unit 1. Potongan **ce n'est pas que… c'est que…** sangat sering dipakai untuk meluruskan salah paham, dan layak dihafal utuh."
+    },
+    {
+     "text": "**Baris 16: *désolé que ça se soit passé*.** Kata kerja berbalik (*se passer*) membentuk subjonctif passé dengan *être*: *que ça **se soit** passé*. Perhatikan letak *se*: ia tetap menempel di depan kata kerja bantu, bukan di depan participe. Kesalahan lazim: *que ça soit se passé*."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Subjonctif dan waktu: dua bentuk saja",
+     "body": [
+      "Berbeda dari indicatif yang punya delapan kala, subjonctif yang hidup di bahasa Prancis modern cuma punya **dua**. Pilihannya tidak ditentukan oleh kala induk kalimatnya, melainkan oleh **urutan kejadiannya**."
+     ],
+     "table": {
+      "head": [
+       "Hubungan waktu",
+       "Bentuk",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "bersamaan atau sesudah induk",
+        "subjonctif présent",
+        "Je suis content qu'il **vienne**.",
+        "senang dia (akan) datang"
+       ],
+       [
+        "sebelum induk",
+        "subjonctif passé",
+        "Je suis content qu'il **soit venu**.",
+        "senang dia sudah datang"
+       ],
+       [
+        "induk di lampau, isi bersamaan",
+        "tetap présent",
+        "J'étais content qu'il **vienne**.",
+        "tak ada pergeseran"
+       ],
+       [
+        "induk di lampau, isi lebih dulu",
+        "tetap passé",
+        "J'étais content qu'il **soit venu**.",
+        "tak ada pergeseran"
+       ],
+       [
+        "dengan *avant que*",
+        "selalu présent",
+        "Avant qu'il **parte**…",
+        "yang jelas belum terjadi"
+       ],
+       [
+        "dengan *après que*",
+        "indicatif",
+        "Après qu'il **est** parti…",
+        "⚠️ bukan subjonctif"
+       ],
+       [
+        "kata kerja *avoir*",
+        "que j'**aie**, que tu **aies**, qu'il **ait**",
+        "qu'il **ait** compris",
+        ""
+       ],
+       [
+        "kata kerja *être*",
+        "que je **sois**, que tu **sois**, qu'il **soit**",
+        "qu'elle **soit** partie",
+        ""
+       ]
+      ]
+     }
+    },
+    {
+     "title": "*ne* explétif: kata sangkal yang tidak menyangkal",
+     "body": [
+      "Bagian ini pendek tapi menyelamatkan banyak salah paham. *Ne* explétif tidak diterjemahkan, tidak mengubah makna, dan **tidak pernah bersama *pas***. Ia penanda ragam: hadir di tulisan rapi, sering hilang di lisan."
+     ],
+     "table": {
+      "head": [
+       "Pemicu",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "avant que",
+        "avant qu'il **ne** parte",
+        "sebelum dia pergi"
+       ],
+       [
+        "à moins que",
+        "à moins que tu **n'**aies un plan",
+        "kecuali kamu punya rencana"
+       ],
+       [
+        "de peur que",
+        "de peur qu'il **ne** se vexe",
+        "takut dia tersinggung"
+       ],
+       [
+        "craindre que",
+        "je crains qu'il **ne** soit trop tard",
+        "aku khawatir sudah terlambat"
+       ],
+       [
+        "empêcher que",
+        "empêcher que cela **ne** se reproduise",
+        "mencegah itu terulang"
+       ],
+       [
+        "perbandingan",
+        "plus cher que je **ne** pensais",
+        "lebih mahal daripada yang kukira"
+       ],
+       [
+        "⚠️ dengan *pas*",
+        "je crains qu'il **ne** vienne **pas**",
+        "aku khawatir dia tidak datang"
+       ],
+       [
+        "⚠️ *avant que* + *pas*",
+        "tidak lazim",
+        "kalau ada *pas*, artinya sungguh menyangkal"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Kata kerja berbalik di bentuk lampau: kapan participe-nya berubah",
+     "body": [
+      "Aturan ini berlaku sama di indicatif dan di subjonctif, dan ia satu-satunya bagian kata kerja berbalik yang benar-benar sulit. Kuncinya satu pertanyaan: **ada objek langsung di belakangnya?**"
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Participe",
+       "Kenapa"
+      ],
+      "rows": [
+       [
+        "Elle s'est **levée**.",
+        "ikut subjek",
+        "*se* adalah objek langsungnya"
+       ],
+       [
+        "Elle s'est **lavé** les mains.",
+        "tak berubah",
+        "objek langsungnya *les mains*, di belakang"
+       ],
+       [
+        "Les mains qu'elle s'est **lavées**.",
+        "ikut objek",
+        "objeknya sudah lewat di depan"
+       ],
+       [
+        "Ils se sont **parlé**.",
+        "tak berubah",
+        "*parler **à*** — objeknya tak langsung"
+       ],
+       [
+        "Elles se sont **écrit**.",
+        "tak berubah",
+        "*écrire **à***"
+       ],
+       [
+        "Ils se sont **rencontrés**.",
+        "ikut subjek",
+        "*rencontrer* tanpa preposisi"
+       ],
+       [
+        "Elle s'est **rendu** compte.",
+        "tak berubah",
+        "ungkapan beku"
+       ],
+       [
+        "Elle s'est **souvenue** de moi.",
+        "ikut subjek",
+        "*se souvenir* selalu berbalik"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rapat, proyek, dan menyampaikan keberatan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Français",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "acté",
+       "ak-TE",
+       "sudah diputuskan"
+      ],
+      [
+       "la réunion",
+       "la re-ü-NIYON",
+       "rapat"
+      ],
+      [
+       "le compte rendu",
+       "l' kont ran-DÜ",
+       "notulen"
+      ],
+      [
+       "l'ordre du jour",
+       "LORDR dü JUR",
+       "agenda rapat"
+      ],
+      [
+       "trancher",
+       "tran-SYE",
+       "memutuskan hal yang mengambang"
+      ],
+      [
+       "rattraper",
+       "ra-tra-PE",
+       "menambal, mengejar ketinggalan"
+      ],
+      [
+       "l'associé",
+       "la-so-SIE",
+       "rekan bisnis"
+      ],
+      [
+       "avancer une date",
+       "a-van-SE ün DAT",
+       "memajukan tanggal"
+      ],
+      [
+       "reporter",
+       "r'-por-TE",
+       "menunda"
+      ],
+      [
+       "préciser",
+       "pre-si-ZE",
+       "menegaskan, memperjelas"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyampaikan keberatan tanpa menyerang"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Potongan",
+      "Nada",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "C'est dommage que + subj.",
+       "lembut",
+       "menyesalkan tanpa menuduh"
+      ],
+      [
+       "Je suis surpris que + subj.",
+       "menahan diri",
+       "menegur dengan kaget"
+      ],
+      [
+       "Ce n'est pas que…, c'est que…",
+       "meluruskan",
+       "memindahkan pokok masalah"
+      ],
+      [
+       "J'aurais préféré que + subj.",
+       "sopan, tegas",
+       "menyatakan mestinya bagaimana"
+      ],
+      [
+       "Je regrette de + inf. passé",
+       "mengakui",
+       "menyesali perbuatan sendiri"
+      ],
+      [
+       "Il aurait fallu que + subj.",
+       "teguran halus",
+       "apa yang seharusnya dilakukan"
+      ],
+      [
+       "Je ne t'en veux pas, mais…",
+       "meredakan",
+       "menegaskan bukan soal pribadi"
+      ],
+      [
+       "La prochaine fois, …",
+       "menutup",
+       "meminta perubahan, bukan permintaan maaf"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang sering keliru di sini",
+     "items": [
+      "**Subjonctif passé bukan \"subjonctif untuk kalimat lampau\".** Ia bentuk untuk kejadian yang **lebih dulu**, apa pun kala induknya. Karena itu *J'étais content qu'il vienne* tetap benar walau induknya imparfait.",
+      "**Kata kerja berbalik memakai *être*, dan *se* tetap di depan kata bantu**: *qu'il **se soit** trompé*, bukan *qu'il soit se trompé*. Kesesuaian participe-nya ikut aturan B1: *qu'elle se soit levée*, tapi *qu'elle se soit lavé les mains*.",
+      "**Infinitif lampau menyangkal dengan *ne pas* berdampingan**: *de **ne pas** avoir répondu*, bukan *de n'avoir pas répondu* — walau bentuk kedua ada dan terdengar sangat sastrawi. Pakai yang pertama."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fr": "annoncer",
+   "baca": "a-non-SE",
+   "id": "mengumumkan"
+  },
+  {
+   "fr": "surpris",
+   "baca": "sür-PRI",
+   "id": "terkejut"
+  },
+  {
+   "fr": "la confirmation",
+   "baca": "la kon-fir-ma-SIYON",
+   "id": "konfirmasi"
+  },
+  {
+   "fr": "écrit",
+   "baca": "e-KRI",
+   "id": "tertulis"
+  },
+  {
+   "fr": "suffire",
+   "baca": "sü-FIR",
+   "id": "cukup"
+  },
+  {
+   "fr": "regretter",
+   "baca": "r'-gre-TE",
+   "id": "menyesal"
+  },
+  {
+   "fr": "entendre",
+   "baca": "an-TANDR",
+   "id": "mendengar"
+  },
+  {
+   "fr": "la salle",
+   "baca": "la SAL",
+   "id": "ruangan"
+  },
+  {
+   "fr": "un appel",
+   "baca": "an-na-PÈL",
+   "id": "panggilan telepon"
+  },
+  {
+   "fr": "bref",
+   "baca": "BRÈF",
+   "id": "singkatnya"
+  },
+  {
+   "fr": "porter un projet",
+   "baca": "por-TE an pro-JÈ",
+   "id": "memikul sebuah proyek"
+  },
+  {
+   "fr": "la nouvelle",
+   "baca": "la nu-VÈL",
+   "id": "kabar, berita"
+  },
+  {
+   "fr": "ravi",
+   "baca": "ra-VI",
+   "id": "senang sekali"
+  },
+  {
+   "fr": "la façon",
+   "baca": "la fa-SON",
+   "id": "cara"
+  },
+  {
+   "fr": "couper",
+   "baca": "ku-PE",
+   "id": "memotong"
+  },
+  {
+   "fr": "la phase",
+   "baca": "la FAZ",
+   "id": "fase, tahap"
+  },
+  {
+   "fr": "le détail",
+   "baca": "l' de-TAY",
+   "id": "rincian"
+  },
+  {
+   "fr": "apprécier",
+   "baca": "a-pre-SIE",
+   "id": "menghargai"
+  },
+  {
+   "fr": "en vouloir à",
+   "baca": "an vu-LWAR a",
+   "id": "menyimpan kesal pada"
+  },
+  {
+   "fr": "se tromper",
+   "baca": "s' tron-PE",
+   "id": "keliru"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih subjonctif présent atau passé.",
+   "items": [
+    "Je suis content qu'il ____ (venir) demain.",
+    "Je suis content qu'il ____ (venir) hier.",
+    "C'est dommage que tu ne me l'____ (dire) pas plus tôt.",
+    "Il faut que tu ____ (finir) avant vendredi.",
+    "Je ne pense pas qu'elle ____ (partir) déjà."
+   ]
+  },
+  {
+   "prompt": "Tulis ulang memakai infinitif karena subjeknya sama.",
+   "items": [
+    "Je regrette que j'aie dit ça. → Je regrette ____",
+    "Il faut que je parte. → Il faut ____",
+    "Avant que je parte, je t'appelle. → ____ , je t'appelle.",
+    "Je suis désolé que je sois arrivé en retard. → Je suis désolé ____",
+    "Je viens pour que je t'aide. → Je viens ____"
+   ]
+  },
+  {
+   "prompt": "Sisipkan *ne* explétif kalau memang tempatnya, atau tulis \"rien\" kalau tidak.",
+   "items": [
+    "Avant qu'il ____ parte, préviens-moi.",
+    "Après qu'il ____ est parti, j'ai fermé.",
+    "À moins que tu ____ aies mieux, on garde ça.",
+    "Bien qu'il ____ soit tard, on continue.",
+    "Je crains qu'il ____ soit trop tard."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Prancis.",
+   "items": [
+    "Aku kaget kamu mengumumkan itu di rapat.",
+    "Sayang sekali kamu tidak bertanya lebih dulu.",
+    "Masalahnya bukan kamu mengatakannya.",
+    "Kecuali kamu punya rencana, ini harus ditambal.",
+    "Maaf ini jadi begini."
+   ]
+  }
+ ],
+ "answers": [
+  "vienne — soit venu — aies dit — finisses — soit partie",
+  "de l'avoir dit. — partir. — Avant de partir — d'être arrivé en retard. — pour t'aider.",
+  "ne — rien — n' — rien — ne",
+  "Je suis surprise que tu aies annoncé ça en réunion. — C'est dommage que tu ne me l'aies pas demandé avant. — Le problème n'est pas que tu l'aies dit. — À moins que tu n'aies un plan, il va falloir rattraper. — Désolé que ça se soit passé comme ça."
+ ]
+}

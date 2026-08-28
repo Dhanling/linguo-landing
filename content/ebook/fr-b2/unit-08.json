@@ -1,0 +1,616 @@
+{
+ "title": "Kata penghubung yang membawa preposisinya",
+ "title_target": "L'outil avec lequel je travaille",
+ "goal": "Menyambung dua kalimat menjadi satu tanpa kehilangan preposisi yang dituntut kata kerjanya — alat utama untuk menulis kalimat panjang yang tetap jernih.",
+ "bekal": [
+  "memilih *dont* atau *duquel* dengan sadar",
+  "memasang *lequel* dan seluruh peleburannya",
+  "memakai *ce qui*, *ce que*, *ce dont*, *ce à quoi*",
+  "menaruh *où* untuk waktu, bukan cuma tempat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Reprendre un dossier laissé par quelqu'un d'autre",
+   "intro": "Kantor sebuah biro penerjemahan di Lille, Selasa pagi. Adrien mengambil alih berkas seorang rekan yang sudah keluar. Camille, atasannya, menjelaskan isinya sambil menunjuk layar. Perhatikan berapa kali satu kalimat mereka menyambung dua keterangan sekaligus — dan bahwa preposisinya tak pernah hilang.",
+   "lines": [
+    {
+     "speaker": "Camille:",
+     "text": "Voilà le dossier dont je t'ai parlé. Celui que Sonia a laissé en plan.",
+     "id": "Ini berkas yang kuceritakan. Yang ditinggalkan Sonia setengah jalan.",
+     "literal": "itu-dia itu berkas dari-yang saya kepadamu-punya dibicarakan. itu-yang yang Sonia punya ditinggalkan di rencana."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "Le client pour lequel elle travaillait, c'est bien l'agence de Roubaix ?",
+     "id": "Klien tempat dia bekerja itu, agensi Roubaix kan?",
+     "literal": "itu klien untuk yang dia bekerja-dulu, itu-adalah memang itu-agensi dari Roubaix?"
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Oui. Et la personne à qui tu devras répondre s'appelle Farid.",
+     "id": "Iya. Dan orang yang harus kamu balas namanya Farid.",
+     "literal": "ya. dan itu orang kepada siapa kamu akan-harus menjawab diri-panggil Farid."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "D'accord. Il y a une échéance à laquelle je dois faire attention ?",
+     "id": "Oke. Ada tenggat yang harus kuperhatikan?",
+     "literal": "dari-sepakat. itu di-situ punya sebuah tenggat kepada yang saya harus buat perhatian?"
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Le quinze. C'est la date avant laquelle tout doit être livré, pas relu.",
+     "id": "Tanggal lima belas. Itu tanggal sebelum mana semuanya harus terkirim, bukan terkoreksi.",
+     "literal": "itu lima-belas. itu-adalah itu tanggal sebelum yang semua harus ada dikirim, tidak dibaca-ulang."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "Nuance importante. Et ce dont je manque, c'est le glossaire.",
+     "id": "Beda tipis yang penting. Dan yang aku kekurangan adalah glosariumnya.",
+     "literal": "nuansa penting. dan itu dari-yang saya kekurangan, itu-adalah itu glosarium."
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Il est dans le dossier partagé, dans le sous-dossier dont le nom finit par « v3 ».",
+     "id": "Ada di folder berbagi, di subfolder yang namanya berakhiran \"v3\".",
+     "literal": "itu ada di itu berkas dibagi, di itu bawah-berkas dari-yang itu nama selesai lewat v3."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "Trouvé. Il y a trois versions, ce qui n'aide pas beaucoup.",
+     "id": "Ketemu. Ada tiga versi, yang nggak banyak membantu.",
+     "literal": "ditemukan. itu di-situ punya tiga versi, itu-yang tidak bantu tidak banyak."
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Prends la plus récente. C'est celle sur laquelle Farid a mis des commentaires.",
+     "id": "Ambil yang paling baru. Itu yang di atasnya Farid menaruh komentar.",
+     "literal": "ambil itu paling baru. itu-adalah itu-yang atas yang Farid punya ditaruh beberapa komentar."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "Ses commentaires, c'est justement ce à quoi je voulais arriver.",
+     "id": "Komentar-komentarnya itu justru yang mau kutuju.",
+     "literal": "dia-punya komentar, itu-adalah tepat itu kepada apa saya mau-dulu sampai."
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Vas-y. Qu'est-ce qui te gêne ?",
+     "id": "Silakan. Apa yang mengganjal?",
+     "literal": "pergi-ke-situ. apa itu-yang kepadamu ganggu?"
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "Le ton. Il y a des remarques auxquelles je ne saurais pas répondre poliment.",
+     "id": "Nadanya. Ada beberapa catatan yang aku nggak bakal bisa balas dengan sopan.",
+     "literal": "itu nada. itu di-situ punya beberapa catatan kepada-yang saya tidak akanlah-tahu tidak menjawab dengan-sopan."
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Montre-m'en une.",
+     "id": "Coba tunjukkan satu.",
+     "literal": "tunjukkan-kepadaku-dari-itu satu."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "« Traduction manifestement automatique. » Le jour où on lui prouvera le contraire…",
+     "id": "\"Terjemahan jelas hasil mesin.\" Hari di mana kita buktikan sebaliknya…",
+     "literal": "terjemahan jelas otomatis. itu hari di-mana orang kepadanya akan-buktikan itu sebaliknya…"
+    },
+    {
+     "speaker": "Camille:",
+     "text": "Ce jour-là, tu lui enverras la mémoire de traduction, pas une réponse.",
+     "id": "Hari itu, kamu kirim memori terjemahannya, bukan balasan.",
+     "literal": "itu hari-di-situ, kamu kepadanya akan-kirim itu memori dari terjemahan, tidak sebuah jawaban."
+    },
+    {
+     "speaker": "Adrien:",
+     "text": "C'est une méthode à laquelle je n'aurais pas pensé.",
+     "id": "Itu cara yang nggak akan terpikir olehku.",
+     "literal": "itu-adalah sebuah metode kepada yang saya tidak akanlah-punya tidak dipikirkan."
+    },
+    {
+     "speaker": "Camille:",
+     "text": "C'est pour ça que tu as une chef. Bon courage, et tiens-moi au courant.",
+     "id": "Makanya kamu punya atasan. Semangat, dan kabari aku.",
+     "literal": "itu-adalah untuk itu bahwa kamu punya sebuah kepala. baik keberanian, dan pegang-kepadaku pada-itu arus."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 1 dan 7: dua *dont* yang berbeda pekerjaannya.** *Le dossier **dont** je t'ai parlé* menggantikan *parler **de** quelque chose*. *Le sous-dossier **dont** le nom finit par v3* menggantikan *le nom **du** sous-dossier* — di sini *dont* menggantikan kepemilikan. Keduanya sah, dan keduanya tak bisa dipakai kalau *de* itu sudah berada di dalam preposisi yang lebih panjang — lihat catatan berikutnya."
+    },
+    {
+     "text": "**Kapan *dont* tidak boleh dipakai, dan *duquel* wajib.** Begitu *de* berada di dalam preposisi berjilid — *à côté **de***, *au bout **de***, *près **de***, *à cause **de***, *au sujet **de*** — *dont* tak lagi bekerja. Yang benar: *la rue **au bout de laquelle** j'habite*, bukan *dont j'habite au bout*. Ini pemilah paling andal antara pelajar B1 dan B2, dan salah satu dari sedikit aturan bahasa Prancis yang benar-benar tanpa kecuali."
+    },
+    {
+     "text": "**Baris 2, 4, 5, 9, 12, 16: *lequel* dan peleburannya.** Sesudah preposisi selain *de*, kata penghubungnya adalah *lequel/laquelle/lesquels/lesquelles*, yang melebur dengan *à* menjadi *auquel*, *à laquelle*, *auxquels*, *auxquelles*. Perhatikan bahwa yang menentukan bentuknya adalah **kata bendanya**, sedangkan yang menentukan preposisinya adalah **kata kerjanya**: *faire attention **à*** → *à laquelle*; *penser **à*** → *à laquelle*; *travailler **pour*** → *pour lequel*."
+    },
+    {
+     "text": "**Baris 3: untuk orang, *qui* boleh menggantikan *lequel*.** *La personne **à qui** tu devras répondre* dan *à laquelle tu devras répondre* dua-duanya benar; yang pertama lebih lazim dan lebih ringan. ⚠️ Ini berlaku **hanya untuk orang**. Untuk benda, *à qui* selalu salah."
+    },
+    {
+     "text": "**Baris 6, 8, 10: keluarga *ce*.** Ketika tak ada kata benda yang bisa dirujuk, *ce* memasangnya: *ce qui* (subjek), *ce que* (objek), *ce dont* (dengan *de*), *ce à quoi* (dengan *à*). Baris 8 memperlihatkan pemakaian yang paling berguna: *…, **ce qui** n'aide pas beaucoup* menempelkan komentar pada seluruh kalimat sebelumnya. Simpan empat potongan ini utuh: *ce qui m'intéresse*, *ce que je veux dire*, *ce dont j'ai besoin*, *ce à quoi je pense*."
+    },
+    {
+     "text": "**Baris 14: *le jour où*.** Bahasa Prancis memakai *où* untuk **waktu**, bukan cuma tempat: *le jour où*, *le moment où*, *l'année où*, *au moment où*. ⚠️ Jangan memakai *quand* di sini — *le jour quand* tidak pernah benar, walau terdengar masuk akal bagi telinga Indonesia."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Memilih kata penghubung dalam empat langkah",
+     "body": [
+      "Alih-alih menghafal delapan bentuk, jalankan empat pertanyaan ini berurutan. Setelah dua puluh kali, urutannya berjalan sendiri."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Pertanyaan",
+       "Kalau ya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1",
+        "Ada preposisi yang dituntut kata kerjanya?",
+        "lanjut ke 2",
+        "*penser **à***, *parler **de***"
+       ],
+       [
+        "1 — tidak",
+        "Ia subjek anak kalimat?",
+        "**qui**",
+        "le collègue **qui** travaille ici"
+       ],
+       [
+        "1 — tidak",
+        "Ia objek langsung?",
+        "**que**",
+        "le dossier **que** j'ai lu"
+       ],
+       [
+        "2",
+        "Preposisinya *de* saja?",
+        "**dont**",
+        "le projet **dont** je parle"
+       ],
+       [
+        "2",
+        "*de* di dalam preposisi berjilid?",
+        "**duquel**",
+        "la rue au bout **de laquelle**…"
+       ],
+       [
+        "3",
+        "Preposisinya *à* atau lainnya, benda?",
+        "**auquel / avec lequel**",
+        "la réunion **à laquelle** j'assiste"
+       ],
+       [
+        "3",
+        "Preposisinya *à* atau lainnya, orang?",
+        "**à qui / avec qui**",
+        "la personne **à qui** j'écris"
+       ],
+       [
+        "4",
+        "Tak ada kata benda yang dirujuk?",
+        "**ce qui / ce que / ce dont / ce à quoi**",
+        "**ce dont** j'ai besoin"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Seluruh bentuk *lequel*, sekali lihat",
+     "body": [
+      "Peleburan dengan *à* dan *de* wajib; dengan preposisi lain tidak ada peleburan sama sekali. Bentuk feminin tunggal *laquelle* adalah satu-satunya yang tak pernah melebur."
+     ],
+     "table": {
+      "head": [
+       "",
+       "maskulin tunggal",
+       "feminin tunggal",
+       "maskulin jamak",
+       "feminin jamak"
+      ],
+      "rows": [
+       [
+        "dasar",
+        "lequel",
+        "laquelle",
+        "lesquels",
+        "lesquelles"
+       ],
+       [
+        "dengan *à*",
+        "**auquel**",
+        "**à laquelle**",
+        "**auxquels**",
+        "**auxquelles**"
+       ],
+       [
+        "dengan *de*",
+        "**duquel**",
+        "**de laquelle**",
+        "**desquels**",
+        "**desquelles**"
+       ],
+       [
+        "dengan *avec*",
+        "avec lequel",
+        "avec laquelle",
+        "avec lesquels",
+        "avec lesquelles"
+       ],
+       [
+        "dengan *pour*",
+        "pour lequel",
+        "pour laquelle",
+        "pour lesquels",
+        "pour lesquelles"
+       ],
+       [
+        "dengan *sans*",
+        "sans lequel",
+        "sans laquelle",
+        "sans lesquels",
+        "sans lesquelles"
+       ],
+       [
+        "orang, boleh juga",
+        "à qui",
+        "à qui",
+        "à qui",
+        "à qui"
+       ],
+       [
+        "⚠️ benda",
+        "*à qui* selalu salah",
+        "",
+        "",
+        ""
+       ]
+      ]
+     }
+    },
+    {
+     "title": "*Ce* dan *celui*: dua keluarga yang sering tertukar",
+     "body": [
+      "Setelah menguasai kata penghubung, jebakan berikutnya adalah kata tunjuk yang mendahuluinya. *Celui* menunjuk **kata benda** yang sudah disebut; *ce* tidak menunjuk apa pun."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Menunjuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "celui / celle",
+        "satu benda yang disebut",
+        "**Celui** que j'ai lu."
+       ],
+       [
+        "ceux / celles",
+        "beberapa benda",
+        "**Ceux** dont je parle."
+       ],
+       [
+        "celui-ci / celui-là",
+        "yang ini / yang itu",
+        "Prends **celui-là**."
+       ],
+       [
+        "celui de",
+        "kepemilikan",
+        "**Celui du** troisième étage."
+       ],
+       [
+        "ce qui / ce que",
+        "tanpa benda yang jelas",
+        "**Ce que** je veux dire."
+       ],
+       [
+        "ce dont",
+        "dengan *de*",
+        "**Ce dont** j'ai besoin."
+       ],
+       [
+        "ce à quoi",
+        "dengan *à*",
+        "**Ce à quoi** je pensais."
+       ],
+       [
+        "tout ce qui / que",
+        "segala yang",
+        "**Tout ce que** tu veux."
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berkas, klien, dan mengambil alih pekerjaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Français",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "le dossier",
+       "l' do-SIE",
+       "berkas, map"
+      ],
+      [
+       "laisser en plan",
+       "lè-SE an PLAN",
+       "meninggalkan setengah jalan"
+      ],
+      [
+       "l'échéance",
+       "le-she-ANS",
+       "tenggat"
+      ],
+      [
+       "relire",
+       "r'-LIR",
+       "membaca ulang, mengoreksi"
+      ],
+      [
+       "le glossaire",
+       "l' glo-SÈR",
+       "glosarium"
+      ],
+      [
+       "le dossier partagé",
+       "l' do-sie par-ta-JE",
+       "folder berbagi"
+      ],
+      [
+       "la remarque",
+       "la r'-MARK",
+       "catatan, komentar"
+      ],
+      [
+       "manifestement",
+       "ma-ni-fèst'-MAN",
+       "jelas-jelas"
+      ],
+      [
+       "la mémoire de traduction",
+       "la me-MWAR d' tra-dük-SIYON",
+       "memori terjemahan"
+      ],
+      [
+       "tenir au courant",
+       "t'-NIR o ku-RAN",
+       "mengabari terus"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata kerja dan preposisi yang dibawanya ke kata penghubung"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Preposisi",
+      "Kata penghubungnya"
+     ],
+     "rows": [
+      [
+       "parler de",
+       "de",
+       "dont"
+      ],
+      [
+       "avoir besoin de",
+       "de",
+       "dont"
+      ],
+      [
+       "se souvenir de",
+       "de",
+       "dont"
+      ],
+      [
+       "penser à",
+       "à",
+       "auquel / à laquelle"
+      ],
+      [
+       "faire attention à",
+       "à",
+       "auquel / à laquelle"
+      ],
+      [
+       "s'attendre à",
+       "à",
+       "auquel / à laquelle"
+      ],
+      [
+       "travailler avec",
+       "avec",
+       "avec lequel"
+      ],
+      [
+       "compter sur",
+       "sur",
+       "sur lequel"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kesalahan yang paling awet",
+     "items": [
+      "***qui* atau *que* ditentukan oleh perannya, bukan oleh orang atau benda.** *L'homme **qui** parle* (dia yang bicara — subjek) dan *l'homme **que** je vois* (aku yang melihat — objek). Karena bahasa Indonesia memakai \"yang\" untuk keduanya, kesalahan ini bertahan sampai jauh di atas B1. Uji cepat: kalau sesudahnya langsung kata kerja, hampir selalu *qui*; kalau sesudahnya subjek baru, *que*.",
+      "**Jangan menumpuk *dont* dengan *de*.** *Le livre dont je parle **de*** salah — *dont* sudah membawa *de*-nya. Kesalahan cerminnya juga sering: *le livre que j'ai besoin* salah, yang benar *dont j'ai besoin*.",
+      "**Sesudah preposisi berjilid, selalu *duquel*.** *À côté de*, *au bout de*, *au sujet de*, *à cause de*, *le long de*, *au milieu de*. Hafalkan enam ini dan setengah kesalahan *dont* akan hilang dengan sendirinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fr": "reprendre un dossier",
+   "baca": "r'-PRANDR an do-SIE",
+   "id": "mengambil alih berkas"
+  },
+  {
+   "fr": "l'agence",
+   "baca": "la-JANS",
+   "id": "agensi"
+  },
+  {
+   "fr": "répondre à",
+   "baca": "re-PONDR a",
+   "id": "menjawab"
+  },
+  {
+   "fr": "faire attention à",
+   "baca": "fèr a-tan-SIYON a",
+   "id": "memperhatikan"
+  },
+  {
+   "fr": "livrer",
+   "baca": "li-VRE",
+   "id": "menyerahkan, mengirim"
+  },
+  {
+   "fr": "la nuance",
+   "baca": "la nü-ANS",
+   "id": "beda tipis"
+  },
+  {
+   "fr": "manquer de",
+   "baca": "man-KE d'",
+   "id": "kekurangan"
+  },
+  {
+   "fr": "le sous-dossier",
+   "baca": "l' su-do-SIE",
+   "id": "subfolder"
+  },
+  {
+   "fr": "finir par",
+   "baca": "fi-NIR par",
+   "id": "berakhiran, akhirnya"
+  },
+  {
+   "fr": "récent",
+   "baca": "re-SAN",
+   "id": "baru, mutakhir"
+  },
+  {
+   "fr": "le commentaire",
+   "baca": "l' ko-man-TÈR",
+   "id": "komentar"
+  },
+  {
+   "fr": "gêner",
+   "baca": "jè-NE",
+   "id": "mengganggu, mengganjal"
+  },
+  {
+   "fr": "le ton",
+   "baca": "l' TON",
+   "id": "nada"
+  },
+  {
+   "fr": "poliment",
+   "baca": "po-li-MAN",
+   "id": "dengan sopan"
+  },
+  {
+   "fr": "prouver",
+   "baca": "pru-VE",
+   "id": "membuktikan"
+  },
+  {
+   "fr": "la méthode",
+   "baca": "la me-TOD",
+   "id": "metode"
+  },
+  {
+   "fr": "la chef",
+   "baca": "la SYÈF",
+   "id": "atasan perempuan"
+  },
+  {
+   "fr": "au bout de",
+   "baca": "o BU d'",
+   "id": "di ujung"
+  },
+  {
+   "fr": "au sujet de",
+   "baca": "o sü-JÈ d'",
+   "id": "mengenai"
+  },
+  {
+   "fr": "s'attendre à",
+   "baca": "sa-TANDR a",
+   "id": "mengira, menduga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan *qui*, *que*, *dont*, atau *où*.",
+   "items": [
+    "Le dossier ____ je t'ai parlé est sur ton bureau.",
+    "Le collègue ____ travaille avec Farid est en congé.",
+    "La version ____ j'ai relue est la plus récente.",
+    "Le jour ____ elle est partie, personne n'était là.",
+    "Le sous-dossier ____ le nom finit par v3."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk *lequel* yang tepat.",
+   "items": [
+    "La réunion à ____ j'assiste commence à neuf heures.",
+    "Le client pour ____ elle travaillait est à Roubaix.",
+    "La date avant ____ tout doit être livré, c'est le quinze.",
+    "Les remarques ____ je ne saurais pas répondre sont au milieu.",
+    "L'outil avec ____ je travaille est en panne."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *ce qui*, *ce que*, *ce dont*, atau *ce à quoi*.",
+   "items": [
+    "Il y a trois versions, ____ n'aide pas beaucoup.",
+    "____ j'ai besoin, c'est le glossaire.",
+    "____ je voulais arriver, ce sont ses commentaires.",
+    "Je ne comprends pas ____ tu veux dire.",
+    "Dis-moi ____ te gêne."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Prancis.",
+   "items": [
+    "Ini berkas yang kuceritakan.",
+    "Ada tenggat yang harus kuperhatikan?",
+    "Itu cara yang tidak akan terpikir olehku.",
+    "Orang yang harus kamu balas namanya Farid.",
+    "Ambil yang paling baru."
+   ]
+  }
+ ],
+ "answers": [
+  "dont — qui — que — où — dont",
+  "laquelle — lequel — laquelle — auxquelles — lequel",
+  "ce qui — Ce dont — Ce à quoi — ce que — ce qui",
+  "Voilà le dossier dont je t'ai parlé. — Il y a une échéance à laquelle je dois faire attention ? — C'est une méthode à laquelle je n'aurais pas pensé. — La personne à qui tu devras répondre s'appelle Farid. — Prends la plus récente."
+ ],
+ "wave": "Kembali ke unit 5, ke percakapan Inès dan Paul di toko buku. Sekarang sambungkan tiap pasang kalimat pendeknya menjadi satu kalimat panjang memakai kata penghubung: *Le passé simple, dont Paul lui explique l'usage, est une forme à laquelle elle ne s'attendait pas et qu'elle n'entendra jamais dans la rue.* Perhatikan bahwa panjangnya bertambah tapi kejernihannya tidak berkurang — itulah tepatnya beda antara kalimat panjang B2 dan kalimat panjang yang berantakan."
+}

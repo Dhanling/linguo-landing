@@ -1,0 +1,607 @@
+{
+ "title": "Bahasa yang membuang kata kerjanya",
+ "title_target": "Quand le français range ses verbes",
+ "goal": "Membaca dan menulis gaya nomina — bahasa pers, laporan, dan papan pengumuman — lalu membongkarnya kembali menjadi kalimat yang bisa diucapkan.",
+ "bekal": [
+  "mengubah kata kerja menjadi nomina dan sebaliknya",
+  "mengenali empat akhiran pembentuk nomina yang paling produktif",
+  "membaca judul berita tanpa kata kerja",
+  "memilih gaya nomina atau gaya verba menurut pembacanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Relire un communiqué à deux",
+   "intro": "Ruang kerja kecil sebuah asosiasi lingkungan di Grenoble, Kamis pagi. Yasmine baru menulis siaran pers, dan Théo membacanya keras-keras. Perhatikan bahwa perdebatan mereka sebenarnya bukan soal isi, melainkan soal **di mana kata kerjanya sebaiknya berada**.",
+   "lines": [
+    {
+     "speaker": "Théo:",
+     "text": "« Suite à la dégradation des conditions de circulation, une réunion est envisagée. » Yasmine.",
+     "id": "\"Menyusul memburuknya kondisi lalu lintas, sebuah rapat dipertimbangkan.\" Yasmine.",
+     "literal": "menyusul pada itu pemburukan dari-itu kondisi dari peredaran, sebuah rapat ada dipertimbangkan. Yasmine."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "Quoi ? C'est du français correct.",
+     "id": "Apa? Itu bahasa Prancis yang benar kok.",
+     "literal": "apa? itu-adalah dari-itu Prancis benar."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Correct, oui. Lisible, non. Il y a trois noms avant qu'on sache de quoi tu parles.",
+     "id": "Benar, iya. Terbaca, tidak. Ada tiga kata benda sebelum orang tahu kamu bicara soal apa.",
+     "literal": "benar, ya. terbaca, tidak. itu di-situ punya tiga nama sebelum bahwa-orang tahulah dari apa kamu bicara."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "C'est le registre. Un communiqué, ça ne s'écrit pas comme un SMS.",
+     "id": "Itu ragamnya. Siaran pers nggak ditulis kayak SMS.",
+     "literal": "itu-adalah itu ragam. sebuah siaran, itu tidak diri-tulis tidak seperti sebuah SMS."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "D'accord. Mais dis-moi la même chose à voix haute, comme si tu me racontais.",
+     "id": "Setuju. Tapi coba katakan hal yang sama keras-keras, seolah kamu bercerita ke aku.",
+     "literal": "dari-sepakat. tapi katakan-kepadaku itu sama hal pada suara tinggi, seperti jika kamu kepadaku ceritakan-dulu."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "« Comme la circulation s'est dégradée, on envisage d'organiser une réunion. »",
+     "id": "\"Karena lalu lintasnya memburuk, kami mempertimbangkan mengadakan rapat.\"",
+     "literal": "seperti itu peredaran diri-ada dirusak, orang pertimbangkan dari mengadakan sebuah rapat."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Voilà. Deux verbes, une cause, un projet. On comprend en une seconde.",
+     "id": "Nah. Dua kata kerja, satu sebab, satu rencana. Sedetik langsung ngerti.",
+     "literal": "itu-dia. dua kata-kerja, sebuah sebab, sebuah proyek. orang mengerti di satu detik."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "Sauf que le communiqué part à la mairie, pas aux habitants.",
+     "id": "Cuma siaran ini dikirim ke balai kota, bukan ke warga.",
+     "literal": "kecuali bahwa itu siaran berangkat kepada itu balai-kota, tidak kepada-itu penduduk."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Alors garde les noms pour la mairie et fais une version verbe pour les habitants.",
+     "id": "Kalau gitu simpan gaya nominanya buat balai kota dan bikin versi kata kerja buat warga.",
+     "literal": "maka simpan itu nama untuk itu balai-kota dan buat sebuah versi kata-kerja untuk itu penduduk."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "Deux versions du même texte. Tu me rajoutes du travail, là.",
+     "id": "Dua versi teks yang sama. Kamu nambah-nambah kerjaanku nih.",
+     "literal": "dua versi dari-itu sama teks. kamu kepadaku tambahkan dari-itu kerja, di-situ."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Non, je t'en enlève. La version verbe, tu l'as déjà dite tout à l'heure.",
+     "id": "Nggak, aku malah mengurangi. Versi kata kerjanya barusan sudah kamu ucapkan.",
+     "literal": "tidak, saya kepadamu-dari-itu ambil. itu versi kata-kerja, kamu itu-punya sudah dikatakan semua pada itu-jam."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "C'est vrai. Bon. Et le titre ? « Dégradation de la circulation : mobilisation des riverains ».",
+     "id": "Benar juga. Oke. Terus judulnya? \"Memburuknya lalu lintas: penggalangan warga sekitar.\"",
+     "literal": "itu-adalah benar. baik. dan itu judul? pemburukan dari itu peredaran: penggerakan dari-itu warga-tepi."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Ça, garde-le. Un titre sans verbe, c'est la règle du genre.",
+     "id": "Itu simpan saja. Judul tanpa kata kerja, itu memang aturan jenisnya.",
+     "literal": "itu, simpan-itu. sebuah judul tanpa kata-kerja, itu-adalah itu aturan dari-itu jenis."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "Donc noms dans les titres, verbes dans le corps.",
+     "id": "Jadi nomina di judul, kata kerja di badan teks.",
+     "literal": "maka nama di itu judul, kata-kerja di itu badan."
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Presque. Noms partout où il faut être court. Verbes partout où il faut être compris.",
+     "id": "Hampir. Nomina di mana pun harus pendek. Kata kerja di mana pun harus dipahami.",
+     "literal": "hampir. nama di-mana-mana di-mana itu perlu ada pendek. kata-kerja di-mana-mana di-mana itu perlu ada dimengerti."
+    },
+    {
+     "speaker": "Yasmine:",
+     "text": "Je note. Et « suite à » ? Tu me l'enlèves aussi ?",
+     "id": "Kucatat. Terus \"suite à\"? Itu juga kamu buang?",
+     "literal": "saya catat. dan menyusul pada? kamu kepadaku itu ambil juga?"
+    },
+    {
+     "speaker": "Théo:",
+     "text": "Dans le corps, oui. Mets « comme » ou « étant donné que ». Ça respire mieux.",
+     "id": "Di badan teks, iya. Pakai \"comme\" atau \"étant donné que\". Napasnya lebih lega.",
+     "literal": "di itu badan, ya. taruh seperti atau ada diberikan bahwa. itu bernapas lebih-baik."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 1 dan 6 adalah seluruh unit ini dalam dua kalimat.** Isinya sama persis; yang berpindah adalah **di mana peristiwanya disimpan**. Versi pertama menyimpan dua peristiwa di dalam kata benda (*dégradation*, *réunion*); versi kedua mengembalikannya menjadi kata kerja (*s'est dégradée*, *organiser*). Bahasa Indonesia bisa melakukan hal serupa lewat awalan *pe-* dan *-an*, tapi jauh lebih jarang — itulah kenapa gaya nomina Prancis terasa berat bagi pembaca Indonesia."
+    },
+    {
+     "text": "**Baris 3: *avant qu'on sache*.** Perhatikan bahwa Théo memakai subjonctif sesudah *avant que*, sesuai unit 1. Perhatikan juga keluhannya: gaya nomina menunda kata kerjanya, sehingga pembaca harus menyimpan beberapa kata benda di kepala sebelum tahu apa yang sebenarnya terjadi. Ini bukan selera — ini alasan teknis kenapa laporan panjang melelahkan."
+    },
+    {
+     "text": "**Baris 11: *je t'en enlève*.** Dua kata ganti berurutan: *te* + *en*. Urutannya tetap *me/te/nous/vous* mendahului *en*. Unit 9 mengurus seluruh susunan ini; untuk sekarang cukup perhatikan bahwa penutur asli merangkainya tanpa jeda, dan telingamu perlu terbiasa mendengarnya sebagai satu potongan bunyi."
+    },
+    {
+     "text": "**Baris 12 dan 13: judul berita memang tanpa kata kerja.** *Dégradation de la circulation : mobilisation des riverains* adalah bentuk baku judul Prancis — dua nomina dipisahkan titik dua, tanpa satu pun kata kerja. Membaca judul koran Prancis akan jauh lebih mudah begitu kamu berhenti mencari kata kerjanya dan mulai membaca titik duanya sebagai \"maka\" atau \"akibatnya\"."
+    },
+    {
+     "text": "**Baris 17: *ça respire mieux*.** Ungkapan yang sangat berguna untuk menilai tulisan — harfiahnya \"itu bernapas lebih baik\". Perhatikan juga saran isinya: *suite à* adalah preposisi (diikuti nomina), sedangkan *comme* dan *étant donné que* adalah penghubung (diikuti anak kalimat). Memilih di antara keduanya **memaksamu** memilih gaya nomina atau gaya verba. Unit 10 memetakan seluruh keluarga sebab ini."
+    },
+    {
+     "text": "**Baris 15 adalah aturan yang layak dihafal:** *noms partout où il faut être court, verbes partout où il faut être compris*. Gaya nomina bukan gaya yang \"lebih tinggi\" — ia gaya yang lebih **padat**. Memakainya di tempat yang salah, misalnya di surel kepada satu orang, membuat penulisnya terdengar sedang bersembunyi."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Empat akhiran yang mengubah kata kerja menjadi kata benda",
+     "body": [
+      "Sebagian besar nomina peristiwa dalam bahasa Prancis dibentuk dengan empat akhiran ini. Menghafal akhirannya jauh lebih hemat daripada menghafal katanya satu per satu — dan **jenis kelaminnya bisa ditebak dari akhirannya**, yang menyelesaikan setengah masalah *le* atau *la*."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Jenis",
+       "Dari kata kerja",
+       "Nomina"
+      ],
+      "rows": [
+       [
+        "-tion / -sion",
+        "feminin",
+        "organiser, décider",
+        "l'organisa**tion**, la déci**sion**"
+       ],
+       [
+        "-ment",
+        "maskulin",
+        "changer, développer",
+        "le change**ment**, le développe**ment**"
+       ],
+       [
+        "-age",
+        "maskulin",
+        "nettoyer, afficher",
+        "le nettoy**age**, l'affich**age**"
+       ],
+       [
+        "-ure",
+        "feminin",
+        "fermer, ouvrir",
+        "la fermet**ure**, l'ouvert**ure**"
+       ],
+       [
+        "-ée",
+        "feminin",
+        "arriver, monter",
+        "l'arriv**ée**, la mont**ée**"
+       ],
+       [
+        "-ance / -ence",
+        "feminin",
+        "assister, exiger",
+        "l'assist**ance**, l'exig**ence**"
+       ],
+       [
+        "tanpa akhiran",
+        "maskulin",
+        "appeler, rappeler",
+        "l'appel, le rappel"
+       ],
+       [
+        "dari kata sifat",
+        "feminin",
+        "dégradé, lisible",
+        "la dégrada**tion**, la lisibi**lité**"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Membongkar kalimat nomina kembali menjadi kalimat",
+     "body": [
+      "Ini keterampilan dua arah, dan arah **membongkar** yang lebih penting: ia yang kamu pakai tiap kali membaca laporan, surat dinas, atau berita. Latihannya selalu sama — cari nomina peristiwanya, ubah jadi kata kerja, lalu carikan subjek."
+     ],
+     "table": {
+      "head": [
+       "Gaya nomina",
+       "Gaya verba",
+       "Yang berubah"
+      ],
+      "rows": [
+       [
+        "suite à la fermeture du pont",
+        "comme le pont a fermé",
+        "preposisi → penghubung"
+       ],
+       [
+        "en raison de la grève",
+        "parce qu'il y a une grève",
+        "preposisi → penghubung"
+       ],
+       [
+        "avant l'arrivée des invités",
+        "avant que les invités arrivent",
+        "+ subjonctif"
+       ],
+       [
+        "après le vote de la décision",
+        "après qu'on a voté la décision",
+        "+ indicatif"
+       ],
+       [
+        "en cas de retard",
+        "si tu es en retard",
+        "preposisi → *si*"
+       ],
+       [
+        "malgré l'absence de budget",
+        "bien qu'il n'y ait pas de budget",
+        "+ subjonctif"
+       ],
+       [
+        "dès réception du courrier",
+        "dès qu'on reçoit le courrier",
+        "tanpa kata sandang — gaya dinas"
+       ],
+       [
+        "pour l'obtention du visa",
+        "pour obtenir le visa",
+        "nomina → infinitif"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Nomina pelaku dan nomina hasil: dua keluarga lagi",
+     "body": [
+      "Di samping nomina peristiwa (*-tion*, *-ment*), gaya nomina Prancis banyak memakai nomina **pelaku** dan nomina **sifat**. Keduanya juga bisa ditebak dari akhirannya."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Jenis",
+       "Menandai",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "-eur / -euse",
+        "mask. / fem.",
+        "pelaku",
+        "le lect**eur**, la vend**euse**"
+       ],
+       [
+        "-teur / -trice",
+        "mask. / fem.",
+        "pelaku",
+        "le direc**teur**, la direc**trice**"
+       ],
+       [
+        "-ant / -ante",
+        "mask. / fem.",
+        "pelaku",
+        "l'habit**ant**, la particip**ante**"
+       ],
+       [
+        "-aire",
+        "dua-duanya",
+        "pemegang hak",
+        "le locat**aire**, le titul**aire**"
+       ],
+       [
+        "-é / -ée",
+        "dua-duanya",
+        "penerima",
+        "l'employ**é**, la salari**ée**"
+       ],
+       [
+        "-ité",
+        "feminin",
+        "sifat",
+        "la lisibil**ité**, la faisabil**ité**"
+       ],
+       [
+        "-esse",
+        "feminin",
+        "sifat",
+        "la justesse, la richesse"
+       ],
+       [
+        "-isme",
+        "maskulin",
+        "paham, gejala",
+        "l'absentéisme, le tourisme"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Siaran pers, warga, dan urusan kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Français",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "le communiqué",
+       "l' ko-mü-ni-KE",
+       "siaran pers"
+      ],
+      [
+       "la mairie",
+       "la mè-RI",
+       "balai kota"
+      ],
+      [
+       "le riverain",
+       "l' riv-RAN",
+       "warga sekitar"
+      ],
+      [
+       "la circulation",
+       "la sir-kü-la-SIYON",
+       "lalu lintas"
+      ],
+      [
+       "la dégradation",
+       "la de-gra-da-SIYON",
+       "kemerosotan"
+      ],
+      [
+       "envisager",
+       "an-vi-za-JE",
+       "mempertimbangkan"
+      ],
+      [
+       "la mobilisation",
+       "la mo-bi-li-za-SIYON",
+       "penggalangan"
+      ],
+      [
+       "le registre",
+       "l' r'-JISTR",
+       "ragam bahasa"
+      ],
+      [
+       "lisible",
+       "li-ZIBL",
+       "terbaca, jelas"
+      ],
+      [
+       "le corps du texte",
+       "l' kor dü TÈKST",
+       "badan teks"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Potongan gaya nomina yang wajib dikenali di surat dinas"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Potongan",
+      "Diikuti",
+      "Padanan lisannya"
+     ],
+     "rows": [
+      [
+       "suite à",
+       "nomina",
+       "comme, après que"
+      ],
+      [
+       "en raison de",
+       "nomina",
+       "parce que"
+      ],
+      [
+       "compte tenu de",
+       "nomina",
+       "étant donné que"
+      ],
+      [
+       "en vue de",
+       "nomina",
+       "pour que, pour"
+      ],
+      [
+       "à défaut de",
+       "nomina",
+       "si on n'a pas"
+      ],
+      [
+       "dès réception de",
+       "nomina tanpa sandang",
+       "dès qu'on reçoit"
+      ],
+      [
+       "sous réserve de",
+       "nomina",
+       "à condition que"
+      ],
+      [
+       "faute de",
+       "nomina",
+       "parce qu'il n'y a pas de"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan memakai yang mana",
+     "items": [
+      "**Gaya nomina dipakai kalau ruangnya sempit atau pembacanya lembaga**: judul berita, papan pengumuman, surat dinas, laporan, syarat dan ketentuan. Di situ ia bukan kesombongan, melainkan penghematan.",
+      "**Gaya verba dipakai kalau pembacanya satu orang**: surel, pesan, penjelasan lisan, dan seluruh isi surat yang ingin benar-benar dibaca. Pelajar Prancis di tingkat B2 sering berlebihan ke arah nomina karena mengiranya lebih sopan — padahal ia justru terdengar berjarak.",
+      "**Uji cepat: bacalah keras-keras.** Kalau kamu kehabisan napas sebelum kata kerjanya muncul, bongkar kalimatnya. Aturan ini dipakai penulis Prancis sungguhan, bukan cuma buku pelajaran."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fr": "suite à",
+   "baca": "süit A",
+   "id": "menyusul, sehubungan dengan"
+  },
+  {
+   "fr": "les conditions",
+   "baca": "le kon-di-SIYON",
+   "id": "kondisi"
+  },
+  {
+   "fr": "correct",
+   "baca": "ko-RÈKT",
+   "id": "benar, tepat"
+  },
+  {
+   "fr": "à voix haute",
+   "baca": "a vwa OT",
+   "id": "keras-keras"
+  },
+  {
+   "fr": "organiser",
+   "baca": "or-ga-ni-ZE",
+   "id": "mengadakan"
+  },
+  {
+   "fr": "la seconde",
+   "baca": "la s'-GOND",
+   "id": "detik"
+  },
+  {
+   "fr": "les habitants",
+   "baca": "le-za-bi-TAN",
+   "id": "penduduk"
+  },
+  {
+   "fr": "garder",
+   "baca": "gar-DE",
+   "id": "menyimpan"
+  },
+  {
+   "fr": "rajouter",
+   "baca": "ra-ju-TE",
+   "id": "menambahkan lagi"
+  },
+  {
+   "fr": "enlever",
+   "baca": "an-l'-VE",
+   "id": "mengambil, membuang"
+  },
+  {
+   "fr": "tout à l'heure",
+   "baca": "tu-ta LÖR",
+   "id": "barusan, nanti"
+  },
+  {
+   "fr": "le titre",
+   "baca": "l' TITR",
+   "id": "judul"
+  },
+  {
+   "fr": "le genre",
+   "baca": "l' JANR",
+   "id": "jenis tulisan"
+  },
+  {
+   "fr": "partout",
+   "baca": "par-TU",
+   "id": "di mana-mana"
+  },
+  {
+   "fr": "court",
+   "baca": "KUR",
+   "id": "pendek"
+  },
+  {
+   "fr": "respirer",
+   "baca": "rès-pi-RE",
+   "id": "bernapas"
+  },
+  {
+   "fr": "étant donné que",
+   "baca": "e-tan do-NE k'",
+   "id": "mengingat bahwa"
+  },
+  {
+   "fr": "la fermeture",
+   "baca": "la fer-m'-TÜR",
+   "id": "penutupan"
+  },
+  {
+   "fr": "la grève",
+   "baca": "la GRÈV",
+   "id": "mogok kerja"
+  },
+  {
+   "fr": "la lisibilité",
+   "baca": "la li-zi-bi-li-TE",
+   "id": "keterbacaan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata kerja menjadi nomina beserta kata sandangnya.",
+   "items": [
+    "organiser → ____",
+    "changer → ____",
+    "nettoyer → ____",
+    "fermer → ____",
+    "arriver → ____"
+   ]
+  },
+  {
+   "prompt": "Bongkar gaya nomina menjadi gaya verba.",
+   "items": [
+    "Suite à la fermeture du pont, … → Comme ____",
+    "En raison de la grève, … → Parce qu'____",
+    "Avant l'arrivée des invités, … → Avant que ____",
+    "Malgré l'absence de budget, … → Bien qu'____",
+    "Pour l'obtention du visa, … → Pour ____"
+   ]
+  },
+  {
+   "prompt": "Padatkan menjadi gaya nomina untuk sebuah judul.",
+   "items": [
+    "La circulation s'est dégradée. → ____",
+    "Les riverains se mobilisent. → ____",
+    "Le pont va être fermé. → ____",
+    "On a voté la décision. → ____",
+    "Les habitants sont partis. → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Prancis, gaya verba.",
+   "items": [
+    "Karena lalu lintasnya memburuk, kami mempertimbangkan mengadakan rapat.",
+    "Ada tiga kata benda sebelum orang tahu kamu bicara soal apa.",
+    "Judul tanpa kata kerja, itu memang aturan jenisnya.",
+    "Nomina di mana pun harus pendek, kata kerja di mana pun harus dipahami.",
+    "Siaran pers tidak ditulis seperti SMS."
+   ]
+  }
+ ],
+ "answers": [
+  "l'organisation — le changement — le nettoyage — la fermeture — l'arrivée",
+  "le pont a fermé — il y a une grève — les invités arrivent — il n'y a pas de budget — obtenir le visa",
+  "dégradation de la circulation — mobilisation des riverains — fermeture du pont — vote de la décision — départ des habitants",
+  "Comme la circulation s'est dégradée, on envisage d'organiser une réunion. — Il y a trois noms avant qu'on sache de quoi tu parles. — Un titre sans verbe, c'est la règle du genre. — Noms partout où il faut être court, verbes partout où il faut être compris. — Un communiqué, ça ne s'écrit pas comme un SMS."
+ ],
+ "wave": "Kembali ke unit 6, ke penjelasan Rémi tentang proyek gedung. Sekarang tulis ulang isinya sebagai **papan pengumuman di lobi** — seluruhnya nomina, tak lebih dari enam baris: *Réfection de la façade. Démontage des balcons. Nettoyage des vitres en fin de chantier. Durée prévue : six mois.* Lalu bacalah keras-keras dan perhatikan bahwa kamu sama sekali tak bisa mengucapkannya sebagai percakapan — itulah tandanya kamu berhasil."
+}
