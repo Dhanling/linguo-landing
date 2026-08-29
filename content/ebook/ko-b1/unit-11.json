@@ -1,0 +1,326 @@
+{
+ "title": "Bahasa kantor: surel, laporan, rapat",
+ "title_target": "확인 부탁드립니다 — Hwagin butakdeurimnida",
+ "goal": "Menguasai ragam bahasa yang dipakai di perusahaan Korea — surel dengan kerangka tetapnya, laporan yang menyebut kesimpulan lebih dulu, dan rapat dengan kalimat-kalimat bakunya — beserta singkatan yang tak pernah masuk kamus.",
+ "bekal": [
+  "menyusun surel Korea dengan enam bagian bakunya, dari sapaan sampai penutup",
+  "melaporkan dengan pola 결론부터: kesimpulan dulu, rincian belakangan",
+  "memakai kalimat baku rapat: membuka, menyela, merangkum, menutup",
+  "memakai bentuk -(으)ㅁ dan -기 untuk catatan dan poin ringkas",
+  "mengenali singkatan kantor: 참조, 회신, 결재, 반려, 취합, 컨펌"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Rapat pagi",
+   "intro": "Rapat harian tim, lima belas menit. Ini ragam bahasa yang paling padat di kantor Korea: kesimpulan lebih dulu, kalimat pendek, dan hampir tak ada basa-basi.",
+   "lines": [
+    { "speaker": "김 부장:", "text": "[자|Ja], [시작하겠습니다|sijakhagetseumnida]. [먼저|Meonjeo] [지호|Jiho] [씨부터|ssibuteo] [공유해|gongyuhae] [주세요|juseyo].", "id": "Baik, kita mulai. Silakan mulai dari Jiho.", "literal": "nah, akan-memulai. dahulu — Jiho — tuan-dari — membagikan — berilah-nya." },
+    { "speaker": "지호:", "text": "[네|Ne]. [결론부터|Gyeollonbuteo] [말씀드리면|malsseumdeurimyeon], [이번|ibeon] [주|ju] [출시는|chulsineun] [예정대로|yejeongdaero] [가능합니다|ganeunghamnida].", "id": "Baik. Kalau saya mulai dari kesimpulan, peluncuran minggu ini bisa sesuai rencana.", "literal": "ya. kesimpulan-dari — menyampaikan-kalau, kali-ini — minggu — peluncuran — mengenai — jadwal-sesuai — mungkin." },
+    { "speaker": "김 부장:", "text": "[좋습니다|Jotseumnida]. [남은|Nameun] [이슈는|isyuneun] [뭔가요|mwongayo]?", "id": "Bagus. Apa isu yang tersisa?", "literal": "bagus. tersisa-yang — isu — mengenai — apa-nya?" },
+    { "speaker": "지호:", "text": "[두|Du] [가지입니다|gajiimnida]. [하나는|Hananeun] [디자인|dijain] [최종|choejong] [컨펌이|keonpeomi] [아직|ajik] [안|an] [났고|natgo], [다른|dareun] [하나는|hananeun] [고객|gogaek] [문의|munui] [응대|eungdae] [담당이|damdangi] [정해지지|jeonghaejiji] [않았습니다|anatseumnida].", "id": "Ada dua. Yang pertama, persetujuan akhir desain belum keluar; yang lain, penanggung jawab penanganan pertanyaan pelanggan belum ditetapkan.", "literal": "dua — perkara-adalah. satu — mengenai — desain — akhir — konfirmasi — belum — tidak — keluar-sudah-dan, lain-yang — satu — mengenai — pelanggan — pertanyaan — penanganan — penanggung-jawab — ditetapkan — tidak-sudah." },
+    { "speaker": "김 부장:", "text": "[컨펌은|Keonpeomeun] [제가|jega] [오늘|oneul] [오전에|ojeone] [받아|bada] [놓겠습니다|noketseumnida]. [응대는|Eungdaeneun] [아니|Ani] [씨가|ssiga] [맡아|mata] [주시겠어요|jusigesseoyo]?", "id": "Persetujuannya akan saya urus pagi ini. Penanganannya, bisakah Ani yang memegang?", "literal": "konfirmasi — mengenai — saya — hari-ini — pagi-pada — menerima — akan-menaruh. penanganan — mengenai — Ani — tuan — memegang — memberi-beliau-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [맡겠습니다|matgetseumnida]. [다만|Daman] [응대|eungdae] [기준이|gijuni] [필요할|piryohal] [것|geot] [같은데|gateunde], [자주|jaju] [나오는|naoneun] [질문|jilmun] [열|yeol] [개|gae] [정도|jeongdo] [정리해서|jeongnihaeseo] [공유드려도|gongyudeuryeodo] [될까요|doelkkayo]?", "id": "Baik, saya pegang. Hanya saja sepertinya perlu pedoman penanganan; bolehkah saya merangkum sekitar sepuluh pertanyaan yang sering muncul lalu membagikannya?", "literal": "ya, akan-memegang. hanya-saja — penanganan — patokan — perlu-akan — hal — seperti-padahal, sering — keluar-yang — pertanyaan — sepuluh — buah — kira-kira — merapikan-lalu — membagikan-mempersembahkan-juga — jadi-bagaimana-nya?" },
+    { "speaker": "김 부장:", "text": "[아주|Aju] [좋은|joeun] [생각입니다|saenggagimnida]. [내일|Naeil] [오전까지|ojeonkkaji] [가능할까요|ganeunghalkkayo]?", "id": "Ide yang sangat bagus. Mungkinkah sampai besok pagi?", "literal": "sangat — baik-yang — pikiran-adalah. besok — pagi-sampai — mungkin-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [가능합니다|ganeunghamnida]. [초안|Choan] [나오면|naomyeon] [메일로|meillo] [공유드리고|gongyudeurigo] [부장님|bujangnim] [참조|chamjo] [넣겠습니다|neoketseumnida].", "id": "Ya, bisa. Kalau drafnya jadi, saya bagikan lewat surel dan menempatkan Bapak di tembusan.", "literal": "ya, mungkin. draf-awal — keluar-kalau — surel-dengan — membagikan-mempersembahkan-dan — kepala-bagian — tembusan — akan-memasukkan." },
+    { "speaker": "김 부장:", "text": "[네|Ne]. [그럼|Geureom] [정리하겠습니다|jeongnihagetseumnida]. [디자인|Dijain] [컨펌|keonpeom] [저|jeo], [응대|eungdae] [기준|gijun] [아니|Ani] [씨|ssi], [출시|chulsi] [점검|jeomgeom] [지호|Jiho] [씨|ssi]. [맞습니까|Matseumnikka]?", "id": "Baik. Kalau begitu saya rangkum. Persetujuan desain saya, pedoman penanganan Ani, pemeriksaan peluncuran Jiho. Betul?", "literal": "ya. kalau-begitu — akan-merapikan. desain — konfirmasi — saya, penanganan — patokan — Ani — tuan, peluncuran — pemeriksaan — Jiho — tuan. benar-kah?" },
+    { "speaker": "지호:", "text": "[맞습니다|Matseumnida].", "id": "Betul.", "literal": "benar." },
+    { "speaker": "김 부장:", "text": "[그럼|Geureom] [오늘|oneul] [회의는|hoeuineun] [여기까지|yeogikkaji] [하겠습니다|hagetseumnida]. [수고하세요|Sugohaseyo].", "id": "Kalau begitu rapat hari ini sampai di sini. Selamat bekerja.", "literal": "kalau-begitu — hari-ini — rapat — mengenai — di-sini-sampai — akan-melakukan. bersusah-payahlah-nya." }
+   ],
+   "notes": [
+    "**결론부터 말씀드리면 adalah pembuka laporan paling khas di perusahaan Korea.** Harfiahnya “kalau saya menyampaikan dari kesimpulan”. Melaporkan dengan urutan kronologis — apa yang terjadi lalu apa akibatnya lalu kesimpulannya — dianggap membuang waktu atasan.",
+    "**컨펌 dari bahasa Inggris *confirm*, dan sudah jadi kata Korea sepenuhnya.** Bersama 피드백, 스케줄, 이슈, 리스크, 팔로업, 컨펌 adalah bagian dari lapisan kata serapan yang tak bisa dihindari di kantor Korea. Padanan Korea aslinya 확인 dan 승인, tapi di percakapan sehari-hari 컨펌 yang menang.",
+    "**정해지지 않았습니다, bukan 안 정했습니다.** Bentuk pasif dipakai supaya tak ada yang tampak lalai. Ini penerapan langsung dari apa yang dipelajari di unit 9.",
+    "**받아 놓겠습니다 memakai -아/어 놓다 untuk menyatakan “akan saya urus dan siapkan”.** Di kantor Korea, -아/어 놓다 dan -아/어 두다 muncul di hampir setiap janji: 확인해 두겠습니다, 준비해 놓겠습니다, 정리해 두겠습니다.",
+    "**공유드리다 adalah gabungan 공유하다 + 드리다** yang secara ketat agak janggal, tapi sudah jadi kata baku dunia kerja Korea. Sepadan yang lebih rapi: 공유해 드리다.",
+    "**참조 넣겠습니다 — “akan saya masukkan ke tembusan”.** Tiga kata surel yang wajib: 수신 (penerima), 참조 (tembusan), 첨부 (lampiran). Bentuk kerjanya: 참조에 넣다, 첨부하다, 회신하다.",
+    "**Rapat Korea hampir selalu ditutup dengan perangkuman tugas.** 정리하겠습니다 lalu menyebut siapa mengerjakan apa, lalu 맞습니까? Melewatkan bagian ini adalah keluhan paling umum orang asing yang bekerja di Korea — tapi rapat yang baik selalu punya bagian ini.",
+    "**여기까지 하겠습니다 adalah kalimat penutup baku.** Sepadan: 이상입니다 (dipakai untuk menutup pemaparan sendiri), 오늘은 이만 하겠습니다."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat baku rapat",
+     "body": [
+      "Kalimat-kalimat ini dipakai berulang di setiap rapat berbahasa Korea. Menghafalnya sebagai satu kesatuan jauh lebih berguna daripada menganalisis bentuknya."
+     ],
+     "table": {
+      "head": ["Maksud", "Kalimat"],
+      "rows": [
+       ["Membuka", "[그럼|Geureom] [회의|hoeui] [시작하겠습니다|sijakhagetseumnida]."],
+       ["Menyerahkan giliran", "[이|I] [부분은|bubuneun] [지호|Jiho] [씨가|ssiga] [설명해|seolmyeonghae] [주시겠어요|jusigesseoyo]?"],
+       ["Mulai dari kesimpulan", "[결론부터|Gyeollonbuteo] [말씀드리면|malsseumdeurimyeon]…"],
+       ["Menyela dengan sopan", "[잠시만요|Jamsimanyo], [한|han] [가지|gaji] [여쭤봐도|yeojjwobwado] [될까요|doelkkayo]?"],
+       ["Menambahkan", "[한|Han] [가지|gaji] [덧붙이자면|deotbutijamyeon]…"],
+       ["Meminta pengulangan", "[다시|Dasi] [한번|hanbeon] [말씀해|malsseumhae] [주시겠어요|jusigesseoyo]?"],
+       ["Menyatakan tak setuju", "[제|Je] [생각은|saenggageun] [조금|jogeum] [다른데요|dareundeyo]."],
+       ["Menunda pembahasan", "[그|Geu] [부분은|bubuneun] [따로|ttaro] [논의하는|nonuihaneun] [게|ge] [어떨까요|eotteolkkayo]?"],
+       ["Merangkum", "[그럼|Geureom] [정리하겠습니다|jeongnihagetseumnida]."],
+       ["Menutup pemaparan", "[이상입니다|Isangimnida]."]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk -(으)ㅁ dan -기 untuk catatan",
+     "body": [
+      "Notulen, catatan rapat, dan daftar tugas di Korea tidak ditulis dalam kalimat penuh. Kata kerjanya diubah jadi kata benda dan kalimatnya berhenti di situ.",
+      "**-(으)ㅁ** untuk sesuatu yang sudah terjadi atau sudah diputuskan: 확인함 (sudah diperiksa), 완료됨 (selesai), 회신 없음 (tak ada balasan), 참석함.",
+      "**-기** untuk sesuatu yang harus dikerjakan: 자료 정리하기, 고객사에 연락하기, 견적서 발송하기.",
+      "⚠️ Bentuk ini **hanya** untuk catatan tertulis. Memakainya dalam percakapan terdengar seperti membacakan daftar — kecuali kalau memang sedang membacakan notulen."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menelepon mitra kerja",
+   "intro": "Ani menelepon perusahaan lain. Bahasa telepon bisnis Korea punya kerangka yang lebih kaku daripada percakapan tatap muka, dan pembukaannya hampir selalu sama.",
+   "lines": [
+    { "speaker": "아니:", "text": "[안녕하십니까|Annyeonghasimnikka]. [린구|Linggu] [영업부|yeongeopbu] [아니라고|Anirago] [합니다|hamnida]. [혹시|Hoksi] [구매팀|gumaetim] [박|Bak] [과장님|gwajangnim] [통화|tonghwa] [가능하실까요|ganeunghasilkkayo]?", "id": "Selamat siang. Saya Ani dari bagian penjualan Linguo. Apakah Bapak Park dari tim pembelian bisa saya hubungi?", "literal": "sejahtera-kah. Linguo — bagian-penjualan — Ani-disebut — melakukan. barangkali — pembelian-tim — Park — kepala-seksi — pembicaraan — mungkin-beliau-akan-nya?" },
+    { "speaker": "직원:", "text": "[네|Ne], [잠시만|jamsiman] [기다려|gidaryeo] [주십시오|jusipsio]. [연결해|Yeongyeolhae] [드리겠습니다|deurigetseumnida].", "id": "Ya, mohon tunggu sebentar. Akan saya sambungkan.", "literal": "ya, sejenak-hanya — menunggu — berilah. menyambungkan — akan-mempersembahkan." },
+    { "speaker": "박 과장:", "text": "[네|Ne], [박|Bak] [상철입니다|Sangcheorimnida].", "id": "Ya, dengan Park Sangcheol.", "literal": "ya, Park — Sangcheol-adalah." },
+    { "speaker": "아니:", "text": "[과장님|Gwajangnim], [안녕하십니까|annyeonghasimnikka]. [린구|Linggu] [아니입니다|Aniimnida]. [지난주에|Jinanjue] [보내|bonae] [드린|deurin] [견적서|gyeonjeokseo] [관련해서|gwallyeonhaeseo] [연락드렸습니다|yeollakdeuryeotseumnida].", "id": "Pak, selamat siang. Saya Ani dari Linguo. Saya menghubungi terkait surat penawaran yang saya kirim minggu lalu.", "literal": "kepala-seksi, sejahtera-kah. Linguo — Ani-adalah. minggu-lalu-pada — mengirim — mempersembahkan-yang — penawaran-surat — berkaitan-lalu — menghubungi-mempersembahkan-sudah." },
+    { "speaker": "박 과장:", "text": "[아|A], [네|ne]. [잘|Jal] [받아|bada] [봤습니다|bwatseumnida]. [내부|Naebu] [검토|geomto] [중인데|jungnde] [조금|jogeum] [늦어지고|neujeojigo] [있습니다|itseumnida].", "id": "Ah, ya. Sudah saya terima dan lihat. Sedang dalam pembahasan internal, tapi agak tertunda.", "literal": "ah, ya. baik — menerima — melihat-sudah. internal — telaah — tengah-padahal — sedikit — menjadi-terlambat-dan — ada." },
+    { "speaker": "아니:", "text": "[네|Ne], [이해합니다|ihaehamnida]. [혹시|Hoksi] [언제쯤|eonjejjeum] [회신|hoesin] [주실|jusil] [수|su] [있을지|isseulji] [여쭤봐도|yeojjwobwado] [될까요|doelkkayo]?", "id": "Baik, saya mengerti. Bolehkah saya menanyakan kira-kira kapan jawabannya bisa Bapak berikan?", "literal": "ya, memahami. barangkali — kapan-sekitar — balasan — memberi-beliau-akan — kemungkinan — ada-akan-apakah — coba-tanya-juga — jadi-bagaimana-nya?" },
+    { "speaker": "박 과장:", "text": "[다음|Daeum] [주|ju] [수요일|suyoil] [임원|imwon] [회의|hoeui] [끝나면|kkeutnamyeon] [바로|baro] [알려|allyeo] [드리겠습니다|deurigetseumnida].", "id": "Setelah rapat direksi Rabu minggu depan selesai, akan segera saya kabari.", "literal": "berikut — minggu — Rabu — pejabat — rapat — selesai-kalau — langsung — memberi-tahu — akan-mempersembahkan." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [그럼|Geureom] [혹시|hoksi] [그|geu] [전에|jeone] [추가|chuga] [자료가|jaryoga] [필요하시면|piryohasimyeon] [말씀만|malsseumman] [주십시오|jusipsio]. [바로|Baro] [준비해|junbihae] [드리겠습니다|deurigetseumnida].", "id": "Terima kasih. Kalau sebelum itu Bapak memerlukan bahan tambahan, cukup beri tahu saya. Akan segera saya siapkan.", "literal": "terima-kasih. kalau-begitu — barangkali — itu — sebelum-pada — tambahan — bahan — perlu-beliau-kalau — perkataan-hanya — berilah. langsung — mempersiapkan — akan-mempersembahkan." },
+    { "speaker": "박 과장:", "text": "[네|Ne], [알겠습니다|algetseumnida]. [신경|Singyeong] [써|sseo] [주셔서|jusyeoseo] [감사합니다|gamsahamnida].", "id": "Ya, baik. Terima kasih sudah memperhatikan.", "literal": "ya, mengerti. saraf — memakai — memberi-beliau-karena — terima-kasih." },
+    { "speaker": "아니:", "text": "[아닙니다|Animnida]. [그럼|Geureom] [연락|yeollak] [기다리겠습니다|gidarigetseumnida]. [좋은|Joeun] [하루|haru] [보내십시오|bonaesipsio].", "id": "Sama sekali tidak. Kalau begitu saya tunggu kabarnya. Semoga hari Bapak menyenangkan.", "literal": "bukan. kalau-begitu — kabar — akan-menunggu. baik-yang — satu-hari — kirimkanlah." },
+    { "speaker": "박 과장:", "text": "[네|Ne], [들어가십시오|deureogasipsio].", "id": "Ya, silakan.", "literal": "ya, masuklah." }
+   ],
+   "notes": [
+    "**Telepon bisnis Korea dibuka dengan urutan tetap: sapaan → perusahaan → nama → keperluan.** Menyebut perusahaan sebelum nama sendiri adalah kebiasaan yang berbeda dari banyak negara lain, dan melewatkannya membuat penelepon terdengar tidak profesional.",
+    "**통화 가능하실까요? adalah cara paling sopan meminta disambungkan.** Sepadan: 통화 좀 부탁드립니다, …님 계십니까? Yang terakhir agak lebih lugas.",
+    "**Menjawab telepon kantor Korea: nama sendiri saja, tanpa 여보세요.** 네, 박상철입니다. Kata 여보세요 dipakai di telepon pribadi atau ketika penelepon belum jelas.",
+    "**-와/과 관련해서 berarti “terkait dengan”.** Ia membuka pokok pembicaraan dengan rapi. Sepadan yang lebih pendek: -에 대해서, -의 건으로. Di surel: 제목에 “견적서 관련 문의”.",
+    "**여쭤봐도 될까요? adalah pertanyaan berlapis tiga.** 여쭙다 (bertanya, merendah) + -아/어 보다 (mencoba) + -아/어도 될까요 (bolehkah). Bentuk paling aman untuk menanyakan sesuatu yang mungkin mendesak lawan bicara.",
+    "**말씀만 주십시오 harfiahnya “cukup berikan perkataan saja”.** Ungkapan pelayanan yang berarti “tinggal bilang saja”. Sangat sering di percakapan bisnis Korea, dan terdengar hangat tanpa terdengar berlebihan.",
+    "**신경 써 주셔서 감사합니다 — “terima kasih sudah memberi perhatian”.** 신경 쓰다 harfiahnya “memakai saraf”. Ungkapan yang muncul terus: 신경 쓰지 마세요 (jangan dipikirkan), 신경이 쓰여요 (mengganggu pikiran).",
+    "**들어가십시오 adalah penutup telepon yang khas Korea.** Harfiahnya “silakan masuk”. Ia adalah ucapan perpisahan yang mengandaikan lawan bicara akan kembali ke tempatnya. Sepadan yang lebih umum: 들어가세요."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka surel Korea",
+     "body": [
+      "Surel bisnis Korea punya enam bagian, dan urutannya nyaris tak pernah berubah. Melewatkan bagian kedua atau kelima adalah kesalahan yang paling sering dilakukan penulis asing."
+     ],
+     "table": {
+      "head": ["Bagian", "Contoh", "Catatan"],
+      "rows": [
+       ["1. Sapaan", "[안녕하십니까|Annyeonghasimnikka], [박|Bak] [과장님|gwajangnim].", "jabatan + 님"],
+       ["2. Perkenalan diri", "[린구|Linggu] [영업부|yeongeopbu] [아니입니다|Aniimnida].", "wajib, meski sudah kenal"],
+       ["3. Basa-basi singkat", "[늘|Neul] [도움|doum] [주셔서|jusyeoseo] [감사합니다|gamsahamnida].", "satu kalimat, tak lebih"],
+       ["4. Pokok", "[다름이|Dareumi] [아니라|anira], … (isi pokoknya)", "pembuka pokok yang baku"],
+       ["5. Permintaan", "[확인|Hwagin] [부탁드립니다|butakdeurimnida].", "harus jelas apa yang diminta"],
+       ["6. Penutup", "[감사합니다|Gamsahamnida]. / [아니|Ani] [드림|deurim]", "드림 untuk atasan, 올림 lebih tinggi"]
+      ]
+     }
+    },
+    {
+     "title": "Kalimat surel yang paling sering dipakai",
+     "body": [
+      "Sekitar tiga puluh kalimat menutup hampir seluruh kebutuhan surel bisnis Korea. Ini yang paling penting."
+     ],
+     "table": {
+      "head": ["Maksud", "Kalimat"],
+      "rows": [
+       ["Membuka pokok", "[다름이|Dareumi] [아니라|anira] … [건으로|geoneuro] [연락드립니다|yeollakdeurimnida]."],
+       ["Melampirkan", "[관련|Gwallyeon] [자료를|jaryoreul] [첨부하였습니다|cheombuhayeotseumnida]."],
+       ["Meminta pemeriksaan", "[확인|Hwagin] [후|hu] [회신|hoesin] [부탁드립니다|butakdeurimnida]."],
+       ["Menyebut tenggat", "[가능하시면|Ganeunghasimyeon] [금요일까지|geumyoilkkaji] [부탁드립니다|butakdeurimnida]."],
+       ["Menagih halus", "[혹시|Hoksi] [확인이|hwagini] [어려우실까요|eoryeousilkkayo]?"],
+       ["Meminta maaf", "[회신이|Hoesini] [늦어져|neujeojyeo] [죄송합니다|joesonghamnida]."],
+       ["Menawarkan bantuan", "[궁금하신|Gunggeumhasin] [점|jeom] [있으시면|isseusimyeon] [언제든|eonjedeun] [연락|yeollak] [주십시오|jusipsio]."],
+       ["Menutup", "[감사합니다|Gamsahamnida]. [좋은|Joeun] [하루|haru] [보내십시오|bonaesipsio]."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata kantor yang tak ada di kamus pelajar",
+   "blocks": [
+    { "type": "p", "text": "Sebagian besar kata di bawah tidak muncul di buku pelajaran tingkat manapun, tapi akan kamu dengar puluhan kali sehari di kantor Korea. Sebagian serapan Inggris, sebagian 한자어, dan sebagian singkatan yang dibuat sendiri oleh dunia kerja Korea." },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["결재", "gyeoljae", "persetujuan berjenjang atasan"],
+     ["반려", "banlyeo", "dikembalikan, ditolak (berkas)"],
+     ["취합", "chwihap", "mengumpulkan dari banyak orang"],
+     ["공유", "gongyu", "membagikan informasi"],
+     ["컨펌", "keonpeom", "konfirmasi, persetujuan"],
+     ["피드백", "pideubaek", "masukan"],
+     ["팔로업", "pallo-eop", "tindak lanjut"],
+     ["리마인드", "rimaindeu", "pengingat"],
+     ["이슈", "isyu", "masalah yang perlu dibahas"],
+     ["일정 조율", "iljeong joyul", "penyelarasan jadwal"],
+     ["보고 라인", "bogo rain", "jalur pelaporan"],
+     ["담당자", "damdangja", "penanggung jawab"],
+     ["결원", "gyeorwon", "posisi kosong"],
+     ["인수인계", "insuingye", "serah terima pekerjaan"],
+     ["회식", "hoesik", "makan bersama tim"],
+     ["워크숍", "wokeusyop", "lokakarya, retret tim"],
+     ["연차", "yeoncha", "cuti tahunan"],
+     ["대체 휴무", "daeche hyumu", "libur pengganti"],
+     ["정시 퇴근", "jeongsi toegeun", "pulang tepat waktu"],
+     ["야근", "yageun", "lembur malam"]
+    ]},
+    { "type": "sub", "text": "Singkatan yang dipakai di pesan singkat kantor" },
+    { "type": "tabel", "head": ["Singkatan", "Kepanjangan", "Arti"], "rows": [
+     ["ㅇㅋ", "오케이", "oke"],
+     ["ㄴㄴ", "노노", "tidak, jangan"],
+     ["ㄱㅅ", "감사", "terima kasih"],
+     ["ㅅㄱ", "수고", "kerja bagus"],
+     ["확인 부탁", "확인 부탁드립니다", "mohon diperiksa"],
+     ["넵", "네", "siap (lebih hangat dari 네)"],
+     ["넹", "네", "siap (lebih santai)"]
+    ]},
+    { "type": "p", "text": "⚠️ Singkatan huruf awal (ㅇㅋ, ㄱㅅ) hanya dipakai kepada kolega sederajat atau junior, tak pernah kepada atasan. Sebaliknya 넵 justru sangat sering dipakai ke atasan di pesan kantor Korea — ia terdengar lebih cekatan daripada 네 yang polos." }
+   ]
+  },
+  {
+   "title": "Melapor dengan urutan Korea",
+   "blocks": [
+    { "type": "p", "text": "Cara melapor di perusahaan Korea dikenal dengan sebutan **결론부터** — kesimpulan lebih dulu. Kerangkanya tetap, dan sama untuk laporan lisan maupun tertulis." },
+    { "type": "tabel", "head": ["Urutan", "Isinya", "Contoh kalimat"], "rows": [
+     ["1. Kesimpulan", "berhasil, gagal, atau minta keputusan", "[예정대로|Yejeongdaero] [가능합니다|ganeunghamnida]."],
+     ["2. Angka", "data yang mendukung", "[진행률은|Jinhaengnyureun] [팔십|palsip] [퍼센트입니다|peosenteuimnida]."],
+     ["3. Isu", "apa yang belum beres", "[남은|Nameun] [이슈는|isyuneun] [두|du] [가지입니다|gajiimnida]."],
+     ["4. Usul", "apa yang kamu minta atau sarankan", "[담당자|Damdangja] [지정이|jijeongi] [필요합니다|piryohamnida]."],
+     ["5. Jadwal", "kapan berikutnya", "[내일|Naeil] [오전까지|ojeonkkaji] [초안을|choaneul] [드리겠습니다|deurigetseumnida]."]
+    ]},
+    { "type": "p", "text": "⚠️ Kesalahan terbesar pelapor asing di Korea adalah memulai dari latar belakang. Atasan Korea diperkirakan sudah tahu latarnya; yang ia tunggu adalah **apakah ini berhasil, dan apakah ia perlu memutuskan sesuatu**. Latar belakang disampaikan hanya kalau ditanya." },
+    { "type": "sub", "text": "Melaporkan kabar buruk" },
+    { "type": "tabel", "head": ["Langkah", "Kalimat"], "rows": [
+     ["Membuka", "[보고|Bogo] [드릴|deuril] [일이|iri] [있습니다|itseumnida]."],
+     ["Menyampaikan fakta", "[납품이|Nappumi] [사흘|saheul] [지연될|jiyeondoel] [것|geot] [같습니다|gatseumnida]."],
+     ["Menyebut sebab singkat", "[협력업체|Hyeomnyeogeopche] [정전|jeongjeon] [때문입니다|ttaemunimnida]."],
+     ["Menyampaikan dampak", "[고객사|Gogaeksa] [일정에|iljeonge] [영향이|yeonghyangi] [있을|isseul] [수|su] [있습니다|itseumnida]."],
+     ["Mengusulkan tindakan", "[오늘|Oneul] [중으로|jungeuro] [먼저|meonjeo] [알리고|alligo] [보상안을|bosanganeul] [준비하겠습니다|junbihagetseumnida]."],
+     ["Meminta keputusan", "[진행해도|Jinhaenghaedo] [될지|doelji] [여쭙고|yeojjupgo] [싶습니다|sipseumnida]."]
+    ]},
+    { "type": "kotak", "title": "Tiga aturan tak tertulis", "items": [
+     "**Kabar buruk dilaporkan secepat mungkin, bukan setelah kamu punya jalan keluar.** Menahan kabar buruk sampai selesai kamu urus dianggap jauh lebih buruk daripada kabar buruknya sendiri.",
+     "**Jangan pernah melapor lewat kepala atasan langsungmu.** Jalur pelaporan — 보고 라인 — dianggap serius. Melompatinya, sekalipun untuk mempercepat, akan diingat lama.",
+     "**Sesudah melapor lisan, kirim ringkasannya tertulis.** Satu paragraf lewat pesan atau surel, dengan 참조 kepada yang perlu tahu. Ini yang membuat laporanmu tercatat."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "결론", "baca": "gyeollon", "id": "kesimpulan" },
+  { "ko": "출시", "baca": "chulsi", "id": "peluncuran produk" },
+  { "ko": "예정대로", "baca": "yejeongdaero", "id": "sesuai rencana" },
+  { "ko": "이슈", "baca": "isyu", "id": "isu, masalah" },
+  { "ko": "컨펌", "baca": "keonpeom", "id": "konfirmasi, persetujuan" },
+  { "ko": "응대", "baca": "eungdae", "id": "penanganan, pelayanan" },
+  { "ko": "담당", "baca": "damdang", "id": "penanggung jawab" },
+  { "ko": "기준", "baca": "gijun", "id": "patokan, pedoman" },
+  { "ko": "점검", "baca": "jeomgeom", "id": "pemeriksaan" },
+  { "ko": "참조", "baca": "chamjo", "id": "tembusan" },
+  { "ko": "수신", "baca": "susin", "id": "penerima" },
+  { "ko": "첨부하다", "baca": "cheombuhada", "id": "melampirkan" },
+  { "ko": "회신하다", "baca": "hoesinhada", "id": "membalas surat resmi" },
+  { "ko": "결재", "baca": "gyeoljae", "id": "persetujuan berjenjang" },
+  { "ko": "반려", "baca": "banlyeo", "id": "pengembalian berkas" },
+  { "ko": "취합하다", "baca": "chwihaphada", "id": "mengumpulkan" },
+  { "ko": "공유하다", "baca": "gongyuhada", "id": "membagikan" },
+  { "ko": "피드백", "baca": "pideubaek", "id": "masukan" },
+  { "ko": "일정 조율", "baca": "iljeong joyul", "id": "penyelarasan jadwal" },
+  { "ko": "인수인계", "baca": "insuingye", "id": "serah terima pekerjaan" },
+  { "ko": "회식", "baca": "hoesik", "id": "makan bersama tim" },
+  { "ko": "임원", "baca": "imwon", "id": "pejabat, direksi" },
+  { "ko": "구매팀", "baca": "gumaetim", "id": "tim pembelian" },
+  { "ko": "통화", "baca": "tonghwa", "id": "pembicaraan telepon" },
+  { "ko": "연결하다", "baca": "yeongyeolhada", "id": "menyambungkan" },
+  { "ko": "관련하다", "baca": "gwallyeonhada", "id": "berkaitan" },
+  { "ko": "추가", "baca": "chuga", "id": "tambahan" },
+  { "ko": "신경 쓰다", "baca": "singyeong sseuda", "id": "memberi perhatian" },
+  { "ko": "궁금하다", "baca": "gunggeumhada", "id": "penasaran" },
+  { "ko": "언제든", "baca": "eonjedeun", "id": "kapan saja" },
+  { "ko": "다름이 아니라", "baca": "dareumi anira", "id": "begini, sebetulnya" },
+  { "ko": "건", "baca": "geon", "id": "perkara, urusan" },
+  { "ko": "드림", "baca": "deurim", "id": "hormat saya (penutup surel)" },
+  { "ko": "올림", "baca": "ollim", "id": "hormat saya (lebih tinggi)" },
+  { "ko": "진행률", "baca": "jinhaengnyul", "id": "tingkat kemajuan" },
+  { "ko": "지정", "baca": "jijeong", "id": "penunjukan" },
+  { "ko": "영향", "baca": "yeonghyang", "id": "dampak" },
+  { "ko": "보상안", "baca": "bosangan", "id": "usulan kompensasi" },
+  { "ko": "덧붙이다", "baca": "deotbutida", "id": "menambahkan" },
+  { "ko": "따로", "baca": "ttaro", "id": "terpisah" },
+  { "ko": "이상입니다", "baca": "isangimnida", "id": "sekian dari saya" },
+  { "ko": "정시 퇴근", "baca": "jeongsi toegeun", "id": "pulang tepat waktu" },
+  { "ko": "대체 휴무", "baca": "daeche hyumu", "id": "libur pengganti" },
+  { "ko": "워크숍", "baca": "wokeusyop", "id": "lokakarya" },
+  { "ko": "리마인드", "baca": "rimaindeu", "id": "pengingat" },
+  { "ko": "팔로업", "baca": "pallo-eop", "id": "tindak lanjut" },
+  { "ko": "최종", "baca": "choejong", "id": "akhir, final" },
+  { "ko": "문의", "baca": "munui", "id": "pertanyaan, permintaan keterangan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi kalimat rapat berikut.",
+   "items": [
+    "____부터 말씀드리면, 일정은 문제없습니다.",
+    "그럼 회의 ____겠습니다. (membuka)",
+    "잠시만요, 한 가지 ____봐도 될까요? (menyela)",
+    "그럼 ____겠습니다. 디자인은 제가, 응대는 아니 씨가. (merangkum)",
+    "오늘 회의는 여기____ 하겠습니다."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk catatan: -(으)ㅁ untuk yang sudah, -기 untuk yang harus dikerjakan.",
+   "items": [
+    "자료를 확인했습니다. → ____",
+    "고객사에 연락해야 합니다. → ____",
+    "회신이 없습니다. → ____",
+    "견적서를 발송해야 합니다. → ____",
+    "회의에 참석했습니다. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun surel singkat: tulis kalimat untuk tiap bagian.",
+   "items": [
+    "Sapaan kepada 박 과장님:",
+    "Perkenalan diri (kamu dari bagian penjualan Linguo):",
+    "Membuka pokok tentang surat penawaran:",
+    "Meminta pemeriksaan sampai hari Jumat:",
+    "Penutup:"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kantor yang tepat: 결재 · 반려 · 취합 · 컨펌 · 참조.",
+   "items": [
+    "부장님 ____이 나야 진행할 수 있습니다.",
+    "서류에 문제가 있어서 ____되었습니다.",
+    "각 팀 자료를 ____해서 하나로 만들겠습니다.",
+    "디자인 최종 ____이 아직 안 났습니다.",
+    "메일 보낼 때 부장님을 ____에 넣어 주세요."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "가능합니다 / 예정대로 / 출시는 / 이번 주",
+    "부탁드립니다 / 회신 / 확인 / 후",
+    "될까요 / 여쭤봐도 / 언제쯤 / 회신 주실 수 있을지",
+    "연락드렸습니다 / 견적서 / 관련해서 / 보내 드린 / 지난주에",
+    "넣겠습니다 / 부장님 / 참조"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Laporkan kepada atasan bahwa proyekmu berjalan lancar, dengan urutan 결론부터 (tiga kalimat).",
+    "Laporkan kabar buruk: pekerjaan mundur seminggu, lengkap dengan usul tindakan.",
+    "Tulis pembuka telepon bisnis: perkenalkan diri dan minta disambungkan ke 김 과장님.",
+    "Tulis surel pendek menagih balasan dengan sopan."
+   ]
+  }
+ ],
+ "answers": [
+  "결론 — 시작하 — 여쭤 — 정리하 — 까지",
+  "자료 확인함 — 고객사에 연락하기 — 회신 없음 — 견적서 발송하기 — 회의 참석함",
+  "박 과장님, 안녕하십니까. — 린구 영업부 아니입니다. — 다름이 아니라 지난주에 보내 드린 견적서 건으로 연락드립니다. — 가능하시면 금요일까지 확인 후 회신 부탁드립니다. — 감사합니다. 좋은 하루 보내십시오.",
+  "결재 — 반려 — 취합 — 컨펌 — 참조",
+  "이번 주 출시는 예정대로 가능합니다. — 확인 후 회신 부탁드립니다. — 언제쯤 회신 주실 수 있을지 여쭤봐도 될까요? — 지난주에 보내 드린 견적서 관련해서 연락드렸습니다. — 부장님 참조 넣겠습니다.",
+  "결론부터 말씀드리면 이번 주 일정은 문제없습니다. 진행률은 팔십 퍼센트입니다. 남은 이슈는 없습니다. — 보고 드릴 일이 있습니다. 일정이 일주일 지연될 것 같습니다. 협력업체 사정 때문인데, 오늘 중으로 고객사에 먼저 알리고 대안을 준비하겠습니다. — 안녕하십니까. 린구 영업부 아니라고 합니다. 혹시 김 과장님 통화 가능하실까요? — 안녕하십니까. 린구 아니입니다. 지난주 보내 드린 자료 확인이 어려우실까요? 회신 부탁드립니다. 감사합니다."
+ ]
+}

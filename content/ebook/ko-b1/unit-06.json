@@ -1,0 +1,307 @@
+{
+ "title": "Enam cara menyatakan sebab",
+ "title_target": "늦잠을 자는 바람에 — Neutjameul janeun barame",
+ "goal": "Membedakan enam penghubung sebab yang tidak bisa saling ditukar, memilihnya menurut siapa yang bertanggung jawab dan apakah akibatnya disengaja, serta menyusun penjelasan yang tidak terdengar seperti alasan-alasan.",
+ "bekal": [
+  "membedakan -아/어서, -(으)니까, dan -기 때문에 — termasuk yang boleh diikuti perintah",
+  "memakai -느라고 untuk kegagalan karena sibuk melakukan hal lain",
+  "memakai -는 바람에 dan -(으)ㄴ/는 탓에 untuk akibat buruk yang tak disengaja",
+  "memakai -덕분에 untuk akibat baik dan -더니 untuk sebab yang disaksikan sendiri",
+  "menyusun permintaan maaf resmi: pengakuan, sebab, akibat, pencegahan"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Terlambat, dan menjelaskannya",
+   "intro": "Ani terlambat datang ke janji makan siang. Perhatikan bahwa ia memakai empat penghubung sebab yang berbeda dalam satu percakapan pendek, dan tiap pilihannya membawa nuansa yang berbeda tentang siapa yang salah.",
+   "lines": [
+    { "speaker": "아니:", "text": "[미안|Mian], [많이|mani] [기다렸지|gidaryeotji]?", "id": "Maaf, nunggu lama ya?", "literal": "maaf, banyak — menunggu-sudah-kan?" },
+    { "speaker": "지호:", "text": "[괜찮아|Gwaenchana]. [근데|Geunde] [무슨|museun] [일|il] [있었어|isseosseo]?", "id": "Nggak apa-apa. Tapi ada apa?", "literal": "tidak-apa-apa. tapi — apa — urusan — ada-sudah?" },
+    { "speaker": "아니:", "text": "[어제|Eoje] [보고서|bogoseo] [쓰느라고|sseuneurago] [새벽|saebyeok] [세|se] [시에|sie] [잤거든|jatgeodeun]. [그래서|Geuraeseo] [늦잠을|neutjameul] [자|ja] [버렸어|beoryeosseo].", "id": "Kemarin gara-gara nulis laporan aku tidur jam tiga pagi. Jadi ketiduran deh.", "literal": "kemarin — laporan — menulis-sibuk-karena — dini-hari — tiga — jam-pada — tidur-sudah-soalnya. karena-itu — tidur-terlambat — tidur — telanjur-sudah." },
+    { "speaker": "지호:", "text": "[아이고|Aigo], [고생했네|gosaenghaenne]. [보고서는|Bogoseoneun] [다|da] [끝냈어|kkeutnaesseo]?", "id": "Aduh, capek dong. Laporannya udah kelar semua?", "literal": "aduh, bersusah-payah-sudah-ternyata. laporan — mengenai — semua — menyelesaikan-sudah?" },
+    { "speaker": "아니:", "text": "[응|Eung], [겨우|gyeou]. [근데|Geunde] [지하철도|jihacheoldo] [고장|gojang] [나는|naneun] [바람에|barame] [더|deo] [늦었어|neujeosseo].", "id": "Iya, nyaris. Tapi keretanya rusak juga, gara-gara itu tambah telat.", "literal": "ya, dengan-susah-payah. tapi — kereta-bawah-tanah-juga — kerusakan — keluar-yang — angin-pada — lebih — terlambat-sudah." },
+    { "speaker": "지호:", "text": "[진짜|Jinjja]? [뉴스에서|Nyuseueseo] [봤어|bwasseo]. [이호선|Iho seon] [멈췄다더라|meomchwotdadeora].", "id": "Serius? Aku lihat di berita. Katanya jalur dua berhenti.", "literal": "sungguh? berita-di — melihat-sudah. dua-nomor-jalur — berhenti-sudah-katanya-kulihat." },
+    { "speaker": "아니:", "text": "[맞아|Maja]. [사람들이|Saramdeuri] [너무|neomu] [많아서|manaseo] [두|du] [대|dae] [보내고|bonaego] [겨우|gyeou] [탔어|tasseo].", "id": "Betul. Orangnya kebanyakan, jadi aku lewatin dua kereta baru bisa naik.", "literal": "orang-jamak — terlalu — banyak-karena — dua — buah — mengirim-dan — dengan-susah-payah — naik-sudah." },
+    { "speaker": "지호:", "text": "[그럴|Geureol] [만하네|manane]. [배고프지|Baegopeuji]? [일단|Ildan] [먹자|meokja].", "id": "Pantas aja. Lapar kan? Makan dulu deh.", "literal": "begitu-akan — pantas-ternyata. lapar — kan? untuk-sementara — mari-makan." },
+    { "speaker": "아니:", "text": "[고마워|Gomawo]. [네가|Nega] [기다려|gidaryeo] [준|jun] [덕분에|deokbune] [점심은|jeomsimeun] [먹네|meongne].", "id": "Makasih. Berkat kamu mau nungguin, aku jadi bisa makan siang.", "literal": "terima-kasih. kamu — menunggu — memberi-yang — berkat-pada — makan-siang — mengenai — makan-ternyata." },
+    { "speaker": "지호:", "text": "[야|Ya], [무슨|museun] [소리야|soriya]. [근데|Geunde] [너|neo] [요즘|yojeum] [계속|gyesok] [야근하더니|yageunhadeoni] [얼굴이|eolguri] [반쪽이|banjjogi] [됐다|dwaetda].", "id": "Ih, ngomong apa sih. Tapi kamu belakangan lembur terus, mukamu jadi tirus banget.", "literal": "hai, apa — bunyi-adalah. tapi — kamu — belakangan — terus — lembur-melakukan-kulihat-lalu — wajah — separuh — menjadi-sudah." },
+    { "speaker": "아니:", "text": "[나도|Nado] [알아|ara]. [이번|Ibeon] [주만|juman] [버티면|beotimyeon] [돼|dwae].", "id": "Aku juga tahu. Bertahan minggu ini aja, udah kelar.", "literal": "aku-juga — tahu. kali-ini — minggu-hanya — bertahan-kalau — jadi." }
+   ],
+   "notes": [
+    "**-느라고 berarti “sibuk melakukan A sehingga B tidak terjadi atau terganggu”.** Tiga syaratnya ketat: pelaku A dan B harus **orang yang sama**, keduanya terjadi pada **waktu yang sama**, dan akibatnya hampir selalu **negatif**. 보고서 쓰느라고 늦게 잤어 benar; ❌ 비가 오느라고 늦었어 salah karena hujan bukan perbuatanmu.",
+    "**-는 바람에 menandai sebab yang datang dari luar dan merusak rencana.** Harfiahnya “karena angin dari …”. Akibatnya selalu buruk dan selalu tak disengaja: 지하철이 고장 나는 바람에, 갑자기 비가 오는 바람에. ⚠️ Ia tak pernah dipakai untuk akibat baik: ❌ 일찍 일어나는 바람에 기차를 탔어요.",
+    "**-덕분에 adalah kebalikan tepatnya: sebab yang berakibat baik.** 네가 기다려 준 덕분에 = berkat kamu menunggu. Ketiganya membentuk tiga serangkai yang sering diujikan: 덕분에 (baik) · 탓에 (buruk, menyalahkan) · 바람에 (buruk, tak disengaja).",
+    "**-더니 menyatakan sesuatu yang pembicara **saksikan sendiri** lalu berbuah sekarang.** 계속 야근하더니 얼굴이 반쪽이 됐다 — Jiho melihat sendiri Ani lembur terus, dan sekarang melihat akibatnya. ⚠️ Tidak bisa dipakai untuk diri sendiri di masa kini; untuk diri sendiri bentuknya -았/었더니.",
+    "**-아/어 버리다 menandai perbuatan yang telanjur selesai, sering dengan sesal atau lega.** 자 버렸어 = telanjur ketiduran. 다 먹어 버렸어 = habis kumakan semua. Rasa yang dibawanya bergantung pada isi kalimatnya.",
+    "**겨우 berarti “dengan susah payah, nyaris tidak”.** Berbeda dengan 거의 (hampir) dan 간신히 (nyaris, lebih dramatis). 겨우 탔어 = akhirnya bisa naik juga, dengan susah payah.",
+    "**그럴 만하다 berarti “pantas begitu”.** Dipakai untuk mengesahkan alasan orang lain. Pola -(으)ㄹ 만하다 sendiri berarti “layak, pantas dilakukan”: 볼 만해요 (layak ditonton), 먹을 만해요 (lumayan enak).",
+    "**얼굴이 반쪽이 되다 harfiahnya “wajahnya jadi separuh”** — ungkapan tetap untuk orang yang tampak jauh lebih kurus dan lelah. Ungkapan begini akan dibahas penuh di unit 18."
+   ],
+   "grammars": [
+    {
+     "title": "-아/어서 · -(으)니까 · -기 때문에",
+     "body": [
+      "Tiga penghubung sebab yang paling dasar, dan yang paling sering ditukar keliru. Perbedaan terpentingnya ada di kolom kedua: hanya satu yang boleh diikuti perintah atau ajakan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Boleh diikuti perintah?", "Rasa", "Contoh"],
+      "rows": [
+       ["-아/어서", "❌ tidak", "sebab netral, paling umum", "[늦어서|Neujeoseo] [죄송합니다|joesonghamnida]."],
+       ["-(으)니까", "✅ ya", "dasar keputusan; bisa terdengar membela diri", "[비가|Biga] [오니까|onikka] [우산|usan] [가져가|gajyeoga]."],
+       ["-기 때문에", "❌ tidak", "resmi, tulis, laporan", "[예산이|Yesani] [부족하기|bujokhagi] [때문에|ttaemune] [연기했습니다|yeongihaetseumnida]."],
+       ["-(으)므로", "❌ tidak", "sangat resmi, dokumen", "[규정에|Gyujeonge] [어긋나므로|eogeutnameuro] [반려합니다|banlyeohamnida]."],
+       ["-길래", "❌ tidak", "lisan; sebab dari luar yang membuatku berbuat", "[비가|Biga] [오길래|ogillae] [택시를|taeksireul] [탔어요|tasseoyo]."]
+      ]
+     }
+    },
+    {
+     "title": "Empat penghubung sebab tingkat menengah",
+     "body": [
+      "Keempatnya menandai lebih dari sekadar sebab: mereka menyatakan **penilaian pembicara** atas hubungan sebab-akibat itu."
+     ],
+     "table": {
+      "head": ["Bentuk", "Menempel di", "Akibatnya", "Contoh"],
+      "rows": [
+       ["-느라고", "kata kerja", "buruk; pelaku sama; waktu sama", "[게임하느라고|Geimhaneurago] [숙제를|sukjereul] [못|mot] [했어요|haesseoyo]."],
+       ["-는 바람에", "kata kerja", "buruk; dari luar; tak disengaja", "[차가|Chaga] [막히는|makineun] [바람에|barame] [늦었어요|neujeosseoyo]."],
+       ["-(으)ㄴ/는 탓에", "kata kerja, kata sifat", "buruk; menyalahkan", "[제|Je] [실수|silsu] [탓에|tase] [일이|iri] [커졌어요|keojyeosseoyo]."],
+       ["-덕분에", "kata benda, -(으)ㄴ/는", "baik; berterima kasih", "[도와주신|Dowajusin] [덕분에|deokbune] [끝냈습니다|kkeutnaetseumnida]."],
+       ["-더니", "kata kerja, kata sifat", "yang disaksikan lalu berbuah", "[열심히|Yeolsimhi] [하더니|hadeoni] [붙었네요|buteonneyo]."],
+       ["-았/었더니", "kata kerja", "aku berbuat, lalu kutemukan", "[가|Ga] [봤더니|bwatdeoni] [문이|muni] [닫혀|dachyeo] [있었어요|isseosseoyo]."]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menjelaskan keterlambatan proyek",
+   "intro": "Ani harus melaporkan bahwa proyeknya mundur. Perhatikan susunannya: pengakuan lebih dulu, baru sebab, lalu akibat, lalu langkah pencegahan. Menukar urutannya — sebab lebih dulu — membuat laporan terdengar seperti mencari alasan.",
+   "lines": [
+    { "speaker": "아니:", "text": "[부장님|Bujangnim], [보고|bogo] [드릴|deuril] [일이|iri] [있습니다|itseumnida]. [납품|Nappum] [일정이|iljeongi] [사흘|saheul] [지연될|jiyeondoel] [것|geot] [같습니다|gatseumnida].", "id": "Pak, ada yang harus saya laporkan. Jadwal pengiriman sepertinya akan mundur tiga hari.", "literal": "kepala-bagian, laporan — mempersembahkan-akan — urusan — ada. pengiriman — jadwal — tiga-hari — tertunda-akan — hal — seperti." },
+    { "speaker": "김 부장:", "text": "[원인이|Wonini] [뭡니까|mwomnikka]?", "id": "Apa penyebabnya?", "literal": "penyebab — apa-kah?" },
+    { "speaker": "아니:", "text": "[협력업체|Hyeomnyeogeopche] [공장에|gongjange] [정전이|jeongjeoni] [나는|naneun] [바람에|barame] [생산이|saengsani] [이틀|iteul] [멈췄습니다|meomchwotseumnida].", "id": "Pemadaman listrik di pabrik mitra membuat produksi berhenti dua hari.", "literal": "mitra-perusahaan — pabrik-pada — pemadaman — keluar-yang — angin-pada — produksi — dua-hari — berhenti-sudah." },
+    { "speaker": "김 부장:", "text": "[그건|Geugeon] [우리|uri] [잘못은|jalmoseun] [아니네요|animneyo]. [고객사에는|Gogaeksaeneun] [알렸습니까|allyeotseumnikka]?", "id": "Itu bukan kesalahan kita ya. Sudah diberi tahu ke klien?", "literal": "itu — mengenai — kita — kesalahan — mengenai — bukan-ternyata-nya. perusahaan-pelanggan-pada — mengenai — memberi-tahu-sudah-kah?" },
+    { "speaker": "아니:", "text": "[아직|Ajik] [못|mot] [했습니다|haetseumnida]. [정확한|Jeonghwakhan] [일정을|iljeongeul] [확인하느라고|hwaginhaneurago] [연락이|yeollagi] [늦어졌습니다|neujeojyeotseumnida]. [죄송합니다|Joesonghamnida].", "id": "Belum sempat. Karena sibuk memastikan jadwal yang pasti, pemberitahuannya jadi terlambat. Mohon maaf.", "literal": "belum — tidak-bisa — melakukan. tepat-yang — jadwal — memastikan-sibuk-karena — kabar — menjadi-terlambat-sudah. maaf." },
+    { "speaker": "김 부장:", "text": "[알겠습니다|Algetseumnida]. [늦어질수록|Neujeojilsurok] [고객사가|gogaeksaga] [더|deo] [불안해하기|buranhaehagi] [때문에|ttaemune], [오늘|oneul] [중으로|jungeuro] [먼저|meonjeo] [알리세요|alliseyo].", "id": "Baik. Karena makin terlambat klien makin cemas, beri tahu mereka hari ini juga.", "literal": "mengerti. menjadi-terlambat-makin — perusahaan-pelanggan — lebih — merasa-cemas-hal — karena, hari-ini — dalam-secara — dahulu — beri-tahulah-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [바로|baro] [연락드리겠습니다|yeollakdeurigetseumnida]. [보상|Bosang] [방안도|bangando] [같이|gachi] [제안할까요|jeanhalkkayo]?", "id": "Baik, akan segera saya hubungi. Perlu sekalian saya usulkan rencana kompensasi?", "literal": "ya, langsung — akan-menghubungi-mempersembahkan. kompensasi — rencana-juga — bersama — mengusulkan-bagaimana-nya?" },
+    { "speaker": "김 부장:", "text": "[좋은|Joeun] [생각입니다|saenggagimnida]. [사과만|Sagwaman] [하면|hamyeon] [오히려|ohiryeo] [불신이|bulsini] [커지니까|keojinikka], [대안을|daeaneul] [같이|gachi] [주세요|juseyo].", "id": "Ide bagus. Kalau hanya minta maaf justru ketidakpercayaan membesar, jadi berikan sekalian alternatifnya.", "literal": "baik-yang — pikiran-adalah. permintaan-maaf-hanya — melakukan-kalau — justru — ketidakpercayaan — membesar-karena, alternatif — bersama — berilah-nya." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [재발|Jaebal] [방지|bangji] [대책도|daechaekdo] [정리해서|jeongnihaeseo] [내일|naeil] [오전에|ojeone] [보고드리겠습니다|bogodeurigetseumnida].", "id": "Baik. Saya akan merangkum juga langkah pencegahan agar tidak terulang, dan melaporkannya besok pagi.", "literal": "mengerti. terulang — pencegahan — tindakan-juga — merapikan-lalu — besok — pagi-pada — akan-laporan-mempersembahkan." },
+    { "speaker": "김 부장:", "text": "[그렇게|Geureoke] [해요|haeyo]. [그리고|Geurigo] [이번|ibeon] [일|il] [때문에|ttaemune] [너무|neomu] [자책하지|jachaekhaji] [마세요|maseyo].", "id": "Lakukan begitu. Dan jangan terlalu menyalahkan diri karena kejadian ini.", "literal": "begitu-secara — lakukan-nya. dan — kali-ini — urusan — karena — terlalu — menyalahkan-diri — janganlah-nya." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [챙겨|Chaenggyeo] [주신|jusin] [덕분에|deokbune] [빨리|ppalli] [대응할|daeeunghal] [수|su] [있었습니다|isseotseumnida].", "id": "Terima kasih. Berkat perhatian Bapak, saya bisa menanganinya dengan cepat.", "literal": "terima-kasih. mengurus — memberi-beliau-yang — berkat-pada — cepat — menanggapi-akan — kemungkinan — ada-sudah." }
+   ],
+   "notes": [
+    "**Laporan buruk di kantor Korea punya urutan tetap: pengakuan → sebab → akibat → tindakan.** Ani membukanya dengan 보고 드릴 일이 있습니다 dan langsung menyebut akibatnya (mundur tiga hari) sebelum menjelaskan sebabnya. Membuka dengan sebab membuatnya terdengar seperti 변명 (alasan-alasan).",
+    "**-기 때문에 adalah bentuk sebab untuk ragam resmi.** Ia tak pernah diikuti perintah, jadi kalimat 부장님 memakainya di anak kalimat lalu memakai 니까 tersirat di induknya. Kata bendanya: 때문에 langsung setelah kata benda — 이번 일 때문에.",
+    "**-(으)ㄹ수록 berarti “makin … makin …”.** 늦어질수록 더 불안해하다. Bentuk penuhnya sering dipasangkan dengan 면: 늦어지면 늦어질수록. Salah satu pola yang paling sering muncul di tulisan berpendapat.",
+    "**불안해하다, bukan 불안하다, untuk orang ketiga.** Kata sifat perasaan dalam bahasa Korea tidak bisa langsung dipakai untuk orang lain: 나는 슬프다 benar, tapi 그 사람은 슬퍼한다. Akhiran -아/어하다 mengubah kata sifat perasaan menjadi kata kerja yang boleh dipakai untuk orang lain.",
+    "**오히려 berarti “justru malah”.** Ia membalik dugaan yang wajar: orang mengira minta maaf memperbaiki keadaan, padahal justru sebaliknya. Sepadan yang lebih resmi: 도리어.",
+    "**재발 방지 대책 adalah kata baku dunia kerja Korea.** Harfiahnya “tindakan pencegahan terulangnya kembali”. Setiap laporan kesalahan di perusahaan Korea diharapkan berakhir dengan bagian ini — tanpanya, laporan dianggap belum selesai.",
+    "**자책하다 berarti menyalahkan diri sendiri.** Ucapan 자책하지 마세요 dari atasan adalah bagian dari tata krama kantor Korea: sesudah bawahan mengakui kesalahan, atasan diharapkan meredakannya.",
+    "**챙겨 주신 덕분에 menutup percakapan dengan mengalihkan jasa kepada atasan.** Menutup laporan buruk dengan rasa terima kasih — bukan dengan permintaan maaf sekali lagi — adalah kebiasaan yang membedakan pekerja berpengalaman."
+   ],
+   "grammars": [
+    {
+     "title": "Menyusun permintaan maaf resmi",
+     "body": [
+      "Permintaan maaf di dunia kerja Korea punya kerangka tetap. Melewatkan bagian keempat adalah kesalahan yang paling sering dibuat orang asing."
+     ],
+     "table": {
+      "head": ["Bagian", "Kalimat baku", "Catatan"],
+      "rows": [
+       ["1. Pengakuan", "[먼저|Meonjeo] [사과|sagwa] [말씀|malsseum] [드립니다|deurimnida].", "sebelum apa pun"],
+       ["2. Fakta", "[납품이|Nappumi] [사흘|saheul] [지연되었습니다|jiyeondoeeotseumnida].", "angka dan tanggal, tanpa hiasan"],
+       ["3. Sebab", "[협력업체|Hyeomnyeogeopche] [정전으로|jeongjeoneuro] [생산이|saengsani] [중단되었습니다|jungdandoeeotseumnida].", "singkat; jangan panjang"],
+       ["4. Tindakan", "[재발|Jaebal] [방지를|bangjireul] [위해|wihae] … (langkah nyata)", "wajib; tanpa ini belum selesai"],
+       ["5. Penutup", "[다시|Dasi] [한번|hanbeon] [사과드립니다|sagwadeurimnida].", "menutup, bukan mengulang alasan"]
+      ]
+     }
+    },
+    {
+     "title": "-았/었더니 vs -더니",
+     "body": [
+      "Dua bentuk yang beda satu suku kata dan beda pelakunya. Ini salah satu titik ujian favorit TOPIK.",
+      "**-더니** — pelakunya **orang lain**, yang perbuatannya kusaksikan, lalu berbuah sekarang: 매일 운동하더니 살이 빠졌네요.",
+      "**-았/었더니** — pelakunya **aku**, dan hasilnya sesuatu yang kutemukan: 아침을 안 먹었더니 배가 고파요. · 전화했더니 안 받더라고요.",
+      "⚠️ Kalau memakai -더니 untuk diri sendiri, kalimatnya terdengar seolah kamu mengamati dirimu dari luar. Kadang sengaja dipakai untuk efek lucu, tapi di ujian ia dihitung salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Memilih penghubung sebab dalam lima detik",
+   "blocks": [
+    { "type": "p", "text": "Tanyakan tiga hal berurutan, dan pilihannya menyempit sendiri. Ini cara tercepat memilih tanpa menghafal daftar." },
+    { "type": "tabel", "head": ["Pertanyaan", "Kalau ya", "Kalau tidak"], "rows": [
+     ["Kalimat induknya perintah atau ajakan?", "wajib -(으)니까", "lanjut ke pertanyaan berikutnya"],
+     ["Ini tulisan resmi atau laporan?", "-기 때문에 · -(으)므로", "lanjut"],
+     ["Akibatnya buruk dan tak disengaja?", "-는 바람에", "lanjut"],
+     ["Aku sendiri sibuk melakukan sesuatu?", "-느라고", "lanjut"],
+     ["Akibatnya baik dan aku berterima kasih?", "-덕분에", "lanjut"],
+     ["Aku mau menyalahkan sesuatu?", "-(으)ㄴ/는 탓에", "pakai -아/어서"]
+    ]},
+    { "type": "sub", "text": "Satu keadaan, enam kalimat" },
+    { "type": "tabel", "head": ["Kalimat", "Yang tersirat"], "rows": [
+     ["[비가|Biga] [와서|waseo] [늦었어요|neujeosseoyo].", "netral; sekadar menjelaskan"],
+     ["[비가|Biga] [오니까|onikka] [택시|taeksi] [타고|tago] [가세요|gaseyo].", "dasar saran; diikuti perintah"],
+     ["[비가|Biga] [왔기|watgi] [때문에|ttaemune] [행사가|haengsaga] [취소되었습니다|chwisodoeeotseumnida].", "laporan resmi"],
+     ["[비가|Biga] [오는|oneun] [바람에|barame] [다|da] [젖었어요|jeojeosseoyo].", "musibah kecil yang merusak rencana"],
+     ["[비가|Biga] [온|on] [탓에|tase] [손님이|sonnimi] [없었어요|eopseosseoyo].", "menyalahkan hujan"],
+     ["[비가|Biga] [온|on] [덕분에|deokbune] [날씨가|nalssiga] [시원해졌어요|siwonhaejyeosseoyo].", "berterima kasih pada hujan"]
+    ]},
+    { "type": "kotak", "title": "Empat jebakan bentuk", "items": [
+     "**-아/어서 dan -기 때문에 tak boleh diikuti perintah.** ❌ 비가 와서 우산 가져가세요. ✅ 비가 오니까 우산 가져가세요.",
+     "**-아/어서 dan -기 때문에 tidak menerima kala lampau di anak kalimatnya.** ❌ 늦었어서 · ✅ 늦어서. Bentuk lampaunya sudah tersirat dari induk kalimat. Tapi -기 때문에 boleh: 늦었기 때문에.",
+     "**-느라고 menuntut pelaku yang sama.** ❌ 동생이 떠드느라고 제가 못 잤어요. ✅ 동생이 떠드는 바람에 못 잤어요.",
+     "**-(으)니까 di kalimat permintaan maaf terdengar membela diri.** ❌ 차가 막히니까 늦었습니다. ✅ 차가 막혀서 늦었습니다. Ini kesalahan sopan santun, bukan tata bahasa."
+    ]}
+   ]
+  },
+  {
+   "title": "Alasan yang bisa dipakai, dan yang tidak",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Korea punya gudang alasan baku yang diterima tanpa dipertanyakan, dan beberapa alasan yang justru memperburuk keadaan. Perbedaannya bukan soal kebenaran, melainkan soal apakah alasannya menempatkan tanggung jawab di luar dirimu atau di dalam." },
+    { "type": "tabel", "head": ["Alasan", "Diterima?", "Kenapa"], "rows": [
+     ["[갑자기|Gapjagi] [일이|iri] [생겨서요|saenggyeoseoyo].", "✅ sangat", "samar, tak akan dikejar"],
+     ["[집에|Jibe] [일이|iri] [좀|jom] [있어서요|isseoseoyo].", "✅ sangat", "urusan keluarga tak dipertanyakan"],
+     ["[몸이|Momi] [좀|jom] [안|an] [좋아서요|joaseoyo].", "✅ ya", "kesehatan selalu diterima"],
+     ["[차가|Chaga] [많이|mani] [막혔습니다|makyeotseumnida].", "✅ ya", "di luar kendali"],
+     ["[선약이|Seonyagi] [있어서요|isseoseoyo].", "✅ ya", "janji lebih dulu; sopan"],
+     ["[깜빡했습니다|Kkamppakaetseumnida].", "⚠️ hati-hati", "jujur, tapi mengakui kelalaian"],
+     ["[늦잠을|Neutjameul] [잤습니다|jatseumnida].", "❌ jangan di kantor", "sepenuhnya kesalahan sendiri"],
+     ["[하기|Hagi] [싫어서요|sireoseoyo].", "❌ tidak pernah", "terdengar seperti menantang"]
+    ]},
+    { "type": "sub", "text": "핑계 dan 변명 — dua kata untuk “alasan” yang keduanya buruk" },
+    { "type": "p", "text": "Bahasa Korea tidak punya kata netral untuk “alasan yang dikemukakan”. 이유 berarti sebab yang objektif; tapi begitu sebab itu dipakai untuk membela diri, namanya berubah menjadi 핑계 (dalih) atau 변명 (pembelaan) — dan keduanya berkonotasi buruk." },
+    { "type": "tabel", "head": ["Kalimat", "Arti", "Kapan"], "rows": [
+     ["[핑계|Pinggye] [대지|daeji] [마세요|maseyo].", "jangan cari dalih", "teguran keras"],
+     ["[변명의|Byeonmyeongui] [여지가|yeojiga] [없습니다|eopseumnida].", "tak ada pembelaan", "mengakui sepenuhnya"],
+     ["[변명|Byeonmyeong] [같지만|gatjiman]…", "terdengar seperti alasan, tapi …", "membuka penjelasan dengan hati-hati"],
+     ["[이유는|Iyuneun] [이렇습니다|ireoseumnida].", "sebabnya begini", "netral, laporan"],
+     ["[제|Je] [불찰입니다|bulchalimnida].", "itu kelalaian saya", "mengakui, sangat resmi"],
+     ["[전적으로|Jeonjeogeuro] [제|je] [책임입니다|chaegimimnida].", "sepenuhnya tanggung jawab saya", "paling berat"]
+    ]},
+    { "type": "p", "text": "⚠️ Di kantor Korea, mengakui tanggung jawab lebih cepat daripada yang terasa wajar bagi orang Indonesia justru memperbaiki kedudukanmu. Menjelaskan sebab **sesudah** mengakui dianggap laporan; menjelaskan sebab **sebelum** mengakui dianggap 변명." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "이유", "baca": "iyu", "id": "alasan, sebab" },
+  { "ko": "원인", "baca": "wonin", "id": "penyebab" },
+  { "ko": "핑계", "baca": "pinggye", "id": "dalih" },
+  { "ko": "변명", "baca": "byeonmyeong", "id": "pembelaan diri" },
+  { "ko": "불찰", "baca": "bulchal", "id": "kelalaian" },
+  { "ko": "책임", "baca": "chaegim", "id": "tanggung jawab" },
+  { "ko": "덕분", "baca": "deokbun", "id": "berkat" },
+  { "ko": "탓", "baca": "tat", "id": "gara-gara (buruk)" },
+  { "ko": "바람에", "baca": "barame", "id": "gara-gara (tak disengaja)" },
+  { "ko": "늦잠", "baca": "neutjam", "id": "bangun kesiangan" },
+  { "ko": "지각하다", "baca": "jigakhada", "id": "terlambat datang" },
+  { "ko": "새벽", "baca": "saebyeok", "id": "dini hari" },
+  { "ko": "겨우", "baca": "gyeou", "id": "dengan susah payah" },
+  { "ko": "간신히", "baca": "gansinhi", "id": "nyaris tidak" },
+  { "ko": "고장 나다", "baca": "gojang nada", "id": "rusak" },
+  { "ko": "멈추다", "baca": "meomchuda", "id": "berhenti" },
+  { "ko": "버티다", "baca": "beotida", "id": "bertahan" },
+  { "ko": "자책하다", "baca": "jachaekhada", "id": "menyalahkan diri" },
+  { "ko": "깜빡하다", "baca": "kkamppakada", "id": "lupa sesaat" },
+  { "ko": "선약", "baca": "seonyak", "id": "janji yang lebih dulu" },
+  { "ko": "납품", "baca": "nappum", "id": "pengiriman barang" },
+  { "ko": "지연되다", "baca": "jiyeondoeda", "id": "tertunda" },
+  { "ko": "차질", "baca": "chajil", "id": "gangguan rencana" },
+  { "ko": "협력업체", "baca": "hyeomnyeogeopche", "id": "perusahaan mitra" },
+  { "ko": "고객사", "baca": "gogaeksa", "id": "perusahaan klien" },
+  { "ko": "정전", "baca": "jeongjeon", "id": "pemadaman listrik" },
+  { "ko": "생산", "baca": "saengsan", "id": "produksi" },
+  { "ko": "중단되다", "baca": "jungdandoeda", "id": "terhenti" },
+  { "ko": "보상", "baca": "bosang", "id": "kompensasi" },
+  { "ko": "방안", "baca": "bangan", "id": "rencana penanganan" },
+  { "ko": "대안", "baca": "daean", "id": "alternatif" },
+  { "ko": "대책", "baca": "daechaek", "id": "tindakan penanggulangan" },
+  { "ko": "재발", "baca": "jaebal", "id": "terulang kembali" },
+  { "ko": "방지", "baca": "bangji", "id": "pencegahan" },
+  { "ko": "대응하다", "baca": "daeeunghada", "id": "menanggapi, menangani" },
+  { "ko": "제안하다", "baca": "jeanhada", "id": "mengusulkan" },
+  { "ko": "사과하다", "baca": "sagwahada", "id": "meminta maaf" },
+  { "ko": "불신", "baca": "bulsin", "id": "ketidakpercayaan" },
+  { "ko": "불안하다", "baca": "buranhada", "id": "cemas" },
+  { "ko": "정확하다", "baca": "jeonghwakhada", "id": "tepat, akurat" },
+  { "ko": "오히려", "baca": "ohiryeo", "id": "justru malah" },
+  { "ko": "챙기다", "baca": "chaenggida", "id": "mengurus, memperhatikan" },
+  { "ko": "잘못", "baca": "jalmot", "id": "kesalahan" },
+  { "ko": "규정", "baca": "gyujeong", "id": "peraturan" },
+  { "ko": "어긋나다", "baca": "eogeutnada", "id": "menyimpang, tidak sesuai" },
+  { "ko": "지하철", "baca": "jihacheol", "id": "kereta bawah tanah" },
+  { "ko": "떠들다", "baca": "tteodeulda", "id": "ribut, berisik" },
+  { "ko": "젖다", "baca": "jeotda", "id": "basah" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih penghubung sebab yang tepat: -아/어서, -(으)니까, atau -기 때문에.",
+   "items": [
+    "비가 ____ 우산을 가져가세요.",
+    "늦____ 죄송합니다.",
+    "예산이 부족하____ 사업이 연기되었습니다.",
+    "시간이 없____ 빨리 갑시다.",
+    "길이 막____ 늦었어요."
+   ]
+  },
+  {
+   "prompt": "Isi dengan -느라고, -는 바람에, -(으)ㄴ/는 탓에, atau -덕분에.",
+   "items": [
+    "게임을 ____ 숙제를 못 했어요.",
+    "지하철이 고장 ____ 지각했어요.",
+    "선생님께서 도와주신 ____ 시험에 붙었어요.",
+    "제 실수 ____ 일이 커졌습니다.",
+    "보고서를 ____ 밤을 새웠어요."
+   ]
+  },
+  {
+   "prompt": "Pilih antara -더니 dan -았/었더니.",
+   "items": [
+    "매일 운동하____ 살이 빠졌네요.",
+    "아침을 안 먹____ 배가 고파요.",
+    "전화했____ 안 받더라고요.",
+    "그 사람은 계속 야근하____ 결국 병이 났어요.",
+    "창문을 열____ 시원한 바람이 들어왔어요."
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat yang salah.",
+   "items": [
+    "비가 와서 우산 가져가세요.",
+    "늦었어서 죄송합니다.",
+    "동생이 떠드느라고 제가 못 잤어요.",
+    "일찍 일어나는 바람에 기차를 탔어요.",
+    "차가 막히니까 늦었습니다. (kepada atasan, minta maaf)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "잤거든 / 쓰느라고 / 보고서 / 세 시에 / 새벽",
+    "늦었어 / 바람에 / 고장 나는 / 지하철이",
+    "덕분에 / 준 / 기다려 / 먹네 / 점심은 / 네가",
+    "멈췄습니다 / 정전이 / 생산이 / 나는 / 바람에 / 공장에",
+    "커지니까 / 오히려 / 사과만 / 불신이 / 하면"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Jelaskan kepada teman kenapa kamu terlambat, dengan -느라고 dan -는 바람에 sekaligus.",
+    "Laporkan kepada atasan bahwa pekerjaanmu mundur dua hari, dengan urutan pengakuan-sebab-tindakan.",
+    "Berterima kasih kepada seseorang yang membuatmu berhasil, dengan -덕분에.",
+    "Ceritakan sesuatu yang kamu saksikan pada orang lain lalu berbuah sekarang, dengan -더니."
+   ]
+  }
+ ],
+ "answers": [
+  "오니까 — 어서 — 기 때문에 — 으니까 — 혀서",
+  "하느라고 — 나는 바람에 — 덕분에 — 탓에 — 쓰느라고",
+  "더니 — 었더니 — 더니 — 더니 — 었더니",
+  "비가 오니까 우산 가져가세요. — 늦어서 죄송합니다. — 동생이 떠드는 바람에 못 잤어요. — 일찍 일어난 덕분에 기차를 탔어요. — 차가 막혀서 늦었습니다.",
+  "보고서 쓰느라고 새벽 세 시에 잤거든. — 지하철이 고장 나는 바람에 늦었어. — 네가 기다려 준 덕분에 점심은 먹네. — 공장에 정전이 나는 바람에 생산이 멈췄습니다. — 사과만 하면 오히려 불신이 커지니까.",
+  "어제 일하느라고 늦게 잤는데 지하철까지 고장 나는 바람에 더 늦었어. — 부장님, 먼저 사과 말씀 드립니다. 일정이 이틀 지연될 것 같습니다. 협력업체 사정 때문인데, 오늘 중으로 고객사에 알리고 재발 방지 대책도 정리해서 보고드리겠습니다. — 도와주신 덕분에 잘 끝낼 수 있었습니다. — 그 친구가 매일 새벽까지 공부하더니 결국 합격했더라고요."
+ ]
+}

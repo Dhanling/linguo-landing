@@ -1,0 +1,320 @@
+{
+ "title": "Meninggikan orang yang kamu bicarakan",
+ "title_target": "할아버지께서 주무세요 — Harabeojikkeseo jumuseyo",
+ "goal": "Memasang seluruh perkakas 주체 높임: sisipan -(으)시-, partikel 께서 dan 께, kata kerja pengganti seperti 드시다 dan 주무시다, serta kata benda hormat seperti 성함 dan 연세 — dan tahu apa yang TIDAK boleh ditinggikan.",
+ "bekal": [
+  "menyisipkan -(으)시- di tempat yang benar, termasuk pada bentuk lampau dan bentuk penyifat",
+  "mengganti 이/가 dengan 께서 dan 에게 dengan 께",
+  "memakai delapan kata kerja hormat yang tidak dibentuk dengan 시",
+  "memakai kata benda hormat: 성함, 연세, 진지, 댁, 말씀, 생신, 분",
+  "menghindari dua kesalahan besar: meninggikan diri sendiri dan meninggikan benda"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Menanyakan kabar keluarga",
+   "intro": "Ani bertemu Suji, yang kakeknya baru keluar dari rumah sakit. Hitung berapa kali 시 muncul, dan perhatikan bahwa Suji memakainya untuk kakeknya sendiri — meninggikan anggota keluarga sendiri di depan orang luar adalah hal biasa dalam bahasa Korea sehari-hari.",
+   "lines": [
+    { "speaker": "아니:", "text": "[수지야|Sujiya], [할아버지|harabeoji] [퇴원|toewon] [하셨어|hasyeosseo]?", "id": "Suji, kakekmu sudah keluar dari rumah sakit?", "literal": "Suji-hai, kakek — keluar-rumah-sakit — melakukan-beliau-sudah?" },
+    { "speaker": "수지:", "text": "[응|Eung], [지난주에|jinanjue] [퇴원하셨어|toewonhasyeosseo]. [지금은|Jigeumeun] [댁에|daege] [계셔|gyesyeo].", "id": "Iya, minggu lalu sudah pulang. Sekarang di rumah.", "literal": "ya, minggu-lalu-pada — keluar-rumah-sakit-beliau-sudah. sekarang — mengenai — rumah-di — berada-beliau." },
+    { "speaker": "아니:", "text": "[다행이다|Dahaengida]. [연세가|Yeonsega] [어떻게|eotteoke] [되셔|doesyeo]?", "id": "Syukurlah. Beliau usianya berapa ya?", "literal": "untung-adalah. usia — bagaimana — menjadi-beliau?" },
+    { "speaker": "수지:", "text": "[올해|Olhae] [여든셋이셔|yeodeunsesisyeo]. [그런데도|Geureondedo] [아직|ajik] [매일|maeil] [산책하셔|sanchaekhasyeo].", "id": "Tahun ini delapan puluh tiga. Padahal begitu, masih jalan-jalan tiap hari.", "literal": "tahun-ini — delapan-puluh-tiga-beliau-adalah. begitu-padahal-pun — masih — tiap-hari — berjalan-jalan-beliau." },
+    { "speaker": "아니:", "text": "[대단하시다|Daedanhasida]. [식사는|Siksaneun] [잘|jal] [하셔|hasyeo]?", "id": "Hebat sekali beliau. Makannya lancar?", "literal": "luar-biasa-beliau-adalah. makan — mengenai — baik — melakukan-beliau?" },
+    { "speaker": "수지:", "text": "[요즘은|Yojeumeun] [잘|jal] [드셔|deusyeo]. [입원했을|Ibwonhaesseul] [때는|ttaeneun] [진지도|jinjido] [잘|jal] [못|mot] [드셨는데|deusyeonneunde].", "id": "Belakangan makannya banyak. Waktu dirawat malah nasi pun tidak bisa masuk.", "literal": "belakangan — mengenai — baik — makan-beliau. masuk-rumah-sakit-ketika — mengenai — nasi-hormat-juga — baik — tidak-bisa — makan-beliau-padahal." },
+    { "speaker": "아니:", "text": "[걱정|Geokjeong] [많이|mani] [했겠다|haetgetda]. [부모님도|Bumonimdo] [고생|gosaeng] [많으셨겠어|maneusyeotgesseo].", "id": "Pasti khawatir banget. Orang tuamu juga pasti capek sekali.", "literal": "khawatir — banyak — melakukan-pasti. orang-tua-juga — kesusahan — banyak-beliau-pasti." },
+    { "speaker": "수지:", "text": "[맞아|Maja]. [특히|Teukhi] [엄마가|eommaga] [매일|maeil] [병원에|byeongwone] [다니셨어|danisyeosseo].", "id": "Betul. Terutama ibuku, tiap hari bolak-balik ke rumah sakit.", "literal": "benar. terutama — ibu — tiap-hari — rumah-sakit-ke — pulang-pergi-beliau-sudah." },
+    { "speaker": "아니:", "text": "[할아버지께|Harabeojikke] [안부|anbu] [좀|jom] [전해|jeonhae] [드려|deuryeo].", "id": "Sampaikan salamku ya untuk kakekmu.", "literal": "kakek-kepada — kabar — sedikit — menyampaikan — persembahkan." },
+    { "speaker": "수지:", "text": "[알겠어|Algesseo], [고마워|gomawo]. [다음에|Daeume] [한번|hanbeon] [같이|gachi] [뵈러|boero] [가자|gaja].", "id": "Oke, makasih. Lain kali kita jenguk beliau bareng-bareng ya.", "literal": "mengerti, terima-kasih. lain-kali — sekali — bersama — menemui-untuk — mari-pergi." },
+    { "speaker": "아니:", "text": "[좋지|Jochi]. [나도|Nado] [인사|insa] [드리고|deurigo] [싶어|sipeo].", "id": "Boleh. Aku juga ingin memberi salam pada beliau.", "literal": "bagus. aku-juga — salam — mempersembahkan-dan — ingin." }
+   ],
+   "notes": [
+    "**Sisipan -(으)시- ditempelkan pada akar, sebelum semua lapisan lain.** 퇴원하다 → 퇴원하 + 시 + 었 + 어 = 퇴원하셨어. Urutannya tetap: akar → 시 → kala → tingkat tutur. Mengubah urutannya menghasilkan bentuk yang tidak ada.",
+    "**Perhatikan bentuk pendeknya di percakapan.** -(으)시- + 어 menjadi 셔, bukan 시어: 하셔, 가셔, 드셔, 계셔. Di 존댓말 menjadi 하세요, 가세요, 드세요, 계세요. Dua bentuk ini yang paling sering dipakai dan sebaiknya dihafal sebagai satu paket, bukan diturunkan tiap kali.",
+    "**Orang Korea meninggikan anggota keluarga sendiri kepada orang luar.** Suji berkata 할아버지 퇴원하셨어 tentang kakeknya sendiri. Ini kebalikan dari kebiasaan Jepang, dan sepenuhnya wajar di sini — kecuali dalam keadaan sangat resmi.",
+    "**연세가 어떻게 되세요? adalah satu-satunya cara sopan menanyakan umur orang tua.** ❌ 몇 살이세요? terdengar kasar meski memakai 시. Pola ‘어떻게 되세요?’ dipakai juga untuk hal lain yang berisiko: 성함이 어떻게 되세요?, 연락처가 어떻게 되세요?",
+    "**여든셋이셔 memakai angka asli Korea + 이시다.** Untuk usia orang tua, angka asli Korea + 살 dipakai sehari-hari; bentuk resmi memakai angka Sino-Korea + 세: 팔십삼 세. Di dokumen selalu yang kedua.",
+    "**드시다 menggantikan 먹다 dan 마시다 sekaligus.** Ia bukan 먹으시다 — kata kerjanya berganti seluruhnya. Bentuk yang lebih tinggi lagi adalah 잡수시다, dipakai kepada orang yang jauh lebih tua. Sedangkan 진지 adalah bentuk hormat dari 밥.",
+    "**계시다 menggantikan 있다 hanya untuk keberadaan orang.** 할아버지 댁에 계셔 (beliau ada di rumah) benar, tapi untuk kepemilikan tetap 있으시다: 할아버지 차가 있으세요, bukan ❌차가 계세요. Mobil tidak bisa dihormati.",
+    "**안부 전해 드려 adalah kalimat titipan salam yang baku.** Perhatikan 드리다 di ujungnya — karena salam itu dipersembahkan kepada orang yang lebih tinggi. Kepada teman, cukup 안부 전해 줘.",
+    "**뵈러 가자 dari 뵙다, bentuk merendah dari 보다 (menemui).** Ia dipakai bukan untuk meninggikan kakek dengan 시, melainkan untuk merendahkan diri sendiri — perkakas yang dibongkar di unit berikutnya."
+   ],
+   "grammars": [
+    {
+     "title": "-(으)시- di setiap bentuk",
+     "body": [
+      "Sisipan ini bisa menempel di hampir semua tempat: akhiran akhir kalimat, bentuk penyifat, penghubung, bahkan bentuk pengandaian."
+     ],
+     "table": {
+      "head": ["Bentuk", "Tanpa 시", "Dengan 시"],
+      "rows": [
+       ["해요체", "[가요|gayo]", "[가세요|gaseyo]"],
+       ["반말", "[가|ga]", "[가셔|gasyeo]"],
+       ["합니다체", "[갑니다|gamnida]", "[가십니다|gasimnida]"],
+       ["Lampau", "[갔어요|gasseoyo]", "[가셨어요|gasyeosseoyo]"],
+       ["Akan datang", "[갈 거예요|gal geoyeyo]", "[가실 거예요|gasil geoyeyo]"],
+       ["Penyifat sekarang", "[가는|ganeun]", "[가시는|gasineun]"],
+       ["Penyifat lampau", "[간|gan]", "[가신|gasin]"],
+       ["Penghubung 면", "[가면|gamyeon]", "[가시면|gasimyeon]"],
+       ["Penghubung 니까", "[가니까|ganikka]", "[가시니까|gasinikka]"],
+       ["Konsonan + 으시", "[읽다|ikda]", "[읽으세요|ilgeuseyo]"],
+       ["ㄹ luluh", "[살다|salda]", "[사세요|saseyo]"]
+      ]
+     }
+    },
+    {
+     "title": "Delapan kata kerja yang berganti seluruhnya",
+     "body": [
+      "Kata-kata ini tidak dibentuk dengan 시. Menempelkan 시 pada bentuk biasanya (❌먹으시다 untuk orang tua, ❌있으시다 untuk orang) langsung terdengar salah."
+     ],
+     "table": {
+      "head": ["Biasa", "Hormat", "Arti", "⚠️"],
+      "rows": [
+       ["[있다|itda]", "[계시다|gyesida]", "ada (orang)", "untuk benda tetap 있으시다"],
+       ["[먹다|meokda] · [마시다|masida]", "[드시다|deusida] · [잡수시다|japsusida]", "makan, minum", "잡수시다 lebih tinggi"],
+       ["[자다|jada]", "[주무시다|jumusida]", "tidur", "주무세요 = selamat tidur"],
+       ["[말하다|malhada]", "[말씀하시다|malsseumhasida]", "berbicara", "kata bendanya 말씀"],
+       ["[아프다|apeuda]", "[편찮으시다|pyeonchaneusida]", "sakit", "hanya untuk orang tua"],
+       ["[죽다|jukda]", "[돌아가시다|doragasida]", "meninggal", "harfiah: kembali pulang"],
+       ["[배고프다|baegopeuda]", "[시장하시다|sijanghasida]", "lapar", "agak kuno tapi masih hidup"],
+       ["[데리고 가다|derigo gada]", "[모시고 가다|mosigo gada]", "mengantar", "juga 모시다 sendirian"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Melapor kepada direktur",
+   "intro": "Ani harus melapor kepada direktur tentang sesuatu yang dikerjakan kepala bagiannya. Perhatikan bahwa ia tetap meninggikan 부장님 meskipun sedang berbicara kepada orang yang lebih tinggi lagi — dan itulah kebiasaan kantor Korea masa kini.",
+   "lines": [
+    { "speaker": "아니:", "text": "[대표님|Daepyonim], [잠시|jamsi] [시간|sigan] [괜찮으십니까|gwaenchaneusimnikka]?", "id": "Pak Direktur, apakah ada waktu sebentar?", "literal": "direktur, sejenak — waktu — tidak-apa-apa-beliau-kah?" },
+    { "speaker": "대표:", "text": "[네|Ne], [말씀하세요|malsseumhaseyo].", "id": "Ya, silakan bicara.", "literal": "ya, berbicara-beliau-lah." },
+    { "speaker": "아니:", "text": "[김|Kim] [부장님께서|bujangnimkkeseo] [내일|naeil] [출장을|chuljangeul] [가시는데|gasineunde], [그|geu] [전에|jeone] [보고서를|bogoseoreul] [확인해|hwaginhae] [주셨으면|jusyeosseumyeon] [해서요|haeseoyo].", "id": "Pak Kabag Kim besok berangkat dinas luar, jadi saya harap sebelum itu laporannya bisa Bapak periksa.", "literal": "Kim — kepala-bagian-yang — besok — perjalanan-dinas — pergi-beliau-padahal, itu — sebelum-pada — laporan — memeriksa — memberi-beliau-kalau — melakukan-karena-nya." },
+    { "speaker": "대표:", "text": "[아|A], [벌써|beolsseo] [완성됐어요|wanseongdwaesseoyo]?", "id": "Ah, sudah selesai?", "literal": "ah, sudah — selesai-menjadi-sudah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [어제|eoje] [밤에|bame] [마무리했습니다|mamurihaetseumnida]. [메일로|Meillo] [보내|bonae] [드릴까요|deurilkkayo]?", "id": "Ya, saya rampungkan tadi malam. Saya kirimkan lewat surel?", "literal": "ya, kemarin — malam-pada — merampungkan. surel-dengan — mengirim — mempersembahkan-bagaimana-nya?" },
+    { "speaker": "대표:", "text": "[그렇게|Geureoke] [해요|haeyo]. [그런데|Geureonde] [부장님은|bujangnimeun] [이미|imi] [보셨어요|bosyeosseoyo]?", "id": "Ya begitu saja. Ngomong-ngomong, Pak Kabag sudah lihat?", "literal": "begitu-secara — lakukan-nya. tapi — kepala-bagian — mengenai — sudah — melihat-beliau-sudah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [부장님께|bujangnimkke] [먼저|meonjeo] [보여|boyeo] [드렸습니다|deuryeotseumnida]. [몇|Myeot] [군데|gunde] [수정하라고|sujeongharago] [하셔서|hasyeoseo] [고쳤습니다|gochyeotseumnida].", "id": "Ya, saya perlihatkan lebih dulu kepada Pak Kabag. Beliau meminta beberapa bagian diperbaiki, jadi sudah saya betulkan.", "literal": "ya, kepala-bagian-kepada — dahulu — memperlihatkan — mempersembahkan-sudah. berapa — tempat — memperbaiki-perintah — melakukan-beliau-karena — memperbaiki-sudah." },
+    { "speaker": "대표:", "text": "[잘했어요|Jalhaesseoyo]. [수고|Sugo] [많았어요|manasseoyo].", "id": "Bagus. Kerja kerasmu banyak.", "literal": "baik-melakukan-sudah-nya. jerih-payah — banyak-adalah-nya." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [혹시|Hoksi] [더|deo] [필요하신|piryohasin] [자료가|jaryoga] [있으시면|isseusimyeon] [말씀해|malsseumhae] [주십시오|jusipsio].", "id": "Terima kasih. Kalau ada bahan lain yang Bapak perlukan, mohon beri tahu saya.", "literal": "terima-kasih. barangkali — lebih — memerlukan-beliau-yang — bahan — ada-beliau-kalau — berbicara — berilah." },
+    { "speaker": "대표:", "text": "[알겠어요|Algesseoyo]. [아|A], [부장님|bujangnim] [출장|chuljang] [일정도|iljeongdo] [같이|gachi] [보내|bonae] [줘요|jwoyo].", "id": "Baik. Ah, kirimkan sekalian jadwal dinas Pak Kabag juga.", "literal": "mengerti-nya. ah, kepala-bagian — perjalanan-dinas — jadwal-juga — bersama — mengirim — berilah-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [바로|baro] [보내|bonae] [드리겠습니다|deurigetseumnida].", "id": "Baik, akan segera saya kirimkan.", "literal": "ya, langsung — mengirim — akan-mempersembahkan." }
+   ],
+   "notes": [
+    "**께서 menggantikan 이/가 untuk pelaku yang dihormati.** 김 부장님께서 가시는데 — dua penanda hormat sekaligus, di partikel dan di kata kerja. Di percakapan santai 께서 sering dilewati dan hanya 시 yang dipakai; di laporan resmi dan tulisan, 께서 hampir wajib.",
+    "**께 menggantikan 에게 atau 한테.** 부장님께 보여 드렸습니다. Menggabungkannya dengan bentuk merendah 드리다 adalah pasangan yang hampir selalu muncul bersama.",
+    "**압존법: aturan lama yang sudah luruh.** Dulu, kepada direktur kamu **tidak** boleh meninggikan kepala bagian — kamu harus berkata 김 부장이 갑니다. Sejak 2011, Badan Bahasa Korea menyatakan bahwa di tempat kerja aturan itu tidak berlaku; yang benar sekarang adalah tetap meninggikan: 김 부장님께서 가십니다. Di dalam keluarga, aturan lamanya masih hidup: kepada kakek, kamu berkata 아버지가 왔어요, bukan 아버지께서 오셨어요.",
+    "**있으시면, bukan 계시면.** Yang ada di sini adalah *bahan* (자료), bukan orangnya. Untuk benda milik orang yang dihormati, bentuknya 있으시다 — hormat yang mengalir lewat pemiliknya. Ini yang disebut 간접 높임.",
+    "**괜찮으십니까 dan 필요하신 memperlihatkan 시 pada kata sifat.** Sisipan ini tidak terbatas pada kata kerja; kata sifat pun mengambilnya kalau yang disifati adalah orang yang dihormati.",
+    "**-았/었으면 해서요 adalah cara paling halus mengajukan permintaan kepada atasan.** Harfiahnya “karena saya berharap kalau saja …”. Ia tidak pernah menyelesaikan kalimatnya, dan justru ketidaktuntasan itulah yang membuatnya sopan.",
+    "**보내 드릴까요? menawarkan jasa, bukan meminta izin.** Pola -아/어 드릴까요? adalah tawaran melakukan sesuatu untuk orang yang lebih tinggi. Kepada teman: -아/어 줄까?",
+    "**수고 많았어요 boleh dari atasan ke bawahan, tidak sebaliknya.** Kepada atasan yang selesai bekerja keras, ucapkan 고생 많으셨습니다 — di situ 시 dipakai dan kata 고생 tidak membawa penilaian dari atas ke bawah."
+   ],
+   "grammars": [
+    {
+     "title": "Kata benda hormat",
+     "body": [
+      "Sebagian kata benda punya kembaran hormatnya sendiri. Memakainya tanpa 시 pada kata kerjanya terasa timpang, jadi keduanya hampir selalu datang berpasangan."
+     ],
+     "table": {
+      "head": ["Biasa", "Hormat", "Contoh kalimat"],
+      "rows": [
+       ["[이름|ireum]", "[성함|seongham]", "[성함이|Seonghami] [어떻게|eotteoke] [되세요|doeseyo]?"],
+       ["[나이|nai]", "[연세|yeonse]", "[연세가|Yeonsega] [많으세요|maneuseyo]."],
+       ["[밥|bap]", "[진지|jinji]", "[진지|Jinji] [드셨어요|deusyeosseoyo]?"],
+       ["[집|jip]", "[댁|daek]", "[댁이|Daegi] [어디세요|eodiseyo]?"],
+       ["[말|mal]", "[말씀|malsseum]", "[말씀|Malsseum] [들었습니다|deureotseumnida]."],
+       ["[생일|saengil]", "[생신|saengsin]", "[생신|Saengsin] [축하드립니다|chukhadeurimnida]."],
+       ["[사람|saram]", "[분|bun]", "[저|Jeo] [분이|buni] [누구세요|nuguseyo]?"],
+       ["[아이|ai]", "[자제분|jajebun]", "[자제분이|Jajebuni] [몇|myeot] [명이세요|myeongiseyo]?"]
+      ]
+     }
+    },
+    {
+     "title": "간접 높임 — hormat yang mengalir lewat pemiliknya",
+     "body": [
+      "Kalau yang menjadi pokok kalimat adalah **milik** atau **bagian** dari orang yang dihormati, sisipan 시 tetap dipakai — bukan untuk menghormati bendanya, melainkan pemiliknya.",
+      "Benar: 선생님은 시간이 없으세요. · 사장님은 손이 크세요. · 할머니는 눈이 안 좋으세요.",
+      "⚠️ Tapi ini hanya berlaku untuk sesuatu yang **melekat** pada orangnya: waktunya, tangannya, matanya, pendapatnya, keluarganya. Barang dagangan tidak termasuk.",
+      "❌ 커피 나오셨습니다. · ❌ 이 옷은 오만 원이십니다. · ❌ 사이즈가 없으십니다. — Ketiganya sering terdengar di toko Korea, dan ketiganya salah. Yang benar: 커피 나왔습니다 · 오만 원입니다 · 사이즈가 없습니다."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Peta lengkap 주체 높임",
+   "blocks": [
+    { "type": "p", "text": "Meninggikan orang yang dibicarakan dikerjakan di **empat tempat sekaligus** dalam satu kalimat. Kalimat yang benar-benar hormat menyalakan keempatnya; kalimat yang hanya menyalakan satu terdengar setengah jadi." },
+    { "type": "tabel", "head": ["Tempat", "Biasa", "Hormat", "Contoh"], "rows": [
+     ["Partikel pelaku", "이/가", "께서", "[아버지께서|Abeojikkeseo]"],
+     ["Partikel pokok", "은/는", "께서는", "[아버지께서는|Abeojikkeseoneun]"],
+     ["Partikel sasaran orang", "에게 · 한테", "께", "[아버지께|abeojikke]"],
+     ["Kata kerja", "akar", "akar + (으)시", "[가시다|gasida]"],
+     ["Kata kerja khusus", "먹다", "kata lain", "[드시다|deusida]"],
+     ["Kata benda", "이름", "kata lain", "[성함|seongham]"],
+     ["Sebutan", "이름", "이름 + 님", "[사장님|sajangnim]"]
+    ]},
+    { "type": "sub", "text": "Menyusun satu kalimat dari nol" },
+    { "type": "tabel", "head": ["Langkah", "Kalimat"], "rows": [
+     ["Biasa", "[선생님이|Seonsaengnimi] [나한테|nahante] [책을|chaegeul] [줬어요|jwosseoyo]."],
+     ["Naikkan partikel pelaku", "[선생님께서|Seonsaengnimkkeseo] [나한테|nahante] [책을|chaegeul] [줬어요|jwosseoyo]."],
+     ["Naikkan kata kerjanya", "[선생님께서|Seonsaengnimkkeseo] [나한테|nahante] [책을|chaegeul] [주셨어요|jusyeosseoyo]."],
+     ["Rendahkan diri sendiri", "[선생님께서|Seonsaengnimkkeseo] [저한테|jeohante] [책을|chaegeul] [주셨어요|jusyeosseoyo]."],
+     ["Bentuk resmi penuh", "[선생님께서|Seonsaengnimkkeseo] [저에게|jeoege] [책을|chaegeul] [주셨습니다|jusyeotseumnida]."]
+    ]},
+    { "type": "kotak", "title": "Tiga kesalahan yang paling sering", "items": [
+     "**Meninggikan diri sendiri.** ❌ 저는 지금 가십니다. Sisipan 시 tidak pernah dipakai untuk diri sendiri, sekalipun kalimatnya sangat resmi. Yang benar: 저는 지금 갑니다.",
+     "**Meninggikan benda dagangan.** ❌ 이 제품은 품절이십니다. Barang tidak punya derajat. Yang benar: 이 제품은 품절입니다.",
+     "**Memakai 계시다 untuk kepemilikan.** ❌ 선생님은 질문이 계세요? Yang ada di sini adalah pertanyaan, bukan orang. Yang benar: 질문이 있으세요?"
+    ]}
+   ]
+  },
+  {
+   "title": "Kapan 시 justru tidak dipakai",
+   "blocks": [
+    { "type": "p", "text": "Pelajar yang baru menemukan 시 cenderung memasangnya di mana-mana. Ada empat keadaan yang justru menuntut kalimat polos, dan memakai 시 di sana terdengar salah — kadang bahkan lucu." },
+    { "type": "tabel", "head": ["Keadaan", "Kenapa tidak", "Contoh benar"], "rows": [
+     ["Kalimat tentang diri sendiri", "hormat tak boleh berbalik ke diri", "[제가|Jega] [하겠습니다|hagetseumnida]."],
+     ["Berita, buku, dokumen ilmiah", "tak ditujukan kepada orang tertentu", "[대통령이|Daetongnyeongi] [발표했다|balpyohaetda]."],
+     ["Kepada kakek tentang ayah (dalam keluarga)", "압존법 masih hidup di keluarga", "[할아버지|Harabeoji], [아버지|abeoji] [왔어요|wasseoyo]."],
+     ["Menyebut orang yang jauh lebih rendah", "tak lazim", "[학생이|Haksaengi] [질문했어요|jilmunhaesseoyo]."],
+     ["Barang, jasa, harga", "benda tak berderajat", "[커피|Keopi] [나왔습니다|nawatseumnida]."]
+    ]},
+    { "type": "sub", "text": "Ucapan hormat yang paling sering dipakai" },
+    { "type": "tabel", "head": ["Kalimat", "Romanisasi", "Kapan"], "rows": [
+     ["안녕히 주무셨어요?", "annyeonghi jumusyeosseoyo?", "sapaan pagi kepada orang tua"],
+     ["진지 드셨어요?", "jinji deusyeosseoyo?", "menanyakan sudah makan, kepada orang tua"],
+     ["어디 편찮으세요?", "eodi pyeonchaneuseyo?", "menanyakan sakit apa"],
+     ["연세가 어떻게 되세요?", "yeonsega eotteoke doeseyo?", "menanyakan usia"],
+     ["성함이 어떻게 되세요?", "seonghami eotteoke doeseyo?", "menanyakan nama"],
+     ["생신 축하드립니다.", "saengsin chukhadeurimnida", "ucapan ulang tahun kepada yang lebih tua"],
+     ["건강하세요.", "geonganghaseyo", "semoga sehat; ucapan perpisahan"],
+     ["오래오래 사세요.", "oraeorae saseyo", "panjang umur; kepada orang tua"],
+     ["안부 전해 주세요.", "anbu jeonhae juseyo", "titip salam"],
+     ["고생 많으셨습니다.", "gosaeng maneusyeotseumnida", "terima kasih atas kerja kerasnya, kepada atasan"]
+    ]},
+    { "type": "p", "text": "⚠️ 수고하세요 dan 고생하세요 sama-sama berarti “semangat bekerja”, tapi 고생하세요 harfiahnya “semoga kamu menderita” dan terdengar seperti sindiran kalau diucapkan sembarangan. Kepada atasan, pakai bentuk lampau: 고생 많으셨습니다." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "높임말", "baca": "nopimmal", "id": "bahasa hormat" },
+  { "ko": "높임법", "baca": "nopimbeop", "id": "sistem penghormatan" },
+  { "ko": "께서", "baca": "kkeseo", "id": "partikel pelaku hormat" },
+  { "ko": "께", "baca": "kke", "id": "kepada (hormat)" },
+  { "ko": "계시다", "baca": "gyesida", "id": "ada, berada (hormat)" },
+  { "ko": "드시다", "baca": "deusida", "id": "makan, minum (hormat)" },
+  { "ko": "잡수시다", "baca": "japsusida", "id": "makan (sangat hormat)" },
+  { "ko": "주무시다", "baca": "jumusida", "id": "tidur (hormat)" },
+  { "ko": "말씀하시다", "baca": "malsseumhasida", "id": "berbicara (hormat)" },
+  { "ko": "편찮으시다", "baca": "pyeonchaneusida", "id": "sakit (hormat)" },
+  { "ko": "돌아가시다", "baca": "doragasida", "id": "meninggal dunia" },
+  { "ko": "모시다", "baca": "mosida", "id": "mengantar, melayani orang yang dihormati" },
+  { "ko": "성함", "baca": "seongham", "id": "nama (hormat)" },
+  { "ko": "연세", "baca": "yeonse", "id": "usia (hormat)" },
+  { "ko": "진지", "baca": "jinji", "id": "nasi, makanan (hormat)" },
+  { "ko": "댁", "baca": "daek", "id": "rumah (hormat)" },
+  { "ko": "생신", "baca": "saengsin", "id": "hari lahir (hormat)" },
+  { "ko": "자제분", "baca": "jajebun", "id": "anak (hormat)" },
+  { "ko": "분", "baca": "bun", "id": "orang (hormat)" },
+  { "ko": "퇴원하다", "baca": "toewonhada", "id": "keluar dari rumah sakit" },
+  { "ko": "입원하다", "baca": "ibwonhada", "id": "dirawat inap" },
+  { "ko": "산책하다", "baca": "sanchaekhada", "id": "berjalan-jalan" },
+  { "ko": "다행이다", "baca": "dahaengida", "id": "syukurlah" },
+  { "ko": "대단하다", "baca": "daedanhada", "id": "luar biasa" },
+  { "ko": "안부", "baca": "anbu", "id": "kabar, salam" },
+  { "ko": "전하다", "baca": "jeonhada", "id": "menyampaikan" },
+  { "ko": "인사드리다", "baca": "insadeurida", "id": "memberi salam (merendah)" },
+  { "ko": "뵙다", "baca": "boepda", "id": "menemui (merendah)" },
+  { "ko": "대표", "baca": "daepyo", "id": "direktur, perwakilan" },
+  { "ko": "출장", "baca": "chuljang", "id": "perjalanan dinas" },
+  { "ko": "보고서", "baca": "bogoseo", "id": "laporan" },
+  { "ko": "일정", "baca": "iljeong", "id": "jadwal" },
+  { "ko": "마무리하다", "baca": "mamurihada", "id": "merampungkan" },
+  { "ko": "완성되다", "baca": "wanseongdoeda", "id": "selesai, rampung" },
+  { "ko": "수정하다", "baca": "sujeonghada", "id": "merevisi" },
+  { "ko": "고치다", "baca": "gochida", "id": "memperbaiki" },
+  { "ko": "이미", "baca": "imi", "id": "sudah, telanjur" },
+  { "ko": "벌써", "baca": "beolsseo", "id": "sudah (lebih cepat dari dikira)" },
+  { "ko": "잠시", "baca": "jamsi", "id": "sejenak" },
+  { "ko": "바로", "baca": "baro", "id": "langsung, segera" },
+  { "ko": "군데", "baca": "gunde", "id": "tempat (penggolong)" },
+  { "ko": "품절", "baca": "pumjeol", "id": "habis terjual" },
+  { "ko": "제품", "baca": "jepum", "id": "produk" },
+  { "ko": "건강하다", "baca": "geonganghada", "id": "sehat" },
+  { "ko": "특히", "baca": "teukhi", "id": "terutama" },
+  { "ko": "올해", "baca": "olhae", "id": "tahun ini" },
+  { "ko": "요즘", "baca": "yojeum", "id": "belakangan ini" },
+  { "ko": "걱정하다", "baca": "geokjeonghada", "id": "khawatir" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Naikkan kalimat berikut menjadi bentuk hormat penuh (partikel dan kata kerja).",
+   "items": [
+    "선생님이 왔어요. → ____",
+    "할머니가 밥을 먹어요. → ____",
+    "사장님이 사무실에 있어요. → ____",
+    "아버지가 자요. → ____",
+    "부장님이 나한테 말했어요. → ____",
+    "교수님이 책을 읽어요. → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata benda hormat yang tepat.",
+   "items": [
+    "____이 어떻게 되세요? (menanyakan nama)",
+    "____가 어떻게 되세요? (menanyakan usia)",
+    "____ 드셨어요? (sudah makan?)",
+    "____이 어디세요? (di mana rumahnya)",
+    "____ 축하드립니다. (selamat ulang tahun)"
+   ]
+  },
+  {
+   "prompt": "Tandai kalimat yang SALAH dan tuliskan pembetulannya.",
+   "items": [
+    "저는 내일 가십니다.",
+    "커피 나오셨습니다.",
+    "선생님은 시간이 없으세요.",
+    "할아버지께서 주무세요.",
+    "이 옷은 오만 원이십니다.",
+    "선생님은 질문이 계세요?"
+   ]
+  },
+  {
+   "prompt": "Pilih antara 있으시다 dan 계시다.",
+   "items": [
+    "사장님은 지금 사무실에 ____.",
+    "혹시 질문 ____?",
+    "할머니께서는 댁에 ____.",
+    "부장님은 시간이 ____?",
+    "선생님께서 교실에 ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "께서 / 가십니다 / 부장님 / 출장을 / 내일",
+    "되세요 / 어떻게 / 연세가",
+    "드려 / 안부 / 할아버지께 / 전해",
+    "있으시면 / 말씀해 / 자료가 / 필요하신 / 주십시오",
+    "드렸습니다 / 먼저 / 부장님께 / 보여"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Tanyakan kepada seorang tamu lansia apakah beliau sudah makan, dengan kata benda dan kata kerja hormat.",
+    "Sampaikan kepada temanmu supaya menitipkan salammu untuk ibunya.",
+    "Laporkan kepada direktur bahwa kepala bagianmu sudah memeriksa laporan itu.",
+    "Tawarkan kepada atasanmu untuk mengirimkan sesuatu lewat surel, dalam 하십시오체."
+   ]
+  }
+ ],
+ "answers": [
+  "선생님께서 오셨어요. — 할머니께서 진지를 드세요. — 사장님께서 사무실에 계세요. — 아버지께서 주무세요. — 부장님께서 저한테 말씀하셨어요. — 교수님께서 책을 읽으세요.",
+  "성함 — 연세 — 진지 — 댁 — 생신",
+  "SALAH → 저는 내일 갑니다. — SALAH → 커피 나왔습니다. — BENAR — BENAR — SALAH → 이 옷은 오만 원입니다. — SALAH → 선생님은 질문이 있으세요?",
+  "계세요 — 있으세요 — 계세요 — 있으세요 — 계세요",
+  "부장님께서 내일 출장을 가십니다. — 연세가 어떻게 되세요? — 할아버지께 안부 전해 드려. — 필요하신 자료가 있으시면 말씀해 주십시오. — 부장님께 먼저 보여 드렸습니다.",
+  "진지 드셨어요? — 어머니께 안부 전해 드려. — 김 부장님께서 보고서를 이미 확인하셨습니다. — 메일로 보내 드리겠습니다."
+ ]
+}

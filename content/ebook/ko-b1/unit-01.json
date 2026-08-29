@@ -1,0 +1,314 @@
+{
+ "title": "Naik dan turun tingkat tutur",
+ "title_target": "말 놓을까요? — Mal noeulkkayo?",
+ "goal": "Menguasai empat tingkat tutur yang dipakai orang dewasa Korea, tahu persis kapan boleh turun ke 반말 dan siapa yang berhak menawarkannya, serta bisa berpindah naik-turun di tengah percakapan tanpa terdengar canggung.",
+ "bekal": [
+  "membedakan 해요체, 하십시오체, 해체, dan 해라체 dan tahu di mana masing-masing dipakai",
+  "menawarkan dan menerima 반말 dengan kalimat yang benar-benar dipakai orang Korea",
+  "memakai 하십시오체 di rapat, pengumuman, dan perkenalan resmi",
+  "mengenali 나이 dan 서열 sebagai penentu bahasa, bukan sekadar basa-basi",
+  "kembali naik ke 존댓말 ketika keadaan berubah, tanpa membuat lawan bicara tersinggung"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Dua kolega seumuran",
+   "intro": "Jiho dan Ani masuk perusahaan yang sama pada tahun yang sama. Sudah tiga bulan mereka memakai 존댓말 satu sama lain, dan hari ini Jiho memutuskan itu terlalu jauh. Perhatikan bahwa yang menawarkan bukan sembarang orang, dan bahwa penawarannya tetap dibungkus 존댓말.",
+   "lines": [
+    { "speaker": "지호:", "text": "[아니|Ani] [씨|ssi], [혹시|hoksi] [몇|myeot] [년|nyeon] [생이에요|saengieyo]?", "id": "Ani, kalau boleh tahu kelahiran tahun berapa?", "literal": "Ani — tuan, barangkali — berapa — tahun — kelahiran-nya?" },
+    { "speaker": "아니:", "text": "[구십칠|Gusipchil] [년생이요|nyeonsaengiyo]. [왜요|Waeyo]?", "id": "Sembilan puluh tujuh. Kenapa?", "literal": "sembilan-puluh-tujuh — tahun-kelahiran-nya. kenapa — nya?" },
+    { "speaker": "지호:", "text": "[어|Eo], [저도요|jeodoyo]. [우리|Uri] [동갑이네요|donggabineyo].", "id": "Eh, saya juga. Kita seumuran ternyata.", "literal": "eh, saya-juga-nya. kita — seumur — ternyata-nya." },
+    { "speaker": "아니:", "text": "[진짜요|Jinjjayo]? [입사도|Ipsado] [같이|gachi] [했는데|haenneunde].", "id": "Serius? Masuk kerjanya juga bareng, lho.", "literal": "sungguh-nya? masuk-perusahaan-juga — bersama — melakukan-padahal." },
+    { "speaker": "지호:", "text": "[그럼|Geureom] [우리|uri] [말|mal] [놓을까요|noeulkkayo]? [계속|Gyesok] [존댓말|jondaenmal] [하니까|hanikka] [좀|jom] [어색해서요|eosaekhaeseoyo].", "id": "Kalau begitu kita ngobrol santai saja? Terus-terusan pakai bahasa sopan agak canggung soalnya.", "literal": "kalau-begitu — kita — perkataan — melepas-bagaimana-nya? terus — bahasa-sopan — melakukan-karena — sedikit — canggung-karena-nya." },
+    { "speaker": "아니:", "text": "[좋아요|Joayo]! [저도|Jeodo] [그|geu] [생각|saenggak] [했었어요|haesseosseoyo].", "id": "Boleh! Saya juga sempat kepikiran begitu.", "literal": "bagus-nya! saya-juga — itu — pikiran — pernah-melakukan-nya." },
+    { "speaker": "지호:", "text": "[그럼|Geureom] [오늘부터|oneulbuteo] [편하게|pyeonhage] [하자|haja]. [나는|Naneun] [지호|Jiho].", "id": "Kalau gitu mulai hari ini santai aja ya. Aku Jiho.", "literal": "kalau-begitu — hari-ini-dari — enak-secara — mari-lakukan. aku — mengenai — Jiho." },
+    { "speaker": "아니:", "text": "[응|Eung], [나는|naneun] [아니|Ani]. [근데|Geunde] [갑자기|gapjagi] [반말|banmal] [하려니까|haryeonikka] [진짜|jinjja] [이상하다|isanghada].", "id": "Iya, aku Ani. Tapi tiba-tiba disuruh ngomong santai gini rasanya aneh banget.", "literal": "ya, aku — mengenai — Ani. tapi — tiba-tiba — bahasa-akrab — hendak-melakukan-karena — sungguh — aneh." },
+    { "speaker": "지호:", "text": "[나도|Nado]. [일주일이면|Iljuirimyeon] [익숙해질|iksukhaejil] [거야|geoya].", "id": "Aku juga. Seminggu juga bakal terbiasa kok.", "literal": "aku-juga. satu-minggu-kalau — menjadi-terbiasa-akan — hal-adalah." },
+    { "speaker": "아니:", "text": "[알겠어|Algesseo]. [아|A], [근데|geunde] [부장님|bujangnim] [앞에서는|apeseoneun] [조심하자|josimhaja].", "id": "Oke. Ah, tapi di depan Pak Kabag kita hati-hati ya.", "literal": "mengerti. ah, tapi — kepala-bagian — depan-di-mengenai — mari-hati-hati." },
+    { "speaker": "지호:", "text": "[당연하지|Dangyeonhaji]. [그건|Geugeon] [기본이야|gibonya].", "id": "Ya jelas dong. Itu sih dasar.", "literal": "tentu-saja. itu — mengenai — dasar-adalah." }
+   ],
+   "notes": [
+    "**Yang menawarkan 반말 haruslah yang lebih tua atau lebih senior.** Di sini keduanya 동갑 (seumuran) dan masuk kerja bersamaan, jadi siapa pun boleh menawarkan. Kalau ada selisih usia atau angkatan, yang lebih muda **tidak pernah** menawarkan duluan — ia menunggu. Melanggarnya bukan salah tata bahasa, melainkan sesuatu yang langsung terasa di ruangan.",
+    "**Penawarannya sendiri tetap dalam 존댓말.** 말 놓을까요? masih memakai 요. Ini bukan kelupaan: kalimat penawaran adalah kalimat terakhir dalam bahasa lama, dan barulah kalimat sesudah persetujuan turun ke 반말. Menawarkan dengan 말 놓자 langsung sudah memakai hak yang belum diberikan.",
+    "**몇 년 생이에요? lebih halus daripada 몇 살이에요?** Menanyakan tahun kelahiran terdengar seperti mencocokkan data; menanyakan umur terdengar seperti mengukur. Di dunia kerja, hampir selalu yang pertama yang dipakai. Bunyinya: 몇 년 dibaca *myeon nyeon* karena asimilasi sengau.",
+    "**혹시 di awal pertanyaan adalah peredam.** Harfiahnya “barangkali”, tapi kerjanya membuat pertanyaan terdengar tidak menuntut jawaban. Hampir wajib di depan pertanyaan yang menyentuh hal pribadi — umur, gaji, status kawin, alasan tak datang.",
+    "**동갑이네요 memakai -네요, bukan -이에요.** Akhiran -네요 menandai sesuatu yang **baru disadari saat itu juga**. 동갑이에요 berarti “kita seumuran” sebagai keterangan; 동갑이네요 berarti “oh, ternyata kita seumuran”. Perbedaan ini kecil di tulisan dan besar sekali di percakapan.",
+    "**말 놓다 harfiahnya “meletakkan bahasa”** — menurunkan bahasa dari tempatnya yang tinggi. Ungkapan sepadan: 편하게 말하다, 말 편하게 하다. ⚠️ Jangan memakai 반말하다 untuk menawarkan; 반말하다 dalam kalimat sehari-hari justru sering berarti “berbicara kasar kepada orang yang tidak seharusnya”.",
+    "**Perhatikan pergantian 저 menjadi 나.** Begitu 반말 dipakai, kata ganti orang pertama ikut turun: 저 → 나, 제가 → 내가, 저희 → 우리. Melupakannya menghasilkan campuran aneh seperti ❌저는 갈게 yang langsung terdengar salah di telinga Korea.",
+    "**당연하지 adalah bentuk 반말 dari 당연하죠.** Akhiran -지 di 반말 sepadan dengan -죠 di 존댓말: menegaskan sesuatu yang dianggap sudah sama-sama diketahui."
+   ],
+   "grammars": [
+    {
+     "title": "Empat tingkat tutur yang dipakai orang dewasa",
+     "body": [
+      "Buku tata bahasa Korea menyebut tujuh tingkat, tapi tiga di antaranya sudah hampir mati. Yang benar-benar kamu perlukan ada empat, dan modul ini memakai keempatnya."
+     ],
+     "table": {
+      "head": ["Tingkat", "Contoh", "Kepada siapa", "Di mana"],
+      "rows": [
+       ["하십시오체", "[가십니다|gasimnida] · [가십시오|gasipsio]", "atasan, pelanggan, khalayak", "rapat, pengumuman, wawancara, siaran"],
+       ["해요체", "[가요|gayo] · [가세요|gaseyo]", "hampir semua orang dewasa", "percakapan sopan sehari-hari"],
+       ["해체 (반말)", "[가|ga] · [가자|gaja]", "teman sebaya, adik, yang mengizinkan", "percakapan akrab"],
+       ["해라체", "[간다|ganda] · [가라|gara]", "tak kepada siapa pun secara khusus", "berita, buku, catatan, gumaman"]
+      ]
+     }
+    },
+    {
+     "title": "Membentuk 반말 dari 해요체",
+     "body": [
+      "Aturan dasarnya semudah membuang 요 — tapi ada tiga tempat yang berubah lebih dari itu, dan ketiganya sering terlewat."
+     ],
+     "table": {
+      "head": ["해요체", "반말", "Catatan"],
+      "rows": [
+       ["[가요|gayo]", "[가|ga]", "buang 요 saja"],
+       ["[먹었어요|meogeosseoyo]", "[먹었어|meogeosseo]", "buang 요 saja"],
+       ["[학생이에요|haksaengieyo]", "[학생이야|haksaengiya]", "이에요 → 이야, 예요 → 야"],
+       ["[가세요|gaseyo]", "[가|ga] · [가라|gara]", "perintah kehilangan 시"],
+       ["[갈 거예요|gal geoyeyo]", "[갈 거야|gal geoya]", "거예요 → 거야"],
+       ["[가죠|gajyo]", "[가지|gaji]", "죠 → 지"],
+       ["[갑시다|gapsida]", "[가자|gaja]", "ajakan memakai -자"],
+       ["[뭐예요|mwoyeyo]", "[뭐야|mwoya]", "sering terdengar tajam, hati-hati"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Hari pertama di kantor",
+   "intro": "Ani diperkenalkan kepada kepala bagiannya. Bahasanya naik dua tingkat sekaligus. Perhatikan bahwa 부장님 memakai bahasa yang lebih rendah kepada Ani, dan itu sepenuhnya wajar — tingkat tutur di Korea memang tidak simetris.",
+   "lines": [
+    { "speaker": "김 부장:", "text": "[아|A], [새로|saero] [오신|osin] [분이|buni] [맞으시죠|majeusijyo]?", "id": "Ah, Anda yang baru bergabung, betul?", "literal": "ah, baru — datang-yang — orang — benar-nya-kan?" },
+    { "speaker": "아니:", "text": "[네|Ne], [안녕하십니까|annyeonghasimnikka]. [영업부|Yeongeopbu] [아니라고|Anirago] [합니다|hamnida]. [잘|Jal] [부탁드립니다|butakdeurimnida].", "id": "Ya, selamat siang. Saya Ani dari bagian penjualan. Mohon bimbingannya.", "literal": "ya, sejahtera-kah. bagian-penjualan — Ani-disebut — melakukan. baik — permohonan-mempersembahkan." },
+    { "speaker": "김 부장:", "text": "[반가워요|Bangawoyo]. [자리는|Jarineun] [배정받았어요|baejeongbadasseoyo]?", "id": "Senang berkenalan. Mejanya sudah dapat?", "literal": "senang-nya. tempat-duduk — mengenai — penempatan-menerima-sudah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [오전에|ojeone] [안내받았습니다|annaebadatseumnida].", "id": "Sudah, pagi tadi sudah diantar.", "literal": "ya, pagi-pada — panduan-menerima-sudah." },
+    { "speaker": "김 부장:", "text": "[좋아요|Joayo]. [오후|Ohu] [세|se] [시에|sie] [팀|tim] [회의|hoeui] [있으니까|isseunikka] [참석하세요|chamseokhaseyo].", "id": "Bagus. Jam tiga sore ada rapat tim, jadi ikut hadir ya.", "literal": "bagus-nya. petang — tiga — jam-pada — tim — rapat — ada-karena — hadirilah." },
+    { "speaker": "아니:", "text": "[네|Ne], [알겠습니다|algetseumnida]. [혹시|Hoksi] [준비해야|junbihaeya] [할|hal] [자료가|jaryoga] [있습니까|itseumnikka]?", "id": "Baik. Kalau boleh tahu, ada bahan yang harus saya siapkan?", "literal": "ya, mengerti. barangkali — mempersiapkan-harus — akan — bahan — ada-kah?" },
+    { "speaker": "김 부장:", "text": "[오늘은|Oneureun] [그냥|geunyang] [듣기만|deutgiman] [하면|hamyeon] [돼요|dwaeyo]. [부담|Budam] [갖지|gatji] [마세요|maseyo].", "id": "Hari ini cukup mendengarkan saja. Jangan merasa terbebani.", "literal": "hari-ini — mengenai — begitu-saja — mendengar-hanya — melakukan-kalau — jadi-nya. beban — memiliki — janganlah." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [열심히|Yeolsimhi] [배우겠습니다|baeugetseumnida].", "id": "Terima kasih. Saya akan belajar dengan sungguh-sungguh.", "literal": "terima-kasih. rajin-secara — akan-belajar." },
+    { "speaker": "김 부장:", "text": "[그래요|Geuraeyo]. [모르는|Moreuneun] [거|geo] [있으면|isseumyeon] [옆|yeop] [자리|jari] [지호|Jiho] [씨한테|ssihante] [물어보고요|mureobogoyo].", "id": "Baik. Kalau ada yang tidak tahu, tanyakan pada Jiho di sebelah ya.", "literal": "begitu-nya. tak-tahu-yang — hal — ada-kalau — samping — tempat-duduk — Jiho — tuan-kepada — coba-tanya-dan-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [그렇게|geureoke] [하겠습니다|hagetseumnida].", "id": "Baik, akan saya lakukan begitu.", "literal": "ya, begitu-secara — akan-melakukan." },
+    { "speaker": "김 부장:", "text": "[네|Ne], [수고하세요|sugohaseyo].", "id": "Ya, semangat bekerja.", "literal": "ya, bersusah-payahlah." }
+   ],
+   "notes": [
+    "**안녕하십니까 bukan sekadar 안녕하세요 yang lebih panjang.** Ia dipakai di perkenalan resmi, di depan khalayak, dan di hari pertama kerja. Sesudah minggu pertama, Ani akan berpindah ke 안녕하세요 kepada orang yang sama — dan itu bukan penurunan kesopanan, melainkan penyesuaian dengan kedekatan yang sudah terbangun.",
+    "**아니라고 합니다 adalah cara resmi memperkenalkan nama sendiri.** Harfiahnya “disebut Ani”. Lebih resmi daripada 아니예요 dan lebih hangat daripada 아니입니다. Bentuk lengkapnya kadang 아니라고 합니다만 di pidato.",
+    "**잘 부탁드립니다 tidak punya padanan Indonesia.** Harfiahnya “saya mempersembahkan permintaan dengan baik”, dan diucapkan di setiap awal hubungan kerja: hari pertama, awal proyek, awal surel kepada mitra baru. Tak mengucapkannya membuat perkenalanmu terasa terpotong.",
+    "**Perhatikan bahwa 부장님 memakai 해요체, bukan 하십시오체.** Ini normal dan tidak kasar: atasan memakai bahasa yang sedikit lebih rendah kepada bawahan, dan bawahan membalas lebih tinggi. Ketidaksimetrisan inilah yang membuat pelajar asing sering salah menyimpulkan bahwa atasannya “tidak sopan”.",
+    "**-(으)세요 di 참석하세요 adalah perintah halus, bukan permintaan.** Dari atasan kepada bawahan, ia berarti instruksi. Dari orang asing kepada orang asing, ia berarti persilakan. Bentuknya sama; yang menentukan artinya adalah siapa berbicara kepada siapa.",
+    "**부담 갖지 마세요 adalah kalimat yang sangat khas Korea.** Harfiahnya “jangan memiliki beban”. Diucapkan setelah memberi tugas, mengundang, atau memberi hadiah — sebuah cara mengakui bahwa yang barusan diucapkan menciptakan kewajiban, lalu melepaskannya.",
+    "**수고하세요 diucapkan kepada orang yang masih akan bekerja.** Kepada yang sudah selesai, ucapannya 수고하셨습니다. ⚠️ Kepada atasan yang jauh lebih senior, 수고 dianggap sedikit kurang pantas karena mengandung penilaian atas kerja orang; gantinya 고생 많으셨습니다 atau sekadar 감사합니다.",
+    "**물어보고요 berakhir dengan -고요, bukan titik.** Akhiran menggantung ini melembutkan instruksi menjadi seperti tambahan yang baru teringat. Sangat sering dipakai atasan Korea justru untuk mengurangi rasa memerintah."
+   ],
+   "grammars": [
+    {
+     "title": "하십시오체 — bentuk resmi",
+     "body": [
+      "Dibentuk dari akar + (스)ㅂ니다. Yang berakhir vokal mendapat ㅂ니다, yang berakhir konsonan mendapat 습니다. Bentuk tanyanya mengganti 다 dengan 까."
+     ],
+     "table": {
+      "head": ["Jenis", "Berita", "Tanya", "Perintah", "Ajakan"],
+      "rows": [
+       ["Vokal · [가다|gada]", "[갑니다|gamnida]", "[갑니까|gamnikka]", "[가십시오|gasipsio]", "[갑시다|gapsida]"],
+       ["Konsonan · [먹다|meokda]", "[먹습니다|meokseumnida]", "[먹습니까|meokseumnikka]", "[드십시오|deusipsio]", "[먹읍시다|meogeupsida]"],
+       ["ㄹ luluh · [살다|salda]", "[삽니다|samnida]", "[삽니까|samnikka]", "[사십시오|sasipsio]", "[삽시다|sapsida]"],
+       ["Lampau", "[갔습니다|gatseumnida]", "[갔습니까|gatseumnikka]", "—", "—"],
+       ["Niat", "[가겠습니다|gagetseumnida]", "[가겠습니까|gagetseumnikka]", "—", "—"]
+      ]
+     }
+    },
+    {
+     "title": "-겠- di kalimat resmi: niat, bukan dugaan",
+     "body": [
+      "Sisipan -겠- punya dua tugas yang jauh berbeda. Di kalimat orang pertama ia menyatakan **niat dan kesanggupan**; di kalimat orang ketiga ia menyatakan **dugaan**. Di ruang kerja Korea, tugas pertama yang paling sering muncul.",
+      "알겠습니다 (baik, saya mengerti) · 하겠습니다 (akan saya kerjakan) · 확인하겠습니다 (akan saya periksa) — tiga kalimat yang akan kamu ucapkan puluhan kali sehari di kantor Korea.",
+      "⚠️ 알겠습니다 dan 알았습니다 tidak sama. Yang pertama berarti “saya mengerti dan akan mengerjakan”; yang kedua terdengar seperti “ya, sudah tahu” dan bisa terasa memotong."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Siapa boleh berbicara bagaimana",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Korea tidak menentukan tingkat tutur dari sifat hubungan saja, melainkan dari tiga ukuran yang dihitung bersamaan: **jarak** (akrab atau tidak), **umur atau senioritas**, dan **keadaan** (santai atau resmi). Ukuran ketiga yang paling sering dilupakan pelajar asing — dua orang yang sama bisa memakai bahasa yang sama sekali berbeda di kafe dan di ruang rapat." },
+    { "type": "tabel", "head": ["Lawan bicara", "Yang kamu pakai", "Yang ia pakai kepadamu"], "rows": [
+     ["Atasan di kantor", "하십시오체 · 해요체", "해요체 · 반말"],
+     ["Kolega seumuran, belum akrab", "해요체", "해요체"],
+     ["Kolega seumuran, sudah akrab", "반말", "반말"],
+     ["Junior yang lebih muda", "해요체 · 반말 sesudah ditawarkan", "해요체 · 하십시오체"],
+     ["Pelanggan", "하십시오체", "해요체 · 반말"],
+     ["Guru atau dosen", "하십시오체 · 해요체", "해요체 · 반말"],
+     ["Orang tak dikenal di jalan", "해요체", "해요체"],
+     ["Anak kecil yang tak dikenal", "반말", "해요체"]
+    ]},
+    { "type": "p", "text": "Perhatikan bahwa hampir semua barisnya **tidak simetris**. Inilah yang paling sulit diterima pelajar dari Indonesia, di mana kesopanan cenderung berbalas setara. Di Korea, ketidaksetaraan bahasa bukan penghinaan; ia justru penanda bahwa hubungannya sudah jelas dan tidak perlu dirundingkan lagi." },
+    { "type": "sub", "text": "Kalimat-kalimat untuk berpindah tingkat" },
+    { "type": "tabel", "head": ["Maksud", "Kalimat", "Siapa yang boleh"], "rows": [
+     ["Menawarkan 반말", "[말|Mal] [놓을까요|noeulkkayo]?", "yang lebih tua atau senior"],
+     ["Menawarkan lebih halus", "[편하게|Pyeonhage] [말씀하세요|malsseumhaseyo].", "siapa pun, kepada yang lebih tua"],
+     ["Menerima", "[네|Ne], [그래요|geuraeyo]. · [좋아요|Joayo].", "siapa pun"],
+     ["Menolak dengan halus", "[아직은|Ajigeun] [좀|jom] [어색해서요|eosaekhaeseoyo].", "siapa pun"],
+     ["Meminta izin naik lagi", "[회사에서는|Hoesaeseoneun] [존댓말|jondaenmal] [할게요|halgeyo].", "siapa pun"],
+     ["Menegur yang salah pakai", "[말씀|Malsseum] [편하게|pyeonhage] [하지|haji] [마세요|maseyo].", "keras; hanya kalau perlu"]
+    ]},
+    { "type": "kotak", "title": "Tiga hal yang membatalkan hak 반말", "items": [
+     "**Ruangan resmi.** Dua teman akrab yang duduk di rapat dengan direktur kembali ke 존댓말 satu sama lain selama rapat berlangsung, lalu turun lagi begitu keluar pintu.",
+     "**Kehadiran orang ketiga yang lebih senior.** Berbicara 반말 kepada temanmu di depan atasannya terdengar seperti mengabaikan kehadiran atasan itu.",
+     "**Perselisihan.** Ketika percakapan memanas, orang Korea sering sengaja naik ke 존댓말 — dan itu bukan tanda mereda, melainkan tanda hubungan sedang ditarik menjauh. Efeknya kira-kira seperti memanggil orang dengan nama lengkapnya."
+    ]}
+   ]
+  },
+  {
+   "title": "Panggilan: bagian tersulit yang jarang diajarkan",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Korea sedapat mungkin **menghindari kata ganti orang kedua**. Kata 당신 yang diajarkan buku pelajaran sebagai “Anda” justru hampir tak pernah dipakai kepada orang yang ada di hadapanmu — ia muncul di lagu, di terjemahan, di doa, dan di pertengkaran suami-istri. Sebagai gantinya, orang Korea memanggil lawan bicara dengan **peran** atau **jabatannya**." },
+    { "type": "tabel", "head": ["Panggilan", "Kepada siapa", "⚠️"], "rows": [
+     ["[민수|Minsu] [씨|ssi]", "kolega sederajat, kenalan dewasa", "aman; tapi tak boleh kepada atasan"],
+     ["[부장님|bujangnim]", "atasan menurut jabatan", "wajib; namanya tak dipakai"],
+     ["[선배님|seonbaenim]", "senior sekolah atau kantor", "boleh tanpa 님 kalau akrab"],
+     ["[선생님|seonsaengnim]", "guru; juga sapaan hormat umum", "dipakai juga kepada dokter dan pengacara"],
+     ["[사장님|sajangnim]", "pemilik usaha, termasuk warung", "sapaan aman untuk pemilik toko"],
+     ["[기사님|gisanim]", "sopir taksi, sopir bus", "sopan dan lazim"],
+     ["[고객님|gogaengnim]", "pelanggan", "wajib di layanan pelanggan"],
+     ["[저기요|Jeogiyo]", "orang tak dikenal", "aman di mana saja"],
+     ["[여기요|Yeogiyo]", "memanggil pelayan", "hanya di rumah makan"],
+     ["[아저씨|ajeossi] · [아줌마|ajumma]", "—", "❌ hindari; sering terasa merendahkan"],
+     ["[당신|dangsin]", "—", "❌ jangan; hanya pantas di lagu atau pertengkaran"]
+    ]},
+    { "type": "sub", "text": "Panggilan kekerabatan yang dipakai kepada orang bukan keluarga" },
+    { "type": "p", "text": "Salah satu ciri paling khas bahasa Korea: kata kekerabatan dipinjam untuk orang yang bukan keluarga sama sekali, dan **pilihannya bergantung pada jenis kelamin pembicara**, bukan lawan bicara." },
+    { "type": "tabel", "head": ["Yang memanggil", "Kepada laki-laki lebih tua", "Kepada perempuan lebih tua"], "rows": [
+     ["Laki-laki", "[형|hyeong]", "[누나|nuna]"],
+     ["Perempuan", "[오빠|oppa]", "[언니|eonni]"]
+    ]},
+    { "type": "p", "text": "⚠️ Keempatnya hanya boleh dipakai sesudah hubungan cukup dekat, dan 오빠 khususnya membawa nuansa keakraban yang bisa disalahpahami di lingkungan kerja. Di kantor, tetaplah pada 씨 dan 님 sampai orangnya sendiri yang menawarkan." },
+    { "type": "kotak", "title": "Kalau kamu tidak tahu harus memanggil apa", "items": [
+     "Buang saja panggilannya. Bahasa Korea membolehkan kalimat tanpa subjek, dan menghilangkan panggilan selalu lebih aman daripada memilih yang salah.",
+     "Kalau harus memanggil dari jauh: 저기요 untuk orang asing, 실례합니다 untuk keadaan resmi.",
+     "Kalau ragu antara 씨 dan 님: pakai jabatan + 님 kalau orangnya punya jabatan, dan nama + 씨 kalau tidak. Kelebihan hormat jauh lebih mudah dimaafkan daripada kekurangannya."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "존댓말", "baca": "jondaenmal", "id": "bahasa sopan" },
+  { "ko": "반말", "baca": "banmal", "id": "bahasa akrab" },
+  { "ko": "말을 놓다", "baca": "mareul nota", "id": "berbicara santai, melepas bahasa sopan" },
+  { "ko": "동갑", "baca": "donggap", "id": "seumuran" },
+  { "ko": "몇 년생", "baca": "myeon nyeonsaeng", "id": "kelahiran tahun berapa" },
+  { "ko": "입사", "baca": "ipsa", "id": "masuk kerja di perusahaan" },
+  { "ko": "어색하다", "baca": "eosaekhada", "id": "canggung" },
+  { "ko": "익숙해지다", "baca": "iksukhaejida", "id": "menjadi terbiasa" },
+  { "ko": "조심하다", "baca": "josimhada", "id": "berhati-hati" },
+  { "ko": "당연하다", "baca": "dangyeonhada", "id": "sudah semestinya" },
+  { "ko": "기본", "baca": "gibon", "id": "dasar, hal mendasar" },
+  { "ko": "혹시", "baca": "hoksi", "id": "barangkali, kalau boleh tahu" },
+  { "ko": "갑자기", "baca": "gapjagi", "id": "tiba-tiba" },
+  { "ko": "이상하다", "baca": "isanghada", "id": "aneh" },
+  { "ko": "편하다", "baca": "pyeonhada", "id": "nyaman, tidak sungkan" },
+  { "ko": "부장", "baca": "bujang", "id": "kepala bagian" },
+  { "ko": "과장", "baca": "gwajang", "id": "kepala seksi" },
+  { "ko": "대리", "baca": "daeri", "id": "asisten manajer" },
+  { "ko": "사원", "baca": "sawon", "id": "karyawan biasa" },
+  { "ko": "선배", "baca": "seonbae", "id": "senior" },
+  { "ko": "후배", "baca": "hubae", "id": "junior" },
+  { "ko": "영업부", "baca": "yeongeopbu", "id": "bagian penjualan" },
+  { "ko": "자리", "baca": "jari", "id": "tempat duduk, posisi" },
+  { "ko": "배정받다", "baca": "baejeongbatda", "id": "mendapat penempatan" },
+  { "ko": "안내받다", "baca": "annaebatda", "id": "diberi penjelasan, diantar" },
+  { "ko": "참석하다", "baca": "chamseokhada", "id": "menghadiri" },
+  { "ko": "자료", "baca": "jaryo", "id": "bahan, materi" },
+  { "ko": "부담", "baca": "budam", "id": "beban, rasa sungkan" },
+  { "ko": "열심히", "baca": "yeolsimhi", "id": "dengan sungguh-sungguh" },
+  { "ko": "수고하다", "baca": "sugohada", "id": "bersusah payah, bekerja keras" },
+  { "ko": "고생하다", "baca": "gosaenghada", "id": "mengalami kesusahan" },
+  { "ko": "잘 부탁드립니다", "baca": "jal butakdeurimnida", "id": "mohon bimbingannya" },
+  { "ko": "처음 뵙겠습니다", "baca": "cheoeum boepgetseumnida", "id": "senang bertemu untuk pertama kali" },
+  { "ko": "실례합니다", "baca": "sillyehamnida", "id": "permisi" },
+  { "ko": "저기요", "baca": "jeogiyo", "id": "permisi (memanggil)" },
+  { "ko": "고객님", "baca": "gogaengnim", "id": "pelanggan (sapaan)" },
+  { "ko": "기사님", "baca": "gisanim", "id": "sapaan untuk sopir" },
+  { "ko": "사장님", "baca": "sajangnim", "id": "sapaan untuk pemilik usaha" },
+  { "ko": "직함", "baca": "jikam", "id": "jabatan, gelar kerja" },
+  { "ko": "서열", "baca": "seoyeol", "id": "urutan senioritas" },
+  { "ko": "눈치", "baca": "nunchi", "id": "kepekaan membaca keadaan" },
+  { "ko": "말씀", "baca": "malsseum", "id": "perkataan (hormat)" },
+  { "ko": "알겠습니다", "baca": "algetseumnida", "id": "baik, saya mengerti" },
+  { "ko": "확인하다", "baca": "hwaginhada", "id": "memeriksa, memastikan" },
+  { "ko": "회의", "baca": "hoeui", "id": "rapat" },
+  { "ko": "오전", "baca": "ojeon", "id": "pagi, sebelum siang" },
+  { "ko": "오후", "baca": "ohu", "id": "sore, setelah siang" },
+  { "ko": "그냥", "baca": "geunyang", "id": "begitu saja" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kalimat 해요체 berikut menjadi 반말.",
+   "items": [
+    "지금 가요. → ____",
+    "저는 학생이에요. → ____",
+    "내일 만날 거예요. → ____",
+    "같이 갑시다. → ____",
+    "그거 뭐예요? → ____",
+    "밥 먹었어요? → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat 해요체 berikut menjadi 하십시오체.",
+   "items": [
+    "회의에 참석해요. → ____",
+    "자료를 준비했어요. → ____",
+    "내일 연락할 거예요. → ____",
+    "여기 앉으세요. → ____",
+    "이해했어요? → ____"
+   ]
+  },
+  {
+   "prompt": "Pilih panggilan yang tepat untuk tiap keadaan.",
+   "items": [
+    "Kepala bagian bernama 김민수 di kantormu:",
+    "Kolega seumuran bernama 이지호 yang belum akrab:",
+    "Sopir taksi yang sedang mengantarmu:",
+    "Pemilik warung tempat kamu makan siang:",
+    "Orang tak dikenal yang menjatuhkan dompet di jalan:"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat yang salah tingkat tuturnya.",
+   "items": [
+    "(kepada atasan) 부장님, 밥 먹었어? → ____",
+    "(kepada teman akrab) 저는 내일 갈게요. → ____",
+    "(kepada pelanggan) 잠깐만 기다려. → ____",
+    "(memperkenalkan diri di hari pertama) 나는 아니야. → ____",
+    "(kepada orang tak dikenal di jalan) 야, 이거 떨어뜨렸어. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "우리 / 놓을까요 / 말 / ?",
+    "부탁드립니다 / 잘 / 앞으로",
+    "회의 / 있으니까 / 참석하세요 / 세 시에",
+    "부담 / 마세요 / 갖지",
+    "어색해서요 / 존댓말 / 계속 / 하니까 / 좀"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Seorang kolega yang seumuran denganmu menawarkan 말 놓을까요? Terimalah, lalu perkenalkan namamu dalam 반말.",
+    "Kamu belum siap turun ke 반말 dengan seseorang. Tolaklah dengan halus dalam satu kalimat.",
+    "Hari pertama kerja, perkenalkan dirimu kepada seluruh tim dalam 하십시오체 (dua kalimat).",
+    "Atasanmu memberi tugas yang belum kamu pahami. Tanyakan dengan sopan dalam 하십시오체."
+   ]
+  }
+ ],
+ "answers": [
+  "지금 가. — 나는 학생이야. — 내일 만날 거야. — 같이 가자. — 그거 뭐야? — 밥 먹었어?",
+  "회의에 참석합니다. — 자료를 준비했습니다. — 내일 연락하겠습니다. — 여기 앉으십시오. — 이해했습니까?",
+  "부장님 — 지호 씨 — 기사님 — 사장님 — 저기요",
+  "부장님, 식사하셨습니까? — 나는 내일 갈게. — 잠깐만 기다려 주십시오. — 저는 아니라고 합니다. — 저기요, 이거 떨어뜨리셨어요.",
+  "우리 말 놓을까요? — 앞으로 잘 부탁드립니다. — 세 시에 회의 있으니까 참석하세요. — 부담 갖지 마세요. — 계속 존댓말 하니까 좀 어색해서요.",
+  "네, 좋아. 나는 (nama)야. — 아직은 좀 어색해서요. 조금만 더 있다가요. — 안녕하십니까. 영업부 (nama)라고 합니다. 잘 부탁드립니다. — 부장님, 혹시 이 부분을 다시 한번 설명해 주실 수 있겠습니까?"
+ ]
+}

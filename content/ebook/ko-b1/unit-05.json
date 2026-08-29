@@ -1,0 +1,316 @@
+{
+ "title": "Menduga, memperkirakan, meredam",
+ "title_target": "그런 것 같아요 — Geureon geot gatayo",
+ "goal": "Menguasai delapan bentuk dugaan bahasa Korea, tahu seberapa kuat masing-masing dan dari mana dasarnya — dan menyadari bahwa di Korea bentuk dugaan sering dipakai bukan untuk menduga, melainkan untuk melunakkan pendapat sendiri.",
+ "bekal": [
+  "membedakan -(으)ㄴ/는 것 같다 dan -(으)ㄹ 것 같다 menurut kala kejadiannya",
+  "memakai -나 보다 dan -(으)ㄴ가 보다 untuk dugaan yang lahir dari bukti yang baru dilihat",
+  "membedakan -겠- (reaksi seketika) dari -(으)ㄹ 것이다 (perkiraan berdasar pengetahuan)",
+  "memakai -(으)ㄹ 텐데 untuk dugaan yang mengandung kekhawatiran",
+  "memakai bentuk dugaan sebagai peredam pendapat, penolakan, dan permintaan"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Menebak apa yang terjadi",
+   "intro": "Ani dan Jiho menunggu Suji yang tak kunjung datang. Seluruh dialog ini adalah dugaan — dan tiap dugaannya memakai bentuk yang berbeda, sesuai dari mana dasarnya.",
+   "lines": [
+    { "speaker": "지호:", "text": "[수지|Suji] [왜|wae] [이렇게|ireoke] [늦지|neutji]? [벌써|Beolsseo] [삼십|samsip] [분|bun] [지났는데|jinanneunde].", "id": "Suji kok telat banget ya? Udah lewat tiga puluh menit lho.", "literal": "Suji — kenapa — begini-secara — terlambat? sudah — tiga-puluh — menit — lewat-padahal." },
+    { "speaker": "아니:", "text": "[길이|Giri] [막히나|makina] [봐|bwa]. [금요일|Geumyoil] [저녁이잖아|jeonyeogijana].", "id": "Kayaknya jalanan macet. Kan Jumat malam.", "literal": "jalan — tersumbat-apakah — sepertinya. Jumat — petang-kan." },
+    { "speaker": "지호:", "text": "[그런가|Geureonga]? [근데|Geunde] [연락도|yeollakdo] [없는|eomneun] [게|ge] [좀|jom] [이상해|isanghae].", "id": "Gitu ya? Tapi nggak ada kabar sama sekali itu agak aneh.", "literal": "begitu-apakah? tapi — kabar-juga — tak-ada-yang — hal — sedikit — aneh." },
+    { "speaker": "아니:", "text": "[폰|Pon] [배터리|baeteori] [나갔을지도|nagasseuljido] [몰라|molla]. [아까|Akka] [거의|geoui] [다|da] [닳았다고|dalatdago] [했거든|haetgeodeun].", "id": "Mungkin baterainya habis. Tadi katanya hampir habis soalnya.", "literal": "ponsel — baterai — keluar-mungkin-pun — tak-tahu. tadi — hampir — semua — terkikis-katanya — melakukan-soalnya." },
+    { "speaker": "지호:", "text": "[아|A], [그럼|geureom] [연락|yeollak] [못|mot] [하겠네|hagenne]. [기다리는|Gidarineun] [수밖에|subakke] [없겠다|eopgetda].", "id": "Ah, kalau gitu memang nggak bisa ngabarin. Ya cuma bisa nunggu.", "literal": "ah, kalau-begitu — kabar — tidak-bisa — melakukan-pasti-ternyata. menunggu-yang — cara-selain — tak-ada-pasti." },
+    { "speaker": "아니:", "text": "[근데|Geunde] [배고프지|baegopeuji] [않아|ana]? [먼저|Meonjeo] [주문할까|jumunhalkka]?", "id": "Tapi nggak lapar? Pesan duluan aja?", "literal": "tapi — lapar — tidak? dahulu — memesan-bagaimana?" },
+    { "speaker": "지호:", "text": "[수지|Suji] [오면|omyeon] [서운할|seounhal] [텐데|tende]…", "id": "Nanti kalau Suji datang pasti kecewa sih…", "literal": "Suji — datang-kalau — kecewa-akan — padahal…" },
+    { "speaker": "아니:", "text": "[음료수만|Eumnyosuman] [시키자|sikija]. [곧|Got] [올|ol] [거야|geoya].", "id": "Pesan minumnya aja deh. Sebentar lagi pasti datang kok.", "literal": "minuman-hanya — mari-pesan. segera — datang-akan — hal-adalah." },
+    { "speaker": "지호:", "text": "[어|Eo], [저기|jeogi] [온다|onda]! [표정|Pyojeongi] [안|an] [좋은|joeun] [것|geot] [같은데|gateunde].", "id": "Eh, itu datang! Kayaknya mukanya nggak enak deh.", "literal": "eh, di-sana — datang! wajah — tidak — baik-yang — hal — seperti-padahal." },
+    { "speaker": "아니:", "text": "[무슨|Museun] [일|il] [있었나|isseonna] [봐|bwa]. [일단|Ildan] [물어보지|mureoboji] [말자|malja].", "id": "Kayaknya ada sesuatu deh. Untuk sekarang jangan ditanya dulu.", "literal": "apa — urusan — ada-sudah-apakah — sepertinya. untuk-sementara — coba-tanya — jangan-mari." },
+    { "speaker": "지호:", "text": "[그래|Geurae]. [본인이|Bonini] [말하고|malhago] [싶으면|sipeumyeon] [하겠지|hagetji].", "id": "Iya. Kalau dia mau cerita ya nanti cerita sendiri.", "literal": "begitu. dirinya — berkata-dan — ingin-kalau — akan-melakukan-kan." }
+   ],
+   "notes": [
+    "**-나 보다 menyatakan dugaan yang lahir dari bukti yang baru saja diserap.** 길이 막히나 봐 — Ani menyimpulkannya dari kenyataan bahwa hari Jumat malam dan Suji telat. Bandingkan dengan 길이 막히는 것 같아 yang lebih netral dan bisa keluar tanpa bukti apa pun.",
+    "**-나 보다 dipakai untuk kata kerja; kata sifat dan kata benda memakai -(으)ㄴ가 보다.** 바쁜가 봐 (sepertinya sibuk), 학생인가 봐 (sepertinya pelajar), 갔나 봐 (sepertinya sudah pergi — bentuk lampau semua golongan memakai -나 보다).",
+    "**Dugaan dengan -나 보다 tidak boleh dipakai untuk diri sendiri.** ❌ 내가 배고픈가 봐 terdengar aneh: kamu tidak menyimpulkan keadaanmu sendiri dari bukti luar. Kecuali kalau memang sengaja lucu, seperti orang yang baru sadar dirinya jatuh cinta.",
+    "**-(으)ㄹ지도 모르다 adalah dugaan paling lemah.** Harfiahnya “bahkan apakah akan … pun tak tahu”. Dipakai untuk kemungkinan kecil yang perlu diperhitungkan: 비가 올지도 몰라요, 늦을지도 모르니까 일찍 나가요.",
+    "**-겠네 di 연락 못 하겠네 bukan niat.** Sisipan -겠- untuk orang ketiga menyatakan kesimpulan spontan yang muncul begitu saja. Bandingkan: 힘들겠다 (pasti berat ya) — reaksi langsung; 힘들 거예요 (akan berat) — perkiraan yang ditimbang.",
+    "**-(으)ㄹ 수밖에 없다 berarti “tak ada pilihan selain”.** 기다리는 수밖에 없다 = mau tak mau hanya bisa menunggu. Salah satu pola paling sering di percakapan orang dewasa Korea, karena ia menyatakan penerimaan atas keadaan.",
+    "**-(으)ㄹ 텐데 menggabungkan dugaan dengan kekhawatiran, dan biasanya tidak diselesaikan.** 서운할 텐데… — kalimatnya sengaja menggantung, dan ketidaktuntasan itu justru bagian dari maknanya: “dia pasti kecewa, jadi bagaimana ya”.",
+    "**표정이 안 좋은 것 같은데 memakai -(으)ㄴ 것 같다 untuk kata sifat masa kini.** Perhatikan akhiran -은데 yang menggantung lagi — pola menggantung ini adalah ciri paling khas percakapan Korea, dan hampir selalu berarti “aku menahan sisanya”.",
+    "**하겠지 = 하겠 + 지.** Akhiran -지 di sini bukan meminta persetujuan, melainkan menyatakan keyakinan tenang atas sesuatu yang wajar terjadi. 오겠지, 알겠지, 되겠지 — semuanya berbunyi seperti “ya pasti begitulah”."
+   ],
+   "grammars": [
+    {
+     "title": "-(으)ㄴ/는/(으)ㄹ 것 같다 — bentuk dugaan yang paling sering",
+     "body": [
+      "Bentuk ini menempel pada bentuk penyifat, jadi memilihnya berarti memilih kala kejadiannya. Ini sumber kesalahan yang paling sering: pelajar memakai satu bentuk untuk semua waktu."
+     ],
+     "table": {
+      "head": ["Waktu kejadian", "Kata kerja", "Kata sifat", "Kata benda"],
+      "rows": [
+       ["Lampau", "[간|gan] [것|geot] [같다|gatda]", "[추웠던|chuwotdeon] [것|geot] [같다|gatda]", "[학생이었던|haksaengieotdeon] [것|geot] [같다|gatda]"],
+       ["Sekarang", "[가는|ganeun] [것|geot] [같다|gatda]", "[추운|chuun] [것|geot] [같다|gatda]", "[학생인|haksaengin] [것|geot] [같다|gatda]"],
+       ["Akan datang", "[갈|gal] [것|geot] [같다|gatda]", "[추울|chuul] [것|geot] [같다|gatda]", "[학생일|haksaengil] [것|geot] [같다|gatda]"]
+      ]
+     }
+    },
+    {
+     "title": "Delapan bentuk dugaan, diurut dari paling lemah",
+     "body": [
+      "Bahasa Korea membedakan dugaan bukan hanya menurut kekuatannya, melainkan menurut **dari mana pembicara tahu**. Kolom ketiga inilah yang tidak punya padanan dalam bahasa Indonesia."
+     ],
+     "table": {
+      "head": ["Bentuk", "Kekuatan", "Dari mana dasarnya", "Contoh"],
+      "rows": [
+       ["-(으)ㄹ지도 모르다", "sangat lemah", "kemungkinan yang terpikir", "[늦을지도|Neujeuljido] [몰라요|mollayo]."],
+       ["-(으)ㄹ 수도 있다", "lemah", "kemungkinan yang terbuka", "[비쌀|Bissal] [수도|sudo] [있어요|isseoyo]."],
+       ["-(으)ㄴ/는 것 같다", "sedang", "kesan umum, netral", "[맞는|Manneun] [것|geot] [같아요|gatayo]."],
+       ["-(으)ㄴ/는 듯하다", "sedang", "sama, ragam tulis", "[맞는|Manneun] [듯합니다|deutamnida]."],
+       ["-나 보다 · -(으)ㄴ가 보다", "cukup kuat", "bukti yang baru dilihat", "[바쁜가|Bappeunga] [봐요|bwayo]."],
+       ["-(으)ㄴ/는 모양이다", "cukup kuat", "penampakan luar, ragam tulis", "[떠난|Tteonan] [모양입니다|moyangimnida]."],
+       ["-겠-", "kuat, spontan", "reaksi seketika", "[힘들겠다|Himdeulgetda]."],
+       ["-(으)ㄹ 것이다", "kuat", "pengetahuan pembicara", "[올|Ol] [거예요|geoyeyo]."]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menyampaikan pendapat di rapat",
+   "intro": "Rapat kecil tentang usul menaikkan harga. Perhatikan bahwa hampir setiap pendapat di sini dibungkus bentuk dugaan — padahal semua yang berbicara tahu persis apa yang mereka maksud. Inilah pemakaian bentuk dugaan yang paling sering di dunia kerja Korea.",
+   "lines": [
+    { "speaker": "김 부장:", "text": "[다음|Daeum] [분기부터|bungibuteo] [가격을|gagyeogeul] [올리는|ollineun] [건|geon] [어떻게|eotteoke] [생각하세요|saenggakhaseyo]?", "id": "Bagaimana pendapat kalian soal menaikkan harga mulai kuartal depan?", "literal": "berikut — kuartal-dari — harga — menaikkan-yang — hal — mengenai — bagaimana — berpikir-beliau-nya?" },
+    { "speaker": "지호:", "text": "[음|Eum]… [지금|jigeum] [시기에는|sigieneun] [조금|jogeum] [이른|ireun] [것|geot] [같습니다|gatseumnida].", "id": "Hmm… untuk waktu sekarang sepertinya agak terlalu cepat.", "literal": "hmm… sekarang — waktu-pada — mengenai — sedikit — dini-yang — hal — seperti." },
+    { "speaker": "김 부장:", "text": "[이유가|Iyuga] [뭘까요|mwolkkayo]?", "id": "Alasannya apa kira-kira?", "literal": "alasan — apa-akan-nya?" },
+    { "speaker": "지호:", "text": "[경쟁사들이|Gyeongjaengsadeuri] [아직|ajik] [안|an] [올린|ollin] [상태라서|sangtaeraseo], [우리만|uriman] [올리면|ollimyeon] [고객이|gogaegi] [빠져나갈|ppajyeonagal] [수도|sudo] [있습니다|itseumnida].", "id": "Perusahaan pesaing masih belum menaikkan, jadi kalau hanya kita yang naik, pelanggan bisa saja lari.", "literal": "perusahaan-pesaing-jamak — masih — tidak — menaikkan-yang — keadaan-karena, kita-hanya — menaikkan-kalau — pelanggan — keluar-lari-akan — kemungkinan-pun — ada." },
+    { "speaker": "아니:", "text": "[저도|Jeodo] [비슷하게|biseutage] [생각합니다|saenggakhamnida]. [다만|Daman] [원가가|wongaga] [계속|gyesok] [오르고|oreugo] [있어서|isseoseo], [올해|olhae] [안에는|aneneun] [한|han] [번|beon] [조정해야|jojeonghaeya] [할|hal] [것|geot] [같습니다|gatseumnida].", "id": "Saya juga berpendapat serupa. Hanya saja, karena biaya pokok terus naik, sepertinya dalam tahun ini harus disesuaikan sekali.", "literal": "saya-juga — serupa-secara — berpikir. hanya-saja — biaya-pokok — terus — naik-dan — ada-karena, tahun-ini — dalam — mengenai — satu — kali — menyesuaikan-harus — akan — hal — seperti." },
+    { "speaker": "김 부장:", "text": "[그럼|Geureom] [시기를|sigireul] [언제로|eonjero] [보면|bomyeon] [좋을까요|joeulkkayo]?", "id": "Kalau begitu waktunya sebaiknya kapan menurut kalian?", "literal": "kalau-begitu — waktu — kapan-ke — melihat-kalau — baik-akan-nya?" },
+    { "speaker": "아니:", "text": "[경쟁사|Gyeongjaengsa] [움직임을|umjigimeul] [보고|bogo] [결정하는|gyeoljeonghaneun] [게|ge] [안전할|anjeonhal] [듯합니다|deutamnida]. [아마|Ama] [삼|sam] [분기쯤에|bungijjeume] [분위기가|bunwigiga] [바뀔|bakkwil] [텐데요|tendeyo].", "id": "Sepertinya lebih aman memutuskan setelah melihat gerak pesaing. Kira-kira di kuartal ketiga suasananya akan berubah.", "literal": "perusahaan-pesaing — gerakan — melihat-dan — memutuskan-yang — hal — aman-akan — seperti. barangkali — tiga — kuartal-sekitar-pada — suasana — berubah-akan — padahal-nya." },
+    { "speaker": "김 부장:", "text": "[좋습니다|Jotseumnida]. [그러면|Geureomyeon] [삼|sam] [분기|bungi] [초에|choe] [다시|dasi] [논의하는|nonuihaneun] [걸로|geollo] [하죠|hajyo].", "id": "Baik. Kalau begitu kita bahas lagi di awal kuartal ketiga.", "literal": "bagus. kalau-begitu — tiga — kuartal — awal-pada — lagi — membahas-yang — hal-sebagai — mari-lakukan-nya." },
+    { "speaker": "지호:", "text": "[네|Ne], [그때까지|geuttaekkaji] [원가|wonga] [자료를|jaryoreul] [정리해|jeongnihae] [두겠습니다|dugetseumnida].", "id": "Baik, sampai saat itu saya siapkan data biaya pokoknya.", "literal": "ya, saat-itu-sampai — biaya-pokok — bahan — merapikan — akan-menaruh." },
+    { "speaker": "김 부장:", "text": "[그리고|Geurigo] [혹시|hoksi] [모르니까|moreunikka] [인상|insang] [시나리오도|sinariodo] [두|du] [개|gae] [정도|jeongdo] [준비해|junbihae] [주세요|juseyo].", "id": "Dan untuk berjaga-jaga, siapkan juga sekitar dua skenario kenaikan.", "literal": "dan — barangkali — tak-tahu-karena — kenaikan — skenario-juga — dua — buah — kira-kira — mempersiapkan — berilah-nya." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [그렇게|Geureoke] [준비하겠습니다|junbihagetseumnida].", "id": "Baik. Akan saya siapkan seperti itu.", "literal": "mengerti. begitu-secara — akan-mempersiapkan." }
+   ],
+   "notes": [
+    "**Di rapat Korea, pendapat hampir tak pernah dinyatakan telanjang.** ❌ 이른 것입니다 (ini terlalu cepat) terdengar seperti memutus perdebatan. 이른 것 같습니다 menyatakan hal yang sama sambil menyisakan ruang bagi orang lain untuk tidak setuju. Ini bukan keraguan — ini tata krama.",
+    "**-(으)ㄹ 수도 있습니다 memindahkan risiko ke wilayah kemungkinan.** 고객이 빠져나갈 수도 있습니다 — Jiho tidak berkata pelanggan **akan** lari; ia menaruhnya sebagai kemungkinan yang perlu ditimbang. Pola wajib waktu menyampaikan risiko kepada atasan.",
+    "**다만 adalah kata sambung khas rapat.** Artinya “hanya saja”. Ia dipakai untuk menambahkan keberatan sesudah menyetujui — cara Korea menyanggah tanpa terdengar membantah. Sepadan: 단, 그렇지만, 한 가지 걱정되는 점은.",
+    "**-아/어야 할 것 같습니다 adalah cara paling halus mengusulkan keharusan.** Harfiahnya “sepertinya harus”. Bandingkan dengan 해야 합니다 yang terdengar seperti perintah dari bawahan kepada atasan — sesuatu yang secara sosial tidak mungkin.",
+    "**-(으)ㄴ/는 듯하다 adalah kembaran ragam tulis dari 것 같다.** Sama artinya, tapi terdengar lebih rapi dan terpelajar. Di rapat dan laporan ia terasa pas; di percakapan santai ia terdengar kaku.",
+    "**-(으)ㄹ 텐데요 di ujung kalimat memberi dugaan yang mengundang tanggapan.** 바뀔 텐데요 — “kan nanti akan berubah, ya?” Akhiran menggantung ini mengajak lawan bicara melanjutkan sendiri.",
+    "**혹시 모르니까 berarti “untuk berjaga-jaga”.** Harfiahnya “karena barangkali tidak tahu”. Salah satu ungkapan paling sering di kantor Korea, dan di kehidupan sehari-hari juga: 혹시 모르니까 우산 가져가.",
+    "**-는 걸로 하죠 memutuskan tanpa terdengar memutuskan.** Harfiahnya “mari kita jadikan hal yang begitu”. Bentuk pengambilan keputusan yang paling lazim di rapat Korea, karena ia terdengar seperti merangkum kesepakatan, bukan menjatuhkan perintah."
+   ],
+   "grammars": [
+    {
+     "title": "-겠- dan -(으)ㄹ 것이다 — dua dugaan yang berbeda dasar",
+     "body": [
+      "Keduanya sama-sama kuat, tapi tidak bisa saling menggantikan. Yang pertama adalah reaksi; yang kedua adalah perhitungan."
+     ],
+     "table": {
+      "head": ["", "-겠-", "-(으)ㄹ 것이다"],
+      "rows": [
+       ["Dasar", "yang baru dilihat atau didengar", "pengetahuan yang sudah dimiliki"],
+       ["Rasa", "spontan, ikut merasakan", "tenang, memperkirakan"],
+       ["Contoh", "[맛있겠다|Masitgetda]! (lihat makanan)", "[맛있을|Masisseul] [거예요|geoyeyo]. (pernah tahu)"],
+       ["Contoh", "[아프겠어요|Apeugesseoyo]. (lihat luka)", "[아플|Apeul] [거예요|geoyeyo]. (tahu prosedurnya)"],
+       ["Orang pertama", "niat: [제가|jega] [하겠습니다|hagetseumnida]", "rencana: [제가|jega] [할|hal] [거예요|geoyeyo]"],
+       ["Di kantor", "[알겠습니다|Algetseumnida]. (siap)", "[알|Al] [거예요|geoyeyo]. (dia pasti tahu)"]
+      ]
+     }
+    },
+    {
+     "title": "Kata keterangan yang menemani dugaan",
+     "body": [
+      "Bahasa Korea menandai kekuatan dugaan dua kali: di kata kerjanya dan di kata keterangannya. Memasangkan yang tidak cocok — misalnya 분명히 dengan -(으)ㄹ지도 모르다 — langsung terdengar janggal."
+     ],
+     "table": {
+      "head": ["Kata", "Kekuatan", "Bentuk yang cocok"],
+      "rows": [
+       ["[혹시|hoksi]", "sangat lemah", "-(으)ㄹ지도 모르다"],
+       ["[어쩌면|eojjeomyeon]", "lemah", "-(으)ㄹ 수도 있다"],
+       ["[아마|ama]", "sedang", "-(으)ㄹ 것이다 · -(으)ㄹ 거예요"],
+       ["[아마도|amado]", "sedang, ragam tulis", "-(으)ㄹ 것으로 보이다"],
+       ["[분명히|bunmyeonghi]", "kuat", "-(으)ㄹ 것이다"],
+       ["[틀림없이|teullimeopsi]", "sangat kuat", "-(으)ㄹ 것이다"],
+       ["[설마|seolma]", "penolakan atas dugaan", "-겠어요? · -(으)ㄹ 리가 없다"],
+       ["[글쎄요|geulsseyo]", "menolak menduga", "berdiri sendiri"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dugaan sebagai peredam — pemakaian yang sesungguhnya",
+   "blocks": [
+    { "type": "p", "text": "Kalau kamu mengira bentuk dugaan dipakai untuk menduga, kamu hanya melihat separuhnya. Di percakapan orang dewasa Korea, sebagian besar bentuk dugaan justru dipakai untuk hal yang **sudah pasti** — sebagai cara melunakkan pendapat, penolakan, dan permintaan." },
+    { "type": "tabel", "head": ["Kalimat telanjang", "Dengan peredam", "Bedanya"], "rows": [
+     ["[틀렸어요|Teullyeosseoyo].", "[좀|Jom] [다른|dareun] [것|geot] [같은데요|gateundeyo].", "menyatakan salah tanpa menyalahkan"],
+     ["[싫어요|Sireoyo].", "[좀|Jom] [힘들|himdeul] [것|geot] [같아요|gatayo].", "menolak tanpa berkata tidak"],
+     ["[안|An] [갈|gal] [거예요|geoyeyo].", "[못|Mot] [갈|gal] [것|geot] [같아요|gatayo].", "ketidakhadiran terdengar di luar kendali"],
+     ["[비싸요|Bissayo].", "[조금|Jogeum] [비싼|bissan] [편인|pyeonin] [것|geot] [같아요|gatayo].", "menilai tanpa menghakimi"],
+     ["[제|Je] [생각은|saenggageun] [이겁니다|igeomnida].", "[제|Je] [생각에는|saenggageneun] [이런|ireon] [것|geot] [같습니다|gatseumnida].", "berpendapat tanpa memutus perdebatan"],
+     ["[해|Hae] [주세요|juseyo].", "[해|Hae] [주시면|jusimyeon] [좋을|joeul] [것|geot] [같아요|gatayo].", "meminta tanpa menuntut"]
+    ]},
+    { "type": "p", "text": "⚠️ Karena peredam ini begitu sering dipakai, orang Korea sering mengucapkan 것 같아요 bahkan untuk perasaannya sendiri: 저는 좋은 것 같아요 (saya rasa saya suka). Secara logika ini aneh — kamu tentu tahu apakah kamu suka — tapi ia berfungsi sebagai penanda kerendahan hati, bukan keraguan." },
+    { "type": "sub", "text": "Kapan JANGAN memakai peredam" },
+    { "type": "tabel", "head": ["Keadaan", "Kenapa", "Yang benar"], "rows": [
+     ["Menerima tugas dari atasan", "keraguan terdengar seperti enggan", "[알겠습니다|Algetseumnida]."],
+     ["Melaporkan angka atau fakta", "data tidak boleh terdengar kira-kira", "[매출은|Maechureun] [십|sip] [퍼센트|peosenteu] [늘었습니다|neureotseumnida]."],
+     ["Menjawab pertanyaan tentang dirimu", "membuat ragu-ragu tanpa perlu", "[저는|Jeoneun] [인도네시아|Indonesia] [사람입니다|saramimnida]."],
+     ["Meminta maaf", "peredam melemahkan permintaan maafnya", "[죄송합니다|Joesonghamnida]."],
+     ["Janji dan komitmen", "harus terdengar pasti", "[내일까지|Naeilkkaji] [보내|bonae] [드리겠습니다|deurigetseumnida]."]
+    ]}
+   ]
+  },
+  {
+   "title": "Menolak dugaan orang lain",
+   "blocks": [
+    { "type": "p", "text": "Setengah dari percakapan menduga adalah membantah dugaan. Bahasa Korea punya perangkat tersendiri untuk itu, dan kekuatannya bertingkat sama seperti dugaannya." },
+    { "type": "tabel", "head": ["Kalimat", "Kekuatan bantahan", "Contoh pemakaian"], "rows": [
+     ["[글쎄요|Geulsseyo].", "menahan diri", "tidak ingin menduga sama sekali"],
+     ["[그럴|Geureol] [수도|sudo] [있죠|itjyo].", "setengah menerima", "sopan tapi tak setuju"],
+     ["[꼭|Kkok] [그렇지는|geureochineun] [않아요|anayo].", "menyanggah lembut", "“tak selalu begitu”"],
+     ["[그건|Geugeon] [아닌|anin] [것|geot] [같은데요|gateundeyo].", "menyanggah dengan peredam", "paling sering di kantor"],
+     ["[설마요|Seolmayo].", "tak percaya", "kabar yang mengejutkan"],
+     ["[그럴|Geureol] [리가|riga] [없어요|eopseoyo].", "menolak keras", "yakin mustahil"],
+     ["[말도|Maldo] [안|an] [돼요|dwaeyo].", "menolak sangat keras", "hanya kepada orang dekat"]
+    ]},
+    { "type": "sub", "text": "Pola -(으)ㄹ 리가 없다 dan kerabatnya" },
+    { "type": "tabel", "head": ["Pola", "Arti", "Contoh"], "rows": [
+     ["-(으)ㄹ 리가 없다", "mustahil begitu", "[늦을|Neujeul] [리가|riga] [없어요|eopseoyo]."],
+     ["-(으)ㄹ 리가 있나요?", "masa iya begitu", "[그럴|Geureol] [리가|riga] [있나요|innayo]?"],
+     ["-(으)ㄹ 만하다", "pantas, layak", "[볼|Bol] [만해요|manaeyo]."],
+     ["-기 마련이다", "memang sudah semestinya begitu", "[실수하기|Silsuhagi] [마련이에요|maryeonieyo]."],
+     ["-(으)ㄴ/는 법이다", "begitulah hukumnya", "[시간이|Sigani] [해결하는|haegyeolhaneun] [법이에요|beobieyo]."],
+     ["-(으)ㄹ 뻔했다", "hampir saja terjadi", "[넘어질|Neomeojil] [뻔했어요|ppeonhaesseoyo]."]
+    ]},
+    { "type": "kotak", "title": "설마 — satu kata yang menanggung banyak", "items": [
+     "Sendirian, 설마 berarti “masa sih” — penolakan spontan atas kabar yang tak diinginkan.",
+     "Di depan kalimat, ia menyiapkan dugaan yang diharapkan tidak benar: 설마 잊어버린 건 아니겠지? (masa dia lupa, kan?).",
+     "Ada peribahasa yang memakainya: 설마가 사람 잡는다 — “‘masa iya’ itulah yang menjelakakan orang”, dipakai untuk memperingatkan supaya tidak meremehkan kemungkinan buruk."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "것 같다", "baca": "geot gatda", "id": "sepertinya" },
+  { "ko": "듯하다", "baca": "deutada", "id": "tampaknya (ragam tulis)" },
+  { "ko": "모양이다", "baca": "moyangida", "id": "rupanya, tampaknya" },
+  { "ko": "-나 보다", "baca": "na boda", "id": "sepertinya (dari bukti)" },
+  { "ko": "-을지도 모르다", "baca": "euljido moreuda", "id": "mungkin saja" },
+  { "ko": "-을 수도 있다", "baca": "eul sudo itda", "id": "bisa jadi" },
+  { "ko": "-을 텐데", "baca": "eul tende", "id": "pasti akan … padahal" },
+  { "ko": "-을 리가 없다", "baca": "eul riga eopda", "id": "mustahil" },
+  { "ko": "-기 마련이다", "baca": "gi maryeonida", "id": "sudah semestinya begitu" },
+  { "ko": "-을 뻔하다", "baca": "eul ppeonhada", "id": "hampir saja" },
+  { "ko": "아마", "baca": "ama", "id": "barangkali" },
+  { "ko": "어쩌면", "baca": "eojjeomyeon", "id": "boleh jadi" },
+  { "ko": "분명히", "baca": "bunmyeonghi", "id": "jelas, pasti" },
+  { "ko": "틀림없이", "baca": "teullimeopsi", "id": "tak salah lagi" },
+  { "ko": "설마", "baca": "seolma", "id": "masa sih" },
+  { "ko": "글쎄요", "baca": "geulsseyo", "id": "entahlah" },
+  { "ko": "일단", "baca": "ildan", "id": "untuk sementara, pertama-tama" },
+  { "ko": "다만", "baca": "daman", "id": "hanya saja" },
+  { "ko": "혹시 모르니까", "baca": "hoksi moreunikka", "id": "untuk berjaga-jaga" },
+  { "ko": "막히다", "baca": "makida", "id": "tersumbat, macet" },
+  { "ko": "닳다", "baca": "dalta", "id": "terkikis, habis terpakai" },
+  { "ko": "배터리", "baca": "baeteori", "id": "baterai" },
+  { "ko": "표정", "baca": "pyojeong", "id": "raut wajah" },
+  { "ko": "음료수", "baca": "eumnyosu", "id": "minuman" },
+  { "ko": "주문하다", "baca": "jumunhada", "id": "memesan" },
+  { "ko": "시키다", "baca": "sikida", "id": "memesan, menyuruh" },
+  { "ko": "가격", "baca": "gagyeok", "id": "harga" },
+  { "ko": "인상", "baca": "insang", "id": "kenaikan (harga)" },
+  { "ko": "원가", "baca": "wonga", "id": "biaya pokok" },
+  { "ko": "매출", "baca": "maechul", "id": "penjualan, omzet" },
+  { "ko": "경쟁사", "baca": "gyeongjaengsa", "id": "perusahaan pesaing" },
+  { "ko": "움직임", "baca": "umjigim", "id": "gerakan" },
+  { "ko": "상태", "baca": "sangtae", "id": "keadaan" },
+  { "ko": "시기", "baca": "sigi", "id": "waktu, saat yang tepat" },
+  { "ko": "이르다", "baca": "ireuda", "id": "terlalu dini" },
+  { "ko": "안전하다", "baca": "anjeonhada", "id": "aman" },
+  { "ko": "분위기", "baca": "bunwigi", "id": "suasana" },
+  { "ko": "논의하다", "baca": "nonuihada", "id": "membahas" },
+  { "ko": "결정하다", "baca": "gyeoljeonghada", "id": "memutuskan" },
+  { "ko": "시나리오", "baca": "sinario", "id": "skenario" },
+  { "ko": "비슷하다", "baca": "biseutada", "id": "mirip, serupa" },
+  { "ko": "빠져나가다", "baca": "ppajyeonagada", "id": "keluar, lepas, lari" },
+  { "ko": "지나다", "baca": "jinada", "id": "berlalu, lewat" },
+  { "ko": "거의", "baca": "geoui", "id": "hampir" },
+  { "ko": "곧", "baca": "got", "id": "sebentar lagi" },
+  { "ko": "실수하다", "baca": "silsuhada", "id": "berbuat salah" },
+  { "ko": "넘어지다", "baca": "neomeojida", "id": "terjatuh" },
+  { "ko": "해결하다", "baca": "haegyeolhada", "id": "menyelesaikan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk -(으)ㄴ/는/(으)ㄹ 것 같다 yang tepat.",
+   "items": [
+    "지금 비가 ____ 같아요. (오다, sedang terjadi)",
+    "어제 비가 ____ 같아요. (오다, sudah terjadi)",
+    "내일 비가 ____ 같아요. (오다, akan terjadi)",
+    "저 사람은 학생____ 같아요. (kata benda, sekarang)",
+    "그 영화는 ____ 같아요. (재미있다, sekarang)",
+    "이번 시험은 ____ 같아요. (어렵다, akan datang)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan -나 보다 atau -(으)ㄴ가 보다.",
+   "items": [
+    "불이 꺼져 있네요. 벌써 ____. (자다)",
+    "얼굴이 안 좋아요. 어디 ____. (아프다)",
+    "가방이 없어요. 벌써 ____. (가다)",
+    "저 사람은 여기 자주 와요. 단골____. (손님이다)",
+    "요즘 연락이 없어요. 많이 ____. (바쁘다)"
+   ]
+  },
+  {
+   "prompt": "Pilih antara -겠- dan -(으)ㄹ 거예요.",
+   "items": [
+    "(melihat makanan panas keluar) 와, 맛있____!",
+    "(tahu temanmu rajin) 그 사람은 시험에 붙____.",
+    "(melihat orang jatuh) 많이 아프____!",
+    "(atasan memberi tugas) 네, 알____습니다.",
+    "(memperkirakan cuaca dari ramalan) 내일은 춥____."
+   ]
+  },
+  {
+   "prompt": "Ubah pendapat telanjang berikut menjadi pendapat yang diredam.",
+   "items": [
+    "그건 틀렸어요. → ____",
+    "저는 안 갈 거예요. → ____",
+    "이 가격은 비싸요. → ____",
+    "지금 시작하면 안 돼요. → ____",
+    "이 계획은 좋지 않아요. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "봐 / 길이 / 막히나",
+    "몰라 / 나갔을지도 / 배터리 / 폰",
+    "텐데 / 오면 / 수지 / 서운할",
+    "같습니다 / 이른 / 조금 / 시기에는 / 지금 / 것",
+    "있습니다 / 고객이 / 수도 / 빠져나갈"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Temanmu tidak datang dan tidak memberi kabar. Kemukakan dua dugaan dengan bentuk yang berbeda kekuatannya.",
+    "Di rapat, kamu tidak setuju dengan usul atasan. Sampaikan keberatanmu dengan dua lapis peredam.",
+    "Kamu melihat rekan kerja yang wajahnya pucat. Katakan dugaanmu dengan -나 보다 dan reaksi spontanmu dengan -겠-.",
+    "Tolak dugaan seseorang bahwa kamu akan berhenti kerja, dengan -(으)ㄹ 리가 없다."
+   ]
+  }
+ ],
+ "answers": [
+  "오는 것 — 온 것 — 올 것 — 인 것 — 재미있는 것 — 어려울 것",
+  "자나 봐요 — 아픈가 봐요 — 갔나 봐요 — 단골손님인가 봐요 — 바쁜가 봐요",
+  "맛있겠다 — 붙을 거예요 — 아프겠어요 — 알겠습니다 — 추울 거예요",
+  "그건 좀 다른 것 같은데요. — 저는 못 갈 것 같아요. — 이 가격은 조금 비싼 편인 것 같아요. — 지금 시작하기에는 조금 이른 것 같습니다. — 이 계획은 조금 더 검토해야 할 것 같습니다.",
+  "길이 막히나 봐. — 폰 배터리 나갔을지도 몰라. — 수지 오면 서운할 텐데. — 지금 시기에는 조금 이른 것 같습니다. — 고객이 빠져나갈 수도 있습니다.",
+  "길이 많이 막히나 봐요. 아니면 폰 배터리가 나갔을지도 몰라요. — 좋은 의견이신데, 다만 지금 시기에는 조금 이른 것 같습니다. — 어디 아픈가 봐요. 많이 힘들겠어요. — 그 사람이 회사를 그만둘 리가 없어요."
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "title": "Menulis pendapat dan menjelaskan data",
+ "title_target": "결론적으로 말하면 — Gyeollonjeogeuro malhamyeon",
+ "goal": "Bisa menyusun tulisan berpendapat tiga bagian dalam ragam tulis Korea, menjelaskan angka dan grafik dengan kata kerja yang tepat, serta membantah pendapat lawan tanpa kehilangan nada akademis.",
+ "bekal": [
+  "menyusun kerangka 서론–본론–결론 beserta kalimat pembuka tiap bagian",
+  "memakai penghubung ragam tulis: 따라서, 그러나, 또한, 즉, 반면",
+  "menjelaskan angka dan kecenderungan dengan kata kerja yang tepat",
+  "menyusun paragraf argumen: pernyataan, alasan, contoh, penegasan ulang",
+  "mengantisipasi dan membantah pendapat lawan"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Berlatih menulis untuk TOPIK",
+   "intro": "Ani dan Suji berlatih bagian menulis. Perhatikan bahwa hampir semua koreksi Suji adalah soal **ragam**, bukan tata bahasa — dan itulah yang paling sering menurunkan nilai menulis pelajar tingkat menengah.",
+   "lines": [
+    { "speaker": "수지:", "text": "[써|Sseo] [온|on] [거|geo] [한번|hanbeon] [볼까|bolkka]?", "id": "Coba kita lihat yang kamu tulis?", "literal": "menulis — datang-yang — hal — sekali — melihat-bagaimana?" },
+    { "speaker": "아니:", "text": "[응|Eung], [주제가|jujega] ‘[재택근무의|jaetaekgeunmuui] [장단점|jangdanjeom]’[이었어|ieosseo].", "id": "Iya, temanya “kelebihan dan kekurangan kerja dari rumah”.", "literal": "ya, tema — kerja-dari-rumah-punya — kelebihan-kekurangan — adalah-sudah." },
+    { "speaker": "수지:", "text": "[음|Eum]… [내용은|naeyongeun] [괜찮은데|gwaenchaneunde] [첫|cheot] [문장부터|munjangbuteo] [고쳐야|gochyeoya] [할|hal] [것|geot] [같아|gata]. ‘[저는|Jeoneun] [재택근무가|jaetaekgeunmuga] [좋다고|jotago] [생각해요|saenggakhaeyo]’[라고|rago] [썼네|sseonne].", "id": "Hmm… isinya bagus tapi kayaknya dari kalimat pertama harus diperbaiki. Kamu nulis “Saya rasa kerja dari rumah itu bagus”.", "literal": "hmm… isi — mengenai — tidak-apa-apa-padahal — pertama — kalimat-dari — memperbaiki-harus — akan — hal — seperti. saya — mengenai — kerja-dari-rumah — baik-katanya — berpikir-nya — begitu-katanya — menulis-sudah-ternyata." },
+    { "speaker": "아니:", "text": "[왜|Wae]? [틀렸어|Teullyeosseo]?", "id": "Kenapa? Salah?", "literal": "kenapa? salah-sudah?" },
+    { "speaker": "수지:", "text": "[문법은|Munbeobeun] [맞는데|manneunde] [문어체가|muneochega] [아니야|aniya]. [논설문에서는|Nonseolmuneseoneun] ‘[저는|jeoneun]’[하고|hago] ‘[해요|haeyo]’[를|reul] [안|an] [써|sseo]. ‘[재택근무는|Jaetaekgeunmuneun] [여러|yeoreo] [면에서|myeoneseo] [긍정적이다|geungjeongjeogida]’[처럼|cheoreom] [써야|sseoya] [해|hae].", "id": "Tata bahasanya benar tapi bukan ragam tulis. Di karangan berpendapat, “saya” dan “해요” tidak dipakai. Harus ditulis seperti “Kerja dari rumah bersifat positif dalam berbagai segi”.", "literal": "tata-bahasa — mengenai — benar-padahal — ragam-tulis — bukan. karangan-berpendapat-di — mengenai — saya — dan — haeyo — akan — tidak — memakai. kerja-dari-rumah — mengenai — berbagai — segi-di — positif-adalah — seperti — menulis-harus — melakukan." },
+    { "speaker": "아니:", "text": "[아|A], [주관적인|jugwanjeogin] [표현을|pyohyeoneul] [빼라는|ppaeraneun] [거지|geoji]?", "id": "Ah, maksudnya buang ungkapan yang subjektif?", "literal": "ah, subjektif-yang — ungkapan — buang-perintah-yang — hal-kan?" },
+    { "speaker": "수지:", "text": "[정확히|Jeonghwakhi]. [그리고|Geurigo] [근거를|geungeoreul] [댈|dael] [때|ttae] [숫자를|sutjareul] [넣으면|neoeumyeon] [점수가|jeomsuga] [확|hwak] [올라가|ollaga]. ‘[많은|Maneun] [사람들이|saramdeuri]’[보다|boda] ‘[직장인|jikjangin] [열|yeol] [명|myeong] [중|jung] [일곱|ilgop] [명이|myeongi]’[가|ga] [훨씬|hwolssin] [나아|naa].", "id": "Tepat. Dan waktu memberi dasar, kalau kamu masukkan angka, nilainya langsung naik. “Tujuh dari sepuluh pekerja kantoran” jauh lebih baik daripada “banyak orang”.", "literal": "tepat-secara. dan — dasar — mengeluarkan-akan — waktu — angka — memasukkan-kalau — nilai — langsung — naik. banyak-yang — orang-jamak — daripada — pekerja-kantor — sepuluh — orang — antara — tujuh — orang — jauh — lebih-baik." },
+    { "speaker": "아니:", "text": "[근데|Geunde] [통계를|tonggyereul] [모르면|moreumyeon] [어떻게|eotteoke] [해|hae]?", "id": "Tapi kalau nggak tahu statistiknya gimana?", "literal": "tapi — statistik — tak-tahu-kalau — bagaimana — melakukan?" },
+    { "speaker": "수지:", "text": "[시험에서는|Siheomeseoneun] [주어진|jueojin] [도표를|dopyoreul] [쓰면|sseumyeon] [되고|doego], [없으면|eopseumyeon] [구체적인|guchejeogin] [상황을|sanghwangeul] [들면|deulmyeon] [돼|dwae]. ‘[출퇴근|Chultoegeun] [시간을|siganeul] [하루|haru] [두|du] [시간|sigan] [아낄|akkil] [수|su] [있다|itda]’[처럼|cheoreom].", "id": "Di ujian tinggal pakai grafik yang diberikan, dan kalau tidak ada, cukup sebutkan situasi yang konkret. Seperti “bisa menghemat dua jam sehari untuk perjalanan pergi-pulang kerja”.", "literal": "ujian-di — mengenai — diberikan-yang — grafik — memakai-kalau — jadi-dan, tak-ada-kalau — konkret-yang — keadaan — mengangkat-kalau — jadi. pergi-pulang-kerja — waktu — satu-hari — dua — jam — menghemat-akan — kemungkinan — ada — seperti." },
+    { "speaker": "아니:", "text": "[알겠어|Algesseo]. [결론은|Gyeollo-neun] [어떻게|eotteoke] [끝내야|kkeutnaeya] [돼|dwae]?", "id": "Oke. Kesimpulannya harus diakhiri bagaimana?", "literal": "mengerti. kesimpulan — mengenai — bagaimana — mengakhiri-harus — jadi?" },
+    { "speaker": "수지:", "text": "[본론|Bollon] [요약|yoyak] [한|han] [줄|jul], [그리고|geurigo] [조건을|jogeoneul] [붙인|butin] [주장|jujang] [한|han] [줄|jul]. ‘[따라서|Ttaraseo] [재택근무는|jaetaekgeunmuneun] [적절한|jeokjeolhan] [관리|gwalli] [제도가|jedoga] [뒷받침될|dwitbatchimdoel] [때|ttae] [효과를|hyogwareul] [발휘할|balhwihal] [수|su] [있다|itda]’ [같은|gateun] [식으로|sigeuro].", "id": "Satu baris ringkasan isi, lalu satu baris pendapat yang diberi syarat. Semacam “Dengan demikian, kerja dari rumah dapat memberi hasil ketika ditopang sistem pengelolaan yang memadai”.", "literal": "isi-utama — ringkasan — satu — baris, dan — syarat — menempelkan-yang — pendapat — satu — baris. karena-itu — kerja-dari-rumah — mengenai — memadai-yang — pengelolaan — sistem — tertopang-akan — waktu — hasil — memperlihatkan-akan — kemungkinan — ada — seperti-yang — cara-dengan." }
+   ],
+   "notes": [
+    "**Ragam tulis berpendapat Korea membuang kata ganti orang pertama.** ❌ 저는 …라고 생각합니다 di karangan resmi. Yang dipakai: pernyataan langsung (재택근무는 긍정적이다) atau bentuk tak berpelaku (…라고 볼 수 있다, …로 판단된다).",
+    "**Ini pengecualian penting dari seluruh modul.** Sepanjang unit-unit sebelumnya kamu belajar melunakkan pendapat dengan 것 같다. Di tulisan berpendapat, pelunakan berlebihan justru dinilai sebagai argumen yang lemah — sama seperti di wawancara kerja.",
+    "**근거를 대다 = mengemukakan dasar atau bukti.** Kata kerja 대다 dipakai juga di 핑계를 대다 (mencari dalih), 이유를 대다.",
+    "**Angka mengalahkan kata sifat.** Ini berlaku sama di TOPIK, di laporan kerja, dan di tulisan mana pun. 많은 사람들이 tidak membuktikan apa pun; 열 명 중 일곱 명이 membuktikan.",
+    "**예를 들다 = memberi contoh; 상황을 들다 = mengangkat keadaan.** Kata kerja 들다 di sini berarti “mengangkat, menyebut”. Pola bakunya: 예를 들면, 예를 들어, 대표적인 예로.",
+    "**뒷받침되다 = ditopang, didukung.** Kata yang sangat berguna di tulisan argumentatif: 근거로 뒷받침되다, 자료가 뒷받침하다.",
+    "**Kesimpulan yang baik memberi syarat, bukan pernyataan mutlak.** …할 때 효과를 발휘할 수 있다 — bentuk ini menandakan penulis sadar akan batasannya, dan di penilaian TOPIK bagian ini bernilai tinggi.",
+    "**-(으)ㄴ/는 식으로 berarti “dengan cara seperti”.** 같은 식으로, 이런 식으로, 그런 식으로 하지 마 (jangan begitu caranya)."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka 서론–본론–결론",
+     "body": [
+      "Tulisan berpendapat Korea — di TOPIK maupun di tempat kerja — memakai tiga bagian dengan proporsi yang cukup baku: sekitar dua puluh, enam puluh, dan dua puluh persen."
+     ],
+     "table": {
+      "head": ["Bagian", "Isinya", "Kalimat pembuka"],
+      "rows": [
+       ["서론", "latar dan rumusan masalah", "[최근|Choegeun] …에 [대한|daehan] [관심이|gwansimi] [높아지고|nopajigo] [있다|itda]."],
+       ["서론", "menyebut apa yang akan dibahas", "[본고에서는|Bongoeseoneun] …에 [대해|daehae] [살펴보고자|salpyeobogoja] [한다|handa]."],
+       ["본론 1", "sisi pertama, dengan bukti", "[먼저|Meonjeo], …는 [측면이|cheungmyeoni] [있다|itda]."],
+       ["본론 2", "sisi kedua atau bantahan", "[반면|Banmyeon], …는 [문제도|munjedo] [지적된다|jijeokdoenda]."],
+       ["본론 3", "contoh atau data", "[실제로|Siljero] … [나타났다|natanatda]."],
+       ["결론", "ringkasan", "[지금까지|Jigeumkkaji] [살펴본|salpyeobon] [바와|bawa] [같이|gachi]…"],
+       ["결론", "pendapat bersyarat", "[따라서|Ttaraseo] …할 [때|ttae] …할 [수|su] [있을|isseul] [것이다|geosida]."]
+      ]
+     }
+    },
+    {
+     "title": "Penghubung ragam tulis",
+     "body": [
+      "Penghubung lisan yang kamu pakai sehari-hari punya kembaran tulis. Memakai yang lisan di karangan resmi langsung terasa, dan menurunkan nilai."
+     ],
+     "table": {
+      "head": ["Fungsi", "Lisan", "Tulis"],
+      "rows": [
+       ["Menambah", "그리고", "[또한|ttohan] · [아울러|aulleo] · [게다가|gedaga]"],
+       ["Menyimpulkan", "그래서", "[따라서|ttaraseo] · [그러므로|geureomeuro] · [이에|ie] [따라|ttara]"],
+       ["Membalik", "그런데 · 하지만", "[그러나|geureona] · [반면|banmyeon] · [이와|iwa] [달리|dalli]"],
+       ["Menjelaskan ulang", "그러니까", "[즉|jeuk] · [다시|dasi] [말해|malhae]"],
+       ["Merangkum", "아무튼", "[요컨대|yokeonde] · [정리하면|jeongnihamyeon]"],
+       ["Memberi contoh", "예를 들어서", "[예를|yereul] [들면|deulmyeon] · [가령|garyeong]"],
+       ["Mengakui lalu membalik", "그래도", "[그럼에도|geureomedo] [불구하고|bulguhago]"],
+       ["Menunjukkan sebab", "-아/어서", "-기 [때문에|ttaemune] · -(으)므로"],
+       ["Membuka urutan", "먼저", "[우선|useon] · [첫째|cheotjjae] · [무엇보다|mueotboda]"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Memaparkan data di rapat",
+   "intro": "Ani memaparkan hasil survei pelanggan. Bahasa menjelaskan angka adalah keterampilan yang sama untuk esai TOPIK dan untuk rapat kerja — hanya tingkat kesopanannya yang berbeda.",
+   "lines": [
+    { "speaker": "아니:", "text": "[이번|Ibeon] [설문|seolmun] [결과를|gyeolgwareul] [말씀드리겠습니다|malsseumdeurigetseumnida]. [응답자는|Eungdapjaneun] [총|chong] [천이백|cheonibaek] [명입니다|myeongimnida].", "id": "Saya akan menyampaikan hasil survei kali ini. Respondennya seluruhnya seribu dua ratus orang.", "literal": "kali-ini — angket — hasil — akan-menyampaikan. penjawab — mengenai — total — seribu-dua-ratus — orang-adalah." },
+    { "speaker": "김 부장:", "text": "[네|Ne], [계속하세요|gyesokhaseyo].", "id": "Ya, lanjutkan.", "literal": "ya, lanjutkanlah-nya." },
+    { "speaker": "아니:", "text": "[가장|Gajang] [눈에|nune] [띄는|ttuineun] [것은|geoseun] [배송|baesong] [만족도입니다|manjokdoimnida]. [작년|Jangnyeon] [육십사|yuksipsa] [퍼센트에서|peosenteueseo] [올해|olhae] [팔십일|palsibil] [퍼센트로|peosenteuro] [크게|keuge] [상승했습니다|sangseunghaetseumnida].", "id": "Yang paling menonjol adalah kepuasan pengiriman. Naik tajam dari enam puluh empat persen tahun lalu menjadi delapan puluh satu persen tahun ini.", "literal": "paling — mata-pada — menonjol-yang — hal — mengenai — pengiriman — kepuasan-adalah. tahun-lalu — enam-puluh-empat — persen-dari — tahun-ini — delapan-puluh-satu — persen-sebagai — besar-secara — naik-sudah." },
+    { "speaker": "김 부장:", "text": "[상승|Sangseung] [요인은|yoineun] [뭐라고|mworago] [보십니까|bosimnikka]?", "id": "Apa yang Anda anggap sebagai faktor kenaikannya?", "literal": "kenaikan — faktor — mengenai — apa-katanya — melihat-beliau-kah?" },
+    { "speaker": "아니:", "text": "[당일|Dangil] [배송|baesong] [지역을|jiyeogeul] [확대한|hwakdaehan] [것이|geosi] [가장|gajang] [큰|keun] [요인으로|yoineuro] [보입니다|boimnida]. [주관식|Jugwansik] [응답에서도|eungdabeseodo] ‘[빠른|ppareun] [배송|baesong]’[이|i] [가장|gajang] [많이|mani] [언급되었습니다|eongeupdoeeotseumnida].", "id": "Perluasan wilayah pengiriman hari-sama tampaknya menjadi faktor terbesar. Pada jawaban isian pun, “pengiriman cepat” paling banyak disebut.", "literal": "hari-itu — pengiriman — wilayah — memperluas-yang — hal — paling — besar-yang — faktor-sebagai — terlihat. isian-bentuk — jawaban-pada-juga — cepat-yang — pengiriman — paling — banyak — disebut-sudah." },
+    { "speaker": "김 부장:", "text": "[낮아진|Najajin] [항목은|hangmogeun] [없습니까|eopseumnikka]?", "id": "Tidak ada butir yang menurun?", "literal": "menjadi-rendah-yang — butir — mengenai — tak-ada-kah?" },
+    { "speaker": "아니:", "text": "[있습니다|Itseumnida]. [고객|Gogaek] [응대|eungdae] [만족도는|manjokdoneun] [칠십이|chilsibi] [퍼센트에서|peosenteueseo] [육십오|yuksibo] [퍼센트로|peosenteuro] [칠|chil] [퍼센트|peosenteu] [포인트|pointeu] [하락했습니다|harakhaetseumnida]. [문의|Munui] [건수가|geonsuga] [두|du] [배|bae] [늘어난|neureonan] [반면|banmyeon] [인력은|illyeogeun] [그대로였기|geudaeroyeotgi] [때문으로|ttaemuneuro] [분석됩니다|bunseokdoemnida].", "id": "Ada. Kepuasan layanan pelanggan turun tujuh poin persen dari tujuh puluh dua menjadi enam puluh lima persen. Dianalisis penyebabnya karena jumlah pertanyaan masuk berlipat dua sementara jumlah tenaganya tetap.", "literal": "ada. pelanggan — penanganan — kepuasan — mengenai — tujuh-puluh-dua — persen-dari — enam-puluh-lima — persen-sebagai — tujuh — persen — poin — turun-sudah. pertanyaan — jumlah-kasus — dua — kali — bertambah-yang — sebaliknya — tenaga — mengenai — apa-adanya-adalah-sudah-hal — karena-sebagai — dianalisis." },
+    { "speaker": "김 부장:", "text": "[그러면|Geureomyeon] [대책이|daechaegi] [필요하겠군요|piryohagetgunyo].", "id": "Kalau begitu perlu langkah penanganan ya.", "literal": "kalau-begitu — tindakan — perlu-pasti-ternyata-nya." },
+    { "speaker": "아니:", "text": "[네|Ne]. [단기적으로는|Dangijeogeuroneun] [자주|jaju] [묻는|munneun] [질문|jilmun] [안내를|annaereul] [보강하고|bogangago], [중장기적으로는|jungjanggijeogeuroneun] [인력|illyeok] [충원이|chungwoni] [필요하다고|piryohadago] [판단됩니다|pandandoemnida].", "id": "Ya. Dalam jangka pendek memperkuat panduan pertanyaan yang sering diajukan, dan dalam jangka menengah-panjang dinilai perlu penambahan tenaga.", "literal": "ya. jangka-pendek-secara — mengenai — sering — bertanya-yang — pertanyaan — panduan — memperkuat-dan, jangka-menengah-panjang-secara — mengenai — tenaga — penambahan — perlu-katanya — dinilai." },
+    { "speaker": "김 부장:", "text": "[좋습니다|Jotseumnida]. [숫자와|Sutjawa] [원인|wonin] [분석이|bunseogi] [명확해서|myeonghwakhaeseo] [이해하기|ihaehagi] [쉬웠습니다|swiwotseumnida].", "id": "Bagus. Angka dan analisis penyebabnya jelas, jadi mudah dipahami.", "literal": "bagus. angka-dan — penyebab — analisis — jelas-karena — memahami-hal — mudah-sudah." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [상세|Sangse] [자료는|jaryoneun] [회의|hoeui] [후에|hue] [공유드리겠습니다|gongyudeurigetseumnida].", "id": "Terima kasih. Data rincinya akan saya bagikan setelah rapat.", "literal": "terima-kasih. rinci — bahan — mengenai — rapat — sesudah-pada — akan-membagikan-mempersembahkan." }
+   ],
+   "notes": [
+    "**Menjelaskan perubahan angka memakai pola tetap: A에서 B로 + kata kerja.** 육십사 퍼센트에서 팔십일 퍼센트로 상승했습니다. Pola ini muncul di setiap laporan dan setiap soal grafik TOPIK.",
+    "**퍼센트 dan 퍼센트 포인트 tidak sama.** Turun dari 72% ke 65% adalah **7 poin persen**, bukan 7 persen. Kesalahan ini sering dilakukan bahkan oleh penutur asli, dan menyebutnya dengan benar menandakan ketelitian.",
+    "**눈에 띄다 = menonjol, menarik perhatian.** Harfiahnya “tertangkap mata”. Pola yang sangat berguna untuk membuka pemaparan data: 가장 눈에 띄는 것은…",
+    "**-(으)로 보입니다 dan -(으)로 분석됩니다 dan -(으)로 판단됩니다** — tiga bentuk pasif untuk menyampaikan simpulan tanpa menyebut siapa yang menyimpulkan. Ini ciri khas bahasa laporan Korea, dan penerapan langsung dari unit 9.",
+    "**주관식 lawan 객관식.** Isian bebas lawan pilihan ganda. Kata yang muncul di survei, ujian, dan formulir.",
+    "**건수 = jumlah kasus.** Penggolong 건 dipakai untuk perkara, pertanyaan, kecelakaan, transaksi: 문의 세 건, 사고 두 건.",
+    "**단기적 · 중장기적 — pembagian waktu baku di laporan Korea.** Menyajikan usul dalam dua jangka waktu adalah kebiasaan yang membuat laporan terlihat matang.",
+    "**명확하다 = jelas dan tak bermakna ganda.** Bandingkan dengan 분명하다 (jelas, tak diragukan) dan 확실하다 (pasti). Ketiganya sering ditukar, tapi 명확 paling tepat untuk penjelasan dan definisi."
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan angka dan kecenderungan",
+     "body": [
+      "Kata kerja yang dipilih menandakan besar dan arah perubahan. Memakai 늘다 untuk semuanya membuat laporanmu terdengar kasar."
+     ],
+     "table": {
+      "head": ["Arah", "Kata kerja", "Kadar"],
+      "rows": [
+       ["Naik", "[증가하다|jeunggahada] · [늘어나다|neureonada]", "netral"],
+       ["Naik", "[상승하다|sangseunghada]", "netral, tulis"],
+       ["Naik", "[급증하다|geupjeunghada] · [폭증하다|pokjeunghada]", "melonjak"],
+       ["Naik", "[소폭|sopok] [증가하다|jeunggahada]", "naik tipis"],
+       ["Turun", "[감소하다|gamsohada] · [줄어들다|jureodeulda]", "netral"],
+       ["Turun", "[하락하다|harakhada]", "netral, tulis"],
+       ["Turun", "[급감하다|geupgamhada] · [폭락하다|pongnakhada]", "anjlok"],
+       ["Tetap", "[유지되다|yujidoeda] · [비슷하다|biseutada]", "bertahan"],
+       ["Melambat", "[둔화되다|dunhwadoeda]", "laju berkurang"],
+       ["Berbalik", "[반등하다|bandeunghada]", "naik lagi setelah turun"],
+       ["Puncak", "[정점을|jeongjeomeul] [찍다|jjikda]", "mencapai puncak"],
+       ["Porsi", "[차지하다|chajihada]", "menempati sekian persen"]
+      ]
+     }
+    },
+    {
+     "title": "Pola kalimat untuk grafik",
+     "body": [
+      "Soal menulis TOPIK nomor 53 hampir selalu berupa grafik. Delapan pola berikut menutup hampir seluruh kebutuhannya."
+     ],
+     "table": {
+      "head": ["Fungsi", "Pola", "Contoh"],
+      "rows": [
+       ["Membuka", "N에 따르면", "[조사에|Josae] [따르면|ttareumyeon]…"],
+       ["Menyebut sumber", "N을/를 대상으로 조사한 결과", "[직장인|Jikjangin] [천|cheon] [명을|myeongeul] [대상으로|daesangeuro]…"],
+       ["Perubahan", "A에서 B로 증가했다", "[십|Sip] [퍼센트에서|peosenteueseo] [삼십|samsip] [퍼센트로|peosenteuro]"],
+       ["Lipat", "N배로 늘었다", "[두|Du] [배로|baero] [늘었다|neureotda]"],
+       ["Porsi", "N을/를 차지했다", "[전체의|Jeoncheui] [사십|sasip] [퍼센트를|peosenteureul]"],
+       ["Peringkat", "N위를 기록했다", "[일|Il] [위를|wireul] [기록했다|girokhaetda]"],
+       ["Perbandingan", "N에 비해", "[남성에|Namseonge] [비해|bihae] [여성이|yeoseongi]"],
+       ["Sebab", "이러한 변화는 …에 따른 것으로 보인다", "…에 [따른|ttareun] [것으로|geoseuro] [보인다|boinda]"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu paragraf argumen",
+   "blocks": [
+    { "type": "p", "text": "Paragraf argumen yang baik dalam bahasa Korea punya empat bagian, dan urutannya tidak berubah. Menguasai satu paragraf berarti menguasai seluruh karangan, karena karangan hanyalah tiga sampai empat paragraf seperti ini." },
+    { "type": "tabel", "head": ["Bagian", "Fungsinya", "Contoh"], "rows": [
+     ["1. Pernyataan", "apa yang kamu katakan", "[재택근무는|Jaetaekgeunmuneun] [업무|eommu] [효율을|hyoyureul] [높인다|nopinda]."],
+     ["2. Alasan", "kenapa begitu", "[출퇴근에|Chultoegeune] [소모되는|somodoeneun] [시간과|siganggwa] [체력을|cheryeogeul] [아낄|akkil] [수|su] [있기|itgi] [때문이다|ttaemunida]."],
+     ["3. Bukti", "angka atau contoh", "[실제로|Siljero] [한|han] [조사에서|josaeseo] [응답자의|eungdapjaui] [칠십|chilsip] [퍼센트가|peosenteuga] [집중도가|jipjungdoga] [높아졌다고|nopajyeotdago] [답했다|dapaetda]."],
+     ["4. Penegasan", "mengikat kembali", "[즉|Jeuk], [절약된|jeoryakdoen] [시간이|sigani] [곧|got] [업무|eommu] [성과로|seonggwaro] [이어지는|ieojineun] [것이다|geosida]."]
+    ]},
+    { "type": "sub", "text": "Mengantisipasi bantahan" },
+    { "type": "p", "text": "Karangan yang menyebut kelemahan pendapatnya sendiri dinilai lebih tinggi daripada yang hanya membela satu sisi. Kerangkanya: akui — batasi — kembalikan." },
+    { "type": "tabel", "head": ["Langkah", "Pola", "Contoh"], "rows": [
+     ["Mengakui", "물론 …는 점은 부인하기 어렵다", "[물론|Mullon] [소통이|sotongi] [어려워진다는|eoryeowojindaneun] [점은|jeomeun] [부인하기|buinhagi] [어렵다|eoryeopda]."],
+     ["Membatasi", "그러나 이는 …에 한정된 문제이다", "[그러나|Geureona] [이는|ineun] [제도가|jedoga] [미비한|mibihan] [경우에|gyeongue] [한정된다|hanjeongdoenda]."],
+     ["Mengembalikan", "따라서 … 하면 충분히 해결될 수 있다", "[따라서|Ttaraseo] [정기|jeonggi] [회의를|hoeuireul] [제도화하면|jedohwahamyeon] [충분히|chungbunhi] [보완될|bowandoel] [수|su] [있다|itda]."]
+    ]},
+    { "type": "kotak", "title": "Lima kesalahan yang paling sering di karangan pelajar", "items": [
+     "**Memakai 해요체 dan 저는.** Karangan berpendapat memakai 한다체 tanpa pelaku orang pertama. Kesalahan nomor satu, dan langsung terlihat.",
+     "**Satu paragraf, satu gagasan.** Paragraf Korea yang baik tidak mencampur dua argumen. Kalau ada dua alasan, buat dua paragraf.",
+     "**Penghubung lisan di tulisan.** 그리고, 근데, 그래서 di karangan resmi menurunkan nilai. Pakai 또한, 그러나, 따라서.",
+     "**Tidak ada angka atau contoh.** Argumen tanpa bukti dinilai sebagai pengulangan pendapat.",
+     "**Kesimpulan yang hanya mengulang.** Kesimpulan harus menambahkan syarat atau arah, bukan menyalin kalimat pembuka."
+    ]}
+   ]
+  },
+  {
+   "title": "Berdebat secara lisan",
+   "blocks": [
+    { "type": "p", "text": "Berdebat dalam bahasa Korea menuntut keseimbangan yang sulit: cukup tegas untuk terdengar punya pendirian, cukup lunak untuk tidak merusak hubungan. Kalimat-kalimat di bawah adalah yang lazim di rapat dan diskusi kelas." },
+    { "type": "tabel", "head": ["Maksud", "Kalimat"], "rows": [
+     ["Menyatakan pendirian", "[저는|Jeoneun] … [라고|rago] [봅니다|bomnida]."],
+     ["Memberi dasar", "[그렇게|Geureoke] [보는|boneun] [이유는|iyuneun] [세|se] [가지입니다|gajiimnida]."],
+     ["Mengakui lawan", "[말씀하신|Malsseumhasin] [부분은|bubuneun] [저도|jeodo] [동의합니다|donguihamnida]."],
+     ["Membatasi", "[다만|Daman] [그건|geugeon] … [경우에|gyeongue] [해당되는|haedangdoeneun] [것|geot] [같습니다|gatseumnida]."],
+     ["Menyanggah", "[그|Geu] [부분은|bubuneun] [조금|jogeum] [다르게|dareuge] [봅니다|bomnida]."],
+     ["Meminta bukti", "[혹시|Hoksi] [근거가|geungeoga] [되는|doeneun] [자료가|jaryoga] [있을까요|isseulkkayo]?"],
+     ["Menawarkan jalan tengah", "[두|Du] [의견을|uigyeoneul] [절충하면|jeolchunghamyeon] [어떨까요|eotteolkkayo]?"],
+     ["Menutup tanpa sepakat", "[이|I] [부분은|bubuneun] [조금|jogeum] [더|deo] [논의가|nonuiga] [필요할|piryohal] [것|geot] [같습니다|gatseumnida]."]
+    ]},
+    { "type": "sub", "text": "Kata-kata argumen" },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["주장", "jujang", "pendapat yang dipertahankan"],
+     ["근거", "geungeo", "dasar, bukti"],
+     ["논거", "nongeo", "argumen"],
+     ["반박", "banbak", "sanggahan"],
+     ["전제", "jeonje", "premis"],
+     ["가정", "gajeong", "andaian"],
+     ["사례", "sarye", "kasus, contoh nyata"],
+     ["통계", "tonggye", "statistik"],
+     ["출처", "chulcheo", "sumber"],
+     ["객관적", "gaekgwanjeok", "objektif"],
+     ["주관적", "jugwanjeok", "subjektif"],
+     ["타당하다", "tadanghada", "sahih, masuk akal"],
+     ["설득력", "seoldeungnyeok", "daya meyakinkan"],
+     ["일관성", "ilgwanseong", "konsistensi"],
+     ["모순", "mosun", "kontradiksi"],
+     ["극단적", "geukdanjeok", "ekstrem"]
+    ]},
+    { "type": "p", "text": "⚠️ Di Korea, mengalahkan lawan bicara secara telak di depan orang banyak sering merugikan pihak yang menang. Kalimat penutup yang paling matang bukan “saya benar”, melainkan 조금 더 논의가 필요할 것 같습니다 — yang menutup perdebatan tanpa memaksa siapa pun mengaku kalah." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "서론", "baca": "seoron", "id": "pendahuluan" },
+  { "ko": "본론", "baca": "bollon", "id": "isi utama" },
+  { "ko": "결론", "baca": "gyeollon", "id": "kesimpulan" },
+  { "ko": "논설문", "baca": "nonseolmun", "id": "karangan berpendapat" },
+  { "ko": "주장", "baca": "jujang", "id": "pendapat, klaim" },
+  { "ko": "근거", "baca": "geungeo", "id": "dasar, bukti" },
+  { "ko": "반박", "baca": "banbak", "id": "sanggahan" },
+  { "ko": "전제", "baca": "jeonje", "id": "premis" },
+  { "ko": "사례", "baca": "sarye", "id": "kasus nyata" },
+  { "ko": "통계", "baca": "tonggye", "id": "statistik" },
+  { "ko": "도표", "baca": "dopyo", "id": "grafik, tabel" },
+  { "ko": "설문", "baca": "seolmun", "id": "angket" },
+  { "ko": "응답자", "baca": "eungdapja", "id": "responden" },
+  { "ko": "주관식", "baca": "jugwansik", "id": "isian bebas" },
+  { "ko": "객관식", "baca": "gaekgwansik", "id": "pilihan ganda" },
+  { "ko": "객관적", "baca": "gaekgwanjeok", "id": "objektif" },
+  { "ko": "주관적", "baca": "jugwanjeok", "id": "subjektif" },
+  { "ko": "상승하다", "baca": "sangseunghada", "id": "naik" },
+  { "ko": "하락하다", "baca": "harakhada", "id": "turun" },
+  { "ko": "둔화되다", "baca": "dunhwadoeda", "id": "melambat" },
+  { "ko": "반등하다", "baca": "bandeunghada", "id": "naik kembali" },
+  { "ko": "소폭", "baca": "sopok", "id": "sedikit, tipis" },
+  { "ko": "대폭", "baca": "daepok", "id": "besar-besaran" },
+  { "ko": "비중", "baca": "bijung", "id": "porsi, bobot" },
+  { "ko": "요인", "baca": "yoin", "id": "faktor" },
+  { "ko": "분석되다", "baca": "bunseokdoeda", "id": "dianalisis" },
+  { "ko": "판단되다", "baca": "pandandoeda", "id": "dinilai" },
+  { "ko": "뒷받침되다", "baca": "dwitbatchimdoeda", "id": "ditopang" },
+  { "ko": "눈에 띄다", "baca": "nune ttuida", "id": "menonjol" },
+  { "ko": "언급되다", "baca": "eongeupdoeda", "id": "disebut" },
+  { "ko": "보강하다", "baca": "boganghada", "id": "memperkuat" },
+  { "ko": "충원", "baca": "chungwon", "id": "penambahan tenaga" },
+  { "ko": "인력", "baca": "illyeok", "id": "tenaga kerja" },
+  { "ko": "건수", "baca": "geonsu", "id": "jumlah kasus" },
+  { "ko": "단기적", "baca": "dangijeok", "id": "jangka pendek" },
+  { "ko": "중장기적", "baca": "jungjanggijeok", "id": "jangka menengah-panjang" },
+  { "ko": "명확하다", "baca": "myeonghwakhada", "id": "jelas" },
+  { "ko": "타당하다", "baca": "tadanghada", "id": "sahih, masuk akal" },
+  { "ko": "모순", "baca": "mosun", "id": "kontradiksi" },
+  { "ko": "일관성", "baca": "ilgwanseong", "id": "konsistensi" },
+  { "ko": "재택근무", "baca": "jaetaekgeunmu", "id": "kerja dari rumah" },
+  { "ko": "출퇴근", "baca": "chultoegeun", "id": "pergi-pulang kerja" },
+  { "ko": "효율", "baca": "hyoyul", "id": "efisiensi" },
+  { "ko": "성과", "baca": "seonggwa", "id": "capaian" },
+  { "ko": "제도", "baca": "jedo", "id": "sistem, kelembagaan" },
+  { "ko": "절충하다", "baca": "jeolchunghada", "id": "mencari titik tengah" },
+  { "ko": "부인하다", "baca": "buinhada", "id": "menyangkal" },
+  { "ko": "한정되다", "baca": "hanjeongdoeda", "id": "terbatas pada" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi ragam tulis berpendapat.",
+   "items": [
+    "저는 재택근무가 좋다고 생각해요. → ____",
+    "그리고 시간도 아낄 수 있어요. → ____",
+    "그래서 회사에도 도움이 돼요. → ____",
+    "그런데 소통이 좀 어려워요. → ____",
+    "그러니까 제도가 중요해요. → ____"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja perubahan yang tepat.",
+   "items": [
+    "매출이 십 퍼센트에서 삼십 퍼센트로 ____. (naik tajam)",
+    "수출이 전년 대비 소폭 ____. (naik tipis)",
+    "관광객 수가 절반으로 ____. (anjlok)",
+    "가격은 작년 수준을 ____. (bertahan)",
+    "성장세가 최근 들어 ____. (melambat)"
+   ]
+  },
+  {
+   "prompt": "Susun satu paragraf argumen: tulis satu kalimat untuk tiap bagian.",
+   "items": [
+    "Pernyataan:",
+    "Alasan:",
+    "Bukti berangka:",
+    "Penegasan ulang:"
+   ]
+  },
+  {
+   "prompt": "Ganti penghubung lisan berikut dengan padanan ragam tulisnya.",
+   "items": [
+    "그리고 →",
+    "그래서 →",
+    "하지만 →",
+    "그러니까 →",
+    "아무튼 →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "긍정적이다 / 여러 / 재택근무는 / 면에서",
+    "상승했습니다 / 팔십일 퍼센트로 / 육십사 퍼센트에서 / 올해 / 작년",
+    "보입니다 / 확대한 것이 / 가장 큰 / 당일 배송 지역을 / 요인으로",
+    "어렵다 / 점은 / 소통이 / 물론 / 부인하기 / 어려워진다는",
+    "필요할 것 같습니다 / 논의가 / 이 부분은 / 조금 더"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Tulis paragraf pendahuluan (dua kalimat) untuk karangan tentang belajar daring.",
+    "Jelaskan satu perubahan angka yang kamu ketahui, dengan pola A에서 B로.",
+    "Antisipasi bantahan atas pendapatmu dengan kerangka akui–batasi–kembalikan.",
+    "Tutup sebuah perdebatan yang belum selesai tanpa memaksa siapa pun mengalah."
+   ]
+  }
+ ],
+ "answers": [
+  "재택근무는 여러 면에서 긍정적이다. — 또한 시간도 절약할 수 있다. — 따라서 기업에도 도움이 된다. — 그러나 소통이 어려워지는 측면도 있다. — 즉, 제도적 뒷받침이 중요하다.",
+  "급증했다 — 증가했다 — 급감했다 — 유지했다 — 둔화되었다",
+  "재택근무는 업무 효율을 높인다. — 출퇴근에 소모되는 시간과 체력을 아낄 수 있기 때문이다. — 실제로 한 조사에서 응답자의 칠십 퍼센트가 집중도가 높아졌다고 답했다. — 즉, 절약된 시간이 곧 업무 성과로 이어지는 것이다.",
+  "또한 — 따라서 — 그러나 — 즉 — 요컨대",
+  "재택근무는 여러 면에서 긍정적이다. — 작년 육십사 퍼센트에서 올해 팔십일 퍼센트로 상승했습니다. — 당일 배송 지역을 확대한 것이 가장 큰 요인으로 보입니다. — 물론 소통이 어려워진다는 점은 부인하기 어렵다. — 이 부분은 조금 더 논의가 필요할 것 같습니다.",
+  "최근 온라인 학습에 대한 관심이 크게 높아지고 있다. 본고에서는 온라인 학습의 장단점과 그 조건에 대해 살펴보고자 한다. — 온라인 강의 수강자가 이십만 명에서 육십만 명으로 세 배 증가했다. — 물론 집중력이 떨어진다는 지적은 부인하기 어렵다. 그러나 이는 학습 관리가 미비한 경우에 한정된다. 따라서 정기적인 점검 제도를 도입하면 충분히 보완될 수 있다. — 이 부분은 서로 보는 관점이 달라서 조금 더 논의가 필요할 것 같습니다."
+ ]
+}

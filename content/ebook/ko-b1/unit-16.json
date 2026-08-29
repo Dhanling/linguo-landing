@@ -1,0 +1,345 @@
+{
+ "title": "Membaca berita dan bahasa internet",
+ "title_target": "정부는 발표했다 — Jeongbuneun balpyohaetda",
+ "goal": "Membuka dua ragam yang paling asing bagi pelajar: ragam berita 신문체 yang membuang seluruh tingkat kesopanan, dan bahasa internet Korea yang memendekkan segalanya — dua ujung yang sama-sama tak diajarkan di kelas.",
+ "bekal": [
+  "membaca ragam -ㄴ다 dan mengenali bentuknya di semua jenis kata",
+  "membongkar judul berita Korea yang membuang partikel dan kata kerja",
+  "mengenali kata kerja pelaporan: 밝히다, 전하다, 알려지다, 나타나다, 전망이다",
+  "mengenali singkatan dan slang internet yang paling sering",
+  "menulis komentar pendek dan pesan santai yang terdengar wajar"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Membicarakan berita",
+   "intro": "Jiho dan Ani membahas berita yang baru terbit. Perhatikan bagaimana mereka **mengutip** ragam berita di dalam percakapan sehari-hari — ini yang paling sering terdengar, dan yang paling membingungkan pelajar yang hanya belajar 해요체.",
+   "lines": [
+    { "speaker": "지호:", "text": "[기사|Gisa] [봤어|bwasseo]? [내년부터|Naenyeonbuteo] [전기|jeongi] [요금|yogeum] [또|tto] [오른대|oreundae].", "id": "Udah lihat beritanya? Katanya tahun depan tarif listrik naik lagi.", "literal": "artikel — melihat-sudah? tahun-depan-dari — listrik — tarif — lagi — naik-katanya." },
+    { "speaker": "아니:", "text": "[진짜|Jinjja]? [얼마나|Eolmana] [오른대|oreundae]?", "id": "Serius? Katanya naik berapa?", "literal": "sungguh? berapa — naik-katanya?" },
+    { "speaker": "지호:", "text": "[평균|Pyeonggyun] [팔|pal] [퍼센트|peosenteu] [정도|jeongdo] [인상될|insangdoel] [전망이라고|jeonmangirago] [하더라고|hadeorago]. [기사에는|Gisaeneun] [‘정부는|jeongbuneun] [요금|yogeum] [인상이|insangi] [불가피하다고|bulgapihadago] [밝혔다|balkyeotda]’[라고|rago] [나와|nawa] [있어|isseo].", "id": "Katanya diperkirakan naik rata-rata sekitar delapan persen. Di beritanya tertulis “pemerintah menyatakan bahwa kenaikan tarif tidak terhindarkan”.", "literal": "rata-rata — delapan — persen — kira-kira — dinaikkan-akan — perkiraan-katanya — melakukan-kulihat. artikel-pada — mengenai — pemerintah — mengenai — tarif — kenaikan — tak-terhindarkan-katanya — menyatakan-sudah — begitu-katanya — keluar — ada." },
+    { "speaker": "아니:", "text": "[불가피하다|Bulgapihada]… [늘|Neul] [그|geu] [단어|daneo] [쓰더라|sseudeora].", "id": "Tidak terhindarkan… selalu pakai kata itu ya.", "literal": "tak-terhindarkan… selalu — itu — kata — memakai-kulihat." },
+    { "speaker": "지호:", "text": "[ㅋㅋㅋ|Kikiki] [맞아|maja]. [댓글은|Daetgeureun] [난리도|nallido] [아니야|aniya]. [베댓이|Bedaesi] ‘[월급만|wolgeumman] [빼고|ppaego] [다|da] [오른다|oreunda]’[야|ya].", "id": "Wkwk betul. Kolom komentarnya heboh banget. Komentar teratasnya “semua naik kecuali gaji”.", "literal": "hehehe — benar. komentar — mengenai — keributan-pun — bukan. komentar-terbaik — gaji-hanya — mengecualikan — semua — naik — adalah." },
+    { "speaker": "아니:", "text": "[그거|Geugeo] [진짜|jinjja] [팩트|paekteu] [아니냐|aninya]. [근데|Geunde] [대책은|daechaegeun] [뭐래|mworae]?", "id": "Itu fakta banget sih. Tapi kebijakan penanggulangannya apa katanya?", "literal": "itu — sungguh — fakta — bukan-tanya. tapi — tindakan — mengenai — apa-katanya?" },
+    { "speaker": "지호:", "text": "[저소득층에|Jeosodeukcheunge] [한해서|hanhaeseo] [지원금을|jiwongeumeul] [준다는데|jundaneunde], [기준이|gijuni] [애매해|aemaehae].", "id": "Katanya memberi bantuan terbatas untuk kelompok berpenghasilan rendah, tapi patokannya samar.", "literal": "berpenghasilan-rendah-lapisan-pada — terbatas-lalu — uang-bantuan — memberi-katanya-padahal, patokan — samar." },
+    { "speaker": "아니:", "text": "[늘|Neul] [그렇지|geureochi]. [기사|Gisa] [링크|lingkeu] [좀|jom] [보내|bonae] [줘|jwo]. [나도|Nado] [읽어|ilgeo] [볼게|bolge].", "id": "Selalu begitu. Kirim link beritanya dong. Aku juga mau baca.", "literal": "selalu — begitu-kan. artikel — tautan — sedikit — mengirim — berilah. aku-juga — membaca — akan-coba." },
+    { "speaker": "지호:", "text": "[보냈어|Bonaesseo]. [근데|Geunde] [기사|gisa] [읽을|ilgeul] [때|ttae] [제목만|jemongman] [보지|boji] [마|ma]. [요즘|Yojeum] [낚시성|naksiseong] [제목|jemok] [진짜|jinjja] [많아|mana].", "id": "Udah kukirim. Tapi kalau baca berita jangan cuma lihat judulnya. Belakangan judul umpan-klik banyak banget.", "literal": "mengirim-sudah. tapi — artikel — membaca-akan — waktu — judul-hanya — melihat — jangan. belakangan — pancingan-sifat — judul — sungguh — banyak." },
+    { "speaker": "아니:", "text": "[맞아|Maja]. [저번에도|Jeobeonedo] [제목만|jemongman] [보고|bogo] [화냈다가|hwanaetdaga] [본문|bonmun] [읽고|ilgo] [머쓱했잖아|meossseukhaetjana].", "id": "Betul. Kemarin juga aku sempat marah cuma karena judul, terus baca isinya dan jadi malu sendiri kan.", "literal": "benar. lain-kali-pada-juga — judul-hanya — melihat-dan — marah-melakukan-lalu — isi-tulisan — membaca-dan — kikuk-sudah-kan." },
+    { "speaker": "지호:", "text": "[ㅋㅋㅋ|Kikiki] [기억난다|gieongnanda]. [앞으로는|Apeuroneun] [본문까지|bonmunkkaji] [읽자|iljja].", "id": "Wkwk aku ingat. Mulai sekarang baca sampai isinya ya.", "literal": "hehehe — teringat. ke-depan — mengenai — isi-tulisan-sampai — mari-baca." }
+   ],
+   "notes": [
+    "**Berita Korea ditulis dalam ragam -ㄴ다 (해라체), tanpa tingkat kesopanan sama sekali.** 밝혔다, 오른다, 전망이다. Ini bukan kasar: ragam ini tidak ditujukan kepada siapa pun secara khusus, jadi tak ada yang perlu dihormati. Ia dipakai di berita, buku, esai, skripsi, dan catatan pribadi.",
+    "**Mengutip berita di percakapan memakai bentuk pelaporan yang sudah dipelajari di unit 4.** 인상될 전망이라고 하더라고 — kutipan berita masuk ke percakapan lewat -다고 하다, persis seperti mengutip orang.",
+    "**밝히다 adalah kata kerja pelaporan paling khas berita Korea.** Harfiahnya “menerangi, memperjelas”, dan berarti “menyatakan secara resmi”. Kata kerja pelaporan lain di halaman berikut.",
+    "**불가피하다 = tidak terhindarkan.** Salah satu kata yang muncul di hampir setiap pengumuman kenaikan harga di Korea, dan orang Korea sendiri menertawakannya — persis seperti yang dilakukan Ani.",
+    "**베댓 dari 베스트 댓글 — komentar dengan suka terbanyak.** Di portal berita Korea (Naver, Daum), 베댓 sering lebih dibaca daripada beritanya sendiri, dan merupakan cerminan opini publik yang cukup diperhatikan.",
+    "**난리도 아니다 harfiahnya “bahkan bukan keributan”** dan justru berarti “heboh luar biasa”. Ungkapan berlebihan terbalik yang sangat sering: 말도 아니다, 장난도 아니다.",
+    "**낚시성 제목 = judul umpan.** Dari 낚시 (memancing). Kata kerjanya 낚이다 (terpancing): 제목에 낚였어 (aku ketipu judulnya).",
+    "**머쓱하다 = kikuk, malu sendiri** karena reaksimu ternyata berlebihan. Kata rasa yang sangat berguna dan tak punya padanan pas: 머쓱해졌어, 좀 머쓱하네."
+   ],
+   "grammars": [
+    {
+     "title": "Ragam -ㄴ다 (해라체)",
+     "body": [
+      "Bentuk dasar bahasa Korea tulis. Perhatikan bahwa kata kerja mendapat 는다/ㄴ다, sedangkan kata sifat dan 있다/없다 memakai 다 telanjang."
+     ],
+     "table": {
+      "head": ["Jenis", "해요체", "해라체", "Lampau", "Akan datang"],
+      "rows": [
+       ["Kata kerja, vokal", "[간다|Gayo]", "[간다|ganda]", "[갔다|gatda]", "[갈|gal] [것이다|geosida]"],
+       ["Kata kerja, konsonan", "[먹어요|Meogeoyo]", "[먹는다|meongneunda]", "[먹었다|meogeotda]", "[먹을|meogeul] [것이다|geosida]"],
+       ["Kata sifat", "[좋아요|Joayo]", "[좋다|jota]", "[좋았다|joatda]", "[좋을|joeul] [것이다|geosida]"],
+       ["있다 · 없다", "[있어요|Isseoyo]", "[있다|itda]", "[있었다|isseotda]", "[있을|isseul] [것이다|geosida]"],
+       ["Kata benda", "[학생이에요|Haksaengieyo]", "[학생이다|haksaengida]", "[학생이었다|haksaengieotda]", "[학생일|haksaengil] [것이다|geosida]"],
+       ["Tanya", "[가요|Gayo]?", "[가느냐|ganeunya]? · [가나|gana]?", "—", "—"],
+       ["Perintah", "[가세요|Gaseyo]", "[가라|gara]", "—", "—"],
+       ["Ajakan", "[갑시다|Gapsida]", "[가자|gaja]", "—", "—"]
+      ]
+     }
+    },
+    {
+     "title": "Kata kerja pelaporan di berita",
+     "body": [
+      "Berita Korea jarang memakai 말했다. Kata kerja yang dipilih menandakan seberapa resmi pernyataannya dan seberapa yakin wartawannya."
+     ],
+     "table": {
+      "head": ["Kata", "Arti", "Nuansa"],
+      "rows": [
+       ["[밝혔다|balkyeotda]", "menyatakan resmi", "pernyataan berwenang"],
+       ["[전했다|jeonhaetda]", "menyampaikan", "diteruskan dari sumber lain"],
+       ["[말했다|malhaetda]", "berkata", "kutipan biasa"],
+       ["[강조했다|gangjohaetda]", "menegaskan", "bagian yang ditekankan"],
+       ["[지적했다|jijeokhaetda]", "menunjukkan kekurangan", "kritik"],
+       ["[알려졌다|allyeojyeotda]", "diketahui", "sumber tak disebut"],
+       ["[나타났다|natanatda]", "terungkap dari data", "hasil survei atau statistik"],
+       ["[예상된다|yesangdoenda]", "diperkirakan", "perkiraan"],
+       ["[전망이다|jeonmangida]", "diproyeksikan", "perkiraan berjangka"],
+       ["[논란이|nollani] [일고|ilgo] [있다|itda]", "menimbulkan perdebatan", "kontroversi"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Pesan singkat dan bahasa anak muda",
+   "intro": "Percakapan lewat KakaoTalk antara Ani dan sepupunya yang masih kuliah. Hampir tak ada kalimat lengkap di sini — dan justru inilah bahasa Korea yang paling banyak diproduksi setiap harinya.",
+   "lines": [
+    { "speaker": "사촌:", "text": "[누나|Nuna] [뭐해|mwohae]?", "id": "Kak lagi apa?", "literal": "kakak-perempuan — apa-melakukan?" },
+    { "speaker": "아니:", "text": "[퇴근하고|Toegeunhago] [집|jip] [가는|ganeun] [중|jung]. [왜|Wae]?", "id": "Lagi pulang kerja ke rumah. Kenapa?", "literal": "pulang-kerja-dan — rumah — pergi-yang — tengah. kenapa?" },
+    { "speaker": "사촌:", "text": "[내일|Naeil] [시간|sigan] [됨|doem]? [그|Geu] [전시|jeonsi] [같이|gachi] [가기로|gagiro] [한|han] [거|geo] [기억나지|gieomnaji]", "id": "Besok ada waktu? Ingat kan kita janjian mau ke pameran itu bareng", "literal": "besok — waktu — jadi? itu — pameran — bersama — pergi-menjadi — melakukan-yang — hal — teringat-kan" },
+    { "speaker": "아니:", "text": "[아|A] [맞다|matda] [ㅋㅋ|kk] [까먹을|kkameogeul] [뻔|ppeon]. [몇|Myeot] [시|si]?", "id": "Ah iya kk hampir lupa. Jam berapa?", "literal": "ah — benar — kk — lupa-akan — hampir. berapa — jam?" },
+    { "speaker": "사촌:", "text": "[두|Du] [시|si] [어때|eottae]? [사람|Saram] [많을까|maneulkka] [봐|bwa] [일찍|iljjik] [가려고|garyeogo]", "id": "Jam dua gimana? Takutnya rame jadi mau berangkat awal", "literal": "dua — jam — bagaimana? orang — banyak-akan — takut — awal — hendak-pergi" },
+    { "speaker": "아니:", "text": "[ㅇㅋ|Ok] [두|du] [시|si] [ㄱㄱ|gg]. [근데|Geunde] [예매|yemae] [했어|haesseo]?", "id": "Oke jam dua gas. Tapi udah pesan tiket?", "literal": "oke — dua — jam — go-go. tapi — pemesanan — melakukan-sudah?" },
+    { "speaker": "사촌:", "text": "[아니|Ani] [아직|ajik]… [현매|Hyeonmae] [가능하대|ganeunghadae]. [근데|Geunde] [줄|jul] [길다고|gildago] [함|ham]", "id": "Belum… katanya bisa beli di tempat. Tapi katanya antreannya panjang", "literal": "bukan — belum… beli-di-tempat — mungkin-katanya. tapi — antrean — panjang-katanya — melakukan" },
+    { "speaker": "아니:", "text": "[그럼|Geureom] [지금|jigeum] [예매하자|yemaehaja]. [내가|Naega] [할게|halge]. [카톡으로|Katogeuro] [보낼게|bonaelge]", "id": "Kalau gitu pesan sekarang aja. Biar aku. Nanti kukirim lewat KakaoTalk", "literal": "kalau-begitu — sekarang — mari-pesan. aku — akan-melakukan. KakaoTalk-dengan — akan-mengirim" },
+    { "speaker": "사촌:", "text": "[ㄱㅅㄱㅅ|Gs-gs] [누나|nuna] [최고|choego] [ㅠㅠ|yuyu] [밥은|Babeun] [내가|naega] [살게|salge]", "id": "Makasih makasih kak terbaik huhu Makannya aku yang traktir", "literal": "terima-kasih — kakak — terbaik — huhu — nasi — mengenai — aku — akan-membeli" },
+    { "speaker": "아니:", "text": "[ㅇㅇ|Eung] [콜|kol]. [끝나고|Kkeutnago] [근처에서|geuncheoeseo] [먹자|meokja]", "id": "Iya deal. Habis itu makan di sekitar situ ya", "literal": "iya — panggilan. selesai-dan — dekat-di — mari-makan" },
+    { "speaker": "사촌:", "text": "[ㅇㅋㅇㅋ|Ok-ok] [내일|naeil] [봐|bwa]", "id": "Oke oke sampai besok", "literal": "oke-oke — besok — lihat" }
+   ],
+   "notes": [
+    "**Pesan singkat Korea membuang partikel dan akhiran hampir seluruhnya.** 집 가는 중, 몇 시?, 두 시 어때? — kalimat lengkapnya adalah 집에 가는 중이에요, 몇 시예요?, 두 시는 어때요? Yang tersisa hanya inti maknanya.",
+    "**Bentuk -(으)ㅁ di pesan singkat berarti sesuatu yang ringkas dan sedikit datar.** 시간 됨?, 함, 감. Ia dipinjam dari bentuk catatan yang dipelajari di unit 11, dan di pesan singkat terasa santai — kadang sedikit malas atau lucu.",
+    "**ㅋㅋ dan ㅎㅎ adalah tawa, ㅠㅠ dan ㅜㅜ adalah tangis.** Jumlah ㅋ menandakan kadar: ㅋ (senyum tipis), ㅋㅋ (biasa), ㅋㅋㅋㅋㅋ (benar-benar lucu). Memakai ㅋ tunggal kepada orang yang tak akrab bisa terbaca dingin.",
+    "**ㅇㅋ (오케이), ㄱㅅ (감사), ㅇㅇ (응응), ㄴㄴ (노노), ㄱㄱ (고고).** Singkatan konsonan awal. ⚠️ Semuanya hanya untuk teman sebaya atau yang lebih muda; kepada atasan atau orang yang belum akrab, jangan pernah.",
+    "**콜 dari bahasa Inggris *call*, dan berarti “deal, setuju”.** Dipakai untuk menerima ajakan: 내일 영화 어때? — 콜!",
+    "**현매 = 현장 구매, membeli di tempat.** 예매 = memesan lebih dulu. Pasangan yang muncul di setiap acara, film, dan pameran.",
+    "**누나 dipakai laki-laki kepada perempuan yang lebih tua** — di sini sepupu laki-laki memanggil Ani. Kalau sepupunya perempuan, panggilannya 언니.",
+    "**밥은 내가 살게 — “makannya aku yang traktir”.** Kata kerja 사다 (membeli) dipakai untuk mentraktir. Menawarkan mentraktir sebagai balas jasa adalah kebiasaan yang sangat kuat di Korea, dan menolaknya mentah-mentah bisa membuat orang tak enak."
+   ],
+   "grammars": [
+    {
+     "title": "Membongkar judul berita",
+     "body": [
+      "Judul berita Korea memadatkan kalimat dengan membuang partikel, kata kerja bantu, dan sering kata kerjanya sendiri. Mengembalikannya adalah latihan yang cepat membuka kemampuan membaca."
+     ],
+     "table": {
+      "head": ["Judul", "Kalimat penuhnya", "Arti"],
+      "rows": [
+       ["[전기|Jeongi] [요금|yogeum] [인상|insang]", "[전기|Jeongi] [요금이|yogeumi] [인상된다|insangdoenda]", "tarif listrik naik"],
+       ["[정부|Jeongbu], [대책|daechaek] [발표|balpyo]", "[정부가|Jeongbuga] [대책을|daechaegeul] [발표했다|balpyohaetda]", "pemerintah umumkan kebijakan"],
+       ["[수출|Suchul] [3개월째|sam gaewoljjae] [감소|gamso]", "[수출이|Suchuri] [3개월째|sam gaewoljjae] [감소하고|gamsohago] [있다|itda]", "ekspor turun tiga bulan berturut"],
+       ["[내년|Naenyeon] [최저임금|choejeoimgeum] [○○원|○○won]", "[내년|Naenyeon] [최저임금이|choejeoimgeumi] [○○원으로|○○woneuro] [결정됐다|gyeoljeongdwaetda]", "UMP tahun depan sekian"],
+       ["[‘주 4일제’|Ju sail-je] [논란|nollan]", "[주|Ju] [4일제를|sail-jereul] [두고|dugo] [논란이|nollani] [일고|ilgo] [있다|itda]", "perdebatan soal kerja empat hari"],
+       ["[폭염|Pogyeom]… [온열질환자|onyeoljilhwanja] [급증|geupjeung]", "[폭염으로|Pogyeomeuro] [온열질환자가|onyeoljilhwanjaga] [급증했다|geupjeunghaetda]", "korban panas melonjak"]
+      ]
+     }
+    },
+    {
+     "title": "Slang dan singkatan yang paling sering",
+     "body": [
+      "Bahasa internet Korea berganti cepat, tapi yang berikut sudah bertahan lama dan masuk ke percakapan lisan."
+     ],
+     "table": {
+      "head": ["Kata", "Kepanjangan", "Arti"],
+      "rows": [
+       ["[카톡|katok]", "카카오톡", "KakaoTalk"],
+       ["[셀카|selka]", "셀프 카메라", "swafoto"],
+       ["[강추|gangchu]", "강력 추천", "sangat direkomendasikan"],
+       ["[비추|bichu]", "비추천", "tidak direkomendasikan"],
+       ["[꿀잼|kkuljaem]", "꿀 + 재미", "seru banget"],
+       ["[노잼|nojaem]", "no + 재미", "garing, tidak seru"],
+       ["[웃프다|utpeuda]", "웃기다 + 슬프다", "lucu tapi sedih"],
+       ["[워라밸|worabael]", "work-life balance", "keseimbangan kerja dan hidup"],
+       ["[소확행|sohwakaeng]", "소소하지만 확실한 행복", "kebahagiaan kecil yang pasti"],
+       ["[갓생|gatsaeng]", "god + 인생", "hidup yang sangat produktif"],
+       ["[최애|choeae]", "최고로 애정하는", "yang paling difavoritkan"],
+       ["[덕질|deokjil]", "오타쿠 + 질", "menekuni fandom"],
+       ["[입덕|ipdeok]", "입 + 덕후", "mulai jadi penggemar"],
+       ["[먹방|meokbang]", "먹는 방송", "siaran makan"],
+       ["[혼밥|honbap]", "혼자 밥", "makan sendirian"],
+       ["[별다줄|byeoldajul]", "별걸 다 줄인다", "apa saja disingkat"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Struktur berita Korea",
+   "blocks": [
+    { "type": "p", "text": "Artikel berita Korea disusun dengan pola yang cukup tetap, dan mengenalinya membuat membaca jauh lebih cepat — kamu bisa berhenti setelah paragraf kedua dan tetap tahu isinya." },
+    { "type": "tabel", "head": ["Bagian", "Isinya", "Ciri bahasanya"], "rows": [
+     ["제목", "inti, dipadatkan", "tanpa partikel, tanpa kata kerja"],
+     ["부제", "keterangan tambahan", "kalimat pendek, sering diawali 「…」"],
+     ["리드", "paragraf pertama, seluruh inti", "siapa, kapan, apa, berapa"],
+     ["본문", "rincian dan kutipan", "kutipan langsung dengan “…”라고 밝혔다"],
+     ["전문가 코멘트", "pendapat ahli", "…교수는 “…”고 말했다"],
+     ["전망", "penutup, perkiraan", "…것으로 전망된다"]
+    ]},
+    { "type": "sub", "text": "Kata-kata yang muncul di hampir setiap berita" },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["정부", "jeongbu", "pemerintah"],
+     ["당국", "dangguk", "otoritas berwenang"],
+     ["관계자", "gwangyeja", "pihak terkait"],
+     ["대책", "daechaek", "kebijakan penanggulangan"],
+     ["방안", "bangan", "rencana penanganan"],
+     ["추진하다", "chujinhada", "menjalankan program"],
+     ["시행하다", "sihaenghada", "memberlakukan"],
+     ["도입하다", "doiphada", "memperkenalkan"],
+     ["논란", "nollan", "kontroversi"],
+     ["여론", "yeoron", "opini publik"],
+     ["급증하다", "geupjeunghada", "melonjak"],
+     ["급감하다", "geupgamhada", "anjlok"],
+     ["둔화되다", "dunhwadoeda", "melambat"],
+     ["회복세", "hoebokse", "tren pemulihan"],
+     ["역대 최대", "yeokdae choedae", "terbesar sepanjang sejarah"],
+     ["잠정", "jamjeong", "sementara"],
+     ["전년 대비", "jeonnyeon daebi", "dibandingkan tahun sebelumnya"],
+     ["누적", "nujeok", "kumulatif"]
+    ]},
+    { "type": "kotak", "title": "Cara membaca berita Korea sebagai pelajar", "items": [
+     "**Baca judul, lalu paragraf pertama, lalu berhenti.** Paragraf pertama berita Korea memuat seluruh intinya. Kalau masih penasaran, baru lanjutkan.",
+     "**Jangan buka kamus untuk tiap kata.** Tandai kata yang muncul lebih dari sekali di satu artikel — itulah yang layak dihafal.",
+     "**Berita ekonomi dan kebijakan paling cocok untuk pelajar B1** karena kosakatanya paling berulang. Berita hukum dan olahraga jauh lebih sulit.",
+     "**Baca berita yang sama dari dua media.** Perbedaan pilihan katanya — 밝혔다 vs 주장했다, 대책 vs 땜질 — mengajarkan nuansa lebih cepat daripada kamus mana pun."
+    ]}
+   ]
+  },
+  {
+   "title": "Menulis pesan yang terdengar wajar",
+   "blocks": [
+    { "type": "p", "text": "Pesan singkat Korea punya tata krama tersendiri, dan pelajar sering salah di dua arah: terlalu kaku kepada teman, atau terlalu santai kepada atasan. Tabel ini memetakan keduanya." },
+    { "type": "tabel", "head": ["Maksud", "Kepada teman", "Kepada atasan atau klien"], "rows": [
+     ["Menyapa", "[뭐해|Mwohae]?", "[안녕하십니까|Annyeonghasimnikka]. [○○입니다|○○imnida]."],
+     ["Menerima", "[ㅇㅋ|Ok] · [콜|kol]", "[네|Ne], [알겠습니다|algetseumnida]."],
+     ["Terima kasih", "[ㄱㅅ|Gs] · [고마워|gomawo]", "[감사합니다|Gamsahamnida]."],
+     ["Menolak", "[미안|Mian] [안|an] [될|doel] [듯|deut]", "[죄송하지만|Joesonghajiman] [어려울|eoryeoul] [것|geot] [같습니다|gatseumnida]."],
+     ["Menyusul", "[좀|Jom] [늦어|neujeo]", "[조금|Jogeum] [늦을|neujeul] [것|geot] [같습니다|gatseumnida]. [죄송합니다|Joesonghamnida]."],
+     ["Menutup", "[ㅂㅂ|Bb] · [내일|naeil] [봐|bwa]", "[감사합니다|Gamsahamnida]. [내일|Naeil] [뵙겠습니다|boepgetseumnida]."]
+    ]},
+    { "type": "sub", "text": "Menulis komentar yang wajar" },
+    { "type": "tabel", "head": ["Komentar", "Arti"], "rows": [
+     ["[이거|Igeo] [진짜|jinjja] [공감|gonggam].", "ini benar-benar relatable"],
+     ["[인정|Injeong].", "setuju, diakui"],
+     ["[아|A] [이거|igeo] [찐이다|jjinida].", "ini asli, ini beneran bagus"],
+     ["[정보|Jeongbo] [감사합니다|gamsahamnida].", "terima kasih infonya"],
+     ["[저장|Jeojang] [완료|wallyo].", "sudah saya simpan"],
+     ["[다음|Daeum] [편|pyeon] [기대할게요|gidaehalgeyo].", "menantikan bagian berikutnya"],
+     ["[혹시|Hoksi] [출처가|chulcheoga] [어디인가요|eodiingayo]?", "sumbernya dari mana ya?"],
+     ["[제|Je] [생각은|saenggageun] [조금|jogeum] [다른데요|dareundeyo].", "pendapat saya sedikit berbeda"]
+    ]},
+    { "type": "p", "text": "⚠️ Bahasa internet berganti setiap satu dua tahun. Yang tidak berganti adalah aturan tingkat tuturnya: singkatan konsonan dan bentuk -(으)ㅁ tetap terbatas pada hubungan akrab, dan memakainya kepada atasan tetap salah — sekalipun atasanmu memakainya kepadamu." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "기사", "baca": "gisa", "id": "artikel berita" },
+  { "ko": "제목", "baca": "jemok", "id": "judul" },
+  { "ko": "본문", "baca": "bonmun", "id": "isi tulisan" },
+  { "ko": "보도하다", "baca": "bodohada", "id": "memberitakan" },
+  { "ko": "밝히다", "baca": "balkida", "id": "menyatakan resmi" },
+  { "ko": "지적하다", "baca": "jijeokhada", "id": "menunjukkan kekurangan" },
+  { "ko": "강조하다", "baca": "gangjohada", "id": "menegaskan" },
+  { "ko": "알려지다", "baca": "allyeojida", "id": "diketahui" },
+  { "ko": "나타나다", "baca": "natanada", "id": "terungkap dari data" },
+  { "ko": "전망", "baca": "jeonmang", "id": "proyeksi" },
+  { "ko": "예상되다", "baca": "yesangdoeda", "id": "diperkirakan" },
+  { "ko": "논란", "baca": "nollan", "id": "kontroversi" },
+  { "ko": "여론", "baca": "yeoron", "id": "opini publik" },
+  { "ko": "대책", "baca": "daechaek", "id": "kebijakan penanggulangan" },
+  { "ko": "추진하다", "baca": "chujinhada", "id": "menjalankan program" },
+  { "ko": "시행하다", "baca": "sihaenghada", "id": "memberlakukan" },
+  { "ko": "도입하다", "baca": "doiphada", "id": "memperkenalkan" },
+  { "ko": "인상", "baca": "insang", "id": "kenaikan" },
+  { "ko": "불가피하다", "baca": "bulgapihada", "id": "tidak terhindarkan" },
+  { "ko": "저소득층", "baca": "jeosodeukcheung", "id": "kelompok berpenghasilan rendah" },
+  { "ko": "지원금", "baca": "jiwongeum", "id": "uang bantuan" },
+  { "ko": "애매하다", "baca": "aemaehada", "id": "samar, tidak jelas" },
+  { "ko": "급증하다", "baca": "geupjeunghada", "id": "melonjak" },
+  { "ko": "급감하다", "baca": "geupgamhada", "id": "anjlok" },
+  { "ko": "전년 대비", "baca": "jeonnyeon daebi", "id": "dibanding tahun lalu" },
+  { "ko": "역대 최대", "baca": "yeokdae choedae", "id": "terbesar sepanjang sejarah" },
+  { "ko": "댓글", "baca": "daetgeul", "id": "komentar" },
+  { "ko": "베댓", "baca": "bedaet", "id": "komentar terpopuler" },
+  { "ko": "악플", "baca": "akpeul", "id": "komentar jahat" },
+  { "ko": "낚시성", "baca": "naksiseong", "id": "bersifat umpan klik" },
+  { "ko": "출처", "baca": "chulcheo", "id": "sumber" },
+  { "ko": "공감", "baca": "gonggam", "id": "empati, relatable" },
+  { "ko": "인정", "baca": "injeong", "id": "pengakuan, setuju" },
+  { "ko": "카톡", "baca": "katok", "id": "KakaoTalk" },
+  { "ko": "예매", "baca": "yemae", "id": "pesan tiket lebih dulu" },
+  { "ko": "현매", "baca": "hyeonmae", "id": "beli tiket di tempat" },
+  { "ko": "전시", "baca": "jeonsi", "id": "pameran" },
+  { "ko": "까먹다", "baca": "kkameokda", "id": "lupa" },
+  { "ko": "머쓱하다", "baca": "meosseukhada", "id": "kikuk, malu sendiri" },
+  { "ko": "난리", "baca": "nalli", "id": "keributan" },
+  { "ko": "강추", "baca": "gangchu", "id": "sangat direkomendasikan" },
+  { "ko": "꿀잼", "baca": "kkuljaem", "id": "seru sekali" },
+  { "ko": "노잼", "baca": "nojaem", "id": "garing" },
+  { "ko": "워라밸", "baca": "worabael", "id": "keseimbangan kerja dan hidup" },
+  { "ko": "소확행", "baca": "sohwakaeng", "id": "kebahagiaan kecil yang pasti" },
+  { "ko": "최애", "baca": "choeae", "id": "yang paling difavoritkan" },
+  { "ko": "혼밥", "baca": "honbap", "id": "makan sendirian" },
+  { "ko": "먹방", "baca": "meokbang", "id": "siaran makan" },
+  { "ko": "평균", "baca": "pyeonggyun", "id": "rata-rata" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke ragam berita (-ㄴ다 · 해라체).",
+   "items": [
+    "정부가 대책을 발표했어요. → ____",
+    "수출이 늘고 있어요. → ____",
+    "날씨가 좋아요. → ____",
+    "그 사람은 학생이에요. → ____",
+    "가격이 오를 거예요. → ____"
+   ]
+  },
+  {
+   "prompt": "Kembalikan judul berita ini menjadi kalimat penuh.",
+   "items": [
+    "전기 요금 인상 →",
+    "정부, 대책 발표 →",
+    "수출 3개월째 감소 →",
+    "폭염… 온열질환자 급증 →",
+    "‘주 4일제’ 논란 →"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja pelaporan yang tepat.",
+   "items": [
+    "정부는 인상이 불가피하다고 ____. (pernyataan resmi)",
+    "조사 결과 소비가 줄어든 것으로 ____. (dari data)",
+    "전문가들은 문제점을 ____. (kritik)",
+    "내년에는 회복될 것으로 ____. (proyeksi)",
+    "사고 원인은 아직 ____ 않았다. (belum diketahui)"
+   ]
+  },
+  {
+   "prompt": "Cocokkan singkatan dengan kepanjangannya.",
+   "items": [
+    "워라밸:",
+    "소확행:",
+    "혼밥:",
+    "강추:",
+    "노잼:"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "밝혔다 / 불가피하다고 / 요금 인상이 / 정부는",
+    "전망이라고 / 팔 퍼센트 / 평균 / 하더라고 / 인상될",
+    "마 / 제목만 / 기사 읽을 때 / 보지",
+    "가려고 / 많을까 봐 / 일찍 / 사람",
+    "살게 / 밥은 / 내가"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Tulis satu paragraf berita pendek (tiga kalimat) dalam ragam -ㄴ다, tentang kenaikan harga.",
+    "Ceritakan isi berita itu kepada temanmu dalam percakapan, dengan bentuk kutipan.",
+    "Tulis tiga pesan singkat kepada teman untuk mengatur janji besok.",
+    "Tulis pesan yang sama kepada atasanmu, dalam ragam yang pantas."
+   ]
+  }
+ ],
+ "answers": [
+  "정부가 대책을 발표했다. — 수출이 늘고 있다. — 날씨가 좋다. — 그 사람은 학생이다. — 가격이 오를 것이다.",
+  "전기 요금이 인상된다. — 정부가 대책을 발표했다. — 수출이 3개월째 감소하고 있다. — 폭염으로 온열질환자가 급증했다. — 주 4일제를 두고 논란이 일고 있다.",
+  "밝혔다 — 나타났다 — 지적했다 — 전망된다 — 알려지지",
+  "work-life balance — 소소하지만 확실한 행복 — 혼자 밥 먹기 — 강력 추천 — 재미없음",
+  "정부는 요금 인상이 불가피하다고 밝혔다. — 평균 팔 퍼센트 인상될 전망이라고 하더라고. — 기사 읽을 때 제목만 보지 마. — 사람 많을까 봐 일찍 가려고. — 밥은 내가 살게.",
+  "다음 달부터 전기 요금이 인상된다. 정부는 평균 팔 퍼센트 수준의 인상이 불가피하다고 밝혔다. 저소득층에 한해 지원금이 지급될 전망이다. — 다음 달부터 전기 요금 오른대. 정부가 평균 팔 퍼센트 올린다고 밝혔대. 저소득층한테만 지원금 준다더라고. — 내일 시간 돼? / 두 시 어때? / ㅇㅋ 그때 봐 — 부장님, 내일 두 시에 뵈어도 괜찮으실까요? 일정 확인 부탁드립니다."
+ ]
+}

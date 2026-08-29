@@ -1,0 +1,326 @@
+{
+ "title": "Membantah, mengakui, dan membandingkan",
+ "title_target": "그런데도 왜 — Geureondedo wae",
+ "goal": "Menguasai seluruh keluarga pengecualian dan pembandingan — dari -지만 yang netral sampai 아무리 -아/어도 yang mutlak — dan memakainya untuk membantah tanpa membantah, mengakui sebagian, dan menawar.",
+ "bekal": [
+  "menyusun tangga pengecualian: -지만 · -아/어도 · -더라도 · -(으)ㄴ/는데도 · -(으)ㄹ지라도",
+  "memakai 아무리 -아/어도 untuk perlawanan yang mutlak",
+  "mengakui sebagian dengan -기는 하다 sebelum menyanggah",
+  "membandingkan dengan -는 반면에, 이에 반해, 오히려",
+  "menawar dan mencari titik tengah dalam perundingan"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Pindah kota atau tidak",
+   "intro": "Suji menimbang tawaran kerja di Seoul. Hampir tiap kalimat di sini menyatakan perlawanan antara dua hal, dan bentuk yang dipakai berubah menurut seberapa kuat perlawanannya.",
+   "lines": [
+    { "speaker": "아니:", "text": "[서울|Seoul] [자리|jari] [어떻게|eotteoke] [하기로|hagiro] [했어|haesseo]?", "id": "Posisi di Seoul jadinya gimana?", "literal": "Seoul — posisi — bagaimana — melakukan-menjadi — melakukan-sudah?" },
+    { "speaker": "수지:", "text": "[아직|Ajik] [고민|gomin] [중이야|jungiya]. [조건은|Jogeoneun] [좋기는|jokineun] [한데|hande] [집값이|jipgapsi] [너무|neomu] [비싸|bissa].", "id": "Masih mikir. Tawarannya sih bagus, tapi harga rumahnya mahal banget.", "literal": "belum — pertimbangan — dalam-adalah. syarat — mengenai — baik-memang — melakukan-padahal — harga-rumah — terlalu — mahal." },
+    { "speaker": "아니:", "text": "[월급이|Wolgeubi] [올라도|ollado] [집세|jipse] [내면|naemyeon] [남는|namneun] [게|ge] [없겠네|eopgenne].", "id": "Walaupun gajinya naik, kalau bayar sewa ya nggak ada sisanya dong.", "literal": "gaji — naik-walaupun — sewa-rumah — membayar-kalau — tersisa-yang — hal — tak-ada-pasti-ternyata." },
+    { "speaker": "수지:", "text": "[그러니까|Geureonikka]. [연봉은|Yeonbongeun] [삼십|samsip] [퍼센트|peosenteu] [오르는|oreuneun] [반면에|banmyeone] [생활비는|saenghwalbineun] [두|du] [배|bae] [들어|deureo].", "id": "Nah itu. Gaji tahunan naik tiga puluh persen, sebaliknya biaya hidupnya dua kali lipat.", "literal": "karena-itu. gaji-tahunan — mengenai — tiga-puluh — persen — naik-yang — sebaliknya-pada — biaya-hidup — mengenai — dua — kali — masuk." },
+    { "speaker": "아니:", "text": "[그런데도|Geureondedo] [계속|gyesok] [생각하는|saenggakhaneun] [거|geo] [보면|bomyeon] [가고|gago] [싶은|sipeun] [거지|geoji]?", "id": "Tapi meskipun begitu kamu masih mikirin terus, berarti pengin pergi kan?", "literal": "begitu-padahal-pun — terus — memikirkan-yang — hal — melihat-kalau — pergi-dan — ingin-yang — hal-kan?" },
+    { "speaker": "수지:", "text": "[솔직히|Soljikhi] [그래|geurae]. [아무리|Amuri] [힘들어도|himdeureodo] [한번은|hanbeoneun] [해|hae] [보고|bogo] [싶어|sipeo].", "id": "Jujur iya. Sesulit apa pun, aku pengin coba sekali.", "literal": "jujur-secara — begitu. betapa-pun — sulit-walaupun — satu-kali — mengenai — melakukan — coba-dan — ingin." },
+    { "speaker": "아니:", "text": "[그럼|Geureom] [가|ga]. [나중에|Najunge] [후회하는|huhoehaneun] [것보다|geotboda] [낫지|natji].", "id": "Ya udah pergi. Lebih baik daripada nanti nyesel.", "literal": "kalau-begitu — pergi. nanti-pada — menyesal-yang — hal-daripada — lebih-baik-kan." },
+    { "speaker": "수지:", "text": "[근데|Geunde] [부모님이|bumonimi] [반대하셔|bandaehasyeo]. [나이도|Naido] [있는데|inneunde] [왜|wae] [고생을|gosaengeul] [사서|saseo] [하냐고|hanyago].", "id": "Tapi orang tuaku nggak setuju. Katanya sudah cukup umur kok malah cari susah.", "literal": "tapi — orang-tua — menentang-beliau. umur-juga — ada-padahal — kenapa — kesusahan — membeli-lalu — melakukan-kata-tanya." },
+    { "speaker": "아니:", "text": "[부모님|Bumonim] [말씀도|malsseumdo] [일리가|illiga] [있기는|itgineun] [해|hae]. [그렇지만|Geureochiman] [결정은|gyeoljeongeun] [네가|nega] [하는|haneun] [거잖아|geojana].", "id": "Kata orang tuamu memang ada benarnya sih. Tapi kan yang memutuskan itu kamu.", "literal": "orang-tua — perkataan-juga — satu-nalar — ada-memang — melakukan. tetapi — keputusan — mengenai — kamu — melakukan-yang — hal-kan." },
+    { "speaker": "수지:", "text": "[맞아|Maja]. [설령|Seollyeong] [실패하더라도|silpaehadeorado] [내|nae] [선택이니까|seontaeginikka] [괜찮아|gwaenchana].", "id": "Betul. Sekalipun nanti gagal, itu pilihanku sendiri, jadi nggak apa-apa.", "literal": "benar. sekalipun — gagal-walaupun — aku-punya — pilihan-karena — tidak-apa-apa." },
+    { "speaker": "아니:", "text": "[그|Geu] [말|mal] [들으니까|deureunikka] [마음|maeum] [정한|jeonghan] [것|geot] [같은데|gateunde]?", "id": "Dengar kamu ngomong gitu, kayaknya kamu udah mantap deh?", "literal": "itu — perkataan — mendengar-karena — hati — menetapkan-yang — hal — seperti-padahal?" }
+   ],
+   "notes": [
+    "**-기는 하다 mengakui sebagian sebelum menyanggah.** 좋기는 한데 = memang bagus sih, tapi. Pola ini menggandakan kata kerjanya: 좋다 → 좋기는 하다. Bentuk pendek lisannya menyusut lagi: 좋긴 한데, 가긴 갔어, 먹긴 먹었어. Ia adalah cara paling khas Korea untuk tidak menolak mentah-mentah.",
+    "**-아/어도 dipakai untuk kenyataan maupun andaian.** 월급이 올라도 = walaupun gaji naik (baik yang sudah maupun yang belum). Perbedaannya dengan -더라도: yang kedua khusus untuk sesuatu yang **belum terjadi** dan lebih kuat.",
+    "**-는 반면에 membandingkan dua sisi dari satu hal.** Harfiahnya “di sisi sebaliknya”. Ia menuntut dua bagian yang benar-benar berlawanan; kalau hanya berbeda, pakai -지만. Bentuk resminya tanpa 에: 오르는 반면 …",
+    "**그런데도 berarti “padahal begitu, tetap saja”.** Ia adalah bentuk kata sambung dari -(으)ㄴ/는데도. Perlawanannya kuat dan mengandung keheranan: kenyataannya A, tapi tetap saja B.",
+    "**아무리 -아/어도 adalah perlawanan mutlak.** 아무리 힘들어도 = sesulit apa pun. Kata 아무리 hampir selalu berpasangan dengan -아/어도, dan menandai bahwa **tak ada kadar yang bisa mengubah** kesimpulannya. Sepadan yang lebih kuat: 아무리 …-(으)ㄹ지라도.",
+    "**설령 … -더라도 adalah pasangan tetap untuk andaian yang belum terjadi.** Sepadan: 설사, 비록, 가령. Kata 비록 lebih sering dipasangkan dengan -지만 dan -(으)ㄹ지라도.",
+    "**고생을 사서 하다 harfiahnya “membeli kesusahan lalu menjalaninya”** — ungkapan tetap untuk orang yang menyulitkan diri sendiri padahal tak perlu. Nada orang tua Korea yang menegur anaknya.",
+    "**일리가 있다 berarti “ada benarnya juga”.** Harfiahnya “ada satu nalar”. Dipakai untuk mengakui sebagian pendapat lawan bicara sebelum menyanggah — pasangan alami dari -기는 하다."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga pengecualian, dari paling lemah ke paling kuat",
+     "body": [
+      "Semua bentuk di bawah bisa diterjemahkan “meskipun”, tapi bahasa Korea membedakannya menurut dua hal: seberapa kuat perlawanannya, dan apakah keadaannya nyata atau diandaikan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Kekuatan", "Nyata atau andaian", "Contoh"],
+      "rows": [
+       ["-(으)ㄴ/는데", "sangat lemah", "nyata; sering hanya latar", "[비싼데|Bissande] [샀어요|sasseoyo]."],
+       ["-지만", "lemah, netral", "nyata", "[비싸지만|Bissajiman] [샀어요|sasseoyo]."],
+       ["-기는 하지만", "lemah, mengakui dulu", "nyata", "[비싸기는|Bissagineun] [하지만|hajiman] [샀어요|sasseoyo]."],
+       ["-아/어도", "sedang", "nyata atau andaian", "[비싸도|Bissado] [살|sal] [거예요|geoyeyo]."],
+       ["-(으)ㄴ/는데도", "kuat, mengandung heran", "nyata", "[비싼데도|Bissandedo] [잘|jal] [팔려요|pallyeoyo]."],
+       ["-더라도", "kuat", "andaian, belum terjadi", "[비싸더라도|Bissadeorado] [살|sal] [거예요|geoyeyo]."],
+       ["-(으)ㄹ지라도", "sangat kuat, ragam tulis", "andaian", "[비쌀지라도|Bissaljirado] [사겠습니다|sagetseumnida]."],
+       ["아무리 -아/어도", "mutlak", "keduanya", "[아무리|Amuri] [비싸도|bissado] [살|sal] [거예요|geoyeyo]."],
+       ["-(으)ㅁ에도 불구하고", "resmi, dokumen", "nyata", "[비쌌음에도|Bissasseumedo] [불구하고|bulguhago]"]
+      ]
+     }
+    },
+    {
+     "title": "Membandingkan dua hal",
+     "body": [
+      "Bahasa Korea membedakan pembandingan yang sekadar menyebut perbedaan dari pembandingan yang menyatakan pertentangan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Arti", "Contoh"],
+      "rows": [
+       ["N보다", "daripada", "[이게|Ige] [저것보다|jeogeotboda] [나아요|naayo]."],
+       ["-는 반면에", "sebaliknya (dua sisi satu hal)", "[싼|San] [반면에|banmyeone] [품질이|pumjiri] [떨어져요|tteoreojyeoyo]."],
+       ["이에 반해", "berbeda dengan itu (ragam tulis)", "[작년에|Jangnyeone] [반해|banhae] [올해는|olhaeneun] [늘었습니다|neureotseumnida]."],
+       ["-에 비해", "dibandingkan dengan", "[작년에|Jangnyeone] [비해|bihae] [두|du] [배|bae] [늘었어요|neureosseoyo]."],
+       ["오히려", "justru malah", "[싼데|Sande] [오히려|ohiryeo] [더|deo] [좋아요|joayo]."],
+       ["반대로", "sebaliknya", "[반대로|Bandaero] [생각해|saenggakhae] [보세요|boseyo]."],
+       ["-(으)ㄴ/는 대신에", "sebagai gantinya", "[비싼|Bissan] [대신에|daesine] [오래|orae] [써요|sseoyo]."],
+       ["차라리", "lebih baik … saja", "[차라리|Charari] [안|an] [가는|ganeun] [게|ge] [낫겠어요|natgesseoyo]."]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menawar dengan klien",
+   "intro": "Perundingan harga dengan perusahaan mitra. Perhatikan pola tetapnya: akui dulu, baru sanggah; tawarkan pertukaran, bukan penolakan. Ini kerangka perundingan yang sama di hampir semua rapat bisnis Korea.",
+   "lines": [
+    { "speaker": "거래처:", "text": "[견적서|Gyeonjeokseo] [잘|jal] [받았습니다|badatseumnida]. [그런데|Geureonde] [단가가|dangaga] [예상보다|yesangboda] [높습니다|nopseumnida].", "id": "Penawarannya sudah kami terima dengan baik. Tapi harga satuannya lebih tinggi dari perkiraan.", "literal": "penawaran-surat — baik — menerima-sudah. tapi — harga-satuan — perkiraan-daripada — tinggi." },
+    { "speaker": "아니:", "text": "[네|Ne], [그|geu] [점은|jeomeun] [저희도|jeohuido] [인정합니다|injeonghamnida]. [다만|Daman] [원자재|wonjajae] [가격이|gagyeogi] [올해만|olhaeman] [이십|isip] [퍼센트|peosenteu] [올랐습니다|ollatseumnida].", "id": "Ya, hal itu kami akui juga. Hanya saja harga bahan baku naik dua puluh persen dalam tahun ini saja.", "literal": "ya, itu — titik — mengenai — kami-juga — mengakui. hanya-saja — bahan-baku — harga — tahun-ini-hanya — dua-puluh — persen — naik-sudah." },
+    { "speaker": "거래처:", "text": "[그건|Geugeon] [이해하지만|ihaehajiman], [저희|jeohui] [예산도|yesando] [정해져|jeonghaejyeo] [있어서요|isseoseoyo].", "id": "Itu kami pahami, tapi anggaran kami juga sudah ditetapkan.", "literal": "itu — mengenai — memahami-tetapi, kami — anggaran-juga — ditetapkan — ada-karena-nya." },
+    { "speaker": "아니:", "text": "[그러시군요|Geureosigunyo]. [그러면|Geureomyeon] [단가를|dangareul] [낮추는|natchuneun] [대신에|daesine] [최소|choeso] [수량을|suryangeul] [늘리시는|neullisineun] [건|geon] [어떠십니까|eotteosimnikka]?", "id": "Begitu ya. Kalau begitu, bagaimana kalau sebagai ganti penurunan harga satuan, jumlah minimalnya dinaikkan?", "literal": "begitu-beliau-ternyata-nya. kalau-begitu — harga-satuan — menurunkan-yang — ganti-pada — paling-kecil — jumlah — menambah-beliau-yang — hal — mengenai — bagaimana-beliau-kah?" },
+    { "speaker": "거래처:", "text": "[수량을|Suryangeul] [늘리더라도|neullideorado] [창고|changgo] [공간이|gonggani] [부족합니다|bujokhamnida].", "id": "Sekalipun jumlahnya dinaikkan, ruang gudang kami tidak cukup.", "literal": "jumlah — menambah-walaupun — gudang — ruang — kurang." },
+    { "speaker": "아니:", "text": "[그럼|Geureom] [분할|bunhal] [납품은|nappumeun] [어떠실까요|eotteosilkkayo]? [수량은|Suryangeun] [늘리되|neullidoe] [세|se] [번에|beone] [나눠서|nanwoseo] [보내|bonae] [드리는|deurineun] [방식입니다|bangsigimnida].", "id": "Kalau begitu bagaimana dengan pengiriman bertahap? Jumlahnya dinaikkan, tetapi dikirim terbagi dalam tiga kali.", "literal": "kalau-begitu — bagi — pengiriman — mengenai — bagaimana-beliau-akan-nya? jumlah — mengenai — menambah-tetapi — tiga — kali-pada — membagi-lalu — mengirim — mempersembahkan-yang — cara-adalah." },
+    { "speaker": "거래처:", "text": "[아|A], [그렇게|geureoke] [하면|hamyeon] [저희도|jeohuido] [부담이|budami] [덜하겠네요|deolhagenneyo].", "id": "Ah, kalau begitu beban kami juga akan berkurang ya.", "literal": "ah, begitu-secara — melakukan-kalau — kami-juga — beban — berkurang-pasti-ternyata-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [그리고|geurigo] [연간|yeongan] [계약을|gyeyageul] [하실|hasil] [경우|gyeongu] [단가를|dangareul] [오|o] [퍼센트|peosenteu] [더|deo] [낮춰|natchwo] [드릴|deuril] [수|su] [있습니다|itseumnida].", "id": "Ya, dan apabila Anda membuat kontrak tahunan, kami bisa menurunkan harga satuan lima persen lagi.", "literal": "ya, dan — tahunan — kontrak — melakukan-beliau-akan — hal — harga-satuan — lima — persen — lebih — menurunkan — mempersembahkan-akan — kemungkinan — ada." },
+    { "speaker": "거래처:", "text": "[좋은|Joeun] [조건이네요|jogeonineyo]. [내부|Naebu] [검토를|geomtoreul] [거쳐야|geochyeoya] [하지만|hajiman] [긍정적으로|geungjeongjeogeuro] [보고|bogo] [있습니다|itseumnida].", "id": "Syarat yang bagus. Harus melewati pembahasan internal dulu, tapi kami memandangnya secara positif.", "literal": "baik-yang — syarat-ternyata-nya. internal — telaah — melewati-harus — melakukan-tetapi — positif-secara — melihat-dan — ada." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [결정이|Gyeoljeongi] [늦어지더라도|neujeojideorado] [단가는|danganeun] [이번|ibeon] [달까지|dalkkaji] [유지해|yujihae] [드리겠습니다|deurigetseumnida].", "id": "Terima kasih. Sekalipun keputusannya mundur, harga satuannya akan kami pertahankan sampai akhir bulan ini.", "literal": "terima-kasih. keputusan — menjadi-terlambat-walaupun — harga-satuan — mengenai — kali-ini — bulan-sampai — mempertahankan — akan-mempersembahkan." },
+    { "speaker": "거래처:", "text": "[배려|Baeryeo] [감사합니다|gamsahamnida]. [다음|Daeum] [주|ju] [중으로|jungeuro] [회신|hoesin] [드리겠습니다|deurigetseumnida].", "id": "Terima kasih atas pengertiannya. Kami akan memberi jawaban dalam minggu depan.", "literal": "tenggang-rasa — terima-kasih. berikut — minggu — dalam-secara — balasan — akan-mempersembahkan." }
+   ],
+   "notes": [
+    "**Perundingan Korea hampir selalu dibuka dengan pengakuan.** 그 점은 저희도 인정합니다 — mengakui titik keberatan lawan sebelum menyanggah. Melompat langsung ke sanggahan (다만 원자재 가격이…) tanpa pengakuan terdengar seperti menolak berunding.",
+    "**다만 adalah kata pembalik yang paling sopan.** Lebih halus daripada 하지만 dan 그러나 karena ia menandai keberatan sebagai catatan kecil, bukan pertentangan. Di rapat resmi Korea, 다만 muncul lebih sering daripada 그러나.",
+    "**-는 대신에 menawarkan pertukaran, bukan penolakan.** 낮추는 대신에 수량을 늘리시는 건 = sebagai gantinya. Ini kerangka perundingan Korea: setiap permintaan dijawab dengan permintaan balik yang setara, bukan dengan “tidak bisa”.",
+    "**-더라도 di 늘리더라도 dipakai untuk keberatan atas usul yang belum terjadi.** Bandingkan dengan -아/어도 yang lebih netral. Memilih -더라도 di sini membuat keberatannya terdengar lebih tegas: “sekalipun begitu, tetap tidak menyelesaikan masalah kami”.",
+    "**-되 adalah penghubung ragam tulis yang berarti “tetapi, dengan syarat”.** 늘리되 나눠서 보내다 = dinaikkan, tetapi dikirim terbagi. Ia hemat dan tepat, jadi sering muncul di kontrak dan syarat penawaran.",
+    "**그러시군요 mengakui perkataan lawan tanpa menyetujuinya.** Akhiran -군요 menandai penerimaan informasi baru. Di perundingan, ia berfungsi sebagai jeda: “saya dengar, saya catat”, sebelum menawarkan sesuatu yang lain.",
+    "**긍정적으로 보고 있습니다 adalah jawaban resmi yang berarti “kemungkinan besar ya”.** Kembarannya yang berarti tidak: 검토해 보겠습니다 atau 내부적으로 논의해 보겠습니다. Menerjemahkan keduanya secara harfiah akan membuatmu salah membaca hasil rapat.",
+    "**회신 드리겠습니다 adalah bentuk resmi dari 답장하겠습니다.** Di surel bisnis Korea, 회신 (balasan), 첨부 (lampiran), 참조 (tembusan) adalah tiga kata yang muncul di hampir setiap pesan."
+   ],
+   "grammars": [
+    {
+     "title": "-기는 하다 — mengakui sebelum menyanggah",
+     "body": [
+      "Pola ini menggandakan kata kerjanya untuk mengakui satu sisi, lalu hampir selalu diikuti keberatan. Ia menandai bahwa kamu tidak menolak seluruhnya."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Arti"],
+      "rows": [
+       ["A-기는 하다", "[좋기는|Jokineun] [해요|haeyo].", "bagus sih (tapi …)"],
+       ["V-기는 하다", "[가기는|Gagineun] [갔어요|gasseoyo].", "pergi sih (tapi …)"],
+       ["Bentuk pendek", "[좋긴|Jokin] [한데|hande]", "bagus sih tapi"],
+       ["Pengulangan lisan", "[먹긴|Meokgin] [먹었어|meogeosseo].", "makan sih makan"],
+       ["-기는요", "[좋기는요|Jokineunyo].", "bagus apanya (menolak pujian)"],
+       ["-기야 하지만", "[비싸기야|Bissagiya] [하지만|hajiman]", "mahal memang, tapi"]
+      ]
+     }
+    },
+    {
+     "title": "Ungkapan berunding",
+     "body": [
+      "Kalimat-kalimat baku yang akan kamu dengar dan pakai di setiap perundingan berbahasa Korea."
+     ],
+     "table": {
+      "head": ["Maksud", "Kalimat"],
+      "rows": [
+       ["Mengakui keberatan", "[그|Geu] [점은|jeomeun] [저희도|jeohuido] [인정합니다|injeonghamnida]."],
+       ["Menyanggah halus", "[다만|Daman] [한|han] [가지|gaji] [말씀드리자면|malsseumdeurijamyeon]"],
+       ["Menawarkan pertukaran", "[…하는|haneun] [대신에|daesine] […는|neun] [어떠십니까|eotteosimnikka]?"],
+       ["Meminta kelonggaran", "[조금만|Jogeumman] [양보해|yangbohae] [주시면|jusimyeon] [감사하겠습니다|gamsahagetseumnida]."],
+       ["Mencari titik tengah", "[절충안을|Jeolchunganeul] [찾아|chaja] [보겠습니다|bogetseumnida]."],
+       ["Menunda keputusan", "[내부|Naebu] [검토|geomto] [후에|hue] [회신|hoesin] [드리겠습니다|deurigetseumnida]."],
+       ["Menutup positif", "[긍정적으로|Geungjeongjeogeuro] [검토하겠습니다|geomtohagetseumnida]."],
+       ["Menolak halus", "[이번에는|Ibeoneneun] [어려울|eoryeoul] [것|geot] [같습니다|gatseumnida]."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membantah tanpa terdengar membantah",
+   "blocks": [
+    { "type": "p", "text": "Di bahasa Indonesia, membantah dimulai dengan “tapi”. Di bahasa Korea, membuka sanggahan dengan 하지만 atau 아니요 terdengar memotong. Yang dipakai adalah kerangka tiga langkah: **akui — belokkan — usulkan**." },
+    { "type": "tabel", "head": ["Langkah", "Kalimat", "Fungsinya"], "rows": [
+     ["Akui", "[말씀|Malsseum] [잘|jal] [알겠습니다|algetseumnida].", "menyatakan bahwa kamu mendengar"],
+     ["Akui", "[일리가|Illiga] [있는|inneun] [말씀입니다|malsseumimnida].", "mengakui ada benarnya"],
+     ["Akui", "[그|Geu] [부분은|bubuneun] [저도|jeodo] [동의합니다|donguihamnida].", "menyetujui sebagian"],
+     ["Belokkan", "[다만|Daman] …", "paling halus"],
+     ["Belokkan", "[한|Han] [가지|gaji] [걱정되는|geokjeongdoeneun] [점은|jeomeun] …", "menamai keberatan"],
+     ["Belokkan", "[제|Je] [생각은|saenggageun] [조금|jogeum] [다른데요|dareundeyo].", "menyatakan beda pendapat"],
+     ["Usulkan", "[이렇게|Ireoke] [하면|hamyeon] [어떨까요|eotteolkkayo]?", "menawarkan jalan"],
+     ["Usulkan", "[절충안으로|Jeolchunganeuro] […는|neun] [어떠십니까|eotteosimnikka]?", "menawarkan titik tengah"]
+    ]},
+    { "type": "p", "text": "⚠️ Hindari 아니요 sebagai pembuka sanggahan kepada orang yang lebih tinggi. Ia menyangkal seluruh kalimat lawan bicara, bukan sebagian. Pengganti yang aman: 그렇긴 한데요, 그런 면도 있는데요." },
+    { "type": "sub", "text": "Kata-kata pembalik, diurut dari paling halus" },
+    { "type": "tabel", "head": ["Kata", "Kekuatan", "Ragam"], "rows": [
+     ["[다만|daman]", "paling halus", "resmi, rapat"],
+     ["[그런데|geureonde] · [근데|geunde]", "halus", "percakapan"],
+     ["[하지만|hajiman]", "sedang", "umum"],
+     ["[그렇지만|geureochiman]", "sedang", "umum, sedikit lebih rapi"],
+     ["[그러나|geureona]", "tegas", "tulis"],
+     ["[반면에|banmyeone]", "membandingkan", "tulis, rapat"],
+     ["[오히려|ohiryeo]", "membalik dugaan", "keduanya"],
+     ["[그럼에도|Geureomedo] [불구하고|bulguhago]", "sangat tegas", "tulis resmi"]
+    ]}
+   ]
+  },
+  {
+   "title": "Membandingkan dengan angka dan alasan",
+   "blocks": [
+    { "type": "p", "text": "Di tingkat B1, membandingkan bukan lagi sekadar 더 좋아요. Yang dituntut adalah membandingkan dengan ukuran, menyebut sisi baik dan buruknya, lalu menyimpulkan. Kerangkanya sama di rapat, di esai TOPIK, dan di percakapan sungguhan." },
+    { "type": "tabel", "head": ["Fungsi", "Pola", "Contoh"], "rows": [
+     ["Menyebut ukuran", "N 면에서", "[가격|Gagyeok] [면에서는|myeoneseoneun] [이게|ige] [낫습니다|natseumnida]."],
+     ["Membandingkan angka", "N에 비해 · N보다", "[작년에|Jangnyeone] [비해|bihae] [삼십|samsip] [퍼센트|peosenteu] [늘었습니다|neureotseumnida]."],
+     ["Dua sisi", "-는 반면에", "[빠른|Ppareun] [반면에|banmyeone] [비쌉니다|bissamnida]."],
+     ["Kelebihan", "-(으)ㄴ/는 장점이 있다", "[오래|Orae] [쓰는|sseuneun] [장점이|jangjeomi] [있습니다|itseumnida]."],
+     ["Kekurangan", "-(으)ㄴ/는 단점이 있다", "[무거운|Mugeoun] [단점이|danjeomi] [있습니다|itseumnida]."],
+     ["Menyimpulkan", "-(으)ㄴ/는 편이 낫다", "[기다리는|Gidarineun] [편이|pyeoni] [낫겠습니다|natgetseumnida]."],
+     ["Memilih", "차라리 -는 게 낫다", "[차라리|Charari] [안|an] [하는|haneun] [게|ge] [나아요|naayo]."],
+     ["Menyamakan", "-(으)ㄴ/는 만큼", "[일한|Ilhan] [만큼|mankeum] [받아요|badayo]."]
+    ]},
+    { "type": "sub", "text": "Satu barang, enam kalimat perbandingan" },
+    { "type": "tabel", "head": ["Kalimat", "Yang ditekankan"], "rows": [
+     ["[이게|Ige] [더|deo] [비싸요|bissayo].", "sekadar perbedaan"],
+     ["[이게|Ige] [저것보다|jeogeotboda] [두|du] [배|bae] [비싸요|bissayo].", "ukurannya"],
+     ["[비싼|Bissan] [반면에|banmyeone] [오래|orae] [써요|sseoyo].", "dua sisi"],
+     ["[비싸지만|Bissajiman] [살|sal] [만해요|manaeyo].", "tetap layak"],
+     ["[비싼|Bissan] [대신에|daesine] [수리비가|surribiga] [안|an] [들어요|deureoyo].", "pertukaran"],
+     ["[비싼데도|Bissandedo] [잘|jal] [팔려요|pallyeoyo].", "keheranan"]
+    ]},
+    { "type": "kotak", "title": "Tiga jebakan", "items": [
+     "**-지만 tidak bisa menggantikan -는 반면에 kalau dua bagiannya bukan sisi dari satu hal.** ✅ 빠르지만 비싸요 · ✅ 빠른 반면에 비싸요 — keduanya benar karena keduanya sifat barang yang sama. Tapi ❌ 비가 오는 반면에 저는 갔어요 salah.",
+     "**아무리 menuntut -아/어도 atau -더라도, bukan -지만.** ❌ 아무리 힘들지만 · ✅ 아무리 힘들어도.",
+     "**-(으)ㄴ/는데도 memerlukan keadaan nyata.** ❌ 내일 비가 오는데도 갈 거예요 (belum terjadi) · ✅ 내일 비가 와도 갈 거예요."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "아무리", "baca": "amuri", "id": "betapa pun" },
+  { "ko": "설령", "baca": "seollyeong", "id": "sekalipun" },
+  { "ko": "비록", "baca": "birok", "id": "walaupun" },
+  { "ko": "반면에", "baca": "banmyeone", "id": "sebaliknya" },
+  { "ko": "오히려", "baca": "ohiryeo", "id": "justru malah" },
+  { "ko": "차라리", "baca": "charari", "id": "lebih baik … saja" },
+  { "ko": "반대로", "baca": "bandaero", "id": "sebaliknya" },
+  { "ko": "일리가 있다", "baca": "illiga itda", "id": "ada benarnya" },
+  { "ko": "인정하다", "baca": "injeonghada", "id": "mengakui" },
+  { "ko": "동의하다", "baca": "donguihada", "id": "menyetujui" },
+  { "ko": "반대하다", "baca": "bandaehada", "id": "menentang" },
+  { "ko": "양보하다", "baca": "yangbohada", "id": "mengalah, memberi kelonggaran" },
+  { "ko": "절충안", "baca": "jeolchungan", "id": "jalan tengah" },
+  { "ko": "타협", "baca": "tahyeop", "id": "kompromi" },
+  { "ko": "조건", "baca": "jogeon", "id": "syarat, tawaran" },
+  { "ko": "장점", "baca": "jangjeom", "id": "kelebihan" },
+  { "ko": "단점", "baca": "danjeom", "id": "kekurangan" },
+  { "ko": "고민", "baca": "gomin", "id": "pertimbangan berat" },
+  { "ko": "솔직히", "baca": "soljikhi", "id": "sejujurnya" },
+  { "ko": "선택", "baca": "seontaek", "id": "pilihan" },
+  { "ko": "실패하다", "baca": "silpaehada", "id": "gagal" },
+  { "ko": "연봉", "baca": "yeonbong", "id": "gaji tahunan" },
+  { "ko": "월급", "baca": "wolgeup", "id": "gaji bulanan" },
+  { "ko": "집세", "baca": "jipse", "id": "sewa rumah" },
+  { "ko": "집값", "baca": "jipgap", "id": "harga rumah" },
+  { "ko": "생활비", "baca": "saenghwalbi", "id": "biaya hidup" },
+  { "ko": "견적서", "baca": "gyeonjeokseo", "id": "surat penawaran" },
+  { "ko": "단가", "baca": "danga", "id": "harga satuan" },
+  { "ko": "원자재", "baca": "wonjajae", "id": "bahan baku" },
+  { "ko": "수량", "baca": "suryang", "id": "jumlah barang" },
+  { "ko": "최소", "baca": "choeso", "id": "minimum" },
+  { "ko": "창고", "baca": "changgo", "id": "gudang" },
+  { "ko": "분할", "baca": "bunhal", "id": "terbagi, bertahap" },
+  { "ko": "납품", "baca": "nappum", "id": "pengiriman barang" },
+  { "ko": "연간", "baca": "yeongan", "id": "tahunan" },
+  { "ko": "계약", "baca": "gyeyak", "id": "kontrak" },
+  { "ko": "유지하다", "baca": "yujihada", "id": "mempertahankan" },
+  { "ko": "내부", "baca": "naebu", "id": "internal" },
+  { "ko": "검토", "baca": "geomto", "id": "penelaahan" },
+  { "ko": "거치다", "baca": "geochida", "id": "melewati (tahap)" },
+  { "ko": "긍정적", "baca": "geungjeongjeok", "id": "positif" },
+  { "ko": "회신", "baca": "hoesin", "id": "balasan resmi" },
+  { "ko": "첨부", "baca": "cheombu", "id": "lampiran" },
+  { "ko": "참조", "baca": "chamjo", "id": "tembusan, rujukan" },
+  { "ko": "품질", "baca": "pumjil", "id": "mutu" },
+  { "ko": "부족하다", "baca": "bujokhada", "id": "kurang" },
+  { "ko": "덜하다", "baca": "deolhada", "id": "berkurang, tidak seberapa" },
+  { "ko": "낫다", "baca": "natda", "id": "lebih baik" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bentuk pengecualian yang paling tepat.",
+   "items": [
+    "____ 힘들어도 포기하지 않을 거예요. (kata keterangan)",
+    "비가 ____ 경기는 진행됩니다. (andaian, belum terjadi)",
+    "비가 ____ 사람이 많네요. (nyata, mengandung heran)",
+    "비싸____ 품질은 좋아요. (netral)",
+    "설령 ____ 제 선택이니까 괜찮아요. (실패하다, andaian)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk pengakuan dengan -기는 하다.",
+   "items": [
+    "좋아요, 그런데 비싸요. → ____",
+    "갔어요, 그런데 아무도 없었어요. → ____",
+    "먹었어요, 그런데 조금만 먹었어요. → ____",
+    "맞아요, 그런데 전부는 아니에요. → ____",
+    "재미있어요, 그런데 좀 길어요. → ____"
+   ]
+  },
+  {
+   "prompt": "Gabungkan menjadi satu kalimat dengan -는 반면에.",
+   "items": [
+    "이 제품은 쌉니다. 품질이 떨어집니다. → ____",
+    "연봉이 오릅니다. 생활비도 늘어납니다. → ____",
+    "서울은 기회가 많습니다. 집값이 비쌉니다. → ____",
+    "이 차는 빠릅니다. 기름을 많이 먹습니다. → ____",
+    "온라인 수업은 편합니다. 집중이 어렵습니다. → ____"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat yang salah.",
+   "items": [
+    "아무리 힘들지만 계속할 거예요.",
+    "내일 비가 오는데도 갈 거예요.",
+    "비가 오는 반면에 저는 집에 있었어요.",
+    "아니요, 그건 틀렸습니다. (menyanggah atasan di rapat)",
+    "비싸지만 하지만 살 거예요."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "싶어 / 아무리 / 보고 / 힘들어도 / 해 / 한번은",
+    "들어 / 생활비는 / 반면에 / 오르는 / 두 배 / 연봉은",
+    "어떠십니까 / 낮추는 / 수량을 / 대신에 / 단가를 / 늘리시는 건",
+    "인정합니다 / 저희도 / 그 점은",
+    "괜찮아 / 선택이니까 / 실패하더라도 / 설령 / 내"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Bandingkan dua pilihan pekerjaan dengan -는 반면에 dan simpulkan dengan -는 편이 낫다.",
+    "Sanggah pendapat atasanmu dengan kerangka akui-belokkan-usulkan (tiga kalimat).",
+    "Nyatakan tekad yang tak tergoyahkan dengan 아무리 -아/어도.",
+    "Tawarkan pertukaran kepada mitra kerja dengan -는 대신에."
+   ]
+  }
+ ],
+ "answers": [
+  "아무리 — 오더라도 — 오는데도 — 지만 — 실패하더라도",
+  "좋기는 한데 비싸요. — 가기는 갔는데 아무도 없었어요. — 먹기는 했는데 조금만 먹었어요. — 맞기는 한데 전부는 아니에요. — 재미있기는 한데 좀 길어요.",
+  "이 제품은 싼 반면에 품질이 떨어집니다. — 연봉이 오르는 반면에 생활비도 늘어납니다. — 서울은 기회가 많은 반면에 집값이 비쌉니다. — 이 차는 빠른 반면에 기름을 많이 먹습니다. — 온라인 수업은 편한 반면에 집중이 어렵습니다.",
+  "아무리 힘들어도 계속할 거예요. — 내일 비가 와도 갈 거예요. — 비가 왔지만 저는 집에 있었어요. — 말씀은 잘 알겠습니다. 다만 한 가지 걱정되는 점이 있습니다. — 비싸지만 살 거예요.",
+  "아무리 힘들어도 한번은 해 보고 싶어. — 연봉은 오르는 반면에 생활비는 두 배 들어. — 단가를 낮추는 대신에 수량을 늘리시는 건 어떠십니까? — 그 점은 저희도 인정합니다. — 설령 실패하더라도 내 선택이니까 괜찮아.",
+  "A 회사는 연봉이 높은 반면에 야근이 많고, B 회사는 연봉이 낮은 반면에 시간이 자유롭습니다. 저는 B 회사를 선택하는 편이 낫다고 생각합니다. — 말씀 잘 알겠습니다. 다만 일정 면에서 한 가지 걱정되는 점이 있습니다. 마감을 일주일만 늦추면 어떨까요? — 아무리 어려워도 이번에는 끝까지 해 보겠습니다. — 납기를 앞당기는 대신에 수량을 조금 줄이시는 건 어떠십니까?"
+ ]
+}

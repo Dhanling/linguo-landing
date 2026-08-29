@@ -1,0 +1,332 @@
+{
+ "title": "Mencari rumah, kontrak, dan pindahan",
+ "title_target": "전세하고 월세 중에 — Jeonsehago wolse junge",
+ "goal": "Bisa mencari tempat tinggal di Korea sendirian: memahami sistem 전세 dan 월세 yang tak ada padanannya di Indonesia, membaca kontrak sewa, menawar, dan melaporkan kerusakan kepada pemilik rumah.",
+ "bekal": [
+  "membedakan 전세, 월세, 반전세 dan mengerti apa itu 보증금",
+  "memakai kosakata pencarian rumah: 원룸, 오피스텔, 풀옵션, 관리비 포함",
+  "membaca butir-butir penting kontrak sewa dan menanyakan yang tak jelas",
+  "melaporkan kerusakan dan menuntut perbaikan dengan sopan tapi jelas",
+  "mengurus pindahan: 이삿짐센터, 전입신고, 공과금 정산"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Di agen properti",
+   "intro": "Ani mencari tempat tinggal dekat kantornya. Percakapan di 부동산 punya urutan yang hampir tetap: anggaran dulu, baru jenis, baru lokasi.",
+   "lines": [
+    { "speaker": "중개사:", "text": "[어서|Eoseo] [오세요|oseyo]. [어떤|Eotteon] [집|jip] [찾으세요|chajeuseyo]?", "id": "Selamat datang. Rumah seperti apa yang Anda cari?", "literal": "cepat — datanglah-nya. yang-mana — rumah — carilah-beliau-nya?" },
+    { "speaker": "아니:", "text": "[혼자|Honja] [살|sal] [원룸|wollum] [찾고|chatgo] [있습니다|itseumnida]. [회사가|Hoesaga] [삼성역이라|Samseongyeogira] [그|geu] [근처면|geuncheomyeon] [좋겠습니다|jokgetseumnida].", "id": "Saya sedang mencari kamar studio untuk tinggal sendiri. Kantor saya di Stasiun Samseong, jadi kalau sekitar situ akan bagus.", "literal": "sendiri — tinggal-akan — satu-kamar — mencari-dan — ada. perusahaan — Samseong-stasiun-adalah-karena — itu — dekat-kalau — baik-pasti." },
+    { "speaker": "중개사:", "text": "[네|Ne]. [전세로|Jeonsero] [보실|bosil] [건가요|geongayo], [월세로|wolsero] [보실|bosil] [건가요|geongayo]?", "id": "Baik. Anda mau lihat yang jeonse atau yang bulanan?", "literal": "ya. jeonse-sebagai — melihat-beliau-akan — hal-nya, bulanan-sebagai — melihat-beliau-akan — hal-nya?" },
+    { "speaker": "아니:", "text": "[월세로|Wolsero] [보려고|boryeogo] [합니다|hamnida]. [보증금은|Bojeunggeumeun] [천만|cheonman] [원|won] [정도까지|jeongdokkaji] [가능하고|ganeunghago], [월세는|wolseneun] [칠십만|chilsipman] [원|won] [이하로|iharo] [생각하고|saenggakhago] [있습니다|itseumnida].", "id": "Saya berniat melihat yang bulanan. Untuk deposit saya sanggup sampai sekitar sepuluh juta won, dan sewa bulanannya saya pikirkan di bawah tujuh ratus ribu won.", "literal": "bulanan-sebagai — melihat-hendak — melakukan. deposit — mengenai — sepuluh-juta — won — kira-kira-sampai — mungkin-dan, sewa-bulanan — mengenai — tujuh-ratus-ribu — won — di-bawah-sebagai — berpikir-dan — ada." },
+    { "speaker": "중개사:", "text": "[그|Geu] [조건이면|jogeonimyeon] [몇|myeot] [군데|gunde] [있습니다|itseumnida]. [다만|Daman] [관리비가|gwallibiga] [따로|ttaro] [칠만|chilman] [원에서|woneseo] [십만|simman] [원|won] [붙습니다|butseumnida].", "id": "Dengan syarat itu ada beberapa tempat. Namun biaya pemeliharaan terpisah, sekitar tujuh puluh ribu sampai seratus ribu won.", "literal": "itu — syarat-kalau — berapa — tempat — ada. hanya-saja — biaya-pemeliharaan — terpisah — tujuh-puluh-ribu — won-dari — seratus-ribu — won — menempel." },
+    { "speaker": "아니:", "text": "[관리비에는|Gwallibieneun] [뭐가|mwoga] [포함되나요|pohamdoenayo]?", "id": "Apa saja yang termasuk dalam biaya pemeliharaan?", "literal": "biaya-pemeliharaan-pada — mengenai — apa — termasuk-jadi-nya?" },
+    { "speaker": "중개사:", "text": "[보통|Botong] [수도|sudo], [인터넷|inteonet], [청소비|cheongsobi] [정도고요|jeongdogoyo]. [전기|Jeongi] [요금하고|yogeumhago] [가스는|gaseuneun] [따로|ttaro] [내셔야|naesyeoya] [합니다|hamnida].", "id": "Biasanya air, internet, dan biaya kebersihan. Tagihan listrik dan gas harus Anda bayar terpisah.", "literal": "biasanya — air — internet — kebersihan-biaya — kira-kira-dan-nya. listrik — tarif-dan — gas — mengenai — terpisah — membayar-beliau-harus — melakukan." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [혹시|Hoksi] [풀옵션인가요|pulopsyeoningayo]?", "id": "Baik. Apakah sudah lengkap perabotnya?", "literal": "mengerti. barangkali — penuh-opsi-adalah-nya?" },
+    { "speaker": "중개사:", "text": "[네|Ne], [에어컨|eeokeon], [냉장고|naengjanggo], [세탁기|setakgi], [인덕션|indeoksyeon] [다|da] [있습니다|itseumnida]. [지금|Jigeum] [바로|baro] [보러|boreo] [가|ga] [보실까요|bosilkkayo]?", "id": "Ya, AC, kulkas, mesin cuci, dan kompor induksi semuanya ada. Mau kita lihat langsung sekarang?", "literal": "ya, AC, kulkas, mesin-cuci, induksi — semua — ada. sekarang — langsung — melihat-untuk — pergi — coba-beliau-bagaimana-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [좋습니다|jotseumnida]. [아|A], [그리고|geurigo] [중개|junggae] [수수료는|susuryoneun] [얼마나|eolmana] [되나요|doenayo]?", "id": "Ya, baik. Ah, dan komisi perantaranya berapa?", "literal": "ya, bagus. ah, dan — perantaraan — biaya — mengenai — berapa — jadi-nya?" },
+    { "speaker": "중개사:", "text": "[법정|Beopjeong] [요율대로|yoyuldaero] [받습니다|batseumnida]. [계약|Gyeyak] [금액|geumaek] [기준으로|gijuneuro] [계산해서|gyesanhaeseo] [미리|miri] [알려|allyeo] [드릴게요|deurilgeyo].", "id": "Saya mengambil sesuai tarif yang ditetapkan undang-undang. Akan saya hitung berdasarkan nilai kontrak dan beri tahu sebelumnya.", "literal": "undang-undang-tetapan — tarif-sesuai — menerima. kontrak — jumlah-uang — patokan-sebagai — menghitung-lalu — sebelumnya — memberi-tahu — akan-mempersembahkan-nya." }
+   ],
+   "notes": [
+    "**전세 tidak punya padanan di Indonesia sama sekali.** Penyewa menyetorkan uang jaminan yang sangat besar — sering ratusan juta won — dan **tidak membayar sewa bulanan sama sekali**. Di akhir kontrak, seluruh uang itu dikembalikan. Pemilik memakai uangnya selama masa sewa. Sistem ini sedang menyusut, tapi masih ada di mana-mana.",
+    "**월세 adalah sewa bulanan biasa, tapi tetap dengan 보증금.** Depositnya jauh lebih kecil daripada 전세, dan biasanya makin besar deposit, makin kecil sewa bulanannya — angkanya bisa dirundingkan. 반전세 adalah campuran keduanya.",
+    "**관리비 hampir selalu terpisah dan sering dilupakan pendatang.** Ia bisa menambah sepuluh persen dari biaya bulanan. Selalu tanyakan 관리비에 뭐가 포함되나요? sebelum membandingkan dua tempat.",
+    "**풀옵션 dari bahasa Inggris *full option*.** Artinya perabot dan peralatan besar sudah tersedia. Lawannya 옵션 없음. Yang setengah: 기본 옵션 (biasanya hanya AC dan kulkas).",
+    "**-(으)ㄹ 건가요? adalah pertanyaan sopan tentang rencana.** Bentuk penuhnya -(으)ㄹ 것인가요. Lebih halus daripada -(으)ㄹ 거예요? karena terdengar seperti memastikan, bukan menuntut jawaban.",
+    "**붙다 harfiahnya “menempel”, dan dipakai untuk biaya tambahan.** 관리비가 붙습니다, 수수료가 붙어요, 세금이 붙습니다. Kata yang berguna sekali di percakapan tentang harga.",
+    "**법정 요율 = tarif yang ditetapkan undang-undang.** Komisi agen properti Korea diatur negara berdasarkan nilai kontrak, jadi ia tidak bisa ditawar bebas — tapi diskon di bawah tarif maksimal cukup lazim, dan boleh ditanyakan.",
+    "**-대로 berarti “sesuai dengan”.** 법정 요율대로, 계약대로, 말씀하신 대로, 예정대로. Salah satu akhiran paling berguna di urusan resmi."
+   ],
+   "grammars": [
+    {
+     "title": "Jenis tempat tinggal di Korea",
+     "body": [
+      "Nama-nama ini tidak sama dengan pembagian di Indonesia, dan mengetahuinya menentukan apa yang kamu cari."
+     ],
+     "table": {
+      "head": ["Jenis", "Romanisasi", "Apa itu"],
+      "rows": [
+       ["원룸", "wollum", "satu ruangan, dapur menyatu"],
+       ["투룸", "turum", "dua ruangan, dapur terpisah"],
+       ["오피스텔", "opiseutel", "unit di gedung campuran kantor-hunian"],
+       ["빌라", "billa", "gedung rendah beberapa lantai"],
+       ["아파트", "apateu", "kompleks apartemen bertingkat"],
+       ["주택", "jutaek", "rumah tapak"],
+       ["반지하", "banjiha", "setengah basemen; murah, lembap"],
+       ["옥탑방", "oktapbang", "kamar di atap; murah, panas dan dingin ekstrem"],
+       ["고시원", "gosiwon", "kamar sangat kecil, sewa bulanan tanpa deposit"],
+       ["셰어하우스", "syeeohauseu", "rumah berbagi"],
+       ["하숙", "hasuk", "kos dengan makan"]
+      ]
+     }
+    },
+    {
+     "title": "Bertanya sebelum menyewa",
+     "body": [
+      "Sembilan pertanyaan yang menyelamatkan penyewa pemula di Korea dari penyesalan berbulan-bulan."
+     ],
+     "table": {
+      "head": ["Pertanyaan", "Kenapa penting"],
+      "rows": [
+       ["[관리비에|Gwallibie] [뭐가|mwoga] [포함되나요|pohamdoenayo]?", "biaya sebenarnya sering jauh lebih tinggi"],
+       ["[보증금|Bojeunggeum] [조정|jojeong] [가능한가요|ganeunghangayo]?", "deposit dan sewa bisa saling ditukar"],
+       ["[입주|Ipju] [가능일이|ganeungiri] [언제인가요|eonjeingayo]?", "menentukan tanggal pindah"],
+       ["[채광은|Chaegwangeun] [어떤가요|eotteongayo]?", "cahaya matahari; sangat berpengaruh"],
+       ["[곰팡이|Gompangi] [문제는|munjeneun] [없나요|eomnayo]?", "masalah paling umum di Korea"],
+       ["[방음은|Bangeumeun] [잘|jal] [되나요|doenayo]?", "kedap suara, keluhan nomor satu"],
+       ["[주차|Jucha] [가능한가요|ganeunghangayo]?", "sering tidak tersedia"],
+       ["[전입신고|Jeonipsingo] [가능한가요|ganeunghangayo]?", "wajib; sebagian pemilik menolak"],
+       ["[등기부등본|Deunggibudeungbon] [볼|bol] [수|su] [있을까요|isseulkkayo]?", "memeriksa utang atas rumah itu"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Melaporkan kerusakan kepada pemilik",
+   "intro": "Tiga bulan setelah pindah, muncul masalah. Percakapan dengan pemilik rumah menuntut keseimbangan: cukup sopan untuk menjaga hubungan, cukup jelas supaya diperbaiki.",
+   "lines": [
+    { "speaker": "아니:", "text": "[사장님|Sajangnim], [안녕하세요|annyeonghaseyo]. [삼|Sam] [층|cheung] [세입자|seipja] [아니입니다|Aniimnida].", "id": "Pak, selamat siang. Saya Ani, penyewa lantai tiga.", "literal": "tuan, sejahtera-nya. tiga — lantai — penyewa — Ani-adalah." },
+    { "speaker": "집주인:", "text": "[아|A], [네|ne]. [무슨|Museun] [일|il] [있으세요|isseuseyo]?", "id": "Ah, ya. Ada apa?", "literal": "ah, ya. apa — urusan — ada-beliau-nya?" },
+    { "speaker": "아니:", "text": "[다름이|Dareumi] [아니라|anira], [지난주부터|jinanjubuteo] [화장실|hwajangsil] [천장에서|cheonjangeseo] [물이|muri] [새고|saego] [있습니다|itseumnida].", "id": "Begini, sejak minggu lalu air merembes dari langit-langit kamar mandi.", "literal": "lain — bukan-melainkan, minggu-lalu-dari — kamar-mandi — langit-langit-dari — air — bocor-dan — ada." },
+    { "speaker": "집주인:", "text": "[어|Eo], [그래요|geuraeyo]? [많이|Mani] [새나요|saenayo]?", "id": "Eh, begitu? Bocornya banyak?", "literal": "eh, begitu-nya? banyak — bocor-nya?" },
+    { "speaker": "아니:", "text": "[처음엔|Cheoeumen] [조금이었는데|jogeumieonneunde] [점점|jeomjeom] [심해져서|simhaejyeoseo] [지금은|jigeumeun] [바닥에|badage] [물이|muri] [고입니다|goimnida]. [사진|Sajin] [찍어|jjigeo] [뒀는데|dwonneunde] [보내|bonae] [드릴까요|deurilkkayo]?", "id": "Awalnya sedikit, tapi makin lama makin parah sampai sekarang airnya menggenang di lantai. Saya sudah memotretnya, mau saya kirimkan?", "literal": "awal-pada — mengenai — sedikit-adalah-sudah-padahal — makin-lama — parah-menjadi-karena — sekarang — mengenai — lantai-pada — air — menggenang. foto — memotret — menaruh-sudah-padahal — mengirim — mempersembahkan-bagaimana-nya?" },
+    { "speaker": "집주인:", "text": "[네|Ne], [보내|bonae] [주세요|juseyo]. [위층|Wicheung] [문제일|munjeil] [수도|sudo] [있으니까|isseunikka] [확인해|hwaginhae] [볼게요|bolgeyo].", "id": "Ya, kirim saja. Bisa jadi masalah dari lantai atas, akan saya periksa.", "literal": "ya, mengirim — berilah-nya. atas-lantai — masalah-akan — kemungkinan-pun — ada-karena — memeriksa — akan-coba-nya." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [혹시|Hoksi] [언제쯤|eonjejjeum] [수리가|suriga] [가능할까요|ganeunghalkkayo]? [곰팡이가|Gompangiga] [생기기|saenggigi] [시작해서요|sijakhaeseoyo].", "id": "Terima kasih. Kira-kira kapan perbaikannya bisa dilakukan? Jamurnya sudah mulai muncul.", "literal": "terima-kasih. barangkali — kapan-sekitar — perbaikan — mungkin-akan-nya? jamur — muncul-hal — mulai-melakukan-karena-nya." },
+    { "speaker": "집주인:", "text": "[이번|Ibeon] [주|ju] [안에|ane] [사람|saram] [보내겠습니다|bonaegetseumnida]. [불편하게|Bulpyeonhage] [해|hae] [드려서|deuryeoseo] [죄송합니다|joesonghamnida].", "id": "Dalam minggu ini saya kirim orang. Maaf sudah membuat Anda tidak nyaman.", "literal": "kali-ini — minggu — dalam-pada — orang — akan-mengirim. tidak-nyaman-secara — melakukan — mempersembahkan-karena — maaf." },
+    { "speaker": "아니:", "text": "[아닙니다|Animnida]. [그리고|Geurigo] [한|han] [가지|gaji] [더|deo] [여쭙고|yeojjupgo] [싶은데|sipeunde], [수리|suri] [비용은|biyongeun] [어떻게|eotteoke] [되나요|doenayo]?", "id": "Tidak apa-apa. Dan ada satu hal lagi yang ingin saya tanyakan: bagaimana dengan biaya perbaikannya?", "literal": "bukan. dan — satu — perkara — lebih — bertanya-dan — ingin-padahal, perbaikan — biaya — mengenai — bagaimana — jadi-nya?" },
+    { "speaker": "집주인:", "text": "[누수는|Nusuneun] [건물|geonmul] [문제니까|munjenikka] [제가|jega] [부담합니다|budamhamnida]. [세입자|Seipja] [과실이|gwasiri] [아니면|animyeon] [보통|botong] [집주인|jipjuin] [책임이에요|chaegimieyo].", "id": "Kebocoran itu masalah bangunan, jadi saya yang menanggung. Kalau bukan kelalaian penyewa, biasanya itu tanggung jawab pemilik.", "literal": "kebocoran — mengenai — bangunan — masalah-karena — saya — menanggung. penyewa — kelalaian — bukan-kalau — biasanya — pemilik-rumah — tanggung-jawab-adalah-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [알겠습니다|algetseumnida]. [연락|Yeollak] [주시면|jusimyeon] [시간|sigan] [맞추겠습니다|matchugetseumnida]. [감사합니다|Gamsahamnida].", "id": "Baik, saya mengerti. Kalau Bapak menghubungi saya, akan saya sesuaikan waktunya. Terima kasih.", "literal": "ya, mengerti. kabar — memberi-beliau-kalau — waktu — akan-menyesuaikan. terima-kasih." }
+   ],
+   "notes": [
+    "**Pemilik rumah dipanggil 사장님, bukan 집주인님.** Kata 집주인 dipakai untuk **menyebut** mereka kepada orang lain, tapi tidak untuk memanggil. Sapaan 사장님 adalah pilihan yang aman.",
+    "**다름이 아니라 adalah pembuka baku untuk masuk ke pokok yang mungkin merepotkan.** Harfiahnya “bukan hal lain, melainkan”. Ia menyiapkan lawan bicara bahwa yang datang adalah permintaan atau keluhan.",
+    "**물이 새다 = air bocor. 새다 juga dipakai untuk gas, cahaya, dan rahasia.** 가스가 새요, 빛이 새요, 비밀이 샜어요.",
+    "**Melaporkan kerusakan dengan tiga bagian: sejak kapan, perkembangannya, dan bukti.** Ani menyebut 지난주부터, lalu 점점 심해져서, lalu menawarkan foto. Urutan ini membuat laporan terdengar sebagai fakta, bukan keluhan.",
+    "**고이다 = menggenang.** Kata yang tepat untuk air yang tidak mengalir. Bedakan dengan 넘치다 (meluap) dan 흐르다 (mengalir).",
+    "**Hukum sewa Korea membagi tanggung jawab perbaikan:** kerusakan struktural dan bawaan bangunan (누수, 보일러 고장, 결로) ditanggung 집주인; kerusakan karena pemakaian sehari-hari (전구, 소모품, 세입자 과실) ditanggung 세입자. Kalimat kunci untuk menanyakannya: 이건 어느 쪽 부담인가요?",
+    "**과실 berarti kelalaian, dalam arti hukum.** 세입자 과실, 본인 과실, 과실 비율. Kata yang muncul di asuransi, kecelakaan, dan sengketa sewa.",
+    "**시간 맞추겠습니다 — “saya akan menyesuaikan waktu”.** Kalimat yang sangat berguna di mana saja: 일정 맞추겠습니다, 시간 맞춰서 갈게요."
+   ],
+   "grammars": [
+    {
+     "title": "Butir-butir kontrak sewa yang harus dibaca",
+     "body": [
+      "Kontrak sewa Korea (임대차계약서) memakai bentuk yang cukup baku. Ini bagian yang paling penting dan paling sering menimbulkan sengketa."
+     ],
+     "table": {
+      "head": ["Butir", "Romanisasi", "Artinya"],
+      "rows": [
+       ["임대인 · 임차인", "imdaein · imchain", "yang menyewakan · yang menyewa"],
+       ["보증금", "bojeunggeum", "uang jaminan"],
+       ["차임 · 월세", "chaim · wolse", "sewa bulanan"],
+       ["계약 기간", "gyeyak gigan", "masa kontrak"],
+       ["입주일", "ipjuil", "tanggal mulai menempati"],
+       ["관리비", "gwallibi", "biaya pemeliharaan"],
+       ["중도 해지", "jungdo haeji", "pemutusan di tengah masa"],
+       ["원상 복구", "wonsang bokgu", "pemulihan ke keadaan semula"],
+       ["특약 사항", "teugyak sahang", "ketentuan khusus"],
+       ["확정일자", "hwakjeongilja", "cap tanggal resmi untuk melindungi deposit"],
+       ["전세권 설정", "jeonsegwon seoljeong", "pendaftaran hak jeonse"],
+       ["등기부등본", "deunggibudeungbon", "catatan kepemilikan dan utang atas rumah"]
+      ]
+     }
+    },
+    {
+     "title": "Melindungi uang jaminan",
+     "body": [
+      "Ini bagian yang paling sering merugikan pendatang di Korea, dan seluruhnya bisa dicegah dengan tiga langkah.",
+      "**1. Periksa 등기부등본 sebelum menandatangani.** Dokumen ini menunjukkan siapa pemilik sebenarnya dan berapa besar utang bank yang menempel pada rumah itu (근저당). Kalau utangnya besar dan rumah dilelang, uang jaminanmu bisa hilang.",
+      "**2. Lapor pindah (전입신고) dan minta 확정일자 pada hari yang sama dengan pindah.** Kedua hal ini memberimu 대항력 — hak untuk didahulukan atas uang jaminanmu. Ini gratis dan diurus di kantor kelurahan.",
+      "**3. Pertimbangkan 전세보증보험** — asuransi negara yang menjamin pengembalian uang jaminan kalau pemilik tak mampu membayar. Berbayar, tapi jauh lebih murah daripada kehilangan seluruh depositnya.",
+      "⚠️ Kalimat yang harus kamu bisa ucapkan: 등기부등본 확인하고 싶습니다. · 확정일자 받으러 왔습니다. · 전세보증보험 가입이 가능한 매물인가요?"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pindahan dari awal sampai selesai",
+   "blocks": [
+    { "type": "p", "text": "Pindah rumah di Korea punya urutan pekerjaan yang cukup baku, dan tiap langkah punya kosakatanya sendiri. Melewatkan langkah keempat dan kelima adalah kesalahan yang paling mahal." },
+    { "type": "tabel", "head": ["Langkah", "Istilah", "Yang dikerjakan"], "rows": [
+     ["1", "[매물|maemul] [보기|bogi]", "melihat-lihat calon tempat"],
+     ["2", "[가계약|gagyeyak]", "menyetor uang muka kecil untuk menahan unit"],
+     ["3", "[본계약|bongyeyak]", "menandatangani kontrak, membayar sebagian deposit"],
+     ["4", "[잔금|jangeum] [치르기|chireugi]", "melunasi sisa deposit di hari pindah"],
+     ["5", "[전입신고|jeonipsingo] · [확정일자|hwakjeongilja]", "lapor pindah dan cap tanggal, hari itu juga"],
+     ["6", "[이삿짐|isatjim] [옮기기|omgigi]", "memindahkan barang"],
+     ["7", "[공과금|gonggwageum] [정산|jeongsan]", "menutup tagihan di tempat lama"],
+     ["8", "[인터넷|inteonet] [이전|ijeon]", "memindahkan langganan internet"]
+    ]},
+    { "type": "sub", "text": "Kosakata pindahan" },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["이삿짐센터", "isatjimsenteo", "jasa pindahan"],
+     ["포장이사", "pojangisa", "pindahan lengkap dengan pengepakan"],
+     ["반포장이사", "banpojangisa", "pindahan dengan pengepakan sebagian"],
+     ["견적", "gyeonjeok", "penawaran harga"],
+     ["사다리차", "sadaricha", "truk tangga untuk lantai atas"],
+     ["도배", "dobae", "pemasangan wallpaper"],
+     ["장판", "jangpan", "pelapis lantai"],
+     ["입주 청소", "ipju cheongso", "pembersihan sebelum menempati"],
+     ["폐기물 스티커", "pyegimul seutikeo", "stiker berbayar untuk membuang perabot"],
+     ["분리수거", "bullisugeo", "pemilahan sampah"],
+     ["음식물 쓰레기", "eumsingmul sseuregi", "sampah sisa makanan"],
+     ["종량제 봉투", "jongnyangje bongtu", "kantong sampah berbayar resmi"]
+    ]},
+    { "type": "p", "text": "⚠️ Sampah di Korea harus dibuang dalam 종량제 봉투 yang dibeli di minimarket, dan warnanya berbeda tiap wilayah. Membuang sampah dalam kantong biasa dikenai 과태료. Perabot besar memerlukan 폐기물 스티커 yang dibeli dari kantor kelurahan atau aplikasinya." },
+    { "type": "kotak", "title": "Nama tagihan bulanan", "items": [
+     "**전기 요금** listrik · **수도 요금** air · **가스 요금** gas — ketiganya biasanya terpisah dari 관리비 di 원룸.",
+     "**Membayar tagihan:** 자동이체 (autodebet), 지로 (slip bank), 앱으로 결제. Cara termudah adalah mendaftarkan 자동이체 di bank pada hari membuka rekening.",
+     "**Kalimat yang berguna:** 이번 달 관리비가 왜 이렇게 많이 나왔나요? · 자동이체 신청하고 싶습니다. · 이사 나가는데 정산 부탁드립니다."
+    ]}
+   ]
+  },
+  {
+   "title": "Menawar dan meminta perbaikan",
+   "blocks": [
+    { "type": "p", "text": "Harga sewa di Korea bisa dirundingkan, tapi caranya berbeda dari tawar-menawar pasar. Yang ditawar biasanya bukan angkanya secara langsung, melainkan **pertukaran** — deposit lebih besar untuk sewa lebih kecil, atau perbaikan sebagai ganti harga tetap." },
+    { "type": "tabel", "head": ["Maksud", "Kalimat"], "rows": [
+     ["Menawar sewa", "[월세를|Wolsereul] [조금만|jogeumman] [조정해|jojeonghae] [주실|jusil] [수|su] [있을까요|isseulkkayo]?"],
+     ["Menukar deposit dan sewa", "[보증금을|Bojeunggeumeul] [더|deo] [드리면|deurimyeon] [월세를|wolsereul] [낮출|natchul] [수|su] [있나요|innayo]?"],
+     ["Meminta perbaikan dulu", "[입주|Ipju] [전에|jeone] [도배만|dobaeman] [해|hae] [주시면|jusimyeon] [바로|baro] [계약하겠습니다|gyeyakhagetseumnida]."],
+     ["Meminta tambahan", "[에어컨|Eeokeon] [설치해|seolchihae] [주실|jusil] [수|su] [있을까요|isseulkkayo]?"],
+     ["Menunda jawaban", "[하루만|Haruman] [생각해|saenggakhae] [보고|bogo] [연락드려도|yeollakdeuryeodo] [될까요|doelkkayo]?"],
+     ["Menutup kesepakatan", "[그|Geu] [조건이면|jogeonimyeon] [계약하겠습니다|gyeyakhagetseumnida]."]
+    ]},
+    { "type": "sub", "text": "Melaporkan kerusakan: kerangka empat kalimat" },
+    { "type": "tabel", "head": ["Bagian", "Contoh"], "rows": [
+     ["Perkenalan", "[삼|Sam] [층|cheung] [세입자|seipja] [아니입니다|Aniimnida]."],
+     ["Fakta dan waktu", "[지난주부터|Jinanjubuteo] [보일러가|boilleoga] [안|an] [돌아갑니다|doragamnida]."],
+     ["Perkembangan", "[점점|Jeomjeom] [심해져서|simhaejyeoseo] [지금은|jigeumeun] [온수가|onsuga] [안|an] [나옵니다|naomnida]."],
+     ["Permintaan", "[수리|Suri] [한번|hanbeon] [봐|bwa] [주시면|jusimyeon] [감사하겠습니다|gamsahagetseumnida]."]
+    ]},
+    { "type": "kotak", "title": "Kerusakan yang paling sering di rumah Korea", "items": [
+     "**보일러 고장** — pemanas lantai mati; darurat di musim dingin, dan tanggung jawab pemilik.",
+     "**결로와 곰팡이** — pengembunan dan jamur di dinding, terutama di 반지하 dan kamar tanpa cahaya. Sering diperdebatkan siapa yang bertanggung jawab; ventilasi teratur adalah tanggung jawab penyewa, tapi dinding yang memang lembap adalah masalah bangunan.",
+     "**동파** — pipa membeku dan pecah saat suhu jauh di bawah nol. Membiarkan air menetes tipis pada malam yang sangat dingin adalah pencegahan yang lazim.",
+     "**층간소음** — suara antarlantai. Jalur resminya lewat pengelola gedung, bukan mengetuk pintu tetangga; Korea punya lembaga khusus untuk sengketa ini."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "전세", "baca": "jeonse", "id": "sewa dengan jaminan besar tanpa sewa bulanan" },
+  { "ko": "월세", "baca": "wolse", "id": "sewa bulanan" },
+  { "ko": "보증금", "baca": "bojeunggeum", "id": "uang jaminan" },
+  { "ko": "관리비", "baca": "gwallibi", "id": "biaya pemeliharaan" },
+  { "ko": "부동산", "baca": "budongsan", "id": "agen properti" },
+  { "ko": "중개 수수료", "baca": "junggae susuryo", "id": "komisi perantara" },
+  { "ko": "매물", "baca": "maemul", "id": "unit yang ditawarkan" },
+  { "ko": "원룸", "baca": "wollum", "id": "kamar studio" },
+  { "ko": "오피스텔", "baca": "opiseutel", "id": "unit hunian-kantor" },
+  { "ko": "반지하", "baca": "banjiha", "id": "setengah basemen" },
+  { "ko": "옥탑방", "baca": "oktapbang", "id": "kamar di atap" },
+  { "ko": "풀옵션", "baca": "pulopsyeon", "id": "lengkap perabot" },
+  { "ko": "입주", "baca": "ipju", "id": "mulai menempati" },
+  { "ko": "퇴거", "baca": "toegeo", "id": "meninggalkan tempat sewa" },
+  { "ko": "세입자", "baca": "seipja", "id": "penyewa" },
+  { "ko": "집주인", "baca": "jipjuin", "id": "pemilik rumah" },
+  { "ko": "임대인", "baca": "imdaein", "id": "pihak yang menyewakan" },
+  { "ko": "임차인", "baca": "imchain", "id": "pihak yang menyewa" },
+  { "ko": "계약 기간", "baca": "gyeyak gigan", "id": "masa kontrak" },
+  { "ko": "중도 해지", "baca": "jungdo haeji", "id": "pemutusan di tengah masa" },
+  { "ko": "원상 복구", "baca": "wonsang bokgu", "id": "pemulihan ke keadaan semula" },
+  { "ko": "특약 사항", "baca": "teugyak sahang", "id": "ketentuan khusus" },
+  { "ko": "확정일자", "baca": "hwakjeongilja", "id": "cap tanggal resmi" },
+  { "ko": "등기부등본", "baca": "deunggibudeungbon", "id": "catatan kepemilikan tanah" },
+  { "ko": "잔금", "baca": "jangeum", "id": "sisa pelunasan" },
+  { "ko": "누수", "baca": "nusu", "id": "kebocoran air" },
+  { "ko": "새다", "baca": "saeda", "id": "bocor" },
+  { "ko": "고이다", "baca": "goida", "id": "menggenang" },
+  { "ko": "곰팡이", "baca": "gompangi", "id": "jamur" },
+  { "ko": "결로", "baca": "gyeollo", "id": "pengembunan" },
+  { "ko": "동파", "baca": "dongpa", "id": "pipa pecah karena beku" },
+  { "ko": "보일러", "baca": "boilleo", "id": "pemanas lantai" },
+  { "ko": "온수", "baca": "onsu", "id": "air panas" },
+  { "ko": "수리", "baca": "suri", "id": "perbaikan" },
+  { "ko": "하자", "baca": "haja", "id": "cacat bangunan" },
+  { "ko": "과실", "baca": "gwasil", "id": "kelalaian" },
+  { "ko": "부담하다", "baca": "budamhada", "id": "menanggung biaya" },
+  { "ko": "이삿짐센터", "baca": "isatjimsenteo", "id": "jasa pindahan" },
+  { "ko": "포장이사", "baca": "pojangisa", "id": "pindahan dengan pengepakan" },
+  { "ko": "도배", "baca": "dobae", "id": "pemasangan wallpaper" },
+  { "ko": "입주 청소", "baca": "ipju cheongso", "id": "pembersihan sebelum menempati" },
+  { "ko": "분리수거", "baca": "bullisugeo", "id": "pemilahan sampah" },
+  { "ko": "종량제 봉투", "baca": "jongnyangje bongtu", "id": "kantong sampah resmi" },
+  { "ko": "공과금", "baca": "gonggwageum", "id": "tagihan utilitas" },
+  { "ko": "정산", "baca": "jeongsan", "id": "penyelesaian tagihan" },
+  { "ko": "채광", "baca": "chaegwang", "id": "pencahayaan alami" },
+  { "ko": "방음", "baca": "bangeum", "id": "kedap suara" },
+  { "ko": "포함되다", "baca": "pohamdoeda", "id": "termasuk" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Jawab dengan istilah yang tepat.",
+   "items": [
+    "Sistem sewa Korea dengan jaminan sangat besar dan tanpa sewa bulanan:",
+    "Uang jaminan yang dikembalikan di akhir kontrak:",
+    "Biaya bulanan untuk kebersihan, air, dan pengelolaan gedung:",
+    "Cap tanggal resmi yang melindungi uang jaminanmu:",
+    "Dokumen yang menunjukkan pemilik dan utang atas rumah itu:"
+   ]
+  },
+  {
+   "prompt": "Susun pertanyaan yang tepat untuk tiap keperluan.",
+   "items": [
+    "Kamu ingin tahu apa saja yang termasuk biaya pemeliharaan:",
+    "Kamu ingin menukar deposit lebih besar dengan sewa lebih kecil:",
+    "Kamu ingin tahu kapan bisa mulai menempati:",
+    "Kamu khawatir soal jamur:",
+    "Kamu ingin memeriksa catatan kepemilikan rumah:"
+   ]
+  },
+  {
+   "prompt": "Lengkapi laporan kerusakan berikut.",
+   "items": [
+    "지난주____ 화장실 천장에서 물이 새고 있습니다.",
+    "처음엔 조금이었는데 ____ 심해졌습니다.",
+    "지금은 바닥에 물이 ____.",
+    "사진 ____ 뒀는데 보내 드릴까요?",
+    "수리 한번 봐 주시면 ____겠습니다."
+   ]
+  },
+  {
+   "prompt": "Pilih siapa yang biasanya menanggung: 집주인 atau 세입자.",
+   "items": [
+    "보일러가 고장 났습니다:",
+    "전구가 나갔습니다:",
+    "천장에서 물이 샙니다:",
+    "세입자가 벽에 못을 박아 생긴 구멍:",
+    "건물 외벽 균열로 생긴 결로:"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "찾고 있습니다 / 살 / 혼자 / 원룸",
+    "포함되나요 / 뭐가 / 관리비에는",
+    "있습니다 / 물이 / 천장에서 / 새고 / 화장실",
+    "책임이에요 / 집주인 / 아니면 / 보통 / 세입자 과실이",
+    "있을까요 / 조정해 / 월세를 / 주실 수 / 조금만"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Jelaskan kepada agen properti anggaran dan syaratmu untuk menyewa kamar.",
+    "Tanyakan tiga hal penting sebelum menandatangani kontrak.",
+    "Laporkan kepada pemilik bahwa pemanas mati sejak dua hari lalu, dengan kerangka empat kalimat.",
+    "Tawarlah sewa bulanan dengan menawarkan pertukaran."
+   ]
+  }
+ ],
+ "answers": [
+  "전세 — 보증금 — 관리비 — 확정일자 — 등기부등본",
+  "관리비에는 뭐가 포함되나요? — 보증금을 더 드리면 월세를 낮출 수 있나요? — 입주 가능일이 언제인가요? — 곰팡이 문제는 없나요? — 등기부등본 볼 수 있을까요?",
+  "부터 — 점점 — 고입니다 — 찍어 — 감사하",
+  "집주인 — 세입자 — 집주인 — 세입자 — 집주인",
+  "혼자 살 원룸 찾고 있습니다. — 관리비에는 뭐가 포함되나요? — 화장실 천장에서 물이 새고 있습니다. — 세입자 과실이 아니면 보통 집주인 책임이에요. — 월세를 조금만 조정해 주실 수 있을까요?",
+  "혼자 살 원룸 찾고 있는데요. 보증금은 천만 원 정도까지 가능하고 월세는 칠십만 원 이하로 생각하고 있습니다. — 관리비에 뭐가 포함되나요? 입주 가능일이 언제인가요? 등기부등본 확인할 수 있을까요? — 사장님, 삼 층 세입자 아니입니다. 이틀 전부터 보일러가 안 돌아갑니다. 지금은 온수도 안 나옵니다. 수리 한번 봐 주시면 감사하겠습니다. — 보증금을 이백만 원 더 드리면 월세를 오만 원 정도 낮춰 주실 수 있을까요?"
+ ]
+}

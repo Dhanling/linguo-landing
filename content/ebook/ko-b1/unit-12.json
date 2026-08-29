@@ -1,0 +1,348 @@
+{
+ "title": "Bank, kantor pemerintahan, dan formulir",
+ "title_target": "신청서를 작성해 주세요 — Sincheongseoreul jakseonghae juseyo",
+ "goal": "Menguasai ragam bahasa loket: bahasa pelayanan yang sangat sopan dari petugas, bahasa formulir yang padat 한자어, dan cara bertanya ketika kamu tidak mengerti tanpa membuat antrean tertahan.",
+ "bekal": [
+  "membuka rekening, mengurus kartu, dan mengatur transfer otomatis dalam bahasa Korea",
+  "mengurus lapor pindah, meminta surat keterangan, dan memakai mesin penerbit mandiri",
+  "membaca nama-nama dokumen resmi Korea dan mengenali akar 한자어-nya",
+  "memakai bahasa pelayanan pasif: -아/어 주시겠습니까, -시면 됩니다, -하시면 안 됩니다",
+  "bertanya ulang dengan sopan ketika tidak mengerti"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Membuka rekening bank",
+   "intro": "Ani membuka rekening di bank Korea. Bahasa petugas bank adalah ragam paling sopan yang akan kamu dengar sehari-hari — dan juga paling cepat, karena mereka mengucapkannya ratusan kali sehari.",
+   "lines": [
+    { "speaker": "행원:", "text": "[어서|Eoseo] [오세요|oseyo]. [무엇을|Mueoseul] [도와|dowa] [드릴까요|deurilkkayo]?", "id": "Selamat datang. Ada yang bisa saya bantu?", "literal": "cepat — datanglah-nya. apa — membantu — mempersembahkan-bagaimana-nya?" },
+    { "speaker": "아니:", "text": "[통장을|Tongjangeul] [만들려고|mandeullyeogo] [왔습니다|watseumnida].", "id": "Saya datang untuk membuat rekening.", "literal": "buku-rekening — hendak-membuat — datang-sudah." },
+    { "speaker": "행원:", "text": "[네|Ne], [신분증|sinbunjeung] [지참하셨을까요|jichamhasyeosseulkkayo]?", "id": "Baik, apakah Anda membawa kartu identitas?", "literal": "ya, kartu-identitas — membawa-beliau-sudah-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [외국인등록증|oegugindeungnokjeung] [여기|yeogi] [있습니다|itseumnida].", "id": "Ya, kartu identitas orang asing ada di sini.", "literal": "ya, orang-asing-kartu-daftar — di-sini — ada." },
+    { "speaker": "행원:", "text": "[감사합니다|Gamsahamnida]. [계좌|Gyejwa] [개설|gaeseol] [목적을|mokjeogeul] [여쭤봐도|yeojjwobwado] [될까요|doelkkayo]? [급여|Geubyeo] [수령용이신가요|suryeongyongisingayo]?", "id": "Terima kasih. Boleh saya tanyakan tujuan pembukaan rekeningnya? Untuk penerimaan gaji?", "literal": "terima-kasih. rekening — pembukaan — tujuan — coba-tanya-juga — jadi-bagaimana-nya? gaji — penerimaan-guna-beliau-adalah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [맞습니다|matseumnida]. [회사에서|Hoesaeseo] [급여|geubyeo] [계좌를|gyejwareul] [만들어|mandeureo] [오라고|orago] [해서요|haeseoyo].", "id": "Ya, betul. Perusahaan meminta saya membuat rekening gaji.", "literal": "ya, benar. perusahaan-di — gaji — rekening — membuat — datang-perintah — melakukan-karena-nya." },
+    { "speaker": "행원:", "text": "[그러시면|Geureosimyeon] [재직증명서를|jaejikjeungmyeongseoreul] [함께|hamkke] [주셔야|jusyeoya] [합니다|hamnida]. [혹시|Hoksi] [가지고|gajigo] [오셨나요|osyeonnayo]?", "id": "Kalau begitu Anda harus menyerahkan juga surat keterangan kerja. Apakah Anda membawanya?", "literal": "begitu-beliau-kalau — bekerja-keterangan-surat — bersama — memberi-beliau-harus — melakukan. barangkali — membawa-dan — datang-beliau-sudah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [가져왔습니다|gajyeowatseumnida]. [그런데|Geureonde] [한도|hando] [제한이|jehani] [있다고|itdago] [들었는데|deureonneunde] [맞나요|mannayo]?", "id": "Ya, saya membawanya. Tapi saya dengar ada pembatasan limit, benarkah?", "literal": "ya, membawa-datang-sudah. tapi — batas — pembatasan — ada-katanya — mendengar-sudah-padahal — benar-nya?" },
+    { "speaker": "행원:", "text": "[네|Ne], [처음|cheoeum] [개설하시는|gaeseolhasineun] [경우|gyeongu] [하루|haru] [이체|iche] [한도가|handoga] [삼십만|samsipman] [원으로|woneuro] [제한됩니다|jehandoemnida]. [삼|Sam] [개월|gaewol] [거래|georae] [실적이|siljeogi] [쌓이면|ssainmyeon] [해제|haeje] [신청|sincheong] [가능하십니다|ganeunghasimnida].", "id": "Ya, apabila Anda membuka untuk pertama kali, limit transfer harian dibatasi tiga ratus ribu won. Setelah riwayat transaksi tiga bulan terkumpul, Anda bisa mengajukan pembukaan batas.", "literal": "ya, pertama — membuka-beliau-yang — hal — satu-hari — transfer — batas — tiga-ratus-ribu — won-sebagai — terbatas. tiga — bulan — transaksi — catatan — menumpuk-kalau — pelepasan — pengajuan — mungkin-beliau." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [체크카드도|Chekeukadeudo] [같이|gachi] [신청할|sincheonghal] [수|su] [있나요|innayo]?", "id": "Baik. Apakah kartu debit bisa sekalian diajukan?", "literal": "mengerti. kartu-cek-juga — bersama — mengajukan-akan — kemungkinan — ada-nya?" },
+    { "speaker": "행원:", "text": "[네|Ne], [가능합니다|ganeunghamnida]. [여기|Yeogi] [신청서에|sincheongseoe] [성함|seongham] [쓰시고|sseusigo], [비밀번호|bimilbeonho] [네|ne] [자리|jari] [입력해|imnyeokhae] [주시겠습니까|jusigetseumnikka]? [생년월일이나|Saengnyeonworirina] [전화번호는|jeonhwabeonhoneun] [피하시는|pihasineun] [게|ge] [좋습니다|jotseumnida].", "id": "Ya, bisa. Silakan tulis nama Anda di formulir ini, lalu bisakah Anda memasukkan sandi empat digit? Sebaiknya hindari tanggal lahir atau nomor telepon.", "literal": "ya, mungkin. di-sini — formulir-pada — nama — menulis-beliau-dan, sandi — empat — tempat — memasukkan — memberi-beliau-akan-kah? tahun-bulan-hari-lahir-atau — telepon-nomor — mengenai — menghindari-beliau-yang — hal — baik." },
+    { "speaker": "아니:", "text": "[네|Ne], [작성했습니다|jakseonghaetseumnida].", "id": "Baik, sudah saya isi.", "literal": "ya, mengisi-sudah." }
+   ],
+   "notes": [
+    "**Bahasa pelayanan Korea memakai 시 di hampir setiap kata kerja.** 지참하셨을까요, 오셨나요, 가능하십니다 — semuanya menaikkan pelanggan. Kamu tidak perlu memproduksinya, tapi harus bisa **menangkapnya** dengan cepat, karena petugas mengucapkannya sangat lancar.",
+    "**-(으)ㄹ까요 di 지참하셨을까요 adalah pelunak pertanyaan.** Secara harfiah ia bertanya “apakah kiranya …”, dan itu membuat pertanyaan terdengar tidak menuntut. Petugas Korea nyaris tak pernah bertanya 신분증 있어요? yang terlalu langsung.",
+    "**-용 berarti “untuk keperluan …”.** 급여 수령용, 학생용, 업무용, 개인용. Akhiran ini menempel pada kata benda dan sangat produktif di formulir.",
+    "**한도 dan 제한 sering muncul bersama.** 한도 = batas atas; 제한 = pembatasan. Bentuk kerjanya 제한되다 (dibatasi) dan 해제되다 (dilepas). Semua bank Korea membatasi rekening baru — ini bukan diskriminasi terhadap orang asing, melainkan aturan pencegahan penipuan yang berlaku untuk semua.",
+    "**실적이 쌓이다 harfiahnya “catatan menumpuk”.** Kata 실적 sangat sering di dunia keuangan dan kerja Korea: 거래 실적, 영업 실적, 실적 발표.",
+    "**-아/어 주시겠습니까 adalah permintaan paling sopan yang lazim di loket.** Sedikit lebih resmi daripada -아/어 주시겠어요. Di bank, rumah sakit, dan kantor pemerintahan, bentuk inilah yang dipakai.",
+    "**-시는 게 좋습니다 adalah saran paling halus.** Petugas tidak berkata 하지 마세요 (jangan) melainkan 피하시는 게 좋습니다 (sebaiknya dihindari). Perbedaannya besar: yang pertama larangan, yang kedua nasihat.",
+    "**작성하다, bukan 쓰다, untuk mengisi formulir.** Kata 작성 muncul di setiap formulir Korea: 작성 방법, 작성 예시, 미작성. Kata 기입하다 juga dipakai, sedikit lebih kaku."
+   ],
+   "grammars": [
+    {
+     "title": "Bahasa loket: yang mereka ucapkan",
+     "body": [
+      "Kalimat-kalimat berikut akan kamu dengar hampir kata demi kata di bank, kantor pos, rumah sakit, dan kantor pemerintahan Korea."
+     ],
+     "table": {
+      "head": ["Kalimat", "Arti"],
+      "rows": [
+       ["[어떻게|Eotteoke] [오셨어요|osyeosseoyo]?", "ada keperluan apa?"],
+       ["[신분증|Sinbunjeung] [주시겠습니까|jusigetseumnikka]?", "boleh minta kartu identitasnya?"],
+       ["[여기|Yeogi] [작성해|jakseonghae] [주십시오|jusipsio].", "silakan isi di sini"],
+       ["[성함|Seongham] [말씀해|malsseumhae] [주시겠어요|jusigesseoyo]?", "boleh sebutkan nama Anda?"],
+       ["[번호표|Beonhopyo] [뽑고|ppopgo] [기다려|gidaryeo] [주세요|juseyo].", "ambil nomor antrean dan tunggu"],
+       ["[잠시만|Jamsiman] [기다려|gidaryeo] [주시겠습니까|jusigetseumnikka]?", "bisa tunggu sebentar?"],
+       ["[확인|Hwagin] [도와|dowa] [드리겠습니다|deurigetseumnida].", "saya bantu periksa"],
+       ["[이쪽으로|Ijjogeuro] [오시겠어요|osigesseoyo]?", "bisa ke sebelah sini?"],
+       ["[처리|Cheori] [완료되었습니다|wallyodoeeotseumnida].", "prosesnya selesai"],
+       ["[더|Deo] [필요하신|piryohasin] [건|geon] [없으실까요|eopseusilkkayo]?", "ada lagi yang Anda perlukan?"]
+      ]
+     }
+    },
+    {
+     "title": "Bertanya ulang tanpa menahan antrean",
+     "body": [
+      "Petugas Korea berbicara cepat karena mengulang kalimat yang sama sepanjang hari. Kalimat-kalimat ini meminta pengulangan tanpa terdengar merepotkan."
+     ],
+     "table": {
+      "head": ["Kalimat", "Kapan"],
+      "rows": [
+       ["[죄송한데|Joesonghande] [다시|dasi] [한번만|hanbeonman] [말씀해|malsseumhae] [주시겠어요|jusigesseoyo]?", "tidak tertangkap sama sekali"],
+       ["[조금만|Jogeumman] [천천히|cheoncheonhi] [말씀해|malsseumhae] [주시면|jusimyeon] [감사하겠습니다|gamsahagetseumnida].", "terlalu cepat"],
+       ["[제가|Jega] [한국어가|hangugeoga] [서툴러서요|seotulleoseoyo].", "menjelaskan diri, sekali saja"],
+       ["[이|I] [부분이|bubuni] [무슨|museun] [뜻인지|tteusinji] [여쭤봐도|yeojjwobwado] [될까요|doelkkayo]?", "satu kata tak dipahami"],
+       ["[제가|Jega] [이해한|ihaehan] [게|ge] [맞는지|manneunji] [확인해|hwaginhae] [주시겠어요|jusigesseoyo]?", "memastikan pemahaman"],
+       ["[그러니까|Geureonikka] … [맞나요|mannayo]?", "merangkum ulang dengan kata sendiri"],
+       ["[혹시|Hoksi] [영어|yeongeo] [안내문|annaemun] [있을까요|isseulkkayo]?", "meminta versi bahasa Inggris"],
+       ["[여기|Yeogi] [적어|jeogeo] [주실|jusil] [수|su] [있을까요|isseulkkayo]?", "minta ditulis"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Di kantor kelurahan",
+   "intro": "Ani mengurus lapor pindah dan meminta surat keterangan. Bahasa kantor pemerintahan Korea dipenuhi nama dokumen yang semuanya 한자어 — dan begitu akarnya dikenali, sebagian besar bisa ditebak.",
+   "lines": [
+    { "speaker": "아니:", "text": "[안녕하세요|Annyeonghaseyo]. [전입신고|Jeonipsingo] [하러|hareo] [왔는데요|wanneundeyo].", "id": "Selamat siang. Saya datang untuk lapor pindah.", "literal": "sejahtera-nya. masuk-lapor — untuk-melakukan — datang-sudah-padahal-nya." },
+    { "speaker": "직원:", "text": "[네|Ne], [신분증하고|sinbunjeunghago] [임대차|imdaecha] [계약서|gyeyakseo] [주시겠어요|jusigesseoyo]?", "id": "Baik, boleh saya minta kartu identitas dan surat kontrak sewanya?", "literal": "ya, kartu-identitas-dan — sewa-menyewa — kontrak-surat — memberi-beliau-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [여기|yeogi] [있습니다|itseumnida]. [계약서는|Gyeyakseoneun] [사본이어도|sabonieodo] [괜찮을까요|gwaenchaneulkkayo]?", "id": "Ya, ini. Apakah surat kontraknya boleh berupa salinan?", "literal": "ya, di-sini — ada. kontrak-surat — mengenai — salinan-adalah-walaupun — tidak-apa-apa-akan-nya?" },
+    { "speaker": "직원:", "text": "[사본도|Sabondo] [됩니다|doemnida]. [세대주와의|Sedaejuwaui] [관계는|gwangyeneun] [어떻게|eotteoke] [되시나요|doesinayo]?", "id": "Salinan juga bisa. Bagaimana hubungan Anda dengan kepala rumah tangga?", "literal": "salinan-juga — jadi. kepala-rumah-tangga-dengan-punya — hubungan — mengenai — bagaimana — jadi-beliau-nya?" },
+    { "speaker": "아니:", "text": "[제가|Jega] [세대주입니다|sedaejuimnida]. [혼자|Honja] [살고|salgo] [있습니다|itseumnida].", "id": "Saya sendiri kepala rumah tangganya. Saya tinggal sendiri.", "literal": "saya — kepala-rumah-tangga-adalah. sendiri — tinggal-dan — ada." },
+    { "speaker": "직원:", "text": "[알겠습니다|Algetseumnida]. [여기|Yeogi] [주소하고|jusohago] [연락처|yeollakcheo] [기입해|giiphae] [주시고|jusigo], [아래|arae] [서명란에|seomyeongnane] [사인해|sainhae] [주십시오|jusipsio].", "id": "Baik. Silakan isi alamat dan kontak di sini, lalu bubuhkan tanda tangan di kolom tanda tangan di bawah.", "literal": "mengerti. di-sini — alamat-dan — kontak — mengisi — memberi-beliau-dan, bawah — tanda-tangan-kolom-pada — menandatangani — berilah." },
+    { "speaker": "아니:", "text": "[네|Ne]. [아|A], [그리고|geurigo] [주민등록등본도|jumindeungnokdeungbondo] [한|han] [통|tong] [발급받을|balgeupbadeul] [수|su] [있을까요|isseulkkayo]? [회사에|Hoesae] [제출해야|jechulhaeya] [해서요|haeseoyo].", "id": "Baik. Ah, dan apakah saya bisa mendapatkan satu lembar surat keterangan domisili juga? Saya harus menyerahkannya ke perusahaan.", "literal": "ya. ah, dan — warga-daftar-surat-juga — satu — lembar — menerbitkan-menerima-akan — kemungkinan — ada-akan-nya? perusahaan-pada — menyerahkan-harus — melakukan-karena-nya." },
+    { "speaker": "직원:", "text": "[네|Ne], [가능합니다|ganeunghamnida]. [다만|Daman] [전입신고|jeonipsingo] [처리가|cheoriga] [완료된|wallyodoen] [다음에|daeume] [발급되니까|balgeupdoenikka] [십|sip] [분|bun] [정도|jeongdo] [기다려|gidaryeo] [주셔야|jusyeoya] [합니다|hamnida].", "id": "Ya, bisa. Namun karena diterbitkan setelah proses lapor pindah selesai, Anda harus menunggu sekitar sepuluh menit.", "literal": "ya, mungkin. hanya-saja — masuk-lapor — pemrosesan — selesai-yang — setelah-pada — diterbitkan-karena — sepuluh — menit — kira-kira — menunggu — memberi-beliau-harus — melakukan." },
+    { "speaker": "아니:", "text": "[네|Ne], [기다리겠습니다|gidarigetseumnida]. [수수료는|Susuryoneun] [얼마인가요|eolmaingayo]?", "id": "Baik, saya tunggu. Biaya administrasinya berapa?", "literal": "ya, akan-menunggu. biaya — mengenai — berapa-nya?" },
+    { "speaker": "직원:", "text": "[등본은|Deungboneun] [한|han] [통에|tonge] [사백|sabaek] [원입니다|wonimnida]. [참고로|Chamgoro] [정부24|Jeongbu-isipsa] [사이트에서|saiteueseo] [출력하시면|chullyeokhasimyeon] [무료입니다|muryoimnida].", "id": "Surat keterangan domisili empat ratus won per lembar. Sebagai informasi, kalau Anda mencetaknya dari situs Gov24, gratis.", "literal": "surat-keterangan — mengenai — satu — lembar-pada — empat-ratus — won-adalah. sebagai-rujukan — Pemerintah-24 — situs-di — mencetak-beliau-kalau — gratis-adalah." },
+    { "speaker": "아니:", "text": "[아|A], [몰랐습니다|mollatseumnida]. [알려|Allyeo] [주셔서|jusyeoseo] [감사합니다|gamsahamnida].", "id": "Ah, saya tidak tahu. Terima kasih sudah memberi tahu.", "literal": "ah, tak-tahu-sudah. memberi-tahu — memberi-beliau-karena — terima-kasih." }
+   ],
+   "notes": [
+    "**전입신고 wajib dilakukan dalam empat belas hari setelah pindah,** dan berlaku juga bagi orang asing. Kata-katanya: 전입 (masuk) ↔ 전출 (keluar), 신고 (melapor). Melewatkannya dikenai 과태료.",
+    "**임대차 계약서 — dokumen sewa-menyewa.** 임대 = menyewakan (dari pemilik), 임차 = menyewa (dari penyewa). Kontraknya menggabungkan keduanya: 임대차. Perbedaan ini penting waktu membaca kontrak, dan dibongkar lagi di unit 14.",
+    "**세대주 = kepala rumah tangga menurut catatan sipil.** Bukan sama dengan 집주인 (pemilik rumah). Orang yang tinggal sendiri otomatis menjadi 세대주 di alamatnya sendiri.",
+    "**-와/과의 관계 — “hubungan dengan”.** Partikel 의 menempel di belakang 와/과 untuk membentuk keterangan bagi kata benda. Pola yang sangat sering di formulir: 신청인과의 관계, 세대주와의 관계.",
+    "**기입하다 dan 작성하다 dan 적다 — tiga kata untuk “menulis di formulir”.** 기입 paling kaku (sering di formulir cetak), 작성 paling umum di lisan petugas, 적다 paling santai.",
+    "**발급받다, bukan 발급하다.** Yang menerbitkan adalah kantornya (발급하다); kamu yang **menerima** penerbitan (발급받다). Pasangan -하다 dan -받다 begini banyak: 승인하다/승인받다, 허가하다/허가받다, 초대하다/초대받다.",
+    "**통 adalah penggolong untuk lembar dokumen resmi.** 한 통, 두 통. Untuk kertas biasa dipakai 장: 종이 한 장. Untuk surat: 편지 한 통.",
+    "**참고로 berarti “sebagai informasi tambahan”.** Kata pembuka yang sangat berguna, baik di percakapan maupun tulisan: 참고로 말씀드리면, 참고하시기 바랍니다."
+   ],
+   "grammars": [
+    {
+     "title": "Nama-nama dokumen resmi Korea",
+     "body": [
+      "Semua nama ini tersusun dari akar 한자어 yang sudah kamu lihat di halaman belakang modul. Sekali akarnya dikenali, dokumen baru bisa ditebak."
+     ],
+     "table": {
+      "head": ["Dokumen", "Romanisasi", "Isinya"],
+      "rows": [
+       ["주민등록등본", "jumindeungnokdeungbon", "daftar seluruh anggota satu alamat"],
+       ["주민등록초본", "jumindeungnokchobon", "riwayat alamat satu orang"],
+       ["외국인등록증", "oegugindeungnokjeung", "kartu identitas orang asing"],
+       ["재직증명서", "jaejikjeungmyeongseo", "surat keterangan bekerja"],
+       ["재학증명서", "jaehakjeungmyeongseo", "surat keterangan mahasiswa aktif"],
+       ["소득금액증명원", "sodeukgeumaekjeungmyeongwon", "keterangan penghasilan"],
+       ["납세증명서", "napsejeungmyeongseo", "keterangan lunas pajak"],
+       ["임대차계약서", "imdaechagyeyakseo", "kontrak sewa"],
+       ["인감증명서", "ingamjeungmyeongseo", "keterangan cap resmi"],
+       ["위임장", "wiimjang", "surat kuasa"],
+       ["가족관계증명서", "gajokgwangyejeungmyeongseo", "keterangan hubungan keluarga"],
+       ["출입국사실증명", "churipguksasiljeungmyeong", "riwayat keluar-masuk negara"]
+      ]
+     }
+    },
+    {
+     "title": "Kata kerja urusan resmi",
+     "body": [
+      "Kata kerja yang berulang di setiap loket dan setiap formulir. Sebagian besar berpasangan aktif–pasif."
+     ],
+     "table": {
+      "head": ["Kata", "Arti", "Pasangannya"],
+      "rows": [
+       ["[신청하다|sincheonghada]", "mengajukan", "[접수되다|jeopsudoeda] diterima"],
+       ["[제출하다|jechulhada]", "menyerahkan", "[반려되다|banlyeodoeda] dikembalikan"],
+       ["[발급하다|balgeuphada]", "menerbitkan", "[발급받다|balgeupbatda] menerima terbitan"],
+       ["[작성하다|jakseonghada]", "mengisi", "[미작성|mijakseong] belum diisi"],
+       ["[처리하다|cheorihada]", "memproses", "[완료되다|wallyodoeda] selesai"],
+       ["[확인하다|hwaginhada]", "memeriksa", "[확인되다|hwagindoeda] terkonfirmasi"],
+       ["[승인하다|seunginhada]", "menyetujui", "[승인받다|seunginbatda] mendapat persetujuan"],
+       ["[갱신하다|gaengsinhada]", "memperbarui", "[만료되다|mallyodoeda] kedaluwarsa"],
+       ["[변경하다|byeongyeonghada]", "mengubah", "[변경되다|byeongyeongdoeda] berubah"],
+       ["[취소하다|chwisohada]", "membatalkan", "[취소되다|chwisodoeda] dibatalkan"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang, rekening, dan pembayaran",
+   "blocks": [
+    { "type": "p", "text": "Kosakata keuangan Korea hampir seluruhnya 한자어, dan sekali polanya terlihat, ratusan kata terbuka sekaligus. Perhatikan pasangan berlawanan: 입 (masuk) ↔ 출 (keluar), 수 (terima) ↔ 지 (keluarkan)." },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["계좌", "gyejwa", "rekening"],
+     ["통장", "tongjang", "buku rekening"],
+     ["잔액", "janaek", "saldo"],
+     ["입금", "ipgeum", "setoran masuk"],
+     ["출금", "chulgeum", "penarikan"],
+     ["이체", "iche", "transfer"],
+     ["송금", "songgeum", "pengiriman uang"],
+     ["자동이체", "jadongiche", "transfer otomatis"],
+     ["수수료", "susuryo", "biaya administrasi"],
+     ["한도", "hando", "batas maksimum"],
+     ["체크카드", "chekeukadeu", "kartu debit"],
+     ["신용카드", "sinyongkadeu", "kartu kredit"],
+     ["할부", "halbu", "cicilan"],
+     ["일시불", "ilsibul", "bayar sekaligus"],
+     ["공과금", "gonggwageum", "tagihan air, listrik, gas"],
+     ["관리비", "gwallibi", "biaya pemeliharaan"],
+     ["연체", "yeonche", "tunggakan"],
+     ["이자", "ija", "bunga"],
+     ["적금", "jeokgeum", "tabungan berjangka"],
+     ["예금", "yegeum", "deposito"]
+    ]},
+    { "type": "sub", "text": "Di kasir dan di aplikasi" },
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["[결제|Gyeolje] [도와|dowa] [드리겠습니다|deurigetseumnida].", "saya bantu pembayarannya"],
+     ["[일시불로|Ilsibullo] [해|hae] [드릴까요|deurilkkayo]?", "bayar sekaligus?"],
+     ["[할부|Halbu] [개월|gaewol] [어떻게|eotteoke] [해|hae] [드릴까요|deurilkkayo]?", "cicilan berapa bulan?"],
+     ["[영수증|Yeongsujeung] [필요하세요|piryohaseyo]?", "butuh struk?"],
+     ["[봉투|Bongtu] [필요하시면|piryohasimyeon] [백|baek] [원입니다|wonimnida].", "kalau butuh kantong, seratus won"],
+     ["[적립|Jeongnip] [카드|kadeu] [있으세요|isseuseyo]?", "punya kartu poin?"],
+     ["[현금|Hyeongeum] [영수증|yeongsujeung] [해|hae] [드릴까요|deurilkkayo]?", "perlu struk tunai untuk pajak?"],
+     ["[계좌이체로|Gyejwaichero] [해도|haedo] [될까요|doelkkayo]?", "boleh bayar lewat transfer?"]
+    ]},
+    { "type": "p", "text": "⚠️ 현금영수증 adalah bukti pembelian tunai yang dipakai untuk pengurangan pajak penghasilan. Kalau kamu bekerja di Korea dan membayar pajak, menjawab 네 di kasir dan memasukkan nomor teleponmu benar-benar mengurangi pajakmu di akhir tahun." }
+   ]
+  },
+  {
+   "title": "Membaca formulir Korea",
+   "blocks": [
+    { "type": "p", "text": "Formulir Korea padat dan hemat kata. Sebagian besar isinya kata benda tanpa kata kerja, jadi yang dibutuhkan bukan tata bahasa melainkan pengenalan kata. Ini kolom-kolom yang muncul di hampir semua formulir." },
+    { "type": "tabel", "head": ["Kolom", "Romanisasi", "Isinya"], "rows": [
+     ["성명 · 성함", "seongmyeong · seongham", "nama lengkap"],
+     ["생년월일", "saengnyeonworil", "tanggal lahir"],
+     ["국적", "gukjeok", "kewarganegaraan"],
+     ["주소", "juso", "alamat"],
+     ["연락처", "yeollakcheo", "nomor kontak"],
+     ["이메일 주소", "imeil juso", "alamat surel"],
+     ["직업", "jigeop", "pekerjaan"],
+     ["소속", "sosok", "instansi, tempat bekerja"],
+     ["신청 사유", "sincheong sayu", "alasan pengajuan"],
+     ["용도", "yongdo", "peruntukan"],
+     ["신청일", "sincheongil", "tanggal pengajuan"],
+     ["서명 · 날인", "seomyeong · narin", "tanda tangan atau cap"],
+     ["해당 사항 없음", "haedang sahang eopseum", "tidak berlaku"],
+     ["위와 같이 신청합니다", "wiwa gachi sincheonghamnida", "dengan ini saya mengajukan seperti di atas"],
+     ["동의함 · 동의하지 않음", "donguiham · donguihaji aneum", "setuju / tidak setuju"],
+     ["필수 · 선택", "pilsu · seontaek", "wajib / pilihan"]
+    ]},
+    { "type": "p", "text": "Perhatikan bentuk -(으)ㅁ di 없음, 동의함, 확인함 — bentuk kata benda yang dipakai di catatan resmi, persis seperti yang dipelajari di unit 11. Formulir Korea hampir tidak pernah memakai kalimat penuh." },
+    { "type": "kotak", "title": "Tiga hal yang membuat urusan resmi jauh lebih mudah", "items": [
+     "**정부24 (gov.kr) menerbitkan sebagian besar dokumen secara daring dan gratis** — 등본, 초본, 납세증명 dan puluhan lainnya. Butuh 공동인증서 atau masuk lewat aplikasi bank.",
+     "**Mesin penerbit mandiri (무인민원발급기) ada di stasiun kereta bawah tanah dan kantor kelurahan,** buka sampai malam, dan menerima kartu identitas orang asing. Jauh lebih cepat daripada mengantre di loket.",
+     "**Bawa selalu lebih banyak dokumen daripada yang diminta.** Aturan berbeda antarkantor dan antarpetugas; datang dua kali karena kurang satu salinan adalah pengalaman yang hampir semua orang asing di Korea alami sekali."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "통장", "baca": "tongjang", "id": "buku rekening" },
+  { "ko": "계좌", "baca": "gyejwa", "id": "rekening" },
+  { "ko": "개설", "baca": "gaeseol", "id": "pembukaan (rekening)" },
+  { "ko": "신분증", "baca": "sinbunjeung", "id": "kartu identitas" },
+  { "ko": "지참하다", "baca": "jichamhada", "id": "membawa serta" },
+  { "ko": "급여", "baca": "geubyeo", "id": "gaji" },
+  { "ko": "수령", "baca": "suryeong", "id": "penerimaan" },
+  { "ko": "한도", "baca": "hando", "id": "batas maksimum" },
+  { "ko": "제한되다", "baca": "jehandoeda", "id": "dibatasi" },
+  { "ko": "해제", "baca": "haeje", "id": "pelepasan, pembukaan batas" },
+  { "ko": "거래", "baca": "georae", "id": "transaksi" },
+  { "ko": "실적", "baca": "siljeok", "id": "catatan capaian" },
+  { "ko": "체크카드", "baca": "chekeukadeu", "id": "kartu debit" },
+  { "ko": "비밀번호", "baca": "bimilbeonho", "id": "kata sandi" },
+  { "ko": "입력하다", "baca": "imnyeokhada", "id": "memasukkan data" },
+  { "ko": "생년월일", "baca": "saengnyeonworil", "id": "tanggal lahir" },
+  { "ko": "작성하다", "baca": "jakseonghada", "id": "mengisi formulir" },
+  { "ko": "기입하다", "baca": "giiphada", "id": "menuliskan di kolom" },
+  { "ko": "전입신고", "baca": "jeonipsingo", "id": "lapor pindah masuk" },
+  { "ko": "세대주", "baca": "sedaeju", "id": "kepala rumah tangga" },
+  { "ko": "임대차", "baca": "imdaecha", "id": "sewa-menyewa" },
+  { "ko": "사본", "baca": "sabon", "id": "salinan" },
+  { "ko": "원본", "baca": "wonbon", "id": "berkas asli" },
+  { "ko": "등본", "baca": "deungbon", "id": "surat keterangan domisili" },
+  { "ko": "초본", "baca": "chobon", "id": "riwayat alamat pribadi" },
+  { "ko": "발급받다", "baca": "balgeupbatda", "id": "memperoleh terbitan" },
+  { "ko": "수수료", "baca": "susuryo", "id": "biaya administrasi" },
+  { "ko": "무료", "baca": "muryo", "id": "gratis" },
+  { "ko": "출력하다", "baca": "chullyeokhada", "id": "mencetak" },
+  { "ko": "서명", "baca": "seomyeong", "id": "tanda tangan" },
+  { "ko": "날인", "baca": "narin", "id": "pembubuhan cap" },
+  { "ko": "인감", "baca": "ingam", "id": "cap resmi terdaftar" },
+  { "ko": "위임장", "baca": "wiimjang", "id": "surat kuasa" },
+  { "ko": "대리인", "baca": "daeirin", "id": "wakil, kuasa" },
+  { "ko": "처리", "baca": "cheori", "id": "pemrosesan" },
+  { "ko": "완료되다", "baca": "wallyodoeda", "id": "selesai" },
+  { "ko": "갱신하다", "baca": "gaengsinhada", "id": "memperbarui" },
+  { "ko": "이체", "baca": "iche", "id": "transfer" },
+  { "ko": "송금", "baca": "songgeum", "id": "pengiriman uang" },
+  { "ko": "잔액", "baca": "janaek", "id": "saldo" },
+  { "ko": "공과금", "baca": "gonggwageum", "id": "tagihan utilitas" },
+  { "ko": "관리비", "baca": "gwallibi", "id": "biaya pemeliharaan" },
+  { "ko": "연체", "baca": "yeonche", "id": "tunggakan" },
+  { "ko": "할부", "baca": "halbu", "id": "cicilan" },
+  { "ko": "일시불", "baca": "ilsibul", "id": "bayar sekaligus" },
+  { "ko": "영수증", "baca": "yeongsujeung", "id": "struk" },
+  { "ko": "번호표", "baca": "beonhopyo", "id": "nomor antrean" },
+  { "ko": "참고로", "baca": "chamgoro", "id": "sebagai informasi" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih dokumen yang tepat untuk tiap keperluan.",
+   "items": [
+    "Perusahaan meminta bukti bahwa kamu bekerja di sana:",
+    "Bank meminta daftar penghuni satu alamat:",
+    "Kamu perlu bukti riwayat alamatmu selama lima tahun:",
+    "Kamu menyuruh orang lain mengurus berkasmu:",
+    "Kantor pajak meminta bukti penghasilanmu:"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kalimat petugas.",
+   "items": [
+    "신분증 ____겠습니까? (minta identitas)",
+    "여기 ____해 주십시오. (isi formulir)",
+    "번호표 ____고 기다려 주세요.",
+    "처리 ____되었습니다.",
+    "더 필요하신 건 ____실까요?"
+   ]
+  },
+  {
+   "prompt": "Pilih antara -하다 dan -받다.",
+   "items": [
+    "관공서에서 등본을 발급____. (kamu)",
+    "구청이 서류를 발급____. (kantor)",
+    "저는 부장님께 승인____ 했습니다.",
+    "부장님이 제 신청을 승인____.",
+    "저는 초대____ 그 행사에 갔어요."
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat untuk bertanya ulang dengan sopan.",
+   "items": [
+    "Kamu sama sekali tidak menangkap kalimat petugas:",
+    "Petugas bicara terlalu cepat:",
+    "Ada satu kata yang tidak kamu pahami:",
+    "Kamu ingin memastikan bahwa pemahamanmu benar:",
+    "Kamu minta petugas menuliskannya:"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "왔습니다 / 만들려고 / 통장을",
+    "제한됩니다 / 한도가 / 삼십만 원으로 / 하루 이체",
+    "괜찮을까요 / 사본이어도 / 계약서는",
+    "발급되니까 / 다음에 / 처리가 / 전입신고 / 완료된",
+    "무료입니다 / 사이트에서 / 출력하시면 / 정부24"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Kamu datang ke bank untuk membuka rekening gaji. Katakan keperluanmu dan tanyakan berkas apa yang dibutuhkan.",
+    "Tanyakan apakah dokumen yang kamu bawa boleh berupa salinan.",
+    "Minta petugas mengulangi penjelasannya lebih pelan.",
+    "Tanyakan biaya administrasi dan apakah ada cara yang lebih murah."
+   ]
+  }
+ ],
+ "answers": [
+  "재직증명서 — 주민등록등본 — 주민등록초본 — 위임장 — 소득금액증명원",
+  "주시 — 작성 — 뽑 — 완료 — 없으",
+  "받았어요 — 합니다 — 을 받아야 — 하셨습니다 — 받아서",
+  "죄송한데 다시 한번만 말씀해 주시겠어요? — 조금만 천천히 말씀해 주시면 감사하겠습니다. — 이 부분이 무슨 뜻인지 여쭤봐도 될까요? — 제가 이해한 게 맞는지 확인해 주시겠어요? — 여기 적어 주실 수 있을까요?",
+  "통장을 만들려고 왔습니다. — 하루 이체 한도가 삼십만 원으로 제한됩니다. — 계약서는 사본이어도 괜찮을까요? — 전입신고 처리가 완료된 다음에 발급되니까. — 정부24 사이트에서 출력하시면 무료입니다.",
+  "안녕하세요. 급여 계좌를 개설하려고 왔는데요. 필요한 서류가 어떻게 되나요? — 이거 사본으로 제출해도 괜찮을까요? — 죄송한데 조금만 천천히 다시 말씀해 주시겠어요? — 수수료가 얼마인가요? 혹시 더 저렴한 방법이 있을까요?"
+ ]
+}

@@ -1,0 +1,322 @@
+{
+ "title": "Menegaskan, membatasi, melunakkan",
+ "title_target": "그것밖에 없어요 — Geugeotbakke eopseoyo",
+ "goal": "Menguasai partikel dan pola yang mengatur kadar — 만, 밖에, 조차, 마저, 까지 — beserta pola penegasan seperti -(으)ㄹ 뿐만 아니라 dan 얼마나 -(으)ㄴ지 모르다, dan pola pelembut seperti -(으)ㄴ/는 편이다.",
+ "bekal": [
+  "membedakan 만, 밖에, 뿐 — tiga cara berkata “hanya”",
+  "memakai 조차, 마저, 까지 untuk menyatakan “bahkan yang itu pun”",
+  "menegaskan dengan -(으)ㄹ 뿐만 아니라, 얼마나 -(으)ㄴ지 모르다, 여간 -지 않다",
+  "melembutkan penilaian dengan -(으)ㄴ/는 편이다 dan -(으)ㄴ/는 셈이다",
+  "memakai kata keterangan kadar: 무려, 겨우, 고작, 심지어, 그나마"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Hari yang serba kurang",
+   "intro": "Ani menceritakan hari yang buruk. Perhatikan bagaimana ia menumpuk penanda kadar untuk membuat ceritanya terasa makin berat — kemampuan yang membedakan cerita yang datar dari cerita yang hidup.",
+   "lines": [
+    { "speaker": "지호:", "text": "[어제|Eoje] [면접|myeonjeop] [어땠어|eottaesseo]?", "id": "Wawancara kemarin gimana?", "literal": "kemarin — wawancara — bagaimana-sudah?" },
+    { "speaker": "아니:", "text": "[말도|Maldo] [마|ma]. [준비할|Junbihal] [시간이|sigani] [사흘밖에|saheulbakke] [없었어|eopseosseo].", "id": "Jangan tanya. Waktu persiapannya cuma tiga hari.", "literal": "perkataan-juga — jangan. mempersiapkan-akan — waktu — tiga-hari-selain — tak-ada-sudah." },
+    { "speaker": "지호:", "text": "[사흘|Saheul]? [보통|Botong] [일주일은|iljuireun] [주지|juji] [않나|anna]?", "id": "Tiga hari? Biasanya kan dikasih seminggu?", "literal": "tiga-hari? biasanya — satu-minggu — mengenai — memberi — tidak-kah?" },
+    { "speaker": "아니:", "text": "[그러니까|Geureonikka]. [게다가|Gedaga] [당일에|dangire] [지하철이|jihacheori] [멈춰서|meomchwoseo] [택시를|taeksireul] [탔는데|tanneunde], [그|geu] [택시마저|taeksimajeo] [길에서|gireseo] [막혔어|makyeosseo].", "id": "Nah itu. Ditambah lagi hari-H keretanya berhenti jadi naik taksi, dan taksinya pun malah kena macet di jalan.", "literal": "karena-itu. tambahan — hari-itu-pada — kereta — berhenti-karena — taksi — naik-padahal, itu — taksi-bahkan — jalan-di — tersumbat-sudah." },
+    { "speaker": "지호:", "text": "[헐|Heol]. [늦었어|Neujeosseo]?", "id": "Waduh. Telat?", "literal": "wah. terlambat-sudah?" },
+    { "speaker": "아니:", "text": "[겨우|Gyeou] [오|o] [분|bun] [전에|jeone] [도착했어|dochakhaesseo]. [물|Mul] [한|han] [모금|mogeum] [마실|masil] [틈조차|teumjocha] [없었어|eopseosseo].", "id": "Nyaris, sampai lima menit sebelumnya. Sela buat minum seteguk air pun tidak ada.", "literal": "dengan-susah-payah — lima — menit — sebelum-pada — tiba-sudah. air — satu — teguk — minum-akan — sela-bahkan — tak-ada-sudah." },
+    { "speaker": "지호:", "text": "[그런|Geureon] [상태로|sangtaero] [면접을|myeonjeobeul] [봤다고|bwatdago]? [고생|Gosaeng] [많았겠다|manatgetda].", "id": "Wawancara dalam keadaan seperti itu? Pasti berat banget.", "literal": "begitu-yang — keadaan-dengan — wawancara — melihat-sudah-katanya? kesusahan — banyak-sudah-pasti." },
+    { "speaker": "아니:", "text": "[근데|Geunde] [신기하게|singihage] [면접은|myeonjeobeun] [잘|jal] [본|bon] [편이야|pyeoniya]. [질문도|Jilmundo] [예상했던|yesanghaetdeon] [것들이|geotdeuri] [많이|mani] [나왔고|nawatgo].", "id": "Tapi anehnya wawancaranya termasuk lancar. Pertanyaannya juga banyak yang sudah kuduga.", "literal": "tapi — ajaib-secara — wawancara — mengenai — baik — melihat-yang — kecenderungan-adalah. pertanyaan-juga — menduga-sudah-yang — hal-jamak — banyak — keluar-sudah-dan." },
+    { "speaker": "지호:", "text": "[다행이다|Dahaengida]. [그럼|Geureom] [반은|baneun] [된|doen] [셈이네|semine].", "id": "Syukurlah. Berarti setengahnya sudah jadi dong.", "literal": "untung-adalah. kalau-begitu — separuh — mengenai — jadi-yang — hitungan-ternyata." },
+    { "speaker": "아니:", "text": "[결과는|Gyeolgwaneun] [다음|daeum] [주에|jue] [나온대|naondae]. [기다리는|Gidarineun] [게|ge] [얼마나|eolmana] [힘든지|himdeunji] [몰라|molla].", "id": "Hasilnya katanya keluar minggu depan. Kamu nggak tahu betapa beratnya menunggu.", "literal": "hasil — mengenai — berikut — minggu-pada — keluar-katanya. menunggu-yang — hal — betapa — berat-apakah — tak-tahu." },
+    { "speaker": "지호:", "text": "[그래도|Geuraedo] [준비만|junbiman] [한|han] [게|ge] [아니라|anira] [운도|undo] [따라|ttara] [줬잖아|jwotjana]. [잘될|Jaldoel] [거야|geoya].", "id": "Tapi kan bukan cuma persiapannya, keberuntungannya juga ikut mendukung. Pasti berhasil kok.", "literal": "meski-begitu — persiapan-hanya — melakukan-yang — hal — bukan-melainkan — nasib-juga — mengikuti — memberi-sudah-kan. menjadi-baik-akan — hal-adalah." }
+   ],
+   "notes": [
+    "**밖에 selalu diikuti sangkalan.** 사흘밖에 없었어 = hanya ada tiga hari (dan itu sedikit). Perhatikan bahwa kalimatnya berbunyi “tidak ada selain tiga hari”. Ia selalu membawa nada **kurang**; kalau kadarnya dianggap cukup, yang dipakai 만.",
+    "**게다가 berarti “ditambah lagi”, dan hampir selalu menumpuk hal buruk.** Sepadan: 더구나, 심지어. Kalau yang ditumpuk hal baik, orang memakai 게다가 juga, tapi lebih sering 그리고 atau 뿐만 아니라.",
+    "**마저 berarti “bahkan yang terakhir pun”.** 그 택시마저 = bahkan taksi itu pun (padahal itu harapan terakhirnya). Ia membawa rasa putus asa yang tidak dibawa 도 biasa.",
+    "**조차 berarti “bahkan yang paling sepele pun”.** 물 한 모금 마실 틈조차 없었어 = jangankan yang lain, sela seteguk air pun tak ada. Ia hampir selalu dipasangkan dengan sangkalan, dan yang disebutnya selalu sesuatu yang seharusnya paling mudah.",
+    "**겨우 di sini bukan “hanya”, melainkan “dengan susah payah”.** 겨우 오 분 전에 도착했어 = akhirnya sampai juga, lima menit sebelumnya. ⚠️ 겨우 punya dua arti yang berlawanan rasa: “nyaris tidak berhasil” (positif) dan “cuma segitu” (negatif). Konteks yang memutuskan.",
+    "**-(으)ㄴ/는 편이다 melembutkan penilaian.** 잘 본 편이야 = termasuk lancar. Ia menghindari pernyataan mutlak, dan karena itu sangat sering dipakai orang Korea untuk menilai diri sendiri — memuji diri secara terus terang dianggap kurang pantas.",
+    "**-(으)ㄴ/는 셈이다 berarti “boleh dibilang”.** 반은 된 셈이네 = boleh dibilang setengahnya sudah jadi. Ia menghitung sesuatu sebagai setara dengan hal lain, meski secara harfiah belum.",
+    "**얼마나 -(으)ㄴ지 모르다 harfiahnya “tidak tahu betapa …”** dan berfungsi sebagai penegasan terkuat dalam percakapan. 얼마나 힘든지 몰라 = benar-benar berat sekali. Perhatikan bahwa 모르다 di sini bukan berarti tidak tahu.",
+    "**-만 -(으)ㄴ 게 아니라 … -도 adalah pola “bukan hanya … melainkan juga”.** Bentuk yang lebih rapi dan lebih sering di tulisan: -(으)ㄹ 뿐만 아니라."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga cara berkata “hanya”",
+     "body": [
+      "만, 밖에, dan 뿐 sama-sama diterjemahkan “hanya”, tapi ketiganya berbeda dalam dua hal: apakah menuntut sangkalan, dan apakah membawa nada kurang."
+     ],
+     "table": {
+      "head": ["Bentuk", "Sangkalan", "Nada", "Contoh"],
+      "rows": [
+       ["만", "tidak wajib", "netral", "[하나만|Hanaman] [주세요|juseyo]."],
+       ["밖에", "wajib", "kurang, menyesal", "[하나밖에|Hanabakke] [없어요|eopseoyo]."],
+       ["뿐", "tidak", "netral, ragam tulis", "[하나뿐입니다|Hanappunimnida]."],
+       ["만 -(으)면 되다", "—", "cukup begitu saja", "[하나만|Hanaman] [있으면|isseumyeon] [돼요|dwaeyo]."],
+       ["-(으)ㄹ 뿐이다", "—", "tak lebih dari itu", "[그럴|Geureol] [뿐입니다|ppunimnida]."],
+       ["오직 · 단지", "—", "penegas, ragam tulis", "[오직|Ojik] [하나뿐|hanappun]"]
+      ]
+     }
+    },
+    {
+     "title": "“Bahkan” dalam empat rasa",
+     "body": [
+      "Keempatnya berarti “bahkan”, tapi rasanya berbeda jauh — dan memilih yang salah membuat kalimatmu terdengar aneh meski tata bahasanya benar."
+     ],
+     "table": {
+      "head": ["Partikel", "Rasa", "Contoh", "Arti"],
+      "rows": [
+       ["도", "netral", "[저도|Jeodo] [갔어요|gasseoyo].", "saya juga pergi"],
+       ["까지", "sampai sejauh itu", "[선생님까지|Seonsaengnimkkaji] [오셨어요|osyeosseoyo].", "bahkan guru pun datang"],
+       ["조차", "yang paling sepele pun tidak", "[이름조차|Ireumjocha] [몰라요|mollayo].", "namanya pun tak tahu"],
+       ["마저", "yang terakhir pun ikut", "[너마저|Neomajeo] [그러니|geureoni]?", "kamu pun begitu?"],
+       ["이나", "sebanyak itu (mengejutkan)", "[세|Se] [시간이나|siganina] [걸렸어요|geollyeosseoyo].", "sampai tiga jam"],
+       ["이라도", "setidaknya, kalau tak ada lain", "[커피라도|Keopirado] [드세요|deuseyo].", "minum kopi saja kalau begitu"]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Memaparkan hasil kerja",
+   "intro": "Ani memaparkan hasil kuartalnya. Bahasa pemaparan menuntut penegasan yang terukur: angka harus terdengar berarti tanpa terdengar melebih-lebihkan.",
+   "lines": [
+    { "speaker": "아니:", "text": "[이번|Ibeon] [분기|bungi] [매출은|maechureun] [작년|jangnyeon] [같은|gateun] [기간에|gigane] [비해|bihae] [무려|muryeo] [사십|sasip] [퍼센트|peosenteu] [증가했습니다|jeunggahaetseumnida].", "id": "Penjualan kuartal ini meningkat sampai empat puluh persen dibandingkan periode yang sama tahun lalu.", "literal": "kali-ini — kuartal — penjualan — mengenai — tahun-lalu — sama-yang — jangka-pada — dibandingkan — sampai-sebanyak — empat-puluh — persen — meningkat." },
+    { "speaker": "김 부장:", "text": "[좋은|Joeun] [수치네요|suchineyo]. [어느|Eoneu] [부분이|bubuni] [가장|gajang] [크게|keuge] [기여했습니까|giyeohaetseumnikka]?", "id": "Angka yang bagus. Bagian mana yang paling besar sumbangannya?", "literal": "baik-yang — angka-ternyata-nya. mana — bagian — paling — besar-secara — menyumbang-sudah-kah?" },
+    { "speaker": "아니:", "text": "[온라인|Ollain] [판매입니다|panmaeimnida]. [매출이|Maechuri] [늘었을|neureosseul] [뿐만|ppunman] [아니라|anira] [재구매율도|jaegumaeyuldo] [십|sip] [퍼센트|peosenteu] [올랐습니다|ollatseumnida].", "id": "Penjualan daring. Bukan hanya omzetnya naik, tingkat pembelian ulangnya pun naik sepuluh persen.", "literal": "daring — penjualan-adalah. penjualan — bertambah-sudah-akan — hanya — bukan-melainkan — pembelian-ulang-tingkat-juga — sepuluh — persen — naik-sudah." },
+    { "speaker": "김 부장:", "text": "[오프라인은|Opeurainneun] [어떻습니까|eotteoseumnikka]?", "id": "Kalau luring bagaimana?", "literal": "luring — mengenai — bagaimana-kah?" },
+    { "speaker": "아니:", "text": "[오프라인은|Opeurainneun] [작년|jangnyeon] [수준을|sujuneul] [유지하는|yujihaneun] [편입니다|pyeonimnida]. [줄지|Julji] [않은|aneun] [것만|geotman] [해도|haedo] [선방한|seonbanghan] [셈입니다|semimnida].", "id": "Luring cenderung bertahan di tingkat tahun lalu. Tidak turun saja sudah boleh dibilang bertahan dengan baik.", "literal": "luring — mengenai — tahun-lalu — taraf — mempertahankan-yang — kecenderungan-adalah. berkurang — tidak-yang — hal-hanya — melakukan-walaupun — bertahan-baik-yang — hitungan-adalah." },
+    { "speaker": "김 부장:", "text": "[그렇군요|Geureokunyo]. [비용|Biyong] [쪽은|jjogeun]?", "id": "Begitu ya. Dari sisi biaya?", "literal": "begitu-ternyata-nya. biaya — sisi — mengenai?" },
+    { "speaker": "아니:", "text": "[광고비가|Gwanggobiga] [고작|gojak] [오|o] [퍼센트|peosenteu] [늘었는데|neureonneunde] [매출은|maechureun] [사십|sasip] [퍼센트|peosenteu] [늘었으니|neureosseuni] [효율이|hyoyuri] [상당히|sangdanghi] [좋아졌습니다|joajyeotseumnida].", "id": "Biaya iklan hanya naik lima persen sementara penjualan naik empat puluh persen, jadi efisiensinya membaik cukup jauh.", "literal": "iklan-biaya — cuma — lima — persen — bertambah-padahal — penjualan — mengenai — empat-puluh — persen — bertambah-karena — efisiensi — cukup — menjadi-baik-sudah." },
+    { "speaker": "김 부장:", "text": "[아주|Aju] [좋습니다|jotseumnida]. [다음|Daeum] [분기|bungi] [계획은|gyehoegeun]?", "id": "Sangat bagus. Rencana kuartal depan?", "literal": "sangat — bagus. berikut — kuartal — rencana — mengenai?" },
+    { "speaker": "아니:", "text": "[온라인에|Ollaine] [집중하되|jipjunghadoe] [오프라인|opeurain] [매장은|maejangeun] [줄이지|jurijji] [않을|aneul] [계획입니다|gyehoegimnida]. [매장이|Maejangi] [광고|gwanggo] [역할도|yeokaldo] [하기|hagi] [때문입니다|ttaemunimnida].", "id": "Rencananya berfokus pada daring, tetapi gerai luring tidak akan dikurangi. Sebab gerai juga berperan sebagai iklan.", "literal": "daring-pada — memusatkan-tetapi — luring — gerai — mengenai — mengurangi — tidak-akan — rencana-adalah. gerai — iklan — peran-juga — melakukan-hal — karena-adalah." },
+    { "speaker": "김 부장:", "text": "[설득력|Seoldeungnyeok] [있는|inneun] [설명입니다|seolmyeongimnida]. [수고했어요|Sugohaesseoyo].", "id": "Penjelasan yang meyakinkan. Kerja bagus.", "literal": "daya-meyakinkan — ada-yang — penjelasan-adalah. bersusah-payah-sudah-nya." },
+    { "speaker": "아니:", "text": "[감사합니다|Gamsahamnida]. [자세한|Jasehan] [수치는|suchineun] [자료에|jaryoe] [정리해|jeongnihae] [두었습니다|dueotseumnida].", "id": "Terima kasih. Angka rincinya sudah saya rapikan di dalam berkas.", "literal": "terima-kasih. rinci-yang — angka — mengenai — bahan-pada — merapikan — menaruh-sudah." }
+   ],
+   "notes": [
+    "**무려 menandai angka yang lebih besar dari yang diduga.** 무려 사십 퍼센트 = sampai sebanyak empat puluh persen. Ia adalah alat penegas paling kuat untuk angka dalam bahasa Korea, dan muncul di hampir setiap berita ekonomi.",
+    "**고작 adalah kebalikannya: angka yang lebih kecil dari yang diduga.** 고작 오 퍼센트 = cuma lima persen. Sepadan yang lebih netral: 겨우. Memasangkan 무려 dan 고작 dalam satu kalimat — seperti yang dilakukan Ani — adalah cara paling efektif menonjolkan perbandingan.",
+    "**-(으)ㄹ 뿐만 아니라 adalah bentuk ragam tulis dari “bukan hanya … melainkan juga”.** Ia menempel pada bentuk penyifat: 늘었을 뿐만 아니라, 좋을 뿐만 아니라, 학생일 뿐만 아니라. Bagian keduanya hampir selalu memakai 도.",
+    "**-는 편이다 di laporan resmi meredam klaim.** 유지하는 편입니다 = cenderung bertahan. Melaporkan angka dengan 편이다 memberi ruang kalau angkanya bergerak sedikit — kebiasaan yang membedakan laporan yang hati-hati dari yang gegabah.",
+    "**-것만 해도 berarti “bahkan hanya itu saja sudah …”.** 줄지 않은 것만 해도 = tidak turun saja sudah. Pola untuk menilai sesuatu yang tampak kecil sebagai pencapaian.",
+    "**선방하다 harfiahnya “bertahan dengan baik”,** aslinya istilah olahraga untuk penjaga gawang yang menyelamatkan bola. Sekarang dipakai luas di berita ekonomi untuk hasil yang bertahan di tengah keadaan buruk.",
+    "**-되 adalah penghubung ragam tulis “tetapi”.** 집중하되 줄이지 않을 계획입니다 = berfokus, tetapi tidak akan mengurangi. Hemat dan tegas, jadi sangat sering di rencana kerja dan aturan.",
+    "**상당히 berarti “cukup jauh, lumayan besar”.** Ia adalah penanda kadar ragam resmi. Tangganya: 조금 → 어느 정도 → 꽤 → 상당히 → 매우 → 대단히."
+   ],
+   "grammars": [
+    {
+     "title": "Penegasan dan pelemahan",
+     "body": [
+      "Dua kelompok yang saling berlawanan, dan yang menentukan seberapa berani kalimatmu terdengar."
+     ],
+     "table": {
+      "head": ["Fungsi", "Pola", "Contoh"],
+      "rows": [
+       ["Menegaskan kadar", "얼마나 -(으)ㄴ/는지 모르다", "[얼마나|Eolmana] [기쁜지|gippeunji] [몰라요|mollayo]."],
+       ["Menegaskan kadar", "여간 -지 않다", "[여간|Yeogan] [어렵지|eoryeopji] [않아요|anayo]."],
+       ["Menegaskan kadar", "-기 그지없다", "[고맙기|Gomapgi] [그지없습니다|geujieopseumnida]."],
+       ["Menambah", "-(으)ㄹ 뿐만 아니라", "[쌀|Ssal] [뿐만|ppunman] [아니라|anira] [빠릅니다|ppareumnida]."],
+       ["Menambah", "-(으)ㄴ/는 데다가", "[비싼|Bissan] [데다가|dedaga] [느려요|neuryeoyo]."],
+       ["Melemahkan", "-(으)ㄴ/는 편이다", "[비싼|Bissan] [편이에요|pyeonieyo]."],
+       ["Melemahkan", "-(으)ㄴ/는 셈이다", "[다|Da] [끝난|kkeutnan] [셈이에요|semieyo]."],
+       ["Melemahkan", "-(으)ㄴ/는 감이 있다", "[좀|Jom] [이른|ireun] [감이|gami] [있어요|isseoyo]."],
+       ["Membatasi", "-(으)ㄹ 뿐이다", "[노력했을|Noryeokhaesseul] [뿐입니다|ppunimnida]."]
+      ]
+     }
+    },
+    {
+     "title": "Kata keterangan kadar",
+     "body": [
+      "Bahasa Korea punya banyak sekali kata kadar, dan memilih yang tepat menyampaikan penilaian tanpa harus menjelaskannya."
+     ],
+     "table": {
+      "head": ["Kata", "Arti", "Nada"],
+      "rows": [
+       ["[무려|muryeo]", "sampai sebanyak", "lebih besar dari dugaan"],
+       ["[고작|gojak]", "cuma segitu", "lebih kecil dari dugaan"],
+       ["[겨우|gyeou]", "dengan susah payah; cuma", "dua arti, lihat konteks"],
+       ["[적어도|jeogeodo]", "setidaknya", "batas bawah"],
+       ["[최소한|choesohan]", "paling sedikit", "resmi"],
+       ["[기껏해야|kkeotaeya]", "paling banter", "meremehkan"],
+       ["[심지어|simjieo]", "bahkan sampai", "menumpuk keheranan"],
+       ["[그나마|geunama]", "itu pun untungnya", "melegakan sedikit"],
+       ["[상당히|sangdanghi]", "cukup jauh", "resmi"],
+       ["[웬만하면|wenmanhamyeon]", "kalau bisa sih", "melembutkan saran"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "만, 밖에, 뿐 — memilih di antara tiga",
+   "blocks": [
+    { "type": "p", "text": "Ketiganya berarti “hanya”, dan pelajar Indonesia hampir selalu memakai 만 untuk semuanya. Perbedaannya bukan tata bahasa, melainkan **penilaian**: apakah jumlah itu kamu anggap cukup atau kurang." },
+    { "type": "tabel", "head": ["Kalimat", "Arti sesungguhnya"], "rows": [
+     ["[만|Man] [원만|wonman] [있어요|isseoyo].", "ada sepuluh ribu won — dan itu cukup"],
+     ["[만|Man] [원밖에|wonbakke] [없어요|eopseoyo].", "cuma ada sepuluh ribu won — dan itu kurang"],
+     ["[만|Man] [원뿐입니다|wonppunimnida].", "hanya sepuluh ribu won (netral, resmi)"],
+     ["[한|Han] [명만|myeongman] [왔어요|wasseoyo].", "yang datang satu orang saja"],
+     ["[한|Han] [명밖에|myeongbakke] [안|an] [왔어요|wasseoyo].", "yang datang cuma satu orang, sedikit sekali"],
+     ["[하나만|Hanaman] [주세요|juseyo].", "beri satu saja (permintaan)"],
+     ["[하나밖에|Hanabakke] [못|mot] [드려요|deuryeoyo].", "cuma bisa memberi satu, maaf"]
+    ]},
+    { "type": "p", "text": "⚠️ 밖에 **wajib** diikuti sangkalan — 없다, 안, 못, -지 않다. Kalimat ❌ 하나밖에 있어요 salah. Ini kesalahan yang paling sering, karena dalam bahasa Indonesia “hanya ada satu” berbentuk positif." },
+    { "type": "sub", "text": "만 dalam pola-pola tetap" },
+    { "type": "tabel", "head": ["Pola", "Arti", "Contoh"], "rows": [
+     ["-기만 하면 되다", "cukup melakukan … saja", "[서명하기만|Seomyeonghagiman] [하면|hamyeon] [됩니다|doemnida]."],
+     ["-기만 하면", "tiap kali, asal saja", "[비가|Biga] [오기만|ogiman] [하면|hamyeon] [춥다|chupda]."],
+     ["-(으)ㄹ 만하다", "layak, pantas", "[가|Ga] [볼|bol] [만해요|manaeyo]."],
+     ["N만 하다", "sebesar N", "[손바닥만|Sonbadangman] [해요|haeyo]."],
+     ["N만에", "setelah selang N", "[삼|Sam] [년|nyeon] [만에|mane] [만났어요|mannasseoyo]."],
+     ["-(으)ㄹ 뿐이다", "tak lebih dari itu", "[최선을|Choeseoneul] [다했을|dahaesseul] [뿐입니다|ppunimnida]."]
+    ]},
+    { "type": "p", "text": "⚠️ Jangan tertukar antara 만에 (setelah selang waktu) dan 만 (hanya). 삼 년 만에 만났어요 = bertemu setelah tiga tahun. 삼 년만 기다리세요 = tunggu saja tiga tahun." }
+   ]
+  },
+  {
+   "title": "Melembutkan penilaian",
+   "blocks": [
+    { "type": "p", "text": "Dalam bahasa Korea, menilai sesuatu — termasuk diri sendiri — dengan kalimat mutlak dianggap kurang matang. Yang dipakai orang dewasa adalah pola yang menempatkan penilaian sebagai kecenderungan, bukan kepastian." },
+    { "type": "tabel", "head": ["Telanjang", "Dilembutkan", "Bedanya"], "rows": [
+     ["[저는|Jeoneun] [잘해요|jalhaeyo].", "[잘하는|Jalhaneun] [편이에요|pyeonieyo].", "termasuk bisa, bukan jago"],
+     ["[비싸요|Bissayo].", "[비싼|Bissan] [편이에요|pyeonieyo].", "tergolong mahal"],
+     ["[다|Da] [끝났어요|kkeutnasseoyo].", "[다|Da] [끝난|kkeutnan] [셈이에요|semieyo].", "boleh dibilang selesai"],
+     ["[이르다|Ireuda].", "[이른|Ireun] [감이|gami] [있다|itda].", "ada rasa terlalu cepat"],
+     ["[안|An] [좋아요|joayo].", "[좋다고|Jotago] [보기는|bogineun] [어려워요|eoryeowoyo].", "sulit dibilang bagus"],
+     ["[틀렸어요|Teullyeosseoyo].", "[맞다고|Matdago] [보기|bogi] [어려운|eoryeoun] [부분이|bubuni] [있어요|isseoyo].", "ada bagian yang sulit dibenarkan"]
+    ]},
+    { "type": "sub", "text": "-(으)ㄴ/는 편이다 dengan tepat" },
+    { "type": "tabel", "head": ["Jenis kata", "Bentuk", "Contoh"], "rows": [
+     ["Kata kerja, sekarang", "-는 편이다", "[자주|Jaju] [가는|ganeun] [편이에요|pyeonieyo]."],
+     ["Kata kerja, lampau", "-(으)ㄴ 편이다", "[잘|Jal] [본|bon] [편이에요|pyeonieyo]."],
+     ["Kata sifat", "-(으)ㄴ 편이다", "[큰|Keun] [편이에요|pyeonieyo]."],
+     ["Sangkalan", "안 -는 편이다", "[잘|Jal] [안|an] [먹는|meongneun] [편이에요|pyeonieyo]."]
+    ]},
+    { "type": "kotak", "title": "Kapan pelembut justru merusak", "items": [
+     "**Wawancara kerja.** 저는 성실한 편입니다 terdengar seperti kamu sendiri ragu. Yang dipakai: 저는 성실합니다, atau lebih baik lagi contoh nyatanya.",
+     "**Menerima tugas.** 할 수 있는 편입니다 bukan jawaban. Yang dipakai: 하겠습니다.",
+     "**Melaporkan angka.** Angka adalah angka. 사십 퍼센트 증가한 편입니다 terdengar seperti kamu tak yakin datanya.",
+     "**Menyatakan aturan.** 금지된 편입니다 tidak masuk akal. Aturan bersifat mutlak: 금지되어 있습니다."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "밖에", "baca": "bakke", "id": "hanya (dengan sangkalan)" },
+  { "ko": "조차", "baca": "jocha", "id": "bahkan (yang sepele pun)" },
+  { "ko": "마저", "baca": "majeo", "id": "bahkan (yang terakhir pun)" },
+  { "ko": "뿐", "baca": "ppun", "id": "hanya, tak lebih" },
+  { "ko": "무려", "baca": "muryeo", "id": "sampai sebanyak" },
+  { "ko": "고작", "baca": "gojak", "id": "cuma segitu" },
+  { "ko": "겨우", "baca": "gyeou", "id": "dengan susah payah; cuma" },
+  { "ko": "심지어", "baca": "simjieo", "id": "bahkan sampai" },
+  { "ko": "게다가", "baca": "gedaga", "id": "ditambah lagi" },
+  { "ko": "그나마", "baca": "geunama", "id": "itu pun untungnya" },
+  { "ko": "적어도", "baca": "jeogeodo", "id": "setidaknya" },
+  { "ko": "최소한", "baca": "choesohan", "id": "paling sedikit" },
+  { "ko": "기껏해야", "baca": "kkeotaeya", "id": "paling banter" },
+  { "ko": "상당히", "baca": "sangdanghi", "id": "cukup jauh" },
+  { "ko": "웬만하면", "baca": "wenmanhamyeon", "id": "kalau bisa sih" },
+  { "ko": "여간", "baca": "yeogan", "id": "bukan main (dengan sangkalan)" },
+  { "ko": "편이다", "baca": "pyeonida", "id": "tergolong, cenderung" },
+  { "ko": "셈이다", "baca": "semida", "id": "boleh dibilang" },
+  { "ko": "면접", "baca": "myeonjeop", "id": "wawancara" },
+  { "ko": "예상하다", "baca": "yesanghada", "id": "menduga" },
+  { "ko": "신기하다", "baca": "singihada", "id": "ajaib, mengherankan" },
+  { "ko": "결과", "baca": "gyeolgwa", "id": "hasil" },
+  { "ko": "운", "baca": "un", "id": "nasib, keberuntungan" },
+  { "ko": "모금", "baca": "mogeum", "id": "teguk" },
+  { "ko": "틈", "baca": "teum", "id": "sela, celah waktu" },
+  { "ko": "수치", "baca": "suchi", "id": "angka, nilai" },
+  { "ko": "기여하다", "baca": "giyeohada", "id": "menyumbang" },
+  { "ko": "증가하다", "baca": "jeunggahada", "id": "meningkat" },
+  { "ko": "감소하다", "baca": "gamsohada", "id": "menurun" },
+  { "ko": "유지하다", "baca": "yujihada", "id": "mempertahankan" },
+  { "ko": "수준", "baca": "sujun", "id": "taraf, tingkat" },
+  { "ko": "재구매율", "baca": "jaegumaeyul", "id": "tingkat pembelian ulang" },
+  { "ko": "광고비", "baca": "gwanggobi", "id": "biaya iklan" },
+  { "ko": "효율", "baca": "hyoyul", "id": "efisiensi" },
+  { "ko": "비용", "baca": "biyong", "id": "biaya" },
+  { "ko": "매장", "baca": "maejang", "id": "gerai, toko" },
+  { "ko": "역할", "baca": "yeokal", "id": "peran" },
+  { "ko": "집중하다", "baca": "jipjunghada", "id": "memusatkan" },
+  { "ko": "설득력", "baca": "seoldeungnyeok", "id": "daya meyakinkan" },
+  { "ko": "자세하다", "baca": "jasehada", "id": "rinci" },
+  { "ko": "선방하다", "baca": "seonbanghada", "id": "bertahan dengan baik" },
+  { "ko": "최선을 다하다", "baca": "choeseoneul dahada", "id": "berusaha sekuat tenaga" },
+  { "ko": "노력하다", "baca": "noryeokhada", "id": "berusaha" },
+  { "ko": "서명하다", "baca": "seomyeonghada", "id": "menandatangani" },
+  { "ko": "손바닥", "baca": "sonbadak", "id": "telapak tangan" },
+  { "ko": "성실하다", "baca": "seongsilhada", "id": "tekun, dapat diandalkan" },
+  { "ko": "금지되다", "baca": "geumjidoeda", "id": "dilarang" },
+  { "ko": "판매", "baca": "panmae", "id": "penjualan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih antara 만, 밖에, dan 뿐.",
+   "items": [
+    "돈이 만 원____ 없어요.",
+    "하나____ 주세요.",
+    "방법은 이것____입니다.",
+    "한 명____ 안 왔어요.",
+    "십 분____ 기다리면 됩니다."
+   ]
+  },
+  {
+   "prompt": "Isi dengan 도, 까지, 조차, 마저, atau (이)나.",
+   "items": [
+    "이름____ 모르는 사람이에요.",
+    "선생님____ 오셨어요. 정말 놀랐어요.",
+    "너____ 나를 못 믿는 거야?",
+    "세 시간____ 걸렸어요.",
+    "저____ 같이 갈게요."
+   ]
+  },
+  {
+   "prompt": "Lembutkan penilaian berikut dengan -(으)ㄴ/는 편이다 atau -(으)ㄴ/는 셈이다.",
+   "items": [
+    "저는 매운 음식을 잘 먹어요. → ____",
+    "이 가게는 비싸요. → ____",
+    "일이 거의 다 끝났어요. → ____",
+    "저는 아침에 일찍 일어나요. → ____",
+    "이번 시험은 잘 봤어요. → ____"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dengan -(으)ㄹ 뿐만 아니라.",
+   "items": [
+    "매출이 늘었어요. 재구매율도 올랐어요. → ____",
+    "이 제품은 싸요. 품질도 좋아요. → ____",
+    "그 사람은 성실해요. 실력도 있어요. → ____",
+    "온라인 수업은 편해요. 비용도 적게 들어요. → ____",
+    "서울은 교통이 좋아요. 일자리도 많아요. → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "없었어 / 시간이 / 사흘밖에 / 준비할",
+    "없었어 / 마실 / 물 한 모금 / 틈조차",
+    "몰라 / 힘든지 / 기다리는 게 / 얼마나",
+    "증가했습니다 / 무려 / 매출은 / 사십 퍼센트",
+    "셈입니다 / 것만 / 해도 / 선방한 / 줄지 않은"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Ceritakan hari yang buruk dengan menumpuk 게다가, 마저, dan 조차.",
+    "Laporkan sebuah angka yang mengejutkan dengan 무려, lalu bandingkan dengan angka kecil memakai 고작.",
+    "Nilai kemampuanmu sendiri dalam bahasa Korea dengan -(으)ㄴ/는 편이다.",
+    "Tegaskan betapa senangnya kamu atas sesuatu, dengan 얼마나 -(으)ㄴ지 모르다."
+   ]
+  }
+ ],
+ "answers": [
+  "밖에 — 만 — 뿐 — 밖에 — 만",
+  "조차 — 까지 — 마저 — 이나 — 도",
+  "저는 매운 음식을 잘 먹는 편이에요. — 이 가게는 비싼 편이에요. — 일이 다 끝난 셈이에요. — 저는 아침에 일찍 일어나는 편이에요. — 이번 시험은 잘 본 편이에요.",
+  "매출이 늘었을 뿐만 아니라 재구매율도 올랐어요. — 이 제품은 쌀 뿐만 아니라 품질도 좋아요. — 그 사람은 성실할 뿐만 아니라 실력도 있어요. — 온라인 수업은 편할 뿐만 아니라 비용도 적게 들어요. — 서울은 교통이 좋을 뿐만 아니라 일자리도 많아요.",
+  "준비할 시간이 사흘밖에 없었어. — 물 한 모금 마실 틈조차 없었어. — 기다리는 게 얼마나 힘든지 몰라. — 매출은 무려 사십 퍼센트 증가했습니다. — 줄지 않은 것만 해도 선방한 셈입니다.",
+  "아침부터 늦잠을 잤는데 게다가 지하철이 멈추고, 겨우 잡은 택시마저 막혔어요. 물 한 모금 마실 틈조차 없었어요. — 올해 신청자는 무려 삼천 명인데 합격자는 고작 오십 명입니다. — 한국어는 읽기는 잘하는 편인데 말하기는 아직 부족한 편이에요. — 합격 소식을 듣고 얼마나 기뻤는지 몰라요."
+ ]
+}

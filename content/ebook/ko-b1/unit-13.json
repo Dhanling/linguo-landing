@@ -1,0 +1,350 @@
+{
+ "title": "Rumah sakit, tubuh, dan keadaan darurat",
+ "title_target": "어디가 불편하세요? — Eodiga bulpyeonhaseyo?",
+ "goal": "Bisa menjelaskan gejala dengan tepat — bukan sekadar “sakit” — memahami instruksi dokter dan apoteker, mengurus asuransi, dan menangani keadaan darurat dalam bahasa Korea.",
+ "bekal": [
+  "menjelaskan gejala dengan kata kerja yang tepat: 쑤시다, 결리다, 저리다, 붓다, 어지럽다",
+  "menjawab pertanyaan baku dokter tentang sejak kapan, seberapa, dan bagaimana",
+  "memahami aturan minum obat: 식후 삼십 분, 하루 세 번, 공복에",
+  "mengurus asuransi: 진단서, 영수증, 청구",
+  "menelepon 119 dan menyampaikan keadaan darurat dengan urutan yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Di klinik penyakit dalam",
+   "intro": "Ani sudah tiga hari tidak enak badan. Perhatikan bahwa dokter Korea bertanya dengan urutan tetap — sejak kapan, di mana, bagaimana rasanya, apa yang memperburuk — dan menjawabnya dengan urutan itu akan sangat mempercepat pemeriksaan.",
+   "lines": [
+    { "speaker": "의사:", "text": "[어디가|Eodiga] [불편하세요|bulpyeonhaseyo]?", "id": "Bagian mana yang terasa tidak nyaman?", "literal": "di-mana — tidak-nyaman-beliau-nya?" },
+    { "speaker": "아니:", "text": "[사흘|Saheul] [전부터|jeonbuteo] [열이|yeori] [나고|nago] [목이|mogi] [아픕니다|apeumnida]. [기침도|Gichimdo] [좀|jom] [나오고요|naogoyo].", "id": "Sejak tiga hari lalu saya demam dan tenggorokan sakit. Batuk juga sedikit keluar.", "literal": "tiga-hari — sebelum-dari — panas — keluar-dan — leher — sakit. batuk-juga — sedikit — keluar-dan-nya." },
+    { "speaker": "의사:", "text": "[열은|Yeoreun] [재|jae] [보셨어요|bosyeosseoyo]?", "id": "Sudah Anda ukur suhunya?", "literal": "panas — mengenai — mengukur — coba-beliau-sudah-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [어젯밤에|eojetbame] [삼십팔|samsippal] [도|do] [오|o] [부까지|bukkaji] [올라갔습니다|ollagatseumnida].", "id": "Ya, tadi malam naik sampai tiga puluh delapan koma lima derajat.", "literal": "ya, tadi-malam-pada — tiga-puluh-delapan — derajat — lima — bagian-sampai — naik-sudah." },
+    { "speaker": "의사:", "text": "[콧물이나|Konmurina] [몸살|momsal] [기운은|gieuneun] [어떠세요|eotteoseyo]?", "id": "Bagaimana dengan pilek atau rasa pegal sekujur badan?", "literal": "ingus-atau — badan-sakit — hawa — mengenai — bagaimana-beliau-nya?" },
+    { "speaker": "아니:", "text": "[콧물은|Konmureun] [없는데|eomneunde] [온몸이|onmomi] [쑤시고|ssusigo] [기운이|gieuni] [하나도|hanado] [없습니다|eopseumnida].", "id": "Pilek tidak ada, tapi sekujur badan nyeri-nyeri dan sama sekali tidak ada tenaga.", "literal": "ingus — mengenai — tak-ada-padahal — seluruh-badan — nyeri-dan — tenaga — satu-pun — tak-ada." },
+    { "speaker": "의사:", "text": "[목|Mok] [한번|hanbeon] [볼게요|bolgeyo]. [아|A] [해|hae] [보세요|boseyo]… [네|Ne], [편도가|pyeondoga] [많이|mani] [부었네요|bueonneyo]. [독감|Dokgam] [검사|geomsa] [한번|hanbeon] [해|hae] [보시겠어요|bosigesseoyo]?", "id": "Saya lihat tenggorokannya sebentar. Coba bilang “aa”… Ya, amandelnya bengkak sekali. Mau coba tes influenza?", "literal": "leher — sekali — akan-lihat-nya. a — melakukan — coba-lah-nya… ya, amandel — banyak — bengkak-ternyata-nya. flu-berat — pemeriksaan — sekali — melakukan — coba-beliau-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [하겠습니다|hagetseumnida]. [혹시|Hoksi] [비용이|biyongi] [얼마나|eolmana] [나올까요|naolkkayo]?", "id": "Ya, saya lakukan. Kira-kira biayanya keluar berapa?", "literal": "ya, akan-melakukan. barangkali — biaya — berapa — keluar-akan-nya?" },
+    { "speaker": "의사:", "text": "[보험|Boheom] [적용되면|jeogyongdoemyeon] [만|man] [원|won] [안팎입니다|anpakimnida]. [결과는|Gyeolgwaneun] [십|sip] [분|bun] [정도|jeongdo] [걸립니다|geollimnida].", "id": "Kalau asuransi berlaku, sekitar sepuluh ribu won. Hasilnya memakan waktu sekitar sepuluh menit.", "literal": "asuransi — berlaku-kalau — sepuluh-ribu — won — sekitar-adalah. hasil — mengenai — sepuluh — menit — kira-kira — memakan-waktu." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [그런데|Geureonde] [제가|jega] [항생제|hangsaengje] [알레르기가|alleureugiga] [있습니다|itseumnida].", "id": "Baik. Tapi saya punya alergi antibiotik.", "literal": "mengerti. tapi — saya — antibiotik — alergi — ada." },
+    { "speaker": "의사:", "text": "[아|A], [말씀해|malsseumhae] [주셔서|jusyeoseo] [다행입니다|dahaengimnida]. [어떤|Eotteon] [약이었는지|yagieonneunji] [기억나세요|gieongnaseyo]?", "id": "Ah, untunglah Anda memberi tahu. Anda ingat obat yang mana?", "literal": "ah, berkata — memberi-beliau-karena — untung-adalah. yang-mana — obat-adalah-sudah-apakah — teringat-beliau-nya?" },
+    { "speaker": "아니:", "text": "[정확한|Jeonghwakhan] [이름은|ireumeun] [기억이|gieogi] [안|an] [나는데|naneunde], [먹고|meokgo] [두드러기가|dudeuregiga] [났었습니다|nasseotseumnida].", "id": "Nama persisnya tidak ingat, tapi setelah minum saya muncul biduran.", "literal": "tepat-yang — nama — mengenai — ingatan — tidak — keluar-padahal, makan-dan — biduran — keluar-pernah-sudah." }
+   ],
+   "notes": [
+    "**어디가 불편하세요? adalah pertanyaan pembuka baku dokter Korea.** Harfiahnya “bagian mana yang tidak nyaman”. Kata 불편하다 dipakai daripada 아프다 karena lebih luas — bisa mencakup pusing, mual, lemas, yang bukan “sakit”.",
+    "**Menjelaskan gejala dimulai dari kapan, bukan dari apa.** 사흘 전부터 … Ini urutan yang diharapkan dokter, dan mengikutinya membuat pemeriksaan jauh lebih cepat. Pola waktunya: N 전부터, 어제부터, 일주일째.",
+    "**열이 나다, bukan ❌열이 있다.** Bahasa Korea memakai 나다 (keluar, timbul) untuk banyak gejala: 열이 나다, 기침이 나다, 두드러기가 나다, 코피가 나다. Yang memakai 있다 hanya keadaan menetap: 알레르기가 있다.",
+    "**Suhu Korea diucapkan dengan 도 dan 부.** 38.5도 dibaca 삼십팔 도 오 부 — bagian desimalnya memakai 부, bukan 점. Ini khusus untuk suhu tubuh; suhu udara memakai 삼십팔 점 오 도.",
+    "**쑤시다 berarti nyeri berdenyut menusuk,** khas untuk otot dan sendi saat demam. Kata-kata nyeri Korea sangat rinci dan tidak bisa saling ditukar — daftarnya ada di halaman berikut.",
+    "**기운이 없다 harfiahnya “tak ada hawa”** dan berarti lemas, tak bertenaga. Ungkapan yang sering dipakai: 기운 내세요 (semangat ya), 기운이 나다 (jadi bertenaga).",
+    "**아 해 보세요 — dokter Korea meminta pasien membuka mulut** persis seperti di Indonesia. Instruksi pemeriksaan lain: 숨 크게 들이마셔 보세요 (tarik napas dalam), 여기 눌러 볼게요 (saya tekan di sini), 누워 보세요 (silakan berbaring).",
+    "**Menyebut alergi obat adalah satu kalimat yang wajib kamu hafal sebelum tinggal di Korea.** 저는 …에 알레르기가 있습니다. Kalau tidak ada, tetap berguna mengetahui 특별한 알레르기는 없습니다."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja rasa sakit",
+     "body": [
+      "Bahasa Indonesia memakai satu kata “sakit” untuk hampir semuanya. Bahasa Korea membedakannya, dan memilih yang tepat memberi dokter separuh diagnosisnya."
+     ],
+     "table": {
+      "head": ["Kata", "Rasa", "Biasanya di"],
+      "rows": [
+       ["[아프다|apeuda]", "sakit umum", "mana saja"],
+       ["[쑤시다|ssusida]", "nyeri menusuk berdenyut", "otot, sendi, gigi"],
+       ["[결리다|gyeollida]", "kaku dan nyeri saat bergerak", "bahu, pinggang, rusuk"],
+       ["[저리다|jeorida]", "kesemutan, kebas", "tangan, kaki"],
+       ["[따갑다|ttagapda]", "perih menyengat", "tenggorokan, mata, luka"],
+       ["[쓰리다|sseurida]", "perih seperti terbakar", "perut, luka"],
+       ["[붓다|butda]", "bengkak", "amandel, kaki, wajah"],
+       ["[어지럽다|eojireopda]", "pusing berputar", "kepala"],
+       ["[울렁거리다|ulleonggeorida]", "mual bergolak", "perut"],
+       ["[체하다|chehada]", "masuk angin karena makanan", "perut, dada"],
+       ["[답답하다|dapdapada]", "sesak, tertekan", "dada, napas"],
+       ["[가렵다|garyeopda]", "gatal", "kulit"]
+      ]
+     }
+    },
+    {
+     "title": "Pertanyaan baku dokter dan cara menjawabnya",
+     "body": [
+      "Urutan pertanyaannya hampir selalu sama di seluruh Korea. Menyiapkan jawaban untuk kelimanya membuat kunjungan pertama jauh lebih mudah."
+     ],
+     "table": {
+      "head": ["Pertanyaan", "Arti", "Contoh jawaban"],
+      "rows": [
+       ["[어디가|Eodiga] [불편하세요|bulpyeonhaseyo]?", "bagian mana?", "[목이|Mogi] [아픕니다|apeumnida]."],
+       ["[언제부터|Eonjebuteo] [그러셨어요|geureosyeosseoyo]?", "sejak kapan?", "[사흘|Saheul] [전부터입니다|jeonbuteoimnida]."],
+       ["[어떻게|Eotteoke] [아프세요|apeuseyo]?", "sakitnya bagaimana?", "[쑤시듯이|Ssusideusi] [아픕니다|apeumnida]."],
+       ["[열은|Yeoreun] [있으세요|isseuseyo]?", "ada demam?", "[삼십팔|Samsippal] [도|do] [정도|jeongdo] [났습니다|natseumnida]."],
+       ["[약은|Yageun] [드시고|deusigo] [계세요|gyeseyo]?", "sedang minum obat?", "[아니요|Aniyo], [안|an] [먹었습니다|meogeotseumnida]."],
+       ["[알레르기|Alleureugi] [있으세요|isseuseyo]?", "ada alergi?", "[항생제|Hangsaengje] [알레르기가|alleureugiga] [있습니다|itseumnida]."],
+       ["[전에도|Jeonedo] [이러신|ireosin] [적|jeok] [있으세요|isseuseyo]?", "pernah begini sebelumnya?", "[처음입니다|Cheoeumimnida]."]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Di apotek, dan mengurus asuransi",
+   "intro": "Sesudah dari klinik, Ani ke apotek dengan resep, lalu menanyakan klaim asuransi. Dua hal ini nyaris selalu berurutan di Korea, dan bahasanya cukup baku.",
+   "lines": [
+    { "speaker": "약사:", "text": "[처방전|Cheobangjeon] [주시겠어요|jusigesseoyo]?", "id": "Boleh saya minta resepnya?", "literal": "resep — memberi-beliau-akan-nya?" },
+    { "speaker": "아니:", "text": "[네|Ne], [여기|yeogi] [있습니다|itseumnida].", "id": "Ya, ini.", "literal": "ya, di-sini — ada." },
+    { "speaker": "약사:", "text": "[잠시만요|Jamsimanyo]… [네|Ne], [사흘|saheul] [치|chi] [나왔습니다|nawatseumnida]. [하루|Haru] [세|se] [번|beon], [식후|sikhu] [삼십|samsip] [분에|bune] [드시면|deusimyeon] [됩니다|doemnida].", "id": "Sebentar ya… Ya, keluar untuk tiga hari. Tiga kali sehari, diminum tiga puluh menit setelah makan.", "literal": "sejenak-hanya-nya… ya, tiga-hari — jatah — keluar-sudah. satu-hari — tiga — kali, setelah-makan — tiga-puluh — menit-pada — makan-beliau-kalau — jadi." },
+    { "speaker": "아니:", "text": "[혹시|Hoksi] [졸음이|joreumi] [오는|oneun] [약이|yagi] [들어|deureo] [있나요|innayo]? [내일|Naeil] [운전을|unjeoneul] [해야|haeya] [해서요|haeseoyo].", "id": "Apakah ada obat yang membuat mengantuk di dalamnya? Besok saya harus menyetir.", "literal": "barangkali — kantuk — datang-yang — obat — masuk — ada-nya? besok — menyetir — harus — melakukan-karena-nya." },
+    { "speaker": "약사:", "text": "[네|Ne], [항히스타민제가|hanghiseutaminjega] [들어|deureo] [있어서|isseoseo] [졸릴|jollil] [수|su] [있습니다|itseumnida]. [운전|Unjeon] [전에는|jeoneneun] [드시지|deusiji] [않는|anneun] [게|ge] [좋겠습니다|jokgetseumnida].", "id": "Ya, ada antihistamin di dalamnya jadi bisa membuat mengantuk. Sebaiknya jangan diminum sebelum menyetir.", "literal": "ya, antihistamin — masuk — ada-karena — mengantuk-akan — kemungkinan — ada. menyetir — sebelum — mengenai — makan-beliau — tidak-yang — hal — baik-pasti." },
+    { "speaker": "아니:", "text": "[알겠습니다|Algetseumnida]. [그리고|Geurigo] [실비보험|silbiboheom] [청구하려면|cheongguharyeomyeon] [뭐가|mwoga] [필요한가요|piryohangayo]?", "id": "Baik. Dan kalau mau mengeklaim asuransi kesehatan, apa yang diperlukan?", "literal": "mengerti. dan — biaya-nyata-asuransi — mengeklaim-hendak-kalau — apa — perlu-yang-nya?" },
+    { "speaker": "약사:", "text": "[약국|Yakguk] [영수증하고|yeongsujeunghago] [처방전|cheobangjeon] [사본이|sabonì] [필요하실|piryohasil] [겁니다|geomnida]. [병원|Byeongwon] [영수증도|yeongsujeungdo] [같이|gachi] [챙기세요|chaenggiseyo].", "id": "Anda akan memerlukan struk apotek dan salinan resep. Simpan juga struk dari kliniknya.", "literal": "apotek — struk-dan — resep — salinan — perlu-beliau-akan — hal-adalah. rumah-sakit — struk-juga — bersama — kumpulkanlah-nya." },
+    { "speaker": "아니:", "text": "[삼만|Samman] [원|won] [미만이면|mianimyeon] [청구가|cheongguga] [안|an] [된다고|doendago] [들었는데|deureonneunde] [맞나요|mannayo]?", "id": "Saya dengar kalau di bawah tiga puluh ribu won klaimnya tidak bisa, benarkah?", "literal": "tiga-puluh-ribu — won — di-bawah-kalau — klaim — tidak — jadi-katanya — mendengar-sudah-padahal — benar-nya?" },
+    { "speaker": "약사:", "text": "[보험사마다|Boheomsamada] [다릅니다|dareumnida]. [자기부담금이|Jagibudamgeumi] [있어서|isseoseo] [소액은|soaegeun] [실익이|siriki] [없을|eopseul] [수도|sudo] [있고요|itgoyo]. [가입하신|Gaipasin] [상품|sangpum] [약관을|yakgwaneul] [확인해|hwaginhae] [보세요|boseyo].", "id": "Berbeda-beda tiap perusahaan asuransi. Karena ada bagian yang ditanggung sendiri, untuk jumlah kecil bisa saja tidak ada untungnya. Coba periksa ketentuan produk yang Anda ikuti.", "literal": "asuransi-perusahaan-tiap — berbeda. sendiri-tanggung-uang — ada-karena — jumlah-kecil — mengenai — manfaat-nyata — tak-ada-akan — kemungkinan-pun — ada-dan-nya. mendaftar-beliau-yang — produk — ketentuan — memeriksa — coba-lah-nya." },
+    { "speaker": "아니:", "text": "[네|Ne], [확인해|hwaginhae] [보겠습니다|bogetseumnida]. [감사합니다|Gamsahamnida].", "id": "Baik, akan saya periksa. Terima kasih.", "literal": "ya, memeriksa — akan-coba. terima-kasih." },
+    { "speaker": "약사:", "text": "[네|Ne], [푹|puk] [쉬시고|swisigo] [빨리|ppalli] [나으세요|naeuseyo].", "id": "Ya, istirahat yang cukup dan semoga cepat sembuh.", "literal": "ya, nyenyak — beristirahat-beliau-dan — cepat — sembuhlah-nya." }
+   ],
+   "notes": [
+    "**치 adalah penggolong untuk jatah obat atau makanan sekian hari.** 사흘 치, 일주일 치, 한 달 치. Juga dipakai di luar apotek: 두 사람 치 (porsi dua orang).",
+    "**Aturan minum obat Korea hampir selalu disebut dengan dua bagian: berapa kali sehari dan kapan.** 하루 세 번, 식후 삼십 분. Yang lain: 식전 (sebelum makan), 공복에 (saat perut kosong), 취침 전 (sebelum tidur), 필요할 때 (bila perlu).",
+    "**들어 있다 berarti “terkandung di dalam”.** 졸음이 오는 약이 들어 있나요? Pola yang sangat berguna untuk makanan juga: 견과류가 들어 있나요? (ada kacang di dalamnya?) — kalimat penting bagi yang alergi.",
+    "**-지 않는 게 좋겠습니다 adalah nasihat paling halus dari petugas kesehatan.** Bukan larangan. Kalau benar-benar dilarang, yang dipakai 절대 드시면 안 됩니다.",
+    "**실비보험 (juga 실손보험) adalah asuransi kesehatan swasta yang hampir semua orang Korea punya.** Ia mengganti selisih yang tidak ditanggung asuransi negara (국민건강보험). Orang asing yang bekerja di Korea otomatis masuk 국민건강보험, tapi 실비보험 harus didaftarkan sendiri.",
+    "**자기부담금 = bagian yang ditanggung sendiri (deductible).** Kata-kata asuransi lain yang berguna: 보장 (pertanggungan), 면책 (pengecualian), 갱신 (pembaruan), 약관 (ketentuan polis), 보험료 (premi) lawan 보험금 (uang klaim).",
+    "**-마다 다르다 berarti “berbeda-beda tiap …”.** 보험사마다 다릅니다. Pola yang sering dipakai untuk menghindari jawaban mutlak: 사람마다 달라요, 지역마다 달라요.",
+    "**푹 쉬세요 dan 빨리 나으세요 adalah dua ucapan baku untuk orang sakit.** Kata 낫다 (sembuh) tak beraturan golongan ㅅ: 나아요, 나으세요, 나았어요."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut waktu gejala dan lamanya",
+     "body": [
+      "Menjawab “sejak kapan” dengan tepat adalah separuh pekerjaan menjelaskan gejala."
+     ],
+     "table": {
+      "head": ["Pola", "Contoh", "Arti"],
+      "rows": [
+       ["N 전부터", "[사흘|Saheul] [전부터|jeonbuteo]", "sejak tiga hari lalu"],
+       ["N째", "[일주일째|Iljuiljjae]", "sudah seminggu ini"],
+       ["N 동안", "[이틀|Iteul] [동안|dongan]", "selama dua hari"],
+       ["-(으)ㄴ 지 N 됐다", "[아픈|Apeun] [지|ji] [사흘|saheul] [됐어요|dwaesseoyo].", "sudah tiga hari sejak sakit"],
+       ["갑자기", "[갑자기|Gapjagi] [어제부터|eojebuteo]", "tiba-tiba sejak kemarin"],
+       ["점점", "[점점|Jeomjeom] [심해져요|simhaejyeoyo].", "makin lama makin parah"],
+       ["가끔 · 자주 · 계속", "[가끔|Gakkeum] [아파요|apayo].", "kadang, sering, terus-menerus"],
+       ["-았/었다 -았/었다 하다", "[아팠다|Apatda] [안|an] [아팠다|apatda] [해요|haeyo].", "kadang sakit kadang tidak"]
+      ]
+     }
+    },
+    {
+     "title": "Kata benda tubuh yang sering dilewatkan",
+     "body": [
+      "Bagian tubuh dasar sudah dipelajari di tingkat A1. Yang berikut ini muncul di ruang periksa dan hampir tak pernah diajarkan sebelumnya."
+     ],
+     "table": {
+      "head": ["Kata", "Romanisasi", "Arti"],
+      "rows": [
+       ["편도", "pyeondo", "amandel"],
+       ["기관지", "gigwanji", "saluran napas"],
+       ["위", "wi", "lambung"],
+       ["장", "jang", "usus"],
+       ["간", "gan", "hati"],
+       ["신장 · 콩팥", "sinjang · kongpat", "ginjal"],
+       ["관절", "gwanjeol", "sendi"],
+       ["인대", "indae", "ligamen"],
+       ["허리", "heori", "pinggang"],
+       ["명치", "myeongchi", "ulu hati"],
+       ["잇몸", "inmom", "gusi"],
+       ["사랑니", "sarangni", "gigi bungsu"],
+       ["발목", "balmok", "pergelangan kaki"],
+       ["손목", "sonmok", "pergelangan tangan"],
+       ["어깨", "eokkae", "bahu"],
+       ["가슴", "gaseum", "dada"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keadaan darurat",
+   "blocks": [
+    { "type": "p", "text": "Nomor darurat Korea: **119** untuk ambulans dan kebakaran, **112** untuk polisi. Operator 119 melayani bahasa Inggris lewat penerjemah, tapi menyampaikan tiga hal pertama dalam bahasa Korea akan menghemat menit-menit yang menentukan." },
+    { "type": "tabel", "head": ["Urutan", "Yang disampaikan", "Kalimat"], "rows": [
+     ["1", "Apa yang terjadi", "[사람이|Sarami] [쓰러졌어요|sseureojyeosseoyo]."],
+     ["2", "Di mana", "[강남구|Gangnam-gu] [테헤란로|Teheranno] [십오|sibo] [길|gil] [편의점|pyeonuijeom] [앞이에요|apieyo]."],
+     ["3", "Keadaan korban", "[의식이|Uisigi] [없고|eopgo] [숨은|sumeun] [쉬고|swigo] [있어요|isseoyo]."],
+     ["4", "Siapa kamu", "[저는|Jeoneun] [지나가던|jinagadeon] [사람입니다|saramimnida]."],
+     ["5", "Nomor telepon", "[제|Je] [번호는|beonhoneun] [공일공에|gong-il-gong-e]…"]
+    ]},
+    { "type": "sub", "text": "Kalimat darurat yang perlu dihafal" },
+    { "type": "tabel", "head": ["Kalimat", "Arti"], "rows": [
+     ["[도와주세요|Dowajuseyo]!", "tolong!"],
+     ["[구급차|Gugeupcha] [불러|bulleo] [주세요|juseyo]!", "panggilkan ambulans!"],
+     ["[사고가|Sagoga] [났어요|nasseoyo].", "terjadi kecelakaan"],
+     ["[불이|Buri] [났어요|nasseoyo].", "terjadi kebakaran"],
+     ["[숨을|Sumeul] [못|mot] [쉬어요|swieoyo].", "tidak bisa bernapas"],
+     ["[의식이|Uisigi] [없어요|eopseoyo].", "tidak sadar"],
+     ["[피가|Piga] [많이|mani] [나요|nayo].", "pendarahan banyak"],
+     ["[알레르기|Alleureugi] [반응이에요|baneungieyo].", "ini reaksi alergi"],
+     ["[응급실이|Eunggeupsiri] [어디예요|eodiyeyo]?", "di mana IGD?"],
+     ["[통역|Tongyeok] [가능한|ganeunghan] [분|bun] [계세요|gyeseyo]?", "ada yang bisa menerjemahkan?"]
+    ]},
+    { "type": "kotak", "title": "Yang perlu diketahui sebelum sakit", "items": [
+     "**Simpan alamat rumahmu dalam bahasa Korea di ponsel.** Menyebut alamat adalah bagian tersulit dari panggilan darurat, dan yang paling sering gagal.",
+     "**응급실 jauh lebih mahal daripada klinik biasa** dan hanya untuk keadaan yang benar-benar mendesak. Untuk sakit biasa di luar jam kerja, cari 야간 진료 atau 주말 진료 di aplikasi peta.",
+     "**Rumah sakit Korea bertingkat: 의원 (klinik) → 병원 → 종합병원 → 상급종합병원.** Datang langsung ke rumah sakit besar tanpa 소견서 (surat rujukan) membuat biayanya berlipat.",
+     "**1339 adalah nomor konsultasi kesehatan** dan 1345 untuk layanan orang asing (Korea Immigration Contact Center) — keduanya melayani bahasa asing."
+    ]}
+   ]
+  },
+  {
+   "title": "Melaporkan masalah dan mengeluh",
+   "blocks": [
+    { "type": "p", "text": "Selain rumah sakit, hidup di Korea menuntut kemampuan melaporkan hal yang tidak beres — barang rusak, layanan yang salah, tetangga yang berisik. Bahasa Korea punya kerangka yang cukup baku untuk itu, dan kuncinya adalah menyebut fakta lebih dulu, keluhan belakangan." },
+    { "type": "tabel", "head": ["Langkah", "Kalimat"], "rows": [
+     ["Membuka", "[문의|Munui] [드릴|deuril] [게|ge] [있어서|isseoseo] [연락드렸습니다|yeollakdeuryeotseumnida]."],
+     ["Menyebut fakta", "[지난주|Jinanju] [화요일에|hwayoire] [주문한|jumunhan] [상품이|sangpumi] [파손된|pasondoen] [상태로|sangtaero] [왔습니다|watseumnida]."],
+     ["Menyebut bukti", "[사진|Sajin] [찍어|jjigeo] [두었습니다|dueotseumnida]."],
+     ["Menyatakan keinginan", "[교환이|Gyohwani] [가능할지|ganeunghalji] [여쭤보고|yeojjwobogo] [싶습니다|sipseumnida]."],
+     ["Menutup", "[확인|Hwagin] [후|hu] [연락|yeollak] [부탁드립니다|butakdeurimnida]."]
+    ]},
+    { "type": "sub", "text": "Kata-kata keluhan" },
+    { "type": "tabel", "head": ["Kata", "Romanisasi", "Arti"], "rows": [
+     ["고장 나다", "gojang nada", "rusak (mesin)"],
+     ["파손되다", "pasondoeda", "pecah, rusak fisik"],
+     ["누수", "nusu", "kebocoran air"],
+     ["곰팡이", "gompangi", "jamur"],
+     ["소음", "soeum", "kebisingan"],
+     ["층간소음", "cheunggansoeum", "suara antarlantai"],
+     ["환불", "hwanbul", "pengembalian uang"],
+     ["교환", "gyohwan", "penukaran"],
+     ["반품", "banpum", "pengembalian barang"],
+     ["A/S · 애프터서비스", "ei-esseu", "layanan purnajual"],
+     ["민원", "minwon", "pengaduan warga"],
+     ["신고하다", "singohada", "melapor resmi"],
+     ["항의하다", "hanguihada", "memprotes"],
+     ["보상", "bosang", "ganti rugi"],
+     ["하자", "haja", "cacat, kerusakan"]
+    ]},
+    { "type": "p", "text": "⚠️ 민원 adalah kata penting yang tak punya padanan pas: pengaduan resmi dari warga kepada lembaga publik. Ia bukan protes marah — mengajukan 민원 lewat aplikasi atau situs kantor daerah adalah tindakan yang normal dan sering efektif, misalnya untuk lampu jalan mati atau sampah yang tak diangkut." },
+    { "type": "kotak", "title": "Mengeluh dengan efektif dalam bahasa Korea", "items": [
+     "**Jangan mulai dengan marah.** Petugas Korea terlatih menghadapi 진상 (pelanggan yang mengamuk) dengan bertahan. Nada tenang justru mendapat lebih banyak.",
+     "**Sebut angka dan tanggal.** 지난주 화요일, 주문번호 ○○○ — keluhan dengan data langsung masuk ke jalur penyelesaian.",
+     "**Katakan apa yang kamu inginkan.** 환불, 교환, 수리 — kalau tidak disebut, petugas akan menawarkan yang termurah bagi mereka.",
+     "**Kalimat penutup yang efektif:** 처리가 어려우시면 담당자분과 통화할 수 있을까요? — sopan, tapi menandakan kamu tidak akan berhenti di sini."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "ko": "불편하다", "baca": "bulpyeonhada", "id": "tidak nyaman" },
+  { "ko": "증상", "baca": "jeungsang", "id": "gejala" },
+  { "ko": "열이 나다", "baca": "yeori nada", "id": "demam" },
+  { "ko": "기침", "baca": "gichim", "id": "batuk" },
+  { "ko": "콧물", "baca": "konmul", "id": "ingus" },
+  { "ko": "몸살", "baca": "momsal", "id": "pegal sekujur badan" },
+  { "ko": "쑤시다", "baca": "ssusida", "id": "nyeri menusuk" },
+  { "ko": "결리다", "baca": "gyeollida", "id": "kaku dan nyeri" },
+  { "ko": "저리다", "baca": "jeorida", "id": "kesemutan" },
+  { "ko": "따갑다", "baca": "ttagapda", "id": "perih menyengat" },
+  { "ko": "붓다", "baca": "butda", "id": "bengkak" },
+  { "ko": "어지럽다", "baca": "eojireopda", "id": "pusing berputar" },
+  { "ko": "체하다", "baca": "chehada", "id": "masuk angin karena makanan" },
+  { "ko": "가렵다", "baca": "garyeopda", "id": "gatal" },
+  { "ko": "두드러기", "baca": "dudeuregi", "id": "biduran" },
+  { "ko": "편도", "baca": "pyeondo", "id": "amandel" },
+  { "ko": "관절", "baca": "gwanjeol", "id": "sendi" },
+  { "ko": "기운", "baca": "gieun", "id": "tenaga, hawa badan" },
+  { "ko": "독감", "baca": "dokgam", "id": "influenza" },
+  { "ko": "검사", "baca": "geomsa", "id": "pemeriksaan" },
+  { "ko": "진료", "baca": "jillyo", "id": "pemeriksaan dokter" },
+  { "ko": "처방전", "baca": "cheobangjeon", "id": "resep" },
+  { "ko": "약국", "baca": "yakguk", "id": "apotek" },
+  { "ko": "복용하다", "baca": "bogyonghada", "id": "meminum obat" },
+  { "ko": "식후", "baca": "sikhu", "id": "setelah makan" },
+  { "ko": "식전", "baca": "sikjeon", "id": "sebelum makan" },
+  { "ko": "공복", "baca": "gongbok", "id": "perut kosong" },
+  { "ko": "졸음", "baca": "joreum", "id": "kantuk" },
+  { "ko": "항생제", "baca": "hangsaengje", "id": "antibiotik" },
+  { "ko": "알레르기", "baca": "alleureugi", "id": "alergi" },
+  { "ko": "진단서", "baca": "jindanseo", "id": "surat keterangan diagnosis" },
+  { "ko": "소견서", "baca": "sogyeonseo", "id": "surat rujukan dokter" },
+  { "ko": "입원하다", "baca": "ibwonhada", "id": "dirawat inap" },
+  { "ko": "응급실", "baca": "eunggeupsil", "id": "unit gawat darurat" },
+  { "ko": "구급차", "baca": "gugeupcha", "id": "ambulans" },
+  { "ko": "의식", "baca": "uisik", "id": "kesadaran" },
+  { "ko": "쓰러지다", "baca": "sseureojida", "id": "pingsan, roboh" },
+  { "ko": "보험", "baca": "boheom", "id": "asuransi" },
+  { "ko": "실비보험", "baca": "silbiboheom", "id": "asuransi biaya nyata" },
+  { "ko": "청구하다", "baca": "cheongguhada", "id": "mengeklaim" },
+  { "ko": "자기부담금", "baca": "jagibudamgeum", "id": "bagian tanggungan sendiri" },
+  { "ko": "약관", "baca": "yakgwan", "id": "ketentuan polis" },
+  { "ko": "가입하다", "baca": "gaipada", "id": "mendaftar keanggotaan" },
+  { "ko": "환불", "baca": "hwanbul", "id": "pengembalian uang" },
+  { "ko": "교환", "baca": "gyohwan", "id": "penukaran" },
+  { "ko": "민원", "baca": "minwon", "id": "pengaduan warga" },
+  { "ko": "층간소음", "baca": "cheunggansoeum", "id": "kebisingan antarlantai" },
+  { "ko": "낫다", "baca": "natda", "id": "sembuh" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih kata kerja rasa sakit yang paling tepat.",
+   "items": [
+    "감기에 걸려서 온몸이 ____.",
+    "오래 앉아 있었더니 다리가 ____.",
+    "목이 부어서 침 삼킬 때 ____.",
+    "어깨가 ____ 고개를 못 돌리겠어요.",
+    "일어설 때 갑자기 ____."
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan dokter berikut dengan kalimat lengkap.",
+   "items": [
+    "어디가 불편하세요?",
+    "언제부터 그러셨어요?",
+    "열은 있으세요?",
+    "약은 드시고 계세요?",
+    "알레르기 있으세요?"
+   ]
+  },
+  {
+   "prompt": "Lengkapi aturan minum obat.",
+   "items": [
+    "하루 ____ 번 드세요. (tiga kali)",
+    "____ 삼십 분에 드시면 됩니다. (setelah makan)",
+    "____에 드시면 속이 쓰릴 수 있습니다. (perut kosong)",
+    "____ 전에 한 알 드세요. (sebelum tidur)",
+    "사흘 ____ 나왔습니다. (jatah tiga hari)"
+   ]
+  },
+  {
+   "prompt": "Susun panggilan darurat 119: tulis kalimat untuk tiap langkah.",
+   "items": [
+    "Apa yang terjadi (seseorang pingsan):",
+    "Di mana (di depan minimarket di jalan tempat tinggalmu):",
+    "Keadaan korban (tidak sadar, masih bernapas):",
+    "Siapa kamu (orang yang kebetulan lewat):"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "아픕니다 / 열이 / 사흘 / 목이 / 나고 / 전부터",
+    "부었네요 / 편도가 / 많이",
+    "있습니다 / 항생제 / 알레르기가 / 제가",
+    "됩니다 / 식후 / 하루 세 번 / 삼십 분에 / 드시면",
+    "필요하실 겁니다 / 영수증하고 / 사본이 / 약국 / 처방전"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimatmu sendiri, dalam bahasa Korea.",
+   "items": [
+    "Jelaskan kepada dokter tiga gejala yang kamu rasakan sejak seminggu lalu, dengan kata kerja yang berbeda-beda.",
+    "Tanyakan kepada apoteker apakah obatmu boleh diminum bersama obat lain.",
+    "Laporkan kepada penjual daring bahwa barang datang dalam keadaan pecah, dan minta penukaran.",
+    "Sampaikan keluhan tentang kebisingan antarlantai kepada pengelola gedung, dengan nada tenang."
+   ]
+  }
+ ],
+ "answers": [
+  "쑤셔요 — 저려요 — 따가워요 — 결려서 — 어지러워요",
+  "목이 아프고 열이 납니다. — 사흘 전부터입니다. — 네, 어젯밤에 삼십팔 도까지 났습니다. — 아니요, 아직 안 먹었습니다. — 네, 항생제 알레르기가 있습니다.",
+  "세 — 식후 — 공복 — 취침 — 치",
+  "사람이 쓰러졌어요. — ○○동 ○○길 편의점 앞이에요. — 의식이 없고 숨은 쉬고 있어요. — 저는 지나가던 사람입니다.",
+  "사흘 전부터 열이 나고 목이 아픕니다. — 편도가 많이 부었네요. — 제가 항생제 알레르기가 있습니다. — 하루 세 번 식후 삼십 분에 드시면 됩니다. — 약국 영수증하고 처방전 사본이 필요하실 겁니다.",
+  "일주일 전부터 목이 따갑고 온몸이 쑤시고 가끔 어지럽습니다. — 지금 먹고 있는 약이 있는데 같이 복용해도 될까요? — 지난주 화요일에 주문한 상품이 파손된 상태로 왔습니다. 사진 찍어 두었는데 교환이 가능할지 여쭤보고 싶습니다. — 안녕하세요. 층간소음 관련해서 문의드릴 게 있어서 연락드렸습니다. 밤 열한 시 이후에 소음이 계속돼서요. 한번 확인 부탁드립니다."
+ ]
+}
