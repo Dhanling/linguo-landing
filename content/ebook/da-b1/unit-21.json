@@ -1,0 +1,207 @@
+{
+  "title": "Menulis keluhan resmi",
+  "title_target": "En klage, der bliver taget alvorligt",
+  "goal": "Mengeluh dengan cara yang berhasil di Denmark: lisan yang tenang, tertulis yang kering, dan selalu dengan tanggal, angka, dan permintaan yang jelas.",
+  "bekal": [
+    "menuntut hak konsumen: *reklamation*, *fortrydelsesret*, *to års reklamationsret*",
+    "kalimat lisan untuk mengeluh tanpa terdengar agresif",
+    "kerangka baku surat keluhan Denmark",
+    "bahasa tertulis resmi: kering, tanpa kata kecil, tanpa emosi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Telefonsamtale med en netbutik",
+      "intro": "Mesin cuci yang Rizky beli rusak setelah lima bulan, dan toko daring menolak lewat email. Ia menelepon. Perhatikan bahwa nadanya tenang sepanjang percakapan — dan bahwa justru itulah yang membuatnya menang.",
+      "lines": [
+        { "speaker": "Kundeservice:", "text": "Kundeservice, du taler med Malene.", "id": "Layanan pelanggan, dengan Malene.", "literal": "pelanggan-layanan, kamu berbicara dengan Malene." },
+        { "speaker": "Rizky:", "text": "Hej Malene. Jeg ringer angående en vaskemaskine, jeg købte hos jer i marts. Ordrenummer 40912.", "id": "Halo Malene. Saya menelepon soal mesin cuci yang saya beli Maret. Nomor pesanan 40912.", "literal": "hai Malene. saya menelepon mengenai sebuah cuci-mesin, saya beli-dulu pada kalian pada maret. pesanan-nomor 40912." },
+        { "speaker": "Kundeservice:", "text": "Lige et øjeblik … ja, jeg kan se den. Hvad er problemet?", "id": "Sebentar … ya, saya lihat. Masalahnya apa?", "literal": "*lige* sebuah momen … ya, saya bisa lihat itu. apa adalah masalah-itu?" },
+        { "speaker": "Rizky:", "text": "Den stopper midt i programmet og viser en fejlkode. Det er sket seks gange på to uger.", "id": "Berhenti di tengah program dan muncul kode error. Sudah enam kali dalam dua minggu.", "literal": "itu berhenti tengah dalam program-itu dan menunjukkan sebuah kesalahan-kode. itu adalah terjadi enam kali pada dua minggu." },
+        { "speaker": "Kundeservice:", "text": "Har du prøvet at nulstille den?", "id": "Sudah coba di-reset?", "literal": "punya kamu coba-nya untuk nol-menyetel itu?" },
+        { "speaker": "Rizky:", "text": "Ja, tre gange, og jeg har fulgt vejledningen. Jeg skrev til jer den fjerde, og svaret var, at garantien ikke dækker.", "id": "Sudah, tiga kali, dan saya ikuti panduannya. Saya menulis tanggal empat, jawabannya garansi tidak menanggung.", "literal": "ya, tiga kali, dan saya punya ikut-nya panduan-itu. saya menulis-dulu ke kalian itu keempat, dan jawaban-itu adalah-dulu, bahwa garansi-itu tidak menutupi." },
+        { "speaker": "Kundeservice:", "text": "Det er rigtigt, garantien er på tre måneder.", "id": "Benar, garansinya tiga bulan.", "literal": "itu adalah benar, garansi-itu adalah pada tiga bulan." },
+        { "speaker": "Rizky:", "text": "Det forstår jeg. Men jeg påberåber mig reklamationsretten, ikke garantien. Den gælder i to år efter købsloven.", "id": "Saya paham. Tapi yang saya gunakan hak reklamasi, bukan garansi. Itu berlaku dua tahun menurut undang-undang pembelian.", "literal": "itu mengerti saya. tapi saya mengklaim diri reklamasi-hak-itu, tidak garansi-itu. itu berlaku selama dua tahun sesudah pembelian-hukum-itu." },
+        { "speaker": "Kundeservice:", "text": "Øh — ja. Det er korrekt. Så skal jeg have det videre til vores tekniske afdeling.", "id": "Eh — iya. Betul. Kalau begitu saya teruskan ke bagian teknis kami.", "literal": "eh — ya. itu adalah benar. lalu harus saya punya itu lebih-lanjut ke kami-punya teknis bagian." },
+        { "speaker": "Rizky:", "text": "Tak. Hvor lang tid tager det?", "id": "Terima kasih. Berapa lama?", "literal": "terima-kasih. berapa panjang waktu mengambil itu?" },
+        { "speaker": "Kundeservice:", "text": "Normalt fem hverdage, før de vender tilbage.", "id": "Biasanya lima hari kerja sampai mereka menghubungi.", "literal": "biasanya lima hari-kerja, sebelum mereka berbalik kembali." },
+        { "speaker": "Rizky:", "text": "Fint. Jeg vil gerne have det bekræftet skriftligt, at sagen er registreret i dag.", "id": "Baik. Saya minta konfirmasi tertulis bahwa perkaranya tercatat hari ini.", "literal": "bagus. saya mau senang punya itu konfirmasi-nya tertulis, bahwa perkara-itu adalah terdaftar-nya pada hari-ini." },
+        { "speaker": "Kundeservice:", "text": "Det sender jeg på mail nu.", "id": "Saya kirim lewat email sekarang.", "literal": "itu kirim saya pada surel sekarang." },
+        { "speaker": "Rizky:", "text": "Perfekt. Og hvad sker der, hvis den ikke kan repareres?", "id": "Sempurna. Kalau tidak bisa diperbaiki bagaimana?", "literal": "sempurna. dan apa terjadi di-sana, kalau itu tidak bisa diperbaiki?" },
+        { "speaker": "Kundeservice:", "text": "Så bliver den byttet eller pengene betalt tilbage. Det afgør teknikerne.", "id": "Ya ditukar atau uangnya dikembalikan. Teknisi yang memutuskan.", "literal": "lalu menjadi itu tukar-nya atau uang-itu bayar-nya kembali. itu memutuskan teknisi-teknisi-itu." },
+        { "speaker": "Rizky:", "text": "Godt. Hvis jeg ikke hører noget inden fredag i næste uge, kontakter jeg jer igen.", "id": "Bagus. Kalau sampai Jumat minggu depan belum ada kabar, saya hubungi lagi.", "literal": "bagus. kalau saya tidak dengar sesuatu sebelum jumat pada berikut minggu, menghubungi saya kalian lagi." },
+        { "speaker": "Kundeservice:", "text": "Det er helt i orden. Undskyld besværet.", "id": "Nggak masalah. Maaf atas kerepotannya.", "literal": "itu adalah sungguh dalam ketertiban. maaf kerepotan-itu." },
+        { "speaker": "Rizky:", "text": "Tak for hjælpen, Malene.", "id": "Terima kasih bantuannya, Malene.", "literal": "terima-kasih untuk bantuan-itu, Malene." }
+      ],
+      "notes": [
+        "**Yang memenangkan percakapan ini bukan kemarahan, melainkan tiga hal: nomor pesanan, tanggal, dan nama undang-undang.** Suara yang tenang ditambah fakta yang tepat jauh lebih berhasil di Denmark daripada nada tinggi — yang justru membuat orang bertahan.",
+        "***Reklamationsret* melawan *garanti* — dan ini pengetahuan yang bernilai uang.** Garansi adalah janji sukarela penjual dan bisa pendek. ***Reklamationsret*** adalah hak yang diberikan undang-undang (*købeloven*) dan berlaku **dua tahun** untuk hampir semua barang di Denmark. Banyak penjual berharap kamu tidak tahu bedanya.",
+        "***Fortrydelsesret*** adalah hak lain lagi: hak membatalkan pembelian daring dalam **14 hari** tanpa alasan apa pun. Ia hanya berlaku untuk pembelian jarak jauh, bukan untuk barang yang dibeli langsung di toko.",
+        "***Jeg vil gerne have det bekræftet skriftligt*** adalah kalimat yang harus kamu hafal. Konfirmasi tertulis mengubah percakapan telepon menjadi bukti — dan tanpa itu, perkaramu bisa hilang begitu saja di sistem.",
+        "**Menyebut langkah berikutnya membuat perkara bergerak.** *Hvis jeg ikke hører noget inden fredag, kontakter jeg jer igen.* Ini bukan ancaman; ia jadwal. Dan ia bekerja.",
+        "***Angående*** (mengenai) adalah kata pembuka yang tepat untuk semua urusan resmi, lisan maupun tertulis: *Jeg ringer **angående** …*, *Vedrørende ordre 40912 …*",
+        "**Perhatikan bahwa petugasnya salah, mengakuinya, dan tak ada yang meminta maaf berlebihan.** *Øh — ja. Det er korrekt.* Kesalahan diperbaiki dan percakapan berjalan terus. Ini pola khas Denmark: kesalahan bukan aib, asal langsung dibetulkan."
+      ],
+      "grammars": [
+        {
+          "title": "Mengeluh secara lisan",
+          "body": [
+            "Diurutkan dari pembuka sampai penutup. Ucapkan semuanya dengan nada datar — kalimat-kalimat ini sudah cukup tegas tanpa bantuan suara."
+          ],
+          "table": {
+            "head": ["Tahap", "Kalimat", "Arti"],
+            "rows": [
+              ["membuka", "Jeg ringer angående …", "Saya menelepon mengenai …"],
+              ["menyebut berkas", "Det drejer sig om ordre nummer …", "Ini soal pesanan nomor …"],
+              ["menyatakan masalah", "Der er et problem med …", "Ada masalah dengan …"],
+              ["menjelaskan", "Den holder op med at virke efter …", "Berhenti berfungsi setelah …"],
+              ["menyebut riwayat", "Jeg har allerede skrevet den 4.", "Saya sudah menulis tanggal 4."],
+              ["menuntut hak", "Jeg vil gerne gøre brug af reklamationsretten.", "Saya menggunakan hak reklamasi."],
+              ["meminta hasil", "Jeg vil gerne have den repareret / byttet / pengene tilbage.", "Saya minta diperbaiki / ditukar / uang kembali."],
+              ["minta tertulis", "Kan jeg få det bekræftet skriftligt?", "Bisa dikonfirmasi tertulis?"],
+              ["menanyakan waktu", "Hvornår kan jeg forvente svar?", "Kapan saya bisa berharap jawaban?"],
+              ["menyebut langkah lanjut", "Hvis jeg ikke hører noget inden …, kontakter jeg …", "Kalau belum ada kabar sebelum …"],
+              ["mengancam halus", "Ellers går jeg videre til Forbrugerklagenævnet.", "Kalau tidak, saya bawa ke badan pengaduan konsumen."],
+              ["menutup", "Tak for hjælpen.", "Terima kasih bantuannya."]
+            ]
+          },
+          "after": [
+            "***Forbrugerklagenævnet*** adalah badan resmi penyelesaian sengketa konsumen. Menyebutkannya adalah langkah terakhir, bukan pembuka — tapi ia nyata, murah, dan penjual tahu itu.",
+            "⚠️ **Jangan menaikkan suara.** Dalam budaya Denmark, marah di telepon memindahkan perhatian dari perkaramu ke perilakumu — dan sejak saat itu kamu berada di posisi yang lebih lemah, bahkan kalau kamu sepenuhnya benar."
+          ]
+        },
+        {
+          "title": "Bahasa tertulis resmi — kering dengan sengaja",
+          "body": [
+            "Bahasa Denmark tertulis resmi jauh berbeda dari bahasa lisan. Yang berikut ini adalah pergeseran yang paling sering diperlukan."
+          ],
+          "table": {
+            "head": ["Lisan", "Tertulis resmi", "Catatan"],
+            "rows": [
+              ["Jeg synes, det er for dyrt.", "Prisen forekommer mig for høj.", "hindari *synes*"],
+              ["Den er gået i stykker.", "Produktet er defekt.", "kata teknis"],
+              ["I har ikke svaret.", "Jeg har ikke modtaget svar.", "hindari menuduh langsung"],
+              ["Jeg vil have pengene tilbage.", "Jeg ønsker beløbet refunderet.", "*ønsker*, bukan *vil have*"],
+              ["Kan I lige …?", "Jeg beder jer venligst om at …", "tanpa *lige*"],
+              ["Det er noget rod.", "Sagen er ikke behandlet korrekt.", "tanpa emosi"],
+              ["Hvornår gør I noget?", "Jeg imødeser jeres svar inden den 15.", "sebut tanggal"],
+              ["Hilsen Rizky", "Med venlig hilsen / Venlig hilsen", "salam baku"]
+            ]
+          },
+          "after": [
+            "**Aturan tunggal yang menjelaskan seluruh tabel:** dalam tulisan resmi Denmark, kamu **menghapus dirimu sendiri dan menghapus perasaan**, lalu meninggalkan fakta dan tanggal. Tidak ada *jo*, *da*, *altså*, tidak ada tanda seru, tidak ada huruf besar untuk menekankan.",
+            "**Semakin tenang tulisanmu, semakin kuat ia dibaca.** Surat marah dianggap masalah pengirimnya; surat kering dengan lima tanggal dianggap masalah penerimanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kerangka surat keluhan",
+      "blocks": [
+        { "type": "p", "text": "Salin kerangka ini apa adanya; ia bekerja untuk toko, tuan tanah, perusahaan telepon, maupun kommune. Panjang idealnya sepuluh sampai lima belas baris — tidak lebih." },
+        {
+          "type": "tabel",
+          "head": ["Bagian", "Isi", "Contoh"],
+          "rows": [
+            ["judul", "jenis + nomor berkas", "**Reklamation vedrørende ordre 40912**"],
+            ["sapaan", "netral", "Til kundeservice / Kære …"],
+            ["baris 1", "apa dan kapan dibeli", "Den 12. marts 2026 købte jeg en vaskemaskine hos jer."],
+            ["baris 2", "apa yang salah, dengan fakta", "Maskinen stopper midt i programmet og viser fejlkode E4."],
+            ["baris 3", "sejak kapan, berapa kali", "Fejlen er opstået seks gange siden den 20. august."],
+            ["baris 4", "apa yang sudah kamu lakukan", "Jeg har nulstillet maskinen og fulgt vejledningen."],
+            ["baris 5", "riwayat hubungan", "Jeg skrev til jer den 4. september og modtog svar den 6."],
+            ["baris 6", "dasar hukumnya", "Jeg gør brug af reklamationsretten, jf. købeloven."],
+            ["baris 7", "**permintaanmu**", "Jeg ønsker maskinen repareret eller ombyttet."],
+            ["baris 8", "batas waktu", "Jeg imødeser jeres svar senest den 15. september."],
+            ["penutup", "salam + nama + kontak", "Med venlig hilsen, Rizky … , tlf. …"],
+            ["lampiran", "bukti", "Bilag: kvittering og billede af fejlkoden."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat aturan yang menentukan berhasil atau tidak",
+          "items": [
+            "**Sebutkan apa yang kamu inginkan.** Surat yang hanya menceritakan masalah tanpa permintaan yang jelas hampir selalu dijawab dengan permintaan maaf dan tidak ada tindakan. Tulislah satu kalimat: *Jeg ønsker …*",
+            "**Sebutkan tanggal.** Tanggal pembelian, tanggal kerusakan, tanggal suratmu sebelumnya, dan batas waktu jawaban. Empat tanggal mengubah keluhan menjadi berkas.",
+            "**Simpan semuanya.** Struk, tangkapan layar, email, nomor pesanan. Di Denmark, hampir semua sengketa konsumen diputuskan berdasarkan dokumen, bukan ingatan.",
+            "**Kirim lewat email atau e-Boks, bukan telepon.** Telepon untuk mempercepat, tulisan untuk membuktikan. Kalau sesuatu penting disepakati lewat telepon, kirim email menyusul: *Til bekræftelse af vores samtale i dag …*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en kundeservice", "baca": "KON-e-sör-vis", "id": "layanan pelanggan" },
+    { "da": "angående", "baca": "an-GO-e-ne", "id": "mengenai" },
+    { "da": "en vaskemaskine", "baca": "VAS-ge-ma-ski-ne", "id": "mesin cuci" },
+    { "da": "et ordrenummer", "baca": "OR-dra-nom-a", "id": "nomor pesanan" },
+    { "da": "en fejlkode", "baca": "FAIL-ko-dhe", "id": "kode kesalahan" },
+    { "da": "at nulstille", "baca": "NOL-sti-le", "id": "mengatur ulang" },
+    { "da": "en vejledning", "baca": "VAI-ledh-ning", "id": "panduan" },
+    { "da": "en garanti", "baca": "ga-ran-TI", "id": "garansi" },
+    { "da": "at dække", "baca": "DÈ-ge", "id": "menanggung, menutupi" },
+    { "da": "en reklamationsret", "baca": "re-kla-ma-SHONS-ret", "id": "hak reklamasi" },
+    { "da": "at gælde", "baca": "GÈL-e", "id": "berlaku" },
+    { "da": "en købelov", "baca": "KÖ-be-lou", "id": "undang-undang pembelian" },
+    { "da": "korrekt", "baca": "ko-REKT", "id": "benar" },
+    { "da": "en hverdag", "baca": "VEA-da", "id": "hari kerja" },
+    { "da": "skriftligt", "baca": "SKRIFT-lit", "id": "secara tertulis" },
+    { "da": "at bytte", "baca": "BÜ-de", "id": "menukar" },
+    { "da": "at afgøre", "baca": "AU-gö-a", "id": "memutuskan" },
+    { "da": "et besvær", "baca": "be-SVÈA", "id": "kerepotan" },
+    { "da": "at imødese", "baca": "i-MÖ-dhe-se", "id": "menantikan (resmi)" },
+    { "da": "et bilag", "baca": "BI-la", "id": "lampiran" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata yang tepat: **garanti, reklamationsret, fortrydelsesret, kvittering, bilag, frist**.",
+      "items": [
+        "Efter købeloven har jeg to års ____.",
+        "Jeg har stadig ____ fra butikken som bevis.",
+        "Ved køb på nettet har man 14 dages ____.",
+        "____ på produktet var kun tre måneder.",
+        "Jeg vedlægger et ____ med billeder af fejlen.",
+        "____ for at svare er den 15. september."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi bahasa tertulis resmi.",
+      "items": [
+        "Jeg synes, det er for dyrt.",
+        "Den er gået i stykker.",
+        "I har ikke svaret mig.",
+        "Jeg vil have pengene tilbage.",
+        "Kan I lige gøre noget ved det?",
+        "Hvornår sker der noget?"
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "jeg / ringer / angående / en vaskemaskine / jeg / købte / hos jer / i marts",
+        "fejlen / er / opstået / seks gange / siden / den tyvende august",
+        "jeg / gør / brug / af / reklamationsretten",
+        "jeg / vil / gerne / have / det / bekræftet / skriftligt",
+        "jeg / imødeser / jeres / svar / senest / den femtende"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark, dengan nada resmi.",
+      "items": [
+        "Saya menelepon mengenai pesanan nomor 40912.",
+        "Mesinnya berhenti di tengah program.",
+        "Saya menggunakan hak reklamasi, bukan garansi.",
+        "Saya minta mesinnya diperbaiki atau ditukar.",
+        "Saya menantikan jawaban Anda paling lambat tanggal 15."
+      ]
+    }
+  ],
+  "answers": [
+    "reklamationsret — kvitteringen — fortrydelsesret — Garantien — bilag — Fristen",
+    "Prisen forekommer mig for høj. — Produktet er defekt. — Jeg har ikke modtaget svar. — Jeg ønsker beløbet refunderet. — Jeg beder jer venligst om at udbedre fejlen. — Jeg imødeser jeres svar inden den 15.",
+    "Jeg ringer angående en vaskemaskine, jeg købte hos jer i marts. — Fejlen er opstået seks gange siden den tyvende august. — Jeg gør brug af reklamationsretten. — Jeg vil gerne have det bekræftet skriftligt. — Jeg imødeser jeres svar senest den femtende.",
+    "Jeg ringer angående ordre nummer 40912. — Maskinen stopper midt i programmet. — Jeg gør brug af reklamationsretten, ikke garantien. — Jeg ønsker maskinen repareret eller ombyttet. — Jeg imødeser jeres svar senest den 15."
+  ],
+  "wave": "Ulangi unit 19. Lalu tulislah satu surat keluhan sungguhan — sepuluh baris, dengan empat tanggal dan satu permintaan yang jelas. Kalau tidak ada yang perlu kamu keluhkan, tulislah tentang barang mana pun di rumahmu yang pernah rusak. Tulisan resmi hanya bisa dilatih dengan menulis."
+}

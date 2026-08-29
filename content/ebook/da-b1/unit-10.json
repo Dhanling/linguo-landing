@@ -1,0 +1,232 @@
+{
+  "title": "Kata kerja yang berubah arti karena satu kata kecil",
+  "title_target": "Jeg kunne ikke finde ud af det",
+  "goal": "Mengenali dan memakai kata kerja berpartikel — pasangan yang artinya tidak bisa ditebak dari kata kerjanya sendiri.",
+  "bekal": [
+    "partikel bertekanan yang mengubah arti: *op, ud, af, i, til, ned, med*",
+    "letak partikel ketika ada objek, kata ganti, atau *ikke*",
+    "beda *slå op* dan *opslå*, *finde ud af* dan *udfinde*",
+    "tiga puluh pasangan yang paling sering dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Nabosnak over hækken",
+      "intro": "Rizky sedang berjuang dengan sebuah surat dari kommune, dan tetangganya, Birthe, mendengar keluhannya. Hitunglah berapa kata kerja berpartikel yang muncul — jawabannya lebih dari dua puluh.",
+      "lines": [
+        { "speaker": "Birthe:", "text": "Du ser træt ud. Er du kommet i gang med haven?", "id": "Kamu kelihatan capek. Kebunnya sudah mulai digarap?", "literal": "kamu lihat lelah keluar. adalah kamu datang-nya dalam jalan dengan kebun-itu?" },
+        { "speaker": "Rizky:", "text": "Nej, jeg har siddet hele formiddagen og prøvet at finde ud af et brev fra kommunen.", "id": "Belum, seharian tadi aku duduk berusaha ngerti surat dari kommune.", "literal": "tidak, saya punya duduk-nya seluruh pagi-itu dan coba-nya untuk menemukan keluar dari sebuah surat dari kommune-itu." },
+        { "speaker": "Birthe:", "text": "Nå, dem er der ingen der forstår. Hvad drejer det sig om?", "id": "Wah, itu nggak ada yang ngerti. Soal apa memangnya?", "literal": "nah, mereka adalah di-sana tidak-ada yang mengerti. apa memutar itu diri tentang?" },
+        { "speaker": "Rizky:", "text": "De skriver, at jeg skal betale noget tilbage. Men jeg kan ikke regne ud hvor meget.", "id": "Mereka nulis aku harus balikin sejumlah uang. Tapi aku nggak bisa hitung berapa.", "literal": "mereka menulis, bahwa saya harus membayar sesuatu kembali. tapi saya bisa tidak menghitung keluar berapa banyak." },
+        { "speaker": "Birthe:", "text": "Har du ringet dem op?", "id": "Sudah kamu telepon?", "literal": "punya kamu menelepon mereka atas?" },
+        { "speaker": "Rizky:", "text": "Jeg ringede op i morges, men de lagde på efter fyrre minutter.", "id": "Tadi pagi aku telepon, tapi mereka nutup setelah empat puluh menit.", "literal": "saya menelepon-dulu atas pada pagi-ini, tapi mereka meletakkan-dulu atas sesudah empat-puluh menit." },
+        { "speaker": "Birthe:", "text": "Så må du skrive til dem i stedet. Og gem kopien — smid den ikke ud.", "id": "Kalau gitu tulis surat saja. Terus salinannya simpan — jangan dibuang.", "literal": "jadi harus kamu menulis ke mereka dalam ganti. dan simpan salinan-itu — buang itu tidak keluar." },
+        { "speaker": "Rizky:", "text": "Jeg har allerede printet det hele ud. Jeg giver ikke op så let.", "id": "Semuanya sudah kuprint. Aku nggak nyerah segampang itu.", "literal": "saya punya sudah cetak-nya itu seluruh keluar. saya memberi tidak atas begitu mudah." },
+        { "speaker": "Birthe:", "text": "Godt. Man skal holde ud med de folk. Slog du reglerne op på nettet?", "id": "Bagus. Sama orang-orang itu harus tahan. Kamu sudah cari aturannya di internet?", "literal": "bagus. orang harus memegang keluar dengan itu orang. pukul-dulu kamu aturan-aturan-itu atas pada jaring-itu?" },
+        { "speaker": "Rizky:", "text": "Jeg slog dem op, men jeg forstod dem ikke. Sproget lukker sig om sig selv.", "id": "Sudah, tapi aku nggak ngerti. Bahasanya nutup diri sendiri.", "literal": "saya pukul-dulu mereka atas, tapi saya mengerti-dulu mereka tidak. bahasa-itu menutup diri tentang diri sendiri." },
+        { "speaker": "Birthe:", "text": "Prøv borgerservice. De hjælper dig med at fylde papirerne ud.", "id": "Coba ke borgerservice. Mereka bantu isi formulirnya.", "literal": "coba warga-layanan. mereka menolong kamu dengan untuk mengisi kertas-kertas-itu keluar." },
+        { "speaker": "Rizky:", "text": "Skal jeg bestille tid, eller møder man bare op?", "id": "Perlu bikin janji, atau datang saja?", "literal": "harus saya memesan waktu, atau bertemu orang cuma atas?" },
+        { "speaker": "Birthe:", "text": "Bestil tid. Ellers står du op i to timer.", "id": "Bikin janji. Kalau nggak, kamu berdiri dua jam.", "literal": "pesan waktu. kalau-tidak berdiri kamu atas selama dua jam." },
+        { "speaker": "Rizky:", "text": "Jeg skriver det ned med det samme. Tak, Birthe.", "id": "Aku catat sekarang juga. Makasih, Birthe.", "literal": "saya menulis itu turun dengan itu sama. terima-kasih, Birthe." },
+        { "speaker": "Birthe:", "text": "Og hør her — hvis de ringer tilbage, så tag den. De ringer kun én gang.", "id": "Terus dengar ya — kalau mereka telepon balik, angkat. Mereka cuma telepon sekali.", "literal": "dan dengar di-sini — kalau mereka menelepon kembali, lalu ambil itu. mereka menelepon cuma satu kali." },
+        { "speaker": "Rizky:", "text": "Det finder jeg ud af nu. Jeg sætter telefonen på højeste lyd.", "id": "Nanti aku urus. HP-ku kusetel suara paling keras.", "literal": "itu menemukan saya keluar dari sekarang. saya menaruh telepon-itu pada tertinggi bunyi." },
+        { "speaker": "Birthe:", "text": "Sådan skal det være. Kom forbi, når du har fundet ud af det.", "id": "Nah gitu dong. Mampir ya kalau sudah beres.", "literal": "begitu harus itu berada. datang lewat, ketika kamu punya temukan-nya keluar dari itu." },
+        { "speaker": "Rizky:", "text": "Så tager jeg kage med. Jeg regner med, at det ender godt.", "id": "Nanti aku bawa kue. Aku yakin bakal berakhir baik.", "literal": "jadi ambil saya kue serta. saya menghitung dengan, bahwa itu berakhir baik." }
+      ],
+      "notes": [
+        "**Ini unit yang paling banyak memberi hasil per jam belajar.** Kata kerja berpartikel adalah tulang punggung bahasa Denmark sehari-hari, dan hampir tak satu pun bisa ditebak dari arti kata kerjanya sendiri. *Finde* = menemukan; *finde **ud af*** = memahami, mencari tahu.",
+        "**Partikelnya bertekanan.** *Jeg ringer **OP*** — tekanan jatuh pada partikelnya, bukan pada kata kerjanya. Inilah yang membedakannya dari preposisi biasa: *jeg går **op** ad trappen* (naik tangga, preposisi, tanpa tekanan khusus) melawan *jeg **står OP** klokken seks* (bangun tidur, partikel bertekanan).",
+        "**Objek berdiri SESUDAH partikel — kecuali kalau objeknya kata ganti.** *Jeg slog **reglerne op**.* Bandingkan: *Jeg slog **dem op**.* Kata ganti selalu menyelinap di antara kata kerja dan partikelnya. Ini aturan yang jarang dijelaskan tapi selalu diperhatikan telinga Denmark.",
+        "***Ikke* berdiri sebelum partikel:** *Smid den **ikke ud**.* *Jeg giver **ikke op**.* Sama seperti keterangan pendek lain, ia mengambil tempat tepat sesudah kata kerja bernomor dan subjeknya.",
+        "**Sebagian besar punya kembaran satu kata yang artinya lain.** *Slå op* (mencari, atau memutuskan hubungan) melawan *opslag* (pengumuman). *Skrive under* (menandatangani) melawan *underskrive* (juga menandatangani, tapi lebih resmi). Bentuk satu kata biasanya lebih formal dan lebih sering muncul dalam tulisan.",
+        "***Regne ud* dan *regne med* berasal dari kata kerja yang sama tapi tak berhubungan artinya:** *regne ud* = menghitung, memahami; *regne med* = memperhitungkan, yakin. Dan *regne* sendirian berarti \"hujan\". Tiga arti, satu kata.",
+        "***Møde op*** (datang, hadir) adalah salah satu yang paling sering di dunia kerja Denmark: *Du skal møde op klokken syv.* Sepupunya: *dukke op* (muncul tiba-tiba), *stille op* (bersedia, mencalonkan diri)."
+      ],
+      "grammars": [
+        {
+          "title": "Letak partikel dan objek",
+          "body": [
+            "Kata kerja berpartikel punya urutan yang tetap, dan satu-satunya hal yang mengubahnya adalah jenis objeknya."
+          ],
+          "table": {
+            "head": ["Jenis kalimat", "Susunan", "Contoh"],
+            "rows": [
+              ["tanpa objek", "kkerja – partikel", "Jeg **giver op**."],
+              ["objek kata benda", "kkerja – partikel – objek", "Jeg **slog reglerne op**."],
+              ["objek kata benda (juga boleh)", "kkerja – objek – partikel", "Jeg **skrev det ned**."],
+              ["objek kata ganti", "kkerja – **kata ganti** – partikel", "Jeg **slog dem op**."],
+              ["dengan *ikke*", "kkerja – *ikke* – partikel", "Jeg **giver ikke op**."],
+              ["perfektum", "har – objek – participium – partikel", "Jeg har **printet det ud**."],
+              ["dengan modal", "modal – infinitiv – partikel", "Jeg vil **finde ud af** det."],
+              ["anak kalimat", "subjek – *ikke* – kkerja – partikel", "… at jeg **ikke giver op**."]
+            ]
+          },
+          "after": [
+            "**Baris ketiga dan keempat adalah intinya.** Objek berupa kata benda boleh berdiri di dua tempat — kedua-duanya benar, dan orang Denmark memakai keduanya. Objek berupa kata ganti (*den, det, dem, mig, dig*) **wajib** berdiri sebelum partikel. *Jeg slog op dem* langsung terdengar salah.",
+            "**Kata kerja berpartikel dengan dua bagian** seperti *finde ud af*, *holde op med*, *komme i gang med* memperlakukan seluruh ekornya sebagai satu paket: *Jeg kan ikke **finde ud af** det*, *Han er **holdt op med** at ryge*."
+          ]
+        },
+        {
+          "title": "Tiga puluh pasangan yang paling sering",
+          "body": [
+            "Hafalkan sepuluh sehari selama tiga hari. Kolom terakhir memperlihatkan bahwa arti kata kerjanya sendiri hampir tak menolong."
+          ],
+          "table": {
+            "head": ["Pasangan", "Arti", "Kata kerja sendirian"],
+            "rows": [
+              ["finde ud af", "memahami, mencari tahu", "finde = menemukan"],
+              ["holde op (med)", "berhenti (melakukan)", "holde = memegang"],
+              ["give op", "menyerah", "give = memberi"],
+              ["stå op", "bangun tidur", "stå = berdiri"],
+              ["slå op", "mencari (di buku/web), putus", "slå = memukul"],
+              ["ringe op", "menelepon", "ringe = berdering"],
+              ["lægge på", "menutup telepon", "lægge = meletakkan"],
+              ["ringe tilbage", "menelepon balik", "—"],
+              ["skrive ned", "mencatat", "skrive = menulis"],
+              ["skrive under", "menandatangani", "—"],
+              ["fylde ud", "mengisi (formulir)", "fylde = mengisi"],
+              ["printe ud", "mencetak", "—"],
+              ["smide ud", "membuang", "smide = melempar"],
+              ["rydde op", "beres-beres", "rydde = membersihkan"],
+              ["tage af sted", "berangkat", "tage = mengambil"],
+              ["komme i gang (med)", "mulai bergerak", "komme = datang"],
+              ["sætte i gang", "menjalankan, memulai", "sætte = meletakkan"],
+              ["møde op", "datang, hadir", "møde = bertemu"],
+              ["dukke op", "muncul", "dukke = —"],
+              ["regne ud", "menghitung, memahami", "regne = hujan"],
+              ["regne med", "memperhitungkan, yakin", "—"],
+              ["betale tilbage", "mengembalikan uang", "betale = membayar"],
+              ["se ud", "kelihatan (rupa)", "se = melihat"],
+              ["holde ud", "tahan, bertahan", "—"],
+              ["falde i søvn", "tertidur", "falde = jatuh"],
+              ["tænke over", "memikirkan", "tænke = berpikir"],
+              ["tage sig af", "mengurus", "—"],
+              ["gå i gang", "mulai mengerjakan", "gå = berjalan"],
+              ["lukke ned", "menutup, mematikan", "lukke = menutup"],
+              ["hente ned / op", "mengunduh / mengunggah", "hente = menjemput"]
+            ]
+          },
+          "after": [
+            "**Cara belajar yang berhasil:** jangan menghafal daftarnya sebagai daftar. Ambil sepuluh, lalu tulis satu kalimat sendiri untuk masing-masing — kalimat tentang hidupmu, bukan kalimat contoh. Kata kerja berpartikel menempel lewat pemakaian, bukan lewat tabel."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Satu kata kerja, banyak partikel",
+      "blocks": [
+        { "type": "p", "text": "Beberapa kata kerja Denmark berpasangan dengan banyak partikel sekaligus, dan tiap pasangan berarti lain. Kalau kamu menguasai empat kata kerja di bawah ini beserta seluruh partikelnya, kamu sudah memegang sebagian besar percakapan sehari-hari." },
+        {
+          "type": "tabel",
+          "head": ["Kata kerja", "Pasangan", "Arti"],
+          "rows": [
+            ["**tage**", "tage af sted", "berangkat"],
+            ["", "tage med", "ikut, membawa serta"],
+            ["", "tage på", "memakai; menambah berat badan"],
+            ["", "tage af", "melepas; berkurang"],
+            ["", "tage sig af", "mengurus"],
+            ["", "tage fat", "mulai mengerjakan"],
+            ["**holde**", "holde op", "berhenti"],
+            ["", "holde ud", "tahan"],
+            ["", "holde af", "menyayangi"],
+            ["", "holde fast", "berpegang teguh"],
+            ["", "holde med", "mendukung (tim)"],
+            ["**komme**", "komme i gang", "mulai bergerak"],
+            ["", "komme forbi", "mampir"],
+            ["", "komme til at", "tak sengaja; akan"],
+            ["", "komme sig", "pulih"],
+            ["", "komme ud af det med", "cocok dengan (orang)"],
+            ["**slå**", "slå op", "mencari; putus"],
+            ["", "slå fra", "mematikan (saklar)"],
+            ["", "slå til", "cukup; menerima tawaran"],
+            ["", "slå sig", "terbentur, terluka"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua jebakan yang sering memalukan",
+          "items": [
+            "***Slå op med nogen*** berarti **memutuskan hubungan pacaran**, bukan mencari nama seseorang. Kalau kamu ingin mencari nama seseorang di internet, katanya *google ham* atau *søge på ham*. Kalimat *jeg slog min chef op* akan mengejutkan pendengarmu.",
+            "***Tage på*** berarti \"memakai baju\" — tapi juga \"bertambah gemuk\". *Jeg har taget på i vinter* berarti berat badanmu naik, bukan kamu memakai sesuatu. Konteksnya biasanya jelas, tapi tidak selalu.",
+            "***Komme sig*** (pulih) sangat mirip dengan *komme* biasa. *Han kommer sig langsomt* = dia pulih perlahan. Tanpa *sig*, artinya cuma \"dia datang perlahan\".",
+            "***Holde af*** berarti sayang, dan ia lebih lembut daripada *elske*. Orang Denmark memakai *jeg elsker dig* jauh lebih jarang daripada penutur bahasa Inggris memakai \"I love you\" — *jeg holder af dig* sering kali yang sebenarnya dimaksud."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en hæk", "baca": "hèk", "id": "pagar tanaman" },
+    { "da": "en formiddag", "baca": "FOR-mi-da", "id": "pagi menjelang siang" },
+    { "da": "at dreje sig om", "baca": "DRAI-e sai om", "id": "berkaitan dengan" },
+    { "da": "at regne ud", "baca": "RAI-ne udh", "id": "menghitung, memahami" },
+    { "da": "at lægge på", "baca": "LÈ-ge po", "id": "menutup telepon" },
+    { "da": "en kopi", "baca": "ko-PI", "id": "salinan" },
+    { "da": "at smide ud", "baca": "SMI-dhe udh", "id": "membuang" },
+    { "da": "at give op", "baca": "gi op", "id": "menyerah" },
+    { "da": "at holde ud", "baca": "HOL-e udh", "id": "bertahan, tahan" },
+    { "da": "at slå op", "baca": "slo op", "id": "mencari di buku/web" },
+    { "da": "et net", "baca": "net", "id": "jaring, internet" },
+    { "da": "en borgerservice", "baca": "BOR-a-sör-vis", "id": "loket pelayanan warga" },
+    { "da": "at fylde ud", "baca": "FÜL-e udh", "id": "mengisi formulir" },
+    { "da": "et papir", "baca": "pa-PIA", "id": "kertas, dokumen" },
+    { "da": "at bestille tid", "baca": "be-STIL-e tidh", "id": "membuat janji" },
+    { "da": "at møde op", "baca": "MÖ-dhe op", "id": "datang, hadir" },
+    { "da": "at skrive ned", "baca": "SKRI-ve nedh", "id": "mencatat" },
+    { "da": "med det samme", "baca": "medh de SAM-e", "id": "sekarang juga" },
+    { "da": "at regne med", "baca": "RAI-ne medh", "id": "memperhitungkan, yakin" },
+    { "da": "at ende", "baca": "EN-e", "id": "berakhir" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan partikel yang benar: **op, ud, af, ned, med, tilbage, i gang**.",
+      "items": [
+        "Jeg kan ikke finde ____ ____ det.",
+        "Hun holdt ____ med at ryge sidste år.",
+        "Kan du ringe mig ____ i morgen?",
+        "Jeg skriver det ____ med det samme.",
+        "Smid det ikke ____ — jeg skal bruge det.",
+        "Vi må komme ____ ____ med haven."
+      ]
+    },
+    {
+      "prompt": "Susun ulang dengan objek yang benar. Perhatikan kata ganti.",
+      "items": [
+        "Jeg slog reglerne op. → (dem) ____",
+        "Han printede papirerne ud. → (dem) ____",
+        "Vi skrev adressen ned. → (den) ____",
+        "Hun ringede chefen op. → (ham) ____",
+        "Jeg smed brevet ud. → (det) ____",
+        "De fyldte skemaet ud. → (det) ____"
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "jeg / giver / ikke / op / så let",
+        "har / du / ringet / dem / op",
+        "de / hjælper / dig / med / at / fylde / papirerne / ud",
+        "jeg / regner / med / at / det / ender / godt",
+        "kom / forbi / når / du / har / fundet / ud / af / det"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Aku tidak bisa memahami surat itu.",
+        "Dia berhenti merokok tahun lalu.",
+        "Aku catat sekarang juga.",
+        "Jangan dibuang.",
+        "Kamu kelihatan capek."
+      ]
+    }
+  ],
+  "answers": [
+    "ud af — op — op — ned — ud — i gang",
+    "Jeg slog dem op. — Han printede dem ud. — Vi skrev den ned. — Hun ringede ham op. — Jeg smed det ud. — De fyldte det ud.",
+    "Jeg giver ikke op så let. — Har du ringet dem op? — De hjælper dig med at fylde papirerne ud. — Jeg regner med, at det ender godt. — Kom forbi, når du har fundet ud af det.",
+    "Jeg kan ikke finde ud af brevet. — Hun holdt op med at ryge sidste år. — Jeg skriver det ned med det samme. — Smid det ikke ud. — Du ser træt ud."
+  ],
+  "wave": "Ulangi unit 8. Lalu ambil sepuluh pasangan dari tabel besar dan tulis satu kalimat untuk masing-masing tentang **hari ini** — apa yang kamu catat, apa yang kamu buang, kapan kamu bangun. Kalimat tentang hidup sendiri menempel; kalimat contoh tidak."
+}

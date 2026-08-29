@@ -1,0 +1,210 @@
+{
+  "title": "Akhir pekanmu ngapain saja?",
+  "title_target": "Hvad har du lavet i weekenden?",
+  "goal": "Menceritakan kejadian yang sudah lewat dengan perfektum, dan memilih har atau er tanpa berhenti berpikir.",
+  "bekal": [
+    "membentuk perfektum participium dari kata kerja lemah dan kuat",
+    "memilih antara *har* dan *er* sebagai kata kerja bantu",
+    "menceritakan akhir pekan tanpa menerjemahkan kata *sudah*",
+    "kata kerja gerak yang berganti kata bantu begitu ada tujuan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Mandag morgen på kontoret",
+      "intro": "Rizky baru masuk kantor Senin pagi dan Mette, kolega di meja sebelah, menanyakan akhir pekannya. Perhatikan bahwa hampir setiap kalimat lampau di sini terbelah dua: kata bantu *har* atau *er* di tempat kedua, dan kata kerja aslinya menunggu di ujung.",
+      "lines": [
+        { "speaker": "Mette:", "text": "Godmorgen! Hvordan var din weekend?", "id": "Selamat pagi! Gimana akhir pekanmu?", "literal": "selamat-pagi! bagaimana adalah milikmu akhir-pekan?" },
+        { "speaker": "Rizky:", "text": "Rigtig god, faktisk. Jeg har været i København.", "id": "Bagus banget, sebenarnya. Aku ke Kopenhagen.", "literal": "sungguh bagus, faktanya. saya punya berada di København." },
+        { "speaker": "Mette:", "text": "Nå! Hvornår tog du af sted?", "id": "Wah! Kamu berangkat kapan?", "literal": "nah! kapan ambil kamu dari tempat?" },
+        { "speaker": "Rizky:", "text": "Jeg tog toget fredag aften. Jeg er først kommet hjem i går.", "id": "Aku naik kereta Jumat malam. Aku baru pulang kemarin.", "literal": "saya ambil kereta-itu jumat malam. saya adalah baru datang rumah kemarin." },
+        { "speaker": "Mette:", "text": "Var du alene?", "id": "Kamu sendirian?", "literal": "adalah kamu sendirian?" },
+        { "speaker": "Rizky:", "text": "Nej, jeg er taget derover sammen med Lars. Vi har gået rundt i byen hele lørdagen.", "id": "Nggak, aku ke sana bareng Lars. Kami jalan-jalan keliling kota seharian Sabtu.", "literal": "tidak, saya adalah ambil-nya ke-sana bersama dengan Lars. kami punya berjalan keliling di kota-itu seluruh sabtu-itu." },
+        { "speaker": "Mette:", "text": "Har I set noget?", "id": "Kalian lihat apa saja?", "literal": "punya kalian lihat-nya sesuatu?" },
+        { "speaker": "Rizky:", "text": "Vi har været på Louisiana. Og bagefter er vi cyklet ud til Refshaleøen.", "id": "Kami ke Louisiana. Habis itu kami sepedaan ke Refshaleøen.", "literal": "kami punya berada di Louisiana. dan sesudahnya adalah kami bersepeda keluar ke Refshaleøen." },
+        { "speaker": "Mette:", "text": "I har cyklet? I regnvejr?", "id": "Kalian sepedaan? Hujan-hujan begitu?", "literal": "kalian punya bersepeda? dalam hujan-cuaca?" },
+        { "speaker": "Rizky:", "text": "Det holdt op ved middagstid. Vi har siddet på en café i to timer og ventet.", "id": "Berhentinya pas tengah hari. Kami duduk di kafe dua jam sambil nunggu.", "literal": "itu pegang atas pada tengah-hari-waktu. kami punya duduk-nya di sebuah kafe selama dua jam dan tunggu-nya." },
+        { "speaker": "Mette:", "text": "Det lyder hyggeligt. Har I spist noget godt?", "id": "Kedengarannya asyik. Kalian makan yang enak-enak?", "literal": "itu berbunyi menyenangkan. punya kalian makan-nya sesuatu bagus?" },
+        { "speaker": "Rizky:", "text": "Vi har spist alt for meget. Jeg har fået tre kanelsnegle på én dag.", "id": "Kami makan kebanyakan. Aku makan tiga kanelsnegle dalam sehari.", "literal": "kami punya makan-nya semua terlalu banyak. saya punya dapat-nya tiga kayu-manis-siput pada satu hari." },
+        { "speaker": "Mette:", "text": "Tre? Det er da imponerende.", "id": "Tiga? Hebat juga kamu.", "literal": "tiga? itu adalah *da* mengesankan." },
+        { "speaker": "Rizky:", "text": "Og søndag er jeg blevet syg. Selvfølgelig.", "id": "Terus hari Minggu aku sakit. Ya jelas.", "literal": "dan minggu adalah saya jadi-nya sakit. tentu-saja." },
+        { "speaker": "Mette:", "text": "Nej, hvor ærgerligt! Er du gået til lægen?", "id": "Aduh, sayang banget! Kamu ke dokter?", "literal": "tidak, betapa menjengkelkan! adalah kamu pergi-nya ke dokter-itu?" },
+        { "speaker": "Rizky:", "text": "Nej nej, det var bare min mave. Den er blevet god igen.", "id": "Nggak kok, cuma perutku. Sekarang sudah baikan.", "literal": "tidak tidak, itu adalah cuma milikku perut. itu adalah jadi-nya baik lagi." },
+        { "speaker": "Mette:", "text": "Godt. Og hvornår er I så kørt hjem?", "id": "Syukur. Terus kalian pulangnya kapan?", "literal": "bagus. dan kapan adalah kalian lalu berkendara-nya rumah?" },
+        { "speaker": "Rizky:", "text": "Søndag eftermiddag. Vi har holdt i kø ved Storebælt i halvanden time.", "id": "Minggu sore. Kami ngantre di Storebælt satu setengah jam.", "literal": "minggu sesudah-tengah-hari. kami punya pegang-nya dalam antrean di Storebælt selama satu-setengah jam." },
+        { "speaker": "Mette:", "text": "Så er du nok træt i dag.", "id": "Berarti kamu capek dong hari ini.", "literal": "jadi adalah kamu *nok* lelah pada hari-ini." },
+        { "speaker": "Rizky:", "text": "Jeg har drukket tre kopper kaffe, og klokken er kun ni.", "id": "Aku sudah minum tiga cangkir kopi, padahal baru jam sembilan.", "literal": "saya punya minum-nya tiga cangkir kopi, dan jam-itu adalah cuma sembilan." }
+      ],
+      "notes": [
+        "**Perfektum adalah bentuk lampau sehari-hari.** Kalau orang Denmark menceritakan apa yang terjadi kemarin, sebagian besar kalimatnya berbentuk *har/er* + participium. Bentuk *jeg arbejdede*, *jeg gik* yang kamu kenal dari A1 memang ada dan sering dipakai juga — tapi pembagian kerjanya baru diurus di unit 2.",
+        "**Jangan menerjemahkan kata *sudah*.** Ini jebakan terbesar penutur Indonesia. *Saya sudah makan* memang *jeg har spist*, tapi *saya makan di rumah kemarin* juga bisa *jeg har spist hjemme i går*. Perfektum tidak berarti \"sudah\"; ia berarti \"kejadiannya lampau, dan sekarang saya bercerita tentangnya\".",
+        "**Participium berjalan ke ujung kalimat, sejauh apa pun ujungnya.** *Vi har siddet på en café i to timer og **ventet**.* Kata bantu berdiri di tempat kedua, dan semua keterangan terjepit di antara keduanya. Kalau kalimatmu berakhir dengan kata benda, kemungkinan besar participium-nya tersesat.",
+        "***Vi har cyklet* berbeda dari *vi er cyklet ud til Refshaleøen*** — kata kerjanya sama persis. Bedanya bukan pada kata kerjanya, melainkan pada **ada atau tidaknya tujuan**. Tanpa tujuan, yang diceritakan adalah kegiatannya → *har*. Dengan *til*, *hjem*, *ud*, yang diceritakan adalah perpindahannya → *er*. Semua kata kerja gerak berperilaku begini.",
+        "***Er blevet syg* dan *er blevet god igen*** memakai *er* karena yang terjadi adalah **perubahan keadaan**, bukan perpindahan tempat. *Blive* adalah kata kerja perubahan yang paling sering muncul di bahasa Denmark, dan ia hampir selalu memakai *er*.",
+        "***Tage af sted*** (berangkat) dan ***holde op*** (berhenti) adalah kata kerja berpartikel: artinya lahir dari gabungan, bukan dari kata kerjanya sendiri. *Tage* sendirian berarti \"mengambil\". Jenis kata ini punya unitnya sendiri di unit 10; untuk sekarang cukup dikenali sebagai satu paket.",
+        "***Det er da imponerende* dan *du er nok træt*** menyelipkan kata kecil yang tak punya terjemahan. *Da* melunakkan sekaligus menegaskan (\"hebat juga\"), *nok* menandai dugaan (\"kayaknya\"). Kata-kata ini diurus tuntas di unit 16 — dibiarkan hidup di dialog sejak sekarang supaya telingamu mulai terbiasa."
+      ],
+      "grammars": [
+        {
+          "title": "har atau er — dua pertanyaan, selesai",
+          "body": [
+            "Hampir semua kata kerja memakai *har*. Yang memakai *er* jumlahnya sedikit, dan semuanya masuk ke salah satu dari dua golongan di bawah."
+          ],
+          "table": {
+            "head": ["Pertanyaan", "Jawaban ya →", "Contoh"],
+            "rows": [
+              ["Ada perpindahan **ke suatu tempat**?", "**er**", "Jeg **er gået** hjem."],
+              ["Ada **perubahan keadaan**?", "**er**", "Han **er blevet** syg."],
+              ["Kata kerjanya *blive* sendiri", "**er**", "Vi **er blevet** hjemme."],
+              ["Kata kerjanya *være* sendiri", "**har**", "Jeg **har været** i København."],
+              ["Ada objek langsung?", "hampir pasti **har**", "Jeg **har vasket** bilen."],
+              ["Selain itu", "**har**", "Jeg **har arbejdet / spist / sovet**."]
+            ]
+          },
+          "after": [
+            "⚠️ **Perhatikan baris keempat.** Berbeda dari bahasa Jerman dan Belanda, kata kerja *være* dalam bahasa Denmark memakai ***har***: *jeg **har** været i København*, bukan *jeg er været*. Ini satu-satunya tempat bahasa Denmark lebih mudah daripada tetangganya, jadi nikmatilah.",
+            "**Golongan ketiga: kata kerja yang memakai keduanya.** *Gå, cykle, køre, løbe, svømme, sejle, flyve* memakai *har* kalau yang diceritakan kegiatannya, dan *er* kalau yang diceritakan perpindahannya. *Jeg **har** gået i to timer* (dua jam berjalan kaki) melawan *jeg **er** gået hjem* (berjalan pulang).",
+            "**Uji cepat:** kalau kamu bisa menyisipkan *til …* atau *hjem*, pakai **er**. Kalau kamu bisa menyisipkan *i to timer*, pakai **har**."
+          ]
+        },
+        {
+          "title": "Bentuk participium: -et, -t, atau bentuk kuat",
+          "body": [
+            "Kata kerja lemah — mayoritas besar — cukup ditambah *-et* atau *-t*. Pilihannya sejalan dengan bentuk præteritum: kata kerja ber-*-ede* mengambil *-et*, kata kerja ber-*-te* mengambil *-t*. Kata kerja kuat mengganti vokal batangnya dan sering berakhiran *-et*."
+          ],
+          "table": {
+            "head": ["Jenis", "Infinitiv", "Præteritum", "Participium"],
+            "rows": [
+              ["lemah golongan 1", "at arbejde", "arbejd**ede**", "har arbejd**et**"],
+              ["lemah golongan 1", "at snakke", "snakk**ede**", "har snakk**et**"],
+              ["lemah golongan 2", "at købe", "køb**te**", "har køb**t**"],
+              ["lemah golongan 2", "at spise", "spis**te**", "har spis**t**"],
+              ["kuat", "at drikke", "dr**a**k", "har dr**u**kk**et**"],
+              ["kuat", "at skrive", "skr**e**v", "har skr**e**v**et**"],
+              ["kuat", "at få", "f**i**k", "har f**å**et"],
+              ["kuat", "at se", "s**å**", "har s**et**"],
+              ["tak beraturan", "at være", "var", "har **været**"],
+              ["tak beraturan", "at gøre", "gjorde", "har **gjort**"],
+              ["tak beraturan", "at sige", "sagde", "har **sagt**"],
+              ["tak beraturan", "at tage", "tog", "har **taget**"]
+            ]
+          },
+          "after": [
+            "Daftar lengkap enam puluh kata kerja kuat ada di halaman belakang modul. Jangan menghafalnya sekaligus — kembalilah ke sana tiap kali ada kata kerja yang menolak berperilaku beraturan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja yang memakai er — daftar yang perlu dihafal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kata kerja", "Participium", "Arti"],
+          "rows": [
+            ["gå (dengan tujuan)", "er gået", "pergi, berjalan ke"],
+            ["komme", "er kommet", "datang"],
+            ["blive", "er blevet", "menjadi, tinggal"],
+            ["rejse", "er rejst", "berangkat, bepergian"],
+            ["tage af sted", "er taget af sted", "berangkat"],
+            ["ankomme", "er ankommet", "tiba"],
+            ["flytte", "er flyttet", "pindah rumah"],
+            ["stå op", "er stået op", "bangun tidur"],
+            ["falde", "er faldet", "jatuh"],
+            ["ske", "er sket", "terjadi"],
+            ["begynde", "er begyndt", "mulai"],
+            ["holde op", "er holdt op", "berhenti"],
+            ["dø", "er død", "meninggal"],
+            ["vokse", "er vokset", "tumbuh"],
+            ["ændre sig", "har ændret sig", "berubah (lihat kotak)"],
+            ["forsvinde", "er forsvundet", "menghilang"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat yang paling sering salah",
+          "items": [
+            "***Jeg har været*, bukan *jeg er været*.** Kata kerja *være* memakai *har* sebagai bantunya. Dalam bahasa Indonesia \"saya pernah ke Kopenhagen\" tidak memakai kata kerja sama sekali, jadi tak ada yang menuntun pilihannya — hafalkan mentah-mentah: *Jeg **har** været i København.*",
+            "***Blive* selalu *er*.** *Han **er** blevet læge* (dia menjadi dokter), *vi **er** blevet hjemme* (kami tinggal di rumah). Kata kerja ini punya dua arti yang jauh berbeda — \"menjadi\" dan \"tetap tinggal\" — tapi kata bantunya sama.",
+            "***Ændre sig* memakai *har*** meskipun artinya perubahan, karena ia punya objek refleksif *sig*. Aturan \"ada objek → *har*\" mengalahkan aturan \"ada perubahan → *er*\". Bandingkan: *byen **har** ændret sig* melawan *byen **er** blevet større*.",
+            "**Kata kerja gerak tanpa tujuan tetap *har*.** *Vi **har** danset hele natten*, *jeg **har** løbet en time*. Menari dan berlari memang gerakan, tapi tak ada perpindahan dari titik A ke titik B."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en weekend", "baca": "en WI-kend", "id": "akhir pekan" },
+    { "da": "faktisk", "baca": "FAK-tisk", "id": "sebenarnya, memang" },
+    { "da": "at tage af sted", "baca": "te a stedh", "id": "berangkat" },
+    { "da": "først", "baca": "föst", "id": "pertama, baru (saja)" },
+    { "da": "alene", "baca": "a-LE-ne", "id": "sendirian" },
+    { "da": "sammen med", "baca": "SAM-en medh", "id": "bersama dengan" },
+    { "da": "rundt", "baca": "ront", "id": "keliling, berputar" },
+    { "da": "bagefter", "baca": "BA-ef-ta", "id": "sesudah itu" },
+    { "da": "at cykle", "baca": "SÜK-le", "id": "bersepeda" },
+    { "da": "et regnvejr", "baca": "RAI-n-vea", "id": "cuaca hujan" },
+    { "da": "at holde op", "baca": "HOL-e op", "id": "berhenti (melakukan)" },
+    { "da": "en middagstid", "baca": "MI-dhas-tidh", "id": "waktu tengah hari" },
+    { "da": "hyggelig", "baca": "HÜ-ge-li", "id": "nyaman, menyenangkan" },
+    { "da": "alt for meget", "baca": "alt for MA-idh", "id": "terlalu banyak" },
+    { "da": "en kanelsnegl", "baca": "ka-NEL-snail", "id": "roti gulung kayu manis" },
+    { "da": "imponerende", "baca": "im-po-NE-a-ne", "id": "mengesankan" },
+    { "da": "ærgerlig", "baca": "ÈR-a-li", "id": "menjengkelkan, sayang sekali" },
+    { "da": "en mave", "baca": "MA-ve", "id": "perut" },
+    { "da": "at holde i kø", "baca": "HOL-e i kö", "id": "mengantre (kendaraan)" },
+    { "da": "halvanden", "baca": "hal-AN-en", "id": "satu setengah" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan **har / er** dalam bentuk yang benar.",
+      "items": [
+        "Jeg ____ været i Aarhus tre gange.",
+        "Vi ____ cyklet hele vejen til stranden.",
+        "Hun ____ arbejdet i banken i ti år.",
+        "____ du allerede spist?",
+        "Min bror ____ blevet far.",
+        "De ____ gået hjem klokken ti."
+      ]
+    },
+    {
+      "prompt": "Tulis participium dari kata kerja dalam kurung.",
+      "items": [
+        "Jeg har ____ tre kopper kaffe (drikke).",
+        "Vi er ____ hjem i går aftes (køre).",
+        "Har du ____ brevet? (skrive)",
+        "Hun har ____ i to timer (vente).",
+        "De er ____ til Odense (rejse).",
+        "Jeg har ____ det hele (gøre)."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat perfektum yang benar.",
+      "items": [
+        "jeg / har / i weekenden / en cykel / købt",
+        "vi / er / lørdag / til København / taget",
+        "hun / har / hele dagen / i haven / arbejdet",
+        "han / er / klokken syv / op / stået",
+        "har / I / weekenden / hjemme / tilbragt"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Aku ke Kopenhagen akhir pekan lalu.",
+        "Kami sepedaan seharian.",
+        "Dia jatuh sakit hari Minggu.",
+        "Kalian sudah makan sesuatu?",
+        "Aku minum tiga cangkir kopi pagi ini."
+      ]
+    }
+  ],
+  "answers": [
+    "har — har — har — Har — er — er",
+    "drukket — kørt — skrevet — ventet — rejst — gjort",
+    "Jeg har købt en cykel i weekenden. — Vi er taget til København lørdag. — Hun har arbejdet i haven hele dagen. — Han er stået op klokken syv. — Har I tilbragt weekenden hjemme?",
+    "Jeg har været i København i sidste weekend. — Vi har cyklet hele dagen. — Hun er blevet syg om søndagen. — Har I spist noget? — Jeg har drukket tre kopper kaffe i morges."
+  ],
+  "wave": "Sebelum masuk unit 2, ceritakan akhir pekanmu sendiri keras-keras dalam sepuluh kalimat perfektum: enam dengan *har*, empat dengan *er*. Ulangi sampai kamu tidak perlu berhenti untuk memilih kata bantunya."
+}

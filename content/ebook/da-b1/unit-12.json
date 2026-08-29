@@ -1,0 +1,203 @@
+{
+  "title": "Pintunya dibuka jam delapan",
+  "title_target": "Døren åbnes klokken otte",
+  "goal": "Membaca dan menulis kalimat pasif — bentuk yang memenuhi setiap pengumuman, aturan, dan surat resmi di Denmark.",
+  "bekal": [
+    "dua bentuk pasif: akhiran *-s* dan *blive* + participium",
+    "kapan masing-masing dipakai — dan kenapa keduanya tidak sama",
+    "menyebut pelaku dengan *af*",
+    "kalimat pasif tanpa subjek sama sekali: *der bliver …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Beboermøde i opgangen",
+      "intro": "Rapat penghuni gedung. Karin, ketua perhimpunan, membacakan keputusan — dan seperti semua hal resmi di Denmark, hampir seluruhnya berbentuk pasif. Rizky bertanya-tanya sebagai orang yang baru pindah.",
+      "lines": [
+        { "speaker": "Karin:", "text": "Så. Der er tre punkter i aften. Referatet bliver sendt ud på mail i morgen.", "id": "Oke. Malam ini ada tiga poin. Notulennya dikirim lewat email besok.", "literal": "jadi. di-sana adalah tiga poin pada malam-ini. notulen-itu menjadi kirim-nya keluar pada surel besok." },
+        { "speaker": "Rizky:", "text": "Undskyld — bliver referatet også lagt op i opgangen?", "id": "Maaf — notulennya ditempel juga di lorong?", "literal": "maaf — menjadi notulen-itu juga letak-nya atas dalam tangga-apartemen-itu?" },
+        { "speaker": "Karin:", "text": "Ja, det hænges op ved postkasserne. Første punkt: vaskekælderen.", "id": "Iya, ditempel di dekat kotak pos. Poin pertama: ruang cuci.", "literal": "ya, itu digantung atas pada pos-kotak-kotak-itu. pertama poin: cuci-basement-itu." },
+        { "speaker": "Karin:", "text": "Maskinerne repareres på fredag. Kælderen er lukket hele dagen.", "id": "Mesinnya diperbaiki hari Jumat. Basemennya tutup seharian.", "literal": "mesin-mesin-itu diperbaiki pada jumat. basement-itu adalah tutup seluruh hari-itu." },
+        { "speaker": "Rizky:", "text": "Hvem betaler for det?", "id": "Siapa yang bayar?", "literal": "siapa membayar untuk itu?" },
+        { "speaker": "Karin:", "text": "Det betales af foreningen. Ingen af os skal betale ekstra.", "id": "Dibayar perhimpunan. Nggak ada yang bayar tambahan.", "literal": "itu dibayar oleh perhimpunan-itu. tidak-ada dari kami harus membayar tambahan." },
+        { "speaker": "Birthe:", "text": "Blev der ikke også talt om cykelkælderen sidste gang?", "id": "Kemarin bukannya juga dibahas soal basemen sepeda?", "literal": "menjadi-dulu di-sana tidak juga bicara-nya tentang sepeda-basement-itu terakhir kali?" },
+        { "speaker": "Karin:", "text": "Jo. Der blev besluttet, at gamle cykler fjernes i marts.", "id": "Iya. Diputuskan sepeda-sepeda lama disingkirkan bulan Maret.", "literal": "ya. di-sana menjadi-dulu putus-nya, bahwa tua-jamak sepeda disingkirkan pada maret." },
+        { "speaker": "Rizky:", "text": "Hvordan ved man, hvilke der er gamle?", "id": "Gimana tahu yang mana yang lama?", "literal": "bagaimana tahu orang, yang-mana yang adalah tua-jamak?" },
+        { "speaker": "Karin:", "text": "De mærkes med en gul strip. Hvis strippen ikke fjernes inden en måned, bliver cyklen hentet.", "id": "Dikasih penanda kabel kuning. Kalau penandanya nggak dilepas dalam sebulan, sepedanya diangkut.", "literal": "mereka ditandai dengan sebuah kuning strip. kalau strip-itu tidak disingkirkan dalam sebuah bulan, menjadi sepeda-itu jemput-nya." },
+        { "speaker": "Rizky:", "text": "Og hvis min cykel bliver hentet ved en fejl?", "id": "Kalau sepedaku keangkut karena salah gimana?", "literal": "dan kalau milikku sepeda menjadi jemput-nya pada sebuah kesalahan?" },
+        { "speaker": "Karin:", "text": "Så kontakter du mig, og den bliver kørt tilbage. Det er sket to gange.", "id": "Ya hubungi aku, nanti dibalikin. Sudah pernah dua kali.", "literal": "lalu menghubungi kamu saya, dan itu menjadi berkendara-nya kembali. itu adalah terjadi dua kali." },
+        { "speaker": "Karin:", "text": "Tredje punkt: der males i opgangen til sommer.", "id": "Poin ketiga: musim panas nanti lorongnya dicat.", "literal": "ketiga poin: di-sana dicat dalam tangga-apartemen-itu untuk musim-panas." },
+        { "speaker": "Birthe:", "text": "Bliver vi spurgt om farven?", "id": "Warnanya ditanyain ke kami nggak?", "literal": "menjadi kami tanya-nya tentang warna-itu?" },
+        { "speaker": "Karin:", "text": "Der bliver stemt om det på næste møde. To forslag er allerede sendt ind.", "id": "Nanti divoting di rapat berikutnya. Dua usulan sudah masuk.", "literal": "di-sana menjadi voting-nya tentang itu pada berikut rapat. dua usulan adalah sudah kirim-nya masuk." },
+        { "speaker": "Rizky:", "text": "Kan man stille forslag, når man er ny?", "id": "Boleh ngusulin kalau baru pindah?", "literal": "bisa orang menaruh usulan, ketika orang adalah baru?" },
+        { "speaker": "Karin:", "text": "Selvfølgelig. Alle beboere har stemmeret fra dag ét.", "id": "Tentu saja. Semua penghuni punya hak suara dari hari pertama.", "literal": "tentu-saja. semua penghuni punya suara-hak dari hari satu." },
+        { "speaker": "Rizky:", "text": "Så foreslår jeg en lysere farve. Der er mørkt nok udenfor.", "id": "Kalau gitu aku usul warna yang lebih terang. Di luar sudah cukup gelap.", "literal": "lalu mengusulkan saya sebuah lebih-terang warna. di-sana adalah gelap cukup di-luar." },
+        { "speaker": "Birthe:", "text": "Det forslag bliver vedtaget. Sådan noget vinder altid her.", "id": "Usul itu bakal disetujui. Yang begitu selalu menang di sini.", "literal": "itu usulan menjadi setuju-nya. begitu sesuatu menang selalu di-sini." }
+      ],
+      "notes": [
+        "**Bahasa Denmark punya dua bentuk pasif, dan keduanya sangat sering.** Bentuk *-s* (*repareres, betales, mærkes*) dan bentuk *blive* (*bliver sendt, blev besluttet*). Bahasa Indonesia mengurus semuanya dengan awalan \"di-\", jadi kamu perlu memutuskan sendiri mana yang dipakai.",
+        "**Bentuk *-s* dipakai untuk aturan, kebiasaan, dan hal umum:** *Døren **åbnes** klokken otte.* *Maskinerne **repareres** på fredag.* Ia terasa netral dan resmi, dan karena itu memenuhi papan pengumuman, jadwal, dan surat kommune.",
+        "**Bentuk *blive* dipakai untuk kejadian tunggal dan perubahan nyata:** *Min cykel **blev hentet** i går.* Ia lebih hidup, lebih menunjuk ke satu peristiwa, dan lebih sering dipakai dalam percakapan.",
+        "**Pelakunya disebut dengan *af*, bukan *ved* atau *med*:** *Det betales **af** foreningen.* Tapi dalam praktik, pelaku sering **tidak** disebut sama sekali — itulah kenapa bentuk pasif dipakai sejak awal.",
+        "***Der males i opgangen* dan *der bliver stemt om det*** adalah pasif tanpa subjek sama sekali. Tidak ada yang dicat dan tidak ada yang divoting secara tata bahasa — cuma ada kegiatan yang terjadi. Bahasa Indonesia mengurus ini dengan \"ada pengecatan\" atau kalimat berpelaku samar; bahasa Denmark memakai *der* + pasif.",
+        "**Bentuk *-s* punya kembaran yang bukan pasif.** *Vi **mødes** i morgen* (kita bertemu), *de **skændes*** (mereka bertengkar), *det **synes** jeg* (menurut saya). Bentuk *-s* juga dipakai untuk hal timbal balik dan untuk beberapa kata kerja yang memang selalu ber-*-s*: *findes, synes, mislykkes, lykkes*.",
+        "**Perhatikan bahwa banyak participium juga hidup sebagai kata sifat:** *Kælderen er **lukket**.* Ini bukan kalimat pasif — ia melukiskan **keadaan**, bukan kejadian. Bandingkan: *Kælderen **bliver lukket** klokken ti* (kejadian) melawan *Kælderen **er lukket*** (keadaan)."
+      ],
+      "grammars": [
+        {
+          "title": "Dua bentuk pasif berdampingan",
+          "body": [
+            "Kalimat aktif yang sama, diubah dua kali. Perhatikan bahwa bentuk *-s* hanya ada di bentuk kini dan lampau — untuk perfektum, hanya *blive* yang bisa dipakai."
+          ],
+          "table": {
+            "head": ["Waktu", "Aktif", "Pasif -s", "Pasif blive"],
+            "rows": [
+              ["kini", "Man åbner døren.", "Døren **åbnes**.", "Døren **bliver åbnet**."],
+              ["lampau", "Man åbnede døren.", "Døren **åbnedes** (jarang)", "Døren **blev åbnet**."],
+              ["perfektum", "Man har åbnet døren.", "— (tak ada)", "Døren **er blevet åbnet**."],
+              ["masa depan", "Man åbner døren i morgen.", "Døren **åbnes** i morgen.", "Døren **bliver åbnet** i morgen."],
+              ["dengan modal", "Man skal åbne døren.", "Døren skal **åbnes**.", "Døren skal **blive åbnet** (jarang)"],
+              ["tanpa subjek", "Man maler i opgangen.", "Der **males** i opgangen.", "Der **bliver malet** i opgangen."],
+              ["dengan pelaku", "Foreningen betaler det.", "Det **betales af** foreningen.", "Det **bliver betalt af** foreningen."]
+            ]
+          },
+          "after": [
+            "**Baris ketiga menghemat banyak keraguan:** untuk perfektum, bentuk *-s* praktis tidak ada. *Døren **er blevet åbnet*** adalah satu-satunya pilihan yang wajar.",
+            "**Baris kelima juga penting:** sesudah modal, bentuk *-s* justru yang lazim. *Formularen skal **udfyldes**.* *Regningen skal **betales** inden fredag.* Kamu akan melihat susunan ini di setiap surat tagihan Denmark.",
+            "⚠️ **Bentuk pasif lampau ber-*-s* (*åbnedes*) terdengar kuno** dan hampir tak dipakai dalam bahasa lisan. Untuk masa lampau, pakailah *blev* + participium."
+          ]
+        },
+        {
+          "title": "Kapan memilih yang mana",
+          "body": [
+            "Kalau kamu ragu, tabel ini memutuskan untukmu dalam satu baris."
+          ],
+          "table": {
+            "head": ["Kalau kalimatnya …", "Pakai", "Contoh"],
+            "rows": [
+              ["aturan atau kebiasaan", "**-s**", "Regningen **betales** hver måned."],
+              ["jadwal, jam buka", "**-s**", "Butikken **åbnes** kl. 10."],
+              ["petunjuk, resep, formulir", "**-s**", "Kartoflerne **skrælles** og **koges**."],
+              ["sesudah modal", "**-s**", "Skemaet skal **udfyldes**."],
+              ["satu kejadian nyata", "**blive**", "Min cykel **blev hentet** i går."],
+              ["perubahan keadaan", "**blive**", "Han **blev valgt** til formand."],
+              ["perfektum", "**blive**", "Brevet **er blevet sendt**."],
+              ["percakapan sehari-hari", "**blive**", "Bliver vi **spurgt** om det?"]
+            ]
+          },
+          "after": [
+            "**Satu kalimat untuk mengingat semuanya:** bentuk *-s* menceritakan **bagaimana dunia bekerja**; bentuk *blive* menceritakan **apa yang terjadi kemarin**.",
+            "**Kalau kamu sedang berbicara, bukan menulis, pilih *blive*.** Ia hampir selalu aman dan tak pernah terdengar kaku. Bentuk *-s* dalam percakapan santai kadang terdengar seperti orang membacakan peraturan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pasif di dunia nyata: papan, formulir, dan resep",
+      "blocks": [
+        { "type": "p", "text": "Bentuk pasif bukan latihan tata bahasa; ia adalah bahasa yang dipakai negara Denmark untuk berbicara kepadamu. Kalimat-kalimat di bawah ini disalin dari jenis teks yang akan kamu temui setiap minggu." },
+        {
+          "type": "tabel",
+          "head": ["Tempat", "Kalimat", "Arti"],
+          "rows": [
+            ["pintu toko", "Døren **låses** kl. 18.00.", "Pintu dikunci pukul 18.00."],
+            ["mesin cuci", "Maskinen **må ikke bruges** uden bookning.", "Mesin tidak boleh dipakai tanpa pesan."],
+            ["surat kommune", "Ansøgningen **skal indsendes** inden 1. maj.", "Permohonan harus dikirim sebelum 1 Mei."],
+            ["tagihan", "Beløbet **trækkes** automatisk.", "Jumlahnya ditarik otomatis."],
+            ["formulir", "Felterne med * **skal udfyldes**.", "Kolom bertanda * wajib diisi."],
+            ["resep masakan", "Løgene **hakkes** fint.", "Bawangnya dicincang halus."],
+            ["resep masakan", "Det **serveres** med rugbrød.", "Disajikan dengan roti gandum."],
+            ["papan stasiun", "Toget **er aflyst**.", "Keretanya dibatalkan."],
+            ["papan stasiun", "Der **køres** med forsinkelse.", "Ada keterlambatan perjalanan."],
+            ["kantor", "Mødet **er blevet flyttet** til kl. 14.", "Rapat dipindah ke pukul 14."],
+            ["email kerja", "Der **bliver holdt** møde hver mandag.", "Ada rapat tiap Senin."],
+            ["pengumuman", "Cyklerne **fjernes** i marts.", "Sepeda-sepeda disingkirkan bulan Maret."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa Denmark begitu suka bentuk pasif",
+          "items": [
+            "Bentuk pasif menghapus pelakunya, dan itu persis yang diinginkan lembaga Denmark: keputusan tampak datang dari sistem, bukan dari seseorang. *Der blev besluttet, at …* jauh lebih sering daripada *Formanden besluttede, at …*",
+            "Untuk penutur Indonesia ini sebenarnya kabar baik. Bahasa Indonesia juga sangat sering memakai bentuk \"di-\" tanpa menyebut pelaku, jadi cara berpikirnya sudah kamu miliki — yang perlu dipelajari hanya bentuknya.",
+            "⚠️ Tapi hati-hati saat **menulis surat sendiri**. Kalau kamu mengeluh atau meminta sesuatu, bentuk aktif jauh lebih kuat: *Jeg beder jer om at …* terdengar jelas dan bertanggung jawab, sedangkan *Der bedes om …* terdengar seperti kamu menyembunyikan diri. Unit 21 membahas ini lagi."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en beboer", "baca": "be-BO-a", "id": "penghuni" },
+    { "da": "et punkt", "baca": "pongt", "id": "poin, butir" },
+    { "da": "et referat", "baca": "re-fe-RAT", "id": "notulen" },
+    { "da": "at hænge op", "baca": "HÈNG-e op", "id": "menggantung, menempel" },
+    { "da": "en kælder", "baca": "KEL-a", "id": "ruang bawah tanah" },
+    { "da": "at reparere", "baca": "re-pa-RE-a", "id": "memperbaiki" },
+    { "da": "en forening", "baca": "for-E-ning", "id": "perhimpunan" },
+    { "da": "ekstra", "baca": "EKS-tra", "id": "tambahan" },
+    { "da": "at beslutte", "baca": "be-SLU-de", "id": "memutuskan" },
+    { "da": "at fjerne", "baca": "FYÈR-ne", "id": "menyingkirkan" },
+    { "da": "at mærke", "baca": "MÈR-ge", "id": "menandai" },
+    { "da": "en fejl", "baca": "fail", "id": "kesalahan" },
+    { "da": "at kontakte", "baca": "kon-TAK-te", "id": "menghubungi" },
+    { "da": "at male", "baca": "MA-le", "id": "mengecat" },
+    { "da": "en farve", "baca": "FAR-ve", "id": "warna" },
+    { "da": "at stemme", "baca": "STEM-e", "id": "memberi suara, memilih" },
+    { "da": "at sende ind", "baca": "SEN-e in", "id": "mengirimkan (dokumen)" },
+    { "da": "en stemmeret", "baca": "STEM-e-ret", "id": "hak suara" },
+    { "da": "at foreslå", "baca": "FOR-slo", "id": "mengusulkan" },
+    { "da": "at vedtage", "baca": "VEDH-ta", "id": "menyetujui, mengesahkan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi pasif dengan akhiran **-s**.",
+      "items": [
+        "Man åbner døren klokken otte. → Døren ____ klokken otte.",
+        "Man reparerer maskinerne på fredag. → Maskinerne ____ på fredag.",
+        "Man betaler regningen hver måned. → Regningen ____ hver måned.",
+        "Man skal udfylde skemaet. → Skemaet skal ____.",
+        "Man fjerner cyklerne i marts. → Cyklerne ____ i marts.",
+        "Man serverer det med rugbrød. → Det ____ med rugbrød."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pasif dengan **blive**.",
+      "items": [
+        "Nogen hentede min cykel i går. → Min cykel ____ i går.",
+        "De har sendt brevet. → Brevet ____.",
+        "De flytter mødet til klokken to. → Mødet ____ til klokken to.",
+        "Foreningen betaler det. → Det ____ af foreningen.",
+        "De valgte hende til formand. → Hun ____ til formand.",
+        "De spørger os om farven. → Vi ____ om farven."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "referatet / bliver / sendt / ud / på mail / i morgen",
+        "der / blev / besluttet / at / gamle cykler / fjernes / i marts",
+        "skemaet / skal / udfyldes / inden / fredag",
+        "der / males / i opgangen / til sommer",
+        "min cykel / blev / hentet / ved / en fejl"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark. Pilih bentuk pasif yang tepat.",
+      "items": [
+        "Pintunya dikunci pukul enam. (aturan)",
+        "Sepedaku diangkut kemarin. (satu kejadian)",
+        "Suratnya sudah dikirim.",
+        "Formulirnya harus diisi sebelum Jumat.",
+        "Musim panas nanti lorongnya dicat."
+      ]
+    }
+  ],
+  "answers": [
+    "åbnes — repareres — betales — udfyldes — fjernes — serveres",
+    "blev hentet — er blevet sendt — bliver flyttet — bliver betalt — blev valgt — bliver spurgt",
+    "Referatet bliver sendt ud på mail i morgen. — Der blev besluttet, at gamle cykler fjernes i marts. — Skemaet skal udfyldes inden fredag. — Der males i opgangen til sommer. — Min cykel blev hentet ved en fejl.",
+    "Døren låses klokken seks. — Min cykel blev hentet i går. — Brevet er blevet sendt. — Skemaet skal udfyldes inden fredag. — Der males i opgangen til sommer."
+  ],
+  "wave": "Ulangi unit 10. Lalu carilah tiga teks pasif asli di sekitarmu — papan pengumuman, kemasan makanan, atau surat mana pun — dan tandai tiap bentuk pasif yang kamu temukan. Tulis ulang masing-masing dalam bentuk aktif, lalu balikkan lagi ke pasif."
+}

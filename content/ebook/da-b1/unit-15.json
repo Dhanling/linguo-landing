@@ -1,0 +1,205 @@
+{
+  "title": "Dia bilang dia tidak bisa datang",
+  "title_target": "Han sagde, at han ikke kunne komme",
+  "goal": "Meneruskan ucapan orang lain: pergeseran bentuk waktu, pergeseran kata ganti, dan pertanyaan tak langsung dengan om.",
+  "bekal": [
+    "pergeseran waktu: *kommer* → *kom*, *har* → *havde*",
+    "pertanyaan tak langsung: *om* untuk ya/tidak, kata tanya untuk sisanya",
+    "urutan kata pertanyaan tak langsung — yang bukan urutan pertanyaan",
+    "kata kerja pelapor: *sige, spørge, fortælle, mene, påstå, foreslå*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Beskeder videre på kontoret",
+      "intro": "Rizky, yang kini ketua tim, meneruskan pesan dari beberapa orang kepada Karin. Hampir tiap kalimatnya adalah ucapan orang lain yang dilaporkan ulang — perhatikan bagaimana bentuk kata kerjanya bergeser satu langkah ke belakang.",
+      "lines": [
+        { "speaker": "Karin:", "text": "Har du talt med Ove i morges?", "id": "Tadi pagi sudah bicara sama Ove?", "literal": "punya kamu bicara-nya dengan Ove pada pagi-ini?" },
+        { "speaker": "Rizky:", "text": "Ja. Han sagde, at han ikke kunne komme før klokken elleve.", "id": "Sudah. Dia bilang nggak bisa datang sebelum jam sebelas.", "literal": "ya. dia berkata, bahwa dia tidak bisa-dulu datang sebelum jam sebelas." },
+        { "speaker": "Karin:", "text": "Sagde han hvorfor?", "id": "Dia bilang kenapa?", "literal": "berkata dia kenapa?" },
+        { "speaker": "Rizky:", "text": "Han fortalte, at hans datter var syg, og at hans kone havde et møde.", "id": "Dia cerita anaknya sakit dan istrinya ada rapat.", "literal": "dia ceritakan-dulu, bahwa dia-punya anak-perempuan adalah-dulu sakit, dan bahwa dia-punya istri punya-dulu sebuah rapat." },
+        { "speaker": "Karin:", "text": "Og spurgte han, om vi kunne rykke mødet?", "id": "Dia nanya bisa nggak rapatnya digeser?", "literal": "dan bertanya-dulu dia, apakah kami bisa-dulu menggeser rapat-itu?" },
+        { "speaker": "Rizky:", "text": "Han spurgte, om det var nødvendigt, at han var med. Jeg sagde, at det var det.", "id": "Dia nanya perlu nggak dia ikut. Aku bilang perlu.", "literal": "dia bertanya-dulu, apakah itu adalah-dulu perlu, bahwa dia adalah-dulu serta. saya berkata-dulu, bahwa itu adalah-dulu itu." },
+        { "speaker": "Karin:", "text": "Godt. Hvad med Lene?", "id": "Bagus. Lene gimana?", "literal": "bagus. apa dengan Lene?" },
+        { "speaker": "Rizky:", "text": "Hun skrev, at hun havde sendt tallene i går aftes, men jeg har ikke fået dem.", "id": "Dia nulis udah kirim angkanya tadi malam, tapi aku belum terima.", "literal": "dia menulis-dulu, bahwa dia punya-dulu kirim-nya angka-angka-itu pada kemarin malam, tapi saya punya tidak dapat-nya mereka." },
+        { "speaker": "Karin:", "text": "Spurgte du, hvilken mail hun havde sendt til?", "id": "Kamu tanya dia kirim ke email mana?", "literal": "bertanya-dulu kamu, yang-mana surel dia punya-dulu kirim-nya ke?" },
+        { "speaker": "Rizky:", "text": "Nej, det glemte jeg. Jeg troede, hun kendte adressen.", "id": "Nggak, kelupaan. Kukira dia tahu alamatnya.", "literal": "tidak, itu lupa-dulu saya. saya kira-dulu, dia kenal-dulu alamat-itu." },
+        { "speaker": "Karin:", "text": "Så spørg hende, om hun vil sende dem igen. Og sig, at det haster lidt.", "id": "Ya tanya dia mau kirim ulang nggak. Terus bilang agak buru-buru.", "literal": "jadi tanya dia, apakah dia mau mengirim mereka lagi. dan katakan, bahwa itu terburu sedikit." },
+        { "speaker": "Rizky:", "text": "Skal jeg også sige, hvornår vi skal bruge dem?", "id": "Perlu kubilang juga kapan kita butuhnya?", "literal": "harus saya juga berkata, kapan kami harus memakai mereka?" },
+        { "speaker": "Karin:", "text": "Ja, sig at vi skal bruge dem inden fredag. Og hvad sagde chefen egentlig i går?", "id": "Iya, bilang kita butuh sebelum Jumat. Terus kemarin bos ngomong apa sebenarnya?", "literal": "ya, katakan bahwa kami harus memakai mereka sebelum jumat. dan apa berkata-dulu bos-itu sebenarnya kemarin?" },
+        { "speaker": "Rizky:", "text": "Han mente, at vi var for langsomme om mandagen. Men han påstod ikke, at det var vores skyld.", "id": "Dia berpendapat kita terlalu lambat kalau Senin. Tapi dia nggak bilang itu salah kita.", "literal": "dia berpendapat-dulu, bahwa kami adalah-dulu terlalu lambat pada senin-itu. tapi dia mengklaim-dulu tidak, bahwa itu adalah-dulu kami-punya kesalahan." },
+        { "speaker": "Karin:", "text": "Hvad foreslog han så?", "id": "Terus dia usul apa?", "literal": "apa usulkan-dulu dia lalu?" },
+        { "speaker": "Rizky:", "text": "Han foreslog, at vi begyndte en halv time tidligere. Jeg sagde, at jeg ville spørge holdet først.", "id": "Dia usul kita mulai setengah jam lebih awal. Aku bilang aku mau tanya tim dulu.", "literal": "dia usulkan-dulu, bahwa kami mulai-dulu setengah jam lebih-awal. saya berkata-dulu, bahwa saya mau-dulu bertanya tim-itu pertama." },
+        { "speaker": "Karin:", "text": "Det var klogt. Spørg dem i dag, og fortæl mig, hvad de siger.", "id": "Bijak. Tanya mereka hari ini, terus kabari aku jawabannya.", "literal": "itu adalah-dulu bijak. tanya mereka pada hari-ini, dan ceritakan saya, apa mereka berkata." },
+        { "speaker": "Rizky:", "text": "Jeg ved allerede, hvad de siger.", "id": "Aku sudah tahu jawaban mereka.", "literal": "saya tahu sudah, apa mereka berkata." },
+        { "speaker": "Karin:", "text": "Det gør jeg også. Men spørg alligevel.", "id": "Aku juga. Tapi tetap tanya ya.", "literal": "itu lakukan saya juga. tapi tanya tetap-saja." }
+      ],
+      "notes": [
+        "**Bentuk kata kerja bergeser satu langkah ke belakang.** Ucapan asli *\"Jeg **kan** ikke komme\"* menjadi *Han sagde, at han ikke **kunne** komme.* Bentuk kini menjadi lampau, bentuk lampau menjadi pluskvamperfektum. Bahasa Indonesia tidak menggeser apa pun — \"dia bilang dia tidak bisa datang\" — jadi ini murni pekerjaan tambahan bagi kita.",
+        "**Pergeserannya wajib kalau kata kerja pelapornya berbentuk lampau** (*sagde, fortalte, spurgte*). Kalau pelapornya berbentuk kini (*han siger, at …*), tak ada yang bergeser.",
+        "**Kata ganti ikut bergeser.** *\"**Min** datter er syg\"* menjadi *at **hans** datter var syg*. Ini sering terlupa, dan akibatnya kalimatnya menjadi membingungkan: siapa yang punya anak?",
+        "**Pertanyaan ya/tidak menjadi *om*.** *\"Kan vi rykke mødet?\"* menjadi *Han spurgte, **om** vi kunne rykke mødet.* Bukan *hvis* — *hvis* hanya berarti \"kalau\" sebagai syarat. Ini jebakan tetap bagi penutur Indonesia, yang memakai \"kalau\" untuk keduanya.",
+        "**Pertanyaan berkata tanya mempertahankan kata tanyanya**, tapi **kehilangan urutan pertanyaannya**: *\"Hvornår kommer du?\"* menjadi *Jeg spurgte, **hvornår du kom**.* Perhatikan: *du kom*, bukan *kom du*. Pertanyaan tak langsung adalah anak kalimat, jadi urutan katanya urutan anak kalimat — lengkap dengan *ikke* yang pindah ke depan kata kerja.",
+        "***At* boleh dibuang, urutan katanya tidak.** *Jeg troede, hun kendte adressen.* Meskipun *at*-nya hilang, bagian itu tetap anak kalimat: *Han sagde, han **ikke kunne** komme.*",
+        "**Kata kerja pelapor membawa nada masing-masing.** *Sige* netral, *fortælle* bercerita, *mene* berpendapat, *påstå* mengklaim (dengan nada meragukan), *foreslå* mengusulkan, *love* berjanji, *indrømme* mengakui. Memilih yang tepat menyampaikan sikapmu sendiri terhadap ucapan itu."
+      ],
+      "grammars": [
+        {
+          "title": "Pergeseran bentuk waktu",
+          "body": [
+            "Kolom kiri adalah apa yang benar-benar diucapkan; kolom kanan adalah cara melaporkannya sesudah *han sagde, at …*"
+          ],
+          "table": {
+            "head": ["Ucapan asli", "Dilaporkan", "Contoh"],
+            "rows": [
+              ["præsens (*kommer*)", "**præteritum**", "\"Jeg kommer\" → at han **kom**"],
+              ["præteritum (*kom*)", "**pluskvamperfektum**", "\"Jeg kom sent\" → at han **var kommet** sent"],
+              ["perfektum (*har sendt*)", "**pluskvamperfektum**", "\"Jeg har sendt\" → at hun **havde sendt**"],
+              ["*kan*", "**kunne**", "\"Jeg kan ikke\" → at han **ikke kunne**"],
+              ["*skal*", "**skulle**", "\"Jeg skal med\" → at han **skulle** med"],
+              ["*vil*", "**ville**", "\"Jeg vil hjælpe\" → at hun **ville** hjælpe"],
+              ["*må*", "**måtte**", "\"Jeg må gå\" → at han **måtte** gå"],
+              ["*er*", "**var**", "\"Det er svært\" → at det **var** svært"],
+              ["*har*", "**havde**", "\"Jeg har tid\" → at han **havde** tid"]
+            ]
+          },
+          "after": [
+            "**Keterangan waktu ikut bergeser** kalau laporannya diucapkan di hari lain: *i dag* → *den dag*, *i morgen* → *dagen efter* atau *næste dag*, *i går* → *dagen før*, *nu* → *da*, *her* → *der*.",
+            "⚠️ **Kalau isinya masih berlaku sekarang, pergeserannya boleh dilewati.** *Han sagde, at han **bor** i Aarhus* sepenuhnya benar kalau dia memang masih tinggal di sana. Orang Denmark sering melakukan ini dalam percakapan; dalam tulisan resmi, geserlah."
+          ]
+        },
+        {
+          "title": "Pertanyaan tak langsung",
+          "body": [
+            "Pertanyaan yang dilaporkan berhenti menjadi pertanyaan — ia menjadi anak kalimat biasa, dengan urutan kata anak kalimat."
+          ],
+          "table": {
+            "head": ["Pertanyaan asli", "Dilaporkan", "Perhatikan"],
+            "rows": [
+              ["\"Kommer du?\"", "Han spurgte, **om jeg kom**.", "*om* + urutan biasa"],
+              ["\"Har du tid?\"", "Hun spurgte, **om jeg havde** tid.", "bukan *hvis*"],
+              ["\"Hvornår kommer du?\"", "Jeg spurgte, **hvornår han kom**.", "bukan *kom han*"],
+              ["\"Hvad laver du?\"", "Hun spurgte, **hvad jeg lavede**.", "kata tanya tetap"],
+              ["\"Hvorfor kom du ikke?\"", "Han spurgte, **hvorfor jeg ikke var kommet**.", "*ikke* pindah ke depan"],
+              ["\"Hvem er det?\"", "Jeg spurgte, **hvem det var**.", "urutan berbalik"],
+              ["\"Hvem ringede?\"", "Jeg spurgte, **hvem der ringede**.", "**der** wajib di sini"],
+              ["\"Hvad skete der?\"", "Han spurgte, **hvad der var sket**.", "**der** wajib di sini"]
+            ]
+          },
+          "after": [
+            "**Dua baris terakhir adalah aturan kecil yang jarang diajarkan.** Kalau kata tanyanya sendiri menjadi **subjek** anak kalimat, kamu harus menambahkan ***der***: *Jeg spurgte, hvem **der** ringede.* Tanpa *der*, kalimatnya terasa pincang bagi telinga Denmark. Aturan yang sama berlaku untuk *hvad der*, *hvilken der*.",
+            "**Untuk meminta orang lain melakukan sesuatu, pakai *om at* atau *bede om at*:** \"Kom i morgen\" → *Han bad mig **om at** komme dagen efter.* Perintah tidak dilaporkan sebagai perintah; ia menjadi permintaan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja pelapor dan nadanya",
+      "blocks": [
+        { "type": "p", "text": "Memilih kata kerja pelapor bukan urusan gaya. Ia memberi tahu pendengarmu seberapa jauh kamu sendiri percaya pada apa yang kamu laporkan — dan di tempat kerja Denmark, perbedaan itu diperhatikan." },
+        {
+          "type": "tabel",
+          "head": ["Kata kerja", "Nadanya", "Contoh"],
+          "rows": [
+            ["**sige**", "netral", "Han sagde, at han kom senere."],
+            ["**fortælle**", "bercerita, lebih hangat", "Hun fortalte, at hun havde fået job."],
+            ["**forklare**", "menjelaskan", "Han forklarede, hvorfor det tog tid."],
+            ["**mene**", "berpendapat", "Hun mente, at prisen var for høj."],
+            ["**synes**", "pendapat pribadi", "Han syntes, at filmen var kedelig."],
+            ["**påstå**", "mengklaim (kamu ragu)", "Han påstod, at han havde sendt den."],
+            ["**indrømme**", "mengakui", "Hun indrømmede, at hun havde glemt det."],
+            ["**foreslå**", "mengusulkan", "Han foreslog, at vi mødtes kl. otte."],
+            ["**love**", "berjanji", "Hun lovede, at hun ville ringe."],
+            ["**advare om**", "memperingatkan", "Han advarede om, at der var kø."],
+            ["**nævne**", "menyebut sambil lalu", "Hun nævnte, at hun rejser i juli."],
+            ["**gentage**", "mengulangi", "Han gentog, at det hastede."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Meneruskan pesan — tiga rangka siap pakai",
+          "items": [
+            "**Meneruskan kabar:** *Jeg skulle hilse fra Ove og sige, at han kommer senere.* Ungkapan *jeg skulle hilse fra …* (saya diminta menyampaikan salam dari …) adalah cara paling Denmark untuk membuka pesan yang dititipkan.",
+            "**Melaporkan dengan jarak:** *Hun **påstår**, at hun har sendt den.* Memakai *påstå* alih-alih *sige* memberi tahu pendengarmu bahwa kamu sendiri belum yakin — tanpa kamu harus mengatakannya terang-terangan.",
+            "**Menutup laporan:** *Det var vist alt, hvad han sagde.* Kata *vist* menandai bahwa kamu tidak sepenuhnya yakin ingatanmu lengkap — kejujuran kecil yang sangat dihargai di kantor Denmark.",
+            "⚠️ **Jangan melaporkan ucapan orang dengan kutipan langsung dalam surat resmi.** Bahasa Denmark tertulis lebih suka bentuk tak langsung: *Ove har oplyst, at …* Kutipan langsung terasa seperti wartawan, bukan seperti kolega."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en besked", "baca": "be-SKEDH", "id": "pesan" },
+    { "da": "videre", "baca": "VI-dhe-a", "id": "lebih lanjut, diteruskan" },
+    { "da": "en datter", "baca": "DA-da", "id": "anak perempuan" },
+    { "da": "at rykke", "baca": "RÜ-ge", "id": "menggeser" },
+    { "da": "nødvendig", "baca": "nödh-VEN-di", "id": "perlu" },
+    { "da": "et tal", "baca": "tal", "id": "angka" },
+    { "da": "en adresse", "baca": "a-DRA-se", "id": "alamat" },
+    { "da": "at haste", "baca": "HAS-te", "id": "mendesak, buru-buru" },
+    { "da": "at mene", "baca": "ME-ne", "id": "berpendapat" },
+    { "da": "at påstå", "baca": "PO-sto", "id": "mengklaim" },
+    { "da": "en skyld", "baca": "skül", "id": "kesalahan, tanggung jawab" },
+    { "da": "at foreslå", "baca": "FOR-slo", "id": "mengusulkan" },
+    { "da": "et hold", "baca": "hol", "id": "tim, kelompok" },
+    { "da": "at forklare", "baca": "for-KLA-a", "id": "menjelaskan" },
+    { "da": "at indrømme", "baca": "in-RÖM-e", "id": "mengakui" },
+    { "da": "at advare om", "baca": "adh-VA-a om", "id": "memperingatkan" },
+    { "da": "at nævne", "baca": "NÈU-ne", "id": "menyebut" },
+    { "da": "at gentage", "baca": "gen-TA", "id": "mengulangi" },
+    { "da": "at hilse fra", "baca": "HIL-se fra", "id": "menyampaikan salam dari" },
+    { "da": "vist", "baca": "vist", "id": "sepertinya, agaknya" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi ucapan tak langsung dengan **Han sagde, at …**",
+      "items": [
+        "\"Jeg kommer klokken ni.\"",
+        "\"Jeg kan ikke nå det.\"",
+        "\"Jeg har sendt mailen.\"",
+        "\"Min datter er syg.\"",
+        "\"Jeg vil ringe i morgen.\"",
+        "\"Det er ikke min skyld.\""
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pertanyaan tak langsung dengan **Hun spurgte, …**",
+      "items": [
+        "\"Kommer du i morgen?\"",
+        "\"Har du tid nu?\"",
+        "\"Hvornår begynder mødet?\"",
+        "\"Hvorfor kom du ikke?\"",
+        "\"Hvem ringede?\"",
+        "\"Hvad skete der?\""
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "han / fortalte / at / hans / kone / havde / et møde",
+        "hun / spurgte / om / det / var / nødvendigt",
+        "jeg / spurgte / hvornår / han / kom",
+        "han / foreslog / at / vi / begyndte / en halv time / tidligere",
+        "sig / at / vi / skal / bruge / dem / inden / fredag"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Dia bilang dia tidak bisa datang sebelum jam sebelas.",
+        "Dia bertanya apakah kami bisa menggeser rapatnya.",
+        "Aku bertanya kapan dia mengirimnya.",
+        "Dia berjanji akan menelepon.",
+        "Aku sudah tahu apa jawaban mereka."
+      ]
+    }
+  ],
+  "answers": [
+    "Han sagde, at han kom klokken ni. — Han sagde, at han ikke kunne nå det. — Han sagde, at han havde sendt mailen. — Han sagde, at hans datter var syg. — Han sagde, at han ville ringe dagen efter. — Han sagde, at det ikke var hans skyld.",
+    "Hun spurgte, om jeg kom dagen efter. — Hun spurgte, om jeg havde tid. — Hun spurgte, hvornår mødet begyndte. — Hun spurgte, hvorfor jeg ikke var kommet. — Hun spurgte, hvem der ringede. — Hun spurgte, hvad der var sket.",
+    "Han fortalte, at hans kone havde et møde. — Hun spurgte, om det var nødvendigt. — Jeg spurgte, hvornår han kom. — Han foreslog, at vi begyndte en halv time tidligere. — Sig, at vi skal bruge dem inden fredag.",
+    "Han sagde, at han ikke kunne komme før klokken elleve. — Han spurgte, om vi kunne rykke mødet. — Jeg spurgte, hvornår han havde sendt den. — Hun lovede, at hun ville ringe. — Jeg ved allerede, hvad de siger."
+  ],
+  "wave": "Ulangi unit 13. Lalu ambil satu percakapan nyata yang kamu alami hari ini — di telepon, di toko, di tempat kerja — dan laporkan seluruhnya dalam bahasa Denmark: *Han sagde, at … Jeg spurgte, om … Hun svarede, at …* Sepuluh kalimat, keras-keras."
+}

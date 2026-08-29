@@ -1,0 +1,214 @@
+{
+  "title": "Di loket kommune",
+  "title_target": "Hos borgerservice",
+  "goal": "Mengurus urusan resmi Denmark dalam bahasa Denmark: CPR, MitID, e-Boks, pindah alamat, dan formulir yang kata-katanya tidak ada di kamus harianmu.",
+  "bekal": [
+    "kosakata birokrasi yang benar-benar kamu butuhkan",
+    "menjelaskan masalahmu dengan runtut dan sopan",
+    "bertanya balik ketika kamu tidak mengerti — tanpa rasa malu",
+    "membaca kalimat surat resmi yang berbentuk pasif"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ved skranken på rådhuset",
+      "intro": "Rizky pindah apartemen dan datang ke borgerservice. Dialog ini memuat hampir semua kata birokrasi yang akan kamu perlukan selama lima tahun pertama di Denmark — dan sengaja memperlihatkan Rizky bertanya ulang tiga kali tanpa canggung.",
+      "lines": [
+        { "speaker": "Sagsbehandler:", "text": "Værsgo, hvad kan jeg hjælpe med?", "id": "Silakan, ada yang bisa saya bantu?", "literal": "silakan, apa bisa saya menolong dengan?" },
+        { "speaker": "Rizky:", "text": "Jeg er flyttet, og jeg skal melde flytning. Jeg har prøvet på nettet, men det gik i stå.", "id": "Saya pindah dan mau lapor pindah. Sudah coba online, tapi macet.", "literal": "saya adalah pindah-nya, dan saya harus melaporkan pindahan. saya punya coba-nya pada jaring-itu, tapi itu berjalan dalam berhenti." },
+        { "speaker": "Sagsbehandler:", "text": "Det klarer vi. Må jeg lige se dit sundhedskort eller dit CPR-nummer?", "id": "Kita beresin. Boleh lihat kartu kesehatan atau nomor CPR-nya?", "literal": "itu bereskan kami. boleh saya *lige* lihat milikmu kesehatan-kartu atau milikmu CPR-nomor?" },
+        { "speaker": "Rizky:", "text": "Værsgo. Undskyld — hvad betyder *det gik i stå*? Nej, det sagde jeg selv. Glem det.", "id": "Ini. Maaf — *det gik i stå* itu artinya apa? Eh, itu saya sendiri yang bilang. Lupakan.", "literal": "silakan. maaf — apa berarti *itu berjalan dalam berhenti*? tidak, itu berkata-dulu saya sendiri. lupa itu." },
+        { "speaker": "Sagsbehandler:", "text": "Ha! Jeg forstod dig fint. Hvornår flyttede du ind?", "id": "Haha! Saya paham kok. Kapan mulai tinggal di sana?", "literal": "ha! saya mengerti-dulu kamu bagus. kapan pindah-dulu kamu masuk?" },
+        { "speaker": "Rizky:", "text": "Den første i denne måned. Er det for sent at melde det nu?", "id": "Tanggal satu bulan ini. Telat nggak kalau lapor sekarang?", "literal": "itu pertama pada ini bulan. adalah itu terlalu terlambat untuk melaporkan itu sekarang?" },
+        { "speaker": "Sagsbehandler:", "text": "Nej, du har fem dage. Vi når det lige akkurat. Er du lejer eller ejer?", "id": "Nggak, batasnya lima hari. Pas banget. Anda penyewa atau pemilik?", "literal": "tidak, kamu punya lima hari. kami mencapai itu *lige* akurat. adalah kamu penyewa atau pemilik?" },
+        { "speaker": "Rizky:", "text": "Lejer. Skal jeg vise lejekontrakten?", "id": "Penyewa. Perlu tunjukin kontrak sewanya?", "literal": "penyewa. harus saya menunjukkan sewa-kontrak-itu?" },
+        { "speaker": "Sagsbehandler:", "text": "Ikke nødvendigvis, men det gør sagen hurtigere. Bor der andre på adressen?", "id": "Nggak wajib, tapi bikin lebih cepat. Ada orang lain di alamat itu?", "literal": "tidak perlu-nya, tapi itu membuat perkara-itu lebih-cepat. tinggal di-sana lain-jamak pada alamat-itu?" },
+        { "speaker": "Rizky:", "text": "Nej, jeg bor alene. Undskyld, kan du sige det sidste igen — lidt langsommere?", "id": "Nggak, saya sendiri. Maaf, bisa diulang yang terakhir — agak pelan?", "literal": "tidak, saya tinggal sendirian. maaf, bisa kamu berkata itu terakhir lagi — sedikit lebih-pelan?" },
+        { "speaker": "Sagsbehandler:", "text": "Selvfølgelig. Jeg spurgte, om der bor andre på adressen. Og det gør der ikke.", "id": "Tentu. Saya tanya apakah ada orang lain di alamat itu. Dan tidak ada.", "literal": "tentu-saja. saya bertanya-dulu, apakah di-sana tinggal lain-jamak pada alamat-itu. dan itu lakukan di-sana tidak." },
+        { "speaker": "Rizky:", "text": "Præcis. Får jeg besked, når det er registreret?", "id": "Betul. Saya dapat kabar kalau sudah terdaftar?", "literal": "persis. dapat saya kabar, ketika itu adalah terdaftar-nya?" },
+        { "speaker": "Sagsbehandler:", "text": "Ja, der bliver sendt en bekræftelse til din e-Boks i løbet af et par dage.", "id": "Iya, konfirmasinya dikirim ke e-Boks dalam beberapa hari.", "literal": "ya, di-sana menjadi kirim-nya sebuah konfirmasi ke milikmu e-Boks dalam jalan dari sepasang hari." },
+        { "speaker": "Rizky:", "text": "Så skal jeg vist også ændre adressen hos lægen?", "id": "Berarti alamat di dokter juga harus saya ubah ya?", "literal": "lalu harus saya *vist* juga mengubah alamat-itu pada dokter-itu?" },
+        { "speaker": "Sagsbehandler:", "text": "Det sker automatisk. Men hvis du vil skifte læge, skal du søge om det selv. Det koster to hundrede kroner.", "id": "Itu otomatis. Tapi kalau mau ganti dokter, harus mengajukan sendiri. Biayanya dua ratus kroner.", "literal": "itu terjadi otomatis. tapi kalau kamu mau mengganti dokter, harus kamu melamar tentang itu sendiri. itu memakan-biaya dua ratus kroner." },
+        { "speaker": "Rizky:", "text": "Nej tak, min læge er fin. En sidste ting: mit MitID virker ikke på den nye telefon.", "id": "Nggak usah, dokter saya bagus. Satu lagi: MitID saya nggak jalan di HP baru.", "literal": "tidak terima-kasih, milikku dokter adalah bagus. sebuah terakhir hal: milikku MitID bekerja tidak pada itu baru-nya telepon." },
+        { "speaker": "Sagsbehandler:", "text": "Så skal du have det genudstedt. Det kan jeg gøre nu, men du skal vise legitimation med billede.", "id": "Berarti harus diterbitkan ulang. Bisa saya urus sekarang, tapi perlu identitas berfoto.", "literal": "lalu harus kamu punya itu terbit-ulang-nya. itu bisa saya melakukan sekarang, tapi kamu harus menunjukkan legitimasi dengan gambar." },
+        { "speaker": "Rizky:", "text": "Jeg har mit pas med. Er det nok?", "id": "Saya bawa paspor. Cukup?", "literal": "saya punya milikku paspor serta. adalah itu cukup?" },
+        { "speaker": "Sagsbehandler:", "text": "Det er perfekt. Så er vi færdige om ti minutter.", "id": "Sempurna. Sepuluh menit lagi selesai.", "literal": "itu adalah sempurna. lalu adalah kami selesai-jamak dalam sepuluh menit." }
+      ],
+      "notes": [
+        "**Bertanya ulang bukan kelemahan.** Perhatikan Rizky memotong dua kali: *Kan du sige det sidste igen — lidt langsommere?* Petugas Denmark terbiasa dengan ini dan sama sekali tidak menganggapnya masalah. Yang justru menyulitkan semua orang adalah mengangguk tanpa mengerti, lalu salah mengisi formulir.",
+        "***Melde flytning*** (lapor pindah) wajib dilakukan dalam **lima hari** setelah pindah, dan denda menunggu kalau terlambat. Semua urusan lain — pajak, dokter, e-Boks, surat kommune — mengikuti alamat yang terdaftar, jadi ini urusan pertama yang harus beres.",
+        "***CPR-nummer*** adalah nomor identitas pribadi Denmark, sepuluh digit, dan ia adalah kunci ke segalanya: bank, dokter, gaji, perpustakaan. Kartu kesehatan kuning (*sundhedskortet*, sering disebut *det gule sygesikringsbevis*) adalah wujud fisiknya.",
+        "***e-Boks*** adalah kotak surat digital resmi. Semua surat dari negara masuk ke sana, dan surat yang masuk ke e-Boks **dianggap sudah kamu terima secara hukum** — meskipun kamu tak pernah membukanya. Periksalah seminggu sekali; ini nasihat paling praktis di seluruh modul ini.",
+        "***MitID*** adalah kunci masuk digital ke semua layanan. Kalau ia rusak, hampir tak ada yang bisa kamu lakukan sendiri secara daring — karena itu kalimat *mit MitID virker ikke* patut kamu hafalkan mentah-mentah.",
+        "***Der bliver sendt en bekræftelse*** — kalimat pasif tanpa pelaku, persis seperti unit 12. Perhatikan bahwa petugas tidak berkata \"saya akan mengirim\"; sistemlah yang mengirim. Begitulah bahasa Denmark resmi bekerja.",
+        "***Det gik i stå*** (macet, mandek) adalah ungkapan yang sangat berguna untuk apa pun yang berhenti di tengah jalan: proses daring, mobil, percakapan, hubungan."
+      ],
+      "grammars": [
+        {
+          "title": "Kosakata birokrasi yang benar-benar dipakai",
+          "body": [
+            "Kata-kata ini muncul di setiap surat dan setiap loket. Menghafalnya sekali menghemat berjam-jam kebingungan."
+          ],
+          "table": {
+            "head": ["Bahasa Denmark", "Arti", "Bahasa Denmark", "Arti"],
+            "rows": [
+              ["et CPR-nummer", "nomor identitas pribadi", "en ansøgning", "permohonan"],
+              ["et sundhedskort", "kartu kesehatan kuning", "at ansøge om", "mengajukan permohonan"],
+              ["MitID", "identitas digital", "en blanket / et skema", "formulir"],
+              ["e-Boks / Digital Post", "kotak surat digital", "at udfylde", "mengisi"],
+              ["borgerservice", "loket pelayanan warga", "en frist", "batas waktu"],
+              ["en kommune", "pemerintah kota", "en sagsbehandler", "petugas penanganan perkara"],
+              ["at melde flytning", "lapor pindah", "en sag", "perkara, berkas"],
+              ["en bopæl / en adresse", "tempat tinggal", "et bilag", "lampiran"],
+              ["en lejer / en ejer", "penyewa / pemilik", "en kvittering", "bukti pembayaran"],
+              ["en lejekontrakt", "kontrak sewa", "et gebyr", "biaya administrasi"],
+              ["et depositum", "uang jaminan", "en bekræftelse", "konfirmasi"],
+              ["en husleje", "uang sewa bulanan", "at registrere", "mendaftarkan"],
+              ["en opsigelse", "pemberitahuan pemutusan", "en legitimation", "identitas berfoto"],
+              ["boligstøtte", "tunjangan sewa rumah", "at genudstede", "menerbitkan ulang"],
+              ["SKAT", "kantor pajak", "en årsopgørelse", "laporan pajak tahunan"],
+              ["et forskudsopgørelse", "perkiraan pajak", "et fradrag", "potongan pajak"]
+            ]
+          },
+          "after": [
+            "**Dua yang paling penting bagi pendatang baru:** ***boligstøtte*** (tunjangan sewa — banyak orang berhak menerimanya tanpa tahu) dan ***fradrag*** (potongan pajak, misalnya untuk transportasi ke tempat kerja lebih dari 24 km sehari). Keduanya harus diajukan sendiri; tidak ada yang menawarkannya kepadamu.",
+            "⚠️ ***Opsigelse*** dipakai untuk memutus kontrak apa pun — sewa rumah, langganan, pekerjaan. *Jeg vil gerne opsige min lejlighed* (saya ingin mengakhiri sewa). Jangan tertukar dengan *ansøgning* (permohonan)."
+          ]
+        },
+        {
+          "title": "Bertanya ulang tanpa canggung",
+          "body": [
+            "Ini keterampilan yang lebih menentukan daripada tata bahasa mana pun. Sepuluh kalimat berikut cukup untuk seluruh hidupmu di Denmark."
+          ],
+          "table": {
+            "head": ["Maksud", "Kalimat", "Nada"],
+            "rows": [
+              ["minta diulang", "Undskyld, kan du gentage det?", "netral"],
+              ["minta pelan", "Kan du sige det lidt langsommere?", "netral"],
+              ["minta kata lain", "Kan du sige det på en anden måde?", "sangat berguna"],
+              ["menanyakan arti", "Hvad betyder *frist*?", "langsung, sopan"],
+              ["memastikan paham", "Så jeg skal altså udfylde det her?", "menegaskan ulang"],
+              ["memastikan paham", "Forstår jeg det rigtigt, at …?", "resmi"],
+              ["minta tulisan", "Kan du skrive det ned for mig?", "menyelamatkan"],
+              ["mengaku belum bisa", "Jeg er ved at lære dansk.", "hampir selalu disambut baik"],
+              ["minta waktu", "Lige et øjeblik — jeg tænker lige.", "menghentikan tekanan"],
+              ["menutup", "Tak for hjælpen.", "wajib"]
+            ]
+          },
+          "after": [
+            "***Jeg er ved at lære dansk*** adalah kalimat yang membuka banyak pintu. Hampir semua orang Denmark akan langsung memperlambat bicaranya, dan banyak yang akan **berhenti beralih ke bahasa Inggris** kalau kamu menambahkan: *… så jeg vil gerne prøve på dansk.*",
+            "⚠️ **Jangan berkata *jeg forstår ikke* dan berhenti di situ.** Itu menutup percakapan dan memaksa lawan bicaramu menebak. Katakan bagian mana yang tidak kamu mengerti: *Jeg forstod alt undtagen det sidste ord.* Bantuan yang kamu terima akan jauh lebih tepat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Membaca surat resmi tanpa panik",
+      "blocks": [
+        { "type": "p", "text": "Surat dari kommune, SKAT, dan Udbetaling Danmark ditulis dalam gaya yang sengaja tanpa pelaku. Untungnya, susunannya hampir selalu sama — dan begitu kamu mengenali kerangkanya, kamu bisa menemukan bagian pentingnya dalam tiga puluh detik." },
+        {
+          "type": "tabel",
+          "head": ["Kalimat surat", "Arti sebenarnya", "Yang harus kamu lakukan"],
+          "rows": [
+            ["Vi har modtaget din ansøgning.", "Permohonanmu sudah kami terima.", "tidak ada"],
+            ["Din sag er under behandling.", "Berkasmu sedang diproses.", "tunggu"],
+            ["Vi mangler følgende bilag: …", "Lampiran berikut belum ada.", "**kirim segera**"],
+            ["Du bedes indsende … inden den 1. maj.", "Harap kirimkan … sebelum 1 Mei.", "**ada batas waktu**"],
+            ["Fristen er den 15. i denne måned.", "Batas waktunya tanggal 15.", "**tandai kalender**"],
+            ["Der er truffet afgørelse i din sag.", "Keputusan sudah dibuat.", "baca keseluruhannya"],
+            ["Du har fået bevilget …", "Kamu diberi/disetujui …", "kabar baik"],
+            ["Vi kan ikke imødekomme din ansøgning.", "Permohonanmu ditolak.", "lihat baris berikut"],
+            ["Du kan klage inden fire uger.", "Kamu bisa mengajukan keberatan.", "**empat minggu**"],
+            ["Beløbet vil blive udbetalt den …", "Uangnya akan dibayarkan tanggal …", "tidak ada"],
+            ["Beløbet skal tilbagebetales.", "Uangnya harus dikembalikan.", "**hubungi mereka**"],
+            ["Har du spørgsmål, kan du kontakte …", "Kalau ada pertanyaan, hubungi …", "simpan nomornya"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat hal yang membuat hidup jauh lebih mudah",
+          "items": [
+            "**Cari tanggal dulu, baru baca.** Hampir setiap surat resmi memuat satu tanggal yang penting — *frist*. Temukan itu lebih dulu; sisanya bisa dibaca dengan tenang sesudahnya.",
+            "**Kata *bedes* berarti wajib.** *Du bedes indsende …* terdengar seperti permintaan sopan, tapi dalam bahasa lembaga Denmark ia berarti \"harus\". Jangan menganggapnya opsional.",
+            "**Kalau kamu tidak sanggup, katakan lebih awal.** Menelepon dan berkata *jeg kan ikke nå fristen — kan jeg få udsættelse?* (bisa minta perpanjangan?) hampir selalu berhasil. Diam sampai lewat batas waktu hampir selalu tidak.",
+            "**Kamu berhak mendapat penerjemah** dalam banyak urusan resmi, terutama kesehatan. *Kan jeg få en tolk?* adalah kalimat yang sah dan wajar — tapi cobalah dulu dengan bahasa Denmarkmu sendiri. Kamu akan terkejut betapa jauh ia membawamu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en skranke", "baca": "SKRANG-ge", "id": "loket" },
+    { "da": "et rådhus", "baca": "RODH-hus", "id": "balai kota" },
+    { "da": "en sagsbehandler", "baca": "SAGS-be-han-la", "id": "petugas berkas" },
+    { "da": "at melde flytning", "baca": "MEL-e FLÜT-ning", "id": "lapor pindah" },
+    { "da": "at gå i stå", "baca": "go i sto", "id": "macet, mandek" },
+    { "da": "et sundhedskort", "baca": "SON-heths-kort", "id": "kartu kesehatan" },
+    { "da": "en lejer", "baca": "LAI-a", "id": "penyewa" },
+    { "da": "en ejer", "baca": "AI-a", "id": "pemilik" },
+    { "da": "nødvendigvis", "baca": "nödh-VEN-di-vis", "id": "harus, mesti" },
+    { "da": "en sag", "baca": "sa", "id": "perkara, berkas" },
+    { "da": "en bekræftelse", "baca": "be-KRÈF-tel-se", "id": "konfirmasi" },
+    { "da": "i løbet af", "baca": "i LÖ-bedh a", "id": "dalam waktu" },
+    { "da": "et par", "baca": "pa", "id": "sepasang, beberapa" },
+    { "da": "at ændre", "baca": "ÈN-dra", "id": "mengubah" },
+    { "da": "automatisk", "baca": "au-to-MA-tisk", "id": "otomatis" },
+    { "da": "at søge om", "baca": "SÖ-e om", "id": "mengajukan permohonan" },
+    { "da": "at genudstede", "baca": "gen-UDH-ste-dhe", "id": "menerbitkan ulang" },
+    { "da": "en legitimation", "baca": "le-gi-ti-ma-SHON", "id": "identitas berfoto" },
+    { "da": "et pas", "baca": "pas", "id": "paspor" },
+    { "da": "en frist", "baca": "frist", "id": "batas waktu" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan kata birokrasi yang tepat.",
+      "items": [
+        "Jeg skal melde ____, fordi jeg er flyttet.",
+        "Alle breve fra det offentlige kommer i min ____.",
+        "Uden ____ kan jeg ikke logge ind på borger.dk.",
+        "Kan du hjælpe mig med at udfylde dette ____?",
+        "____ for ansøgningen er den 1. maj.",
+        "Jeg har mit ____ med som legitimation."
+      ]
+    },
+    {
+      "prompt": "Cocokkan kalimat surat dengan artinya. Tulis artinya dalam bahasa Indonesia.",
+      "items": [
+        "Din sag er under behandling.",
+        "Vi mangler følgende bilag.",
+        "Du bedes indsende dokumentet inden fredag.",
+        "Vi kan ikke imødekomme din ansøgning.",
+        "Beløbet vil blive udbetalt den 1. juni.",
+        "Du kan klage inden fire uger."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "jeg / har / prøvet / på nettet / men / det / gik / i stå",
+        "der / bliver / sendt / en bekræftelse / til / din e-Boks",
+        "kan / du / sige / det / lidt / langsommere",
+        "hvis / du / vil / skifte / læge / skal / du / søge / om / det / selv",
+        "jeg / er / ved / at / lære / dansk"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Saya pindah dan mau lapor pindah.",
+        "Maaf, bisa diulang?",
+        "Apa arti kata *frist*?",
+        "MitID saya tidak berfungsi.",
+        "Saya sedang belajar bahasa Denmark."
+      ]
+    }
+  ],
+  "answers": [
+    "flytning — e-Boks — MitID — skema — Fristen — pas",
+    "Berkasmu sedang diproses. — Lampiran berikut belum kami terima. — Harap kirimkan dokumennya sebelum Jumat. — Permohonanmu tidak dapat kami kabulkan. — Uangnya akan dibayarkan tanggal 1 Juni. — Kamu bisa mengajukan keberatan dalam empat minggu.",
+    "Jeg har prøvet på nettet, men det gik i stå. — Der bliver sendt en bekræftelse til din e-Boks. — Kan du sige det lidt langsommere? — Hvis du vil skifte læge, skal du søge om det selv. — Jeg er ved at lære dansk.",
+    "Jeg er flyttet, og jeg skal melde flytning. — Undskyld, kan du gentage det? — Hvad betyder *frist*? — Mit MitID virker ikke. — Jeg er ved at lære dansk."
+  ],
+  "wave": "Ulangi unit 15. Lalu bukalah satu surat resmi asli yang kamu punya — dari kommune, bank, atau tempat kerja — dan carilah tiga hal: batas waktunya, apa yang diminta darimu, dan siapa yang harus dihubungi. Tulis ringkasannya dalam tiga kalimat bahasa Denmark."
+}

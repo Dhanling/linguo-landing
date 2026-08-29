@@ -1,0 +1,210 @@
+{
+  "title": "Di tempat dokter",
+  "title_target": "Hos lægen",
+  "goal": "Menjelaskan keluhan tubuh dengan tepat, memahami saran dokter, dan mengurus sakit dengan tempat kerja.",
+  "bekal": [
+    "*have ondt i* — rangka dasar untuk semua rasa sakit",
+    "nama bagian tubuh dan gejala yang paling sering",
+    "sistem kesehatan Denmark: *egen læge*, *vagtlæge*, *skadestue*, *1813*",
+    "melapor sakit ke tempat kerja dan meminta *lægeerklæring*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Konsultation en tirsdag formiddag",
+      "intro": "Rizky sudah dua minggu merasa tidak enak badan. Dialog ini memuat rangka kalimat yang akan kamu perlukan setiap kali sakit — dan memperlihatkan bahwa dokter Denmark bertanya jauh lebih banyak daripada yang mungkin kamu duga.",
+      "lines": [
+        { "speaker": "Lægen:", "text": "Goddag, Rizky. Sæt dig ned. Hvad kan jeg hjælpe med?", "id": "Selamat siang, Rizky. Silakan duduk. Ada keluhan apa?", "literal": "selamat-siang, Rizky. dudukkan diri turun. apa bisa saya menolong dengan?" },
+        { "speaker": "Rizky:", "text": "Jeg har haft ondt i halsen i næsten to uger, og jeg er meget træt.", "id": "Tenggorokan saya sakit hampir dua minggu, dan saya capek sekali.", "literal": "saya punya punya-nya sakit dalam tenggorokan-itu selama hampir dua minggu, dan saya adalah sangat lelah." },
+        { "speaker": "Lægen:", "text": "Har du haft feber?", "id": "Ada demam?", "literal": "punya kamu punya-nya demam?" },
+        { "speaker": "Rizky:", "text": "Lidt i starten — omkring otteogtredive. Nu har jeg ikke feber, men jeg sover dårligt.", "id": "Sedikit di awal — sekitar tiga puluh delapan. Sekarang tidak demam, tapi tidurnya buruk.", "literal": "sedikit pada awal-itu — sekitar delapan-dan-tiga-puluh. sekarang punya saya tidak demam, tapi saya tidur buruk." },
+        { "speaker": "Lægen:", "text": "Gør det ondt, når du synker?", "id": "Sakit kalau menelan?", "literal": "melakukan itu sakit, ketika kamu menelan?" },
+        { "speaker": "Rizky:", "text": "Ja, især om morgenen. Og jeg har hovedpine næsten hver dag.", "id": "Iya, terutama pagi hari. Dan saya sakit kepala hampir tiap hari.", "literal": "ya, terutama pada pagi-itu. dan saya punya kepala-sakit hampir tiap hari." },
+        { "speaker": "Lægen:", "text": "Hoster du?", "id": "Batuk?", "literal": "batuk kamu?" },
+        { "speaker": "Rizky:", "text": "Lidt, mest om natten. Jeg troede først, det var en almindelig forkølelse.", "id": "Sedikit, kebanyakan malam. Awalnya saya kira cuma pilek biasa.", "literal": "sedikit, kebanyakan pada malam-itu. saya kira-dulu pertama, itu adalah-dulu sebuah biasa masuk-angin." },
+        { "speaker": "Lægen:", "text": "Det kan det stadig være. Må jeg lige kigge? Sig aaah.", "id": "Bisa jadi masih itu. Boleh saya lihat? Bilang aaa.", "literal": "itu bisa itu masih berada. boleh saya *lige* melihat? katakan aaah." },
+        { "speaker": "Rizky:", "text": "Aaah.", "id": "Aaa.", "literal": "aaah." },
+        { "speaker": "Lægen:", "text": "Halsen er rød, men jeg kan ikke se belægninger. Har du haft det sådan før?", "id": "Tenggorokannya merah, tapi tidak ada bercak. Pernah begini sebelumnya?", "literal": "tenggorokan-itu adalah merah, tapi saya bisa tidak lihat lapisan-lapisan. punya kamu punya-nya itu begitu sebelum?" },
+        { "speaker": "Rizky:", "text": "Hver vinter, faktisk. Men aldrig så længe.", "id": "Tiap musim dingin, sebenarnya. Tapi tidak pernah selama ini.", "literal": "tiap musim-dingin, faktanya. tapi tak-pernah begitu lama." },
+        { "speaker": "Lægen:", "text": "Jeg tager en podning for en sikkerheds skyld. Svaret kommer i din e-Boks om to dage.", "id": "Saya ambil swab untuk memastikan. Hasilnya masuk e-Boks dua hari lagi.", "literal": "saya mengambil sebuah usapan untuk sebuah keamanan-punya sebab. jawaban-itu datang dalam milikmu e-Boks dalam dua hari." },
+        { "speaker": "Rizky:", "text": "Skal jeg have penicillin?", "id": "Perlu antibiotik?", "literal": "harus saya punya penisilin?" },
+        { "speaker": "Lægen:", "text": "Ikke endnu. Vi venter på svaret. Jeg tror mest, det er en virus og for lidt søvn.", "id": "Belum. Kita tunggu hasilnya. Saya lebih menduga ini virus dan kurang tidur.", "literal": "tidak lagi. kami menunggu pada jawaban-itu. saya kira paling, itu adalah sebuah virus dan terlalu sedikit tidur." },
+        { "speaker": "Rizky:", "text": "Kan du skrive en lægeerklæring? Min arbejdsgiver har spurgt.", "id": "Bisa buatkan surat keterangan dokter? Tempat kerja saya minta.", "literal": "bisa kamu menulis sebuah dokter-keterangan? milikku pemberi-kerja punya bertanya-nya." },
+        { "speaker": "Lægen:", "text": "Det kan jeg. Det koster et gebyr, som arbejdsgiveren skal betale, ikke dig.", "id": "Bisa. Ada biayanya, dan yang bayar tempat kerja, bukan Anda.", "literal": "itu bisa saya. itu memakan-biaya sebuah biaya, yang pemberi-kerja-itu harus membayar, tidak kamu." },
+        { "speaker": "Rizky:", "text": "Godt at vide. Skal jeg blive hjemme resten af ugen?", "id": "Bagus tahu itu. Perlu saya di rumah sisa minggu ini?", "literal": "bagus untuk tahu. harus saya tinggal rumah sisa-itu dari minggu-itu?" },
+        { "speaker": "Lægen:", "text": "Bliv hjemme i tre dage, sov, og drik rigeligt. Hvis feberen kommer tilbage, ringer du til mig.", "id": "Di rumah tiga hari, tidur, dan minum yang banyak. Kalau demamnya kembali, telepon saya.", "literal": "tinggal rumah selama tiga hari, tidur, dan minum berlimpah. kalau demam-itu datang kembali, menelepon kamu ke saya." },
+        { "speaker": "Rizky:", "text": "Tak. Og hvis det bliver værre i weekenden?", "id": "Terima kasih. Kalau akhir pekan makin parah?", "literal": "terima-kasih. dan kalau itu menjadi lebih-buruk pada akhir-pekan-itu?" },
+        { "speaker": "Lægen:", "text": "Så ringer du 1813. De henviser dig videre, hvis der er behov.", "id": "Ya telepon 1813. Mereka rujuk lebih lanjut kalau perlu.", "literal": "lalu menelepon kamu 1813. mereka merujuk kamu lebih-lanjut, kalau di-sana adalah kebutuhan." }
+      ],
+      "notes": [
+        "***Have ondt i* adalah rangka dasar untuk seluruh rasa sakit:** *Jeg har ondt i **halsen / hovedet / maven / ryggen / tænderne**.* Perhatikan bahwa bagian tubuhnya memakai **bentuk tentu**, dan bahwa bahasa Denmark hampir tak pernah memakai kata milik: bukan *min hals*, melainkan *halsen*.",
+        "**Beberapa keluhan punya kata sendiri:** *hovedpine* (sakit kepala), *tandpine* (sakit gigi), *mavepine* (sakit perut), *ondt i ryggen* (sakit punggung), *ondt i halsen* (sakit tenggorokan). Bentuk ber-*pine* dan bentuk *ondt i* keduanya benar untuk yang sama.",
+        "***Egen læge*** (dokter keluargamu sendiri) adalah pintu masuk ke seluruh sistem kesehatan Denmark. Kamu ditugaskan ke satu dokter, dan hampir semua hal harus lewat dia dulu — spesialis, rumah sakit, rujukan. Datang langsung ke rumah sakit tanpa rujukan hampir selalu berakhir dengan disuruh pulang.",
+        "**Di luar jam kerja: telepon *1813*** (di wilayah ibu kota) atau *vagtlægen* (di wilayah lain) sebelum datang ke *skadestuen* (unit gawat darurat). Denmark benar-benar menjalankan aturan ini; datang tanpa menelepon dulu berarti menunggu berjam-jam atau ditolak.",
+        "***Lægeerklæring*** adalah surat keterangan dokter yang diminta pemberi kerja kalau kamu sakit lebih dari beberapa hari. Biayanya ditanggung pemberi kerja, bukan olehmu — banyak orang tidak tahu ini dan membayar sendiri tanpa perlu.",
+        "**Dokter Denmark meresepkan antibiotik jauh lebih jarang** daripada di banyak negara lain, dan itu kebijakan sadar, bukan kelalaian. Jawaban *det er nok en virus, hvil dig* (istirahat saja) adalah pengalaman umum yang mengecewakan banyak pendatang. Ia bukan tanda kamu tidak dianggap serius.",
+        "***For en sikkerheds skyld*** (untuk berjaga-jaga) adalah ungkapan tetap yang sangat berguna, dan bentuknya aneh: *sikkerhed* + *-s* + *skyld*. Hafalkan utuh."
+      ],
+      "grammars": [
+        {
+          "title": "Tubuh dan keluhan",
+          "body": [
+            "Kolom kiri adalah bagian tubuh dalam bentuk tentu — bentuk yang benar-benar dipakai saat bercerita ke dokter."
+          ],
+          "table": {
+            "head": ["Bagian tubuh", "Arti", "Gejala", "Arti"],
+            "rows": [
+              ["hovedet", "kepala", "en feber", "demam"],
+              ["halsen", "tenggorokan, leher", "en hoste", "batuk"],
+              ["maven", "perut", "en forkølelse", "pilek, masuk angin"],
+              ["ryggen", "punggung", "en influenza", "flu"],
+              ["brystet", "dada", "kvalme", "mual"],
+              ["armen / benet", "lengan / kaki", "svimmelhed", "pusing berputar"],
+              ["knæet", "lutut", "udslæt", "ruam"],
+              ["skulderen", "bahu", "en allergi", "alergi"],
+              ["tænderne", "gigi", "en betændelse", "peradangan, infeksi"],
+              ["ørerne", "telinga", "en blodprøve", "tes darah"],
+              ["øjnene", "mata", "en podning", "usapan, swab"],
+              ["huden", "kulit", "en henvisning", "rujukan"],
+              ["hjertet", "jantung", "en recept", "resep"],
+              ["lungerne", "paru-paru", "en bivirkning", "efek samping"]
+            ]
+          },
+          "after": [
+            "**Rangka kalimat yang perlu kamu kuasai:** *Jeg har ondt i …* / *Jeg har haft … i … dage* / *Det gør ondt, når jeg …* / *Det begyndte …* / *Det bliver værre, når …* / *Jeg er allergisk over for …*",
+            "⚠️ ***Gift*** berarti \"menikah\" — dan juga \"racun\". *Er du gift?* di ruang dokter hampir pasti berarti pertanyaan tentang status pernikahan. Konteks menyelamatkan, tapi kata ini patut kamu ingat."
+          ]
+        },
+        {
+          "title": "Sistem kesehatan Denmark dalam satu tabel",
+          "body": [
+            "Mengetahui pintu mana yang harus diketuk menghemat waktu berjam-jam — dan kadang lebih dari itu."
+          ],
+          "table": {
+            "head": ["Kalau …", "Hubungi", "Catatan"],
+            "rows": [
+              ["sakit biasa, jam kerja", "**egen læge**", "telepon pagi, biasanya dapat hari itu"],
+              ["sakit, malam/akhir pekan", "**1813** (ibu kota) / **vagtlægen**", "**telepon dulu, selalu**"],
+              ["kecelakaan serius", "**112**", "ambulans"],
+              ["butuh spesialis", "egen læge → **henvisning**", "tanpa rujukan biasanya tidak bisa"],
+              ["butuh obat resep", "**apoteket** dengan resep digital", "resepnya elektronik, bawa kartu kuning"],
+              ["gigi", "**tandlægen** langsung", "**tidak gratis** — bayar sendiri"],
+              ["masalah jiwa", "egen læge → psykolog", "sebagian ditanggung dengan rujukan"],
+              ["hamil", "egen læge → **jordemoder**", "bidan mengurus kehamilan normal"],
+              ["butuh penerjemah", "minta saat memesan waktu", "hak yang sah dalam banyak kasus"]
+            ]
+          },
+          "after": [
+            "**Baris keenam adalah kejutan besar bagi hampir semua pendatang:** perawatan gigi untuk orang dewasa **tidak gratis** di Denmark, dan biayanya tinggi. Semua layanan dokter dan rumah sakit lain gratis lewat kartu kuning, tapi gigi berdiri sendiri.",
+            "**Menelepon dokter di Denmark punya waktu tetap:** hampir semua praktik membuka telepon antara pukul 8 dan 9 pagi. Menelepon pukul sebelas biasanya tidak akan diangkat."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Melapor sakit ke tempat kerja",
+      "blocks": [
+        { "type": "p", "text": "Di Denmark, melapor sakit sederhana, cepat, dan tidak perlu penjelasan panjang. Kamu **tidak wajib** memberi tahu penyakit apa yang kamu derita — kepada pemberi kerja, cukup fakta bahwa kamu sakit." },
+        {
+          "type": "tabel",
+          "head": ["Situasi", "Kalimat", "Catatan"],
+          "rows": [
+            ["lapor pagi hari", "Hej Karin, jeg er desværre syg i dag.", "sebelum jam kerja dimulai"],
+            ["menambah keterangan", "Jeg har feber og bliver hjemme.", "sukarela, tidak wajib"],
+            ["perkiraan waktu", "Jeg regner med at være tilbage på torsdag.", "sangat dihargai"],
+            ["belum tahu", "Jeg melder tilbage i morgen tidlig.", "aman kalau belum pasti"],
+            ["anak sakit", "Jeg har et sygt barn og bliver hjemme.", "*barns første sygedag* — hak di banyak tempat"],
+            ["janji dokter", "Jeg har en lægetid kl. 10 og kommer bagefter.", "sebutkan lebih awal"],
+            ["kembali kerja", "Jeg er rask igen og møder i morgen.", "kabari sebelumnya"],
+            ["surat dokter", "Skal jeg have en lægeerklæring?", "biayanya kantor yang tanggung"],
+            ["sakit lama", "Kan vi tale om en gradvis opstart?", "kembali bertahap"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang tidak terduga bagi pendatang",
+          "items": [
+            "**Kamu tidak perlu menyebut penyakitmu.** Bertanya balik *hvad fejler du?* dari atasan bukan hal yang lazim, dan kamu berhak menjawabnya samar. Ini dilindungi kebiasaan, bukan sekadar kesopanan.",
+            "***Barns første sygedag*** — hari pertama anak sakit — adalah hak di sangat banyak tempat kerja Denmark: kamu boleh tinggal di rumah dengan tetap dibayar. Banyak orang tua pendatang tidak tahu ini dan mengambil cuti sendiri tanpa perlu.",
+            "**Datang ke kantor sambil sakit tidak dianggap rajin — ia dianggap tidak masuk akal.** Kalau kamu flu, tinggallah di rumah. Menularkan seluruh tim demi menunjukkan dedikasi adalah kesalahan budaya, bukan pujian.",
+            "⚠️ **Tapi laporkan tepat waktu.** Diam tanpa kabar sampai siang jauh lebih merusak daripada sakit itu sendiri. Aturannya di sebagian besar tempat: sebelum jam kerja dimulai, lewat telepon atau pesan, ke satu orang yang sudah ditentukan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "at have ondt i", "baca": "ha ont i", "id": "sakit di bagian" },
+    { "da": "en hals", "baca": "hals", "id": "tenggorokan, leher" },
+    { "da": "en feber", "baca": "FE-ba", "id": "demam" },
+    { "da": "at synke", "baca": "SÜNG-ge", "id": "menelan" },
+    { "da": "især", "baca": "i-SÈA", "id": "terutama" },
+    { "da": "en hovedpine", "baca": "HO-edh-pi-ne", "id": "sakit kepala" },
+    { "da": "at hoste", "baca": "HOS-te", "id": "batuk" },
+    { "da": "almindelig", "baca": "al-MIN-e-li", "id": "biasa, umum" },
+    { "da": "en forkølelse", "baca": "for-KÖ-lel-se", "id": "pilek" },
+    { "da": "at kigge", "baca": "KI-ge", "id": "melihat, mengintip" },
+    { "da": "en podning", "baca": "PODH-ning", "id": "usapan, swab" },
+    { "da": "for en sikkerheds skyld", "baca": "for en SI-ga-heths skül", "id": "untuk berjaga-jaga" },
+    { "da": "et svar", "baca": "svaa", "id": "jawaban, hasil" },
+    { "da": "en søvn", "baca": "söun", "id": "tidur" },
+    { "da": "en lægeerklæring", "baca": "LÈ-e-ea-klè-ring", "id": "surat keterangan dokter" },
+    { "da": "et gebyr", "baca": "ge-BÜA", "id": "biaya" },
+    { "da": "rigeligt", "baca": "RI-e-lit", "id": "berlimpah, banyak" },
+    { "da": "at henvise", "baca": "HEN-vi-se", "id": "merujuk" },
+    { "da": "et behov", "baca": "be-HOU", "id": "kebutuhan" },
+    { "da": "rask", "baca": "rask", "id": "sehat, sembuh" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan **ondt i** + bagian tubuh yang benar.",
+      "items": [
+        "Jeg kan ikke synke — jeg har ____ (tenggorokan).",
+        "Jeg har ____ hele dagen (kepala).",
+        "Efter flytningen har jeg ____ (punggung).",
+        "Jeg spiste for meget og har ____ (perut).",
+        "Jeg skal til tandlæge; jeg har ____ (gigi).",
+        "Jeg faldt på cyklen og har ____ (lutut)."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata kesehatan yang tepat.",
+      "items": [
+        "Jeg har ____ på otteogtredive grader.",
+        "Lægen tog en ____ for at være sikker.",
+        "Uden en ____ kan jeg ikke komme til speciallæge.",
+        "Min arbejdsgiver beder om en ____.",
+        "Jeg henter min medicin på ____.",
+        "Hvis det bliver værre i weekenden, ringer jeg til ____."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "jeg / har / haft / ondt / i halsen / i / næsten / to uger",
+        "gør / det / ondt / når / du / synker",
+        "svaret / kommer / i / din e-Boks / om / to dage",
+        "bliv / hjemme / i tre dage / og / drik / rigeligt",
+        "hvis / feberen / kommer / tilbage / ringer / du / til mig"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Tenggorokan saya sakit sudah dua minggu.",
+        "Saya demam dan batuk waktu malam.",
+        "Sakit kalau saya menelan.",
+        "Halo Karin, sayangnya saya sakit hari ini.",
+        "Saya perkirakan bisa kembali hari Kamis."
+      ]
+    }
+  ],
+  "answers": [
+    "ondt i halsen — ondt i hovedet — ondt i ryggen — ondt i maven — ondt i tænderne — ondt i knæet",
+    "feber — podning — henvisning — lægeerklæring — apoteket — 1813",
+    "Jeg har haft ondt i halsen i næsten to uger. — Gør det ondt, når du synker? — Svaret kommer i din e-Boks om to dage. — Bliv hjemme i tre dage, og drik rigeligt. — Hvis feberen kommer tilbage, ringer du til mig.",
+    "Jeg har haft ondt i halsen i to uger. — Jeg har feber og hoster om natten. — Det gør ondt, når jeg synker. — Hej Karin, jeg er desværre syg i dag. — Jeg regner med at være tilbage på torsdag."
+  ],
+  "wave": "Ulangi unit 17. Lalu ceritakan keras-keras satu kali kamu benar-benar sakit: apa yang terasa, sejak kapan, apa yang membuatnya lebih parah, dan apa yang kamu lakukan. Sepuluh kalimat. Ini percakapan yang cepat atau lambat pasti kamu butuhkan."
+}
