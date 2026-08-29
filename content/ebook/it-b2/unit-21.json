@@ -1,0 +1,225 @@
+{
+  "title": "Membaca koran tanpa kamus",
+  "title_target": "Titoli, stile nominale, editoriali",
+  "goal": "Membaca judul dan tajuk rencana Italia dengan lancar — termasuk kalimat tanpa kata kerja, singkatan, dan cara pers menyembunyikan pendapat di dalam berita.",
+  "bekal": [
+    "membaca judul bergaya nominal dan mengembalikannya jadi kalimat penuh",
+    "mengenali kata-kata khas pers yang tak dipakai di percakapan",
+    "membedakan berita, analisis, dan tajuk rencana",
+    "menyusun pendapat tertulis dalam empat paragraf"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog 1 — Redazione di un quotidiano locale, chiusura alle 20",
+      "intro": "Redaksi sebuah harian daerah, pukul delapan malam, satu jam sebelum tutup. Ines menulis, Gervasio mengedit, dan halaman lima masih kosong dua kolom. Perhatikan bahwa mereka membicarakan judul seperti orang lain membicarakan resep.",
+      "lines": [
+        { "speaker": "Gervasio:", "text": "Ines, il titolo non entra. Sono sei battute di troppo.", "id": "Ines, judulnya tidak muat. Kelebihan enam karakter.", "literal": "Ines, judul-itu tidak masuk. adalah enam ketukan dari terlalu." },
+        { "speaker": "Ines:", "text": "\"Il Comune ha deciso di chiudere il ponte per i lavori.\" Taglio cosa?", "id": "\"Pemkot memutuskan menutup jembatan untuk perbaikan.\" Potong apa?", "literal": "kotapraja-itu punya putuskan dari menutup jembatan-itu untuk pekerjaan-itu. saya-potong apa?" },
+        { "speaker": "Gervasio:", "text": "Il verbo. \"Ponte chiuso per lavori: la decisione del Comune.\"", "id": "Kata kerjanya. \"Jembatan ditutup untuk perbaikan: keputusan Pemkot.\"", "literal": "kata-kerja-itu. jembatan tertutup untuk pekerjaan: keputusan dari-kotapraja." },
+        { "speaker": "Ines:", "text": "Meglio. Però \"chiuso\" da quando?", "id": "Lebih bagus. Tapi \"ditutup\" mulai kapan?", "literal": "lebih-baik. tapi tertutup dari kapan?" },
+        { "speaker": "Gervasio:", "text": "Da lunedì. Mettilo nel sommario, non nel titolo.", "id": "Mulai Senin. Taruh di sub judul, jangan di judul.", "literal": "dari Senin. taruh-nya dalam-ringkasan, tidak dalam-judul." },
+        { "speaker": "Ines:", "text": "E se scrivessi \"Il ponte chiude lunedì\"? Verbo al presente, corto, chiaro.", "id": "Kalau kutulis \"Jembatan tutup Senin\"? Kata kerja presente, pendek, jelas.", "literal": "dan kalau saya-menulis-lah jembatan-itu menutup Senin? kata-kerja pada-yang sekarang, pendek, jelas." },
+        { "speaker": "Gervasio:", "text": "Va bene, ma allora il presente lo tieni per tutto il pezzo.", "id": "Boleh, tapi kalau begitu presente-nya kamu pakai di seluruh berita.", "literal": "pergi baik, tapi maka yang-sekarang itu kamu-pegang untuk seluruh berita-itu." },
+        { "speaker": "Ines:", "text": "Nel pezzo ho passato prossimo. È successo ieri sera in consiglio.", "id": "Di beritanya aku pakai passato prossimo. Kejadiannya semalam di dewan kota.", "literal": "dalam berita-itu saya-punya lampau dekat. adalah terjadi kemarin malam di dewan." },
+        { "speaker": "Gervasio:", "text": "Allora titolo al presente e pezzo al passato. È la regola, non me la sono inventata io.", "id": "Berarti judul presente dan berita lampau. Itu aturannya, bukan aku yang bikin.", "literal": "maka judul pada-yang sekarang dan berita pada-yang lampau. adalah aturan-itu, tidak kepada-saya itu saya-adalah karang saya." },
+        { "speaker": "Ines:", "text": "L'assessore dice che i lavori dureranno tre mesi.", "id": "Wakil wali kota bilang perbaikannya tiga bulan.", "literal": "wakil-itu mengatakan bahwa pekerjaan-itu akan-berlangsung tiga bulan." },
+        { "speaker": "Gervasio:", "text": "\"Dice\" no. \"Secondo l'assessore\", oppure \"i lavori dureranno tre mesi, fa sapere il Comune\".", "id": "\"Bilang\" jangan. \"Menurut wakil wali kota\", atau \"perbaikan tiga bulan, kata Pemkot\".", "literal": "mengatakan tidak. menurut wakil-itu, atau pekerjaan-itu akan-berlangsung tiga bulan, membuat tahu kotapraja-itu." },
+        { "speaker": "Ines:", "text": "E se durassero sei?", "id": "Kalau ternyata enam bulan?", "literal": "dan kalau mereka-berlangsung-lah enam?" },
+        { "speaker": "Gervasio:", "text": "Per quello c'è il condizionale. Ma solo se qualcuno ce lo dice.", "id": "Buat itu ada condizionale. Tapi cuma kalau ada yang bilang begitu ke kita.", "literal": "untuk itu di-sana-adalah yang-bersyarat. tapi hanya kalau seseorang kepada-kami itu mengatakan." },
+        { "speaker": "Ines:", "text": "Me lo ha detto un tecnico, ma non vuole essere citato.", "id": "Ada teknisi yang bilang, tapi tidak mau disebut namanya.", "literal": "kepada-saya itu punya katakan seorang teknisi, tapi tidak dia-mau ada dikutip." },
+        { "speaker": "Gervasio:", "text": "Allora: \"i tempi potrebbero allungarsi\". Senza fonte, senza nome, senza bugie.", "id": "Kalau begitu: \"waktunya bisa molor\". Tanpa sumber, tanpa nama, tanpa bohong.", "literal": "maka: waktu-itu mereka-akanlah-bisa memanjangkan-diri. tanpa sumber, tanpa nama, tanpa kebohongan." },
+        { "speaker": "Ines:", "text": "È la frase più onesta che abbiamo scritto stasera.", "id": "Itu kalimat paling jujur yang kita tulis malam ini.", "literal": "adalah kalimat paling jujur yang kami-punya tulis malam-ini." }
+      ],
+      "notes": [
+        "**Baris 3 — inilah *stile nominale*, dan ia adalah kunci membaca judul Italia.** *Ponte chiuso per lavori* tidak punya kata kerja terkonjugasi sama sekali: participio (*chiuso*) menggantikan seluruh predikat. Untuk memahaminya, kembalikan sendiri kata kerjanya: *Il ponte **è stato** chiuso per lavori.*",
+        "Baris 9 — **aturan kala pers Italia**: judul memakai **presente** (atau tanpa kata kerja), badan berita memakai **passato prossimo**. *Il ponte chiude lunedì* di judul, *il consiglio ha deciso ieri sera* di paragraf pertama. Ini berlaku di hampir semua koran Italia.",
+        "Baris 11 — *\"dice\" no*. Pers Italia menghindari *dire* karena terlalu telanjang. Yang dipakai: *secondo*, *fa sapere*, *fanno sapere fonti vicine a*, *riferisce*, *sostiene*, *precisa*, *ribadisce*, *smentisce* — semuanya sudah kamu kenal dari unit 9, dan di sini gunanya menjadi jelas.",
+        "Baris 13 dan 15 — *per quello c'è **il condizionale***, lalu *i tempi **potrebbero** allungarsi*. Kembali ke unit 4: condizionale sebagai penanda \"belum dipastikan\". Perhatikan bahwa Gervasio memakainya bukan untuk berbohong, melainkan supaya tidak menjamin.",
+        "Baris 1 — ***battute***. Di dunia percetakan, *battuta* = satu karakter (termasuk spasi). Kalimat *sono sei battute di troppo* adalah keluhan sehari-hari di setiap redaksi Italia, dan ia menjelaskan kenapa judul Italia ditulis sependek itu: bukan gaya, melainkan lebar kolom.",
+        "Baris 16 — *la frase più onesta **che abbiamo scritto*** — di sini indicativo, walaupun unit 11 mengatakan superlatif menuntut congiuntivo. Dua-duanya dipakai: congiuntivo di tulisan rapi (*che abbiamo scritto* → *che avessimo scritto*), indicativo di percakapan. Ines sedang berbicara, bukan menulis."
+      ]
+    },
+    {
+      "title": "Dialog 2 — L'editoriale, in prima pagina",
+      "intro": "Bukan percakapan: sembilan baris tajuk rencana yang terbit keesokan harinya. Bacalah keras-keras. Ini adalah bahasa Italia tulis tingkat B2 dalam wujud murninya — dan kalau kamu bisa mengikutinya tanpa berhenti, unit-unit sebelumnya sudah bekerja.",
+      "lines": [
+        { "speaker": "Editoriale:", "text": "Tre mesi, dicono. E chi ha vissuto in questa città sa già come finirà.", "id": "Tiga bulan, katanya. Dan siapa pun yang pernah tinggal di kota ini sudah tahu ujungnya.", "literal": "tiga bulan, mereka-mengatakan. dan siapa punya hidup dalam ini kota tahu sudah bagaimana akan-berakhir." },
+        { "speaker": "Editoriale:", "text": "Non è la chiusura del ponte a preoccupare, bensì il modo in cui è stata comunicata.", "id": "Yang mengkhawatirkan bukan penutupan jembatannya, melainkan cara mengumumkannya.", "literal": "tidak adalah penutupan dari-jembatan pada mengkhawatirkan, melainkan cara di yang adalah ada komunikasikan." },
+        { "speaker": "Editoriale:", "text": "Una delibera votata di sera, resa nota il giorno dopo, senza un incontro pubblico.", "id": "Sebuah keputusan yang disahkan malam hari, diumumkan keesokan harinya, tanpa satu pertemuan warga.", "literal": "sebuah keputusan divoting dari malam, dijadikan diketahui hari sesudahnya, tanpa sebuah pertemuan umum." },
+        { "speaker": "Editoriale:", "text": "Che i lavori fossero necessari, lo sapevano tutti da almeno cinque anni.", "id": "Bahwa perbaikannya perlu, semua orang sudah tahu setidaknya lima tahun.", "literal": "bahwa pekerjaan-itu ada-lah perlu, itu tahu-dulu semua dari setidaknya lima tahun." },
+        { "speaker": "Editoriale:", "text": "Pur riconoscendo l'urgenza, resta il problema dei tempi e dei trasporti alternativi.", "id": "Meski mengakui mendesaknya, tetap ada soal waktu dan angkutan pengganti.", "literal": "walaupun mengakui kemendesakan-itu, tinggal masalah-itu dari-waktu dan dari-angkutan pengganti." },
+        { "speaker": "Editoriale:", "text": "Sarebbe bastato un avviso una settimana prima. Non è stato fatto.", "id": "Cukup satu pengumuman seminggu sebelumnya. Itu tidak dilakukan.", "literal": "akanlah-ada cukup sebuah pemberitahuan sebuah minggu sebelumnya. tidak adalah ada buat." },
+        { "speaker": "Editoriale:", "text": "Non si chiede al Comune di fare miracoli, ma di dire per tempo quello che sa.", "id": "Kami tidak meminta Pemkot melakukan mukjizat, melainkan mengatakan tepat waktu apa yang mereka tahu.", "literal": "tidak diri-nya meminta pada-kotapraja dari membuat mukjizat, tapi dari mengatakan untuk waktu itu yang tahu." },
+        { "speaker": "Editoriale:", "text": "Il ponte riaprirà. La fiducia, quella, richiede lavori più lunghi.", "id": "Jembatannya akan dibuka lagi. Kepercayaan, nah itu, perlu perbaikan lebih lama.", "literal": "jembatan-itu akan-membuka-kembali. kepercayaan-itu, itu, menuntut pekerjaan lebih panjang." },
+        { "speaker": "Editoriale:", "text": "E su quel cantiere, per ora, non risulta aperto nulla.", "id": "Dan di proyek yang itu, sejauh ini, belum ada yang dibuka.", "literal": "dan atas itu proyek, untuk sekarang, tidak tampak terbuka apa-pun." }
+      ],
+      "notes": [
+        "Baris 2 — *Non è la chiusura **a** preoccupare, **bensì** il modo*. Dua alat sekaligus: *frase scissa* dengan *a* + infinito (unit 12) dan *bensì* sesudah kalimat negatif (unit 8). Susunan ini adalah pembuka tajuk rencana Italia yang paling khas: **menolak pokok yang jelas, dan mengganti dengan pokok yang sebenarnya.**",
+        "Baris 3 — kalimat tanpa satu pun kata kerja terkonjugasi: *votata*, *resa nota* — dua participio menggantikan dua anak kalimat relatif (unit 11). Bahasa Italia tertulis melakukannya terus-menerus, dan ia memadatkan tiga kalimat jadi satu.",
+        "Baris 4 — *Che i lavori **fossero** necessari, lo sapevano tutti*. Anak kalimat *che* dipindah ke **depan**, lalu diulang dengan *lo* — dislocazione a sinistra (unit 12) dalam ragam tulis. Perhatikan congiuntivo *fossero* walaupun induknya *sapevano* (biasanya indicativo): karena anak kalimatnya mendahului, congiuntivo jadi wajar.",
+        "Baris 5 — ***Pur riconoscendo*** dari unit 8, dan ***resta il problema*** — dua alat tajuk rencana yang bisa langsung kamu pakai di esai ujian.",
+        "Baris 6 — ***Sarebbe bastato***. Condizionale passato untuk menyatakan apa yang seharusnya cukup dilakukan. Kembarannya: *sarebbe bastato*, *sarebbe servito*, *sarebbe stato sufficiente*, *non ci voleva molto*. Semuanya menyampaikan celaan tanpa menuduh siapa pun.",
+        "Baris 8 — *La fiducia, **quella**, richiede…*. Pengulangan dengan kata tunjuk untuk menekankan. Dan baris 9 menutup dengan permainan kata: *cantiere* (proyek) dipakai kiasan, dan *non risulta aperto nulla* mengulang bahasa birokrasi unit 18. Menutup tajuk rencana dengan memutar kembali satu kata dari awal adalah kebiasaan pers Italia."
+      ]
+    }
+  ],
+  "grammars": [
+    {
+      "title": "Mengembalikan judul jadi kalimat",
+      "table": {
+        "head": ["Judul", "Kalimat penuhnya", "Alat yang dipakai"],
+        "rows": [
+          ["Ponte chiuso per lavori", "Il ponte è stato chiuso per lavori.", "participio pasif"],
+          ["Fatturato in crescita del 12%", "Il fatturato è cresciuto del 12%.", "*in* + kata benda"],
+          ["Arrestato il responsabile", "È stato arrestato il responsabile.", "participio di depan"],
+          ["Verso un nuovo accordo", "Si va verso un nuovo accordo.", "preposisi tanpa kata kerja"],
+          ["Sciopero, disagi in tutta Italia", "Lo sciopero ha causato disagi…", "dua kata benda + koma"],
+          ["Il sindaco: \"Nessun passo indietro\"", "Il sindaco ha dichiarato che…", "titik dua = kutipan"],
+          ["Rinviata la decisione sul ponte", "La decisione è stata rinviata.", "participio + subjek di belakang"],
+          ["Tre mesi di lavori, ma i tempi potrebbero allungarsi", "…", "condizionale = belum pasti"],
+          ["Comune sotto accusa", "Il Comune è sotto accusa.", "*essere* dibuang"],
+          ["Al via i cantieri", "I cantieri cominciano.", "ungkapan tetap"]
+        ]
+      },
+      "after": [
+        "Rumus membacanya cuma satu: **cari participio atau kata benda utamanya, lalu tambahkan sendiri *è / è stato / si va***. Sembilan dari sepuluh judul Italia terbuka dengan cara ini.",
+        "Beberapa ungkapan judul yang berdiri sendiri dan perlu dihafal: *al via* (dimulai), *in arrivo* (segera datang), *a rischio* (terancam), *sotto accusa* (dituduh), *in bilico* (di ujung tanduk), *nel mirino* (jadi sasaran), *braccio di ferro* (adu kuat), *fumata bianca / nera* (sepakat / gagal sepakat)."
+      ]
+    },
+    {
+      "title": "Menulis pendapat dalam empat paragraf",
+      "body": [
+        "Susunan ini dipakai di tajuk rencana, di esai ujian CILS/CELI, dan di surel panjang yang mencoba meyakinkan seseorang. Empat paragraf, dan tiap paragraf punya pembuka tetapnya."
+      ],
+      "table": {
+        "head": ["Paragraf", "Tugasnya", "Pembuka yang bisa dipakai"],
+        "rows": [
+          ["**1. pokok**", "menyebut soalnya, bukan pendapatmu", "Negli ultimi mesi si è discusso molto di…"],
+          ["**1. pokok**", "membalik fokus", "Il problema non è…, bensì…"],
+          ["**2. sisi lain**", "mengakui yang benar dari lawan", "Va detto che… / Pur riconoscendo che…"],
+          ["**2. sisi lain**", "menyebut data", "Secondo i dati…, si registra…"],
+          ["**3. pendapatmu**", "menyatakan posisi", "A mio avviso… / Resta il fatto che…"],
+          ["**3. pendapatmu**", "memberi alasan", "Il motivo è semplice: …"],
+          ["**4. penutup**", "menawarkan jalan", "Sarebbe sufficiente… / Basterebbe…"],
+          ["**4. penutup**", "menutup dengan gambar", "Il ponte riaprirà. La fiducia, quella, …"]
+        ]
+      },
+      "after": [
+        "Yang membuat tulisan terdengar B2 bukan kosakatanya, melainkan **paragraf kedua**. Esai yang langsung membela satu sisi terbaca sebagai B1; esai yang mengakui sisi lain lebih dulu, lalu menyanggahnya, terbaca sebagai B2. Alat untuk paragraf itu sudah kamu punya semua: *pur* + gerundio, *benché*, *va detto che*, *è vero che…, tuttavia*.",
+        "Dan satu larangan untuk ujian tertulis: **jangan memakai dislocazione dan segnali discorsivi** dari unit 12 dan 15. *Il problema lo conosciamo tutti* dan *insomma, comunque* akan dihitung sebagai ragam lisan. Simpan mereka untuk berbicara."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Koran, politik daerah, dan kata-kata pers",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Cara baca", "Arti"],
+          "rows": [
+            ["il quotidiano", "il kwo-ti-DYA-no", "harian"],
+            ["la testata", "la tes-TA-ta", "nama media"],
+            ["il titolo", "il TI-to-lo", "judul"],
+            ["il sommario", "il so-MA-ryo", "sub judul"],
+            ["l'occhiello", "lo-KYEL-lo", "baris kecil di atas judul"],
+            ["il pezzo", "il PET-tso", "artikel"],
+            ["l'editoriale", "le-di-to-RYA-le", "tajuk rencana"],
+            ["il fondo", "il FON-do", "tajuk utama halaman satu"],
+            ["l'inchiesta", "lin-KYES-ta", "liputan investigasi"],
+            ["la fonte", "la FON-te", "sumber"],
+            ["l'assessore", "las-se-SO-re", "kepala dinas / wakil wali kota"],
+            ["la delibera", "la de-LI-be-ra", "keputusan resmi"]
+          ]
+        },
+        { "type": "sub", "text": "Kata pers yang tidak dipakai di percakapan" },
+        {
+          "type": "tabel",
+          "head": ["Kata pers", "Bahasa biasa", "Arti"],
+          "rows": [
+            ["il sinistro", "l'incidente", "kecelakaan"],
+            ["il decesso", "la morte", "kematian"],
+            ["il malvivente", "il ladro", "penjahat"],
+            ["il velivolo", "l'aereo", "pesawat"],
+            ["l'esercente", "il negoziante", "pedagang"],
+            ["il sodalizio", "il gruppo", "kelompok, perkumpulan"],
+            ["la vettura", "la macchina", "mobil"],
+            ["il primo cittadino", "il sindaco", "wali kota"],
+            ["l'ateneo", "l'università", "universitas"],
+            ["il capoluogo", "la città principale", "ibu kota provinsi"],
+            ["in seguito a", "dopo", "menyusul"],
+            ["a seguito di", "a causa di", "akibat"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la battuta", "baca": "la ba-TU-ta", "id": "karakter cetak; lelucon" },
+    { "it": "tagliare", "baca": "ta-LYA-re", "id": "memotong" },
+    { "it": "citare", "baca": "ci-TA-re", "id": "mengutip, menyebut nama" },
+    { "it": "allungarsi", "baca": "a-lun-GAR-si", "id": "memanjang, molor" },
+    { "it": "rendere noto", "baca": "REN-de-re NO-to", "id": "mengumumkan" },
+    { "it": "votare", "baca": "vo-TA-re", "id": "memberi suara, mengesahkan" },
+    { "it": "riconoscere", "baca": "ri-ko-NO-se-re", "id": "mengakui" },
+    { "it": "l'urgenza", "baca": "lur-JEN-tsa", "id": "kemendesakan" },
+    { "it": "per tempo", "baca": "per TEM-po", "id": "tepat pada waktunya" },
+    { "it": "la fiducia", "baca": "la fi-DU-ca", "id": "kepercayaan" },
+    { "it": "riaprire", "baca": "rya-PRI-re", "id": "membuka kembali" },
+    { "it": "al via", "baca": "al VI-a", "id": "dimulai" },
+    { "it": "a rischio", "baca": "a RIS-kyo", "id": "terancam" },
+    { "it": "in bilico", "baca": "in BI-li-ko", "id": "di ujung tanduk" },
+    { "it": "nel mirino", "baca": "nel mi-RI-no", "id": "jadi sasaran" },
+    { "it": "il braccio di ferro", "baca": "il BRA-co di FER-ro", "id": "adu kuat" },
+    { "it": "a mio avviso", "baca": "a MI-o a-VI-zo", "id": "menurut hemat saya" },
+    { "it": "resta il fatto che", "baca": "RES-ta il FAT-to ke", "id": "tetap saja faktanya" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Kembalikan judul ini jadi kalimat lengkap.",
+      "items": [
+        "Ponte chiuso per lavori",
+        "Rinviata la decisione del consiglio",
+        "Fatturato in calo del 5%",
+        "Al via i cantieri in centro",
+        "Il sindaco: \"Nessun passo indietro\""
+      ]
+    },
+    {
+      "prompt": "Ubah jadi judul bergaya nominal (tanpa kata kerja terkonjugasi).",
+      "items": [
+        "Il Comune ha approvato il nuovo piano.",
+        "I prezzi sono aumentati del dieci per cento.",
+        "Hanno arrestato due persone.",
+        "La scuola resterà chiusa fino a lunedì.",
+        "Le trattative sono a un punto critico."
+      ]
+    },
+    {
+      "prompt": "Ganti kata pers ini dengan kata sehari-hari.",
+      "items": [
+        "Il sinistro è avvenuto alle 22.",
+        "Il primo cittadino ha commentato.",
+        "La vettura è finita fuori strada.",
+        "L'ateneo ha pubblicato i risultati.",
+        "In seguito alla delibera, i lavori partiranno."
+      ]
+    },
+    {
+      "prompt": "Tulis satu kalimat pembuka untuk tiap paragraf esai pendapat.",
+      "items": [
+        "Paragraf 1: menyebut pokok soal.",
+        "Paragraf 2: mengakui sisi lain.",
+        "Paragraf 3: menyatakan pendapatmu.",
+        "Paragraf 3: memberi alasannya.",
+        "Paragraf 4: menawarkan jalan keluar."
+      ]
+    }
+  ],
+  "answers": [
+    "Il ponte è stato chiuso per lavori. — La decisione del consiglio è stata rinviata. — Il fatturato è calato del 5%. — I cantieri in centro sono cominciati. — Il sindaco ha dichiarato che non ci sarà nessun passo indietro.",
+    "Approvato il nuovo piano — Prezzi in aumento del dieci per cento — Arrestate due persone — Scuola chiusa fino a lunedì — Trattative a un punto critico",
+    "L'incidente è successo alle 22. — Il sindaco ha commentato. — La macchina è finita fuori strada. — L'università ha pubblicato i risultati. — Dopo la delibera, i lavori cominceranno.",
+    "Negli ultimi mesi si è discusso molto della chiusura del ponte. — Va detto che i lavori erano necessari da anni. — A mio avviso il problema non è la chiusura, bensì il modo in cui è stata comunicata. — Il motivo è semplice: senza un avviso, nessuno può organizzarsi. — Sarebbe bastato un incontro pubblico una settimana prima."
+  ]
+}

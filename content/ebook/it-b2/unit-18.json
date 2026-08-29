@@ -1,0 +1,226 @@
+{
+  "title": "Loket, nomor antre, dan kertas yang mencari kertas",
+  "title_target": "Sportello, numerino, e un documento che ne chiede un altro",
+  "goal": "Bertahan di birokrasi Italia: membaca formulir, menyebut dokumen dengan namanya, dan menanyakan hal yang benar kepada orang yang benar.",
+  "bekal": [
+    "mengenali dokumen dasar: codice fiscale, residenza, permesso di soggiorno, SPID",
+    "membaca kalimat formulir tanpa panik",
+    "menanyakan tahap berikutnya, bukan hanya masalahnya",
+    "mengajukan keberatan tertulis yang sopan dan mengikat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog 1 — Ufficio anagrafe, Comune di Prato, sportello 4",
+      "intro": "Kantor catatan sipil di Prato, pukul 09.10. Ruangan penuh. Nomor antrean 118 dipanggil: Yassine, sudah tiga tahun di Italia, datang mengurus perubahan alamat. Di depannya, seorang pegawai bernama Sig.ra Bandini yang sudah dua puluh dua tahun di loket yang sama.",
+      "lines": [
+        { "speaker": "Bandini:", "text": "Centodiciotto. Prego, mi dica.", "id": "Seratus delapan belas. Silakan.", "literal": "seratus-delapan-belas. silakan, kepada-saya katakan-lah." },
+        { "speaker": "Yassine:", "text": "Buongiorno. Devo fare il cambio di residenza. Mi sono trasferito a gennaio.", "id": "Selamat pagi. Saya mau ganti domisili. Saya pindah bulan Januari.", "literal": "selamat-pagi. saya-harus membuat pergantian dari domisili. diri-saya adalah pindah pada Januari." },
+        { "speaker": "Bandini:", "text": "A gennaio? Doveva farlo entro venti giorni. Comunque procediamo. Documenti?", "id": "Januari? Seharusnya dalam dua puluh hari. Ya sudah, kita jalan. Dokumen?", "literal": "pada Januari? Anda-harus-dulu membuat-nya dalam-batas dua-puluh hari. bagaimanapun kita-lanjut. dokumen?" },
+        { "speaker": "Yassine:", "text": "Carta d'identità, codice fiscale, permesso di soggiorno e il contratto d'affitto registrato.", "id": "KTP, NPWP, izin tinggal, dan kontrak sewa terdaftar.", "literal": "kartu dari-identitas, kode fiskal, izin dari tinggal dan kontrak dari-sewa terdaftar." },
+        { "speaker": "Bandini:", "text": "Bene, è preparato. Di solito arrivano senza contratto e devo rimandarli indietro.", "id": "Bagus, Anda siap. Biasanya orang datang tanpa kontrak dan saya harus memulangkan mereka.", "literal": "baik, adalah dipersiapkan. dari biasa mereka-tiba tanpa kontrak dan saya-harus mengirim-kembali-mereka ke-belakang." },
+        { "speaker": "Yassine:", "text": "L'ho imparato a mie spese l'anno scorso.", "id": "Saya belajar dari pengalaman sendiri tahun lalu.", "literal": "itu-saya-punya pelajari pada saya biaya tahun yang-lalu." },
+        { "speaker": "Bandini:", "text": "Il permesso però scade fra due mesi. Ha già presentato il rinnovo?", "id": "Tapi izin tinggalnya habis dua bulan lagi. Sudah mengajukan perpanjangan?", "literal": "izin-itu tapi kedaluwarsa dalam dua bulan. Anda-punya sudah sampaikan perpanjangan-itu?" },
+        { "speaker": "Yassine:", "text": "Non ancora. Devo prima avere la residenza nuova, no?", "id": "Belum. Saya harus punya domisili baru dulu, kan?", "literal": "tidak lagi. saya-harus lebih-dulu memiliki domisili baru, tidak?" },
+        { "speaker": "Bandini:", "text": "No. Sono due cose separate. Anzi, faccia il rinnovo subito, che i tempi sono lunghi.", "id": "Tidak. Itu dua hal terpisah. Malah, urus perpanjangannya sekarang, prosesnya lama.", "literal": "tidak. adalah dua hal terpisah. malah, buat-lah perpanjangan-itu segera, bahwa waktu-itu adalah panjang." },
+        { "speaker": "Yassine:", "text": "Quanto lunghi?", "id": "Lama berapa?", "literal": "berapa panjang?" },
+        { "speaker": "Bandini:", "text": "Dipende dalla questura. Diciamo che finché ha la ricevuta, è in regola.", "id": "Tergantung kantor polisi. Katakanlah selama Anda pegang tanda terima, Anda sah.", "literal": "bergantung dari-kepolisian. kita-katakan bahwa selama Anda-punya tanda-terima-itu, adalah dalam aturan." },
+        { "speaker": "Yassine:", "text": "E per il cambio di residenza quanto ci vuole?", "id": "Kalau ganti domisili berapa lama?", "literal": "dan untuk pergantian dari domisili berapa [+] mau?" },
+        { "speaker": "Bandini:", "text": "Due giorni per la registrazione, poi passa il vigile a verificare che ci abiti davvero.", "id": "Dua hari untuk pencatatan, lalu petugas datang memastikan Anda benar tinggal di sana.", "literal": "dua hari untuk pencatatan, lalu lewat petugas-itu untuk memverifikasi bahwa [+] Anda-tinggal-lah sungguh." },
+        { "speaker": "Yassine:", "text": "E se non ci sono quando passa?", "id": "Kalau saya tidak ada waktu dia datang?", "literal": "dan kalau tidak [+] saya-adalah ketika dia-lewat?" },
+        { "speaker": "Bandini:", "text": "Lasci il nome sul citofono e sulla cassetta della posta. È quello che guardano.", "id": "Tulis nama Anda di interkom dan di kotak pos. Itu yang mereka lihat.", "literal": "tinggalkan-lah nama-itu atas-interkom dan atas-kotak dari-pos. adalah itu yang mereka-lihat." },
+        { "speaker": "Yassine:", "text": "Questa cosa non c'è scritta da nessuna parte.", "id": "Hal ini tidak tertulis di mana pun.", "literal": "ini hal tidak di-sana-adalah tertulis dari tidak-ada bagian." },
+        { "speaker": "Bandini:", "text": "Signor mio, se scrivessimo tutto, che ci starei a fare io qui?", "id": "Pak, kalau semuanya ditulis, buat apa saya di sini?", "literal": "tuan saya, kalau kami-menulis-lah semua, apa [+] saya-akanlah-berada pada membuat saya di-sini?" }
+      ],
+      "notes": [
+        "**Baris 4 — empat dokumen dasar, dan tak satu pun bisa diganti yang lain.** *Carta d'identità* (KTP), *codice fiscale* (nomor pajak perorangan, dipakai untuk hampir semua hal), *permesso di soggiorno* (izin tinggal, bagi warga non-UE), *contratto d'affitto registrato* (kontrak sewa yang sudah didaftarkan ke kantor pajak — kontrak yang belum didaftarkan tidak berlaku untuk urusan ini).",
+        "Baris 3 — *Doveva farlo **entro venti giorni***. Perubahan domisili di Italia wajib dilaporkan dalam 20 hari. Perhatikan bahwa Bandini tetap melayani: kalimat *comunque procediamo* adalah salah satu kalimat paling melegakan yang bisa kamu dengar di loket Italia.",
+        "Baris 9 — *Sono due cose **separate***. Ini pelajaran birokrasi Italia yang paling sering menyelamatkan orang: **urusan yang terdengar berkaitan sering tidak saling menunggu**. Selalu tanyakan terus terang: *devo aspettare l'uno per fare l'altro, o posso farli in parallelo?*",
+        "Baris 11 — *finché ha la **ricevuta**, è in regola*. Tanda terima pengajuan perpanjangan izin tinggal berlaku sebagai izin sementara. Simpan aslinya, bawa salinannya, dan jangan pernah menyerahkan yang asli kepada siapa pun kecuali kantor polisi.",
+        "Baris 13 — ***passa il vigile***. Petugas kepolisian kota benar-benar datang memeriksa apakah kamu tinggal di alamat itu. Kalau ia tidak menemukan namamu di interkom, permohonanmu bisa ditolak tanpa pemberitahuan.",
+        "Baris 17 — *se **scrivessimo** tutto, che ci **starei** a fare?* Pengandaian tipe kedua (unit 3) dipakai sebagai lelucon getir. Perhatikan juga *starci a fare* — \"buat apa aku ada di sini\", satu lagi verbo pronominale yang tak bisa dibongkar."
+      ]
+    },
+    {
+      "title": "Dialog 2 — Il modulo, e la mail che parte due settimane dopo",
+      "intro": "Lima baris pertama adalah teks formulir yang harus ditandatangani Yassine. Empat baris terakhir adalah surel keberatan yang ia kirim dua minggu kemudian, ketika permohonannya tidak kunjung diproses.",
+      "lines": [
+        { "speaker": "Modulo:", "text": "Il/La sottoscritto/a, consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci,", "id": "Yang bertanda tangan di bawah ini, menyadari sanksi pidana atas keterangan palsu,", "literal": "yang bertandatangan, sadar dari-sanksi pidana diperkirakan dalam kasus dari pernyataan bohong," },
+        { "speaker": "Modulo:", "text": "DICHIARA di aver trasferito la propria dimora abituale al seguente indirizzo:", "id": "MENYATAKAN telah memindahkan tempat tinggal tetapnya ke alamat berikut:", "literal": "menyatakan dari telah pindahkan sendiri tempat-tinggal kebiasaan pada-berikut alamat:" },
+        { "speaker": "Modulo:", "text": "Dichiara altresì di occupare l'immobile a titolo di locazione regolarmente registrata.", "id": "Menyatakan pula menempati bangunan tersebut atas dasar sewa yang terdaftar resmi.", "literal": "menyatakan juga dari menempati bangunan-itu pada gelar dari sewa teratur terdaftar." },
+        { "speaker": "Modulo:", "text": "Allega: copia documento d'identità, copia permesso di soggiorno, copia contratto.", "id": "Melampirkan: salinan KTP, salinan izin tinggal, salinan kontrak.", "literal": "melampirkan: salinan dokumen dari-identitas, salinan izin dari tinggal, salinan kontrak." },
+        { "speaker": "Modulo:", "text": "Ai sensi dell'art. 5 D.L. 47/2014, la dichiarazione mendace comporta la decadenza dei benefici.", "id": "Berdasarkan pasal 5 Perpu 47/2014, keterangan palsu mengakibatkan gugurnya hak.", "literal": "pada makna dari-pasal 5 D.L. 47/2014, pernyataan bohong membawa gugurnya dari manfaat-itu." },
+        { "speaker": "Mail:", "text": "Oggetto: sollecito — pratica cambio residenza prot. 2026/4471", "id": "Perihal: permintaan tindak lanjut — berkas ganti domisili no. 2026/4471", "literal": "objek: desakan — berkas pergantian domisili protokol 2026/4471" },
+        { "speaker": "Mail:", "text": "Gentile ufficio, in data 14 marzo ho presentato domanda di cambio residenza.", "id": "Yth. Bapak/Ibu, pada 14 Maret saya mengajukan permohonan ganti domisili.", "literal": "terhormat kantor, dalam tanggal 14 Maret saya-punya sampaikan permohonan dari pergantian domisili." },
+        { "speaker": "Mail:", "text": "A oggi non ho ricevuto riscontro, pur essendo trascorsi i 45 giorni previsti.", "id": "Sampai hari ini saya belum menerima jawaban, meskipun 45 hari yang ditentukan sudah lewat.", "literal": "pada hari-ini tidak saya-punya terima tanggapan, walaupun ada berlalu yang 45 hari diperkirakan." },
+        { "speaker": "Mail:", "text": "Chiedo cortesemente di conoscere lo stato della pratica. Resto a disposizione. Cordiali saluti.", "id": "Dengan hormat saya mohon informasi status berkas. Saya bersedia dihubungi. Hormat saya.", "literal": "saya-minta dengan-sopan dari mengetahui keadaan dari-berkas. saya-tinggal pada ketersediaan. ramah salam." }
+      ],
+      "notes": [
+        "**Baris 1-2 — susunan baku semua formulir pernyataan Italia**: *il sottoscritto, consapevole delle sanzioni…, DICHIARA…*. Kata *DICHIARA* selalu ditulis huruf besar dan berdiri sendiri di satu baris. Semua yang di atasnya adalah peringatan; semua yang di bawahnya adalah tanggung jawabmu.",
+        "Baris 2 — *dimora abituale*. Ada tiga kata Italia untuk \"tempat tinggal\" dan mereka berbeda secara hukum: ***residenza*** (domisili resmi, satu-satunya, terdaftar di anagrafe), ***domicilio*** (tempat kamu mengurus urusanmu, boleh berbeda), ***dimora*** (tempat kamu sedang berada). Formulir memakai ketiganya dan menganggap kamu tahu bedanya.",
+        "Baris 5 — ***ai sensi dell'art.***, ***D.L.***, ***comporta la decadenza***. Tiga potongan hukum yang muncul di mana-mana. *Ai sensi di* = berdasarkan; *D.L.* = *decreto legge*; *decadenza* = hilangnya hak karena syarat tak terpenuhi. Kamu tidak perlu menulisnya, tapi harus mengenalinya supaya tidak menandatangani sesuatu yang salah.",
+        "Baris 6 — ***sollecito***. Kata resmi untuk \"surat penagihan tindak lanjut\", dan ia sepenuhnya sah serta lazim. Kalimatnya sopan, tapi tanggalnya dan nomor berkasnya yang bekerja. **Selalu simpan nomor *protocollo*** — tanpa itu, surelmu tidak bisa dilacak.",
+        "Baris 8 — *pur **essendo trascorsi** i 45 giorni previsti*. Perhatikan *pur* + gerundio dari unit 8, di sini dalam bentuk lampau. Menyebutkan tenggat resmi yang sudah lewat adalah bagian terpenting surel semacam ini: ia mengubah permintaan sopan jadi hak.",
+        "**Yang tidak boleh ada di surel begini:** kemarahan, ancaman, atau kalimat tentang betapa lambatnya birokrasi Italia. Yang bekerja: tanggal, nomor berkas, tenggat yang lewat, dan satu permintaan yang jelas."
+      ]
+    }
+  ],
+  "grammars": [
+    {
+      "title": "Dokumen dan kantornya: siapa mengurus apa",
+      "table": {
+        "head": ["Dokumen", "Diurus di", "Untuk apa"],
+        "rows": [
+          ["**codice fiscale**", "Agenzia delle Entrate", "hampir semua hal: bank, dokter, kontrak"],
+          ["**residenza**", "Comune, ufficio anagrafe", "kartu identitas, dokter umum, sekolah"],
+          ["**carta d'identità**", "Comune", "identitas dasar; bisa elektronik (CIE)"],
+          ["**permesso di soggiorno**", "Questura", "izin tinggal warga non-UE"],
+          ["**tessera sanitaria**", "ASL", "layanan kesehatan nasional"],
+          ["**medico di base**", "ASL", "dokter keluarga, rujukan"],
+          ["**SPID / CIE**", "penyedia digital", "masuk ke semua layanan daring negara"],
+          ["**PEC**", "penyedia surel", "surel bersertifikat, sah secara hukum"],
+          ["**ISEE**", "CAF / INPS", "penilaian ekonomi untuk potongan biaya"],
+          ["**partita IVA**", "Agenzia delle Entrate", "status pekerja mandiri"],
+          ["**certificato di residenza**", "Comune (juga daring)", "bukti domisili"],
+          ["**autocertificazione**", "kamu sendiri", "menggantikan banyak surat keterangan"]
+        ]
+      },
+      "after": [
+        "Baris terakhir adalah alat paling berguna dan paling sering dilupakan. ***Autocertificazione*** berarti kamu menyatakan sendiri, di atas formulir bermeterai nol rupiah, hal-hal yang dulu perlu surat keterangan: kelahiran, domisili, keadaan keluarga, gelar. Kantor pemerintah **wajib** menerimanya dan dilarang meminta surat keterangan aslinya. Kalau ada yang menolak, sebutkan namanya: *è un'autocertificazione ai sensi del DPR 445/2000*.",
+        "Dan satu kebiasaan yang menghemat berbulan-bulan: **selalu minta *numero di protocollo*** setiap kali kamu menyerahkan apa pun. Tanpa nomor itu, berkasmu ada tapi tidak bisa dicari."
+      ]
+    },
+    {
+      "title": "Bertanya di loket: enam pertanyaan yang benar",
+      "table": {
+        "head": ["Pertanyaan", "Kenapa ini yang benar"],
+        "rows": [
+          ["Qual è il prossimo passo?", "memaksa jawaban berupa tindakan, bukan penjelasan"],
+          ["Cosa mi serve esattamente?", "meminta daftar, bukan kesan umum"],
+          ["Devo aspettare questo per fare quello?", "memisahkan urusan yang tak saling menunggu"],
+          ["Entro quando dovrei avere risposta?", "menetapkan tenggat yang bisa dikutip nanti"],
+          ["Posso avere il numero di protocollo?", "membuat berkasmu bisa dilacak"],
+          ["A chi mi devo rivolgere?", "memindahkan pertanyaan ke orang yang tepat"],
+          ["Si può fare online o devo venire?", "menghemat satu pagi"],
+          ["C'è un modulo prestampato?", "menghindari menulis sendiri dan salah"],
+          ["Mi può scrivere il nome dell'ufficio?", "supaya kamu tidak salah tempat besok"]
+        ]
+      },
+      "after": [
+        "Yang **tidak** berhasil, walaupun terasa wajar: *Perché ci vuole tanto?* dan *Ma non è possibile che…*. Dua kalimat itu memindahkan percakapan dari berkasmu ke perasaan orang di depanmu, dan sesudah itu kamu tidak akan mendapat apa-apa.",
+        "Satu kalimat pembuka yang bekerja hampir selalu: ***Buongiorno, mi scusi, avrei bisogno di una mano.*** Condizionale, permintaan tolong, tanpa menuntut apa pun. Setelah dua puluh dua tahun di loket yang sama, orang menghargainya."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kantor, berkas, dan antrean",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Cara baca", "Arti"],
+          "rows": [
+            ["lo sportello", "lo spor-TEL-lo", "loket"],
+            ["l'anagrafe", "la-NA-gra-fe", "catatan sipil"],
+            ["la questura", "la kwes-TU-ra", "kantor kepolisian provinsi"],
+            ["la pratica", "la PRA-ti-ka", "berkas permohonan"],
+            ["il protocollo", "il pro-to-KOL-lo", "nomor registrasi berkas"],
+            ["la ricevuta", "la ri-ce-VU-ta", "tanda terima"],
+            ["il rinnovo", "il ri-NO-vo", "perpanjangan"],
+            ["la scadenza", "la ska-DEN-tsa", "tanggal kedaluwarsa"],
+            ["la marca da bollo", "la MAR-ka da BOL-lo", "meterai"],
+            ["il sollecito", "il so-LE-ci-to", "surat tindak lanjut"],
+            ["in regola", "in RE-go-la", "sah, sesuai aturan"],
+            ["il vigile", "il VI-ji-le", "petugas kepolisian kota"]
+          ]
+        },
+        { "type": "sub", "text": "Kalimat formulir dan artinya" },
+        {
+          "type": "tabel",
+          "head": ["Kalimat formulir", "Artinya"],
+          "rows": [
+            ["Il/La sottoscritto/a…", "Yang bertanda tangan di bawah ini…"],
+            ["…consapevole delle sanzioni penali…", "…menyadari ada sanksi pidana kalau berbohong…"],
+            ["DICHIARA di…", "MENYATAKAN bahwa…"],
+            ["Dichiara altresì…", "Menyatakan pula…"],
+            ["Allega copia di…", "Melampirkan salinan…"],
+            ["Ai sensi e per gli effetti di…", "Berdasarkan dan untuk keperluan…"],
+            ["Si impegna a comunicare ogni variazione.", "Berjanji melaporkan setiap perubahan."],
+            ["Luogo e data", "Tempat dan tanggal"],
+            ["Firma leggibile", "Tanda tangan yang terbaca"],
+            ["Da compilare in stampatello", "Diisi dengan huruf balok"],
+            ["Barrare la casella che interessa", "Centang kotak yang sesuai"],
+            ["Campi contrassegnati con * obbligatori", "Kolom bertanda * wajib diisi"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "la residenza", "baca": "la re-zi-DEN-tsa", "id": "domisili resmi" },
+    { "it": "il domicilio", "baca": "il do-mi-CI-lyo", "id": "alamat surat-menyurat" },
+    { "it": "la dimora", "baca": "la di-MO-ra", "id": "tempat tinggal saat ini" },
+    { "it": "trasferirsi", "baca": "tras-fe-RIR-si", "id": "pindah" },
+    { "it": "procedere", "baca": "pro-CE-de-re", "id": "melanjutkan proses" },
+    { "it": "rimandare indietro", "baca": "ri-man-DA-re in-DYE-tro", "id": "memulangkan, menolak" },
+    { "it": "a mie spese", "baca": "a MI-e SPE-ze", "id": "dari pengalaman pahit sendiri" },
+    { "it": "scadere", "baca": "ska-DE-re", "id": "kedaluwarsa" },
+    { "it": "presentare domanda", "baca": "pre-zen-TA-re do-MAN-da", "id": "mengajukan permohonan" },
+    { "it": "l'immobile", "baca": "lim-MO-bi-le", "id": "bangunan, properti" },
+    { "it": "la locazione", "baca": "la lo-ka-TSYO-ne", "id": "sewa (istilah hukum)" },
+    { "it": "mendace", "baca": "men-DA-ce", "id": "palsu, bohong (hukum)" },
+    { "it": "comportare", "baca": "kom-por-TA-re", "id": "mengakibatkan" },
+    { "it": "trascorrere", "baca": "tras-KOR-re-re", "id": "berlalu (waktu)" },
+    { "it": "l'autocertificazione", "baca": "lau-to-cer-ti-fi-ka-TSYO-ne", "id": "pernyataan mandiri" },
+    { "it": "rivolgersi a", "baca": "ri-VOL-jer-si a", "id": "menghubungi, mendatangi" },
+    { "it": "prestampato", "baca": "pres-tam-PA-to", "id": "sudah tercetak" },
+    { "it": "in stampatello", "baca": "in stam-pa-TEL-lo", "id": "dengan huruf balok" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan kalimat formulir ini ke bahasa Italia biasa.",
+      "items": [
+        "Il sottoscritto dichiara di aver trasferito la propria dimora abituale.",
+        "Si impegna a comunicare ogni variazione.",
+        "Ai sensi dell'art. 5, la dichiarazione mendace comporta la decadenza.",
+        "Allega copia del documento d'identità.",
+        "Barrare la casella che interessa."
+      ]
+    },
+    {
+      "prompt": "Kantor mana yang harus didatangi?",
+      "items": [
+        "Devo fare il codice fiscale.",
+        "Devo rinnovare il permesso di soggiorno.",
+        "Devo cambiare residenza.",
+        "Devo scegliere il medico di base.",
+        "Devo fare l'ISEE."
+      ]
+    },
+    {
+      "prompt": "Tulis pertanyaan yang tepat untuk tiap keadaan.",
+      "items": [
+        "Kamu ingin tahu langkah berikutnya.",
+        "Kamu ingin tahu apakah dua urusan harus berurutan.",
+        "Kamu ingin nomor berkas untuk dilacak.",
+        "Kamu ingin tahu apakah bisa daring.",
+        "Kamu tidak tahu harus ke bagian mana."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya mau ganti domisili, saya pindah bulan Januari.",
+        "Selama saya pegang tanda terimanya, saya sah.",
+        "Sampai hari ini saya belum menerima jawaban.",
+        "Empat puluh lima hari yang ditentukan sudah lewat.",
+        "Dengan hormat saya mohon informasi status berkasnya."
+      ]
+    }
+  ],
+  "answers": [
+    "Io dichiaro di essermi trasferito. — Promette di avvisare se qualcosa cambia. — Secondo l'articolo 5, se dichiari il falso perdi il diritto. — Allega una copia della carta d'identità. — Metti una croce sulla casella giusta.",
+    "Agenzia delle Entrate — Questura — Comune, ufficio anagrafe — ASL — CAF o INPS",
+    "Qual è il prossimo passo? — Devo aspettare questo per fare quello? — Posso avere il numero di protocollo? — Si può fare online o devo venire? — A chi mi devo rivolgere?",
+    "Devo fare il cambio di residenza, mi sono trasferito a gennaio. — Finché ho la ricevuta, sono in regola. — A oggi non ho ricevuto riscontro. — Sono trascorsi i 45 giorni previsti. — Chiedo cortesemente di conoscere lo stato della pratica."
+  ]
+}

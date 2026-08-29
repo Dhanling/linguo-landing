@@ -1,0 +1,212 @@
+{
+  "title": "Kalau saja aku tahu lebih awal",
+  "title_target": "Se lo avessi saputo prima",
+  "goal": "Menguasai tiga tipe periodo ipotetico beserta yang campuran, dan berhenti menaruh *se* di depan condizionale.",
+  "bekal": [
+    "membedakan pengandaian nyata, mungkin, dan mustahil",
+    "membentuk tipe campuran: syarat lampau, akibat sekarang",
+    "memakai *magari*, *casomai*, *semmai* dan *nel caso in cui*",
+    "menyampaikan penyesalan tanpa mengatakan *mi dispiace*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog 1 — Aeroporto di Fiumicino, banco check-in chiuso",
+      "intro": "Bandara Fiumicino, pukul 05.50. Papan tulisnya baru saja berganti. Sandra dan Paolo, sepasang rekan kerja, seharusnya terbang ke Bruxelles pukul 06.20 untuk sebuah rapat. Loket sudah tutup empat menit yang lalu.",
+      "lines": [
+        { "speaker": "Paolo:", "text": "Se fossimo partiti dieci minuti prima, adesso saremmo dentro.", "id": "Kalau kita berangkat sepuluh menit lebih awal, sekarang kita sudah di dalam.", "literal": "kalau kita-ada-lah berangkat sepuluh menit sebelumnya, sekarang kita-akanlah-ada di-dalam." },
+        { "speaker": "Sandra:", "text": "Se ci fosse stato un treno alle quattro, saremmo partiti prima.", "id": "Kalau ada kereta jam empat, kita pasti berangkat lebih awal.", "literal": "kalau di-sana ada-lah ada sebuah kereta pada jam-empat, kita-akanlah-ada berangkat sebelumnya." },
+        { "speaker": "Paolo:", "text": "C'era il taxi.", "id": "Ada taksi kok.", "literal": "di-sana-ada-dulu taksi-itu." },
+        { "speaker": "Sandra:", "text": "Il taxi costava ottanta euro. Se me li rimborsassero, lo prenderei ogni volta.", "id": "Taksinya delapan puluh euro. Kalau diganti kantor, aku naik taksi tiap kali.", "literal": "taksi-itu berharga-dulu delapan-puluh euro. kalau kepada-saya itu mereka-ganti-lah, itu saya-akanlah-ambil tiap kali." },
+        { "speaker": "Paolo:", "text": "Va bene, va bene. Se troviamo un altro volo entro le nove, arriviamo per il pranzo.", "id": "Sudah, sudah. Kalau kita dapat penerbangan lain sebelum jam sembilan, kita sampai pas makan siang.", "literal": "pergi baik, pergi baik. kalau kita-temukan sebuah lain penerbangan dalam-batas jam sembilan, kita-tiba untuk makan-siang-itu." },
+        { "speaker": "Sandra:", "text": "E se non lo trovassimo?", "id": "Dan kalau tidak dapat?", "literal": "dan kalau tidak itu kita-temukan-lah?" },
+        { "speaker": "Paolo:", "text": "Allora chiederei di spostare la riunione al pomeriggio.", "id": "Ya aku minta rapatnya digeser ke sore.", "literal": "maka saya-akanlah-minta dari menggeser rapat-itu ke sore." },
+        { "speaker": "Sandra:", "text": "Non si può spostare. Se si potesse, non ci saremmo alzati alle tre.", "id": "Tidak bisa digeser. Kalau bisa, kita tidak bangun jam tiga.", "literal": "tidak diri-nya bisa menggeser. kalau diri-nya bisa-lah, tidak [+] kita-akanlah-ada bangun pada jam-tiga." },
+        { "speaker": "Paolo:", "text": "Hai ragione. Senti, se io vado al banco e tu guardi le app, facciamo prima.", "id": "Bener juga. Gini, kalau aku ke loket dan kamu cek aplikasi, kita lebih cepat.", "literal": "kamu-punya kebenaran. dengarkan, kalau saya pergi ke loket-itu dan kamu lihat aplikasi-itu, kita-buat lebih-dulu." },
+        { "speaker": "Sandra:", "text": "C'è un volo Alitalia alle undici. Se lo prendessimo, arriveremmo alle tredici.", "id": "Ada penerbangan Alitalia jam sebelas. Kalau kita ambil, sampai jam satu siang.", "literal": "di-sana-adalah sebuah penerbangan Alitalia pada jam sebelas. kalau itu kita-ambil-lah, kita-akanlah-tiba pada jam tiga-belas." },
+        { "speaker": "Paolo:", "text": "Troppo tardi. Casomai ci andiamo domani e la riunione la facciamo online.", "id": "Kesiangan. Kalau perlu kita berangkat besok dan rapatnya online saja.", "literal": "terlalu terlambat. seandainya [+] kita-pergi besok dan rapat-itu itu kita-buat daring." },
+        { "speaker": "Sandra:", "text": "Se glielo dicessi io, la prenderebbero meglio.", "id": "Kalau aku yang bilang, mereka bakal terima lebih baik.", "literal": "kalau kepada-mereka-itu saya-katakan-lah saya, itu mereka-akanlah-ambil lebih-baik." },
+        { "speaker": "Paolo:", "text": "Chiama tu, allora. Magari avessi la tua faccia tosta.", "id": "Kamu saja yang telepon. Andai aku punya muka tebalmu itu.", "literal": "panggil kamu, maka. andai saya-punya-lah wajah-mu tebal." },
+        { "speaker": "Sandra:", "text": "Non è faccia tosta. È che se non chiami tu, chiama il problema.", "id": "Bukan muka tebal. Cuma, kalau bukan kamu yang menelepon, masalahnya yang menelepon.", "literal": "tidak adalah wajah tebal. adalah bahwa kalau tidak kamu-panggil kamu, memanggil masalah-itu." },
+        { "speaker": "Paolo:", "text": "Mettila per iscritto, quella. Se la dicessi in riunione, faresti carriera.", "id": "Tulis itu baik-baik. Kalau kamu bilang begitu di rapat, kariermu naik.", "literal": "taruh-itu secara tertulis, itu. kalau itu kamu-katakan-lah di rapat, kamu-akanlah-buat karier." },
+        { "speaker": "Sandra:", "text": "Se avessi fatto carriera dicendo cose vere, non sarei qui alle sei di mattina.", "id": "Kalau karierku naik gara-gara ngomong jujur, aku tidak bakal di sini jam enam pagi.", "literal": "kalau saya-punya-lah buat karier mengatakan hal-hal benar, tidak saya-akanlah-ada di-sini pada jam-enam dari pagi." }
+      ],
+      "notes": [
+        "**Tiga tipe, dan cara membedakannya dalam dua detik.** Tanyakan: apakah syaratnya masih bisa terjadi? Kalau **ya dan besar kemungkinannya** → *se* + indicativo (baris 5, 9). Kalau **ya tapi cuma bayangan** → *se* + congiuntivo imperfetto + condizionale semplice (baris 4, 10, 12). Kalau **tidak, sudah lewat** → *se* + congiuntivo trapassato + condizionale passato (baris 1, 2).",
+        "**Larangan tunggal yang harus kamu bawa seumur hidup: setelah *se* tidak pernah ada condizionale.** *Se ~~verrei~~*, *se ~~avrei~~* tidak ada. Condizionale hanya hidup di induk kalimat. Kalau kamu ingat satu hal saja dari unit ini, ingat ini.",
+        "Baris 1 — *se fossimo partiti…, adesso **saremmo** dentro*. Ini **tipe campuran**: syaratnya di masa lalu, akibatnya sekarang. Karena itu induknya memakai condizionale **semplice**, bukan passato. Kata *adesso* di tengah kalimat adalah petunjuknya.",
+        "Baris 8 — *se si **potesse**, non ci saremmo alzati*. Campuran arah sebaliknya: syaratnya berlaku umum (sekarang juga tidak bisa), akibatnya di masa lalu. Bahasa Italia membiarkan dua kala bercampur dengan bebas asalkan logikanya jalan.",
+        "Baris 11 — ***casomai***. Kata ini tidak berarti \"kalau-kalau\" saja; ia berarti \"kalau memang harus\", dan ia menawarkan jalan keluar cadangan. Kembarannya *semmai* (\"kalau ada apa-apa\") dan *nel caso in cui* (resmi, selalu + congiuntivo).",
+        "Baris 13 — ***Magari** avessi la tua faccia tosta*. *Magari* + congiuntivo imperfetto/trapassato adalah cara paling ringkas menyatakan andai-andai: *magari fossi ricco*, *magari l'avessi saputo*. Tanpa induk kalimat, tanpa *se*. Perhatikan bahwa *magari* juga berarti \"mungkin\" (*magari viene*) dan \"boleh juga!\" sebagai jawaban — tiga tugas, satu kata."
+      ]
+    },
+    {
+      "title": "Dialog 2 — Il messaggio vocale a Bruxelles",
+      "intro": "Sepuluh menit kemudian, Sandra merekam pesan suara untuk kantor pusat. Perhatikan bagaimana pengandaian dipakai bukan untuk berandai-andai, melainkan untuk **memperhalus** — inilah pemakaian condizionale yang paling sering di dunia kerja.",
+      "lines": [
+        { "speaker": "Sandra:", "text": "Buongiorno Marc, ti disturbo un attimo.", "id": "Selamat pagi Marc, aku ganggu sebentar.", "literal": "selamat-pagi Marc, kamu saya-ganggu sebuah sesaat." },
+        { "speaker": "Sandra:", "text": "Abbiamo avuto un problema con il volo: se ci fosse stato posto sul successivo, saremmo già in aria.", "id": "Kami ada masalah dengan penerbangan: kalau ada tempat di penerbangan berikutnya, kami sudah di udara.", "literal": "kami-telah punya sebuah masalah dengan penerbangan-itu: kalau di-sana ada-lah ada tempat atas-yang berikut, kami-akanlah-ada sudah di udara." },
+        { "speaker": "Sandra:", "text": "Volevo chiederti se fosse possibile spostare la riunione al pomeriggio.", "id": "Aku mau tanya apakah mungkin rapatnya digeser ke sore.", "literal": "saya-ingin-dulu tanya-kepadamu apakah ada-lah mungkin menggeser rapat-itu ke sore." },
+        { "speaker": "Sandra:", "text": "Se non si potesse, potremmo collegarci in video: saremmo operativi dalle undici.", "id": "Kalau tidak bisa, kami bisa ikut lewat video: kami siap dari jam sebelas.", "literal": "kalau tidak diri-nya bisa-lah, kami-akanlah-bisa hubungkan-diri-kami dalam video: kami-akanlah-ada siap-kerja dari jam sebelas." },
+        { "speaker": "Sandra:", "text": "In ogni caso arriviamo oggi, anche se tardi.", "id": "Bagaimanapun kami sampai hari ini, walaupun terlambat.", "literal": "dalam setiap kasus kami-tiba hari-ini, juga kalau terlambat." },
+        { "speaker": "Sandra:", "text": "Mi scuso: avremmo dovuto prevedere il traffico.", "id": "Maaf: seharusnya kami memperhitungkan macetnya.", "literal": "diri-saya saya-maafkan: kami-akanlah-punya harus memperkirakan kemacetan-itu." },
+        { "speaker": "Sandra:", "text": "Fammi sapere quello che preferite e ci organizziamo.", "id": "Kabari saja mana yang kalian pilih, nanti kami atur.", "literal": "buat-saya tahu itu yang kalian-lebih-suka dan diri-kami kami-atur." },
+        { "speaker": "Sandra:", "text": "Se avessi il numero della sala, chiamerei direttamente lì.", "id": "Kalau aku punya nomor ruang rapatnya, aku telepon langsung ke sana.", "literal": "kalau saya-punya-lah nomor dari-ruangan, saya-akanlah-panggil langsung di-sana." },
+        { "speaker": "Sandra:", "text": "A dopo, e ancora scusa.", "id": "Sampai nanti, sekali lagi maaf.", "literal": "pada kemudian, dan lagi maaf." }
+      ],
+      "notes": [
+        "Baris 3 — *volevo chiederti **se fosse possibile***. Di sini *se* bukan \"kalau\" melainkan \"apakah\", dan bentuk lampau *volevo* menariknya ke congiuntivo imperfetto. Susunan *volevo chiederti se fosse possibile…* adalah salah satu kalimat pembuka paling berguna di seluruh bahasa Italia kantor: hafalkan utuh.",
+        "Baris 6 — ***avremmo dovuto** prevedere*. \"Seharusnya kami…\" = condizionale passato dari *dovere* + infinito. Kembarannya: *avrei potuto* (aku sebenarnya bisa), *avrei voluto* (aku sebenarnya ingin). Tiga bentuk ini menampung hampir semua penyesalan yang perlu diucapkan orang dewasa.",
+        "Baris 8 — *se **avessi** il numero, **chiamerei***. Tipe kedua, dipakai untuk menyampaikan permintaan tanpa memintanya: yang sebenarnya ia inginkan adalah nomor ruangan. Orang Italia melakukan ini terus-menerus, dan lawan bicara selalu menangkapnya.",
+        "**Perhatikan apa yang TIDAK ada di pesan ini:** tidak ada *mi dispiace*, tidak ada penjelasan panjang, dan tidak ada satu pun kalimat yang menyalahkan taksi, kereta, atau bandara. Satu kalimat penyesalan (*avremmo dovuto*), satu usulan, satu jalan cadangan. Itulah bentuk baku permintaan maaf di dunia kerja Italia."
+      ]
+    }
+  ],
+  "grammars": [
+    {
+      "title": "Tiga tipe, satu tabel",
+      "table": {
+        "head": ["Tipe", "Anak kalimat (se…)", "Induk kalimat", "Contoh"],
+        "rows": [
+          ["**1. nyata**", "indicativo presente", "presente / futuro / imperativo", "Se piove, resto a casa."],
+          ["**1. nyata**", "indicativo futuro", "futuro", "Se pioverà, resterò a casa."],
+          ["**2. mungkin**", "congiuntivo imperfetto", "condizionale semplice", "Se piovesse, resterei a casa."],
+          ["**3. mustahil**", "congiuntivo trapassato", "condizionale passato", "Se fosse piovuto, sarei restato a casa."],
+          ["**campuran A**", "congiuntivo trapassato", "condizionale **semplice**", "Se avessi studiato, adesso saprei."],
+          ["**campuran B**", "congiuntivo **imperfetto**", "condizionale passato", "Se fossi più attento, non sarebbe successo."]
+        ]
+      },
+      "after": [
+        "Dua baris campuran itulah yang membedakan B2 dari B1. Aturannya sederhana: **tiap separuh kalimat memilih kalanya sendiri berdasarkan kapan ia terjadi**, tidak harus cocok dengan separuh lainnya.",
+        "Tipe 1 punya satu jebakan kecil: *se* + futuro (*se pioverà*) benar dan sering dipakai di tulisan, tapi di lisan orang hampir selalu memakai presente (*se piove*) walaupun maksudnya besok."
+      ]
+    },
+    {
+      "title": "Lima cara lain mengatakan \"kalau\"",
+      "table": {
+        "head": ["Kata", "Arti", "Bentuk sesudahnya", "Contoh"],
+        "rows": [
+          ["**se**", "kalau, apakah", "indicativo / congiuntivo", "Se potessi, verrei."],
+          ["**casomai**", "kalau memang perlu", "indicativo / congiuntivo", "Casomai ci andiamo domani."],
+          ["**semmai**", "kalau ada apa-apa", "indicativo", "Semmai ti chiamo io."],
+          ["**nel caso in cui**", "seandainya (resmi)", "**congiuntivo**", "Nel caso in cui servisse, sono qui."],
+          ["**qualora**", "apabila (sangat resmi)", "**congiuntivo**", "Qualora fosse necessario, provvederemo."],
+          ["**a meno che non**", "kecuali kalau", "**congiuntivo**", "Vengo, a meno che non piova."],
+          ["**purché / basta che**", "asalkan", "**congiuntivo**", "Ti presto l'auto purché tu faccia benzina."],
+          ["**ammesso che**", "andaikan benar", "**congiuntivo**", "Ammesso che sia vero, cambia poco."],
+          ["**magari** + congiuntivo", "andai saja", "**congiuntivo**", "Magari l'avessi saputo!"]
+        ]
+      },
+      "after": [
+        "*Qualora* praktis hanya hidup di surat resmi, kontrak, dan pengumuman pemerintah — kalau kamu memakainya di percakapan, orang akan tersenyum. Sebaliknya *casomai* dan *semmai* hampir tidak pernah muncul di tulisan resmi. Salah tempat di sini bukan kesalahan tata bahasa, tapi tetap terdengar aneh; unit 13 membahas soal ragam ini secara utuh."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Perjalanan, keterlambatan, dan urusannya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Cara baca", "Arti"],
+          "rows": [
+            ["il volo di coincidenza", "il VO-lo di ko-in-ci-DEN-tsa", "penerbangan lanjutan"],
+            ["il banco check-in", "il BAN-ko cek-IN", "loket lapor diri"],
+            ["l'imbarco", "lim-BAR-ko", "naik pesawat"],
+            ["la carta d'imbarco", "la KAR-ta dim-BAR-ko", "boarding pass"],
+            ["il ritardo", "il ri-TAR-do", "keterlambatan"],
+            ["la cancellazione", "la kan-ce-la-TSYO-ne", "pembatalan"],
+            ["il rimborso", "il rim-BOR-so", "pengembalian uang"],
+            ["riprotezione", "ri-pro-te-TSYO-ne", "pemindahan ke penerbangan lain"],
+            ["il bagaglio a mano", "il ba-GA-lyo a MA-no", "bagasi kabin"],
+            ["lo scalo", "lo SKA-lo", "transit"],
+            ["spostare", "spos-TA-re", "menggeser jadwal"],
+            ["prevedere", "pre-ve-DE-re", "memperkirakan"]
+          ]
+        },
+        { "type": "sub", "text": "Menyatakan penyesalan tanpa mengatakan \"maaf\"" },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Arti harfiah", "Kapan dipakai"],
+          "rows": [
+            ["Avrei dovuto avvisarti.", "aku seharusnya mengabarimu", "mengakui kesalahan, paling baku"],
+            ["Avrei potuto fare di più.", "aku sebenarnya bisa berbuat lebih", "menyesal, tanpa mengaku salah"],
+            ["Avrei voluto esserci.", "aku sebenarnya ingin ada di sana", "menyesal tak hadir"],
+            ["Se avessi saputo…", "kalau saja aku tahu", "membela diri secara halus"],
+            ["Col senno di poi…", "dengan akal belakangan", "\"kalau tahu begini dari awal\""],
+            ["Magari l'avessi capito prima!", "andai aku paham lebih awal", "penyesalan berperasaan"],
+            ["È stata una leggerezza mia.", "itu kecerobohan saya", "resmi, mengaku penuh"],
+            ["Non doveva andare così.", "ini tak seharusnya begini", "menyesal tanpa pelaku"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "il senno di poi", "baca": "il SEN-no di POI", "id": "akal belakangan" },
+    { "it": "la leggerezza", "baca": "la le-je-RET-tsa", "id": "kecerobohan" },
+    { "it": "casomai", "baca": "ka-zo-MAI", "id": "kalau memang perlu" },
+    { "it": "semmai", "baca": "se-MAI", "id": "kalau ada apa-apa" },
+    { "it": "qualora", "baca": "kwa-LO-ra", "id": "apabila (resmi)" },
+    { "it": "ammesso che", "baca": "a-MES-so ke", "id": "andaikan benar bahwa" },
+    { "it": "provvedere", "baca": "pro-ve-DE-re", "id": "mengurus, menyediakan" },
+    { "it": "collegarsi", "baca": "ko-le-GAR-si", "id": "menyambung, ikut daring" },
+    { "it": "operativo", "baca": "o-pe-ra-TI-vo", "id": "siap bekerja" },
+    { "it": "la faccia tosta", "baca": "la FA-ca TOS-ta", "id": "muka tebal, nekat" },
+    { "it": "far carriera", "baca": "far ka-RYE-ra", "id": "naik karier" },
+    { "it": "disturbare", "baca": "dis-tur-BA-re", "id": "mengganggu" },
+    { "it": "rimborsare", "baca": "rim-bor-SA-re", "id": "mengganti biaya" },
+    { "it": "in ogni caso", "baca": "in O-nyi KA-zo", "id": "bagaimanapun juga" },
+    { "it": "alzarsi", "baca": "al-TSAR-si", "id": "bangun, berdiri" },
+    { "it": "il posto", "baca": "il POS-to", "id": "tempat duduk" },
+    { "it": "successivo", "baca": "su-ce-SI-vo", "id": "berikutnya" },
+    { "it": "organizzarsi", "baca": "or-ga-ni-TSAR-si", "id": "mengatur diri" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Lengkapi dengan bentuk yang benar.",
+      "items": [
+        "Se ____ (avere) tempo, ti aiuterei.",
+        "Se ____ (piovere), resto a casa.",
+        "Se me lo ____ (dire) prima, sarei venuto.",
+        "Se non ____ (essere) così tardi, andremmo al cinema.",
+        "Se lo ____ (sapere) ieri, avrei cambiato volo."
+      ]
+    },
+    {
+      "prompt": "Lengkapi induk kalimatnya.",
+      "items": [
+        "Se avessi studiato di più, ____ (passare) l'esame.",
+        "Se fossi in te, non ci ____ (andare).",
+        "Se partiamo adesso, ____ (arrivare) in tempo.",
+        "Se me l'avessero detto, adesso non ____ (essere) qui.",
+        "Se ci fosse un treno, lo ____ (prendere) volentieri."
+      ]
+    },
+    {
+      "prompt": "Ada satu kesalahan di tiap kalimat. Tulis versi benarnya.",
+      "items": [
+        "Se avrei tempo, verrei.",
+        "Se sarebbe possibile, lo farei.",
+        "Se lo sapevo, te lo dicevo.",
+        "Magari ho la tua pazienza!",
+        "Nel caso in cui serve, chiamami."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Kalau ada tempat, kami berangkat besok.",
+        "Kalau saja aku tahu, aku tidak akan datang.",
+        "Kalau aku jadi kamu, aku minta ganti rugi.",
+        "Seharusnya kami memperhitungkan kemacetannya.",
+        "Andai saja rapatnya bisa digeser!"
+      ]
+    }
+  ],
+  "answers": [
+    "avessi — piove — avessi detto — fosse — avessi saputo",
+    "avrei passato — andrei — arriviamo — sarei — prenderei",
+    "Se avessi tempo, verrei. — Se fosse possibile, lo farei. — Se lo avessi saputo, te lo avrei detto. — Magari avessi la tua pazienza! — Nel caso in cui servisse, chiamami.",
+    "Se ci fosse posto, partiamo domani. — Se lo avessi saputo, non sarei venuto. — Se fossi in te, chiederei un rimborso. — Avremmo dovuto prevedere il traffico. — Magari si potesse spostare la riunione!"
+  ]
+}

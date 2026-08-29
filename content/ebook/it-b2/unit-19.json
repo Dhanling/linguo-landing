@@ -1,0 +1,218 @@
+{
+  "title": "Waktu ada yang tidak beres",
+  "title_target": "Quando qualcosa va storto",
+  "goal": "Menjelaskan gejala kepada dokter, melaporkan kecelakaan, dan mengajukan keluhan yang benar-benar ditindaklanjuti.",
+  "bekal": [
+    "menyebut gejala, bagian tubuh, dan lama keluhan dengan tepat",
+    "membaca resep dan aturan pakai obat",
+    "melaporkan kecelakaan dan mengisi CID",
+    "mengeluh secara bertingkat: lisan, tertulis, resmi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog 1 — Pronto soccorso, codice verde, sala d'attesa",
+      "intro": "UGD sebuah rumah sakit di Ancona, Sabtu malam. Pelinda terjatuh dari sepeda dua jam lalu. Ia diberi kode hijau — artinya tidak gawat, artinya menunggu. Dokter jaga bernama dott. Ammendola akhirnya memanggilnya pukul setengah satu.",
+      "lines": [
+        { "speaker": "Ammendola:", "text": "Signora Pelinda. Venga. Mi racconti cos'è successo.", "id": "Bu Pelinda. Silakan. Ceritakan apa yang terjadi.", "literal": "nyonya Pelinda. datang-lah. kepada-saya ceritakan-lah apa-adalah terjadi." },
+        { "speaker": "Pelinda:", "text": "Sono caduta dalla bici. Ho battuto il fianco destro e il polso.", "id": "Saya jatuh dari sepeda. Pinggang kanan dan pergelangan tangan terbentur.", "literal": "saya-adalah jatuh dari-sepeda. saya-punya pukul sisi kanan dan pergelangan-itu." },
+        { "speaker": "Ammendola:", "text": "Ha perso conoscenza, anche solo per un attimo?", "id": "Sempat kehilangan kesadaran, walau sesaat?", "literal": "Anda-punya kehilangan kesadaran, juga hanya untuk sebuah sesaat?" },
+        { "speaker": "Pelinda:", "text": "No. Ho battuto solo il fianco, la testa no.", "id": "Tidak. Cuma pinggang, kepala tidak.", "literal": "tidak. saya-punya pukul hanya sisi-itu, kepala-itu tidak." },
+        { "speaker": "Ammendola:", "text": "Il dolore com'è? Fisso, a fitte, o solo quando si muove?", "id": "Nyerinya bagaimana? Terus-menerus, menusuk-nusuk, atau cuma waktu bergerak?", "literal": "nyeri-itu bagaimana-adalah? tetap, pada tusukan, atau hanya ketika diri-Anda bergerak?" },
+        { "speaker": "Pelinda:", "text": "A fitte, quando respiro forte. Il polso invece fa male sempre.", "id": "Menusuk, waktu napas dalam. Kalau pergelangannya sakit terus.", "literal": "pada tusukan, ketika saya-bernapas kuat. pergelangan-itu sebaliknya membuat sakit selalu." },
+        { "speaker": "Ammendola:", "text": "Da uno a dieci?", "id": "Dari satu sampai sepuluh?", "literal": "dari satu pada sepuluh?" },
+        { "speaker": "Pelinda:", "text": "Il fianco quattro. Il polso sette quando lo muovo.", "id": "Pinggang empat. Pergelangan tujuh kalau digerakkan.", "literal": "sisi-itu empat. pergelangan-itu tujuh ketika itu saya-gerakkan." },
+        { "speaker": "Ammendola:", "text": "Prende farmaci? Ha allergie?", "id": "Sedang minum obat? Ada alergi?", "literal": "Anda-ambil obat? Anda-punya alergi?" },
+        { "speaker": "Pelinda:", "text": "Nessun farmaco. Sono allergica alla penicillina.", "id": "Tidak ada obat. Saya alergi penisilin.", "literal": "tidak-ada obat. saya-adalah alergi pada-penisilin." },
+        { "speaker": "Ammendola:", "text": "Facciamo una lastra al polso e un'ecografia all'addome. Poi vediamo.", "id": "Kita rontgen pergelangannya dan USG perutnya. Lalu kita lihat.", "literal": "kita-buat sebuah pelat pada-pergelangan dan sebuah-USG pada-perut. lalu kita-lihat." },
+        { "speaker": "Pelinda:", "text": "Quanto ci vorrà?", "id": "Berapa lama?", "literal": "berapa [+] akan-mau?" },
+        { "speaker": "Ammendola:", "text": "Un paio d'ore, se non arriva niente di grave. Stanotte è tranquilla.", "id": "Sekitar dua jam, kalau tidak ada kasus berat masuk. Malam ini sepi.", "literal": "sebuah pasang dari-jam, kalau tidak tiba apa-pun dari berat. malam-ini adalah tenang." },
+        { "speaker": "Pelinda:", "text": "Devo avvisare qualcuno? Non ho nessuno qui.", "id": "Perlu saya kabari seseorang? Saya tidak punya siapa-siapa di sini.", "literal": "saya-harus memberitahu seseorang? tidak saya-punya tidak-seorang-pun di-sini." },
+        { "speaker": "Ammendola:", "text": "Non è obbligatorio. Ma se poi le mettiamo un gesso, meglio non tornare a casa in bici.", "id": "Tidak wajib. Tapi kalau nanti dipasang gips, sebaiknya jangan pulang naik sepeda.", "literal": "tidak adalah wajib. tapi kalau lalu kepada-Anda kami-taruh sebuah gips, lebih-baik tidak kembali di rumah dalam sepeda." },
+        { "speaker": "Pelinda:", "text": "La bici l'ho lasciata dov'è caduta. Non credo che tornerò a prenderla.", "id": "Sepedanya saya tinggal di tempat jatuhnya. Rasanya saya tidak akan mengambilnya lagi.", "literal": "sepeda-itu itu-saya-punya tinggalkan di-mana-adalah jatuh. tidak saya-percaya bahwa saya-akan-kembali untuk mengambil-nya." }
+      ],
+      "notes": [
+        "**Baris 5 — pertanyaan yang selalu diajukan dokter Italia**, dan jawabannya menentukan diagnosis: *fisso* (menetap), *a fitte* (menusuk berselang), *sordo* (tumpul), *lancinante* (menyayat), *pulsante* (berdenyut), *a crampi* (kram). Hafalkan enam kata ini; mereka lebih berguna daripada seratus nama penyakit.",
+        "Baris 2 — *ho **battuto** il fianco*. *Battere* = terbentur. Kembarannya: *sbattere la testa*, *slogarsi la caviglia* (terkilir), *distorsione* (keseleo), *stiramento* (otot tertarik), *frattura* (patah), *storta* (terpelintir, lisan).",
+            "Baris 6 — *il polso **fa male***. Rumus dasar rasa sakit di bahasa Italia: bagian tubuh sebagai **subjek**, bukan objek. *Mi fa male la testa* (harfiah: kepala membuat sakit kepadaku). Kalau jamak: *mi fanno male le gambe*. Jangan berkata *~~ho dolore alla testa~~* — benar secara tata bahasa, tapi tak seorang pun berkata begitu.",
+        "Baris 11 — *una **lastra***. Kata sehari-hari untuk *radiografia*. Kembarannya: *ecografia* (USG), *TAC* (CT scan), *risonanza* (MRI), *prelievo* (ambil darah), *analisi* (hasil laboratorium).",
+        "**Kode warna UGD Italia**, dan kamu perlu tahu artinya sebelum kesal menunggu: *rosso* (segera), *giallo* (menit), *verde* (jam), *bianco* (bukan kegawatan; sering berbayar). Kode ditentukan perawat *triage*, bukan urutan kedatangan. Menunggu enam jam dengan kode hijau adalah keadaan normal, bukan kelalaian.",
+        "Baris 3 dan 9 — dua pertanyaan yang **selalu** ditanyakan dan selalu perlu jawaban siap: kehilangan kesadaran, dan obat serta alergi. Simpan daftar obatmu di ponsel dalam bahasa Italia; nama dagang obat berbeda antarnegara, nama zatnya tidak."
+      ]
+    },
+    {
+      "title": "Dialog 2 — La settimana dopo: farmacia, e una telefonata all'assicurazione",
+      "intro": "Lima baris pertama di apotek, empat baris terakhir di telepon dengan asuransi. Dua percakapan yang menyusul hampir setiap kecelakaan kecil di Italia.",
+      "lines": [
+        { "speaker": "Farmacista:", "text": "Buongiorno. Ricetta bianca o ricetta del medico?", "id": "Selamat pagi. Resep putih atau resep dokter?", "literal": "selamat-pagi. resep putih atau resep dari-dokter?" },
+        { "speaker": "Pelinda:", "text": "Del pronto soccorso. C'è scritto un antinfiammatorio.", "id": "Dari UGD. Tertulis obat antiradang.", "literal": "dari UGD. di-sana-adalah tertulis sebuah antiradang." },
+        { "speaker": "Farmacista:", "text": "Questo. Uno ogni dodici ore, a stomaco pieno, per cinque giorni.", "id": "Ini. Satu tiap dua belas jam, sesudah makan, selama lima hari.", "literal": "ini. satu tiap dua-belas jam, pada perut penuh, untuk lima hari." },
+        { "speaker": "Pelinda:", "text": "Posso prenderlo con il caffè al mattino?", "id": "Boleh saya minum sama kopi pagi?", "literal": "saya-bisa mengambil-nya dengan kopi-itu pada pagi?" },
+        { "speaker": "Farmacista:", "text": "Meglio dopo aver mangiato qualcosa. Il caffè da solo non basta.", "id": "Lebih baik sesudah makan sesuatu. Kopi saja tidak cukup.", "literal": "lebih-baik sesudah telah makan sesuatu. kopi-itu dari sendiri tidak cukup." },
+        { "speaker": "Assicurazione:", "text": "Assicurazioni Delfino, buongiorno. In cosa posso aiutarla?", "id": "Asuransi Delfino, selamat pagi. Ada yang bisa saya bantu?", "literal": "asuransi Delfino, selamat-pagi. dalam apa saya-bisa membantu-Anda?" },
+        { "speaker": "Pelinda:", "text": "Devo aprire un sinistro. Sono stata investita in bici da un'auto in retromarcia.", "id": "Saya mau membuka klaim. Saya tertabrak mobil yang mundur waktu bersepeda.", "literal": "saya-harus membuka sebuah kejadian. saya-adalah ada tabrak dalam sepeda dari sebuah-mobil dalam mundur." },
+        { "speaker": "Assicurazione:", "text": "Avete compilato il CID? È firmato da entrambe le parti?", "id": "Apakah Anda mengisi CID? Ditandatangani kedua pihak?", "literal": "kalian-punya isi CID-itu? adalah ditandatangani dari kedua pihak-itu?" },
+        { "speaker": "Pelinda:", "text": "Sì, e ho anche il referto del pronto soccorso e due foto del punto d'urto.", "id": "Ya, dan saya juga punya surat keterangan UGD dan dua foto titik benturan.", "literal": "ya, dan saya-punya juga surat-keterangan dari UGD dan dua foto dari-titik dari-benturan." }
+      ],
+      "notes": [
+        "Baris 3 — ***a stomaco pieno***. Aturan minum obat di Italia punya rumus tetap: *a stomaco pieno* / *a stomaco vuoto*, *lontano dai pasti* (jauh dari waktu makan), *al bisogno* (bila perlu), *fino a esaurimento* (sampai habis), *non superare la dose giornaliera*.",
+        "Baris 7 — ***aprire un sinistro***. Istilah baku untuk mengajukan klaim asuransi. *Sinistro* di sini berarti \"kejadian yang diasuransikan\", bukan \"kiri\". Kembarannya: *denunciare un sinistro*, *liquidare un sinistro* (membayar klaim), *il perito* (penilai kerugian).",
+        "Baris 8 — ***CID***, atau *modulo blu*: formulir kecelakaan bersama yang ditandatangani kedua pengemudi di tempat. **Jangan pernah menandatangani CID yang belum diisi**, dan jangan menandatangani gambar yang tidak kamu setujui. Kalau kedua pihak tak sepakat, isi bagianmu sendiri saja dan tulis versimu di kolom *osservazioni*.",
+        "Baris 9 — ***il referto***. Surat keterangan medis dari UGD. Ia adalah dokumen paling penting dalam klaim cedera; tanpanya, cedera dianggap tidak pernah ada. Selalu minta salinannya sebelum pulang, dan periksa bahwa jam kejadian tertulis benar.",
+        "Baris 7 juga — *sono stata **investita***. *Investire* = menabrak (orang atau kendaraan lebih kecil). Kembarannya: *tamponare* (menabrak dari belakang), *urtare* (menyenggol), *travolgere* (menghantam keras). Pilihan katanya menentukan siapa yang bersalah, jadi pakai yang tepat."
+      ]
+    }
+  ],
+  "grammars": [
+    {
+      "title": "Menjelaskan gejala: rumus yang dipakai dokter Italia",
+      "table": {
+        "head": ["Yang ditanya", "Rumus jawabannya", "Contoh"],
+        "rows": [
+          ["**apa yang sakit**", "mi fa male + benda", "Mi fa male il polso."],
+          ["**apa yang sakit (jamak)**", "mi fanno male + benda", "Mi fanno male le gambe."],
+          ["**sejak kapan**", "da + lama", "Da tre giorni."],
+          ["**jenis nyeri**", "è un dolore + sifat", "È un dolore a fitte."],
+          ["**kapan muncul**", "quando / dopo che…", "Quando respiro forte."],
+          ["**seberapa berat**", "da uno a dieci", "Sette quando lo muovo."],
+          ["**apa yang meredakan**", "passa con / migliora se…", "Passa con il ghiaccio."],
+          ["**gejala lain**", "ho + gejala", "Ho la nausea / la febbre."],
+          ["**riwayat**", "mi è già successo…", "Mi è già successo l'anno scorso."],
+          ["**obat**", "prendo / sono allergico a…", "Sono allergica alla penicillina."]
+        ]
+      },
+      "after": [
+        "Satu hal yang membingungkan penutur bahasa Indonesia: **beberapa gejala memakai *avere*, sebagian *essere*, sebagian *sentire*.** *Ho la febbre*, *ho mal di testa*, *ho la nausea* · *sono stanco*, *sono raffreddato*, *sono allergico* · *mi sento debole*, *mi gira la testa*, *mi manca il fiato*. Tak ada logikanya; hafalkan dalam kelompok."
+      ]
+    },
+    {
+      "title": "Mengeluh secara bertingkat",
+      "table": {
+        "head": ["Tingkat", "Rumus", "Kapan"],
+        "rows": [
+          ["**1. lisan, ringan**", "Scusi, c'è un problema con…", "kesalahan kecil, di tempat"],
+          ["**2. lisan, tegas**", "Guardi, così non va bene.", "kesalahan berulang"],
+          ["**3. minta atasan**", "Posso parlare con un responsabile?", "petugas tidak berwenang"],
+          ["**4. tertulis biasa**", "Vi scrivo per segnalare che…", "meninggalkan jejak"],
+          ["**5. keluhan resmi**", "Presento formale reclamo in merito a…", "memicu tenggat jawaban"],
+          ["**6. surat bersertifikat**", "raccomandata A/R o PEC", "sah secara hukum"],
+          ["**7. lembaga penengah**", "conciliazione / Corecom / associazioni consumatori", "gratis, sebelum pengadilan"]
+        ]
+      },
+      "after": [
+        "Kata kuncinya di tingkat 5 adalah ***reclamo***. Begitu kamu menulis *presento formale reclamo*, perusahaan berjangka waktu tetap untuk menjawab — di sektor telekomunikasi, listrik, dan air, biasanya 30 sampai 45 hari. Kalimat sopan tanpa kata itu tidak memicu tenggat apa pun.",
+        "Tingkat 6 penting untuk diketahui walaupun jarang dipakai: ***raccomandata A/R*** (surat tercatat dengan tanda terima) dan ***PEC*** (surel bersertifikat) adalah dua-duanya sah sebagai bukti pengiriman di pengadilan Italia. Surel biasa bukan.",
+        "Dan satu hal yang benar-benar bekerja di Italia: **selalu sebutkan nomor, tanggal, dan jumlah**. *Il 14 marzo, pratica 4471, 45 giorni, 82 euro.* Keluhan tanpa angka dibaca sebagai perasaan; keluhan dengan angka dibaca sebagai berkas."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tubuh, cedera, dan obat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Italiano", "Cara baca", "Arti"],
+          "rows": [
+            ["il polso", "il POL-so", "pergelangan tangan"],
+            ["la caviglia", "la ka-VI-lya", "pergelangan kaki"],
+            ["il fianco", "il FYAN-ko", "sisi pinggang"],
+            ["la costola", "la KOS-to-la", "tulang rusuk"],
+            ["la distorsione", "la dis-tor-SYO-ne", "keseleo"],
+            ["la frattura", "la fra-TU-ra", "patah tulang"],
+            ["il livido", "il LI-vi-do", "memar"],
+            ["il gesso", "il JES-so", "gips"],
+            ["i punti", "i PUN-ti", "jahitan"],
+            ["l'antinfiammatorio", "lan-tin-fya-ma-TO-ryo", "obat antiradang"],
+            ["l'antidolorifico", "lan-ti-do-lo-RI-fi-ko", "pereda nyeri"],
+            ["il referto", "il re-FER-to", "surat keterangan medis"]
+          ]
+        },
+        { "type": "sub", "text": "Kalimat wajib di UGD, apotek, dan asuransi" },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Arti", "Di mana"],
+          "rows": [
+            ["Sono allergico/a a…", "Saya alergi …", "UGD, apotek"],
+            ["Ho perso conoscenza per un attimo.", "Saya sempat pingsan sesaat.", "UGD"],
+            ["Non prendo nessun farmaco.", "Saya tidak minum obat apa pun.", "UGD"],
+            ["Mi può dare una copia del referto?", "Boleh salinan surat keterangannya?", "UGD"],
+            ["Ogni quante ore lo prendo?", "Tiap berapa jam diminumnya?", "apotek"],
+            ["C'è il generico?", "Ada versi generiknya?", "apotek"],
+            ["Devo aprire un sinistro.", "Saya mau mengajukan klaim.", "asuransi"],
+            ["Ho compilato il CID.", "Saya sudah mengisi formulir kecelakaan.", "asuransi"],
+            ["Entro quanto ricevo risposta?", "Dalam berapa lama saya dijawab?", "asuransi"],
+            ["Presento formale reclamo.", "Saya mengajukan keluhan resmi.", "perusahaan"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "it": "cadere", "baca": "ka-DE-re", "id": "jatuh" },
+    { "it": "battere", "baca": "BA-te-re", "id": "terbentur" },
+    { "it": "slogarsi", "baca": "zlo-GAR-si", "id": "terkilir" },
+    { "it": "a fitte", "baca": "a FIT-te", "id": "menusuk berselang" },
+    { "it": "fisso", "baca": "FIS-so", "id": "menetap (nyeri)" },
+    { "it": "la lastra", "baca": "la LAS-tra", "id": "rontgen" },
+    { "it": "l'ecografia", "baca": "le-ko-gra-FI-a", "id": "USG" },
+    { "it": "il prelievo", "baca": "il pre-LYE-vo", "id": "pengambilan darah" },
+    { "it": "la ricetta", "baca": "la ri-CET-ta", "id": "resep" },
+    { "it": "a stomaco pieno", "baca": "a STO-ma-ko PYE-no", "id": "sesudah makan" },
+    { "it": "lontano dai pasti", "baca": "lon-TA-no dai PAS-ti", "id": "jauh dari waktu makan" },
+    { "it": "il sinistro", "baca": "il si-NIS-tro", "id": "kejadian klaim" },
+    { "it": "investire", "baca": "in-ves-TI-re", "id": "menabrak (pejalan/sepeda)" },
+    { "it": "tamponare", "baca": "tam-po-NA-re", "id": "menabrak dari belakang" },
+    { "it": "la retromarcia", "baca": "la re-tro-MAR-ca", "id": "gigi mundur" },
+    { "it": "il reclamo", "baca": "il re-KLA-mo", "id": "keluhan resmi" },
+    { "it": "la raccomandata", "baca": "la ra-ko-man-DA-ta", "id": "surat tercatat" },
+    { "it": "il responsabile", "baca": "il res-pon-SA-bi-le", "id": "penanggung jawab" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis kalimat gejalanya dalam bahasa Italia.",
+      "items": [
+        "Kepala saya sakit sejak dua hari.",
+        "Kaki saya sakit dua-duanya.",
+        "Nyerinya menusuk waktu saya bernapas.",
+        "Saya pusing dan mual.",
+        "Saya alergi penisilin."
+      ]
+    },
+    {
+      "prompt": "Pilih kata kerja yang tepat: *investire*, *tamponare*, *urtare*, *cadere*, *slogarsi*.",
+      "items": [
+        "Un'auto mi ha ____ mentre andavo in bici.",
+        "Il camion ha ____ la macchina davanti.",
+        "Sono ____ dalle scale.",
+        "Mi sono ____ la caviglia giocando.",
+        "Ho ____ lo specchietto uscendo dal parcheggio."
+      ]
+    },
+    {
+      "prompt": "Tulis kalimat keluhan sesuai tingkat yang diminta.",
+      "items": [
+        "Lisan, ringan, di toko.",
+        "Lisan, tegas, karena berulang.",
+        "Meminta bicara dengan penanggung jawab.",
+        "Tertulis, meninggalkan jejak.",
+        "Keluhan resmi yang memicu tenggat jawaban."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Italia.",
+      "items": [
+        "Saya jatuh dari sepeda dan pergelangan tangan saya terbentur.",
+        "Tidak, saya tidak kehilangan kesadaran.",
+        "Boleh saya minta salinan surat keterangannya?",
+        "Satu tablet tiap dua belas jam, sesudah makan.",
+        "Saya mau mengajukan klaim asuransi."
+      ]
+    }
+  ],
+  "answers": [
+    "Mi fa male la testa da due giorni. — Mi fanno male tutte e due le gambe. — È un dolore a fitte quando respiro. — Mi gira la testa e ho la nausea. — Sono allergico alla penicillina.",
+    "investito — tamponato — caduto — slogato — urtato",
+    "Scusi, c'è un problema con questo prodotto. — Guardi, così non va bene: è la terza volta. — Posso parlare con un responsabile? — Vi scrivo per segnalare quanto accaduto il 14 marzo. — Con la presente presento formale reclamo in merito alla pratica 4471.",
+    "Sono caduta dalla bici e ho battuto il polso. — No, non ho perso conoscenza. — Mi può dare una copia del referto? — Una compressa ogni dodici ore, a stomaco pieno. — Devo aprire un sinistro."
+  ]
+}
