@@ -1,0 +1,226 @@
+{
+ "title": "Sepuluh awalan yang mengubah arah",
+ "title_target": "Он вышел, перешёл дорогу, зашёл в аптеку и ушёл",
+ "goal": "Memasang sepuluh awalan pada kata kerja gerak sampai artinya bisa ditebak, lalu memakai makna awalan yang sama untuk menebak arti ratusan kata kerja lain yang belum pernah kamu lihat.",
+ "bekal": [
+  "memasangkan awalan gerak dengan preposisi yang menyertainya",
+  "mengerti bahwa awalan mengubah aspek: приходить (tak sempurna) — прийти (sempurna)",
+  "membedakan уйти, выйти, и отойти yang ketiganya berarti pergi",
+  "menebak arti kata kerja baru dari makna awalannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Он вышел на пять минут",
+   "intro": "Kantor perwakilan, jam tiga sore. Марина Петровна, kepala administrasi, mencari seorang kolega; Ари mencoba menjelaskan ke mana orang itu pergi — dan tiap penjelasan memakai awalan yang berbeda.",
+   "lines": [
+    { "speaker": "Марина Петровна:", "text": "Ари, вы не видели Диму? Он мне срочно нужен.", "id": "Ari, lihat Dima nggak? Aku butuh dia sekarang juga.", "literal": "Ari, anda tidak lihat‹proses,lampau› Dima(akk)? dia kepada-saya mendesak perlu." },
+    { "speaker": "Ари:", "text": "Он вышел минут пять назад. Сказал, что скоро придёт.", "id": "Dia keluar sekitar lima menit lalu. Katanya sebentar lagi datang.", "literal": "dia keluar‹selesai› menit lima yang-lalu. bilang‹selesai›, bahwa segera datang‹selesai›." },
+    { "speaker": "Марина Петровна:", "text": "Вышел куда? Из здания или просто в коридор?", "id": "Keluar ke mana? Keluar gedung atau cuma ke koridor?", "literal": "keluar‹selesai› ke-mana? dari gedung atau sekadar ke koridor?" },
+    { "speaker": "Ари:", "text": "Из здания. Он перешёл дорогу и зашёл в аптеку.", "id": "Keluar gedung. Dia nyeberang jalan terus mampir ke apotek.", "literal": "dari gedung. dia menyeberang‹selesai› jalan dan singgah‹selesai› ke apotek." },
+    { "speaker": "Марина Петровна:", "text": "Понятно. А до аптеки он дошёл или его перехватили?", "id": "Oke. Terus sampai apoteknya nggak, atau keburu dicegat?", "literal": "jelas. dan sampai apotek dia sampai‹selesai› atau dia(akk) mencegat‹selesai,mereka›?" },
+    { "speaker": "Ари:", "text": "Дошёл, я его видел из окна. Он даже обошёл всю очередь.", "id": "Sampai kok, kulihat dari jendela. Dia malah nyalip seluruh antrean.", "literal": "sampai‹selesai›, saya dia(akk) lihat‹proses,lampau› dari jendela. dia bahkan mengelilingi‹selesai› seluruh antrean." },
+    { "speaker": "Марина Петровна:", "text": "Он всегда так. Приходит последним, уходит первым.", "id": "Dia selalu begitu. Datang terakhir, pulang pertama.", "literal": "dia selalu begitu. datang‹proses› paling-akhir, pergi‹proses› paling-pertama." },
+    { "speaker": "Ари:", "text": "Не совсем. Он сегодня пришёл в семь и весь день не отходил от компьютера.", "id": "Nggak juga. Hari ini dia datang jam tujuh dan seharian nggak beranjak dari komputer.", "literal": "tidak sepenuhnya. dia hari-ini datang‹selesai› pada tujuh dan seluruh hari tidak beranjak‹proses,lampau› dari komputer." },
+    { "speaker": "Марина Петровна:", "text": "Ладно, признаю. Тогда я подойду позже.", "id": "Ya sudah, kuakui. Kalau begitu nanti aku hampiri lagi.", "literal": "baiklah, mengaku‹proses›. kalau-begitu saya menghampiri‹selesai› lebih-lambat." },
+    { "speaker": "Ари:", "text": "Или я ему передам, когда он вернётся.", "id": "Atau nanti kusampaikan waktu dia balik.", "literal": "atau saya kepada-dia sampaikan‹selesai›, ketika dia kembali‹selesai›." },
+    { "speaker": "Марина Петровна:", "text": "Передайте, пожалуйста. Пусть зайдёт ко мне до пяти.", "id": "Tolong sampaikan ya. Suruh mampir ke ruangan saya sebelum jam lima.", "literal": "sampaikan‹selesai›, silakan. biar singgah‹selesai› kepada saya sampai lima." },
+    { "speaker": "Ари:", "text": "А если он уйдёт раньше?", "id": "Kalau dia keburu pulang gimana?", "literal": "dan jika dia pergi‹selesai› lebih-awal?" },
+    { "speaker": "Марина Петровна:", "text": "Тогда пусть зайдёт завтра. Только не проходит мимо, как в прошлый раз.", "id": "Ya sudah, besok. Asal jangan lewat begitu saja kayak kemarin.", "literal": "kalau-begitu biar singgah‹selesai› besok. hanya jangan lewat‹proses› di-samping, seperti pada lalu kali." },
+    { "speaker": "Ари:", "text": "Он тогда, кажется, не заметил вас.", "id": "Waktu itu kayaknya dia nggak lihat Ibu.", "literal": "dia waktu-itu, tampaknya, tidak memperhatikan‹selesai› anda(akk)." },
+    { "speaker": "Марина Петровна:", "text": "Прошёл в метре и не заметил. Ну-ну.", "id": "Lewat semeter dari saya dan nggak lihat. Ya, ya.", "literal": "lewat‹selesai› pada meter dan tidak memperhatikan‹selesai›. nah-nah." },
+    { "speaker": "Ари:", "text": "Кстати, он вам звонил утром, но не дозвонился.", "id": "Ngomong-ngomong, tadi pagi dia telepon Ibu tapi nggak nyambung.", "literal": "omong-omong, dia kepada-anda menelepon‹proses,lampau› pagi, tapi tidak menelepon-tersambung‹selesai›." },
+    { "speaker": "Марина Петровна:", "text": "Вот это уже другое дело. Значит, дошло до него.", "id": "Nah, itu lain cerita. Berarti dia paham juga akhirnya.", "literal": "nah ini sudah lain perkara. berarti, sampai‹selesai› kepada dia." }
+   ],
+   "notes": [
+    { "text": "**Baris 2 dan 3: *вышел* memerlukan keterangan \"dari mana\".** Awalan *вы-* berarti keluar dari sesuatu yang tertutup, dan lawan bicara langsung ingin tahu batas mana yang dilewati — gedung, atau ruangan. Karena itu Марина bertanya *из здания или в коридор?* Awalan pada kata kerja gerak selalu membawa preposisi pasangannya." },
+    { "text": "**Baris 4 memperlihatkan tiga awalan berturut-turut: *перешёл дорогу, зашёл в аптеку*.** *Пере-* = menyeberangi, melintasi dari sisi ke sisi; *за-* = mampir, singgah sebentar dalam perjalanan menuju tempat lain. *За-* inilah awalan paling khas percakapan sehari-hari: *зайти в магазин*, *заехать за тобой*, *заглянуть на минутку*." },
+    { "text": "**Baris 6: *обошёл всю очередь* — *об-* berarti mengelilingi atau melewati dengan memutar.** Dari sini datang *обойти закон* (mengakali hukum), *обойти конкурентов* (menyalip pesaing), *обойти вопрос* (menghindari pertanyaan). Satu awalan, satu makna dasar, puluhan pemakaian kiasan." },
+    { "text": "**Baris 7 dan 8: *приходит* lawan *пришёл*.** Kata kerja gerak berawalan kehilangan pasangan satu arah/bolak-baliknya dan berubah jadi pasangan aspek biasa: *приходить* (tak sempurna) — *прийти* (sempurna). Ini pergeseran besar yang jarang dijelaskan: begitu ada awalan, sistem unit 3 tidak berlaku lagi." },
+    { "text": "**Baris 8 dan 9: *не отходил от компьютера* lawan *я подойду позже*.** *От-* = menjauh sedikit dari sesuatu, *под-* = mendekat sedikit. Pasangan ini bekerja di mana-mana: *отойди от окна* (menjauh dari jendela), *подойди ко мне* (mendekat ke sini), dan dalam kiasan *подход к проблеме* (pendekatan terhadap masalah)." },
+    { "text": "**Baris 16 dan 17: *не дозвонился* dan *дошло до него*.** *До-* berarti \"sampai ke batas akhir\": *дочитать* (baca sampai habis), *дозвониться* (menelepon sampai tersambung), *договориться* (berunding sampai sepakat). Dan *до меня дошло* adalah ungkapan sehari-hari untuk \"akhirnya aku ngeh\" — harfiahnya \"sampai kepadaku\"." }
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh awalan gerak dan preposisi pasangannya",
+     "body": [
+      "Tiap awalan punya preposisi yang hampir selalu menyertainya. Menghafal pasangannya sekaligus jauh lebih hemat daripada menghafal awalannya sendirian — dan pasangan inilah yang paling sering keliru di tulisan pelajar."
+     ],
+     "table": {
+      "head": ["Awalan", "Arti", "Preposisi pasangan", "Contoh"],
+      "rows": [
+       ["при-", "tiba, datang", "в / на / к", "**Приходи ко мне** в семь."],
+       ["у-", "pergi meninggalkan", "из / с / от", "Он **ушёл с работы** рано."],
+       ["вы-", "keluar dari ruang tertutup", "из", "Она **вышла из комнаты**."],
+       ["в- / во-", "masuk ke dalam", "в", "Он **вошёл в кабинет**."],
+       ["за-", "mampir dalam perjalanan", "в / к / за", "**Зайди за мной** в шесть."],
+       ["до-", "sampai ke batas", "до", "Мы **дошли до площади**."],
+       ["пере-", "menyeberang, pindah", "через / в", "Они **переехали в Москву**."],
+       ["под-", "mendekat", "к", "**Подойди к доске**."],
+       ["от-", "menjauh sedikit", "от", "**Отойди от края**."],
+       ["про-", "lewat, melalui, menempuh", "мимо / через", "Я **прошёл мимо** и не увидел."]
+      ]
+     }
+    },
+    {
+     "title": "Awalan yang sama di kata kerja bukan gerak",
+     "body": [
+      "Inilah alasan sebenarnya unit ini penting. Kesepuluh awalan itu tidak berhenti di kata kerja gerak — maknanya terbawa ke seluruh kosakata. Begitu kamu mengenalinya, kata kerja yang belum pernah kamu lihat pun bisa ditebak sebelum membuka kamus."
+     ],
+     "table": {
+      "head": ["Awalan", "Makna dasar", "Di kata kerja lain", "Artinya"],
+      "rows": [
+       ["до-", "sampai ke batas", "дочитать, доделать, договориться", "sampai habis, sampai sepakat"],
+       ["пере-", "melintasi, mengulang", "переписать, перезвонить, переделать", "menulis ulang, menelepon balik"],
+       ["за-", "mulai; singgah; menutup", "заговорить, записать, закрыть", "mulai bicara, mencatat"],
+       ["раз- / рас-", "membuka, mencerai", "раздать, разбить, рассказать", "membagikan, memecah"],
+       ["с-", "turun; mengumpulkan; sekali", "сделать, собрать, спросить", "melakukan, mengumpulkan"],
+       ["по-", "sebentar; mulai", "поговорить, посидеть, пойти", "bicara sebentar, mulai jalan"],
+       ["вы-", "keluar; sampai tuntas", "выучить, выяснить, выспаться", "menghafal sampai hafal"],
+       ["про-", "melewati; melewatkan", "проспать, пропустить, прожить", "kesiangan, terlewat"],
+       ["под-", "sedikit; dari bawah", "подождать, подписать, подумать", "menunggu sebentar, menandatangani"],
+       ["от-", "menjauh; selesai penuh", "ответить, отдохнуть, отработать", "menjawab, beristirahat"]
+      ]
+     }
+    },
+    {
+     "title": "Empat kata kerja yang semuanya berarti pergi",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"pergi\" untuk semuanya. Salah memilih di antara keempat ini tidak membuat kalimatnya tak dimengerti, tetapi mengubah kabar yang kamu sampaikan — dan tiga di antaranya sering muncul dalam satu percakapan yang sama."
+     ],
+     "table": {
+      "head": ["Kata kerja", "Artinya", "Kapan dipakai", "Contoh"],
+      "rows": [
+       ["уйти", "pergi dan tak ada di sini lagi", "meninggalkan tempat", "Он **ушёл** домой."],
+       ["выйти", "keluar sebentar, akan kembali", "keluar ruangan", "Он **вышел**, скоро будет."],
+       ["отойти", "menjauh beberapa langkah", "masih di sekitar sini", "Он **отошёл** покурить."],
+       ["пойти", "berangkat, mulai berjalan", "awal perjalanan", "Он **пошёл** в магазин."],
+       ["уехать", "pergi dengan kendaraan, jauh", "keluar kota", "Она **уехала** в Питер."],
+       ["съездить", "pergi dan kembali", "perjalanan pulang-pergi", "Я **съездил** в банк."],
+       ["зайти", "mampir", "singgah dalam perjalanan", "**Зайду** после работы."],
+       ["уходить", "sedang bersiap pergi", "belum benar-benar pergi", "Я уже **ухожу**."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kantor, koridor, dan urusan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["срочно", "SROCH-na", "mendesak, segera"],
+      ["здание", "ZDA-ni-ye", "gedung"],
+      ["коридор", "ka-ri-DOR", "koridor"],
+      ["аптека", "ap-TYE-ka", "apotek"],
+      ["очередь", "O-chi-rit'", "antrean"],
+      ["перехватить", "pi-rikh-va-TIT'", "mencegat, menyambar"],
+      ["признать", "priz-NAT'", "mengakui"],
+      ["передать", "pi-ri-DAT'", "menyampaikan, meneruskan"],
+      ["пусть", "pust'", "biar, suruh saja"],
+      ["мимо", "MI-ma", "lewat di samping"]
+     ]
+    },
+    { "type": "sub", "text": "Ungkapan berawalan yang dipakai tiap hari" },
+    {
+     "type": "tabel",
+     "head": ["Ungkapan", "Arti", "Catatan"],
+     "rows": [
+      ["Зайди за мной.", "jemput aku ya", "*за* + orang = menjemput"],
+      ["Я зайду на минутку.", "aku mampir sebentar", "singgah, bukan berkunjung lama"],
+      ["До меня дошло.", "aku baru ngeh", "harfiah: sampai kepadaku"],
+      ["Не могу дозвониться.", "nggak nyambung-nyambung", "menelepon berkali-kali"],
+      ["Мы договорились.", "kita sudah sepakat", "sampai pada kesepakatan"],
+      ["Он ушёл с работы.", "dia berhenti kerja", "juga: pulang dari kantor"],
+      ["Отойди на секунду.", "minggir sebentar", "bukan pergi, cuma menjauh"],
+      ["Перезвони мне.", "telepon balik ya", "*пере-* = mengulang"],
+      ["Я проспал.", "aku kesiangan", "*про-* = terlewatkan"],
+      ["Обойдёмся.", "nggak usah, cukup tanpa itu", "dari обойтись"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Begitu ada awalan, sistem satu arah lawan bolak-balik lenyap.** *Идти/ходить* jadi *прийти/приходить* — sepasang aspek biasa. Pelajar yang masih mencari \"bentuk bolak-balik dari прийти\" sedang mencari sesuatu yang tidak ada, dan itu tanda paling jelas bahwa unit ini belum benar-benar mengendap.",
+      "**Awalan tanpa preposisi pasangannya terdengar setengah jadi.** *Он вышел* tanpa keterangan langsung memancing pertanyaan \"dari mana\", persis seperti \"dia keluar\" dalam bahasa Indonesia. Pasangkan sejak awal: *вы- + из*, *при- + к*, *от- + от*, *под- + к*, *до- + до*.",
+      "**Awalan adalah alat menebak, dan di B2 alat itu lebih berharga daripada seribu kata hafalan.** Ketika kamu bertemu *переосмыслить*, *недооценить*, atau *подстроиться* untuk pertama kalinya, kamu tidak perlu kamus: *пере-* mengulang, *недо-* kurang, *под-* menyesuaikan diri dari bawah. Unit 15 membangun keterampilan ini sampai penuh."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "выйти", "baca": "VYY-ti", "id": "keluar" },
+  { "ru": "зайти", "baca": "zay-TI", "id": "mampir, singgah" },
+  { "ru": "перейти", "baca": "pi-riy-TI", "id": "menyeberang, beralih" },
+  { "ru": "дойти", "baca": "day-TI", "id": "sampai (berjalan)" },
+  { "ru": "обойти", "baca": "a-bay-TI", "id": "mengelilingi, menghindari" },
+  { "ru": "подойти", "baca": "pa-day-TI", "id": "mendekat; cocok" },
+  { "ru": "отойти", "baca": "a-tay-TI", "id": "menjauh sedikit" },
+  { "ru": "пройти", "baca": "pray-TI", "id": "lewat, menempuh" },
+  { "ru": "вернуться", "baca": "vir-NU-tsa", "id": "kembali" },
+  { "ru": "дозвониться", "baca": "da-zva-NI-tsa", "id": "berhasil menelepon" },
+  { "ru": "перезвонить", "baca": "pi-riz-va-NIT'", "id": "menelepon balik" },
+  { "ru": "заметить", "baca": "za-MYE-tit'", "id": "memperhatikan, sadar" },
+  { "ru": "съездить", "baca": "S-YEZ-dit'", "id": "pergi dan kembali" },
+  { "ru": "переехать", "baca": "pi-ri-YE-khat'", "id": "pindah rumah" },
+  { "ru": "проспать", "baca": "pra-SPAT'", "id": "kesiangan" },
+  { "ru": "пропустить", "baca": "pra-pus-TIT'", "id": "melewatkan" },
+  { "ru": "выяснить", "baca": "VY-yas-nit'", "id": "mencari tahu, memastikan" },
+  { "ru": "обойтись", "baca": "a-bay-TIS'", "id": "cukup tanpa, mengatasi" },
+  { "ru": "недооценить", "baca": "ni-da-a-tse-NIT'", "id": "meremehkan" },
+  { "ru": "подстроиться", "baca": "pat-STRO-i-tsa", "id": "menyesuaikan diri" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi awalan yang tepat pada kata kerja gerak.",
+   "items": [
+    "Он ____шёл из здания и сел в машину.",
+    "____йди ко мне, я тебе покажу.",
+    "Мы ____шли до площади за двадцать минут.",
+    "____йди в аптеку по дороге, купи витамины.",
+    "Не ____ходи от телефона, я перезвоню."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Dia keluar sebentar, sebentar lagi balik.",
+    "Mampir ke tempatku sesudah kerja ya.",
+    "Aku nggak bisa nelepon dia, nggak pernah nyambung.",
+    "Mereka pindah ke Moskow tiga tahun lalu.",
+    "Aku lewat di sampingnya dan tidak melihatnya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "он / перешёл / дорогу / и / зашёл / в / магазин",
+    "она / уехала / в / Петербург / на / неделю",
+    "я / прошёл / мимо / и / не / заметил / тебя",
+    "пусть / он / зайдёт / ко / мне / до / пяти",
+    "до / меня / наконец / дошло"
+   ]
+  },
+  {
+   "prompt": "Tebak arti kata kerja berikut dari awalannya, lalu tulis artinya dalam bahasa Indonesia.",
+   "items": [
+    "переписать",
+    "недоспать",
+    "выучить",
+    "отработать",
+    "прожить"
+   ]
+  }
+ ],
+ "answers": [
+  "вышел — Подойди — дошли — Зайди — отходи",
+  "Он вышел, скоро будет. — Зайди ко мне после работы. — Я не могу до него дозвониться. — Они переехали в Москву три года назад. — Я прошёл мимо него и не заметил.",
+  "Он перешёл дорогу и зашёл в магазин. — Она уехала в Петербург на неделю. — Я прошёл мимо и не заметил тебя. — Пусть он зайдёт ко мне до пяти. — До меня наконец дошло.",
+  "menulis ulang — kurang tidur — menghafal sampai hafal — bekerja sampai selesai (melunasi dengan kerja) — menjalani hidup (selama waktu tertentu)"
+ ]
+}

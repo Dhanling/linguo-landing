@@ -1,0 +1,226 @@
+{
+ "title": "Partikel: kata-kata kecil yang mengatur nada",
+ "title_target": "Ты же обещал! Ну ведь я и позвонил. Разве нет?",
+ "goal": "Memakai же, ведь, -то, ли, разве, неужели, вот, да, ну — partikel yang tak punya arti sendiri tetapi menentukan apakah kalimatmu terdengar ramah, menuduh, heran, atau menyerah.",
+ "bekal": [
+  "memakai же untuk mengingatkan hal yang sudah sama-sama diketahui",
+  "memakai ведь untuk mengajak lawan bicara setuju",
+  "membedakan разве dari неужели pada pertanyaan yang mengandung keheranan",
+  "menempatkan -то, ну, вот, да di tempat yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Ты же обещал",
+   "intro": "Percakapan telepon, Jumat malam. Настя menunggu di restoran sejak setengah jam yang lalu; Ари masih di kantor dan baru menyadarinya.",
+   "lines": [
+    { "speaker": "Настя:", "text": "Ты где вообще? Ты же обещал в семь.", "id": "Kamu di mana sih? Kamu kan janji jam tujuh.", "literal": "kamu di-mana umumnya? kamu [же] berjanji‹lampau› pada tujuh." },
+    { "speaker": "Ари:", "text": "Я помню. Но тут же совещание затянулось.", "id": "Aku ingat kok. Tapi rapatnya molor.", "literal": "saya ingat‹proses›. tapi di-sini [же] rapat memanjang‹selesai,lampau›." },
+    { "speaker": "Настя:", "text": "Совещание в пятницу вечером? Разве так бывает?", "id": "Rapat Jumat malam? Emangnya ada yang begitu?", "literal": "rapat pada jumat sore? [разве] begitu terjadi‹proses›?" },
+    { "speaker": "Ари:", "text": "Бывает, ещё как. Ведь квартал закрывается.", "id": "Ada dong, banyak malah. Kan tutup kuartal.", "literal": "terjadi‹proses›, lagi bagaimana. [ведь] kuartal menutup‹diri›." },
+    { "speaker": "Настя:", "text": "Ну хорошо. И сколько ещё?", "id": "Ya sudah. Terus berapa lama lagi?", "literal": "[ну] baik. dan berapa lagi?" },
+    { "speaker": "Ари:", "text": "Минут двадцать. Я же почти закончил.", "id": "Dua puluh menitan. Aku kan hampir kelar.", "literal": "menit dua-puluh. saya [же] hampir menyelesaikan‹selesai,lampau›." },
+    { "speaker": "Настя:", "text": "Ты полчаса назад тоже почти закончил.", "id": "Setengah jam lalu kamu juga bilang hampir kelar.", "literal": "kamu setengah-jam yang-lalu juga hampir menyelesaikan‹lampau›." },
+    { "speaker": "Ари:", "text": "Так ведь тогда было почти, а теперь совсем почти.", "id": "Ya kan tadi \"hampir\", sekarang \"hampir banget\".", "literal": "begitu [ведь] waktu-itu ada‹lampau› hampir, dan sekarang sama-sekali hampir." },
+    { "speaker": "Настя:", "text": "Неужели ты думаешь, что это смешно?", "id": "Masa kamu pikir itu lucu?", "literal": "[неужели] kamu berpikir‹proses›, bahwa ini lucu?" },
+    { "speaker": "Ари:", "text": "Немножко же смешно. Признай.", "id": "Lucu dikit kan. Ngaku deh.", "literal": "sedikit [же] lucu. akui‹selesai›." },
+    { "speaker": "Настя:", "text": "Вот приедешь — тогда и посмеёмся.", "id": "Nanti kalau sampai sini, baru kita ketawa.", "literal": "[вот] akan-datang‹selesai› kalau-begitu dan akan-tertawa‹selesai,kami›." },
+    { "speaker": "Ари:", "text": "Уже выхожу. Ты что-нибудь заказала?", "id": "Sudah jalan. Kamu udah pesan sesuatu?", "literal": "sudah keluar‹proses›. kamu sesuatu memesan‹selesai,lampau,fem›?" },
+    { "speaker": "Настя:", "text": "Заказала. Тебе — суп какой-то, я названия не помню.", "id": "Sudah. Buat kamu sup apa gitu, aku lupa namanya.", "literal": "memesan‹lampau›. kepada-kamu sup entah-apa, saya nama(gen) tidak ingat‹proses›." },
+    { "speaker": "Ари:", "text": "Суп-то хоть горячий?", "id": "Supnya masih anget nggak sih?", "literal": "sup-[то] setidaknya panas?" },
+    { "speaker": "Настя:", "text": "Был горячий. Полчаса назад. Как и я.", "id": "Tadi anget. Setengah jam lalu. Sama kayak aku.", "literal": "ada‹lampau› panas. setengah-jam yang-lalu. seperti dan saya." },
+    { "speaker": "Ари:", "text": "Да понял я, понял. Бегу.", "id": "Iya iya, paham, paham. Aku lari.", "literal": "[да] paham‹lampau› saya, paham‹lampau›. berlari‹proses›." },
+    { "speaker": "Настя:", "text": "Вот и беги. И не звони больше, а то опять полчаса.", "id": "Nah lari sana. Dan jangan telepon lagi, nanti setengah jam lagi.", "literal": "[вот] dan berlari‹proses›. dan jangan menelepon‹proses› lebih, kalau-tidak lagi setengah-jam." }
+   ],
+   "notes": [
+    { "text": "**Baris 1: *ты же обещал* — inti partikel *же*.** Ia menunjuk sesuatu yang **sudah sama-sama diketahui** dan karena itu terasa menuntut: \"kamu kan janji\". Tanpa *же*, *ты обещал* cuma pernyataan datar. Bahasa Indonesia memakai \"kan\" untuk pekerjaan yang persis sama, dan itu keberuntungan besar bagi kita." },
+    { "text": "**Baris 4: *ведь квартал закрывается* — *ведь* mengajak lawan bicara ikut setuju.** Bedanya dengan *же*: *же* mengingatkan (\"kamu sudah tahu ini\"), *ведь* memberi alasan sambil berharap disetujui (\"kan memang begitu, ya kan\"). Keduanya sering bisa saling ganti, tetapi *ведь* lebih lunak dan lebih menjelaskan." },
+    { "text": "**Baris 3 dan 9: *разве* lawan *неужели*.** *Разве* meragukan kenyataannya (\"masa iya begitu?\"), *неужели* mengungkapkan keheranan atau kekecewaan (\"masa sih kamu…?\"). *Неужели* jauh lebih emosional, dan memakainya pada orang asing bisa terdengar menuduh." },
+    { "text": "**Baris 11 dan 17: *вот* menunjuk dan menutup.** *Вот приедешь — тогда и посмеёмся* memakai *вот* untuk menegaskan syaratnya; *вот и беги* memakainya untuk menutup perdebatan. *Вот* juga dipakai untuk menunjuk benda (*вот книга*) dan untuk kekesalan (*вот незадача!*)." },
+    { "text": "**Baris 14: *суп-то хоть горячий?* — partikel *-то* yang menempel dengan tanda hubung.** Ia menyorot satu kata di dalam kalimat: \"supnya sendiri gimana?\". Sangat lisan, sangat sering, dan hampir tak pernah diajarkan. Jangan bingung dengan *то* pada *то, что* atau dengan *-то* pada *кто-то*." },
+    { "text": "**Baris 16: *да понял я, понял* — *да* yang sama sekali bukan \"ya\".** Di awal kalimat, *да* menyampaikan kekesalan atau penyerahan: *да ладно* (yaelah), *да брось* (ah, sudahlah), *да ну тебя* (ah, kamu ini). Perhatikan juga urutan *понял я* — subjek dilempar ke belakang untuk menekankan kata kerjanya." }
+   ],
+   "grammars": [
+    {
+     "title": "Sembilan partikel dan pekerjaannya",
+     "body": [
+      "Partikel tidak punya arti yang bisa diterjemahkan sendirian. Yang bisa dijelaskan adalah **apa yang ia lakukan pada kalimat**. Tabel ini adalah inti unit; bacalah dengan mengucapkan tiap contohnya keras-keras."
+     ],
+     "table": {
+      "head": ["Partikel", "Pekerjaannya", "Contoh", "Padanan rasa"],
+      "rows": [
+       ["же", "mengingatkan hal yang sudah diketahui", "Ты **же** знаешь!", "kan"],
+       ["ведь", "memberi alasan, mengajak setuju", "**Ведь** это правда.", "kan memang, ya kan"],
+       ["-то", "menyorot satu kata", "А работа**-то** как?", "…nya sendiri gimana"],
+       ["ли", "pertanyaan tak langsung, keraguan", "Не знаю, придёт **ли** он.", "apakah"],
+       ["разве", "meragukan kenyataan", "**Разве** он уехал?", "masa iya"],
+       ["неужели", "heran, kecewa", "**Неужели** ты забыл?", "masa sih"],
+       ["вот", "menunjuk, menegaskan, menutup", "**Вот** и всё.", "nah"],
+       ["да", "kesal, menyerah (di awal)", "**Да** ладно тебе.", "yaelah"],
+       ["ну", "mendorong, ragu, menyerah", "**Ну** что ты будешь делать.", "ya sudahlah"],
+       ["уж", "menegaskan, sedikit menyesal", "**Уж** извини.", "maaf ya (terpaksa)"]
+      ]
+     }
+    },
+    {
+     "title": "Kalimat yang sama, lima nada",
+     "body": [
+      "Cara terbaik merasakan partikel adalah membandingkan kalimat yang isinya persis sama. Semua baris di bawah ini menyampaikan kabar yang identik dan sikap yang sama sekali berbeda."
+     ],
+     "table": {
+      "head": ["Kalimat", "Yang tertangkap", "Kapan dipakai"],
+      "rows": [
+       ["Он не придёт.", "kabar datar", "melaporkan"],
+       ["Он **же** не придёт.", "kamu kan sudah tahu", "mengingatkan, sedikit kesal"],
+       ["Он **ведь** не придёт.", "kan memang tidak akan datang", "menjelaskan, mengajak setuju"],
+       ["**Разве** он не придёт?", "masa dia tidak datang?", "meragukan kabar"],
+       ["**Неужели** он не придёт?", "masa sih dia tidak datang?", "kecewa, terkejut"],
+       ["Он **что**, не придёт?", "lho, dia nggak datang?", "sangat lisan, kaget"],
+       ["Он **всё-таки** не придёт.", "ternyata tetap tidak datang", "sesudah menunggu"],
+       ["Он **так и** не пришёл.", "sampai akhir tak datang", "menutup cerita"],
+       ["**Вот** он и не пришёл.", "nah, benar kan tidak datang", "membuktikan dugaan"],
+       ["**Да** не придёт он.", "yaelah, nggak bakal datang", "kesal, memutus perdebatan"]
+      ]
+     }
+    },
+    {
+     "title": "Letak partikel: aturan kecil yang penting",
+     "body": [
+      "Partikel bukan kata yang bisa ditaruh sembarangan. Letaknya menentukan kata mana yang disorot, dan salah menempatkannya membuat kalimat terdengar aneh walau semua katanya benar."
+     ],
+     "table": {
+      "head": ["Partikel", "Letaknya", "Contoh", "Catatan"],
+      "rows": [
+       ["же", "sesudah kata yang disorot", "**Ты же** знаешь / Ты **знаешь же**", "biasanya sesudah kata pertama"],
+       ["ведь", "di awal kalimat atau sesudah subjek", "**Ведь** ты знаешь", "lebih bebas daripada же"],
+       ["-то", "menempel dengan tanda hubung", "работа**-то**", "hanya pada kata benda dan kata ganti"],
+       ["ли", "sesudah kata yang diragukan", "Придёт **ли** он? / Он **ли** это?", "letaknya memilih apa yang diragukan"],
+       ["разве / неужели", "selalu di awal", "**Разве** ты не знал?", "tak bisa di tengah"],
+       ["вот", "di depan yang ditunjuk", "**Вот** он.", "juga di awal kalimat penutup"],
+       ["да / ну", "selalu di awal", "**Да** брось. **Ну** ладно.", "hanya lisan"],
+       ["⚠️ dua partikel", "boleh berdampingan", "**Ну да ведь** это же очевидно.", "lazim di lisan"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Percakapan sehari-hari dan nada bicara",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["затянуться", "za-ti-NU-tsa", "molor, berlarut-larut"],
+      ["квартал", "kvar-TAL", "kuartal, triwulan"],
+      ["признать", "priz-NAT'", "mengakui"],
+      ["посмеяться", "pas-mi-YA-tsa", "tertawa bersama"],
+      ["заказать", "za-ka-ZAT'", "memesan"],
+      ["название", "naz-VA-ni-ye", "nama, judul"],
+      ["горячий", "ga-RYA-chiy", "panas" ],
+      ["немножко", "ni-MNOSH-ka", "sedikit" ],
+      ["опять", "a-PYAT'", "lagi" ],
+      ["больше не", "BOL'-shy ni", "tidak lagi" ]
+     ]
+    },
+    { "type": "sub", "text": "Potongan berpartikel yang siap pakai" },
+    {
+     "type": "tabel",
+     "head": ["Rusia", "Indonesia", "Kapan dipakai"],
+     "rows": [
+      ["Ты же знаешь.", "Kamu kan tahu.", "mengingatkan"],
+      ["Ну и что?", "Terus kenapa?", "menantang halus"],
+      ["Да ладно тебе.", "Yaelah, udahlah.", "menenangkan, akrab"],
+      ["Вот именно.", "Nah, itu dia.", "setuju kuat"],
+      ["Разве нет?", "Emang bukan?", "meminta pembenaran"],
+      ["Неужели правда?", "Masa sih beneran?", "terkejut"],
+      ["Ну ты даёшь.", "Ada-ada aja kamu.", "kagum bercampur kesal"],
+      ["Так вот.", "Nah, jadi begini.", "membuka cerita"],
+      ["Уж извини.", "Maaf ya, mau gimana lagi.", "minta maaf setengah"],
+      ["Всё-таки ты пришёл.", "Ternyata kamu datang juga.", "sesudah ragu"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Bahasa Rusia tanpa partikel terdengar seperti dokumen, dan inilah tanda paling jelas pelajar tingkat lanjut.** Kalimatmu benar, kosakatamu luas, tapi tak seorang pun merasa sedang mengobrol denganmu. Menambahkan satu *же* atau *ведь* per beberapa kalimat mengubah kesan itu lebih cepat daripada seratus kata baru.",
+      "**Untunglah bahasa Indonesia punya alat yang mirip.** \"Kan\", \"kok\", \"sih\", \"dong\", \"lho\" mengerjakan hal yang persis sama: menunjuk pengetahuan bersama, meminta persetujuan, menyorot satu kata. Padanan yang berguna: *же* ≈ kan, *ведь* ≈ kan memang, *-то* ≈ sih, *разве* ≈ emang, *неужели* ≈ masa sih.",
+      "**Yang harus hati-hati justru *неужели* dan *да*.** Keduanya membawa emosi kuat: *неужели* bisa terdengar seperti menuduh, dan *да* di awal kalimat selalu berarti kesal, bukan setuju. Pada orang yang baru kamu kenal, tetaplah pada *же*, *ведь*, dan *вот* — ketiganya aman dalam segala keadaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "же", "baca": "zhe", "id": "kan (mengingatkan)" },
+  { "ru": "ведь", "baca": "vyet'", "id": "kan memang" },
+  { "ru": "разве", "baca": "RAZ-vye", "id": "masa iya, emangnya" },
+  { "ru": "неужели", "baca": "ni-u-ZHE-li", "id": "masa sih" },
+  { "ru": "вот", "baca": "vot", "id": "nah, ini" },
+  { "ru": "уж", "baca": "ush", "id": "sudahlah, memang" },
+  { "ru": "всё-таки", "baca": "FSYO-ta-ki", "id": "ternyata, tetap saja" },
+  { "ru": "так и", "baca": "tak i", "id": "sampai akhirnya (tidak)" },
+  { "ru": "ну", "baca": "nu", "id": "nah, ya sudah" },
+  { "ru": "да ладно", "baca": "da LAD-na", "id": "yaelah, udahlah" },
+  { "ru": "брось", "baca": "bros'", "id": "sudahlah, jangan gitu" },
+  { "ru": "очевидно", "baca": "a-chi-VID-na", "id": "jelas sekali" },
+  { "ru": "ты даёшь", "baca": "ty da-YOSH", "id": "ada-ada saja kamu" },
+  { "ru": "полчаса", "baca": "pal-chi-SA", "id": "setengah jam" },
+  { "ru": "назад", "baca": "na-ZAT", "id": "yang lalu" },
+  { "ru": "совсем", "baca": "sa-FSYEM", "id": "sama sekali" },
+  { "ru": "почти", "baca": "pach-TI", "id": "hampir" },
+  { "ru": "хоть", "baca": "khot'", "id": "setidaknya" },
+  { "ru": "бежать", "baca": "bi-ZHAT'", "id": "berlari" },
+  { "ru": "суп", "baca": "sup", "id": "sup" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi partikel yang paling tepat.",
+   "items": [
+    "Ты ____ обещал прийти в семь! (же, ли, вот)",
+    "____ ты не знал об этом? (Разве, Вот, Да)",
+    "____ он и не пришёл. (Вот, Ли, Же)",
+    "А работа____ как? (то, же, ли)",
+    "Не знаю, придёт ____ он. (ли, же, вот)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia, jaga nadanya.",
+   "items": [
+    "Kamu kan sudah tahu.",
+    "Masa sih kamu lupa?",
+    "Yaelah, sudahlah.",
+    "Nah, itu dia.",
+    "Ternyata dia datang juga."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ведь / это / и / так / понятно",
+    "да / не / придёт / он",
+    "вот / приедешь / тогда / и / поговорим",
+    "неужели / ты / думаешь / что / это / смешно",
+    "ну / что / ты / будешь / делать"
+   ]
+  },
+  {
+   "prompt": "Pilih разве atau неужели.",
+   "items": [
+    "____ он уже уехал? Я думал, он ещё здесь. (Разве, Неужели)",
+    "____ ты меня не узнал? Мы же виделись вчера! (Разве, Неужели)",
+    "____ это так дорого? Мне казалось, дешевле. (Разве, Неужели)",
+    "____ всё это правда? Не могу поверить. (Разве, Неужели)",
+    "____ нельзя было позвонить? (Разве, Неужели)"
+   ]
+  }
+ ],
+ "answers": [
+  "же — Разве — Вот — то — ли",
+  "Ты же знаешь. — Неужели ты забыл? — Да ладно тебе. — Вот именно. — Он всё-таки пришёл.",
+  "Ведь это и так понятно. — Да не придёт он. — Вот приедешь, тогда и поговорим. — Неужели ты думаешь, что это смешно? — Ну что ты будешь делать.",
+  "Разве — Неужели — Разве — Неужели — Разве"
+ ]
+}

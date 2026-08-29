@@ -1,0 +1,226 @@
+{
+ "title": "Participium pasif dan bentuk pendeknya",
+ "title_target": "Договор подписан, деньги переведены, вопрос закрыт",
+ "goal": "Membentuk dan membaca причастия страдательные serta bentuk pendeknya — tulang punggung bahasa dokumen, berita, dan pengumuman Rusia, dan sekaligus cara paling wajar mengatakan \"sudah selesai\".",
+ "bekal": [
+  "membentuk participium pasif dengan -нн, -енн, dan -т",
+  "memakai bentuk pendek (сделан, написана, закрыты) sebagai inti kalimat",
+  "menyebut pelaku dengan instrumentalis pada kalimat pasif",
+  "membedakan bentuk pendek sebagai hasil dari bentuk penuh sebagai keterangan"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Всё подписано",
+   "intro": "Ruang rapat kecil, sepuluh menit sebelum kantor tutup. Марина Петровна memeriksa daftar pekerjaan hari itu; Ари melapor.",
+   "lines": [
+    { "speaker": "Марина Петровна:", "text": "Так, договор подписан?", "id": "Oke, kontraknya sudah ditandatangani?", "literal": "begitu, kontrak ditandatangani(pendek)?" },
+    { "speaker": "Ари:", "text": "Подписан обеими сторонами сегодня в час.", "id": "Sudah, oleh kedua pihak, hari ini jam satu.", "literal": "ditandatangani(pendek) oleh-kedua(instr) pihak(instr) hari-ini pada satu." },
+    { "speaker": "Марина Петровна:", "text": "Отлично. Деньги переведены?", "id": "Bagus. Uangnya sudah ditransfer?", "literal": "sempurna. uang ditransfer(pendek, jamak)?" },
+    { "speaker": "Ари:", "text": "Переведены вчера вечером. Подтверждение получено утром.", "id": "Sudah, kemarin sore. Konfirmasinya diterima pagi ini.", "literal": "ditransfer(pendek) kemarin sore. konfirmasi diterima(pendek, netral) pagi." },
+    { "speaker": "Марина Петровна:", "text": "А документы, подготовленные Димой, проверены?", "id": "Terus dokumen yang disiapkan Dima sudah diperiksa?", "literal": "dan dokumen-dokumen, disiapkan-yang(jamak) oleh-Dima(instr), diperiksa(pendek)?" },
+    { "speaker": "Ари:", "text": "Проверены, но там две ошибки. Уже исправлены.", "id": "Sudah, tapi ada dua kesalahan. Sudah dibetulkan.", "literal": "diperiksa(pendek), tapi di-sana dua kesalahan. sudah dibetulkan(pendek)." },
+    { "speaker": "Марина Петровна:", "text": "Кем исправлены?", "id": "Dibetulkan oleh siapa?", "literal": "oleh-siapa(instr) dibetulkan(pendek)?" },
+    { "speaker": "Ари:", "text": "Мной. Дима был на встрече.", "id": "Oleh saya. Dima lagi rapat.", "literal": "oleh-saya(instr). Dima ada(lampau) pada pertemuan." },
+    { "speaker": "Марина Петровна:", "text": "Хорошо. А письмо в налоговую отправлено?", "id": "Baik. Surat ke kantor pajak sudah dikirim?", "literal": "baik. dan surat ke pajak(kantor) dikirim(pendek, netral)?" },
+    { "speaker": "Ари:", "text": "Отправлено, но ответ пока не получен.", "id": "Sudah, tapi jawabannya belum diterima.", "literal": "dikirim(pendek), tapi jawaban sementara tidak diterima(pendek)." },
+    { "speaker": "Марина Петровна:", "text": "И не будет получен раньше вторника. Они всегда молчат неделю.", "id": "Dan nggak akan diterima sebelum Selasa. Mereka selalu diam seminggu.", "literal": "dan tidak akan diterima(pendek) lebih-awal selasa(gen). mereka selalu diam‹proses› pekan." },
+    { "speaker": "Ари:", "text": "Тогда у меня всё. Вопрос закрыт.", "id": "Kalau begitu dari saya sudah semua. Urusan tutup.", "literal": "kalau-begitu di saya semua. perkara ditutup(pendek)." },
+    { "speaker": "Марина Петровна:", "text": "Не совсем. Отчёт, о котором мы говорили в понедельник?", "id": "Belum juga. Laporan yang kita bahas Senin itu?", "literal": "tidak sepenuhnya. laporan, tentang yang(prep) kami bicara‹proses,lampau› pada senin?" },
+    { "speaker": "Ари:", "text": "Написан, но не вычитан. Завтра утром отдам.", "id": "Sudah ditulis, tapi belum dibaca ulang. Besok pagi saya serahkan.", "literal": "ditulis(pendek), tapi tidak dikoreksi(pendek). besok pagi akan-serahkan‹selesai›." },
+    { "speaker": "Марина Петровна:", "text": "Договорились. Кстати, кабинет на третьем всё ещё закрыт?", "id": "Sepakat. Ngomong-ngomong, ruangan di lantai tiga masih terkunci?", "literal": "bersepakat‹selesai›. omong-omong, ruang pada ketiga masih tertutup(pendek)?" },
+    { "speaker": "Ари:", "text": "Закрыт. Ключ потерян ещё в прошлом месяце.", "id": "Terkunci. Kuncinya hilang sejak bulan lalu.", "literal": "tertutup(pendek). kunci hilang(pendek) sejak pada lalu bulan." },
+    { "speaker": "Марина Петровна:", "text": "Прекрасно. Значит, всё под контролем, кроме того, что не под контролем.", "id": "Sempurna. Berarti semuanya terkendali, kecuali yang tidak terkendali.", "literal": "indah. berarti, semua di-bawah kendali, kecuali itu, yang tidak di-bawah kendali." }
+   ],
+   "notes": [
+    { "text": "**Baris 1 memperlihatkan bentuk yang paling berguna dari seluruh unit ini: *договор подписан*.** Bentuk pendek participium pasif adalah cara paling wajar mengatakan \"sudah dikerjakan\" dalam bahasa Rusia — lebih wajar daripada kalimat aktif mana pun. Di kantor Rusia, laporan status hampir seluruhnya tersusun dari bentuk seperti ini." },
+    { "text": "**Baris 2 dan 8: pelaku berdiri di instrumentalis — *обеими сторонами*, *мной*.** Bahasa Indonesia memakai \"oleh\", Rusia sama sekali tak memakai preposisi. Dan perhatikan bahwa menyebut pelakunya justru **jarang**: kalimat pasif Rusia biasanya justru dipakai ketika pelakunya tak penting." },
+    { "text": "**Baris 3, 4, 5 memperlihatkan bahwa bentuk pendek ikut jenis dan jumlah, tapi tidak ikut kasus.** *Договор подписа**н***, *письмо отправле**но***, *деньги переведе**ны***, *статья написа**на***. Empat akhiran, itu saja — jauh lebih sederhana daripada bentuk penuhnya." },
+    { "text": "**Baris 5: *документы, подготовленные Димой* — bentuk penuh sebagai keterangan.** Bentuk penuh dipakai untuk **menerangkan** kata benda (\"dokumen yang disiapkan Dima\"); bentuk pendek dipakai sebagai **inti kalimat** (\"dokumennya sudah disiapkan\"). Membedakan keduanya adalah setengah pelajaran unit ini." },
+    { "text": "**Baris 10 dan 11: penyangkalan dan masa depan.** *Не получен* = belum diterima; *не будет получен* = tidak akan diterima. Bentuk lampau memakai *был/была/было/были*: *письмо было отправлено вчера*. Bentuk sekarang tidak memakai apa pun." },
+    { "text": "**Baris 16: *ключ потерян* — bentuk pendek untuk keadaan yang masih berlaku sekarang.** Inilah bedanya dengan bentuk lampau aktif: *ключ потеряли* menceritakan kejadiannya, *ключ потерян* melaporkan keadaan sekarang. Bahasa Indonesia memakai \"kuncinya hilang\" untuk keduanya." }
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk participium pasif",
+     "body": [
+      "Hampir semua participium pasif dibuat dari kata kerja **sempurna** dan dari akar bentuk lampau. Tiga akhiran menutup seluruh sistemnya, dan yang menentukan adalah huruf sebelum akhiran infinitifnya."
+     ],
+     "table": {
+      "head": ["Infinitif berakhiran", "Akhiran", "Bentuk penuh", "Bentuk pendek"],
+      "rows": [
+       ["-ать / -ять", "-нн-", "написа**нн**ый", "написан, написана, написано, написаны"],
+       ["-ить", "-енн-", "постро**енн**ый", "построен, построена, построено, построены"],
+       ["-ить (dengan pergantian)", "-енн-", "купл**енн**ый (купить)", "куплен, куплена"],
+       ["-ти / -чь", "-енн-", "принес**ённ**ый (принести)", "принесён, принесена"],
+       ["-нуть, -ыть, -ереть", "-т-", "закры**т**ый, откры**т**ый", "закрыт, закрыта, закрыто, закрыты"],
+       ["-олоть, -оть", "-т-", "взя**т**ый (взять)", "взят, взята, взято, взяты"],
+       ["dari kata kerja tak sempurna", "-ем- / -им-", "любимый, читаемый", "jarang, hanya beberapa kata"],
+       ["⚠️ tak bisa dibuat", "kata kerja tak berobjek", "—", "*идти, спать, жить* tak punya bentuk pasif"]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk pendek atau bentuk penuh",
+     "body": [
+      "Kedua bentuk bukan pilihan gaya — keduanya punya pekerjaan yang berbeda dalam kalimat, dan menukarnya membuat kalimat runtuh secara tata bahasa, bukan sekadar terdengar aneh."
+     ],
+     "table": {
+      "head": ["Bentuk", "Pekerjaannya", "Contoh", "Terjemahan"],
+      "rows": [
+       ["pendek", "inti kalimat (predikat)", "Дверь **закрыта**.", "Pintunya terkunci."],
+       ["penuh", "menerangkan kata benda", "**закрытая** дверь", "pintu yang terkunci"],
+       ["pendek + был", "keadaan di masa lampau", "Дверь **была закрыта**.", "Pintunya tadi terkunci."],
+       ["pendek + будет", "keadaan di masa depan", "Дверь **будет закрыта**.", "Pintunya akan terkunci."],
+       ["penuh, sesudah kata benda", "keterangan berkoma", "письмо, **написанное** вчера", "surat yang ditulis kemarin"],
+       ["penuh, sebelum kata benda", "tanpa koma", "**написанное** вчера письмо", "surat yang kemarin ditulis"],
+       ["pendek + instrumentalis", "pasif dengan pelaku", "Договор **подписан директором**.", "Kontrak ditandatangani direktur."],
+       ["⚠️ salah", "bentuk penuh sebagai predikat", "*Дверь закрытая.*", "terdengar rusak"]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk pendek yang dipakai tiap hari di kantor",
+     "body": [
+      "Daftar ini praktis: dua puluh bentuk berikut menutup hampir seluruh laporan status pekerjaan dalam bahasa Rusia. Hafalkan sebagai potongan siap pakai, bukan sebagai bentuk tata bahasa."
+     ],
+     "table": {
+      "head": ["Bentuk pendek", "Dari", "Arti"],
+      "rows": [
+       ["сделано", "сделать", "sudah dikerjakan"],
+       ["написан / написано", "написать", "sudah ditulis"],
+       ["отправлено", "отправить", "sudah dikirim"],
+       ["получено", "получить", "sudah diterima"],
+       ["подписан", "подписать", "sudah ditandatangani"],
+       ["оплачен / оплачено", "оплатить", "sudah dibayar"],
+       ["переведены", "перевести", "sudah ditransfer / diterjemahkan"],
+       ["проверено", "проверить", "sudah diperiksa"],
+       ["исправлено", "исправить", "sudah dibetulkan"],
+       ["закрыт / открыт", "закрыть / открыть", "tertutup / terbuka"],
+       ["занято / свободно", "занять", "terpakai / kosong"],
+       ["запрещено / разрешено", "запретить / разрешить", "dilarang / diizinkan"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dokumen, pembayaran, dan laporan status",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["договор", "da-ga-VOR", "kontrak, perjanjian"],
+      ["подписать", "pat-pi-SAT'", "menandatangani"],
+      ["сторона", "sta-ra-NA", "pihak; sisi"],
+      ["перевести", "pi-ri-vis-TI", "mentransfer; menerjemahkan"],
+      ["подтверждение", "pat-tvir-ZHDYE-ni-ye", "konfirmasi"],
+      ["налоговая", "na-LO-ga-va-ya", "kantor pajak"],
+      ["вычитать", "vy-chi-TAT'", "mengoreksi naskah"],
+      ["счёт", "schot", "tagihan; rekening"],
+      ["оплата", "a-PLA-ta", "pembayaran"],
+      ["срок", "srok", "tenggat, jangka waktu"]
+     ]
+    },
+    { "type": "sub", "text": "Melaporkan status pekerjaan dalam satu kalimat" },
+    {
+     "type": "tabel",
+     "head": ["Rusia", "Indonesia", "Catatan"],
+     "rows": [
+      ["Всё готово.", "Semuanya siap.", "готово = kata sifat pendek"],
+      ["Задача выполнена.", "Tugasnya sudah dilaksanakan.", "feminin"],
+      ["Счёт оплачен.", "Tagihannya sudah dibayar.", "maskulin"],
+      ["Данные обновлены.", "Datanya sudah diperbarui.", "jamak"],
+      ["Место занято.", "Tempatnya sudah terisi.", "netral"],
+      ["Вход воспрещён.", "Dilarang masuk.", "papan pengumuman"],
+      ["Магазин закрыт на ремонт.", "Toko tutup untuk renovasi.", "sangat lazim di pintu"],
+      ["Всё под контролем.", "Semuanya terkendali.", "bukan participium, tapi sepasang"],
+      ["Сделано вовремя.", "Selesai tepat waktu.", "tanpa subjek sama sekali"],
+      ["Ещё не готово.", "Belum siap.", "penyangkalan"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Bentuk pendek adalah cara Rusia mengatakan \"sudah\", dan tak ada padanan langsungnya dalam bahasa Indonesia.** *Договор подписан* bukan sekadar \"kontrak ditandatangani\" — ia berarti keadaannya **sekarang** begitu, sebagai hasil dari pekerjaan yang sudah lewat. Karena itu ia dipakai di seluruh laporan pekerjaan.",
+      "**Bentuk penuh sebagai inti kalimat adalah kesalahan yang khas dan langsung terdengar.** *Дверь закрытая* terdengar rusak bagi telinga Rusia, sebagaimana \"pintu yang terkunci\" terdengar tak selesai kalau berdiri sendiri dalam bahasa Indonesia. Pendek untuk melaporkan, penuh untuk menerangkan.",
+      "**Kalimat pasif Rusia biasanya justru menyembunyikan pelakunya, dan itu disengaja.** *Решение принято* (\"keputusan sudah diambil\") tak menyebut siapa yang memutuskan — dan itulah sebabnya bentuk ini disukai birokrasi. Unit 11 memperlihatkan tiga cara lain melakukan hal yang sama."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "подписан", "baca": "pat-PI-san", "id": "sudah ditandatangani" },
+  { "ru": "переведён", "baca": "pi-ri-vi-DYON", "id": "sudah ditransfer" },
+  { "ru": "получен", "baca": "pa-LU-chin", "id": "sudah diterima" },
+  { "ru": "проверен", "baca": "pra-VYE-rin", "id": "sudah diperiksa" },
+  { "ru": "исправлен", "baca": "is-PRAV-lin", "id": "sudah dibetulkan" },
+  { "ru": "отправлен", "baca": "at-PRAV-lin", "id": "sudah dikirim" },
+  { "ru": "закрыт", "baca": "za-KRYT", "id": "tertutup, terkunci" },
+  { "ru": "открыт", "baca": "at-KRYT", "id": "terbuka" },
+  { "ru": "занят", "baca": "ZA-nit", "id": "sibuk, terpakai" },
+  { "ru": "потерян", "baca": "pa-TYE-rin", "id": "hilang" },
+  { "ru": "оплачен", "baca": "a-PLA-chin", "id": "sudah dibayar" },
+  { "ru": "запрещён", "baca": "zap-ri-SCHON", "id": "dilarang" },
+  { "ru": "разрешён", "baca": "raz-ri-SCHON", "id": "diizinkan" },
+  { "ru": "готов", "baca": "ga-TOF", "id": "siap" },
+  { "ru": "обновлён", "baca": "ab-nav-LYON", "id": "sudah diperbarui" },
+  { "ru": "принято", "baca": "PRI-ni-ta", "id": "sudah diterima, diputuskan" },
+  { "ru": "выполнен", "baca": "VY-pal-nin", "id": "sudah dilaksanakan" },
+  { "ru": "построен", "baca": "pas-TRO-in", "id": "sudah dibangun" },
+  { "ru": "куплен", "baca": "KUP-lin", "id": "sudah dibeli" },
+  { "ru": "написан", "baca": "na-PI-san", "id": "sudah ditulis" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis bentuk pendek yang sesuai dengan kata bendanya.",
+   "items": [
+    "Договор ____. (подписать)",
+    "Письмо ____. (отправить)",
+    "Деньги ____. (перевести)",
+    "Статья ____. (написать)",
+    "Все документы ____. (проверить)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia dengan bentuk pendek.",
+   "items": [
+    "Tagihannya sudah dibayar kemarin.",
+    "Toko tutup untuk renovasi.",
+    "Jawabannya belum diterima.",
+    "Semua kesalahan sudah dibetulkan.",
+    "Keputusan sudah diambil minggu lalu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "документы / подготовленные / Димой / уже / проверены",
+    "договор / подписан / обеими / сторонами",
+    "письмо / было / отправлено / вчера / вечером",
+    "здесь / курить / запрещено",
+    "все / данные / будут / обновлены / в / понедельник"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk pendek atau bentuk penuh.",
+   "items": [
+    "Дверь ____. (закрыта, закрытая)",
+    "Это ____ дверь, не трогай. (закрыта, закрытая)",
+    "Письмо, ____ вчера, лежит на столе. (написано, написанное)",
+    "Письмо ____ вчера. (написано, написанное)",
+    "Все места ____. (заняты, занятые)"
+   ]
+  }
+ ],
+ "answers": [
+  "подписан — отправлено — переведены — написана — проверены",
+  "Счёт был оплачен вчера. — Магазин закрыт на ремонт. — Ответ ещё не получен. — Все ошибки исправлены. — Решение было принято на прошлой неделе.",
+  "Документы, подготовленные Димой, уже проверены. — Договор подписан обеими сторонами. — Письмо было отправлено вчера вечером. — Здесь курить запрещено. — Все данные будут обновлены в понедельник.",
+  "закрыта — закрытая — написанное — написано — заняты"
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "title": "Который dan seluruh keluarga kalimat majemuk",
+ "title_target": "Дом, в котором я живу, стоит на улице, названной в честь поэта",
+ "goal": "Menyambung kalimat panjang dengan который di seluruh enam kasus, serta dengan где, куда, откуда, чей, dan то, что — tempat kesalahan paling sering muncul karena kita menyalin susunan \"yang\" bahasa Indonesia.",
+ "bekal": [
+  "memilih kasus который dari perannya di anak kalimat, bukan dari kata benda induknya",
+  "memakai где, куда, откуда sebagai pengganti который untuk tempat",
+  "memakai то, что dan тот, кто sebagai induk buatan",
+  "menempatkan koma pada seluruh anak kalimat"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Улица, названная в честь поэта",
+   "intro": "Jalan-jalan sore di sekitar Чистые пруды. Настя menunjukkan tempat-tempat yang menurutnya wajib diketahui siapa pun yang tinggal di Moskow lebih dari setahun.",
+   "lines": [
+    { "speaker": "Настя:", "text": "Вот дом, в котором жил мой дед.", "id": "Nah itu rumah tempat kakekku dulu tinggal.", "literal": "nah rumah, di yang(prep) tinggal‹lampau› saya-punya kakek." },
+    { "speaker": "Ари:", "text": "Тот, у которого балкон с цветами?", "id": "Yang balkonnya ada bunganya itu?", "literal": "itu, di yang(gen) balkon dengan bunga-bunga?" },
+    { "speaker": "Настя:", "text": "Нет, соседний. Тот, который поменьше.", "id": "Bukan, yang sebelahnya. Yang agak kecil.", "literal": "tidak, sebelah-punya. itu, yang lebih-kecil." },
+    { "speaker": "Ари:", "text": "А улица, на которой мы стоим, как называется?", "id": "Terus jalan tempat kita berdiri ini namanya apa?", "literal": "dan jalan, pada yang(prep) kami berdiri‹proses›, bagaimana bernama‹proses›?" },
+    { "speaker": "Настя:", "text": "Улица, названная в честь поэта, о котором ты, скорее всего, не слышал.", "id": "Jalan yang dinamai dari seorang penyair yang kemungkinan besar belum pernah kamu dengar.", "literal": "jalan, dinamai-yang(fem) pada kehormatan penyair(gen), tentang yang(prep) kamu, lebih-mungkin dari-semua, tidak dengar‹lampau›." },
+    { "speaker": "Ари:", "text": "Проверь. Может, слышал.", "id": "Coba tes. Siapa tahu pernah.", "literal": "periksa‹selesai›. mungkin, dengar‹lampau›." },
+    { "speaker": "Настя:", "text": "Хорошо. Человек, чьё имя носит эта улица, писал только зимой.", "id": "Oke. Orang yang namanya dipakai jalan ini cuma menulis pada musim dingin.", "literal": "baik. orang, yang-punya(netral) nama menyandang‹proses› ini jalan, menulis‹lampau› hanya pada musim-dingin." },
+    { "speaker": "Ари:", "text": "Не слышал. Но человек, который пишет только зимой, мне уже нравится.", "id": "Belum pernah. Tapi orang yang cuma nulis pas musim dingin, aku sudah suka.", "literal": "tidak dengar‹lampau›. tapi orang, yang menulis‹proses› hanya pada musim-dingin, kepada-saya sudah berkenan‹proses›." },
+    { "speaker": "Настя:", "text": "Там дальше есть кафе, куда он ходил каждый день.", "id": "Agak jauh di sana ada kafe tempat dia datang tiap hari.", "literal": "di-sana lebih-jauh ada kafe, ke-mana dia pergi‹bolak-balik,lampau› setiap hari." },
+    { "speaker": "Ари:", "text": "Куда, а не в котором?", "id": "Куда, bukan в котором?", "literal": "ke-mana, dan bukan di yang(prep)?" },
+    { "speaker": "Настя:", "text": "Ходил куда — значит куда. Сидел бы — было бы «в котором».", "id": "Kalau datang ke sana ya куда. Kalau duduk di sana, jadinya в котором.", "literal": "pergi‹lampau› ke-mana, berarti ke-mana. duduk‹lampau› [бы], akan-ada [бы] \"di yang(prep)\"." },
+    { "speaker": "Ари:", "text": "То, что ты объясняешь на улице, я запоминаю лучше.", "id": "Yang kamu jelasin di jalan itu, aku lebih gampang ingatnya.", "literal": "itu, yang(akk) kamu menjelaskan‹proses› pada jalan, saya mengingat‹proses› lebih-baik." },
+    { "speaker": "Настя:", "text": "Тогда запомни и это: тот, кто не гуляет по Москве, её не знает.", "id": "Kalau gitu ingat ini juga: orang yang nggak jalan kaki keliling Moskow, nggak kenal kotanya.", "literal": "kalau-begitu ingat‹selesai› dan ini: itu, siapa tidak berjalan-jalan‹proses› pada Moskow, dia(akk) tidak tahu‹proses›." },
+    { "speaker": "Ари:", "text": "Это ты сама придумала?", "id": "Ini kamu karang sendiri?", "literal": "ini kamu sendiri‹fem› mengarang‹selesai,lampau›?" },
+    { "speaker": "Настя:", "text": "Нет, это сказал человек, книгу которого ты держишь в руках.", "id": "Bukan, ini kata orang yang bukunya lagi kamu pegang.", "literal": "tidak, ini mengatakan‹selesai› orang, buku(akk) yang-punya(gen) kamu memegang‹proses› di tangan-tangan." },
+    { "speaker": "Ари:", "text": "Подожди, книга, которую ты мне дала утром?", "id": "Sebentar, buku yang kamu kasih ke aku tadi pagi?", "literal": "tunggu‹selesai›, buku, yang(akk) kamu kepada-saya beri‹selesai,lampau,fem› pagi?" },
+    { "speaker": "Настя:", "text": "Именно та, которую ты, судя по всему, ещё не открывал.", "id": "Persis, yang sepertinya belum kamu buka sama sekali.", "literal": "persis itu(fem), yang(akk) kamu, menghakimi‹sambil› atas semua, masih tidak membuka‹proses,lampau›." }
+   ],
+   "notes": [
+    { "text": "**Baris 1, 2, 4 memperlihatkan seluruh pelajaran unit ini dalam tiga baris: *в котором*, *у которого*, *на которой*.** Kata *который* mengambil **jenis kelamin dan jumlah** dari kata benda induknya, tetapi **kasus** dari perannya sendiri di anak kalimat. Dua sumber, dua keputusan yang terpisah — dan menggabungkannya jadi satu adalah kesalahan paling khas." },
+    { "text": "**Baris 7: *человек, чьё имя носит эта улица*.** Kata *чей* (чья, чьё, чьи) berarti \"yang punya\" dan ikut kata benda **sesudahnya**, bukan induknya: *чьё имя* karena *имя* netral. Dalam lisan orang lebih sering berkata *человек, имя которого…*, dan keduanya benar." },
+    { "text": "**Baris 9 dan 11: *кафе, куда он ходил* lawan *кафе, в котором он сидел*.** Untuk tempat, bahasa Rusia memilih penghubungnya dari **jenis geraknya**: *где* untuk berada di sana, *куда* untuk menuju ke sana, *откуда* untuk datang dari sana. Ketiganya bisa diganti *который* dengan preposisi, tapi bentuk pendek jauh lebih lazim di lisan." },
+    { "text": "**Baris 12: *то, что ты объясняешь…* — induk buatan.** Kalau anak kalimat tak punya kata benda untuk digantung, bahasa Rusia menyediakan satu: *то* untuk benda dan keadaan, *тот* untuk orang. Bahasa Indonesia cukup berkata \"yang kamu jelaskan\"; bahasa Rusia hampir selalu memerlukan *то* di depannya." },
+    { "text": "**Baris 13: *тот, кто не гуляет по Москве, её не знает*.** Pasangan *тот, кто* dipakai untuk pernyataan umum tentang orang, dan sangat sering muncul di peribahasa: *кто не работает, тот не ест*. Perhatikan bahwa urutannya boleh dibalik — *кто…, тот…* — dan justru itu bentuk paling lazim di peribahasa." },
+    { "text": "**Baris 15: *книгу которого ты держишь* — urutan yang mengejutkan.** Ketika *который* berbentuk genitif kepemilikan, ia berdiri **sesudah** kata bendanya: *человек, книгу которого…*, bukan *которого книгу*. Ini satu-satunya tempat *который* tidak berdiri paling depan di anak kalimatnya, dan pelajar hampir selalu keliru di sini." }
+   ],
+   "grammars": [
+    {
+     "title": "Который: dua sumber untuk satu bentuk",
+     "body": [
+      "Ini adalah aturan tunggal yang harus melekat. Jenis kelamin dan jumlah datang dari **induknya**; kasus datang dari **perannya di anak kalimat**. Periksalah keduanya secara terpisah, tiap kali."
+     ],
+     "table": {
+      "head": ["Kalimat", "Peran который", "Kasus", "Bentuk"],
+      "rows": [
+       ["Вот человек, **который** звонил.", "subjek", "nominatif", "который"],
+       ["Вот книга, **которую** я читаю.", "objek langsung", "akusatif", "которую"],
+       ["Вот друг, **которому** я звонил.", "penerima", "datif", "которому"],
+       ["Вот дом, **которого** больше нет.", "ketiadaan", "genitif", "которого"],
+       ["Вот человек, **с которым** я работаю.", "penyerta", "instrumentalis", "с которым"],
+       ["Вот дом, **в котором** я живу.", "tempat", "preposisional", "в котором"],
+       ["Вот поэт, **о котором** я говорил.", "topik", "preposisional", "о котором"],
+       ["Вот человек, **книгу которого** я читаю.", "kepemilikan", "genitif, di belakang", "книгу которого"],
+       ["Вот люди, **которые** здесь работают.", "subjek jamak", "nominatif jamak", "которые"],
+       ["Вот вещи, **о которых** мы говорили.", "topik jamak", "preposisional jamak", "о которых"]
+      ]
+     }
+    },
+    {
+     "title": "Penghubung lain, dan kapan ia lebih wajar",
+     "body": [
+      "*Который* selalu bisa dipakai, tetapi tidak selalu paling wajar. Bentuk pendek di bawah ini jauh lebih lazim di lisan, dan memakainya membuat kalimatmu terdengar jauh lebih ringan."
+     ],
+     "table": {
+      "head": ["Penghubung", "Dipakai untuk", "Contoh", "Sepadan dengan"],
+      "rows": [
+       ["где", "tempat, berada di sana", "город, **где** я вырос", "в котором"],
+       ["куда", "tempat, menuju ke sana", "кафе, **куда** мы ходим", "в которое"],
+       ["откуда", "tempat, datang dari sana", "страна, **откуда** он приехал", "из которой"],
+       ["когда", "waktu", "год, **когда** всё изменилось", "в котором"],
+       ["чей / чья / чьё / чьи", "kepemilikan", "поэт, **чьё** имя носит улица", "имя которого"],
+       ["то, что", "hal, kenyataan", "**То, что** ты сказал, важно.", "—"],
+       ["тот, кто", "orang pada umumnya", "**Тот, кто** знает, молчит.", "—"],
+       ["все, кто", "semua orang yang", "**Все, кто** пришёл, остались.", "—"],
+       ["то, о чём", "hal yang dibicarakan", "**То, о чём** мы говорили.", "—"],
+       ["всё, что", "segala sesuatu yang", "**Всё, что** у меня есть.", "—"]
+      ]
+     }
+    },
+    {
+     "title": "Koma: satu aturan dan tiga jebakan",
+     "body": [
+      "Bahasa Rusia memakai koma jauh lebih ketat daripada bahasa Indonesia, dan aturannya justru sederhana: **tiap anak kalimat dipisah koma, selalu, di kedua sisinya.** Yang menjegal adalah tiga keadaan berikut."
+     ],
+     "table": {
+      "head": ["Keadaan", "Contoh", "Catatan"],
+      "rows": [
+       ["anak kalimat di tengah", "Дом, **в котором я живу**, старый.", "dua koma, jangan lupa yang kedua"],
+       ["dua anak kalimat berturut", "Он сказал, что придёт, когда сможет.", "tiap anak kalimat dipisah"],
+       ["sebelum что, чтобы, потому что", "Я знаю, **что** он прав.", "selalu berkoma"],
+       ["potong потому что", "Он ушёл, **потому что** устал.", "koma di depan потому"],
+       ["⚠️ и tanpa subjek baru", "Он вошёл и сел.", "tanpa koma"],
+       ["⚠️ и dengan subjek baru", "Он вошёл, и мы замолчали.", "berkoma"],
+       ["⚠️ как sebagai perbandingan", "Он говорит, **как** его отец.", "berkoma"],
+       ["⚠️ как di dalam ungkapan tetap", "Он работает **как часы**.", "tanpa koma"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kota, jalan, dan cerita tentang tempat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["дед", "dyet", "kakek"],
+      ["соседний", "sa-SYED-niy", "yang di sebelah"],
+      ["балкон", "bal-KON", "balkon"],
+      ["в честь", "f chest'", "untuk menghormati"],
+      ["поэт", "pa-ET", "penyair"],
+      ["носить имя", "na-SIT' I-mya", "menyandang nama"],
+      ["скорее всего", "ska-RYE-ye fsi-VO", "kemungkinan besar"],
+      ["запоминать", "za-pa-mi-NAT'", "menghafal, mengingat"],
+      ["гулять", "gu-LYAT'", "jalan-jalan"],
+      ["придумать", "pri-DU-mat'", "mengarang, membuat sendiri"]
+     ]
+    },
+    { "type": "sub", "text": "Kalimat majemuk siap pakai" },
+    {
+     "type": "tabel",
+     "head": ["Rusia", "Indonesia", "Penghubung"],
+     "rows": [
+      ["Это то, что я имел в виду.", "Itu yang saya maksud.", "то, что"],
+      ["Всё, что я знаю, я узнал здесь.", "Semua yang kutahu, kudapat di sini.", "всё, что"],
+      ["Тот, кто ищет, найдёт.", "Yang mencari akan menemukan.", "тот, кто"],
+      ["Город, где я вырос, очень маленький.", "Kota tempatku besar sangat kecil.", "где"],
+      ["Страна, откуда он родом, далеко.", "Negara asalnya jauh.", "откуда"],
+      ["Человек, о котором я говорил.", "Orang yang tadi kubicarakan.", "о котором"],
+      ["День, когда всё изменилось.", "Hari ketika semuanya berubah.", "когда"],
+      ["То, о чём мы договорились, в силе.", "Yang kita sepakati masih berlaku.", "то, о чём"],
+      ["Все, кто пришёл, остались до конца.", "Semua yang datang bertahan sampai akhir.", "все, кто"],
+      ["Книга, которую стоит прочитать.", "Buku yang layak dibaca.", "которую"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Kesalahan paling khas bukan memilih kasus yang salah, melainkan memilihnya dari kata benda induknya.** *Дом, который я живу* salah karena *который* di situ berperan sebagai keterangan tempat, jadi ia harus *в котором* — walaupun *дом* berdiri di nominatif. Biasakan bertanya: \"apa perannya di dalam anak kalimatnya sendiri?\"",
+      "**Bahasa Indonesia memakai satu kata \"yang\" untuk semuanya, dan itulah sumber masalahnya.** Kita tak pernah memikirkan peran \"yang\" karena ia tak pernah berubah. Latihan yang paling cepat memberi hasil: ambil kalimat Indonesia dengan \"yang\", pisahkan anak kalimatnya, dan buat ia berdiri sendiri sebagai kalimat penuh — dari situ kasusnya langsung kelihatan.",
+      "**Koma Rusia bukan soal irama, melainkan soal susunan, dan ia wajib.** Menghilangkan koma di depan *что* atau *который* dihitung salah, bukan gaya. Untunglah aturannya jauh lebih mudah diramalkan daripada koma bahasa Indonesia: tiap anak kalimat dipisah, selalu, tanpa kecuali."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "который", "baca": "ka-TO-ryy", "id": "yang" },
+  { "ru": "чей", "baca": "chey", "id": "yang punya, kepunyaan siapa" },
+  { "ru": "где", "baca": "gdye", "id": "di mana, tempat" },
+  { "ru": "куда", "baca": "ku-DA", "id": "ke mana" },
+  { "ru": "откуда", "baca": "at-KU-da", "id": "dari mana" },
+  { "ru": "вырасти", "baca": "VY-ras-ti", "id": "tumbuh besar" },
+  { "ru": "родом из", "baca": "RO-dam is", "id": "berasal dari" },
+  { "ru": "измениться", "baca": "iz-mi-NI-tsa", "id": "berubah" },
+  { "ru": "иметь в виду", "baca": "i-MYET' v vi-DU", "id": "bermaksud" },
+  { "ru": "в силе", "baca": "f SI-li", "id": "masih berlaku" },
+  { "ru": "искать", "baca": "is-KAT'", "id": "mencari" },
+  { "ru": "найти", "baca": "nay-TI", "id": "menemukan" },
+  { "ru": "до конца", "baca": "da kan-TSA", "id": "sampai akhir" },
+  { "ru": "стоит", "baca": "STO-it", "id": "layak, sepadan" },
+  { "ru": "молчать", "baca": "mal-CHAT'", "id": "diam" },
+  { "ru": "поменьше", "baca": "pa-MYEN'-shy", "id": "agak lebih kecil" },
+  { "ru": "цветы", "baca": "tsvi-TY", "id": "bunga-bunga" },
+  { "ru": "названный", "baca": "NAZ-va-nyy", "id": "yang dinamai" },
+  { "ru": "запомнить", "baca": "za-POM-nit'", "id": "mengingat, menghafal" },
+  { "ru": "объяснять", "baca": "ab-yis-NYAT'", "id": "menjelaskan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk который yang tepat.",
+   "items": [
+    "Вот книга, ____ я читаю.",
+    "Это дом, в ____ я живу.",
+    "Человек, о ____ я говорил, уже пришёл.",
+    "Друг, ____ я звонил вчера, не ответил.",
+    "Коллеги, с ____ мы работаем, очень помогли."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Kota tempat aku tumbuh besar sangat kecil.",
+    "Itu yang saya maksud.",
+    "Semua yang datang bertahan sampai akhir.",
+    "Orang yang bukunya kamu pegang itu penyair.",
+    "Kafe tempat kami biasa pergi sudah tutup."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "тот / кто / не / работает / тот / не / ест",
+    "то / о / чём / мы / договорились / в / силе",
+    "день / когда / всё / изменилось / я / помню",
+    "страна / откуда / он / родом / очень / далеко",
+    "поэт / чьё / имя / носит / эта / улица / писал / только / зимой"
+   ]
+  },
+  {
+   "prompt": "Pilih penghubung yang paling wajar.",
+   "items": [
+    "Город, ____ я вырос, очень маленький. (где, который)",
+    "Кафе, ____ мы ходим по субботам. (куда, в котором)",
+    "Всё, ____ у меня есть, здесь. (что, который)",
+    "Человек, ____ имя носит улица. (чьё, которого)",
+    "Год, ____ мы познакомились, был трудным. (когда, который)"
+   ]
+  }
+ ],
+ "answers": [
+  "которую — котором — котором — которому — которыми",
+  "Город, где я вырос, очень маленький. — Это то, что я имел в виду. — Все, кто пришёл, остались до конца. — Человек, книгу которого ты держишь, поэт. — Кафе, куда мы обычно ходим, закрылось.",
+  "Кто не работает, тот не ест. — То, о чём мы договорились, в силе. — Я помню день, когда всё изменилось. — Страна, откуда он родом, очень далеко. — Поэт, чьё имя носит эта улица, писал только зимой.",
+  "где — куда — что — чьё — когда"
+ ]
+}

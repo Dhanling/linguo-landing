@@ -1,0 +1,224 @@
+{
+ "title": "Empat cara menghilangkan pelaku",
+ "title_target": "Здесь не курят. Дом строится. Решение принято. Тебе не сообщили?",
+ "goal": "Memilih di antara empat cara bahasa Rusia menyembunyikan pelaku perbuatan — dan tahu apa yang tertangkap lawan bicara pada masing-masing pilihan.",
+ "bekal": [
+  "memakai kalimat berbentuk orang ketiga jamak tanpa они",
+  "memakai kata kerja berakhiran -ся sebagai pasif",
+  "memilih antara bentuk pendek participium dan bentuk -ся",
+  "mengenali kalimat berbentuk ты umum yang berbicara tentang siapa saja"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — А кто решил?",
+   "intro": "Koridor kantor, sehari sesudah rapat yang tak dihadiri Ари. Kabar sudah beredar, tapi tak seorang pun tahu dari siapa asalnya.",
+   "lines": [
+    { "speaker": "Ари:", "text": "Мне сказали, что офис переезжает. Это правда?", "id": "Katanya kantor mau pindah. Beneran?", "literal": "kepada-saya mengatakan‹selesai,mereka›, bahwa kantor pindah‹proses›. ini benar?" },
+    { "speaker": "Настя:", "text": "Правда. Решение принято ещё в пятницу.", "id": "Benar. Keputusannya sudah diambil sejak Jumat.", "literal": "benar. keputusan diambil(pendek) sejak pada jumat." },
+    { "speaker": "Ари:", "text": "А кто решил-то?", "id": "Terus yang mutusin siapa sih?", "literal": "dan siapa memutuskan‹selesai›-[то]?" },
+    { "speaker": "Настя:", "text": "Хороший вопрос. Официально — «принято руководством».", "id": "Pertanyaan bagus. Resminya \"diambil oleh manajemen\".", "literal": "baik pertanyaan. secara-resmi diambil(pendek) oleh-pimpinan(instr)." },
+    { "speaker": "Ари:", "text": "То есть никем конкретно.", "id": "Alias nggak sama siapa-siapa secara konkret.", "literal": "yaitu oleh-tak-seorang(instr) secara-konkret." },
+    { "speaker": "Настя:", "text": "Именно. Так всегда пишут, когда не хотят называть имя.", "id": "Persis. Selalu ditulis begitu kalau nggak mau nyebut nama.", "literal": "persis. begitu selalu menulis‹proses,mereka›, ketika tidak ingin menyebut nama." },
+    { "speaker": "Ари:", "text": "А мне почему не сообщили?", "id": "Terus kenapa aku nggak dikasih tahu?", "literal": "dan kepada-saya mengapa tidak memberitahu‹selesai,mereka›?" },
+    { "speaker": "Настя:", "text": "Тебе не сообщили, потому что ты был в отпуске.", "id": "Kamu nggak dikasih tahu karena lagi cuti.", "literal": "kepada-kamu tidak memberitahu‹mereka›, karena kamu ada‹lampau› pada cuti." },
+    { "speaker": "Ари:", "text": "Понятно. И когда переезд?", "id": "Oh gitu. Terus pindahnya kapan?", "literal": "jelas. dan kapan pindahan?" },
+    { "speaker": "Настя:", "text": "Новое здание ещё строится. Обещают закончить к марту.", "id": "Gedung barunya masih dibangun. Katanya kelar Maret.", "literal": "baru gedung masih dibangun‹diri›. menjanjikan‹proses,mereka› menyelesaikan kepada maret." },
+    { "speaker": "Ари:", "text": "«Обещают». Кто обещает?", "id": "\"Katanya\". Katanya siapa?", "literal": "menjanjikan‹mereka›. siapa menjanjikan‹proses›?" },
+    { "speaker": "Настя:", "text": "Ты быстро учишься. В русском так и говорят, когда не знают.", "id": "Kamu belajarnya cepat. Dalam bahasa Rusia memang begitu kalau nggak tahu.", "literal": "kamu cepat belajar‹diri›. dalam Rusia begitu dan berbicara‹mereka›, ketika tidak tahu‹mereka›." },
+    { "speaker": "Ари:", "text": "У нас так же. «Katanya» — и никто не отвечает.", "id": "Di kami juga. \"Katanya\", terus nggak ada yang tanggung jawab.", "literal": "di kami begitu [же]. \"katanya\", dan tak-seorang tidak menjawab‹proses›." },
+    { "speaker": "Настя:", "text": "Значит, мы друг друга поймём. Кстати, в новом офисе не курят.", "id": "Berarti kita bakal saling paham. Ngomong-ngomong, di kantor baru nggak boleh merokok.", "literal": "berarti, kami satu-sama-lain akan-paham‹selesai›. omong-omong, di baru kantor tidak merokok‹mereka›." },
+    { "speaker": "Ари:", "text": "Здесь тоже не курят, но все курят.", "id": "Di sini juga nggak boleh merokok, tapi semua merokok.", "literal": "di-sini juga tidak merokok‹mereka›, tapi semua merokok‹proses›." },
+    { "speaker": "Настя:", "text": "Вот поэтому там поставят камеры.", "id": "Nah makanya di sana bakal dipasang kamera.", "literal": "nah karena-itu di-sana akan-memasang‹selesai,mereka› kamera-kamera." },
+    { "speaker": "Ари:", "text": "Камеры поставят, а курить всё равно будут. Так устроен человек.", "id": "Kamera dipasang, tapi tetap saja bakal merokok. Begitulah manusia.", "literal": "kamera-kamera akan-memasang‹mereka›, dan merokok toh akan‹mereka›. begitu diatur(pendek) manusia." }
+   ],
+   "notes": [
+    { "text": "**Baris 1, 7, 8: *мне сказали*, *мне не сообщили* — bentuk orang ketiga jamak tanpa они.** Ini cara paling lazim dan paling lisan untuk menghilangkan pelaku. Bahasa Indonesia memakai bentuk pasif (\"aku diberi tahu\") atau \"katanya\"; bahasa Rusia memakai kata kerja jamak yang subjeknya sengaja tak ada. Jangan pernah menambahkan *они* — begitu ditambahkan, artinya berubah jadi \"mereka\" yang tertentu." },
+    { "text": "**Baris 2 dan 4: *решение принято*, *принято руководством*.** Bentuk pendek participium adalah cara **tulis** dan **resmi**. Perhatikan bahwa menambahkan pelaku dalam instrumentalis (*руководством*) justru tetap tidak menyebut siapa pun secara jelas — dan Настя langsung menunjuk itu di baris berikutnya." },
+    { "text": "**Baris 10: *здание строится* — bentuk -ся sebagai pasif.** Dipakai untuk proses yang sedang berlangsung dan untuk benda, bukan orang. *Дом строится* (rumahnya sedang dibangun), *вопрос решается* (masalahnya sedang ditangani), *магазин открывается в девять* (tokonya buka jam sembilan)." },
+    { "text": "**Baris 14 dan 15: *здесь не курят* — larangan yang berbunyi seperti keterangan.** Bentuk orang ketiga jamak juga dipakai untuk menyatakan kebiasaan umum dan aturan tak tertulis: *у нас так не делают* (di sini nggak begitu caranya), *так не говорят* (nggak begitu ngomongnya). Ini nada teguran yang sangat khas Rusia — menegur tanpa menunjuk siapa pun." },
+    { "text": "**Baris 17: *так устроен человек* — bentuk pendek sebagai pernyataan umum.** Kalimat semacam ini menutup percakapan dengan rapi dan sering muncul di akhir cerita: *так принято* (begitu kebiasaannya), *так задумано* (memang begitu rencananya), *так сложилось* (begitulah jadinya)." },
+    { "text": "**Ada bentuk kelima yang tak muncul di dialog ini tapi sangat sering kamu dengar: bentuk *ты* umum.** *Не знаешь, что сказать* (\"kamu jadi tak tahu harus bilang apa\") bukan berbicara tentang lawan bicaramu, melainkan tentang siapa saja. Bandingkan peribahasa *тише едешь — дальше будешь* — \"kamu\" di situ adalah semua orang." }
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara, empat nada",
+     "body": [
+      "Semuanya berarti \"pelakunya tak disebut\", tapi masing-masing dipakai di ragam yang berbeda. Memilih yang salah tidak membuat kalimat rusak — ia membuatmu terdengar seperti sedang membacakan dokumen di meja makan, atau sebaliknya."
+     ],
+     "table": {
+      "head": ["Cara", "Bentuk", "Ragam", "Contoh"],
+      "rows": [
+       ["orang ketiga jamak", "kata kerja jamak tanpa они", "lisan, netral", "**Говорят**, будет дождь."],
+       ["kata kerja + -ся", "kata kerja berakhiran -ся", "netral, untuk proses", "Дом **строится**."],
+       ["participium pendek", "сделан, принято, закрыт", "tulis, resmi", "Решение **принято**."],
+       ["bentuk ты umum", "kata kerja orang kedua tunggal", "lisan, berpetuah", "**Не знаешь**, что и думать."],
+       ["+ pelaku (instrumentalis)", "participium + кем", "sangat resmi", "**Подписан директором**."],
+       ["tanpa subjek sama sekali", "kata keadaan", "netral", "Здесь **накурено**."],
+       ["dengan можно/нельзя", "kata keadaan + infinitif", "aturan", "Здесь **нельзя курить**."],
+       ["⚠️ dengan они", "они + kata kerja", "bukan tanpa pelaku", "**Они** сказали = mereka, orang tertentu"]
+      ]
+     }
+    },
+    {
+     "title": "Kapan -ся benar-benar berarti pasif",
+     "body": [
+      "Akhiran *-ся* mengerjakan lima hal yang berbeda dalam bahasa Rusia, dan hanya salah satunya adalah pasif. Membedakannya penting karena satu kata kerja bisa masuk dua golongan sekaligus."
+     ],
+     "table": {
+      "head": ["Pekerjaan -ся", "Contoh", "Arti"],
+      "rows": [
+       ["pasif (benda, proses)", "Дом **строится**.", "rumahnya sedang dibangun"],
+       ["mengenai diri sendiri", "Он **моется**.", "dia mandi"],
+       ["saling", "Они **встретились**.", "mereka bertemu"],
+       ["keadaan tanpa objek", "Дверь **открылась**.", "pintunya terbuka"],
+       ["kata kerja yang memang selalu -ся", "**смеяться, бояться, нравиться**", "tak ada bentuk tanpa -ся"],
+       ["⚠️ jangan dipakai untuk orang", "*Ребёнок одевается мамой*", "salah, pakai bentuk aktif"],
+       ["⚠️ pasif -ся jarang untuk sempurna", "*дом построился*", "pakai *дом построен*"],
+       ["dengan datif = keadaan", "Мне **не спится**.", "lihat unit 7"]
+      ]
+     }
+    },
+    {
+     "title": "Kalimat umum tanpa siapa pun",
+     "body": [
+      "Sekelompok ungkapan Rusia berbicara tentang \"orang pada umumnya\", dan hampir semuanya memakai salah satu dari empat cara di atas. Ini bahan siap pakai yang membuat bahasa Rusiamu terdengar jauh lebih matang."
+     ],
+     "table": {
+      "head": ["Rusia", "Indonesia", "Bentuk yang dipakai"],
+      "rows": [
+       ["Говорят, что…", "Katanya…", "orang ketiga jamak"],
+       ["Считается, что…", "Dianggap bahwa…", "-ся"],
+       ["Известно, что…", "Sudah diketahui bahwa…", "participium pendek"],
+       ["Принято считать, что…", "Lazimnya dianggap…", "participium pendek"],
+       ["У нас так не делают.", "Di sini nggak begitu caranya.", "orang ketiga jamak"],
+       ["Так не говорят.", "Nggak begitu ngomongnya.", "orang ketiga jamak"],
+       ["Как пишется это слово?", "Kata ini ditulisnya gimana?", "-ся"],
+       ["Мне сказали, что…", "Aku dikasih tahu bahwa…", "orang ketiga jamak"],
+       ["Не сообщили заранее.", "Nggak diberi tahu sebelumnya.", "orang ketiga jamak"],
+       ["Тише едешь — дальше будешь.", "Alon-alon asal kelakon.", "bentuk ты umum"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kabar kantor, rumor, dan keputusan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["решение", "ri-SHE-ni-ye", "keputusan"],
+      ["руководство", "ru-ka-VOT-stva", "pimpinan, manajemen"],
+      ["сообщить", "sa-ap-SCHIT'", "memberitahukan"],
+      ["отпуск", "OT-pusk", "cuti"],
+      ["переезд", "pi-ri-YEST", "pindahan"],
+      ["обещать", "a-bi-SCHAT'", "menjanjikan"],
+      ["конкретно", "kan-KRYET-na", "secara konkret"],
+      ["официально", "a-fi-tsy-AL'-na", "secara resmi"],
+      ["камера", "KA-mi-ra", "kamera"],
+      ["устроен", "us-TRO-in", "diatur, dirancang"]
+     ]
+    },
+    { "type": "sub", "text": "Bahasa yang menghindari tanggung jawab" },
+    {
+     "type": "tabel",
+     "head": ["Yang tertulis", "Yang sebenarnya berarti", "Ragam"],
+     "rows": [
+      ["Решение принято.", "Ada yang memutuskan, tapi tak akan disebut.", "resmi"],
+      ["Было решено…", "Sama, dalam bentuk lampau.", "resmi"],
+      ["Рекомендуется…", "Sebaiknya, tapi sebenarnya wajib.", "resmi"],
+      ["Не представляется возможным.", "Tidak bisa. Titik.", "sangat resmi"],
+      ["Вопрос прорабатывается.", "Belum ada yang dikerjakan.", "resmi"],
+      ["Говорят, что…", "Aku dengar, tapi jangan tanya dari siapa.", "lisan"],
+      ["Мне так сказали.", "Bukan salahku kalau keliru.", "lisan"],
+      ["Так получилось.", "Ya begitulah jadinya.", "lisan"],
+      ["Так исторически сложилось.", "Sudah dari dulu begitu, jangan tanya.", "lisan berkelakar"],
+      ["Не мы это придумали.", "Bukan kami yang bikin aturannya.", "lisan"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Menambahkan *они* menghancurkan seluruh maksudnya.** *Сказали, что офис переезжает* berarti \"katanya\"; *они сказали* berarti \"mereka — orang-orang tertentu yang kita berdua tahu — bilang\". Pelajar Indonesia hampir selalu menambahkan kata gantinya karena kalimat tanpa subjek terasa belum selesai.",
+      "**Bentuk -ся hampir tak pernah dipakai untuk perbuatan yang sudah selesai.** *Дом построен*, bukan *дом построился*. Aturan praktisnya: proses yang berjalan memakai *-ся*, hasil yang sudah jadi memakai bentuk pendek participium.",
+      "**Bahasa resmi Rusia memakai keempat bentuk ini justru untuk tidak menyebut siapa pun, dan itu disengaja.** Menyadari hal ini mengubah cara kamu membaca dokumen: pertanyaan yang tepat bukan \"apa artinya kalimat ini\" melainkan \"siapa yang tidak mau disebut namanya di sini\". Unit 20 memakai keterampilan ini untuk membongkar surat dari lembaga pemerintah."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "принято", "baca": "PRI-ni-ta", "id": "sudah diputuskan; lazim" },
+  { "ru": "считается", "baca": "schi-TA-i-tsa", "id": "dianggap" },
+  { "ru": "известно", "baca": "iz-VYES-na", "id": "diketahui" },
+  { "ru": "строиться", "baca": "STRO-i-tsa", "id": "sedang dibangun" },
+  { "ru": "открываться", "baca": "at-kry-VA-tsa", "id": "buka (toko), terbuka" },
+  { "ru": "запрещается", "baca": "zap-ri-SCHA-i-tsa", "id": "dilarang" },
+  { "ru": "рекомендуется", "baca": "ri-ka-min-DU-i-tsa", "id": "dianjurkan" },
+  { "ru": "прорабатывать", "baca": "pra-ra-BA-ty-vat'", "id": "menggarap, mengkaji" },
+  { "ru": "заранее", "baca": "za-RA-ni-ye", "id": "sebelumnya, jauh hari" },
+  { "ru": "накурено", "baca": "na-KU-ri-na", "id": "penuh asap rokok" },
+  { "ru": "получиться", "baca": "pa-lu-CHI-tsa", "id": "jadi, berhasil" },
+  { "ru": "сложиться", "baca": "sla-ZHY-tsa", "id": "terbentuk, jadi begitu" },
+  { "ru": "придумать", "baca": "pri-DU-mat'", "id": "mengarang, membuat" },
+  { "ru": "друг друга", "baca": "druk DRU-ga", "id": "satu sama lain" },
+  { "ru": "правда", "baca": "PRAV-da", "id": "benar; kebenaran" },
+  { "ru": "поставить", "baca": "pas-TA-vit'", "id": "memasang, menaruh" },
+  { "ru": "всё равно", "baca": "fsyo rav-NO", "id": "tetap saja" },
+  { "ru": "называть", "baca": "na-zy-VAT'", "id": "menyebut" },
+  { "ru": "быстро", "baca": "BYST-ra", "id": "cepat" },
+  { "ru": "камеры наблюдения", "baca": "KA-mi-ry nab-lyu-DYE-ni-ya", "id": "kamera pengawas" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat tanpa pelaku dengan bentuk orang ketiga jamak.",
+   "items": [
+    "Люди говорят, что будет дождь. ____",
+    "Кто-то сказал мне об этом вчера. ____",
+    "Никто не сообщил нам заранее. ____",
+    "Люди здесь не курят. ____",
+    "Кто-то поставит здесь камеры. ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia. Pilih bentuk yang sesuai ragamnya.",
+   "items": [
+    "Keputusannya sudah diambil minggu lalu. (resmi)",
+    "Katanya kantor mau pindah. (lisan)",
+    "Gedung barunya masih dibangun.",
+    "Di sini nggak begitu caranya.",
+    "Aku tidak diberi tahu sebelumnya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "решение / было / принято / ещё / в / пятницу",
+    "новое / здание / ещё / строится",
+    "здесь / запрещается / пользоваться / телефоном",
+    "считается / что / это / самый / старый / дом / в / городе",
+    "мне / так / и / не / сообщили / о / встрече"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang benar.",
+   "items": [
+    "Дом уже ____. (построен, построился)",
+    "Магазин ____ в девять утра. (открывается, открыт)",
+    "Мне ____, что ты уехал. (сказали, они сказали)",
+    "Этот вопрос сейчас ____. (решается, решён)",
+    "Вход ____. (запрещён, запрещается себя)"
+   ]
+  }
+ ],
+ "answers": [
+  "Говорят, что будет дождь. — Мне сказали об этом вчера. — Нам не сообщили заранее. — Здесь не курят. — Здесь поставят камеры.",
+  "Решение было принято на прошлой неделе. — Говорят, что офис переезжает. — Новое здание ещё строится. — У нас так не делают. — Мне не сообщили заранее.",
+  "Решение было принято ещё в пятницу. — Новое здание ещё строится. — Здесь запрещается пользоваться телефоном. — Считается, что это самый старый дом в городе. — Мне так и не сообщили о встрече.",
+  "построен — открывается — сказали — решается — запрещён"
+ ]
+}

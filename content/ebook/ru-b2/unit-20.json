@@ -1,0 +1,226 @@
+{
+ "title": "Bahasa resmi: МФЦ, migrasi, dan surat dari lembaga",
+ "title_target": "В связи с изменением порядка подачи документов просим предоставить…",
+ "goal": "Membaca surat, formulir, dan pengumuman lembaga pemerintah Rusia tanpa panik, dan menulis заявление sendiri — dua keterampilan yang menentukan hidup sehari-hari orang asing di Rusia.",
+ "bekal": [
+  "membongkar gaya nomina bahasa birokrasi menjadi kalimat biasa",
+  "memakai susunan baku surat permohonan Rusia",
+  "mengenali istilah МФЦ, ВНЖ, регистрация, справка, and kawan-kawannya",
+  "bertanya di loket dengan sopan dan mendapat jawaban yang bisa dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Окно номер четырнадцать",
+   "intro": "МФЦ, loket empat belas, pukul sepuluh pagi. Ари datang memperpanjang registrasi tempat tinggal, dengan map berisi dokumen yang menurutnya lengkap.",
+   "lines": [
+    { "speaker": "Сотрудница:", "text": "Здравствуйте. По какому вопросу?", "id": "Selamat pagi. Ada keperluan apa?", "literal": "halo. menurut yang-mana perkara?" },
+    { "speaker": "Ари:", "text": "Здравствуйте. Мне нужно продлить регистрацию.", "id": "Selamat pagi. Saya mau memperpanjang registrasi.", "literal": "halo. kepada-saya perlu memperpanjang‹selesai› registrasi." },
+    { "speaker": "Сотрудница:", "text": "Паспорт, миграционная карта, договор найма. Всё с собой?", "id": "Paspor, kartu migrasi, kontrak sewa. Semuanya dibawa?", "literal": "paspor, migrasi kartu, kontrak sewa. semua dengan diri?" },
+    { "speaker": "Ари:", "text": "Паспорт и карта есть. Договор — копия, оригинал у хозяйки.", "id": "Paspor dan kartu ada. Kontraknya fotokopi, aslinya di pemilik.", "literal": "paspor dan kartu ada. kontrak salinan, asli di pemilik-perempuan(gen)." },
+    { "speaker": "Сотрудница:", "text": "Копия не принимается. Нужен оригинал либо нотариально заверенная копия.", "id": "Fotokopi tidak diterima. Perlu aslinya atau fotokopi yang dilegalisasi notaris.", "literal": "salinan tidak diterima‹diri›. perlu asli atau secara-notaris dilegalisasi salinan." },
+    { "speaker": "Ари:", "text": "Понял. А если хозяйка придёт сама?", "id": "Paham. Kalau pemiliknya datang sendiri gimana?", "literal": "paham. dan jika pemilik-perempuan akan-datang‹selesai› sendiri?" },
+    { "speaker": "Сотрудница:", "text": "Тогда с её паспортом. И заявление она пишет на месте.", "id": "Kalau begitu bawa paspornya. Dan permohonannya dia tulis di tempat.", "literal": "kalau-begitu dengan dia-punya paspor(instr). dan permohonan dia menulis‹proses› pada tempat." },
+    { "speaker": "Ари:", "text": "А бланк заявления где взять?", "id": "Formulir permohonannya ambil di mana?", "literal": "dan formulir permohonan(gen) di-mana mengambil‹selesai›?" },
+    { "speaker": "Сотрудница:", "text": "Вон там на стойке. Или скачайте с сайта, форма номер один.", "id": "Itu di rak sana. Atau unduh dari situs, formulir nomor satu.", "literal": "itu di-sana pada meja. atau unduhlah‹selesai› dari situs, formulir nomor satu." },
+    { "speaker": "Ари:", "text": "Скажите, а сроки какие? Сколько всё это займёт?", "id": "Bu, tenggatnya bagaimana? Berapa lama semuanya?", "literal": "katakan‹selesai›, dan tenggat yang-mana? berapa semua ini akan-memakan‹selesai›?" },
+    { "speaker": "Сотрудница:", "text": "Семь рабочих дней с момента подачи полного комплекта.", "id": "Tujuh hari kerja sejak dokumen lengkap diserahkan.", "literal": "tujuh kerja hari(gen) sejak saat(gen) penyerahan(gen) lengkap(gen) berkas(gen)." },
+    { "speaker": "Ари:", "text": "«С момента подачи полного комплекта» — то есть если чего-то не хватает, отсчёт не идёт?", "id": "\"Sejak saat penyerahan berkas lengkap\" — jadi kalau ada yang kurang, hitungannya belum jalan?", "literal": "sejak saat penyerahan lengkap berkas, yaitu jika sesuatu(gen) tidak cukup, penghitungan tidak berjalan‹proses›?" },
+    { "speaker": "Сотрудница:", "text": "Совершенно верно. Вы, я смотрю, уже привыкли.", "id": "Betul sekali. Sepertinya Anda sudah terbiasa.", "literal": "sepenuhnya benar. anda, saya melihat‹proses›, sudah terbiasa‹selesai,lampau›." },
+    { "speaker": "Ари:", "text": "Второй год. А можно уточнить: справку о регистрации выдают сразу?", "id": "Tahun kedua. Boleh saya pastikan: surat keterangan registrasi diberikan langsung?", "literal": "kedua tahun. dan boleh memastikan‹selesai›: keterangan(akk) tentang registrasi memberikan‹mereka› langsung?" },
+    { "speaker": "Сотрудница:", "text": "Не сразу. Придёт уведомление, потом заберёте здесь же.", "id": "Tidak langsung. Nanti ada pemberitahuan, lalu diambil di sini juga.", "literal": "tidak langsung. akan-datang‹selesai› pemberitahuan, kemudian akan-mengambil‹selesai› di-sini [же]." },
+    { "speaker": "Ари:", "text": "Спасибо большое. Вы очень понятно объясняете.", "id": "Terima kasih banyak. Ibu menjelaskannya sangat jelas.", "literal": "terima-kasih besar. anda sangat jelas menjelaskan‹proses›." },
+    { "speaker": "Сотрудница:", "text": "Стараюсь. Следующий!", "id": "Saya usahakan. Berikutnya!", "literal": "berusaha‹proses›. berikutnya!" }
+   ],
+   "notes": [
+    { "text": "**Baris 1: *по какому вопросу?* adalah kalimat pembuka baku di semua loket Rusia.** Harfiahnya \"menurut perkara yang mana\". Jawaban yang tepat selalu berbentuk *мне нужно* + infinitif: *мне нужно продлить регистрацию*, *мне нужно получить справку*, *мне нужно подать заявление*." },
+    { "text": "**Baris 5: *копия не принимается* — pasif -ся yang menjadi tanda pengenal bahasa loket.** Perhatikan bahwa tak ada pelakunya: bukan \"saya tidak menerima\" melainkan \"tidak diterima\". Ini pilihan yang disengaja, dan unit 11 sudah menjelaskan kenapa. Bentuk yang sama: *не выдаётся*, *не рассматривается*, *не требуется*." },
+    { "text": "**Baris 11: *с момента подачи полного комплекта* adalah gaya nomina murni.** Empat kata benda berturut-turut tanpa satu pun kata kerja. Bahasa biasa akan berkata *с того момента, когда вы подадите все документы*. Membongkar gaya ini menjadi kalimat berkata kerja adalah keterampilan utama unit ini." },
+    { "text": "**Baris 12: Ари melakukan persis itu, dan itulah cara bertahan di loket.** Ia mengulang kalimat pejabat dalam bahasa manusia dan meminta pembenaran. Kalimat pembuka yang berguna: *то есть если…?*, *правильно ли я понял, что…?*, *другими словами…?* Jangan pernah mengangguk pada kalimat resmi yang belum kamu bongkar." },
+    { "text": "**Baris 13: *совершенно верно* adalah pembenaran resmi yang paling lazim.** Kerabatnya: *именно так*, *всё верно*, *да, всё правильно*. Sebaliknya, kalau kamu mendengar *не совсем* (\"tidak sepenuhnya\"), bersiaplah — biasanya artinya kamu salah paham sama sekali." },
+    { "text": "**Baris 15: *придёт уведомление, потом заберёте* — bentuk *вы* dipakai tanpa kata gantinya.** Di loket, kalimat sering dipendekkan begini. Perhatikan juga *здесь же* dengan partikel dari unit 18: \"di sini juga, tempat yang sama\"." }
+   ],
+   "grammars": [
+    {
+     "title": "Gaya nomina: cara membongkarnya",
+     "body": [
+      "Bahasa resmi Rusia mengubah kata kerja menjadi kata benda, lalu merangkainya dengan genitif. Hasilnya kalimat yang panjang, dingin, dan tanpa pelaku. Cara membacanya: temukan kata benda berakhiran *-ение* atau *-ание*, kembalikan ke kata kerjanya, lalu susun ulang kalimatnya."
+     ],
+     "table": {
+      "head": ["Bahasa resmi", "Kata kerjanya", "Bahasa biasa"],
+      "rows": [
+       ["с момента **подачи** документов", "подать", "с того момента, когда вы подадите документы"],
+       ["в связи с **изменением** порядка", "изменить", "потому что порядок изменился"],
+       ["до **окончания** срока", "окончиться", "пока срок не закончится"],
+       ["при **наличии** оригинала", "иметь", "если у вас есть оригинал"],
+       ["в случае **отказа**", "отказать", "если вам откажут"],
+       ["**рассмотрение** заявления", "рассмотреть", "заявление рассмотрят"],
+       ["**предоставление** справки", "предоставить", "справку выдадут"],
+       ["по **истечении** срока", "истечь", "когда срок пройдёт"],
+       ["во **избежание** ошибок", "избежать", "чтобы не было ошибок"],
+       ["на **основании** заявления", "заявить", "потому что вы подали заявление"]
+      ]
+     }
+    },
+    {
+     "title": "Susunan заявление yang baku",
+     "body": [
+      "Surat permohonan Rusia punya bentuk yang sudah pasti, dan menyimpang darinya membuat suratmu ditolak sebelum dibaca. Untunglah bentuknya tetap sama untuk hampir semua keperluan."
+     ],
+     "table": {
+      "head": ["Bagian", "Isinya", "Contoh"],
+      "rows": [
+       ["pojok kanan atas", "kepada siapa (datif) dan dari siapa (genitif)", "Директору ООО «Восток» Иванову И. И. **от** Сурьяди А."],
+       ["di tengah", "kata Заявление dengan huruf kecil", "заявление."],
+       ["baris pertama", "permintaan, memakai *прошу*", "**Прошу** продлить регистрацию по адресу…"],
+       ["alasan", "*в связи с* + instrumentalis", "**В связи с** продлением трудового договора."],
+       ["lampiran", "daftar bernomor", "**Приложение:** 1. Копия паспорта — 1 л."],
+       ["bawah kiri", "tanggal", "25.03.2026"],
+       ["bawah kanan", "tanda tangan dan nama", "Сурьяди А. / подпись"],
+       ["⚠️ jangan", "sapaan dan penutup ramah", "tanpa *Здравствуйте* dan tanpa *С уважением* pada заявление"]
+      ]
+     }
+    },
+    {
+     "title": "Ungkapan loket yang wajib dikenali",
+     "body": [
+      "Kalimat-kalimat ini akan kamu dengar hampir setiap kali, dan hampir semuanya berbentuk pasif atau tanpa pelaku. Menghafalnya sebagai potongan utuh jauh lebih hemat daripada membongkarnya tiap kali."
+     ],
+     "table": {
+      "head": ["Rusia", "Indonesia", "Yang sebenarnya terjadi"],
+      "rows": [
+       ["Копия не принимается.", "Fotokopi tidak diterima.", "bawa yang asli"],
+       ["Требуется оригинал.", "Diperlukan aslinya.", "sama"],
+       ["Документы не в полном комплекте.", "Berkasnya belum lengkap.", "ada yang kurang"],
+       ["Вам откажут.", "Anda akan ditolak.", "peringatan halus"],
+       ["Срок рассмотрения — семь дней.", "Waktu pemeriksaan tujuh hari.", "tunggu seminggu"],
+       ["Придёт уведомление.", "Nanti ada pemberitahuan.", "jangan datang sebelum itu"],
+       ["Это в другое окно.", "Itu di loket lain.", "antre lagi"],
+       ["Запишитесь заранее.", "Daftar dulu sebelumnya.", "tak bisa datang langsung"],
+       ["Госпошлина оплачивается заранее.", "Biaya dibayar di muka.", "bawa buktinya"],
+       ["Возьмите талон.", "Ambil nomor antrean.", "mesin di pintu masuk"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dokumen, izin tinggal, dan singkatan resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Istilah", "Cara baca", "Arti"],
+     "rows": [
+      ["МФЦ", "em-ef-TSE", "kantor layanan terpadu"],
+      ["регистрация", "ri-gis-TRA-tsy-ya", "registrasi tempat tinggal"],
+      ["ВНЖ", "ve-en-ZHE", "izin tinggal tetap"],
+      ["РВП", "er-ve-PE", "izin tinggal sementara"],
+      ["миграционная карта", "mig-ra-tsy-O-na-ya KAR-ta", "kartu migrasi"],
+      ["справка", "SPRAF-ka", "surat keterangan"],
+      ["заявление", "za-yiv-LYE-ni-ye", "surat permohonan"],
+      ["бланк", "blank", "formulir"],
+      ["госпошлина", "gas-POSH-li-na", "biaya administrasi negara"],
+      ["уведомление", "u-vi-dam-LYE-ni-ye", "pemberitahuan"]
+     ]
+    },
+    { "type": "sub", "text": "Bertanya di loket dengan sopan" },
+    {
+     "type": "tabel",
+     "head": ["Rusia", "Indonesia", "Catatan"],
+     "rows": [
+      ["Скажите, пожалуйста…", "Permisi, mau tanya…", "pembuka paling aman"],
+      ["Можно уточнить один момент?", "Boleh saya pastikan satu hal?", "sopan, netral"],
+      ["Правильно ли я понял, что…?", "Apakah benar saya pahami…?", "membongkar kalimat resmi"],
+      ["То есть если…, то…?", "Jadi kalau…, maka…?", "menguji pemahaman"],
+      ["А что делать, если…?", "Kalau… saya harus bagaimana?", "meminta jalan keluar"],
+      ["Куда мне с этим обратиться?", "Untuk ini saya harus ke mana?", "sangat berguna"],
+      ["Какие документы нужны?", "Dokumen apa saja yang perlu?", "pertanyaan pembuka"],
+      ["Это можно подать онлайн?", "Ini bisa diajukan online?", "sering bisa"],
+      ["Есть ли образец заполнения?", "Ada contoh pengisiannya?", "biasanya ada di dinding"],
+      ["Спасибо, вы очень помогли.", "Terima kasih, sangat membantu.", "penutup yang berhasil"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Bahasa resmi Rusia bukan bahasa yang lebih sulit, melainkan bahasa yang disusun ulang.** Isinya sederhana; yang membuatnya berat adalah kata kerja yang diubah jadi kata benda dan pelaku yang dihapus. Begitu kamu bisa membongkarnya, surat dari lembaga mana pun berhenti menakutkan.",
+      "**Jangan pernah mengangguk pada kalimat resmi yang belum kamu bongkar.** *Правильно ли я понял, что…?* adalah kalimat paling berharga di unit ini, dan petugas loket hampir selalu senang menjawabnya — jauh lebih senang daripada mengurus orang yang salah paham dan kembali minggu depan.",
+      "**Заявление punya bentuk baku yang tak boleh dikarang sendiri, dan itu justru memudahkan.** Tak ada yang perlu kamu susun: siapa, dari siapa, *прошу* + apa, *в связи с* + alasan, lampiran, tanggal, tanda tangan. Tujuh baris, selalu sama, untuk hampir semua urusan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "продлить", "baca": "prad-LIT'", "id": "memperpanjang" },
+  { "ru": "договор найма", "baca": "da-ga-VOR NAY-ma", "id": "kontrak sewa" },
+  { "ru": "оригинал", "baca": "a-ri-gi-NAL", "id": "dokumen asli" },
+  { "ru": "копия", "baca": "KO-pi-ya", "id": "salinan" },
+  { "ru": "заверенный", "baca": "za-VYE-ri-nyy", "id": "dilegalisasi" },
+  { "ru": "нотариально", "baca": "na-ta-ri-AL'-na", "id": "secara notaris" },
+  { "ru": "хозяйка", "baca": "kha-ZYAY-ka", "id": "pemilik (perempuan)" },
+  { "ru": "стойка", "baca": "STOY-ka", "id": "meja layanan, rak" },
+  { "ru": "скачать", "baca": "ska-CHAT'", "id": "mengunduh" },
+  { "ru": "подача", "baca": "pa-DA-cha", "id": "penyerahan, pengajuan" },
+  { "ru": "комплект", "baca": "kamp-LYEKT", "id": "berkas lengkap" },
+  { "ru": "отсчёт", "baca": "at-SCHOT", "id": "penghitungan (waktu)" },
+  { "ru": "выдавать", "baca": "vy-da-VAT'", "id": "mengeluarkan, memberikan" },
+  { "ru": "забрать", "baca": "zab-RAT'", "id": "mengambil" },
+  { "ru": "рассмотрение", "baca": "ra-smat-RYE-ni-ye", "id": "pemeriksaan berkas" },
+  { "ru": "отказ", "baca": "at-KAS", "id": "penolakan" },
+  { "ru": "в связи с", "baca": "f svi-ZI s", "id": "sehubungan dengan" },
+  { "ru": "при наличии", "baca": "pri na-LI-chi-i", "id": "apabila tersedia" },
+  { "ru": "талон", "baca": "ta-LON", "id": "nomor antrean" },
+  { "ru": "образец", "baca": "ab-ra-ZYETS", "id": "contoh, teladan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bongkar kalimat resmi ini jadi bahasa biasa.",
+   "items": [
+    "с момента подачи документов",
+    "в связи с изменением адреса",
+    "при наличии оригинала",
+    "в случае отказа",
+    "по истечении срока"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Saya mau memperpanjang registrasi.",
+    "Dokumen apa saja yang diperlukan?",
+    "Apakah benar saya pahami bahwa fotokopi tidak diterima?",
+    "Untuk urusan ini saya harus ke mana?",
+    "Berapa lama waktu pemeriksaannya?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "прошу / продлить / регистрацию / по / адресу",
+    "копия / не / принимается / нужен / оригинал",
+    "срок / рассмотрения / составляет / семь / рабочих / дней",
+    "возьмите / талон / и / подождите / вызова",
+    "госпошлина / оплачивается / заранее"
+   ]
+  },
+  {
+   "prompt": "Tulis kepanjangan atau arti singkatan berikut.",
+   "items": [
+    "МФЦ",
+    "ВНЖ",
+    "РВП",
+    "справка",
+    "госпошлина"
+   ]
+  }
+ ],
+ "answers": [
+  "с того момента, когда вы подадите документы — потому что адрес изменился — если у вас есть оригинал — если вам откажут — когда срок пройдёт",
+  "Мне нужно продлить регистрацию. — Какие документы нужны? — Правильно ли я понял, что копия не принимается? — Куда мне с этим обратиться? — Какой срок рассмотрения?",
+  "Прошу продлить регистрацию по адресу. — Копия не принимается, нужен оригинал. — Срок рассмотрения составляет семь рабочих дней. — Возьмите талон и подождите вызова. — Госпошлина оплачивается заранее.",
+  "многофункциональный центр (kantor layanan terpadu) — вид на жительство (izin tinggal tetap) — разрешение на временное проживание (izin tinggal sementara) — surat keterangan resmi — biaya administrasi negara"
+ ]
+}

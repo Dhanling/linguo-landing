@@ -1,0 +1,224 @@
+{
+ "title": "Kalimat tak langsung dan cara menyebut sumber",
+ "title_target": "Он сказал, что придёт. А спросил, приду ли я",
+ "goal": "Menyampaikan ulang ucapan orang lain tanpa mengubah bentuk waktunya, memakai ли untuk pertanyaan tak langsung, dan menandai dari mana kabar itu datang — keterampilan yang membuka pintu ke bahasa berita.",
+ "bekal": [
+  "menyampaikan ulang pernyataan dengan что tanpa menggeser waktu",
+  "menyampaikan ulang pertanyaan dengan ли dan dengan kata tanya",
+  "menyampaikan ulang perintah dan permintaan dengan чтобы",
+  "menandai sumber kabar: по словам, как сообщает, якобы, мол"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Что он на самом деле сказал",
+   "intro": "Ари baru keluar dari ruang rapat dan mencoba menceritakan isinya kepada Олег, yang tidak hadir dan curiga bahwa versi yang ia terima sudah berpindah tangan tiga kali.",
+   "lines": [
+    { "speaker": "Олег:", "text": "Ну, что сказали на совещании?", "id": "Nah, di rapat dibilang apa?", "literal": "nah, apa mengatakan‹selesai,mereka› pada rapat?" },
+    { "speaker": "Ари:", "text": "Директор сказал, что бюджет уже утверждён.", "id": "Direktur bilang anggarannya sudah disetujui.", "literal": "direktur mengatakan‹selesai›, bahwa anggaran sudah disetujui(pendek)." },
+    { "speaker": "Олег:", "text": "Утверждён или будет утверждён?", "id": "Sudah disetujui atau bakal disetujui?", "literal": "disetujui(pendek) atau akan disetujui(pendek)?" },
+    { "speaker": "Ари:", "text": "Он сказал «утверждён». Я передаю слово в слово.", "id": "Dia bilang \"sudah disetujui\". Aku sampaikan kata per kata.", "literal": "dia mengatakan‹selesai› \"disetujui\". saya menyampaikan‹proses› kata dalam kata." },
+    { "speaker": "Олег:", "text": "Ладно. А он спросил, сколько нам ещё нужно?", "id": "Oke. Terus dia nanya nggak kita butuh berapa lagi?", "literal": "baiklah. dan dia bertanya‹selesai›, berapa kepada-kami masih perlu?" },
+    { "speaker": "Ари:", "text": "Спросил. И ещё спросил, успеем ли мы к марту.", "id": "Nanya. Dan nanya juga apakah kita kekejar sampai Maret.", "literal": "bertanya‹selesai›. dan lagi bertanya‹selesai›, akan-sempat‹selesai› [ли] kami kepada maret." },
+    { "speaker": "Олег:", "text": "И что ты ответил?", "id": "Terus kamu jawab apa?", "literal": "dan apa kamu menjawab‹selesai›?" },
+    { "speaker": "Ари:", "text": "Что успеем, если никто не будет менять требования.", "id": "Bahwa kekejar, kalau nggak ada yang ganti-ganti syarat.", "literal": "bahwa akan-sempat‹selesai›, jika tak-seorang tidak akan mengubah‹proses› persyaratan." },
+    { "speaker": "Олег:", "text": "Смелый человек. А он попросил что-нибудь?", "id": "Berani juga. Terus dia minta sesuatu nggak?", "literal": "berani orang. dan dia meminta‹selesai› sesuatu?" },
+    { "speaker": "Ари:", "text": "Попросил, чтобы мы прислали план до пятницы.", "id": "Minta supaya kita kirim rencananya sebelum Jumat.", "literal": "meminta‹selesai›, supaya kami mengirim‹selesai,lampau› rencana sampai jumat." },
+    { "speaker": "Олег:", "text": "До пятницы? По словам Марины, срок был до среды.", "id": "Sebelum Jumat? Kata Marina, tenggatnya Rabu.", "literal": "sampai jumat? menurut kata-kata(dat) Marina(gen), tenggat ada‹lampau› sampai rabu." },
+    { "speaker": "Ари:", "text": "Марина, по-моему, говорит о другом плане.", "id": "Marina kayaknya ngomongin rencana yang lain.", "literal": "Marina, menurut-saya, berbicara‹proses› tentang lain rencana." },
+    { "speaker": "Олег:", "text": "Может быть. Она вечно всё путает, мол, я не в курсе.", "id": "Bisa jadi. Dia selalu campur aduk, katanya sih dia nggak tahu apa-apa.", "literal": "mungkin ada. dia selalu semua mengacaukan‹proses›, [мол], saya tidak dalam kabar." },
+    { "speaker": "Ари:", "text": "Кстати, она сказала, что якобы никто её не предупредил.", "id": "Ngomong-ngomong, dia bilang katanya nggak ada yang kasih tahu dia.", "literal": "omong-omong, dia mengatakan‹selesai›, bahwa [якобы] tak-seorang dia(akk) tidak memperingatkan‹selesai›." },
+    { "speaker": "Олег:", "text": "«Якобы» — это ты добавил или она так сказала?", "id": "\"Katanya\" itu kamu yang nambahin atau dia yang bilang gitu?", "literal": "\"[якобы]\" ini kamu menambahkan‹selesai› atau dia begitu mengatakan‹selesai›?" },
+    { "speaker": "Ари:", "text": "Я добавил. Потому что её предупредили, я сам видел письмо.", "id": "Aku yang nambahin. Soalnya dia dikasih tahu kok, aku sendiri lihat suratnya.", "literal": "saya menambahkan‹selesai›. karena dia(akk) memperingatkan‹selesai,mereka›, saya sendiri lihat‹lampau› surat." },
+    { "speaker": "Олег:", "text": "Вот теперь ты говоришь как настоящий сотрудник этой компании.", "id": "Nah sekarang kamu ngomong seperti karyawan asli perusahaan ini.", "literal": "nah sekarang kamu berbicara‹proses› seperti sejati karyawan ini(gen) perusahaan(gen)." }
+   ],
+   "notes": [
+    { "text": "**Baris 2 memuat aturan tunggal yang paling penting di unit ini: bentuk waktu TIDAK bergeser.** Bahasa Inggris menggeser (*he said the budget was approved*), bahasa Rusia tidak. Kalimat aslinya *бюджет утверждён* tetap *утверждён* di dalam laporan. Bahasa Indonesia juga tidak menggeser, jadi di sini kita justru lebih beruntung daripada penutur Inggris." },
+    { "text": "**Baris 6: *спросил, успеем ли мы* — pertanyaan tak langsung tanpa kata tanya.** Kalau pertanyaan aslinya bisa dijawab \"ya\" atau \"tidak\", laporannya memakai *ли*, yang diletakkan **sesudah kata yang ditanyakan**, bukan di awal. Bahasa Indonesia memakai \"apakah\"; letaknya berbeda, dan itu yang sering menjegal." },
+    { "text": "**Baris 5: kalau pertanyaan aslinya memakai kata tanya, kata tanya itu dipertahankan apa adanya.** *Сколько нам нужно?* menjadi *спросил, сколько нам нужно*. Tak ada *ли*, tak ada perubahan urutan, cukup tambahkan koma." },
+    { "text": "**Baris 10: perintah dan permintaan dilaporkan dengan *чтобы* + bentuk lampau.** *Пришлите план* menjadi *попросил, чтобы мы прислали план*. Ini pemakaian *чтобы* yang sudah kamu kenal dari unit 12, dan sekali lagi bentuk lampaunya sama sekali bukan waktu lampau." },
+    { "text": "**Baris 11 dan 14: *по словам* dan *якобы* — dua alat menandai sumber.** *По словам Марины* = menurut Marina (netral). *Якобы* = katanya, tapi aku ragu — ia menambahkan keraguan tanpa mengatakannya. Di berita Rusia, *якобы* adalah tanda paling jelas bahwa redaksi tak menjamin kabar itu." },
+    { "text": "**Baris 13: *мол* — partikel yang sama sekali tak punya padanan.** Ia menyisipkan ucapan orang lain di tengah kalimat sendiri, dengan nada meniru: *он говорит, мол, я не в курсе* (\"dia bilang, katanya sih dia nggak tahu\"). Nadanya selalu sedikit meragukan atau mengejek, jadi hati-hati memakainya pada orang yang hadir." }
+   ],
+   "grammars": [
+    {
+     "title": "Tiga jenis ucapan, tiga cara melaporkan",
+     "body": [
+      "Bahasa Rusia membagi laporan ucapan berdasarkan **jenis kalimat aslinya**, bukan berdasarkan siapa yang berbicara. Tiga baris pertama tabel ini adalah seluruh sistemnya."
+     ],
+     "table": {
+      "head": ["Kalimat asli", "Jenis", "Cara melaporkan", "Contoh"],
+      "rows": [
+       ["Я приду.", "pernyataan", "**что** + kalimat", "Он сказал, **что** придёт."],
+       ["Ты придёшь?", "pertanyaan ya/tidak", "**ли** sesudah kata kunci", "Он спросил, приду **ли** я."],
+       ["Когда ты придёшь?", "pertanyaan berkata tanya", "kata tanya dipertahankan", "Он спросил, **когда** я приду."],
+       ["Приходи!", "perintah", "**чтобы** + lampau", "Он сказал, **чтобы** я пришёл."],
+       ["Пожалуйста, помоги.", "permintaan", "**чтобы** + lampau", "Он попросил, **чтобы** я помог."],
+       ["Не опаздывай.", "larangan", "**чтобы не** + lampau", "Он сказал, **чтобы** я **не** опаздывал."],
+       ["Может, пойдём?", "usul", "**предложил** + infinitif", "Он **предложил** пойти."],
+       ["Я не знаю.", "pernyataan negatif", "что + kalimat", "Он сказал, что не знает."]
+      ]
+     }
+    },
+    {
+     "title": "Kata ganti dan waktu: apa yang berubah dan apa yang tidak",
+     "body": [
+      "Satu-satunya yang berubah dalam laporan ucapan bahasa Rusia adalah **kata ganti orang** dan kadang keterangan waktu. Bentuk kata kerjanya tidak pernah bergeser — dan inilah yang membuat sistem Rusia jauh lebih mudah daripada Inggris."
+     ],
+     "table": {
+      "head": ["Yang diucapkan", "Yang dilaporkan", "Yang berubah"],
+      "rows": [
+       ["«Я устал».", "Он сказал, что **он** устал.", "kata ganti saja"],
+       ["«Ты был прав».", "Он сказал, что **я** был прав.", "kata ganti saja"],
+       ["«Я приду завтра».", "Он сказал, что придёт **завтра**.", "boleh tetap завтра"],
+       ["«Я приду завтра». (sudah lewat)", "…что придёт **на следующий день**.", "keterangan waktu digeser"],
+       ["«Я здесь живу».", "Он сказал, что живёт **там**.", "keterangan tempat"],
+       ["«Мы это сделали».", "Они сказали, что **они** это сделали.", "kata ganti saja"],
+       ["⚠️ «Я приду».", "*Он сказал, что пришёл бы.*", "salah, bentuk tak berubah"],
+       ["⚠️ «Приходи».", "*Он сказал, что приходи.*", "salah, harus чтобы"]
+      ]
+     }
+    },
+    {
+     "title": "Menandai sumber kabar",
+     "body": [
+      "Di B2, menyampaikan ulang bukan cuma soal bentuk melainkan soal **tanggung jawab**: sejauh mana kamu menjamin kebenarannya. Bahasa Rusia punya tangga yang cukup halus untuk itu, dan bahasa berita memakainya tiap hari."
+     ],
+     "table": {
+      "head": ["Ungkapan", "Arti", "Seberapa yakin", "Ragam"],
+      "rows": [
+       ["по словам + genitif", "menurut …", "netral", "berita, resmi"],
+       ["как сообщает + nominatif", "sebagaimana dilaporkan …", "netral", "berita"],
+       ["по данным + genitif", "menurut data …", "netral, resmi", "berita, laporan"],
+       ["по-моему", "menurut saya", "pendapat sendiri", "lisan"],
+       ["говорят, что", "katanya", "tak jelas sumbernya", "lisan"],
+       ["якобы", "konon, katanya (ragu)", "meragukan", "berita, lisan"],
+       ["мол", "katanya sih", "meragukan, meniru", "lisan saja"],
+       ["по слухам", "menurut desas-desus", "tak terjamin", "lisan"],
+       ["как известно", "sebagaimana diketahui", "sangat yakin", "tulis"],
+       ["ссылаясь на + akusatif", "dengan mengutip …", "netral", "berita"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rapat, anggaran, dan tenggat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["совещание", "sa-vi-SCHA-ni-ye", "rapat"],
+      ["бюджет", "byu-DZHET", "anggaran"],
+      ["утвердить", "ut-vir-DIT'", "mengesahkan, menyetujui"],
+      ["слово в слово", "SLO-va f SLO-va", "kata per kata"],
+      ["успеть", "us-PYET'", "sempat, keburu"],
+      ["требование", "TRYE-ba-va-ni-ye", "persyaratan"],
+      ["прислать", "pris-LAT'", "mengirimkan"],
+      ["в курсе", "f KUR-si", "tahu, mengikuti perkembangan"],
+      ["предупредить", "pri-dup-ri-DIT'", "memperingatkan, memberi tahu"],
+      ["смелый", "SMYE-lyy", "berani"]
+     ]
+    },
+    { "type": "sub", "text": "Kata kerja yang memperkenalkan ucapan orang lain" },
+    {
+     "type": "tabel",
+     "head": ["Kata kerja", "Diikuti", "Contoh"],
+     "rows": [
+      ["сказать", "что", "Он сказал, что придёт."],
+      ["спросить", "ли / kata tanya", "Он спросил, приду ли я."],
+      ["попросить", "чтобы", "Он попросил, чтобы я помог."],
+      ["предложить", "infinitif", "Он предложил встретиться."],
+      ["ответить", "что", "Она ответила, что не знает."],
+      ["сообщить", "что", "Нам сообщили, что рейс отменён."],
+      ["добавить", "что", "Он добавил, что это срочно."],
+      ["уточнить", "kata tanya", "Он уточнил, когда именно."],
+      ["напомнить", "что / чтобы", "Напомни ему, чтобы позвонил."],
+      ["пообещать", "что", "Он пообещал, что перезвонит."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Bentuk waktu tidak bergeser, dan pelajar yang pernah belajar bahasa Inggris justru sering menggesernya.** *Он сказал, что придёт* — bukan *что пришёл бы*, bukan *что придёт бы*. Kalau kamu ragu, ucapkan dulu kalimat aslinya dalam kepala, lalu ubah kata gantinya saja.",
+      "**Letak *ли* bukan di awal anak kalimat, melainkan sesudah kata yang ditanyakan.** *Не знаю, придёт ли он* (\"aku tak tahu apakah dia datang\") — dan kalau yang ditanyakan adalah waktunya, kata itulah yang naik: *не знаю, сегодня ли он придёт*. Letak *ли* memilih apa yang sedang diragukan.",
+      "**Menandai sumber adalah keterampilan B2 yang paling terasa di tulisan.** Kalimat *бюджет утверждён* dan *по словам директора, бюджет утверждён* menyampaikan kabar yang sama dan tanggung jawab yang sangat berbeda. Unit 22 memakai seluruh tangga ini untuk membangun argumen."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "передать", "baca": "pi-ri-DAT'", "id": "menyampaikan" },
+  { "ru": "по словам", "baca": "pa sla-VAM", "id": "menurut (perkataan)" },
+  { "ru": "якобы", "baca": "YA-ka-by", "id": "konon, katanya (ragu)" },
+  { "ru": "мол", "baca": "mol", "id": "katanya sih" },
+  { "ru": "по слухам", "baca": "pa SLU-kham", "id": "menurut desas-desus" },
+  { "ru": "как сообщает", "baca": "kak sa-ap-SCHA-yet", "id": "sebagaimana dilaporkan" },
+  { "ru": "по данным", "baca": "pa DA-nym", "id": "menurut data" },
+  { "ru": "ссылаясь на", "baca": "ssy-LA-yas' na", "id": "dengan mengutip" },
+  { "ru": "сообщить", "baca": "sa-ap-SCHIT'", "id": "melaporkan, memberitahukan" },
+  { "ru": "добавить", "baca": "da-BA-vit'", "id": "menambahkan" },
+  { "ru": "напомнить", "baca": "na-POM-nit'", "id": "mengingatkan" },
+  { "ru": "пообещать", "baca": "pa-a-bi-SCHAT'", "id": "berjanji" },
+  { "ru": "отменить", "baca": "at-mi-NIT'", "id": "membatalkan" },
+  { "ru": "рейс", "baca": "reys", "id": "penerbangan, keberangkatan" },
+  { "ru": "менять", "baca": "mi-NYAT'", "id": "mengubah" },
+  { "ru": "именно", "baca": "I-min-na", "id": "persisnya" },
+  { "ru": "путать", "baca": "PU-tat'", "id": "mengacaukan" },
+  { "ru": "настоящий", "baca": "nas-ta-YA-schiy", "id": "sejati, sungguhan" },
+  { "ru": "компания", "baca": "kam-PA-ni-ya", "id": "perusahaan" },
+  { "ru": "срочно", "baca": "SROCH-na", "id": "mendesak" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi kalimat tak langsung.",
+   "items": [
+    "Он сказал: «Я приду завтра». ____",
+    "Она спросила: «Ты уже позвонил?» ____",
+    "Директор спросил: «Когда будет готов отчёт?» ____",
+    "Он попросил: «Пришлите план до пятницы». ____",
+    "Мама сказала: «Не опаздывай». ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Dia bilang anggarannya sudah disetujui.",
+    "Aku tidak tahu apakah dia akan datang.",
+    "Menurut Marina, tenggatnya hari Rabu.",
+    "Dia minta supaya kami menelepon lebih dulu.",
+    "Konon dia sudah pindah ke Petersburg."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "он / спросил / успеем / ли / мы / к / марту",
+    "нам / сообщили / что / рейс / отменён",
+    "он / попросил / чтобы / мы / прислали / план",
+    "по / данным / министерства / цены / выросли",
+    "напомни / ему / чтобы / он / перезвонил"
+   ]
+  },
+  {
+   "prompt": "Pilih penghubung yang benar.",
+   "items": [
+    "Он сказал, ____ придёт. (что, чтобы, ли)",
+    "Он спросил, приду ____ я. (что, чтобы, ли)",
+    "Он попросил, ____ я помог. (что, чтобы, ли)",
+    "Я не знаю, ____ он согласится. (что, чтобы, ли)",
+    "Она ответила, ____ ничего не знает. (что, чтобы, ли)"
+   ]
+  }
+ ],
+ "answers": [
+  "Он сказал, что придёт завтра. — Она спросила, позвонил ли я уже. — Директор спросил, когда будет готов отчёт. — Он попросил, чтобы мы прислали план до пятницы. — Мама сказала, чтобы я не опаздывал.",
+  "Он сказал, что бюджет уже утверждён. — Я не знаю, придёт ли он. — По словам Марины, срок до среды. — Он попросил, чтобы мы сначала позвонили. — Якобы он уже переехал в Петербург.",
+  "Он спросил, успеем ли мы к марту. — Нам сообщили, что рейс отменён. — Он попросил, чтобы мы прислали план. — По данным министерства, цены выросли. — Напомни ему, чтобы он перезвонил.",
+  "что — ли — чтобы — ли — что"
+ ]
+}

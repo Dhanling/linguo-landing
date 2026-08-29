@@ -1,0 +1,220 @@
+{
+ "title": "Деепричастие: dua kalimat dirapatkan jadi satu",
+ "title_target": "Прочитав письмо, он молча вышел из комнаты",
+ "goal": "Membentuk dan memakai деепричастие — bentuk yang merapatkan dua perbuatan dari pelaku yang sama menjadi satu kalimat, dan mengenali satu jebakan yang membuat kalimatnya langsung rusak.",
+ "bekal": [
+  "membentuk деепричастие dari kata kerja tak sempurna (-я) dan sempurna (-в)",
+  "memakai satu pelaku untuk dua perbuatan dan tahu kenapa itu wajib",
+  "menempatkan koma di sekeliling gugus деепричастие",
+  "mengenali деепричастие yang sudah membeku jadi kata keterangan atau preposisi"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Читая чужие письма",
+   "intro": "Ари sedang menerjemahkan cerita pendek dan tersandung satu kalimat. Настя, yang tak pernah menolak kesempatan menjelaskan tata bahasa, membaca dari balik bahunya.",
+   "lines": [
+    { "speaker": "Ари:", "text": "Настя, посмотри. Что тут не так?", "id": "Nastya, lihat deh. Ini yang salah apa?", "literal": "Nastya, lihat‹selesai›. apa di-sini tidak begitu?" },
+    { "speaker": "Настя:", "text": "Читай вслух, я на слух ловлю быстрее.", "id": "Bacain keras-keras, aku lebih cepat nangkep pakai telinga.", "literal": "baca‹proses› dengan-suara, saya pada pendengaran menangkap‹proses› lebih-cepat." },
+    { "speaker": "Ари:", "text": "«Читая письмо, у него дрожали руки».", "id": "\"Sambil membaca surat itu, tangannya gemetar.\"", "literal": "membaca‹sambil› surat, di dia gemetar‹proses,lampau› tangan-tangan." },
+    { "speaker": "Настя:", "text": "Вот. Классическая ошибка, её даже в школе разбирают.", "id": "Nah. Kesalahan klasik, sampai dibahas di sekolah.", "literal": "nah. klasik kesalahan, dia(akk) bahkan di sekolah membedah‹proses,mereka›." },
+    { "speaker": "Ари:", "text": "А что не так? Он читал, и руки дрожали.", "id": "Emang kenapa? Dia baca, dan tangannya gemetar.", "literal": "dan apa tidak begitu? dia baca‹proses,lampau›, dan tangan-tangan gemetar‹proses,lampau›." },
+    { "speaker": "Настя:", "text": "Кто читал? Он. А кто дрожал? Руки. Разные подлежащие.", "id": "Siapa yang baca? Dia. Siapa yang gemetar? Tangannya. Subjeknya beda.", "literal": "siapa baca‹lampau›? dia. dan siapa gemetar‹lampau›? tangan-tangan. berbeda subjek-subjek." },
+    { "speaker": "Ари:", "text": "И поэтому нельзя?", "id": "Terus makanya nggak boleh?", "literal": "dan karena-itu tidak-boleh?" },
+    { "speaker": "Настя:", "text": "Нельзя. Деепричастие всегда принадлежит подлежащему.", "id": "Nggak boleh. Deepricastie selalu milik subjeknya.", "literal": "tidak-boleh. deepricastie selalu memiliki‹proses› kepada-subjek." },
+    { "speaker": "Ари:", "text": "Значит, надо «Читая письмо, он дрожал»?", "id": "Berarti harusnya \"Sambil membaca surat, dia gemetar\"?", "literal": "berarti, perlu membaca‹sambil› surat, dia gemetar‹lampau›?" },
+    { "speaker": "Настя:", "text": "Да, или «Когда он читал письмо, у него дрожали руки».", "id": "Ya, atau \"Ketika dia membaca surat itu, tangannya gemetar\".", "literal": "ya, atau ketika dia baca‹lampau› surat, di dia gemetar‹lampau› tangan-tangan." },
+    { "speaker": "Ари:", "text": "Второй вариант проще. Зачем вообще мучиться с деепричастиями?", "id": "Yang kedua lebih gampang. Buat apa sih repot-repot pakai deepricastie?", "literal": "kedua pilihan lebih-sederhana. untuk-apa umumnya menyiksa-diri dengan deepricastie(jamak, instr)?" },
+    { "speaker": "Настя:", "text": "Затем, что без них текст рассыпается на короткие фразы.", "id": "Buat itu, karena tanpa mereka teksnya jadi remah-remah kalimat pendek.", "literal": "untuk-itu, bahwa tanpa mereka teks berhamburan‹proses› pada pendek frasa-frasa." },
+    { "speaker": "Ари:", "text": "Ладно. А в разговоре они бывают?", "id": "Oke. Terus di percakapan ada nggak?", "literal": "baiklah. dan dalam percakapan mereka ada‹proses›?" },
+    { "speaker": "Настя:", "text": "Немного. «Не глядя», «молча», «судя по всему» — их уже никто не считает деепричастиями.", "id": "Sedikit. \"Tanpa melihat\", \"diam-diam\", \"kelihatannya\" — orang sudah nggak menganggapnya deepricastie.", "literal": "sedikit. \"tidak memandang‹sambil›\", \"diam‹sambil›\", \"menghakimi‹sambil› atas semua\", mereka(akk) sudah tak-seorang tidak menghitung‹proses› deepricastie(instr.jamak)." },
+    { "speaker": "Ари:", "text": "Стоп, «молча» — это тоже деепричастие?", "id": "Eh sebentar, \"молча\" itu deepricastie juga?", "literal": "berhenti, \"diam‹sambil›\" ini juga deepricastie?" },
+    { "speaker": "Настя:", "text": "Было им когда-то. Сейчас — обычное наречие. Как «сидя» и «стоя».", "id": "Dulu iya. Sekarang kata keterangan biasa. Kayak \"сидя\" dan \"стоя\".", "literal": "ada‹lampau› dia(instr) suatu-waktu. sekarang biasa kata-keterangan. seperti \"duduk‹sambil›\" dan \"berdiri‹sambil›\"." },
+    { "speaker": "Ари:", "text": "Прочитав твоё объяснение, я стал спокойнее. Так правильно?", "id": "Setelah membaca penjelasanmu, aku jadi lebih tenang. Begitu benar kan?", "literal": "membaca-habis‹sesudah› penjelasan-mu, saya menjadi‹selesai› lebih-tenang. begitu benar?" }
+   ],
+   "notes": [
+    { "text": "**Baris 3 dan 6 memuat inti unit ini, dan sekaligus kesalahan paling terkenal dalam bahasa Rusia.** *Читая письмо, у него дрожали руки* salah karena yang membaca adalah \"dia\" sementara yang gemetar adalah \"tangan\". Aturannya mutlak: деепричастие dan kata kerja utama **wajib punya pelaku yang sama**. Orang Rusia sendiri sering melanggarnya, dan kalimat semacam itu dipakai sebagai bahan lelucon." },
+    { "text": "**Baris 8: *деепричастие принадлежит подлежащему*.** Cara memeriksanya cepat: tanyakan \"siapa yang melakukan gugus itu?\" dan \"siapa yang melakukan kata kerja utama?\". Kalau jawabannya berbeda, kalimatnya harus dibongkar jadi anak kalimat dengan *когда*, *если*, *потому что*." },
+    { "text": "**Baris 12: kenapa bentuk ini ada sama sekali.** Tanpa деепричастие, bahasa Rusia tulis akan penuh kalimat pendek yang tersambung *и*. Ia memampatkan latar belakang, sebab, dan syarat ke dalam satu gugus — dan itu sebabnya ia begitu sering muncul di prosa dan berita." },
+    { "text": "**Baris 14: *молча*, *не глядя*, *судя по всему*.** Sekelompok деепричастие sudah lepas dari kata kerjanya dan menjadi kata keterangan atau bahkan preposisi biasa: *несмотря на* (walaupun), *благодаря* (berkat), *включая* (termasuk). Bentuk-bentuk ini justru sangat sering dipakai di lisan." },
+    { "text": "**Baris 17: *прочитав* (sempurna) lawan *читая* (tak sempurna).** Bedanya waktu: *читая* berarti dua perbuatan berlangsung **bersamaan** (\"sambil membaca\"), *прочитав* berarti yang satu **selesai lebih dulu** (\"setelah selesai membaca\"). Ini pembagian yang bersih dan hampir tanpa pengecualian." },
+    { "text": "**Untuk penutur Indonesia, деепричастие sebenarnya terasa akrab.** Kita punya \"sambil\", \"setelah\", \"tanpa\", \"sembari\" — dan semuanya menuntut pelaku yang sama persis seperti dalam bahasa Rusia (\"sambil membaca surat, tangannya gemetar\" juga terdengar janggal bagi kita). Yang baru cuma bentuk katanya." }
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk деепричастие",
+     "body": [
+      "Dua bentuk, dua akhiran, dan keduanya dibuat dari bentuk yang sudah kamu kuasai. Yang tak sempurna dari bentuk *мы*, yang sempurna dari bentuk lampau."
+     ],
+     "table": {
+      "head": ["Aspek", "Diambil dari", "Akhiran", "Contoh"],
+      "rows": [
+       ["tak sempurna", "мы читаЕМ", "-я", "чита**я** = sambil membaca"],
+       ["tak sempurna", "мы говорИМ", "-я", "говор**я** = sambil berbicara"],
+       ["tak sempurna sesudah ж, ш, ч, щ", "мы держИМ", "-а", "держ**а** = sambil memegang"],
+       ["tak sempurna dengan -ся", "мы улыбаЕМся", "-ясь", "улыба**ясь** = sambil tersenyum"],
+       ["sempurna", "он прочитаЛ", "-в", "прочита**в** = setelah membaca"],
+       ["sempurna dengan -ся", "он вернулСЯ", "-вшись", "верну**вшись** = setelah kembali"],
+       ["sempurna berkonsonan", "он принёс", "-ши / -я", "принёс**ши**, войд**я**"],
+       ["⚠️ tak punya bentuk", "писать, пить, ждать, бежать", "—", "sebagian kata kerja memang tak berbentuk ini"]
+      ]
+     }
+    },
+    {
+     "title": "Apa yang sebenarnya disampaikan gugus деепричастие",
+     "body": [
+      "Bentuk ini tidak cuma berarti \"sambil\". Bergantung isinya, ia bisa menyampaikan waktu, sebab, syarat, atau cara — dan pembacalah yang menyimpulkannya dari isi kalimat. Karena itu ia begitu padat, dan karena itu pula ia bisa kabur kalau dipakai berlebihan."
+     ],
+     "table": {
+      "head": ["Yang disampaikan", "Contoh", "Bisa dibongkar jadi"],
+      "rows": [
+       ["waktu bersamaan", "**Читая**, он делал заметки.", "Когда он читал…"],
+       ["waktu berurutan", "**Прочитав**, он вышел.", "После того как он прочитал…"],
+       ["sebab", "**Не зная** города, я взял такси.", "Так как я не знал города…"],
+       ["syarat", "**Начав** сегодня, успеешь к среде.", "Если начнёшь сегодня…"],
+       ["cara", "Он ответил, **не глядя** на меня.", "…и при этом не смотрел"],
+       ["pertentangan", "**Зная** всё, он промолчал.", "Хотя он знал всё…"],
+       ["perbuatan penyerta", "Она шла, **напевая**.", "…и напевала"],
+       ["⚠️ pelaku berbeda", "*Читая письмо, у него дрожали руки.*", "wajib dibongkar"]
+      ]
+     }
+    },
+    {
+     "title": "Деепричастие yang sudah bukan деепричастие lagi",
+     "body": [
+      "Sekelompok bentuk sudah membeku dan berubah jenis kata. Yang penting: bentuk-bentuk ini **tidak** tunduk pada aturan satu pelaku, karena ia bukan lagi kata kerja. Semuanya sangat lazim, termasuk di lisan."
+     ],
+     "table": {
+      "head": ["Bentuk", "Sekarang berfungsi sebagai", "Arti", "Contoh"],
+      "rows": [
+       ["молча", "kata keterangan", "diam-diam, tanpa bicara", "Он **молча** кивнул."],
+       ["не глядя", "kata keterangan", "tanpa melihat", "Подписал **не глядя**."],
+       ["стоя / сидя / лёжа", "kata keterangan", "sambil berdiri / duduk", "Есть **стоя** вредно."],
+       ["судя по", "preposisi", "kalau dilihat dari", "**Судя по** всему, он не придёт."],
+       ["несмотря на", "preposisi", "walaupun", "**Несмотря на** дождь, мы пошли."],
+       ["благодаря", "preposisi + datif", "berkat", "**Благодаря** тебе всё вышло."],
+       ["включая", "preposisi", "termasuk", "Все, **включая** меня."],
+       ["начиная с", "preposisi", "mulai dari", "**Начиная с** понедельника."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menulis, menerjemahkan, dan menjelaskan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["вслух", "fslukh", "dengan suara keras"],
+      ["на слух", "na SLUKH", "lewat pendengaran"],
+      ["дрожать", "dra-ZHAT'", "gemetar"],
+      ["подлежащее", "pad-li-ZHA-schi-ye", "subjek kalimat"],
+      ["разбирать", "raz-bi-RAT'", "membedah, membahas"],
+      ["принадлежать", "pri-nad-li-ZHAT'", "menjadi milik"],
+      ["мучиться", "MU-chi-tsa", "menyiksa diri, repot"],
+      ["рассыпаться", "ra-SY-pa-tsa", "berhamburan, berantakan"],
+      ["наречие", "na-RYE-chi-ye", "kata keterangan"],
+      ["объяснение", "ab-yis-NYE-ni-ye", "penjelasan"]
+     ]
+    },
+    { "type": "sub", "text": "Gugus деепричастие yang sering muncul di teks" },
+    {
+     "type": "tabel",
+     "head": ["Rusia", "Indonesia", "Yang disampaikan"],
+     "rows": [
+      ["Подводя итог, скажу одно.", "Sebagai kesimpulan, saya bilang satu hal.", "merangkum"],
+      ["Учитывая обстоятельства…", "Mengingat keadaannya…", "sebab"],
+      ["Говоря честно…", "Terus terang saja…", "cara"],
+      ["Не имея выбора, он согласился.", "Karena tak punya pilihan, dia setuju.", "sebab"],
+      ["Вернувшись домой, я сразу лёг.", "Setiba di rumah aku langsung tidur.", "waktu berurutan"],
+      ["Работая здесь, я многому научился.", "Selama kerja di sini aku banyak belajar.", "waktu bersamaan"],
+      ["Не зная броду, не суйся в воду.", "Jangan nyebur kalau tak tahu dalamnya.", "peribahasa"],
+      ["Судя по его лицу, новости плохие.", "Dari wajahnya, kabarnya buruk.", "sudah jadi preposisi"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Aturan satu pelaku adalah satu-satunya hal yang benar-benar harus kamu jaga.** Semua kesalahan lain pada bentuk ini bisa dimaafkan; yang ini terdengar salah bahkan bagi orang Rusia yang tak pernah belajar tata bahasa. Periksa tiap gugus dengan satu pertanyaan: siapa pelakunya, dan apakah ia sama dengan pelaku kalimat utamanya.",
+      "**Bentuk ini adalah alat menulis, bukan alat bicara.** Dalam percakapan, deretan *когда…, потому что…, и потом…* justru terdengar lebih wajar. Memakai деепричастие di warung kopi membuatmu terdengar seperti sedang membacakan dokumen — kecuali untuk bentuk yang sudah membeku seperti *молча* dan *судя по*.",
+      "**Gugus berkoma yang panjang membuat kalimat Rusia bisa berjalan sangat jauh, dan di sinilah kemampuan membacamu diuji.** Latihan yang paling cepat memberi hasil: ambil satu paragraf berita, tandai tiap gugus деепричастие, lalu bacalah ulang paragrafnya tanpa gugus-gugus itu. Yang tersisa adalah rangka kalimatnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "деепричастие", "baca": "dye-ye-pri-CHAS-ti-ye", "id": "deepricastie" },
+  { "ru": "заметка", "baca": "za-MYET-ka", "id": "catatan singkat" },
+  { "ru": "промолчать", "baca": "pra-mal-CHAT'", "id": "memilih diam" },
+  { "ru": "напевать", "baca": "na-pi-VAT'", "id": "bersenandung" },
+  { "ru": "кивнуть", "baca": "kiv-NUT'", "id": "mengangguk" },
+  { "ru": "молча", "baca": "MOL-cha", "id": "tanpa bicara" },
+  { "ru": "не глядя", "baca": "ni GLYA-dya", "id": "tanpa melihat" },
+  { "ru": "судя по", "baca": "SU-dya pa", "id": "kalau dilihat dari" },
+  { "ru": "несмотря на", "baca": "nis-mat-RYA na", "id": "walaupun" },
+  { "ru": "благодаря", "baca": "bla-ga-da-RYA", "id": "berkat" },
+  { "ru": "включая", "baca": "fklyu-CHA-ya", "id": "termasuk" },
+  { "ru": "учитывая", "baca": "u-CHI-ty-va-ya", "id": "mengingat" },
+  { "ru": "подводя итог", "baca": "pad-va-DYA i-TOK", "id": "sebagai kesimpulan" },
+  { "ru": "обстоятельство", "baca": "aps-ta-YA-til'-stva", "id": "keadaan, situasi" },
+  { "ru": "выбор", "baca": "VY-bar", "id": "pilihan" },
+  { "ru": "согласиться", "baca": "sag-la-SI-tsa", "id": "menyetujui" },
+  { "ru": "спокойнее", "baca": "spa-KOY-ni-ye", "id": "lebih tenang" },
+  { "ru": "фраза", "baca": "FRA-za", "id": "frasa, kalimat pendek" },
+  { "ru": "вариант", "baca": "va-ri-ANT", "id": "pilihan, versi" },
+  { "ru": "ловить", "baca": "la-VIT'", "id": "menangkap" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bentuk деепричастие dari kata kerja dalam kurung.",
+   "items": [
+    "____ письмо, он делал заметки. (читать)",
+    "____ письмо, он вышел из комнаты. (прочитать)",
+    "____ домой, я сразу лёг спать. (вернуться)",
+    "Он ответил, не ____ на меня. (глядеть)",
+    "____ город, я взял такси. (не знать)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang tanpa деепричастие, memakai когда, если, atau потому что.",
+   "items": [
+    "Прочитав письмо, он позвонил мне.",
+    "Не имея выбора, она согласилась.",
+    "Начав сегодня, ты успеешь к среде.",
+    "Работая здесь, я многому научился.",
+    "Зная всё, он промолчал."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "несмотря / на / дождь / мы / пошли / гулять",
+    "судя / по / всему / он / сегодня / не / придёт",
+    "благодаря / тебе / всё / получилось",
+    "он / молча / кивнул / и / вышел",
+    "подводя / итог / скажу / одно"
+   ]
+  },
+  {
+   "prompt": "Tandai kalimat yang salah dan tulis benar atau salah saja.",
+   "items": [
+    "Читая письмо, у него дрожали руки.",
+    "Читая письмо, он волновался.",
+    "Подходя к дому, начался дождь.",
+    "Вернувшись, она сразу позвонила.",
+    "Не зная адреса, мне было трудно найти дом."
+   ]
+  }
+ ],
+ "answers": [
+  "Читая — Прочитав — Вернувшись — глядя — Не зная",
+  "Когда он прочитал письмо, он позвонил мне. — Так как у неё не было выбора, она согласилась. — Если ты начнёшь сегодня, ты успеешь к среде. — Когда я работал здесь, я многому научился. — Хотя он знал всё, он промолчал.",
+  "Несмотря на дождь, мы пошли гулять. — Судя по всему, он сегодня не придёт. — Благодаря тебе всё получилось. — Он молча кивнул и вышел. — Подводя итог, скажу одно.",
+  "salah — benar — salah — benar — salah"
+ ]
+}

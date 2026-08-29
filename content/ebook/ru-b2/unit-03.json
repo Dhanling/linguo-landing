@@ -1,0 +1,220 @@
+{
+ "title": "Kata kerja gerak: satu arah dan bolak-balik",
+ "title_target": "Я иду в спортзал. А вообще я туда хожу три раза в неделю",
+ "goal": "Menguasai delapan pasang kata kerja gerak tanpa awalan dan tahu kenapa bahasa Rusia memerlukan dua kata untuk satu perbuatan yang bagi kita cukup satu.",
+ "bekal": [
+  "membedakan gerak satu arah (идти) dari gerak berulang atau bolak-balik (ходить)",
+  "memakai bentuk lampau ходил untuk arti pergi dan sudah pulang",
+  "memilih нести, вести, везти sesuai cara membawanya",
+  "memakai kata kerja gerak sebagai kiasan: время идёт, дождь идёт, речь идёт о"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Куда идёшь и куда ходишь",
+   "intro": "Halte bus dekat rumah, pagi hari. Ари bertemu Лена, tetangga selantai yang selalu tahu jadwal semua orang.",
+   "lines": [
+    { "speaker": "Лена:", "text": "О, привет! Ты куда с рюкзаком в такую рань?", "id": "Eh, halo! Mau ke mana pagi-pagi bawa ransel?", "literal": "oh, halo! kamu ke-mana dengan ransel pada begini pagi-buta?" },
+    { "speaker": "Ари:", "text": "Иду в бассейн. Сегодня решил до работы.", "id": "Mau ke kolam renang. Hari ini kuputuskan sebelum kerja.", "literal": "pergi‹satu-arah› ke kolam. hari-ini putuskan‹selesai› sampai kerja." },
+    { "speaker": "Лена:", "text": "А ты вообще часто туда ходишь?", "id": "Emang kamu sering ke sana?", "literal": "dan kamu umumnya sering ke-sana pergi‹bolak-balik›?" },
+    { "speaker": "Ари:", "text": "Хожу три раза в неделю. Правда, обычно вечером.", "id": "Tiga kali seminggu. Cuma biasanya sore.", "literal": "pergi‹bolak-balik› tiga kali dalam pekan. sebenarnya, biasanya sore." },
+    { "speaker": "Лена:", "text": "А я вчера ходила в бассейн — там всё закрыто на ремонт.", "id": "Kemarin aku ke kolam lho, di sana lagi tutup buat renovasi.", "literal": "dan saya kemarin pergi‹bolak-balik,lampau› ke kolam, di-sana semua tertutup untuk perbaikan." },
+    { "speaker": "Ари:", "text": "Как закрыто? Я же вчера туда шёл и видел людей.", "id": "Tutup gimana? Kemarin aku ke sana dan lihat ada orang kok.", "literal": "bagaimana tertutup? saya [же] kemarin ke-sana berjalan‹satu-arah,lampau› dan lihat‹proses,lampau› orang-orang." },
+    { "speaker": "Лена:", "text": "Шёл — но дошёл ли? Там с десяти закрыли.", "id": "Menuju sih, tapi sampai nggak? Dari jam sepuluh ditutup.", "literal": "berjalan‹satu-arah›, tapi sampai‹selesai› [ли]? di-sana dari sepuluh menutup‹selesai›." },
+    { "speaker": "Ари:", "text": "Дошёл. Поплавал сорок минут и ушёл.", "id": "Sampai kok. Renang empat puluh menit terus pulang.", "literal": "sampai‹selesai›. berenang‹sebentar,selesai› empat-puluh menit dan pergi‹selesai›." },
+    { "speaker": "Лена:", "text": "Значит, закрыли уже после тебя. Не везёт мне.", "id": "Berarti ditutupnya setelah kamu. Sialan amat aku.", "literal": "berarti, menutup‹selesai› sudah sesudah kamu. tidak membawa‹untung› kepada-saya." },
+    { "speaker": "Ари:", "text": "Слушай, а ты на машине сегодня едешь или на метро?", "id": "Eh, hari ini kamu bawa mobil atau naik metro?", "literal": "dengar, dan kamu pada mobil hari-ini berkendara‹satu-arah› atau pada metro?" },
+    { "speaker": "Лена:", "text": "Еду на машине, но я вообще редко езжу — пробки.", "id": "Naik mobil, tapi aku jarang bawa mobil kok, macet.", "literal": "berkendara‹satu-arah› pada mobil, tapi saya umumnya jarang berkendara‹bolak-balik›, kemacetan." },
+    { "speaker": "Ари:", "text": "Подвезёшь до центра? Мне туда же.", "id": "Bareng sampai pusat kota dong? Aku ke sana juga.", "literal": "antar-dengan-kendaraan‹selesai› sampai pusat? kepada-saya ke-sana [же]." },
+    { "speaker": "Лена:", "text": "Садись. Только я везу коробки, сзади места нет.", "id": "Naik. Cuma aku lagi bawa kardus, belakang nggak ada tempat.", "literal": "duduklah‹proses›. hanya saya membawa-dengan-kendaraan‹satu-arah› kardus-kardus, di-belakang tempat tidak-ada." },
+    { "speaker": "Ари:", "text": "Ничего, я спереди. А что везёшь?", "id": "Nggak apa, aku di depan. Bawa apa emang?", "literal": "tak-apa, saya di-depan. dan apa membawa-dengan-kendaraan‹satu-arah›?" },
+    { "speaker": "Лена:", "text": "Книги на дачу. Каждую весну вожу туда по три коробки.", "id": "Buku-buku ke dacha. Tiap musim semi aku bawa tiga kardus ke sana.", "literal": "buku-buku ke dacha. setiap musim-semi membawa-dengan-kendaraan‹bolak-balik› ke-sana per tiga kardus." },
+    { "speaker": "Ари:", "text": "Понял. Слушай, а время-то как идёт — уже почти восемь.", "id": "Paham. Eh, waktu itu jalan cepat ya, hampir jam delapan.", "literal": "paham. dengar, dan waktu-[то] bagaimana berjalan‹satu-arah›, sudah hampir delapan." },
+    { "speaker": "Лена:", "text": "Идёт-идёт. Поехали, а то я тебя высажу на светофоре.", "id": "Jalan terus. Ayo berangkat, kalau nggak kuturunin di lampu merah.", "literal": "berjalan-berjalan. mari-berangkat‹selesai›, kalau-tidak saya kamu turunkan‹selesai› pada lampu-lalu-lintas." }
+   ],
+   "notes": [
+    { "text": "**Baris 2 dan 4 adalah pasangan yang menjelaskan seluruh unit: *иду* lawan *хожу*.** *Иду в бассейн* = sedang dalam perjalanan ke sana, sekarang, satu arah. *Хожу три раза в неделю* = kebiasaan, bolak-balik. Bahasa Indonesia memakai kata \"pergi\" untuk keduanya, dan itulah kenapa kita hampir selalu memakai *идти* di tempat yang seharusnya *ходить*." },
+    { "text": "**Baris 5: *вчера ходила в бассейн* berarti \"pergi ke sana **dan sudah pulang**\".** Bentuk lampau dari kata kerja bolak-balik menceritakan satu perjalanan pulang-pergi yang sudah lengkap — persis seperti *был* (\"pernah di sana\"). Karena itu *я вчера ходил в кино* dan *я вчера был в кино* hampir sama artinya." },
+    { "text": "**Baris 6 dan 7: *шёл* lawan *дошёл*.** *Шёл туда* cuma bercerita bahwa perjalanannya berlangsung — tidak mengatakan apakah sampai. Justru karena itu Лена bertanya *но дошёл ли?* Awalan *до-* menambahkan \"sampai ke tujuan\", dan ia salah satu dari sepuluh awalan yang dibedah unit 4." },
+    { "text": "**Baris 9: *не везёт мне* — kata kerja gerak yang berubah jadi nasib.** Harfiahnya \"tidak membawa (untung) kepadaku\"; artinya \"aku lagi sial\". Kebalikannya *мне везёт* (aku beruntung), lampau *мне повезло* (aku beruntung waktu itu) — salah satu ungkapan paling sering dipakai orang Rusia sehari-hari." },
+    { "text": "**Baris 13 dan 15: *везу* lawan *вожу*.** Ketiga kata kerja \"membawa\" dipilih dari **caranya**, bukan dari barangnya: *нести* di tangan, *везти* dengan kendaraan, *вести* dengan menuntun makhluk hidup. Salah memilih di antara ketiganya adalah kesalahan khas yang langsung terdengar." },
+    { "text": "**Baris 16: *время идёт* — kata kerja gerak sebagai kiasan.** Bahasa Rusia memakai *идти* untuk banyak hal yang tidak berjalan ke mana-mana: *дождь идёт* (hujan turun), *фильм идёт* (film sedang diputar), *речь идёт о…* (yang dibicarakan adalah…), *тебе идёт это платье* (gaun itu cocok untukmu). Semuanya memakai bentuk satu arah, tak pernah *ходить*." }
+   ],
+   "grammars": [
+    {
+     "title": "Delapan pasang kata kerja gerak tanpa awalan",
+     "body": [
+      "Kolom kiri: satu arah, sedang berlangsung, satu perjalanan. Kolom kanan: berulang, kebiasaan, bolak-balik, atau kemampuan umum. Hafalkan berpasangan, jangan satu-satu."
+     ],
+     "table": {
+      "head": ["Arti", "Satu arah", "Bolak-balik", "Contoh khas"],
+      "rows": [
+       ["berjalan, pergi (kaki)", "идти", "ходить", "Я **иду** домой. / Я **хожу** пешком."],
+       ["pergi berkendara", "ехать", "ездить", "Мы **едем** в Тулу. / Я **езжу** на метро."],
+       ["terbang", "лететь", "летать", "Самолёт **летит**. / Я не **летаю** зимой."],
+       ["berenang, berlayar", "плыть", "плавать", "Лодка **плывёт**. / Я **плаваю** плохо."],
+       ["berlari", "бежать", "бегать", "Он **бежит** к автобусу. / Дети **бегают**."],
+       ["membawa di tangan", "нести", "носить", "**Несу** сумку. / **Ношу** очки."],
+       ["membawa berkendara", "везти", "возить", "**Везу** книги. / **Вожу** их каждый год."],
+       ["menuntun, mengantar", "вести", "водить", "**Веду** ребёнка в сад. / **Вожу** машину."]
+      ]
+     }
+    },
+    {
+     "title": "Kapan orang Rusia benar-benar memakai bentuk bolak-balik",
+     "body": [
+      "Aturan buku \"satu arah lawan berulang\" menutup sekitar tiga perempat kasus. Empat pemakaian sisanya jarang diajarkan, padahal justru itu yang muncul di percakapan sehari-hari."
+     ],
+     "table": {
+      "head": ["Pemakaian", "Bentuk", "Contoh", "Arti"],
+      "rows": [
+       ["kebiasaan", "bolak-balik", "Я **хожу** в спортзал.", "rutin"],
+       ["satu perjalanan pulang-pergi (lampau)", "bolak-balik", "Вчера я **ходил** в кино.", "pergi dan sudah pulang"],
+       ["kemampuan umum", "bolak-balik", "Я не **вожу** машину.", "tak bisa menyetir"],
+       ["gerak tanpa arah tertentu", "bolak-balik", "Дети **бегают** по двору.", "berlarian ke sana ke mari"],
+       ["memakai secara rutin", "носить", "Она **носит** линзы.", "memakai (kacamata, baju)"],
+       ["sedang dalam perjalanan", "satu arah", "Я **еду**, буду через час.", "sedang menuju"],
+       ["rencana dekat dan pasti", "satu arah", "Завтра я **лечу** в Казань.", "besok terbang"],
+       ["kiasan", "satu arah", "**Идёт** дождь. Время **идёт**.", "tak pernah bolak-balik"]
+      ]
+     }
+    },
+    {
+     "title": "Tiga kata kerja untuk satu kata Indonesia: membawa",
+     "body": [
+      "Bahasa Indonesia cukup dengan \"membawa\" dan \"mengantar\". Bahasa Rusia memilih kata kerjanya dari **cara** barang atau orang itu berpindah, dan pilihannya wajib — tidak ada bentuk umum yang netral."
+     ],
+     "table": {
+      "head": ["Kata kerja", "Caranya", "Yang dibawa", "Contoh"],
+      "rows": [
+       ["нести / носить", "di tangan, di bahu", "barang yang bisa diangkat", "**нести** чемодан"],
+       ["везти / возить", "dengan kendaraan", "barang berat, orang", "**везти** мебель на дачу"],
+       ["вести / водить", "menuntun, memimpin", "makhluk hidup", "**вести** ребёнка за руку"],
+       ["водить машину", "—", "kendaraannya sendiri", "= bisa menyetir"],
+       ["носить", "—", "pakaian, kacamata", "= memakai secara rutin"],
+       ["вести себя", "—", "diri sendiri", "= bertingkah laku"],
+       ["вести переговоры", "—", "perundingan", "= memimpin rundingan"],
+       ["привезти / принести", "berawalan при-", "sampai di sini", "**Привези** мне чай из Китая."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Gerak, jalan, dan lalu lintas kota",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Kata", "Cara baca", "Arti"],
+     "rows": [
+      ["пробка", "PROP-ka", "kemacetan (juga: tutup botol)"],
+      ["светофор", "svi-ta-FOR", "lampu lalu lintas"],
+      ["перекрёсток", "pi-rik-RYOS-tak", "persimpangan"],
+      ["остановка", "as-ta-NOF-ka", "halte"],
+      ["пересадка", "pi-ri-SAT-ka", "ganti moda, transit"],
+      ["подвезти", "pad-viz-TI", "memberi tumpangan"],
+      ["высадить", "VY-sa-dit'", "menurunkan penumpang"],
+      ["объезд", "ab-YEST", "jalan memutar"],
+      ["по пути", "pa pu-TI", "searah, sejalan"],
+      ["в такую рань", "f ta-KU-yu RAN'", "sepagi ini"]
+     ]
+    },
+    { "type": "sub", "text": "Kata kerja gerak yang sudah tidak berarti gerak" },
+    {
+     "type": "tabel",
+     "head": ["Ungkapan", "Arti harfiah", "Arti sebenarnya"],
+     "rows": [
+      ["Идёт дождь / снег.", "hujan berjalan", "hujan turun, salju turun"],
+      ["Время идёт быстро.", "waktu berjalan cepat", "waktu berlalu cepat"],
+      ["Речь идёт о деньгах.", "ucapan berjalan tentang uang", "yang dibicarakan adalah uang"],
+      ["Тебе идёт эта рубашка.", "kemeja ini berjalan padamu", "kemeja itu cocok untukmu"],
+      ["Фильм идёт два часа.", "film berjalan dua jam", "durasinya dua jam"],
+      ["Мне везёт.", "kepadaku terbawa", "aku beruntung"],
+      ["Не веди себя так.", "jangan menuntun dirimu begitu", "jangan bertingkah begitu"],
+      ["Как дела? Идут.", "bagaimana urusan? berjalan", "lumayan, jalan terus"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Kesalahan paling khas penutur Indonesia bukan memilih kata yang salah, melainkan selalu memilih bentuk satu arah.** *Я иду в спортзал каждый день* langsung terdengar salah, karena kebiasaan menuntut *хожу*. Aturannya sederhana, tetapi otak kita tak punya kotak untuk membedakannya, jadi ia harus dilatih sampai jadi refleks.",
+      "**Bentuk lampau bolak-balik adalah cara paling lazim menceritakan kegiatan kemarin.** *Я ходил в кино*, *мы ездили на дачу*, *она летала в Питер* — semuanya berarti \"pergi dan sudah kembali\". Kalau kamu memakai bentuk sempurna *я пошёл в кино*, yang tertangkap adalah \"aku berangkat\" — dan lawan bicara akan menunggu kelanjutan ceritanya.",
+      "**Kata kerja gerak adalah pintu masuk ke seluruh sistem awalan Rusia.** Sepuluh awalan yang dipasang padanya di unit berikutnya (при-, у-, вы-, за-, до-, пере-, об-, про-, под-, от-) bekerja dengan makna yang sama persis di ratusan kata kerja lain. Menguasainya di sini berarti menebak arti kata kerja baru seumur hidup."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "ru": "рюкзак", "baca": "ryuk-ZAK", "id": "ransel" },
+  { "ru": "бассейн", "baca": "ba-SYEYN", "id": "kolam renang" },
+  { "ru": "ремонт", "baca": "ri-MONT", "id": "perbaikan, renovasi" },
+  { "ru": "плавать", "baca": "PLA-vat'", "id": "berenang (umum)" },
+  { "ru": "поплавать", "baca": "pa-PLA-vat'", "id": "berenang sebentar" },
+  { "ru": "дойти", "baca": "day-TI", "id": "sampai (dengan berjalan)" },
+  { "ru": "уйти", "baca": "uy-TI", "id": "pergi meninggalkan" },
+  { "ru": "везти", "baca": "viz-TI", "id": "membawa dengan kendaraan" },
+  { "ru": "возить", "baca": "va-ZIT'", "id": "mengangkut (rutin)" },
+  { "ru": "вести", "baca": "vis-TI", "id": "menuntun, memimpin" },
+  { "ru": "водить", "baca": "va-DIT'", "id": "menyetir; menuntun (rutin)" },
+  { "ru": "носить", "baca": "na-SIT'", "id": "memakai; membawa (rutin)" },
+  { "ru": "спереди", "baca": "SPYE-ri-di", "id": "di depan" },
+  { "ru": "сзади", "baca": "ZZA-di", "id": "di belakang" },
+  { "ru": "дача", "baca": "DA-cha", "id": "rumah musim panas" },
+  { "ru": "весна", "baca": "vis-NA", "id": "musim semi" },
+  { "ru": "почти", "baca": "pach-TI", "id": "hampir" },
+  { "ru": "а то", "baca": "a TO", "id": "kalau tidak, nanti" },
+  { "ru": "поехали", "baca": "pa-YE-kha-li", "id": "ayo berangkat" },
+  { "ru": "редко", "baca": "RYET-ka", "id": "jarang" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk yang tepat: satu arah atau bolak-balik.",
+   "items": [
+    "Каждое утро я ____ в офис пешком. (идти, ходить)",
+    "Смотри, вон он ____ к остановке. (идёт, ходит)",
+    "Летом мы часто ____ на дачу. (едем, ездим)",
+    "Завтра я ____ в Казань, вернусь в пятницу. (лечу, летаю)",
+    "Она не ____ машину, боится. (ведёт, водит)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Kemarin aku ke bioskop.",
+    "Aku sedang menuju kantor, sampai satu jam lagi.",
+    "Dia memakai kacamata sejak kecil.",
+    "Tiap musim panas kami mengangkut buku ke dacha.",
+    "Aku sedang bawa tas berat, tolong buka pintunya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "речь / идёт / о / новом / проекте",
+    "тебе / очень / идёт / эта / рубашка",
+    "дети / бегают / по / двору / целый / день",
+    "я / везу / коробки / на / дачу",
+    "вчера / мы / ездили / за / город"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja membawa yang tepat.",
+   "items": [
+    "Я ____ чемодан на третий этаж. (несу, везу)",
+    "Отец ____ детей в школу на машине. (ведёт, возит)",
+    "Она ____ ребёнка за руку. (ведёт, везёт)",
+    "Он ____ очки уже десять лет. (носит, несёт)",
+    "Привези мне чай, а я ____ тебе кофе. (принесу, привезу)"
+   ]
+  }
+ ],
+ "answers": [
+  "хожу — идёт — ездим — лечу — водит",
+  "Вчера я ходил в кино. — Я еду в офис, буду через час. — Она носит очки с детства. — Каждое лето мы возим книги на дачу. — Я несу тяжёлую сумку, открой, пожалуйста, дверь.",
+  "Речь идёт о новом проекте. — Тебе очень идёт эта рубашка. — Дети бегают по двору целый день. — Я везу коробки на дачу. — Вчера мы ездили за город.",
+  "несу — возит — ведёт — носит — привезу"
+ ]
+}
