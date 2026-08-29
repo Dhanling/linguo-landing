@@ -1,0 +1,198 @@
+{
+  "title": "Orang yang, tempat yang, hal yang",
+  "title_target": "Relativsætninger",
+  "goal": "Menyambungkan keterangan ke kata benda dengan *som*, *der*, *hvor*, dan *hvis* — dan tahu kapan kata penyambungnya boleh dihilangkan.",
+  "bekal": [
+    "membedakan *der* dan *som* menurut peran dalam anak kalimat",
+    "menghilangkan *som* ketika ia objek",
+    "memakai *hvor* untuk tempat dan *hvis* untuk kepemilikan",
+    "menerangkan orang, tempat, dan benda dalam satu kalimat panjang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Kaffe med en gammel bekendt",
+      "intro": "Ulangi unit 13: sebutkan lima rencana masa depan, dua dengan *skal*, dua dengan bentuk sekarang, satu dengan *vil*. Lalu: Rizky bertemu Nadia di kafe dan menceritakan orang yang baru ditemuinya.",
+      "lines": [
+        { "speaker": "Nadia:", "text": "Hvem var det, du snakkede med udenfor?", "id": "Tadi kamu ngobrol sama siapa di luar?", "literal": "siapa adalah-dulu itu, kamu berbicara-dulu dengan di-luar?" },
+        { "speaker": "Rizky:", "text": "Det var Søren, ham der arbejdede i receptionen sidste år.", "id": "Itu Søren, yang tahun lalu kerja di resepsionis.", "literal": "itu adalah-dulu Søren, dia di-sana bekerja-dulu di resepsi-itu tahun lalu." },
+        { "speaker": "Nadia:", "text": "Ham med det lange hår, som altid kom for sent?", "id": "Yang rambutnya panjang, yang selalu telat itu?", "literal": "dia dengan itu panjang rambut, yang selalu datang-dulu terlalu lambat?" },
+        { "speaker": "Rizky:", "text": "Præcis. Han har fået et job, som han faktisk kan lide.", "id": "Persis. Dia dapat kerjaan yang beneran dia suka.", "literal": "persis. dia punya mendapat satu kerja, yang dia sebenarnya bisa suka." },
+        { "speaker": "Nadia:", "text": "Hvor arbejder han nu?", "id": "Sekarang kerja di mana?", "literal": "di-mana bekerja dia sekarang?" },
+        { "speaker": "Rizky:", "text": "På et værksted i Viby, hvor de reparerer gamle cykler.", "id": "Di bengkel di Viby, tempat mereka benerin sepeda tua.", "literal": "pada satu bengkel di Viby, di-mana mereka memperbaiki tua sepeda-sepeda." },
+        { "speaker": "Nadia:", "text": "Det lyder som et sted, jeg gerne vil se.", "id": "Kedengarannya kayak tempat yang pengin aku lihat.", "literal": "itu berbunyi seperti satu tempat, saya dengan-senang-hati mau melihat." },
+        { "speaker": "Rizky:", "text": "Han er ham, hvis bror har det store værksted ved havnen.", "id": "Dia itu orang yang kakaknya punya bengkel besar di pelabuhan.", "literal": "dia adalah dia, yang-punya kakak punya itu besar bengkel di pelabuhan-itu." },
+        { "speaker": "Nadia:", "text": "Nu forstår jeg. Det er den familie, alle i byen kender.", "id": "Sekarang aku ngerti. Itu keluarga yang semua orang di kota kenal.", "literal": "sekarang memahami saya. itu adalah itu keluarga, semua di kota-itu mengenal." },
+        { "speaker": "Rizky:", "text": "Og det er også dem, der lavede cyklerne til festivalen.", "id": "Dan mereka juga yang bikin sepeda-sepeda buat festival.", "literal": "dan itu adalah juga mereka, yang membuat-dulu sepeda-sepeda-itu untuk festival-itu." },
+        { "speaker": "Nadia:", "text": "Dem, jeg så på pladsen? De var vildt flotte.", "id": "Yang aku lihat di alun-alun itu? Keren banget.", "literal": "mereka, saya melihat-dulu pada alun-alun-itu? mereka adalah-dulu liar bagus-bagus." },
+        { "speaker": "Rizky:", "text": "Ja. Søren siger, at de bruger et helt år på at bygge dem.", "id": "Iya. Søren bilang mereka butuh setahun penuh buat bikinnya.", "literal": "ya. Søren mengatakan, bahwa mereka memakai satu seluruh tahun pada untuk membangun mereka." },
+        { "speaker": "Nadia:", "text": "Så er der en historie, jeg gerne vil høre hele vejen igennem.", "id": "Berarti ada cerita yang pengin banget aku dengar lengkap.", "literal": "maka adalah di-sana satu cerita, saya dengan-senang-hati mau mendengar seluruh jalan melalui." }
+      ],
+      "notes": [
+        "🔑 **Kalimat relatif bahasa Denmark punya dua kata penyambung, dan pilihannya bergantung pada perannya:** ***der*** kalau ia menjadi **pelaku** anak kalimat, ***som*** kalau ia menjadi **objek**. *Manden, **der** bor her* (dialah yang tinggal) lawan *manden, **som** jeg mødte* (dia yang kutemui).",
+        "**Kabar baiknya: *som* boleh dipakai di dua-duanya.** *Manden, **som** bor her* juga benar. Yang **tidak** boleh adalah kebalikannya — *der* tak pernah bisa menjadi objek. Jadi kalau ragu, pakai *som* dan kamu selalu aman.",
+        "🔑 **Kalau ia objek, penyambungnya boleh dihilangkan sama sekali:** *bogen, (som) jeg læste* = buku yang kubaca. Persis seperti bahasa Inggris. ⚠️ Tapi kalau ia pelaku, ia **tak boleh** dihilangkan: *manden, der bor her* — membuangnya membuat kalimatnya runtuh.",
+        "***hvor*** dipakai untuk **tempat**: *et værksted, **hvor** de reparerer cykler*. Bahasa Indonesia memakai \"tempat\" atau \"di mana\"; bahasa Denmark memakai *hvor* dan tidak pernah *som* untuk itu.",
+        "***hvis*** dalam kalimat relatif berarti **\"yang … -nya\"**, menandai kepemilikan: *ham, **hvis** bror har værkstedet* = orang yang kakaknya punya bengkel itu. ⚠️ Jangan tertukar dengan *hvis* = kalau; keduanya ditulis sama persis dan hanya susunannya yang membedakan.",
+        "***Ham der …*** tanpa koma adalah bentuk percakapan yang sangat lazim untuk menunjuk orang: *ham der arbejdede i receptionen* = \"si yang dulu kerja di resepsionis itu\". Terdengar santai dan sangat wajar.",
+        "***kunne lide*** = suka. Selalu memakai kata bantu *kunne*, jadi bentuk dasarnya *at kunne lide* dan datidnya *kunne lide*. ⚠️ Jangan memakainya untuk orang yang kamu cintai — *jeg kan lide dig* jauh lebih ringan daripada *jeg elsker dig*, dan bedanya jauh.",
+        "***vildt flotte*** = keren banget. *Vildt* sebagai penguat adalah bahasa percakapan sehari-hari yang sangat lazim di kalangan muda, sekeluarga dengan *mega*, *super*, dan *helt vildt*."
+      ],
+      "grammars": [
+        {
+          "title": "der, som, atau tak ada sama sekali",
+          "body": [
+            "Tanyakan satu hal saja: dalam anak kalimatnya, kata itu pelaku atau objek?"
+          ],
+          "table": {
+            "head": ["Peran", "Boleh", "Contoh"],
+            "rows": [
+              ["pelaku", "**der** / **som**", "Manden, **der** bor her."],
+              ["pelaku", "❌ dihilangkan", "Manden, bor her. — salah"],
+              ["objek", "**som** / kosong", "Bogen, (**som**) jeg læste."],
+              ["objek", "❌ **der**", "Bogen, der jeg læste. — salah"],
+              ["sesudah kata depan", "**som**", "Huset, **som** jeg bor i."],
+              ["tempat", "**hvor**", "Byen, **hvor** jeg voksede op."],
+              ["kepemilikan", "**hvis**", "Manden, **hvis** bil blev stjålet."]
+            ]
+          },
+          "after": [
+            "🔑 Jalan aman yang selalu benar: **pakai *som* untuk semuanya kecuali tempat dan kepemilikan.** Kamu tak akan pernah salah, dan orang Denmark memakainya begitu juga dalam percakapan.",
+            "⚠️ Kata depan berdiri **di ujung** anak kalimat, bukan di depan penyambungnya: *huset, som jeg bor **i*** — bukan *i som jeg bor*. Susunan Denmark sama dengan bahasa Inggris sehari-hari di sini."
+          ]
+        },
+        {
+          "title": "Urutan kata di dalam kalimat relatif",
+          "body": [
+            "Kalimat relatif adalah **anak kalimat**, jadi seluruh aturan unit 4 berlaku penuh di dalamnya."
+          ],
+          "table": {
+            "head": ["Kalimat", "Letak ikke"],
+            "rows": [
+              ["Manden, der **ikke** sagde noget.", "sebelum kata kerja"],
+              ["Bogen, som jeg **ikke** har læst.", "sebelum *har*"],
+              ["Huset, hvor de **aldrig** bor om vinteren.", "*aldrig* ikut aturan sama"],
+              ["Kollegaen, som **altid** kommer for sent.", "*altid* juga"],
+              ["Byen, hvor jeg **ikke** kendte nogen.", "sebelum kata kerja"]
+            ]
+          },
+          "after": [
+            "Ini titik pertemuan dua pelajaran besar modul ini: kalimat relatif memperpanjang kalimatmu, dan letak *ikke* menjaga supaya perpanjangan itu tetap benar. Kalau salah satunya belum otomatis, kembalilah ke unit 4 sebentar.",
+            "Perhatikan bahwa **koma selalu dipasang** sebelum kalimat relatif dalam bahasa Denmark, berbeda dengan bahasa Inggris yang membedakan koma menurut jenisnya. Aturan koma Denmark memang lebih longgar sekarang, tapi koma sebelum anak kalimat masih dianggap baku."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Menerangkan orang dan tempat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Cara baca", "Arti"],
+          "rows": [
+            ["Det er ham, der bor ovenpå.", "ham dèr", "Itu orang yang tinggal di atas."],
+            ["Hun er den kollega, jeg spiser frokost med.", "ko-LEH-ga", "Dia rekan kerja yang aku makan siang bareng."],
+            ["Det er byen, hvor jeg voksede op.", "VOG-sedhe op", "Itu kota tempat aku dibesarkan."],
+            ["Kender du nogen, der taler indonesisk?", "NO-en", "Kenal orang yang bisa bahasa Indonesia?"],
+            ["Det er alt, hvad jeg ved.", "alt vadh", "Cuma itu yang aku tahu."],
+            ["Der er noget, jeg gerne vil spørge om.", "NO-edh", "Ada yang mau aku tanyakan."],
+            ["Hun er en, man kan stole på.", "STO-le po", "Dia orang yang bisa dipercaya."],
+            ["Det er den bedste café, jeg kender.", "ka-FEH", "Itu kafe terbaik yang aku tahu."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Sesudah *alt*, *noget*, *intet*, dan bentuk superlatif, penyambungnya bukan *som* melainkan *hvad*** — kalau ia menerangkan sesuatu yang tak berwujud: *alt, **hvad** jeg ved* = semua yang kutahu. Untuk benda yang bisa ditunjuk, *som* tetap benar: *noget, **som** jeg købte*. Perbedaan ini halus dan tidak akan membuatmu tak dimengerti; simpan saja sebagai kepekaan yang tumbuh belakangan."
+        }
+      ]
+    },
+    {
+      "title": "Menggabungkan dua kalimat menjadi satu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dua kalimat", "Menjadi satu"],
+          "rows": [
+            ["Jeg mødte en mand. Han bor i Viby.", "Jeg mødte en mand, **der** bor i Viby."],
+            ["Jeg læste en bog. Du gav mig den.", "Jeg læste bogen, (**som**) du gav mig."],
+            ["Vi var i en by. Jeg voksede op der.", "Vi var i byen, **hvor** jeg voksede op."],
+            ["Det er en kollega. Hans kone er læge.", "Det er en kollega, **hvis** kone er læge."],
+            ["Han har et job. Han kan lide det.", "Han har et job, (**som**) han kan lide."],
+            ["Jeg kender en café. Man kan arbejde der.", "Jeg kender en café, **hvor** man kan arbejde."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa kalimat relatif adalah lompatan A2 yang sesungguhnya",
+          "items": [
+            "**Ia mengubah cara orang mendengarmu.** Dua kalimat pendek berturut-turut terdengar seperti laporan; satu kalimat dengan *der* atau *som* di tengahnya terdengar seperti orang yang menguasai bahasanya.",
+            "**Ia juga membebaskanmu dari mengulang kata benda.** Tanpa kalimat relatif kamu terpaksa mengatakan \"aku bertemu seorang laki-laki. Laki-laki itu tinggal di Viby\" — dan pengulangan itulah yang paling cepat membuatmu terdengar seperti pemula.",
+            "🔑 Latihan yang bekerja: ambil dua kalimat pendek dari mana saja — buku, berita, catatanmu sendiri — dan gabungkan menjadi satu. Sepuluh pasang sehari selama dua minggu sudah cukup untuk membuatnya otomatis.",
+            "⚠️ Jangan menumpuk lebih dari satu kalimat relatif dalam satu kalimat pada tahap ini. *Manden, der bor i huset, som jeg købte, hvor…* benar secara tata bahasa dan tak bisa diikuti siapa pun."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en reception", "baca": "re-sep-SJON", "id": "resepsionis" },
+    { "da": "et hår", "baca": "hor", "id": "rambut" },
+    { "da": "at kunne lide", "baca": "KU-ne LI-dhe", "id": "menyukai" },
+    { "da": "et værksted", "baca": "VÈRK-stedh", "id": "bengkel" },
+    { "da": "at reparere", "baca": "re-pa-REH-re", "id": "memperbaiki" },
+    { "da": "en havn", "baca": "haun", "id": "pelabuhan" },
+    { "da": "en familie", "baca": "fa-MIL-ye", "id": "keluarga" },
+    { "da": "en festival", "baca": "FES-ti-val", "id": "festival" },
+    { "da": "en plads", "baca": "plas", "id": "alun-alun, tempat" },
+    { "da": "flot", "baca": "flot", "id": "bagus, keren" },
+    { "da": "at bygge", "baca": "BÜ-ge", "id": "membangun" },
+    { "da": "en historie", "baca": "his-TO-ri-e", "id": "cerita, sejarah" },
+    { "da": "igennem", "baca": "i-GEM", "id": "melalui, sampai habis" },
+    { "da": "at vokse op", "baca": "VOG-se op", "id": "tumbuh besar" },
+    { "da": "at stole på", "baca": "STO-le po", "id": "memercayai" },
+    { "da": "en bekendt", "baca": "be-KENT", "id": "kenalan" },
+    { "da": "en læge", "baca": "LÈ-e", "id": "dokter" },
+    { "da": "vildt", "baca": "vilt", "id": "banget (santai)" },
+    { "da": "at stjæle", "baca": "STJÈ-le", "id": "mencuri" },
+    { "da": "nogen", "baca": "NO-en", "id": "seseorang, ada yang" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *der*, *som*, *hvor*, atau *hvis*.",
+      "items": [
+        "Manden, ____ bor ovenpå, er meget venlig.",
+        "Bogen, ____ jeg læste i går, var god.",
+        "Det er byen, ____ jeg voksede op.",
+        "Kender du en kollega, ____ kone er læge?",
+        "Det er dem, ____ lavede cyklerne.",
+        "Caféen, ____ vi mødtes, er lukket nu."
+      ]
+    },
+    {
+      "prompt": "Gabungkan menjadi satu kalimat dengan kata penyambung yang tepat.",
+      "items": [
+        "Jeg mødte en mand. Han arbejder på et værksted.",
+        "Jeg læste en bog. Du gav mig den til jul.",
+        "Vi var i en by. Jeg boede der som barn.",
+        "Han har et job. Han kan lide det.",
+        "Jeg kender en café. Man kan arbejde der."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Itu Søren, yang tahun lalu kerja di resepsionis.",
+        "Dia dapat kerjaan yang beneran dia suka.",
+        "Di bengkel di Viby, tempat mereka benerin sepeda tua.",
+        "Itu keluarga yang semua orang di kota kenal.",
+        "Ada cerita yang pengin banget aku dengar lengkap."
+      ]
+    }
+  ],
+  "answers": [
+    "der — som — hvor — hvis — der — hvor",
+    "Jeg mødte en mand, der arbejder på et værksted. — Jeg læste bogen, som du gav mig til jul. — Vi var i byen, hvor jeg boede som barn. — Han har et job, som han kan lide. — Jeg kender en café, hvor man kan arbejde.",
+    "Det var Søren, ham der arbejdede i receptionen sidste år. — Han har fået et job, som han faktisk kan lide. — På et værksted i Viby, hvor de reparerer gamle cykler. — Det er den familie, alle i byen kender. — Der er en historie, jeg gerne vil høre hele vejen igennem."
+  ]
+}

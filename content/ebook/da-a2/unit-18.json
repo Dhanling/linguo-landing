@@ -1,0 +1,492 @@
+{
+  "title": "Kata depan waktu yang tak bisa ditebak",
+  "title_target": "Tidsudtryk",
+  "goal": "Memilih *i*, *om*, *på*, *til*, *for … siden* dengan benar — kelompok kata yang paling tak terduga dalam seluruh bahasa Denmark.",
+  "bekal": [
+    "membedakan *i går*, *i morges*, *i morgen*, *om morgenen*",
+    "memakai *om* untuk masa depan dan *for … siden* untuk masa lalu",
+    "menyebut lama kegiatan dengan *i* dan *på*",
+    "mengatur dan menggeser janji dengan tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Et møde der bliver flyttet tre gange",
+      "intro": "Ulangi unit 16: buat lima kalimat *hvis*, dua nyata dan tiga berandai. Lalu: Mette dan Rizky mencoba menemukan waktu untuk bertemu klien.",
+      "lines": [
+        {
+          "speaker": "Mette:",
+          "text": "Kunden ringede for en time siden. De kan ikke på torsdag alligevel.",
+          "id": "Kliennya telepon sejam lalu. Ternyata Kamis nggak bisa.",
+          "literal": "klien-itu menelepon-dulu untuk satu jam lalu. mereka bisa tidak pada Kamis toh."
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Igen? Vi flyttede det jo allerede i sidste uge.",
+          "id": "Lagi? Kan minggu lalu sudah digeser.",
+          "literal": "lagi? kami memindahkan-dulu itu kan sudah dalam lalu minggu."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Jeg ved det. Kan du på mandag om formiddagen?",
+          "id": "Aku tahu. Senin pagi bisa?",
+          "literal": "saya tahu itu. bisa kamu pada Senin pada pagi-itu?"
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Om formiddagen har jeg et andet møde. Men om eftermiddagen kan jeg godt.",
+          "id": "Pagi aku ada rapat lain. Tapi sorenya bisa.",
+          "literal": "pada pagi-itu punya saya satu lain rapat. tapi pada sore-itu bisa saya baik."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Perfekt. Klokken to? Så har vi to timer, inden jeg skal hjem.",
+          "id": "Mantap. Jam dua? Jadi kita punya dua jam sebelum aku pulang.",
+          "literal": "sempurna. pukul dua? maka punya kami dua jam, sebelum saya harus pulang."
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Det passer. Hvor længe har vi arbejdet på det her projekt nu?",
+          "id": "Cocok. Kita udah berapa lama sih ngerjain proyek ini?",
+          "literal": "itu cocok. berapa lama punya kami bekerja pada itu di-sini proyek sekarang?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "I syv måneder. Vi startede i februar.",
+          "id": "Tujuh bulan. Kami mulai Februari.",
+          "literal": "dalam tujuh bulan. kami memulai-dulu pada Februari."
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Og vi skulle være færdige på tre måneder.",
+          "id": "Dan harusnya selesai dalam tiga bulan.",
+          "literal": "dan kami harus-dulu adalah selesai pada tiga bulan."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Sådan går det altid. Til gengæld bliver det bedre, end vi planlagde.",
+          "id": "Selalu begitu. Tapi sebagai gantinya hasilnya lebih bagus dari rencana.",
+          "literal": "begitu pergi itu selalu. sebagai gantinya menjadi itu lebih-baik, daripada kami merencanakan-dulu."
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Det håber jeg. Skal vi sende dagsordenen i aften?",
+          "id": "Semoga. Kita kirim agendanya malam ini?",
+          "literal": "itu berharap saya. harus kami mengirim agenda-itu pada malam?"
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Send den i morgen tidlig. Ingen læser mails om aftenen.",
+          "id": "Kirim besok pagi aja. Nggak ada yang baca email malam-malam.",
+          "literal": "kirim ia besok awal. tidak-ada membaca email pada malam-itu."
+        },
+        {
+          "speaker": "Rizky:",
+          "text": "Det gjorde jeg i morges, og du svarede efter to minutter.",
+          "id": "Tadi pagi aku kirim, dan kamu bales dalam dua menit.",
+          "literal": "itu melakukan-dulu saya pagi-tadi, dan kamu menjawab-dulu sesudah dua menit."
+        },
+        {
+          "speaker": "Mette:",
+          "text": "Om morgenen læser vi alt. Om aftenen læser vi ingenting.",
+          "id": "Pagi hari kami baca semua. Malam hari nggak baca apa-apa.",
+          "literal": "pada pagi-itu membaca kami semua. pada malam-itu membaca kami tidak-apa-apa."
+        }
+      ],
+      "notes": [
+        "🔑 **Tiga kata yang ditulis nyaris sama dan artinya berjauhan:** ***i morgen*** = besok, ***i morges*** = tadi pagi, ***om morgenen*** = pada pagi hari (kebiasaan). Menambahkan satu huruf *s* memindahkan waktunya sehari penuh ke belakang.",
+        "**Pola *i …s* untuk masa lalu yang baru saja lewat:** *i morges* (tadi pagi), *i aftes* (tadi malam), *i nat* (semalam), *i går* (kemarin), *i lørdags* (Sabtu kemarin), *i sommers* (musim panas lalu). Akhiran *-s* inilah penanda \"yang barusan lewat\".",
+        "**Pola *om …en* untuk kebiasaan:** *om morgenen*, *om eftermiddagen*, *om aftenen*, *om natten*, *om sommeren*, *om lørdagen*. Ia berarti \"setiap\", bukan satu kejadian tertentu.",
+        "***om*** juga berarti \"sekian waktu lagi\": *om en time* = sejam lagi, *om tre uger* = tiga minggu lagi. Dua tugas *om* yang sangat berbeda, dan yang membedakan adalah kata yang menyusulnya — nama waktu berkata sandang berarti kebiasaan, angka berarti masa depan.",
+        "***for … siden*** untuk masa lalu: *for en time siden* = sejam yang lalu. ⚠️ *Siden* tak boleh dilupakan; *for en time* sendirian berarti \"untuk satu jam\" dan artinya melenceng.",
+        "🔑 ***i*** lawan ***på*** untuk lamanya kegiatan: ***i*** menyebut **berapa lama berlangsung** (*jeg arbejdede i tre timer*), ***på*** menyebut **berapa lama sampai selesai** (*jeg blev færdig på tre timer*). Bahasa Indonesia memakai \"selama\" untuk dua-duanya.",
+        "***i morgen tidlig*** = besok pagi. Perhatikan bahwa ia bukan *i morgen morgen* — bahasa Denmark memakai *tidlig* (awal) untuk itu. Saudaranya: *i morgen aften*, *i morgen eftermiddag*.",
+        "***til gengæld*** = sebagai gantinya, di sisi lain. Penyeimbang yang sangat sering dipakai untuk menambahkan sisi baik sesudah keluhan."
+      ],
+      "grammars": [
+        {
+          "title": "Peta kata depan waktu",
+          "body": [
+            "Kelompokkan menurut apa yang ingin kamu katakan, bukan menurut kata depannya."
+          ],
+          "table": {
+            "head": [
+              "Yang ingin dikatakan",
+              "Bentuk",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "hari ini / tahun ini",
+                "**i**",
+                "i dag, i aften, i år"
+              ],
+              [
+                "yang barusan lewat",
+                "**i …s**",
+                "i morges, i lørdags, i sommers"
+              ],
+              [
+                "kebiasaan",
+                "**om …en**",
+                "om morgenen, om lørdagen"
+              ],
+              [
+                "sekian waktu lagi",
+                "**om**",
+                "om en time, om tre uger"
+              ],
+              [
+                "sekian waktu yang lalu",
+                "**for … siden**",
+                "for to år **siden**"
+              ],
+              [
+                "hari tertentu nanti",
+                "**på**",
+                "på fredag, på mandag"
+              ],
+              [
+                "berapa lama berlangsung",
+                "**i**",
+                "**i** tre timer"
+              ],
+              [
+                "berapa lama sampai selesai",
+                "**på**",
+                "**på** tre timer"
+              ],
+              [
+                "sampai kapan",
+                "**til**",
+                "til klokken fem, til jul"
+              ],
+              [
+                "bulan dan musim",
+                "**i**",
+                "i august, i sommer"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan pasangan yang paling mahal salahnya: ***i tre timer*** = selama tiga jam (dan mungkin belum selesai) lawan ***på tre timer*** = dalam tiga jam (dan selesai). *Jeg læste bogen i tre timer* berarti aku membacanya tiga jam; *jeg læste bogen på tre timer* berarti aku menyelesaikannya dalam tiga jam.",
+            "***på fredag*** berarti Jumat yang akan datang; untuk Jumat yang barusan lewat dipakai ***i fredags***. Dua kata depan yang membelah waktu ke dua arah."
+          ]
+        },
+        {
+          "title": "Menyusun waktu dalam satu kalimat",
+          "body": [
+            "Kalau ada beberapa keterangan waktu, urutannya dari yang **kecil ke besar** — kebalikan dari bahasa Indonesia."
+          ],
+          "table": {
+            "head": [
+              "Susunan",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "jam → hari → tanggal",
+                "klokken to **på mandag den 5. maj**"
+              ],
+              [
+                "di ekor kalimat",
+                "Vi mødes **klokken to på mandag**."
+              ],
+              [
+                "di posisi pertama",
+                "**På mandag klokken to** mødes vi."
+              ],
+              [
+                "dua keterangan berbeda jenis",
+                "Jeg arbejdede **i tre timer i går**."
+              ],
+              [
+                "kebiasaan + waktu",
+                "Jeg løber **om morgenen hver dag**."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Ingat aturan unit 6: **cuma satu bagian yang boleh berdiri di posisi pertama.** *I går om morgenen cyklede jeg* salah kalau dianggap dua bagian — tapi *i går morges* adalah satu satuan dan boleh.",
+            "Tanggal ditulis dengan angka urut: *den 5. maj*, dibaca *den femte maj*. Tahun dibaca utuh: *1998* = *nitten hundrede og otteoghalvfems*, dan *2026* = *to tusind og seksogtyve*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengatur dan menggeser janji",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Dansk",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "Hvornår passer det dig?",
+              "vor-NOR PA-ser",
+              "Kapan cocok buatmu?"
+            ],
+            [
+              "Jeg kan når som helst efter fire.",
+              "nor som helst",
+              "Aku bisa kapan saja setelah jam empat."
+            ],
+            [
+              "Kan vi rykke det en time?",
+              "RÖ-ge",
+              "Bisa digeser sejam?"
+            ],
+            [
+              "Jeg bliver nødt til at aflyse.",
+              "NÖT til",
+              "Aku terpaksa membatalkan."
+            ],
+            [
+              "Kan vi tage det på et andet tidspunkt?",
+              "TIDHS-ponkt",
+              "Bisa waktu lain?"
+            ],
+            [
+              "Jeg er optaget hele formiddagen.",
+              "OP-ta-edh",
+              "Aku sibuk sepanjang pagi."
+            ],
+            [
+              "Lad os sige klokken halv tre.",
+              "lah os SI-e",
+              "Kita bilang setengah tiga aja."
+            ],
+            [
+              "Jeg sætter det i kalenderen.",
+              "ka-LEN-de-ren",
+              "Aku masukin kalender."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Bahasa Denmark membagi hari lebih rinci daripada bahasa Indonesia:** *morgen* (bangun tidur sampai sekitar jam 9), *formiddag* (jam 9 sampai 12), *middag* (tengah hari), *eftermiddag* (12 sampai 18), *aften* (18 sampai tidur), *nat* (tidur sampai bangun). ⚠️ *Formiddag* tak punya padanan Indonesia sama sekali, dan ia dipakai terus-menerus dalam mengatur janji kerja — jangan menerjemahkannya \"siang\", karena *middag* justru berarti tengah hari."
+        }
+      ]
+    },
+    {
+      "title": "Empat puluh keterangan waktu yang paling sering",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Masa lalu",
+            "Sekarang",
+            "Masa depan"
+          ],
+          "rows": [
+            [
+              "i går",
+              "i dag",
+              "i morgen"
+            ],
+            [
+              "i forgårs",
+              "lige nu",
+              "i overmorgen"
+            ],
+            [
+              "i morges",
+              "for tiden",
+              "i morgen tidlig"
+            ],
+            [
+              "i aftes",
+              "stadig",
+              "i aften"
+            ],
+            [
+              "i nat",
+              "endnu",
+              "i nat"
+            ],
+            [
+              "i sidste uge",
+              "denne uge",
+              "i næste uge"
+            ],
+            [
+              "sidste år",
+              "i år",
+              "næste år"
+            ],
+            [
+              "for længe siden",
+              "nu om dage",
+              "om lidt"
+            ],
+            [
+              "dengang",
+              "for øjeblikket",
+              "senere"
+            ],
+            [
+              "tidligere",
+              "samtidig",
+              "engang"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga kesalahan yang bertahan paling lama",
+          "items": [
+            "⚠️ ***I morgen*** dipakai untuk \"tadi pagi\". Kesalahan ini bertahan bertahun-tahun karena kalimatnya tetap masuk akal — lawan bicara cuma bingung sebentar lalu menebak sendiri. Latih pasangannya dengan sengaja: *i morges* lewat, *i morgen* belum.",
+            "⚠️ ***For to timer*** tanpa *siden*. Kalimatnya terdengar terpotong dan artinya berubah jadi \"untuk dua jam\".",
+            "⚠️ ***Om*** dipakai untuk masa lalu. *Om to år* berarti dua tahun **lagi**, tidak pernah dua tahun lalu. Untuk masa lalu selalu *for … siden*.",
+            "🔑 Latihan yang bekerja: setiap malam, ceritakan harimu dengan tiga keterangan waktu berbeda jenis — satu *i …s*, satu *om …en*, satu *for … siden*. Tiga kalimat sehari, dan dalam sebulan pilihannya menjadi otomatis."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "da": "alligevel",
+      "baca": "a-LI-e-vel",
+      "id": "toh, ternyata"
+    },
+    {
+      "da": "en formiddag",
+      "baca": "FOR-mi-dæ",
+      "id": "pagi menjelang siang"
+    },
+    {
+      "da": "perfekt",
+      "baca": "per-FEKT",
+      "id": "sempurna"
+    },
+    {
+      "da": "et projekt",
+      "baca": "pro-SJEKT",
+      "id": "proyek"
+    },
+    {
+      "da": "at starte",
+      "baca": "STAR-te",
+      "id": "memulai"
+    },
+    {
+      "da": "færdig",
+      "baca": "FÈR-di",
+      "id": "selesai"
+    },
+    {
+      "da": "til gengæld",
+      "baca": "til GEN-gel",
+      "id": "sebagai gantinya"
+    },
+    {
+      "da": "at planlægge",
+      "baca": "PLAN-le-ge",
+      "id": "merencanakan"
+    },
+    {
+      "da": "en dagsorden",
+      "baca": "DAUS-or-den",
+      "id": "agenda"
+    },
+    {
+      "da": "tidlig",
+      "baca": "TI-li",
+      "id": "awal, pagi-pagi"
+    },
+    {
+      "da": "en nat",
+      "baca": "nat",
+      "id": "malam (waktu tidur)"
+    },
+    {
+      "da": "et tidspunkt",
+      "baca": "TIDHS-ponkt",
+      "id": "saat, waktu"
+    },
+    {
+      "da": "optaget",
+      "baca": "OP-ta-edh",
+      "id": "sibuk, terpakai"
+    },
+    {
+      "da": "en kalender",
+      "baca": "ka-LEN-der",
+      "id": "kalender"
+    },
+    {
+      "da": "at blive nødt til",
+      "baca": "BLI-ve nöt til",
+      "id": "terpaksa"
+    },
+    {
+      "da": "i forgårs",
+      "baca": "i FOR-gors",
+      "id": "kemarin lusa"
+    },
+    {
+      "da": "i overmorgen",
+      "baca": "i O-ver-mor-en",
+      "id": "lusa"
+    },
+    {
+      "da": "samtidig",
+      "baca": "SAM-ti-dhi",
+      "id": "bersamaan"
+    },
+    {
+      "da": "for tiden",
+      "baca": "for TI-dhen",
+      "id": "belakangan ini"
+    },
+    {
+      "da": "om lidt",
+      "baca": "om lit",
+      "id": "sebentar lagi"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *i*, *om*, *på*, *til*, atau *for … siden*.",
+      "items": [
+        "Jeg løber ____ morgenen hver dag.",
+        "Vi ses ____ fredag.",
+        "Han ringede ____ en time ____.",
+        "Toget kommer ____ ti minutter.",
+        "Jeg arbejdede ____ tre timer i går.",
+        "Vi bliver her ____ klokken fem."
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang tepat di antara dua pilihan dalam kurung.",
+      "items": [
+        "Jeg sendte mailen ____ (i morges atau i morgen), og hun svarede straks.",
+        "Vi mødes ____ (i aftes atau i aften) klokken syv.",
+        "Jeg læste bogen ____ (i atau på) to dage og blev færdig.",
+        "Han flyttede til Danmark ____ (om tre år atau for tre år siden).",
+        "Butikken åbner ____ (i atau om) en halv time."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Kliennya telepon sejam lalu.",
+        "Pagi aku ada rapat lain, tapi sorenya bisa.",
+        "Kami mulai Februari, dan harusnya selesai dalam tiga bulan.",
+        "Kirim besok pagi aja.",
+        "Pagi hari kami baca semua, malam hari nggak baca apa-apa."
+      ]
+    }
+  ],
+  "answers": [
+    "om — på — for, siden — om — i — til",
+    "i morges — i aften — på — for tre år siden — om",
+    "Kunden ringede for en time siden. — Om formiddagen har jeg et andet møde, men om eftermiddagen kan jeg godt. — Vi startede i februar, og vi skulle være færdige på tre måneder. — Send den i morgen tidlig. — Om morgenen læser vi alt, om aftenen læser vi ingenting."
+  ]
+}

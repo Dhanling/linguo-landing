@@ -1,0 +1,199 @@
+{
+  "title": "Der dan det — dua kata kosong yang wajib ada",
+  "title_target": "Der eller det?",
+  "goal": "Memakai *der* dan *det* sebagai pelaku kosong: memperkenalkan hal baru, menyebut cuaca dan keadaan, dan menjawab dengan *det* tanpa mengulang seluruh kalimat.",
+  "bekal": [
+    "membedakan *der er* dan *det er*",
+    "memperkenalkan sesuatu yang baru dengan *der*",
+    "memakai *det* untuk mengulang kalimat sebelumnya",
+    "mencari dan menanyakan tempat tinggal"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Jagten på en lejlighed",
+      "intro": "Ulangi unit 5: jelaskan dengan lantang tiga alasan kenapa kamu belajar bahasa Denmark, pakai *fordi* dan *derfor* bergantian. Lalu: Rizky menelepon calon pemilik apartemen.",
+      "lines": [
+        { "speaker": "Rizky:", "text": "Goddag, jeg ringer om lejligheden på Nørregade. Er den stadig ledig?", "id": "Selamat siang, saya menelepon soal apartemen di Nørregade. Masih kosong?", "literal": "selamat-siang, saya menelepon tentang apartemen-itu di Nørregade. adalah ia masih kosong?" },
+        { "speaker": "Udlejer:", "text": "Ja, der er stadig to lejligheder tilbage. Hvornår kan du flytte ind?", "id": "Ya, masih ada dua apartemen tersisa. Kapan Anda bisa pindah?", "literal": "ya, di-sana adalah masih dua apartemen tersisa. kapan bisa kamu pindah masuk?" },
+        { "speaker": "Rizky:", "text": "Fra den første i næste måned. Er det muligt?", "id": "Mulai tanggal satu bulan depan. Bisa?", "literal": "dari itu pertama di berikutnya bulan. adalah itu mungkin?" },
+        { "speaker": "Udlejer:", "text": "Det tror jeg godt. Der er bare et par ting, du skal vide.", "id": "Saya rasa bisa. Cuma ada beberapa hal yang perlu Anda tahu.", "literal": "itu mengira saya baik. di-sana adalah hanya satu pasang hal, kamu harus tahu." },
+        { "speaker": "Rizky:", "text": "Det lyder ikke helt godt. Hvad drejer det sig om?", "id": "Kedengarannya nggak enak. Soal apa ya?", "literal": "itu berbunyi tidak sepenuhnya bagus. apa memutar itu diri tentang?" },
+        { "speaker": "Udlejer:", "text": "Der er ingen elevator, og lejligheden ligger på fjerde sal.", "id": "Nggak ada lift, dan apartemennya di lantai empat.", "literal": "di-sana adalah tidak-ada lift, dan apartemen-itu terletak pada keempat lantai." },
+        { "speaker": "Rizky:", "text": "Det gør ikke noget. Er der vaskemaskine i kælderen?", "id": "Nggak masalah. Ada mesin cuci di basement?", "literal": "itu melakukan tidak sesuatu. adalah di-sana mesin-cuci di ruang-bawah-itu?" },
+        { "speaker": "Udlejer:", "text": "Det er der. Og der kommer en ny opgang næste år.", "id": "Ada. Dan tahun depan bakal ada tangga baru.", "literal": "itu adalah di-sana. dan di-sana datang satu baru tangga tahun berikutnya." },
+        { "speaker": "Rizky:", "text": "Hvor meget er depositummet?", "id": "Depositnya berapa?", "literal": "berapa banyak adalah deposit-itu?" },
+        { "speaker": "Udlejer:", "text": "Tre måneders husleje. Det er desværre helt normalt herhjemme.", "id": "Tiga bulan sewa. Sayangnya di sini itu wajar banget.", "literal": "tiga bulan-punya sewa. itu adalah sayangnya sepenuhnya normal di-sini-rumah." },
+        { "speaker": "Rizky:", "text": "Det havde jeg regnet med. Er der noget, jeg skal medbringe?", "id": "Sudah kuduga. Ada yang perlu saya bawa?", "literal": "itu punya-dulu saya menghitung dengan. adalah di-sana sesuatu, saya harus membawa?" },
+        { "speaker": "Udlejer:", "text": "Ja, tag lønsedler med. Det kræver vi altid.", "id": "Ya, bawa slip gaji. Kami selalu minta itu.", "literal": "ya, ambil slip-gaji bersama. itu menuntut kami selalu." },
+        { "speaker": "Rizky:", "text": "Det er i orden. Så ses vi på lørdag.", "id": "Baik. Sampai ketemu Sabtu kalau begitu.", "literal": "itu adalah dalam keteraturan. maka terlihat kami pada Sabtu." }
+      ],
+      "notes": [
+        "🔑 **Aturan intinya:** ***der* memperkenalkan sesuatu yang baru**, ***det* menunjuk balik ke sesuatu yang sudah disebut** atau ke keadaan umum. *Der er en vaskemaskine* = ada mesin cuci (kabar baru). *Det er en vaskemaskine* = itu adalah mesin cuci (menunjuk benda yang sudah kelihatan).",
+        "**Kalau kalimatmu berisi *en* atau *et* atau *ingen*, hampir pasti *der*.** Benda tak tentu = benda baru = *der*. Kalau berisi kata sandang tentu, kata milik, atau nama, hampir pasti *det*.",
+        "***Der* bukan cuma untuk *være*.** Ia bekerja dengan kata kerja mana pun yang memperkenalkan hal baru: *der **kommer** en ny opgang*, *der **skete** noget*, *der **bor** mange studerende her*, *der **mangler** en nøgle*.",
+        "***Det gør ikke noget*** = tidak apa-apa, tidak masalah. Ungkapan beku yang akan kamu pakai berkali-kali sehari. Saudaranya *det betyder ikke noget* (itu tidak penting).",
+        "***Det er der.*** Jawaban pendek yang sangat Denmark: *det* menunjuk balik ke mesin cuci yang barusan ditanyakan, *der* menegaskan keberadaannya. Harfiahnya \"itu ada di sana\", maksudnya \"ada, kok\".",
+        "***Hvad drejer det sig om?*** = \"soal apa ini?\". *Dreje sig om* adalah kata kerja refleksif — unit 11 mengurus keluarga besarnya.",
+        "***Det havde jeg regnet med.*** *Regne med* = memperhitungkan, menduga. Perhatikan *det* di posisi pertama: ia mengulang seluruh kalimat lawan bicara, dan pemakaian seperti inilah yang membuat percakapan terdengar mengalir.",
+        "⚠️ **Deposit tiga bulan memang lazim di Denmark**, dan sering ditambah *forudbetalt husleje* (sewa dibayar di muka) satu sampai tiga bulan lagi. Artinya pindah apartemen bisa menuntut lima sampai enam kali sewa bulanan sekaligus. Ini bukan penipuan — tanyakan saja kuitansi dan kontraknya, yang di Denmark disebut *lejekontrakt*."
+      ],
+      "grammars": [
+        {
+          "title": "Kapan der, kapan det",
+          "body": [
+            "Tabel ini menyelesaikan salah satu kesalahan paling awet penutur Indonesia — karena bahasa kita tak punya pelaku kosong sama sekali."
+          ],
+          "table": {
+            "head": ["Pakai", "Kalau kamu ingin", "Contoh"],
+            "rows": [
+              ["**der**", "memperkenalkan benda baru", "**Der** er en café på hjørnet."],
+              ["**der**", "mengatakan tidak ada", "**Der** er ingen elevator."],
+              ["**der**", "menyebut kejadian yang muncul", "**Der** skete noget i går."],
+              ["**det**", "menunjuk benda yang sudah disebut", "**Det** er min cykel."],
+              ["**det**", "cuaca, waktu, suhu", "**Det** regner. **Det** er koldt."],
+              ["**det**", "mengulang seluruh kalimat", "**Det** ved jeg ikke."],
+              ["**det**", "menilai suatu keadaan", "**Det** er svært at lære."]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan pasangan yang paling menjebak: ***Der* er en fejl** (ada sebuah kesalahan — kabar baru) lawan ***Det* er en fejl** (itu sebuah kesalahan — menilai sesuatu yang sudah dibicarakan). Kedua kalimat benar, artinya berbeda jauh.",
+            "🔑 Uji cepat: bisakah kalimatnya diawali \"ada …\" dalam bahasa Indonesia? Kalau ya, pakai **der**. Bisakah diawali \"itu …\" atau \"hal itu …\"? Kalau ya, pakai **det**."
+          ]
+        },
+        {
+          "title": "Der di posisi kedua",
+          "body": [
+            "Kalau ada keterangan yang berdiri di depan, *der* mundur bersama pelaku — persis seperti pelaku biasa."
+          ],
+          "table": {
+            "head": ["Susunan", "Contoh"],
+            "rows": [
+              ["biasa", "**Der er** to lejligheder tilbage."],
+              ["dengan keterangan di depan", "I huset **er der** to lejligheder tilbage."],
+              ["pertanyaan", "**Er der** en elevator?"],
+              ["dengan ikke", "**Der er ikke** nogen elevator."],
+              ["anak kalimat", "…at **der ikke er** nogen elevator."],
+              ["perfektum", "**Der er kommet** et brev til dig."]
+            ]
+          },
+          "after": [
+            "Perhatikan baris terakhir: dalam anak kalimat, *ikke* melompat ke depan kata kerja seperti biasa — dan *der* tetap di depannya. Urutannya **der – ikke – kerja**.",
+            "***Der er kommet et brev*** memakai *er* karena *komme* adalah kata kerja perpindahan. Bandingkan *der har været et problem* (ada masalah) yang memakai *har*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mencari tempat tinggal",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Cara baca", "Arti"],
+          "rows": [
+            ["Er lejligheden stadig ledig?", "LAI-li-hedhen, LEH-dhi", "Apartemennya masih kosong?"],
+            ["Hvad er huslejen om måneden?", "HUS-lai-en", "Sewanya berapa per bulan?"],
+            ["Er varme og vand inkluderet?", "VAR-me o van", "Pemanas dan air termasuk?"],
+            ["Hvor stort er depositummet?", "de-PO-si-tom-medh", "Depositnya berapa?"],
+            ["Er der en altan?", "al-TAN", "Ada balkon?"],
+            ["Hvor lang er opsigelsen?", "OP-si-el-sen", "Masa pemberitahuan keluarnya berapa lama?"],
+            ["Må man have husdyr?", "HUS-dür", "Boleh pelihara hewan?"],
+            ["Kan jeg se den i weekenden?", "seh den", "Bisa saya lihat akhir pekan ini?"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Kosakata perumahan Denmark yang perlu kamu bedakan:** *lejlighed* = apartemen sewa; *andelsbolig* = apartemen koperasi, kamu membeli hak tinggal tapi bukan propertinya; *ejerlejlighed* = apartemen milik; *kollegium* = asrama mahasiswa; *værelse* = satu kamar di rumah orang. ⚠️ Yang paling sering disalahpahami pendatang adalah *andelsbolig* — harganya jauh lebih murah daripada apartemen milik, tapi ada iuran bulanan (*boligafgift*) dan daftar tunggu yang bisa bertahun-tahun."
+        }
+      ]
+    },
+    {
+      "title": "Menjawab dengan det",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Pertanyaan", "Jawaban dengan det"],
+          "rows": [
+            ["Kommer du på lørdag?", "**Det** gør jeg. / **Det** kan jeg ikke."],
+            ["Har du set filmen?", "**Det** har jeg. / **Det** har jeg ikke."],
+            ["Er det dyrt?", "**Det** synes jeg. / **Det** er det ikke."],
+            ["Skal du arbejde i morgen?", "**Det** skal jeg desværre."],
+            ["Ved du, hvor stationen er?", "**Det** ved jeg ikke."],
+            ["Bor du i Aarhus?", "**Det** gør jeg."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa jawaban det terdengar jauh lebih Denmark",
+          "items": [
+            "Bahasa Denmark tidak menjawab dengan mengulang seluruh kalimat, dan juga tidak cuma dengan *ja*. Yang wajar adalah **det + kata kerja bantu + pelaku**: *Det gør jeg.*",
+            "Kalau kalimatnya tak punya kata bantu, dipakailah ***gøre***: *Bor du her? — Det gør jeg.* Persis seperti \"do\" dalam bahasa Inggris.",
+            "⚠️ Menjawab pertanyaan negatif memerlukan **jo**, bukan *ja*: *Kommer du ikke? — **Jo**, det gør jeg.* Menjawab *ja* di situ terdengar salah bagi orang Denmark, dan ini kesalahan yang bertahan sangat lama pada pelajar asing.",
+            "Kebiasaan ini bisa dilatih sendirian: setiap kali kamu membaca pertanyaan di modul ini, jawablah dengan lantang dalam bentuk *det …*, walaupun jawabannya tidak diminta."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en lejlighed", "baca": "LAI-li-hedh", "id": "apartemen" },
+    { "da": "ledig", "baca": "LEH-dhi", "id": "kosong, tersedia" },
+    { "da": "en udlejer", "baca": "UDH-lai-er", "id": "pemilik sewa" },
+    { "da": "mulig", "baca": "MU-li", "id": "mungkin" },
+    { "da": "en elevator", "baca": "e-le-VA-tor", "id": "lift" },
+    { "da": "en sal", "baca": "sal", "id": "lantai (tingkat)" },
+    { "da": "en vaskemaskine", "baca": "VAS-ge-ma-ski-ne", "id": "mesin cuci" },
+    { "da": "en kælder", "baca": "KEL-ler", "id": "ruang bawah tanah" },
+    { "da": "en opgang", "baca": "OP-gang", "id": "tangga, lorong masuk" },
+    { "da": "et depositum", "baca": "de-PO-si-tom", "id": "uang jaminan" },
+    { "da": "en husleje", "baca": "HUS-lai-e", "id": "sewa rumah" },
+    { "da": "normal", "baca": "nor-MAL", "id": "normal" },
+    { "da": "at regne med", "baca": "RAI-ne medh", "id": "menduga, mengandalkan" },
+    { "da": "at medbringe", "baca": "MEDH-bring-e", "id": "membawa serta" },
+    { "da": "en lønseddel", "baca": "LÖN-se-dhel", "id": "slip gaji" },
+    { "da": "at kræve", "baca": "KRÈ-ve", "id": "menuntut, mensyaratkan" },
+    { "da": "en altan", "baca": "al-TAN", "id": "balkon" },
+    { "da": "en opsigelse", "baca": "OP-si-el-se", "id": "pemberitahuan berhenti" },
+    { "da": "et husdyr", "baca": "HUS-dür", "id": "hewan peliharaan" },
+    { "da": "varme", "baca": "VAR-me", "id": "pemanas, panas" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *der* atau *det*.",
+      "items": [
+        "____ er ingen elevator i huset.",
+        "____ regner hele dagen i dag.",
+        "____ kommer et brev til dig.",
+        "____ er min cykel, ikke din.",
+        "____ er svært at finde en lejlighed.",
+        "____ bor mange studerende i den gade."
+      ]
+    },
+    {
+      "prompt": "Jawab dengan bentuk pendek yang memakai *det*.",
+      "items": [
+        "Kommer du på lørdag? (ya)",
+        "Har du set filmen? (tidak)",
+        "Bor du i Aarhus? (ya)",
+        "Ved du, hvor stationen er? (tidak)",
+        "Kommer du ikke i aften? (ya, aku datang)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Masih ada dua apartemen tersisa.",
+        "Nggak ada lift, dan apartemennya di lantai empat.",
+        "Nggak masalah.",
+        "Ada mesin cuci di basement?",
+        "Sayangnya di sini itu wajar banget."
+      ]
+    }
+  ],
+  "answers": [
+    "Der — Det — Der — Det — Det — Der",
+    "Det gør jeg. — Det har jeg ikke. — Det gør jeg. — Det ved jeg ikke. — Jo, det gør jeg.",
+    "Der er stadig to lejligheder tilbage. — Der er ingen elevator, og lejligheden ligger på fjerde sal. — Det gør ikke noget. — Er der vaskemaskine i kælderen? — Det er desværre helt normalt herhjemme."
+  ]
+}

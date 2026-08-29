@@ -1,0 +1,199 @@
+{
+  "title": "Tidak boleh, tidak perlu, tidak usah",
+  "title_target": "Må ikke, behøver ikke, skal ikke",
+  "goal": "Membedakan larangan dari ketidakperluan — jebakan terbesar kata kerja bantu — dan memakai kata bantu dalam bentuk lampau dan perfektum.",
+  "bekal": [
+    "membedakan *må ikke*, *behøver ikke*, *skal ikke*",
+    "memakai *kunne, skulle, ville, måtte, burde* dalam kalimat lampau",
+    "menyusun *har skullet* dan *havde kunnet*",
+    "membaca dan menjelaskan peraturan rumah susun"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Husorden og affaldssortering",
+      "intro": "Ulangi unit 10: ceritakan tiga anggota keluargamu, dan pastikan *sin* dan *hendes* di tempat yang benar. Lalu: tetangga di lantai bawah menjelaskan aturan gedung kepada Rizky yang baru pindah.",
+      "lines": [
+        { "speaker": "Lone:", "text": "Velkommen til opgangen! Har du fået husordenen?", "id": "Selamat datang di gedung ini! Sudah dapat aturan rumahnya?", "literal": "selamat-datang kepada lorong-itu! punya kamu mendapat rumah-aturan-itu?" },
+        { "speaker": "Rizky:", "text": "Ja, men jeg forstod ikke det hele. Må man ikke vaske om aftenen?", "id": "Sudah, tapi aku nggak ngerti semuanya. Nggak boleh nyuci malam?", "literal": "ya, tapi saya memahami-dulu tidak itu seluruh. boleh orang tidak mencuci pada malam-itu?" },
+        { "speaker": "Lone:", "text": "Man må ikke vaske efter klokken 22. Før det er der ingen problemer.", "id": "Nggak boleh nyuci setelah jam 10 malam. Sebelum itu nggak masalah.", "literal": "orang boleh tidak mencuci sesudah pukul 22. sebelum itu adalah di-sana tidak-ada masalah." },
+        { "speaker": "Rizky:", "text": "Og skal jeg bestille tid til vaskemaskinen?", "id": "Terus perlu booking waktu buat mesin cucinya?", "literal": "dan harus saya memesan waktu untuk mesin-cuci-itu?" },
+        { "speaker": "Lone:", "text": "Du behøver ikke at bestille. Der er sjældent kø.", "id": "Nggak perlu booking. Jarang antre kok.", "literal": "kamu perlu tidak untuk memesan. di-sana adalah jarang antrean." },
+        { "speaker": "Rizky:", "text": "Godt. Jeg troede, at jeg skulle skrive mig på en liste.", "id": "Bagus. Aku kira aku harus daftar di list.", "literal": "bagus. saya mengira-dulu, bahwa saya harus-dulu menulis diri pada satu daftar." },
+        { "speaker": "Lone:", "text": "Det skulle man før i tiden. Nu er der bare et skilt på døren.", "id": "Dulu memang gitu. Sekarang cuma ada papan di pintunya.", "literal": "itu harus-dulu orang sebelum dalam waktu-itu. sekarang adalah di-sana hanya satu papan pada pintu-itu." },
+        { "speaker": "Rizky:", "text": "Hvad med affaldet? Jeg har aldrig kunnet finde ud af sorteringen.", "id": "Kalau sampah gimana? Aku nggak pernah bisa paham cara milahnya.", "literal": "apa dengan sampah-itu? saya punya tidak-pernah bisa menemukan keluar dari pemilahan-itu." },
+        { "speaker": "Lone:", "text": "Det er ikke svært. Men du må ikke smide pizzabakker i papir.", "id": "Nggak susah kok. Tapi kardus pizza nggak boleh masuk kertas.", "literal": "itu adalah tidak sulit. tapi kamu boleh tidak melempar pizza-nampan dalam kertas." },
+        { "speaker": "Rizky:", "text": "Hvorfor egentlig ikke?", "id": "Sebenarnya kenapa nggak boleh?", "literal": "mengapa sebenarnya tidak?" },
+        { "speaker": "Lone:", "text": "Fedtet ødelægger genbrugspapiret. Det burde de skrive tydeligere.", "id": "Minyaknya merusak kertas daur ulang. Harusnya mereka tulis lebih jelas.", "literal": "lemak-itu merusak daur-ulang-kertas-itu. itu sebaiknya mereka menulis lebih-jelas." },
+        { "speaker": "Rizky:", "text": "Det synes jeg også. Jeg har smidt dem forkert i seks måneder.", "id": "Setuju banget. Enam bulan aku salah buang terus.", "literal": "itu berpendapat saya juga. saya punya melempar mereka salah dalam enam bulan." },
+        { "speaker": "Lone:", "text": "Det har vi alle. Du skal bare ikke sige det til viceværten.", "id": "Semua orang gitu. Cuma jangan bilang ke penjaga gedung.", "literal": "itu punya kami semua. kamu harus hanya tidak mengatakan itu kepada penjaga-gedung-itu." }
+      ],
+      "notes": [
+        "🔑 **Jebakan terbesar seluruh unit ini:** ***må ikke* = tidak BOLEH** (larangan), sedangkan ***behøver ikke* = tidak PERLU** (kebebasan). Dua kalimat yang bagi telinga Indonesia terdengar mirip dan artinya berlawanan sepenuhnya. *Du må ikke vaske* = kamu dilarang mencuci. *Du behøver ikke at vaske* = kamu tidak usah mencuci.",
+        "***skal ikke*** berada di antara keduanya: \"tidak usah\" atau \"jangan\", tergantung nada. *Du skal ikke bekymre dig* = jangan khawatir. Dalam praktik, ia terasa lebih tegas daripada *behøver ikke* dan lebih halus daripada *må ikke*.",
+        "***må*** sendiri punya dua arti yang bertolak belakang: **boleh** (*må jeg komme ind?*) dan **terpaksa** (*jeg må gå nu*). Yang membedakan cuma konteks. Untungnya bentuk negatifnya cuma satu arti — larangan.",
+        "***behøver*** boleh diikuti *at* atau tidak: *du behøver ikke (at) bestille*. Dalam percakapan *at*-nya sering hilang; dalam tulisan sebaiknya ditulis.",
+        "***Det skulle man før i tiden.*** *Før i tiden* = zaman dulu, dahulu kala. Perhatikan bahwa *skulle* di sini bukan \"akan\", melainkan \"dulu harus\" — kata bantu bahasa Denmark memakai bentuk datid untuk kewajiban masa lalu.",
+        "***har kunnet***, ***har skullet***, ***har måttet*** adalah bentuk perfektum kata bantu. Bentuk ini terlihat aneh pada mulanya karena bahasa Indonesia tak punya padanannya, tapi dipakai cukup sering: *jeg har aldrig kunnet lide kaffe* (aku tak pernah bisa suka kopi).",
+        "***finde ud af*** = memahami, mengetahui setelah mencari tahu. Tiga kata yang membentuk satu makna. Datidnya *fandt ud af*.",
+        "⚠️ **Pemilahan sampah di Denmark sungguh-sungguh diberlakukan** dan berbeda antarkota. Umumnya ada *restaffald*, *madaffald*, *papir*, *pap*, *plast*, *metal*, *glas*, dan *farligt affald*. Kotak pizza berminyak memang tidak boleh masuk *papir* — lemaknya merusak proses daur ulang, dan tetanggamu benar-benar akan memberitahumu kalau kamu salah."
+      ],
+      "grammars": [
+        {
+          "title": "Larangan lawan ketidakperluan",
+          "body": [
+            "Baca tabel ini beberapa kali. Kesalahan di sini bukan kesalahan tata bahasa, melainkan kesalahan arti — dan bisa berakibat sungguhan."
+          ],
+          "table": {
+            "head": ["Bentuk", "Arti", "Contoh"],
+            "rows": [
+              ["**må ikke**", "tidak boleh, dilarang", "Du **må ikke** parkere her."],
+              ["**behøver ikke**", "tidak perlu", "Du **behøver ikke** at komme."],
+              ["**skal ikke**", "tidak usah, jangan", "Du **skal ikke** være nervøs."],
+              ["**kan ikke**", "tidak bisa", "Jeg **kan ikke** komme."],
+              ["**vil ikke**", "tidak mau", "Han **vil ikke** hjælpe."],
+              ["**bør ikke**", "sebaiknya jangan", "Du **bør ikke** spise det."]
+            ]
+          },
+          "after": [
+            "⚠️ Perhatikan bahwa ***må ikke*** dan ***behøver ikke*** dua-duanya bisa diterjemahkan \"tidak usah\" oleh penutur Indonesia yang tidak berhati-hati. Kalau kamu mengatakan *du må ikke betale* padahal maksudmu \"kamu tidak usah bayar\", lawan bicaramu mendengar \"kamu dilarang membayar\".",
+            "🔑 Jalan aman kalau ragu: pakai ***du behøver ikke*** untuk membebaskan, dan ***det er ikke tilladt*** (tidak diizinkan) untuk melarang. Dua bentuk yang tak bisa disalahpahami."
+          ]
+        },
+        {
+          "title": "Kata bantu dalam tiga waktu",
+          "body": [
+            "Semua kata bantu punya bentuk lampau dan perfektum, dan bentuk perfektumnya diakhiri *-et*."
+          ],
+          "table": {
+            "head": ["Sekarang", "Datid", "Perfektum", "Arti"],
+            "rows": [
+              ["kan", "kunne", "har **kunnet**", "bisa"],
+              ["skal", "skulle", "har **skullet**", "harus"],
+              ["vil", "ville", "har **villet**", "mau"],
+              ["må", "måtte", "har **måttet**", "boleh, terpaksa"],
+              ["bør", "burde", "har **burdet**", "sebaiknya"],
+              ["tør", "turde", "har **turdet**", "berani"],
+              ["behøver", "behøvede", "har **behøvet**", "perlu"]
+            ]
+          },
+          "after": [
+            "⚠️ Bentuk perfektum kata bantu **tidak dipakai bersama kata kerja utamanya dalam bentuk perfektum juga**. Yang benar: *jeg har **skullet** arbejde* (aku terpaksa bekerja), bukan *jeg har skullet arbejdet*. Kata kerja keduanya tetap bentuk dasar.",
+            "***Burde*** dan ***skulle*** dalam bentuk datid sering berarti \"seharusnya\" untuk masa kini, bukan masa lalu: *Du **burde** ringe til hende* = kamu sebaiknya menelepon dia (sekarang). Ini pemakaian yang sangat lazim dan sedikit membingungkan pada mulanya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Aturan dan larangan sehari-hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Cara baca", "Arti"],
+          "rows": [
+            ["Man må ikke ryge indendørs.", "RÜ-e IN-en-dörs", "Dilarang merokok di dalam ruangan."],
+            ["Der er cykelforbud på fortovet.", "SÜ-gel-for-budh", "Dilarang bersepeda di trotoar."],
+            ["Du skal sortere dit affald.", "sor-TEH-re, A-fal", "Sampahmu harus dipilah."],
+            ["Det er ikke tilladt at parkere her.", "til-LADT", "Parkir di sini tidak diizinkan."],
+            ["Husk at lukke porten.", "POR-ten", "Jangan lupa tutup gerbangnya."],
+            ["Der skal være ro efter klokken 22.", "ro", "Setelah jam 10 malam harus tenang."],
+            ["Du behøver ikke at melde dig.", "MEL-e dai", "Kamu nggak perlu daftar."],
+            ["Man skal helst give besked.", "be-SKEDH", "Sebaiknya memberi kabar."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "***Man*** adalah pelaku yang paling sering dipakai dalam aturan tertulis Denmark, dan ia terdengar netral — bukan menuduh siapa-siapa. Menerjemahkan aturan dengan *du* (*du må ikke ryge*) terdengar lebih langsung dan sedikit menegur; dengan *man* ia menjadi kenyataan umum. Perbedaan nada ini penting kalau kamu perlu menegur tetangga."
+        }
+      ]
+    },
+    {
+      "title": "Kata bantu dalam kalimat lampau",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Arti", "Catatan"],
+          "rows": [
+            ["Jeg **skulle** arbejde i går.", "Kemarin aku harus kerja.", "kewajiban lampau"],
+            ["Jeg **kunne** ikke komme.", "Aku nggak bisa datang.", "kemampuan lampau"],
+            ["Jeg **måtte** gå tidligt.", "Aku terpaksa pulang cepat.", "*måtte* = terpaksa"],
+            ["Jeg **ville** gerne have hjulpet.", "Aku sebenarnya mau bantu.", "keinginan yang tak terwujud"],
+            ["Jeg **burde** have ringet.", "Harusnya aku telepon.", "penyesalan"],
+            ["Jeg **har måttet** vente i to timer.", "Aku terpaksa nunggu dua jam.", "perfektum"],
+            ["Jeg **havde skullet** af sted kl. 7.", "Harusnya aku berangkat jam 7.", "førdatid"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bentuk penyesalan yang sangat berguna",
+          "items": [
+            "***burde have + tillægsform*** = seharusnya sudah. *Jeg **burde have ringet*** = harusnya aku menelepon (tapi tidak). Bentuk ini muncul di hampir tiap permintaan maaf yang serius.",
+            "***skulle have + tillægsform*** hampir sama artinya, tapi terdengar sedikit lebih menyalahkan: *Du **skulle have sagt** det* = kamu mestinya bilang.",
+            "***kunne have + tillægsform*** = bisa saja, tapi tidak jadi. *Vi **kunne have taget** toget* = kita sebenarnya bisa naik kereta.",
+            "⚠️ Perhatikan bahwa ketiga pola memakai ***have***, bukan *har*. Ini bentuk dasar, karena ia mengikuti kata bantu. Kesalahan *burde har ringet* sangat sering dan langsung terdengar."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en husorden", "baca": "HUS-or-den", "id": "peraturan rumah" },
+    { "da": "at vaske", "baca": "VAS-ge", "id": "mencuci" },
+    { "da": "at bestille", "baca": "be-STI-le", "id": "memesan" },
+    { "da": "sjældent", "baca": "SJEL-ent", "id": "jarang" },
+    { "da": "en liste", "baca": "LIS-te", "id": "daftar" },
+    { "da": "et skilt", "baca": "skilt", "id": "papan tanda" },
+    { "da": "et affald", "baca": "A-fal", "id": "sampah" },
+    { "da": "at sortere", "baca": "sor-TEH-re", "id": "memilah" },
+    { "da": "at smide", "baca": "SMI-dhe", "id": "membuang, melempar" },
+    { "da": "et fedt", "baca": "fedt", "id": "lemak, minyak" },
+    { "da": "at ødelægge", "baca": "Ö-dhe-le-ge", "id": "merusak" },
+    { "da": "et genbrug", "baca": "GEN-brugh", "id": "daur ulang" },
+    { "da": "forkert", "baca": "for-KERT", "id": "salah, keliru" },
+    { "da": "en vicevært", "baca": "VI-se-vèrt", "id": "penjaga gedung" },
+    { "da": "at ryge", "baca": "RÜ-e", "id": "merokok" },
+    { "da": "et fortov", "baca": "FOR-tou", "id": "trotoar" },
+    { "da": "tilladt", "baca": "til-LADT", "id": "diizinkan" },
+    { "da": "en port", "baca": "port", "id": "gerbang" },
+    { "da": "en besked", "baca": "be-SKEDH", "id": "pesan, kabar" },
+    { "da": "at finde ud af", "baca": "FI-ne udh a", "id": "mencari tahu, memahami" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan *må ikke*, *behøver ikke*, atau *skal ikke*.",
+      "items": [
+        "Du ____ parkere her. Det er forbudt.",
+        "Du ____ at bestille tid. Der er aldrig kø.",
+        "Du ____ være nervøs, det går fint.",
+        "Man ____ ryge indendørs i Danmark.",
+        "I ____ tage mad med. Vi laver mad selv."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk datid kata bantu dalam kurung.",
+      "items": [
+        "Jeg ____ arbejde hele lørdagen. (skulle)",
+        "Vi ____ ikke finde adressen. (kunne)",
+        "Han ____ gå tidligt på grund af toget. (måtte)",
+        "Jeg ____ gerne have hjulpet dig. (ville)",
+        "Du ____ have sagt det noget før. (burde)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Nggak boleh nyuci setelah jam sepuluh malam.",
+        "Kamu nggak perlu booking, jarang antre kok.",
+        "Kardus pizza nggak boleh masuk kertas.",
+        "Harusnya mereka tulis lebih jelas.",
+        "Aku nggak pernah bisa paham cara milah sampahnya."
+      ]
+    }
+  ],
+  "answers": [
+    "må ikke — behøver ikke — skal ikke — må ikke — behøver ikke",
+    "skulle — kunne — måtte — ville — burde",
+    "Man må ikke vaske efter klokken 22. — Du behøver ikke at bestille, der er sjældent kø. — Du må ikke smide pizzabakker i papir. — Det burde de skrive tydeligere. — Jeg har aldrig kunnet finde ud af sorteringen."
+  ]
+}

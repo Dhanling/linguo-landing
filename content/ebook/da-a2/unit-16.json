@@ -1,0 +1,200 @@
+{
+  "title": "Kalau begini, maka begitu",
+  "title_target": "Hvis og betingelser",
+  "goal": "Menyusun pengandaian dengan *hvis*, dan memakai *ville*, *kunne*, *skulle* untuk berandai-andai sekaligus untuk bersikap sopan.",
+  "bekal": [
+    "membuat kalimat syarat nyata dengan *hvis* + bentuk sekarang",
+    "membuat pengandaian tak nyata dengan *hvis* + datid",
+    "memakai *ville*, *kunne*, *skulle* sebagai bentuk sopan",
+    "menjelaskan keluhan kesehatan kepada dokter"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Hos lægen",
+      "intro": "Ulangi unit 14: buat lima kalimat dengan *for at*, dan pastikan tak satu pun memakai *at* sesudah kata bantu. Lalu: Rizky di ruang praktik dokter umum.",
+      "lines": [
+        { "speaker": "Lægen:", "text": "Værsgo, sæt dig ned. Hvad kan jeg hjælpe med?", "id": "Silakan, duduk. Ada yang bisa saya bantu?", "literal": "silakan, dudukkan diri turun. apa bisa saya menolong dengan?" },
+        { "speaker": "Rizky:", "text": "Jeg har haft ondt i halsen i næsten to uger.", "id": "Tenggorokan saya sakit hampir dua minggu.", "literal": "saya punya punya sakit dalam leher-itu dalam hampir dua minggu." },
+        { "speaker": "Lægen:", "text": "Har du feber? Og hvordan sover du?", "id": "Demam? Tidurnya gimana?", "literal": "punya kamu demam? dan bagaimana tidur kamu?" },
+        { "speaker": "Rizky:", "text": "Ingen feber. Men jeg vågner tit om natten, hvis jeg ligger på ryggen.", "id": "Nggak demam. Tapi sering kebangun malam kalau tidur telentang.", "literal": "tidak-ada demam. tapi saya terbangun sering pada malam-itu, jika saya berbaring pada punggung-itu." },
+        { "speaker": "Lægen:", "text": "Ryger du?", "id": "Merokok?", "literal": "merokok kamu?" },
+        { "speaker": "Rizky:", "text": "Nej, aldrig. Hvis jeg havde røget, ville jeg have sagt det.", "id": "Nggak, nggak pernah. Kalau saya merokok, pasti saya bilang.", "literal": "tidak, tidak-pernah. jika saya punya-dulu merokok, mau-dulu saya punya mengatakan itu." },
+        { "speaker": "Lægen:", "text": "Godt. Kunne du lige åbne munden?", "id": "Bagus. Bisa buka mulutnya sebentar?", "literal": "bagus. bisa-dulu kamu sebentar membuka mulut-itu?" },
+        { "speaker": "Rizky:", "text": "Selvfølgelig.", "id": "Tentu.", "literal": "tentu-saja." },
+        { "speaker": "Lægen:", "text": "Det ser irriteret ud, men ikke betændt. Skulle vi tage en prøve?", "id": "Kelihatan iritasi, tapi nggak infeksi. Perlu kita ambil sampel?", "literal": "itu terlihat teriritasi keluar, tapi tidak terinfeksi. harus-dulu kami mengambil satu sampel?" },
+        { "speaker": "Rizky:", "text": "Hvis det ikke tager for lang tid, vil jeg gerne være sikker.", "id": "Kalau nggak lama, saya mau memastikan.", "literal": "jika itu tidak mengambil terlalu lama waktu, mau saya dengan-senang-hati adalah pasti." },
+        { "speaker": "Lægen:", "text": "To minutter. Hvis prøven er negativ, er det nok bare tør luft.", "id": "Dua menit. Kalau hasilnya negatif, mungkin cuma udara kering.", "literal": "dua menit. jika sampel-itu adalah negatif, adalah itu cukup hanya kering udara." },
+        { "speaker": "Rizky:", "text": "Kunne det virkelig gøre så ondt?", "id": "Masa cuma itu bisa sesakit ini?", "literal": "bisa-dulu itu sungguh membuat begitu sakit?" },
+        { "speaker": "Lægen:", "text": "Ja. Hvis du havde en luftfugter, ville du sove meget bedre.", "id": "Iya. Kalau punya pelembap udara, tidurmu bakal jauh lebih nyenyak.", "literal": "ya. jika kamu punya-dulu satu udara-pelembap, mau-dulu kamu tidur sangat lebih-baik." },
+        { "speaker": "Rizky:", "text": "Så køber jeg en i dag. Skulle jeg have gjort det for længe siden?", "id": "Kalau gitu hari ini saya beli. Harusnya dari dulu ya?", "literal": "maka membeli saya satu hari ini. harus-dulu saya punya melakukan itu untuk lama lalu?" },
+        { "speaker": "Lægen:", "text": "Det gør alle for sent. Kom igen, hvis det ikke bliver bedre om en uge.", "id": "Semua orang telat soal itu. Datang lagi kalau seminggu nggak membaik.", "literal": "itu melakukan semua terlalu lambat. datang lagi, jika itu tidak menjadi lebih-baik dalam satu minggu." }
+      ],
+      "notes": [
+        "🔑 **Bahasa Denmark punya dua jenis pengandaian, dan bentuk kata kerjanya yang membedakan.** **Syarat nyata** memakai bentuk sekarang di kedua bagian: *Hvis det **regner**, **bliver** jeg hjemme.* **Pengandaian tak nyata** memakai datid: *Hvis jeg **havde** tid, **ville** jeg komme.*",
+        "**Pengandaian yang sudah lewat** memakai *havde* + tillægsform di bagian syarat, dan *ville have* + tillægsform di bagian akibat: *Hvis jeg **havde røget**, **ville** jeg **have sagt** det.* Bentuknya panjang, tapi susunannya tetap dan bisa dihafal sebagai satu kerangka.",
+        "⚠️ **Jangan memakai *ville* di bagian *hvis*.** *Hvis jeg ville have tid* salah — bagian syarat tak pernah memakai *ville*. Bahasa Inggris melakukan hal yang sama (\"if I would have\" juga salah di sana), tapi bahasa Indonesia tak memberi petunjuk apa pun.",
+        "***Kunne du lige åbne munden?*** — di sini *kunne* sama sekali bukan masa lalu, melainkan **penanda sopan**. Bentuk datid kata bantu dipakai untuk memperhalus permintaan, persis seperti \"bisakah\" terasa lebih halus daripada \"bisa\" dalam bahasa Indonesia.",
+        "***lige*** menambah lapisan sopan lagi: ia mengecilkan permintaan menjadi \"sebentar saja\". *Kan du lige hjælpe mig?* jauh lebih ringan daripada *kan du hjælpe mig?*. Unit 20 membahas keluarga kata ini.",
+        "***have ondt i*** = sakit di. *Jeg har ondt i halsen / hovedet / maven / ryggen*. Bagian tubuhnya selalu dengan kata sandang ekor, tak pernah dengan kata milik — sama seperti *jeg vasker hænderne* di unit 3.",
+        "***Skulle vi tage en prøve?*** *Skulle* di sini adalah usul yang sopan — \"apakah sebaiknya kita\". Bandingkan *skal vi …?* yang lebih langsung. Ini pemakaian yang sangat lazim di antara orang Denmark yang tidak ingin memaksakan pendapat.",
+        "⚠️ **Di Denmark kamu tak bisa langsung ke dokter spesialis.** *Egen læge* (dokter umum yang terdaftar di kartu kesehatanmu) adalah pintu masuk untuk hampir semuanya, dan ia yang memberi *henvisning* (rujukan). Layanannya gratis lewat kartu kuning, tapi obat resepnya tidak — itu dibayar sendiri sampai batas tertentu setiap tahun."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis pengandaian",
+          "body": [
+            "Ketiganya memakai *hvis*, dan bentuk kata kerjanya yang membedakan kenyataan dari khayalan."
+          ],
+          "table": {
+            "head": ["Jenis", "Bagian hvis", "Bagian akibat", "Contoh"],
+            "rows": [
+              ["nyata, mungkin", "sekarang", "sekarang", "**Hvis** det regner, **bliver** jeg hjemme."],
+              ["nyata, masa depan", "sekarang", "skal / vil", "**Hvis** du kommer, **skal** vi spise ude."],
+              ["tak nyata, sekarang", "datid", "ville / kunne", "**Hvis** jeg havde tid, **ville** jeg komme."],
+              ["tak nyata, lampau", "havde + tillægsform", "ville have + tillægsform", "**Hvis** jeg havde vidst det, **ville** jeg have ringet."],
+              ["saran halus", "datid", "kunne", "**Hvis** du spurgte, **kunne** han hjælpe."]
+            ]
+          },
+          "after": [
+            "⚠️ Ingat aturan unit 4: bagian *hvis* adalah **anak kalimat**, jadi *ikke* berdiri di depan kata kerja — *hvis det **ikke** regner*. Dan kalau bagian *hvis* berdiri di depan, induknya terbalik — *hvis det regner, **bliver jeg** hjemme*.",
+            "🔑 Cara mengingat yang sederhana: **mundur satu langkah waktu untuk berandai.** Kenyataan sekarang → khayalan pakai datid. Kenyataan lampau → khayalan pakai *havde* + tillægsform. Bahasa Inggris melakukan hal yang persis sama."
+          ]
+        },
+        {
+          "title": "Bentuk datid sebagai bentuk sopan",
+          "body": [
+            "Ini pemakaian yang tak ada hubungannya dengan waktu, dan ia sangat sering muncul dalam percakapan sehari-hari."
+          ],
+          "table": {
+            "head": ["Langsung", "Sopan", "Rasanya"],
+            "rows": [
+              ["Kan du hjælpe mig?", "**Kunne** du hjælpe mig?", "lebih halus"],
+              ["Vil du med?", "**Ville** du med?", "menawarkan, tak memaksa"],
+              ["Skal vi tage en prøve?", "**Skulle** vi tage en prøve?", "usul, bukan keputusan"],
+              ["Jeg vil have en kaffe.", "Jeg **vil gerne** have en kaffe.", "baku untuk memesan"],
+              ["Hjælp mig.", "**Kunne du lige** hjælpe mig?", "paling halus"],
+              ["Det er forkert.", "Det **kunne** godt være forkert.", "membantah dengan halus"]
+            ]
+          },
+          "after": [
+            "⚠️ **Bahasa Denmark tidak punya bentuk hormat yang dipakai sehari-hari.** *De* dengan huruf besar masih ada, tapi praktis mati kecuali dalam surat resmi kepada orang yang jauh lebih tua. Yang menggantikannya adalah **nada dan pemilihan kata**, dan bentuk datid inilah alatnya yang utama.",
+            "Karena itu, orang Denmark yang menyapa dokter dan menteri dengan *du* sama sekali tidak kasar — kesopanannya ada di *kunne*, *gerne*, *lige*, dan *måske*, bukan di kata gantinya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di dokter",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Cara baca", "Arti"],
+          "rows": [
+            ["Jeg har ondt i halsen.", "ont i HAL-sen", "Tenggorokan saya sakit."],
+            ["Jeg har hovedpine.", "HO-edh-pi-ne", "Saya sakit kepala."],
+            ["Jeg har haft feber i tre dage.", "FEH-ber", "Saya demam tiga hari."],
+            ["Jeg er blevet forkølet.", "for-KÖ-ledh", "Saya kena flu."],
+            ["Det gør ondt, når jeg bevæger armen.", "be-VÈ-er", "Sakit kalau saya gerakkan lengan."],
+            ["Jeg er allergisk over for penicillin.", "a-LER-gisk", "Saya alergi penisilin."],
+            ["Kan jeg få en recept?", "re-SEPT", "Bisa dapat resep?"],
+            ["Jeg vil gerne have en henvisning.", "HEN-vis-ning", "Saya mau minta rujukan."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bagian tubuh yang paling sering kamu perlukan:** *hovedet* (kepala), *halsen* (tenggorokan, leher), *maven* (perut), *ryggen* (punggung), *benet* (kaki), *armen* (lengan), *foden* (telapak kaki), *tanden* (gigi), *øret* (telinga), *øjet* (mata). ⚠️ Perhatikan bahwa *ben* berarti **kaki** dan juga **tulang** — konteksnya yang membedakan, dan orang Denmark sendiri bercanda tentang ini."
+        }
+      ]
+    },
+    {
+      "title": "Berandai-andai dalam percakapan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Arti"],
+          "rows": [
+            ["Hvis jeg var dig, ville jeg ringe.", "Kalau aku jadi kamu, aku bakal telepon."],
+            ["Hvis bare jeg havde vidst det.", "Andai saja aku tahu."],
+            ["Det ville være dejligt.", "Itu bakal enak banget."],
+            ["Jeg ville ønske, jeg kunne.", "Andai aku bisa."],
+            ["Hvad ville du gøre?", "Kamu bakal ngapain?"],
+            ["Det kunne godt være.", "Bisa jadi."],
+            ["Så ville alt være nemmere.", "Semuanya bakal lebih gampang."],
+            ["Hvis ikke, så ring til mig.", "Kalau nggak, telepon aku."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat potongan yang layak dihafal utuh",
+          "items": [
+            "***Hvis jeg var dig, ville jeg …*** — cara paling wajar memberi saran tanpa terdengar menggurui. Orang Denmark memakainya terus-menerus.",
+            "***Hvis bare …*** = andai saja. Penyesalan dalam empat huruf; sesudahnya selalu bentuk datid atau *havde* + tillægsform.",
+            "***Det kunne godt være.*** = bisa jadi, mungkin saja. Cara membenarkan sebagian tanpa menyetujui sepenuhnya — sangat berguna dalam rapat.",
+            "⚠️ ***Hvis ikke*** berdiri sendirian sebagai \"kalau tidak\", tanpa perlu mengulang seluruh kalimatnya: *Kom kl. 7. **Hvis ikke**, så ring.* Menerjemahkannya kata per kata dari bahasa Indonesia menghasilkan kalimat yang jauh lebih panjang daripada yang diperlukan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en hals", "baca": "hals", "id": "tenggorokan, leher" },
+    { "da": "en feber", "baca": "FEH-ber", "id": "demam" },
+    { "da": "en ryg", "baca": "rüg", "id": "punggung" },
+    { "da": "en mund", "baca": "mon", "id": "mulut" },
+    { "da": "betændt", "baca": "be-TENT", "id": "terinfeksi" },
+    { "da": "en prøve", "baca": "PRÖ-ve", "id": "sampel, ujian" },
+    { "da": "negativ", "baca": "NEH-ga-tiu", "id": "negatif" },
+    { "da": "tør", "baca": "tör", "id": "kering" },
+    { "da": "en luft", "baca": "loft", "id": "udara" },
+    { "da": "en luftfugter", "baca": "LOFT-fog-ter", "id": "pelembap udara" },
+    { "da": "at gøre ondt", "baca": "GÖ-re ont", "id": "terasa sakit" },
+    { "da": "en hovedpine", "baca": "HO-edh-pi-ne", "id": "sakit kepala" },
+    { "da": "forkølet", "baca": "for-KÖ-ledh", "id": "kena flu" },
+    { "da": "at bevæge", "baca": "be-VÈ-e", "id": "menggerakkan" },
+    { "da": "en arm", "baca": "arm", "id": "lengan" },
+    { "da": "allergisk", "baca": "a-LER-gisk", "id": "alergi" },
+    { "da": "en recept", "baca": "re-SEPT", "id": "resep obat" },
+    { "da": "en henvisning", "baca": "HEN-vis-ning", "id": "rujukan" },
+    { "da": "en mave", "baca": "MA-ve", "id": "perut" },
+    { "da": "at ønske", "baca": "ÖN-ske", "id": "berharap, mengharapkan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Isi dengan bentuk yang tepat dari kata kerja dalam kurung.",
+      "items": [
+        "Hvis det ____ i morgen, bliver vi hjemme. (regne)",
+        "Hvis jeg ____ tid, ville jeg komme med. (have)",
+        "Hvis du ____ spurgt, havde jeg hjulpet dig. (have)",
+        "Hvis jeg var dig, ____ jeg ringe til lægen. (ville)",
+        "Hvis prøven ____ negativ, er alt i orden. (være)"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi bentuk yang lebih sopan dengan kata bantu datid.",
+      "items": [
+        "Kan du hjælpe mig?",
+        "Vil du med i biografen?",
+        "Skal vi tage en pause?",
+        "Kan du åbne vinduet?",
+        "Vil du række mig saltet?"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Tenggorokan saya sakit hampir dua minggu.",
+        "Kalau saya merokok, pasti saya bilang.",
+        "Kalau nggak lama, saya mau memastikan.",
+        "Kalau punya pelembap udara, tidurmu bakal jauh lebih nyenyak.",
+        "Datang lagi kalau seminggu nggak membaik."
+      ]
+    }
+  ],
+  "answers": [
+    "regner — havde — havde — ville — er",
+    "Kunne du hjælpe mig? — Ville du med i biografen? — Skulle vi tage en pause? — Kunne du lige åbne vinduet? — Ville du række mig saltet?",
+    "Jeg har haft ondt i halsen i næsten to uger. — Hvis jeg havde røget, ville jeg have sagt det. — Hvis det ikke tager for lang tid, vil jeg gerne være sikker. — Hvis du havde en luftfugter, ville du sove meget bedre. — Kom igen, hvis det ikke bliver bedre om en uge."
+  ]
+}

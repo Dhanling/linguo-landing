@@ -1,0 +1,200 @@
+{
+  "title": "Kalau pelakunya tidak penting",
+  "title_target": "Passiv: -s og blive",
+  "goal": "Menyusun kalimat pasif dengan dua cara — akhiran *-s* dan *blive* + tillægsform — dan membaca bahasa resmi yang penuh dengannya.",
+  "bekal": [
+    "membentuk pasif dengan *-s* dan dengan *blive*",
+    "memilih bentuk yang tepat menurut keadaan",
+    "membaca surat dan pengumuman dari lembaga pemerintah",
+    "mengurus keperluan di Borgerservice"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — På Borgerservice",
+      "intro": "Ulangi unit 15: gabungkan lima pasang kalimat pendek menjadi satu dengan *der* atau *som*, lantang. Lalu: Rizky mengurus perubahan alamat setelah pindah apartemen.",
+      "lines": [
+        { "speaker": "Rizky:", "text": "Goddag. Jeg er flyttet, og jeg skal melde adresseændring.", "id": "Selamat siang. Saya pindah, dan mau lapor ganti alamat.", "literal": "selamat-siang. saya adalah pindah, dan saya harus melaporkan alamat-perubahan." },
+        { "speaker": "Sagsbehandler:", "text": "Det klares nemmest på borger.dk. Har du prøvet det?", "id": "Paling gampang diurus lewat borger.dk. Sudah coba?", "literal": "itu diselesaikan paling-mudah pada borger.dk. punya kamu mencoba itu?" },
+        { "speaker": "Rizky:", "text": "Jeg prøvede i går, men jeg blev logget ud tre gange.", "id": "Kemarin saya coba, tapi tiga kali kelempar keluar.", "literal": "saya mencoba-dulu kemarin, tapi saya menjadi-dulu di-log keluar tiga kali." },
+        { "speaker": "Sagsbehandler:", "text": "Så gør vi det her. Adressen skal registreres inden fem dage.", "id": "Kalau gitu kita urus di sini. Alamatnya harus terdaftar dalam lima hari.", "literal": "maka melakukan kami itu di-sini. alamat-itu harus didaftarkan dalam lima hari." },
+        { "speaker": "Rizky:", "text": "Jeg flyttede i lørdags. Er jeg for sent på den?", "id": "Saya pindah Sabtu kemarin. Sudah telat?", "literal": "saya pindah-dulu pada Sabtu. adalah saya terlalu lambat pada itu?" },
+        { "speaker": "Sagsbehandler:", "text": "Nej, du er lige inden for fristen. Må jeg se dit sundhedskort?", "id": "Nggak, masih pas dalam tenggat. Boleh lihat kartu kesehatannya?", "literal": "tidak, kamu adalah tepat dalam untuk tenggat-itu. boleh saya melihat punyamu kesehatan-kartu?" },
+        { "speaker": "Rizky:", "text": "Værsgo. Får jeg et nyt kort tilsendt?", "id": "Silakan. Kartu barunya dikirim ke saya?", "literal": "silakan. mendapat saya satu baru kartu terkirim?" },
+        { "speaker": "Sagsbehandler:", "text": "Ja. Det bliver sendt med posten inden for to uger.", "id": "Iya. Dikirim lewat pos dalam dua minggu.", "literal": "ya. itu menjadi dikirim dengan pos-itu dalam untuk dua minggu." },
+        { "speaker": "Rizky:", "text": "Og min læge? Bliver den ændret automatisk?", "id": "Dokter saya gimana? Otomatis ganti?", "literal": "dan saya-punya dokter? menjadi ia diubah otomatis?" },
+        { "speaker": "Sagsbehandler:", "text": "Kun hvis du flytter til en anden kommune. Ellers beholdes din læge.", "id": "Cuma kalau pindah kotamadya lain. Kalau nggak, dokternya tetap.", "literal": "hanya jika kamu pindah ke satu lain kotamadya. selain-itu dipertahankan punyamu dokter." },
+        { "speaker": "Rizky:", "text": "Det er godt. Skal der betales noget?", "id": "Bagus. Ada yang harus dibayar?", "literal": "itu adalah bagus. harus di-sana dibayar sesuatu?" },
+        { "speaker": "Sagsbehandler:", "text": "Nej, det er gratis. Men hvis kortet bliver væk, koster et nyt 235 kroner.", "id": "Nggak, gratis. Tapi kalau kartunya hilang, yang baru 235 kroner.", "literal": "tidak, itu adalah gratis. tapi jika kartu-itu menjadi pergi, berharga satu baru 235 kroner." },
+        { "speaker": "Rizky:", "text": "Så passer jeg godt på det. Tak for hjælpen.", "id": "Kalau gitu saya jaga baik-baik. Terima kasih bantuannya.", "literal": "maka menjaga saya baik pada itu. terima-kasih untuk bantuan-itu." }
+      ],
+      "notes": [
+        "🔑 **Bahasa Denmark punya dua bentuk pasif, dan pilihannya bukan soal benar-salah melainkan soal rasa.** Bentuk **-s** terdengar resmi, tertulis, dan berlaku umum: *adressen registrer**es***. Bentuk **blive** terdengar lisan dan menunjuk satu kejadian: *kortet **bliver** sendt*.",
+        "**Bentuk -s dibuat dari bentuk dasar**, bukan dari bentuk sekarang: *registrere → registrere**s***, *klare → klare**s***, *betale → betale**s***. Kalau kata dasarnya sudah berakhir *-s*, tak ada yang ditambahkan.",
+        "**Bentuk blive memakai tillægsform** — bentuk yang sama dengan perfektum: *blive **sendt***, *blive **ændret***, *blive **logget** ud*. Ini bentuk yang paling sering kamu dengar dalam percakapan.",
+        "⚠️ ***Blive*** punya dua arti yang harus dipisahkan: **menjadi** (*han bliver læge*) dan **penanda pasif** (*brevet bliver sendt*). Yang membedakan adalah kata yang menyusulnya — kata benda/sifat berarti \"menjadi\", tillægsform berarti pasif.",
+        "***Skal der betales noget?*** Perhatikan *der* sebagai pelaku kosong dalam kalimat pasif tanpa pelaku sama sekali. Susunan ini sangat sering muncul dalam bahasa resmi: *der skal betales*, *der kan søges*, *der må ikke parkeres*.",
+        "***inden for fristen*** = dalam tenggat waktu. Bandingkan *inden* saja = sebelum. Bahasa resmi Denmark penuh dengan *inden for*, *i henhold til*, dan *jf.* — dan pelan-pelan kamu akan mengenalinya.",
+        "***passe på*** = menjaga, hati-hati. *Pas på!* sendirian berarti \"awas!\".",
+        "⚠️ **Kotamadya (*kommune*) adalah pusat hidup administratifmu di Denmark.** Alamat, dokter, sekolah, bantuan sosial, dan pajak kotamadya semuanya melekat padanya, dan berpindah *kommune* memicu serangkaian perubahan otomatis. Batas lima hari untuk melaporkan pindah adalah aturan sungguhan, dan mengabaikannya bisa berbuah denda."
+      ],
+      "grammars": [
+        {
+          "title": "Dua bentuk pasif",
+          "body": [
+            "Kalimat aktif *Posten sender kortet* bisa dibalik dengan dua cara. Perhatikan bahwa objeknya naik menjadi pelaku."
+          ],
+          "table": {
+            "head": ["Waktu", "Bentuk -s", "Bentuk blive"],
+            "rows": [
+              ["sekarang", "Kortet send**es**.", "Kortet **bliver** sendt."],
+              ["lampau", "Kortet send**tes**.", "Kortet **blev** sendt."],
+              ["perfektum", "—", "Kortet **er blevet** sendt."],
+              ["dengan bantu", "Kortet skal send**es**.", "Kortet skal **blive** sendt."],
+              ["dasar", "at send**es**", "at **blive** sendt."]
+            ]
+          },
+          "after": [
+            "⚠️ **Bentuk -s dalam waktu lampau hampir tak dipakai** kecuali dalam undang-undang dan teks yang sangat resmi. Untuk masa lalu, pakailah *blev* + tillægsform. Baris kedua tabel ini ada supaya kamu mengenalinya kalau bertemu, bukan supaya kamu memakainya.",
+            "🔑 Aturan praktis: **-s untuk aturan dan kebiasaan umum, blive untuk satu kejadian.** *Døren låses kl. 22* (setiap hari) lawan *døren bliver låst nu* (sekarang, oleh seseorang)."
+          ]
+        },
+        {
+          "title": "Kata kerja -s yang bukan pasif",
+          "body": [
+            "Beberapa kata kerja hanya hidup dalam bentuk *-s* dan sama sekali tidak berarti pasif. Mereka harus dihafal terpisah."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Arti", "Contoh"],
+            "rows": [
+              ["**findes**", "ada, tersedia", "Det findes ikke."],
+              ["**synes**", "berpendapat", "Jeg synes, det er dyrt."],
+              ["**mødes**", "bertemu", "Skal vi mødes kl. 5?"],
+              ["**ses**", "bertemu, berjumpa", "Vi ses!"],
+              ["**enes**", "sepakat", "Vi enedes om det."],
+              ["**lykkes**", "berhasil", "Det lykkedes for mig."],
+              ["**mislykkes**", "gagal", "Forsøget mislykkedes."],
+              ["**skændes**", "bertengkar", "De skændes altid."]
+            ]
+          },
+          "after": [
+            "Perhatikan bahwa banyak di antaranya menyatakan hal yang **saling** dilakukan dua pihak — *mødes*, *ses*, *enes*, *skændes*. Bahasa Denmark memakai *-s* di situ, tempat bahasa Indonesia memakai kata \"saling\" atau bentuk ber-an.",
+            "⚠️ ***Det lykkedes for mig at …*** = aku berhasil. Susunannya aneh bagi kita karena pelakunya masuk ke *for mig*, bukan menjadi subjek. Hafalkan seluruh kerangkanya: *det lykkedes for mig at finde en lejlighed*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mengurus keperluan resmi",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dansk", "Cara baca", "Arti"],
+          "rows": [
+            ["Jeg skal melde adresseændring.", "a-DRE-se-èn-dring", "Saya mau lapor ganti alamat."],
+            ["Hvor lang er sagsbehandlingstiden?", "SAGS-be-han-lings-ti-dhen", "Berapa lama prosesnya?"],
+            ["Jeg har ikke fået svar endnu.", "FO-edh sva", "Saya belum dapat jawaban."],
+            ["Kan jeg få det på skrift?", "po skrift", "Bisa dapat tertulis?"],
+            ["Hvilke papirer skal jeg medbringe?", "VIL-ge pa-PI-rer", "Dokumen apa yang harus saya bawa?"],
+            ["Ansøgningen behandles inden for fire uger.", "be-HAN-les", "Permohonan diproses dalam empat minggu."],
+            ["Det kan søges digitalt.", "SÖ-es di-gi-TALT", "Bisa diajukan secara digital."],
+            ["Jeg har ikke MitID endnu.", "mit-i-DEH", "Saya belum punya MitID."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Tanpa *CPR-nummer* dan *MitID*, hampir tak ada yang bisa kamu urus sendiri di Denmark** — bank, dokter, pajak, tanda tangan sewa, bahkan berlangganan telepon. Urutannya: izin tinggal atau kerja dulu, lalu *CPR* di *Borgerservice*, lalu *MitID*, lalu kartu kesehatan kuning yang datang lewat pos. Tiap langkah menunggu langkah sebelumnya, jadi minggu-minggu pertama terasa lambat — itu normal, bukan tanda ada yang salah."
+        }
+      ]
+    },
+    {
+      "title": "Bahasa pengumuman",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat pasif", "Arti"],
+          "rows": [
+            ["Døren låses kl. 22.", "Pintu dikunci pukul 22."],
+            ["Der må ikke parkeres her.", "Dilarang parkir di sini."],
+            ["Billetter sælges i automaten.", "Tiket dijual di mesin."],
+            ["Toget er blevet aflyst.", "Keretanya dibatalkan."],
+            ["Vejen bliver repareret i næste uge.", "Jalannya diperbaiki minggu depan."],
+            ["Der kan søges om tilskud.", "Bisa diajukan permohonan subsidi."],
+            ["Affaldet hentes hver torsdag.", "Sampah diambil setiap Kamis."],
+            ["Ansøgningen er blevet modtaget.", "Permohonan sudah diterima."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa pasif layak dipelajari walaupun jarang kamu ucapkan",
+          "items": [
+            "**Kamu akan lebih sering membacanya daripada mengucapkannya.** Surat dari *kommunen*, *SKAT*, *Udlændingestyrelsen*, papan di stasiun, dan aturan gedung — semuanya ditulis dalam bentuk pasif, karena pelakunya memang tak penting.",
+            "**Dalam percakapan, pakai *blive* saja.** *Det bliver sendt i morgen* terdengar wajar; *det sendes i morgen* terdengar seperti membaca surat keras-keras.",
+            "🔑 ***Man*** sering menjadi jalan keluar yang lebih ringan daripada pasif: alih-alih *der skal betales*, kamu bisa mengatakan *man skal betale*. Dua-duanya benar, dan yang kedua jauh lebih mudah disusun cepat.",
+            "⚠️ Jangan menumpuk *blive* dua kali. *Det bliver blevet sendt* tidak ada. Perfektum pasifnya *det **er blevet** sendt* — dengan *er*, bukan *bliver*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    { "da": "en adresse", "baca": "a-DRE-se", "id": "alamat" },
+    { "da": "en ændring", "baca": "ÈN-dring", "id": "perubahan" },
+    { "da": "en sagsbehandler", "baca": "SAGS-be-han-ler", "id": "petugas kasus" },
+    { "da": "at registrere", "baca": "re-gi-STREH-re", "id": "mendaftarkan" },
+    { "da": "inden", "baca": "I-nen", "id": "sebelum, dalam waktu" },
+    { "da": "et sundhedskort", "baca": "SON-hedhs-kort", "id": "kartu kesehatan" },
+    { "da": "at tilsende", "baca": "TIL-se-ne", "id": "mengirimkan" },
+    { "da": "en post", "baca": "post", "id": "pos, surat" },
+    { "da": "automatisk", "baca": "au-to-MA-tisk", "id": "otomatis" },
+    { "da": "en kommune", "baca": "ko-MU-ne", "id": "kotamadya" },
+    { "da": "ellers", "baca": "E-lers", "id": "selain itu, kalau tidak" },
+    { "da": "at beholde", "baca": "be-HOL-e", "id": "mempertahankan" },
+    { "da": "gratis", "baca": "GRA-tis", "id": "gratis" },
+    { "da": "at passe på", "baca": "PA-se po", "id": "menjaga, hati-hati" },
+    { "da": "et papir", "baca": "pa-PI", "id": "kertas, dokumen" },
+    { "da": "at behandle", "baca": "be-HAN-le", "id": "memproses, menangani" },
+    { "da": "et tilskud", "baca": "TIL-skudh", "id": "subsidi, tunjangan" },
+    { "da": "at modtage", "baca": "MODH-ta-e", "id": "menerima" },
+    { "da": "at lykkes", "baca": "LÜ-ges", "id": "berhasil" },
+    { "da": "at aflyse", "baca": "AU-lü-se", "id": "membatalkan" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi kalimat pasif dengan *blive*.",
+      "items": [
+        "Posten sender kortet i morgen.",
+        "De aflyste toget i går.",
+        "Kommunen behandler ansøgningen nu.",
+        "Nogen har stjålet min cykel.",
+        "De reparerer vejen i næste uge."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk *-s* dari kata kerja dalam kurung.",
+      "items": [
+        "Døren ____ klokken 22 hver dag. (låse)",
+        "Billetter ____ i automaten. (sælge)",
+        "Adressen skal ____ inden fem dage. (registrere)",
+        "Affaldet ____ hver torsdag. (hente)",
+        "Der må ikke ____ på fortovet. (parkere)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Denmark.",
+      "items": [
+        "Alamatnya harus terdaftar dalam lima hari.",
+        "Dikirim lewat pos dalam dua minggu.",
+        "Ada yang harus dibayar?",
+        "Kalau kartunya hilang, yang baru 235 kroner.",
+        "Permohonan diproses dalam empat minggu."
+      ]
+    }
+  ],
+  "answers": [
+    "Kortet bliver sendt i morgen. — Toget blev aflyst i går. — Ansøgningen bliver behandlet nu. — Min cykel er blevet stjålet. — Vejen bliver repareret i næste uge.",
+    "låses — sælges — registreres — hentes — parkeres",
+    "Adressen skal registreres inden fem dage. — Det bliver sendt med posten inden for to uger. — Skal der betales noget? — Hvis kortet bliver væk, koster et nyt 235 kroner. — Ansøgningen behandles inden for fire uger."
+  ]
+}
