@@ -1,0 +1,202 @@
+{
+  "title": "Menulis resmi: keluhan, surel kerja, dan surat ke instansi",
+  "title_target": "Geachte heer, mevrouw",
+  "goal": "Menyusun surat dan surel resmi bahasa Belanda: sapaan, susunan, pilihan kata, dan penutup.",
+  "bekal": [
+    "memilih antara *u* dan *je* menurut pembacanya",
+    "membuka dan menutup surat dengan bentuk baku",
+    "menyusun surat keluhan dalam empat bagian",
+    "mengganti kata sehari-hari dengan padanan resminya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Hoe schrijf ik dit op?",
+      "intro": "Kompor sewaan Dewi rusak sejak tiga minggu dan pemiliknya tak menanggapi pesan WhatsApp. Karim membantunya menyusun surat resmi — karena di Belanda, yang tak tertulis dianggap tak pernah terjadi.",
+      "lines": [
+        { "speaker": "Dewi:", "text": "Ik heb hem vijf keer geappt. Hij reageert gewoon niet.", "id": "Sudah lima kali saya WA. Dia nggak bales sama sekali.", "literal": "saya punya dia lima kali WA-nya. dia bereaksi begitu-saja tidak." },
+        { "speaker": "Karim:", "text": "Dan stop je met appen. Vanaf nu schrijf je een brief.", "id": "Ya udah, berhenti WA. Mulai sekarang kamu tulis surat.", "literal": "maka berhenti kamu dengan WA. mulai sekarang menulis kamu satu surat." },
+        { "speaker": "Dewi:", "text": "Een echte brief? Dat voelt overdreven.", "id": "Surat beneran? Kayaknya berlebihan.", "literal": "satu sungguh surat? itu terasa berlebihan." },
+        { "speaker": "Karim:", "text": "Een mail mag ook. Maar hij moet formeel zijn, en er moet een datum in staan.", "id": "Surel juga boleh. Tapi harus resmi, dan harus ada tanggalnya.", "literal": "satu surel boleh juga. tapi dia harus resmi ada, dan di-sana harus satu tanggal dalam berdiri." },
+        { "speaker": "Dewi:", "text": "Waarom is dat zo belangrijk?", "id": "Kenapa itu penting banget?", "literal": "kenapa adalah itu begitu penting?" },
+        { "speaker": "Karim:", "text": "Omdat je later moet kunnen bewijzen dat je hem hebt gewaarschuwd.", "id": "Karena nanti kamu harus bisa buktikan sudah memperingatkan dia.", "literal": "sebab kamu kemudian harus bisa buktikan bahwa kamu dia punya peringatkan-nya." },
+        { "speaker": "Dewi:", "text": "Goed. Hoe begin ik?", "id": "Oke. Mulainya gimana?", "literal": "baik. bagaimana mulai saya?" },
+        { "speaker": "Karim:", "text": "'Geachte heer De Wit'. Ken je zijn naam niet, dan 'Geachte heer, mevrouw'.", "id": "'Geachte heer De Wit'. Kalau nggak tahu namanya, 'Geachte heer, mevrouw'.", "literal": "'yang-terhormat tuan De Wit'. kenal kamu miliknya nama tidak, maka 'yang-terhormat tuan, nyonya'." },
+        { "speaker": "Dewi:", "text": "En dan meteen klagen?", "id": "Terus langsung ngeluh?", "literal": "dan maka langsung mengeluh?" },
+        { "speaker": "Karim:", "text": "Nee. Eerst waarom je schrijft, dan de feiten, dan wat je wilt, dan een termijn.", "id": "Nggak. Pertama alasan kamu menulis, lalu faktanya, lalu maumu apa, lalu tenggat.", "literal": "tidak. pertama kenapa kamu menulis, maka itu fakta, maka apa kamu ingin, maka satu tenggat." },
+        { "speaker": "Dewi:", "text": "Een termijn? Klinkt streng.", "id": "Tenggat? Kedengarannya keras.", "literal": "satu tenggat? terdengar keras." },
+        { "speaker": "Karim:", "text": "Zonder termijn gebeurt er niets. Veertien dagen is normaal.", "id": "Tanpa tenggat nggak bakal ada yang terjadi. Empat belas hari itu biasa.", "literal": "tanpa tenggat terjadi di-sana tak-sesuatu. empat-belas hari adalah normal." },
+        { "speaker": "Dewi:", "text": "En als hij dan nog niets doet?", "id": "Kalau dia tetap nggak ngapa-ngapain?", "literal": "dan kalau dia maka masih tak-sesuatu lakukan?" },
+        { "speaker": "Karim:", "text": "Dan ga je naar de Huurcommissie. Maar dan heb je die brief nodig.", "id": "Ya kamu ke Komisi Sewa. Tapi suratnya harus ada.", "literal": "maka pergi kamu ke itu Sewa-komisi. tapi maka punya kamu itu surat butuh." },
+        { "speaker": "Dewi:", "text": "Dus de brief is niet het einde, maar het begin.", "id": "Jadi suratnya bukan akhir, tapi awal.", "literal": "jadi itu surat adalah tidak itu akhir, tapi itu awal." },
+        { "speaker": "Karim:", "text": "Precies. En bewaar een kopie, met de verzenddatum erop.", "id": "Tepat. Dan simpan salinannya, dengan tanggal kirim.", "literal": "persis. dan simpan satu salinan, dengan itu kirim-tanggal di-atasnya." }
+      ],
+      "notes": [
+        "**Di Belanda, yang tak tertulis hampir tak dianggap terjadi.** Pesan WhatsApp berguna untuk urusan sehari-hari, tapi begitu ada uang, hak, atau tenggat yang dipertaruhkan, semua pihak — pemilik rumah, asuransi, instansi, pengadilan — bekerja berdasarkan surat bertanggal. Surat resmi bukan sikap bermusuhan; ia langkah pertama yang normal.",
+        "***Geachte heer, mevrouw*** dipakai kalau kamu tak tahu siapa yang membaca. Kalau tahu namanya: *Geachte heer De Wit*, *Geachte mevrouw Jansen* — **nama belakang saja**, tanpa nama depan. Untuk hubungan kerja yang sudah akrab: *Beste Karim*. Untuk teman: *Hoi Els*.",
+        "**Susunan empat bagian yang disebut Karim adalah susunan baku surat keluhan Belanda:** (1) kenapa kamu menulis, (2) fakta dengan tanggal, (3) apa yang kamu minta, (4) tenggat dan akibatnya. Menukar urutannya membuat suratmu terbaca sebagai keluhan emosional, bukan tuntutan yang bisa ditindaklanjuti.",
+        "***Een termijn stellen*** (menetapkan tenggat) adalah inti surat semacam ini. Kalimat bakunya: *Ik verzoek u dit binnen veertien dagen te verhelpen.* Tanpa itu, pihak lain tak punya alasan untuk bergerak — dan kamu tak punya dasar untuk melangkah lebih jauh.",
+        "**Bahasa resmi Belanda memakai kata kerja yang berbeda, bukan kalimat yang lebih panjang.** *Vragen* → *verzoeken*, *krijgen* → *ontvangen*, *sturen* → *toezenden*, *zeggen* → *mededelen*, *maken* → *verhelpen* (untuk kerusakan). Suratmu tidak menjadi resmi karena panjang; ia menjadi resmi karena pilihan katanya.",
+        "***De Huurcommissie*** adalah lembaga negara yang menengahi sengketa sewa — dan ia benar-benar bekerja, murah, serta tidak memihak pemilik. Untuk urusan lain ada lembaga sepadan: *het Juridisch Loket* (bantuan hukum gratis), *de Geschillencommissie* (sengketa konsumen), *de Consumentenbond*."
+      ],
+      "grammars": [
+        {
+          "title": "Kerangka surat resmi",
+          "body": [
+            "Enam bagian, selalu dalam urutan ini. Surel resmi memakai kerangka yang sama, hanya tanpa alamat pengirim di kepala."
+          ],
+          "table": {
+            "head": ["Bagian", "Isinya", "Contoh"],
+            "rows": [
+              ["kepala", "nama, alamat, tanggal, perihal", "Utrecht, 14 maart 2026 — **Betreft:** defecte kookplaat"],
+              ["sapaan", "*Geachte* + nama belakang", "**Geachte heer De Wit,**"],
+              ["pembuka", "kenapa kamu menulis", "Ik schrijf u naar aanleiding van …"],
+              ["isi", "fakta dengan tanggal", "Op 20 februari heb ik u gemeld dat …"],
+              ["permintaan", "apa yang kamu inginkan", "Ik verzoek u het toestel te laten repareren."],
+              ["tenggat", "kapan dan akibatnya", "Graag binnen veertien dagen na dagtekening."],
+              ["penutup", "kalimat penutup baku", "Ik zie uw reactie graag tegemoet."],
+              ["salam", "*Met vriendelijke groet* + nama", "**Met vriendelijke groet,** Dewi Prasetyo"]
+            ]
+          },
+          "after": [
+            "***Met vriendelijke groet*** adalah penutup baku untuk hampir semua surat dan surel. Yang lebih resmi: *Hoogachtend* — dipakai kalau kamu memakai *Geachte heer, mevrouw* tanpa nama, atau kalau isinya sangat serius. Untuk rekan kerja: *Groeten*, *Groetjes* (akrab), atau *Vriendelijke groet*.",
+            "***Betreft* (disingkat *Betr.*) adalah baris perihal**, dan di surel ia menjadi baris *Onderwerp*. Isilah dengan satu kalimat benda yang jelas: *Betreft: defecte kookplaat, Nieuwstraat 12*. Perihal yang kabur adalah alasan paling umum surel resmi tak dibalas."
+          ]
+        },
+        {
+          "title": "Sehari-hari melawan resmi",
+          "body": [
+            "Kolom kanan bukan bahasa yang lebih sopan — ia bahasa yang lebih berjarak. Pakailah untuk instansi dan pihak yang belum kamu kenal; jangan pakai untuk rekan kerja."
+          ],
+          "table": {
+            "head": ["Sehari-hari", "Resmi", "Arti"],
+            "rows": [
+              ["vragen", "verzoeken", "meminta"],
+              ["krijgen", "ontvangen", "menerima"],
+              ["sturen", "toezenden", "mengirimkan"],
+              ["zeggen", "mededelen", "menyampaikan"],
+              ["laten weten", "berichten", "mengabari"],
+              ["maken (kerusakan)", "verhelpen", "memperbaiki"],
+              ["moeten", "dienen te", "harus"],
+              ["genoeg", "voldoende", "cukup"],
+              ["over", "met betrekking tot", "mengenai"],
+              ["want", "aangezien", "karena"],
+              ["maar", "echter", "namun"],
+              ["als", "indien", "apabila"]
+            ]
+          },
+          "after": [
+            "**Jangan memakai semuanya sekaligus.** Surat yang setiap katanya diambil dari kolom kanan terbaca seperti dokumen abad lalu. Aturan praktisnya: pakai kolom kanan untuk **kata kerja inti** (*verzoeken*, *ontvangen*, *verhelpen*) dan kolom kiri untuk sisanya.",
+            "**Tetap tulis kalimat pendek.** Bahasa resmi Belanda modern justru dianjurkan singkat — pemerintah sendiri berkampanye untuk *begrijpelijke taal*. Kalimat panjang berlapis bukan tanda sopan; ia tanda tulisan yang belum disunting."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Nabellen",
+      "intro": "Dua minggu kemudian, tak ada jawaban. Dewi menelepon — dan seluruh kekuatan percakapan ini datang dari surat yang sudah ia kirim.",
+      "lines": [
+        { "speaker": "Dewi:", "text": "Goedemiddag, u spreekt met Dewi Prasetyo, Nieuwstraat 12.", "id": "Selamat siang, dengan Dewi Prasetyo, Nieuwstraat 12.", "literal": "selamat-siang, Anda bicara dengan Dewi Prasetyo, Nieuwstraat 12." },
+        { "speaker": "Verhuurder:", "text": "Zegt u het maar.", "id": "Silakan.", "literal": "katakan Anda itu saja." },
+        { "speaker": "Dewi:", "text": "Ik bel naar aanleiding van mijn brief van 14 maart over de kookplaat.", "id": "Saya menelepon menyusul surat saya tanggal 14 Maret soal kompornya.", "literal": "saya telepon menyusul dari milik-saya surat dari 14 maret tentang itu kompor." },
+        { "speaker": "Verhuurder:", "text": "Een brief? Die heb ik niet gezien.", "id": "Surat? Saya nggak lihat.", "literal": "satu surat? itu punya saya tidak lihat-nya." },
+        { "speaker": "Dewi:", "text": "Hij is aangetekend verstuurd en op 16 maart getekend voor ontvangst.", "id": "Dikirim tercatat dan ditandatangani tanggal 16 Maret sebagai bukti terima.", "literal": "dia adalah tercatat kirim-nya dan pada 16 maret tanda-tangan-nya untuk penerimaan." },
+        { "speaker": "Verhuurder:", "text": "O. Dan zal mijn vrouw hem hebben aangenomen. Ik zoek het uit.", "id": "Oh. Berarti istri saya yang terima. Saya cek dulu.", "literal": "o. maka akan milik-saya istri dia punya terima-nya. saya cari itu keluar." },
+        { "speaker": "Dewi:", "text": "Graag. De termijn liep gisteren af. Wanneer kan de monteur komen?", "id": "Terima kasih. Tenggatnya habis kemarin. Kapan teknisinya bisa datang?", "literal": "dengan-senang. itu tenggat berjalan kemarin lepas. kapan bisa itu teknisi datang?" },
+        { "speaker": "Verhuurder:", "text": "Volgende week dinsdag. Ik bevestig het per mail, is dat goed?", "id": "Selasa minggu depan. Saya konfirmasi lewat surel, oke?", "literal": "berikut minggu selasa, saya konfirmasi itu per surel, adalah itu baik?" }
+      ],
+      "notes": [
+        "***Naar aanleiding van …*** (menyusul, sehubungan dengan) adalah pembuka baku untuk merujuk surat, telepon, atau kejadian sebelumnya. Ia dipakai baik lisan maupun tulis, dan ia langsung menandai bahwa percakapan ini punya riwayat.",
+        "***Aangetekend versturen*** = mengirim tercatat dengan tanda terima. Untuk surat yang punya tenggat hukum, inilah yang membuat kalimat *ik heb u gewaarschuwd* bisa dibuktikan. Biayanya beberapa euro dan ia mengubah seluruh percakapan — persis seperti di dialog ini.",
+        "***De termijn liep gisteren af*** memakai *aflopen* (berakhir, habis masa berlakunya). Kata kerja terpisah ini muncul di mana-mana: *mijn contract loopt af*, *mijn verblijfsvergunning is afgelopen*. Jangan campur dengan *het loopt goed af* (berakhir baik).",
+        "**Perhatikan bahwa Dewi tidak sekali pun meninggikan suara atau menuduh.** Ia menyebut tanggal, bukti pengiriman, dan tenggat — lalu bertanya kapan. Inilah bentuk ketegasan yang bekerja di Belanda: **fakta bertanggal, disampaikan dengan tenang**."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Contoh surat keluhan lengkap",
+      "blocks": [
+        { "type": "p", "text": "Berikut surat yang akhirnya dikirim Dewi. Perhatikan bahwa panjangnya kurang dari dua ratus kata, tiap paragrafnya punya satu tugas, dan tak ada satu kalimat pun yang berisi kemarahan." },
+        { "type": "kotak", "title": "Kepala surat", "items": [
+          "Dewi Prasetyo — Nieuwstraat 12 — 3512 AB Utrecht",
+          "Aan: de heer J. de Wit, Parklaan 8, 3581 CD Utrecht",
+          "Utrecht, 14 maart 2026",
+          "**Betreft:** defecte kookplaat, Nieuwstraat 12"
+        ]},
+        { "type": "p", "text": "**Geachte heer De Wit,**" },
+        { "type": "p", "text": "Ik schrijf u naar aanleiding van de kookplaat in mijn woning aan de Nieuwstraat 12, die sinds 20 februari niet meer werkt." },
+        { "type": "p", "text": "Op 20 februari heb ik u hierover per WhatsApp bericht, en op 27 februari en 6 maart nogmaals. Tot op heden heb ik geen reactie ontvangen. In de tussentijd kook ik op een geleende elektrische pit, wat volgens de brandweer niet als permanente oplossing is bedoeld." },
+        { "type": "p", "text": "Op grond van het huurcontract bent u verantwoordelijk voor het onderhoud van de keukenapparatuur. Ik verzoek u daarom de kookplaat te laten repareren of te vervangen." },
+        { "type": "p", "text": "Graag ontvang ik binnen veertien dagen na dagtekening van deze brief uw reactie, met een datum waarop de reparatie kan plaatsvinden. Indien ik niets van u verneem, zal ik de zaak voorleggen aan de Huurcommissie." },
+        { "type": "p", "text": "Ik zie uw reactie graag tegemoet." },
+        { "type": "p", "text": "**Met vriendelijke groet,**" },
+        { "type": "p", "text": "Dewi Prasetyo" },
+        { "type": "kotak", "title": "Kenapa surat ini bekerja", "items": [
+          "**Tiap tuduhan punya tanggal.** *20 februari*, *27 februari*, *6 maart* — tiga tanggal membuat kalimat \"saya sudah berkali-kali memberi tahu\" berubah dari perasaan menjadi bukti.",
+          "**Ada dasar, bukan hanya keinginan.** *Op grond van het huurcontract bent u verantwoordelijk …* menunjuk sumber kewajiban pihak lain. Tanpa kalimat ini, permintaanmu terbaca sebagai permohonan.",
+          "**Ada tenggat dan ada akibat.** *Binnen veertien dagen … Indien ik niets van u verneem, zal ik …* Bagian kedua inilah yang paling sering hilang dari surat pelajar — dan tanpanya, surat itu boleh saja diabaikan.",
+          "**Tak ada satu kata pun yang marah.** Justru itu yang membuatnya sulit dilawan. Surat marah mengundang jawaban marah; surat bertanggal mengundang teknisi."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "nl": "appen", "baca": "È-pe(n)", "id": "mengirim WhatsApp" },
+    { "nl": "reageren", "baca": "reh-ah-KHEH-re(n)", "id": "menanggapi" },
+    { "nl": "overdreven", "baca": "oh-fer-DREH-fe(n)", "id": "berlebihan" },
+    { "nl": "formeel", "baca": "for-MEHL", "id": "resmi" },
+    { "nl": "bewijzen", "baca": "be-FÈY-ze(n)", "id": "membuktikan" },
+    { "nl": "geacht", "baca": "khe-AKHT", "id": "yang terhormat" },
+    { "nl": "het feit", "baca": "het fèyt", "id": "fakta" },
+    { "nl": "de termijn", "baca": "de tèr-MÈYN", "id": "tenggat waktu" },
+    { "nl": "streng", "baca": "strèng", "id": "keras, tegas" },
+    { "nl": "de Huurcommissie", "baca": "de HÜHR-ko-mi-sih", "id": "Komisi Sewa" },
+    { "nl": "bewaren", "baca": "be-VAH-re(n)", "id": "menyimpan" },
+    { "nl": "verzoeken", "baca": "fer-ZU-ke(n)", "id": "memohon, meminta (resmi)" },
+    { "nl": "verhelpen", "baca": "fer-HÈL-pe(n)", "id": "memperbaiki, mengatasi" },
+    { "nl": "de dagtekening", "baca": "de DAKH-teh-ke-ning", "id": "tanggal surat" },
+    { "nl": "aangetekend", "baca": "AHN-khe-teh-ke(n)t", "id": "tercatat (pos)" },
+    { "nl": "aflopen", "baca": "AF-loh-pe(n)", "id": "berakhir, habis masa" },
+    { "nl": "de monteur", "baca": "de mon-TÖR", "id": "teknisi" },
+    { "nl": "bevestigen", "baca": "be-FÈS-te-khe(n)", "id": "mengonfirmasi" },
+    { "nl": "verantwoordelijk", "baca": "fer-ant-VOHR-de-lek", "id": "bertanggung jawab" },
+    { "nl": "voorleggen aan", "baca": "FOHR-lè-khe(n) ahn", "id": "mengajukan kepada" }
+  ],
+  "exercises": [
+    { "prompt": "Pilih sapaan dan penutup yang tepat.", "items": [
+      "Surat ke instansi, nama tak diketahui → sapaan: ____",
+      "Surat ke Pak De Wit, pemilik rumah → sapaan: ____",
+      "Surel ke rekan kerja yang sudah akrab → sapaan: ____",
+      "Penutup surat resmi ke instansi → ____",
+      "Penutup surel biasa ke rekan kerja → ____"
+    ]},
+    { "prompt": "Ganti kata sehari-hari dengan padanan resminya.", "items": [
+      "Ik vraag u het te repareren. → Ik ____ u het te repareren.",
+      "Ik heb geen antwoord gekregen. → Ik heb geen antwoord ____.",
+      "Kunt u mij de rekening sturen? → Kunt u mij de rekening ____?",
+      "U moet binnen zes weken reageren. → U ____ binnen zes weken te reageren.",
+      "Als ik niets hoor, ga ik naar de commissie. → ____ ik niets verneem, leg ik de zaak voor."
+    ]},
+    { "prompt": "Susun menjadi kalimat surat resmi yang benar.", "items": [
+      "ik / schrijf / u / naar aanleiding van / mijn / brief / van / 14 maart",
+      "op / 20 februari / heb / ik / u / hierover / bericht",
+      "ik / verzoek / u / de / kookplaat / te / laten / repareren",
+      "graag / ontvang / ik / binnen / veertien / dagen / uw / reactie",
+      "indien / ik / niets / verneem / zal / ik / de / zaak / voorleggen"
+    ]},
+    { "prompt": "Terjemahkan ke bahasa Belanda dalam ragam resmi.", "items": [
+      "Saya menulis menyusul surat saya tanggal 14 Maret.",
+      "Sampai hari ini saya belum menerima tanggapan.",
+      "Saya meminta Anda memperbaiki kompornya.",
+      "Saya harap menerima tanggapan Anda dalam empat belas hari.",
+      "Saya menantikan tanggapan Anda."
+    ]}
+  ],
+  "answers": [
+    "Geachte heer, mevrouw, — Geachte heer De Wit, — Beste Karim, — Hoogachtend, — Met vriendelijke groet,",
+    "verzoek — ontvangen — toezenden — dient — Indien",
+    "Ik schrijf u naar aanleiding van mijn brief van 14 maart. — Op 20 februari heb ik u hierover bericht. — Ik verzoek u de kookplaat te laten repareren. — Graag ontvang ik binnen veertien dagen uw reactie. — Indien ik niets verneem, zal ik de zaak voorleggen.",
+    "Ik schrijf u naar aanleiding van mijn brief van 14 maart. — Tot op heden heb ik geen reactie ontvangen. — Ik verzoek u de kookplaat te laten repareren. — Graag ontvang ik binnen veertien dagen uw reactie. — Ik zie uw reactie graag tegemoet."
+  ],
+  "wave": "Sebelum masuk unit 22, tulis satu surat keluhan sungguhan — soal apa pun: paket yang hilang, tagihan yang salah, langganan yang tak bisa dihentikan. Empat paragraf, kurang dari dua ratus kata, dengan tanggal dan tenggat. Kalau tak ada yang perlu dikeluhkan, tulislah surat penawaran diri sebagai relawan; kerangkanya sama."
+}

@@ -1,0 +1,532 @@
+{
+  "title": "Meneruskan perkataan orang",
+  "title_target": "Hij zei dat hij later zou komen",
+  "goal": "Mengubah kalimat langsung menjadi tak langsung: pernyataan, pertanyaan, dan perintah.",
+  "bekal": [
+    "memakai *dat* untuk meneruskan pernyataan",
+    "memakai *of* untuk pertanyaan ya/tidak dan kata tanya untuk sisanya",
+    "menggeser kata ganti serta keterangan waktu dan tempat",
+    "meneruskan perintah dengan *om … te*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Een boodschap doorgeven",
+      "intro": "Dewi mengangkat telepon untuk Karim yang sedang rapat, lalu meneruskan pesannya. Perhatikan apa yang berubah antara kalimat aslinya dan kalimat yang diteruskan Dewi.",
+      "lines": [
+        {
+          "speaker": "Dewi:",
+          "text": "Met Dewi Prasetyo. Karim zit in een vergadering, kan ik iets doorgeven?",
+          "id": "Dengan Dewi Prasetyo. Karim sedang rapat, ada yang bisa saya sampaikan?",
+          "literal": "dengan Dewi Prasetyo. Karim duduk dalam satu rapat, bisa saya sesuatu lewat-beri?"
+        },
+        {
+          "speaker": "Beller:",
+          "text": "Graag. Zegt u maar dat Bram Visser heeft gebeld over de offerte.",
+          "id": "Boleh. Sampaikan saja Bram Visser telepon soal penawaran.",
+          "literal": "dengan-senang. katakan Anda saja bahwa Bram Visser punya telepon-nya tentang itu penawaran."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Genoteerd. Wilt u dat hij u terugbelt?",
+          "id": "Dicatat. Mau ditelepon balik?",
+          "literal": "ingin Anda bahwa dia Anda kembali-telepon?"
+        },
+        {
+          "speaker": "Beller:",
+          "text": "Ja, maar pas na drieën. Vraag hem of hij mijn mail heeft gelezen.",
+          "id": "Iya, tapi setelah jam tiga. Tanya dia sudah baca email saya belum.",
+          "literal": "ya, tapi baru sesudah tiga-nya. tanya dia apakah dia milik-saya surel punya baca-nya."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Doe ik. Nog iets?",
+          "id": "Siap. Ada lagi?",
+          "literal": "lakukan saya. masih sesuatu?"
+        },
+        {
+          "speaker": "Beller:",
+          "text": "Zeg hem alstublieft ook dat de prijs vandaag nog geldt, niet morgen.",
+          "id": "Tolong sampaikan juga harganya berlaku hari ini saja, bukan besok.",
+          "literal": "katakan dia silakan juga bahwa itu harga hari-ini masih berlaku, tidak besok."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Duidelijk. Ik zorg dat hij het binnen een uur weet.",
+          "id": "Jelas. Saya pastikan dia tahu dalam sejam.",
+          "literal": "jelas. saya urus bahwa dia itu dalam satu jam tahu."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Wie was dat?",
+          "id": "Siapa tadi?",
+          "literal": "siapa adalah itu?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Bram Visser. Hij zei dat hij over de offerte belde.",
+          "id": "Bram Visser. Katanya dia telepon soal penawaran.",
+          "literal": "Bram Visser. dia berkata bahwa dia tentang itu penawaran menelepon."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "En wat wilde hij precies?",
+          "id": "Dia maunya apa persisnya?",
+          "literal": "dan apa ingin dia persis?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Hij vroeg of je zijn mail had gelezen, en hij wil dat je hem na drieën terugbelt.",
+          "id": "Dia tanya kamu sudah baca emailnya belum, dan minta ditelepon balik setelah jam tiga.",
+          "literal": "dia bertanya apakah kamu miliknya surel punya baca-nya, dan dia ingin bahwa kamu dia sesudah tiga-nya kembali-telepon."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Zei hij ook waarom het haast heeft?",
+          "id": "Dia bilang kenapa buru-buru?",
+          "literal": "berkata dia juga kenapa itu ketergesaan punya?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Ja. Hij zei dat de prijs die dag nog gold, en morgen niet meer.",
+          "id": "Iya. Katanya harganya masih berlaku hari itu, besok nggak lagi.",
+          "literal": "ya. dia berkata bahwa itu harga itu hari masih berlaku, dan besok tidak lagi."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Dan bel ik hem nu meteen. Heb je gevraagd of hij ook zaterdag bereikbaar is?",
+          "id": "Kalau gitu saya telepon sekarang juga. Kamu tanya nggak dia bisa dihubungi Sabtu?",
+          "literal": "maka telepon saya dia sekarang langsung. punya kamu tanya-nya apakah dia juga sabtu terjangkau adalah?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Nee, dat heb ik niet gevraagd. Ik dacht niet dat het zo ver zou komen.",
+          "id": "Nggak, itu nggak saya tanya. Saya nggak nyangka bakal sampai situ.",
+          "literal": "tidak, itu punya saya tidak tanya-nya. saya pikir tidak bahwa itu begitu jauh akan datang."
+        }
+      ],
+      "notes": [
+        "**Meneruskan pernyataan: *dat* + kata kerja ke ujung.** *\"Ik bel over de offerte\"* → *hij zei **dat** hij over de offerte **belde***. Perhatikan dua hal yang berubah sekaligus: kata gantinya (*ik* → *hij*) dan letak kata kerjanya. Kata *dat* tak boleh dibuang, berbeda dari bahasa Inggris.",
+        "**Meneruskan pertanyaan ya/tidak: *of*.** *\"Heb je mijn mail gelezen?\"* → *hij vroeg **of** je zijn mail **had gelezen***. Kata *of* di sini berarti \"apakah\", dan ia satu-satunya pilihan — *als* dan *dat* dua-duanya salah di posisi ini.",
+        "**Meneruskan pertanyaan berkata tanya: kata tanyanya dipakai apa adanya.** *\"Waarom heeft het haast?\"* → *zei hij ook **waarom** het haast **heeft**?* Kata tanya berperilaku seperti kata penghubung bertingkat: kata kerjanya ke ujung, dan susunan pertanyaannya hilang.",
+        "**Meneruskan perintah: *om … te* atau *dat … moet*.** *\"Bel me terug\"* → *hij vroeg **om** hem terug **te bellen*** atau *hij wil **dat** je hem terugbelt*. Bentuk kedua lebih sering dipakai di percakapan, dan ia lebih jelas soal siapa yang harus bertindak.",
+        "**Bentuk waktu ikut mundur, tapi tidak sekaku bahasa Inggris.** *\"De prijs geldt vandaag\"* menjadi *hij zei dat de prijs **die dag** nog **gold***. Kalau yang dikatakan masih berlaku sekarang, penutur Belanda sering membiarkannya di bentuk kini: *hij zei dat de prijs vandaag nog **geldt***. Dua-duanya diterima; yang pertama menandai jarak, yang kedua menandai bahwa isinya masih hidup.",
+        "**Keterangan waktu dan tempat ikut bergeser.** *vandaag* → *die dag*, *morgen* → *de volgende dag*, *gisteren* → *de dag ervoor*, *hier* → *daar*, *nu* → *toen*. Pergeseran ini yang paling sering luput, dan justru ia yang membuat kalimat yang diteruskan terdengar rapi."
+      ],
+      "grammars": [
+        {
+          "title": "Dari langsung ke tak langsung",
+          "body": [
+            "Empat jenis kalimat, empat cara meneruskannya. Yang selalu sama: kata kerjanya berpindah ke ujung."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Langsung",
+              "Tak langsung"
+            ],
+            "rows": [
+              [
+                "pernyataan",
+                "\"Ik kom later.\"",
+                "Hij zei **dat** hij later **kwam**."
+              ],
+              [
+                "pernyataan, masih berlaku",
+                "\"Ik woon in Gent.\"",
+                "Hij zei **dat** hij in Gent **woont**."
+              ],
+              [
+                "pertanyaan ya/tidak",
+                "\"Heb je tijd?\"",
+                "Hij vroeg **of** ik tijd **had**."
+              ],
+              [
+                "pertanyaan berkata tanya",
+                "\"Waarom bel je?\"",
+                "Hij vroeg **waarom** ik **belde**."
+              ],
+              [
+                "pertanyaan waktu",
+                "\"Wanneer kom je?\"",
+                "Hij wilde weten **wanneer** ik **kwam**."
+              ],
+              [
+                "perintah",
+                "\"Bel me terug.\"",
+                "Hij vroeg me **om** hem terug **te bellen**."
+              ],
+              [
+                "perintah (sehari-hari)",
+                "\"Bel me terug.\"",
+                "Hij wil **dat** ik hem **terugbel**."
+              ],
+              [
+                "larangan",
+                "\"Doe dat niet.\"",
+                "Hij zei **dat** ik dat niet **moest doen**."
+              ]
+            ]
+          },
+          "after": [
+            "***Zeggen* menuntut *dat*, *vragen* menuntut *of* atau kata tanya.** Kalau kamu memakai *vragen dat*, kalimatnya langsung terdengar salah. Kata kerja lain yang berperilaku seperti *vragen*: *willen weten*, *zich afvragen*, *benieuwd zijn*.",
+            "***Zeggen tegen*, bukan *zeggen aan***: *hij zei **tegen** mij dat …*. Sama untuk *vertellen aan* — yang ini justru memakai *aan*. Pasangan preposisi ini kembali ke unit 8: hafalkan bersama kata kerjanya."
+          ]
+        },
+        {
+          "title": "Apa yang bergeser",
+          "body": [
+            "Tiga hal berubah ketika kalimat diteruskan: siapa yang berbicara, kapan, dan di mana. Tabel ini memuat pergeseran yang paling sering dibutuhkan."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Langsung",
+              "Tak langsung"
+            ],
+            "rows": [
+              [
+                "kata ganti",
+                "ik, mijn",
+                "hij/zij, zijn/haar"
+              ],
+              [
+                "kata ganti (kepadamu)",
+                "jij, jouw",
+                "ik, mijn"
+              ],
+              [
+                "waktu kini",
+                "vandaag",
+                "die dag"
+              ],
+              [
+                "besok",
+                "morgen",
+                "de volgende dag"
+              ],
+              [
+                "kemarin",
+                "gisteren",
+                "de dag ervoor"
+              ],
+              [
+                "sekarang",
+                "nu",
+                "toen"
+              ],
+              [
+                "tempat",
+                "hier",
+                "daar"
+              ],
+              [
+                "kata tunjuk",
+                "dit, deze",
+                "dat, die"
+              ],
+              [
+                "bentuk waktu",
+                "kini → lampau",
+                "belt → belde"
+              ],
+              [
+                "bentuk waktu",
+                "perfectum → plusquamperf.",
+                "heeft gebeld → had gebeld"
+              ]
+            ]
+          },
+          "after": [
+            "**Jangan menggeser kalau isinya masih berlaku.** *Hij zei dat hij in Gent **woont*** benar dan wajar kalau dia memang masih tinggal di sana. Pergeseran waktu di bahasa Belanda adalah pilihan makna, bukan aturan mekanis seperti di bahasa Inggris.",
+            "***Zou* muncul untuk masa depan yang diteruskan**: *\"Ik kom morgen\"* → *hij zei dat hij de volgende dag **zou komen***. Inilah pekerjaan *zou* yang tidak masuk daftar di unit 14: menandai masa depan dilihat dari sudut masa lampau."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Wat zei de dokter?",
+      "intro": "Tomas baru pulang dari dokter dan Dewi bertanya. Seluruh dialog ini adalah latihan meneruskan perkataan orang ketiga.",
+      "lines": [
+        {
+          "speaker": "Dewi:",
+          "text": "En? Wat zei ze?",
+          "id": "Gimana? Dokternya bilang apa?",
+          "literal": "dan? apa berkata dia?"
+        },
+        {
+          "speaker": "Tomas:",
+          "text": "Ze zei dat het niets ernstigs was, maar dat ik meer moest bewegen.",
+          "id": "Katanya nggak ada yang serius, tapi saya harus lebih banyak gerak.",
+          "literal": "dia berkata bahwa itu tak-sesuatu serius adalah, tapi bahwa saya lebih harus bergerak."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Vroeg ze of je nog steeds zoveel zit?",
+          "id": "Dia tanya kamu masih duduk terus?",
+          "literal": "bertanya dia apakah kamu masih selalu sebanyak-itu duduk?"
+        },
+        {
+          "speaker": "Tomas:",
+          "text": "Ja. En ze wilde weten hoeveel uur ik per dag achter een scherm zit.",
+          "id": "Iya. Dan dia mau tahu berapa jam sehari saya di depan layar.",
+          "literal": "ya. dan dia ingin tahu berapa-banyak jam saya per hari di-belakang satu layar duduk."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "En wat heb je gezegd?",
+          "id": "Kamu jawab apa?",
+          "literal": "dan apa punya kamu katakan-nya?"
+        },
+        {
+          "speaker": "Tomas:",
+          "text": "Zes. Ze keek me aan en vroeg of ik dat zeker wist.",
+          "id": "Enam. Dia lihat saya terus tanya saya yakin apa nggak.",
+          "literal": "enam. dia melihat saya pada dan bertanya apakah saya itu pasti tahu."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Dat is een goede dokter.",
+          "id": "Itu dokter yang bagus.",
+          "literal": "itu adalah satu baik dokter."
+        },
+        {
+          "speaker": "Tomas:",
+          "text": "Ze zei ook dat ik over drie maanden terug moest komen. Dat had ik liever niet gehoord.",
+          "id": "Dia juga bilang tiga bulan lagi saya harus balik. Itu yang saya nggak pengin dengar.",
+          "literal": "dia berkata juga bahwa saya dalam tiga bulan kembali harus datang. itu punya saya lebih-suka tidak dengar-nya."
+        }
+      ],
+      "notes": [
+        "***Ze wilde weten hoeveel uur ik … zit*** memakai bentuk kini walau kalimat utamanya lampau — karena kebiasaan Tomas belum berubah. Ini contoh langsung dari catatan kelima di dialog pertama: bentuk waktu yang tidak digeser menandai bahwa isinya masih berlaku.",
+        "***Ze keek me aan*** — *aankijken* (memandang) adalah kata kerja terpisah yang berbeda dari *kijken naar*. *Ze keek me aan* berarti dia menatap saya, sering dengan makna menilai atau menunggu; *ze keek naar me* cuma berarti dia melihat ke arah saya.",
+        "***Dat had ik liever niet gehoord*** adalah plusquamperfectum yang dipakai untuk penyesalan ringan (unit 14), dan ia terdengar jauh lebih wajar daripada *ik wilde dat niet horen*. Pola *dat had ik liever niet …* layak dihafal utuh.",
+        "**Perhatikan bahwa Tomas dua kali memulai kalimat dengan *ze zei dat …***, lalu menyambung dengan *maar dat …*. Ketika dua hal diteruskan sekaligus, kata *dat* diulang di potongan kedua — membuangnya membuat kalimatnya kehilangan pegangan."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telepon dan pesan — kalimat baku",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Met Dewi Prasetyo.",
+              "Dengan Dewi Prasetyo. (mengangkat telepon)"
+            ],
+            [
+              "U spreekt met …",
+              "Anda berbicara dengan …"
+            ],
+            [
+              "Met wie spreek ik?",
+              "Dengan siapa saya bicara?"
+            ],
+            [
+              "Kunt u dat even spellen?",
+              "Bisa dieja?"
+            ],
+            [
+              "Een moment, ik verbind u door.",
+              "Sebentar, saya sambungkan."
+            ],
+            [
+              "Hij is in gesprek.",
+              "Dia sedang menelepon."
+            ],
+            [
+              "Hij zit in een vergadering.",
+              "Dia sedang rapat."
+            ],
+            [
+              "Kan ik iets doorgeven?",
+              "Ada yang bisa saya sampaikan?"
+            ],
+            [
+              "Wilt u dat hij u terugbelt?",
+              "Mau ditelepon balik?"
+            ],
+            [
+              "Op welk nummer bent u bereikbaar?",
+              "Bisa dihubungi di nomor berapa?"
+            ],
+            [
+              "Ik zal het doorgeven.",
+              "Akan saya sampaikan."
+            ],
+            [
+              "Bedankt voor het bellen.",
+              "Terima kasih sudah menelepon."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Menelepon di Belanda",
+          "items": [
+            "**Sebutkan namamu lebih dulu, bukan \"halo\".** *Met Dewi* atau *Met Dewi Prasetyo* adalah cara baku mengangkat maupun memulai telepon. Menjawab dengan *hallo* saja terdengar seperti kamu tidak tahu siapa yang menelepon — dan bagi penelepon, seperti dia belum sampai ke orang yang benar.",
+            "**Kata *spellen* akan sering kamu butuhkan.** Nama Indonesia hampir selalu perlu dieja di telepon. Belajarlah mengeja namamu sendiri dengan cepat dalam bahasa Belanda — dan ingat: *j* dibaca \"yeh\", *y* dibaca \"èy-khrèk\" (*Griekse ij*), *g* dibaca \"kheh\".",
+            "***Bereikbaar*** (bisa dihubungi) adalah kata kerja hidup di dunia kerja Belanda: *ik ben vanmiddag niet bereikbaar*, *op welk nummer ben je bereikbaar?* Ia lebih halus daripada berkata kamu sibuk."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "doorgeven",
+      "baca": "DOHR-kheh-fe(n)",
+      "id": "menyampaikan"
+    },
+    {
+      "nl": "de offerte",
+      "baca": "de o-FÈR-te",
+      "id": "penawaran harga"
+    },
+    {
+      "nl": "terugbellen",
+      "baca": "te-RÜKH-bè-le(n)",
+      "id": "menelepon balik"
+    },
+    {
+      "nl": "gelden",
+      "baca": "KHÈL-de(n)",
+      "id": "berlaku"
+    },
+    {
+      "nl": "de haast",
+      "baca": "de hahst",
+      "id": "ketergesaan"
+    },
+    {
+      "nl": "bereikbaar",
+      "baca": "be-RÈYK-bahr",
+      "id": "bisa dihubungi"
+    },
+    {
+      "nl": "de boodschap",
+      "baca": "de BOHT-skhap",
+      "id": "pesan"
+    },
+    {
+      "nl": "in gesprek",
+      "baca": "in khe-SPRÈK",
+      "id": "sedang menelepon"
+    },
+    {
+      "nl": "doorverbinden",
+      "baca": "DOHR-fer-bin-de(n)",
+      "id": "menyambungkan"
+    },
+    {
+      "nl": "spellen",
+      "baca": "SPÈ-le(n)",
+      "id": "mengeja"
+    },
+    {
+      "nl": "zorgen dat",
+      "baca": "ZOR-khe(n) dat",
+      "id": "memastikan bahwa"
+    },
+    {
+      "nl": "aankijken",
+      "baca": "AHN-kèy-ke(n)",
+      "id": "menatap"
+    },
+    {
+      "nl": "zeker weten",
+      "baca": "ZEH-ker VEH-te(n)",
+      "id": "yakin betul"
+    },
+    {
+      "nl": "willen weten",
+      "baca": "VI-le(n) VEH-te(n)",
+      "id": "ingin tahu"
+    },
+    {
+      "nl": "de volgende dag",
+      "baca": "de FOL-khen-de dakh",
+      "id": "keesokan harinya"
+    },
+    {
+      "nl": "de dag ervoor",
+      "baca": "de dakh er-FOHR",
+      "id": "sehari sebelumnya"
+    },
+    {
+      "nl": "vertellen aan",
+      "baca": "fer-TÈ-le(n) ahn",
+      "id": "menceritakan kepada"
+    },
+    {
+      "nl": "zeggen tegen",
+      "baca": "ZÈ-khe(n) TEH-khe(n)",
+      "id": "mengatakan kepada"
+    },
+    {
+      "nl": "liever niet",
+      "baca": "LIH-fer nit",
+      "id": "lebih baik jangan"
+    },
+    {
+      "nl": "over drie maanden",
+      "baca": "OH-fer dri MAHN-de(n)",
+      "id": "tiga bulan lagi"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi kalimat tak langsung yang diawali **Hij zei dat …** atau **Hij vroeg of/…**",
+      "items": [
+        "\"Ik kom later.\" → ____",
+        "\"Heb je tijd?\" → ____",
+        "\"Waarom bel je?\" → ____",
+        "\"Ik heb je mail gelezen.\" → ____",
+        "\"Wanneer ben je bereikbaar?\" → ____",
+        "\"De prijs geldt vandaag.\" → ____"
+      ]
+    },
+    {
+      "prompt": "Ubah perintahnya menjadi kalimat tak langsung.",
+      "items": [
+        "\"Bel me terug.\" → Hij vroeg me ____",
+        "\"Vul het formulier in.\" → Ze zei dat ik ____",
+        "\"Kom om drie uur.\" → Hij wil dat ik ____",
+        "\"Doe dat niet.\" → Ze zei dat ik ____",
+        "\"Wacht even.\" → Hij vroeg me ____"
+      ]
+    },
+    {
+      "prompt": "Geser keterangan waktu dan tempatnya.",
+      "items": [
+        "\"Ik kom morgen.\" → Hij zei dat hij ____ zou komen.",
+        "\"Ik was hier gisteren.\" → Hij zei dat hij ____ ____ was geweest.",
+        "\"Ik doe het nu.\" → Hij zei dat hij het ____ deed.",
+        "\"De prijs geldt vandaag.\" → Hij zei dat de prijs ____ ____ gold.",
+        "\"Dit is mijn nummer.\" → Hij zei dat ____ ____ nummer was."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Belanda.",
+      "items": [
+        "Karim sedang rapat, ada yang bisa saya sampaikan?",
+        "Dia tanya kamu sudah baca emailnya atau belum.",
+        "Dia ingin kamu telepon balik setelah jam tiga.",
+        "Dokter bilang tidak ada yang serius.",
+        "Dia mau tahu berapa jam sehari saya di depan layar."
+      ]
+    }
+  ],
+  "answers": [
+    "Hij zei dat hij later kwam. — Hij vroeg of ik tijd had. — Hij vroeg waarom ik belde. — Hij zei dat hij mijn mail had gelezen. — Hij vroeg wanneer ik bereikbaar was. — Hij zei dat de prijs die dag gold.",
+    "Hij vroeg me om hem terug te bellen. — Ze zei dat ik het formulier moest invullen. — Hij wil dat ik om drie uur kom. — Ze zei dat ik dat niet moest doen. — Hij vroeg me om even te wachten.",
+    "de volgende dag — daar / de dag ervoor — toen — die dag — dat / zijn",
+    "Karim zit in een vergadering, kan ik iets doorgeven? — Hij vroeg of je zijn mail had gelezen. — Hij wil dat je hem na drieën terugbelt. — De dokter zei dat het niets ernstigs was. — Ze wilde weten hoeveel uur ik per dag achter een scherm zit."
+  ],
+  "wave": "Sebelum masuk unit 18, dengarkan satu percakapan pendek berbahasa Belanda — video, siniar, atau rekaman sendiri — lalu ceritakan isinya kepada dirimu sendiri dalam sepuluh kalimat *hij zei dat …* dan *ze vroeg of …*. Ini latihan yang paling mendekati apa yang akan kamu lakukan di kantor."
+}

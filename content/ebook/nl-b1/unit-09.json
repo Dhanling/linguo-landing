@@ -1,0 +1,471 @@
+{
+  "title": "Harus, boleh, bisa — dan infinitif yang berlipat dua",
+  "title_target": "Moeten, mogen, kunnen en de dubbele infinitief",
+  "goal": "Memakai kata kerja modal di semua bentuk waktu, dan menyusun ekor kalimat ketika dua infinitif berbaris.",
+  "bekal": [
+    "membentuk imperfectum modal: moest, mocht, kon, wilde, zou",
+    "memakai infinitif ganda di perfectum: *ik heb moeten werken*",
+    "menyusun urutan kata kerja di anak kalimat berinfinitif ganda",
+    "membedakan *moeten niet* dari *niet hoeven*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Regels en uitzonderingen",
+      "intro": "Dewi bertanya soal aturan cuti dan kerja dari rumah. Perhatikan bahwa begitu kalimatnya berbentuk lampau, deelwoord yang kamu harapkan justru tak pernah muncul — yang datang adalah infinitif kedua.",
+      "lines": [
+        {
+          "speaker": "Dewi:",
+          "text": "Karim, mag ik volgende week een dag thuiswerken?",
+          "id": "Karim, minggu depan saya boleh kerja dari rumah sehari?",
+          "literal": "Karim, boleh saya berikut minggu satu hari rumah-kerja?"
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Natuurlijk. Je hoeft het niet eens te vragen, je moet het alleen doorgeven.",
+          "id": "Tentu. Nggak usah izin, cukup dilaporkan saja.",
+          "literal": "tentu. kamu perlu itu tidak sekali untuk tanya, kamu harus itu hanya lewat-beri."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "O. Bij mijn vorige werkgever moest ik het altijd drie dagen van tevoren aanvragen.",
+          "id": "Oh. Di kantor saya yang lama saya harus mengajukan tiga hari sebelumnya.",
+          "literal": "o. pada milik-saya sebelum kerja-pemberi harus saya itu selalu tiga hari dari sebelumnya ajukan."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Hier niet. We hebben het systeem twee jaar geleden moeten veranderen.",
+          "id": "Di sini nggak. Dua tahun lalu kami terpaksa mengubah sistemnya.",
+          "literal": "di-sini tidak. kami punya itu sistem dua tahun lalu harus ubah."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Waarom?",
+          "id": "Kenapa?",
+          "literal": "kenapa?"
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Omdat niemand meer op kantoor wilde komen. Toen mocht het opeens wel.",
+          "id": "Karena nggak ada lagi yang mau ke kantor. Tiba-tiba jadi boleh.",
+          "literal": "sebab tak-seorang-pun lagi pada kantor ingin datang. waktu-itu boleh itu tiba-tiba memang."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "En vergaderingen? Moet ik daar altijd bij zijn?",
+          "id": "Rapat gimana? Saya harus selalu ikut?",
+          "literal": "dan rapat? harus saya di-sana selalu pada ada?"
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Alleen bij de maandagvergadering. De rest kun je overslaan.",
+          "id": "Cuma rapat Senin. Sisanya boleh dilewat.",
+          "literal": "hanya pada itu senin-rapat. itu sisa bisa kamu lewati."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Fijn. Vorige week heb ik er vier moeten bijwonen.",
+          "id": "Lega. Minggu lalu saya harus ikut empat rapat.",
+          "literal": "menyenangkan. sebelum minggu punya saya dari-sana empat harus ikut-hadir."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Dat had je niet hoeven doen. Dat had ik je moeten zeggen, sorry.",
+          "id": "Itu nggak perlu kamu lakukan. Harusnya saya kasih tahu, maaf.",
+          "literal": "itu punya kamu tidak perlu lakukan. itu punya saya kamu harus katakan, maaf."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Geen probleem. Ik wist niet dat ik ze mocht overslaan.",
+          "id": "Nggak masalah. Saya nggak tahu boleh dilewat.",
+          "literal": "tidak masalah. saya tahu tidak bahwa saya mereka boleh lewati."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Zeg het gewoon als je iets niet weet. Je kunt altijd bij me binnenlopen.",
+          "id": "Bilang aja kalau ada yang nggak kamu tahu. Kamu selalu bisa masuk ke ruangan saya.",
+          "literal": "katakan itu begitu-saja kalau kamu sesuatu tidak tahu. kamu bisa selalu pada saya masuk-berjalan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Dank je. Mag ik nog iets vragen? Over de cursus.",
+          "id": "Makasih. Boleh tanya satu lagi? Soal kursus.",
+          "literal": "terima kamu. boleh saya masih sesuatu tanya? tentang itu kursus."
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Je wilt weten of het bedrijf betaalt. Dat kan, maar je moet het aanvragen.",
+          "id": "Kamu mau tahu kantornya bayar atau nggak. Bisa, tapi harus diajukan.",
+          "literal": "kamu ingin tahu apakah itu perusahaan bayar. itu bisa, tapi kamu harus itu ajukan."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Had ik dat vorig jaar ook al kunnen doen?",
+          "id": "Tahun lalu juga sudah bisa saya lakukan?",
+          "literal": "punya saya itu sebelum tahun juga sudah bisa lakukan?"
+        },
+        {
+          "speaker": "Karim:",
+          "text": "Ja. Maar dat wist je niet, dus daar hoef je geen spijt van te hebben.",
+          "id": "Iya. Tapi kan kamu nggak tahu, jadi nggak usah disesali.",
+          "literal": "ya. tapi itu tahu kamu tidak, jadi di-sana perlu kamu tidak penyesalan dari untuk punya."
+        }
+      ],
+      "notes": [
+        "**Kata kerja modal tidak membentuk deelwoord di kalimat sehari-hari.** *Ik heb moeten **werken***, bukan *ik heb **gemoeten** werken*. Ini disebut **infinitif ganda**: dua kata kerja berbaris di ujung, dua-duanya berbentuk infinitif. Bentuk deelwoord *gemoeten*, *gekund*, *gemogen* memang ada, tapi hanya dipakai kalau tak ada kata kerja lain: *ik heb het niet **gekund***.",
+        "**Urutan di ekor: bantu, lalu modal, lalu kata kerja utamanya.** *We hebben het systeem **moeten veranderen***. Modalnya berdiri **di depan** kata kerja utamanya, bukan di belakang. Ini kebalikan dari perfectum biasa, dan ia satu-satunya urutan yang benar.",
+        "**Di anak kalimat, kata kerja bantunya melompat ke DEPAN rombongan.** *… dat ik vier vergaderingen **heb moeten** bijwonen*, bukan *… moeten bijwonen heb*. Inilah satu-satunya tempat di bahasa Belanda ketika kata kerja bantu tidak berdiri paling belakang — dan bentuk lain terdengar salah bagi telinga penutur asli.",
+        "***Moeten niet* dan *niet hoeven* bukan hal yang sama.** *Je **moet niet** komen* = kamu tidak boleh datang (larangan). *Je **hoeft niet** te komen* = kamu tidak perlu datang (kebebasan). Dalam bahasa Indonesia dua-duanya bisa keluar sebagai \"nggak usah datang\", dan salah pilih di sini bisa terdengar seperti mengusir orang.",
+        "***Hoeven* memakai *te*, semua modal lain tidak.** *Je hoeft het niet **te** vragen* melawan *je moet het vragen*. Di perfectum, *te* itu hilang lagi: *dat had je niet **hoeven doen*** — bentuk yang kelihatan tak konsisten dan memang begitulah adanya. Sebagian penutur asli menulis *hoeven te doen*; keduanya diterima.",
+        "***Mocht* juga berarti \"kalau kebetulan\"** dalam ragam agak resmi: *Mocht u vragen hebben, belt u gerust.* (Kalau ada pertanyaan, silakan telepon.) Bentuk ini sering muncul di surel resmi dan surat dari instansi, jadi kenali sekarang — kamu akan bertemu lagi di unit 21."
+      ],
+      "grammars": [
+        {
+          "title": "Lima modal dalam tiga bentuk waktu",
+          "body": [
+            "Perhatikan kolom terakhir: yang berdiri di sana bukan deelwoord, melainkan infinitif yang sama persis dengan kolom pertama."
+          ],
+          "table": {
+            "head": [
+              "Infinitif",
+              "ik / hij",
+              "imperfectum",
+              "perfectum"
+            ],
+            "rows": [
+              [
+                "kunnen (bisa)",
+                "kan",
+                "kon / konden",
+                "heb **kunnen** …"
+              ],
+              [
+                "moeten (harus)",
+                "moet",
+                "moest / moesten",
+                "heb **moeten** …"
+              ],
+              [
+                "mogen (boleh)",
+                "mag",
+                "mocht / mochten",
+                "heb **mogen** …"
+              ],
+              [
+                "willen (ingin)",
+                "wil",
+                "wilde / wou",
+                "heb **willen** …"
+              ],
+              [
+                "zullen (akan)",
+                "zal",
+                "zou / zouden",
+                "— (tak ada)"
+              ],
+              [
+                "hoeven (perlu)",
+                "hoeft",
+                "hoefde",
+                "heb **hoeven** …"
+              ],
+              [
+                "gaan (akan, pergi)",
+                "ga",
+                "ging",
+                "ben **gaan** …"
+              ],
+              [
+                "laten (membiarkan)",
+                "laat",
+                "liet",
+                "heb **laten** …"
+              ]
+            ]
+          },
+          "after": [
+            "***Wou* adalah bentuk lisan dari *wilde***, dan ia sangat umum: *ik **wou** je nog iets vragen*. Di tulisan resmi pakailah *wilde*; di percakapan, *wou* justru terdengar lebih wajar.",
+            "***Zullen* tak punya perfectum** karena ia sudah menunjuk ke depan. Bentuk lampaunya, *zou*, tidak berarti \"akan di masa lalu\" melainkan menjadi bentuk pengandaian — dan itu isi unit 14."
+          ]
+        },
+        {
+          "title": "Ekor kalimat berinfinitif ganda",
+          "body": [
+            "Bandingkan kalimat utama dan anak kalimatnya. Yang berpindah hanya kata kerja bantunya — ia melompat dari belakang ke depan rombongan."
+          ],
+          "table": {
+            "head": [
+              "Kalimat utama",
+              "Anak kalimat"
+            ],
+            "rows": [
+              [
+                "Ik **heb moeten werken**.",
+                "… dat ik **heb moeten werken**."
+              ],
+              [
+                "Ik **heb het niet kunnen vinden**.",
+                "… omdat ik het niet **heb kunnen vinden**."
+              ],
+              [
+                "Ik **ben gaan kijken**.",
+                "… dat ik **ben gaan kijken**."
+              ],
+              [
+                "Ik **heb hem laten komen**.",
+                "… dat ik hem **heb laten komen**."
+              ],
+              [
+                "Ik **had het moeten zeggen**.",
+                "… dat ik het **had moeten zeggen**."
+              ],
+              [
+                "Ik **wil morgen thuiswerken**.",
+                "… dat ik morgen **wil thuiswerken**."
+              ],
+              [
+                "Ik **moet het aanvragen**.",
+                "… dat ik het **moet aanvragen**."
+              ],
+              [
+                "Ik **heb het niet gekund**.",
+                "… dat ik het niet **heb gekund**."
+              ]
+            ]
+          },
+          "after": [
+            "**Baris terakhir memperlihatkan pengecualiannya:** kalau tak ada kata kerja utama, modalnya kembali menjadi deelwoord biasa (*gekund*, *gemoeten*, *gemogen*, *gewild*) dan mundur ke belakang seperti deelwoord lain. Jadi bentuk deelwoordnya bukan salah — ia hanya jarang dibutuhkan.",
+            "**Tiga infinitif berbaris pun mungkin**: *dat ik het **had moeten kunnen doen*** (bahwa saya seharusnya bisa melakukannya). Urutannya tetap sama: bantu, lalu modal-modalnya menurut urutan artinya, lalu kata kerja utamanya paling belakang."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja lain yang ikut aturan infinitif ganda",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Contoh perfectum",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "gaan",
+              "Ik ben **gaan kijken**.",
+              "saya pergi melihat"
+            ],
+            [
+              "komen",
+              "Hij is **komen eten**.",
+              "dia datang makan"
+            ],
+            [
+              "blijven",
+              "We zijn **blijven wachten**.",
+              "kami tetap menunggu"
+            ],
+            [
+              "laten",
+              "Ik heb het **laten repareren**.",
+              "saya menyuruh memperbaikinya"
+            ],
+            [
+              "zien",
+              "Ik heb hem **zien lopen**.",
+              "saya melihat dia berjalan"
+            ],
+            [
+              "horen",
+              "Ik heb je **horen zingen**.",
+              "saya mendengar kamu menyanyi"
+            ],
+            [
+              "leren",
+              "Ze heeft hem **leren zwemmen**.",
+              "dia mengajari dia berenang"
+            ],
+            [
+              "helpen",
+              "Ik heb haar **helpen verhuizen**.",
+              "saya membantu dia pindahan"
+            ],
+            [
+              "durven",
+              "Ik heb het niet **durven vragen**.",
+              "saya tak berani menanyakannya"
+            ],
+            [
+              "proberen",
+              "Ik heb het **proberen te doen**.",
+              "saya sudah coba melakukannya"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Laten — kata kerja paling berguna yang belum kamu pakai",
+          "items": [
+            "***Laten* + infinitif berarti menyuruh atau membiarkan orang lain melakukannya**, dan bahasa Belanda memakainya di tempat bahasa Indonesia memakai kata kerja pasif atau kausatif. *Ik laat mijn fiets **repareren*** = sepeda saya diperbaiki (oleh orang lain). *Ik laat het je **weten*** = nanti saya kabari — kalimat yang muncul di ujung hampir setiap percakapan kerja di Belanda.",
+            "***Laten we …*** adalah ajakan: *laten we beginnen* (ayo mulai), *laten we gaan* (ayo pergi). Bentuk pendeknya, *laten we maar gaan*, terdengar jauh lebih Belanda daripada *we moeten gaan*.",
+            "**Jangan campur dengan *verlaten*** (meninggalkan tempat) dan *achterlaten* (meninggalkan barang). Tiga kata dengan induk yang sama dan tiga arti yang jauh berbeda."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "thuiswerken",
+      "baca": "TÖYS-vèr-ke(n)",
+      "id": "kerja dari rumah"
+    },
+    {
+      "nl": "hoeven",
+      "baca": "HU-fe(n)",
+      "id": "perlu (selalu bersangkalan)"
+    },
+    {
+      "nl": "de werkgever",
+      "baca": "de VÈRK-kheh-fer",
+      "id": "pemberi kerja"
+    },
+    {
+      "nl": "van tevoren",
+      "baca": "fan te-FOH-re(n)",
+      "id": "sebelumnya"
+    },
+    {
+      "nl": "aanvragen",
+      "baca": "AHN-frah-khe(n)",
+      "id": "mengajukan"
+    },
+    {
+      "nl": "het systeem",
+      "baca": "het sis-TEHM",
+      "id": "sistem"
+    },
+    {
+      "nl": "opeens",
+      "baca": "op-EHNS",
+      "id": "tiba-tiba"
+    },
+    {
+      "nl": "erbij zijn",
+      "baca": "er-BÈY zèyn",
+      "id": "ikut hadir"
+    },
+    {
+      "nl": "overslaan",
+      "baca": "OH-fer-slahn",
+      "id": "melewati, melewatkan"
+    },
+    {
+      "nl": "de rest",
+      "baca": "de rèst",
+      "id": "sisanya"
+    },
+    {
+      "nl": "fijn",
+      "baca": "fèyn",
+      "id": "enak, melegakan"
+    },
+    {
+      "nl": "binnenlopen",
+      "baca": "BI-ne(n)-loh-pe(n)",
+      "id": "masuk (tanpa janji)"
+    },
+    {
+      "nl": "laten weten",
+      "baca": "LAH-te(n) VEH-te(n)",
+      "id": "mengabari"
+    },
+    {
+      "nl": "laten repareren",
+      "baca": "LAH-te(n) reh-pah-REH-re(n)",
+      "id": "menyuruh memperbaiki"
+    },
+    {
+      "nl": "de uitzondering",
+      "baca": "de ÖYT-zon-de-ring",
+      "id": "pengecualian"
+    },
+    {
+      "nl": "de regel",
+      "baca": "de REH-khel",
+      "id": "aturan"
+    },
+    {
+      "nl": "durven",
+      "baca": "DÜR-fe(n)",
+      "id": "berani"
+    },
+    {
+      "nl": "vorig jaar",
+      "baca": "FOH-rekh yahr",
+      "id": "tahun lalu"
+    },
+    {
+      "nl": "geleden",
+      "baca": "khe-LEH-de(n)",
+      "id": "yang lalu"
+    },
+    {
+      "nl": "gerust",
+      "baca": "khe-RÜST",
+      "id": "dengan tenang, silakan saja"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi perfectum dengan infinitif ganda.",
+      "items": [
+        "Ik moet werken. → Ik ____",
+        "Hij kan niet komen. → Hij ____",
+        "We mogen naar binnen gaan. → We ____",
+        "Ze wil hem spreken. → Ze ____",
+        "Ik ga kijken. → Ik ____",
+        "Ik laat mijn fiets repareren. → Ik ____"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi anak kalimat yang diawali **dat**.",
+      "items": [
+        "Ik heb moeten werken. → Hij weet dat ____",
+        "We hebben het niet kunnen vinden. → Jammer dat ____",
+        "Ik ben gaan kijken. → Ik zeg dat ____",
+        "Ik had het moeten zeggen. → Ik besef dat ____",
+        "Ik wil morgen thuiswerken. → Karim weet dat ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan **moet niet** atau **hoeft niet (te)**.",
+      "items": [
+        "Je ____ komen, we redden het wel. (tak perlu)",
+        "Je ____ met die man praten, hij is gevaarlijk. (tak boleh)",
+        "Je ____ het formulier invullen, dat doe ik. (tak perlu)",
+        "Je ____ hier roken. (tak boleh)",
+        "Je ____ het van tevoren aanvragen. (tak perlu)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Belanda.",
+      "items": [
+        "Minggu depan saya boleh kerja dari rumah sehari?",
+        "Kamu tidak perlu izin, cukup dilaporkan.",
+        "Dua tahun lalu kami terpaksa mengubah sistemnya.",
+        "Minggu lalu saya harus ikut empat rapat.",
+        "Harusnya saya memberitahumu."
+      ]
+    }
+  ],
+  "answers": [
+    "Ik heb moeten werken. — Hij heeft niet kunnen komen. — We hebben naar binnen mogen gaan. — Ze heeft hem willen spreken. — Ik ben gaan kijken. — Ik heb mijn fiets laten repareren.",
+    "Hij weet dat ik heb moeten werken. — Jammer dat we het niet hebben kunnen vinden. — Ik zeg dat ik ben gaan kijken. — Ik besef dat ik het had moeten zeggen. — Karim weet dat ik morgen wil thuiswerken.",
+    "hoeft niet te — moet niet — hoeft niet te — moet niet — hoeft niet te",
+    "Mag ik volgende week een dag thuiswerken? — Je hoeft het niet te vragen, je moet het alleen doorgeven. — We hebben het systeem twee jaar geleden moeten veranderen. — Vorige week heb ik vier vergaderingen moeten bijwonen. — Dat had ik je moeten zeggen."
+  ],
+  "wave": "Sebelum masuk unit 10, ceritakan minggu lalumu dalam sepuluh kalimat yang semuanya memuat modal lampau: *ik heb moeten …*, *ik heb niet kunnen …*, *ik mocht …*, *ik wou …*. Lalu ulangi tiap kalimat sebagai anak kalimat yang diawali *Het vervelende is dat …* — di situlah kata kerja bantunya melompat ke depan."
+}

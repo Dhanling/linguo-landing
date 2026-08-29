@@ -1,0 +1,511 @@
+{
+  "title": "Kata kerja yang pecah jadi dua",
+  "title_target": "Werkwoorden die uit elkaar vallen",
+  "goal": "Menguasai kata kerja terpisah: ke mana ekornya pergi di kalimat utama, anak kalimat, perfectum, dan bentuk ber-te.",
+  "bekal": [
+    "memisahkan ekor kata kerja dan melemparkannya ke ujung kalimat",
+    "menyatukannya kembali di anak kalimat dan sesudah kata kerja modal",
+    "menyelipkan *ge-* dan *te* di sambungannya",
+    "membedakan kata kerja terpisah dari kata kerja tak terpisah lewat tekanan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — De eerste werkdag",
+      "intro": "Hari pertama Dewi di kantor baru. Sanne menjelaskan urusan sehari-hari — dan hampir tiap kalimatnya memakai kata kerja yang pecah dua. Carilah ekornya: ia hampir selalu duduk di kata terakhir.",
+      "lines": [
+        {
+          "speaker": "Sanne:",
+          "text": "Welkom! Ik leg je even alles uit.",
+          "id": "Selamat datang! Saya jelaskan semuanya sebentar.",
+          "literal": "selamat-datang! saya letakkan kamu sebentar semua keluar."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Graag. Hoe laat begint iedereen hier?",
+          "id": "Boleh. Di sini orang mulai jam berapa?",
+          "literal": "dengan-senang. bagaimana lambat memulai setiap-orang di-sini?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "De meesten komen tussen acht en negen aan. Ik sta zelf om zes uur op.",
+          "id": "Kebanyakan datang antara jam delapan dan sembilan. Saya sendiri bangun jam enam.",
+          "literal": "itu terbanyak datang antara delapan dan sembilan tiba. saya berdiri sendiri pada enam jam atas."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Zes uur! Waarom zo vroeg?",
+          "id": "Jam enam! Kenapa sepagi itu?",
+          "literal": "enam jam! kenapa begitu pagi?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Omdat ik mijn kinderen naar school breng voordat ik hier aankom.",
+          "id": "Karena saya antar anak-anak ke sekolah sebelum sampai ke sini.",
+          "literal": "sebab saya milik-saya anak-anak ke sekolah bawa sebelum saya di-sini tiba."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Duidelijk. En hoe geef ik mijn uren door?",
+          "id": "Jelas. Terus jam kerja saya laporkannya gimana?",
+          "literal": "jelas. dan bagaimana beri saya milik-saya jam lewat?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Je vult elke vrijdag het formulier in en stuurt het naar Karim op.",
+          "id": "Tiap Jumat kamu isi formulirnya dan kirim ke Karim.",
+          "literal": "kamu isi setiap jumat itu formulir dalam dan kirim itu ke Karim atas."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "En als ik het vergeet?",
+          "id": "Kalau saya lupa?",
+          "literal": "dan kalau saya itu lupa?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Dan belt Karim je op. Twee keer. Dat vergeet je daarna nooit meer.",
+          "id": "Karim bakal telepon kamu. Dua kali. Habis itu kamu nggak bakal lupa lagi.",
+          "literal": "maka menelepon Karim kamu atas. dua kali. itu lupa kamu sesudah-itu tak-pernah lagi."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Genoteerd. Moet ik morgen iets meenemen?",
+          "id": "Dicatat. Besok saya perlu bawa sesuatu?",
+          "literal": "tercatat. harus saya besok sesuatu ikut-ambil?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Alleen je laptop. En vergeet niet je pas mee te nemen.",
+          "id": "Laptopmu saja. Dan jangan lupa bawa kartu aksesmu.",
+          "literal": "hanya milik-kamu laptop. dan lupa tidak milik-kamu kartu ikut untuk ambil."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Die heb ik gisteren al opgehaald bij de receptie.",
+          "id": "Itu kemarin sudah saya ambil di resepsionis.",
+          "literal": "itu punya saya kemarin sudah atas-jemput-nya pada itu resepsi."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Netjes. O ja, we ruimen elke vrijdag om vijf uur samen de keuken op.",
+          "id": "Rapi. Oh iya, tiap Jumat jam lima kami beres-beres dapur bareng.",
+          "literal": "rapi. o ya, kami merapikan setiap jumat pada lima jam bersama itu dapur atas."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Doet iedereen mee?",
+          "id": "Semua orang ikut?",
+          "literal": "melakukan setiap-orang ikut?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Iedereen. Behalve Karim, want die zet dan altijd de vaatwasser aan en verdwijnt.",
+          "id": "Semua. Kecuali Karim, soalnya dia selalu nyalain mesin cuci piring terus menghilang.",
+          "literal": "setiap-orang. kecuali Karim, sebab itu menaruh maka selalu itu mesin-cuci-piring nyala dan menghilang."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Dan komt hij pas terug als alles klaar is.",
+          "id": "Dan dia baru balik kalau semuanya sudah beres.",
+          "literal": "maka datang dia baru kembali kalau semua siap adalah."
+        }
+      ],
+      "notes": [
+        "**Kata kerja terpisah adalah satu kata di kamus, dua kata di kalimat.** *Uitleggen* muncul di kalimat sebagai *ik leg … **uit***. Ekornya bukan kata sisa yang bisa dibuang — ia bagian dari artinya. *Leggen* berarti meletakkan; *uitleggen* berarti menjelaskan. Hilangkan ekornya, dan kalimatmu berarti lain sama sekali.",
+        "**Ekornya berdiri di kolom kelima, di belakang segalanya.** *We ruimen elke vrijdag om vijf uur samen de keuken **op**.* Delapan kata memisahkannya dari induknya. Pendengar Belanda memang menunggu sampai kata terakhir untuk tahu apa yang sebenarnya kamu lakukan — dan itu sebabnya menyela kalimat orang Belanda di tengah jarang berhasil.",
+        "**Di anak kalimat ia menyatu kembali**: *voordat ik hier **aankom***, *als alles **klaar is***. Begitu pula sesudah kata kerja modal: *moet ik iets **meenemen***. Aturannya sederhana — kata kerja terpisah hanya pecah kalau ia sendiri yang berdiri di tempat kedua.",
+        "**Di perfectum, *ge-* menyelinap ke tengah**: *opgehaald*, *opgebeld*, *aangekomen*, *meegenomen*. Ini terlihat mustahil pertama kali dan menjadi wajar sesudah dua puluh kali. Yang penting: tulisannya satu kata, tanpa spasi dan tanpa tanda hubung.",
+        "***Te* juga menyelinap ke tengah**, tapi hasilnya **tiga** kata terpisah: *vergeet niet je pas **mee te nemen***. Bandingkan dengan kata kerja biasa yang hanya dua: *vergeet niet je pas **te pakken***. Susunan berkeping tiga inilah yang paling sering ditulis salah oleh pelajar.",
+        "***Meedoen* berarti ikut serta**, dan ia salah satu kata paling Belanda yang ada. *Doe je mee?* dipakai untuk apa saja — patungan kado, main kartu, ikut bersih-bersih. Bahasa Indonesia butuh kata kerja yang berbeda-beda; bahasa Belanda cukup satu."
+      ],
+      "grammars": [
+        {
+          "title": "Ke mana ekornya pergi",
+          "body": [
+            "Satu kata kerja, tujuh keadaan. Perhatikan bahwa ia pecah hanya di tiga baris pertama — yaitu ketika induknya sendiri yang menjadi kata kerja bernyawa."
+          ],
+          "table": {
+            "head": [
+              "Keadaan",
+              "Contoh dengan *opbellen*"
+            ],
+            "rows": [
+              [
+                "kalimat utama",
+                "Ik **bel** je morgen **op**."
+              ],
+              [
+                "pertanyaan",
+                "**Bel** je me **op**?"
+              ],
+              [
+                "perintah",
+                "**Bel** me even **op**!"
+              ],
+              [
+                "anak kalimat",
+                "… dat ik je morgen **opbel**."
+              ],
+              [
+                "sesudah modal",
+                "Ik wil je morgen **opbellen**."
+              ],
+              [
+                "perfectum",
+                "Ik heb je gisteren **opgebeld**."
+              ],
+              [
+                "dengan *te*",
+                "Ik probeer je **op te bellen**."
+              ],
+              [
+                "sebagai kata benda",
+                "het **opbellen** kost tijd"
+              ]
+            ]
+          },
+          "after": [
+            "**Uji cepat:** kalau di kalimatmu ada kata kerja lain yang sudah memegang tempat kedua — *heb*, *wil*, *moet*, *ga* — maka kata kerja terpisahnya **tidak** pecah. Ia cuma pecah kalau ia sendirian.",
+            "***Niet* berdiri di depan ekornya**: *ik bel je **niet op***, *ik neem het **niet mee***. Ini masuk akal begitu kamu ingat bahwa ekornya termasuk kolom kelima, dan *niet* selalu berdiri tepat sebelum kolom itu."
+          ]
+        },
+        {
+          "title": "Terpisah atau tidak: dengarkan tekanannya",
+          "body": [
+            "Sebagian awalan selalu terpisah, sebagian tak pernah, dan segelintir bisa dua-duanya dengan arti yang berbeda. Pembedanya bisa didengar: **awalan yang ditekan selalu terpisah**."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Awalan",
+              "Contoh",
+              "Deelwoord"
+            ],
+            "rows": [
+              [
+                "selalu terpisah",
+                "op, aan, uit, mee, af, in, door, terug, langs, weg, thuis",
+                "**op**bellen",
+                "op**ge**beld"
+              ],
+              [
+                "tak pernah terpisah",
+                "be-, ge-, ver-, ont-, her-, er-",
+                "be**ta**len",
+                "betaald"
+              ],
+              [
+                "dua-duanya: terpisah",
+                "**door**gaan (berlanjut)",
+                "Het gaat **door**.",
+                "door**ge**gaan"
+              ],
+              [
+                "dua-duanya: menyatu",
+                "door**gron**den (menyelami)",
+                "Hij doorgrondt het.",
+                "doorgrond"
+              ],
+              [
+                "dua-duanya: terpisah",
+                "**over**komen (datang berkunjung)",
+                "Kom je zaterdag **over**?",
+                "over**ge**komen"
+              ],
+              [
+                "dua-duanya: menyatu",
+                "over**ko**men (menimpa)",
+                "Dat is mij ook overkomen.",
+                "overkomen"
+              ],
+              [
+                "dua-duanya: terpisah",
+                "**voor**komen (terjadi)",
+                "Dat komt vaak **voor**.",
+                "voor**ge**komen"
+              ],
+              [
+                "dua-duanya: menyatu",
+                "voor**ko**men (mencegah)",
+                "Dat wil ik voorkomen.",
+                "voorkomen"
+              ]
+            ]
+          },
+          "after": [
+            "**Baris terakhir adalah pasangan paling terkenal dalam bahasa Belanda.** *Ik wil het **voor**komen* (dengan tekanan di depan) berarti \"saya ingin hal itu terjadi lebih dulu\"; *ik wil het voor**ko**men* berarti \"saya ingin mencegahnya\". Satu-satunya pembedanya adalah suku kata mana yang kamu tekan — jadi ini betul-betul urusan mulut, bukan mata.",
+            "**Dalam praktik, empat baris pertama sudah cukup untuk B1.** Yang penting kamu kuasai: awalan bertekanan *op, aan, uit, mee, af, in* selalu pecah; enam awalan tak bertekanan tak pernah pecah dan tak pernah mendapat *ge-*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja terpisah yang paling sering dipakai",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Deelwoord",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "opstaan",
+              "opgestaan",
+              "bangun (dari tidur), berdiri"
+            ],
+            [
+              "opbellen",
+              "opgebeld",
+              "menelepon"
+            ],
+            [
+              "ophalen",
+              "opgehaald",
+              "menjemput, mengambil"
+            ],
+            [
+              "opruimen",
+              "opgeruimd",
+              "membereskan"
+            ],
+            [
+              "opsturen",
+              "opgestuurd",
+              "mengirimkan"
+            ],
+            [
+              "aankomen",
+              "aangekomen",
+              "tiba"
+            ],
+            [
+              "aanzetten / uitzetten",
+              "aangezet / uitgezet",
+              "menyalakan / mematikan"
+            ],
+            [
+              "afspreken",
+              "afgesproken",
+              "membuat janji, menyepakati"
+            ],
+            [
+              "uitleggen",
+              "uitgelegd",
+              "menjelaskan"
+            ],
+            [
+              "uitnodigen",
+              "uitgenodigd",
+              "mengundang"
+            ],
+            [
+              "invullen",
+              "ingevuld",
+              "mengisi (formulir)"
+            ],
+            [
+              "meenemen / meebrengen",
+              "meegenomen / meegebracht",
+              "membawa serta"
+            ],
+            [
+              "meedoen",
+              "meegedaan",
+              "ikut serta"
+            ],
+            [
+              "doorgeven",
+              "doorgegeven",
+              "meneruskan, melaporkan"
+            ],
+            [
+              "langskomen",
+              "langsgekomen",
+              "mampir"
+            ],
+            [
+              "terugbellen",
+              "teruggebeld",
+              "menelepon balik"
+            ],
+            [
+              "schoonmaken",
+              "schoongemaakt",
+              "membersihkan"
+            ],
+            [
+              "opzoeken",
+              "opgezocht",
+              "mencari (di daftar), menengok"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga yang artinya bergeser jauh dari induknya",
+          "items": [
+            "***Uitleggen*** = *uit* (keluar) + *leggen* (meletakkan) → menjelaskan. Gambarannya: kamu **membentangkan** sesuatu supaya orang bisa melihat seluruhnya. Bahasa Indonesia memakai gambaran yang sama pada kata *menguraikan*.",
+            "***Afspreken*** = *af* (selesai) + *spreken* (berbicara) → menyepakati, membuat janji. Kata bendanya, *de afspraak*, dipakai untuk janji apa pun: dokter, teman, rapat. *Ik heb een afspraak om drie uur* adalah kalimat yang akan kamu ucapkan ratusan kali di Belanda.",
+            "***Meevallen* dan *tegenvallen*** tak punya padanan satu kata dalam bahasa Indonesia. *Het valt mee* = ternyata tidak seburuk yang dikira; *het valt tegen* = ternyata mengecewakan. Dua-duanya dipakai terus-menerus, dan menguasainya langsung membuatmu terdengar jauh lebih Belanda."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "uitleggen",
+      "baca": "ÖYT-lè-khe(n)",
+      "id": "menjelaskan"
+    },
+    {
+      "nl": "aankomen",
+      "baca": "AHN-koh-me(n)",
+      "id": "tiba"
+    },
+    {
+      "nl": "opstaan",
+      "baca": "OP-stahn",
+      "id": "bangun, berdiri"
+    },
+    {
+      "nl": "voordat",
+      "baca": "FOHR-dat",
+      "id": "sebelum"
+    },
+    {
+      "nl": "doorgeven",
+      "baca": "DOHR-kheh-fe(n)",
+      "id": "meneruskan, melaporkan"
+    },
+    {
+      "nl": "invullen",
+      "baca": "IN-fü-le(n)",
+      "id": "mengisi"
+    },
+    {
+      "nl": "het formulier",
+      "baca": "het for-mü-LIR",
+      "id": "formulir"
+    },
+    {
+      "nl": "opsturen",
+      "baca": "OP-stü-re(n)",
+      "id": "mengirimkan"
+    },
+    {
+      "nl": "opbellen",
+      "baca": "OP-bè-le(n)",
+      "id": "menelepon"
+    },
+    {
+      "nl": "meenemen",
+      "baca": "MEH-neh-me(n)",
+      "id": "membawa serta"
+    },
+    {
+      "nl": "de pas",
+      "baca": "de pas",
+      "id": "kartu akses, paspor"
+    },
+    {
+      "nl": "ophalen",
+      "baca": "OP-hah-le(n)",
+      "id": "mengambil, menjemput"
+    },
+    {
+      "nl": "netjes",
+      "baca": "NÈ-tyes",
+      "id": "rapi, bagus"
+    },
+    {
+      "nl": "opruimen",
+      "baca": "OP-röy-me(n)",
+      "id": "membereskan"
+    },
+    {
+      "nl": "de keuken",
+      "baca": "de KÖ-ke(n)",
+      "id": "dapur"
+    },
+    {
+      "nl": "meedoen",
+      "baca": "MEH-dun",
+      "id": "ikut serta"
+    },
+    {
+      "nl": "behalve",
+      "baca": "be-HAL-fe",
+      "id": "kecuali"
+    },
+    {
+      "nl": "aanzetten",
+      "baca": "AHN-zè-te(n)",
+      "id": "menyalakan"
+    },
+    {
+      "nl": "verdwijnen",
+      "baca": "fer-DVÈY-ne(n)",
+      "id": "menghilang"
+    },
+    {
+      "nl": "klaar",
+      "baca": "klahr",
+      "id": "siap, selesai"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Susun ulang menjadi kalimat utama, dengan ekornya di tempat yang benar.",
+      "items": [
+        "ik / bel / je / morgen / op",
+        "we / ruimen / elke vrijdag / de keuken / op",
+        "hij / komt / om negen uur / aan",
+        "zij / vult / het formulier / vrijdag / in",
+        "ik / neem / mijn laptop / niet / mee"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi anak kalimat yang diawali **dat**.",
+      "items": [
+        "Ik bel je morgen op. → Ik denk dat ____",
+        "Hij komt om negen uur aan. → Ik weet dat ____",
+        "Zij vult het formulier in. → Ik hoop dat ____",
+        "We ruimen de keuken op. → Sanne zegt dat ____",
+        "Karim zet de vaatwasser aan. → Ik zie dat ____"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk yang diminta.",
+      "items": [
+        "Ik heb je gisteren ____ (opbellen).",
+        "Vergeet niet je pas ____ (meenemen, dengan *te*).",
+        "Ze is om acht uur ____ (aankomen).",
+        "Ik wil het formulier vandaag ____ (invullen).",
+        "Hij heeft de keuken ____ (schoonmaken).",
+        "Probeer morgen op tijd ____ (opstaan, dengan *te*)."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Belanda.",
+      "items": [
+        "Saya jelaskan semuanya sebentar.",
+        "Saya bangun jam enam karena saya antar anak-anak ke sekolah.",
+        "Tiap Jumat kamu isi formulirnya dan kirim ke Karim.",
+        "Jangan lupa bawa kartu aksesmu.",
+        "Kemarin sudah saya ambil di resepsionis."
+      ]
+    }
+  ],
+  "answers": [
+    "Ik bel je morgen op. — We ruimen elke vrijdag de keuken op. — Hij komt om negen uur aan. — Zij vult het formulier vrijdag in. — Ik neem mijn laptop niet mee.",
+    "Ik denk dat ik je morgen opbel. — Ik weet dat hij om negen uur aankomt. — Ik hoop dat zij het formulier invult. — Sanne zegt dat we de keuken opruimen. — Ik zie dat Karim de vaatwasser aanzet.",
+    "opgebeld — mee te nemen — aangekomen — invullen — schoongemaakt — op te staan",
+    "Ik leg je even alles uit. — Ik sta om zes uur op omdat ik mijn kinderen naar school breng. — Je vult elke vrijdag het formulier in en stuurt het naar Karim op. — Vergeet niet je pas mee te nemen. — Die heb ik gisteren bij de receptie opgehaald."
+  ],
+  "wave": "Sebelum masuk unit 6, ceritakan pagi harimu keras-keras memakai enam kata kerja terpisah berturut-turut: *opstaan, aandoen, meenemen, wegbrengen, aankomen, opbellen*. Lalu ulangi seluruhnya sebagai satu kalimat panjang yang diawali *Ik vertel je hoe …* — dan rasakan semua ekornya menyatu kembali."
+}

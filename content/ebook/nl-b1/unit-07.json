@@ -1,0 +1,176 @@
+{
+  "title": "Er — kata yang tak ada padanannya (bagian 2)",
+  "title_target": "Erover, ermee, ernaar: er en het voorzetsel",
+  "goal": "Menggabungkan er dengan preposisi, dan memisahkan keduanya di tengah kalimat — beserta keluarga daar, hier, waar, overal, dan nergens.",
+  "bekal": [
+    "mengganti *over het* / *met dat* menjadi *erover* / *ermee*",
+    "memisahkan *er* dari preposisinya di kalimat panjang",
+    "memakai *daarover*, *hiermee*, *waarover*, *nergens over*",
+    "membedakan benda mati (*eraan*) dari orang (*aan hem*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Bellen met de klantenservice",
+      "intro": "Paket Dewi tak kunjung datang dan ia menelepon layanan pelanggan. Ini jenis percakapan yang tak mungkin dilewati tanpa *er* — hitunglah berapa kali ia muncul bersama preposisi, dan berapa kali keduanya terpisah jauh.",
+      "lines": [
+        { "speaker": "Medewerker:", "text": "Klantenservice, met Youssef. Waarmee kan ik u helpen?", "id": "Layanan pelanggan, dengan Youssef. Ada yang bisa saya bantu?", "literal": "pelanggan-layanan, dengan Youssef. dengan-apa bisa saya Anda tolong?" },
+        { "speaker": "Dewi:", "text": "Ik bel over een pakket. Ik wacht er al twee weken op.", "id": "Saya menelepon soal paket. Sudah dua minggu saya menunggunya.", "literal": "saya menelepon tentang satu paket. saya tunggu di-sana sudah dua minggu atas." },
+        { "speaker": "Youssef:", "text": "Vervelend. Hebt u het ordernummer bij de hand?", "id": "Menyebalkan ya. Nomor pesanannya ada?", "literal": "menyebalkan. punya Anda itu pesanan-nomor pada itu tangan?" },
+        { "speaker": "Dewi:", "text": "Ja, ik kijk er even naar. Het is 4482.", "id": "Ada, saya lihat sebentar. Nomornya 4482.", "literal": "ya, saya lihat di-sana sebentar ke. itu adalah 4482." },
+        { "speaker": "Youssef:", "text": "Momentje... Ik zie dat het pakket is teruggestuurd.", "id": "Sebentar... Saya lihat paketnya dikirim balik.", "literal": "sebentar-kecil... saya lihat bahwa itu paket adalah kembali-kirim-nya." },
+        { "speaker": "Dewi:", "text": "Teruggestuurd? Daar weet ik niets van.", "id": "Dikirim balik? Saya nggak tahu apa-apa soal itu.", "literal": "kembali-kirim-nya? di-sana tahu saya tak-sesuatu dari." },
+        { "speaker": "Youssef:", "text": "De bezorger heeft twee keer aangebeld. Er was niemand thuis.", "id": "Kurirnya sudah dua kali pencet bel. Nggak ada orang di rumah.", "literal": "itu pengantar punya dua kali bel-nya. di-sana adalah tak-seorang-pun di-rumah." },
+        { "speaker": "Dewi:", "text": "Daarom werk ik overdag. Kan ik er niets aan doen?", "id": "Ya kan siang saya kerja. Nggak ada yang bisa saya lakukan?", "literal": "karena-itu kerja saya siang-hari. bisa saya di-sana tak-sesuatu pada lakukan?" },
+        { "speaker": "Youssef:", "text": "Jawel. U kunt het naar een afhaalpunt laten sturen. Bent u daarmee geholpen?", "id": "Bisa kok. Bisa dikirim ke titik pengambilan. Itu membantu?", "literal": "ya-memang. Anda bisa itu ke satu ambil-titik biarkan kirim. adalah Anda dengan-itu tertolong?" },
+        { "speaker": "Dewi:", "text": "Zeker. Daar had ik zelf aan moeten denken.", "id": "Jelas. Harusnya saya kepikiran sendiri.", "literal": "pasti. di-sana punya saya sendiri pada harus pikir." },
+        { "speaker": "Youssef:", "text": "Geen zorgen. Waar wilt u het naartoe laten sturen?", "id": "Nggak apa-apa. Mau dikirim ke mana?", "literal": "tidak khawatir. di-mana ingin Anda itu ke-sana biarkan kirim?" },
+        { "speaker": "Dewi:", "text": "Naar de supermarkt op de hoek. Ik kom er elke dag langs.", "id": "Ke supermarket di pojokan. Tiap hari saya lewat situ.", "literal": "ke itu supermarket pada itu sudut. saya datang di-sana setiap hari lewat." },
+        { "speaker": "Youssef:", "text": "Genoteerd. U krijgt er vanavond een bevestiging van per mail.", "id": "Dicatat. Nanti malam Anda dapat konfirmasinya lewat surel.", "literal": "tercatat. Anda dapat dari-sana malam-ini satu konfirmasi dari per surat." },
+        { "speaker": "Dewi:", "text": "En als het weer misgaat? Waar kan ik dan over klagen?", "id": "Kalau gagal lagi? Saya bisa mengeluh ke mana?", "literal": "dan kalau itu lagi salah-pergi? di-mana bisa saya maka tentang mengeluh?" },
+        { "speaker": "Youssef:", "text": "Dan belt u ons terug en vraagt u naar mij. Ik ken het dossier.", "id": "Telepon kami lagi dan minta bicara dengan saya. Saya tahu berkasnya.", "literal": "maka menelepon Anda kami kembali dan tanya Anda ke saya. saya kenal itu berkas." },
+        { "speaker": "Dewi:", "text": "Dat waardeer ik. Bedankt, daar ben ik echt blij mee.", "id": "Saya hargai itu. Terima kasih, saya senang banget.", "literal": "itu hargai saya. terima-kasih, di-sana adalah saya sungguh senang dengan." }
+      ],
+      "notes": [
+        "**Aturan intinya satu kalimat: kata benda mati tidak boleh berdiri sesudah preposisi sebagai kata ganti.** Bahasa Belanda menolak *over het*, *met dat*, *op hem* (untuk benda). Yang dipakai: *er* + preposisi, ditulis menyatu — *erover*, *ermee*, *erop*. Bahasa Indonesia berkata *soal itu*, *dengan itu*, dan tak melihat masalah apa pun di situ; itulah sebabnya bentuk ini nyaris selalu hilang dari kalimat pelajar.",
+        "**Kalau yang dimaksud orang, aturannya justru terbalik**: *ik wacht **op hem*** (saya menunggu dia), bukan *ik wacht erop*. Jadi pertanyaan yang kamu ajukan sebelum memilih adalah **benda atau orang**, bukan tunggal atau jamak.",
+        "**Er dan preposisinya boleh dipisahkan — dan di kalimat panjang, memang harus.** *Ik wacht **er** al twee weken **op**.* Semua keterangan menyelinap di antara keduanya, dan preposisinya berakhir di ujung, di kolom kelima, bersebelahan dengan kata kerja mati. *Ik kijk **er** even **naar***, *ik kom **er** elke dag **langs***, *u krijgt **er** vanavond een bevestiging **van***.",
+        "***Daar*, *hier*, *waar*, *overal*, dan *nergens* berperilaku persis sama** — mereka satu keluarga dengan *er*, hanya berbeda tekanan dan arti. *Daar weet ik niets van* (soal **itu** saya tak tahu apa-apa), *waarmee kan ik u helpen*, *daar ben ik blij mee*. Yang berdiri di kolom pertama selalu *daar*, *hier*, atau *waar* — tak pernah *er*, karena *er* terlalu lemah untuk ditekankan.",
+        "**Dua preposisi berubah bentuk saat menempel**: *met* menjadi **mee** (*ermee*, *waarmee*, *daarmee*) dan *tot* menjadi **toe** (*ertoe*, *daartoe*). Tak ada preposisi lain yang berubah, dan tak ada pengecualian untuk kedua ini.",
+        "***Daar had ik aan moeten denken*** memperlihatkan seberapa jauh keduanya bisa terpisah: *daar* di kolom pertama, *aan* enam kata kemudian di ujung. Bagi telinga Indonesia ini terdengar seperti kalimat yang belum selesai — dan justru di situlah letak seninya. Belajarlah menunggu sampai kata terakhir sebelum memutuskan sudah paham."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk gabungannya",
+          "body": [
+            "Enam kata pembuka, satu daftar preposisi. Semuanya ditulis menyatu, tanpa tanda hubung."
+          ],
+          "table": {
+            "head": ["Preposisi", "er-", "daar-", "waar-"],
+            "rows": [
+              ["over", "erover", "daarover", "waarover"],
+              ["op", "erop", "daarop", "waarop"],
+              ["aan", "eraan", "daaraan", "waaraan"],
+              ["van", "ervan", "daarvan", "waarvan"],
+              ["voor", "ervoor", "daarvoor", "waarvoor"],
+              ["in", "erin", "daarin", "waarin"],
+              ["naar", "ernaar", "daarnaar", "waarnaar"],
+              ["met → **mee**", "ermee", "daarmee", "waarmee"],
+              ["tot → **toe**", "ertoe", "daartoe", "waartoe"],
+              ["bij", "erbij", "daarbij", "waarbij"]
+            ]
+          },
+          "after": [
+            "***Hier-*, *overal-*, dan *nergens-* melengkapi keluarganya**: *hiermee* (dengan ini), *overal over* (soal segala hal), *nergens over* (soal apa pun tidak). Dua yang terakhir tak pernah ditulis menyatu — *nergensover* salah.",
+            "**Bentuk ber-*waar-* juga menjadi kata ganti relatif**, yaitu ketika ia menyambung dua kalimat: *het pakket **waarop** ik wacht* (paket yang saya tunggu). Bentuk itu diurus di unit 11; untuk sekarang cukup dikenali."
+          ]
+        },
+        {
+          "title": "Kapan dipisah, kapan menyatu",
+          "body": [
+            "Keduanya menyatu hanya kalau tak ada apa pun yang perlu berdiri di antaranya. Begitu ada satu keterangan saja, mereka pecah."
+          ],
+          "table": {
+            "head": ["Kalimat", "Bentuknya"],
+            "rows": [
+              ["Ik wacht **erop**.", "menyatu — tak ada isian"],
+              ["Ik wacht **er** al twee weken **op**.", "pecah — keterangan di tengah"],
+              ["**Daarover** ben ik het eens.", "menyatu di kolom pertama"],
+              ["**Daar** ben ik het niet mee **eens**.", "pecah — kalimat utuh menyusul"],
+              ["**Waarmee** kan ik u helpen?", "menyatu — pertanyaan pendek"],
+              ["**Waar** kan ik dan **over** klagen?", "pecah — kalimat lebih panjang"],
+              ["Ik heb **er** niets **van** gehoord.", "pecah — objek di tengah"],
+              ["Ik weet **ervan**.", "menyatu — kalimat pendek"]
+            ]
+          },
+          "after": [
+            "**Preposisinya mendarat di ujung, tepat sebelum kata kerja mati**: *ik heb er niets **van gehoord***, *ik zou er graag **over praten***. Urutan ini tetap: preposisi lebih dulu, kata kerja mati sesudahnya.",
+            "**Dalam pertanyaan pendek, penutur asli condong menyatukannya** (*waarmee*, *waarover*, *waarop*); dalam kalimat panjang mereka hampir selalu memisahkannya. Kalau kamu ragu, memisahkan selalu aman — bentuk pecahnya tak pernah salah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Enam kata pembuka dan artinya",
+      "blocks": [
+        { "type": "tabel", "head": ["Pembuka", "Arti", "Contoh"], "rows": [
+          ["**er**", "itu (tanpa tekanan)", "Ik denk **eraan**."],
+          ["**daar**", "itu (dengan tekanan)", "**Daar** denk ik vaak **aan**."],
+          ["**hier**", "ini", "**Hiermee** kunnen we beginnen."],
+          ["**waar**", "apa (dalam pertanyaan)", "**Waar** wacht je **op**?"],
+          ["**overal**", "segala hal", "Hij klaagt **overal over**."],
+          ["**nergens**", "tak satu pun hal", "Ik weet **nergens iets van**."],
+          ["**ergens**", "sesuatu", "Ik moet **ergens over** praten."],
+          ["**alles / niets**", "dengan preposisi biasa", "Ik ben het **met alles** eens."]
+        ]},
+        { "type": "kotak", "title": "Ungkapan yang dipakai tiap hari", "items": [
+          "***Daar ben ik blij mee*** (saya senang soal itu), ***daar heb je gelijk in*** (kamu benar soal itu), ***daar weet ik niets van*** (saya tak tahu apa-apa soal itu), ***daar kan ik niets aan doen*** (saya tak bisa berbuat apa-apa soal itu). Empat kalimat ini muncul di percakapan Belanda hampir setiap hari — hafalkan utuh, jangan disusun ulang tiap kali.",
+          "***Waar gaat het over?*** = soal apa ini? Pertanyaan pembuka standar di telepon dan rapat. Jangan menerjemahkannya menjadi *over wat gaat het* — bentuk itu tak dipakai, walau tata bahasanya bisa dipertahankan.",
+          "***Ik kijk ernaar uit*** = saya menantikannya. Perhatikan tiga potongannya: *er* + *naar* + ekor kata kerja *uit*. Ia gabungan kata kerja terpisah (*uitkijken*) dengan preposisi tetap (*naar*), dan ia salah satu kalimat penutup surel paling umum di Belanda."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "nl": "de klantenservice", "baca": "de KLAN-te(n)-sör-fis", "id": "layanan pelanggan" },
+    { "nl": "het pakket", "baca": "het pa-KÈT", "id": "paket" },
+    { "nl": "wachten op", "baca": "VAKH-te(n) op", "id": "menunggu" },
+    { "nl": "het ordernummer", "baca": "het OR-der-nü-mer", "id": "nomor pesanan" },
+    { "nl": "terugsturen", "baca": "te-RÜKH-stü-re(n)", "id": "mengirim balik" },
+    { "nl": "de bezorger", "baca": "de be-ZOR-kher", "id": "kurir" },
+    { "nl": "aanbellen", "baca": "AHN-bè-le(n)", "id": "memencet bel" },
+    { "nl": "overdag", "baca": "oh-fer-DAKH", "id": "siang hari" },
+    { "nl": "het afhaalpunt", "baca": "het AF-hahl-pünt", "id": "titik pengambilan" },
+    { "nl": "laten sturen", "baca": "LAH-te(n) STÜ-re(n)", "id": "meminta dikirimkan" },
+    { "nl": "de hoek", "baca": "de huk", "id": "sudut, pojokan" },
+    { "nl": "langskomen bij", "baca": "LANGS-koh-me(n) bèy", "id": "lewat di" },
+    { "nl": "de bevestiging", "baca": "de be-FÈS-te-khing", "id": "konfirmasi" },
+    { "nl": "misgaan", "baca": "MIS-khahn", "id": "gagal, salah jalan" },
+    { "nl": "klagen over", "baca": "KLAH-khe(n) OH-fer", "id": "mengeluh soal" },
+    { "nl": "het dossier", "baca": "het do-SYEH", "id": "berkas" },
+    { "nl": "waarderen", "baca": "vahr-DEH-re(n)", "id": "menghargai" },
+    { "nl": "blij zijn met", "baca": "blèy zèyn mèt", "id": "senang dengan" },
+    { "nl": "jawel", "baca": "yah-VÈL", "id": "ya, bisa kok (menyanggah)" },
+    { "nl": "uitkijken naar", "baca": "ÖYT-kèy-ke(n) nahr", "id": "menantikan" }
+  ],
+  "exercises": [
+    { "prompt": "Ganti bagian yang dicetak tebal dengan bentuk **er + preposisi**.", "items": [
+      "Ik wacht **op het pakket**. → ____",
+      "Ik denk **aan die afspraak**. → ____",
+      "We praten **over dat probleem**. → ____",
+      "Ik ben blij **met dit nieuws**. → ____",
+      "Ik weet niets **van die brief**. → ____",
+      "Hij kijkt **naar de wedstrijd**. → ____"
+    ]},
+    { "prompt": "Sisipkan keterangan dalam kurung, sehingga *er* dan preposisinya terpisah.", "items": [
+      "Ik wacht erop. (al twee weken) → ____",
+      "Ik kijk ernaar. (even) → ____",
+      "Ik kom erlangs. (elke dag) → ____",
+      "Ik heb ervan gehoord. (nog niets) → ____",
+      "We praten erover. (morgen op kantoor) → ____"
+    ]},
+    { "prompt": "Isi dengan **er, daar, hier** atau **waar** beserta preposisinya.", "items": [
+      "____ kan ik u mee helpen? (dengan apa)",
+      "____ ben ik echt blij mee. (soal itu, ditekankan)",
+      "____ weet ik niets van. (soal itu)",
+      "Ik denk ____ vaak aan. (soal itu, tanpa tekanan)",
+      "____ kunnen we mee beginnen. (dengan ini)",
+      "____ wacht je op? (apa)"
+    ]},
+    { "prompt": "Terjemahkan ke bahasa Belanda.", "items": [
+      "Sudah dua minggu saya menunggunya.",
+      "Saya tidak tahu apa-apa soal itu.",
+      "Saya tidak bisa berbuat apa-apa soal itu.",
+      "Tiap hari saya lewat situ.",
+      "Saya menantikannya."
+    ]}
+  ],
+  "answers": [
+    "Ik wacht erop. — Ik denk eraan. — We praten erover. — Ik ben er blij mee. — Ik weet er niets van. — Hij kijkt ernaar.",
+    "Ik wacht er al twee weken op. — Ik kijk er even naar. — Ik kom er elke dag langs. — Ik heb er nog niets van gehoord. — We praten er morgen op kantoor over.",
+    "Waarmee — Daar — Daar — er — Hiermee — Waar",
+    "Ik wacht er al twee weken op. — Daar weet ik niets van. — Daar kan ik niets aan doen. — Ik kom er elke dag langs. — Ik kijk ernaar uit."
+  ],
+  "wave": "Sebelum masuk unit 8, ambil sepuluh kalimatmu sendiri yang memuat kata *itu* — *saya senang soal itu*, *saya lupa soal itu*, *saya tak setuju dengan itu* — lalu ucapkan padanan Belandanya keras-keras. Tiap kali kamu tergoda menulis *over dat* atau *met dat*, berhenti dan ganti."
+}

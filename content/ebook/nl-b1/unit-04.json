@@ -1,0 +1,175 @@
+{
+  "title": "Saya datang karena punggung saya sakit",
+  "title_target": "Ik kom omdat ik last van mijn rug heb",
+  "goal": "Menyusun anak kalimat: begitu ada omdat, dat, of, atau als, semua kata kerja berkumpul di ujung.",
+  "bekal": [
+    "melempar seluruh kata kerja ke ujung sesudah kata penghubung bertingkat",
+    "membedakan *want* (sederajat) dari *omdat* (bertingkat)",
+    "memakai *of* untuk pertanyaan tak langsung",
+    "membalik kalimat utama kalau anak kalimat berdiri di depan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Bij de huisarts",
+      "intro": "Dewi akhirnya ke dokter keluarga setelah dua minggu punggungnya sakit. Perhatikan bahwa tiap kali muncul *omdat*, *dat*, atau *of*, kata kerjanya berpindah ke ujung anak kalimatnya — dan kalau ada dua kata kerja, dua-duanya ikut.",
+      "lines": [
+        { "speaker": "Huisarts:", "text": "Goedemiddag. Vertelt u eens, wat is er aan de hand?", "id": "Selamat siang. Coba ceritakan, ada keluhan apa?", "literal": "selamat-siang. ceritakan Anda sekali, apa adalah di-sana pada itu tangan?" },
+        { "speaker": "Dewi:", "text": "Ik kom omdat ik al twee weken last van mijn rug heb.", "id": "Saya datang karena punggung saya sudah dua minggu sakit.", "literal": "saya datang sebab saya sudah dua minggu beban dari milik-saya punggung punya." },
+        { "speaker": "Huisarts:", "text": "Weet u of het na een lange dag erger wordt?", "id": "Anda tahu nggak, makin parah nggak setelah hari yang panjang?", "literal": "tahu Anda apakah itu sesudah satu panjang hari lebih-buruk menjadi?" },
+        { "speaker": "Dewi:", "text": "Ja, vooral 's avonds. Ik denk dat het door mijn werk komt.", "id": "Iya, terutama malam. Saya rasa itu gara-gara kerjaan saya.", "literal": "ya, terutama malam-hari. saya pikir bahwa itu lewat milik-saya kerja datang." },
+        { "speaker": "Huisarts:", "text": "Wat voor werk doet u?", "id": "Kerjanya apa?", "literal": "apa untuk kerja lakukan Anda?" },
+        { "speaker": "Dewi:", "text": "Ik zit de hele dag achter een computer, terwijl mijn stoel te laag staat.", "id": "Saya duduk seharian di depan komputer, padahal kursi saya terlalu rendah.", "literal": "saya duduk itu seluruh hari di-belakang satu komputer, sementara milik-saya kursi terlalu rendah berdiri." },
+        { "speaker": "Huisarts:", "text": "Dat verklaart veel. Doet het pijn als u zich vooroverbuigt?", "id": "Itu menjelaskan banyak. Sakit nggak kalau Anda membungkuk?", "literal": "itu menjelaskan banyak. melakukan itu sakit kalau Anda diri ke-depan-membungkuk?" },
+        { "speaker": "Dewi:", "text": "Alleen als ik iets zwaars til. Verder valt het mee.", "id": "Cuma kalau saya angkat yang berat. Selebihnya nggak terlalu.", "literal": "hanya kalau saya sesuatu berat angkat. selanjutnya jatuh itu ikut." },
+        { "speaker": "Huisarts:", "text": "Ik denk niet dat er iets ernstigs aan de hand is.", "id": "Saya rasa nggak ada yang serius.", "literal": "saya pikir tidak bahwa di-sana sesuatu serius pada itu tangan adalah." },
+        { "speaker": "Dewi:", "text": "Gelukkig. Ik was bang dat ik naar het ziekenhuis moest.", "id": "Syukurlah. Saya takut harus ke rumah sakit.", "literal": "untung. saya adalah takut bahwa saya ke itu rumah-sakit harus." },
+        { "speaker": "Huisarts:", "text": "Nee hoor. Maar als het over twee weken niet beter is, komt u terug.", "id": "Nggak kok. Tapi kalau dua minggu lagi nggak membaik, Anda balik lagi ke sini.", "literal": "tidak lho. tapi kalau itu dalam dua minggu tidak lebih-baik adalah, datang Anda kembali." },
+        { "speaker": "Dewi:", "text": "Wat kan ik zelf doen?", "id": "Saya sendiri bisa apa?", "literal": "apa bisa saya sendiri lakukan?" },
+        { "speaker": "Huisarts:", "text": "Zorg dat u elk half uur even opstaat en dat u meer beweegt.", "id": "Pastikan tiap setengah jam Anda berdiri sebentar dan lebih banyak bergerak.", "literal": "urus bahwa Anda setiap setengah jam sebentar berdiri dan bahwa Anda lebih bergerak." },
+        { "speaker": "Dewi:", "text": "En moet ik iets slikken?", "id": "Perlu minum obat nggak?", "literal": "dan harus saya sesuatu telan?" },
+        { "speaker": "Huisarts:", "text": "Alleen paracetamol, en alleen omdat het slapen anders moeilijk wordt.", "id": "Parasetamol saja, dan itu pun cuma karena kalau tidak, tidurnya jadi susah.", "literal": "hanya parasetamol, dan hanya sebab itu tidur kalau-tidak sulit menjadi." },
+        { "speaker": "Dewi:", "text": "Duidelijk. Dank u wel, dokter.", "id": "Jelas. Terima kasih, Dok.", "literal": "jelas. terima Anda memang, dokter." }
+      ],
+      "notes": [
+        "**Satu kata penghubung, satu akibat: semua kata kerja ke ujung.** *Ik heb last van mijn rug* berdiri sendiri. Begitu ia menjadi anak kalimat, kata kerjanya berpindah: *omdat ik last van mijn rug **heb***. Kalau kata kerjanya dua, dua-duanya ikut: *omdat ik naar het ziekenhuis **moest gaan***.",
+        "***Want* dan *omdat* sama-sama berarti \"karena\", tapi berperilaku berlawanan.** *Want* adalah penghubung sederajat: kalimat sesudahnya tetap berbentuk kalimat utama biasa — *ik blijf thuis, **want** ik **ben** ziek*. *Omdat* bertingkat, jadi kata kerjanya ke ujung — *ik blijf thuis, **omdat** ik ziek **ben***. Pelajar Indonesia cenderung memakai *want* terus-menerus karena lebih mudah; sayangnya *omdat*-lah yang lebih sering dipakai penutur asli.",
+        "***Of* berarti \"apakah\", bukan \"atau\", ketika ia membuka anak kalimat.** *Weet u **of** het erger **wordt**?* — \"Anda tahu apakah itu makin parah?\" Inilah bentuk pertanyaan tak langsung, dan ia satu-satunya cara meneruskan pertanyaan ya/tidak. Jangan memakai *als* di sini; *als* berarti \"kalau\" dalam arti syarat.",
+        "**Kalau anak kalimat berdiri di depan, ia mengisi kolom pertama — jadi kalimat utamanya terbalik.** *Als het over twee weken niet beter is, **komt u** terug.* Dua kata kerja bertemu di tengah, dipisahkan koma: satu menutup anak kalimat, satu membuka kalimat utama. Susunan berdempet ini terlihat aneh sekali pertama kali, dan ia salah satu tanda paling jelas bahwa seseorang benar-benar menguasai kerangka kalimat Belanda.",
+        "***Dat* tak boleh dibuang.** Dalam bahasa Inggris *I think (that) it's my work* boleh tanpa *that*; dalam bahasa Belanda *ik denk **dat** het door mijn werk komt* wajib memakainya. Dan begitu *dat* ada, kata kerjanya ke ujung — dua hal yang selalu datang bersama.",
+        "***Ik denk niet dat …*** — bahasa Belanda menyangkal di kalimat utamanya, bukan di anak kalimatnya, persis seperti bahasa Inggris dan berbeda dari bahasa Indonesia yang berkata *saya rasa itu tidak serius*. Tulis *ik denk **niet** dat het ernstig is*, bukan *ik denk dat het niet ernstig is* — yang belakangan benar secara tata bahasa tapi terdengar lebih keras."
+      ],
+      "grammars": [
+        {
+          "title": "Anak kalimat: kata kerja berkumpul di ujung",
+          "body": [
+            "Bandingkan kolom kiri dan kanan. Isinya sama persis; yang berpindah hanya kata kerjanya."
+          ],
+          "table": {
+            "head": ["Berdiri sendiri", "Sebagai anak kalimat"],
+            "rows": [
+              ["Ik **ben** ziek.", "… omdat ik ziek **ben**."],
+              ["Het **wordt** erger.", "… of het erger **wordt**."],
+              ["Ik **moet** naar het ziekenhuis.", "… dat ik naar het ziekenhuis **moet**."],
+              ["Ik **heb** het **gedaan**.", "… dat ik het **heb gedaan**."],
+              ["Ik **moest** naar huis **gaan**.", "… dat ik naar huis **moest gaan**."],
+              ["Ik **sta** elk uur **op**.", "… dat ik elk uur **opsta**."],
+              ["Ik **kan** het niet **vinden**.", "… omdat ik het niet **kan vinden**."],
+              ["Mijn stoel **staat** te laag.", "… terwijl mijn stoel te laag **staat**."]
+            ]
+          },
+          "after": [
+            "**Kata kerja terpisah menyatu kembali di anak kalimat**: *ik sta op* → *dat ik **opsta***. Ekornya menempel lagi ke induknya, karena di anak kalimat tak ada lagi jarak yang memisahkan keduanya.",
+            "**Kalau ada dua kata kerja, urutannya boleh dibalik** dalam bentuk perfectum: *dat ik het **heb gedaan*** dan *dat ik het **gedaan heb*** dua-duanya benar dan sama-sama sering dipakai. Di Belanda yang pertama lebih umum, di Flandria yang kedua. Pilih satu dan konsisten."
+          ]
+        },
+        {
+          "title": "Kata penghubung: dua golongan, dua akibat",
+          "body": [
+            "Semua kata penghubung bahasa Belanda masuk ke salah satu dari dua golongan, dan golongannya menentukan letak kata kerja. Hafalkan golongannya, bukan artinya."
+          ],
+          "table": {
+            "head": ["Golongan", "Anggota", "Kata kerja"],
+            "rows": [
+              ["sederajat", "en, maar, want, of (atau), dus", "tetap di tempat kedua"],
+              ["bertingkat — sebab", "omdat, doordat, aangezien", "ke ujung"],
+              ["bertingkat — waktu", "toen, als, wanneer, terwijl, voordat, nadat, sinds, zodra", "ke ujung"],
+              ["bertingkat — isi", "dat, of (apakah)", "ke ujung"],
+              ["bertingkat — syarat", "als, tenzij, mits", "ke ujung"],
+              ["bertingkat — lawan", "hoewel, ofschoon", "ke ujung"],
+              ["bertingkat — akibat/tujuan", "zodat, opdat", "ke ujung"],
+              ["kata tanya sebagai penghubung", "wat, wie, waar, hoe, waarom", "ke ujung"]
+            ]
+          },
+          "after": [
+            "**Hanya lima kata yang sederajat**, dan mereka bisa dihafal dalam sepuluh detik: *en, maar, want, of, dus*. Semua kata penghubung lain di bahasa Belanda melempar kata kerja ke ujung. Kalau kamu ragu, kemungkinan besar jawabannya \"ke ujung\".",
+            "***Of* muncul di dua golongan** dan artinya berbeda: *koffie **of** thee?* (atau, sederajat) melawan *ik weet niet **of** hij komt* (apakah, bertingkat). Letak kata kerjanya yang memberi tahu kamu sedang berhadapan dengan yang mana."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di dokter keluarga — kalimat yang benar-benar dipakai",
+      "blocks": [
+        { "type": "tabel", "head": ["Nederlands", "Bahasa Indonesia"], "rows": [
+          ["Ik heb last van mijn rug / keel / buik.", "Punggung / tenggorokan / perut saya sakit."],
+          ["Het doet pijn als ik beweeg.", "Sakit kalau saya bergerak."],
+          ["Ik ben verkouden.", "Saya pilek."],
+          ["Ik heb koorts.", "Saya demam."],
+          ["Ik voel me niet lekker.", "Saya merasa tidak enak badan."],
+          ["Sinds wanneer heeft u dat?", "Sejak kapan begitu?"],
+          ["Slikt u medicijnen?", "Anda minum obat?"],
+          ["Ik schrijf u een recept voor.", "Saya buatkan resep."],
+          ["U moet een afspraak maken.", "Anda harus buat janji."],
+          ["Het gaat vanzelf over.", "Nanti sembuh sendiri."]
+        ]},
+        { "type": "kotak", "title": "Cara berpikir dokter Belanda", "items": [
+          "Jangan kaget kalau jawabannya *paracetamol en afwachten*. Dokter keluarga Belanda memang sengaja menahan obat dan rujukan; itu bukan tanda keluhanmu diremehkan, melainkan cara kerja sistemnya. Kalau kamu benar-benar khawatir, kalimat yang menolong adalah *Ik maak me er echt zorgen over* — dan katakan **kenapa**.",
+          "Untuk masuk ke spesialis kamu selalu butuh *een verwijzing* (rujukan) dari *de huisarts*. Kalimat yang dipakai: *Kunt u mij doorverwijzen naar een specialist?*",
+          "*Doe maar even rustig aan* berarti \"jangan dipaksakan dulu\" — bukan \"tenang saja\". Ia nasihat, bukan penghiburan."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "nl": "de huisarts", "baca": "de HÖYS-arts", "id": "dokter keluarga" },
+    { "nl": "last hebben van", "baca": "last HÈ-be(n) fan", "id": "terganggu oleh, sakit di" },
+    { "nl": "de rug", "baca": "de rükh", "id": "punggung" },
+    { "nl": "erger worden", "baca": "ÈR-kher VOR-de(n)", "id": "makin parah" },
+    { "nl": "vooral", "baca": "fohr-AL", "id": "terutama" },
+    { "nl": "de stoel", "baca": "de stul", "id": "kursi" },
+    { "nl": "laag / hoog", "baca": "lahkh / hohkh", "id": "rendah / tinggi" },
+    { "nl": "verklaren", "baca": "fer-KLAH-re(n)", "id": "menjelaskan" },
+    { "nl": "pijn doen", "baca": "pèyn dun", "id": "terasa sakit" },
+    { "nl": "tillen", "baca": "TI-le(n)", "id": "mengangkat" },
+    { "nl": "ernstig", "baca": "ÈRN-stekh", "id": "serius, parah" },
+    { "nl": "bang zijn", "baca": "bang zèyn", "id": "takut" },
+    { "nl": "het ziekenhuis", "baca": "het ZIH-ke(n)-höys", "id": "rumah sakit" },
+    { "nl": "terugkomen", "baca": "te-RÜKH-koh-me(n)", "id": "datang kembali" },
+    { "nl": "bewegen", "baca": "be-VEH-khe(n)", "id": "bergerak" },
+    { "nl": "slikken", "baca": "SLI-ke(n)", "id": "menelan, minum obat" },
+    { "nl": "anders", "baca": "AN-ders", "id": "kalau tidak, selain itu" },
+    { "nl": "duidelijk", "baca": "DÖY-de-lek", "id": "jelas" },
+    { "nl": "terwijl", "baca": "ter-VÈYL", "id": "sementara, padahal" },
+    { "nl": "zodra", "baca": "zoh-DRAH", "id": "begitu, segera setelah" }
+  ],
+  "exercises": [
+    { "prompt": "Gabungkan menjadi satu kalimat dengan kata penghubung dalam kurung.", "items": [
+      "Ik blijf thuis. Ik ben ziek. (omdat) → ____",
+      "Ik weet het niet. Hij komt vanavond. (of) → ____",
+      "Ze zegt. Ze heeft geen tijd. (dat) → ____",
+      "Ik ga naar de dokter. Het wordt niet beter. (als) → ____",
+      "Hij werkt door. Hij is moe. (hoewel) → ____",
+      "Ik bel je. Ik ben thuis. (zodra) → ____"
+    ]},
+    { "prompt": "Isi dengan **want** atau **omdat**, lalu perbaiki urutan kata kerjanya kalau perlu.", "items": [
+      "Ik kom niet, ____ ik ben ziek.",
+      "Ik kom niet, ____ ik ziek ____.",
+      "Hij belt me, ____ hij heeft een vraag.",
+      "Hij belt me, ____ hij een vraag ____.",
+      "We blijven thuis, ____ het regent."
+    ]},
+    { "prompt": "Susun menjadi kalimat yang benar. Perhatikan bahwa anak kalimatnya berdiri di depan.", "items": [
+      "als / het / niet / beter / is / komt / u / terug",
+      "omdat / ik / ziek / was / ben / ik / thuis / gebleven",
+      "toen / ik / klein / was / woonden / we / in / Utrecht",
+      "hoewel / het / regende / zijn / we / gaan / fietsen",
+      "zodra / ik / thuis / ben / bel / ik / je"
+    ]},
+    { "prompt": "Terjemahkan ke bahasa Belanda.", "items": [
+      "Saya datang karena punggung saya sudah dua minggu sakit.",
+      "Anda tahu apakah itu makin parah?",
+      "Saya rasa itu gara-gara pekerjaan saya.",
+      "Saya takut harus ke rumah sakit.",
+      "Kalau dua minggu lagi tidak membaik, Anda kembali ke sini."
+    ]}
+  ],
+  "answers": [
+    "Ik blijf thuis omdat ik ziek ben. — Ik weet niet of hij vanavond komt. — Ze zegt dat ze geen tijd heeft. — Ik ga naar de dokter als het niet beter wordt. — Hij werkt door hoewel hij moe is. — Ik bel je zodra ik thuis ben.",
+    "want — omdat / ben — want — omdat / heeft — omdat",
+    "Als het niet beter is, komt u terug. — Omdat ik ziek was, ben ik thuis gebleven. — Toen ik klein was, woonden we in Utrecht. — Hoewel het regende, zijn we gaan fietsen. — Zodra ik thuis ben, bel ik je.",
+    "Ik kom omdat ik al twee weken last van mijn rug heb. — Weet u of het erger wordt? — Ik denk dat het door mijn werk komt. — Ik was bang dat ik naar het ziekenhuis moest. — Als het over twee weken niet beter is, komt u terug."
+  ],
+  "wave": "Sebelum masuk unit 5, ambil lima kalimat mana pun dari unit 1 sampai 3, lalu awali tiap-tiapnya dengan *Ik denk dat …* dan *Ik weet niet of …*. Ucapkan keras-keras sampai kata kerja yang melompat ke ujung berhenti terasa aneh."
+}

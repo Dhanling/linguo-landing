@@ -1,0 +1,172 @@
+{
+  "title": "Besok saya naik kereta ke Gent",
+  "title_target": "Morgen ga ik met de trein naar Gent",
+  "goal": "Menguasai kerangka kalimat utama: kata kerja di tempat kedua, subjek melompat, dan urutan waktu-cara-tempat.",
+  "bekal": [
+    "menaruh kata kerja bernyawa di tempat kedua, apa pun yang berdiri di depan",
+    "membalik subjek begitu depannya diisi keterangan",
+    "mengurutkan keterangan menjadi waktu - cara - tempat",
+    "menempatkan *niet* di tempat yang benar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Reisplannen op vrijdagmiddag",
+      "intro": "Tomas mengajak Dewi ke Gent akhir pekan ini. Perhatikan bahwa dalam tiap kalimat panjang di sini, urutan keterangannya tak pernah acak — waktu selalu mendahului cara, dan cara selalu mendahului tempat.",
+      "lines": [
+        { "speaker": "Tomas:", "text": "Zullen we dit weekend naar Gent gaan?", "id": "Akhir pekan ini kita ke Gent, yuk?", "literal": "akan kami ini akhir-pekan ke Gent pergi?" },
+        { "speaker": "Dewi:", "text": "Leuk! Maar ik werk zaterdagochtend tot twaalf uur.", "id": "Asyik! Tapi Sabtu pagi saya kerja sampai jam dua belas.", "literal": "menyenangkan! tapi saya kerja sabtu-pagi sampai dua-belas jam." },
+        { "speaker": "Tomas:", "text": "Geen probleem. Dan vertrekken we zaterdagmiddag met de auto.", "id": "Nggak masalah. Berarti kita berangkat Sabtu siang naik mobil.", "literal": "tidak masalah. maka berangkat kami sabtu-siang dengan itu mobil." },
+        { "speaker": "Dewi:", "text": "Met de auto? Ik ga liever met de trein naar België.", "id": "Naik mobil? Saya lebih suka naik kereta ke Belgia.", "literal": "dengan itu mobil? saya pergi lebih-suka dengan itu kereta ke Belgia." },
+        { "speaker": "Tomas:", "text": "Waarom? Met de auto zijn we er in twee uur.", "id": "Kenapa? Naik mobil dua jam juga sampai.", "literal": "kenapa? dengan itu mobil adalah kami di-sana dalam dua jam." },
+        { "speaker": "Dewi:", "text": "In de stad kun je nergens parkeren. En parkeren is daar heel duur.", "id": "Di kotanya nggak ada tempat parkir. Dan parkir di sana mahal banget.", "literal": "dalam itu kota bisa kamu tak-di-mana-pun parkir. dan parkir adalah di-sana sangat mahal." },
+        { "speaker": "Tomas:", "text": "Daar heb je gelijk in. Hoe laat gaat de trein?", "id": "Kamu benar soal itu. Keretanya jam berapa?", "literal": "di-sana punya kamu benar dalam. bagaimana lambat pergi itu kereta?" },
+        { "speaker": "Dewi:", "text": "Er gaat elk uur een trein. Om half twee zijn we in Gent.", "id": "Tiap jam ada kereta. Jam setengah dua kita sudah di Gent.", "literal": "di-sana pergi setiap jam satu kereta. pada setengah dua adalah kami di Gent." },
+        { "speaker": "Tomas:", "text": "En waar slapen we?", "id": "Terus kita nginep di mana?", "literal": "dan di-mana tidur kami?" },
+        { "speaker": "Dewi:", "text": "Ik heb gisteravond op internet een hotel bij het station gevonden.", "id": "Semalam saya cari di internet, ada hotel dekat stasiun.", "literal": "saya punya kemarin-malam di internet satu hotel dekat itu stasiun temukan-nya." },
+        { "speaker": "Tomas:", "text": "Slim. Is het niet te duur?", "id": "Pintar. Nggak kemahalan?", "literal": "pintar. adalah itu tidak terlalu mahal?" },
+        { "speaker": "Dewi:", "text": "Het is niet goedkoop, maar het ligt wel in het centrum.", "id": "Nggak murah sih, tapi letaknya di pusat kota.", "literal": "itu adalah tidak murah, tapi itu terletak memang dalam itu pusat." },
+        { "speaker": "Tomas:", "text": "Dan boeken we het vanavond meteen.", "id": "Kalau gitu kita pesan malam ini juga.", "literal": "maka memesan kami itu malam-ini langsung." },
+        { "speaker": "Dewi:", "text": "Ik neem morgen mijn creditcard mee naar kantoor.", "id": "Besok saya bawa kartu kredit saya ke kantor.", "literal": "saya ambil besok milik-saya kartu-kredit ikut ke kantor." },
+        { "speaker": "Tomas:", "text": "Nee, ik betaal het niet met mijn kaart. Ik betaal het gewoon nu.", "id": "Nggak usah, saya nggak bayar pakai kartu saya. Saya bayar sekarang saja.", "literal": "tidak, saya bayar itu tidak dengan milik-saya kartu. saya bayar itu begitu-saja sekarang." },
+        { "speaker": "Dewi:", "text": "Prima. Dan de treinkaartjes koop ik dan wel.", "id": "Oke. Kalau gitu tiket keretanya saya yang beli.", "literal": "bagus. dan itu tiket-kereta beli saya maka memang." }
+      ],
+      "notes": [
+        "**Kata kerja bernyawa berdiri di tempat kedua — dihitung dalam satuan, bukan kata.** Tempat pertama boleh diisi satu kata (*Morgen*), satu kelompok kata (*Zaterdagmiddag om twee uur*), atau bahkan seluruh anak kalimat (*Omdat het regende*) — semuanya tetap dihitung **satu**. Kata kerjanya langsung menyusul.",
+        "**Begitu depannya diisi, subjek melompat ke belakang kata kerja.** *Ik vertrek zaterdag* → *Zaterdag **vertrek ik***. Inilah aturan yang paling sering dilanggar penutur Indonesia, karena dalam bahasa kita *besok saya berangkat* dan *saya berangkat besok* sama-sama benar. Dalam bahasa Belanda, *Morgen ik ga* bukan gaya yang berbeda — ia salah.",
+        "**Urutan keterangan: waktu, cara, tempat.** *Ik ga **morgen** (waktu) **met de trein** (cara) **naar Gent** (tempat).* Bahasa Indonesia kebalikannya: *saya besok ke Gent naik kereta* terdengar wajar. Urutan Belanda ini bukan aturan mutlak — ia bisa dilanggar untuk penekanan — tapi kalau kamu ragu, urutan inilah yang selalu aman.",
+        "***Niet* berdiri sebelum apa pun yang disangkalnya**, dan di ujung kalimat kalau yang disangkal adalah seluruh kalimatnya. Bandingkan: *ik betaal het **niet** met mijn kaart* (yang disangkal: kartunya) melawan *ik betaal het **niet*** (yang disangkal: pembayarannya). Ia juga selalu berdiri **sebelum** ekor kalimat: *ik heb het **niet** gedaan*.",
+        "***Meenemen* pecah dua**: *ik neem mijn creditcard **mee***. Ekornya, *mee*, terlempar ke ujung dan berdiri di belakang semua keterangan. Kata kerja terpisah punya unitnya sendiri (unit 5), tapi mulai sekarang kamu akan melihatnya di tiap dialog.",
+        "***Er gaat elk uur een trein*** memakai *er* sebagai subjek boneka, karena subjek aslinya (*een trein*) tak tentu. Ini wajib, bukan pilihan — *gaat elk uur een trein* tidak berdiri sebagai kalimat. Seluruh urusan *er* dibuka di unit 6."
+      ],
+      "grammars": [
+        {
+          "title": "Kerangka kalimat utama: lima kolom",
+          "body": [
+            "Bayangkan tiap kalimat utama sebagai lima kolom. Kolom kedua dan kolom terakhir dipegang kata kerja; sisanya diisi menurut urutan tetap."
+          ],
+          "table": {
+            "head": ["1 depan", "2 kkerja", "3 subjek", "4 waktu-cara-tempat", "5 ekor"],
+            "rows": [
+              ["Ik", "ga", "—", "morgen met de trein naar Gent", "—"],
+              ["Morgen", "ga", "ik", "met de trein naar Gent", "—"],
+              ["Met de trein", "ga", "ik", "morgen naar Gent", "—"],
+              ["Ik", "heb", "—", "gisteren een hotel", "gevonden"],
+              ["Gisteren", "heb", "ik", "een hotel", "gevonden"],
+              ["Ik", "wil", "—", "morgen naar Gent", "gaan"],
+              ["Ik", "neem", "—", "mijn kaart", "mee"],
+              ["**Ga**", "je", "—", "morgen naar Gent?", "—"],
+              ["Waarom", "ga", "je", "met de auto?", "—"]
+            ]
+          },
+          "after": [
+            "**Kolom 1 boleh diisi apa saja — tapi hanya SATU hal.** Menaruh dua keterangan sekaligus di depan (*Morgen met de trein ga ik…*) langsung membuat kalimatnya salah, karena kata kerjanya jatuh di tempat ketiga.",
+            "**Kolom 5 adalah rumah semua kata kerja mati**: deelwoord (*gevonden*), infinitif (*gaan*), dan ekor kata kerja terpisah (*mee*). Kalau ada lebih dari satu, semuanya berbaris di sana — dan urutannya diurus di unit 9."
+          ]
+        },
+        {
+          "title": "Di mana niet berdiri",
+          "body": [
+            "*Niet* punya satu tempat bawaan (di ujung, tepat sebelum kolom 5) dan beberapa tempat khusus. Semua tempat khusus itu punya satu logika yang sama: **niet berdiri persis di depan yang ia sangkal**."
+          ],
+          "table": {
+            "head": ["Yang disangkal", "Letak *niet*", "Contoh"],
+            "rows": [
+              ["seluruh kalimat", "di ujung", "Ik kom vandaag **niet**."],
+              ["seluruh kalimat, ada ekor", "sebelum ekor", "Ik heb het **niet** gedaan."],
+              ["kata sifat", "sebelum kata sifat", "Het is **niet** duur."],
+              ["keterangan cara", "sebelum keterangan", "Hij rijdt **niet** snel."],
+              ["keterangan tempat", "sebelum tempat", "Ik ga **niet** naar Gent."],
+              ["satu kata tertentu", "sebelum kata itu", "Ik betaal **niet** met mijn kaart."],
+              ["kata benda ber-*een*", "ganti dengan **geen**", "Ik heb **geen** auto."],
+              ["kata kerja terpisah", "sebelum ekornya", "Ik neem het **niet** mee."]
+            ]
+          },
+          "after": [
+            "**Objek tertentu berdiri SEBELUM *niet*, objek tak tentu tidak.** *Ik ken **de buurman niet*** (objeknya tertentu, jadi ia mendahului) melawan *ik ken **geen** buurman*. Aturan yang sama membuat kata ganti selalu mendahului: *ik zie **hem niet***, tak pernah *ik zie niet hem*.",
+            "**Keterangan waktu juga mendahului *niet***: *ik werk **morgen niet***, bukan *ik werk niet morgen*. Yang belakangan berarti \"bukan besok, tapi hari lain\" — jadi ia bukan salah, ia berarti lain."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Keterangan yang sering dipakai, menurut golongannya",
+      "blocks": [
+        { "type": "tabel", "head": ["Waktu", "Cara", "Tempat"], "rows": [
+          ["morgen (besok)", "met de trein (naik kereta)", "naar Gent (ke Gent)"],
+          ["gisteravond (semalam)", "met de fiets (naik sepeda)", "in het centrum (di pusat kota)"],
+          ["om half twee (jam 13.30)", "te voet (jalan kaki)", "bij het station (dekat stasiun)"],
+          ["elk uur (tiap jam)", "samen (bersama)", "thuis (di rumah)"],
+          ["vanavond (malam ini)", "snel (cepat)", "op kantoor (di kantor)"],
+          ["volgende week (minggu depan)", "rustig (santai)", "hier / daar (di sini / di sana)"],
+          ["altijd, nooit, vaak", "graag, liever (suka, lebih suka)", "ergens, nergens (di suatu tempat, tak di mana pun)"]
+        ]},
+        { "type": "kotak", "title": "Dua keterangan yang tidak mau ikut aturan", "items": [
+          "***Graag* dan *liever* berdiri di golongan cara, tapi condong ke depan**: *ik ga **graag** met de trein*, *ik drink **liever** thee*. Keduanya adalah cara paling Belanda untuk menyatakan suka — bahasa Belanda lebih sering berkata *ik doe het graag* daripada *ik houd ervan*.",
+          "***Er* selalu berdiri sedekat mungkin ke depan**, sebelum semua keterangan: *ik ben **er** morgen om twee uur*. Ia tak pernah mengantre bersama waktu-cara-tempat, karena ia bukan keterangan biasa — unit 6 dan 7 menjelaskan kenapa."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    { "nl": "vertrekken", "baca": "fer-TRÈ-ke(n)", "id": "berangkat" },
+    { "nl": "liever", "baca": "LIH-fer", "id": "lebih suka" },
+    { "nl": "parkeren", "baca": "par-KEH-re(n)", "id": "parkir" },
+    { "nl": "nergens", "baca": "NÈR-khe(n)s", "id": "tak di mana pun" },
+    { "nl": "duur / goedkoop", "baca": "dühr / khut-KOHP", "id": "mahal / murah" },
+    { "nl": "gelijk hebben", "baca": "khe-LÈYK HÈ-be(n)", "id": "benar (dalam pendapat)" },
+    { "nl": "hoe laat", "baca": "hu laht", "id": "jam berapa" },
+    { "nl": "om half twee", "baca": "om half tveh", "id": "jam setengah dua" },
+    { "nl": "gisteravond", "baca": "khis-ter-AH-font", "id": "kemarin malam" },
+    { "nl": "het station", "baca": "het sta-SYON", "id": "stasiun" },
+    { "nl": "slim", "baca": "slim", "id": "pintar" },
+    { "nl": "het centrum", "baca": "het SÈN-trüm", "id": "pusat kota" },
+    { "nl": "boeken", "baca": "BU-ke(n)", "id": "memesan" },
+    { "nl": "meteen", "baca": "me-TEHN", "id": "langsung, segera" },
+    { "nl": "meenemen", "baca": "MEH-neh-me(n)", "id": "membawa serta" },
+    { "nl": "betalen", "baca": "be-TAH-le(n)", "id": "membayar" },
+    { "nl": "gewoon", "baca": "khe-VOHN", "id": "biasa saja, begitu saja" },
+    { "nl": "prima", "baca": "PRIH-mah", "id": "oke, bagus" },
+    { "nl": "het kaartje", "baca": "het KAHR-tye", "id": "tiket" },
+    { "nl": "te voet", "baca": "te fut", "id": "jalan kaki" }
+  ],
+  "exercises": [
+    { "prompt": "Susun ulang kalimatnya sehingga dimulai dengan kata yang dicetak tebal.", "items": [
+      "Ik ga morgen naar Gent. → **Morgen** ____",
+      "We vertrekken zaterdagmiddag met de auto. → **Zaterdagmiddag** ____",
+      "Je kunt in de stad nergens parkeren. → **In de stad** ____",
+      "Ik heb gisteravond een hotel gevonden. → **Gisteravond** ____",
+      "Er gaat elk uur een trein. → **Elk uur** ____"
+    ]},
+    { "prompt": "Susun menjadi kalimat dengan urutan waktu-cara-tempat yang benar.", "items": [
+      "ik / ga / naar Gent / met de trein / morgen",
+      "we / fietsen / naar het station / elke dag / samen",
+      "hij / werkt / op kantoor / niet / vandaag",
+      "zij / komt / naar Nederland / volgende week / met het vliegtuig",
+      "ik / heb / een hotel / gisteravond / op internet / gevonden"
+    ]},
+    { "prompt": "Sisipkan **niet** atau **geen** di tempat yang benar.", "items": [
+      "Het is duur. (sangkal kata sifatnya) → ____",
+      "Ik heb een auto. → ____",
+      "Ik ken de buurman. → ____",
+      "Ik neem mijn kaart mee. → ____",
+      "Ik ga morgen naar Gent. (sangkal tempatnya) → ____",
+      "Ik heb het gedaan. → ____"
+    ]},
+    { "prompt": "Terjemahkan ke bahasa Belanda.", "items": [
+      "Besok saya naik kereta ke Gent.",
+      "Sabtu siang kami berangkat naik mobil.",
+      "Di kotanya kamu tidak bisa parkir di mana pun.",
+      "Semalam saya menemukan hotel di internet.",
+      "Saya tidak membayarnya dengan kartu saya."
+    ]}
+  ],
+  "answers": [
+    "Morgen ga ik naar Gent. — Zaterdagmiddag vertrekken we met de auto. — In de stad kun je nergens parkeren. — Gisteravond heb ik een hotel gevonden. — Elk uur gaat er een trein.",
+    "Ik ga morgen met de trein naar Gent. — We fietsen elke dag samen naar het station. — Hij werkt vandaag niet op kantoor. — Zij komt volgende week met het vliegtuig naar Nederland. — Ik heb gisteravond op internet een hotel gevonden.",
+    "Het is niet duur. — Ik heb geen auto. — Ik ken de buurman niet. — Ik neem mijn kaart niet mee. — Ik ga morgen niet naar Gent. — Ik heb het niet gedaan.",
+    "Morgen ga ik met de trein naar Gent. — Zaterdagmiddag vertrekken we met de auto. — In de stad kun je nergens parkeren. — Gisteravond heb ik op internet een hotel gevonden. — Ik betaal het niet met mijn kaart."
+  ],
+  "wave": "Sebelum masuk unit 4, ambil sepuluh kalimat perfectum yang kamu buat di unit 1, lalu susun ulang tiap-tiapnya sehingga dimulai dengan keterangan waktu. Setiap kali subjeknya melompat ke belakang kata kerja, kamu sedang melatih otot yang paling dibutuhkan sisa modul ini."
+}
