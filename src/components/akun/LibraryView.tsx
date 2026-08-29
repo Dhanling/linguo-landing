@@ -965,15 +965,6 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     });
   }, [katalog, purchases, tab, cocokSaring, q]);
 
-  /* ---------------- render ---------------- */
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24">
-        <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
-      </div>
-    );
-  }
-
   /* [pustaka-terakhir-dibuka-v1] Jejak dipasangkan dengan baris beliannya, karena
      yang dibutuhkan tombolnya (token akses, file_url, sampul produk) cuma ada di
      sana. Jejak tanpa pasangan DIBUANG diam-diam: modul yang aksesnya sudah habis
@@ -991,6 +982,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
         !!x.p && x.p.digital_products?.type === "ebook" && accessInfo(x.p).kind !== "expired"),
     [terakhir, purchases],
   );
+
+  /* ---------------- render ---------------- */
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-24">
+        <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-7">
