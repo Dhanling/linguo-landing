@@ -1,0 +1,993 @@
+{
+ "title": "Kata kerja yang bengkok",
+ "title_target": "불규칙 — Bulgyuchik",
+ "goal": "Menguasai tujuh kelompok kata kerja tak beraturan — ㅂ, ㄷ, ㅅ, 르, ㅎ, 으 탈락, ㄹ 탈락 — dan mengenali kata mana yang terlihat bengkok padahal lurus.",
+ "bekal": [
+  "meramalkan perubahan bentuk dari huruf terakhir akar kata kerja",
+  "membentuk 해요체, -아서, -(으)면, dan -(으)ㄹ dari kata kerja tak beraturan",
+  "mengenali sepuluh pasangan yang lurus padahal terlihat bengkok",
+  "memakai empat puluh kata tak beraturan yang paling sering",
+  "membaca kamus tanpa terkecoh oleh bentuk kamusnya"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Makan siang di hari yang panas",
+   "intro": "Ani dan Yujin makan siang di hari musim panas Seoul. Hitung berapa kata kerja di dialog ini yang berubah bentuknya — hampir semua kata sifat yang menggambarkan rasa dan cuaca termasuk kelompok yang bengkok.",
+   "lines": [
+    {
+     "speaker": "유진:",
+     "text": "[오늘|Oneul] [진짜|jinjja] [덥다|deopda]. [뭐|Mwo] [먹을래|meogeullae]?",
+     "id": "Hari ini panas banget. Mau makan apa?",
+     "literal": "hari-ini — sungguh — panas. apa — akan-makan-mau?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[나|Na] [아직|ajik] [메뉴|menyu] [잘|jal] [몰라|molla]. [뭐가|Mwoga] [맛있어|masisseo]?",
+     "id": "Aku masih belum tahu menunya. Apa yang enak?",
+     "literal": "aku — masih — menu — baik — tidak-tahu. apa — yang — enak?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[여기|Yeogi] [냉면이|naengmyeoni] [유명해|yumyeonghae]. [근데|Geunde] [너|neo] [매운|maeun] [거|geo] [먹어|meogeo]?",
+     "id": "Di sini naengmyeon-nya terkenal. Tapi kamu makan yang pedas?",
+     "literal": "di-sini — mi-dingin — yang — terkenal. tapi — kamu — pedas-yang — barang — makan?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[매운|Maeun] [거|geo] [좋아하는데|joahaneunde] [너무|neomu] [매우면|maeumyeon] [못|mot] [먹어|meogeo].",
+     "id": "Aku suka yang pedas, tapi kalau kepedasan nggak sanggup.",
+     "literal": "pedas-yang — barang — suka-tapi — terlalu — pedas-kalau — tak-mampu — makan."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[그럼|Geureom] [물냉면|mulnaengmyeon] [시켜|sikyeo]. [안|An] [매워|maewo].",
+     "id": "Kalau gitu pesan mulnaengmyeon. Nggak pedas.",
+     "literal": "kalau-begitu — mi-dingin-air — pesan. tidak — pedas."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[좋아|Joa]. [근데|Geunde] [어제부터|eojebuteo] [목이|mogi] [좀|jom] [아파서|apaseo] [뜨거운|tteugeoun] [건|geon] [못|mot] [먹겠어|meokgesseo].",
+     "id": "Oke. Tapi dari kemarin tenggorokanku agak sakit, jadi yang panas kayaknya nggak bisa.",
+     "literal": "bagus. tapi — kemarin — sejak — tenggorokan — yang — sedikit — sakit-karena — panas-yang — barang — mengenai — tak-mampu — makan-akan."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[감기야|Gamgiya]? [약|Yak] [먹었어|meogeosseo]?",
+     "id": "Masuk angin? Sudah minum obat?",
+     "literal": "flu-adalah? obat — makan-sudah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[응|Eung], [먹었는데|meogeonneunde] [아직|ajik] [안|an] [나았어|naasseo].",
+     "id": "Iya, sudah, tapi belum sembuh.",
+     "literal": "iya, makan-sudah-tapi — masih — tidak — sembuh-sudah."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[빨리|Ppalli] [나으면|naeumyeon] [좋겠다|joketda]. [물|Mul] [많이|mani] [마셔|masyeo].",
+     "id": "Semoga cepat sembuh. Minum air yang banyak.",
+     "literal": "cepat — sembuh-kalau — bagus-akan — adalah. air — banyak — minum."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[고마워|Gomawo]. [아|A], [여기|yeogi] [노래|norae] [좋다|jota]. [이|I] [노래|norae] [자주|jaju] [들어|deureo]?",
+     "id": "Makasih. Eh, lagunya bagus di sini. Kamu sering dengar lagu ini?",
+     "literal": "terima-kasih. ah, di-sini — lagu — bagus. ini — lagu — sering — mendengar?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[응|Eung], [요즘|yojeum] [매일|maeil] [들어|deureo]. [가수|Gasu] [이름|ireum] [알아|ara]?",
+     "id": "Iya, belakangan tiap hari dengar. Tahu nama penyanyinya?",
+     "literal": "iya, akhir-akhir-ini — tiap-hari — mendengar. penyanyi — nama — tahu?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[몰라|Molla]. [나중에|Najunge] [물어볼게|mureobolge].",
+     "id": "Nggak tahu. Nanti aku tanya.",
+     "literal": "tidak-tahu. nanti — bertanya-coba-akan."
+    }
+   ],
+   "notes": [
+    "**[덥다|Deopda] sebagai kalimat utuh.** Bentuk kamus yang diucapkan begitu saja adalah seruan 반말: 덥다! 좋다! 예쁘다! 맛있다! Bukan bentuk yang belum dikonjugasikan, melainkan bentuk seruan yang memang berakhir -다. Bentuk sopannya menambahkan 네요: 덥네요.",
+    "**[몰라|Molla] dari 모르다** — kelompok 르. Perhatikan bahwa ㄹ-nya berlipat dua: 모르 + 아 → 몰라, bukan 모라. Bentuk sopannya 몰라요, bentuk resminya 모릅니다. ⚠️ 잘 몰라요 (kurang tahu) jauh lebih halus daripada 몰라요 telanjang, yang bisa terdengar memutus percakapan.",
+    "**[매운|Maeun] · [매우면|maeumyeon] · [매워|maewo]** — satu kata, tiga wujud. 맵다 kehilangan ㅂ-nya di depan huruf hidup: + (으)ㄴ → 매운, + (으)면 → 매우면, + 어 → 매워. Kalau tiga bentuk ini keluar tanpa berpikir, seluruh kelompok ㅂ sudah kamu kuasai.",
+    "**[아파서|Apaseo] dari 아프다** — kelompok 으 탈락. 으 hilang, lalu vokal sebelumnya yang menentukan: 아프 + 아 → 아파. Bandingkan 예쁘 + 어 → 예뻐 dan 쓰 + 어 → 써 (tidak ada vokal sebelumnya, jadi 어).",
+    "**[나았어|Naasseo] dari 낫다** — kelompok ㅅ. ㅅ-nya hilang tetapi vokalnya **tidak** menyatu: 낫 + 아 → 나아, bukan 나. Inilah cirinya; kelompok ㅅ meninggalkan dua vokal yang berdampingan. ⚠️ 낫다 punya dua arti: sembuh, dan \"lebih baik\" (이게 더 나아요).",
+    "**[들어|Deureo] dari 듣다** — kelompok ㄷ. ㄷ berubah jadi ㄹ di depan huruf hidup: 듣 + 어 → 들어, 듣 + 으면 → 들으면. ⚠️ Jangan tertukar dengan 들다 (mengangkat) yang bentuk kamusnya memang sudah ㄹ.",
+    "**[알아|Ara] dan [몰라|molla] adalah pasangan.** Bahasa Korea tidak berkata \"tidak tahu\" dengan menambahkan 안 pada 알다; ia punya kata sendiri, 모르다. ✗ 안 알아요 tidak pernah benar.",
+    "**[물어볼게|Mureobolge] dari 묻다** — kelompok ㄷ lagi: 묻 + 어 → 물어. ⚠️ Bandingkan dengan 닫다 (menutup) yang lurus: 닫 + 아 → 닫아, bukan 달아. Pasangan semacam ini harus dihafal satu-satu."
+   ],
+   "grammars": [
+    {
+     "title": "ㅂ · ㄷ · ㅅ — tiga kelompok yang berubah di depan huruf hidup",
+     "body": [
+      "Ketiganya berubah ketika akhiran yang menempel dimulai dengan **huruf hidup** — yaitu bentuk 아/어 dan bentuk 으. Di depan akhiran berkonsonan (-고, -지만, -는), akarnya tidak berubah sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Perubahan",
+       "+ 아/어",
+       "+ (으)면",
+       "+ (으)ㄴ / (으)ㄹ",
+       "+ 고"
+      ],
+      "rows": [
+       [
+        "ㅂ — 덥다",
+        "ㅂ → 우",
+        "더**워**",
+        "더**우면**",
+        "더**운**",
+        "덥**고** (tetap)"
+       ],
+       [
+        "ㅂ — 맵다",
+        "",
+        "매**워**",
+        "매**우면**",
+        "매**운**",
+        "맵**고**"
+       ],
+       [
+        "ㅂ — 쉽다",
+        "",
+        "쉬**워**",
+        "쉬**우면**",
+        "쉬**운**",
+        "쉽**고**"
+       ],
+       [
+        "ㄷ — 듣다",
+        "ㄷ → ㄹ",
+        "들**어**",
+        "들**으면**",
+        "들**을**",
+        "듣**고** (tetap)"
+       ],
+       [
+        "ㄷ — 걷다",
+        "",
+        "걸**어**",
+        "걸**으면**",
+        "걸**을**",
+        "걷**고**"
+       ],
+       [
+        "ㄷ — 묻다",
+        "",
+        "물**어**",
+        "물**으면**",
+        "물**을**",
+        "묻**고**"
+       ],
+       [
+        "ㅅ — 낫다",
+        "ㅅ hilang",
+        "나**아**",
+        "나**으면**",
+        "나**은**",
+        "낫**고** (tetap)"
+       ],
+       [
+        "ㅅ — 짓다",
+        "",
+        "지**어**",
+        "지**으면**",
+        "지**은**",
+        "짓**고**"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua kata kelompok ㅂ yang menyimpang dari penyimpangannya:** 돕다 (menolong) dan 곱다 (elok) memakai **오**, bukan 우 — 도**와**요, 고**와**요. Hanya dua kata ini di seluruh bahasa Korea, dan yang pertama sangat sering dipakai: 도와주세요.",
+      "**Kelompok ㅅ tidak menggabungkan vokalnya.** 낫 + 아 → 나아 (dua suku kata), bukan 나. Ini berbeda dari kata kerja biasa berakhir vokal seperti 가 + 아 → 가. Ucapkan dua vokalnya terpisah dan sedikit memanjang.",
+      "**Di depan akhiran berkonsonan, semuanya diam.** 덥고, 덥지만, 듣고, 듣는, 낫고. Karena itu bentuk kamus dan bentuk -고 tidak pernah memberitahumu bahwa sebuah kata itu bengkok — yang memberitahu hanya bentuk 해요체-nya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Melihat kos baru Yujin",
+   "intro": "Yujin baru pindah ke kamar sewa dekat kampus. Dialog ini penuh kelompok 르, 으, dan ㄹ — tiga kelompok yang tersisa.",
+   "lines": [
+    {
+     "speaker": "아니:",
+     "text": "[와|Wa], [방|bang] [진짜|jinjja] [예쁘다|yeppeuda]! [여기|Yeogi] [산|san] [지|ji] [얼마나|eolmana] [됐어|dwaesseo]?",
+     "id": "Wah, kamarnya cakep banget! Sudah berapa lama tinggal di sini?",
+     "literal": "wah, kamar — sungguh — cantik! di-sini — tinggal-yang — sejak — berapa-lama — menjadi-sudah?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[두|Du] [달쯤|daljjeum] [됐어|dwaesseo]. [학교에서|Hakgyoeseo] [걸어서|georeoseo] [십|sip] [분이라|bunira] [편해|pyeonhae].",
+     "id": "Sekitar dua bulan. Dari kampus jalan kaki sepuluh menit, jadi enak.",
+     "literal": "dua — bulan — sekitar — menjadi-sudah. sekolah — dari — berjalan-lalu — sepuluh — menit — adalah-karena — nyaman."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[좋겠다|Joketda]. [나는|Naneun] [지하철로|jihacheollo] [사십|sasip] [분|bun] [걸려|geollyeo].",
+     "id": "Enak ya. Kalau aku empat puluh menit naik kereta.",
+     "literal": "bagus-akan — adalah. aku — mengenai — kereta-bawah-tanah — dengan — empat-puluh — menit — memakan-waktu."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[이|I] [건물|geonmul] [작년에|jangnyeone] [지어서|jieoseo] [아직|ajik] [깨끗해|kkaekkeutae].",
+     "id": "Gedung ini dibangun tahun lalu, jadi masih bersih.",
+     "literal": "ini — bangunan — tahun-lalu — pada — membangun-karena — masih — bersih."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[월세는|Wolsseneun] [얼마야|eolmaya]? [아|A], [물어봐도|mureobwado] [돼|dwae]?",
+     "id": "Sewa bulanannya berapa? Eh, boleh nanya nggak?",
+     "literal": "sewa-bulanan — mengenai — berapa-adalah? ah, bertanya-coba-pun — boleh?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[괜찮아|Gwaenchana]. [오십오만|Osibomman] [원인데|woninde] [관리비는|gwallibineun] [달라|dalla].",
+     "id": "Nggak apa-apa. Lima ratus lima puluh ribu won, tapi biaya perawatannya terpisah.",
+     "literal": "tidak-apa-apa. lima-ratus-lima-puluh-ribu — won-adalah-tapi — biaya-pengelolaan — mengenai — berbeda."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[생각보다|Saenggakboda] [싸다|ssada]. [밥은|Babeun] [만들어|mandeureo] [먹어|meogeo]?",
+     "id": "Lebih murah dari dugaanku. Kamu masak sendiri?",
+     "literal": "pikiran — daripada — murah. nasi — mengenai — membuat — makan?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[응|Eung], [요즘|yojeum] [요리|yori] [배우는데|baeuneunde] [생각보다|saenggakboda] [어려워|eoryeowo].",
+     "id": "Iya, belakangan lagi belajar masak, tapi ternyata susah.",
+     "literal": "iya, akhir-akhir-ini — masakan — belajar-tapi — pikiran — daripada — sulit."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[나도|Nado] [배우고|baeugo] [싶은데|sipeunde] [시간이|sigani] [없어|eopseo]. [아|A], [이|i] [음악|eumak] [뭐야|mwoya]?",
+     "id": "Aku juga mau belajar tapi nggak ada waktu. Eh, ini musik apa?",
+     "literal": "aku — juga — belajar — ingin-tapi — waktu — yang — tidak-ada. ah, ini — musik — apa-adalah?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[요즘|Yojeum] [자주|jaju] [듣는|deutneun] [밴드야|baendeuya]. [나|Na] [어제|eoje] [노래방에서|noraebangeseo] [이|i] [노래|norae] [불렀어|bulleosseo].",
+     "id": "Band yang belakangan sering aku dengar. Kemarin aku nyanyi lagu ini di karaoke.",
+     "literal": "akhir-akhir-ini — sering — mendengar-yang — band-adalah. aku — kemarin — karaoke — di — ini — lagu — menyanyi-sudah."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[진짜|Jinjja]? [다음엔|Daeumen] [같이|gachi] [가자|gaja]. [나|Na] [노래|norae] [잘|jal] [못|mot] [부르는데|bureuneunde].",
+     "id": "Serius? Lain kali ayo bareng. Padahal aku nyanyinya jelek.",
+     "literal": "sungguh? berikut — pada — mengenai — bersama — pergi-ayo. aku — lagu — baik — tak-mampu — menyanyi-padahal."
+    }
+   ],
+   "notes": [
+    "**[산|San] [지|ji]** dari pola **-(으)ㄴ 지** = \"sejak (melakukan)\". 살다 kehilangan ㄹ-nya di depan ㄴ: 살 + (으)ㄴ → 산. Polanya: 한국에 온 지 일 년 됐어요 (sudah setahun sejak datang ke Korea).",
+    "**[걸어서|Georeoseo]** dari 걷다 — kelompok ㄷ. ⚠️ Jangan tertukar dengan 걸리다 (memakan waktu) yang muncul dua baris kemudian: 사십 분 걸려. Dua kata yang bunyinya mirip tetapi tidak berkerabat.",
+    "**[지어서|Jieoseo]** dari 짓다 (membangun, memasak nasi, memberi nama, menyusun) — kelompok ㅅ. Kata ini punya jangkauan arti yang luas: 집을 짓다, 밥을 짓다, 이름을 짓다, 미소를 짓다 (tersenyum).",
+    "**[달라|Dalla]** dari 다르다 (berbeda) — kelompok 르. ⚠️ Kata ini sering tertukar dengan 틀리다 (salah). 다르다 = berbeda, 틀리다 = keliru. Menyebut pendapat orang 틀려 padahal maksudmu \"berbeda\" adalah kekeliruan yang bisa menyinggung.",
+    "**[관리비|Gwallibi]** — biaya pengelolaan gedung, dibayar terpisah dari sewa dan hampir selalu ada di Korea. Kosakata sewa yang perlu kamu punya: 월세 (sewa bulanan), 전세 (uang jaminan besar tanpa sewa bulanan), 보증금 (uang jaminan), 원룸 (kamar studio).",
+    "**[만들어|Mandeureo] [먹어|meogeo]** = \"membuat lalu memakan\", yaitu masak sendiri. Pola dua kata kerja berturutan ini sangat lazim: 사 먹다 (beli lalu makan, yaitu jajan di luar), 시켜 먹다 (pesan antar), 해 먹다 (masak sendiri).",
+    "**[듣는|Deutneun]** — di depan -는, kelompok ㄷ **tidak** berubah, karena ㄴ bukan huruf hidup. Ini yang membuat bentuk penerang kata kerja tak beraturan sering salah ditulis: 듣는 ✔, 들는 ✗.",
+    "**[불렀어|Bulleosseo]** dari 부르다 — kelompok 르: 부르 + 어 → 불러. Kata ini berarti menyanyi **dan** memanggil: 노래를 부르다, 이름을 부르다, 택시를 부르다. ⚠️ Ada pula 배부르다 (kenyang) yang mengikuti pola yang sama: 배불러요."
+   ],
+   "grammars": [
+    {
+     "title": "르 · 으 · ㄹ — tiga kelompok yang tersisa",
+     "body": [
+      "Dua yang pertama hanya berubah di depan bentuk 아/어. Yang terakhir berbeda sendiri: ia berubah di depan tiga konsonan tertentu, dan tidak pernah di depan huruf hidup."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Perubahan",
+       "+ 아/어",
+       "+ (으)면",
+       "+ ㅂ니다",
+       "+ 는"
+      ],
+      "rows": [
+       [
+        "르 — 모르다",
+        "르 → ㄹㄹ",
+        "몰**라**",
+        "모르**면** (tetap)",
+        "모릅**니다**",
+        "모르**는**"
+       ],
+       [
+        "르 — 빠르다",
+        "",
+        "빨**라**",
+        "빠르면",
+        "빠릅니다",
+        "—"
+       ],
+       [
+        "르 — 부르다",
+        "",
+        "불**러**",
+        "부르면",
+        "부릅니다",
+        "부르는"
+       ],
+       [
+        "으 — 바쁘다",
+        "으 hilang",
+        "바**빠**",
+        "바쁘**면** (tetap)",
+        "바쁩니다",
+        "—"
+       ],
+       [
+        "으 — 쓰다",
+        "",
+        "**써**",
+        "쓰면",
+        "씁니다",
+        "쓰는"
+       ],
+       [
+        "으 — 예쁘다",
+        "",
+        "예**뻐**",
+        "예쁘면",
+        "예쁩니다",
+        "—"
+       ],
+       [
+        "ㄹ — 살다",
+        "ㄹ hilang di depan ㄴ·ㅂ·ㅅ",
+        "살**아** (tetap)",
+        "살**면** ⚠️",
+        "**삽**니다",
+        "**사**는"
+       ],
+       [
+        "ㄹ — 만들다",
+        "",
+        "만들**어** (tetap)",
+        "만들면",
+        "만듭니다",
+        "만드는"
+       ]
+      ]
+     },
+     "after": [
+      "**Kelompok 르 menggandakan ㄹ, dan itu ciri yang mudah dikenali.** 모르 + 아 → 몰라 (bukan 모라), 빠르 + 아 → 빨라, 다르 + 아 → 달라, 자르 + 아 → 잘라. Kalau kamu mengucapkan 모라요, orang Korea akan menoleh bingung.",
+      "**Kelompok 으 sudah kamu pakai sejak modul 101 tanpa menyadarinya:** 바빠요, 아파요, 써요, 커요, 예뻐요, 배고파요. Yang menentukan 아 atau 어 adalah vokal **suku kata sebelum 으**; kalau tidak ada, selalu 어.",
+      "⚠️ **ㄹ 탈락 bukan 불규칙 sungguhan** — ia teratur sempurna, dan berlaku untuk **semua** kata berakhir ㄹ tanpa kecuali: 알다, 살다, 만들다, 팔다, 놀다, 열다, 울다, 길다, 멀다. Hafalkan pemicunya sebagai satu kata: **ㄴ · ㅂ · ㅅ** — 사는, 삽니다, 사세요. Perhatikan bahwa -(으)면 dan -(으)ㄹ **tidak** menambahkan 으 pada kata ㄹ: 살면 (bukan 살으면), 살 거예요."
+     ]
+    },
+    {
+     "title": "ㅎ 불규칙 — kelompok kecil yang muncul setiap hari",
+     "body": [
+      "Hanya berlaku untuk kata **sifat** berakhir ㅎ, dan hampir semuanya adalah kata penunjuk sifat: 그렇다, 이렇다, 저렇다, 어떻다, dan kata warna 빨갛다 · 파랗다 · 노랗다 · 하얗다 · 까맣다."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "+ 아/어",
+       "+ (으)ㄴ",
+       "+ (으)면",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "그렇다",
+        "그**래**",
+        "그**런**",
+        "그**러면**",
+        "begitu"
+       ],
+       [
+        "어떻다",
+        "어**때**",
+        "어**떤**",
+        "어**떠면**",
+        "bagaimana"
+       ],
+       [
+        "이렇다",
+        "이**래**",
+        "이**런**",
+        "이**러면**",
+        "begini"
+       ],
+       [
+        "빨갛다",
+        "빨**개**",
+        "빨**간**",
+        "빨**가면**",
+        "merah"
+       ],
+       [
+        "하얗다",
+        "하**얘**",
+        "하**얀**",
+        "하**야면**",
+        "putih"
+       ],
+       [
+        "좋다 ✔",
+        "좋**아**",
+        "좋**은**",
+        "좋**으면**",
+        "bagus (LURUS)"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata-kata yang lahir dari kelompok ini kamu pakai tiap hari tanpa sadar:** 그래요, 그래서, 그런데, 어때요?, 이런, 저런. Semuanya adalah bentuk berubah dari 그렇다, 어떻다, 이렇다.",
+      "⚠️ **좋다 dan 놓다 lurus.** Keduanya berakhir ㅎ tetapi mengikuti aturan biasa: 좋아요, 놓아요. Kelompok ㅎ hanya berlaku untuk kata sifat penunjuk dan warna."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat puluh kata bengkok yang paling sering",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Daftar ini bukan untuk dihafal sekali duduk. Hafalkan **bentuk 아/어-nya** — kolom ketiga — karena dari bentuk itulah semua akhiran kelompok 3 dibuat, dan karena bentuk itulah yang keluar saat kamu berbicara."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Kata",
+      "Bentuk 아/어",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ㅂ",
+       "덥다 · 춥다",
+       "더워 · 추워",
+       "panas · dingin"
+      ],
+      [
+       "ㅂ",
+       "맵다 · 짜다*",
+       "매워 · 짜",
+       "pedas · asin (*lurus)"
+      ],
+      [
+       "ㅂ",
+       "쉽다 · 어렵다",
+       "쉬워 · 어려워",
+       "mudah · sulit"
+      ],
+      [
+       "ㅂ",
+       "무겁다 · 가볍다",
+       "무거워 · 가벼워",
+       "berat · ringan"
+      ],
+      [
+       "ㅂ",
+       "가깝다 · 시끄럽다",
+       "가까워 · 시끄러워",
+       "dekat · berisik"
+      ],
+      [
+       "ㅂ",
+       "귀엽다 · 아름답다",
+       "귀여워 · 아름다워",
+       "imut · indah"
+      ],
+      [
+       "ㅂ",
+       "고맙다 · 반갑다",
+       "고마워 · 반가워",
+       "berterima kasih · senang bertemu"
+      ],
+      [
+       "ㅂ",
+       "돕다 ⚠️",
+       "도**와**",
+       "menolong"
+      ],
+      [
+       "ㄷ",
+       "듣다 · 걷다",
+       "들어 · 걸어",
+       "mendengar · berjalan"
+      ],
+      [
+       "ㄷ",
+       "묻다 · 싣다",
+       "물어 · 실어",
+       "bertanya · memuat"
+      ],
+      [
+       "ㅅ",
+       "낫다 · 짓다",
+       "나아 · 지어",
+       "sembuh · membangun"
+      ],
+      [
+       "ㅅ",
+       "붓다 · 잇다",
+       "부어 · 이어",
+       "bengkak, menuang · menyambung"
+      ],
+      [
+       "르",
+       "모르다 · 다르다",
+       "몰라 · 달라",
+       "tidak tahu · berbeda"
+      ],
+      [
+       "르",
+       "빠르다 · 부르다",
+       "빨라 · 불러",
+       "cepat · memanggil, menyanyi"
+      ],
+      [
+       "르",
+       "자르다 · 고르다",
+       "잘라 · 골라",
+       "memotong · memilih"
+      ],
+      [
+       "르",
+       "서두르다 · 기르다",
+       "서둘러 · 길러",
+       "terburu-buru · memelihara"
+      ],
+      [
+       "으",
+       "바쁘다 · 아프다",
+       "바빠 · 아파",
+       "sibuk · sakit"
+      ],
+      [
+       "으",
+       "예쁘다 · 슬프다",
+       "예뻐 · 슬퍼",
+       "cantik · sedih"
+      ],
+      [
+       "으",
+       "쓰다 · 크다",
+       "써 · 커",
+       "menulis, pahit · besar"
+      ],
+      [
+       "으",
+       "배고프다 · 기쁘다",
+       "배고파 · 기뻐",
+       "lapar · gembira"
+      ],
+      [
+       "ㄹ",
+       "살다 · 알다",
+       "살아 · 알아",
+       "tinggal · tahu"
+      ],
+      [
+       "ㄹ",
+       "만들다 · 팔다",
+       "만들어 · 팔아",
+       "membuat · menjual"
+      ],
+      [
+       "ㄹ",
+       "놀다 · 열다",
+       "놀아 · 열어",
+       "bermain · membuka"
+      ],
+      [
+       "ㄹ",
+       "길다 · 멀다",
+       "길어 · 멀어",
+       "panjang · jauh"
+      ],
+      [
+       "ㅎ",
+       "그렇다 · 어떻다",
+       "그래 · 어때",
+       "begitu · bagaimana"
+      ],
+      [
+       "ㅎ",
+       "빨갛다 · 하얗다",
+       "빨개 · 하얘",
+       "merah · putih"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara melatihnya dalam sepuluh menit sehari",
+     "items": [
+      "**Tulis tiga bentuk saja untuk tiap kata: 아/어, (으)면, (으)ㄴ.** Tiga bentuk itu memicu semua perubahan yang ada. Kalau ketiganya benar, semua akhiran lain akan mengikuti sendiri.",
+      "**Latih berpasangan dengan lawannya.** 덥다-춥다, 쉽다-어렵다, 무겁다-가볍다, 길다-짧다. Otak mengingat pasangan jauh lebih baik daripada daftar.",
+      "**Ucapkan, jangan cuma tulis.** Kelompok ㅂ dan 르 punya irama yang khas — 더워, 매워, 몰라, 빨라 — dan begitu iramanya menempel di mulut, kamu tidak akan pernah salah lagi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Yang lurus padahal terlihat bengkok",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tidak semua kata berakhir ㅂ, ㄷ, atau ㅅ itu bengkok. Sialnya, tidak ada aturan yang memberitahu mana yang mana — pasangan berikut harus dihafal sebagai pasangan, dan semuanya sangat sering dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Lurus ✔",
+      "Bentuk 아/어",
+      "Bandingkan dengan",
+      "Yang bengkok"
+     ],
+     "rows": [
+      [
+       "입다 (memakai)",
+       "입어요",
+       "덥다",
+       "더워요"
+      ],
+      [
+       "좁다 (sempit)",
+       "좁아요",
+       "춥다",
+       "추워요"
+      ],
+      [
+       "잡다 (memegang)",
+       "잡아요",
+       "굽다",
+       "구워요"
+      ],
+      [
+       "씹다 (mengunyah)",
+       "씹어요",
+       "맵다",
+       "매워요"
+      ],
+      [
+       "받다 (menerima)",
+       "받아요",
+       "듣다",
+       "들어요"
+      ],
+      [
+       "닫다 (menutup)",
+       "닫아요",
+       "걷다",
+       "걸어요"
+      ],
+      [
+       "믿다 (percaya)",
+       "믿어요",
+       "묻다",
+       "물어요"
+      ],
+      [
+       "웃다 (tertawa)",
+       "웃어요",
+       "낫다",
+       "나아요"
+      ],
+      [
+       "벗다 (melepas)",
+       "벗어요",
+       "짓다",
+       "지어요"
+      ],
+      [
+       "씻다 (mencuci)",
+       "씻어요",
+       "붓다",
+       "부어요"
+      ],
+      [
+       "좋다 (bagus)",
+       "좋아요",
+       "그렇다",
+       "그래요"
+      ],
+      [
+       "따르다 (mengikuti) ⚠️",
+       "따라요",
+       "부르다",
+       "불러요"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir layak diperhatikan: **따르다** berakhir 르 tetapi mengikuti pola 으 탈락, bukan pola 르 — 따라요, bukan 딸라요. Kerabatnya: 들르다 (mampir) → 들러요. Hanya dua kata ini yang begitu."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara memastikan waktu bertemu kata baru",
+     "items": [
+      "**Kamus Korea yang baik selalu mencantumkan bentuk 아/어-nya** di dalam kurung. Naver Dictionary menampilkannya di bawah kata utama; biasakan melihat ke sana, bukan menebak dari bentuk kamusnya.",
+      "**Kalau kamu ragu di tengah percakapan, hindari bentuk 아/어.** Pakai -고, -지만, atau -(으)ㄹ 거예요 — semuanya tidak memicu perubahan. Ini jalan pintas yang sah dan sering dipakai pembelajar tingkat menengah.",
+      "**Kata serapan tidak pernah bengkok.** 스트레스받다, 체크하다, 다운받다 dan semua kata berakhiran 하다 selalu lurus. Ini mencakup ribuan kata, jadi bagian bahasa Korea yang bengkok sebenarnya lebih kecil daripada kelihatannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "덥다",
+   "baca": "deopda",
+   "id": "panas (cuaca)"
+  },
+  {
+   "ko": "냉면",
+   "baca": "naengmyeon",
+   "id": "mi dingin"
+  },
+  {
+   "ko": "유명하다",
+   "baca": "yumyeonghada",
+   "id": "terkenal"
+  },
+  {
+   "ko": "맵다",
+   "baca": "maepda",
+   "id": "pedas"
+  },
+  {
+   "ko": "시키다",
+   "baca": "sikida",
+   "id": "memesan"
+  },
+  {
+   "ko": "목",
+   "baca": "mok",
+   "id": "leher, tenggorokan"
+  },
+  {
+   "ko": "아프다",
+   "baca": "apeuda",
+   "id": "sakit"
+  },
+  {
+   "ko": "뜨겁다",
+   "baca": "tteugeopda",
+   "id": "panas (benda)"
+  },
+  {
+   "ko": "약",
+   "baca": "yak",
+   "id": "obat"
+  },
+  {
+   "ko": "낫다",
+   "baca": "natda",
+   "id": "sembuh; lebih baik"
+  },
+  {
+   "ko": "가수",
+   "baca": "gasu",
+   "id": "penyanyi"
+  },
+  {
+   "ko": "묻다",
+   "baca": "mutda",
+   "id": "bertanya"
+  },
+  {
+   "ko": "듣다",
+   "baca": "deutda",
+   "id": "mendengar"
+  },
+  {
+   "ko": "모르다",
+   "baca": "moreuda",
+   "id": "tidak tahu"
+  },
+  {
+   "ko": "방",
+   "baca": "bang",
+   "id": "kamar"
+  },
+  {
+   "ko": "예쁘다",
+   "baca": "yeppeuda",
+   "id": "cantik, bagus"
+  },
+  {
+   "ko": "걷다",
+   "baca": "geotda",
+   "id": "berjalan kaki"
+  },
+  {
+   "ko": "건물",
+   "baca": "geonmul",
+   "id": "gedung"
+  },
+  {
+   "ko": "짓다",
+   "baca": "jitda",
+   "id": "membangun, memasak nasi"
+  },
+  {
+   "ko": "깨끗하다",
+   "baca": "kkaekkeutada",
+   "id": "bersih"
+  },
+  {
+   "ko": "월세",
+   "baca": "wolse",
+   "id": "sewa bulanan"
+  },
+  {
+   "ko": "관리비",
+   "baca": "gwallibi",
+   "id": "biaya pengelolaan"
+  },
+  {
+   "ko": "다르다",
+   "baca": "dareuda",
+   "id": "berbeda"
+  },
+  {
+   "ko": "생각보다",
+   "baca": "saenggakboda",
+   "id": "di luar dugaan"
+  },
+  {
+   "ko": "만들다",
+   "baca": "mandeulda",
+   "id": "membuat"
+  },
+  {
+   "ko": "요리",
+   "baca": "yori",
+   "id": "masakan"
+  },
+  {
+   "ko": "배우다",
+   "baca": "baeuda",
+   "id": "belajar, berlatih"
+  },
+  {
+   "ko": "어렵다",
+   "baca": "eoryeopda",
+   "id": "sulit"
+  },
+  {
+   "ko": "음악",
+   "baca": "eumak",
+   "id": "musik"
+  },
+  {
+   "ko": "노래방",
+   "baca": "noraebang",
+   "id": "karaoke"
+  },
+  {
+   "ko": "부르다",
+   "baca": "bureuda",
+   "id": "memanggil; menyanyi"
+  },
+  {
+   "ko": "빠르다",
+   "baca": "ppareuda",
+   "id": "cepat"
+  },
+  {
+   "ko": "자르다",
+   "baca": "jareuda",
+   "id": "memotong"
+  },
+  {
+   "ko": "고르다",
+   "baca": "goreuda",
+   "id": "memilih"
+  },
+  {
+   "ko": "돕다",
+   "baca": "dopda",
+   "id": "menolong"
+  },
+  {
+   "ko": "무겁다",
+   "baca": "mugeopda",
+   "id": "berat"
+  },
+  {
+   "ko": "가볍다",
+   "baca": "gabyeopda",
+   "id": "ringan"
+  },
+  {
+   "ko": "시끄럽다",
+   "baca": "sikkeureopda",
+   "id": "berisik"
+  },
+  {
+   "ko": "붓다",
+   "baca": "butda",
+   "id": "bengkak; menuang"
+  },
+  {
+   "ko": "틀리다",
+   "baca": "teullida",
+   "id": "salah, keliru"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk 해요체.",
+   "items": [
+    "덥다 → ____",
+    "듣다 → ____",
+    "모르다 → ____",
+    "바쁘다 → ____",
+    "낫다 → ____",
+    "그렇다 → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk -(으)면.",
+   "items": [
+    "맵다 → ____",
+    "걷다 → ____",
+    "살다 → ____",
+    "바쁘다 → ____",
+    "짓다 → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk penerang -(으)ㄴ atau -는.",
+   "items": [
+    "춥다 → ____ 날씨",
+    "듣다 → 자주 ____ 노래",
+    "살다 → 서울에 ____ 사람",
+    "예쁘다 → ____ 방",
+    "만들다 → 제가 ____ 음식"
+   ]
+  },
+  {
+   "prompt": "Pilih yang benar.",
+   "items": [
+    "이 옷을 (입어요 / 이워요).",
+    "친구한테 (물어요 / 묻어요).",
+    "손을 (씻어요 / 씨어요).",
+    "노래를 (불러요 / 부러요).",
+    "택시를 (잡아요 / 자와요).",
+    "머리를 (잘라요 / 자라요)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "매우면 / 못 / 너무 / 먹어",
+    "나았어 / 안 / 아직 / 먹었는데",
+    "십 분이라 / 학교에서 / 편해 / 걸어서",
+    "달라 / 관리비는 / 오십오만 / 원인데",
+    "부르는데 / 잘 / 노래 / 나 / 못"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Korea.",
+   "items": [
+    "Hari ini panas banget.",
+    "Aku tidak tahu.",
+    "Kalau kepedasan saya tidak bisa makan.",
+    "Semoga cepat sembuh.",
+    "Dari kampus jalan kaki sepuluh menit.",
+    "Lagu yang sering saya dengar belakangan ini."
+   ]
+  }
+ ],
+ "answers": [
+  "더워요 — 들어요 — 몰라요 — 바빠요 — 나아요 — 그래요",
+  "매우면 — 걸으면 — 살면 — 바쁘면 — 지으면",
+  "추운 — 듣는 — 사는 — 예쁜 — 만든",
+  "입어요 — 물어요 — 씻어요 — 불러요 — 잡아요 — 잘라요",
+  "너무 매우면 못 먹어. — 먹었는데 아직 안 나았어. — 학교에서 걸어서 십 분이라 편해. — 오십오만 원인데 관리비는 달라. — 나 노래 잘 못 부르는데.",
+  "오늘 진짜 더워요. — 저는 몰라요. — 너무 매우면 못 먹어요. — 빨리 나으면 좋겠어요. — 학교에서 걸어서 십 분이에요. — 요즘 자주 듣는 노래예요."
+ ],
+ "wave": "Ambil daftar empat puluh kata di unit ini dan tutup kolom ketiganya. Ucapkan bentuk 아/어-nya keras-keras, satu per detik, dari atas ke bawah. Ulangi tiap pagi selama seminggu. Ini satu-satunya bagian modul ini yang benar-benar menuntut pengulangan mekanis — dan sesudah seminggu, ia selesai untuk selamanya."
+}

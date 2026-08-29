@@ -1,0 +1,744 @@
+{
+ "title": "Harus, boleh, tidak boleh",
+ "title_target": "이거 해도 돼요? — Igeo haedo dwaeyo?",
+ "goal": "Menyatakan kewajiban, izin, larangan, dan pembebasan — empat pola yang bersama-sama menutup hampir semua aturan, dan yang mudah tertukar karena bentuknya mirip.",
+ "bekal": [
+  "menyatakan keharusan dengan -아/어야 되다 dan -아/어야 하다",
+  "meminta dan memberi izin dengan -아/어도 되다",
+  "melarang dengan -(으)면 안 되다 dan -지 말다",
+  "membebaskan dengan -지 않아도 되다 dan 안 -아/어도 되다",
+  "membaca papan larangan berbahasa Korea di tempat umum"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Mendaftar di pusat kebugaran",
+   "intro": "Ani mendaftar di sebuah 헬스장 dekat rumahnya. Percakapan tentang aturan hampir seluruhnya tersusun dari empat pola unit ini.",
+   "lines": [
+    {
+     "speaker": "아니:",
+     "text": "[등록하려고|Deungnokaryeogo] [하는데요|haneundeyo], [한|han] [달에|dare] [얼마예요|eolmayeyo]?",
+     "id": "Saya mau daftar, sebulan berapa?",
+     "literal": "mendaftar-berniat — melakukan-tapi, satu — bulan — pada — berapa-adalah?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[한|Han] [달은|dareun] [오만|oman] [원이고|wonigo], [세|se] [달|dal] [끊으시면|kkeuneusimyeon] [십이만|sibiman] [원이에요|wonieyo].",
+     "id": "Sebulan lima puluh ribu won, kalau ambil tiga bulan seratus dua puluh ribu won.",
+     "literal": "satu — bulan — mengenai — lima-puluh-ribu — won-adalah-dan, tiga — bulan — memutus (hormat) — kalau — seratus-dua-puluh-ribu — won-adalah."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[그럼|Geureom] [세|se] [달로|dallo] [할게요|halgeyo]. [운동복은|Undongbogeun] [가져와야|gajyeowaya] [돼요|dwaeyo]?",
+     "id": "Kalau begitu ambil tiga bulan. Baju olahraganya harus bawa sendiri?",
+     "literal": "kalau-begitu — tiga — bulan — dengan — melakukan-akan. baju-olahraga — mengenai — membawa-datang-harus — jadi?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[아니요|Aniyo], [운동복은|undongbogeun] [저희가|jeohuiga] [드려요|deuryeoyo]. [수건도|Sugeondo] [가져오지|gajyeooji] [않으셔도|aneusyeodo] [돼요|dwaeyo].",
+     "id": "Tidak, baju olahraga kami sediakan. Handuk juga tidak perlu bawa.",
+     "literal": "tidak, baju-olahraga — mengenai — kami — yang — beri (hormat). handuk — juga — membawa-datang — tidak (hormat) — pun — boleh."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[좋네요|Jonneyo]. [신발은|Sinbareun] [실내용|sillaeyong] [따로|ttaro] [있어야|isseoya] [되죠|doejyo]?",
+     "id": "Bagus. Sepatunya harus ada yang khusus dalam ruangan kan?",
+     "literal": "bagus-ternyata. sepatu — mengenai — dalam-ruangan-untuk — terpisah — ada-harus — jadi-kan?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[네|Ne], [실내화는|sillaehwaneun] [꼭|kkok] [준비하셔야|junbihasyeoya] [됩니다|doemnida]. [밖에|Bakke] [신는|sinneun] [신발로는|sinballoneun] [들어가시면|deureogasimyeon] [안|an] [돼요|dwaeyo].",
+     "id": "Ya, sepatu dalam ruangan wajib disiapkan. Tidak boleh masuk dengan sepatu luar.",
+     "literal": "ya, sepatu-dalam — mengenai — pasti — menyiapkan (hormat) — harus — jadi (resmi). luar — di — memakai-yang — sepatu — dengan — mengenai — masuk (hormat) — kalau — tidak — boleh."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[알겠습니다|Algetseumnida]. [혹시|Hoksi] [사진|sajin] [찍어도|jjigeodo] [돼요|dwaeyo]?",
+     "id": "Baik. Kalau boleh tahu, boleh memotret?",
+     "literal": "tahu-akan (resmi). barangkali — foto — memotret-pun — boleh?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[본인|Bonin] [사진은|sajineun] [괜찮은데|gwaenchaneunde] [다른|dareun] [분들이|bundeuri] [나오면|naomyeon] [안|an] [돼요|dwaeyo].",
+     "id": "Foto diri sendiri tidak apa-apa, tapi tidak boleh sampai orang lain ikut terfoto.",
+     "literal": "diri-sendiri — foto — mengenai — tidak-apa-apa-tapi — lain — orang-orang — yang — muncul-kalau — tidak — boleh."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[네|Ne], [조심할게요|josimhalgeyo]. [운동은|Undongeun] [몇|myeot] [시까지|sikkaji] [할|hal] [수|su] [있어요|isseoyo]?",
+     "id": "Baik, saya akan hati-hati. Olahraganya bisa sampai jam berapa?",
+     "literal": "ya, berhati-hati-akan. olahraga — mengenai — berapa — jam — sampai — akan-melakukan — kemungkinan — ada?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[밤|Bam] [열한|yeolhan] [시까지요|sikkajiyo]. [아|A], [그리고|geurigo] [운동|undong] [끝나면|kkeunnamyeon] [기구|gigu] [정리해|jeongnihae] [주셔야|jusyeoya] [돼요|dwaeyo].",
+     "id": "Sampai jam sebelas malam. Oh, dan setelah selesai, alatnya harus dirapikan.",
+     "literal": "malam — sebelas — jam — sampai-ya. ah, dan — olahraga — selesai-kalau — alat — merapikan — beri (hormat) — harus — jadi."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[네|Ne]. [그건|Geugeon] [당연한|dangyeonhan] [거죠|geojyo].",
+     "id": "Ya. Itu sih sudah semestinya.",
+     "literal": "ya. itu — mengenai — sewajarnya-yang — hal-kan."
+    },
+    {
+     "speaker": "직원:",
+     "text": "[그렇게|Geureoke] [생각해|saenggakae] [주시면|jusimyeon] [저희야|jeohuiya] [감사하죠|gamsahajyo].",
+     "id": "Kalau Anda berpikir begitu, justru kami yang berterima kasih.",
+     "literal": "begitu — berpikir — beri (hormat) — kalau — kami — malah — berterima-kasih-kan."
+    }
+   ],
+   "notes": [
+    "**[끊다|Kkeunta]** harfiahnya \"memutus\", tetapi untuk keanggotaan dan tiket ia berarti **membeli**: 세 달 끊다 (ambil paket tiga bulan), 표를 끊다 (beli tiket). Kata yang sama juga berarti berhenti dari kebiasaan: 담배를 끊다.",
+    "**[가져오지|Gajyeooji] [않으셔도|aneusyeodo] [돼요|dwaeyo]** = tidak perlu dibawa. Bentuk pembebasan: -지 않아도 되다 atau 안 -아/어도 되다. Keduanya sama artinya; yang pertama sedikit lebih resmi.",
+    "**[따로|Ttaro]** = terpisah, tersendiri. Kata yang sering di rumah makan dan toko: 따로 주세요 (pisahkan ya), 따로따로 계산할게요 (bayar sendiri-sendiri).",
+    "**[실내화|Sillaehwa]** = sepatu dalam ruangan. Membedakan alas kaki dalam dan luar adalah kebiasaan yang kuat di Korea: di rumah, sekolah, sebagian kantor, dan hampir semua pusat kebugaran.",
+    "**[신는|Sinneun] [신발|sinbal]** — 신다 dipakai untuk kaki (sepatu, kaus kaki), 입다 untuk badan, 쓰다 untuk kepala (topi, kacamata), 끼다 untuk jari dan tangan (cincin, sarung tangan), 매다 untuk yang diikat (dasi, sabuk). Bahasa Korea memakai kata kerja berbeda untuk tiap bagian tubuh.",
+    "**[본인|Bonin]** = diri sendiri, orang yang bersangkutan. Dipakai di ragam resmi dan pengumuman: 본인 확인 (verifikasi identitas), 본인 부담 (ditanggung sendiri).",
+    "**[저희야|Jeohuiya] [감사하죠|gamsahajyo]** — partikel **-야** di sini menekankan \"justru kami\". Bandingkan dengan 저희는 yang netral. Ini pemakaian lanjutan, cukup dikenali."
+   ],
+   "grammars": [
+    {
+     "title": "Empat pola aturan",
+     "body": [
+      "Semuanya menempel pada bentuk 아/어 (kecuali -(으)면 안 되다 yang memakai -(으)면). Yang membedakannya cuma satu atau dua suku kata, dan itulah sebabnya keempatnya mudah tertukar."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Arti",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "-아/어야 되다",
+        "harus",
+        "지금 **가야 돼요**",
+        "saya harus pergi sekarang"
+       ],
+       [
+        "-아/어야 하다",
+        "harus (lebih tertulis)",
+        "제출**해야 합니다**",
+        "harus diserahkan"
+       ],
+       [
+        "-아/어도 되다",
+        "boleh",
+        "여기 **앉아도 돼요**?",
+        "boleh duduk di sini?"
+       ],
+       [
+        "-(으)면 안 되다",
+        "tidak boleh",
+        "여기서 **담배 피우면 안 돼요**",
+        "tidak boleh merokok di sini"
+       ],
+       [
+        "-지 말다",
+        "jangan (perintah)",
+        "**걱정하지 마세요**",
+        "jangan khawatir"
+       ],
+       [
+        "-지 않아도 되다",
+        "tidak perlu",
+        "**오지 않아도 돼요**",
+        "tidak perlu datang"
+       ],
+       [
+        "안 -아/어도 되다",
+        "tidak perlu (lisan)",
+        "**안 와도 돼요**",
+        "tidak usah datang"
+       ]
+      ]
+     },
+     "after": [
+      "**되다 dan 하다 bisa saling menggantikan pada pola keharusan**, tetapi 돼요 jauh lebih sering di percakapan, dan 해야 합니다 lebih sering di tulisan resmi dan pengumuman.",
+      "⚠️ **Sangkalan mengubah arti sepenuhnya.** 가야 돼요 (harus pergi) → 안 가도 돼요 (tidak perlu pergi) → 가면 안 돼요 (tidak boleh pergi). Ketiganya terdengar mirip dan artinya sangat berbeda; ini kesalahan yang paling sering di tingkat A2.",
+      "**-지 말다 hanya untuk suruhan dan ajakan:** 하지 마세요 (jangan lakukan), 하지 말자 (jangan kita lakukan), 하지 마 (jangan). Untuk pernyataan larangan, pakai -(으)면 안 되다.",
+      "⚠️ **Ejaan 돼 dan 되.** 돼요 = 되 + 어요, jadi bentuk yang berdiri sendiri selalu **돼**: 안 돼요, 됐어요, 안 돼. Tetapi 되다, 되는, 되면 memakai 되. Aturan cepat: kalau bisa diganti \"해\", tulis 돼; kalau bisa diganti \"하\", tulis 되."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Adab makan bersama",
+   "intro": "Sebelum Ani ikut makan malam bersama keluarga Yujin, Yujin menjelaskan beberapa hal. Perhatikan bahwa semua nasihatnya berbentuk aturan.",
+   "lines": [
+    {
+     "speaker": "아니:",
+     "text": "[내일|Naeil] [너희|neohui] [집에|jibe] [가는데|ganeunde] [뭐|mwo] [사|sa] [가야|gaya] [돼|dwae]?",
+     "id": "Besok aku ke rumah kamu, harus bawa apa?",
+     "literal": "besok — kalian — rumah — ke — pergi-tapi — apa — membeli — pergi-harus — jadi?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[안|An] [사|sa] [와도|wado] [되는데|doeneunde], [굳이|guji] [사려면|saryeomyeon] [과일이|gwairi] [무난해|munanhae].",
+     "id": "Nggak usah bawa apa-apa, tapi kalau memang mau, buah paling aman.",
+     "literal": "tidak — membeli — datang-pun — boleh-tapi, sengaja — membeli-kalau-mau — buah — yang — aman."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[알겠어|Algesseo]. [근데|Geunde] [내가|naega] [실수할까|silsuhalkka] [봐|bwa] [좀|jom] [걱정돼|geokjeongdwae].",
+     "id": "Oke. Tapi aku agak khawatir bakal salah tingkah.",
+     "literal": "tahu-akan. tapi — aku — yang — berbuat-salah-kah — melihat — sedikit — khawatir-jadi."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[걱정하지|Geokjeonghaji] [마|ma]. [몇|Myeot] [가지만|gajiman] [기억하면|gieokamyeon] [돼|dwae].",
+     "id": "Jangan khawatir. Cukup ingat beberapa hal saja.",
+     "literal": "khawatir — jangan. beberapa — hal — saja — mengingat-kalau — boleh."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[뭐|Mwo] [조심해야|josimhaeya] [돼|dwae]?",
+     "id": "Apa yang harus diperhatikan?",
+     "literal": "apa — berhati-hati-harus — jadi?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[일단|Ildan] [어른이|eoreuni] [먼저|meonjeo] [드셔야|deusyeoya] [돼|dwae]. [먼저|Meonjeo] [먹으면|meogeumyeon] [안|an] [돼|dwae].",
+     "id": "Pertama, orang tua harus makan lebih dulu. Nggak boleh makan duluan.",
+     "literal": "pertama — orang-tua — yang — lebih-dulu — santap (hormat) — harus — jadi. lebih-dulu — makan-kalau — tidak — boleh."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[아|A], [인도네시아도|Indonesiado] [비슷해|biseutae]. [또|Tto]?",
+     "id": "Oh, di Indonesia juga mirip. Terus?",
+     "literal": "ah, Indonesia — juga — mirip. lagi?"
+    },
+    {
+     "speaker": "유진:",
+     "text": "[뭐|Mwo] [받을|badeul] [때는|ttaeneun] [두|du] [손으로|soneuro] [받아야|badaya] [돼|dwae]. [한|Han] [손으로|soneuro] [받으면|badeumyeon] [실례야|sillyeya].",
+     "id": "Kalau menerima sesuatu harus pakai dua tangan. Satu tangan itu nggak sopan.",
+     "literal": "apa — akan-menerima — waktu — mengenai — dua — tangan — dengan — menerima-harus — jadi. satu — tangan — dengan — menerima-kalau — tidak-sopan-adalah."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[술은|Sureun]? [나|Na] [술|sul] [못|mot] [마시는데|masineunde].",
+     "id": "Kalau minuman keras? Aku nggak bisa minum.",
+     "literal": "arak — mengenai? aku — arak — tak-mampu — minum-tapi."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[안|An] [마셔도|masyeodo] [돼|dwae]. [못|Mot] [마신다고|masindago] [말하면|malhamyeon] [돼|dwae]. [근데|Geunde] [어른|eoreun] [앞에서|apeseo] [마실|masil] [때는|ttaeneun] [고개를|gogaereul] [돌려야|dollyeoya] [돼|dwae].",
+     "id": "Nggak minum juga boleh. Bilang aja nggak bisa minum. Tapi kalau minum di depan orang tua, harus memalingkan wajah.",
+     "literal": "tidak — minum-pun — boleh. tak-mampu — minum-berkata — mengatakan-kalau — boleh. tapi — orang-tua — depan — di — akan-minum — waktu — mengenai — kepala — nya — memalingkan-harus — jadi."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[그것까지|Geugeotkkaji] [있구나|itguna]. [적어|Jeogeo] [놔야겠다|nwayagetda].",
+     "id": "Sampai segitunya ya. Harus kucatat nih.",
+     "literal": "itu — sampai — ada-ternyata. mencatat — menaruh-harus-pasti — adalah."
+    }
+   ],
+   "notes": [
+    "**[굳이|Guji]** = \"sampai repot-repot, kalau memang mau\". Ia menandai bahwa perbuatannya tidak perlu tetapi tetap dilakukan: 굳이 안 와도 돼 (nggak usah repot datang). Diucapkan *guji*, bukan *gudi*.",
+    "**[무난하다|Munanhada]** = aman, tidak berisiko, tidak mencolok. Kata yang sangat Korea dan sering dipakai untuk memilih hadiah, baju, atau menu: 무난한 선물, 무난한 색.",
+    "**[실수할까|Silsuhalkka] [봐|bwa]** — pola **-(으)ㄹ까 봐** = \"khawatir kalau-kalau …\". 늦을까 봐 일찍 나왔어요 (keluar lebih awal karena khawatir terlambat). Salah satu pola A2 yang paling sering dipakai untuk menjelaskan tindakan berjaga-jaga.",
+    "**[일단|Ildan]** = \"pertama-tama, untuk sementara\". Sangat sering dipakai saat menyusun urutan atau menunda keputusan: 일단 먹고 생각하자 (makan dulu, mikirnya belakangan).",
+    "**[어른|Eoreun]** = orang dewasa, orang yang lebih tua. Dalam adab Korea, ia bukan sekadar soal umur melainkan kedudukan: yang menentukan urutan makan, tempat duduk, dan siapa menuangkan minuman untuk siapa.",
+    "**[두|Du] [손으로|soneuro]** — menerima dan memberi dengan dua tangan adalah aturan dasar kesopanan Korea, berlaku untuk uang, kartu nama, hadiah, gelas, dan dokumen. Kalau satu tangan sedang penuh, sanggahkan tangan kiri ke lengan kanan; itu pun diterima.",
+    "**[고개를|Gogaereul] [돌리다|dollida]** = memalingkan kepala. Ketika minum di depan orang yang lebih tua, orang Korea memutar badan sedikit ke samping. Kebiasaan ini masih hidup, terutama di lingkungan kerja.",
+    "**[놔야겠다|Nwayagetda]** dari 놓다 + -아/어야 되다 + -겠- + -다: \"kayaknya harus kucatat\". 적어 놓다 = mencatat lalu menyimpannya; pola -아/어 놓다 menyatakan bahwa hasil perbuatannya sengaja dibiarkan tetap ada."
+   ],
+   "grammars": [
+    {
+     "title": "Meminta izin dan menjawabnya",
+     "body": [
+      "Susunan tanya-jawab izin cukup tetap, dan jawabannya jarang berupa \"tidak\" telanjang."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Ya",
+       "Tidak"
+      ],
+      "rows": [
+       [
+        "여기 앉아도 돼요?",
+        "네, 앉으세요",
+        "죄송한데 여기 자리 있어요"
+       ],
+       [
+        "사진 찍어도 돼요?",
+        "네, 괜찮아요",
+        "죄송합니다, 촬영은 안 됩니다"
+       ],
+       [
+        "창문 열어도 될까요?",
+        "그럼요",
+        "지금은 좀…"
+       ],
+       [
+        "먼저 가도 돼요?",
+        "네, 들어가세요",
+        "조금만 더 있다가 가요"
+       ],
+       [
+        "카드로 계산해도 되나요?",
+        "네, 됩니다",
+        "현금만 받습니다"
+       ]
+      ]
+     },
+     "after": [
+      "**-아/어도 될까요? lebih sopan daripada -아/어도 돼요?** Perbedaannya sama seperti \"boleh saya…?\" dan \"apakah kiranya saya boleh…?\". Kepada orang asing, pakai yang kedua.",
+      "**Penolakan hampir selalu digantung.** 지금은 좀… adalah penolakan lengkap dalam bahasa Korea. Menyelesaikannya justru terdengar tajam.",
+      "**안 돼요 sendiri terdengar keras.** Untuk melunakkan, tambahkan alasan: 죄송한데 여기서는 안 돼요. Papan pengumuman boleh singkat; manusia sebaiknya tidak."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca papan larangan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Larangan di ruang publik Korea hampir selalu ditulis dengan kata Sino-Korea yang pendek dan padat, bukan dengan kalimat. Mengenalinya adalah keterampilan membaca yang langsung berguna di hari pertama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Arti",
+      "Di mana"
+     ],
+     "rows": [
+      [
+       "금연",
+       "dilarang merokok",
+       "hampir semua ruang tertutup"
+      ],
+      [
+       "출입금지",
+       "dilarang masuk",
+       "area terbatas"
+      ],
+      [
+       "촬영금지",
+       "dilarang memotret",
+       "museum, toko"
+      ],
+      [
+       "취식금지",
+       "dilarang makan-minum",
+       "kereta bawah tanah, perpustakaan"
+      ],
+      [
+       "관계자 외 출입금지",
+       "selain petugas dilarang masuk",
+       "kantor, dapur"
+      ],
+      [
+       "사용중 / 사용 금지",
+       "sedang dipakai / dilarang dipakai",
+       "mesin, toilet"
+      ],
+      [
+       "반입금지",
+       "dilarang membawa masuk",
+       "makanan luar, hewan"
+      ],
+      [
+       "주차금지",
+       "dilarang parkir",
+       "jalan, gang"
+      ],
+      [
+       "만지지 마세요",
+       "jangan disentuh",
+       "pameran"
+      ],
+      [
+       "기대지 마세요",
+       "jangan bersandar",
+       "pintu kereta"
+      ],
+      [
+       "뛰지 마세요",
+       "jangan berlari",
+       "kolam renang, kereta"
+      ],
+      [
+       "조용히 해 주세요",
+       "harap tenang",
+       "perpustakaan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan dua ragam yang berbeda: kata majemuk Sino-Korea berakhiran **금지** dipakai di papan resmi, sedangkan **-지 마세요** dipakai di imbauan yang lebih ramah. Yang kedua adalah bentuk yang akan kamu ucapkan sendiri."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga aturan yang mengejutkan pendatang",
+     "items": [
+      "**Makan dan minum di kereta bawah tanah Seoul dilarang** — termasuk kopi bertutup. Aturannya jarang ditegakkan, tetapi menatap tajam dari penumpang lain sudah cukup terasa.",
+      "**Tempat duduk merah muda di kereta khusus ibu hamil**, dan tetap kosong walaupun kereta penuh sesak. Duduk di sana akan langsung ditegur.",
+      "**Membuang sampah butuh kantong khusus** yang dibeli sesuai wilayah (종량제 봉투). Membuang sampah dengan kantong biasa bisa didenda, dan tetangga akan memberitahumu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Adab makan dan minum",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Aturan meja Korea lebih rinci daripada yang diduga pendatang, tetapi hampir semuanya bermuara pada satu asas: **urutan berdasarkan usia dan kedudukan**. Menghafal daftar ini akan menghemat banyak kecanggungan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aturan",
+      "Bahasa Korea",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Yang tertua makan lebih dulu",
+       "어른이 먼저 드셔야 돼요",
+       "menunggu sendok pertama diangkat"
+      ],
+      [
+       "Menerima dengan dua tangan",
+       "두 손으로 받아야 돼요",
+       "berlaku juga untuk uang dan kartu nama"
+      ],
+      [
+       "Jangan menuang untuk diri sendiri",
+       "자기 잔은 자기가 안 따라요",
+       "isi gelas orang lain, mereka akan mengisi gelasmu"
+      ],
+      [
+       "Memalingkan wajah saat minum",
+       "어른 앞에서는 고개를 돌려요",
+       "di depan yang lebih tua"
+      ],
+      [
+       "Jangan menancapkan sendok di nasi",
+       "밥에 숟가락을 꽂으면 안 돼요",
+       "menyerupai sesajen untuk orang meninggal"
+      ],
+      [
+       "Mangkuk tetap di meja",
+       "밥그릇을 들고 먹지 않아요",
+       "⚠️ kebalikan dari kebiasaan Jepang"
+      ],
+      [
+       "Sendok untuk nasi dan sup",
+       "밥과 국은 숟가락으로",
+       "sumpit untuk lauk"
+      ],
+      [
+       "Selesai belakangan",
+       "어른보다 먼저 일어나지 않아요",
+       "menunggu yang tertua selesai"
+      ],
+      [
+       "Ucapan sebelum dan sesudah",
+       "잘 먹겠습니다 / 잘 먹었습니다",
+       "wajib, terutama kalau ditraktir"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalau kamu tidak minum alkohol"
+    },
+    {
+     "type": "p",
+     "text": "Menolak minum sepenuhnya bisa diterima di Korea sekarang, asalkan disampaikan lebih awal dan dengan alasan yang tidak bisa dibantah. Kalimat yang berhasil: **제가 술을 못 마셔서요** (saya tidak bisa minum) — dengan 못, bukan 안. Yang pertama berarti tidak sanggup; yang kedua berarti tidak mau, dan itu mengundang bujukan."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat penyelamat di meja makan",
+     "items": [
+      "**저는 술 대신 사이다 마실게요.** — \"saya minum soda saja sebagai ganti\". Menawarkan pengganti membuat penolakan terasa ikut serta. ⚠️ 사이다 di Korea berarti minuman soda bening, bukan sari apel.",
+      "**제가 따라 드릴게요.** — \"biar saya yang tuangkan\". Yang lebih muda menuangkan untuk yang lebih tua, dan menawarkan lebih dulu selalu diterima baik.",
+      "**잘 먹었습니다.** — diucapkan sesudah makan, terutama kepada yang membayar. Melupakannya lebih terasa daripada kesalahan tata bahasa mana pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "등록하다",
+   "baca": "deungnokada",
+   "id": "mendaftar"
+  },
+  {
+   "ko": "끊다",
+   "baca": "kkeunta",
+   "id": "membeli (paket); memutus"
+  },
+  {
+   "ko": "운동복",
+   "baca": "undongbok",
+   "id": "baju olahraga"
+  },
+  {
+   "ko": "가져오다",
+   "baca": "gajyeooda",
+   "id": "membawa"
+  },
+  {
+   "ko": "수건",
+   "baca": "sugeon",
+   "id": "handuk"
+  },
+  {
+   "ko": "신발",
+   "baca": "sinbal",
+   "id": "sepatu"
+  },
+  {
+   "ko": "실내화",
+   "baca": "sillaehwa",
+   "id": "sepatu dalam ruangan"
+  },
+  {
+   "ko": "따로",
+   "baca": "ttaro",
+   "id": "terpisah"
+  },
+  {
+   "ko": "준비하다",
+   "baca": "junbihada",
+   "id": "menyiapkan"
+  },
+  {
+   "ko": "신다",
+   "baca": "sinda",
+   "id": "memakai (alas kaki)"
+  },
+  {
+   "ko": "본인",
+   "baca": "bonin",
+   "id": "diri sendiri"
+  },
+  {
+   "ko": "조심하다",
+   "baca": "josimhada",
+   "id": "berhati-hati"
+  },
+  {
+   "ko": "기구",
+   "baca": "gigu",
+   "id": "alat"
+  },
+  {
+   "ko": "정리하다",
+   "baca": "jeongnihada",
+   "id": "merapikan"
+  },
+  {
+   "ko": "굳이",
+   "baca": "guji",
+   "id": "sampai repot-repot"
+  },
+  {
+   "ko": "무난하다",
+   "baca": "munanhada",
+   "id": "aman, tidak mencolok"
+  },
+  {
+   "ko": "실수하다",
+   "baca": "silsuhada",
+   "id": "berbuat salah"
+  },
+  {
+   "ko": "걱정되다",
+   "baca": "geokjeongdoeda",
+   "id": "menjadi khawatir"
+  },
+  {
+   "ko": "일단",
+   "baca": "ildan",
+   "id": "pertama-tama"
+  },
+  {
+   "ko": "어른",
+   "baca": "eoreun",
+   "id": "orang dewasa, yang lebih tua"
+  },
+  {
+   "ko": "비슷하다",
+   "baca": "biseutada",
+   "id": "mirip"
+  },
+  {
+   "ko": "받다",
+   "baca": "batda",
+   "id": "menerima"
+  },
+  {
+   "ko": "손",
+   "baca": "son",
+   "id": "tangan"
+  },
+  {
+   "ko": "실례",
+   "baca": "sillye",
+   "id": "tidak sopan"
+  },
+  {
+   "ko": "술",
+   "baca": "sul",
+   "id": "minuman keras"
+  },
+  {
+   "ko": "고개",
+   "baca": "gogae",
+   "id": "kepala (yang ditundukkan)"
+  },
+  {
+   "ko": "돌리다",
+   "baca": "dollida",
+   "id": "memutar, memalingkan"
+  },
+  {
+   "ko": "적다",
+   "baca": "jeokda",
+   "id": "mencatat"
+  },
+  {
+   "ko": "금연",
+   "baca": "geumyeon",
+   "id": "dilarang merokok"
+  },
+  {
+   "ko": "출입금지",
+   "baca": "churipgeumji",
+   "id": "dilarang masuk"
+  },
+  {
+   "ko": "촬영",
+   "baca": "chwaryeong",
+   "id": "pemotretan"
+  },
+  {
+   "ko": "주차",
+   "baca": "jucha",
+   "id": "parkir"
+  },
+  {
+   "ko": "만지다",
+   "baca": "manjida",
+   "id": "menyentuh"
+  },
+  {
+   "ko": "기대다",
+   "baca": "gidaeda",
+   "id": "bersandar"
+  },
+  {
+   "ko": "뛰다",
+   "baca": "ttwida",
+   "id": "berlari"
+  },
+  {
+   "ko": "숟가락",
+   "baca": "sutgarak",
+   "id": "sendok"
+  },
+  {
+   "ko": "젓가락",
+   "baca": "jeotgarak",
+   "id": "sumpit"
+  },
+  {
+   "ko": "잔",
+   "baca": "jan",
+   "id": "gelas"
+  },
+  {
+   "ko": "따르다",
+   "baca": "ttareuda",
+   "id": "menuang"
+  },
+  {
+   "ko": "대신",
+   "baca": "daesin",
+   "id": "sebagai ganti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi -아/어야 돼요.",
+   "items": [
+    "가다 → ____",
+    "먹다 → ____",
+    "준비하다 → ____",
+    "듣다 → ____",
+    "일찍 일어나다 → ____"
+   ]
+  },
+  {
+   "prompt": "Pilih: -아/어도 돼요, -(으)면 안 돼요, atau 안 -아/어도 돼요.",
+   "items": [
+    "여기서 담배를 피우면 ____.",
+    "사진 찍어도 ____?",
+    "수건은 가져오지 않아도 ____.",
+    "밥에 숟가락을 꽂으면 ____.",
+    "술은 안 마셔도 ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi larangan dengan -지 마세요.",
+   "items": [
+    "걱정하다 → ____",
+    "만지다 → ____",
+    "뛰다 → ____",
+    "여기에 주차하다 → ____",
+    "늦다 → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan kalimat aturan berikut.",
+   "items": [
+    "Sepatu dalam ruangan wajib disiapkan.",
+    "Tidak perlu membawa handuk.",
+    "Boleh duduk di sini?",
+    "Tidak boleh masuk dengan sepatu luar.",
+    "Orang yang lebih tua harus makan lebih dulu."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "돼요 / 가져와야 / 운동복은 / ?",
+    "안 / 들어가시면 / 신발로는 / 돼요 / 밖에 신는",
+    "돼 / 어른이 / 드셔야 / 먼저",
+    "받아야 / 두 / 돼 / 손으로 / 뭐 받을 때는",
+    "마셔서요 / 제가 / 못 / 술을"
+   ]
+  },
+  {
+   "prompt": "Pilih 되 atau 돼.",
+   "items": [
+    "안 ____요.",
+    "____면 안 돼요.",
+    "그렇게 하면 ____.",
+    "벌써 다 ____어요.",
+    "언제 ____는지 알려 주세요."
+   ]
+  }
+ ],
+ "answers": [
+  "가야 돼요 — 먹어야 돼요 — 준비해야 돼요 — 들어야 돼요 — 일찍 일어나야 돼요",
+  "안 돼요 — 돼요 — 돼요 — 안 돼요 — 돼요",
+  "걱정하지 마세요 — 만지지 마세요 — 뛰지 마세요 — 여기에 주차하지 마세요 — 늦지 마세요",
+  "실내화는 꼭 준비하셔야 돼요. — 수건은 가져오지 않아도 돼요. — 여기 앉아도 돼요? — 밖에 신는 신발로는 들어가면 안 돼요. — 어른이 먼저 드셔야 돼요.",
+  "운동복은 가져와야 돼요? — 밖에 신는 신발로는 들어가시면 안 돼요. — 어른이 먼저 드셔야 돼. — 뭐 받을 때는 두 손으로 받아야 돼. — 제가 술을 못 마셔서요.",
+  "돼 — 되 — 돼요 — 됐 — 되"
+ ],
+ "wave": "Tulis sepuluh aturan yang berlaku di tempat kerja, kampus, atau kosmu — lima dengan -아/어야 돼요 dan lima dengan -(으)면 안 돼요. Lalu ubah lima di antaranya menjadi bentuk pembebasan -지 않아도 돼요 dan periksa apakah artinya masih masuk akal. Tiga bentuk yang mirip ini hanya terpisah lewat pemakaian."
+}

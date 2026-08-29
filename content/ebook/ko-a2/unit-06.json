@@ -1,0 +1,803 @@
+{
+ "title": "Rencana, janji, dan tawaran",
+ "title_target": "제가 할게요 — Jega halgeyo",
+ "goal": "Membicarakan masa depan dengan tepat: rencana yang sudah ada, janji yang mengikat diri sendiri, tawaran kepada orang lain, dan keputusan yang sudah disepakati.",
+ "bekal": [
+  "membedakan -(으)ㄹ 거예요 dan -(으)ㄹ게요 dan tahu kapan yang kedua dilarang",
+  "menawarkan diri dan mengajak dengan -(으)ㄹ까요?",
+  "menyatakan keputusan dan kesepakatan dengan -기로 하다",
+  "membuat, menunda, dan membatalkan janji",
+  "memilih di antara lima cara berbicara tentang masa depan"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Rencana liburan",
+   "intro": "Menjelang libur semester, Ani bercerita tentang rencananya ke Jeju. Perhatikan bahwa ia memakai dua akhiran berbeda untuk masa depan — dan bahwa yang satu selalu tentang dirinya sendiri terhadap lawan bicara.",
+   "lines": [
+    {
+     "speaker": "유진:",
+     "text": "[방학|Banghak] [때|ttae] [뭐|mwo] [할|hal] [거야|geoya]?",
+     "id": "Liburan semester mau ngapain?",
+     "literal": "libur — waktu — apa — akan-melakukan — hal-adalah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[친구들이랑|Chingudeurirang] [제주도에|Jejudoe] [갈|gal] [거야|geoya]. [벌써|Beolsseo] [표도|pyodo] [예매했어|yemaehaesseo].",
+     "id": "Mau ke Jeju sama teman-teman. Tiketnya juga sudah dipesan.",
+     "literal": "teman-teman — dengan — Jeju — ke — akan-pergi — hal-adalah. sudah — tiket — juga — memesan-sudah."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[좋겠다|Joketda]! [며칠|Myeochil] [있을|isseul] [거야|geoya]?",
+     "id": "Asyik! Mau berapa hari di sana?",
+     "literal": "bagus-pasti — adalah! berapa-hari — akan-ada — hal-adalah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[사|Sa] [박|bak] [오|o] [일|il]. [근데|Geunde] [숙소를|suksoreul] [아직|ajik] [못|mot] [정했어|jeonghaesseo].",
+     "id": "Empat malam lima hari. Tapi penginapannya belum ditentukan.",
+     "literal": "empat — malam — lima — hari. tapi — penginapan — nya — masih — tak-mampu — menentukan-sudah."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[내가|Naega] [아는|aneun] [데|de] [있는데|inneunde] [알려|allyeo] [줄까|julkka]?",
+     "id": "Aku tahu satu tempat, mau kukasih tahu?",
+     "literal": "aku — yang — tahu-yang — tempat — ada-tapi — memberitahu — beri-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[진짜|Jinjja]? [고마워|Gomawo]. [링크|Lingkeu] [좀|jom] [보내|bonae] [줘|jwo].",
+     "id": "Serius? Makasih. Kirimin linknya dong.",
+     "literal": "sungguh? terima-kasih. tautan — sedikit — kirim — beri."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[응|Eung], [이따|itta] [보낼게|bonaelge]. [렌터카는|Lenteokaneun] [빌릴|billil] [거야|geoya]?",
+     "id": "Iya, nanti kukirim. Mau sewa mobil?",
+     "literal": "iya, nanti — akan-kirim. mobil-sewaan — mengenai — akan-menyewa — hal-adalah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[응|Eung], [빌리기로|billigiro] [했어|haesseo]. [버스로는|Beoseuroneun] [좀|jom] [불편할|bulpyeonhal] [것|geot] [같아서|gataseo].",
+     "id": "Iya, sudah diputuskan mau sewa. Soalnya kalau naik bus sepertinya agak repot.",
+     "literal": "iya, menyewa — untuk — melakukan-sudah. bus — dengan — mengenai — sedikit — akan-tidak-nyaman — hal — seperti-karena."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[잘|Jal] [생각했어|saenggakaesseo]. [근데|Geunde] [그때|geuttae] [비|bi] [많이|mani] [올까|olkka]?",
+     "id": "Pemikiran yang bagus. Tapi waktu itu bakal hujan deras nggak ya?",
+     "literal": "baik — berpikir-sudah. tapi — waktu-itu — hujan — banyak — akan-datang-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[모르겠어|Moreugesseo]. [일기|Ilgi] [예보|yebo] [보고|bogo] [결정할게|gyeoljeonghalge].",
+     "id": "Nggak tahu. Nanti kuputuskan setelah lihat ramalan cuaca.",
+     "literal": "tidak-tahu-akan. cuaca — ramalan — melihat-dan — memutuskan-akan."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[사진|Sajin] [많이|mani] [찍어서|jjigeoseo] [보내|bonae] [줘|jwo].",
+     "id": "Foto yang banyak terus kirim ke aku ya.",
+     "literal": "foto — banyak — memotret-lalu — kirim — beri."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[당연하지|Dangyeonhaji]. [다녀와서|Danyeowaseo] [한턱낼게|hanteoknaelge].",
+     "id": "Pasti dong. Pulang dari sana nanti aku traktir.",
+     "literal": "tentu-saja. pergi-pulang-lalu — mentraktir-akan."
+    }
+   ],
+   "notes": [
+    "**[방학|Banghak]** = libur sekolah atau kampus, berbeda dari 휴가 (cuti kerja) dan 휴일 (hari libur). Bahasa Korea membedakan ketiganya dengan ketat: mahasiswa punya 방학, pegawai punya 휴가.",
+    "**[친구들이랑|Chingudeurirang]** — partikel **-(이)랑** berarti \"dengan\" atau \"dan\", dan ia adalah versi paling santai dari tiga bersaudara: 와/과 (tertulis), 하고 (netral lisan), (이)랑 (santai). Ketiganya bisa saling menggantikan.",
+    "**[사|Sa] [박|bak] [오|o] [일|il]** = empat malam lima hari. Susunan Korea menghitung **malam dulu**, dan angkanya memakai sistem Sino-Korea. Ini bentuk baku yang akan kamu lihat di semua paket wisata.",
+    "**[알려|Allyeo] [줄까|julkka]?** — 알리다 (memberitahu) + -아/어 주다 (untuk orang lain) + -(으)ㄹ까? (menawarkan diri). Tiga lapis dalam satu kata; pola -아/어 줄까? adalah cara menawarkan bantuan yang paling lazim di antara teman.",
+    "**[보내|Bonae] [줘|jwo]** — bentuk 반말 dari 보내 주세요. Meminta tanpa 주다 (보내) terdengar seperti perintah; dengan 주다 ia menjadi permintaan. Ini alasan kenapa -아/어 주다 di Unit 9 begitu penting.",
+    "**[빌리기로|Billirigo] [했어|haesseo]** — pola **-기로 하다** = memutuskan atau menyepakati. ⚠️ Perhatikan bentuk lampaunya: keputusannya diambil di masa lalu, tetapi perbuatannya belum terjadi. Ini yang membuat 하기로 했어요 sering diterjemahkan sebagai \"rencananya akan\".",
+    "**[당연하지|Dangyeonhaji]** = \"ya jelas dong\". 당연하다 = sudah sewajarnya. Bentuk sopannya 당연하죠 atau 당연히요.",
+    "**[한턱내다|Hanteoknaeda]** = mentraktir, dari 턱 (jamuan) + 내다. Kebiasaan Korea yang kuat: orang yang baru mendapat kabar baik — lulus, naik gaji, dapat kerja — diharapkan mentraktir. Kalimat yang akan sering kamu dengar: 한턱 쏴! (traktir dong!)."
+   ],
+   "grammars": [
+    {
+     "title": "-(으)ㄹ 거예요 dan -(으)ㄹ게요 — dua masa depan yang berbeda pekerjaan",
+     "body": [
+      "Keduanya berbicara tentang masa depan, tetapi hanya satu di antaranya yang boleh dipakai untuk orang lain, dan hanya satu yang bisa berupa janji."
+     ],
+     "table": {
+      "head": [
+       "",
+       "-(으)ㄹ 거예요",
+       "-(으)ㄹ게요"
+      ],
+      "rows": [
+       [
+        "Arti pokok",
+        "rencana atau dugaan",
+        "janji kepada lawan bicara"
+       ],
+       [
+        "Subjeknya",
+        "siapa saja",
+        "⚠️ hanya \"saya\""
+       ],
+       [
+        "Perlu lawan bicara?",
+        "tidak",
+        "ya — ia ditujukan kepada seseorang"
+       ],
+       [
+        "Contoh",
+        "내일 비가 **올 거예요**",
+        "제가 **할게요**"
+       ],
+       [
+        "Contoh",
+        "유진이는 안 **올 거예요**",
+        "이따 **연락할게요**"
+       ],
+       [
+        "Bentuk tanya",
+        "**갈 거예요?** ✔",
+        "**갈게요?** ✗ tidak ada"
+       ],
+       [
+        "Bentuk 반말",
+        "갈 **거야**",
+        "**갈게**"
+       ]
+      ]
+     },
+     "after": [
+      "**-(으)ㄹ게요 tidak punya bentuk tanya.** Kamu tidak bisa berjanji atas nama orang lain, jadi 언제 갈게요? ✗ tidak pernah benar. Yang benar 언제 갈 거예요? atau 언제 가실 거예요?.",
+      "**-(으)ㄹ게요 mengandaikan lawan bicara yang berkepentingan.** Berbicara sendirian di kamar, kamu berkata 내일 일찍 일어날 거야, bukan 일어날게. Karena itu ia terdengar tanggap dan sopan: 제가 할게요 berarti \"biar saya saja\", bukan sekadar \"saya akan mengerjakan\".",
+      "**Bentuknya:** akar berakhir vokal + ㄹ 거예요 / ㄹ게요 (갈 거예요 · 갈게요); berakhir konsonan + 을 거예요 / 을게요 (먹을 거예요 · 먹을게요). Kata berakhir ㄹ tidak menambahkan 을: 살 거예요, 만들게요.",
+      "⚠️ **Ejaan dan bunyinya berbeda.** 할게요 dibaca *halkkeyo* dan 갈 거예요 dibaca *galkkeoyeyo* — dengan konsonan yang dikeraskan. Tetapi tulisannya tetap ㄱ. Menulis 할께요 adalah kesalahan ejaan yang sangat umum, bahkan di kalangan orang Korea."
+     ]
+    },
+    {
+     "title": "-기로 하다 — keputusan yang sudah diambil",
+     "body": [
+      "Menempel pada akar + 기로 하다. Ia menyatakan bahwa keputusan sudah dibuat, entah oleh dirimu sendiri atau bersama orang lain."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "-기로 했어요",
+        "sudah diputuskan (lampau)",
+        "차를 빌리**기로 했어요**"
+       ],
+       [
+        "-기로 해요",
+        "ayo sepakati (ajakan)",
+        "토요일에 만나**기로 해요**"
+       ],
+       [
+        "-기로 하겠습니다",
+        "dengan ini saya putuskan (resmi)",
+        "다음 주에 시작하**기로 하겠습니다**"
+       ],
+       [
+        "-지 않기로 했어요",
+        "diputuskan untuk tidak",
+        "술은 마시**지 않기로 했어요**"
+       ],
+       [
+        "-기로 약속했어요",
+        "berjanji untuk",
+        "매일 운동하**기로 약속했어요**"
+       ]
+      ]
+     },
+     "after": [
+      "**Bentuk lampau adalah bentuk yang normal.** 하기로 했어요 dipakai untuk sesuatu yang **akan** terjadi, karena yang lampau adalah keputusannya, bukan perbuatannya. Ini persis kebalikan dari cara berpikir bahasa Indonesia, dan butuh beberapa hari untuk terbiasa.",
+      "**Ia juga dipakai untuk tekad pribadi.** 올해부터 담배를 끊기로 했어요 (mulai tahun ini saya putuskan berhenti merokok). Bentuk ini terdengar lebih kuat daripada 끊을 거예요, karena menyiratkan keputusan yang sudah dipertimbangkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Membagi tugas kelompok",
+   "intro": "Ani, Yujin, dan Minjun mengatur tugas presentasi. Ragamnya kembali ke 해요체 karena Minjun belum akrab — dan hampir tiap giliran bicara memuat satu akhiran masa depan yang berbeda.",
+   "lines": [
+    {
+     "speaker": "민준:",
+     "text": "[그럼|Geureom] [발표|balpyo] [준비|junbi] [어떻게|eotteoke] [할까요|halkkayo]?",
+     "id": "Kalau begitu persiapan presentasinya bagaimana ya?",
+     "literal": "kalau-begitu — presentasi — persiapan — bagaimana — akan-melakukan-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[자료|Jaryo] [조사는|josaneun] [제가|jega] [할게요|halgeyo].",
+     "id": "Riset bahannya biar saya yang kerjakan.",
+     "literal": "bahan — penelusuran — mengenai — saya — yang — melakukan-akan."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[그럼|Geureom] [저는|jeoneun] [발표|balpyo] [자료를|jaryoreul] [만들게요|mandeulgeyo].",
+     "id": "Kalau gitu saya yang bikin materi presentasinya.",
+     "literal": "kalau-begitu — saya — mengenai — presentasi — bahan — nya — membuat-akan."
+    },
+    {
+     "speaker": "민준:",
+     "text": "[저는|Jeoneun] [발표를|balpyoreul] [맡을게요|mateulgeyo]. [그런데|Geureonde] [언제|eonje] [다시|dasi] [만날까요|mannalkkayo]?",
+     "id": "Saya ambil bagian presentasinya. Ngomong-ngomong kapan kita ketemu lagi?",
+     "literal": "saya — mengenai — presentasi — nya — mengambil-tugas-akan. tapi — kapan — lagi — bertemu-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[금요일|Geumyoil] [어때요|eottaeyo]? [저는|Jeoneun] [오후에|ohue] [시간|sigan] [괜찮아요|gwaenchanayo].",
+     "id": "Jumat bagaimana? Kalau saya sore luang.",
+     "literal": "hari-Jumat — bagaimana? saya — mengenai — sore — pada — waktu — tidak-apa-apa."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[금요일은|Geumyoireun] [알바가|albaga] [있어서요|isseoseoyo]. [토요일은|Toyoireun] [어떠세요|eotteoseyo]?",
+     "id": "Kalau Jumat saya ada kerja sambilan. Sabtu bagaimana?",
+     "literal": "hari-Jumat — mengenai — kerja-sambilan — yang — ada-karena. hari-Sabtu — mengenai — bagaimana (hormat)?"
+    },
+    {
+     "speaker": "민준:",
+     "text": "[토요일|Toyoil] [좋아요|joayo]. [그럼|Geureom] [열한|yeolhan] [시에|sie] [도서관에서|doseogwaneseo] [만나기로|mannagiro] [해요|haeyo].",
+     "id": "Sabtu bagus. Kalau begitu kita sepakat ketemu jam sebelas di perpustakaan.",
+     "literal": "hari-Sabtu — bagus. kalau-begitu — sebelas — jam — pada — perpustakaan — di — bertemu — untuk — melakukan."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[네|Ne], [그렇게|geureoke] [해요|haeyo]. [자료는|Jaryoneun] [목요일까지|mogyoilkkaji] [단톡방에|dantokbange] [올릴게요|ollilgeyo].",
+     "id": "Ya, kita lakukan begitu. Bahannya saya unggah ke grup chat paling lambat Kamis.",
+     "literal": "ya, begitu — melakukan. bahan — mengenai — hari-Kamis — sampai — grup-obrolan — ke — mengunggah-akan."
+    },
+    {
+     "speaker": "민준:",
+     "text": "[감사합니다|Gamsahamnida]. [혹시|Hoksi] [못|mot] [오게|oge] [되면|doemyeon] [미리|miri] [연락|yeollak] [주세요|juseyo].",
+     "id": "Terima kasih. Kalau nanti berhalangan datang, tolong kabari lebih dulu.",
+     "literal": "terima-kasih. barangkali — tak-mampu — datang-secara — menjadi-kalau — sebelumnya — kabar — beri."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[네|Ne]. [그런데|Geureonde] [발표|balpyo] [시간이|sigani] [십오|sibo] [분|bun] [맞죠|matjyo]?",
+     "id": "Baik. Ngomong-ngomong waktu presentasinya lima belas menit kan?",
+     "literal": "ya. tapi — presentasi — waktu — yang — lima-belas — menit — benar-kan?"
+    },
+    {
+     "speaker": "민준:",
+     "text": "[네|Ne], [질문까지|jilmunkkaji] [하면|hamyeon] [이십|isip] [분쯤|bunjjeum] [될|doel] [거예요|geoyeyo].",
+     "id": "Ya, kalau ditambah tanya jawab kira-kira jadi dua puluh menit.",
+     "literal": "ya, pertanyaan — sampai — melakukan-kalau — dua-puluh — menit — sekitar — akan-menjadi — hal-adalah."
+    }
+   ],
+   "notes": [
+    "**Tiga orang, tiga -(으)ㄹ게요 berturut-turut.** Inilah pemakaian paling khas akhiran ini: membagi tugas. Tiap orang mengikat dirinya pada satu bagian, di depan yang lain. Memakai -(으)ㄹ 거예요 di sini akan terdengar seperti mengumumkan rencana pribadi, bukan menyanggupi.",
+    "**[맡다|Matda]** = mengambil tanggung jawab atas sesuatu. 발표를 맡다, 일을 맡다, 아이를 맡다 (menitipkan/menjaga anak). Kerabatnya 맡기다 = menyerahkan kepada orang lain.",
+    "**[있어서요|Isseoseoyo]** — kalimat sengaja berhenti di -아서요. Yujin tidak menyelesaikan \"…jadi tidak bisa\", dan justru itu yang membuatnya sopan. Menolak dengan kalimat lengkap terdengar tegas; menggantungnya terdengar minta maaf.",
+    "**[어떠세요|Eotteoseyo]?** adalah bentuk hormat dari 어때요? — dari 어떻다 + -(으)시-. Perhatikan bahwa ini kelompok ㅎ dari Unit 5: 어떻 + 으시 + 어요 → 어떠세요.",
+    "**[단톡방|Dantokbang]** = 단체 카카오톡 방, grup chat KakaoTalk. Hampir semua kerja kelompok, kelas, dan keluarga Korea punya satu. Kerabatnya: 단톡 (grup chat-nya), 톡방, 오픈톡방 (grup terbuka).",
+    "**[못|Mot] [오게|oge] [되면|doemyeon]** — pola **-게 되다** = \"jadi …\" karena keadaan, bukan karena kehendak sendiri. Ia dibongkar di Unit 14. Di sini ia melunakkan kemungkinan berhalangan: bukan \"kalau kamu tidak datang\", melainkan \"kalau keadaan membuatmu tidak bisa datang\".",
+    "**[맞죠|Matjyo]?** — 맞지요? yang dipendekkan. Dipakai untuk memastikan sesuatu yang kamu sudah cukup yakin. Padanan yang paling dekat: \"…kan?\""
+   ],
+   "grammars": [
+    {
+     "title": "-(으)ㄹ까요? — tiga pekerjaan",
+     "body": [
+      "Satu bentuk, tiga arti yang ditentukan oleh siapa subjeknya."
+     ],
+     "table": {
+      "head": [
+       "Subjek",
+       "Arti",
+       "Contoh",
+       "Jawaban yang lazim"
+      ],
+      "rows": [
+       [
+        "kita (우리)",
+        "mengajak, berunding",
+        "뭐 **먹을까요**?",
+        "삼겹살 먹어요"
+       ],
+       [
+        "saya (제가)",
+        "menawarkan diri",
+        "제가 **도와드릴까요**?",
+        "네, 부탁드려요"
+       ],
+       [
+        "orang/hal lain",
+        "menduga",
+        "내일 비가 **올까요**?",
+        "올 것 같아요"
+       ]
+      ]
+     },
+     "after": [
+      "**-(으)ㄹ까요? mengajak berunding, -(으)ㄹ래요? menawarkan pilihan.** 뭐 먹을까요? = ayo pikirkan bersama mau makan apa. 뭐 먹을래요? = kamu mau makan apa (aku ikut kamu). Yang pertama lebih sopan kepada orang yang belum akrab; yang kedua lebih akrab dan lebih langsung.",
+      "**Untuk menawarkan bantuan, pola bakunya -아/어 드릴까요?** — 도와드릴까요? (perlu dibantu?), 가져다드릴까요? (perlu saya ambilkan?), 사진 찍어 드릴까요? (mau saya fotokan?). Ketiganya layak dihafal utuh.",
+      "**Menjawab ajakan -(으)ㄹ까요?** tidak dengan -(으)ㄹ까요? lagi, melainkan dengan 해요체 biasa atau -(으)ㅂ시다: 먹을까요? → 네, 먹어요 / 그래요 / 좋아요. Jawaban 네, 먹을까요 terdengar seperti mengulang pertanyaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Lima cara berbicara tentang masa depan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Korea tidak punya satu \"bentuk masa depan\". Yang ada adalah lima bentuk dengan tugas berbeda, dan memilih yang salah membuat kalimatmu terdengar aneh walaupun tata bahasanya benar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Dipakai untuk",
+      "Contoh",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Bentuk kini + keterangan waktu",
+       "jadwal yang pasti",
+       "내일 세 시에 **가요**",
+       "seperti \"besok saya berangkat jam tiga\""
+      ],
+      [
+       "-(으)ㄹ 거예요",
+       "rencana dan dugaan",
+       "주말에 **쉴 거예요**",
+       "bentuk yang paling sering"
+      ],
+      [
+       "-(으)ㄹ게요",
+       "janji kepada lawan bicara",
+       "제가 **연락할게요**",
+       "⚠️ hanya untuk diri sendiri"
+      ],
+      [
+       "-기로 했어요",
+       "keputusan yang sudah diambil",
+       "이사하**기로 했어요**",
+       "menyiratkan pertimbangan"
+      ],
+      [
+       "-겠어요",
+       "kemauan resmi, reaksi seketika",
+       "제가 **하겠습니다**",
+       "⚠️ bukan rencana sehari-hari"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "-겠- yang sering disalahpahami"
+    },
+    {
+     "type": "p",
+     "text": "Buku pelajaran lama menyebut -겠- sebagai \"bentuk masa depan\", dan itu menyesatkan. Dalam bahasa Korea sehari-hari, -겠- hampir tidak pernah dipakai untuk rencana. Ia punya tiga tugas lain:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Reaksi seketika",
+       "맛있**겠**다!",
+       "kelihatannya enak!"
+      ],
+      [
+       "Empati",
+       "힘들**겠**어요",
+       "pasti berat ya"
+      ],
+      [
+       "Kemauan resmi",
+       "제가 하**겠습니다**",
+       "biar saya kerjakan (di kantor)"
+      ],
+      [
+       "Ungkapan beku",
+       "알**겠**습니다 · 모르**겠**어요",
+       "baik, saya mengerti · saya kurang tahu"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat beku yang wajib",
+     "items": [
+      "**알겠습니다 / 알겠어요** — \"baik, saya mengerti\". Tanpa -겠-, 알았어요 terdengar pendek dan bisa terasa kesal.",
+      "**모르겠어요** — \"saya kurang tahu\". Tanpa -겠-, 몰라요 terdengar memutus percakapan. Perbedaan ini kecil tetapi sangat terasa.",
+      "**맛있겠다 · 힘들겠다 · 좋겠다** — tiga reaksi yang akan kamu ucapkan tiap hari. 좋겠다 berarti \"enak ya kamu\" dan sering diucapkan setengah iri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membuat, menunda, dan membatalkan janji",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Membuat janji di Korea punya urutan yang cukup tetap: menanyakan kesediaan, menawarkan waktu, menyepakati tempat, lalu memastikan sehari sebelumnya. Kalimat-kalimat berikut menutup seluruh urutannya."
+    },
+    {
+     "type": "sub",
+     "text": "Menawarkan dan menyepakati"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Korea",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "이번 주말에 시간 있어요?",
+       "Akhir pekan ini ada waktu?"
+      ],
+      [
+       "언제가 좋으세요?",
+       "Kapan yang cocok untuk Anda?"
+      ],
+      [
+       "금요일 어때요?",
+       "Jumat bagaimana?"
+      ],
+      [
+       "저는 아무 때나 괜찮아요.",
+       "Saya kapan saja bisa."
+      ],
+      [
+       "그럼 토요일에 만나기로 해요.",
+       "Kalau begitu kita sepakat ketemu Sabtu."
+      ],
+      [
+       "어디에서 볼까요?",
+       "Ketemu di mana ya?"
+      ],
+      [
+       "그때 봬요.",
+       "Sampai ketemu waktu itu."
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menunda dan membatalkan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Korea",
+      "Arti",
+      "Nada"
+     ],
+     "rows": [
+      [
+       "혹시 시간 좀 미룰 수 있을까요?",
+       "Bisakah waktunya digeser sedikit?",
+       "sangat sopan"
+      ],
+      [
+       "갑자기 일이 생겨서요.",
+       "Tiba-tiba ada urusan.",
+       "alasan baku, tak perlu dirinci"
+      ],
+      [
+       "다음으로 미뤄도 될까요?",
+       "Boleh ditunda ke lain kali?",
+       "sopan"
+      ],
+      [
+       "죄송한데 오늘 약속 취소해도 될까요?",
+       "Maaf, boleh janji hari ini dibatalkan?",
+       "resmi"
+      ],
+      [
+       "미안, 나 오늘 못 갈 것 같아.",
+       "Maaf, kayaknya hari ini aku nggak bisa.",
+       "반말"
+      ],
+      [
+       "다음에 제가 밥 살게요.",
+       "Lain kali saya yang traktir.",
+       "penebus, hampir wajib"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kebiasaan yang perlu kamu tahu",
+     "items": [
+      "**Alasan tidak perlu dirinci.** 일이 좀 생겨서요 sudah cukup, dan lawan bicara Korea tidak akan bertanya lebih jauh. Menjelaskan panjang lebar justru terdengar seperti mengarang.",
+      "**Membatalkan hampir selalu disertai tawaran penebus:** 다음에 제가 살게요. Tanpa itu, pembatalan terasa menggantung.",
+      "**Memastikan sehari sebelumnya adalah kebiasaan, bukan keraguan.** Pesan 내일 몇 시에 볼까요? sehari sebelum janji dianggap wajar dan sopan, bukan tanda kamu lupa."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "방학",
+   "baca": "banghak",
+   "id": "libur semester"
+  },
+  {
+   "ko": "예매하다",
+   "baca": "yemaehada",
+   "id": "memesan tiket"
+  },
+  {
+   "ko": "며칠",
+   "baca": "myeochil",
+   "id": "berapa hari"
+  },
+  {
+   "ko": "숙소",
+   "baca": "sukso",
+   "id": "penginapan"
+  },
+  {
+   "ko": "정하다",
+   "baca": "jeonghada",
+   "id": "menentukan"
+  },
+  {
+   "ko": "알리다",
+   "baca": "allida",
+   "id": "memberitahu"
+  },
+  {
+   "ko": "링크",
+   "baca": "lingkeu",
+   "id": "tautan"
+  },
+  {
+   "ko": "렌터카",
+   "baca": "lenteoka",
+   "id": "mobil sewaan"
+  },
+  {
+   "ko": "빌리다",
+   "baca": "billida",
+   "id": "meminjam, menyewa"
+  },
+  {
+   "ko": "불편하다",
+   "baca": "bulpyeonhada",
+   "id": "tidak nyaman, merepotkan"
+  },
+  {
+   "ko": "일기 예보",
+   "baca": "ilgi yebo",
+   "id": "ramalan cuaca"
+  },
+  {
+   "ko": "결정하다",
+   "baca": "gyeoljeonghada",
+   "id": "memutuskan"
+  },
+  {
+   "ko": "찍다",
+   "baca": "jjikda",
+   "id": "memotret"
+  },
+  {
+   "ko": "당연하다",
+   "baca": "dangyeonhada",
+   "id": "sudah sewajarnya"
+  },
+  {
+   "ko": "다녀오다",
+   "baca": "danyeooda",
+   "id": "pergi lalu pulang"
+  },
+  {
+   "ko": "한턱내다",
+   "baca": "hanteoknaeda",
+   "id": "mentraktir"
+  },
+  {
+   "ko": "조사",
+   "baca": "josa",
+   "id": "penelusuran, riset"
+  },
+  {
+   "ko": "맡다",
+   "baca": "matda",
+   "id": "mengambil tanggung jawab"
+  },
+  {
+   "ko": "다시",
+   "baca": "dasi",
+   "id": "lagi"
+  },
+  {
+   "ko": "오후",
+   "baca": "ohu",
+   "id": "sore, siang setelah pukul 12"
+  },
+  {
+   "ko": "도서관",
+   "baca": "doseogwan",
+   "id": "perpustakaan"
+  },
+  {
+   "ko": "단톡방",
+   "baca": "dantokbang",
+   "id": "grup chat"
+  },
+  {
+   "ko": "올리다",
+   "baca": "ollida",
+   "id": "mengunggah, menaikkan"
+  },
+  {
+   "ko": "약속",
+   "baca": "yaksok",
+   "id": "janji temu"
+  },
+  {
+   "ko": "미루다",
+   "baca": "miruda",
+   "id": "menunda"
+  },
+  {
+   "ko": "취소하다",
+   "baca": "chwisohada",
+   "id": "membatalkan"
+  },
+  {
+   "ko": "생기다",
+   "baca": "saenggida",
+   "id": "muncul, terjadi"
+  },
+  {
+   "ko": "아무 때나",
+   "baca": "amu ttaena",
+   "id": "kapan saja"
+  },
+  {
+   "ko": "휴가",
+   "baca": "hyuga",
+   "id": "cuti"
+  },
+  {
+   "ko": "이사하다",
+   "baca": "isahada",
+   "id": "pindah rumah"
+  },
+  {
+   "ko": "끊다",
+   "baca": "kkeunta",
+   "id": "memutus, berhenti (kebiasaan)"
+  },
+  {
+   "ko": "운동하다",
+   "baca": "undonghada",
+   "id": "berolahraga"
+  },
+  {
+   "ko": "표",
+   "baca": "pyo",
+   "id": "tiket"
+  },
+  {
+   "ko": "벌써",
+   "baca": "beolsseo",
+   "id": "sudah (lebih cepat dari dugaan)"
+  },
+  {
+   "ko": "사진",
+   "baca": "sajin",
+   "id": "foto"
+  },
+  {
+   "ko": "질문",
+   "baca": "jilmun",
+   "id": "pertanyaan"
+  },
+  {
+   "ko": "회의",
+   "baca": "hoeui",
+   "id": "rapat"
+  },
+  {
+   "ko": "준비",
+   "baca": "junbi",
+   "id": "persiapan"
+  },
+  {
+   "ko": "밥을 사다",
+   "baca": "babeul sada",
+   "id": "mentraktir makan"
+  },
+  {
+   "ko": "돕다",
+   "baca": "dopda",
+   "id": "menolong"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih -(으)ㄹ 거예요 atau -(으)ㄹ게요.",
+   "items": [
+    "제가 자료를 보내____.",
+    "내일은 비가 ____.",
+    "유진 씨는 안 ____.",
+    "이따 제가 전화____.",
+    "주말에 뭐 ____?",
+    "다음에 제가 밥 ____."
+   ]
+  },
+  {
+   "prompt": "Ubah memakai -기로 하다 (bentuk lampau).",
+   "items": [
+    "차를 빌리다 → ____",
+    "토요일에 만나다 → ____",
+    "술을 안 마시다 → ____",
+    "매일 운동하다 → ____",
+    "다음 달에 이사하다 → ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan -(으)ㄹ까요?",
+   "items": [
+    "우리 뭐 ____? Kita makan apa ya?",
+    "제가 ____? Perlu saya bantu?",
+    "내일 비가 ____? Besok hujan nggak ya?",
+    "어디에서 ____? Ketemu di mana?",
+    "창문 좀 ____? Saya bukakan jendelanya?"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang paling wajar.",
+   "items": [
+    "맛있____! (melihat makanan yang baru datang)",
+    "제가 하____. (menyanggupi tugas di rapat)",
+    "잘 모르____.",
+    "내년에 한국에 유학 갈 ____.",
+    "많이 힘들____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "갈 / 제주도에 / 친구들이랑 / 거야",
+    "했어 / 빌리기로 / 렌터카는",
+    "할게요 / 조사는 / 제가 / 자료",
+    "만나기로 / 도서관에서 / 해요 / 열한 시에",
+    "될 / 이십 분쯤 / 거예요 / 하면 / 질문까지"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Korea.",
+   "items": [
+    "Liburan nanti mau ngapain?",
+    "Biar saya yang kerjakan.",
+    "Kami sudah sepakat ketemu Sabtu.",
+    "Perlu saya bantu?",
+    "Nanti saya kabari lebih dulu.",
+    "Kelihatannya enak!"
+   ]
+  }
+ ],
+ "answers": [
+  "보낼게요 — 올 거예요 — 올 거예요 — 할게요 — 할 거예요 — 살게요",
+  "차를 빌리기로 했어요. — 토요일에 만나기로 했어요. — 술을 안 마시기로 했어요. — 매일 운동하기로 했어요. — 다음 달에 이사하기로 했어요.",
+  "먹을까요 — 도와드릴까요 — 올까요 — 만날까요 — 열까요",
+  "맛있겠다 — 하겠습니다 — 모르겠어요 — 거예요 — 힘들겠어요",
+  "친구들이랑 제주도에 갈 거야. — 렌터카는 빌리기로 했어. — 자료 조사는 제가 할게요. — 열한 시에 도서관에서 만나기로 해요. — 질문까지 하면 이십 분쯤 될 거예요.",
+  "방학 때 뭐 할 거예요? — 제가 할게요. — 토요일에 만나기로 했어요. — 제가 도와드릴까요? — 미리 연락드릴게요. — 맛있겠다!"
+ ],
+ "wave": "Tulis jadwal seminggu ke depanmu dalam bahasa Korea, tujuh baris, dan paksa dirimu memakai bentuk yang berbeda-beda: dua kalimat -(으)ㄹ 거예요, dua -기로 했어요, dua bentuk kini dengan keterangan waktu, dan satu -(으)ㄹ게요 yang ditujukan kepada seseorang. Perbedaan kelimanya baru terasa ketika kamu sendiri yang harus memilih."
+}

@@ -1,0 +1,864 @@
+{
+ "title": "Menyampaikan apa kata orang",
+ "title_target": "비 온대 — Bi ondae",
+ "goal": "Menyampaikan ulang perkataan, pertanyaan, ajakan, dan suruhan orang lain — dalam bentuk penuh maupun bentuk pendek yang dipakai sehari-hari.",
+ "bekal": [
+  "membentuk kutipan pernyataan, pertanyaan, ajakan, dan suruhan",
+  "memakai bentuk pendek -대 · -냬 · -재 · -래 dengan benar",
+  "membedakan -아/어 달라고 하다 dan -아/어 주라고 하다",
+  "meneruskan pesan kepada orang lain",
+  "menanyakan sebutan sesuatu dengan -(이)라고 하다"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Kabar dari grup chat",
+   "intro": "Ani menyampaikan kabar yang baru dibacanya di grup chat kelas. Hampir tiap kalimatnya adalah perkataan orang lain yang diteruskan.",
+   "lines": [
+    {
+     "speaker": "아니:",
+     "text": "[유진아|Yujina], [오늘|oneul] [수업|sueop] [없대|eopdae].",
+     "id": "Yujin, katanya hari ini kelasnya kosong.",
+     "literal": "Yujin-hei, hari-ini — kuliah — tidak-ada-katanya."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[진짜|Jinjja]? [누가|Nuga] [그래|geurae]?",
+     "id": "Serius? Siapa yang bilang?",
+     "literal": "sungguh? siapa — yang — begitu?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[과대가|Gwadaega] [단톡에|dantoge] [올렸어|ollyeosseo]. [교수님이|Gyosunimi] [출장|chuljang] [가셨다고|gasyeotdago] [했어|haesseo].",
+     "id": "Ketua angkatan mengunggahnya di grup. Katanya Pak Dosen sedang dinas luar.",
+     "literal": "ketua-angkatan — yang — grup-obrolan — ke — mengunggah-sudah. dosen — yang — dinas-luar — pergi (hormat) — sudah-bahwa — mengatakan-sudah."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[아싸|Assa]! [그럼|Geureom] [과제는|gwajeneun]? [다음|Daeum] [주까지래|jukkajirae]?",
+     "id": "Yes! Kalau tugasnya gimana? Katanya sampai minggu depan?",
+     "literal": "asyik! kalau-begitu — tugas — mengenai? berikut — minggu — sampai-adalah-katanya?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[아니|Ani], [원래대로|wollaedaero] [금요일까지|geumyoilkkaji] [내래|naerae]. [대신|Daesin] [온라인으로|ollaineuro] [올리면|ollimyeon] [된대|doendae].",
+     "id": "Nggak, katanya tetap dikumpulkan Jumat seperti semula. Tapi katanya boleh diunggah daring.",
+     "literal": "tidak, semula — sesuai — hari-Jumat — sampai — menyerahkan-suruh-katanya. sebagai-ganti — daring — dengan — mengunggah-kalau — jadi-katanya."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[다행이다|Dahaengida]. [근데|Geunde] [민준이는|Minjunineun] [왜|wae] [안|an] [왔어|wasseo]?",
+     "id": "Syukurlah. Ngomong-ngomong Minjun kenapa nggak datang?",
+     "literal": "syukurlah. tapi — Minjun — mengenai — kenapa — tidak — datang-sudah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[아침에|Achime] [톡|tok] [왔는데|wanneunde] [좀|jom] [아프대|apeudae]. [오후에|Ohue] [병원|byeongwon] [간다고|gandago] [했어|haesseo].",
+     "id": "Tadi pagi ada chat, katanya agak sakit. Katanya sore mau ke rumah sakit.",
+     "literal": "pagi — pada — chat — datang-sudah-tapi — sedikit — sakit-katanya. sore — pada — rumah-sakit — pergi-bahwa — mengatakan-sudah."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[많이|Mani] [아픈|apeun] [거|geo] [아니냬|animnyae]? [내가|Naega] [연락해|yeollakae] [볼까|bolkka]?",
+     "id": "Dia nggak bilang parah atau nggak? Aku hubungi aja ya?",
+     "literal": "banyak — sakit-yang — hal — bukan-kah-tanya? aku — yang — menghubungi — coba-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[아까|Akka] [내가|naega] [물어봤는데|mureobwanneunde] [괜찮대|gwaenchantae]. [근데|Geunde] [노트|noteu] [좀|jom] [보내|bonae] [달래|dallae].",
+     "id": "Tadi sudah kutanya, katanya nggak apa-apa. Tapi dia minta dikirimi catatan.",
+     "literal": "tadi — aku — yang — bertanya-sudah-tapi — tidak-apa-apa-katanya. tapi — catatan — sedikit — kirim — minta-katanya."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[그럼|Geureom] [내가|naega] [보내|bonae] [줄게|julge]. [수업|Sueop] [없으니까|eopseunikka] [우리|uri] [카페|kape] [갈래|gallae]?",
+     "id": "Kalau gitu biar aku yang kirim. Kelasnya kosong, mau ke kafe?",
+     "literal": "kalau-begitu — aku — yang — kirim — beri-akan. kuliah — tidak-ada-karena — kita — kafe — akan-pergi-mau?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[좋아|Joa]. [아|A], [민준이가|Minjuniga] [다음에|daeume] [같이|gachi] [보재|bojae]. [셋이서|Setiseo].",
+     "id": "Boleh. Oh iya, Minjun ngajak ketemu lain kali. Bertiga.",
+     "literal": "bagus. ah, Minjun — yang — berikut — pada — bersama — melihat-ajak-katanya. bertiga."
+    },
+    {
+     "speaker": "유진:",
+     "text": "[좋지|Jochi]. [나으면|Naeumyeon] [보자고|bojago] [전해|jeonhae] [줘|jwo].",
+     "id": "Boleh. Sampaikan ya, kalau sudah sembuh ayo ketemu.",
+     "literal": "bagus-kan. sembuh-kalau — melihat-ajak-bahwa — menyampaikan — beri."
+    }
+   ],
+   "notes": [
+    "**[과대|Gwadae]** = 과 대표, ketua angkatan jurusan. Bahasa kampus Korea penuh singkatan semacam ini: 과제 (tugas), 공강 (jam kosong), 종강 (kuliah berakhir), 개강 (kuliah dimulai), 학점 (sks/nilai).",
+    "**[아싸|Assa]!** = seruan gembira, seperti \"yes!\". Hanya untuk ragam akrab. ⚠️ Jangan tertukar dengan 아싸 yang berarti orang yang tidak masuk lingkaran pergaulan (dari *outsider*) — konteks yang membedakan.",
+    "**[원래대로|Wollaedaero]** — pola **N + 대로** = sesuai dengan, menurut: 원래대로 (seperti semula), 계획대로 (sesuai rencana), 마음대로 (sesukanya), 말씀대로 (sesuai yang Anda katakan).",
+    "**[내래|Naerae]** = 내라고 해 yang dipendekkan = \"disuruh menyerahkan\". Perhatikan bahwa kutipan **suruhan** memakai -(으)래, sedangkan kutipan **pernyataan** memakai -대. Dua huruf yang berbeda, dua jenis kalimat yang berbeda.",
+    "**[보내|Bonae] [달래|dallae]** = 보내 달라고 해 = \"dia minta dikirimi\". ⚠️ Inilah salah satu titik tersulit unit ini: ketika permintaannya ditujukan **kepada pembicara sendiri**, 주다 berubah menjadi **달라고**. Kalau permintaannya untuk orang ketiga, dipakai 주라고: 민준이한테 보내 주라고 했어요 (dia menyuruhku mengirimkannya kepada Minjun).",
+    "**[아니냬|Animnyae]?** = 아니냐고 해? — kutipan pertanyaan. Bentuk pendeknya -냬, dan ia menanyakan apa yang **orang lain** tanyakan.",
+    "**[보재|Bojae]** = 보자고 해 = \"dia mengajak ketemu\". Kutipan ajakan memakai -자고 하다, pendeknya -재.",
+    "**[전해|Jeonhae] [줘|jwo]** dari 전하다 = menyampaikan (pesan, salam). 안부 전해 주세요 (sampaikan salam saya) adalah kalimat penutup percakapan yang sangat lazim."
+   ],
+   "grammars": [
+    {
+     "title": "Empat jenis kutipan",
+     "body": [
+      "Bentuk kutipan ditentukan oleh **jenis kalimat aslinya**: pernyataan, pertanyaan, ajakan, atau suruhan. Keempatnya memakai 하다 di ujung, dan keempatnya punya bentuk pendek yang jauh lebih sering di percakapan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat asli",
+       "Jenis",
+       "Bentuk penuh",
+       "Bentuk pendek"
+      ],
+      "rows": [
+       [
+        "가요",
+        "pernyataan (kata kerja)",
+        "간**다고 해요**",
+        "간**대요**"
+       ],
+       [
+        "먹어요",
+        "pernyataan (kata kerja)",
+        "먹는**다고 해요**",
+        "먹는**대요**"
+       ],
+       [
+        "추워요",
+        "pernyataan (kata sifat)",
+        "춥**다고 해요**",
+        "춥**대요**"
+       ],
+       [
+        "학생이에요",
+        "pernyataan (kata benda)",
+        "학생이**라고 해요**",
+        "학생이**래요**"
+       ],
+       [
+        "갔어요",
+        "pernyataan (lampau)",
+        "갔**다고 해요**",
+        "갔**대요**"
+       ],
+       [
+        "언제 가요?",
+        "pertanyaan",
+        "언제 가**냐고 해요**",
+        "언제 가**냬요**"
+       ],
+       [
+        "같이 가요",
+        "ajakan",
+        "같이 가**자고 해요**",
+        "같이 가**재요**"
+       ],
+       [
+        "빨리 오세요",
+        "suruhan",
+        "빨리 오**라고 해요**",
+        "빨리 오**래요**"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Pernyataan kata kerja bentuk kini memakai -ㄴ다고/-는다고**, bukan -다고 saja: 간다고, 먹는다고. Ini bentuk 한다체 (ragam tulis), dan ia hanya muncul di dalam kutipan pada tingkat A2. Kata sifat, bentuk lampau, dan 있다/없다 memakai -다고: 춥다고, 갔다고, 있다고.",
+      "**Kata benda memakai -(이)라고, bukan -이다고:** 학생이라고 했어요, 친구라고 해요.",
+      "**하다 boleh diganti kata kerja lain:** 말하다, 물어보다, 이야기하다, 전하다 — tetapi dalam percakapan sehari-hari, 하다 yang paling sering. 그렇게 말했어요 dan 그렇다고 했어요 sama-sama benar."
+     ]
+    },
+    {
+     "title": "Bentuk pendek — yang sebenarnya kamu butuhkan",
+     "body": [
+      "Dalam percakapan, bentuk penuh terasa panjang dan agak resmi. Yang dipakai orang Korea sehari-hari adalah bentuk pendeknya."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Pendek",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Pernyataan",
+        "-대(요)",
+        "내일 비 **온대요**",
+        "katanya besok hujan"
+       ],
+       [
+        "Pernyataan (kata benda)",
+        "-(이)래(요)",
+        "여기가 제일 **맛있대요**",
+        "katanya di sini paling enak"
+       ],
+       [
+        "Pertanyaan",
+        "-냬(요)",
+        "언제 **오냬요**",
+        "dia tanya kapan datang"
+       ],
+       [
+        "Ajakan",
+        "-재(요)",
+        "같이 **가재요**",
+        "dia ngajak pergi bareng"
+       ],
+       [
+        "Suruhan",
+        "-(으)래(요)",
+        "빨리 **오래요**",
+        "dia suruh cepat datang"
+       ],
+       [
+        "Permintaan (kepadaku)",
+        "-아/어 **달래(요)**",
+        "도와 **달래요**",
+        "dia minta dibantu"
+       ],
+       [
+        "Permintaan (untuk pihak ketiga)",
+        "-아/어 **주래(요)**",
+        "동생 도와 **주래요**",
+        "dia menyuruh membantu adiknya"
+       ]
+      ]
+     },
+     "after": [
+      "**-대요 bukan penanda kesopanan.** Yang menentukan ragam adalah 요 di ujungnya: 간대 (반말) vs 간대요 (해요체). Bentuk pendek dipakai di kedua ragam.",
+      "**-대요 juga dipakai untuk kabar umum**, bukan hanya perkataan satu orang: 내일 비 온대요 (katanya besok hujan — dari ramalan cuaca), 그 식당 진짜 맛있대요 (katanya restoran itu enak — dari orang-orang). Ini pemakaian yang paling sering.",
+      "⚠️ **Jangan tertukar dengan -데요.** 맛있**대**요 = katanya enak (dari orang lain). 맛있**던**데요 = enak lho (menurut yang saya cicipi sendiri). Satu huruf, sumber informasi yang berbeda."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Meneruskan pesan lewat telepon",
+   "intro": "Ani menerima telepon dari kantor untuk kakaknya, lalu meneruskan pesannya. Menerima dan meneruskan pesan adalah tugas berbahasa yang menuntut kutipan dari awal sampai akhir.",
+   "lines": [
+    {
+     "speaker": "아니:",
+     "text": "[여보세요|Yeoboseyo]?",
+     "id": "Halo?",
+     "literal": "halo?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[안녕하세요|Annyeonghaseyo], [혹시|hoksi] [김수민|Kim Sumin] [씨|ssi] [계신가요|gyesingayo]?",
+     "id": "Selamat siang, apakah Bapak/Ibu Kim Sumin ada?",
+     "literal": "damai-ada-kah, barangkali — Kim Sumin — tuan — ada (hormat) — kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[지금|Jigeum] [자리에|jarie] [안|an] [계세요|gyeseyo]. [메모|Memo] [남겨|namgyeo] [드릴까요|deurilkkayo]?",
+     "id": "Sekarang sedang tidak di tempat. Perlu saya tinggalkan pesan?",
+     "literal": "sekarang — tempat — pada — tidak — ada (hormat). memo — meninggalkan — beri-kah?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[네|Ne], [내일|naeil] [회의가|hoeuiga] [두|du] [시로|siro] [바뀌었다고|bakkwieotdago] [전해|jeonhae] [주시겠어요|jusigesseoyo]?",
+     "id": "Ya, tolong sampaikan bahwa rapat besok diubah jadi jam dua.",
+     "literal": "ya, besok — rapat — yang — dua — jam — ke — berubah-sudah-bahwa — menyampaikan — beri (hormat) — akan-kah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[두|Du] [시로|siro] [변경됐다고요|byeongyeongdwaetdagoyo]? [네|Ne], [전해|jeonhae] [드릴게요|deurilgeyo].",
+     "id": "Diubah jadi jam dua ya? Baik, akan saya sampaikan.",
+     "literal": "dua — jam — ke — berubah-sudah-bahwa-ya? ya, menyampaikan — beri-akan."
+    },
+    {
+     "speaker": "직원:",
+     "text": "[그리고|Geurigo] [자료는|jaryoneun] [오늘|oneul] [안에|ane] [보내|bonae] [달라고|dallago] [해|hae] [주세요|juseyo].",
+     "id": "Dan tolong sampaikan agar bahannya dikirim hari ini juga.",
+     "literal": "dan — bahan — mengenai — hari-ini — dalam — kirim — minta-bahwa — melakukan — beri."
+    },
+    {
+     "speaker": "아니:",
+     "text": "[네|Ne], [알겠습니다|algetseumnida]. [혹시|Hoksi] [연락처|yeollakcheo] [남겨|namgyeo] [주시겠어요|jusigesseoyo]?",
+     "id": "Baik, saya mengerti. Boleh minta nomor kontaknya?",
+     "literal": "ya, tahu-akan (resmi). barangkali — kontak — meninggalkan — beri (hormat) — akan-kah?"
+    },
+    {
+     "speaker": "직원:",
+     "text": "[공일공|Gongilgong] [일이삼사에|ilisamsae] [오륙칠팔입니다|oryukchilparimnida]. [감사합니다|Gamsahamnida].",
+     "id": "010-1234-5678. Terima kasih.",
+     "literal": "kosong-satu-kosong — satu-dua-tiga-empat — pada — lima-enam-tujuh-delapan-adalah. terima-kasih."
+    },
+    {
+     "speaker": "아니:",
+     "text": "([언니에게|eonnieke]) [언니|Eonni], [아까|akka] [회사에서|hoesaeseo] [전화|jeonhwa] [왔는데|wanneunde] [회의가|hoeuiga] [두|du] [시로|siro] [바뀌었대|bakkwieotdae].",
+     "id": "(kepada kakaknya) Kak, tadi ada telepon dari kantor, katanya rapatnya diubah jadi jam dua.",
+     "literal": "(kakak-kepada) kakak, tadi — perusahaan — dari — telepon — datang-sudah-tapi — rapat — yang — dua — jam — ke — berubah-sudah-katanya."
+    },
+    {
+     "speaker": "언니:",
+     "text": "[두|Du] [시|si]? [알겠어|Algesseo]. [또|Tto] [뭐라고|mworago] [했어|haesseo]?",
+     "id": "Jam dua? Oke. Ada bilang apa lagi?",
+     "literal": "dua — jam? tahu-akan. lagi — apa-bahwa — mengatakan-sudah?"
+    },
+    {
+     "speaker": "아니:",
+     "text": "[자료|Jaryo] [오늘|oneul] [안에|ane] [보내|bonae] [달래|dallae]. [연락처도|Yeollakcheodo] [받아|bada] [놨어|nwasseo].",
+     "id": "Katanya minta bahannya dikirim hari ini juga. Nomor kontaknya juga sudah kucatat.",
+     "literal": "bahan — hari-ini — dalam — kirim — minta-katanya. kontak — juga — menerima — menaruh-sudah."
+    },
+    {
+     "speaker": "언니:",
+     "text": "[고마워|Gomawo]. [역시|Yeoksi] [우리|uri] [동생|dongsaeng]!",
+     "id": "Makasih. Emang adikku paling bisa!",
+     "literal": "terima-kasih. ternyata — kita — adik!"
+    }
+   ],
+   "notes": [
+    "**[여보세요|Yeoboseyo]?** hanya dipakai di telepon, tidak pernah bertatap muka. Kalau si penelepon tidak terdengar, kalimat lanjutannya: 여보세요? 안 들리는데요? (halo? tidak terdengar nih).",
+    "**[자리에|Jarie] [안|an] [계세요|gyeseyo]** = \"sedang tidak di tempat\", kalimat baku di kantor. Bentuk lain: 지금 통화 중이세요 (sedang menelepon), 외근 나가셨어요 (sedang keluar tugas), 자리 비우셨어요 (sedang meninggalkan meja).",
+    "**[메모|Memo] [남기다|namgida]** = meninggalkan pesan. 남기다 adalah bentuk penyebab dari 남다 (tersisa): 음식을 남기다 (menyisakan makanan), 메시지를 남기다.",
+    "**[변경됐다고요|Byeongyeongdwaetdagoyo]?** — menambahkan **-다고요?** berarti mengulang untuk memastikan: \"…begitu ya?\". Sangat berguna di telepon: 세 시라고요? 내일이라고요?",
+    "**[보내|Bonae] [달라고|dallago] [해|hae] [주세요|juseyo]** — perhatikan tumpukannya: si pegawai meminta Ani menyampaikan permintaannya kepada orang ketiga. 달라고 dipakai karena yang meminta adalah si pegawai sendiri.",
+    "**Membaca nomor telepon:** angka dibaca satu per satu dengan sistem Sino-Korea, 0 dibaca **공**, dan tanda hubung dibaca **에**. 010-1234-5678 = 공일공 일이삼사에 오륙칠팔.",
+    "**[언니|Eonni]** dipakai perempuan untuk kakak perempuannya. Laki-laki memakai 누나. Sapaan keluarga Korea ditentukan oleh jenis kelamin **penyapa**, bukan yang disapa — dan ini kekeliruan yang sangat sering dilakukan orang asing.",
+    "**[받아|Bada] [놨어|nwasseo]** — pola **-아/어 놓다** = melakukan sesuatu dan membiarkan hasilnya siap. 예약해 놨어요 (sudah dipesankan), 사 놨어요 (sudah dibelikan dan tersedia). Sangat sering dipakai untuk melapor bahwa persiapan sudah beres."
+   ],
+   "grammars": [
+    {
+     "title": "-아/어 달라고 vs -아/어 주라고",
+     "body": [
+      "Kutipan permintaan menuntut satu pilihan tambahan yang tidak ada padanannya di bahasa Indonesia: kepada siapa bantuan itu ditujukan."
+     ],
+     "table": {
+      "head": [
+       "Yang diminta",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "untuk si peminta sendiri",
+        "-아/어 **달라고** 하다",
+        "노트 보내 **달래요**",
+        "dia minta dikirimi catatan (untuk dia)"
+       ],
+       [
+        "untuk orang ketiga",
+        "-아/어 **주라고** 하다",
+        "동생 도와 **주래요**",
+        "dia menyuruh membantu adiknya"
+       ],
+       [
+        "kepada orang yang dihormati",
+        "-아/어 **달라고** 하시다",
+        "교수님이 보내 **달라고 하셨어요**",
+        "Pak Dosen minta dikirimi"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturannya sederhana kalau dipikir sekali:** 주다 dipakai untuk orang lain, jadi ketika si pembicara meminta untuk dirinya sendiri, bahasa Korea memakai kata yang lain sama sekali — 달라. Kata 달라 memang tidak punya bentuk kamus yang dipakai sendirian; ia hanya hidup di dalam kutipan dan permintaan.",
+      "**Bentuk pendeknya:** 달라고 해요 → **달래요**, 주라고 해요 → **주래요**. Bedanya satu huruf, dan artinya berbalik."
+     ]
+    },
+    {
+     "title": "-(이)라고 하다 — menyebut dan menamai",
+     "body": [
+      "Selain mengutip, pola ini dipakai untuk menyebut nama dan istilah — dan itulah cara termudah menambah kosakata dalam percakapan sungguhan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "이걸 한국어로 뭐라고 해요?",
+        "Ini dalam bahasa Korea disebut apa?"
+       ],
+       [
+        "이건 '주걱'이라고 해요.",
+        "Ini namanya 'jugeok'."
+       ],
+       [
+        "저는 아니라고 합니다.",
+        "Nama saya Ani. (resmi)"
+       ],
+       [
+        "한국에서는 이걸 '눈치'라고 해요.",
+        "Di Korea ini disebut 'nunchi'."
+       ],
+       [
+        "'화이팅'이라고 하는 말 있잖아요.",
+        "Ada kata 'hwaiting' itu lho."
+       ]
+      ]
+     },
+     "after": [
+      "**뭐라고 해요? adalah pertanyaan yang paling produktif** yang bisa kamu bawa ke percakapan mana pun. Ia menambah kosakata tepat pada saat kamu membutuhkannya, dan itu jauh lebih menempel daripada daftar kata.",
+      "**뭐라고요? sendiri berarti \"apa? bisa diulang?\"** — kalimat penyelamat ketika kamu tidak menangkap ucapan lawan bicara. Bentuk sopannya 네? atau 다시 한번 말씀해 주시겠어요?."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meneruskan pesan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menerima pesan untuk orang lain adalah keadaan yang menuntut hampir semua alat unit ini sekaligus. Kalimat-kalimat berikut menutup urutannya dari awal sampai akhir."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tahap",
+      "Bahasa Korea",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Mengabarkan ketiadaan",
+       "지금 자리에 안 계세요.",
+       "Sekarang tidak ada di tempat."
+      ],
+      [
+       "Menawarkan",
+       "메모 남겨 드릴까요?",
+       "Perlu saya tinggalkan pesan?"
+      ],
+      [
+       "Memastikan",
+       "두 시라고요?",
+       "Jam dua ya?"
+      ],
+      [
+       "Menyanggupi",
+       "네, 전해 드릴게요.",
+       "Baik, akan saya sampaikan."
+      ],
+      [
+       "Meminta kontak",
+       "연락처 좀 남겨 주시겠어요?",
+       "Boleh minta nomor kontaknya?"
+      ],
+      [
+       "Meneruskan pernyataan",
+       "회의가 두 시로 바뀌었대요.",
+       "Katanya rapat diubah jadi jam dua."
+      ],
+      [
+       "Meneruskan permintaan",
+       "자료 보내 달래요.",
+       "Katanya minta dikirimi bahannya."
+      ],
+      [
+       "Meneruskan suruhan",
+       "빨리 연락하래요.",
+       "Katanya disuruh segera menghubungi."
+      ],
+      [
+       "Meneruskan pertanyaan",
+       "언제 오냬요.",
+       "Dia tanya kapan datang."
+      ],
+      [
+       "Menyampaikan salam",
+       "안부 전해 주세요.",
+       "Sampaikan salam saya."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Di telepon",
+     "items": [
+      "**여보세요 · 네, 말씀하세요 · 잠시만요** — tiga kalimat pembuka yang paling sering.",
+      "**Kalau salah sambung:** 죄송한데 전화 잘못 거신 것 같아요 (sepertinya Anda salah sambung).",
+      "**Menutup:** 네, 들어가세요 adalah cara khas Korea menutup telepon — harfiahnya \"silakan masuk\", dan tidak ada padanannya di bahasa lain. Pilihan lain: 네, 감사합니다. 안녕히 계세요."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kutipan dalam kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk pendek -대요 muncul jauh lebih sering daripada yang diduga pembelajar, karena orang Korea sangat sering menandai **dari mana** sebuah informasi berasal. Menyampaikan kabar tanpa menandai sumbernya justru terdengar seolah kamu yang bertanggung jawab atas kebenarannya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Bahasa Korea",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Ramalan cuaca",
+       "내일 비 온대요.",
+       "Katanya besok hujan."
+      ],
+      [
+       "Berita",
+       "다음 주부터 오른대요.",
+       "Katanya naik mulai minggu depan."
+      ],
+      [
+       "Rekomendasi",
+       "저기 진짜 맛있대요.",
+       "Katanya di sana enak banget."
+      ],
+      [
+       "Kabar orang",
+       "민준이 이사 간대요.",
+       "Katanya Minjun mau pindah."
+      ],
+      [
+       "Aturan",
+       "여기 주차하면 안 된대요.",
+       "Katanya tidak boleh parkir di sini."
+      ],
+      [
+       "Jadwal",
+       "다음 주에 시험이래요.",
+       "Katanya minggu depan ada ujian."
+      ],
+      [
+       "Meragukan",
+       "그렇대요? 진짜예요?",
+       "Katanya begitu? Beneran?"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menandai sumber yang lain"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Sumber",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "-대요",
+       "perkataan orang lain",
+       "비 온**대요**"
+      ],
+      [
+       "-다고 들었어요",
+       "saya dengar bahwa",
+       "그렇다고 **들었어요**"
+      ],
+      [
+       "-(으)ㄴ 것 같아요",
+       "kesan sendiri (Unit 13)",
+       "비가 **온 것 같아요**"
+      ],
+      [
+       "-나 봐요",
+       "kesimpulan dari bukti (Unit 13)",
+       "비가 **오나 봐요**"
+      ],
+      [
+       "뉴스에서 봤는데",
+       "saya lihat di berita",
+       "**뉴스에서 봤는데** 내일 춥대요"
+      ],
+      [
+       "듣기로는",
+       "sepanjang yang saya dengar",
+       "**듣기로는** 다음 달에 온대요"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa ini penting",
+     "items": [
+      "**Menyampaikan kabar tanpa -대요 berarti kamu menjaminnya.** 내일 비 와요 = besok hujan (saya tahu). 내일 비 온대요 = katanya besok hujan (jangan salahkan saya kalau tidak).",
+      "**Di tempat kerja, membedakan keduanya adalah soal tanggung jawab.** Melaporkan 회의가 두 시예요 padahal kamu hanya mendengarnya dari orang lain bisa jadi masalah kalau ternyata keliru.",
+      "**Ini juga cara sopan menyampaikan pendapat orang banyak** tanpa memaksakannya: 그 영화 재밌대요 lebih ringan daripada 그 영화 재밌어요, dan memberi lawan bicara ruang untuk tidak setuju."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "과제",
+   "baca": "gwaje",
+   "id": "tugas kuliah"
+  },
+  {
+   "ko": "출장",
+   "baca": "chuljang",
+   "id": "dinas luar"
+  },
+  {
+   "ko": "원래대로",
+   "baca": "wollaedaero",
+   "id": "seperti semula"
+  },
+  {
+   "ko": "대신",
+   "baca": "daesin",
+   "id": "sebagai ganti"
+  },
+  {
+   "ko": "온라인",
+   "baca": "ollain",
+   "id": "daring"
+  },
+  {
+   "ko": "노트",
+   "baca": "noteu",
+   "id": "catatan"
+  },
+  {
+   "ko": "전하다",
+   "baca": "jeonhada",
+   "id": "menyampaikan"
+  },
+  {
+   "ko": "안부",
+   "baca": "anbu",
+   "id": "salam, kabar"
+  },
+  {
+   "ko": "여보세요",
+   "baca": "yeoboseyo",
+   "id": "halo (telepon)"
+  },
+  {
+   "ko": "자리를 비우다",
+   "baca": "jarireul biuda",
+   "id": "meninggalkan tempat"
+  },
+  {
+   "ko": "메모",
+   "baca": "memo",
+   "id": "memo, pesan"
+  },
+  {
+   "ko": "남기다",
+   "baca": "namgida",
+   "id": "meninggalkan (pesan)"
+  },
+  {
+   "ko": "바뀌다",
+   "baca": "bakkwida",
+   "id": "berubah"
+  },
+  {
+   "ko": "변경되다",
+   "baca": "byeongyeongdoeda",
+   "id": "diubah"
+  },
+  {
+   "ko": "연락처",
+   "baca": "yeollakcheo",
+   "id": "nomor kontak"
+  },
+  {
+   "ko": "통화 중",
+   "baca": "tonghwa jung",
+   "id": "sedang menelepon"
+  },
+  {
+   "ko": "잘못 걸다",
+   "baca": "jalmot geolda",
+   "id": "salah sambung"
+  },
+  {
+   "ko": "언니",
+   "baca": "eonni",
+   "id": "kakak perempuan (bagi perempuan)"
+  },
+  {
+   "ko": "누나",
+   "baca": "nuna",
+   "id": "kakak perempuan (bagi laki-laki)"
+  },
+  {
+   "ko": "동생",
+   "baca": "dongsaeng",
+   "id": "adik"
+  },
+  {
+   "ko": "역시",
+   "baca": "yeoksi",
+   "id": "memang, ternyata benar"
+  },
+  {
+   "ko": "뉴스",
+   "baca": "nyuseu",
+   "id": "berita"
+  },
+  {
+   "ko": "오르다",
+   "baca": "oreuda",
+   "id": "naik"
+  },
+  {
+   "ko": "주차하다",
+   "baca": "juchahada",
+   "id": "memarkir"
+  },
+  {
+   "ko": "눈치",
+   "baca": "nunchi",
+   "id": "kepekaan membaca suasana"
+  },
+  {
+   "ko": "화이팅",
+   "baca": "hwaiting",
+   "id": "semangat!"
+  },
+  {
+   "ko": "단톡",
+   "baca": "dantok",
+   "id": "grup chat"
+  },
+  {
+   "ko": "올리다",
+   "baca": "ollida",
+   "id": "mengunggah"
+  },
+  {
+   "ko": "아프다",
+   "baca": "apeuda",
+   "id": "sakit"
+  },
+  {
+   "ko": "셋이서",
+   "baca": "setiseo",
+   "id": "bertiga"
+  },
+  {
+   "ko": "공",
+   "baca": "gong",
+   "id": "nol (angka telepon)"
+  },
+  {
+   "ko": "대로",
+   "baca": "daero",
+   "id": "sesuai dengan"
+  },
+  {
+   "ko": "말씀하다",
+   "baca": "malsseumhada",
+   "id": "berbicara (hormat)"
+  },
+  {
+   "ko": "잠시만요",
+   "baca": "jamsimanyo",
+   "id": "sebentar ya"
+  },
+  {
+   "ko": "듣기로는",
+   "baca": "deutgironeun",
+   "id": "sepanjang yang saya dengar"
+  },
+  {
+   "ko": "종강",
+   "baca": "jonggang",
+   "id": "akhir masa kuliah"
+  },
+  {
+   "ko": "개강",
+   "baca": "gaegang",
+   "id": "awal masa kuliah"
+  },
+  {
+   "ko": "학점",
+   "baca": "hakjeom",
+   "id": "nilai, sks"
+  },
+  {
+   "ko": "회의",
+   "baca": "hoeui",
+   "id": "rapat"
+  },
+  {
+   "ko": "확인하다",
+   "baca": "hwaginhada",
+   "id": "memastikan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kutipan bentuk penuh (-다고/-냐고/-자고/-(으)라고 해요).",
+   "items": [
+    "\"내일 가요\" → ____",
+    "\"김치가 매워요\" → ____",
+    "\"저는 학생이에요\" → ____",
+    "\"언제 와요?\" → ____",
+    "\"같이 가요\" → ____",
+    "\"빨리 오세요\" → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk pendek.",
+   "items": [
+    "비가 온다고 해요 → ____",
+    "춥다고 해요 → ____",
+    "학생이라고 해요 → ____",
+    "언제 오냐고 해요 → ____",
+    "같이 가자고 해요 → ____",
+    "빨리 오라고 해요 → ____"
+   ]
+  },
+  {
+   "prompt": "Pilih 달라고 atau 주라고.",
+   "items": [
+    "민준이가 노트를 보내 ____ 했어요. Untuk Minjun sendiri.",
+    "엄마가 동생을 도와 ____ 하셨어요. Untuk adik.",
+    "친구가 사진을 찍어 ____ 했어요. Untuk teman itu sendiri.",
+    "교수님이 자료를 학생들한테 보내 ____ 하셨어요.",
+    "언니가 물 좀 가져다 ____ 했어요. Untuk kakak."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan pesan berikut ke bahasa Korea.",
+   "items": [
+    "Katanya besok hujan.",
+    "Dia tanya kapan kamu datang.",
+    "Dia mengajak pergi bersama.",
+    "Katanya disuruh cepat datang.",
+    "Katanya rapat diubah jadi jam dua."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "없대 / 수업 / 오늘",
+    "했어 / 가셨다고 / 교수님이 / 출장",
+    "달래 / 노트 / 보내 / 좀",
+    "주시겠어요 / 전해 / 바뀌었다고 / 회의가 / 두 시로 / ?",
+    "해요 / 뭐라고 / 이걸 / 한국어로 / ?"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat langsung menjadi laporan kepada orang ketiga.",
+   "items": [
+    "민준: \"저 오늘 아파요.\" → 민준이가 ____",
+    "유진: \"같이 밥 먹자.\" → 유진이가 ____",
+    "교수님: \"금요일까지 내세요.\" → 교수님이 ____",
+    "직원: \"자료 좀 보내 주세요.\" → 직원이 ____",
+    "친구: \"너 어디야?\" → 친구가 ____"
+   ]
+  }
+ ],
+ "answers": [
+  "내일 간다고 해요. — 김치가 맵다고 해요. — 저는 학생이라고 해요. — 언제 오냐고 해요. — 같이 가자고 해요. — 빨리 오라고 해요.",
+  "비가 온대요 — 춥대요 — 학생이래요 — 언제 오냬요 — 같이 가재요 — 빨리 오래요",
+  "달라고 — 주라고 — 달라고 — 주라고 — 달라고",
+  "내일 비 온대요. — 언제 오냬요. — 같이 가재요. — 빨리 오래요. — 회의가 두 시로 바뀌었대요.",
+  "오늘 수업 없대. — 교수님이 출장 가셨다고 했어. — 노트 좀 보내 달래. — 회의가 두 시로 바뀌었다고 전해 주시겠어요? — 이걸 한국어로 뭐라고 해요?",
+  "오늘 아프대요. — 같이 밥 먹재요. — 금요일까지 내래요. — 자료 좀 보내 달래요. — 어디냬요."
+ ],
+ "wave": "Selama satu hari, tiap kali seseorang mengatakan sesuatu kepadamu, ulangi dalam hati sebagai kutipan Korea bentuk pendek. Malamnya tulis sepuluh di antaranya. Kutipan tak langsung adalah bagian bahasa Korea yang paling cepat menempel lewat latihan bergumam semacam ini."
+}
