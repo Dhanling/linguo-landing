@@ -1,0 +1,497 @@
+{
+  "title": "Akan mengerjakan, atau akan selesai",
+  "title_target": "Вид в бу́дущем вре́мени и в императи́ве",
+  "goal": "Membentuk dua macam masa depan dan memilih di antaranya, serta memakai aspek dalam perintah, ajakan, dan larangan.",
+  "bekal": [
+    "dua aspek dari unit 1 dan 2",
+    "bentuk kata kerja masa kini tipe I dan II",
+    "бу́ду / бу́дешь / бу́дет",
+    "bentuk perintah -й / -и / -ь"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Не звони́ мне за́втра, позвони́ в пя́тницу",
+      "intro": "Дени berencana mencari kerja paruh waktu. Ка́тя menawarkan bantuan lewat kenalannya, dan sekaligus tanpa sengaja memberi contoh sempurna tentang aspek dalam kalimat perintah.",
+      "lines": [
+        {
+          "speaker": "Дени:",
+          "text": "Ка́тя, ты говори́ла, что у тебя́ есть знако́мый в кни́жном магази́не.",
+          "id": "Katya, kamu bilang kamu punya kenalan di toko buku.",
+          "literal": "Katya, kamu berkata (proses), bahwa di-kamu ada kenalan di buku toko."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Есть. Хо́чешь, я поговорю́ с ним?",
+          "id": "Ada. Mau saya bicarakan dengannya?",
+          "literal": "ada. kamu-mau, saya akan-berbicara (tuntas) dengan dia?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Е́сли не тру́дно. Я бу́ду иска́ть рабо́ту всё ле́то, но пока́ ничего́.",
+          "id": "Kalau tidak merepotkan. Saya akan mencari kerja sepanjang musim panas, tapi sejauh ini belum ada apa-apa.",
+          "literal": "kalau tidak sulit. saya akan mencari (proses) pekerjaan seluruh musim-panas, tapi sementara tidak-apa-apa."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Тогда́ так. Я позвоню́ ему́ сего́дня ве́чером и всё узна́ю.",
+          "id": "Kalau begitu begini. Saya akan meneleponnya nanti malam dan mencari tahu semuanya.",
+          "literal": "kalau-begitu begini. saya akan-menelepon (tuntas) kepada-dia hari-ini petang dan semua akan-mengetahui."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Спаси́бо. Мне позвони́ть тебе́ за́втра?",
+          "id": "Terima kasih. Perlu saya telepon kamu besok?",
+          "literal": "terima-kasih. kepada-saya menelepon (tuntas) kepada-kamu besok?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Не звони́ за́втра. За́втра я весь день бу́ду сдава́ть экза́мен. Позвони́ в пя́тницу.",
+          "id": "Jangan menelepon besok. Besok saya seharian akan ujian. Telepon saja hari Jumat.",
+          "literal": "jangan menelepon (proses) besok. besok saya seluruh hari akan menempuh (proses) ujian. telepon (tuntas) pada Jumat."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Стой. «Не звони́» и «позвони́» — оди́н глаго́л, но ра́зные фо́рмы?",
+          "id": "Tunggu. «Не звони́» dan «позвони́» — satu kata kerja tapi bentuk berbeda?",
+          "literal": "berhenti. «tidak menelepon» dan «telepon» — satu kata-kerja, tapi berbeda bentuk?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Оди́н, но ра́зные ви́ды. Запре́т всегда́ несоверше́нный. Про́сьба — соверше́нный.",
+          "id": "Satu, tapi aspeknya berbeda. Larangan selalu tak sempurna. Permintaan — sempurna.",
+          "literal": "satu, tapi berbeda aspek. larangan selalu tak-sempurna. permintaan — sempurna."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "А е́сли я скажу́ «не позвони́»?",
+          "id": "Dan kalau saya bilang «не позвони́»?",
+          "literal": "dan kalau saya akan-berkata «tidak telepon (tuntas)»?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Э́то не запре́т, а предупрежде́ние: «смотри́ не упади́» — бо́йся, что́бы э́то не случи́лось.",
+          "id": "Itu bukan larangan, tapi peringatan: «awas jangan jatuh» — takutlah kalau-kalau itu terjadi.",
+          "literal": "ini tidak larangan, melainkan peringatan: «lihat tidak jatuh» — takutlah, supaya ini tidak terjadi."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Поня́тно. А «бу́ду иска́ть» и «найду́»?",
+          "id": "Paham. Dan «бу́ду иска́ть» dan «найду́»?",
+          "literal": "jelas. dan «akan mencari (proses)» dan «akan-menemukan (tuntas)»?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "То же са́мое. «Бу́ду иска́ть» — обеща́ешь проце́сс. «Найду́» — обеща́ешь результа́т. Не обеща́й результа́т, е́сли не уве́рен.",
+          "id": "Sama saja. «Бу́ду иска́ть» — kamu menjanjikan proses. «Найду́» — kamu menjanjikan hasil. Jangan menjanjikan hasil kalau tidak yakin.",
+          "literal": "itu sama yang-sama. «akan mencari» — kamu-menjanjikan proses. «akan-menemukan» — kamu-menjanjikan hasil. jangan menjanjikan hasil, kalau tidak yakin."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Зна́чит по-ру́сски мо́жно быть ве́жливым про́сто вы́брав вид.",
+          "id": "Berarti dalam bahasa Rusia kamu bisa jadi sopan hanya dengan memilih aspek.",
+          "literal": "artinya secara-Rusia boleh menjadi sopan hanya memilih-setelah aspek."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "И мо́жно быть гру́бым то́чно так же. Дава́й я всё-таки позвоню́ пе́рвая.",
+          "id": "Dan bisa jadi kasar dengan cara yang persis sama. Sudahlah, biar saya saja yang menelepon duluan.",
+          "literal": "dan boleh menjadi kasar persis begitu juga. mari saya toh akan-menelepon pertama (fem)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Дава́й. И спаси́бо, что не сказа́ла «попро́буй сам».",
+          "id": "Ayo. Dan terima kasih karena tidak bilang «coba sendiri saja».",
+          "literal": "mari. dan terima-kasih, bahwa tidak berkata-lah «cobalah sendiri»."
+        }
+      ],
+      "notes": [
+        "**Bahasa Rusia punya dua masa depan, dan aspeknya yang menentukan mana yang dipakai.** Aspek tak sempurna membentuknya dengan dua kata: *бу́ду* + infinitif (*бу́ду иска́ть*). Aspek sempurna membentuknya dengan satu kata saja, memakai akhiran yang bentuknya persis akhiran masa kini (*найду́*, *позвоню́*).",
+        "**Karena itu bentuk seperti *прочита́ю* tidak pernah berarti masa kini.** Aspek sempurna tidak punya masa kini, jadi akhiran masa kini yang dipasang padanya otomatis dibaca sebagai masa depan. Ini konsekuensi langsung dari unit 1.",
+        "**Larangan hampir selalu memakai aspek tak sempurna (baris 6 dan 8).** *Не звони́* = jangan menelepon. Kalau kamu memakai aspek sempurna pada larangan, artinya bergeser jadi peringatan agar sesuatu tidak sampai terjadi secara tak sengaja — *смотри́ не упади́*, *не забу́дь*.",
+        "**Permintaan tunggal memakai aspek sempurna.** *Позвони́ в пя́тницу* — sekali, hasil jelas. Kalau kamu memakai tak sempurna untuk permintaan tunggal (*звони́ в пя́тницу*), yang terdengar adalah undangan terbuka: *silakan telepon-telepon saja hari Jumat*, dan dalam banyak konteks itu terdengar kurang serius.",
+        "**Ada satu kekecualian penting yang sering membingungkan:** ajakan sopan untuk memulai sesuatu di tempat justru memakai tak sempurna — *сади́тесь* (silakan duduk), *проходи́те* (silakan masuk), *бери́те* (silakan ambil). Bentuk sempurnanya (*ся́дьте*, *возьми́те*) terdengar seperti perintah tegas, bukan persilakan.",
+        "**Baris 13 memakai деепричастие *вы́брав* (setelah memilih).** Bentuk ini baru dibedah di unit 18; untuk sekarang cukup kenali polanya — ia menggantikan seluruh anak kalimat *после́ того́ как ты вы́брал* dengan satu kata."
+      ],
+      "grammars": [
+        {
+          "title": "Dua masa depan berdampingan",
+          "body": [
+            "Perhatikan bahwa kolom kanan tidak memakai *бу́ду* sama sekali. Inilah sumber kesalahan yang paling sering terdengar dari pelajar: memasang *бу́ду* di depan aspek sempurna. *Бу́ду позвоню́* tidak ada dalam bahasa Rusia."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Несоверше́нный (proses)",
+              "Соверше́нный (hasil)"
+            ],
+            "rows": [
+              [
+                "я",
+                "бу́ду чита́ть",
+                "прочита́ю"
+              ],
+              [
+                "ты",
+                "бу́дешь чита́ть",
+                "прочита́ешь"
+              ],
+              [
+                "он / она́",
+                "бу́дет чита́ть",
+                "прочита́ет"
+              ],
+              [
+                "мы",
+                "бу́дем чита́ть",
+                "прочита́ем"
+              ],
+              [
+                "вы",
+                "бу́дете чита́ть",
+                "прочита́ете"
+              ],
+              [
+                "они́",
+                "бу́дут чита́ть",
+                "прочита́ют"
+              ],
+              [
+                "arti",
+                "akan membaca (sedang, berulang)",
+                "akan selesai membaca"
+              ]
+            ]
+          },
+          "after": [
+            "Pilihan antara keduanya sering merupakan pilihan **janji**. *За́втра я бу́ду рабо́тать над отчётом* menjanjikan bahwa kamu akan menghabiskan waktu untuk itu. *За́втра я сде́лаю отчёт* menjanjikan bahwa laporannya akan jadi. Dalam surat kerja, perbedaan ini bukan tata bahasa — ia komitmen."
+          ]
+        },
+        {
+          "title": "Aspek dalam kalimat perintah",
+          "body": [
+            "Bentuk perintah dibuat dari batang masa kini: *чита́ю → чита́й*, *говорю́ → говори́*, *забу́ду → забу́дь*. Yang menentukan aspek bukan bentuknya, melainkan apa yang kamu maksudkan."
+          ],
+          "table": {
+            "head": [
+              "Maksud",
+              "Aspek",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "permintaan satu kali",
+                "сов.",
+                "Позвони́ мне.",
+                "Telepon saya."
+              ],
+              [
+                "larangan",
+                "несов.",
+                "Не звони́ мне.",
+                "Jangan telepon saya."
+              ],
+              [
+                "peringatan agar tak terjadi",
+                "сов.",
+                "Не забу́дь ключи́.",
+                "Jangan sampai lupa kunci."
+              ],
+              [
+                "persilakan, undangan",
+                "несов.",
+                "Сади́тесь. Бери́те.",
+                "Silakan duduk. Silakan ambil."
+              ],
+              [
+                "nasihat berulang",
+                "несов.",
+                "Чита́й ка́ждый день.",
+                "Bacalah tiap hari."
+              ],
+              [
+                "ajakan bersama",
+                "сов. + дава́й",
+                "Дава́й пойдём.",
+                "Ayo kita pergi."
+              ],
+              [
+                "ajakan berproses",
+                "несов. + дава́й",
+                "Дава́й говори́ть по-ру́сски.",
+                "Ayo bicara bahasa Rusia."
+              ]
+            ]
+          },
+          "after": [
+            "Dua baris terakhir memperlihatkan bahwa *дава́й* sendiri netral; yang menentukan tetap aspek kata kerja sesudahnya. *Дава́й пойдём в кино́* mengajak satu kali; *дава́й ходи́ть в кино́ ка́ждую суббо́ту* mengajak membiasakan.",
+            "Untuk kesopanan, tambahkan *пожа́луйста* atau ubah jadi pertanyaan: *Ты не мог бы позвони́ть?* Bentuk terakhir itu bentuk kondisional yang dibedah di unit 11 — di Rusia ia setara dengan *bisakah kamu…* dalam bahasa Indonesia, dan jauh lebih halus daripada perintah telanjang."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kapan orang Rusia sebenarnya memakai masa depan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ada satu kebiasaan yang perlu dibongkar sejak awal: penutur bahasa Indonesia cenderung memakai *akan* jauh lebih sering daripada kebutuhan bahasa Rusia. Dalam banyak kalimat, orang Rusia justru memakai masa kini atau bahkan tidak memakai kata kerja sama sekali."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situasi",
+            "Yang dipakai orang Rusia",
+            "Bukan"
+          ],
+          "rows": [
+            [
+              "jadwal tetap",
+              "По́езд отправля́ется в семь.",
+              "бу́дет отправля́ться"
+            ],
+            [
+              "rencana yang sudah pasti",
+              "За́втра я е́ду в Москву́.",
+              "бу́ду е́хать"
+            ],
+            [
+              "tawaran spontan",
+              "Я откро́ю окно́?",
+              "бу́ду открыва́ть"
+            ],
+            [
+              "ramalan cuaca",
+              "За́втра бу́дет дождь.",
+              "(ini memang masa depan)"
+            ],
+            [
+              "janji tegas",
+              "Я сде́лаю.",
+              "бу́ду де́лать"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Baris kedua penting untuk perjalanan: kata kerja gerak dalam masa kini rutin dipakai untuk rencana dekat yang sudah pasti, persis seperti bahasa Indonesia *besok saya ke Moskow*. Kata kerja gerak sendiri punya dua unit tersendiri — unit 7 dan 8 — karena mereka memang cukup rumit untuk itu."
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja yang mengubah arti antara dua masa depan"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Несов. (бу́ду …)",
+            "Сов.",
+            "Perbedaannya"
+          ],
+          "rows": [
+            [
+              "бу́ду учи́ть",
+              "вы́учу",
+              "akan belajar / akan hafal"
+            ],
+            [
+              "бу́ду реша́ть",
+              "решу́",
+              "akan mengerjakan soalnya / akan memutuskan"
+            ],
+            [
+              "бу́ду сдава́ть экза́мен",
+              "сдам экза́мен",
+              "akan menempuh ujian / akan lulus ujian"
+            ],
+            [
+              "бу́ду поступа́ть",
+              "поступлю́",
+              "akan mendaftar kuliah / akan diterima"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Pasangan yang menyelamatkan banyak salah paham",
+          "items": [
+            "**сдава́ть экза́мен** = menempuh ujian (mengikutinya). **сдать экза́мен** = lulus ujian.",
+            "Kalimat *Я сдава́л экза́мен три ра́за* berarti kamu mengikutinya tiga kali — dan diam-diam mengakui bahwa dua kali pertama gagal.",
+            "*Я сдал* berarti lulus. Kalau seorang teman Rusia bertanya *сдал?* sesudah ujianmu, ia tidak bertanya apakah kamu hadir."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "знако́мый",
+      "baca": "zna-KO-myy",
+      "id": "kenalan"
+    },
+    {
+      "ru": "кни́жный магази́н",
+      "baca": "KNIZH-nyy ma-ga-ZIN",
+      "id": "toko buku"
+    },
+    {
+      "ru": "иска́ть / найти́",
+      "baca": "is-KAT' / nay-TI",
+      "id": "mencari / menemukan"
+    },
+    {
+      "ru": "узнава́ть / узна́ть",
+      "baca": "uz-na-VAT' / uz-NAT'",
+      "id": "mencari tahu, mengetahui"
+    },
+    {
+      "ru": "сдава́ть / сдать экза́мен",
+      "baca": "zda-VAT' / zdat' ik-ZA-min",
+      "id": "menempuh / lulus ujian"
+    },
+    {
+      "ru": "запре́т",
+      "baca": "za-PRYET",
+      "id": "larangan"
+    },
+    {
+      "ru": "про́сьба",
+      "baca": "PROZ'-ba",
+      "id": "permintaan"
+    },
+    {
+      "ru": "предупрежде́ние",
+      "baca": "pri-du-prizh-DYE-ni-ye",
+      "id": "peringatan"
+    },
+    {
+      "ru": "па́дать / упа́сть",
+      "baca": "PA-dat' / u-PAST'",
+      "id": "jatuh"
+    },
+    {
+      "ru": "обеща́ть / пообеща́ть",
+      "baca": "a-bi-SCHAT' / pa-a-bi-SCHAT'",
+      "id": "berjanji"
+    },
+    {
+      "ru": "уве́рен",
+      "baca": "u-VYE-rin",
+      "id": "yakin"
+    },
+    {
+      "ru": "ве́жливый",
+      "baca": "VYEZH-li-vyy",
+      "id": "sopan"
+    },
+    {
+      "ru": "гру́бый",
+      "baca": "GRU-byy",
+      "id": "kasar"
+    },
+    {
+      "ru": "про́бовать / попро́бовать",
+      "baca": "PRO-ba-vat' / pa-PRO-ba-vat'",
+      "id": "mencoba"
+    },
+    {
+      "ru": "дава́й / дава́йте",
+      "baca": "da-VAY / da-VAY-tye",
+      "id": "ayo (mengajak)"
+    },
+    {
+      "ru": "всё-таки",
+      "baca": "FSYO-ta-ki",
+      "id": "toh, biar bagaimanapun"
+    },
+    {
+      "ru": "сади́ться / сесть",
+      "baca": "sa-DI-tsa / syest'",
+      "id": "duduk"
+    },
+    {
+      "ru": "проходи́ть / пройти́",
+      "baca": "pra-kha-DIT' / pray-TI",
+      "id": "lewat, masuk"
+    },
+    {
+      "ru": "поступа́ть / поступи́ть",
+      "baca": "pas-tu-PAT' / pas-tu-PIT'",
+      "id": "mendaftar / diterima (kuliah)"
+    },
+    {
+      "ru": "реша́ть / реши́ть",
+      "baca": "ri-SHAT' / ri-SHYT'",
+      "id": "mengerjakan soal / memutuskan"
+    },
+    {
+      "ru": "отправля́ться",
+      "baca": "at-prav-LYA-tsa",
+      "id": "berangkat"
+    },
+    {
+      "ru": "пока́",
+      "baca": "pa-KA",
+      "id": "sementara; sampai jumpa"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke masa depan dengan aspek yang diminta.",
+      "items": [
+        "Я чита́л кни́гу. → (proses) ____",
+        "Я прочита́л кни́гу. → (hasil) ____",
+        "Мы де́лали зада́ние. → (proses) ____",
+        "Она́ позвони́ла мне. → (hasil) ____",
+        "Они́ иска́ли кварти́ру. → (proses) ____"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk perintah yang tepat.",
+      "items": [
+        "____ мне за́втра ве́чером! (позвони́, звони́)",
+        "Не ____ мне так по́здно. (позвони́, звони́)",
+        "____, пожа́луйста. (сади́тесь, ся́дьте)",
+        "Не ____ па́спорт! (забыва́й, забу́дь)",
+        "____ ка́ждый день по два́дцать мину́т. (чита́й, прочита́й)"
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "я / ему́ / позвоню́ / ве́чером / сего́дня",
+        "бу́ду / всё / я / ле́то / рабо́ту / иска́ть",
+        "дава́й / в / пойдём / кино́ / за́втра",
+        "не / так / говори́ / со / мной"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Besok saya akan bekerja seharian.",
+        "Besok saya akan menyelesaikan laporannya.",
+        "Jangan menelepon saya saat saya sedang bekerja.",
+        "Telepon saya kalau ada masalah.",
+        "Ayo kita bicara bahasa Rusia tiap hari."
+      ]
+    },
+    {
+      "prompt": "Benar atau salah? Kalau salah, perbaiki.",
+      "items": [
+        "За́втра я бу́ду позвоню́ тебе́.",
+        "Не забу́дь ключи́.",
+        "Я сдава́л экза́мен и о́чень рад, что сдал.",
+        "Дава́й пойдём в теа́тр в суббо́ту."
+      ]
+    }
+  ],
+  "answers": [
+    "Я бу́ду чита́ть кни́гу. — Я прочита́ю кни́гу. — Мы бу́дем де́лать зада́ние. — Она́ позвони́т мне. — Они́ бу́дут иска́ть кварти́ру.",
+    "Позвони́ — звони́ — Сади́тесь — забу́дь — Чита́й",
+    "Я позвоню́ ему́ сего́дня ве́чером. — Я бу́ду иска́ть рабо́ту всё ле́то. — Дава́й пойдём за́втра в кино́. — Не говори́ со мной так.",
+    "За́втра я бу́ду рабо́тать весь день. — За́втра я сде́лаю отчёт. — Не звони́ мне, когда́ я рабо́таю. — Позвони́ мне, е́сли бу́дет пробле́ма. — Дава́й говори́ть по-ру́сски ка́ждый день.",
+    "Salah: За́втра я позвоню́ тебе́. — Benar. — Benar. — Benar."
+  ],
+  "wave": "Tulis lima janji untuk minggu depan: dua dengan aspek tak sempurna (proses yang akan kamu jalani) dan tiga dengan aspek sempurna (hasil yang akan kamu capai). Lalu bacalah keras-keras dan tanyakan pada dirimu sendiri, janji mana yang sebenarnya belum sanggup kamu tepati — kalau ada, turunkan aspeknya jadi tak sempurna. Bahasa Rusia memberimu cara jujur untuk berjanji setengah."
+}

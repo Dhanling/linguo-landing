@@ -1,0 +1,488 @@
+{
+  "title": "Membaca dan selesai membaca",
+  "title_target": "Несоверше́нный и соверше́нный вид",
+  "goal": "Memilih antara две́ формы одного́ глаго́ла berdasarkan apa yang ingin kamu katakan — proses atau hasil — bukan berdasarkan kapan peristiwanya terjadi.",
+  "bekal": [
+    "membedakan **proses** dari **hasil**",
+    "bentuk lampau -л / -ла / -ли",
+    "akusatif untuk sasaran perbuatan",
+    "kata keterangan waktu до́лго, два часа́, вдруг"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Всё воскресе́нье чита́л",
+      "intro": "Дени, mahasiswa Indonesia di Moskow, baru saja melewati akhir pekan yang tidak memuaskan. Ка́тя, teman sekelasnya, bertanya — dan pertanyaannya berubah jadi pelajaran tata bahasa yang tidak diminta.",
+      "lines": [
+        {
+          "speaker": "Ка́тя:",
+          "text": "Ну что, как воскресе́нье? Отдохну́л?",
+          "id": "Nah, bagaimana hari Minggunya? Sudah istirahat?",
+          "literal": "nah apa, bagaimana hari-Minggu? beristirahat-kamu (tuntas)?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Не о́чень. Я весь день чита́л статью́ для университе́та.",
+          "id": "Tidak terlalu. Sepanjang hari saya membaca artikel untuk kampus.",
+          "literal": "tidak sangat. saya seluruh hari membaca (proses) artikel untuk universitas."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Весь день? И прочита́л?",
+          "id": "Sepanjang hari? Dan selesai?",
+          "literal": "seluruh hari? dan selesai-membaca (tuntas)?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Нет, не прочита́л. Дошёл до середи́ны и усну́л.",
+          "id": "Tidak, tidak selesai. Sampai tengah lalu ketiduran.",
+          "literal": "tidak, tidak selesai-membaca. sampai-lah ke tengah dan tertidur-lah."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Быва́ет. А я вчера́ то́же чита́ла э́ту статью́ — и прочита́ла всю за два часа́.",
+          "id": "Biasa. Saya kemarin juga membaca artikel itu — dan selesai semuanya dalam dua jam.",
+          "literal": "terjadi. dan saya kemarin juga membaca (proses) ini artikel — dan selesai-membaca seluruhnya dalam dua jam."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Как? Э́то же три́дцать страни́ц!",
+          "id": "Bagaimana bisa? Itu kan tiga puluh halaman!",
+          "literal": "bagaimana? ini kan tiga-puluh halaman!"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Три́дцать страни́ц по-ру́сски для меня́ — не то же са́мое, что для тебя́.",
+          "id": "Tiga puluh halaman berbahasa Rusia bagi saya bukan hal yang sama seperti bagimu.",
+          "literal": "tiga-puluh halaman secara-Rusia untuk saya — bukan itu sama yang-sama, yang untuk kamu."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ла́дно, справедли́во. Слу́шай, объясни́ мне: чита́л, прочита́л — э́то два ра́зных глаго́ла?",
+          "id": "Baiklah, adil. Dengar, jelaskan padaku: чита́л, прочита́л — itu dua kata kerja berbeda?",
+          "literal": "baiklah, adil. dengar, jelaskan kepada-saya: membaca, selesai-membaca — ini dua berbeda kata-kerja?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Оди́н глаго́л, но два ви́да. «Чита́л» говори́т, чем ты занима́лся. «Прочита́л» говори́т, что получи́лось.",
+          "id": "Satu kata kerja, tapi dua aspek. «Чита́л» memberi tahu kamu sedang sibuk apa. «Прочита́л» memberi tahu apa hasilnya.",
+          "literal": "satu kata-kerja, tapi dua aspek. «membaca» berkata, dengan-apa kamu sibuk-diri. «selesai-membaca» berkata, apa yang jadi."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "То есть «чита́л» — про вре́мя, а «прочита́л» — про результа́т?",
+          "id": "Jadi «чита́л» soal waktu, dan «прочита́л» soal hasil?",
+          "literal": "itu adalah «membaca» — tentang waktu, dan «selesai-membaca» — tentang hasil?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Почти́. Не про вре́мя, а про проце́сс. Мо́жно чита́ть пять мину́т и мо́жно чита́ть пять лет — вид оди́н и тот же.",
+          "id": "Hampir. Bukan soal waktu, tapi soal proses. Kamu bisa чита́ть lima menit dan bisa чита́ть lima tahun — aspeknya tetap sama.",
+          "literal": "hampir. tidak tentang waktu, melainkan tentang proses. boleh membaca lima menit dan boleh membaca lima tahun — aspek satu dan itu sama."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "А е́сли я скажу́: «Я прочита́л статью́ два часа́»?",
+          "id": "Dan kalau saya bilang: «Я прочита́л статью́ два часа́»?",
+          "literal": "dan kalau saya akan-berkata: «saya selesai-membaca artikel dua jam»?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Так не говоря́т. Ты и́ли говори́шь, ско́лько де́лал, и́ли говори́шь, что сде́лал. Вме́сте — нет.",
+          "id": "Begitu tidak dikatakan orang. Kamu boleh menyebut berapa lama kamu mengerjakan, atau menyebut apa yang selesai. Dua-duanya sekaligus — tidak.",
+          "literal": "begitu tidak mereka-berkata. kamu atau berkata, berapa mengerjakan (proses), atau berkata, apa selesai-dikerjakan. bersama — tidak."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Хорошо́. Тогда́ так: вчера́ я писа́л тебе́ сообще́ние три́дцать мину́т и не написа́л.",
+          "id": "Baik. Kalau begitu begini: kemarin saya menulis pesan untukmu selama tiga puluh menit dan tidak jadi mengirimnya.",
+          "literal": "baik. kalau-begitu begini: kemarin saya menulis (proses) kepada-kamu pesan tiga-puluh menit dan tidak selesai-menulis."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Вот э́то уже́ пра́вильно. И, ме́жду про́чим, оби́дно.",
+          "id": "Nah, itu sudah benar. Dan, ngomong-ngomong, menyebalkan juga.",
+          "literal": "nah ini sudah benar. dan, di-antara lainnya, menyakitkan."
+        }
+      ],
+      "notes": [
+        "**Hampir setiap perbuatan dalam bahasa Rusia punya dua kata kerja, bukan satu.** *Чита́ть* dan *прочита́ть* bukan dua kata yang mirip; keduanya adalah satu pasangan aspek (**видова́я па́ра**) yang menerjemahkan satu kata Indonesia *membaca*. Kamus Rusia-Indonesia mencantumkannya berdampingan justru karena arti dasarnya sama.",
+        "**Yang dipilih bukan waktunya, melainkan sudut pandangmu.** Baris 2 dan baris 5 sama-sama tentang kemarin, sama-sama lampau. Yang berbeda: Дени bercerita *apa yang dia lakukan sepanjang hari* (proses), Ка́тя bercerita *bahwa artikelnya habis* (hasil).",
+        "**Aspek tak sempurna (несоверше́нный) tidak berarti gagal.** Ia hanya tidak melaporkan apa-apa tentang selesai atau tidaknya. *Я чита́л статью́* bisa saja berujung habis dibaca — kalimat itu memang tidak membahasnya.",
+        "**Aspek sempurna (соверше́нный) mengunci satu titik.** Karena itu ia tidak bisa dipasangkan dengan keterangan lama waktu seperti *два часа́*, *весь день*, *до́лго* (baris 13). Bandingkan dengan bahasa Indonesia: *Saya selesai membaca artikel itu selama dua jam* juga terdengar aneh.",
+        "**Bentuk *не прочита́л* pada baris 4 punya arti khusus:** bukan sekadar 'tidak membaca', melainkan 'membacanya, tapi tidak sampai selesai'. Sangkalan pada aspek sempurna menyangkal **hasilnya**, bukan perbuatannya. Ini akan dibedah tuntas di unit 2.",
+        "**Kata *же* pada baris 6 (*Э́то же три́дцать страни́ц!*) tidak punya terjemahan.** Ia partikel penekan — kira-kira setara nada suara pada *Itu kan tiga puluh halaman!* Partikel semacam ini dibahas sendiri di unit 20; untuk sekarang cukup kenali bahwa ia tidak menambah arti, ia menambah suara."
+      ],
+      "grammars": [
+        {
+          "title": "Dua aspek — pertanyaan yang dijawab masing-masing",
+          "body": [
+            "Cara paling cepat memilih: tanyakan pada dirimu sendiri, kalimat ini menjawab pertanyaan apa. Kalau jawabannya *sedang apa* atau *berapa lama*, pakai несоверше́нный. Kalau jawabannya *apa yang jadi* atau *lalu apa*, pakai соверше́нный."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Несоверше́нный",
+              "Соверше́нный"
+            ],
+            "rows": [
+              [
+                "menjawab",
+                "Что ты де́лал?",
+                "Что ты сде́лал?"
+              ],
+              [
+                "yang dilaporkan",
+                "proses, kebiasaan, pengulangan",
+                "hasil, satu kali, tuntas"
+              ],
+              [
+                "teman katanya",
+                "до́лго, весь день, ча́сто, обы́чно, иногда́",
+                "вдруг, наконе́ц, сра́зу, уже́, за час"
+              ],
+              [
+                "masa kini",
+                "**ada** — я чита́ю",
+                "**tidak ada** (bentuknya jadi masa depan)"
+              ],
+              [
+                "masa lampau",
+                "я чита́л",
+                "я прочита́л"
+              ],
+              [
+                "masa depan",
+                "я бу́ду чита́ть",
+                "я прочита́ю"
+              ],
+              [
+                "infinitif sesudah нача́ть / ко́нчить",
+                "**wajib** — на́чал чита́ть",
+                "tidak boleh"
+              ]
+            ]
+          },
+          "after": [
+            "Baris kelima yang paling sering mengejutkan: **aspek sempurna tidak punya bentuk masa kini.** Kalau kamu memasang akhiran masa kini padanya, yang keluar justru masa depan — *прочита́ю* berarti *saya akan selesai membaca*. Alasannya masuk akal begitu dipikirkan: sesuatu yang tuntas tidak bisa sedang berlangsung sekarang."
+          ]
+        },
+        {
+          "title": "Bagaimana pasangan aspek dibentuk",
+          "body": [
+            "Tidak ada satu aturan yang menutup semua kasus, tapi empat pola berikut menutup sebagian besar kata kerja yang akan kamu temui di modul ini."
+          ],
+          "table": {
+            "head": [
+              "Pola",
+              "Несов.",
+              "Сов.",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "1. tambah awalan",
+                "чита́ть",
+                "**про**чита́ть",
+                "membaca"
+              ],
+              [
+                "",
+                "писа́ть",
+                "**на**писа́ть",
+                "menulis"
+              ],
+              [
+                "",
+                "де́лать",
+                "**с**де́лать",
+                "mengerjakan"
+              ],
+              [
+                "",
+                "звони́ть",
+                "**по**звони́ть",
+                "menelepon"
+              ],
+              [
+                "2. buang sisipan",
+                "покупа́ть",
+                "купи́ть",
+                "membeli"
+              ],
+              [
+                "",
+                "отвеча́ть",
+                "отве́тить",
+                "menjawab"
+              ],
+              [
+                "",
+                "забыва́ть",
+                "забы́ть",
+                "lupa"
+              ],
+              [
+                "3. ganti akhiran jadi -нуть",
+                "отдыха́ть",
+                "отдохну́ть",
+                "beristirahat"
+              ],
+              [
+                "4. akar berganti total",
+                "говори́ть",
+                "сказа́ть",
+                "berkata"
+              ],
+              [
+                "",
+                "брать",
+                "взять",
+                "mengambil"
+              ]
+            ]
+          },
+          "after": [
+            "Pola pertama terlihat paling ramah, tapi ia menyimpan jebakan yang dibahas di unit 19: awalan tidak selalu netral. *Про*чита́ть memang hanya *чита́ть* yang tuntas, tapi *пере*чита́ть berarti *membaca ulang* dan *вы́*читать berarti *memeriksa naskah*. Awalan yang menuntaskan dan awalan yang mengubah arti kelihatan persis sama dari luar.",
+            "Pola keempat hanya berlaku untuk segelintir kata kerja, tapi kebetulan kata-kata itulah yang paling sering dipakai. Daftar enam puluh pasangan di halaman belakang ditata supaya kamu bisa memeriksanya tanpa kamus."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ketika bahasa Indonesia sebenarnya juga memilih aspek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Aspek terasa asing karena bahasa Indonesia tidak menandainya pada kata kerja. Tapi kita bukan tidak punya alatnya — kita hanya memakai kata bantu, dan sering menghapusnya karena konteks sudah jelas. Menyadari ini membuat pilihan aspek jauh lebih mudah, karena kamu tinggal menyalakan kembali kata yang biasanya kamu hapus."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia (dengan kata bantunya)",
+            "Aspek",
+            "Bahasa Rusia"
+          ],
+          "rows": [
+            [
+              "Kemarin saya **sedang** membaca.",
+              "несов.",
+              "Вчера́ я чита́л."
+            ],
+            [
+              "Kemarin saya **sudah selesai** membaca.",
+              "сов.",
+              "Вчера́ я прочита́л."
+            ],
+            [
+              "Saya **biasa** menulis surat.",
+              "несов.",
+              "Я писа́л пи́сьма."
+            ],
+            [
+              "Saya **akhirnya** menulis suratnya.",
+              "сов.",
+              "Я наконе́ц написа́л письмо́."
+            ],
+            [
+              "Saya **pernah** menonton film itu.",
+              "несов.",
+              "Я смотре́л э́тот фильм."
+            ],
+            [
+              "Saya **menonton habis** film itu.",
+              "сов.",
+              "Я посмотре́л э́тот фильм."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan pasangan terakhir. *Я смотре́л э́тот фильм* adalah jawaban wajar untuk *pernahkah kamu menontonnya?* — yang dilaporkan adalah pengalaman, bukan kelengkapan. *Я посмотре́л э́тот фильм* menjawab pertanyaan lain: *sudah kamu tonton yang saya kirim itu?* Salah memilih di sini tidak membuat kalimatmu tak dimengerti, tapi membuat jawabanmu menjawab pertanyaan yang tidak ditanyakan."
+        },
+        {
+          "type": "kotak",
+          "title": "Satu pertanyaan penolong",
+          "items": [
+            "Sebelum memilih, tanyakan: **kalau saya berhenti di tengah, apakah kalimat ini jadi bohong?**",
+            "*Я чита́л статью́* — berhenti di tengah, kalimatnya tetap benar. Несоверше́нный.",
+            "*Я прочита́л статью́* — berhenti di tengah, kalimatnya jadi bohong. Соверше́нный.",
+            "Pertanyaan ini tidak menutup seratus persen kasus, tapi menutup cukup banyak untuk membuatmu bicara tanpa berhenti berpikir tiap kalimat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "вид",
+      "baca": "vit",
+      "id": "aspek (kata kerja); pemandangan"
+    },
+    {
+      "ru": "несоверше́нный вид",
+      "baca": "ni-sa-vir-SHEN-nyy vit",
+      "id": "aspek tak sempurna (proses)"
+    },
+    {
+      "ru": "соверше́нный вид",
+      "baca": "sa-vir-SHEN-nyy vit",
+      "id": "aspek sempurna (hasil)"
+    },
+    {
+      "ru": "чита́ть / прочита́ть",
+      "baca": "chi-TAT' / pra-chi-TAT'",
+      "id": "membaca / selesai membaca"
+    },
+    {
+      "ru": "писа́ть / написа́ть",
+      "baca": "pi-SAT' / na-pi-SAT'",
+      "id": "menulis / selesai menulis"
+    },
+    {
+      "ru": "де́лать / сде́лать",
+      "baca": "DYE-lat' / SDYE-lat'",
+      "id": "mengerjakan / menyelesaikan"
+    },
+    {
+      "ru": "статья́",
+      "baca": "stat-YA",
+      "id": "artikel"
+    },
+    {
+      "ru": "страни́ца",
+      "baca": "stra-NI-tsa",
+      "id": "halaman"
+    },
+    {
+      "ru": "результа́т",
+      "baca": "ri-zul'-TAT",
+      "id": "hasil"
+    },
+    {
+      "ru": "проце́сс",
+      "baca": "pra-TSES",
+      "id": "proses"
+    },
+    {
+      "ru": "середи́на",
+      "baca": "si-ri-DI-na",
+      "id": "tengah, pertengahan"
+    },
+    {
+      "ru": "усну́ть",
+      "baca": "us-NUT'",
+      "id": "tertidur"
+    },
+    {
+      "ru": "отдыха́ть / отдохну́ть",
+      "baca": "at-dy-KHAT' / at-dakh-NUT'",
+      "id": "beristirahat"
+    },
+    {
+      "ru": "занима́ться",
+      "baca": "za-ni-MA-tsa",
+      "id": "menyibukkan diri dengan, belajar"
+    },
+    {
+      "ru": "получи́ться",
+      "baca": "pa-lu-CHI-tsa",
+      "id": "jadi, berhasil"
+    },
+    {
+      "ru": "объясни́ть",
+      "baca": "ab-yis-NIT'",
+      "id": "menjelaskan"
+    },
+    {
+      "ru": "справедли́во",
+      "baca": "spra-vid-LI-va",
+      "id": "adil, memang benar"
+    },
+    {
+      "ru": "сообще́ние",
+      "baca": "sa-ap-SCHE-ni-ye",
+      "id": "pesan"
+    },
+    {
+      "ru": "ме́жду про́чим",
+      "baca": "MYEZH-du PRO-chim",
+      "id": "ngomong-ngomong"
+    },
+    {
+      "ru": "оби́дно",
+      "baca": "a-BID-na",
+      "id": "menyakitkan, menyebalkan"
+    },
+    {
+      "ru": "наконе́ц",
+      "baca": "na-ka-NYETS",
+      "id": "akhirnya"
+    },
+    {
+      "ru": "вдруг",
+      "baca": "vdruk",
+      "id": "tiba-tiba"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih aspek yang tepat sesuai keterangan waktunya.",
+      "items": [
+        "Вчера́ я ____ (чита́ть, прочита́ть) весь ве́чер.",
+        "Наконе́ц я ____ (писа́ть, написа́ть) э́то письмо́.",
+        "Он до́лго ____ (де́лать, сде́лать) дома́шнее зада́ние.",
+        "Она́ ____ (звони́ть, позвони́ть) мне два ра́за и не дозвони́лась.",
+        "За полчаса́ мы ____ (де́лать, сде́лать) всё.",
+        "Ка́ждое у́тро я ____ (чита́ть, прочита́ть) но́вости."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Rusia, perhatikan aspeknya.",
+      "items": [
+        "Kemarin saya menulis surat sepanjang malam.",
+        "Akhirnya dia menjelaskan semuanya.",
+        "Saya sudah selesai membaca artikelmu.",
+        "Kami biasa beristirahat di kampung halaman.",
+        "Dia menelepon saya tiba-tiba."
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "я / статью́ / чита́л / два / часа́",
+        "она́ / прочита́ла / всю / кни́гу / за / неде́лю",
+        "мы / до́лго / э́ту / де́лали / рабо́ту",
+        "он / не / зада́ние / сде́лал / ещё"
+      ]
+    },
+    {
+      "prompt": "Pasangkan aspek tak sempurna dengan pasangan sempurnanya.",
+      "items": [
+        "покупа́ть → ____",
+        "говори́ть → ____",
+        "брать → ____",
+        "отвеча́ть → ____",
+        "забыва́ть → ____"
+      ]
+    },
+    {
+      "prompt": "Benar atau salah? Kalau salah, perbaiki.",
+      "items": [
+        "Я прочита́л статью́ два часа́.",
+        "Вчера́ я весь день писа́л отчёт.",
+        "Она́ сде́лала э́то до́лго.",
+        "Мы наконе́ц по́няли пра́вило."
+      ]
+    }
+  ],
+  "answers": [
+    "чита́л — написа́л — де́лал — звони́ла — сде́лали — чита́ю",
+    "Вчера́ я писа́л письмо́ весь ве́чер. — Наконе́ц он объясни́л всё. — Я прочита́л твою́ статью́. — Мы обы́чно отдыха́ли в дере́вне. — Он вдруг позвони́л мне.",
+    "Я чита́л статью́ два часа́. — Она́ прочита́ла всю кни́гу за неде́лю. — Мы до́лго де́лали э́ту рабо́ту. — Он ещё не сде́лал зада́ние.",
+    "купи́ть — сказа́ть — взять — отве́тить — забы́ть",
+    "Salah: Я чита́л статью́ два часа́. — Benar. — Salah: Она́ до́лго де́лала э́то. — Benar."
+  ],
+  "wave": "Sebelum masuk unit 2, ceritakan hari kemarinmu dalam delapan kalimat lampau — empat kalimat tentang apa yang kamu kerjakan (несоверше́нный) dan empat tentang apa yang berhasil kamu selesaikan (соверше́нный). Ucapkan keras-keras, lalu tandai sendiri kalimat mana yang jadi bohong kalau kamu berhenti di tengah."
+}

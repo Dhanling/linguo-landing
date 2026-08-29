@@ -1,0 +1,493 @@
+{
+  "title": "Setiap Jumat, dan sekali itu saja",
+  "title_target": "Вид в проше́дшем вре́мени",
+  "goal": "Memakai aspek untuk membedakan kebiasaan, pengulangan, dan peristiwa tunggal di masa lampau — serta menyangkal dengan aspek yang tepat.",
+  "bekal": [
+    "dua aspek dari unit 1",
+    "kata keterangan pengulangan ча́сто, ре́дко, обы́чно",
+    "sangkalan не + kata kerja",
+    "akusatif waktu ка́ждый день, ка́ждую неде́лю"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Ты же говори́л, что не пьёшь ко́фе",
+      "intro": "Ка́тя menemukan Дени di kafe dengan dua cangkir kopi kosong di meja. Percakapannya berkembang jadi ujian kecil tentang perbedaan antara 'pernah' dan 'sekali itu'.",
+      "lines": [
+        {
+          "speaker": "Ка́тя:",
+          "text": "Ты же говори́л, что не пьёшь ко́фе.",
+          "id": "Kamu kan bilang kamu tidak minum kopi.",
+          "literal": "kamu kan berkata (proses), bahwa tidak minum kopi."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Я говори́л, что ра́ньше не пил. А сего́дня вы́пил две ча́шки.",
+          "id": "Saya bilang dulu saya tidak minum. Tapi hari ini saya sudah minum dua cangkir.",
+          "literal": "saya berkata (proses), bahwa dulu tidak minum (proses). dan hari-ini minum-habis dua cangkir."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Почему́ вдруг?",
+          "id": "Kenapa tiba-tiba?",
+          "literal": "kenapa tiba-tiba?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Всю ночь писа́л рефера́т. В четы́ре утра́ по́нял, что не успе́ю.",
+          "id": "Semalaman saya menulis makalah. Jam empat pagi saya sadar saya tidak akan sempat.",
+          "literal": "seluruh malam menulis (proses) makalah. di empat pagi mengerti-lah, bahwa tidak akan-sempat."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "И как, написа́л?",
+          "id": "Lalu bagaimana, selesai?",
+          "literal": "dan bagaimana, selesai-menulis?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Написа́л. В семь. Пото́м три ра́за перечи́тывал и два ра́за всё переде́лывал.",
+          "id": "Selesai. Jam tujuh. Lalu saya baca ulang tiga kali dan saya perbaiki semuanya dua kali.",
+          "literal": "selesai-menulis. di tujuh. lalu tiga kali membaca-ulang (proses) dan dua kali semua mengerjakan-ulang (proses)."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Стоп. Три ра́за перечи́тывал — почему́ не «перечита́л»?",
+          "id": "Berhenti. Tiga kali перечи́тывал — kenapa bukan «перечита́л»?",
+          "literal": "stop. tiga kali membaca-ulang (proses) — kenapa tidak «membaca-ulang (tuntas)»?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Потому́ что три ра́за. Э́то повторе́ние, зна́чит несоверше́нный.",
+          "id": "Karena tiga kali. Itu pengulangan, jadi aspek tak sempurna.",
+          "literal": "karena bahwa tiga kali. ini pengulangan, artinya tak-sempurna."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Пра́вильно. Ты уже́ понима́ешь лу́чше, чем я в пе́рвый год.",
+          "id": "Benar. Kamu sudah lebih mengerti daripada saya di tahun pertama.",
+          "literal": "benar. kamu sudah mengerti (proses) lebih-baik, daripada saya di pertama tahun."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "А е́сли я скажу́: «Я не чита́л твоё сообще́ние» и «Я не прочита́л твоё сообще́ние»?",
+          "id": "Dan kalau saya bilang: «Я не чита́л твоё сообще́ние» dan «Я не прочита́л твоё сообще́ние»?",
+          "literal": "dan kalau saya akan-berkata: «saya tidak membaca (proses) punya-kamu pesan» dan «saya tidak selesai-membaca punya-kamu pesan»?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Пе́рвое — ты его́ вообще́ не открыва́л. Второ́е — откры́л, на́чал, но не до конца́.",
+          "id": "Yang pertama — kamu sama sekali tidak membukanya. Yang kedua — kamu buka, mulai, tapi tidak sampai habis.",
+          "literal": "pertama — kamu ia sama-sekali tidak membuka (proses). kedua — membuka-lah, memulai-lah, tapi tidak sampai ujung."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ого́. Зна́чит вчера́ я вы́брал не тот вид и оби́дел тебя́ два ра́за.",
+          "id": "Wah. Berarti kemarin saya memilih aspek yang salah dan menyinggungmu dua kali.",
+          "literal": "oh. artinya kemarin saya memilih-lah bukan itu aspek dan menyinggung-lah kamu dua kali."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Три. Но кто счита́ет.",
+          "id": "Tiga. Tapi siapa juga yang menghitung.",
+          "literal": "tiga. tapi siapa menghitung (proses)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ты, очеви́дно. Ла́дно, я куплю́ тебе́ ко́фе.",
+          "id": "Kamu, jelas. Baiklah, saya belikan kamu kopi.",
+          "literal": "kamu, jelas. baiklah, saya akan-membeli kepada-kamu kopi."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Вот э́то соверше́нный вид в лу́чшем ви́де.",
+          "id": "Nah, itu aspek sempurna dalam wujud terbaiknya.",
+          "literal": "nah ini sempurna aspek di terbaik wujud."
+        }
+      ],
+      "notes": [
+        "**Pengulangan selalu memilih aspek tak sempurna, berapa pun jumlahnya.** *Три ра́за перечи́тывал* (baris 6) — meskipun tiap bacaan itu sendiri tuntas, yang dilaporkan adalah *bahwa itu terjadi berkali-kali*, dan pengulangan adalah pola, bukan titik. Ini sering terasa terbalik bagi penutur Indonesia, yang justru merasa 'tiga kali selesai' lebih tuntas.",
+        "**Kekecualiannya: kalau jumlahnya membentuk satu paket kerja yang selesai, aspek sempurna kembali dipakai.** *Я перечита́л статью́ три ра́за и по́нял* menekankan hasil akhirnya. Perbedaan ini halus dan tidak perlu dikuasai sekarang; yang perlu kamu kuasai adalah bawaannya, yaitu aspek tak sempurna.",
+        "**Sangkalan membelah artinya (baris 11).** *Не чита́л* = perbuatannya tidak pernah terjadi. *Не прочита́л* = perbuatannya terjadi tapi hasilnya tidak tercapai. Bahasa Indonesia membedakannya dengan *tidak membaca* lawan *belum selesai membaca*, tapi kita sering membiarkan konteks yang mengurusnya.",
+        "**Karena itu, untuk menyangkal secara netral, pakai aspek tak sempurna.** *Я не звони́л* = saya tidak menelepon. *Я не позвони́л* langsung terdengar seperti pengakuan bersalah: saya seharusnya menelepon dan gagal. Pilihan ini bukan tata bahasa, melainkan nada.",
+        "**Baris 2 memuat dua aspek berturut-turut yang sengaja bertabrakan:** *ра́ньше не пил* (kebiasaan lama, tak sempurna) lalu *сего́дня вы́пил* (satu kali, sempurna). Kalimat semacam ini adalah pola bercerita paling khas bahasa Rusia: latar dulu, lalu peristiwanya.",
+        "**Kata *же* pada baris 1 mengubah tuduhan jadi keheranan.** Tanpa *же*, *Ты говори́л…* berbunyi seperti laporan datar; dengan *же*, ia berbunyi seperti *kamu kan bilang…* — nada yang persis kita pakai dalam bahasa Indonesia dengan partikel *kan*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata keterangan yang menentukan aspeknya",
+          "body": [
+            "Cara tercepat untuk tidak salah pilih: hafalkan teman katanya. Kata keterangan berikut hampir selalu menyeret aspek tertentu bersamanya, dan mengenalinya lebih cepat daripada menganalisis kalimatnya."
+          ],
+          "table": {
+            "head": [
+              "Menyeret несоверше́нный",
+              "",
+              "Menyeret соверше́нный",
+              ""
+            ],
+            "rows": [
+              [
+                "обы́чно",
+                "biasanya",
+                "вдруг",
+                "tiba-tiba"
+              ],
+              [
+                "ча́сто",
+                "sering",
+                "наконе́ц",
+                "akhirnya"
+              ],
+              [
+                "ре́дко",
+                "jarang",
+                "сра́зу",
+                "langsung"
+              ],
+              [
+                "иногда́",
+                "kadang-kadang",
+                "уже́",
+                "sudah"
+              ],
+              [
+                "всегда́",
+                "selalu",
+                "ещё не",
+                "belum"
+              ],
+              [
+                "ка́ждый день",
+                "tiap hari",
+                "одна́жды",
+                "suatu kali"
+              ],
+              [
+                "до́лго",
+                "lama",
+                "за час",
+                "dalam satu jam"
+              ],
+              [
+                "весь день",
+                "seharian",
+                "в оди́н моме́нт",
+                "dalam sekejap"
+              ],
+              [
+                "ра́ньше",
+                "dulu",
+                "то́лько что",
+                "baru saja"
+              ],
+              [
+                "не́сколько раз",
+                "beberapa kali",
+                "в конце́ концо́в",
+                "pada akhirnya"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan pasangan *до́лго* dan *за час*. Keduanya berbicara tentang lama waktu, tapi *до́лго* mengukur **prosesnya** (tak sempurna) sedangkan *за час* mengukur **waktu yang dibutuhkan untuk menuntaskan** (sempurna). *Я до́лго де́лал* lawan *Я сде́лал за час*. Salah menukar keduanya adalah kesalahan aspek yang paling sering terdengar dari pelajar B1."
+          ]
+        },
+        {
+          "title": "Rangkaian peristiwa: cara bahasa Rusia bercerita",
+          "body": [
+            "Cerita dalam bahasa Rusia hampir selalu memakai pola yang sama: latar dipasang dengan aspek tak sempurna, lalu peristiwanya dijatuhkan satu per satu dengan aspek sempurna. Menguasai pola ini sekaligus menyelesaikan setengah dari kemampuan bercerita di B1."
+          ],
+          "table": {
+            "head": [
+              "Bagian cerita",
+              "Aspek",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "latar tempat & keadaan",
+                "несов.",
+                "Бы́ло у́тро. Шёл дождь. Я сиде́л до́ма."
+              ],
+              [
+                "kebiasaan sebelum kejadian",
+                "несов.",
+                "Я обы́чно рабо́тал до восьми́."
+              ],
+              [
+                "peristiwa pertama",
+                "сов.",
+                "Вдруг зазвони́л телефо́н."
+              ],
+              [
+                "peristiwa berikutnya",
+                "сов.",
+                "Я встал, взял телефо́н и отве́тил."
+              ],
+              [
+                "yang berlangsung saat itu",
+                "несов.",
+                "Она́ пла́кала и что́-то говори́ла."
+              ],
+              [
+                "akibat akhir",
+                "сов.",
+                "Я по́нял, что случи́лось."
+              ]
+            ]
+          },
+          "after": [
+            "Tiga kata kerja berturut-turut pada baris keempat — *встал, взял, отве́тил* — semuanya sempurna, dan itulah yang membuat kalimatnya bergerak maju. Kalau kamu menggantinya dengan tak sempurna (*встава́л, брал, отвеча́л*), ceritanya berhenti bergerak dan berubah jadi gambaran kebiasaan: *saya biasa bangun, mengambil telepon, dan menjawab*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kata kerja yang hanya punya satu aspek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tidak semua kata kerja punya pasangan. Sebagian hanya ada dalam aspek tak sempurna karena artinya memang tidak bisa tuntas; sebagian kecil hanya ada dalam aspek sempurna. Mengetahui daftar pendek ini menghemat banyak keraguan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Hanya несоверше́нный",
+            "Arti",
+            "Kenapa"
+          ],
+          "rows": [
+            [
+              "быть",
+              "ada, menjadi",
+              "keberadaan tidak punya titik selesai"
+            ],
+            [
+              "име́ть",
+              "memiliki",
+              "begitu juga kepemilikan"
+            ],
+            [
+              "зна́ть",
+              "tahu",
+              "keadaan, bukan perbuatan"
+            ],
+            [
+              "люби́ть",
+              "mencintai",
+              "keadaan"
+            ],
+            [
+              "стоя́ть, лежа́ть, сиде́ть",
+              "berdiri, berbaring, duduk (posisi)",
+              "posisi bertahan, tidak tuntas"
+            ],
+            [
+              "зави́сеть",
+              "bergantung",
+              "keadaan"
+            ],
+            [
+              "ждать",
+              "menunggu",
+              "punya *подожда́ть*, tapi artinya 'menunggu sebentar'"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kelompok kebalikannya jauh lebih kecil, dan hampir semuanya berarti perubahan mendadak: *очути́ться* (mendapati diri berada), *хлы́нуть* (menyembur), *грянуть* (menggelegar). Kamu tidak akan sering membutuhkannya di B1, tapi kamu akan bertemu mereka dalam bacaan."
+        },
+        {
+          "type": "sub",
+          "text": "Dua kata kerja yang tidak berubah bentuk sama sekali"
+        },
+        {
+          "type": "p",
+          "text": "*Испо́льзовать* (memakai), *иссле́довать* (meneliti), dan sekelompok kecil kata pinjaman lain adalah **двувидовы́е** — satu bentuk dipakai untuk dua aspek sekaligus, dan hanya konteks yang menentukan artinya. *Я испо́льзовал э́ту програ́мму* bisa berarti *saya biasa memakainya* atau *saya sudah memakainya*. Bahasa Rusia, untuk sekali ini, berperilaku seperti bahasa Indonesia."
+        },
+        {
+          "type": "kotak",
+          "title": "Jebakan быть",
+          "items": [
+            "*Быть* tidak punya bentuk masa kini. *Он врач* — tidak ada kata kerjanya sama sekali.",
+            "Di masa lampau ia berbunyi *был / была́ / бы́ло / бы́ли*, dan tekanannya berpindah pada bentuk feminin: **была́**, bukan *бы́ла*.",
+            "Di masa depan ia berbunyi *бу́ду / бу́дешь / бу́дет / бу́дем / бу́дете / бу́дут*, dan bentuk inilah yang dipakai untuk membangun seluruh masa depan tak sempurna di unit 3."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "пить / вы́пить",
+      "baca": "pit' / VY-pit'",
+      "id": "minum / meminum habis"
+    },
+    {
+      "ru": "ча́шка",
+      "baca": "CHASH-ka",
+      "id": "cangkir"
+    },
+    {
+      "ru": "рефера́т",
+      "baca": "ri-fi-RAT",
+      "id": "makalah"
+    },
+    {
+      "ru": "успе́ть",
+      "baca": "us-PYET'",
+      "id": "sempat, keburu"
+    },
+    {
+      "ru": "перечи́тывать / перечита́ть",
+      "baca": "pi-ri-CHI-ty-vat' / pi-ri-chi-TAT'",
+      "id": "membaca ulang"
+    },
+    {
+      "ru": "переде́лывать / переде́лать",
+      "baca": "pi-ri-DYE-ly-vat' / pi-ri-DYE-lat'",
+      "id": "mengerjakan ulang"
+    },
+    {
+      "ru": "повторе́ние",
+      "baca": "paf-ta-RYE-ni-ye",
+      "id": "pengulangan"
+    },
+    {
+      "ru": "открыва́ть / откры́ть",
+      "baca": "at-kry-VAT' / at-KRYT'",
+      "id": "membuka"
+    },
+    {
+      "ru": "до конца́",
+      "baca": "da kan-TSA",
+      "id": "sampai habis, sampai ujung"
+    },
+    {
+      "ru": "выбира́ть / вы́брать",
+      "baca": "vy-bi-RAT' / VY-brat'",
+      "id": "memilih"
+    },
+    {
+      "ru": "обижа́ть / оби́деть",
+      "baca": "a-bi-ZHAT' / a-BI-dit'",
+      "id": "menyinggung"
+    },
+    {
+      "ru": "счита́ть",
+      "baca": "schi-TAT'",
+      "id": "menghitung; menganggap"
+    },
+    {
+      "ru": "очеви́дно",
+      "baca": "a-chi-VID-na",
+      "id": "jelas, terang-terangan"
+    },
+    {
+      "ru": "обы́чно",
+      "baca": "a-BYCH-na",
+      "id": "biasanya"
+    },
+    {
+      "ru": "ре́дко",
+      "baca": "RYET-ka",
+      "id": "jarang"
+    },
+    {
+      "ru": "иногда́",
+      "baca": "i-nag-DA",
+      "id": "kadang-kadang"
+    },
+    {
+      "ru": "одна́жды",
+      "baca": "ad-NAZH-dy",
+      "id": "suatu kali"
+    },
+    {
+      "ru": "то́лько что",
+      "baca": "TOL'-ka shto",
+      "id": "baru saja"
+    },
+    {
+      "ru": "случа́ться / случи́ться",
+      "baca": "slu-CHA-tsa / slu-CHI-tsa",
+      "id": "terjadi"
+    },
+    {
+      "ru": "зави́сеть",
+      "baca": "za-VI-sit'",
+      "id": "bergantung"
+    },
+    {
+      "ru": "испо́льзовать",
+      "baca": "is-POL'-za-vat'",
+      "id": "memakai (dua aspek)"
+    },
+    {
+      "ru": "в конце́ концо́в",
+      "baca": "f kan-TSE kan-TSOF",
+      "id": "pada akhirnya"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih aspek yang tepat.",
+      "items": [
+        "Ра́ньше я ча́сто ____ (звони́ть, позвони́ть) роди́телям.",
+        "Вчера́ я наконе́ц ____ (звони́ть, позвони́ть) им.",
+        "Она́ два ра́за ____ (переде́лывать, переде́лать) э́ту рабо́ту.",
+        "Он вдруг ____ (встава́ть, встать) и ____ (уходи́ть, уйти́).",
+        "Ка́ждое ле́то мы ____ (е́здить, пое́хать) на мо́ре."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan, perhatikan arti sangkalannya.",
+      "items": [
+        "Saya tidak membaca pesanmu (sama sekali tidak membukanya).",
+        "Saya belum selesai membaca pesanmu.",
+        "Dia tidak menelepon saya kemarin.",
+        "Dulu saya tidak minum kopi.",
+        "Kami belum menyelesaikan pekerjaannya."
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "бы́ло / у́тро / шёл / и / дождь",
+        "вдруг / телефо́н / зазвони́л",
+        "я / взял / встал / и / отве́тил",
+        "она́ / что́-то / пла́кала / и / говори́ла"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata keterangan yang cocok dengan aspeknya.",
+      "items": [
+        "____ я де́лал э́ту рабо́ту. (lama)",
+        "Я сде́лал э́то ____. (dalam satu jam)",
+        "____ он не отвеча́л на пи́сьма. (dulu)",
+        "Она́ ____ поняла́, в чём де́ло. (akhirnya)",
+        "Мы ____ хо́дим в кино́. (jarang)"
+      ]
+    },
+    {
+      "prompt": "Benar atau salah? Kalau salah, perbaiki.",
+      "items": [
+        "Ка́ждый день я прочита́л газе́ту.",
+        "Он до́лго объясня́л, но я не по́нял.",
+        "Вдруг она́ встава́ла и уходи́ла.",
+        "Я никогда́ не был в Москве́."
+      ]
+    }
+  ],
+  "answers": [
+    "звони́л — позвони́л — переде́лывала — встал, ушёл — е́здили",
+    "Я не чита́л твоё сообще́ние. — Я не прочита́л твоё сообще́ние. — Он не звони́л мне вчера́. — Ра́ньше я не пил ко́фе. — Мы ещё не сде́лали рабо́ту.",
+    "Бы́ло у́тро и шёл дождь. — Вдруг зазвони́л телефо́н. — Я встал, взял и отве́тил. — Она́ пла́кала и что́-то говори́ла.",
+    "До́лго — за час — Ра́ньше — наконе́ц — ре́дко",
+    "Salah: Ка́ждый день я чита́л газе́ту. — Benar. — Salah: Вдруг она́ вста́ла и ушла́. — Benar."
+  ],
+  "wave": "Ceritakan satu malam yang berantakan — begadang, ketinggalan kereta, listrik mati — dalam sepuluh kalimat. Mulailah dengan dua kalimat latar beraspek tak sempurna (*Бы́ло по́здно. Я рабо́тал.*), lalu jatuhkan peristiwanya berturut-turut dengan aspek sempurna. Kalau ceritamu terasa berhenti bergerak, periksa: kemungkinan besar ada aspek sempurna yang tanpa sadar kamu ganti jadi tak sempurna."
+}

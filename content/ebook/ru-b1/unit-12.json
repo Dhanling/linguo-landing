@@ -1,0 +1,655 @@
+{
+  "title": "Dua jam, lima jam, setengah sembilan",
+  "title_target": "Числи́тельные и паде́ж",
+  "goal": "Memakai angka tanpa tersandung kasus: jam, tanggal, umur, harga, ukuran, dan angka yang ikut berubah bentuk.",
+  "bekal": [
+    "genitif tunggal & jamak dari unit 4",
+    "datif untuk umur dari unit 5",
+    "preposisional untuk bulan",
+    "angka 1–1000"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Во ско́лько и ско́лько",
+      "intro": "Дени dan Ка́тя mengatur jadwal wawancara magang. Dalam lima belas baris, angka muncul dua puluh kali — dan hampir setiap kali menyeret kasus yang berbeda.",
+      "lines": [
+        {
+          "speaker": "Ка́тя:",
+          "text": "Они́ отве́тили. Собесе́дование в четве́рг, в полови́не деся́того.",
+          "id": "Mereka sudah menjawab. Wawancaranya hari Kamis, jam setengah sepuluh.",
+          "literal": "mereka menjawab-lah. wawancara pada Kamis, pada setengah (prep.) kesepuluh (gen.)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Полови́на деся́того — э́то де́вять три́дцать?",
+          "id": "Полови́на деся́того — itu jam sembilan tiga puluh?",
+          "literal": "setengah kesepuluh — ini sembilan tiga-puluh?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Да. Ру́сские счита́ют к сле́дующему ча́су, а не от про́шлого.",
+          "id": "Ya. Orang Rusia menghitung ke jam berikutnya, bukan dari jam yang lewat.",
+          "literal": "ya. Rusia-Rusia menghitung ke berikut (dat.) jam (dat.), dan tidak dari lalu (gen.)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Э́то как в индонези́йском. У нас то́же говоря́т «setengah sembilan» — во́семь три́дцать.",
+          "id": "Itu seperti dalam bahasa Indonesia. Kami juga bilang «setengah sembilan» — jam delapan tiga puluh.",
+          "literal": "ini seperti di Indonesia (prep.). di kami juga mereka-berkata «setengah sembilan» — delapan tiga-puluh."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Пра́вда? Зна́чит тебе́ повезло́. Для англича́н э́то ад.",
+          "id": "Serius? Berarti kamu beruntung. Bagi orang Inggris itu neraka.",
+          "literal": "kebenaran? artinya kepada-kamu beruntung-lah. untuk Inggris-Inggris (gen.) ini neraka."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ско́лько дли́тся собесе́дование?",
+          "id": "Wawancaranya berapa lama?",
+          "literal": "berapa berlangsung wawancara?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Обы́чно со́рок мину́т. Пе́рвые два́дцать мину́т — вопро́сы, пото́м два́дцать пять — зада́ние.",
+          "id": "Biasanya empat puluh menit. Dua puluh menit pertama pertanyaan, lalu dua puluh lima menit tugas.",
+          "literal": "biasanya empat-puluh menit (gen. jamak). pertama dua-puluh menit — pertanyaan-pertanyaan, lalu dua-puluh lima — tugas."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Со́рок и́ли со́рок пять? Ты сказа́ла два ра́зных числа́.",
+          "id": "Empat puluh atau empat puluh lima? Kamu menyebut dua angka berbeda.",
+          "literal": "empat-puluh atau empat-puluh lima? kamu berkata-lah dua berbeda (gen.) angka (gen.)."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Ты уже́ счита́ешь как ру́сский бухга́лтер. Хоро́ший знак.",
+          "id": "Kamu sudah berhitung seperti akuntan Rusia. Pertanda bagus.",
+          "literal": "kamu sudah menghitung seperti Rusia akuntan. baik tanda."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ско́лько мне сто́ит дое́хать туда́?",
+          "id": "Berapa biaya saya untuk sampai ke sana?",
+          "literal": "berapa kepada-saya berharga sampai-berkendara ke-sana?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Три́дцать во́семь рубле́й на метро́. И́ли о́коло трёхсот на такси́.",
+          "id": "Tiga puluh delapan rubel naik metro. Atau sekitar tiga ratus naik taksi.",
+          "literal": "tiga-puluh delapan rubel-rubel (gen. jamak) dengan metro. atau sekitar tiga-ratus (gen.) dengan taksi."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Три́дцать во́семь рубле́й, но два́дцать оди́н рубль. Опя́ть?",
+          "id": "Tiga puluh delapan рубле́й, tapi dua puluh satu рубль. Lagi?",
+          "literal": "tiga-puluh delapan rubel-rubel, tapi dua-puluh satu rubel. lagi?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Опя́ть. Смо́трят на после́днюю ци́фру, не на всё число́.",
+          "id": "Lagi. Yang dilihat angka terakhirnya, bukan seluruh bilangannya.",
+          "literal": "mereka-melihat pada terakhir (akus.) angka, tidak pada seluruh bilangan."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Хорошо́. Мне два́дцать три го́да, я живу́ здесь два го́да, и у меня́ пять дней на подгото́вку.",
+          "id": "Baik. Umur saya dua puluh tiga tahun, saya tinggal di sini dua tahun, dan saya punya lima hari untuk persiapan.",
+          "literal": "baik. kepada-saya dua-puluh tiga tahun (gen. tunggal), saya tinggal di-sini dua tahun, dan di-saya lima hari-hari (gen. jamak) untuk persiapan."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Три пра́вильных фо́рмы подря́д. Мо́жешь идти́ на собесе́дование хоть за́втра.",
+          "id": "Tiga bentuk benar berturut-turut. Kamu boleh wawancara besok pun.",
+          "literal": "tiga benar (gen.) bentuk (gen.) berturut-turut. kamu-bisa pergi ke wawancara bahkan besok."
+        }
+      ],
+      "notes": [
+        "**Menyebut jam setengah dalam bahasa Rusia memakai jam berikutnya (baris 1–4)** — *полови́на деся́того* harfiahnya *setengah dari yang kesepuluh*, yaitu 09.30. Penutur Indonesia mendapat keuntungan tak terduga di sini: *setengah sembilan* kita juga berarti 08.30, sistem yang sama persis.",
+        "**Bentuk *в полови́не деся́того* memakai preposisional untuk *полови́на* dan genitif untuk jamnya.** Jamnya ditulis sebagai bilangan urut (*деся́того*, kesepuluh), bukan bilangan biasa.",
+        "**Yang menentukan bentuk kata benda sesudah angka adalah digit terakhirnya** (baris 13). *Два́дцать оди́н рубль* (nominatif tunggal), *два́дцать два рубля́* (genitif tunggal), *два́дцать пять рубле́й* (genitif jamak).",
+        "**Angka 11–14 melanggar aturan itu dan selalu memakai genitif jamak:** *оди́ннадцать рубле́й*, *двена́дцать часо́в*, *трина́дцать лет*. Alasannya sejarah: kata-kata itu dulunya bukan angka satuan melainkan gabungan *оди́н на де́сять* (satu di atas sepuluh).",
+        "**Angka sendiri bisa berubah bentuk (baris 11).** *О́коло трёхсот* — *три́ста* dalam genitif. Di B1 kamu tidak perlu menghafal seluruh deklinasi angka, tapi kamu perlu mengenalinya waktu membaca, dan perlu menguasai beberapa yang sering: *двух, трёх, четырёх, пяти́, десяти́, ста, двухсо́т*.",
+        "**Kata *раз* (kali) punya genitif jamak yang identik dengan nominatif tunggal:** *оди́н раз, два ра́за, пять раз*. Ia adalah salah satu dari segelintir kata yang berakhiran kosong padahal maskulin."
+      ],
+      "grammars": [
+        {
+          "title": "Angka dan bentuk kata benda sesudahnya",
+          "body": [
+            "Sistem ini terlihat rumit dari luar, tapi ia sepenuhnya ditentukan oleh satu digit. Hafalkan rangkaian tiga kata untuk satu kata benda, dan sisanya mengikuti."
+          ],
+          "table": {
+            "head": [
+              "Digit terakhir",
+              "Bentuk kata benda",
+              "час",
+              "год",
+              "рубль",
+              "мину́та"
+            ],
+            "rows": [
+              [
+                "1, 21, 31, 101",
+                "nominatif tunggal",
+                "час",
+                "год",
+                "рубль",
+                "мину́та"
+              ],
+              [
+                "2, 3, 4, 22–24",
+                "genitif tunggal",
+                "часа́",
+                "го́да",
+                "рубля́",
+                "мину́ты"
+              ],
+              [
+                "5–20, 25–30",
+                "genitif jamak",
+                "часо́в",
+                "лет",
+                "рубле́й",
+                "мину́т"
+              ],
+              [
+                "11–14 (selalu)",
+                "genitif jamak",
+                "часо́в",
+                "лет",
+                "рубле́й",
+                "мину́т"
+              ],
+              [
+                "0 dan pecahan",
+                "genitif jamak",
+                "часо́в",
+                "лет",
+                "рубле́й",
+                "мину́т"
+              ],
+              [
+                "мно́го / ма́ло / ско́лько",
+                "genitif jamak",
+                "часо́в",
+                "лет",
+                "рубле́й",
+                "мину́т"
+              ]
+            ]
+          },
+          "after": [
+            "Kata sifat yang menemani angka ikut aturan tersendiri: sesudah 2, 3, 4 ia memakai **genitif jamak** meski kata bendanya genitif tunggal — *два но́вых до́ма*, *три больши́х окна́*. Ini salah satu ketidakteraturan paling tua dalam bahasa Rusia dan tidak ada penjelasan yang menolong; ia hanya perlu dipakai berkali-kali.",
+            "Untuk kata benda feminin sesudah 2, bentuk angkanya sendiri berubah: **две**, bukan *два*. *Две мину́ты*, *две неде́ли*, *две ко́мнаты*. Hanya angka 1 dan 2 yang membedakan jenis; mulai dari 3, angkanya tidak peduli."
+          ]
+        },
+        {
+          "title": "Waktu, tanggal, dan umur",
+          "body": [
+            "Tiga hal ini memakai kasus yang berbeda-beda, dan ketiganya muncul dalam hampir setiap percakapan sehari-hari."
+          ],
+          "table": {
+            "head": [
+              "Keperluan",
+              "Bentuk",
+              "Contoh",
+              "Harfiah"
+            ],
+            "rows": [
+              [
+                "jam berapa (sekarang)",
+                "nominatif",
+                "Сейча́с два часа́.",
+                "sekarang dua jam"
+              ],
+              [
+                "jam berapa (pukul)",
+                "в + akusatif",
+                "В два часа́.",
+                "pada dua jam"
+              ],
+              [
+                "jam setengah",
+                "в полови́не + urut gen.",
+                "В полови́не деся́того.",
+                "pada setengah kesepuluh"
+              ],
+              [
+                "lewat berapa menit",
+                "urut gen. + menit nom.",
+                "Де́сять мину́т деся́того.",
+                "sepuluh menit dari kesepuluh"
+              ],
+              [
+                "kurang berapa menit",
+                "без + gen.",
+                "Без десяти́ де́сять.",
+                "tanpa sepuluh, sepuluh"
+              ],
+              [
+                "tanggal (menyebut)",
+                "urut netral + bulan gen.",
+                "Пе́рвое ма́я.",
+                "yang pertama dari Mei"
+              ],
+              [
+                "tanggal (kapan)",
+                "urut gen. + bulan gen.",
+                "Пе́рвого ма́я.",
+                "dari yang pertama Mei"
+              ],
+              [
+                "tahun (kapan)",
+                "в + urut prep. + году́",
+                "В две ты́сячи двадца́том году́.",
+                "pada tahun kedua-ribu-kedua-puluh"
+              ],
+              [
+                "umur",
+                "datif + angka",
+                "Мне два́дцать три го́да.",
+                "bagi saya dua puluh tiga tahun"
+              ],
+              [
+                "lama waktu",
+                "akusatif tanpa kata depan",
+                "Я жил там два го́да.",
+                "saya tinggal di sana dua tahun"
+              ]
+            ]
+          },
+          "after": [
+            "Baris kelima adalah cara paling khas Rusia menyebut waktu menjelang jam bulat: *без десяти́ де́сять* berarti 09.50 — harfiahnya *tanpa sepuluh, jam sepuluh*. Bentuk *десяти́* di situ adalah genitif dari *де́сять*.",
+            "Baris ketujuh sering salah dipakai: menyebut tanggal sebagai jawaban *како́е сего́дня число́?* memakai nominatif netral (*сего́дня пе́рвое ма́я*), tapi menyatakan kapan sesuatu terjadi memakai genitif (*я прие́хал пе́рвого ма́я*). Perbedaannya satu huruf dan sering menentukan apakah kalimatmu terdengar benar."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Диалог — Ско́лько э́то в килогра́ммах",
+      "intro": "Дени berbelanja di pasar dan berhadapan dengan ukuran, harga, dan tawar-menawar. Percakapan pendek yang memakai angka di setiap barisnya.",
+      "lines": [
+        {
+          "speaker": "Продаве́ц:",
+          "text": "Что вам? Помидо́ры све́жие, сто два́дцать за килогра́мм.",
+          "id": "Mau apa? Tomatnya segar, seratus dua puluh sekilo.",
+          "literal": "apa kepada-Anda? tomat-tomat segar-segar, seratus dua-puluh untuk kilogram."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Дайте полтора́ килогра́мма. И два огурца́.",
+          "id": "Beri saya satu setengah kilo. Dan dua timun.",
+          "literal": "berilah satu-setengah kilogram (gen.). dan dua timun (gen.)."
+        },
+        {
+          "speaker": "Продаве́ц:",
+          "text": "Огурцы́ по со́рок пять. Всего́ две́сти шестьдеся́т пять рубле́й.",
+          "id": "Timunnya empat puluh lima per buah. Totalnya dua ratus enam puluh lima rubel.",
+          "literal": "timun-timun per empat-puluh lima. seluruhnya dua-ratus enam-puluh lima rubel-rubel."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "А е́сли возьму́ три килогра́мма помидо́ров?",
+          "id": "Kalau saya ambil tiga kilo tomat?",
+          "literal": "dan kalau akan-mengambil-saya tiga kilogram tomat-tomat (gen.)?"
+        },
+        {
+          "speaker": "Продаве́ц:",
+          "text": "Тогда́ по сто де́сять. Э́кономия три́дцать рубле́й.",
+          "id": "Kalau begitu seratus sepuluh per kilo. Hemat tiga puluh rubel.",
+          "literal": "kalau-begitu per seratus sepuluh. penghematan tiga-puluh rubel-rubel."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Беру́. Но у меня́ то́лько пятьсо́т.",
+          "id": "Saya ambil. Tapi saya cuma punya lima ratus.",
+          "literal": "saya-mengambil. tapi di-saya hanya lima-ratus."
+        },
+        {
+          "speaker": "Продаве́ц:",
+          "text": "Сда́чи сто шестьдеся́т во́семь. Держи́те.",
+          "id": "Kembaliannya seratus enam puluh delapan. Silakan.",
+          "literal": "kembalian (gen.) seratus enam-puluh delapan. peganglah."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Спаси́бо. За два ме́сяца я нау́чился счита́ть быстре́е, чем в шко́ле.",
+          "id": "Terima kasih. Dalam dua bulan saya jadi bisa berhitung lebih cepat daripada waktu sekolah.",
+          "literal": "terima-kasih. dalam dua bulan (gen.) saya belajar-lah menghitung lebih-cepat, daripada di sekolah (prep.)."
+        }
+      ],
+      "notes": [
+        "**Kata depan *по* dengan harga berarti *per satuan*.** *По со́рок пять* — empat puluh lima per buah. *По сто де́сять* — seratus sepuluh per kilo. Bentuk ini sangat sering di pasar dan toko.",
+        "**Кata *полтора́* (satu setengah) menuntut genitif tunggal:** *полтора́ килогра́мма*, *полтора́ часа́*. Untuk kata benda feminin bentuknya berubah jadi *полторы́*: *полторы́ неде́ли*.",
+        "**Kata *всего́* punya dua arti yang dibedakan hanya oleh nada:** *всего́ две́сти рубле́й* bisa berarti *totalnya dua ratus rubel* atau *cuma dua ratus rubel*. Dalam konteks harga, arti kedua lebih sering.",
+        "**Bentuk *сда́чи* pada baris 7 adalah genitif** — sisa dari kalimat penuh *Вот вам сда́чи* (ini kembaliannya untuk Anda), tempat genitif dipakai untuk menyatakan bagian dari sesuatu.",
+        "**Ukuran memakai genitif sesudah satuannya:** *килогра́мм помидо́ров*, *буты́лка воды́*, *ча́шка ко́фе*, *кусо́к хле́ба*. Satuannya sendiri lalu ikut aturan angka biasa: *два килогра́мма*, *пять килогра́ммов*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Angka yang berubah bentuk",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Di A1 angka dipakai apa adanya. Mulai B1, angka mulai berubah bentuk seperti kata benda — terutama sesudah kata depan. Kamu tidak perlu menghafal seluruh tabelnya sekarang; kenali bentuk-bentuk berikut supaya kamu tidak berhenti waktu membaca."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Nominatif",
+            "Genitif",
+            "Datif",
+            "Instrumental",
+            "Preposisional"
+          ],
+          "rows": [
+            [
+              "оди́н",
+              "одного́",
+              "одному́",
+              "одни́м",
+              "об одно́м"
+            ],
+            [
+              "два / две",
+              "двух",
+              "двум",
+              "двумя́",
+              "о двух"
+            ],
+            [
+              "три",
+              "трёх",
+              "трём",
+              "тремя́",
+              "о трёх"
+            ],
+            [
+              "четы́ре",
+              "четырёх",
+              "четырём",
+              "четырьмя́",
+              "о четырёх"
+            ],
+            [
+              "пять",
+              "пяти́",
+              "пяти́",
+              "пятью́",
+              "о пяти́"
+            ],
+            [
+              "де́сять",
+              "десяти́",
+              "десяти́",
+              "десятью́",
+              "о десяти́"
+            ],
+            [
+              "со́рок",
+              "сорока́",
+              "сорока́",
+              "сорока́",
+              "о сорока́"
+            ],
+            [
+              "сто",
+              "ста",
+              "ста",
+              "ста",
+              "о ста"
+            ],
+            [
+              "две́сти",
+              "двухсо́т",
+              "двумста́м",
+              "двумяста́ми",
+              "о двухста́х"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa angka 5 ke atas berperilaku seperti kata benda feminin berakhiran *-ь*: genitif, datif, dan preposisionalnya semuanya *-и*. Ini menjelaskan kenapa *без пяти́* (kurang lima) dan *о́коло десяти́* (sekitar sepuluh) berbentuk begitu."
+        },
+        {
+          "type": "sub",
+          "text": "Ungkapan berangka yang dipakai tiap hari"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ungkapan",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "Ско́лько вре́мени?",
+              "Jam berapa?"
+            ],
+            [
+              "Во ско́лько?",
+              "Jam berapa (acaranya)?"
+            ],
+            [
+              "Ско́лько сто́ит?",
+              "Berapa harganya?"
+            ],
+            [
+              "Ско́лько тебе́ лет?",
+              "Berapa umurmu?"
+            ],
+            [
+              "Э́то на двои́х.",
+              "Ini untuk berdua."
+            ],
+            [
+              "Мы вдвоём.",
+              "Kami berdua."
+            ],
+            [
+              "Пе́рвого числа́",
+              "Pada tanggal satu"
+            ],
+            [
+              "Раз в неде́лю",
+              "Sekali seminggu"
+            ],
+            [
+              "Че́рез два дня",
+              "Dua hari lagi"
+            ],
+            [
+              "Два го́да наза́д",
+              "Dua tahun lalu"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bilangan kolektif: два, о́ба, дво́е",
+          "items": [
+            "**два / две** untuk benda dan orang biasa: *два студе́нта*, *две кни́ги*.",
+            "**о́ба / о́бе** berarti *kedua-duanya*: *о́ба бра́та*, *о́бе сестры́*. Ia menuntut genitif tunggal, sama seperti *два*.",
+            "**дво́е, тро́е, че́тверо** dipakai untuk kelompok orang, terutama laki-laki atau campuran: *дво́е дете́й*, *тро́е студе́нтов*. Bentuk ini menuntut genitif **jamak**.",
+            "Perbedaan terakhir sering ditanyakan: *два дня* dan *дво́е су́ток* dua-duanya berarti dua hari, tapi *су́тки* (sehari semalam) adalah kata yang hanya ada dalam bentuk jamak, dan kata jenis itu wajib memakai bilangan kolektif."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "собесе́дование",
+      "baca": "sa-bi-SYE-da-va-ni-ye",
+      "id": "wawancara kerja"
+    },
+    {
+      "ru": "полови́на",
+      "baca": "pa-la-VI-na",
+      "id": "setengah"
+    },
+    {
+      "ru": "дли́ться",
+      "baca": "DLI-tsa",
+      "id": "berlangsung selama"
+    },
+    {
+      "ru": "числи́тельное",
+      "baca": "chis-LI-til'-na-ye",
+      "id": "kata bilangan"
+    },
+    {
+      "ru": "число́",
+      "baca": "chis-LO",
+      "id": "bilangan; tanggal"
+    },
+    {
+      "ru": "ци́фра",
+      "baca": "TSYF-ra",
+      "id": "angka, digit"
+    },
+    {
+      "ru": "бухга́лтер",
+      "baca": "bu-GAL-tir",
+      "id": "akuntan"
+    },
+    {
+      "ru": "знак",
+      "baca": "znak",
+      "id": "tanda"
+    },
+    {
+      "ru": "подгото́вка",
+      "baca": "pad-ga-TOF-ka",
+      "id": "persiapan"
+    },
+    {
+      "ru": "везти́ / повезти́",
+      "baca": "vis-TI / pa-vis-TI",
+      "id": "beruntung (мне повезло́)"
+    },
+    {
+      "ru": "ад",
+      "baca": "at",
+      "id": "neraka"
+    },
+    {
+      "ru": "помидо́р",
+      "baca": "pa-mi-DOR",
+      "id": "tomat"
+    },
+    {
+      "ru": "огуре́ц",
+      "baca": "a-gu-RYETS",
+      "id": "timun"
+    },
+    {
+      "ru": "све́жий",
+      "baca": "SVYE-zhyy",
+      "id": "segar"
+    },
+    {
+      "ru": "полтора́ / полторы́",
+      "baca": "pal-ta-RA / pal-ta-RY",
+      "id": "satu setengah"
+    },
+    {
+      "ru": "эконо́мия",
+      "baca": "i-ka-NO-mi-ya",
+      "id": "penghematan"
+    },
+    {
+      "ru": "сда́ча",
+      "baca": "ZDA-cha",
+      "id": "uang kembalian"
+    },
+    {
+      "ru": "держа́ть",
+      "baca": "dir-ZHAT'",
+      "id": "memegang"
+    },
+    {
+      "ru": "учи́ться / научи́ться",
+      "baca": "u-CHI-tsa / na-u-CHI-tsa",
+      "id": "belajar / jadi bisa"
+    },
+    {
+      "ru": "о́ба / о́бе",
+      "baca": "O-ba / O-bi",
+      "id": "kedua-duanya"
+    },
+    {
+      "ru": "су́тки",
+      "baca": "SUT-ki",
+      "id": "sehari semalam"
+    },
+    {
+      "ru": "вдвоём",
+      "baca": "vdva-YOM",
+      "id": "berdua"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih bentuk kata benda yang tepat.",
+      "items": [
+        "два ____ (час, часа́, часо́в)",
+        "пять ____ (год, го́да, лет)",
+        "два́дцать оди́н ____ (день, дня, дней)",
+        "трина́дцать ____ (рубль, рубля́, рубле́й)",
+        "две ____ (неде́ля, неде́ли, неде́ль)",
+        "со́рок ____ (мину́та, мину́ты, мину́т)"
+      ]
+    },
+    {
+      "prompt": "Tulis jamnya dengan huruf.",
+      "items": [
+        "09.30 → ____",
+        "14.00 → ____",
+        "09.50 → ____",
+        "09.10 → ____",
+        "18.30 → ____"
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "мне / го́да / два́дцать / три",
+        "я / здесь / два / живу́ / го́да",
+        "собесе́дование / в / деся́того / полови́не",
+        "у / пять / меня́ / дней / есть"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk angka yang tepat.",
+      "items": [
+        "о́коло ____ (де́сять) мину́т",
+        "без ____ (пять) три",
+        "с ____ (два) друзья́ми",
+        "о ____ (три) кни́гах",
+        "к ____ (сто) рубля́м"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Umur saya dua puluh satu tahun.",
+        "Wawancaranya jam setengah sepuluh.",
+        "Saya tinggal di Moskow dua tahun.",
+        "Harganya dua ratus enam puluh lima rubel.",
+        "Saya ke sana sekali seminggu."
+      ]
+    }
+  ],
+  "answers": [
+    "часа́ — лет — день — рубле́й — неде́ли — мину́т",
+    "полови́на деся́того — два часа́ — без десяти́ де́сять — де́сять мину́т деся́того — полови́на седьмо́го",
+    "Мне два́дцать три го́да. — Я живу́ здесь два го́да. — Собесе́дование в полови́не деся́того. — У меня́ есть пять дней.",
+    "десяти́ — пяти́ — двумя́ — трёх — ста",
+    "Мне два́дцать оди́н год. — Собесе́дование в полови́не деся́того. — Я жил в Москве́ два го́да. — Э́то сто́ит две́сти шестьдеся́т пять рубле́й. — Я е́зжу туда́ раз в неде́лю."
+  ],
+  "wave": "Bacakan keras-keras sepuluh angka dari hidupmu sendiri: umurmu, tinggi badanmu, harga sewa kamarmu, jam bangunmu, berapa lama kamu sudah belajar bahasa Rusia, berapa buku yang kamu baca tahun ini. Tiap kalimat harus lengkap dengan kata bendanya. Angka yang membuatmu ragu bentuknya adalah angka yang belum pernah kamu ucapkan — dan hanya itu bedanya dengan angka yang sudah lancar."
+}

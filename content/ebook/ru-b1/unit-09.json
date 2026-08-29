@@ -1,0 +1,572 @@
+{
+  "title": "Lebih baik, paling baik, cukup baik",
+  "title_target": "Сравни́тельная и превосхо́дная сте́пень",
+  "goal": "Membandingkan dengan dua cara berbeda, memakai bentuk pendek kata sifat, dan menyusun superlatif tanpa terdengar berlebihan.",
+  "bekal": [
+    "kata sifat enam kasus dari unit 6",
+    "genitif dari unit 4",
+    "чем + nominatif",
+    "kata keterangan bentuk -о"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Здесь деше́вле, но да́льше",
+      "intro": "Дени membandingkan dua tawaran kamar. Ка́тя membantunya menimbang — dan setiap kalimat pertimbangan ternyata membutuhkan bentuk perbandingan.",
+      "lines": [
+        {
+          "speaker": "Дени:",
+          "text": "У меня́ два вариа́нта. Пе́рвый деше́вле, но да́льше от университе́та.",
+          "id": "Saya punya dua pilihan. Yang pertama lebih murah, tapi lebih jauh dari kampus.",
+          "literal": "di-saya dua pilihan. pertama lebih-murah, tapi lebih-jauh dari universitas (gen.)."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Наско́лько да́льше?",
+          "id": "Berapa jauh lebihnya?",
+          "literal": "seberapa lebih-jauh?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "На со́рок мину́т. Зато́ ко́мната бо́льше и ти́ше.",
+          "id": "Empat puluh menit lebih. Tapi kamarnya lebih besar dan lebih tenang.",
+          "literal": "pada empat-puluh menit. sebagai-ganti kamar lebih-besar dan lebih-tenang."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "А второ́й?",
+          "id": "Dan yang kedua?",
+          "literal": "dan kedua?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Второ́й доро́же на пять ты́сяч, но он в двух остано́вках от ко́рпуса.",
+          "id": "Yang kedua lebih mahal lima ribu, tapi jaraknya dua halte dari gedung kuliah.",
+          "literal": "kedua lebih-mahal pada lima ribu, tapi ia di dua halte (prep.) dari gedung (gen.)."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Тогда́ счита́й не де́ньги, а вре́мя. Со́рок мину́т в день — э́то две́сти часо́в в год.",
+          "id": "Kalau begitu hitung bukan uangnya, tapi waktunya. Empat puluh menit sehari itu dua ratus jam setahun.",
+          "literal": "kalau-begitu hitunglah tidak uang, melainkan waktu. empat-puluh menit dalam hari — ini dua-ratus jam dalam tahun."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ты счита́ешь быстре́е, чем я ду́маю.",
+          "id": "Kamu berhitung lebih cepat daripada saya berpikir.",
+          "literal": "kamu menghitung lebih-cepat, daripada saya berpikir."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Э́то са́мый ва́жный расчёт в твое́й жи́зни в э́том году́.",
+          "id": "Itu perhitungan paling penting dalam hidupmu tahun ini.",
+          "literal": "ini paling penting perhitungan di punya-kamu (prep.) hidup (prep.) di ini tahun (prep.)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ты серьёзно и́ли смеёшься?",
+          "id": "Kamu serius atau bercanda?",
+          "literal": "kamu serius atau tertawa-diri?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Наполови́ну. Но пра́вда: ме́сто, где ты живёшь, важне́е, чем ко́мната, в кото́рой ты спишь.",
+          "id": "Setengah serius. Tapi sungguh: tempat kamu tinggal lebih penting daripada kamar tempat kamu tidur.",
+          "literal": "separuh. tapi benar: tempat, di-mana kamu tinggal, lebih-penting, daripada kamar, di yang-mana (prep.) kamu tidur."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Хорошо́. Но у меня́ ме́ньше де́нег, чем ты ду́маешь.",
+          "id": "Baik. Tapi uang saya lebih sedikit daripada yang kamu kira.",
+          "literal": "baik. tapi di-saya lebih-sedikit uang (gen.), daripada kamu berpikir."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Тогда́ бери́ пе́рвый и покупа́й велосипе́д. Бу́дет быстре́е авто́буса и деше́вле метро́.",
+          "id": "Kalau begitu ambil yang pertama dan beli sepeda. Akan lebih cepat daripada bus dan lebih murah daripada metro.",
+          "literal": "kalau-begitu ambillah pertama dan belilah sepeda. akan-lebih-cepat bus (gen.) dan lebih-murah metro (gen.)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ты то́лько что сказа́ла «быстре́е авто́буса» без «чем». Так то́же мо́жно?",
+          "id": "Kamu barusan bilang «быстре́е авто́буса» tanpa «чем». Boleh begitu juga?",
+          "literal": "kamu baru saja berkata-lah «lebih-cepat bus (gen.)» tanpa «daripada». begitu juga boleh?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Мо́жно и коро́че. Второ́е сло́во про́сто идёт в роди́тельный паде́ж.",
+          "id": "Boleh, dan lebih ringkas. Kata keduanya cukup masuk ke genitif.",
+          "literal": "boleh dan lebih-ringkas. kedua kata hanya berjalan ke genitif kasus."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ру́сский стано́вится коро́че, чем до́льше я его́ учу́. Э́то подозри́тельно.",
+          "id": "Bahasa Rusia jadi makin ringkas makin lama saya belajar. Ini mencurigakan.",
+          "literal": "Rusia menjadi lebih-ringkas, semakin lebih-lama saya ia belajar. ini mencurigakan."
+        }
+      ],
+      "notes": [
+        "**Bahasa Rusia punya dua cara membentuk perbandingan, dan keduanya benar.** Cara pendek menempelkan akhiran **-ее** atau **-е** pada kata sifatnya: *интере́сный → интере́снее*, *дорого́й → доро́же*. Cara panjang memakai kata *бо́лее* di depannya: *бо́лее интере́сный*.",
+        "**Cara pendek jauh lebih sering dipakai dalam percakapan**, dan ia sekaligus melayani kata sifat dan kata keterangan. *Он говори́т быстре́е* (dia bicara lebih cepat) memakai bentuk yang sama persis dengan *его́ ру́сский быстре́е* (bahasa Rusianya lebih cepat).",
+        "**Sesudah bentuk perbandingan pendek, ada dua pilihan (baris 12–14).** Dengan *чем* + nominatif (*быстре́е, чем авто́бус*), atau tanpa *чем* + genitif (*быстре́е авто́буса*). Pilihan kedua lebih ringkas dan sangat khas bahasa Rusia.",
+        "**Bentuk pendek tidak bisa berdiri di depan kata benda.** Kamu boleh berkata *э́та кни́га интере́снее*, tapi tidak boleh *интере́снее кни́га*. Kalau kamu membutuhkan perbandingan di depan kata benda, pakai bentuk panjang: *бо́лее интере́сная кни́га*.",
+        "**Selisihnya dinyatakan dengan *на* + akusatif (baris 3 dan 5).** *Доро́же на пять ты́сяч* — lebih mahal lima ribu. Ini pola yang sama dengan *ста́рше на два го́да* (lebih tua dua tahun).",
+        "**Baris 15 memakai konstruksi *чем… тем…*** yang berarti *makin… makin…*. Bentuk penuhnya: *Чем до́льше я учу́, тем коро́че стано́вится* — makin lama saya belajar, makin ringkas ia jadinya. Konstruksi ini sering muncul dalam tulisan dan pidato."
+      ],
+      "grammars": [
+        {
+          "title": "Bentuk perbandingan pendek",
+          "body": [
+            "Sebagian besar kata sifat memakai akhiran **-ее** yang teratur. Kelompok kedua memakai **-е** dan sekaligus mengubah konsonan terakhir akarnya — kelompok inilah yang harus dihafal, karena kebetulan berisi kata-kata yang paling sering dipakai."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Teratur: + -ее",
+                "Kata sifat",
+                "Perbandingan",
+                "Arti"
+              ],
+              "rows": [
+                [
+                  "",
+                  "интере́сный",
+                  "интере́снее",
+                  "lebih menarik"
+                ],
+                [
+                  "",
+                  "краси́вый",
+                  "краси́вее",
+                  "lebih indah"
+                ],
+                [
+                  "",
+                  "тру́дный",
+                  "трудне́е",
+                  "lebih sulit"
+                ],
+                [
+                  "",
+                  "ва́жный",
+                  "важне́е",
+                  "lebih penting"
+                ],
+                [
+                  "",
+                  "бы́стрый",
+                  "быстре́е",
+                  "lebih cepat"
+                ],
+                [
+                  "",
+                  "у́мный",
+                  "умне́е",
+                  "lebih pintar"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Tak teratur: + -е",
+                "Kata sifat",
+                "Perbandingan",
+                "Arti"
+              ],
+              "rows": [
+                [
+                  "г → ж",
+                  "дорого́й",
+                  "доро́же",
+                  "lebih mahal"
+                ],
+                [
+                  "д → ж",
+                  "молодо́й",
+                  "моло́же",
+                  "lebih muda"
+                ],
+                [
+                  "к → ч",
+                  "гро́мкий",
+                  "гро́мче",
+                  "lebih keras"
+                ],
+                [
+                  "х → ш",
+                  "ти́хий",
+                  "ти́ше",
+                  "lebih tenang"
+                ],
+                [
+                  "ст → щ",
+                  "просто́й",
+                  "про́ще",
+                  "lebih sederhana"
+                ],
+                [
+                  "з → ж",
+                  "бли́зкий",
+                  "бли́же",
+                  "lebih dekat"
+                ],
+                [
+                  "berganti akar",
+                  "хоро́ший",
+                  "лу́чше",
+                  "lebih baik"
+                ],
+                [
+                  "berganti akar",
+                  "плохо́й",
+                  "ху́же",
+                  "lebih buruk"
+                ],
+                [
+                  "berganti akar",
+                  "ма́ленький",
+                  "ме́ньше",
+                  "lebih kecil / sedikit"
+                ],
+                [
+                  "berganti akar",
+                  "большо́й",
+                  "бо́льше",
+                  "lebih besar / banyak"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Empat baris terakhir adalah yang paling sering dipakai dalam seluruh bahasa Rusia, dan keempatnya tidak menyerupai kata dasarnya sama sekali — persis seperti *baik → lebih baik* dalam bahasa Inggris berubah jadi *better*. Menghafal *лу́чше, ху́же, бо́льше, ме́ньше* lebih berguna daripada menghafal aturan konsonannya.",
+            "Untuk melembutkan perbandingan, tambahkan awalan **по-**: *побо́льше* (agak lebih besar), *полу́чше* (agak lebih baik), *подеше́вле* (agak lebih murah). Bentuk ini sangat sering dipakai di pasar dan toko, dan ia terdengar jauh lebih sopan daripada tuntutan telanjang."
+          ]
+        },
+        {
+          "title": "Superlatif: tiga cara, tiga nada",
+          "body": [
+            "Bahasa Rusia punya beberapa cara menyatakan *paling*, dan pilihannya menentukan seberapa resmi kalimatmu terdengar."
+          ],
+          "table": {
+            "head": [
+              "Cara",
+              "Bentuk",
+              "Contoh",
+              "Nada"
+            ],
+            "rows": [
+              [
+                "са́мый + kata sifat",
+                "са́мый интере́сный",
+                "са́мый интере́сный фильм",
+                "paling umum, netral"
+              ],
+              [
+                "perbandingan + всех",
+                "лу́чше всех",
+                "Он игра́ет лу́чше всех.",
+                "lisan, dibanding semua orang"
+              ],
+              [
+                "perbandingan + всего́",
+                "бо́льше всего́",
+                "Мне нра́вится бо́льше всего́.",
+                "lisan, dibanding semua hal"
+              ],
+              [
+                "akhiran -е́йший",
+                "интере́снейший",
+                "интере́снейший слу́чай",
+                "tulisan, agak berlebihan"
+              ],
+              [
+                "наибо́лее + kata sifat",
+                "наибо́лее ва́жный",
+                "наибо́лее ва́жный вопро́с",
+                "resmi, tulisan ilmiah"
+              ]
+            ]
+          },
+          "after": [
+            "Dua baris tengah layak diperhatikan karena keduanya diterjemahkan *paling* tapi dipakai berbeda: **всех** untuk membandingkan dengan orang atau benda lain (*он вы́ше всех* — dia paling tinggi di antara semua), **всего́** untuk membandingkan dengan hal-hal lain (*я люблю́ ко́фе бо́льше всего́* — kopi yang paling saya suka).",
+            "Bentuk *-е́йший* pada baris keempat sebaiknya kamu kenali tapi jarang kamu pakai. Dalam percakapan sehari-hari ia terdengar sangat berlebihan, seperti mengatakan *tersempurna* dalam bahasa Indonesia."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bentuk pendek kata sifat: kapan orang Rusia memakainya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Selain bentuk panjang yang sudah kamu kenal (*но́вый*, *но́вая*, *но́вое*), kata sifat Rusia punya bentuk pendek: *нов*, *нова́*, *но́во*, *но́вы*. Bentuk pendek tidak pernah berdiri di depan kata benda — ia hanya dipakai sebagai predikat, di tempat yang di bahasa Indonesia kita isi dengan *adalah*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bentuk panjang",
+            "Bentuk pendek",
+            "Perbedaan artinya"
+          ],
+          "rows": [
+            [
+              "Он больно́й.",
+              "Он бо́лен.",
+              "penyakitan (sifat tetap) / sedang sakit (sekarang)"
+            ],
+            [
+              "Она́ свобо́дная.",
+              "Она́ свобо́дна.",
+              "orang merdeka / sedang tidak sibuk"
+            ],
+            [
+              "Он за́нятый.",
+              "Он за́нят.",
+              "orang sibuk / sedang sibuk sekarang"
+            ],
+            [
+              "Ко́мната больша́я.",
+              "Ко́мната велика́.",
+              "besar / terlalu besar (untuk keperluan ini)"
+            ],
+            [
+              "Он гото́вый.",
+              "Он гото́в.",
+              "siap pakai / siap melakukan sesuatu"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Pola yang menyatukan seluruh kolom kanan: **bentuk pendek menyatakan keadaan sementara atau keadaan yang berlaku dalam keperluan tertentu**, sedangkan bentuk panjang menyatakan sifat melekat. Ini kira-kira sama dengan perbedaan *dia orang sakit* dan *dia sedang sakit* dalam bahasa Indonesia."
+        },
+        {
+          "type": "sub",
+          "text": "Bentuk pendek yang wajib dipakai"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ungkapan",
+            "Arti",
+            "Catatan"
+          ],
+          "rows": [
+            [
+              "Я рад / ра́да.",
+              "Saya senang.",
+              "tidak punya bentuk panjang sama sekali"
+            ],
+            [
+              "Он до́лжен.",
+              "Dia harus.",
+              "должна́ / должны́ ikut jenis & jumlah"
+            ],
+            [
+              "Я согла́сен / согла́сна.",
+              "Saya setuju.",
+              "bentuk panjang hampir tak terpakai"
+            ],
+            [
+              "Я уве́рен / уве́рена.",
+              "Saya yakin.",
+              ""
+            ],
+            [
+              "Он за́нят.",
+              "Dia sedang sibuk.",
+              "bentuk panjang berarti orang sibuk pada umumnya"
+            ],
+            [
+              "Мне не́когда.",
+              "Saya tidak sempat.",
+              "kata keterangan, bukan kata sifat"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "До́лжен — kata yang paling sering dipakai dan paling sering salah",
+          "items": [
+            "*До́лжен* berubah mengikuti orang yang berbicara: **до́лжен** (laki-laki), **должна́** (perempuan), **должны́** (jamak).",
+            "*Я до́лжен идти́* — saya harus pergi. *Она́ должна́ рабо́тать* — dia harus bekerja.",
+            "Untuk masa lampau, tambahkan *был / была́ / бы́ли*: *Я до́лжен был идти́*.",
+            "Bandingkan dengan *мне на́до* dari unit 5. *До́лжен* mengandung kewajiban dan tanggung jawab; *на́до* sekadar keperluan. Kalau kamu berjanji dan gagal, orang Rusia akan berkata *ты до́лжен был*, bukan *тебе́ на́до бы́ло*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "вариа́нт",
+      "baca": "va-ri-ANT",
+      "id": "pilihan, opsi"
+    },
+    {
+      "ru": "дешёвый / деше́вле",
+      "baca": "di-SHO-vyy / di-SHEV-li",
+      "id": "murah / lebih murah"
+    },
+    {
+      "ru": "дорого́й / доро́же",
+      "baca": "da-ra-GOY / da-RO-zhe",
+      "id": "mahal / lebih mahal"
+    },
+    {
+      "ru": "далеко́ / да́льше",
+      "baca": "da-li-KO / DAL'-she",
+      "id": "jauh / lebih jauh"
+    },
+    {
+      "ru": "бли́зко / бли́же",
+      "baca": "BLIS-ka / BLI-zhe",
+      "id": "dekat / lebih dekat"
+    },
+    {
+      "ru": "ти́хий / ти́ше",
+      "baca": "TI-khiy / TI-she",
+      "id": "tenang / lebih tenang"
+    },
+    {
+      "ru": "гро́мкий / гро́мче",
+      "baca": "GROM-kiy / GROM-che",
+      "id": "keras / lebih keras"
+    },
+    {
+      "ru": "хоро́ший / лу́чше",
+      "baca": "kha-RO-shyy / LUCH-she",
+      "id": "baik / lebih baik"
+    },
+    {
+      "ru": "плохо́й / ху́же",
+      "baca": "pla-KHOY / KHU-zhe",
+      "id": "buruk / lebih buruk"
+    },
+    {
+      "ru": "наско́лько",
+      "baca": "nas-KOL'-ka",
+      "id": "seberapa"
+    },
+    {
+      "ru": "зато́",
+      "baca": "za-TO",
+      "id": "tapi sebagai gantinya"
+    },
+    {
+      "ru": "расчёт",
+      "baca": "ras-CHOT",
+      "id": "perhitungan"
+    },
+    {
+      "ru": "серьёзно",
+      "baca": "sir'-YOZ-na",
+      "id": "serius"
+    },
+    {
+      "ru": "смея́ться",
+      "baca": "smi-YA-tsa",
+      "id": "tertawa"
+    },
+    {
+      "ru": "наполови́ну",
+      "baca": "na-pa-la-VI-nu",
+      "id": "setengahnya"
+    },
+    {
+      "ru": "велосипе́д",
+      "baca": "vi-la-si-PYET",
+      "id": "sepeda"
+    },
+    {
+      "ru": "коро́ткий / коро́че",
+      "baca": "ka-ROT-kiy / ka-RO-che",
+      "id": "pendek / lebih pendek"
+    },
+    {
+      "ru": "подозри́тельно",
+      "baca": "pa-daz-RI-til'-na",
+      "id": "mencurigakan"
+    },
+    {
+      "ru": "до́лжен / должна́",
+      "baca": "DOL-zhyn / dalzh-NA",
+      "id": "harus"
+    },
+    {
+      "ru": "за́нят / занята́",
+      "baca": "ZA-nyat / za-ni-TA",
+      "id": "sedang sibuk"
+    },
+    {
+      "ru": "свобо́ден / свобо́дна",
+      "baca": "sva-BO-din / sva-BOD-na",
+      "id": "sedang senggang"
+    },
+    {
+      "ru": "гото́в / гото́ва",
+      "baca": "ga-TOF / ga-TO-va",
+      "id": "siap"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Bentuk perbandingannya.",
+      "items": [
+        "интере́сный → ____",
+        "дорого́й → ____",
+        "хоро́ший → ____",
+        "плохо́й → ____",
+        "ти́хий → ____",
+        "большо́й → ____"
+      ]
+    },
+    {
+      "prompt": "Tulis ulang tanpa чем, memakai genitif.",
+      "items": [
+        "Он ста́рше, чем я. → ____",
+        "Э́та кни́га интере́снее, чем та. → ____",
+        "Метро́ быстре́е, чем авто́бус. → ____",
+        "Москва́ бо́льше, чем Ту́ла. → ____"
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "он / на / ста́рше / го́да / два / меня́",
+        "э́то / расчёт / са́мый / ва́жный",
+        "она́ / всех / лу́чше / говори́т / по-ру́сски",
+        "мне / всего́ / нра́вится / бо́льше / ко́фе"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk pendek yang tepat.",
+      "items": [
+        "Я ____ идти́. (laki-laki, harus)",
+        "Она́ ____ рабо́тать сего́дня. (harus)",
+        "Он сейча́с ____. (sibuk)",
+        "Я ____ с тобо́й. (perempuan, setuju)",
+        "Мы ____ нача́ть. (siap)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Apartemen ini lebih murah, tapi lebih jauh.",
+        "Dia bicara bahasa Rusia lebih baik daripada saya.",
+        "Ini pertanyaan paling penting.",
+        "Saya lebih suka teh daripada kopi.",
+        "Saya harus pergi sekarang."
+      ]
+    }
+  ],
+  "answers": [
+    "интере́снее — доро́же — лу́чше — ху́же — ти́ше — бо́льше",
+    "Он ста́рше меня́. — Э́та кни́га интере́снее той. — Метро́ быстре́е авто́буса. — Москва́ бо́льше Ту́лы.",
+    "Он ста́рше меня́ на два го́да. — Э́то са́мый ва́жный расчёт. — Она́ говори́т по-ру́сски лу́чше всех. — Мне бо́льше всего́ нра́вится ко́фе.",
+    "до́лжен — должна́ — за́нят — согла́сна — гото́вы",
+    "Э́та кварти́ра деше́вле, но да́льше. — Он говори́т по-ру́сски лу́чше меня́. — Э́то са́мый ва́жный вопро́с. — Я люблю́ чай бо́льше, чем ко́фе. — Я до́лжен идти́ сейча́с."
+  ],
+  "wave": "Bandingkan dua kota yang kamu kenal dalam sepuluh kalimat, dengan syarat lima kalimat memakai *чем* dan lima kalimat memakai genitif tanpa *чем*. Lalu ucapkan lagi seluruhnya dengan menghapus *чем* di mana pun bisa. Versi kedua akan terdengar jauh lebih Rusia — dan kamu akan menyadari bahwa memangkas kata adalah cara paling cepat untuk berhenti terdengar seperti terjemahan."
+}

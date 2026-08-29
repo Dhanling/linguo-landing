@@ -1,0 +1,541 @@
+{
+  "title": "Kalau, supaya, seandainya",
+  "title_target": "Сложноподчинённые предложе́ния и части́ца «бы»",
+  "goal": "Menyambung sebab, syarat, dan tujuan — serta membedakan syarat nyata dari pengandaian yang tidak terjadi.",
+  "bekal": [
+    "anak kalimat кото́рый dari unit 10",
+    "aspek dari unit 1–3",
+    "bentuk lampau semua jenis",
+    "что sebagai penghubung"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Е́сли бы я знал ра́ньше",
+      "intro": "Дени baru saja kehilangan kesempatan magang karena tidak membaca surel tepat waktu. Ка́тя menghiburnya dengan cara yang khas: dengan mengubah penyesalannya jadi latihan tata bahasa.",
+      "lines": [
+        {
+          "speaker": "Дени:",
+          "text": "Е́сли бы я прочита́л письмо́ во́время, я бы успе́л пода́ть заявле́ние.",
+          "id": "Seandainya saya membaca suratnya tepat waktu, saya pasti sempat mengajukan lamaran.",
+          "literal": "kalau akan saya selesai-membaca-lah surat tepat-waktu, saya akan sempat-lah mengajukan lamaran."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "А почему́ не прочита́л?",
+          "id": "Kenapa tidak dibaca?",
+          "literal": "dan kenapa tidak selesai-membaca-lah?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Оно́ попа́ло в спам. Я проверя́ю по́чту ка́ждый день, но туда́ не смотрю́.",
+          "id": "Suratnya masuk spam. Saya memeriksa email tiap hari, tapi tidak melihat ke sana.",
+          "literal": "ia jatuh-lah ke spam. saya memeriksa pos tiap hari, tapi ke-sana tidak melihat."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Тогда́ э́то не твоя́ вина́. Хотя́ поле́зно проверя́ть и спам.",
+          "id": "Kalau begitu itu bukan salahmu. Meski berguna juga memeriksa spam.",
+          "literal": "kalau-begitu ini tidak punya-kamu (fem) kesalahan. meski berguna memeriksa dan spam."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Тепе́рь бу́ду. Но е́сли я не найду́ пра́ктику ле́том, мне придётся возвраща́ться домо́й.",
+          "id": "Sekarang akan saya lakukan. Tapi kalau saya tidak dapat magang musim panas ini, saya terpaksa pulang.",
+          "literal": "sekarang akan. tapi kalau saya tidak akan-menemukan magang di-musim-panas, kepada-saya akan-terpaksa kembali ke-rumah."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Не начина́й. Ещё есть три ме́ста, что́бы пода́ть.",
+          "id": "Jangan mulai. Masih ada tiga tempat untuk melamar.",
+          "literal": "jangan memulai. masih ada tiga tempat, supaya mengajukan."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ты говори́шь э́то, что́бы я не расстра́ивался.",
+          "id": "Kamu bilang begitu supaya saya tidak kecewa.",
+          "literal": "kamu berkata ini, supaya saya tidak kecewa-lah."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Я говорю́ э́то, потому́ что э́то пра́вда. И потому́ что ты сам сказа́л бы то же са́мое мне.",
+          "id": "Saya bilang begitu karena itu benar. Dan karena kamu sendiri akan mengatakan hal yang sama pada saya.",
+          "literal": "saya berkata ini, karena bahwa ini kebenaran. dan karena bahwa kamu sendiri akan-berkata-lah itu sama yang-sama kepada-saya."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Хорошо́. Е́сли я пода́м за́втра, они́ отве́тят до конца́ неде́ли?",
+          "id": "Baik. Kalau saya melamar besok, mereka akan menjawab sebelum akhir minggu?",
+          "literal": "baik. kalau saya akan-mengajukan besok, mereka akan-menjawab sampai ujung minggu (gen.)?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Наве́рное. Обы́чно отвеча́ют за три дня, е́сли докуме́нты в поря́дке.",
+          "id": "Mungkin. Biasanya mereka menjawab dalam tiga hari, kalau dokumennya beres.",
+          "literal": "mungkin. biasanya mereka-menjawab dalam tiga hari, kalau dokumen-dokumen dalam keteraturan (prep.)."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Заме́тил: ты сказа́ла «е́сли пода́м», без «бы». А я сказа́л «е́сли бы прочита́л».",
+          "id": "Saya perhatikan: kamu bilang «е́сли пода́м», tanpa «бы». Dan saya bilang «е́сли бы прочита́л».",
+          "literal": "memperhatikan-lah: kamu berkata-lah «kalau akan-mengajukan», tanpa «akan». dan saya berkata-lah «kalau akan selesai-membaca-lah»."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Потому́ что твоё письмо́ уже́ не прочита́ешь. А заявле́ние ещё мо́жно пода́ть.",
+          "id": "Karena suratmu sudah tidak bisa dibaca lagi. Sedangkan lamarannya masih bisa diajukan.",
+          "literal": "karena bahwa punya-kamu surat sudah tidak akan-membaca-kamu. dan lamaran masih boleh mengajukan."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Зна́чит «бы» — э́то грамма́тика сожале́ния.",
+          "id": "Berarti «бы» itu tata bahasa penyesalan.",
+          "literal": "artinya «akan» — ini tata-bahasa penyesalan (gen.)."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "И́ли ве́жливости. «Я хоте́л бы» звучи́т мя́гче, чем «я хочу́».",
+          "id": "Atau kesopanan. «Я хоте́л бы» terdengar lebih halus daripada «я хочу́».",
+          "literal": "atau kesopanan (gen.). «saya ingin akan» terdengar lebih-halus, daripada «saya ingin»."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Тогда́ я хоте́л бы, что́бы ты помогла́ мне с письмо́м.",
+          "id": "Kalau begitu saya ingin kamu membantu saya dengan suratnya.",
+          "literal": "kalau-begitu saya ingin akan, supaya kamu menolong-lah kepada-saya dengan surat (instr.)."
+        }
+      ],
+      "notes": [
+        "**Bahasa Rusia membedakan dua jenis syarat, dan menandainya dengan satu partikel: *бы*.** Syarat nyata (masih mungkin terjadi) memakai *е́сли* biasa. Syarat khayal (sudah tidak mungkin, atau bayangan) memakai *е́сли бы* dan **kedua kalimatnya berbentuk lampau**.",
+        "**Yang mengejutkan: bentuk lampau di sini tidak berarti masa lampau.** *Е́сли бы я знал* bisa berarti *seandainya saya tahu (sekarang)* atau *seandainya saya tahu (dulu)*. Bahasa Rusia tidak membedakan waktunya sama sekali dalam pengandaian — hanya konteks yang menentukan.",
+        "**Partikel *бы* muncul dua kali dalam kalimat pengandaian penuh** (baris 1): sekali sesudah *е́сли*, sekali lagi di kalimat pokoknya. Letaknya di kalimat pokok agak bebas, tapi paling sering langsung sesudah kata pertama atau sesudah kata kerjanya.",
+        "**Kata *что́бы* menuntut dua bentuk berbeda tergantung subjeknya** (baris 6, 7, 15). Kalau subjek dua kalimatnya sama, ia diikuti **infinitif**: *Я пришёл, что́бы помо́чь*. Kalau subjeknya berbeda, ia diikuti **bentuk lampau**: *Я хочу́, что́бы ты помо́г*.",
+        "**Aturan itu tidak punya padanan dalam bahasa Indonesia sama sekali**, dan ia adalah salah satu penanda paling jelas antara pelajar B1 dan pelajar A2. *Saya ingin kamu datang* dalam bahasa Rusia harfiahnya menjadi *saya ingin supaya kamu datang-lah*.",
+        "**Baris 14 memperlihatkan pemakaian *бы* yang paling sering dipakai sehari-hari: kesopanan.** *Я хоте́л бы* (saya ingin) jauh lebih halus daripada *я хочу́*, persis seperti *saya ingin* lebih halus daripada *saya mau* dalam bahasa Indonesia."
+      ],
+      "grammars": [
+        {
+          "title": "Tiga jenis kalimat syarat",
+          "body": [
+            "Perbedaannya bukan soal waktu, melainkan soal seberapa mungkin. Perhatikan bahwa hanya jenis ketiga yang memakai *бы*, dan ia memakainya dua kali."
+          ],
+          "table": {
+            "head": [
+              "Jenis",
+              "Bentuk",
+              "Contoh",
+              "Arti"
+            ],
+            "rows": [
+              [
+                "syarat nyata, masa kini",
+                "е́сли + masa kini",
+                "Е́сли есть вре́мя, я чита́ю.",
+                "Kalau ada waktu, saya membaca."
+              ],
+              [
+                "syarat nyata, masa depan",
+                "е́сли + masa depan",
+                "Е́сли бу́дет вре́мя, я прочита́ю.",
+                "Kalau nanti ada waktu, saya baca."
+              ],
+              [
+                "syarat khayal",
+                "е́сли бы + lampau, … бы + lampau",
+                "Е́сли бы бы́ло вре́мя, я бы прочита́л.",
+                "Seandainya ada waktu, saya pasti baca."
+              ],
+              [
+                "pengandaian tanpa syarat",
+                "… бы + lampau",
+                "Я бы пое́хал в Москву́.",
+                "Saya ingin sekali ke Moskow."
+              ],
+              [
+                "permintaan halus",
+                "… бы + lampau",
+                "Ты не мог бы помо́чь?",
+                "Bisakah kamu membantu?"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan baris kedua: bahasa Rusia memakai **masa depan** di kedua bagian kalimat, sementara bahasa Indonesia dan bahasa Inggris memakai masa kini di anak kalimatnya. *Е́сли бу́дет вре́мя* — harfiahnya *kalau akan ada waktu*. Menerjemahkan langsung dari bahasa Indonesia menghasilkan kesalahan yang hampir semua pelajar buat sekali.",
+            "Baris keempat sangat sering dipakai untuk menyatakan keinginan yang sopan atau tidak realistis: *Я бы вы́пил ко́фе* (saya mau kopi, tapi tidak menuntut), *Я бы не сказа́л* (saya sih tidak akan bilang begitu)."
+          ]
+        },
+        {
+          "title": "Penghubung yang paling sering dipakai",
+          "body": [
+            "Kesalahan tersering pada tingkat ini bukan pada bentuk kata kerjanya, melainkan pada memilih penghubung yang salah — terutama antara *потому́ что* dan *поэ́тому*, yang di bahasa Indonesia sama-sama bisa jadi *jadi* atau *karena*."
+          ],
+          "table": {
+            "head": [
+              "Penghubung",
+              "Arti",
+              "Letaknya",
+              "Contoh"
+            ],
+            "rows": [
+              [
+                "потому́ что",
+                "karena",
+                "di tengah, tak pernah membuka",
+                "Я не пришёл, потому́ что боле́л."
+              ],
+              [
+                "поэ́тому",
+                "karena itu, jadi",
+                "membuka kalimat kedua",
+                "Я боле́л, поэ́тому не пришёл."
+              ],
+              [
+                "так как",
+                "berhubung",
+                "boleh membuka",
+                "Так как я боле́л, я не пришёл."
+              ],
+              [
+                "что́бы",
+                "supaya, untuk",
+                "di tengah",
+                "Я пришёл, что́бы помо́чь."
+              ],
+              [
+                "е́сли",
+                "kalau",
+                "boleh membuka",
+                "Е́сли смо́жешь, приходи́."
+              ],
+              [
+                "хотя́",
+                "meski",
+                "boleh membuka",
+                "Хотя́ бы́ло по́здно, он пришёл."
+              ],
+              [
+                "пока́",
+                "selama, sementara",
+                "boleh membuka",
+                "Пока́ он спал, я рабо́тал."
+              ],
+              [
+                "пока́ не",
+                "sampai",
+                "di tengah",
+                "Жди, пока́ он не придёт."
+              ],
+              [
+                "по́сле того́ как",
+                "sesudah",
+                "boleh membuka",
+                "По́сле того́ как он ушёл, ста́ло ти́хо."
+              ],
+              [
+                "не то́лько…, но и…",
+                "bukan hanya…, tapi juga…",
+                "di tengah",
+                "Он не то́лько чита́ет, но и пи́шет."
+              ]
+            ]
+          },
+          "after": [
+            "Kesalahan paling khas: memakai *потому́ что* di awal kalimat. Dalam bahasa Rusia baku ia tidak pernah membuka kalimat — untuk itu ada *так как*. Kalau kamu benar-benar ingin memulai dengan sebab, pakailah *так как* atau balik urutannya.",
+            "Perhatikan juga bahwa *пока́ не* berarti *sampai*, dan *не* di dalamnya tidak menyangkal apa pun. Ini sudah disinggung di unit 6; ia muncul begitu sering sehingga layak diulang."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Что́бы: aturan yang paling sering dilanggar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kalau hanya ada satu hal yang kamu bawa dari unit ini, jadikan hal ini: *что́бы* punya dua bentuk yang dipilih berdasarkan siapa yang melakukan perbuatannya. Aturannya sederhana, tapi ia bertentangan dengan naluri penutur bahasa Indonesia, jadi ia perlu dilatih sampai otomatis."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situasi",
+            "Bentuk sesudah что́бы",
+            "Contoh",
+            "Terjemahan"
+          ],
+          "rows": [
+            [
+              "subjeknya sama",
+              "infinitif",
+              "Я пришёл, что́бы помо́чь.",
+              "Saya datang untuk membantu."
+            ],
+            [
+              "subjeknya berbeda",
+              "bentuk lampau",
+              "Я хочу́, что́бы ты помо́г.",
+              "Saya ingin kamu membantu."
+            ],
+            [
+              "subjeknya sama",
+              "infinitif",
+              "Он у́чится, что́бы найти́ рабо́ту.",
+              "Dia belajar supaya dapat kerja."
+            ],
+            [
+              "subjeknya berbeda",
+              "bentuk lampau",
+              "Он хо́чет, что́бы мы пришли́.",
+              "Dia ingin kami datang."
+            ],
+            [
+              "perintah tak langsung",
+              "bentuk lampau",
+              "Скажи́ ему́, что́бы позвони́л.",
+              "Suruh dia menelepon."
+            ],
+            [
+              "keperluan",
+              "bentuk lampau",
+              "Ну́жно, что́бы все зна́ли.",
+              "Perlu semua orang tahu."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Baris kelima layak diperhatikan tersendiri: **perintah tak langsung dalam bahasa Rusia hampir selalu memakai *что́бы* + bentuk lampau**, bukan infinitif seperti dalam bahasa Indonesia. *Suruh dia menelepon* menjadi harfiahnya *katakan padanya supaya dia menelepon-lah*."
+        },
+        {
+          "type": "sub",
+          "text": "Kata kerja yang menuntut что́бы"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Contoh",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "хоте́ть",
+              "Я хочу́, что́бы ты оста́лся.",
+              "Saya ingin kamu tinggal."
+            ],
+            [
+              "проси́ть",
+              "Я прошу́, что́бы вы подожда́ли.",
+              "Saya minta Anda menunggu."
+            ],
+            [
+              "предлага́ть",
+              "Предлага́ю, что́бы мы начали́.",
+              "Saya usul kita mulai."
+            ],
+            [
+              "сове́товать",
+              "Сове́тую, что́бы он отдохну́л.",
+              "Saya sarankan dia istirahat."
+            ],
+            [
+              "ну́жно / на́до",
+              "На́до, что́бы он знал.",
+              "Dia perlu tahu."
+            ],
+            [
+              "ва́жно",
+              "Ва́жно, что́бы вы по́няли.",
+              "Penting Anda mengerti."
+            ],
+            [
+              "боя́ться",
+              "Бою́сь, что́бы он не опозда́л.",
+              "Saya khawatir dia terlambat."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Perbedaan что dan что́бы",
+          "items": [
+            "**что** melaporkan fakta: *Я зна́ю, что он пришёл.* — Saya tahu dia sudah datang.",
+            "**что́бы** menyatakan kehendak atau tujuan: *Я хочу́, что́бы он пришёл.* — Saya ingin dia datang.",
+            "Ujinya sederhana: kalau kalimatnya bisa benar atau salah, pakai *что*. Kalau kalimatnya adalah keinginan yang belum terjadi, pakai *что́бы*.",
+            "Perhatikan bahwa *что* selalu berdiri sesudah koma, dan **tidak boleh dihilangkan** seperti *that* dalam bahasa Inggris. *Я ду́маю он прав* terasa salah bagi telinga Rusia; yang benar *Я ду́маю, что он прав*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "во́время",
+      "baca": "VO-vri-mya",
+      "id": "tepat waktu"
+    },
+    {
+      "ru": "подава́ть / пода́ть",
+      "baca": "pa-da-VAT' / pa-DAT'",
+      "id": "mengajukan"
+    },
+    {
+      "ru": "заявле́ние",
+      "baca": "za-yiv-LYE-ni-ye",
+      "id": "lamaran, surat permohonan"
+    },
+    {
+      "ru": "попада́ть / попа́сть",
+      "baca": "pa-pa-DAT' / pa-PAST'",
+      "id": "jatuh ke, sampai ke"
+    },
+    {
+      "ru": "проверя́ть / прове́рить",
+      "baca": "pra-vi-RYAT' / pra-VYE-rit'",
+      "id": "memeriksa"
+    },
+    {
+      "ru": "вина́",
+      "baca": "vi-NA",
+      "id": "kesalahan, kesalahan pihak"
+    },
+    {
+      "ru": "поле́зно",
+      "baca": "pa-LYEZ-na",
+      "id": "berguna"
+    },
+    {
+      "ru": "пра́ктика",
+      "baca": "PRAK-ti-ka",
+      "id": "magang, praktik"
+    },
+    {
+      "ru": "приходи́ться / прийти́сь",
+      "baca": "pri-kha-DI-tsa / priy-TIS'",
+      "id": "terpaksa"
+    },
+    {
+      "ru": "расстра́иваться",
+      "baca": "ras-STRA-i-va-tsa",
+      "id": "kecewa, sedih"
+    },
+    {
+      "ru": "в поря́дке",
+      "baca": "f pa-RYAT-ki",
+      "id": "beres, dalam keadaan baik"
+    },
+    {
+      "ru": "сожале́ние",
+      "baca": "sa-zha-LYE-ni-ye",
+      "id": "penyesalan"
+    },
+    {
+      "ru": "ве́жливость",
+      "baca": "VYEZH-li-vast'",
+      "id": "kesopanan"
+    },
+    {
+      "ru": "звуча́ть",
+      "baca": "zvu-CHAT'",
+      "id": "terdengar"
+    },
+    {
+      "ru": "мя́гкий / мя́гче",
+      "baca": "MYAKH-kiy / MYAKH-chi",
+      "id": "lembut / lebih lembut"
+    },
+    {
+      "ru": "хотя́",
+      "baca": "kha-TYA",
+      "id": "meski"
+    },
+    {
+      "ru": "поэ́тому",
+      "baca": "pa-E-ta-mu",
+      "id": "karena itu"
+    },
+    {
+      "ru": "так как",
+      "baca": "tak kak",
+      "id": "berhubung"
+    },
+    {
+      "ru": "предлага́ть / предложи́ть",
+      "baca": "prid-la-GAT' / prid-la-ZHYT'",
+      "id": "mengusulkan"
+    },
+    {
+      "ru": "остава́ться / оста́ться",
+      "baca": "as-ta-VA-tsa / as-TA-tsa",
+      "id": "tinggal, tetap"
+    },
+    {
+      "ru": "опа́здывать / опозда́ть",
+      "baca": "a-PAZ-dy-vat' / a-paz-DAT'",
+      "id": "terlambat"
+    },
+    {
+      "ru": "боя́ться",
+      "baca": "ba-YA-tsa",
+      "id": "takut, khawatir"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih е́сли atau е́сли бы, dan bentuk kata kerjanya.",
+      "items": [
+        "____ у меня́ бу́дет вре́мя, я приду́.",
+        "____ у меня́ бы́ло вре́мя, я бы пришёл.",
+        "____ ты позвони́шь, я отве́чу.",
+        "____ ты позвони́л вчера́, я бы отве́тил.",
+        "____ бу́дет дождь, мы оста́немся до́ма."
+      ]
+    },
+    {
+      "prompt": "Isi dengan infinitif atau bentuk lampau sesudah что́бы.",
+      "items": [
+        "Я пришёл, что́бы ____ (помо́чь).",
+        "Я хочу́, что́бы ты ____ (помо́чь).",
+        "Он у́чится, что́бы ____ (найти́) рабо́ту.",
+        "Он хо́чет, что́бы мы ____ (прийти́).",
+        "Скажи́ ей, что́бы она́ ____ (позвони́ть)."
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "я / потому́ что / не / пришёл / боле́л",
+        "я / поэ́тому / боле́л / не / пришёл",
+        "хоте́л / я / бы / ко́фе / вы́пить",
+        "жди / пока́ / он / не / придёт"
+      ]
+    },
+    {
+      "prompt": "Pilih penghubung yang tepat.",
+      "items": [
+        "Он не пришёл, ____ боле́л. (потому́ что, поэ́тому)",
+        "Он боле́л, ____ не пришёл. (потому́ что, поэ́тому)",
+        "Я зна́ю, ____ он прав. (что, что́бы)",
+        "Я хочу́, ____ он был прав. (что, что́бы)",
+        "____ бы́ло по́здно, он пришёл. (хотя́, е́сли)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Seandainya saya tahu lebih awal, saya pasti datang.",
+        "Saya ingin kamu menelepon saya besok.",
+        "Kalau ada waktu, saya akan membantu.",
+        "Saya datang untuk membantumu.",
+        "Bisakah Anda membantu saya?"
+      ]
+    }
+  ],
+  "answers": [
+    "Е́сли — Е́сли бы — Е́сли — Е́сли бы — Е́сли",
+    "помо́чь — помо́г — найти́ — пришли́ — позвони́ла",
+    "Я не пришёл, потому́ что боле́л. — Я боле́л, поэ́тому не пришёл. — Я бы хоте́л вы́пить ко́фе. — Жди, пока́ он не придёт.",
+    "потому́ что — поэ́тому — что — что́бы — Хотя́",
+    "Е́сли бы я знал ра́ньше, я бы пришёл. — Я хочу́, что́бы ты позвони́л мне за́втра. — Е́сли бу́дет вре́мя, я помогу́. — Я пришёл, что́бы помо́чь тебе́. — Вы не могли́ бы мне помо́чь?"
+  ],
+  "wave": "Tulis lima penyesalan tentang tahun lalu, semuanya dengan *е́сли бы… я бы…*, lalu tulis lima rencana untuk tahun depan, semuanya dengan *е́сли… я…* tanpa *бы*. Bacalah keduanya berturut-turut. Perbedaan bunyi antara kedua kelompok itu adalah perbedaan antara hidup yang sudah lewat dan hidup yang masih bisa diatur — dan bahasa Rusia menandainya hanya dengan dua huruf."
+}

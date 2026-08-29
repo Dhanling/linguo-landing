@@ -1,0 +1,592 @@
+{
+  "title": "Datang, pergi, mampir, menyeberang",
+  "title_target": "Глаго́лы движе́ния с приста́вками",
+  "goal": "Menempelkan awalan pada kata kerja gerak untuk mengganti seluruh anak kalimat arah dengan satu kata, dan mengenali pasangan aspeknya.",
+  "bekal": [
+    "empat kata kerja gerak dari unit 7",
+    "aspek dari unit 1–3",
+    "kata depan из, от, до, че́рез",
+    "genitif sesudah kata depan"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Как дое́хать до Изма́йлова",
+      "intro": "Дени tersesat di metro Moskow dan menelepon Ка́тя. Jawaban Ка́тя memuat delapan kata kerja gerak berawalan dalam satu menit — dan itu jumlah yang wajar untuk percakapan arah dalam bahasa Rusia.",
+      "lines": [
+        {
+          "speaker": "Дени:",
+          "text": "Ка́тя, я вы́шел из метро́ и не понима́ю, где я.",
+          "id": "Katya, saya sudah keluar dari metro dan tidak paham saya di mana.",
+          "literal": "Katya, saya keluar-lah dari metro dan tidak mengerti, di-mana saya."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Ты дое́хал до Изма́йлова?",
+          "id": "Kamu sudah sampai Izmailovo?",
+          "literal": "kamu sampai-berkendara-lah sampai Izmailovo (gen.)?"
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ду́маю, да. Но я перешёл доро́гу и тепе́рь всё вы́глядит по-друго́му.",
+          "id": "Kayaknya iya. Tapi saya sudah menyeberang jalan dan sekarang semuanya kelihatan berbeda.",
+          "literal": "saya-pikir, ya. tapi saya menyeberang-lah jalan dan sekarang semua terlihat secara-lain."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Перейди́ обра́тно и иди́ пря́мо. Пройдёшь два до́ма и уви́дишь ры́нок.",
+          "id": "Menyeberanglah kembali dan jalan lurus. Kamu akan melewati dua rumah dan melihat pasar.",
+          "literal": "seberangilah kembali dan berjalanlah lurus. akan-melewati-kamu dua rumah dan akan-melihat-kamu pasar."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Уже́ дошёл до ры́нка. Что да́льше?",
+          "id": "Sudah sampai di pasar. Lalu apa?",
+          "literal": "sudah sampai-berjalan-lah sampai pasar (gen.). apa selanjutnya?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Обойди́ его́ спра́ва, зайди́ во двор и найди́ ко́рпус три.",
+          "id": "Putari dari kanan, masuk ke halaman, dan cari blok tiga.",
+          "literal": "kelilingilah ia dari-kanan, masuklah ke halaman dan carilah blok tiga."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Зашёл. Ту́т три подъе́зда.",
+          "id": "Sudah masuk. Di sini ada tiga pintu masuk.",
+          "literal": "masuk-lah. di-sini tiga pintu-masuk."
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Второ́й. Войди́ и подними́сь на четвёртый эта́ж.",
+          "id": "Yang kedua. Masuk dan naik ke lantai empat.",
+          "literal": "kedua. masuklah dan naiklah ke keempat lantai."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Ка́тя, а почему́ все э́ти глаго́лы одина́ковые, но ра́зные?",
+          "id": "Katya, kenapa semua kata kerja ini sama tapi berbeda?",
+          "literal": "Katya, dan kenapa semua ini kata-kerja sama, tapi berbeda?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Потому́ что э́то оди́н глаго́л «идти́» с ра́зными приста́вками. При- пришёл, у- ушёл, вы- вы́шел, до- дошёл, за- зашёл, пере- перешёл.",
+          "id": "Karena itu satu kata kerja «идти́» dengan awalan berbeda. При- datang, у- pergi, вы- keluar, до- sampai, за- mampir, пере- menyeberang.",
+          "literal": "karena bahwa ini satu kata-kerja «pergi» dengan berbeda awalan-awalan. при- datang-lah, у- pergi-lah, вы- keluar-lah, до- sampai-lah, за- mampir-lah, пере- menyeberang-lah."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "То есть я вы́учил одно́ сло́во и получи́л пятна́дцать?",
+          "id": "Jadi saya menghafal satu kata dan dapat lima belas?",
+          "literal": "itu adalah saya menghafal-lah satu kata dan menerima-lah lima-belas?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Приме́рно. И то же са́мое с «е́хать»: прие́хал, уе́хал, вы́ехал, дое́хал.",
+          "id": "Kira-kira begitu. Dan begitu juga dengan «е́хать»: прие́хал, уе́хал, вы́ехал, дое́хал.",
+          "literal": "kira-kira. dan itu sama yang-sama dengan «berkendara»: datang-berkendara-lah, pergi-berkendara-lah, keluar-berkendara-lah, sampai-berkendara-lah."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "А почему́ «прие́хал» — соверше́нный, а «приезжа́л» — несоверше́нный?",
+          "id": "Dan kenapa «прие́хал» itu aspek sempurna, dan «приезжа́л» tak sempurna?",
+          "literal": "dan kenapa «datang-berkendara» — sempurna, dan «datang-berkendara (proses)» — tak-sempurna?"
+        },
+        {
+          "speaker": "Ка́тя:",
+          "text": "Потому́ что приста́вка де́лает глаго́л соверше́нным. Что́бы верну́ть несоверше́нный, ру́сский беру́т друго́й ко́рень: -ходи́ть, -езжа́ть.",
+          "id": "Karena awalan membuat kata kerjanya jadi sempurna. Untuk mengembalikan yang tak sempurna, bahasa Rusia mengambil akar lain: -ходи́ть, -езжа́ть.",
+          "literal": "karena bahwa awalan membuat kata-kerja sempurna (instr.). supaya mengembalikan tak-sempurna, Rusia mengambil-mereka lain akar: -pergi-jalan, -pergi-kendara."
+        },
+        {
+          "speaker": "Дени:",
+          "text": "Я на четвёртом этаже́. И, ка́жется, я то́лько что вы́учил полови́ну ру́сского языка́.",
+          "id": "Saya di lantai empat. Dan rasanya saya baru saja menghafal setengah bahasa Rusia.",
+          "literal": "saya di keempat lantai (prep.). dan, tampaknya, saya baru saja menghafal-lah setengah Rusia bahasa (gen.)."
+        }
+      ],
+      "notes": [
+        "**Menempelkan awalan pada kata kerja gerak adalah investasi terbesar yang bisa kamu lakukan di B1.** Empat kata dasar dikali sekitar dua belas awalan menghasilkan hampir lima puluh kata kerja yang seluruhnya bisa ditebak artinya begitu polanya kamu kuasai.",
+        "**Awalan mengubah kata kerja gerak jadi aspek sempurna (baris 14).** *Идти́* tak sempurna, tapi *прийти́* sempurna. Untuk mendapatkan pasangan tak sempurnanya, akar keduanya yang dipakai: *приходи́ть*. Pola ini berlaku untuk semua awalan tanpa kecuali.",
+        "**Hasilnya adalah pasangan aspek yang rapi:** *прийти́ / приходи́ть*, *уйти́ / уходи́ть*, *прие́хать / приезжа́ть*, *уе́хать / уезжа́ть*. Perhatikan bahwa akar *е́хать* berubah jadi *-езжа́ть* pada bentuk tak sempurna — bukan *-е́здить*.",
+        "**Tiap awalan menuntut kata depan tertentu**, dan pasangannya masuk akal: *при-* berpasangan dengan *в/на* (datang ke), *у-* dengan *из/с* (pergi dari), *до-* dengan *до* (sampai ke), *под-* dengan *к* (mendekat ke), *от-* dengan *от* (menjauh dari).",
+        "**Awalan вы- selalu bertekanan dalam aspek sempurna**, dan itu satu-satunya awalan yang berperilaku begitu: *вы́шел*, *вы́ехал*, *вы́йти* — semuanya dengan tekanan di awal. Pada bentuk tak sempurna tekanannya kembali normal: *выходи́ть*, *выезжа́ть*.",
+        "**Bentuk *прийти́* ditulis dengan й, tapi bentuk berkonjugasinya kehilangan huruf itu:** *приду́*, *придёшь*, *придёт*. Ini salah satu ejaan paling sering salah, bahkan di kalangan penutur asli."
+      ],
+      "grammars": [
+        {
+          "title": "Dua belas awalan dan artinya",
+          "body": [
+            "Awalan-awalan ini dipakai pada semua kata kerja gerak, dan artinya tetap sama di mana pun ia dipasang. Menghafal daftar ini sekali berarti membuka lima puluh kata sekaligus."
+          ],
+          "table": {
+            "head": [
+              "Awalan",
+              "Arti",
+              "Contoh jalan",
+              "Contoh kendaraan",
+              "Kata depan pasangannya"
+            ],
+            "rows": [
+              [
+                "при-",
+                "datang, tiba",
+                "прийти́",
+                "прие́хать",
+                "в, на, к"
+              ],
+              [
+                "у-",
+                "pergi meninggalkan",
+                "уйти́",
+                "уе́хать",
+                "из, с, от"
+              ],
+              [
+                "в- / во-",
+                "masuk ke dalam",
+                "войти́",
+                "въе́хать",
+                "в"
+              ],
+              [
+                "вы́-",
+                "keluar dari",
+                "вы́йти",
+                "вы́ехать",
+                "из, с"
+              ],
+              [
+                "под-",
+                "mendekat",
+                "подойти́",
+                "подъе́хать",
+                "к"
+              ],
+              [
+                "от-",
+                "menjauh",
+                "отойти́",
+                "отъе́хать",
+                "от"
+              ],
+              [
+                "до-",
+                "sampai ke",
+                "дойти́",
+                "дое́хать",
+                "до"
+              ],
+              [
+                "пере-",
+                "menyeberang, pindah",
+                "перейти́",
+                "перее́хать",
+                "че́рез, в"
+              ],
+              [
+                "за-",
+                "mampir sebentar",
+                "зайти́",
+                "зае́хать",
+                "в, к, за"
+              ],
+              [
+                "об- / обо-",
+                "memutari",
+                "обойти́",
+                "объе́хать",
+                "(akusatif langsung)"
+              ],
+              [
+                "про-",
+                "melewati, menempuh",
+                "пройти́",
+                "прое́хать",
+                "ми́мо, че́рез"
+              ],
+              [
+                "по-",
+                "mulai berangkat",
+                "пойти́",
+                "пое́хать",
+                "в, на"
+              ]
+            ]
+          },
+          "after": [
+            "Baris terakhir istimewa: *по-* tidak punya pasangan tak sempurna sama sekali, karena artinya memang seketika. *Он пошёл* berarti *dia berangkat* — awal perjalanan, bukan seluruhnya. Ini bentuk yang paling sering dipakai untuk mengumumkan kepergian: *Ну, я пошёл.*",
+            "Perhatikan juga *за-*: ia berarti mampir di tengah perjalanan menuju tempat lain. *Я зайду́ в магази́н по доро́ге домо́й* — saya akan mampir ke toko dalam perjalanan pulang. Kata kerja ini dipakai puluhan kali sehari dan tidak punya padanan satu kata dalam bahasa Indonesia."
+          ]
+        },
+        {
+          "title": "Pasangan aspek kata kerja gerak berawalan",
+          "body": [
+            "Semua pasangan dibentuk dengan cara yang sama: bentuk sempurna memakai akar satu arah, bentuk tak sempurna memakai akar bolak-balik. Hanya akar *-езжа́ть* yang bentuknya tidak bisa ditebak dan harus dihafal."
+          ],
+          "table": {
+            "head": [
+              "Arti",
+              "Сов. (jalan)",
+              "Несов. (jalan)",
+              "Сов. (kendara)",
+              "Несов. (kendara)"
+            ],
+            "rows": [
+              [
+                "datang",
+                "прийти́",
+                "приходи́ть",
+                "прие́хать",
+                "приезжа́ть"
+              ],
+              [
+                "pergi",
+                "уйти́",
+                "уходи́ть",
+                "уе́хать",
+                "уезжа́ть"
+              ],
+              [
+                "masuk",
+                "войти́",
+                "входи́ть",
+                "въе́хать",
+                "въезжа́ть"
+              ],
+              [
+                "keluar",
+                "вы́йти",
+                "выходи́ть",
+                "вы́ехать",
+                "выезжа́ть"
+              ],
+              [
+                "sampai",
+                "дойти́",
+                "доходи́ть",
+                "дое́хать",
+                "доезжа́ть"
+              ],
+              [
+                "mampir",
+                "зайти́",
+                "заходи́ть",
+                "зае́хать",
+                "заезжа́ть"
+              ],
+              [
+                "menyeberang",
+                "перейти́",
+                "переходи́ть",
+                "перее́хать",
+                "переезжа́ть"
+              ],
+              [
+                "mendekat",
+                "подойти́",
+                "подходи́ть",
+                "подъе́хать",
+                "подъезжа́ть"
+              ]
+            ]
+          },
+          "after": [
+            "Bentuk tak sempurna dipakai persis seperti aspek tak sempurna lainnya: untuk kebiasaan (*Он ка́ждый день прихо́дит в семь*), untuk pengulangan (*Она́ ча́сто заезжа́ет к нам*), dan untuk proses yang sedang berlangsung (*Мы подъезжа́ем к вокза́лу* — kita sedang mendekati stasiun).",
+            "Satu pemakaian yang khas dan mudah dilewatkan: *приходи́л* di masa lampau berarti *datang lalu sudah pulang lagi*, sama seperti *ходи́л* di unit 7. *Вчера́ приходи́л Анто́н* berarti Anton datang kemarin dan sekarang tidak ada di sini. Kalau kamu berkata *Анто́н пришёл*, kamu menyiratkan dia masih di sini."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bertanya arah dan memahami jawabannya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Petunjuk arah di Rusia hampir seluruhnya dibangun dari kata kerja gerak berawalan dalam bentuk perintah. Kalau kamu menguasai sepuluh kalimat berikut, kamu bisa menyeberangi kota mana pun tanpa peta."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Rusia",
+            "Arti",
+            "Kata kerjanya"
+          ],
+          "rows": [
+            [
+              "Как дойти́ до вокза́ла?",
+              "Bagaimana caranya jalan kaki ke stasiun?",
+              "дойти́"
+            ],
+            [
+              "Как дое́хать до це́нтра?",
+              "Bagaimana caranya sampai ke pusat kota?",
+              "дое́хать"
+            ],
+            [
+              "Иди́те пря́мо до све́тофора.",
+              "Jalan lurus sampai lampu merah.",
+              "идти́"
+            ],
+            [
+              "Перейди́те доро́гу.",
+              "Seberangi jalannya.",
+              "перейти́"
+            ],
+            [
+              "Поверни́те напра́во.",
+              "Belok kanan.",
+              "поверну́ть"
+            ],
+            [
+              "Пройди́те ми́мо апте́ки.",
+              "Lewati apoteknya.",
+              "пройти́"
+            ],
+            [
+              "Обойди́те зда́ние сле́ва.",
+              "Putari gedungnya dari kiri.",
+              "обойти́"
+            ],
+            [
+              "Войди́те в пе́рвый подъе́зд.",
+              "Masuk lewat pintu pertama.",
+              "войти́"
+            ],
+            [
+              "Вы́йдите на сле́дующей остано́вке.",
+              "Turun di halte berikutnya.",
+              "вы́йти"
+            ],
+            [
+              "Вам на́до пересе́сть на кра́сную ли́нию.",
+              "Anda harus ganti ke jalur merah.",
+              "пересе́сть"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Baris terakhir memakai kata kerja yang bukan kata kerja gerak, tapi memakai awalan yang sama: *пере-* pada *сесть* menghasilkan *пересе́сть*, berpindah tempat duduk — istilah baku untuk ganti kereta atau ganti jalur metro. Awalan bekerja jauh melampaui kata kerja gerak, dan itulah bahan unit 19."
+        },
+        {
+          "type": "sub",
+          "text": "Perbedaan yang menyelamatkanmu di stasiun"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Arti sebenarnya"
+          ],
+          "rows": [
+            [
+              "Э́тот по́езд идёт до Ту́лы.",
+              "Kereta ini berakhir di Tula."
+            ],
+            [
+              "Э́тот по́езд прохо́дит че́рез Ту́лу.",
+              "Kereta ini lewat Tula (tidak berakhir di sana)."
+            ],
+            [
+              "Я вы́хожу на сле́дующей.",
+              "Saya turun di halte berikutnya."
+            ],
+            [
+              "Вы выхо́дите?",
+              "Anda mau turun? (pertanyaan wajib di metro yang penuh)"
+            ],
+            [
+              "По́езд отхо́дит в 15:40.",
+              "Keretanya berangkat pukul 15.40."
+            ],
+            [
+              "По́езд подхо́дит к платфо́рме.",
+              "Keretanya sedang merapat ke peron."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Вы выхо́дите?",
+          "items": [
+            "Kalimat ini adalah salah satu ungkapan paling sering terdengar dalam kehidupan sehari-hari di Rusia, dan pelajar sering salah menangkapnya karena mengira dirinya sedang ditegur.",
+            "Ia berarti *Anda mau turun?* dan ditanyakan oleh orang di belakangmu yang ingin lewat. Jawabannya cukup *да* atau *нет*.",
+            "Kalau jawabanmu *нет*, kebiasaannya adalah bergeser memberi jalan tanpa diminta. Kalau kamu diam saja, kamu akan didorong pelan — dan itu bukan kekasaran, itu prosedur."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "прийти́ / приходи́ть",
+      "baca": "priy-TI / pri-kha-DIT'",
+      "id": "datang (jalan kaki)"
+    },
+    {
+      "ru": "уйти́ / уходи́ть",
+      "baca": "uy-TI / u-kha-DIT'",
+      "id": "pergi meninggalkan"
+    },
+    {
+      "ru": "вы́йти / выходи́ть",
+      "baca": "VYY-ti / vy-kha-DIT'",
+      "id": "keluar, turun"
+    },
+    {
+      "ru": "дойти́ / доходи́ть",
+      "baca": "day-TI / da-kha-DIT'",
+      "id": "sampai ke (jalan kaki)"
+    },
+    {
+      "ru": "зайти́ / заходи́ть",
+      "baca": "zay-TI / za-kha-DIT'",
+      "id": "mampir"
+    },
+    {
+      "ru": "перейти́ / переходи́ть",
+      "baca": "pi-riy-TI / pi-ri-kha-DIT'",
+      "id": "menyeberang"
+    },
+    {
+      "ru": "обойти́ / обходи́ть",
+      "baca": "a-bay-TI / ap-kha-DIT'",
+      "id": "memutari"
+    },
+    {
+      "ru": "пройти́ / проходи́ть",
+      "baca": "pray-TI / pra-kha-DIT'",
+      "id": "melewati"
+    },
+    {
+      "ru": "подойти́ / подходи́ть",
+      "baca": "pa-day-TI / pat-kha-DIT'",
+      "id": "mendekat"
+    },
+    {
+      "ru": "приста́вка",
+      "baca": "pri-STAF-ka",
+      "id": "awalan"
+    },
+    {
+      "ru": "ко́рень",
+      "baca": "KO-rin'",
+      "id": "akar kata"
+    },
+    {
+      "ru": "двор",
+      "baca": "dvor",
+      "id": "halaman dalam"
+    },
+    {
+      "ru": "подъе́зд",
+      "baca": "pad-YEST",
+      "id": "pintu masuk gedung"
+    },
+    {
+      "ru": "ко́рпус",
+      "baca": "KOR-pus",
+      "id": "blok bangunan"
+    },
+    {
+      "ru": "эта́ж",
+      "baca": "i-TASH",
+      "id": "lantai"
+    },
+    {
+      "ru": "поднима́ться / подня́ться",
+      "baca": "pad-ni-MA-tsa / pad-NYA-tsa",
+      "id": "naik"
+    },
+    {
+      "ru": "светофо́р",
+      "baca": "svi-ta-FOR",
+      "id": "lampu lalu lintas"
+    },
+    {
+      "ru": "повора́чивать / поверну́ть",
+      "baca": "pa-va-RA-chi-vat' / pa-vir-NUT'",
+      "id": "berbelok"
+    },
+    {
+      "ru": "ми́мо",
+      "baca": "MI-ma",
+      "id": "melewati, di samping"
+    },
+    {
+      "ru": "пересе́сть",
+      "baca": "pi-ri-SYEST'",
+      "id": "pindah tempat duduk, ganti kereta"
+    },
+    {
+      "ru": "обра́тно",
+      "baca": "ab-RAT-na",
+      "id": "kembali"
+    },
+    {
+      "ru": "по-друго́му",
+      "baca": "pa-dru-GO-mu",
+      "id": "secara berbeda"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pilih awalan yang tepat.",
+      "items": [
+        "Он ____шёл домо́й в семь ве́чера. (datang)",
+        "Она́ ____шла и не сказа́ла ни сло́ва. (pergi)",
+        "Мы ____шли до вокза́ла за де́сять мину́т. (sampai)",
+        "Я ____йду́ к тебе́ по́сле рабо́ты. (mampir)",
+        "Он ____шёл доро́гу на кра́сный свет. (menyeberang)"
+      ]
+    },
+    {
+      "prompt": "Ubah ke aspek tak sempurna.",
+      "items": [
+        "прийти́ → ____",
+        "уе́хать → ____",
+        "вы́йти → ____",
+        "зайти́ → ____",
+        "подъе́хать → ____"
+      ]
+    },
+    {
+      "prompt": "Susun kalimatnya.",
+      "items": [
+        "он / до / дое́хал / це́нтра / за / полчаса́",
+        "я / магази́н / зайду́ / в / по / доро́ге",
+        "мы / к / подъезжа́ем / вокза́лу",
+        "она́ / из / вы́шла / до́ма / ра́но"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Dia datang ke Moskow tahun lalu.",
+        "Saya mau mampir ke tokomu besok.",
+        "Kereta ini berakhir di Tula.",
+        "Turun di halte berikutnya.",
+        "Kami sedang mendekati stasiun."
+      ]
+    },
+    {
+      "prompt": "Isi dengan kata depan yang cocok dengan awalannya.",
+      "items": [
+        "Он пришёл ____ рабо́ты. (dari)",
+        "Она́ уе́хала ____ Москвы́. (dari)",
+        "Мы дошли́ ____ по́чты. (sampai)",
+        "Он подошёл ____ окну́. (ke)"
+      ]
+    }
+  ],
+  "answers": [
+    "при — у — до — за — пере",
+    "приходи́ть — уезжа́ть — выходи́ть — заходи́ть — подъезжа́ть",
+    "Он дое́хал до це́нтра за полчаса́. — Я зайду́ в магази́н по доро́ге. — Мы подъезжа́ем к вокза́лу. — Она́ ра́но вы́шла из до́ма.",
+    "Он прие́хал в Москву́ в про́шлом году́. — Я зайду́ к тебе́ в магази́н за́втра. — Э́тот по́езд идёт до Ту́лы. — Вы́йдите на сле́дующей остано́вке. — Мы подъезжа́ем к вокза́лу.",
+    "с — из — до — к"
+  ],
+  "wave": "Jelaskan arah dari tempatmu sekarang ke tempat terdekat yang kamu kenal — warung, halte, masjid, stasiun — dalam enam kalimat perintah bahasa Rusia. Syaratnya: pakai *иди́те*, *перейди́те*, *пройди́те*, *поверни́те*, *дойди́те*, dan *войди́те*, masing-masing sekali. Kalau tersendat, itu bukan karena kamu belum hafal awalannya, melainkan karena kamu belum pernah memakainya berurutan — dan berurutan itulah satu-satunya cara arah pernah diucapkan."
+}
