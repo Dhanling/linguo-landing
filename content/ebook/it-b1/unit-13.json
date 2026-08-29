@@ -1,0 +1,544 @@
+{
+ "title": "Dimmelo subito!",
+ "title_target": "L'imperativo con i pronomi",
+ "goal": "Memberi perintah, saran, resep, dan petunjuk arah — dengan kata ganti yang menempel di belakang, dan dengan bentuk sopan yang sama sekali berbeda.",
+ "bekal": [
+  "imperativo *tu*, *noi*, *voi* dan bentuk menyangkalnya",
+  "imperativo *Lei* yang sebenarnya congiuntivo",
+  "menempelkan kata ganti dan aturan huruf berlipat",
+  "melembutkan perintah dengan *pure*, *un attimo*, *magari*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog A — La ricetta della nonna",
+   "intro": "Luca menelepon neneknya untuk menanyakan resep. Perhatikan bahwa resep dalam bahasa Italia hampir seluruhnya terdiri dari imperativo — dan hampir tiap perintah membawa kata ganti yang menempel.",
+   "lines": [
+    {
+     "speaker": "Luca:",
+     "text": "Nonna, come si fa il ragù? Dimmelo lentamente.",
+     "id": "Nek, gimana bikin ragù? Ceritain pelan-pelan.",
+     "literal": "nenek, bagaimana diri buat itu ragù? katakan-kepadaku-itu perlahan."
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "Allora. Prendi una cipolla, una carota e un gambo di sedano.",
+     "id": "Gini. Ambil satu bawang bombay, satu wortel, satu batang seledri.",
+     "literal": "jadi. ambil satu bawang, satu wortel dan satu batang dari seledri."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Li taglio grossi?",
+     "id": "Dipotong besar-besar?",
+     "literal": "itu potong-aku besar?"
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "No, tagliali piccolissimi. E non avere fretta.",
+     "id": "Jangan, potong kecil-kecil. Dan jangan buru-buru.",
+     "literal": "tidak, potong-itu kecil-sekali. dan tidak punya ketergesaan."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Va bene. Poi?",
+     "id": "Oke. Terus?",
+     "literal": "pergi baik. lalu?"
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "Mettili in padella con l'olio e falli andare venti minuti.",
+     "id": "Masukin ke wajan sama minyak, tumis dua puluh menit.",
+     "literal": "taruh-itu di wajan dengan itu-minyak dan buat-itu pergi dua-puluh menit."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Venti? Non è troppo?",
+     "id": "Dua puluh? Nggak kelamaan?",
+     "literal": "dua-puluh? tidak itu-adalah terlalu?"
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "Luca, non discutere con tua nonna. Venti minuti.",
+     "id": "Luca, jangan debat sama nenekmu. Dua puluh menit.",
+     "literal": "Luca, tidak berdebat dengan punyamu nenek. dua-puluh menit."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Sì, nonna. E la carne?",
+     "id": "Iya Nek. Dagingnya?",
+     "literal": "ya, nenek. dan itu daging?"
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "Aggiungila dopo e alza il fuoco. Non mescolare troppo.",
+     "id": "Masukin belakangan terus gedein apinya. Jangan diaduk kebanyakan.",
+     "literal": "tambahkan-itu sesudah dan naikkan itu api. tidak mengaduk terlalu."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "E il vino? Ce lo metto?",
+     "id": "Anggurnya? Dimasukin?",
+     "literal": "dan itu anggur? di-situ itu taruh-aku?"
+    },
+    {
+     "speaker": "Nonna:",
+     "text": "Mettitene mezzo bicchiere. E bevi il resto, che ti serve pazienza.",
+     "id": "Tuang setengah gelas. Sisanya diminum, kamu butuh kesabaran.",
+     "literal": "taruh-kepadamu-dari-itu setengah gelas. dan minum itu sisa, bahwa kepadamu berguna kesabaran."
+    }
+   ],
+   "notes": [
+    "**Imperativo *tu* untuk kata kerja *-are* memakai akhiran *-a*, bukan *-i***: *parl**a***, *taglia*, *mescola*. Untuk *-ere* dan *-ire* ia sama dengan bentuk biasa: *prendi*, *aggiungi*, *senti*. Ini kebalikan dari congiuntivo, dan pertukaran itu adalah sumber kekeliruan yang paling sering.",
+    "**Menyangkal perintah kepada *tu* memakai *non* + infinito**: *non **avere** fretta*, *non **discutere***, *non **mescolare***. Ini satu-satunya tempat dalam bahasa Italia di mana infinito bertugas sebagai perintah, dan tak ada pengecualian sama sekali.",
+    "**Kata ganti menempel di belakang imperativo *tu*, *noi*, *voi***: *taglia**li***, *mettite**ne***, *aggiungi**la***. Tapi pada bentuk sopan *Lei* ia justru berdiri **di depan**: *me lo dica*, *si accomodi*. Perbedaan letak ini adalah tanda paling cepat apakah kamu sedang berbicara santai atau resmi.",
+    "**Lima kata kerja bersuku satu melipatgandakan huruf pertama kata ganti**: *da'* → **dammi**, *di'* → **dimmi**, *fa'* → **fammi**, *sta'* → **stammi**, *va'* → **vattene**. Satu-satunya yang tak pernah berlipat adalah *gli*: *di**gli**elo*, bukan *diggli elo*.",
+    "**Pada perintah yang disangkal, kata ganti boleh di depan atau di belakang** — keduanya benar: *non **lo** dire* atau *non dir**lo***, *non **me lo** dare* atau *non dar**melo***. Ini salah satu dari sedikit tempat bahasa Italia benar-benar memberimu pilihan.",
+    "***Mettitene*** menumpuk tiga hal sekaligus: perintah *metti*, kata ganti *ti*, dan partikel *ne*. Kalimat semacam ini terdengar mustahil pada awalnya, tapi ia adalah bahasa dapur yang paling biasa — dan justru resep adalah cara terbaik melatihnya."
+   ],
+   "grammars": [
+    {
+     "title": "Imperativo — empat orang",
+     "body": [
+      "Bentuk *Lei* bukan imperativo sungguhan: ia congiuntivo presente yang dipinjam, dan karena itu ia mengikuti semua ketakberaturan congiuntivo."
+     ],
+     "table": {
+      "head": [
+       "",
+       "parlare",
+       "prendere",
+       "sentire",
+       "essere",
+       "avere"
+      ],
+      "rows": [
+       [
+        "tu",
+        "parl**a**",
+        "prendi",
+        "senti",
+        "sii",
+        "abbi"
+       ],
+       [
+        "Lei (sopan)",
+        "parl**i**",
+        "prend**a**",
+        "sent**a**",
+        "sia",
+        "abbia"
+       ],
+       [
+        "noi",
+        "parliamo",
+        "prendiamo",
+        "sentiamo",
+        "siamo",
+        "abbiamo"
+       ],
+       [
+        "voi",
+        "parlate",
+        "prendete",
+        "sentite",
+        "siate",
+        "abbiate"
+       ],
+       [
+        "tu, disangkal",
+        "non parlare",
+        "non prendere",
+        "non sentire",
+        "non essere",
+        "non avere"
+       ]
+      ]
+     },
+     "after": [
+      "Lima bentuk pendek yang perlu dihafal: *andare* → **va'**, *dare* → **da'**, *dire* → **di'**, *fare* → **fa'**, *stare* → **sta'**. Semuanya boleh ditulis panjang juga (*vai, dai, fai, stai*), kecuali *di'* yang tak punya bentuk panjang."
+     ]
+    },
+    {
+     "title": "Letak kata ganti",
+     "body": [
+      "Satu aturan menutupi semuanya: menempel di belakang, kecuali pada bentuk sopan *Lei*."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "Perintah",
+       "Disangkal"
+      ],
+      "rows": [
+       [
+        "tu",
+        "Dimmelo!",
+        "Non dirmelo! / Non me lo dire!"
+       ],
+       [
+        "Lei",
+        "**Me lo** dica!",
+        "Non **me lo** dica!"
+       ],
+       [
+        "noi",
+        "Diciamoglielo!",
+        "Non diciamoglielo!"
+       ],
+       [
+        "voi",
+        "Ditemelo!",
+        "Non ditemelo!"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Allo sportello del comune",
+   "intro": "Dewi mengurus perubahan alamat resmi. Seluruh percakapan memakai bentuk sopan *Lei*, dan kata gantinya sekarang berdiri di depan — perhatikan perbedaannya dengan dialog dapur tadi.",
+   "lines": [
+    {
+     "speaker": "Impiegata:",
+     "text": "Buongiorno, si accomodi pure.",
+     "id": "Selamat pagi, silakan duduk.",
+     "literal": "hari-baik, diri duduk silakan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Grazie. Vorrei fare il cambio di residenza.",
+     "id": "Terima kasih. Saya mau urus pindah alamat.",
+     "literal": "terima-kasih. akan-mau membuat itu perubahan dari kediaman."
+    },
+    {
+     "speaker": "Impiegata:",
+     "text": "Mi dia un documento e il codice fiscale, per favore.",
+     "id": "Tolong berikan dokumen identitas dan kode pajaknya.",
+     "literal": "kepadaku beri satu dokumen dan itu kode fiskal, untuk kebaikan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Eccoli. Devo portare anche il contratto d'affitto?",
+     "id": "Ini. Perlu bawa kontrak sewa juga?",
+     "literal": "ini-itu. harus-aku membawa juga itu kontrak dari-sewa?"
+    },
+    {
+     "speaker": "Impiegata:",
+     "text": "Sì. Me lo mandi via mail, se non ce l'ha adesso.",
+     "id": "Iya. Kirim lewat email saja kalau sekarang nggak bawa.",
+     "literal": "ya. kepadaku itu kirim lewat surel, jika tidak di-situ itu-punya-Anda sekarang."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Va bene. Quanto tempo ci vuole?",
+     "id": "Baik. Berapa lama prosesnya?",
+     "literal": "pergi baik. berapa waktu di-situ mau?"
+    },
+    {
+     "speaker": "Impiegata:",
+     "text": "Quarantacinque giorni. Non si preoccupi, la chiamiamo noi.",
+     "id": "Empat puluh lima hari. Jangan khawatir, nanti kami telepon.",
+     "literal": "empat-puluh-lima hari. tidak diri khawatirkan, itu telepon-kami kami."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E se mi trasferisco prima?",
+     "id": "Kalau saya pindah duluan gimana?",
+     "literal": "dan jika kepadaku pindahkan-aku sebelum?"
+    },
+    {
+     "speaker": "Impiegata:",
+     "text": "Lo comunichi appena può. E tenga la ricevuta, mi raccomando.",
+     "id": "Segera laporkan begitu bisa. Dan simpan tanda terimanya, ya.",
+     "literal": "itu komunikasikan begitu bisa-Anda. dan pegang itu tanda-terima, kepadaku rekomendasikan-aku."
+    }
+   ],
+   "notes": [
+    "**Bentuk *Lei* diambil dari congiuntivo presente**, jadi semua ketakberaturan congiuntivo ikut: *dare* → *dia*, *fare* → *faccia*, *stare* → *stia*, *venire* → *venga*, *tenere* → *tenga*, *dire* → *dica*. Kalau kamu sudah mengerjakan unit 10, kamu sudah menguasai bentuk ini tanpa sadar.",
+    "**Kata ganti berdiri di depan, dan tetap di depan meski disangkal**: *me lo mandi*, *non si preoccupi*, *lo comunichi*. Menempelkannya di belakang (*mandimelo*) langsung menandai kalimatmu sebagai keliru bagi telinga Italia.",
+    "***Si accomodi* adalah kalimat yang akan kamu dengar di tiap kantor, ruang tunggu, dan restoran Italia.** Ia berarti \"silakan duduk\" atau \"silakan masuk\" tergantung tempat. Jawaban yang tepat cukup *grazie*.",
+    "***Mi raccomando*** tak punya terjemahan yang rapi. Ia semacam \"ingat ya\" atau \"jangan sampai lupa\", diucapkan dengan nada hangat dan sedikit memerintah. Orang Italia menutup ratusan kalimat dengannya tiap hari.",
+    "***Pure* melembutkan perintah**, bukan berarti \"juga\": *si accomodi **pure***, *dimmi **pure***, *prendine **pure***. Ia berfungsi seperti kata *saja* dalam bahasa Indonesia — \"duduk saja\", \"bilang saja\"."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah yang tidak terdengar memerintah",
+     "body": [
+      "Bahasa Italia sangat sering memakai imperativo, tapi ia hampir selalu dilunakkan oleh satu kata kecil."
+     ],
+     "table": {
+      "head": [
+       "Pelunak",
+       "Contoh",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "pure",
+        "Dimmi pure.",
+        "silakan saja"
+       ],
+       [
+        "un attimo",
+        "Aspetta un attimo.",
+        "sebentar saja"
+       ],
+       [
+        "magari",
+        "Magari chiamalo tu.",
+        "kalau bisa, coba"
+       ],
+       [
+        "per favore / per cortesia",
+        "Mi dia il documento, per favore.",
+        "baku sopan"
+       ],
+       [
+        "mi raccomando",
+        "Tieni la ricevuta, mi raccomando.",
+        "hangat, mengingatkan"
+       ],
+       [
+        "se puoi / se può",
+        "Mandamelo, se puoi.",
+        "memberi jalan keluar"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kantor pemerintah Italia — bertahan hidup di sportello",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*La burocrazia italiana* punya reputasi buruk yang sebagian besar layak. Yang membuatnya lebih mudah bukan kesabaran, melainkan mengetahui nama benda dan urutan langkahnya sebelum kamu tiba."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "lo sportello",
+       "loket",
+       "sering butuh *appuntamento* daring"
+      ],
+      [
+       "il codice fiscale",
+       "kode pajak pribadi",
+       "dibutuhkan untuk hampir segalanya"
+      ],
+      [
+       "la marca da bollo",
+       "meterai",
+       "dibeli di *tabaccheria*, bukan di kantor"
+      ],
+      [
+       "l'autocertificazione",
+       "pernyataan mandiri",
+       "menggantikan banyak surat keterangan"
+      ],
+      [
+       "la ricevuta",
+       "tanda terima",
+       "simpan sampai urusannya selesai"
+      ],
+      [
+       "il permesso di soggiorno",
+       "izin tinggal",
+       "diurus lewat *questura* & kantor pos"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat yang akan menyelamatkanmu",
+     "items": [
+      "***Ho bisogno di fare il cambio di residenza. Che documenti servono?*** — tanyakan daftar dokumen **sebelum** datang, lewat telepon atau surel. Ini menghemat rata-rata satu kunjungan penuh.",
+      "***Devo prendere un appuntamento?*** — banyak kantor kini hanya melayani dengan janji temu daring, dan datang tanpa janji berarti pulang dengan tangan kosong.",
+      "***Mi può dare una ricevuta?*** — minta tanda terima untuk apa pun yang kamu serahkan. Di Italia, bukti bahwa kamu sudah mengajukan sesuatu sering lebih berharga daripada hasilnya sendiri.",
+      "***Non ho capito, me lo può ripetere più lentamente?*** — sepenuhnya sopan, dan jauh lebih baik daripada mengangguk lalu salah paham. Petugas biasanya mengulang dengan senang hati."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "it": "la ricetta",
+   "baca": "la ri-CHET-ta",
+   "id": "resep"
+  },
+  {
+   "it": "lentamente",
+   "baca": "len-ta-MEN-te",
+   "id": "perlahan"
+  },
+  {
+   "it": "la cipolla",
+   "baca": "la chi-POL-la",
+   "id": "bawang bombay"
+  },
+  {
+   "it": "la carota",
+   "baca": "la ka-RO-ta",
+   "id": "wortel"
+  },
+  {
+   "it": "il sedano",
+   "baca": "il SE-da-no",
+   "id": "seledri"
+  },
+  {
+   "it": "tagliare",
+   "baca": "ta-LYA-re",
+   "id": "memotong"
+  },
+  {
+   "it": "la padella",
+   "baca": "la pa-DEL-la",
+   "id": "wajan"
+  },
+  {
+   "it": "l'olio",
+   "baca": "LO-lyo",
+   "id": "minyak"
+  },
+  {
+   "it": "discutere",
+   "baca": "dis-KU-te-re",
+   "id": "berdebat"
+  },
+  {
+   "it": "la carne",
+   "baca": "la KAR-ne",
+   "id": "daging"
+  },
+  {
+   "it": "alzare",
+   "baca": "al-TSA-re",
+   "id": "menaikkan"
+  },
+  {
+   "it": "il fuoco",
+   "baca": "il FWO-ko",
+   "id": "api"
+  },
+  {
+   "it": "mescolare",
+   "baca": "mes-ko-LA-re",
+   "id": "mengaduk"
+  },
+  {
+   "it": "il bicchiere",
+   "baca": "il bik-KYE-re",
+   "id": "gelas"
+  },
+  {
+   "it": "la pazienza",
+   "baca": "la pa-TSYEN-tsa",
+   "id": "kesabaran"
+  },
+  {
+   "it": "accomodarsi",
+   "baca": "ak-ko-mo-DAR-si",
+   "id": "duduk, masuk"
+  },
+  {
+   "it": "il codice fiscale",
+   "baca": "il KO-di-che fis-KA-le",
+   "id": "kode pajak"
+  },
+  {
+   "it": "preoccuparsi",
+   "baca": "pre-ok-ku-PAR-si",
+   "id": "khawatir"
+  },
+  {
+   "it": "trasferirsi",
+   "baca": "tras-fe-RIR-si",
+   "id": "pindah"
+  },
+  {
+   "it": "comunicare",
+   "baca": "ko-mu-ni-KA-re",
+   "id": "melaporkan"
+  },
+  {
+   "it": "la ricevuta",
+   "baca": "la ri-che-VU-ta",
+   "id": "tanda terima"
+  },
+  {
+   "it": "mi raccomando",
+   "baca": "mi rak-ko-MAN-do",
+   "id": "ingat ya, jangan lupa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi imperativo **tu**.",
+   "items": [
+    "parlare → ____",
+    "prendere → ____",
+    "aggiungere → ____",
+    "essere → ____",
+    "avere → ____",
+    "dire → ____"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan kata ganti menempel.",
+   "items": [
+    "Taglia le verdure. → ____",
+    "Metti il vino. → ____",
+    "Dimmi la verità. (pakai *la*) → ____",
+    "Da' a me il telefono. → ____",
+    "Aggiungi la carne. → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk sopan **Lei**.",
+   "items": [
+    "Dammi il documento. → ____",
+    "Non preoccuparti. → ____",
+    "Siediti. → ____",
+    "Mandamelo domani. → ____",
+    "Tieni la ricevuta. → ____"
+   ]
+  },
+  {
+   "prompt": "Sangkal perintah berikut.",
+   "items": [
+    "Mescola troppo. → ____",
+    "Avere fretta. → ____",
+    "Diglielo. → ____",
+    "Si preoccupi. → ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Italia.",
+   "items": [
+    "Ceritakan pelan-pelan.",
+    "Potong kecil-kecil dan jangan buru-buru.",
+    "Silakan duduk.",
+    "Tolong berikan dokumen identitasnya.",
+    "Jangan khawatir, nanti kami telepon."
+   ]
+  }
+ ],
+ "answers": [
+  "parla — prendi — aggiungi — sii — abbi — di'",
+  "Tagliale. — Mettilo. — Dimmela. — Dammi il telefono. — Aggiungila.",
+  "Mi dia il documento. — Non si preoccupi. — Si sieda. — Me lo mandi domani. — Tenga la ricevuta.",
+  "Non mescolare troppo. — Non avere fretta. — Non dirglielo. — Non si preoccupi.",
+  "Dimmelo lentamente. — Tagliali piccolissimi e non avere fretta. — Si accomodi. — Mi dia un documento, per favore. — Non si preoccupi, la chiamiamo noi."
+ ],
+ "wave": "Tulis resep masakan favoritmu dalam bahasa Italia, delapan langkah, seluruhnya dengan imperativo *tu* — dan setiap kali kamu menyebut bahan untuk kedua kalinya, ganti dengan kata ganti yang menempel. Lalu tulis ulang tiga langkah pertama dalam bentuk sopan *Lei*, seolah kamu menjelaskannya kepada orang yang belum kamu kenal. Perhatikan bagaimana kata gantinya berpindah tempat."
+}

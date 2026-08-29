@@ -1,0 +1,466 @@
+{
+ "title": "Qui si parla italiano",
+ "title_target": "Il si impersonale e il si passivante",
+ "goal": "Berbicara tentang \"orang\", \"kita\", dan \"kami\" tanpa menyebut siapa pun — bentuk yang dipakai di rambu, aturan, resep, dan hampir tiap percakapan Italia sehari-hari.",
+ "bekal": [
+  "*si* tak berorang: *si mangia bene qui*",
+  "*si* pasif: *si vendono libri*",
+  "*si* sebagai pengganti *noi* dalam percakapan",
+  "kesesuaian kata sifat dan participio sesudah *si*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog A — Le regole del condominio",
+   "intro": "Dewi membaca papan pengumuman di lobi gedungnya bersama tetangganya. Perhatikan bahwa hampir semua aturan ditulis tanpa menyebut siapa pun yang melakukan — dan itulah wajah pertama *si*.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "\"Non si può stendere il bucato sul balcone.\" Sul serio?",
+     "id": "\"Dilarang menjemur cucian di balkon.\" Serius?",
+     "literal": "tidak diri bisa membentangkan itu cucian di-itu balkon. di-itu serius?"
+    },
+    {
+     "speaker": "Vicina:",
+     "text": "Sul davanti no. Dietro si può, ma non si vede dalla strada.",
+     "id": "Yang depan nggak boleh. Belakang boleh, tapi nggak keliatan dari jalan.",
+     "literal": "di-itu depan tidak. belakang diri bisa, tapi tidak diri lihat dari-itu jalan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E questa: \"Si prega di non fare rumore dopo le 22\".",
+     "id": "Terus ini: \"Mohon tidak berisik setelah jam 10 malam\".",
+     "literal": "dan ini: diri mohon dari tidak membuat kebisingan sesudah itu 22."
+    },
+    {
+     "speaker": "Vicina:",
+     "text": "Quella la rispettano tutti. Qui si dorme presto.",
+     "id": "Yang itu semua patuh. Di sini orang tidur cepat.",
+     "literal": "itu itu hormati-mereka semua. di-sini diri tidur pagi."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "In Indonesia si vive molto più tardi. Alle undici si esce ancora.",
+     "id": "Di Indonesia orang hidup jauh lebih malam. Jam sebelas masih pada keluar.",
+     "literal": "di Indonesia diri hidup jauh lebih terlambat. pada-itu sebelas diri keluar masih."
+    },
+    {
+     "speaker": "Vicina:",
+     "text": "Qui alle undici si chiude tutto. Anche i bar.",
+     "id": "Di sini jam sebelas semua tutup. Bar juga.",
+     "literal": "di-sini pada-itu sebelas diri menutup semua. juga itu bar."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E l'ultima: \"Si raccolgono le firme per il nuovo ascensore\".",
+     "id": "Terakhir: \"Sedang dikumpulkan tanda tangan untuk lift baru\".",
+     "literal": "dan itu-terakhir: diri kumpulkan-mereka itu tanda-tangan untuk itu baru lift."
+    },
+    {
+     "speaker": "Vicina:",
+     "text": "Ah, quello. Se ne parla da otto anni.",
+     "id": "Ah, yang itu. Udah dibahas delapan tahun.",
+     "literal": "ah, itu. dari-itu diri bicara dari delapan tahun."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Otto anni per un ascensore?",
+     "id": "Delapan tahun buat satu lift?",
+     "literal": "delapan tahun untuk satu lift?"
+    },
+    {
+     "speaker": "Vicina:",
+     "text": "In condominio non si decide, si discute. È diverso.",
+     "id": "Di gedung bersama itu bukan diputuskan, tapi diperdebatkan. Beda.",
+     "literal": "di gedung-bersama tidak diri putuskan, diri perdebatkan. itu-adalah berbeda."
+    }
+   ],
+   "notes": [
+    "***Si* tak berorang berarti \"orang\", \"kita\", atau \"mereka\" dalam arti umum**: *qui **si dorme** presto* (di sini orang tidur cepat), *in Indonesia **si vive** più tardi*. Kata kerjanya selalu bentuk tunggal orang ketiga, dan tak ada subjek sama sekali. Bahasa Indonesia mencapainya dengan kata *orang* atau kalimat pasif; bahasa Italia dengan satu suku kata.",
+    "***Si* pasif dipakai kalau ada benda yang dikenai perbuatan, dan kata kerjanya lalu ikut jumlah bendanya**: *si **vende** la casa* (satu rumah) melawan *si **vendono** le case* (banyak rumah). *Si **raccolgono** le firme* — tanda tangannya jamak, jadi kata kerjanya jamak. Perbedaan ini adalah yang paling sering keliru, dan ia terlihat di tiap papan iklan Italia.",
+    "**Dalam percakapan sehari-hari, *si* juga menggantikan *noi***: *Stasera **si va** al cinema?* (malam ini kita ke bioskop?). Bentuk ini sangat sering di Toscana dan sudah menyebar ke seluruh Italia. Ia terdengar akrab, bukan resmi.",
+    "***Si prega di* + infinito** adalah bentuk baku permintaan resmi: *si prega di non fumare*, *si prega di attendere*. Kamu akan melihatnya di stasiun, rumah sakit, dan kantor. Ia setara \"mohon\" dalam bahasa Indonesia dan tidak pernah dipakai dalam percakapan biasa.",
+    "**Kata sifat sesudah *si* berbentuk jamak maskulin**, walaupun kata kerjanya tunggal: *quando **si è stanchi**, non si ragiona*. Ini terdengar aneh dan sepenuhnya benar. Alasannya: *si* mewakili orang banyak yang tak disebutkan.",
+    "**Kata kerja yang sudah punya *si* sendiri tidak bisa memakai dua *si*.** Untuk kata kerja refleksif, bentuk tak berorangnya adalah *ci si*: *in vacanza **ci si alza** tardi* (kalau liburan orang bangun siang). Bentuk ini jarang tapi ia satu-satunya yang benar."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga wajah si",
+     "body": [
+      "Ketiganya ditulis sama; yang membedakan hanya ada tidaknya benda yang dikenai perbuatan."
+     ],
+     "table": {
+      "head": [
+       "Wajah",
+       "Bentuk kata kerja",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Tak berorang",
+        "selalu tunggal",
+        "Qui **si mangia** bene.",
+        "di sini orang makan enak"
+       ],
+       [
+        "Pasif, benda tunggal",
+        "tunggal",
+        "**Si vende** la casa.",
+        "rumah ini dijual"
+       ],
+       [
+        "Pasif, benda jamak",
+        "**jamak**",
+        "**Si vendono** le case.",
+        "rumah-rumah dijual"
+       ],
+       [
+        "Pengganti noi",
+        "tunggal",
+        "Stasera **si va** fuori.",
+        "malam ini kita keluar"
+       ],
+       [
+        "Kata kerja refleksif",
+        "**ci si** + tunggal",
+        "**Ci si alza** tardi.",
+        "orang bangun siang"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Si dalam bentuk masa lalu",
+     "body": [
+      "Semua kalimat ber-*si* memakai **essere** di masa lalu, walaupun kata kerjanya biasanya memakai *avere*. Participio-nya lalu ikut aturan yang mengejutkan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat sekarang",
+       "Kalimat lampau",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "Si mangia bene.",
+        "**Si è mangiato** bene.",
+        "tak berorang → participio *-o*"
+       ],
+       [
+        "Si vendono le case.",
+        "**Si sono vendute** le case.",
+        "pasif jamak → ikut bendanya"
+       ],
+       [
+        "Si va al cinema.",
+        "**Si è andati** al cinema.",
+        "kata kerja ber-*essere* → jamak *-i*"
+       ],
+       [
+        "Ci si alza tardi.",
+        "**Ci si è alzati** tardi.",
+        "refleksif → jamak *-i*"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Come si dice in italiano?",
+   "intro": "Di kelas bahasa, Dewi bertanya tentang perbedaan yang tak pernah ia mengerti. Perhatikan bahwa pertanyaan tentang bahasa itu sendiri hampir selalu dibentuk dengan *si*.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Come si dice \"kangen\" in italiano?",
+     "id": "Bahasa Italianya \"kangen\" apa?",
+     "literal": "bagaimana diri berkata kangen di Italia?"
+    },
+    {
+     "speaker": "Insegnante:",
+     "text": "Non si traduce con una parola sola. Si dice \"mi manchi\".",
+     "id": "Nggak bisa diterjemahkan satu kata. Bilangnya \"mi manchi\".",
+     "literal": "tidak diri terjemahkan dengan satu kata sendiri. diri berkata kepadaku kurang-kamu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "\"Mi manchi\"? Ma chi manca a chi?",
+     "id": "\"Mi manchi\"? Tapi siapa yang kurang buat siapa?",
+     "literal": "kepadaku kurang-kamu? tapi siapa kurang kepada siapa?"
+    },
+    {
+     "speaker": "Insegnante:",
+     "text": "Tu manchi a me. In italiano il soggetto è la persona lontana.",
+     "id": "Kamu yang kurang buat saya. Dalam bahasa Italia, subjeknya orang yang jauh.",
+     "literal": "kamu kurang kepada aku. di Italia itu subjek itu-adalah itu orang jauh."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Quindi si ribalta tutto rispetto all'indonesiano.",
+     "id": "Jadi kebalik semua dibanding bahasa Indonesia.",
+     "literal": "jadi diri balikkan semua sehubungan pada-itu-Indonesia."
+    },
+    {
+     "speaker": "Insegnante:",
+     "text": "Esatto. Ed è lo stesso con \"piacere\": non si dice \"io piaccio la pizza\".",
+     "id": "Persis. Sama kayak \"piacere\": bukan \"io piaccio la pizza\".",
+     "literal": "tepat. dan itu-adalah itu sama dengan menyenangkan: tidak diri berkata aku menyenangkan itu pizza."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Mi piace la pizza. Quello l'ho imparato al primo giorno.",
+     "id": "Mi piace la pizza. Itu saya belajar hari pertama.",
+     "literal": "kepadaku menyenangkan itu pizza. itu itu-punya belajar pada-itu pertama hari."
+    },
+    {
+     "speaker": "Insegnante:",
+     "text": "Bene. Allora si può dire che hai capito il meccanismo.",
+     "id": "Bagus. Berarti bisa dibilang kamu sudah paham mekanismenya.",
+     "literal": "baik. jadi diri bisa berkata bahwa punya-kamu memahami itu mekanisme."
+    }
+   ],
+   "notes": [
+    "***Come si dice…?*** adalah pertanyaan yang akan kamu ucapkan lebih sering daripada kalimat lain mana pun selama belajar. Sepupunya: *Come si scrive?* (bagaimana menulisnya), *Come si pronuncia?* (bagaimana melafalkannya), *Che vuol dire?* (apa artinya).",
+    "***Mancare* bekerja terbalik dari kata Indonesia \"kangen\".** Yang menjadi subjek adalah **orang yang jauh**: *tu manchi a me* → *mi manchi*. Jadi *mi manchi* berarti \"aku kangen kamu\", bukan sebaliknya. Kekeliruan ini bertahan sangat lama karena kalimatnya masuk akal di kedua arah.",
+    "***Piacere* bekerja dengan cara yang sama**: yang disukai adalah subjeknya. *Mi piace la pizza* secara harfiah \"pizza menyenangkan bagiku\". Karena itu bentuk jamaknya berubah: *mi **piacciono** i libri*. Kesalahan *mi piace i libri* adalah salah satu yang paling sering di tingkat B1.",
+    "**Kata kerja bertingkah sama: *servire* (butuh), *bastare* (cukup), *mancare* (kurang), *interessare* (menarik), *sembrare* (tampak).** Semuanya membalik peran: *mi servono due giorni*, *mi bastano dieci euro*, *ti interessa questo libro?*",
+    "***Si può dire che…*** adalah pola berguna untuk menyimpulkan tanpa menegaskan terlalu keras. Ia setara \"bisa dibilang\" dan sangat sering muncul dalam tulisan maupun percakapan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Papan pengumuman Italia — membaca yang tak berorang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir semua tulisan resmi di ruang publik Italia memakai *si* atau infinito. Mengenali polanya berarti kamu bisa membaca stasiun, rumah sakit, dan gedung apartemen tanpa kamus."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Arti",
+      "Di mana"
+     ],
+     "rows": [
+      [
+       "Si prega di non fumare",
+       "Mohon tidak merokok",
+       "hampir di mana saja"
+      ],
+      [
+       "Vietato l'ingresso",
+       "Dilarang masuk",
+       "pintu belakang, gudang"
+      ],
+      [
+       "Si affitta / Vendesi",
+       "Disewakan / Dijual",
+       "jendela apartemen"
+      ],
+      [
+       "Non si accettano assegni",
+       "Cek tidak diterima",
+       "kasir toko"
+      ],
+      [
+       "Chiuso per ferie",
+       "Tutup karena libur",
+       "Agustus, di mana-mana"
+      ],
+      [
+       "Si effettuano riparazioni",
+       "Menerima perbaikan",
+       "bengkel, tukang jahit"
+      ],
+      [
+       "È vietato calpestare le aiuole",
+       "Dilarang menginjak taman",
+       "taman kota"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua bentuk tua yang masih hidup",
+     "items": [
+      "***Vendesi* dan *affittasi* adalah *si vende* dan *si affitta* yang dibalik dan disatukan.** Bentuk ini terasa kuno tapi masih tercetak di ribuan jendela Italia. Bentuk jamaknya: *vendonsi*, *affittansi* — semakin jarang, tapi masih ada di kota kecil.",
+      "***Chiuso per ferie* di bulan Agustus bukan lelucon.** Banyak toko keluarga, dokter gigi, dan bengkel benar-benar tutup dua sampai tiga minggu penuh, terutama sekitar tanggal 15 Agustus (*Ferragosto*). Rencanakan urusanmu di luar bulan itu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "it": "la regola",
+   "baca": "la RE-go-la",
+   "id": "aturan"
+  },
+  {
+   "it": "stendere il bucato",
+   "baca": "STEN-de-re il bu-KA-to",
+   "id": "menjemur cucian"
+  },
+  {
+   "it": "il balcone",
+   "baca": "il bal-KO-ne",
+   "id": "balkon"
+  },
+  {
+   "it": "il rumore",
+   "baca": "il ru-MO-re",
+   "id": "kebisingan"
+  },
+  {
+   "it": "rispettare",
+   "baca": "ris-pet-TA-re",
+   "id": "mematuhi, menghormati"
+  },
+  {
+   "it": "raccogliere",
+   "baca": "rak-KO-lye-re",
+   "id": "mengumpulkan"
+  },
+  {
+   "it": "la firma",
+   "baca": "la FIR-ma",
+   "id": "tanda tangan"
+  },
+  {
+   "it": "decidere",
+   "baca": "de-CHI-de-re",
+   "id": "memutuskan"
+  },
+  {
+   "it": "pregare",
+   "baca": "pre-GA-re",
+   "id": "memohon"
+  },
+  {
+   "it": "attendere",
+   "baca": "at-TEN-de-re",
+   "id": "menunggu"
+  },
+  {
+   "it": "fumare",
+   "baca": "fu-MA-re",
+   "id": "merokok"
+  },
+  {
+   "it": "vietato",
+   "baca": "vye-TA-to",
+   "id": "dilarang"
+  },
+  {
+   "it": "l'ingresso",
+   "baca": "lin-GRES-so",
+   "id": "pintu masuk"
+  },
+  {
+   "it": "affittare",
+   "baca": "af-fit-TA-re",
+   "id": "menyewakan"
+  },
+  {
+   "it": "l'assegno",
+   "baca": "las-SE-nyo",
+   "id": "cek"
+  },
+  {
+   "it": "le ferie",
+   "baca": "le FE-rye",
+   "id": "libur panjang"
+  },
+  {
+   "it": "la riparazione",
+   "baca": "la ri-pa-ra-TSYO-ne",
+   "id": "perbaikan"
+  },
+  {
+   "it": "tradurre",
+   "baca": "tra-DUR-re",
+   "id": "menerjemahkan"
+  },
+  {
+   "it": "mancare",
+   "baca": "man-KA-re",
+   "id": "kurang, hilang"
+  },
+  {
+   "it": "ribaltare",
+   "baca": "ri-bal-TA-re",
+   "id": "membalik"
+  },
+  {
+   "it": "il meccanismo",
+   "baca": "il mek-ka-NIZ-mo",
+   "id": "mekanisme"
+  },
+  {
+   "it": "bastare",
+   "baca": "bas-TA-re",
+   "id": "cukup"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan **si** + bentuk yang tepat (tunggal atau jamak).",
+   "items": [
+    "In questo ristorante ____ (mangiare) benissimo.",
+    "____ (vendere) case in campagna.",
+    "____ (vendere) una casa in centro.",
+    "Qui non ____ (potere) fumare.",
+    "____ (cercare) due camerieri.",
+    "In Italia ____ (parlare) molte lingue regionali."
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat menjadi bentuk **si**.",
+   "items": [
+    "La gente qui dorme presto. → ____",
+    "Vendiamo libri usati. → ____",
+    "Non possiamo fare rumore. → ____",
+    "In vacanza ci alziamo tardi. → ____",
+    "Stasera andiamo al cinema. (bentuk akrab) → ____"
+   ]
+  },
+  {
+   "prompt": "Bawa ke masa lalu.",
+   "items": [
+    "Si mangia bene. → ____",
+    "Si vendono le case. → ____",
+    "Si va al mare. → ____",
+    "Ci si alza tardi. → ____"
+   ]
+  },
+  {
+   "prompt": "Betulkan kesalahannya.",
+   "items": [
+    "Mi piace i libri.",
+    "Io manco te.",
+    "Si vende le case.",
+    "Quando si è stanco, non si ragiona."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Italia.",
+   "items": [
+    "Di sini orang tidur cepat.",
+    "Bahasa Italianya apa?",
+    "Mohon tidak merokok.",
+    "Saya kangen kamu.",
+    "Bisa dibilang kamu sudah paham."
+   ]
+  }
+ ],
+ "answers": [
+  "si mangia — Si vendono — Si vende — si può — Si cercano — si parlano",
+  "Qui si dorme presto. — Si vendono libri usati. — Non si può fare rumore. — In vacanza ci si alza tardi. — Stasera si va al cinema.",
+  "Si è mangiato bene. — Si sono vendute le case. — Si è andati al mare. — Ci si è alzati tardi.",
+  "Mi piacciono i libri. — Mi manchi. — Si vendono le case. — Quando si è stanchi, non si ragiona.",
+  "Qui si dorme presto. — Come si dice in italiano? — Si prega di non fumare. — Mi manchi. — Si può dire che hai capito."
+ ],
+ "wave": "Tulis sepuluh aturan untuk sebuah tempat yang kamu kenal — rumahmu, kantormu, kelasmu — seluruhnya dengan *si*, dan pastikan minimal tiga di antaranya berbenda jamak sehingga kata kerjanya ikut jamak. Lalu bacakan keras-keras dan periksa: apakah ada satu pun yang seharusnya *si vendono* tapi kamu tulis *si vende*? Itulah kekeliruan yang paling sering lolos."
+}

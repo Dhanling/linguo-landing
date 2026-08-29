@@ -1,0 +1,490 @@
+{
+ "title": "Ha detto che sarebbe venuto",
+ "title_target": "Il discorso indiretto",
+ "goal": "Meneruskan perkataan orang lain — janji, keluhan, pertanyaan, perintah — dengan seluruh pergeseran waktu, kata ganti, dan keterangan yang dituntut bahasa Italia.",
+ "bekal": [
+  "menggeser bentuk kata kerja saat kalimat utama di masa lalu",
+  "mengubah kata ganti dan kata tunjuk",
+  "menggeser keterangan waktu dan tempat",
+  "meneruskan pertanyaan dan perintah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog A — Cosa ha detto davvero",
+   "intro": "Dewi menerima kabar dari Marta lewat Luca, dan setengah kabarnya sudah berubah di jalan. Perhatikan tiap kali Luca meneruskan perkataan orang: bentuk kata kerjanya mundur satu langkah.",
+   "lines": [
+    {
+     "speaker": "Luca:",
+     "text": "Ho parlato con Marta. Ha detto che non viene stasera.",
+     "id": "Saya udah ngomong sama Marta. Katanya dia nggak datang malam ini.",
+     "literal": "punya berbicara dengan Marta. punya berkata bahwa tidak datang malam-ini."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ma ieri mi aveva detto che sarebbe venuta di sicuro.",
+     "id": "Tapi kemarin dia bilang ke saya pasti datang.",
+     "literal": "tapi kemarin kepadaku punya-lah berkata bahwa akan-adalah datang dari pasti."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Ha detto che aveva cambiato idea perché era troppo stanca.",
+     "id": "Katanya dia berubah pikiran karena kecapekan.",
+     "literal": "punya berkata bahwa punya-lah mengubah pikiran karena adalah-lah terlalu lelah."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E ha detto altro?",
+     "id": "Ada yang lain?",
+     "literal": "dan punya berkata lain?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Mi ha chiesto se eravamo arrabbiati con lei.",
+     "id": "Dia nanya apa kita marah sama dia.",
+     "literal": "kepadaku punya bertanya jika adalah-lah-kami marah dengan dia."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E tu che hai risposto?",
+     "id": "Kamu jawab apa?",
+     "literal": "dan kamu apa punya-kamu menjawab?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Le ho detto di non preoccuparsi e di chiamarti domani.",
+     "id": "Saya bilang jangan khawatir dan telepon kamu besok.",
+     "literal": "kepada-dia punya berkata dari tidak khawatirkan-diri dan dari menelepon-kamu besok."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ha anche detto quando sarebbe tornata da Milano?",
+     "id": "Dia bilang juga kapan balik dari Milan?",
+     "literal": "punya juga berkata kapan akan-adalah kembali dari Milan?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Ha detto che sarebbe rientrata il giorno dopo, cioè oggi.",
+     "id": "Katanya pulang keesokan harinya, berarti hari ini.",
+     "literal": "punya berkata bahwa akan-adalah kembali itu hari sesudah, yaitu hari-ini."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Quindi è già qui e non viene lo stesso.",
+     "id": "Jadi dia udah di sini dan tetep nggak datang.",
+     "literal": "jadi itu-adalah sudah di-sini dan tidak datang itu sama."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Aspetta, forse ho capito male. Ha detto \"ci provo\".",
+     "id": "Tunggu, mungkin saya salah tangkap. Dia bilang \"saya coba\".",
+     "literal": "tunggu, mungkin punya memahami buruk. punya berkata pada-itu coba-aku."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Luca. \"Ci provo\" e \"non vengo\" non sono la stessa frase.",
+     "id": "Luca. \"Saya coba\" dan \"saya nggak datang\" itu bukan kalimat yang sama.",
+     "literal": "Luca. pada-itu coba-aku dan tidak datang-aku tidak adalah itu sama kalimat."
+    }
+   ],
+   "notes": [
+    "**Kalau kalimat pelapor di masa lalu, seluruh isi laporan mundur satu tingkat.** *\"Vengo\"* → *ha detto che **veniva*** atau *che sarebbe venuto*; *\"Sono stanca\"* → *ha detto che **era** stanca*; *\"Ho cambiato idea\"* → *ha detto che **aveva cambiato** idea*. Bahasa Indonesia tak menggeser apa pun: *dia bilang dia capek* memakai kata yang sama persis.",
+    "**Yang paling sering keliru: masa depan menjadi condizionale PASSATO, bukan presente.** *\"Verrò\"* → *ha detto che **sarebbe venuto***. Bukan *sarebbe venire*, bukan *verrebbe*. Ini kembali dari unit 9 — \"masa depan di dalam masa lalu\" — dan ia adalah penanda paling jelas apakah seseorang benar-benar menguasai discorso indiretto.",
+    "**Pertanyaan diteruskan dengan *se* untuk pertanyaan ya/tidak**, dan dengan kata tanyanya sendiri untuk yang lain: *\"Siete arrabbiati?\"* → *mi ha chiesto **se** eravamo arrabbiati*; *\"Quando torni?\"* → *ha chiesto **quando** sarebbe tornata*. Tanda tanya hilang, dan susunan katanya kembali normal.",
+    "**Perintah diteruskan dengan *di* + infinito**: *\"Non preoccuparti\"* → *le ho detto **di non preoccuparsi***; *\"Chiamala\"* → *mi ha detto **di chiamarla***. Perhatikan bahwa kata ganti refleksif ikut berpindah orang: *preoccuparti* → *preoccuparsi*.",
+    "**Keterangan waktu dan tempat ikut bergeser**: *oggi* → *quel giorno*, *domani* → *il giorno dopo*, *ieri* → *il giorno prima*, *qui* → *lì*, *questo* → *quello*. Inilah yang membuat *ha detto che sarebbe rientrata **il giorno dopo*** terdengar wajar, sementara *domani* di situ akan membingungkan.",
+    "**Congiuntivo imperfetto tidak bergeser lagi** — ia sudah di tingkat paling belakang: *\"Se avessi tempo…\"* diteruskan apa adanya. Hal yang sama berlaku untuk trapassato. Ini menghemat banyak pekerjaan sekaligus menjelaskan kenapa unit 11 harus datang lebih dulu."
+   ],
+   "grammars": [
+    {
+     "title": "Pergeseran bentuk kata kerja",
+     "body": [
+      "Yang menggerakkan seluruh tabel ini adalah satu hal: kalimat pelapornya di masa lalu (*ha detto*, *diceva*, *aveva detto*). Kalau pelapornya sekarang (*dice che*), tak ada yang bergeser sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Kata aslinya",
+       "Bentuknya",
+       "Diteruskan menjadi"
+      ],
+      "rows": [
+       [
+        "\"Vengo.\"",
+        "presente",
+        "che ven**iva**"
+       ],
+       [
+        "\"Sono venuto.\"",
+        "passato prossimo",
+        "che **era venuto**"
+       ],
+       [
+        "\"Venivo spesso.\"",
+        "imperfetto",
+        "che ven**iva** spesso"
+       ],
+       [
+        "\"Verrò.\"",
+        "futuro",
+        "che **sarebbe venuto**"
+       ],
+       [
+        "\"Verrei.\"",
+        "condizionale presente",
+        "che **sarebbe venuto**"
+       ],
+       [
+        "\"Penso che sia vero.\"",
+        "congiuntivo presente",
+        "che pensava che **fosse** vero"
+       ],
+       [
+        "\"Se avessi tempo…\"",
+        "congiuntivo imperfetto",
+        "**tidak bergeser**"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Kata yang ikut bergeser",
+     "body": [
+      "Waktu, tempat, dan penunjuk semuanya diukur ulang dari sudut si pelapor, bukan si pembicara asli."
+     ],
+     "table": {
+      "head": [
+       "Kata asli",
+       "Menjadi",
+       "Kata asli",
+       "Menjadi"
+      ],
+      "rows": [
+       [
+        "oggi",
+        "quel giorno",
+        "qui",
+        "lì"
+       ],
+       [
+        "domani",
+        "il giorno dopo",
+        "questo",
+        "quello"
+       ],
+       [
+        "ieri",
+        "il giorno prima",
+        "venire",
+        "andare"
+       ],
+       [
+        "adesso",
+        "allora",
+        "portare",
+        "portare / prendere"
+       ],
+       [
+        "l'anno prossimo",
+        "l'anno dopo",
+        "mio",
+        "suo"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Il messaggio del capo",
+   "intro": "Luca meneruskan pesan atasan kepada seluruh tim. Perhatikan bahwa meneruskan perintah orang lain punya masalahnya sendiri — dan bahwa bahasa memberimu cara menjaga jarak.",
+   "lines": [
+    {
+     "speaker": "Luca:",
+     "text": "Il capo ha detto che dobbiamo consegnare tutto entro venerdì.",
+     "id": "Bos bilang kita harus setor semuanya sebelum Jumat.",
+     "literal": "itu bos punya berkata bahwa harus-kami menyerahkan semua dalam Jumat."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Venerdì? Aveva detto che avremmo avuto due settimane.",
+     "id": "Jumat? Katanya kita dapat dua minggu.",
+     "literal": "Jumat? punya-lah berkata bahwa akan-punya-kami punya dua minggu."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Lo so. Ha detto che il cliente aveva anticipato la riunione.",
+     "id": "Iya tahu. Katanya kliennya majuin rapat.",
+     "literal": "itu tahu-aku. punya berkata bahwa itu klien punya-lah memajukan itu rapat."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E ci ha chiesto se era possibile o ce l'ha comunicato e basta?",
+     "id": "Dia nanya bisa nggak, atau cuma ngasih tahu doang?",
+     "literal": "dan kepada-kami punya bertanya jika adalah-lah mungkin atau kepada-kami itu-punya mengomunikasikan dan cukup?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "La seconda. Ha detto di organizzarci come volevamo.",
+     "id": "Yang kedua. Katanya atur aja sendiri sesuka kita.",
+     "literal": "itu kedua. punya berkata dari mengatur-kami seperti mau-lah-kami."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Che generoso. Gli hai detto che eravamo già in tre progetti?",
+     "id": "Baik banget. Kamu bilang nggak kita udah pegang tiga proyek?",
+     "literal": "apa murah-hati. kepada-dia punya-kamu berkata bahwa adalah-lah-kami sudah di tiga proyek?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Gliel'ho detto. Ha risposto che ne era consapevole.",
+     "id": "Udah saya bilang. Jawabnya dia sadar itu.",
+     "literal": "kepada-dia-itu-punya berkata. punya menjawab bahwa dari-itu adalah-lah sadar."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "\"Ne era consapevole.\" Bellissimo. Scrivilo nel verbale.",
+     "id": "\"Dia sadar itu.\" Bagus sekali. Tulis di notulen.",
+     "literal": "dari-itu adalah-lah sadar. indah-sekali. tulis-itu di-itu notulen."
+    }
+   ],
+   "notes": [
+    "***Aveva detto che avremmo avuto*** — trapassato di kalimat pelapor, condizionale passato di isinya. Susunan ini adalah cara paling tepat mengingatkan orang akan janji yang sudah ia ingkari, dan ia terdengar tenang justru karena bentuknya rapi.",
+    "***Ha detto di organizzarci*** memperlihatkan perintah yang diteruskan dengan *di* + infinito, lengkap dengan kata ganti yang ikut berpindah orang: perintah aslinya *\"organizzatevi\"*, diteruskan menjadi *di organizzarci* karena si pelapor termasuk yang diperintah.",
+    "**Meneruskan perkataan adalah cara menjaga jarak.** *Ha detto che…* memberi tahu pendengar bahwa kamu hanya penyampai. Karena itu ia sangat sering dipakai di kantor Italia — dan karena itu pula orang mendengarkan dengan saksama pada kata apa persis yang kamu pilih.",
+    "***Essere consapevole di*** berarti menyadari sesuatu; dengan *ne* ia menjadi *ne era consapevole*. Ungkapan ini terdengar resmi, dan di dialog ini sengaja dipakai untuk menandai bahwa atasannya sedang berlindung di balik bahasa.",
+    "***Il verbale*** adalah notulen rapat resmi. Kalimat *scrivilo nel verbale* adalah lelucon yang cukup umum di kantor Italia: menuliskan sesuatu di notulen berarti membuatnya tak bisa disangkal nanti."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meneruskan kabar tanpa menjaminnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Italia punya beberapa cara meneruskan kabar sambil menandai seberapa jauh kamu mempercayainya. Memilih yang tepat adalah keterampilan sosial, bukan sekadar tata bahasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Seberapa yakin",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Mi ha detto che…",
+       "langsung dari sumbernya",
+       "Mi ha detto che parte domani."
+      ],
+      [
+       "Ho sentito che…",
+       "kabar yang beredar",
+       "Ho sentito che si trasferisce."
+      ],
+      [
+       "Pare che… / Sembra che…",
+       "kabar, belum pasti",
+       "Pare che abbia trovato lavoro."
+      ],
+      [
+       "A quanto pare…",
+       "menurut yang terlihat",
+       "A quanto pare non viene."
+      ],
+      [
+       "Dicono che…",
+       "kata orang",
+       "Dicono che sia bravissimo."
+      ],
+      [
+       "Sarebbe… (condizionale)",
+       "kabar yang belum dipastikan",
+       "Sarebbero già partiti."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Condizionale untuk kabar yang belum pasti",
+     "items": [
+      "**Wartawan Italia memakai condizionale untuk kabar yang belum dikonfirmasi**: *Il ministro **avrebbe** firmato ieri* — konon menteri menandatanganinya kemarin. Ini pemakaian resmi yang akan kamu temui tiap hari di berita, dan ia sama sekali bukan pengandaian.",
+      "***Pare che* dan *sembra che* menuntut congiuntivo**, sedangkan *a quanto pare* tidak: *pare che **sia** partito* melawan *a quanto pare **è** partito*. Keduanya berarti hal yang sama.",
+      "**Menambahkan *ma non so se è vero* di akhir kalimat adalah kebiasaan yang sangat berguna.** Ia menyelamatkanmu dari menjadi sumber kabar yang ternyata salah — sesuatu yang di lingkungan kerja Italia diingat cukup lama."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "it": "di sicuro",
+   "baca": "di si-KU-ro",
+   "id": "pasti"
+  },
+  {
+   "it": "stanco",
+   "baca": "STAN-ko",
+   "id": "lelah"
+  },
+  {
+   "it": "rispondere",
+   "baca": "ris-PON-de-re",
+   "id": "menjawab"
+  },
+  {
+   "it": "rientrare",
+   "baca": "ryen-TRA-re",
+   "id": "kembali, pulang"
+  },
+  {
+   "it": "provarci",
+   "baca": "pro-VAR-chi",
+   "id": "mencobanya"
+  },
+  {
+   "it": "consegnare",
+   "baca": "kon-se-NYA-re",
+   "id": "menyerahkan"
+  },
+  {
+   "it": "anticipare",
+   "baca": "an-ti-chi-PA-re",
+   "id": "memajukan waktu"
+  },
+  {
+   "it": "la riunione",
+   "baca": "la ryu-NYO-ne",
+   "id": "rapat"
+  },
+  {
+   "it": "possibile",
+   "baca": "pos-SI-bi-le",
+   "id": "mungkin"
+  },
+  {
+   "it": "organizzarsi",
+   "baca": "or-ga-nid-DZAR-si",
+   "id": "mengatur diri"
+  },
+  {
+   "it": "generoso",
+   "baca": "je-ne-RO-zo",
+   "id": "murah hati"
+  },
+  {
+   "it": "il progetto",
+   "baca": "il pro-JET-to",
+   "id": "proyek"
+  },
+  {
+   "it": "consapevole",
+   "baca": "kon-sa-PE-vo-le",
+   "id": "sadar, mengetahui"
+  },
+  {
+   "it": "il verbale",
+   "baca": "il ver-BA-le",
+   "id": "notulen"
+  },
+  {
+   "it": "pare che",
+   "baca": "PA-re ke",
+   "id": "tampaknya"
+  },
+  {
+   "it": "a quanto pare",
+   "baca": "a KWAN-to PA-re",
+   "id": "kelihatannya"
+  },
+  {
+   "it": "trasferirsi",
+   "baca": "tras-fe-RIR-si",
+   "id": "pindah"
+  },
+  {
+   "it": "il ministro",
+   "baca": "il mi-NIS-tro",
+   "id": "menteri"
+  },
+  {
+   "it": "firmare",
+   "baca": "fir-MA-re",
+   "id": "menandatangani"
+  },
+  {
+   "it": "sentire",
+   "baca": "sen-TI-re",
+   "id": "mendengar"
+  },
+  {
+   "it": "il giorno dopo",
+   "baca": "il JOR-no DO-po",
+   "id": "keesokan harinya"
+  },
+  {
+   "it": "il giorno prima",
+   "baca": "il JOR-no PRI-ma",
+   "id": "sehari sebelumnya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Teruskan perkataan berikut memakai **Ha detto che…**",
+   "items": [
+    "\"Vengo stasera.\" → ____",
+    "\"Sono stanca.\" → ____",
+    "\"Ho cambiato idea.\" → ____",
+    "\"Verrò domani.\" → ____",
+    "\"Non l'ho mai visto.\" → ____",
+    "\"Partirò l'anno prossimo.\" → ____"
+   ]
+  },
+  {
+   "prompt": "Teruskan pertanyaan berikut memakai **Mi ha chiesto…**",
+   "items": [
+    "\"Siete arrabbiati?\" → ____",
+    "\"Quando torni?\" → ____",
+    "\"Dove abiti?\" → ____",
+    "\"Hai finito?\" → ____",
+    "\"Perché non sei venuto?\" → ____"
+   ]
+  },
+  {
+   "prompt": "Teruskan perintah berikut memakai **Mi ha detto…**",
+   "items": [
+    "\"Non preoccuparti.\" → ____",
+    "\"Chiamala domani.\" → ____",
+    "\"Non dirglielo.\" → ____",
+    "\"Organizzatevi come volete.\" → ____"
+   ]
+  },
+  {
+   "prompt": "Geser keterangan waktu dan tempatnya.",
+   "items": [
+    "\"Vengo oggi.\" → Ha detto che veniva ____",
+    "\"Parto domani.\" → Ha detto che sarebbe partito ____",
+    "\"Sono arrivato ieri.\" → Ha detto che era arrivato ____",
+    "\"Aspetto qui.\" → Ha detto che aspettava ____",
+    "\"Questo è mio.\" → Ha detto che ____ era ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Italia.",
+   "items": [
+    "Dia bilang dia tidak datang malam ini.",
+    "Kemarin dia bilang pasti datang.",
+    "Dia tanya apakah kami marah sama dia.",
+    "Saya bilang ke dia jangan khawatir.",
+    "Katanya dia balik keesokan harinya."
+   ]
+  }
+ ],
+ "answers": [
+  "Ha detto che veniva quella sera. — Ha detto che era stanca. — Ha detto che aveva cambiato idea. — Ha detto che sarebbe venuto il giorno dopo. — Ha detto che non l'aveva mai visto. — Ha detto che sarebbe partito l'anno dopo.",
+  "Mi ha chiesto se eravamo arrabbiati. — Mi ha chiesto quando sarei tornato. — Mi ha chiesto dove abitavo. — Mi ha chiesto se avevo finito. — Mi ha chiesto perché non ero venuto.",
+  "Mi ha detto di non preoccuparmi. — Mi ha detto di chiamarla il giorno dopo. — Mi ha detto di non dirglielo. — Ci ha detto di organizzarci come volevamo.",
+  "quel giorno — il giorno dopo — il giorno prima — lì — quello … suo",
+  "Ha detto che non veniva quella sera. — Il giorno prima aveva detto che sarebbe venuta di sicuro. — Mi ha chiesto se eravamo arrabbiati con lei. — Le ho detto di non preoccuparsi. — Ha detto che sarebbe rientrata il giorno dopo."
+ ],
+ "wave": "Ambil percakapan telepon atau pesan yang kamu terima hari ini, lalu ceritakan isinya kepada orang lain dalam bahasa Italia — enam kalimat, semuanya dengan *ha detto che*, *mi ha chiesto se*, atau *mi ha detto di*. Kemudian periksa satu hal saja: setiap kali orang aslinya berkata \"akan\", apakah kamu memakai **condizionale passato**? Kalau tidak, di situlah kalimatmu masih terdengar seperti terjemahan."
+}

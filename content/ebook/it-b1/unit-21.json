@@ -1,0 +1,564 @@
+{
+ "title": "Egregio Direttore",
+ "title_target": "Scrivere in italiano formale",
+ "goal": "Menulis surel dan surat resmi berbahasa Italia — pembuka, badan, dan penutup — serta membedakan tiga ragam yang tak boleh tercampur.",
+ "bekal": [
+  "sapaan pembuka dan penutup menurut tingkat keresmian",
+  "*Lei* di dalam tulisan, termasuk *La* dan *Le*",
+  "kalimat baku untuk meminta, mengeluh, dan menagih jawaban",
+  "kata tertulis yang menggantikan kata percakapan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog A — Una mail che non va bene",
+   "intro": "Dewi menulis surel pertama ke lembaga resmi dan meminta Luca memeriksanya. Perhatikan bahwa kesalahannya bukan tata bahasa, melainkan ragam bahasa.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Mi dai un'occhiata a questa mail? La mando al comune.",
+     "id": "Cek email ini dong? Mau saya kirim ke kelurahan.",
+     "literal": "kepadaku beri-kamu satu-lirikan pada ini surel? itu kirim-aku ke-itu kelurahan."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Fammi vedere... \"Ciao, senti, avrei bisogno di sapere...\"",
+     "id": "Coba lihat... \"Hai, gini, saya butuh tahu...\"",
+     "literal": "buat-aku melihat... halo, dengar, akan-punya kebutuhan dari mengetahui..."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Troppo informale?",
+     "id": "Terlalu santai?",
+     "literal": "terlalu tidak-resmi?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Molto. \"Ciao\" e \"senti\" al comune non si scrivono mai.",
+     "id": "Banget. \"Ciao\" sama \"senti\" nggak pernah ditulis ke kelurahan.",
+     "literal": "banyak. halo dan dengar ke-itu kelurahan tidak diri tulis pernah."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E come comincio?",
+     "id": "Mulainya gimana?",
+     "literal": "dan bagaimana mulai-aku?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "\"Gentili Signori\" se non sai chi legge. \"Gentile Dottoressa Bianchi\" se lo sai.",
+     "id": "\"Gentili Signori\" kalau nggak tahu siapa yang baca. \"Gentile Dottoressa Bianchi\" kalau tahu.",
+     "literal": "ramah tuan-tuan jika tidak tahu-kamu siapa membaca. ramah doktor-perempuan Bianchi jika itu tahu-kamu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Dottoressa? Ma è laureata?",
+     "id": "Dottoressa? Emang dia sarjana?",
+     "literal": "doktor-perempuan? tapi itu-adalah bergelar?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "In Italia chiunque abbia una laurea è \"dottore\". Nel dubbio, usalo.",
+     "id": "Di Italia siapa pun yang punya gelar itu \"dottore\". Kalau ragu, pakai aja.",
+     "literal": "di Italia siapa-pun punya satu gelar itu-adalah doktor. di-itu keraguan, pakai-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E il corpo della mail?",
+     "id": "Isi emailnya?",
+     "literal": "dan itu badan dari-itu surel?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "\"Le scrivo in merito alla mia richiesta di residenza, presentata il 12 marzo.\"",
+     "id": "\"Saya menulis sehubungan dengan permohonan domisili saya, yang diajukan 12 Maret.\"",
+     "literal": "kepada-Anda tulis-aku di hal pada-itu punyaku permohonan dari kediaman, diajukan itu 12 Maret."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Bello. E per chiedere una risposta senza sembrare aggressiva?",
+     "id": "Bagus. Terus buat nagih jawaban tanpa kelihatan galak?",
+     "literal": "indah. dan untuk meminta satu jawaban tanpa tampak agresif?"
+    },
+    {
+     "speaker": "Luca:",
+     "text": "\"Resto in attesa di un Suo cortese riscontro.\" È la formula magica.",
+     "id": "\"Saya menunggu tanggapan Anda.\" Itu mantra saktinya.",
+     "literal": "tinggal-aku di penantian dari satu punya-Anda sopan tanggapan. itu-adalah itu rumus ajaib."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Sembra una lingua diversa dall'italiano che parliamo.",
+     "id": "Kayak bahasa lain dibanding bahasa Italia yang kita omongin.",
+     "literal": "tampak satu bahasa berbeda dari-itu-Italia yang berbicara-kami."
+    },
+    {
+     "speaker": "Luca:",
+     "text": "Lo è, un po'. Ma si impara: sono venti frasi in tutto.",
+     "id": "Emang agak beda. Tapi bisa dipelajari: cuma dua puluh kalimat.",
+     "literal": "itu itu-adalah, satu sedikit. tapi diri belajar: adalah dua-puluh kalimat pada semua."
+    }
+   ],
+   "notes": [
+    "***Gentile* untuk satu orang, *Gentili* untuk banyak, *Egregio* untuk yang lebih resmi lagi.** *Egregio Direttore*, *Gentile Dottoressa Bianchi*, *Gentili Signori*, *Spettabile Ditta* (untuk perusahaan). *Caro* hanya untuk orang yang sudah kamu kenal, dan *Ciao* tak pernah dalam surat resmi.",
+    "***Lei* di dalam tulisan resmi sering ditulis dengan huruf besar**, termasuk bentuk-bentuknya: *La ringrazio*, *Le scrivo*, *un **Suo** cortese riscontro*. Ini kebiasaan yang masih hidup di surat lembaga dan bisnis, walaupun sudah mulai memudar di surel biasa.",
+    "***In merito a*** berarti \"sehubungan dengan\" dan menggantikan *per* atau *riguardo a* yang lebih santai. Ia adalah salah satu dari sekitar dua puluh ungkapan yang, sekali dihafal, menutupi hampir seluruh surat resmi yang akan kamu tulis.",
+    "***Resto in attesa di un Suo cortese riscontro*** adalah penutup baku untuk meminta jawaban tanpa mendesak. Sepupunya: *In attesa di un Suo riscontro, porgo cordiali saluti*. Ia terdengar berlebihan bagi telinga Indonesia dan sepenuhnya biasa di Italia.",
+    "**Gelar *dottore* di Italia dipakai untuk siapa saja yang punya gelar sarjana**, bukan hanya dokter atau doktor. Karena itu ia terdengar di mana-mana, dan memakainya saat ragu jauh lebih aman daripada tidak memakainya. Untuk perempuan: *dottoressa*.",
+    "**Kesalahan pelajar di surat resmi hampir tak pernah tata bahasa — ia ragam bahasa.** Kalimat *senti, avrei bisogno* benar sepenuhnya secara tata bahasa, dan sepenuhnya salah tempat di surel ke kantor pemerintah. Inilah yang membuat unit ini perlu meski tata bahasamu sudah beres."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga ragam, satu isi",
+     "body": [
+      "Kalimat yang sama, ditulis untuk tiga penerima yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Kepada teman",
+       "Kepada rekan kerja",
+       "Kepada lembaga"
+      ],
+      "rows": [
+       [
+        "Pembuka",
+        "Ciao Marta,",
+        "Buongiorno Marta,",
+        "Gentile Dottoressa Bianchi,"
+       ],
+       [
+        "Alasan menulis",
+        "senti, volevo chiederti…",
+        "Ti scrivo per chiederti…",
+        "Le scrivo in merito a…"
+       ],
+       [
+        "Permintaan",
+        "mi fai sapere?",
+        "Potresti farmi sapere?",
+        "Le sarei grata se volesse comunicarmi…"
+       ],
+       [
+        "Lampiran",
+        "ti allego il file",
+        "In allegato trovi il file.",
+        "Si allega copia del documento."
+       ],
+       [
+        "Penutup",
+        "grazie mille!",
+        "Grazie e a presto,",
+        "In attesa di un cortese riscontro,"
+       ],
+       [
+        "Salam",
+        "un bacio / ciao",
+        "Un caro saluto,",
+        "Distinti saluti,"
+       ]
+      ]
+     },
+     "after": [
+      "Yang paling sering keliru adalah mencampur kolom: pembuka resmi dengan penutup santai, atau sebaliknya. Pilih satu kolom dan bertahanlah di situ sampai akhir surat."
+     ]
+    },
+    {
+     "title": "Dua puluh ungkapan yang menutupi hampir semuanya",
+     "body": [
+      "Hafalkan ini sebagai blok utuh; jangan menyusunnya sendiri dari kata per kata."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Le scrivo in merito a…",
+        "Saya menulis sehubungan dengan…"
+       ],
+       [
+        "Con la presente comunico che…",
+        "Dengan surat ini saya sampaikan bahwa…"
+       ],
+       [
+        "La contatto per…",
+        "Saya menghubungi Anda untuk…"
+       ],
+       [
+        "Le sarei grato/grata se…",
+        "Saya berterima kasih jika Anda…"
+       ],
+       [
+        "Vorrei sapere se è possibile…",
+        "Saya ingin tahu apakah mungkin…"
+       ],
+       [
+        "Come da accordi telefonici,",
+        "Sesuai kesepakatan lewat telepon,"
+       ],
+       [
+        "In allegato invio…",
+        "Terlampir saya kirimkan…"
+       ],
+       [
+        "Resto a disposizione per chiarimenti.",
+        "Saya siap memberi penjelasan lebih lanjut."
+       ],
+       [
+        "In attesa di un cortese riscontro,",
+        "Sambil menunggu tanggapan Anda,"
+       ],
+       [
+        "La ringrazio anticipatamente.",
+        "Terima kasih sebelumnya."
+       ],
+       [
+        "Distinti saluti,",
+        "Hormat saya, (paling resmi)"
+       ],
+       [
+        "Cordiali saluti,",
+        "Salam hormat, (paling umum)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Un reclamo che funziona",
+   "intro": "Marta harus menulis surat keluhan kepada perusahaan yang tak mengirim barangnya. Perhatikan bahwa keluhan yang efektif dalam bahasa Italia justru yang paling tenang.",
+   "lines": [
+    {
+     "speaker": "Marta:",
+     "text": "Sono tre settimane che aspetto e non risponde nessuno.",
+     "id": "Udah tiga minggu saya nunggu dan nggak ada yang jawab.",
+     "literal": "adalah tiga minggu bahwa tunggu-aku dan tidak menjawab siapa-pun."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hai scritto o hai telefonato?",
+     "id": "Kamu nulis atau telepon?",
+     "literal": "punya-kamu menulis atau punya-kamu menelepon?"
+    },
+    {
+     "speaker": "Marta:",
+     "text": "Telefonato. Ma non lascia traccia.",
+     "id": "Telepon. Tapi nggak ninggalin jejak.",
+     "literal": "menelepon. tapi tidak meninggalkan jejak."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Appunto. Scrivi, e metti le date.",
+     "id": "Nah itu. Tulis, dan cantumin tanggalnya.",
+     "literal": "tepat. tulis, dan taruh itu tanggal."
+    },
+    {
+     "speaker": "Marta:",
+     "text": "\"Con la presente segnalo che l'ordine n. 4471, effettuato il 3 aprile, non è ancora stato consegnato.\"",
+     "id": "\"Dengan surat ini saya laporkan bahwa pesanan nomor 4471, tanggal 3 April, belum juga dikirim.\"",
+     "literal": "dengan itu ini laporkan-aku bahwa itu-pesanan nomor 4471, dilakukan itu 3 April, tidak itu-adalah masih menjadi diserahkan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Perfetto. Adesso di' cosa vuoi, chiaramente.",
+     "id": "Bagus. Sekarang bilang maunya apa, jelas-jelas.",
+     "literal": "sempurna. sekarang katakan apa mau-kamu, dengan-jelas."
+    },
+    {
+     "speaker": "Marta:",
+     "text": "\"Chiedo pertanto la consegna entro il 30 aprile o il rimborso integrale.\"",
+     "id": "\"Karena itu saya minta pengiriman paling lambat 30 April atau pengembalian penuh.\"",
+     "literal": "minta-aku oleh-karena-itu itu pengiriman dalam itu 30 April atau itu pengembalian utuh."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "E chiudi senza minacciare, ma lasciando capire.",
+     "id": "Terus tutup tanpa mengancam, tapi bikin ngerti.",
+     "literal": "dan tutup tanpa mengancam, tapi meninggalkan memahami."
+    },
+    {
+     "speaker": "Marta:",
+     "text": "\"In mancanza di riscontro entro sette giorni, mi vedrò costretta a rivolgermi altrove.\"",
+     "id": "\"Jika tidak ada tanggapan dalam tujuh hari, saya terpaksa menempuh jalur lain.\"",
+     "literal": "di ketiadaan dari tanggapan dalam tujuh hari, kepadaku akan-melihat terpaksa untuk mengalihkan-diri tempat-lain."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ecco. Adesso ti rispondono in due giorni.",
+     "id": "Nah. Sekarang dua hari juga dijawab.",
+     "literal": "ini-dia. sekarang kepadamu menjawab-mereka di dua hari."
+    }
+   ],
+   "notes": [
+    "**Keluhan resmi Italia berdiri di atas tiga hal: tanggal, nomor, dan permintaan yang jelas.** Nada marah tidak menambah apa pun; yang bekerja adalah bukti dan tenggat. *L'ordine n. 4471, effettuato il 3 aprile* jauh lebih kuat daripada satu paragraf kekecewaan.",
+    "***Con la presente*** berarti \"dengan surat ini\" dan menandai bahwa dokumenmu resmi. Ia hampir selalu diikuti kata kerja seperti *segnalo*, *comunico*, *richiedo*, *contesto*.",
+    "***Mi vedrò costretto/costretta a…*** — \"saya akan terpaksa\". Ini cara Italia mengancam tanpa mengancam: ia sepenuhnya sopan dan sepenuhnya dimengerti. Perhatikan bentuknya ikut jenis kelamin penulisnya.",
+    "***In mancanza di riscontro entro…*** memasang tenggat tanpa menuduh siapa pun. Susunan ini muncul di ribuan surat Italia tiap hari, dan ia adalah bagian yang paling sering benar-benar menghasilkan jawaban.",
+    "***Sono tre settimane che aspetto*** — bahasa Italia menyatakan lamanya dengan *è/sono… che* + bentuk sekarang, bukan bentuk lampau: *sono tre anni che vivo qui* (saya sudah tiga tahun tinggal di sini). Sepupunya *da tre anni vivo qui*. Keduanya benar; yang salah adalah memakai passato prossimo."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata percakapan dan padanan tertulisnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian besar pekerjaan menulis resmi bukan menyusun kalimat baru, melainkan mengganti kata yang sudah kamu kenal dengan sepupunya yang lebih formal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Percakapan",
+      "Tertulis resmi",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "dire",
+       "comunicare, segnalare",
+       "menyampaikan"
+      ],
+      [
+       "chiedere",
+       "richiedere, sollecitare",
+       "meminta"
+      ],
+      [
+       "mandare",
+       "inviare, trasmettere",
+       "mengirim"
+      ],
+      [
+       "ricevere",
+       "ricevere, prendere atto di",
+       "menerima"
+      ],
+      [
+       "parlare di",
+       "in merito a, relativamente a",
+       "mengenai"
+      ],
+      [
+       "ma",
+       "tuttavia, ciò nonostante",
+       "namun"
+      ],
+      [
+       "quindi",
+       "pertanto, di conseguenza",
+       "oleh karena itu"
+      ],
+      [
+       "adesso",
+       "attualmente",
+       "saat ini"
+      ],
+      [
+       "dopo",
+       "successivamente",
+       "kemudian"
+      ],
+      [
+       "prima",
+       "precedentemente",
+       "sebelumnya"
+      ],
+      [
+       "se non",
+       "in mancanza di",
+       "jika tidak ada"
+      ],
+      [
+       "scusi",
+       "mi scuso per, ci scusiamo per",
+       "mohon maaf atas"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga jebakan yang tersisa",
+     "items": [
+      "**Jangan menerjemahkan \"Dear\" menjadi *Caro*.** *Caro Direttore* terdengar seperti kamu mengenalnya secara pribadi. Yang benar *Egregio Direttore* atau *Gentile Direttore*.",
+      "**Jangan menutup surel resmi dengan *Grazie mille!*** Tanda seru dan *mille* keduanya terlalu hangat. Yang baku: *La ringrazio*, atau *Cordiali saluti* saja.",
+      "**Jangan memakai *tu* setelah memulai dengan *Lei*.** Kesalahan ini sangat mudah terjadi di surel panjang, dan ia langsung terlihat. Kalau kamu ragu di tengah jalan, baca ulang dari awal dan periksa satu hal saja: apakah semua kata kerjanya orang ketiga tunggal."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "it": "dare un'occhiata",
+   "baca": "DA-re u-nok-KYA-ta",
+   "id": "melirik, mengecek"
+  },
+  {
+   "it": "informale",
+   "baca": "in-for-MA-le",
+   "id": "tidak resmi"
+  },
+  {
+   "it": "gentile",
+   "baca": "jen-TI-le",
+   "id": "yang terhormat, ramah"
+  },
+  {
+   "it": "egregio",
+   "baca": "e-GRE-jo",
+   "id": "yang terhormat (resmi)"
+  },
+  {
+   "it": "laureato",
+   "baca": "lau-re-A-to",
+   "id": "bergelar sarjana"
+  },
+  {
+   "it": "la laurea",
+   "baca": "la LAU-re-a",
+   "id": "gelar sarjana"
+  },
+  {
+   "it": "in merito a",
+   "baca": "in ME-ri-to a",
+   "id": "sehubungan dengan"
+  },
+  {
+   "it": "presentare",
+   "baca": "pre-zen-TA-re",
+   "id": "mengajukan"
+  },
+  {
+   "it": "il riscontro",
+   "baca": "il ris-KON-tro",
+   "id": "tanggapan"
+  },
+  {
+   "it": "restare in attesa",
+   "baca": "res-TA-re in at-TE-za",
+   "id": "menunggu"
+  },
+  {
+   "it": "il reclamo",
+   "baca": "il re-KLA-mo",
+   "id": "keluhan resmi"
+  },
+  {
+   "it": "la traccia",
+   "baca": "la TRAC-cha",
+   "id": "jejak, bukti"
+  },
+  {
+   "it": "segnalare",
+   "baca": "se-nya-LA-re",
+   "id": "melaporkan"
+  },
+  {
+   "it": "l'ordine",
+   "baca": "LOR-di-ne",
+   "id": "pesanan"
+  },
+  {
+   "it": "la consegna",
+   "baca": "la kon-SE-nya",
+   "id": "pengiriman"
+  },
+  {
+   "it": "il rimborso",
+   "baca": "il rim-BOR-so",
+   "id": "pengembalian uang"
+  },
+  {
+   "it": "integrale",
+   "baca": "in-te-GRA-le",
+   "id": "penuh, utuh"
+  },
+  {
+   "it": "minacciare",
+   "baca": "mi-nac-CHA-re",
+   "id": "mengancam"
+  },
+  {
+   "it": "costretto",
+   "baca": "kos-TRET-to",
+   "id": "terpaksa"
+  },
+  {
+   "it": "rivolgersi",
+   "baca": "ri-VOL-jer-si",
+   "id": "mengalihkan diri, menghubungi"
+  },
+  {
+   "it": "l'allegato",
+   "baca": "lal-le-GA-to",
+   "id": "lampiran"
+  },
+  {
+   "it": "il chiarimento",
+   "baca": "il kya-ri-MEN-to",
+   "id": "penjelasan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih pembuka yang tepat.",
+   "items": [
+    "Kepada teman dekat → ____",
+    "Kepada rekan kerja yang kamu ber-*tu* → ____",
+    "Kepada perempuan bergelar yang belum kamu kenal → ____",
+    "Kepada perusahaan, tanpa nama orang → ____",
+    "Kepada direktur, paling resmi → ____"
+   ]
+  },
+  {
+   "prompt": "Ganti kata percakapan dengan padanan tertulisnya.",
+   "items": [
+    "Ti mando il documento. → Le ____ il documento.",
+    "Volevo dirle che… → Con la presente ____ che…",
+    "Ma non è arrivato. → ____ non è arrivato.",
+    "Quindi chiedo un rimborso. → ____ chiedo un rimborso.",
+    "Adesso non è possibile. → ____ non è possibile."
+   ]
+  },
+  {
+   "prompt": "Betulkan campuran ragamnya.",
+   "items": [
+    "Gentile Dottoressa, ciao, senti…",
+    "Egregio Direttore, … Grazie mille!",
+    "Le scrivo per dirti che…",
+    "Caro Comune di Bologna,"
+   ]
+  },
+  {
+   "prompt": "Lengkapi surat keluhan berikut.",
+   "items": [
+    "Con la presente ____ che l'ordine n. 4471 non è stato consegnato.",
+    "L'ordine è stato ____ il 3 aprile.",
+    "Chiedo ____ la consegna entro il 30 aprile.",
+    "In ____ di riscontro entro sette giorni, mi vedrò costretta ad agire.",
+    "Resto a ____ per eventuali chiarimenti."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Italia formal.",
+   "items": [
+    "Saya menulis sehubungan dengan permohonan saya.",
+    "Terlampir saya kirimkan dokumennya.",
+    "Saya menunggu tanggapan Anda.",
+    "Terima kasih sebelumnya.",
+    "Hormat saya,"
+   ]
+  }
+ ],
+ "answers": [
+  "Ciao Marta, — Buongiorno Marta, — Gentile Dottoressa Bianchi, — Spettabile Ditta, — Egregio Direttore,",
+  "invio — comunico — Tuttavia — Pertanto — Attualmente",
+  "Gentile Dottoressa, Le scrivo in merito a… — Egregio Direttore, … La ringrazio. Cordiali saluti, — Le scrivo per dirLe che… — Spettabile Comune di Bologna,",
+  "segnalo — effettuato — pertanto — mancanza — disposizione",
+  "Le scrivo in merito alla mia richiesta. — In allegato invio il documento. — Resto in attesa di un Suo cortese riscontro. — La ringrazio anticipatamente. — Distinti saluti,"
+ ],
+ "wave": "Tulis satu surel resmi sungguhan yang memang perlu kamu kirim — ke kantor, sekolah, bank, atau penjual — sepanjang enam kalimat, dengan pembuka, alasan menulis, permintaan yang jelas, tenggat, dan penutup. Lalu tulis ulang isi yang sama persis sebagai pesan WhatsApp kepada temanmu. Dua teks itu menyampaikan hal yang identik, dan tak satu kata pun sama."
+}
