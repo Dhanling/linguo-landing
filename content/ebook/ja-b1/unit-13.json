@@ -1,0 +1,896 @@
+{
+ "title": "Perjalanan yang tidak berjalan lancar",
+ "title_target": "旅行のトラブル — Ryokō no toraburu",
+ "goal": "Mengurus barang hilang, mengubah pemesanan, dan menghadapi keterlambatan atau pembatalan — semuanya dalam bahasa Jepang, dan semuanya dengan tepat menyebut kapan sesuatu terjadi.",
+ "bekal": [
+  "memakai 〜ところだ untuk menyebut tahap: akan, sedang, baru saja",
+  "membedakan 〜たばかり dan 〜たところ",
+  "memakai 〜うちに、〜間に、〜たびに untuk mengatur waktu",
+  "melapor kehilangan barang di stasiun dan pos polisi",
+  "mengubah, membatalkan, dan menanyakan pengembalian uang"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Tas tertinggal di kereta",
+   "intro": "Rangga meninggalkan tasnya di kereta. Sistem barang hilang Jepang termasuk yang terbaik di dunia, tapi hanya berguna kalau kamu bisa menjawab tiga pertanyaan dengan tepat.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "すみません、[電車|densha]の[中|naka]に[かばん|kaban]を[忘|wasu]れてしまったんですが。",
+     "id": "Permisi, saya telanjur meninggalkan tas di dalam kereta.",
+     "literal": "maaf, kereta — punya — dalam — pada — tas — akan — lupa — telanjur (lampau) — adalah — tapi."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "[何線|Nani-sen]の[何時|nan-ji]ごろの[電車|densha]でしょうか。",
+     "id": "Kereta jalur apa, sekitar jam berapa?",
+     "literal": "jalur-apa — punya — jam-berapa — kira-kira — punya — kereta — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[山手線|Yamanote-sen]の[内回|uchimawa]りで、[今|ima][降|o]りたところです。[十分|Juppun][前|mae]くらいです。",
+     "id": "Jalur Yamanote arah dalam, saya baru saja turun. Sekitar sepuluh menit lalu.",
+     "literal": "Yamanote-jalur — punya — putaran-dalam — dengan, sekarang — turun (lampau) — tepat — adalah. sepuluh-menit — depan — kira-kira — adalah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "どのような[かばん|kaban]ですか。[色|Iro]と[大|ō]きさを[教|oshi]えてください。",
+     "id": "Tas seperti apa? Tolong sebutkan warna dan ukurannya.",
+     "literal": "bagaimana — punya — tas — adalah — kah. warna — dan — besar — akan — beritahu — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[黒|Kuro]い[リュック|ryukku]で、[ノートパソコン|nōto pasokon]が[入|hai]っています。[中|Naka]に[名刺|meishi]も。",
+     "id": "Ransel hitam, di dalamnya ada laptop. Ada kartu nama juga di dalamnya.",
+     "literal": "hitam — ransel — dengan, laptop — yang — masuk — sedang. dalam — pada — kartu-nama — juga."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "[少々|Shōshō]お[待|ma]ちください。……[今|Ima]、[終点|shūten]の[駅|eki]に[問|to]い[合|awa]わせているところです。",
+     "id": "Mohon tunggu sebentar. …Sekarang saya sedang menghubungi stasiun terakhir.",
+     "literal": "sebentar — tunggu — silakan. …sekarang, ujung-jalur — punya — stasiun — pada — menanyakan — sedang — adalah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "ありました。[池袋|Ikebukuro][駅|eki]で[保管|hokan]しております。",
+     "id": "Ketemu. Disimpan di Stasiun Ikebukuro.",
+     "literal": "ada (lampau). Ikebukuro — stasiun — di — menyimpan — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "よかった…！[今|Ima]から[取|to]りに[行|i]けますか。",
+     "id": "Syukurlah…! Saya bisa ambil sekarang?",
+     "literal": "baik (lampau)…! sekarang — dari — mengambil — untuk — bisa-pergi — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "はい。[今日|Kyō]は[二十三時|nijūsan-ji]まで[受|u]け[取|to]れます。[身分証明書|Mibun shōmeisho]をお[持|mo]ちください。",
+     "id": "Ya. Hari ini bisa diambil sampai jam 23. Tolong bawa kartu identitas.",
+     "literal": "ya. hari-ini — mengenai — jam-23 — sampai — bisa-diterima. kartu-identitas — akan — bawa — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[分|Wa]かりました。[受取|Uketori]の[際|sai]、[何|nani]か[書|ka]く[必要|hitsuyō]はありますか。",
+     "id": "Baik. Saat mengambil, ada yang perlu saya isi?",
+     "literal": "paham (lampau). penerimaan — punya — saat, apa — pun — menulis — keperluan — mengenai — ada — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "[受取書|Uketorisho]にご[記入|kinyū]いただきます。[焦|Ase]らずにいらしてください。",
+     "id": "Anda akan mengisi surat penerimaan. Datang saja tanpa terburu-buru.",
+     "literal": "surat-penerimaan — pada — mengisi — kami-terima. panik — tanpa — datang (hormat) — silakan."
+    }
+   ],
+   "notes": [
+    "**降りたところです = baru saja turun, detik ini juga.** Bandingkan dengan [降|o]りたばかりです — yang bisa berarti “baru turun” dalam rentang lebih longgar, bahkan beberapa hari lalu kalau dirasakan masih baru.",
+    "**問い合わせているところです = sedang dalam proses menghubungi.** Rangka ～ているところ menyoroti bahwa perbuatannya sedang berlangsung **tepat sekarang**, lebih tegas daripada ～ている biasa.",
+    "**Tiga pertanyaan wajib saat melapor barang hilang:** jalur/tempat, waktu kira-kira, dan ciri barangnya. Siapkan ketiganya sebelum bicara — itu memangkas separuh waktunya.",
+    "**忘れ物 dan 落とし物 berbeda.** [忘|Wasu]れ[物|mono] = barang yang tertinggal (kamu tahu di mana). [落|O]とし[物|mono] = barang yang jatuh (kamu tidak tahu di mana). Petugas akan menanyakan yang mana.",
+    "**焦らずに = tanpa panik.** Rangka 〜ずに adalah bentuk tulis dari 〜ないで: [食|Ta]べずに (tanpa makan), [言|I]わずに (tanpa berkata). ⚠️ Bentuk する tidak beraturan: せずに, bukan しずに.",
+    "**Barang hilang di Jepang punya peluang besar kembali.** Kalau tidak ditemukan dalam beberapa hari, ia dipindahkan ke pusat barang hilang polisi ([遺失物|ishitsubutsu][センター|sentā]) dan disimpan sampai tiga bulan."
+   ],
+   "grammars": [
+    {
+     "title": "～ところだ — tiga tahap perbuatan",
+     "body": [
+      "Rangka ini menempatkan perbuatan pada garis waktu dengan sangat tepat, dan bahasa Indonesia tidak punya padanannya yang serapi ini."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Tahap",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kamus + ところだ",
+        "tepat akan",
+        "[今|Ima][出|de]るところです。"
+       ],
+       [
+        "～ているところだ",
+        "sedang, tepat sekarang",
+        "[今|Ima][調|shira]べているところです。"
+       ],
+       [
+        "～たところだ",
+        "baru saja selesai",
+        "[今|Ima][着|tsu]いたところです。"
+       ],
+       [
+        "～たばかりだ",
+        "baru saja (lebih longgar)",
+        "[先月|Sengetsu][日本|Nihon]に[来|き]たばかりです。"
+       ],
+       [
+        "～ところだった",
+        "hampir saja (tapi tidak)",
+        "[危|Abu]なく[遅|oku]れるところでした。"
+       ],
+       [
+        "～ところに / ～ところへ",
+        "tepat saat itu, sesuatu datang",
+        "[出|De]かけるところに[電話|denwa]が[来|き]た。"
+       ]
+      ]
+     },
+     "after": [
+      "**Selisih たところ dan たばかり:** たところ diukur dengan **jam nyata** (beberapa menit lalu); たばかり diukur dengan **perasaan** (bisa sebulan lalu, kalau masih terasa baru).",
+      "⚠️ **ところだった berarti nyaris terjadi tapi tidak jadi.** [忘|Wasu]れるところでした = hampir saja saya lupa (untung tidak). Ini rangka yang sangat sering dipakai untuk bersyukur.",
+      "**Kalau ada objek, ところ menempel pada seluruh kalimatnya:** ご[飯|han]を[食|ta]べているところです。"
+     ]
+    },
+    {
+     "title": "うちに・間に・たびに — mengatur waktu",
+     "body": [
+      "Tiga rangka waktu yang paling sering dipakai di tingkat B1, dan yang paling sering tertukar dengan 〜とき."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～うちに",
+        "selagi masih ～ (nanti berubah)",
+        "[熱|Atsu]いうちに[召|me]し[上|a]がってください。"
+       ],
+       [
+        "～ないうちに",
+        "sebelum ～ terjadi",
+        "[暗|Kura]くならないうちに[帰|kae]りましょう。"
+       ],
+       [
+        "～[間|aida]に",
+        "selama rentang itu, sesuatu terjadi",
+        "[留守|Rusu]の[間|aida]に[宅配|takuhai]が[来|き]た。"
+       ],
+       [
+        "～[間|aida]",
+        "sepanjang rentang itu, terus",
+        "[日本|Nihon]にいる[間|aida]、[毎日|mainichi][勉強|benkyō]した。"
+       ],
+       [
+        "～たびに",
+        "tiap kali",
+        "[会|A]うたびに[背|se]が[伸|no]びている。"
+       ],
+       [
+        "～[際|sai]に",
+        "📄 saat, pada waktu",
+        "お[受取|uketori]りの[際|sai]にご[提示|teiji]ください。"
+       ]
+      ]
+     },
+     "after": [
+      "**間に vs 間:** dengan に, sesuatu terjadi **satu kali di dalam** rentang itu. Tanpa に, perbuatannya berlangsung **sepanjang** rentang itu.",
+      "**うちに selalu berisi peringatan tersembunyi:** keadaannya akan berubah, jadi lakukan sekarang. [若|Waka]いうちにいろいろ[経験|keiken]したほうがいい。",
+      "📄 **際に adalah ragam tulis**, sering muncul di papan pengumuman dan surel resmi. Dalam percakapan pakai とき."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Mengubah pemesanan penginapan",
+   "intro": "Karena tas sempat hilang, jadwal Rangga berantakan. Ia menelepon penginapan untuk mengubah tanggal — dan menemukan aturan pembatalan Jepang yang tegas.",
+   "lines": [
+    {
+     "speaker": "宿:",
+     "text": "お[電話|denwa]ありがとうございます。[旅館|Ryokan][さくら|Sakura]でございます。",
+     "id": "Terima kasih atas teleponnya. Penginapan Sakura di sini.",
+     "literal": "telepon — terima-kasih. penginapan — Sakura — adalah (hormat)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[予約|Yoyaku]の[変更|henkō]をお[願|nega]いしたいのですが、よろしいでしょうか。",
+     "id": "Saya ingin mengubah pemesanan, apakah bisa?",
+     "literal": "pemesanan — punya — perubahan — akan — ingin-mohon — adalah — tapi, baik — barangkali — kah."
+    },
+    {
+     "speaker": "宿:",
+     "text": "かしこまりました。ご[予約|yoyaku][番号|bangō]とお[名前|namae]をお[願|nega]いいたします。",
+     "id": "Baik. Mohon nomor pemesanan dan nama Anda.",
+     "literal": "saya-sanggupi. pemesanan — nomor — dan — nama — akan — mohon."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[番号|Bangō]は[A|ē]-[7788|nana-nana-hachi-hachi]、[名前|namae]はランガです。[今週|Konshū]の[土曜|doyō]で[予約|yoyaku]しております。",
+     "id": "Nomornya A-7788, nama Rangga. Saya memesan untuk Sabtu minggu ini.",
+     "literal": "nomor — mengenai — A-7788, nama — mengenai — Rangga — adalah. pekan-ini — punya — Sabtu — dengan — memesan — sedang."
+    },
+    {
+     "speaker": "宿:",
+     "text": "[確認|Kakunin]いたしました。どのように[変更|henkō]なさいますか。",
+     "id": "Sudah saya periksa. Diubah menjadi bagaimana?",
+     "literal": "pemeriksaan — saya-lakukan. bagaimana — perubahan — Anda-lakukan (hormat) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[来週|Raishū]の[土曜|doyō]に[延|no]ばしたいんです。[部屋|Heya]は[空|a]いていますか。",
+     "id": "Saya ingin memundurkannya ke Sabtu minggu depan. Kamarnya ada yang kosong?",
+     "literal": "pekan-depan — punya — Sabtu — pada — ingin-menunda — adalah. kamar — mengenai — kosong — sedang — kah."
+    },
+    {
+     "speaker": "宿:",
+     "text": "[少々|Shōshō]お[待|ma]ちください。……はい、[同|ona]じ[タイプ|taipu]のお[部屋|heya]がご[用意|yōi]できます。",
+     "id": "Mohon tunggu sebentar. …Ya, kamar dengan tipe yang sama bisa kami sediakan.",
+     "literal": "sebentar — tunggu — silakan. …ya, sama — jenis — punya — kamar — yang — persiapan — bisa."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[助|Tasu]かります。[追加|Tsuika][料金|ryōkin]はかかりますか。",
+     "id": "Sangat menolong. Apakah ada biaya tambahan?",
+     "literal": "tertolong. tambahan — biaya — mengenai — memakan — kah."
+    },
+    {
+     "speaker": "宿:",
+     "text": "[三日|Mikka][前|mae]までの[変更|henkō]でしたら[無料|muryō]でございます。[本日|Honjitsu]は[四日|yokka][前|mae]ですので[大丈夫|daijōbu]です。",
+     "id": "Kalau perubahan sampai tiga hari sebelumnya, gratis. Hari ini empat hari sebelumnya, jadi tidak masalah.",
+     "literal": "tiga-hari — depan — sampai — punya — perubahan — kalau — gratis — adalah. hari-ini — mengenai — empat-hari — depan — adalah — karena — tak-apa — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[危|Abu]なく[間|ma]に[合|a]わないところでした。ありがとうございます。",
+     "id": "Hampir saja tidak keburu. Terima kasih.",
+     "literal": "bahaya — pada — antara — pada — tidak-cocok — tepat — adalah (lampau). terima-kasih."
+    },
+    {
+     "speaker": "宿:",
+     "text": "とんでもございません。[お気|O-ki]をつけてお[越|ko]しくださいませ。",
+     "id": "Sama sekali tidak. Hati-hati di jalan ya.",
+     "literal": "tidak-mungkin. perhatian — akan — pasang — datang (hormat) — silakan."
+    }
+   ],
+   "notes": [
+    "**危なく〜ところでした = hampir saja ～.** Rangka bersyukur yang sangat sering dipakai: [危|Abu]なく[遅刻|chikoku]するところでした。 Kembarannya: もう[少|suko]しで〜ところでした.",
+    "**ご用意できます — bentuk 謙譲語 yang halus untuk “kami bisa sediakan”.** Perhatikan: bukan [用意|yōi]できます (netral) melainkan ご[用意|yōi]できます, yang menempatkan kesediaan itu sebagai layanan.",
+    "**キャンセル料 di Jepang ditegakkan sungguh-sungguh.** Ryokan sering memungut 20–30% pada H-3, 50% pada H-1, dan 100% pada hari-H. ⚠️ Tidak datang tanpa kabar ([無断|mudan]キャンセル) hampir selalu ditagih penuh.",
+    "**とんでもございません secara ketat dianggap kurang tepat** (bentuk bakunya とんでもないことでございます), tapi ia sudah dipakai di mana-mana dalam pelayanan Jepang dan tidak akan dianggap salah.",
+    "**お越しくださいませ = “silakan datang”.** ませ di ujung menaikkan kehangatan; ia khas ragam pelayanan. Kembarannya: いらっしゃいませ, お[待|ma]ちしております.",
+    "**Rangka menanyakan biaya:** [追加|Tsuika][料金|ryōkin]はかかりますか · [別途|Beppo][料金|ryōkin]が[必要|hitsuyō]ですか · [キャンセル|Kyanseru][料|ryō]はいつから[発生|hassei]しますか."
+   ],
+   "grammars": [
+    {
+     "title": "Mengubah, membatalkan, menanyakan",
+     "body": [
+      "Kalimat-kalimat ini berulang di semua tempat: penginapan, tiket, restoran, dokter. Kuasai rangkanya, ganti kata bendanya."
+     ],
+     "table": {
+      "head": [
+       "Maksud",
+       "Kalimat"
+      ],
+      "rows": [
+       [
+        "Mengubah",
+        "[予約|Yoyaku]の[変更|henkō]をお[願|nega]いしたいのですが。"
+       ],
+       [
+        "Membatalkan",
+        "[申|Mō]し[訳|wake]ありませんが、キャンセルさせていただけますでしょうか。"
+       ],
+       [
+        "Menanyakan ketersediaan",
+        "[来週|Raishū]の[土曜|doyō]、お[部屋|heya]は[空|a]いていますか。"
+       ],
+       [
+        "Menanyakan biaya",
+        "[追加|Tsuika][料金|ryōkin]はかかりますか。"
+       ],
+       [
+        "Menanyakan batas pembatalan",
+        "キャンセル[料|ryō]はいつから[発生|hassei]いたしますか。"
+       ],
+       [
+        "Meminta pengembalian uang",
+        "[返金|Henkin]していただくことは[可能|kanō]でしょうか。"
+       ],
+       [
+        "Menegaskan ulang",
+        "[念|Nen]のため、もう[一度|ichido][確認|kakunin]させていただけますか。"
+       ]
+      ]
+     },
+     "after": [
+      "**可能でしょうか adalah cara menanyakan kemungkinan yang lebih halus daripada できますか.** 📄 Sangat sering muncul di surel.",
+      "⚠️ **Jangan membatalkan lewat surel saja untuk hari yang sudah dekat.** Telepon dulu, surel menyusul — sama seperti aturan permintaan maaf di Unit 11.",
+      "**Kalau kamu terlambat datang:** [到着|Tōchaku]が[三十分|sanjuppun]ほど[遅|oku]れそうです。[申|Mō]し[訳|wake]ございません。 — kabari sebelum jamnya, bukan sesudah."
+     ]
+    },
+    {
+     "title": "Kereta, pesawat, dan gangguan perjalanan",
+     "body": [
+      "Pengumuman gangguan di Jepang memakai kosakata yang tetap. Sekali kamu mengenalinya, kamu bisa mengikuti apa yang terjadi tanpa panik."
+     ],
+     "table": {
+      "head": [
+       "Istilah",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "[遅延|chien]",
+        "chien",
+        "keterlambatan"
+       ],
+       [
+        "[運転見合|unten miawa]わせ",
+        "unten miawase",
+        "operasi dihentikan sementara"
+       ],
+       [
+        "[運休|unkyū]",
+        "unkyū",
+        "perjalanan dibatalkan"
+       ],
+       [
+        "[振替輸送|furikae yusō]",
+        "furikae yusō",
+        "dialihkan ke jalur lain, gratis"
+       ],
+       [
+        "[遅延証明書|chien shōmeisho]",
+        "chien shōmeisho",
+        "surat keterangan terlambat, untuk kantor/sekolah"
+       ],
+       [
+        "[払|hara]い[戻|modo]し",
+        "haraimodoshi",
+        "pengembalian uang tiket"
+       ],
+       [
+        "[欠航|kekkō]",
+        "kekkō",
+        "penerbangan dibatalkan"
+       ],
+       [
+        "[搭乗|tōjō]",
+        "tōjō",
+        "naik pesawat"
+       ],
+       [
+        "[乗|no]り[遅|oku]れる",
+        "noriokureru",
+        "ketinggalan kendaraan"
+       ],
+       [
+        "[終電|shūden]",
+        "shūden",
+        "kereta terakhir"
+       ]
+      ]
+     },
+     "after": [
+      "**遅延証明書 gratis dan dibagikan di gerbang stasiun** saat terjadi keterlambatan; di Jepang ia benar-benar diterima kantor sebagai alasan sah.",
+      "**振替輸送** berarti tiketmu berlaku di jalur perusahaan lain tanpa bayar lagi — tanyakan [振替|furikae]はできますか saat jalurmu berhenti.",
+      "⚠️ **終電 di Jepang berarti terakhir sungguhan.** Ketinggalan kereta terakhir berarti taksi mahal, warnet, atau [カプセルホテル|kapuseru hoteru] sampai pagi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Melapor kehilangan — di stasiun dan di 交番",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Jepang punya dua jalur untuk barang hilang, dan memilih jalur yang benar mempercepat semuanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Di mana hilang",
+      "Lapor ke",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Kereta, stasiun",
+       "[駅|Eki]の[窓口|madoguchi] / [お忘|o-wasu]れ[物|mono][センター|sentā]",
+       "sistem antar-stasiun, cepat"
+      ],
+      [
+       "Jalan, toko, taksi",
+       "[交番|Kōban]",
+       "buat [遺失届|ishitsu todoke]"
+      ],
+      [
+       "Dicuri",
+       "[交番|Kōban]",
+       "buat [被害届|higai todoke], perlu untuk asuransi"
+      ],
+      [
+       "Paspor",
+       "[大使館|Taishikan] + [交番|kōban]",
+       "urutan: polisi dulu, lalu kedutaan"
+      ],
+      [
+       "Kartu bank",
+       "Telepon bank **lebih dulu**",
+       "blokir sebelum melapor ke polisi"
+      ],
+      [
+       "[在留|Zairyū]カード",
+       "[交番|Kōban] + [入管|Nyūkan]",
+       "wajib mengurus penggantian dalam 14 hari"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat melapor"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[かばん|Kaban]をなくしてしまったんですが。 — Saya kehilangan tas.",
+      "[電車|Densha]の[中|naka]に[忘|wasu]れ[物|mono]をしました。 — Saya meninggalkan barang di kereta.",
+      "[黒|Kuro]い[リュック|ryukku]で、[中|naka]に[パソコン|pasokon]と[財布|saifu]が[入|hai]っています。 — Ransel hitam, di dalamnya laptop dan dompet.",
+      "[今日|Kyō]の[午後|gogo][三時|san-ji]ごろ、[山手線|Yamanote-sen]でした。 — Sekitar jam tiga sore tadi, di jalur Yamanote.",
+      "[見|Mi]つかったら、こちらにご[連絡|renraku]いただけますか。 — Kalau ketemu, bisa hubungi nomor ini?",
+      "[遺失届|Ishitsu todoke]を[出|da]したいのですが。 — Saya ingin membuat laporan kehilangan."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata untuk menyebut ciri barang",
+     "items": [
+      "Warna: [黒|kuro]い · [白|shiro]い · [紺色|kon'iro] (biru tua) · [茶色|chairo] (cokelat) · [グレー|gurē]",
+      "Bahan: [革|kawa] (kulit) · [布|nuno] (kain) · [ビニール|binīru] (plastik)",
+      "Ukuran: [A4|ē-yon]サイズくらい · [手|te]のひらサイズ · [大|ō]きめ / [小|chii]さめ",
+      "Ciri: [ロゴ|rogo]が[入|hai]っています · [キーホルダー|kīhorudā]がついています · [名前|namae]が[書|ka]いてあります",
+      "Isi: [中|Naka]に〜が[入|hai]っています。 — ini yang paling menentukan saat mencocokkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menginap di Jepang: ryokan, hotel, dan adatnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menginap di ryokan punya aturan yang tidak ada di hotel, dan sebagian besar tamu asing tersandung pada hal yang sama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "[旅館|ryokan]",
+       "ryokan",
+       "penginapan bergaya Jepang"
+      ],
+      [
+       "[民宿|minshuku]",
+       "minshuku",
+       "penginapan keluarga, lebih sederhana"
+      ],
+      [
+       "[素泊|sudoma]り",
+       "sudomari",
+       "menginap tanpa makan"
+      ],
+      [
+       "[一泊二食|ippaku nishoku]",
+       "ippaku nishoku",
+       "menginap semalam dengan dua kali makan"
+      ],
+      [
+       "[仲居|nakai]さん",
+       "nakai-san",
+       "pramusaji ryokan yang mengurus kamarmu"
+      ],
+      [
+       "[浴衣|yukata]",
+       "yukata",
+       "jubah katun yang disediakan penginapan"
+      ],
+      [
+       "[大浴場|daiyokujō]",
+       "daiyokujō",
+       "pemandian bersama"
+      ],
+      [
+       "[貸切風呂|kashikiri buro]",
+       "kashikiri buro",
+       "pemandian yang bisa disewa sendirian"
+      ],
+      [
+       "[チェックイン|chekku in]",
+       "chekku in",
+       "biasanya jam 15:00; ryokan sering minta datang sebelum 18:00"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Aturan onsen yang tak boleh dilanggar"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Mandi dan bilas seluruh badan sebelum masuk kolam.** Ini bukan saran; kolam adalah untuk berendam, bukan mencuci.",
+      "**Tidak memakai apa pun di dalam kolam** — tidak baju renang, tidak handuk. Handuk kecil ditaruh di kepala atau di tepi.",
+      "**Rambut panjang diikat** supaya tidak menyentuh air.",
+      "⚠️ **Tato masih dilarang di banyak onsen.** Sebagian menyediakan penutup ([タトゥーシール|tatū shīru]) atau 貸切風呂. Tanyakan dulu: [タトゥー|Tatū]があるのですが、[入浴|nyūyoku]できますか。",
+      "**Kalau kamu ragu:** はじめてなので、[使|tsuka]い[方|kata]を[教|oshi]えていただけますか。 — Semua orang akan senang menjelaskannya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: perjalanan yang berantakan",
+     "items": [
+      "Ceritakan satu perjalanan yang tidak berjalan lancar, keras-keras:",
+      "Tahap saat kejadiannya: [〜ているところに、〜|〜te iru tokoro ni, 〜]。",
+      "Apa yang telanjur terjadi: [〜てしまいました|〜te shimaimashita]。",
+      "Yang nyaris terjadi: [危|Abu]なく〜ところでした。",
+      "Yang kamu urus: 〜の[変更|henkō]をお[願|nega]いしました。",
+      "Penutup: おかげで、[何|nan]とかなりました。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "忘れ物",
+   "baca": "わすれもの · wasuremono",
+   "id": "barang tertinggal"
+  },
+  {
+   "ja": "落とし物",
+   "baca": "おとしもの · otoshimono",
+   "id": "barang jatuh/hilang"
+  },
+  {
+   "ja": "遺失届",
+   "baca": "いしつとどけ · ishitsu todoke",
+   "id": "laporan kehilangan"
+  },
+  {
+   "ja": "受取書",
+   "baca": "うけとりしょ · uketorisho",
+   "id": "surat penerimaan"
+  },
+  {
+   "ja": "身分証明書",
+   "baca": "みぶんしょうめいしょ · mibun shōmeisho",
+   "id": "kartu identitas"
+  },
+  {
+   "ja": "保管する",
+   "baca": "ほかんする · hokan suru",
+   "id": "menyimpan"
+  },
+  {
+   "ja": "問い合わせる",
+   "baca": "といあわせる · toiawaseru",
+   "id": "menanyakan, menghubungi"
+  },
+  {
+   "ja": "終点",
+   "baca": "しゅうてん · shūten",
+   "id": "ujung jalur"
+  },
+  {
+   "ja": "内回り",
+   "baca": "うちまわり · uchimawari",
+   "id": "arah putaran dalam"
+  },
+  {
+   "ja": "名刺",
+   "baca": "めいし · meishi",
+   "id": "kartu nama"
+  },
+  {
+   "ja": "焦る",
+   "baca": "あせる · aseru",
+   "id": "panik, terburu-buru"
+  },
+  {
+   "ja": "危なく",
+   "baca": "あぶなく · abunaku",
+   "id": "nyaris, hampir saja"
+  },
+  {
+   "ja": "遅延",
+   "baca": "ちえん · chien",
+   "id": "keterlambatan"
+  },
+  {
+   "ja": "遅延証明書",
+   "baca": "ちえんしょうめいしょ · chien shōmeisho",
+   "id": "surat keterangan keterlambatan"
+  },
+  {
+   "ja": "運転見合わせ",
+   "baca": "うんてんみあわせ · unten miawase",
+   "id": "operasi dihentikan sementara"
+  },
+  {
+   "ja": "振替輸送",
+   "baca": "ふりかえゆそう · furikae yusō",
+   "id": "pengalihan ke jalur lain"
+  },
+  {
+   "ja": "払い戻し",
+   "baca": "はらいもどし · haraimodoshi",
+   "id": "pengembalian uang tiket"
+  },
+  {
+   "ja": "欠航",
+   "baca": "けっこう · kekkō",
+   "id": "penerbangan dibatalkan"
+  },
+  {
+   "ja": "搭乗",
+   "baca": "とうじょう · tōjō",
+   "id": "naik pesawat"
+  },
+  {
+   "ja": "乗り遅れる",
+   "baca": "のりおくれる · noriokureru",
+   "id": "ketinggalan kendaraan"
+  },
+  {
+   "ja": "終電",
+   "baca": "しゅうでん · shūden",
+   "id": "kereta terakhir"
+  },
+  {
+   "ja": "予約番号",
+   "baca": "よやくばんごう · yoyaku bangō",
+   "id": "nomor pemesanan"
+  },
+  {
+   "ja": "変更",
+   "baca": "へんこう · henkō",
+   "id": "perubahan"
+  },
+  {
+   "ja": "追加料金",
+   "baca": "ついかりょうきん · tsuika ryōkin",
+   "id": "biaya tambahan"
+  },
+  {
+   "ja": "キャンセル料",
+   "baca": "キャンセルりょう · kyanseru-ryō",
+   "id": "biaya pembatalan"
+  },
+  {
+   "ja": "発生する",
+   "baca": "はっせいする · hassei suru",
+   "id": "timbul, mulai berlaku"
+  },
+  {
+   "ja": "無断",
+   "baca": "むだん · mudan",
+   "id": "tanpa pemberitahuan"
+  },
+  {
+   "ja": "返金",
+   "baca": "へんきん · henkin",
+   "id": "pengembalian uang"
+  },
+  {
+   "ja": "可能",
+   "baca": "かのう · kanō",
+   "id": "mungkin, bisa"
+  },
+  {
+   "ja": "用意する",
+   "baca": "よういする · yōi suru",
+   "id": "menyiapkan"
+  },
+  {
+   "ja": "旅館",
+   "baca": "りょかん · ryokan",
+   "id": "penginapan bergaya Jepang"
+  },
+  {
+   "ja": "民宿",
+   "baca": "みんしゅく · minshuku",
+   "id": "penginapan keluarga"
+  },
+  {
+   "ja": "素泊まり",
+   "baca": "すどまり · sudomari",
+   "id": "menginap tanpa makan"
+  },
+  {
+   "ja": "一泊二食",
+   "baca": "いっぱくにしょく · ippaku nishoku",
+   "id": "semalam dengan dua kali makan"
+  },
+  {
+   "ja": "仲居",
+   "baca": "なかい · nakai",
+   "id": "pramusaji ryokan"
+  },
+  {
+   "ja": "浴衣",
+   "baca": "ゆかた · yukata",
+   "id": "jubah katun penginapan"
+  },
+  {
+   "ja": "大浴場",
+   "baca": "だいよくじょう · daiyokujō",
+   "id": "pemandian bersama"
+  },
+  {
+   "ja": "貸切風呂",
+   "baca": "かしきりぶろ · kashikiri buro",
+   "id": "pemandian sewa pribadi"
+  },
+  {
+   "ja": "入浴",
+   "baca": "にゅうよく · nyūyoku",
+   "id": "berendam, mandi"
+  },
+  {
+   "ja": "革",
+   "baca": "かわ · kawa",
+   "id": "kulit (bahan)"
+  },
+  {
+   "ja": "布",
+   "baca": "ぬの · nuno",
+   "id": "kain"
+  },
+  {
+   "ja": "紺色",
+   "baca": "こんいろ · kon'iro",
+   "id": "biru tua"
+  },
+  {
+   "ja": "茶色",
+   "baca": "ちゃいろ · chairo",
+   "id": "cokelat"
+  },
+  {
+   "ja": "際",
+   "baca": "さい · sai",
+   "id": "saat (resmi)"
+  },
+  {
+   "ja": "提示する",
+   "baca": "ていじする · teiji suru",
+   "id": "menunjukkan (dokumen)"
+  },
+  {
+   "ja": "留守",
+   "baca": "るす · rusu",
+   "id": "sedang tidak di rumah"
+  },
+  {
+   "ja": "宅配",
+   "baca": "たくはい · takuhai",
+   "id": "pengantaran paket"
+  },
+  {
+   "ja": "窓口",
+   "baca": "まどぐち · madoguchi",
+   "id": "loket"
+  },
+  {
+   "ja": "入管",
+   "baca": "にゅうかん · nyūkan",
+   "id": "kantor imigrasi"
+  },
+  {
+   "ja": "大使館",
+   "baca": "たいしかん · taishikan",
+   "id": "kedutaan besar"
+  },
+  {
+   "ja": "何とかなる",
+   "baca": "なんとかなる · nantoka naru",
+   "id": "akhirnya beres juga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan ところ yang tepat: [出|de]るところ、[出|de]ているところ、[出|de]たところ.",
+   "items": [
+    "[今|Ima][駅|eki]に[着|tsu]い ____ です。(baru saja tiba)",
+    "[今|Ima][資料|shiryō]を[調|shira]べ ____ です。(sedang, tepat sekarang)",
+    "[今|Ima]から[出|de]かける ____ です。(tepat akan)",
+    "[危|Abu]なく[遅|oku]れる ____ でした。(hampir saja)",
+    "ご[飯|han]を[食|ta]べ ____ に[電話|denwa]が[来|き]た。(tepat saat sedang)",
+    "[先月|Sengetsu][日本|Nihon]に[来|き]た ____ です。(baru saja, longgar)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan うちに、ないうちに、間に、間、atau たびに.",
+   "items": [
+    "[熱|Atsu]い ____ [召|me]し[上|a]がってください。",
+    "[暗|Kura]くなら ____ [帰|kae]りましょう。",
+    "[留守|Rusu]の ____ [宅配|takuhai]が[来|き]た。",
+    "[日本|Nihon]にいる ____ 、[毎日|mainichi][勉強|benkyō]した。",
+    "[会|A]う ____ [背|se]が[伸|no]びている。",
+    "[若|Waka]い ____ いろいろ[経験|keiken]したほうがいい。"
+   ]
+  },
+  {
+   "prompt": "Apa arti istilah perjalanan berikut?",
+   "items": [
+    "[運転見合|Unten miawa]わせ",
+    "[振替輸送|Furikae yusō]",
+    "[遅延証明書|Chien shōmeisho]",
+    "[払|Hara]い[戻|modo]し",
+    "[欠航|Kekkō]",
+    "[終電|Shūden]"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "に / [かばん|kaban]を / [電車|densha]の[中|naka] / [忘|wasu]れてしまったんですが",
+    "で / [黒|kuro]い[リュック|ryukku] / [ノートパソコン|nōto pasokon]が / [入|hai]っています",
+    "を / [予約|yoyaku]の[変更|henkō] / お[願|nega]いしたいのですが",
+    "は / [追加|tsuika][料金|ryōkin] / かかりますか",
+    "は / キャンセル[料|ryō] / いつから / [発生|hassei]いたしますか",
+    "ところ / [危|abu]なく / でした / [間|ma]に[合|a]わない"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat yang tepat untuk tiap keadaan.",
+   "items": [
+    "Melapor tas tertinggal di kereta: ____",
+    "Menyebut ciri tasmu: ____",
+    "Menanyakan apakah bisa diambil hari ini: ____",
+    "Meminta mengubah tanggal pemesanan: ____",
+    "Menanyakan batas waktu pembatalan gratis: ____",
+    "Mengabari penginapan bahwa kamu terlambat tiba: ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Saya baru saja turun dari kereta.",
+    "Sekarang saya sedang menghubungi stasiun.",
+    "Hampir saja saya ketinggalan kereta terakhir.",
+    "Selagi masih hangat, silakan dimakan.",
+    "Waktu saya sedang tidak di rumah, paketnya datang.",
+    "Kalau ketemu, bisa hubungi nomor ini?"
+   ]
+  }
+ ],
+ "answers": [
+  "た — ている — ところ — ところ — ている — ばかり",
+  "うちに — ないうちに — [間|aida]に — [間|aida] — たびに — うちに",
+  "operasi kereta dihentikan sementara — tiket dialihkan ke jalur perusahaan lain tanpa bayar lagi — surat keterangan keterlambatan untuk kantor atau sekolah — pengembalian uang tiket — penerbangan dibatalkan — kereta terakhir malam itu",
+  "[電車|Densha]の[中|naka]に[かばん|kaban]を[忘|wasu]れてしまったんですが — [黒|Kuro]い[リュック|ryukku]で[ノートパソコン|nōto pasokon]が[入|hai]っています — [予約|Yoyaku]の[変更|henkō]をお[願|nega]いしたいのですが — [追加|Tsuika][料金|ryōkin]はかかりますか — キャンセル[料|ryō]はいつから[発生|hassei]いたしますか — [危|Abu]なく[間|ma]に[合|a]わないところでした",
+  "[電車|Densha]の[中|naka]に[忘|wasu]れ[物|mono]をしてしまったんですが — [黒|Kuro]い[リュック|ryukku]で、[中|naka]に[パソコン|pasokon]と[財布|saifu]が[入|hai]っています — [本日|Honjitsu][受|u]け[取|to]りに[伺|ukaga]えますか — [予約|Yoyaku][日|bi]を[変更|henkō]したいのですが — キャンセル[料|ryō]はいつから[発生|hassei]しますか — [到着|Tōchaku]が[三十分|sanjuppun]ほど[遅|oku]れそうです。[申|Mō]し[訳|wake]ございません",
+  "[今|Ima][電車|densha]を[降|o]りたところです — [今|Ima][駅|eki]に[問|to]い[合|awa]わせているところです — [危|Abu]なく[終電|shūden]に[乗|no]り[遅|oku]れるところでした — [熱|Atsu]いうちに[召|me]し[上|a]がってください — [留守|Rusu]の[間|aida]に[宅配|takuhai]が[来|き]ました — [見|Mi]つかったら、こちらにご[連絡|renraku]いただけますか"
+ ],
+ "wave": "Lima menit sebelum Unit 14: bayangkan tasmu tertinggal di kereta hari ini. Ucapkan keras-keras, tanpa berhenti: apa yang hilang, jalur dan jam berapa, ciri barangnya, isinya, dan permintaanmu. Lalu telepon penginapan khayalan untuk memundurkan tanggal, dan tanyakan biaya tambahan serta batas pembatalan. Kalau kedua percakapan itu keluar dalam satu tarikan napas, kamu siap bepergian sendiri di Jepang."
+}

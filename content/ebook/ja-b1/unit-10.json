@@ -1,0 +1,904 @@
+{
+ "title": "Mencari kamar dan menandatangani kontrak",
+ "title_target": "部屋を借りる — Heya o kariru",
+ "goal": "Menyebutkan syarat kamar yang kamu cari, memahami istilah kontrak sewa Jepang yang tidak ada di Indonesia, dan menawar atau menolak dengan sopan di hadapan agen properti.",
+ "bekal": [
+  "menyebut syarat dengan 〜に対して、〜について、〜によって",
+  "membandingkan bertingkat dengan 〜ば〜ほど",
+  "membaca iklan properti Jepang beserta singkatannya",
+  "memahami 敷金・礼金・保証人 dan biaya awal yang mengejutkan",
+  "menolak pilihan yang ditawarkan tanpa memutus pembicaraan"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Di kantor agen properti",
+   "intro": "Rangga mencari apartemen sendiri setelah kontrak rumah dinasnya habis. Dialog ini penuh istilah yang tidak punya padanan di Indonesia — dan semuanya berupa uang.",
+   "lines": [
+    {
+     "speaker": "店員:",
+     "text": "いらっしゃいませ。どのようなお[部屋|heya]をお[探|saga]しでしょうか。",
+     "id": "Selamat datang. Kamar seperti apa yang Anda cari?",
+     "literal": "silakan-datang. bagaimana — punya — kamar — akan — mencari (hormat) — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[会社|Kaisha]が[新宿|Shinjuku]なので、[電車|densha]で[三十分|sanjuppun][以内|inai]がいいです。",
+     "id": "Kantor saya di Shinjuku, jadi saya ingin dalam tiga puluh menit naik kereta.",
+     "literal": "perusahaan — yang — Shinjuku — karena, kereta — dengan — tiga-puluh-menit — dalam — yang — baik — adalah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "ご[予算|yosan]はいかがでしょうか。",
+     "id": "Bagaimana dengan anggaran Anda?",
+     "literal": "anggaran — mengenai — bagaimana — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[家賃|Yachin]は[管理費|kanrihi][込|ko]みで[九万円|kyū-man-en]までと[考|kanga]えています。",
+     "id": "Untuk sewa, saya pikirkan sampai sembilan puluh ribu yen termasuk biaya pengelolaan.",
+     "literal": "sewa — mengenai — biaya-pengelolaan — termasuk — dengan — sembilan-puluh-ribu-yen — sampai — begitu — saya-pikirkan — sedang."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[間取|Madori]りについてはご[希望|kibō]はございますか。",
+     "id": "Tentang tata ruangnya, ada permintaan khusus?",
+     "literal": "tata-ruang — tentang — mengenai — harapan — mengenai — ada (hormat) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[一人|Hitori][暮|gu]らしなので[1K|wan-kei]で[十分|jūbun]です。ただ、[バス|basu]と[トイレ|toire]は[別|betsu]がいいです。",
+     "id": "Saya tinggal sendiri jadi 1K sudah cukup. Hanya saja, kamar mandi dan toilet saya ingin terpisah.",
+     "literal": "seorang — hidup — karena — 1K — dengan — cukup — adalah. hanya, mandi — dan — toilet — mengenai — terpisah — yang — baik — adalah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "かしこまりました。[駅|Eki]に[近|chika]ければ[近|chika]いほど[家賃|yachin]は[上|a]がりますが、よろしいですか。",
+     "id": "Baik. Makin dekat stasiun makin naik sewanya, apakah tidak masalah?",
+     "literal": "saya-sanggupi. stasiun — pada — kalau-dekat — dekat — sebanyak — sewa — mengenai — naik — tapi, baik — adalah — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[徒歩|Toho][十分|juppun]くらいまでなら[大丈夫|daijōbu]です。",
+     "id": "Kalau sampai sekitar sepuluh menit jalan kaki, tidak masalah.",
+     "literal": "jalan-kaki — sepuluh-menit — kira-kira — sampai — kalau — tak-apa — adalah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "こちらの[三件|san-ken]はいかがでしょうか。[築年数|Chikunensū]によって[家賃|yachin]がかなり[違|chiga]います。",
+     "id": "Bagaimana dengan tiga unit ini? Sewanya berbeda cukup jauh tergantung umur bangunannya.",
+     "literal": "pihak-ini — punya — tiga-unit — mengenai — bagaimana — barangkali — kah. umur-bangunan — menurut — sewa — yang — cukup — berbeda."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "この[物件|bukken]、[礼金|reikin]が[二|ni]ヶ[月|getsu][分|bun]ですか…[初期費用|Shoki hiyō]はいくらになりますか。",
+     "id": "Unit ini, uang terima kasihnya dua bulan ya… Biaya awalnya jadi berapa?",
+     "literal": "ini — properti, uang-hadiah — yang — dua — bulan — bagian — adalah — kah… biaya-awal — mengenai — berapa — menjadi — kah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[敷金|Shikikin][一|ik]ヶ[月|getsu]、[礼金|reikin][二|ni]ヶ[月|getsu]、[仲介手数料|chūkai tesūryō]と[前家賃|maeyachin]で、[約|yaku][四十五万円|yonjū-go-man-en]でございます。",
+     "id": "Deposit satu bulan, uang terima kasih dua bulan, komisi agen, dan sewa di muka — sekitar 450.000 yen.",
+     "literal": "deposit — satu — bulan, uang-hadiah — dua — bulan, komisi-perantara — dan — sewa-di-muka — dengan, kira-kira — empat-ratus-lima-puluh-ribu-yen — adalah."
+    }
+   ],
+   "notes": [
+    "**礼金 (uang terima kasih) tidak dikembalikan.** Ia hadiah untuk pemilik, warisan zaman pascaperang. **敷金 (deposit)** dikembalikan dikurangi biaya perbaikan. ⚠️ Biaya awal sewa di Jepang biasanya **empat sampai enam kali sewa bulanan** — ini kejutan terbesar bagi pendatang.",
+    "**管理費込み = termasuk biaya pengelolaan.** Iklan sering menulis sewa tanpa 管理費, jadi selalu tanyakan [管理費|kanrihi][込|ko]みですか. Kembarannya: [税込|zeikomi] (termasuk pajak), [別|betsu] (terpisah).",
+    "**近ければ近いほど — rangka 〜ば〜ほど.** Ia menyatakan dua hal yang naik bersamaan. Rangkanya: bentuk ば + bentuk kamus/sifat + ほど.",
+    "**によって punya empat arti berbeda**, dan di sini artinya “tergantung pada”. Tiga lainnya dibongkar di kotak tata bahasa berikutnya.",
+    "**徒歩十分 dihitung dengan rumus resmi:** 80 meter = 1 menit, tanpa memperhitungkan lampu merah atau tanjakan. Jadi 徒歩10分 di iklan sering berarti 13 menit sungguhan.",
+    "**1K, 1DK, 1LDK** — angka = jumlah kamar, K = dapur, D = ruang makan, L = ruang duduk. 1K berarti satu kamar plus dapur kecil terpisah."
+   ],
+   "grammars": [
+    {
+     "title": "について・に対して・によって — tiga penunjuk hubungan",
+     "body": [
+      "Ketiganya menghubungkan kalimat dengan pokok bahasannya, dan ketiganya sering tertukar. Yang membedakan adalah **jenis hubungannya**, bukan tingkat kesopanannya."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～について",
+        "tentang, mengenai",
+        "[間取|Madori]りについて[説明|setsumei]します。"
+       ],
+       [
+        "～に[関|kan]して",
+        "berkenaan dengan (📄 tulis)",
+        "[契約|Keiyaku]に[関|kan]してご[質問|shitsumon]は？"
+       ],
+       [
+        "～に[対|tai]して",
+        "terhadap (arah sikap/tindakan)",
+        "[お客様|O-kyakusama]に[対|tai]して[失礼|shitsurei]です。"
+       ],
+       [
+        "～に[対|tai]して",
+        "sedangkan (perbandingan)",
+        "[去年|Kyonen]は[五|go]%だったのに[対|tai]し、[今年|kotoshi]は[八|hachi]%だ。"
+       ],
+       [
+        "～によって",
+        "tergantung pada",
+        "[人|Hito]によって[考|kanga]え[方|kata]が[違|chiga]う。"
+       ],
+       [
+        "～によって",
+        "dengan cara / oleh",
+        "[話|Hana]し[合|a]いによって[解決|kaiketsu]した。"
+       ],
+       [
+        "～によると",
+        "menurut (sumber kabar)",
+        "[天気予報|Tenki yohō]によると[雨|ame]だそうだ。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **について tidak dipakai untuk sikap.** ❌[お客様|O-kyakusama]について[失礼|shitsurei]です。 ✅…に[対|tai]して.",
+      "**に対して punya dua wajah** — arah tindakan, dan perbandingan dua angka. Yang kedua hampir selalu muncul di laporan dan berita.",
+      "📄 **に関して lebih resmi daripada について**, dan hampir hanya muncul dalam tulisan atau pidato."
+     ]
+    },
+    {
+     "title": "～ば～ほど — makin ～ makin ～",
+     "body": [
+      "Rangka tetap untuk dua hal yang naik atau turun bersamaan. Bentuknya harus diulang, dan itulah bagian yang sering dilupakan."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Rangka",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Kata kerja",
+        "～ば + kamus + ほど",
+        "[練習|Renshū]すればするほど[上手|jōzu]になる。"
+       ],
+       [
+        "Kata sifat い",
+        "～ければ + い + ほど",
+        "[近|Chika]ければ[近|chika]いほど[高|taka]い。"
+       ],
+       [
+        "Kata sifat な",
+        "～なら + な + ほど",
+        "[静|Shizu]かなら[静|shizu]かなほどいい。"
+       ],
+       [
+        "Ringkas",
+        "kamus + ほど",
+        "[考|Kanga]えるほど[分|wa]からなくなる。"
+       ],
+       [
+        "Negatif",
+        "～なければ～ないほど",
+        "[知|Shi]らなければ[知|shi]らないほど[怖|kowa]くない。"
+       ]
+      ]
+     },
+     "after": [
+      "**Bentuk ringkas (tanpa ば) sangat sering dipakai dalam percakapan:** [安|Yasu]いほどいい。",
+      "**Kembarannya untuk perubahan sepihak:** [〜にしたがって|〜ni shitagatte] dan [〜につれて|〜ni tsurete] — “seiring dengan”. [年|Toshi]を[取|to]るにつれて、[体力|tairyoku]が[落|o]ちる。",
+      "⚠️ ～ば～ほど menyatakan hubungan, bukan perintah. ❌[早|Haya]ければ[早|haya]いほど[来|き]てください。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Melihat kamar dan menolak",
+   "intro": "Rangga melihat dua unit. Bagian tersulitnya bukan bahasa Jepangnya, melainkan menolak di depan orang yang sudah menyediakan waktu untukmu.",
+   "lines": [
+    {
+     "speaker": "店員:",
+     "text": "こちらが[南向|minamimu]きの[お部屋|o-heya]です。[日当|hia]たりがいいですよ。",
+     "id": "Ini kamar yang menghadap selatan. Sinar mataharinya bagus lho.",
+     "literal": "pihak-ini — yang — menghadap-selatan — punya — kamar — adalah. kena-matahari — yang — baik — adalah — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[明|aka]るいですね。[収納|Shūnō]は[押入|oshii]れだけですか。",
+     "id": "Terang ya. Tempat penyimpanannya cuma lemari dinding ini?",
+     "literal": "terang — adalah — ya. penyimpanan — mengenai — lemari-dinding — hanya — adalah — kah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "はい。ただ、[天井|tenjō]まで[高|taka]さがありますので、[思|omo]ったより[入|hai]ります。",
+     "id": "Ya. Hanya saja tingginya sampai langit-langit, jadi muat lebih banyak dari yang dikira.",
+     "literal": "ya. hanya, langit-langit — sampai — tinggi — yang — ada — karena, dikira — daripada — masuk."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[洗濯機|Sentakuki]は[室内|shitsunai]に[置|o]けますか。",
+     "id": "Mesin cuci bisa ditaruh di dalam ruangan?",
+     "literal": "mesin-cuci — mengenai — dalam-ruang — pada — bisa-taruh — kah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "こちらは[室内|shitsunai][置|o]き[場|ba]がございます。[ベランダ|Beranda][置|o]きの[物件|bukken]も[多|ō]いんですが。",
+     "id": "Yang ini ada tempatnya di dalam. Padahal banyak juga unit yang taruhnya di balkon.",
+     "literal": "pihak-ini — mengenai — dalam-ruang — tempat-taruh — yang — ada (hormat). balkon — taruh — punya — properti — juga — banyak — adalah — tapi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[騒音|Sōon]はどうですか。[上|Ue]の[階|kai]の[音|oto]とか…",
+     "id": "Bagaimana dengan kebisingan? Suara dari lantai atas dan semacamnya…",
+     "literal": "kebisingan — mengenai — bagaimana — adalah — kah. atas — punya — lantai — punya — suara — semacam…"
+    },
+    {
+     "speaker": "店員:",
+     "text": "[鉄筋|Tekkin]コンクリートですので、[木造|mokuzō]に[比|kura]べるとかなり[静|shizu]かです。",
+     "id": "Ini beton bertulang, jadi dibandingkan bangunan kayu jauh lebih tenang.",
+     "literal": "besi-beton — adalah — karena, konstruksi-kayu — dengan — kalau-dibandingkan — cukup — tenang — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[部屋|Heya][自体|jitai]はとても[気|ki]に[入|i]りました。ただ、[初期費用|shoki hiyō]が[予算|yosan]を[超|ko]えてしまって…",
+     "id": "Kamarnya sendiri sangat saya sukai. Hanya saja, biaya awalnya telanjur melebihi anggaran saya…",
+     "literal": "kamar — itu-sendiri — mengenai — sangat — perasaan — pada — masuk (lampau). hanya, biaya-awal — yang — anggaran — akan — melebihi — telanjur — dan…"
+    },
+    {
+     "speaker": "店員:",
+     "text": "[礼金|Reikin][なし|nashi]の[物件|bukken]もございますが、[駅|eki]からは[少|suko]し[遠|tō]くなります。",
+     "id": "Ada juga unit tanpa uang terima kasih, tapi jadi agak jauh dari stasiun.",
+     "literal": "uang-hadiah — tanpa — punya — properti — juga — ada — tapi, stasiun — dari — mengenai — sedikit — jauh — menjadi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そちらも[見|mi]せていただけますか。[条件|Jōken]を[比|kura]べて[決|ki]めたいので。",
+     "id": "Boleh saya lihat yang itu juga? Saya ingin memutuskan setelah membandingkan syaratnya.",
+     "literal": "pihak-itu — juga — perlihatkan — bisa-saya-terima — kah. syarat — akan — membandingkan — ingin-memutuskan — karena."
+    },
+    {
+     "speaker": "店員:",
+     "text": "もちろんです。[資料|Shiryō]をお[持|mo]ちしますので、[少々|shōshō]お[待|ma]ちください。",
+     "id": "Tentu saja. Saya ambilkan berkasnya, mohon tunggu sebentar.",
+     "literal": "tentu — adalah. berkas — akan — saya-bawa — karena, sebentar — tunggu — silakan."
+    }
+   ],
+   "notes": [
+    "**気に入りました = “saya menyukainya”.** Perhatikan bentuk lampau — bahasa Jepang memakai lampau untuk rasa suka yang baru muncul saat itu. [気|Ki]に[入|i]っています berarti sudah lama disukai.",
+    "**Rangga menolak tanpa berkata “tidak”.** Rumusnya: **puji dulu bagian yang memang bagus → sebut halangannya → biarkan kalimatnya menggantung di て**. Persis pola penolakan di Unit 2, dipakai untuk urusan uang.",
+    "**～に比べると = dibandingkan dengan.** Kembarannya: 〜に[比|kura]べて (sama saja), [〜より|〜yori] (lebih ringkas, percakapan).",
+    "**自体 = “itu sendiri”.** [部屋|Heya][自体|jitai]はいい = kamarnya sendiri sih bagus (tapi ada hal lain yang tidak). Kata ini memberi tanda bahwa keberatan sedang datang.",
+    "**鉄筋コンクリート (RC) vs 木造.** Bangunan kayu jauh lebih murah dan jauh lebih berisik. Iklan menuliskannya sebagai 構造: RC造, 鉄骨造, 木造.",
+    "**Menawar di Jepang jarang berhasil**, tapi meminta 礼金なし atau [フリーレント|furī rento] (sewa gratis satu bulan pertama) kadang bisa — terutama di luar musim pindahan (Februari–Maret)."
+   ],
+   "grammars": [
+    {
+     "title": "Membandingkan dan menyatakan syarat",
+     "body": [
+      "Memilih kamar berarti membandingkan terus-menerus. Rangka berikut menutup hampir semua perbandingan yang akan kamu butuhkan."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "A より B の[方|hō]が",
+        "こちらより[そちら|sochira]の[方|hō]が[安|yasu]い。",
+        "B lebih ～ daripada A"
+       ],
+       [
+        "A に[比|kura]べて",
+        "[木造|Mokuzō]に[比|kura]べて[静|shizu]かだ。",
+        "dibandingkan A"
+       ],
+       [
+        "A ほど～ない",
+        "[思|Omo]ったほど[高|taka]くない。",
+        "tidak se～ A"
+       ],
+       [
+        "～[以内|inai] / ～[以上|ijō]",
+        "[三十分|Sanjuppun][以内|inai]",
+        "dalam / lebih dari"
+       ],
+       [
+        "～[込|ko]み / ～[別|betsu]",
+        "[管理費|Kanrihi][込|ko]み",
+        "termasuk / terpisah"
+       ],
+       [
+        "～さえ～ば",
+        "[家賃|Yachin]さえ[安|yasu]ければいい。",
+        "asal ～ saja"
+       ],
+       [
+        "～[限|kagi]り",
+        "[予算|Yosan]の[限|kagi]り",
+        "sebatas ～"
+       ]
+      ]
+     },
+     "after": [
+      "**～さえ～ば adalah rangka yang sangat berguna untuk menyebut satu-satunya syarat:** [駅|Eki]に[近|chika]くさえあれば、[古|furu]くてもいいです。",
+      "⚠️ **ほど～ない hanya untuk perbandingan, bukan untuk menyangkal biasa.** ❌この[部屋|heya]は[広|hiro]いほどない。",
+      "**Kata jumlah yang sering muncul di iklan:** [以内|inai] (dalam), [以上|ijō] (ke atas), [以下|ika] (ke bawah), [前後|zengo] (kurang lebih), [程度|teido] (sekitar)."
+     ]
+    },
+    {
+     "title": "Menolak tawaran tanpa menutup pintu",
+     "body": [
+      "Rangka ini sama dengan penolakan di Unit 2, tapi dipakai untuk barang dan harga — dan di sini kamu tetap ingin pembicaraannya berlanjut."
+     ],
+     "table": {
+      "head": [
+       "Lapis",
+       "Kalimatnya",
+       "Tugasnya"
+      ],
+      "rows": [
+       [
+        "Puji",
+        "[部屋|Heya][自体|jitai]はとても[気|ki]に[入|i]りました。",
+        "menegaskan waktunya tidak sia-sia"
+       ],
+       [
+        "Halangi",
+        "ただ、[予算|yosan]を[超|ko]えてしまって…",
+        "sebut satu halangan, jangan banyak"
+       ],
+       [
+        "Tanya jalan lain",
+        "[他|Hoka]に[似|ni]たような[物件|bukken]はありますか。",
+        "menjaga pembicaraan hidup"
+       ],
+       [
+        "Minta waktu",
+        "[少|Suko]し[検討|kentō]させていただけますか。",
+        "keluar tanpa memutuskan"
+       ],
+       [
+        "Tolak penuh",
+        "[今回|Konkai]は[見送|miokura]らせていただきます。",
+        "sudah pasti tidak"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **検討させてください di Jepang berarti “kemungkinan besar tidak”** — tapi ia tetap kalimat yang benar dan sopan. Agen properti memahaminya dan tidak akan tersinggung.",
+      "**Kalau benar-benar ingin mengambilnya:** こちらでお[願|nega]いします。 atau この[物件|bukken]で[進|susu]めていただけますか。",
+      "**Menanyakan harga akhir:** [初期費用|Shoki hiyō]の[内訳|uchiwake]をいただけますか。 — Bisa minta rincian biaya awalnya?"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca iklan properti Jepang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Iklan properti Jepang ditulis dengan singkatan yang rapat. Sekali kamu bisa membacanya, seluruh situs pencarian rumah terbuka."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "[家賃|yachin]",
+       "yachin",
+       "sewa bulanan"
+      ],
+      [
+       "[管理費|kanrihi] / [共益費|kyōekihi]",
+       "kanrihi / kyōekihi",
+       "biaya pengelolaan gedung"
+      ],
+      [
+       "[敷金|shikikin]",
+       "shikikin",
+       "deposit, dikembalikan sebagian"
+      ],
+      [
+       "[礼金|reikin]",
+       "reikin",
+       "uang terima kasih, tidak kembali"
+      ],
+      [
+       "[仲介手数料|chūkai tesūryō]",
+       "chūkai tesūryō",
+       "komisi agen, biasanya 1 bulan + pajak"
+      ],
+      [
+       "[保証人|hoshōnin]",
+       "hoshōnin",
+       "penjamin"
+      ],
+      [
+       "[保証会社|hoshō-gaisha]",
+       "hoshō-gaisha",
+       "perusahaan penjamin (kalau tak punya penjamin)"
+      ],
+      [
+       "[間取|madori]り",
+       "madori",
+       "tata ruang (1K, 1DK, 2LDK)"
+      ],
+      [
+       "[専有面積|sen'yū menseki]",
+       "sen'yū menseki",
+       "luas dalam m²"
+      ],
+      [
+       "[築|chiku]〇[年|nen]",
+       "chiku ~nen",
+       "umur bangunan"
+      ],
+      [
+       "[徒歩|toho]〇[分|fun]",
+       "toho ~fun",
+       "menit jalan kaki (80 m = 1 menit)"
+      ],
+      [
+       "[南向|minamimu]き",
+       "minamimuki",
+       "menghadap selatan (paling dicari)"
+      ],
+      [
+       "[更新料|kōshinryō]",
+       "kōshinryō",
+       "biaya perpanjangan tiap 2 tahun, ±1 bulan sewa"
+      ],
+      [
+       "[原状回復|genjō kaifuku]",
+       "genjō kaifuku",
+       "kewajiban mengembalikan kamar ke keadaan semula"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Biaya awal yang sebenarnya"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[敷金|Shikikin] 1 bulan + [礼金|reikin] 1–2 bulan + [仲介手数料|chūkai tesūryō] 1 bulan + [前家賃|maeyachin] 1 bulan + [火災保険|kasai hoken] ±20.000 + [鍵交換|kagi kōkan] ±15.000 + [保証会社|hoshō-gaisha] ±50% sewa.",
+      "Untuk kamar 90.000 yen, biaya awalnya jatuh di **400.000–500.000 yen**.",
+      "⚠️ **Musim pindahan Februari–Maret adalah waktu terburuk untuk mencari** — pilihan banyak tapi harga keras dan tak ada ruang tawar. Musim terbaik: Juni–Agustus dan November.",
+      "**Kalau tak punya penjamin orang Jepang**, hampir semua agen mewajibkan [保証会社|hoshō-gaisha]. Ini normal dan bukan tanda kamu dicurigai.",
+      "⚠️ **原状回復 adalah sumber sengketa nomor satu.** Foto seluruh kamar saat pindah masuk, termasuk setiap goresan, dan simpan tanggalnya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pertanyaan yang wajib kamu ajukan",
+     "items": [
+      "[初期費用|Shoki hiyō]の[内訳|uchiwake]を[見|mi]せていただけますか。 — Boleh lihat rincian biaya awal?",
+      "[外国人|Gaikokujin]でも[入居|nyūkyo]できますか。 — Orang asing boleh menyewa? (⚠️ sayangnya masih perlu ditanyakan)",
+      "[保証人|Hoshōnin]は[必要|hitsuyō]ですか。 — Perlu penjamin?",
+      "[更新料|Kōshinryō]はいくらですか。 — Biaya perpanjangannya berapa?",
+      "[退去|Taikyo]のときの[費用|hiyō]はどのくらいですか。 — Biaya saat keluar kira-kira berapa?",
+      "[インターネット|Intānetto]は[使|tsuka]えますか。[無料|Muryō]ですか。 — Internetnya bisa dipakai? Gratis?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pindahan dan salam kepada tetangga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pindah rumah di Jepang punya daftar tugasnya sendiri, dan sebagiannya wajib menurut undang-undang. Melewatkannya bisa berarti kamu kehilangan akses ke layanan kesehatan atau tidak menerima surat penting."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Urusan",
+      "Di mana",
+      "Kapan"
+     ],
+     "rows": [
+      [
+       "[転出届|tenshutsu todoke]",
+       "kantor kota lama",
+       "sampai 14 hari sebelum pindah"
+      ],
+      [
+       "[転入届|tennyū todoke]",
+       "kantor kota baru",
+       "dalam 14 hari sesudah pindah"
+      ],
+      [
+       "[在留|zairyū]カード[住所|jūsho][変更|henkō]",
+       "kantor kota baru",
+       "dalam 14 hari (wajib hukum)"
+      ],
+      [
+       "[国民健康保険|kokumin kenkō hoken]",
+       "kantor kota baru",
+       "bersamaan dengan 転入届"
+      ],
+      [
+       "[電気|denki]・[ガス|gasu]・[水道|suidō]",
+       "telepon atau daring",
+       "seminggu sebelum"
+      ],
+      [
+       "[郵便|yūbin][転送|tensō]",
+       "kantor pos",
+       "gratis, berlaku 1 tahun"
+      ],
+      [
+       "[粗大|sodai]ごみ",
+       "telepon ke kota",
+       "berbayar, harus dipesan lebih dulu"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyapa tetangga baru"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[隣|Tonari]に[引|hi]っ[越|ko]してきたランガと[申|mō]します。 — Saya Rangga, baru pindah ke sebelah.",
+      "[今後|Kongo]ともよろしくお[願|nega]いいたします。 — Mohon kerja samanya ke depan.",
+      "[引|Hi]っ[越|ko]しの[際|sai]、うるさくして[申|mō]し[訳|wake]ありませんでした。 — Maaf berisik waktu pindahan.",
+      "**Bawaan salam:** handuk kecil, kue, atau sabun cuci seharga 500–1.000 yen. ⚠️ Di apartemen kota besar, kebiasaan ini makin ditinggalkan — tapi menyapa penghuni kanan-kiri dan lantai bawah masih dianggap sopan.",
+      "**Aturan sampah** adalah sumber sengketa tetangga nomor satu di Jepang. Ambil jadwal pemilahan di kantor kota pada hari pertama, dan patuhi hurufnya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: kamar impianmu",
+     "items": [
+      "Jelaskan kamar yang kamu cari, keras-keras, seolah di depan agen:",
+      "Tempat dan waktu tempuh: 〜まで[電車|densha]で〜[以内|inai]がいいです。",
+      "Anggaran: [家賃|Yachin]は[管理費|kanrihi][込|ko]みで〜までです。",
+      "Tata ruang: [間取|Madori]りについては〜を[希望|kibō]しています。",
+      "Perbandingan: [〜ば〜ほど〜|〜ba 〜hodo 〜]。",
+      "Satu syarat mutlak: 〜さえ〜ば[大丈夫|daijōbu]です。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "物件",
+   "baca": "ぶっけん · bukken",
+   "id": "unit properti"
+  },
+  {
+   "ja": "家賃",
+   "baca": "やちん · yachin",
+   "id": "sewa bulanan"
+  },
+  {
+   "ja": "管理費",
+   "baca": "かんりひ · kanrihi",
+   "id": "biaya pengelolaan"
+  },
+  {
+   "ja": "敷金",
+   "baca": "しききん · shikikin",
+   "id": "uang jaminan"
+  },
+  {
+   "ja": "礼金",
+   "baca": "れいきん · reikin",
+   "id": "uang terima kasih ke pemilik"
+  },
+  {
+   "ja": "仲介手数料",
+   "baca": "ちゅうかいてすうりょう · chūkai tesūryō",
+   "id": "komisi agen"
+  },
+  {
+   "ja": "前家賃",
+   "baca": "まえやちん · maeyachin",
+   "id": "sewa di muka"
+  },
+  {
+   "ja": "初期費用",
+   "baca": "しょきひよう · shoki hiyō",
+   "id": "biaya awal"
+  },
+  {
+   "ja": "内訳",
+   "baca": "うちわけ · uchiwake",
+   "id": "rincian"
+  },
+  {
+   "ja": "保証人",
+   "baca": "ほしょうにん · hoshōnin",
+   "id": "penjamin"
+  },
+  {
+   "ja": "保証会社",
+   "baca": "ほしょうがいしゃ · hoshō-gaisha",
+   "id": "perusahaan penjamin"
+  },
+  {
+   "ja": "更新料",
+   "baca": "こうしんりょう · kōshinryō",
+   "id": "biaya perpanjangan kontrak"
+  },
+  {
+   "ja": "原状回復",
+   "baca": "げんじょうかいふく · genjō kaifuku",
+   "id": "pemulihan ke keadaan semula"
+  },
+  {
+   "ja": "退去",
+   "baca": "たいきょ · taikyo",
+   "id": "keluar dari sewa"
+  },
+  {
+   "ja": "入居",
+   "baca": "にゅうきょ · nyūkyo",
+   "id": "masuk menempati"
+  },
+  {
+   "ja": "間取り",
+   "baca": "まどり · madori",
+   "id": "tata ruang"
+  },
+  {
+   "ja": "専有面積",
+   "baca": "せんゆうめんせき · sen'yū menseki",
+   "id": "luas hunian"
+  },
+  {
+   "ja": "築年数",
+   "baca": "ちくねんすう · chikunensū",
+   "id": "umur bangunan"
+  },
+  {
+   "ja": "徒歩",
+   "baca": "とほ · toho",
+   "id": "jalan kaki"
+  },
+  {
+   "ja": "南向き",
+   "baca": "みなみむき · minamimuki",
+   "id": "menghadap selatan"
+  },
+  {
+   "ja": "日当たり",
+   "baca": "ひあたり · hiatari",
+   "id": "sinar matahari yang masuk"
+  },
+  {
+   "ja": "収納",
+   "baca": "しゅうのう · shūnō",
+   "id": "tempat penyimpanan"
+  },
+  {
+   "ja": "押入れ",
+   "baca": "おしいれ · oshiire",
+   "id": "lemari dinding Jepang"
+  },
+  {
+   "ja": "天井",
+   "baca": "てんじょう · tenjō",
+   "id": "langit-langit"
+  },
+  {
+   "ja": "洗濯機",
+   "baca": "せんたくき · sentakuki",
+   "id": "mesin cuci"
+  },
+  {
+   "ja": "室内",
+   "baca": "しつない · shitsunai",
+   "id": "di dalam ruangan"
+  },
+  {
+   "ja": "騒音",
+   "baca": "そうおん · sōon",
+   "id": "kebisingan"
+  },
+  {
+   "ja": "鉄筋",
+   "baca": "てっきん · tekkin",
+   "id": "besi bertulang"
+  },
+  {
+   "ja": "木造",
+   "baca": "もくぞう · mokuzō",
+   "id": "konstruksi kayu"
+  },
+  {
+   "ja": "予算",
+   "baca": "よさん · yosan",
+   "id": "anggaran"
+  },
+  {
+   "ja": "希望",
+   "baca": "きぼう · kibō",
+   "id": "harapan, permintaan"
+  },
+  {
+   "ja": "条件",
+   "baca": "じょうけん · jōken",
+   "id": "syarat"
+  },
+  {
+   "ja": "以内",
+   "baca": "いない · inai",
+   "id": "dalam (batas)"
+  },
+  {
+   "ja": "込み",
+   "baca": "こみ · komi",
+   "id": "termasuk"
+  },
+  {
+   "ja": "超える",
+   "baca": "こえる · koeru",
+   "id": "melebihi"
+  },
+  {
+   "ja": "比べる",
+   "baca": "くらべる · kuraberu",
+   "id": "membandingkan"
+  },
+  {
+   "ja": "自体",
+   "baca": "じたい · jitai",
+   "id": "itu sendiri"
+  },
+  {
+   "ja": "気に入る",
+   "baca": "きにいる · ki ni iru",
+   "id": "menyukai"
+  },
+  {
+   "ja": "一人暮らし",
+   "baca": "ひとりぐらし · hitorigurashi",
+   "id": "tinggal sendiri"
+  },
+  {
+   "ja": "転出届",
+   "baca": "てんしゅつとどけ · tenshutsu todoke",
+   "id": "surat keluar domisili"
+  },
+  {
+   "ja": "転入届",
+   "baca": "てんにゅうとどけ · tennyū todoke",
+   "id": "surat masuk domisili"
+  },
+  {
+   "ja": "住所変更",
+   "baca": "じゅうしょへんこう · jūsho henkō",
+   "id": "perubahan alamat"
+  },
+  {
+   "ja": "水道",
+   "baca": "すいどう · suidō",
+   "id": "air ledeng"
+  },
+  {
+   "ja": "転送",
+   "baca": "てんそう · tensō",
+   "id": "penerusan (surat)"
+  },
+  {
+   "ja": "粗大ごみ",
+   "baca": "そだいごみ · sodai gomi",
+   "id": "sampah besar"
+  },
+  {
+   "ja": "火災保険",
+   "baca": "かさいほけん · kasai hoken",
+   "id": "asuransi kebakaran"
+  },
+  {
+   "ja": "鍵交換",
+   "baca": "かぎこうかん · kagi kōkan",
+   "id": "penggantian kunci"
+  },
+  {
+   "ja": "隣",
+   "baca": "となり · tonari",
+   "id": "sebelah"
+  },
+  {
+   "ja": "今後とも",
+   "baca": "こんごとも · kongo tomo",
+   "id": "ke depan juga"
+  },
+  {
+   "ja": "際",
+   "baca": "さい · sai",
+   "id": "saat, ketika (resmi)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan について、に対して、atau によって.",
+   "items": [
+    "[間取|Madori]り ____ ご[希望|kibō]はありますか。",
+    "お[客様|kyakusama] ____ そんな[言|i]い[方|kata]は[失礼|shitsurei]です。",
+    "[人|Hito] ____ [考|kanga]え[方|kata]が[違|chiga]います。",
+    "[築年数|Chikunensū] ____ [家賃|yachin]がかなり[違|chiga]います。",
+    "この[問題|mondai] ____ [話|hana]し[合|a]いましょう。",
+    "[去年|Kyonen]は[五|go]%だったの ____ 、[今年|kotoshi]は[八|hachi]%です。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi rangka 〜ば〜ほど.",
+   "items": [
+    "[練習|Renshū]する → ____ [上手|jōzu]になる。",
+    "[近|Chika]い → ____ [家賃|yachin]が[高|taka]い。",
+    "[静|Shizu]かだ → ____ いい。",
+    "[考|Kanga]える → ____ [分|wa]からなくなる。",
+    "[安|Yasu]い → ____ [助|tasu]かる。",
+    "[早|Haya]い → ____ いい。"
+   ]
+  },
+  {
+   "prompt": "Apa arti istilah properti berikut?",
+   "items": [
+    "[敷金|Shikikin]",
+    "[礼金|Reikin]",
+    "[管理費|Kanrihi][込|ko]み",
+    "[徒歩|Toho][十分|juppun]",
+    "[更新料|Kōshinryō]",
+    "[原状回復|Genjō kaifuku]"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "で / [三十分|sanjuppun][以内|inai]が / [電車|densha] / いいです",
+    "で / [管理費|kanrihi][込|ko]み / [九万円|kyū-man-en]までと / [家賃|yachin]は / [考|kanga]えています",
+    "ほど / [近|chika]ければ / [家賃|yachin]は[上|a]がります / [近|chika]い",
+    "は / [部屋|heya][自体|jitai] / とても[気|ki]に[入|i]りました",
+    "を / [予算|yosan] / [初期費用|shoki hiyō]が / [超|ko]えてしまって",
+    "を / [内訳|uchiwake] / [初期費用|shoki hiyō]の / [見|mi]せていただけますか"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat yang tepat untuk tiap keadaan di kantor agen.",
+   "items": [
+    "Menyebut anggaran sewamu: ____",
+    "Menanyakan apakah orang asing boleh menyewa: ____",
+    "Menanyakan apakah perlu penjamin: ____",
+    "Menolak unit karena terlalu mahal, tanpa menutup pembicaraan: ____",
+    "Meminta waktu untuk memikirkan: ____",
+    "Memutuskan mengambil unit itu: ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Saya ingin dalam sepuluh menit jalan kaki dari stasiun.",
+    "Makin luas kamarnya makin mahal sewanya.",
+    "Dibandingkan bangunan kayu, ini jauh lebih tenang.",
+    "Asal sewanya murah, bangunan tua pun tidak apa-apa.",
+    "Boleh saya lihat rincian biaya awalnya?",
+    "Saya baru pindah ke sebelah, mohon kerja samanya."
+   ]
+  }
+ ],
+ "answers": [
+  "について — に[対|tai]して — によって — によって — について — に[対|tai]し",
+  "[練習|Renshū]すればするほど — [近|Chika]ければ[近|chika]いほど — [静|Shizu]かなら[静|shizu]かなほど — [考|Kanga]えれば[考|kanga]えるほど — [安|Yasu]ければ[安|yasu]いほど — [早|Haya]ければ[早|haya]いほど",
+  "uang jaminan yang dikembalikan sebagian — uang terima kasih untuk pemilik, tidak dikembalikan — sewa sudah termasuk biaya pengelolaan — sepuluh menit jalan kaki (80 m = 1 menit) — biaya perpanjangan kontrak tiap dua tahun — kewajiban mengembalikan kamar ke keadaan semula saat keluar",
+  "[電車|Densha]で[三十分|sanjuppun][以内|inai]がいいです — [家賃|Yachin]は[管理費|kanrihi][込|ko]みで[九万円|kyū-man-en]までと[考|kanga]えています — [近|Chika]ければ[近|chika]いほど[家賃|yachin]は[上|a]がります — [部屋|Heya][自体|jitai]はとても[気|ki]に[入|i]りました — [初期費用|Shoki hiyō]が[予算|yosan]を[超|ko]えてしまって — [初期費用|Shoki hiyō]の[内訳|uchiwake]を[見|mi]せていただけますか",
+  "[家賃|Yachin]は[管理費|kanrihi][込|ko]みで〜[円|en]までと[考|kanga]えています — [外国人|Gaikokujin]でも[入居|nyūkyo]できますか — [保証人|Hoshōnin]は[必要|hitsuyō]ですか — [部屋|Heya][自体|jitai]はいいのですが、[予算|yosan]を[超|ko]えてしまって…[他|hoka]に[似|ni]たような[物件|bukken]はありますか — [少|Suko]し[検討|kentō]させていただけますか — こちらの[物件|bukken]でお[願|nega]いします",
+  "[駅|Eki]から[徒歩|toho][十分|juppun][以内|inai]がいいです — [部屋|Heya]が[広|hiro]ければ[広|hiro]いほど[家賃|yachin]が[高|taka]くなります — [木造|Mokuzō]に[比|kura]べて、かなり[静|shizu]かです — [家賃|Yachin]さえ[安|yasu]ければ、[古|furu]くても[大丈夫|daijōbu]です — [初期費用|Shoki hiyō]の[内訳|uchiwake]を[見|mi]せていただけますか — [隣|Tonari]に[引|hi]っ[越|ko]してきました。[今後|Kongo]ともよろしくお[願|nega]いいたします"
+ ],
+ "wave": "Lima menit sebelum Unit 11: buka satu situs pencarian rumah Jepang (SUUMO atau HOME'S) dan baca satu iklan sampai habis tanpa penerjemah. Tulis lima istilah yang tidak kamu kenali, lalu hitung berapa biaya awal unit itu. Sesudah itu, ucapkan keras-keras empat puluh detik menjelaskan kamar yang kamu cari — anggaran, letak, tata ruang, dan satu syarat mutlak dengan 〜さえ〜ば."
+}

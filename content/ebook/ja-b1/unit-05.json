@@ -1,0 +1,863 @@
+{
+ "title": "Empat cara berkata “kalau”",
+ "title_target": "と・ば・たら・なら — To · Ba · Tara · Nara",
+ "goal": "Memilih di antara empat pengandaian bahasa Jepang tanpa menebak, memberi petunjuk arah dan petunjuk pemakaian alat, serta memberi saran yang tidak terdengar memerintah.",
+ "bekal": [
+  "memakai と untuk akibat yang selalu terjadi, dan tahu larangannya",
+  "memakai ば untuk syarat umum dan pengandaian",
+  "memakai たら untuk satu kejadian berurutan — pilihan teraman",
+  "memakai なら untuk menanggapi hal yang baru saja kamu dengar",
+  "memberi saran dengan 〜たほうがいい dan 〜ばよかった"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Menanyakan jalan dan cara pakai mesin",
+   "intro": "Rangga tersesat di stasiun dan bertanya kepada petugas. Petunjuk arah dalam bahasa Jepang hampir seluruhnya memakai と, karena akibatnya selalu sama bagi siapa pun.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "すみません、[南口|minamiguchi]はどう[行|i]けばいいですか。",
+     "id": "Permisi, pintu selatan bagaimana caranya ke sana?",
+     "literal": "maaf, pintu-selatan — mengenai — bagaimana — kalau-pergi — baik — adalah — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "この[階段|kaidan]を[下|お]りると、[左|hidari]に[通路|tsūro]があります。",
+     "id": "Kalau Anda turuni tangga ini, ada lorong di sebelah kiri.",
+     "literal": "ini — tangga — akan — turun — kalau, kiri — pada — lorong — yang — ada."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "そこを[まっすぐ|massugu][行|i]くと、[突|tsu]き[当|a]たりが[南口|minamiguchi]です。",
+     "id": "Kalau Anda lurus di situ, ujungnya adalah pintu selatan.",
+     "literal": "situ — akan — lurus — pergi — kalau, ujung-buntu — yang — pintu-selatan — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ありがとうございます。あの、[切符|kippu]を[買|ka]いたいんですが…",
+     "id": "Terima kasih. Anu, saya ingin membeli tiket…",
+     "literal": "terima-kasih. anu, tiket — akan — ingin-beli — adalah — tapi…"
+    },
+    {
+     "speaker": "駅員:",
+     "text": "[券売機|Kenbaiki]でしたら、あちらです。[画面|Gamen]で[目的地|mokutekichi]を[選|era]んでください。",
+     "id": "Kalau mesin tiket, ada di sebelah sana. Pilih tujuan Anda di layar.",
+     "literal": "mesin-tiket — kalau, sana — adalah. layar — pada — tujuan — akan — pilih — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[現金|Genkin]しか[使|tsuka]えませんか。",
+     "id": "Apa hanya bisa pakai uang tunai?",
+     "literal": "uang-tunai — hanya — tidak-bisa-pakai — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "いえ、[交通系|kōtsūkei][カード|kādo]なら[使|tsuka]えます。[チャージ|Chāji]も[できますよ|dekimasu yo]。",
+     "id": "Tidak, kalau kartu transportasi bisa dipakai. Isi ulang juga bisa.",
+     "literal": "tidak, jenis-transportasi — kartu — kalau — bisa-pakai. isi-ulang — juga — bisa — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[カード|Kādo]を[入|i]れたら、[自動|jidō]で[チャージ|chāji]されますか。",
+     "id": "Kalau kartunya saya masukkan, otomatis terisi?",
+     "literal": "kartu — akan — kalau-masukkan, otomatis — dengan — diisi — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "いえ、[入|i]れてから[金額|kingaku]を[押|o]さないと[チャージ|chāji]できません。",
+     "id": "Tidak, setelah dimasukkan kalau tidak menekan nominalnya, tidak bisa terisi.",
+     "literal": "tidak, masukkan — sesudah — nominal — akan — kalau-tidak-tekan — tidak-bisa-isi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "なるほど。[分|Wa]からなかったら、また[伺|ukaga]ってもいいですか。",
+     "id": "Oh begitu. Kalau nanti tidak paham, boleh saya bertanya lagi?",
+     "literal": "begitu-rupanya. kalau-tidak-paham, lagi — bertanya — pun — baik — adalah — kah."
+    },
+    {
+     "speaker": "駅員:",
+     "text": "もちろんです。[困|Koma]ったら、いつでも[声|koe]をかけてください。",
+     "id": "Tentu saja. Kalau kesulitan, panggil saja kapan pun.",
+     "literal": "tentu — adalah. kalau-kesulitan, kapan — pun — suara — akan — sampaikan — silakan."
+    }
+   ],
+   "notes": [
+    "**Petunjuk arah hampir selalu memakai と.** [行|I]くと、[右|migi]にあります — “kalau lurus, ada di kanan”. Akibatnya sama bagi siapa pun dan kapan pun, dan itulah tepatnya pekerjaan と.",
+    "**どう行けばいいですか adalah kalimat bertanya jalan paling sopan dan paling berguna.** Kembarannya untuk hal lain: どう[書|ka]けばいいですか (bagaimana menulisnya), [どうすればいいですか|Dō sureba ii desu ka] (bagaimana sebaiknya saya lakukan).",
+    "**でしたら adalah bentuk sopan dari なら.** Petugas memakainya untuk menanggapi hal yang baru saja disebut Rangga (tiket). Inilah tugas khas なら: **mengambil topik dari ucapan lawan bicara**.",
+    "**～しか + penyangkalan = hanya.** [現金|Genkin]しか[使|tsuka]えません = hanya bisa pakai tunai. ⚠️ Kata kerjanya **wajib** menyangkal. Bandingkan dengan [現金|genkin]だけ[使|tsuka]えます, yang netral; しか bernada “cuma itu saja, sayangnya”.",
+    "**～ないと…ない = kalau tidak ～, tidak bisa ～.** Bentuk と yang menyangkal. Ia terdengar seperti aturan mesin atau aturan tempat, dan memang sering dipakai untuk itu.",
+    "**交通系カード** = kartu transportasi seperti Suica, PASMO, ICOCA. Sekarang bisa dipakai di hampir semua minimarket dan mesin penjual di Jepang."
+   ],
+   "grammars": [
+    {
+     "title": "Empat pengandaian, berdampingan",
+     "body": [
+      "Inilah bab yang paling menentukan di modul ini. Keempatnya bisa diterjemahkan “kalau”, tapi bahasa Jepang membedakannya dengan tegas — dan salah pilih adalah kesalahan tingkat B1 yang paling sering terdengar."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Cara membuat",
+       "Dipakai untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "と",
+        "kamus + と",
+        "akibat yang **selalu** terjadi",
+        "[春|Haru]になると、[桜|sakura]が[咲|sa]きます。"
+       ],
+       [
+        "ば",
+        "golongan I: え + ば · II: れば",
+        "syarat umum, pengandaian",
+        "[時間|Jikan]があれば、[行|i]きます。"
+       ],
+       [
+        "たら",
+        "bentuk た + ら",
+        "satu kejadian, urutan waktu",
+        "[駅|Eki]に[着|tsu]いたら、[電話|denwa]します。"
+       ],
+       [
+        "なら",
+        "kamus / kata benda + なら",
+        "menanggapi yang baru didengar",
+        "[京都|Kyōto]なら、[秋|aki]がいいですよ。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **と tidak boleh diikuti permintaan, ajakan, atau kehendak.** ❌[駅|Eki]に[着|tsu]くと、[電話|denwa]してください。 ✅[着|Tsu]いたら、[電話|denwa]してください。",
+      "⚠️ **ば dihindari kalau anak kalimat dan induknya berpelaku sama dan induknya berupa perbuatan.** ❌[日本|Nihon]に[行|i]けば、[写真|shashin]を[撮|to]ります。 ✅[行|I]ったら、[撮|to]ります。",
+      "**Kalau ragu, pakai たら.** Ia paling luwes dan paling jarang salah. Empat puluh persen “kalau” dalam percakapan sehari-hari memang たら."
+     ]
+    },
+    {
+     "title": "Kapan hanya SATU yang benar",
+     "body": [
+      "Tabel di atas menunjukkan kecenderungan; tabel ini menunjukkan tempat-tempat di mana pilihannya benar-benar terkunci."
+     ],
+     "table": {
+      "head": [
+       "Keadaan",
+       "Wajib pakai",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Mesin, alam, hukum tetap",
+        "と",
+        "[ボタン|Botan]を[押|o]すと、[水|mizu]が[出|de]ます。"
+       ],
+       [
+        "Sesudahnya ada permintaan/ajakan",
+        "たら",
+        "[終|O]わったら、[教|oshi]えてください。"
+       ],
+       [
+        "Urutan waktu (A dulu, baru B)",
+        "たら",
+        "[着|Tsu]いたら、[連絡|renraku]します。"
+       ],
+       [
+        "Menanggapi ucapan lawan bicara",
+        "なら",
+        "「[寒|Samu]い」「[寒|Samu]いなら、[窓|mado]を[閉|shi]めましょう」"
+       ],
+       [
+        "Peribahasa, syarat umum",
+        "ば",
+        "[塵|Chiri]も[積|tsu]もれば[山|yama]となる。"
+       ],
+       [
+        "Penyesalan atas masa lalu",
+        "ば",
+        "[早|Haya]く[言|i]えばよかった。"
+       ],
+       [
+        "Kalau A, sebaiknya B (saran)",
+        "なら / たら",
+        "[買|Ka]うなら、[今|ima]がいいですよ。"
+       ]
+      ]
+     },
+     "after": [
+      "**Perhatikan urutan waktu なら.** [日本|Nihon]へ[行|i]く**なら**、[ガイドブック|gaidobukku]を[買|ka]ったほうがいい (beli SEBELUM pergi) vs [日本|Nihon]へ[行|i]っ**たら**、[ガイドブック|gaidobukku]を[買|ka]ったほうがいい (beli SESUDAH sampai).",
+      "**たら juga dipakai untuk penemuan tak terduga:** [家|Ie]に[帰|kae]ったら、[手紙|tegami]が[届|todo]いていた。 — Waktu saya pulang, ternyata sudah ada surat.",
+      "⚠️ Dalam kalimat penemuan begitu, induknya **wajib lampau** dan tidak boleh berisi kehendakmu sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Meminta dan memberi saran",
+   "intro": "Rangga bertanya kepada Sato tentang tempat berlibur. Dialog ini penuh saran, dan saran dalam bahasa Jepang punya aturan sendiri: makin kuat sarannya, makin tidak langsung kalimatnya.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[来月|Raigetsu]、[三日|mikka]くらい[休|yasu]みが[取|to]れそうなんです。",
+     "id": "Bulan depan sepertinya saya bisa ambil libur sekitar tiga hari.",
+     "literal": "bulan-depan, tiga-hari — kira-kira — libur — yang — tampaknya-bisa-ambil — adalah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "いいですね。どこか[行|i]きたいところ、あるんですか。",
+     "id": "Bagus ya. Ada tempat yang ingin dikunjungi?",
+     "literal": "baik — ya. suatu-tempat — ingin-pergi — tempat, ada — adalah — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[温泉|Onsen]に[行|i]ってみたいんですが、どこがいいでしょうか。",
+     "id": "Saya ingin coba ke pemandian air panas, tapi di mana ya yang bagus?",
+     "literal": "air-panas — ke — ingin-coba-pergi — adalah — tapi, mana — yang — baik — barangkali — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[温泉|Onsen]なら、[草津|Kusatsu]か[箱根|Hakone]ですね。[東京|Tōkyō]から[近|chika]いのは[箱根|Hakone]です。",
+     "id": "Kalau air panas, Kusatsu atau Hakone. Yang dekat dari Tokyo itu Hakone.",
+     "literal": "air-panas — kalau, Kusatsu — atau — Hakone — adalah — ya. Tokyo — dari — dekat — yang — mengenai — Hakone — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[平日|Heijitsu]と[週末|shūmatsu]、どちらがいいですか。",
+     "id": "Hari kerja atau akhir pekan, mana yang lebih baik?",
+     "literal": "hari-kerja — dan — akhir-pekan, mana — yang — baik — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[絶対|Zettai][平日|heijitsu]。[週末|Shūmatsu]に[行|i]くと、どこも[混|ko]んでますよ。",
+     "id": "Jelas hari kerja. Kalau pergi akhir pekan, di mana-mana ramai.",
+     "literal": "pasti — hari-kerja. akhir-pekan — pada — pergi — kalau, mana — pun — penuh — sedang — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[宿|Yado]は[早|haya]めに[予約|yoyaku]したほうがいいですか。",
+     "id": "Penginapannya sebaiknya dipesan lebih awal?",
+     "literal": "penginapan — mengenai — awal — pada — memesan — lebih-baik — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "したほうがいいというより、[今|ima][予約|yoyaku]しないと[空|a]いてないと[思|omo]います。",
+     "id": "Bukan sekadar sebaiknya — kalau tidak pesan sekarang, saya rasa tidak akan ada tempat.",
+     "literal": "melakukan — lebih-baik — daripada-berkata, sekarang — kalau-tidak-pesan — kosong — tidak — begitu — saya-pikir."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そんなに[人気|ninki]なんですね。[知|Shi]らなかった。もっと[早|haya]く[聞|ki]けばよかった。",
+     "id": "Sepopuler itu ya. Saya tidak tahu. Coba saja saya tanya lebih cepat.",
+     "literal": "sebegitu — populer — adalah — ya. tidak-tahu (lampau). lebih — cepat — kalau-bertanya — baik (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[大丈夫|Daijōbu]、[平日|heijitsu]なら[今|ima]からでも[取|to]れますよ。",
+     "id": "Tidak apa-apa, kalau hari kerja, dari sekarang pun masih bisa dapat.",
+     "literal": "tak-apa, hari-kerja — kalau — sekarang — dari — pun — bisa-ambil — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[助|Tasu]かります。[帰|Kae]ったらすぐ[調|shira]べてみます。",
+     "id": "Menolong sekali. Begitu pulang saya akan langsung cari.",
+     "literal": "tertolong. kalau-pulang — segera — coba-cari."
+    }
+   ],
+   "notes": [
+    "**温泉なら di baris keempat adalah なら yang paling khas.** Sato mengangkat kata yang baru saja diucapkan Rangga (温泉) dan menjadikannya topik jawabannya. ⚠️ ❌温泉に行ったら、草津がいいです terdengar salah di sini, karena tidak ada urutan waktunya.",
+    "**～たほうがいい = sebaiknya ～.** Ia terdengar cukup kuat dalam bahasa Jepang — hampir seperti nasihat orang tua. Untuk saran yang lebih ringan, pakai [〜といいですよ|〜to ii desu yo] atau [〜のはどうですか|〜no wa dō desu ka].",
+    "**～ないと…ない adalah saran terkuat yang masih sopan.** Sato memakainya justru untuk mengoreksi pertanyaan Rangga: ini bukan soal “sebaiknya”, tapi soal “harus”.",
+    "**～ばよかった = penyesalan.** [聞|Ki]けばよかった = coba saja saya tanya (tapi tidak). Kebalikannya: [言|I]わなければよかった = coba saja saya tidak bilang. Bentuk ini hampir selalu memakai ば, bukan たら.",
+    "**というより = “lebih tepatnya bukan ～ melainkan ～”.** Cara halus mengoreksi ucapan lawan bicara tanpa menyatakan dia salah.",
+    "**帰ったらすぐ〜 adalah pemakaian たら yang paling khas:** dua kejadian berurutan, yang kedua di bawah kendalimu sendiri. と tidak bisa dipakai di sini."
+   ],
+   "grammars": [
+    {
+     "title": "Memberi saran — tangga kekuatannya",
+     "body": [
+      "Sama seperti permintaan, saran dalam bahasa Jepang punya tangga. Yang menarik: makin kuat sarannya, makin sering ia dibungkus jadi pertanyaan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Kekuatan"
+      ],
+      "rows": [
+       [
+        "～といいですよ",
+        "[早|Haya]めに[予約|yoyaku]するといいですよ。",
+        "usul ringan"
+       ],
+       [
+        "～のはどうですか",
+        "[箱根|Hakone]に[行|i]くのはどうですか。",
+        "usul ringan"
+       ],
+       [
+        "～たらどうですか",
+        "[聞|Ki]いてみたらどうですか。",
+        "usul, sedikit mendorong"
+       ],
+       [
+        "～たほうがいい",
+        "[予約|Yoyaku]したほうがいいですよ。",
+        "saran jelas"
+       ],
+       [
+        "～ないほうがいい",
+        "[行|I]かないほうがいいですよ。",
+        "saran jelas (negatif)"
+       ],
+       [
+        "～ないと…ない",
+        "[今|Ima][予約|yoyaku]しないと[取|to]れませんよ。",
+        "hampir peringatan"
+       ],
+       [
+        "～べきです",
+        "[謝|Ayama]るべきです。",
+        "kewajiban moral, berat"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ ～たらどうですか kepada atasan bisa terdengar menggurui. Naikkan ke [〜というのはいかがでしょうか|〜to iu no wa ikaga deshō ka].",
+      "**Akhiran よ wajib di saran.** Tanpa よ, [予約|yoyaku]したほうがいいです terdengar dingin, seperti membacakan aturan.",
+      "**Menolak saran dengan halus:** そうですね、[考|kanga]えてみます — dan semua orang tahu artinya kamu tidak akan melakukannya."
+     ]
+    },
+    {
+     "title": "Penyesalan dan pengandaian masa lalu",
+     "body": [
+      "Bahasa Jepang menyatakan penyesalan dengan pengandaian yang dibiarkan berakhir di masa lampau. Rangkanya tetap, jadi cukup dihafal sebagai satu potongan."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "～ばよかった",
+        "[早|Haya]く[聞|ki]けばよかった。",
+        "Coba saja saya tanya lebih cepat."
+       ],
+       [
+        "～なければよかった",
+        "[言|I]わなければよかった。",
+        "Coba saja saya tidak bilang."
+       ],
+       [
+        "～ばよかったのに",
+        "[来|Ko]ればよかったのに。",
+        "Padahal kalau kamu datang kan enak."
+       ],
+       [
+        "～ておけばよかった",
+        "[予約|Yoyaku]しておけばよかった。",
+        "Coba saja saya sudah memesan dari awal."
+       ],
+       [
+        "～たら…た(のに)",
+        "[早|Haya]く[出|de]たら[間|ma]に[合|a]ったのに。",
+        "Kalau berangkat lebih cepat, pasti keburu."
+       ]
+      ]
+     },
+     "after": [
+      "**のに di ujung menambahkan rasa kecewa.** Tanpa のに kalimatnya sekadar berandai; dengan のに ia mengeluh.",
+      "🗣 Versi paling pendek dalam percakapan: [〜すればよかった|〜sureba yokatta] — sangat sering terdengar.",
+      "⚠️ Jangan pakai bentuk ini untuk menyalahkan orang lain di hadapannya. [言|I]えばよかったのに terdengar seperti “salahmu sendiri”."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Petunjuk arah dan petunjuk pemakaian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua situasi ini adalah rumah asli bentuk と. Kalimat-kalimatnya sangat berulang, jadi begitu kamu hafal rangkanya, kamu bisa memberi dan menerima petunjuk apa pun."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Petunjuk",
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Lurus",
+       "[まっすぐ|Massugu][行|i]くと、[右|migi]にあります。",
+       "kalau lurus, ada di kanan"
+      ],
+      [
+       "Belok",
+       "[二|futa]つ[目|me]の[角|kado]を[右|migi]に[曲|ma]がってください。",
+       "belok kanan di tikungan kedua"
+      ],
+      [
+       "Ujung jalan",
+       "[突|Tsu]き[当|a]たりを[左|hidari]です。",
+       "di ujung buntu, ke kiri"
+      ],
+      [
+       "Menyeberang",
+       "[橋|Hashi]を[渡|wata]ると、[左手|hidarite]に[見|mi]えます。",
+       "kalau menyeberangi jembatan, terlihat di sisi kiri"
+      ],
+      [
+       "Melewati",
+       "[コンビニ|Konbini]を[過|su]ぎると、すぐです。",
+       "kalau melewati minimarket, langsung sampai"
+      ],
+      [
+       "Jarak",
+       "[歩|Aru]いて[五分|go-fun]くらいです。",
+       "sekitar lima menit jalan kaki"
+      ],
+      [
+       "Patokan",
+       "[目印|Mejirushi]は[赤|aka]い[看板|kanban]です。",
+       "patokannya papan merah"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menerangkan cara memakai alat"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[ボタン|Botan]を[押|o]すと、[電源|dengen]が[入|hai]ります。 — Kalau tombolnya ditekan, listriknya menyala.",
+      "[カード|Kādo]を[入|i]れてから、[金額|kingaku]を[選|era]んでください。 — Setelah kartunya dimasukkan, pilih nominalnya.",
+      "[画面|Gamen]に[触|sawa]ると、[メニュー|menyū]が[出|de]ます。 — Kalau layarnya disentuh, menunya keluar.",
+      "[暗証番号|Anshō bangō]を[入力|nyūryoku]しないと、[進|susu]めません。 — Kalau PIN tidak dimasukkan, tidak bisa lanjut.",
+      "[取|To]り[消|ke]したいときは、[赤|aka]い[ボタン|botan]を[押|o]してください。 — Kalau ingin membatalkan, tekan tombol merah.",
+      "⚠️ Petunjuk mesin dalam bahasa Jepang hampir tidak pernah memakai たら. Kalau kamu memakai たら di sini, kalimatnya masih dimengerti tapi terdengar seperti cerita, bukan petunjuk."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Bertanya jalan dengan sopan",
+     "items": [
+      "すみません、ちょっと[道|michi]を[伺|ukaga]いたいんですが。",
+      "この[住所|jūsho]はどう[行|i]けばいいでしょうか。 — sambil menunjukkan alamat di ponsel.",
+      "[歩|Aru]いて[行|i]けますか。 — Bisa ditempuh jalan kaki?",
+      "[近|Chika]くに[駅|eki]はありますか。 — Ada stasiun di dekat sini?",
+      "Menutup: ご[親切|shinsetsu]に、ありがとうございました。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berandai tentang hidup: rencana, penyesalan, harapan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di luar petunjuk arah, pengandaian dipakai untuk hal yang jauh lebih besar: rencana, penyesalan, dan harapan. Bagian ini memberi rangka untuk berbicara empat puluh detik tentang ketiganya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Fungsi",
+      "Rangka",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Rencana bersyarat",
+       "～たら、～つもりです",
+       "お[金|kane]がたまったら、[家|ie]を[買|ka]うつもりです。"
+      ],
+      [
+       "Rencana masa depan",
+       "～たら、～と[思|omo]っています",
+       "[卒業|Sotsugyō]したら、[日本|Nihon]で[働|hatara]こうと[思|omo]っています。"
+      ],
+      [
+       "Harapan",
+       "～ば/たらいいですね",
+       "[晴|Ha]れるといいですね。"
+      ],
+      [
+       "Harapan untuk diri",
+       "～たらいいなあ",
+       "[早|Haya]く[慣|na]れたらいいなあ。"
+      ],
+      [
+       "Penyesalan",
+       "～ばよかった",
+       "[大学|Daigaku]で[日本語|nihongo]を[勉強|benkyō]すればよかった。"
+      ],
+      [
+       "Pengandaian mustahil",
+       "もし～たら、～のに",
+       "もし[時間|jikan]があったら、[毎日|mainichi][行|i]くのに。"
+      ],
+      [
+       "Syarat kenyataan",
+       "～ないと～ない",
+       "[働|Hatara]かないと[生活|seikatsu]できません。"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "もし — dan kapan ia tidak diperlukan"
+    },
+    {
+     "type": "p",
+     "text": "もし di awal kalimat menegaskan bahwa yang disebut hanya andaian, bukan rencana. Ia **tidak wajib** — たら sendiri sudah cukup — jadi memakainya di tiap kalimat membuat bicaramu terdengar seperti terjemahan. Pakai もし hanya saat andaiannya benar-benar jauh dari kenyataan: もし[生|u]まれ[変|ka]わったら…"
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: kalau saja",
+     "items": [
+      "Bicaralah empat puluh detik tentang hidupmu dengan lima kalimat berikut, keras-keras:",
+      "Kebiasaan: [〜と、いつも〜|〜to, itsumo 〜]。 (satu hal yang selalu terjadi padamu)",
+      "Rencana: [〜たら、〜つもりです|〜tara, 〜tsumori desu]。",
+      "Syarat: [〜ないと、〜ません|〜nai to, 〜masen]。",
+      "Penyesalan: [〜ばよかったです|〜ba yokatta desu]。",
+      "Harapan: 〜といいなあと[思|omo]っています。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "階段",
+   "baca": "かいだん · kaidan",
+   "id": "tangga"
+  },
+  {
+   "ja": "通路",
+   "baca": "つうろ · tsūro",
+   "id": "lorong"
+  },
+  {
+   "ja": "突き当たり",
+   "baca": "つきあたり · tsukiatari",
+   "id": "ujung buntu jalan"
+  },
+  {
+   "ja": "南口",
+   "baca": "みなみぐち · minamiguchi",
+   "id": "pintu selatan"
+  },
+  {
+   "ja": "券売機",
+   "baca": "けんばいき · kenbaiki",
+   "id": "mesin tiket"
+  },
+  {
+   "ja": "画面",
+   "baca": "がめん · gamen",
+   "id": "layar"
+  },
+  {
+   "ja": "目的地",
+   "baca": "もくてきち · mokutekichi",
+   "id": "tujuan"
+  },
+  {
+   "ja": "選ぶ",
+   "baca": "えらぶ · erabu",
+   "id": "memilih"
+  },
+  {
+   "ja": "金額",
+   "baca": "きんがく · kingaku",
+   "id": "nominal uang"
+  },
+  {
+   "ja": "チャージ",
+   "baca": "chāji",
+   "id": "isi ulang saldo"
+  },
+  {
+   "ja": "自動",
+   "baca": "じどう · jidō",
+   "id": "otomatis"
+  },
+  {
+   "ja": "暗証番号",
+   "baca": "あんしょうばんごう · anshō bangō",
+   "id": "PIN"
+  },
+  {
+   "ja": "入力する",
+   "baca": "にゅうりょくする · nyūryoku suru",
+   "id": "memasukkan (data)"
+  },
+  {
+   "ja": "取り消す",
+   "baca": "とりけす · torikesu",
+   "id": "membatalkan"
+  },
+  {
+   "ja": "電源",
+   "baca": "でんげん · dengen",
+   "id": "daya listrik"
+  },
+  {
+   "ja": "触る",
+   "baca": "さわる · sawaru",
+   "id": "menyentuh"
+  },
+  {
+   "ja": "曲がる",
+   "baca": "まがる · magaru",
+   "id": "berbelok"
+  },
+  {
+   "ja": "角",
+   "baca": "かど · kado",
+   "id": "tikungan, sudut"
+  },
+  {
+   "ja": "渡る",
+   "baca": "わたる · wataru",
+   "id": "menyeberang"
+  },
+  {
+   "ja": "過ぎる",
+   "baca": "すぎる · sugiru",
+   "id": "melewati"
+  },
+  {
+   "ja": "目印",
+   "baca": "めじるし · mejirushi",
+   "id": "patokan"
+  },
+  {
+   "ja": "看板",
+   "baca": "かんばん · kanban",
+   "id": "papan nama, plang"
+  },
+  {
+   "ja": "左手",
+   "baca": "ひだりて · hidarite",
+   "id": "sisi kiri"
+  },
+  {
+   "ja": "温泉",
+   "baca": "おんせん · onsen",
+   "id": "pemandian air panas"
+  },
+  {
+   "ja": "宿",
+   "baca": "やど · yado",
+   "id": "penginapan"
+  },
+  {
+   "ja": "平日",
+   "baca": "へいじつ · heijitsu",
+   "id": "hari kerja"
+  },
+  {
+   "ja": "週末",
+   "baca": "しゅうまつ · shūmatsu",
+   "id": "akhir pekan"
+  },
+  {
+   "ja": "予約する",
+   "baca": "よやくする · yoyaku suru",
+   "id": "memesan"
+  },
+  {
+   "ja": "空く",
+   "baca": "あく · aku",
+   "id": "kosong, tersedia"
+  },
+  {
+   "ja": "人気",
+   "baca": "にんき · ninki",
+   "id": "populer"
+  },
+  {
+   "ja": "絶対",
+   "baca": "ぜったい · zettai",
+   "id": "pasti, mutlak"
+  },
+  {
+   "ja": "調べる",
+   "baca": "しらべる · shiraberu",
+   "id": "mencari tahu"
+  },
+  {
+   "ja": "咲く",
+   "baca": "さく · saku",
+   "id": "mekar"
+  },
+  {
+   "ja": "積もる",
+   "baca": "つもる · tsumoru",
+   "id": "menumpuk"
+  },
+  {
+   "ja": "たまる",
+   "baca": "tamaru",
+   "id": "terkumpul"
+  },
+  {
+   "ja": "生活",
+   "baca": "せいかつ · seikatsu",
+   "id": "kehidupan sehari-hari"
+  },
+  {
+   "ja": "卒業する",
+   "baca": "そつぎょうする · sotsugyō suru",
+   "id": "lulus"
+  },
+  {
+   "ja": "晴れる",
+   "baca": "はれる · hareru",
+   "id": "cerah"
+  },
+  {
+   "ja": "生まれ変わる",
+   "baca": "うまれかわる · umarekawaru",
+   "id": "terlahir kembali"
+  },
+  {
+   "ja": "親切",
+   "baca": "しんせつ · shinsetsu",
+   "id": "baik hati"
+  },
+  {
+   "ja": "住所",
+   "baca": "じゅうしょ · jūsho",
+   "id": "alamat"
+  },
+  {
+   "ja": "近く",
+   "baca": "ちかく · chikaku",
+   "id": "dekat, sekitar"
+  },
+  {
+   "ja": "しか",
+   "baca": "shika",
+   "id": "hanya (dengan penyangkalan)"
+  },
+  {
+   "ja": "というより",
+   "baca": "to iu yori",
+   "id": "lebih tepatnya bukan ~ melainkan"
+  },
+  {
+   "ja": "べき",
+   "baca": "beki",
+   "id": "semestinya, sepatutnya"
+  },
+  {
+   "ja": "もし",
+   "baca": "moshi",
+   "id": "seandainya"
+  },
+  {
+   "ja": "進む",
+   "baca": "すすむ · susumu",
+   "id": "maju, lanjut"
+  },
+  {
+   "ja": "交通",
+   "baca": "こうつう · kōtsū",
+   "id": "transportasi"
+  },
+  {
+   "ja": "混む",
+   "baca": "こむ · komu",
+   "id": "ramai, penuh"
+  },
+  {
+   "ja": "伺う",
+   "baca": "うかがう · ukagau",
+   "id": "bertanya (merendah)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan と、ば、たら、atau なら. Hanya satu yang benar di tiap nomor.",
+   "items": [
+    "[春|Haru]になる ____ 、[桜|sakura]が[咲|sa]きます。",
+    "[駅|Eki]に[着|tsu]い ____ 、[電話|denwa]してください。",
+    "[温泉|Onsen] ____ 、[箱根|Hakone]がいいですよ。",
+    "[安|Yasu]けれ ____ 、[買|ka]います。",
+    "[ボタン|Botan]を[押|o]す ____ 、[水|mizu]が[出|de]ます。",
+    "[家|Ie]に[帰|kae]っ ____ 、[手紙|tegami]が[届|todo]いていた。"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk ば.",
+   "items": [
+    "[行|i]く → ____",
+    "[食|ta]べる → ____",
+    "する → ____",
+    "[来|く]る → ____",
+    "[高|taka]い → ____",
+    "[静|shizu]かだ → ____"
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut salah. Perbaiki bagian pengandaiannya.",
+   "items": [
+    "❌[駅|Eki]に[着|tsu]くと、[電話|denwa]してください。",
+    "❌[日本|Nihon]に[行|i]けば、[写真|shashin]をたくさん[撮|to]ります。",
+    "❌[温泉|Onsen]に[行|i]ったら、[箱根|Hakone]がおすすめです。",
+    "❌[終|O]わると、[教|oshi]えてください。",
+    "❌もし[時間|jikan]があると、[手伝|tetsuda]います。",
+    "❌[早|Haya]く[出|de]ればよかったですのに。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat penyesalan dengan 〜ばよかった.",
+   "items": [
+    "[早|Haya]く[聞|ki]かなかった。→ ____",
+    "[予約|Yoyaku]しておかなかった。→ ____",
+    "[言|I]ってしまった。→ ____",
+    "[傘|Kasa]を[持|mo]ってこなかった。→ ____",
+    "[大学|Daigaku]で[日本語|nihongo]を[勉強|benkyō]しなかった。→ ____",
+    "もっと[早|haya]く[来|こ]なかった。→ ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "と / [行|i]く / [左|hidari]に / [まっすぐ|massugu] / [通路|tsūro]があります",
+    "たら / [帰|kae]っ / すぐ / [家|ie]に / [調|shira]べてみます",
+    "なら / [平日|heijitsu] / [今|ima]からでも / [取|to]れますよ",
+    "と / [予約|yoyaku]しない / [今|ima] / [空|a]いていません",
+    "ほうがいい / [早|haya]めに / [予約|yoyaku]した / ですよ",
+    "ば / [聞|ki]け / よかった / もっと[早|haya]く"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang dengan pengandaian yang tepat.",
+   "items": [
+    "Kalau tombol ini ditekan, pintunya terbuka.",
+    "Kalau sudah sampai, tolong hubungi saya.",
+    "Kalau soal Kyoto, musim gugur bagus lho.",
+    "Kalau tidak berangkat sekarang, tidak akan keburu.",
+    "Coba saja saya belajar bahasa Jepang lebih awal.",
+    "Kalau ada waktu, saya ingin pergi ke pemandian air panas."
+   ]
+  }
+ ],
+ "answers": [
+  "と — たら — なら — ば — と — たら",
+  "[行|i]けば — [食|ta]べれば — すれば — [来|く]れば — [高|taka]ければ — [静|shizu]かなら(ば)",
+  "[駅|Eki]に[着|tsu]いたら、[電話|denwa]してください — [日本|Nihon]に[行|i]ったら、[写真|shashin]をたくさん[撮|to]ります — [温泉|Onsen]なら、[箱根|Hakone]がおすすめです — [終|O]わったら、[教|oshi]えてください — もし[時間|jikan]があったら、[手伝|tetsuda]います — [早|Haya]く[出|de]ればよかったのに",
+  "[早|Haya]く[聞|ki]けばよかった — [予約|Yoyaku]しておけばよかった — [言|I]わなければよかった — [傘|Kasa]を[持|mo]ってくればよかった — [大学|Daigaku]で[日本語|nihongo]を[勉強|benkyō]すればよかった — もっと[早|haya]く[来|く]ればよかった",
+  "[まっすぐ|Massugu][行|i]くと[左|hidari]に[通路|tsūro]があります — [家|Ie]に[帰|kae]ったらすぐ[調|shira]べてみます — [平日|Heijitsu]なら[今|ima]からでも[取|to]れますよ — [今|Ima][予約|yoyaku]しないと[空|a]いていません — [早|Haya]めに[予約|yoyaku]したほうがいいですよ — もっと[早|haya]く[聞|ki]けばよかった",
+  "この[ボタン|botan]を[押|o]すと、[ドア|doa]が[開|hira]きます — [着|Tsu]いたら、[連絡|renraku]してください — [京都|Kyōto]なら、[秋|aki]がいいですよ — [今|Ima][出|de]ないと、[間|ma]に[合|a]いません — もっと[早|haya]く[日本語|nihongo]を[勉強|benkyō]すればよかったです — [時間|Jikan]があれば、[温泉|onsen]に[行|i]きたいです"
+ ],
+ "wave": "Lima menit sebelum Unit 6: jelaskan keras-keras dua hal — jalan dari stasiun terdekat ke rumahmu (pakai と sebanyak mungkin), lalu cara memakai satu alat di rumahmu (pakai と dan ～ないと). Sesudah itu ucapkan satu penyesalan dengan 〜ばよかった dan satu rencana dengan 〜たら〜つもりです. Kalau keempat pengandaian keluar dalam empat puluh detik itu, unit ini sudah menempel."
+}

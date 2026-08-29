@@ -1,0 +1,866 @@
+{
+ "title": "Telepon kantor dan surel bisnis",
+ "title_target": "お電話とメール — O-denwa to Mēru",
+ "goal": "Menerima dan melakukan panggilan telepon di kantor Jepang tanpa panik, menyampaikan dan menerima pesan, serta menulis surel bisnis dengan rangka yang dipakai semua orang Jepang.",
+ "bekal": [
+  "menjawab telepon kantor dengan urutan yang benar dalam tiga dering",
+  "menyampaikan bahwa atasanmu sedang tidak ada — tanpa 尊敬語",
+  "menerima dan mencatat pesan, lalu mengulanginya untuk memastikan",
+  "menulis surel bisnis dengan enam bagian tetapnya",
+  "memakai ragam tulis: 書き言葉 yang menggantikan kata sehari-hari"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Menerima telepon untuk atasan yang tak ada",
+   "intro": "Rangga mengangkat telepon dari perusahaan lain. Ini situasi yang membuat panik hampir semua pembelajar, karena tiga hal harus terjadi sekaligus: keigo, aturan 内-外, dan mencatat pesan.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "はい、[株式会社|Kabushiki-gaisha][リンゴ|Ringo]、[営業部|eigyō-bu]でございます。",
+     "id": "Ya, PT Ringo, bagian penjualan.",
+     "literal": "ya, perseroan-terbatas — Ringo, bagian-penjualan — adalah (hormat)."
+    },
+    {
+     "speaker": "田中:",
+     "text": "いつもお[世話|sewa]になっております。みどり[商事|shōji]の[田中|Tanaka]と[申|mō]します。",
+     "id": "Terima kasih atas kerja samanya selama ini. Saya Tanaka dari Midori Shoji.",
+     "literal": "selalu — bantuan — menerima — sedang (merendah). Midori-Shoji — punya — Tanaka — sebagai — saya-sebut."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "みどり[商事|shōji]の[田中|Tanaka][様|sama]でいらっしゃいますね。お[世話|sewa]になっております。",
+     "id": "Bapak Tanaka dari Midori Shoji ya. Terima kasih atas kerja samanya.",
+     "literal": "Midori-Shoji — punya — Tanaka — tuan — adalah (hormat) — ya. bantuan — menerima — sedang."
+    },
+    {
+     "speaker": "田中:",
+     "text": "[恐|Oso]れ[入|i]ります、[高橋|Takahashi][部長|buchō]はいらっしゃいますでしょうか。",
+     "id": "Maaf, apakah Bapak Takahashi ada?",
+     "literal": "takut — masuk, Takahashi — kepala-bagian — mengenai — ada (hormat) — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[申|Mō]し[訳|wake]ございません。[高橋|Takahashi]はただ[今|いま][席|seki]を[外|hazu]しております。",
+     "id": "Mohon maaf. Takahashi sedang tidak ada di tempat.",
+     "literal": "tak-terkatakan — tidak-ada. Takahashi — mengenai — baru — sekarang — tempat-duduk — akan — melepas — sedang (merendah)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[三十分|Sanjuppun]ほどで[戻|modo]る[予定|yotei]でございます。",
+     "id": "Rencananya kembali sekitar tiga puluh menit lagi.",
+     "literal": "tiga-puluh-menit — kira-kira — dengan — kembali — rencana — adalah (hormat)."
+    },
+    {
+     "speaker": "田中:",
+     "text": "そうですか。では、お[戻|modo]りになりましたら、お[電話|denwa]いただけますでしょうか。",
+     "id": "Begitu ya. Kalau begitu, kalau beliau sudah kembali, bisakah beliau menelepon saya?",
+     "literal": "begitu — adalah — kah. kalau-begitu, kembali (hormat) — kalau, telepon — bisa-saya-terima — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "かしこまりました。[念|Nen]のため、お[電話番号|denwa bangō]を[伺|ukaga]ってもよろしいでしょうか。",
+     "id": "Baik. Untuk memastikan, boleh saya tanyakan nomor telepon Anda?",
+     "literal": "saya-sanggupi. hati-hati — demi, nomor-telepon — akan — bertanya — pun — baik — barangkali — kah."
+    },
+    {
+     "speaker": "田中:",
+     "text": "[03|Zero-san]の[1234|ichi-ni-san-yon]の[5678|go-roku-nana-hachi]です。",
+     "id": "03-1234-5678.",
+     "literal": "03 — punya — 1234 — punya — 5678 — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[03|Zero-san]-[1234|ichi-ni-san-yon]-[5678|go-roku-nana-hachi]でございますね。[復唱|Fukushō]いたしました。",
+     "id": "03-1234-5678 ya. Sudah saya ulang untuk memastikan.",
+     "literal": "03-1234-5678 — adalah — ya. pengulangan — saya-lakukan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[営業部|Eigyō-bu]のランガが[承|uketamawa]りました。[失礼|Shitsurei]いたします。",
+     "id": "Saya Rangga dari bagian penjualan yang menerima pesannya. Permisi.",
+     "literal": "bagian-penjualan — punya — Rangga — yang — menerima (merendah, lampau). tidak-sopan — saya-lakukan."
+    }
+   ],
+   "notes": [
+    "**いつもお世話になっております adalah kalimat pembuka wajib** di tiap telepon dan tiap surel bisnis Jepang — bahkan kepada orang yang baru pertama kali kamu hubungi. Ia tidak berarti apa-apa secara harfiah; ia tanda bahwa kamu tahu aturannya.",
+    "**Perhatikan 高橋 tanpa さん dan tanpa 尊敬語.** Kepada orang luar, atasanmu sendiri turun jadi orang dalam. Ini aturan yang dipasang di Unit 1, dan di telepon ia paling sering dilanggar orang asing.",
+    "**でいらっしゃいますね — menegaskan lawan bicara dengan hormat.** Rangga mengulang nama dan perusahaan penelepon. Ini bukan basa-basi: mengulangnya memastikan kamu tidak salah dengar sekaligus menunjukkan kamu menyimak.",
+    "**復唱いたしました = “sudah saya ulang”.** Mengulang nomor, tanggal, dan nama adalah kewajiban di telepon kantor Jepang. Melewatkannya dianggap ceroboh.",
+    "**承りました adalah 謙譲語 tertinggi untuk “saya terima (pesannya)”.** Ia lebih hormat daripada [承知|shōchi]いたしました dan dipakai khusus untuk menerima pesan atau pesanan.",
+    "**Menyebut namamu sendiri di akhir wajib.** Penelepon perlu tahu siapa yang bertanggung jawab atas pesan itu. Kalimatnya tetap: 〜が[承|uketamawa]りました."
+   ],
+   "grammars": [
+    {
+     "title": "Rangka telepon kantor",
+     "body": [
+      "Telepon kantor Jepang punya urutan yang hampir tak pernah berubah. Hafalkan urutannya, dan kepanikan hilang sendiri."
+     ],
+     "table": {
+      "head": [
+       "Tahap",
+       "Kalimatnya"
+      ],
+      "rows": [
+       [
+        "Mengangkat (≤3 dering)",
+        "はい、〇〇[株式会社|kabushiki-gaisha]でございます。"
+       ],
+       [
+        "Lebih dari 3 dering",
+        "[大変|Taihen]お[待|ma]たせいたしました。〇〇でございます。"
+       ],
+       [
+        "Membalas salam",
+        "いつもお[世話|sewa]になっております。"
+       ],
+       [
+        "Menegaskan penelepon",
+        "〇〇の△△[様|sama]でいらっしゃいますね。"
+       ],
+       [
+        "Menyambungkan",
+        "[少々|Shōshō]お[待|ma]ちくださいませ。"
+       ],
+       [
+        "Orangnya tak ada",
+        "あいにく〇〇はただ[今|いま][席|seki]を[外|hazu]しております。"
+       ],
+       [
+        "Menawarkan pesan",
+        "よろしければ、ご[伝言|dengon]を[承|uketamawa]りますが。"
+       ],
+       [
+        "Mengulang",
+        "[復唱|Fukushō]させていただきます。"
+       ],
+       [
+        "Menutup",
+        "〇〇が[承|uketamawa]りました。[失礼|Shitsurei]いたします。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Penelepon menutup lebih dulu.** Kalau kamu yang menelepon, kamulah yang menaruh gagang lebih dulu — dan pelan-pelan.",
+      "⚠️ **もしもし tidak dipakai di telepon kantor.** Kalau suaranya putus-putus, katakan お[電話|denwa]が[遠|tō]いようです — “sepertinya sambungannya jauh”. Ini cara sopan berkata “saya tidak dengar”, dan ia menyalahkan sambungan, bukan lawan bicara.",
+      "**Alasan ketidakhadiran, urut dari yang paling sering:** [席|seki]を[外|hazu]しております · [外出|gaishutsu]しております · [会議|kaigi][中|chū]でございます · [本日|honjitsu][休|yasu]みを[取|to]っております · [出張|shutchō][中|chū]でございます."
+     ]
+    },
+    {
+     "title": "Angka di telepon — cara membacanya",
+     "body": [
+      "Angka dalam bahasa Jepang punya bacaan yang berubah menurut tempatnya, dan telepon punya aturannya sendiri."
+     ],
+     "table": {
+      "head": [
+       "Hal",
+       "Aturan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Tanda hubung",
+        "dibaca の",
+        "03の1234の5678"
+       ],
+       [
+        "4 dan 7",
+        "wajib よん dan なな",
+        "[4|yon] · [7|nana], jangan し · しち"
+       ],
+       [
+        "0",
+        "ゼロ atau れい",
+        "[03|zero-san]"
+       ],
+       [
+        "9",
+        "きゅう, bukan く",
+        "[9|kyū]"
+       ],
+       [
+        "Nama dieja",
+        "pakai kata patokan",
+        "[た|ta]は[煙草|tabako]の[た|ta]"
+       ],
+       [
+        "Tanggal",
+        "ulangi dengan hari",
+        "[15日|jūgo-nichi]、[水曜日|suiyōbi]でございますね"
+       ]
+      ]
+     },
+     "after": [
+      "**Mengeja nama di telepon** memakai pola 「〜の〜」: [山|yama]は[山川|yamakawa]の[山|yama]です。 Untuk nama asing, eja huruf per huruf dalam katakana.",
+      "⚠️ **4 dibaca し dan 7 dibaca しち di beberapa hitungan lain**, tapi di telepon selalu よん dan なな — karena し mudah tertukar dengan いち.",
+      "**Menanyakan ejaan:** どのような[漢字|kanji]をお[書|ka]きになりますか。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menyusun surel bersama Sato",
+   "intro": "Rangga harus menulis surel permintaan maaf sekaligus permohonan perpanjangan tenggat. Sato mengajarinya rangka yang dipakai semua orang Jepang.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[佐藤|Satō]さん、[メール|mēru]の[書|ka]き[方|kata]、[見|mi]ていただけますか。",
+     "id": "Sato-san, bisakah Anda melihat cara saya menulis surel ini?",
+     "literal": "Sato — orang, surel — punya — cara-menulis, lihat — bisa-saya-terima — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "いいですよ。[件名|Kenmei]は？[件名|Kenmei]で[中身|nakami]が[分|wa]かるようにするのが[大事|daiji]です。",
+     "id": "Boleh. Judulnya apa? Yang penting judulnya sudah menjelaskan isinya.",
+     "literal": "baik — lho. judul — mengenai. judul — dengan — isi — yang — paham — supaya — melakukan — yang — penting — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "「[お詫|wa]びとお[願|nega]い」にしました。",
+     "id": "Saya buat “Permintaan maaf dan permohonan”.",
+     "literal": "permintaan-maaf — dan — permohonan — pada — saya-buat (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "うーん、[具体的|gutaiteki]じゃないですね。「[納期|Nōki][変更|henkō]のお[願|nega]い([リンゴ|Ringo][商事|shōji])」のほうがいいです。",
+     "id": "Hmm, kurang konkret ya. Lebih baik “Permohonan perubahan tenggat (Ringo Shoji)”.",
+     "literal": "hmm, konkret — bukan — adalah — ya. tenggat — perubahan — punya — permohonan — (Ringo-Shoji) — punya — pihak — yang — baik — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "なるほど。[本文|Honbun]は「いつもお[世話|sewa]になっております」から[始|haji]めればいいですか。",
+     "id": "Oh begitu. Isinya boleh dimulai dari “terima kasih atas kerja samanya selama ini”?",
+     "literal": "begitu-rupanya. isi — mengenai — selalu — bantuan — menerima — sedang — dari — kalau-memulai — baik — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "はい。その[前|mae]に[宛先|atesaki]を[書|ka]きます。「みどり[商事|shōji][株式会社|kabushiki-gaisha] [田中|Tanaka][様|sama]」のように。",
+     "id": "Ya. Sebelum itu tulis alamatnya. Seperti “PT Midori Shoji, Bapak Tanaka”.",
+     "literal": "ya. itu — depan — pada — alamat — akan — tulis. Midori-Shoji — perseroan — Tanaka — tuan — seperti."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[謝|Ayama]るときは、どう[書|ka]けばいいでしょうか。",
+     "id": "Kalau minta maaf, bagaimana sebaiknya menulisnya?",
+     "literal": "meminta-maaf — waktu — mengenai, bagaimana — kalau-menulis — baik — barangkali — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "「この[度|tabi]はご[迷惑|meiwaku]をおかけし、[誠|makoto]に[申|mō]し[訳|wake]ございません」ですね。",
+     "id": "“Atas kerepotan yang kami timbulkan kali ini, kami mohon maaf sebesar-besarnya.” Begitu.",
+     "literal": "ini — kali — mengenai — kerepotan — akan — menimpakan — dan, sungguh — pada — tak-terkatakan — tidak-ada — adalah — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[理由|Riyū]も[書|ka]いたほうがいいですか。",
+     "id": "Alasannya juga sebaiknya ditulis?",
+     "literal": "alasan — juga — menulis — lebih-baik — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[簡潔|Kanketsu]にね。[長|Naga]い[言|い]い[訳|wake]は[逆効果|gyakukōka]です。そして[代案|daian]を[必|kanara]ず[出|da]すこと。",
+     "id": "Ringkas saja. Alasan panjang justru berbalik. Dan wajib menyertakan usul penggantinya.",
+     "literal": "ringkas — pada — ya. panjang — alasan — mengenai — efek-berbalik — adalah. lalu — usul-pengganti — akan — pasti — mengeluarkan — hal."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[分|Wa]かりました。[最後|Saigo]は「よろしくお[願|nega]いいたします」で[締|shi]めます。",
+     "id": "Saya mengerti. Terakhir saya tutup dengan “mohon bantuannya”.",
+     "literal": "paham (lampau). akhir — mengenai — baik — mohon — dengan — menutup."
+    }
+   ],
+   "notes": [
+    "**件名 (judul surel) menentukan apakah surelmu dibaca.** Aturan Jepang: judul menyebut **isi + nama perusahaanmu**. Judul kabur seperti 「お願い」 atau 「ご連絡」 dianggap tidak profesional.",
+    "**この度は = “kali ini”, hanya untuk hal besar.** 📄 Ia dipakai dalam permintaan maaf, ucapan selamat, dan ucapan duka. Untuk hal sehari-hari cukup [先日|senjitsu]は.",
+    "**誠に menggantikan 本当に dalam ragam tulis.** Pasangannya yang lain: [大変|taihen] (sangat), [何卒|nanitozo] (mohon dengan sangat).",
+    "**Alasan panjang adalah 逆効果.** Ini bukan sekadar saran gaya bahasa. Dalam budaya kerja Jepang, permintaan maaf yang panjang alasannya dibaca sebagai pembelaan diri, bukan penyesalan.",
+    "**代案 (usul pengganti) adalah bagian yang paling sering dilupakan.** Permintaan maaf tanpa jalan keluar dianggap belum selesai. Rangkanya: つきましては、〜させていただければと[存|zon]じます。",
+    "**締める = menutup (surel, rapat, pembicaraan).** [メール|Mēru]を[締|shi]める, [話|hanashi]を[締|shi]める. Kata yang berguna sekali di lingkungan kerja."
+   ],
+   "grammars": [
+    {
+     "title": "Enam bagian surel bisnis Jepang",
+     "body": [
+      "Rangka ini hampir tidak pernah berubah, dari surel satu paragraf sampai surat permohonan resmi. Menghafalnya sekali berarti bisa menulis surel Jepang seumur hidup."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Isinya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1. 件名",
+        "isi + nama perusahaanmu",
+        "[納期|Nōki][変更|henkō]のお[願|nega]い（[リンゴ|Ringo][商事|shōji]）"
+       ],
+       [
+        "2. 宛先",
+        "perusahaan, bagian, nama + 様",
+        "みどり[商事|shōji][株式会社|kabushiki-gaisha]　[田中|Tanaka][様|sama]"
+       ],
+       [
+        "3. 挨拶",
+        "salam pembuka + nama dirimu",
+        "いつもお[世話|sewa]になっております。[リンゴ|Ringo][商事|shōji]のランガでございます。"
+       ],
+       [
+        "4. 用件",
+        "maksudmu, satu kalimat",
+        "〜の[件|ken]でご[連絡|renraku][差|sa]し[上|a]げました。"
+       ],
+       [
+        "5. 依頼/詫び",
+        "permohonan atau permintaan maaf",
+        "[誠|Makoto]に[勝手|katte]ながら、〜いただけますでしょうか。"
+       ],
+       [
+        "6. 結び",
+        "penutup baku",
+        "お[忙|isoga]しいところ[恐縮|kyōshuku]ですが、よろしくお[願|nega]いいたします。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **拝啓 dan 敬具 hanya untuk surat kertas.** Memakainya di surel terbaca seperti meniru buku lama.",
+      "**Kalau ada rincian (tanggal, jumlah, daftar), pisahkan dengan 記 … 以上:** baris 記 di tengah, rinciannya di bawah, lalu 以上 rata kanan. Ini rangka yang dikenali semua orang Jepang.",
+      "**Tanda tangan surel** berisi: nama perusahaan, bagian, nama, alamat, telepon, surel. Ia wajib ada di tiap surel, bahkan balasan singkat."
+     ]
+    },
+    {
+     "title": "書き言葉 — kata yang berganti saat ditulis",
+     "body": [
+      "Menulis surel bisnis dengan kata percakapan adalah kesalahan paling mudah dikenali. Tabel ini adalah daftar gantinya."
+     ],
+     "table": {
+      "head": [
+       "Lisan",
+       "Tulis",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "[今|Ima]",
+        "[現在|Genzai] · ただ[今|いま]",
+        "sekarang"
+       ],
+       [
+        "この[間|aida]",
+        "[先日|Senjitsu]",
+        "tempo hari"
+       ],
+       [
+        "すぐ",
+        "[早急|Sōkyū]に · [直|tada]ちに",
+        "segera"
+       ],
+       [
+        "ちょっと",
+        "[少々|Shōshō] · [若干|jakkan]",
+        "sedikit"
+       ],
+       [
+        "とても",
+        "[大変|Taihen] · [誠|makoto]に",
+        "sangat"
+       ],
+       [
+        "でも",
+        "しかしながら",
+        "namun"
+       ],
+       [
+        "だから",
+        "[従|shitaga]いまして",
+        "oleh karena itu"
+       ],
+       [
+        "どう",
+        "いかが",
+        "bagaimana"
+       ],
+       [
+        "いいですか",
+        "よろしいでしょうか",
+        "bolehkah"
+       ],
+       [
+        "すみません",
+        "[申|Mō]し[訳|wake]ございません",
+        "mohon maaf"
+       ],
+       [
+        "わかりました",
+        "[承知|Shōchi]いたしました",
+        "saya mengerti"
+       ],
+       [
+        "じゃあ",
+        "それでは",
+        "kalau begitu"
+       ]
+      ]
+     },
+     "after": [
+      "📄 **Frasa penghubung surel yang wajib punya:** [つきましては|tsukimashite wa] (sehubungan dengan itu) · お[手数|tesū]ですが · ご[査収|sashū]ください (mohon diperiksa dan diterima) · [取|To]り[急|iso]ぎご[連絡|renraku]まで (sementara ini dulu kabarnya).",
+      "⚠️ **了解しました jangan dipakai ke atasan atau klien.** Ia setara. Yang benar: [承知|Shōchi]いたしました atau かしこまりました.",
+      "⚠️ **Tanda seru dan emotikon tidak dipakai** dalam surel bisnis Jepang, sekalipun hubunganmu akrab."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerima pesan dan menyampaikannya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menerima pesan telepon (伝言 dengon) adalah tugas yang hampir pasti jatuh ke orang paling baru di kantor. Untungnya isinya selalu sama: lima keping keterangan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keping",
+      "Yang ditanyakan",
+      "Kalimatnya"
+     ],
+     "rows": [
+      [
+       "Siapa",
+       "nama + perusahaan",
+       "[恐|Oso]れ[入|i]りますが、お[名前|namae]を[伺|ukaga]ってもよろしいでしょうか。"
+      ],
+      [
+       "Kapan",
+       "waktu telepon masuk",
+       "([自分|jibun]でmencatat: [14|jūyo]:30 [着信|chakushin])"
+      ],
+      [
+       "Nomor",
+       "nomor balik",
+       "お[電話番号|denwa bangō]を[頂戴|chōdai]できますでしょうか。"
+      ],
+      [
+       "Isi",
+       "pesannya",
+       "ご[用件|yōken]を[承|uketamawa]りましょうか。"
+      ],
+      [
+       "Tindakan",
+       "siapa menelepon siapa",
+       "こちらからお[電話|denwa][差|sa]し[上|a]げましょうか。"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyampaikan pesan itu kepada atasan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[部長|Buchō]、みどり[商事|shōji]の[田中|Tanaka][様|sama]よりお[電話|denwa]がございました。 — Pak, ada telepon dari Bapak Tanaka, Midori Shoji.",
+      "[14|Jūyo][時|ji][半|han]ごろでございます。 — Sekitar pukul setengah tiga.",
+      "[納期|Nōki]の[件|ken]で、お[戻|modo]り[次第|shidai]ご[連絡|renraku]をとのことでした。 — Soal tenggat; beliau minta dihubungi begitu Bapak kembali.",
+      "お[電話番号|denwa bangō]は03-1234-5678でございます。 — Nomornya 03-1234-5678.",
+      "📄 **～次第 = begitu ～ selesai.** [分|Wa]かり[次第|shidai]ご[連絡|renraku]いたします — begitu saya tahu, saya kabari."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau kamu tidak mengerti di telepon",
+     "items": [
+      "[恐|Oso]れ[入|i]ります、もう[一度|ichido]お[願|nega]いできますでしょうか。 — Maaf, bisa diulang?",
+      "お[電話|denwa]が[少|suko]し[遠|tō]いようです。 — Sambungannya kurang jelas.",
+      "[恐|Oso]れ[入|i]りますが、もう[少|suko]しゆっくりお[話|hana]しいただけますか。 — Bisa bicara lebih pelan?",
+      "[担当|Tantō]の[者|mono]に[代|ka]わりますので、[少々|shōshō]お[待|ma]ちくださいませ。 — Saya sambungkan ke yang menangani.",
+      "⚠️ Menyerahkan telepon ke rekan yang lebih paham **bukan kegagalan**. Salah mencatat pesan jauh lebih berat akibatnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Empat surel yang paling sering kamu tulis",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Empat rangka berikut menutup sebagian besar surel yang benar-benar akan kamu kirim. Salin, ganti isinya, kirim."
+    },
+    {
+     "type": "sub",
+     "text": "1. Meminta perpanjangan tenggat"
+    },
+    {
+     "type": "p",
+     "text": "[件名|Kenmei]：[納期|Nōki][変更|henkō]のお[願|nega]い　／　[本文|Honbun]：いつもお[世話|sewa]になっております。〜のランガでございます。[標題|Hyōdai]の[件|ken]につきまして、[誠|makoto]に[勝手|katte]ながら、[納期|nōki]を[今週|konshū][金曜日|kin'yōbi]まで[延|no]ばしていただけませんでしょうか。ご[迷惑|meiwaku]をおかけし[申|mō]し[訳|wake]ございません。ご[検討|kentō]のほど、よろしくお[願|nega]いいたします。"
+    },
+    {
+     "type": "sub",
+     "text": "2. Meminta maaf atas kesalahan"
+    },
+    {
+     "type": "p",
+     "text": "この[度|tabi]は[弊社|heisha]の[不手際|futegiwa]によりご[迷惑|meiwaku]をおかけし、[誠|makoto]に[申|mō]し[訳|wake]ございません。[原因|Gen'in]は〜でございます。[今後|Kongo]は〜を[徹底|tettei]し、[再発|saihatsu][防止|bōshi]に[努|tsuto]めてまいります。"
+    },
+    {
+     "type": "sub",
+     "text": "3. Menolak permintaan"
+    },
+    {
+     "type": "p",
+     "text": "ご[依頼|irai]いただきました[件|ken]につきまして[社内|shanai]で[検討|kentō]いたしましたが、[誠|makoto]に[心苦|kokoroguru]しいのですが、[今回|konkai]は[見送|miokura]らせていただきたく[存|zon]じます。[何卒|Nanitozo]ご[理解|rikai]いただけますようお[願|nega]い[申|mō]し[上|a]げます。"
+    },
+    {
+     "type": "sub",
+     "text": "4. Meminta pertemuan"
+    },
+    {
+     "type": "p",
+     "text": "[標題|Hyōdai]の[件|ken]でご[相談|sōdan]いたしたく、お[時間|jikan]を[頂戴|chōdai]できればと[存|zon]じます。[来週|Raishū][前半|zenhan]でご[都合|tsugō]のよろしい[日時|nichiji]を[二|futa]つ、[三|mit]つほどお[知|shi]らせいただけますでしょうか。"
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu telepon",
+     "items": [
+      "Berlatih sendiri, keras-keras, dengan ponsel di telinga:",
+      "Angkat: はい、〇〇でございます。",
+      "Balas salam + tegaskan penelepon: いつもお[世話|sewa]になっております。〜[様|sama]でいらっしゃいますね。",
+      "Orangnya tak ada: あいにく〜はただ[今|いま][席|seki]を[外|hazu]しております。",
+      "Tawarkan pesan + ulangi nomornya: ご[伝言|dengon]を[承|uketamawa]りましょうか。…[復唱|Fukushō]いたします。",
+      "Tutup dengan namamu: 〜が[承|uketamawa]りました。[失礼|Shitsurei]いたします。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "株式会社",
+   "baca": "かぶしきがいしゃ · kabushiki-gaisha",
+   "id": "perseroan terbatas"
+  },
+  {
+   "ja": "商事",
+   "baca": "しょうじ · shōji",
+   "id": "perusahaan dagang"
+  },
+  {
+   "ja": "お世話になる",
+   "baca": "おせわになる · o-sewa ni naru",
+   "id": "menerima kebaikan/kerja sama"
+  },
+  {
+   "ja": "でございます",
+   "baca": "de gozaimasu",
+   "id": "adalah (hormat)"
+  },
+  {
+   "ja": "承る",
+   "baca": "うけたまわる · uketamawaru",
+   "id": "menerima (pesan, pesanan)"
+  },
+  {
+   "ja": "復唱する",
+   "baca": "ふくしょうする · fukushō suru",
+   "id": "mengulang untuk memastikan"
+  },
+  {
+   "ja": "伝言",
+   "baca": "でんごん · dengon",
+   "id": "pesan titipan"
+  },
+  {
+   "ja": "用件",
+   "baca": "ようけん · yōken",
+   "id": "keperluan, maksud"
+  },
+  {
+   "ja": "着信",
+   "baca": "ちゃくしん · chakushin",
+   "id": "panggilan masuk"
+  },
+  {
+   "ja": "頂戴する",
+   "baca": "ちょうだいする · chōdai suru",
+   "id": "menerima (merendah)"
+  },
+  {
+   "ja": "外出する",
+   "baca": "がいしゅつする · gaishutsu suru",
+   "id": "keluar kantor"
+  },
+  {
+   "ja": "次第",
+   "baca": "しだい · shidai",
+   "id": "begitu ~ selesai"
+  },
+  {
+   "ja": "担当の者",
+   "baca": "たんとうのもの · tantō no mono",
+   "id": "petugas yang menangani"
+  },
+  {
+   "ja": "件名",
+   "baca": "けんめい · kenmei",
+   "id": "judul surel"
+  },
+  {
+   "ja": "宛先",
+   "baca": "あてさき · atesaki",
+   "id": "alamat tujuan"
+  },
+  {
+   "ja": "本文",
+   "baca": "ほんぶん · honbun",
+   "id": "isi surat/surel"
+  },
+  {
+   "ja": "標題",
+   "baca": "ひょうだい · hyōdai",
+   "id": "judul yang disebut di atas"
+  },
+  {
+   "ja": "納期",
+   "baca": "のうき · nōki",
+   "id": "tenggat penyerahan"
+  },
+  {
+   "ja": "変更",
+   "baca": "へんこう · henkō",
+   "id": "perubahan"
+  },
+  {
+   "ja": "具体的",
+   "baca": "ぐたいてき · gutaiteki",
+   "id": "konkret"
+  },
+  {
+   "ja": "お詫び",
+   "baca": "おわび · o-wabi",
+   "id": "permintaan maaf"
+  },
+  {
+   "ja": "この度",
+   "baca": "このたび · kono tabi",
+   "id": "kali ini (resmi)"
+  },
+  {
+   "ja": "誠に",
+   "baca": "まことに · makoto ni",
+   "id": "sungguh, sangat (tulis)"
+  },
+  {
+   "ja": "何卒",
+   "baca": "なにとぞ · nanitozo",
+   "id": "mohon dengan sangat"
+  },
+  {
+   "ja": "簡潔",
+   "baca": "かんけつ · kanketsu",
+   "id": "ringkas"
+  },
+  {
+   "ja": "言い訳",
+   "baca": "いいわけ · iiwake",
+   "id": "alasan pembelaan"
+  },
+  {
+   "ja": "逆効果",
+   "baca": "ぎゃくこうか · gyakukōka",
+   "id": "efek berbalik"
+  },
+  {
+   "ja": "代案",
+   "baca": "だいあん · daian",
+   "id": "usul pengganti"
+  },
+  {
+   "ja": "締める",
+   "baca": "しめる · shimeru",
+   "id": "menutup (pembicaraan)"
+  },
+  {
+   "ja": "つきましては",
+   "baca": "tsukimashite wa",
+   "id": "sehubungan dengan itu"
+  },
+  {
+   "ja": "査収",
+   "baca": "さしゅう · sashū",
+   "id": "memeriksa dan menerima"
+  },
+  {
+   "ja": "取り急ぎ",
+   "baca": "とりいそぎ · toriisogi",
+   "id": "sementara ini dulu"
+  },
+  {
+   "ja": "勝手ながら",
+   "baca": "かってながら · katte nagara",
+   "id": "maaf lancang, tapi"
+  },
+  {
+   "ja": "延ばす",
+   "baca": "のばす · nobasu",
+   "id": "memperpanjang, menunda"
+  },
+  {
+   "ja": "不手際",
+   "baca": "ふてぎわ · futegiwa",
+   "id": "kelalaian, kecerobohan"
+  },
+  {
+   "ja": "徹底する",
+   "baca": "てっていする · tettei suru",
+   "id": "menjalankan sampai tuntas"
+  },
+  {
+   "ja": "再発防止",
+   "baca": "さいはつぼうし · saihatsu bōshi",
+   "id": "pencegahan terulang"
+  },
+  {
+   "ja": "努める",
+   "baca": "つとめる · tsutomeru",
+   "id": "berupaya"
+  },
+  {
+   "ja": "依頼",
+   "baca": "いらい · irai",
+   "id": "permintaan, permohonan"
+  },
+  {
+   "ja": "社内",
+   "baca": "しゃない · shanai",
+   "id": "di dalam perusahaan"
+  },
+  {
+   "ja": "心苦しい",
+   "baca": "こころぐるしい · kokorogurushii",
+   "id": "berat hati"
+  },
+  {
+   "ja": "理解",
+   "baca": "りかい · rikai",
+   "id": "pengertian"
+  },
+  {
+   "ja": "都合",
+   "baca": "つごう · tsugō",
+   "id": "keluangan waktu"
+  },
+  {
+   "ja": "日時",
+   "baca": "にちじ · nichiji",
+   "id": "tanggal dan jam"
+  },
+  {
+   "ja": "前半",
+   "baca": "ぜんはん · zenhan",
+   "id": "paruh pertama"
+  },
+  {
+   "ja": "現在",
+   "baca": "げんざい · genzai",
+   "id": "sekarang (tulis)"
+  },
+  {
+   "ja": "早急に",
+   "baca": "そうきゅうに · sōkyū ni",
+   "id": "segera (tulis)"
+  },
+  {
+   "ja": "従いまして",
+   "baca": "したがいまして · shitagaimashite",
+   "id": "oleh karena itu (tulis)"
+  },
+  {
+   "ja": "中身",
+   "baca": "なかみ · nakami",
+   "id": "isi"
+  },
+  {
+   "ja": "迷惑をかける",
+   "baca": "めいわくをかける · meiwaku o kakeru",
+   "id": "merepotkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kalimat telepon yang tepat.",
+   "items": [
+    "Mengangkat telepon kantor: ____",
+    "Setelah lebih dari tiga dering: ____",
+    "Atasanmu sedang tidak di tempat: ____",
+    "Menawarkan menerima pesan: ____",
+    "Mengulangi nomor untuk memastikan: ____",
+    "Menyebut namamu di akhir: ____"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam tulis (書き言葉).",
+   "items": [
+    "[今|Ima] → ____",
+    "この[間|aida] → ____",
+    "すぐ → ____",
+    "でも → ____",
+    "すみません → ____",
+    "わかりました → ____"
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut salah untuk telepon kantor. Perbaiki.",
+   "items": [
+    "❌もしもし、リンゴ[商事|shōji]です。",
+    "❌[高橋|Takahashi][部長|buchō]はいらっしゃいません。(kepada klien)",
+    "❌[了解|Ryōkai]しました。(kepada klien)",
+    "❌[聞|Ki]こえません。",
+    "❌[高橋|Takahashi]さんは[会議|kaigi]です。(kepada klien)",
+    "❌ちょっと[待|ma]ってください。"
+   ]
+  },
+  {
+   "prompt": "Urutkan enam bagian surel bisnis. Tulis angka 1 sampai 6.",
+   "items": [
+    "いつもお[世話|sewa]になっております。",
+    "[納期|Nōki][変更|henkō]のお[願|nega]い（[リンゴ|Ringo][商事|shōji]）",
+    "よろしくお[願|nega]いいたします。",
+    "みどり[商事|shōji][株式会社|kabushiki-gaisha]　[田中|Tanaka][様|sama]",
+    "[納期|Nōki]を[金曜|kin'yō]まで[延|no]ばしていただけませんでしょうか。",
+    "[標題|Hyōdai]の[件|ken]でご[連絡|renraku][差|sa]し[上|a]げました。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "は / ただ[今|いま] / [高橋|Takahashi] / [席|seki]を / [外|hazu]しております",
+    "を / ご[伝言|dengon] / [承|uketamawa]りましょうか / よろしければ",
+    "が / [営業部|eigyō-bu]のランガ / [承|uketamawa]りました",
+    "に / ご[迷惑|meiwaku]を / この[度|tabi]は / おかけし / [申|mō]し[訳|wake]ございません",
+    "を / [納期|nōki] / [延|no]ばして / [金曜|kin'yō]まで / いただけませんでしょうか",
+    "が / お[電話|denwa] / [遠|tō]いようです / [少|suko]し"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat surel untuk tiap keadaan.",
+   "items": [
+    "Membuka surel kepada klien: ____",
+    "Menyampaikan maksud surelmu: ____",
+    "Meminta maaf atas kerepotan yang kamu timbulkan: ____",
+    "Meminta balasan sebelum Jumat: ____",
+    "Menolak permintaan klien: ____",
+    "Menutup surel: ____"
+   ]
+  }
+ ],
+ "answers": [
+  "はい、〇〇[株式会社|kabushiki-gaisha]でございます — [大変|Taihen]お[待|ma]たせいたしました — あいにく〇〇はただ[今|いま][席|seki]を[外|hazu]しております — よろしければご[伝言|dengon]を[承|uketamawa]りますが — [復唱|Fukushō]させていただきます — 〇〇が[承|uketamawa]りました",
+  "[現在|Genzai] — [先日|Senjitsu] — [早急|Sōkyū]に — しかしながら — [申|Mō]し[訳|wake]ございません — [承知|Shōchi]いたしました",
+  "はい、リンゴ[商事|shōji]でございます — [高橋|Takahashi]はただ[今|いま][席|seki]を[外|hazu]しております — [承知|Shōchi]いたしました — お[電話|denwa]が[少|suko]し[遠|tō]いようです — [高橋|Takahashi]はただ[今|いま][会議|kaigi][中|chū]でございます — [少々|Shōshō]お[待|ma]ちくださいませ",
+  "3 — 1 — 6 — 2 — 5 — 4",
+  "[高橋|Takahashi]はただ[今|いま][席|seki]を[外|hazu]しております — よろしければご[伝言|dengon]を[承|uketamawa]りましょうか — [営業部|Eigyō-bu]のランガが[承|uketamawa]りました — この[度|tabi]はご[迷惑|meiwaku]をおかけし[申|mō]し[訳|wake]ございません — [納期|Nōki]を[金曜|kin'yō]まで[延|no]ばしていただけませんでしょうか — お[電話|denwa]が[少|suko]し[遠|tō]いようです",
+  "いつもお[世話|sewa]になっております — [標題|Hyōdai]の[件|ken]でご[連絡|renraku][差|sa]し[上|a]げました — ご[迷惑|meiwaku]をおかけし、[誠|makoto]に[申|mō]し[訳|wake]ございません — [金曜|Kin'yō]までにご[返信|henshin]いただけますと[幸|saiwa]いです — [誠|Makoto]に[心苦|kokoroguru]しいのですが、[今回|konkai]は[見送|miokura]らせていただきたく[存|zon]じます — お[忙|isoga]しいところ[恐縮|kyōshuku]ですが、よろしくお[願|nega]いいたします"
+ ],
+ "wave": "Lima menit sebelum Unit 9: tulis satu surel bisnis lengkap dalam bahasa Jepang — enam bagiannya, tidak boleh ada yang hilang — untuk meminta perpanjangan tenggat tiga hari. Lalu bacakan keras-keras percakapan telepon yang menyampaikan hal yang sama. Perhatikan berapa banyak yang berubah: yang tertulis lebih panjang dan lebih dingin, yang diucapkan lebih pendek dan lebih banyak permintaan maafnya."
+}

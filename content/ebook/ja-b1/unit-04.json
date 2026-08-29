@@ -1,0 +1,878 @@
+{
+ "title": "Kalimat pasif: korban, benda, dan berita",
+ "title_target": "受身形 — Ukemikei",
+ "goal": "Memakai tiga jenis kalimat pasif Jepang — pasif langsung, pasif tak langsung yang bermuatan kerugian, dan pasif benda yang dipakai berita — serta mengenali kapan bahasa Jepang justru menolak memakainya.",
+ "bekal": [
+  "membentuk 受身形 dari ketiga golongan kata kerja",
+  "menyusun pasif langsung A は B に ～(ら)れる tanpa tertukar pelakunya",
+  "memakai pasif tak langsung untuk mengeluh: 雨に降られた",
+  "memakai pasif benda dalam berita dan pengumuman",
+  "membedakan 受身 dari 尊敬語 dan bentuk potensial yang berbunyi sama"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Hari yang buruk",
+   "intro": "Rangga menceritakan harinya kepada Sato. Hampir tiap kalimat memakai pasif — dan bukan karena bahasa Jepang suka pasif, melainkan karena pasif Jepang adalah cara paling wajar mengatakan “saya kena getahnya”.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "あれ、[濡|nu]れてる。[傘|Kasa]、[持|mo]ってなかったの？",
+     "id": "Lho, basah. Tidak bawa payung?",
+     "literal": "lho, basah — sedang. payung, tidak-membawa (lampau) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[駅|Eki]の[前|mae]で[雨|ame]に[降|fu]られて、びしょ[濡|nu]れ。",
+     "id": "Di depan stasiun kehujanan, jadi basah kuyup.",
+     "literal": "stasiun — punya — depan — di — hujan — oleh — dituruni — dan, basah-kuyup."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[今日|Kyō]、[天気予報|tenki yohō][外|hazu]れたね。[私|Watashi]も[途中|tochū]で[降|ふ]られた。",
+     "id": "Hari ini ramalan cuacanya meleset ya. Saya juga kehujanan di tengah jalan.",
+     "literal": "hari-ini, ramalan-cuaca — meleset (lampau) — ya. saya — juga — tengah-jalan — di — dituruni (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "しかも[電車|densha]の[中|naka]で[足|ashi]を[踏|fu]まれるし、[散々|sanzan]だった。",
+     "id": "Ditambah lagi kaki saya diinjak di dalam kereta, benar-benar hari yang kacau.",
+     "literal": "lagi-pula — kereta — punya — dalam — di — kaki — akan — diinjak — dan-lagi, kacau — adalah (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[満員電車|Man'in densha]はきついよね。[謝|Ayama]られた？",
+     "id": "Kereta penuh memang berat ya. Orangnya minta maaf?",
+     "literal": "kereta-penuh — mengenai — berat — ya. diminta-maaf (lampau) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[全然|Zenzen]。[気|Ki]づいてなかったみたい。",
+     "id": "Sama sekali tidak. Kelihatannya tidak sadar.",
+     "literal": "sama-sekali. sadar — tidak-sedang (lampau) — sepertinya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[朝|Asa]から[大変|taihen]だったね。[会議|Kaigi]は[間|ma]に[合|a]った？",
+     "id": "Dari pagi berat ya. Rapatnya keburu?",
+     "literal": "pagi — dari — berat — adalah (lampau) — ya. rapat — mengenai — antara — pada — cocok (lampau) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ぎりぎり。でも[部長|buchō]に[遅|oku]れた[理由|riyū]を[聞|ki]かれて、[焦|ase]った。",
+     "id": "Nyaris. Tapi ditanya kepala bagian soal alasan terlambat, saya jadi panik.",
+     "literal": "mepet. tapi — kepala-bagian — oleh — terlambat — alasan — akan — ditanya — dan, panik (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[部長|Buchō]、[細|koma]かいところ[気|ki]にするからね。[怒|Oko]られた？",
+     "id": "Kepala bagian memang perhatian ke hal kecil. Dimarahi?",
+     "literal": "kepala-bagian, kecil — tempat — perhatian — melakukan — sebab — ya. dimarahi (lampau) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[怒|Oko]られはしなかったけど、[次|tsugi]から[連絡|renraku]するように[言|i]われた。",
+     "id": "Tidak sampai dimarahi, tapi disuruh mengabari mulai lain kali.",
+     "literal": "dimarahi — mengenai — tidak-lakukan (lampau) — tapi, berikut — dari — mengabari — supaya — dikatakan (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "まあ、それが[普通|futsū]だよ。[今日|Kyō]はもう[帰|kae]って[休|yasu]みな。",
+     "id": "Yah, itu memang biasa. Hari ini pulang saja dan istirahat.",
+     "literal": "yah, itu — yang — biasa — adalah — lho. hari-ini — mengenai — sudah — pulang — dan — istirahatlah."
+    }
+   ],
+   "notes": [
+    "**雨に降られた adalah pasif yang tidak bisa diterjemahkan.** Harfiahnya “saya dituruni oleh hujan”. Bahasa Indonesia berkata “saya kehujanan”, dan awalan **ke-…-an** itu justru padanan paling tepat untuk pasif tak langsung Jepang.",
+    "**足を踏まれる — objeknya tetap ada.** Ini ciri khas pasif Jepang: bagian tubuh atau barang milikmu tetap ditandai を, sementara kamu sendiri jadi pokok kalimat. ⚠️ ❌私の足が踏まれた terdengar seperti kaki itu terpisah dari badanmu.",
+    "**怒られはしなかった — menyisipkan は untuk menyangkal sebagian.** Rangkanya: bentuk 連用形 + は + しない. Artinya “dimarahi sih tidak, tapi…”. Ia melunakkan penyangkalan dan memberi tanda ada lanjutannya.",
+    "**言われた di baris terakhir sebenarnya perintah.** Bahasa Jepang sering mengabarkan perintah dalam bentuk pasif untuk menjauhkan diri dari pemberinya: 〜するように[言|i]われました = saya disuruh ～.",
+    "**散々 (sanzan) = kacau balau, buruk sekali.** Kata sifat yang sangat sering dipakai untuk menutup cerita hari yang sial: [今日|Kyō]は[散々|sanzan]でした。",
+    "**～な di 休みな adalah perintah lembut.** Ia ringkasan dari 休みなさい. 🗣 Hanya untuk teman dekat atau orang yang lebih muda; ⚠️ jangan ke atasan."
+   ],
+   "grammars": [
+    {
+     "title": "受身形 — cara membentuknya",
+     "body": [
+      "Bentuk pasif golongan II sama persis dengan bentuk potensial dan 尊敬語. Kebetulan ini membingungkan, dan satu-satunya obatnya adalah melihat partikel serta isi kalimatnya."
+     ],
+     "table": {
+      "head": [
+       "Golongan",
+       "Kamus",
+       "受身形",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "I (五段)",
+        "[言|i]う",
+        "[言|i]われる",
+        "[言|I]われました"
+       ],
+       [
+        "I (五段)",
+        "[踏|fu]む",
+        "[踏|fu]まれる",
+        "[足|Ashi]を[踏|fu]まれた"
+       ],
+       [
+        "I (五段)",
+        "[書|ka]く",
+        "[書|ka]かれる",
+        "[書|Ka]かれています"
+       ],
+       [
+        "II (一段)",
+        "[見|mi]る",
+        "[見|mi]られる",
+        "[見|Mi]られました"
+       ],
+       [
+        "III",
+        "する",
+        "される",
+        "[注意|Chūi]されました"
+       ],
+       [
+        "III",
+        "[来|く]る",
+        "[来|こ]られる",
+        "[来|Ko]られて[困|koma]った"
+       ]
+      ]
+     },
+     "after": [
+      "**Golongan I:** ～う → ～あ + れる. **Golongan II:** ～る → ～られる.",
+      "⚠️ [見|mi]られる bisa berarti tiga hal: **dilihat** (pasif), **bisa melihat** (potensial), **beliau melihat** (尊敬語). Yang membedakan: pasif punya pelaku ber-に, potensial memakai が pada objeknya, 尊敬語 pelakunya orang yang dihormati.",
+      "Semua bentuk pasif berperilaku seperti kata kerja golongan II: [言|i]われる → [言|i]われて, [言|i]われない, [言|i]われた."
+     ]
+    },
+    {
+     "title": "Tiga jenis pasif Jepang",
+     "body": [
+      "Bahasa Indonesia punya satu pasif; bahasa Jepang punya tiga, dan ketiganya dipakai untuk maksud yang benar-benar berbeda."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Rangka",
+       "Contoh",
+       "Nadanya"
+      ],
+      "rows": [
+       [
+        "Langsung",
+        "A は B に ～(ら)れる",
+        "[私|Watashi]は[先生|sensei]に[ほめ|home]られた。",
+        "netral atau baik"
+       ],
+       [
+        "Tak langsung (kerugian)",
+        "A は B に ～(ら)れる",
+        "[雨|Ame]に[降|fu]られた。",
+        "selalu merugikan"
+       ],
+       [
+        "Tak langsung + objek",
+        "A は B に O を ～(ら)れる",
+        "[電車|Densha]で[足|ashi]を[踏|fu]まれた。",
+        "merugikan"
+       ],
+       [
+        "Benda / umum",
+        "B が ～(ら)れている",
+        "この[本|hon]はよく[読|yo]まれています。",
+        "netral, sering tertulis"
+       ],
+       [
+        "Pembuat karya",
+        "B は A **によって** ～(ら)れた",
+        "この[小説|shōsetsu]は[漱石|Sōseki]によって[書|ka]かれた。",
+        "resmi, tertulis"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **によって dipakai untuk pencipta, penemu, dan pembuat** — bukan untuk orang biasa. ❌私は父によって怒られた。 ✅[父|Chichi]に[怒|oko]られた。",
+      "**Pasif tak langsung tidak ada padanannya di banyak bahasa.** Kata kerjanya bahkan bisa tak berobjek: [友達|Tomodachi]に[来|こ]られて[勉強|benkyō]できなかった。 — Teman saya datang (dan saya jadi tak bisa belajar).",
+      "**Ciri pasif kerugian:** kalimatnya hampir selalu berlanjut ke akibat buruknya. Kalau tidak ada akibat buruk, kemungkinan besar kamu salah pilih bentuk."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Membaca berita pagi",
+   "intro": "Di kantor, Sato membacakan berita dari ponselnya. Perhatikan bahwa bahasa berita hampir seluruhnya pasif dan tak menyebut pelakunya — persis seperti berita berbahasa Indonesia yang berkata “diduga”, “dilaporkan”, “akan diberlakukan”.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "ねえ、[来月|raigetsu]から[電車|densha]の[運賃|unchin]が[値上|neage]げされるって。",
+     "id": "Eh, katanya mulai bulan depan tarif kereta akan dinaikkan.",
+     "literal": "eh, bulan-depan — dari — kereta — punya — ongkos — yang — dinaikkan — katanya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "え、[本当|hontō]？[どのくらい|Dono kurai][上|a]がるの？",
+     "id": "Eh, sungguh? Naik berapa banyak?",
+     "literal": "eh, sungguh. seberapa — naik — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[平均|Heikin]で[十|jup]パーセントだって。[記事|Kiji]にそう[書|ka]かれてる。",
+     "id": "Katanya rata-rata sepuluh persen. Di artikelnya tertulis begitu.",
+     "literal": "rata-rata — dengan — sepuluh — persen — katanya. artikel — pada — begitu — tertulis — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[定期券|Teikiken]も？[会社|Kaisha]から[出|de]てるからいいけど…",
+     "id": "Tiket langganan juga? Kalau saya sih dibayar kantor, jadi tidak apa-apa, tapi…",
+     "literal": "tiket-langganan — juga. perusahaan — dari — keluar — sedang — sebab — baik — tapi…"
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[学生|Gakusei]には[厳|kibi]しいよね。[SNS|esu-enu-esu]でもかなり[批判|hihan]されてる。",
+     "id": "Berat buat mahasiswa ya. Di media sosial juga banyak dikritik.",
+     "literal": "murid — kepada — mengenai — berat — ya. media-sosial — di — pun — cukup — dikritik — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[値上|Neage]げの[理由|riyū]は[何|nan]て[書|ka]いてある？",
+     "id": "Alasan kenaikannya ditulis apa?",
+     "literal": "kenaikan — punya — alasan — mengenai — apa — begitu — tertulis — ada."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[人手不足|Hitode busoku]と[燃料費|nenryōhi]の[上昇|jōshō]が[原因|gen'in]とされている。",
+     "id": "Kekurangan tenaga kerja dan naiknya biaya bahan bakar disebut sebagai penyebabnya.",
+     "literal": "kekurangan-tenaga — dan — biaya-bahan-bakar — punya — kenaikan — yang — sebab — sebagai-dianggap — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "なるほど。[日本|Nihon]でも[人手不足|hitode busoku]、よく[言|i]われてるね。",
+     "id": "Oh begitu. Di Jepang pun kekurangan tenaga kerja sering dibicarakan ya.",
+     "literal": "begitu-rupanya. Jepang — di — pun — kekurangan-tenaga, sering — dikatakan — sedang — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "うん。[特|Toku]に[地方|chihō]の[路線|rosen]は[廃止|haishi]されるところも[増|fu]えてる。",
+     "id": "Ya. Terutama jalur di daerah, yang dihapus juga makin banyak.",
+     "literal": "ya. khusus — pada — daerah — punya — jalur — mengenai — dihapus — tempat — juga — bertambah — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "それは[困|koma]る[人|hito]が[多|ō]そう。",
+     "id": "Itu kelihatannya banyak yang akan kerepotan.",
+     "literal": "itu — mengenai — kerepotan — orang — yang — banyak-tampaknya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "そうなんだよね。[代|kawa]わりに[バス|basu]が[走|hashi]らされてるけど、[本数|honsū]が[少|suku]ない。",
+     "id": "Memang begitu. Sebagai gantinya bus dijalankan, tapi jumlah perjalanannya sedikit.",
+     "literal": "begitu — adalah — ya. ganti — sebagai — bus — yang — dipaksa-jalan — sedang — tapi, jumlah-perjalanan — yang — sedikit."
+    }
+   ],
+   "notes": [
+    "**Bahasa berita = pasif tanpa pelaku.** [値上|Neage]げされる, [批判|hihan]されている, [廃止|haishi]される — tidak satu pun menyebut siapa yang melakukannya. Ini bukan kelalaian; berita Jepang memang menghindari menunjuk pelaku sampai fakta itu pasti.",
+    "**～とされている = “dianggap sebagai ～”.** Rangka resmi untuk menyampaikan penilaian umum tanpa bertanggung jawab atasnya. 📄 Sangat sering muncul di berita, laporan, dan tulisan ilmiah.",
+    "**書かれている vs 書いてある.** Keduanya berarti “tertulis”. 書いてある menyoroti bahwa ada yang sengaja menuliskannya; 書かれている lebih netral dan lebih tertulis. Dalam percakapan keduanya bisa saling ganti.",
+    "**って di ujung kalimat = ～そうです versi santai.** [値上|Neage]げされるって = katanya akan dinaikkan. 🗣 Hanya untuk percakapan; bentuk lengkapnya dibongkar di Unit 7.",
+    "**走らされている di baris terakhir adalah 使役受身, bukan pasif biasa.** Artinya bus itu “dipaksa dijalankan” — nadanya mengeluh bahwa itu keputusan setengah hati. Bandingkan dengan [走|hashi]らせている (menjalankan) dan [走|hashi]っている (berjalan).",
+    "**人手不足 adalah salah satu kata paling penting untuk memahami Jepang hari ini.** Ia muncul di berita hampir tiap minggu, dan kembali di Unit 14."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif yang dipakai berita dan pengumuman",
+     "body": [
+      "Kalau kamu bisa membaca lima rangka ini, kamu bisa menangkap isi pokok hampir semua berita pendek berbahasa Jepang."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "～される (rencana)",
+        "[来月|Raigetsu][導入|dōnyū]される。",
+        "akan diberlakukan bulan depan"
+       ],
+       [
+        "～されている (keadaan)",
+        "[各地|Kakuchi]で[実施|jisshi]されている。",
+        "sedang dijalankan di berbagai daerah"
+       ],
+       [
+        "～とされている",
+        "[原因|Gen'in]は[不明|fumei]とされている。",
+        "penyebabnya dianggap belum jelas"
+       ],
+       [
+        "～と[見|mi]られている",
+        "[影響|Eikyō]は[大|ōk]きいと[見|mi]られている。",
+        "diperkirakan dampaknya besar"
+       ],
+       [
+        "～によると…そうだ",
+        "[報道|Hōdō]によると、[中止|chūshi]されたそうだ。",
+        "menurut pemberitaan, katanya dibatalkan"
+       ]
+      ]
+     },
+     "after": [
+      "📄 Berita memakai bentuk である/だ, bukan です・ます. Bacalah dengan mata, jangan tiru nadanya waktu bicara.",
+      "**Kata kerja 漢語 + する paling sering dipasifkan:** [発表|happyō], [実施|jisshi], [導入|dōnyū], [中止|chūshi], [廃止|haishi], [批判|hihan], [報道|hōdō], [検討|kentō].",
+      "Unit 14 mengurus bacaan berita secara utuh, termasuk judul berita yang partikelnya dibuang."
+     ]
+    },
+    {
+     "title": "Kapan bahasa Jepang MENOLAK pasif",
+     "body": [
+      "Pembelajar Indonesia cenderung memakai pasif terlalu sering, karena bahasa Indonesia memang senang pasif. Bahasa Jepang justru pelit — dan memakai pasif di tempat yang salah membuat kalimatmu terdengar seperti kamu sedang menuduh seseorang."
+     ],
+     "table": {
+      "head": [
+       "Bahasa Indonesia",
+       "❌ Jepang",
+       "✅ Jepang"
+      ],
+      "rows": [
+       [
+        "Rumah ini dibangun tahun lalu.",
+        "この[家|ie]は[去年|kyonen][建|ta]てられました。(bisa, tapi kaku)",
+        "この[家|ie]は[去年|kyonen][建|ta]てられました。／[建|Ta]ちました。"
+       ],
+       [
+        "Saya diberi hadiah oleh teman.",
+        "[私|Watashi]は[友達|tomodachi]に[プレゼント|purezento]を[あげ|age]られた。",
+        "[友達|Tomodachi]に[プレゼント|purezento]を**もらった**。"
+       ],
+       [
+        "Pintunya sudah dibuka.",
+        "[ドア|Doa]が[開|a]けられた。",
+        "[ドア|Doa]が**[開|a]いている**。"
+       ],
+       [
+        "Nasinya sudah dimasak.",
+        "ご[飯|han]が[作|tsuku]られた。",
+        "ご[飯|han]が**[作|tsuku]ってある**。"
+       ],
+       [
+        "Saya disuruh menunggu.",
+        "[待|Ma]たれた。",
+        "[待|Ma]た**される**。／[待|ma]つように[言|i]われた。"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturan praktisnya:** kalau perbuatannya menguntungkanmu, pakai もらう (Unit 6), bukan pasif. Pasif Jepang cenderung bermuatan kerugian.",
+      "**Kalau yang penting hasilnya, bukan pelakunya**, pakai kata kerja intransitif ([開|a]いている) atau ～てある — bukan pasif.",
+      "⚠️ ❌先生に教えられました terdengar seperti kamu diajari dengan paksa. ✅[先生|Sensei]に[教|oshi]えて**いただきました**。"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bercerita tentang hari yang buruk",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini salah satu giliran bicara paling sering di dunia: menceritakan hal yang menyebalkan. Bahasa Jepang punya perkakas khususnya, dan hampir semuanya pasif."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kejadian",
+      "Kalimatnya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Kehujanan",
+       "[雨|Ame]に[降|fu]られました。",
+       "saya kehujanan"
+      ],
+      [
+       "Diinjak kakinya",
+       "[足|Ashi]を[踏|fu]まれました。",
+       "kaki saya diinjak"
+      ],
+      [
+       "Dompet dicuri",
+       "[財布|Saifu]を[盗|nusu]まれました。",
+       "dompet saya dicuri"
+      ],
+      [
+       "Tamu datang tak diundang",
+       "[友達|Tomodachi]に[来|こ]られて[困|koma]りました。",
+       "teman datang dan saya jadi repot"
+      ],
+      [
+       "Ditanya-tanya",
+       "いろいろ[聞|ki]かれました。",
+       "saya ditanyai macam-macam"
+      ],
+      [
+       "Dimarahi",
+       "[怒|Oko]られました。",
+       "saya dimarahi"
+      ],
+      [
+       "Dibuat menunggu",
+       "[一時間|Ichi-jikan][待|ma]たされました。",
+       "saya dibuat menunggu satu jam"
+      ],
+      [
+       "Antrean diserobot",
+       "[列|Retsu]に[割|wa]り[込|ko]まれました。",
+       "antrean saya diserobot"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata untuk menutup cerita sial"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[散々|Sanzan]でした。 — Kacau balau.",
+      "[ついてなかった|Tsuite nakatta]。 — Sedang sial. (bentuk sopan: ついていませんでした)",
+      "[最悪|Saiaku]。 — Parah banget. 🗣 sangat santai",
+      "[まいったよ|Maitta yo]。 — Menyerah saya. 🗣",
+      "ひどい[目|me]にあいました。 — Saya mengalami hal yang buruk.",
+      "⚠️ [大変|Taihen]でしたね adalah tanggapan wajib saat mendengar cerita sial orang lain. Tanpa itu kamu terdengar tidak peduli."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ikut merasakan — tanggapan yang benar",
+     "items": [
+      "それは[大変|taihen]でしたね。 — Wah, berat ya.",
+      "お[疲|tsuka]れさまでした。 — Terima kasih sudah bertahan.",
+      "[それはひどいですね|Sore wa hidoi desu ne]。 — Itu keterlaluan.",
+      "[大丈夫|Daijōbu]でしたか。 — Anda tidak apa-apa?",
+      "⚠️ Jangan langsung menawarkan jalan keluar. Di Jepang, mendengarkan dan ikut merasakan datang lebih dulu; saran datang belakangan, kalau diminta."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Melapor kehilangan dan kejadian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua kalimat berikut memakai pasif, dan semuanya akan benar-benar kamu butuhkan kalau tinggal di Jepang. Bagian selengkapnya tentang barang hilang ada di Unit 13."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Kalimat",
+      "Kepada siapa"
+     ],
+     "rows": [
+      [
+       "Dompet dicopet",
+       "[財布|Saifu]を[盗|nusu]まれました。",
+       "polisi, 交番"
+      ],
+      [
+       "Sepeda dicuri",
+       "[自転車|Jitensha]を[盗|nusu]まれたんですが。",
+       "交番"
+      ],
+      [
+       "Kartu dipakai orang",
+       "[カード|Kādo]を[不正|fusei]に[使|tsuka]われたようです。",
+       "bank"
+      ],
+      [
+       "Rumah dimasuki orang",
+       "[家|Ie]に[入|hai]られたみたいです。",
+       "polisi"
+      ],
+      [
+       "Barang dirusak",
+       "[車|Kuruma]に[傷|kizu]をつけられました。",
+       "polisi, asuransi"
+      ],
+      [
+       "Ditipu",
+       "[詐欺|Sagi]にあいました。",
+       "polisi"
+      ],
+      [
+       "Diikuti orang",
+       "[知|Shi]らない[人|hito]につけられています。",
+       "polisi (darurat: 110)"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Melapor ke 交番 — urutannya"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Buka: すみません、[被害|higai][届|todoke]を[出|da]したいんですが。 — Saya ingin membuat laporan kejadian.",
+      "Apa: [財布|Saifu]を[盗|nusu]まれました。 Kapan: [今日|Kyō]の[午後|gogo][三時|san-ji]ごろです。",
+      "Di mana: [新宿駅|Shinjuku-eki]の[改札|kaisatsu][付近|fukin]です。",
+      "Isi: [中|Naka]に[現金|genkin]と[在留|zairyū][カード|kādo]が[入|hai]っていました。",
+      "Minta bukti: [証明書|Shōmeisho]をいただけますか。 — bukti laporan ini wajib untuk mengurus kartu pengganti dan klaim asuransi.",
+      "⚠️ Nomor darurat: **110** polisi, **119** ambulans dan pemadam kebakaran."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: hari terburukmu",
+     "items": [
+      "Ceritakan satu hari yang benar-benar buruk, keras-keras, dengan bahan unit ini.",
+      "Satu pasif tak langsung: 〜に〜られて…",
+      "Satu pasif berobjek: 〜を〜られました。",
+      "Satu perintah yang kamu terima dalam bentuk pasif: 〜するように[言|i]われました。",
+      "Satu akibat: [それで、〜|Sore de, 〜]。",
+      "Tutup: [本当|Hontō]に[散々|sanzan]な[一日|ichinichi]でした。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "受身",
+   "baca": "うけみ · ukemi",
+   "id": "bentuk pasif"
+  },
+  {
+   "ja": "濡れる",
+   "baca": "ぬれる · nureru",
+   "id": "basah"
+  },
+  {
+   "ja": "傘",
+   "baca": "かさ · kasa",
+   "id": "payung"
+  },
+  {
+   "ja": "天気予報",
+   "baca": "てんきよほう · tenki yohō",
+   "id": "ramalan cuaca"
+  },
+  {
+   "ja": "外れる",
+   "baca": "はずれる · hazureru",
+   "id": "meleset"
+  },
+  {
+   "ja": "踏む",
+   "baca": "ふむ · fumu",
+   "id": "menginjak"
+  },
+  {
+   "ja": "散々",
+   "baca": "さんざん · sanzan",
+   "id": "kacau balau"
+  },
+  {
+   "ja": "満員電車",
+   "baca": "まんいんでんしゃ · man'in densha",
+   "id": "kereta penuh sesak"
+  },
+  {
+   "ja": "謝る",
+   "baca": "あやまる · ayamaru",
+   "id": "meminta maaf"
+  },
+  {
+   "ja": "気づく",
+   "baca": "きづく · kizuku",
+   "id": "menyadari"
+  },
+  {
+   "ja": "間に合う",
+   "baca": "まにあう · ma ni au",
+   "id": "keburu, sempat"
+  },
+  {
+   "ja": "焦る",
+   "baca": "あせる · aseru",
+   "id": "panik, terburu-buru"
+  },
+  {
+   "ja": "細かい",
+   "baca": "こまかい · komakai",
+   "id": "rinci, cerewet soal detail"
+  },
+  {
+   "ja": "怒る",
+   "baca": "おこる · okoru",
+   "id": "marah"
+  },
+  {
+   "ja": "運賃",
+   "baca": "うんちん · unchin",
+   "id": "ongkos, tarif"
+  },
+  {
+   "ja": "値上げ",
+   "baca": "ねあげ · neage",
+   "id": "kenaikan harga"
+  },
+  {
+   "ja": "平均",
+   "baca": "へいきん · heikin",
+   "id": "rata-rata"
+  },
+  {
+   "ja": "記事",
+   "baca": "きじ · kiji",
+   "id": "artikel"
+  },
+  {
+   "ja": "定期券",
+   "baca": "ていきけん · teikiken",
+   "id": "tiket langganan"
+  },
+  {
+   "ja": "批判する",
+   "baca": "ひはんする · hihan suru",
+   "id": "mengkritik"
+  },
+  {
+   "ja": "人手不足",
+   "baca": "ひとでぶそく · hitode busoku",
+   "id": "kekurangan tenaga kerja"
+  },
+  {
+   "ja": "燃料費",
+   "baca": "ねんりょうひ · nenryōhi",
+   "id": "biaya bahan bakar"
+  },
+  {
+   "ja": "上昇",
+   "baca": "じょうしょう · jōshō",
+   "id": "kenaikan"
+  },
+  {
+   "ja": "原因",
+   "baca": "げんいん · gen'in",
+   "id": "penyebab"
+  },
+  {
+   "ja": "地方",
+   "baca": "ちほう · chihō",
+   "id": "daerah, luar kota besar"
+  },
+  {
+   "ja": "路線",
+   "baca": "ろせん · rosen",
+   "id": "jalur (kereta, bus)"
+  },
+  {
+   "ja": "廃止する",
+   "baca": "はいしする · haishi suru",
+   "id": "menghapus, meniadakan"
+  },
+  {
+   "ja": "本数",
+   "baca": "ほんすう · honsū",
+   "id": "jumlah perjalanan/keberangkatan"
+  },
+  {
+   "ja": "導入する",
+   "baca": "どうにゅうする · dōnyū suru",
+   "id": "memberlakukan, memperkenalkan"
+  },
+  {
+   "ja": "実施する",
+   "baca": "じっしする · jisshi suru",
+   "id": "melaksanakan"
+  },
+  {
+   "ja": "発表する",
+   "baca": "はっぴょうする · happyō suru",
+   "id": "mengumumkan"
+  },
+  {
+   "ja": "中止する",
+   "baca": "ちゅうしする · chūshi suru",
+   "id": "membatalkan"
+  },
+  {
+   "ja": "報道",
+   "baca": "ほうどう · hōdō",
+   "id": "pemberitaan"
+  },
+  {
+   "ja": "不明",
+   "baca": "ふめい · fumei",
+   "id": "tidak jelas"
+  },
+  {
+   "ja": "影響",
+   "baca": "えいきょう · eikyō",
+   "id": "pengaruh, dampak"
+  },
+  {
+   "ja": "盗む",
+   "baca": "ぬすむ · nusumu",
+   "id": "mencuri"
+  },
+  {
+   "ja": "財布",
+   "baca": "さいふ · saifu",
+   "id": "dompet"
+  },
+  {
+   "ja": "被害届",
+   "baca": "ひがいとどけ · higai todoke",
+   "id": "laporan kejadian/kerugian"
+  },
+  {
+   "ja": "交番",
+   "baca": "こうばん · kōban",
+   "id": "pos polisi"
+  },
+  {
+   "ja": "改札",
+   "baca": "かいさつ · kaisatsu",
+   "id": "gerbang tiket"
+  },
+  {
+   "ja": "付近",
+   "baca": "ふきん · fukin",
+   "id": "sekitar"
+  },
+  {
+   "ja": "現金",
+   "baca": "げんきん · genkin",
+   "id": "uang tunai"
+  },
+  {
+   "ja": "証明書",
+   "baca": "しょうめいしょ · shōmeisho",
+   "id": "surat keterangan"
+  },
+  {
+   "ja": "詐欺",
+   "baca": "さぎ · sagi",
+   "id": "penipuan"
+  },
+  {
+   "ja": "傷",
+   "baca": "きず · kizu",
+   "id": "goresan, luka"
+  },
+  {
+   "ja": "不正",
+   "baca": "ふせい · fusei",
+   "id": "tidak sah, curang"
+  },
+  {
+   "ja": "割り込む",
+   "baca": "わりこむ · warikomu",
+   "id": "menyerobot antrean"
+  },
+  {
+   "ja": "ひどい目にあう",
+   "baca": "ひどいめにあう · hidoi me ni au",
+   "id": "mengalami hal buruk"
+  },
+  {
+   "ja": "ついていない",
+   "baca": "tsuite inai",
+   "id": "sedang sial"
+  },
+  {
+   "ja": "最悪",
+   "baca": "さいあく · saiaku",
+   "id": "terburuk, parah"
+  },
+  {
+   "ja": "ほめる",
+   "baca": "homeru",
+   "id": "memuji"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk 受身形.",
+   "items": [
+    "[言|i]う → ____",
+    "[踏|fu]む → ____",
+    "[見|mi]る → ____",
+    "する → ____",
+    "[来|く]る → ____",
+    "[盗|nusu]む → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pasif dari kata kerja dalam kurung.",
+   "items": [
+    "[駅|Eki]の[前|mae]で[雨|ame]に ____ 。([降|fu]る)",
+    "[電車|Densha]で[足|ashi]を ____ ました。([踏|fu]む)",
+    "[部長|Buchō]に[理由|riyū]を ____ ました。([聞|ki]く)",
+    "この[本|hon]はよく ____ ています。([読|yo]む)",
+    "[来月|Raigetsu]から[運賃|unchin]が ____ ます。([値上|neage]げする)",
+    "[昨日|Kinō][財布|saifu]を ____ ました。([盗|nusu]む)"
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut salah. Perbaiki dengan bentuk yang lebih wajar.",
+   "items": [
+    "❌[私|Watashi]は[友達|tomodachi]に[プレゼント|purezento]をあげられました。",
+    "❌[先生|Sensei]に[教|oshi]えられました。(maksudnya: guru berbaik hati mengajari saya)",
+    "❌[ドア|Doa]が[開|a]けられています。(maksudnya: pintunya dalam keadaan terbuka)",
+    "❌[私|Watashi]は[父|chichi]によって[怒|oko]られました。",
+    "❌[待|Ma]たれました。(maksudnya: saya dibuat menunggu)",
+    "❌[私|Watashi]の[足|ashi]が[踏|fu]まれました。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "に / [降|fu]られて / [雨|ame] / びしょ[濡|nu]れになった",
+    "を / [踏|fu]まれた / [足|ashi] / [満員電車|man'in densha]で",
+    "ように / [連絡|renraku]する / [言|i]われた / [次|tsugi]から",
+    "は / [批判|hihan]されている / この[政策|seisaku] / かなり",
+    "と / [原因|gen'in]は / されている / [人手不足|hitode busoku]",
+    "に / [来|こ]られて / [友達|tomodachi] / [勉強|benkyō]できなかった"
+   ]
+  },
+  {
+   "prompt": "Kalimat ini bentuk pasif, potensial, atau 尊敬語? Tulis salah satu.",
+   "items": [
+    "[部長|Buchō]はもう[帰|kae]られました。",
+    "この[漢字|kanji]は[読|yo]めますか。",
+    "みんなに[笑|wara]われました。",
+    "[社長|Shachō]は[何|nan]と[言|i]われましたか。",
+    "[明日|Ashita]は[来|こ]られますか。",
+    "[知|Shi]らない[人|hito]に[声|koe]をかけられた。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Saya kehujanan di jalan pulang.",
+    "Dompet saya dicuri di stasiun.",
+    "Saya dibuat menunggu satu jam.",
+    "Buku ini banyak dibaca di Jepang.",
+    "Saya disuruh mengabari lebih awal.",
+    "Katanya jalur itu akan dihapus bulan depan."
+   ]
+  }
+ ],
+ "answers": [
+  "[言|i]われる — [踏|fu]まれる — [見|mi]られる — される — [来|こ]られる — [盗|nusu]まれる",
+  "[降|fu]られました — [踏|fu]まれ — [聞|ki]かれ — [読|yo]まれ — [値上|neage]げされ — [盗|nusu]まれ",
+  "[友達|Tomodachi]に[プレゼント|purezento]をもらいました — [先生|Sensei]に[教|oshi]えていただきました — [ドア|Doa]が[開|a]いています — [父|Chichi]に[怒|oko]られました — [待|Ma]たされました — [足|Ashi]を[踏|fu]まれました",
+  "[雨|Ame]に[降|fu]られてびしょ[濡|nu]れになった — [満員電車|Man'in densha]で[足|ashi]を[踏|fu]まれた — [次|Tsugi]から[連絡|renraku]するように[言|i]われた — この[政策|seisaku]はかなり[批判|hihan]されている — [原因|Gen'in]は[人手不足|hitode busoku]とされている — [友達|Tomodachi]に[来|こ]られて[勉強|benkyō]できなかった",
+  "尊敬語 — potensial — pasif — 尊敬語 — potensial — pasif",
+  "[帰|Kae]りに[雨|ame]に[降|fu]られました — [駅|Eki]で[財布|saifu]を[盗|nusu]まれました — [一時間|Ichi-jikan][待|ma]たされました — この[本|hon]は[日本|Nihon]でよく[読|yo]まれています — [早|Haya]めに[連絡|renraku]するように[言|i]われました — その[路線|rosen]は[来月|raigetsu][廃止|haishi]されるそうです"
+ ],
+ "wave": "Lima menit sebelum Unit 5: ambil satu berita pendek berbahasa Jepang hari ini — NHK NEWS WEB EASY cukup — dan hitung berapa kalimat pasif di dalamnya. Lalu tandai satu kalimat 〜とされている atau 〜と見られている. Sesudah itu, ceritakan berita itu keras-keras dalam empat puluh detik memakai bentuk です・ます, bukan bentuk beritanya."
+}

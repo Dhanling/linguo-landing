@@ -1,0 +1,902 @@
+{
+ "title": "Menyuruh, mengizinkan, dan terpaksa",
+ "title_target": "させる・させられる — Saseru · Saserareru",
+ "goal": "Menyatakan bahwa seseorang menyuruh atau mengizinkan orang lain melakukan sesuatu, meminta izin dengan bentuk kausatif yang dipakai di seluruh dunia kerja Jepang, dan mengeluh tentang hal yang terpaksa kamu lakukan.",
+ "bekal": [
+  "membentuk 使役形 dari ketiga golongan kata kerja tanpa berpikir",
+  "membedakan menyuruh (を) dan mengizinkan (に) dalam kalimat kausatif",
+  "meminta izin dengan 〜させてください dan 〜させていただけませんか",
+  "mengeluh dengan 使役受身: hal yang terpaksa kamu lakukan",
+  "memakai 〜させていただきます di tempat kerja tanpa berlebihan"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Minta izin cuti setengah hari",
+   "intro": "Rangga perlu izin pulang lebih awal. Perhatikan bahwa ia tidak berkata “saya mau pulang”, melainkan “izinkan saya pulang” — bentuk kausatif yang membuat keputusannya seolah tetap ada di tangan atasan.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[高橋|Takahashi][部長|buchō]、[少|suko]しよろしいでしょうか。",
+     "id": "Pak Takahashi, boleh minta waktu sebentar?",
+     "literal": "Takahashi — kepala-bagian, sedikit — baik — barangkali — kah."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "はい、どうぞ。",
+     "id": "Ya, silakan.",
+     "literal": "ya, silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[実|Jitsu]は[来週|raishū]の[水曜日|suiyōbi]、[半休|hankyū]を[取|to]らせていただきたいのですが。",
+     "id": "Sebenarnya Rabu minggu depan, saya ingin mohon izin cuti setengah hari.",
+     "literal": "sebenarnya — mengenai — pekan-depan — punya — Rabu, setengah-cuti — akan — izinkan-saya-ambil — ingin — adalah — tapi."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[水曜|Suiyō]ね。[何|Nani]かあるの？",
+     "id": "Rabu ya. Ada sesuatu?",
+     "literal": "Rabu — ya. apa — pun — ada — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[市役所|Shiyakusho]で[在留|zairyū][カード|kādo]の[更新|kōshin]をしなければならなくて。",
+     "id": "Saya harus mengurus perpanjangan kartu izin tinggal di kantor wali kota.",
+     "literal": "kantor-kota — di — tinggal — kartu — punya — perpanjangan — akan — harus-lakukan — dan."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "ああ、それは[大事|daiji]だね。[午後|Gogo]から？",
+     "id": "Ah, itu penting. Dari siang?",
+     "literal": "ah, itu — mengenai — penting — ya. sore — dari."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[午前中|Gozen-chū]は[出社|shussha]して、[一時|ichi-ji]に[出|de]させていただければと[思|omo]っております。",
+     "id": "Ya. Pagi saya masuk kantor, lalu kalau diizinkan keluar jam satu.",
+     "literal": "ya. sepanjang-pagi — mengenai — masuk-kantor — dan, jam-satu — pada — jika-diizinkan-saya-keluar — begitu — saya-pikir (merendah)."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[構|Kama]わないよ。[佐藤|Satō]さんにも[伝|tsuta]えておいて。",
+     "id": "Tidak masalah. Beritahu Sato-san juga ya.",
+     "literal": "tidak-keberatan — lho. Sato — orang — kepada — juga — sampaikan — siapkan-dulu."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[申請書|Shinseisho]は[今日中|kyōjū]に[提出|teishutsu]いたします。",
+     "id": "Baik. Formulir permohonannya akan saya serahkan hari ini juga.",
+     "literal": "ya. formulir-permohonan — mengenai — dalam-hari-ini — pada — saya-serahkan."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "うん。[役所|Yakusho]は[混|ko]むから、[早|haya]めに[行|i]ったほうがいいよ。",
+     "id": "Ya. Kantor pemerintah biasanya ramai, sebaiknya datang lebih awal.",
+     "literal": "ya. kantor-pemerintah — mengenai — penuh — sebab, awal — pada — pergi — lebih-baik — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ありがとうございます。[ご配慮|Go-hairyo]いただき、[恐|oso]れ[入|i]ります。",
+     "id": "Terima kasih. Saya sungkan atas perhatian Bapak.",
+     "literal": "terima-kasih. perhatian — saya-terima — dan, takut — masuk."
+    }
+   ],
+   "notes": [
+    "**～させていただきたいのですが adalah kalimat izin paling aman di dunia kerja Jepang.** Harfiahnya: “saya ingin menerima izin untuk melakukan”. Ia sopan karena keputusannya diserahkan penuh kepada lawan bicara.",
+    "**Bandingkan tiga kalimat ini.** [休|Yasu]みます (saya libur — pemberitahuan) · [休|yasu]みたいです (saya ingin libur — keinginan pribadi) · [休|yasu]ませていただきたいのですが (izinkan saya libur — permohonan). Hanya yang ketiga pantas diucapkan kepada atasan.",
+    "**～させていただければと思っております** adalah lapis tersopan lagi: “kalau diizinkan, begitu yang saya pikirkan”. Ia hampir tidak menyatakan apa pun secara langsung, dan justru itu yang membuatnya halus.",
+    "**構わないよ = “tidak keberatan”, bukan “bagus”.** Ini izin yang diberikan dengan santai. Kalau atasan berkata いいですよ, artinya sama.",
+    "**～ておいて = kerjakan itu lebih dulu, untuk persiapan.** [伝|Tsuta]えておいて = beritahu dia dari sekarang, supaya nanti tidak jadi masalah. Bentuk ておく muncul di tiap halaman kehidupan kantor Jepang.",
+    "**ご配慮いただき** — “atas perhatian yang Anda berikan”. Bentuk お/ご + kata benda + いただく adalah cara paling ringkas berterima kasih di lingkungan resmi."
+   ],
+   "grammars": [
+    {
+     "title": "使役形 — bentuk menyuruh dan mengizinkan",
+     "body": [
+      "Satu bentuk, dua arti yang berlawanan. Yang menentukan bukan kata kerjanya, melainkan **partikel** dan **keadaannya**."
+     ],
+     "table": {
+      "head": [
+       "Golongan",
+       "Kamus",
+       "使役形",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "I (五段)",
+        "[書|ka]く",
+        "[書|ka]かせる",
+        "[書|Ka]かせます"
+       ],
+       [
+        "I (五段)",
+        "[待|ma]つ",
+        "[待|ma]たせる",
+        "[待|Ma]たせました"
+       ],
+       [
+        "I (五段)",
+        "[飲|no]む",
+        "[飲|no]ませる",
+        "[飲|No]ませないでください"
+       ],
+       [
+        "II (一段)",
+        "[食|ta]べる",
+        "[食|ta]べさせる",
+        "[食|Ta]べさせます"
+       ],
+       [
+        "III",
+        "する",
+        "させる",
+        "[勉強|Benkyō]させます"
+       ],
+       [
+        "III",
+        "[来|く]る",
+        "[来|こ]させる",
+        "[来|Ko]させます"
+       ]
+      ]
+     },
+     "after": [
+      "**Golongan I:** akhiran ～う diganti ～あ + せる. **Golongan II:** ～る diganti ～させる.",
+      "⚠️ Bentuk pendek [書|ka]かす · [飲|no]ます ada dan sering terdengar, tapi kasar. Jangan dipakai di kantor.",
+      "Semua bentuk 使役 berperilaku seperti kata kerja golongan II: [書|ka]かせる → [書|ka]かせて, [書|ka]かせない, [書|ka]かせました."
+     ]
+    },
+    {
+     "title": "を dan に — menyuruh atau mengizinkan",
+     "body": [
+      "Inilah satu-satunya hal yang benar-benar perlu diingat dari bab ini. Kalimat yang sama bisa berarti “memaksa anak makan sayur” atau “membiarkan anak makan sayur”, dan pembedanya cuma partikel serta isi kalimatnya."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "A は B **を** ～(さ)せる",
+        "[母|Haha]は[弟|otōto]**を**[泣|na]かせた。",
+        "Ibu membuat adik menangis (paksa/akibat)"
+       ],
+       [
+        "A は B **に** O を ～(さ)せる",
+        "[先生|Sensei]は[学生|gakusei]**に**[本|hon]を[読|yo]ませた。",
+        "Guru menyuruh murid membaca buku"
+       ],
+       [
+        "Izin: B **に** ～(さ)せる",
+        "[父|Chichi]は[私|watashi]**に**[留学|ryūgaku]させてくれた。",
+        "Ayah mengizinkan saya belajar ke luar negeri"
+       ],
+       [
+        "Izin + てあげる",
+        "[子供|Kodomo]**に**[好|su]きなだけ[遊|aso]ばせてあげた。",
+        "Saya biarkan anak bermain sepuasnya"
+       ],
+       [
+        "Perasaan: B **を**",
+        "[心配|Shinpai]させてすみません。",
+        "Maaf sudah membuat Anda khawatir"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kalau kata kerjanya sudah punya objek を, pelakunya **wajib** memakai に. ❌先生は学生を本を読ませた。",
+      "**Kata kerja perasaan hampir selalu memakai を:** [泣|na]かせる, [笑|wara]わせる, [困|koma]らせる, [喜|yoroko]ばせる, [心配|shinpai]させる.",
+      "**Kausatif + てくれる/てもらう = izin yang disyukuri.** [行|I]かせてくれてありがとう。 — Terima kasih sudah mengizinkan saya pergi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Mengeluh sesudah jam kerja",
+   "intro": "Malam harinya, di izakaya, Sato dan Rangga berbicara dengan bentuk biasa. Seluruh dialog ini adalah gudang bentuk 使役受身 — bentuk yang khusus dipakai untuk hal yang terpaksa kamu lakukan.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "[今日|Kyō]、[疲|tsuka]れたでしょ？[会議|Kaigi]、[三時間|san-jikan]もあったもんね。",
+     "id": "Hari ini capek kan? Rapatnya sampai tiga jam.",
+     "literal": "hari-ini, lelah — kan. rapat, tiga-jam — sampai — ada — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[正直|Shōjiki]、[途中|tochū]から[何|nani]も[頭|atama]に[入|hai]らなかった。",
+     "id": "Jujur, dari tengah-tengah tidak ada satu pun yang masuk ke kepala.",
+     "literal": "jujur, tengah-jalan — dari — apa — pun — kepala — ke — tidak-masuk (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "わかる。[私|Watashi]なんて[新人|shinjin]のとき、[毎日|mainichi][議事録|gijiroku]を[書|ka]かされてたよ。",
+     "id": "Paham. Saya waktu masih baru, tiap hari disuruh menulis notulen lho.",
+     "literal": "saya-paham. saya — semacam — orang-baru — punya — waktu, tiap-hari — notulen — akan — dipaksa-tulis — sedang (lampau) — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[三時間|San-jikan]の[会議|kaigi]の[議事録|gijiroku]…[想像|sōzō]しただけで[疲|tsuka]れる。",
+     "id": "Notulen rapat tiga jam… membayangkannya saja sudah capek.",
+     "literal": "tiga-jam — punya — rapat — punya — notulen… membayangkan — hanya-dengan — lelah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "しかも[飲|no]み[会|kai]では[毎回|maikai][歌|uta]わされて。あれが[一番|ichiban][きつ|kitsu]かった。",
+     "id": "Ditambah lagi di acara minum tiap kali dipaksa menyanyi. Itu yang paling berat.",
+     "literal": "lagi-pula — acara-minum — di — mengenai — tiap-kali — dipaksa-menyanyi — dan. itu — yang — paling — berat (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[今|Ima]もそういうのある？",
+     "id": "Sekarang masih ada yang seperti itu?",
+     "literal": "sekarang — juga — begitu — punya — ada."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[最近|Saikin]は[減|he]ったね。[無理|Muri]に[飲|no]ませるのは[問題|mondai]になるから。",
+     "id": "Belakangan berkurang. Karena memaksa orang minum jadi masalah sekarang.",
+     "literal": "belakangan — mengenai — berkurang (lampau) — ya. paksa — pada — membuat-minum — yang — mengenai — masalah — menjadi — sebab."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "よかった。[僕|Boku]、[お酒|o-sake][弱|yowa]いから[心配|shinpai]してた。",
+     "id": "Syukurlah. Saya lemah alkohol, jadi tadinya khawatir.",
+     "literal": "baik (lampau). saya, minuman-keras — lemah — sebab — khawatir — sedang (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[大丈夫|Daijōbu]。[飲|No]めないなら[最初|saisho]に[言|i]っちゃえばいいよ。",
+     "id": "Tidak apa-apa. Kalau tidak bisa minum, bilang saja dari awal.",
+     "literal": "tak-apa. tidak-bisa-minum — kalau — awal — pada — bilang-saja — kalau — baik — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうする。[待|Ma]たせてごめん、[明日|ashita]の[資料|shiryō][作|tsuku]ってから[来|ki]たから。",
+     "id": "Akan saya lakukan. Maaf sudah membuatmu menunggu, saya datang setelah membuat berkas untuk besok.",
+     "literal": "begitu — lakukan. membuat-menunggu — dan — maaf, besok — punya — berkas — buat — sesudah — datang (lampau) — sebab."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[全然|Zenzen]。まあ[飲|no]もう。[今日|Kyō]は[私|watashi]に[払|hara]わせて。",
+     "id": "Sama sekali tidak apa-apa. Ayo minum. Hari ini biar saya yang bayar.",
+     "literal": "sama-sekali. yah — mari-minum. hari-ini — mengenai — saya — kepada — biarkan-bayar."
+    }
+   ],
+   "notes": [
+    "**書かされていた = bentuk 使役受身.** Harfiahnya: “saya dibuat-menulis (dan saya tidak suka)”. Bentuk ini hampir selalu bermuatan keluhan, dan itu bukan kebetulan — ia memang khusus ada untuk itu.",
+    "**私なんて = “orang seperti saya”.** なんて merendahkan diri dengan nada bercanda, sering dipakai saat memulai cerita tentang penderitaan sendiri. 🗣 Sangat santai; jangan dipakai ke atasan.",
+    "**待たせてごめん adalah 使役 dalam permintaan maaf.** Yang minta maaf adalah **penyebab** keadaan: “saya membuatmu menunggu”. Kalimat sopannya: [お待|O-ma]たせいたしました — kalimat yang akan kamu dengar di tiap restoran Jepang.",
+    "**払わせて — kausatif sebagai tawaran.** [私|Watashi]に[払|hara]わせて = biarkan saya membayar. Ini cara berebut membayar yang benar di Jepang, dan berebutnya memang diharapkan.",
+    "**～ちゃえばいい = ～てしまえばいい.** Nada “sudah, lakukan saja”. Bentuk ちゃう/じゃう adalah ringkasan santai dari てしまう — hanya untuk percakapan.",
+    "**飲み会 bukan sekadar pesta.** Ia bagian dari pekerjaan, dan menolak berulang kali punya harga sosial. Belakangan aturannya melonggar; [アルハラ|aruhara] (pelecehan lewat alkohol) kini kata yang serius."
+   ],
+   "grammars": [
+    {
+     "title": "使役受身 — hal yang terpaksa kamu lakukan",
+     "body": [
+      "Rangkanya: **A は B に ～(さ)せられる**. A adalah korbannya, B adalah yang memaksa. Bentuk ini nyaris selalu berisi keluhan — kalau kamu tidak merasa dirugikan, jangan memakainya."
+     ],
+     "table": {
+      "head": [
+       "Kamus",
+       "使役形",
+       "使役受身形",
+       "Bentuk pendek"
+      ],
+      "rows": [
+       [
+        "[待|ma]つ",
+        "[待|ma]たせる",
+        "[待|ma]たせられる",
+        "[待|ma]たされる"
+       ],
+       [
+        "[飲|no]む",
+        "[飲|no]ませる",
+        "[飲|no]ませられる",
+        "[飲|no]まされる"
+       ],
+       [
+        "[書|ka]く",
+        "[書|ka]かせる",
+        "[書|ka]かせられる",
+        "[書|ka]かされる"
+       ],
+       [
+        "[食|ta]べる",
+        "[食|ta]べさせる",
+        "[食|ta]べさせられる",
+        "— (tidak ada)"
+       ],
+       [
+        "する",
+        "させる",
+        "させられる",
+        "— (tidak ada)"
+       ],
+       [
+        "[来|く]る",
+        "[来|こ]させる",
+        "[来|こ]させられる",
+        "— (tidak ada)"
+       ]
+      ]
+     },
+     "after": [
+      "**Bentuk pendek ～される hanya ada untuk golongan I**, dan itulah yang paling sering terdengar: [三十分|San-juppun]も[待|ma]たされた。 — Saya dibuat menunggu setengah jam.",
+      "⚠️ Kata kerja berakhiran ～す tidak punya bentuk pendek: [話|hana]させられる ✅ / ❌話さされる.",
+      "**Bandingkan tiga kalimat:** [飲|No]んだ (saya minum) · [飲|no]ませた (saya membuat dia minum) · [飲|no]まされた (saya dipaksa minum)."
+     ]
+    },
+    {
+     "title": "～させていただきます — pisau bermata dua",
+     "body": [
+      "Bentuk ini berarti “saya melakukannya atas izin Anda”, dan ia adalah kalimat paling sopan sekaligus kalimat paling sering disalahgunakan dalam bahasa Jepang modern."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Pantas?",
+       "Sebabnya"
+      ],
+      "rows": [
+       [
+        "[休|Yasu]ませていただきます。",
+        "✅",
+        "libur memang butuh izin atasan"
+       ],
+       [
+        "[説明|Setsumei]させていただきます。",
+        "✅",
+        "kesempatan bicara diberikan oleh hadirin"
+       ],
+       [
+        "[確認|Kakunin]させていただきます。",
+        "✅",
+        "menyentuh urusan lawan bicara"
+       ],
+       [
+        "[担当|Tantō]させていただきます。",
+        "✅",
+        "lazim di bisnis"
+       ],
+       [
+        "[閉店|Heiten]させていただきます。",
+        "△",
+        "sudah beku sebagai pengumuman toko"
+       ],
+       [
+        "[歩|Aru]かせていただきます。",
+        "❌",
+        "berjalan tak butuh izin siapa pun"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturan sederhananya:** pakai kalau perbuatanmu benar-benar bergantung pada izin atau kebaikan lawan bicara. Kalau tidak, cukup [いたします|itashimasu].",
+      "⚠️ Menumpuknya dalam satu kalimat — 「[確認|kakunin]させていただかせていただきます」— salah dan terdengar lucu.",
+      "📄 Dalam surel penolakan, ia melunakkan kabar buruk: [今回|Konkai]は[見送|miokura]らせていただきます。"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mengurus izin dan cuti di kantor Jepang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kosakata cuti di Jepang lebih rinci daripada di Indonesia, dan memakai kata yang salah bisa berarti kamu tanpa sadar meminta hak yang tidak ada. Tabel ini adalah kamus kerja yang cukup untuk seluruh urusan izin."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "[有給|yūkyū] / [有休|yūkyū]",
+       "yūkyū",
+       "cuti berbayar"
+      ],
+      [
+       "[半休|hankyū]",
+       "hankyū",
+       "cuti setengah hari"
+      ],
+      [
+       "[代休|daikyū]",
+       "daikyū",
+       "libur pengganti karena masuk di hari libur"
+      ],
+      [
+       "[振替休日|furikae-kyūjitsu]",
+       "furikae-kyūjitsu",
+       "hari libur yang digeser"
+      ],
+      [
+       "[早退|sōtai]",
+       "sōtai",
+       "pulang lebih awal"
+      ],
+      [
+       "[遅刻|chikoku]",
+       "chikoku",
+       "terlambat"
+      ],
+      [
+       "[欠勤|kekkin]",
+       "kekkin",
+       "tidak masuk tanpa cuti"
+      ],
+      [
+       "[時短|jitan]",
+       "jitan",
+       "jam kerja dipendekkan"
+      ],
+      [
+       "[在宅|zaitaku]",
+       "zaitaku",
+       "kerja dari rumah"
+      ],
+      [
+       "[直帰|chokki]",
+       "chokki",
+       "pulang langsung dari luar tanpa kembali ke kantor"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat izin yang sudah beku"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[来週|Raishū]の[金曜|kin'yō]、[有給|yūkyū]を[取|to]らせていただきたいのですが。 — Jumat depan saya ingin mengambil cuti.",
+      "[本日|Honjitsu]、[体調|taichō]が[優|sugu]れないため[早退|sōtai]させていただけますでしょうか。 — Hari ini badan saya kurang enak, bolehkah saya pulang lebih awal?",
+      "[電車|Densha]が[遅延|chien]しておりまして、[三十分|sanjuppun]ほど[遅|oku]れます。[申|Mō]し[訳|wake]ございません。 — Kereta terlambat, saya telat sekitar tiga puluh menit.",
+      "[明日|Ashita]は[直帰|chokki]させていただきます。 — Besok saya langsung pulang dari lokasi.",
+      "⚠️ Di Jepang, keterlambatan **wajib dikabarkan sebelum jam masuk**, bukan sesudah tiba. Menghubungi terlambat lebih berat daripada terlambatnya sendiri."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Surat izin — rangka pendek",
+     "items": [
+      "Judul: [有給休暇取得のお願い|Yūkyū kyūka shutoku no onegai]",
+      "Pembuka: [お疲|Otsuka]れさまです。[営業部|Eigyō-bu]のランガです。",
+      "Isi: [下記|Kaki]の[通|tō]り[休暇|kyūka]を[取得|shutoku]させていただきたく、ご[連絡|renraku][申|mō]し[上|a]げます。",
+      "Rincian: [日時|Nichiji] · [理由|Riyū] · [連絡先|Renrakusaki] · [引継|Hikitsu]ぎ (siapa yang menggantikan)",
+      "Penutup: ご[確認|kakunin]のほど、よろしくお[願|nega]いいたします。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bekerja di Jepang: kata-kata yang sering kamu dengar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata berikut tidak ada di kamus tingkat pemula, tapi terdengar tiap hari di kantor mana pun. Beberapa di antaranya menyimpan seluruh perdebatan tentang cara kerja Jepang modern."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti harfiah",
+      "Yang sebenarnya terjadi"
+     ],
+     "rows": [
+      [
+       "[残業|zangyō]",
+       "kerja sisa",
+       "lembur; [サビ残|sabi-zan] = lembur tak dibayar"
+      ],
+      [
+       "[定時|teiji]",
+       "waktu tetap",
+       "jam pulang resmi; [定時|teiji]で[帰|kae]る = pulang tepat waktu"
+      ],
+      [
+       "[報連相|hōrenshō]",
+       "lapor-hubungi-rundingkan",
+       "aturan komunikasi paling dasar di kantor Jepang"
+      ],
+      [
+       "[根回|nemawa]し",
+       "melingkari akar",
+       "melobi diam-diam sebelum rapat, supaya keputusan mulus"
+      ],
+      [
+       "[稟議|ringi]",
+       "pengajuan berputar",
+       "dokumen persetujuan yang diedarkan naik ke atas"
+      ],
+      [
+       "[飲|no]み[会|kai]",
+       "acara minum",
+       "bagian tak resmi dari pekerjaan"
+      ],
+      [
+       "[お疲|otsuka]れ[様|sama]",
+       "Anda telah lelah",
+       "salam serbaguna kantor"
+      ],
+      [
+       "[働|hatara]き[方改革|kata kaikaku]",
+       "reformasi cara kerja",
+       "kebijakan negara membatasi lembur sejak 2019"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "報連相 — tiga kata yang menyelamatkan karier"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[報告|Hōkoku] — melapor setelah selesai: 〜が[完了|kanryō]いたしました。",
+      "[連絡|Renraku] — mengabarkan keadaan: 〜の[件|ken]、ご[連絡|renraku]いたします。",
+      "[相談|Sōdan] — berunding sebelum memutuskan: ご[相談|sōdan]したいことがあるのですが。",
+      "⚠️ Di Jepang, mengerjakan sesuatu sendirian sampai selesai tanpa melapor bukan dianggap mandiri — ia dianggap berbahaya. Melapor terlalu sering jauh lebih aman daripada terlalu jarang.",
+      "**Kabar buruk dilaporkan lebih dulu, bukan belakangan.** Ini aturan tak tertulis yang paling sering dilanggar orang asing."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: hari kerjamu",
+     "items": [
+      "Ceritakan satu hari kerja atau hari kuliahmu, keras-keras, dengan bahan unit ini:",
+      "Satu kalimat 使役: apa yang kamu suruh atau izinkan orang lain lakukan.",
+      "Satu kalimat 使役受身: apa yang terpaksa kamu lakukan, dan kamu tidak suka.",
+      "Satu permintaan izin: 〜させていただきたいのですが。",
+      "Satu kalimat 報連相: apa yang kamu laporkan hari itu.",
+      "Tutup dengan penilaian: [正直|Shōjiki]、〜と[思|omo]います。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "使役",
+   "baca": "しえき · shieki",
+   "id": "bentuk menyuruh/mengizinkan"
+  },
+  {
+   "ja": "半休",
+   "baca": "はんきゅう · hankyū",
+   "id": "cuti setengah hari"
+  },
+  {
+   "ja": "有給",
+   "baca": "ゆうきゅう · yūkyū",
+   "id": "cuti berbayar"
+  },
+  {
+   "ja": "代休",
+   "baca": "だいきゅう · daikyū",
+   "id": "libur pengganti"
+  },
+  {
+   "ja": "早退",
+   "baca": "そうたい · sōtai",
+   "id": "pulang lebih awal"
+  },
+  {
+   "ja": "遅刻",
+   "baca": "ちこく · chikoku",
+   "id": "terlambat"
+  },
+  {
+   "ja": "欠勤",
+   "baca": "けっきん · kekkin",
+   "id": "tidak masuk kerja"
+  },
+  {
+   "ja": "在宅",
+   "baca": "ざいたく · zaitaku",
+   "id": "kerja dari rumah"
+  },
+  {
+   "ja": "直帰",
+   "baca": "ちょっき · chokki",
+   "id": "pulang langsung dari luar"
+  },
+  {
+   "ja": "出社する",
+   "baca": "しゅっしゃする · shussha suru",
+   "id": "masuk kantor"
+  },
+  {
+   "ja": "市役所",
+   "baca": "しやくしょ · shiyakusho",
+   "id": "kantor wali kota"
+  },
+  {
+   "ja": "在留カード",
+   "baca": "ざいりゅうカード · zairyū kādo",
+   "id": "kartu izin tinggal"
+  },
+  {
+   "ja": "更新",
+   "baca": "こうしん · kōshin",
+   "id": "perpanjangan, pembaruan"
+  },
+  {
+   "ja": "申請書",
+   "baca": "しんせいしょ · shinseisho",
+   "id": "formulir permohonan"
+  },
+  {
+   "ja": "提出する",
+   "baca": "ていしゅつする · teishutsu suru",
+   "id": "menyerahkan"
+  },
+  {
+   "ja": "配慮",
+   "baca": "はいりょ · hairyo",
+   "id": "perhatian, pertimbangan"
+  },
+  {
+   "ja": "混む",
+   "baca": "こむ · komu",
+   "id": "ramai, penuh"
+  },
+  {
+   "ja": "議事録",
+   "baca": "ぎじろく · gijiroku",
+   "id": "notulen rapat"
+  },
+  {
+   "ja": "想像する",
+   "baca": "そうぞうする · sōzō suru",
+   "id": "membayangkan"
+  },
+  {
+   "ja": "飲み会",
+   "baca": "のみかい · nomikai",
+   "id": "acara minum bersama"
+  },
+  {
+   "ja": "毎回",
+   "baca": "まいかい · maikai",
+   "id": "tiap kali"
+  },
+  {
+   "ja": "きつい",
+   "baca": "kitsui",
+   "id": "berat, melelahkan"
+  },
+  {
+   "ja": "減る",
+   "baca": "へる · heru",
+   "id": "berkurang"
+  },
+  {
+   "ja": "無理に",
+   "baca": "むりに · muri ni",
+   "id": "dengan memaksa"
+  },
+  {
+   "ja": "問題になる",
+   "baca": "もんだいになる · mondai ni naru",
+   "id": "menjadi masalah"
+  },
+  {
+   "ja": "弱い",
+   "baca": "よわい · yowai",
+   "id": "lemah"
+  },
+  {
+   "ja": "最初",
+   "baca": "さいしょ · saisho",
+   "id": "awal, pertama"
+  },
+  {
+   "ja": "払う",
+   "baca": "はらう · harau",
+   "id": "membayar"
+  },
+  {
+   "ja": "残業",
+   "baca": "ざんぎょう · zangyō",
+   "id": "lembur"
+  },
+  {
+   "ja": "定時",
+   "baca": "ていじ · teiji",
+   "id": "jam pulang resmi"
+  },
+  {
+   "ja": "報告",
+   "baca": "ほうこく · hōkoku",
+   "id": "laporan"
+  },
+  {
+   "ja": "連絡",
+   "baca": "れんらく · renraku",
+   "id": "kabar, hubungi"
+  },
+  {
+   "ja": "相談",
+   "baca": "そうだん · sōdan",
+   "id": "berunding, konsultasi"
+  },
+  {
+   "ja": "根回し",
+   "baca": "ねまわし · nemawashi",
+   "id": "lobi diam-diam sebelum rapat"
+  },
+  {
+   "ja": "稟議",
+   "baca": "りんぎ · ringi",
+   "id": "dokumen persetujuan berputar"
+  },
+  {
+   "ja": "完了する",
+   "baca": "かんりょうする · kanryō suru",
+   "id": "selesai, rampung"
+  },
+  {
+   "ja": "引継ぎ",
+   "baca": "ひきつぎ · hikitsugi",
+   "id": "serah terima tugas"
+  },
+  {
+   "ja": "休暇",
+   "baca": "きゅうか · kyūka",
+   "id": "cuti"
+  },
+  {
+   "ja": "取得する",
+   "baca": "しゅとくする · shutoku suru",
+   "id": "memperoleh, mengambil"
+  },
+  {
+   "ja": "理由",
+   "baca": "りゆう · riyū",
+   "id": "alasan"
+  },
+  {
+   "ja": "連絡先",
+   "baca": "れんらくさき · renrakusaki",
+   "id": "kontak yang bisa dihubungi"
+  },
+  {
+   "ja": "遅延",
+   "baca": "ちえん · chien",
+   "id": "keterlambatan (kereta)"
+  },
+  {
+   "ja": "泣く",
+   "baca": "なく · naku",
+   "id": "menangis"
+  },
+  {
+   "ja": "笑う",
+   "baca": "わらう · warau",
+   "id": "tertawa"
+  },
+  {
+   "ja": "困る",
+   "baca": "こまる · komaru",
+   "id": "bingung, kerepotan"
+  },
+  {
+   "ja": "喜ぶ",
+   "baca": "よろこぶ · yorokobu",
+   "id": "gembira"
+  },
+  {
+   "ja": "留学",
+   "baca": "りゅうがく · ryūgaku",
+   "id": "belajar ke luar negeri"
+  },
+  {
+   "ja": "見送る",
+   "baca": "みおくる · miokuru",
+   "id": "menunda, tidak jadi mengambil"
+  },
+  {
+   "ja": "閉店",
+   "baca": "へいてん · heiten",
+   "id": "tutup (toko)"
+  },
+  {
+   "ja": "途中",
+   "baca": "とちゅう · tochū",
+   "id": "di tengah jalan"
+  },
+  {
+   "ja": "頭に入る",
+   "baca": "あたまにはいる · atama ni hairu",
+   "id": "masuk ke kepala, tercerna"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke bentuk 使役形 (～せる/～させる).",
+   "items": [
+    "[書|ka]く → ____",
+    "[待|ma]つ → ____",
+    "[食|ta]べる → ____",
+    "する → ____",
+    "[来|く]る → ____",
+    "[休|yasu]む → ____"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk 使役受身形 (bentuk pendek kalau ada).",
+   "items": [
+    "[飲|no]む → ____",
+    "[待|ma]つ → ____",
+    "[書|ka]く → ____",
+    "[食|ta]べる → ____",
+    "する → ____",
+    "[話|hana]す → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan partikel を atau に.",
+   "items": [
+    "[母|Haha]は[弟|otōto] ____ [泣|na]かせた。",
+    "[先生|Sensei]は[学生|gakusei] ____ [本|hon]を[読|yo]ませた。",
+    "[父|Chichi]は[私|watashi] ____ [留学|ryūgaku]させてくれた。",
+    "[心配|Shinpai] ____ させてすみません。",
+    "[部長|Buchō]は[佐藤|Satō]さん ____ [資料|shiryō]を[作|tsuku]らせた。",
+    "[子供|Kodomo] ____ [喜|yoroko]ばせたい。"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat berikut menjadi permohonan izin yang pantas kepada atasan.",
+   "items": [
+    "[明日|Ashita][休|yasu]みます。→ ____",
+    "[早|Haya]く[帰|kae]ります。→ ____",
+    "[会議|Kaigi]で[説明|setsumei]します。→ ____",
+    "[資料|Shiryō]を[確認|kakunin]します。→ ____",
+    "この[仕事|shigoto]を[担当|tantō]します。→ ____",
+    "[明日|Ashita]は[直帰|chokki]します。→ ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "を / [取|to]らせて / [半休|hankyū] / いただきたいのですが",
+    "に / [議事録|gijiroku]を / [毎日|mainichi] / [書|ka]かされていた",
+    "て / [待|ma]たせ / ごめん / [三十分|sanjuppun]も",
+    "に / [払|hara]わせて / [今日|kyō]は / [私|watashi]",
+    "は / [飲|no]ませるのは / [無理|muri]に / [問題|mondai]になる",
+    "を / [伝|tsuta]えて / [佐藤|Satō]さんにも / おいて"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang, dengan bentuk yang diminta.",
+   "items": [
+    "Guru menyuruh saya menulis laporan. (使役)",
+    "Saya dipaksa menunggu satu jam. (使役受身 bentuk pendek)",
+    "Ayah mengizinkan saya belajar ke Jepang. (使役 + てくれる)",
+    "Maaf sudah membuat Anda khawatir. (使役)",
+    "Izinkan saya mengambil cuti Jumat depan. (させていただきたい)",
+    "Biarkan saya yang bayar hari ini. (使役 santai)"
+   ]
+  }
+ ],
+ "answers": [
+  "[書|ka]かせる — [待|ma]たせる — [食|ta]べさせる — させる — [来|こ]させる — [休|yasu]ませる",
+  "[飲|no]まされる — [待|ma]たされる — [書|ka]かされる — [食|ta]べさせられる — させられる — [話|hana]させられる",
+  "を — に — に — を — に — を",
+  "[明日|Ashita][休|yasu]ませていただきたいのですが — [早|Haya]く[帰|kae]らせていただけますでしょうか — [会議|Kaigi]で[説明|setsumei]させていただきます — [資料|Shiryō]を[確認|kakunin]させていただきます — この[仕事|shigoto]を[担当|tantō]させていただきます — [明日|Ashita]は[直帰|chokki]させていただきます",
+  "[半休|Hankyū]を[取|to]らせていただきたいのですが — [毎日|Mainichi][議事録|gijiroku]を[書|ka]かされていた — [三十分|Sanjuppun]も[待|ma]たせてごめん — [今日|Kyō]は[私|watashi]に[払|hara]わせて — [無理|Muri]に[飲|no]ませるのは[問題|mondai]になる — [佐藤|Satō]さんにも[伝|tsuta]えておいて",
+  "[先生|Sensei]は[私|watashi]に[報告書|hōkokusho]を[書|ka]かせました — [一時間|Ichi-jikan][待|ma]たされました — [父|Chichi]は[私|watashi]を[日本|Nihon]に[留学|ryūgaku]させてくれました — [心配|Shinpai]させてすみません — [来週|Raishū]の[金曜|kin'yō]、[休|yasu]ませていただきたいのですが — [今日|Kyō]は[私|watashi]に[払|hara]わせて"
+ ],
+ "wave": "Lima menit sebelum Unit 4: tulis tiga kalimat tentang pekerjaan atau kuliahmu — satu dengan 使役 (kamu yang menyuruh), satu dengan 使役受身 (kamu yang terpaksa), dan satu permohonan izin dengan 〜させていただきたいのですが. Ucapkan ketiganya keras-keras. Kalau kalimat kedua tidak terdengar mengeluh, berarti kamu belum memakai bentuknya dengan benar — 使役受身 memang bentuk untuk mengeluh."
+}

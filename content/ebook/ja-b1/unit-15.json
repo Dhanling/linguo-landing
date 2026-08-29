@@ -1,0 +1,947 @@
+{
+ "title": "Perasaan, teman, dan bahasa yang santai",
+ "title_target": "タメ口 — Tameguchi",
+ "goal": "Berbicara dengan teman dekat dalam bentuk biasa, menyatakan perasaanmu sendiri dan menduga perasaan orang lain dengan benar, serta memahami ringkasan-ringkasan bunyi yang tidak pernah muncul di buku pelajaran.",
+ "bekal": [
+  "memakai bentuk biasa dan ringkasan bunyi percakapan (〜てる、〜ちゃう、〜なきゃ)",
+  "menyatakan perasaan orang lain dengan 〜がる dan 〜そう",
+  "memakai 〜っぽい、〜がち、〜ぎみ untuk kecenderungan",
+  "menyusun alasan berlapis dengan 〜し〜し",
+  "menghibur, menyemangati, dan mendengarkan curahan hati"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Curhat di kafe",
+   "intro": "Rangga dan Sato di luar jam kerja, dan Sato akhirnya memakai bentuk biasa. Dialog ini sengaja penuh ringkasan bunyi — dengarkan seperti orang Jepang benar-benar berbicara.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "ねえ、[最近|saikin][元気|genki]ないんじゃない？[何|Nani]かあった？",
+     "id": "Eh, belakangan kamu kurang bersemangat kan? Ada apa?",
+     "literal": "eh, belakangan — semangat — tidak-ada — bukan. apa — pun — ada (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "うーん…[別|betsu]に[大|tai]したことじゃないんだけどさ。",
+     "id": "Hmm… bukan hal besar sih sebenarnya.",
+     "literal": "hmm… khusus — pada — besar — hal — bukan — adalah — tapi — kan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[言|I]っちゃいなよ。[聞|Ki]くだけなら[聞|ki]けるし。",
+     "id": "Cerita saja. Kalau cuma mendengarkan, aku bisa kok.",
+     "literal": "katakan-saja — lho. mendengar — hanya — kalau — bisa-dengar — dan-lagi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[家族|Kazoku]が[心配|shinpai]しててさ。[母|Haha]が[早|haya]く[帰|kae]ってきてほしがってるんだよね。",
+     "id": "Keluargaku khawatir. Ibuku ingin aku cepat pulang.",
+     "literal": "keluarga — yang — khawatir — sedang — dan — kan. ibu — yang — cepat — pulang-datang — menunjukkan-keinginan — sedang — adalah — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "そっか…[遠|Tō]いもんね。[会|A]えないの、[寂|sabi]しいよね。",
+     "id": "Begitu ya… jauh sih. Tidak bisa bertemu itu pasti kesepian ya.",
+     "literal": "begitu — kah… jauh — adalah — ya. tidak-bisa-bertemu — yang, sepi — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "うん。でも[今|ima][帰|kae]っちゃったら、せっかくの[経験|keiken]がもったいないし。",
+     "id": "Iya. Tapi kalau sekarang aku pulang, pengalaman yang sudah susah payah ini jadi sia-sia.",
+     "literal": "ya. tapi — sekarang — pulang-saja — kalau, susah-payah — punya — pengalaman — yang — sayang — dan-lagi."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "だよね。[仕事|Shigoto]も[面白|omoshiro]くなってきたとこだしね。",
+     "id": "Iya kan. Pekerjaannya juga baru mulai menarik.",
+     "literal": "adalah — ya. pekerjaan — juga — menarik — menjadi — datang (lampau) — tepat — dan-lagi — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[迷|Mayo]っちゃうんだよね。[親|Oya]も[年|toshi][取|to]ってきてるし。",
+     "id": "Aku jadi bimbang. Orang tuaku juga makin bertambah usia.",
+     "literal": "bimbang-jadi — adalah — ya. orang-tua — juga — usia — mengambil — datang — sedang — dan-lagi."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[答|Kota]え、[今|ima][出|da]さなくてもいいんじゃない？ちょっとずつ[考|kanga]えれば。",
+     "id": "Jawabannya tidak harus kamu keluarkan sekarang kan? Pikirkan sedikit demi sedikit saja.",
+     "literal": "jawaban, sekarang — tidak-keluarkan — pun — baik — bukan. sedikit — demi-sedikit — kalau-berpikir."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうだね。ありがとう、[話|hana]したら[少|suko]し[楽|raku]になった。",
+     "id": "Betul juga. Terima kasih, setelah cerita jadi agak lega.",
+     "literal": "begitu — ya. terima-kasih, cerita — kalau — sedikit — ringan — menjadi (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[何|Nan]かあったら、いつでも[言|i]ってね。ご[飯|han]でも[行|i]こう。",
+     "id": "Kalau ada apa-apa, bilang kapan saja ya. Ayo makan bareng.",
+     "literal": "apa — pun — ada-kalau, kapan — pun — bilang — ya. nasi — pun — mari-pergi."
+    }
+   ],
+   "notes": [
+    "**帰ってきてほしがってる — 〜てほしがる.** Bahasa Jepang melarang menyatakan keinginan orang lain secara langsung. ❌[母|Haha]は[帰|kae]ってきてほしいです。 ✅…ほし**がって**います。 Aturan yang sama berlaku untuk 〜たい → 〜たがる.",
+    "**んじゃない？ = “kan?”** Bentuk santai dari のではありませんか. Nadanya naik di ujung. ⚠️ Dengan nada turun, ia berarti penyangkalan yang tegas — pastikan nadanya naik.",
+    "**もんね = ものね.** Ia menyatakan pengertian: “ya wajar sih, kan memang begitu keadaannya”. 🗣 Sangat sering terdengar dalam percakapan akrab.",
+    "**～し～し menyusun alasan berlapis, dan sengaja tidak selesai.** [遠|Tō]いし、[高|taka]いし… = jauh, mahal, dan seterusnya. Kalimat berhenti di し, dan lawan bicara mengisi kesimpulannya sendiri.",
+    "**〜てきた menyatakan perubahan yang mendekat ke arah sekarang.** [面白|Omoshiro]くなってきた = mulai jadi menarik. [年|Toshi]を[取|to]ってきている = makin bertambah usia. Kebalikannya 〜ていく untuk perubahan menjauh ke masa depan.",
+    "**Perhatikan cara Sato menghibur.** Ia tidak memberi jalan keluar; ia mengakui perasaannya ([寂|sabi]しいよね), lalu melepas tekanannya ([今|ima][出|da]さなくてもいい). Ini pola menghibur yang paling diterima di Jepang."
+   ],
+   "grammars": [
+    {
+     "title": "Ringkasan bunyi percakapan",
+     "body": [
+      "Bentuk-bentuk ini tidak pernah muncul di buku pelajaran tingkat pemula, tapi mengisi separuh percakapan sehari-hari. Kamu **wajib** bisa mendengarnya; memakainya sendiri terserah kamu."
+     ],
+     "table": {
+      "head": [
+       "Bentuk penuh",
+       "Ringkasan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～ている",
+        "～てる",
+        "[待|Ma]ってる"
+       ],
+       [
+        "～ていく",
+        "～てく",
+        "[持|Mo]ってく"
+       ],
+       [
+        "～ておく",
+        "～とく",
+        "[買|Ka]っとく"
+       ],
+       [
+        "～てしまう",
+        "～ちゃう / ～じゃう",
+        "[忘|Wasu]れちゃう · [飲|No]んじゃう"
+       ],
+       [
+        "～なければ",
+        "～なきゃ",
+        "[行|I]かなきゃ"
+       ],
+       [
+        "～なくては",
+        "～なくちゃ",
+        "[行|I]かなくちゃ"
+       ],
+       [
+        "～ては",
+        "～ちゃ",
+        "[見|Mi]ちゃだめ"
+       ],
+       [
+        "～という",
+        "～って",
+        "[田中|Tanaka]って[人|hito]"
+       ],
+       [
+        "Bentuk potensial ら抜き",
+        "[食|Ta]べれる",
+        "🗣 umum, tapi dianggap kurang baku"
+       ],
+       [
+        "すみません",
+        "すいません",
+        "🗣 santai"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Ringkasan ini tidak dipakai di kantor, surel, atau kepada atasan.** Terdengar sembrono.",
+      "**なきゃ dan なくちゃ sering berhenti di situ:** もう[行|i]かなきゃ。 — Aku harus pergi. Kalimatnya tidak diselesaikan, dan itu wajar.",
+      "**って punya tiga tugas:** mengutip ([明日|ashita][来|く]るって = katanya besok datang), menerangkan ([田中|Tanaka]って[人|hito] = orang bernama Tanaka), dan menjadikan topik ([日本語|Nihongo]って[難|muzuka]しい = bahasa Jepang itu sulit)."
+     ]
+    },
+    {
+     "title": "Perasaanmu sendiri vs perasaan orang lain",
+     "body": [
+      "Ini aturan tata bahasa Jepang yang paling sering dilanggar pembelajar, dan pelanggarannya langsung terdengar salah. Kata rasa hanya boleh dipakai telanjang untuk **dirimu sendiri**."
+     ],
+     "table": {
+      "head": [
+       "Perasaan",
+       "Diriku",
+       "Orang lain"
+      ],
+      "rows": [
+       [
+        "Ingin (barang)",
+        "[ほしい|hoshii]",
+        "ほしがっている"
+       ],
+       [
+        "Ingin (perbuatan)",
+        "～たい",
+        "～たがっている"
+       ],
+       [
+        "Senang",
+        "うれしい",
+        "うれしそう / [喜|yoroko]んでいる"
+       ],
+       [
+        "Sedih",
+        "[悲|kana]しい",
+        "[悲|kana]しそう / [悲|kana]しがっている"
+       ],
+       [
+        "Kesepian",
+        "[寂|sabi]しい",
+        "[寂|sabi]しそう"
+       ],
+       [
+        "Takut",
+        "[怖|kowa]い",
+        "[怖|kowa]がっている"
+       ],
+       [
+        "Sakit",
+        "[痛|ita]い",
+        "[痛|ita]がっている / [痛|ita]そう"
+       ],
+       [
+        "Menduga umum",
+        "—",
+        "～んでしょう / ～みたい"
+       ]
+      ]
+     },
+     "after": [
+      "**～がる mengubah perasaan jadi perilaku yang terlihat.** [怖|Kowa]がる bukan “takut”, melainkan “menunjukkan tanda-tanda takut”. Itu sebabnya ia boleh dipakai untuk orang lain.",
+      "⚠️ **がる memakai を, bukan が:** お[金|kane]**を**ほしがっている ✅ / ❌お金がほしがっている.",
+      "**Pengecualian:** kalau kamu bertanya langsung, kata rasa telanjang boleh: [寂|Sabi]しい？ ✅ — karena jawabannya datang dari orangnya sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menyemangati dan bercanda",
+   "intro": "Beberapa hari kemudian, Rangga gagal di presentasi. Percakapan ini menunjukkan bagaimana orang Jepang menghibur — dan bagaimana mereka bercanda tanpa menyinggung.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "[今日|Kyō]の[プレゼン|purezen]、お[疲|tsuka]れ。[緊張|Kinchō]してたっぽいね。",
+     "id": "Presentasi hari ini, kerja bagus. Kayaknya kamu tegang ya.",
+     "literal": "hari-ini — punya — presentasi, lelah. tegang — sedang (lampau) — sepertinya — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "バレてた？[頭|Atama][真|ma]っ[白|shiro]になっちゃって。",
+     "id": "Ketahuan ya? Kepalaku jadi kosong total.",
+     "literal": "ketahuan — sedang (lampau) — kah. kepala — benar — putih — menjadi-telanjur — dan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[大丈夫|Daijōbu]だって。[最初|Saisho]はみんなそんなもんだよ。",
+     "id": "Tidak apa-apa kok. Awalnya semua orang begitu.",
+     "literal": "tak-apa — katanya. awal — mengenai — semua — begitu — hal — adalah — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "でも[部長|buchō]、[途中|tochū]で[時計|tokei][見|mi]てたんだよね…",
+     "id": "Tapi Pak Kepala, di tengah-tengah dia lihat jam…",
+     "literal": "tapi — kepala-bagian, tengah-jalan — di — jam — melihat — sedang (lampau) — adalah — ya…"
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[部長|Buchō]、いつも[時計|tokei][見|mi]てるよ。[癖|Kuse]だから[気|ki]にしないほうがいいよ。",
+     "id": "Pak Kepala itu selalu lihat jam kok. Itu kebiasaannya, jangan dipikirkan.",
+     "literal": "kepala-bagian, selalu — jam — melihat — sedang — lho. kebiasaan — sebab — perhatian — tidak-lakukan — lebih-baik — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうなの？[考|Kanga]えすぎだったか…[僕|Boku]、[気|ki]にしがちなんだよね。",
+     "id": "Oh ya? Berarti aku kebanyakan mikir… Aku ini memang gampang kepikiran.",
+     "literal": "begitu — adalah — kah. berpikir-terlalu — adalah (lampau) — kah… saya, perhatian — melakukan — cenderung — adalah — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[真面目|Majime]なんだよ、ランガは。それ、[長所|chōsho]でもあるけどね。",
+     "id": "Kamu itu serius, Rangga. Itu juga kelebihanmu sih.",
+     "literal": "serius — adalah — lho, Rangga — mengenai. itu, kelebihan — pun — ada — tapi — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ありがとう。[次|Tsugi]はもうちょっと[練習|renshū]しとく。",
+     "id": "Terima kasih. Lain kali aku latihan lebih banyak dulu.",
+     "literal": "terima-kasih. berikut — mengenai — lebih — sedikit — latihan — melakukan-siapkan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[手伝|Tetsuda]おうか？[聞|Ki]き[役|yaku]ぐらいならできるよ。",
+     "id": "Mau kubantu? Kalau cuma jadi pendengar sih aku bisa.",
+     "literal": "mari-bantu — kah. mendengar — peran — sekitar — kalau — bisa — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[本当|Hontō]？[助|Tasu]かる。じゃ、[来週|raishū]の[水曜|suiyō]とかどう？",
+     "id": "Sungguh? Terbantu banget. Kalau gitu, Rabu depan gimana?",
+     "literal": "sungguh. tertolong. kalau-begitu, pekan-depan — punya — Rabu — semacam — bagaimana."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "オッケー。[代|Ka]わりに[コーヒー|kōhī]おごってね。",
+     "id": "Oke. Sebagai gantinya, traktir aku kopi ya.",
+     "literal": "oke. ganti — sebagai — kopi — traktir — ya."
+    }
+   ],
+   "notes": [
+    "**バレる = ketahuan (rahasia terbongkar).** 🗣 Kata santai; padanan sopannya [気|ki]づかれる. Deretan kata santai yang sepaket: [ヤバい|yabai] (gawat/keren), [ウケる|ukeru] (lucu), [ドタキャン|dotakyan] (batal mendadak).",
+    "**頭が真っ白になる = pikiran jadi kosong.** Kata majemuk warna yang sepaket: [真|ma]っ[赤|ka] (merah padam), [真|ma]っ[暗|kura] (gelap gulita), [真|ma]っ[青|sao] (pucat pasi — untuk wajah ketakutan).",
+    "**だって di ujung berarti “kok, kan”.** [大丈夫|Daijōbu]だって = tenang saja kok. ⚠️ Beda dengan だって di awal kalimat, yang berarti “habisnya…” — pembelaan diri: だって、[知|shi]らなかったんだもん。",
+    "**～がち = cenderung ～, dan hampir selalu negatif.** [忘|Wasu]れがち (gampang lupa), [遅|oku]れがち (sering terlambat), [病気|byōki]がち (gampang sakit). ⚠️ ❌[元気|Genki]がち.",
+    "**Perhatikan cara Sato membalikkan kelemahan jadi kelebihan.** [真面目|Majime]なんだよ… それ、[長所|chōsho]でもあるけどね。 Ini pola menghibur khas Jepang: mengakui sifatnya, lalu memindahkan bingkainya.",
+    "**おごる = mentraktir.** 🗣 [おごり|ogori] = traktiran. [割|wa]り[勘|kan] = patungan, membagi tagihan rata — kebiasaan yang sangat lazim di antara teman sebaya Jepang."
+   ],
+   "grammars": [
+    {
+     "title": "がち・っぽい・気味・だらけ — kecenderungan",
+     "body": [
+      "Empat akhiran yang menyatakan kecenderungan, dan tiga di antaranya hampir selalu bernada negatif."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Menempel pada",
+       "Contoh",
+       "Nadanya"
+      ],
+      "rows": [
+       [
+        "～がち",
+        "連用形 / kata benda",
+        "[忘|Wasu]れがち · [病気|Byōki]がち",
+        "negatif, sering terjadi"
+       ],
+       [
+        "～っぽい",
+        "kata benda / 連用形",
+        "[子供|Kodomo]っぽい · [忘|Wasu]れっぽい",
+        "kesan, agak meremehkan"
+       ],
+       [
+        "～[気味|gimi]",
+        "連用形 / kata benda",
+        "[風邪|Kaze][気味|gimi] · [太|Futo]り[気味|gimi]",
+        "sedikit, ringan"
+       ],
+       [
+        "～[的|teki]",
+        "kata benda",
+        "[経済|Keizai][的|teki] · [一般|Ippan][的|teki]",
+        "netral, membentuk kata sifat"
+       ],
+       [
+        "～らしい",
+        "kata benda",
+        "[男|Otoko]らしい · [春|Haru]らしい",
+        "khas, sesuai citranya"
+       ],
+       [
+        "～だらけ",
+        "kata benda",
+        "[間違|Machiga]いだらけ · [泥|Doro]だらけ",
+        "penuh dengan (buruk)"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **っぽい tentang orang bisa menyinggung.** [子供|Kodomo]っぽい = kekanak-kanakan, bukan pujian.",
+      "**だらけ selalu negatif dan selalu berlebihan:** [ミス|Misu]だらけの[書類|shorui] = berkas penuh kesalahan.",
+      "🗣 **っぽい makin dipakai anak muda untuk menduga apa saja:** [雨|Ame][降|fu]りそうっぽい — secara ketat kurang baku, tapi terdengar di mana-mana."
+     ]
+    },
+    {
+     "title": "Menghibur dan menyemangati",
+     "body": [
+      "Menghibur dalam bahasa Jepang punya aturan yang berlawanan dengan kebiasaan banyak orang: **jangan langsung memberi jalan keluar**, dan **jangan menyuruh berjuang lebih keras kepada orang yang sudah lelah.**"
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Kapan dipakai",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "[大丈夫|Daijōbu]？",
+        "membuka",
+        "pertanyaan pembuka paling aman"
+       ],
+       [
+        "[大変|Taihen]だったね。",
+        "mengakui",
+        "wajib sebelum apa pun"
+       ],
+       [
+        "わかるよ。",
+        "ikut merasakan",
+        "jangan langsung ke saran"
+       ],
+       [
+        "[無理|Muri]しないでね。",
+        "melepas tekanan",
+        "sangat sering dipakai"
+       ],
+       [
+        "[気|Ki]にしないで。",
+        "menenangkan",
+        "untuk kesalahan kecil"
+       ],
+       [
+        "[何|Nan]かあったら[言|i]ってね。",
+        "menutup",
+        "menawarkan tanpa memaksa"
+       ],
+       [
+        "[頑張|Ganba]って！",
+        "menyemangati",
+        "⚠️ hati-hati — lihat di bawah"
+       ],
+       [
+        "[頑張|Ganba]りすぎないでね。",
+        "menyemangati dengan aman",
+        "pilihan yang lebih baik"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **頑張って bisa melukai orang yang sudah kelelahan** — ia terdengar seperti “usahamu belum cukup”. Kepada orang yang sedang berat, pakai [無理|muri]しないでね atau [応援|ōen]してるよ (aku mendukungmu).",
+      "**Untuk yang sakit:** お[大事|daiji]に。 **Untuk yang berduka:** ご[愁傷|shūshō][様|sama]でございます (resmi) — dan tidak lebih dari itu.",
+      "**Yang paling dihargai bukan kata-kata:** mendengarkan sampai habis tanpa memotong, lalu berkata [話|Hana]してくれてありがとう。"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kapan boleh memakai タメ口 — dan bagaimana pindahnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "[タメ口|Tameguchi] berarti bicara setara, tanpa です・ます. Memakainya terlalu cepat adalah kesalahan sosial; tidak pernah memakainya membuat persahabatan tak pernah benar-benar mulai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hubungan",
+      "Boleh タメ口?",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Teman seumur, sudah beberapa kali bertemu",
+       "✅",
+       "biasanya salah satu mengusulkan"
+      ],
+      [
+       "[同期|Dōki] di kantor",
+       "✅ di luar jam kerja",
+       "di depan atasan tetap です・ます"
+      ],
+      [
+       "Teman yang lebih muda",
+       "✅",
+       "tapi tunggu mereka nyaman"
+      ],
+      [
+       "[先輩|Senpai] (senior)",
+       "❌",
+       "sekalipun seumur"
+      ],
+      [
+       "Atasan",
+       "❌",
+       "tidak pernah, sekalipun akrab"
+      ],
+      [
+       "Pelanggan",
+       "❌",
+       "tidak pernah"
+      ],
+      [
+       "Anak-anak",
+       "✅",
+       "wajar"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Berpindah ke タメ口"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Mengusulkan: よかったら、タメ[口|guchi]で[話|hana]しませんか。 — Kalau boleh, kita bicara santai saja?",
+      "Lebih ringan: [敬語|Keigo]、なしにしません？ — Tanpa bahasa hormat saja yuk?",
+      "Menerima: ぜひ！じゃあ、これからよろしく。",
+      "Menolak dengan halus: [私|Watashi]、[敬語|keigo]のほうが[楽|raku]なんです。 — dan itu diterima tanpa masalah.",
+      "⚠️ **Yang lebih senior atau lebih tua yang mengusulkan lebih dulu.** Mengusulkannya dari bawah ke atas dianggap lancang."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Akhiran kalimat yang membawa perasaan",
+     "items": [
+      "**よ** — memberi kabar yang belum diketahui lawan bicara: おいしいよ。",
+      "**ね** — mencari persetujuan: おいしいね。",
+      "**よね** — mengira kamu setuju, tapi memastikan: おいしいよね。",
+      "**な / なあ** — bergumam sendiri: いいなあ。",
+      "**かな** — menduga sendiri: [来|Ku]るかな。",
+      "**っけ** — mencoba mengingat: [何時|Nan-ji]だっけ？",
+      "⚠️ Menumpuk terlalu banyak akhiran membuat bicaramu terdengar kekanak-kanakan. Satu per kalimat cukup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata perasaan yang tidak diajarkan buku",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata berikut sulit diterjemahkan karena ia menamai perasaan yang tidak punya nama tunggal dalam bahasa Indonesia — dan justru itu yang membuatnya berguna."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "もったいない",
+       "mottainai",
+       "sayang kalau disia-siakan"
+      ],
+      [
+       "しょうがない",
+       "shō ga nai",
+       "ya sudah, mau bagaimana lagi"
+      ],
+      [
+       "[面倒|mendō]くさい",
+       "mendōkusai",
+       "ribet, malas"
+      ],
+      [
+       "[恥|ha]ずかしい",
+       "hazukashii",
+       "malu; juga: memalukan"
+      ],
+      [
+       "[悔|kuya]しい",
+       "kuyashii",
+       "kesal karena kalah atau gagal"
+      ],
+      [
+       "[羨|urayama]ましい",
+       "urayamashii",
+       "iri, tanpa niat buruk"
+      ],
+      [
+       "[懐|natsu]かしい",
+       "natsukashii",
+       "rindu masa lalu yang manis"
+      ],
+      [
+       "[切|setsu]ない",
+       "setsunai",
+       "sesak karena rindu atau sedih halus"
+      ],
+      [
+       "[気|ki]まずい",
+       "kimazui",
+       "canggung"
+      ],
+      [
+       "[面倒見|mendōmi]がいい",
+       "mendōmi ga ii",
+       "suka mengurus dan menjaga orang"
+      ],
+      [
+       "[空気|kūki]を[読|yo]む",
+       "kūki o yomu",
+       "membaca suasana"
+      ],
+      [
+       "[気|ki]が[利|ki]く",
+       "ki ga kiku",
+       "peka, tanggap tanpa disuruh"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyebut sifat orang"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[明|Aka]るい (ceria) · [優|yasa]しい (baik hati) · [真面目|majime] (serius, dapat diandalkan) · [素直|sunao] (jujur, tidak berbelit)",
+      "[頑固|Ganko] (keras kepala) · [大|Ō]ざっぱ (asal-asalan) · [神経質|shinkeishitsu] (terlalu peka) · [マイペース|maipēsu] (jalan sendiri, tidak ikut ritme orang)",
+      "⚠️ [真面目|Majime] adalah pujian besar di Jepang, bukan sekadar “serius”. Ia berarti dapat diandalkan.",
+      "⚠️ [マイペース|Maipēsu] adalah bahasa Inggris buatan Jepang; ia netral sampai sedikit mencela, bukan pujian.",
+      "**Memuji orang Jepang:** mereka hampir selalu menyangkal (そんなことないです). Itu bukan penolakan — sekadar adat. Ulangi sekali, lalu berhenti."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu perasaan",
+     "items": [
+      "Bicaralah empat puluh detik dalam bentuk BIASA, bukan です・ます:",
+      "Keadaanmu: [最近|Saikin]〜んだよね。",
+      "Alasan berlapis: 〜し、〜し…",
+      "Perasaanmu sendiri: 〜てちょっと〜。",
+      "Perasaan orang lain: 〜が〜たがってる。 atau 〜そう。",
+      "Tutup: まあ、しょうがないかな。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "タメ口",
+   "baca": "ためぐち · tameguchi",
+   "id": "bicara setara tanpa keigo"
+  },
+  {
+   "ja": "先輩",
+   "baca": "せんぱい · senpai",
+   "id": "senior"
+  },
+  {
+   "ja": "後輩",
+   "baca": "こうはい · kōhai",
+   "id": "junior"
+  },
+  {
+   "ja": "がる",
+   "baca": "garu",
+   "id": "menunjukkan tanda-tanda (perasaan orang lain)"
+  },
+  {
+   "ja": "ほしがる",
+   "baca": "hoshigaru",
+   "id": "tampak menginginkan"
+  },
+  {
+   "ja": "怖がる",
+   "baca": "こわがる · kowagaru",
+   "id": "tampak takut"
+  },
+  {
+   "ja": "がち",
+   "baca": "gachi",
+   "id": "cenderung, gampang (negatif)"
+  },
+  {
+   "ja": "っぽい",
+   "baca": "ppoi",
+   "id": "berkesan, agak"
+  },
+  {
+   "ja": "だらけ",
+   "baca": "darake",
+   "id": "penuh dengan (buruk)"
+  },
+  {
+   "ja": "癖",
+   "baca": "くせ · kuse",
+   "id": "kebiasaan"
+  },
+  {
+   "ja": "バレる",
+   "baca": "bareru",
+   "id": "ketahuan"
+  },
+  {
+   "ja": "真っ白",
+   "baca": "まっしろ · masshiro",
+   "id": "putih total, kosong"
+  },
+  {
+   "ja": "真っ青",
+   "baca": "まっさお · massao",
+   "id": "pucat pasi"
+  },
+  {
+   "ja": "おごる",
+   "baca": "ogoru",
+   "id": "mentraktir"
+  },
+  {
+   "ja": "割り勘",
+   "baca": "わりかん · warikan",
+   "id": "patungan rata"
+  },
+  {
+   "ja": "もったいない",
+   "baca": "mottainai",
+   "id": "sayang kalau disia-siakan"
+  },
+  {
+   "ja": "しょうがない",
+   "baca": "shō ga nai",
+   "id": "ya sudah, tak bisa diapa-apakan"
+  },
+  {
+   "ja": "面倒くさい",
+   "baca": "めんどうくさい · mendōkusai",
+   "id": "ribet, malas"
+  },
+  {
+   "ja": "恥ずかしい",
+   "baca": "はずかしい · hazukashii",
+   "id": "malu"
+  },
+  {
+   "ja": "悔しい",
+   "baca": "くやしい · kuyashii",
+   "id": "kesal karena gagal"
+  },
+  {
+   "ja": "羨ましい",
+   "baca": "うらやましい · urayamashii",
+   "id": "iri"
+  },
+  {
+   "ja": "懐かしい",
+   "baca": "なつかしい · natsukashii",
+   "id": "rindu masa lalu"
+  },
+  {
+   "ja": "切ない",
+   "baca": "せつない · setsunai",
+   "id": "sesak karena rindu"
+  },
+  {
+   "ja": "気まずい",
+   "baca": "きまずい · kimazui",
+   "id": "canggung"
+  },
+  {
+   "ja": "寂しい",
+   "baca": "さびしい · sabishii",
+   "id": "kesepian"
+  },
+  {
+   "ja": "空気を読む",
+   "baca": "くうきをよむ · kūki o yomu",
+   "id": "membaca suasana"
+  },
+  {
+   "ja": "気が利く",
+   "baca": "きがきく · ki ga kiku",
+   "id": "peka dan tanggap"
+  },
+  {
+   "ja": "面倒見がいい",
+   "baca": "めんどうみがいい · mendōmi ga ii",
+   "id": "suka menjaga orang"
+  },
+  {
+   "ja": "真面目",
+   "baca": "まじめ · majime",
+   "id": "serius, dapat diandalkan"
+  },
+  {
+   "ja": "素直",
+   "baca": "すなお · sunao",
+   "id": "jujur, tidak berbelit"
+  },
+  {
+   "ja": "頑固",
+   "baca": "がんこ · ganko",
+   "id": "keras kepala"
+  },
+  {
+   "ja": "神経質",
+   "baca": "しんけいしつ · shinkeishitsu",
+   "id": "terlalu peka"
+  },
+  {
+   "ja": "明るい",
+   "baca": "あかるい · akarui",
+   "id": "ceria"
+  },
+  {
+   "ja": "優しい",
+   "baca": "やさしい · yasashii",
+   "id": "baik hati"
+  },
+  {
+   "ja": "応援する",
+   "baca": "おうえんする · ōen suru",
+   "id": "mendukung"
+  },
+  {
+   "ja": "無理する",
+   "baca": "むりする · muri suru",
+   "id": "memaksakan diri"
+  },
+  {
+   "ja": "気にする",
+   "baca": "きにする · ki ni suru",
+   "id": "memikirkan, mempermasalahkan"
+  },
+  {
+   "ja": "楽になる",
+   "baca": "らくになる · raku ni naru",
+   "id": "jadi lega"
+  },
+  {
+   "ja": "迷う",
+   "baca": "まよう · mayou",
+   "id": "bimbang"
+  },
+  {
+   "ja": "親",
+   "baca": "おや · oya",
+   "id": "orang tua"
+  },
+  {
+   "ja": "年を取る",
+   "baca": "としをとる · toshi o toru",
+   "id": "bertambah usia"
+  },
+  {
+   "ja": "せっかく",
+   "baca": "sekkaku",
+   "id": "susah payah, sayang kalau sia-sia"
+  },
+  {
+   "ja": "聞き役",
+   "baca": "ききやく · kikiyaku",
+   "id": "peran pendengar"
+  },
+  {
+   "ja": "ヤバい",
+   "baca": "yabai",
+   "id": "gawat; juga: keren (santai)"
+  },
+  {
+   "ja": "ドタキャン",
+   "baca": "dotakyan",
+   "id": "batal mendadak"
+  },
+  {
+   "ja": "そんなことない",
+   "baca": "sonna koto nai",
+   "id": "ah tidak begitu (menyangkal pujian)"
+  },
+  {
+   "ja": "だって",
+   "baca": "datte",
+   "id": "habisnya; katanya"
+  },
+  {
+   "ja": "っけ",
+   "baca": "kke",
+   "id": "akhiran mencoba mengingat"
+  },
+  {
+   "ja": "かな",
+   "baca": "kana",
+   "id": "akhiran menduga sendiri"
+  },
+  {
+   "ja": "プレゼン",
+   "baca": "purezen",
+   "id": "presentasi"
+  },
+  {
+   "ja": "長所",
+   "baca": "ちょうしょ · chōsho",
+   "id": "kelebihan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke ringkasan bunyi percakapan.",
+   "items": [
+    "[待|Ma]っている → ____",
+    "[買|Ka]っておく → ____",
+    "[忘|Wasu]れてしまう → ____",
+    "[行|I]かなければ → ____",
+    "[飲|No]んでしまう → ____",
+    "[持|Mo]っていく → ____"
+   ]
+  },
+  {
+   "prompt": "Perbaiki: kalimat berikut memakai kata rasa untuk orang lain.",
+   "items": [
+    "❌[母|Haha]は[帰|kae]ってきてほしいです。",
+    "❌[弟|Otōto]は[新|atara]しい[車|kuruma]がほしいです。",
+    "❌[子供|Kodomo]は[犬|inu]が[怖|kowa]いです。",
+    "❌[彼|Kare]は[日本|Nihon]に[行|i]きたいです。",
+    "❌[妹|Imōto]は[寂|sabi]しいです。",
+    "❌[友達|Tomodachi]は[頭|atama]が[痛|ita]いです。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan がち、っぽい、気味、atau だらけ.",
+   "items": [
+    "[最近|Saikin][忘|wasu]れ ____ です。",
+    "この[書類|shorui]は[間違|machiga]い ____ だ。",
+    "[風邪|Kaze] ____ なので[早|haya]く[帰|kae]ります。",
+    "あの[人|hito]は[子供|kodomo] ____ ところがある。",
+    "[冬|Fuyu]は[運動|undō][不足|busoku]になり ____ だ。",
+    "[泥|Doro] ____ の[靴|kutsu]。"
+   ]
+  },
+  {
+   "prompt": "Apa arti kata perasaan berikut?",
+   "items": [
+    "もったいない",
+    "[悔|Kuya]しい",
+    "[懐|Natsu]かしい",
+    "[気|Ki]まずい",
+    "[空気|Kūki]を[読|yo]む",
+    "[気|Ki]が[利|ki]く"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat bentuk biasa yang benar.",
+   "items": [
+    "ない / [最近|saikin] / [元気|genki] / んじゃない",
+    "が / [母|haha] / [帰|kae]ってきてほしがってる / んだよね",
+    "し / [仕事|shigoto]も[面白|omoshiro]い / [経験|keiken]ももったいない / [迷|mayo]っちゃう",
+    "ほうがいい / [気|ki]にしない / [癖|kuse]だから / よ",
+    "か / [手伝|tetsuda]おう / [聞|ki]き[役|yaku]ぐらいならできる / よ",
+    "て / [話|hana]し / ありがとう / くれて"
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat yang lebih tepat untuk menghibur orang yang sudah kelelahan. Tulis A atau B.",
+   "items": [
+    "A [頑張|Ganba]って！ atau B [無理|Muri]しないでね。",
+    "A それは[大変|taihen]だったね。 atau B こうすればよかったのに。",
+    "A わかるよ。 atau B [気|Ki]にしすぎだよ。",
+    "A [何|Nan]かあったら[言|i]ってね。 atau B もう[終|o]わったことだよ。",
+    "A [話|Hana]してくれてありがとう。 atau B [結論|Ketsuron]は[何|nani]？",
+    "A [応援|Ōen]してるよ。 atau B もっと[頑張|ganba]らないと。"
+   ]
+  }
+ ],
+ "answers": [
+  "[待|Ma]ってる — [買|Ka]っとく — [忘|Wasu]れちゃう — [行|I]かなきゃ — [飲|No]んじゃう — [持|Mo]ってく",
+  "[母|Haha]は[帰|kae]ってきてほしがっています — [弟|Otōto]は[新|atara]しい[車|kuruma]をほしがっています — [子供|Kodomo]は[犬|inu]を[怖|kowa]がっています — [彼|Kare]は[日本|Nihon]に[行|i]きたがっています — [妹|Imōto]は[寂|sabi]しそうです — [友達|Tomodachi]は[頭|atama]を[痛|ita]がっています",
+  "がち — だらけ — [気味|gimi] — っぽい — がち — だらけ",
+  "sayang kalau disia-siakan — kesal karena gagal atau kalah — rindu pada masa lalu yang manis — canggung, suasananya tidak enak — membaca suasana dan menyesuaikan diri — peka dan tanggap tanpa perlu disuruh",
+  "[最近|Saikin][元気|genki]ないんじゃない — [母|Haha]が[帰|kae]ってきてほしがってるんだよね — [仕事|Shigoto]も[面白|omoshiro]いし[経験|keiken]ももったいないし[迷|mayo]っちゃう — [癖|Kuse]だから[気|ki]にしないほうがいいよ — [手伝|Tetsuda]おうか、[聞|ki]き[役|yaku]ぐらいならできるよ — [話|Hana]してくれてありがとう",
+  "B — A — A — A — A — A"
+ ],
+ "wave": "Lima menit sebelum Unit 16: ambil satu hal yang benar-benar mengganjal di kepalamu minggu ini. Ceritakan keras-keras selama empat puluh detik, seluruhnya dalam bentuk BIASA — tanpa satu pun です・ます. Pakai minimal satu 〜し〜し, satu ringkasan bunyi (〜ちゃう / 〜なきゃ / 〜とく), dan satu kalimat tentang perasaan orang lain dengan 〜がる atau 〜そう. Kalau kamu tersandung dan kembali ke です・ます, ulang dari awal — perpindahan itulah yang sedang kamu latih."
+}

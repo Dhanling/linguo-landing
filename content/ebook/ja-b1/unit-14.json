@@ -1,0 +1,913 @@
+{
+ "title": "Membaca berita dan berbicara tentang masyarakat",
+ "title_target": "ニュースを読む — Nyūsu o yomu",
+ "goal": "Membaca berita pendek berbahasa Jepang tanpa penerjemah, memahami ragam tulis である, dan berbicara tentang persoalan masyarakat dengan angka serta kecenderungan.",
+ "bekal": [
+  "membaca judul berita Jepang yang partikelnya dibuang",
+  "memahami ragam tulis である dan kata sambung tertulis",
+  "memakai 〜に[伴|tomona]い、〜に[応|ō]じて、〜をめぐって",
+  "menyebut kenaikan, penurunan, dan kecenderungan dengan angka",
+  "memakai 〜つつある untuk perubahan yang sedang berjalan"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Membicarakan berita di kantor",
+   "intro": "Sato dan Rangga membahas berita tentang penurunan angka kelahiran. Perhatikan bagaimana bahasa berita yang dingin diubah menjadi bahasa percakapan yang hidup.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "[今朝|Kesa]の[ニュース|nyūsu][見|mi]ました？[出生率|Shusshōritsu]がまた[下|sa]がったって。",
+     "id": "Sudah lihat berita pagi ini? Katanya angka kelahiran turun lagi.",
+     "literal": "pagi-ini — punya — berita — lihat (lampau) — kah. angka-kelahiran — yang — lagi — turun (lampau) — katanya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[見|Mi]ました。[過去|Kako][最低|saitei]だそうですね。[何|Nani]が[原因|gen'in]なんでしょうか。",
+     "id": "Sudah. Katanya terendah sepanjang sejarah ya. Apa penyebabnya ya?",
+     "literal": "lihat (lampau). masa-lalu — terendah — katanya — ya. apa — yang — penyebab — adalah — barangkali — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[記事|Kiji]には[経済的|keizaiteki]な[不安|fuan]と[長時間|chōjikan][労働|rōdō]が[挙|a]げられていました。",
+     "id": "Di artikelnya disebutkan kecemasan ekonomi dan jam kerja yang panjang.",
+     "literal": "artikel — pada — mengenai — ekonomi — punya — kecemasan — dan — waktu-panjang — kerja — yang — diangkat — sedang (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[確|Tashi]かに、[働|hatara]きながら[子育|kosoda]てをするのは[大変|taihen]そうです。",
+     "id": "Memang, mengasuh anak sambil bekerja kelihatannya berat.",
+     "literal": "memang, bekerja — sambil — pengasuhan-anak — akan — melakukan — yang — mengenai — berat — tampaknya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[保育園|Hoikuen]も[足|ta]りないんですよ。[都市部|Toshibu]では[待機|taiki][児童|jidō]が[問題|mondai]になっています。",
+     "id": "Tempat penitipan anak juga kurang. Di daerah perkotaan, anak yang antre masuk jadi masalah.",
+     "literal": "penitipan-anak — juga — tidak-cukup — adalah — lho. daerah-kota — di — mengenai — menunggu — anak — yang — masalah — menjadi — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[インドネシア|Indoneshia]とは[逆|gyaku]ですね。あちらは[人口|jinkō]が[増|fu]え[続|tsuzu]けています。",
+     "id": "Berlawanan dengan Indonesia ya. Di sana penduduknya terus bertambah.",
+     "literal": "Indonesia — dengan — mengenai — kebalikan — adalah — ya. sana — mengenai — penduduk — yang — bertambah — terus — sedang."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "うらやましい[面|men]もありますけど、それはそれで[課題|kadai]がありそうですね。",
+     "id": "Ada sisi yang membuat iri, tapi itu pun kelihatannya punya persoalannya sendiri ya.",
+     "literal": "iri — sisi — juga — ada — tapi, itu — mengenai — itu — dengan — persoalan — yang — ada — tampaknya — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうですね。[雇用|Koyō]と[教育|kyōiku]が[追|o]いついていないと[言|i]われています。",
+     "id": "Betul. Dikatakan bahwa lapangan kerja dan pendidikan belum menyusul.",
+     "literal": "begitu — adalah — ya. lapangan-kerja — dan — pendidikan — yang — menyusul — tidak-sedang — begitu — dikatakan — sedang."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "どこの[国|kuni]も[何|nan]らかの[課題|kadai]を[抱|kaka]えているということですね。",
+     "id": "Artinya negara mana pun memikul persoalannya masing-masing ya.",
+     "literal": "mana — punya — negara — pun — apa — semacam — punya — persoalan — akan — memikul — sedang — begitu — hal — adalah — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[日本|Nihon]の[外国人|gaikokujin][労働者|rōdōsha]は[増|fu]えつつあると[聞|ki]きました。",
+     "id": "Saya dengar pekerja asing di Jepang sedang terus bertambah.",
+     "literal": "Jepang — punya — orang-asing — pekerja — mengenai — bertambah — sedang-berlangsung — begitu — saya-dengar (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "はい。[私|Watashi]の[周|mawa]りでも[明|aki]らかに[増|fu]えました。[十年前|Jū-nen-mae]とは[全然|zenzen][違|chiga]います。",
+     "id": "Ya. Di sekitar saya pun jelas bertambah. Sama sekali berbeda dengan sepuluh tahun lalu.",
+     "literal": "ya. saya — punya — sekitar — di — pun — jelas — pada — bertambah (lampau). sepuluh-tahun-lalu — dengan — mengenai — sama-sekali — berbeda."
+    }
+   ],
+   "notes": [
+    "**挙げられていました — pasif dari 挙げる (mengangkat, menyebutkan).** 📄 Rangka baku untuk melaporkan isi artikel: 〜が[挙|a]げられている = ～disebutkan sebagai salah satunya.",
+    "**待機児童 = anak yang masuk daftar tunggu penitipan.** Kata ini muncul di berita Jepang hampir tiap tahun dan merangkum satu persoalan besar: orang tua tidak bisa kembali bekerja karena tak ada tempat penitipan.",
+    "**それはそれで = “itu pun punya urusannya sendiri”.** Ungkapan yang sangat berguna untuk mengakui sisi lain tanpa membantah. Kembarannya: [それはそうと|sore wa sō to] (omong-omong, ganti topik).",
+    "**と言われています = “dikatakan”.** Rangka pasif tanpa pelaku yang dipakai untuk menyampaikan pandangan umum. Ia melindungi pembicara dari tanggung jawab atas kebenarannya — sangat khas Jepang.",
+    "**増えつつある vs 増えている.** つつある menyoroti **proses yang sedang berjalan menuju perubahan**; ている hanya menyebut keadaan sekarang. 📄 つつある hampir hanya muncul di tulisan dan pembicaraan serius.",
+    "**何らかの = “semacam, entah apa”.** [何|Nan]らかの[対策|taisaku]が[必要|hitsuyō]だ = perlu semacam langkah penanganan. Kata yang berguna saat kamu tahu ada masalah tapi belum tahu jalan keluarnya."
+   ],
+   "grammars": [
+    {
+     "title": "Ragam tulis: である dan kata sambungnya",
+     "body": [
+      "Berita, laporan, dan tulisan ilmiah Jepang tidak memakai です・ます. Bacalah dengan mata; jangan tiru nadanya waktu bicara."
+     ],
+     "table": {
+      "head": [
+       "Lisan (です・ます)",
+       "Tulis (である)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "[問題|Mondai]です",
+        "[問題|Mondai]である",
+        "adalah masalah"
+       ],
+       [
+        "[高|Taka]いです",
+        "[高|Taka]い",
+        "tinggi"
+       ],
+       [
+        "[必要|Hitsuyō]です",
+        "[必要|Hitsuyō]である",
+        "diperlukan"
+       ],
+       [
+        "[増|Fu]えています",
+        "[増|Fu]えている",
+        "sedang bertambah"
+       ],
+       [
+        "ではありません",
+        "ではない",
+        "bukan"
+       ],
+       [
+        "でしょう",
+        "であろう",
+        "barangkali"
+       ],
+       [
+        "しかし・でも",
+        "しかし・だが",
+        "namun"
+       ],
+       [
+        "だから",
+        "したがって・ゆえに",
+        "oleh karena itu"
+       ],
+       [
+        "それに",
+        "さらに・また",
+        "selain itu"
+       ],
+       [
+        "つまり",
+        "すなわち",
+        "yakni"
+       ]
+      ]
+     },
+     "after": [
+      "📄 **Judul berita membuang partikel dan kata kerja bantu:** 「[出生率|Shusshōritsu]、[過去|kako][最低|saitei]に」 = angka kelahiran turun ke titik terendah dalam sejarah.",
+      "📄 **Judul memakai へ untuk rencana dan か untuk dugaan:** 「[値上|Neage]げへ」 = akan dinaikkan. 「[中止|Chūshi]か」 = mungkin dibatalkan.",
+      "⚠️ **Jangan memakai である dalam surel bisnis.** Surel tetap です・ます; である hanya untuk laporan, artikel, dan tulisan ilmiah."
+     ]
+    },
+    {
+     "title": "に伴い・に応じて・をめぐって・に[基|motozu]づいて",
+     "body": [
+      "Empat penghubung ragam tulis yang muncul di hampir semua berita. Mengenalinya memangkas separuh kesulitan membaca."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～に[伴|tomona]い",
+        "seiring dengan",
+        "[高齢化|Kōreika]に[伴|tomona]い、[医療費|iryōhi]が[増|zō][大|dai]している。"
+       ],
+       [
+        "～に[応|ō]じて",
+        "sesuai dengan, menyesuaikan",
+        "[収入|Shūnyū]に[応|ō]じて[保険料|hokenryō]が[決|ki]まる。"
+       ],
+       [
+        "～をめぐって",
+        "seputar, memperebutkan",
+        "[法案|Hōan]をめぐって[議論|giron]が[続|tsuzu]いている。"
+       ],
+       [
+        "～に[基|motozu]づいて",
+        "berdasarkan",
+        "[調査|Chōsa]に[基|motozu]づいて[報告|hōkoku]された。"
+       ],
+       [
+        "～に[対|tai]し",
+        "terhadap; sedangkan",
+        "[前年|Zennen]に[対|tai]し[三|san]%の[増加|zōka]。"
+       ],
+       [
+        "～[として|to shite]",
+        "sebagai",
+        "[対策|Taisaku]として[補助金|hojokin]が[出|da]される。"
+       ]
+      ]
+     },
+     "after": [
+      "**に伴い menyatakan dua hal yang berubah bersamaan**, mirip につれて tapi lebih tertulis.",
+      "**をめぐって hampir selalu berisi perselisihan.** Kalau tak ada perdebatan, pakai について.",
+      "📄 **Bentuk ～に伴う dan ～をめぐる menerangkan kata benda:** [高齢化|kōreika]に[伴|tomona]う[問題|mondai], [法案|hōan]をめぐる[議論|giron]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menjelaskan grafik dan angka",
+   "intro": "Rangga menyiapkan bahan presentasi berisi angka. Bagian ini adalah kosakata yang sama yang dipakai berita, laporan tahunan, dan skripsi.",
+   "lines": [
+    {
+     "speaker": "高橋:",
+     "text": "この[グラフ|gurafu]、[何|nani]を[示|shime]しているのか[一目|hitome]で[分|wa]からないな。",
+     "id": "Grafik ini, sekali lihat tidak jelas menunjukkan apa.",
+     "literal": "ini — grafik, apa — akan — menunjukkan — sedang — kah — sekali-lihat — dengan — tidak-paham — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[申|Mō]し[訳|wake]ありません。[説明|Setsumei]を[加|kuwa]えます。",
+     "id": "Mohon maaf. Saya tambahkan penjelasannya.",
+     "literal": "tak-terkatakan — tidak-ada. penjelasan — akan — menambahkan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "こちらは[過去|kako][五年間|go-nen-kan]の[売上|uriage]の[推移|suii]でございます。",
+     "id": "Ini adalah perkembangan penjualan selama lima tahun terakhir.",
+     "literal": "pihak-ini — mengenai — masa-lalu — lima-tahun-lama — punya — penjualan — punya — perkembangan — adalah."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[二〇二三年|Nisen-nijūsan-nen]のところ、[急|kyū]に[落|o]ちてるね。[理由|Riyū]は？",
+     "id": "Di bagian tahun 2023, turun tajam ya. Alasannya?",
+     "literal": "tahun-2023 — punya — bagian, tiba-tiba — pada — jatuh — sedang — ya. alasan — mengenai."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[原材料|Genzairyō][費|hi]の[高騰|kōtō]に[伴|tomona]い、[価格|kakaku]を[上|a]げざるを[得|e]なかったためです。",
+     "id": "Karena seiring melonjaknya biaya bahan baku, kami mau tak mau harus menaikkan harga.",
+     "literal": "bahan-baku — biaya — punya — lonjakan — pada — seiring, harga — akan — menaikkan — tak-bisa-tidak (lampau) — karena — adalah."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "なるほど。その[後|go]は[回復|kaifuku]しているように[見|mi]えるが。",
+     "id": "Oh begitu. Sesudah itu kelihatannya pulih ya.",
+     "literal": "begitu-rupanya. itu — sesudah — mengenai — pemulihan — sedang — supaya — terlihat — tapi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[二〇二四年|Nisen-nijūyon-nen]は[前年比|zennenhi][十二|jūni][パーセント|pāsento][増|zō]、[回復|kaifuku][傾向|keikō]にあります。",
+     "id": "Ya. Tahun 2024 naik dua belas persen dibanding tahun sebelumnya, ada kecenderungan pulih.",
+     "literal": "tahun-2024 — mengenai — dibanding-tahun-lalu — dua-belas — persen — kenaikan, pemulihan — kecenderungan — pada — ada."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[今年|Kotoshi]の[見通|mitō]しは？",
+     "id": "Bagaimana prospek tahun ini?",
+     "literal": "tahun-ini — punya — prospek — mengenai."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[現時点|Genjiten]では[横|yoko]ばいですが、[下半期|shimoki]に[持|mo]ち[直|nao]すと[見|mi]ております。",
+     "id": "Saat ini datar, tapi kami memperkirakan akan pulih di paruh kedua.",
+     "literal": "saat-ini — di — mengenai — mendatar — adalah — tapi, paruh-kedua — pada — memulihkan — begitu — kami-melihat — sedang."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "その[根拠|konkyo]も[一枚|ichimai][足|ta]しておいてくれる？[数字|Sūji]がないと[説得力|settokuryoku]がない。",
+     "id": "Bisa tambahkan satu halaman dasarnya juga? Tanpa angka, tidak ada daya yakinnya.",
+     "literal": "itu — dasar — juga — satu-lembar — tambahkan — siapkan — memberi-ke-kami — kah. angka — yang — tidak-ada — kalau — daya-meyakinkan — yang — tidak-ada."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[承知|Shōchi]いたしました。[明日|Asu]の[朝一|asaichi]までにお[持|mo]ちします。",
+     "id": "Baik. Akan saya bawakan paling lambat besok pagi.",
+     "literal": "paham — saya-lakukan. besok — punya — pagi-pertama — sampai — pada — saya-bawa."
+    }
+   ],
+   "notes": [
+    "**～ざるを得ない = mau tak mau harus.** 📄 Rangka tulis yang kuat. Bentuknya: bentuk ない tanpa ない + ざるを[得|e]ない. ⚠️ する tidak beraturan: **せざるを得ない**, bukan しざるを得ない.",
+    "**推移 = perkembangan/perubahan sepanjang waktu.** Kata wajib untuk menjelaskan grafik. Kembarannya: [傾向|keikō] (kecenderungan), [見通|mitō]し (prospek), [横|yoko]ばい (mendatar).",
+    "**回復傾向にあります — rangka 〜傾向にある.** Ia menyebut arah tanpa menjanjikan hasilnya, jadi aman dipakai dalam laporan. 📄 [増加|Zōka][傾向|keikō], [減少|genshō][傾向|keikō].",
+    "**と見ております = 謙譲語 dari と見ています (kami memperkirakan).** Rangka baku dalam presentasi bisnis, lebih hati-hati daripada と[思|omo]います.",
+    "**説得力 = daya meyakinkan.** Deretan kata bisnis yang sepaket: [根拠|konkyo] (dasar), [裏付|urazu]け (bukti pendukung), [仮説|kasetsu] (hipotesis), [結論|ketsuron] (kesimpulan).",
+    "**Takahashi memakai bentuk biasa (だ・な・か) kepada Rangga.** Itu wajar dari atasan ke bawahan dalam pembicaraan kerja cepat — tapi perhatikan: ia tetap memakai てくれる, bukan perintah telanjang."
+   ],
+   "grammars": [
+    {
+     "title": "Kata untuk angka dan kecenderungan",
+     "body": [
+      "Kosakata ini sama persis di berita, laporan tahunan, dan skripsi. Sekali dikuasai, ia terpakai seumur hidup."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "[増加|zōka] / [減少|genshō]",
+        "zōka / genshō",
+        "kenaikan / penurunan"
+       ],
+       [
+        "[急増|kyūzō] / [急減|kyūgen]",
+        "kyūzō / kyūgen",
+        "melonjak / anjlok"
+       ],
+       [
+        "[横|yoko]ばい",
+        "yokobai",
+        "mendatar"
+       ],
+       [
+        "[回復|kaifuku]",
+        "kaifuku",
+        "pemulihan"
+       ],
+       [
+        "[推移|suii]",
+        "suii",
+        "perkembangan sepanjang waktu"
+       ],
+       [
+        "[傾向|keikō]",
+        "keikō",
+        "kecenderungan"
+       ],
+       [
+        "[見通|mitō]し",
+        "mitōshi",
+        "prospek"
+       ],
+       [
+        "[割合|wariai] / [割合|wariai]",
+        "wariai",
+        "proporsi, persentase"
+       ],
+       [
+        "[前年比|zennenhi]",
+        "zennenhi",
+        "dibanding tahun sebelumnya"
+       ],
+       [
+        "[約|yaku] / [およそ|oyoso]",
+        "yaku / oyoso",
+        "kira-kira"
+       ],
+       [
+        "[以上|ijō] / [未満|miman]",
+        "ijō / miman",
+        "ke atas / di bawah"
+       ],
+       [
+        "[倍|bai] / [半減|hangen]",
+        "bai / hangen",
+        "kali lipat / berkurang separuh"
+       ]
+      ]
+     },
+     "after": [
+      "**Rangka menjelaskan grafik:** こちらは〜の[推移|suii]です。→ [〜年|nen]に[急|kyū]に〜しました。→ [原因|Gen'in]は〜です。→ [現在|Genzai]は〜[傾向|keikō]にあります。",
+      "⚠️ **Persen naik vs poin naik.** [三|San]%[増|zō] = naik tiga persen dari nilainya. [三|San][ポイント|pointo][増|zō] = naik tiga poin persentase. Berita Jepang membedakan keduanya dengan ketat.",
+      "**Menyebut sumber angka:** [〜によると|〜ni yoru to] · 〜の[調査|chōsa]では · 〜の[発表|happyō]によれば."
+     ]
+    },
+    {
+     "title": "つつある・つつ・ざるを得ない",
+     "body": [
+      "Tiga rangka ragam tulis yang paling sering muncul di berita dan laporan tingkat menengah."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～つつある",
+        "sedang berjalan menuju ～",
+        "[状況|Jōkyō]は[改善|kaizen]しつつある。"
+       ],
+       [
+        "～つつ",
+        "📄 sambil (= ながら)",
+        "[働|Hatara]きつつ[学|mana]ぶ。"
+       ],
+       [
+        "～つつも",
+        "📄 sekalipun sambil",
+        "[悪|Waru]いと[知|shi]りつつも[続|tsuzu]けた。"
+       ],
+       [
+        "～ざるを[得|e]ない",
+        "mau tak mau harus",
+        "[値上|Neage]げせざるを[得|e]ない。"
+       ],
+       [
+        "～[得|e]る / ～[得|う]る",
+        "bisa terjadi",
+        "[起|O]こり[得|u]る[問題|mondai]。"
+       ],
+       [
+        "～[かねない|kanenai]",
+        "bisa-bisa malah ～ (buruk)",
+        "[事故|Jiko]につながりかねない。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **かねる (tidak bisa) dan かねない (bisa-bisa terjadi) hampir berlawanan.** お[受|u]けいたしかねます = tidak bisa kami terima. [遅|Oku]れかねません = bisa-bisa terlambat.",
+      "**つつある hanya untuk perubahan bertahap, bukan kejadian sesaat.** ❌[電車|Densha]が[来|き]つつある。",
+      "📄 **得る dibaca うる dalam bentuk kamus dan える dalam bentuk lain:** あり[得|う]る tapi あり[得|え]ない."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Persoalan Jepang hari ini — kosakata yang selalu muncul",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Enam persoalan berikut muncul di berita Jepang hampir tiap minggu. Mengenal namanya berarti bisa mengikuti percakapan orang dewasa Jepang tentang negerinya sendiri."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Persoalan",
+      "Cara baca",
+      "Ringkasnya"
+     ],
+     "rows": [
+      [
+       "[少子高齢化|shōshi kōreika]",
+       "shōshi kōreika",
+       "kelahiran turun, penduduk menua bersamaan"
+      ],
+      [
+       "[人手不足|hitode busoku]",
+       "hitode busoku",
+       "kekurangan tenaga kerja di hampir semua sektor"
+      ],
+      [
+       "[過疎化|kasoka]",
+       "kasoka",
+       "desa yang ditinggalkan penduduknya"
+      ],
+      [
+       "[待機児童|taiki jidō]",
+       "taiki jidō",
+       "anak yang antre masuk penitipan"
+      ],
+      [
+       "[働|hatara]き[方改革|kata kaikaku]",
+       "hatarakikata kaikaku",
+       "pembatasan lembur dan reformasi jam kerja"
+      ],
+      [
+       "[外国人|gaikokujin][労働者|rōdōsha]",
+       "gaikokujin rōdōsha",
+       "pekerja asing; kebijakannya berubah cepat"
+      ],
+      [
+       "[年金|nenkin][問題|mondai]",
+       "nenkin mondai",
+       "dana pensiun yang makin berat ditanggung"
+      ],
+      [
+       "[温暖化|ondanka]",
+       "ondanka",
+       "pemanasan global"
+      ],
+      [
+       "[防災|bōsai]",
+       "bōsai",
+       "kesiapsiagaan bencana"
+      ],
+      [
+       "[格差|kakusa]",
+       "kakusa",
+       "kesenjangan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Berbicara tentang persoalan — rangka yang aman"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Menyebut keadaan: 〜が[問題|mondai]になっています。",
+      "Menyebut sebab: その[背景|haikei]には〜があると[言|i]われています。",
+      "Membandingkan negara: [インドネシア|Indoneshia]では〜ですが、[日本|Nihon]では〜です。",
+      "Menyampaikan pendapat dengan hati-hati: [〜のではないでしょうか|〜no de wa nai deshō ka]。",
+      "Mengakui sisi lain: もちろん、〜という[面|men]もあります。",
+      "Menutup: [簡単|Kantan]に[解決|kaiketsu]できる[問題|mondai]ではないと[思|omo]います。"
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Topik yang perlu kehati-hatian",
+     "items": [
+      "Politik dan partai — jarang dibicarakan di tempat kerja Jepang, bahkan di antara teman.",
+      "Sejarah Perang Dunia II dan hubungan dengan negara tetangga — dibicarakan dengan sangat hati-hati atau tidak sama sekali.",
+      "Agama — dianggap urusan yang sangat pribadi.",
+      "Gaji orang lain, usia perempuan, status pernikahan — jangan ditanyakan.",
+      "**Yang aman dan disukai:** makanan daerah, musim, perjalanan, olahraga, harga barang, cuaca ekstrem, dan perbandingan Jepang–Indonesia yang tidak menghakimi.",
+      "**Kalau kamu terlanjur masuk ke topik berat:** [難|Muzuka]しい[問題|mondai]ですね。 lalu ganti topik. Semua orang akan lega."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca satu berita dari awal sampai habis",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Berita pendek Jepang punya bentuk yang tetap: judul tanpa partikel, kalimat pembuka berisi seluruh isi, lalu rincian dan kutipan. Membaca dari judul ke bawah adalah cara tercepat."
+    },
+    {
+     "type": "sub",
+     "text": "Contoh berita pendek"
+    },
+    {
+     "type": "p",
+     "text": "📄 **[出生率|Shusshōritsu]、[過去|kako][最低|saitei]に　[八年連続|hachi-nen renzoku]で[低下|teika]**"
+    },
+    {
+     "type": "p",
+     "text": "[厚生労働省|Kōsei rōdōshō]の[発表|happyō]によると、[昨年|sakunen]の[合計|gōkei][特殊|tokushu][出生率|shusshōritsu]は[1.20|ichi-ten-ni-zero]となり、[統計|tōkei][開始|kaishi][以来|irai][最|motto]も[低|hiku]い[水準|suijun]となった。[低下|Teika]は[八年連続|hachi-nen renzoku]である。[背景|Haikei]には、[経済的|keizaiteki]な[不安|fuan]や[長時間|chōjikan][労働|rōdō]、[育児|ikuji][環境|kankyō]の[不足|fusoku]があるとみられている。[政府|Seifu]は[対策|taisaku]として[児童|jidō][手当|teate]の[拡充|kakujū]を[進|susu]めているが、[効果|kōka]は[限定的|gentei-teki]との[指摘|shiteki]もある。[専門家|Senmonka]は「[働|hatara]き[方|kata]そのものを[変|ka]えなければ、[改善|kaizen]は[難|muzuka]しい」と[話|hana]している。"
+    },
+    {
+     "type": "sub",
+     "text": "Cara membacanya"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Judul dulu.** 「[出生率|Shusshōritsu]、[過去|kako][最低|saitei]に」 — koma menggantikan は, に di ujung berarti “menjadi”.",
+      "**Kalimat pertama memuat seluruh isinya.** Kalau waktumu sempit, berhenti di sini.",
+      "**Cari 〜によると** — itu sumbernya. Di sini: Kementerian Kesehatan, Tenaga Kerja, dan Kesejahteraan.",
+      "**Cari 背景には〜がある** — itu sebabnya.",
+      "**Cari 「…」と[話|hana]している** — itu kutipan narasumber, biasanya di akhir.",
+      "**Kata yang wajib kamu kenali di berita mana pun:** [発表|happyō] · [以来|irai] · [水準|suijun] · [背景|haikei] · [対策|taisaku] · [指摘|shiteki] · [専門家|senmonka] · [限定的|gentei-teki]."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu persoalan",
+     "items": [
+      "Pilih satu persoalan di Indonesia atau di Jepang, lalu bicaralah empat puluh detik:",
+      "Keadaan: 〜が[問題|mondai]になっています。",
+      "Angka: [〜によると、〜は〜%です|〜ni yoru to, 〜wa 〜% desu]。",
+      "Sebab: その[背景|haikei]には〜があると[言|i]われています。",
+      "Kecenderungan: 〜[傾向|keikō]にあります。 atau [〜つつあります|〜tsutsu arimasu]。",
+      "Pendapatmu: [〜のではないでしょうか|〜no de wa nai deshō ka]。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "出生率",
+   "baca": "しゅっしょうりつ · shusshōritsu",
+   "id": "angka kelahiran"
+  },
+  {
+   "ja": "少子高齢化",
+   "baca": "しょうしこうれいか · shōshi kōreika",
+   "id": "kelahiran turun dan penduduk menua"
+  },
+  {
+   "ja": "人口",
+   "baca": "じんこう · jinkō",
+   "id": "penduduk"
+  },
+  {
+   "ja": "過疎化",
+   "baca": "かそか · kasoka",
+   "id": "desa ditinggalkan penduduk"
+  },
+  {
+   "ja": "待機児童",
+   "baca": "たいきじどう · taiki jidō",
+   "id": "anak antre masuk penitipan"
+  },
+  {
+   "ja": "保育園",
+   "baca": "ほいくえん · hoikuen",
+   "id": "tempat penitipan anak"
+  },
+  {
+   "ja": "子育て",
+   "baca": "こそだて · kosodate",
+   "id": "pengasuhan anak"
+  },
+  {
+   "ja": "育児",
+   "baca": "いくじ · ikuji",
+   "id": "perawatan anak"
+  },
+  {
+   "ja": "都市部",
+   "baca": "としぶ · toshibu",
+   "id": "daerah perkotaan"
+  },
+  {
+   "ja": "雇用",
+   "baca": "こよう · koyō",
+   "id": "lapangan kerja"
+  },
+  {
+   "ja": "労働者",
+   "baca": "ろうどうしゃ · rōdōsha",
+   "id": "pekerja"
+  },
+  {
+   "ja": "長時間労働",
+   "baca": "ちょうじかんろうどう · chōjikan rōdō",
+   "id": "jam kerja panjang"
+  },
+  {
+   "ja": "格差",
+   "baca": "かくさ · kakusa",
+   "id": "kesenjangan"
+  },
+  {
+   "ja": "年金",
+   "baca": "ねんきん · nenkin",
+   "id": "dana pensiun"
+  },
+  {
+   "ja": "温暖化",
+   "baca": "おんだんか · ondanka",
+   "id": "pemanasan global"
+  },
+  {
+   "ja": "政府",
+   "baca": "せいふ · seifu",
+   "id": "pemerintah"
+  },
+  {
+   "ja": "対策",
+   "baca": "たいさく · taisaku",
+   "id": "langkah penanganan"
+  },
+  {
+   "ja": "法案",
+   "baca": "ほうあん · hōan",
+   "id": "rancangan undang-undang"
+  },
+  {
+   "ja": "議論",
+   "baca": "ぎろん · giron",
+   "id": "perdebatan"
+  },
+  {
+   "ja": "調査",
+   "baca": "ちょうさ · chōsa",
+   "id": "survei, penelitian"
+  },
+  {
+   "ja": "統計",
+   "baca": "とうけい · tōkei",
+   "id": "statistik"
+  },
+  {
+   "ja": "水準",
+   "baca": "すいじゅん · suijun",
+   "id": "tingkat, taraf"
+  },
+  {
+   "ja": "背景",
+   "baca": "はいけい · haikei",
+   "id": "latar belakang"
+  },
+  {
+   "ja": "指摘",
+   "baca": "してき · shiteki",
+   "id": "penunjukan, kritik"
+  },
+  {
+   "ja": "専門家",
+   "baca": "せんもんか · senmonka",
+   "id": "pakar"
+  },
+  {
+   "ja": "限定的",
+   "baca": "げんていてき · gentei-teki",
+   "id": "terbatas"
+  },
+  {
+   "ja": "拡充",
+   "baca": "かくじゅう · kakujū",
+   "id": "perluasan"
+  },
+  {
+   "ja": "手当",
+   "baca": "てあて · teate",
+   "id": "tunjangan"
+  },
+  {
+   "ja": "以来",
+   "baca": "いらい · irai",
+   "id": "sejak"
+  },
+  {
+   "ja": "増加",
+   "baca": "ぞうか · zōka",
+   "id": "kenaikan"
+  },
+  {
+   "ja": "減少",
+   "baca": "げんしょう · genshō",
+   "id": "penurunan"
+  },
+  {
+   "ja": "急増",
+   "baca": "きゅうぞう · kyūzō",
+   "id": "melonjak"
+  },
+  {
+   "ja": "横ばい",
+   "baca": "よこばい · yokobai",
+   "id": "mendatar"
+  },
+  {
+   "ja": "回復",
+   "baca": "かいふく · kaifuku",
+   "id": "pemulihan"
+  },
+  {
+   "ja": "推移",
+   "baca": "すいい · suii",
+   "id": "perkembangan sepanjang waktu"
+  },
+  {
+   "ja": "傾向",
+   "baca": "けいこう · keikō",
+   "id": "kecenderungan"
+  },
+  {
+   "ja": "見通し",
+   "baca": "みとおし · mitōshi",
+   "id": "prospek"
+  },
+  {
+   "ja": "割合",
+   "baca": "わりあい · wariai",
+   "id": "proporsi"
+  },
+  {
+   "ja": "高騰",
+   "baca": "こうとう · kōtō",
+   "id": "lonjakan harga"
+  },
+  {
+   "ja": "原材料",
+   "baca": "げんざいりょう · genzairyō",
+   "id": "bahan baku"
+  },
+  {
+   "ja": "根拠",
+   "baca": "こんきょ · konkyo",
+   "id": "dasar, landasan"
+  },
+  {
+   "ja": "説得力",
+   "baca": "せっとくりょく · settokuryoku",
+   "id": "daya meyakinkan"
+  },
+  {
+   "ja": "改善",
+   "baca": "かいぜん · kaizen",
+   "id": "perbaikan"
+  },
+  {
+   "ja": "状況",
+   "baca": "じょうきょう · jōkyō",
+   "id": "keadaan"
+  },
+  {
+   "ja": "抱える",
+   "baca": "かかえる · kakaeru",
+   "id": "memikul (masalah)"
+  },
+  {
+   "ja": "挙げる",
+   "baca": "あげる · ageru",
+   "id": "menyebutkan, mengangkat"
+  },
+  {
+   "ja": "追いつく",
+   "baca": "おいつく · oitsuku",
+   "id": "menyusul"
+  },
+  {
+   "ja": "示す",
+   "baca": "しめす · shimesu",
+   "id": "menunjukkan"
+  },
+  {
+   "ja": "何らかの",
+   "baca": "なんらかの · nanraka no",
+   "id": "semacam, entah apa"
+  },
+  {
+   "ja": "つつある",
+   "baca": "tsutsu aru",
+   "id": "sedang berjalan menuju"
+  },
+  {
+   "ja": "ざるを得ない",
+   "baca": "ざるをえない · zaru o enai",
+   "id": "mau tak mau harus"
+  },
+  {
+   "ja": "かねない",
+   "baca": "kanenai",
+   "id": "bisa-bisa malah terjadi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah ke ragam tulis (である).",
+   "items": [
+    "[問題|Mondai]です。→ ____",
+    "[必要|Hitsuyō]ではありません。→ ____",
+    "でも → ____",
+    "だから → ____",
+    "つまり → ____",
+    "でしょう → ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan に伴い、に応じて、をめぐって、atau に基づいて.",
+   "items": [
+    "[高齢化|Kōreika] ____ 、[医療費|iryōhi]が[増大|zōdai]している。",
+    "[収入|Shūnyū] ____ [保険料|hokenryō]が[決|ki]まる。",
+    "[法案|Hōan] ____ [議論|giron]が[続|tsuzu]いている。",
+    "[調査|Chōsa] ____ [報告|hōkoku]された。",
+    "[人口|Jinkō][増加|zōka] ____ 、[住宅|jūtaku][需要|juyō]も[高|taka]まった。",
+    "[事実|Jijitsu] ____ [判断|handan]すべきだ。"
+   ]
+  },
+  {
+   "prompt": "Apa arti kata berikut dalam berita?",
+   "items": [
+    "[横|Yoko]ばい",
+    "[前年比|Zennenhi]",
+    "[見通|Mitō]し",
+    "[過去|Kako][最低|saitei]",
+    "[八年連続|Hachi-nen renzoku]",
+    "[限定的|Gentei-teki]"
+   ]
+  },
+  {
+   "prompt": "Isi dengan つつある、ざるを得ない、atau かねない.",
+   "items": [
+    "[状況|Jōkyō]は[改善|kaizen]し ____ 。(sedang membaik)",
+    "[価格|Kakaku]を[上|a]げ ____ 。(mau tak mau harus)",
+    "この[まま|mama]だと[事故|jiko]につながり ____ 。(bisa-bisa)",
+    "[外国人|Gaikokujin][労働者|rōdōsha]は[増|fu]え ____ 。(sedang bertambah)",
+    "[人手不足|Hitode busoku]のため、[閉店|heiten]せ ____ 。(mau tak mau)",
+    "[睡眠不足|Suimin busoku]は[健康|kenkō]を[害|gai]し ____ 。(bisa-bisa)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "が / [出生率|shusshōritsu] / また / [下|sa]がった",
+    "には / [経済的|keizaiteki]な[不安|fuan] / [背景|haikei] / があると[言|i]われています",
+    "に / [回復|kaifuku][傾向|keikō] / あります",
+    "は / こちら / [過去|kako][五年間|go-nen-kan]の / [売上|uriage]の[推移|suii]です",
+    "に / [高騰|kōtō] / [原材料|genzairyō][費|hi]の / [伴|tomona]い / [価格|kakaku]を[上|a]げました",
+    "と / [統計|tōkei][開始|kaishi][以来|irai] / [最|mottomo][低|hiku]い[水準|suijun] / なった"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang, dengan ragam yang diminta.",
+   "items": [
+    "Angka kelahiran turun ke titik terendah sepanjang sejarah. (📄 tulis)",
+    "Menurut pemerintah, penurunan ini berlanjut delapan tahun berturut-turut. (📄 tulis)",
+    "Jumlah pekerja asing sedang terus bertambah. (percakapan)",
+    "Seiring menuanya penduduk, biaya kesehatan meningkat. (📄 tulis)",
+    "Kami mau tak mau harus menaikkan harga. (bisnis)",
+    "Saat ini datar, tapi ada kecenderungan pulih. (bisnis)"
+   ]
+  }
+ ],
+ "answers": [
+  "[問題|Mondai]である — [必要|Hitsuyō]ではない — しかし / だが — したがって / ゆえに — すなわち — であろう",
+  "に[伴|tomona]い — に[応|ō]じて — をめぐって — に[基|motozu]づいて — に[伴|tomona]い — に[基|motozu]づいて",
+  "mendatar, tidak naik dan tidak turun — dibandingkan tahun sebelumnya — prospek, perkiraan ke depan — terendah sepanjang sejarah pencatatan — delapan tahun berturut-turut — terbatas, dampaknya kecil",
+  "つつある — ざるを[得|e]ない — かねない — つつある — ざるを[得|e]ない — かねない",
+  "[出生率|Shusshōritsu]がまた[下|sa]がった — [背景|Haikei]には[経済的|keizaiteki]な[不安|fuan]があると[言|i]われています — [回復|Kaifuku][傾向|keikō]にあります — こちらは[過去|kako][五年間|go-nen-kan]の[売上|uriage]の[推移|suii]です — [原材料|Genzairyō][費|hi]の[高騰|kōtō]に[伴|tomona]い[価格|kakaku]を[上|a]げました — [統計|Tōkei][開始|kaishi][以来|irai][最|mottomo][低|hiku]い[水準|suijun]となった",
+  "[出生率|Shusshōritsu]は[過去|kako][最低|saitei]の[水準|suijun]となった — [政府|Seifu]によると、[低下|teika]は[八年連続|hachi-nen renzoku]である — [外国人|Gaikokujin][労働者|rōdōsha]は[増|fu]えつつあります — [高齢化|Kōreika]に[伴|tomona]い、[医療費|iryōhi]が[増大|zōdai]している — [価格|Kakaku]を[上|a]げざるを[得|e]ませんでした — [現時点|Genjiten]では[横|yoko]ばいですが、[回復|kaifuku][傾向|keikō]にあります"
+ ],
+ "wave": "Lima menit sebelum Unit 15: buka NHK NEWS WEB EASY dan baca satu berita sampai habis. Tandai lima hal: judulnya, kalimat pertama, sumbernya (〜によると), sebabnya (背景には〜), dan kutipan di akhir. Lalu ceritakan berita itu keras-keras dalam empat puluh detik — tapi dalam bentuk です・ます, bukan bentuk beritanya. Perpindahan dari ragam tulis ke ragam lisan itulah latihannya."
+}

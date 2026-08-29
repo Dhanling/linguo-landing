@@ -1,0 +1,888 @@
+{
+ "title": "Melamar kerja dan wawancara",
+ "title_target": "面接 — Mensetsu",
+ "goal": "Menulis riwayat hidup Jepang, menjawab enam pertanyaan wawancara yang hampir pasti muncul, dan menceritakan pengalamanmu dengan rangka yang dikenali perekrut Jepang.",
+ "bekal": [
+  "menyebut peran dan kedudukan dengan 〜として、〜において、〜を[通|tō]じて",
+  "menceritakan pengalaman kerja dengan bentuk 〜てまいりました",
+  "menyusun 志望動機 (alasan melamar) dalam tiga kalimat",
+  "menjawab pertanyaan tentang kelemahan tanpa merugikan diri",
+  "menutup wawancara dengan pertanyaan balik yang tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Wawancara kerja",
+   "intro": "Rangga melamar ke perusahaan lain. Wawancara Jepang sangat berpola: pertanyaannya hampir selalu sama, dan yang dinilai bukan kejujuran mentahmu melainkan kesiapanmu.",
+   "lines": [
+    {
+     "speaker": "面接官:",
+     "text": "それでは、[簡単|kantan]に[自己紹介|jiko-shōkai]をお[願|nega]いできますか。",
+     "id": "Kalau begitu, bisa tolong perkenalkan diri Anda secara singkat?",
+     "literal": "kalau-begitu, sederhana — pada — perkenalan-diri — akan — mohon — bisa — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。ランガと[申|mō]します。[本日|Honjitsu]はお[時間|jikan]をいただき、ありがとうございます。",
+     "id": "Baik. Nama saya Rangga. Terima kasih sudah menyediakan waktu hari ini.",
+     "literal": "ya. Rangga — sebagai — saya-sebut. hari-ini — mengenai — waktu — akan — saya-terima — dan, terima-kasih."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[現在|Genzai]は[リンゴ|Ringo][商事|Shōji]で[営業|eigyō][担当|tantō]として[三年間|san-nen-kan][勤|tsuto]めてまいりました。",
+     "id": "Saat ini saya telah bekerja tiga tahun sebagai penanggung jawab penjualan di Ringo Shoji.",
+     "literal": "sekarang — mengenai — Ringo-Shoji — di — penjualan — penanggung-jawab — sebagai — tiga-tahun-lama — bekerja — saya-datang (merendah)."
+    },
+    {
+     "speaker": "面接官:",
+     "text": "[弊社|Heisha]を[志望|shibō]された[理由|riyū]をお[聞|ki]かせください。",
+     "id": "Tolong sampaikan alasan Anda melamar ke perusahaan kami.",
+     "literal": "perusahaan-kami — akan — melamar — Anda-lakukan (lampau) — alasan — akan — perdengarkan — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[前職|Zenshoku]では[国内|kokunai][市場|shijō]を[担当|tantō]しておりましたが、[今後|kongo]は[東南|Tōnan]アジア[市場|shijō]に[関|kaka]わりたいと[考|kanga]えております。",
+     "id": "Di pekerjaan sebelumnya saya menangani pasar dalam negeri, tapi ke depan saya ingin terlibat di pasar Asia Tenggara.",
+     "literal": "pekerjaan-sebelum — di — mengenai — dalam-negeri — pasar — akan — menangani — sedang (lampau) — tapi, ke-depan — mengenai — Tenggara — Asia — pasar — pada — ingin-terlibat — begitu — saya-pikirkan — sedang."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[御社|Onsha]は[インドネシア|Indoneshia]での[展開|tenkai]に[力|chikara]を[入|i]れておられると[伺|ukaga]いました。",
+     "id": "Saya dengar perusahaan Anda sedang menaruh perhatian besar pada pengembangan di Indonesia.",
+     "literal": "perusahaan-Anda — mengenai — Indonesia — di — punya — pengembangan — pada — kekuatan — akan — memasukkan — sedang (hormat) — begitu — saya-dengar (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[語学|Gogaku]と[現地|genchi]の[経験|keiken]を[通|tō]じて、[お役|o-yaku]に[立|ta]てるのではないかと[考|kanga]えております。",
+     "id": "Lewat kemampuan bahasa dan pengalaman di lapangan, saya rasa saya bisa berguna.",
+     "literal": "bahasa — dan — setempat — punya — pengalaman — akan — melalui, berguna — bisa — bukankah — begitu — saya-pikirkan — sedang."
+    },
+    {
+     "speaker": "面接官:",
+     "text": "ご[自身|jishin]の[短所|tansho]は[何|nan]だとお[考|kanga]えですか。",
+     "id": "Apa yang Anda anggap sebagai kelemahan Anda?",
+     "literal": "diri — sendiri — punya — kekurangan — mengenai — apa — adalah — begitu — Anda-pikirkan — adalah — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[慎重|Shinchō]すぎるところがございます。[判断|Handan]に[時間|jikan]をかけてしまうことがありました。",
+     "id": "Saya cenderung terlalu berhati-hati. Pernah saya menghabiskan terlalu banyak waktu untuk memutuskan.",
+     "literal": "berhati-hati — terlalu — bagian — yang — ada. penilaian — pada — waktu — akan — menghabiskan — telanjur — hal — yang — ada (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[現在|Genzai]は[期限|kigen]を[先|saki]に[決|ki]めてから[検討|kentō]するようにしております。",
+     "id": "Sekarang saya membiasakan menetapkan tenggat dulu, baru mempertimbangkan.",
+     "literal": "sekarang — mengenai — tenggat — akan — lebih-dulu — memutuskan — sesudah — mempertimbangkan — supaya — saya-lakukan — sedang."
+    },
+    {
+     "speaker": "面接官:",
+     "text": "[最後|Saigo]に、[何|nani]かご[質問|shitsumon]はございますか。",
+     "id": "Terakhir, ada pertanyaan dari Anda?",
+     "literal": "akhir — pada, apa — pun — pertanyaan — mengenai — ada — kah."
+    }
+   ],
+   "notes": [
+    "**～てまいりました adalah 謙譲語 dari ～てきました.** Ia berarti “telah saya lakukan sampai sekarang”, dan hampir wajib muncul di wawancara Jepang saat menceritakan riwayat kerja.",
+    "**志望動機 (alasan melamar) punya rangka tiga kalimat:** (1) apa yang sudah kamu lakukan, (2) apa yang ingin kamu lakukan berikutnya, (3) kenapa perusahaan **ini** yang bisa mempertemukan keduanya. Melewatkan (3) adalah kesalahan nomor satu pelamar.",
+    "**おられる adalah bentuk hormat yang dipakai untuk pihak lawan.** Sebagian orang menganggapnya kurang tepat karena berakar pada おる (謙譲語); alternatif yang aman: [〜ていらっしゃる|〜te irassharu].",
+    "**Jawaban kelemahan punya rangka wajib dua bagian:** kelemahannya + **apa yang sudah kamu lakukan untuk mengatasinya**. Menyebut kelemahan tanpa penanganannya dianggap belum dewasa. ⚠️ Jangan menyebut kelemahan yang mematikan pekerjaan itu sendiri.",
+    "**〜のではないかと考えております adalah cara menyatakan pendapat paling halus dalam bahasa Jepang bisnis.** Harfiahnya: “bukankah begitu, begitu saya pikirkan”. Ia menyatakan keyakinan sambil tetap membuka ruang bagi pendapat lawan bicara.",
+    "**Pertanyaan terakhir adalah bagian yang dinilai.** Menjawab 「[特|toku]にありません」 hampir selalu merugikan. Contoh pertanyaan balik yang baik ada di bagian tambahan unit ini."
+   ],
+   "grammars": [
+    {
+     "title": "として・において・を通じて・にとって",
+     "body": [
+      "Empat penunjuk hubungan yang muncul di hampir semua tulisan resmi dan wawancara. Salah satu di antaranya sering tertukar dengan について dari Unit 10."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～として",
+        "sebagai (peran)",
+        "[営業|Eigyō][担当|tantō]として[働|hatara]いてまいりました。"
+       ],
+       [
+        "～において",
+        "📄 di (tempat/bidang)",
+        "この[分野|bun'ya]において[経験|keiken]がございます。"
+       ],
+       [
+        "～を[通|tō]じて",
+        "melalui, sepanjang",
+        "この[経験|keiken]を[通|tō]じて[学|mana]びました。"
+       ],
+       [
+        "～を[通|tō]して",
+        "melalui (hampir sama)",
+        "[友人|Yūjin]を[通|tō]して[知|shi]りました。"
+       ],
+       [
+        "～にとって",
+        "bagi (sudut pandang)",
+        "[私|Watashi]にとって[大|ō]きな[転機|tenki]でした。"
+       ],
+       [
+        "～に[関|kan]して",
+        "berkenaan dengan",
+        "[待遇|Taigū]に[関|kan]して[伺|ukaga]えますか。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **にとって bukan untuk pendapat pribadi.** ❌[私|Watashi]にとって、この[案|an]はよくないと[思|omo]います。 ✅[私|Watashi]は…と[思|omo]います.",
+      "**を通じて menyoroti perantara atau rentang waktu**; を通して sedikit lebih menyoroti alatnya. Dalam praktik keduanya hampir bisa saling ganti.",
+      "📄 **において adalah ragam tulis murni.** Dalam percakapan, pakai で."
+     ]
+    },
+    {
+     "title": "Enam pertanyaan wawancara yang hampir pasti muncul",
+     "body": [
+      "Wawancara Jepang jauh lebih bisa ditebak daripada di banyak negara lain. Enam pertanyaan berikut muncul di hampir semua wawancara, dan jawabannya diharapkan sudah disiapkan."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Yang sebenarnya dinilai"
+      ],
+      "rows": [
+       [
+        "[自己紹介|Jiko-shōkai]をお[願|nega]いします。",
+        "apakah kamu bisa ringkas dalam 1 menit"
+       ],
+       [
+        "[志望動機|Shibō dōki]をお[聞|ki]かせください。",
+        "apakah kamu tahu perusahaan ini, bukan sekadar butuh kerja"
+       ],
+       [
+        "ご[自身|jishin]の[長所|chōsho]と[短所|tansho]は？",
+        "apakah kamu mengenal diri dan mengelolanya"
+       ],
+       [
+        "[前職|Zenshoku]を[辞|ya]めた[理由|riyū]は？",
+        "apakah kamu menyalahkan orang lain"
+       ],
+       [
+        "[五年後|Go-nen-go]はどうなっていたいですか。",
+        "apakah kamu berencana bertahan"
+       ],
+       [
+        "[何|Nani]かご[質問|shitsumon]はありますか。",
+        "apakah kamu benar-benar berminat"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan pernah menjelekkan tempat kerja lama.** Ubah menjadi arah ke depan: ❌[人間関係|Ningen kankei]が[悪|waru]くて… ✅より[幅広|habahiro]い[仕事|shigoto]に[挑戦|chōsen]したいと[考|kanga]え…",
+      "**Pertanyaan balik yang baik:** [入社|Nyūsha][後|go]、[最初|saisho]の[一年|ichi-nen]でどのようなことを[期待|kitai]されますか。 · [チーム|Chīmu]の[構成|kōsei]について[伺|ukaga]えますか。",
+      "⚠️ **Jangan bertanya gaji dan cuti di pertanyaan balik pertama.** Simpan untuk tahap tawaran; menanyakannya terlalu awal terbaca sebagai kurang berminat pada pekerjaannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menyiapkan berkas lamaran",
+   "intro": "Sebelum wawancara, Rangga meminta pendapat Sato tentang 履歴書 dan 職務経歴書 miliknya. Berkas lamaran Jepang punya aturan bentuk yang sangat ketat.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[履歴書|Rirekisho]、[見|mi]ていただけますか。[書|Ka]き[方|kata]に[自信|jishin]がなくて。",
+     "id": "Bisa lihat riwayat hidup saya? Saya kurang yakin dengan cara menulisnya.",
+     "literal": "riwayat-hidup, lihat — bisa-saya-terima — kah. cara-menulis — pada — keyakinan — yang — tidak-ada — dan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "いいですよ。……あ、[志望動機|shibō dōki]が[短|mijika]すぎますね。[三行|San-gyō]しかない。",
+     "id": "Boleh. …Ah, alasan melamarnya terlalu pendek ya. Cuma tiga baris.",
+     "literal": "baik — lho. …ah, alasan-melamar — yang — pendek — terlalu — ya. tiga-baris — hanya — tidak-ada."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[長|Naga]く[書|ka]いたほうがいいですか。",
+     "id": "Sebaiknya ditulis lebih panjang?",
+     "literal": "panjang — menulis — lebih-baik — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[長|Naga]さより[中身|nakami]です。「なぜこの[会社|kaisha]か」が[書|ka]いてないと[意味|imi]がありません。",
+     "id": "Bukan panjangnya, tapi isinya. Kalau “kenapa perusahaan ini” tidak tertulis, tidak ada artinya.",
+     "literal": "panjang — daripada — isi — adalah. kenapa — ini — perusahaan — kah — yang — tidak-tertulis — kalau — arti — yang — tidak-ada."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "なるほど。[職務経歴書|Shokumu keirekisho]のほうはどうでしょうか。",
+     "id": "Oh begitu. Kalau riwayat pekerjaannya bagaimana?",
+     "literal": "begitu-rupanya. riwayat-pekerjaan — punya — pihak — mengenai — bagaimana — barangkali — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[数字|Sūji]を[入|i]れましょう。「[売上|Uriage]を[前年比|zennenhi][20|nijup]%[伸|no]ばした」のように。",
+     "id": "Mari masukkan angka. Seperti “menaikkan penjualan 20% dibanding tahun sebelumnya”.",
+     "literal": "angka — akan — mari-masukkan. penjualan — akan — dibanding-tahun-lalu — 20% — menaikkan (lampau) — seperti."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "たしかに、[具体的|gutaiteki]なほうが[伝|tsuta]わりますね。",
+     "id": "Benar juga, yang konkret lebih tersampaikan ya.",
+     "literal": "memang, konkret — punya — pihak — yang — tersampaikan — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "あと、[手書|tega]きか[パソコン|pasokon]か[確|tashi]かめておいたほうがいいですよ。",
+     "id": "Lalu, sebaiknya pastikan dulu tulis tangan atau komputer.",
+     "literal": "lalu, tulis-tangan — kah — komputer — kah — memastikan — siapkan — lebih-baik — adalah — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "え、[今|ima]でも[手書|tega]きの[会社|kaisha]があるんですか。",
+     "id": "Eh, sekarang pun masih ada perusahaan yang minta tulis tangan?",
+     "literal": "eh, sekarang — pun — tulis-tangan — punya — perusahaan — yang — ada — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[減|He]ってはいますけど、まだありますね。[募集要項|Boshū yōkō]に[書|ka]いてあるはずです。",
+     "id": "Sudah berkurang sih, tapi masih ada. Semestinya tertulis di ketentuan lowongannya.",
+     "literal": "berkurang — mengenai — sedang — tapi, masih — ada — ya. ketentuan-lowongan — pada — tertulis — ada — semestinya — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[確認|Kakunin]しておきます。ありがとうございます、[本当|hontō]に[助|tasu]かりました。",
+     "id": "Akan saya periksa. Terima kasih, sungguh sangat menolong.",
+     "literal": "pemeriksaan — saya-lakukan — siapkan. terima-kasih, sungguh — pada — tertolong (lampau)."
+    }
+   ],
+   "notes": [
+    "**履歴書 dan 職務経歴書 adalah dua berkas berbeda.** 履歴書 berbentuk formulir baku (pendidikan, riwayat kerja, motif, foto). 職務経歴書 bebas bentuk dan berisi rincian apa yang benar-benar kamu kerjakan — di sinilah angka masuk.",
+    "**前年比 = dibandingkan tahun sebelumnya.** Deretan kata bisnis yang sepaket: [前月比|zengetsuhi] (dibanding bulan lalu), [目標比|mokuhyōhi] (dibanding target), [達成率|tasseiritsu] (tingkat pencapaian).",
+    "**減ってはいますけど — menyisipkan は untuk mengakui sebagian.** Rangkanya: bentuk て + は + いる. Artinya: “berkurang sih iya, tapi…”. Bentuk ini melunakkan sanggahan.",
+    "**Foto di 履歴書 masih wajib di sebagian besar perusahaan Jepang** — foto studio, kemeja, latar polos. Ini kebiasaan yang mulai dipertanyakan tapi belum hilang.",
+    "**Tulis tangan masih hidup di sebagian perusahaan tradisional.** Kalau diminta tulis tangan: pakai pena hitam, jangan pakai tipp-ex — kalau salah, tulis ulang seluruh lembarnya. ⚠️ Ini bukan lelucon.",
+    "**募集要項 = ketentuan lowongan.** Baca sampai habis: ia memuat syarat, cara melamar, dan hal-hal yang akan ditanyakan di wawancara."
+   ],
+   "grammars": [
+    {
+     "title": "Menceritakan pengalaman dengan angka",
+     "body": [
+      "Perekrut Jepang tidak menilai semangatmu; mereka menilai apa yang bisa diperiksa. Rangka berikut mengubah cerita jadi bukti."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Fungsinya"
+      ],
+      "rows": [
+       [
+        "～を[担当|tantō]しておりました",
+        "[新規|Shinki][開拓|kaitaku]を[担当|tantō]しておりました。",
+        "peran"
+       ],
+       [
+        "～に[携|tazusa]わってまいりました",
+        "[商品|Shōhin][開発|kaihatsu]に[携|tazusa]わってまいりました。",
+        "keterlibatan"
+       ],
+       [
+        "～を[伸|no]ばしました",
+        "[売上|Uriage]を[前年比|zennenhi][20|nijup]%[伸|no]ばしました。",
+        "hasil terukur"
+       ],
+       [
+        "～を[削減|sakugen]しました",
+        "[コスト|Kosuto]を[15|jūgo]%[削減|sakugen]しました。",
+        "penghematan"
+       ],
+       [
+        "～を[立|ta]ち[上|a]げました",
+        "[新|Atara]しい[チーム|chīmu]を[立|ta]ち[上|a]げました。",
+        "memulai sesuatu"
+       ],
+       [
+        "～に[貢献|kōken]いたしました",
+        "[チーム|Chīmu]の[目標|mokuhyō][達成|tassei]に[貢献|kōken]いたしました。",
+        "sumbangan"
+       ]
+      ]
+     },
+     "after": [
+      "**Satu kalimat cerita = peran + tindakan + angka + hasil.** [新規|Shinki][顧客|kokyaku][開拓|kaitaku]を[担当|tantō]し、[月|tsuki][十件|jukken]の[訪問|hōmon]を[続|tsuzu]けた[結果|kekka]、[年間|nenkan][売上|uriage]を[20|nijup]%[伸|no]ばしました。",
+      "⚠️ **Jangan memakai [頑張|ganba]りました sebagai hasil.** Ia menyebut usaha, bukan capaian, dan perekrut Jepang membacanya sebagai tidak ada yang bisa disebut.",
+      "**Kalau angkamu kecil, sebut prosesnya:** [仕組|Shiku]みを[作|tsuku]りました · [手順|tejun]を[標準化|hyōjunka]しました."
+     ]
+    },
+    {
+     "title": "Ragam wawancara: kata yang berganti",
+     "body": [
+      "Wawancara memakai kosakata sendiri. Memakai kata sehari-hari di sini bukan salah, tapi ia langsung menandai bahwa kamu belum menyiapkan diri."
+     ],
+     "table": {
+      "head": [
+       "Sehari-hari",
+       "Wawancara",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "[会社|kaisha] (milikmu)",
+        "[弊社|heisha] / [当社|tōsha]",
+        "perusahaan kami"
+       ],
+       [
+        "[会社|kaisha] (milik mereka)",
+        "[御社|onsha] (lisan) / [貴社|kisha] (tulis)",
+        "perusahaan Anda"
+       ],
+       [
+        "[働|hatara]く",
+        "[勤務|kinmu]する · [勤|tsuto]める",
+        "bekerja"
+       ],
+       [
+        "[入|hai]る",
+        "[入社|nyūsha]する",
+        "masuk perusahaan"
+       ],
+       [
+        "[辞|ya]める",
+        "[退職|taishoku]する",
+        "berhenti kerja"
+       ],
+       [
+        "[経験|keiken]がある",
+        "[経験|keiken]がございます",
+        "berpengalaman"
+       ],
+       [
+        "いい[点|ten]",
+        "[長所|chōsho] · [強|tsuyo]み",
+        "kelebihan"
+       ],
+       [
+        "[悪|waru]い[点|ten]",
+        "[短所|tansho] · [課題|kadai]",
+        "kekurangan"
+       ],
+       [
+        "[給料|kyūryō]",
+        "[待遇|taigū] · [年収|nenshū]",
+        "gaji, paket"
+       ],
+       [
+        "[思|omo]う",
+        "[存|zon]じる · [考|kanga]えております",
+        "berpikir"
+       ]
+      ]
+     },
+     "after": [
+      "**Menutup wawancara:** [本日|Honjitsu]は[貴重|kichō]なお[時間|jikan]をいただき、ありがとうございました。[何卒|Nanitozo]よろしくお[願|nega]いいたします。",
+      "**Surel terima kasih sesudah wawancara (お[礼|rei]メール) dikirim di hari yang sama.** Ia tidak wajib, tapi ia diingat.",
+      "⚠️ **Bahasa badan ikut dinilai:** ketuk pintu tiga kali, tunggu [どうぞ|dōzo], berdiri di samping kursi sampai dipersilakan duduk, taruh tas di lantai di sisi kursi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sistem kerja Jepang yang perlu kamu pahami dulu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebelum melamar, ada beberapa hal tentang pasar kerja Jepang yang tidak akan diberitahukan siapa pun kepadamu, dan yang mengubah cara kamu membaca lowongan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Cara baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "[正社員|seishain]",
+       "seishain",
+       "karyawan tetap, penuh tunjangan"
+      ],
+      [
+       "[契約社員|keiyaku shain]",
+       "keiyaku shain",
+       "karyawan kontrak berjangka"
+      ],
+      [
+       "[派遣|haken]",
+       "haken",
+       "karyawan dari agen penyalur"
+      ],
+      [
+       "[アルバイト|arubaito] / [パート|pāto]",
+       "arubaito / pāto",
+       "kerja paruh waktu"
+      ],
+      [
+       "[新卒|shinsotsu]",
+       "shinsotsu",
+       "lulusan baru, jalur perekrutan tersendiri"
+      ],
+      [
+       "[中途|chūto][採用|saiyō]",
+       "chūto saiyō",
+       "perekrutan berpengalaman"
+      ],
+      [
+       "[試用期間|shiyō kikan]",
+       "shiyō kikan",
+       "masa percobaan, biasanya 3–6 bulan"
+      ],
+      [
+       "[年功序列|nenkō joretsu]",
+       "nenkō joretsu",
+       "kenaikan menurut lama kerja"
+      ],
+      [
+       "[終身雇用|shūshin koyō]",
+       "shūshin koyō",
+       "kerja seumur hidup (makin memudar)"
+      ],
+      [
+       "[転職|tenshoku]",
+       "tenshoku",
+       "pindah kerja"
+      ],
+      [
+       "[内定|naitei]",
+       "naitei",
+       "tawaran kerja tak resmi tapi mengikat secara sosial"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Membaca lowongan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[募集職種|Boshū shokushu] — jabatan yang dicari · [応募資格|Ōbo shikaku] — syarat pelamar",
+      "[勤務地|Kinmuchi] — lokasi kerja · [勤務時間|Kinmu jikan] — jam kerja",
+      "[給与|Kyūyo] — gaji; sering ditulis [月給|gekkyū] (bulanan) atau [年収|nenshū] (tahunan)",
+      "[賞与|Shōyo] / [ボーナス|bōnasu] — bonus, biasanya dua kali setahun",
+      "[諸手当|Sho-teate] — tunjangan: [通勤|tsūkin] (transport), [住宅|jūtaku] (perumahan), [残業|zangyō] (lembur)",
+      "[休日|Kyūjitsu] — [完全|kanzen][週休|shūkyū][二日|futsuka][制|sei] berarti benar-benar dua hari libur tiap minggu",
+      "⚠️ **[みなし残業|minashi zangyō]** berarti sejumlah jam lembur sudah dianggap termasuk gaji. Periksa berapa jam yang dimaksud — ini poin yang sering menjebak."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Visa dan izin kerja",
+     "items": [
+      "[在留資格|Zairyū shikaku] — status izin tinggal; harus sesuai dengan jenis pekerjaannya.",
+      "[技術・人文知識・国際業務|Gijutsu · jinbun chishiki · kokusai gyōmu] — status paling umum untuk pekerja kantoran asing.",
+      "[資格外活動許可|Shikakugai katsudō kyoka] — izin bagi pemegang visa pelajar untuk bekerja (maks. 28 jam/pekan).",
+      "[就労資格証明書|Shūrō shikaku shōmeisho] — surat keterangan bahwa pekerjaan barumu sesuai visamu; sangat dianjurkan saat pindah kerja.",
+      "⚠️ Pindah kerja **wajib dilaporkan** ke Imigrasi dalam 14 hari, sekalipun visamu masih berlaku."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "志望動機 — menyusunnya dari nol",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini bagian yang paling menentukan dan paling sering ditulis asal. Rangkanya tiga kalimat, dan ketiganya harus saling mengunci."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Isinya",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "1. Yang sudah kamu punya",
+       "pengalaman + kemampuan",
+       "[現職|Genshoku]では[国内|kokunai][営業|eigyō]を[三年間|san-nen-kan][担当|tantō]し、[新規|shinki][顧客|kokyaku]を[五十社|gojū-sha][開拓|kaitaku]してまいりました。"
+      ],
+      [
+       "2. Yang ingin kamu lakukan",
+       "arah ke depan",
+       "[今後|Kongo]は[海外|kaigai][市場|shijō]、[特|toku]に[東南|Tōnan]アジアに[関|kaka]わりたいと[考|kanga]えております。"
+      ],
+      [
+       "3. Kenapa perusahaan INI",
+       "hal khas mereka",
+       "[御社|Onsha]が[インドネシア|Indoneshia]で[現地|genchi][法人|hōjin]を[立|ta]ち[上|a]げられたことを[伺|ukaga]い、[自分|jibun]の[経験|keiken]が[生|i]かせるのではないかと[考|kanga]えました。"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat yang mematikan lamaranmu"
+    },
+    {
+     "type": "list",
+     "items": [
+      "❌[御社|Onsha]の[理念|rinen]に[共感|kyōkan]しました。 — tanpa menyebut isinya, kalimat ini kosong dan semua orang menulisnya.",
+      "❌[成長|Seichō]したいです。 — perusahaan mencari orang yang menyumbang, bukan yang datang untuk dilatih.",
+      "❌[安定|Antei]しているからです。 — jujur, dan mematikan.",
+      "❌[給料|Kyūryō]がいいからです。 — jangan, sekalipun ditanya langsung.",
+      "✅ Ganti dengan hal yang **hanya berlaku untuk perusahaan itu**: produk tertentu, pasar tertentu, cara kerja tertentu yang kamu baca di situs atau berita mereka."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: 自己PR",
+     "items": [
+      "Rekam dirimu sendiri, tepat empat puluh detik, tanpa naskah:",
+      "Peran: 〜として〜年間、〜を[担当|tantō]してまいりました。",
+      "Satu capaian berangka: その[結果|kekka]、〜を〜%〜ました。",
+      "Apa yang kamu pelajari: この[経験|keiken]を[通|tō]じて、〜を[学|mana]びました。",
+      "Arah ke depan: [今後|Kongo]は〜に[関|kaka]わりたいと[考|kanga]えております。",
+      "Kunci ke perusahaan itu: [御社|Onsha]の〜において、[お役|o-yaku]に[立|ta]てるのではないかと[存|zon]じます。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "面接",
+   "baca": "めんせつ · mensetsu",
+   "id": "wawancara"
+  },
+  {
+   "ja": "履歴書",
+   "baca": "りれきしょ · rirekisho",
+   "id": "riwayat hidup (formulir baku)"
+  },
+  {
+   "ja": "職務経歴書",
+   "baca": "しょくむけいれきしょ · shokumu keirekisho",
+   "id": "riwayat pekerjaan rinci"
+  },
+  {
+   "ja": "志望動機",
+   "baca": "しぼうどうき · shibō dōki",
+   "id": "alasan melamar"
+  },
+  {
+   "ja": "志望する",
+   "baca": "しぼうする · shibō suru",
+   "id": "melamar, mengharapkan"
+  },
+  {
+   "ja": "応募",
+   "baca": "おうぼ · ōbo",
+   "id": "pengajuan lamaran"
+  },
+  {
+   "ja": "募集要項",
+   "baca": "ぼしゅうようこう · boshū yōkō",
+   "id": "ketentuan lowongan"
+  },
+  {
+   "ja": "採用",
+   "baca": "さいよう · saiyō",
+   "id": "perekrutan"
+  },
+  {
+   "ja": "内定",
+   "baca": "ないてい · naitei",
+   "id": "tawaran kerja tak resmi"
+  },
+  {
+   "ja": "入社",
+   "baca": "にゅうしゃ · nyūsha",
+   "id": "masuk perusahaan"
+  },
+  {
+   "ja": "退職",
+   "baca": "たいしょく · taishoku",
+   "id": "berhenti kerja"
+  },
+  {
+   "ja": "転職",
+   "baca": "てんしょく · tenshoku",
+   "id": "pindah kerja"
+  },
+  {
+   "ja": "勤める",
+   "baca": "つとめる · tsutomeru",
+   "id": "bekerja di"
+  },
+  {
+   "ja": "勤務",
+   "baca": "きんむ · kinmu",
+   "id": "kerja, dinas"
+  },
+  {
+   "ja": "正社員",
+   "baca": "せいしゃいん · seishain",
+   "id": "karyawan tetap"
+  },
+  {
+   "ja": "契約社員",
+   "baca": "けいやくしゃいん · keiyaku shain",
+   "id": "karyawan kontrak"
+  },
+  {
+   "ja": "派遣",
+   "baca": "はけん · haken",
+   "id": "karyawan penyaluran"
+  },
+  {
+   "ja": "新卒",
+   "baca": "しんそつ · shinsotsu",
+   "id": "lulusan baru"
+  },
+  {
+   "ja": "中途採用",
+   "baca": "ちゅうとさいよう · chūto saiyō",
+   "id": "perekrutan berpengalaman"
+  },
+  {
+   "ja": "試用期間",
+   "baca": "しようきかん · shiyō kikan",
+   "id": "masa percobaan"
+  },
+  {
+   "ja": "年功序列",
+   "baca": "ねんこうじょれつ · nenkō joretsu",
+   "id": "kenaikan menurut senioritas"
+  },
+  {
+   "ja": "長所",
+   "baca": "ちょうしょ · chōsho",
+   "id": "kelebihan"
+  },
+  {
+   "ja": "短所",
+   "baca": "たんしょ · tansho",
+   "id": "kekurangan"
+  },
+  {
+   "ja": "強み",
+   "baca": "つよみ · tsuyomi",
+   "id": "kekuatan"
+  },
+  {
+   "ja": "課題",
+   "baca": "かだい · kadai",
+   "id": "pekerjaan rumah, hal yang perlu diperbaiki"
+  },
+  {
+   "ja": "待遇",
+   "baca": "たいぐう · taigū",
+   "id": "paket gaji dan fasilitas"
+  },
+  {
+   "ja": "年収",
+   "baca": "ねんしゅう · nenshū",
+   "id": "penghasilan tahunan"
+  },
+  {
+   "ja": "賞与",
+   "baca": "しょうよ · shōyo",
+   "id": "bonus"
+  },
+  {
+   "ja": "諸手当",
+   "baca": "しょてあて · shoteate",
+   "id": "aneka tunjangan"
+  },
+  {
+   "ja": "通勤",
+   "baca": "つうきん · tsūkin",
+   "id": "perjalanan ke tempat kerja"
+  },
+  {
+   "ja": "慎重",
+   "baca": "しんちょう · shinchō",
+   "id": "berhati-hati"
+  },
+  {
+   "ja": "判断",
+   "baca": "はんだん · handan",
+   "id": "penilaian, keputusan"
+  },
+  {
+   "ja": "期限",
+   "baca": "きげん · kigen",
+   "id": "tenggat"
+  },
+  {
+   "ja": "現職",
+   "baca": "げんしょく · genshoku",
+   "id": "pekerjaan sekarang"
+  },
+  {
+   "ja": "携わる",
+   "baca": "たずさわる · tazusawaru",
+   "id": "terlibat dalam"
+  },
+  {
+   "ja": "開拓する",
+   "baca": "かいたくする · kaitaku suru",
+   "id": "merintis, membuka (pasar)"
+  },
+  {
+   "ja": "新規",
+   "baca": "しんき · shinki",
+   "id": "baru"
+  },
+  {
+   "ja": "顧客",
+   "baca": "こきゃく · kokyaku",
+   "id": "pelanggan"
+  },
+  {
+   "ja": "売上",
+   "baca": "うりあげ · uriage",
+   "id": "penjualan"
+  },
+  {
+   "ja": "前年比",
+   "baca": "ぜんねんひ · zennenhi",
+   "id": "dibanding tahun sebelumnya"
+  },
+  {
+   "ja": "伸ばす",
+   "baca": "のばす · nobasu",
+   "id": "menaikkan, memperpanjang"
+  },
+  {
+   "ja": "削減する",
+   "baca": "さくげんする · sakugen suru",
+   "id": "memangkas"
+  },
+  {
+   "ja": "貢献する",
+   "baca": "こうけんする · kōken suru",
+   "id": "menyumbang"
+  },
+  {
+   "ja": "達成",
+   "baca": "たっせい · tassei",
+   "id": "pencapaian"
+  },
+  {
+   "ja": "生かす",
+   "baca": "いかす · ikasu",
+   "id": "memanfaatkan, menghidupkan"
+  },
+  {
+   "ja": "展開",
+   "baca": "てんかい · tenkai",
+   "id": "pengembangan, perluasan"
+  },
+  {
+   "ja": "現地",
+   "baca": "げんち · genchi",
+   "id": "lapangan, setempat"
+  },
+  {
+   "ja": "法人",
+   "baca": "ほうじん · hōjin",
+   "id": "badan hukum, entitas perusahaan"
+  },
+  {
+   "ja": "在留資格",
+   "baca": "ざいりゅうしかく · zairyū shikaku",
+   "id": "status izin tinggal"
+  },
+  {
+   "ja": "自信",
+   "baca": "じしん · jishin",
+   "id": "percaya diri"
+  },
+  {
+   "ja": "貴重",
+   "baca": "きちょう · kichō",
+   "id": "berharga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan として、において、を通じて、atau にとって.",
+   "items": [
+    "[営業|Eigyō][担当|tantō] ____ [三年間|san-nen-kan][働|hatara]いてまいりました。",
+    "この[分野|bun'ya] ____ [経験|keiken]がございます。",
+    "この[経験|keiken] ____ [多|ōk]くを[学|mana]びました。",
+    "[私|Watashi] ____ [大|ō]きな[転機|tenki]でした。",
+    "[友人|Yūjin] ____ この[会社|kaisha]を[知|shi]りました。",
+    "[通訳|Tsūyaku] ____ [参加|sanka]いたしました。"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam wawancara.",
+   "items": [
+    "[会社|Kaisha] (milik lawan bicara, lisan) → ____",
+    "[働|Hatara]く → ____",
+    "[辞|Ya]める → ____",
+    "いい[点|ten] → ____",
+    "[給料|Kyūryō] → ____",
+    "[思|Omo]う → ____"
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut merugikan pelamar. Perbaiki.",
+   "items": [
+    "❌[前|Mae]の[会社|kaisha]は[人間関係|ningen kankei]が[悪|waru]かったので[辞|ya]めました。",
+    "❌[御社|Onsha]の[理念|rinen]に[共感|kyōkan]しました。",
+    "❌[成長|Seichō]したいので[志望|shibō]しました。",
+    "❌[頑張|Ganba]りました。(sebagai capaian)",
+    "❌[特|Toku]に[質問|shitsumon]はありません。",
+    "❌[給料|Kyūryō]がいいからです。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat wawancara yang benar.",
+   "items": [
+    "として / [三年間|san-nen-kan] / [営業|eigyō][担当|tantō] / [勤|tsuto]めてまいりました",
+    "を / [国内|kokunai][市場|shijō] / [担当|tantō]しておりました / [前職|zenshoku]では",
+    "を / この[経験|keiken] / [通|tō]じて / [学|mana]びました",
+    "を / [売上|uriage] / [前年比|zennenhi][20|nijup]% / [伸|no]ばしました",
+    "と / [お役|o-yaku]に[立|ta]てるのではないか / [考|kanga]えております",
+    "を / [貴重|kichō]なお[時間|jikan] / [本日|honjitsu]は / いただき、ありがとうございました"
+   ]
+  },
+  {
+   "prompt": "Apa arti istilah pasar kerja berikut?",
+   "items": [
+    "[正社員|Seishain]",
+    "[中途採用|Chūto saiyō]",
+    "[内定|Naitei]",
+    "[試用期間|Shiyō kikan]",
+    "みなし[残業|zangyō]",
+    "[完全|Kanzen][週休|shūkyū][二日|futsuka][制|sei]"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat untuk tiap bagian wawancara.",
+   "items": [
+    "Membuka perkenalan diri: ____",
+    "Menyebut pengalaman kerjamu: ____",
+    "Menyebut capaian dengan angka: ____",
+    "Menyebut kelemahan beserta penanganannya: ____",
+    "Bertanya balik di akhir wawancara: ____",
+    "Menutup wawancara: ____"
+   ]
+  }
+ ],
+ "answers": [
+  "として — において — を[通|tō]じて — にとって — を[通|tō]して — として",
+  "[御社|Onsha] — [勤務|kinmu]する / [勤|tsuto]める — [退職|taishoku]する — [長所|chōsho] / [強|tsuyo]み — [待遇|taigū] / [年収|nenshū] — [存|zon]じる / [考|kanga]えております",
+  "より[幅広|habahiro]い[仕事|shigoto]に[挑戦|chōsen]したいと[考|kanga]え、[転職|tenshoku]を[決意|ketsui]いたしました — [御社|Onsha]が[現地|genchi][法人|hōjin]を[立|ta]ち[上|a]げられた[点|ten]に[強|tsuyo]く[関心|kanshin]を[持|mo]ちました — [自分|Jibun]の[経験|keiken]を[生|i]かして[御社|onsha]に[貢献|kōken]したいと[考|kanga]えております — [売上|Uriage]を[前年比|zennenhi][20|nijup]%[伸|no]ばしました — [入社|Nyūsha][後|go]、[最初|saisho]の[一年|ichi-nen]でどのようなことを[期待|kitai]されますか — [今後|Kongo]の[事業|jigyō][展開|tenkai]について[伺|ukaga]えますか",
+  "[営業|Eigyō][担当|tantō]として[三年間|san-nen-kan][勤|tsuto]めてまいりました — [前職|Zenshoku]では[国内|kokunai][市場|shijō]を[担当|tantō]しておりました — この[経験|keiken]を[通|tō]じて[学|mana]びました — [売上|Uriage]を[前年比|zennenhi][20|nijup]%[伸|no]ばしました — [お役|O-yaku]に[立|ta]てるのではないかと[考|kanga]えております — [本日|Honjitsu]は[貴重|kichō]なお[時間|jikan]をいただき、ありがとうございました",
+  "karyawan tetap dengan tunjangan penuh — perekrutan untuk yang sudah berpengalaman — tawaran kerja tak resmi tapi mengikat secara sosial — masa percobaan, biasanya tiga sampai enam bulan — sejumlah jam lembur sudah dianggap termasuk gaji — benar-benar dua hari libur tiap pekan",
+  "ランガと[申|mō]します。[本日|Honjitsu]はお[時間|jikan]をいただき、ありがとうございます — [現在|Genzai]は[営業|eigyō][担当|tantō]として[三年間|san-nen-kan][勤|tsuto]めてまいりました — [新規|Shinki][顧客|kokyaku]を[五十社|gojū-sha][開拓|kaitaku]し、[売上|uriage]を[前年比|zennenhi][20|nijup]%[伸|no]ばしました — [慎重|Shinchō]すぎるところがございますが、[現在|genzai]は[期限|kigen]を[先|saki]に[決|ki]めるようにしております — [入社|Nyūsha][後|go]、[最初|saisho]の[一年|ichi-nen]でどのようなことを[期待|kitai]されますか — [本日|Honjitsu]は[貴重|kichō]なお[時間|jikan]をいただき、ありがとうございました"
+ ],
+ "wave": "Lima menit sebelum Unit 13: tulis 志望動機-mu sendiri dalam tiga kalimat — apa yang sudah kamu punya, apa yang ingin kamu lakukan, dan kenapa tempat itu. Ucapkan keras-keras dalam empat puluh detik. Lalu jawab satu pertanyaan yang paling kamu takuti — kelemahanmu — dengan rangka dua bagian: apa kelemahannya, dan apa yang sudah kamu lakukan untuk mengatasinya."
+}

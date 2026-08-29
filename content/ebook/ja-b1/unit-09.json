@@ -1,0 +1,906 @@
+{
+ "title": "Badan yang tidak enak dan ruang periksa",
+ "title_target": "具合が悪いんです — Guai ga warui n desu",
+ "goal": "Menjelaskan gejala dengan tepat kepada dokter Jepang, memahami pertanyaan dan petunjuk yang akan kamu terima, serta berbicara tentang kebiasaan yang kamu ubah demi kesehatan.",
+ "bekal": [
+  "menyebut gejala dengan 〜がする、〜気味、〜っぽい",
+  "menjawab pertanyaan dokter tentang sejak kapan dan seberapa berat",
+  "membaca petunjuk minum obat di apotek",
+  "memakai 〜ようにする dan 〜ようになる untuk kebiasaan",
+  "membedakan 〜ことにする (saya putuskan) dan 〜ことになる (diputuskan)"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Di klinik",
+   "intro": "Rangga demam dan pergi ke klinik dekat rumah. Pertanyaan dokter Jepang hampir selalu sama urutannya, jadi begitu kamu hafal urutannya, seluruh kunjungan jadi mudah ditebak.",
+   "lines": [
+    {
+     "speaker": "受付:",
+     "text": "[保険証|Hokenshō]をお[預|azu]かりします。[問診票|Monshinhyō]にご[記入|kinyū]ください。",
+     "id": "Kartu asuransinya saya terima. Tolong isi formulir keluhan.",
+     "literal": "kartu-asuransi — akan — saya-titipi. formulir-keluhan — pada — isi (hormat) — silakan."
+    },
+    {
+     "speaker": "医者:",
+     "text": "どうされましたか。",
+     "id": "Ada keluhan apa?",
+     "literal": "bagaimana — Anda-lakukan (hormat, lampau) — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[一昨日|Ototoi]から[熱|netsu]があって、[喉|nodo]も[痛|ita]いんです。",
+     "id": "Sejak kemarin lusa saya demam, dan tenggorokan juga sakit.",
+     "literal": "kemarin-lusa — dari — panas — ada — dan, tenggorokan — juga — sakit — adalah."
+    },
+    {
+     "speaker": "医者:",
+     "text": "[何度|Nan-do]くらいありますか。",
+     "id": "Suhunya kira-kira berapa?",
+     "literal": "berapa-derajat — kira-kira — ada — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[朝|Asa]は[38度|sanjū-hachi-do][2分|ni-bu]でした。[今|Ima]は[少|suko]し[下|sa]がったみたいです。",
+     "id": "Pagi tadi 38,2 derajat. Sekarang sepertinya sedikit turun.",
+     "literal": "pagi — mengenai — 38-derajat — 2 — adalah (lampau). sekarang — mengenai — sedikit — turun (lampau) — sepertinya."
+    },
+    {
+     "speaker": "医者:",
+     "text": "[咳|Seki]は[出|de]ますか。[食欲|Shokuyoku]はいかがですか。",
+     "id": "Ada batuk? Bagaimana nafsu makannya?",
+     "literal": "batuk — mengenai — keluar — kah. nafsu-makan — mengenai — bagaimana — adalah — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[咳|Seki]は[少|suko]しだけです。[食欲|Shokuyoku]はあまりなくて、[吐|ha]き[気|ke]もします。",
+     "id": "Batuknya sedikit saja. Nafsu makan kurang, dan saya juga merasa mual.",
+     "literal": "batuk — mengenai — sedikit — hanya — adalah. nafsu-makan — mengenai — tidak-begitu — tidak-ada — dan, muntah-rasa — juga — melakukan."
+    },
+    {
+     "speaker": "医者:",
+     "text": "[口|Kuchi]を[開|a]けてください。……[喉|Nodo]がかなり[赤|aka]くなっていますね。",
+     "id": "Tolong buka mulutnya. …Tenggorokannya cukup merah ya.",
+     "literal": "mulut — akan — buka — silakan. …tenggorokan — yang — cukup — merah — menjadi — sedang — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[インフルエンザ|Infuruenza]でしょうか。[心配|Shinpai]で。",
+     "id": "Apa mungkin flu? Saya khawatir.",
+     "literal": "influenza — barangkali — kah. khawatir — dan."
+    },
+    {
+     "speaker": "医者:",
+     "text": "[念|Nen]のため[検査|kensa]しましょう。[結果|Kekka]は[十五分|jūgo-fun]ほどで[出|de]ます。",
+     "id": "Untuk memastikan, mari kita periksa. Hasilnya keluar sekitar lima belas menit.",
+     "literal": "hati-hati — demi — memeriksa — mari. hasil — mengenai — lima-belas-menit — kira-kira — dengan — keluar."
+    },
+    {
+     "speaker": "医者:",
+     "text": "[陰性|Insei]でしたら、[風邪薬|kazegusuri]を[出|da]しておきます。[水分|Suibun]をしっかり[取|to]るようにしてください。",
+     "id": "Kalau negatif, saya resepkan obat flu biasa. Usahakan minum cukup air.",
+     "literal": "negatif — kalau, obat-flu — akan — saya-keluarkan — siapkan. cairan — akan — cukup — ambil — usahakan — silakan."
+    }
+   ],
+   "notes": [
+    "**どうされましたか adalah pertanyaan pembuka dokter Jepang.** Bentuk 尊敬語 dari どうしましたか. Kembarannya di apotek dan resepsionis: [どうなさいましたか|Dō nasaimashita ka].",
+    "**38度2分 — suhu tubuh Jepang memakai 分 untuk angka di belakang koma.** 36度5分 dibaca [さんじゅうろくどごぶ|sanjū-roku-do go-bu]. Suhu normal orang Jepang dianggap sekitar 36,5°C, dan 37,5°C sudah dihitung demam.",
+    "**吐き気もします — 〜がする untuk rasa yang muncul di badan.** Rangkanya: [吐|ha]き[気|ke]がする (mual), [めまいがする|memai ga suru] (pusing berputar), [寒気|samuke]がする (menggigil), [耳鳴|miminari]りがする (telinga berdenging).",
+    "**～ようにしてください = usahakan ～.** Ia lebih lunak daripada ～てください, karena ia meminta **kebiasaan**, bukan satu perbuatan. Dokter Jepang hampir selalu memakainya.",
+    "**出しておきます — ておく di mulut dokter berarti “saya siapkan dulu untukmu”.** Bentuk ておく muncul di mana-mana dalam pelayanan Jepang.",
+    "**Kalau kamu tak punya 保険証, biayanya sepuluh kali lipat.** Asuransi kesehatan Jepang (国民健康保険 atau asuransi kantor) wajib bagi siapa pun yang tinggal lebih dari tiga bulan, dan menanggung 70% biaya."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut gejala: 〜がする、〜気味、〜っぽい",
+     "body": [
+      "Tiga rangka ini menutup hampir semua cara menyebut keadaan badan yang tidak enak tapi belum jelas penyakitnya."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "～がする",
+        "[吐|Ha]き[気|ke]がします。",
+        "terasa mual"
+       ],
+       [
+        "～がする",
+        "めまいがします。",
+        "kepala berputar"
+       ],
+       [
+        "～がする",
+        "[寒気|Samuke]がします。",
+        "menggigil"
+       ],
+       [
+        "～[気味|gimi]",
+        "[風邪|Kaze][気味|gimi]です。",
+        "agak flu, mulai flu"
+       ],
+       [
+        "～[気味|gimi]",
+        "[疲|Tsuka]れ[気味|gimi]です。",
+        "agak kelelahan"
+       ],
+       [
+        "～っぽい",
+        "[熱|Netsu]っぽいです。",
+        "rasanya demam"
+       ],
+       [
+        "～っぽい",
+        "[風邪|Kaze]っぽいです。",
+        "kayaknya kena flu"
+       ]
+      ]
+     },
+     "after": [
+      "**気味 dipakai untuk kecenderungan ringan yang sudah berlangsung**; っぽい untuk kesan sesaat. [太|Futo]り[気味|gimi] = agak kegemukan. [子供|Kodomo]っぽい = kekanak-kanakan.",
+      "⚠️ **痛い tidak memakai がする.** ❌[痛|ita]みがします。 ✅[頭|Atama]が[痛|ita]いです / [頭痛|zutsū]がします.",
+      "**Menyebut letak sakit:** 〜が[痛|ita]いです — bagian tubuhnya memakai が, bukan は."
+     ]
+    },
+    {
+     "title": "Kata untuk bagian tubuh dan rasa sakit",
+     "body": [
+      "Dokter Jepang akan bertanya rinci tentang **jenis** sakitnya, bukan hanya letaknya. Kata-kata tiruan bunyi berikut adalah cara orang Jepang membedakannya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Jenis sakitnya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ズキズキ",
+        "berdenyut",
+        "[頭|Atama]がズキズキします。"
+       ],
+       [
+        "キリキリ",
+        "menusuk tajam",
+        "[胃|I]がキリキリ[痛|ita]みます。"
+       ],
+       [
+        "シクシク",
+        "nyeri tumpul terus-menerus",
+        "お[腹|naka]がシクシク[痛|ita]みます。"
+       ],
+       [
+        "ヒリヒリ",
+        "perih seperti terbakar",
+        "[喉|Nodo]がヒリヒリします。"
+       ],
+       [
+        "ガンガン",
+        "berdentum keras",
+        "[頭|Atama]がガンガンします。"
+       ],
+       [
+        "ムカムカ",
+        "mual bergolak",
+        "[胃|I]がムカムカします。"
+       ],
+       [
+        "だるい",
+        "lemas, berat",
+        "[体|Karada]がだるいです。"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata tiruan bunyi (擬音語・擬態語) bukan bahasa anak-anak.** Dokter Jepang benar-benar memakainya untuk mendiagnosis, dan menjawab dengan kata yang tepat mempercepat pemeriksaan.",
+      "**Bagian tubuh yang sering disebut:** [頭|atama] · [喉|nodo] · [胸|mune] · お[腹|naka] · [胃|i] · [腰|koshi] · [背中|senaka] · [肩|kata] · [関節|kansetsu] · [歯|ha].",
+      "⚠️ お[腹|naka] adalah perut secara umum; [胃|i] adalah lambung. Dokter akan menanyakan bedanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Sesudah sembuh: kebiasaan yang berubah",
+   "intro": "Seminggu kemudian, Rangga bercerita kepada Sato. Dialog ini adalah gudang bentuk 〜ようにする dan 〜ことになる — dua rangka yang membedakan keputusanmu sendiri dari keputusan yang jatuh kepadamu.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "もう[大丈夫|daijōbu]ですか。[顔色|Kaoiro]、よくなりましたね。",
+     "id": "Sudah baikan? Warna wajahnya sudah membaik ya.",
+     "literal": "sudah — tak-apa — adalah — kah. warna-wajah, baik — menjadi (lampau) — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "おかげさまで。[三日|Mikka][休|yasu]ませていただいて、すっかり[治|nao]りました。",
+     "id": "Berkat doa Anda. Saya diizinkan libur tiga hari, dan sekarang sudah sembuh total.",
+     "literal": "berkat — pada. tiga-hari — diizinkan-libur — dan, sepenuhnya — sembuh (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "よかった。[無理|Muri]しないでくださいね。",
+     "id": "Syukurlah. Jangan memaksakan diri ya.",
+     "literal": "baik (lampau). memaksa — jangan — silakan — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[今回|Konkai]のことで、[少|suko]し[生活|seikatsu]を[変|ka]えることにしました。",
+     "id": "Ya. Gara-gara kejadian ini, saya memutuskan mengubah sedikit pola hidup.",
+     "literal": "kali-ini — punya — hal — dengan, sedikit — kehidupan — akan — mengubah — hal — saya-putuskan (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "へえ、[何|nani]を？",
+     "id": "Oh ya, apa saja?",
+     "literal": "oh, apa — akan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[毎晩|Maiban][十二時|jūni-ji]までに[寝|ne]るようにしています。あと、[朝|asa][歩|aru]くようにしました。",
+     "id": "Saya usahakan tidur sebelum jam dua belas tiap malam. Selain itu, saya mulai membiasakan jalan pagi.",
+     "literal": "tiap-malam — jam-dua-belas — sebelum — tidur — supaya — sedang-lakukan. lalu, pagi — berjalan — supaya — saya-lakukan (lampau)."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "いいですね。[私|Watashi]も[去年|kyonen]から[階段|kaidan]を[使|tsuka]うようになりました。",
+     "id": "Bagus ya. Saya juga sejak tahun lalu jadi terbiasa memakai tangga.",
+     "literal": "baik — ya. saya — juga — tahun-lalu — dari — tangga — akan — memakai — supaya — menjadi (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[効果|Kōka]、ありました？",
+     "id": "Ada hasilnya?",
+     "literal": "efek, ada (lampau) — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[三|San]キロ[痩|ya]せました。[最初|Saisho]は[大変|taihen]でしたが、[今|ima]は[平気|heiki]です。",
+     "id": "Turun tiga kilo. Awalnya berat, tapi sekarang biasa saja.",
+     "literal": "tiga — kilo — kurus (lampau). awal — mengenai — berat — adalah — tapi, sekarang — mengenai — tak-apa — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[私|Watashi]も[続|tsuzu]けられるといいんですが。[三日坊主|Mikkabōzu]になりそうで。",
+     "id": "Semoga saya juga bisa bertahan. Kelihatannya bakal cuma tahan tiga hari.",
+     "literal": "saya — juga — bisa-melanjutkan — kalau — baik — adalah — tapi. rahib-tiga-hari — menjadi — tampaknya — dan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[大丈夫|Daijōbu]。[来月|Raigetsu]から[部|bu]で[健康|kenkō][診断|shindan]があることになりましたから、[励|hage]みになりますよ。",
+     "id": "Tidak apa-apa. Mulai bulan depan sudah diputuskan ada pemeriksaan kesehatan di bagian kita, jadi itu jadi pendorong.",
+     "literal": "tak-apa. bulan-depan — dari — bagian — di — kesehatan — pemeriksaan — yang — ada — hal — menjadi (lampau) — sebab, dorongan — menjadi — lho."
+    }
+   ],
+   "notes": [
+    "**おかげさまで = “berkat Anda / berkat doa semua orang”.** Jawaban baku atas pertanyaan tentang kesehatan atau kabar. Ia diucapkan bahkan kepada orang yang tak berbuat apa-apa — persis seperti “alhamdulillah” yang otomatis.",
+    "**治る vs 直る.** [治|nao]る untuk badan yang sembuh; [直|nao]る untuk barang yang diperbaiki. Bunyinya sama, kanjinya beda.",
+    "**ことにしました vs ことになりました.** Yang pertama: saya yang memutuskan. Yang kedua: keputusannya datang dari luar (perusahaan, keadaan). Ini pembedaan yang sangat khas Jepang.",
+    "**Perhatikan baris terakhir.** Sato memakai ことになりました untuk keputusan perusahaan, padahal mungkin saja dia ikut memutuskannya. Orang Jepang sering memakai ことになる **walau keputusannya sendiri**, supaya tidak terdengar memaksakan kehendak. ⚠️ Ini bukan kebohongan; ia kesopanan.",
+    "**三日坊主 harfiahnya “rahib tiga hari”.** Peribahasa untuk orang yang selalu berhenti sebelum kebiasaannya menempel. Sangat sering dipakai dan selalu tentang diri sendiri.",
+    "**励みになる = jadi pendorong semangat.** Kembarannya: [刺激|shigeki]になる (jadi rangsangan), [勉強|benkyō]になる (jadi pelajaran — ucapan wajib setelah mendengar cerita berguna)."
+   ],
+   "grammars": [
+    {
+     "title": "ようにする・ようになる・ことにする・ことになる",
+     "body": [
+      "Empat rangka yang tampak mirip dan sering tertukar. Dua sumbu memisahkannya: **ように untuk usaha bertahap, ことに untuk keputusan sekali jadi**; **する untuk yang kamu putuskan, なる untuk yang jatuh kepadamu**."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～ようにする",
+        "berusaha membiasakan",
+        "[毎日|Mainichi][歩|aru]くようにしています。"
+       ],
+       [
+        "～ようになる",
+        "jadi terbiasa / jadi bisa",
+        "[漢字|Kanji]が[読|yo]めるようになりました。"
+       ],
+       [
+        "～ないようにする",
+        "berusaha tidak",
+        "[遅|Oku]れないようにします。"
+       ],
+       [
+        "～ことにする",
+        "saya memutuskan",
+        "[会社|Kaisha]を[辞|ya]めることにしました。"
+       ],
+       [
+        "～ことになる",
+        "sudah diputuskan (dari luar)",
+        "[大阪|Ōsaka]に[転勤|tenkin]することになりました。"
+       ],
+       [
+        "～ことになっている",
+        "sudah jadi aturan",
+        "[九時|Ku-ji]までに[来|く]ることになっています。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **ようになる hanya untuk perubahan bertahap.** ❌[明日|Ashita][行|i]くようになります。 Untuk keputusan sekali jadi pakai ことになります.",
+      "**Bentuk penyangkalan ようになる:** [食|Ta]べ**なく**なりました (jadi tidak makan lagi) — bukan 食べないようになりました.",
+      "**ことになっている adalah cara menyebut aturan tanpa menunjuk siapa yang membuatnya.** ここでは[禁煙|kin'en]ということになっております。"
+     ]
+    },
+    {
+     "title": "Petunjuk minum obat — membaca label apotek",
+     "body": [
+      "Label obat Jepang memakai kata-kata yang sama setiap kali. Begitu kamu mengenali enam pola berikut, semua resep bisa dibaca."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Cara baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "[1日3回|ichinichi san-kai]",
+        "ichinichi sankai",
+        "tiga kali sehari"
+       ],
+       [
+        "[毎食後|maishokugo]",
+        "maishokugo",
+        "sesudah tiap kali makan"
+       ],
+       [
+        "[食前|shokuzen]",
+        "shokuzen",
+        "sebelum makan"
+       ],
+       [
+        "[食間|shokkan]",
+        "shokkan",
+        "di antara dua waktu makan (bukan saat makan)"
+       ],
+       [
+        "[就寝前|shūshinmae]",
+        "shūshin mae",
+        "sebelum tidur"
+       ],
+       [
+        "[頓服|tonpuku]",
+        "tonpuku",
+        "diminum saat gejalanya muncul saja"
+       ],
+       [
+        "[7日分|nanoka-bun]",
+        "nanoka-bun",
+        "untuk tujuh hari"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **食間 sering disalahartikan.** Ia berarti **di antara** waktu makan — kira-kira dua jam sesudah makan — bukan sambil makan.",
+      "**Di apotek kamu akan ditanya:** お[薬手帳|kusuri techō]はお[持|mo]ちですか — buku catatan obat, dibawa tiap kali. Buatlah satu; ia gratis dan memudahkan semua kunjungan berikutnya.",
+      "**Alergi obat:** [〜にアレルギーがあります|〜ni arerugī ga arimasu]。 Kalimat ini wajib kamu hafal sebelum ke rumah sakit mana pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rumah sakit Jepang: alur dan kata-katanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Alur berobat di Jepang selalu sama, dan tempat orang asing paling sering tersesat adalah memilih bagian (診療科) yang benar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Cara baca",
+      "Untuk keluhan"
+     ],
+     "rows": [
+      [
+       "[内科|naika]",
+       "naika",
+       "demam, flu, perut, keluhan umum"
+      ],
+      [
+       "[外科|geka]",
+       "geka",
+       "luka, patah, operasi"
+      ],
+      [
+       "[整形外科|seikei geka]",
+       "seikei geka",
+       "tulang, sendi, pinggang, olahraga"
+      ],
+      [
+       "[耳鼻科|jibika]",
+       "jibika",
+       "telinga, hidung, tenggorokan"
+      ],
+      [
+       "[眼科|ganka]",
+       "ganka",
+       "mata"
+      ],
+      [
+       "[歯科|shika]",
+       "shika",
+       "gigi"
+      ],
+      [
+       "[皮膚科|hifuka]",
+       "hifuka",
+       "kulit"
+      ],
+      [
+       "[小児科|shōnika]",
+       "shōnika",
+       "anak"
+      ],
+      [
+       "[産婦人科|sanfujinka]",
+       "sanfujinka",
+       "kandungan dan kebidanan"
+      ],
+      [
+       "[心療内科|shinryō naika]",
+       "shinryō naika",
+       "kesehatan jiwa, stres"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Urutan kunjungan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**受付** — serahkan [保険証|hokenshō] dan [診察券|shinsatsuken] (kartu pasien; dibuat sekali di kunjungan pertama).",
+      "**問診票** — isi formulir: gejala, sejak kapan, riwayat penyakit, obat yang sedang diminum, alergi.",
+      "**待合室** — menunggu dipanggil. Nomor antrean, bukan nama, di rumah sakit besar.",
+      "**診察** — pemeriksaan dokter.",
+      "**会計** — bayar di kasir; biasanya 30% dari total kalau punya asuransi.",
+      "**薬局** — apotek terpisah dari rumah sakit; bawa [処方箋|shohōsen] (resep) ke sana. ⚠️ Resep berlaku hanya **4 hari**."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat wajib di ruang periksa",
+     "items": [
+      "[一昨日|Ototoi]から[具合|guai]が[悪|waru]いんです。 — Sejak kemarin lusa badan saya tidak enak.",
+      "[熱|Netsu]が[38度|sanjū-hachi-do]あります。 — Suhu saya 38 derajat.",
+      "[薬|Kusuri]のアレルギーはありません。 — Saya tidak punya alergi obat.",
+      "[今|Ima][飲|no]んでいる[薬|kusuri]はこれです。 — Ini obat yang sedang saya minum.",
+      "[妊娠|Ninshin]しています。 — Saya sedang hamil. (wajib disampaikan sebelum obat apa pun)",
+      "[英語|Eigo]が[話|hana]せる[先生|sensei]はいらっしゃいますか。 — Ada dokter yang bisa bahasa Inggris?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sehat, lelah, dan bicara tentang badan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di luar ruang periksa, keadaan badan adalah bahan percakapan sehari-hari — dan cara menanyakannya adalah salah satu tanda kedekatan dalam hubungan Jepang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Kalimat",
+      "Nadanya"
+     ],
+     "rows": [
+      [
+       "Kelihatan lelah",
+       "お[疲|tsuka]れのようですね。",
+       "perhatian sopan"
+      ],
+      [
+       "Menanyakan kabar",
+       "[体調|Taichō]はいかがですか。",
+       "sopan"
+      ],
+      [
+       "Menyuruh istirahat",
+       "[無理|Muri]なさらないでください。",
+       "sopan"
+      ],
+      [
+       "Sesudah sakit",
+       "お[大事|daiji]に。",
+       "wajib, saat berpisah dengan yang sakit"
+      ],
+      [
+       "Menjawab kabar baik",
+       "おかげさまで、すっかり[良|yo]くなりました。",
+       "sopan"
+      ],
+      [
+       "Mengeluh ringan",
+       "[最近|Saikin][寝不足|nebusoku]で。",
+       "santai"
+      ],
+      [
+       "Lelah berat",
+       "[体|Karada]がだるくて。",
+       "santai"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kebiasaan sehat — kalimat yang bisa langsung dipakai"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[毎朝|Maiasa][三十分|sanjuppun][歩|aru]くようにしています。 — Saya usahakan jalan tiga puluh menit tiap pagi.",
+      "[甘|Ama]いものを[控|hika]えるようにしました。 — Saya mulai mengurangi yang manis-manis.",
+      "[夜|Yoru][遅|oso]く[食|ta]べないようにしています。 — Saya berusaha tidak makan malam terlalu larut.",
+      "[前|Mae]より[早|haya]く[起|o]きられるようになりました。 — Saya jadi bisa bangun lebih pagi daripada sebelumnya.",
+      "[健康|Kenkō]のために[お酒|o-sake]を[やめ|yame]ることにしました。 — Demi kesehatan saya putuskan berhenti minum.",
+      "⚠️ 控える (menahan, mengurangi) adalah kata yang sangat Jepang: ia tidak berarti berhenti, melainkan **mengurangi dengan sadar**."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: badanmu tahun ini",
+     "items": [
+      "Bicaralah empat puluh detik tentang kesehatanmu, keras-keras:",
+      "Satu keluhan: [最近|Saikin]〜[気味|gimi]です。 atau 〜がします。",
+      "Sejak kapan: 〜から[続|tsuzu]いています。",
+      "Kebiasaan yang kamu usahakan: 〜ようにしています。",
+      "Perubahan yang sudah terjadi: 〜ようになりました。",
+      "Keputusan baru: 〜ことにしました。 Tutup: [続|Tsuzu]けられるといいんですが。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "具合",
+   "baca": "ぐあい · guai",
+   "id": "keadaan badan"
+  },
+  {
+   "ja": "保険証",
+   "baca": "ほけんしょう · hokenshō",
+   "id": "kartu asuransi kesehatan"
+  },
+  {
+   "ja": "診察券",
+   "baca": "しんさつけん · shinsatsuken",
+   "id": "kartu pasien"
+  },
+  {
+   "ja": "問診票",
+   "baca": "もんしんひょう · monshinhyō",
+   "id": "formulir keluhan"
+  },
+  {
+   "ja": "診察",
+   "baca": "しんさつ · shinsatsu",
+   "id": "pemeriksaan dokter"
+  },
+  {
+   "ja": "診療科",
+   "baca": "しんりょうか · shinryōka",
+   "id": "bagian/poli"
+  },
+  {
+   "ja": "内科",
+   "baca": "ないか · naika",
+   "id": "penyakit dalam"
+  },
+  {
+   "ja": "外科",
+   "baca": "げか · geka",
+   "id": "bedah"
+  },
+  {
+   "ja": "耳鼻科",
+   "baca": "じびか · jibika",
+   "id": "THT"
+  },
+  {
+   "ja": "皮膚科",
+   "baca": "ひふか · hifuka",
+   "id": "kulit"
+  },
+  {
+   "ja": "処方箋",
+   "baca": "しょほうせん · shohōsen",
+   "id": "resep dokter"
+  },
+  {
+   "ja": "薬局",
+   "baca": "やっきょく · yakkyoku",
+   "id": "apotek"
+  },
+  {
+   "ja": "熱",
+   "baca": "ねつ · netsu",
+   "id": "demam"
+  },
+  {
+   "ja": "喉",
+   "baca": "のど · nodo",
+   "id": "tenggorokan"
+  },
+  {
+   "ja": "咳",
+   "baca": "せき · seki",
+   "id": "batuk"
+  },
+  {
+   "ja": "鼻水",
+   "baca": "はなみず · hanamizu",
+   "id": "ingus"
+  },
+  {
+   "ja": "食欲",
+   "baca": "しょくよく · shokuyoku",
+   "id": "nafsu makan"
+  },
+  {
+   "ja": "吐き気",
+   "baca": "はきけ · hakike",
+   "id": "mual"
+  },
+  {
+   "ja": "めまい",
+   "baca": "memai",
+   "id": "pusing berputar"
+  },
+  {
+   "ja": "寒気",
+   "baca": "さむけ · samuke",
+   "id": "menggigil"
+  },
+  {
+   "ja": "だるい",
+   "baca": "darui",
+   "id": "lemas, badan berat"
+  },
+  {
+   "ja": "胃",
+   "baca": "い · i",
+   "id": "lambung"
+  },
+  {
+   "ja": "腰",
+   "baca": "こし · koshi",
+   "id": "pinggang"
+  },
+  {
+   "ja": "背中",
+   "baca": "せなか · senaka",
+   "id": "punggung"
+  },
+  {
+   "ja": "肩",
+   "baca": "かた · kata",
+   "id": "bahu"
+  },
+  {
+   "ja": "関節",
+   "baca": "かんせつ · kansetsu",
+   "id": "sendi"
+  },
+  {
+   "ja": "検査",
+   "baca": "けんさ · kensa",
+   "id": "pemeriksaan laboratorium"
+  },
+  {
+   "ja": "結果",
+   "baca": "けっか · kekka",
+   "id": "hasil"
+  },
+  {
+   "ja": "陰性",
+   "baca": "いんせい · insei",
+   "id": "negatif (hasil tes)"
+  },
+  {
+   "ja": "陽性",
+   "baca": "ようせい · yōsei",
+   "id": "positif (hasil tes)"
+  },
+  {
+   "ja": "インフルエンザ",
+   "baca": "infuruenza",
+   "id": "flu berat, influenza"
+  },
+  {
+   "ja": "風邪薬",
+   "baca": "かぜぐすり · kazegusuri",
+   "id": "obat flu"
+  },
+  {
+   "ja": "水分",
+   "baca": "すいぶん · suibun",
+   "id": "cairan"
+  },
+  {
+   "ja": "アレルギー",
+   "baca": "arerugī",
+   "id": "alergi"
+  },
+  {
+   "ja": "毎食後",
+   "baca": "まいしょくご · maishokugo",
+   "id": "sesudah tiap makan"
+  },
+  {
+   "ja": "食前",
+   "baca": "しょくぜん · shokuzen",
+   "id": "sebelum makan"
+  },
+  {
+   "ja": "食間",
+   "baca": "しょっかん · shokkan",
+   "id": "di antara waktu makan"
+  },
+  {
+   "ja": "就寝前",
+   "baca": "しゅうしんまえ · shūshin mae",
+   "id": "sebelum tidur"
+  },
+  {
+   "ja": "頓服",
+   "baca": "とんぷく · tonpuku",
+   "id": "diminum saat gejala muncul"
+  },
+  {
+   "ja": "治る",
+   "baca": "なおる · naoru",
+   "id": "sembuh"
+  },
+  {
+   "ja": "顔色",
+   "baca": "かおいろ · kaoiro",
+   "id": "warna wajah"
+  },
+  {
+   "ja": "おかげさまで",
+   "baca": "okagesama de",
+   "id": "berkat semuanya"
+  },
+  {
+   "ja": "無理する",
+   "baca": "むりする · muri suru",
+   "id": "memaksakan diri"
+  },
+  {
+   "ja": "健康診断",
+   "baca": "けんこうしんだん · kenkō shindan",
+   "id": "pemeriksaan kesehatan berkala"
+  },
+  {
+   "ja": "効果",
+   "baca": "こうか · kōka",
+   "id": "hasil, khasiat"
+  },
+  {
+   "ja": "痩せる",
+   "baca": "やせる · yaseru",
+   "id": "menjadi kurus"
+  },
+  {
+   "ja": "控える",
+   "baca": "ひかえる · hikaeru",
+   "id": "mengurangi, menahan"
+  },
+  {
+   "ja": "寝不足",
+   "baca": "ねぶそく · nebusoku",
+   "id": "kurang tidur"
+  },
+  {
+   "ja": "三日坊主",
+   "baca": "みっかぼうず · mikkabōzu",
+   "id": "orang yang cepat menyerah"
+  },
+  {
+   "ja": "励みになる",
+   "baca": "はげみになる · hagemi ni naru",
+   "id": "jadi pendorong semangat"
+  },
+  {
+   "ja": "お大事に",
+   "baca": "おだいじに · o-daiji ni",
+   "id": "semoga cepat sembuh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan がします、気味です、atau っぽいです.",
+   "items": [
+    "[吐|Ha]き[気|ke] ____ 。",
+    "[風邪|Kaze] ____ で、[喉|nodo]が[痛|ita]いです。",
+    "[熱|Netsu] ____ ので、[今日|kyō]は[休|yasu]みます。",
+    "めまい ____ 。",
+    "[最近|Saikin][疲|tsuka]れ ____ 。",
+    "[寒気|Samuke] ____ 。"
+   ]
+  },
+  {
+   "prompt": "Pilih ようにする、ようになる、ことにする、atau ことになる.",
+   "items": [
+    "[毎日|Mainichi][歩|aru]く ____ 。(saya usahakan, kebiasaan)",
+    "[漢字|Kanji]が[読|yo]める ____ ました。(jadi bisa)",
+    "[会社|Kaisha]を[辞|ya]める ____ ました。(saya putuskan)",
+    "[大阪|Ōsaka]に[転勤|tenkin]する ____ ました。(diputuskan perusahaan)",
+    "[遅|Oku]れない ____ ています。(berusaha tidak)",
+    "[九時|Ku-ji]までに[来|く]る ____ ています。(sudah jadi aturan)"
+   ]
+  },
+  {
+   "prompt": "Cocokkan keluhan dengan bagian rumah sakit yang tepat.",
+   "items": [
+    "[熱|Netsu]と[咳|seki] → ____",
+    "[歯|Ha]が[痛|ita]い → ____",
+    "[腰|Koshi]を[痛|ita]めた → ____",
+    "[目|Me]がかゆい → ____",
+    "[肌|Hada]に[湿疹|shisshin]が[出|de]た → ____",
+    "[耳|Mimi]が[聞|ki]こえにくい → ____"
+   ]
+  },
+  {
+   "prompt": "Apa arti petunjuk obat berikut?",
+   "items": [
+    "[1日3回|Ichinichi san-kai][毎食後|maishokugo]",
+    "[食間|Shokkan]",
+    "[就寝前|Shūshin mae]",
+    "[頓服|Tonpuku]",
+    "[7日分|Nanoka-bun]",
+    "[食前|Shokuzen]"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "から / [熱|netsu]が / [一昨日|ototoi] / あって / [喉|nodo]も[痛|ita]いんです",
+    "を / [水分|suibun] / [取|to]るように / しっかり / してください",
+    "に / [十二時|jūni-ji]までに / [毎晩|maiban] / [寝|ne]るように / しています",
+    "が / [健康|kenkō][診断|shindan] / [来月|raigetsu]から / あることになりました",
+    "を / [甘|ama]いもの / [控|hika]えるように / しました",
+    "に / お[大事|daiji] / どうぞ"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Sejak kemarin saya demam dan tenggorokan sakit.",
+    "Saya merasa mual dan agak pusing.",
+    "Saya tidak punya alergi obat.",
+    "Saya usahakan tidur sebelum jam dua belas tiap malam.",
+    "Saya jadi bisa membaca koran Jepang.",
+    "Sudah diputuskan saya dipindahtugaskan ke Osaka bulan depan."
+   ]
+  }
+ ],
+ "answers": [
+  "がします — [気味|gimi] — っぽい — がします — [気味|gimi]です — がします",
+  "ようにしています — ようになり — ことにし — ことになり — ようにし — ことになっ",
+  "[内科|naika] — [歯科|shika] — [整形外科|seikei geka] — [眼科|ganka] — [皮膚科|hifuka] — [耳鼻科|jibika]",
+  "tiga kali sehari sesudah tiap makan — di antara dua waktu makan — sebelum tidur — hanya saat gejalanya muncul — untuk tujuh hari — sebelum makan",
+  "[一昨日|Ototoi]から[熱|netsu]があって[喉|nodo]も[痛|ita]いんです — [水分|Suibun]をしっかり[取|to]るようにしてください — [毎晩|Maiban][十二時|jūni-ji]までに[寝|ne]るようにしています — [来月|Raigetsu]から[健康|kenkō][診断|shindan]があることになりました — [甘|Ama]いものを[控|hika]えるようにしました — どうぞお[大事|daiji]に",
+  "[昨日|Kinō]から[熱|netsu]があって、[喉|nodo]が[痛|ita]いんです — [吐|Ha]き[気|ke]がして、[少|suko]しめまいもします — [薬|Kusuri]のアレルギーはありません — [毎晩|Maiban][十二時|jūni-ji]までに[寝|ne]るようにしています — [日本|Nihon]の[新聞|shinbun]が[読|yo]めるようになりました — [来月|Raigetsu][大阪|Ōsaka]に[転勤|tenkin]することになりました"
+ ],
+ "wave": "Lima menit sebelum Unit 10: bayangkan kamu duduk di depan dokter Jepang. Ucapkan keras-keras, tanpa berhenti: sejak kapan, gejala apa saja (pakai 〜がします dan 〜気味), seberapa berat, obat yang sedang kamu minum, dan alergimu. Lalu tambahkan satu kalimat tentang kebiasaan yang akan kamu ubah dengan 〜ようにします. Kalau kamu tersendat di bagian gejala, ulang tabel kata tiruan bunyi — di ruang periksa Jepang, kata itulah yang paling menentukan."
+}

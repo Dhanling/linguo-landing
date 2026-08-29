@@ -1,0 +1,896 @@
+{
+ "title": "Kabar burung, dugaan, dan kepastian",
+ "title_target": "そうだ・ようだ・らしい — Sō da · Yō da · Rashii",
+ "goal": "Menyampaikan kabar yang kamu dengar dari orang lain, menduga dari bukti yang kamu lihat sendiri, dan menyatakan seberapa yakin kamu — dari “mungkin” sampai “pasti” — dengan bentuk yang tepat.",
+ "bekal": [
+  "membedakan 〜そうだ kabar (伝聞) dan 〜そうだ penampakan (様態)",
+  "menduga dengan ようだ・みたいだ dari bukti yang kamu lihat sendiri",
+  "memakai らしい untuk kabar yang beredar dan untuk sifat khas",
+  "menyusun tangga keyakinan: かもしれない → はず → にちがいない",
+  "menyebut sumber kabar dengan 〜によると"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Gosip kantor dan cuaca",
+   "intro": "Sato dan Rangga bertukar kabar di pagi hari. Perhatikan bahwa hampir tak satu pun kalimat mereka dinyatakan sebagai fakta — bahasa Jepang selalu menandai dari mana sebuah kabar datang.",
+   "lines": [
+    {
+     "speaker": "佐藤:",
+     "text": "[聞|Ki]きました？[来年|Rainen]、[大阪|Ōsaka]に[支店|shiten]ができるそうですよ。",
+     "id": "Sudah dengar? Katanya tahun depan akan ada cabang di Osaka.",
+     "literal": "sudah-dengar — kah. tahun-depan, Osaka — pada — cabang — yang — jadi — katanya — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "え、[本当|hontō]ですか。[誰|Dare]から[聞|ki]いたんですか。",
+     "id": "Eh, benarkah? Dengar dari siapa?",
+     "literal": "eh, sungguh — adalah — kah. siapa — dari — dengar — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[経理|Keiri]の[山田|Yamada]さんです。[会議|Kaigi]で[話|hana]が[出|de]たらしいです。",
+     "id": "Yamada-san dari bagian keuangan. Katanya kabarnya keluar di rapat.",
+     "literal": "keuangan — punya — Yamada — orang — adalah. rapat — di — pembicaraan — yang — keluar (lampau) — katanya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "じゃあ、[誰|dare]かが[転勤|tenkin]になるかもしれませんね。",
+     "id": "Kalau begitu, mungkin ada yang akan dipindahtugaskan ya.",
+     "literal": "kalau-begitu, siapa — pun — yang — pindah-tugas — menjadi — mungkin — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[私|Watashi]は[大丈夫|daijōbu]だと[思|omo]いますけど…[高橋|Takahashi][部長|buchō]は[行|i]きそうですね。",
+     "id": "Saya rasa saya aman sih… tapi Pak Takahashi kelihatannya akan pergi.",
+     "literal": "saya — mengenai — tak-apa — begitu — saya-pikir — tapi… Takahashi — kepala-bagian — mengenai — pergi — tampaknya — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "どうしてそう[思|omo]うんですか。",
+     "id": "Kenapa Anda berpikir begitu?",
+     "literal": "kenapa — begitu — berpikir — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[最近|Saikin]、[大阪|Ōsaka]の[資料|shiryō]ばかり[見|mi]てるんですよ。[何|Nani]かあるはずです。",
+     "id": "Belakangan beliau melihat berkas Osaka melulu. Pasti ada apa-apanya.",
+     "literal": "belakangan, Osaka — punya — berkas — melulu — melihat — sedang — adalah — lho. apa — pun — ada — semestinya — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "なるほど。[鋭|Surudo]いですね。",
+     "id": "Oh begitu. Tajam juga ya.",
+     "literal": "begitu-rupanya. tajam — adalah — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "あ、そういえば[今日|kyō]、[午後|gogo]から[雨|ame]が[降|fu]るみたいですよ。[傘|Kasa][持|mo]ってます？",
+     "id": "Ah, ngomong-ngomong hari ini kelihatannya dari siang akan hujan. Bawa payung?",
+     "literal": "ah, kalau-begitu-disebut — hari-ini, sore — dari — hujan — yang — turun — sepertinya — lho. payung — bawa — sedang — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[持|Mo]ってません。[天気予報|Tenki yohō]、そんなに[悪|waru]かったですか。",
+     "id": "Tidak bawa. Ramalan cuacanya seburuk itu?",
+     "literal": "tidak-bawa. ramalan-cuaca, sebegitu — buruk — adalah — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[空|Sora]、[見|mi]てください。[今|Ima]にも[降|fu]りそうじゃないですか。",
+     "id": "Coba lihat langitnya. Bukankah sebentar lagi mau turun?",
+     "literal": "langit, lihat — silakan. sekarang — pun — pada — turun — tampaknya — bukan — adalah — kah."
+    }
+   ],
+   "notes": [
+    "**できるそうです vs 降りそうです — dua そうだ yang berbeda.** Yang pertama menempel pada **bentuk biasa** dan berarti “katanya”. Yang kedua menempel pada **batang kata kerja** dan berarti “tampaknya akan”. Bentuknya mirip, artinya jauh.",
+    "**らしい di sini berarti kabar yang beredar.** Bedanya dengan そうだ: そうだ punya sumber yang jelas dan dipercaya; らしい lebih longgar — kabarnya beredar, kebenarannya belum tentu. Kalau kamu tidak mau bertanggung jawab atas kabarnya, pakai らしい.",
+    "**はずです = menurut perhitungan saya, semestinya begitu.** Ia bukan tebakan liar; ia kesimpulan dari alasan yang bisa disebutkan. ⚠️ ❌明日は雨のはずです kalau kamu hanya menebak — pakai かもしれません.",
+    "**みたいです adalah versi santai dari ようです.** Artinya sama persis; yang berbeda hanya tingkat kesopanannya. 📄 Dalam tulisan resmi selalu ようだ, tidak pernah みたいだ.",
+    "**そういえば = “ngomong-ngomong, jadi ingat”.** Kata sambung yang sangat berguna untuk berpindah topik dengan mulus. Kembarannya: [ところで|tokoro de] (omong-omong, lebih formal), [そうそう|sō sō] (oh iya! 🗣).",
+    "**今にも～そう = sebentar lagi mau ～.** Rangka tetap untuk sesuatu yang hampir terjadi: [今|Ima]にも[泣|na]きそうな[顔|kao] — wajah yang hampir menangis."
+   ],
+   "grammars": [
+    {
+     "title": "Dua そうだ yang harus dipisahkan",
+     "body": [
+      "Ini pasangan yang paling sering tertukar di tingkat B1. Untungnya pembedanya bukan makna, melainkan **bentuk yang dilekati** — jadi bisa dipastikan dari mata, bukan dari rasa."
+     ],
+     "table": {
+      "head": [
+       "",
+       "伝聞 (katanya)",
+       "様態 (tampaknya)"
+      ],
+      "rows": [
+       [
+        "Kata kerja",
+        "[降|fu]る**そうだ**",
+        "[降|fu]り**そうだ**"
+       ],
+       [
+        "Kata sifat い",
+        "[高|taka]い**そうだ**",
+        "[高|taka]**そうだ**"
+       ],
+       [
+        "Kata sifat な",
+        "[元気|genki]だ**そうだ**",
+        "[元気|genki]**そうだ**"
+       ],
+       [
+        "Kata benda",
+        "[学生|gakusei]だ**そうだ**",
+        "— (tidak ada)"
+       ],
+       [
+        "Lampau",
+        "[降|fu]った**そうだ**",
+        "[降|fu]り**そうだった**"
+       ],
+       [
+        "Menyangkal",
+        "[降|fu]らない**そうだ**",
+        "[降|fu]り**そうにない**"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturan sederhananya:** kalau ada bentuk lengkap (る・い・だ) sebelum そうだ, itu **kabar**. Kalau bentuknya terpotong, itu **penampakan**.",
+      "⚠️ **いい dan ない tidak beraturan dalam 様態:** [よさそう|yosasō] · [なさそう|nasasō]. ❌いそう ❌なそう.",
+      "**様態 boleh menerangkan kata benda:** おいしそうな[ケーキ|kēki] — kue yang kelihatan enak. **伝聞 tidak bisa.**"
+     ]
+    },
+    {
+     "title": "ようだ・みたいだ・らしい — tiga dugaan",
+     "body": [
+      "Ketiganya bisa diterjemahkan “sepertinya”, tapi sumber keyakinannya berbeda, dan orang Jepang mendengar bedanya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Dasarnya",
+       "Contoh",
+       "Nadanya"
+      ],
+      "rows": [
+       [
+        "ようだ",
+        "bukti yang kuamati sendiri",
+        "[誰|Dare]かいるようだ。",
+        "kesimpulan pribadi, agak resmi"
+       ],
+       [
+        "みたいだ",
+        "sama, versi santai",
+        "[誰|Dare]かいるみたいだ。",
+        "percakapan"
+       ],
+       [
+        "らしい",
+        "kabar dari luar",
+        "[彼|Kare]は[結婚|kekkon]するらしい。",
+        "menjaga jarak dari kabarnya"
+       ],
+       [
+        "らしい (khas)",
+        "sesuai citranya",
+        "[今日|Kyō]は[春|haru]らしい[天気|tenki]だ。",
+        "khas musim semi"
+       ],
+       [
+        "ようだ (perumpamaan)",
+        "seperti halnya",
+        "[夢|Yume]のようだ。",
+        "seperti mimpi"
+       ],
+       [
+        "ような気がする",
+        "firasat",
+        "どこかで[会|a]ったような[気|ki]がする。",
+        "rasanya pernah"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua らしい yang berbeda.** [男|Otoko]らしい[人|hito] = orang yang jantan (khas). [男|Otoko]の[人|hito]らしい = sepertinya laki-laki (dugaan). Yang membedakan: らしい khas menempel langsung pada kata benda telanjang.",
+      "⚠️ **ようだ sesudah kata benda butuh の:** [子供|kodomo]**の**ようだ ✅ / ❌子供ようだ. **みたいだ tidak butuh:** [子供|kodomo]みたいだ ✅.",
+      "📄 Ragam tulis memakai ようだ dan **ようです**; らしい dan みたい jarang muncul di laporan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Menebak sebab yang belum jelas",
+   "intro": "Sore hari, kereta berhenti. Rangga dan Sato menebak-nebak apa yang terjadi. Seluruh dialog ini adalah tangga keyakinan, dari yang paling lemah sampai yang paling yakin.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[電車|Densha]、[止|to]まってますね。[事故|Jiko]でしょうか。",
+     "id": "Keretanya berhenti ya. Kecelakaan barangkali?",
+     "literal": "kereta, berhenti — sedang — ya. kecelakaan — barangkali — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[アナウンス|Anaunsu]によると、[人身事故|jinshin jiko]だそうです。",
+     "id": "Menurut pengumumannya, katanya kecelakaan yang melibatkan orang.",
+     "literal": "pengumuman — menurut, kecelakaan-orang — adalah — katanya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうですか…[だいぶ|daibu][時間|jikan]がかかりそうですね。",
+     "id": "Begitu ya… kelihatannya akan makan waktu lama.",
+     "literal": "begitu — adalah — kah… cukup — waktu — yang — memakan — tampaknya — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[人身事故|Jinshin jiko]だと、[一時間|ichi-jikan]は[動|うご]かないはずです。",
+     "id": "Kalau kecelakaan orang, semestinya satu jam tidak akan bergerak.",
+     "literal": "kecelakaan-orang — kalau, satu-jam — mengenai — tidak-bergerak — semestinya — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[バス|Basu]に[乗|no]り[換|ka]えたほうがいいかもしれませんね。",
+     "id": "Mungkin lebih baik pindah ke bus ya.",
+     "literal": "bus — ke — berpindah-naik — lebih-baik — mungkin — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "でも[バス|basu]も[混|ko]んでるにちがいないですよ。みんな[同|ona]じこと[考|kanga]えますから。",
+     "id": "Tapi busnya pasti penuh juga. Semua orang pasti berpikir hal yang sama.",
+     "literal": "tapi — bus — juga — penuh — sedang — pasti — adalah — lho. semua — sama — hal — berpikir — sebab."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "たしかに。[歩|Aru]いたら[何分|nanpun]くらいかかりますか。",
+     "id": "Benar juga. Kalau jalan kaki kira-kira berapa menit?",
+     "literal": "memang. kalau-berjalan — berapa-menit — kira-kira — memakan — kah."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[三十分|Sanjuppun]ぐらいでしょう。[天気|Tenki]もよさそうだし、[歩|aru]きましょうか。",
+     "id": "Sekitar tiga puluh menit lah. Cuacanya juga kelihatan bagus, mau jalan kaki saja?",
+     "literal": "tiga-puluh-menit — kira-kira — barangkali. cuaca — juga — baik — tampaknya — dan-lagi, mari-berjalan — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうしましょう。あ、[部長|buchō]に[遅|oku]れると[伝|tsuta]えたほうがいいですよね。",
+     "id": "Ayo. Ah, sebaiknya kabari Pak Kepala kalau kita terlambat ya.",
+     "literal": "begitu — mari-lakukan. ah, kepala-bagian — kepada — terlambat — begitu — menyampaikan — lebih-baik — adalah — ya."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[部長|Buchō]はもう[知|shi]ってるはずです。[ニュース|Nyūsu]になってますから。",
+     "id": "Pak Kepala pasti sudah tahu. Karena sudah jadi berita.",
+     "literal": "kepala-bagian — mengenai — sudah — tahu — sedang — semestinya — adalah. berita — menjadi — sedang — sebab."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "それもそうですね。じゃ、[行|i]きましょう。",
+     "id": "Benar juga. Kalau begitu, ayo jalan.",
+     "literal": "itu — juga — begitu — adalah — ya. kalau-begitu, mari-pergi."
+    }
+   ],
+   "notes": [
+    "**～によると menyebut sumber kabar, dan hampir selalu berpasangan dengan そうだ.** [天気予報|Tenki yohō]によると、[明日|ashita]は[雨|ame]だそうです。 📄 Ini rangka baku dalam berita dan laporan.",
+    "**はずです muncul dua kali, dan keduanya berdasar alasan.** Sato tidak menebak — ia tahu bahwa kecelakaan semacam itu menghentikan kereta sekitar satu jam, dan bahwa berita menyebar cepat.",
+    "**にちがいない = pasti, tidak mungkin salah.** Ia lebih yakin daripada はず, tapi tetap dugaan — bukan fakta yang kamu saksikan. ⚠️ Jangan memakainya untuk hal yang kamu lihat sendiri: ❌雨が降っているにちがいない kalau kamu sedang kehujanan.",
+    "**でしょう melunakkan tebakan.** [三十分|Sanjuppun]ぐらいでしょう = kira-kira tiga puluh menit lah. Dengan nada naik ia jadi pertanyaan; dengan nada turun ia dugaan. ⚠️ Kepada atasan, pakai でしょうか.",
+    "**それもそうですね = “benar juga”.** Cara mengakui bahwa lawan bicara benar tanpa mengakui bahwa kamu tadi keliru. Kembarannya: [たしかに|tashika ni] (memang benar).",
+    "**人身事故 adalah kata yang akan sering kamu dengar di Jepang.** Ia menyebut kecelakaan yang melibatkan orang di rel — sering kali bunuh diri. Pengumumannya sengaja tidak menyebut rinciannya."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga keyakinan",
+     "body": [
+      "Bahasa Jepang menandai seberapa yakin pembicara dengan sangat rinci. Memakai bentuk yang terlalu yakin membuatmu terdengar ceroboh; yang terlalu ragu membuatmu terdengar tak dapat diandalkan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Keyakinan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～かもしれない",
+        "±30%",
+        "[遅|Oku]れるかもしれません。"
+       ],
+       [
+        "～でしょう",
+        "±50%",
+        "[遅|Oku]れるでしょう。"
+       ],
+       [
+        "～と[思|omo]う",
+        "±60%, pendapat pribadi",
+        "[遅|Oku]れると[思|omo]います。"
+       ],
+       [
+        "～ようだ / みたいだ",
+        "±70%, dari bukti",
+        "[遅|Oku]れているようです。"
+       ],
+       [
+        "～はずだ",
+        "±85%, dari perhitungan",
+        "[遅|Oku]れるはずです。"
+       ],
+       [
+        "～にちがいない",
+        "±95%",
+        "[遅|Oku]れるにちがいない。"
+       ],
+       [
+        "～に[決|ki]まっている",
+        "100%, dan agak kasar",
+        "[遅|Oku]れるに[決|ki]まってる。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **はず punya bentuk yang khas untuk harapan yang meleset:** [来|Ku]るはずだったんですが… — Semestinya dia datang, tapi… Bentuk ini dipakai saat perhitunganmu ternyata salah.",
+      "**Penyangkalan はず ada dua:** [来|Ko]ないはずです (semestinya tidak datang) vs [来|Ku]るはずがありません (tidak mungkin datang). Yang kedua jauh lebih kuat.",
+      "🗣 に[決|ki]まってる terdengar seperti memotong lawan bicara. Hindari di kantor."
+     ]
+    },
+    {
+     "title": "Menyampaikan kabar orang lain",
+     "body": [
+      "Empat rangka ini menutup hampir semua cara menyampaikan kabar dalam bahasa Jepang. Yang membedakannya adalah seberapa jauh kamu berdiri dari kabarnya."
+     ],
+     "table": {
+      "head": [
+       "Rangka",
+       "Contoh",
+       "Jarakmu dari kabar itu"
+      ],
+      "rows": [
+       [
+        "～そうです",
+        "[明日|Ashita]は[雨|ame]だそうです。",
+        "saya dengar dari sumber jelas"
+       ],
+       [
+        "～らしいです",
+        "[明日|Ashita]は[雨|ame]らしいです。",
+        "kabarnya begitu; saya tak menjamin"
+       ],
+       [
+        "～と[言|i]っていました",
+        "[田中|Tanaka]さんが[明日|ashita]は[雨|ame]だと[言|i]っていました。",
+        "saya mengutip orangnya"
+       ],
+       [
+        "～って",
+        "[明日|Ashita][雨|ame]だって。",
+        "🗣 santai"
+       ],
+       [
+        "～によると…そうです",
+        "[予報|Yohō]によると[雨|ame]だそうです。",
+        "sumber disebutkan, paling rapi"
+       ],
+       [
+        "～とのことです",
+        "[明日|Ashita]は[中止|chūshi]とのことです。",
+        "📄 resmi, surel kantor"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **そうです kabar tidak punya bentuk lampau di ujungnya.** ❌雨だそうでした。 Yang lampau adalah isinya: [雨|Ame]だったそうです。",
+      "**とのことです adalah bentuk kantor yang sangat berguna** — ia menyampaikan pesan orang lain tanpa menambahkan penilaianmu sendiri.",
+      "**Mengutip pertanyaan:** [何時|Nan-ji]に[来|く]るか[聞|ki]かれました。 — Saya ditanya jam berapa akan datang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca, musim, dan bencana",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cuaca adalah topik pembuka nomor satu di Jepang, dan ia juga lapangan latihan terbaik untuk seluruh bentuk dugaan. Sebagian kosakata di bawah ini bukan basa-basi: Jepang adalah negeri gempa dan topan, dan istilah-istilah ini muncul di pengumuman darurat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "[梅雨|tsuyu]",
+       "tsuyu",
+       "musim hujan Juni–Juli"
+      ],
+      [
+       "[猛暑|mōsho]",
+       "mōsho",
+       "panas ekstrem"
+      ],
+      [
+       "[真夏日|manatsubi]",
+       "manatsubi",
+       "hari dengan suhu di atas 30°C"
+      ],
+      [
+       "[台風|taifū]",
+       "taifū",
+       "topan"
+      ],
+      [
+       "[大雨警報|ōame keihō]",
+       "ōame keihō",
+       "peringatan hujan lebat"
+      ],
+      [
+       "[地震|jishin]",
+       "jishin",
+       "gempa bumi"
+      ],
+      [
+       "[震度|shindo]",
+       "shindo",
+       "skala guncangan Jepang (0–7)"
+      ],
+      [
+       "[余震|yoshin]",
+       "yoshin",
+       "gempa susulan"
+      ],
+      [
+       "[津波|tsunami]",
+       "tsunami",
+       "tsunami"
+      ],
+      [
+       "[避難|hinan]",
+       "hinan",
+       "mengungsi"
+      ],
+      [
+       "[停電|teiden]",
+       "teiden",
+       "listrik padam"
+      ],
+      [
+       "[運休|unkyū]",
+       "unkyū",
+       "perjalanan dibatalkan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Membuka percakapan dengan cuaca"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[今日|Kyō]は[暑|atsu]いですね。 — Hari ini panas ya. (pembuka paling aman di Jepang)",
+      "すっかり[秋|aki]らしくなりましたね。 — Sudah benar-benar terasa musim gugur ya.",
+      "[明日|Ashita]は[崩|kuzu]れるみたいですよ。 — Besok kelihatannya cuacanya memburuk.",
+      "[今年|Kotoshi]の[梅雨|tsuyu]は[長|naga]いそうです。 — Katanya musim hujan tahun ini panjang.",
+      "[台風|Taifū]が[近|chika]づいているらしいです。 — Kabarnya topan sedang mendekat.",
+      "⚠️ Di Jepang, membuka percakapan dengan cuaca bukan basa-basi kosong — ia tanda bahwa kamu tahu adat. Melewatkannya membuat pembukaanmu terasa terlalu langsung."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau gempa terjadi",
+     "items": [
+      "[地震|Jishin]です。[机|Tsukue]の[下|shita]に[入|hai]ってください。 — Gempa. Masuk ke bawah meja.",
+      "[エレベーター|Erebētā]は[使|tsuka]わないでください。 — Jangan pakai lift.",
+      "[避難所|Hinanjo]はどこですか。 — Di mana tempat pengungsian?",
+      "[火|Hi]を[消|ke]してください。 — Matikan api.",
+      "Aplikasi yang wajib dipasang kalau tinggal di Jepang: **NHK ニュース・防災** dan **Safety tips** (berbahasa Inggris).",
+      "⚠️ Peringatan gempa muncul di ponsel beberapa detik sebelum guncangan — bunyinya keras dan mengagetkan. Itu bekerja seperti yang dimaksudkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca tanda-tanda: menduga dengan sopan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kemampuan menduga dengan hati-hati adalah keterampilan sosial di Jepang, bukan sekadar tata bahasa. Menyatakan sesuatu terlalu pasti — apalagi tentang perasaan orang lain — dianggap lancang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang ingin kamu katakan",
+      "❌ Terlalu pasti",
+      "✅ Sepantasnya"
+     ],
+     "rows": [
+      [
+       "Dia sedang marah",
+       "[怒|Oko]っています。",
+       "[怒|Oko]っているようです。"
+      ],
+      [
+       "Dia tidak suka itu",
+       "[嫌|Kira]いです。",
+       "あまりお[好|su]きじゃないみたいです。"
+      ],
+      [
+       "Dia lelah",
+       "[疲|Tsuka]れています。",
+       "お[疲|tsuka]れのようですね。"
+      ],
+      [
+       "Anda salah",
+       "[間違|Machiga]っています。",
+       "[何|Nani]かの[間違|machiga]いではないでしょうか。"
+      ],
+      [
+       "Itu tidak mungkin",
+       "[無理|Muri]です。",
+       "[難|Muzuka]しいかもしれません。"
+      ],
+      [
+       "Dia akan berhenti kerja",
+       "[辞|Ya]めます。",
+       "[辞|Ya]めるらしいですよ。"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyatakan perasaan orang lain — aturan khusus"
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Jepang **melarang** menyatakan perasaan orang lain secara langsung. ❌[彼|Kare]は[寂|sabi]しいです。 Yang benar salah satu dari tiga: [寂|Sabi]し**そう**です (kelihatan sedih), [寂|Sabi]し**がって**います (menunjukkan tanda-tanda sedih), atau [寂|Sabi]しい**んでしょう** (barangkali sedih). Aturan ini juga berlaku untuk [欲|ho]しい, [〜たい|〜tai], [うれしい|ureshii], [怖|kowa]い — semua kata rasa. Bentuk 〜がる dibongkar tuntas di Unit 15."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu kabar dan satu tebakan",
+     "items": [
+      "Ceritakan satu kabar yang kamu dengar minggu ini, keras-keras:",
+      "Sumber: [〜によると、〜そうです|〜ni yoru to, 〜sō desu]。",
+      "Kabar longgar: [〜らしいです|〜rashii desu]。",
+      "Buktimu sendiri: [〜ようです。〜からです|〜yō desu. 〜kara desu]。",
+      "Tebakanmu: [〜かもしれません|〜kamo shiremasen]。",
+      "Kesimpulan yang lebih yakin: [〜はずです|〜hazu desu]。 atau [〜にちがいありません|〜ni chigai arimasen]。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "支店",
+   "baca": "してん · shiten",
+   "id": "kantor cabang"
+  },
+  {
+   "ja": "経理",
+   "baca": "けいり · keiri",
+   "id": "bagian keuangan"
+  },
+  {
+   "ja": "転勤",
+   "baca": "てんきん · tenkin",
+   "id": "pindah tugas antarkota"
+  },
+  {
+   "ja": "鋭い",
+   "baca": "するどい · surudoi",
+   "id": "tajam (pengamatan)"
+  },
+  {
+   "ja": "そういえば",
+   "baca": "sō ieba",
+   "id": "ngomong-ngomong, jadi ingat"
+  },
+  {
+   "ja": "ところで",
+   "baca": "tokoro de",
+   "id": "omong-omong"
+  },
+  {
+   "ja": "空",
+   "baca": "そら · sora",
+   "id": "langit"
+  },
+  {
+   "ja": "今にも",
+   "baca": "いまにも · ima ni mo",
+   "id": "sebentar lagi, hampir"
+  },
+  {
+   "ja": "アナウンス",
+   "baca": "anaunsu",
+   "id": "pengumuman"
+  },
+  {
+   "ja": "人身事故",
+   "baca": "じんしんじこ · jinshin jiko",
+   "id": "kecelakaan yang melibatkan orang"
+  },
+  {
+   "ja": "だいぶ",
+   "baca": "daibu",
+   "id": "cukup banyak, lumayan"
+  },
+  {
+   "ja": "乗り換える",
+   "baca": "のりかえる · norikaeru",
+   "id": "berganti kendaraan"
+  },
+  {
+   "ja": "たしかに",
+   "baca": "tashika ni",
+   "id": "memang benar"
+  },
+  {
+   "ja": "予報",
+   "baca": "よほう · yohō",
+   "id": "ramalan"
+  },
+  {
+   "ja": "とのこと",
+   "baca": "to no koto",
+   "id": "demikian kabarnya (resmi)"
+  },
+  {
+   "ja": "中止",
+   "baca": "ちゅうし · chūshi",
+   "id": "pembatalan"
+  },
+  {
+   "ja": "梅雨",
+   "baca": "つゆ · tsuyu",
+   "id": "musim hujan Jepang"
+  },
+  {
+   "ja": "猛暑",
+   "baca": "もうしょ · mōsho",
+   "id": "panas ekstrem"
+  },
+  {
+   "ja": "真夏日",
+   "baca": "まなつび · manatsubi",
+   "id": "hari di atas 30 derajat"
+  },
+  {
+   "ja": "台風",
+   "baca": "たいふう · taifū",
+   "id": "topan"
+  },
+  {
+   "ja": "警報",
+   "baca": "けいほう · keihō",
+   "id": "peringatan bahaya"
+  },
+  {
+   "ja": "地震",
+   "baca": "じしん · jishin",
+   "id": "gempa bumi"
+  },
+  {
+   "ja": "震度",
+   "baca": "しんど · shindo",
+   "id": "skala guncangan"
+  },
+  {
+   "ja": "余震",
+   "baca": "よしん · yoshin",
+   "id": "gempa susulan"
+  },
+  {
+   "ja": "津波",
+   "baca": "つなみ · tsunami",
+   "id": "tsunami"
+  },
+  {
+   "ja": "避難",
+   "baca": "ひなん · hinan",
+   "id": "mengungsi"
+  },
+  {
+   "ja": "避難所",
+   "baca": "ひなんじょ · hinanjo",
+   "id": "tempat pengungsian"
+  },
+  {
+   "ja": "停電",
+   "baca": "ていでん · teiden",
+   "id": "listrik padam"
+  },
+  {
+   "ja": "運休",
+   "baca": "うんきゅう · unkyū",
+   "id": "perjalanan dibatalkan"
+  },
+  {
+   "ja": "崩れる",
+   "baca": "くずれる · kuzureru",
+   "id": "runtuh; cuaca memburuk"
+  },
+  {
+   "ja": "近づく",
+   "baca": "ちかづく · chikazuku",
+   "id": "mendekat"
+  },
+  {
+   "ja": "消す",
+   "baca": "けす · kesu",
+   "id": "memadamkan"
+  },
+  {
+   "ja": "机",
+   "baca": "つくえ · tsukue",
+   "id": "meja"
+  },
+  {
+   "ja": "防災",
+   "baca": "ぼうさい · bōsai",
+   "id": "kesiapsiagaan bencana"
+  },
+  {
+   "ja": "はず",
+   "baca": "hazu",
+   "id": "semestinya, menurut perhitungan"
+  },
+  {
+   "ja": "にちがいない",
+   "baca": "ni chigai nai",
+   "id": "pasti begitu"
+  },
+  {
+   "ja": "かもしれない",
+   "baca": "kamo shirenai",
+   "id": "mungkin"
+  },
+  {
+   "ja": "に決まっている",
+   "baca": "にきまっている · ni kimatte iru",
+   "id": "sudah pasti lah"
+  },
+  {
+   "ja": "間違い",
+   "baca": "まちがい · machigai",
+   "id": "kesalahan"
+  },
+  {
+   "ja": "辞める",
+   "baca": "やめる · yameru",
+   "id": "berhenti kerja"
+  },
+  {
+   "ja": "寂しい",
+   "baca": "さびしい · sabishii",
+   "id": "kesepian"
+  },
+  {
+   "ja": "怖い",
+   "baca": "こわい · kowai",
+   "id": "takut, menakutkan"
+  },
+  {
+   "ja": "動く",
+   "baca": "うごく · ugoku",
+   "id": "bergerak"
+  },
+  {
+   "ja": "混む",
+   "baca": "こむ · komu",
+   "id": "penuh sesak"
+  },
+  {
+   "ja": "夢",
+   "baca": "ゆめ · yume",
+   "id": "mimpi"
+  },
+  {
+   "ja": "気がする",
+   "baca": "きがする · ki ga suru",
+   "id": "ada perasaan bahwa"
+  },
+  {
+   "ja": "すっかり",
+   "baca": "sukkari",
+   "id": "sepenuhnya, sudah benar-benar"
+  },
+  {
+   "ja": "同じ",
+   "baca": "おなじ · onaji",
+   "id": "sama"
+  },
+  {
+   "ja": "結婚する",
+   "baca": "けっこんする · kekkon suru",
+   "id": "menikah"
+  },
+  {
+   "ja": "ニュース",
+   "baca": "nyūsu",
+   "id": "berita"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi 伝聞 (~そうです, “katanya”).",
+   "items": [
+    "[明日|Ashita]は[雨|ame]です。→ ____",
+    "[彼|Kare]は[来|こ]ません。→ ____",
+    "その[店|mise]は[高|taka]いです。→ ____",
+    "[試験|Shiken]は[難|muzuka]しかったです。→ ____",
+    "[田中|Tanaka]さんは[元気|genki]です。→ ____",
+    "[支店|Shiten]ができます。→ ____"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi 様態 (~そうです, “tampaknya akan / kelihatan”).",
+   "items": [
+    "[雨|Ame]が[降|fu]ります。→ ____",
+    "この[ケーキ|kēki]はおいしいです。→ ____",
+    "[彼|Kare]は[元気|genki]です。→ ____",
+    "この[本|hon]はいいです。→ ____",
+    "お[金|kane]がありません。→ ____",
+    "[今|Ima]にも[泣|na]きます。→ ____"
+   ]
+  },
+  {
+   "prompt": "Pilih ようだ、らしい、atau はずだ yang paling pas.",
+   "items": [
+    "[電気|Denki]がついている。[誰|Dare]か[家|ie]にいる ____ 。(saya lihat sendiri)",
+    "[山田|Yamada]さんが[言|i]ってた。[部長|Buchō]が[転勤|tenkin]する ____ 。(kabar beredar)",
+    "[彼|Kare]は[朝|asa][出|で]た。もう[着|tsu]いている ____ 。(perhitungan)",
+    "[今日|Kyō]は[本当|hontō]に[春|haru] ____ [天気|tenki]だ。(khas musim semi)",
+    "[道|Michi]が[濡|nu]れている。[雨|Ame]が[降|fu]った ____ 。(bukti yang saya lihat)",
+    "[招待状|Shōtaijō]を[出|da]した。[届|Todo]いている ____ 。(perhitungan)"
+   ]
+  },
+  {
+   "prompt": "Urutkan dari yang paling ragu ke yang paling yakin. Tulis angka 1 sampai 6.",
+   "items": [
+    "[遅|Oku]れるはずです。",
+    "[遅|Oku]れるかもしれません。",
+    "[遅|Oku]れるにちがいありません。",
+    "[遅|Oku]れると[思|omo]います。",
+    "[遅|Oku]れるでしょう。",
+    "[遅|Oku]れているようです。"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "そうです / [支店|shiten]が / [来年|rainen] / できる / [大阪|Ōsaka]に",
+    "らしいです / [出|de]た / [会議|kaigi]で / [話|hanashi]が",
+    "はずです / [動|ugo]かない / [一時間|ichi-jikan]は",
+    "によると / だそうです / [人身事故|jinshin jiko] / [アナウンス|anaunsu]",
+    "にちがいない / [混|ko]んでいる / [バス|basu]も",
+    "みたいですよ / [降|fu]る / [午後|gogo]から / [雨|ame]が"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimat yang salah.",
+   "items": [
+    "❌[彼|Kare]は[寂|sabi]しいです。(tentang orang lain)",
+    "❌[明日|Ashita]は[雨|ame]だそうでした。",
+    "❌この[ケーキ|kēki]はおいしいそうな[顔|kao]。(maksudnya: kelihatan enak)",
+    "❌[子供|Kodomo]ようだ。",
+    "❌[雨|Ame]が[降|fu]らなさそうだ。",
+    "❌この[本|hon]はいそうです。(maksudnya: kelihatan bagus)"
+   ]
+  }
+ ],
+ "answers": [
+  "[明日|Ashita]は[雨|ame]だそうです — [彼|Kare]は[来|こ]ないそうです — その[店|mise]は[高|taka]いそうです — [試験|Shiken]は[難|muzuka]しかったそうです — [田中|Tanaka]さんは[元気|genki]だそうです — [支店|Shiten]ができるそうです",
+  "[雨|Ame]が[降|fu]りそうです — この[ケーキ|kēki]はおいしそうです — [彼|Kare]は[元気|genki]そうです — この[本|hon]はよさそうです — お[金|kane]がなさそうです — [今|Ima]にも[泣|na]きそうです",
+  "ようだ — らしい — はずだ — らしい — ようだ — はずだ",
+  "5 — 1 — 6 — 3 — 2 — 4",
+  "[来年|Rainen][大阪|Ōsaka]に[支店|shiten]ができるそうです — [会議|Kaigi]で[話|hanashi]が[出|de]たらしいです — [一時間|Ichi-jikan]は[動|ugo]かないはずです — [アナウンス|Anaunsu]によると[人身事故|jinshin jiko]だそうです — [バス|Basu]も[混|ko]んでいるにちがいない — [午後|Gogo]から[雨|ame]が[降|fu]るみたいですよ",
+  "[彼|Kare]は[寂|sabi]しそうです — [明日|Ashita]は[雨|ame]だそうです — おいしそうな[顔|kao] — [子供|Kodomo]のようだ — [雨|Ame]が[降|fu]りそうにない — この[本|hon]はよさそうです"
+ ],
+ "wave": "Lima menit sebelum Unit 8: ambil tiga kabar dari lini masamu hari ini. Sampaikan yang pertama dengan 〜そうです (sebutkan sumbernya dengan によると), yang kedua dengan 〜らしいです, dan yang ketiga dengan dugaanmu sendiri: 〜ようです、だから〜はずです. Lalu tambahkan satu kalimat tentang cuaca besok memakai 〜みたいです. Kalau keempatnya keluar tanpa berhenti, unit ini sudah menempel."
+}

@@ -1,0 +1,863 @@
+{
+ "title": "Mengeluh dan meminta maaf",
+ "title_target": "申し訳ございません — Mōshiwake gozaimasen",
+ "goal": "Menyampaikan keluhan yang jelas tanpa menyerang orang, dan meminta maaf dengan bentuk yang setara dengan besarnya kesalahan — dua keterampilan yang di Jepang lebih menentukan daripada tata bahasa mana pun.",
+ "bekal": [
+  "menyampaikan keluhan dengan rangka: fakta → akibat → permintaan",
+  "memakai 〜てしまう dan 〜たまま untuk kesalahan dan keadaan yang tertinggal",
+  "menyusun tangga permintaan maaf dari ごめん sampai 深くお詫び申し上げます",
+  "memakai 〜のに dan 〜くせに, dan tahu kapan yang kedua terlalu tajam",
+  "menyampaikan keluhan tetangga tanpa merusak hubungan"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Barang yang datang rusak",
+   "intro": "Rangga menelepon toko daring. Perhatikan bahwa keluhannya tidak pernah menuduh siapa pun — ia hanya menyebut fakta, akibat, dan apa yang ia inginkan.",
+   "lines": [
+    {
+     "speaker": "店員:",
+     "text": "お[電話|denwa]ありがとうございます。カスタマーサポートでございます。",
+     "id": "Terima kasih atas teleponnya. Dukungan pelanggan di sini.",
+     "literal": "telepon — terima-kasih. dukungan-pelanggan — adalah (hormat)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[先週|Senshū][注文|chūmon]した[商品|shōhin]のことで[伺|ukaga]いたいのですが。",
+     "id": "Saya ingin menanyakan soal barang yang saya pesan minggu lalu.",
+     "literal": "pekan-lalu — memesan (lampau) — barang — punya — hal — dengan — ingin-bertanya — adalah — tapi."
+    },
+    {
+     "speaker": "店員:",
+     "text": "はい、ご[注文|chūmon][番号|bangō]をお[伺|ukaga]いできますでしょうか。",
+     "id": "Baik, boleh saya tanyakan nomor pesanan Anda?",
+     "literal": "ya, pesanan — nomor — akan — bertanya — bisa — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[1234|Ichi-ni-san-yon]-[5678|go-roku-nana-hachi]です。[昨日|Kinō][届|todo]いたのですが、[箱|hako]が[潰|tsubu]れていて。",
+     "id": "1234-5678. Kemarin sampai, tapi kotaknya penyok.",
+     "literal": "1234-5678 — adalah. kemarin — sampai (lampau) — adalah — tapi, kotak — yang — remuk — sedang — dan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[中|Naka]の[画面|gamen]にも[ひび|hibi]が[入|hai]ってしまっているんです。",
+     "id": "Layar yang di dalamnya juga sudah telanjur retak.",
+     "literal": "dalam — punya — layar — pada — juga — retak — yang — masuk — telanjur — sedang — adalah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[大変|Taihen][申|mō]し[訳|wake]ございません。ご[不便|fuben]をおかけいたしました。",
+     "id": "Mohon maaf sebesar-besarnya. Kami telah menyusahkan Anda.",
+     "literal": "sangat — tak-terkatakan — tidak-ada. ketidaknyamanan — akan — menimpakan — kami-lakukan (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[写真|Shashin]を[撮|to]ってありますので、お[送|oku]りしましょうか。",
+     "id": "Saya sudah memotretnya, mau saya kirimkan?",
+     "literal": "foto — akan — memotret — sudah-ada — karena, kirim — mari-saya-lakukan — kah."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[助|Tasu]かります。[交換|Kōkan]と[返金|henkin]、どちらをご[希望|kibō]でしょうか。",
+     "id": "Sangat membantu. Penggantian atau pengembalian uang, mana yang Anda inginkan?",
+     "literal": "tertolong. penukaran — dan — pengembalian-uang, mana — akan — harapan — barangkali — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "できれば[交換|kōkan]でお[願|nega]いします。[急|iso]いでいるので、[早|hayame]に[届|todo]けていただけると[助|tasu]かります。",
+     "id": "Kalau bisa, tolong penggantian saja. Saya sedang terburu-buru, jadi kalau bisa dikirim cepat sangat membantu.",
+     "literal": "kalau-bisa — penukaran — dengan — mohon. terburu — sedang — karena, awal — pada — mengantarkan — kalau-bisa-saya-terima — tertolong."
+    },
+    {
+     "speaker": "店員:",
+     "text": "[承知|Shōchi]いたしました。[本日中|Honjitsu-jū]に[発送|hassō]し、[明後日|asatte]にはお[届|todo]けできる[見込|mikomi]みです。",
+     "id": "Baik. Kami kirim hari ini juga, perkiraannya lusa sudah sampai.",
+     "literal": "paham — kami-lakukan. dalam-hari-ini — pada — pengiriman — dan, lusa — pada — mengenai — mengantarkan — bisa — perkiraan — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ありがとうございます。[丁寧|Teinei]にご[対応|taiō]いただき、[感謝|kansha]いたします。",
+     "id": "Terima kasih. Saya menghargai penanganan Anda yang cermat.",
+     "literal": "terima-kasih. cermat — pada — penanganan — saya-terima — dan, terima-kasih — saya-lakukan."
+    }
+   ],
+   "notes": [
+    "**Rangga tidak pernah berkata “kalian salah”.** Ia menyebut **fakta** (kotaknya penyok, layarnya retak), lalu **apa yang ia inginkan**. Ini rangka keluhan yang paling berhasil di Jepang — dan yang paling cepat mendapat jalan keluar.",
+    "**ひびが入ってしまっている — てしまう untuk kerusakan yang tak bisa dibalik.** Ia menambahkan rasa “sudah telanjur”. Bandingkan: ひびが[入|hai]っています = retak (fakta datar) vs …[入|hai]ってしまっています = retak, dan itu sudah tak bisa diperbaiki.",
+    "**撮ってあります — てある untuk hasil yang sengaja disiapkan.** Bedanya dengan ておく: ておく menyoroti persiapannya, てある menyoroti keadaan yang sudah siap sekarang.",
+    "**ご不便をおかけいたしました** adalah kalimat maaf baku dalam pelayanan pelanggan. Kembarannya: ご[迷惑|meiwaku]をおかけしました (lebih umum), ご[心配|shinpai]をおかけしました (kalau lawan bicara sempat khawatir).",
+    "**見込み = perkiraan yang cukup dapat diandalkan.** 📄 Kata bisnis yang sering muncul: [到着|tōchaku][見込|mikomi]み, [売上|uriage][見込|mikomi]み. Ia lebih pasti daripada [予定|yotei] tapi tidak sekuat janji.",
+    "**Menutup keluhan dengan terima kasih adalah kebiasaan Jepang yang layak ditiru.** Petugas yang menangani keluhanmu bukan orang yang membuat kesalahannya."
+   ],
+   "grammars": [
+    {
+     "title": "Rangka keluhan yang berhasil",
+     "body": [
+      "Keluhan dalam bahasa Jepang berhasil kalau ia tidak menyerang orangnya. Rangkanya tiga langkah, dan langkah ketiga adalah yang paling sering dilupakan."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Kalimatnya",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "Buka",
+        "〜の[件|ken]で[伺|ukaga]いたいのですが。",
+        "menanyakan, bukan menuduh"
+       ],
+       [
+        "Fakta",
+        "[箱|Hako]が[潰|tsubu]れていまして。",
+        "keadaan, bukan pelakunya"
+       ],
+       [
+        "Akibat",
+        "[使|Tsuka]えない[状態|jōtai]です。",
+        "kenapa itu jadi masalah"
+       ],
+       [
+        "Permintaan",
+        "[交換|Kōkan]していただけますでしょうか。",
+        "sebutkan apa yang kamu mau"
+       ],
+       [
+        "Batas waktu",
+        "[今週中|Konshū-jū]にいただけると[助|tasu]かります。",
+        "beri tenggat yang masuk akal"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan menyebut siapa yang salah.** ❌そちらのミスですよね。 Kalimat begini di Jepang justru memperlambat penyelesaian.",
+      "**Kalau tanggapannya tidak memuaskan:** [責任者|Sekininsha]の[方|kata]とお[話|hana]しできますでしょうか。 — Bisakah saya bicara dengan penanggung jawabnya?",
+      "**Kata yang menaikkan tekanan tanpa menaikkan suara:** [困|koma]っております · [納得|nattoku]できかねます · [対応|taiō]をお[願|nega]いいたします."
+     ]
+    },
+    {
+     "title": "てしまう・たまま・ておく・てある",
+     "body": [
+      "Empat turunan bentuk て yang mengurus keadaan sesudah perbuatan. Mereka sering tertukar, padahal masing-masing punya satu tugas jelas."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～てしまう",
+        "telanjur; selesai habis",
+        "[財布|Saifu]を[忘|wasu]れてしまいました。"
+       ],
+       [
+        "～ちゃう / ～じゃう",
+        "🗣 ringkasan てしまう",
+        "[忘|Wasu]れちゃった。"
+       ],
+       [
+        "～たまま",
+        "dibiarkan dalam keadaan itu",
+        "[電気|Denki]をつけたまま[寝|ne]ました。"
+       ],
+       [
+        "～ないまま",
+        "tanpa pernah ～",
+        "[何|Nani]も[言|i]わないまま[帰|kae]った。"
+       ],
+       [
+        "～ておく",
+        "disiapkan lebih dulu",
+        "[資料|Shiryō]を[コピー|kopī]しておきます。"
+       ],
+       [
+        "～てある",
+        "sudah dikerjakan, hasilnya ada",
+        "[窓|Mado]が[開|a]けてあります。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **てある memakai が, bukan を**, karena yang jadi pokok kalimat adalah hasilnya: [窓|Mado]**が**[開|a]けてある ✅.",
+      "**まま adalah kata kunci untuk mengeluh tentang kelalaian:** [靴|Kutsu]を[履|ha]いたまま[入|hai]らないでください。 — Jangan masuk dengan sepatu masih dipakai.",
+      "**てしまう punya dua rasa yang berlawanan:** penyesalan ([壊|kowa]してしまった) dan penyelesaian tuntas ([読|yo]んでしまった = selesai dibaca semua). Yang menentukan adalah isinya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Meminta maaf atas kesalahan sendiri",
+   "intro": "Rangga salah mengirim berkas ke klien. Ia harus melapor kepada atasannya lebih dulu — dan di Jepang, urutan itu tidak boleh dibalik.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[部長|Buchō]、[お忙|o-isoga]しいところ[申|mō]し[訳|wake]ありません。ご[報告|hōkoku]がございます。",
+     "id": "Pak, maaf mengganggu di tengah kesibukan. Ada yang harus saya laporkan.",
+     "literal": "kepala-bagian, sibuk — tempat — tak-terkatakan — tidak-ada. laporan — yang — ada (hormat)."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "どうしました。",
+     "id": "Ada apa?",
+     "literal": "bagaimana — terjadi (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "みどり[商事|Shōji][様|sama]に、[別|betsu]の[会社|kaisha][向|mu]けの[見積書|mitsumorisho]を[送|oku]ってしまいました。",
+     "id": "Kepada Midori Shoji, saya telanjur mengirimkan surat penawaran yang ditujukan untuk perusahaan lain.",
+     "literal": "Midori-Shoji — tuan — kepada, lain — punya — perusahaan — untuk — punya — surat-penawaran — akan — mengirim — telanjur (lampau)."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[価格|Kakaku]が[書|ka]いてあるやつか。いつ[気|ki]づいた？",
+     "id": "Yang ada harganya itu? Kapan kamu sadar?",
+     "literal": "harga — yang — tertulis — ada — yang — kah. kapan — sadar (lampau)."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[十分|Juppun]ほど[前|mae]です。すぐに[報告|hōkoku]すべきだと[思|omo]いまして。",
+     "id": "Sekitar sepuluh menit lalu. Saya pikir harus segera melapor.",
+     "literal": "sepuluh-menit — kira-kira — depan — adalah. segera — pada — melapor — semestinya — begitu — saya-pikir — dan."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "それでいい。[隠|Kaku]さなかったのは[正解|seikai]だ。すぐ[先方|senpō]に[電話|denwa]しよう。",
+     "id": "Itu benar. Tidak menyembunyikannya adalah pilihan yang tepat. Ayo segera telepon pihak sana.",
+     "literal": "itu — dengan — baik. menyembunyikan — tidak (lampau) — yang — mengenai — jawaban-benar — adalah. segera — pihak-lawan — kepada — mari-telepon."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[お詫|wa]びの[メール|mēru]も[準備|junbi]いたします。",
+     "id": "Baik. Saya siapkan juga surel permintaan maafnya.",
+     "literal": "ya. permintaan-maaf — punya — surel — juga — saya-siapkan."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[電話|Denwa]が[先|saki]だ。[メール|Mēru]だけで[済|su]ませるのは[失礼|shitsurei]になる。",
+     "id": "Telepon dulu. Menyelesaikannya hanya dengan surel akan dianggap tidak sopan.",
+     "literal": "telepon — yang — lebih-dulu — adalah. surel — hanya — dengan — menyelesaikan — yang — mengenai — tidak-sopan — menjadi."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[承知|Shōchi]いたしました。[原因|Gen'in]は[私|watashi]の[確認|kakunin][不足|busoku]です。",
+     "id": "Baik. Penyebabnya adalah kurangnya pemeriksaan dari saya.",
+     "literal": "paham — saya-lakukan. penyebab — mengenai — saya — punya — pemeriksaan — kekurangan — adalah."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[原因|Gen'in]は[後|ato]で[一緒|issho]に[考|kanga]えよう。[今|Ima]は[先方|senpō]への[対応|taiō]が[先|saki]だ。",
+     "id": "Penyebabnya kita pikirkan bersama nanti. Sekarang menangani pihak sana yang lebih dulu.",
+     "literal": "penyebab — mengenai — nanti — pada — bersama — mari-pikirkan. sekarang — mengenai — pihak-lawan — ke — punya — penanganan — yang — lebih-dulu — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "はい。[二度|Nido]と[起|o]こさないよう、[確認|kakunin]の[手順|tejun]を[見直|minao]します。",
+     "id": "Baik. Agar tidak terulang, saya akan meninjau ulang prosedur pemeriksaannya.",
+     "literal": "ya. dua-kali — dan — tidak-menimbulkan — supaya, pemeriksaan — punya — prosedur — akan — meninjau-ulang."
+    }
+   ],
+   "notes": [
+    "**Melapor kabar buruk secepat mungkin adalah aturan tak tertulis yang paling penting di kantor Jepang.** Menyembunyikannya sepuluh menit lebih lama sudah dianggap masalah tersendiri. Ini bagian dari 報連相 yang dipasang di Unit 3.",
+    "**～べきだと思いまして — べき menyatakan kewajiban moral.** Rangkanya: bentuk kamus + べきだ. ⚠️ Bentuk する punya dua: [するべき|surubeki] dan [すべき|subeki]; yang kedua lebih tertulis dan lebih kuat.",
+    "**Perhatikan urutan Takahashi: telepon dulu, surel belakangan.** Di Jepang, permintaan maaf yang serius disampaikan lewat suara. Surel menyusul sebagai bukti tertulis, bukan sebagai pengganti.",
+    "**確認不足 = kurangnya pemeriksaan.** Rangka 〜不足 sangat produktif: [説明|setsumei][不足|busoku], [睡眠|suimin][不足|busoku], [経験|keiken][不足|busoku], [人手|hitode][不足|busoku].",
+    "**二度と起こさないよう〜 adalah bagian wajib permintaan maaf Jepang.** Permintaan maaf yang tidak menyebut pencegahan terulang dianggap belum selesai. Kembarannya yang lebih resmi: [再発防止|saihatsu bōshi]に[努|tsuto]めてまいります。",
+    "**見直す = meninjau ulang.** Deretan kata kerja majemuk dengan 見: [見直|minao]す (tinjau ulang), [見落|mio]とす (terlewat), [見送|miokura]る (tidak jadi mengambil), [見守|mimamo]る (mengawasi dari jauh)."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga permintaan maaf",
+     "body": [
+      "Permintaan maaf Jepang punya delapan anak tangga, dan memakai yang terlalu ringan untuk kesalahan besar adalah kesalahan sosial yang serius."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Beratnya",
+       "Dipakai kapan"
+      ],
+      "rows": [
+       [
+        "ごめん",
+        "sangat ringan",
+        "teman, hal sepele"
+       ],
+       [
+        "ごめんなさい",
+        "ringan",
+        "teman, keluarga"
+       ],
+       [
+        "すみません",
+        "sedang",
+        "serba guna, juga berarti “permisi”"
+       ],
+       [
+        "すみませんでした",
+        "sedang",
+        "kesalahan yang sudah terjadi"
+       ],
+       [
+        "[失礼|Shitsurei]しました",
+        "sedang",
+        "kelancangan, salah ucap"
+       ],
+       [
+        "[申|Mō]し[訳|wake]ありません",
+        "berat",
+        "lingkungan kerja"
+       ],
+       [
+        "[申|Mō]し[訳|wake]ございません",
+        "berat",
+        "kepada klien dan atasan"
+       ],
+       [
+        "[深|Fuka]くお[詫|wa]び[申|mō]し[上|a]げます",
+        "sangat berat",
+        "📄 permintaan maaf resmi perusahaan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **すみません untuk kesalahan besar terdengar meremehkan.** Sebaliknya, [申|mō]し[訳|wake]ございません untuk menyenggol bahu orang terdengar berlebihan sampai lucu.",
+      "**Empat bagian permintaan maaf lengkap:** (1) maaf, (2) apa yang terjadi, (3) penyebab — singkat, (4) pencegahan terulang. Melewatkan (4) berarti belum selesai.",
+      "**Kalau kamu yang menerima permintaan maaf:** [とんでもないです|Tondemonai desu] · お[気|ki]になさらないでください · こちらこそ[失礼|shitsurei]しました."
+     ]
+    },
+    {
+     "title": "のに・くせに・にもかかわらず — “padahal”",
+     "body": [
+      "Ketiganya berarti “padahal”, tapi muatan perasaannya berbeda jauh. Yang kedua bisa merusak hubungan kalau salah tempat."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Nadanya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "～のに",
+        "kecewa, heran",
+        "[約束|Yakusoku]したのに[来|こ]なかった。"
+       ],
+       [
+        "～のに (permintaan)",
+        "sedikit merajuk",
+        "[待|Ma]っていたのに…"
+       ],
+       [
+        "～くせに",
+        "menyalahkan, tajam",
+        "[知|Shi]っているくせに[教|oshi]えてくれない。"
+       ],
+       [
+        "～にもかかわらず",
+        "📄 netral, tertulis",
+        "[雨|Ame]にもかかわらず[開催|kaisai]された。"
+       ],
+       [
+        "～ながらも",
+        "📄 sambil mengakui",
+        "[知|Shi]っていながらも[黙|dama]っていた。"
+       ],
+       [
+        "～ものの",
+        "📄 memang ～ tapi",
+        "[申|Mō]し[込|ko]んだものの、[返事|henji]がない。"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **くせに selalu berisi celaan, dan pelakunya harus orang lain.** ❌[私|Watashi]は[知|shi]っているくせに… Kepada atasan atau klien, jangan pernah dipakai.",
+      "**のに di ujung kalimat menyatakan kekecewaan yang tak dilanjutkan:** せっかく[作|tsuku]ったのに…",
+      "⚠️ **のに sesudah kata benda dan kata sifat な memakai な:** [休|yasu]み**な**のに ✅ / ❌休みのに."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluhan tetangga dan keluhan di restoran",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua tempat paling sering orang asing perlu mengeluh, dan dua tempat paling mudah salah nada. Aturannya sama: sebut keadaannya, bukan orangnya."
+    },
+    {
+     "type": "sub",
+     "text": "Kepada tetangga yang berisik"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[夜分|Yabun][遅|oso]くに[申|mō]し[訳|wake]ありません。[隣|Tonari]の[者|mono]ですが。 — Maaf larut malam. Saya penghuni sebelah.",
+      "[少|Suko]し[音|oto]が[響|hibi]いてしまっているようで… — Sepertinya suaranya agak terdengar sampai ke sini…",
+      "もう[少|suko]し[音量|onryō]を[下|sa]げていただけると[助|tasu]かります。 — Kalau bisa dikecilkan sedikit, sangat membantu.",
+      "⚠️ Perhatikan ～ようで dan ～てしまっている: keduanya membuat keluhan terdengar seperti keadaan yang kebetulan terjadi, bukan tuduhan.",
+      "**Kalau berulang:** lapor ke [管理会社|kanri-gaisha] (pengelola gedung) atau [大家|ōya] (pemilik), bukan ke tetangganya lagi. Di Jepang, pihak ketiga menangani sengketa tetangga."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Di restoran dan toko"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "Pesanan belum datang",
+       "すみません、[注文|chūmon]したものがまだ[届|todo]いていないのですが。"
+      ],
+      [
+       "Pesanan salah",
+       "[頼|Tano]んだものと[違|chiga]うようなのですが。"
+      ],
+      [
+       "Makanan dingin",
+       "[少|Suko]し[冷|tsume]たいのですが、[温|atata]めていただけますか。"
+      ],
+      [
+       "Ada benda asing",
+       "[恐|Oso]れ[入|i]りますが、[中|naka]に[何|nani]か[入|hai]っておりまして。"
+      ],
+      [
+       "Tagihan salah",
+       "お[会計|kaikei]が[合|a]わないようなのですが、ご[確認|kakunin]いただけますか。"
+      ],
+      [
+       "Barang cacat",
+       "[不良品|Furyōhin]のようです。[交換|Kōkan]をお[願|nega]いできますか。"
+      ],
+      [
+       "Minta struk",
+       "[領収書|Ryōshūsho]をいただけますか。"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata yang menaikkan tekanan dengan sopan",
+     "items": [
+      "[困|Koma]っております。 — Saya sedang kesulitan. (jauh lebih kuat daripada kedengarannya)",
+      "[納得|Nattoku]できかねます。 — Saya belum bisa menerima penjelasan itu.",
+      "[責任者|Sekininsha]の[方|kata]とお[話|hana]しできますでしょうか。 — Bisa bicara dengan penanggung jawab?",
+      "[今後|Kongo]の[対応|taiō]について[伺|ukaga]えますか。 — Boleh saya tahu penanganan selanjutnya?",
+      "⚠️ Menaikkan suara di Jepang membuat kamu kehilangan posisi seketika. Yang menaikkan tekanan adalah kata, bukan nada."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Surel permintaan maaf — rangka utuh",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini surel yang paling menakutkan untuk ditulis dan paling sering dibutuhkan. Rangkanya tetap, jadi hafalkan sekali dan tinggal ganti isinya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Kalimatnya"
+     ],
+     "rows": [
+      [
+       "Judul",
+       "[納品|Nōhin][遅延|chien]のお[詫|wa]びとご[報告|hōkoku]（[リンゴ|Ringo][商事|shōji]）"
+      ],
+      [
+       "Maaf pembuka",
+       "この[度|tabi]は[弊社|heisha]の[不手際|futegiwa]によりご[迷惑|meiwaku]をおかけし、[誠|makoto]に[申|mō]し[訳|wake]ございません。"
+      ],
+      [
+       "Apa yang terjadi",
+       "[本日|Honjitsu][納品|nōhin][予定|yotei]の[商品|shōhin]につきまして、[出荷|shukka]が[一日|ichinichi][遅|oku]れる[見込|mikomi]みとなりました。"
+      ],
+      [
+       "Penyebab (singkat)",
+       "[原因|Gen'in]は[弊社|heisha][倉庫|sōko]での[確認|kakunin][不足|busoku]でございます。"
+      ],
+      [
+       "Jalan keluar",
+       "つきましては、[明日|asu][午前中|gozen-chū]に[到着|tōchaku]するよう[手配|tehai]いたしました。"
+      ],
+      [
+       "Pencegahan",
+       "[今後|Kongo]は[確認|kakunin][手順|tejun]を[見直|minao]し、[再発防止|saihatsu bōshi]に[努|tsuto]めてまいります。"
+      ],
+      [
+       "Penutup",
+       "[何卒|Nanitozo]ご[容赦|yōsha]くださいますよう、お[願|nega]い[申|mō]し[上|a]げます。"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata-kata khusus permintaan maaf resmi"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[お詫|O-wa]び[申|mō]し[上|a]げます — kami menyampaikan permohonan maaf",
+      "[ご容赦|Go-yōsha]ください — mohon dimaafkan",
+      "[ご迷惑|Go-meiwaku]をおかけしました — telah merepotkan Anda",
+      "[ご心配|Go-shinpai]をおかけしました — telah membuat Anda khawatir",
+      "[不手際|Futegiwa] — kelalaian pihak kami",
+      "[再発防止|Saihatsu bōshi]に[努|tsuto]めてまいります — kami akan berupaya mencegah terulang",
+      "⚠️ **Jangan menulis 「〜のせいで」** (gara-gara ～) dalam surel permintaan maaf. Ia melempar tanggung jawab, dan pembaca Jepang menangkapnya seketika."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu kesalahan",
+     "items": [
+      "Ceritakan satu kesalahan yang pernah kamu buat, keras-keras:",
+      "Apa yang terjadi: [〜てしまいました|〜te shimaimashita]。",
+      "Keadaan yang tertinggal: [〜たまま〜|〜ta mama 〜]。",
+      "Maaf setingkat: [申|Mō]し[訳|wake]ございませんでした。",
+      "Penyebab, satu kalimat: [原因|Gen'in]は〜[不足|busoku]です。",
+      "Pencegahan: [二度|Nido]と[起|o]こさないよう、〜します。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "苦情",
+   "baca": "くじょう · kujō",
+   "id": "keluhan resmi"
+  },
+  {
+   "ja": "文句",
+   "baca": "もんく · monku",
+   "id": "keluhan, omelan"
+  },
+  {
+   "ja": "お詫び",
+   "baca": "おわび · o-wabi",
+   "id": "permintaan maaf"
+  },
+  {
+   "ja": "謝罪",
+   "baca": "しゃざい · shazai",
+   "id": "permintaan maaf resmi"
+  },
+  {
+   "ja": "注文",
+   "baca": "ちゅうもん · chūmon",
+   "id": "pesanan"
+  },
+  {
+   "ja": "商品",
+   "baca": "しょうひん · shōhin",
+   "id": "barang dagangan"
+  },
+  {
+   "ja": "潰れる",
+   "baca": "つぶれる · tsubureru",
+   "id": "penyok, remuk"
+  },
+  {
+   "ja": "ひびが入る",
+   "baca": "ひびがはいる · hibi ga hairu",
+   "id": "retak"
+  },
+  {
+   "ja": "不良品",
+   "baca": "ふりょうひん · furyōhin",
+   "id": "barang cacat"
+  },
+  {
+   "ja": "交換",
+   "baca": "こうかん · kōkan",
+   "id": "penukaran"
+  },
+  {
+   "ja": "返金",
+   "baca": "へんきん · henkin",
+   "id": "pengembalian uang"
+  },
+  {
+   "ja": "発送",
+   "baca": "はっそう · hassō",
+   "id": "pengiriman"
+  },
+  {
+   "ja": "納品",
+   "baca": "のうひん · nōhin",
+   "id": "penyerahan barang"
+  },
+  {
+   "ja": "出荷",
+   "baca": "しゅっか · shukka",
+   "id": "pengapalan dari gudang"
+  },
+  {
+   "ja": "見込み",
+   "baca": "みこみ · mikomi",
+   "id": "perkiraan"
+  },
+  {
+   "ja": "対応",
+   "baca": "たいおう · taiō",
+   "id": "penanganan"
+  },
+  {
+   "ja": "丁寧",
+   "baca": "ていねい · teinei",
+   "id": "cermat, sopan"
+  },
+  {
+   "ja": "不便",
+   "baca": "ふべん · fuben",
+   "id": "ketidaknyamanan"
+  },
+  {
+   "ja": "先方",
+   "baca": "せんぽう · senpō",
+   "id": "pihak lawan bicara"
+  },
+  {
+   "ja": "隠す",
+   "baca": "かくす · kakusu",
+   "id": "menyembunyikan"
+  },
+  {
+   "ja": "正解",
+   "baca": "せいかい · seikai",
+   "id": "jawaban/pilihan yang benar"
+  },
+  {
+   "ja": "済ませる",
+   "baca": "すませる · sumaseru",
+   "id": "menyelesaikan seadanya"
+  },
+  {
+   "ja": "不足",
+   "baca": "ふそく · fusoku",
+   "id": "kekurangan"
+  },
+  {
+   "ja": "手順",
+   "baca": "てじゅん · tejun",
+   "id": "prosedur"
+  },
+  {
+   "ja": "見直す",
+   "baca": "みなおす · minaosu",
+   "id": "meninjau ulang"
+  },
+  {
+   "ja": "見落とす",
+   "baca": "みおとす · miotosu",
+   "id": "terlewat, luput"
+  },
+  {
+   "ja": "再発防止",
+   "baca": "さいはつぼうし · saihatsu bōshi",
+   "id": "pencegahan terulang"
+  },
+  {
+   "ja": "容赦",
+   "baca": "ようしゃ · yōsha",
+   "id": "maaf, pengampunan"
+  },
+  {
+   "ja": "納得",
+   "baca": "なっとく · nattoku",
+   "id": "penerimaan, puas dengan penjelasan"
+  },
+  {
+   "ja": "責任者",
+   "baca": "せきにんしゃ · sekininsha",
+   "id": "penanggung jawab"
+  },
+  {
+   "ja": "責任",
+   "baca": "せきにん · sekinin",
+   "id": "tanggung jawab"
+  },
+  {
+   "ja": "手配する",
+   "baca": "てはいする · tehai suru",
+   "id": "mengatur, mengurus"
+  },
+  {
+   "ja": "倉庫",
+   "baca": "そうこ · sōko",
+   "id": "gudang"
+  },
+  {
+   "ja": "領収書",
+   "baca": "りょうしゅうしょ · ryōshūsho",
+   "id": "kuitansi"
+  },
+  {
+   "ja": "会計",
+   "baca": "かいけい · kaikei",
+   "id": "pembayaran, tagihan"
+  },
+  {
+   "ja": "響く",
+   "baca": "ひびく · hibiku",
+   "id": "bergema, terdengar sampai"
+  },
+  {
+   "ja": "音量",
+   "baca": "おんりょう · onryō",
+   "id": "volume suara"
+  },
+  {
+   "ja": "夜分",
+   "baca": "やぶん · yabun",
+   "id": "larut malam (resmi)"
+  },
+  {
+   "ja": "管理会社",
+   "baca": "かんりがいしゃ · kanri-gaisha",
+   "id": "perusahaan pengelola gedung"
+  },
+  {
+   "ja": "大家",
+   "baca": "おおや · ōya",
+   "id": "pemilik rumah sewa"
+  },
+  {
+   "ja": "壊す",
+   "baca": "こわす · kowasu",
+   "id": "merusak"
+  },
+  {
+   "ja": "まま",
+   "baca": "mama",
+   "id": "dalam keadaan tetap begitu"
+  },
+  {
+   "ja": "くせに",
+   "baca": "kuse ni",
+   "id": "padahal (mencela)"
+  },
+  {
+   "ja": "にもかかわらず",
+   "baca": "ni mo kakawarazu",
+   "id": "meskipun demikian"
+  },
+  {
+   "ja": "ものの",
+   "baca": "mono no",
+   "id": "memang ~ tetapi"
+  },
+  {
+   "ja": "べき",
+   "baca": "beki",
+   "id": "semestinya, sepatutnya"
+  },
+  {
+   "ja": "価格",
+   "baca": "かかく · kakaku",
+   "id": "harga"
+  },
+  {
+   "ja": "遅延",
+   "baca": "ちえん · chien",
+   "id": "keterlambatan"
+  },
+  {
+   "ja": "睡眠不足",
+   "baca": "すいみんぶそく · suimin busoku",
+   "id": "kurang tidur"
+  },
+  {
+   "ja": "経験",
+   "baca": "けいけん · keiken",
+   "id": "pengalaman"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan てしまう、たまま、ておく、atau てある (bentuk yang sesuai).",
+   "items": [
+    "[財布|Saifu]を[忘|wasu]れ ____ ました。(telanjur)",
+    "[電気|Denki]をつけ ____ [寝|ne]ました。(dibiarkan menyala)",
+    "[会議|Kaigi]の[資料|shiryō]をコピーし ____ ます。(disiapkan lebih dulu)",
+    "[窓|Mado]が[開|a]け ____ ます。(sudah dibuka, keadaannya begitu)",
+    "[画面|Gamen]にひびが[入|hai]っ ____ います。(telanjur, tak bisa dibalik)",
+    "[何|Nani]も[言|i]わ ____ [帰|kae]りました。(tanpa berkata apa pun)"
+   ]
+  },
+  {
+   "prompt": "Urutkan permintaan maaf dari yang paling ringan ke yang paling berat. Tulis 1 sampai 6.",
+   "items": [
+    "[申|Mō]し[訳|wake]ございません。",
+    "ごめん。",
+    "[深|Fuka]くお[詫|wa]び[申|mō]し[上|a]げます。",
+    "すみません。",
+    "ごめんなさい。",
+    "[申|Mō]し[訳|wake]ありません。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan のに、くせに、atau にもかかわらず.",
+   "items": [
+    "[約束|Yakusoku]した ____ 、[来|こ]なかった。",
+    "[知|Shi]っている ____ 、[教|oshi]えてくれない。(menyalahkan)",
+    "[雨|Ame] ____ 、[試合|shiai]は[開催|kaisai]された。(📄 tertulis)",
+    "[休|Yasu]み ____ 、[会社|kaisha]に[行|i]った。",
+    "せっかく[作|tsuku]った ____ …",
+    "[自分|Jibun]もできない ____ 、[人|hito]に[文句|monku]を[言|i]う。"
+   ]
+  },
+  {
+   "prompt": "Susun kalimat keluhan yang benar.",
+   "items": [
+    "が / [箱|hako] / [潰|tsubu]れていまして / [届|todo]いたのですが / [昨日|kinō]",
+    "を / [交換|kōkan]して / いただけますでしょうか",
+    "が / [注文|chūmon]したもの / まだ[届|todo]いていないのですが",
+    "と / [頼|tano]んだもの / [違|chiga]うようなのですが",
+    "が / お[会計|kaikei] / [合|a]わないようなのですが",
+    "と / [責任者|sekininsha]の[方|kata] / お[話|hana]しできますでしょうか"
+   ]
+  },
+  {
+   "prompt": "Susun kalimat permintaan maaf yang benar.",
+   "items": [
+    "を / ご[迷惑|meiwaku] / おかけし / この[度|tabi]は / [申|mō]し[訳|wake]ございません",
+    "は / [確認|kakunin][不足|busoku] / [原因|gen'in] / [私|watashi]の / です",
+    "よう / [二度|nido]と / [起|o]こさない / [手順|tejun]を[見直|minao]します",
+    "に / [再発防止|saihatsu bōshi] / [努|tsuto]めてまいります / [今後|kongo]は",
+    "を / [別|betsu]の[会社|kaisha][向|mu]けの[見積書|mitsumorisho] / [送|oku]ってしまいました",
+    "ください / ご[容赦|yōsha] / [何卒|nanitozo]"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat untuk tiap keadaan.",
+   "items": [
+    "Menyampaikan bahwa barang datang rusak: ____",
+    "Meminta penggantian barang: ____",
+    "Meminta tetangga mengecilkan suara: ____",
+    "Melapor kepada atasan bahwa kamu salah kirim surel: ____",
+    "Menyebut penyebab kesalahanmu: ____",
+    "Menjanjikan pencegahan terulang: ____"
+   ]
+  }
+ ],
+ "answers": [
+  "てしまい — たまま — ておき — てあり — てしまって — ないまま",
+  "5 — 1 — 6 — 3 — 2 — 4",
+  "のに — くせに — にもかかわらず — なのに — のに — くせに",
+  "[昨日|Kinō][届|todo]いたのですが[箱|hako]が[潰|tsubu]れていまして — [交換|Kōkan]していただけますでしょうか — [注文|Chūmon]したものがまだ[届|todo]いていないのですが — [頼|Tano]んだものと[違|chiga]うようなのですが — お[会計|kaikei]が[合|a]わないようなのですが — [責任者|Sekininsha]の[方|kata]とお[話|hana]しできますでしょうか",
+  "この[度|tabi]はご[迷惑|meiwaku]をおかけし[申|mō]し[訳|wake]ございません — [原因|Gen'in]は[私|watashi]の[確認|kakunin][不足|busoku]です — [二度|Nido]と[起|o]こさないよう[手順|tejun]を[見直|minao]します — [今後|Kongo]は[再発防止|saihatsu bōshi]に[努|tsuto]めてまいります — [別|Betsu]の[会社|kaisha][向|mu]けの[見積書|mitsumorisho]を[送|oku]ってしまいました — [何卒|Nanitozo]ご[容赦|yōsha]ください",
+  "[届|Todo]いた[商品|shōhin]の[箱|hako]が[潰|tsubu]れていまして、[中|naka]も[壊|kowa]れております — [交換|Kōkan]をお[願|nega]いできますでしょうか — もう[少|suko]し[音量|onryō]を[下|sa]げていただけると[助|tasu]かります — [申|Mō]し[訳|wake]ありません、[別|betsu]の[会社|kaisha]の[資料|shiryō]を[送|oku]ってしまいました — [原因|Gen'in]は[私|watashi]の[確認|kakunin][不足|busoku]です — [二度|Nido]と[起|o]こさないよう、[確認|kakunin]の[手順|tejun]を[見直|minao]します"
+ ],
+ "wave": "Lima menit sebelum Unit 12: tulis dua hal — satu keluhan tentang barang atau layanan yang benar-benar mengecewakanmu tahun ini, dan satu permintaan maaf atas kesalahan yang benar-benar kamu buat. Keluhannya harus menyebut fakta, akibat, dan permintaan; permintaan maafnya harus punya keempat bagian, termasuk pencegahan terulang. Ucapkan keduanya keras-keras, dan perhatikan: yang pertama tidak boleh menyebut siapa pun, yang kedua tidak boleh menyalahkan siapa pun selain dirimu."
+}

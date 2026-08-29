@@ -1,0 +1,891 @@
+{
+ "title": "Memberi, menerima, dan berterima kasih",
+ "title_target": "あげる・くれる・もらう — Ageru · Kureru · Morau",
+ "goal": "Menguasai tiga kata kerja memberi-menerima beserta bentuk hormatnya, menyatakan bahwa seseorang berbuat baik kepadamu, dan berterima kasih dengan cara yang tepat menurut siapa yang berbuat baik.",
+ "bekal": [
+  "membedakan あげる・くれる・もらう dari sudut pandang pembicara",
+  "memakai 〜てあげる・〜てくれる・〜てもらう untuk perbuatan, bukan barang",
+  "menaikkannya ke 差し上げる・くださる・いただく di lingkungan resmi",
+  "meminta bantuan dengan 〜ていただけませんか yang berakar pada もらう",
+  "memilih ucapan terima kasih yang sesuai dengan siapa yang menolongmu"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Ditolong rekan kerja",
+   "intro": "Sato menyelamatkan presentasi Rangga. Seluruh dialog ini berputar pada satu pertanyaan yang selalu ditanyakan bahasa Jepang: dari sudut pandang siapa perbuatan baik ini dilihat?",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[佐藤|Satō]さん、[昨日|kinō]は[資料|shiryō]を[直|nao]してくれて、[本当|hontō]にありがとう。",
+     "id": "Sato-san, terima kasih banyak sudah membetulkan berkasnya kemarin.",
+     "literal": "Sato — orang, kemarin — mengenai — berkas — akan — perbaiki — memberi-ke-saya — dan, sungguh — pada — terima-kasih."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "いえいえ。[間|Ma]に[合|a]ってよかったです。",
+     "id": "Sama-sama. Syukurlah keburu.",
+     "literal": "tidak-tidak. antara — pada — cocok — dan — baik — adalah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "[部長|Buchō]にも[説明|setsumei]していただいて、[助|tasu]かりました。",
+     "id": "Pak Kepala juga berkenan menjelaskan, sangat menolong.",
+     "literal": "kepala-bagian — kepada — juga — menjelaskan — saya-terima — dan, tertolong."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "[部長|Buchō]、[ランガ|Ranga]さんのこと[気|ki]にかけてくださってますよ。",
+     "id": "Pak Kepala memang memperhatikan Rangga-san lho.",
+     "literal": "kepala-bagian, Rangga — orang — punya — hal — perhatian — beliau-memberi — sedang — lho."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "そうなんですか。[何|Nani]かお[礼|rei]をしたいんですが、[何|nan]がいいでしょう。",
+     "id": "Oh begitu ya. Saya ingin memberikan tanda terima kasih, apa ya yang cocok?",
+     "literal": "begitu — adalah — kah. apa — pun — terima-kasih — akan — ingin-lakukan — tapi, apa — yang — baik — barangkali."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "そんな、[気|ki]を[遣|tsuka]わないでください。[仕事|Shigoto]ですから。",
+     "id": "Aduh, jangan sungkan begitu. Ini kan pekerjaan.",
+     "literal": "begitu, perhatian — akan — jangan-pakai — silakan. pekerjaan — adalah — sebab."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "でも、[インドネシア|Indoneshia]の[お土産|o-miyage]を[買|ka]ってきたので、[差|sa]し[上|a]げます。",
+     "id": "Tapi saya membawakan oleh-oleh dari Indonesia, ini untuk Anda.",
+     "literal": "tapi, Indonesia — punya — oleh-oleh — akan — membeli-datang — karena, saya-persembahkan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "わあ、うれしい。[遠|Tō]いところ[持|mo]ってきてくださって、すみません。",
+     "id": "Wah, senangnya. Maaf ya sudah repot-repot membawakannya dari jauh.",
+     "literal": "wah, senang. jauh — tempat — membawa-datang — Anda-berkenan — dan, maaf."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "たいしたものじゃないんですが、よかったら[召|me]し[上|a]がってください。",
+     "id": "Bukan barang istimewa, tapi kalau berkenan silakan dicicipi.",
+     "literal": "hebat — barang — bukan — adalah — tapi, kalau-baik — makan (hormat) — silakan."
+    },
+    {
+     "speaker": "佐藤:",
+     "text": "ありがとうございます。[皆|Mina]さんにも[分|wa]けてあげますね。",
+     "id": "Terima kasih. Nanti saya bagikan juga ke yang lain ya.",
+     "literal": "terima-kasih. semua — orang — kepada — juga — membagi — saya-beri — ya."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ぜひ。[皆|Mina]さんにはいつもよくしてもらっていますから。",
+     "id": "Silakan. Saya selalu diperlakukan baik oleh semuanya.",
+     "literal": "pasti. semua — orang — kepada — mengenai — selalu — baik — melakukan — saya-terima — sedang — sebab."
+    }
+   ],
+   "notes": [
+    "**直してくれて — くれる selalu berarti “ke arah saya”.** Yang berbuat baik adalah Sato, dan penerimanya Rangga. Kalau kalimatnya dilihat dari sisi Rangga sebagai penerima, ia jadi [直|nao]して**もらって**. Dua-duanya benar; yang berubah adalah siapa yang jadi pokok kalimat.",
+    "**していただいて adalah bentuk hormat dari してもらって.** Karena yang berbuat adalah kepala bagian, いただく wajib. ⚠️ ❌部長に説明してもらいました tidak salah tata bahasa, tapi terdengar kurang hormat di kantor.",
+    "**くださって adalah bentuk hormat dari くれて.** Perhatikan: bentuk てくださる berpasangan dengan てくれる (dari sisi pemberi), sementara ていただく berpasangan dengan てもらう (dari sisi penerima).",
+    "**気を遣わないでください = “jangan repot-repot”.** [気|Ki]を[遣|tsuka]う berarti memperhatikan perasaan orang lain sampai merepotkan diri sendiri. Ini kata kunci untuk memahami pergaulan Jepang, dan ia kembali di Unit 15 dan 16.",
+    "**たいしたものじゃないんですが = “bukan apa-apa”.** Kalimat wajib saat memberi hadiah di Jepang. Memuji hadiahmu sendiri dianggap kurang pantas — bahkan kalau hadiahnya mahal. Kembarannya: [つまらないものですが|Tsumaranai mono desu ga] (agak kuno tapi masih dipakai).",
+    "**分けてあげます — あげる ke arah orang lain.** Sato akan memberikan ke rekan-rekannya, bukan ke Rangga. ⚠️ Jangan memakai てあげる langsung kepada lawan bicaramu: [手伝|Tetsuda]ってあげます terdengar seperti “aku akan berbaik hati menolongmu”. Pakai [お手伝|o-tetsuda]いしましょうか."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga kata kerja, satu sudut pandang",
+     "body": [
+      "Bahasa Indonesia punya “memberi” dan “menerima”. Bahasa Jepang membelah “memberi” jadi dua, tergantung **ke arah mana** barangnya bergerak dari sudut pandang pembicara."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arah",
+       "Contoh",
+       "Pokok kalimat"
+      ],
+      "rows": [
+       [
+        "あげる",
+        "saya/orang → orang lain",
+        "[私|Watashi]は[彼|kare]に[本|hon]をあげた。",
+        "pemberi"
+       ],
+       [
+        "くれる",
+        "orang lain → saya/pihak saya",
+        "[彼|Kare]が[私|watashi]に[本|hon]をくれた。",
+        "pemberi"
+       ],
+       [
+        "もらう",
+        "saya menerima dari orang",
+        "[私|Watashi]は[彼|kare]に[本|hon]をもらった。",
+        "penerima"
+       ],
+       [
+        "差し上げる",
+        "saya → orang dihormati",
+        "[部長|Buchō]に[差|sa]し[上|a]げました。",
+        "pemberi (merendah)"
+       ],
+       [
+        "くださる",
+        "orang dihormati → saya",
+        "[部長|Buchō]がくださいました。",
+        "pemberi (hormat)"
+       ],
+       [
+        "いただく",
+        "saya menerima dari yang dihormati",
+        "[部長|Buchō]にいただきました。",
+        "penerima (merendah)"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **くれる tidak boleh dipakai kalau penerimanya bukan kamu atau pihakmu.** ❌[田中|Tanaka]さんが[山田|Yamada]さんに[本|hon]をくれた。 ✅…あげた。",
+      "**Keluarga, rekan sekantor, dan teman dekat dihitung “pihak saya”.** [先生|Sensei]が[妹|imōto]に[本|hon]をくださった。 ✅",
+      "**Partikel penerima pada もらう bisa に atau から.** から terdengar sedikit lebih tertulis: [会社|Kaisha]**から**[手当|teate]をいただきました。"
+     ]
+    },
+    {
+     "title": "～て + memberi/menerima: perbuatan, bukan barang",
+     "body": [
+      "Inilah bentuk yang benar-benar dipakai setiap hari. Ia mengubah perbuatan biasa menjadi perbuatan **yang mengandung kebaikan** — dan dalam bahasa Jepang, kebaikan itu wajib ditandai."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "～てあげる",
+        "[荷物|Nimotsu]を[持|mo]ってあげた。",
+        "saya berbaik hati membawakan"
+       ],
+       [
+        "～てくれる",
+        "[友達|Tomodachi]が[手伝|tetsuda]ってくれた。",
+        "teman berbaik hati membantu saya"
+       ],
+       [
+        "～てもらう",
+        "[友達|Tomodachi]に[手伝|tetsuda]ってもらった。",
+        "saya minta/dapat dibantu teman"
+       ],
+       [
+        "～てくださる",
+        "[先生|Sensei]が[教|oshi]えてくださった。",
+        "guru berkenan mengajari saya"
+       ],
+       [
+        "～ていただく",
+        "[先生|Sensei]に[教|oshi]えていただいた。",
+        "saya menerima pengajaran dari guru"
+       ],
+       [
+        "～ていただけませんか",
+        "[見|Mi]ていただけませんか。",
+        "bisakah saya minta Anda melihatnya"
+       ]
+      ]
+     },
+     "after": [
+      "**Tanpa bentuk ini, kalimatmu terdengar dingin.** [友達|Tomodachi]が[手伝|tetsuda]った = teman membantu (fakta datar, seolah bukan urusanmu). Dengan てくれた, kalimatnya berterima kasih.",
+      "⚠️ **Jangan memakai てあげる ke lawan bicara langsung.** Ia menyorot kebaikanmu sendiri. Yang benar: お[持|mo]ちしましょうか atau [手伝|tetsuda]いましょうか。",
+      "**～てもらう adalah akar seluruh tangga permintaan di Unit 2:** てもらえませんか → ていただけませんか → ていただけないでしょうか."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Hadiah, oleh-oleh, dan basa-basi",
+   "intro": "Rangga diundang makan malam ke rumah keluarga Takahashi. Bagian ini penuh aturan tak tertulis, dan seluruh dialognya berputar pada memberi dan menerima.",
+   "lines": [
+    {
+     "speaker": "ランガ:",
+     "text": "[本日|Honjitsu]はお[招|mane]きいただき、ありがとうございます。",
+     "id": "Terima kasih sudah mengundang saya hari ini.",
+     "literal": "hari-ini — mengenai — mengundang — saya-terima — dan, terima-kasih."
+    },
+    {
+     "speaker": "高橋夫人:",
+     "text": "いらっしゃいませ。どうぞお[上|a]がりください。",
+     "id": "Selamat datang. Silakan masuk.",
+     "literal": "silakan-datang. silakan — naik (hormat) — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "こちら、[つまらないものですが|tsumaranai mono desu ga]…",
+     "id": "Ini, bukan barang berharga sih…",
+     "literal": "pihak-ini, tidak-menarik — barang — adalah — tapi…"
+    },
+    {
+     "speaker": "高橋夫人:",
+     "text": "まあ、[気|ki]を[遣|tsuka]わせてしまって[申|mō]し[訳|wake]ないです。",
+     "id": "Aduh, jadi merepotkan Anda, maaf sekali.",
+     "literal": "wah, perhatian — akan — membuat-memakai — telanjur — dan — tak-terkatakan — adalah."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[遠|Tō]いところ[来|き]てくれてありがとう。[早速|Sassoku][食|た]べようか。",
+     "id": "Terima kasih sudah datang dari jauh. Ayo langsung makan saja.",
+     "literal": "jauh — tempat — datang — memberi-ke-kami — dan — terima-kasih. segera — mari-makan — kah."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "わあ、すごい。こんなに[作|tsuku]っていただいて…",
+     "id": "Wah, luar biasa. Sampai dimasakkan sebanyak ini…",
+     "literal": "wah, hebat. sebanyak-ini — memasak — saya-terima — dan…"
+    },
+    {
+     "speaker": "高橋夫人:",
+     "text": "[口|Kuchi]に[合|a]うかどうか[分|wa]かりませんが、[召|me]し[上|a]がってください。",
+     "id": "Saya tidak tahu cocok atau tidak dengan lidah Anda, tapi silakan dinikmati.",
+     "literal": "mulut — pada — cocok — apakah — tidak-tahu — tapi, makan (hormat) — silakan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "いただきます。……[本当|Hontō]においしいです。[作|Tsuku]り[方|kata]を[教|oshi]えていただけませんか。",
+     "id": "Selamat makan. …Enak sekali. Bisakah saya diajari cara membuatnya?",
+     "literal": "saya-terima. …sungguh — pada — enak — adalah. cara-membuat — akan — mengajarkan — tak-bisakah-saya-terima — kah."
+    },
+    {
+     "speaker": "高橋夫人:",
+     "text": "もちろん。[今度|Kondo][レシピ|reshipi]を[書|ka]いてあげますね。",
+     "id": "Tentu saja. Lain kali saya tuliskan resepnya ya.",
+     "literal": "tentu. lain-kali — resep — akan — menulis — saya-beri — ya."
+    },
+    {
+     "speaker": "高橋:",
+     "text": "[妻|Tsuma]は[人|hito]に[教|oshi]えるのが[好|su]きだから、[遠慮|enryo]しないで。",
+     "id": "Istri saya senang mengajari orang, jadi jangan sungkan.",
+     "literal": "istri — mengenai — orang — kepada — mengajar — yang — suka — sebab, sungkan — jangan."
+    },
+    {
+     "speaker": "ランガ:",
+     "text": "ありがとうございます。[今日|Kyō]は[本当|hontō]にごちそうさまでした。",
+     "id": "Terima kasih. Hari ini benar-benar terima kasih atas jamuannya.",
+     "literal": "terima-kasih. hari-ini — mengenai — sungguh — pada — jamuan — adalah (lampau)."
+    }
+   ],
+   "notes": [
+    "**つまらないものですが sudah setengah kuno tapi masih hidup.** Versi yang lebih segar: ほんの[気持|kimo]ちですが (ini cuma tanda perasaan saja) atau お[口|kuchi]に[合|a]うといいのですが.",
+    "**気を遣わせてしまって — kausatif + てしまう.** Harfiahnya: “saya telanjur membuat Anda memakai perhatian”. Ini cara Jepang berterima kasih dengan meminta maaf, dan ia sering terdengar aneh bagi orang Indonesia. Perhatikan: yang menerima hadiah justru minta maaf.",
+    "**口に合う = cocok dengan selera.** Kalimat tuan rumah Jepang hampir selalu merendahkan masakannya sendiri, persis seperti tamu merendahkan hadiahnya. Dua-duanya basa-basi wajib.",
+    "**作っていただいて… yang menggantung.** Kalimat terima kasih Jepang sering berhenti di bentuk て, membiarkan rasa terima kasihnya tak terucapkan. Menyelesaikannya justru mengurangi kesan tulus.",
+    "**書いてあげますね dari tuan rumah ke tamu — dan ini boleh.** Aturan “jangan pakai てあげる ke lawan bicara” melonggar kalau hubungannya sudah akrab dan kebaikannya kecil. Yang tetap terlarang: memakainya kepada atasan atau pelanggan.",
+    "**ごちそうさまでした dipakai dua kali:** sesudah makan, dan lagi saat pamit kepada yang mentraktir. Untuk yang membayarkan, tambahkan [ごちそうになりました|Gochisō ni narimashita]."
+   ],
+   "grammars": [
+    {
+     "title": "Berterima kasih menurut siapa yang menolong",
+     "body": [
+      "Ucapan terima kasih Jepang tidak seragam. Yang menentukan bentuknya: seberapa jauh jarak sosialnya, dan apakah kebaikannya sudah selesai atau masih berlangsung."
+     ],
+     "table": {
+      "head": [
+       "Kepada",
+       "Kalimat",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "Teman",
+        "ありがとう。/ [助|Tasu]かった。",
+        "bentuk biasa"
+       ],
+       [
+        "Rekan kerja",
+        "ありがとうございます。[助|Tasu]かりました。",
+        "aman untuk semua"
+       ],
+       [
+        "Atasan",
+        "ご[指導|shidō]いただき、ありがとうございます。",
+        "sebutkan kebaikannya"
+       ],
+       [
+        "Klien",
+        "[お心遣|O-kokorozuka]いに[感謝|kansha]いたします。",
+        "sangat resmi"
+       ],
+       [
+        "Sesudah dijamu",
+        "ごちそうさまでした。",
+        "wajib"
+       ],
+       [
+        "Sesudah dibantu besar",
+        "[何|Nan]とお[礼|rei]を[申|mō]し[上|a]げてよいか…",
+        "terima kasih terdalam"
+       ],
+       [
+        "Keesokan harinya",
+        "[昨日|Sakujitsu]はありがとうございました。",
+        "wajib diulang keesokan harinya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Aturan yang sering dilewatkan orang asing:** terima kasih diulang **keesokan harinya**. Tidak mengulangnya dianggap dingin, sekalipun kemarin kamu sudah berterima kasih panjang lebar.",
+      "**Bentuk lampau ありがとうございました untuk hal yang sudah selesai**; bentuk sekarang ありがとうございます untuk kebaikan yang masih berlangsung.",
+      "**Membalas terima kasih:** [とんでもないです|Tondemonai desu] · [こちらこそ|Kochira koso] · お[役|yaku]に[立|ta]ててよかったです."
+     ]
+    },
+    {
+     "title": "Memberi hadiah di Jepang — aturan tak tertulis",
+     "body": [
+      "Semua ini tidak pernah dikatakan langsung, dan justru itulah sebabnya orang asing sering keliru."
+     ],
+     "table": {
+      "head": [
+       "Keadaan",
+       "Yang wajar",
+       "Yang keliru"
+      ],
+      "rows": [
+       [
+        "Pulang dari perjalanan",
+        "[お土産|O-miyage] untuk seisi kantor, kue kecil terbungkus satuan",
+        "oleh-oleh mahal untuk satu-dua orang saja"
+       ],
+       [
+        "Diundang ke rumah",
+        "kue, buah, atau oleh-oleh negerimu",
+        "datang tangan kosong"
+       ],
+       [
+        "Menyerahkan hadiah",
+        "dengan dua tangan, sambil merendahkan isinya",
+        "menyodorkan satu tangan"
+       ],
+       [
+        "Menerima hadiah",
+        "menaruhnya dulu, tidak dibuka di depan pemberi",
+        "langsung merobek bungkusnya"
+       ],
+       [
+        "Ditolong besar",
+        "お[礼|rei] setara sepertiga nilai kebaikannya",
+        "membalas dengan yang jauh lebih mahal"
+       ],
+       [
+        "Uang kepada atasan",
+        "tidak pernah",
+        "amplop berisi uang"
+       ],
+       [
+        "Pernikahan",
+        "ご[祝儀|shūgi], angka ganjil (3, 5, 10 万)",
+        "angka genap — melambangkan yang bisa dibagi"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Angka pada uang hadiah Jepang berlawanan dengan Tiongkok:** pernikahan Jepang memakai angka **ganjil**, karena genap bisa dibelah dua.",
+      "**Angka 4 dan 9 dihindari sama sekali** — 四 sebunyi dengan [死|shi] (mati), 九 dengan [苦|ku] (derita).",
+      "**Membalas hadiah punya namanya sendiri:** お[返|kae]し. Nilainya sekitar setengah dari yang diterima; membalas dengan yang lebih mahal justru membuat pemberinya tak enak."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta bantuan yang berakar pada もらう",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Seluruh tangga permintaan yang dipasang di Unit 2 sebenarnya berasal dari もらう. Sekarang setelah akarnya jelas, tangga itu bisa dipakai dengan sadar, bukan dihafal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Rangka",
+      "Contoh",
+      "Tingkat"
+     ],
+     "rows": [
+      [
+       "～てもらえる？",
+       "[見|Mi]てもらえる？",
+       "teman"
+      ],
+      [
+       "～てもらえますか",
+       "[見|Mi]てもらえますか。",
+       "sopan biasa"
+      ],
+      [
+       "～てもらえませんか",
+       "[見|Mi]てもらえませんか。",
+       "sopan, memohon"
+      ],
+      [
+       "～ていただけますか",
+       "[見|Mi]ていただけますか。",
+       "hormat"
+      ],
+      [
+       "～ていただけませんか",
+       "[見|Mi]ていただけませんか。",
+       "hormat, memohon"
+      ],
+      [
+       "～ていただけないでしょうか",
+       "[見|Mi]ていただけないでしょうか。",
+       "hormat tertinggi"
+      ],
+      [
+       "お～いただけますでしょうか",
+       "ご[確認|kakunin]いただけますでしょうか。",
+       "surel resmi"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menawarkan bantuan — kebalikannya"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[手伝|Tetsuda]おうか？ — Mau kubantu? 🗣 teman",
+      "[手伝|Tetsuda]いましょうか。 — Mari saya bantu. (sopan, aman)",
+      "お[手伝|tetsuda]いしましょうか。 — Boleh saya bantu? (謙譲語)",
+      "お[持|mo]ちします。 — Biar saya bawakan.",
+      "[何|Nani]かお[手伝|tetsuda]いできることはありますか。 — Ada yang bisa saya bantu?",
+      "⚠️ ❌[手伝|Tetsuda]ってあげましょうか terdengar seperti kamu sedang berbaik hati dan ingin diakui."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menolak bantuan dengan halus",
+     "items": [
+      "[大丈夫|Daijōbu]です、ありがとうございます。 — Tidak usah, terima kasih.",
+      "お[気持|kimo]ちだけいただきます。 — Perasaan baiknya saja saya terima.",
+      "[結構|Kekkō]です。 — Tidak perlu. ⚠️ nadanya bisa dingin; sertakan senyum dan terima kasih.",
+      "[自分|Jibun]でやってみます。 — Saya coba sendiri dulu.",
+      "⚠️ Menolak bantuan dua kali lalu menerima di tawaran ketiga adalah pola yang wajar di Jepang — persis seperti berebut membayar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Musim memberi: kalender pemberian di Jepang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Memberi di Jepang punya kalendernya sendiri. Sebagian sudah memudar di kota besar, tapi di lingkungan kerja tradisional semuanya masih hidup."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Waktu",
+      "Nama",
+      "Isinya"
+     ],
+     "rows": [
+      [
+       "Awal Januari",
+       "[お年玉|o-toshidama]",
+       "uang untuk anak-anak, dalam amplop kecil"
+      ],
+      [
+       "14 Februari",
+       "[バレンタイン|Barentain]",
+       "cokelat; termasuk [義理|giri]チョコ untuk rekan kerja"
+      ],
+      [
+       "14 Maret",
+       "[ホワイトデー|Howaito Dē]",
+       "balasan atas cokelat Februari"
+      ],
+      [
+       "Juli",
+       "[お中元|o-chūgen]",
+       "hadiah pertengahan tahun untuk yang berjasa"
+      ],
+      [
+       "Desember",
+       "[お歳暮|o-seibo]",
+       "hadiah akhir tahun"
+      ],
+      [
+       "Sepulang perjalanan",
+       "[お土産|o-miyage]",
+       "oleh-oleh untuk kantor dan tetangga"
+      ],
+      [
+       "Pindah rumah",
+       "[引|Hi]っ[越|ko]しそば / [挨拶|aisatsu][品|hin]",
+       "salam kepada tetangga baru"
+      ],
+      [
+       "Sesudah ditolong",
+       "[お礼|o-rei] · [お返|o-kae]し",
+       "balasan, sekitar setengah nilainya"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat saat menyerahkan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "ほんの[気持|kimo]ちですが、どうぞ。 — Ini cuma tanda perasaan saja, silakan.",
+      "みなさんで[召|me]し[上|a]がってください。 — Silakan dinikmati bersama-sama.",
+      "[出張|Shutchō]のお[土産|miyage]です。 — Ini oleh-oleh dari perjalanan dinas.",
+      "[先日|Senjitsu]のお[礼|rei]です。 — Ini tanda terima kasih atas bantuan tempo hari.",
+      "お[口|kuchi]に[合|a]うといいのですが。 — Semoga cocok dengan selera Anda."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat puluh detik: satu kebaikan",
+     "items": [
+      "Ceritakan satu kebaikan yang pernah kamu terima, keras-keras:",
+      "Siapa dan apa: [〜さんが〜てくれました|〜san ga 〜te kuremashita]。",
+      "Dari sisimu: [〜さんに〜てもらいました|〜san ni 〜te moraimashita]。",
+      "Kalau orangnya dihormati: [〜ていただきました|〜te itadakimashita]。",
+      "Apa yang kamu balas: お[礼|rei]に〜てあげました。",
+      "Tutup: [本当|Hontō]に[助|tasu]かりました。[今|Ima]でも[感謝|kansha]しています。"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "差し上げる",
+   "baca": "さしあげる · sashiageru",
+   "id": "memberikan (merendah)"
+  },
+  {
+   "ja": "くださる",
+   "baca": "kudasaru",
+   "id": "memberikan ke saya (hormat)"
+  },
+  {
+   "ja": "いただく",
+   "baca": "itadaku",
+   "id": "menerima (merendah)"
+  },
+  {
+   "ja": "お礼",
+   "baca": "おれい · o-rei",
+   "id": "tanda terima kasih"
+  },
+  {
+   "ja": "お返し",
+   "baca": "おかえし · o-kaeshi",
+   "id": "balasan hadiah"
+  },
+  {
+   "ja": "お土産",
+   "baca": "おみやげ · o-miyage",
+   "id": "oleh-oleh"
+  },
+  {
+   "ja": "気を遣う",
+   "baca": "きをつかう · ki o tsukau",
+   "id": "sungkan, repot memperhatikan orang"
+  },
+  {
+   "ja": "気にかける",
+   "baca": "きにかける · ki ni kakeru",
+   "id": "memperhatikan, peduli"
+  },
+  {
+   "ja": "遠慮する",
+   "baca": "えんりょする · enryo suru",
+   "id": "sungkan, menahan diri"
+  },
+  {
+   "ja": "招く",
+   "baca": "まねく · maneku",
+   "id": "mengundang"
+  },
+  {
+   "ja": "口に合う",
+   "baca": "くちにあう · kuchi ni au",
+   "id": "cocok dengan selera"
+  },
+  {
+   "ja": "召し上がる",
+   "baca": "めしあがる · meshiagaru",
+   "id": "makan (hormat)"
+  },
+  {
+   "ja": "ごちそうさま",
+   "baca": "gochisōsama",
+   "id": "terima kasih atas jamuannya"
+  },
+  {
+   "ja": "ごちそうになる",
+   "baca": "gochisō ni naru",
+   "id": "ditraktir"
+  },
+  {
+   "ja": "つまらないもの",
+   "baca": "tsumaranai mono",
+   "id": "barang tak berarti (basa-basi hadiah)"
+  },
+  {
+   "ja": "ほんの気持ち",
+   "baca": "ほんのきもち · honno kimochi",
+   "id": "cuma tanda perasaan"
+  },
+  {
+   "ja": "分ける",
+   "baca": "わける · wakeru",
+   "id": "membagi"
+  },
+  {
+   "ja": "直す",
+   "baca": "なおす · naosu",
+   "id": "membetulkan"
+  },
+  {
+   "ja": "レシピ",
+   "baca": "reshipi",
+   "id": "resep masakan"
+  },
+  {
+   "ja": "作り方",
+   "baca": "つくりかた · tsukurikata",
+   "id": "cara membuat"
+  },
+  {
+   "ja": "妻",
+   "baca": "つま · tsuma",
+   "id": "istri (sendiri)"
+  },
+  {
+   "ja": "感謝する",
+   "baca": "かんしゃする · kansha suru",
+   "id": "berterima kasih"
+  },
+  {
+   "ja": "心遣い",
+   "baca": "こころづかい · kokorozukai",
+   "id": "perhatian, kepedulian"
+  },
+  {
+   "ja": "指導",
+   "baca": "しどう · shidō",
+   "id": "bimbingan"
+  },
+  {
+   "ja": "役に立つ",
+   "baca": "やくにたつ · yaku ni tatsu",
+   "id": "berguna"
+  },
+  {
+   "ja": "とんでもない",
+   "baca": "tondemonai",
+   "id": "sama sekali tidak, jangan begitu"
+  },
+  {
+   "ja": "こちらこそ",
+   "baca": "kochira koso",
+   "id": "sayalah yang seharusnya"
+  },
+  {
+   "ja": "お年玉",
+   "baca": "おとしだま · o-toshidama",
+   "id": "angpau tahun baru untuk anak"
+  },
+  {
+   "ja": "義理",
+   "baca": "ぎり · giri",
+   "id": "kewajiban sosial"
+  },
+  {
+   "ja": "お中元",
+   "baca": "おちゅうげん · o-chūgen",
+   "id": "hadiah pertengahan tahun"
+  },
+  {
+   "ja": "お歳暮",
+   "baca": "おせいぼ · o-seibo",
+   "id": "hadiah akhir tahun"
+  },
+  {
+   "ja": "祝儀",
+   "baca": "しゅうぎ · shūgi",
+   "id": "amplop uang hadiah"
+  },
+  {
+   "ja": "挨拶品",
+   "baca": "あいさつひん · aisatsuhin",
+   "id": "bingkisan salam"
+  },
+  {
+   "ja": "出張",
+   "baca": "しゅっちょう · shutchō",
+   "id": "perjalanan dinas"
+  },
+  {
+   "ja": "荷物",
+   "baca": "にもつ · nimotsu",
+   "id": "barang bawaan"
+  },
+  {
+   "ja": "手当",
+   "baca": "てあて · teate",
+   "id": "tunjangan"
+  },
+  {
+   "ja": "自分で",
+   "baca": "じぶんで · jibun de",
+   "id": "sendiri"
+  },
+  {
+   "ja": "結構です",
+   "baca": "けっこうです · kekkō desu",
+   "id": "tidak perlu, cukup"
+  },
+  {
+   "ja": "たいした",
+   "baca": "taishita",
+   "id": "istimewa, besar"
+  },
+  {
+   "ja": "遠い",
+   "baca": "とおい · tōi",
+   "id": "jauh"
+  },
+  {
+   "ja": "すごい",
+   "baca": "sugoi",
+   "id": "hebat, luar biasa"
+  },
+  {
+   "ja": "うれしい",
+   "baca": "ureshii",
+   "id": "senang"
+  },
+  {
+   "ja": "本日",
+   "baca": "ほんじつ · honjitsu",
+   "id": "hari ini (resmi)"
+  },
+  {
+   "ja": "昨日",
+   "baca": "さくじつ · sakujitsu",
+   "id": "kemarin (resmi)"
+  },
+  {
+   "ja": "今度",
+   "baca": "こんど · kondo",
+   "id": "lain kali"
+  },
+  {
+   "ja": "早速",
+   "baca": "さっそく · sassoku",
+   "id": "segera, langsung"
+  },
+  {
+   "ja": "上がる",
+   "baca": "あがる · agaru",
+   "id": "naik, masuk rumah"
+  },
+  {
+   "ja": "引っ越し",
+   "baca": "ひっこし · hikkoshi",
+   "id": "pindah rumah"
+  },
+  {
+   "ja": "苦",
+   "baca": "く · ku",
+   "id": "derita (sebunyi dengan 九)"
+  },
+  {
+   "ja": "祝う",
+   "baca": "いわう · iwau",
+   "id": "merayakan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan あげる、くれる、atau もらう (bentuk lampau biasa).",
+   "items": [
+    "[私|Watashi]は[弟|otōto]に[本|hon]を ____ 。",
+    "[友達|Tomodachi]が[私|watashi]に[プレゼント|purezento]を ____ 。",
+    "[私|Watashi]は[友達|tomodachi]に[プレゼント|purezento]を ____ 。",
+    "[田中|Tanaka]さんが[山田|Yamada]さんに[花|hana]を ____ 。",
+    "[先生|Sensei]が[妹|imōto]に[辞書|jisho]を ____ 。",
+    "[会社|Kaisha]から[手当|teate]を ____ 。"
+   ]
+  },
+  {
+   "prompt": "Naikkan ke bentuk hormat (差し上げる・くださる・いただく).",
+   "items": [
+    "[部長|Buchō]に[お土産|o-miyage]をあげました。→ ____",
+    "[先生|Sensei]が[本|hon]をくれました。→ ____",
+    "[社長|Shachō]に[アドバイス|adobaisu]をもらいました。→ ____",
+    "[部長|Buchō]が[説明|setsumei]してくれました。→ ____",
+    "[先生|Sensei]に[教|oshi]えてもらいました。→ ____",
+    "[お客様|O-kyakusama]に[資料|shiryō]を[見|mi]せてあげました。→ ____"
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut terdengar kurang tepat. Perbaiki.",
+   "items": [
+    "❌[部長|Buchō]、[荷物|nimotsu]を[持|mo]ってあげましょうか。",
+    "❌[田中|Tanaka]さんが[山田|Yamada]さんに[本|hon]をくれました。",
+    "❌[部長|Buchō]に[説明|setsumei]してもらいました。",
+    "❌[先生|Sensei]、これを[見|mi]てあげてください。",
+    "❌お[客様|kyakusama]に[教|oshi]えてあげます。",
+    "❌[友達|Tomodachi]が[手伝|tetsuda]いました。(maksudnya: teman berbaik hati membantu saya)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "て / [直|nao]し / [資料|shiryō]を / くれて / ありがとう",
+    "て / [説明|setsumei]し / [部長|buchō]に / いただきました",
+    "を / [差|sa]し[上|a]げます / お土産 / インドネシアの",
+    "か / [手伝|tetsuda]い / お / しましょう",
+    "て / [教|oshi]え / [作|tsuku]り[方|kata]を / いただけませんか",
+    "に / [気|ki]を / [遣|tsuka]わないで / そんな / ください"
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat yang pantas untuk keadaan berikut. Tulis A atau B.",
+   "items": [
+    "Menawarkan bantuan ke atasan: A [手伝|Tetsuda]ってあげましょうか atau B お[手伝|tetsuda]いしましょうか",
+    "Menyerahkan oleh-oleh: A これ、[高|taka]かったんですよ atau B ほんの[気持|kimo]ちですが",
+    "Berterima kasih keesokan harinya: A [昨日|Sakujitsu]はありがとうございました atau B (tidak perlu apa-apa)",
+    "Menerima hadiah: A その[場|ba]で[開|a]ける atau B [後|ato]で[開|a]ける",
+    "Uang hadiah pernikahan: A [三万円|San-man-en] atau B [四万円|Yon-man-en]",
+    "Ditolong atasan: A [助|Tasu]かりました atau B ご[指導|shidō]いただき、ありがとうございます"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Teman saya membantu saya kemarin.",
+    "Saya diajari oleh guru. (hormat)",
+    "Kepala bagian berkenan menjelaskan kepada saya.",
+    "Bisakah saya minta Anda memeriksa berkas ini?",
+    "Saya bawakan oleh-oleh untuk Anda. (merendah)",
+    "Terima kasih sudah datang dari jauh."
+   ]
+  }
+ ],
+ "answers": [
+  "あげた — くれた — あげた — あげた — くださった — いただいた",
+  "[部長|Buchō]に[お土産|o-miyage]を[差|sa]し[上|a]げました — [先生|Sensei]が[本|hon]をくださいました — [社長|Shachō]に[アドバイス|adobaisu]をいただきました — [部長|Buchō]が[説明|setsumei]してくださいました — [先生|Sensei]に[教|oshi]えていただきました — [お客様|O-kyakusama]に[資料|shiryō]をお[見|mi]せしました",
+  "[部長|Buchō]、お[持|mo]ちしましょうか — [田中|Tanaka]さんが[山田|Yamada]さんに[本|hon]をあげました — [部長|Buchō]に[説明|setsumei]していただきました — [先生|Sensei]、これをご[覧|ran]ください — お[客様|kyakusama]にご[説明|setsumei]いたします — [友達|Tomodachi]が[手伝|tetsuda]ってくれました",
+  "[資料|Shiryō]を[直|nao]してくれてありがとう — [部長|Buchō]に[説明|setsumei]していただきました — インドネシアのお[土産|miyage]を[差|sa]し[上|a]げます — お[手伝|tetsuda]いしましょうか — [作|Tsuku]り[方|kata]を[教|oshi]えていただけませんか — そんなに[気|ki]を[遣|tsuka]わないでください",
+  "B — B — A — B — A — B",
+  "[友達|Tomodachi]が[昨日|kinō][手伝|tetsuda]ってくれました — [先生|Sensei]に[教|oshi]えていただきました — [部長|Buchō]が[説明|setsumei]してくださいました — この[資料|shiryō]を[確認|kakunin]していただけませんか — お[土産|miyage]を[差|sa]し[上|a]げます — [遠|Tō]いところ[来|き]てくださって、ありがとうございます"
+ ],
+ "wave": "Lima menit sebelum Unit 7: sebutkan tiga orang yang menolongmu bulan ini. Untuk masing-masing, ucapkan dua kalimat — satu dari sisi mereka (〜てくれました / 〜てくださいました) dan satu dari sisimu (〜てもらいました / 〜ていただきました). Lalu ucapkan satu kalimat tentang apa yang akan kamu balas. Kalau kamu tidak yakin harus pakai くれる atau くださる, tanyakan pada dirimu satu hal saja: apakah orang itu perlu kamu hormati?"
+}
