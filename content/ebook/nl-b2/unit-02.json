@@ -1,0 +1,598 @@
+{
+ "title": "Kapan te dipakai dan kapan ia lenyap",
+ "title_target": "Ik probeer het te regelen, maar ik moet het eerst weten",
+ "goal": "Memilih dengan sadar antara *te* + infinitif, *om te*, dan infinitif telanjang — tiga bentuk yang dalam bahasa Indonesia sama-sama berbunyi \"untuk\".",
+ "bekal": [
+  "mengenali kata kerja mana yang menuntut *te* dan mana yang menolaknya",
+  "memakai *om te* untuk tujuan dan menghilangkannya saat ia tidak dipakai",
+  "menyisipkan *te* di tengah kata kerja terpisah (*mee te nemen*)",
+  "memakai *zonder te*, *in plaats van te*, *door te*, *na te* dengan benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Aan een tafeltje in Utrecht",
+   "intro": "Sebuah kafe di dekat Neude, Sabtu siang. Noor sedang mempertimbangkan pindah pekerjaan; Bram, temannya sejak kuliah, sudah pernah melakukannya. Perhatikan berapa kali kata *te* muncul, dan lebih penting lagi: di kalimat mana ia justru tidak boleh ada.",
+   "lines": [
+    {
+     "speaker": "Noor:",
+     "text": "Ik zit eraan te denken om te solliciteren bij een andere organisatie.",
+     "id": "Aku lagi mikir-mikir mau melamar ke organisasi lain.",
+     "literal": "saya duduk pada-[er] memikir untuk melamar pada sebuah lain organisasi."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Serieus? Ik dacht dat je het daar wel naar je zin had.",
+     "id": "Serius? Kupikir kamu betah di sana.",
+     "literal": "serius? saya pikir-dulu bahwa kamu itu di-sana [wel] menurut kamu selera punya-dulu."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Dat had ik ook. Maar ik weiger nog drie jaar hetzelfde te doen.",
+     "id": "Dulu iya. Tapi aku menolak tiga tahun lagi mengerjakan hal yang sama.",
+     "literal": "itu punya-dulu saya juga. tapi saya menolak lagi tiga tahun hal-sama membuat."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Fair. Wat wil je dan gaan doen?",
+     "id": "Masuk akal. Terus kamu mau ngapain?",
+     "literal": "adil. apa mau kamu lalu pergi membuat?"
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Iets met beleid. Ik hoop volgende maand een gesprek te hebben.",
+     "id": "Sesuatu di bidang kebijakan. Aku berharap bulan depan sudah ada wawancara.",
+     "literal": "sesuatu dengan kebijakan. saya harap depan bulan sebuah percakapan punya."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Heb je al gebeld? Zonder te bellen kom je er nooit tussen.",
+     "id": "Sudah telepon? Tanpa menelepon kamu nggak akan pernah dilirik.",
+     "literal": "punya kamu sudah ditelepon? tanpa menelepon datang kamu [er] tak-pernah di-antara."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Nee. Ik durf niet zo goed te bellen zonder aanleiding.",
+     "id": "Belum. Aku agak nggak berani telepon tanpa alasan.",
+     "literal": "tidak. saya berani tidak begitu baik menelepon tanpa alasan."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Dat hoef je ook niet. Vraag gewoon of je even mag langskomen.",
+     "id": "Nggak perlu juga. Tanya saja apa boleh mampir sebentar.",
+     "literal": "itu perlu kamu juga tidak. tanya biasa apakah kamu [even] boleh mampir."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "In plaats van te wachten tot ze mijn brief lezen, bedoel je.",
+     "id": "Jadi bukannya nunggu sampai mereka baca suratku, maksudmu.",
+     "literal": "di tempat dari menunggu sampai mereka saya surat baca, maksud kamu."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Precies. Door te bellen laat je zien dat je het echt wilt.",
+     "id": "Persis. Dengan menelepon kamu menunjukkan kamu benar-benar mau.",
+     "literal": "tepat. lewat menelepon biar kamu lihat bahwa kamu itu sungguh mau."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Oké. Zou jij dat vandaag nog doen, of maandag?",
+     "id": "Oke. Kamu bakal lakuin hari ini juga, atau Senin?",
+     "literal": "oke. akanlah kamu itu hari-ini lagi membuat, atau Senin?"
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Maandag. Op zaterdag bereik je toch niemand.",
+     "id": "Senin. Sabtu kan nggak ada orang yang bisa dihubungi.",
+     "literal": "Senin. pada Sabtu capai kamu [toch] tak-seorang."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Help je me even mijn motivatiebrief nakijken?",
+     "id": "Bantu aku ngecek surat motivasiku sebentar, ya?",
+     "literal": "bantu kamu kepadaku [even] saya motivasi-surat memeriksa?"
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Stuur maar op. Ik beloof je hem morgen terug te sturen.",
+     "id": "Kirim saja. Aku janji besok kukirim balik.",
+     "literal": "kirim [maar] [op]. saya janji kepadamu dia besok kembali mengirim."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Je bent een schat. Ik vergeet altijd de bijlage mee te sturen.",
+     "id": "Kamu baik banget. Aku selalu lupa melampirkan berkasnya.",
+     "literal": "kamu ada sebuah harta. saya lupa selalu itu lampiran ikut mengirim."
+    },
+    {
+     "speaker": "Bram:",
+     "text": "Dat overkomt iedereen. Zet het meteen klaar in plaats van het te onthouden.",
+     "id": "Itu terjadi ke semua orang. Siapkan langsung daripada mengandalkan ingatan.",
+     "literal": "itu menimpa setiap-orang. taruh itu segera siap di tempat dari itu mengingat."
+    },
+    {
+     "speaker": "Noor:",
+     "text": "Afgesproken. En bedankt dat je altijd de moeite neemt om mee te denken.",
+     "id": "Sepakat. Dan terima kasih kamu selalu mau ikut mikirin.",
+     "literal": "disepakati. dan terima-kasih bahwa kamu selalu itu repot ambil untuk ikut memikir."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 3, 5, 7, 14: kata kerja yang menuntut *te* tanpa *om*.** *weigeren*, *hopen*, *durven*, *beloven*, *proberen*, *vergeten*, *besluiten* — semuanya diikuti *te* + infinitif, tanpa *om*. Ini kelompok yang paling sering keliru, karena pelajar Indonesia menerjemahkan \"untuk\" dan otomatis menempelkan *om*. *Ik hoop om te komen* salah; *ik hoop te komen* benar."
+    },
+    {
+     "text": "**Baris 4 dan 8: infinitif tanpa *te* sama sekali.** Sesudah kata kerja modal (*willen, kunnen, moeten, mogen, zullen*) dan sesudah *gaan, komen, blijven, laten, zien, horen, helpen*, *te* dilarang: *wat wil je gaan doen*, *mag ik langskomen*. Perhatikan bahwa baris 13 (*help je me nakijken*) juga tanpa *te*, sedangkan *helpen* dengan *te* (*helpen te dragen*) juga terdengar — dua-duanya beredar, tanpa *te* lebih lazim."
+    },
+    {
+     "text": "**Baris 1: *om te* yang benar-benar berarti tujuan.** *Ik zit eraan te denken **om te solliciteren*** — di sini *om te* menjawab \"untuk apa\". Bandingkan dengan *ik probeer te bellen* (bukan tujuan, melainkan isi dari usahanya). Uji cepat: kalau kalimatnya bisa dijawab dengan pertanyaan *waarom?*, pakai *om te*; kalau menjawab *wat?*, pakai *te* saja."
+    },
+    {
+     "text": "**Baris 6, 9, 10, 16: empat preposisi yang selalu membawa *te*.** *zonder te* (tanpa), *in plaats van te* (alih-alih), *door te* (dengan cara), *na te* (setelah). Keempatnya menuntut subjek yang **sama** dengan induk kalimatnya: *zonder te bellen* hanya boleh kalau yang menelepon adalah orang yang sama. Kalau berbeda, gunakan anak kalimat: *zonder dat hij belt*."
+    },
+    {
+     "text": "**Baris 15 dan 16: *mee te sturen*, *mee te denken*.** Pada kata kerja terpisah, *te* masuk **di antara** ekor dan akarnya: *meesturen* → *mee te sturen*, *nakijken* → *na te kijken*, *opbellen* → *op te bellen*. Ditulis tiga kata terpisah, dan ini termasuk kesalahan tulis paling kelihatan di karangan pelajar."
+    },
+    {
+     "text": "**Baris 1 dan 12: *zitten te* dan *toch*.** *Ik zit eraan te denken* bukan berarti dia sedang duduk — *zitten/staan/liggen/lopen* + *te* adalah cara bahasa Belanda menyatakan kegiatan yang sedang berlangsung, sejajar dengan *aan het* + infinitif. Unit 15 membongkarnya. *Toch* di baris 12 dibahas penuh di unit 6."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Tiga rak: te, om te, dan tanpa te",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"untuk\" di semua tempat ini, jadi ketiga rak berikut harus dihafal sebagai daftar, bukan diturunkan dari makna. Kabar baiknya: raknya cuma tiga, dan yang ketiga paling pendek."
+     ],
+     "table": {
+      "head": [
+       "Rak",
+       "Isi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**tanpa te**",
+        "modal: kunnen, moeten, mogen, willen, zullen",
+        "Ik **wil** komen."
+       ],
+       [
+        "**tanpa te**",
+        "gaan, komen, blijven, laten",
+        "Ik **ga** kijken."
+       ],
+       [
+        "**tanpa te**",
+        "zien, horen, voelen, helpen, leren",
+        "Ik **hoor** hem zingen."
+       ],
+       [
+        "**te**",
+        "proberen, hopen, weigeren, durven, beloven",
+        "Ik **probeer te** bellen."
+       ],
+       [
+        "**te**",
+        "vergeten, besluiten, beginnen, vragen",
+        "Ik **vergeet te** eten."
+       ],
+       [
+        "**te**",
+        "zitten, staan, liggen, lopen (sedang)",
+        "Hij **staat te** wachten."
+       ],
+       [
+        "**om te**",
+        "tujuan — menjawab *waarom?*",
+        "Ik bel **om te** vragen."
+       ],
+       [
+        "**om te**",
+        "sesudah te + kata sifat",
+        "Het is te koud **om te** fietsen."
+       ],
+       [
+        "**om te**",
+        "sesudah *genoeg*, *voldoende*",
+        "Oud **genoeg om te** stemmen."
+       ],
+       [
+        "⚠️ *hoeven*",
+        "selalu dengan *te* dan penyangkalan",
+        "Dat **hoef** je niet **te** doen."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Empat preposisi yang menuntut te — dan syarat subjek yang sama",
+     "body": [
+      "Keempat bentuk ini adalah alat perapat kalimat B2: mereka memampatkan seluruh anak kalimat menjadi satu potongan. Harganya satu syarat yang tak bisa ditawar — **pelakunya harus orang yang sama**. Kalau berbeda, bentuk ini langsung salah, dan bahasa Belanda memaksamu kembali ke anak kalimat penuh."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Subjek sama",
+       "Subjek berbeda"
+      ],
+      "rows": [
+       [
+        "**zonder te**",
+        "tanpa",
+        "Hij vertrok **zonder te** groeten.",
+        "…**zonder dat** ik het wist."
+       ],
+       [
+        "**door te**",
+        "dengan cara",
+        "**Door te** bellen loste hij het op.",
+        "…**doordat** hij belde."
+       ],
+       [
+        "**in plaats van te**",
+        "alih-alih",
+        "**In plaats van te** wachten, belde hij.",
+        "…**in plaats dat** hij wachtte."
+       ],
+       [
+        "**na te**",
+        "sesudah",
+        "**Na te** hebben gebeld, ging hij weg.",
+        "…**nadat** hij had gebeld."
+       ],
+       [
+        "**alvorens te**",
+        "sebelum (tertulis)",
+        "**Alvorens te** tekenen, las hij alles.",
+        "…**voordat** hij tekende."
+       ],
+       [
+        "**om te**",
+        "untuk",
+        "Hij belde **om te** vragen.",
+        "…**opdat** zij het wist."
+       ],
+       [
+        "⚠️ *na te*",
+        "selalu + *hebben/zijn* + deelwoord",
+        "**Na te** zijn vertrokken…",
+        "—"
+       ],
+       [
+        "⚠️ ragam",
+        "*alvorens* dan *na te* terasa tertulis",
+        "surat, laporan",
+        "—"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "te di dalam kata kerja terpisah: tabel rujukan",
+     "body": [
+      "Aturannya satu baris: *te* masuk **di antara ekor dan akar**, dan ketiganya ditulis terpisah. Yang sering keliru bukan aturannya, melainkan mengenali bahwa kata kerjanya memang terpisah — terutama kalau ekornya berupa kata yang juga bisa berdiri sendiri (*mee*, *af*, *toe*, *voor*)."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Dengan te",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "opbellen",
+        "**op te bellen**",
+        "Ik vergeet hem **op te bellen**."
+       ],
+       [
+        "meenemen",
+        "**mee te nemen**",
+        "Denk eraan je pas **mee te nemen**."
+       ],
+       [
+        "afronden",
+        "**af te ronden**",
+        "Het lukt me niet het **af te ronden**."
+       ],
+       [
+        "nakijken",
+        "**na te kijken**",
+        "Hij belooft het **na te kijken**."
+       ],
+       [
+        "toestemmen",
+        "**toe te stemmen**",
+        "Zij weigert **toe te stemmen**."
+       ],
+       [
+        "langskomen",
+        "**langs te komen**",
+        "Ik hoop even **langs te komen**."
+       ],
+       [
+        "⚠️ tak terpisah",
+        "**te voorkomen**",
+        "Om dat **te voorkomen**…"
+       ],
+       [
+        "⚠️ tak terpisah",
+        "**te ondergaan**",
+        "Zonder het **te ondergaan**…"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Melamar kerja dan bicara tentang karier",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Nederlands",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "solliciteren",
+       "so-li-si-TEH-re(n)",
+       "melamar kerja"
+      ],
+      [
+       "de sollicitatiebrief",
+       "de so-li-si-TAH-tsi-brif",
+       "surat lamaran"
+      ],
+      [
+       "de motivatiebrief",
+       "de moh-ti-FAH-tsi-brif",
+       "surat motivasi"
+      ],
+      [
+       "het cv",
+       "het seh-FEH",
+       "riwayat hidup"
+      ],
+      [
+       "de vacature",
+       "de fa-ka-TÜ-re",
+       "lowongan"
+      ],
+      [
+       "het gesprek",
+       "het khe-SPRÈK",
+       "wawancara"
+      ],
+      [
+       "de bijlage",
+       "de BÈY-lah-khe",
+       "lampiran"
+      ],
+      [
+       "het beleid",
+       "het be-LÈYT",
+       "kebijakan"
+      ],
+      [
+       "de aanleiding",
+       "de AHN-lèy-ding",
+       "alasan pemicu"
+      ],
+      [
+       "doorgroeien",
+       "DOHR-khru-e(n)",
+       "berkembang naik"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Enam kalimat pembuka telepon yang tidak terdengar canggung"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Nadanya"
+     ],
+     "rows": [
+      [
+       "U spreekt met Noor Hasan.",
+       "pembuka baku, wajib"
+      ],
+      [
+       "Ik bel naar aanleiding van de vacature.",
+       "resmi, jelas"
+      ],
+      [
+       "Ik zag uw vacature staan en wilde even wat vragen.",
+       "ramah, lisan"
+      ],
+      [
+       "Bel ik gelegen?",
+       "memeriksa apakah pas waktunya"
+      ],
+      [
+       "Heeft u een momentje?",
+       "sedikit lebih santai"
+      ],
+      [
+       "Ik wil graag even doorpraten over…",
+       "membuka pokok"
+      ],
+      [
+       "Mag ik daar later op terugkomen?",
+       "menunda tanpa menolak"
+      ],
+      [
+       "Ik hoor het graag. Fijne dag verder!",
+       "penutup baku"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Kesalahan *om* berlebih adalah penanda B1 yang paling cepat terlihat.** *Ik probeer om te bellen* tidak salah total — sebagian penutur memakainya — tapi di tulisan resmi ia langsung terbaca sebagai bahasa pelajar. Hilangkan *om* di seluruh kelompok *proberen/hopen/weigeren/beloven*.",
+      "**Bentuk *zonder te* dan *door te* itulah yang memadatkan kalimat B2.** Karangan yang seluruhnya memakai *omdat* dan *nadat* terbaca melelahkan; satu-dua bentuk mampat per paragraf sudah cukup mengubah kesan.",
+      "**Di lisan, *te* nyaris tak terdengar** — ia menempel pada kata berikutnya (*probeer te bellen* → probeer-t'-BÈ-le). Jangan menunggu mendengarnya dengan jelas; tebak dari kata kerja pertamanya, karena rak-rak di kotak pertama itu tetap."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "nl": "weigeren",
+   "baca": "VÈY-khe-re(n)",
+   "id": "menolak"
+  },
+  {
+   "nl": "durven",
+   "baca": "DÜR-fe(n)",
+   "id": "berani"
+  },
+  {
+   "nl": "beloven",
+   "baca": "be-LOH-fe(n)",
+   "id": "berjanji"
+  },
+  {
+   "nl": "hetzelfde",
+   "baca": "het-SÈLF-de",
+   "id": "hal yang sama"
+  },
+  {
+   "nl": "het naar je zin hebben",
+   "baca": "het nahr ye ZIN hè-be(n)",
+   "id": "betah"
+  },
+  {
+   "nl": "ertussen komen",
+   "baca": "er-TÜ-se(n) koh-me(n)",
+   "id": "berhasil masuk, dapat celah"
+  },
+  {
+   "nl": "langskomen",
+   "baca": "LANGS-koh-me(n)",
+   "id": "mampir"
+  },
+  {
+   "nl": "in plaats van",
+   "baca": "in PLAHTS fan",
+   "id": "alih-alih"
+  },
+  {
+   "nl": "bereiken",
+   "baca": "be-RÈY-ke(n)",
+   "id": "menghubungi, mencapai"
+  },
+  {
+   "nl": "nakijken",
+   "baca": "NAH-kèy-ke(n)",
+   "id": "memeriksa, mengoreksi"
+  },
+  {
+   "nl": "opsturen",
+   "baca": "OP-stü-re(n)",
+   "id": "mengirimkan"
+  },
+  {
+   "nl": "meesturen",
+   "baca": "MEH-stü-re(n)",
+   "id": "melampirkan"
+  },
+  {
+   "nl": "onthouden",
+   "baca": "ont-HAU-de(n)",
+   "id": "mengingat"
+  },
+  {
+   "nl": "klaarzetten",
+   "baca": "KLAHR-zè-te(n)",
+   "id": "menyiapkan"
+  },
+  {
+   "nl": "overkomen",
+   "baca": "oh-fer-KOH-me(n)",
+   "id": "menimpa, terjadi pada"
+  },
+  {
+   "nl": "de moeite nemen",
+   "baca": "de MÖY-te neh-me(n)",
+   "id": "mau repot-repot"
+  },
+  {
+   "nl": "meedenken",
+   "baca": "MEH-dèng-ke(n)",
+   "id": "ikut memikirkan"
+  },
+  {
+   "nl": "afgesproken",
+   "baca": "AF-khe-sproh-ke(n)",
+   "id": "sepakat, deal"
+  },
+  {
+   "nl": "een schat",
+   "baca": "en SKHAT",
+   "id": "orang yang baik hati"
+  },
+  {
+   "nl": "de organisatie",
+   "baca": "de or-kha-ni-ZAH-tsi",
+   "id": "organisasi, instansi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *te*, *om te*, atau kosongkan kalau tak perlu.",
+   "items": [
+    "Ik probeer hem vanmiddag ____ bellen.",
+    "Zij wil volgend jaar ____ verhuizen.",
+    "Hij belt ____ vragen hoe laat het begint.",
+    "We hopen morgen antwoord ____ krijgen.",
+    "Ik hoor de buren altijd ____ praten."
+   ]
+  },
+  {
+   "prompt": "Ubah anak kalimat menjadi bentuk mampat dengan *zonder te*, *door te*, *in plaats van te*, atau *na te*.",
+   "items": [
+    "Hij vertrok, en hij groette niet. ____",
+    "Zij loste het op doordat zij belde. ____",
+    "Hij wachtte niet; hij belde meteen. ____",
+    "Nadat hij had getekend, ging hij weg. ____",
+    "Ik antwoordde, maar ik las de brief niet. ____"
+   ]
+  },
+  {
+   "prompt": "Perbaiki satu kesalahan di tiap kalimat.",
+   "items": [
+    "Ik hoop om je snel te zien.",
+    "Vergeet niet je pas meenemen.",
+    "Zij weigert om toe stemmen.",
+    "Dat hoef je niet doen.",
+    "Ik ga morgen te beginnen."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Aku lagi mikir-mikir mau melamar ke organisasi lain.",
+    "Tanpa menelepon kamu nggak akan pernah dilirik.",
+    "Aku janji besok kukirim balik.",
+    "Aku selalu lupa melampirkan berkasnya.",
+    "Siapkan langsung daripada mengandalkan ingatan."
+   ]
+  }
+ ],
+ "answers": [
+  "te — (tanpa te) — om te — te — (tanpa te)",
+  "Hij vertrok zonder te groeten. — Zij loste het op door te bellen. — In plaats van te wachten, belde hij meteen. — Na te hebben getekend, ging hij weg. — Ik antwoordde zonder de brief te lezen.",
+  "Ik hoop je snel te zien. — Vergeet niet je pas mee te nemen. — Zij weigert toe te stemmen. — Dat hoef je niet te doen. — Ik ga morgen beginnen.",
+  "Ik zit eraan te denken om te solliciteren bij een andere organisatie. — Zonder te bellen kom je er nooit tussen. — Ik beloof je hem morgen terug te sturen. — Ik vergeet altijd de bijlage mee te sturen. — Zet het meteen klaar in plaats van het te onthouden."
+ ]
+}

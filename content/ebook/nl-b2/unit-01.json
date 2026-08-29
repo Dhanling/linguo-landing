@@ -1,0 +1,597 @@
+{
+ "title": "Kata kerjanya menumpuk di ujung",
+ "title_target": "Dat had allang geregeld moeten zijn",
+ "goal": "Menyusun dan membaca anak kalimat yang ujungnya memuat tiga sampai empat kata kerja sekaligus, tanpa kehilangan siapa melakukan apa.",
+ "bekal": [
+  "menaruh dua sampai empat kata kerja di ujung anak kalimat dengan urutan yang benar",
+  "memilih antara *is gekomen* dan *gekomen is* dengan sadar ragamnya",
+  "mengenali *Ersatzinfinitief*: deelwoord yang berubah jadi infinitif",
+  "menyisipkan *te* pada tempat yang tepat di dalam kelompok kata kerja"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Maandagochtend, kantoor in Rotterdam",
+   "intro": "Ruang kerja bersama sebuah biro kecil, Senin pagi. Sanne memimpin tim, Joost dan Fatima mengerjakan sebuah proyek yang tenggatnya lewat. Perhatikan ujung tiap anak kalimat: di situlah kata kerjanya menumpuk, dan urutannya tidak pernah acak.",
+   "lines": [
+    {
+     "speaker": "Sanne:",
+     "text": "Joost, ik snap niet waarom dit niet eerder is gemeld.",
+     "id": "Joost, aku tidak paham kenapa ini tidak dilaporkan lebih awal.",
+     "literal": "Joost, saya paham tidak kenapa ini tidak lebih-awal ada dilaporkan."
+    },
+    {
+     "speaker": "Joost:",
+     "text": "Omdat we ervan uitgingen dat het vrijdag opgelost zou worden.",
+     "id": "Karena kami mengira masalahnya bakal beres Jumat.",
+     "literal": "karena kami dari-[er] keluar-pergi bahwa itu Jumat diselesaikan akanlah ada-jadi."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Dat had allang geregeld moeten zijn. Niet vrijdag — vorige week.",
+     "id": "Itu mestinya sudah lama beres. Bukan Jumat — minggu lalu.",
+     "literal": "itu punya-dulu sudah-lama diatur harus ada. tidak Jumat — lalu minggu."
+    },
+    {
+     "speaker": "Fatima:",
+     "text": "We hebben het wel geprobeerd, maar de klant heeft niet gereageerd.",
+     "id": "Kami sudah mencobanya kok, tapi kliennya tidak membalas.",
+     "literal": "kami punya itu [wel] dicoba, tapi itu klien punya tidak bereaksi."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "En toen hebben jullie besloten om maar te wachten?",
+     "id": "Lalu kalian memutuskan untuk menunggu saja?",
+     "literal": "dan lalu punya kalian diputuskan untuk [maar] menunggu?"
+    },
+    {
+     "speaker": "Joost:",
+     "text": "We konden weinig doen zolang wij geen akkoord hadden gekregen.",
+     "id": "Kami tidak bisa berbuat banyak selama belum dapat persetujuan.",
+     "literal": "kami bisa-dulu sedikit membuat selama kami tak-ada persetujuan punya-dulu diterima."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Je had mij kunnen bellen. Dan was het maandag al rond geweest.",
+     "id": "Kamu bisa saja menelepon aku. Kalau begitu Senin sudah kelar.",
+     "literal": "kamu punya-dulu kepadaku bisa menelepon. lalu ada-dulu itu Senin sudah bulat ada."
+    },
+    {
+     "speaker": "Fatima:",
+     "text": "Dat klopt. Ik denk dat we dat gewoon hadden moeten doen.",
+     "id": "Betul. Kurasa kami memang seharusnya melakukan itu.",
+     "literal": "itu cocok. saya pikir bahwa kami itu biasa punya-dulu harus membuat."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Goed. Wat moet er nu gebeuren om dit deze week af te ronden?",
+     "id": "Baik. Apa yang harus terjadi supaya ini selesai minggu ini?",
+     "literal": "baik. apa harus [er] sekarang terjadi untuk ini ini minggu selesai [af] membulatkan?"
+    },
+    {
+     "speaker": "Joost:",
+     "text": "Ik zorg dat de offerte vanmiddag de deur uit gaat.",
+     "id": "Aku pastikan penawarannya keluar sore ini.",
+     "literal": "saya urus bahwa itu penawaran sore-ini itu pintu keluar pergi."
+    },
+    {
+     "speaker": "Fatima:",
+     "text": "En ik bel de klant zodra ik het bestand heb gecontroleerd.",
+     "id": "Dan aku telepon kliennya begitu berkasnya selesai kuperiksa.",
+     "literal": "dan saya telepon itu klien begitu saya itu berkas punya diperiksa."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Prima. Ik wil wel dat jullie mij cc'en, zodat ik het kan volgen.",
+     "id": "Bagus. Tapi aku mau di-cc, biar bisa aku ikuti.",
+     "literal": "bagus. saya mau [wel] bahwa kalian kepadaku cc-kan, supaya saya itu bisa mengikuti."
+    },
+    {
+     "speaker": "Joost:",
+     "text": "Doen we. Sorry dat het zo gelopen is, trouwens.",
+     "id": "Beres. Maaf ya jadinya begini.",
+     "literal": "buat kami. maaf bahwa itu begitu berjalan ada, ngomong-ngomong."
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Het geeft niet, hoor. Maar ik had het liever eerder geweten.",
+     "id": "Tidak apa-apa. Cuma aku lebih suka tahu lebih awal.",
+     "literal": "itu beri tidak, [hoor]. tapi saya punya-dulu itu lebih-suka lebih-awal diketahui."
+    },
+    {
+     "speaker": "Fatima:",
+     "text": "Zullen we afspreken dat we voortaan elke dinsdag even bijpraten?",
+     "id": "Gimana kalau kita sepakat mulai sekarang tiap Selasa ngobrol sebentar?",
+     "literal": "akan kami janjian bahwa kami mulai-kini tiap Selasa [even] bicara [bij]?"
+    },
+    {
+     "speaker": "Sanne:",
+     "text": "Dat lijkt me een goed idee. Twintig minuten, staand, niets meer.",
+     "id": "Kedengarannya ide bagus. Dua puluh menit, sambil berdiri, tidak lebih.",
+     "literal": "itu tampak kepadaku sebuah bagus ide. dua-puluh menit, berdiri, tak-ada lagi."
+    },
+    {
+     "speaker": "Joost:",
+     "text": "Zolang er koffie is, wil ik overal wel bij zijn.",
+     "id": "Selama ada kopi, aku mau ikut apa saja.",
+     "literal": "selama [er] kopi ada, mau saya di-mana-pun [wel] pada ada."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 3 adalah puncak seluruh unit ini: *had allang geregeld moeten zijn*.** Empat kata kerja berderet, dan urutannya wajib begitu. Aturannya: **kata kerja bantu selalu paling depan di kelompok itu**, lalu sisanya menyusul menurut ketergantungannya — *had* (bantu) ‹ *geregeld* (isi) ‹ *moeten* ‹ *zijn*. Bahasa Indonesia menyusunnya persis terbalik (\"seharusnya sudah diatur\"), dan itulah kenapa deretan semacam ini terasa mustahil sampai kamu berhenti menerjemahkannya kata per kata."
+    },
+    {
+     "text": "**Baris 6 dan 7: *hadden gekregen* dan *had kunnen bellen*.** Perhatikan bahwa begitu ada kata kerja modal di dalam kelompok perfectum, deelwoord modalnya **berubah jadi infinitif**: bukan *had gekund bellen*, melainkan *had **kunnen** bellen*. Gejala ini bernama *Ersatzinfinitief* dan berlaku untuk seluruh modal plus *laten*, *zien*, *horen*, *helpen*: *ik heb hem **zien** lopen* (bukan *gezien*)."
+    },
+    {
+     "text": "**Baris 2 dan 13: *opgelost zou worden* dan *gelopen is*.** Dua-duanya memakai *groene volgorde* — deelwoord di depan bantunya. Bandingkan dengan baris 1 (*is gemeld*), yang memakai *rode volgorde*. Keduanya benar; *rode* sedikit lebih lazim di Nederland dan di lisan, *groene* lebih lazim di Vlaanderen dan di tulisan resmi. Yang tidak boleh adalah berganti-ganti di dalam satu paragraf."
+    },
+    {
+     "text": "**Baris 9 dan 15: *om dit af te ronden* dan *even bijpraten*.** Pada kata kerja terpisah, *te* masuk **di antara** ekor dan akarnya dan ditulis serangkai: *af te ronden*, *mee te nemen*, *op te bellen*. Kalau tak ada *te*, ekornya menempel kembali: *bijpraten*. Unit 9 membongkar seluruh keluarga ini."
+    },
+    {
+     "text": "**Baris 7 dan 14: *had kunnen bellen* dan *had het liever geweten*.** Bentuk ini adalah cara bahasa Belanda menyampaikan penyesalan dan teguran halus, sejajar dengan *zou hebben* di unit 3. *Je had mij kunnen bellen* secara harfiah \"kamu bisa menelepon aku\", tapi nadanya jelas: kamu tidak melakukannya, dan itu disayangkan. Dikatakan dengan wajah datar; itu bagian dari bentuknya."
+    },
+    {
+     "text": "**Baris 12: *zodat ik het kan volgen*.** Sesudah *zodat* kata kerjanya wajib ke ujung, tapi *kan volgen* boleh juga ditulis *volgen kan*. Yang tidak boleh: *zodat ik kan het volgen*. Objek (*het*) selalu berada **di depan** kelompok kata kerja, tak pernah di dalamnya."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Kelompok kata kerja di ujung: urutan yang tak bisa ditawar",
+     "body": [
+      "Bahasa Belanda tidak keberatan menumpuk empat kata kerja di ujung kalimat, asal urutannya benar. Kuncinya satu kalimat: **yang paling \"bantu\" berdiri paling depan, yang paling \"isi\" paling belakang** — kebalikan dari bahasa Indonesia, yang menaruh kata kerja intinya lebih dulu."
+     ],
+     "table": {
+      "head": [
+       "Jumlah",
+       "Susunan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "satu",
+        "kata kerjanya sendiri",
+        "…omdat hij **komt**."
+       ],
+       [
+        "dua, perfectum",
+        "bantu ‹ deelwoord",
+        "…omdat hij **is gekomen**."
+       ],
+       [
+        "dua, modal",
+        "modal ‹ infinitif",
+        "…omdat hij **moet komen**."
+       ],
+       [
+        "tiga, modal berperfectum",
+        "bantu ‹ modal ‹ infinitif",
+        "…omdat hij **heeft moeten komen**."
+       ],
+       [
+        "tiga, pasif",
+        "bantu ‹ deelwoord ‹ worden",
+        "…omdat het **is opgelost worden** ✗ → **opgelost is** ✓"
+       ],
+       [
+        "tiga, pasif bermodal",
+        "modal ‹ deelwoord ‹ worden",
+        "…omdat het **moet worden opgelost**."
+       ],
+       [
+        "empat",
+        "bantu ‹ deelwoord ‹ modal ‹ zijn",
+        "…dat het **had geregeld moeten zijn**."
+       ],
+       [
+        "dengan *te*",
+        "*te* menempel pada kata kerja terakhir",
+        "…omdat hij weigert **te betalen**."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Ersatzinfinitief: deelwoord yang menolak jadi deelwoord",
+     "body": [
+      "Begitu sebuah kata kerja modal (atau *laten*, *zien*, *horen*, *helpen*, *durven*) masuk ke dalam kelompok perfectum, ia **tidak** memakai bentuk deelwoord-nya, melainkan infinitif. Ini bukan pengecualian kecil; ia muncul di hampir tiap paragraf bahasa Belanda tertulis."
+     ],
+     "table": {
+      "head": [
+       "Salah",
+       "Benar",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "ik heb het **gekund** doen",
+        "ik heb het **kunnen** doen",
+        "aku sempat melakukannya"
+       ],
+       [
+        "hij heeft **gemoeten** werken",
+        "hij heeft **moeten** werken",
+        "dia harus bekerja"
+       ],
+       [
+        "ze heeft het **gewild** kopen",
+        "ze heeft het **willen** kopen",
+        "dia ingin membelinya"
+       ],
+       [
+        "ik heb hem **gezien** lopen",
+        "ik heb hem **zien** lopen",
+        "aku melihat dia berjalan"
+       ],
+       [
+        "we hebben het **gelaten** doen",
+        "we hebben het **laten** doen",
+        "kami menyuruh orang mengerjakannya"
+       ],
+       [
+        "ik heb hem **geholpen** dragen",
+        "ik heb hem **helpen** dragen",
+        "aku membantunya mengangkat"
+       ],
+       [
+        "⚠️ tanpa infinitif kedua",
+        "ik heb het **gekund**",
+        "aku memang bisa (tanpa kata kerja lain)"
+       ],
+       [
+        "⚠️ *hoeven* ikut aturan ini",
+        "je had niet **hoeven** komen",
+        "kamu tak perlu datang"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Rode of groene volgorde: dua urutan yang sama-sama benar",
+     "body": [
+      "Pada kelompok dua kata kerja di ujung anak kalimat, bahasa Belanda mengizinkan dua urutan. Namanya berasal dari kebiasaan menandainya dengan pensil merah dan hijau di buku tata bahasa lama. Pilihannya bukan soal benar-salah, melainkan soal irama dan ragam."
+     ],
+     "table": {
+      "head": [
+       "Urutan",
+       "Bentuk",
+       "Terdengar",
+       "Paling sering di"
+      ],
+      "rows": [
+       [
+        "rood",
+        "bantu ‹ deelwoord",
+        "*…dat hij **is** vertrokken*",
+        "lisan, Nederland"
+       ],
+       [
+        "groen",
+        "deelwoord ‹ bantu",
+        "*…dat hij vertrokken **is***",
+        "tulisan, Vlaanderen"
+       ],
+       [
+        "tiga kata kerja",
+        "bantu tetap paling depan",
+        "*…dat het **heeft** moeten gebeuren*",
+        "keduanya"
+       ],
+       [
+        "dengan *worden*",
+        "hampir selalu rood",
+        "*…dat het **wordt** opgelost*",
+        "keduanya"
+       ],
+       [
+        "dengan kata sifat",
+        "wajib groen",
+        "*…dat hij ziek **is***",
+        "keduanya"
+       ],
+       [
+        "dengan *te*",
+        "wajib rood",
+        "*…dat hij probeert **te helpen***",
+        "keduanya"
+       ],
+       [
+        "akhir paragraf panjang",
+        "rood terasa lebih ringan",
+        "beban pendengar",
+        "lisan"
+       ],
+       [
+        "⚠️ jangan dicampur",
+        "satu tulisan, satu urutan",
+        "—",
+        "—"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kantor, tenggat, dan hal yang tidak berjalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Nederlands",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "de deadline / de deining",
+       "de DED-lèyn",
+       "tenggat"
+      ],
+      [
+       "de offerte",
+       "de o-FÈR-te",
+       "surat penawaran"
+      ],
+      [
+       "het akkoord",
+       "het a-KOHRT",
+       "persetujuan"
+      ],
+      [
+       "de opdrachtgever",
+       "de OP-drakht-kheh-fer",
+       "pemberi kerja, klien"
+      ],
+      [
+       "de planning",
+       "de PLÈN-ning",
+       "jadwal kerja"
+      ],
+      [
+       "achterlopen",
+       "AKH-ter-loh-pe(n)",
+       "terlambat dari jadwal"
+      ],
+      [
+       "afronden",
+       "AF-ron-de(n)",
+       "menyelesaikan"
+      ],
+      [
+       "opleveren",
+       "OP-leh-fe-re(n)",
+       "menyerahkan hasil"
+      ],
+      [
+       "terugkoppelen",
+       "te-RÜKH-ko-pe-le(n)",
+       "memberi kabar balik"
+      ],
+      [
+       "escaleren",
+       "ès-ka-LEH-re(n)",
+       "menaikkan ke atasan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menegur tanpa menyerang: lima tingkat"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Seberapa keras",
+      "Dipakai kepada"
+     ],
+     "rows": [
+      [
+       "Ik had het graag eerder geweten.",
+       "paling lunak",
+       "siapa saja"
+      ],
+      [
+       "Dat had ik anders aangepakt.",
+       "lunak, tentang caranya",
+       "rekan sejajar"
+      ],
+      [
+       "Je had me even kunnen bellen.",
+       "menegur, tetap ramah",
+       "rekan sejajar"
+      ],
+      [
+       "Dat had allang geregeld moeten zijn.",
+       "tegas",
+       "bawahan, atau rekan yang jelas keliru"
+      ],
+      [
+       "Dit kan echt niet.",
+       "paling keras",
+       "hanya kalau memang serius"
+      ],
+      [
+       "Hoe kan dit gebeurd zijn?",
+       "menuntut penjelasan",
+       "rapat evaluasi"
+      ],
+      [
+       "Wat is er misgegaan?",
+       "netral, membuka",
+       "aman untuk semua"
+      ],
+      [
+       "Laten we kijken hoe we dit oplossen.",
+       "menutup teguran",
+       "selalu dipakai di akhir"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Kelompok kata kerja panjang bukan gaya bahasa, melainkan kewajiban.** Di B1 kamu bisa menghindarinya dengan memecah kalimat. Di B2, pembaca Belanda justru mengharapkannya — kalimat yang terus-menerus pendek terbaca seperti buku anak.",
+      "**Kata kerja bantu memberi tahu nada, bukan cuma waktu.** *Dat moet nog gebeuren* (netral), *dat had moeten gebeuren* (teguran), *dat zou moeten gebeuren* (saran). Bentuknya berdekatan, nadanya berjauhan.",
+      "**Di lisan cepat, ujung kalimat justru diperjelas, bukan ditelan.** Orang Belanda mengurangi bunyi di tengah kalimat, tapi menahan kata kerja terakhirnya. Kalau kamu tidak menangkap ujungnya, kamu tidak menangkap kalimatnya — biasakan menunggu sampai ujung sebelum mulai memahami."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "nl": "melden",
+   "baca": "MÈL-de(n)",
+   "id": "melaporkan"
+  },
+  {
+   "nl": "ervan uitgaan",
+   "baca": "er-FAN ÖYT-khahn",
+   "id": "mengira, berasumsi"
+  },
+  {
+   "nl": "oplossen",
+   "baca": "OP-lo-se(n)",
+   "id": "menyelesaikan (masalah)"
+  },
+  {
+   "nl": "regelen",
+   "baca": "REH-khe-le(n)",
+   "id": "mengurus, membereskan"
+  },
+  {
+   "nl": "reageren",
+   "baca": "reh-a-KHEH-re(n)",
+   "id": "membalas, menanggapi"
+  },
+  {
+   "nl": "besluiten",
+   "baca": "be-SLÖY-te(n)",
+   "id": "memutuskan"
+  },
+  {
+   "nl": "zolang",
+   "baca": "zoh-LANG",
+   "id": "selama"
+  },
+  {
+   "nl": "rond zijn",
+   "baca": "ront ZÈYN",
+   "id": "sudah kelar, sudah disepakati"
+  },
+  {
+   "nl": "kloppen",
+   "baca": "KLO-pe(n)",
+   "id": "cocok, benar"
+  },
+  {
+   "nl": "gewoon",
+   "baca": "khe-VOHN",
+   "id": "sebenarnya, memang saja"
+  },
+  {
+   "nl": "zorgen dat",
+   "baca": "ZOR-khe(n) dat",
+   "id": "memastikan bahwa"
+  },
+  {
+   "nl": "het bestand",
+   "baca": "het be-STANT",
+   "id": "berkas (komputer)"
+  },
+  {
+   "nl": "controleren",
+   "baca": "kon-troh-LEH-re(n)",
+   "id": "memeriksa"
+  },
+  {
+   "nl": "volgen",
+   "baca": "FOL-khe(n)",
+   "id": "mengikuti"
+  },
+  {
+   "nl": "trouwens",
+   "baca": "TRAU-ens",
+   "id": "ngomong-ngomong"
+  },
+  {
+   "nl": "liever",
+   "baca": "LI-fer",
+   "id": "lebih suka"
+  },
+  {
+   "nl": "afspreken",
+   "baca": "AF-spreh-ke(n)",
+   "id": "membuat kesepakatan"
+  },
+  {
+   "nl": "voortaan",
+   "baca": "fohr-TAHN",
+   "id": "mulai sekarang"
+  },
+  {
+   "nl": "bijpraten",
+   "baca": "BÈY-prah-te(n)",
+   "id": "ngobrol menyusul kabar"
+  },
+  {
+   "nl": "overal",
+   "baca": "OH-fer-al",
+   "id": "di mana saja"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun kata kerja di ujung anak kalimat dengan urutan yang benar.",
+   "items": [
+    "…omdat het gisteren al ____ (moeten, worden, opgelost).",
+    "…dat hij dat niet ____ (hebben, kunnen, weten).",
+    "…zodat wij het vandaag nog ____ (kunnen, afronden).",
+    "…terwijl ik hem ____ (hebben, zien, vertrekken).",
+    "…hoewel dat allang ____ (zijn, moeten, geregeld)."
+   ]
+  },
+  {
+   "prompt": "Perbaiki bentuk kata kerja modal di dalam perfectum.",
+   "items": [
+    "Ik heb het niet gekund doen.",
+    "Zij heeft de offerte willen gestuurd.",
+    "We hebben hem gehoord praten.",
+    "Je had niet gehoeven te komen.",
+    "Hij heeft het laten repareren gelaten."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi anak kalimat dengan penghubung yang diberikan.",
+   "items": [
+    "Hij is vrijdag vertrokken. (omdat) ____",
+    "Het moet vandaag opgeleverd worden. (zodat) ____",
+    "Ik heb de klant gebeld. (nadat) ____",
+    "Zij had het kunnen weten. (hoewel) ____",
+    "Er is niets misgegaan. (terwijl) ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Itu mestinya sudah lama beres.",
+    "Kamu bisa saja menelepon aku.",
+    "Aku pastikan penawarannya keluar sore ini.",
+    "Kurasa kami memang seharusnya melakukan itu.",
+    "Aku telepon kliennya begitu berkasnya selesai kuperiksa."
+   ]
+  }
+ ],
+ "answers": [
+  "moest worden opgelost — had kunnen weten — kunnen afronden — heb zien vertrekken — geregeld had moeten zijn",
+  "Ik heb het niet kunnen doen. — Zij heeft de offerte willen sturen. — We hebben hem horen praten. — Je had niet hoeven te komen. — Hij heeft het laten repareren.",
+  "…omdat hij vrijdag is vertrokken. — …zodat het vandaag opgeleverd moet worden. — …nadat ik de klant heb gebeld. — …hoewel zij het had kunnen weten. — …terwijl er niets is misgegaan.",
+  "Dat had allang geregeld moeten zijn. — Je had mij kunnen bellen. — Ik zorg dat de offerte vanmiddag de deur uit gaat. — Ik denk dat we dat gewoon hadden moeten doen. — Ik bel de klant zodra ik het bestand heb gecontroleerd."
+ ]
+}

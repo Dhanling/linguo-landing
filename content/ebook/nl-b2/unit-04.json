@@ -1,0 +1,222 @@
+{
+ "title": "Syarat di luar als",
+ "title_target": "Mocht u nog vragen hebben, dan hoor ik het graag",
+ "goal": "Menyusun syarat dengan *mocht*, *indien*, *tenzij*, *mits*, dan *stel dat* — lima bentuk yang memisahkan surat resmi Belanda dari terjemahan.",
+ "bekal": [
+  "memakai *mocht* untuk kemungkinan yang tak diharapkan terjadi",
+  "membedakan *tenzij* (kecuali kalau) dari *als … niet*",
+  "memakai *mits* dan *op voorwaarde dat* untuk syarat yang harus dipenuhi",
+  "memilih antara *als* dan *indien* menurut ragamnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Telefoongesprek met de verzekeraar",
+   "intro": "Sambungan telepon dengan bagian klaim sebuah perusahaan asuransi. Karel melaporkan kerusakan akibat air di apartemennya; Meike menangani berkasnya. Perhatikan bahwa hampir seluruh kalimat Meike berisi syarat, dan tak satu pun memakai *als*.",
+   "lines": [
+    { "speaker": "Meike:", "text": "Goedemiddag, u spreekt met Meike de Wit. Waarmee kan ik u helpen?", "id": "Selamat siang, dengan Meike de Wit. Ada yang bisa saya bantu?", "literal": "selamat-siang, kamu bicara dengan Meike de Wit. dengan-apa bisa saya kamu membantu?" },
+    { "speaker": "Karel:", "text": "Ik wil graag waterschade melden. De buren boven mij hebben lekkage.", "id": "Saya mau melaporkan kerusakan akibat air. Tetangga atas bocor.", "literal": "saya mau senang air-kerusakan melaporkan. itu tetangga atas saya punya kebocoran." },
+    { "speaker": "Meike:", "text": "Vervelend. Indien de schade bij de buren is ontstaan, meldt u die daar ook.", "id": "Menyebalkan ya. Kalau kerusakannya berasal dari tetangga, laporkan juga ke sana.", "literal": "menjengkelkan. jika itu kerusakan pada itu tetangga ada timbul, lapor kamu itu di-sana juga." },
+    { "speaker": "Karel:", "text": "Dat heb ik gedaan. Zij zeggen dat hun verzekering het niet dekt.", "id": "Sudah saya lakukan. Mereka bilang asuransi mereka tidak menanggung.", "literal": "itu punya saya dibuat. mereka bilang bahwa mereka asuransi itu tidak menutupi." },
+    { "speaker": "Meike:", "text": "Dat kan, tenzij er sprake is van nalatigheid. Dan ligt het anders.", "id": "Bisa jadi, kecuali kalau ada kelalaian. Kalau begitu lain ceritanya.", "literal": "itu bisa, kecuali [er] bicara ada dari kelalaian. lalu terletak itu lain." },
+    { "speaker": "Karel:", "text": "Hoe stel ik dat vast? Ik ben geen expert.", "id": "Gimana saya memastikannya? Saya bukan ahli.", "literal": "bagaimana tetapkan saya itu [vast]? saya ada tak-ada ahli." },
+    { "speaker": "Meike:", "text": "Wij sturen een expert, mits u de schade niet zelf herstelt.", "id": "Kami kirim penilai, asalkan Anda tidak memperbaiki sendiri.", "literal": "kami kirim seorang ahli, asalkan kamu itu kerusakan tidak sendiri memperbaiki." },
+    { "speaker": "Karel:", "text": "Dus ik moet het zo laten? Het water staat nog in de gang.", "id": "Jadi saya harus biarkan begini? Airnya masih menggenang di lorong.", "literal": "jadi saya harus itu begitu membiarkan? itu air berdiri lagi di itu lorong." },
+    { "speaker": "Meike:", "text": "Nee hoor. Beperk de schade, maar vervang nog niets. Foto's van alles graag.", "id": "Bukan begitu. Batasi kerusakannya, tapi jangan ganti apa pun dulu. Difoto semuanya ya.", "literal": "tidak [hoor]. batasi itu kerusakan, tapi ganti lagi tak-ada-apa. foto dari segalanya senang." },
+    { "speaker": "Karel:", "text": "Stel dat de expert pas volgende week kan, wat dan?", "id": "Misalkan penilainya baru bisa minggu depan, gimana?", "literal": "misal bahwa itu ahli baru depan minggu bisa, apa lalu?" },
+    { "speaker": "Meike:", "text": "Dan mag u drogen en afvoeren. Bewaar wel de facturen, anders vergoeden we niets.", "id": "Kalau begitu boleh dikeringkan dan dibuang. Tapi simpan kuitansinya, kalau tidak, tidak kami ganti.", "literal": "lalu boleh kamu mengeringkan dan membuang. simpan [wel] itu kuitansi, lain mengganti kami tak-ada-apa." },
+    { "speaker": "Karel:", "text": "Helder. En de eigen bijdrage? Die is toch honderdvijftig euro?", "id": "Jelas. Terus biaya sendirinya? Itu seratus lima puluh euro kan?", "literal": "jernih. dan itu sendiri sumbangan? itu ada [toch] seratus-lima-puluh euro?" },
+    { "speaker": "Meike:", "text": "Klopt, tenzij de tegenpartij aansprakelijk blijkt. Dan vervalt hij.", "id": "Betul, kecuali kalau pihak lain terbukti bertanggung jawab. Kalau begitu hangus.", "literal": "cocok, kecuali itu lawan-pihak bertanggung-jawab ternyata. lalu gugur dia." },
+    { "speaker": "Karel:", "text": "Dat zou schelen. Krijg ik hier iets van op papier?", "id": "Itu lumayan. Saya dapat sesuatu tertulis nggak?", "literal": "itu akanlah berbeda. dapat saya di-sini sesuatu dari pada kertas?" },
+    { "speaker": "Meike:", "text": "Zeker. Ik mail u de bevestiging. Mocht u die niet ontvangen, belt u gerust.", "id": "Tentu. Saya email konfirmasinya. Kalau-kalau tidak sampai, silakan telepon saja.", "literal": "pasti. saya email kamu itu konfirmasi. kalau-kalau kamu itu tidak menerima, telepon kamu tenang." },
+    { "speaker": "Karel:", "text": "Dank u wel. Fijn dat het zo snel kan.", "id": "Terima kasih. Senang bisa secepat ini.", "literal": "terima kasih kamu [wel]. menyenangkan bahwa itu begitu cepat bisa." },
+    { "speaker": "Meike:", "text": "Graag gedaan. En mocht er iets veranderen, geeft u het even door.", "id": "Sama-sama. Dan kalau ada perubahan, tolong kabari ya.", "literal": "senang dibuat. dan kalau-kalau [er] sesuatu berubah, beri kamu itu [even] [door]." }
+   ],
+   "notes": [
+    { "text": "**Baris 15 dan 17: *mocht*.** Ini bentuk syarat yang paling khas bahasa Belanda resmi dan hampir tak pernah diajarkan sebelum B2. *Mocht u vragen hebben…* berarti \"kalau-kalau Anda punya pertanyaan\" — dengan sisipan makna bahwa pembicara **tidak mengharapkannya terjadi**. Susunannya: *mocht* + subjek + … , lalu induk kalimat boleh dibuka dengan *dan* atau langsung dengan kata kerja: *Mocht u vragen hebben, **dan** hoor ik het graag* / *…, **belt u** gerust*." },
+    { "text": "**Baris 3: *indien*.** Sama artinya dengan *als*, tapi seluruhnya tertulis. Di surat, formulir, dan syarat-ketentuan, *indien* muncul di mana-mana; di percakapan ia terdengar seperti orang membacakan kontrak. Aturan praktis: **kamu perlu memahaminya, hampir tak pernah perlu mengucapkannya**." },
+    { "text": "**Baris 5 dan 13: *tenzij*.** Artinya \"kecuali kalau\", dan ia menghemat satu penyangkalan: *tenzij het regent* = *als het niet regent* dibalik. Perhatikan bahwa sesudah *tenzij*, kalimatnya **positif** — pelajar Indonesia sering menambahkan *niet* dan membalik maknanya tanpa sadar. Kata kerjanya ke ujung, seperti sesudah *omdat*." },
+    { "text": "**Baris 7: *mits*.** \"Asalkan\" — syarat yang harus dipenuhi supaya sesuatu berlaku. Pasangan resminya *op voorwaarde dat*. Bedanya dengan *als*: *mits* selalu membawa nada perjanjian, jadi ia lazim di surat asuransi, kontrak sewa, dan aturan sekolah, tapi janggal di obrolan santai." },
+    { "text": "**Baris 10: *stel dat*.** Ini pembuka pengandaian yang paling lisan dari semuanya — \"misalkan\", \"anggap saja\". Sesudahnya kata kerja **tetap** di nomor dua (bukan ke ujung), karena *stel dat* sebenarnya kalimat perintah (\"tetapkan bahwa…\"). Padanan sederajat: *even aangenomen dat*, *gesteld dat* (lebih tertulis)." },
+    { "text": "**Baris 11: *anders* sebagai \"kalau tidak\".** *Bewaar de facturen, **anders** vergoeden we niets* — satu kata mengganti seluruh anak kalimat *als u ze niet bewaart*. Perhatikan subjek pindah ke belakang kata kerja sesudah *anders*, karena *anders* menempati tempat pertama. Alat pemampat yang sangat sering dipakai di lisan." }
+   ],
+   "grammars": [
+    {
+     "title": "Enam pembuka syarat, dan di mana masing-masing hidup",
+     "body": [
+      "Bahasa Indonesia memakai \"kalau\" untuk semuanya, jadi pilihan di bawah ini seluruhnya soal ragam dan nada — bukan soal makna. Salah pilih tidak membuat kalimatmu salah, tapi langsung memberi tahu pembaca bahwa kamu belum tahu di ruang mana kamu sedang bicara."
+     ],
+     "table": {
+      "head": ["Pembuka", "Arti", "Kata kerja", "Hidup di"],
+      "rows": [
+       ["**als**", "kalau", "ke ujung", "di mana saja"],
+       ["**indien**", "jika", "ke ujung", "surat, kontrak, formulir"],
+       ["**mocht**", "kalau-kalau", "ke ujung", "surat & lisan sopan"],
+       ["**tenzij**", "kecuali kalau", "ke ujung", "di mana saja"],
+       ["**mits**", "asalkan", "ke ujung", "perjanjian, aturan"],
+       ["**op voorwaarde dat**", "dengan syarat", "ke ujung", "resmi"],
+       ["**stel dat**", "misalkan", "**tetap di nomor 2**", "lisan"],
+       ["**anders**", "kalau tidak", "**tetap di nomor 2**", "lisan & tulisan"],
+       ["**voor het geval dat**", "kalau-kalau", "ke ujung", "lisan & tulisan"],
+       ["**zonder** + nomina", "tanpa", "—", "memampatkan syarat"]
+      ]
+     }
+    },
+    {
+     "title": "mocht: bentuk yang membuat suratmu terdengar Belanda",
+     "body": [
+      "*Mocht* secara bentuk adalah imperfectum *mogen*, tapi maknanya sudah berpindah sepenuhnya. Ia menandai kemungkinan yang **dianggap kecil** — dan justru karena itu ia sopan: pembicara berpura-pura tidak menyangka masalahnya akan muncul. Tak ada padanan tunggalnya dalam bahasa Indonesia; \"kalau-kalau\" dan \"seandainya nanti\" adalah pendekatan terdekat."
+     ],
+     "table": {
+      "head": ["Kalimat", "Induk kalimat dibuka dengan", "Terpakai di"],
+      "rows": [
+       ["Mocht u vragen hebben,", "**dan** hoor ik het graag.", "penutup e-mail resmi"],
+       ["Mocht u niets ontvangen,", "**belt u** gerust.", "penutup e-mail resmi"],
+       ["Mocht het regenen,", "**dan** gaan we naar binnen.", "lisan, netral"],
+       ["Mocht ik te laat zijn,", "**begin** vast zonder mij.", "pesan singkat"],
+       ["Mocht er iets veranderen,", "**geef** het even door.", "kantor"],
+       ["Mocht dat niet lukken,", "**laat** het me weten.", "kantor"],
+       ["⚠️ tanpa *dan*", "langsung kata kerja + subjek", "sama sahnya"],
+       ["⚠️ jangan", "*Mocht als u…* ✗", "—"]
+      ]
+     }
+    },
+    {
+     "title": "tenzij, mits, en anders: tiga jebakan penyangkalan",
+     "body": [
+      "Ketiganya membawa penyangkalan yang **sudah dikandung di dalam katanya**. Menambahkan *niet* karena merasa \"harusnya ada\" adalah kesalahan B2 yang paling sering lolos dari mata penulisnya sendiri, karena kalimatnya tetap berbunyi wajar — cuma artinya terbalik."
+     ],
+     "table": {
+      "head": ["Kalimat", "Artinya", "Sama dengan"],
+      "rows": [
+       ["Ik kom, **tenzij** het regent.", "aku datang, kecuali kalau hujan", "als het **niet** regent, kom ik"],
+       ["Ik kom, **tenzij** het **niet** regent. ✗", "terbalik", "—"],
+       ["Je mag gaan, **mits** je op tijd terug bent.", "boleh, syaratnya tepat waktu", "alleen als je…"],
+       ["Bewaar de bon, **anders** krijg je niets.", "kalau tidak disimpan, tak dapat", "als je hem niet bewaart…"],
+       ["**Zonder** bon geen geld.", "tanpa kuitansi, tak ada uang", "als je geen bon hebt…"],
+       ["Neem een jas mee, **voor het geval dat** het koud wordt.", "jaga-jaga", "mocht het koud worden"],
+       ["**Tenzij** ik me vergis,…", "kalau aku tidak salah", "als ik me niet vergis"],
+       ["⚠️ urutan", "*tenzij* + kata kerja ke ujung", "…tenzij het **regent**"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Asuransi, kerusakan, dan urusan klaim",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Nederlands", "Cara baca", "Arti"],
+     "rows": [
+      ["de verzekering", "de fer-ZEH-ke-ring", "asuransi"],
+      ["de schade", "de SKHAH-de", "kerusakan"],
+      ["de lekkage", "de lè-KAH-zye", "kebocoran"],
+      ["de nalatigheid", "de NAH-lah-tekh-hèyt", "kelalaian"],
+      ["aansprakelijk", "AHN-sprah-ke-lek", "bertanggung jawab"],
+      ["de tegenpartij", "de TEH-khe(n)-par-tèy", "pihak lawan"],
+      ["de eigen bijdrage", "de ÈY-khe(n) BÈY-drah-khe", "biaya sendiri, eksesnya"],
+      ["vergoeden", "fer-KHU-de(n)", "mengganti biaya"],
+      ["de factuur", "de fak-TÜHR", "faktur, kuitansi"],
+      ["vervallen", "fer-FA-le(n)", "gugur, tidak berlaku"]
+     ]
+    },
+    { "type": "sub", "text": "Delapan kalimat penutup surat resmi Belanda" },
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Seberapa resmi"],
+     "rows": [
+      ["Mocht u nog vragen hebben, dan hoor ik het graag.", "resmi, paling lazim"],
+      ["Voor vragen kunt u contact met mij opnemen.", "resmi, netral"],
+      ["Ik verneem graag uw reactie.", "resmi, sedikit kaku"],
+      ["Ik hoor graag van u.", "setengah resmi — paling aman"],
+      ["Alvast bedankt voor uw tijd.", "hangat"],
+      ["Bij voorbaat dank.", "resmi, agak dingin"],
+      ["Laat maar weten!", "santai, antar rekan"],
+      ["Met vriendelijke groet,", "penutup baku di semua surat"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Surat Belanda tidak memakai *als*.** Kalau seluruh syarat di suratmu dibuka dengan *als*, pembacanya tahu kamu belum pernah membaca surat Belanda. *Indien* dan *mocht* adalah dua kata yang paling cepat menaikkan kesan tulisanmu.",
+      "**Kesopanan bergeser ke bentuk, bukan ke kata.** Perhatikan baris 15 dan 17 dialog: *belt u gerust*, *geeft u het even door* — kata kerja di depan, subjek *u* menyusul. Itu bentuk perintah sopan yang dipakai instansi Belanda, dan ia terdengar ramah, bukan memerintah.",
+      "**⚠️ *Vervelend* adalah tanggapan baku untuk kabar buruk kecil.** Bukan \"maaf\", bukan \"ya ampun\" — cukup *vervelend* atau *wat vervelend voor u*. Menumpuk simpati berlebih justru membuat lawan bicara Belanda merasa dibesar-besarkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "melden", "baca": "MÈL-de(n)", "id": "melaporkan" },
+  { "nl": "ontstaan", "baca": "ont-STAHN", "id": "timbul, terjadi" },
+  { "nl": "dekken", "baca": "DÈ-ke(n)", "id": "menanggung, menutupi" },
+  { "nl": "sprake zijn van", "baca": "SPRAH-ke zèyn fan", "id": "ada hal berupa" },
+  { "nl": "vaststellen", "baca": "FAST-stè-le(n)", "id": "memastikan, menetapkan" },
+  { "nl": "herstellen", "baca": "her-STÈ-le(n)", "id": "memperbaiki" },
+  { "nl": "beperken", "baca": "be-PÈR-ke(n)", "id": "membatasi" },
+  { "nl": "vervangen", "baca": "fer-FANG-e(n)", "id": "mengganti" },
+  { "nl": "afvoeren", "baca": "AF-fu-re(n)", "id": "membuang, mengangkut" },
+  { "nl": "bewaren", "baca": "be-VAH-re(n)", "id": "menyimpan" },
+  { "nl": "blijken", "baca": "BLÈY-ke(n)", "id": "ternyata" },
+  { "nl": "schelen", "baca": "SKHEH-le(n)", "id": "berbeda, membuat selisih" },
+  { "nl": "de bevestiging", "baca": "de be-FÈS-te-khing", "id": "konfirmasi" },
+  { "nl": "ontvangen", "baca": "ont-FANG-e(n)", "id": "menerima" },
+  { "nl": "gerust", "baca": "khe-RÜST", "id": "silakan saja, tenang" },
+  { "nl": "doorgeven", "baca": "DOHR-kheh-fe(n)", "id": "meneruskan kabar" },
+  { "nl": "vervelend", "baca": "fer-FEH-lent", "id": "menyebalkan" },
+  { "nl": "helder", "baca": "HÈL-der", "id": "jelas" },
+  { "nl": "de gang", "baca": "de KHANG", "id": "lorong, koridor" },
+  { "nl": "op papier", "baca": "op pa-PIR", "id": "tertulis" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *mocht*, *indien*, *tenzij*, *mits*, atau *stel dat*.",
+   "items": [
+    "____ u nog vragen hebt, hoor ik het graag.",
+    "Wij vergoeden de schade, ____ u de facturen bewaart.",
+    "Ik kom morgen, ____ er iets tussenkomt.",
+    "____ de gegevens onjuist zijn, neemt u contact op.",
+    "____ hij vandaag niet belt, wat doen we dan?"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan pembuka syarat yang diminta.",
+   "items": [
+    "Als het niet regent, gaan we fietsen. (tenzij) ____",
+    "Als u vragen hebt, belt u ons. (mocht) ____",
+    "Je mag mee, maar je moet op tijd zijn. (mits) ____",
+    "Als de betaling uitblijft, volgt een herinnering. (indien) ____",
+    "Bewaar de bon; als je dat niet doet, krijg je niets. (anders) ____"
+   ]
+  },
+  {
+   "prompt": "Ada satu kesalahan di tiap kalimat. Tulis versi benarnya.",
+   "items": [
+    "Ik kom, tenzij het niet regent.",
+    "Mocht als u vragen hebt, belt u ons.",
+    "Mits u niet betaalt, sturen wij een herinnering.",
+    "Stel dat hij komt niet, wat dan?",
+    "Indien u vragen hebt, u belt ons."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Kami kirim penilai, asalkan Anda tidak memperbaiki sendiri.",
+    "Bisa jadi, kecuali kalau ada kelalaian.",
+    "Simpan kuitansinya, kalau tidak, tidak kami ganti.",
+    "Misalkan penilainya baru bisa minggu depan, gimana?",
+    "Kalau ada perubahan, tolong kabari ya."
+   ]
+  }
+ ],
+ "answers": [
+  "Mocht — mits — tenzij — Indien — Stel dat",
+  "Tenzij het regent, gaan we fietsen. — Mocht u vragen hebben, dan belt u ons. — Je mag mee, mits je op tijd bent. — Indien de betaling uitblijft, volgt een herinnering. — Bewaar de bon, anders krijg je niets.",
+  "Ik kom, tenzij het regent. — Mocht u vragen hebben, belt u ons. — Tenzij u betaalt, sturen wij een herinnering. — Stel dat hij niet komt, wat dan? — Indien u vragen hebt, belt u ons.",
+  "Wij sturen een expert, mits u de schade niet zelf herstelt. — Dat kan, tenzij er sprake is van nalatigheid. — Bewaar de facturen, anders vergoeden we niets. — Stel dat de expert pas volgende week kan, wat dan? — Mocht er iets veranderen, geeft u het even door."
+ ]
+}

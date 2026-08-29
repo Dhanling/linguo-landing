@@ -1,0 +1,230 @@
+{
+ "title": "Menulis surat yang benar-benar ditanggapi",
+ "title_target": "Geachte heer Van Dam, hierbij dien ik een klacht in",
+ "goal": "Menyusun surat dan e-mail resmi Belanda: sapaan, kalimat pembuka, tubuh yang tersusun, permintaan yang jelas, dan penutup — beserta seluruh tingkat kesopanan *u*.",
+ "bekal": [
+  "memilih sapaan yang tepat: *Geachte*, *Beste*, *Hoi*",
+  "memakai bentuk *u* beserta kata kerja dan kata gantinya",
+  "menyusun surat keluhan dalam empat paragraf baku",
+  "menutup surat dengan kalimat yang meminta tanggapan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Samen een klachtbrief opstellen",
+   "intro": "Meja dapur di Zwolle. Sepeda Sjoerd rusak di bengkel dan tagihannya membengkak; Ilona, temannya yang bekerja di bagian hukum, membantu menulis surat. Perhatikan bahwa mereka membahas bentuk, bukan isi — karena di Belanda bentuklah yang menentukan surat itu dibaca atau tidak.",
+   "lines": [
+    { "speaker": "Sjoerd:", "text": "Ik heb al drie keer gebeld. Nu wil ik het op papier zetten.", "id": "Aku sudah telepon tiga kali. Sekarang mau kutulis resmi.", "literal": "saya punya sudah tiga kali ditelepon. sekarang mau saya itu pada kertas menaruh." },
+    { "speaker": "Ilona:", "text": "Verstandig. Weet je aan wie je schrijft, of alleen de firma?", "id": "Bijak. Kamu tahu ditujukan ke siapa, atau cuma perusahaannya?", "literal": "bijaksana. tahu kamu kepada siapa kamu tulis, atau cuma itu firma?" },
+    { "speaker": "Sjoerd:", "text": "Ik heb een naam: Van Dam. Dan schrijf ik \"Beste meneer Van Dam\"?", "id": "Aku punya nama: Van Dam. Berarti kutulis \"Beste meneer Van Dam\"?", "literal": "saya punya sebuah nama: Van Dam. lalu tulis saya sayang tuan Van Dam?" },
+    { "speaker": "Ilona:", "text": "Nee, \"Geachte heer Van Dam\". \"Beste\" is voor iemand die je kent.", "id": "Bukan, \"Geachte heer Van Dam\". \"Beste\" untuk orang yang kamu kenal.", "literal": "tidak, terhormat tuan Van Dam. sayang ada untuk seseorang yang kamu kenal." },
+    { "speaker": "Sjoerd:", "text": "En als ik zijn naam niet had?", "id": "Kalau namanya nggak kutahu?", "literal": "dan kalau saya dia nama tidak punya-dulu?" },
+    { "speaker": "Ilona:", "text": "\"Geachte heer, mevrouw\" — met komma, zonder \"of\". Dat is de vaste vorm.", "id": "\"Geachte heer, mevrouw\" — pakai koma, tanpa \"atau\". Itu bentuk bakunya.", "literal": "terhormat tuan, nyonya — dengan koma, tanpa atau. itu ada itu tetap bentuk." },
+    { "speaker": "Sjoerd:", "text": "Goed. Eerste zin: \"Ik ben heel boos over jullie service.\"", "id": "Oke. Kalimat pertama: \"Saya sangat marah dengan layanan kalian.\"", "literal": "baik. pertama kalimat: saya ada sangat marah tentang kalian layanan." },
+    { "speaker": "Ilona:", "text": "Schrap dat. Begin met feiten, en gebruik \"u\", niet \"jullie\".", "id": "Coret. Mulai dengan fakta, dan pakai \"u\", bukan \"jullie\".", "literal": "coret itu. mulai dengan fakta, dan pakai kamu-hormat, tidak kalian." },
+    { "speaker": "Sjoerd:", "text": "\"Op 3 maart heb ik mijn fiets bij u laten repareren.\" Zo?", "id": "\"Pada 3 Maret saya menyervis sepeda saya di tempat Anda.\" Gitu?", "literal": "pada 3 Maret punya saya saya sepeda pada kamu biarkan memperbaiki. begitu?" },
+    { "speaker": "Ilona:", "text": "Precies zo. Daarna één alinea met wat er misging, zonder bijvoeglijke naamwoorden.", "id": "Persis. Habis itu satu alinea soal apa yang salah, tanpa kata sifat.", "literal": "tepat begitu. sesudah-itu satu alinea dengan apa [er] salah-pergi, tanpa sifat kata." },
+    { "speaker": "Sjoerd:", "text": "Zonder? Maar het wás schandalig.", "id": "Tanpa? Tapi itu memang keterlaluan.", "literal": "tanpa? tapi itu ada-dulu memalukan." },
+    { "speaker": "Ilona:", "text": "Dat weet ik. Maar hoe kaler je schrijft, hoe erger het klinkt.", "id": "Aku tahu. Tapi makin datar kamu menulis, makin parah kedengarannya.", "literal": "itu tahu saya. tapi makin gundul kamu tulis, makin parah itu terdengar." },
+    { "speaker": "Sjoerd:", "text": "En dan wat ik wil?", "id": "Terus apa yang aku mau?", "literal": "dan lalu apa saya mau?" },
+    { "speaker": "Ilona:", "text": "Ja, één zin, heel concreet: \"Ik verzoek u het bedrag binnen veertien dagen terug te storten.\"", "id": "Ya, satu kalimat, sangat konkret: \"Saya minta Anda mengembalikan uangnya dalam empat belas hari.\"", "literal": "ya, satu kalimat, sangat konkret: saya minta kamu itu jumlah dalam empat-belas hari kembali menyetor." },
+    { "speaker": "Sjoerd:", "text": "En als hij niet reageert?", "id": "Kalau dia nggak nanggapi?", "literal": "dan kalau dia tidak bereaksi?" },
+    { "speaker": "Ilona:", "text": "Dan noem je die stap nu al: \"Mocht ik niets vernemen, dan schakel ik de Geschillencommissie in.\"", "id": "Sebut langkah itu sekarang juga: \"Kalau saya tidak mendapat kabar, saya akan melibatkan komisi sengketa.\"", "literal": "lalu sebut kamu itu langkah sekarang sudah: kalau-kalau saya tak-ada-apa mendengar, lalu libatkan saya itu Sengketa-Komisi [in]." },
+    { "speaker": "Sjoerd:", "text": "Dat klinkt zakelijk genoeg. Afsluiten met \"Met vriendelijke groet\"?", "id": "Kedengarannya cukup bisnis. Tutup dengan \"Met vriendelijke groet\"?", "literal": "itu terdengar bisnis cukup. menutup dengan dengan ramah salam?" },
+    { "speaker": "Ilona:", "text": "Ja. En je adres bovenaan, datum eronder. Formeel is halve winst.", "id": "Ya. Alamatmu di atas, tanggal di bawahnya. Formal itu setengah kemenangan.", "literal": "ya. dan kamu alamat atas-sekali, tanggal bawah-itu. resmi ada setengah kemenangan." }
+   ],
+   "notes": [
+    { "text": "**Baris 4 dan 6: *Geachte* melawan *Beste*.** *Geachte heer / mevrouw* dipakai untuk orang yang **belum** kamu kenal atau dalam urusan resmi; *Beste* untuk orang yang sudah kamu kenal, termasuk rekan kerja; *Hoi/Hallo* untuk teman dan kolega akrab. ⚠️ *Geachte* selalu diikuti *heer* atau *mevrouw* + nama keluarga, tak pernah nama depan. Bentuk tanpa nama: **Geachte heer, mevrouw** — dengan koma, bukan *of*." },
+    { "text": "**Baris 8 dan 9: *u* dan seluruh keluarganya.** *U* memakai kata kerja **tunggal**: *u bent*, *u hebt* (atau *u heeft* — dua-duanya benar), *u kunt* (atau *u kan*, lebih santai). Kepunyaannya *uw*, bukan *jouw*: *uw brief*, *uw reactie*. Perintah sopannya membalik urutan: *belt u gerust*, *stuurt u het maar op* (lihat unit 4)." },
+    { "text": "**Baris 10 dan 12: menulis tanpa kata sifat.** Ini nasihat menulis khas Belanda, dan ia benar-benar bekerja: surat keluhan yang menyebutkan fakta, tanggal, dan jumlah tanpa satu pun kata seperti *schandalig* atau *onacceptabel* dibaca sebagai surat yang serius. Yang penuh kata sifat dibaca sebagai orang yang sedang kesal — dan itu lebih mudah diabaikan." },
+    { "text": "**Baris 12: *hoe … hoe …***. Bentuk perbandingan berpasangan: *hoe kaler je schrijft, **hoe** erger het klinkt* (\"makin… makin…\"). Perhatikan urutan katanya: sesudah bagian pertama, kata kerja induk kalimat maju ke depan. Pasangannya *hoe … des te …* terdengar lebih tertulis." },
+    { "text": "**Baris 14: *ik verzoek u … te ….*** Rumus permintaan resmi Belanda. Sekeluarga dengannya: *ik wil u vragen om…*, *zou u zo vriendelijk willen zijn om…*, *ik zie graag … tegemoet*. Perhatikan bahwa Sjoerd menyebut **jumlah** dan **tenggat** dalam satu kalimat — dua hal yang harus selalu ada di surat keluhan Belanda." },
+    { "text": "**Baris 16: *mocht … dan ….*** Bentuk syarat dari unit 4 muncul di tempat aslinya. Menyebut langkah berikutnya sejak surat pertama bukan dianggap mengancam di Belanda, melainkan dianggap jelas — dan justru itu yang membuat surat ditanggapi. *Geschillencommissie* adalah lembaga sengketa konsumen yang benar-benar ada dan sering disebut dalam surat semacam ini." }
+   ],
+   "grammars": [
+    {
+     "title": "Rangka surat Belanda, dari atas ke bawah",
+     "body": [
+      "Bentuk surat Belanda hampir tak berubah sejak puluhan tahun, dan penyimpangannya langsung terlihat. Ikuti urutan ini dan setengah pekerjaanmu selesai sebelum kalimat pertama ditulis."
+     ],
+     "table": {
+      "head": ["Bagian", "Isi", "Contoh"],
+      "rows": [
+       ["alamat pengirim", "kanan atau kiri atas", "Naam, straat, postcode, plaats"],
+       ["alamat penerima", "kiri, di bawahnya", "Firma, t.a.v. de heer Van Dam"],
+       ["tempat & tanggal", "kanan", "Zwolle, 14 maart 2026"],
+       ["perihal", "*Betreft:* satu baris", "**Betreft:** klacht over reparatie"],
+       ["sapaan", "*Geachte* / *Beste*", "**Geachte heer Van Dam,**"],
+       ["paragraf 1", "fakta: apa, kapan, di mana", "Op 3 maart heb ik…"],
+       ["paragraf 2", "apa yang salah, tanpa kata sifat", "De rekening bedroeg…"],
+       ["paragraf 3", "apa yang kamu minta + tenggat", "Ik verzoek u… binnen veertien dagen."],
+       ["paragraf 4", "langkah berikutnya kalau tak ada tanggapan", "Mocht ik niets vernemen, dan…"],
+       ["penutup", "*Met vriendelijke groet,*", "+ nama & tanda tangan"],
+       ["lampiran", "*Bijlage(n):*", "**Bijlage:** kopie factuur"]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk u: seluruh perangkatnya",
+     "body": [
+      "Kesalahan paling sering bukan memilih *u* atau *je*, melainkan **mencampurnya di dalam satu surat**. Pilih satu di kalimat pertama dan pertahankan sampai tanda tangan."
+     ],
+     "table": {
+      "head": ["Bentuk", "u", "je / jij", "Catatan"],
+      "rows": [
+       ["subjek", "**u**", "je / jij", "*u* tunggal & jamak"],
+       ["objek", "**u**", "je / jou", "—"],
+       ["kepunyaan", "**uw**", "je / jouw", "⚠️ *uw*, bukan *u'w*"],
+       ["kata kerja", "u **bent** / u **hebt**", "je bent / je hebt", "*u heeft* juga benar"],
+       ["kata kerja", "u **kunt** / u **zult**", "je kunt / je zult", "*u kan* lebih santai"],
+       ["berbalik", "u **wast zich**", "je wast je", "—"],
+       ["perintah sopan", "**belt u** gerust", "bel maar", "kata kerja ‹ subjek"],
+       ["di e-mail rekan", "**je**", "—", "Belanda cepat beralih ke *je*"],
+       ["⚠️ campur", "*Geachte heer, kun je…* ✗", "—", "kesalahan paling kelihatan"],
+       ["⚠️ jamak akrab", "**jullie**", "—", "tak pernah dipakai dengan *Geachte*"]
+      ]
+     }
+    },
+    {
+     "title": "Kalimat baku yang bisa kamu pinjam utuh",
+     "body": [
+      "Surat Belanda dibangun dari potongan tetap, dan memakainya bukan dianggap malas melainkan dianggap benar. Hafalkan sepuluh baris ini dan kamu bisa menulis hampir semua surat resmi tanpa merangkai satu kalimat pun dari nol."
+     ],
+     "table": {
+      "head": ["Kalimat", "Fungsinya"],
+      "rows": [
+       ["Hierbij dien ik een klacht in over…", "membuka keluhan"],
+       ["Naar aanleiding van ons telefoongesprek van 3 maart…", "merujuk kontak sebelumnya"],
+       ["In uw brief van 10 maart schrijft u dat…", "mengutip surat mereka"],
+       ["Tot op heden heb ik geen reactie ontvangen.", "menyatakan belum ditanggapi"],
+       ["Ik verzoek u vriendelijk om…", "meminta"],
+       ["Graag ontvang ik binnen veertien dagen uw reactie.", "menyebut tenggat"],
+       ["Mocht u nog vragen hebben, dan hoor ik het graag.", "menawarkan penjelasan"],
+       ["Ik ga ervan uit dat wij er samen uitkomen.", "menutup positif"],
+       ["Ik zie uw reactie met belangstelling tegemoet.", "penutup resmi"],
+       ["Als bijlage treft u een kopie van de factuur aan.", "menunjuk lampiran"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluhan, tagihan, dan hak konsumen",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Nederlands", "Cara baca", "Arti"],
+     "rows": [
+      ["de klacht", "de KLAKHT", "keluhan"],
+      ["indienen", "IN-di-ne(n)", "mengajukan"],
+      ["de factuur", "de fak-TÜHR", "faktur"],
+      ["het bedrag", "het be-DRAKH", "jumlah uang"],
+      ["terugstorten", "te-RÜKH-stor-te(n)", "mengembalikan uang"],
+      ["de vergoeding", "de fer-KHU-ding", "penggantian"],
+      ["de geschillencommissie", "de khe-SKHI-le(n)-ko-mi-si", "komisi sengketa"],
+      ["vernemen", "fer-NEH-me(n)", "mendapat kabar"],
+      ["inschakelen", "IN-skhah-ke-le(n)", "melibatkan"],
+      ["zakelijk", "ZAH-ke-lek", "bergaya bisnis, tidak emosional"]
+     ]
+    },
+    { "type": "sub", "text": "Sapaan dan penutup menurut jaraknya" },
+    {
+     "type": "tabel",
+     "head": ["Sapaan", "Penutup", "Untuk siapa"],
+     "rows": [
+      ["Geachte heer Van Dam,", "Met vriendelijke groet,", "resmi, belum kenal"],
+      ["Geachte heer, mevrouw,", "Hoogachtend,", "sangat resmi, tanpa nama"],
+      ["Geachte mevrouw De Wit,", "Met vriendelijke groet,", "resmi"],
+      ["Beste meneer Van Dam,", "Met vriendelijke groet,", "resmi tapi sudah kenal"],
+      ["Beste Anna,", "Groetjes,", "rekan kerja"],
+      ["Hoi Anna,", "Groet,", "akrab"],
+      ["Dag allemaal,", "Fijne dag!", "e-mail ke tim"],
+      ["Aan de bewoners van…", "Namens het bestuur,", "surat edaran"],
+      ["⚠️ jangan", "*Lieve meneer Van Dam*", "*lieve* hanya untuk orang terdekat"],
+      ["⚠️ jangan", "*Hoogachtend* di e-mail biasa", "terdengar seperti somasi"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Surat Belanda dinilai dari bentuknya sebelum isinya.** Sapaan yang salah, tanggal yang hilang, atau campuran *u* dan *je* membuat surat dianggap tidak serius bahkan kalau keluhanmu sepenuhnya benar.",
+      "**Menyebut tenggat dan langkah berikutnya bukan mengancam.** Justru surat tanpa keduanya yang paling sering tidak ditanggapi, karena tak ada yang mendorong penerimanya bertindak.",
+      "**⚠️ E-mail Belanda beralih ke *je* jauh lebih cepat daripada dugaan pelajar.** Kalau balasan mereka memakai *je*, ikutilah mulai balasan berikutnya. Bertahan di *u* sesudah lawan bicara beralih terdengar dingin, bukan sopan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "geacht", "baca": "khe-AKHT", "id": "terhormat" },
+  { "nl": "de heer", "baca": "de HEHR", "id": "tuan" },
+  { "nl": "mevrouw", "baca": "me-FRAU", "id": "nyonya" },
+  { "nl": "verstandig", "baca": "fer-STAN-dekh", "id": "bijak" },
+  { "nl": "de firma", "baca": "de FIR-mah", "id": "perusahaan" },
+  { "nl": "schrappen", "baca": "SKHRA-pe(n)", "id": "mencoret" },
+  { "nl": "het feit", "baca": "het FÈYT", "id": "fakta" },
+  { "nl": "repareren", "baca": "reh-pah-REH-re(n)", "id": "memperbaiki" },
+  { "nl": "misgaan", "baca": "MIS-khahn", "id": "salah, kacau" },
+  { "nl": "het bijvoeglijk naamwoord", "baca": "het BÈY-fukh-lek NAHM-vohrt", "id": "kata sifat" },
+  { "nl": "schandalig", "baca": "skhan-DAH-lekh", "id": "keterlaluan" },
+  { "nl": "kaal", "baca": "kahl", "id": "gundul, polos" },
+  { "nl": "concreet", "baca": "kon-KREHT", "id": "konkret" },
+  { "nl": "verzoeken", "baca": "fer-ZU-ke(n)", "id": "meminta (resmi)" },
+  { "nl": "reageren", "baca": "reh-a-KHEH-re(n)", "id": "menanggapi" },
+  { "nl": "de stap", "baca": "de STAP", "id": "langkah" },
+  { "nl": "afsluiten", "baca": "AF-slöy-te(n)", "id": "menutup" },
+  { "nl": "bovenaan", "baca": "boh-fe(n)-AHN", "id": "di bagian atas" },
+  { "nl": "de winst", "baca": "de VINST", "id": "keuntungan, kemenangan" },
+  { "nl": "de bijlage", "baca": "de BÈY-lah-khe", "id": "lampiran" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi sapaan atau penutup yang tepat.",
+   "items": [
+    "____ heer Van Dam, (resmi, nama diketahui)",
+    "____ heer, mevrouw, (resmi, nama tidak diketahui)",
+    "____ Anna, (rekan kerja yang sudah kenal)",
+    "Met vriendelijke ____ , (penutup baku)",
+    "____ , (penutup sangat resmi)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk *u*.",
+   "items": [
+    "Kun je mij het bedrag terugstorten? ____",
+    "Heb je mijn brief ontvangen? ____",
+    "Bel maar als je vragen hebt. ____",
+    "Ik heb jouw reactie nog niet gekregen. ____",
+    "Je bent te laat met betalen. ____"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang supaya terdengar zakelijk (buang kata sifat emosional).",
+   "items": [
+    "Ik ben heel boos over jullie belachelijke service. ____",
+    "Die rekening is schandalig hoog. ____",
+    "Niemand doet daar ooit iets. ____",
+    "Ik wil gewoon mijn geld terug, nu. ____",
+    "Als jullie niet reageren, word ik echt kwaad. ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Pada 3 Maret saya menyervis sepeda saya di tempat Anda.",
+    "Saya minta Anda mengembalikan uangnya dalam empat belas hari.",
+    "Sampai hari ini saya belum menerima tanggapan.",
+    "Kalau saya tidak mendapat kabar, saya akan melibatkan komisi sengketa.",
+    "Terlampir Anda temukan salinan fakturnya."
+   ]
+  }
+ ],
+ "answers": [
+  "Geachte — Geachte — Beste — groet — Hoogachtend",
+  "Kunt u mij het bedrag terugstorten? — Hebt u mijn brief ontvangen? — Belt u gerust als u vragen hebt. — Ik heb uw reactie nog niet ontvangen. — U bent te laat met betalen.",
+  "Hierbij dien ik een klacht in over de geleverde service. — De rekening bedroeg 340 euro, terwijl 180 euro was afgesproken. — Tot op heden heb ik geen reactie ontvangen. — Ik verzoek u het bedrag binnen veertien dagen terug te storten. — Mocht ik niets vernemen, dan schakel ik de Geschillencommissie in.",
+  "Op 3 maart heb ik mijn fiets bij u laten repareren. — Ik verzoek u het bedrag binnen veertien dagen terug te storten. — Tot op heden heb ik geen reactie ontvangen. — Mocht ik niets vernemen, dan schakel ik de Geschillencommissie in. — Als bijlage treft u een kopie van de factuur aan."
+ ]
+}

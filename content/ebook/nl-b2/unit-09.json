@@ -1,0 +1,226 @@
+{
+ "title": "Ekor yang terlempar, dan tekanan yang mengubah arti",
+ "title_target": "Dat had voorkomen kunnen worden — of kwam het gewoon vóór?",
+ "goal": "Menguasai kata kerja terpisah dan tak terpisah, termasuk pasangan yang ejaannya sama persis tapi artinya berlawanan tergantung tekanan.",
+ "bekal": [
+  "melempar ekor kata kerja ke ujung kalimat dan mengembalikannya di anak kalimat",
+  "membentuk deelwoord kata kerja terpisah (*opgebeld*) dan tak terpisah (*voorkomen*)",
+  "mengenali pasangan seperti *vóórkomen* dan *voorkómen* dari tekanannya",
+  "menyisipkan *te* di tengah kata kerja terpisah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nabespreking van een incident",
+   "intro": "Ruang rapat kecil di sebuah rumah sakit daerah. Diana memimpin evaluasi sebuah kesalahan pemberian obat; Ruben, perawat senior, dan Emel, kepala unit, hadir. Perhatikan kata *voorkomen* — ia muncul empat kali dengan dua arti yang berlawanan.",
+   "lines": [
+    { "speaker": "Diana:", "text": "Laten we het rustig doornemen. Wat kwam er precies voor?", "id": "Mari kita bahas pelan-pelan. Apa persisnya yang terjadi?", "literal": "biar kami itu tenang menelaah. apa datang [er] tepat [voor]?" },
+    { "speaker": "Ruben:", "text": "De verkeerde dosis werd klaargezet. Ik heb het gelukkig opgemerkt.", "id": "Dosis yang salah disiapkan. Untungnya saya sadar.", "literal": "itu salah dosis ada-dulu-jadi siap-ditaruh. saya punya itu untung diperhatikan." },
+    { "speaker": "Emel:", "text": "En had dat voorkomen kunnen worden?", "id": "Dan apa itu bisa dicegah?", "literal": "dan punya-dulu itu dicegah bisa ada-jadi?" },
+    { "speaker": "Ruben:", "text": "Ja. Als het systeem de dubbele controle had afgedwongen, was het niet gebeurd.", "id": "Ya. Kalau sistemnya memaksa pemeriksaan ganda, tidak akan terjadi.", "literal": "ya. kalau itu sistem itu ganda pemeriksaan punya-dulu dipaksa, ada-dulu itu tidak terjadi." },
+    { "speaker": "Diana:", "text": "Dus je stelt voor dat we die stap verplicht maken?", "id": "Jadi kamu mengusulkan langkah itu diwajibkan?", "literal": "jadi kamu taruh [voor] bahwa kami itu langkah wajib membuat?" },
+    { "speaker": "Ruben:", "text": "Precies. Nu slaan mensen hem over als het druk is.", "id": "Persis. Sekarang orang melewatinya kalau lagi sibuk.", "literal": "tepat. sekarang pukul orang dia [over] kalau itu sibuk ada." },
+    { "speaker": "Emel:", "text": "Dat komt vaker voor dan we toegeven, denk ik.", "id": "Itu lebih sering terjadi daripada yang kita akui, menurutku.", "literal": "itu datang lebih-sering [voor] daripada kami mengakui, pikir saya." },
+    { "speaker": "Diana:", "text": "Dan moeten we dat aankaarten bij de directie.", "id": "Kalau begitu kita harus mengangkatnya ke direksi.", "literal": "lalu harus kami itu mengangkat pada itu direksi." },
+    { "speaker": "Ruben:", "text": "Ik wil er graag bij zijn als jullie het voorleggen.", "id": "Saya mau ikut hadir waktu kalian menyampaikannya.", "literal": "saya mau [er] senang pada ada kalau kalian itu menyampaikan." },
+    { "speaker": "Emel:", "text": "Uiteraard. Maar we moeten het wel goed onderbouwen.", "id": "Tentu saja. Tapi kita harus mendasarinya dengan baik.", "literal": "tentu. tapi kami harus itu [wel] baik mendasari." },
+    { "speaker": "Diana:", "text": "Ruben, kun jij de meldingen van dit kwartaal even doornemen?", "id": "Ruben, bisa kamu telaah laporan kuartal ini?", "literal": "Ruben, bisa kamu itu laporan dari ini kuartal [even] menelaah?" },
+    { "speaker": "Ruben:", "text": "Doe ik. Ik zoek uit hoe vaak dit is voorgekomen.", "id": "Beres. Saya cari tahu sudah berapa kali ini terjadi.", "literal": "buat saya. saya cari [uit] berapa sering ini ada terjadi." },
+    { "speaker": "Emel:", "text": "En ondergaat het protocol dan meteen een herziening?", "id": "Dan protokolnya langsung direvisi juga?", "literal": "dan mengalami itu protokol lalu segera sebuah revisi?" },
+    { "speaker": "Diana:", "text": "Dat gaat niet vanzelf. Zoiets moet je afdwingen bij het bestuur.", "id": "Itu tidak terjadi sendiri. Hal semacam itu harus dipaksakan ke pengurus.", "literal": "itu pergi tidak dari-sendiri. hal-semacam-itu harus kamu memaksa pada itu pengurus." },
+    { "speaker": "Ruben:", "text": "Ik zie er tegenop, eerlijk gezegd. Zulke gesprekken lopen vaak dood.", "id": "Terus terang saya berat menghadapinya. Obrolan begitu sering mentok.", "literal": "saya lihat [er] menghadapi, jujur dikatakan. semacam-itu percakapan berjalan sering mati." },
+    { "speaker": "Diana:", "text": "Deze keer niet. We leggen het volgende week voor, met cijfers erbij.", "id": "Kali ini tidak. Kita ajukan minggu depan, dengan angkanya.", "literal": "ini kali tidak. kami taruh itu depan minggu [voor], dengan angka di-samping." },
+    { "speaker": "Emel:", "text": "Afgesproken. En bedankt dat je het hebt aangekaart, Ruben.", "id": "Sepakat. Dan terima kasih sudah mengangkat isunya, Ruben.", "literal": "disepakati. dan terima-kasih bahwa kamu itu punya diangkat, Ruben." }
+   ],
+   "notes": [
+    { "text": "**Baris 1, 3, 7, 12: *voorkomen* dua kali dengan arti berlawanan.** *Wat kwam er **vóór**?* (ekor terlempar, tekanan di *voor*) berarti \"apa yang terjadi\". *Had dat **voorkómen** kunnen worden?* (satu kata, tekanan di *kom*) berarti \"apa itu bisa dicegah\". Ejaannya sama, artinya berlawanan, dan yang membedakannya cuma tekanan dan perilaku ekornya. Perhatikan deelwoord-nya juga berbeda: *voorgekomen* (terjadi) melawan *voorkomen* (dicegah, tanpa *ge-*)." },
+    { "text": "**Baris 2, 5, 6, 12: ekor yang terlempar ke ujung kalimat.** *klaarzetten* → *werd klaargezet*; *voorstellen* → *je stelt **voor** dat…*; *overslaan* → *mensen slaan hem **over***; *uitzoeken* → *ik zoek **uit** hoe vaak…*. Aturannya: di kalimat utama, ekornya terlempar ke ujung; di anak kalimat, ia menempel kembali (*…dat mensen hem **overslaan***)." },
+    { "text": "**Baris 2 dan 12: *ge-* masuk di tengah.** Deelwoord kata kerja terpisah menyisipkan *ge-* di antara ekor dan akar: *opbellen* → *op**ge**beld*, *klaarzetten* → *klaar**ge**zet*, *voorkomen* (terjadi) → *voor**ge**komen*. Kata kerja **tak** terpisah tidak memakai *ge-* sama sekali: *voorkómen* → *voorkómen*, *ondergaan* → *ondergaan*, *herzien* → *herzien*." },
+    { "text": "**Baris 4 dan 14: *afdwingen*.** Kata kerja terpisah yang penting untuk bahasa kantor Belanda: \"memaksakan supaya sesuatu benar-benar terjadi\". Perhatikan bentuk lampaunya tak beraturan (*dwong af*, *afgedwongen*). Bahasa Belanda punya banyak kata kerja terpisah berakar tak beraturan; ekornya tak mengubah cara akarnya berubah." },
+    { "text": "**Baris 13: *ondergaan* — tak terpisah, dan artinya bergeser.** *Het protocol **ondergáát** een herziening* (mengalami revisi). Bandingkan dengan *de zon **gaat ónder*** (matahari terbenam), yang terpisah. Pasangan seperti ini berjumlah sekitar dua lusin, dan tabel ketiga di bawah memuat yang paling sering dipakai." },
+    { "text": "**Baris 15: *ergens tegenop zien*.** Ungkapan tetap: \"merasa berat menghadapi sesuatu\". Ia menggabungkan dua hal dari unit sebelumnya — *er* + preposisi terlempar (*er … tegenop*) dan kata kerja terpisah (*opzien tegen*). Kalimat *ik zie er tegenop* adalah salah satu kalimat paling khas Belanda yang tak punya terjemahan pendek." }
+   ],
+   "grammars": [
+    {
+     "title": "Terpisah atau tak terpisah: cara membedakannya",
+     "body": [
+      "Ada satu uji yang hampir selalu bekerja: **letakkan tekanannya**. Kalau tekanan jatuh pada ekornya, kata kerjanya terpisah; kalau pada akarnya, tak terpisah. Uji kedua: kata kerja berawalan *be-, ge-, ver-, ont-, her-, er-* **selalu** tak terpisah, tanpa kecuali."
+     ],
+     "table": {
+      "head": ["Ciri", "Terpisah", "Tak terpisah"],
+      "rows": [
+       ["tekanan", "**óp**bellen", "her**zíen**"],
+       ["kalimat utama", "Ik bel je **op**.", "Ik herzie het plan."],
+       ["anak kalimat", "…dat ik je **opbel**.", "…dat ik het herzie."],
+       ["deelwoord", "**opge**beld", "herzien (tanpa *ge-*)"],
+       ["dengan *te*", "**op te** bellen", "**te** herzien"],
+       ["ekor lazim", "op, aan, af, uit, mee, in, door, over, voor, terug", "be-, ge-, ver-, ont-, her-, er-"],
+       ["arti", "sering harfiah", "sering kiasan"],
+       ["⚠️ ekor ganda", "*terug**bellen***", "—"]
+      ]
+     }
+    },
+    {
+     "title": "Dua belas pasangan yang ejaannya sama, artinya tidak",
+     "body": [
+      "Inilah kelompok yang paling sering menjebak di ujian B2 tertulis, karena di atas kertas tekanannya tidak kelihatan. Yang membedakannya di tulisan: perilaku ekornya di dalam kalimat, dan ada-tidaknya *ge-* pada deelwoord."
+     ],
+     "table": {
+      "head": ["Terpisah", "Arti", "Tak terpisah", "Arti"],
+      "rows": [
+       ["**vóór**komen", "terjadi", "voor**kóm**en", "mencegah"],
+       ["**óver**komen", "mampir", "over**kóm**en", "menimpa"],
+       ["**dóor**lopen", "berjalan terus", "door**lóp**en", "menelusuri, menjalani"],
+       ["**óm**gaan met", "bergaul dengan", "om**gá**an", "menghindari"],
+       ["**ónder**gaan", "terbenam", "onder**gá**an", "mengalami"],
+       ["**óver**zien", "melihat dari atas", "over**zíen**", "memahami cakupannya"],
+       ["**áan**spreken", "menyapa", "aan**spré**ken (op)", "meminta pertanggungjawaban"],
+       ["**dóor**zien", "melihat lewat", "door**zíen**", "menembus tipuan"],
+       ["**vóór**gaan", "berjalan di depan", "voor**gáán**", "didahulukan"],
+       ["**óver**leggen", "menyerahkan (dokumen)", "over**lég**gen", "berunding"],
+       ["**vól**gen", "penuh terisi", "vol**dóen**", "memenuhi syarat"],
+       ["**mís**gaan", "gagal", "mis**lúkk**en", "gagal (tak terpisah)"]
+      ]
+     }
+    },
+    {
+     "title": "Ke mana ekornya pergi: empat keadaan",
+     "body": [
+      "Ekor kata kerja terpisah berpindah-pindah menurut jenis kalimatnya, dan pelajar sering benar di kalimat utama tapi lupa mengembalikannya di anak kalimat. Empat baris pertama di bawah ini pantas dihafal sebagai satu paket."
+     ],
+     "table": {
+      "head": ["Keadaan", "Ekornya", "Contoh"],
+      "rows": [
+       ["kalimat utama", "**ke ujung**", "Ik **bel** je morgen **op**."],
+       ["anak kalimat", "**menempel lagi**", "…dat ik je morgen **opbel**."],
+       ["perfectum", "*ge-* **di tengah**", "Ik heb je **opgebeld**."],
+       ["dengan modal", "**menempel**, di ujung", "Ik moet je **opbellen**."],
+       ["dengan *te*", "*te* **di tengah**", "Ik vergeet je **op te bellen**."],
+       ["perintah", "**ke ujung**", "**Bel** hem **op**!"],
+       ["pertanyaan", "**ke ujung**", "**Bel** je hem **op**?"],
+       ["⚠️ tak terpisah", "tak pernah pindah", "Ik **voorkom** het / heb het **voorkomen**."]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rapat evaluasi, kesalahan, dan perbaikan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Nederlands", "Cara baca", "Arti"],
+     "rows": [
+      ["de melding", "de MÈL-ding", "laporan kejadian"],
+      ["het protocol", "het proh-toh-KOL", "prosedur baku"],
+      ["de herziening", "de her-ZIH-ning", "revisi"],
+      ["de dosis", "de DOH-sis", "dosis"],
+      ["klaarzetten", "KLAHR-zè-te(n)", "menyiapkan"],
+      ["opmerken", "OP-mèr-ke(n)", "menyadari, memperhatikan"],
+      ["overslaan", "OH-fer-slahn", "melewati"],
+      ["aankaarten", "AHN-kahr-te(n)", "mengangkat sebagai isu"],
+      ["voorleggen", "FOHR-lè-khe(n)", "mengajukan untuk dibahas"],
+      ["onderbouwen", "on-der-BAU-e(n)", "mendasari dengan bukti"]
+     ]
+    },
+    { "type": "sub", "text": "Delapan kata kerja terpisah yang mengisi rapat Belanda" },
+    {
+     "type": "tabel",
+     "head": ["Kata kerja", "Arti", "Contoh"],
+     "rows": [
+      ["doornemen", "menelaah bersama", "Laten we het even doornemen."],
+      ["afstemmen", "menyelaraskan", "Ik stem het met haar af."],
+      ["terugkoppelen", "memberi kabar balik", "Ik koppel maandag terug."],
+      ["nagaan", "menelusuri, memastikan", "Ik ga na wat er is gebeurd."],
+      ["uitzoeken", "mencari tahu", "Zoek dat even uit."],
+      ["opvolgen", "menindaklanjuti", "Wie volgt dit op?"],
+      ["bijsturen", "mengoreksi arah", "We sturen onderweg bij."],
+      ["vastleggen", "mencatat resmi", "Dat leggen we vast in het verslag."],
+      ["afronden", "menyelesaikan", "We ronden af om half vier."],
+      ["inplannen", "menjadwalkan", "Ik plan een vervolg in."]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Kata kerja terpisah adalah tempat bahasa Belanda menyimpan makna kiasannya.** *Kaarten* berarti bermain kartu; *aankaarten* berarti mengangkat isu. Kamus dwibahasa sering tidak memuat gabungan ini, jadi biasakan mencarinya sebagai satu kata.",
+      "**Ekornya menentukan seluruh nada kalimat, dan ia jatuh paling akhir.** Karena itu pendengar Belanda benar-benar menunggu sampai ujung — dan karena itu pula memotong kalimat orang Belanda di tengah membuat mereka merasa belum bicara sama sekali.",
+      "**⚠️ Pasangan *voorkomen* muncul di ujian NT2 hampir tiap tahun.** Cara paling aman menghafalnya: *het komt vóór* selalu bisa diganti *het gebeurt*; *het voorkómen* selalu bisa diganti *het vermijden*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "doornemen", "baca": "DOHR-neh-me(n)", "id": "menelaah" },
+  { "nl": "voorkomen (vóór)", "baca": "FOHR-koh-me(n)", "id": "terjadi" },
+  { "nl": "voorkomen (voorkóm)", "baca": "fohr-KOH-me(n)", "id": "mencegah" },
+  { "nl": "verkeerd", "baca": "fer-KEHRT", "id": "salah, keliru" },
+  { "nl": "gelukkig", "baca": "khe-LÜ-kekh", "id": "untungnya" },
+  { "nl": "afdwingen", "baca": "AF-dving-e(n)", "id": "memaksakan" },
+  { "nl": "verplicht", "baca": "fer-PLIKHT", "id": "wajib" },
+  { "nl": "toegeven", "baca": "TU-kheh-fe(n)", "id": "mengakui" },
+  { "nl": "de directie", "baca": "de di-RÈK-si", "id": "direksi" },
+  { "nl": "uiteraard", "baca": "öy-ter-AHRT", "id": "tentu saja" },
+  { "nl": "het kwartaal", "baca": "het kvar-TAHL", "id": "kuartal" },
+  { "nl": "ondergaan", "baca": "on-der-KHAHN", "id": "mengalami" },
+  { "nl": "vanzelf", "baca": "fan-ZÈLF", "id": "dengan sendirinya" },
+  { "nl": "het bestuur", "baca": "het be-STÜHR", "id": "pengurus, dewan" },
+  { "nl": "tegenop zien", "baca": "TEH-khe(n)-op zin", "id": "berat menghadapi" },
+  { "nl": "doodlopen", "baca": "DOHT-loh-pe(n)", "id": "mentok, buntu" },
+  { "nl": "eerlijk gezegd", "baca": "EHR-lek khe-ZÈKHT", "id": "terus terang" },
+  { "nl": "zulke", "baca": "ZÜL-ke", "id": "semacam itu" },
+  { "nl": "de cijfers", "baca": "de SÈY-fers", "id": "angka-angka, data" },
+  { "nl": "het incident", "baca": "het in-si-DÈNT", "id": "insiden" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis kalimat dengan ekor kata kerja di tempat yang benar.",
+   "items": [
+    "Ik ____ je morgen ____ . (opbellen)",
+    "Zij ____ het rapport vandaag ____ . (doornemen)",
+    "Wij ____ die stap vaak ____ . (overslaan)",
+    "Hij ____ het probleem bij de directie ____ . (aankaarten)",
+    "Ze ____ maandag ____ . (terugkoppelen)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi anak kalimat dengan *…omdat…*",
+   "items": [
+    "Ik bel hem morgen op. ____",
+    "Zij neemt het verslag door. ____",
+    "Wij zoeken het vandaag uit. ____",
+    "Hij stelt een nieuwe regel voor. ____",
+    "Ze slaan de controle over. ____"
+   ]
+  },
+  {
+   "prompt": "Tulis deelwoord yang benar (dengan atau tanpa *ge-*).",
+   "items": [
+    "Ik heb hem gisteren ____ . (opbellen)",
+    "Dat had ____ kunnen worden. (voorkómen)",
+    "Het protocol is ____ . (herzien)",
+    "Dit is vorig jaar ook al ____ . (vóórkomen)",
+    "De dosis werd verkeerd ____ . (klaarzetten)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Apa persisnya yang terjadi?",
+    "Dan apa itu bisa dicegah?",
+    "Itu lebih sering terjadi daripada yang kita akui.",
+    "Saya cari tahu sudah berapa kali ini terjadi.",
+    "Terus terang saya berat menghadapinya."
+   ]
+  }
+ ],
+ "answers": [
+  "bel … op — neemt … door — slaan … over — kaart … aan — koppelt … terug",
+  "…omdat ik hem morgen opbel. — …omdat zij het verslag doorneemt. — …omdat wij het vandaag uitzoeken. — …omdat hij een nieuwe regel voorstelt. — …omdat ze de controle overslaan.",
+  "opgebeld — voorkomen — herzien — voorgekomen — klaargezet",
+  "Wat kwam er precies voor? — En had dat voorkomen kunnen worden? — Dat komt vaker voor dan we toegeven. — Ik zoek uit hoe vaak dit is voorgekomen. — Ik zie er tegenop, eerlijk gezegd."
+ ]
+}

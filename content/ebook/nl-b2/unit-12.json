@@ -1,0 +1,228 @@
+{
+ "title": "Sebab, akibat, dan siapa yang disalahkan",
+ "title_target": "Doordat de trein uitviel, kwam iedereen te laat",
+ "goal": "Memilih di antara sepuluh penghubung sebab-akibat yang dalam bahasa Indonesia semuanya berbunyi \"karena\" — dan tahu bahwa pilihannya menentukan siapa yang terdengar bersalah.",
+ "bekal": [
+  "membedakan *omdat*, *doordat*, *want*, dan *aangezien*",
+  "memakai *zodat*, *waardoor*, *dus*, *daardoor* untuk akibat",
+  "memakai *door*, *dankzij*, *wegens*, *vanwege* + nomina",
+  "menyusun kalimat sebab yang mendahului induk kalimatnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Vergadering over een mislukte lancering",
+   "intro": "Ruang rapat sebuah perusahaan perangkat lunak di Eindhoven, Kamis pagi. Peluncuran fitur baru gagal semalam. Femke memimpin, Tarik dan Sanne menjelaskan. Perhatikan bahwa tiap penghubung yang mereka pilih menggeser sedikit siapa yang bertanggung jawab.",
+   "lines": [
+    { "speaker": "Femke:", "text": "Laten we beginnen bij de feiten. Waardoor is het misgegaan?", "id": "Kita mulai dari fakta. Karena apa ini gagal?", "literal": "biar kami mulai pada itu fakta. lewat-apa ada itu salah-pergi?" },
+    { "speaker": "Tarik:", "text": "Doordat de database halverwege de migratie vastliep.", "id": "Gara-gara databasenya macet di tengah migrasi.", "literal": "lewat-bahwa itu database setengah-jalan itu migrasi macet-dulu." },
+    { "speaker": "Femke:", "text": "En liep die vast omdat er te weinig was getest?", "id": "Dan itu macet karena kurang diuji?", "literal": "dan berjalan-dulu itu macet karena [er] terlalu sedikit ada-dulu diuji?" },
+    { "speaker": "Sanne:", "text": "Deels. Aangezien de deadline vaststond, hebben we de laatste ronde overgeslagen.", "id": "Sebagian. Berhubung tenggatnya sudah pasti, kami lewati putaran terakhir.", "literal": "sebagian. berhubung itu tenggat pasti-berdiri-dulu, punya kami itu terakhir putaran dilewati." },
+    { "speaker": "Femke:", "text": "Dus de druk van buiten heeft dit veroorzaakt, zeg je.", "id": "Jadi tekanan dari luar yang menyebabkan ini, katamu.", "literal": "jadi itu tekanan dari luar punya ini disebabkan, bilang kamu." },
+    { "speaker": "Sanne:", "text": "Nee, dat zeg ik niet. Wij hebben besloten, want wij hadden kunnen uitstellen.", "id": "Bukan, saya nggak bilang begitu. Kami yang memutuskan, sebab kami bisa saja menunda.", "literal": "tidak, itu bilang saya tidak. kami punya diputuskan, sebab kami punya-dulu bisa menunda." },
+    { "speaker": "Tarik:", "text": "Daardoor kwamen we in de knel, en niet door de klant.", "id": "Itulah yang bikin kami terjepit, bukan gara-gara klien.", "literal": "lewat-itu datang-dulu kami di itu jepitan, dan tidak lewat itu klien." },
+    { "speaker": "Femke:", "text": "Goed dat jullie dat zo zeggen. Wat waren de gevolgen precies?", "id": "Bagus kalian bilang begitu. Akibatnya apa persisnya?", "literal": "baik bahwa kalian itu begitu bilang. apa ada-dulu itu akibat tepat?" },
+    { "speaker": "Sanne:", "text": "Vierhonderd klanten konden niet inloggen, waardoor de helpdesk vastliep.", "id": "Empat ratus klien tidak bisa login, akibatnya helpdesk macet.", "literal": "empat-ratus klien bisa-dulu tidak masuk-log, lewat-apa itu helpdesk macet-dulu." },
+    { "speaker": "Tarik:", "text": "En vanwege de storing hebben we de campagne moeten stilleggen.", "id": "Dan karena gangguan itu kami harus menghentikan kampanyenya.", "literal": "dan karena itu gangguan punya kami itu kampanye harus menghentikan." },
+    { "speaker": "Femke:", "text": "Dat kost geld. Maar dankzij jullie snelle actie bleef het bij één nacht.", "id": "Itu makan biaya. Tapi berkat tindakan cepat kalian, cuma satu malam.", "literal": "itu biaya uang. tapi berkat kalian cepat tindakan tinggal-dulu itu pada satu malam." },
+    { "speaker": "Sanne:", "text": "Tarik zat tot vier uur door, zodat we 's ochtends open konden.", "id": "Tarik lembur sampai jam empat, supaya pagi kami bisa buka.", "literal": "Tarik duduk-dulu sampai empat jam terus, supaya kami pagi buka bisa-dulu." },
+    { "speaker": "Femke:", "text": "Genoteerd. Hoe voorkomen we dat dit nog eens gebeurt?", "id": "Dicatat. Bagaimana kita mencegah ini terulang?", "literal": "dicatat. bagaimana cegah kami bahwa ini lagi sekali terjadi?" },
+    { "speaker": "Tarik:", "text": "Door voortaan een testronde in te plannen die niet mag vervallen.", "id": "Dengan mulai sekarang menjadwalkan putaran uji yang tidak boleh dibatalkan.", "literal": "lewat mulai-kini sebuah uji-putaran di menjadwalkan yang tidak boleh gugur." },
+    { "speaker": "Femke:", "text": "Akkoord. En omdat dit vaker speelt, zet ik het op de directieagenda.", "id": "Setuju. Dan karena ini sering terjadi, saya masukkan ke agenda direksi.", "literal": "setuju. dan karena ini lebih-sering bermain, taruh saya itu pada itu direksi-agenda." },
+    { "speaker": "Sanne:", "text": "Fijn. Want zolang het bij ons blijft, verandert er niets.", "id": "Bagus. Sebab selama ini cuma berhenti di kami, nggak ada yang berubah.", "literal": "menyenangkan. sebab selama itu pada kami tinggal, berubah [er] tak-ada-apa." },
+    { "speaker": "Femke:", "text": "Precies daarom noteer ik het. Bedankt, allebei.", "id": "Justru karena itu saya catat. Terima kasih, kalian berdua.", "literal": "tepat karena-itu catat saya itu. terima-kasih, keduanya." }
+   ],
+   "notes": [
+    { "text": "**Baris 2 dan 3: *doordat* melawan *omdat* — pembeda terpenting unit ini.** ***Doordat*** menyebut **sebab mekanis**: sesuatu terjadi, lalu sesuatu yang lain mengikuti, tanpa kehendak siapa pun. ***Omdat*** menyebut **alasan**: ada yang memutuskan sesuatu karena pertimbangan. Bandingkan: *Doordat de trein uitviel, kwam ik te laat* (kereta batal — bukan salahku) melawan *Omdat ik laat opstond, kwam ik te laat* (aku yang bangun kesiangan). Pilihan ini benar-benar terdengar sebagai pengakuan atau pembelaan diri." },
+    { "text": "**Baris 6 dan 16: *want* melawan *omdat*.** Artinya sama, tapi *want* **tidak** melempar kata kerja ke ujung — ia menghubungkan dua kalimat setara. *Ik ga naar huis, **want** ik ben moe* / *Ik ga naar huis **omdat** ik moe **ben***. Selain itu *want* selalu berada di tengah, tak pernah membuka kalimat, sementara *omdat* boleh di depan." },
+    { "text": "**Baris 4: *aangezien*.** \"Berhubung\" — sebab yang dianggap sudah diketahui bersama, dan sedikit lebih tertulis daripada *omdat*. Sekeluarga dengannya *nu* (\"kini karena\") dan *daar* (sangat tertulis, jarang). *Aangezien* sering membuka kalimat, dan itu wajar." },
+    { "text": "**Baris 1, 9, 7: *waardoor* dan *daardoor*.** Ini sisi akibat dari *doordat*. *Waardoor* menghubungkan akibat ke kalimat sebelumnya (*…konden niet inloggen, **waardoor** de helpdesk vastliep*) dan sangat khas tulisan B2 karena ia memampatkan dua kalimat menjadi satu. *Daardoor* membuka kalimat baru dan memaksa subjek pindah ke belakang kata kerja." },
+    { "text": "**Baris 10, 11: *vanwege* dan *dankzij*.** Keduanya diikuti **nomina**, bukan anak kalimat. *Vanwege* dan *wegens* netral sampai negatif; ***dankzij*** khusus untuk akibat **baik** — memakainya untuk hal buruk terdengar sebagai sindiran (*dankzij jouw hulp is alles kwijt*, dan itu memang cara orang Belanda menyindir)." },
+    { "text": "**Baris 12: *zodat* melawan *zodanig dat*.** *Zodat* boleh berarti akibat (\"sehingga\") maupun tujuan (\"supaya\"), dan bahasa Belanda tidak memisahkan keduanya sekaku bahasa Indonesia. Kalau kamu perlu benar-benar menegaskan tujuan, pakailah *opdat* (sangat tertulis) atau *om te* — yang dibongkar di unit 14." }
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh cara berkata karena",
+     "body": [
+      "Kolom terpenting adalah yang terakhir: apa yang dilakukan penghubung itu pada kata kerja. Salah di kolom itu membuat kalimatmu salah; salah di kolom nada cuma membuatnya terdengar sedikit meleset."
+     ],
+     "table": {
+      "head": ["Penghubung", "Nada", "Diikuti", "Kata kerja"],
+      "rows": [
+       ["**omdat**", "alasan, ada yang memutuskan", "kalimat", "ke ujung"],
+       ["**doordat**", "sebab mekanis, tanpa pelaku", "kalimat", "ke ujung"],
+       ["**want**", "alasan, menyusul", "kalimat", "**tetap di nomor 2**"],
+       ["**aangezien**", "berhubung, tertulis", "kalimat", "ke ujung"],
+       ["**nu**", "kini karena", "kalimat", "ke ujung"],
+       ["**daar**", "karena (sangat tertulis)", "kalimat", "ke ujung"],
+       ["**door**", "lewat, akibat", "nomina", "—"],
+       ["**vanwege / wegens**", "karena, netral sampai resmi", "nomina", "—"],
+       ["**dankzij**", "berkat (hanya hal baik)", "nomina", "—"],
+       ["**als gevolg van**", "sebagai akibat dari", "nomina", "—"],
+       ["**gezien**", "mengingat", "nomina", "—"],
+       ["**uit** (+ perasaan)", "karena (dorongan batin)", "nomina", "*uit angst, uit liefde*"]
+      ]
+     }
+    },
+    {
+     "title": "Sisi akibat: delapan bentuk",
+     "body": [
+      "Sebab dan akibat adalah dua arah dari hubungan yang sama, dan bahasa Belanda memberi kamu pilihan untuk memasuki dari arah mana pun. Menguasai kedua arah berarti kamu bisa menyusun ulang kalimat panjang tanpa mengubah maknanya — keterampilan inti karangan berargumen."
+     ],
+     "table": {
+      "head": ["Bentuk", "Contoh", "Kata kerja"],
+      "rows": [
+       ["**dus**", "Het regende, **dus** bleven we thuis.", "tetap di nomor 2"],
+       ["**daardoor**", "**Daardoor** kwamen we te laat.", "subjek dibalik"],
+       ["**daarom**", "**Daarom** heb ik gebeld.", "subjek dibalik"],
+       ["**zodat**", "…**zodat** we open konden.", "ke ujung"],
+       ["**waardoor**", "…, **waardoor** alles vastliep.", "ke ujung"],
+       ["**vandaar dat**", "**Vandaar dat** ik belde.", "ke ujung"],
+       ["**met als gevolg dat**", "…**met als gevolg dat** het misging.", "ke ujung"],
+       ["**zo … dat**", "Het was **zo** druk **dat** we weggingen.", "ke ujung"],
+       ["⚠️ daarom ≠ daardoor", "*daarom* = alasan; *daardoor* = akibat mekanis", "—"],
+       ["⚠️ dus", "di lisan boleh di ujung: *Het regent, dus.*", "—"]
+      ]
+     }
+    },
+    {
+     "title": "Kalimat sebab di depan: apa yang terjadi pada urutannya",
+     "body": [
+      "Anak kalimat yang berdiri **di depan** menempati tempat pertama seluruh kalimat, jadi kata kerja induknya langsung menyusul dan subjeknya terlempar ke belakang. Inilah kesalahan urutan kata yang paling sering muncul di karangan B2 pelajar Indonesia."
+     ],
+     "table": {
+      "head": ["Susunan", "Contoh", "Benar?"],
+      "rows": [
+       ["anak kalimat di belakang", "Ik kwam te laat **omdat de trein uitviel**.", "✓"],
+       ["anak kalimat di depan", "**Omdat de trein uitviel**, kwam ik te laat.", "✓"],
+       ["anak kalimat di depan", "*Omdat de trein uitviel, ik kwam te laat.* ", "✗"],
+       ["dengan *doordat*", "**Doordat het regende**, ging de wedstrijd niet door.", "✓"],
+       ["dengan *aangezien*", "**Aangezien u niet betaalde**, sturen wij een aanmaning.", "✓"],
+       ["dengan *want*", "*Want ik moe was, ging ik naar huis.* ", "✗ — *want* tak boleh di depan"],
+       ["dengan *dus*", "**Dus** ging ik naar huis.", "✓ subjek dibalik"],
+       ["dua anak kalimat", "**Omdat het regende en omdat ik moe was**, bleef ik thuis.", "✓"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Gangguan, kegagalan, dan evaluasi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Nederlands", "Cara baca", "Arti"],
+     "rows": [
+      ["de storing", "de STOH-ring", "gangguan"],
+      ["de lancering", "de lan-SEH-ring", "peluncuran"],
+      ["vastlopen", "FAST-loh-pe(n)", "macet, hang"],
+      ["uitvallen", "ÖYT-fa-le(n)", "batal, mati (listrik/kereta)"],
+      ["veroorzaken", "fer-OHR-zah-ke(n)", "menyebabkan"],
+      ["het gevolg", "het khe-FOLKH", "akibat"],
+      ["in de knel komen", "in de KNÈL koh-me(n)", "terjepit"],
+      ["stilleggen", "STIL-lè-khe(n)", "menghentikan sementara"],
+      ["de testronde", "de TÈST-ron-de", "putaran uji"],
+      ["noteren", "noh-TEH-re(n)", "mencatat"]
+     ]
+    },
+    { "type": "sub", "text": "Menjelaskan sebab tanpa terdengar mencari alasan" },
+    {
+     "type": "tabel",
+     "head": ["Kalimat", "Yang terdengar"],
+     "rows": [
+      ["Het kwam doordat de server uitviel.", "menyebut sebab, netral"],
+      ["Wij hebben besloten om…", "mengambil tanggung jawab"],
+      ["Achteraf gezien was dat onverstandig.", "mengakui dengan tenang"],
+      ["Dat had ik anders moeten doen.", "mengakui penuh"],
+      ["Er is te weinig tijd voor genomen.", "menyebut sebab, pelaku disembunyikan"],
+      ["Dat lag niet aan ons.", "menolak tanggung jawab — hati-hati"],
+      ["Daar was ik niet van op de hoogte.", "menolak, tapi sopan"],
+      ["Ik wil het niet goedpraten, maar…", "mengakui lalu menjelaskan"],
+      ["Feit blijft dat…", "menegaskan yang tak terbantah"],
+      ["Wat mij betreft trekken we hier lessen uit.", "menutup ke depan"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Pilihan antara *doordat* dan *omdat* dibaca sebagai sikap moral, bukan tata bahasa.** Menulis *doordat ik te laat opstond* terdengar seperti menyalahkan kasur. Di rapat evaluasi Belanda, pilihan kata ini diperhatikan.",
+      "**Rantai *waardoor* adalah alat karangan yang paling hemat.** Satu kalimat panjang berisi sebab, kejadian, dan akibat mengalahkan tiga kalimat pendek — asal tidak lebih dari dua *waardoor* berturut-turut.",
+      "**⚠️ *Want* tak pernah membuka kalimat, dan *omdat* tak pernah menjadi jawaban lengkap dalam tulisan resmi.** Di lisan, *Omdat.* sebagai jawaban tunggal justru lazim dan sedikit kurang ajar — persis seperti \"Ya karena gitu.\""
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "doordat", "baca": "dohr-DAT", "id": "karena (sebab mekanis)" },
+  { "nl": "aangezien", "baca": "ahn-khe-ZIN", "id": "berhubung" },
+  { "nl": "waardoor", "baca": "vahr-DOHR", "id": "sehingga, akibatnya" },
+  { "nl": "daardoor", "baca": "dahr-DOHR", "id": "karena itu (akibat)" },
+  { "nl": "daarom", "baca": "dahr-OM", "id": "karena itu (alasan)" },
+  { "nl": "dankzij", "baca": "DANGK-zèy", "id": "berkat" },
+  { "nl": "vanwege", "baca": "fan-VEH-khe", "id": "karena" },
+  { "nl": "halverwege", "baca": "hal-fer-VEH-khe", "id": "di tengah jalan" },
+  { "nl": "de migratie", "baca": "de mi-KHRAH-tsi", "id": "migrasi (data)" },
+  { "nl": "de druk", "baca": "de DRÜK", "id": "tekanan" },
+  { "nl": "deels", "baca": "dehls", "id": "sebagian" },
+  { "nl": "vaststaan", "baca": "FAST-stahn", "id": "sudah pasti" },
+  { "nl": "inloggen", "baca": "IN-lo-khe(n)", "id": "masuk akun" },
+  { "nl": "de campagne", "baca": "de kam-PAN-ye", "id": "kampanye" },
+  { "nl": "doorzitten", "baca": "DOHR-zi-te(n)", "id": "lembur tanpa berhenti" },
+  { "nl": "vervallen", "baca": "fer-FA-le(n)", "id": "gugur, dibatalkan" },
+  { "nl": "de agenda", "baca": "de a-KHÈN-dah", "id": "agenda" },
+  { "nl": "goedpraten", "baca": "KHUT-prah-te(n)", "id": "membenar-benarkan" },
+  { "nl": "op de hoogte", "baca": "op de HOHKH-te", "id": "mengetahui, terinformasi" },
+  { "nl": "lessen trekken", "baca": "LÈ-se(n) trè-ke(n)", "id": "mengambil pelajaran" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *omdat*, *doordat*, *want*, atau *aangezien*.",
+   "items": [
+    "Ik kwam te laat ____ de trein uitviel.",
+    "Ik kwam te laat ____ ik me verslapen had.",
+    "Ik ga naar huis, ____ ik ben moe.",
+    "____ de deadline vaststond, hebben we niets getest.",
+    "De wedstrijd ging niet door ____ het hard regende."
+   ]
+  },
+  {
+   "prompt": "Gabungkan menjadi satu kalimat dengan *waardoor* atau *zodat*.",
+   "items": [
+    "De server viel uit. De helpdesk liep vast. ____",
+    "Tarik werkte door. We konden 's ochtends open. ____",
+    "Het regende hard. De wegen liepen onder. ____",
+    "We plannen een extra ronde in. Dit kan niet meer gebeuren. ____",
+    "De brief kwam te laat. Ik miste de termijn. ____"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *door*, *vanwege*, *dankzij*, atau *als gevolg van*.",
+   "items": [
+    "____ de storing lag alles stil.",
+    "____ jullie snelle actie bleef de schade klein.",
+    "Het kwam ____ een fout in de code.",
+    "____ het slechte weer is de vlucht geannuleerd.",
+    "____ de nieuwe regels is de aanvraag korter."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Gara-gara databasenya macet di tengah migrasi.",
+    "Kami yang memutuskan, sebab kami bisa saja menunda.",
+    "Empat ratus klien tidak bisa login, akibatnya helpdesk macet.",
+    "Tapi berkat tindakan cepat kalian, cuma satu malam.",
+    "Dan karena ini sering terjadi, saya masukkan ke agenda direksi."
+   ]
+  }
+ ],
+ "answers": [
+  "doordat — omdat — want — Aangezien — doordat",
+  "De server viel uit, waardoor de helpdesk vastliep. — Tarik werkte door, zodat we 's ochtends open konden. — Het regende hard, waardoor de wegen onderliepen. — We plannen een extra ronde in, zodat dit niet meer kan gebeuren. — De brief kwam te laat, waardoor ik de termijn miste.",
+  "Vanwege — Dankzij — door — Vanwege — Als gevolg van",
+  "Doordat de database halverwege de migratie vastliep. — Wij hebben besloten, want wij hadden kunnen uitstellen. — Vierhonderd klanten konden niet inloggen, waardoor de helpdesk vastliep. — Maar dankzij jullie snelle actie bleef het bij één nacht. — En omdat dit vaker speelt, zet ik het op de directieagenda."
+ ]
+}

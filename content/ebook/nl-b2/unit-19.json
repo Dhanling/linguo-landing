@@ -1,0 +1,228 @@
+{
+ "title": "Gemeente, Belastingdienst, dan segala yang harus diurus",
+ "title_target": "Met uw DigiD regelt u het meeste zelf",
+ "goal": "Mengurus hidup di Belanda dalam bahasa Belanda: gemeente, DigiD, pajak, asuransi kesehatan, tunjangan — beserta kosakata yang tak pernah masuk buku pelajaran.",
+ "bekal": [
+  "memahami surat dan formulir instansi tanpa menerjemahkan kata per kata",
+  "menanyakan hal yang tidak kamu mengerti di loket tanpa kehilangan muka",
+  "membedakan *toeslag*, *uitkering*, *korting*, dan *vergoeding*",
+  "menyatakan keberatan (*bezwaar*) dengan bentuk yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Aan de balie van de gemeente",
+   "intro": "Loket balai kota di Almere, Rabu pagi. Ade baru enam bulan di Belanda dan bingung dengan tiga surat sekaligus. Marielle bekerja di bagian pelayanan warga. Perhatikan bahwa Ade bertanya dengan sangat langsung — dan itu justru dianggap sopan.",
+   "lines": [
+    { "speaker": "Marielle:", "text": "Goedemorgen. Waarvoor komt u?", "id": "Selamat pagi. Ada keperluan apa?", "literal": "selamat-pagi. untuk-apa datang kamu?" },
+    { "speaker": "Ade:", "text": "Ik heb drie brieven gekregen en ik begrijp er twee niet van.", "id": "Saya dapat tiga surat dan dua di antaranya tidak saya mengerti.", "literal": "saya punya tiga surat diterima dan saya mengerti [er] dua tidak dari." },
+    { "speaker": "Marielle:", "text": "Laat maar zien. Ah, deze is van de Belastingdienst, niet van ons.", "id": "Coba lihat. Ah, ini dari kantor pajak, bukan dari kami.", "literal": "biarkan [maar] lihat. ah, ini ada dari itu Pajak-Dinas, tidak dari kami." },
+    { "speaker": "Ade:", "text": "Dat dacht ik al. Wat betekent \"voorlopige aanslag\"?", "id": "Sudah saya duga. \"Voorlopige aanslag\" itu artinya apa?", "literal": "itu pikir-dulu saya sudah. apa berarti sementara ketetapan?" },
+    { "speaker": "Marielle:", "text": "Een schatting vooraf. U betaalt alvast, en achteraf wordt het verrekend.", "id": "Perkiraan di muka. Anda bayar dulu, nanti diperhitungkan ulang.", "literal": "sebuah perkiraan di-muka. kamu bayar sudah-dulu, di-belakang ada-jadi itu diperhitungkan." },
+    { "speaker": "Ade:", "text": "Dus als het te veel is, krijg ik het terug?", "id": "Jadi kalau kebanyakan, uangnya kembali?", "literal": "jadi kalau itu terlalu banyak ada, dapat saya itu kembali?" },
+    { "speaker": "Marielle:", "text": "Klopt. En anders moet u bijbetalen. Kijkt u ook bij Toeslagen?", "id": "Betul. Kalau kurang, Anda harus nambah. Sudah cek bagian Toeslagen juga?", "literal": "cocok. dan lain harus kamu tambah-bayar. lihat kamu juga pada Tunjangan?" },
+    { "speaker": "Ade:", "text": "Toeslagen? Dat is toch iets anders dan een uitkering?", "id": "Toeslagen? Itu beda dengan uitkering kan?", "literal": "tunjangan? itu ada [toch] sesuatu lain daripada sebuah santunan?" },
+    { "speaker": "Marielle:", "text": "Heel anders. Een toeslag is een bijdrage; een uitkering is inkomen.", "id": "Beda jauh. Toeslag itu subsidi biaya; uitkering itu penghasilan.", "literal": "sangat lain. sebuah tunjangan ada sebuah sumbangan; sebuah santunan ada penghasilan." },
+    { "speaker": "Ade:", "text": "En huurtoeslag vraag ik aan bij u of bij hen?", "id": "Terus tunjangan sewa saya ajukan ke sini atau ke sana?", "literal": "dan sewa-tunjangan minta saya [aan] pada kamu atau pada mereka?" },
+    { "speaker": "Marielle:", "text": "Bij de Belastingdienst, met uw DigiD. Daarmee regelt u het meeste zelf.", "id": "Ke kantor pajak, pakai DigiD. Dengan itu Anda bisa urus sendiri sebagian besar.", "literal": "pada itu Pajak-Dinas, dengan kamu DigiD. dengan-itu urus kamu itu terbanyak sendiri." },
+    { "speaker": "Ade:", "text": "Mijn DigiD werkt niet meer sinds ik verhuisd ben.", "id": "DigiD saya nggak jalan lagi sejak saya pindah.", "literal": "saya DigiD berhasil tidak lagi sejak saya pindah ada." },
+    { "speaker": "Marielle:", "text": "Dan is uw adres nog niet doorgegeven. Dat regelen we hier wel even.", "id": "Berarti alamat Anda belum dilaporkan. Itu bisa kita urus di sini sekarang.", "literal": "lalu ada kamu alamat lagi tidak diteruskan. itu urus kami di-sini [wel] [even]." },
+    { "speaker": "Ade:", "text": "Fijn. En deze derde brief? Iets over een eigen risico.", "id": "Bagus. Terus surat ketiga ini? Soal eigen risico.", "literal": "menyenangkan. dan ini ketiga surat? sesuatu tentang sebuah sendiri risiko." },
+    { "speaker": "Marielle:", "text": "Dat is uw zorgverzekering. De eerste 385 euro betaalt u altijd zelf.", "id": "Itu asuransi kesehatan Anda. 385 euro pertama selalu ditanggung sendiri.", "literal": "itu ada kamu kesehatan-asuransi. itu pertama 385 euro bayar kamu selalu sendiri." },
+    { "speaker": "Ade:", "text": "Ook bij de huisarts?", "id": "Termasuk ke dokter umum?", "literal": "juga pada itu rumah-dokter?" },
+    { "speaker": "Marielle:", "text": "Nee, de huisarts is altijd gratis. Dat is de enige uitzondering.", "id": "Tidak, dokter umum selalu gratis. Itu satu-satunya pengecualian.", "literal": "tidak, itu rumah-dokter ada selalu gratis. itu ada itu satu-satunya pengecualian." }
+   ],
+   "notes": [
+    { "text": "**Baris 4 dan 5: *voorlopige aanslag*.** Sistem pajak Belanda memungut di muka berdasarkan perkiraan, lalu memperhitungkannya belakangan (*verrekenen*). Kata *aanslag* di luar konteks pajak berarti \"serangan\" — dan orang Belanda sendiri sering menggurau soal itu. Yang perlu kamu kenali: *voorlopig* (sementara), *definitief* (final), *teruggave* (pengembalian), *bijbetalen* (menambah bayar)." },
+    { "text": "**Baris 8 dan 9: empat kata yang mudah tertukar.** ***Toeslag*** = sumbangan biaya untuk hal tertentu (sewa, kesehatan, anak). ***Uitkering*** = penghasilan pengganti (pengangguran, sakit, bantuan sosial). ***Korting*** = potongan harga. ***Vergoeding*** = penggantian biaya yang sudah kamu keluarkan. Menyebut *toeslag* sebagai *uitkering* di Belanda bukan cuma salah kata; ia menyentuh perbedaan status sosial." },
+    { "text": "**Baris 11 dan 12: DigiD.** Kunci digital untuk hampir seluruh urusan resmi di Belanda: pajak, tunjangan, kesehatan, pendidikan, gemeente. Ia terikat pada alamat resmimu, jadi setiap pindah rumah wajib dilaporkan ke gemeente dalam lima hari kerja — dan itulah yang membuat DigiD Ade berhenti bekerja." },
+    { "text": "**Baris 15 dan 17: *eigen risico*.** Asuransi kesehatan Belanda wajib, dan tiap tahun ada jumlah tertentu yang selalu kamu bayar sendiri sebelum asuransi mulai mengganti. Dokter umum (*huisarts*) adalah pengecualiannya — dan ia sekaligus pintu masuk ke seluruh sistem: tanpa rujukan (*verwijzing*) dari huisarts, kamu tak bisa ke dokter spesialis." },
+    { "text": "**Baris 2, 4, 10, 16: bertanya langsung dianggap sopan.** Ade tidak sekali pun meminta maaf karena tidak paham, dan tidak berputar-putar. Di loket Belanda, itulah yang diharapkan. Kalimat seperti *Wat betekent…?*, *Begrijp ik goed dat…?*, *Kunt u dat anders zeggen?* sepenuhnya wajar dan tak membuatmu kehilangan muka." },
+    { "text": "**Baris 13: *dat regelen we hier wel even*.** Tiga partikel dari unit 6 bekerja sekaligus: *wel* menenangkan (\"tenang, bisa kok\"), *even* memperkecil (\"tidak merepotkan\"), dan *hier* menegaskan bahwa masalahnya selesai di tempat. Satu kalimat pendek yang mengubah suasana loket — dan bentuk yang pantas kamu tiru saat menolong orang lain." }
+   ],
+   "grammars": [
+    {
+     "title": "Peta instansi Belanda: siapa mengurus apa",
+     "body": [
+      "Setengah dari kebingungan hidup di Belanda hilang begitu kamu tahu surat mana datang dari siapa. Tabel ini bukan tata bahasa, tapi ia yang paling sering dibutuhkan — dan seluruh kosakata di dalamnya muncul di ujian NT2 Programma II."
+     ],
+     "table": {
+      "head": ["Instansi", "Mengurus", "Kata kunci suratnya"],
+      "rows": [
+       ["**Gemeente**", "alamat, paspor, akta, sampah, izin", "inschrijving, verhuizing, vergunning"],
+       ["**Belastingdienst**", "pajak dan seluruh *toeslagen*", "aanslag, aangifte, teruggave"],
+       ["**Toeslagen**", "huur-, zorg-, kinderopvangtoeslag", "voorschot, terugvordering"],
+       ["**UWV**", "pengangguran, sakit, cacat kerja", "WW, ziektewet, uitkering"],
+       ["**SVB**", "tunjangan anak, pensiun AOW", "kinderbijslag, AOW"],
+       ["**Zorgverzekeraar**", "asuransi kesehatan", "eigen risico, polis, vergoeding"],
+       ["**CJIB**", "denda", "boete, acceptgiro, aanmaning"],
+       ["**DUO**", "pinjaman & beasiswa studi", "studiefinanciering, lening"],
+       ["**IND**", "izin tinggal", "verblijfsvergunning, verlenging"],
+       ["**Waterschap**", "pajak air", "waterschapsbelasting"]
+      ]
+     }
+    },
+    {
+     "title": "Bertanya di loket tanpa tersesat",
+     "body": [
+      "Kalimat-kalimat ini bukan kesopanan tambahan; mereka alat kerja. Yang paling berguna adalah baris keempat — mengulang kembali apa yang kamu tangkap, supaya kesalahpahaman ketahuan di tempat, bukan tiga minggu kemudian lewat surat."
+     ],
+     "table": {
+      "head": ["Kalimat", "Kapan dipakai"],
+      "rows": [
+       ["Waarvoor is deze brief precies?", "membuka"],
+       ["Wat betekent \"aanslag\" hier?", "menanyakan satu kata"],
+       ["Kunt u dat in gewone taal uitleggen?", "meminta versi sederhana"],
+       ["Begrijp ik goed dat ik nu moet betalen?", "menegaskan ulang"],
+       ["Wat moet ik precies doen, en vóór wanneer?", "menanyakan langkah & tenggat"],
+       ["Bij wie moet ik daarvoor zijn?", "menanyakan instansi yang tepat"],
+       ["Kan ik dit online regelen?", "menanyakan jalur digital"],
+       ["Wat gebeurt er als ik niets doe?", "menanyakan akibat"],
+       ["Kunt u dat voor mij opschrijven?", "meminta ditulis"],
+       ["Mag ik dat op papier meekrijgen?", "meminta bukti tertulis"]
+      ]
+     }
+    },
+    {
+     "title": "Bezwaar: menyatakan keberatan dengan benar",
+     "body": [
+      "Hampir setiap keputusan instansi Belanda bisa dibantah, dan caranya diatur ketat: tertulis, dalam enam minggu, dengan alasan. Susunan di bawah ini adalah rangka baku yang dipakai di ribuan surat *bezwaar* tiap tahun."
+     ],
+     "table": {
+      "head": ["Bagian", "Kalimat baku"],
+      "rows": [
+       ["pembuka", "Hierbij maak ik bezwaar tegen uw besluit van 12 maart 2026."],
+       ["nomor perkara", "Kenmerk: 2026/04871"],
+       ["apa yang dibantah", "Het besluit houdt in dat mijn aanvraag is afgewezen."],
+       ["alasan 1", "Ten eerste is bij de beoordeling geen rekening gehouden met…"],
+       ["alasan 2", "Ten tweede blijkt uit de bijgevoegde stukken dat…"],
+       ["permintaan", "Ik verzoek u het besluit te herzien."],
+       ["lampiran", "Als bijlagen treft u aan: loonstroken en huurcontract."],
+       ["penutup", "Ik zie uw reactie binnen de wettelijke termijn tegemoet."],
+       ["⚠️ tenggat", "**zes weken** sejak tanggal keputusan"],
+       ["⚠️ wajib", "alasan (*gemotiveerd*), tanpa itu ditolak"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata-kata yang mengisi surat instansi Belanda",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": ["Nederlands", "Cara baca", "Arti"],
+     "rows": [
+      ["de aanslag", "de AHN-slakh", "ketetapan pajak"],
+      ["de aangifte", "de AHN-khif-te", "SPT, laporan pajak"],
+      ["de teruggave", "de te-RÜKH-khah-fe", "pengembalian pajak"],
+      ["de toeslag", "de TU-slakh", "tunjangan biaya"],
+      ["de uitkering", "de ÖYT-keh-ring", "santunan, penghasilan pengganti"],
+      ["het eigen risico", "het ÈY-khe(n) RIH-si-koh", "biaya tanggungan sendiri"],
+      ["de zorgverzekering", "de ZORKH-fer-zeh-ke-ring", "asuransi kesehatan"],
+      ["de huisarts", "de HÖYS-arts", "dokter umum"],
+      ["de verwijzing", "de fer-VÈY-zing", "surat rujukan"],
+      ["het bezwaar", "het be-ZVAHR", "keberatan resmi"]
+     ]
+    },
+    { "type": "sub", "text": "Sepuluh urusan yang pasti kamu hadapi" },
+    {
+     "type": "tabel",
+     "head": ["Urusan", "Ke mana", "Kata kuncinya"],
+     "rows": [
+      ["pindah rumah", "gemeente, dalam 5 hari kerja", "verhuizing doorgeven"],
+      ["mendaftar pertama kali", "gemeente", "inschrijven in de BRP"],
+      ["mengurus DigiD", "digid.nl + kode lewat pos", "aanvragen, activeren"],
+      ["lapor pajak tahunan", "Belastingdienst, sebelum 1 Mei", "aangifte doen"],
+      ["tunjangan sewa", "Toeslagen", "huurtoeslag aanvragen"],
+      ["asuransi kesehatan", "zorgverzekeraar, dalam 4 bulan", "basisverzekering afsluiten"],
+      ["ganti asuransi", "sebelum 31 Desember", "overstappen"],
+      ["ke dokter spesialis", "lewat huisarts", "verwijzing vragen"],
+      ["membantah keputusan", "instansi yang sama, 6 minggu", "bezwaar maken"],
+      ["denda lalu lintas", "CJIB", "boete betalen of in beroep"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang memisahkan B1 dari B2 di sini",
+     "items": [
+      "**Tenggat waktu di Belanda benar-benar tenggat.** Enam minggu untuk *bezwaar*, lima hari kerja untuk *verhuizing*, 1 Mei untuk *aangifte*. Terlambat berarti hak itu hilang, bukan tertunda — dan tak ada yang menelepon untuk mengingatkanmu.",
+      "**Pertanyaan yang paling berguna di loket bukan \"apa artinya\", melainkan \"apa yang harus saya lakukan dan sampai kapan\".** Petugas Belanda menjawab pertanyaan yang kamu ajukan, tidak lebih.",
+      "**⚠️ Kosakata instansi tidak bisa ditebak dari kata dasarnya.** *Aanslag* bukan serangan, *toeslag* bukan tambahan harga, *uitkering* bukan pembayaran biasa. Perlakukan seluruh kelompok ini sebagai kosakata baru, bukan sebagai gabungan yang bisa diurai."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "nl": "de balie", "baca": "de BAH-li", "id": "loket" },
+  { "nl": "voorlopig", "baca": "fohr-LOH-pekh", "id": "sementara" },
+  { "nl": "definitief", "baca": "deh-fi-ni-TIF", "id": "final" },
+  { "nl": "de schatting", "baca": "de SKHA-ting", "id": "perkiraan" },
+  { "nl": "vooraf", "baca": "fohr-AF", "id": "di muka" },
+  { "nl": "verrekenen", "baca": "fer-REH-ke-ne(n)", "id": "memperhitungkan ulang" },
+  { "nl": "bijbetalen", "baca": "BÈY-be-tah-le(n)", "id": "menambah bayar" },
+  { "nl": "de bijdrage", "baca": "de BÈY-drah-khe", "id": "sumbangan biaya" },
+  { "nl": "het inkomen", "baca": "het IN-koh-me(n)", "id": "penghasilan" },
+  { "nl": "aanvragen", "baca": "AHN-frah-khe(n)", "id": "mengajukan" },
+  { "nl": "doorgeven", "baca": "DOHR-kheh-fe(n)", "id": "melaporkan, meneruskan" },
+  { "nl": "verhuizen", "baca": "fer-HÖY-ze(n)", "id": "pindah rumah" },
+  { "nl": "de uitzondering", "baca": "de ÖYT-zon-de-ring", "id": "pengecualian" },
+  { "nl": "het voorschot", "baca": "het FOHR-skhot", "id": "uang muka, panjar" },
+  { "nl": "de terugvordering", "baca": "de te-RÜKH-for-de-ring", "id": "penarikan kembali dana" },
+  { "nl": "de boete", "baca": "de BU-te", "id": "denda" },
+  { "nl": "het kenmerk", "baca": "het KÈN-mèrk", "id": "nomor perkara" },
+  { "nl": "gemotiveerd", "baca": "khe-moh-ti-FEHRT", "id": "disertai alasan" },
+  { "nl": "wettelijk", "baca": "VÈ-te-lek", "id": "menurut undang-undang" },
+  { "nl": "de vergunning", "baca": "de fer-KHÜ-ning", "id": "izin" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan *toeslag*, *uitkering*, *korting*, atau *vergoeding*.",
+   "items": [
+    "Wie een laag inkomen heeft, kan huur____ krijgen.",
+    "Na ontslag kun je een WW-____ aanvragen.",
+    "Studenten krijgen ____ op de trein.",
+    "De verzekering betaalt een ____ voor de schade.",
+    "De zorg____ is bedoeld voor de premie."
+   ]
+  },
+  {
+   "prompt": "Ke instansi mana? Tulis namanya.",
+   "items": [
+    "Ik ben verhuisd en moet mijn adres doorgeven. ____",
+    "Ik wil mijn belastingaangifte doen. ____",
+    "Ik heb een WW-uitkering nodig. ____",
+    "Ik wil kinderbijslag aanvragen. ____",
+    "Ik heb een verkeersboete gekregen. ____"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat yang tepat untuk situasi ini di loket.",
+   "items": [
+    "Kamu tidak paham satu kata di surat itu. ____",
+    "Kamu ingin memastikan bahwa kamu harus membayar sekarang. ____",
+    "Kamu ingin tahu batas waktunya. ____",
+    "Kamu ingin tahu akibatnya kalau tidak melakukan apa-apa. ____",
+    "Kamu ingin minta penjelasan itu ditulis. ____"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Belanda.",
+   "items": [
+    "Saya dapat tiga surat dan dua di antaranya tidak saya mengerti.",
+    "Anda bayar dulu, nanti diperhitungkan ulang.",
+    "Berarti alamat Anda belum dilaporkan.",
+    "385 euro pertama selalu ditanggung sendiri.",
+    "Tidak, dokter umum selalu gratis."
+   ]
+  }
+ ],
+ "answers": [
+  "toeslag — uitkering — korting — vergoeding — toeslag",
+  "de gemeente — de Belastingdienst — het UWV — de SVB — het CJIB",
+  "Wat betekent dit woord precies? — Begrijp ik goed dat ik nu moet betalen? — Vóór wanneer moet dit geregeld zijn? — Wat gebeurt er als ik niets doe? — Kunt u dat voor mij opschrijven?",
+  "Ik heb drie brieven gekregen en ik begrijp er twee niet van. — U betaalt alvast, en achteraf wordt het verrekend. — Dan is uw adres nog niet doorgegeven. — De eerste 385 euro betaalt u altijd zelf. — Nee, de huisarts is altijd gratis."
+ ]
+}
