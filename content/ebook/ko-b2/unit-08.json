@@ -1,0 +1,702 @@
+{
+ "title": "Empat jenis pengandaian, termasuk yang sudah tidak mungkin",
+ "title_target": "[조건|Jogeon]과 [가정|gajeong]",
+ "goal": "Memisahkan syarat, kebiasaan, pengandaian yang mustahil, dan pengandaian resmi — lalu memakai [-았/었더라면|-at/eotdeoramyeon] untuk menyesali masa lalu tanpa terdengar menyalahkan siapa pun.",
+ "bekal": [
+  "membedakan [-(으)면|-(eu)myeon], [-거든|-geodeun], dan [-(으)ㄹ 경우에|-(eu)l gyeongue]",
+  "memakai [-아/어야|-a/eoya] untuk syarat yang wajib dipenuhi",
+  "menyusun pengandaian yang tidak terjadi dengan [-았/었더라면|-at/eotdeoramyeon]",
+  "memakai [-기만 하면|-giman hamyeon] untuk kebiasaan yang selalu berulang",
+  "menyatakan penyesalan dengan [-았/었어야 했는데|-at/eosseoya haenneunde]"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Menyusun rencana yang punya rencana cadangan",
+   "intro": "Tiga orang menyiapkan acara luar ruang untuk seratus peserta. Hampir seluruh dialog ini adalah syarat, dan tiap syarat memakai bentuk yang berbeda karena sifatnya berbeda.",
+   "lines": [
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[야외|Yaoe] [행사는|haengsaneun] [비가|biga] [오면|omyeon] [바로|baro] [실내로|sillaero] [옮겨야|omgyeoya] [합니다|hamnida].",
+     "id": "Acara luar ruang, kalau hujan harus segera dipindahkan ke dalam ruangan.",
+     "literal": "luar-ruang — acara-mengenai — hujan-yang — datang-jika — langsung — dalam-ruang-ke — pindahkan-harus — lakukan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그럼|Geureom] [실내|sillae] [장소도|jangsodo] [미리|miri] [잡아|jaba] [놔야|nwaya] [되겠네요|doegenneyo].",
+     "id": "Kalau begitu tempat dalam ruangannya juga harus dipesan lebih dulu, ya.",
+     "literal": "kalau-begitu — dalam-ruang — tempat-pun — sebelumnya — pegang — letakkan-harus — jadi-akan."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[네|Ne]. [비가|Biga] [안|an] [와도|wado] [취소|chwiso] [수수료가|susuryoga] [없는|eomneun] [곳으로|goseuro] [잡으면|jabeumyeon] [됩니다|doemnida].",
+     "id": "Ya. Kalau kita pesan tempat yang tidak ada biaya pembatalannya, sekalipun tidak hujan pun tidak masalah.",
+     "literal": "ya. hujan-yang — tidak — datang-pun — batal — biaya-yang — tidak-ada-yang — tempat-menjadi — pegang-jika — jadi."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[참가자가|Chamgajaga] [백|baek] [명이|myeongi] [넘을|neomeul] [경우에는|gyeongueneun] [어떻게|eotteoke] [하죠|hajyo]?",
+     "id": "Dalam hal peserta melampaui seratus orang, bagaimana?",
+     "literal": "peserta-yang — seratus — orang-yang — lampaui-akan — hal-pada-mengenai — bagaimana — lakukan-lah?"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[사전|Sajeon] [등록을|deungnogeul] [받아야|badaya] [정확한|jeonghwakhan] [숫자를|sutjareul] [알|al] [수|su] [있어요|isseoyo]. [등록이|Deungnogi] [백|baek] [명|myeong] [넘어가거든|neomeogageodeun] [바로|baro] [알려|allyeo] [주세요|juseyo].",
+     "id": "Baru kalau kita menerima pendaftaran awal, jumlah pastinya bisa diketahui. Kalau pendaftarannya melewati seratus, langsung beri tahu saya.",
+     "literal": "pra — pendaftaran-akan — terima-harus — akurat-yang — angka-akan — tahu-akan — kemungkinan — ada. pendaftaran-yang — seratus — orang — lewat-pergi-jika-nanti — langsung — beri-tahu — beri-lah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[작년엔|Jangnyeonen] [등록을|deungnogeul] [안|an] [받았다가|badatdaga] [고생했잖아요|gosaenghaetjanayo]. [그때|Geuttae] [미리|miri] [받았더라면|badatdeoramyeon] [의자|uija] [부족할|bujokhal] [일도|ildo] [없었을|eopseosseul] [텐데|tende].",
+     "id": "Tahun lalu kan kita sempat tidak membuka pendaftaran dan akhirnya repot. Andai waktu itu kita membukanya lebih dulu, tidak akan sampai kekurangan kursi.",
+     "literal": "tahun-lalu-mengenai — pendaftaran-akan — tidak — terima-lampau-lalu — susah-payah-lampau-kan. waktu-itu — sebelumnya — terima-lampau-andai — kursi — kurang-akan — perkara-pun — tidak-ada-akan — tetapi."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[맞아요|Majayo]. [그리고|Geurigo] [이번엔|ibeonen] [비만|biman] [안|an] [오면|omyeon] [다|da] [해결됩니다|haegyeoldoemnida]. [비만|Biman] [오기만|ogiman] [하면|hamyeon] [모든|modeun] [게|ge] [꼬여요|kkoyeoyo].",
+     "id": "Betul. Dan kali ini asal tidak hujan, semuanya beres. Begitu hujan turun sedikit saja, semuanya jadi kacau.",
+     "literal": "benar. dan — kali-ini-mengenai — hujan-saja — tidak — datang-jika — semua — terselesaikan. hujan-saja — datang-saja — lakukan-jika — semua-yang — hal-yang — melintir."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[일기예보|Ilgiyebo] [보니까|bonikka] [그날|geunal] [흐리기만|heurigiman] [하대요|hadaeyo].",
+     "id": "Melihat ramalan cuaca, katanya hari itu cuma mendung saja.",
+     "literal": "cuaca-ramalan — lihat-karena — hari-itu — mendung-saja — lakukan-katanya."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[그래도|Geuraedo] [천막은|cheonmageun] [준비해|junbihae] [둡시다|dupsida]. [준비해서|Junbihaeseo] [안|an] [쓰면|sseumyeon] [그만이지만|geumanijiman], [없으면|eopseumyeon] [답이|dabi] [없으니까요|eopseunikkayo].",
+     "id": "Tetap saja mari siapkan tendanya. Kalau sudah disiapkan lalu tidak dipakai ya sudah, tetapi kalau tidak ada, tidak ada jalan keluarnya.",
+     "literal": "begitu-pun — tenda-mengenai — siapkan — letakkan-mari. siapkan-maka — tidak — pakai-jika — cukup-tetapi, tidak-ada-jika — jawaban-yang — tidak-ada-karena."
+    }
+   ],
+   "notes": [
+    "**[-아/어야 하다|-a/eoya hada] adalah syarat yang berbentuk kewajiban.** Perhatikan bahwa [-아/어야|-a/eoya] sendiri berarti “hanya kalau …, baru …”: [사전 등록을 받아야 알 수 있어요|Sajeon deungnogeul badaya al su isseoyo] bukan berarti “harus menerima pendaftaran”, melainkan “baru kalau menerima pendaftaran, bisa tahu”. Kewajibannya datang dari [하다|hada] atau [되다|doeda] di belakangnya.",
+    "**[-아/어 놓다|-a/eo nota] dan [-아/어 두다|-a/eo duda] menandai persiapan yang hasilnya bertahan.** [잡아 놓다|jaba nota] = memesan dan membiarkannya terpesan. Selisih halus keduanya: [놓다|nota] lebih menekankan hasil yang siap dipakai, [두다|duda] lebih menekankan penyimpanan untuk nanti. Di percakapan sehari-hari keduanya nyaris bisa ditukar.",
+    "**[-(으)ㄹ 경우에는|-(eu)l gyeongueneun] adalah [-(으)면|-(eu)myeon] versi tertulis dan resmi.** Ia muncul di aturan, kontrak, dan panduan: [화재가 발생할 경우에는|Hwajaega balsaenghal gyeongueneun]. Memakainya dalam percakapan sehari-hari terdengar seperti membaca prosedur — kadang justru itulah efek yang diinginkan di rapat.",
+    "**[-거든|-geodeun] sebagai penghubung syarat berbeda dari [-거든요|-geodeunnyo] di Unit 4.** Yang ini berarti “kalau nanti …, maka …”, dan **wajib** diikuti perintah, ajakan, atau janji: [넘어가거든 알려 주세요|neomeogageodeun allyeo juseyo]. Ia tidak boleh diikuti pernyataan biasa.",
+    "**[-았/었다가|-at/eotdaga] menandai perbuatan yang dilakukan lalu dibalik atau berakibat lain.** [안 받았다가 고생했어요|An badatdaga gosaenghaesseoyo] = “sempat tidak menerimanya, lalu akibatnya repot”. Bandingkan dengan [-다가|-daga] tanpa lampau, yang berarti perbuatan terputus di tengah: [가다가 돌아왔어요|Gadaga dorawasseoyo].",
+    "**[받았더라면|badatdeoramyeon] adalah pengandaian yang **tidak terjadi**.** Bentuk [-았/었더라면|-at/eotdeoramyeon] hanya untuk masa lalu yang sudah tak bisa diubah, dan hampir selalu ditutup dengan [-았/었을 텐데|-at/eosseul tende] atau [-았/었을 것이다|-at/eosseul geosida]. Inilah bentuk penyesalan yang paling baku.",
+    "**[비만 안 오면|biman an omyeon] — partikel [-만|-man] mengubah syarat menjadi satu-satunya syarat.** “Asal tidak hujan”. Sangat sering dipakai untuk menyederhanakan keadaan yang rumit menjadi satu titik: [시간만 있으면|siganman isseumyeon], [돈만 있으면|donman isseumyeon].",
+    "**[-기만 하면|-giman hamyeon] berbeda dari [-만 -(으)면|-man -(eu)myeon].** Yang ini berarti “setiap kali …, selalu …” — kebiasaan yang berulang tanpa kecuali: [비만 오기만 하면 꼬여요|Biman ogiman hamyeon kkoyeoyo]. Sering membawa nada kesal. Di baris 수지, [흐리기만 하다|heurigiman hada] justru memakai [-기만 하다|-giman hada] dalam arti lain: “hanya mendung saja, tidak lebih”."
+   ],
+   "grammars": [
+    {
+     "title": "Empat keluarga pengandaian",
+     "body": [
+      "Semua bentuk ini bisa diterjemahkan “kalau”. Yang membedakannya adalah apakah syaratnya mungkin, wajib, berulang, atau sudah lewat."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Jenis",
+       "Boleh diikuti perintah?",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "[-(으)면|-(eu)myeon]",
+        "syarat umum",
+        "ya",
+        "[비가 오면 취소해요|Biga omyeon chwisohaeyo]"
+       ],
+       [
+        "[-거든|-geodeun]",
+        "syarat + perintah",
+        "**wajib**",
+        "[도착하거든 연락해|Dochakhageodeun yeollakhae]"
+       ],
+       [
+        "[-아/어야|-a/eoya]",
+        "syarat yang mutlak",
+        "ya",
+        "[일찍 가야 자리가 있어요|Iljjik gaya jariga isseoyo]"
+       ],
+       [
+        "[-(으)ㄹ 경우에|-(eu)l gyeongue]",
+        "syarat resmi 【문】",
+        "ya",
+        "[지연될 경우에 안내드립니다|Jiyeondoel gyeongue annaedeurimnida]"
+       ],
+       [
+        "[-기만 하면|-giman hamyeon]",
+        "selalu berulang",
+        "jarang",
+        "[그 사람이 오기만 하면 싸워요|Geu sarami ogiman hamyeon ssawoyo]"
+       ],
+       [
+        "[-(느)ㄴ다면|-(neu)ndamyeon]",
+        "pengandaian yang jauh",
+        "jarang",
+        "[내가 부자라면 여행만 다닐 텐데|Naega bujaramyeon yeohaengman danil tende]"
+       ],
+       [
+        "[-았/었더라면|-at/eotdeoramyeon]",
+        "masa lalu yang tak terjadi",
+        "tidak",
+        "[일찍 갔더라면 만났을 텐데|Iljjik gatdeoramyeon mannasseul tende]"
+       ],
+       [
+        "[-았/었어야 했는데|-at/eosseoya haenneunde]",
+        "seharusnya dulu",
+        "tidak",
+        "[미리 말했어야 했는데|Miri malhaesseoya haenneunde]"
+       ]
+      ]
+     },
+     "after": [
+      "Dua selisih yang paling sering ditanyakan. **[-(으)면|-(eu)myeon] lawan [-(느)ㄴ다면|-(neu)ndamyeon]:** yang pertama untuk syarat yang wajar terjadi, yang kedua untuk pengandaian yang kecil kemungkinannya. [비가 오면|Biga omyeon] (hujan bisa saja turun) lawan [내일 눈이 온다면|Naeil nuni ondamyeon] (di bulan Juli — hampir mustahil).",
+      "**[-거든|-geodeun] lawan [-(으)면|-(eu)myeon]:** keduanya sah untuk perintah, tetapi [-거든|-geodeun] memperlakukan syaratnya sebagai hal yang **pasti akan terjadi**, hanya waktunya belum diketahui. [도착하거든 연락해|Dochakhageodeun yeollakhae] mengandaikan kamu pasti tiba."
+     ]
+    },
+    {
+     "title": "Menyesal: tiga bentuk yang menyalahkan diri sendiri",
+     "body": [
+      "Ketiganya menyesali masa lalu, tetapi masing-masing meletakkan beban di tempat yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Beban penyesalan"
+      ],
+      "rows": [
+       [
+        "[-(으)ㄹ걸 (그랬다)|-(eu)lgeol (geuraetda)]",
+        "seharusnya aku …",
+        "ringan, sering setengah bercanda"
+       ],
+       [
+        "[-았/었어야 했는데|-at/eosseoya haenneunde]",
+        "seharusnya aku sudah …",
+        "sedang, mengakui kelalaian"
+       ],
+       [
+        "[-았/었더라면 -았/었을 텐데|-at/eotdeoramyeon -at/eosseul tende]",
+        "andai dulu …, pasti …",
+        "berat, membayangkan dunia lain"
+       ]
+      ]
+     },
+     "after": [
+      "Ada bentuk keempat yang menyesali perbuatan orang lain, dan ia perlu kamu pakai dengan hati-hati: [-지 그랬어요|-ji geuraesseoyo]? — “kenapa tidak … saja?”. Secara arti ia saran yang terlambat, tetapi nadanya menegur, jadi jangan dipakai kepada atasan.",
+      "Untuk menyesali tanpa menyalahkan siapa pun, bentuk teraman adalah pasif: [좀 더 일찍 결정됐더라면 좋았을 텐데요|Jom deo iljjik gyeoljeongdwaetdeoramyeon joasseul tendeyo] — “andai keputusannya diambil lebih awal”. Tidak ada pelaku yang disebut, dan tidak ada yang tersinggung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Andai dulu begitu",
+   "intro": "Malamnya Ani dan 수지 membicarakan keputusan lama. Ini penyesalan dalam ragam santai, dan hampir semuanya mustahil diubah.",
+   "lines": [
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[너|Neo] [그때|geuttae] [그|geu] [회사|hoesa] [갔으면|gasseumyeon] [어땠을까|eottaesseulkka]?",
+     "id": "Kalau waktu itu kamu masuk perusahaan itu, kira-kira bagaimana ya?",
+     "literal": "kamu — waktu-itu — itu — perusahaan — pergi-lampau-jika — bagaimana-lampau-akan-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[모르지|Moreuji]. [연봉은|Yeonbongeun] [높았겠지만|nopatgetjiman] [지금처럼|jigeumcheoreom] [배우지는|baeujineun] [못했을|motaesseul] [거야|geoya].",
+     "id": "Entahlah. Gajinya pasti lebih tinggi, tapi aku tidak akan bisa belajar sebanyak sekarang.",
+     "literal": "tidak-tahu-lah. gaji-tahunan-mengenai — tinggi-lampau-akan-tetapi — sekarang-seperti — belajar-mengenai — tidak-bisa-lampau-akan — hal."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[나는|Naneun] [그때|geuttae] [유학|yuhak] [갔더라면|gatdeoramyeon] [지금쯤|jigeumjjeum] [다른|dareun] [일|il] [하고|hago] [있었을|isseosseul] [텐데|tende] [싶어|sipeo].",
+     "id": "Aku sering berpikir, andai waktu itu aku pergi kuliah ke luar negeri, sekarang pasti sedang mengerjakan hal yang berbeda.",
+     "literal": "aku-mengenai — waktu-itu — belajar-ke-luar-negeri — pergi-lampau-andai — sekarang-kira-kira — lain-yang — pekerjaan — lakukan-dan — ada-lampau-akan — tetapi — ingin."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[근데|Geunde] [그렇게|geureoke] [됐으면|dwaesseumyeon] [우리|uri] [지금|jigeum] [이렇게|ireoke] [같이|gachi] [살지도|saljido] [못했을걸|motaesseulgeol]?",
+     "id": "Tapi kalau begitu jadinya, kita sekarang mungkin bahkan tidak tinggal bersama begini, kan?",
+     "literal": "tetapi — begitu — jadi-lampau-jika — kita — sekarang — begini — bersama — tinggal-pun — tidak-bisa-lampau-akan-kira?"
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[하긴|Hagin]. [뭐|Mwo], [후회해|huhoehae] [봤자|bwatja] [소용|soyong] [없지|eopji].",
+     "id": "Ya juga sih. Lagi pula, sesal pun tidak ada gunanya.",
+     "literal": "memang. apa, sesal — coba-percuma — guna — tidak-ada-kan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[맞아|Maja]. [그때|Geuttae] [내가|naega] [알았어야|arasseoya] [했는데|haenneunde] [싶은|sipeun] [것도|geotdo] [많지만|manchiman], [몰랐으니까|mollasseunikka] [지금|jigeum] [이|i] [자리에|jarie] [있는|inneun] [거고|geogo].",
+     "id": "Betul. Banyak juga hal yang membuatku berpikir “seharusnya waktu itu aku tahu”, tapi justru karena tidak tahu, aku ada di tempat ini sekarang.",
+     "literal": "benar. waktu-itu — aku-yang — tahu-lampau-harus — lakukan-lampau-tetapi — ingin-yang — hal-pun — banyak-tetapi, tidak-tahu-lampau-karena — sekarang — ini — tempat-pada — ada-yang — hal-dan."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[갑자기|Gapjagi] [철학자|cheolhakja] [됐네|dwaenne].",
+     "id": "Tiba-tiba jadi filsuf.",
+     "literal": "tiba-tiba — filsuf — jadi-lampau."
+    }
+   ],
+   "notes": [
+    "**[갔으면 어땠을까|gasseumyeon eottaesseulkka]? adalah bentuk membayangkan yang paling sering dipakai.** Ia lebih ringan daripada [갔더라면|gatdeoramyeon] karena tidak menyatakan akibatnya — hanya bertanya. Sangat berguna saat kamu ingin membicarakan pilihan lama tanpa terdengar menyesal.",
+    "**[-았/었겠지만|-at/eotgetjiman] menggabungkan dugaan tentang masa lalu dengan perlawanan.** [높았겠지만|nopatgetjiman] = “pasti tinggi sih, tetapi”. Sisipan [-겠-|-get-] di sini bukan masa depan melainkan dugaan, persis seperti yang kamu lihat di Unit 5.",
+    "**[-았/었을 텐데 싶어|-at/eosseul tende sipeo] adalah pengandaian yang dijadikan perasaan.** Pola [-(으)ㄹ 텐데 싶다|-(eu)l tende sipda] berarti “aku merasa pasti akan …”. Bentuk yang lebih baku: [-았/었을 것 같다는 생각이 들어요|-at/eosseul geot gatdaneun saenggagi deureoyo].",
+    "**[-아/어 봤자|-a/eo bwatja] berarti “sekalipun dicoba, percuma”.** Ia selalu membawa akibat yang sia-sia: [후회해 봤자 소용없다|Huhoehae bwatja soyongeopda], [가 봤자 문 닫았을 거야|Ga bwatja mun dadasseul geoya]. Bentuk ini sangat sering dipakai dan hampir tidak pernah diajarkan di kelas pemula."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Syarat di ragam aturan: bahasa panduan dan kontrak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Panduan, aturan kantor, dan kontrak memakai keluarga syaratnya sendiri. Kamu akan menemuinya lagi di Unit 12; halaman ini memperkenalkan bentuk-bentuk intinya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "[-(으)ㄹ 경우|-(eu)l gyeongu]",
+       "dalam hal",
+       "[분실할 경우 즉시 신고해야 한다|Bunsilhal gyeongu jeuksi singohaeya handa]"
+      ],
+      [
+       "[-(으)ㄹ 시|-(eu)l si]",
+       "pada saat 【문】",
+       "[위반 시 계약이 해지된다|Wiban si gyeyagi haejidoenda]"
+      ],
+      [
+       "[-에 한하여|-e hanhayeo]",
+       "terbatas pada",
+       "[회원에 한하여 이용 가능하다|Hoewone hanhayeo iyong ganeunghada]"
+      ],
+      [
+       "[-을/를 제외하고|-eul/reul jeoehago]",
+       "kecuali",
+       "[공휴일을 제외하고 매일 운영한다|Gonghyuireul jeoehago maeil unyeonghanda]"
+      ],
+      [
+       "[-지 않는 한|-ji anneun han]",
+       "selama tidak",
+       "[별도 통보가 없는 한 유효하다|Byeoldo tongboga eomneun han yuhyohada]"
+      ],
+      [
+       "[-(으)ㄹ 때에 한해|-(eu)l ttaee hanhae]",
+       "hanya bila",
+       "[사전 승인을 받았을 때에 한해 가능하다|Sajeon seungineul badasseul ttaee hanhae ganeunghada]"
+      ],
+      [
+       "[-도록 하다|-dorok hada]",
+       "hendaknya, wajib",
+       "[미리 제출하도록 한다|Miri jechulhadorok handa]"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua di antaranya pantas kamu perhatikan sekarang. **[-지 않는 한|-ji anneun han]** berarti “selama tidak …” dan sangat sering muncul di kontrak — ia membalik syarat menjadi pengecualian. **[-도록 하다|-dorok hada]** adalah perintah yang disamarkan sebagai anjuran; di pengumuman kantor ia berarti wajib, bukan saran."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu pengumuman utuh",
+     "items": [
+      "[사내 공지|Sanae gongji]",
+      "[다음 주 월요일부터 출입증 제도가 시행됩니다|Daeum ju woryoilbuteo churipjeung jedoga sihaengdoemnida].",
+      "[출입증을 분실할 경우 즉시 총무팀에 신고하도록 합니다|Churipjeungeul bunsilhal gyeongu jeuksi chongmutime singohadorok hamnida].",
+      "[재발급은 월 일 회에 한하여 가능합니다|Jaebalgeubeun wol il hoee hanhayeo ganeunghamnida].",
+      "[별도 안내가 없는 한 기존 카드는 사용할 수 없습니다|Byeoldo annaega eomneun han gijon kadeuneun sayonghal su eopseumnida]."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa pengumuman ini tidak menyebut satu pun orang. Tidak ada “Anda”, tidak ada “kami”. Inilah ciri paling menonjol ragam aturan Korea, dan alasan kenapa ia terasa dingin — kedinginan itu disengaja, karena aturan berlaku untuk siapa saja."
+    }
+   ]
+  },
+  {
+   "title": "Pengandaian di percakapan: sepuluh kalimat siap pakai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sepuluh kalimat berikut hampir semuanya berupa ungkapan tetap. Menghafalnya utuh lebih cepat daripada menyusunnya dari tata bahasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "[혹시 모르니까|Hoksi moreunikka]",
+       "“jaga-jaga”, sebelum menyiapkan cadangan"
+      ],
+      [
+       "[만약에 안 되면|Manyage an doemyeon]",
+       "membuka rencana cadangan"
+      ],
+      [
+       "[그렇게 되면 곤란한데요|Geureoke doemyeon gollanhandeyo]",
+       "menolak kemungkinan buruk"
+      ],
+      [
+       "[잘하면 오늘 끝날 수도 있어요|Jalhamyeon oneul kkeunnal sudo isseoyo]",
+       "“kalau lancar”, harapan"
+      ],
+      [
+       "[까딱하면 늦겠는데요|Kkattakhamyeon neutgenneundeyo]",
+       "“sedikit saja meleset”, peringatan"
+      ],
+      [
+       "[웬만하면 오늘 끝냅시다|Wenmanhamyeon oneul kkeunnaepsida]",
+       "“kalau bisa”, usul"
+      ],
+      [
+       "[정 안 되면 제가 갈게요|Jeong an doemyeon jega galgeyo]",
+       "“kalau benar-benar tidak bisa”"
+      ],
+      [
+       "[그럴 일은 없겠지만|Geureol ireun eopgetjiman]",
+       "“mudah-mudahan tidak, tetapi”"
+      ],
+      [
+       "[아무 일 없으면 좋겠는데|Amu il eopseumyeon jokenneunde]",
+       "harapan yang cemas"
+      ],
+      [
+       "[미리 알았더라면 좋았을 텐데요|Miri aratdeoramyeon joasseul tendeyo]",
+       "penyesalan sopan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Empat di antaranya adalah kata keterangan yang menentukan seluruh nada kalimat, dan tidak punya padanan langsung dalam bahasa Indonesia: [잘하면|jalhamyeon] (kalau beruntung), [까딱하면|kkattakhamyeon] (sedikit saja salah), [웬만하면|wenmanhamyeon] (kalau memungkinkan), dan [정|jeong] (kalau benar-benar terpaksa). Keempatnya berdiri di depan kalimat dan menggeser artinya dari netral menjadi berharap, cemas, membujuk, atau pasrah."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "조건",
+   "baca": "jogeon",
+   "id": "syarat"
+  },
+  {
+   "ko": "가정",
+   "baca": "gajeong",
+   "id": "pengandaian 【문】"
+  },
+  {
+   "ko": "-거든",
+   "baca": "-geodeun",
+   "id": "kalau nanti (lalu perintah)"
+  },
+  {
+   "ko": "-아/어야",
+   "baca": "-a/eoya",
+   "id": "baru kalau"
+  },
+  {
+   "ko": "-(으)ㄹ 경우에",
+   "baca": "-(eu)l gyeongue",
+   "id": "dalam hal 【문】"
+  },
+  {
+   "ko": "-(으)ㄹ 시",
+   "baca": "-(eu)l si",
+   "id": "pada saat 【문】"
+  },
+  {
+   "ko": "-기만 하면",
+   "baca": "-giman hamyeon",
+   "id": "setiap kali … selalu"
+  },
+  {
+   "ko": "-았/었더라면",
+   "baca": "-at/eotdeoramyeon",
+   "id": "andai dulu"
+  },
+  {
+   "ko": "-았/었어야 했는데",
+   "baca": "-at/eosseoya haenneunde",
+   "id": "seharusnya dulu"
+  },
+  {
+   "ko": "-아/어 봤자",
+   "baca": "-a/eo bwatja",
+   "id": "sekalipun dicoba, percuma 【구】"
+  },
+  {
+   "ko": "-지 않는 한",
+   "baca": "-ji anneun han",
+   "id": "selama tidak 【문】"
+  },
+  {
+   "ko": "-에 한하여",
+   "baca": "-e hanhayeo",
+   "id": "terbatas pada 【문】"
+  },
+  {
+   "ko": "-도록 하다",
+   "baca": "-dorok hada",
+   "id": "hendaknya (wajib) 【문】"
+  },
+  {
+   "ko": "-아/어 놓다",
+   "baca": "-a/eo nota",
+   "id": "melakukan lalu membiarkannya siap"
+  },
+  {
+   "ko": "-아/어 두다",
+   "baca": "-a/eo duda",
+   "id": "melakukan untuk disimpan"
+  },
+  {
+   "ko": "-았/었다가",
+   "baca": "-at/eotdaga",
+   "id": "sempat begitu lalu"
+  },
+  {
+   "ko": "야외",
+   "baca": "yaoe",
+   "id": "luar ruang"
+  },
+  {
+   "ko": "실내",
+   "baca": "sillae",
+   "id": "dalam ruang"
+  },
+  {
+   "ko": "장소",
+   "baca": "jangso",
+   "id": "tempat, lokasi"
+  },
+  {
+   "ko": "수수료",
+   "baca": "susuryo",
+   "id": "biaya administrasi"
+  },
+  {
+   "ko": "참가자",
+   "baca": "chamgaja",
+   "id": "peserta"
+  },
+  {
+   "ko": "사전 등록",
+   "baca": "sajeon deungnok",
+   "id": "pendaftaran awal"
+  },
+  {
+   "ko": "천막",
+   "baca": "cheonmak",
+   "id": "tenda"
+  },
+  {
+   "ko": "일기예보",
+   "baca": "ilgiyebo",
+   "id": "ramalan cuaca"
+  },
+  {
+   "ko": "흐리다",
+   "baca": "heurida",
+   "id": "mendung"
+  },
+  {
+   "ko": "꼬이다",
+   "baca": "kkoida",
+   "id": "jadi kacau, melintir"
+  },
+  {
+   "ko": "해결되다",
+   "baca": "haegyeoldoeda",
+   "id": "terselesaikan"
+  },
+  {
+   "ko": "부족하다",
+   "baca": "bujokhada",
+   "id": "kurang"
+  },
+  {
+   "ko": "연봉",
+   "baca": "yeonbong",
+   "id": "gaji tahunan"
+  },
+  {
+   "ko": "유학",
+   "baca": "yuhak",
+   "id": "studi ke luar negeri"
+  },
+  {
+   "ko": "소용없다",
+   "baca": "soyongeopda",
+   "id": "tidak ada gunanya"
+  },
+  {
+   "ko": "철학자",
+   "baca": "cheolhakja",
+   "id": "filsuf"
+  },
+  {
+   "ko": "분실하다",
+   "baca": "bunsilhada",
+   "id": "kehilangan 【문】"
+  },
+  {
+   "ko": "신고하다",
+   "baca": "singohada",
+   "id": "melapor 【문】"
+  },
+  {
+   "ko": "위반",
+   "baca": "wiban",
+   "id": "pelanggaran 【문】"
+  },
+  {
+   "ko": "해지되다",
+   "baca": "haejidoeda",
+   "id": "diputus (kontrak) 【문】"
+  },
+  {
+   "ko": "공휴일",
+   "baca": "gonghyuil",
+   "id": "hari libur nasional"
+  },
+  {
+   "ko": "별도",
+   "baca": "byeoldo",
+   "id": "terpisah, tersendiri 【문】"
+  },
+  {
+   "ko": "통보",
+   "baca": "tongbo",
+   "id": "pemberitahuan 【문】"
+  },
+  {
+   "ko": "유효하다",
+   "baca": "yuhyohada",
+   "id": "berlaku 【문】"
+  },
+  {
+   "ko": "승인",
+   "baca": "seungin",
+   "id": "persetujuan 【문】"
+  },
+  {
+   "ko": "출입증",
+   "baca": "churipjeung",
+   "id": "kartu akses"
+  },
+  {
+   "ko": "재발급",
+   "baca": "jaebalgeup",
+   "id": "penerbitan ulang 【문】"
+  },
+  {
+   "ko": "시행되다",
+   "baca": "sihaengdoeda",
+   "id": "diberlakukan 【문】"
+  },
+  {
+   "ko": "기존",
+   "baca": "gijon",
+   "id": "yang sudah ada 【문】"
+  },
+  {
+   "ko": "잘하면",
+   "baca": "jalhamyeon",
+   "id": "kalau beruntung"
+  },
+  {
+   "ko": "까딱하면",
+   "baca": "kkattakhamyeon",
+   "id": "sedikit saja meleset"
+  },
+  {
+   "ko": "웬만하면",
+   "baca": "wenmanhamyeon",
+   "id": "kalau memungkinkan"
+  },
+  {
+   "ko": "정 안 되면",
+   "baca": "jeong an doemyeon",
+   "id": "kalau benar-benar tidak bisa"
+  },
+  {
+   "ko": "만약에",
+   "baca": "manyage",
+   "id": "seandainya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih [-(으)면|-(eu)myeon] atau [-거든|-geodeun].",
+   "items": [
+    "[집에 도착하|Jibe dochakha] ____ [전화해|jeonhwahae].",
+    "[비가 오|Biga o] ____ [행사가 취소돼요|haengsaga chwisodwaeyo].",
+    "[시간 되|Sigan doe] ____ [같이 저녁 먹자|gachi jeonyeok meokja].",
+    "[돈이 없|Doni eop] ____ [못 사요|mot sayo].",
+    "[다 끝나|Da kkeunna] ____ [알려 주세요|allyeo juseyo]."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pengandaian yang tidak terjadi ([-았/었더라면 … -았/었을 텐데|-at/eotdeoramyeon … -at/eosseul tende]).",
+   "items": [
+    "[일찍 갔어요. 그래서 만났어요|Iljjik gasseoyo. Geuraeseo mannasseoyo]. (kenyataannya: tidak pergi awal, tidak bertemu)",
+    "[미리 예약했어요. 자리가 있었어요|Miri yeyakaesseoyo. Jariga isseosseoyo]. (kenyataannya: tidak memesan)",
+    "[우산을 가져갔어요. 안 젖었어요|Usaneul gajyeogasseoyo. An jeojeosseoyo]. (kenyataannya: tidak membawa)",
+    "[열심히 공부했어요. 합격했어요|Yeolsimhi gongbuhaesseoyo. Hapgyeokaesseoyo]. (kenyataannya: tidak belajar keras)",
+    "[일찍 말했어요. 문제가 없었어요|Iljjik malhaesseoyo. Munjega eopseosseoyo]. (kenyataannya: tidak bilang)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam aturan tertulis.",
+   "items": [
+    "[잃어버리면 바로 신고하세요|Ireobeorimyeon baro singohaseyo].",
+    "[회원만 쓸 수 있어요|Hoewonman sseul su isseoyo].",
+    "[공휴일 빼고 매일 열어요|Gonghyuil ppaego maeil yeoreoyo].",
+    "[따로 연락 없으면 그대로예요|Ttaro yeollak eopseumyeon geudaeroyeyo].",
+    "[미리 내세요|Miri naeseyo]."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata keterangan yang tepat: [잘하면|jalhamyeon], [까딱하면|kkattakhamyeon], [웬만하면|wenmanhamyeon], [정 안 되면|jeong an doemyeon], [혹시 모르니까|hoksi moreunikka].",
+   "items": [
+    "____ [오늘 안에 끝날 수도 있어요|oneul ane kkeunnal sudo isseoyo].",
+    "____ [기차를 놓치겠어요|gichareul notchigesseoyo].",
+    "____ [우산 하나 챙기세요|usan hana chaenggiseyo].",
+    "____ [오늘 안에 마무리합시다|oneul ane mamurihapsida].",
+    "____ [제가 대신 갈게요|jega daesin galgeyo]."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "됩니다 / 취소 수수료가 / 잡으면 / 없는 곳으로",
+    "알려 주세요 / 백 명 / 넘어가거든 / 등록이",
+    "텐데 / 미리 받았더라면 / 부족할 일도 / 의자 / 없었을",
+    "소용없지 / 후회해 / 봤자",
+    "가능하다 / 회원에 / 이용 / 한하여"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat untuk tiap keadaan, memakai bentuk yang diminta.",
+   "items": [
+    "[-거든|-geodeun] — memberi tahu rekan apa yang harus dilakukan sesudah ia tiba di kantor.",
+    "[-아/어야|-a/eoya] — menjelaskan bahwa data baru bisa dihitung setelah semua formulir masuk.",
+    "[-았/었더라면|-at/eotdeoramyeon] — menyesali tidak memesan tiket lebih awal.",
+    "[-(으)ㄹ 경우에|-(eu)l gyeongue] — menulis aturan tentang keterlambatan pengiriman.",
+    "[-기만 하면|-giman hamyeon] — mengeluhkan sesuatu yang selalu terjadi setiap hujan."
+   ]
+  }
+ ],
+ "answers": [
+  "[-거든|-geodeun] — [-(으)면|-(eu)myeon] — [-거든|-geodeun] — [-(으)면|-(eu)myeon] — [-거든|-geodeun]",
+  "[일찍 갔더라면 만났을 텐데요|Iljjik gatdeoramyeon mannasseul tendeyo]. — [미리 예약했더라면 자리가 있었을 텐데요|Miri yeyakaetdeoramyeon jariga isseosseul tendeyo]. — [우산을 가져갔더라면 안 젖었을 텐데요|Usaneul gajyeogatdeoramyeon an jeojeosseul tendeyo]. — [열심히 공부했더라면 합격했을 텐데요|Yeolsimhi gongbuhaetdeoramyeon hapgyeokaesseul tendeyo]. — [일찍 말했더라면 문제가 없었을 텐데요|Iljjik malhaetdeoramyeon munjega eopseosseul tendeyo].",
+  "[분실할 경우 즉시 신고하도록 한다|Bunsilhal gyeongu jeuksi singohadorok handa]. — [회원에 한하여 이용 가능하다|Hoewone hanhayeo iyong ganeunghada]. — [공휴일을 제외하고 매일 운영한다|Gonghyuireul jeoehago maeil unyeonghanda]. — [별도 통보가 없는 한 유효하다|Byeoldo tongboga eomneun han yuhyohada]. — [사전에 납부하도록 한다|Sajeone napbuhadorok handa].",
+  "[잘하면|Jalhamyeon] — [까딱하면|Kkattakhamyeon] — [혹시 모르니까|Hoksi moreunikka] — [웬만하면|Wenmanhamyeon] — [정 안 되면|Jeong an doemyeon]",
+  "[취소 수수료가 없는 곳으로 잡으면 됩니다|Chwiso susuryoga eomneun goseuro jabeumyeon doemnida]. — [등록이 백 명 넘어가거든 알려 주세요|Deungnogi baek myeong neomeogageodeun allyeo juseyo]. — [미리 받았더라면 의자 부족할 일도 없었을 텐데|Miri badatdeoramyeon uija bujokhal ildo eopseosseul tende]. — [후회해 봤자 소용없지|Huhoehae bwatja soyongeopji]. — [회원에 한하여 이용 가능하다|Hoewone hanhayeo iyong ganeunghada].",
+  "Contoh／[사무실에 도착하거든 먼저 서버부터 켜 주세요|Samusire dochakhageodeun meonjeo seobeobuteo kyeo juseyo]. — Contoh／[신청서가 모두 들어와야 정확한 수치를 낼 수 있습니다|Sincheongseoga modu deureowaya jeonghwakhan suchireul nael su itseumnida]. — Contoh／[표를 미리 예매했더라면 이렇게 고생하지 않았을 텐데요|Pyoreul miri yemaehaetdeoramyeon ireoke gosaenghaji anasseul tendeyo]. — Contoh／[배송이 지연될 경우 즉시 고객에게 안내하도록 한다|Baesongi jiyeondoel gyeongu jeuksi gogaegege annaehadorok handa]. — Contoh／[비만 오기만 하면 지하철이 지연돼요|Biman ogiman hamyeon jihacheori jiyeondwaeyo]."
+ ],
+ "wave": "Ambil pengumuman resmi berbahasa Korea apa pun — papan di kantor, aturan gedung, syarat dan ketentuan aplikasi — dan tandai tiap bentuk syarat yang kamu temukan. Lalu tulis ulang satu paragrafnya sebagai percakapan biasa kepada teman. Jarak antara kedua versi itulah yang akan kamu tempuh di Unit 12."
+}

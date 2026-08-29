@@ -1,0 +1,740 @@
+{
+ "title": "Pasif dan kausatif: kalimat yang tak menyebut pelakunya",
+ "title_target": "[피동|Pidong]과 [사동|sadong]",
+ "goal": "Mengubah kalimat aktif menjadi pasif dengan empat sisipan dan dua bentuk berperiferi, membuat orang lain melakukan sesuatu dengan kausatif, dan mengenali kenapa bahasa Korea resmi hampir selalu menghilangkan pelakunya.",
+ "bekal": [
+  "memakai sisipan pasif [이·히·리·기|i·hi·ri·gi] pada kata kerja yang menerimanya",
+  "membedakan [-아/어지다|-a/eojida] dari [-게 되다|-ge doeda]",
+  "membentuk kausatif dengan sisipan, [-게 하다|-ge hada], dan [-시키다|-sikida]",
+  "mengenali pasif kerugian: kalimat pasif yang menyatakan kerugian pembicara",
+  "menulis laporan tanpa menyebut pelaku, dan tahu kapan itu justru salah"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Berkas yang hilang, dan tak seorang pun menghilangkannya",
+   "intro": "Sebuah berkas penting tidak ditemukan. Hitung berapa kali kalimat pasif dipakai, dan berapa kali seseorang disebut sebagai pelakunya.",
+   "lines": [
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[선배님|Seonbaenim], [어제|eoje] [올린|ollin] [파일이|pairi] [안|an] [보여요|boyeoyo]. [폴더가|Poldeoga] [바뀐|bakkwin] [건가요|geongayo]?",
+     "id": "Kak, berkas yang saya unggah kemarin tidak kelihatan. Apakah foldernya berubah?",
+     "literal": "senior(hormat), kemarin — naikkan-yang — berkas-yang — tidak — terlihat. folder-yang — berubah-yang — hal-kah?"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아|A], [어제|eoje] [저녁에|jeonyeoge] [정리되면서|jeongnidoemyeonseo] [옛날|yennal] [자료들이|jaryodeuri] [다|da] [옮겨졌어요|omgyeojyeosseoyo].",
+     "id": "Ah, kemarin malam sewaktu dirapikan, semua bahan lama dipindahkan.",
+     "literal": "ah, kemarin — petang-pada — dirapikan-sambil — dahulu — bahan-bahan-yang — semua — dipindahkan-lampau."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[누가|Nuga] [옮기셨는데요|omgisyeonneundeyo]?",
+     "id": "Siapa yang memindahkannya?",
+     "literal": "siapa-yang — pindahkan(hormat)-lampau-tetapi?"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[그건|Geugeon] [저도|jeodo] [모르겠어요|moreugesseoyo]. [자동으로|Jadongeuro] [정리되게|jeongnidoege] [설정이|seoljeongi] [돼|dwae] [있거든요|itgeodeunnyo].",
+     "id": "Itu saya juga tidak tahu. Pengaturannya memang dibuat supaya dirapikan otomatis.",
+     "literal": "itu-mengenai — saya-pun — tidak-tahu-akan. otomatis-dengan — dirapikan-supaya — pengaturan-yang — jadi — ada-soalnya."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그럼|Geureom] [제|je] [파일도|paildo] [지워졌을|jiwojyeosseul] [수도|sudo] [있겠네요|itgenneyo].",
+     "id": "Kalau begitu berkas saya juga mungkin ikut terhapus.",
+     "literal": "kalau-begitu — saya — berkas-pun — terhapus-akan — kemungkinan-pun — ada-akan."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[지워지진|Jiwojijin] [않았을|anasseul] [거예요|geoyeyo]. [휴지통에|Hyujitonge] [들어가|deureoga] [있을|isseul] [텐데|tende], [한번|hanbeon] [찾아|chaja] [볼게요|bolgeyo].",
+     "id": "Tidak akan sampai terhapus. Pasti masuk ke tempat sampah, coba saya carikan.",
+     "literal": "terhapus-mengenai — tidak-lampau-akan — hal. tempat-sampah-ke — masuk-pergi — ada-akan — tetapi, sekali — cari — lihat-akan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[감사합니다|Gamsahamnida]. [저|Jeo] [때문에|ttaemune] [일이|iri] [늘어난|neureonan] [것|geot] [같아서|gataseo] [죄송해요|joesonghaeyo].",
+     "id": "Terima kasih. Maaf sepertinya pekerjaan jadi bertambah gara-gara saya.",
+     "literal": "terima-kasih. saya — sebab — kerja-yang — bertambah-yang — hal — sama-maka — maaf."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아니에요|Anieyo]. [이런|Ireon] [건|geon] [미리|miri] [공지가|gongjiga] [됐어야|dwaesseoya] [했는데|haenneunde] [안|an] [된|doen] [거죠|geojyo].",
+     "id": "Tidak. Hal begini seharusnya diumumkan lebih dulu, tetapi tidak dilakukan.",
+     "literal": "bukan. begini-yang — hal-mengenai — sebelumnya — pengumuman-yang — jadi-lampau-harus — lakukan-lampau-tetapi — tidak — jadi-yang — hal-lah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그래도|Geuraedo] [다음부터는|daeumbuteoneun] [제가|jega] [백업을|baegeobeul] [해|hae] [놓을게요|noeulgeyo].",
+     "id": "Tetap saja, mulai berikutnya saya akan membuat cadangannya.",
+     "literal": "begitu-pun — berikut-dari-mengenai — saya-yang — cadangan-akan — lakukan — letakkan-akan."
+    }
+   ],
+   "notes": [
+    "**[보여요|boyeoyo] adalah pasif dari [보다|boda] — dan artinya “terlihat”, bukan “dilihat”.** Inilah ciri paling penting pasif Korea: ia sering menyatakan **keadaan yang terjadi sendiri**, bukan perbuatan yang dikenakan seseorang. Kembarannya: [들리다|deullida] (terdengar), [열리다|yeollida] (terbuka), [닫히다|dachida] (tertutup).",
+    "**[바뀌다|bakkwida] dan [옮겨지다|omgyeojida] menempati dua lapis pasif yang berbeda.** [바뀌다|bakkwida] adalah pasif berbentuk sisipan dari [바꾸다|bakkuda]; [옮겨지다|omgyeojida] adalah pasif berperiferi dari [옮기다|omgida] dengan [-아/어지다|-a/eojida]. Bahasa Korea sering punya keduanya, dan yang bersisipan biasanya terasa lebih alami.",
+    "**[누가 옮기셨는데요|Nuga omgisyeonneundeyo]? adalah pertanyaan yang jarang dijawab.** Perhatikan bahwa Ani bertanya dengan bentuk **aktif** — ia menuntut pelaku — dan jawabannya kembali ke pasif. Pergantian aktif↔pasif inilah cara bahasa Korea menegosiasikan tanggung jawab tanpa menuduh siapa pun.",
+    "**[정리되게 설정이 돼 있다|jeongnidoege seoljeongi dwae itda] menumpuk pasif di atas pasif.** [-게 되다|-ge doeda] dan [-아/어 있다|-a/eo itda] keduanya menghilangkan pelaku, dan hasilnya kalimat yang menyatakan **keadaan yang berlaku** tanpa siapa pun yang membuatnya berlaku. Ini gaya khas panduan teknis dan pengumuman kantor.",
+    "**[지워지진 않았을 거예요|Jiwojijin anasseul geoyeyo] — perhatikan [-지는|-jineun] yang dipendekkan.** Pola [-지는 않다|-jineun anta] menyangkal dengan penekanan: “terhapus sih tidak”. Ia membuka ruang bagi kemungkinan lain, dan itulah yang dimaksud 지훈 — berkasnya pindah, bukan hilang.",
+    "**[공지가 됐어야 했는데|gongjiga dwaesseoya haenneunde] adalah cara paling halus menyalahkan sistem.** Bentuknya pasif, jadi tak ada orang yang disebut; bentuknya penyesalan dari Unit 8, jadi tak ada yang dituduh. Kalimat ini pantas kamu simpan untuk saat kamu perlu mengatakan bahwa ada yang tidak beres tanpa menunjuk siapa pun.",
+    "**[해 놓을게요|hae noeulgeyo] menggabungkan [-아/어 놓다|-a/eo nota] dari Unit 8 dengan janji [-(으)ㄹ게요|-(eu)lgeyo] dari Unit 3.** Gabungan ini sangat sering muncul di kantor: “akan saya siapkan dan biarkan siap”."
+   ],
+   "grammars": [
+    {
+     "title": "Empat sisipan pasif, dan dua bentuk berperiferi",
+     "body": [
+      "Bahasa Korea punya dua jalur pasif yang tidak sepenuhnya bertumpang tindih. Jalur pertama memakai sisipan dan hanya berlaku pada sekitar seratus kata kerja yang harus dihafal; jalur kedua memakai [-아/어지다|-a/eojida] dan berlaku hampir di mana-mana."
+     ],
+     "table": {
+      "head": [
+       "Sisipan",
+       "Aktif → Pasif",
+       "Arti pasifnya"
+      ],
+      "rows": [
+       [
+        "[-이-|-i-]",
+        "[보다 → 보이다|boda → boida]",
+        "terlihat"
+       ],
+       [
+        "[-이-|-i-]",
+        "[놓다 → 놓이다|nota → noida]",
+        "terletak"
+       ],
+       [
+        "[-히-|-hi-]",
+        "[닫다 → 닫히다|datda → dachida]",
+        "tertutup"
+       ],
+       [
+        "[-히-|-hi-]",
+        "[먹다 → 먹히다|meokda → meokida]",
+        "termakan"
+       ],
+       [
+        "[-리-|-ri-]",
+        "[듣다 → 들리다|deutda → deullida]",
+        "terdengar"
+       ],
+       [
+        "[-리-|-ri-]",
+        "[열다 → 열리다|yeolda → yeollida]",
+        "terbuka"
+       ],
+       [
+        "[-기-|-gi-]",
+        "[안다 → 안기다|anda → angida]",
+        "terpeluk"
+       ],
+       [
+        "[-기-|-gi-]",
+        "[쫓다 → 쫓기다|jjotda → jjotgida]",
+        "terkejar, terdesak"
+       ]
+      ]
+     },
+     "after": [
+      "Jalur kedua: **[-아/어지다|-a/eojida]** menempel pada hampir semua kata kerja transitif dan pada kata sifat. Pada kata kerja ia berarti pasif ([만들어지다|mandeureojida] dibuat); pada kata sifat ia berarti **perubahan keadaan** ([좋아지다|joajida] menjadi baik, [비싸지다|bissajida] menjadi mahal). Selisih ini penting: [예뻐지다|yeppeojida] bukan “dicantikkan” melainkan “menjadi cantik”.",
+      "Jalur ketiga: **[-게 되다|-ge doeda]** berarti “keadaan berubah sehingga …”, dan ia menekankan bahwa perubahan itu di luar kehendak pembicara. [한국에 살게 됐어요|Hanguge salge dwaesseoyo] — “saya jadi tinggal di Korea (bukan karena saya merencanakannya)”. Bentuk ini sangat sering dipakai justru untuk **merendah**: menyebut keberhasilan sendiri sebagai sesuatu yang kebetulan terjadi."
+     ]
+    },
+    {
+     "title": "Kausatif: membuat orang lain melakukan",
+     "body": [
+      "Kausatif memakai sisipan yang sebagian **sama bentuknya** dengan pasif — dan itulah sumber kebingungan terbesar. Yang membedakan adalah jumlah pelakunya, bukan bentuknya."
+     ],
+     "table": {
+      "head": [
+       "Asal",
+       "Kausatif",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "[먹다|meokda]",
+        "[먹이다|meogida]",
+        "menyuapi",
+        "[-이-|-i-]"
+       ],
+       [
+        "[읽다|ikda]",
+        "[읽히다|ilkida]",
+        "menyuruh membaca",
+        "[-히-|-hi-]"
+       ],
+       [
+        "[울다|ulda]",
+        "[울리다|ullida]",
+        "membuat menangis",
+        "[-리-|-ri-]"
+       ],
+       [
+        "[웃다|utda]",
+        "[웃기다|utgida]",
+        "membuat tertawa",
+        "[-기-|-gi-]"
+       ],
+       [
+        "[앉다|antda]",
+        "[앉히다|anchida]",
+        "mendudukkan",
+        "[-히-|-hi-]"
+       ],
+       [
+        "[자다|jada]",
+        "[재우다|jaeuda]",
+        "menidurkan",
+        "[-우-|-u-]"
+       ],
+       [
+        "[타다|tada]",
+        "[태우다|taeuda]",
+        "memberi tumpangan",
+        "[-우-|-u-]"
+       ],
+       [
+        "[알다|alda]",
+        "[알리다|allida]",
+        "memberitahukan",
+        "[-리-|-ri-]"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk kata kerja yang tidak punya bentuk sisipan, dipakai **[-게 하다|-ge hada]** (“membuat/membiarkan seseorang …”) atau **[-시키다|-sikida]** pada kata benda sino-Korea: [공부시키다|gongbusikida] menyuruh belajar, [이해시키다|ihaesikida] membuat mengerti, [진정시키다|jinjeongsikida] menenangkan.",
+      "Satu peringatan: **[-시키다|-sikida] sering dipakai berlebihan.** [주문시키다|jumunsikida] untuk “memesan” salah — itu [주문하다|jumunhada]. [-시키다|-sikida] hanya sah kalau benar-benar ada **orang lain** yang disuruh. Kesalahan ini juga umum di kalangan penutur asli, tetapi tetap dicatat sebagai kesalahan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Ketika pasif berarti kerugian",
+   "intro": "Ani menceritakan hari buruknya kepada 수지. Ada satu kelompok pasif Korea yang bukan sekadar tidak menyebut pelaku, melainkan menyatakan bahwa **pembicara dirugikan**.",
+   "lines": [
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[얼굴이|Eolguri] [왜|wae] [그래|geurae]? [무슨|Museun] [일|il] [있었어|isseosseo]?",
+     "id": "Kenapa mukamu begitu? Ada apa?",
+     "literal": "wajah-yang — kenapa — begitu? apa — perkara — ada-lampau?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[오늘|Oneul] [지하철에서|jihacheoreseo] [발|bal] [밟혔어|balpyeosseo]. [세|Se] [번이나|beonina].",
+     "id": "Hari ini kakiku terinjak di kereta. Sampai tiga kali.",
+     "literal": "hari-ini — kereta-bawah-tanah-di — kaki — terinjak-lampau. tiga — kali-sebanyak."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[아이고|Aigo]. [출근길에|Chulgeungire] [그러면|geureomyeon] [하루가|haruga] [다|da] [망하지|manghaji].",
+     "id": "Aduh. Kalau begitu di perjalanan berangkat kerja, seharian jadi hancur.",
+     "literal": "aduh. berangkat-kerja-jalan-pada — begitu-jika — hari-yang — semua — hancur-kan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그것뿐이|Geugeotppuni] [아니야|aniya]. [회의|Hoeui] [중에|junge] [부장님한테|bujangnimhante] [이름|ireum] [불렸는데|bullyeonneunde] [딴|ttan] [생각|saenggak] [하고|hago] [있었어|isseosseo].",
+     "id": "Bukan cuma itu. Di tengah rapat namaku dipanggil Pak Kepala Bagian, dan aku sedang melamun.",
+     "literal": "itu-hanya-yang — bukan. rapat — tengah-pada — kepala-bagian-oleh — nama — dipanggil-lampau-tetapi — lain — pikiran — lakukan-dan — ada-lampau."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[헐|Heol]. [그래서|Geuraeseo]?",
+     "id": "Astaga. Lalu?",
+     "literal": "astaga. lalu?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[다행히|Dahaenghi] [옆에|yeope] [있던|itdeon] [선배가|seonbaega] [대신|daesin] [대답해|daedaphae] [줬어|jwosseo]. [진짜|Jinjja] [살았어|sarasseo].",
+     "id": "Untungnya senior yang duduk di sebelahku menjawabkan. Sungguh selamat aku.",
+     "literal": "untung-nya — samping-di — ada-yang — senior-yang — sebagai-ganti — jawab — beri-lampau. sungguh — hidup-lampau."
+    },
+    {
+     "speaker": "[수지|Suji]:",
+     "text": "[그|Geu] [선배|seonbae] [진짜|jinjja] [괜찮은|gwaenchaneun] [사람이네|saramine].",
+     "id": "Senior itu benar-benar orang yang baik, ya.",
+     "literal": "itu — senior — sungguh — baik-yang — orang-adalah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[응|Eung]. [나중에|Najunge] [커피|keopi] [사|sa] [줘야겠어|jwoyagesseo].",
+     "id": "Iya. Nanti aku harus mentraktirnya kopi.",
+     "literal": "ya. nanti-pada — kopi — beli — beri-harus-akan."
+    }
+   ],
+   "notes": [
+    "**[발 밟혔어|Bal balpyeosseo] adalah pasif kerugian.** Susunannya khas: pemilik + bagian tubuh + kata kerja pasif. [(내가) 발을 밟혔다|(naega) bareul balpyeotda] — harfiahnya “aku terinjak kakiku”. Perhatikan bahwa yang menjadi subjek adalah **orang yang dirugikan**, bukan kakinya. Kembarannya: [소매치기한테 지갑을 도둑맞았어요|Somaechigihante jigabeul dodungmajasseoyo], [비를 맞았어요|Bireul majasseoyo].",
+    "**[이름 불렸는데|ireum bullyeonneunde] — [부르다 → 불리다|bureuda → bullida].** Ini pasif biasa, tetapi konteksnya membuatnya terasa merugikan. Bahasa Korea tidak punya bentuk pasif kerugian yang terpisah seperti bahasa Jepang; yang menandainya adalah **susunan kalimat dan konteks**.",
+    "**[헐|Heol] adalah seruan bahasa internet yang sudah masuk ke percakapan lisan.** Menyatakan kaget atau tidak percaya. Ia akan muncul lagi di Unit 15 bersama saudara-saudaranya. Jangan pernah dipakai di kantor.",
+    "**[살았어|sarasseo] harfiahnya “aku hidup”**, dan artinya “selamat aku”, “nyaris celaka”. Ungkapan tetap yang sangat sering muncul sesudah bahaya lewat. Bentuk lengkapnya: [진짜 살았다 싶었어|Jinjja saratda sipeosseo]."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat tanpa pelaku: kapan wajib, kapan justru salah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Korea tulis menghilangkan pelaku jauh lebih sering daripada bahasa Indonesia. Sebagian karena kesopanan, sebagian karena kebiasaan ragam. Tetapi ada garis yang jelas antara pasif yang benar dan pasif yang menyembunyikan tanggung jawab."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Bentuk yang dipakai",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "Aturan dan panduan",
+       "pasif",
+       "Berlaku untuk siapa saja; pelaku tidak relevan."
+      ],
+      [
+       "Berita",
+       "pasif",
+       "Sumber sering tidak pasti; [-것으로 알려졌다|-geoseuro allyeojyeotda]."
+      ],
+      [
+       "Laporan data",
+       "pasif",
+       "Yang penting angkanya, bukan siapa yang menghitung."
+      ],
+      [
+       "Kesalahan sistem",
+       "pasif",
+       "Menghindari menuduh orang tertentu."
+      ],
+      [
+       "**Kesalahanmu sendiri**",
+       "**aktif**",
+       "Pasif di sini terdengar melarikan diri."
+      ],
+      [
+       "**Janji dan komitmen**",
+       "**aktif**",
+       "Pasif membuat janjinya tidak mengikat siapa pun."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua baris terakhir itulah yang perlu kamu ingat. Menulis [실수가 있었습니다|Silsuga isseotseumnida] (“ada kesalahan”) padahal kamu sendiri yang keliru terdengar seperti mengelak; yang benar [제가 실수했습니다|Jega silsuhaetseumnida]. Begitu pula [처리하도록 하겠습니다|Cheorihadorok hagetseumnida] jauh lebih lemah daripada [제가 처리하겠습니다|Jega cheorihagetseumnida]."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu peristiwa, tiga cara menuliskannya",
+     "items": [
+      "**Aktif, menuduh:** [담당자가 파일을 삭제했습니다|Damdangjaga paireul sakjehaetseumnida]. — “Petugasnya menghapus berkas itu.”",
+      "**Pasif, netral:** [파일이 삭제되었습니다|Pairi sakjedoeeotseumnida]. — “Berkasnya terhapus.”",
+      "**Pasif + sebab, menjelaskan:** [자동 정리 설정으로 인해 파일이 삭제되었습니다|Jadong jeongni seoljeongeuro inhae pairi sakjedoeeotseumnida]. — “Berkas terhapus akibat pengaturan perapian otomatis.”",
+      "**Aktif, mengakui:** [제가 설정을 확인하지 못해 파일이 삭제되었습니다|Jega seoljeongeul hwaginhaji motae pairi sakjedoeeotseumnida]. — “Karena saya tidak memeriksa pengaturannya, berkasnya terhapus.”"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir adalah yang paling sering dipakai orang Korea yang bertanggung jawab: bagian **sebab** memakai aktif dengan “saya”, bagian **akibat** tetap pasif. Susunan ini mengakui kelalaian tanpa melebih-lebihkan perannya, dan itulah nada yang dicari di laporan kantor."
+    }
+   ]
+  },
+  {
+   "title": "Pasangan yang paling sering tertukar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata kerja punya bentuk aktif, pasif, dan kausatif yang mirip sekali. Tabel ini mengumpulkan yang paling sering tertukar, beserta satu kalimat penanda untuk masing-masing."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aktif",
+      "Pasif",
+      "Kausatif",
+      "Penanda"
+     ],
+     "rows": [
+      [
+       "[보다|boda] melihat",
+       "[보이다|boida] terlihat",
+       "[보이다|boida] memperlihatkan",
+       "Bentuknya sama; konteks yang memisahkan."
+      ],
+      [
+       "[먹다|meokda] makan",
+       "[먹히다|meokida] termakan",
+       "[먹이다|meogida] menyuapi",
+       "[먹히다|meokida] jarang dipakai harfiah."
+      ],
+      [
+       "[듣다|deutda] mendengar",
+       "[들리다|deullida] terdengar",
+       "[들려주다|deullyeojuda] memperdengarkan",
+       "Kausatifnya butuh [주다|juda]."
+      ],
+      [
+       "[알다|alda] tahu",
+       "[알려지다|allyeojida] diketahui",
+       "[알리다|allida] memberitahukan",
+       "[알리다|allida] bukan pasif."
+      ],
+      [
+       "[열다|yeolda] membuka",
+       "[열리다|yeollida] terbuka",
+       "[열게 하다|yeolge hada] menyuruh membuka",
+       "Tak ada kausatif bersisipan."
+      ],
+      [
+       "[울다|ulda] menangis",
+       "—",
+       "[울리다|ullida] membuat menangis",
+       "Kata kerja tak transitif; tak ada pasif."
+      ],
+      [
+       "[살다|salda] hidup",
+       "—",
+       "[살리다|sallida] menyelamatkan",
+       "Sama."
+      ],
+      [
+       "[바꾸다|bakkuda] mengganti",
+       "[바뀌다|bakkwida] berganti",
+       "—",
+       "Pasangan yang paling sering dipakai."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan dua baris yang kolom pasifnya kosong: kata kerja **tak transitif** tidak punya pasif, karena tidak ada objek yang bisa dinaikkan menjadi subjek. Kalau kamu menemukan bentuk [-이·히·리·기-|-i·hi·ri·gi-] pada kata kerja tak transitif, itu pasti kausatif."
+    },
+    {
+     "type": "p",
+     "text": "Satu ujian cepat yang hampir selalu bekerja: **hitung berapa orang yang terlibat.** Pasif punya satu pelaku yang hilang; kausatif punya dua pelaku — yang menyuruh dan yang melakukan. [아이가 울렸어요|Aiga ullyeosseoyo] berarti anak itu **membuat orang lain** menangis; [아이가 울었어요|Aiga ureosseoyo] berarti anak itu sendiri yang menangis."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "피동",
+   "baca": "pidong",
+   "id": "bentuk pasif 【문】"
+  },
+  {
+   "ko": "사동",
+   "baca": "sadong",
+   "id": "bentuk kausatif 【문】"
+  },
+  {
+   "ko": "보이다",
+   "baca": "boida",
+   "id": "terlihat; memperlihatkan"
+  },
+  {
+   "ko": "들리다",
+   "baca": "deullida",
+   "id": "terdengar"
+  },
+  {
+   "ko": "열리다",
+   "baca": "yeollida",
+   "id": "terbuka"
+  },
+  {
+   "ko": "닫히다",
+   "baca": "dachida",
+   "id": "tertutup"
+  },
+  {
+   "ko": "밟히다",
+   "baca": "balpida",
+   "id": "terinjak"
+  },
+  {
+   "ko": "불리다",
+   "baca": "bullida",
+   "id": "dipanggil"
+  },
+  {
+   "ko": "쫓기다",
+   "baca": "jjotgida",
+   "id": "terkejar, terdesak"
+  },
+  {
+   "ko": "바뀌다",
+   "baca": "bakkwida",
+   "id": "berganti"
+  },
+  {
+   "ko": "옮겨지다",
+   "baca": "omgyeojida",
+   "id": "dipindahkan"
+  },
+  {
+   "ko": "지워지다",
+   "baca": "jiwojida",
+   "id": "terhapus"
+  },
+  {
+   "ko": "만들어지다",
+   "baca": "mandeureojida",
+   "id": "dibuat"
+  },
+  {
+   "ko": "알려지다",
+   "baca": "allyeojida",
+   "id": "diketahui 【문】"
+  },
+  {
+   "ko": "-게 되다",
+   "baca": "-ge doeda",
+   "id": "jadi begitu (di luar kehendak)"
+  },
+  {
+   "ko": "-아/어지다",
+   "baca": "-a/eojida",
+   "id": "menjadi; dikenai"
+  },
+  {
+   "ko": "-게 하다",
+   "baca": "-ge hada",
+   "id": "membuat seseorang melakukan"
+  },
+  {
+   "ko": "-시키다",
+   "baca": "-sikida",
+   "id": "menyuruh melakukan"
+  },
+  {
+   "ko": "먹이다",
+   "baca": "meogida",
+   "id": "menyuapi"
+  },
+  {
+   "ko": "입히다",
+   "baca": "ipida",
+   "id": "memakaikan"
+  },
+  {
+   "ko": "재우다",
+   "baca": "jaeuda",
+   "id": "menidurkan"
+  },
+  {
+   "ko": "태우다",
+   "baca": "taeuda",
+   "id": "memberi tumpangan"
+  },
+  {
+   "ko": "앉히다",
+   "baca": "anchida",
+   "id": "mendudukkan"
+  },
+  {
+   "ko": "알리다",
+   "baca": "allida",
+   "id": "memberitahukan"
+  },
+  {
+   "ko": "살리다",
+   "baca": "sallida",
+   "id": "menyelamatkan"
+  },
+  {
+   "ko": "울리다",
+   "baca": "ullida",
+   "id": "membuat menangis"
+  },
+  {
+   "ko": "웃기다",
+   "baca": "utgida",
+   "id": "membuat tertawa; lucu"
+  },
+  {
+   "ko": "이해시키다",
+   "baca": "ihaesikida",
+   "id": "membuat mengerti"
+  },
+  {
+   "ko": "진정시키다",
+   "baca": "jinjeongsikida",
+   "id": "menenangkan"
+  },
+  {
+   "ko": "삭제되다",
+   "baca": "sakjedoeda",
+   "id": "terhapus 【문】"
+  },
+  {
+   "ko": "정리되다",
+   "baca": "jeongnidoeda",
+   "id": "dirapikan 【문】"
+  },
+  {
+   "ko": "설정",
+   "baca": "seoljeong",
+   "id": "pengaturan"
+  },
+  {
+   "ko": "자동으로",
+   "baca": "jadongeuro",
+   "id": "secara otomatis"
+  },
+  {
+   "ko": "휴지통",
+   "baca": "hyujitong",
+   "id": "tempat sampah (komputer)"
+  },
+  {
+   "ko": "백업",
+   "baca": "baegeop",
+   "id": "cadangan data"
+  },
+  {
+   "ko": "폴더",
+   "baca": "poldeo",
+   "id": "folder"
+  },
+  {
+   "ko": "공지",
+   "baca": "gongji",
+   "id": "pengumuman"
+  },
+  {
+   "ko": "담당자",
+   "baca": "damdangja",
+   "id": "penanggung jawab 【문】"
+  },
+  {
+   "ko": "실수",
+   "baca": "silsu",
+   "id": "kekeliruan"
+  },
+  {
+   "ko": "출근길",
+   "baca": "chulgeungil",
+   "id": "perjalanan berangkat kerja"
+  },
+  {
+   "ko": "망하다",
+   "baca": "manghada",
+   "id": "hancur, gagal total 【구】"
+  },
+  {
+   "ko": "딴생각",
+   "baca": "ttansaenggak",
+   "id": "melamun, pikiran lain"
+  },
+  {
+   "ko": "다행히",
+   "baca": "dahaenghi",
+   "id": "untungnya"
+  },
+  {
+   "ko": "대답하다",
+   "baca": "daedaphada",
+   "id": "menjawab"
+  },
+  {
+   "ko": "소매치기",
+   "baca": "somaechigi",
+   "id": "pencopet"
+  },
+  {
+   "ko": "도둑맞다",
+   "baca": "dodungmatda",
+   "id": "kecurian"
+  },
+  {
+   "ko": "헐",
+   "baca": "heol",
+   "id": "astaga 【구】"
+  },
+  {
+   "ko": "뿐",
+   "baca": "ppun",
+   "id": "hanya"
+  },
+  {
+   "ko": "처리하다",
+   "baca": "cheorihada",
+   "id": "menangani"
+  },
+  {
+   "ko": "확인하다",
+   "baca": "hwaginhada",
+   "id": "memeriksa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk pasif bersisipan.",
+   "items": [
+    "[문을 닫다|Muneul datda]",
+    "[음악을 듣다|Eumageul deutda]",
+    "[문을 열다|Muneul yeolda]",
+    "[이름을 부르다|Ireumeul bureuda]",
+    "[발을 밟다|Bareul balda]"
+   ]
+  },
+  {
+   "prompt": "Pilih antara pasif dan kausatif untuk melengkapi kalimatnya.",
+   "items": [
+    "[아이에게 밥을|Aiege babeul] ____ (먹다).",
+    "[멀리서 종소리가|Meolliseo jongsoriga] ____ (듣다).",
+    "[동생을 일찍|Dongsaengeul iljjik] ____ (자다).",
+    "[바람에 문이|Barame muni] ____ (열다).",
+    "[그 소식을 모두에게|Geu sosigeul modu-ege] ____ (알다)."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat pasif untuk laporan resmi.",
+   "items": [
+    "[담당자가 파일을 삭제했습니다|Damdangjaga paireul sakjehaetseumnida].",
+    "[회사가 규정을 바꿨습니다|Hoesaga gyujeongeul bakkwotseumnida].",
+    "[누군가 문을 잠갔습니다|Nugunga muneul jamgatseumnida].",
+    "[팀장이 일정을 연기했습니다|Timjangi iljeongeul yeongihaetseumnida].",
+    "[사람들이 그 사실을 알고 있습니다|Saramdeuri geu sasireul algo itseumnida]."
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut memakai pasif di tempat yang salah. Tulis versi aktifnya.",
+   "items": [
+    "[실수가 있었습니다|Silsuga isseotseumnida]. (padahal kamu yang keliru)",
+    "[처리하도록 하겠습니다|Cheorihadorok hagetseumnida]. (kamu berjanji menanganinya)",
+    "[보고가 늦어졌습니다|Bogoga neujeojyeotseumnida]. (kamu yang terlambat)",
+    "[확인이 안 되었습니다|Hwagini an doeeotseumnida]. (kamu belum memeriksanya)",
+    "[연락이 안 되었습니다|Yeollagi an doeeotseumnida]. (kamu belum menghubungi)"
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "옮겨졌어요 / 옛날 자료들이 / 정리되면서 / 다",
+    "밟혔어 / 지하철에서 / 발 / 오늘",
+    "설정이 돼 있거든요 / 자동으로 / 정리되게",
+    "삭제되었습니다 / 자동 정리 설정으로 인해 / 파일이",
+    "살았어 / 대신 대답해 줬어 / 선배가 / 진짜"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat untuk tiap keadaan.",
+   "items": [
+    "Kamu memberi tahu rekan bahwa berkasnya sudah dipindahkan otomatis semalam.",
+    "Kamu mengakui di laporan bahwa karena kamu tidak memeriksa pengaturannya, berkas terhapus.",
+    "Kamu menceritakan bahwa payungmu dicuri di kafe.",
+    "Kamu menjelaskan bahwa kamu jadi tinggal di Korea tanpa merencanakannya.",
+    "Kamu meminta rekan untuk memberitahukan perubahan jadwal kepada seluruh tim."
+   ]
+  }
+ ],
+ "answers": [
+  "[문이 닫히다|Muni dachida] — [음악이 들리다|Eumagi deullida] — [문이 열리다|Muni yeollida] — [이름이 불리다|Ireumi bullida] — [발이 밟히다|Bari balpida]",
+  "[먹였어요|meogyeosseoyo] — [들렸어요|deullyeosseoyo] — [재웠어요|jaewosseoyo] — [열렸어요|yeollyeosseoyo] — [알렸어요|allyeosseoyo]",
+  "[파일이 삭제되었습니다|Pairi sakjedoeeotseumnida]. — [규정이 변경되었습니다|Gyujeongi byeongyeongdoeeotseumnida]. — [문이 잠겼습니다|Muni jamgyeotseumnida]. — [일정이 연기되었습니다|Iljeongi yeongidoeeotseumnida]. — [그 사실은 널리 알려져 있습니다|Geu sasireun neolli allyeojyeo itseumnida].",
+  "[제가 실수했습니다|Jega silsuhaetseumnida]. — [제가 처리하겠습니다|Jega cheorihagetseumnida]. — [제가 보고를 늦게 드렸습니다|Jega bogoreul neutge deuryeotseumnida]. — [제가 아직 확인하지 못했습니다|Jega ajik hwaginhaji motaetseumnida]. — [제가 아직 연락드리지 못했습니다|Jega ajik yeollakdeuriji motaetseumnida].",
+  "[정리되면서 옛날 자료들이 다 옮겨졌어요|Jeongnidoemyeonseo yennal jaryodeuri da omgyeojyeosseoyo]. — [오늘 지하철에서 발 밟혔어|Oneul jihacheoreseo bal balpyeosseo]. — [자동으로 정리되게 설정이 돼 있거든요|Jadongeuro jeongnidoege seoljeongi dwae itgeodeunnyo]. — [자동 정리 설정으로 인해 파일이 삭제되었습니다|Jadong jeongni seoljeongeuro inhae pairi sakjedoeeotseumnida]. — [선배가 대신 대답해 줬어. 진짜 살았어|Seonbaega daesin daedaphae jwosseo. Jinjja sarasseo].",
+  "Contoh／[어젯밤에 자동으로 정리되면서 파일이 다 옮겨졌어요|Eojetbame jadongeuro jeongnidoemyeonseo pairi da omgyeojyeosseoyo]. — Contoh／[제가 설정을 확인하지 못해 파일이 삭제되었습니다|Jega seoljeongeul hwaginhaji motae pairi sakjedoeeotseumnida]. — Contoh／[카페에서 우산을 도둑맞았어요|Kapeeseo usaneul dodungmajasseoyo]. — Contoh／[어쩌다 보니 한국에 살게 됐어요|Eojjeoda boni Hanguge salge dwaesseoyo]. — Contoh／[일정 변경을 팀 전체에 알려 주시겠어요|Iljeong byeongyeongeul tim jeonchee allyeo jusigesseoyo]?"
+ ],
+ "wave": "Kembali ke Unit 7 dan baca ulang tabel “sebab di ragam tulis”. Sekarang perhatikan kalimat akibat di kolom contoh: hampir semuanya pasif. Tandai bentuk pasif apa yang dipakai di tiap baris, lalu tulis ulang satu di antaranya dalam bentuk aktif dengan menyebut pelakunya. Perhatikan bagaimana kalimatnya tiba-tiba terasa menuduh."
+}

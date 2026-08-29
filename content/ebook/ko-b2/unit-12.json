@@ -1,0 +1,792 @@
+{
+ "title": "Kontrak dan loket: bahasa yang tidak boleh salah paham",
+ "title_target": "[계약|Gyeyak]과 [행정|haengjeong]",
+ "goal": "Membaca perjanjian sewa dan formulir kantor pemerintah tanpa melewatkan satu syarat pun, bertanya di loket dengan tepat, dan mengenali kalimat mana dalam kontrak yang benar-benar mengikatmu.",
+ "bekal": [
+  "membaca ragam kontrak: [-(으)ㄹ 시|-(eu)l si], [-에 한하여|-e hanhayeo], [-도록 한다|-dorok handa]",
+  "menanyakan syarat dengan tepat sebelum menandatangani",
+  "membedakan [전세|jeonse], [월세|wolse], [보증금|bojeunggeum], dan [관리비|gwallibi]",
+  "mengurus perpanjangan visa dan pendaftaran alamat di loket",
+  "memahami kalimat pembatalan dan denda dalam perjanjian"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Menandatangani perjanjian sewa",
+   "intro": "Ani di kantor agen properti bersama pemilik rumah. Perhatikan bahwa Ani bertanya lima kali sebelum menandatangani — dan itulah yang seharusnya dilakukan.",
+   "lines": [
+    {
+     "speaker": "[중개사|Junggaesa]:",
+     "text": "[계약서|Gyeyakseo] [내용|naeyong] [한번|hanbeon] [같이|gachi] [보시겠습니다|bosigetseumnida]. [보증금|Bojeunggeum] [오천만|ocheonman] [원에|wone] [월세|wolse] [육십만|yuksimman] [원|won], [관리비는|gwallibineun] [별도입니다|byeoldoimnida].",
+     "id": "Mari kita lihat isi kontraknya bersama. Jaminan lima puluh juta won, sewa bulanan enam ratus ribu won, biaya pengelolaan terpisah.",
+     "literal": "perjanjian-surat — isi — sekali — bersama — lihat(hormat)-akan. jaminan — lima-puluh-juta — won-pada — bulan-sewa — enam-ratus-ribu — won, biaya-pengelolaan-mengenai — terpisah-adalah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[관리비에는|Gwallibieneun] [어떤|eotteon] [항목이|hangmogi] [포함되나요|pohamdoenayo]?",
+     "id": "Biaya pengelolaan itu mencakup pos apa saja?",
+     "literal": "biaya-pengelolaan-pada-mengenai — bagaimana — pos-yang — tercakup-kah?"
+    },
+    {
+     "speaker": "[중개사|Junggaesa]:",
+     "text": "[공용|Gongyong] [전기|jeongi], [청소비|cheongsobi], [엘리베이터|ellibeiteo] [유지비가|yujibiga] [들어가고|deureogago], [수도세는|sudoseneun] [따로|ttaro] [내셔야|naesyeoya] [합니다|hamnida].",
+     "id": "Termasuk listrik bersama, biaya kebersihan, dan perawatan lift; untuk air Anda harus membayar terpisah.",
+     "literal": "bersama — listrik, kebersihan-biaya, lift — perawatan-biaya-yang — masuk-dan, air-pajak-mengenai — terpisah — bayar(hormat)-harus — lakukan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[계약|Gyeyak] [기간은|giganeun] [이|i] [년이고|nyeonigo], [중간에|junggane] [나가게|nagage] [될|doel] [경우에는|gyeongueneun] [어떻게|eotteoke] [되나요|doenayo]?",
+     "id": "Masa kontraknya dua tahun; dalam hal saya harus keluar di tengah jalan, bagaimana?",
+     "literal": "perjanjian — masa-mengenai — dua — tahun-dan, tengah-pada — keluar-supaya — jadi-akan — hal-pada-mengenai — bagaimana — jadi-kah?"
+    },
+    {
+     "speaker": "[집주인|Jipjuin]:",
+     "text": "[중도|Jungdo] [해지|haeji] [시에는|sieneun] [다음|daeum] [세입자를|seipjareul] [구하시고|guhasigo] [중개|junggae] [수수료를|susuryoreul] [부담하셔야|budamhasyeoya] [합니다|hamnida].",
+     "id": "Pada saat pemutusan di tengah masa, Anda harus mencari penyewa berikutnya dan menanggung biaya jasa agen.",
+     "literal": "tengah-jalan — pemutusan — saat-pada-mengenai — berikut — penyewa-akan — cari(hormat)-dan — perantaraan — biaya-akan — tanggung(hormat)-harus — lakukan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그|Geu] [조항이|johangi] [계약서에|gyeyakseoe] [명시되어|myeongsidoeeo] [있나요|innayo]?",
+     "id": "Apakah pasal itu tercantum secara tertulis di dalam kontrak?",
+     "literal": "itu — pasal-yang — perjanjian-surat-pada — dinyatakan — ada-kah?"
+    },
+    {
+     "speaker": "[중개사|Junggaesa]:",
+     "text": "[네|Ne], [특약사항|teugyaksahang] [세|se] [번|beon] [항목에|hangmoge] [들어가|deureoga] [있습니다|itseumnida]. [읽어|Ilgeo] [보시고|bosigo] [궁금한|gunggeumhan] [점|jeom] [말씀해|malsseumhae] [주십시오|jusipsio].",
+     "id": "Ya, ada di butir ketiga ketentuan khusus. Silakan dibaca, dan sampaikan bila ada yang ingin ditanyakan.",
+     "literal": "ya, khusus-perjanjian-hal — tiga — nomor — pos-pada — masuk-pergi — ada. baca — lihat(hormat)-dan — penasaran-yang — hal — berkata(hormat) — beri-lah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[수리|Suri] [비용은|biyongeun] [누가|nuga] [부담하는|budamhaneun] [걸로|geollo] [되어|doeeo] [있습니까|itseumnikka]?",
+     "id": "Biaya perbaikan tertulis ditanggung siapa?",
+     "literal": "perbaikan — biaya-mengenai — siapa-yang — tanggung-yang — hal-dengan — jadi — ada-kah?"
+    },
+    {
+     "speaker": "[집주인|Jipjuin]:",
+     "text": "[보일러나|Boilleona] [배관처럼|baegwancheoreom] [원래|wollae] [있던|itdeon] [설비는|seolbineun] [집주인|jipjuin] [부담이고|budamigo], [사용|sayong] [중|jung] [파손된|pasondoen] [건|geon] [세입자|seipja] [부담입니다|budamimnida].",
+     "id": "Perlengkapan yang memang sudah ada seperti pemanas atau pipa ditanggung pemilik; yang rusak selama pemakaian ditanggung penyewa.",
+     "literal": "pemanas-atau — pipa-seperti — asalnya — ada-yang — perlengkapan-mengenai — rumah-pemilik — tanggungan-dan, pakai — tengah — rusak-yang — hal-mengenai — penyewa — tanggungan-adalah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[알겠습니다|Algetseumnida]. [확정일자는|Hwakjeongiljaneun] [언제까지|eonjekkaji] [받아야|badaya] [하나요|hanayo]?",
+     "id": "Baik. Sampai kapan saya harus mendapatkan cap tanggal resmi?",
+     "literal": "tahu-akan. penetapan-tanggal-mengenai — kapan-sampai — terima-harus — lakukan-kah?"
+    },
+    {
+     "speaker": "[중개사|Junggaesa]:",
+     "text": "[이사|Isa] [당일에|dangire] [전입신고와|jeonipsingowa] [같이|gachi] [하시면|hasimyeon] [됩니다|doemnida]. [늦어지면|Neujeojimyeon] [보증금|bojeunggeum] [보호를|bohoreul] [못|mot] [받으실|badeusil] [수|su] [있습니다|itseumnida].",
+     "id": "Bisa dilakukan bersama pelaporan pindah alamat pada hari pindahan. Kalau terlambat, jaminan Anda bisa jadi tidak terlindungi.",
+     "literal": "pindahan — hari-itu-pada — masuk-lapor-dan — bersama — lakukan(hormat)-jika — jadi. terlambat-jadi-jika — jaminan — perlindungan-akan — tidak-bisa — terima(hormat)-akan — kemungkinan — ada."
+    }
+   ],
+   "notes": [
+    "**[전세|jeonse] dan [월세|wolse] adalah dua sistem sewa Korea yang perlu kamu bedakan sejak awal.** [전세|jeonse]: kamu menitipkan sejumlah besar uang jaminan dan tidak membayar sewa bulanan; uangnya dikembalikan utuh di akhir kontrak. [월세|wolse]: jaminan lebih kecil, ditambah sewa bulanan. Yang ada di dialog ini adalah [월세|wolse] dengan jaminan besar — bentuk yang paling umum sekarang.",
+    "**[관리비|gwallibi] hampir selalu terpisah, dan hampir selalu terlupakan.** Ia mencakup listrik dan air ruang bersama, kebersihan, keamanan, dan perawatan lift, tetapi **tidak** selalu mencakup air dan listrik unitmu sendiri. Pertanyaan Ani di baris kedua adalah pertanyaan yang wajib kamu ajukan.",
+    "**[-(으)ㄹ 시에는|-(eu)l sieneun] adalah [-(으)ㄹ 때|-(eu)l ttae] versi hukum.** Kamu akan menemukannya di setiap kontrak Korea: [해지 시|haeji si], [위반 시|wiban si], [분실 시|bunsil si]. Perhatikan bahwa ia menempel langsung pada kata benda tanpa [하다|hada].",
+    "**[명시되어 있나요|myeongsidoeeo innayo]? adalah pertanyaan paling penting di seluruh unit ini.** “Apakah tercantum secara tertulis?”. Di Korea, janji lisan agen atau pemilik tidak mengikat; yang mengikat adalah [특약사항|teugyaksahang] — kolom ketentuan khusus di bagian bawah kontrak. Segala yang dijanjikan lisan harus kamu minta ditulis di sana.",
+    "**[-는 걸로 되어 있다|-neun geollo doeeo itda] berarti “tertulis begitu, disepakati begitu”.** Bentuk yang sangat berguna untuk menanyakan isi dokumen tanpa terdengar menuduh: [제가 부담하는 걸로 되어 있나요|Jega budamhaneun geollo doeeo innayo]? Kembarannya: [-기로 되어 있다|-giro doeeo itda] (sudah dijadwalkan begitu).",
+    "**Pembagian biaya perbaikan yang disebut 집주인 adalah kaidah umum di Korea.** Perlengkapan tetap ([보일러|boilleo], [배관|baegwan], [창문|changmun]) ditanggung pemilik; kerusakan akibat pemakaian ditanggung penyewa. Kalau kontrakmu tidak menyebutkannya, mintalah ditulis.",
+    "**[확정일자|hwakjeongilja] dan [전입신고|jeonipsingo] adalah dua langkah yang melindungi uang jaminanmu.** Tanpa keduanya, kalau pemilik rumah bangkrut, kamu berdiri di antrean paling belakang. Keduanya diurus di [주민센터|juminsenteo] pada hari kamu pindah, gratis, dan memakan waktu sekitar sepuluh menit. Ini mungkin nasihat paling berharga dalam modul ini.",
+    "**[궁금한 점 말씀해 주십시오|Gunggeumhan jeom malsseumhae jusipsio] adalah ajakan bertanya yang baku di pelayanan.** [점|jeom] berarti “titik, hal”, dan dipakai untuk mengelompokkan pertanyaan atau keberatan: [걱정되는 점|geokjeongdoeneun jeom], [아쉬운 점|aswiun jeom], [개선할 점|gaeseonhal jeom]."
+   ],
+   "grammars": [
+    {
+     "title": "Ragam kontrak: sepuluh bentuk yang selalu muncul",
+     "body": [
+      "Dokumen hukum Korea memakai persediaan bentuknya sendiri. Kamu tidak perlu bisa menulisnya — tetapi kamu wajib bisa membacanya, karena setiap bentuk di bawah ini menentukan kewajiban."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "[-(으)ㄹ 시|-(eu)l si]",
+        "pada saat",
+        "[계약 해지 시|Gyeyak haeji si]"
+       ],
+       [
+        "[-(으)ㄹ 경우|-(eu)l gyeongu]",
+        "dalam hal",
+        "[분실할 경우|Bunsilhal gyeongu]"
+       ],
+       [
+        "[-에 한하여|-e hanhayeo]",
+        "terbatas pada",
+        "[본인에 한하여|Bonine hanhayeo]"
+       ],
+       [
+        "[-을/를 제외하고|-eul/reul jeoehago]",
+        "kecuali",
+        "[공휴일을 제외하고|Gonghyuireul jeoehago]"
+       ],
+       [
+        "[-도록 한다|-dorok handa]",
+        "wajib, hendaknya",
+        "[사전에 통보하도록 한다|Sajeone tongbohadorok handa]"
+       ],
+       [
+        "[-아/어야 한다|-a/eoya handa]",
+        "harus",
+        "[즉시 신고하여야 한다|Jeuksi singohayeoya handa]"
+       ],
+       [
+        "[-지 아니한다|-ji anihanda]",
+        "tidak (bentuk hukum)",
+        "[책임을 지지 아니한다|Chaegimeul jiji anihanda]"
+       ],
+       [
+        "[-(으)ㅁ을 원칙으로 한다|-(eu)meul wonchigeuro handa]",
+        "pada asasnya",
+        "[서면 통보함을 원칙으로 한다|Seomyeon tongbohameul wonchigeuro handa]"
+       ],
+       [
+        "[다만|daman]",
+        "kecuali bahwa",
+        "[다만, 사전 합의 시에는|Daman, sajeon habui sieneun]"
+       ],
+       [
+        "[갑|gap] · [을|eul]",
+        "pihak pertama · kedua",
+        "[갑은 을에게|Gabeun eurege]"
+       ]
+      ]
+     },
+     "after": [
+      "Dua hal yang paling sering menjebak. **Pertama**, [-지 아니한다|-ji anihanda] adalah bentuk hukum dari [-지 않는다|-ji anneunda] — bunyinya kuno, artinya sama, dan hampir selalu menyangkal tanggung jawab pihak yang menulis kontrak. Perhatikan baik-baik kalimat yang memuatnya. **Kedua**, kata [다만|daman] di kontrak menandai **pengecualian** — dan pengecualian itulah yang biasanya merugikanmu.",
+      "Istilah [갑|gap] dan [을|eul] (harfiahnya “A” dan “B”) juga masuk ke bahasa sehari-hari: [갑질|gapjil] berarti penyalahgunaan kuasa oleh pihak yang lebih kuat. Kata ini muncul hampir tiap hari di berita Korea."
+     ]
+    },
+    {
+     "title": "Bertanya di loket: enam pola yang menutup semuanya",
+     "body": [
+      "Berurusan dengan kantor pemerintah Korea sebagian besar berupa enam pertanyaan yang sama, diulang di loket yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Yang ingin kamu ketahui",
+       "Pertanyaannya"
+      ],
+      "rows": [
+       [
+        "Dokumen apa yang perlu",
+        "[어떤 서류가 필요한가요|Eotteon seoryuga piryohangayo]?"
+       ],
+       [
+        "Sampai kapan",
+        "[언제까지 해야 하나요|Eonjekkaji haeya hanayo]?"
+       ],
+       [
+        "Berapa biayanya",
+        "[수수료가 얼마인가요|Susuryoga eolmaingayo]?"
+       ],
+       [
+        "Berapa lama prosesnya",
+        "[처리 기간이 얼마나 걸리나요|Cheori gigani eolmana geollinayo]?"
+       ],
+       [
+        "Bisa lewat internet",
+        "[인터넷으로도 가능한가요|Inteonesseurodo ganeunghangayo]?"
+       ],
+       [
+        "Kalau terlambat",
+        "[기한이 지나면 어떻게 되나요|Gihani jinamyeon eotteoke doenayo]?"
+       ]
+      ]
+     },
+     "after": [
+      "Tambahkan satu kalimat pembuka yang membuat seluruh urusan lebih lancar: [처음이라 잘 몰라서 그러는데요|Cheoeumira jal mollaseo geureoneundeyo] — “karena ini pertama kali dan saya belum paham”. Petugas loket Korea hampir selalu berubah nada begitu mendengarnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Di kantor imigrasi",
+   "intro": "Ani memperpanjang izin tinggalnya. Percakapan loket punya iramanya sendiri: pendek, berulang, dan penuh kata benda sino-Korea.",
+   "lines": [
+    {
+     "speaker": "[직원|Jigwon]:",
+     "text": "[번호표|Beonhopyo] [뽑으셨나요|ppobeusyeonnayo]? [무슨|Museun] [업무|eommu] [보러|boreo] [오셨습니까|osyeotseumnikka]?",
+     "id": "Sudah ambil nomor antrean? Anda datang untuk urusan apa?",
+     "literal": "nomor-kartu — cabut(hormat)-lampau-kah? apa — urusan — lihat-untuk — datang(hormat)-lampau-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[체류|Cheryu] [기간|gigan] [연장|yeonjang] [신청하러|sincheonghareo] [왔습니다|watseumnida].",
+     "id": "Saya datang untuk mengajukan perpanjangan masa tinggal.",
+     "literal": "tinggal — masa — perpanjangan — ajukan-untuk — datang-lampau."
+    },
+    {
+     "speaker": "[직원|Jigwon]:",
+     "text": "[신청서|Sincheongseo], [여권|yeogwon], [외국인등록증|oegugindeungnokjeung], [재직증명서|jaejikjeungmyeongseo] [주시고요|jusigoyo], [수수료는|susuryoneun] [육만|yungman] [원입니다|wonimnida].",
+     "id": "Tolong berikan formulir, paspor, kartu izin tinggal, dan surat keterangan kerja; biayanya enam puluh ribu won.",
+     "literal": "pengajuan-surat, paspor, orang-asing-pendaftaran-kartu, kerja-keterangan-surat — beri(hormat)-dan, biaya-mengenai — enam-puluh-ribu — won-adalah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[재직증명서는|Jaejikjeungmyeongseoneun] [발급받은|balgeupbadeun] [지|ji] [한|han] [달|dal] [됐는데|dwaenneunde] [괜찮을까요|gwaenchaneulkkayo]?",
+     "id": "Surat keterangan kerja saya sudah sebulan sejak diterbitkan, apakah tidak masalah?",
+     "literal": "kerja-keterangan-surat-mengenai — terbit-terima-yang — sejak — satu — bulan — jadi-lampau-tetapi — tidak-apa-apa-kah?"
+    },
+    {
+     "speaker": "[직원|Jigwon]:",
+     "text": "[삼|Sam] [개월|gaewol] [이내면|inaemyeon] [유효합니다|yuhyohamnida]. [체류지|Cheryujiga] [바뀌신|bakkwisin] [건|geon] [없으시죠|eopseusijyo]?",
+     "id": "Kalau dalam tiga bulan masih berlaku. Tidak ada perubahan alamat tinggal, kan?",
+     "literal": "tiga — bulan — dalam-jika — berlaku. tinggal-tempat-yang — berubah(hormat)-yang — hal-mengenai — tidak-ada(hormat)-kan?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[지난달에|Jinandare] [이사했습니다|isahaetseumnida]. [전입신고는|Jeonipsingoneun] [했습니다|haetseumnida].",
+     "id": "Bulan lalu saya pindah. Pelaporan pindah alamat sudah saya lakukan.",
+     "literal": "bulan-lalu-pada — pindah-lampau. masuk-lapor-mengenai — lakukan-lampau."
+    },
+    {
+     "speaker": "[직원|Jigwon]:",
+     "text": "[그러면|Geureomyeon] [체류지|cheryuji] [변경|byeongyeong] [신고도|singodo] [같이|gachi] [처리해|cheorihae] [드리겠습니다|deurigetseumnida]. [십사|Sipsa] [일|il] [이내에|inaee] [하셔야|hasyeoya] [하는|haneun] [거|geo] [아시죠|asijyo]?",
+     "id": "Kalau begitu perubahan alamat tinggalnya saya proses sekalian. Anda tahu ini harus dilakukan dalam empat belas hari, kan?",
+     "literal": "begitu-jika — tinggal-tempat — perubahan — lapor-pun — bersama — tangani — beri(merendah)-akan. empat-belas — hari — dalam-pada — lakukan(hormat)-harus — lakukan-yang — hal — tahu(hormat)-kan?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[네|Ne], [알고|algo] [있었습니다|isseotseumnida]. [처리|Cheori] [기간은|giganeun] [얼마나|eolmana] [걸리나요|geollinayo]?",
+     "id": "Ya, saya tahu. Berapa lama proses pengurusannya?",
+     "literal": "ya, tahu-dan — ada-lampau. tangani — masa-mengenai — berapa-lama — makan-waktu-kah?"
+    },
+    {
+     "speaker": "[직원|Jigwon]:",
+     "text": "[보통|Botong] [이|i] [주|ju] [정도|jeongdo] [걸리고|geolligo], [결과는|gyeolgwaneun] [문자로|munjaro] [안내드립니다|annaedeurimnida].",
+     "id": "Biasanya sekitar dua minggu, dan hasilnya kami beri tahu lewat pesan singkat.",
+     "literal": "biasa — dua — minggu — sekitar — makan-waktu-dan, hasil-mengenai — pesan-dengan — beri-tahu-beri(merendah)."
+    }
+   ],
+   "notes": [
+    "**[업무 보러 오셨습니까|Eommu boreo osyeotseumnikka]? — [업무를 보다|eommureul boda] berarti “mengurus urusan”.** Rangkaian tetap yang muncul di semua loket: [은행 업무를 보다|eunhaeng eommureul boda], [민원 업무|minwon eommu]. Kata kerjanya [보다|boda], bukan [하다|hada].",
+    "**[-(으)ㄴ 지 … 되다|-(eu)n ji … doeda] menyatakan berapa lama sejak sesuatu terjadi.** [발급받은 지 한 달 됐어요|Balgeupbadeun ji han dal dwaesseoyo] — “sudah sebulan sejak diterbitkan”. Perhatikan bahwa [지|ji] di sini adalah kata benda dan ditulis terpisah — berbeda dari akhiran [-지|-ji] yang menempel.",
+    "**Kosakata dokumen Korea hampir semuanya sino-Korea dan mudah ditebak sekali kamu tahu unsurnya.** [증명서|jeungmyeongseo] = surat keterangan, [신청서|sincheongseo] = formulir pengajuan, [확인서|hwaginseo] = surat konfirmasi, [등록증|deungnokjeung] = kartu pendaftaran, [영수증|yeongsujeung] = kuitansi. Unsur [-서|-seo] menandai lembar dokumen, [-증|-jeung] menandai kartu atau bukti.",
+    "**[십사 일 이내|sipsa il inae] — [이내|inae] berarti “dalam (batas)”, dan kembarannya [이후|ihu], [이전|ijeon], [이상|isang], [이하|iha].** Kelima kata ini muncul di hampir semua aturan Korea: [삼십 세 이상|samsip se isang] (30 tahun ke atas), [오만 원 이하|oman won iha] (lima puluh ribu won ke bawah)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca kontrak: dua belas kata yang menentukan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian besar kontrak Korea bisa dipahami cukup dengan mengenali dua belas kata berikut. Kalau kamu menemukan salah satunya, berhentilah dan bacalah kalimat itu dua kali."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Kenapa penting"
+     ],
+     "rows": [
+      [
+       "[특약사항|teugyaksahang]",
+       "ketentuan khusus",
+       "Satu-satunya tempat janji lisan menjadi mengikat."
+      ],
+      [
+       "[위약금|wiyakgeum]",
+       "denda pelanggaran",
+       "Berapa yang hilang kalau kamu membatalkan."
+      ],
+      [
+       "[해지|haeji]",
+       "pemutusan kontrak",
+       "Bedanya dengan [해제|haeje]: yang ini berlaku ke depan."
+      ],
+      [
+       "[갱신|gaengsin]",
+       "perpanjangan",
+       "Otomatis atau harus diajukan?"
+      ],
+      [
+       "[원상복구|wonsangbokgu]",
+       "pemulihan seperti semula",
+       "Kewajiban penyewa saat keluar."
+      ],
+      [
+       "[부담하다|budamhada]",
+       "menanggung biaya",
+       "Cari siapa subjeknya."
+      ],
+      [
+       "[면책|myeonchaek]",
+       "pembebasan tanggung jawab",
+       "Hampir selalu membebaskan pihak lain."
+      ],
+      [
+       "[통보|tongbo]",
+       "pemberitahuan",
+       "Berapa hari sebelumnya, dan lewat apa?"
+      ],
+      [
+       "[연체|yeonche]",
+       "tunggakan",
+       "Berapa bunga keterlambatannya."
+      ],
+      [
+       "[중도|jungdo]",
+       "di tengah masa",
+       "Ada biaya tambahan hampir selalu."
+      ],
+      [
+       "[별도|byeoldo]",
+       "terpisah",
+       "Artinya: tidak termasuk harga yang disebut."
+      ],
+      [
+       "[일체|ilche]",
+       "seluruhnya",
+       "[비용 일체|biyong ilche] = semua biaya, tanpa kecuali."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan [별도|byeoldo] dan [일체|ilche]. Keduanya pendek, mudah terlewat, dan menentukan seluruh perhitungan biayamu. [관리비 별도|Gwallibi byeoldo] berarti biaya pengelolaan **belum** termasuk; [수리비 일체 부담|Suribi ilche budam] berarti kamu menanggung **semua** biaya perbaikan."
+    },
+    {
+     "type": "kotak",
+     "title": "Lima kalimat yang wajib kamu ucapkan sebelum menandatangani",
+     "items": [
+      "[이 조항이 계약서에 명시되어 있나요|I johangi gyeyakseoe myeongsidoeeo innayo]? — memastikan janji lisan tertulis.",
+      "[특약사항에 한 줄 넣어 주실 수 있을까요|Teugyaksahange han jul neoeo jusil su isseulkkayo]? — meminta tambahan ketentuan.",
+      "[중도 해지 시 위약금이 어떻게 되나요|Jungdo haeji si wiyakgeumi eotteoke doenayo]? — biaya membatalkan.",
+      "[수리비는 누가 부담하는 걸로 되어 있습니까|Suribineun nuga budamhaneun geollo doeeo itseumnikka]? — pembagian perbaikan.",
+      "[하루만 검토해 보고 연락드려도 될까요|Haruman geomtohae bogo yeollakdeuryeodo doelkkayo]? — meminta waktu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir adalah yang paling sering dilewatkan orang asing, dan yang paling melindungi. Di Korea, meminta satu hari untuk membaca ulang kontrak adalah hal yang wajar dan tidak dianggap menghina siapa pun. Tekanan untuk menandatangani di tempat adalah tanda yang perlu kamu curigai."
+    }
+   ]
+  },
+  {
+   "title": "Urusan yang pasti kamu temui: bank, kantor kelurahan, rumah sakit",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga tempat berikut hampir pasti kamu datangi dalam tahun pertama di Korea. Kalimat-kalimat ini disusun menurut urutan kejadiannya."
+    },
+    {
+     "type": "sub",
+     "text": "Di bank"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[계좌 개설하러 왔습니다|Gyejwa gaeseolhareo watseumnida]. — membuka rekening.",
+      "[체크카드도 같이 신청할 수 있을까요|Chekeukadeudo gachi sincheonghal su isseulkkayo]? — sekalian kartu debit.",
+      "[인터넷뱅킹 신청하려고 하는데요|Inteonetbaengking sincheonghallyeogo haneundeyo]. — mengaktifkan internet banking.",
+      "[한도가 얼마인가요|Handoga eolmaingayo]? — batas transfer harian.",
+      "[외화 송금 수수료가 얼마인가요|Oehwa songgeum susuryoga eolmaingayo]? — biaya kirim ke luar negeri."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Di kantor kelurahan ([주민센터|juminsenteo])"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[전입신고하러 왔습니다|Jeonipsingohareo watseumnida]. — melaporkan pindah alamat.",
+      "[확정일자도 같이 받을 수 있나요|Hwakjeongiljado gachi badeul su innayo]? — cap tanggal untuk kontrak sewa.",
+      "[등본 한 통 부탁드립니다|Deungbon han tong butakdeurimnida]. — minta satu lembar surat keterangan penduduk.",
+      "[영문으로도 발급되나요|Yeongmuneurodo balgeupdoenayo]? — versi bahasa Inggris.",
+      "[무인발급기에서도 되나요|Muinbalgeupgieseodo doenayo]? — bisa lewat mesin mandiri."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata benda dokumen yang paling sering"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dokumen",
+      "Korea",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "kartu izin tinggal",
+       "[외국인등록증|oegugindeungnokjeung]",
+       "identitas sehari-hari"
+      ],
+      [
+       "surat keterangan kerja",
+       "[재직증명서|jaejikjeungmyeongseo]",
+       "visa, sewa, pinjaman"
+      ],
+      [
+       "surat keterangan penduduk",
+       "[주민등록등본|jumindeungnokdeungbon]",
+       "hampir semua urusan"
+      ],
+      [
+       "salinan kontrak sewa",
+       "[임대차계약서|imdaechagyeyakseo]",
+       "perpanjangan visa"
+      ],
+      [
+       "surat keterangan penghasilan",
+       "[소득금액증명원|sodeukgeumaekjeungmyeongwon]",
+       "pajak, pinjaman"
+      ],
+      [
+       "surat keterangan rekening",
+       "[통장 사본|tongjang sabon]",
+       "penggajian"
+      ],
+      [
+       "kuitansi",
+       "[영수증|yeongsujeung]",
+       "penggantian biaya"
+      ],
+      [
+       "surat kuasa",
+       "[위임장|wiimjang]",
+       "mewakilkan urusan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kebiasaan yang menghemat banyak perjalanan: hampir semua dokumen di tabel itu bisa diterbitkan lewat [정부24|Jeongbu isipsa] — portal layanan pemerintah — dan sebagian besar gratis. Yang tetap harus datang langsung hanyalah urusan imigrasi dan pembukaan rekening pertama."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "계약서",
+   "baca": "gyeyakseo",
+   "id": "surat perjanjian"
+  },
+  {
+   "ko": "특약사항",
+   "baca": "teugyaksahang",
+   "id": "ketentuan khusus 【문】"
+  },
+  {
+   "ko": "조항",
+   "baca": "johang",
+   "id": "pasal, klausul 【문】"
+  },
+  {
+   "ko": "명시되다",
+   "baca": "myeongsidoeda",
+   "id": "tercantum tertulis 【문】"
+  },
+  {
+   "ko": "위약금",
+   "baca": "wiyakgeum",
+   "id": "denda pembatalan 【문】"
+  },
+  {
+   "ko": "해지",
+   "baca": "haeji",
+   "id": "pemutusan kontrak 【문】"
+  },
+  {
+   "ko": "갱신",
+   "baca": "gaengsin",
+   "id": "perpanjangan 【문】"
+  },
+  {
+   "ko": "중도",
+   "baca": "jungdo",
+   "id": "di tengah masa 【문】"
+  },
+  {
+   "ko": "원상복구",
+   "baca": "wonsangbokgu",
+   "id": "pemulihan seperti semula 【문】"
+  },
+  {
+   "ko": "부담하다",
+   "baca": "budamhada",
+   "id": "menanggung biaya 【문】"
+  },
+  {
+   "ko": "면책",
+   "baca": "myeonchaek",
+   "id": "pembebasan tanggung jawab 【문】"
+  },
+  {
+   "ko": "통보",
+   "baca": "tongbo",
+   "id": "pemberitahuan 【문】"
+  },
+  {
+   "ko": "연체",
+   "baca": "yeonche",
+   "id": "tunggakan 【문】"
+  },
+  {
+   "ko": "별도",
+   "baca": "byeoldo",
+   "id": "terpisah, belum termasuk 【문】"
+  },
+  {
+   "ko": "일체",
+   "baca": "ilche",
+   "id": "seluruhnya 【문】"
+  },
+  {
+   "ko": "보증금",
+   "baca": "bojeunggeum",
+   "id": "uang jaminan"
+  },
+  {
+   "ko": "전세",
+   "baca": "jeonse",
+   "id": "sewa jaminan tanpa bayaran bulanan"
+  },
+  {
+   "ko": "월세",
+   "baca": "wolse",
+   "id": "sewa bulanan"
+  },
+  {
+   "ko": "관리비",
+   "baca": "gwallibi",
+   "id": "biaya pengelolaan"
+  },
+  {
+   "ko": "수도세",
+   "baca": "sudose",
+   "id": "biaya air"
+  },
+  {
+   "ko": "세입자",
+   "baca": "seipja",
+   "id": "penyewa 【문】"
+  },
+  {
+   "ko": "집주인",
+   "baca": "jipjuin",
+   "id": "pemilik rumah"
+  },
+  {
+   "ko": "중개사",
+   "baca": "junggaesa",
+   "id": "agen properti"
+  },
+  {
+   "ko": "중개 수수료",
+   "baca": "junggae susuryo",
+   "id": "komisi agen"
+  },
+  {
+   "ko": "보일러",
+   "baca": "boilleo",
+   "id": "pemanas ruangan"
+  },
+  {
+   "ko": "배관",
+   "baca": "baegwan",
+   "id": "pipa saluran"
+  },
+  {
+   "ko": "파손되다",
+   "baca": "pasondoeda",
+   "id": "rusak, pecah 【문】"
+  },
+  {
+   "ko": "확정일자",
+   "baca": "hwakjeongilja",
+   "id": "cap tanggal resmi kontrak"
+  },
+  {
+   "ko": "전입신고",
+   "baca": "jeonipsingo",
+   "id": "pelaporan pindah alamat"
+  },
+  {
+   "ko": "주민센터",
+   "baca": "juminsenteo",
+   "id": "kantor kelurahan"
+  },
+  {
+   "ko": "체류",
+   "baca": "cheryu",
+   "id": "masa tinggal 【문】"
+  },
+  {
+   "ko": "연장",
+   "baca": "yeonjang",
+   "id": "perpanjangan 【문】"
+  },
+  {
+   "ko": "신청서",
+   "baca": "sincheongseo",
+   "id": "formulir pengajuan"
+  },
+  {
+   "ko": "외국인등록증",
+   "baca": "oegugindeungnokjeung",
+   "id": "kartu izin tinggal"
+  },
+  {
+   "ko": "재직증명서",
+   "baca": "jaejikjeungmyeongseo",
+   "id": "surat keterangan kerja"
+  },
+  {
+   "ko": "주민등록등본",
+   "baca": "jumindeungnokdeungbon",
+   "id": "surat keterangan penduduk"
+  },
+  {
+   "ko": "위임장",
+   "baca": "wiimjang",
+   "id": "surat kuasa 【문】"
+  },
+  {
+   "ko": "영수증",
+   "baca": "yeongsujeung",
+   "id": "kuitansi"
+  },
+  {
+   "ko": "발급받다",
+   "baca": "balgeupbatda",
+   "id": "menerima penerbitan dokumen"
+  },
+  {
+   "ko": "이내",
+   "baca": "inae",
+   "id": "dalam batas 【문】"
+  },
+  {
+   "ko": "이후",
+   "baca": "ihu",
+   "id": "sesudah 【문】"
+  },
+  {
+   "ko": "이상",
+   "baca": "isang",
+   "id": "ke atas 【문】"
+  },
+  {
+   "ko": "이하",
+   "baca": "iha",
+   "id": "ke bawah 【문】"
+  },
+  {
+   "ko": "유효하다",
+   "baca": "yuhyohada",
+   "id": "berlaku 【문】"
+  },
+  {
+   "ko": "번호표",
+   "baca": "beonhopyo",
+   "id": "nomor antrean"
+  },
+  {
+   "ko": "업무를 보다",
+   "baca": "eommureul boda",
+   "id": "mengurus urusan"
+  },
+  {
+   "ko": "계좌",
+   "baca": "gyejwa",
+   "id": "rekening"
+  },
+  {
+   "ko": "개설하다",
+   "baca": "gaeseolhada",
+   "id": "membuka (rekening) 【문】"
+  },
+  {
+   "ko": "한도",
+   "baca": "hando",
+   "id": "batas maksimum"
+  },
+  {
+   "ko": "갑질",
+   "baca": "gapjil",
+   "id": "penyalahgunaan kuasa 【구】"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan kalimat kontrak berikut ke bahasa Indonesia.",
+   "items": [
+    "[계약 해지 시 위약금은 월세 이 개월분으로 한다|Gyeyak haeji si wiyakgeumeun wolse i gaewolbuneuro handa].",
+    "[관리비는 별도이며, 수도세는 세입자가 부담한다|Gwallibineun byeoldoimyeo, sudoseneun seipjaga budamhanda].",
+    "[퇴거 시 원상복구를 원칙으로 한다|Toegeo si wonsangbokgureul wonchigeuro handa].",
+    "[갱신 의사는 계약 만료 삼 개월 전까지 서면으로 통보하도록 한다|Gaengsin uisaneun gyeyak mallyo sam gaewol jeonkkaji seomyeoneuro tongbohadorok handa].",
+    "[천재지변으로 인한 손해에 대하여는 책임을 지지 아니한다|Cheonjaejibyeoneuro inhan sonhaee daehayeoneun chaegimeul jiji anihanda]."
+   ]
+  },
+  {
+   "prompt": "Tulis pertanyaan yang tepat untuk tiap keperluan di loket.",
+   "items": [
+    "Kamu ingin tahu dokumen apa yang diperlukan.",
+    "Kamu ingin tahu berapa lama prosesnya.",
+    "Kamu ingin tahu apakah bisa diurus lewat internet.",
+    "Kamu ingin tahu berapa biayanya.",
+    "Kamu ingin tahu apa akibatnya kalau melewati batas waktu."
+   ]
+  },
+  {
+   "prompt": "Pilih kata yang tepat: [별도|byeoldo], [일체|ilche], [이내|inae], [이상|isang], [해지|haeji].",
+   "items": [
+    "[관리비|Gwallibi] ____ [입니다|imnida].",
+    "[수리비|Suribi] ____ [세입자 부담|seipja budam].",
+    "[십사 일|Sipsa il] ____ [에 신고해야 합니다|e singohaeya hamnida].",
+    "[만 십구 세|Man sipgu se] ____ [만 가입할 수 있습니다|man gaipal su itseumnida].",
+    "[중도|Jungdo] ____ [시 수수료가 발생합니다|si susuryoga balsaenghamnida]."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi ragam kontrak tertulis.",
+   "items": [
+    "[계약을 끊을 때는 두 달 치 월세를 내야 해요|Gyeyageul kkeuneul ttaeneun du dal chi wolsereul naeya haeyo].",
+    "[회원만 쓸 수 있어요|Hoewonman sseul su isseoyo].",
+    "[미리 알려 주세요|Miri allyeo juseyo].",
+    "[자연재해는 우리 책임이 아니에요|Jayeonjaehaeneun uri chaegimi anieyo].",
+    "[나갈 때 원래대로 해 놓아야 해요|Nagal ttae wollaedaero hae noaya haeyo]."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "명시되어 있나요 / 계약서에 / 그 조항이",
+    "부담하셔야 합니다 / 중도 해지 시에는 / 중개 수수료를",
+    "받아야 하나요 / 확정일자는 / 언제까지",
+    "처리해 드리겠습니다 / 체류지 변경 신고도 / 같이",
+    "걸리나요 / 처리 기간이 / 얼마나"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat untuk tiap keadaan.",
+   "items": [
+    "Kamu meminta agar janji lisan pemilik dituliskan ke ketentuan khusus.",
+    "Kamu meminta waktu satu hari untuk memeriksa kontrak sebelum menandatangani.",
+    "Kamu bertanya apakah surat keterangan bisa diterbitkan dalam bahasa Inggris.",
+    "Kamu memberi tahu petugas bahwa kamu pindah bulan lalu dan sudah melapor.",
+    "Kamu bertanya biaya perbaikan ditanggung siapa menurut kontrak."
+   ]
+  }
+ ],
+ "answers": [
+  "Pada saat pemutusan kontrak, dendanya ditetapkan sebesar sewa dua bulan. — Biaya pengelolaan terpisah, dan biaya air ditanggung penyewa. — Pada saat meninggalkan tempat, pemulihan seperti semula menjadi asasnya. — Niat perpanjangan wajib diberitahukan secara tertulis paling lambat tiga bulan sebelum kontrak berakhir. — Terhadap kerugian akibat bencana alam, tidak ditanggung tanggung jawab apa pun.",
+  "[어떤 서류가 필요한가요|Eotteon seoryuga piryohangayo]? — [처리 기간이 얼마나 걸리나요|Cheori gigani eolmana geollinayo]? — [인터넷으로도 가능한가요|Inteonesseurodo ganeunghangayo]? — [수수료가 얼마인가요|Susuryoga eolmaingayo]? — [기한이 지나면 어떻게 되나요|Gihani jinamyeon eotteoke doenayo]?",
+  "[별도|byeoldo] — [일체|ilche] — [이내|inae] — [이상|isang] — [해지|haeji]",
+  "[계약 해지 시 월세 이 개월분을 위약금으로 한다|Gyeyak haeji si wolse i gaewolbuneul wiyakgeumeuro handa]. — [회원에 한하여 이용할 수 있다|Hoewone hanhayeo iyonghal su itda]. — [사전에 통보하도록 한다|Sajeone tongbohadorok handa]. — [천재지변으로 인한 손해에 대하여는 책임을 지지 아니한다|Cheonjaejibyeoneuro inhan sonhaee daehayeoneun chaegimeul jiji anihanda]. — [퇴거 시 원상복구를 원칙으로 한다|Toegeo si wonsangbokgureul wonchigeuro handa].",
+  "[그 조항이 계약서에 명시되어 있나요|Geu johangi gyeyakseoe myeongsidoeeo innayo]? — [중도 해지 시에는 중개 수수료를 부담하셔야 합니다|Jungdo haeji sieneun junggae susuryoreul budamhasyeoya hamnida]. — [확정일자는 언제까지 받아야 하나요|Hwakjeongiljaneun eonjekkaji badaya hanayo]? — [체류지 변경 신고도 같이 처리해 드리겠습니다|Cheryuji byeongyeong singodo gachi cheorihae deurigetseumnida]. — [처리 기간이 얼마나 걸리나요|Cheori gigani eolmana geollinayo]?",
+  "Contoh／[방금 말씀하신 내용을 특약사항에 한 줄 넣어 주실 수 있을까요|Banggeum malsseumhasin naeyongeul teugyaksahange han jul neoeo jusil su isseulkkayo]? — Contoh／[하루만 검토해 보고 연락드려도 될까요|Haruman geomtohae bogo yeollakdeuryeodo doelkkayo]? — Contoh／[영문으로도 발급되나요|Yeongmuneurodo balgeupdoenayo]? — Contoh／[지난달에 이사했고 전입신고는 이미 마쳤습니다|Jinandare isahaetgo jeonipsingoneun imi machyeotseumnida]. — Contoh／[수리비는 누가 부담하는 걸로 되어 있습니까|Suribineun nuga budamhaneun geollo doeeo itseumnikka]?"
+ ],
+ "wave": "Kembali ke Unit 8 dan baca ulang bagian “syarat di ragam aturan”. Sekarang bandingkan pengumuman kantor yang tercetak di sana dengan kalimat kontrak di unit ini: keduanya memakai bentuk yang sama, tetapi kontrak menambahkan satu lapis lagi — **siapa yang menanggung**. Tandai subjek di tiap kalimat kontrak di unit ini. Sebagian di antaranya sengaja disembunyikan, dan itulah yang perlu kamu tanyakan."
+}

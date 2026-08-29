@@ -1,0 +1,833 @@
+{
+ "title": "Angka yang berbicara: rapat, grafik, dan laporan data",
+ "title_target": "[회의|Hoeui]와 [자료|jaryo]",
+ "goal": "Membaca dan menyampaikan grafik dalam bahasa Korea, memilih kata kerja naik-turun yang tepat menurut besarnya perubahan, dan membawakan presentasi lima menit dari pembuka sampai tanya jawab.",
+ "bekal": [
+  "menyebut kenaikan dan penurunan dengan kata kerja yang sesuai besarannya",
+  "membandingkan dengan [-에 비해|-e bihae], [-대비|-daebi], [-보다|-boda]",
+  "membedakan [퍼센트|peosenteu] dari [퍼센트포인트|peosenteupointeu]",
+  "menyatakan porsi dengan [차지하다|chajihada] dan [-을/를 기록하다|-eul/reul girokhada]",
+  "menutup presentasi dan menerima pertanyaan tanpa panik"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Membawakan angka di depan rapat",
+   "intro": "Ani mempresentasikan hasil kuartal. Perhatikan bahwa hampir tidak ada kalimat yang menyebut siapa yang melakukan apa — seluruh presentasi data Korea bergerak dalam ragam pasif dan ragam tulis.",
+   "lines": [
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[지금부터|Jigeumbuteo] [삼분기|sambungi] [실적을|siljeogeul] [보고드리겠습니다|bogodeurigetseumnida]. [자료는|Jaryoneun] [화면과|hwamyeongwa] [배포해|baepohae] [드린|deurin] [문서|munseo] [삼|sam] [쪽을|jjogeul] [봐|bwa] [주시기|jusigi] [바랍니다|baramnida].",
+     "id": "Mulai sekarang saya laporkan kinerja kuartal ketiga. Untuk bahannya, mohon lihat layar dan halaman tiga dokumen yang saya bagikan.",
+     "literal": "sekarang-dari — tiga-kuartal — kinerja-akan — laporan-beri(merendah)-akan. bahan-mengenai — layar-dan — bagikan — beri(merendah)-yang — dokumen — tiga — halaman-akan — lihat — beri(hormat)-hal — harap."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[먼저|Meonjeo] [전체|jeonche] [매출입니다|maechurimnida]. [전년|Jeonnyeon] [동기|donggi] [대비|daebi] [십이|sibi] [퍼센트|peosenteu] [증가한|jeunggahan] [사백오십억|sabaegosibeok] [원을|woneul] [기록했습니다|girokaetseumnida].",
+     "id": "Pertama, penjualan keseluruhan. Tercatat 45 miliar won, naik dua belas persen dibanding periode yang sama tahun lalu.",
+     "literal": "pertama — keseluruhan — penjualan-adalah. tahun-lalu — periode-sama — dibanding — dua-belas — persen — bertambah-yang — empat-ratus-lima-puluh-miliar — won-akan — catat-lampau."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[증가폭이|Jeunggapogi] [예상보다|yesangboda] [크네요|keuneyo]. [특정|Teukjeong] [제품|jepum] [영향입니까|yeonghyangimnikka]?",
+     "id": "Kenaikannya lebih besar daripada perkiraan, ya. Apakah pengaruh produk tertentu?",
+     "literal": "kenaikan-lebar-yang — perkiraan-daripada — besar. tertentu — produk — pengaruh-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[네|Ne], [신제품|sinjepum] [비중이|bijungi] [전체의|jeonchee] [삼십|samsip] [퍼센트를|peosenteureul] [차지했습니다|chajihaetseumnida]. [작년|Jangnyeon] [같은|gateun] [기간에는|giganeneun] [십사|sipsa] [퍼센트였으니까|peosenteuyeosseunikka] [십육|simnyuk] [퍼센트포인트|peosenteupointeu] [올랐습니다|ollatseumnida].",
+     "id": "Ya, porsi produk baru menempati tiga puluh persen dari keseluruhan. Karena periode yang sama tahun lalu empat belas persen, berarti naik enam belas poin persentase.",
+     "literal": "ya, produk-baru — porsi-yang — keseluruhan-nya — tiga-puluh — persen-akan — tempati-lampau. tahun-lalu — sama-yang — periode-pada-mengenai — empat-belas — persen-adalah-lampau-karena — enam-belas — poin-persentase — naik-lampau."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[반대로|Bandaero] [줄어든|jureodeun] [항목도|hangmokdo] [있습니까|itseumnikka]?",
+     "id": "Sebaliknya, apakah ada pos yang berkurang?",
+     "literal": "sebaliknya — berkurang-yang — pos-pun — ada-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[네|Ne], [오프라인|opeurain] [매장|maejang] [매출은|maechureun] [소폭|sopok] [감소했습니다|gamsohaetseumnida]. [다만|Daman] [온라인|ollain] [증가분이|jeunggabuni] [이를|ireul] [크게|keuge] [웃돌아|utdora] [전체적으로는|jeonchejeogeuroneun] [성장세를|seongjangsereul] [유지했습니다|yujihaetseumnida].",
+     "id": "Ya, penjualan gerai luring turun tipis. Hanya saja pertambahan daring jauh melampaui itu, sehingga secara keseluruhan tren pertumbuhan tetap terjaga.",
+     "literal": "ya, luring — gerai — penjualan-mengenai — sedikit — berkurang-lampau. hanya — daring — tambahan-yang — ini-akan — besar — lampaui — keseluruhan-secara-mengenai — pertumbuhan-tren-akan — pertahankan-lampau."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[사분기|Sabungi] [전망은|jeonmangeun] [어떻게|eotteoke] [보십니까|bosimnikka]?",
+     "id": "Bagaimana Anda melihat prospek kuartal keempat?",
+     "literal": "empat-kuartal — prospek-mengenai — bagaimana — lihat(hormat)-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[현재|Hyeonjae] [추세가|chusega] [이어진다면|ieojindamyeon] [연간|yeongan] [목표를|mokpyoreul] [소폭|sopok] [상회할|sanghoehal] [것으로|geoseuro] [보입니다|boimnida]. [다만|Daman] [원자재|wonjajae] [가격이|gagyeogi] [변수입니다|byeonsuimnida].",
+     "id": "Kalau tren saat ini berlanjut, tampaknya target tahunan akan sedikit terlampaui. Hanya saja harga bahan baku menjadi variabelnya.",
+     "literal": "sekarang — tren-yang — berlanjut-jika — tahunan — target-akan — sedikit — lampaui-akan — hal-menjadi — terlihat. hanya — bahan-baku — harga-yang — variabel-adalah."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[잘|Jal] [들었습니다|deureotseumnida]. [원자재|Wonjajae] [부분은|bubuneun] [따로|ttaro] [정리해서|jeongnihaeseo] [공유해|gongyuhae] [주시죠|jusijyo].",
+     "id": "Sudah saya simak. Bagian bahan baku tolong dirangkum terpisah lalu dibagikan.",
+     "literal": "baik — dengar-lampau. bahan-baku — bagian-mengenai — terpisah — rapikan-maka — bagikan — beri(hormat)-lah."
+    }
+   ],
+   "notes": [
+    "**[-아/어 주시기 바랍니다|-a/eo jusigi baramnida] adalah permintaan resmi yang paling baku dalam presentasi dan pengumuman.** Harfiahnya “saya berharap Anda …”. Ia lebih resmi daripada [-아/어 주세요|-a/eo juseyo] dan lebih halus daripada [-(으)십시오|-(eu)sipsio]. Bentuk tertulisnya di pengumuman: [-시기 바랍니다|-sigi baramnida].",
+    "**[전년 동기 대비|jeonnyeon donggi daebi] adalah rangkaian tetap yang wajib dihafal utuh.** “Dibanding periode yang sama tahun lalu”. Kembarannya: [전월 대비|jeonwol daebi] (dibanding bulan lalu), [전분기 대비|jeonbungi daebi] (dibanding kuartal lalu). Bentuk kata kerjanya: [-에 비해|-e bihae].",
+    "**[기록하다|girokhada] dipakai untuk angka hasil, bukan untuk pencatatan.** [사백오십억 원을 기록했습니다|Sabaegosibeok woneul girokaetseumnida] = “membukukan 45 miliar won”. Kata kerja ini muncul di hampir tiap laporan Korea, dan bunyinya jauh lebih resmi daripada [-이었습니다|-ieotseumnida].",
+    "**[퍼센트|peosenteu] lawan [퍼센트포인트|peosenteupointeu] — selisih yang membuat laporan salah.** Dari 14% ke 30% adalah kenaikan **16 poin persentase**, bukan 16 persen (persennya lebih dari seratus). Bahasa Korea membedakan keduanya dengan tegas, dan menukarnya di rapat akan langsung ditegur.",
+    "**[차지하다|chajihada] berarti “menempati porsi”, dan selalu berpasangan dengan [-을/를|-eul/reul].** [삼십 퍼센트를 차지했습니다|Samsip peosenteureul chajihaetseumnida]. Sinonimnya yang lebih tertulis: [-에 달하다|-e dalhada] (mencapai), [-을/를 점하다|-eul/reul jeomhada] (jarang, sangat resmi).",
+    "**[소폭|sopok] dan [대폭|daepok] adalah ukuran perubahan yang paling sering dipakai.** [소폭 감소|sopok gamso] (turun tipis), [대폭 증가|daepok jeungga] (naik tajam). Keduanya kata benda yang berfungsi seperti kata keterangan, dan ada dua lagi di antaranya: [소폭|sopok] < [완만하게|wanmanhage] < [크게|keuge] < [대폭|daepok] < [급격히|geupgyeokhi].",
+    "**[웃돌다|utdolda] dan [밑돌다|mitdolda] adalah pasangan yang khas laporan.** “Melampaui” dan “berada di bawah”. Kembaran sino-Koreanya: [상회하다|sanghoehada] dan [하회하다|hahoehada] — yang terakhir jauh lebih resmi dan hampir hanya muncul di laporan keuangan.",
+    "**[변수입니다|byeonsuimnida] adalah cara elegan mengatakan “ini bisa merusak semuanya”.** [변수|byeonsu] harfiahnya “variabel”. Menyebut sesuatu sebagai [변수|byeonsu] berarti kamu memberi peringatan tanpa meramalkan kegagalan — sangat berguna saat kamu tidak ingin menjanjikan apa pun."
+   ],
+   "grammars": [
+    {
+     "title": "Naik, turun, dan seberapa jauh",
+     "body": [
+      "Kata kerja perubahan dalam bahasa Korea membawa besarannya sendiri. Memakai [증가하다|jeunggahada] untuk lonjakan tajam tidak salah, tetapi terdengar seperti kamu tidak membaca datamu sendiri."
+     ],
+     "table": {
+      "head": [
+       "Arah",
+       "Kata kerja",
+       "Besaran",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "naik",
+        "[늘다|neulda] · [증가하다|jeunggahada]",
+        "netral",
+        "[매출이 증가하였다|Maechuri jeunggahayeotda]"
+       ],
+       [
+        "naik",
+        "[상승하다|sangseunghada]",
+        "harga, suhu, indeks",
+        "[물가가 상승하였다|Mulgaga sangseunghayeotda]"
+       ],
+       [
+        "naik",
+        "[급증하다|geupjeunghada] · [급등하다|geupdeunghada]",
+        "tajam",
+        "[민원이 급증하였다|Minwoni geupjeunghayeotda]"
+       ],
+       [
+        "naik",
+        "[웃돌다|utdolda] · [상회하다|sanghoehada]",
+        "melampaui patokan",
+        "[목표를 상회하였다|Mokpyoreul sanghoehayeotda]"
+       ],
+       [
+        "turun",
+        "[줄다|julda] · [감소하다|gamsohada]",
+        "netral",
+        "[주문이 감소하였다|Jumuni gamsohayeotda]"
+       ],
+       [
+        "turun",
+        "[하락하다|harakhada]",
+        "harga, indeks",
+        "[주가가 하락하였다|Jugaga harakhayeotda]"
+       ],
+       [
+        "turun",
+        "[급감하다|geupgamhada] · [폭락하다|pongnakhada]",
+        "tajam",
+        "[수요가 급감하였다|Suyoga geupgamhayeotda]"
+       ],
+       [
+        "turun",
+        "[밑돌다|mitdolda] · [하회하다|hahoehada]",
+        "di bawah patokan",
+        "[예상치를 밑돌았다|Yesangchireul mitdoratda]"
+       ],
+       [
+        "tetap",
+        "[유지되다|yujidoeda] · [보합세|bohapse]",
+        "tidak berubah",
+        "[전월 수준을 유지하였다|Jeonwol sujuneul yujihayeotda]"
+       ],
+       [
+        "berbalik",
+        "[반등하다|bandeunghada] · [둔화되다|dunhwadoeda]",
+        "pulih · melambat",
+        "[성장세가 둔화되었다|Seongjangsega dunhwadoeeotda]"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa laporan tertulis memakai [-하였다|-hayeotda], bukan [-했다|-haetda]. Bentuk panjang itu adalah penanda ragam laporan resmi; di presentasi lisan, [-했습니다|-haetseumnida] yang dipakai.",
+      "Untuk perbandingan, tiga bentuk yang paling sering: [-에 비해|-e bihae] (dibanding), [-대비|-daebi] (versus, di depan angka), dan [-보다|-boda] (daripada, paling sehari-hari). Yang pertama dan kedua sah di laporan; yang ketiga terlalu lisan."
+     ]
+    },
+    {
+     "title": "Menyebut angka besar tanpa tersandung",
+     "body": [
+      "Bahasa Korea memotong angka setiap **empat** digit, bukan tiga. Inilah sumber kesalahan paling sering bagi penutur bahasa yang memotong setiap tiga digit."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Korea",
+       "Cara mengucapkan"
+      ],
+      "rows": [
+       [
+        "10.000",
+        "[만|man]",
+        "[만 원|man won]"
+       ],
+       [
+        "100.000",
+        "[십만|simman]",
+        "[십만 원|simman won]"
+       ],
+       [
+        "1.000.000",
+        "[백만|baengman]",
+        "[백만 원|baengman won]"
+       ],
+       [
+        "10.000.000",
+        "[천만|cheonman]",
+        "[천만 원|cheonman won]"
+       ],
+       [
+        "100.000.000",
+        "[억|eok]",
+        "[일억 원|ireok won]"
+       ],
+       [
+        "4.500.000.000",
+        "[사십오억|sasibogeok]",
+        "[사십오억 원|sasibogeok won]"
+       ],
+       [
+        "1.000.000.000.000",
+        "[조|jo]",
+        "[일조 원|iljo won]"
+       ]
+      ]
+     },
+     "after": [
+      "Patokan yang menolong: **[억|eok] = seratus juta, [조|jo] = satu triliun.** Karena berita ekonomi Korea hampir selalu memakai [억|eok] dan [조|jo], dua kata ini pantas kamu hafal sekarang. Rupiah dan won kebetulan sepadan cukup dekat: satu [억|eok] won kira-kira 1,1 miliar rupiah.",
+      "Dua hal lagi. **Pecahan** dibaca terbalik: [삼분의 이|sambunui i] = dua pertiga (harfiahnya “dari tiga bagian, dua”). **Kelipatan** memakai [배|bae]: [두 배|du bae] (dua kali lipat), [세 배로 늘었다|se baero neureotda] (naik tiga kali lipat)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Latihan sebelum presentasi",
+   "intro": "Sehari sebelumnya, 지훈 mendengarkan latihan Ani. Ini bukan tentang tata bahasa lagi, melainkan tentang susunan.",
+   "lines": [
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[내용은|Naeyongeun] [충분해요|chungbunhaeyo]. [근데|Geunde] [숫자를|sutjareul] [너무|neomu] [많이|mani] [읽어요|ilgeoyo].",
+     "id": "Isinya sudah cukup. Tapi Anda membaca terlalu banyak angka.",
+     "literal": "isi-mengenai — cukup. tetapi — angka-akan — terlalu — banyak — baca."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[자료에|Jaryoe] [있는|inneun] [건|geon] [다|da] [말해야|malhaeya] [되는|doeneun] [줄|jul] [알았어요|arasseoyo].",
+     "id": "Saya kira semua yang ada di bahan harus disebutkan.",
+     "literal": "bahan-di — ada-yang — hal-mengenai — semua — katakan-harus — jadi-yang — hal-akan — tahu-lampau."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[반대예요|Bandaeyeyo]. [자료에|Jaryoe] [있으니까|isseunikka] [안|an] [읽어도|ilgeodo] [돼요|dwaeyo]. [말로는|Malloneun] [세|se] [가지만|gajiman] [남기세요|namgiseyo].",
+     "id": "Sebaliknya. Justru karena sudah ada di bahan, tidak perlu dibaca. Secara lisan sisakan tiga hal saja.",
+     "literal": "kebalikan-adalah. bahan-di — ada-karena — tidak — baca-pun — jadi. lisan-dengan-mengenai — tiga — macam-saja — sisakan-lah."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[어떤|Eotteon] [세|se] [가지요|gajiyo]?",
+     "id": "Tiga hal yang mana?",
+     "literal": "bagaimana — tiga — macam-kah?"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[가장|Gajang] [크게|keuge] [변한|byeonhan] [것|geot] [하나|hana], [의외였던|uioeyeotdeon] [것|geot] [하나|hana], [그리고|geurigo] [다음에|daeume] [뭘|mwol] [할지|halji] [하나|hana].",
+     "id": "Satu hal yang berubah paling besar, satu hal yang di luar dugaan, dan satu hal tentang apa yang akan dilakukan berikutnya.",
+     "literal": "paling — besar — berubah-yang — hal — satu, di-luar-dugaan-lampau-yang — hal — satu, dan — berikut-pada — apa-akan — lakukan-mengenai — satu."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[질문|Jilmun] [들어오면|deureoomyeon] [어떡하죠|eotteokajyo]? [모르는|Moreuneun] [게|ge] [나오면|naomyeon] [당황할|danghwanghal] [것|geot] [같아요|gatayo].",
+     "id": "Kalau ada pertanyaan bagaimana? Kalau muncul yang tidak saya tahu, sepertinya saya akan panik.",
+     "literal": "pertanyaan — masuk-datang-jika — bagaimana-lakukan-lah? tidak-tahu-yang — hal-yang — keluar-jika — panik-akan — hal — sama."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[모르면|Moreumyeon] [모른다고|moreundago] [하면|hamyeon] [돼요|dwaeyo]. [“확인해서 회신드리겠습니다”|Hwaginhaeseo hoesindeurigetseumnida] [한|han] [마디면|madimyeon] [끝나요|kkeunnayo]. [지어내는|Jieonaeneun] [게|ge] [제일|jeil] [위험해요|wiheomhaeyo].",
+     "id": "Kalau tidak tahu, tinggal bilang tidak tahu. Satu kalimat “akan saya periksa lalu balas” sudah selesai. Mengarang itu yang paling berbahaya.",
+     "literal": "tidak-tahu-jika — tidak-tahu-berkata — lakukan-jika — jadi. periksa-maka — balasan-beri(merendah)-akan — satu — patah-kata-jika — berakhir. karang-yang — hal-yang — paling — berbahaya."
+    }
+   ],
+   "notes": [
+    "**[-는 줄 알았어요|-neun jul arasseoyo] berarti “saya kira (ternyata salah)”.** Pola ini hampir selalu menandai anggapan yang keliru. Kembarannya: [-는 줄 몰랐어요|-neun jul mollasseoyo] (“saya tidak tahu bahwa …”, ternyata benar).",
+    "**Nasihat 지훈 berlaku di luar bahasa Korea, tetapi bentuknya sangat Korea.** Presentasi Korea memisahkan **dokumen** dari **ucapan** dengan tegas: dokumen memuat semuanya, ucapan memuat tiga hal. Membacakan slide dianggap tanda bahwa pembicara tidak menguasai bahannya.",
+    "**[어떡하죠|Eotteokajyo]? adalah [어떻게 하죠|eotteoke hajyo]? yang dipendekkan.** Salah satu pemendekan lisan yang paling sering, dan boleh dipakai di lingkungan kerja yang tidak terlalu resmi. Bentuk penuhnya tetap wajib di tulisan.",
+    "**[확인해서 회신드리겠습니다|Hwaginhaeseo hoesindeurigetseumnida] adalah kalimat penyelamat.** Ia sopan, tegas, dan menutup pertanyaan tanpa mengaku bodoh. Kembarannya di rapat: [그 부분은 별도로 확인하겠습니다|Geu bubuneun byeoldoro hwaginhagetseumnida]."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa presentasi: dari pembuka sampai tanya jawab",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Presentasi Korea punya kerangka kalimat yang hampir tidak berubah dari satu perusahaan ke perusahaan lain. Menghafalnya berarti kamu tidak perlu memikirkan bentuk sama sekali dan bisa memusatkan perhatian pada isinya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Kalimat baku"
+     ],
+     "rows": [
+      [
+       "Pembuka",
+       "[지금부터 OO에 대해 보고드리겠습니다|Jigeumbuteo OOe daehae bogodeurigetseumnida]."
+      ],
+      [
+       "Kerangka",
+       "[크게 세 가지로 나누어 말씀드리겠습니다|Keuge se gajiro nanueo malsseumdeurigetseumnida]."
+      ],
+      [
+       "Menunjuk bahan",
+       "[화면을 봐 주시기 바랍니다|Hwamyeoneul bwa jusigi baramnida]."
+      ],
+      [
+       "Pindah bagian",
+       "[다음은 OO입니다|Daeumeun OOimnida]."
+      ],
+      [
+       "Menonjolkan",
+       "[여기서 주목하실 부분은|Yeogiseo jumokhasil bubuneun] …"
+      ],
+      [
+       "Menjelaskan sebab",
+       "[그 배경으로는 두 가지를 들 수 있습니다|Geu baegyeongeuroneun du gajireul deul su itseumnida]."
+      ],
+      [
+       "Merangkum",
+       "[정리하자면|Jeongnihajamyeon] …"
+      ],
+      [
+       "Usul",
+       "[따라서 OO을 제안드립니다|Ttaraseo OOeul jeandeurimnida]."
+      ],
+      [
+       "Menutup",
+       "[이상입니다|Isangimnida]."
+      ],
+      [
+       "Membuka tanya jawab",
+       "[질문 있으시면 말씀해 주십시오|Jilmun isseusimyeon malsseumhae jusipsio]."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua di antaranya pantas diperhatikan. **[이상입니다|Isangimnida]** adalah penutup baku yang harfiahnya “demikian”; tanpa kalimat ini, hadirin tidak tahu presentasimu sudah selesai. Dan **[크게 -로 나누어|keuge -ro nanueo]** di awal — menyebut jumlah bagian sebelum mulai — dianggap tanda pembicara yang siap."
+    },
+    {
+     "type": "sub",
+     "text": "Menjawab pertanyaan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Keadaan",
+      "Yang diucapkan"
+     ],
+     "rows": [
+      [
+       "Pertanyaan tidak jelas",
+       "[질문을 제가 제대로 이해했는지 확인하고 싶습니다|Jilmuneul jega jedaero ihaehaenneunji hwaginhago sipseumnida]."
+      ],
+      [
+       "Tahu jawabannya",
+       "[네, 그 부분은|Ne, geu bubuneun] …"
+      ],
+      [
+       "Tidak tahu",
+       "[확인해서 회신드리겠습니다|Hwaginhaeseo hoesindeurigetseumnida]."
+      ],
+      [
+       "Di luar lingkup",
+       "[그 부분은 저희 팀 소관이 아니라 별도로 확인이 필요합니다|Geu bubuneun jeohui tim sogwani anira byeoldoro hwagini piryohamnida]."
+      ],
+      [
+       "Tidak setuju",
+       "[그렇게 볼 수도 있겠습니다만|Geureoke bol sudo itgetseumnidaman] …"
+      ],
+      [
+       "Menutup jawaban",
+       "[답변이 되었을까요|Dapbyeoni doeeosseulkkayo]?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir adalah kebiasaan Korea yang jarang ada di tempat lain: sesudah menjawab, penjawab **memastikan** bahwa jawabannya menjawab. [답변이 되었을까요|Dapbyeoni doeeosseulkkayo]? menyerahkan penilaian kepada penanya, dan itu menutup pertukaran dengan rapi."
+    }
+   ]
+  },
+  {
+   "title": "Kosakata grafik: tiga puluh kata yang menutup hampir semuanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kosakata di bawah ini akan muncul di hampir setiap laporan, berita ekonomi, dan soal TOPIK tingkat lanjut. Ia layak dihafal sebagai satu blok."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk grafik",
+      "Korea",
+      "Bagian grafik",
+      "Korea"
+     ],
+     "rows": [
+      [
+       "grafik batang",
+       "[막대그래프|makdaegeuraepeu]",
+       "sumbu datar",
+       "[가로축|garochuk]"
+      ],
+      [
+       "grafik garis",
+       "[꺾은선그래프|kkeokkeunseongeuraepeu]",
+       "sumbu tegak",
+       "[세로축|serochuk]"
+      ],
+      [
+       "grafik lingkaran",
+       "[원그래프|wongeuraepeu]",
+       "satuan",
+       "[단위|danwi]"
+      ],
+      [
+       "tabel",
+       "[표|pyo]",
+       "keterangan",
+       "[범례|beomnye]"
+      ],
+      [
+       "diagram",
+       "[도표|dopyo]",
+       "sumber",
+       "[출처|chulcheo]"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Kata",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "[비중|bijung]",
+       "porsi",
+       "[추세|chuse]",
+       "tren"
+      ],
+      [
+       "[증가폭|jeunggapok]",
+       "besar kenaikan",
+       "[변동|byeondong]",
+       "fluktuasi"
+      ],
+      [
+       "[감소세|gamsose]",
+       "tren menurun",
+       "[격차|gyeokcha]",
+       "kesenjangan"
+      ],
+      [
+       "[평균|pyeonggyun]",
+       "rata-rata",
+       "[최고치|choegochi]",
+       "nilai tertinggi"
+      ],
+      [
+       "[누적|nujeok]",
+       "kumulatif",
+       "[최저치|choejeochi]",
+       "nilai terendah"
+      ],
+      [
+       "[전년|jeonnyeon]",
+       "tahun lalu",
+       "[예상치|yesangchi]",
+       "angka perkiraan"
+      ],
+      [
+       "[분기|bungi]",
+       "kuartal",
+       "[실적|siljeok]",
+       "kinerja, capaian"
+      ],
+      [
+       "[상반기|sangbangi]",
+       "semester pertama",
+       "[목표치|mokpyochi]",
+       "angka target"
+      ],
+      [
+       "[하반기|habangi]",
+       "semester kedua",
+       "[점유율|jeomyuyul]",
+       "pangsa pasar"
+      ],
+      [
+       "[연간|yeongan]",
+       "tahunan",
+       "[증감률|jeunggamnyul]",
+       "laju perubahan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat kalimat yang bisa kamu tempel ke grafik apa pun",
+     "items": [
+      "[가로축은 연도를, 세로축은 매출액을 나타냅니다|Garochugeun yeondoreul, serochugeun maechuraegeul natanaemnida].",
+      "[이 구간에서 가장 큰 변화가 나타났습니다|I guganeseo gajang keun byeonhwaga natanatseumnida].",
+      "[전년 동기 대비 십이 퍼센트 증가한 수치입니다|Jeonnyeon donggi daebi sibi peosenteu jeunggahan suchiimnida].",
+      "[이 추세가 이어진다면 목표를 상회할 것으로 보입니다|I chusega ieojindamyeon mokpyoreul sanghoehal geoseuro boimnida]."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "실적",
+   "baca": "siljeok",
+   "id": "kinerja, capaian 【문】"
+  },
+  {
+   "ko": "분기",
+   "baca": "bungi",
+   "id": "kuartal 【문】"
+  },
+  {
+   "ko": "전년 동기 대비",
+   "baca": "jeonnyeon donggi daebi",
+   "id": "dibanding periode sama tahun lalu 【문】"
+  },
+  {
+   "ko": "-에 비해",
+   "baca": "-e bihae",
+   "id": "dibanding 【문】"
+  },
+  {
+   "ko": "기록하다",
+   "baca": "girokhada",
+   "id": "membukukan (angka) 【문】"
+  },
+  {
+   "ko": "차지하다",
+   "baca": "chajihada",
+   "id": "menempati porsi"
+  },
+  {
+   "ko": "비중",
+   "baca": "bijung",
+   "id": "porsi, bobot 【문】"
+  },
+  {
+   "ko": "증가폭",
+   "baca": "jeunggapok",
+   "id": "besaran kenaikan 【문】"
+  },
+  {
+   "ko": "퍼센트포인트",
+   "baca": "peosenteupointeu",
+   "id": "poin persentase"
+  },
+  {
+   "ko": "소폭",
+   "baca": "sopok",
+   "id": "tipis, kecil 【문】"
+  },
+  {
+   "ko": "대폭",
+   "baca": "daepok",
+   "id": "besar-besaran 【문】"
+  },
+  {
+   "ko": "급격히",
+   "baca": "geupgyeokhi",
+   "id": "secara tajam 【문】"
+  },
+  {
+   "ko": "증가하다",
+   "baca": "jeunggahada",
+   "id": "bertambah 【문】"
+  },
+  {
+   "ko": "감소하다",
+   "baca": "gamsohada",
+   "id": "berkurang 【문】"
+  },
+  {
+   "ko": "상승하다",
+   "baca": "sangseunghada",
+   "id": "naik (harga) 【문】"
+  },
+  {
+   "ko": "하락하다",
+   "baca": "harakhada",
+   "id": "turun (harga) 【문】"
+  },
+  {
+   "ko": "급증하다",
+   "baca": "geupjeunghada",
+   "id": "melonjak 【문】"
+  },
+  {
+   "ko": "급감하다",
+   "baca": "geupgamhada",
+   "id": "anjlok 【문】"
+  },
+  {
+   "ko": "웃돌다",
+   "baca": "utdolda",
+   "id": "melampaui"
+  },
+  {
+   "ko": "밑돌다",
+   "baca": "mitdolda",
+   "id": "berada di bawah"
+  },
+  {
+   "ko": "상회하다",
+   "baca": "sanghoehada",
+   "id": "melampaui 【문】"
+  },
+  {
+   "ko": "하회하다",
+   "baca": "hahoehada",
+   "id": "di bawah 【문】"
+  },
+  {
+   "ko": "유지하다",
+   "baca": "yujihada",
+   "id": "mempertahankan"
+  },
+  {
+   "ko": "둔화되다",
+   "baca": "dunhwadoeda",
+   "id": "melambat 【문】"
+  },
+  {
+   "ko": "반등하다",
+   "baca": "bandeunghada",
+   "id": "berbalik naik 【문】"
+  },
+  {
+   "ko": "추세",
+   "baca": "chuse",
+   "id": "tren 【문】"
+  },
+  {
+   "ko": "성장세",
+   "baca": "seongjangse",
+   "id": "tren pertumbuhan 【문】"
+  },
+  {
+   "ko": "변수",
+   "baca": "byeonsu",
+   "id": "variabel, faktor tak pasti"
+  },
+  {
+   "ko": "원자재",
+   "baca": "wonjajae",
+   "id": "bahan baku 【문】"
+  },
+  {
+   "ko": "매장",
+   "baca": "maejang",
+   "id": "gerai, toko"
+  },
+  {
+   "ko": "점유율",
+   "baca": "jeomyuyul",
+   "id": "pangsa pasar 【문】"
+  },
+  {
+   "ko": "평균",
+   "baca": "pyeonggyun",
+   "id": "rata-rata"
+  },
+  {
+   "ko": "누적",
+   "baca": "nujeok",
+   "id": "kumulatif 【문】"
+  },
+  {
+   "ko": "격차",
+   "baca": "gyeokcha",
+   "id": "kesenjangan 【문】"
+  },
+  {
+   "ko": "최고치",
+   "baca": "choegochi",
+   "id": "nilai tertinggi 【문】"
+  },
+  {
+   "ko": "최저치",
+   "baca": "choejeochi",
+   "id": "nilai terendah 【문】"
+  },
+  {
+   "ko": "예상치",
+   "baca": "yesangchi",
+   "id": "angka perkiraan 【문】"
+  },
+  {
+   "ko": "목표치",
+   "baca": "mokpyochi",
+   "id": "angka target 【문】"
+  },
+  {
+   "ko": "가로축",
+   "baca": "garochuk",
+   "id": "sumbu datar"
+  },
+  {
+   "ko": "세로축",
+   "baca": "serochuk",
+   "id": "sumbu tegak"
+  },
+  {
+   "ko": "막대그래프",
+   "baca": "makdaegeuraepeu",
+   "id": "grafik batang"
+  },
+  {
+   "ko": "꺾은선그래프",
+   "baca": "kkeokkeunseongeuraepeu",
+   "id": "grafik garis"
+  },
+  {
+   "ko": "단위",
+   "baca": "danwi",
+   "id": "satuan"
+  },
+  {
+   "ko": "출처",
+   "baca": "chulcheo",
+   "id": "sumber 【문】"
+  },
+  {
+   "ko": "나타나다",
+   "baca": "natanada",
+   "id": "muncul, terlihat 【문】"
+  },
+  {
+   "ko": "나타내다",
+   "baca": "natanaeda",
+   "id": "menunjukkan 【문】"
+  },
+  {
+   "ko": "배포하다",
+   "baca": "baepohada",
+   "id": "membagikan 【문】"
+  },
+  {
+   "ko": "제안하다",
+   "baca": "jeanhada",
+   "id": "mengusulkan 【문】"
+  },
+  {
+   "ko": "이상입니다",
+   "baca": "isangimnida",
+   "id": "demikian (penutup presentasi)"
+  },
+  {
+   "ko": "당황하다",
+   "baca": "danghwanghada",
+   "id": "panik, gelagapan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih kata kerja perubahan yang paling sesuai dengan besarannya.",
+   "items": [
+    "[매출이 작년보다 이 퍼센트|Maechuri jangnyeonboda i peosenteu] ____ .",
+    "[민원이 지난달의 다섯 배로|Minwoni jinandarui daseot baero] ____ .",
+    "[주가가 하루 만에 삼십 퍼센트|Jugaga haru mane samsip peosenteu] ____ .",
+    "[매출이 목표를 조금|Maechuri mokpyoreul jogeum] ____ .",
+    "[성장 속도가 예전보다|Seongjang sokdoga yejeonboda] ____ ."
+   ]
+  },
+  {
+   "prompt": "Tulis angka berikut dalam bahasa Korea.",
+   "items": [
+    "45.000.000.000 won",
+    "1.200.000 won",
+    "3.000.000.000.000 won",
+    "dua pertiga",
+    "naik tiga kali lipat"
+   ]
+  },
+  {
+   "prompt": "Perbaiki kesalahan dalam kalimat laporan berikut.",
+   "items": [
+    "[점유율이 십사 퍼센트에서 삼십 퍼센트로 십육 퍼센트 올랐습니다|Jeomyuyuri sipsa peosenteueseo samsip peosenteuro simnyuk peosenteu ollatseumnida].",
+    "[작년보다 매출이 많이 늘었어요|Jangnyeonboda maechuri mani neureosseoyo]. (untuk laporan tertulis)",
+    "[신제품이 삼십 퍼센트를 차지되었습니다|Sinjepumi samsip peosenteureul chajidoeeotseumnida].",
+    "[온라인 매출은 오프라인을 밑돌아서 전체가 늘었습니다|Ollain maechureun opeuraineul mitdoraseo jeonchega neureotseumnida].",
+    "[자료에 있는 것을 전부 읽겠습니다|Jaryoe inneun geoseul jeonbu ilgetseumnida]."
+   ]
+  },
+  {
+   "prompt": "Isi kerangka presentasi dengan kalimat bakunya.",
+   "items": [
+    "Membuka laporan tentang kinerja kuartal ketiga.",
+    "Menyatakan bahwa kamu akan membaginya menjadi tiga bagian.",
+    "Meminta hadirin melihat layar.",
+    "Menutup presentasi.",
+    "Membuka sesi tanya jawab."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "기록했습니다 / 십이 퍼센트 / 전년 동기 대비 / 증가한 사백오십억 원을",
+    "차지했습니다 / 신제품 비중이 / 삼십 퍼센트를 / 전체의",
+    "유지했습니다 / 전체적으로는 / 성장세를",
+    "보입니다 / 이어진다면 / 목표를 상회할 것으로 / 현재 추세가",
+    "회신드리겠습니다 / 확인해서"
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat laporan untuk tiap keadaan.",
+   "items": [
+    "Penjualan daring naik tajam sementara gerai luring turun tipis.",
+    "Pangsa pasar mencapai dua puluh persen, tertinggi sejak berdiri.",
+    "Kalau tren ini berlanjut, target tahunan diperkirakan terlampaui.",
+    "Harga bahan baku menjadi variabel yang belum bisa dipastikan.",
+    "Kamu diminta merangkum bagian itu terpisah dan membagikannya besok."
+   ]
+  }
+ ],
+ "answers": [
+  "[증가하였다|jeunggahayeotda] (atau [늘었다|neureotda]) — [급증하였다|geupjeunghayeotda] — [폭락하였다|pongnakhayeotda] — [웃돌았다|utdoratda] (atau [상회하였다|sanghoehayeotda]) — [둔화되었다|dunhwadoeeotda]",
+  "[사백오십억 원|sabaegosibeok won] — [백이십만 원|baegisimman won] — [삼조 원|samjo won] — [삼분의 이|sambunui i] — [세 배로 늘었다|se baero neureotda]",
+  "[십육 퍼센트포인트 올랐습니다|simnyuk peosenteupointeu ollatseumnida] — [전년 대비 매출이 크게 증가하였다|Jeonnyeon daebi maechuri keuge jeunggahayeotda] — [삼십 퍼센트를 차지했습니다|samsip peosenteureul chajihaetseumnida] ([차지하다|chajihada] tidak dipasifkan) — [온라인 매출이 오프라인 감소분을 웃돌아 전체가 늘었습니다|Ollain maechuri opeurain gamsobuneul utdora jeonchega neureotseumnida] — [자료에 있는 내용은 생략하고 세 가지만 말씀드리겠습니다|Jaryoe inneun naeyongeun saengnyakhago se gajiman malsseumdeurigetseumnida]",
+  "[지금부터 삼분기 실적을 보고드리겠습니다|Jigeumbuteo sambungi siljeogeul bogodeurigetseumnida]. — [크게 세 가지로 나누어 말씀드리겠습니다|Keuge se gajiro nanueo malsseumdeurigetseumnida]. — [화면을 봐 주시기 바랍니다|Hwamyeoneul bwa jusigi baramnida]. — [이상입니다|Isangimnida]. — [질문 있으시면 말씀해 주십시오|Jilmun isseusimyeon malsseumhae jusipsio].",
+  "[전년 동기 대비 십이 퍼센트 증가한 사백오십억 원을 기록했습니다|Jeonnyeon donggi daebi sibi peosenteu jeunggahan sabaegosibeok woneul girokaetseumnida]. — [신제품 비중이 전체의 삼십 퍼센트를 차지했습니다|Sinjepum bijungi jeonchee samsip peosenteureul chajihaetseumnida]. — [전체적으로는 성장세를 유지했습니다|Jeonchejeogeuroneun seongjangsereul yujihaetseumnida]. — [현재 추세가 이어진다면 목표를 상회할 것으로 보입니다|Hyeonjae chusega ieojindamyeon mokpyoreul sanghoehal geoseuro boimnida]. — [확인해서 회신드리겠습니다|Hwaginhaeseo hoesindeurigetseumnida].",
+  "Contoh／[온라인 매출은 급증한 반면 오프라인 매장 매출은 소폭 감소하였다|Ollain maechureun geupjeunghan banmyeon opeurain maejang maechureun sopok gamsohayeotda]. — Contoh／[점유율은 이십 퍼센트에 이르러 창사 이래 최고치를 기록하였다|Jeomyuyureun isip peosenteue ireureo changsa irae choegochireul girokhayeotda]. — Contoh／[현재 추세가 이어진다면 연간 목표를 상회할 것으로 전망된다|Hyeonjae chusega ieojindamyeon yeongan mokpyoreul sanghoehal geoseuro jeonmangdoenda]. — Contoh／[원자재 가격은 아직 예측하기 어려운 변수이다|Wonjajae gagyeogeun ajik yecheukhagi eoryeoun byeonsuida]. — Contoh／[해당 부분은 따로 정리하여 내일 공유드리겠습니다|Haedang bubuneun ttaro jeongnihayeo naeil gongyudeurigetseumnida]."
+ ],
+ "wave": "Cari satu berita ekonomi Korea hari ini yang memuat angka, lalu kerjakan dua hal. Tandai tiap kata kerja perubahan yang dipakai, dan periksa apakah penulisnya memakai [퍼센트|peosenteu] atau [퍼센트포인트|peosenteupointeu] — dan apakah pilihannya benar. Media Korea pun kadang keliru di titik ini, dan menemukannya adalah tanda bahwa kamu membaca dengan mata yang tepat."
+}

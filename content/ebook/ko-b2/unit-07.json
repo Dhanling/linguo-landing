@@ -1,0 +1,756 @@
+{
+ "title": "Sebab yang membawa penilaian: untung, rugi, dan salah siapa",
+ "title_target": "[원인|Wonin]과 [근거|geungeo]",
+ "goal": "Memilih di antara sepuluh penghubung sebab yang semuanya berarti “karena”, tetapi masing-masing diam-diam menyatakan apakah akibatnya baik, buruk, atau siapa yang harus disalahkan.",
+ "bekal": [
+  "membedakan [-아/어서|-a/eoseo] dan [-(으)니까|-(eu)nikka] beserta larangan-larangannya",
+  "memakai [-는 바람에|-neun barame], [-느라고|-neurago], dan [-는 통에|-neun tonge]",
+  "menandai untung dan rugi dengan [덕분에|deokbune] dan [탓에|tase]",
+  "menulis sebab di ragam laporan dengan [-(으)로 인해|-(eu)ro inhae] dan [-에 따라|-e ttara]",
+  "memakai [-길래|-gillae] untuk sebab yang datang dari luar diri"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Terlambat, dan menjelaskannya",
+   "intro": "Ani terlambat empat puluh menit ke rapat pagi. Dalam sembilan baris ini muncul enam bentuk sebab yang berbeda, dan tidak satu pun bisa ditukar dengan yang lain.",
+   "lines": [
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[늦어서|Neujeoseo] [죄송합니다|joesonghamnida]. [지하철이|Jihacheori] [고장|gojang] [나는|naneun] [바람에|barame] [사십|sasip] [분이나|bunina] [걸렸습니다|geollyeotseumnida].",
+     "id": "Maaf saya terlambat. Gara-gara keretanya rusak, saya terlambat sampai empat puluh menit.",
+     "literal": "terlambat-maka — maaf. kereta-bawah-tanah-yang — kerusakan — keluar-yang — akibat — empat-puluh — menit-sebanyak — makan-waktu-lampau."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[아|A], [뉴스에서|nyuseueseo] [봤습니다|bwatseumnida]. [사고가|Sagoga] [났다고|natdago] [하더군요|hadeogunnyo].",
+     "id": "Ah, saya lihat di berita. Katanya ada kecelakaan.",
+     "literal": "ah, berita-di — lihat-lampau. kecelakaan-yang — keluar-lampau-berkata — lakukan-ternyata."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[네|Ne], [사람이|sarami] [워낙|wanak] [몰리는|mollineun] [통에|tonge] [역|yeok] [밖으로|bakkeuro] [나가지도|nagajido] [못했습니다|motaetseumnida].",
+     "id": "Ya, karena orang berdesakan luar biasa, saya bahkan tidak bisa keluar dari stasiun.",
+     "literal": "ya, orang-yang — sangat — berkerumun-yang — kegaduhan — stasiun — luar-ke — keluar-pun — tidak-bisa-lampau."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[연락|Yeollak] [주시지|jusiji] [그러셨어요|geureosyeosseoyo].",
+     "id": "Harusnya Anda menghubungi saja.",
+     "literal": "hubungan — beri(hormat)-mengenai — begitu(hormat)-lampau."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[사람들|Saramdeul] [틈에|teume] [끼여|kkiyeo] [있느라고|inneurago] [핸드폰을|haendeuponeul] [꺼낼|kkeonael] [수가|suga] [없었어요|eopseosseoyo].",
+     "id": "Karena sedang terjepit di antara orang-orang, saya tidak bisa mengeluarkan ponsel.",
+     "literal": "orang-orang — celah-di — terjepit — ada-karena — ponsel-akan — keluarkan-akan — kemungkinan-yang — tidak-ada-lampau."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[괜찮습니다|Gwaenchanseumnida]. [어차피|Eochapi] [자료가|jaryoga] [늦게|neutge] [올라온|ollaon] [탓에|tase] [저희도|jeohuido] [십|sip] [분|bun] [늦게|neutge] [시작했습니다|sijakaetseumnida].",
+     "id": "Tidak apa-apa. Lagi pula gara-gara bahannya diunggah terlambat, kami juga mulai sepuluh menit lebih lambat.",
+     "literal": "tidak-apa-apa. bagaimanapun — bahan-yang — terlambat — naik-datang-yang — kesalahan-pada — kami-pun — sepuluh — menit — terlambat — mulai-lampau."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[아|A], [그건|geugeon] [제|je] [책임입니다|chaegimimnida]. [어제|Eoje] [수정하느라고|sujeonghaneurago] [늦게|neutge] [올렸습니다|ollyeotseumnida].",
+     "id": "Ah, itu tanggung jawab saya. Kemarin karena sibuk merevisi, saya mengunggahnya terlambat.",
+     "literal": "ah, itu-mengenai — saya — tanggung-jawab-adalah. kemarin — revisi-lakukan-karena — terlambat — naikkan-lampau."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[덕분에|Deokbune] [숫자가|sutjaga] [정확해졌으니까|jeonghwakaejyeosseunikka] [그건|geugeon] [잘한|jalhan] [겁니다|geomnida].",
+     "id": "Berkat itu angkanya jadi akurat, jadi itu justru bagus.",
+     "literal": "berkat-pada — angka-yang — akurat-menjadi-lampau-karena — itu-mengenai — baik-lakukan-yang — hal."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[감사합니다|Gamsahamnida]. [바로|Baro] [이어서|ieoseo] [보고드리겠습니다|bogodeurigetseumnida].",
+     "id": "Terima kasih. Saya lanjutkan langsung dengan laporannya.",
+     "literal": "terima-kasih. langsung — lanjut-maka — laporan-beri(merendah)-akan."
+    }
+   ],
+   "notes": [
+    "**[늦어서 죄송합니다|Neujeoseo joesonghamnida] — hanya [-아/어서|-a/eoseo] yang boleh di sini.** Ini salah satu aturan tetap: ungkapan terima kasih dan permintaan maaf **selalu** memakai [-아/어서|-a/eoseo], tidak pernah [-(으)니까|-(eu)nikka]. [늦으니까 죄송합니다|Neujeunikka joesonghamnida] terdengar seperti kamu menjelaskan alasan kepada orang yang tidak berhak marah.",
+    "**[-는 바람에|-neun barame] selalu membawa akibat yang tidak diinginkan, dan sebabnya di luar kendalimu.** [바람|baram] di sini berarti “angin, dorongan mendadak”. Ia tidak bisa dipakai untuk akibat baik: [일찍 일어나는 바람에 기차를 탔어요|Iljjik ireonaneun barame gichareul tasseoyo] terdengar salah.",
+    "**[-는 통에|-neun tonge] mirip, tetapi menuntut kegaduhan.** Bedanya dengan [-는 바람에|-neun barame]: [통|tong] menyiratkan keributan, kerumunan, kekacauan. Kalau sebabnya sunyi — mesin rusak, listrik padam — pakailah [바람에|barame]; kalau sebabnya ramai — orang berdesakan, anak menangis, hujan deras — [통에|tonge] lebih tepat.",
+    "**[-느라고|-neurago] menuntut pelaku yang sama dan waktu yang bertumpang tindih.** Dua kalimatnya harus dilakukan **orang yang sama** dan **pada saat yang sama**. [동생이 자느라고 제가 못 갔어요|Dongsaengi janeurago jega mot gasseoyo] salah, karena pelakunya berbeda. Akibatnya hampir selalu negatif: sesuatu tidak jadi dikerjakan.",
+    "**[-지 그러셨어요|-ji geureosyeosseoyo] adalah teguran halus berbentuk saran yang terlambat.** Artinya “harusnya kamu …”. Bentuk sekarangnya [-지 그래요|-ji geuraeyo]? berarti saran: [좀 쉬지 그래요|Jom swiji geuraeyo]? Keduanya hanya dipakai kepada yang setara atau lebih muda; kepada atasan gantinya [-(으)시지 그러셨어요|-(eu)siji geureosyeosseoyo] pun tetap terlalu berani.",
+    "**[탓에|tase] menunjuk kesalahan, [덕분에|deokbune] menunjuk jasa.** Keduanya kata benda, jadi dipasang sesudah [-(으)ㄴ/는|-(eu)n/neun] atau langsung sesudah kata benda: [비 탓에|bi tase], [선생님 덕분에|seonsaengnim deokbune]. Menukarnya menghasilkan lelucon yang tidak lucu — [부장님 탓에 승진했습니다|Bujangnim tase seungjinhaetseumnida] berarti “gara-gara Bapak saya naik pangkat”.",
+    "**Perhatikan bahwa 박 차장 memakai [탓에|tase] untuk kesalahan yang ternyata milik Ani.** Ia tidak menyebut siapa yang mengunggah terlambat. Ini kebiasaan kantor Korea: menyebut sebab tanpa menyebut pelakunya, supaya orangnya punya kesempatan mengakui sendiri — dan Ani memang mengakuinya di baris berikutnya.",
+    "**[어차피|eochapi] berarti “bagaimanapun juga, toh”.** Ia menandai bahwa hasilnya sama saja apa pun yang terjadi, dan sering dipakai untuk membebaskan orang dari rasa bersalah — persis seperti di sini."
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh sebab dan penilaian yang dibawanya",
+     "body": [
+      "Kolom “Penilaian” adalah bagian yang paling sering hilang dari pengajaran. Bentuk-bentuk ini tidak netral: memilih salah satunya berarti menyatakan sikapmu terhadap akibatnya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Penilaian",
+       "Batasan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "[-아/어서|-a/eoseo]",
+        "netral",
+        "tidak boleh dengan perintah atau ajakan",
+        "[늦어서 죄송합니다|Neujeoseo joesonghamnida]"
+       ],
+       [
+        "[-(으)니까|-(eu)nikka]",
+        "netral, alasan pembicara",
+        "boleh dengan perintah dan ajakan",
+        "[늦었으니까 빨리 가자|Neujeosseunikka ppalli gaja]"
+       ],
+       [
+        "[-기 때문에|-gi ttaemune]",
+        "netral, agak resmi",
+        "tidak boleh dengan perintah",
+        "[비가 오기 때문에 취소되었다|Biga ogi ttaemune chwisodoeeotda]"
+       ],
+       [
+        "[-는 바람에|-neun barame]",
+        "**buruk**, di luar kendali",
+        "akibat harus sudah terjadi",
+        "[늦잠을 자는 바람에 늦었어요|Neutjameul janeun barame neujeosseoyo]"
+       ],
+       [
+        "[-느라고|-neurago]",
+        "**buruk**, karena sibuk",
+        "pelaku sama, waktu sama",
+        "[숙제하느라고 못 잤어요|Sukjehaneurago mot jasseoyo]"
+       ],
+       [
+        "[-는 통에|-neun tonge]",
+        "**buruk**, karena kegaduhan",
+        "sebabnya ramai atau kacau",
+        "[아이가 우는 통에 못 들었어요|Aiga uneun tonge mot deureosseoyo]"
+       ],
+       [
+        "[덕분에|deokbune]",
+        "**baik**",
+        "selalu berterima kasih",
+        "[선생님 덕분에 합격했어요|Seonsaengnim deokbune hapgyeokaesseoyo]"
+       ],
+       [
+        "[탓에|tase]",
+        "**buruk**, menyalahkan",
+        "selalu menuduh",
+        "[날씨 탓에 취소됐어요|Nalssi tase chwisodwaesseoyo]"
+       ],
+       [
+        "[-길래|-gillae]",
+        "netral, sebab dari luar",
+        "kalimat kedua harus perbuatan pembicara",
+        "[싸길래 두 개 샀어요|Ssagillae du gae sasseoyo]"
+       ],
+       [
+        "[-(으)로 인해|-(eu)ro inhae]",
+        "netral 【문】",
+        "hanya kata benda di depannya",
+        "[폭우로 인해 지연되었다|Poguro inhae jiyeondoeeotda]"
+       ]
+      ]
+     },
+     "after": [
+      "Tiga larangan yang paling sering dilanggar. **Pertama**, [-아/어서|-a/eoseo] tidak boleh diikuti perintah atau ajakan: [비가 와서 우산 가져가|Biga waseo usan gajyeoga] salah, harus [비가 오니까|Biga onikka]. **Kedua**, [-아/어서|-a/eoseo] tidak boleh membawa penanda lampau di depannya: [늦었어서|neujeosseoseo] salah, cukup [늦어서|neujeoseo]. **Ketiga**, [-느라고|-neurago] tidak boleh diikuti akibat yang baik.",
+      "Ada satu lagi yang berguna dan jarang diajarkan: [덕분에|deokbune] punya saudara [덕에|deoge] yang lebih santai, dan [탓에|tase] punya [탓으로|taseuro] yang lebih tertulis. Ketiganya berperilaku sama."
+     ]
+    },
+    {
+     "title": "[-길래|-gillae]: sebab yang datang dari luar diri",
+     "body": [
+      "Bentuk ini istimewa karena menuntut susunan yang tetap: **sebabnya di luar dirimu, akibatnya perbuatanmu sendiri.** Ia sangat sering muncul di percakapan dan hampir tidak pernah di tulisan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Sebab (luar)",
+       "Akibat (aku)"
+      ],
+      "rows": [
+       [
+        "[싸길래 두 개 샀어요|Ssagillae du gae sasseoyo]",
+        "harganya murah",
+        "aku membeli"
+       ],
+       [
+        "[비가 오길래 우산을 챙겼어요|Biga ogillae usaneul chaenggyeosseoyo]",
+        "hujan",
+        "aku menyiapkan payung"
+       ],
+       [
+        "[맛있어 보이길래 시켰어요|Masisseo boigillae sikyeosseoyo]",
+        "kelihatan enak",
+        "aku memesan"
+       ],
+       [
+        "[아무도 없길래 먼저 갔어요|Amudo eopgillae meonjeo gasseoyo]",
+        "tak ada orang",
+        "aku pergi duluan"
+       ],
+       [
+        "[뭐 하길래 그렇게 바빠요|Mwo hagillae geureoke bappayo]?",
+        "(pertanyaan)",
+        "kenapa sampai sesibuk itu"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir memperlihatkan pemakaian keduanya: dalam pertanyaan, [-길래|-gillae] berarti “apa yang menyebabkan sampai …”. Bentuk yang lebih sopan dan lebih tertulis: [-기에|-gie]. Perhatikan bahwa akibat pada [-길래|-gillae] tidak boleh berupa perbuatan orang lain — [싸길래 동생이 샀어요|Ssagillae dongsaengi sasseoyo] terdengar janggal."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menyalahkan tanpa menyalahkan",
+   "intro": "Sesudah rapat, 지훈 dan Ani membicarakan proyek yang gagal. Perhatikan berapa kali sebab disebutkan tanpa satu orang pun ditunjuk.",
+   "lines": [
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[이번|Ibeon] [건은|geoneun] [왜|wae] [엎어진|eopeojin] [거예요|geoyeyo]?",
+     "id": "Perkara kali ini kenapa sampai batal?",
+     "literal": "kali-ini — perkara-mengenai — kenapa — terbalik-yang — hal?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[일정이|Iljeongi] [워낙|wanak] [촉박했던|chokbakaetdeon] [탓이|tasi] [큽니다|keumnida]. [자료|Jaryo] [받는|banneun] [게|ge] [늦어지는|neujeojineun] [바람에|barame] [검토|geomto] [시간이|sigani] [없었거든요|eopseotgeodeunnyo].",
+     "id": "Sebagian besar karena jadwalnya memang terlalu mepet. Gara-gara penerimaan bahan tertunda, waktu untuk menelaah jadi tidak ada.",
+     "literal": "jadwal-yang — sangat — mepet-lampau-yang — kesalahan-yang — besar. bahan — terima-yang — hal-yang — terlambat-jadi-yang — akibat — telaah — waktu-yang — tidak-ada-lampau-soalnya."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[누가|Nuga] [늦게|neutge] [줬는데요|jwonneundeyo]?",
+     "id": "Siapa yang memberikannya terlambat?",
+     "literal": "siapa-yang — terlambat — beri-lampau-tetapi?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[그|Geu] [부분은|bubuneun] [제가|jega] [미리|miri] [챙기지|chaenggiji] [못한|motan] [것도|geotdo] [있습니다|itseumnida].",
+     "id": "Bagian itu ada juga andil saya yang tidak mengurusnya lebih awal.",
+     "literal": "itu — bagian-mengenai — saya-yang — sebelumnya — urus-tidak — tidak-bisa-yang — hal-pun — ada."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아니|Ani], [탓하려고|tatharyeogo] [묻는|munneun] [게|ge] [아니라|anira] [다음에|daeume] [같은|gateun] [일이|iri] [생기지|saenggiji] [않게|anke] [하려고요|haryeogoyo].",
+     "id": "Bukan, saya bertanya bukan untuk menyalahkan, melainkan supaya hal yang sama tidak terjadi lagi.",
+     "literal": "bukan, salahkan-akan-supaya — tanya-yang — hal-yang — bukan — berikut-pada — sama-yang — perkara-yang — timbul-tidak — tidak-supaya — lakukan-akan-supaya."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[알겠습니다|Algetseumnida]. [그러면|Geureomyeon] [자료|jaryo] [마감을|magameul] [사흘|saheul] [앞당기는|apdanggineun] [걸로|geollo] [정리하겠습니다|jeongnihagetseumnida].",
+     "id": "Baik. Kalau begitu saya rangkum menjadi memajukan tenggat bahan tiga hari.",
+     "literal": "tahu-akan. begitu-jika — bahan — tenggat-akan — tiga-hari — maju-tarik-yang — hal-dengan — rapikan-akan."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[좋아요|Joayo]. [그리고|Geurigo] [이번에|ibeone] [고생|gosaeng] [많았어요|manasseoyo]. [아니|Ani] [씨|ssi] [덕분에|deokbune] [문제라도|munjerado] [일찍|iljjik] [알았잖아요|arassjanayo].",
+     "id": "Bagus. Dan kali ini Anda sudah bekerja keras. Berkat Anda, setidaknya masalahnya diketahui lebih awal.",
+     "literal": "baik. dan — kali-ini-pada — kerja-keras — banyak-lampau. Ani — tuan — berkat-pada — masalah-pun — awal — tahu-lampau-kan."
+    }
+   ],
+   "notes": [
+    "**[탓이 크다|tasi keuda] adalah cara menyalahkan keadaan, bukan orang.** Harfiahnya “kesalahannya besar”, tetapi yang disebut sebagai pemilik kesalahan adalah **jadwalnya**, bukan siapa pun. Ini pola yang sangat berguna di tempat kerja: [일정 탓이 큽니다|Iljeong tasi keumnida], [시스템 탓도 있습니다|Siseutem tatdo itseumnida].",
+    "**[-지 못한 것도 있습니다|-ji motan geotdo itseumnida] mengakui andil sendiri tanpa memikul seluruh salah.** Partikel [-도|-do] yang menentukan: “ada juga hal bahwa saya …”. Menghilangkan [-도|-do] mengubahnya menjadi pengakuan penuh.",
+    "**[탓하려고 묻는 게 아니라|tatharyeogo munneun ge anira] adalah kalimat yang pantas kamu hafal utuh.** Pola [-려고 -는 게 아니라 -려고|-ryeogo -neun ge anira -ryeogo] menyangkal maksud yang mungkin disangka lawan bicara, lalu menyebut maksud yang sebenarnya. Sangat sering dipakai untuk meredakan ketegangan.",
+    "**[-게 하려고요|-ge haryeogoyo] menyebut tujuan yang menggantung.** Bentuk [-(으)려고요|-(eu)ryeogoyo] menjawab “untuk apa” dan berhenti di situ. Perhatikan bahwa ia tidak bisa dipakai untuk orang lain: tujuan hanya diketahui pemiliknya."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sebab di ragam tulis: kosakata analisis",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Laporan dan berita Korea hampir tidak pernah memakai [-아/어서|-a/eoseo]. Sebabnya dinyatakan dengan kata benda yang disambung partikel, dan itu membuat kalimatnya lebih padat sekaligus lebih dingin."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk tulis",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "[-(으)로 인해|-(eu)ro inhae]",
+       "akibat",
+       "[폭우로 인해 항공편이 지연되었다|Poguro inhae hanggongpyeoni jiyeondoeeotda]"
+      ],
+      [
+       "[-(으)로 인하여|-(eu)ro inhayeo]",
+       "akibat (lebih resmi)",
+       "[화재로 인하여 통제되고 있다|Hwajaero inhayeo tongjedoego itda]"
+      ],
+      [
+       "[-에 따라|-e ttara]",
+       "sesuai dengan, mengikuti",
+       "[규정에 따라 처리되었다|Gyujeonge ttara cheoridoeeotda]"
+      ],
+      [
+       "[-에 기인하다|-e giinhada]",
+       "berakar pada",
+       "[문제는 설계 오류에 기인한다|Munjeneun seolgye oryue giinhanda]"
+      ],
+      [
+       "[-이/가 원인이 되어|-i/ga wonini doeeo]",
+       "menjadi penyebab",
+       "[과열이 원인이 되어 화재가 발생했다|Gwayeori wonini doeeo hwajaega balsaenghaetda]"
+      ],
+      [
+       "[-(으)ㅁ에 따라|-(eu)me ttara]",
+       "seiring dengan",
+       "[수요가 증가함에 따라 가격이 올랐다|Suyoga jeunggahame ttara gagyeogi ollatda]"
+      ],
+      [
+       "[-를 배경으로|-reul baegyeongeuro]",
+       "berlatar belakang",
+       "[고령화를 배경으로 수요가 늘었다|Goryeonghwareul baegyeongeuro suyoga neureotda]"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semuanya berpasangan dengan bentuk **pasif** di kalimat akibatnya: [지연되었다|jiyeondoeeotda], [처리되었다|cheoridoeeotda], [통제되고 있다|tongjedoego itda]. Ini bukan kebetulan — ragam tulis Korea menghindari menyebut pelaku, dan pasif adalah alat utamanya. Unit 9 akan membedah keluarga pasif sampai tuntas."
+    },
+    {
+     "type": "sub",
+     "text": "Kosakata analisis sebab"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Pemakaian"
+     ],
+     "rows": [
+      [
+       "[원인|wonin]",
+       "penyebab",
+       "[주된 원인은|judoen wonineun]"
+      ],
+      [
+       "[요인|yoin]",
+       "faktor",
+       "[복합적 요인|bokhapjeok yoin]"
+      ],
+      [
+       "[배경|baegyeong]",
+       "latar belakang",
+       "[사회적 배경|sahoejeok baegyeong]"
+      ],
+      [
+       "[영향|yeonghyang]",
+       "pengaruh",
+       "[-에 영향을 미치다|-e yeonghyangeul michida]"
+      ],
+      [
+       "[결과|gyeolgwa]",
+       "hasil",
+       "[그 결과|geu gyeolgwa]"
+      ],
+      [
+       "[여파|yeopa]",
+       "dampak susulan",
+       "[-의 여파로|-ui yeoparo]"
+      ],
+      [
+       "[근본적|geunbonjeok]",
+       "mendasar",
+       "[근본적 해결책|geunbonjeok haegyeolchaek]"
+      ],
+      [
+       "[직접적|jikjeopjeok] · [간접적|ganjeopjeok]",
+       "langsung · tidak langsung",
+       "[직접적 원인|jikjeopjeok wonin]"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menjelaskan keterlambatan tanpa terdengar mencari alasan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ada garis tipis antara **menjelaskan** dan **beralasan**, dan bahasa Korea menandai garis itu dengan sangat jelas. Yang menentukan bukan isi alasannya, melainkan urutan dan panjangnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Terdengar mencari alasan",
+      "Terdengar bertanggung jawab",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "[지하철이 고장 나서 늦었습니다|Jihacheori gojang naseo neujeotseumnida].",
+       "[늦어서 죄송합니다. 지하철이 고장 나는 바람에 늦었습니다|Neujeoseo joesonghamnida. Jihacheori gojang naneun barame neujeotseumnida].",
+       "Maaf **mendahului** alasan."
+      ],
+      [
+       "[제 잘못이 아닙니다|Je jalmosi animnida].",
+       "[제가 미리 챙기지 못한 것도 있습니다|Jega miri chaenggiji motan geotdo itseumnida].",
+       "Mengakui sebagian, walau kecil."
+      ],
+      [
+       "[어쩔 수 없었습니다|Eojjeol su eopseotseumnida].",
+       "[다음부터는 이렇게 하겠습니다|Daeumbuteoneun ireoke hagetseumnida].",
+       "Menutup dengan perbaikan."
+      ],
+      [
+       "alasan tiga kalimat",
+       "alasan satu kalimat",
+       "Panjang alasan = besarnya pembelaan."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Susunan bakunya tiga langkah dan urutannya tidak boleh dibalik: **minta maaf → satu kalimat sebab → apa yang akan kamu lakukan.** Langkah ketiga inilah yang paling sering hilang, padahal ia yang mengubah penjelasan menjadi tanggung jawab."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga contoh utuh",
+     "items": [
+      "[늦어서 죄송합니다. 지하철 사고가 나는 바람에 늦었습니다. 앞으로는 삼십 분 일찍 나오겠습니다|Neujeoseo joesonghamnida. Jihacheol sagoga naneun barame neujeotseumnida. Apeuroneun samsip bun iljjik naogetseumnida].",
+      "[자료가 늦어져 죄송합니다. 수치를 다시 확인하느라 시간이 걸렸습니다. 다음부터는 초안이라도 먼저 공유드리겠습니다|Jaryoga neujeojyeo joesonghamnida. Suchireul dasi hwaginhaneura sigani geollyeotseumnida. Daeumbuteoneun choanirado meonjeo gongyudeurigetseumnida].",
+      "[연락이 늦어 죄송합니다. 회의가 길어지는 통에 확인이 늦었습니다. 급한 건은 문자로 남겨 주시면 바로 확인하겠습니다|Yeollagi neujeo joesonghamnida. Hoeuiga gireojineun tonge hwagini neujeotseumnida. Geupan geoneun munjaro namgyeo jusimyeon baro hwaginhagetseumnida]."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kata yang perlu kamu hindari sepenuhnya di dunia kerja: [어쩔 수 없었어요|Eojjeol su eopseosseoyo] — “tidak ada yang bisa saya lakukan”. Secara arti ia sah, tetapi ia menutup pembicaraan tanpa menyisakan perbaikan, dan itulah yang membuatnya terdengar seperti menolak tanggung jawab."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "-는 바람에",
+   "baca": "-neun barame",
+   "id": "gara-gara (akibat buruk)"
+  },
+  {
+   "ko": "-느라고",
+   "baca": "-neurago",
+   "id": "karena sibuk (akibat buruk)"
+  },
+  {
+   "ko": "-는 통에",
+   "baca": "-neun tonge",
+   "id": "gara-gara kegaduhan"
+  },
+  {
+   "ko": "덕분에",
+   "baca": "deokbune",
+   "id": "berkat"
+  },
+  {
+   "ko": "탓에",
+   "baca": "tase",
+   "id": "gara-gara (menyalahkan)"
+  },
+  {
+   "ko": "-길래",
+   "baca": "-gillae",
+   "id": "karena (sebab dari luar) 【구】"
+  },
+  {
+   "ko": "-(으)로 인해",
+   "baca": "-(eu)ro inhae",
+   "id": "akibat 【문】"
+  },
+  {
+   "ko": "-에 따라",
+   "baca": "-e ttara",
+   "id": "sesuai dengan 【문】"
+  },
+  {
+   "ko": "-(으)ㅁ에 따라",
+   "baca": "-(eu)me ttara",
+   "id": "seiring dengan 【문】"
+  },
+  {
+   "ko": "기인하다",
+   "baca": "giinhada",
+   "id": "berakar pada 【문】"
+  },
+  {
+   "ko": "고장이 나다",
+   "baca": "gojangi nada",
+   "id": "rusak"
+  },
+  {
+   "ko": "사고가 나다",
+   "baca": "sagoga nada",
+   "id": "terjadi kecelakaan"
+  },
+  {
+   "ko": "몰리다",
+   "baca": "mollida",
+   "id": "berkerumun, membanjir"
+  },
+  {
+   "ko": "끼이다",
+   "baca": "kkiida",
+   "id": "terjepit"
+  },
+  {
+   "ko": "틈",
+   "baca": "teum",
+   "id": "celah"
+  },
+  {
+   "ko": "꺼내다",
+   "baca": "kkeonaeda",
+   "id": "mengeluarkan"
+  },
+  {
+   "ko": "워낙",
+   "baca": "wanak",
+   "id": "memang sangat"
+  },
+  {
+   "ko": "어차피",
+   "baca": "eochapi",
+   "id": "bagaimanapun juga"
+  },
+  {
+   "ko": "촉박하다",
+   "baca": "chokbakhada",
+   "id": "mepet (waktu)"
+  },
+  {
+   "ko": "책임",
+   "baca": "chaegim",
+   "id": "tanggung jawab"
+  },
+  {
+   "ko": "수정하다",
+   "baca": "sujeonghada",
+   "id": "merevisi"
+  },
+  {
+   "ko": "정확하다",
+   "baca": "jeonghwakhada",
+   "id": "akurat"
+  },
+  {
+   "ko": "엎어지다",
+   "baca": "eopeojida",
+   "id": "batal, gagal total 【구】"
+  },
+  {
+   "ko": "챙기다",
+   "baca": "chaenggida",
+   "id": "mengurus, menyiapkan"
+  },
+  {
+   "ko": "탓하다",
+   "baca": "tathada",
+   "id": "menyalahkan"
+  },
+  {
+   "ko": "앞당기다",
+   "baca": "apdanggida",
+   "id": "memajukan (jadwal)"
+  },
+  {
+   "ko": "마감",
+   "baca": "magam",
+   "id": "tenggat"
+  },
+  {
+   "ko": "초안",
+   "baca": "choan",
+   "id": "draf awal"
+  },
+  {
+   "ko": "공유하다",
+   "baca": "gongyuhada",
+   "id": "berbagi, membagikan"
+  },
+  {
+   "ko": "지연되다",
+   "baca": "jiyeondoeda",
+   "id": "tertunda 【문】"
+  },
+  {
+   "ko": "처리되다",
+   "baca": "cheoridoeda",
+   "id": "diproses 【문】"
+  },
+  {
+   "ko": "통제되다",
+   "baca": "tongjedoeda",
+   "id": "dikendalikan, ditutup 【문】"
+  },
+  {
+   "ko": "발생하다",
+   "baca": "balsaenghada",
+   "id": "terjadi 【문】"
+  },
+  {
+   "ko": "과열",
+   "baca": "gwayeol",
+   "id": "panas berlebih 【문】"
+  },
+  {
+   "ko": "화재",
+   "baca": "hwajae",
+   "id": "kebakaran 【문】"
+  },
+  {
+   "ko": "규정",
+   "baca": "gyujeong",
+   "id": "peraturan 【문】"
+  },
+  {
+   "ko": "설계",
+   "baca": "seolgye",
+   "id": "rancangan 【문】"
+  },
+  {
+   "ko": "오류",
+   "baca": "oryu",
+   "id": "kesalahan, galat 【문】"
+  },
+  {
+   "ko": "요인",
+   "baca": "yoin",
+   "id": "faktor 【문】"
+  },
+  {
+   "ko": "배경",
+   "baca": "baegyeong",
+   "id": "latar belakang 【문】"
+  },
+  {
+   "ko": "영향을 미치다",
+   "baca": "yeonghyangeul michida",
+   "id": "memberi pengaruh 【문】"
+  },
+  {
+   "ko": "여파",
+   "baca": "yeopa",
+   "id": "dampak susulan 【문】"
+  },
+  {
+   "ko": "근본적",
+   "baca": "geunbonjeok",
+   "id": "mendasar 【문】"
+  },
+  {
+   "ko": "직접적",
+   "baca": "jikjeopjeok",
+   "id": "langsung 【문】"
+  },
+  {
+   "ko": "간접적",
+   "baca": "ganjeopjeok",
+   "id": "tidak langsung 【문】"
+  },
+  {
+   "ko": "해결책",
+   "baca": "haegyeolchaek",
+   "id": "jalan keluar 【문】"
+  },
+  {
+   "ko": "고령화",
+   "baca": "goryeonghwa",
+   "id": "penuaan penduduk 【문】"
+  },
+  {
+   "ko": "어쩔 수 없다",
+   "baca": "eojjeol su eopda",
+   "id": "tidak bisa berbuat apa-apa"
+  },
+  {
+   "ko": "수치",
+   "baca": "suchi",
+   "id": "angka, nilai 【문】"
+  },
+  {
+   "ko": "항공편",
+   "baca": "hanggongpyeon",
+   "id": "penerbangan 【문】"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih [-아/어서|-a/eoseo] atau [-(으)니까|-(eu)nikka].",
+   "items": [
+    "[늦|Neuj] ____ [죄송합니다|joesonghamnida].",
+    "[비가 오|Biga o] ____ [우산 가져가세요|usan gajyeogaseyo].",
+    "[도와주|Dowaju] ____ [고맙습니다|gomapseumnida].",
+    "[시간이 없|Sigani eop] ____ [빨리 갑시다|ppalli gapsida].",
+    "[길이 막히|Giri makhi] ____ [지각했어요|jigakaesseoyo]."
+   ]
+  },
+  {
+   "prompt": "Pilih di antara [-는 바람에|-neun barame], [-느라고|-neurago], dan [-는 통에|-neun tonge].",
+   "items": [
+    "[늦잠을 자|Neutjameul ja] ____ [기차를 놓쳤어요|gichareul notchyeosseoyo].",
+    "[보고서를 쓰|Bogoseoreul sseu] ____ [점심도 못 먹었어요|jeomsimdo mot meogeosseoyo].",
+    "[옆에서 공사를 하|Yeopeseo gongsareul ha] ____ [하나도 못 들었어요|hanado mot deureosseoyo].",
+    "[갑자기 비가 오|Gapjagi biga o] ____ [행사가 취소됐어요|haengsaga chwisodwaesseoyo].",
+    "[아이들이 뛰어다니|Aideuri ttwieodani] ____ [정신이 없었어요|jeongsini eopseosseoyo]."
+   ]
+  },
+  {
+   "prompt": "Pilih [덕분에|deokbune] atau [탓에|tase].",
+   "items": [
+    "[선생님|Seonsaengnim] ____ [합격했습니다|hapgyeokaetseumnida].",
+    "[날씨|Nalssi] ____ [경기가 취소되었습니다|gyeonggiga chwisodoeeotseumnida].",
+    "[미리 준비한|Miri junbihan] ____ [문제가 없었어요|munjega eopseosseoyo].",
+    "[제 실수|Je silsu] ____ [일정이 밀렸습니다|iljeongi millyeotseumnida].",
+    "[좋은 동료들|Joeun dongnyodeul] ____ [잘 적응했어요|jal jeogeunghaesseoyo]."
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam tulis laporan.",
+   "items": [
+    "[비가 많이 와서 비행기가 늦어졌어요|Biga mani waseo bihaenggiga neujeojyeosseoyo].",
+    "[규정이 있어서 그렇게 처리했어요|Gyujeongi isseoseo geureoke cheorihaesseoyo].",
+    "[수요가 늘어서 가격이 올랐어요|Suyoga neureoseo gagyeogi ollasseoyo].",
+    "[기계가 너무 뜨거워져서 불이 났어요|Gigyega neomu tteugeowojyeoseo buri nasseoyo].",
+    "[설계가 잘못돼서 문제가 생겼어요|Seolgyega jalmotdwaeseo munjega saenggyeosseoyo]."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "걸렸습니다 / 지하철이 / 사십 분이나 / 고장 나는 바람에",
+    "못했습니다 / 사람이 몰리는 통에 / 나가지도 / 역 밖으로",
+    "샀어요 / 두 개 / 싸길래",
+    "지연되었다 / 항공편이 / 폭우로 인해",
+    "있습니다 / 챙기지 못한 것도 / 제가 미리"
+   ]
+  },
+  {
+   "prompt": "Tulis penjelasan tiga langkah (maaf, sebab, perbaikan) untuk tiap keadaan.",
+   "items": [
+    "Kamu terlambat rapat karena kereta rusak.",
+    "Kamu mengirim laporan terlambat karena harus memeriksa ulang angkanya.",
+    "Kamu tidak membalas pesan atasan karena rapat berlarut-larut.",
+    "Kamu salah mengirim berkas kepada pelanggan.",
+    "Kamu lupa memesan ruang rapat."
+   ]
+  }
+ ],
+ "answers": [
+  "[-어서|-eoseo] — [-(으)니까|-(eu)nikka] — [-어서|-eoseo] — [-(으)니까|-(eu)nikka] — [-어서|-eoseo]",
+  "[-는 바람에|-neun barame] — [-느라고|-neurago] — [-는 통에|-neun tonge] — [-는 바람에|-neun barame] — [-는 통에|-neun tonge]",
+  "[덕분에|deokbune] — [탓에|tase] — [덕분에|deokbune] — [탓에|tase] — [덕분에|deokbune]",
+  "[폭우로 인해 항공편이 지연되었다|Poguro inhae hanggongpyeoni jiyeondoeeotda]. — [규정에 따라 처리되었다|Gyujeonge ttara cheoridoeeotda]. — [수요가 증가함에 따라 가격이 상승하였다|Suyoga jeunggahame ttara gagyeogi sangseunghayeotda]. — [과열이 원인이 되어 화재가 발생하였다|Gwayeori wonini doeeo hwajaega balsaenghayeotda]. — [문제는 설계 오류에 기인한다|Munjeneun seolgye oryue giinhanda].",
+  "[지하철이 고장 나는 바람에 사십 분이나 걸렸습니다|Jihacheori gojang naneun barame sasip bunina geollyeotseumnida]. — [사람이 몰리는 통에 역 밖으로 나가지도 못했습니다|Sarami mollineun tonge yeok bakkeuro nagajido motaetseumnida]. — [싸길래 두 개 샀어요|Ssagillae du gae sasseoyo]. — [폭우로 인해 항공편이 지연되었다|Poguro inhae hanggongpyeoni jiyeondoeeotda]. — [제가 미리 챙기지 못한 것도 있습니다|Jega miri chaenggiji motan geotdo itseumnida].",
+  "Contoh／[늦어서 죄송합니다. 지하철이 고장 나는 바람에 늦었습니다. 앞으로는 삼십 분 일찍 나오겠습니다|Neujeoseo joesonghamnida. Jihacheori gojang naneun barame neujeotseumnida. Apeuroneun samsip bun iljjik naogetseumnida]. — Contoh／[자료가 늦어져 죄송합니다. 수치를 다시 확인하느라 시간이 걸렸습니다. 다음부터는 초안이라도 먼저 공유드리겠습니다|Jaryoga neujeojyeo joesonghamnida. Suchireul dasi hwaginhaneura sigani geollyeotseumnida. Daeumbuteoneun choanirado meonjeo gongyudeurigetseumnida]. — Contoh／[연락이 늦어 죄송합니다. 회의가 길어지는 통에 확인이 늦었습니다. 급한 건은 문자로 남겨 주시면 바로 확인하겠습니다|Yeollagi neujeo joesonghamnida. Hoeuiga gireojineun tonge hwagini neujeotseumnida. Geupan geoneun munjaro namgyeo jusimyeon baro hwaginhagetseumnida]. — Contoh／[잘못된 파일을 보내 드려 죄송합니다. 파일명이 비슷해 착오가 있었습니다. 즉시 올바른 파일을 다시 보내 드리겠습니다|Jalmotdoen paireul bonae deuryeo joesonghamnida. Pailmyeongi biseutae chagoga isseotseumnida. Jeuksi olbareun paireul dasi bonae deurigetseumnida]. — Contoh／[회의실 예약을 놓쳐 죄송합니다. 일정 변경을 확인하지 못했습니다. 앞으로는 예약 확인을 체크리스트에 넣겠습니다|Hoeuisil yeyageul notchyeo joesonghamnida. Iljeong byeongyeongeul hwaginhaji motaetseumnida. Apeuroneun yeyak hwagineul chekeuriseuteue neokgetseumnida]."
+ ],
+ "wave": "Kembali ke Unit 3 dan baca ulang tabel “penolakan yang menyamar sebagai persetujuan”, lalu ke Unit 5 dan lihat tabel dugaan. Sekarang tambahkan lapis ketiga: tandai bentuk **sebab** apa yang muncul di tiap penolakan itu. Kamu akan menemukan bahwa hampir semuanya memakai sebab yang memindahkan kemustahilan ke keadaan — dan tidak satu pun memakai [탓에|tase]."
+}

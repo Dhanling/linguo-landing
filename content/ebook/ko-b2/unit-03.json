@@ -1,0 +1,744 @@
+{
+ "title": "Meminta dan menolak tanpa pernah mengucapkan “tidak”",
+ "title_target": "[부탁|Butak]과 [거절|geojeol]",
+ "goal": "Menyusun permintaan yang beratnya sesuai dengan hubunganmu, dan menolak permintaan orang lain sampai tuntas tanpa satu kali pun memakai kata [아니요|aniyo] — termasuk mengenali kapan lawan bicaramu sebenarnya sedang menolakmu.",
+ "bekal": [
+  "memakai [쿠션 언어|kusyeon eoneo] — kalimat bantalan sebelum permintaan",
+  "menaikkan atau menurunkan beban permintaan lewat lima tingkat bentuk",
+  "menolak dengan [-기 곤란하다|-gi gollanhada], [-기 어렵다|-gi eoryeopda], [-(으)ㄹ 것 같다|-(eu)l geot gatda]",
+  "mengenali penolakan yang menyamar sebagai persetujuan",
+  "menutup penolakan dengan tawaran pengganti supaya hubungan tidak putus"
+ ],
+ "dialogs": [
+  {
+   "title": "대화 1 — Meminta tolong seorang senior",
+   "intro": "Ani perlu bantuan 지훈 untuk memeriksa laporannya, padahal 지훈 juga sedang sibuk. Hitung berapa baris yang lewat sebelum permintaannya benar-benar keluar.",
+   "lines": [
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[선배님|Seonbaenim], [지금|jigeum] [혹시|hoksi] [많이|mani] [바쁘세요|bappeuseyo]?",
+     "id": "Kak, sekarang apakah sedang sangat sibuk?",
+     "literal": "senior(hormat), sekarang — barangkali — banyak — sibuk(hormat)-kah?"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아니|Ani], [괜찮아|gwaenchana]. [왜|Wae], [무슨|museun] [일|il] [있어|isseo]?",
+     "id": "Tidak, tidak apa-apa. Kenapa, ada sesuatu?",
+     "literal": "tidak, tidak-apa-apa. kenapa, apa — perkara — ada?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[바쁘신데|Bappeusinde] [죄송한데요|joesonghandeyo]… [내일|naeil] [제출할|jechulhal] [보고서를|bogoseoreul] [한|han] [번만|beonman] [봐|bwa] [주실|jusil] [수|su] [있을까|isseulkka] [해서요|haeseoyo].",
+     "id": "Maaf padahal Kakak sedang sibuk… saya ingin tahu apakah Kakak bisa memeriksa sekali saja laporan yang akan saya serahkan besok.",
+     "literal": "sibuk(hormat)-tetapi — maaf-tetapi… besok — serahkan-akan — laporan-akan — satu — kali-saja — lihat — beri(hormat)-akan — kemungkinan — ada-akan-kah — begitu-maka."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아|A]… [오늘|oneul]? [음|Eum], [솔직히|soljikhi] [오늘은|oneureun] [좀|jom] [빠듯한데|ppadeutande].",
+     "id": "Ah… hari ini? Hmm, terus terang hari ini agak mepet.",
+     "literal": "ah… hari-ini? hmm, terus-terang — hari-ini-mengenai — sedikit — mepet-tetapi."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[아|A], [그러시면|geureosimyeon] [괜찮아요|gwaenchanayo]. [무리하지|Murihaji] [마세요|maseyo].",
+     "id": "Ah, kalau begitu tidak apa-apa. Jangan memaksakan diri.",
+     "literal": "ah, begitu(hormat)-jika — tidak-apa-apa. paksa-jangan — jangan(hormat)."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[대신|Daesin] [이렇게|ireoke] [하자|haja]. [지금|Jigeum] [파일|pail] [보내|bonae] [놓으면|noeumyeon], [내가|naega] [저녁에|jeonyeoge] [훑어보고|hulteobogo] [코멘트만|komenteuman] [달아|dara] [줄게|julge].",
+     "id": "Sebagai gantinya begini saja. Kalau kamu kirimkan berkasnya sekarang, nanti malam saya baca sekilas dan saya beri komentar saja.",
+     "literal": "sebagai-ganti — begini — lakukan-mari. sekarang — berkas — kirim — letakkan-jika, saya-yang — petang-pada — sekilas-lihat-dan — komentar-saja — gantung — beri-akan."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[정말요|Jeongmallyo]? [그렇게까지|Geureokekkaji] [안|an] [하셔도|hasyeodo] [되는데|doeneunde]…",
+     "id": "Sungguh? Kakak tidak perlu sampai begitu…",
+     "literal": "sungguh-kah? begitu-sampai — tidak — lakukan(hormat)-pun — jadi-tetapi…"
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[아니야|Aniya]. [나도|Nado] [처음|cheoeum] [보고서|bogoseo] [쓸|sseul] [때|ttae] [선배가|seonbaega] [봐|bwa] [줬거든|jwotgeodeun].",
+     "id": "Tidak apa-apa. Saya juga waktu pertama kali menulis laporan dibantu senior saya.",
+     "literal": "bukan. saya-pun — pertama — laporan — tulis-akan — waktu — senior-yang — lihat — beri-lampau-soalnya."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[감사합니다|Gamsahamnida]. [그럼|Geureom] [바로|baro] [보내|bonae] [드릴게요|deurilgeyo]. [부담|Budam] [드려서|deuryeoseo] [죄송해요|joesonghaeyo].",
+     "id": "Terima kasih. Kalau begitu langsung saya kirimkan. Maaf sudah membebani Kakak.",
+     "literal": "terima-kasih. kalau-begitu — langsung — kirim — beri(merendah)-akan. beban — beri(merendah)-maka — maaf."
+    },
+    {
+     "speaker": "[지훈|Jihun]:",
+     "text": "[부담은|Budameun] [무슨|museun]. [대신|Daesin] [다음에|daeume] [커피|keopi] [한|han] [잔|jan] [사|sa].",
+     "id": "Beban apanya. Sebagai gantinya lain kali traktir kopi satu gelas.",
+     "literal": "beban-mengenai — apa. sebagai-ganti — lain-kali — kopi — satu — gelas — beli."
+    }
+   ],
+   "notes": [
+    "**Permintaan Ani baru keluar di baris ketiga, dan itu bukan kebetulan.** Susunan bakunya tiga langkah: (1) periksa keadaan lawan bicara, (2) pasang bantalan, (3) baru sampaikan permintaan — dan permintaannya sendiri dibungkus sebagai pertanyaan tentang kemungkinan, bukan sebagai permintaan.",
+    "**[바쁘신데 죄송한데요|Bappeusinde joesonghandeyo] menumpuk dua bantalan sekaligus.** Bahasa Korea menyebut kalimat semacam ini [쿠션 언어|kusyeon eoneo] — “bahasa bantal”. Fungsinya bukan menyampaikan isi, melainkan **memperlambat** kedatangan permintaan supaya lawan bicara punya waktu bersiap menolak tanpa kehilangan muka.",
+    "**[-(으)ㄹ 수 있을까 해서요|-(eu)l su isseulkka haeseoyo] adalah bentuk permintaan yang paling ringan yang ada.** Harfiahnya “karena saya berpikir apakah mungkin…”. Ia bahkan bukan pertanyaan langsung: kalimatnya berhenti di tengah, dan justru ketidaklengkapannya yang membuatnya sopan. Bandingkan dengan [봐 주세요|Bwa juseyo] — sah, tetapi memaksa.",
+    "**[솔직히 … 좀 빠듯한데|Soljikhi … jom ppadeutande] adalah penolakan, bukan keluhan.** Tiga penandanya: [솔직히|soljikhi] (“terus terang” — pembuka kabar buruk), [좀|jom] (peredam wajib), dan akhiran [-는데|-neunde] yang **menggantung**. Kalimat Korea yang berhenti di [-는데|-neunde] hampir selalu berarti “sisanya kamu simpulkan sendiri”, dan yang harus disimpulkan hampir selalu penolakan.",
+    "**[무리하지 마세요|Murihaji maseyo] adalah jalan keluar yang wajib disediakan peminta.** Begitu kamu menangkap tanda penolakan, tugasmu adalah **menarik permintaan lebih dulu** supaya lawan bicara tidak perlu mengucapkan penolakannya sendiri. Ini kebalikan dari kebiasaan banyak bahasa lain, yang justru menekan sekali lagi.",
+    "**[대신|Daesin] adalah kata kunci penolakan Korea yang sopan.** Menolak tanpa menawarkan pengganti terasa seperti memutus hubungan. Pola bakunya: [-기는 어렵고, 대신 …|-gineun eoryeopgo, daesin …] — “sulit untuk …, sebagai gantinya …”.",
+    "**[줄게|julge] lawan [드릴게요|deurilgeyo] dalam satu halaman.** 지훈 memakai [-(으)ㄹ게|-(eu)lge] kepada juniornya; Ani membalas dengan [-(으)ㄹ게요|-(eu)lgeyo] versi merendah. Akhiran ini menandai **janji yang mengikat diri sendiri** dan hanya dipakai untuk perbuatan yang kamu kendalikan — [비가 올게요|Biga olgeyo] mustahil.",
+    "**[부담은 무슨|Budameun museun]** adalah bantahan lisan yang sangat sering: kata benda + [은/는 무슨|-eun/neun museun] berarti “apanya yang …”. [미안은 무슨|Mianeun museun], [고맙긴 뭘|Gomapgin mwol]. Hanya di [반말|banmal] dan ragam akrab."
+   ],
+   "grammars": [
+    {
+     "title": "Lima tingkat permintaan, dari paling ringan ke paling berat",
+     "body": [
+      "Bahasa Korea tidak melunakkan permintaan dengan nada suara, melainkan dengan **bentuk**. Kelima baris ini berarti hal yang persis sama."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Berat",
+       "Kepada siapa"
+      ],
+      "rows": [
+       [
+        "[-(으)ㄹ 수 있을까 해서요|-(eu)l su isseulkka haeseoyo]",
+        "paling ringan",
+        "atasan, orang yang tak dikenal, permintaan besar"
+       ],
+       [
+        "[-아/어 주실 수 있으실까요|-a/eo jusil su isseusilkkayo]?",
+        "ringan",
+        "atasan, pelanggan"
+       ],
+       [
+        "[-아/어 주시겠어요|-a/eo jusigesseoyo]?",
+        "sedang",
+        "rekan kerja, pelayan toko"
+       ],
+       [
+        "[-아/어 주세요|-a/eo juseyo]",
+        "biasa",
+        "yang setara atau lebih muda; permintaan kecil"
+       ],
+       [
+        "[-아/어 줘|-a/eo jwo]",
+        "langsung",
+        "teman dekat, adik"
+       ]
+      ]
+     },
+     "after": [
+      "Aturan yang tidak tertulis: **makin besar bebannya, makin panjang bentuknya.** Meminta pulpen kepada atasan dengan bentuk baris pertama justru terdengar aneh — panjangnya tidak sepadan dengan permintaannya. Cocokkan panjang kalimat dengan berat permintaan, bukan hanya dengan pangkat lawan bicara.",
+      "Tambahan yang selalu menolong: [혹시|hoksi] di depan (“barangkali”), [좀|jom] di tengah (“sedikit”), dan [-만|-man] pada bendanya (“… saja”). [혹시 이것만 좀 봐 주실 수 있으실까요|Hoksi igeotman jom bwa jusil su isseusilkkayo]? memuat ketiganya."
+     ]
+    },
+    {
+     "title": "Menolak: lima bentuk yang tidak memakai kata “tidak”",
+     "body": [
+      "Semua bentuk di bawah ini memindahkan kemustahilan dari **dirimu** ke **keadaan**. Itulah rahasianya: yang menolak bukan kamu, melainkan situasi."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Nada",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "[-기(가) 곤란하다|-gi(ga) gollanhada]",
+        "resmi, tegas",
+        "[지금은 답변드리기가 곤란합니다|Jigeumeun dapbyeondeurigiga gollanhamnida]"
+       ],
+       [
+        "[-기(가) 어렵다|-gi(ga) eoryeopda]",
+        "resmi, netral",
+        "[이번 주는 시간 내기가 어렵습니다|Ibeon juneun sigan naegiga eoryeopseumnida]"
+       ],
+       [
+        "[-(으)ㄹ 것 같다|-(eu)l geot gatda]",
+        "lembut, sehari-hari",
+        "[오늘은 힘들 것 같아요|Oneureun himdeul geot gatayo]"
+       ],
+       [
+        "[-겠는데요|-genneundeyo]",
+        "menggantung",
+        "[좀 어렵겠는데요|Jom eoryeopgenneundeyo]"
+       ],
+       [
+        "[-아/어야 할 것 같아서요|-a/eoya hal geot gatasseoyo]",
+        "alasan tandingan",
+        "[내일까지 마감이라 야근해야 할 것 같아서요|Naeilkkaji magamira yageunhaeya hal geot gatasseoyo]"
+       ]
+      ]
+     },
+     "after": [
+      "Struktur penolakan lengkap punya empat bagian, dan menghilangkan salah satunya membuat penolakanmu terdengar dingin: **maaf → alasan → bentuk penolakan → tawaran pengganti.** Contoh: [죄송한데|Joesonghande] / [내일 출장이 있어서|naeil chuljangi isseoseo] / [이번엔 참석이 어려울 것 같습니다|ibeonen chamseogi eoryeoul geot gatseumnida] / [다음 회의 때는 꼭 참석하겠습니다|daeum hoeui ttaeneun kkok chamseokhagetseumnida]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "대화 2 — Menolak ajakan pelanggan",
+   "intro": "Pelanggan mengajak makan malam sesudah rapat. Ani tidak bisa datang. Perhatikan bahwa kata [아니요|aniyo] tidak muncul satu kali pun.",
+   "lines": [
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[아니|Ani] [씨|ssi], [오늘|oneul] [고생|gosaeng] [많으셨는데|maneusyeonneunde] [저녁이라도|jeonyeogirado] [같이|gachi] [하시죠|hasijyo].",
+     "id": "Bu Ani, hari ini Anda sudah bekerja keras, mari sekalian makan malam bersama.",
+     "literal": "Ani — tuan, hari-ini — kerja-keras — banyak(hormat)-lampau-tetapi — petang-pun — bersama — lakukan(hormat)-lah-kiranya."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[아이고|Aigo], [감사합니다|gamsahamnida]. [그런데|Geureonde] [하필|hapil] [오늘|oneul] [저녁에|jeonyeoge] [선약이|seonyagi] [있어서요|isseoseoyo].",
+     "id": "Aduh, terima kasih. Tapi sayangnya justru malam ini saya sudah ada janji lebih dulu.",
+     "literal": "aduh, terima-kasih. tetapi — justru-sialnya — hari-ini — petang-pada — janji-terdahulu-yang — ada-maka."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[아|A], [그러세요|geureoseyo]? [잠깐만이라도|Jamkkanmanirado] [안|an] [될까요|doelkkayo]?",
+     "id": "Oh, begitu ya? Sebentar saja pun tidak bisa?",
+     "literal": "ah, begitu(hormat)-kah? sebentar-saja-pun — tidak — jadi-kah?"
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[정말|Jeongmal] [죄송한데|joesonghande], [상대가|sangdaega] [먼저|meonjeo] [잡아|jaba] [놓은|noeun] [자리라|jarira] [빠지기가|ppajigiga] [좀|jom] [곤란합니다|gollanhamnida].",
+     "id": "Sungguh maaf, karena itu acara yang sudah dipesan pihak lain lebih dulu, agak sulit bagi saya untuk absen.",
+     "literal": "sungguh — maaf-tetapi, lawan-yang — lebih-dulu — pegang — letakkan-yang — tempat-karena — keluar-hal-yang — sedikit — sulit."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[아이고|Aigo], [그러면|geureomyeon] [할|hal] [수|su] [없죠|eopjyo]. [다음|Daeum] [기회에|gihoee] [합시다|hapsida].",
+     "id": "Aduh, kalau begitu ya sudah. Mari lain kali saja.",
+     "literal": "aduh, begitu-jika — lakukan-akan — kemungkinan — tidak-ada-lah. berikut — kesempatan-pada — lakukan-mari."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[네|Ne], [제가|jega] [다음|daeum] [주에|jue] [따로|ttaro] [연락|yeollak] [드리겠습니다|deurigetseumnida]. [그때는|Geuttaeneun] [제가|jega] [모시겠습니다|mosigetseumnida].",
+     "id": "Ya, minggu depan akan saya hubungi secara terpisah. Waktu itu biar saya yang menjamu.",
+     "literal": "ya, saya-yang — berikut — minggu-pada — terpisah — hubungan — beri(merendah)-akan. waktu-itu-mengenai — saya-yang — antar(merendah)-akan."
+    },
+    {
+     "speaker": "[박 차장|Bak chajang]:",
+     "text": "[하하|Haha], [말씀만이라도|malsseummanirado] [감사합니다|gamsahamnida].",
+     "id": "Haha, ucapannya saja pun sudah saya syukuri.",
+     "literal": "haha, ucapan(hormat)-saja-pun — terima-kasih."
+    },
+    {
+     "speaker": "[아니|Ani]:",
+     "text": "[아닙니다|Animnida]. [오늘|Oneul] [정말|jeongmal] [고생|gosaeng] [많으셨습니다|maneusyeotseumnida]. [들어가십시오|Deureogasipsio].",
+     "id": "Sama sekali tidak. Hari ini Bapak benar-benar sudah bekerja keras. Silakan pulang dengan selamat.",
+     "literal": "bukan. hari-ini — sungguh — kerja-keras — banyak(hormat)-lampau. masuk-pergi(hormat)-lah."
+    }
+   ],
+   "notes": [
+    "**[선약이 있어서요|seonyagi isseoseoyo] adalah alasan penolakan yang paling aman di Korea.** [선약|seonyak] — “janji terdahulu” — tidak bisa dibantah dan tidak menuntut penjelasan lebih lanjut. Perhatikan bahwa Ani tidak pernah mengatakan janji dengan siapa; menyebutkan rinciannya justru membuka pintu tawar-menawar.",
+    "**[하필|hapil] menambahkan penyesalan yang tidak dibuat-buat.** Artinya “justru pada saat yang paling tidak tepat”. Ia menandai bahwa penolakannya bukan karena tidak mau, melainkan karena kebetulan yang sial — dan itulah pesan yang ingin disampaikan tiap penolakan sopan.",
+    "**[빠지기가 곤란합니다|ppajigiga gollanhamnida] menolak untuk kedua kalinya, dan itu memang perlu.** Di Korea, ajakan sering diulang sekali sebagai bentuk kesungguhan; penolakan pertama dianggap basa-basi. Penolakan kedua harus lebih **konkret** daripada yang pertama, dan di sinilah bentuk [-기가 곤란하다|-giga gollanhada] dipakai.",
+    "**[제가 모시겠습니다|Jega mosigetseumnida] menutup penolakan dengan utang yang dijanjikan.** Ini bagian keempat dari struktur penolakan — tawaran pengganti. Tanpa baris ini, seluruh percakapan berakhir dengan lawan bicara yang merasa ditolak; dengan baris ini, ia berakhir dengan janji pertemuan berikutnya."
+   ],
+   "grammars": [
+    {
+     "title": "[-(이)라도|-(i)rado]: menawar turun tanpa menyerah",
+     "body": [
+      "Partikel [-(이)라도|-(i)rado] berarti “setidaknya, walaupun hanya”. Ia dipakai dua arah: oleh peminta untuk menurunkan tuntutannya, dan oleh penolak untuk menawarkan sisa yang masih bisa diberikan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Siapa yang memakai",
+       "Maksudnya"
+      ],
+      "rows": [
+       [
+        "[저녁이라도 같이 하시죠|Jeonyeogirado gachi hasijyo]",
+        "pengajak",
+        "“kalau tidak bisa lama, makan malam saja”"
+       ],
+       [
+        "[잠깐만이라도 안 될까요|Jamkkanmanirado an doelkkayo]?",
+        "pengajak",
+        "turun sekali lagi: “sebentar saja”"
+       ],
+       [
+        "[말씀만이라도 감사합니다|Malsseummanirado gamsahamnida]",
+        "yang ditolak",
+        "“ucapannya saja sudah cukup”"
+       ],
+       [
+        "[커피라도 한잔 하실래요|Keopirado hanjan hasillaeyo]?",
+        "pengajak",
+        "“kopi saja pun boleh”"
+       ],
+       [
+        "[전화로라도 알려 주세요|Jeonhwaroorado allyeo juseyo]",
+        "peminta",
+        "“lewat telepon pun tidak apa-apa”"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa [-(이)라도|-(i)rado] selalu membawa nada **“ini bukan pilihan terbaik, tetapi lebih baik daripada tidak sama sekali”**. Karena itu memakainya untuk memuji terdengar seperti menghina: [이 식당이라도 괜찮네요|I sikdangirado gwaenchanneyo] berarti “restoran ini pun lumayanlah”, bukan pujian."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "쿠션 언어: tujuh kalimat bantal yang wajib dihafal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Korea kantor menaruh bantalan sebelum hampir semua kalimat yang membebani lawan bicara. Ketujuh kalimat berikut menutup hampir semua keadaan, dan semuanya berdiri sendiri di depan kalimat inti."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bantalan",
+      "Arti harfiah",
+      "Dipakai sebelum"
+     ],
+     "rows": [
+      [
+       "[죄송하지만|Joesonghajiman]",
+       "maaf, tetapi",
+       "apa pun yang merepotkan"
+      ],
+      [
+       "[번거로우시겠지만|Beongeorousigetjiman]",
+       "akan merepotkan Anda, tetapi",
+       "permintaan yang memakan waktu"
+      ],
+      [
+       "[실례지만|Sillyejiman]",
+       "tidak sopan, tetapi",
+       "bertanya kepada orang asing"
+      ],
+      [
+       "[바쁘신데|Bappeusinde]",
+       "padahal Anda sibuk",
+       "menyela pekerjaan orang"
+      ],
+      [
+       "[혹시 괜찮으시다면|Hoksi gwaenchaneusidamyeon]",
+       "kalau kebetulan Anda tidak keberatan",
+       "permintaan yang mudah ditolak"
+      ],
+      [
+       "[염치없지만|Yeomchieopjiman]",
+       "tidak tahu malu, tetapi",
+       "permintaan kedua kepada orang yang sama"
+      ],
+      [
+       "[말씀드리기 조심스럽지만|Malsseumdeurigi josimseureopjiman]",
+       "sungkan menyampaikannya, tetapi",
+       "kabar buruk atau koreksi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua catatan pemakaian. **Pertama**, bantalan tidak boleh ditumpuk lebih dari dua; tiga bantalan berturut-turut membuat kalimatmu terdengar memelas, bukan sopan. **Kedua**, bantalan hampir selalu diikuti [-는데요|-neundeyo] atau [-아서요|-aseoyo] yang menggantung, bukan kalimat penuh — justru penggantungan itulah yang menyisakan ruang bagi lawan bicara untuk menolak."
+    },
+    {
+     "type": "kotak",
+     "title": "Susunan permintaan lengkap",
+     "items": [
+      "**1. Periksa keadaan** — [지금 잠깐 시간 괜찮으세요|Jigeum jamkkan sigan gwaenchaneuseyo]?",
+      "**2. Bantalan** — [바쁘신데 죄송한데요|Bappeusinde joesonghandeyo] …",
+      "**3. Permintaan menggantung** — [이것만 좀 봐 주실 수 있을까 해서요|igeotman jom bwa jusil su isseulkka haeseoyo].",
+      "**4. Jalan keluar** — [어려우시면 말씀만 주세요|Eoryeousimyeon malsseumman juseyo].",
+      "**5. Penutup** — [감사합니다|Gamsahamnida]. [부담 드려서 죄송해요|Budam deuryeoseo joesonghaeyo]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Mengenali penolakan yang menyamar sebagai persetujuan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bagian ini adalah kebalikan dari seluruh unit: bukan cara menolak, melainkan cara **mendengar** penolakan. Banyak orang asing bekerja berminggu-minggu di bawah anggapan bahwa usulnya diterima, padahal ia sudah ditolak di kalimat pertama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang diucapkan",
+      "Yang terdengar orang asing",
+      "Artinya yang sebenarnya"
+     ],
+     "rows": [
+      [
+       "[한번 검토해 보겠습니다|Hanbeon geomtohae bogetseumnida]",
+       "“akan saya pertimbangkan”",
+       "biasanya: tidak"
+      ],
+      [
+       "[생각 좀 해 볼게요|Saenggak jom hae bolgeyo]",
+       "“saya pikirkan dulu”",
+       "biasanya: tidak"
+      ],
+      [
+       "[좀 어렵겠는데요|Jom eoryeopgenneundeyo]",
+       "“agak sulit”",
+       "pasti: tidak"
+      ],
+      [
+       "[나중에 연락드리겠습니다|Najunge yeollakdeurigetseumnida]",
+       "“nanti saya hubungi”",
+       "tidak akan dihubungi"
+      ],
+      [
+       "[상황을 좀 봐야 할 것 같습니다|Sanghwangeul jom bwaya hal geot gatseumnida]",
+       "“tergantung situasi”",
+       "tidak, kecuali kamu mendesak"
+      ],
+      [
+       "[취지는 좋은데요|Chwijineun joeundeyo]",
+       "“gagasannya bagus”",
+       "penolakan; pujian sebelum “tetapi”"
+      ],
+      [
+       "[다음 기회에|Daeum gihoee]",
+       "“lain kali”",
+       "tidak ada lain kali yang dijadwalkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga penanda yang perlu kamu dengarkan: **jeda sebelum menjawab**, kata [좀|jom], dan akhiran menggantung [-는데요|-neundeyo]. Kalau ketiganya muncul bersamaan, jawabannya tidak, apa pun kata-katanya."
+    },
+    {
+     "type": "p",
+     "text": "Lalu apa yang harus kamu lakukan? Jangan mendesak. Yang benar adalah **menawarkan jalan keluar** dan memindahkan perkaranya ke waktu lain: [그럼 다음 주에 다시 여쭤봐도 될까요|Geureom daeum jue dasi yeojjwobwado doelkkayo]? Kalau jawabannya masih menggantung, itu jawaban terakhir."
+    },
+    {
+     "type": "p",
+     "text": "Satu pengecualian yang perlu kamu tahu: kalimat [긍정적으로 검토하겠습니다|Geungjeongjeogeuro geomtohagetseumnida] — “akan saya telaah secara positif” — biasanya **memang** berarti kemungkinan besar diterima. Kata [긍정적으로|geungjeongjeogeuro] itulah yang membedakannya dari [한번 검토해 보겠습니다|Hanbeon geomtohae bogetseumnida] di baris pertama tabel."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ko": "부탁",
+   "baca": "butak",
+   "id": "permintaan tolong"
+  },
+  {
+   "ko": "거절",
+   "baca": "geojeol",
+   "id": "penolakan"
+  },
+  {
+   "ko": "쿠션 언어",
+   "baca": "kusyeon eoneo",
+   "id": "bahasa bantal, kalimat pelunak"
+  },
+  {
+   "ko": "곤란하다",
+   "baca": "gollanhada",
+   "id": "sulit, tidak leluasa 【문】"
+  },
+  {
+   "ko": "빠듯하다",
+   "baca": "ppadeutada",
+   "id": "mepet, pas-pasan"
+  },
+  {
+   "ko": "무리하다",
+   "baca": "murihada",
+   "id": "memaksakan diri"
+  },
+  {
+   "ko": "부담",
+   "baca": "budam",
+   "id": "beban"
+  },
+  {
+   "ko": "선약",
+   "baca": "seonyak",
+   "id": "janji terdahulu"
+  },
+  {
+   "ko": "하필",
+   "baca": "hapil",
+   "id": "justru pada saat yang sial"
+  },
+  {
+   "ko": "솔직히",
+   "baca": "soljikhi",
+   "id": "terus terang"
+  },
+  {
+   "ko": "염치없다",
+   "baca": "yeomchieopda",
+   "id": "tidak tahu malu"
+  },
+  {
+   "ko": "조심스럽다",
+   "baca": "josimseureopda",
+   "id": "sungkan, hati-hati"
+  },
+  {
+   "ko": "실례",
+   "baca": "sillye",
+   "id": "ketidaksopanan"
+  },
+  {
+   "ko": "번거롭다",
+   "baca": "beongeoropda",
+   "id": "merepotkan"
+  },
+  {
+   "ko": "훑어보다",
+   "baca": "hulteoboda",
+   "id": "membaca sekilas"
+  },
+  {
+   "ko": "코멘트를 달다",
+   "baca": "komenteureul dalda",
+   "id": "memberi komentar"
+  },
+  {
+   "ko": "제출하다",
+   "baca": "jechulhada",
+   "id": "menyerahkan 【문】"
+  },
+  {
+   "ko": "보고서",
+   "baca": "bogoseo",
+   "id": "laporan"
+  },
+  {
+   "ko": "마감",
+   "baca": "magam",
+   "id": "tenggat"
+  },
+  {
+   "ko": "야근하다",
+   "baca": "yageunhada",
+   "id": "lembur"
+  },
+  {
+   "ko": "출장",
+   "baca": "chuljang",
+   "id": "perjalanan dinas"
+  },
+  {
+   "ko": "참석하다",
+   "baca": "chamseokhada",
+   "id": "menghadiri 【문】"
+  },
+  {
+   "ko": "빠지다",
+   "baca": "ppajida",
+   "id": "absen, tidak ikut"
+  },
+  {
+   "ko": "자리",
+   "baca": "jari",
+   "id": "acara, pertemuan"
+  },
+  {
+   "ko": "잡다",
+   "baca": "japda",
+   "id": "memesan, mengambil (jadwal)"
+  },
+  {
+   "ko": "기회",
+   "baca": "gihoe",
+   "id": "kesempatan"
+  },
+  {
+   "ko": "따로",
+   "baca": "ttaro",
+   "id": "secara terpisah"
+  },
+  {
+   "ko": "대신",
+   "baca": "daesin",
+   "id": "sebagai gantinya"
+  },
+  {
+   "ko": "취지",
+   "baca": "chwiji",
+   "id": "maksud, gagasan pokok 【문】"
+  },
+  {
+   "ko": "긍정적으로",
+   "baca": "geungjeongjeogeuro",
+   "id": "secara positif 【문】"
+  },
+  {
+   "ko": "상황",
+   "baca": "sanghwang",
+   "id": "situasi"
+  },
+  {
+   "ko": "고생하다",
+   "baca": "gosaenghada",
+   "id": "bersusah payah, bekerja keras"
+  },
+  {
+   "ko": "모시다",
+   "baca": "mosida",
+   "id": "menjamu, mengantar 【높】"
+  },
+  {
+   "ko": "차장",
+   "baca": "chajang",
+   "id": "wakil kepala bagian"
+  },
+  {
+   "ko": "선배",
+   "baca": "seonbae",
+   "id": "senior"
+  },
+  {
+   "ko": "후배",
+   "baca": "hubae",
+   "id": "junior"
+  },
+  {
+   "ko": "아이고",
+   "baca": "aigo",
+   "id": "aduh (seruan)"
+  },
+  {
+   "ko": "잠깐",
+   "baca": "jamkkan",
+   "id": "sebentar"
+  },
+  {
+   "ko": "혹시",
+   "baca": "hoksi",
+   "id": "barangkali, kebetulan"
+  },
+  {
+   "ko": "-만",
+   "baca": "-man",
+   "id": "hanya, saja"
+  },
+  {
+   "ko": "-(이)라도",
+   "baca": "-(i)rado",
+   "id": "setidaknya, walaupun hanya"
+  },
+  {
+   "ko": "들어가십시오",
+   "baca": "deureogasipsio",
+   "id": "selamat jalan (kepada yang pulang) 【높】"
+  },
+  {
+   "ko": "할 수 없다",
+   "baca": "hal su eopda",
+   "id": "ya sudah, tidak bisa berbuat apa-apa"
+  },
+  {
+   "ko": "말씀만이라도",
+   "baca": "malsseummanirado",
+   "id": "ucapannya saja pun"
+  },
+  {
+   "ko": "다음 기회에",
+   "baca": "daeum gihoee",
+   "id": "lain kali"
+  },
+  {
+   "ko": "검토",
+   "baca": "geomto",
+   "id": "penelaahan 【문】"
+  },
+  {
+   "ko": "연락",
+   "baca": "yeollak",
+   "id": "kontak, hubungan"
+  },
+  {
+   "ko": "파일",
+   "baca": "pail",
+   "id": "berkas"
+  },
+  {
+   "ko": "저녁",
+   "baca": "jeonyeok",
+   "id": "petang, makan malam"
+  },
+  {
+   "ko": "한잔하다",
+   "baca": "hanjanhada",
+   "id": "minum sedikit bersama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Urutkan lima permintaan berikut dari yang paling ringan ke yang paling langsung, lalu tulis nomornya. Tulis satu nomor per item.",
+   "items": [
+    "[봐 줘|Bwa jwo]",
+    "[봐 주세요|Bwa juseyo]",
+    "[봐 주실 수 있을까 해서요|Bwa jusil su isseulkka haeseoyo]",
+    "[봐 주시겠어요|Bwa jusigesseoyo]?",
+    "[봐 주실 수 있으실까요|Bwa jusil su isseusilkkayo]?"
+   ]
+  },
+  {
+   "prompt": "Tambahkan bantalan yang paling cocok di depan tiap kalimat.",
+   "items": [
+    "____ [이 서류 좀 확인해 주실 수 있으실까요|i seoryu jom hwaginhae jusil su isseusilkkayo]?",
+    "____ [지하철역이 어디인가요|jihacheollyeogi eodiingayo]?",
+    "____ [지난번에도 부탁드렸는데 한 번만 더 부탁드립니다|jinanbeonedo butakdeuryeonneunde han beonman deo butakdeurimnida].",
+    "____ [회의 일정이 변경되었습니다|hoeui iljeongi byeongyeongdoeeotseumnida].",
+    "____ [잠깐만 시간 내 주실 수 있을까요|jamkkanman sigan nae jusil su isseulkkayo]?"
+   ]
+  },
+  {
+   "prompt": "Tulis penolakan lengkap empat bagian (maaf, alasan, penolakan, pengganti) untuk tiap keadaan.",
+   "items": [
+    "Atasan mengajak makan malam, tetapi kamu sudah ada janji.",
+    "Rekan meminta kamu menggantikan piketnya besok, tetapi kamu ada tenggat.",
+    "Pelanggan meminta harga diturunkan, tetapi kamu tidak berwenang.",
+    "Teman meminta dipinjami uang, tetapi kamu sedang kosong.",
+    "Kamu diminta menjadi pembicara, tetapi jadwalmu bentrok."
+   ]
+  },
+  {
+   "prompt": "Kalimat berikut sebenarnya penolakan. Terjemahkan maksud sebenarnya.",
+   "items": [
+    "[한번 검토해 보겠습니다|Hanbeon geomtohae bogetseumnida].",
+    "[취지는 좋은데요|Chwijineun joeundeyo]…",
+    "[상황을 좀 봐야 할 것 같습니다|Sanghwangeul jom bwaya hal geot gatseumnida].",
+    "[나중에 연락드리겠습니다|Najunge yeollakdeurigetseumnida].",
+    "[긍정적으로 검토하겠습니다|Geungjeongjeogeuro geomtohagetseumnida]."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi satu kalimat yang benar.",
+   "items": [
+    "곤란합니다 / 지금은 / 답변드리기가 / 좀",
+    "죄송한데요 / 바쁘신데 / 여쭤볼 게 / 있어서요",
+    "어려울 것 같습니다 / 이번에는 / 출장이 있어서 / 참석이",
+    "대신 / 다음 주에 / 연락드리겠습니다 / 제가",
+    "말씀만이라도 / 하하 / 감사합니다"
+   ]
+  },
+  {
+   "prompt": "Ubah tiap permintaan kasar berikut menjadi bentuk yang pantas untuk atasan.",
+   "items": [
+    "[이거 봐 줘|Igeo bwa jwo].",
+    "[내일까지 보내|Naeilkkaji bonae].",
+    "[시간 있어|Sigan isseo]?",
+    "[다시 설명해|Dasi seolmyeonghae].",
+    "[같이 가|Gachi ga]."
+   ]
+  }
+ ],
+ "answers": [
+  "5 — 4 — 1 — 3 — 2",
+  "[죄송하지만|Joesonghajiman] — [실례지만|Sillyejiman] — [염치없지만|Yeomchieopjiman] — [말씀드리기 조심스럽지만|Malsseumdeurigi josimseureopjiman] — [바쁘신데|Bappeusinde]",
+  "Contoh／[죄송한데 오늘 저녁에 선약이 있어서 참석이 어려울 것 같습니다. 다음 주에 제가 모시겠습니다|Joesonghande oneul jeonyeoge seonyagi isseoseo chamseogi eoryeoul geot gatseumnida. Daeum jue jega mosigetseumnida]. — Contoh／[미안한데 내일까지 마감이라 대신 서기가 좀 곤란해. 대신 다음 주는 내가 할게|Mianhande naeilkkaji magamira daesin seogiga jom gollanhae. Daesin daeum juneun naega halge]. — Contoh／[죄송하지만 가격 조정은 제 선에서 결정드리기가 곤란합니다. 내부 확인 후 회신드리겠습니다|Joesonghajiman gagyeok jojeongeun je seoneseo gyeoljeongdeurigiga gollanhamnida. Naebu hwagin hu hoesindeurigetseumnida]. — Contoh／[미안, 나도 이번 달은 좀 빠듯해서 빌려주기가 어려울 것 같아. 대신 다음 달에 여유 생기면 얘기할게|Mian, nado ibeon dareun jom ppadeutaeseo billyeojugiga eoryeoul geot gata. Daesin daeum dare yeoyu saenggimyeon yaegihalge]. — Contoh／[좋은 기회 주셔서 감사합니다. 다만 그날 일정이 겹쳐 참석이 곤란할 것 같습니다. 다른 분을 추천드려도 될까요|Joeun gihoe jusyeoseo gamsahamnida. Daman geunal iljeongi gyeopchyeo chamseogi gollanhal geot gatseumnida. Dareun buneul chucheondeuryeodo doelkkayo]?",
+  "biasanya berarti tidak — penolakan; pujian yang mendahului “tetapi” — tidak, kecuali kamu mendesak — tidak akan dihubungi — ini justru kemungkinan besar diterima",
+  "[지금은 답변드리기가 좀 곤란합니다|Jigeumeun dapbyeondeurigiga jom gollanhamnida]. — [바쁘신데 죄송한데요, 여쭤볼 게 있어서요|Bappeusinde joesonghandeyo, yeojjwobol ge isseoseoyo]. — [출장이 있어서 이번에는 참석이 어려울 것 같습니다|Chuljangi isseoseo ibeoneneun chamseogi eoryeoul geot gatseumnida]. — [대신 다음 주에 제가 연락드리겠습니다|Daesin daeum jue jega yeollakdeurigetseumnida]. — [하하, 말씀만이라도 감사합니다|Haha, malsseummanirado gamsahamnida].",
+  "[이것 좀 봐 주실 수 있으실까요|Igeot jom bwa jusil su isseusilkkayo]? — [내일까지 보내 주시겠습니까|Naeilkkaji bonae jusigetseumnikka]? — [혹시 지금 시간 있으세요|Hoksi jigeum sigan isseuseyo]? — [죄송한데 다시 한번 설명해 주실 수 있을까요|Joesonghande dasi hanbeon seolmyeonghae jusil su isseulkkayo]? — [같이 가 주실 수 있으실까요|Gachi ga jusil su isseusilkkayo]?"
+ ],
+ "wave": "Kembali ke Unit 2 dan baca ulang dialog pertama — panggilan telepon Ani. Tandai tiap bantalan yang kamu temukan di sana, lalu cocokkan dengan tabel tujuh bantalan di unit ini. Kalau kamu menemukan kurang dari tiga, kamu belum melihatnya; baca sekali lagi."
+}
