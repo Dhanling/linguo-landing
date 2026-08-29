@@ -1,0 +1,270 @@
+{
+ "title": "Empat ragam yang harus dipisah: 常体, 敬体, 縮約形, である体",
+ "title_target": "[話|hana]し[言葉|kotoba]と[書|ka]き[言葉|kotoba]",
+ "goal": "Berpindah bebas antara empat ragam bahasa Jepang, mengenali dan memakai bentuk susut ragam lisan, serta menulis satu paragraf dalam である体 tanpa menyisakan satu pun kata percakapan.",
+ "bekal": ["mengenali dan menguraikan dua puluh 縮約形 ragam lisan", "menulis paragraf dalam である体 dengan penghubung ragam tulis", "menukar penghubung percakapan dengan padanan ragam tulisnya", "menyadari kapan berpindah dari 敬体 ke 常体 di tengah percakapan", "membaca kalimat 〜のである dan 〜わけである tanpa tersandung"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Draf laporan yang seluruhnya salah ragam",
+   "intro": "Ani menulis laporan pertamanya. Isinya benar; ragamnya tidak. Tanaka membacanya di layar sambil berkomentar. Perhatikan bahwa tak satu pun koreksi menyangkut tata bahasa.",
+   "lines": [
+    {"speaker": "[田中|Tanaka]:", "text": "[中身|Nakami]はいい。[数字|Sūji]も[合|a]ってる。でも、これは[報告書|hōkokusho]じゃなくて[日記|nikki]だな。", "id": "Isinya bagus. Angkanya juga cocok. Tapi ini bukan laporan, ini buku harian.", "literal": "isi — mengenai — baik. angka — juga — cocok — sedang. tetapi, ini — mengenai — laporan-surat — bukan-dan — buku-harian — adalah — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "え、どこがですか。", "id": "Eh, bagian yang mana?", "literal": "eh, mana — yang — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "「でも」「だから」「すごく」「たくさん」。[全部|Zenbu][話|hana]し[言葉|kotoba]。[報告書|Hōkokusho]で[使|tsuka]うと、[小学生|shōgakusei]の[作文|sakubun]みたいに[見|mi]える。", "id": "“Demo”, “dakara”, “sugoku”, “takusan”. Semuanya bahasa lisan. Kalau dipakai di laporan, kelihatan seperti karangan anak SD.", "literal": "seluruh — bicara — kata. laporan-surat — dengan — memakai — kalau, SD-murid — punya — karangan — seperti — pada — terlihat."},
+    {"speaker": "[アニ|Ani]:", "text": "[意味|Imi]は[通|tsū]じますよね。", "id": "Tapi maksudnya sampai, kan?", "literal": "arti — mengenai — sampai — ya."},
+    {"speaker": "[田中|Tanaka]:", "text": "[通|Tsū]じる。[通|Tsū]じるけど、この[報告書|hōkokusho]は[役員|yakuin]も[読|yo]む。[読|Yo]む[人|hito]が[内容|naiyō]じゃなくて[書|ka]き[方|kata]を[気|ki]にし[始|haji]めたら、そこで[負|ma]けだ。", "id": "Sampai. Sampai sih, tapi laporan ini juga dibaca direksi. Kalau yang membaca mulai memperhatikan cara menulisnya alih-alih isinya, di situ kamu sudah kalah.", "literal": "sampai. sampai — tetapi, ini — laporan-surat — mengenai — pengurus — juga — membaca. membaca — orang — yang — isi — bukan-dan — menulis-cara — akan — perhatian — mulai — kalau, di-situ — dengan — kalah — adalah."},
+    {"speaker": "[アニ|Ani]:", "text": "「でも」は[何|nani]に[変|ka]えればいいですか。", "id": "“Demo” harus diganti apa?", "literal": "“tetapi” — mengenai — apa — menjadi — mengubah — kalau — baik — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[文頭|Buntō]なら「しかし」。[前|Mae]の[文|bun]につなげるなら「〜ものの」「〜が」。「だから」は「したがって」。「すごく」は「[大幅|ōhaba]に」か「[著|ichijiru]しく」。", "id": "Kalau di awal kalimat, “shikashi”. Kalau menyambung ke kalimat sebelumnya, “~mono no” atau “~ga”. “Dakara” jadi “shitagatte”. “Sugoku” jadi “ōhaba ni” atau “ichijirushiku”.", "literal": "kalimat-kepala — kalau — “tetapi”. sebelum — punya — kalimat — kepada — menyambung — kalau — “meskipun” “tetapi”. “karena-itu” — mengenai — “dengan-demikian”. “sangat” — mengenai — “besar-lebar — pada” — atau — “mencolok”."},
+    {"speaker": "[アニ|Ani]:", "text": "[覚|Obo]えられるかな……。", "id": "Bisa hafal nggak ya…", "literal": "mengingat — bisa — kah — ya."},
+    {"speaker": "[田中|Tanaka]:", "text": "[覚|Obo]えなくていい。[一度|Ichido][新聞|shinbun]の[社説|shasetsu]を[書|ka]き[写|utsu]してみろ。[三日|Mikka]で[体|karada]が[覚|obo]える。[語彙|Goi]じゃなくて[リズム|rizumu]の[問題|mondai]だから。", "id": "Nggak perlu dihafal. Coba salin tulis satu tajuk rencana koran. Tiga hari, badanmu yang hafal. Karena ini soal irama, bukan kosakata.", "literal": "mengingat — tidak — baik. sekali — koran — punya — tajuk — akan — menulis-menyalin — coba(perintah). tiga-hari — dengan — badan — yang — mengingat. kosakata — bukan-dan — irama — punya — masalah — karena."},
+    {"speaker": "[アニ|Ani]:", "text": "あと、[語尾|gobi]は「です・ます」でいいんですか。", "id": "Terus, akhiran kalimatnya pakai “desu/masu” saja boleh?", "literal": "sesudah, kata-ekor — mengenai — “adalah · melakukan” — dengan — baik — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[社内|Shanai][報告|hōkoku]なら「です・ます」。[対外|Taigai]の[提案書|teiansho]や[分析|bunseki][資料|shiryō]なら「である」。[混|Ma]ぜるのがいちばんまずい。", "id": "Kalau laporan internal, “desu/masu”. Kalau proposal ke luar atau materi analisis, “de aru”. Yang paling buruk itu mencampurnya.", "literal": "dalam-perusahaan — laporan — kalau — “adalah · melakukan”. luar-perusahaan — punya — usulan-surat — dan — analisis — bahan — kalau — “adalah”. mencampur — yang — paling — buruk."},
+    {"speaker": "[アニ|Ani]:", "text": "[混|Ma]ぜてました。[全部|Zenbu][直|nao]します。", "id": "Saya mencampurnya. Akan saya perbaiki semua.", "literal": "mencampur — sedang(lampau). seluruh — memperbaiki."}
+   ],
+   "notes": [
+    "**Empat ragam, dan menukar salah satunya adalah kesalahan paling terlihat di tingkat B2.** [常体|jōtai] = bentuk biasa (だ・する); [敬体|keitai] = bentuk sopan (です・ます); [縮約形|shukuyakukei] = bentuk susut ragam lisan (〜ちゃう・〜とく); [である体|de aru tai] = ragam tulis akademis dan analitis. Yang terakhir bukan “lebih sopan” — ia justru netral tanpa lawan bicara.",
+    "**[話|hana]し[言葉|kotoba] tidak berarti “tidak sopan”.** すごく dan たくさん sopan sekali kalau diucapkan; masalahnya semata bahwa ia bukan ragam tulis. Inilah yang membuat kesalahan ragam sulit dilihat pembelajar: tak ada yang terasa kasar, hanya terasa **muda**.",
+    "**[文頭|Buntō] vs penyambung.** しかし berdiri di awal kalimat baru; 〜が dan 〜ものの menempel di ujung klausa sebelumnya. Bahasa Jepang tulis lebih menyukai yang kedua, karena ia menjaga kalimat tetap mengalir. Unit 6 membedah seluruh keluarga penyambung berlawanan ini.",
+    "**[書|Ka]き[写|utsu]す — nasihat yang benar-benar berhasil.** Menyalin tajuk rencana ([社説|shasetsu]) surat kabar dengan tangan adalah latihan klasik yang direkomendasikan guru bahasa Jepang untuk pembelajar tingkat lanjut, dan alasannya persis seperti kata Tanaka: ragam tulis lebih banyak soal irama dan pilihan penghubung daripada kosakata.",
+    "**Kapan である dan kapan です・ます.** である体 dipakai di: karangan, laporan analisis, skripsi, artikel, buku. です・ます dipakai di: surel, laporan internal, presentasi, surat. Yang tak boleh: mencampurnya dalam satu dokumen. Satu-satunya pengecualian yang lazim adalah judul dan poin bernomor, yang boleh berupa kata benda telanjang ([体言止|taigen-do]め).",
+    "**[〜のである|no de aru] bukan である biasa.** Ia menandai penjelasan atau penekanan: “dan itulah sebabnya”. [売上|Uriage]が[落|o]ちた。[顧客|Kokyaku]が[高齢化|kōreika]しているのである。 Baris kedua bukan fakta baru, melainkan penjelasan baris pertama. Di ragam lisan padanannya 〜んです.",
+    "**[語尾|Gobi] adalah tempat semua penanda ragam berkumpul.** Kalau kamu ingin mengubah ragam satu tulisan dengan cepat, ubah ujung kalimatnya lebih dulu; kosakata biasanya menyusul sendiri karena telingamu mulai menolak campuran yang janggal.",
+    "**Baris 1 dan 12 memperlihatkan hubungan atasan–bawahan yang tidak simetris lagi**, sama seperti Unit 2. Yang menarik: Ani tetap memakai です・ます meski Tanaka memakai 常体, dan itu sepenuhnya wajar. Menyamakan ragam dengan atasan adalah keputusan yang harus **ditawarkan atasan lebih dulu**."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk susut ragam lisan (縮約形) yang wajib dikenali",
+     "body": ["Kamu tak harus memproduksi semuanya, tapi tak satu pun percakapan nyata, drama, atau pesan singkat yang bisa dibaca tanpa mengenalinya."],
+     "table": {
+      "head": ["Bentuk susut", "Asalnya", "Contoh"],
+      "rows": [
+       ["〜てる／〜でる", "〜ている", "[知|shi]ってる · [読|yo]んでる"],
+       ["〜とく／〜どく", "〜ておく", "[買|ka]っとく · [読|yo]んどく"],
+       ["〜ちゃう／〜じゃう", "〜てしまう", "[忘|wasu]れちゃう · [飲|no]んじゃう"],
+       ["〜なきゃ", "〜なければ（ならない）", "[行|i]かなきゃ"],
+       ["〜なくちゃ", "〜なくては（いけない）", "[やらなくちゃ|yaranakucha]"],
+       ["〜たら／〜れば の [ら|ra]-抜き", "〜られる → 〜れる", "[食|ta]べれる（[本来|honrai]は[食|ta]べられる）"],
+       ["〜ってる", "〜と[言|i]っている", "[明日|ashita][来|ku]るってる"],
+       ["〜って", "〜という／〜と", "[林|Hayashi]さんって[人|hito] · [高|taka]いって[聞|ki]いた"],
+       ["〜んで", "〜ので", "[急|iso]いでるんで、また[今度|kondo]"],
+       ["〜っす", "〜です（[体育会系|taiikukaikei]）", "そうっす · [大丈夫|daijōbu]っす"]
+      ]
+     },
+     "after": [
+      "**〜って adalah yang paling produktif dari semuanya.** Ia bisa menggantikan と言う, という, とは, dan は sekaligus, dan sebagian besar percakapan sehari-hari bertumpu padanya: [田中|Tanaka]さんって[知|shi]ってる？ · [無理|Muri]って[言|i]われた · [納豆|Nattō]って[何|nani]？",
+      "**[ら|ra]-抜き[言葉|kotoba] adalah perkara politik kecil.** 食べれる secara tata bahasa baku salah (yang benar 食べられる), tapi dipakai sebagian besar penutur di bawah lima puluh tahun. Di ujian dan tulisan resmi, tetap pakai bentuk penuh; di percakapan, tak ada yang keberatan."
+     ]
+    },
+    {
+     "title": "である体: menulis tanpa lawan bicara",
+     "body": ["Ciri terbesarnya bukan である itu sendiri, melainkan **hilangnya lawan bicara**. Tak ada です・ます, tak ada ね, tak ada よ, tak ada pertanyaan retoris yang mengajak."],
+     "table": {
+      "head": ["です・ます体", "である体", "Catatan"],
+      "rows": [
+       ["[問題|Mondai]です", "[問題|Mondai]である", "kata benda + である"],
+       ["[大切|Taisetsu]です", "[大切|Taisetsu]である", "kata sifat な + である"],
+       ["[高|Taka]いです", "[高|Taka]い", "kata sifat い: cukup dibiarkan"],
+       ["[増|Fu]えています", "[増|Fu]えている", "kata kerja: bentuk biasa"],
+       ["〜と[思|omo]います", "〜と[考|kanga]えられる", "pendapat dipindahkan ke bentuk pasif"],
+       ["〜でしょう", "〜であろう · 〜と[思|omo]われる", "dugaan ragam tulis"],
+       ["〜ではありません", "〜ではない", ""],
+       ["〜なければなりません", "〜なければならない · 〜ざるを[得|e]ない", ""]
+      ]
+     },
+     "after": ["**Baris kelima adalah yang paling penting.** Ragam tulis Jepang menghindari 私は〜と思う karena ia menonjolkan penulisnya. Yang dipakai: 〜と[考|kanga]えられる, 〜と[言|i]えよう, 〜と[思|omo]われる. Hasilnya kalimat yang seolah tidak ada penulisnya — dan itulah nada yang dicari."]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Pesan singkat yang tak akan pernah masuk laporan",
+   "intro": "Percakapan LINE antara Ani dan Rina di hari yang sama. Bacalah keras-keras; hampir tiap baris memuat bentuk susut.",
+   "lines": [
+    {"speaker": "[リナ|Rina]:", "text": "レポート[終|o]わった？", "id": "Laporannya kelar?", "literal": "laporan — selesai(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[終|O]わってない。[全部|Zenbu][書|ka]き[直|nao]しになっちゃった。", "id": "Belum. Malah jadi harus ditulis ulang semua.", "literal": "selesai — tidak. seluruh — menulis-memperbaiki — menjadi — sudah(sayang)."},
+    {"speaker": "[リナ|Rina]:", "text": "まじで。[何|nani]が[悪|waru]かったの。", "id": "Serius? Apanya yang salah?", "literal": "sungguh — dengan. apa — yang — buruk(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[中身|Nakami]はよかったんだって。でも「でも」とか「だから」とか[使|tsuka]っちゃだめらしい。", "id": "Katanya isinya bagus. Tapi kayaknya nggak boleh pakai “demo”, “dakara”, dan semacamnya.", "literal": "isi — mengenai — baik(lampau) — begitu-katanya. tetapi — “tetapi” — semacam — “karena-itu” — semacam — memakai — tidak-boleh — tampaknya."},
+    {"speaker": "[リナ|Rina]:", "text": "あー、それうちも[最初|saisho][言|i]われた。[社説|Shasetsu][写|utsu]すやつやった？", "id": "Ah, aku juga dibilangin gitu waktu awal. Udah nyoba yang nyalin tajuk rencana itu?", "literal": "ah, itu — aku — juga — awal — dikatakan(lampau). tajuk — menyalin — hal — melakukan(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[今|Ima]からやる。[三日|Mikka]で[体|karada]が[覚|obo]えるって[言|i]われたけど[本当|hontō]かな。", "id": "Mulai sekarang. Katanya tiga hari badan bakal hafal, tapi bener nggak ya.", "literal": "sekarang — dari — melakukan. tiga-hari — dengan — badan — yang — mengingat — begitu — dikatakan(lampau) — tetapi — sungguh — kah — ya."},
+    {"speaker": "[リナ|Rina]:", "text": "[本当|Honto]。うちは[一週間|isshūkan]かかったけど、[書|ka]けるようになった。あと[新聞|shinbun][読|yo]んどくといいよ。", "id": "Bener kok. Aku sih makan seminggu, tapi jadi bisa nulis. Terus mending baca-baca koran juga.", "literal": "sungguh. aku — mengenai — satu-minggu — memakan(lampau) — tetapi, menulis-bisa — menjadi(lampau). sesudah — koran — membaca-menaruh — kalau — baik — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "[了解|Ryōkai]。……あ、これも[会社|kaisha]では[言|i]っちゃだめなんだった。", "id": "Oke. …Ah, ini juga nggak boleh dipakai di kantor ya.", "literal": "mengerti. …ah, ini — juga — perusahaan — di — mengenai — mengatakan — tidak-boleh — adalah(lampau)."},
+    {"speaker": "[リナ|Rina]:", "text": "うちらの[間|aida]では[一生|isshō][使|tsuka]っていいよ。", "id": "Di antara kita berdua sih boleh dipakai seumur hidup.", "literal": "kita — punya — antara — di — mengenai — seumur-hidup — memakai — baik — ya."}
+   ],
+   "notes": [
+    "**Baris 4 memuat tiga penanda kabar dengar dalam satu kalimat: 〜んだって, 〜らしい.** Ragam lisan sangat rajin menandai dari mana informasinya datang. Unit 5 membedah seluruh keluarga ini, tapi perhatikan sekarang bahwa kabar dengar hampir tak pernah disampaikan telanjang.",
+    "**うち sebagai kata ganti “aku”** lazim di ragam perempuan muda, terutama Kansai, dan menyebar lewat media sosial. Padanan lain yang sering muncul: [僕|boku] (laki-laki, lunak), [俺|ore] (laki-laki, akrab), [自分|jibun] (netral, kaku), [わたくし|watakushi] (sangat formal).",
+    "**[やった|yatta]？ di baris 5 = やりましたか.** Perhatikan bahwa pertanyaan ragam biasa dibentuk semata dengan nada naik, tanpa か. Menambahkan か pada bentuk biasa ([やったか|yatta ka]) justru terdengar kasar atau menginterogasi.",
+    "**Baris terakhir menyimpan gagasan seluruh unit.** Ragam bukan tangga dari buruk ke baik; ia peta ruangan. Ragam yang sama bisa hangat di satu ruangan dan memalukan di ruangan sebelah, dan yang dipelajari di tingkat B2 bukan ragam baru melainkan **kepekaan terhadap pintunya**."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat puluh penukaran yang paling sering dibutuhkan",
+   "blocks": [
+    {"type": "p", "text": "Daftar ini cukup untuk menaikkan hampir semua tulisanmu satu tingkat. Bagian belakang modul memuat 150 pasangan; ini yang paling sering terpakai."},
+    {"type": "tabel", "head": ["話し言葉", "書き言葉", "話し言葉", "書き言葉"], "rows": [
+     ["でも", "しかし・だが", "だから", "したがって・そのため"],
+     ["それに", "さらに・また", "けど", "が・ものの"],
+     ["じゃあ", "それでは", "とか", "など"],
+     ["やっぱり", "やはり", "ちょっと", "やや・[若干|jakkan]"],
+     ["すごく", "[非常|hijō]に・[極|kiwa]めて", "たくさん", "[多数|tasū]・[多|ō]くの"],
+     ["だいたい", "[およそ|oyoso]・[約|yaku]", "ほとんど", "[大部分|daibubun]"],
+     ["いろいろ", "[様々|samazama]な", "だんだん", "[次第|shidai]に・[徐々|jojo]に"],
+     ["どんどん", "[急速|kyūsoku]に", "もっと", "より・さらに"],
+     ["ちゃんと", "[適切|tekisetsu]に", "しっかり", "[十分|jūbun]に"],
+     ["いっぱい", "[多|ō]く", "ぜんぜん", "[全|matta]く"],
+     ["[今|ima]", "[現在|genzai]", "この[間|aida]", "[先日|senjitsu]"],
+     ["これから", "[今後|kongo]", "[前|mae]に", "[以前|izen]"],
+     ["[使|tsuka]う", "[使用|shiyō]する・[用|mochi]いる", "[やる|yaru]", "[行|okona]う"],
+     ["[言|i]う", "[述|no]べる", "[見|mi]る", "[観察|kansatsu]する"],
+     ["[分|wa]かる", "[判明|hanmei]する", "[思|omo]う", "[考|kanga]える"],
+     ["[増|fu]える", "[増加|zōka]する", "[減|he]る", "[減少|genshō]する"],
+     ["[調|shira]べる", "[調査|chōsa]する", "[決|ki]める", "[決定|kettei]する"],
+     ["[始|haji]める", "[開始|kaishi]する", "[終|o]わる", "[終了|shūryō]する"],
+     ["[足|ta]りない", "[不足|fusoku]している", "[すごい|sugoi]", "[著|ichijiru]しい"],
+     ["だいじょうぶ", "[問題|mondai]ない", "むずかしい", "[困難|konnan]である"]
+    ]},
+    {"type": "p", "text": "**Polanya:** kolom kanan hampir seluruhnya 漢語 berakhiran する atau kata sifat な. Ini bukan kebetulan — kosakata Tionghoa-Jepang masuk ke Jepang lewat tulisan, dan tetap tinggal di sana. Begitu polanya kamu tangkap, kata baru pun bisa kamu tebak arahnya tanpa membuka daftar."}
+   ]
+  },
+  {
+   "title": "Satu paragraf, empat ragam",
+   "blocks": [
+    {"type": "p", "text": "Isi yang sama, empat baju. Bacalah keempatnya berurutan keras-keras — inilah latihan paling cepat untuk memasang telinga ragam."},
+    {"type": "kotak", "title": "常体 (bentuk biasa, catatan pribadi)", "items": [
+     "[売上|Uriage]が[落|o]ちた。[原因|Gen'in]は[客|kyaku]が[減|he]ったこと。[高|Taka]い[商品|shōhin]が[売|u]れなくなった。[値段|Nedan]を[見直|minao]すべきだと[思|omo]う。"
+    ]},
+    {"type": "kotak", "title": "敬体 (bentuk sopan, laporan internal)", "items": [
+     "[売上|Uriage]が[落|o]ちました。[原因|Gen'in]は[来店客|raitenkyaku]の[減少|genshō]です。[高価格帯|Kōkakakutai]の[商品|shōhin]が[売|u]れにくくなっております。[価格|Kakaku]の[見直|minao]しが[必要|hitsuyō]だと[考|kanga]えております。"
+    ]},
+    {"type": "kotak", "title": "縮約形 (percakapan)", "items": [
+     "[売上|Uriage][落|o]ちちゃっててさ。お[客|kyaku]さん[減|he]ってんのが[原因|gen'in]なんだって。[高|Taka]いやつ[全然|zenzen][売|u]れなくなってて、[値段|nedan][見直|minao]さなきゃだよね。"
+    ]},
+    {"type": "kotak", "title": "である体 (materi analisis, proposal ke luar)", "items": [
+     "[売上|Uriage]は[前年比|zennenhi]で[減少|genshō]した。[主|shu]たる[要因|yōin]は[来店客数|raitenkyakusū]の[減少|genshō]である。[高価格帯|Kōkakakutai][商品|shōhin]の[販売|hanbai][不振|fushin]が[顕著|kenchō]であり、[価格戦略|kakaku senryaku]の[見直|minao]しが[急務|kyūmu]であると[考|kanga]えられる。"
+    ]},
+    {"type": "p", "text": "Perhatikan perjalanan satu gagasan yang sama: 客が減った → 来店客の減少です → お客さん減ってんの → 来店客数の減少である. Yang berubah bukan faktanya, melainkan **seberapa banyak pelaku manusia yang dibiarkan tampak**. Makin ke kanan, makin sedikit orang di dalam kalimat — dan itulah arah ragam tulis Jepang."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "話し言葉", "baca": "はなしことば · hanashi kotoba", "id": "ragam lisan"},
+  {"ja": "書き言葉", "baca": "かきことば · kaki kotoba", "id": "ragam tulis"},
+  {"ja": "常体", "baca": "じょうたい · jōtai", "id": "bentuk biasa (だ・する)"},
+  {"ja": "敬体", "baca": "けいたい · keitai", "id": "bentuk sopan (です・ます)"},
+  {"ja": "縮約形", "baca": "しゅくやくけい · shukuyakukei", "id": "bentuk susut ragam lisan"},
+  {"ja": "語尾", "baca": "ごび · gobi", "id": "akhiran kalimat"},
+  {"ja": "文頭", "baca": "ぶんとう · buntō", "id": "awal kalimat"},
+  {"ja": "報告書", "baca": "ほうこくしょ · hōkokusho", "id": "laporan tertulis"},
+  {"ja": "提案書", "baca": "ていあんしょ · teiansho", "id": "proposal"},
+  {"ja": "社説", "baca": "しゃせつ · shasetsu", "id": "tajuk rencana"},
+  {"ja": "書き写す", "baca": "かきうつす · kakiutsusu", "id": "menyalin dengan tangan"},
+  {"ja": "役員", "baca": "やくいん · yakuin", "id": "direksi; pengurus"},
+  {"ja": "対外", "baca": "たいがい · taigai", "id": "ke pihak luar"},
+  {"ja": "しかし", "baca": "shikashi", "id": "tetapi 【書】"},
+  {"ja": "したがって", "baca": "shitagatte", "id": "dengan demikian 【書】"},
+  {"ja": "〜ものの", "baca": "mono no", "id": "meskipun 【書】"},
+  {"ja": "大幅に", "baca": "おおはばに · ōhaba ni", "id": "secara besar-besaran"},
+  {"ja": "著しい", "baca": "いちじるしい · ichijirushii", "id": "mencolok; nyata 【書】"},
+  {"ja": "非常に", "baca": "ひじょうに · hijō ni", "id": "sangat 【書】"},
+  {"ja": "極めて", "baca": "きわめて · kiwamete", "id": "amat sangat 【書】"},
+  {"ja": "若干", "baca": "じゃっかん · jakkan", "id": "sedikit 【書】"},
+  {"ja": "およそ", "baca": "oyoso", "id": "kira-kira 【書】"},
+  {"ja": "様々な", "baca": "さまざまな · samazama na", "id": "beraneka 【書】"},
+  {"ja": "次第に", "baca": "しだいに · shidai ni", "id": "lambat laun 【書】"},
+  {"ja": "徐々に", "baca": "じょじょに · jojo ni", "id": "sedikit demi sedikit 【書】"},
+  {"ja": "急速に", "baca": "きゅうそくに · kyūsoku ni", "id": "dengan cepat 【書】"},
+  {"ja": "適切に", "baca": "てきせつに · tekisetsu ni", "id": "secara tepat 【書】"},
+  {"ja": "用いる", "baca": "もちいる · mochiiru", "id": "memakai 【書】"},
+  {"ja": "行う", "baca": "おこなう · okonau", "id": "melakukan 【書】"},
+  {"ja": "述べる", "baca": "のべる · noberu", "id": "menyatakan 【書】"},
+  {"ja": "判明する", "baca": "はんめいする · hanmei suru", "id": "menjadi jelas 【書】"},
+  {"ja": "増加する", "baca": "ぞうかする · zōka suru", "id": "meningkat 【書】"},
+  {"ja": "減少する", "baca": "げんしょうする · genshō suru", "id": "menurun 【書】"},
+  {"ja": "不足する", "baca": "ふそくする · fusoku suru", "id": "kurang 【書】"},
+  {"ja": "困難である", "baca": "こんなんである · konnan de aru", "id": "sulit 【書】"},
+  {"ja": "顕著", "baca": "けんちょ · kencho", "id": "menonjol 【書】"},
+  {"ja": "急務", "baca": "きゅうむ · kyūmu", "id": "hal yang mendesak 【書】"},
+  {"ja": "要因", "baca": "よういん · yōin", "id": "faktor penyebab 【書】"},
+  {"ja": "前年比", "baca": "ぜんねんひ · zennenhi", "id": "dibanding tahun lalu"},
+  {"ja": "不振", "baca": "ふしん · fushin", "id": "lesu; tidak laku"},
+  {"ja": "見直し", "baca": "みなおし · minaoshi", "id": "peninjauan ulang"},
+  {"ja": "価格帯", "baca": "かかくたい · kakakutai", "id": "rentang harga"},
+  {"ja": "戦略", "baca": "せんりゃく · senryaku", "id": "strategi"},
+  {"ja": "体言止め", "baca": "たいげんどめ · taigen-dome", "id": "kalimat ditutup kata benda"},
+  {"ja": "語彙", "baca": "ごい · goi", "id": "perbendaharaan kata"},
+  {"ja": "リズム", "baca": "rizumu", "id": "irama"},
+  {"ja": "作文", "baca": "さくぶん · sakubun", "id": "karangan"},
+  {"ja": "中身", "baca": "なかみ · nakami", "id": "isi"},
+  {"ja": "ら抜き言葉", "baca": "らぬきことば · ra-nuki kotoba", "id": "bentuk potensial tanpa ら"},
+  {"ja": "一生", "baca": "いっしょう · isshō", "id": "seumur hidup"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Uraikan bentuk susut berikut menjadi bentuk penuhnya.",
+   "items": [
+    "[買|Ka]っとくね。",
+    "[忘|Wasu]れちゃった。",
+    "[今|Ima][行|i]かなきゃ。",
+    "[林|Hayashi]さんって[人|hito]、[知|shi]ってる？",
+    "[急|Iso]いでるんで、また[今度|kondo]。"
+   ]
+  },
+  {
+   "prompt": "Ganti kata ragam lisan bergaris bawah dengan padanan ragam tulisnya.",
+   "items": [
+    "**でも**、[結果|kekka]は[良|yo]くなかった。",
+    "[客|Kyaku]が**すごく**[減|he]った。",
+    "**だから**、[値段|nedan]を[下|sa]げる[必要|hitsuyō]がある。",
+    "**いろいろ**な[意見|iken]が[出|de]た。",
+    "**この[間|aida]**の[会議|kaigi]で[決|ki]まった。"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat です・ます体 berikut menjadi である体.",
+   "items": [
+    "これは[大|ō]きな[問題|mondai]です。",
+    "[売上|Uriage]は[増|fu]えています。",
+    "[原因|Gen'in]は[一|hito]つではありません。",
+    "[対策|Taisaku]を[取|to]らなければなりません。",
+    "[今後|Kongo]も[続|tsuzu]くでしょう。"
+   ]
+  },
+  {
+   "prompt": "Tandai tiap kalimat: 常体, 敬体, 縮約形, atau である体.",
+   "items": [
+    "[調査|Chōsa]の[結果|kekka]、[三|mi]つの[要因|yōin]が[判明|hanmei]した。",
+    "[明日|Ashita][休|yasu]むって[言|i]ってたよ。",
+    "ご[確認|kakunin]のほどよろしくお[願|nega]いいたします。",
+    "この[点|ten]については[議論|giron]の[余地|yochi]があると[考|kanga]えられる。",
+    "[今日|Kyō]はもう[帰|kae]る。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang dalam ragam yang diminta.",
+   "items": [
+    "Penjualan turun dibanding tahun lalu. (である体)",
+    "Saya rasa perlu meninjau ulang harganya. (敬体, laporan internal)",
+    "Katanya besok dia nggak masuk. (縮約形)",
+    "Faktor utamanya adalah berkurangnya jumlah pengunjung. (である体)",
+    "Beraneka pendapat muncul dalam rapat kemarin. (敬体)"
+   ]
+  },
+  {
+   "prompt": "Tulis paragraf enam kalimat untuk keadaan berikut, sekali dalam である体 dan sekali dalam 敬体.",
+   "items": [
+    "Kamu melaporkan bahwa jumlah pelanggan aplikasi turun tiga bulan berturut-turut dan mengusulkan dua langkah perbaikan.",
+    "Kamu menjelaskan kepada atasan kenapa proyek tertunda dua minggu, tanpa menyalahkan siapa pun."
+   ]
+  }
+ ],
+ "answers": [
+  "[買|ka]っておくね。 — [忘|wasu]れてしまった。 — [今|ima][行|i]かなければならない。 — [林|Hayashi]さんという[人|hito]を[知|shi]っていますか。 — [急|iso]いでいるので、また[今度|kondo]。",
+  "しかし — [大幅|ōhaba]に · [著|ichijiru]しく — したがって — [様々|samazama]な — [先日|senjitsu]",
+  "これは[大|ō]きな[問題|mondai]である。 — [売上|Uriage]は[増加|zōka]している。 — [原因|Gen'in]は[一|hito]つではない。 — [対策|Taisaku]を[取|to]らなければならない。 — [今後|Kongo]も[続|tsuzu]くであろう。",
+  "である体 — 縮約形 — 敬体 — である体 — 常体",
+  "[売上|Uriage]は[前年比|zennenhi]で[減少|genshō]した。 — [価格|Kakaku]の[見直|minao]しが[必要|hitsuyō]だと[考|kanga]えております。 — [明日|Ashita][休|yasu]むって[言|i]ってたよ。 — [主|shu]たる[要因|yōin]は[来店客数|raitenkyakusū]の[減少|genshō]である。 — [先日|Senjitsu]の[会議|kaigi]では[様々|samazama]なご[意見|iken]が[出|de]ました。",
+  "Contoh 1／である体: [アプリ|Apuri]の[利用者数|riyōshasū]は[三|san]か[月|getsu][連続|renzoku]で[減少|genshō]している。[特|toku]に[新規|shinki][登録|tōroku]の[落|o]ち[込|ko]みが[著|ichijiru]しい。[要因|Yōin]は[二|futa]つ[考|kanga]えられる。[第一|Daiichi]に[競合|kyōgō][アプリ|apuri]の[無料|muryō][化|ka]、[第二|daini]に[起動|kidō][速度|sokudo]の[遅|oso]さである。[対策|Taisaku]として、[起動|kidō][時間|jikan]の[短縮|tanshuku]と[初回|shokai][利用|riyō][体験|taiken]の[見直|minao]しを[提案|teian]する。[いずれ|Izure]も[三|san]か[月|getsu][以内|inai]に[実施|jisshi][可能|kanō]である。／敬体: [アプリ|Apuri]の[利用者数|riyōshasū]が[三|san]か[月|getsu][連続|renzoku]で[減|he]っております。（[以下|ika][同様|dōyō]に です・ます で[統一|tōitsu]） — Contoh 2／である体: [本件|Honken]の[遅延|chien]は[二|ni][週間|shūkan]である。[主|shu]たる[要因|yōin]は[仕様|shiyō][確定|kakutei]の[遅|oku]れであり、[外部|gaibu][要因|yōin]も[重|kasa]なった。[責任|Sekinin]の[所在|shozai]よりも[回復|kaifuku][計画|keikaku]を[優先|yūsen]すべきであると[考|kanga]える。[今後|Kongo]は[週次|shūji]で[進捗|shinchoku]を[共有|kyōyū]する。／敬体: [本件|Honken]は[二|ni][週間|shūkan]の[遅|oku]れとなっております。[仕様|Shiyō]の[確定|kakutei]に[想定|sōtei]より[時間|jikan]を[要|yō]しました。[今後|Kongo]は[毎週|maishū][進捗|shinchoku]をご[報告|hōkoku]いたします。"
+ ],
+ "wave": "Ambil satu surel yang kamu tulis di Unit 2, lalu tulis ulang seluruhnya dalam である体 seolah ia laporan analisis. Kamu akan menemukan bahwa sebagian besar ungkapan tetap surel — お世話になっております, 恐れ入りますが, 何卒 — menguap sepenuhnya, karena mereka semua menyapa lawan bicara. Yang tersisa adalah faktanya. Itulah selisih antara menulis KEPADA seseorang dan menulis TENTANG sesuatu."
+}

@@ -1,0 +1,265 @@
+{
+ "title": "Peta 敬語: siapa yang dinaikkan, siapa yang direndahkan",
+ "title_target": "[敬語|Keigo]の[全体像|zentaizō]",
+ "goal": "Memisahkan 尊敬語, 謙譲語, dan 丁寧語 sebagai tiga alat yang berbeda tugasnya, mengenali kata kerja hormat yang harus dihafal utuh, dan menyelesaikan satu kunjungan bisnis dari meja resepsionis sampai ruang rapat tanpa satu kali pun salah arah hormat.",
+ "bekal": ["memisahkan 尊敬語 dari 謙譲語 lewat pertanyaan “siapa pelakunya”", "memakai delapan pasang kata kerja hormat yang paling sering muncul", "menyusun permintaan bertingkat ～ていただけますでしょうか", "menerapkan garis うち／そと waktu menyebut rekan sendiri di depan tamu", "berpindah dari 敬語 ke bentuk biasa tanpa terdengar kasar"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Sampai di kantor untuk wawancara",
+   "intro": "Ani datang ke 山川商事 pukul sepuluh. Perhatikan bahwa hampir tiap kalimat di halaman ini berarti hal yang sangat sederhana — “tunggu sebentar”, “saya sudah lihat”, “Anda tahu?” — tapi dikemas dengan lapisan hormat yang berbeda-beda. Jangan menghafal kalimatnya; perhatikan siapa pelakunya.",
+   "lines": [
+    {"speaker": "[受付|Uketsuke]:", "text": "[いらっしゃいませ|Irasshaimase]。[本日|Honjitsu]は[どのような|dono yō na][ご用件|go-yōken]でしょうか。", "id": "Selamat datang. Ada keperluan apa hari ini?", "literal": "silakan-datang. hari-ini — mengenai — bagaimana — seperti — keperluan(hormat) — adalah-kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[十時|Jūji]に[お約束|o-yakusoku]を[いただいております|itadaite orimasu]、[アニ|Ani]と[申します|mōshimasu]。[人事部|Jinjibu]の[田中様|Tanaka-sama]に[お取り次ぎ|o-toritsugi][いただけますでしょうか|itadakemasu deshō ka]。", "id": "Saya Ani, sudah punya janji pukul sepuluh. Boleh saya minta disambungkan kepada Bapak Tanaka dari bagian personalia?", "literal": "sepuluh-jam — pada — janji(hormat) — akan — sedang-menerima(rendah), Ani — sebagai — menyebut-diri(rendah). personalia-bagian — punya — Tanaka-tuan — kepada — penyambungan(hormat) — boleh-saya-terima — kah."},
+    {"speaker": "[受付|Uketsuke]:", "text": "[アニ様|Ani-sama]で[いらっしゃいます|irasshaimasu]ね。[少々|Shōshō][お待ちくださいませ|o-machi kudasaimase]。[ただいま|Tadaima][田中|Tanaka]を[呼|yo]んで[まいります|mairimasu]。", "id": "Anda Ibu Ani, ya. Mohon tunggu sebentar. Saya panggilkan Tanaka sekarang juga.", "literal": "Ani-tuan — sebagai — berada(hormat) — ya. sedikit-sedikit — menunggu(hormat) — silakan. sekarang-juga — Tanaka — akan — memanggil — datang(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[お待たせいたしました|O-matase itashimashita]。[人事部|Jinjibu]の[田中|Tanaka]で[ございます|gozaimasu]。[遠|tō]いところを[わざわざ|wazawaza][お越しいただき|o-koshi itadaki]、[ありがとうございます|arigatō gozaimasu]。", "id": "Maaf sudah membuat Anda menunggu. Saya Tanaka dari bagian personalia. Terima kasih sudah repot-repot datang dari jauh.", "literal": "membuat-menunggu(rendah,lampau). personalia-bagian — punya — Tanaka — adalah(hormat). jauh — tempat — akan — sengaja-repot — kedatangan(hormat) — menerima, terima-kasih."},
+    {"speaker": "[アニ|Ani]:", "text": "[とんでもございません|Tondemo gozaimasen]。[本日|Honjitsu]は[お時間|o-jikan]を[頂戴|chōdai]し、[恐|oso]れ[入|i]ります。", "id": "Sama sekali tidak. Justru saya yang merepotkan karena mengambil waktu Anda hari ini.", "literal": "tak-terkira — tidak-ada(hormat). hari-ini — mengenai — waktu(hormat) — akan — penerimaan(rendah) — melakukan, takut — masuk."},
+    {"speaker": "[田中|Tanaka]:", "text": "では、[会議室|kaigishitsu]へ[ご案内|go-annai][いたします|itashimasu]。[こちら|Kochira]へどうぞ。[エレベーター|Erebētā]は[右手|migite]に[ございます|gozaimasu]。", "id": "Kalau begitu, saya antar ke ruang rapat. Silakan lewat sini. Liftnya ada di sebelah kanan.", "literal": "kalau-begitu, rapat-ruang — ke — pengantaran(hormat) — melakukan(rendah). sini — ke — silakan. lift — mengenai — kanan-tangan — pada — ada(hormat)."},
+    {"speaker": "[アニ|Ani]:", "text": "[失礼|Shitsurei][いたします|itashimasu]。", "id": "Permisi.", "literal": "tidak-sopan — melakukan(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[履歴書|Rirekisho]は[拝見|haiken][しました|shimashita]。[日本語|Nihongo]は[どちら|dochira]で[勉強|benkyō][なさいました|nasaimashita]か。", "id": "Saya sudah membaca lamaran Anda. Di mana Anda belajar bahasa Jepang?", "literal": "riwayat-hidup-surat — mengenai — melihat(rendah) — melakukan(lampau). Jepang-bahasa — mengenai — mana(hormat) — di — belajar — melakukan(hormat,lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[ジャカルタ|Jakaruta]の[語学学校|gogaku gakkō]で[三年|sannen]ほど[学|mana]びまして、[その後|sono go]は[独学|dokugaku]で[続|tsuzu]けております。", "id": "Saya belajar sekitar tiga tahun di sekolah bahasa di Jakarta, setelah itu meneruskan secara otodidak.", "literal": "Jakarta — punya — bahasa-sekolah — di — tiga-tahun — kira-kira — belajar-dan, itu-sesudah — mengenai — sendiri-belajar — dengan — sedang-meneruskan(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[独学|Dokugaku]でここまでとは、[驚|odoro]きました。[弊社|Heisha]の[業務内容|gyōmu naiyō]については[ご存じ|go-zonji]ですか。", "id": "Sampai sejauh ini dengan otodidak, saya kagum. Apakah Anda tahu tentang bidang usaha perusahaan kami?", "literal": "sendiri-belajar — dengan — sini-sampai — soal-itu, terkejut. kami-perusahaan(rendah) — punya — usaha-isi — tentang — mengenai — tahu(hormat) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "はい、[御社|Onsha]の[サイト|saito]を[拝見|haiken]し、[東南|Tōnan][アジア|Ajia][向|mu]けの[物流事業|butsuryū jigyō]を[拡大|kakudai][なさっている|nasatte iru]と[伺|ukaga]っております。", "id": "Ya, saya sudah melihat situs perusahaan Anda, dan saya dengar Anda sedang memperluas usaha logistik untuk pasar Asia Tenggara.", "literal": "ya, Anda-perusahaan(hormat) — punya — situs — akan — melihat(rendah) — melakukan, tenggara — Asia — arah — punya — barang-alir-usaha — akan — perluasan — melakukan(hormat) — sedang — bahwa — mendengar(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "よく[お調|o-shira]べですね。では、まず[ご自身|go-jishin]のことを[お聞|o-ki]かせ[いただけますか|itadakemasu ka]。", "id": "Anda sudah meneliti dengan baik, ya. Kalau begitu, boleh saya minta Anda bercerita tentang diri Anda dulu?", "literal": "baik — memeriksa(hormat) — ya. kalau-begitu, pertama — diri-sendiri(hormat) — punya — hal — akan — memperdengarkan(hormat) — boleh-saya-terima — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[かしこまりました|Kashikomarimashita]。よろしく[お願|o-nega]い[いたします|itashimasu]。", "id": "Baik, saya mengerti. Mohon bantuannya.", "literal": "mengerti(rendah,lampau). dengan-baik — permohonan(hormat) — melakukan(rendah)."}
+   ],
+   "notes": [
+    "**いらっしゃいませ bukan “selamat datang” biasa — ia satu-arah.** Bentuk ini hanya diucapkan oleh pihak yang menerima (toko, restoran, resepsionis), dan **tidak pernah dibalas**. Tamu yang menjawab いらっしゃいませ akan terdengar seperti ikut bekerja di sana. Yang benar adalah langsung menyebut keperluanmu, seperti Ani di baris 2.",
+    "**[いただいております|itadaite orimasu] = tiga lapis sekaligus.** いただく merendahkan perbuatan “menerima”-nya Ani, おる merendahkan keberadaan, dan ます menyopankan seluruh kalimat kepada pendengar. Di percakapan biasa cukup もらっています; di ruang tamu perusahaan, tiga lapis inilah yang wajar.",
+    "**[と申します|to mōshimasu] menggantikan と言います, bukan です.** Perhatikan bedanya: アニです berarti “saya Ani”; アニと申します berarti “saya menyebut diri Ani”. Yang kedua merendahkan tindakan menyebutnya sendiri, dan itulah bentuk baku saat memperkenalkan diri kepada orang luar.",
+    "**[お取り次ぎいただけますでしょうか|o-toritsugi itadakemasu deshō ka] — puncak tumpukan permintaan.** Susunannya bertingkat: 取り次いでください → 取り次いでいただけますか → お取り次ぎいただけますでしょうか. Tiap tingkat menambah satu langkah jarak. でしょうか di ujung mengubah pertanyaan langsung menjadi dugaan sopan, dan itulah yang membuatnya terdengar paling halus. Unit 3 membedah seluruh tangga ini.",
+    "**Baris 3 memuat aturan terpenting di seluruh unit: [田中|Tanaka]を[呼|yo]んでまいります, tanpa 様.** Di baris 2 resepsionis menyebutnya 田中様 karena Ani orang luar yang sedang bertanya; begitu resepsionis berbicara **atas nama perusahaan kepada tamu**, Tanaka berpindah ke pihak “dalam” dan gelarnya dilepas. Pembelajar asing hampir selalu keliru di titik ini, dan orang Jepang hampir selalu menyadarinya.",
+    "**[弊社|heisha] dan [御社|onsha] adalah pasangan.** 弊社 merendahkan perusahaan sendiri, 御社 meninggikan perusahaan lawan bicara. Keduanya untuk **ucapan**; di tulisan resmi pasangannya berubah jadi [当社|tōsha] dan [貴社|kisha]. Menukar keempatnya adalah kesalahan khas pelamar kerja.",
+    "**[拝見|haiken]する = melihat, tapi hanya kalau AKU yang melihat.** Kalau lawan bicara yang melihat, bentuknya [ご覧|goran]になる. Aturan ini berlaku untuk seluruh daftar kata kerja hormat: satu makna, dua kata, dan yang menentukan bukan sopan atau tidaknya, melainkan **siapa pelakunya**.",
+    "**とんでもございません secara tata bahasa sebenarnya keliru** — とんでもない adalah satu kata sifat utuh, jadi bentuk “benar”-nya とんでもないことでございます. Tapi bentuk pendek ini sudah dipakai di mana-mana, termasuk di panduan perusahaan, dan tak seorang pun akan mempermasalahkannya. Ini contoh bagus bahwa 敬語 hidup adalah kebiasaan, bukan hasil hitungan."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga lapis 敬語, dan tugas masing-masing",
+     "body": ["Kesalahan terbesar pembelajar bukan salah bentuk, melainkan menyangka 敬語 adalah satu sumbu “makin sopan makin baik”. Sebenarnya ia tiga alat dengan tugas yang berbeda, dan bisa dipakai bersamaan dalam satu kalimat."],
+     "table": {
+      "head": ["Lapis", "Yang diurus", "Pelaku perbuatannya", "Contoh"],
+      "rows": [
+       ["[尊敬語|sonkeigo]", "meninggikan pihak sana", "**lawan bicara / orang yang dibicarakan**", "[社長|shachō]が[話|hana]される · [ご覧|goran]になる"],
+       ["[謙譲語|kenjōgo]", "merendahkan pihakku", "**aku / kelompokku**", "[伺|ukaga]う · [拝見|haiken]する · [申|mō]す"],
+       ["[丁寧語|teineigo]", "menyopankan kalimat kepada pendengar", "**siapa pun**", "です · ます · ございます"]
+      ]
+     },
+     "after": [
+      "Karena itu satu kalimat bisa memuat dua atau tiga lapis sekaligus: [先生|Sensei]が[おっしゃった|osshatta]ことを[伺|ukaga]いました — 尊敬語 untuk perbuatan guru, 謙譲語 untuk perbuatanku mendengar, ます untuk pendengarnya.",
+      "**Dan inilah pertanyaan yang menyelesaikan 90% keraguan:** *siapa yang melakukan perbuatan ini?* Kalau pihak sana → 尊敬語. Kalau pihakku → 謙譲語. Kalau tak ada pelakunya (cuaca, harga, keberadaan benda) → cukup 丁寧語."
+     ]
+    },
+    {
+     "title": "Sepuluh pasang yang harus dihafal utuh",
+     "body": ["Kata-kata ini tidak mengikuti rumus apa pun. Mereka dihafal seperti kosakata baru, dan mereka menutup sebagian besar percakapan hormat sehari-hari."],
+     "table": {
+      "head": ["Arti", "尊敬語 (pihak sana)", "謙譲語 (pihakku)"],
+      "rows": [
+       ["pergi · datang · ada", "[いらっしゃる|irassharu] · おいでになる", "[参|mai]る · [伺|ukaga]う · おる"],
+       ["berkata", "[おっしゃる|ossharu]", "[申|mō]す · [申し上げる|mōshiageru]"],
+       ["melihat", "[ご覧|goran]になる", "[拝見|haiken]する"],
+       ["makan · minum", "[召し上がる|meshiagaru]", "[いただく|itadaku] · 頂戴する"],
+       ["melakukan", "[なさる|nasaru]", "[いたす|itasu]"],
+       ["tahu", "[ご存じ|go-zonji]だ", "[存|zon]じる · 存じ上げる"],
+       ["memberi (ke arahku)", "[くださる|kudasaru]", "—"],
+       ["memberi (dariku)", "—", "[差し上げる|sashiageru]"],
+       ["menerima", "—", "[いただく|itadaku] · [賜|tamawa]る 【書】"],
+       ["bertemu", "[お会|o-a]いになる", "[お目|o-me]にかかる"]
+      ]
+     },
+     "after": ["Perhatikan empat kata yang berhuruf tebal di kolom kanan — 参る, 申す, いたす, おる — semuanya bisa dipakai **tanpa merendahkan siapa pun**, semata sebagai penanda ragam sangat sopan (disebut [丁重語|teichōgo]). Karena itu 明日は雨が降ってまいります sah diucapkan pembawa acara: hujan tidak sedang merendahkan diri kepada siapa-siapa."]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Sepuluh menit kemudian, di telepon",
+   "intro": "Wawancara selesai. Ani menelepon temannya, Rina. Bacalah dialog ini langsung sesudah dialog pertama, tanpa jeda — selisih nadanya jauh lebih terasa kalau dibaca berurutan.",
+   "lines": [
+    {"speaker": "[リナ|Rina]:", "text": "どうだった、[面接|mensetsu]。", "id": "Gimana wawancaranya?", "literal": "bagaimana — adalah(lampau,biasa), wawancara."},
+    {"speaker": "[アニ|Ani]:", "text": "[疲|Tsuka]れた。[敬語|Keigo]でずっと[しゃべ|shabe]ってたから、[頭|atama]がもうパンパン。", "id": "Capek. Ngomong pakai keigo terus, kepalaku udah penuh banget.", "literal": "lelah(biasa,lampau). hormat-bahasa — dengan — terus — bicara — sedang(lampau) — karena, kepala — sudah — penuh-penuh."},
+    {"speaker": "[リナ|Rina]:", "text": "わかる。うちも[最初|saisho]のころ、[部長|buchō]に「[了解|ryōkai]です」って[言|i]っちゃって[怒|oko]られた。", "id": "Paham banget. Aku juga dulu awal-awal pernah keceplosan bilang “ryōkai desu” ke manajer, terus dimarahi.", "literal": "mengerti(biasa). aku — juga — awal — punya — waktu, bagian-kepala — kepada — “mengerti — adalah” — begitu — mengatakan(sayang) — dimarahi(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "え、[了解|ryōkai]です、[だめ|dame]なの。", "id": "Hah, ryōkai desu nggak boleh?", "literal": "eh, mengerti — adalah, tidak-boleh — kah(biasa)."},
+    {"speaker": "[リナ|Rina]:", "text": "うん。[上|ue]の[人|hito]には[承知|shōchi]しましたか、かしこまりましたね。[了解|Ryōkai]は[同僚|dōryō]どうしなら[平気|heiki]だけど。", "id": "Iya. Ke orang yang di atas ya “shōchi shimashita” atau “kashikomarimashita”. Kalau sesama rekan sih ryōkai nggak apa-apa.", "literal": "ya. atas — punya — orang — kepada — mengenai — mengerti — melakukan(lampau) — atau, mengerti(rendah,lampau) — ya. mengerti — mengenai — rekan — sesama — kalau — tak-apa — tetapi."},
+    {"speaker": "[アニ|Ani]:", "text": "[細|Koma]かっ。でも[今日|kyō]は[一回|ikkai]も[間違|machiga]えなかった[気|ki]がする。たぶん。", "id": "Detail banget. Tapi kayaknya hari ini aku sekali pun nggak salah. Kayaknya.", "literal": "halus(seruan). tetapi — hari-ini — mengenai — satu-kali — pun — salah — tidak(lampau) — rasa — ada. mungkin."},
+    {"speaker": "[リナ|Rina]:", "text": "[一個|Ikko]だけ[聞|ki]くけど、[自分|jibun]の[会社|kaisha]のこと[御社|onsha]って[言|i]ってないよね。", "id": "Cuma mau nanya satu, kamu nggak nyebut perusahaan kamu sendiri “onsha”, kan?", "literal": "satu-buah — hanya — bertanya — tetapi, diri-sendiri — punya — perusahaan — punya — hal — Anda-perusahaan — begitu — mengatakan — tidak — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "……[言|i]ってない。[言|i]ってないと[思|omo]う。[思|Omo]いたい。", "id": "…Nggak. Kayaknya nggak. Aku pengin percaya gitu.", "literal": "…mengatakan — tidak. mengatakan — tidak — bahwa — berpikir. berpikir — ingin."},
+    {"speaker": "[リナ|Rina]:", "text": "まあ、[受|u]かったら[焼肉|yakiniku]おごって。", "id": "Ya udah, kalau keterima traktir yakiniku ya.", "literal": "yah, lulus — kalau — daging-bakar — mentraktir(perintah-halus)."},
+    {"speaker": "[アニ|Ani]:", "text": "[受|U]かったらね。[落|O]ちたら[慰|nagusa]めて。", "id": "Kalau keterima ya. Kalau gagal, hibur aku.", "literal": "lulus — kalau — ya. jatuh — kalau — menghibur(perintah-halus)."}
+   ],
+   "notes": [
+    "**Dua dialog di atas diucapkan orang yang sama, dalam sepuluh menit.** Itulah gambaran yang paling jujur tentang bahasa Jepang sehari-hari: bukan “sopan” atau “tidak sopan” sebagai sifat orangnya, melainkan **sakelar** yang dipindahkan sesuai ruangan. Pembelajar yang hanya menguasai satu sisi akan terdengar aneh di sisi yang lain.",
+    "**[了解|Ryōkai]です — jebakan paling terkenal di kantor Jepang.** Secara arti ia sopan (ada です), tapi 了解 berkonotasi setara atau dari atasan ke bawahan. Kepada atasan atau pelanggan, pakailah [承知|shōchi]しました atau かしこまりました. Ini bukan aturan tata bahasa; ini kebiasaan, dan justru karena itu ia tak tertulis di buku tata bahasa mana pun.",
+    "**[言|i]っちゃって = 言ってしまって.** Bentuk ～ちゃう/～じゃう adalah 縮約形, penyusutan ragam lisan yang akan muncul terus mulai Unit 4. Ia menambah nuansa “terlanjur, tak sengaja, sayangnya”.",
+    "**[細|Koma]かっ — kata sifat yang dipotong.** Ragam lisan anak muda memangkas 細かい jadi 細かっ dengan nada naik, semacam seruan. Kamu tak perlu memproduksinya, tapi kamu perlu mengenalinya, karena drama dan media sosial penuh dengan bentuk semacam ini."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "うち dan そと: satu garis yang menentukan seluruh pilihan",
+   "blocks": [
+    {"type": "p", "text": "Kalau 敬語 punya satu gagasan pusat, gagasan itu bukan kesopanan melainkan **kelompok**. Bahasa Jepang membagi dunia menjadi [内|uchi] — aku, keluargaku, perusahaanku, timku — dan [外|soto] — semua yang lain. Perbuatan pihak dalam direndahkan, perbuatan pihak luar ditinggikan, dan garis pemisahnya **berpindah sesuai siapa yang sedang mendengarkan**."},
+    {"type": "tabel", "head": ["Situasi", "Garis うち／そと-nya", "Yang terjadi pada 田中"], "rows": [
+     ["Aku berbicara dengan rekan sekantor", "aku = うち, Tanaka = そと (atasan)", "[田中部長|Tanaka-buchō]がおっしゃいました"],
+     ["Aku berbicara dengan pelanggan tentang Tanaka", "perusahaanku = うち", "[田中|Tanaka]が[申|mō]しておりました"],
+     ["Pelanggan berbicara denganku tentang Tanaka", "perusahaanku = そと baginya", "[田中様|Tanaka-sama]がおっしゃっていました"],
+     ["Aku berbicara dengan ibuku tentang ayahku", "keluargaku = うち", "[父|chichi]が[言|i]っていた"],
+     ["Aku berbicara dengan orang luar tentang ayahku", "keluargaku = うち", "[父|chichi]が[申|mō]しておりました"]
+    ]},
+    {"type": "p", "text": "Perhatikan baris terakhir. Ayahmu tetap ayahmu, tapi begitu kamu berbicara kepada orang luar, ia turun ke pihak “dalam” dan perbuatannya direndahkan. Inilah kenapa menyebut ayah sendiri dengan [お父|otō]さん di depan atasan terdengar kekanak-kanakan; yang benar adalah [父|chichi]."},
+    {"type": "kotak", "title": "Pasangan kata dalam–luar yang paling sering dipakai", "items": [
+     "**Ayah** — [父|chichi] (milikku) / [お父様|otō-sama], お父さん (milikmu)",
+     "**Ibu** — [母|haha] / [お母様|okā-sama]",
+     "**Anak** — [息子|musuko] · [娘|musume] / [ご子息|go-shisoku] · [お嬢様|o-jō-sama]",
+     "**Perusahaan** — [弊社|heisha] · [当社|tōsha] 【書】 / [御社|onsha] · [貴社|kisha] 【書】",
+     "**Pendapat** — [私見|shiken] · [愚見|guken] / [ご意見|go-iken] · [ご高見|go-kōken] 【書】",
+     "**Rumah** — [拙宅|settaku] 【書】 / [お宅|o-taku] · [ご自宅|go-jitaku]"
+    ]},
+    {"type": "p", "text": "Kolom kiri hampir seluruhnya kata Tionghoa-Jepang yang terdengar merendah; kolom kanan hampir seluruhnya berawalan お atau ご. Begitu pola itu tertangkap, kata baru yang belum pernah kamu lihat pun bisa ditebak arahnya."}
+   ]
+  },
+  {
+   "title": "Rumus お／ご: cetakan yang menghasilkan sisa 敬語-nya",
+   "blocks": [
+    {"type": "p", "text": "Sepuluh pasang di kotak sebelumnya harus dihafal. Selebihnya — ratusan kata kerja — mengikuti dua cetakan yang bisa kamu pasang sendiri, dan inilah yang membuat 敬語 sebenarnya jauh lebih sedikit hafalan daripada kelihatannya."},
+    {"type": "tabel", "head": ["Cetakan", "Arah", "Contoh", "Setara"], "rows": [
+     ["お／ご + [連用形|ren'yōkei] + になる", "尊敬語", "[お待|o-ma]ちになる · [ご利用|go-riyō]になる", "[待|ma]つ · [利用|riyō]する"],
+     ["お／ご + 連用形 + ください", "尊敬語 (permintaan)", "[お座|o-suwa]りください · [ご確認|go-kakunin]ください", "[座|suwa]って · [確認|kakunin]して"],
+     ["れる／られる", "尊敬語 (ringan)", "[話|hana]される · [来|ko]られる", "[話|hana]す · [来|ku]る"],
+     ["お／ご + 連用形 + する／いたす", "謙譲語", "[お送|o-oku]りする · [ご説明|go-setsumei]いたします", "[送|oku]る · [説明|setsumei]する"],
+     ["お／ご + 連用形 + いただく", "謙譲語 (permintaan)", "[お知|o-shi]らせいただく · [ご確認|go-kakunin]いただく", "[知|shi]らせてもらう"]
+    ]},
+    {"type": "sub", "text": "お atau ご — mana yang dipakai"},
+    {"type": "p", "text": "Aturannya hampir selalu tepat: **お untuk kata asli Jepang (和語), ご untuk kata Tionghoa-Jepang (漢語)**. [お名前|o-namae], [お待|o-ma]ち, [お電話|o-denwa] — yang terakhir ini pengecualian yang sering dipakai. [ご住所|go-jūsho], [ご連絡|go-renraku], [ご案内|go-annai]. Kalau ragu, ucapkan keduanya dalam hati: yang salah biasanya terdengar jelas janggal."},
+    {"type": "kotak", "title": "Tiga kesalahan yang paling cepat dikenali", "items": [
+     "**Menumpuk dua lapis pada satu perbuatan (二重敬語).** ×[お読|o-yo]みになられる — お…になる sudah 尊敬語, れる menambahnya lagi. ○ お読みになる atau 読まれる, pilih satu.",
+     "**Memakai 尊敬語 untuk perbuatan sendiri.** ×[私|watashi]が[伺|ukaga]いになります → 伺う sendiri sudah merendahkan; ○ 私が伺います.",
+     "**Memakai ご存じ untuk diri sendiri.** ×私はご存じです → ○ [存|zon]じております. Ini kesalahan yang hampir selalu muncul di wawancara kerja pertama."
+    ]},
+    {"type": "p", "text": "Catatan terakhir, dan ini melegakan: penutur Jepang sendiri sering keliru dengan 敬語, terutama 二重敬語. Yang tidak dimaafkan bukan bentuk yang salah, melainkan **arah yang salah** — meninggikan diri sendiri atau merendahkan tamu. Kalau kamu harus memilih apa yang dilatih lebih dulu, latihlah arahnya."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "敬語", "baca": "けいご · keigo", "id": "bahasa hormat (payung untuk ketiganya)"},
+  {"ja": "尊敬語", "baca": "そんけいご · sonkeigo", "id": "ragam yang meninggikan pihak lain"},
+  {"ja": "謙譲語", "baca": "けんじょうご · kenjōgo", "id": "ragam yang merendahkan pihak sendiri"},
+  {"ja": "丁寧語", "baca": "ていねいご · teineigo", "id": "ragam sopan biasa (です・ます)"},
+  {"ja": "丁重語", "baca": "ていちょうご · teichōgo", "id": "ragam sangat sopan tanpa arah hormat"},
+  {"ja": "受付", "baca": "うけつけ · uketsuke", "id": "resepsionis; meja penerima"},
+  {"ja": "本日", "baca": "ほんじつ · honjitsu", "id": "hari ini 【書】【敬】"},
+  {"ja": "ご用件", "baca": "ごようけん · go-yōken", "id": "keperluan (hormat)"},
+  {"ja": "お約束", "baca": "おやくそく · o-yakusoku", "id": "janji temu (hormat)"},
+  {"ja": "申す", "baca": "もうす · mōsu", "id": "berkata 【敬】(rendah)"},
+  {"ja": "人事部", "baca": "じんじぶ · jinjibu", "id": "bagian personalia"},
+  {"ja": "取り次ぐ", "baca": "とりつぐ · toritsugu", "id": "menyambungkan; meneruskan pesan"},
+  {"ja": "少々", "baca": "しょうしょう · shōshō", "id": "sebentar; sedikit 【敬】"},
+  {"ja": "ただいま", "baca": "tadaima", "id": "sekarang juga 【敬】"},
+  {"ja": "参る", "baca": "まいる · mairu", "id": "pergi; datang 【敬】(rendah)"},
+  {"ja": "ございます", "baca": "gozaimasu", "id": "ada; adalah 【敬】"},
+  {"ja": "お越しになる", "baca": "おこしになる · o-koshi ni naru", "id": "datang 【敬】(tinggi)"},
+  {"ja": "頂戴する", "baca": "ちょうだいする · chōdai suru", "id": "menerima 【敬】(rendah)"},
+  {"ja": "恐れ入る", "baca": "おそれいる · osoreiru", "id": "merasa sungkan; maaf merepotkan"},
+  {"ja": "会議室", "baca": "かいぎしつ · kaigishitsu", "id": "ruang rapat"},
+  {"ja": "ご案内", "baca": "ごあんない · go-annai", "id": "pengantaran; panduan"},
+  {"ja": "いたす", "baca": "itasu", "id": "melakukan 【敬】(rendah)"},
+  {"ja": "失礼する", "baca": "しつれいする · shitsurei suru", "id": "permisi; undur diri"},
+  {"ja": "履歴書", "baca": "りれきしょ · rirekisho", "id": "daftar riwayat hidup"},
+  {"ja": "拝見する", "baca": "はいけんする · haiken suru", "id": "melihat 【敬】(rendah)"},
+  {"ja": "ご覧になる", "baca": "ごらんになる · goran ni naru", "id": "melihat 【敬】(tinggi)"},
+  {"ja": "なさる", "baca": "nasaru", "id": "melakukan 【敬】(tinggi)"},
+  {"ja": "語学学校", "baca": "ごがくがっこう · gogaku gakkō", "id": "sekolah bahasa"},
+  {"ja": "独学", "baca": "どくがく · dokugaku", "id": "belajar otodidak"},
+  {"ja": "おる", "baca": "oru", "id": "ada; sedang 【敬】(rendah)"},
+  {"ja": "驚く", "baca": "おどろく · odoroku", "id": "terkejut; kagum"},
+  {"ja": "弊社", "baca": "へいしゃ · heisha", "id": "perusahaan kami (merendah)"},
+  {"ja": "御社", "baca": "おんしゃ · onsha", "id": "perusahaan Anda (ucapan)"},
+  {"ja": "当社", "baca": "とうしゃ · tōsha", "id": "perusahaan kami 【書】"},
+  {"ja": "貴社", "baca": "きしゃ · kisha", "id": "perusahaan Anda 【書】"},
+  {"ja": "業務内容", "baca": "ぎょうむないよう · gyōmu naiyō", "id": "bidang dan isi pekerjaan"},
+  {"ja": "ご存じだ", "baca": "ごぞんじだ · go-zonji da", "id": "tahu 【敬】(tinggi)"},
+  {"ja": "存じる", "baca": "ぞんじる · zonjiru", "id": "tahu; berpikir 【敬】(rendah)"},
+  {"ja": "物流", "baca": "ぶつりゅう · butsuryū", "id": "logistik"},
+  {"ja": "事業", "baca": "じぎょう · jigyō", "id": "usaha; lini bisnis"},
+  {"ja": "拡大する", "baca": "かくだいする · kakudai suru", "id": "memperluas"},
+  {"ja": "伺う", "baca": "うかがう · ukagau", "id": "bertanya; mendengar; berkunjung 【敬】(rendah)"},
+  {"ja": "ご自身", "baca": "ごじしん · go-jishin", "id": "diri Anda sendiri 【敬】"},
+  {"ja": "かしこまりました", "baca": "kashikomarimashita", "id": "baik, saya mengerti 【敬】"},
+  {"ja": "承知する", "baca": "しょうちする · shōchi suru", "id": "memahami; menyanggupi 【敬】"},
+  {"ja": "了解", "baca": "りょうかい · ryōkai", "id": "mengerti (setara/ke bawah)"},
+  {"ja": "同僚", "baca": "どうりょう · dōryō", "id": "rekan sekerja"},
+  {"ja": "差し上げる", "baca": "さしあげる · sashiageru", "id": "memberikan 【敬】(rendah)"},
+  {"ja": "お目にかかる", "baca": "おめにかかる · o-me ni kakaru", "id": "bertemu 【敬】(rendah)"},
+  {"ja": "二重敬語", "baca": "にじゅうけいご · nijū keigo", "id": "hormat berlapis dua (kesalahan)"},
+  {"ja": "私見", "baca": "しけん · shiken", "id": "pendapat pribadi saya (merendah)"},
+  {"ja": "おごる", "baca": "ogoru", "id": "mentraktir"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata kerja dalam kurung menjadi 尊敬語 atau 謙譲語 sesuai pelakunya.",
+   "items": [
+    "[社長|Shachō]はもう[書類|shorui]を（[見|mi]る）ましたか。",
+    "[私|Watashi]が[明日|ashita][御社|onsha]に（[行|i]く）ます。",
+    "[お客様|O-kyaku-sama]がそう（[言|i]う）ました。",
+    "[資料|Shiryō]は[私|watashi]が（[送|oku]る）ます。",
+    "[先生|Sensei]はこの[話|hanashi]を（[知|shi]っている）ですか。"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat yang salah arah hormatnya, tulis 正しい kalau sudah benar.",
+   "items": [
+    "[私|Watashi]の[父|chichi]が[そう|sō]おっしゃいました。",
+    "[部長|Buchō]、[履歴書|rirekisho]を[拝見|haiken]なさいますか。",
+    "[お客様|O-kyaku-sama]、こちらでお[待|ma]ちになってください。",
+    "[私|Watashi]はその[件|ken]についてご[存|zon]じです。",
+    "[田中|Tanaka]は[ただいま|tadaima][外出|gaishutsu]しております。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 弊社 · 御社 · 当社 · 貴社 · 拙宅.",
+   "items": [
+    "（[面接|mensetsu]で[口頭|kōtō]）____ の[事業内容|jigyō naiyō]に[興味|kyōmi]があります。",
+    "（[面接|mensetsu]で[口頭|kōtō]）____ の[主|omo]な[取引先|torihikisaki]は[東南|Tōnan][アジア|Ajia]です。",
+    "（[書面|shomen]）____ [宛|ate]にご[請求書|seikyūsho]をお[送|oku]りください。",
+    "（[書面|shomen]）____ の[個人情報|kojin jōhō][方針|hōshin]は[以下|ika]の[通|tō]りです。",
+    "（[書面|shomen]）ぜひ ____ にお[越|ko]しくださいませ。"
+   ]
+  },
+  {
+   "prompt": "Naikkan tiap permintaan satu tingkat, dari bentuk yang diberikan ke bentuk yang lebih halus.",
+   "items": [
+    "[待|Ma]ってください。",
+    "[確認|Kakunin]してもらえますか。",
+    "[名前|Namae]を[教|oshi]えてください。",
+    "この[書類|shorui]に[サイン|sain]してもらえますか。",
+    "[明日|Ashita][来|ki]てもらえますか。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang dengan tingkat hormat yang sesuai konteks dalam kurung.",
+   "items": [
+    "Saya sudah membaca surel dari Bapak Suzuki. (kepada atasan)",
+    "Direktur kami sekarang sedang keluar. (kepada pelanggan)",
+    "Boleh saya minta waktu Anda sekitar tiga puluh menit? (kepada klien)",
+    "Apakah Anda sudah mendengar hal itu dari bagian penjualan? (kepada klien)",
+    "Nanti saya yang mengantar Anda ke stasiun. (kepada tamu)"
+   ]
+  },
+  {
+   "prompt": "Tulis empat sampai enam baris percakapan untuk tiap keadaan berikut, dengan tingkat hormat yang tepat.",
+   "items": [
+    "Kamu menelepon perusahaan lain dan orang yang kamu cari sedang tidak ada. Kamu menitipkan pesan.",
+    "Atasanmu bertanya kenapa laporanmu terlambat sehari. Jawab tanpa menyalahkan siapa pun."
+   ]
+  }
+ ],
+ "answers": [
+  "[ご覧|goran]になりました — [伺|ukaga]います · [参|mai]ります — おっしゃいました — お[送|oku]りします · [送|oku]らせていただきます — ご[存|zon]じ",
+  "salah → [父|chichi]がそう[申|mō]しておりました。keluargaku = pihak dalam — salah → 部長がご[覧|ran]になりますか。拝見 merendahkan, tak boleh untuk atasan — salah → こちらでお[待|ma]ちください。お…になってください adalah 二重敬語 — salah → その[件|ken]については[存|zon]じております。ご存じ hanya untuk pihak lain — [正|tada]しい",
+  "[御社|onsha] — [弊社|heisha] — [弊社|heisha] — [当社|tōsha] — [拙宅|settaku]",
+  "お[待|ma]ちください · [少々|shōshō]お[待|ma]ちいただけますでしょうか — ご[確認|kakunin]いただけますでしょうか — お[名前|namae]を[伺|ukaga]ってもよろしいでしょうか — [恐|oso]れ[入|i]りますが、こちらにご[署名|shomei]いただけますでしょうか — [明日|asu]お[越|ko]しいただくことは[可能|kanō]でしょうか",
+  "[鈴木様|Suzuki-sama]からのメールは[拝見|haiken]いたしました。 — ただいま[社長|shachō]の[田中|Tanaka]は[席|seki]を[外|hazu]しております。 — [三十分|Sanjuppun]ほどお[時間|jikan]を[頂戴|chōdai]できますでしょうか。 — その[件|ken]は[営業部|eigyōbu]からお[聞|ki]きになっていらっしゃいますか。 — [後|nochi]ほど[駅|eki]までご[案内|annai]いたします。",
+  "Contoh 1: 「[恐|oso]れ[入|i]りますが、お[戻|modo]りは[何時|nanji]ごろのご[予定|yotei]でしょうか。」「では、[伝言|dengon]をお[願|nega]いできますでしょうか。[林|Hayashi]から[電話|denwa]があったとお[伝|tsuta]えいただければ[幸|saiwa]いです。」 — Contoh 2: 「[申|mō]し[訳|wake]ございません。[数字|sūji]の[確認|kakunin]に[想定|sōtei]より[時間|jikan]がかかってしまいました。[本日|honjitsu][午前中|gozenchū]には[提出|teishutsu]いたします。[以後|igo][気|ki]をつけます。」"
+ ],
+ "wave": "Kembalilah ke dialog pertama unit ini besok pagi, tutup kolom artinya, dan bacalah keras-keras sampai selesai tanpa berhenti. Lalu kerjakan satu tugas: tandai tiap kata kerja dengan S kalau ia 尊敬語 dan K kalau ia 謙譲語. Ada lebih dari dua puluh, dan yang paling banyak salah ditandai biasanya いただく — karena ia merendahkan pihak yang MENERIMA, bukan pihak yang memberi."
+}

@@ -1,0 +1,267 @@
+{
+ "title": "Menekankan tanpa menaikkan suara: penekan dan pembatas",
+ "title_target": "[強調|Kyōchō]と[限定|gentei]",
+ "goal": "Memakai こそ, さえ, すら, ばかりか, どころか, にすぎない, dan keluarga partikel penekan untuk menyorot bagian kalimat yang penting, serta mengenali penekanan yang dilakukan lewat susunan kalimat, bukan lewat nada suara.",
+ "bekal": ["memakai こそ untuk menyorot dan membalikkan", "membedakan さえ, すら, まで, だけ, ばかり", "memakai どころか dan ばかりか dengan arah yang benar", "merendahkan sesuatu dengan にすぎない dan にとどまる", "menyusun kalimat yang menyorot tanpa kata sifat berlebihan"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Keluhan pelanggan yang harus ditangani",
+   "intro": "Mori menelepon dengan keluhan. Perhatikan bahwa ia tak sekali pun menaikkan suaranya — seluruh tekanan disampaikan lewat partikel.",
+   "lines": [
+    {"speaker": "[森|Mori]:", "text": "お[世話|sewa]になっております。[実|Jitsu]は、[今月|kongetsu]の[納品|nōhin]の[件|ken]でご[連絡|renraku]しました。", "id": "Terima kasih atas kerja samanya. Sebenarnya saya menghubungi soal pengiriman bulan ini.", "literal": "perawatan(hormat) — sedang-menjadi. sebenarnya — mengenai, bulan-ini — punya — penyerahan — punya — perkara — dengan — hubungan(hormat) — melakukan(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "はい、[何|nani]かございましたでしょうか。", "id": "Ya, apakah ada sesuatu?", "literal": "ya, sesuatu — ada(hormat,lampau) — adalah-kah."},
+    {"speaker": "[森|Mori]:", "text": "[数|Kazu]が[足|ta]りないんです。それも[一|hito]つ[二|futa]つではなく、[箱|hako][一|hito]つ[分|bun]。[しかも|shikamo][連絡|renraku]すらいただいておりません。", "id": "Jumlahnya kurang. Dan bukan cuma satu dua, tapi satu kardus penuh. Lagipula kabar pun tidak kami terima.", "literal": "jumlah — yang — cukup — tidak — adalah. itu — juga — satu — dua — bukan-dan, kotak — satu — bagian. lagipula — hubungan — bahkan — menerima(rendah) — tidak."},
+    {"speaker": "[アニ|Ani]:", "text": "[大変|Taihen][申|mō]し[訳|wake]ございません。ただちに[確認|kakunin]いたします。", "id": "Mohon maaf sebesar-besarnya. Saya periksa segera.", "literal": "besar — berkata-alasan — tidak-ada(hormat). segera — pemeriksaan — melakukan(rendah)."},
+    {"speaker": "[森|Mori]:", "text": "[数|Kazu]の[間違|machiga]いはどこにでもあります。[問題|Mondai]はそこではないんです。[連絡|Renraku]が[一本|ippon]あれば、こちらも[段取|dandori]りを[組|ku]み[直|nao]せた。", "id": "Salah jumlah bisa terjadi di mana saja. Masalahnya bukan di situ. Kalau ada satu kabar saja, kami pun bisa menyusun ulang rencananya.", "literal": "jumlah — punya — kesalahan — mengenai — mana — pada — pun — ada. masalah — mengenai — di-situ — bukan — adalah. hubungan — yang — satu-batang — ada — kalau, sini — juga — susunan — akan — menyusun-memperbaiki-bisa(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "おっしゃるとおりでございます。[数|Kazu]の[問題|mondai]ではなく、ご[報告|hōkoku]をしなかったことこそが[問題|mondai]でございました。", "id": "Persis seperti yang Anda katakan. Bukan masalah jumlahnya — justru tidak melaporkannyalah yang menjadi masalah.", "literal": "berkata(hormat) — seperti — adalah(hormat). jumlah — punya — masalah — bukan-dan, laporan(hormat) — akan — melakukan — tidak(lampau) — hal — justru — yang — masalah — adalah(hormat,lampau)."},
+    {"speaker": "[森|Mori]:", "text": "わかっていただければ[結構|kekkō]です。[正直|Shōjiki][申|mō]し[上|a]げて、[御社|onsha]だから[電話|denwa]しているんですよ。[他社|Tasha]なら[取引|torihiki]を[見直|minao]しています。", "id": "Kalau Anda paham, itu sudah cukup. Terus terang, justru karena ini perusahaan Anda makanya saya menelepon. Kalau perusahaan lain, sudah saya tinjau ulang kerja samanya.", "literal": "mengerti — menerima(hormat) — kalau — cukup — adalah. jujur — berkata(rendah,tinggi) — dan, Anda-perusahaan — karena — telepon — melakukan — sedang — adalah — ya. lain-perusahaan — kalau — transaksi — akan — meninjau-ulang — sedang."},
+    {"speaker": "[アニ|Ani]:", "text": "[恐縮|Kyōshuku]でございます。[本日中|Honjitsu-chū]に[不足分|fusokubun]を[発送|hassō]し、[経緯|keii]のご[報告|hōkoku]も[書面|shomen]で[差|sa]し[上|a]げます。", "id": "Saya sungguh sungkan. Hari ini juga kekurangannya akan kami kirim, dan laporan kronologinya pun akan kami sampaikan tertulis.", "literal": "sungkan — adalah(hormat). hari-ini-dalam — pada — kurang-bagian — akan — pengiriman — melakukan, kronologi — punya — laporan(hormat) — juga — dokumen — dengan — memberikan(rendah)."},
+    {"speaker": "[森|Mori]:", "text": "[書面|Shomen]まで[要|i]りません。[一言|Hitokoto]あれば[十分|jūbun]です。[私|Watashi]が[欲|ho]しいのは[謝罪|shazai]ではなく[情報|jōhō]なので。", "id": "Sampai dokumen tertulis tidak perlu. Satu kata saja sudah cukup. Karena yang saya inginkan bukan permintaan maaf, melainkan informasi.", "literal": "dokumen — sampai — perlu — tidak. satu-kata — ada — kalau — cukup — adalah. saya — yang — ingin — yang — mengenai — permintaan-maaf — bukan-dan — informasi — adalah — karena."},
+    {"speaker": "[アニ|Ani]:", "text": "[肝|Kimo]に[銘|mei]じます。[今後|Kongo]は、[問題|mondai]が[起|o]きた[時点|jiten]でご[一報|ippō]いたします。", "id": "Akan saya camkan. Ke depan, begitu masalah terjadi kami akan langsung mengabari.", "literal": "hati — pada — mengukir. sesudah-ini — mengenai, masalah — yang — terjadi(lampau) — titik-waktu — dengan — satu-kabar(hormat) — melakukan(rendah)."},
+    {"speaker": "[森|Mori]:", "text": "それでいいんです。[長|Naga]く[付|tsu]き[合|a]うほど、[悪|waru]い[知|shi]らせの[速|haya]さこそが[信用|shin'yō]になりますから。", "id": "Itu saja sudah cukup. Karena makin lama hubungannya, justru kecepatan kabar burukmulah yang menjadi kepercayaan.", "literal": "itu — dengan — baik — adalah. panjang — bergaul — sebanyak, buruk — kabar — punya — cepat-hal — justru — yang — kepercayaan — menjadi — karena."}
+   ],
+   "notes": [
+    "**[すら|sura] = “bahkan ~ pun”, dan ia lebih berat daripada さえ.** すら condong ke ragam tulis dan bernada mencela: [連絡|Renraku]すらない. Bandingkan さえ yang netral dan lebih lisan. Keduanya menyorot dengan cara yang sama: menyebut hal paling minimal yang seharusnya ada.",
+    "**[こそ|koso] di baris 6 dan 11 — penekan yang membalikkan.** Ia menyorot satu bagian sambil menyingkirkan yang lain: [これ|Kore]こそが[問題|mondai]だ berarti “inilah masalahnya, bukan yang tadi kamu kira”. Karena itu こそ hampir selalu muncul dalam pasangan “bukan A, tapi justru B”.",
+    "**Baris 7 memakai [〜だから|da kara] + こそ secara tersirat.** Bentuk lengkapnya [御社|onsha]だからこそ[電話|denwa]している. Ia membalik keluhan menjadi tanda kepercayaan, dan ini gerakan yang sangat lazim dalam negosiasi Jepang: sebelum menekan, tegaskan dulu bahwa tekanan itu tanda hubungan yang berharga.",
+    "**[まで|made] sebagai penekan berarti “sampai-sampai”.** [書面|Shomen]まで[要|i]りません = “sampai dokumen tertulis pun tak perlu”. Bandingkan dengan まで waktu ([五時|goji]まで) — yang membedakan hanya konteks. Sepupunya [〜までもない|made mo nai] (“tak perlu sampai ~”): [言|I]うまでもない.",
+    "**[肝|Kimo]に[銘|mei]じます — ungkapan tetap “akan saya camkan”.** Sangat kuat dan formal; dipakai saat menerima teguran serius. Alternatif yang lebih ringan: [胸|Mune]に[刻|kiza]みます · [気|Ki]をつけます. Jangan dipakai untuk hal sepele — ia terdengar berlebihan.",
+    "**ご[一報|ippō] — kata kerja kantor yang sangat berguna.** ご[一報|ippō]ください · ご[一報|ippō]いたします. Artinya “kabar singkat”, dan ia menandai bahwa kamu tidak menuntut laporan lengkap, cukup pemberitahuan.",
+    "**[〜ほど|hodo] di baris 11 = “semakin ~”.** [長|Naga]く[付|tsu]き[合|a]うほど. Bentuk ini bisa berdiri tanpa ば (bandingkan 〜ば〜ほど di Unit 9) dan sangat sering muncul di ragam tulis.",
+    "**Baris terakhir layak dihafal sebagai gagasan, bukan hanya kalimat:** dalam budaya kerja Jepang, kecepatan menyampaikan kabar buruk ([悪|waru]い[知|shi]らせ) dinilai lebih tinggi daripada kesempurnaan hasil. Ini yang menjelaskan kenapa [報連相|hōrensō] — [報告|hōkoku]・[連絡|renraku]・[相談|sōdan] — diajarkan di hari pertama setiap karyawan baru."
+   ],
+   "grammars": [
+    {
+     "title": "Keluarga penekan: menyorot satu bagian kalimat",
+     "table": {
+      "head": ["Partikel", "Artinya", "Nuansa", "Contoh"],
+      "rows": [
+       ["こそ", "justru ~lah", "menyorot + menyingkirkan yang lain", "[今|Ima]こそ[始|haji]めるべきだ"],
+       ["さえ", "bahkan ~ pun", "netral, umum", "[子|Ko]どもさえ[知|shi]っている"],
+       ["すら 【書】", "bahkan ~ pun", "lebih berat, sering mencela", "[挨拶|Aisatsu]すらしない"],
+       ["まで", "sampai-sampai ~", "melampaui batas yang wajar", "[社長|Shachō]まで[来|ki]た"],
+       ["でも", "~ saja (contoh minimal)", "menawarkan, melunakkan", "お[茶|cha]でもいかがですか"],
+       ["だって 【話】", "~ pun (sama seperti さえ)", "lisan, akrab", "[私|Watashi]だってわかる"],
+       ["ばかりか", "bukan hanya ~, bahkan", "menambah, netral 【書】", "[遅刻|Chikoku]したばかりか[謝|ayama]らない"],
+       ["どころか", "jangankan ~, malah", "membantah, membalik", "[休|Yasu]むどころか[増|fu]えた"],
+       ["のみならず 【書】", "tidak hanya ~", "sangat formal", "[本人|Honnin]のみならず[家族|kazoku]も"]
+      ]
+     },
+     "after": [
+      "**Selisih ばかりか dan どころか adalah yang paling sering meleset.** ばかりか **menambah** pada kenyataan yang sudah benar: [雨|Ame]が[降|fu]ったばかりか[風|kaze]も[強|tsuyo]かった (dua-duanya benar). どころか **membantah** dugaan: [雨|Ame]どころか[雪|yuki]だった (bukan hujan — malah salju). Kalau kalimat depanmu benar, pakai ばかりか; kalau salah, pakai どころか.",
+      "**こそ sering dipasangkan dengan から menjadi からこそ** (Unit 7): [難|Muzuka]しいからこそ[やる|yaru][価値|kachi]がある. Ini salah satu konstruksi paling berguna untuk pidato, wawancara kerja, dan karangan."
+     ]
+    },
+    {
+     "title": "Keluarga pembatas: mengecilkan dan membatasi",
+     "table": {
+      "head": ["Bentuk", "Artinya", "Contoh"],
+      "rows": [
+       ["だけ", "hanya (netral)", "[五分|Gofun]だけください"],
+       ["しか〜ない", "hanya (dengan nada kurang)", "[千円|Sen'en]しかない"],
+       ["ばかり", "melulu ~ (sering mencela)", "[遊|Aso]んでばかりいる"],
+       ["〜にすぎない 【書】", "tidak lebih dari ~", "[推測|Suisoku]にすぎない"],
+       ["〜にとどまる 【書】", "hanya berhenti sampai ~", "[伸|No]びは[二|ni][パーセント|pāsento]にとどまった"],
+       ["〜どまり", "mentok di ~", "[今年|Kotoshi]は[横|yoko]ばいどまりだ"],
+       ["わずか〜", "hanya ~ (sedikit sekali) 【書】", "わずか[三日|mikka]で[完成|kansei]した"],
+       ["たった〜", "cuma ~ 【話】", "たった[一人|hitori]で[やった|yatta]"],
+       ["〜[程度|teido]", "sekitar ~ saja", "[挨拶|Aisatsu][程度|teido]の[日本語|Nihongo]"]
+      ]
+     },
+     "after": [
+      "**だけ vs しか〜ない: yang membedakan adalah perasaan.** [千円|Sen'en]だけあります menyatakan fakta; [千円|Sen'en]しかありません menyatakan bahwa itu kurang. Karena itu しか selalu berpasangan dengan bentuk negatif, dan menerjemahkannya “hanya” sering menghilangkan separuh artinya.",
+      "**〜にすぎない dan 〜にとどまる adalah senjata laporan.** Keduanya mengecilkan sesuatu dengan nada netral dan tanpa emosi, dan sangat sering muncul di analisis: [一時的|Ichijiteki]な[現象|genshō]にすぎない · [回復|Kaifuku]は[限定的|genteiteki]なものにとどまっている."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Penekanan yang berlebihan",
+   "intro": "Ani mencoba memakai bentuk-bentuk baru itu semua sekaligus. Rina memberi penilaian yang jujur.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "[今日|Kyō]こそ[定時|teiji]で[帰|kae]る。", "id": "Hari ini beneran pulang tepat waktu.", "literal": "hari-ini — justru — waktu-tetap — dengan — pulang."},
+    {"speaker": "[リナ|Rina]:", "text": "[先週|Senshū]もそう[言|i]ってた。", "id": "Minggu lalu juga bilang gitu.", "literal": "minggu-lalu — juga — begitu — mengatakan — sedang(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[先週|Senshū]は[例外|reigai]。[今週|Konshū]は[残業|zangyō]どころか、[昼休|hiruyasu]みすらちゃんと[取|to]ってる。", "id": "Minggu lalu pengecualian. Minggu ini jangankan lembur, jam istirahat siang aja aku ambil beneran.", "literal": "minggu-lalu — mengenai — pengecualian. minggu-ini — mengenai — lembur — jangankan, siang-istirahat — bahkan — benar — mengambil — sedang."},
+    {"speaker": "[リナ|Rina]:", "text": "[言|I]い[方|kata]が[急|kyū]に[硬|kata]くなったね。[報告書|Hōkokusho][書|ka]きすぎ。", "id": "Cara ngomongmu tiba-tiba kaku deh. Kebanyakan nulis laporan.", "literal": "berkata-cara — yang — mendadak — keras — menjadi(lampau) — ya. laporan-surat — menulis — terlalu."},
+    {"speaker": "[アニ|Ani]:", "text": "[自覚|Jikaku]はある。[頭|Atama]の[中|naka]が「[〜にすぎない|ni suginai]」でいっぱい。", "id": "Aku sadar kok. Kepalaku penuh sama “ni suginai”.", "literal": "kesadaran — mengenai — ada. kepala — punya — dalam — yang — “tidak-lebih-dari” — dengan — penuh."},
+    {"speaker": "[リナ|Rina]:", "text": "[覚|Obo]えたての[言葉|kotoba]って[使|tsuka]いたくなるんだよね。うちも[一時期|ichijiki]「[ゆえに|yue ni]」ばっかり[言|i]ってた。", "id": "Kata yang baru dihafal itu emang jadi pengin dipakai ya. Aku juga sempat sebentar “yue ni” melulu.", "literal": "mengingat — baru — punya — kata — begitu — memakai — ingin — menjadi — adalah — ya. aku — juga — satu-masa — “karena-itu” — melulu — mengatakan — sedang(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[口|Kuchi]で「ゆえに」は[相当|sōtō]きつい。", "id": "“Yue ni” diucapkan lisan tuh lumayan parah.", "literal": "mulut — dengan — “karena-itu” — mengenai — cukup — keras."},
+    {"speaker": "[リナ|Rina]:", "text": "[今|Ima]なら[分|wa]かる。[当時|Tōji]は[賢|kashiko]く[聞|ki]こえると[思|omo]ってた。", "id": "Sekarang sih paham. Waktu itu aku kira kedengeran pintar.", "literal": "sekarang — kalau — mengerti. waktu-itu — mengenai — pintar — terdengar — bahwa — berpikir — sedang(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[新|Atara]しい[言葉|kotoba]は[道具|dōgu]だから、[使|tsuka]う[場所|basho]を[間違|machiga]えると[危|abu]ないってことか。", "id": "Kata baru itu alat, jadi kalau salah tempat pakainya jadi bahaya gitu ya.", "literal": "baru — kata — mengenai — alat — karena, memakai — tempat — akan — salah — kalau — bahaya — begitu — hal — kah."},
+    {"speaker": "[リナ|Rina]:", "text": "[今|Ima]のはちょっと[報告書|hōkokusho]っぽかった。", "id": "Yang barusan agak kayak laporan deh.", "literal": "sekarang — punya — mengenai — sedikit — laporan-surat — mirip(lampau)."}
+   ],
+   "notes": [
+    "**Baris 3 memasang どころか dan すら dalam satu kalimat, dan itu memang berlebihan.** Ini contoh yang sengaja: pembelajar tingkat menengah cenderung memakai bentuk baru bertumpuk-tumpuk. Aturan yang aman: **satu penekan per kalimat**.",
+    "**[〜っぽい|ppoi] = “mirip ~, berbau ~”.** [子|Ko]どもっぽい · [男|Otoko]っぽい · [嘘|Uso]っぽい · [報告書|Hōkokusho]っぽい. Ia menempel pada kata benda maupun kata sifat, dan selalu ragam lisan. Bandingkan dengan 〜らしい yang berarti “sesuai sifat aslinya” — [男|otoko]らしい memuji, [男|otoko]っぽい sekadar menggambarkan.",
+    "**[〜たて|tate] = “baru saja selesai ~”.** [覚|Obo]えたて · [焼|Ya]きたて (baru dipanggang) · [できたて|dekitate] (baru jadi) · [新婚|Shinkon]ほやほや (idiom untuk pengantin baru). Ia menempel pada 連用形.",
+    "**[相当|Sōtō] = “cukup, lumayan” dan ia lebih kuat daripada かなり.** Urutannya kira-kira: [少|suko]し < やや < かなり < [相当|sōtō] < [非常|hijō]に. Yang terakhir ragam tulis."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menekankan lewat susunan kalimat, bukan lewat kata",
+   "blocks": [
+    {"type": "p", "text": "Bahasa Indonesia menekankan dengan nada suara dan kata seperti “benar-benar” atau “sangat”. Bahasa Jepang lebih sering menekankan dengan **memindahkan bagian kalimat** atau membungkusnya dalam konstruksi khusus. Inilah yang membuat kalimat Jepang bisa terdengar tenang dan tetap menekan."},
+    {"type": "tabel", "head": ["Cara", "Bentuk", "Contoh"], "rows": [
+     ["Membelah kalimat (分裂文)", "〜のは〜だ", "[問題|Mondai]なのは[連絡|renraku]がなかったことだ"],
+     ["Mengangkat ke depan", "〜は〜が", "この[件|ken]については[私|watashi]が[説明|setsumei]します"],
+     ["Menegaskan dengan のだ", "〜のだ · 〜んです", "[知|Shi]らなかったんです"],
+     ["Menyangkal lebih dulu", "〜ではなく〜だ", "[謝罪|Shazai]ではなく[情報|jōhō]が[欲|ho]しい"],
+     ["Mengulang dengan こそ", "〜こそ〜だ", "[今|Ima]こそその[時|toki]だ"],
+     ["Pertanyaan retoris", "〜ではないか · 〜だろうか", "それこそ[本末転倒|honmatsu tentō]ではないか"]
+    ]},
+    {"type": "kotak", "title": "分裂文: alat penekan paling berguna di ragam tulis", "items": [
+     "Kalimat biasa: [連絡|Renraku]がなかったことが[問題|mondai]だ。",
+     "Dibelah: [問題|Mondai]なのは、[連絡|renraku]がなかったことだ。",
+     "Dibelah dan dibalik: [数|Kazu]の[間違|machiga]いではなく、[連絡|renraku]がなかったことこそが[問題|mondai]だ。",
+     "Ketiganya berarti sama. Yang ketiga menekan paling kuat, dan tak satu pun memakai kata sifat berlebihan.",
+     "**Pola dasarnya:** 〜のは〜だ, dengan bagian yang ingin disorot ditaruh **sesudah** は."
+    ]},
+    {"type": "p", "text": "Perhatikan hubungannya dengan Unit 6: 分裂文 dan こそ sama-sama bekerja dengan menyingkirkan kemungkinan lain. Menguasai dua alat ini membuatmu bisa berselisih pendapat dengan tegas tanpa satu kata pun yang keras."}
+   ]
+  },
+  {
+   "title": "Kalimat menekan yang akan kamu dengar di tempat kerja",
+   "blocks": [
+    {"type": "tabel", "head": ["Kalimat", "Terjemahan", "Kapan"], "rows": [
+     ["[問題|Mondai]はそこではないんです", "Masalahnya bukan di situ", "menolak permintaan maaf yang salah sasaran"],
+     ["[私|Watashi]が[欲|ho]しいのは〜です", "Yang saya inginkan adalah ~", "meluruskan tuntutan"],
+     ["〜こそが[本質|honshitsu]です", "Justru ~lah intinya", "menutup argumen"],
+     ["[言|I]うまでもなく", "Tak perlu dikatakan lagi", "membuka pernyataan yang dianggap jelas"],
+     ["[肝心|Kanjin]なのは〜です", "Yang penting adalah ~", "mengarahkan pembicaraan"],
+     ["それどころではありません", "Bukan itu yang jadi soal sekarang", "menolak topik yang tak relevan"],
+     ["〜にすぎません", "Itu tidak lebih dari ~", "mengecilkan klaim lawan"],
+     ["[今|Ima]こそ〜すべきかと[存|zon]じます", "Justru sekaranglah saatnya ~", "mengusulkan dengan mendesak"]
+    ]},
+    {"type": "kotak", "title": "報連相 — tiga kata yang mengatur seluruh komunikasi kantor Jepang", "items": [
+     "**[報告|Hōkoku]** — melaporkan hasil kepada atasan, terutama yang buruk, secepat mungkin.",
+     "**[連絡|Renraku]** — mengabari pihak terkait tentang fakta, tanpa menunggu diminta.",
+     "**[相談|Sōdan]** — meminta pendapat **sebelum** memutuskan, bukan sesudah.",
+     "Ketiganya diringkas jadi [報連相|hōrensō] (bunyinya sama dengan [ほうれん草|hōrensō], bayam — dan itu memang lelucon yang disengaja).",
+     "**Kesalahan pembelajar asing yang paling sering:** mengerjakan sesuatu dengan sempurna lalu melaporkannya di akhir. Di kebiasaan Jepang, laporan setengah jalan yang cepat lebih dihargai daripada laporan lengkap yang terlambat — persis seperti kata Mori di baris terakhir dialog pertama."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "強調", "baca": "きょうちょう · kyōchō", "id": "penekanan"},
+  {"ja": "限定", "baca": "げんてい · gentei", "id": "pembatasan"},
+  {"ja": "実は", "baca": "じつは · jitsu wa", "id": "sebenarnya"},
+  {"ja": "しかも", "baca": "shikamo", "id": "lagipula"},
+  {"ja": "〜すら", "baca": "sura", "id": "bahkan ~ pun 【書】"},
+  {"ja": "〜さえ", "baca": "sae", "id": "bahkan ~ pun"},
+  {"ja": "〜こそ", "baca": "koso", "id": "justru ~lah"},
+  {"ja": "〜ばかりか", "baca": "bakari ka", "id": "bukan hanya ~ 【書】"},
+  {"ja": "〜のみならず", "baca": "nomi narazu", "id": "tidak hanya ~ 【書】"},
+  {"ja": "〜にすぎない", "baca": "ni suginai", "id": "tidak lebih dari ~ 【書】"},
+  {"ja": "〜にとどまる", "baca": "ni todomaru", "id": "hanya berhenti di ~ 【書】"},
+  {"ja": "わずか", "baca": "wazuka", "id": "hanya sedikit 【書】"},
+  {"ja": "段取り", "baca": "だんどり · dandori", "id": "susunan rencana kerja"},
+  {"ja": "組み直す", "baca": "くみなおす · kuminaosu", "id": "menyusun ulang"},
+  {"ja": "正直申し上げて", "baca": "しょうじきもうしあげて · shōjiki mōshiagete", "id": "terus terang 【敬】"},
+  {"ja": "他社", "baca": "たしゃ · tasha", "id": "perusahaan lain"},
+  {"ja": "取引", "baca": "とりひき · torihiki", "id": "transaksi; kerja sama dagang"},
+  {"ja": "見直す", "baca": "みなおす · minaosu", "id": "meninjau ulang"},
+  {"ja": "不足分", "baca": "ふそくぶん · fusokubun", "id": "bagian yang kurang"},
+  {"ja": "発送する", "baca": "はっそうする · hassō suru", "id": "mengirimkan"},
+  {"ja": "経緯", "baca": "けいい · keii", "id": "kronologi 【書】"},
+  {"ja": "肝に銘じる", "baca": "きもにめいじる · kimo ni meijiru", "id": "mencamkan baik-baik"},
+  {"ja": "時点", "baca": "じてん · jiten", "id": "titik waktu"},
+  {"ja": "ご一報", "baca": "ごいっぽう · go-ippō", "id": "kabar singkat 【敬】"},
+  {"ja": "付き合う", "baca": "つきあう · tsukiau", "id": "bergaul; menjalin hubungan"},
+  {"ja": "知らせ", "baca": "しらせ · shirase", "id": "kabar"},
+  {"ja": "報連相", "baca": "ほうれんそう · hōrensō", "id": "lapor, kabari, konsultasi"},
+  {"ja": "定時", "baca": "ていじ · teiji", "id": "jam pulang resmi"},
+  {"ja": "例外", "baca": "れいがい · reigai", "id": "pengecualian"},
+  {"ja": "昼休み", "baca": "ひるやすみ · hiruyasumi", "id": "istirahat siang"},
+  {"ja": "自覚", "baca": "じかく · jikaku", "id": "kesadaran diri"},
+  {"ja": "一時期", "baca": "いちじき · ichijiki", "id": "suatu masa"},
+  {"ja": "相当", "baca": "そうとう · sōtō", "id": "lumayan; cukup"},
+  {"ja": "当時", "baca": "とうじ · tōji", "id": "waktu itu"},
+  {"ja": "賢い", "baca": "かしこい · kashikoi", "id": "pintar"},
+  {"ja": "道具", "baca": "どうぐ · dōgu", "id": "alat"},
+  {"ja": "〜っぽい", "baca": "ppoi", "id": "mirip ~; berbau ~ 【話】"},
+  {"ja": "〜たて", "baca": "tate", "id": "baru saja ~"},
+  {"ja": "分裂文", "baca": "ぶんれつぶん · bunretsubun", "id": "kalimat belah (〜のは〜だ)"},
+  {"ja": "本質", "baca": "ほんしつ · honshitsu", "id": "hakikat; inti"},
+  {"ja": "肝心", "baca": "かんじん · kanjin", "id": "yang paling penting"},
+  {"ja": "本末転倒", "baca": "ほんまつてんとう · honmatsu tentō", "id": "terbalik: yang pokok jadi sampingan"},
+  {"ja": "推測", "baca": "すいそく · suisoku", "id": "dugaan"},
+  {"ja": "現象", "baca": "げんしょう · genshō", "id": "gejala; fenomena"},
+  {"ja": "限定的", "baca": "げんていてき · genteiteki", "id": "terbatas 【書】"},
+  {"ja": "横ばい", "baca": "よこばい · yokobai", "id": "mendatar (tak naik-turun)"},
+  {"ja": "挨拶", "baca": "あいさつ · aisatsu", "id": "salam; sapaan"},
+  {"ja": "程度", "baca": "ていど · teido", "id": "kadar; sekitar"},
+  {"ja": "言うまでもなく", "baca": "いうまでもなく · iu made mo naku", "id": "tak perlu dikatakan lagi"},
+  {"ja": "きつい", "baca": "kitsui", "id": "keras; berat"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih ばかりか atau どころか.",
+   "items": [
+    "[雨|Ame]が[降|fu]った ____ 、[風|kaze]も[強|tsuyo]かった。",
+    "[休|Yasu]める ____ 、[仕事|shigoto]が[増|fu]えた。",
+    "[彼|Kare]は[漢字|kanji] ____ 、[ひらがな|hiragana]も[読|yo]めない。",
+    "[謝|Ayama]る ____ 、[言|i]い[訳|wake]ばかりしている。",
+    "[遅刻|Chikoku]した ____ 、[連絡|renraku]もしなかった。"
+   ]
+  },
+  {
+   "prompt": "Sisipkan こそ pada tempat yang paling tepat, lalu tulis ulang kalimatnya.",
+   "items": [
+    "[今|Ima][始|haji]めるべきだ。",
+    "[信頼|Shinrai]しているから[厳|kibi]しく[言|i]う。",
+    "[連絡|Renraku]がなかったことが[問題|mondai]だ。",
+    "[難|Muzuka]しいから[やる|yaru][価値|kachi]がある。",
+    "こちらがお[礼|rei]を[言|i]いたい。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi 分裂文 (〜のは〜だ) untuk menyorot bagian yang bergaris.",
+   "items": [
+    "[連絡|Renraku]がなかったことが[問題|mondai]だ。（sorot: [連絡|renraku]がなかったこと）",
+    "[私|Watashi]は[情報|jōhō]が[欲|ho]しい。（sorot: [情報|jōhō]）",
+    "[彼|Kare]がこの[案|an]を[出|da]した。（sorot: [彼|kare]）",
+    "[価格|Kakaku]よりも[品質|hinshitsu]が[大切|taisetsu]だ。（sorot: [品質|hinshitsu]）",
+    "[昨日|Kinō][気|ki]づいた。（sorot: [昨日|kinō]）"
+   ]
+  },
+  {
+   "prompt": "Isi dengan にすぎない · にとどまった · しか · わずか · だけ.",
+   "items": [
+    "[売上|Uriage]の[伸|no]びは[二|ni][パーセント|pāsento] ____ 。",
+    "それは[推測|suisoku] ____ 。",
+    "[財布|Saifu]には[千円|sen'en] ____ ない。",
+    "____ [三日|mikka]で[完成|kansei]した。",
+    "[五分|Gofun] ____ お[時間|jikan]をください。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang ragam kerja.",
+   "items": [
+    "Jangankan kabar, permintaan maaf pun tidak kami terima.",
+    "Bukan masalah jumlahnya — justru tidak melaporkannyalah yang jadi masalah.",
+    "Terus terang, justru karena ini perusahaan Anda makanya saya menelepon.",
+    "Yang saya inginkan bukan permintaan maaf, melainkan informasi.",
+    "Makin lama hubungannya, justru kecepatan kabar buruklah yang jadi kepercayaan."
+   ]
+  },
+  {
+   "prompt": "Tulis enam sampai delapan kalimat untuk tiap keadaan, dengan maksimal satu penekan per kalimat.",
+   "items": [
+    "Kamu menyampaikan kepada tim bahwa masalah sebenarnya bukan hasil kerja mereka, melainkan lambatnya mereka melapor.",
+    "Kamu membalas klien yang menuntut ganti rugi besar, dengan mengecilkan klaim mereka secara sopan namun tegas."
+   ]
+  }
+ ],
+ "answers": [
+  "ばかりか — どころか — どころか — どころか — ばかりか",
+  "[今|ima]こそ[始|haji]めるべきだ。 — [信頼|Shinrai]しているからこそ[厳|kibi]しく[言|i]う。 — [連絡|Renraku]がなかったことこそが[問題|mondai]だ。 — [難|Muzuka]しいからこそ[やる|yaru][価値|kachi]がある。 — こちらこそお[礼|rei]を[言|i]いたい。",
+  "[問題|Mondai]なのは、[連絡|renraku]がなかったことだ。 — [私|Watashi]が[欲|ho]しいのは[情報|jōhō]だ。 — この[案|an]を[出|da]したのは[彼|kare]だ。 — [大切|Taisetsu]なのは[価格|kakaku]よりも[品質|hinshitsu]だ。 — [気|Ki]づいたのは[昨日|kinō]だ。",
+  "にとどまった — にすぎない — しか — わずか — だけ",
+  "[連絡|Renraku]どころか、お[詫|wa]びすらいただいておりません。 — [数|Kazu]の[問題|mondai]ではなく、ご[報告|hōkoku]がなかったことこそが[問題|mondai]でございます。 — [正直|Shōjiki][申|mō]し[上|a]げて、[御社|onsha]だからこそお[電話|denwa]しております。 — [私|Watashi]が[欲|ho]しいのは[謝罪|shazai]ではなく[情報|jōhō]です。 — [長|Naga]く[付|tsu]き[合|a]うほど、[悪|waru]い[知|shi]らせの[速|haya]さこそが[信用|shin'yō]になります。",
+  "Contoh 1／[今回|Konkai]の[件|ken]で[申|mō]し[上|a]げたいのは、[成果|seika]のことではありません。[数字|Sūji]そのものは、[市況|shikyō]を[踏|fu]まえれば[妥当|datō]な[水準|suijun]だと[考|kanga]えています。[問題|Mondai]なのは、[未達|mitatsu]が[分|wa]かった[時点|jiten]から[共有|kyōyū]までに[二|ni][週間|shūkan]かかったことです。[二|Ni][週間|shūkan]あれば、[打|u]てた[手|te]がいくつもありました。[悪|Waru]い[知|shi]らせこそ[早|haya]く[上|a]げてください。[早|Haya]く[上|a]げて[叱|shika]られることは、この[チーム|chīmu]ではありません。 — Contoh 2／ご[不便|fuben]をおかけしておりますこと、[改|arata]めてお[詫|wa]び[申|mō]し[上|a]げます。ただ、ご[請求|seikyū]の[金額|kingaku]につきましては、[今回|konkai]の[遅延|chien]によって[直接|chokusetsu][生|shō]じた[費用|hiyō]の[範囲|han'i]を[大|ō]きく[上回|uwamawa]っております。[弊社|Heisha]の[認識|ninshiki]では、[実損|jitsuson]は[追加|tsuika][配送費|haisōhi]にとどまるものと[考|kanga]えております。[根拠|Konkyo]となる[資料|shiryō]をお[示|shime]しいただけますでしょうか。ご[提示|teiji]の[内容|naiyō]を[踏|fu]まえた[上|ue]で、[誠実|seijitsu]に[対応|taiō]させていただきます。"
+ ],
+ "wave": "Buka kembali kunci jawaban latihan terakhir Unit 6 (bantahan tiga tahap) dan tandai tiap penekan yang muncul di dalamnya. Kamu akan menemukan bahwa bantahan halus dan penekanan sebenarnya satu pekerjaan yang sama: menyorot bagian yang kamu terima supaya bagian yang kamu tolak jadi jelas tanpa perlu diucapkan."
+}

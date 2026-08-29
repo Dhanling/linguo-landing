@@ -1,0 +1,723 @@
+{
+ "title": "Menduga tanpa menuduh: seluruh keluarga dugaan",
+ "title_target": "[推量|Suiryō]と[確信|kakushin]の[度合|doai]い",
+ "goal": "Memilih di antara sepuluh penanda dugaan berdasarkan sumber informasi dan tingkat keyakinan, membedakan そうだ kabar dengar dari そうだ tampak, serta menyampaikan kabar buruk sebagai kemungkinan alih-alih sebagai tuduhan.",
+ "bekal": [
+  "memisahkan らしい, ようだ, みたいだ, そうだ menurut sumber informasinya",
+  "menyusun tangga keyakinan dari かもしれない sampai に[違|chiga]いない",
+  "memakai 〜おそれがある dan 〜かねない untuk kemungkinan buruk",
+  "menandai kabar dengar dengan とのことです dan 〜そうです",
+  "menyampaikan dugaan tanpa menempatkan pelaku sebagai tersangka"
+ ],
+ "dialogs": [
+  {
+   "title": "会話 1 — Angka yang tidak cocok",
+   "intro": "Persediaan gudang tidak cocok dengan catatan sistem. Ani, Kimura, dan Tanaka membahasnya. Perhatikan bahwa selama sebelas baris, tak seorang pun menuduh siapa pun — dan itu bukan kebetulan, melainkan pilihan tata bahasa.",
+   "lines": [
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[在庫|Zaiko]の[数|kazu]が[合|a]わないようなんです。[システム上|Shisutemu-jō]は[二百|nihyaku][個|ko]、[実際|jissai]は[百九十四|hyaku kyūjū yon][個|ko]でした。",
+     "id": "Sepertinya jumlah stoknya tidak cocok. Di sistem tertulis dua ratus, kenyataannya seratus sembilan puluh empat.",
+     "literal": "persediaan — punya — jumlah — yang — cocok — tidak — tampaknya — adalah. sistem-atas — mengenai — dua-ratus — buah, kenyataan — mengenai — 194 — buah — adalah(lampau)."
+    },
+    {
+     "speaker": "[木村|Kimura]:",
+     "text": "[六|Rok][個|ko][足|ta]りないと。[数|Kazo]え[間違|machiga]いの[可能性|kanōsei]もありますね。もう[一度|ichido][数|kazo]えてみましょうか。",
+     "id": "Kurang enam, ya. Ada juga kemungkinan salah hitung. Bagaimana kalau kita hitung ulang?",
+     "literal": "enam — buah — cukup — tidak — bahwa. menghitung-salah — punya — mungkin-sifat — juga — ada — ya. sekali-lagi — menghitung — mari-coba — kah."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[三回|Sankai][数|kazo]えました。[三回|Sankai]とも[百九十四|hyaku kyūjū yon]でした。",
+     "id": "Sudah saya hitung tiga kali. Ketiganya seratus sembilan puluh empat.",
+     "literal": "tiga-kali — menghitung(lampau). tiga-kali — pun — 194 — adalah(lampau)."
+    },
+    {
+     "speaker": "[木村|Kimura]:",
+     "text": "となると、[記録|kiroku]の[方|hō]が[間違|machiga]っている[可能性|kanōsei]が[高|taka]いですね。[入荷時|Nyūkaji]の[検品|kenpin]で[数|kazo]え[漏|mo]れがあったのかもしれません。",
+     "id": "Kalau begitu, kemungkinan besar catatannya yang salah. Bisa jadi ada yang terlewat saat pemeriksaan barang masuk.",
+     "literal": "begitu — menjadi — kalau, catatan — punya — pihak — yang — salah — sedang — mungkin-sifat — yang — tinggi — adalah — ya. barang-masuk-waktu — punya — periksa-barang — dengan — hitung-bocor — yang — ada(lampau) — mungkin."
+    },
+    {
+     "speaker": "[田中|Tanaka]:",
+     "text": "[伝票|Denpyō]は[確認|kakunin]した。[六|Rok][個|ko][分|bun]の[出庫|shukko][記録|kiroku]がない。[誰|Dare]かが[持|mo]ち[出|da]したとは[考|kanga]えにくい。[鍵|Kagi]がかかっているはずだから。",
+     "id": "Nota sudah saya periksa. Tidak ada catatan pengeluaran untuk enam unit itu. Sulit dibayangkan ada yang membawanya keluar. Karena seharusnya terkunci.",
+     "literal": "nota — mengenai — pemeriksaan — melakukan(lampau). enam — buah — bagian — punya — keluar-gudang — catatan — yang — tidak-ada. siapa — pun — yang — membawa-keluar(lampau) — bahwa — mengenai — berpikir — sulit. kunci — yang — terpasang — sedang — seharusnya — adalah — karena."
+    },
+    {
+     "speaker": "[木村|Kimura]:",
+     "text": "[先週|Senshū]、[棚卸|tanaoroshi]しの[前|mae]に[サンプル|sanpuru][出|da]しませんでしたか。[営業|Eigyō]の[方|hō]で。",
+     "id": "Minggu lalu, sebelum stok opname, bukankah ada sampel yang dikeluarkan? Dari bagian penjualan.",
+     "literal": "minggu-lalu, rak-turun — punya — sebelum — pada — contoh — mengeluarkan — tidak(lampau) — kah. penjualan — punya — pihak — dengan."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[あ|A]。[展示会用|Tenjikai-yō]に[六|rok][個|ko][持|mo]って[行|i]きました。[伝票|Denpyō]を[切|ki]っていないおそれがあります。",
+     "id": "Ah. Saya bawa enam unit untuk pameran. Ada kemungkinan notanya belum saya buat.",
+     "literal": "ah. pameran-untuk — pada — enam — buah — membawa — pergi(lampau). nota — akan — memotong — tidak — kekhawatiran — ada."
+    },
+    {
+     "speaker": "[田中|Tanaka]:",
+     "text": "それだ。[数|Kazu]は[合|a]っている。[記録|Kiroku]だけが[抜|nu]けていた。",
+     "id": "Itu dia. Jumlahnya cocok. Hanya catatannya yang bolong.",
+     "literal": "itu — adalah. jumlah — mengenai — cocok — sedang. catatan — hanya — yang — lepas — sedang(lampau)."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[申|Mō]し[訳|wake]ありません。すぐに[起票|kihyō]します。",
+     "id": "Mohon maaf. Saya akan segera buat notanya.",
+     "literal": "berkata-alasan — tidak-ada. segera — pada — bangkit-nota — melakukan."
+    },
+    {
+     "speaker": "[木村|Kimura]:",
+     "text": "[責|Se]めてるわけじゃないですよ。[むしろ|Mushiro][六|rok][個|ko]で[済|su]んでよかった。[放|Hō]っておくと[年度末|nendomatsu]に[大|ō]ごとになりかねませんから。",
+     "id": "Bukannya saya menyalahkan lho. Malah bagus cuma enam. Kalau dibiarkan, bisa-bisa jadi perkara besar di akhir tahun buku.",
+     "literal": "menyalahkan — sedang — hal — bukan — adalah — ya. malah — enam — buah — dengan — selesai — baik(lampau). membiarkan — kalau — tahun-akhir — pada — besar-perkara — menjadi — bisa-terjadi — karena."
+    },
+    {
+     "speaker": "[田中|Tanaka]:",
+     "text": "[今回|Konkai]の[件|ken]は、[仕組|shiku]みの[問題|mondai]だろう。[持|Mo]ち[出|da]しに[伝票|denpyō]が[要|i]ることを[知|shi]らなかったんだと[思|omo]う。[マニュアル|Manyuaru]に[書|ka]いてなかったはずだ。",
+     "id": "Perkara kali ini kemungkinan masalah sistemnya. Saya rasa dia memang tidak tahu bahwa mengeluarkan barang butuh nota. Seharusnya memang tidak tertulis di manual.",
+     "literal": "kali-ini — punya — perkara — mengenai, mekanisme — punya — masalah — mungkin. membawa-keluar — pada — nota — yang — perlu — hal — akan — tahu — tidak(lampau) — bahwa — berpikir. manual — pada — menulis — tidak(lampau) — seharusnya — adalah."
+    }
+   ],
+   "notes": [
+    "**[〜ようだ|yō da] di baris 1 adalah pilihan sadar.** [合|A]いません menyatakan fakta; 合わないようです menyatakan kesan berdasarkan pengamatan sendiri. Membuka laporan masalah dengan ようだ memberi ruang bahwa kamu mungkin keliru — dan di lingkungan kerja Jepang, ruang itu dianggap kesopanan dasar, bukan keraguan.",
+    "**[可能性|Kanōsei]がある / [可能性|kanōsei]が[高|taka]い — dugaan bergaya laporan.** Ini bentuk paling netral dan paling aman untuk tulisan kerja. Tingkatnya bisa diatur: 可能性は[低|hiku]い < 可能性がある < 可能性が高い < ほぼ[間違|machiga]いない.",
+    "**[〜かもしれません|kamo shiremasen] menempatkan kemungkinan di sekitar 30–50%.** Ia lebih lemah daripada でしょう dan jauh lebih lemah daripada に[違|chiga]いない. Di percakapan santai bentuknya menyusut jadi かも saja: [雨|Ame][降|fu]るかも。",
+    "**〜とは[考|kanga]えにくい — menolak kemungkinan tanpa menyangkalnya.** Harfiahnya “sulit dibayangkan bahwa…”. Ini cara paling sopan untuk mengatakan “saya tidak percaya itu” dalam ragam kerja, dan ia memindahkan kesulitan ke diri sendiri, bukan ke kenyataannya.",
+    "**[〜はずだ|hazu da] bukan dugaan, melainkan kesimpulan dari yang seharusnya berlaku.** [鍵|Kagi]がかかっているはずだ = “berdasarkan aturan yang saya tahu, seharusnya terkunci”. Kalau ternyata tidak, bentuk yang menyusul adalah はずなのに atau はずだったのに. Bandingkan dengan に[違|chiga]いない, yang bersandar pada bukti, bukan pada aturan.",
+    "**[〜おそれがあります|osore ga arimasu] — kemungkinan yang buruk saja.** Ia tidak pernah dipakai untuk hal baik: ×[合格|gōkaku]するおそれがある. Kata ini banyak muncul di berita cuaca, peringatan, dan laporan risiko. Sepupunya yang lebih lisan: 〜んじゃないか.",
+    "**[〜かねません|kanemasen] = bisa saja terjadi, dan itu buruk.** Perhatikan bahwa ia kebalikan dari 〜かねます (“tidak sanggup”) yang kamu pelajari di Unit 3, meski bentuknya nyaris sama. Yang membedakan hanya positif–negatifnya: できかねます (tidak sanggup melakukan) vs [大|ō]ごとになりかねません (bisa jadi perkara besar).",
+    "**Baris terakhir memperlihatkan kebiasaan penting: memindahkan sebab dari orang ke sistem.** [仕組|Shiku]みの[問題|mondai]だろう · [マニュアル|Manyuaru]に[書|ka]いてなかったはずだ. Ini bukan basa-basi belaka; di banyak perusahaan Jepang ia bagian dari cara kerja resmi ([なぜなぜ分析|naze naze bunseki]), yang menganggap kesalahan berulang sebagai cacat prosedur."
+   ],
+   "grammars": [
+    {
+     "title": "Empat penanda dugaan, dipisah oleh SUMBERNYA",
+     "body": [
+      "Semuanya bisa diterjemahkan “sepertinya”. Yang membedakan bukan tingkat keyakinan, melainkan **dari mana informasimu datang**."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Sumbernya",
+       "Nada",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "[〜ようだ|yō da]",
+        "pengamatan atau penalaran sendiri",
+        "netral, agak formal",
+        "[熱|Netsu]があるようだ（badanku panas）"
+       ],
+       [
+        "[〜みたいだ|mitai da]",
+        "sama seperti ようだ",
+        "ragam lisan 【話】",
+        "[熱|Netsu]があるみたい"
+       ],
+       [
+        "[〜らしい|rashii]",
+        "informasi dari luar; agak berjarak",
+        "“kabarnya, katanya”",
+        "[彼|Kare]は[辞|ya]めるらしい"
+       ],
+       [
+        "[〜そうだ|sō da]（kabar dengar)",
+        "dari sumber tertentu, dikutip",
+        "netral",
+        "[辞|Ya]めるそうだ"
+       ],
+       [
+        "[〜そうだ|sō da]（tampak)",
+        "dari penampakan langsung",
+        "kesan sesaat",
+        "[おいしそうだ|oishisō da]"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua そうだ dibedakan dari bentuk yang menempel padanya.** Kabar dengar menempel pada **bentuk biasa penuh**: [降|Fu]るそうだ · [高|Taka]いそうだ · [雨|Ame]だそうだ. Tampak menempel pada **akar kata**: [降|Fu]りそうだ · [高|Taka]そうだ. Perhatikan bahwa yang tampak tidak bisa dipasang pada kata benda.",
+      "**らしい punya dua tugas.** Selain kabar dengar, ia berarti “khas, sesuai dengan sifatnya”: [彼|Kare]らしい[答|kota]え (jawaban yang khas dia) · [男|Otoko]らしい. Konteks yang membedakan, dan kalimat kedua ini tidak pernah bisa diganti ようだ."
+     ]
+    },
+    {
+     "title": "Tangga keyakinan, dari paling ragu ke paling yakin",
+     "table": {
+      "head": [
+       "Bentuk",
+       "Kira-kira",
+       "Ragamnya"
+      ],
+      "rows": [
+       [
+        "〜かもしれない",
+        "30–50%",
+        "umum"
+       ],
+       [
+        "〜可能性がある",
+        "netral, tak berangka",
+        "【書】laporan"
+       ],
+       [
+        "〜のではないか",
+        "50%, mengajak setuju",
+        "umum, sangat sering"
+       ],
+       [
+        "〜だろう · 〜でしょう",
+        "60–70%",
+        "umum"
+       ],
+       [
+        "〜と[思|omo]われる",
+        "netral, tanpa penulis",
+        "【書】"
+       ],
+       [
+        "〜はずだ",
+        "kesimpulan dari aturan",
+        "umum"
+       ],
+       [
+        "〜に[違|chiga]いない",
+        "90%, berdasar bukti",
+        "agak dramatis 【書】"
+       ],
+       [
+        "〜に[決|ki]まっている",
+        "100%, emosional",
+        "【話】"
+       ]
+      ]
+     },
+     "after": [
+      "**〜のではないか (lisan: 〜んじゃないか) adalah bentuk paling berguna di seluruh daftar ini.** Ia menyatakan pendapat sebagai pertanyaan, sehingga lawan bicara bisa menolaknya tanpa membantah. Di rapat Jepang, hampir semua usulan yang berpotensi berselisih dibungkus dengan bentuk ini: [価格|Kakaku]の[問題|mondai]なのではないでしょうか。",
+      "**〜に[決|ki]まっている bermuatan perasaan dan sedikit memaksa.** Ia tak pantas di ruang kerja: [嘘|Uso]に[決|ki]まってる terdengar seperti membanting meja. Untuk keyakinan tinggi di tempat kerja, pakailah ほぼ[間違|machiga]いないかと[存|zon]じます."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Ramalan cuaca dan ramalan lain",
+   "intro": "Ani dan Rina di kantin. Percakapan pendek ini memuat hampir seluruh keluarga dugaan dalam ragam lisannya.",
+   "lines": [
+    {
+     "speaker": "[リナ|Rina]:",
+     "text": "[明日|Ashita][台風|taifū][来|ku]るらしいよ。[電車|Densha][止|to]まるかも。",
+     "id": "Katanya besok topan datang. Bisa jadi keretanya berhenti.",
+     "literal": "besok — topan — datang — kabarnya — ya. kereta — berhenti — mungkin."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[天気予報|Tenki yohō]で[言|i]ってた？",
+     "id": "Ada di ramalan cuaca?",
+     "literal": "cuaca-ramalan — pada — mengatakan — sedang(lampau) — kah."
+    },
+    {
+     "speaker": "[リナ|Rina]:",
+     "text": "[見|Mi]てないけど、[空|sora]がもう[降|fu]りそう。あの[色|iro]はやばい。",
+     "id": "Belum lihat sih, tapi langitnya udah kayak mau hujan. Warna gitu tuh gawat.",
+     "literal": "melihat — tidak — tetapi, langit — yang — sudah — turun — tampak. itu — warna — mengenai — gawat."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[止|To]まったら[会社|kaisha][来|ko]れないよね。[休|Yasu]みになるんじゃない？",
+     "id": "Kalau berhenti kan nggak bisa ke kantor. Bakal libur nggak sih?",
+     "literal": "berhenti — kalau — perusahaan — datang-bisa — tidak — ya. libur — menjadi — bukan — kah."
+    },
+    {
+     "speaker": "[リナ|Rina]:",
+     "text": "ならない。うちの[会社|kaisha]、[絶対|zettai][在宅|zaitaku]にするに[決|ki]まってる。",
+     "id": "Nggak bakal. Kantor kita pasti bikin jadi kerja dari rumah.",
+     "literal": "menjadi — tidak. kami — punya — perusahaan, pasti — di-rumah — menjadi — melakukan — pada — memutuskan — sedang."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[確|Tashi]かに。[去年|Kyonen]もそうだった。",
+     "id": "Bener juga. Tahun lalu juga gitu.",
+     "literal": "pasti — pada. tahun-lalu — juga — begitu — adalah(lampau)."
+    },
+    {
+     "speaker": "[リナ|Rina]:",
+     "text": "でも[台風|taifū]の[日|hi]の[在宅|zaitaku]って、みんな[集中|shūchū]できてないと[思|omo]う。[会議|Kaigi]、[全員|zen'in][窓|mado][見|mi]てるもん。",
+     "id": "Tapi kerja dari rumah pas hari topan tuh, kayaknya nggak ada yang bisa fokus. Pas rapat semua orang lihat ke jendela kok.",
+     "literal": "tetapi — topan — punya — hari — punya — di-rumah — begitu, semua — pemusatan — bisa — tidak — bahwa — berpikir. rapat, seluruh-orang — jendela — melihat — sedang — kok."
+    },
+    {
+     "speaker": "[アニ|Ani]:",
+     "text": "[見|Mi]てるね。[私|Watashi]も[見|mi]てる。",
+     "id": "Iya lihat sih. Aku juga lihat.",
+     "literal": "melihat — sedang — ya. saya — juga — melihat — sedang."
+    }
+   ],
+   "notes": [
+    "**Baris 1 dan 3 memperlihatkan selisih らしい dan そう(tampak) dengan sangat bersih.** [台風|Taifū][来|ku]るらしい = informasi dari luar (berita, orang lain). [降|Fu]りそう = kesimpulan dari apa yang dilihat mata sendiri saat itu juga. Menukar keduanya membuat kalimat terdengar seperti kamu mengarang sumber.",
+    "**[〜んじゃない？|n ja nai] adalah bentuk lisan dari 〜のではないでしょうか.** Ia mengajukan pendapat sebagai pertanyaan, persis seperti versi formalnya di rapat. Perhatikan bahwa nada naik di ujungnya yang mengerjakan seluruh pekerjaan.",
+    "**に[決|ki]まってる terdengar wajar di sini karena percakapannya akrab.** Kalimat yang sama di rapat akan terdengar menutup pembicaraan. Ini contoh baik bahwa tingkat keyakinan dalam bahasa Jepang punya batas sosial, bukan hanya batas logis.",
+    "**[〜もん|mon] di ujung baris 7 = 〜んだもの**, penanda alasan yang sedikit manja atau membela diri. Ia ragam lisan yang akrab dan sering dipakai perempuan muda serta anak-anak; di kantor ia tak akan muncul."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menandai dari mana kabarmu datang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Jepang jauh lebih ketat daripada bahasa Indonesia dalam menandai sumber informasi. Menyampaikan kabar orang lain tanpa penanda apa pun bisa dibaca sebagai mengklaimnya sebagai pengetahuan sendiri — dan kalau ternyata salah, kamulah yang menanggungnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Penanda",
+      "Ragam",
+      "Nuansa"
+     ],
+     "rows": [
+      [
+       "〜そうです",
+       "umum",
+       "kutipan netral dari sumber tertentu"
+      ],
+      [
+       "〜とのことです",
+       "【書】【敬】",
+       "paling baku di surel dan pesan kerja"
+      ],
+      [
+       "〜と[聞|ki]いております",
+       "【敬】",
+       "merendah; “saya dengar”"
+      ],
+      [
+       "〜らしいです",
+       "umum",
+       "agak berjarak; kadang terkesan kurang bertanggung jawab"
+      ],
+      [
+       "〜だそうです",
+       "umum",
+       "sesudah kata benda: [医者|isha]だそうです"
+      ],
+      [
+       "〜という[話|hanashi]です",
+       "umum",
+       "kabar yang beredar"
+      ],
+      [
+       "〜によると",
+       "umum 【書】",
+       "menyebut sumbernya: [天気予報|tenki yohō]によると"
+      ],
+      [
+       "〜とされている",
+       "【書】",
+       "dianggap begitu secara umum; artikel & penelitian"
+      ],
+      [
+       "〜と[見|mi]られる",
+       "【書】",
+       "diperkirakan; bahasa berita"
+      ],
+      [
+       "〜[模様|moyō]です",
+       "【書】berita",
+       "tampaknya begitu; khas siaran berita"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Rangka baku: sumber + isi + penanda",
+     "items": [
+      "[天気予報|Tenki yohō]によりますと、[明日|asu]は[大雨|ōame]になる[見込|mikom]みとのことです。",
+      "[先方|Senpō]によりますと、[納期|nōki]は[来月|raigetsu][末|matsu]になるそうです。",
+      "[報道|Hōdō]によれば、[両社|ryōsha]は[合併|gappei]する[方向|hōkō]で[調整|chōsei]しているとみられる。【書】",
+      "**Yang tak boleh:** menyebut sumber lalu memakai bentuk telanjang — ×[天気予報|Tenki yohō]によると[明日|ashita]は[雨|ame]です。 Penanda di ujungnya wajib ada."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kebiasaan ini akan sangat berguna di Unit 15 (berita) dan Unit 16 (penelitian), yang seluruhnya dibangun di atas pembedaan antara **apa yang kamu tahu**, **apa yang kamu simpulkan**, dan **apa yang kamu dengar**."
+    }
+   ]
+  },
+  {
+   "title": "Kemungkinan buruk: おそれ, かねない, 恐れがある, 〜ばかりに",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Menempel pada",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "〜おそれがある",
+       "kata kerja bentuk kamus / [名詞|meishi]の",
+       "[土砂崩|Doshakuzu]れのおそれがあります。"
+      ],
+      [
+       "〜かねない",
+       "kata kerja 連用形",
+       "[事故|Jiko]につながりかねない。"
+      ],
+      [
+       "〜[恐|oso]れが[生|shō]じる 【書】",
+       "kata benda",
+       "[信用|Shin'yō][失墜|shittsui]の[恐|osore]が[生|shō]じる。"
+      ],
+      [
+       "〜[兆|kizashi]しがある 【書】",
+       "kata benda",
+       "[景気|Keiki][回復|kaifuku]の[兆|kizashi]しがある。（bisa baik)"
+      ],
+      [
+       "〜リスクがある",
+       "kata benda",
+       "[情報漏洩|Jōhō rōei]のリスクがある。"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga yang pertama hanya untuk hal buruk. Kalau yang mungkin terjadi adalah hal baik, yang dipakai adalah [可能性|kanōsei]がある, [見込|mikom]みがある, atau [期待|kitai]できる. Menukar arah ini adalah kesalahan yang cepat terasa: ×[売上|Uriage]が[伸|no]びるおそれがある terbaca seperti kamu tidak menginginkan penjualan naik."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat peringatan yang akan kamu temui setiap hari di Jepang",
+     "items": [
+      "[大雨|Ōame]により、[土砂災害|doshasaigai]が[発生|hassei]するおそれがあります。（siaran cuaca）",
+      "[強風|Kyōfū]のため、[ダイヤ|daiya]が[乱|mida]れる[可能性|kanōsei]がございます。（pengumuman stasiun）",
+      "[この|Kono][まま|mama]では[年度末|nendomatsu]に[大幅|ōhaba]な[赤字|akaji]となりかねません。（rapat)",
+      "[個人情報|Kojin jōhō]の[取|to]り[扱|atsuka]いには[十分|jūbun]ご[注意|chūi]ください。[漏洩|Rōei]のリスクがございます。（surel internal)"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ja": "推量",
+   "baca": "すいりょう · suiryō",
+   "id": "dugaan"
+  },
+  {
+   "ja": "確信",
+   "baca": "かくしん · kakushin",
+   "id": "keyakinan"
+  },
+  {
+   "ja": "度合い",
+   "baca": "どあい · doai",
+   "id": "tingkat; kadar"
+  },
+  {
+   "ja": "在庫",
+   "baca": "ざいこ · zaiko",
+   "id": "persediaan"
+  },
+  {
+   "ja": "実際",
+   "baca": "じっさい · jissai",
+   "id": "kenyataannya"
+  },
+  {
+   "ja": "可能性",
+   "baca": "かのうせい · kanōsei",
+   "id": "kemungkinan"
+  },
+  {
+   "ja": "数え間違い",
+   "baca": "かぞえまちがい · kazoe machigai",
+   "id": "salah hitung"
+  },
+  {
+   "ja": "検品",
+   "baca": "けんぴん · kenpin",
+   "id": "pemeriksaan barang"
+  },
+  {
+   "ja": "数え漏れ",
+   "baca": "かぞえもれ · kazoe more",
+   "id": "ada yang terlewat dihitung"
+  },
+  {
+   "ja": "伝票",
+   "baca": "でんぴょう · denpyō",
+   "id": "nota; slip"
+  },
+  {
+   "ja": "出庫",
+   "baca": "しゅっこ · shukko",
+   "id": "pengeluaran dari gudang"
+  },
+  {
+   "ja": "持ち出す",
+   "baca": "もちだす · mochidasu",
+   "id": "membawa keluar"
+  },
+  {
+   "ja": "棚卸し",
+   "baca": "たなおろし · tanaoroshi",
+   "id": "stok opname"
+  },
+  {
+   "ja": "起票する",
+   "baca": "きひょうする · kihyō suru",
+   "id": "membuat nota"
+  },
+  {
+   "ja": "責める",
+   "baca": "せめる · semeru",
+   "id": "menyalahkan"
+  },
+  {
+   "ja": "むしろ",
+   "baca": "mushiro",
+   "id": "malah; justru"
+  },
+  {
+   "ja": "放っておく",
+   "baca": "ほうっておく · hōtte oku",
+   "id": "membiarkan"
+  },
+  {
+   "ja": "年度末",
+   "baca": "ねんどまつ · nendomatsu",
+   "id": "akhir tahun buku"
+  },
+  {
+   "ja": "大ごと",
+   "baca": "おおごと · ōgoto",
+   "id": "perkara besar"
+  },
+  {
+   "ja": "仕組み",
+   "baca": "しくみ · shikumi",
+   "id": "mekanisme; sistem"
+  },
+  {
+   "ja": "〜おそれがある",
+   "baca": "osore ga aru",
+   "id": "ada kekhawatiran ~ (buruk)"
+  },
+  {
+   "ja": "〜かねない",
+   "baca": "kanenai",
+   "id": "bisa saja ~ (buruk)"
+  },
+  {
+   "ja": "〜に違いない",
+   "baca": "にちがいない · ni chigainai",
+   "id": "pasti ~"
+  },
+  {
+   "ja": "〜に決まっている",
+   "baca": "にきまっている · ni kimatte iru",
+   "id": "sudah pasti ~ 【話】"
+  },
+  {
+   "ja": "〜はずだ",
+   "baca": "hazu da",
+   "id": "seharusnya ~"
+  },
+  {
+   "ja": "〜と思われる",
+   "baca": "とおもわれる · to omowareru",
+   "id": "diperkirakan 【書】"
+  },
+  {
+   "ja": "〜とされている",
+   "baca": "to sarete iru",
+   "id": "dianggap ~ 【書】"
+  },
+  {
+   "ja": "〜と見られる",
+   "baca": "とみられる · to mirareru",
+   "id": "diperkirakan (berita) 【書】"
+  },
+  {
+   "ja": "模様",
+   "baca": "もよう · moyō",
+   "id": "tampaknya (berita) 【書】"
+  },
+  {
+   "ja": "〜とのことです",
+   "baca": "to no koto desu",
+   "id": "katanya 【敬】"
+  },
+  {
+   "ja": "〜によると",
+   "baca": "ni yoru to",
+   "id": "menurut ~"
+  },
+  {
+   "ja": "天気予報",
+   "baca": "てんきよほう · tenki yohō",
+   "id": "ramalan cuaca"
+  },
+  {
+   "ja": "台風",
+   "baca": "たいふう · taifū",
+   "id": "topan"
+  },
+  {
+   "ja": "在宅",
+   "baca": "ざいたく · zaitaku",
+   "id": "bekerja dari rumah"
+  },
+  {
+   "ja": "集中する",
+   "baca": "しゅうちゅうする · shūchū suru",
+   "id": "memusatkan perhatian"
+  },
+  {
+   "ja": "土砂崩れ",
+   "baca": "どしゃくずれ · doshakuzure",
+   "id": "longsor"
+  },
+  {
+   "ja": "災害",
+   "baca": "さいがい · saigai",
+   "id": "bencana"
+  },
+  {
+   "ja": "発生する",
+   "baca": "はっせいする · hassei suru",
+   "id": "terjadi 【書】"
+  },
+  {
+   "ja": "強風",
+   "baca": "きょうふう · kyōfū",
+   "id": "angin kencang"
+  },
+  {
+   "ja": "ダイヤが乱れる",
+   "baca": "だいやがみだれる · daiya ga midareru",
+   "id": "jadwal kereta kacau"
+  },
+  {
+   "ja": "赤字",
+   "baca": "あかじ · akaji",
+   "id": "kerugian; defisit"
+  },
+  {
+   "ja": "漏洩",
+   "baca": "ろうえい · rōei",
+   "id": "kebocoran (data) 【書】"
+  },
+  {
+   "ja": "兆し",
+   "baca": "きざし · kizashi",
+   "id": "tanda-tanda 【書】"
+  },
+  {
+   "ja": "見込み",
+   "baca": "みこみ · mikomi",
+   "id": "perkiraan"
+  },
+  {
+   "ja": "報道",
+   "baca": "ほうどう · hōdō",
+   "id": "pemberitaan"
+  },
+  {
+   "ja": "合併",
+   "baca": "がっぺい · gappei",
+   "id": "merger"
+  },
+  {
+   "ja": "信用",
+   "baca": "しんよう · shin'yō",
+   "id": "kepercayaan"
+  },
+  {
+   "ja": "失墜",
+   "baca": "しっつい · shittsui",
+   "id": "keruntuhan (nama baik) 【書】"
+  },
+  {
+   "ja": "やばい",
+   "baca": "yabai",
+   "id": "gawat; keren 【話】"
+  },
+  {
+   "ja": "確かに",
+   "baca": "たしかに · tashika ni",
+   "id": "memang benar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih らしい, ようだ, そうだ (kabar dengar), atau そうだ (tampak) sesuai sumber informasinya.",
+   "items": [
+    "（[空|sora]を[見|mi]て）[雨|Ame]が[降|fu]り____。",
+    "（[ニュース|nyūsu]で[聞|ki]いて）[来月|Raigetsu][値上|neaga]げする____。",
+    "（[足音|ashioto]が[聞|ki]こえる）[誰|Dare]か[来|ki]た____。",
+    "（[同僚|dōryō]から[聞|ki]いて）[部長|Buchō]、[辞|ya]める____。",
+    "（[ケーキ|kēki]を[見|mi]て）おいし____。"
+   ]
+  },
+  {
+   "prompt": "Beri nomor tingkat keyakinan tiap kalimat, 1 untuk paling ragu sampai 5 untuk paling yakin.",
+   "items": [
+    "[遅|Oku]れるに[違|chiga]いない。",
+    "[遅|Oku]れるかもしれない。",
+    "[遅|Oku]れるだろう。",
+    "[遅|Oku]れる[可能性|kanōsei]がある。",
+    "[遅|Oku]れるに[決|ki]まっている。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan おそれがある · かねない · 可能性が高い · はずだ · のではないでしょうか.",
+   "items": [
+    "[大雨|Ōame]により[電車|densha]が[止|to]まる ____。",
+    "この[ままだと|mama da to][信用|shin'yō]を[失|ushina]い ____。",
+    "[鍵|Kagi]をかけたので、[誰|dare]も[入|hai]れない ____。",
+    "[記録|Kiroku]の[方|hō]が[間違|machiga]っている ____。",
+    "[価格|Kakaku]の[問題|mondai]なのではなく、[説明|setsumei]の[問題|mondai]な ____。"
+   ]
+  },
+  {
+   "prompt": "Tambahkan penanda sumber informasi yang tepat pada kalimat berikut.",
+   "items": [
+    "[天気予報|Tenki yohō]によると、[明日|asu]は[雪|yuki]です。",
+    "[先方|Senpō]の[話|hanashi]では、[納期|nōki]は[来月|raigetsu]です。",
+    "[報道|Hōdō]では、[両社|ryōsha]は[合併|gappei]します。【書】",
+    "[部長|Buchō]から[聞|ki]きましたが、[会議|kaigi]は[中止|chūshi]です。【敬】",
+    "[一般|Ippan]に、この[方法|hōhō]が[有効|yūkō]です。【書】"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang tanpa menuduh siapa pun.",
+   "items": [
+    "Sepertinya jumlah stoknya tidak cocok.",
+    "Kemungkinan besar catatannya yang keliru.",
+    "Sulit dibayangkan ada orang yang membawanya keluar.",
+    "Kalau dibiarkan, bisa jadi masalah besar di akhir tahun buku.",
+    "Menurut saya ini masalah prosedurnya, bukan masalah orangnya."
+   ]
+  },
+  {
+   "prompt": "Tulis lima sampai tujuh kalimat untuk tiap keadaan, dengan penanda dugaan yang tepat di setiap kalimat.",
+   "items": [
+    "Sebuah berkas penting tidak ditemukan. Laporkan keadaannya ke atasan tanpa menyebut siapa pun sebagai penyebab, dan sebutkan tiga kemungkinan.",
+    "Kamu memperingatkan tim bahwa jika pola sekarang berlanjut, target kuartal berikutnya tidak akan tercapai."
+   ]
+  }
+ ],
+ "answers": [
+  "そうです（[降|fu]りそうです） — そうです（[値上|nea]げするそうです） — ようです — らしいです — そうです（おいしそうです）",
+  "4 — 1 — 3 — 2 — 5",
+  "おそれがあります — かねません — はずです — [可能性|kanōsei]が[高|taka]いです — のではないでしょうか",
+  "[明日|asu]は[雪|yuki]になるとのことです。 — [納期|Nōki]は[来月|raigetsu]になるそうです。 — [両社|Ryōsha]は[合併|gappei]する[方向|hōkō]で[調整|chōsei]しているとみられる。 — [会議|Kaigi]は[中止|chūshi]になると[伺|ukaga]っております。 — この[方法|hōhō]が[有効|yūkō]であるとされている。",
+  "[在庫|Zaiko]の[数|kazu]が[合|a]わないようです。 — [記録|Kiroku]の[方|hō]が[間違|machiga]っている[可能性|kanōsei]が[高|taka]いです。 — [誰|Dare]かが[持|mo]ち[出|da]したとは[考|kanga]えにくいです。 — [放|hō]っておくと[年度末|nendomatsu]に[大|ō]ごとになりかねません。 — [人|hito]の[問題|mondai]ではなく、[仕組|shiku]みの[問題|mondai]なのではないでしょうか。",
+  "Contoh 1／[恐|oso]れ[入|i]ります、[契約書|keiyakusho]の[原本|genpon]が[見|mi][当|a]たらないようです。[三|san]か[所|sho][探|saga]しましたが、[所定|shotei]の[棚|tana]にはございませんでした。[考|Kanga]えられる[可能性|kanōsei]は[三|mi]つかと[存|zon]じます。[一|hito]つ[目|me]は[別|betsu]の[案件|anken]の[ファイル|fairu]に[紛|magi]れている[可能性|kanōsei]、[二|futa]つ[目|me]は[法務|hōmu]に[回|mawa]したまま[戻|modo]っていない[可能性|kanōsei]、[三|mi]つ[目|me]は[電子化|denshika]の[際|sai]に[原本|genpon]が[別置|betsuo]きになった[可能性|kanōsei]でございます。[本日中|Honjitsu-chū]に[法務|hōmu]に[確認|kakunin]し、[見|mi]つからない[場合|baai]は[再締結|saiteiketsu]のご[相談|sōdan]をさせていただきたく[存|zon]じます。 — Contoh 2／[現|gen][状況|jōkyō]のままでは、[来期|raiki]の[目標|mokuhyō][達成|tassei]は[難|muzuka]しいのではないでしょうか。[新規|Shinki][獲得|kakutoku]が[三|san]か[月|getsu][連続|renzoku]で[計画|keikaku]を[下回|shitamawa]っております。このペースが[続|tsuzu]けば、[年度末|nendomatsu]には[二割|niwari][程度|teido]の[未達|mitatsu]となる[可能性|kanōsei]が[高|taka]いと[思|omo]われます。[早|haya]めに[手|te]を[打|u]たなければ、[来期|raiki]の[予算|yosan]にも[影響|eikyō]が[及|oyo]びかねません。[今週中|Konshū-chū]に[対策|taisaku]を[検討|kentō]させていただければと[存|zon]じます。"
+ ],
+ "wave": "Bacalah ulang dialog pertama Unit 3 (permintaan yang ditolak Kimura) dan tandai tiap penanda dugaan di dalamnya. Kamu akan menemukan bahwa penolakan halus dan dugaan memakai peralatan yang sama persis: keduanya bekerja dengan menolak menyatakan sesuatu secara pasti. Itulah kenapa penguasaan Unit 5 langsung menaikkan mutu Unit 3-mu."
+}

@@ -1,0 +1,273 @@
+{
+ "title": "Kontrak, aturan, dan loket: bahasa Jepang yang tak boleh salah baca",
+ "title_target": "[契約|Keiyaku]・[規約|kiyaku]・[行政手続|gyōsei tetsuzu]き",
+ "goal": "Membaca pasal kontrak dan syarat layanan tanpa tersesat, mengurus keperluan di kantor kelurahan dan bank, serta mengenali klausa yang merugikanmu sebelum menandatanganinya.",
+ "bekal": ["membaca 〜ものとする, 〜を要する, 〜に基づく tanpa kamus", "mengenali klausa pembatas tanggung jawab dan pembatalan", "mengurus [転入届|tennyū todoke], [在留|zairyū][カード|kādo], dan rekening bank", "bertanya di loket dengan ungkapan yang tepat", "mengisi formulir Jepang dan mengenali istilah kolomnya"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Di loket kantor kelurahan",
+   "intro": "Ani pindah tempat tinggal. Percakapan loket Jepang punya iramanya sendiri: petugas menjelaskan banyak hal sekaligus, dan yang menentukan adalah apakah kamu tahu harus bertanya balik apa.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "すみません、[転入|tennyū]の[手続|tetsuzu]きをしたいのですが。", "id": "Permisi, saya ingin mengurus pendaftaran pindah masuk.", "literal": "maaf, pindah-masuk — punya — prosedur — akan — melakukan — ingin — adalah — tetapi."},
+    {"speaker": "[職員|Shokuin]:", "text": "はい。[前|Mae]にお[住|su]まいだった[市区町村|shiku chōson]で[転出届|tenshutsu todoke]は[出|da]されましたか。[転出証明書|Tenshutsu shōmeisho]をお[持|mo]ちでしょうか。", "id": "Baik. Apakah Anda sudah mengajukan surat pindah keluar di daerah tempat tinggal sebelumnya? Apakah Anda membawa surat keterangan pindah keluarnya?", "literal": "ya. sebelum — pada — tinggal(hormat) — adalah(lampau) — kota-daerah-kecamatan-desa — di — pindah-keluar-lapor — mengenai — dikeluarkan(hormat,lampau) — kah. pindah-keluar-bukti-surat — akan — membawa(hormat) — adalah-kah."},
+    {"speaker": "[アニ|Ani]:", "text": "はい、こちらです。あと[在留|zairyū][カード|kādo]と[マイナンバーカード|mainanbā kādo]も[持|mo]ってきました。", "id": "Ya, ini dia. Saya juga membawa kartu izin tinggal dan kartu My Number.", "literal": "ya, ini — adalah. sesudah — tinggal-tetap — kartu — dan — My-Number-kartu — juga — membawa — datang(lampau)."},
+    {"speaker": "[職員|Shokuin]:", "text": "[助|Tasu]かります。[転入届|Tennyū todoke]は[転入後|tennyūgo][十四日|jūyokka][以内|inai]に[提出|teishutsu]することとされておりますので、[本日|honjitsu]で[間|ma]に[合|a]っております。", "id": "Sangat membantu. Surat pindah masuk ditetapkan harus diserahkan dalam empat belas hari sesudah pindah, jadi hari ini masih sempat.", "literal": "tertolong. pindah-masuk-lapor — mengenai — pindah-masuk-sesudah — empat-belas-hari — dalam — pada — penyerahan — melakukan — hal — begitu — dijadikan — sedang(rendah) — karena, hari-ini — dengan — sela — pada — bertemu — sedang."},
+    {"speaker": "[アニ|Ani]:", "text": "[在留|Zairyū][カード|kādo]の[住所変更|jūsho henkō]も[同時|dōji]にできますか。", "id": "Apakah perubahan alamat di kartu izin tinggal juga bisa sekaligus?", "literal": "tinggal-tetap — kartu — punya — alamat-perubahan — juga — waktu-sama — pada — bisa — kah."},
+    {"speaker": "[職員|Shokuin]:", "text": "できます。[裏面|Uramen]に[新|atara]しい[住所|jūsho]を[記載|kisai]いたします。なお、[国民健康保険|kokumin kenkō hoken]に[加入|kanyū]されている[場合|baai]は、[別|betsu]の[窓口|madoguchi]での[手続|tetsuzu]きが[必要|hitsuyō]となります。", "id": "Bisa. Alamat baru akan kami catat di sisi belakang. Selain itu, dalam hal Anda terdaftar di asuransi kesehatan nasional, diperlukan pengurusan di loket lain.", "literal": "bisa. belakang-muka — pada — baru — alamat — akan — pencatatan — melakukan(rendah). selain-itu, rakyat-sehat-asuransi — pada — masuk-anggota — dilakukan(hormat) — sedang — hal — mengenai, lain — punya — jendela-mulut — di — punya — prosedur — yang — perlu — menjadi."},
+    {"speaker": "[アニ|Ani]:", "text": "[会社|Kaisha]の[健康保険|kenkō hoken]に[入|hai]っているのですが、その[場合|baai]は[不要|fuyō]でしょうか。", "id": "Saya masuk asuransi kesehatan perusahaan; dalam hal itu, apakah tidak perlu?", "literal": "perusahaan — punya — sehat-asuransi — pada — masuk — sedang — adalah — tetapi, itu — hal — mengenai — tidak-perlu — adalah-kah."},
+    {"speaker": "[職員|Shokuin]:", "text": "[社会保険|Shakai hoken]でしたら[市|shi]の[手続|tetsuzu]きは[不要|fuyō]です。ただ、[お子|o-ko]さんがいらっしゃる[場合|baai]は[児童手当|jidō teate]の[住所変更|jūsho henkō]が[別途|beppo][必要|hitsuyō]となります。", "id": "Kalau asuransi sosial perusahaan, pengurusan di kota tidak diperlukan. Hanya saja, dalam hal Anda punya anak, perubahan alamat untuk tunjangan anak diperlukan secara terpisah.", "literal": "masyarakat-asuransi — kalau — kota — punya — prosedur — mengenai — tidak-perlu — adalah. hanya, anak(hormat) — yang — berada(hormat) — hal — mengenai — anak-tunjangan — punya — alamat-perubahan — yang — terpisah — perlu — menjadi."},
+    {"speaker": "[アニ|Ani]:", "text": "[子|Ko]どもはおりません。あと[一|hito]つ[伺|ukaga]ってもよろしいでしょうか。[マイナンバーカード|Mainanbā kādo]の[更新時期|kōshin jiki]はどこで[確認|kakunin]できますか。", "id": "Saya tidak punya anak. Bolehkah saya bertanya satu hal lagi? Di mana saya bisa memeriksa waktu perpanjangan kartu My Number?", "literal": "anak — mengenai — ada(rendah) — tidak. sesudah — satu — bertanya(rendah) — meskipun — baik — adalah-kah. My-Number-kartu — punya — pembaruan-waktu — mengenai — mana — di — pemeriksaan — bisa — kah."},
+    {"speaker": "[職員|Shokuin]:", "text": "[カード|Kādo][表面|omote-men]の[右下|migishita]に[有効期限|yūkō kigen]が[記載|kisai]されております。[電子証明書|Denshi shōmeisho]の[有効期限|yūkō kigen]は[カード|kādo][本体|hontai]とは[異|kot]なりますので、そちらもご[確認|kakunin]ください。", "id": "Masa berlakunya tercantum di kanan bawah sisi depan kartu. Masa berlaku sertifikat elektroniknya berbeda dari kartunya sendiri, jadi mohon periksa itu juga.", "literal": "kartu — depan-muka — punya — kanan-bawah — pada — sah-batas — yang — pencatatan — dilakukan — sedang(rendah). elektronik-bukti-surat — punya — sah-batas — mengenai — kartu — badan-utama — dengan — mengenai — berbeda — karena, sana — juga — pemeriksaan(hormat) — silakan."},
+    {"speaker": "[アニ|Ani]:", "text": "[別|Betsu]なんですね。[危|Abu]なく[見落|mio]とすところでした。ありがとうございます。", "id": "Ternyata berbeda ya. Hampir saja saya melewatkannya. Terima kasih banyak.", "literal": "lain — adalah — ya. bahaya — tanpa — melihat-menjatuhkan — tempat — adalah(lampau). terima-kasih."},
+    {"speaker": "[職員|Shokuin]:", "text": "よくあるお[問|to]い[合|a]わせでございます。では、こちらの[用紙|yōshi]にご[記入|kinyū]の[上|ue]、[番号札|bangōfuda]をお[取|to]りになってお[待|ma]ちください。", "id": "Itu pertanyaan yang sering ditanyakan. Kalau begitu, setelah mengisi formulir ini, silakan ambil nomor antrean dan menunggu.", "literal": "sering — ada — pertanyaan(hormat) — adalah(hormat). kalau-begitu, sini — punya — kertas-formulir — pada — pengisian(hormat) — punya — atas, nomor-kartu — akan — mengambil(hormat) — dan — menunggu(hormat) — silakan."}
+   ],
+   "notes": [
+    "**〜こととされております — bahasa loket yang paling khas.** Ia berarti “ditetapkan bahwa ~”, dan sengaja tidak menyebut siapa yang menetapkan. Sepupunya: 〜ものとする 【書】 di kontrak, 〜こととする di aturan internal, 〜とされている untuk pengetahuan umum (Unit 9).",
+    "**[別途|beppo] = secara terpisah, di luar itu.** Kata ini yang menyelamatkanmu dari kejutan biaya: [別途|Beppo][費用|hiyō]がかかります · [送料|Sōryō][別途|beppo] · [別途|Beppo][手続|tetsuzu]きが[必要|hitsuyō]です. Kalau kamu menemukannya di dokumen, berhentilah dan cari tahu apa persisnya yang terpisah.",
+    "**[不要|fuyō] dan [必要|hitsuyō] — pasangan yang muncul di setiap formulir.** Sepupunya yang berbentuk pilihan lingkar: [要|Yō]・[不要|Fuyō], [有|Yū]・[無|Mu] (ada / tidak ada), [済|Zumi]・[未|Mi] (sudah / belum).",
+    "**[〜ところでした|tokoro deshita] = “hampir saja ~”.** [見落|Mio]とすところでした · [遅|Oku]れるところでした. Perhatikan bahwa kata kerjanya tetap bentuk kamus meski peristiwanya sudah lewat — yang lampau adalah でした-nya.",
+    "**[表面|omote-men] dan [裏面|uramen] — depan dan belakang lembaran.** Sangat sering muncul di petunjuk formulir: [裏面|Uramen]もご[記入|kinyū]ください. Jangan tertukar dengan [表|hyō] (tabel), meski aksaranya sama.",
+    "**Kalau kamu tinggal di Jepang, tiga tenggat ini wajib dihafal:** [転入届|tennyū todoke] dalam **14 hari** sesudah pindah; perubahan alamat [在留|zairyū][カード|kādo] dalam **14 hari**; pemberitahuan pindah kerja ke [入管|nyūkan] dalam **14 hari**. Angka empat belas itu berulang, dan itu memudahkan.",
+    "**[番号札|bangōfuda] dan [用紙|yōshi] — dua kata loket yang selalu terpakai.** Sepupunya: [窓口|madoguchi] (loket), [受付|uketsuke] (penerimaan), [記入例|kinyūrei] (contoh pengisian), [控|hika]え (salinan untukmu), [押印|ōin] (pembubuhan stempel).",
+    "**Dua pertanyaan yang selalu berhasil di loket:** [恐|Oso]れ[入|i]りますが、〜はこちらでお[手続|tetsuzu]きできますでしょうか。 dan [ほかに|Hoka ni][必要|hitsuyō]な[書類|shorui]はございますか。 Yang kedua khususnya menghemat perjalanan kedua yang sering terjadi."
+   ],
+   "grammars": [
+    {
+     "title": "Ragam hukum dan kontrak: sepuluh bentuk yang harus dikenali",
+     "body": ["Kamu tidak perlu memproduksinya. Kamu perlu membacanya tanpa salah, karena tanda tanganmu ada di bawahnya."],
+     "table": {
+      "head": ["Bentuk", "Artinya", "Contoh"],
+      "rows": [
+       ["〜ものとする", "ditetapkan bahwa ~; wajib", "[甲|Kō]は[乙|otsu]に[通知|tsūchi]するものとする"],
+       ["〜を[要|yō]する", "memerlukan ~", "[書面|Shomen]による[同意|dōi]を[要|yō]する"],
+       ["〜に[基|moto]づき", "berdasarkan ~", "[本契約|Honkeiyaku]に[基|moto]づき"],
+       ["〜に[定|sada]める", "yang ditentukan di ~", "[第五条|Dai-gojō]に[定|sada]める[通|tō]り"],
+       ["〜[場合|baai]において", "dalam hal ~", "[解除|Kaijo]された[場合|baai]において"],
+       ["この[限|kagi]りでない", "**tidak berlaku** dalam hal itu", "ただし、〜の[場合|baai]はこの[限|kagi]りでない"],
+       ["〜を[妨|samata]げない", "tidak menghalangi ~", "[別途|Beppo][協議|kyōgi]することを[妨|samata]げない"],
+       ["[速|sumi]やかに", "tanpa menunda", "[速|Sumi]やかに[通知|tsūchi]するものとする"],
+       ["〜の[上|ue]", "sesudah melakukan ~", "[協議|Kyōgi]の[上|ue][決定|kettei]する"],
+       ["なお・また・ただし", "penghubung pasal", "ただし = pengecualian menyusul"]
+      ]
+     },
+     "after": [
+      "**Satu frasa yang wajib kamu cari di setiap kontrak: この[限|kagi]りでない.** Ia berarti “aturan barusan TIDAK berlaku di sini”, dan hampir selalu memuat pengecualian yang penting bagimu. Kalimat khasnya: [返金|Henkin]はいたしません。ただし、[当社|tōsha]の[責|seki]に[帰|ki]すべき[事由|jiyū]による[場合|baai]はこの[限|kagi]りでない。",
+      "**[甲|kō] dan [乙|otsu]** adalah “pihak pertama” dan “pihak kedua” dalam kontrak Jepang; kalau ada tiga, yang ketiga [丙|hei]. Sebelum membaca pasal apa pun, pastikan lebih dulu kamu 甲 atau 乙 — seluruh isi kontrak bergantung pada itu."
+     ]
+    },
+    {
+     "title": "Klausa yang harus kamu cari sebelum menandatangani",
+     "table": {
+      "head": ["Istilah", "Artinya", "Yang perlu diperiksa"],
+      "rows": [
+       ["[契約期間|Keiyaku kikan]", "masa kontrak", "apakah [自動更新|jidō kōshin]?"],
+       ["[解約|Kaiyaku]・[解除|kaijo]", "pembatalan", "berapa hari sebelumnya harus diberitahukan?"],
+       ["[違約金|Iyakukin]", "denda pembatalan", "berapa, dan dihitung dari apa?"],
+       ["[免責事項|Menseki jikō]", "pembatasan tanggung jawab", "apa yang **tidak** ditanggung pihak sana?"],
+       ["[損害賠償|Songai baishō]", "ganti rugi", "ada batas atasnya ([上限|jōgen]) atau tidak?"],
+       ["[秘密保持|Himitsu hoji]", "kerahasiaan", "berlaku berapa lama sesudah kontrak berakhir?"],
+       ["[管轄|Kankatsu]", "pengadilan yang berwenang", "pengadilan mana kalau bersengketa?"],
+       ["[中途解約|Chūto kaiyaku]", "pembatalan di tengah", "boleh atau tidak sama sekali?"],
+       ["[原状回復|Genjō kaifuku]", "pengembalian ke keadaan semula", "penting sekali di kontrak sewa rumah"]
+      ]
+     },
+     "after": ["**Pertanyaan yang selalu boleh diajukan tanpa dianggap tidak sopan:** この[条項|jōkō]について、[具体的|gutaiteki]にはどのような[場合|baai]を[想定|sōtei]されていますか。 Meminta contoh konkret adalah cara paling aman menemukan apa yang sebenarnya disembunyikan pasal yang berbunyi umum."]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Membaca kontrak sewa rumah",
+   "intro": "Rina membantu Ani membaca kontrak apartemen. Percakapan ini memuat hampir semua istilah yang membuat penyewa asing rugi di Jepang.",
+   "lines": [
+    {"speaker": "[リナ|Rina]:", "text": "[敷金|Shikikin][二|ni]か[月|getsu]、[礼金|reikin][一|ik]か[月|getsu]か。[今|Ima]どき[礼金|reikin][取|to]るんだ。", "id": "Deposit dua bulan, uang terima kasih satu bulan ya. Zaman sekarang masih narik reikin ternyata.", "literal": "deposit — dua — bulan, terima-kasih-uang — satu — bulan — kah. sekarang — sekitar — terima-kasih-uang — mengambil — adalah."},
+    {"speaker": "[アニ|Ani]:", "text": "[礼金|Reikin]って[戻|modo]ってこないんだよね。", "id": "Reikin itu nggak balik lagi kan.", "literal": "terima-kasih-uang — begitu — kembali — datang — tidak — adalah — ya."},
+    {"speaker": "[リナ|Rina]:", "text": "[戻|Modo]らない。[敷金|Shikikin]は[戻|modo]る、はずなんだけど、[原状回復|genjō kaifuku]の[範囲|han'i]でだいぶ[引|hi]かれる。ここ[見|mi]て、「[通常|tsūjō][損耗|sonmō]を[除|nozo]き」って[書|ka]いてある？", "id": "Nggak balik. Deposit balik — harusnya sih, tapi lumayan dipotong buat pengembalian ke keadaan semula. Lihat sini, ada tulisan “kecuali keausan wajar” nggak?", "literal": "kembali — tidak. deposit — mengenai — kembali, seharusnya — adalah — tetapi, asal-keadaan-pemulihan — punya — lingkup — dengan — cukup — dipotong. sini — melihat, “biasa — aus — akan — kecuali” — begitu — menulis — ada — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "……[書|Ka]いてない。", "id": "…Nggak ada.", "literal": "…menulis — tidak."},
+    {"speaker": "[リナ|Rina]:", "text": "それ[聞|ki]いたほうがいい。[国土交通省|Kokudo Kōtsūshō]の[ガイドライン|gaidorain]では、[普通|futsū]に[住|su]んでできた[傷|kizu]や[日焼|hiya]けは[借|ka]りた[側|gawa]の[負担|futan]じゃないことになってる。", "id": "Itu mending ditanyain. Menurut pedoman Kementerian Pertanahan, goresan dan warna pudar karena tinggal biasa itu bukan tanggungan penyewa.", "literal": "itu — bertanya — pihak — yang — baik. tanah-perhubungan-kementerian — punya — pedoman — dengan — mengenai, biasa — pada — tinggal — dan — jadi(lampau) — luka — dan — matahari-bakar — mengenai — meminjam(lampau) — pihak — punya — beban — bukan — hal — pada — menjadi — sedang."},
+    {"speaker": "[アニ|Ani]:", "text": "[聞|Ki]いても「[契約書|keiyakusho]にそう[書|ka]いてあります」って[言|i]われそう。", "id": "Kalaupun ditanya kayaknya bakal dijawab “di kontraknya tertulis begitu”.", "literal": "bertanya — meskipun — “kontrak-surat — pada — begitu — menulis — ada” — begitu — dikatakan — tampak."},
+    {"speaker": "[リナ|Rina]:", "text": "[言|I]われる。でも[聞|ki]いたっていう[記録|kiroku]が[残|noko]る。[メール|Mēru]で[聞|ki]きな。[口|Kuchi]で[聞|ki]いちゃだめ。", "id": "Iya bakal. Tapi catatan bahwa kamu sudah nanya itu tetap ada. Tanyakan lewat surel. Jangan lisan.", "literal": "dikatakan. tetapi — bertanya(lampau) — yang-disebut — catatan — yang — tersisa. surel — dengan — bertanya(perintah-halus). mulut — dengan — bertanya — jangan."},
+    {"speaker": "[アニ|Ani]:", "text": "[前|Mae]も[同|ona]じこと[言|i]ってたね。[紙|Kami]に[残|noko]せって。", "id": "Dulu juga bilang hal yang sama ya. Tinggalkan di atas kertas.", "literal": "sebelum — juga — sama — hal — mengatakan — sedang(lampau) — ya. kertas — pada — meninggalkan(perintah) — begitu."},
+    {"speaker": "[リナ|Rina]:", "text": "[日本|Nihon]で[困|koma]ったことがある[人|hito]は、[全員|zen'in][同|ona]じこと[言|i]う。", "id": "Orang yang pernah kesulitan di Jepang, semuanya bilang hal yang sama.", "literal": "Jepang — di — kesulitan(lampau) — hal — yang — ada — orang — mengenai, seluruh-orang — sama — hal — mengatakan."}
+   ],
+   "notes": [
+    "**[敷金|shikikin] dan [礼金|reikin] — dua kata yang menentukan biaya pindahmu.** 敷金 adalah deposit yang **seharusnya** kembali dikurangi biaya perbaikan; 礼金 adalah “uang terima kasih” kepada pemilik yang tidak pernah kembali. Sebagian daerah dan sebagian pemilik kini menghapus 礼金, dan mencarinya sepadan dengan usaha.",
+    "**[原状回復|genjō kaifuku] adalah tempat sebagian besar sengketa sewa terjadi.** Pedoman [国土交通省|Kokudo Kōtsūshō] menyatakan [通常|tsūjō][損耗|sonmō] (keausan wajar) dan [経年変化|keinen henka] (perubahan karena usia) bukan tanggungan penyewa. Kalau kontrakmu tidak menyebutkannya, tanyakan secara tertulis.",
+    "**[〜ことになっている|koto ni natte iru] = “sudah ditetapkan begitu”.** Berbeda dari 〜ことにする (aku yang memutuskan): 〜ことになる menandai keputusan dari luar. [会議|Kaigi]は[三時|sanji]からということになっております adalah cara paling halus menyampaikan aturan yang bukan kamu yang membuatnya.",
+    "**Nasihat Rina — bertanya lewat surel, bukan lisan — berlaku di seluruh urusan resmi Jepang.** Bukan karena orangnya tidak jujur, melainkan karena penanggung jawab berganti dan ingatan memudar. Ini gema langsung dari Unit 8: [書|Ka]いてさえあれば[揉|mo]めない。"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca formulir Jepang: kolom yang selalu muncul",
+   "blocks": [
+    {"type": "tabel", "head": ["Kolom", "Cara baca", "Artinya"], "rows": [
+     ["[氏名|Shimei]", "shimei", "nama lengkap"],
+     ["ふりがな・フリガナ", "furigana", "cara baca nama; ikuti bentuk hiragana/katakana kolomnya"],
+     ["[生年月日|Seinen gappi]", "seinen gappi", "tanggal lahir; sering minta [元号|gengō]"],
+     ["[現住所|Genjūsho]", "genjūsho", "alamat sekarang"],
+     ["[本籍|Honseki]", "honseki", "domisili resmi (hanya WN Jepang)"],
+     ["[国籍|Kokuseki]", "kokuseki", "kewarganegaraan"],
+     ["[続柄|Tsuzukigara]", "tsuzukigara", "hubungan keluarga"],
+     ["[勤務先|Kinmusaki]", "kinmusaki", "tempat kerja"],
+     ["[緊急連絡先|Kinkyū renrakusaki]", "kinkyū renrakusaki", "kontak darurat"],
+     ["[認印|Mitomein]", "mitomein", "stempel biasa, bukan yang terdaftar"],
+     ["[署名|Shomei]", "shomei", "tanda tangan"],
+     ["[控|Hika]え", "hikae", "salinan untuk kamu simpan"]
+    ]},
+    {"type": "kotak", "title": "Empat aturan pengisian yang tidak tertulis di mana pun", "items": [
+     "**ふりがな diisi hiragana, フリガナ diisi katakana.** Kolomnya sendiri yang memberi tahu; salah bentuk sering diminta ditulis ulang.",
+     "**Tanggal sering memakai [元号|gengō]** — [令和|Reiwa] 7 = 2025. Kalau kolomnya sudah mencetak 令和, jangan menulis tahun Masehi di situ.",
+     "**Nama asing ditulis katakana di kolom フリガナ**, dan urutannya mengikuti [在留|zairyū][カード|kādo] — bukan urutan yang biasa kamu pakai sehari-hari.",
+     "**Coretan tidak boleh ditutup cairan penghapus.** Yang benar: coret dengan dua garis, lalu bubuhkan [訂正印|teiseiin] atau paraf di sebelahnya."
+    ]}
+   ]
+  },
+  {
+   "title": "Kalimat loket dan bank yang akan kamu pakai",
+   "blocks": [
+    {"type": "tabel", "head": ["Keperluan", "Kalimat"], "rows": [
+     ["Membuka pembicaraan", "すみません、〜の[手続|tetsuzu]きをしたいのですが。"],
+     ["Menanyakan kelengkapan", "[ほかに|Hoka ni][必要|hitsuyō]な[書類|shorui]はございますか。"],
+     ["Memastikan tempat", "こちらの[窓口|madoguchi]でよろしいでしょうか。"],
+     ["Menanyakan lama proses", "どのくらいお[時間|jikan]がかかりますでしょうか。"],
+     ["Menanyakan biaya", "[手数料|Tesūryō]はおいくらでしょうか。"],
+     ["Meminta diulang", "[恐|Oso]れ[入|i]ります、もう[一度|ichido]お[願|nega]いできますか。"],
+     ["Meminta ditulis", "[恐|Oso]れ[入|i]りますが、[書|ka]いていただけますでしょうか。"],
+     ["Meminta contoh pengisian", "[記入例|Kinyūrei]はございますか。"],
+     ["Membuka rekening", "[口座|Kōza]を[開設|kaisetsu]したいのですが。"],
+     ["Transfer bank", "[振込|Furikomi]をお[願|nega]いしたいのですが。"],
+     ["Meminta salinan", "[控|Hika]えをいただけますか。"]
+    ]},
+    {"type": "sub", "text": "Kalau kamu tidak paham penjelasan petugas"},
+    {"type": "kotak", "title": "Tiga kalimat yang jauh lebih baik daripada mengangguk", "items": [
+     "**[申|Mō]し[訳|wake]ございません、[今|ima]のところをもう[一度|ichido]ゆっくりお[願|nega]いできますか。** — meminta diulang pelan, bukan meminta bahasa Inggris.",
+     "**つまり、〜という[理解|rikai]でよろしいでしょうか。** — mengulang dengan kata-katamu sendiri; ini yang paling ampuh, karena memaksa petugas mengoreksimu kalau kamu salah.",
+     "**[恐|Oso]れ[入|i]りますが、[紙|kami]に[書|ka]いていただくことは[可能|kanō]でしょうか。** — meminta ditulis. Hampir selalu dikabulkan, dan menghapus seluruh risiko salah dengar angka."
+    ]},
+    {"type": "p", "text": "Kalimat kedua — つまり、〜という[理解|rikai]でよろしいでしょうか — layak dihafal sekarang juga. Ia bekerja di loket, di rapat, di rumah sakit, dan di meja negosiasi, dan ia mengubah kebingunganmu menjadi pertanyaan yang mudah dijawab."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "契約", "baca": "けいやく · keiyaku", "id": "kontrak"},
+  {"ja": "規約", "baca": "きやく · kiyaku", "id": "syarat dan ketentuan"},
+  {"ja": "転入届", "baca": "てんにゅうとどけ · tennyū todoke", "id": "surat lapor pindah masuk"},
+  {"ja": "転出証明書", "baca": "てんしゅつしょうめいしょ · tenshutsu shōmeisho", "id": "surat keterangan pindah keluar"},
+  {"ja": "市区町村", "baca": "しくちょうそん · shiku chōson", "id": "satuan pemerintahan daerah"},
+  {"ja": "在留カード", "baca": "ざいりゅうカード · zairyū kādo", "id": "kartu izin tinggal"},
+  {"ja": "提出する", "baca": "ていしゅつする · teishutsu suru", "id": "menyerahkan"},
+  {"ja": "住所変更", "baca": "じゅうしょへんこう · jūsho henkō", "id": "perubahan alamat"},
+  {"ja": "裏面", "baca": "うらめん · uramen", "id": "sisi belakang"},
+  {"ja": "表面", "baca": "おもてめん · omote-men", "id": "sisi depan"},
+  {"ja": "国民健康保険", "baca": "こくみんけんこうほけん · kokumin kenkō hoken", "id": "asuransi kesehatan nasional"},
+  {"ja": "社会保険", "baca": "しゃかいほけん · shakai hoken", "id": "asuransi lewat perusahaan"},
+  {"ja": "加入する", "baca": "かにゅうする · kanyū suru", "id": "menjadi peserta"},
+  {"ja": "窓口", "baca": "まどぐち · madoguchi", "id": "loket"},
+  {"ja": "別途", "baca": "べっと · beppo", "id": "secara terpisah 【書】"},
+  {"ja": "不要", "baca": "ふよう · fuyō", "id": "tidak diperlukan"},
+  {"ja": "児童手当", "baca": "じどうてあて · jidō teate", "id": "tunjangan anak"},
+  {"ja": "有効期限", "baca": "ゆうこうきげん · yūkō kigen", "id": "masa berlaku"},
+  {"ja": "電子証明書", "baca": "でんししょうめいしょ · denshi shōmeisho", "id": "sertifikat elektronik"},
+  {"ja": "見落とす", "baca": "みおとす · miotosu", "id": "melewatkan; tak melihat"},
+  {"ja": "用紙", "baca": "ようし · yōshi", "id": "lembar formulir"},
+  {"ja": "記入", "baca": "きにゅう · kinyū", "id": "pengisian"},
+  {"ja": "記入例", "baca": "きにゅうれい · kinyūrei", "id": "contoh pengisian"},
+  {"ja": "番号札", "baca": "ばんごうふだ · bangōfuda", "id": "nomor antrean"},
+  {"ja": "控え", "baca": "ひかえ · hikae", "id": "salinan arsip"},
+  {"ja": "押印", "baca": "おういん · ōin", "id": "pembubuhan stempel"},
+  {"ja": "認印", "baca": "みとめいん · mitomein", "id": "stempel biasa"},
+  {"ja": "訂正印", "baca": "ていせいいん · teiseiin", "id": "stempel koreksi"},
+  {"ja": "〜ものとする", "baca": "mono to suru", "id": "ditetapkan bahwa ~ 【書】"},
+  {"ja": "〜を要する", "baca": "をようする · o yō suru", "id": "memerlukan ~ 【書】"},
+  {"ja": "この限りでない", "baca": "このかぎりでない · kono kagiri de nai", "id": "tidak berlaku dalam hal itu 【書】"},
+  {"ja": "妨げない", "baca": "さまたげない · samatagenai", "id": "tidak menghalangi 【書】"},
+  {"ja": "速やかに", "baca": "すみやかに · sumiyaka ni", "id": "tanpa menunda 【書】"},
+  {"ja": "甲・乙", "baca": "こう・おつ · kō · otsu", "id": "pihak pertama dan kedua"},
+  {"ja": "免責事項", "baca": "めんせきじこう · menseki jikō", "id": "pembatasan tanggung jawab"},
+  {"ja": "損害賠償", "baca": "そんがいばいしょう · songai baishō", "id": "ganti rugi"},
+  {"ja": "秘密保持", "baca": "ひみつほじ · himitsu hoji", "id": "kerahasiaan"},
+  {"ja": "管轄", "baca": "かんかつ · kankatsu", "id": "yurisdiksi"},
+  {"ja": "自動更新", "baca": "じどうこうしん · jidō kōshin", "id": "perpanjangan otomatis"},
+  {"ja": "中途解約", "baca": "ちゅうとかいやく · chūto kaiyaku", "id": "pembatalan di tengah"},
+  {"ja": "原状回復", "baca": "げんじょうかいふく · genjō kaifuku", "id": "pengembalian ke keadaan semula"},
+  {"ja": "敷金", "baca": "しききん · shikikin", "id": "deposit sewa"},
+  {"ja": "礼金", "baca": "れいきん · reikin", "id": "uang terima kasih (tak kembali)"},
+  {"ja": "通常損耗", "baca": "つうじょうそんもう · tsūjō sonmō", "id": "keausan wajar"},
+  {"ja": "経年変化", "baca": "けいねんへんか · keinen henka", "id": "perubahan karena usia"},
+  {"ja": "条項", "baca": "じょうこう · jōkō", "id": "pasal; klausa"},
+  {"ja": "想定する", "baca": "そうていする · sōtei suru", "id": "mengandaikan"},
+  {"ja": "手数料", "baca": "てすうりょう · tesūryō", "id": "biaya administrasi"},
+  {"ja": "口座開設", "baca": "こうざかいせつ · kōza kaisetsu", "id": "pembukaan rekening"},
+  {"ja": "振込", "baca": "ふりこみ · furikomi", "id": "transfer bank"},
+  {"ja": "元号", "baca": "げんごう · gengō", "id": "nama era (令和 dll.)"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Apa arti kalimat kontrak berikut? Jawab dengan satu kalimat bahasa Indonesia.",
+   "items": [
+    "[甲|Kō]は[乙|otsu]に[対|tai]し、[速|sumi]やかに[書面|shomen]で[通知|tsūchi]するものとする。",
+    "[返金|Henkin]はいたしません。ただし、[当社|tōsha]の[責|seki]に[帰|ki]すべき[事由|jiyū]による[場合|baai]はこの[限|kagi]りでない。",
+    "[本契約|Honkeiyaku]は[期間満了|kikan manryō]の[一|ik]か[月|getsu][前|mae]までに[申|mō]し[出|de]がない[場合|baai]、[自動的|jidōteki]に[更新|kōshin]されるものとする。",
+    "[損害賠償|Songai baishō]の[額|gaku]は、[支払|shihara]われた[対価|taika]の[総額|sōgaku]を[上限|jōgen]とする。",
+    "[本条|Honjō]の[規定|kitei]は、[契約終了後|keiyaku shūryōgo][三年間|sannenkan][効力|kōryoku]を[有|yū]する。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 別途 · 不要 · 速やかに · この限りでない · 要する.",
+   "items": [
+    "[送料|Sōryō]は ____ [申|mō]し[受|u]けます。",
+    "[社会保険|Shakai hoken]の[方|kata]は[市|shi]での[手続|tetsuzu]きは ____ です。",
+    "[変更|Henkō]があった[場合|baai]は ____ ご[連絡|renraku]ください。",
+    "[書面|Shomen]による[同意|dōi]を ____ 。",
+    "[原則|Gensoku]として[返品|henpin]は[不可|fuka]ですが、[初期不良|shoki furyō]の[場合|baai]は ____ 。"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat yang tepat untuk tiap keadaan di loket.",
+   "items": [
+    "Kamu ingin tahu apakah masih ada dokumen lain yang diperlukan.",
+    "Kamu tidak paham penjelasan barusan dan ingin diulang pelan.",
+    "Kamu ingin memastikan bahwa pemahamanmu benar.",
+    "Kamu ingin meminta salinan arsip.",
+    "Kamu ingin tahu berapa lama prosesnya."
+   ]
+  },
+  {
+   "prompt": "Sebutkan hal yang harus kamu periksa untuk tiap istilah kontrak berikut.",
+   "items": [
+    "[自動更新|Jidō kōshin]",
+    "[免責事項|Menseki jikō]",
+    "[違約金|Iyakukin]",
+    "[原状回復|Genjō kaifuku]",
+    "[秘密保持|Himitsu hoji]"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Apakah perubahan alamat kartu izin tinggal juga bisa diurus sekaligus?",
+    "Kalau asuransi sosial perusahaan, pengurusan di kota tidak diperlukan.",
+    "Hampir saja saya melewatkannya.",
+    "Maksudnya, apakah pemahaman saya bahwa ini gratis sudah benar?",
+    "Bolehkah saya minta hal ini dituliskan?"
+   ]
+  },
+  {
+   "prompt": "Tulis surel enam sampai delapan baris untuk keadaan berikut.",
+   "items": [
+    "Kamu bertanya kepada agen properti apakah keausan wajar termasuk biaya pengembalian ke keadaan semula, dan meminta jawaban tertulis.",
+    "Kamu memberitahukan pembatalan kontrak layanan satu bulan sebelum masa berlaku berakhir, dan meminta konfirmasi bahwa tidak ada denda."
+   ]
+  }
+ ],
+ "answers": [
+  "Pihak pertama wajib memberitahukan pihak kedua secara tertulis tanpa menunda. — Uang tidak dikembalikan; namun ketentuan itu tidak berlaku bila penyebabnya adalah kesalahan pihak perusahaan. — Kontrak ini diperpanjang otomatis bila tidak ada pemberitahuan sampai satu bulan sebelum masa berlakunya habis. — Nilai ganti rugi dibatasi setinggi-tingginya sebesar total imbalan yang telah dibayarkan. — Ketentuan pasal ini tetap berlaku selama tiga tahun setelah kontrak berakhir.",
+  "[別途|beppo] — [不要|fuyō] — [速|sumi]やかに — [要|yō]する — この[限|kagi]りでない",
+  "[ほかに|Hoka ni][必要|hitsuyō]な[書類|shorui]はございますか。 — [申|Mō]し[訳|wake]ございません、[今|ima]のところをもう[一度|ichido]ゆっくりお[願|nega]いできますか。 — つまり、〜という[理解|rikai]でよろしいでしょうか。 — [控|Hika]えをいただけますか。 — どのくらいお[時間|jikan]がかかりますでしょうか。",
+  "Kapan batas pemberitahuan agar tidak diperpanjang otomatis. — Kerugian apa saja yang tidak ditanggung pihak sana. — Berapa besarnya dan dihitung dari dasar apa. — Apakah keausan wajar dikecualikan secara tertulis. — Berapa lama kewajiban itu berlaku setelah kontrak berakhir.",
+  "[在留|Zairyū][カード|kādo]の[住所変更|jūsho henkō]も[同時|dōji]にできますか。 — [社会保険|Shakai hoken]でしたら[市|shi]の[手続|tetsuzu]きは[不要|fuyō]です。 — [危|Abu]なく[見落|mio]とすところでした。 — つまり、[無料|muryō]という[理解|rikai]でよろしいでしょうか。 — [恐|Oso]れ[入|i]りますが、[書|ka]いていただくことは[可能|kanō]でしょうか。",
+  "Contoh 1／[件名|Kenmei]: [原状回復|Genjō kaifuku][費用|hiyō]の[範囲|han'i]についてのご[確認|kakunin]（[アニ|Ani]）／いつもお[世話|sewa]になっております。[本日|Honjitsu]ご[提示|teiji]いただいた[賃貸借契約書|chintaishaku keiyakusho]について[一点|itten]ご[確認|kakunin]させてください。[第十二条|Dai-jūnijō]の[原状回復|genjō kaifuku]に[関|kan]する[条項|jōkō]には、[通常|tsūjō][損耗|sonmō]および[経年変化|keinen henka]の[取|to]り[扱|atsuka]いについての[記載|kisai]が[見当|mia]たりませんでした。[国土交通省|Kokudo Kōtsūshō]の[ガイドライン|gaidorain]では[借主|karinushi]の[負担|futan]に[含|fuku]まれないものとされていると[理解|rikai]しておりますが、[本契約|honkeiyaku]でも[同様|dōyō]の[取|to]り[扱|atsuka]いという[理解|rikai]でよろしいでしょうか。[記録|Kiroku]として[残|noko]したく、[恐|oso]れ[入|i]りますが[メール|mēru]にてご[回答|kaitō]いただけますと[幸|saiwa]いです。[何卒|Nanitozo]よろしくお[願|nega]い[申|mō]し[上|a]げます。 — Contoh 2／[件名|Kenmei]: [サービス|Sābisu][契約|keiyaku][解約|kaiyaku]のご[連絡|renraku]（[契約番号|keiyaku bangō] 12345・[アニ|Ani]）／いつもお[世話|sewa]になっております。[標記|Hyōki][契約|keiyaku]につきまして、[契約期間|keiyaku kikan][満了|manryō]をもって[解約|kaiyaku]させていただきたく、ご[連絡|renraku][差|sa]し[上|a]げました。[契約書|Keiyakusho][第八条|dai-hachijō]では、[満了|manryō]の[一|ik]か[月|getsu][前|mae]までにお[申|mō]し[出|de]をすれば[違約金|iyakukin]は[発生|hassei]しないものとされております。[本日|Honjitsu]は[満了日|manryōbi]の[三十五日前|sanjūgonichi mae]にあたりますので、[違約金|iyakukin]は[発生|hassei]しないという[理解|rikai]でよろしいでしょうか。[相違|Sōi]がございましたら、[金額|kingaku]と[算定根拠|santei konkyo]をお[知|shi]らせいただけますと[幸|saiwa]いです。[何卒|Nanitozo]よろしくお[願|nega]いいたします。"
+ ],
+ "wave": "Ambil satu syarat layanan berbahasa Jepang yang sungguhan — aplikasi, langganan, atau toko daring — dan cari tiga hal saja di dalamnya: [解約|kaiyaku] (bagaimana berhenti), [免責|menseki] (apa yang tidak ditanggung), dan この[限|kagi]りでない (di mana aturannya dibatalkan). Kamu tidak perlu memahami seluruh dokumennya. Ketiga titik itulah yang menentukan apakah kamu dirugikan, dan mencarinya butuh lima menit."
+}

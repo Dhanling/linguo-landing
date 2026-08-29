@@ -1,0 +1,262 @@
+{
+ "title": "Empat pengandaian yang tidak bisa saling menggantikan",
+ "title_target": "[条件|Jōken]の[全体系|zentaikei]",
+ "goal": "Memisahkan と, ば, たら, dan なら menurut apa yang boleh mengikutinya, memakai pengandaian yang berlawanan dengan kenyataan, dan menyusun syarat berjenjang dalam negosiasi.",
+ "bekal": ["memilih と, ば, たら, なら dengan aturan “apa yang boleh menyusul”", "menyatakan pengandaian yang tidak terjadi dengan 〜ていたら〜ただろう", "memakai 〜限り, 〜次第では, 〜としたら, 〜ものなら", "menyusun tawaran bersyarat dalam negosiasi", "membaca aturan dan pengumuman yang memakai 〜場合は dan 〜際は"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Tawar-menawar syarat",
+   "intro": "Ani menegosiasikan syarat pengiriman dengan Mori. Hampir tiap baris memuat pengandaian, dan tak satu pun bisa ditukar dengan yang lain tanpa mengubah artinya.",
+   "lines": [
+    {"speaker": "[森|Mori]:", "text": "[数量|Sūryō]を[倍|bai]にすれば、[単価|tanka]は[下|sa]がりますよね。", "id": "Kalau jumlahnya dilipatduakan, harga satuannya turun kan?", "literal": "jumlah — akan — lipat-dua — menjadi — kalau, satuan-harga — mengenai — turun — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "[量|Ryō]が[増|fu]えれば[下|sa]がります。ただ、[倍|bai]でしたら[五|go][パーセント|pāsento]、[三倍|sanbai]でしたら[八|hachi][パーセント|pāsento]という[刻|kiza]みになります。", "id": "Kalau jumlahnya bertambah, memang turun. Hanya saja, kalau dua kali lipat lima persen, kalau tiga kali lipat delapan persen — begitu jenjangnya.", "literal": "jumlah — yang — bertambah — kalau — turun. hanya, lipat-dua — kalau — lima — persen, tiga-lipat — kalau — delapan — persen — yang-disebut — takik — menjadi."},
+    {"speaker": "[森|Mori]:", "text": "[三倍|Sanbai]となると[倉庫|sōko]が[持|mo]たないな。……[年間|Nenkan][契約|keiyaku]にしたら、どうなりますか。", "id": "Kalau tiga kali lipat, gudang kami tidak akan sanggup. …Kalau dijadikan kontrak tahunan, bagaimana?", "literal": "tiga-lipat — begitu — menjadi — kalau — gudang — yang — bertahan — tidak — ya. …tahun-antara — kontrak — menjadi — melakukan — kalau, bagaimana — menjadi — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[年間|Nenkan][契約|keiyaku]でしたら、[月々|tsukizuki]の[数量|sūryō]が[今|ima]のままでも[七|nana][パーセント|pāsento]までお[出|da]しできます。[分割|Bunkatsu][納品|nōhin]も[可能|kanō]です。", "id": "Kalau kontrak tahunan, meski jumlah bulanannya tetap seperti sekarang, kami bisa memberikan sampai tujuh persen. Pengiriman bertahap juga bisa.", "literal": "tahun-antara — kontrak — kalau, bulan-bulan — punya — jumlah — yang — sekarang — punya — tetap — meskipun — tujuh — persen — sampai — mengeluarkan(rendah) — bisa. bagi-pisah — penyerahan — juga — mungkin — adalah."},
+    {"speaker": "[森|Mori]:", "text": "それは[助|tasu]かる。[倉庫|Sōko]を[増|fu]やさずに[済|su]むなら、[社内|shanai]も[通|tō]しやすい。", "id": "Itu membantu. Kalau tidak perlu menambah gudang, di internal kami juga lebih mudah lolos.", "literal": "itu — mengenai — tertolong. gudang — akan — menambah — tanpa — selesai — kalau, dalam-perusahaan — juga — melewatkan — mudah."},
+    {"speaker": "[アニ|Ani]:", "text": "ただ、[年間|nenkan][契約|keiyaku]の[場合|baai]、[途中解約|tochū kaiyaku]には[違約金|iyakukin]が[発生|hassei]いたします。そこだけご[承知|shōchi]おきください。", "id": "Hanya saja, dalam hal kontrak tahunan, pembatalan di tengah jalan menimbulkan denda. Hanya bagian itu mohon dipahami.", "literal": "hanya, tahun-antara — kontrak — punya — hal, tengah-batal — pada — mengenai — pelanggaran-uang — yang — terjadi — melakukan(rendah). di-situ — hanya — pemahaman(hormat) — silakan-taruh."},
+    {"speaker": "[森|Mori]:", "text": "[違約金|Iyakukin]はいくらぐらいですか。", "id": "Dendanya kira-kira berapa?", "literal": "pelanggaran-uang — mengenai — berapa — kira-kira — adalah — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[残|Nokori][期間|kikan]の[三|san][割|wari]でございます。[半年|Hantoshi][残|noko]っていたとしたら、[二|ni]か[月|getsu][分|bun][程度|teido]という[計算|keisan]です。", "id": "Tiga puluh persen dari sisa masa kontrak. Seandainya tersisa setengah tahun, hitungannya sekitar dua bulan.", "literal": "sisa — masa — punya — tiga — bagian-sepuluh — adalah(hormat). setengah-tahun — tersisa — sedang(lampau) — seandainya, dua — bulan — bagian — kira-kira — yang-disebut — hitungan — adalah."},
+    {"speaker": "[森|Mori]:", "text": "[妥当|Datō]ですね。[去年|Kyonen]、[別|betsu]の[会社|kaisha]と[揉|mo]めましてね。あのとき[条件|jōken]を[紙|kami]に[残|noko]しておけば、あんなことにはならなかったんですが。", "id": "Wajar ya. Tahun lalu kami sempat berselisih dengan perusahaan lain. Kalau waktu itu syaratnya kami tinggalkan di atas kertas, hal seperti itu tidak akan terjadi.", "literal": "pantas — adalah — ya. tahun-lalu, lain — punya — perusahaan — dengan — bergesekan — dan — ya. itu — waktu — syarat — akan — kertas — pada — meninggalkan — menaruh — kalau, itu-macam — hal — pada — mengenai — menjadi — tidak(lampau) — adalah — tetapi."},
+    {"speaker": "[アニ|Ani]:", "text": "でしたら[今回|konkai]は、[覚書|oboegaki]も[一緒|issho]に[作|tsuku]らせていただきます。[口頭|Kōtō]で[決|ki]めたことも、すべて[書面|shomen]に[落|o]とし[込|ko]みます。", "id": "Kalau begitu, kali ini izinkan kami membuat nota kesepahaman sekalian. Yang diputuskan lisan pun semuanya akan kami tuangkan ke dokumen.", "literal": "kalau — kali-ini — mengenai, ingat-tulisan — juga — bersama — pada — membuat — mengizinkan-menerima(rendah). lisan — dengan — memutuskan(lampau) — hal — juga, seluruh — dokumen — pada — menjatuhkan-memasukkan."},
+    {"speaker": "[森|Mori]:", "text": "そうしていただけると[安心|anshin]です。[書|Ka]いてさえあれば、[担当|tantō]が[代|ka]わっても[揉|mo]めませんから。", "id": "Kalau Anda melakukan itu saya jadi tenang. Asalkan tertulis, biar penanggung jawabnya berganti pun tidak akan ada perselisihan.", "literal": "begitu — melakukan — menerima(hormat) — bisa — kalau — tenang — adalah. menulis — bahkan — ada — kalau, penanggung — yang — berganti — meskipun — bergesekan — tidak — karena."}
+   ],
+   "notes": [
+    "**Baris 1 dan 2 memperlihatkan aturan terpenting: apa yang boleh MENYUSUL pengandaian.** 〜ば dan 〜と tidak boleh diikuti perintah, ajakan, permintaan, atau izin kalau klausa depannya kata kerja. Karena itu ×[時間|Jikan]があれば[来|ki]てください terdengar janggal bagi banyak penutur, sementara [時間|Jikan]があったら[来|ki]てください sempurna. Kalau ragu, pakai たら — ia yang paling sedikit larangannya.",
+    "**〜なら memakai informasi yang BARU SAJA kamu dengar.** Perhatikan baris 3 dan 5: Mori menyebutkan sesuatu, lalu lawan bicaranya membangun jawaban di atasnya. Inilah tugas khas なら: mengangkat topik yang dilempar orang lain. [京都|Kyōto]に[行|i]くなら[新幹線|shinkansen]がいい — kamu tidak memberi tahu bahwa dia akan ke Kyoto; dia yang memberi tahu kamu.",
+    "**〜でしたら adalah bentuk sopan dari なら, dan ia mesin utama negosiasi.** [年間|Nenkan][契約|keiyaku]でしたら · [三倍|Sanbai]でしたら · [お急|o-iso]ぎでしたら. Ia mengubah setiap syarat menjadi tawaran, dan itulah kenapa ia muncul lima kali dalam satu dialog pendek.",
+    "**[〜場合|baai] dan [〜際|sai] adalah pengandaian ragam dokumen.** 場合 = “dalam hal ~”, 際 = “pada saat ~” 【書】. Keduanya muncul di aturan, kontrak, dan pengumuman: [解約|Kaiyaku]の[場合|baai]は · ご[利用|riyō]の[際|sai]は. Mereka tidak bisa ditukar dengan たら di dokumen resmi.",
+    "**Baris 9 adalah pengandaian yang berlawanan dengan kenyataan.** Rangkanya: 〜ておけば、〜なかった. Kejadiannya sudah lewat, dan pengandaiannya menyatakan penyesalan. Bentuk lengkapnya sering ditutup のに atau んですが untuk menambah nada menyesal.",
+    "**[〜としたら|to shitara] = “seandainya”.** Ia menandai pengandaian yang murni hipotetis, bukan kemungkinan nyata. Sepupunya 〜とすれば (lebih tulis), 〜としても (meskipun seandainya), 〜だとしたら (setelah kata benda).",
+    "**[〜さえ〜ば|sae ~ ba] = “asalkan”.** Ia menyebut satu syarat tunggal yang mencukupi: [書|Ka]いてさえあれば · [お金|Kane]さえあれば · [雨|Ame]さえ[降|fu]らなければ. Konstruksi ini akan muncul lagi di Unit 10 sebagai penekan.",
+    "**〜ずに[済|su]む = “selesai tanpa perlu ~”.** Sangat berguna dan sering dipakai: [買|Ka]わずに[済|su]んだ · [謝|Ayama]らずに[済|su]む. Bentuk 〜ずに adalah 〜ないで ragam tulis, dan する menjadi せずに, bukan ×しずに."
+   ],
+   "grammars": [
+    {
+     "title": "と, ば, たら, なら: aturan yang benar-benar memisahkannya",
+     "body": ["Semua buku menerjemahkan keempatnya “kalau”. Yang membedakan bukan artinya, melainkan **apa yang boleh menyusul** dan **kapan peristiwanya**."],
+     "table": {
+      "head": ["Bentuk", "Menyatakan", "Boleh disusul perintah/ajakan?", "Contoh"],
+      "rows": [
+       ["と", "akibat otomatis, selalu terjadi", "**tidak**", "[春|Haru]になると[桜|sakura]が[咲|sa]く"],
+       ["ば", "syarat umum atau hipotetis", "tidak, kalau depannya kata kerja", "[安|Yasu]ければ[買|ka]う"],
+       ["たら", "peristiwa tunggal, urutan waktu", "**boleh**", "[着|Tsu]いたら[電話|denwa]して"],
+       ["なら", "menanggapi info yang baru didengar", "**boleh**", "[行|I]くなら[早|haya]く[出|de]て"]
+      ]
+     },
+     "after": [
+      "**Urutan waktunya juga berbeda.** Pada たら, peristiwa depan terjadi **lebih dulu**: [家|Ie]に[着|tsu]いたら[電話|denwa]する (sampai dulu, baru telepon). Pada なら, peristiwa depan bisa terjadi **belakangan**: [家|Ie]に[帰|kae]るなら[牛乳|gyūnyū][買|ka]ってきて (beli susu dulu, baru pulang). Ini selisih yang paling sering meleset, dan satu-satunya yang benar-benar mengubah makna kalimat.",
+      "**と juga dipakai untuk penemuan, bukan hanya hukum alam:** [窓|Mado]を[開|a]けると[雪|yuki]が[降|fu]っていた (begitu jendela dibuka, ternyata sedang bersalju). Bentuk ini sangat sering muncul di cerita dan laporan perjalanan.",
+      "**Kalau kamu benar-benar ragu, pakai たら.** Ia paling longgar dan paling jarang salah. Yang perlu kamu hindari sekuat tenaga hanyalah memakai と atau ば sebelum permintaan."
+     ]
+    },
+    {
+     "title": "Pengandaian yang tidak terjadi, dan pengandaian lanjutan",
+     "table": {
+      "head": ["Bentuk", "Artinya", "Contoh"],
+      "rows": [
+       ["〜ていたら〜ただろう", "kalau dulu ~, pasti ~", "[早|Haya]く[言|i]っていたら[間|ma]に[合|a]っただろう"],
+       ["〜ばよかった", "seharusnya ~ (penyesalan)", "[持|Mo]ってくればよかった"],
+       ["〜なければよかった", "seharusnya tidak ~", "[言|I]わなければよかった"],
+       ["〜としたら · 〜とすれば", "seandainya", "[彼|Kare]が[犯人|hannin]だとしたら[説明|setsumei]がつく"],
+       ["〜[限|kagi]り", "selama ~ masih berlaku", "[私|Watashi]が[知|shi]る[限|kagi]りでは"],
+       ["〜ない[限|kagi]り", "kecuali kalau ~", "[謝|Ayama]らない[限|kagi]り[許|yuru]さない"],
+       ["〜[次第|shidai]では", "tergantung pada ~", "[結果|Kekka][次第|shidai]では[中止|chūshi]もある"],
+       ["〜ものなら 【書】", "kalau saja bisa (tapi sulit)", "[戻|Modo]れるものなら[戻|modo]りたい"],
+       ["〜たら[最後|saigo]", "sekali ~, habislah", "[始|Haji]めたら[最後|saigo][止|to]まらない"]
+      ]
+     },
+     "after": ["**〜[限|kagi]り punya tiga wajah dan semuanya sering muncul:** batas pengetahuan ([私|watashi]の[知|shi]る[限|kagi]り), syarat berkelanjutan ([健康|Kenkō]である[限|kagi]り), dan batas maksimum ([可能|Kanō]な[限|kagi]り). Yang ketiga sangat berguna di ragam kerja: [可能|Kanō]な[限|kagi]り[早|haya]めにご[連絡|renraku]いたします。"]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Pengandaian yang sudah terlambat",
+   "intro": "Ani dan Rina di kereta pulang. Seluruh dialog memakai pengandaian yang berlawanan dengan kenyataan — ragam penyesalan.",
+   "lines": [
+    {"speaker": "[リナ|Rina]:", "text": "[今日|Kyō]、[部長|buchō]に[何|nani]か[言|i]われた？", "id": "Hari ini, kamu diomongin apa sama manajer?", "literal": "hari-ini, bagian-kepala — oleh — sesuatu — dikatakan(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[覚書|Oboegaki]の[話|hanashi]。[去年|Kyonen]あれを[作|tsuku]っておけば、[別|betsu]の[案件|anken]も[揉|mo]めなかったのにって。", "id": "Soal nota kesepahaman. Katanya kalau tahun lalu itu dibuat, kasus yang lain juga nggak bakal ribut.", "literal": "ingat-tulisan — punya — cerita. tahun-lalu — itu — akan — membuat — menaruh — kalau, lain — punya — perkara — juga — bergesekan — tidak(lampau) — padahal — begitu."},
+    {"speaker": "[リナ|Rina]:", "text": "[言|I]われても[困|koma]るよね。あのときは[誰|dare]も[必要|hitsuyō]だと[思|omo]ってなかったんだから。", "id": "Dibilangin gitu juga bingung ya. Waktu itu kan nggak ada yang mengira itu perlu.", "literal": "dikatakan — meskipun — bingung — ya. itu — waktu — mengenai — siapa — pun — perlu — bahwa — berpikir — tidak(lampau) — karena."},
+    {"speaker": "[アニ|Ani]:", "text": "そうなんだけど。[私|Watashi]も、[入|hai]ったばかりのころにもっと[質問|shitsumon]してればよかったなって[思|omo]う。", "id": "Iya sih. Aku juga mikir, coba waktu baru masuk aku lebih banyak nanya.", "literal": "begitu — adalah — tetapi. saya — juga, masuk(lampau) — baru — punya — waktu — pada — lebih — pertanyaan — melakukan — sedang — kalau — baik(lampau) — ya — begitu — berpikir."},
+    {"speaker": "[リナ|Rina]:", "text": "[聞|Ki]いてたら[聞|ki]いてたで、「[自分|jibun]で[調|shira]べろ」って[言|i]われてたよ。", "id": "Kalau nanya juga, bakal dibilang “cari sendiri” kok.", "literal": "bertanya — sedang — kalau — bertanya — sedang — dengan, “diri-sendiri — dengan — memeriksa(perintah)” — begitu — dikatakan — sedang(lampau) — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "それはそれで[困|koma]る。", "id": "Itu juga repot sih.", "literal": "itu — mengenai — itu — dengan — bingung."},
+    {"speaker": "[リナ|Rina]:", "text": "[結局|Kekkyoku]、どうしてても[何|nani]か[言|i]われるの。だから[言|i]われない[方法|hōhō]じゃなくて、[言|i]われても[平気|heiki]な[方法|hōhō]を[探|saga]すしかない。", "id": "Ujung-ujungnya, mau gimana pun bakal diomongin. Makanya bukan cari cara supaya nggak diomongin, tapi cari cara supaya diomongin pun nggak apa-apa.", "literal": "akhirnya, bagaimana — melakukan — meskipun — sesuatu — dikatakan — kah. karena — dikatakan — tidak — cara — bukan-dan, dikatakan — meskipun — tak-apa — cara — akan — mencari — hanya — tidak-ada."},
+    {"speaker": "[アニ|Ani]:", "text": "……それ、[紙|kami]に[残|noko]しておくのと[同|ona]じ[話|hanashi]だ。", "id": "…Itu, sama aja ceritanya sama meninggalkannya di atas kertas.", "literal": "…itu, kertas — pada — meninggalkan — menaruh — hal — dengan — sama — cerita — adalah."},
+    {"speaker": "[リナ|Rina]:", "text": "そういうこと。", "id": "Nah, gitu tuh.", "literal": "begitu — yang-disebut — hal."}
+   ],
+   "notes": [
+    "**[〜ておけば〜なかったのに|te okeba ~ nakatta no ni] — rangka penyesalan lengkap.** Perhatikan tiga bagiannya: ておく (melakukan sebelumnya untuk bersiap), ば (pengandaian), のに (kekecewaan). Tiap bagian bisa dilepas, tapi bersama-sama merekalah bentuk penyesalan paling khas dalam bahasa Jepang.",
+    "**[〜てればよかった|tereba yokatta] = [〜ていればよかった|te ireba yokatta].** “Seharusnya dulu aku terus-menerus melakukan itu.” Bandingkan dengan 〜ばよかった tanpa ている, yang menyesali satu tindakan tunggal: [持|Mo]ってくればよかった.",
+    "**[〜たら〜たで|tara ~ ta de] — pola yang jarang diajarkan tapi sangat sering diucapkan.** Artinya: “kalaupun begitu, tetap saja ada masalahnya sendiri”. [あったらあったで|Attara atta de][困|koma]る · [休|Yasu]めたら[休|yasu]めたで[暇|hima]すぎる. Ia menyatakan bahwa kedua sisi pengandaian sama-sama tak ideal.",
+    "**Baris 7 memuat 〜しかない, bentuk yang menyatakan “tak ada pilihan selain”.** [待|Ma]つしかない · [やるしかない|yaru shika nai]. Sepupu ragam tulisnya: 〜ざるを[得|e]ない dan [〜ほかない|hoka nai], keduanya muncul lagi di Unit 12."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pengandaian di dokumen: 場合, 際, にあたり, 上で",
+   "blocks": [
+    {"type": "p", "text": "Aturan, kontrak, dan pengumuman hampir tak pernah memakai たら. Mereka memakai perangkat sendiri, dan kamu akan bertemu perangkat itu di setiap formulir yang kamu isi di Jepang."},
+    {"type": "tabel", "head": ["Bentuk", "Artinya", "Contoh"], "rows": [
+     ["〜[場合|baai]（は）", "dalam hal ~", "[遅|Oku]れる[場合|baai]は[事前|jizen]にご[連絡|renraku]ください"],
+     ["〜[際|sai]（は）【書】", "pada saat ~", "ご[入館|nyūkan]の[際|sai]は[受付|uketsuke]にお[立|ta]ち[寄|yo]りください"],
+     ["〜にあたり 【書】", "sehubungan dengan (peristiwa besar)", "[契約|Keiyaku]の[締結|teiketsu]にあたり"],
+     ["〜[上|ue]で 【書】", "sesudah ~, lalu", "ご[確認|kakunin]の[上|ue]、ご[署名|shomei]ください"],
+     ["〜に[先立|sakida]ち 【書】", "mendahului ~", "[開催|Kaisai]に[先立|sakida]ち[説明会|setsumeikai]を[行|okona]う"],
+     ["〜[限|kagi]り 【書】", "terbatas pada ~", "[本日|Honjitsu][限|kagi]り · [お一人様|o-hitorisama][一|ik][点|ten][限|kagi]り"],
+     ["〜を[除|nozo]き 【書】", "kecuali ~", "[年末年始|Nenmatsu nenshi]を[除|nozo]き[営業|eigyō]"],
+     ["〜[次第|shidai] 【書】", "begitu ~ selesai", "[準備|Junbi]が[整|totono]い[次第|shidai]ご[案内|annai]します"]
+    ]},
+    {"type": "kotak", "title": "Kalimat yang benar-benar akan kamu baca di Jepang", "items": [
+     "[非常|Hijō]の[際|sai]は、[係員|kakariin]の[指示|shiji]に[従|shitaga]ってください。（stasiun)",
+     "[キャンセル|Kyanseru]の[場合|baai]、[三日前|mikkamae]までは[無料|muryō]、それ[以降|ikō]は[全額|zengaku]のご[負担|futan]となります。（hotel)",
+     "ご[利用|riyō]にあたり、[利用規約|riyō kiyaku]をご[確認|kakunin]の[上|ue]、ご[同意|dōi]ください。（aplikasi)",
+     "[在庫|Zaiko]がなくなり[次第|shidai][終了|shūryō]とさせていただきます。（toko)",
+     "[本人|Honnin][確認|kakunin][書類|shorui]をお[持|mo]ちでない[場合|baai]は、お[手続|tetsuzu]きいただけません。（bank)"
+    ]},
+    {"type": "p", "text": "Perhatikan bahwa hampir semuanya juga memakai bentuk 敬語 dari Unit 1 dan bentuk penolakan halus dari Unit 3. Bahasa pengumuman Jepang adalah tempat semua yang sudah kamu pelajari bertemu sekaligus."}
+   ]
+  },
+  {
+   "title": "Menawar dengan syarat berjenjang",
+   "blocks": [
+    {"type": "p", "text": "Ini penerapan langsung dari dialog pertama, dan mungkin bagian paling praktis di seluruh modul kalau kamu bekerja dengan perusahaan Jepang."},
+    {"type": "kotak", "title": "Rangka: syarat → imbalan → batas", "items": [
+     "**1. Jangan menolak, ubah menjadi syarat.** ×できません → ○[年間|Nenkan][契約|keiyaku]でしたら[可能|kanō]です。",
+     "**2. Tunjukkan jenjangnya, bukan satu angka.** [倍|Bai]でしたら[五|go][パーセント|pāsento]、[三倍|sanbai]でしたら[八|hachi][パーセント|pāsento]という[刻|kiza]みになります。",
+     "**3. Sebut batasnya sebelum ditanya.** ただ、[途中解約|tochū kaiyaku]の[場合|baai]は[違約金|iyakukin]が[発生|hassei]いたします。",
+     "**4. Tanyakan syarat pihak sana.** どのような[条件|jōken]であれば[社内|shanai]をお[通|tō]しいただけますでしょうか。",
+     "**5. Tuangkan ke tulisan.** [口頭|Kōtō]で[決|ki]めたことも[書面|shomen]に[落|o]とし[込|ko]ませていただきます。"
+    ]},
+    {"type": "sub", "text": "Ungkapan tetap yang dipakai di meja negosiasi"},
+    {"type": "tabel", "head": ["Ungkapan", "Fungsinya"], "rows": [
+     ["〜でしたら[対応|taiō][可能|kanō]でございます", "menerima dengan syarat"],
+     ["〜という[条件|jōken]であれば", "mengajukan syarat"],
+     ["[持|Mo]ち[帰|kae]って[検討|kentō]させてください", "menunda tanpa menolak"],
+     ["[お互|o-tagai]にとって[無理|muri]のない[形|katachi]で", "mengajak mencari titik tengah"],
+     ["[その|sono][線|sen]で[進|susu]めさせていただきます", "menutup kesepakatan"],
+     ["[念|nen]のため[書面|shomen]にいたします", "meminta hitam di atas putih"]
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "条件", "baca": "じょうけん · jōken", "id": "syarat"},
+  {"ja": "数量", "baca": "すうりょう · sūryō", "id": "kuantitas"},
+  {"ja": "単価", "baca": "たんか · tanka", "id": "harga satuan"},
+  {"ja": "刻み", "baca": "きざみ · kizami", "id": "jenjang; takik"},
+  {"ja": "倉庫", "baca": "そうこ · sōko", "id": "gudang"},
+  {"ja": "年間契約", "baca": "ねんかんけいやく · nenkan keiyaku", "id": "kontrak tahunan"},
+  {"ja": "月々", "baca": "つきづき · tsukizuki", "id": "bulanan"},
+  {"ja": "分割納品", "baca": "ぶんかつのうひん · bunkatsu nōhin", "id": "pengiriman bertahap"},
+  {"ja": "途中解約", "baca": "とちゅうかいやく · tochū kaiyaku", "id": "pembatalan di tengah"},
+  {"ja": "違約金", "baca": "いやくきん · iyakukin", "id": "denda pelanggaran"},
+  {"ja": "承知おきください", "baca": "しょうちおきください · shōchi oki kudasai", "id": "mohon dipahami 【敬】"},
+  {"ja": "妥当", "baca": "だとう · datō", "id": "wajar; pantas"},
+  {"ja": "揉める", "baca": "もめる · momeru", "id": "berselisih"},
+  {"ja": "覚書", "baca": "おぼえがき · oboegaki", "id": "nota kesepahaman"},
+  {"ja": "書面", "baca": "しょめん · shomen", "id": "dokumen tertulis 【書】"},
+  {"ja": "落とし込む", "baca": "おとしこむ · otoshikomu", "id": "menuangkan ke bentuk konkret"},
+  {"ja": "口頭", "baca": "こうとう · kōtō", "id": "lisan"},
+  {"ja": "〜ずに済む", "baca": "ずにすむ · zu ni sumu", "id": "selesai tanpa perlu ~"},
+  {"ja": "〜としたら", "baca": "to shitara", "id": "seandainya"},
+  {"ja": "〜とすれば", "baca": "to sureba", "id": "seandainya 【書】"},
+  {"ja": "〜限り", "baca": "かぎり · kagiri", "id": "selama ~; sebatas ~"},
+  {"ja": "〜ない限り", "baca": "ないかぎり · nai kagiri", "id": "kecuali kalau ~"},
+  {"ja": "〜次第では", "baca": "しだいでは · shidai de wa", "id": "tergantung pada ~"},
+  {"ja": "〜ものなら", "baca": "mono nara", "id": "kalau saja bisa 【書】"},
+  {"ja": "〜たら最後", "baca": "たらさいご · tara saigo", "id": "sekali ~, habislah"},
+  {"ja": "〜しかない", "baca": "shika nai", "id": "tak ada pilihan selain ~"},
+  {"ja": "〜ざるを得ない", "baca": "ざるをえない · zaru o enai", "id": "terpaksa harus ~ 【書】"},
+  {"ja": "場合", "baca": "ばあい · baai", "id": "dalam hal ~"},
+  {"ja": "際", "baca": "さい · sai", "id": "pada saat ~ 【書】"},
+  {"ja": "〜にあたり", "baca": "ni atari", "id": "sehubungan dengan ~ 【書】"},
+  {"ja": "〜上で", "baca": "うえで · ue de", "id": "sesudah ~ 【書】"},
+  {"ja": "〜に先立ち", "baca": "にさきだち · ni sakidachi", "id": "mendahului ~ 【書】"},
+  {"ja": "〜を除き", "baca": "をのぞき · o nozoki", "id": "kecuali ~ 【書】"},
+  {"ja": "整う", "baca": "ととのう · totonou", "id": "tersedia lengkap"},
+  {"ja": "係員", "baca": "かかりいん · kakariin", "id": "petugas"},
+  {"ja": "指示", "baca": "しじ · shiji", "id": "instruksi"},
+  {"ja": "従う", "baca": "したがう · shitagau", "id": "menuruti"},
+  {"ja": "以降", "baca": "いこう · ikō", "id": "sesudah itu 【書】"},
+  {"ja": "全額", "baca": "ぜんがく · zengaku", "id": "seluruh jumlah"},
+  {"ja": "負担", "baca": "ふたん · futan", "id": "beban; tanggungan"},
+  {"ja": "利用規約", "baca": "りようきやく · riyō kiyaku", "id": "syarat dan ketentuan"},
+  {"ja": "同意", "baca": "どうい · dōi", "id": "persetujuan"},
+  {"ja": "本人確認", "baca": "ほんにんかくにん · honnin kakunin", "id": "verifikasi identitas"},
+  {"ja": "手続き", "baca": "てつづき · tetsuzuki", "id": "prosedur; pengurusan"},
+  {"ja": "締結", "baca": "ていけつ · teiketsu", "id": "penandatanganan kontrak 【書】"},
+  {"ja": "結局", "baca": "けっきょく · kekkyoku", "id": "ujung-ujungnya"},
+  {"ja": "平気", "baca": "へいき · heiki", "id": "tidak apa-apa; santai"},
+  {"ja": "事前に", "baca": "じぜんに · jizen ni", "id": "sebelumnya"},
+  {"ja": "非常", "baca": "ひじょう · hijō", "id": "keadaan darurat"},
+  {"ja": "線で進める", "baca": "せんですすめる · sen de susumeru", "id": "melanjutkan dengan arah itu"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih と, ば, たら, atau なら.",
+   "items": [
+    "[春|Haru]になる ____ [桜|sakura]が[咲|sa]く。",
+    "[駅|Eki]に[着|tsu]い ____ [電話|denwa]してください。",
+    "[京都|Kyōto]に[行|i]く ____ [新幹線|shinkansen]がいいですよ。",
+    "[安|Yasu]けれ ____ [買|ka]います。",
+    "[帰|Kae]る ____ [牛乳|gyūnyū]を[買|ka]ってきて。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pengandaian yang berlawanan dengan kenyataan, dengan nada menyesal.",
+   "items": [
+    "[早|Haya]く[言|i]わなかったので[間|ma]に[合|a]わなかった。",
+    "[傘|Kasa]を[持|mo]ってこなかったので[濡|nu]れた。",
+    "[条件|Jōken]を[書|ka]かなかったので[揉|mo]めた。",
+    "[質問|Shitsumon]しなかったので[分|wa]からないままだ。",
+    "[確認|Kakunin]しなかったので[間違|machiga]えた。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 場合 · 際 · 上で · 次第 · 限り.",
+   "items": [
+    "ご[入館|nyūkan]の ____ は[受付|uketsuke]にお[立|ta]ち[寄|yo]りください。",
+    "[遅|Oku]れる ____ は[事前|jizen]にご[連絡|renraku]ください。",
+    "[準備|Junbi]が[整|totono]い ____ 、ご[案内|annai]いたします。",
+    "[内容|Naiyō]をご[確認|kakunin]の ____ 、ご[署名|shomei]ください。",
+    "[本日|Honjitsu] ____ の[特別|tokubetsu][価格|kakaku]でございます。"
+   ]
+  },
+  {
+   "prompt": "Ubah penolakan berikut menjadi tawaran bersyarat.",
+   "items": [
+    "[値引|Nebi]きはできません。",
+    "[明日|Ashita]までには[無理|muri]です。",
+    "その[仕様|shiyō]には[対応|taiō]できません。",
+    "[分割|Bunkatsu][払|bara]いはお[受|u]けしていません。",
+    "[土曜|Doyō]は[営業|eigyō]していません。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Kalau jumlahnya bertambah, harga satuannya turun.",
+    "Kalau kontrak tahunan, kami bisa memberikan sampai tujuh persen.",
+    "Dalam hal pembatalan di tengah jalan, akan timbul denda.",
+    "Seandainya tersisa setengah tahun, hitungannya sekitar dua bulan.",
+    "Asalkan tertulis, biar penanggung jawabnya berganti pun tidak akan ada perselisihan."
+   ]
+  },
+  {
+   "prompt": "Tulis delapan sampai sepuluh baris percakapan untuk keadaan berikut, dengan minimal empat bentuk pengandaian yang berbeda.",
+   "items": [
+    "Kamu menegosiasikan tenggat proyek: klien minta dua minggu lebih cepat, kamu bisa asal ruang lingkupnya dipangkas.",
+    "Kamu menjelaskan syarat pengembalian barang kepada pelanggan yang marah karena tidak membaca aturannya."
+   ]
+  }
+ ],
+ "answers": [
+  "と — たら — なら — ば — なら",
+  "[早|haya]く[言|i]っていたら[間|ma]に[合|a]っただろう。 — [傘|Kasa]を[持|mo]ってくればよかった。 — [条件|Jōken]を[書|ka]いておけば[揉|mo]めなかったのに。 — [質問|Shitsumon]しておけばよかった。 — [確認|Kakunin]していれば[間違|machiga]えなかったはずだ。",
+  "[際|sai] — [場合|baai] — [次第|shidai] — [上|ue]で — [限|kagi]り",
+  "[数量|Sūryō]をまとめていただけるようでしたら、[値引|nebi]きも[可能|kanō]でございます。 — [範囲|Han'i]を[絞|shibo]っていただけるのであれば、[明日|asu]までに[対応|taiō]いたします。 — [標準|Hyōjun][仕様|shiyō]の[範囲|han'i]であれば[対応|taiō][可能|kanō]です。 — [法人|Hōjin][契約|keiyaku]でしたら[分割|bunkatsu][払|bara]いもお[受|u]けしております。 — [事前|Jizen]にご[予約|yoyaku]をいただけましたら、[土曜|doyō]も[対応|taiō]いたします。",
+  "[量|Ryō]が[増|fu]えれば[単価|tanka]は[下|sa]がります。 — [年間|Nenkan][契約|keiyaku]でしたら[七|nana][パーセント|pāsento]までお[出|da]しできます。 — [途中解約|Tochū kaiyaku]の[場合|baai]、[違約金|iyakukin]が[発生|hassei]いたします。 — [半年|Hantoshi][残|noko]っていたとしたら、[二|ni]か[月|getsu][分|bun][程度|teido]という[計算|keisan]です。 — [書|ka]いてさえあれば、[担当|tantō]が[代|ka]わっても[揉|mo]めません。",
+  "Contoh 1／「[二|ni][週間|shūkan][前倒|maedao]しは[可能|kanō]でしょうか。」「[現|Gen][仕様|shiyō]のままでしたら[難|muzuka]しいです。ただ、[検証|kenshō][範囲|han'i]を[絞|shibo]っていただけるのであれば[対応|taiō][可能|kanō]です。」「[絞|Shibo]るとしたら、どこを[削|kezu]ることになりますか。」「[多言語|Tagengo][対応|taiō]を[次期|jiki]に[回|mawa]していただければ、[十日|tōka][短縮|tanshuku]できます。」「[社内|Shanai]を[通|tō]せるかどうか[次第|shidai]ですね。」「[通|Tō]らない[場合|baai]は、[元|moto]の[日程|nittei]で[進|susu]めさせていただきます。」「[分|Wa]かりました。[今日中|Kyōjū]に[返事|henji]します。」「[お決|o-ki]まり[次第|shidai]、[覚書|oboegaki]を[作成|sakusei]いたします。[口頭|Kōtō]で[決|ki]めたことも[書面|shomen]に[落|o]とし[込|ko]みますので。」 — Contoh 2／「[返品|Henpin]できないってどういうことですか。」「[申|Mō]し[訳|wake]ございません。[開封後|Kaifūgo]の[返品|henpin]は[規約|kiyaku][上|jō]お[受|u]けいたしかねます。」「そんなの[聞|ki]いてない。」「ご[購入|kōnyū]の[際|sai]に[同意|dōi]いただく[画面|gamen]がございましたが、[分|wa]かりにくかったのだと[思|omo]います。[申|Mō]し[訳|wake]ございません。」「じゃあどうすればいいんですか。」「[未開封|Mikaifū]の[分|bun]がございましたら、そちらは[三十日|sanjūnichi][以内|inai][限|kagi]りで[返品|henpin][可能|kanō]でございます。」「[開|A]けたやつは。」「[初期|Shoki][不良|furyō]である[場合|baai]は[交換|kōkan]の[対象|taishō]となります。[状態|Jōtai]を[確認|kakunin]させていただけますでしょうか。」「……[見|Mi]てもらえるなら。」「ありがとうございます。[確認|Kakunin]の[上|ue]、[本日中|honjitsu-chū]にご[連絡|renraku]いたします。」"
+ ],
+ "wave": "Bacalah ulang seluruh bagian “Pengandaian di dokumen”, lalu carilah tiga pengumuman berbahasa Jepang yang sungguhan — di aplikasi, situs toko daring, atau syarat hotel. Tandai tiap 場合, 際, 上で, dan 次第 yang kamu temukan. Kamu akan menemukan bahwa dokumen Jepang hampir tidak pernah memakai たら, dan begitu kamu menyadarinya, membaca formulir menjadi jauh lebih cepat."
+}

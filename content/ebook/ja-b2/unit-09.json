@@ -1,0 +1,255 @@
+{
+ "title": "Pasif, kausatif, dan pasif-kausatif: siapa yang menanggung",
+ "title_target": "[受身|Ukemi]・[使役|shieki]・[使役受身|shieki ukemi]",
+ "goal": "Memakai pasif kerugian untuk menyatakan bahwa sesuatu terjadi padamu, membedakan izin dari paksaan dalam kausatif, dan memakai させていただく tanpa berlebihan.",
+ "bekal": ["membentuk dan memakai 迷惑の受身 (pasif kerugian)", "membedakan 〜させる yang berarti mengizinkan dari yang berarti memaksa", "memakai 〜させられる untuk menyatakan keterpaksaan", "memakai 〜させていただく dengan takaran yang wajar", "memilih pasif tanpa pelaku untuk laporan dan berita"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Hari yang semuanya terjadi padanya",
+   "intro": "Ani menceritakan harinya kepada Rina. Hitunglah berapa banyak kalimat berbentuk pasif — dan perhatikan bahwa hampir semuanya menyatakan kerugian, bukan sekadar perbuatan.",
+   "lines": [
+    {"speaker": "[リナ|Rina]:", "text": "[顔|Kao]がひどいことになってるけど。", "id": "Mukamu kelihatan parah banget deh.", "literal": "wajah — yang — parah — hal — pada — menjadi — sedang — tetapi."},
+    {"speaker": "[アニ|Ani]:", "text": "[朝|Asa]から[最悪|saiaku]。[電車|Densha]で[足|ashi][踏|fu]まれるし、[会議|kaigi][中|chū]に[資料|shiryō]の[数字|sūji][間違|machiga]いを[指摘|shiteki]されるし。", "id": "Dari pagi udah parah. Di kereta kakiku diinjak, terus pas rapat kesalahan angka di materiku ditunjukin.", "literal": "pagi — dari — terburuk. kereta — di — kaki — diinjak — dan, rapat — tengah — pada — bahan — punya — angka — kesalahan — akan — ditunjukkan — dan."},
+    {"speaker": "[リナ|Rina]:", "text": "[誰|Dare]に。", "id": "Sama siapa?", "literal": "siapa — oleh."},
+    {"speaker": "[アニ|Ani]:", "text": "[部長|Buchō]。しかも[お客様|o-kyaku-sama]の[前|mae]で。そのあと[謝罪|shazai][メール|mēru]まで[書|ka]かされた。", "id": "Manajer. Di depan klien lagi. Habis itu aku bahkan disuruh nulis surel permintaan maaf.", "literal": "bagian-kepala. lagipula — tamu(hormat) — punya — depan — di. itu — sesudah — permintaan-maaf — surel — sampai — dipaksa-menulis(lampau)."},
+    {"speaker": "[リナ|Rina]:", "text": "[書|Ka]かされたの。[自分|Jibun]で[書|ka]くって[言|i]ったんじゃなくて。", "id": "Disuruh nulis? Bukan kamu yang bilang mau nulis sendiri?", "literal": "dipaksa-menulis(lampau) — kah. diri-sendiri — dengan — menulis — begitu — mengatakan(lampau) — bukan-dan."},
+    {"speaker": "[アニ|Ani]:", "text": "[書|Ka]かせていただきますって[言|i]ったよ。……[言|I]わされた[気|ki]もするけど。", "id": "Aku bilang “izinkan saya yang menulis” kok. …Tapi rasanya kayak dipaksa bilang gitu juga.", "literal": "menulis — dipersilakan — begitu — mengatakan(lampau) — ya. …dipaksa-mengatakan(lampau) — rasa — juga — melakukan — tetapi."},
+    {"speaker": "[リナ|Rina]:", "text": "それが[会社|kaisha]。[三|San][年|nen][目|me]まではずっとそれ。", "id": "Ya itulah kantor. Sampai tahun ketiga terus-terusan begitu.", "literal": "itu — yang — perusahaan. tiga — tahun — urutan — sampai — mengenai — terus — itu."},
+    {"speaker": "[アニ|Ani]:", "text": "でも[部長|buchō]、そのあと[廊下|rōka]で「[人前|hitomae]で[言|i]ったのは[悪|waru]かった」って[謝|ayama]ってきた。", "id": "Tapi habis itu manajer nemuin aku di koridor terus minta maaf, “maaf ya tadi ngomongnya di depan orang”.", "literal": "tetapi — bagian-kepala, itu — sesudah — koridor — di — “orang-depan — di — mengatakan(lampau) — yang — mengenai — buruk(lampau)” — begitu — meminta-maaf — datang(lampau)."},
+    {"speaker": "[リナ|Rina]:", "text": "それは[珍|mezura]しい。うちの[前|mae]の[上司|jōshi]なんか、[三年|sannen][怒|oko]られ[続|tsuzu]けて[一度|ichido]も[謝|ayama]られたことなかった。", "id": "Itu jarang lho. Atasanku yang dulu, tiga tahun aku dimarahin terus dan sekali pun nggak pernah diminta maaf.", "literal": "itu — mengenai — jarang. aku — punya — sebelum — punya — atasan — semacam, tiga-tahun — dimarahi — terus — dan — sekali — pun — diminta-maaf — hal — tidak-ada(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[謝|Ayama]られると、[怒|oko]られたことより[覚|obo]えてる。", "id": "Kalau diminta maaf, itu lebih nempel di ingatan daripada dimarahinya.", "literal": "diminta-maaf — kalau, dimarahi(lampau) — hal — daripada — mengingat — sedang."},
+    {"speaker": "[リナ|Rina]:", "text": "[覚|Obo]えてるうちに[真似|mane]しときな。[自分|Jibun]が[上|ue]になったとき[絶対|zettai][忘|wasu]れるから。", "id": "Selagi masih ingat, tiru deh. Soalnya pas kamu sendiri jadi atasan, pasti lupa.", "literal": "mengingat — sedang — selagi — pada — tiruan — melakukan-taruh(perintah-halus). diri-sendiri — yang — atas — menjadi(lampau) — waktu — pasti — lupa — karena."}
+   ],
+   "notes": [
+    "**[足|Ashi]を[踏|fu]まれる — pasif kerugian (迷惑の受身), dan ini bentuk yang paling khas Jepang.** Bahasa Indonesia berkata “ada yang menginjak kakiku”; bahasa Jepang menjadikan **aku** subjeknya dan kakiku objeknya: [私|watashi]は[足|ashi]を[踏|fu]まれた. Bagian tubuh atau milik yang terkena tetap ditandai を meski kalimatnya pasif.",
+    "**Pasif kerugian bisa dibentuk bahkan dari kata kerja tak berobjek.** [雨|Ame]に[降|fu]られた (saya kehujanan) · [子|Ko]どもに[泣|na]かれた (anak saya menangis dan itu merepotkan saya) · [友|Tomo]だちに[来|ko]られた (teman datang dan itu mengganggu). Dalam bahasa Indonesia bentuk ini tidak punya padanan langsung, dan justru karena itu ia harus dilatih sadar.",
+    "**[書|Ka]かされた = 使役受身, pasif dari kausatif — “dipaksa menulis”.** Bentuknya: 書かせる (menyuruh menulis) → 書かせられる → menyusut jadi 書かされる untuk kata kerja golongan I. Nada yang selalu dibawanya: keterpaksaan dan sedikit keluhan.",
+    "**Baris 6 memuat perbedaan yang halus tapi nyata:** [書|Ka]かせていただきます (saya minta izin menulis — kamu yang mau) vs [書|Ka]かされた (saya dipaksa menulis). Ani memakai yang pertama di depan atasan dan yang kedua di depan teman. Isi kejadiannya sama; yang berbeda adalah siapa yang ditempatkan sebagai pemilik keinginan.",
+    "**[言|I]わされた [気|ki]もする — pasif-kausatif yang dipakai untuk membaca ulang kejadian.** Ini pemakaian yang sangat lazim: menyebut sesuatu yang secara resmi kamu lakukan sukarela, tapi sebenarnya tidak. Bahasa Jepang punya bentuk khusus untuk perasaan itu, dan mengenalinya membuat banyak percakapan kantor tiba-tiba masuk akal.",
+    "**[謝|Ayama]ってきた — 〜てくる yang menandai arah ke penutur.** Bukan sekadar “meminta maaf”, tapi “datang kepadaku dan meminta maaf”. Keluarga ini besar: [言|I]ってきた · [送|Oku]ってきた · [聞|Ki]いてきた. Ia menandai bahwa perbuatan itu diarahkan kepadamu, dan sering membawa muatan perasaan.",
+    "**[謝|Ayama]られる di baris 9 dan 10 — pasif untuk perbuatan baik.** Meski pasif Jepang condong ke kerugian, ia tetap bisa netral atau baik: [褒|Ho]められる · [助|Tasu]けられる · [選|Era]ばれる. Yang membedakan bukan bentuknya, melainkan isi kata kerjanya.",
+    "**[〜うちに|uchi ni] = selagi keadaannya masih berlaku.** [覚|Obo]えているうちに · [若|Waka]いうちに · [忘|Wasu]れないうちに. Bedakan dari [〜間|aida]に yang menekankan rentang waktunya; うちに menekankan bahwa keadaannya akan berakhir."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk, tiga pertanyaan",
+     "table": {
+      "head": ["Bentuk", "Pertanyaannya", "Rumus", "Contoh"],
+      "rows": [
+       ["[受身|Ukemi] (pasif)", "siapa yang **terkena**?", "gol. I 〜あれる · gol. II 〜られる · する→される", "[叱|Shika]られる · [読|Yo]まれる"],
+       ["[使役|Shieki] (kausatif)", "siapa yang **menyuruh atau mengizinkan**?", "gol. I 〜あせる · gol. II 〜させる · する→させる", "[休|Yasu]ませる · [食|Ta]べさせる"],
+       ["[使役受身|Shieki ukemi]", "siapa yang **dipaksa**?", "kausatif + pasif", "[待|Ma]たされる · [食|Ta]べさせられる"]
+      ]
+     },
+     "after": [
+      "**Penyusutan 使役受身 hanya berlaku untuk golongan I.** [待|Ma]たせられる → [待|Ma]たされる, [飲|No]ませられる → [飲|No]まされる. Tapi kata kerja berakhiran す tidak menyusut: [話|Hana]させられる tetap begitu, karena 話さされる akan janggal. Golongan II tak pernah menyusut: ×[食|Ta]べさされる.",
+      "**Partikel pelaku pada pasif hampir selalu に.** [先生|Sensei]に[叱|shika]られた. Tapi kalau perbuatannya menciptakan sesuatu, yang dipakai によって: この[小説|shōsetsu]は[漱石|Sōseki]によって[書|ka]かれた. Aturan によって inilah yang dipakai di seluruh tulisan ilmiah dan berita."
+     ]
+    },
+    {
+     "title": "使役: mengizinkan atau memaksa?",
+     "body": ["Satu bentuk, dua arti yang berlawanan. Yang memisahkannya bukan tata bahasa melainkan konteks, dan sering ditolong oleh partikel serta 〜てあげる／〜てもらう."],
+     "table": {
+      "head": ["Kalimat", "Artinya", "Petunjuknya"],
+      "rows": [
+       ["[子|Ko]どもを[遊|aso]ばせる", "membiarkan anak bermain", "perbuatan yang diinginkan pelakunya"],
+       ["[子|Ko]どもに[野菜|yasai]を[食|ta]べさせる", "memaksa/menyuapi anak makan sayur", "perbuatan yang tak diinginkan"],
+       ["[休|Yasu]ませてあげる", "**mengizinkan** dengan kebaikan", "〜てあげる menandai kemurahan"],
+       ["[休|Yasu]ませていただく", "**minta izin** untuk libur", "〜ていただく menandai permohonan"],
+       ["[残業|Zangyō]させられる", "dipaksa lembur", "使役受身 = selalu terpaksa"],
+       ["[考|Kanga]えさせられる", "membuatku berpikir (positif)", "ungkapan tetap, bukan keluhan"]
+      ]
+     },
+     "after": [
+      "**Partikel membantu memisahkan keduanya.** Kalau kata kerjanya tak berobjek, を menandai orang yang disuruh ([子|ko]ども**を**[行|i]かせる) dan に menandai orang yang diizinkan ([子|ko]ども**に**[行|i]かせる). Bedanya tipis dan penutur asli pun tak selalu konsisten, tapi arah nuansanya nyata.",
+      "**[考|Kanga]えさせられる adalah pengecualian yang layak dihafal.** Meski berbentuk 使役受身, ia tidak berarti “dipaksa berpikir” melainkan “membuat saya merenung” — dan selalu bernada positif. Sepupunya: [驚|Odoro]かされる · [感動|Kandō]させられる."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Terlalu banyak させていただく",
+   "intro": "Tanaka memeriksa naskah pengumuman yang ditulis Ani. Dialog ini membahas bentuk yang paling sering disalahgunakan pembelajar sekaligus penutur asli.",
+   "lines": [
+    {"speaker": "[田中|Tanaka]:", "text": "「[休業|Kyūgyō]させていただきます」「ご[案内|annai]させていただきます」「[閉店|Heiten]させていただきます」。……[一枚|Ichimai]の[紙|kami]に[六回|rokkai][出|de]てくるぞ。", "id": "“Izinkan kami libur”, “Izinkan kami memberitahukan”, “Izinkan kami menutup toko”… Muncul enam kali dalam satu lembar kertas lho.", "literal": "“libur-usaha — dipersilakan” “panduan(hormat) — dipersilakan” “tutup-toko — dipersilakan”. …satu-lembar — punya — kertas — pada — enam-kali — keluar — datang — lho."},
+    {"speaker": "[アニ|Ani]:", "text": "[丁寧|Teinei]にしようと[思|omo]って。", "id": "Saya bermaksud membuatnya sopan.", "literal": "sopan — akan-melakukan — bahwa — berpikir — dan."},
+    {"speaker": "[田中|Tanaka]:", "text": "[丁寧|Teinei]なんだが、[多|ō]すぎると[逆|gyaku]に[慇懃無礼|ingin burei]に[聞|ki]こえる。「させていただく」は[本来|honrai]、[相手|aite]の[許可|kyoka]が[要|i]ることに[使|tsuka]う。", "id": "Memang sopan, tapi kalau kebanyakan malah terdengar sopan-sopan menghina. “Sasete itadaku” aslinya dipakai untuk hal yang butuh izin lawan bicara.", "literal": "sopan — adalah-tetapi, banyak — terlalu — kalau — kebalikan — pada — sopan-tanpa-sopan — pada — terdengar. “dipersilakan” — mengenai — asal — pada, lawan — punya — izin — yang — perlu — hal — pada — memakai."},
+    {"speaker": "[アニ|Ani]:", "text": "[休|Yasu]むのは、[お客様|o-kyaku-sama]の[許可|kyoka]が[要|i]ることじゃないんですか。", "id": "Bukankah libur itu hal yang butuh izin pelanggan?", "literal": "libur — yang — mengenai, tamu(hormat) — punya — izin — yang — perlu — hal — bukan — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[要|I]らない。[店|Mise]を[閉|shi]めるのは[店|mise]の[判断|handan]だ。「[休業|Kyūgyō]いたします」でいい。「させていただく」を[使|tsuka]うのは、[相手|aite]が[断|kotowa]れる[場合|baai]だけ。", "id": "Tidak butuh. Menutup toko itu keputusan toko. Cukup “kyūgyō itashimasu”. “Sasete itadaku” dipakai hanya kalau lawan bicara bisa menolak.", "literal": "perlu — tidak. toko — akan — menutup — yang — mengenai — toko — punya — keputusan — adalah. “libur-usaha — melakukan(rendah)” — dengan — baik. “dipersilakan” — akan — memakai — yang — mengenai, lawan — yang — menolak-bisa — hal — hanya."},
+    {"speaker": "[アニ|Ani]:", "text": "でも[街中|machinaka]、「させていただきます」だらけですよ。", "id": "Tapi di seluruh kota isinya “sasete itadakimasu” semua lho.", "literal": "tetapi — kota-dalam, “dipersilakan” — penuh — adalah — ya."},
+    {"speaker": "[田中|Tanaka]:", "text": "そうだ。[文化庁|Bunkachō]も[注意|chūi]してる[くらい|kurai]だ。だが[街|machi]がそうでも、うちの[文書|bunsho]までそうする[理由|riyū]はない。", "id": "Betul. Sampai-sampai Badan Kebudayaan pun mengingatkannya. Tapi meski kotanya begitu, tidak ada alasan dokumen kita ikut begitu.", "literal": "begitu — adalah. budaya-badan — juga — perhatian — melakukan — sedang — sampai — adalah. tetapi — kota — yang — begitu — meskipun, kami — punya — dokumen — sampai — begitu — melakukan — alasan — mengenai — tidak-ada."},
+    {"speaker": "[アニ|Ani]:", "text": "[直|Nao]します。「いたします」「[申|mō]し[上|a]げます」に[置|o]き[換|ka]えます。", "id": "Saya perbaiki. Saya ganti dengan “itashimasu” dan “mōshiagemasu”.", "literal": "memperbaiki. “melakukan(rendah)” “berkata(rendah,tinggi)” — menjadi — menaruh-mengganti."},
+    {"speaker": "[田中|Tanaka]:", "text": "そう。[敬語|Keigo]は[足|ta]せば[足|ta]すほど[丁寧|teinei]になるものじゃない。[必要|Hitsuyō]なところに[必要|hitsuyō]なだけ、が[一番|ichiban][難|muzuka]しい。", "id": "Betul. Keigo itu bukan hal yang makin ditambah makin sopan. Sebanyak yang diperlukan, di tempat yang memerlukan — itulah yang paling sulit.", "literal": "begitu. hormat-bahasa — mengenai — menambah — kalau — menambah — sebanyak — sopan — menjadi — hal — bukan. perlu — tempat — pada — perlu — hanya, yang — paling — sulit."}
+   ],
+   "notes": [
+    "**[〜させていただく|sasete itadaku] sah dipakai kalau dua syarat terpenuhi:** (1) perbuatannya butuh izin atau kebaikan lawan bicara, dan (2) kamu memperoleh keuntungan darinya. [発表|Happyō]させていただきます (di depan hadirin yang memberi kesempatan) benar; [閉店|Heiten]させていただきます (keputusan sendiri) berlebihan.",
+    "**[慇懃無礼|ingin burei] — kata yang layak dihafal.** Artinya sopan berlebihan sampai terasa menghina atau berjarak. Ini kritik yang nyata di Jepang, dan ia menjelaskan kenapa menumpuk 敬語 bukan strategi aman seperti yang dikira pembelajar.",
+    "**Yang bisa menggantikan させていただく:** いたします (melakukan, merendah), [申|mō]し[上|a]げます (menyampaikan), ご〜します, atau bahkan ます biasa. Untuk pengumuman: [休業|Kyūgyō]いたします · ご[案内|annai][申|mō]し[上|a]げます · [誠|makoto]に[勝手|katte]ながら[閉店|heiten]いたします.",
+    "**[〜ば〜ほど|ba ~ hodo] = “makin ~ makin ~”.** [足|Ta]せば[足|ta]すほど · [考|Kanga]えれば[考|kanga]えるほど · [安|Yasu]ければ[安|yasu]いほど. Sangat sering muncul dan mudah dipakai; kata kerjanya diulang dua kali."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pasif tanpa pelaku: bahasa laporan, berita, dan aturan",
+   "blocks": [
+    {"type": "p", "text": "Pasif Jepang punya wajah kedua yang sama sekali berbeda dari pasif kerugian. Di ragam tulis, ia dipakai justru untuk **menghilangkan pelaku** — dan inilah yang membuat laporan, berita, dan aturan terdengar seperti tidak ditulis siapa pun."},
+    {"type": "tabel", "head": ["Aktif", "Pasif tak berpelaku", "Dipakai di"], "rows": [
+     ["[会社|Kaisha]が[会議|kaigi]を[開|hira]く", "[会議|Kaigi]が[開|hira]かれる", "berita, laporan"],
+     ["[みんな|Minna]がそう[言|i]う", "そう[言|i]われている", "pengetahuan umum"],
+     ["[研究者|Kenkyūsha]が[報告|hōkoku]した", "[報告|Hōkoku]されている", "tulisan ilmiah"],
+     ["[誰|Dare]かが[決|ki]めた", "[決定|Kettei]された", "dokumen resmi"],
+     ["[私|Watashi]はこう[考|kanga]える", "こう[考|kanga]えられる", "karangan, analisis"],
+     ["[人|Hito]々が[期待|kitai]している", "[期待|Kitai]されている", "berita"]
+    ]},
+    {"type": "kotak", "title": "Empat ungkapan pasif yang wajib dikenali di ragam tulis", "items": [
+     "**〜と[考|kanga]えられる** — “dapat dianggap”; pengganti 私は〜と思う di karangan.",
+     "**〜と[言|i]われている** — “dikatakan orang”; menandai pengetahuan umum yang tak bersumber tunggal.",
+     "**〜とされている** — “ditetapkan/dianggap demikian”; sedikit lebih resmi dari 言われている.",
+     "**〜と[見|mi]られている** — “diperkirakan”; khas bahasa berita, sering dengan sumber yang tak disebut."
+    ]},
+    {"type": "p", "text": "Perhatikan bahwa keempatnya memungkinkan penulis menyatakan sesuatu **tanpa bertanggung jawab penuh atasnya**. Ini alat yang berguna dan sekaligus alat yang bisa disalahgunakan — Unit 15 membahas bagaimana bahasa berita Jepang memanfaatkannya."}
+   ]
+  },
+  {
+   "title": "Memberi dan menerima: 〜てあげる, 〜てくれる, 〜てもらう",
+   "blocks": [
+    {"type": "p", "text": "Keluarga ini seharusnya sudah kamu kenal, tapi di tingkat B2 ia bergabung dengan kausatif dan 敬語, dan di situlah kesalahan mulai muncul."},
+    {"type": "tabel", "head": ["Bentuk", "Arah", "Ragam hormat", "Catatan"], "rows": [
+     ["〜てあげる", "aku → dia", "〜て[差|sa]し[上|a]げる", "**berbahaya**: terdengar mengungkit kebaikan"],
+     ["〜てくれる", "dia → aku", "〜てくださる", "hangat, sangat sering"],
+     ["〜てもらう", "aku menerima dari dia", "〜ていただく", "netral, paling aman"],
+     ["〜させてもらう", "aku minta izin", "〜させていただく", "hati-hati berlebihan"],
+     ["〜てくれない？", "permintaan akrab", "〜ていただけませんか", "tangga Unit 3"]
+    ]},
+    {"type": "kotak", "title": "Kenapa 〜てあげる berbahaya", "items": [
+     "[荷物|Nimotsu]を[持|mo]ってあげます。 — secara harfiah “saya akan membawakan barang Anda (sebagai kebaikan)”. Terdengar seperti mengumumkan kemurahan hatimu sendiri.",
+     "Yang dipakai penutur asli: [お持|o-mo]ちします。 atau [持|Mo]ちましょうか。 — menawarkan tanpa menyebut kebaikan.",
+     "Kepada atasan, 〜て[差|sa]し[上|a]げる justru lebih parah lagi: ×[部長|Buchō]、コピーを[取|to]って[差|sa]し[上|a]げます。 → ○ コピーをお[取|to]りします。",
+     "**Aturan pendeknya:** 〜てあげる aman kepada teman sebaya dan ke bawah; ke atas, ganti dengan お〜します."
+    ]},
+    {"type": "p", "text": "Sebaliknya, 〜てくれる dan 〜ていただく hampir tak pernah salah, dan memakainya membuat kalimatmu terdengar hangat. Bandingkan [教|Oshi]えた (mengajari) dengan [教|Oshi]えてくれた (mengajariku, dan aku berterima kasih): yang kedua menambahkan seluruh hubungan sosialnya ke dalam satu kata kerja."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "受身", "baca": "うけみ · ukemi", "id": "bentuk pasif"},
+  {"ja": "使役", "baca": "しえき · shieki", "id": "bentuk kausatif"},
+  {"ja": "使役受身", "baca": "しえきうけみ · shieki ukemi", "id": "pasif dari kausatif"},
+  {"ja": "迷惑", "baca": "めいわく · meiwaku", "id": "kerugian; gangguan"},
+  {"ja": "踏む", "baca": "ふむ · fumu", "id": "menginjak"},
+  {"ja": "指摘する", "baca": "してきする · shiteki suru", "id": "menunjukkan kesalahan"},
+  {"ja": "謝罪", "baca": "しゃざい · shazai", "id": "permintaan maaf"},
+  {"ja": "人前", "baca": "ひとまえ · hitomae", "id": "di depan orang"},
+  {"ja": "上司", "baca": "じょうし · jōshi", "id": "atasan"},
+  {"ja": "珍しい", "baca": "めずらしい · mezurashii", "id": "jarang; langka"},
+  {"ja": "真似する", "baca": "まねする · mane suru", "id": "meniru"},
+  {"ja": "〜うちに", "baca": "uchi ni", "id": "selagi masih ~"},
+  {"ja": "叱る", "baca": "しかる · shikaru", "id": "memarahi"},
+  {"ja": "褒める", "baca": "ほめる · homeru", "id": "memuji"},
+  {"ja": "選ぶ", "baca": "えらぶ · erabu", "id": "memilih"},
+  {"ja": "〜によって", "baca": "ni yotte", "id": "oleh (pelaku karya) 【書】"},
+  {"ja": "許可", "baca": "きょか · kyoka", "id": "izin"},
+  {"ja": "判断", "baca": "はんだん · handan", "id": "keputusan; penilaian"},
+  {"ja": "慇懃無礼", "baca": "いんぎんぶれい · ingin burei", "id": "sopan berlebihan sampai menghina"},
+  {"ja": "本来", "baca": "ほんらい · honrai", "id": "aslinya; semestinya"},
+  {"ja": "休業", "baca": "きゅうぎょう · kyūgyō", "id": "libur usaha"},
+  {"ja": "閉店", "baca": "へいてん · heiten", "id": "penutupan toko"},
+  {"ja": "文化庁", "baca": "ぶんかちょう · bunkachō", "id": "Badan Kebudayaan"},
+  {"ja": "〜だらけ", "baca": "darake", "id": "penuh dengan ~ (negatif)"},
+  {"ja": "置き換える", "baca": "おきかえる · okikaeru", "id": "menggantikan"},
+  {"ja": "〜ば〜ほど", "baca": "ba ~ hodo", "id": "makin ~ makin ~"},
+  {"ja": "考えさせられる", "baca": "かんがえさせられる · kangaesaserareru", "id": "membuat merenung"},
+  {"ja": "感動する", "baca": "かんどうする · kandō suru", "id": "terharu"},
+  {"ja": "残業", "baca": "ざんぎょう · zangyō", "id": "lembur"},
+  {"ja": "廊下", "baca": "ろうか · rōka", "id": "koridor"},
+  {"ja": "〜と考えられる", "baca": "とかんがえられる · to kangaerareru", "id": "dapat dianggap 【書】"},
+  {"ja": "〜と言われている", "baca": "といわれている · to iwarete iru", "id": "dikatakan orang"},
+  {"ja": "〜とされている", "baca": "to sarete iru", "id": "dianggap demikian 【書】"},
+  {"ja": "期待する", "baca": "きたいする · kitai suru", "id": "mengharapkan"},
+  {"ja": "決定する", "baca": "けっていする · kettei suru", "id": "memutuskan 【書】"},
+  {"ja": "開催する", "baca": "かいさいする · kaisai suru", "id": "menyelenggarakan 【書】"},
+  {"ja": "報告する", "baca": "ほうこくする · hōkoku suru", "id": "melaporkan"},
+  {"ja": "差し上げる", "baca": "さしあげる · sashiageru", "id": "memberikan 【敬】"},
+  {"ja": "荷物", "baca": "にもつ · nimotsu", "id": "barang bawaan"},
+  {"ja": "勝手ながら", "baca": "かってながら · katte nagara", "id": "dengan lancang 【書】"},
+  {"ja": "誠に", "baca": "まことに · makoto ni", "id": "sungguh 【書】"},
+  {"ja": "泣く", "baca": "なく · naku", "id": "menangis"},
+  {"ja": "驚かす", "baca": "おどろかす · odorokasu", "id": "mengejutkan"},
+  {"ja": "小説", "baca": "しょうせつ · shōsetsu", "id": "novel"},
+  {"ja": "研究者", "baca": "けんきゅうしゃ · kenkyūsha", "id": "peneliti"},
+  {"ja": "文書", "baca": "ぶんしょ · bunsho", "id": "dokumen"},
+  {"ja": "街中", "baca": "まちなか · machinaka", "id": "di dalam kota"},
+  {"ja": "最悪", "baca": "さいあく · saiaku", "id": "terburuk"},
+  {"ja": "〜年目", "baca": "ねんめ · nenme", "id": "tahun ke-~"},
+  {"ja": "一枚", "baca": "いちまい · ichimai", "id": "selembar"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi pasif kerugian dengan penderitanya sebagai subjek.",
+   "items": [
+    "[誰|Dare]かが[私|watashi]の[足|ashi]を[踏|fu]んだ。",
+    "[雨|Ame]が[降|fu]って、[私|watashi]は[困|koma]った。",
+    "[隣|Tonari]の[人|hito]が[騒|sawa]いで、[眠|nemu]れなかった。",
+    "[部長|Buchō]が[人前|hitomae]で[私|watashi]の[間違|machiga]いを[指摘|shiteki]した。",
+    "[友|Tomo]だちが[急|kyū]に[来|ki]て、[予定|yotei]が[崩|kuzu]れた。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi 使役 atau 使役受身 sesuai keterangan dalam kurung.",
+   "items": [
+    "[子|Ko]どもが[野菜|yasai]を[食|ta]べる。（orang tua memaksa）",
+    "[私|Watashi]が[一時間|ichijikan][待|ma]つ。（saya dipaksa）",
+    "[部下|Buka]が[早|haya]く[帰|kae]る。（atasan mengizinkan）",
+    "[私|Watashi]が[謝罪|shazai][メール|mēru]を[書|ka]く。（saya dipaksa）",
+    "[新人|Shinjin]が[会議|kaigi]で[発表|happyō]する。（atasan menyuruh）"
+   ]
+  },
+  {
+   "prompt": "Tandai apakah させていただく di kalimat berikut wajar atau berlebihan, lalu perbaiki yang berlebihan.",
+   "items": [
+    "[本日|Honjitsu]は[臨時休業|rinji kyūgyō]させていただきます。",
+    "[会議|Kaigi]で[発表|happyō]させていただきます。",
+    "[三月|Sangatsu]をもって[閉店|heiten]させていただきます。",
+    "ご[質問|shitsumon]させていただいてもよろしいでしょうか。",
+    "[弊社|Heisha]は[創業|sōgyō][五十年|gojūnen]を[迎|muka]えさせていただきました。"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pasif tanpa pelaku, ragam tulis.",
+   "items": [
+    "[会社|Kaisha]が[来月|raigetsu][会議|kaigi]を[開|hira]く。",
+    "[みんな|Minna]がそう[言|i]っている。",
+    "[私|Watashi]はこの[方法|hōhō]が[有効|yūkō]だと[思|omo]う。",
+    "[誰|Dare]かが[すでに|sudeni][決|ki]めた。",
+    "[専門家|Senmonka]が[危険|kiken]だと[報告|hōkoku]している。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Di kereta kakiku diinjak orang.",
+    "Saya dipaksa menulis surel permintaan maaf.",
+    "Manajer datang menemui saya dan minta maaf.",
+    "Selagi masih ingat, sebaiknya ditiru.",
+    "Keigo bukan hal yang makin ditambah makin sopan."
+   ]
+  },
+  {
+   "prompt": "Tulis enam sampai delapan kalimat untuk tiap keadaan, memakai minimal tiga bentuk dari unit ini.",
+   "items": [
+    "Ceritakan satu hari kerja yang buruk kepada teman, dengan minimal tiga pasif kerugian.",
+    "Tulis pengumuman resmi bahwa kantor tutup tiga hari untuk pemeliharaan sistem, tanpa satu pun させていただく yang berlebihan."
+   ]
+  }
+ ],
+ "answers": [
+  "[足|ashi]を[踏|fu]まれた。 — [雨|Ame]に[降|fu]られた。 — [隣|Tonari]の[人|hito]に[騒|sawa]がれて[眠|nemu]れなかった。 — [人前|Hitomae]で[部長|buchō]に[間違|machiga]いを[指摘|shiteki]された。 — [友|Tomo]だちに[急|kyū]に[来|ko]られて[予定|yotei]が[崩|kuzu]れた。",
+  "[野菜|Yasai]を[食|ta]べさせる。 — [一時間|Ichijikan][待|ma]たされた。 — [早|Haya]く[帰|kae]らせる。 — [謝罪|Shazai][メール|mēru]を[書|ka]かされた。 — [会議|Kaigi]で[発表|happyō]させる。",
+  "berlebihan → [本日|Honjitsu]は[臨時休業|rinji kyūgyō]いたします。 — wajar — berlebihan → [三月|Sangatsu]をもって[閉店|heiten]いたします。 — wajar — berlebihan → [創業|Sōgyō][五十年|gojūnen]を[迎|muka]えました。",
+  "[来月|Raigetsu][会議|kaigi]が[開|hira]かれる。 — そう[言|i]われている。 — この[方法|hōhō]が[有効|yūkō]であると[考|kanga]えられる。 — [すでに|Sudeni][決定|kettei]されている。 — [危険|Kiken]であると[報告|hōkoku]されている。",
+  "[電車|Densha]で[足|ashi]を[踏|fu]まれた。 — [謝罪|Shazai][メール|mēru]を[書|ka]かされた。 — [部長|Buchō]が[謝|ayama]ってきた。 — [覚|Obo]えているうちに[真似|mane]したほうがいい。 — [敬語|Keigo]は[足|ta]せば[足|ta]すほど[丁寧|teinei]になるものではない。",
+  "Contoh 1／[今日|Kyō]は[朝|asa]から[散々|sanzan]だった。[電車|Densha]で[足|ashi]を[踏|fu]まれ、[降|o]りる[駅|eki]で[雨|ame]に[降|fu]られた。[会議|Kaigi]では[部長|buchō]に[数字|sūji]の[間違|machiga]いを[人前|hitomae]で[指摘|shiteki]され、そのあと[謝罪|shazai][メール|mēru]まで[書|ka]かされた。[隣|Tonari]の[席|seki]の[人|hito]に[一時間|ichijikan][愚痴|guchi]を[聞|ki]かされたのも[地味|jimi]に[効|ki]いた。[帰|Kae]ろうとしたら[急|kyū]に[来客|raikyaku]に[来|ko]られて、[結局|kekkyoku][終電|shūden]。[明日|Ashita]はもう[何|nani]も[起|o]きないでほしい。 — Contoh 2／[平素|Heiso]より[格別|kakubetsu]のお[引|hi]き[立|ta]てを[賜|tamawa]り、[厚|atsu]く[御礼|orei][申|mō]し[上|a]げます。[誠|Makoto]に[勝手|katte]ながら、[下記|kaki]の[期間|kikan]は[システム|shisutemu][保守|hoshu]のため[休業|kyūgyō]いたします。[期間|Kikan]：[八月|Hachigatsu][十日|tōka]（[月|getsu]）から[八月|hachigatsu][十二日|jūninichi]（[水|sui]）まで。[期間中|Kikanchū]にいただいたお[問|to]い[合|a]わせにつきましては、[八月|hachigatsu][十三日|jūsannichi][以降|ikō][順次|junji]ご[返信|henshin][申|mō]し[上|a]げます。ご[不便|fuben]をおかけいたしますが、[何卒|nanitozo]ご[理解|rikai]のほどお[願|nega]い[申|mō]し[上|a]げます。"
+ ],
+ "wave": "Kembali ke dialog kedua Unit 1, tempat Ani dan Rina berbicara santai. Cari tiap kata kerja pasif di situ dan tanyakan: apakah ia pasif kerugian, pasif netral, atau pasif tanpa pelaku? Lalu lakukan hal yang sama pada bagian “Satu surel utuh” di Unit 2. Kamu akan menemukan bahwa dua ragam itu memakai pasif untuk alasan yang berlawanan: satu untuk mengeluh, satu untuk menghilangkan diri."
+}

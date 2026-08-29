@@ -1,0 +1,261 @@
+{
+ "title": "Sebab, dasar, akibat: memindahkan salah dari orang ke keadaan",
+ "title_target": "[原因|Gen'in]・[根拠|konkyo]・[結果|kekka]",
+ "goal": "Memilih di antara sepuluh penanda sebab menurut ragam dan siapa yang ditempatkan sebagai penanggung jawab, menyusun kesimpulan berdasar bukti, dan menulis laporan penyebab masalah yang tidak menyebut satu nama pun.",
+ "bekal": ["memisahkan から, ので, ため, により, につき menurut ragam dan nada", "menyatakan dasar dengan ことから, ところをみると, 〜以上", "memakai おかげで dan せいで dengan arah yang benar", "menyusun rantai sebab-akibat ragam tulis", "menulis laporan penyebab tanpa menyebut pelaku"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Laporan penyebab kerusakan",
+   "intro": "Sistem pemesanan mati selama empat jam. Tanaka meminta Ani menyusun laporan penyebab. Dialog ini adalah kursus singkat tentang cara bahasa Jepang meletakkan kesalahan.",
+   "lines": [
+    {"speaker": "[田中|Tanaka]:", "text": "[原因|Gen'in]は[分|wa]かったか。", "id": "Penyebabnya sudah ketahuan?", "literal": "penyebab — mengenai — mengerti(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "はい。[更新作業|Kōshin sagyō]の[手順|tejun]が[抜|nu]けていたことにより、[設定|settei]が[反映|han'ei]されなかったようです。", "id": "Ya. Karena ada langkah pembaruan yang terlewat, tampaknya pengaturannya tidak tersimpan.", "literal": "ya. pembaruan-pekerjaan — punya — langkah — yang — lepas — sedang(lampau) — hal — oleh, pengaturan — yang — pemantulan — tidak-dilakukan(lampau) — tampaknya — adalah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[誰|Dare]が[抜|nu]かした。", "id": "Siapa yang melewatkannya?", "literal": "siapa — yang — melewatkan(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[作業|Sagyō][記録|kiroku]では[林|Hayashi]さんですが、[手順書|tejunsho]にその[工程|kōtei]が[記載|kisai]されていませんでした。", "id": "Menurut catatan kerja, Pak Hayashi, tapi tahapan itu memang tidak tertulis di buku prosedur.", "literal": "pekerjaan — catatan — dengan — mengenai — Hayashi-tuan — adalah — tetapi, langkah-buku — pada — itu — tahap — yang — pencatatan — dilakukan — tidak(lampau)."},
+    {"speaker": "[田中|Tanaka]:", "text": "なら[林|Hayashi]の[責任|sekinin]じゃない。[手順書|Tejunsho]が[不完全|fukanzen]だったせいだ。……[報告書|Hōkokusho]にはどう[書|ka]く。", "id": "Kalau begitu bukan tanggung jawab Hayashi. Itu gara-gara buku prosedurnya tidak lengkap. …Di laporan mau ditulis bagaimana?", "literal": "kalau — Hayashi — punya — tanggung-jawab — bukan. langkah-buku — yang — tidak-sempurna — adalah(lampau) — gara-gara — adalah. …laporan-surat — pada — mengenai — bagaimana — menulis."},
+    {"speaker": "[アニ|Ani]:", "text": "「[担当者|Tantōsha]が[手順|tejun]を[飛|to]ばしたため」でしょうか。", "id": "“Karena penanggung jawab melewatkan langkahnya”, begitu?", "literal": "“penanggung-orang — yang — langkah — akan — melompatkan(lampau) — karena” — adalah-kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[書|Ka]くな。それだと[人|hito]の[話|hanashi]になる。「[手順書|Tejunsho]に[当該|tōgai][工程|kōtei]の[記載|kisai]がなかったことから、[作業時|sagyōji]に[漏|mo]れが[生|shō]じた」。これでいい。", "id": "Jangan ditulis begitu. Kalau begitu jadi cerita tentang orang. “Karena tahapan tersebut tidak tercantum dalam buku prosedur, terjadi kelalaian saat pengerjaan.” Ini sudah cukup.", "literal": "menulis — jangan. itu — kalau — orang — punya — cerita — menjadi. “langkah-buku — pada — bersangkutan — tahap — punya — pencatatan — yang — tidak-ada(lampau) — hal — dari, pekerjaan-waktu — pada — kebocoran — yang — terjadi(lampau)”. ini — dengan — baik."},
+    {"speaker": "[アニ|Ani]:", "text": "でも、[事実|jijitsu]としては[林|Hayashi]さんが……。", "id": "Tapi, faktanya Pak Hayashi yang…", "literal": "tetapi, kenyataan — sebagai — mengenai — Hayashi-tuan — yang…"},
+    {"speaker": "[田中|Tanaka]:", "text": "[事実|Jijitsu]だ。だが[報告書|hōkokusho]の[目的|mokuteki]は[犯人|hannin][探|saga]しじゃない。[同|Ona]じことが[二度|nido][起|o]きない[仕組|shiku]みを[作|tsuku]ることだ。[人|Hito]の[名前|namae]を[書|ka]くと、そこで[話|hanashi]が[終|o]わってしまう。", "id": "Memang fakta. Tapi tujuan laporan bukan mencari pelaku. Tujuannya membuat mekanisme supaya hal yang sama tidak terjadi dua kali. Kalau nama orang ditulis, pembicaraannya berhenti di situ.", "literal": "kenyataan — adalah. tetapi — laporan-surat — punya — tujuan — mengenai — pelaku — mencari — bukan. sama — hal — yang — dua-kali — terjadi — tidak — mekanisme — akan — membuat — hal — adalah. orang — punya — nama — akan — menulis — kalau, di-situ — dengan — cerita — yang — selesai — sayangnya."},
+    {"speaker": "[アニ|Ani]:", "text": "……[分|Wa]かりました。[再発防止策|Saihatsu bōshisaku]も[書|ka]きます。[手順書|Tejunsho]の[改訂|kaitei]と、[チェックリスト|chekkurisuto]の[導入|dōnyū]です。", "id": "…Saya mengerti. Saya juga akan menulis langkah pencegahannya: revisi buku prosedur dan penerapan daftar periksa.", "literal": "…mengerti(lampau). ulang-terjadi-cegah-cara — juga — menulis. langkah-buku — punya — revisi — dan, daftar-periksa — punya — pemasukan — adalah."},
+    {"speaker": "[田中|Tanaka]:", "text": "それでいい。あと[一|hito]つ。[四時間|Yojikan][止|to]まったおかげで、[誰|dare]も[気|ki]づいていなかった[監視|kanshi]の[穴|ana]が[見|mi]えた。それも[書|ka]いておけ。", "id": "Itu bagus. Satu lagi. Berkat mati empat jam itu, terlihat lubang pemantauan yang tak seorang pun menyadarinya. Tulis itu juga.", "literal": "itu — dengan — baik. sesudah — satu. empat-jam — berhenti(lampau) — berkat, siapa — pun — sadar — tidak(lampau) — pemantauan — punya — lubang — yang — terlihat(lampau). itu — juga — menulis — taruh(perintah)."},
+    {"speaker": "[アニ|Ani]:", "text": "[障害|Shōgai]を「おかげで」と[書|ka]いていいんですか。", "id": "Boleh menulis gangguan sistem dengan kata “berkat”?", "literal": "gangguan — akan — “berkat” — sebagai — menulis — baik — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[報告書|Hōkokusho]では[書|ka]かない。[口頭|Kōtō]で[言|i]え。[書|Ka]くときは「[本件|honken]により[監視体制|kanshi taisei]の[課題|kadai]が[明|aki]らかとなった」だ。", "id": "Di laporan jangan ditulis. Katakan lisan. Kalau ditulis, jadinya “melalui perkara ini, persoalan sistem pemantauan menjadi jelas”.", "literal": "laporan-surat — di — mengenai — menulis — tidak. lisan — dengan — katakan. menulis — waktu — mengenai — “perkara-ini — oleh — pantau-sistem — punya — persoalan — yang — jelas — menjadi(lampau)” — adalah."}
+   ],
+   "notes": [
+    "**[〜ことにより|koto ni yori] dan [〜ことから|koto kara] — dua penanda sebab paling penting di ragam tulis kerja.** により menyatakan sebab langsung; ことから menyatakan **dasar penyimpulan** (“dari kenyataan bahwa…, maka…”). Keduanya tidak punya pelaku manusia, dan itulah alasan mereka dipakai.",
+    "**[〜せいで|sei de] dan [〜おかげで|okage de] adalah pasangan yang arahnya wajib benar.** せいで untuk akibat buruk dan selalu menyalahkan; おかげで untuk akibat baik dan selalu berterima kasih. Bentuk netralnya [〜ため|tame]. Menukarnya menghasilkan sindiran: [雨|Ame]のおかげで[中止|chūshi]になった terbaca mengejek.",
+    "**Baris 7 adalah inti seluruh unit.** Bandingkan dua kalimat: [担当者|Tantōsha]が[手順|tejun]を[飛|to]ばした**ため** (ada pelaku, ada tertuduh) vs [記載|Kisai]がなかった**ことから**、[漏|mo]れが[生|shō]じた (tak ada pelaku, ada keadaan). Kalimat kedua memakai kata kerja tak berpelaku [生|shō]じる, dan seluruh bahasa laporan Jepang bersandar pada kata kerja jenis ini.",
+    "**Kata kerja tanpa pelaku yang wajib kamu kenali:** [生|shō]じる (timbul), [発生|hassei]する (terjadi), [起|o]きる (terjadi), [判明|hanmei]する (menjadi jelas), [明|aki]らかとなる (terungkap), [至|ita]る (sampai pada). Semuanya membuat peristiwa seolah terjadi sendiri.",
+    "**[当該|tōgai] adalah kata birokrasi yang sangat sering muncul.** Artinya “yang bersangkutan, yang dimaksud”: [当該|tōgai][工程|kōtei] · [当該|tōgai][社員|shain] · [当該|tōgai][期間|kikan]. Ia menandai bahwa kamu sedang menulis dokumen resmi, dan hampir tak pernah diucapkan.",
+    "**[再発防止策|Saihatsu bōshisaku] — kolom wajib di setiap laporan masalah Jepang.** Laporan tanpa bagian ini dianggap belum selesai. Ia biasanya berisi dua hal: apa yang diubah di prosedur, dan siapa yang memeriksanya nanti.",
+    "**Baris 12–13 memperlihatkan pemisahan ragam yang tegas.** おかげで boleh diucapkan tapi tidak boleh ditulis di laporan; padanan tulisnya [本件|honken]により〜が[明|aki]らかとなった. Selisih ini bukan soal kesopanan melainkan soal siapa yang mungkin membaca dokumen itu bertahun-tahun kemudian.",
+    "**[書|Ka]くな dan [言|i]え di baris 7 dan 13 adalah bentuk perintah telanjang.** Dari atasan ke bawahan dalam situasi kerja yang mendesak, bentuk ini masih terdengar wajar meski keras. Kamu sendiri sebaiknya tidak memakainya kepada siapa pun kecuali kamu sangat yakin akan posisimu."
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh penanda sebab, dan siapa yang mereka salahkan",
+     "table": {
+      "head": ["Bentuk", "Ragam", "Nuansa", "Contoh"],
+      "rows": [
+       ["から", "umum", "alasan subjektif; boleh diikuti ajakan/perintah", "[危|Abu]ないから[やめ|yame]て。"],
+       ["ので", "umum, lebih halus", "alasan objektif; lebih sopan", "[電車|Densha]が[遅|oku]れたので[遅刻|chikoku]しました。"],
+       ["ため（に）", "【書】", "netral; sebab atau tujuan", "[台風|Taifū]のため[中止|chūshi]"],
+       ["により · によって", "【書】", "sebab resmi; sering pasif", "[事故|Jiko]により[遅延|chien]が[発生|hassei]"],
+       ["ことから", "【書】", "**dasar penyimpulan**", "[記載|Kisai]がないことから、[漏|mo]れが[生|shō]じた"],
+       ["ことにより", "【書】", "sebab dari suatu keadaan", "[改訂|Kaitei]することにより[再発|saihatsu]を[防|fuse]ぐ"],
+       ["につき", "【書】pengumuman", "berhubung; papan & pengumuman", "[準備中|Junbi-chū]につき[休業|kyūgyō]"],
+       ["おかげで", "umum", "akibat **baik**", "[皆様|Minasama]のおかげで[達成|tassei]できました"],
+       ["せいで", "umum", "akibat **buruk** + menyalahkan", "[雨|Ame]のせいで[台無|dainashi]しだ"],
+       ["ゆえに 【書】", "sangat formal", "logika; karangan & hukum", "[人|Hito]は[考|kanga]える、ゆえに[存在|sonzai]する"]
+      ]
+     },
+     "after": [
+      "**から vs ので, ringkasnya:** から menonjolkan alasan penuturnya dan boleh disusul perintah atau ajakan; ので menempatkan alasan sebagai keadaan dan terdengar lebih sopan. Karena itu permintaan maaf hampir selalu memakai ので: [遅|Oku]れましたので, bukan 遅れましたから.",
+      "**につき punya dua arti yang berbeda jauh.** Sebagai penanda sebab: [工事中|Kōji-chū]につき[通行止|tsūkōdo]め. Sebagai satuan: [一人|hitori]につき[千円|sen'en] (per orang seribu yen). Konteksnya selalu memisahkan keduanya."
+     ]
+    },
+    {
+     "title": "Menyusun dasar dan kesimpulan",
+     "body": ["Ini perangkat yang akan kamu pakai terus di Unit 16 dan Unit 18. Bedanya dengan penanda sebab: yang ini menyatakan **dari mana kamu tahu**, bukan **kenapa sesuatu terjadi**."],
+     "table": {
+      "head": ["Bentuk", "Artinya", "Contoh"],
+      "rows": [
+       ["〜ことから", "dari kenyataan bahwa ~", "[足跡|Ashiato]があることから、[誰|dare]かが[入|hai]ったとわかる"],
+       ["〜ところをみると", "melihat bahwa ~", "[黙|Dama]っているところをみると、[知|shi]っていたのだろう"],
+       ["〜以上（は）", "karena sudah ~, maka wajar", "[引|Hi]き[受|u]けた[以上|ijō]、[最後|saigo]までやる"],
+       ["〜からには", "sama seperti 以上, lebih beremosi", "やるからには[本気|honki]でやる"],
+       ["〜以上|〜わけだ", "maka pantas saja", "[道理|Dōri]で[高|taka]いわけだ"],
+       ["〜からこそ", "justru karena ~", "[信頼|Shinrai]しているからこそ[厳|kibi]しく[言|i]う"],
+       ["〜を[踏|fu]まえ（て）【書】", "berdasarkan; mempertimbangkan", "[調査結果|Chōsa kekka]を[踏|fu]まえ、[方針|hōshin]を[見直|minao]す"],
+       ["〜に[基|moto]づき 【書】", "berdasarkan (aturan/data)", "[規定|Kitei]に[基|moto]づき[処理|shori]する"]
+      ]
+     },
+     "after": ["**〜からこそ adalah bentuk yang paling sering dipakai untuk membela diri dengan elegan.** Ia membalik tuduhan menjadi bukti niat baik: [大切|Taisetsu]だからこそ[時間|jikan]をかけたい · [心配|Shinpai]だからこそ[申|mō]し[上|a]げています. Perhatikan pola こそ juga muncul di Unit 11 sebagai penekan."]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Alasan yang sama, tiga baju berbeda",
+   "intro": "Ani menceritakan kejadian yang sama kepada tiga orang berbeda dalam satu hari. Perhatikan penanda sebab yang berpindah setiap kali.",
+   "lines": [
+    {"speaker": "[アニ|Ani]（[リナ|Rina]に）:", "text": "[昨日|Kinō][最悪|saiaku]。[システム|Shisutemu][止|to]まったせいで[残業|zangyō][四時間|yojikan]。", "id": "Kemarin parah banget. Gara-gara sistemnya mati, lembur empat jam.", "literal": "kemarin — terburuk. sistem — berhenti(lampau) — gara-gara — lembur — empat-jam."},
+    {"speaker": "[リナ|Rina]:", "text": "うわ。[原因|Gen'in][何|nan]だったの。", "id": "Waduh. Penyebabnya apa?", "literal": "wah. penyebab — apa — adalah(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[手順書|Tejunsho]が[抜|nu]けてた。[誰|Dare]も[気|ki]づいてなかったって。", "id": "Buku prosedurnya bolong. Katanya nggak ada yang nyadar.", "literal": "langkah-buku — yang — lepas — sedang(lampau). siapa — pun — sadar — tidak — sedang(lampau) — begitu."},
+    {"speaker": "[アニ|Ani]（[森|Mori][様|sama]に、[電話|denwa]で）:", "text": "[昨日|Sakujitsu]はシステムの[障害|shōgai]により、ご[連絡|renraku]が[遅|oku]れてしまい[申|mō]し[訳|wake]ございませんでした。", "id": "Kemarin, karena gangguan sistem, balasan kami terlambat. Mohon maaf sebesar-besarnya.", "literal": "kemarin — mengenai — sistem — punya — gangguan — oleh, hubungan(hormat) — yang — terlambat — sayangnya — berkata-alasan — tidak-ada(lampau)."},
+    {"speaker": "[森|Mori]:", "text": "いえいえ、[こちら|kochira]も[承知|shōchi]しておりました。[復旧|Fukkyū]されたようで[何|nani]よりです。", "id": "Tidak apa-apa, kami juga sudah tahu. Syukurlah tampaknya sudah pulih.", "literal": "tidak-tidak, sini — juga — memahami — sedang(lampau). pemulihan — dilakukan(lampau) — tampak — dengan — apa — daripada — adalah."},
+    {"speaker": "[アニ|Ani]（[報告書|hōkokusho]に）:", "text": "[手順書|Tejunsho]に[当該|tōgai][工程|kōtei]の[記載|kisai]がなかったことから、[更新作業時|kōshin sagyōji]に[設定|settei][反映|han'ei]の[漏|mo]れが[生|shō]じた。これにより、[受注|juchū]システムが[約|yaku][四時間|yojikan][停止|teishi]するに[至|ita]った。", "id": "Karena tahapan yang bersangkutan tidak tercantum dalam buku prosedur, terjadi kelalaian penerapan pengaturan saat pekerjaan pembaruan. Akibatnya, sistem penerimaan pesanan berhenti sekitar empat jam.", "literal": "langkah-buku — pada — bersangkutan — tahap — punya — pencatatan — yang — tidak-ada(lampau) — hal — dari, pembaruan-pekerjaan-waktu — pada — pengaturan — pemantulan — punya — kebocoran — yang — terjadi(lampau). ini — oleh, terima-pesan — sistem — yang — kira-kira — empat-jam — berhenti — melakukan — pada — sampai(lampau)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[三|San][種類|shurui][書|ka]けたな。それが[仕事|shigoto]だ。", "id": "Kamu sudah bisa menulis tiga jenis, ya. Itulah pekerjaannya.", "literal": "tiga — jenis — menulis-bisa(lampau) — ya. itu — yang — pekerjaan — adalah."}
+   ],
+   "notes": [
+    "**Tiga versi, satu kejadian.** せいで kepada teman (menyalahkan, akrab), により kepada klien (resmi, tanpa pelaku), ことから + これにより + 〜に[至|ita]った di laporan (rantai sebab tanpa satu pun manusia). Ini bukan sekadar sopan santun: ketiganya menandai **siapa yang mungkin membaca**.",
+    "**〜に[至|ita]る 【書】 = sampai pada suatu keadaan.** Ia menutup rantai sebab dan sering dipakai di ujung laporan: [中止|Chūshi]するに[至|ita]った · [合意|Gōi]に[至|ita]らなかった. Nada yang dibawanya: proses panjang yang berakhir di situ.",
+    "**[何|Nani]よりです — ungkapan tetap yang bermakna “syukurlah”.** Bentuk penuhnya [何|nani]よりのことです. Sering dipakai menanggapi kabar baik: ご[無事|buji]で[何|nani]よりです · [回復|Kaifuku]されたようで[何|nani]よりです.",
+    "**Perhatikan [昨日|kinō] vs [昨日|sakujitsu].** Aksaranya sama, cara bacanya berbeda ragam: きのう lisan, さくじつ formal. Pasangan serupa: [今日|kyō]／[本日|honjitsu], [明日|ashita]／[明日|asu]／[明日|myōnichi], [去年|kyonen]／[昨年|sakunen]. Di telepon kerja, selalu pilih yang formal."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Laporan penyebab: rangka lima bagian",
+   "blocks": [
+    {"type": "p", "text": "Bentuk laporan ini hampir sama di seluruh perusahaan Jepang, dan mengenal kerangkanya sekali cukup untuk seumur karier."},
+    {"type": "tabel", "head": ["Bagian", "Isinya", "Ungkapan bakunya"], "rows": [
+     ["[発生事象|Hassei jishō]", "apa yang terjadi, kapan, berapa lama", "〜において〜が[発生|hassei]した"],
+     ["[影響範囲|Eikyō han'i]", "siapa dan apa yang terdampak", "〜に[影響|eikyō]が[及|oyo]んだ"],
+     ["[原因|Gen'in]", "**tanpa nama orang**", "〜ことから〜が[生|shō]じた"],
+     ["[対応|Taiō]", "apa yang sudah dilakukan", "[直|Tada]ちに〜を[実施|jisshi]した"],
+     ["[再発防止策|Saihatsu bōshisaku]", "apa yang diubah supaya tak berulang", "[今後|Kongo]は〜することとする"]
+    ]},
+    {"type": "kotak", "title": "Contoh utuh", "items": [
+     "**1. [発生事象|Hassei jishō]** — [五月十二日|Gogatsu jūninichi][十時|jūji][十五分|jūgofun]、[受注|juchū]システムにおいて[接続|setsuzoku][障害|shōgai]が[発生|hassei]し、[約|yaku][四時間|yojikan]にわたり[利用|riyō]できない[状態|jōtai]となった。",
+     "**2. [影響範囲|Eikyō han'i]** — [当日|Tōjitsu]の[受注|juchū][処理|shori][約|yaku][八十件|hachijikken]に[遅|oku]れが[生|shō]じた。[データ|Dēta]の[欠損|kesson]は[確認|kakunin]されていない。",
+     "**3. [原因|Gen'in]** — [手順書|Tejunsho]に[当該|tōgai][設定|settei][工程|kōtei]の[記載|kisai]がなかったことから、[更新作業時|kōshin sagyōji]に[反映|han'ei][漏|mo]れが[生|shō]じたものと[考|kanga]えられる。",
+     "**4. [対応|Taiō]** — [障害|Shōgai][検知後|kenchigo][直|tada]ちに[設定|settei]を[再適用|saitekiyō]し、[十四時|jūyoji][二十分|nijuppun]に[復旧|fukkyū]を[確認|kakunin]した。",
+     "**5. [再発防止策|Saihatsu bōshisaku]** — [手順書|Tejunsho]を[改訂|kaitei]するとともに、[作業|sagyō][チェックリスト|chekkurisuto]を[導入|dōnyū]し、[二名|nimei]による[相互|sōgo][確認|kakunin]を[必須|hissu]とする。"
+    ]},
+    {"type": "p", "text": "Hitunglah berapa kali nama orang muncul: nol. Hitunglah berapa kata kerja yang berpelaku manusia: hampir nol. Inilah bahasa laporan Jepang, dan menguasainya berarti kamu bisa melaporkan masalah tanpa menciptakan musuh."}
+   ]
+  },
+  {
+   "title": "Rantai akibat: menyambung lebih dari satu langkah",
+   "blocks": [
+    {"type": "p", "text": "Laporan dan artikel jarang berhenti di satu sebab. Yang berikut adalah penyambung yang dipakai untuk merangkai beberapa langkah tanpa mengulang から."},
+    {"type": "tabel", "head": ["Penyambung", "Ragam", "Fungsi"], "rows": [
+     ["これにより", "【書】", "akibat langsung dari kalimat sebelumnya"],
+     ["その[結果|kekka]", "umum 【書】", "hasil akhirnya"],
+     ["それに[伴|tomona]い 【書】", "【書】", "menyertai perubahan itu"],
+     ["[ひいては|hiite wa] 【書】", "【書】", "dan pada akhirnya (dampak lebih luas)"],
+     ["したがって", "【書】", "maka, dengan demikian"],
+     ["そのため", "umum 【書】", "karena itu"],
+     ["[結果|Kekka]として", "【書】", "sebagai hasilnya"],
+     ["〜に[至|ita]った", "【書】", "menutup rantai: sampai terjadi ~"]
+    ]},
+    {"type": "kotak", "title": "Satu rantai empat langkah", "items": [
+     "[円安|En'yasu]が[進行|shinkō]した。**これにより**[輸入|yunyū][原材料費|genzairyōhi]が[上昇|jōshō]した。**それに[伴|tomona]い**[製品|seihin][価格|kakaku]の[改定|kaitei]が[避|sa]けられなくなり、**[結果|kekka]として**[一部|ichibu][商品|shōhin]の[値上|neage]げを[実施|jisshi]する**に[至|ita]った**。",
+     "Empat langkah, empat penyambung berbeda, dan tidak satu pun から. Inilah irama ragam tulis yang disebut Tanaka di Unit 4 — dan inilah yang menempel di badan kalau kamu menyalin tajuk rencana selama tiga hari."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "原因", "baca": "げんいん · gen'in", "id": "penyebab"},
+  {"ja": "根拠", "baca": "こんきょ · konkyo", "id": "dasar; landasan"},
+  {"ja": "更新", "baca": "こうしん · kōshin", "id": "pembaruan"},
+  {"ja": "手順", "baca": "てじゅん · tejun", "id": "langkah kerja"},
+  {"ja": "手順書", "baca": "てじゅんしょ · tejunsho", "id": "buku prosedur"},
+  {"ja": "反映する", "baca": "はんえいする · han'ei suru", "id": "menerapkan; tercermin"},
+  {"ja": "記載", "baca": "きさい · kisai", "id": "pencatatan 【書】"},
+  {"ja": "当該", "baca": "とうがい · tōgai", "id": "yang bersangkutan 【書】"},
+  {"ja": "漏れ", "baca": "もれ · more", "id": "kelalaian; yang terlewat"},
+  {"ja": "生じる", "baca": "しょうじる · shōjiru", "id": "timbul 【書】"},
+  {"ja": "発生する", "baca": "はっせいする · hassei suru", "id": "terjadi 【書】"},
+  {"ja": "判明する", "baca": "はんめいする · hanmei suru", "id": "menjadi jelas 【書】"},
+  {"ja": "明らかとなる", "baca": "あきらかとなる · akiraka to naru", "id": "terungkap 【書】"},
+  {"ja": "〜に至る", "baca": "にいたる · ni itaru", "id": "sampai pada ~ 【書】"},
+  {"ja": "犯人探し", "baca": "はんにんさがし · hannin sagashi", "id": "mencari siapa yang salah"},
+  {"ja": "再発防止策", "baca": "さいはつぼうしさく · saihatsu bōshisaku", "id": "langkah pencegahan berulang"},
+  {"ja": "改訂", "baca": "かいてい · kaitei", "id": "revisi (dokumen)"},
+  {"ja": "導入", "baca": "どうにゅう · dōnyū", "id": "penerapan; pemasukan"},
+  {"ja": "監視", "baca": "かんし · kanshi", "id": "pemantauan"},
+  {"ja": "障害", "baca": "しょうがい · shōgai", "id": "gangguan sistem"},
+  {"ja": "体制", "baca": "たいせい · taisei", "id": "sistem organisasi"},
+  {"ja": "課題", "baca": "かだい · kadai", "id": "persoalan yang harus digarap"},
+  {"ja": "〜により", "baca": "ni yori", "id": "oleh; karena 【書】"},
+  {"ja": "〜ことから", "baca": "koto kara", "id": "dari kenyataan bahwa ~ 【書】"},
+  {"ja": "〜につき", "baca": "ni tsuki", "id": "berhubung; per satuan 【書】"},
+  {"ja": "おかげで", "baca": "okage de", "id": "berkat ~ (baik)"},
+  {"ja": "せいで", "baca": "sei de", "id": "gara-gara ~ (buruk)"},
+  {"ja": "ゆえに", "baca": "yue ni", "id": "maka dari itu 【書】"},
+  {"ja": "〜以上", "baca": "いじょう · ijō", "id": "karena sudah ~"},
+  {"ja": "〜からには", "baca": "kara ni wa", "id": "kalau sudah ~"},
+  {"ja": "〜からこそ", "baca": "kara koso", "id": "justru karena ~"},
+  {"ja": "〜を踏まえて", "baca": "をふまえて · o fumaete", "id": "berdasarkan 【書】"},
+  {"ja": "〜に基づき", "baca": "にもとづき · ni motozuki", "id": "berdasarkan aturan 【書】"},
+  {"ja": "ところをみると", "baca": "tokoro o miru to", "id": "melihat bahwa ~"},
+  {"ja": "道理で", "baca": "どうりで · dōri de", "id": "pantas saja"},
+  {"ja": "受注", "baca": "じゅちゅう · juchū", "id": "penerimaan pesanan"},
+  {"ja": "停止", "baca": "ていし · teishi", "id": "penghentian"},
+  {"ja": "復旧", "baca": "ふっきゅう · fukkyū", "id": "pemulihan"},
+  {"ja": "検知", "baca": "けんち · kenchi", "id": "pendeteksian"},
+  {"ja": "欠損", "baca": "けっそん · kesson", "id": "kehilangan; cacat data"},
+  {"ja": "影響が及ぶ", "baca": "えいきょうがおよぶ · eikyō ga oyobu", "id": "dampaknya sampai"},
+  {"ja": "直ちに", "baca": "ただちに · tadachi ni", "id": "segera 【書】"},
+  {"ja": "実施する", "baca": "じっしする · jisshi suru", "id": "melaksanakan 【書】"},
+  {"ja": "相互確認", "baca": "そうごかくにん · sōgo kakunin", "id": "saling memeriksa"},
+  {"ja": "必須", "baca": "ひっす · hissu", "id": "wajib"},
+  {"ja": "円安", "baca": "えんやす · en'yasu", "id": "pelemahan yen"},
+  {"ja": "上昇する", "baca": "じょうしょうする · jōshō suru", "id": "naik 【書】"},
+  {"ja": "それに伴い", "baca": "それにともない · sore ni tomonai", "id": "seiring dengan itu 【書】"},
+  {"ja": "ひいては", "baca": "hiite wa", "id": "dan pada akhirnya 【書】"},
+  {"ja": "何よりです", "baca": "なによりです · nani yori desu", "id": "syukurlah"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih おかげで atau せいで.",
+   "items": [
+    "[皆様|Minasama]のご[協力|kyōryoku]の____、[無事|buji][終|o]わりました。",
+    "[渋滞|Jūtai]の____、[会議|kaigi]に[遅|oku]れた。",
+    "[天気|Tenki]が[良|yo]かった____、[写真|shashin]がきれいに[撮|to]れた。",
+    "[準備|Junbi][不足|busoku]の____、[質問|shitsumon]に[答|kota]えられなかった。",
+    "[先輩|Senpai]の[助言|jogen]の____、[方針|hōshin]が[決|ki]まった。"
+   ]
+  },
+  {
+   "prompt": "Ubah penanda sebab ragam lisan berikut menjadi ragam tulis laporan.",
+   "items": [
+    "システムが[止|to]まったから、[作業|sagyō]が[遅|oku]れた。",
+    "[雨|Ame]がひどかったので、[中止|chūshi]しました。",
+    "[説明|Setsumei]が[足|ta]りなかったせいで、[誤解|gokai]された。",
+    "[部品|Buhin]が[届|todo]かなかったから、[納品|nōhin]が[遅|oku]れる。",
+    "[調査|Chōsa]の[結果|kekka]を[見|mi]て、[方針|hōshin]を[変|ka]えた。"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang tanpa menyebut pelaku manusia.",
+   "items": [
+    "[林|Hayashi]さんが[手順|tejun]を[飛|to]ばしました。",
+    "[担当者|Tantōsha]が[確認|kakunin]を[忘|wasu]れました。",
+    "[私|Watashi]が[数字|sūji]を[間違|machiga]えました。",
+    "[新人|Shinjin]が[設定|settei]を[変|ka]えてしまいました。",
+    "[誰|Dare]も[報告|hōkoku]しませんでした。"
+   ]
+  },
+  {
+   "prompt": "Isi dengan これにより · その結果 · それに伴い · ひいては · 至った.",
+   "items": [
+    "[円安|En'yasu]が[進|susu]んだ。____、[輸入|yunyū][費用|hiyō]が[増|fu]えた。",
+    "[人口|Jinkō]が[減|he]っている。____、[地域|chiiki][経済|keizai]にも[影響|eikyō]が[出|de]る。",
+    "[売上|Uriage]が[落|o]ちた。____、[人員|jin'in][削減|sakugen]を[検討|kentō]することとなった。",
+    "[制度|Seido]が[変|ka]わった。____、[申請|shinsei][手続|tetsuzu]きも[変更|henkō]された。",
+    "[交渉|Kōshō]は[三|san]か[月|getsu][続|tsuzu]いたが、[合意|gōi]には____ 。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang ragam laporan.",
+   "items": [
+    "Karena tahapan tersebut tidak tercantum di buku prosedur, terjadi kelalaian saat pengerjaan.",
+    "Akibatnya, sistem berhenti selama sekitar empat jam.",
+    "Segera setelah gangguan terdeteksi, pengaturan diterapkan ulang.",
+    "Ke depan, daftar periksa akan diterapkan dan pemeriksaan oleh dua orang diwajibkan.",
+    "Melalui perkara ini, persoalan pada sistem pemantauan menjadi jelas."
+   ]
+  },
+  {
+   "prompt": "Tulis laporan lima bagian lengkap untuk keadaan berikut.",
+   "items": [
+    "Sebuah surel berisi data pelanggan salah kirim ke alamat lain. Tidak ada kerugian yang terjadi, tapi kejadiannya harus dilaporkan.",
+    "Pengiriman ke satu pelanggan terlambat empat hari karena dua bagian sama-sama mengira bagian lain yang mengurusnya."
+   ]
+  }
+ ],
+ "answers": [
+  "おかげで — せいで — おかげで — せいで — おかげで",
+  "システム[障害|shōgai]により、[作業|sagyō]に[遅|oku]れが[生|shō]じた。 — [荒天|Kōten]のため、[中止|chūshi]といたしました。 — [説明|Setsumei]が[不十分|fujūbun]であったことから、[誤解|gokai]が[生|shō]じた。 — [部品|Buhin]の[入荷|nyūka][遅延|chien]により、[納品|nōhin]が[遅|oku]れる[見込|miko]みである。 — [調査結果|Chōsa kekka]を[踏|fu]まえ、[方針|hōshin]を[変更|henkō]した。",
+  "[当該|Tōgai][工程|kōtei]が[実施|jisshi]されなかった。 — [確認|Kakunin][工程|kōtei]に[漏|mo]れが[生|shō]じた。 — [数値|Sūchi]に[誤|ayama]りが[生|shō]じた。 — [設定|Settei]が[意図|ito]せず[変更|henkō]された。 — [報告|Hōkoku]が[行|okona]われないまま[時間|jikan]が[経過|keika]した。",
+  "これにより — ひいては — その[結果|kekka] — それに[伴|tomona]い — [至|ita]らなかった",
+  "[手順書|Tejunsho]に[当該|tōgai][工程|kōtei]の[記載|kisai]がなかったことから、[作業時|sagyōji]に[漏|mo]れが[生|shō]じた。 — これにより、システムが[約|yaku][四時間|yojikan][停止|teishi]するに[至|ita]った。 — [障害|Shōgai][検知後|kenchigo][直|tada]ちに[設定|settei]を[再適用|saitekiyō]した。 — [今後|Kongo]は[チェックリスト|chekkurisuto]を[導入|dōnyū]し、[二名|nimei]による[相互|sōgo][確認|kakunin]を[必須|hissu]とする。 — [本件|Honken]により、[監視体制|kanshi taisei]の[課題|kadai]が[明|aki]らかとなった。",
+  "Contoh 1／**[発生事象|Hassei jishō]**：[五月|Gogatsu][二十日|hatsuka][十六時|jūrokuji][四十分|yonjuppun]、[顧客|kokyaku][情報|jōhō]を[含|fuku]む[メール|mēru][一通|ittsū]を、[宛先|atesaki][選択|sentaku][誤|ayama]りにより[社外|shagai]の[別|betsu][アドレス|adoresu]に[送信|sōshin]した。**[影響範囲|Eikyō han'i]**：[対象|Taishō]は[三名|sanmei]の[氏名|shimei]および[電話番号|denwa bangō]である。[受信者|Jushinsha]より[削除|sakujo][完了|kanryō]の[連絡|renraku]を[受|u]けており、[二次|niji][被害|higai]は[確認|kakunin]されていない。**[原因|Gen'in]**：[宛先|Atesaki][補完|hokan][機能|kinō]により[類似|ruiji][アドレス|adoresu]が[自動|jidō][入力|nyūryoku]されたことから、[送信前|sōshinmae][確認|kakunin]の[漏|mo]れが[生|shō]じた。**[対応|Taiō]**：[発覚後|Hakkakugo][直|tada]ちに[受信者|jushinsha]へ[連絡|renraku]し、[削除|sakujo]を[依頼|irai]した。[対象|Taishō][顧客|kokyaku][三名|sanmei]にも[経緯|keii]を[報告|hōkoku]した。**[再発防止策|Saihatsu bōshisaku]**：[社外|Shagai][宛|ate][メール|mēru]の[宛先|atesaki][自動|jidō][補完|hokan]を[無効|mukō]とし、[顧客|kokyaku][情報|jōhō][添付|tenpu][時|ji]は[上長|jōchō][承認|shōnin]を[必須|hissu]とする。 — Contoh 2／**[発生事象|Hassei jishō]**：[六月|Rokugatsu][三日|mikka][納期|nōki]の[出荷|shukka]が[四日間|yokkakan][遅延|chien]した。**[影響範囲|Eikyō han'i]**：[顧客|Kokyaku][一社|issha]の[製造|seizō][計画|keikaku]に[遅|oku]れが[生|shō]じた。**[原因|Gen'in]**：[出荷|Shukka][手配|tehai]の[所管|shokan]が[規定|kitei]に[明記|meiki]されていなかったことから、[営業|eigyō]・[物流|butsuryū][双方|sōhō]が[相手方|aitegata]の[対応|taiō]と[認識|ninshiki]する[状態|jōtai]が[生|shō]じた。**[対応|Taiō]**：[判明後|Hanmeigo][直|tada]ちに[特別|tokubetsu][便|bin]を[手配|tehai]し、[四日|yokka][遅|oku]れで[納入|nōnyū]を[完了|kanryō]した。**[再発防止策|Saihatsu bōshisaku]**：[出荷|Shukka][手配|tehai]の[所管|shokan]を[業務|gyōmu][規定|kitei]に[明記|meiki]するとともに、[納期|nōki][三日前|mikkamae]に[自動|jidō][リマインド|rimaindo]を[配信|haishin]する[仕組|shiku]みを[導入|dōnyū]する。"
+ ],
+ "wave": "Ambil laporan lima bagian yang kamu tulis di latihan terakhir, lalu ceritakan isi yang sama kepada teman dalam ragam santai — memakai せいで, から, dan bentuk susut Unit 4. Lakukan berurutan tanpa jeda. Latihan ini yang paling cepat memasang sakelar ragam di kepalamu, karena ia memaksamu memindahkan isi yang sama melewati tiga ruangan berbeda."
+}

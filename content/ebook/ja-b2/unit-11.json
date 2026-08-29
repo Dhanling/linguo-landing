@@ -1,0 +1,278 @@
+{
+ "title": "Rapat, presentasi, dan angka yang harus dibaca keras-keras",
+ "title_target": "[会議|Kaigi]と[プレゼン|purezen]・[数字|sūji]と[グラフ|gurafu]",
+ "goal": "Memimpin dan mengikuti rapat Jepang dengan ungkapan tetapnya, membaca angka besar serta persentase dengan benar, dan menggambarkan grafik naik-turun dalam ragam presentasi.",
+ "bekal": ["memakai ungkapan tetap pembuka, pemotong, dan penutup rapat", "membaca [億|oku], [兆|chō], persen, dan [割|wari] tanpa ragu", "menggambarkan kenaikan dan penurunan dengan sepuluh kata kerja", "menyusun presentasi tiga bagian dengan penanda peralihan", "menjawab pertanyaan yang tidak kamu ketahui jawabannya"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Presentasi hasil kuartal",
+   "intro": "Ani mempresentasikan angka kuartal pertama. Bacalah keras-keras — angka bahasa Jepang hanya menempel lewat mulut, bukan lewat mata.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "それでは、[第一四半期|dai-ichi shihanki]の[実績|jisseki]についてご[報告|hōkoku]いたします。お[手元|temoto]の[資料|shiryō][三|san][ページ|pēji]をご[覧|ran]ください。", "id": "Kalau begitu, saya laporkan capaian kuartal pertama. Mohon lihat halaman tiga materi yang ada di tangan Anda.", "literal": "kalau-begitu, ke-satu-empat-bagian-masa — punya — capaian — tentang — laporan(hormat) — melakukan(rendah). tangan-dekat(hormat) — punya — bahan — tiga — halaman — akan — melihat(hormat) — silakan."},
+    {"speaker": "[アニ|Ani]:", "text": "[売上高|Uriagedaka]は[十二億|jūni oku][三千万円|sanzenman en]、[前年同期比|zennen dōkihi]で[七|nana][パーセント|pāsento]の[増|zō]となりました。", "id": "Nilai penjualan 1,23 miliar yen, naik tujuh persen dibanding periode yang sama tahun lalu.", "literal": "jual-atas-tinggi — mengenai — dua-belas-ratus-juta — tiga-ribu-puluh-ribu-yen, tahun-lalu-sama-masa-banding — dengan — tujuh — persen — punya — tambah — menjadi(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "ただし、[伸|no]びは[第一|dai-ichi][四半期|shihanki]としては[鈍|nibu]く、[計画|keikaku][比|hi]では[三|san][パーセント|pāsento]の[未達|mitatsu]でございます。[グラフ|Gurafu]をご[覧|ran]いただくと、[二月|nigatsu]に[落|o]ち[込|ko]んでいるのが[分|wa]かります。", "id": "Namun, pertumbuhannya lambat untuk ukuran kuartal pertama, dan dibanding rencana masih kurang tiga persen. Kalau Anda lihat grafiknya, terlihat penurunan di bulan Februari.", "literal": "namun, pertumbuhan — mengenai — ke-satu — empat-bagian-masa — sebagai — mengenai — tumpul, rencana — banding — dengan — mengenai — tiga — persen — punya — belum-capai — adalah(hormat). grafik — akan — melihat(hormat) — menerima — kalau, dua-bulan — pada — jatuh-masuk — sedang — yang — mengerti."},
+    {"speaker": "[田中|Tanaka]:", "text": "[二月|Nigatsu]の[落|o]ち[込|ko]みは[何|nani]によるものですか。", "id": "Penurunan bulan Februari itu disebabkan oleh apa?", "literal": "dua-bulan — punya — jatuh-masuk — mengenai — apa — oleh — bergantung — hal — adalah — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[大|Ō]きく[二|futa]つございます。[一|Hito]つは[大雪|ōyuki]による[配送|haisō]の[遅|oku]れ、もう[一|hito]つは[競合|kyōgō]の[値下|nesa]げでございます。[前者|Zensha]は[一時的|ichijiteki]、[後者|kōsha]は[継続的|keizokuteki]な[要因|yōin]と[見|mi]ております。", "id": "Ada dua hal besar. Satu, keterlambatan pengiriman akibat salju tebal; satu lagi, penurunan harga pesaing. Yang pertama kami lihat sebagai faktor sementara, yang kedua sebagai faktor berkelanjutan.", "literal": "besar — dua — ada(hormat). satu — mengenai — besar-salju — oleh — pengiriman — punya — terlambat, satu-lagi — mengenai — pesaing — punya — turun-harga — adalah(hormat). depan-orang — mengenai — sesaat, belakang-orang — mengenai — terus-menerus — faktor — sebagai — melihat(rendah)."},
+    {"speaker": "[木村|Kimura]:", "text": "[競合|Kyōgō]の[値下|nesa]げは[何|nan][パーセント|pāsento]ですか。", "id": "Penurunan harga pesaing berapa persen?", "literal": "pesaing — punya — turun-harga — mengenai — berapa — persen — adalah — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[定番品|Teibanhin]で[約|yaku][一割|ichiwari]、[新製品|shinseihin]では[二割|niwari][近|chika]くでございます。[ただ|Tada]、これは[店頭|tentō][価格|kakaku]であって、[実売|jitsubai][価格|kakaku]までは[確認|kakunin]できておりません。", "id": "Untuk produk andalan sekitar sepuluh persen, untuk produk baru mendekati dua puluh persen. Hanya saja, ini harga di rak toko; harga jual sebenarnya belum bisa kami pastikan.", "literal": "tetap-barang — dengan — kira-kira — satu-bagian-sepuluh, baru-produk — dengan — mengenai — dua-bagian-sepuluh — dekat — adalah(hormat). hanya, ini — mengenai — toko-depan — harga — adalah-dan, nyata-jual — harga — sampai — mengenai — pemeriksaan — bisa — tidak(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[分|Wa]からないことを[分|wa]からないと[言|i]うのはいい。で、[第二四半期|dai-ni shihanki]の[見通|mitō]しは。", "id": "Bagus, mengatakan tidak tahu untuk hal yang tidak diketahui. Nah, bagaimana prospek kuartal kedua?", "literal": "mengerti — tidak — hal — akan — mengerti — tidak — bahwa — mengatakan — yang — mengenai — baik. lalu, ke-dua-empat-bagian-masa — punya — pandangan-jauh — mengenai."},
+    {"speaker": "[アニ|Ani]:", "text": "[現状|Genjō]のままですと、[通期|tsūki]で[五|go][パーセント|pāsento][程度|teido]の[未達|mitatsu]となる[見込|mikom]みです。ただし、[部分|bubun][値上|neage]げが[通|tō]れば、[三|san][パーセント|pāsento]まで[圧縮|asshuku]できると[試算|shisan]しております。", "id": "Kalau keadaannya tetap begini, diperkirakan meleset sekitar lima persen untuk setahun penuh. Namun, kalau kenaikan harga sebagian disetujui, kami hitung bisa ditekan sampai tiga persen.", "literal": "keadaan-sekarang — punya — tetap — kalau, seluruh-masa — dengan — lima — persen — kira-kira — punya — belum-capai — menjadi — perkiraan — adalah. namun, bagian — naik-harga — yang — lewat — kalau, tiga — persen — sampai — pemampatan — bisa — bahwa — hitung-coba — sedang(rendah)."},
+    {"speaker": "[田中|Tanaka]:", "text": "その[試算|shisan]の[前提|zentei]は[資料|shiryō]に[入|hai]っているか。", "id": "Asumsi hitungan itu sudah masuk di materi?", "literal": "itu — hitung-coba — punya — dasar-anggapan — mengenai — bahan — pada — masuk — sedang — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[巻末|Kanmatsu]の[付表|fuhyō]に[記載|kisai]しております。[数量|Sūryō]は[横|yoko]ばい、[為替|kawase]は[現行|genkō][水準|suijun]という[前提|zentei]でございます。", "id": "Tercantum di lampiran tabel di bagian belakang. Asumsinya: volume mendatar, kurs pada level sekarang.", "literal": "gulung-akhir — punya — lampiran-tabel — pada — pencatatan — sedang(rendah). jumlah — mengenai — samping — merangkak, kurs — mengenai — sekarang-berlaku — tingkat — yang-disebut — dasar-anggapan — adalah(hormat)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[結構|Kekkō]。では、[部分|bubun][値上|neage]げの[件|ken]を[次|tsugi]の[議題|gidai]にしよう。", "id": "Baik. Kalau begitu, perkara kenaikan harga sebagian kita jadikan agenda berikutnya.", "literal": "cukup. kalau-begitu, bagian — naik-harga — punya — perkara — akan — berikut — punya — agenda — mari-jadikan."}
+   ],
+   "notes": [
+    "**Bahasa Jepang membagi angka besar per EMPAT digit, bukan tiga.** [万|man] = 10.000, [億|oku] = 100.000.000, [兆|chō] = 1.000.000.000.000. Jadi 1.230.000.000 dibaca [十二億|jūni oku][三千万|sanzenman] — dua belas “oku” dan tiga ribu “man”. Membaca angka Jepang cepat menuntut kamu berhenti berpikir dalam ribuan; latihannya adalah memenggal digit dari kanan setiap empat, bukan tiga.",
+    "**[割|wari] = sepuluh persen, dan ia lebih sering dipakai daripada persen dalam percakapan.** [一割|Ichiwari] = 10%, [二割|niwari] = 20%, [三割五分|sanwari gobu] = 35%. Perhatikan bahwa [分|bu] di sini berarti satu persen, bukan menit. Diskon toko hampir selalu ditulis [三割引|sanwaribiki].",
+    "**[前年同期比|zennen dōkihi] — kata yang wajib dikenali di setiap laporan.** Sepupunya: [前月比|zengetsuhi] (dibanding bulan lalu), [前期比|zenkihi] (dibanding kuartal lalu), [計画比|keikakuhi] (dibanding rencana), [対|tai][前年|zennen] (versus tahun lalu).",
+    "**[未達|mitatsu] = tidak mencapai target.** Ia kata kantor yang sangat sering muncul dan tidak diajarkan di kelas: [五|go][パーセント|pāsento]の[未達|mitatsu] · [未達|mitatsu]が[続|tsuzu]く. Lawannya [達成|tassei] dan [超過|chōka] (melampaui).",
+    "**[前者|zensha] dan [後者|kōsha]** — “yang pertama” dan “yang kedua”. Wajib untuk presentasi dan tulisan, dan hemat sekali: ia menggantikan pengulangan seluruh frasa. Sepupu ragam tulis: [それぞれ|sorezore] (masing-masing), [いずれ|izure]も (keduanya).",
+    "**Baris 8 memuji Ani karena mengatakan bahwa ia tidak tahu.** Ini nyata di budaya rapat Jepang: menyatakan batas datamu (〜までは[確認|kakunin]できておりません) jauh lebih dihargai daripada menebak dengan percaya diri. Ungkapan bakunya: [確認|Kakunin]の[上|ue]、[改|arata]めてご[報告|hōkoku]いたします。",
+    "**[前提|zentei] — kata yang menyelamatkanmu di setiap presentasi berdata.** Menyebutkan asumsi sebelum ditanya membuat angkamu bisa diperiksa dan menghilangkan separuh serangan: [数量|Sūryō][横|yoko]ばい、[為替|kawase][現行|genkō][水準|suijun]という[前提|zentei]でございます。",
+    "**[横|yoko]ばい = mendatar, tak naik tak turun.** Ia salah satu dari sekelompok kata gerak grafik yang muncul di setiap laporan. Sisanya ada di kotak tata bahasa berikutnya, dan semuanya layak dihafal sekaligus."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca angka: yang harus otomatis",
+     "table": {
+      "head": ["Bentuk", "Cara baca", "Catatan"],
+      "rows": [
+       ["10.000", "[一万|ichiman]", "**selalu** 一万, bukan ×まん"],
+       ["120.000", "[十二万|jūniman]", ""],
+       ["1.000.000", "[百万|hyakuman]", "satu juta = seratus man"],
+       ["100.000.000", "[一億|ichioku]", ""],
+       ["1.230.000.000", "[十二億三千万|jūni oku sanzenman]", "penggalan empat digit"],
+       ["1.000.000.000.000", "[一兆|itchō]", ""],
+       ["0,5", "[〇|rei][点|ten][五|go]", "[点|ten] untuk koma desimal"],
+       ["3%", "[三|san][パーセント|pāsento]", ""],
+       ["30%", "[三割|sanwari]", "lebih lazim dalam percakapan"],
+       ["35%", "[三割五分|sanwari gobu]", "[分|bu] = 1%"],
+       ["¥1.234", "[千二百三十四円|sen nihyaku sanjūyon en]", "[四|yon], bukan し"],
+       ["7月", "[七月|shichigatsu]", "bulan: しちがつ, bukan ×なながつ"],
+       ["¥100.000", "[十万円|jūman en]", "gaji & sewa hampir selalu dalam [万|man]"]
+      ]
+     },
+     "after": [
+      "**Tiga jebakan bunyi yang sering menjatuhkan pembelajar:** [一万|ichiman] tak pernah kehilangan いち; [一兆|itchō] memendek; dan bulan Juli–September dibaca しち・はち・く, bukan なな・や・きゅう. Untuk uang dan tanggal, kesalahan bunyi berarti salah angka.",
+      "**Dalam percakapan sehari-hari, orang Jepang menyebut uang dalam [万|man]:** [家賃|Yachin]は[八万|hachiman] (sewa 80.000 yen), [給料|kyūryō]は[三十万|sanjūman]. Menyebut 八十千円 bukan hanya janggal, tapi tak akan dipahami."
+     ]
+    },
+    {
+     "title": "Kata gerak grafik: naik, turun, dan yang di antaranya",
+     "table": {
+      "head": ["Arah", "Kata", "Nuansa"],
+      "rows": [
+       ["naik", "[増|fu]える · [増加|zōka]する 【書】", "netral"],
+       ["naik", "[伸|no]びる · [上昇|jōshō]する 【書】", "tumbuh, tren"],
+       ["naik tajam", "[急増|kyūzō]する · [急伸|kyūshin]する · [跳|ha]ね[上|a]がる", "melonjak"],
+       ["naik pelan", "[微増|bizō] · [緩|yuru]やかに[伸|no]びる", "sedikit"],
+       ["turun", "[減|he]る · [減少|genshō]する 【書】", "netral"],
+       ["turun", "[落|o]ち[込|ko]む · [下|sa]がる", "merosot, sering negatif"],
+       ["turun tajam", "[急減|kyūgen] · [激減|gekigen] · [半減|hangen]", "半減 = tinggal setengah"],
+       ["mendatar", "[横|yoko]ばい · [横|yoko]ばう", "tak berubah"],
+       ["memuncak", "ピークに[達|tas]する · [頭打|atamau]ち", "頭打ち = mentok"],
+       ["pulih", "[回復|kaifuku]する · [持|mo]ち[直|nao]す", "membaik lagi"],
+       ["berbalik", "[反転|hanten]する · [底|soko]を[打|u]つ", "底を打つ = mencapai dasar"]
+      ]
+     },
+     "after": [
+      "**Keterangan derajat yang menyertainya:** わずかに (sedikit sekali) < [やや|yaya] (agak) < [徐々|jojo]に (bertahap) < [大幅|ōhaba]に (besar-besaran) < [急激|kyūgeki]に (drastis). Semuanya 【書】 dan semuanya muncul di presentasi.",
+      "**Rangka kalimat grafik yang selalu bisa dipakai:** 〈waktu〉から〈waktu〉にかけて、〈hal〉は〈derajat〉〈kata gerak〉。 Contoh: [一月|Ichigatsu]から[三月|sangatsu]にかけて、[売上|uriage]は[大幅|ōhaba]に[落|o]ち[込|ko]みました。"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Sesudah rapat, di lorong",
+   "intro": "Kimura memberi Ani nasihat yang tidak diberikan siapa pun di dalam ruangan.",
+   "lines": [
+    {"speaker": "[木村|Kimura]:", "text": "[数字|Sūji]、よく[頭|atama]に[入|hai]ってたね。[緊張|Kinchō]してた？", "id": "Angkanya masuk di kepalamu ya. Gugup nggak?", "literal": "angka, baik — kepala — pada — masuk — sedang(lampau) — ya. tegang — melakukan — sedang(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[最初|Saisho]の[三十秒|sanjūbyō]だけ。[読|Yo]み[上|a]げ[始|haji]めたら[平気|heiki]でした。", "id": "Cuma tiga puluh detik pertama. Begitu mulai membacakan, jadi biasa saja.", "literal": "awal — punya — tiga-puluh-detik — hanya. membaca-mengangkat — mulai — kalau — tak-apa — adalah(lampau)."},
+    {"speaker": "[木村|Kimura]:", "text": "[一|Hito]つだけ。[答|Kota]えられない[質問|shitsumon]が[来|ki]たとき、[黙|dama]らないほうがいい。", "id": "Satu saja. Waktu datang pertanyaan yang nggak bisa kamu jawab, mendingan jangan diam.", "literal": "satu — hanya. menjawab-bisa — tidak — pertanyaan — yang — datang(lampau) — waktu, diam — tidak — pihak — yang — baik."},
+    {"speaker": "[アニ|Ani]:", "text": "[実売|Jitsubai][価格|kakaku]のところですね。[一秒|Ichibyō][詰|tsu]まりました。", "id": "Bagian harga jual sebenarnya ya. Saya sempat tersendat sedetik.", "literal": "nyata-jual — harga — punya — tempat — adalah — ya. satu-detik — tersumbat(lampau)."},
+    {"speaker": "[木村|Kimura]:", "text": "[一秒|Ichibyō]なら[大丈夫|daijōbu]。[三秒|Sanbyō][黙|dama]ると、[聞|ki]いてるほうが「この[人|hito][把握|haaku]してないな」って[思|omo]い[始|haji]める。[中身|Nakami]じゃなくて[間|ma]の[問題|mondai]。", "id": "Kalau sedetik nggak apa-apa. Kalau diam tiga detik, yang mendengarkan mulai mikir “orang ini nggak menguasai”. Bukan soal isinya, tapi soal jedanya.", "literal": "satu-detik — kalau — tak-apa. tiga-detik — diam — kalau, mendengar — sedang — pihak — yang — “ini — orang — penguasaan — melakukan — tidak — ya” — begitu — berpikir — mulai. isi — bukan-dan — jeda — punya — masalah."},
+    {"speaker": "[アニ|Ani]:", "text": "じゃあ[何|nani]を[言|i]えば。", "id": "Terus harus ngomong apa?", "literal": "kalau-begitu — apa — akan — mengatakan — kalau."},
+    {"speaker": "[木村|Kimura]:", "text": "「いいご[質問|shitsumon]です」でもいいし、「[確認|kakunin]して[改|arata]めて」でもいい。[要|Yō]は[音|oto]を[止|to]めないこと。[考|Kanga]えてる[間|aida]も[口|kuchi]は[動|ugo]かす。", "id": "“Pertanyaan yang bagus” juga boleh, “akan saya cek dan sampaikan lagi” juga boleh. Intinya jangan menghentikan suara. Selagi berpikir pun mulut tetap bergerak.", "literal": "“baik — pertanyaan(hormat) — adalah” — pun — baik — dan, “pemeriksaan — melakukan — baru — arah” — pun — baik. inti — mengenai — bunyi — akan — menghentikan — tidak — hal. berpikir — sedang — selama — juga — mulut — mengenai — menggerakkan."},
+    {"speaker": "[アニ|Ani]:", "text": "[日本語|Nihongo]で[考|kanga]えながら[話|hana]すの、まだ[難|muzuka]しいです。", "id": "Berbicara sambil berpikir dalam bahasa Jepang, masih sulit buat saya.", "literal": "Jepang-bahasa — dengan — berpikir — sambil — berbicara — yang, masih — sulit — adalah."},
+    {"speaker": "[木村|Kimura]:", "text": "だから[決|ki]まり[文句|monku]を[覚|obo]えるんだよ。[考|Kanga]えなくても[出|de]てくる[言葉|kotoba]を[五|itsu]つ[持|mo]っておけば、[五秒|gobyō][稼|kase]げる。[五秒|Gobyō]あれば[答|kota]えは[作|tsuku]れる。", "id": "Makanya hafalkan kalimat baku. Kalau punya lima kalimat yang keluar tanpa dipikir, kamu bisa mengulur lima detik. Kalau ada lima detik, jawabannya bisa disusun.", "literal": "karena — tetap — kata — akan — mengingat — adalah — ya. berpikir — tidak — meskipun — keluar — datang — kata — akan — lima — memiliki — menaruh — kalau, lima-detik — mengulur-bisa. lima-detik — ada — kalau — jawaban — mengenai — membuat-bisa."}
+   ],
+   "notes": [
+    "**[間|ma] — kata yang tak punya padanan langsung.** Artinya jeda, ruang, waktu antara. [間|Ma]が[悪|waru]い (canggung), [間|ma]が[持|mo]たない (tak tahu harus berbuat apa saat hening), [間|ma]を[置|o]く (memberi jeda). Dalam penilaian presentasi Jepang, 間 sering dibicarakan sama seriusnya dengan isi.",
+    "**[決|Ki]まり[文句|monku] = kalimat baku, ungkapan tetap.** Nasihat Kimura sangat praktis dan berlaku untuk semua bahasa asing: hafalkan beberapa kalimat pengulur waktu supaya kamu bisa berpikir sambil berbicara. Daftarnya ada di bagian tema berikut.",
+    "**[要|Yō]は = “intinya”.** Sangat berguna untuk meringkas ucapan sendiri: [要|Yō]は[時間|jikan]がないということです. Sepupunya: つまり, [すなわち|sunawachi] 【書】, [言|i]い[換|ka]えれば, [結局|kekkyoku].",
+    "**[稼|Kase]ぐ biasanya berarti “mencari uang”, tapi dengan waktu ia berarti “mengulur”.** [時間|Jikan]を[稼|kase]ぐ · [五秒|Gobyō][稼|kase]ぐ. Ungkapan ini juga muncul di olahraga dan negosiasi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ungkapan tetap rapat: dari pembuka sampai penutup",
+   "blocks": [
+    {"type": "tabel", "head": ["Saat", "Ungkapan"], "rows": [
+     ["Membuka", "それでは、[時間|jikan]になりましたので[始|haji]めさせていただきます。"],
+     ["Menyebut agenda", "[本日|Honjitsu]の[議題|gidai]は[三|mit]つございます。"],
+     ["Masuk ke pokok", "[早速|Sassoku]ですが、[一|hito]つ[目|me]の[議題|gidai]から[入|hai]らせていただきます。"],
+     ["Menunjuk materi", "お[手元|temoto]の[資料|shiryō][三|san][ページ|pēji]をご[覧|ran]ください。"],
+     ["Meminta pendapat", "この[点|ten]について、ご[意見|iken]をいただけますでしょうか。"],
+     ["Menyela dengan sopan", "[恐|Oso]れ[入|i]ります、[一点|itten]よろしいでしょうか。"],
+     ["Kembali ke topik", "[話|Hanashi]を[戻|modo]させていただきますと、"],
+     ["Menunda", "[本件|Honken]は[持|mo]ち[帰|kae]らせていただき、[改|arata]めてご[相談|sōdan]いたします。"],
+     ["Meringkas", "[整理|Seiri]いたしますと、[論点|ronten]は[二|futa]つかと[存|zon]じます。"],
+     ["Menutup", "それでは、[本日|honjitsu]は[以上|ijō]とさせていただきます。ありがとうございました。"]
+    ]},
+    {"type": "sub", "text": "Lima kalimat pengulur waktu yang wajib dihafal"},
+    {"type": "kotak", "title": "Untuk dipakai saat kamu belum punya jawaban", "items": [
+     "**ご[質問|shitsumon]ありがとうございます。** — membeli dua detik dan terdengar profesional.",
+     "**[確認|Kakunin]の[上|ue]、[改|arata]めてご[報告|hōkoku]いたします。** — jawaban paling aman untuk data yang tak kamu pegang.",
+     "**[私|Watashi]の[理解|rikai]では〜ですが、[念|nen]のため[確認|kakunin]させてください。** — menjawab sekaligus memagari.",
+     "**ご[指摘|shiteki]の[点|ten]は[重要|jūyō]かと[存|zon]じます。** — mengakui sebelum menjawab; mengulur sambil menaikkan lawan bicara.",
+     "**[少|Suko]々[お時間|o-jikan]をいただけますでしょうか。** — jujur, dan jauh lebih baik daripada hening tiga detik."
+    ]},
+    {"type": "p", "text": "Semua ini sudah kamu kenal potongannya dari Unit 1 sampai 3. Yang baru bukan tata bahasanya, melainkan kesadaran bahwa mereka juga berfungsi sebagai **pengatur waktu berpikir** — dan itulah fungsi yang paling menolong penutur asing."}
+   ]
+  },
+  {
+   "title": "Rangka presentasi tiga bagian",
+   "blocks": [
+    {"type": "p", "text": "Presentasi Jepang biasanya lebih rapat dan lebih banyak angkanya daripada presentasi Barat, dan hampir selalu menyebutkan susunannya di awal."},
+    {"type": "kotak", "title": "Susunan baku", "items": [
+     "**1. [結論|Ketsuron]** — di banyak perusahaan, kesimpulan disebut lebih dulu: [結論|Ketsuron]から[申|mō]し[上|a]げますと、[通期|tsūki]では[未達|mitatsu]の[見込|mikom]みでございます。",
+     "**2. [現状|Genjō]** — angka dan grafik: [売上高|Uriagedaka]は〜、[前年同期比|zennen dōkihi]で〜。",
+     "**3. [要因|Yōin]** — analisis sebab, memakai perangkat Unit 7: 〜ことから · 〜により。",
+     "**4. [対策|Taisaku]** — usulan, memakai perangkat Unit 6 dan 8: 〜という[選択肢|sentakushi] · 〜であれば〜[可能|kanō]。",
+     "**5. [お願|Onega]い** — apa yang kamu minta dari hadirin: [本日|Honjitsu]は[方向性|hōkōsei]のご[承認|shōnin]をいただきたく[存|zon]じます。"
+    ]},
+    {"type": "sub", "text": "Penanda peralihan"},
+    {"type": "tabel", "head": ["Fungsi", "Penanda"], "rows": [
+     ["Pindah bagian", "[続|Tsuzu]きまして · [次|Tsugi]に · では[続|tsuzu]けて"],
+     ["Menambah", "さらに · [加|Kuwa]えて · なお 【書】"],
+     ["Membandingkan", "[一方|Ippō]で · これに[対|tai]し 【書】"],
+     ["Memberi contoh", "[具体的|Gutaiteki]には · [例|Tato]えば"],
+     ["Menyimpulkan", "[以上|Ijō]のことから · [まとめ|Matome]ますと · [要|Yō]するに"],
+     ["Menutup", "[以上|Ijō]でございます · ご[清聴|seichō]ありがとうございました"]
+    ]},
+    {"type": "p", "text": "**[以上|Ijō]でございます adalah penutup wajib.** Presentasi Jepang yang berhenti tanpa kata ini terasa menggantung — hadirin benar-benar menunggu sinyal bahwa gilirannya selesai. Sepupunya di rapat: [私|Watashi]からは[以上|ijō]です。"}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "四半期", "baca": "しはんき · shihanki", "id": "kuartal"},
+  {"ja": "実績", "baca": "じっせき · jisseki", "id": "capaian; realisasi"},
+  {"ja": "お手元", "baca": "おてもと · o-temoto", "id": "yang ada di tangan Anda 【敬】"},
+  {"ja": "売上高", "baca": "うりあげだか · uriagedaka", "id": "nilai penjualan"},
+  {"ja": "億", "baca": "おく · oku", "id": "seratus juta"},
+  {"ja": "兆", "baca": "ちょう · chō", "id": "satu triliun"},
+  {"ja": "前年同期比", "baca": "ぜんねんどうきひ · zennen dōkihi", "id": "dibanding periode sama tahun lalu"},
+  {"ja": "鈍い", "baca": "にぶい · nibui", "id": "lambat; tumpul"},
+  {"ja": "未達", "baca": "みたつ · mitatsu", "id": "tidak mencapai target"},
+  {"ja": "達成", "baca": "たっせい · tassei", "id": "pencapaian target"},
+  {"ja": "落ち込む", "baca": "おちこむ · ochikomu", "id": "merosot"},
+  {"ja": "大雪", "baca": "おおゆき · ōyuki", "id": "salju tebal"},
+  {"ja": "配送", "baca": "はいそう · haisō", "id": "pengiriman"},
+  {"ja": "前者", "baca": "ぜんしゃ · zensha", "id": "yang pertama 【書】"},
+  {"ja": "後者", "baca": "こうしゃ · kōsha", "id": "yang kedua 【書】"},
+  {"ja": "一時的", "baca": "いちじてき · ichijiteki", "id": "sementara"},
+  {"ja": "継続的", "baca": "けいぞくてき · keizokuteki", "id": "berkelanjutan"},
+  {"ja": "割", "baca": "わり · wari", "id": "sepuluh persen"},
+  {"ja": "分", "baca": "ぶ · bu", "id": "satu persen (dalam 割)"},
+  {"ja": "店頭価格", "baca": "てんとうかかく · tentō kakaku", "id": "harga di rak toko"},
+  {"ja": "実売価格", "baca": "じつばいかかく · jitsubai kakaku", "id": "harga jual sebenarnya"},
+  {"ja": "見通し", "baca": "みとおし · mitōshi", "id": "prospek; pandangan ke depan"},
+  {"ja": "現状", "baca": "げんじょう · genjō", "id": "keadaan sekarang"},
+  {"ja": "通期", "baca": "つうき · tsūki", "id": "setahun buku penuh"},
+  {"ja": "圧縮する", "baca": "あっしゅくする · asshuku suru", "id": "memampatkan; menekan"},
+  {"ja": "前提", "baca": "ぜんてい · zentei", "id": "asumsi dasar"},
+  {"ja": "巻末", "baca": "かんまつ · kanmatsu", "id": "bagian belakang dokumen"},
+  {"ja": "付表", "baca": "ふひょう · fuhyō", "id": "tabel lampiran"},
+  {"ja": "横ばい", "baca": "よこばい · yokobai", "id": "mendatar"},
+  {"ja": "為替", "baca": "かわせ · kawase", "id": "nilai tukar"},
+  {"ja": "現行", "baca": "げんこう · genkō", "id": "yang berlaku sekarang 【書】"},
+  {"ja": "水準", "baca": "すいじゅん · suijun", "id": "tingkat; level"},
+  {"ja": "議題", "baca": "ぎだい · gidai", "id": "agenda rapat"},
+  {"ja": "急増する", "baca": "きゅうぞうする · kyūzō suru", "id": "melonjak"},
+  {"ja": "微増", "baca": "びぞう · bizō", "id": "naik tipis"},
+  {"ja": "激減する", "baca": "げきげんする · gekigen suru", "id": "anjlok"},
+  {"ja": "半減する", "baca": "はんげんする · hangen suru", "id": "tinggal setengah"},
+  {"ja": "頭打ち", "baca": "あたまうち · atamauchi", "id": "mentok; tak naik lagi"},
+  {"ja": "持ち直す", "baca": "もちなおす · mochinaosu", "id": "pulih kembali"},
+  {"ja": "底を打つ", "baca": "そこをうつ · soko o utsu", "id": "mencapai titik terendah"},
+  {"ja": "大幅に", "baca": "おおはばに · ōhaba ni", "id": "besar-besaran"},
+  {"ja": "急激に", "baca": "きゅうげきに · kyūgeki ni", "id": "drastis"},
+  {"ja": "緩やかに", "baca": "ゆるやかに · yuruyaka ni", "id": "perlahan"},
+  {"ja": "把握する", "baca": "はあくする · haaku suru", "id": "menguasai; memahami penuh"},
+  {"ja": "間", "baca": "ま · ma", "id": "jeda; ruang waktu"},
+  {"ja": "決まり文句", "baca": "きまりもんく · kimari monku", "id": "kalimat baku"},
+  {"ja": "要は", "baca": "ようは · yō wa", "id": "intinya"},
+  {"ja": "稼ぐ", "baca": "かせぐ · kasegu", "id": "mengulur; mencari (uang)"},
+  {"ja": "論点", "baca": "ろんてん · ronten", "id": "pokok perdebatan"},
+  {"ja": "ご清聴", "baca": "ごせいちょう · go-seichō", "id": "perhatian hadirin 【敬】"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis cara baca angka berikut dalam kana atau rōmaji.",
+   "items": [
+    "12.300.000.000[円|en]",
+    "35%（[割|wari]と[分|bu]で）",
+    "1.234[円|en]",
+    "0,8",
+    "7[月|gatsu]8[日|nichi]"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata gerak grafik: 落ち込む · 横ばい · 急増する · 持ち直す · 頭打ち.",
+   "items": [
+    "[二月|Nigatsu]に[大|ō]きく ____ 。",
+    "[三月|Sangatsu][以降|ikō]は ____ 、[四月|shigatsu]には[前年|zennen][並|na]みに[戻|modo]った。",
+    "[数量|Sūryō]はこの[三|san]か[月|getsu] ____ でございます。",
+    "[問|To]い[合|a]わせ[件数|kensū]が[キャンペーン|kyanpēn][後|go]に ____ 。",
+    "[会員数|Kaiinsū]の[伸|no]びは ____ になりつつある。"
+   ]
+  },
+  {
+   "prompt": "Susun kalimat grafik dengan rangka 〈waktu〉から〈waktu〉にかけて、〜。",
+   "items": [
+    "Januari–Maret, penjualan merosot besar-besaran.",
+    "Musim panas sampai musim gugur, jumlah pengunjung naik perlahan.",
+    "Tahun lalu sampai tahun ini, biaya bahan baku melonjak.",
+    "April sampai Juni, jumlahnya mendatar.",
+    "Paruh kedua tahun ini, laba diperkirakan pulih."
+   ]
+  },
+  {
+   "prompt": "Pilih ungkapan rapat yang tepat untuk tiap keadaan.",
+   "items": [
+    "Kamu ingin menyela pembicaraan orang lain untuk satu poin.",
+    "Kamu ingin menunda perkara ini untuk dibahas internal dulu.",
+    "Kamu ingin mengembalikan pembicaraan ke topik semula.",
+    "Kamu ingin meringkas menjadi dua pokok perdebatan.",
+    "Kamu ingin menutup presentasimu."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang ragam presentasi.",
+   "items": [
+    "Nilai penjualan 1,23 miliar yen, naik tujuh persen dibanding periode sama tahun lalu.",
+    "Dibanding rencana, masih kurang tiga persen.",
+    "Yang pertama faktor sementara, yang kedua faktor berkelanjutan.",
+    "Harga jual sebenarnya belum bisa kami pastikan.",
+    "Asumsinya volume mendatar dan kurs pada level sekarang."
+   ]
+  },
+  {
+   "prompt": "Tulis naskah presentasi lima bagian (結論・現状・要因・対策・お願い) untuk keadaan berikut.",
+   "items": [
+    "Jumlah pengguna aplikasi turun tiga bulan berturut-turut; kamu mengusulkan dua langkah dan meminta persetujuan arah.",
+    "Biaya pengiriman naik dua puluh persen; kamu mengusulkan mengubah mitra logistik dan meminta izin uji coba tiga bulan."
+   ]
+  }
+ ],
+ "answers": [
+  "[百二十三億円|hyaku nijūsan oku en] — [三割五分|sanwari gobu] — [千二百三十四円|sen nihyaku sanjūyon en] — [〇点八|rei ten hachi] — [七月八日|shichigatsu yōka]",
+  "[落|o]ち[込|ko]みました — [持|mo]ち[直|nao]し — [横|yoko]ばい — [急増|kyūzō]しました — [頭打|atamau]ち",
+  "[一月|Ichigatsu]から[三月|sangatsu]にかけて、[売上|uriage]は[大幅|ōhaba]に[落|o]ち[込|ko]みました。 — [夏|Natsu]から[秋|aki]にかけて、[来場者数|raijōshasū]は[緩|yuru]やかに[増加|zōka]しました。 — [昨年|Sakunen]から[今年|kotoshi]にかけて、[原材料費|genzairyōhi]が[急増|kyūzō]しました。 — [四月|Shigatsu]から[六月|rokugatsu]にかけて、[数量|sūryō]は[横|yoko]ばいで[推移|suii]しました。 — [今年度|Kondo][下期|shimoki]にかけて、[利益|rieki]は[持|mo]ち[直|nao]す[見込|miko]みです。",
+  "[恐|oso]れ[入|i]ります、[一点|itten]よろしいでしょうか。 — [本件|Honken]は[持|mo]ち[帰|kae]らせていただき、[改|arata]めてご[相談|sōdan]いたします。 — [話|Hanashi]を[戻|modo]させていただきますと、 — [整理|Seiri]いたしますと、[論点|ronten]は[二|futa]つかと[存|zon]じます。 — [以上|Ijō]でございます。ご[清聴|seichō]ありがとうございました。",
+  "[売上高|Uriagedaka]は[十二億三千万円|jūni oku sanzenman en]、[前年同期比|zennen dōkihi]で[七|nana][パーセント|pāsento]の[増|zō]となりました。 — [計画|Keikaku][比|hi]では[三|san][パーセント|pāsento]の[未達|mitatsu]でございます。 — [前者|Zensha]は[一時的|ichijiteki]、[後者|kōsha]は[継続的|keizokuteki]な[要因|yōin]と[見|mi]ております。 — [実売|Jitsubai][価格|kakaku]までは[確認|kakunin]できておりません。 — [数量|Sūryō]は[横|yoko]ばい、[為替|kawase]は[現行|genkō][水準|suijun]という[前提|zentei]でございます。",
+  "Contoh 1／**[結論|Ketsuron]**：[結論|Ketsuron]から[申|mō]し[上|a]げますと、[利用者数|riyōshasū]の[減少|genshō]は[一時的|ichijiteki]なものではなく、[起動|kidō][速度|sokudo]と[初回|shokai][体験|taiken]の[改善|kaizen]が[必要|hitsuyō]だと[考|kanga]えております。**[現状|Genjō]**：[月間|Gekkan][利用者数|riyōshasū]は[三|san]か[月|getsu][連続|renzoku]で[減少|genshō]し、[前年同期比|zennen dōkihi]で[一二|jūni][パーセント|pāsento]の[減|gen]となりました。[特|Toku]に[新規|shinki][登録|tōroku]の[落|o]ち[込|ko]みが[著|ichijiru]しく、[三割|sanwari][近|chika]い[減少|genshō]でございます。**[要因|Yōin]**：[解約|Kaiyaku][時|ji]の[アンケート|ankēto]から、[起動|kidō]に[五秒|gobyō][以上|ijō]かかることへの[不満|fuman]が[最|motto]も[多|ō]いことが[判明|hanmei]しております。**[対策|Taisaku]**：[起動|Kidō][時間|jikan]の[短縮|tanshuku]と、[初回|shokai][起動|kidō][時|ji]の[案内|annai][画面|gamen]の[簡素化|kansoka]、この[二|futa]つを[提案|teian]いたします。**[お願|Onega]い**：[本日|Honjitsu]は[方向性|hōkōsei]についてのご[承認|shōnin]をいただきたく[存|zon]じます。[詳細|Shōsai]な[工数|kōsū]は[来週|raishū]ご[報告|hōkoku]いたします。 — Contoh 2／**[結論|Ketsuron]**：[配送費|Haisōhi]の[上昇|jōshō]は[構造的|kōzōteki]であり、[委託先|itakusaki]の[見直|minao]しを[提案|teian]いたします。**[現状|Genjō]**：[配送費|Haisōhi]は[前年比|zennenhi]で[二割|niwari]の[増|zō]、[売上|uriage]に[占|shi]める[比率|hiritsu]は[六|roku][パーセント|pāsento]から[七|nana][パーセント|pāsento][五分|gobu]に[上昇|jōshō]しております。**[要因|Yōin]**：[燃料費|Nenryōhi]と[人件費|jinkenhi]の[上昇|jōshō]によるもので、[短期|tanki]で[反転|hanten]する[見込|miko]みは[薄|usu]いと[見|mi]ております。**[対策|Taisaku]**：[三社|Sansha]から[相見積|aimitsumo]りを[取|to]り、[試|tame]しに[関東圏|Kantōken]のみ[委託先|itakusaki]を[変更|henkō]する[案|an]でございます。**[お願|Onega]い**：[三|san]か[月|getsu]の[試行|shikō]についてご[承認|shōnin]をいただけますでしょうか。[結果|Kekka]を[踏|fu]まえ、[全国|zenkoku][展開|tenkai]の[可否|kahi]を[改|arata]めてご[相談|sōdan]いたします。"
+ ],
+ "wave": "Ambil grafik apa pun dari berita ekonomi Jepang — situs NHK atau koran daring punya banyak — lalu gambarkan bentuknya keras-keras dalam tiga kalimat memakai rangka 〈waktu〉から〈waktu〉にかけて. Lakukan tiap hari selama seminggu. Ini latihan yang paling cepat membuat kata gerak grafik keluar tanpa dipikir, dan kata-kata itulah yang paling sering dibutuhkan di rapat sungguhan."
+}

@@ -1,0 +1,268 @@
+{
+ "title": "Meminta dan menolak: seni tidak pernah mengucapkan “tidak”",
+ "title_target": "[依頼|Irai]と[断|kotowa]り・[クッション言葉|kusshon kotoba]",
+ "goal": "Menyusun permintaan pada delapan tingkat kehalusan yang berbeda, menolak tanpa sekali pun memakai kata いいえ atau できません, dan mengenali penolakan yang disamarkan ketika kamu yang menerimanya.",
+ "bekal": ["menyusun tangga permintaan dari 〜て dampai 〜ていただけませんでしょうか", "memasang クッション言葉 di depan permintaan dan penolakan", "menolak dengan 〜かねます, 〜のは難しい, 〜ちょっと", "mengenali penolakan tersamar dari lawan bicara Jepang", "menawarkan jalan keluar pengganti sesudah menolak"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Permintaan yang ditolak tanpa kata “tidak”",
+   "intro": "Ani meminta rekan bagian produksi, Kimura, untuk memajukan jadwal. Bacalah dialog ini sekali dan tanyakan pada diri sendiri: di baris keberapa permintaan Ani sebenarnya sudah ditolak? Sebagian besar pembelajar menjawab terlalu belakangan.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "[木村|Kimura]さん、[今|ima]お[時間|jikan]よろしいでしょうか。", "id": "Pak Kimura, apakah sekarang ada waktu sebentar?", "literal": "Kimura-tuan, sekarang — waktu(hormat) — baik — adalah-kah."},
+    {"speaker": "[木村|Kimura]:", "text": "はい、どうぞ。", "id": "Ya, silakan.", "literal": "ya, silakan."},
+    {"speaker": "[アニ|Ani]:", "text": "お[忙|isoga]しいところ[恐|oso]れ[入|i]ります。[みどり物産|Midori Bussan][様|sama]の[案件|anken]なんですが、[納品|nōhin]を[三日|mikka][前倒|maedao]しにしていただくことは[可能|kanō]でしょうか。", "id": "Maaf mengganggu di tengah kesibukan. Soal proyek Midori Bussan, mungkinkah penyerahannya dimajukan tiga hari?", "literal": "sibuk — tempat — takut-masuk. Midori-hasil-bumi — tuan — punya — perkara — adalah-tetapi, penyerahan — akan — tiga-hari — maju-jatuh — menjadi — melakukan — menerima(hormat) — hal — mengenai — mungkin — adalah-kah."},
+    {"speaker": "[木村|Kimura]:", "text": "[三日|Mikka]、ですか。……うーん、[前倒|maedao]しですか。", "id": "Tiga hari, ya… hmm, dimajukan ya.", "literal": "tiga-hari, adalah-kah. …hmm, maju-jatuh — adalah-kah."},
+    {"speaker": "[アニ|Ani]:", "text": "はい。[先方|Senpō]の[展示会|tenjikai]に[間|ma]に[合|a]わせたいとのことで。", "id": "Ya. Katanya mereka ingin sempat untuk pameran mereka.", "literal": "ya. pihak-sana — punya — pameran — pada — sela — pada — bertemu — ingin — begitu — punya — hal — dengan."},
+    {"speaker": "[木村|Kimura]:", "text": "[事情|Jijō]はよくわかりました。ただ、[今|ima][工場|kōjō]が[三交代|sankōtai]でいっぱいでして。[三日|Mikka]となると、ちょっと。", "id": "Saya sangat paham keadaannya. Hanya saja, pabrik sekarang penuh dengan tiga sif. Kalau tiga hari, agak…", "literal": "keadaan — mengenai — baik — mengerti(lampau). hanya, sekarang — pabrik — yang — tiga-giliran — dengan — penuh — adalah-dan. tiga-hari — begitu — menjadi — kalau, sedikit."},
+    {"speaker": "[アニ|Ani]:", "text": "そうですか……。[一日|Ichinichi]でも[難|muzuka]しいでしょうか。", "id": "Begitu ya… Kalau satu hari saja pun sulit?", "literal": "begitu — adalah — kah… satu-hari — meskipun — sulit — adalah-kah."},
+    {"speaker": "[木村|Kimura]:", "text": "[一日|Ichinichi]でしたら、[検討|kentō]の[余地|yochi]はあるかと。[検査工程|Kensa kōtei]を[短縮|tanshuku]すれば、[理論上|riron-jō]は。ただ、[品質|hinshitsu]の[責任|sekinin]は[持|mo]ちかねます。", "id": "Kalau satu hari, mungkin masih ada ruang untuk dipertimbangkan. Kalau tahap pemeriksaan dipersingkat, secara teori bisa. Tapi tanggung jawab mutunya tidak bisa saya pikul.", "literal": "satu-hari — kalau, pertimbangan — punya — ruang — mengenai — ada — kah — bahwa. periksa-tahap — akan — pemendekan — kalau-melakukan, teori-atas — mengenai. hanya, mutu — punya — tanggung-jawab — mengenai — memikul — sulit-melakukan."},
+    {"speaker": "[アニ|Ani]:", "text": "[品質|Hinshitsu]を[落|o]とすわけにはいきませんね。では、[一部|ichibu]だけ[先|saki]に[出|da]していただくというのはいかがでしょうか。", "id": "Mutunya tentu tidak boleh diturunkan, ya. Kalau begitu, bagaimana kalau sebagian saja dikeluarkan lebih dulu?", "literal": "mutu — akan — menjatuhkan — hal — pada — mengenai — tidak-bisa — ya. kalau-begitu, sebagian — hanya — dulu — pada — mengeluarkan — menerima(hormat) — yang-disebut — hal — mengenai — bagaimana — adalah-kah."},
+    {"speaker": "[木村|Kimura]:", "text": "[分納|Bunnō]ですね。それなら[現実的|genjitsuteki]です。[展示会|Tenjikai]に[必要|hitsuyō]な[分|bun]だけ[先|saki]に、[残|nokori]は[予定通|yotei-dō]りで。", "id": "Penyerahan bertahap ya. Kalau itu realistis. Yang dibutuhkan untuk pameran dulu, sisanya sesuai jadwal semula.", "literal": "bagi-serah — adalah — ya. itu-kalau — nyata-sasaran — adalah. pameran — pada — perlu — bagian — hanya — dulu — pada, sisa — mengenai — rencana-sesuai — dengan."},
+    {"speaker": "[アニ|Ani]:", "text": "[助|Tasu]かります。[先方|Senpō]にそのように[提案|teian]してみます。ご[無理|muri]を[申|mō]し[上|a]げました。", "id": "Sangat membantu. Saya akan coba usulkan begitu ke pihak sana. Maaf sudah mengajukan permintaan yang berat.", "literal": "tertolong. pihak-sana — kepada — itu — seperti — usulan — mencoba-melakukan. tidak-masuk-akal(hormat) — akan — berkata(rendah,lampau)."},
+    {"speaker": "[木村|Kimura]:", "text": "いえいえ。[早|haya]めに[言|i]ってくれたから[考|kanga]えられたんです。[前日|Zenjitsu]だったら[本当|hontō]に[無理|muri]でした。", "id": "Tidak, tidak. Justru karena Anda bilang lebih awal makanya bisa dipikirkan. Kalau sehari sebelumnya, benar-benar tidak mungkin.", "literal": "tidak-tidak. cepat — arah — mengatakan — memberi — karena — bisa-berpikir — adalah. hari-sebelum — kalau — sungguh — pada — tidak-masuk-akal — adalah(lampau)."}
+   ],
+   "notes": [
+    "**Penolakan sesungguhnya jatuh di baris 6, bukan baris 8.** ちょっと yang menggantung tanpa lanjutan adalah bentuk penolakan penuh dalam bahasa Jepang. Penutur asli mendengar kalimat itu dan langsung tahu jawabannya “tidak”; pembelajar asing sering menunggu kata できません yang tak akan pernah datang.",
+    "**ただ = pembalik arah paling halus.** Ia selalu didahului pengakuan (“saya paham keadaannya”), lalu membalikkannya. Sepupunya: [ですが|desu ga], [とはいえ|to wa ie] 【書】, [そうは言|sō wa i]っても 【話】. Yang perlu kamu tangkap bukan artinya, melainkan **posisinya** — begitu ただ muncul, apa pun yang dikatakan sebelumnya tidak lagi berlaku.",
+    "**〜かねます = tidak bisa, dikemas sebagai kesulitan pribadi.** Perhatikan susunannya: kata kerja bentuk 連用形 + かねる. [いたしかねます|itashi kanemasu] · [お答|o-kota]えいたしかねます · [わかりかねます|wakari kanemasu]. Ini penolakan resmi paling baku di dunia kerja Jepang, dan lawannya 〜かねない (“bisa saja terjadi, dan itu buruk”) yang dibahas di Unit 5.",
+    "**[検討|Kentō]の[余地|yochi]はある — kalimat ini bukan “ya”.** Ia berarti “belum tertutup”, dan sering berujung tidak. Sepupu yang lebih terkenal: [前向|maemu]きに[検討|kentō]します, yang di dunia diplomasi Jepang terkenal berarti hampir tidak apa-apa. Kalau kamu butuh kepastian, tanyakan tanggalnya: いつごろ[お返事|o-henji]をいただけますでしょうか。",
+    "**〜わけにはいきません = tidak bisa, karena alasan sosial atau moral.** Bedakan dari できません (tidak mampu) dan 〜かねます (tidak sanggup melayani). [休|Yasu]むわけにはいかない berarti “secara fisik bisa, tapi tidak pantas”. Ini salah satu bentuk yang paling sering dipakai untuk menjelaskan kewajiban dalam bahasa Jepang.",
+    "**Baris 9 adalah kunci seluruh unit: menolak sesuatu lalu MENAWARKAN pengganti.** Dalam tata cara Jepang, penolakan yang tidak diikuti [代案|daian] terasa setengah jadi. Pola tetapnya: 〜というのはいかがでしょうか · 〜であれば[対応|taiō][可能|kanō]です · [代|ka]わりに〜.",
+    "**[ご無理|Go-muri]を[申|mō]し[上|a]げました — mengakui bahwa permintaanmu berat.** Diucapkan **sesudah** urusannya selesai, bukan sebelum. Ia menutup percakapan dengan mengembalikan muka lawan bicara, dan ini bagian yang paling sering dilewatkan pembelajar.",
+    "**[早|Haya]めに[言|i]ってくれたから — perhatikan くれる.** Kimura memakai くれる untuk perbuatan Ani, artinya ia menganggap perbuatan itu sebagai kebaikan yang diterimanya. Kalimat yang sama tanpa くれる ([早|haya]めに[言|i]ったから) terdengar datar dan sedikit menghakimi."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga permintaan: delapan anak tangga yang sama artinya",
+     "body": ["Semuanya berarti “tolong periksa ini”. Yang berubah hanyalah jarak sosial. Naiknya tidak selalu lebih baik — memakai anak tangga 8 kepada teman sekantor terdengar sindiran."],
+     "table": {
+      "head": ["Tingkat", "Bentuk", "Kepada siapa"],
+      "rows": [
+       ["1", "[確認|Kakunin]して", "teman dekat, keluarga"],
+       ["2", "[確認|Kakunin]してくれる？", "teman, rekan seangkatan"],
+       ["3", "[確認|Kakunin]してくれない？", "rekan, sedikit lebih halus"],
+       ["4", "[確認|Kakunin]してもらえますか", "rekan sekantor, sopan netral"],
+       ["5", "ご[確認|kakunin]いただけますか", "atasan, pihak luar"],
+       ["6", "ご[確認|kakunin]いただけますでしょうか", "pelanggan; baku di surel"],
+       ["7", "ご[確認|kakunin]いただけませんでしょうか", "permintaan berat, sekali-sekali"],
+       ["8", "ご[確認|kakunin]いただければ[幸|saiwa]いです 【書】", "tulisan resmi; sangat tidak menekan"]
+      ]
+     },
+     "after": [
+      "**Kenapa bentuk negatif (4→7) lebih halus?** Karena pertanyaan negatif memberi ruang untuk berkata tidak. Bahasa Jepang menyamakan kehalusan dengan **memperlebar jalan keluar lawan bicara**, dan itu pula alasan でしょうか lebih halus daripada ですか: ia mengubah pertanyaan jadi dugaan.",
+      "Satu jalan pintas yang selalu aman di kantor: 〜ことは[可能|kanō]でしょうか. Ia menanyakan kemungkinan, bukan kesediaan, jadi menolaknya tidak menyinggung siapa-siapa."
+     ]
+    },
+    {
+     "title": "クッション言葉: bantalan yang dipasang sebelum menabrak",
+     "body": ["Kalimat Jepang yang berpotensi menekan hampir tidak pernah dimulai langsung. Di depannya dipasang satu frasa bantalan. Frasa ini tak menambah informasi apa pun — tugasnya semata memberi tanda “sesuatu yang tidak menyenangkan akan datang”, supaya lawan bicara siap."],
+     "table": {
+      "head": ["Bantalan", "Dipasang sebelum", "Nada"],
+      "rows": [
+       ["[恐|Oso]れ[入|i]りますが", "permintaan apa pun", "baku, aman di semua situasi"],
+       ["お[忙|isoga]しいところ[恐縮|kyōshuku]ですが", "permintaan yang memakan waktu", "sangat sopan"],
+       ["[差|Sa]し[支|tsuka]えなければ", "pertanyaan pribadi", "“kalau tidak keberatan”"],
+       ["よろしければ", "tawaran", "ringan, sering di lisan"],
+       ["[申|Mō]し[訳|wake]ございませんが", "penolakan", "penolakan resmi"],
+       ["あいにくですが", "penolakan karena keadaan", "menyalahkan keadaan, bukan orang"],
+       ["せっかくですが", "menolak ajakan/tawaran", "mengakui niat baik lawan"],
+       ["[大変|Taihen][心苦|kokoroguru]しいのですが", "penolakan berat", "sangat formal, dipakai hemat"],
+       ["[勝手|Katte][ながら|nagara]", "memberitahukan keputusan sepihak", "pengumuman libur, perubahan aturan"],
+       ["ご[存|zon]じかとは[思|omo]いますが", "menjelaskan yang mungkin sudah diketahui", "menghindari terkesan menggurui"]
+      ]
+     },
+     "after": ["Yang paling sering salah dipakai pembelajar adalah せっかくですが. Ia hanya untuk menolak sesuatu yang **ditawarkan dengan niat baik** — undangan, oleh-oleh, tawaran bantuan. Memakainya untuk menolak tagihan atau tuntutan justru terdengar mengejek."]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Ajakan yang harus ditolak",
+   "intro": "Undangan makan malam dari klien, dan Ani sudah punya janji. Perhatikan bahwa ia tidak pernah menyebutkan alasan sebenarnya.",
+   "lines": [
+    {"speaker": "[森|Mori]:", "text": "[アニ|Ani]さん、[金曜|kin'yō]の[夜|yoru]、[部署|busho]のみんなで[食事|shokuji]でもどうですか。", "id": "Bu Ani, bagaimana kalau Jumat malam makan bersama seluruh bagian kami?", "literal": "Ani-tuan, Jumat — punya — malam, bagian — punya — semua — dengan — makan — misalnya — bagaimana — adalah-kah."},
+    {"speaker": "[アニ|Ani]:", "text": "わあ、ありがとうございます。[金曜|Kin'yō]ですか……。せっかくお[誘|saso]いいただいたのですが、あいにく[先約|senyaku]がございまして。", "id": "Wah, terima kasih banyak. Jumat ya… Sayang sekali padahal sudah diajak, tapi kebetulan saya sudah ada janji lain.", "literal": "wah, terima-kasih. Jumat — adalah-kah… susah-payah — ajakan(hormat) — menerima(lampau) — padahal, sayangnya — janji-terdahulu — ada(hormat) — dan."},
+    {"speaker": "[森|Mori]:", "text": "そうですか、[残念|zannen]です。", "id": "Oh begitu, sayang sekali.", "literal": "begitu — adalah — kah, sayang — adalah."},
+    {"speaker": "[アニ|Ani]:", "text": "[本当|Hontō]に[心苦|kokoroguru]しいのですが……。[来月|Raigetsu]でしたら[調整|chōsei]しやすいので、こちらから[改|arata]めてお[声|koe]がけしてもよろしいでしょうか。", "id": "Sungguh saya merasa tidak enak… Kalau bulan depan saya lebih mudah menyesuaikan, jadi bolehkah saya yang menghubungi lagi nanti?", "literal": "sungguh — pada — hati-sakit — adalah — tetapi… bulan-depan — kalau — penyesuaian — mudah-melakukan — karena, sini — dari — baru — arah — suara(hormat) — memanggil — meskipun — baik — adalah-kah."},
+    {"speaker": "[森|Mori]:", "text": "もちろんです。じゃあ[来月|raigetsu]、[楽|tano]しみにしています。", "id": "Tentu saja. Kalau begitu bulan depan, saya nantikan.", "literal": "tentu — adalah. kalau-begitu — bulan-depan, senang — arah — sedang-melakukan."},
+    {"speaker": "[アニ|Ani]:", "text": "ありがとうございます。[皆様|Minasama]によろしくお[伝|tsuta]えくださいませ。", "id": "Terima kasih banyak. Tolong sampaikan salam saya kepada semuanya.", "literal": "terima-kasih. semua-tuan — kepada — dengan-baik — menyampaikan(hormat) — silakan."},
+    {"speaker": "[リナ|Rina]:", "text": "（あとで）[先約|Senyaku]って[何|nani]。[金曜|Kin'yō][暇|hima]だったよね。", "id": "(belakangan) Janji lain apaan? Jumat kamu kosong kan.", "literal": "janji-terdahulu — begitu — apa. Jumat — luang — adalah(lampau) — ya."},
+    {"speaker": "[アニ|Ani]:", "text": "[先約|Senyaku]は[先約|senyaku]。[自分|Jibun]との[約束|yakusoku]も[約束|yakusoku]でしょ。", "id": "Janji ya janji. Janji dengan diri sendiri juga janji, kan.", "literal": "janji-terdahulu — mengenai — janji-terdahulu. diri-sendiri — dengan — punya — janji — juga — janji — bukan."},
+    {"speaker": "[リナ|Rina]:", "text": "[出|De]た、[便利|benri]な[日本語|Nihongo]。", "id": "Nah keluar deh, bahasa Jepang yang serba praktis.", "literal": "keluar(lampau), praktis — bahasa-Jepang."}
+   ],
+   "notes": [
+    "**[先約|Senyaku]がございまして — alasan yang sengaja tidak berisi.** Bahasa Jepang tidak menuntut alasan penolakan yang terperinci; justru menyebutkan alasan terlalu rinci terkesan membuat lawan bicara menilai apakah alasanmu cukup kuat. 先約, [所用|shoyō] (ada urusan), [あいにく都合|ainiku tsugō]がつかず — ketiganya sama-sama kosong dan sama-sama sopan.",
+    "**Kalimat penolakan yang berhenti di 〜まして／〜ので adalah bentuk paling halus.** Ia menggantung tanpa pernah mengatakan “jadi saya tidak bisa”. Bagian yang tidak diucapkan itulah yang mengerjakan penolakannya, dan lawan bicara menyelesaikannya sendiri di kepalanya.",
+    "**[改|Arata]めてお[声|koe]がけします — penawaran pengganti yang menutup dengan rapi.** Tanpa baris ini, penolakan Ani terdengar seperti menutup pintu. Bentuk sepupunya: [また|Mata]の[機会|kikai]にぜひ · [次回|Jikai]はぜひ[参加|sanka]させてください.",
+    "**Dialog kedua ini juga memperlihatkan sesuatu yang jujur:** ungkapan kosong seperti 先約 memang berfungsi sebagai jalan keluar sosial, dan penutur Jepang tahu itu. Yang dihargai bukan kebenaran harfiahnya, melainkan kesediaan menutupinya dengan rapi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerjemahkan penolakan yang tak berbunyi seperti penolakan",
+   "blocks": [
+    {"type": "p", "text": "Bagian ini kebalikan dari yang lain: bukan untuk kamu produksi, melainkan untuk kamu **kenali**. Kalau kamu bekerja dengan orang Jepang, kalimat-kalimat berikut akan datang kepadamu, dan salah membacanya berarti menunggu jawaban yang tak akan pernah datang."},
+    {"type": "tabel", "head": ["Yang diucapkan", "Yang berarti", "Kepastiannya"], "rows": [
+     ["ちょっと……（menggantung)", "tidak", "hampir pasti tidak"],
+     ["[難|Muzuka]しいですね", "tidak", "hampir pasti tidak"],
+     ["[検討|Kentō]させていただきます", "belum tentu; sering tidak", "50–70% tidak"],
+     ["[前向|Maemu]きに[検討|kentō]します", "ingin terdengar positif; sering tidak", "50% tidak"],
+     ["[社内|Shanai]で[持|mo]ち[帰|kae]らせてください", "harus dibahas internal; netral", "benar-benar belum diputuskan"],
+     ["[善処|Zensho]します", "tidak ada janji apa pun", "hampir pasti tidak"],
+     ["[考|Kanga]えておきます", "tidak (di percakapan pribadi)", "hampir pasti tidak"],
+     ["[前例|Zenrei]がございませんので", "tidak, dan tak akan berubah", "pasti tidak"],
+     ["[了解|Ryōkai]しました／[承知|Shōchi]しました", "ya", "ya"],
+     ["[問題|Mondai]ございません", "ya", "ya"]
+    ]},
+    {"type": "kotak", "title": "Cara memaksa kepastian tanpa memaksa orangnya", "items": [
+     "**Tanyakan tanggal, bukan jawaban.** いつごろお[返事|henji]をいただけますでしょうか。 Menuntut tanggal dianggap wajar; menuntut jawaban dianggap menekan.",
+     "**Tawarkan dua pilihan konkret.** A と B でしたら、どちらが[現実的|genjitsuteki]でしょうか。 Pertanyaan tertutup jauh lebih sulit dijawab dengan gantung.",
+     "**Tanyakan syaratnya.** どのような[条件|jōken]であれば[可能|kanō]でしょうか。 Ini pertanyaan paling berguna di seluruh unit: ia mengubah “tidak” menjadi daftar syarat.",
+     "**Jangan mengulang permintaan yang sama dengan suara lebih besar.** Di kebiasaan Jepang, mengulang tanpa mengubah isinya dibaca sebagai tidak mendengarkan."
+    ]},
+    {"type": "p", "text": "Satu catatan yang jujur: kebiasaan ini kadang membuat pihak asing frustrasi, dan sebagian perusahaan Jepang yang bekerja secara internasional kini sengaja berbicara lebih lugas. Tapi di mayoritas kantor, aturan lamanya masih berlaku — dan biaya salah baca ditanggung pihak yang tidak tahu."}
+   ]
+  },
+  {
+   "title": "Empat cara berkata “tidak bisa”, dan bedanya",
+   "blocks": [
+    {"type": "tabel", "head": ["Bentuk", "Alasannya", "Contoh"], "rows": [
+     ["できません", "tidak mampu, lugas", "[日本語|Nihongo]で[電話|denwa]の[対応|taiō]はまだできません。"],
+     ["〜かねます", "tidak sanggup melayani; resmi", "[個人情報|Kojin jōhō]はお[答|kota]えいたしかねます。"],
+     ["〜わけにはいきません", "tidak boleh secara sosial/moral", "[私|Watashi]だけ[先|saki]に[帰|kae]るわけにはいきません。"],
+     ["〜のは[難|muzuka]しいです", "sulit, pintu belum tertutup", "[今週中|Konshūchū]にというのは[難|muzuka]しいです。"]
+    ]},
+    {"type": "p", "text": "Urutan kekerasannya: 〜のは難しい < 〜かねます < わけにはいきません < できません. Yang paling sering salah tempat adalah できません: di depan pelanggan ia terdengar seperti membanting pintu, dan hampir selalu bisa diganti いたしかねます."},
+    {"type": "sub", "text": "Rangka penolakan lengkap: empat langkah"},
+    {"type": "kotak", "title": "Bantalan → terima kasih → kesulitan → pengganti", "items": [
+     "**1. Bantalan.** [申|Mō]し[訳|wake]ございませんが／せっかくですが／あいにくですが",
+     "**2. Akui nilainya.** ありがたいお[話|hanashi]なのですが／お[誘|saso]いいただき[恐縮|kyōshuku]です",
+     "**3. Sebut kesulitannya, bukan penolakannya.** [今回|Konkai]は[日程|nittei]が[合|a]わず／[社内|shanai]の[規定|kitei]によりお[受|u]けいたしかねます",
+     "**4. Tawarkan jalan lain.** [来月|Raigetsu]でしたら／[別|betsu]の[形|katachi]でご[協力|kyōryoku]できればと[存|zon]じます",
+     "Langkah 4 yang membedakan penolakan yang mengakhiri hubungan dari penolakan yang meneruskannya. Kalau kamu benar-benar tak punya pengganti, setidaknya tutup dengan [また|Mata]の[機会|kikai]にぜひよろしくお[願|nega]いいたします。"
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "依頼", "baca": "いらい · irai", "id": "permintaan; permohonan"},
+  {"ja": "案件", "baca": "あんけん · anken", "id": "perkara; proyek"},
+  {"ja": "前倒し", "baca": "まえだおし · maedaoshi", "id": "dimajukan (jadwal)"},
+  {"ja": "先方", "baca": "せんぽう · senpō", "id": "pihak lawan; pihak sana"},
+  {"ja": "展示会", "baca": "てんじかい · tenjikai", "id": "pameran dagang"},
+  {"ja": "間に合う", "baca": "まにあう · ma ni au", "id": "sempat; keburu"},
+  {"ja": "三交代", "baca": "さんこうたい · sankōtai", "id": "tiga sif kerja"},
+  {"ja": "検討", "baca": "けんとう · kentō", "id": "pertimbangan"},
+  {"ja": "余地", "baca": "よち · yochi", "id": "ruang; kelonggaran"},
+  {"ja": "工程", "baca": "こうてい · kōtei", "id": "tahap proses"},
+  {"ja": "短縮する", "baca": "たんしゅくする · tanshuku suru", "id": "mempersingkat"},
+  {"ja": "理論上", "baca": "りろんじょう · riron-jō", "id": "secara teori 【書】"},
+  {"ja": "品質", "baca": "ひんしつ · hinshitsu", "id": "mutu"},
+  {"ja": "〜かねる", "baca": "kaneru", "id": "tidak sanggup ~ 【敬】"},
+  {"ja": "わけにはいかない", "baca": "wake ni wa ikanai", "id": "tidak boleh (secara sosial)"},
+  {"ja": "分納", "baca": "ぶんのう · bunnō", "id": "penyerahan bertahap"},
+  {"ja": "現実的", "baca": "げんじつてき · genjitsuteki", "id": "realistis"},
+  {"ja": "予定通り", "baca": "よていどおり · yotei-dōri", "id": "sesuai rencana"},
+  {"ja": "提案する", "baca": "ていあんする · teian suru", "id": "mengusulkan"},
+  {"ja": "代案", "baca": "だいあん · daian", "id": "usulan pengganti"},
+  {"ja": "無理を言う", "baca": "むりをいう · muri o iu", "id": "meminta hal yang berat"},
+  {"ja": "差し支える", "baca": "さしつかえる · sashitsukaeru", "id": "mengganggu; keberatan"},
+  {"ja": "心苦しい", "baca": "こころぐるしい · kokorogurushii", "id": "tidak enak hati"},
+  {"ja": "勝手ながら", "baca": "かってながら · katte nagara", "id": "dengan lancang; sepihak 【書】"},
+  {"ja": "せっかく", "baca": "sekkaku", "id": "sudah susah payah; padahal"},
+  {"ja": "あいにく", "baca": "ainiku", "id": "sayangnya; kebetulan tidak"},
+  {"ja": "誘う", "baca": "さそう · sasou", "id": "mengajak"},
+  {"ja": "先約", "baca": "せんやく · senyaku", "id": "janji yang lebih dulu"},
+  {"ja": "所用", "baca": "しょよう · shoyō", "id": "urusan (tak dirinci) 【書】"},
+  {"ja": "都合がつく", "baca": "つごうがつく · tsugō ga tsuku", "id": "waktunya cocok"},
+  {"ja": "改めて", "baca": "あらためて · aratamete", "id": "sekali lagi; di lain kesempatan"},
+  {"ja": "声をかける", "baca": "こえをかける · koe o kakeru", "id": "menyapa; mengajak"},
+  {"ja": "残念", "baca": "ざんねん · zannen", "id": "sayang sekali"},
+  {"ja": "楽しみにする", "baca": "たのしみにする · tanoshimi ni suru", "id": "menantikan"},
+  {"ja": "善処する", "baca": "ぜんしょする · zensho suru", "id": "menangani sebaiknya 【書】"},
+  {"ja": "前例", "baca": "ぜんれい · zenrei", "id": "preseden"},
+  {"ja": "持ち帰る", "baca": "もちかえる · mochikaeru", "id": "membawa pulang (untuk dibahas)"},
+  {"ja": "社内", "baca": "しゃない · shanai", "id": "internal perusahaan"},
+  {"ja": "規定", "baca": "きてい · kitei", "id": "ketentuan; aturan tertulis"},
+  {"ja": "対応する", "baca": "たいおうする · taiō suru", "id": "menangani; melayani"},
+  {"ja": "協力", "baca": "きょうりょく · kyōryoku", "id": "kerja sama"},
+  {"ja": "機会", "baca": "きかい · kikai", "id": "kesempatan"},
+  {"ja": "参加する", "baca": "さんかする · sanka suru", "id": "ikut serta"},
+  {"ja": "遠慮なく", "baca": "えんりょなく · enryo naku", "id": "tanpa sungkan"},
+  {"ja": "部署", "baca": "ぶしょ · busho", "id": "bagian; departemen"},
+  {"ja": "皆様", "baca": "みなさま · minasama", "id": "hadirin sekalian 【敬】"},
+  {"ja": "個人情報", "baca": "こじんじょうほう · kojin jōhō", "id": "data pribadi"},
+  {"ja": "今回", "baca": "こんかい · konkai", "id": "kali ini"},
+  {"ja": "次回", "baca": "じかい · jikai", "id": "lain kali"},
+  {"ja": "暇", "baca": "ひま · hima", "id": "waktu luang"},
+  {"ja": "便利", "baca": "べんり · benri", "id": "praktis"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Naikkan permintaan berikut ke tingkat yang diminta dalam kurung, memakai tangga delapan anak tangga.",
+   "items": [
+    "[資料|Shiryō]を[送|oku]って。（ke rekan sekantor, sopan netral）",
+    "[会議|Kaigi]の[時間|jikan]を[変|ka]えて。（ke atasan）",
+    "[サイン|Sain]して。（ke pelanggan, surel）",
+    "[手伝|Tetsuda]って。（ke rekan seangkatan）",
+    "[説明|Setsumei]して。（ke pelanggan, permintaan berat）"
+   ]
+  },
+  {
+   "prompt": "Pasang クッション言葉 yang paling tepat: 恐れ入りますが · せっかくですが · あいにくですが · 差し支えなければ · 勝手ながら.",
+   "items": [
+    "____、[本日|honjitsu]は[臨時休業|rinji kyūgyō]とさせていただきます。",
+    "____、ご[年齢|nenrei]を[伺|ukaga]ってもよろしいでしょうか。",
+    "____、その[日|hi]は[出張|shutchō]が[入|hai]っております。",
+    "____、こちらの[書類|shorui]にご[記入|kinyū]いただけますでしょうか。",
+    "____、[今回|konkai]は[見送|mioku]らせていただきます。"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang penolakan yang terlalu lugas berikut dengan 〜かねます atau 〜のは難しいです.",
+   "items": [
+    "その[質問|shitsumon]には[答|kota]えられません。",
+    "[値引|Nebi]きはできません。",
+    "[今週中|Konshūchū]には[無理|muri]です。",
+    "[個人|Kojin]の[連絡先|renrakusaki]は[教|oshi]えられません。",
+    "[責任|Sekinin]は[持|mo]てません。"
+   ]
+  },
+  {
+   "prompt": "Apa arti sebenarnya dari kalimat berikut: ya, tidak, atau benar-benar belum diputuskan?",
+   "items": [
+    "[前向|Maemu]きに[検討|kentō]させていただきます。",
+    "[社内|Shanai]で[持|mo]ち[帰|kae]らせてください。",
+    "[前例|Zenrei]がございませんので。",
+    "[承知|Shōchi]いたしました。",
+    "うーん、[三日|mikka]はちょっと。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang yang tidak memuat kata “tidak”.",
+   "items": [
+    "Kami tidak bisa menerima permintaan ini karena aturan internal.",
+    "Kalau bulan depan, saya lebih mudah menyesuaikan waktu.",
+    "Syarat seperti apa yang memungkinkan hal ini dilakukan?",
+    "Sayang sekali padahal Anda sudah mengajak, tapi saya sudah ada janji.",
+    "Kira-kira kapan saya bisa mendapat jawabannya?"
+   ]
+  },
+  {
+   "prompt": "Tulis penolakan empat langkah lengkap untuk keadaan berikut.",
+   "items": [
+    "Klien meminta potongan harga 30% yang tidak mungkin kamu berikan, tapi kamu ingin menjaga hubungannya.",
+    "Atasanmu memintamu masuk hari Sabtu untuk ketiga kalinya bulan ini, dan kali ini kamu benar-benar tidak bisa."
+   ]
+  }
+ ],
+ "answers": [
+  "[資料|Shiryō]を[送|oku]ってもらえますか。 — [会議|Kaigi]の[時間|jikan]をご[調整|chōsei]いただけますでしょうか。 — ご[署名|shomei]いただければ[幸|saiwa]いです。 — [手伝|tetsuda]ってくれない？ — ご[説明|setsumei]いただけませんでしょうか。",
+  "[勝手|katte]ながら — [差|sa]し[支|tsuka]えなければ — あいにくですが — [恐|oso]れ[入|i]りますが — せっかくですが",
+  "その[質問|shitsumon]にはお[答|kota]えいたしかねます。 — [値引|nebi]きはいたしかねます。 — [今週中|Konshūchū]にというのは[難|muzuka]しいです。 — [個人|Kojin]の[連絡先|renrakusaki]はお[教|oshi]えいたしかねます。 — [品質|Hinshitsu]の[責任|sekinin]は[持|mo]ちかねます。",
+  "tidak (sekitar 50%) — benar-benar belum diputuskan — tidak, dan tak akan berubah — ya — tidak",
+  "[社内|Shanai]の[規定|kitei]により、お[受|u]けいたしかねます。 — [来月|Raigetsu]でしたら[調整|chōsei]しやすいのですが。 — どのような[条件|jōken]であれば[可能|kanō]でしょうか。 — せっかくお[誘|saso]いいただいたのですが、あいにく[先約|senyaku]がございまして。 — いつごろお[返事|henji]をいただけますでしょうか。",
+  "Contoh 1／[大変|taihen]ありがたいお[話|hanashi]でございます。ただ、[三割|sanwari]となりますと[原価|genka]を[下回|shitamawa]ってしまい、お[受|u]けいたしかねます。[数量|sūryō]を[年間|nenkan][契約|keiyaku]にしていただけるようでしたら、[一割|ichiwari][五分|gobu]までは[検討|kentō]の[余地|yochi]がございます。ご[相談|sōdan]させていただけませんでしょうか。 — Contoh 2／お[声|koe]がけいただきありがとうございます。[今月|kongetsu]は[二度|nido][対応|taiō]させていただきましたが、[今週末|konshūmatsu]は[家族|kazoku]の[用事|yōji]があり、[出社|shussha]はいたしかねます。[金曜|kin'yō]の[夜|yoru]に[前倒|maedao]しで[作業|sagyō]を[進|susu]めておくことは[可能|kanō]ですので、そちらでご[相談|sōdan]させていただけますでしょうか。"
+ ],
+ "wave": "Kembali ke dialog kedua Unit 1 — percakapan santai Ani dan Rina. Cari tiga tempat di mana salah satu dari mereka sebenarnya menolak atau tidak setuju, lalu tulis ulang ketiganya dalam ragam kantor memakai rangka empat langkah unit ini. Kamu akan melihat sendiri betapa banyak lapisan yang dipangkas percakapan akrab, dan betapa cepat isinya tetap sampai."
+}

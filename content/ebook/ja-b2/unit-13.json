@@ -1,0 +1,291 @@
+{
+ "title": "Rumah sakit, asuransi, dan saat semuanya berantakan",
+ "title_target": "[病院|Byōin]・[保険|hoken]・[トラブル対応|toraburu taiō]",
+ "goal": "Menjelaskan gejala penyakit dengan tepat, memahami penjelasan dokter dan resep, serta menangani kecelakaan, kehilangan, dan sengketa dengan bahasa yang benar sejak menit pertama.",
+ "bekal": ["menjelaskan gejala dengan kata sifat dan onomatope yang tepat", "memahami pertanyaan baku dokter dan penjelasan resep", "melaporkan kecelakaan atau kehilangan di kantor polisi", "menuntut hakmu dengan sopan namun tegas", "meminta maaf tanpa mengakui tanggung jawab yang bukan milikmu"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Di klinik",
+   "intro": "Ani sakit. Pertanyaan dokter Jepang hampir selalu urutannya sama, dan mengetahui urutannya membuat kunjungan pertamamu jauh lebih ringan.",
+   "lines": [
+    {"speaker": "[受付|Uketsuke]:", "text": "[保険証|Hokenshō]をお[預|azu]かりします。[本日|Honjitsu]は[初診|shoshin]でいらっしゃいますね。こちらの[問診票|monshinhyō]にご[記入|kinyū]ください。", "id": "Kartu asuransinya kami terima dulu. Hari ini kunjungan pertama, ya. Mohon isi formulir keluhan ini.", "literal": "asuransi-kartu — akan — menerima-titipan(rendah). hari-ini — mengenai — pertama-periksa — sebagai — berada(hormat) — ya. sini — punya — tanya-periksa-lembar — pada — pengisian(hormat) — silakan."},
+    {"speaker": "[医師|Ishi]:", "text": "どうされましたか。", "id": "Ada keluhan apa?", "literal": "bagaimana — dilakukan(hormat,lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[三日前|Mikkamae]から[熱|netsu]が[下|sa]がらなくて、[のど|nodo]も[痛|ita]いです。[咳|Seki]は[乾|kawa]いた[咳|seki]が[夜|yoru][中心|chūshin]に[出|de]ます。", "id": "Sejak tiga hari lalu demamnya tidak turun, tenggorokan juga sakit. Batuknya batuk kering, terutama muncul di malam hari.", "literal": "tiga-hari-sebelum — dari — panas — yang — turun — tidak — dan, tenggorokan — juga — sakit — adalah. batuk — mengenai — kering(lampau) — batuk — yang — malam — pusat — pada — keluar."},
+    {"speaker": "[医師|Ishi]:", "text": "[何度|Nando]ぐらいまで[上|a]がりましたか。", "id": "Naik sampai berapa derajat?", "literal": "berapa-derajat — kira-kira — sampai — naik(lampau) — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[一番|Ichiban][高|taka]いときで[三十八度|sanjūhachi do][五分|gobu]です。[市販|Shihan]の[解熱剤|genetsuzai]で[一時|ichiji][下|sa]がりますが、また[上|a]がります。", "id": "Paling tinggi 38,5 derajat. Dengan obat penurun panas yang dijual bebas sempat turun, tapi naik lagi.", "literal": "paling — tinggi — waktu — dengan — tiga-puluh-delapan-derajat — lima-bagian — adalah. jual-pasar — punya — turun-panas-obat — dengan — sesaat — turun — tetapi, lagi — naik."},
+    {"speaker": "[医師|Ishi]:", "text": "[食欲|Shokuyoku]はいかがですか。[水分|Suibun]は[取|to]れていますか。", "id": "Bagaimana nafsu makannya? Apakah masih bisa minum cukup?", "literal": "makan-selera — mengenai — bagaimana — adalah — kah. air-bagian — mengenai — mengambil-bisa — sedang — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[食欲|Shokuyoku]はありませんが、[水|mizu]は[飲|no]めています。", "id": "Nafsu makan tidak ada, tapi air masih bisa saya minum.", "literal": "makan-selera — mengenai — ada — tidak — tetapi, air — mengenai — minum-bisa — sedang."},
+    {"speaker": "[医師|Ishi]:", "text": "[アレルギー|Arerugī]や、[今|ima][飲|no]んでいる[薬|kusuri]はありますか。", "id": "Ada alergi, atau obat yang sedang Anda minum sekarang?", "literal": "alergi — dan, sekarang — minum — sedang — obat — mengenai — ada — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[薬|Kusuri]のアレルギーはありません。[常用|Jōyō]している[薬|kusuri]もございません。", "id": "Tidak ada alergi obat. Tidak ada juga obat yang saya minum rutin.", "literal": "obat — punya — alergi — mengenai — ada — tidak. rutin-pakai — sedang — obat — juga — ada(hormat) — tidak."},
+    {"speaker": "[医師|Ishi]:", "text": "[のど|Nodo]を[見|mi]せてください。……[かなり|Kanari][赤|aka]いですね。[念|Nen]のため[インフルエンザ|infuruenza]の[検査|kensa]をしておきましょう。[結果|Kekka]は[十五分|jūgofun]ほどで[出|de]ます。", "id": "Tolong perlihatkan tenggorokannya. …Cukup merah, ya. Untuk memastikan, kita periksa influenza dulu. Hasilnya keluar sekitar lima belas menit.", "literal": "tenggorokan — akan — memperlihatkan — silakan. …cukup — merah — adalah — ya. kehati-hatian — demi — influenza — punya — pemeriksaan — akan — melakukan — menaruh — mari. hasil — mengenai — lima-belas-menit — kira-kira — dengan — keluar."},
+    {"speaker": "[医師|Ishi]:", "text": "（[のち|nochi]）[インフルエンザ|Infuruenza]は[陰性|insei]でした。[急性|Kyūsei]の[咽頭炎|intōen]でしょう。[抗生物質|Kōsei busshitsu]は[出|da]しませんが、[解熱剤|genetsuzai]と[のど|nodo]の[薬|kusuri]を[五日分|itsukabun][処方|shohō]します。", "id": "(kemudian) Influenzanya negatif. Kemungkinan radang tenggorokan akut. Antibiotik tidak saya berikan, tapi obat penurun panas dan obat tenggorokan saya resepkan untuk lima hari.", "literal": "influenza — mengenai — negatif — adalah(lampau). akut — punya — tenggorokan-radang — mungkin. anti-hidup-zat — mengenai — mengeluarkan — tidak — tetapi, turun-panas-obat — dan — tenggorokan — punya — obat — akan — lima-hari-bagian — resep — melakukan."},
+    {"speaker": "[アニ|Ani]:", "text": "[仕事|Shigoto]は[休|yasu]んだほうがよろしいでしょうか。", "id": "Apakah lebih baik saya libur kerja?", "literal": "pekerjaan — mengenai — beristirahat(lampau) — pihak — yang — baik(hormat) — adalah-kah."},
+    {"speaker": "[医師|Ishi]:", "text": "[熱|Netsu]が[下|sa]がって[二十四時間|nijūyo jikan]は[様子|yōsu]を[見|mi]てください。[診断書|Shindansho]が[必要|hitsuyō]であれば[お出|o-da]しできますが、いかがしますか。", "id": "Setelah demamnya turun, tolong amati selama dua puluh empat jam. Kalau perlu surat keterangan dokter, bisa kami keluarkan — bagaimana?", "literal": "panas — yang — turun — dan — dua-puluh-empat-jam — mengenai — keadaan — akan — melihat — silakan. diagnosis-surat — yang — perlu — kalau — mengeluarkan(hormat) — bisa — tetapi, bagaimana — melakukan — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "お[願|nega]いいたします。[会社|Kaisha]に[提出|teishutsu]しますので。", "id": "Mohon dibuatkan. Karena akan saya serahkan ke perusahaan.", "literal": "permohonan(hormat) — melakukan(rendah). perusahaan — pada — penyerahan — melakukan — karena."}
+   ],
+   "notes": [
+    "**Urutan pertanyaan dokter Jepang hampir selalu sama:** どうされましたか → sejak kapan → suhu / derajat → nafsu makan dan cairan → alergi dan obat rutin → pemeriksaan. Mengetahui urutannya berarti kamu bisa menyiapkan jawaban sebelum masuk, dan itulah yang paling menolong saat kepalamu sedang pusing.",
+    "**[問診票|monshinhyō] — formulir keluhan yang wajib diisi pada kunjungan pertama.** Kolomnya hampir selalu memuat: [症状|shōjō] (gejala), [いつから|itsu kara] (sejak kapan), [既往歴|kiōreki] (riwayat penyakit), [アレルギー|arerugī], [服用中|fukuyōchū]の[薬|kusuri] (obat yang sedang diminum), [妊娠|ninshin]の[可能性|kanōsei] (kemungkinan kehamilan).",
+    "**Suhu Jepang dibaca dengan [度|do] dan [分|bu]:** 38,5 derajat = [三十八度五分|sanjūhachi do gobu]. Perhatikan bahwa 分 di sini berarti sepersepuluh derajat, bukan persen (Unit 11) dan bukan menit. Konteks yang memisahkan ketiganya.",
+    "**[様子|yōsu]を[見|mi]る = “mengamati dulu”, dan ini kalimat paling sering kamu dengar dari dokter Jepang.** Ia berarti belum ada tindakan lanjutan, tunggu perkembangan. Sepupunya: [経過|Keika]を[見|mi]ましょう · [しばらく|Shibaraku][様子|yōsu]を[見|mi]てください.",
+    "**[陰性|insei] (negatif) dan [陽性|yōsei] (positif) — dua kata yang harus otomatis.** Perhatikan bahwa 陽性 berbunyi “positif” dan berarti **kamu sakit**; jangan tertukar dengan arti positif sehari-hari.",
+    "**[処方|shohō] dan [〜日分|nichibun]** — “meresepkan” dan “untuk ~ hari”. Di apotek kamu akan mendengar: [一日|Ichinichi][三回|sankai]、[食後|shokugo]に[お飲|o-no]みください (tiga kali sehari, sesudah makan). Kosakata waktu minum obat: [食前|shokuzen] (sebelum makan), [食後|shokugo] (sesudah), [食間|shokkan] (antara makan), [就寝前|shūshinmae] (sebelum tidur), [頓服|tonpuku] (diminum saat perlu saja).",
+    "**[診断書|shindansho] — surat keterangan dokter, dan ia berbayar terpisah.** Biasanya beberapa ribu yen dan tidak ditanggung asuransi. Kalau perusahaanmu memintanya, mintalah pada kunjungan yang sama — mengambilnya di hari lain berarti biaya kunjungan lagi.",
+    "**Kalau bahasa Jepangmu belum cukup di rumah sakit, tiga kalimat ini menolong:** [日本語|Nihongo]がまだ[不十分|fujūbun]なので、ゆっくりお[願|nega]いできますか。 · [紙|Kami]に[書|ka]いていただけますか。 · [今|Ima]のお[話|hanashi]を[確認|kakunin]させてください。〜という[理解|rikai]でよろしいでしょうか。"
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan gejala: kata sifat, onomatope, dan pola kalimatnya",
+     "body": ["Bahasa Jepang menggambarkan rasa sakit terutama dengan **onomatope**, dan tanpa itu penjelasanmu akan terdengar kabur bagi dokter."],
+     "table": {
+      "head": ["Rasa", "Kata", "Kalimatnya"],
+      "rows": [
+       ["nyut-nyut berdenyut", "[ずきずき|zukizuki]", "[頭|Atama]がずきずきします"],
+       ["nyeri menusuk", "[ちくちく|chikuchiku] · [きりきり|kirikiri]", "[胃|I]がきりきり[痛|ita]みます"],
+       ["berat dan tumpul", "[どんより|donyori] · [重|omo]い", "[頭|Atama]が[重|omo]いです"],
+       ["mual", "[むかむか|mukamuka]", "[胃|I]がむかむかします"],
+       ["pusing berputar", "[ぐるぐる|guruguru] · [めまい|memai]", "[めまい|Memai]がします"],
+       ["gatal", "[かゆい|kayui]", "[背中|Senaka]がかゆいです"],
+       ["kesemutan", "[ジンジン|jinjin] · [しびれる|shibireru]", "[足|Ashi]がしびれます"],
+       ["kaku dan pegal", "[こる|koru] · [張|ha]る", "[肩|Kata]がこっています"],
+       ["panas dan kaku", "[ほてる|hoteru]", "[顔|Kao]がほてります"],
+       ["batuk kering / berlendir", "[乾|kawa]いた[咳|seki] / [絡|kara]む[咳|seki]", "[絡|Kara]む[咳|seki]が[出|de]ます"]
+      ]
+     },
+     "after": [
+      "**Pola kalimat gejala yang selalu bisa dipakai:** 〈[部位|bui]〉が〈onomatope〉します。 atau 〈[部位|bui]〉が[痛|ita]みます。 Untuk menyebut sejak kapan: 〈waktu〉から〈gejala〉が[続|tsuzu]いています。",
+      "**Dua kata kerja yang membedakan pembelajar dari penutur:** [痛|ita]む (nyeri, dipakai untuk bagian tubuh sebagai subjek) dan [痛|ita]い (kata sifat). Dokter akan memakai 痛みますか; kamu boleh menjawab [痛|ita]いです — keduanya benar."
+     ]
+    },
+    {
+     "title": "Meminta maaf tanpa mengakui tanggung jawab",
+     "body": ["Ini keterampilan penting dan bukan sinisme: di kecelakaan lalu lintas maupun sengketa kerja, mengakui kesalahan terlalu cepat bisa merugikanmu secara hukum, sementara tidak meminta maaf sama sekali merusak hubungan."],
+     "table": {
+      "head": ["Kalimat", "Yang diakui", "Kapan"],
+      "rows": [
+       ["ご[迷惑|meiwaku]をおかけし[申|mō]し[訳|wake]ございません", "kerepotan yang timbul", "aman dalam hampir semua keadaan"],
+       ["ご[不便|fuben]をおかけしております", "ketidaknyamanan", "gangguan layanan"],
+       ["ご[心配|shinpai]をおかけしました", "kekhawatiran", "sesudah sakit atau kejadian"],
+       ["[大変|Taihen][残念|zannen]な[結果|kekka]となりました", "hasilnya buruk", "tanpa menyebut penyebab"],
+       ["[事実関係|Jijitsu kankei]を[確認|kakunin]の[上|ue]、[改|arata]めてご[連絡|renraku]いたします", "belum apa-apa", "**kalimat kunci** saat fakta belum jelas"],
+       ["[こちら|Kochira]の[不手際|futegiwa]でございました", "kesalahan pihakmu", "kalau memang salahmu"],
+       ["[責任|Sekinin]を[持|mo]って[対応|taiō]いたします", "kesediaan menangani", "tanpa mengakui salah"]
+      ]
+     },
+     "after": [
+      "**Kalimat kelima yang harus kamu hafal hari ini:** [事実関係|Jijitsu kankei]を[確認|kakunin]の[上|ue]、[改|arata]めてご[連絡|renraku]いたします。 Ia meminta maaf, menunjukkan kesediaan, dan tidak mengakui apa pun — dan itulah jawaban yang benar saat kamu belum tahu apa yang sebenarnya terjadi.",
+      "**Di kecelakaan lalu lintas Jepang, jangan pernah menyelesaikan di tempat.** Yang wajib: hubungi [110|hyaku tō] (polisi), jangan sepakati ganti rugi lisan, catat nama serta nomor polis pihak lain, dan laporkan ke asuransimu. Ungkapan yang dipakai: [警察|Keisatsu]を[呼|yo]びましょう · [保険会社|Hoken gaisha]を[通|tō]してお[願|nega]いします."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Dompet yang hilang",
+   "intro": "Ani kehilangan dompet di kereta. Sistem barang hilang Jepang memang bekerja dengan baik, tapi ia menuntut kamu tahu istilahnya.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "すみません、[電車|densha]に[財布|saifu]を[忘|wasu]れてしまったようなんですが。", "id": "Permisi, sepertinya dompet saya tertinggal di kereta.", "literal": "maaf, kereta — pada — dompet — akan — lupa — sayangnya(lampau) — tampaknya — adalah — tetapi."},
+    {"speaker": "[駅員|Ekiin]:", "text": "[かしこまりました|Kashikomarimashita]。[何時|Nanji]ごろの、どちらの[路線|rosen]でしょうか。", "id": "Baik. Sekitar jam berapa, dan jalur yang mana?", "literal": "mengerti(rendah,lampau). jam-berapa — kira-kira — punya, mana(hormat) — punya — jalur — adalah-kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[八時|Hachiji][半|han]ごろ、[中央線|Chūō-sen]の[上|nobo]りです。[新宿|Shinjuku]で[降|o]りたときには[持|mo]っていました。", "id": "Sekitar setengah sembilan, jalur Chuo arah ke pusat. Saat turun di Shinjuku masih saya bawa.", "literal": "delapan-jam — setengah — kira-kira, Chuo-jalur — punya — naik-arah — adalah. Shinjuku — di — turun(lampau) — waktu — pada — mengenai — membawa — sedang(lampau)."},
+    {"speaker": "[駅員|Ekiin]:", "text": "[お財布|O-saifu]の[色|iro]と[形|katachi]、[中身|nakami]で[特徴|tokuchō]のあるものを[教|oshi]えていただけますか。", "id": "Bisa Anda beri tahu warna dan bentuk dompetnya, serta isi yang khas di dalamnya?", "literal": "dompet(hormat) — punya — warna — dan — bentuk, isi — dengan — ciri — punya — ada — benda — akan — memberi-tahu — menerima(hormat) — bisa — kah."},
+    {"speaker": "[アニ|Ani]:", "text": "[紺色|Kon'iro]の[二|ni]つ[折|o]りで、[在留|zairyū][カード|kādo]と[インドネシア|Indoneshia]の[運転免許証|unten menkyoshō]が[入|hai]っています。[現金|Genkin]は[三千円|sanzen en][程度|teido]です。", "id": "Warna biru tua, model lipat dua, di dalamnya ada kartu izin tinggal dan SIM Indonesia. Uang tunainya sekitar tiga ribu yen.", "literal": "biru-tua-warna — punya — dua — lipat — dengan, tinggal-tetap — kartu — dan — Indonesia — punya — kemudi-izin-surat — yang — masuk — sedang. tunai — mengenai — tiga-ribu-yen — kira-kira — adalah."},
+    {"speaker": "[駅員|Ekiin]:", "text": "[お調|o-shira]べいたします。……[終点|Shūten]の[駅|eki]で[届|todo]けが[出|de]ております。[三鷹|Mitaka][駅|eki]の[忘|wasu]れ[物|mono][センター|sentā]で[お預|o-azu]かりしております。", "id": "Saya periksa. …Ada laporan penemuan di stasiun terminal. Sedang disimpan di pusat barang hilang Stasiun Mitaka.", "literal": "memeriksa(hormat) — melakukan(rendah). …ujung-titik — punya — stasiun — di — laporan — yang — keluar — sedang. Mitaka — stasiun — punya — lupa-benda — pusat — di — menerima-titipan(hormat) — sedang(rendah)."},
+    {"speaker": "[アニ|Ani]:", "text": "[本当|Hontō]ですか。よかった……。[受|U]け[取|to]りには[何|nani]が[必要|hitsuyō]でしょうか。", "id": "Benarkah? Syukurlah… Untuk mengambilnya perlu apa saja?", "literal": "sungguh — adalah — kah. baik(lampau)… menerima-mengambil — pada — mengenai — apa — yang — perlu — adalah-kah."},
+    {"speaker": "[駅員|Ekiin]:", "text": "[身分証明書|Mibun shōmeisho]をお[持|mo]ちください。[在留|Zairyū][カード|kādo]が[財布|saifu]の[中|naka]でしたら、[パスポート|pasupōto]など[別|betsu]の[証明書|shōmeisho]でも[結構|kekkō]です。", "id": "Mohon bawa kartu identitas. Kalau kartu izin tinggalnya ada di dalam dompet, kartu identitas lain seperti paspor juga bisa.", "literal": "diri-bukti-surat — akan — membawa(hormat) — silakan. tinggal-tetap — kartu — yang — dompet — punya — dalam — kalau, paspor — semacam — lain — punya — bukti-surat — pun — cukup — adalah."},
+    {"speaker": "[アニ|Ani]:", "text": "[助|Tasu]かりました。[本当|Hontō]にありがとうございます。", "id": "Sangat terbantu. Terima kasih banyak sekali.", "literal": "tertolong(lampau). sungguh — pada — terima-kasih."},
+    {"speaker": "[駅員|Ekiin]:", "text": "[見|Mi]つかってよかったですね。[念|Nen]のため、[カード|kādo][類|rui]は[一度|ichido][各社|kakusha]にご[確認|kakunin]いただくと[安心|anshin]かと[存|zon]じます。", "id": "Syukurlah ditemukan ya. Untuk memastikan, saya rasa lebih aman kalau kartu-kartunya sekali Anda konfirmasi ke tiap penerbitnya.", "literal": "menemukan — baik — adalah — ya. kehati-hatian — demi, kartu — jenis — mengenai — sekali — tiap-perusahaan — pada — pemeriksaan(hormat) — menerima — kalau — tenang — kah — bahwa — berpikir(rendah)."}
+   ],
+   "notes": [
+    "**[忘|wasu]れ[物|mono] dan [落|o]とし[物|mono] — dua kata yang berbeda.** 忘れ物 = barang yang **tertinggal** (kamu meninggalkannya); 落とし物 = barang yang **terjatuh**. Petugas akan menanyakan mana yang terjadi, dan jawabannya menentukan ke mana laporanmu diarahkan.",
+    "**Menyebut jalur kereta: [上|nobo]り dan [下|kuda]り.** 上り = arah menuju Tokyo (atau pusat kota), 下り = arah menjauh. Sistem ini juga dipakai untuk jalan tol dan Shinkansen, dan menyebutnya membuat pencarian petugas jauh lebih cepat.",
+    "**Yang selalu ditanyakan tentang barang hilang:** [色|iro], [形|katachi], [大|ō]きさ, [ブランド|burando], dan [中身|nakami]で[特徴|tokuchō]のあるもの. Siapkan jawaban ketiga sebelum bertanya — ciri isi yang tak mungkin ditebak orang lain adalah bukti terkuat bahwa barang itu milikmu.",
+    "**[お預|o-azu]かりする — kata kerja layanan yang muncul di mana-mana.** Di rumah sakit ([保険証|hokenshō]をお[預|azu]かりします), di hotel, di penitipan barang. Artinya “menerima untuk disimpan sementara”, dan ia 謙譲語 dari [預|azu]かる.",
+    "**Kalau dompetmu hilang di Jepang, urutan tindakannya:** (1) tanya di stasiun atau [交番|kōban] terdekat, (2) blokir kartu bank dan kartu kredit, (3) laporkan kehilangan [在留|zairyū][カード|kādo] ke polisi dan minta [受理番号|juri bangō] — nomor itu diperlukan untuk mengurus kartu pengganti di [入管|nyūkan] dalam **14 hari**.",
+    "**[交番|kōban] adalah pos polisi kecil yang ada di hampir setiap lingkungan**, dan ia tempat pertama untuk hampir semua masalah: barang hilang, tersesat, gangguan tetangga. Kalimat pembukanya cukup: すみません、[落|o]とし[物|mono]の[届|todo]けを[出|da]したいのですが。",
+    "**[受理番号|juri bangō] atau [受付番号|uketsuke bangō] — mintalah selalu.** Setiap laporan resmi di Jepang punya nomor, dan tanpanya kamu tak bisa menelusuri apa pun. Kalimatnya: [受付番号|Uketsuke bangō]をいただけますか。",
+    "**Perhatikan bahwa petugas menutup dengan nasihat yang tidak diminta ([カード|kādo][類|rui]は…ご[確認|kakunin]いただくと[安心|anshin]かと).** Bentuk 〜と[安心|anshin]かと[存|zon]じます sangat berguna: ia memberi saran tanpa menyuruh, dan itulah cara paling halus untuk menyarankan sesuatu kepada orang yang bukan bawahanmu."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata bertahan hidup: tubuh, gejala, dan obat",
+   "blocks": [
+    {"type": "sub", "text": "Bagian tubuh yang paling sering disebut"},
+    {"type": "tabel", "head": ["Jepang", "Arti", "Jepang", "Arti"], "rows": [
+     ["[頭|atama]", "kepala", "[のど|nodo]", "tenggorokan"],
+     ["[胃|i]", "lambung", "[お腹|onaka]", "perut"],
+     ["[腰|koshi]", "pinggang", "[肩|kata]", "bahu"],
+     ["[背中|senaka]", "punggung", "[胸|mune]", "dada"],
+     ["[歯|ha]", "gigi", "[歯茎|haguki]", "gusi"],
+     ["[関節|kansetsu]", "persendian", "[筋肉|kinniku]", "otot"],
+     ["[鼻|hana]", "hidung", "[耳|mimi]", "telinga"],
+     ["[目|me]", "mata", "[皮膚|hifu]", "kulit"]
+    ]},
+    {"type": "sub", "text": "Gejala"},
+    {"type": "tabel", "head": ["Jepang", "Arti", "Jepang", "Arti"], "rows": [
+     ["[発熱|hatsunetsu]", "demam", "[寒気|samuke]", "menggigil"],
+     ["[鼻水|hanamizu]", "hidung meler", "[鼻|hana]づまり", "hidung tersumbat"],
+     ["[吐|ha]き[気|ke]", "mual", "[下痢|geri]", "diare"],
+     ["[便秘|benpi]", "sembelit", "[食欲不振|shokuyoku fushin]", "hilang nafsu makan"],
+     ["[倦怠感|kentaikan]", "lemas, tak bertenaga", "[息切|ikigi]れ", "sesak napas"],
+     ["[発疹|hasshin]", "ruam", "[腫|ha]れ", "bengkak"],
+     ["[打|u]ち[身|mi]", "lebam benturan", "[捻挫|nenza]", "keseleo"],
+     ["[骨折|kossetsu]", "patah tulang", "[やけど|yakedo]", "luka bakar"]
+    ]},
+    {"type": "sub", "text": "Di apotek"},
+    {"type": "kotak", "title": "Yang akan kamu dengar dan katakan", "items": [
+     "[処方箋|Shohōsen]をお[預|azu]かりします。（resepnya kami terima）",
+     "お[薬手帳|kusuri techō]はお[持|mo]ちですか。（buku catatan obat — bawalah selalu, dan minta dibuatkan kalau belum punya）",
+     "[一日|Ichinichi][三回|sankai]、[食後|shokugo]に[一錠|ichijō]お[飲|no]みください。（tiga kali sehari, sesudah makan, satu tablet）",
+     "[眠|Nemu]くなることがありますので、[運転|unten]はお[控|hika]えください。（bisa mengantuk, hindari menyetir）",
+     "[副作用|Fukusayō]が[出|de]た[場合|baai]は[服用|fukuyō]を[中止|chūshi]してご[相談|sōdan]ください。（kalau ada efek samping, hentikan dan konsultasikan）",
+     "**Yang kamu katakan kalau perlu:** [ジェネリック|Jenerikku]でお[願|nega]いします。（minta obat generik, lebih murah）"
+    ]}
+   ]
+  },
+  {
+   "title": "Menuntut hakmu: tegas tanpa marah",
+   "blocks": [
+    {"type": "p", "text": "Bahasa Jepang punya cara menuntut yang efektif, dan yang efektif bukan yang keras. Marah di Jepang hampir selalu memperlambat penyelesaian; yang mempercepatnya adalah **kejelasan, tanggal, dan permintaan tertulis**."},
+    {"type": "kotak", "title": "Rangka empat langkah", "items": [
+     "**1. Sebutkan faktanya dengan tanggal dan angka.** [五月|Gogatsu][十日|tōka]に[お申|o-mō]し[込|ko]みし、[二週間|nishūkan][経過|keika]しておりますが、まだ[ご連絡|go-renraku]をいただいておりません。",
+     "**2. Sebut apa yang seharusnya terjadi.** [規約|Kiyaku][第五条|dai-gojō]では[一週間|isshūkan][以内|inai]にご[回答|kaitō]いただけるものと[理解|rikai]しております。",
+     "**3. Sebutkan permintaanmu, konkret.** [本日|Honjitsu]から[三営業日|san eigyōbi][以内|inai]にご[回答|kaitō]いただけますでしょうか。",
+     "**4. Sebutkan langkah berikutnya, tanpa mengancam.** ご[回答|kaitō]がいただけない[場合|baai]は、[消費生活|shōhi seikatsu][センター|sentā]にご[相談|sōdan]させていただくことも[検討|kentō]しております。",
+     "**Yang tidak berhasil:** menaikkan suara, mengulang keluhan yang sama, atau mengancam menyebarkan di media sosial. Yang berhasil: tanggal, pasal, dan permintaan tertulis."
+    ]},
+    {"type": "sub", "text": "Ke mana mengadu kalau tak terselesaikan"},
+    {"type": "tabel", "head": ["Lembaga", "Untuk apa"], "rows": [
+     ["[消費生活|Shōhi seikatsu][センター|sentā]（[188|iyaya]）", "sengketa konsumen; barang, layanan, penipuan"],
+     ["[労働基準監督署|Rōdō kijun kantokusho]", "upah tak dibayar, lembur berlebihan, PHK sepihak"],
+     ["[法テラス|Hō Terasu]", "bantuan hukum berbiaya rendah"],
+     ["[入管|Nyūkan]（[出入国在留管理庁|Shutsunyūkoku Zairyū Kanrichō]）", "urusan visa dan izin tinggal"],
+     ["[国民生活|Kokumin seikatsu][センター|sentā]", "informasi dan rujukan umum"],
+     ["[交番|Kōban]", "barang hilang, gangguan, kejadian di lingkungan"]
+    ]},
+    {"type": "p", "text": "**Satu catatan yang perlu diketahui pekerja asing:** [労働基準監督署|rōdō kijun kantokusho] menangani pelanggaran aturan kerja secara gratis dan menerima pengaduan dari siapa pun, termasuk pekerja asing dan pekerja paruh waktu. Banyak orang tidak tahu ini, dan pengetahuan itu sendiri sudah bernilai."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "保険証", "baca": "ほけんしょう · hokenshō", "id": "kartu asuransi kesehatan"},
+  {"ja": "初診", "baca": "しょしん · shoshin", "id": "kunjungan pertama"},
+  {"ja": "問診票", "baca": "もんしんひょう · monshinhyō", "id": "formulir keluhan"},
+  {"ja": "既往歴", "baca": "きおうれき · kiōreki", "id": "riwayat penyakit"},
+  {"ja": "症状", "baca": "しょうじょう · shōjō", "id": "gejala"},
+  {"ja": "解熱剤", "baca": "げねつざい · genetsuzai", "id": "obat penurun panas"},
+  {"ja": "市販", "baca": "しはん · shihan", "id": "dijual bebas"},
+  {"ja": "食欲", "baca": "しょくよく · shokuyoku", "id": "nafsu makan"},
+  {"ja": "水分", "baca": "すいぶん · suibun", "id": "asupan cairan"},
+  {"ja": "常用する", "baca": "じょうようする · jōyō suru", "id": "memakai rutin"},
+  {"ja": "検査", "baca": "けんさ · kensa", "id": "pemeriksaan"},
+  {"ja": "陰性", "baca": "いんせい · insei", "id": "negatif (hasil tes)"},
+  {"ja": "陽性", "baca": "ようせい · yōsei", "id": "positif (hasil tes)"},
+  {"ja": "急性", "baca": "きゅうせい · kyūsei", "id": "akut"},
+  {"ja": "咽頭炎", "baca": "いんとうえん · intōen", "id": "radang tenggorokan"},
+  {"ja": "抗生物質", "baca": "こうせいぶっしつ · kōsei busshitsu", "id": "antibiotik"},
+  {"ja": "処方する", "baca": "しょほうする · shohō suru", "id": "meresepkan"},
+  {"ja": "処方箋", "baca": "しょほうせん · shohōsen", "id": "lembar resep"},
+  {"ja": "薬手帳", "baca": "くすりてちょう · kusuri techō", "id": "buku catatan obat"},
+  {"ja": "服用", "baca": "ふくよう · fukuyō", "id": "meminum obat 【書】"},
+  {"ja": "副作用", "baca": "ふくさよう · fukusayō", "id": "efek samping"},
+  {"ja": "頓服", "baca": "とんぷく · tonpuku", "id": "diminum saat perlu saja"},
+  {"ja": "様子を見る", "baca": "ようすをみる · yōsu o miru", "id": "mengamati dulu"},
+  {"ja": "診断書", "baca": "しんだんしょ · shindansho", "id": "surat keterangan dokter"},
+  {"ja": "ずきずき", "baca": "zukizuki", "id": "berdenyut-denyut (nyeri)"},
+  {"ja": "きりきり", "baca": "kirikiri", "id": "nyeri menusuk tajam"},
+  {"ja": "むかむか", "baca": "mukamuka", "id": "mual bergejolak"},
+  {"ja": "しびれる", "baca": "shibireru", "id": "kesemutan"},
+  {"ja": "肩がこる", "baca": "かたがこる · kata ga koru", "id": "bahu pegal kaku"},
+  {"ja": "吐き気", "baca": "はきけ · hakike", "id": "rasa mual"},
+  {"ja": "倦怠感", "baca": "けんたいかん · kentaikan", "id": "lemas tak bertenaga"},
+  {"ja": "捻挫", "baca": "ねんざ · nenza", "id": "keseleo"},
+  {"ja": "骨折", "baca": "こっせつ · kossetsu", "id": "patah tulang"},
+  {"ja": "忘れ物", "baca": "わすれもの · wasuremono", "id": "barang tertinggal"},
+  {"ja": "落とし物", "baca": "おとしもの · otoshimono", "id": "barang terjatuh"},
+  {"ja": "路線", "baca": "ろせん · rosen", "id": "jalur kereta"},
+  {"ja": "上り・下り", "baca": "のぼり・くだり · nobori · kudari", "id": "arah ke pusat / menjauh"},
+  {"ja": "特徴", "baca": "とくちょう · tokuchō", "id": "ciri khas"},
+  {"ja": "お預かりする", "baca": "おあずかりする · o-azukari suru", "id": "menerima untuk disimpan 【敬】"},
+  {"ja": "身分証明書", "baca": "みぶんしょうめいしょ · mibun shōmeisho", "id": "kartu identitas"},
+  {"ja": "受理番号", "baca": "じゅりばんごう · juri bangō", "id": "nomor penerimaan laporan"},
+  {"ja": "交番", "baca": "こうばん · kōban", "id": "pos polisi lingkungan"},
+  {"ja": "不手際", "baca": "ふてぎわ · futegiwa", "id": "kelalaian; kekurangcakapan"},
+  {"ja": "事実関係", "baca": "じじつかんけい · jijitsu kankei", "id": "kaitan fakta"},
+  {"ja": "経過する", "baca": "けいかする · keika suru", "id": "berlalu (waktu)"},
+  {"ja": "営業日", "baca": "えいぎょうび · eigyōbi", "id": "hari kerja"},
+  {"ja": "消費生活センター", "baca": "しょうひせいかつセンター", "id": "pusat perlindungan konsumen"},
+  {"ja": "労働基準監督署", "baca": "ろうどうきじゅんかんとくしょ", "id": "pengawas standar kerja"},
+  {"ja": "法テラス", "baca": "ほうテラス · Hō Terasu", "id": "layanan bantuan hukum"},
+  {"ja": "入管", "baca": "にゅうかん · nyūkan", "id": "imigrasi"},
+  {"ja": "ジェネリック", "baca": "jenerikku", "id": "obat generik"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Jelaskan gejala berikut dalam bahasa Jepang, dengan onomatope yang tepat.",
+   "items": [
+    "Kepala saya berdenyut-denyut.",
+    "Lambung saya nyeri menusuk.",
+    "Saya mual.",
+    "Kaki saya kesemutan.",
+    "Bahu saya pegal kaku."
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan dokter berikut dengan satu kalimat lengkap.",
+   "items": [
+    "いつからですか。（tiga hari lalu）",
+    "[何度|Nando]ぐらいまで[上|a]がりましたか。（38,5）",
+    "[食欲|Shokuyoku]はいかがですか。（tidak ada, tapi bisa minum）",
+    "アレルギーはありますか。（tidak ada alergi obat）",
+    "[今|Ima][飲|no]んでいる[薬|kusuri]はありますか。（obat penurun panas yang dijual bebas）"
+   ]
+  },
+  {
+   "prompt": "Isi dengan 食前 · 食後 · 食間 · 就寝前 · 頓服.",
+   "items": [
+    "[痛|Ita]いときだけ[飲|no]む[薬|kusuri] → ____",
+    "[食事|Shokuji]の[三十分|sanjuppun][前|mae] → ____",
+    "[寝|Ne]る[前|mae] → ____",
+    "[食事|Shokuji]と[食事|shokuji]の[間|aida] → ____",
+    "[ご飯|Gohan]を[食|ta]べたあと → ____"
+   ]
+  },
+  {
+   "prompt": "Pilih kalimat permintaan maaf yang tepat: fakta belum jelas, memang salahmu, atau hanya kerepotan yang timbul.",
+   "items": [
+    "Pelanggan mengeluh tapi kamu belum memeriksa apa pun.",
+    "Kamu memang salah kirim barang.",
+    "Sistem sedang gangguan dan pelanggan tidak bisa mengakses.",
+    "Kamu sakit tiga hari dan tim harus menutupi pekerjaanmu.",
+    "Terjadi kecelakaan lalu lintas dan tanggung jawabnya belum jelas."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang.",
+   "items": [
+    "Sejak tiga hari lalu demam saya tidak turun, tenggorokan juga sakit.",
+    "Sepertinya dompet saya tertinggal di kereta.",
+    "Di dalamnya ada kartu izin tinggal dan SIM Indonesia.",
+    "Untuk mengambilnya perlu apa saja?",
+    "Setelah memastikan faktanya, saya akan menghubungi Anda kembali."
+   ]
+  },
+  {
+   "prompt": "Tulis enam sampai delapan baris untuk tiap keadaan.",
+   "items": [
+    "Kamu mengadu kepada penyedia layanan internet yang sudah dua minggu tidak menjawab permintaan perbaikanmu, memakai rangka empat langkah.",
+    "Kamu menjelaskan kepada dokter bahwa obat sebelumnya menimbulkan efek samping dan meminta penggantinya."
+   ]
+  }
+ ],
+ "answers": [
+  "[頭|Atama]がずきずきします。 — [胃|I]がきりきり[痛|ita]みます。 — [胃|I]がむかむかします。／[吐|ha]き[気|ke]がします。 — [足|Ashi]がしびれます。 — [肩|Kata]がこっています。",
+  "[三日前|Mikkamae]からです。 — [一番|Ichiban][高|taka]いときで[三十八度|sanjūhachi do][五分|gobu]です。 — [食欲|Shokuyoku]はありませんが、[水分|suibun]は[取|to]れています。 — [薬|Kusuri]のアレルギーはありません。 — [市販|Shihan]の[解熱剤|genetsuzai]を[飲|no]んでいます。",
+  "[頓服|Tonpuku] — [食前|Shokuzen] — [就寝前|Shūshinmae] — [食間|Shokkan] — [食後|Shokugo]",
+  "fakta belum jelas → [事実関係|Jijitsu kankei]を[確認|kakunin]の[上|ue]、[改|arata]めてご[連絡|renraku]いたします。 — memang salahmu → こちらの[不手際|futegiwa]でございました。[誠|Makoto]に[申|mō]し[訳|wake]ございません。 — kerepotan yang timbul → ご[不便|fuben]をおかけしております。 — kerepotan yang timbul → ご[迷惑|meiwaku]をおかけし[申|mō]し[訳|wake]ございませんでした。 — fakta belum jelas → [警察|Keisatsu]と[保険会社|hoken gaisha]を[通|tō]して[対応|taiō]させていただきます。",
+  "[三日前|Mikkamae]から[熱|netsu]が[下|sa]がらず、[のど|nodo]も[痛|ita]いです。 — [電車|Densha]に[財布|saifu]を[忘|wasu]れてしまったようなんです。 — [中|Naka]に[在留|zairyū][カード|kādo]と[インドネシア|Indoneshia]の[運転免許証|unten menkyoshō]が[入|hai]っています。 — [受|U]け[取|to]りには[何|nani]が[必要|hitsuyō]でしょうか。 — [事実関係|Jijitsu kankei]を[確認|kakunin]の[上|ue]、[改|arata]めてご[連絡|renraku]いたします。",
+  "Contoh 1／[件名|Kenmei]: [回線|Kaisen][不具合|fuguai]のご[対応|taiō]について（[受付番号|uketsuke bangō] A-8842）／お[世話|sewa]になっております。[五月|Gogatsu][十日|tōka]に[回線|kaisen][不具合|fuguai]のご[連絡|renraku]をし、[受付番号|uketsuke bangō] A-8842 をいただきましたが、[本日|honjitsu]で[二週間|nishūkan]が[経過|keika]しております。ご[案内|annai]では[五営業日|go eigyōbi][以内|inai]にご[回答|kaitō]いただけるとのことでしたので、[現状|genjō]は[大|ō]きく[遅|oku]れていると[理解|rikai]しております。[在宅勤務|Zaitaku kinmu]に[支障|shishō]が[出|de]ており、[本日|honjitsu]から[三営業日|san eigyōbi][以内|inai]に[訪問日|hōmonbi]をご[提示|teiji]いただけますでしょうか。ご[回答|kaitō]がいただけない[場合|baai]は、[消費生活|shōhi seikatsu][センター|sentā]にご[相談|sōdan]することも[検討|kentō]しております。[何卒|Nanitozo]よろしくお[願|nega]いいたします。 — Contoh 2／[前回|Zenkai]いただいた[薬|kusuri]について[ご相談|go-sōdan]がございます。[服用|Fukuyō]を[始|haji]めて[二日目|futsukame]から[発疹|hasshin]が[出|de]て、[体|karada]がかゆくなりました。[三日目|Mikkame]に[服用|fukuyō]を[中止|chūshi]しましたところ、[かゆみ|kayumi]は[徐々|jojo]に[引|hi]いております。[熱|Netsu]は[下|sa]がりましたが、[咳|seki]がまだ[残|noko]っております。[副作用|Fukusayō]の[可能性|kanōsei]があるかと[思|omo]いますので、[別|betsu]の[薬|kusuri]に[変|ka]えていただくことは[可能|kanō]でしょうか。[薬手帳|Kusuri techō]をお[持|mo]ちしましたので、ご[確認|kakunin]いただけますと[助|tasu]かります。"
+ ],
+ "wave": "Tulis satu 問診票 kosong untuk dirimu sendiri hari ini, dalam bahasa Jepang, dan simpan di ponselmu: nama, tanggal lahir, alamat, kontak darurat, riwayat penyakit, alergi, dan obat rutin. Kamu tidak akan bisa menyusunnya dengan tenang saat sedang demam tiga puluh delapan derajat, dan itulah satu-satunya saat kamu akan membutuhkannya."
+}

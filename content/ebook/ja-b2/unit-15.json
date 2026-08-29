@@ -1,0 +1,264 @@
+{
+ "title": "Berita, surat kabar, dan bahasa internet",
+ "title_target": "[ニュース|Nyūsu]・[新聞|shinbun]・[ネット|netto]の[日本語|Nihongo]",
+ "goal": "Membaca judul berita Jepang yang membuang hampir semua partikelnya, mengenali bagaimana bahasa berita menyembunyikan sumber dan tanggung jawab, serta memahami ragam media sosial yang tidak muncul di kamus mana pun.",
+ "bekal": ["membaca [見出|midashi]し berita dan memulihkan partikel yang dibuang", "mengenali penanda sumber berita: [〜とみられる|to mirareru], [〜模様|moyō], [関係者|kankeisha]によると", "membaca kalimat panjang bergaya surat kabar", "mengenali ragam internet, singkatan, dan slang", "memahami [炎上|enjō] dan tata cara minta maaf di ruang publik"],
+ "dialogs": [
+  {
+   "title": "会話 1 — Membaca koran pagi",
+   "intro": "Tanaka dan Ani membaca berita yang menyangkut pesaing mereka. Dialog ini sebenarnya kursus singkat membaca berita Jepang secara kritis.",
+   "lines": [
+    {"speaker": "[田中|Tanaka]:", "text": "これ[読|yo]んだか。「[みどり物産|Midori Bussan]　[新工場|shin kōjō][建設|kensetsu]へ　[来年|rainen][春|haru][着工|chakkō]か」。", "id": "Sudah kamu baca ini? “Midori Bussan menuju pembangunan pabrik baru — kemungkinan mulai dibangun musim semi tahun depan.”", "literal": "ini — membaca(lampau) — kah. “Midori-hasil-bumi　baru-pabrik — pembangunan — menuju　tahun-depan — musim-semi — mulai-bangun — kah”."},
+    {"speaker": "[アニ|Ani]:", "text": "[見出|Midashi]しに「か」が[付|tsu]いてますね。", "id": "Di judulnya ada “ka”, ya.", "literal": "judul-keluar — pada — “kah” — yang — menempel — sedang — ya."},
+    {"speaker": "[田中|Tanaka]:", "text": "そこに[気|ki]づいたのは[偉|era]い。「か」が[付|tsu]いてる[見出|midashi]しは、[裏|ura]が[取|to]れてない。[会社|Kaisha]が[発表|happyō]したなら「[着工|chakkō]」と[言|i]い[切|ki]る。", "id": "Bagus kamu memperhatikan itu. Judul yang ada “ka”-nya berarti belum terkonfirmasi. Kalau perusahaannya yang mengumumkan, mereka akan menulis “mulai dibangun” tanpa ragu.", "literal": "di-situ — pada — sadar(lampau) — yang — mengenai — hebat. “kah” — yang — menempel — sedang — judul — mengenai, belakang — yang — mengambil-bisa — tidak. perusahaan — yang — pengumuman — melakukan(lampau) — kalau — “mulai-bangun” — bahwa — mengatakan-memutus."},
+    {"speaker": "[アニ|Ani]:", "text": "[本文|Honbun]は……「[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった」「[複数|fukusū]の[関係者|kankeisha]によると」。", "id": "Badan beritanya… “diketahui dari wawancara dengan pihak terkait”, “menurut beberapa pihak terkait”.", "literal": "isi-tulisan — mengenai… “kait-orang — kepada — punya — liputan — dengan — mengerti(lampau)” “ganda — punya — kait-orang — menurut”."},
+    {"speaker": "[田中|Tanaka]:", "text": "つまり[誰|dare]が[言|i]ったか[書|ka]いてない。[関係者|Kankeisha]は[社員|shain]かもしれないし、[銀行|ginkō]かもしれないし、[建設会社|kensetsu gaisha]かもしれない。", "id": "Artinya siapa yang mengatakannya tidak ditulis. Pihak terkait itu bisa saja karyawannya, bisa saja banknya, bisa saja perusahaan konstruksinya.", "literal": "artinya — siapa — yang — mengatakan(lampau) — kah — menulis — tidak. kait-orang — mengenai — karyawan — mungkin — dan, bank — mungkin — dan, bangun-perusahaan — mungkin."},
+    {"speaker": "[アニ|Ani]:", "text": "でも[書|ka]いてあることは[本当|hontō]なんですよね。", "id": "Tapi yang tertulis itu benar, kan?", "literal": "tetapi — menulis — ada — hal — mengenai — sungguh — adalah — ya."},
+    {"speaker": "[田中|Tanaka]:", "text": "たぶんな。ただ、[新聞|shinbun]の[書|ka]き[方|kata]には[段階|dankai]がある。「[発表|happyō]した」が[一番|ichiban][強|tsuyo]い。[次|Tsugi]が「[分|wa]かった」。[一番|Ichiban][弱|yowa]いのが「〜[模様|moyō]」「〜とみられる」。", "id": "Mungkin. Hanya saja, cara menulis surat kabar punya tingkatannya. “Mengumumkan” yang paling kuat. Berikutnya “diketahui”. Yang paling lemah “tampaknya” dan “diperkirakan”.", "literal": "mungkin — ya. hanya, koran — punya — menulis-cara — pada — mengenai — tahap — yang — ada. “pengumuman — melakukan(lampau)” — yang — paling — kuat. berikut — yang — “mengerti(lampau)”. paling — lemah — yang — mengenai — “tampaknya” “diperkirakan”."},
+    {"speaker": "[アニ|Ani]:", "text": "[知|Shi]らなかったです。[全部|Zenbu][同|ona]じように[読|yo]んでました。", "id": "Saya tidak tahu itu. Selama ini saya membaca semuanya sama saja.", "literal": "tahu — tidak(lampau) — adalah. seluruh — sama — seperti — membaca — sedang(lampau)."},
+    {"speaker": "[田中|Tanaka]:", "text": "[日本人|Nihonjin]でも[知|shi]らない[人|hito]は[多|ō]い。[新聞|Shinbun]は[嘘|uso]は[書|ka]かないが、[書|ka]き[方|kata]で[距離|kyori]を[取|to]る。[距離|Kyori]の[取|to]り[方|kata]を[読|yo]めるようになれば、[記事|kiji]の[半分|hanbun]は[読|yo]めたことになる。", "id": "Orang Jepang pun banyak yang tidak tahu. Surat kabar tidak menulis kebohongan, tapi mereka menjaga jarak lewat cara menulisnya. Kalau kamu bisa membaca cara mereka menjaga jarak, artinya kamu sudah membaca separuh artikelnya.", "literal": "Jepang-orang — pun — tahu — tidak — orang — mengenai — banyak. koran — mengenai — bohong — mengenai — menulis — tidak — tetapi, menulis-cara — dengan — jarak — akan — mengambil. jarak — punya — mengambil-cara — akan — membaca-bisa — menjadi — kalau, artikel — punya — setengah — mengenai — membaca-bisa(lampau) — hal — pada — menjadi."},
+    {"speaker": "[アニ|Ani]:", "text": "この[記事|kiji]、[みどり物産|Midori Bussan]に[聞|ki]いてみたほうがいいですか。", "id": "Artikel ini, sebaiknya saya tanyakan ke Midori Bussan?", "literal": "ini — artikel, Midori-hasil-bumi — pada — bertanya — mencoba — pihak — yang — baik — adalah — kah."},
+    {"speaker": "[田中|Tanaka]:", "text": "[聞|Ki]くな。[相手|Aite]がまだ[発表|happyō]していないことを[こちら|kochira]から[持|mo]ち[出|da]すと、[情報|jōhō]が[漏|mo]れていると[思|omo]われる。[向|Mu]こうが[話|hana]すまで[知|shi]らない[顔|kao]をしておく。", "id": "Jangan ditanyakan. Kalau kita mengangkat hal yang belum mereka umumkan, kita akan dianggap tahu dari bocoran. Sampai pihak sana yang bicara, pasang wajah tidak tahu.", "literal": "bertanya — jangan. lawan — yang — masih — pengumuman — melakukan — tidak — hal — akan — sini — dari — membawa-mengeluarkan — kalau, informasi — yang — bocor — sedang — bahwa — dipikirkan. sana — yang — berbicara — sampai — tahu — tidak — wajah — akan — melakukan — menaruh."}
+   ],
+   "notes": [
+    "**[見出|midashi]し — judul berita — membuang hampir semua partikel dan kata kerja.** Aturannya: partikel は・が・を・に sering hilang; kata kerja masa depan diganti [へ|e] (“menuju”); kata kerja lampau diganti bentuk kata benda. Contoh: [新工場|Shin kōjō][建設|kensetsu]へ = 新工場を建設する[方針|hōshin]だ. Membaca judul adalah keterampilan tersendiri, dan latihannya adalah memulihkan partikel yang dibuang.",
+    "**「か」 di ujung judul menandai bahwa beritanya belum terkonfirmasi.** Ini kesepakatan yang nyata di jurnalisme Jepang dan sangat berguna diketahui: [値上|Neage]げか · [解散|Kaisan]か · [撤退|Tettai]か. Kalau ada 「か」, artikelnya bersandar pada narasumber, bukan pengumuman.",
+    "**Tingkatan kepastian berita, dari terkuat ke terlemah:** [発表|happyō]した (mereka umumkan) > [明|aki]らかにした (mereka nyatakan) > [分|wa]かった (redaksi memastikannya) > [方針|hōshin]を[固|kata]めた (sudah diputuskan tapi belum diumumkan) > [検討|kentō]している > [〜模様|moyō] / 〜とみられる (dugaan redaksi).",
+    "**[関係者|kankeisha]によると — “menurut pihak terkait”.** Frasa ini sengaja kabur dan dipakai untuk melindungi narasumber. Sepupunya: [複数|fukusū]の[関係者|kankeisha]によると (lebih dari satu sumber, jadi lebih kuat), [政府|seifu][関係者|kankeisha], [捜査|sōsa][関係者|kankeisha]. Selalu perhatikan apakah ada kata [複数|fukusū] — itu menaikkan bobotnya.",
+    "**[裏|ura]が[取|to]れる = terkonfirmasi dari sumber kedua.** Istilah jurnalistik yang juga dipakai di dunia kerja: [裏|Ura]を[取|to]ってから[報告|hōkoku]します. Sangat berguna dan sangat sering muncul.",
+    "**〜と[思|omo]われる vs 〜とみられる.** Yang pertama bisa dipakai siapa pun dalam ragam tulis; yang kedua khas berita dan menyiratkan bahwa dugaan itu bukan dugaan penulisnya sendiri melainkan dugaan yang beredar. Keduanya sama-sama membuang pelaku (Unit 9).",
+    "**Nasihat Tanaka di baris terakhir nyata di dunia kerja Jepang:** menyinggung informasi yang belum diumumkan pihak lain dianggap tanda kebocoran. Ungkapannya: [知|Shi]らない[顔|kao]をする (pura-pura tak tahu), [聞|Ki]かなかったことにする (menganggap tak pernah mendengar).",
+    "**Kalimat berita Jepang panjang karena menumpuk keterangan di depan kata benda.** Contoh: [来年|rainen][春|haru]の[着工|chakkō]を[目指|meza]して[用地|yōchi][取得|shutoku]を[進|susu]めている[みどり物産|Midori Bussan]の[新工場|shin kōjō][計画|keikaku]. Cara membacanya: **cari kata benda terakhir lebih dulu** ([計画|keikaku]), lalu baca mundur."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca 見出し: apa yang dibuang dan bagaimana memulihkannya",
+     "table": {
+      "head": ["Judul", "Bentuk lengkapnya", "Artinya"],
+      "rows": [
+       ["[値上|Neage]げへ", "[値上|Neage]げする[方針|hōshin]だ", "menuju kenaikan harga"],
+       ["[値上|Neage]げか", "[値上|Neage]げする[可能性|kanōsei]がある", "kemungkinan naik harga (belum pasti)"],
+       ["[首相|Shushō]、[訪米|hōbei]", "[首相|Shushō]が[アメリカ|Amerika]を[訪問|hōmon]した", "PM berkunjung ke AS"],
+       ["[株価|Kabuka][急落|kyūraku]", "[株価|Kabuka]が[急落|kyūraku]した", "harga saham anjlok"],
+       ["[新法|Shinpō]、[来春|raishun][施行|shikō]", "[新法|Shinpō]は[来春|raishun]に[施行|shikō]される", "UU baru berlaku musim semi depan"],
+       ["[五輪|Gorin][開幕|kaimaku]まで[一年|ichinen]", "〜まで[あと|ato][一年|ichinen]となった", "setahun menuju pembukaan olimpiade"],
+       ["[社長|Shachō][辞任|jinin]の[意向|ikō]", "[辞任|Jinin]する[意向|ikō]を[固|kata]めた", "direktur berniat mundur"],
+       ["[死者|Shisha][三人|sannin]に", "[死者|Shisha]が[三人|sannin]になった", "korban tewas jadi tiga orang"]
+      ]
+     },
+     "after": [
+      "**Tiga tanda yang harus otomatis kamu kenali:** 「へ」= arah/rencana masa depan; 「か」= belum pasti; 「、」= pemisah subjek dan predikat, menggantikan partikel yang dibuang.",
+      "**Kata khas judul yang jarang muncul di percakapan:** [首相|shushō] (PM), [五輪|gorin] (olimpiade), [邦人|hōjin] (WN Jepang di luar negeri), [同社|dōsha] (perusahaan tersebut), [同氏|dōshi] (orang tersebut), [両者|ryōsha] (kedua pihak), [来春|raishun]／[来夏|raika] (musim semi/panas depan)."
+     ]
+    },
+    {
+     "title": "Kosakata berita yang berulang setiap hari",
+     "table": {
+      "head": ["Bidang", "Kata"],
+      "rows": [
+       ["Ekonomi", "[株価|kabuka] · [円安|en'yasu]／[円高|endaka] · [物価|bukka] · [インフレ|infure] · [景気|keiki] · [決算|kessan] · [業績|gyōseki]"],
+       ["Politik", "[首相|shushō] · [内閣|naikaku] · [与党|yotō]／[野党|yatō] · [法案|hōan] · [可決|kaketsu]／[否決|hiketsu] · [解散|kaisan] · [支持率|shijiritsu]"],
+       ["Bencana", "[震度|shindo] · [マグニチュード|magunichūdo] · [避難|hinan] · [警報|keihō]／[注意報|chūihō] · [被災|hisai] · [安否|anpi]"],
+       ["Kecelakaan", "[事故|jiko] · [死傷者|shishōsha] · [搬送|hansō] · [身元|mimoto] · [原因|gen'in]を[調|shira]べている"],
+       ["Kriminal", "[容疑者|yōgisha] · [逮捕|taiho] · [起訴|kiso] · [容疑|yōgi]を[否認|hinin] · [捜査|sōsa]"],
+       ["Sosial", "[少子高齢化|shōshi kōreika] · [人手不足|hitode busoku] · [格差|kakusa] · [待機児童|taiki jidō] · [過労|karō]"]
+      ]
+     },
+     "after": [
+      "**[容疑者|yōgisha] — “tersangka”, dan media Jepang wajib memakainya sampai vonis.** Sesudah didakwa jadi [被告|hikoku]. Ini aturan penulisan, bukan basa-basi: menyebut nama tanpa 容疑者 sebelum vonis dianggap pelanggaran serius.",
+      "**[震度|shindo] dan [マグニチュード|magunichūdo] tidak sama.** マグニチュード mengukur kekuatan gempanya; [震度|shindo] mengukur goncangan di satu tempat, berskala 0 sampai 7 dengan 5 dan 6 terbagi [弱|jaku]／[強|kyō]. Di Jepang, angka yang penting bagimu adalah 震度."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "会話 2 — Bahasa yang tidak ada di kamus",
+   "intro": "Rina menjelaskan ragam internet kepada Ani. Kosakata di dialog ini berubah cepat, tapi polanya tidak.",
+   "lines": [
+    {"speaker": "[アニ|Ani]:", "text": "この[コメント|komento]、[意味|imi]がわからない。「[草|kusa]」って[何|nani]。", "id": "Komentar ini, aku nggak paham artinya. “Kusa” itu apa?", "literal": "ini — komentar, arti — yang — tidak-mengerti. “rumput” — begitu — apa."},
+    {"speaker": "[リナ|Rina]:", "text": "[笑|wara]ってるってこと。[笑|Wara]いが「www」で、[並|nara]ぶと[草|kusa]が[生|ha]えてるように[見|mi]えるから。", "id": "Artinya lagi ketawa. Tawa itu “www”, dan kalau berjajar kelihatan kayak rumput tumbuh.", "literal": "tertawa — sedang — begitu — hal. tawa — yang — “www” — dengan, berjajar — kalau — rumput — yang — tumbuh — sedang — seperti — terlihat — karena."},
+    {"speaker": "[アニ|Ani]:", "text": "……[本当|Hontō]に？", "id": "…Serius?", "literal": "…sungguh — pada — kah."},
+    {"speaker": "[リナ|Rina]:", "text": "[本当|Hontō]。あと「[それな|sore na]」は[同意|dōi]、「[ぴえん|pien]」は[泣|na]きそう、「[エモい|emoi]」は[何|nan]か[感動|kandō]した[感|kan]じ。", "id": "Serius. Terus “sore na” itu setuju, “pien” itu mau nangis, “emoi” itu perasaan terharu gitu.", "literal": "sungguh. sesudah — “itu — ya” — mengenai — setuju, “pien” — mengenai — menangis — tampak, “emosional” — mengenai — apa — kah — terharu(lampau) — perasaan."},
+    {"speaker": "[アニ|Ani]:", "text": "[会社|Kaisha]で[使|tsuka]ったらまずい？", "id": "Kalau dipakai di kantor bahaya?", "literal": "perusahaan — di — memakai(lampau) — kalau — buruk — kah."},
+    {"speaker": "[リナ|Rina]:", "text": "[社内|Shanai][チャット|chatto]の[軽|karu]い[やり取|yaritori]りなら[平気|heiki]。[社外|Shagai]は[絶対|zettai]なし。[あと|Ato][年齢|nenrei][差|sa]があると[通|tsū]じない。うちの[部長|buchō]、「[草|kusa]」を[本気|honki]で[植物|shokubutsu]だと[思|omo]ってた。", "id": "Kalau obrolan ringan di chat internal sih santai. Ke luar perusahaan mutlak nggak. Terus kalau beda umur nggak nyambung. Manajerku beneran ngira “kusa” itu tanaman.", "literal": "dalam-perusahaan — obrolan — punya — ringan — saling-berkirim — kalau — tak-apa. luar-perusahaan — mengenai — pasti — tidak-ada. sesudah — umur — selisih — yang — ada — kalau — sampai — tidak. kami — punya — bagian-kepala, “rumput” — akan — sungguh — dengan — tumbuhan — adalah — bahwa — berpikir — sedang(lampau)."},
+    {"speaker": "[アニ|Ani]:", "text": "[炎上|Enjō]って[言葉|kotoba]も[最近|saikin]よく[見|mi]ます。", "id": "Kata “enjō” juga akhir-akhir ini sering aku lihat.", "literal": "terbakar-naik — begitu — kata — juga — belakangan — sering — melihat."},
+    {"speaker": "[リナ|Rina]:", "text": "[企業|Kigyō]にとっては[本当|hontō]に[怖|kowa]い。[一晩|Hitoban]で[何万件|nanmanken]も[引用|in'yō]される。[謝罪文|Shazaibun]の[出|da]し[方|kata][一|hito]つで[余計|yokei]に[燃|mo]えることもある。", "id": "Buat perusahaan itu beneran menakutkan. Semalam bisa dikutip puluhan ribu kali. Salah cara mengeluarkan surat permintaan maaf saja bisa makin membakar.", "literal": "perusahaan — bagi — mengenai — sungguh — pada — menakutkan. satu-malam — dengan — berapa-puluh-ribu-perkara — pun — kutipan — dilakukan. maaf-tulisan — punya — mengeluarkan-cara — satu — dengan — berlebih — pada — terbakar — hal — juga — ada."},
+    {"speaker": "[アニ|Ani]:", "text": "[燃|Mo]えない[謝|ayama]り[方|kata]ってあるんですか。", "id": "Ada nggak sih cara minta maaf yang nggak bikin makin terbakar?", "literal": "terbakar — tidak — meminta-maaf-cara — begitu — ada — adalah — kah."},
+    {"speaker": "[リナ|Rina]:", "text": "[早|Haya]く[出|da]す、[言|i]い[訳|wake]しない、[何|nani]をするか[書|ka]く。[三|Mit]つだけ。[逆|Gyaku]に「[誤解|gokai]を[招|mane]いたのであれば」って[書|ka]くと[必|kanara]ず[燃|mo]える。", "id": "Cepat keluarkan, jangan cari alasan, tulis apa yang akan dilakukan. Tiga itu aja. Sebaliknya kalau nulis “jika hal ini menimbulkan kesalahpahaman” pasti kebakar.", "literal": "cepat — mengeluarkan, berkata-alasan — tidak, apa — akan — melakukan — kah — menulis. tiga — hanya. kebalikan — pada — “salah-paham — akan — mengundang(lampau) — kalau” — begitu — menulis — kalau — pasti — terbakar."}
+   ],
+   "notes": [
+    "**Ragam internet berubah cepat, tapi mekanismenya tetap:** pemendekan ([了解|ryōkai] → [り|ri]), penulisan bunyi ([ぴえん|pien]), perubahan bagian ujaran ([エモい|emoi] dari “emotional”), dan lelucon visual ([草|kusa] dari www). Yang perlu kamu kuasai bukan daftarnya, melainkan kesadaran bahwa ada ragam yang tidak boleh menyeberang ke tulisan kerja.",
+    "**[炎上|enjō] — “terbakar”, yaitu badai kecaman daring.** Kata kerjanya [炎上|enjō]する dan [燃|mo]える. Kosakata sekitarnya: [バズる|bazuru] (viral, netral atau baik), [拡散|kakusan] (penyebaran), [晒|sara]す (mempermalukan di publik), [特定|tokutei]される (identitas terbongkar), [鍵垢|kagi aka] (akun terkunci).",
+    "**Nasihat Rina soal permintaan maaf publik sesuai dengan praktik nyata krisis komunikasi Jepang:** cepat, tanpa alasan, dan menyebutkan tindakan. Frasa [誤解|gokai]を[招|mane]いたのであれば (“jika menimbulkan kesalahpahaman”) memang terkenal memperburuk keadaan, karena ia memindahkan kesalahan ke pembaca — persis kebalikan dari yang dikehendaki.",
+    "**Kosakata media sosial yang perlu kamu kenali sebagai pembaca:** [投稿|tōkō] (unggahan), [引用|in'yō] (kutipan), [返信|henshin] (balasan), [通報|tsūhō] (laporan), [フォロー|forō]／[フォロワー|forowā], [なりすまし|narisumashi] (akun palsu meniru orang lain), [誹謗中傷|hibō chūshō] (fitnah dan hinaan — istilah hukum, dan sejak 2022 bisa dipidana di Jepang)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu artikel pendek, dibedah",
+   "blocks": [
+    {"type": "p", "text": "Berikut artikel berita khas dengan panjang yang biasa. Bacalah dua kali: pertama untuk isi, kedua untuk menandai tiap tempat penulis menjaga jarak dari klaimnya."},
+    {"type": "kotak", "title": "[みどり物産|Midori Bussan]、[新工場|shin kōjō][建設|kensetsu]へ　[来春|raishun][着工|chakkō]か", "items": [
+     "[食品|Shokuhin][商社|shōsha]の[みどり物産|Midori Bussan]が、[千葉県内|Chiba kennai]に[新工場|shin kōjō]を[建設|kensetsu]する[方針|hōshin]を[固|kata]めたことが、[複数|fukusū]の[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった。",
+     "[関係者|Kankeisha]によると、[投資額|tōshigaku]は[百億円|hyaku oku en][規模|kibo]とみられ、[来春|raishun]の[着工|chakkō]、[再来年|sarainen][秋|aki]の[稼働|kadō]を[目指|meza]す[模様|moyō]。",
+     "[背景|Haikei]には、[東南|Tōnan][アジア|Ajia][向|mu]け[輸出|yushutsu]の[伸|no]びがある。[同社|Dōsha]の[輸出|yushutsu][売上|uriage]は[過去|kako][三年|sannen]で[約|yaku][五割|gowari][増加|zōka]しており、[現|gen][工場|kōjō]では[生産|seisan][能力|nōryoku]が[限界|genkai]に[近|chika]づいていた。",
+     "[一方|Ippō]、[建設|kensetsu][費|hi]の[高騰|kōtō]や[人手不足|hitode busoku]が[計画|keikaku]に[影響|eikyō]を[与|ata]える[可能性|kanōsei]もある。[同社|Dōsha]は[取材|shuzai]に[対|tai]し「[決|ki]まった[事実|jijitsu]はない」としている。"
+    ]},
+    {"type": "sub", "text": "Tempat penulis menjaga jarak"},
+    {"type": "tabel", "head": ["Frasa", "Yang dilakukannya"], "rows": [
+     ["[方針|hōshin]を[固|kata]めた", "sudah diputuskan **internal**, belum diumumkan"],
+     ["[複数|fukusū]の[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった", "lebih dari satu sumber, tapi tak seorang pun disebut"],
+     ["〜とみられ", "dugaan; angkanya belum pasti"],
+     ["〜[模様|moyō]", "penanda terlemah; hampir sepenuhnya dugaan"],
+     ["[可能性|kanōsei]もある", "menyiapkan pembaca kalau rencananya batal"],
+     ["「[決|Ki]まった[事実|jijitsu]はない」としている", "bantahan resmi dikutip; tanggung jawab dikembalikan"]
+    ]},
+    {"type": "p", "text": "**Perhatikan kalimat terakhir.** Ia bukan sekadar keseimbangan: mengutip bantahan perusahaan melindungi redaksi kalau beritanya salah, sekaligus tidak menariknya kembali. Bentuk 〜としている (“menyatakan begitu”) adalah pasif tanpa pelaku dari Unit 9 dalam bentuk paling murninya."}
+   ]
+  },
+  {
+   "title": "Ragam internet: apa yang boleh menyeberang, apa yang tidak",
+   "blocks": [
+    {"type": "tabel", "head": ["Ragam", "Contoh", "Boleh dipakai di"], "rows": [
+     ["Slang anak muda", "[草|kusa] · [それな|sore na] · [エモい|emoi] · [ぴえん|pien]", "chat pribadi saja"],
+     ["Singkatan umum", "[了解|ryōkai]→り · [ありがとう|arigatō]→[あざす|azasu]", "chat pribadi saja"],
+     ["Singkatan kantor", "[リスケ|risuke] · [アサイン|asain] · [エビデンス|ebidensu] · [ペンディング|pendingu]", "chat & lisan kantor"],
+     ["Singkatan tertulis", "[お疲|otsuka]れさま→[お疲|otsuka]れさまです", "**jangan** disingkat ke atasan"],
+     ["Emoji & stiker", "😊 · スタンプ", "chat internal; hindari ke klien"],
+     ["Ragam netral", "[承知|shōchi]しました · [確認|kakunin]します", "aman di mana pun"]
+    ]},
+    {"type": "kotak", "title": "Singkatan kantor Jepang yang sering membingungkan pemula", "items": [
+     "**[リスケ|risuke]** — reschedule; [会議|kaigi]をリスケする.",
+     "**[エビデンス|ebidensu]** — bukti, catatan; エビデンスを[残|noko]す.",
+     "**[アジェンダ|ajenda]** dan **[MTG|emu tī jī]** — agenda dan meeting.",
+     "**[ペンディング|pendingu]** — ditunda, digantung; [一旦|ittan]ペンディングで.",
+     "**[ASAP|ēsapu]** dan **[なるはや|naru haya]** — secepatnya; keduanya hanya untuk internal, tak pernah ke klien (lihat [至急|shikyū] di Unit 2).",
+     "**[お手|o-te]すきの[際|sai]に** — “saat Anda longgar”; kebalikan sopan dari なるはや, dan inilah yang dipakai ke luar."
+    ]},
+    {"type": "p", "text": "Aturan sederhana yang jarang salah: **kalau kamu tidak pernah melihatnya di dokumen resmi, jangan menuliskannya ke luar perusahaan.** Ragam internet dan singkatan kantor sama-sama menandai keakraban, dan menandai keakraban dengan orang yang belum akrab adalah kesalahan yang paling cepat terasa dalam bahasa Jepang."}
+   ]
+  }
+ ],
+ "vocab": [
+  {"ja": "見出し", "baca": "みだし · midashi", "id": "judul berita"},
+  {"ja": "本文", "baca": "ほんぶん · honbun", "id": "badan berita"},
+  {"ja": "取材", "baca": "しゅざい · shuzai", "id": "peliputan; wawancara"},
+  {"ja": "関係者", "baca": "かんけいしゃ · kankeisha", "id": "pihak terkait (sumber tak disebut)"},
+  {"ja": "裏を取る", "baca": "うらをとる · ura o toru", "id": "mengonfirmasi ke sumber kedua"},
+  {"ja": "方針を固める", "baca": "ほうしんをかためる · hōshin o katameru", "id": "memutuskan arah kebijakan"},
+  {"ja": "明らかにする", "baca": "あきらかにする · akiraka ni suru", "id": "menyatakan secara resmi"},
+  {"ja": "模様", "baca": "もよう · moyō", "id": "tampaknya 【書】berita"},
+  {"ja": "〜とみられる", "baca": "to mirareru", "id": "diperkirakan 【書】"},
+  {"ja": "〜としている", "baca": "to shite iru", "id": "menyatakan demikian 【書】"},
+  {"ja": "着工", "baca": "ちゃっこう · chakkō", "id": "mulai pembangunan"},
+  {"ja": "稼働", "baca": "かどう · kadō", "id": "mulai beroperasi"},
+  {"ja": "投資額", "baca": "とうしがく · tōshigaku", "id": "nilai investasi"},
+  {"ja": "規模", "baca": "きぼ · kibo", "id": "skala"},
+  {"ja": "同社", "baca": "どうしゃ · dōsha", "id": "perusahaan tersebut 【書】"},
+  {"ja": "高騰", "baca": "こうとう · kōtō", "id": "lonjakan harga 【書】"},
+  {"ja": "人手不足", "baca": "ひとでぶそく · hitode busoku", "id": "kekurangan tenaga kerja"},
+  {"ja": "首相", "baca": "しゅしょう · shushō", "id": "perdana menteri"},
+  {"ja": "内閣", "baca": "ないかく · naikaku", "id": "kabinet"},
+  {"ja": "与党・野党", "baca": "よとう・やとう · yotō · yatō", "id": "partai penguasa / oposisi"},
+  {"ja": "法案", "baca": "ほうあん · hōan", "id": "rancangan undang-undang"},
+  {"ja": "可決・否決", "baca": "かけつ・ひけつ · kaketsu · hiketsu", "id": "disetujui / ditolak"},
+  {"ja": "支持率", "baca": "しじりつ · shijiritsu", "id": "tingkat dukungan"},
+  {"ja": "震度", "baca": "しんど · shindo", "id": "skala goncangan gempa"},
+  {"ja": "避難", "baca": "ひなん · hinan", "id": "pengungsian"},
+  {"ja": "警報・注意報", "baca": "けいほう・ちゅういほう", "id": "peringatan / imbauan waspada"},
+  {"ja": "安否", "baca": "あんぴ · anpi", "id": "keselamatan seseorang"},
+  {"ja": "容疑者", "baca": "ようぎしゃ · yōgisha", "id": "tersangka"},
+  {"ja": "逮捕", "baca": "たいほ · taiho", "id": "penangkapan"},
+  {"ja": "起訴", "baca": "きそ · kiso", "id": "dakwaan"},
+  {"ja": "否認する", "baca": "ひにんする · hinin suru", "id": "membantah tuduhan"},
+  {"ja": "少子高齢化", "baca": "しょうしこうれいか", "id": "penuaan penduduk & rendahnya kelahiran"},
+  {"ja": "格差", "baca": "かくさ · kakusa", "id": "kesenjangan"},
+  {"ja": "過労", "baca": "かろう · karō", "id": "kelelahan kerja berlebihan"},
+  {"ja": "炎上", "baca": "えんじょう · enjō", "id": "badai kecaman daring"},
+  {"ja": "バズる", "baca": "bazuru", "id": "menjadi viral"},
+  {"ja": "拡散", "baca": "かくさん · kakusan", "id": "penyebaran"},
+  {"ja": "晒す", "baca": "さらす · sarasu", "id": "mempermalukan di publik"},
+  {"ja": "特定される", "baca": "とくていされる · tokutei sareru", "id": "identitasnya terbongkar"},
+  {"ja": "誹謗中傷", "baca": "ひぼうちゅうしょう · hibō chūshō", "id": "fitnah dan hinaan"},
+  {"ja": "投稿", "baca": "とうこう · tōkō", "id": "unggahan"},
+  {"ja": "引用", "baca": "いんよう · in'yō", "id": "kutipan"},
+  {"ja": "通報", "baca": "つうほう · tsūhō", "id": "pelaporan"},
+  {"ja": "なりすまし", "baca": "narisumashi", "id": "akun palsu peniru"},
+  {"ja": "草", "baca": "くさ · kusa", "id": "tertawa 【ネット】"},
+  {"ja": "それな", "baca": "sore na", "id": "setuju banget 【ネット】"},
+  {"ja": "エモい", "baca": "emoi", "id": "terharu; menyentuh 【ネット】"},
+  {"ja": "リスケ", "baca": "risuke", "id": "menjadwal ulang"},
+  {"ja": "エビデンス", "baca": "ebidensu", "id": "bukti tertulis"},
+  {"ja": "ペンディング", "baca": "pendingu", "id": "ditunda; digantung"},
+  {"ja": "なるはや", "baca": "naru haya", "id": "secepatnya (internal)"}
+ ],
+ "exercises": [
+  {
+   "prompt": "Pulihkan judul berita berikut menjadi kalimat lengkap.",
+   "items": [
+    "[新工場|Shin kōjō][建設|kensetsu]へ",
+    "[株価|Kabuka][急落|kyūraku]",
+    "[社長|Shachō][辞任|jinin]か",
+    "[首相|Shushō]、[来週|raishū][訪米|hōbei]",
+    "[死者|Shisha][三人|sannin]に"
+   ]
+  },
+  {
+   "prompt": "Urutkan tingkat kepastian berikut dari yang paling kuat ke yang paling lemah, tulis nomornya (1 = terkuat).",
+   "items": [
+    "〜する[方針|hōshin]を[固|kata]めた",
+    "〜する[模様|moyō]だ",
+    "〜すると[発表|happyō]した",
+    "〜することが[分|wa]かった",
+    "〜するとみられる"
+   ]
+  },
+  {
+   "prompt": "Tandai frasa mana di kalimat berikut yang membuat penulis menjaga jarak dari klaimnya.",
+   "items": [
+    "[投資額|Tōshigaku]は[百億円|hyaku oku en][規模|kibo]とみられる。",
+    "[複数|Fukusū]の[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった。",
+    "[同社|Dōsha]は「[決|ki]まった[事実|jijitsu]はない」としている。",
+    "[計画|Keikaku]に[影響|eikyō]を[与|ata]える[可能性|kanōsei]もある。",
+    "[来春|Raishun]の[着工|chakkō]を[目指|meza]す[模様|moyō]。"
+   ]
+  },
+  {
+   "prompt": "Tandai apakah ungkapan berikut boleh dipakai ke klien luar perusahaan: boleh atau jangan.",
+   "items": [
+    "なるはやでお[願|nega]いします。",
+    "お[手|te]すきの[際|sai]にご[確認|kakunin]ください。",
+    "[一旦|Ittan][ペンディング|pendingu]で。",
+    "[承知|Shōchi]いたしました。",
+    "それな。"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Jepang ragam berita.",
+   "items": [
+    "Diketahui dari peliputan terhadap beberapa pihak terkait.",
+    "Nilai investasinya diperkirakan berskala sepuluh miliar yen.",
+    "Perusahaan tersebut menyatakan bahwa belum ada fakta yang diputuskan.",
+    "Ada juga kemungkinan lonjakan biaya konstruksi memengaruhi rencananya.",
+    "Ekspor perusahaan itu naik sekitar lima puluh persen dalam tiga tahun terakhir."
+   ]
+  },
+  {
+   "prompt": "Tulis naskah untuk tugas berikut.",
+   "items": [
+    "Tulis artikel berita pendek empat paragraf tentang perusahaanmu yang akan membuka cabang baru, dengan tingkat kepastian yang bertingkat seperti contoh di unit ini.",
+    "Tulis pernyataan permintaan maaf publik enam sampai delapan baris untuk kesalahan pengiriman data pelanggan: cepat, tanpa alasan, dan menyebutkan tindakan."
+   ]
+  }
+ ],
+ "answers": [
+  "[新工場|Shin kōjō]を[建設|kensetsu]する[方針|hōshin]だ。 — [株価|Kabuka]が[急落|kyūraku]した。 — [社長|Shachō]が[辞任|jinin]する[可能性|kanōsei]がある。 — [首相|Shushō]が[来週|raishū][アメリカ|Amerika]を[訪問|hōmon]する。 — [死者|Shisha]が[三人|sannin]になった。",
+  "2 — 5 — 1 — 3 — 4",
+  "とみられる — [複数|fukusū]の[関係者|kankeisha]（sumber tak disebut namanya） — としている（bantahan dikutip, bukan diambil alih） — [可能性|kanōsei]もある — [模様|moyō]",
+  "jangan — boleh — jangan — boleh — jangan",
+  "[複数|Fukusū]の[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった。 — [投資額|Tōshigaku]は[百億円|hyaku oku en][規模|kibo]とみられる。 — [同社|Dōsha]は「[決|ki]まった[事実|jijitsu]はない」としている。 — [建設|Kensetsu][費|hi]の[高騰|kōtō]が[計画|keikaku]に[影響|eikyō]を[与|ata]える[可能性|kanōsei]もある。 — [同社|Dōsha]の[輸出|yushutsu][売上|uriage]は[過去|kako][三年|sannen]で[約|yaku][五割|gowari][増加|zōka]している。",
+  "Contoh 1／**[山川商事|Yamakawa Shōji]、[ジャカルタ|Jakaruta]に[拠点|kyoten]　[来春|raishun][開設|kaisetsu]か**／[食品|Shokuhin][商社|shōsha]の[山川商事|Yamakawa Shōji]が、[インドネシア|Indoneshia]・[ジャカルタ|Jakaruta]に[現地|genchi][拠点|kyoten]を[開設|kaisetsu]する[方針|hōshin]を[固|kata]めたことが、[複数|fukusū]の[関係者|kankeisha]への[取材|shuzai]で[分|wa]かった。／[関係者|Kankeisha]によると、[初年度|shonendo]の[投資額|tōshigaku]は[三億円|san oku en][規模|kibo]とみられ、[来春|raishun]の[開設|kaisetsu]、[来夏|raika]の[本格|honkaku][稼働|kadō]を[目指|meza]す[模様|moyō]。／[背景|Haikei]には[東南|Tōnan][アジア|Ajia][向|mu]け[取引|torihiki]の[拡大|kakudai]がある。[同社|Dōsha]の[同|dō][地域|chiiki][売上|uriage]は[過去|kako][三年|sannen]で[約|yaku][三割|sanwari][増加|zōka]しており、[現行|genkō]の[代理店|dairiten][体制|taisei]では[対応|taiō]が[追|o]いつかなくなっていた。／[一方|Ippō]、[現地|genchi][人材|jinzai]の[確保|kakuho]が[課題|kadai]となる[可能性|kanōsei]もある。[同社|Dōsha]は[取材|shuzai]に[対|tai]し「[検討|kentō]は[進|susu]めているが、[決定|kettei]した[事実|jijitsu]はない」としている。 — Contoh 2／[お客様|O-kyaku-sama][情報|jōhō]の[誤送信|gosōshin]に[関|kan]するお[詫|wa]びとご[報告|hōkoku]／[本日|Honjitsu][午後|gogo][四時|yoji][四十分|yonjuppun]、[弊社|heisha]より[送信|sōshin]した[メール|mēru][一通|ittsū]において、[お客様|o-kyaku-sama][三名|sanmei]の[氏名|shimei]および[電話番号|denwa bangō]を、[本来|honrai]の[送信先|sōshinsaki]とは[異|koto]なる[外部|gaibu]の[宛先|atesaki]に[送信|sōshin]いたしました。／[対象|Taishō]のお[客様|kyakusama]には[個別|kobetsu]にご[連絡|renraku]を[差|sa]し[上|a]げ、[誤送信先|gosōshinsaki]には[削除|sakujo]をご[依頼|irai]の[上|ue]、[削除|sakujo][完了|kanryō]の[報告|hōkoku]を[受|u]けております。／[原因|Gen'in]は[宛先|atesaki][自動|jidō][補完|hokan]による[選択|sentaku][誤|ayama]りであり、[送信前|sōshinmae][確認|kakunin]の[手順|tejun]が[定|sada]められていなかったことによるものです。／[本日|Honjitsu]より[社外|shagai][宛|ate][メール|mēru]の[宛先|atesaki][自動|jidō][補完|hokan]を[停止|teishi]し、[個人情報|kojin jōhō]を[含|fuku]む[送信|sōshin]については[上長|jōchō][承認|shōnin]を[必須|hissu]といたします。／[ご迷惑|Go-meiwaku]とご[心配|shinpai]をおかけしましたことを、[深|fuka]くお[詫|wa]び[申|mō]し[上|a]げます。"
+ ],
+ "wave": "Ambil satu berita berbahasa Jepang hari ini dan lakukan dua hal saja: (1) tulis ulang judulnya menjadi kalimat lengkap dengan partikelnya, (2) tandai tiap frasa yang membuat penulis menjaga jarak. Lakukan setiap hari selama dua minggu. Ini latihan membaca berita yang paling cepat berhasil, karena ia melatih dua keterampilan berbeda — memulihkan yang dibuang, dan melihat yang sengaja dikaburkan."
+}
