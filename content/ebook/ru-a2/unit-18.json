@@ -1,0 +1,570 @@
+{
+ "title": "Satu rubel, dua rubel, lima rubel",
+ "title_target": "Числа и даты — CHIS-la i DA-ty",
+ "goal": "Menguasai aturan angka yang mengubah ekor kata bendanya — dan menyebut tanggal, tahun, umur, serta harga tanpa ragu.",
+ "bekal": [
+  "menerapkan aturan 1 / 2-4 / 5+ pada kata benda sesudah angka",
+  "menyebut harga dalam rubel dan kopek dengan bentuk yang benar",
+  "menyebut tanggal dengan bilangan tingkat: первое января / первого января",
+  "menyebut tahun dan menjawab «в каком году?»",
+  "memakai сколько, столько, несколько dengan genitif jamak"
+ ],
+ "wave": "Ulangi **unit 16**: ceritakan lima benda milikmu dan milik orang lain dengan lantang — perhatikan *свой* lawan *его́*.",
+ "dialogs": [
+  {
+   "title": "Диалог — Di pasar",
+   "intro": "Ани dan Сергей berbelanja di pasar. Perhatikan bahwa kata benda yang sama berganti ekor tiga kali dalam satu percakapan pendek.",
+   "lines": [
+    {
+     "speaker": "Продаве́ц:",
+     "text": "[Что|Shto] [будете|BU-di-tye] [брать|brat']?",
+     "id": "Mau ambil apa?",
+     "literal": "apa — akan — mengambil?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Три|Tri] [килограмма|ki-lag-RA-ma] [яблок|YAB-lak] [и|i] [один|a-DIN] [килограмм|ki-lag-RAM] [винограда|vi-nag-RA-da].",
+     "id": "Tiga kilo apel dan satu kilo anggur.",
+     "literal": "tiga — kilogram(gen tunggal) — apel(gen jamak) — dan — satu — kilogram — anggur(gen)."
+    },
+    {
+     "speaker": "Продаве́ц:",
+     "text": "[Четыреста|Chi-TY-ris-ta] [рублей|rub-LYEY]. [Ещё|Yi-SCHO] [что-нибудь|SHTO-ni-but']?",
+     "id": "Empat ratus rubel. Ada lagi?",
+     "literal": "empat-ratus — rubel(gen jamak). lagi — sesuatu?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Слышишь|SLY-shysh]? «[Два|Dva] [огурца|a-gur-TSA]» — [но|no] «[пять|pyat'] [помидоров|pa-mi-DO-raf]».",
+     "id": "Dengar? \"Dua timun\" pakai ekor -а, tapi \"lima tomat\" pakai ekor -ов.",
+     "literal": "mendengar-kamu? «dua — timun(gen tunggal)» — tapi — «lima — tomat(gen jamak)»."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Слышишь|SLY-shysh]? «[Два|Dva] [огурца|a-gur-TSA]» — [но|no] «[пять|pyat'] [помидоров|pa-mi-DO-raf]».",
+     "id": "Dengar? \"Dua timun\" pakai ekor -а, tapi \"lima tomat\" pakai ekor -ов.",
+     "literal": "mendengar-kamu? «dua — timun(gen tunggal)» — tapi — «lima — tomat(gen jamak)»."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Я|Ya] [знаю|ZNA-yu] [правило|PRA-vi-la]. [Просто|PROS-ta] [после|POS-lye] [пяти|pi-TI] [я|ya] [начинаю|na-chi-NA-yu] [бояться|ba-YA-tsa].",
+     "id": "Saya tahu aturannya. Cuma setelah angka lima saya mulai takut.",
+     "literal": "saya — tahu — aturan. hanya — sesudah — lima(gen) — saya — mulai — takut."
+    },
+    {
+     "speaker": "Продаве́ц:",
+     "text": "[С|S] [вас|vas] [пятьсот|pit'-SOT] [двадцать|DVA-tsat'] [рублей|rub-LYEY].",
+     "id": "Totalnya lima ratus dua puluh rubel.",
+     "literal": "dari — kalian — lima-ratus — dua-puluh — rubel(gen jamak)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Вот|Vot] [тысяча|TY-si-chi]. [Сколько|SKOL'-ka] [сдачи|SDA-chi]?",
+     "id": "Ini seribu. Kembaliannya berapa?",
+     "literal": "ini — seribu. berapa — kembalian(gen)?"
+    },
+    {
+     "speaker": "Продаве́ц:",
+     "text": "[Четыреста|Chi-TY-ris-ta] [восемьдесят|VO-sim'-di-sit] [рублей|rub-LYEY].",
+     "id": "Empat ratus delapan puluh rubel.",
+     "literal": "empat-ratus — delapan-puluh — rubel(gen jamak)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Кстати|KSTA-ti], [какое|ka-KO-ye] [сегодня|si-VOD-nya] [число|chis-LO]?",
+     "id": "Ngomong-ngomong, tanggal berapa hari ini?",
+     "literal": "omong-omong, yang-mana(netral) — hari-ini — tanggal?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Двадцатое|Dva-TSA-ta-ye] [июня|i-YU-nya]. [А|A] [что|shto]?",
+     "id": "Dua puluh Juni. Kenapa?",
+     "literal": "kedua-puluh(netral) — Juni(gen). dan — apa?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Значит|ZNA-chit], [экзамен|ek-ZA-min] [двадцать|DVA-tsat'] [пятого|PYA-ta-va]. [Через|CHE-ris] [пять|pyat'] [дней|dnyey].",
+     "id": "Berarti ujiannya tanggal dua puluh lima. Lima hari lagi.",
+     "literal": "berarti, ujian — kedua-puluh — kelima(gen). lewat — lima — hari(gen jamak)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|V] [прошлом|PROSH-lam] [году|ga-DU] [он|on] [был|byl] [тридцатого|tri-TSA-ta-va]. [Пораньше|Pa-RAN'-shy] [в|v] [этом|E-tam].",
+     "id": "Tahun lalu tanggal tiga puluh. Lebih awal tahun ini.",
+     "literal": "pada — lalu — tahun — dia — ada — ketiga-puluh(gen). lebih-awal — pada — ini."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[В|V] [каком|ka-KOM] [году|ga-DU] [ты|ty] [приехала|pri-YE-kha-la] [сюда|syu-DA]?",
+     "id": "Tahun berapa kamu datang ke sini?",
+     "literal": "pada — yang-mana — tahun — kamu — datang(fem) — ke-sini?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|V] [две|dvye] [тысячи|TY-si-chi] [двадцать|DVA-tsat'] [четвёртом|chit-VYOR-tam]. [Три|Tri] [года|GO-da] [назад|na-ZAT].",
+     "id": "Tahun dua ribu dua puluh empat. Tiga tahun lalu.",
+     "literal": "pada — dua — ribu — dua-puluh — keempat(prep). tiga — tahun(gen tunggal) — lalu."
+    }
+   ],
+   "notes": [
+    "**Inilah aturan yang paling banyak dipakai dalam bahasa Rusia sehari-hari, dan ia punya tiga baris.** Sesudah **1** (dan 21, 31, 101…) → nominatif tunggal: *оди́н рубль*. Sesudah **2, 3, 4** (dan 22, 23, 24…) → **genitif tunggal**: *два рубля́*. Sesudah **5 sampai 20** dan seterusnya → **genitif jamak**: *пять рубле́й*.",
+    "⚠️ **Angka 11 sampai 14 selalu memakai genitif jamak**, walaupun berakhir dengan 1, 2, 3, 4: *оди́ннадцать рубле́й*, *двена́дцать книг*. Ini pengecualian yang paling sering dilupakan.",
+    "**Yang menentukan adalah angka TERAKHIR.** *два́дцать оди́н рубль* (tunggal), *два́дцать два рубля́* (genitif tunggal), *два́дцать пять рубле́й* (genitif jamak). Kalau kamu bisa membaca angka terakhirnya, ekornya sudah ditentukan.",
+    "**Kata sifat sesudah 2-4 memakai genitif jamak**, bukan genitif tunggal: *два больш**и́х** до́ма*. ⚠️ Susunan ini terlihat tidak konsisten dan memang begitu; hafalkan sebagai ungkapan.",
+    "**Satuan yang paling sering kamu butuhkan, dengan tiga bentuknya:** *рубль — рубля́ — рубле́й*, *год — го́да — лет*, *час — часа́ — часо́в*, *день — дня — дней*, *ме́сяц — ме́сяца — ме́сяцев*, *раз — ра́за — раз*, *челове́к — челове́ка — челове́к*.",
+    "⚠️ **Год berubah jadi лет di genitif jamak** — bukan *годо́в*. *Мне два́дцать оди́н год*, *Мне два́дцать два го́да*, *Мне два́дцать пять лет*. Tiga bentuk ini dipakai tiap kali seseorang menyebut umurnya.",
+    "**Tanggal memakai bilangan tingkat dalam bentuk netral**, karena kata *число́* (tanggal) netral: *пе́рвое января́, двадца́тое ию́ня*. Bulannya selalu genitif. ⚠️ Untuk menjawab *когда́?*, tanggalnya berganti jadi genitif: *пе́рвого января́* (pada tanggal satu Januari).",
+    "**Tahun juga memakai bilangan tingkat, dan hanya angka terakhir yang berubah bentuk:** *две ты́сячи два́дцать шест**о́й** год*. Untuk menjawab *в како́м году́?*, pakai preposisional: *в две ты́сячи два́дцать шест**о́м** году́*."
+   ],
+   "grammars": [
+    {
+     "title": "Aturan 1 / 2-4 / 5+",
+     "body": [
+      "Bacalah tabel ini menurun beberapa kali. Ia berlaku untuk setiap kata benda dalam bahasa Rusia, tanpa kecuali."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Bentuk kata benda",
+       "рубль",
+       "год",
+       "кни́га"
+      ],
+      "rows": [
+       [
+        "1, 21, 31…",
+        "nominatif tunggal",
+        "оди́н рубль",
+        "оди́н год",
+        "одна́ кни́га"
+       ],
+       [
+        "2, 3, 4, 22…",
+        "genitif tunggal",
+        "два рубля́",
+        "два го́да",
+        "две кни́ги"
+       ],
+       [
+        "5-20, 25…",
+        "genitif jamak",
+        "пять рубле́й",
+        "пять лет",
+        "пять книг"
+       ],
+       [
+        "11-14",
+        "genitif jamak",
+        "оди́ннадцать рубле́й",
+        "двена́дцать лет",
+        "трина́дцать книг"
+       ],
+       [
+        "ско́лько, мно́го",
+        "genitif jamak",
+        "ско́лько рубле́й",
+        "мно́го лет",
+        "мно́го книг"
+       ],
+       [
+        "дробь / нет числа́",
+        "genitif tunggal",
+        "полтора́ рубля́",
+        "полго́да",
+        "полкни́ги"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Tanggal, bulan, tahun",
+     "body": [
+      "Bentuk pertanyaannya menentukan bentuk jawabannya. Dua baris pertama adalah yang paling sering dipakai."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Bentuk",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "Како́е сего́дня число́?",
+        "netral, nominatif",
+        "Двадца́тое ию́ня.",
+        "Tanggal dua puluh Juni."
+       ],
+       [
+        "Когда́? (tanggal)",
+        "genitif",
+        "Двадца́того ию́ня.",
+        "Pada dua puluh Juni."
+       ],
+       [
+        "В како́м году́?",
+        "в + preposisional",
+        "В две ты́сячи два́дцать шесто́м году́.",
+        "Tahun 2026."
+       ],
+       [
+        "Како́й год?",
+        "nominatif",
+        "Две ты́сячи два́дцать шесто́й.",
+        "Tahun 2026."
+       ],
+       [
+        "В како́м ме́сяце?",
+        "в + preposisional",
+        "В ию́не.",
+        "Bulan Juni."
+       ],
+       [
+        "Ско́лько тебе́ лет?",
+        "datif + umur",
+        "Мне два́дцать три го́да.",
+        "Saya dua puluh tiga tahun."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Menyewa dan membayar",
+   "intro": "Perhitungan singkat yang seluruhnya berisi angka dan ekornya.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Сколько|SKOL'-ka] [стоит|STO-it] [абонемент|a-ba-ni-MYENT] [в|v] [бассейн|ba-SYEYN]?",
+     "id": "Berapa harga langganan kolam renang?",
+     "literal": "berapa — berharga — langganan — ke — kolam?"
+    },
+    {
+     "speaker": "Администра́тор:",
+     "text": "[Восемь|VO-sim'] [занятий|za-NYA-tiy] — [три|tri] [тысячи|TY-si-chi] [рублей|rub-LYEY].",
+     "id": "Delapan sesi — tiga ribu rubel.",
+     "literal": "delapan — sesi(gen, jmk) — tiga — ribu — rubel(gen, jmk)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [четыре|chi-TY-rye] [занятия|za-NYA-ti-ya]?",
+     "id": "Kalau empat sesi?",
+     "literal": "dan — empat — sesi(gen tunggal)?"
+    },
+    {
+     "speaker": "Администра́тор:",
+     "text": "[Тысяча|TY-si-chi] [семьсот|sim'-SOT]. [То|To] [есть|yest'] [на|na] [сто|sto] [рублей|rub-LYEY] [дороже|da-RO-zhy] [за|za] [раз|ras].",
+     "id": "Seribu tujuh ratus. Artinya seratus rubel lebih mahal per sesi.",
+     "literal": "seribu — tujuh-ratus. itu — ada — pada — seratus — rubel — lebih-mahal — untuk — kali."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Возьму|Vaz'-MU] [восемь|VO-sim']. [Сколько|SKOL'-ka] [месяцев|MYE-si-tsyf] [он|on] [действует|DYEYST-vu-yit]?",
+     "id": "Saya ambil delapan. Berlaku berapa bulan?",
+     "literal": "mengambil-saya(СВ) — delapan. berapa — bulan(gen, jmk) — dia — berlaku?"
+    },
+    {
+     "speaker": "Администра́тор:",
+     "text": "[Три|Tri] [месяца|MYE-si-tsa]. [С|S] [первого|PYER-va-va] [июля|i-YU-lya] [до|da] [тридцатого|tri-TSA-ta-va] [сентября|sin-tib-RYA].",
+     "id": "Tiga bulan. Dari satu Juli sampai tiga puluh September.",
+     "literal": "tiga — bulan(gen tunggal). dari — pertama(gen) — Juli(gen) — sampai — ketiga-puluh(gen) — September(gen)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [если|YES-li] [я|ya] [приду|pri-DU] [только|TOL'-ka] [два|dva] [раза|RA-za]?",
+     "id": "Kalau saya cuma datang dua kali?",
+     "literal": "dan — jika — saya — datang(СВ) — hanya — dua — kali(gen tunggal)?"
+    },
+    {
+     "speaker": "Администра́тор:",
+     "text": "[Тогда|Tag-DA] [каждое|KAZH-da-ye] [занятие|za-NYA-ti-ye] [будет|BU-dit] [стоить|STO-it'] [полторы|pal-ta-RY] [тысячи|TY-si-chi].",
+     "id": "Kalau begitu tiap sesi harganya seribu lima ratus.",
+     "literal": "kalau-begitu — tiap — sesi — akan — berharga — satu-setengah — ribu(gen)."
+    }
+   ],
+   "notes": [
+    "**Perhatikan *четы́ре заня́тия* (genitif tunggal) lawan *во́семь заня́тий* (genitif jamak)** — aturan 2-4 lawan 5+ bekerja di depan matamu, pada kata yang sama.",
+    "**Tanggal rentang memakai genitif dua kali:** *с пе́рвого ию́ля до тридца́того сентября́*. Bilangan tingkatnya genitif, bulannya juga genitif.",
+    "**Полторы́ (feminin) lawan полтора́ (maskulin dan netral):** *полторы́ ты́сячи*, *полтора́ часа́*. Sesudahnya selalu genitif tunggal."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka, harga, dan bilangan tingkat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bilangan tingkat berperilaku seperti kata sifat biasa: ia ikut jenis, jumlah, dan kasus. Hanya angka terakhir yang berubah — sisanya tetap."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Bilangan pokok",
+      "Bilangan tingkat"
+     ],
+     "rows": [
+      [
+       "1",
+       "оди́н / одна́ / одно́",
+       "пе́рвый"
+      ],
+      [
+       "2",
+       "два / две",
+       "второ́й"
+      ],
+      [
+       "3",
+       "три",
+       "тре́тий"
+      ],
+      [
+       "4",
+       "четы́ре",
+       "четвёртый"
+      ],
+      [
+       "5",
+       "пять",
+       "пя́тый"
+      ],
+      [
+       "6",
+       "шесть",
+       "шесто́й"
+      ],
+      [
+       "7",
+       "семь",
+       "седьмо́й"
+      ],
+      [
+       "8",
+       "во́семь",
+       "восьмо́й"
+      ],
+      [
+       "9",
+       "де́вять",
+       "девя́тый"
+      ],
+      [
+       "10",
+       "де́сять",
+       "деся́тый"
+      ],
+      [
+       "11",
+       "оди́ннадцать",
+       "оди́ннадцатый"
+      ],
+      [
+       "20",
+       "два́дцать",
+       "двадца́тый"
+      ],
+      [
+       "30",
+       "три́дцать",
+       "тридца́тый"
+      ],
+      [
+       "40",
+       "со́рок",
+       "сороково́й"
+      ],
+      [
+       "50",
+       "пятьдеся́т",
+       "пятидеся́тый"
+      ],
+      [
+       "100",
+       "сто",
+       "со́тый"
+      ],
+      [
+       "1000",
+       "ты́сяча",
+       "ты́сячный"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara memakai angka tanpa panik",
+     "items": [
+      "**Latihan yang paling cepat berhasil: hitung benda di sekitarmu sampai enam, dengan suara.** *оди́н стол, два стола́, три стола́, четы́ре стола́, пять столо́в, шесть столо́в.* Sepuluh benda sehari, satu minggu, dan aturannya berhenti terasa seperti aturan.",
+      "⚠️ **Harga di Rusia disebut lengkap dengan kata *рубль*, dan sering dengan kata *копе́йка* untuk pecahan.** Di percakapan cepat, penjual sering menyingkat: *пятьсо́т два́дцать* saja. Kamu tetap harus mengerti bentuk penuhnya.",
+      "**С вас… (harfiahnya \"dari kalian…\") adalah cara baku menyebut total yang harus dibayar.** Jawabannya cukup menyerahkan uang, atau bertanya *Ско́лько сда́чи?* (kembaliannya berapa)."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "рубль / копе́йка",
+   "baca": "rubl' / ka-PYEY-ka",
+   "id": "rubel / kopek"
+  },
+  {
+   "ru": "сда́ча",
+   "baca": "SDA-cha",
+   "id": "kembalian"
+  },
+  {
+   "ru": "число́",
+   "baca": "chis-LO",
+   "id": "tanggal; bilangan"
+  },
+  {
+   "ru": "да́та",
+   "baca": "DA-ta",
+   "id": "tanggal (kalender)"
+  },
+  {
+   "ru": "пра́вило",
+   "baca": "PRA-vi-la",
+   "id": "aturan"
+  },
+  {
+   "ru": "продаве́ц",
+   "baca": "pra-da-VYETS",
+   "id": "penjual"
+  },
+  {
+   "ru": "я́блоко / я́блок",
+   "baca": "YAB-la-ka / YAB-lak",
+   "id": "apel / apel (gen. jamak)"
+  },
+  {
+   "ru": "виногра́д",
+   "baca": "vi-na-GRAT",
+   "id": "anggur"
+  },
+  {
+   "ru": "помидо́р",
+   "baca": "pa-mi-DOR",
+   "id": "tomat"
+  },
+  {
+   "ru": "огуре́ц",
+   "baca": "a-gu-RYETS",
+   "id": "timun"
+  },
+  {
+   "ru": "килогра́мм",
+   "baca": "ki-la-GRAM",
+   "id": "kilogram"
+  },
+  {
+   "ru": "полтора́ / полови́на",
+   "baca": "pal-ta-RA / pa-la-VI-na",
+   "id": "satu setengah / setengah"
+  },
+  {
+   "ru": "ты́сяча",
+   "baca": "TY-si-cha",
+   "id": "seribu"
+  },
+  {
+   "ru": "со́рок",
+   "baca": "SO-rak",
+   "id": "empat puluh"
+  },
+  {
+   "ru": "пятьсо́т",
+   "baca": "pit'-SOT",
+   "id": "lima ratus"
+  },
+  {
+   "ru": "пе́рвый / второ́й / тре́тий",
+   "baca": "PYER-vyy / fta-ROY / TRYE-tiy",
+   "id": "pertama / kedua / ketiga"
+  },
+  {
+   "ru": "после́дний",
+   "baca": "pas-LYED-niy",
+   "id": "terakhir"
+  },
+  {
+   "ru": "брать / взять",
+   "baca": "brat' / vzyat'",
+   "id": "mengambil, membeli"
+  },
+  {
+   "ru": "пора́ньше",
+   "baca": "pa-RAN'-shy",
+   "id": "lebih awal sedikit"
+  },
+  {
+   "ru": "с вас",
+   "baca": "s vas",
+   "id": "totalnya (yang harus dibayar)"
+  },
+  {
+   "ru": "что́-нибудь",
+   "baca": "SHTO-ni-but'",
+   "id": "sesuatu, apa saja"
+  },
+  {
+   "ru": "стоимость",
+   "baca": "STO-i-mast'",
+   "id": "harga, nilai"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk yang tepat sesudah angka.",
+   "items": [
+    "два ____ (рубль)",
+    "пять ____ (рубль)",
+    "оди́н ____ (год)",
+    "три ____ (год)",
+    "два́дцать ____ (год)",
+    "четы́ре ____ (кни́га)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat sesudah angka.",
+   "items": [
+    "две́надцать ____ (день)",
+    "два ____ (час)",
+    "семь ____ (час)",
+    "ско́лько ____ (челове́к)",
+    "два́дцать два ____ (ме́сяц)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "рубле́й / э́то / пятьсо́т / сто́ит",
+    "го́да / мне / два́дцать / три",
+    "ию́ня / сего́дня / двадца́тое",
+    "году́ / в / прие́хал / я / про́шлом",
+    "дней / че́рез / экза́мен / пять"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Dua rubel.",
+    "Lima rubel.",
+    "Saya dua puluh tiga tahun.",
+    "Hari ini tanggal dua puluh Juni.",
+    "Ujiannya tanggal dua puluh lima.",
+    "Tahun berapa kamu datang ke sini?"
+   ]
+  }
+ ],
+ "answers": [
+  "рубля́ — рубле́й — год — го́да — лет — кни́ги",
+  "дней — часа́ — часо́в — челове́к — ме́сяца",
+  "Э́то сто́ит пятьсо́т рубле́й. — Мне два́дцать три го́да. — Сего́дня двадца́тое ию́ня. — Я прие́хал в про́шлом году́. — Экза́мен че́рез пять дней.",
+  "Два рубля́. — Пять рубле́й. — Мне два́дцать три го́да. — Сего́дня двадца́тое ию́ня. — Экза́мен два́дцать пя́того. — В како́м году́ ты прие́хал сюда́?"
+ ]
+}

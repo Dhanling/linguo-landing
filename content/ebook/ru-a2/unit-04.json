@@ -1,0 +1,519 @@
+{
+ "title": "Pergi sekali, atau bolak-balik?",
+ "title_target": "Иду или хожу? — i-DU I-li kha-ZHU?",
+ "goal": "Memilih di antara empat kata kerja yang semuanya berarti \"pergi\" — dan mengerti bahwa yang dibedakan bahasa Rusia bukan tujuannya, melainkan bentuk perjalanannya.",
+ "bekal": [
+  "membedakan идти (satu arah, sedang berlangsung) dan ходить (bolak-balik, berulang)",
+  "membedakan ехать (berkendara, satu arah) dan ездить (berkendara, berulang)",
+  "memakai bentuk lampau ходил / ездил untuk \"pernah pergi lalu kembali\"",
+  "menyebut alat transportasi dengan на + preposisional",
+  "memakai нести, вести, везти untuk membawa sesuatu atau seseorang"
+ ],
+ "wave": "Ulangi **unit 2**: ceritakan rencanamu minggu depan dengan lantang, tiga kalimat НСВ dan tiga kalimat СВ, halaman tertutup.",
+ "dialogs": [
+  {
+   "title": "Диалог — Bertemu di jalan",
+   "intro": "Ani berpapasan dengan Марина, teman sekelasnya, di dekat halte. Perhatikan bahwa tiap kali arah dan pengulangannya berubah, kata kerjanya ikut berubah.",
+   "lines": [
+    {
+     "speaker": "Мари́на:",
+     "text": "[Ани|A-ni]! [Куда|Ku-DA] [ты|ty] [идёшь|i-DYOSH]?",
+     "id": "Ani! Kamu mau ke mana?",
+     "literal": "Ani! ke-mana — kamu — berjalan(satu-arah)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Иду|I-DU] [в|v] [библиотеку|bib-li-a-TYE-ku]. [А|A] [ты|ty]?",
+     "id": "Saya mau ke perpustakaan. Kamu?",
+     "literal": "berjalan-saya — ke — perpustakaan. dan — kamu?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Я|Ya] [еду|YE-du] [в|v] [центр|tsentr]. [Каждую|KAZH-du-yu] [пятницу|PYAT-ni-tsu] [езжу|YEZ-zhu] [туда|tu-DA] [на|na] [курсы|KUR-sy].",
+     "id": "Saya mau ke pusat kota. Tiap Jumat saya ke sana ikut kursus.",
+     "literal": "saya — berkendara(satu-arah) — ke — pusat. tiap — Jumat — berkendara-berulang — ke-sana — untuk — kursus."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ты|Ty] [часто|CHAS-ta] [ходишь|KHO-dish] [в|v] [библиотеку|bib-li-a-TYE-ku]?",
+     "id": "Kamu sering ke perpustakaan?",
+     "literal": "kamu — sering — berjalan-berulang — ke — perpustakaan?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Раньше|RAN'-shy] [ходила|kha-DI-la] [каждый|KAZH-dyy] [день|dyen']. [Сейчас|Si-CHAS] — [раз|ras] [в|v] [неделю|ni-DYE-lyu].",
+     "id": "Dulu saya ke sana tiap hari. Sekarang seminggu sekali.",
+     "literal": "dulu — berjalan-berulang(lampau) — tiap — hari. sekarang — sekali — dalam — minggu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [в|v] [прошлом|PROSH-lam] [году|ga-DU] [ты|ty] [ездила|YEZ-di-la] [в|v] [Петербург|Pi-tir-BURK], [да|da]?",
+     "id": "Dan tahun lalu kamu pergi ke Petersburg, kan?",
+     "literal": "dan — pada — lalu — tahun — kamu — berkendara-berulang(lampau) — ke — Petersburg, ya?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Ездила|YEZ-di-la], [два|dva] [раза|RA-za]. [Теперь|Ti-PYER'] [хочу|kha-CHU] [поехать|pa-YE-khat'] [летом|LYE-tam].",
+     "id": "Iya, dua kali. Sekarang saya mau ke sana musim panas nanti.",
+     "literal": "berkendara-berulang(lampau), dua — kali. sekarang — ingin — pergi-berkendara(СВ) — pada-musim-panas."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[На|Na] [поезде|PO-yiz-dye] [или|I-li] [на|na] [самолёте|sa-ma-LYO-tye]?",
+     "id": "Naik kereta atau pesawat?",
+     "literal": "dengan — kereta — atau — dengan — pesawat?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[На|Na] [поезде|PO-yiz-dye]. [Я|Ya] [не|nye] [люблю|lyub-LYU] [летать|li-TAT'].",
+     "id": "Naik kereta. Saya tidak suka terbang.",
+     "literal": "dengan — kereta. saya — tidak — suka — terbang-berulang."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ой|Oy], [а|a] [куда|ku-DA] [ты|ty] [несёшь|ni-SYOSH] [эти|E-ti] [книги|KNI-gi]?",
+     "id": "Eh, kamu bawa buku-buku itu ke mana?",
+     "literal": "oh, dan — ke-mana — kamu — membawa(satu-arah) — ini — buku-buku?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Веду|Vi-DU] [сестру|sist-RU] [на|na] [урок|u-ROK] [и|i] [заодно|za-ad-NO] [несу|ni-SU] [ей|yey] [учебники|u-CHEB-ni-ki].",
+     "id": "Saya mengantar adik saya ke les sekaligus membawakan buku pelajarannya.",
+     "literal": "menuntun-saya — adik — ke — pelajaran — dan — sekaligus — membawa-saya — kepadanya — buku-pelajaran."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Твоя|Tva-YA] [сестра|sist-RA] [здесь|zdyes']? [Я|Ya] [думала|DU-ma-la], [она|a-NA] [в|v] [Казани|Ka-ZA-ni].",
+     "id": "Adikmu di sini? Saya kira dia di Kazan.",
+     "literal": "kamu-punya — adik — di-sini? saya — berpikir(lampau), dia — di — Kazan."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Была|By-LA]. [Приехала|Pri-YE-kha-la] [вчера|fchi-RA] [и|i] [уедет|u-YE-dit] [в|v] [среду|SRYE-du].",
+     "id": "Tadinya. Dia datang kemarin dan akan pergi hari Rabu.",
+     "literal": "ada(lampau,fem). datang(СВ) — kemarin — dan — pergi(СВ) — pada — Rabu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Тогда|Tag-DA] [приходите|pri-kha-DI-tye] [к|k] [нам|nam] [в|v] [гости|GOS-ti] [во|va] [вторник|FTOR-nik]!",
+     "id": "Kalau begitu mampirlah ke tempat kami hari Selasa!",
+     "literal": "kalau-begitu — datang(НСВ, perintah) — ke — kami — untuk — bertamu — pada — Selasa!"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Обязательно|A-bi-ZA-til'-na] [придём|pri-DYOM]. [Ой|Oy], [мой|moy] [автобус|af-TO-bus]! [Побежала|Pa-bi-ZHA-la]!",
+     "id": "Pasti kami datang. Aduh, itu bis saya! Saya lari duluan!",
+     "literal": "pasti — datang(СВ). oh, saya-punya — bis! berlari(СВ, lampau)!"
+    }
+   ],
+   "notes": [
+    "**Bahasa Rusia tidak punya satu kata untuk \"pergi\".** Ia punya dua pasangan besar: **идти́ / ходи́ть** untuk jalan kaki, dan **е́хать / е́здить** untuk kendaraan. Kamu sudah bertemu keduanya di A1; di sini kita menuntaskannya.",
+    "**Yang membedakan bukan waktu, melainkan bentuk perjalanan.** *Иду́* = satu arah, sekarang, ada tujuannya. *Хожу́* = bolak-balik, berulang, kebiasaan. ⚠️ *Я иду́ в школу* = saya sedang menuju sekolah. *Я хожу́ в школу* = saya bersekolah.",
+    "**Di kalimat lampau bedanya jadi dramatis.** *Я шёл в кино́* = saya sedang dalam perjalanan ke bioskop (tak dikatakan sampai atau tidak). *Я ходи́л в кино́* = saya pergi ke bioskop **dan sudah kembali**. ⚠️ Bentuk kedua inilah yang biasanya kamu maksud waktu bercerita: *Вчера́ я ходи́л в кино́*.",
+    "**Karena itu ходил / ездил sering paling pas diterjemahkan \"pernah pergi ke\".** *Ты ходи́л к врачу́?* — kamu sudah ke dokter? *Я е́здил в Росси́ю* — saya pernah ke Rusia. Perjalanan pulang-perginya sudah tercakup di dalamnya.",
+    "**Alat transportasi memakai на + preposisional, bukan kata depan lain.** *на по́езде, на авто́бусе, на маши́не, на метро́, на самолёте*. ⚠️ *Пешко́м* (jalan kaki) berdiri sendiri tanpa kata depan: *Я иду́ пешко́м*.",
+    "**Tiga kata kerja \"membawa\" mengikuti pola yang sama persis.** *Нести́ / носи́ть* — membawa benda di tangan. *Вести́ / води́ть* — menuntun orang atau menyetir. *Везти́ / вози́ть* — mengangkut dengan kendaraan. Lajur kiri satu arah, lajur kanan berulang.",
+    "**Куда́ (ke mana) menuntut akusatif; где (di mana) menuntut preposisional.** *Куда́ ты идёшь? — В библиоте́ку.* / *Где ты? — В библиоте́ке.* ⚠️ Pasangan ini sudah muncul di A1 dan akan muncul terus; kalau masih goyah, tandai halaman ini.",
+    "**Bentuk lampau идти tidak beraturan dan wajib dihafal:** *шёл* (lk), *шла* (pr), *шло*, *шли*. Sama sekali tidak mirip bentuk kamusnya, dan sangat sering dipakai."
+   ],
+   "grammars": [
+    {
+     "title": "Empat kata kerja gerak dasar",
+     "body": [
+      "Lajur \"satu arah\" dipakai untuk perjalanan yang sedang atau akan berlangsung menuju satu tujuan. Lajur \"berulang\" untuk kebiasaan, kemampuan, dan perjalanan pulang-pergi yang sudah selesai."
+     ],
+     "table": {
+      "head": [
+       "",
+       "Satu arah",
+       "Berulang / bolak-balik",
+       "Cara"
+      ],
+      "rows": [
+       [
+        "kamus",
+        "идти́",
+        "ходи́ть",
+        "jalan kaki"
+       ],
+       [
+        "я / ты",
+        "иду́ / идёшь",
+        "хожу́ / хо́дишь",
+        ""
+       ],
+       [
+        "они́",
+        "иду́т",
+        "хо́дят",
+        ""
+       ],
+       [
+        "lampau",
+        "шёл, шла, шли",
+        "ходи́л, ходи́ла, ходи́ли",
+        ""
+       ],
+       [
+        "kamus",
+        "е́хать",
+        "е́здить",
+        "berkendara"
+       ],
+       [
+        "я / ты",
+        "е́ду / е́дешь",
+        "е́зжу / е́здишь",
+        ""
+       ],
+       [
+        "они́",
+        "е́дут",
+        "е́здят",
+        ""
+       ],
+       [
+        "lampau",
+        "е́хал, е́хала, е́хали",
+        "е́здил, е́здила, е́здили",
+        ""
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Membawa: benda, orang, muatan",
+     "body": [
+      "Tiga pasangan ini bergerak persis seperti идти / ходить. Yang menentukan pilihannya adalah **apa** yang dibawa."
+     ],
+     "table": {
+      "head": [
+       "Satu arah",
+       "Berulang",
+       "Dipakai untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "нести́",
+        "носи́ть",
+        "benda di tangan",
+        "Я несу́ су́мку."
+       ],
+       [
+        "вести́",
+        "води́ть",
+        "orang, atau menyetir",
+        "Она́ ведёт дочь в шко́лу."
+       ],
+       [
+        "везти́",
+        "вози́ть",
+        "muatan dengan kendaraan",
+        "Он везёт ме́бель на да́чу."
+       ],
+       [
+        "лете́ть",
+        "лета́ть",
+        "terbang",
+        "Я не люблю́ лета́ть."
+       ],
+       [
+        "бежа́ть",
+        "бе́гать",
+        "berlari",
+        "Ка́ждое у́тро я бе́гаю."
+       ],
+       [
+        "плыть",
+        "пла́вать",
+        "berenang, berlayar",
+        "Он хорошо́ пла́вает."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Rutinitas dan perjalanan",
+   "intro": "Dua kalimat tentang perjalanan yang sama, tapi satu tentang kebiasaan dan satu tentang hari ini.",
+   "lines": [
+    {
+     "speaker": "Серге́й:",
+     "text": "[Ты|Ty] [пешком|pish-KOM] [или|I-li] [на|na] [автобусе|af-TO-bu-sye] [ездишь|YEZ-dish] [на|na] [занятия|za-NYA-ti-ya]?",
+     "id": "Kamu ke kampus jalan kaki atau naik bis?",
+     "literal": "kamu — jalan-kaki — atau — dengan — bis — berkendara-berulang — ke — kuliah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Обычно|A-BYCH-na] [хожу|kha-ZHU] [пешком|pish-KOM]. [Двадцать|DVA-tsat'] [минут|mi-NUT].",
+     "id": "Biasanya jalan kaki. Dua puluh menit.",
+     "literal": "biasanya — berjalan-berulang — jalan-kaki. dua-puluh — menit."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[А|A] [сегодня|si-VOD-nya] [почему|pa-chi-MU] [едешь|YE-dish]?",
+     "id": "Terus kenapa hari ini naik kendaraan?",
+     "literal": "dan — hari-ini — kenapa — berkendara-satu-arah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Несу|Ni-SU] [ноутбук|NO-ut-buk] [и|i] [три|tri] [книги|KNI-gi]. [Пешком|Pish-KOM] [не|nye] [дойду|day-DU].",
+     "id": "Saya bawa laptop dan tiga buku. Jalan kaki tidak akan sampai.",
+     "literal": "membawa-saya — laptop — dan — tiga — buku. jalan-kaki — tidak — sampai-saya(СВ)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Давай|Da-VAY] [помогу|pa-ma-GU]. [Я|Ya] [всё|fsyo] [равно|rav-NO] [иду|i-DU] [туда|tu-DA].",
+     "id": "Sini saya bantu. Saya toh ke sana juga.",
+     "literal": "mari — membantu-saya(СВ). saya — semua — sama — berjalan — ke-sana."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ты|Ty] [ходишь|KHO-dish] [туда|tu-DA] [каждый|KAZH-dyy] [день|dyen']?",
+     "id": "Kamu ke sana tiap hari?",
+     "literal": "kamu — berjalan-berulang — ke-sana — tiap — hari?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Три|Tri] [раза|RA-za] [в|v] [неделю|ni-DYE-lyu]. [А|A] [в|v] [пятницу|PYAT-ni-tsu] [езжу|YEZ-zhu] [к|k] [родителям|ra-DI-ti-lim].",
+     "id": "Tiga kali seminggu. Kalau Jumat saya ke rumah orang tua.",
+     "literal": "tiga — kali — dalam — minggu. dan — pada — Jumat — berkendara-berulang — kepada — orang-tua(dat)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Тогда|Tag-DA] [бери|bi-RI] [книги|KNI-gi]. [Но|No] [не|nye] [урони|u-ra-NI]!",
+     "id": "Kalau begitu ambil bukunya. Tapi jangan sampai jatuh!",
+     "literal": "kalau-begitu — ambillah(НСВ) — buku-buku. tapi — tidak — menjatuhkan(СВ)!"
+    }
+   ],
+   "notes": [
+    "**Empat baris pertama memperlihatkan seluruh inti unit ini:** *е́здишь* (kebiasaan) lawan *е́дешь* (hari ini), *хожу́* (kebiasaan) lawan *несу́* (sedang, satu arah).",
+    "**Не дойду́ berarti \"tidak akan sampai\", bukan \"tidak mau berjalan\".** Awalan до- + sangkalan sering dipakai untuk mengaku bahwa jaraknya terlalu jauh — ungkapan yang sangat sering di percakapan.",
+    "**К роди́телям memakai datif karena tujuannya orang, bukan tempat.** *Я е́ду к врачу́*, *Я иду́ к дру́гу* — dan bukan *в* atau *на*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat yang memaksamu memilih",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Enam pasangan berikut sengaja dibuat berdampingan. Bacalah kanan-kiri, bukan atas-bawah — bedanya baru terasa kalau dibandingkan langsung."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Satu arah",
+      "Berulang",
+      "Bedanya"
+     ],
+     "rows": [
+      [
+       "Я иду́ в магази́н.",
+       "Я хожу́ в магази́н ка́ждый день.",
+       "sedang menuju / kebiasaan"
+      ],
+      [
+       "Вчера́ я шёл домо́й и встре́тил её.",
+       "Вчера́ я ходи́л домо́й за кни́гой.",
+       "dalam perjalanan / pergi dan kembali"
+      ],
+      [
+       "Мы е́дем в Москву́.",
+       "Мы е́здим в Москву́ ка́ждый год.",
+       "sekali ini / tiap tahun"
+      ],
+      [
+       "Она́ несёт цветы́.",
+       "Она́ всегда́ но́сит очки́.",
+       "sedang membawa / selalu memakai"
+      ],
+      [
+       "Я лечу́ в Джака́рту.",
+       "Я не люблю́ лета́ть.",
+       "penerbangan ini / terbang pada umumnya"
+      ],
+      [
+       "Он ведёт сы́на в сад.",
+       "Он во́дит маши́ну.",
+       "mengantar sekarang / bisa menyetir"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang menolong seketika",
+     "items": [
+      "**Kalau ada kata *ка́ждый*, *ча́сто*, *обы́чно*, *иногда́*, *всегда́* — hampir pasti bentuk berulang** (ходи́ть, е́здить, носи́ть). Kata-kata itu bekerja seperti saklar.",
+      "**Kalau ada *сейча́с*, *куда́*, atau tujuan yang jelas untuk sekali jalan — bentuk satu arah** (идти́, е́хать, нести́).",
+      "⚠️ **Bentuk berulang juga dipakai untuk kemampuan:** *Он во́дит маши́ну* (dia bisa menyetir), *Она́ пла́вает* (dia bisa berenang). Ini bukan soal pengulangan, melainkan soal keterampilan — dan pemakaiannya sangat sering."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "идти́ / ходи́ть",
+   "baca": "i-TI / kha-DIT'",
+   "id": "pergi (jalan kaki)"
+  },
+  {
+   "ru": "е́хать / е́здить",
+   "baca": "YE-khat' / YEZ-dit'",
+   "id": "pergi (berkendara)"
+  },
+  {
+   "ru": "нести́ / носи́ть",
+   "baca": "nis-TI / na-SIT'",
+   "id": "membawa (di tangan)"
+  },
+  {
+   "ru": "вести́ / води́ть",
+   "baca": "vis-TI / va-DIT'",
+   "id": "menuntun, menyetir"
+  },
+  {
+   "ru": "везти́ / вози́ть",
+   "baca": "vis-TI / va-ZIT'",
+   "id": "mengangkut"
+  },
+  {
+   "ru": "лете́ть / лета́ть",
+   "baca": "li-TYET' / li-TAT'",
+   "id": "terbang"
+  },
+  {
+   "ru": "бежа́ть / бе́гать",
+   "baca": "bi-ZHAT' / BYE-gat'",
+   "id": "berlari"
+  },
+  {
+   "ru": "куда́ / где",
+   "baca": "ku-DA / gdye",
+   "id": "ke mana / di mana"
+  },
+  {
+   "ru": "туда́ / сюда́",
+   "baca": "tu-DA / syu-DA",
+   "id": "ke sana / ke sini"
+  },
+  {
+   "ru": "пешко́м",
+   "baca": "pish-KOM",
+   "id": "jalan kaki"
+  },
+  {
+   "ru": "по́езд",
+   "baca": "PO-yist",
+   "id": "kereta api"
+  },
+  {
+   "ru": "самолёт",
+   "baca": "sa-ma-LYOT",
+   "id": "pesawat"
+  },
+  {
+   "ru": "авто́бус",
+   "baca": "af-TO-bus",
+   "id": "bis"
+  },
+  {
+   "ru": "метро́",
+   "baca": "mit-RO",
+   "id": "metro, kereta bawah tanah"
+  },
+  {
+   "ru": "остано́вка",
+   "baca": "as-ta-NOF-ka",
+   "id": "halte"
+  },
+  {
+   "ru": "библиоте́ка",
+   "baca": "bib-li-a-TYE-ka",
+   "id": "perpustakaan"
+  },
+  {
+   "ru": "уче́бник",
+   "baca": "u-CHEB-nik",
+   "id": "buku pelajaran"
+  },
+  {
+   "ru": "в го́сти",
+   "baca": "v GOS-ti",
+   "id": "bertamu (ke rumah orang)"
+  },
+  {
+   "ru": "заодно́",
+   "baca": "za-ad-NO",
+   "id": "sekaligus"
+  },
+  {
+   "ru": "обяза́тельно",
+   "baca": "a-bi-ZA-til'-na",
+   "id": "pasti, tentu saja"
+  },
+  {
+   "ru": "раз в неде́лю",
+   "baca": "ras v ni-DYE-lyu",
+   "id": "seminggu sekali"
+  },
+  {
+   "ru": "в про́шлом году́",
+   "baca": "f PROSH-lam ga-DU",
+   "id": "tahun lalu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih идти atau ходить (bentuk yang tepat).",
+   "items": [
+    "Сейча́с я ____ в университе́т.",
+    "Ка́ждый день я ____ в университе́т.",
+    "Вчера́ мы ____ в кино́ и верну́лись по́здно.",
+    "Когда́ я ____ домо́й, я встре́тил Мари́ну.",
+    "Ты ча́сто ____ в бассе́йн?"
+   ]
+  },
+  {
+   "prompt": "Pilih ехать atau ездить (bentuk yang tepat).",
+   "items": [
+    "За́втра мы ____ в Петербу́рг.",
+    "Ка́ждое ле́то они́ ____ на да́чу.",
+    "Вчера́ она́ ____ к роди́телям и верну́лась ве́чером.",
+    "Я ____ на рабо́ту на метро́ ка́ждый день.",
+    "Куда́ вы ____ сейча́с?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "иду́ / библиоте́ку / я / в",
+    "хожу́ / день / я / ка́ждый / в / бассе́йн",
+    "е́здили / в / мы / го́ду / Москву́ / про́шлом / в",
+    "несёт / она́ / цветы́",
+    "по́езде / он / на / е́дет"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Kamu mau ke mana?",
+    "Saya sedang menuju perpustakaan.",
+    "Saya ke perpustakaan tiap hari.",
+    "Kemarin saya pergi ke bioskop (dan sudah pulang).",
+    "Kami naik kereta ke Petersburg.",
+    "Dia (laki-laki) bisa menyetir mobil."
+   ]
+  }
+ ],
+ "answers": [
+  "иду́ — хожу́ — ходи́ли — шёл — хо́дишь",
+  "е́дем — е́здят — е́здила — е́зжу — е́дете",
+  "Я иду́ в библиоте́ку. — Я хожу́ в бассе́йн ка́ждый день. — В про́шлом году́ мы е́здили в Москву́. — Она́ несёт цветы́. — Он е́дет на по́езде.",
+  "Куда́ ты идёшь? — Я иду́ в библиоте́ку. — Я хожу́ в библиоте́ку ка́ждый день. — Вчера́ я ходи́л(а) в кино́. — Мы е́дем в Петербу́рг на по́езде. — Он во́дит маши́ну."
+ ]
+}

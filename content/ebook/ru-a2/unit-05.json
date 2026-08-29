@@ -1,0 +1,530 @@
+{
+ "title": "Masuk, keluar, mampir, sampai",
+ "title_target": "Пришёл, ушёл, зашёл — pri-SHOL, u-SHOL, za-SHOL",
+ "goal": "Menempelkan awalan pada kata kerja gerak sehingga satu kata kerja berubah jadi selusin — dan mengerti kenapa awalan yang sama muncul lagi di ratusan kata kerja lain.",
+ "bekal": [
+  "memakai при- (datang), у- (pergi meninggalkan), в- / вы- (masuk / keluar)",
+  "memakai по- (berangkat), за- (mampir), пере- (menyeberang), до- (sampai)",
+  "mengerti bahwa awalan mengubah aspek: приходить (НСВ) / прийти (СВ)",
+  "memasangkan awalan dengan kata depan yang cocok: в → из, на → с, к → от",
+  "menceritakan perjalanan sehari penuh dalam beberapa kalimat berurutan"
+ ],
+ "wave": "Ulangi **unit 3**: beri lima perintah dan tiga larangan dengan lantang, halaman tertutup — perhatikan aspeknya.",
+ "dialogs": [
+  {
+   "title": "Диалог — Ke mana kamu menghilang?",
+   "intro": "Сергей mencari Ani sepanjang sore. Perhatikan bahwa hampir tiap kalimat memakai kata kerja gerak yang sama dengan awalan berbeda.",
+   "lines": [
+    {
+     "speaker": "Серге́й:",
+     "text": "[Ани|A-ni], [куда|ku-DA] [ты|ty] [пропала|pra-PA-la]? [Я|Ya] [приходил|pri-kha-DIL] [к|k] [тебе|ti-BYE] [два|dva] [раза|RA-za].",
+     "id": "Ani, kamu menghilang ke mana? Saya mampir ke tempatmu dua kali.",
+     "literal": "Ani, ke-mana — kamu — hilang(СВ)? saya — datang-berulang(НСВ) — kepada — kamu — dua — kali."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Извини|Iz-vi-NI]! [Я|Ya] [ушла|ush-LA] [в|v] [десять|DYE-sit'] [и|i] [вернулась|vir-NU-las'] [только|TOL'-ka] [сейчас|si-CHAS].",
+     "id": "Maaf! Saya pergi jam sepuluh dan baru pulang sekarang.",
+     "literal": "maaf! saya — pergi-meninggalkan(СВ, fem) — pada — sepuluh — dan — kembali(СВ) — hanya — sekarang."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Куда|Ku-DA] [ты|ty] [ходила|kha-DI-la]?",
+     "id": "Kamu pergi ke mana?",
+     "literal": "ke-mana — kamu — berjalan-berulang(lampau)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Сначала|Sna-CHA-la] [в|v] [банк|bank]. [Пришла|Prish-LA] [туда|tu-DA] [в|v] [половине|pa-la-VI-nye] [одиннадцатого|a-DI-na-tsa-ta-va].",
+     "id": "Pertama ke bank. Saya sampai di sana jam setengah sebelas.",
+     "literal": "mula-mula — ke — bank. datang(СВ, fem) — ke-sana — pada — setengah — kesebelas."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[И|I] [долго|DOL-ga] [там|tam] [была|by-LA]?",
+     "id": "Dan lama di sana?",
+     "literal": "dan — lama — di-sana — ada(lampau, fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Час|Chas]. [Потом|Pa-TOM] [вышла|VYSH-la] [и|i] [перешла|pi-rish-LA] [улицу|U-li-tsu] — [там|tam] [почта|POCH-ta].",
+     "id": "Sejam. Terus saya keluar dan menyeberang jalan — di situ kantor pos.",
+     "literal": "jam. kemudian — keluar(СВ, fem) — dan — menyeberang(СВ, fem) — jalan — di-sana — kantor-pos."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[А|A] [в|v] [университет|u-ni-vir-si-TYET] [ты|ty] [не|nye] [заходила|za-kha-DI-la]?",
+     "id": "Dan kamu tidak mampir ke kampus?",
+     "literal": "dan — ke — universitas — kamu — tidak — mampir-berulang(НСВ, fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Заходила|Za-kha-DI-la], [но|no] [ненадолго|ni-NA-dal-ga]. [Зашла|Zash-LA], [взяла|vzi-LA] [справку|SPRAF-ku] [и|i] [ушла|ush-LA].",
+     "id": "Mampir, tapi sebentar. Masuk, ambil surat keterangan, terus pergi.",
+     "literal": "mampir-berulang(lampau), tapi — tidak-lama. mampir(СВ) — mengambil(СВ) — surat-keterangan — dan — pergi(СВ)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Ты|Ty] [успела|us-PYE-la] [всё|fsyo] [сделать|SDYE-lat'] [за|za] [один|a-DIN] [день|dyen']?",
+     "id": "Kamu sempat mengurus semuanya dalam sehari?",
+     "literal": "kamu — sempat(СВ, fem) — semua — melakukan(СВ) — dalam — satu — hari?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Почти|Pach-TI]. [До|Da] [почты|POCH-ty] [дошла|dash-LA], [а|a] [до|da] [аптеки|ap-TYE-ki] [не|nye] [дошла|dash-LA] — [она|a-NA] [закрылась|zak-RY-las'].",
+     "id": "Hampir. Sampai ke kantor pos, tapi tidak sampai ke apotek — sudah tutup.",
+     "literal": "hampir. sampai — kantor-pos — sampai-tiba(СВ, fem), dan — sampai — apotek — tidak — sampai-tiba(СВ, fem) — dia — tutup(СВ)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Аптека|Ap-TYE-ka] [на|na] [нашей|NA-shyy] [улице|U-li-tsy] [работает|ra-BO-ta-yit] [до|da] [девяти|di-vi-TI].",
+     "id": "Apotek di jalan kita buka sampai jam sembilan.",
+     "literal": "apotek — di — kami-punya — jalan — bekerja — sampai — sembilan."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Правда|PRAV-da]? [Тогда|Tag-DA] [я|ya] [схожу|skha-ZHU] [туда|tu-DA] [сейчас|si-CHAS].",
+     "id": "Serius? Kalau begitu saya ke sana sekarang.",
+     "literal": "benar? kalau-begitu — saya — pergi-dan-kembali(СВ) — ke-sana — sekarang."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Пойдём|Pay-DYOM] [вместе|VMYES-tye]. [Я|Ya] [как|kak] [раз|ras] [выхожу|vy-kha-ZHU].",
+     "id": "Ayo bareng. Saya kebetulan lagi mau keluar.",
+     "literal": "pergi-kita(СВ) — bersama. saya — kebetulan — keluar-berulang(НСВ)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Отлично|At-LICH-na]. [Только|TOL'-ka] [зайдём|zay-DYOM] [в|v] [магазин|ma-ga-ZIN] [по|pa] [дороге|da-RO-gye].",
+     "id": "Bagus. Tapi kita mampir ke toko di jalan.",
+     "literal": "hebat. hanya — mampir-kita(СВ) — ke — toko — di — jalan."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[С|S] [тобой|ta-BOY] «[по|pa] [дороге|da-RO-gye]» [всегда|fsig-DA] [означает|az-na-CHA-yit] [плюс|plyus] [час|chas].",
+     "id": "Kalau sama kamu, \"di jalan\" selalu berarti tambah sejam.",
+     "literal": "dengan — kamu — «di — jalan» — selalu — berarti — plus — jam."
+    }
+   ],
+   "notes": [
+    "**Awalan mengubah dua hal sekaligus: arti dan aspek.** *Идти* (НСВ) + при- = *прийти́* (СВ, datang). Untuk mendapatkan pasangan НСВ-nya, awalan itu ditempelkan pada bentuk **berulang**: *приходи́ть*. ⚠️ Jadi pasangannya *приходи́ть / прийти́*, *уходи́ть / уйти́*, *заходи́ть / зайти́* — pola yang sama untuk semua awalan.",
+    "**Sama persis untuk kendaraan:** *приезжа́ть / прие́хать*, *уезжа́ть / уе́хать*, *заезжа́ть / зае́хать*. Batangnya berubah sedikit (*-езжа́ть*), tapi logikanya identik.",
+    "**Enam awalan menutup sembilan puluh persen kebutuhan:** **при-** datang/tiba, **у-** pergi meninggalkan, **в- / во-** masuk ke dalam, **вы-** keluar, **за-** mampir sebentar, **до-** sampai ke, **пере-** menyeberang/pindah, **по-** berangkat (mulai bergerak).",
+    "**Pasangan при- dan у- adalah pasangan yang paling sering kamu butuhkan.** *Он пришёл* — dia datang (dan ada di sini sekarang). *Он ушёл* — dia pergi (dan tidak ada di sini sekarang). ⚠️ Perhatikan bahwa keduanya bercerita tentang **keadaan sekarang**, bukan cuma perbuatan lampau.",
+    "**За- berarti mampir sebentar dalam perjalanan ke tempat lain.** *Я зашёл в магази́н* — saya mampir ke toko (bukan tujuan akhir). Ini kata yang sangat Rusia dan tak ada padanan sependek itu dalam bahasa Indonesia.",
+    "**Awalan menentukan kata depan yang mengikutinya**, dan pasangannya tetap: masuk **в** → keluar **из**; naik ke **на** → turun dari **с**; menuju **к** (orang) → dari **от** (orang). ⚠️ *Я пришёл из университе́та* (dari kampus) tapi *Я пришёл с рабо́ты* (dari kerja) — karena orang bilang *в университе́т* tapi *на рабо́ту*.",
+    "**По- punya dua pekerjaan.** Pada kata kerja gerak: mulai berangkat (*Я пошёл!* = saya berangkat!). Pada kata kerja lain: sebentar (*посиде́ть* = duduk sebentar, *почита́ть* = membaca sebentar).",
+    "**Сходи́ть / съе́здить = pergi dan kembali, sekali jalan, tuntas.** *Я схожу́ в апте́ку* — saya ke apotek (dan balik lagi). Bentuk ini sangat sering dipakai untuk urusan singkat dan sering luput dari pelajar."
+   ],
+   "grammars": [
+    {
+     "title": "Delapan awalan pada satu kata kerja",
+     "body": [
+      "Semua baris di bawah memakai batang yang sama — *-йти́ / -ходи́ть*. Hafalkan artinya, lalu tempelkan ke *-е́хать / -езжа́ть* tanpa berpikir dua kali."
+     ],
+     "table": {
+      "head": [
+       "Awalan",
+       "НСВ",
+       "СВ",
+       "Artinya",
+       "Kata depan"
+      ],
+      "rows": [
+       [
+        "при-",
+        "приходи́ть",
+        "прийти́",
+        "datang, tiba",
+        "в / на / к"
+       ],
+       [
+        "у-",
+        "уходи́ть",
+        "уйти́",
+        "pergi meninggalkan",
+        "из / с / от"
+       ],
+       [
+        "в- (во-)",
+        "входи́ть",
+        "войти́",
+        "masuk",
+        "в"
+       ],
+       [
+        "вы-",
+        "выходи́ть",
+        "вы́йти",
+        "keluar",
+        "из"
+       ],
+       [
+        "за-",
+        "заходи́ть",
+        "зайти́",
+        "mampir",
+        "в / к"
+       ],
+       [
+        "до-",
+        "доходи́ть",
+        "дойти́",
+        "sampai ke",
+        "до"
+       ],
+       [
+        "пере-",
+        "переходи́ть",
+        "перейти́",
+        "menyeberang",
+        "через / akusatif"
+       ],
+       [
+        "по-",
+        "—",
+        "пойти́",
+        "berangkat",
+        "в / на / к"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Bentuk yang paling sering dipakai",
+     "body": [
+      "Kata kerja gerak berawalan bertekuk seperti kata kerja biasa, tapi bentuk lampau *-йти* tak beraturan. Enam baris ini menutup percakapan sehari-hari."
+     ],
+     "table": {
+      "head": [
+       "",
+       "прийти́ (СВ)",
+       "уйти́ (СВ)",
+       "прие́хать (СВ)"
+      ],
+      "rows": [
+       [
+        "я",
+        "приду́",
+        "уйду́",
+        "прие́ду"
+       ],
+       [
+        "ты",
+        "придёшь",
+        "уйдёшь",
+        "прие́дешь"
+       ],
+       [
+        "они́",
+        "приду́т",
+        "уйду́т",
+        "прие́дут"
+       ],
+       [
+        "lampau lk",
+        "пришёл",
+        "ушёл",
+        "прие́хал"
+       ],
+       [
+        "lampau pr",
+        "пришла́",
+        "ушла́",
+        "прие́хала"
+       ],
+       [
+        "lampau jamak",
+        "пришли́",
+        "ушли́",
+        "прие́хали"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Pesan singkat sepanjang hari",
+   "intro": "Beberapa pesan pendek yang dikirim Ани kepada Марина. Tiap pesan memakai satu awalan yang berbeda.",
+   "lines": [
+    {
+     "speaker": "Ани (9:02):",
+     "text": "[Вышла|VYSH-la] [из|is] [дома|DO-ma], [иду|i-DU] [на|na] [остановку|as-ta-NOF-ku].",
+     "id": "Sudah keluar rumah, jalan ke halte.",
+     "literal": "keluar(СВ, fem) — dari — rumah(gen), berjalan — ke — halte."
+    },
+    {
+     "speaker": "Мари́на (9:03):",
+     "text": "[Успеешь|Us-PYE-yish]? [Лекция|LYEK-tsy-ya] [в|v] [девять|DYE-vit'] [тридцать|TRI-tsat'].",
+     "id": "Keburu? Kuliahnya jam sembilan tiga puluh.",
+     "literal": "sempat-kamu(СВ)? kuliah — pada — sembilan — tiga-puluh."
+    },
+    {
+     "speaker": "Ани (9:15):",
+     "text": "[Доехала|Da-YE-kha-la]. [Сейчас|Si-CHAS] [перехожу|pi-ri-kha-ZHU] [улицу|U-li-tsu].",
+     "id": "Sudah sampai. Sekarang lagi nyeberang jalan.",
+     "literal": "sampai-berkendara(СВ, fem). sekarang — menyeberang-saya — jalan."
+    },
+    {
+     "speaker": "Мари́на (9:16):",
+     "text": "[Зайди|Zay-DI] [в|v] [буфет|bu-FYET], [купи|ku-PI] [мне|mnye] [кофе|KO-fye]!",
+     "id": "Mampir ke kantin, beliin saya kopi!",
+     "literal": "mampirlah(СВ) — ke — kantin, belilah(СВ) — kepada-saya — kopi!"
+    },
+    {
+     "speaker": "Ани (9:24):",
+     "text": "[Зашла|Zash-LA], [очередь|O-chi-rit'] [огромная|ag-ROM-na-ya]. [Приду|Pri-DU] [без|byes] [кофе|KO-fye].",
+     "id": "Sudah mampir, antreannya panjang banget. Saya datang tanpa kopi.",
+     "literal": "mampir(СВ, fem), antrean — besar-sekali. datang-saya(СВ) — tanpa — kopi(gen)."
+    },
+    {
+     "speaker": "Мари́на (9:25):",
+     "text": "[Тогда|Tag-DA] [приходи|pri-kha-DI] [быстро|BYST-ra], [я|ya] [заняла|za-ni-LA] [место|MYES-ta].",
+     "id": "Kalau begitu cepetan datang, saya sudah pesankan tempat.",
+     "literal": "kalau-begitu — datanglah(НСВ) — cepat, saya — menempati(СВ, fem) — tempat."
+    },
+    {
+     "speaker": "Ани (9:31):",
+     "text": "[Пришла|Prish-LA]. [Извини|Iz-vi-NI], [преподаватель|pri-pa-da-VA-til'] [уже|u-ZHE] [вошёл|va-SHOL].",
+     "id": "Sudah sampai. Maaf, dosennya sudah masuk.",
+     "literal": "datang(СВ, fem). maaf, dosen — sudah — masuk(СВ)."
+    },
+    {
+     "speaker": "Мари́на (9:32):",
+     "text": "[Он|On] [тоже|TO-zhy] [только|TOL'-ka] [что|shto] [вошёл|va-SHOL]. [Все|Fsye] [опоздали|a-paz-DA-li] [одинаково|a-di-NA-ka-va].",
+     "id": "Dia juga baru saja masuk. Semua telat sama rata.",
+     "literal": "dia — juga — hanya — bahwa — masuk(СВ). semua — terlambat(СВ, jmk) — sama-rata."
+    }
+   ],
+   "notes": [
+    "**Delapan pesan, tujuh awalan berbeda:** вы-, до-, пере-, за-, при-, во-. Inilah cara awalan benar-benar dipakai — bukan satu per satu, melainkan berderet mengikuti perjalanan.",
+    "**Приходи́ (НСВ) alih-alih приди́ (СВ) sebagai perintah terdengar lebih hangat**, dan itulah bentuk yang biasa dipakai antar teman. Bentuk СВ *приди́* terdengar mendesak.",
+    "**То́лько что berarti \"baru saja\" dan selalu berpasangan dengan СВ lampau:** *то́лько что вошёл*, *то́лько что пришла́*, *то́лько что позвони́л*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu hari, delapan kata kerja gerak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bacalah paragraf ini dengan suara keras dua kali. Isinya satu hari biasa, dan tiap kalimatnya memakai awalan yang berbeda — persis seperti orang Rusia menceritakan harinya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Русский",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "У́тром я вы́шел из до́ма в во́семь.",
+       "Pagi saya keluar rumah jam delapan."
+      ],
+      [
+       "Дошёл до остано́вки за пять мину́т.",
+       "Sampai halte dalam lima menit."
+      ],
+      [
+       "Пое́хал на рабо́ту на авто́бусе.",
+       "Berangkat kerja naik bis."
+      ],
+      [
+       "По доро́ге зашёл в кафе́ за ко́фе.",
+       "Di jalan mampir ke kafe beli kopi."
+      ],
+      [
+       "Пришёл в о́фис в де́вять.",
+       "Sampai di kantor jam sembilan."
+      ],
+      [
+       "В обе́д перешёл у́лицу и пообе́дал в столо́вой.",
+       "Waktu makan siang saya menyeberang jalan dan makan di kantin."
+      ],
+      [
+       "Ушёл с рабо́ты в шесть.",
+       "Pulang dari kerja jam enam."
+      ],
+      [
+       "Прие́хал домо́й, вошёл в кварти́ру и сра́зу лёг.",
+       "Sampai rumah, masuk apartemen, dan langsung tidur."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang membuat awalan tiba-tiba masuk akal",
+     "items": [
+      "**Awalan ini bukan cuma untuk kata kerja gerak.** *При-* selalu berarti mendekat (*принести́* — membawakan), *у-* selalu berarti menjauh (*унести́* — membawa pergi), *вы-* selalu keluar (*вы́писать* — menyalin keluar). Sekali kamu mengenalinya, ribuan kata Rusia jadi bisa ditebak.",
+      "⚠️ **Bentuk lampau -шёл berubah menurut jenis kelamin dengan cara yang tak biasa:** *пришёл — пришла́ — пришли́*. Huruf ё hilang di bentuk perempuan dan jamak. Ini kesalahan pengucapan yang paling sering terdengar.",
+      "**Kalau bingung, pakai сходи́ть / съе́здить.** *Я схожу́ в апте́ку* aman untuk hampir semua urusan pendek pulang-pergi, dan terdengar sangat alami."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "приходи́ть / прийти́",
+   "baca": "pri-kha-DIT' / pri-TI",
+   "id": "datang, tiba"
+  },
+  {
+   "ru": "уходи́ть / уйти́",
+   "baca": "u-kha-DIT' / uy-TI",
+   "id": "pergi, meninggalkan"
+  },
+  {
+   "ru": "входи́ть / войти́",
+   "baca": "fkha-DIT' / vay-TI",
+   "id": "masuk"
+  },
+  {
+   "ru": "выходи́ть / вы́йти",
+   "baca": "vy-kha-DIT' / VY-y-ti",
+   "id": "keluar"
+  },
+  {
+   "ru": "заходи́ть / зайти́",
+   "baca": "za-kha-DIT' / zay-TI",
+   "id": "mampir"
+  },
+  {
+   "ru": "доходи́ть / дойти́",
+   "baca": "da-kha-DIT' / day-TI",
+   "id": "sampai ke"
+  },
+  {
+   "ru": "переходи́ть / перейти́",
+   "baca": "pi-ri-kha-DIT' / pi-ri-TI",
+   "id": "menyeberang"
+  },
+  {
+   "ru": "приезжа́ть / прие́хать",
+   "baca": "pri-yi-ZHAT' / pri-YE-khat'",
+   "id": "datang (berkendara)"
+  },
+  {
+   "ru": "уезжа́ть / уе́хать",
+   "baca": "u-yi-ZHAT' / u-YE-khat'",
+   "id": "pergi (berkendara)"
+  },
+  {
+   "ru": "сходи́ть",
+   "baca": "skha-DIT'",
+   "id": "pergi dan kembali (sekali)"
+  },
+  {
+   "ru": "возвраща́ться / верну́ться",
+   "baca": "vaz-vra-SCHA-tsa / vir-NU-tsa",
+   "id": "kembali, pulang"
+  },
+  {
+   "ru": "успева́ть / успе́ть",
+   "baca": "us-pi-VAT' / us-PYET'",
+   "id": "sempat"
+  },
+  {
+   "ru": "по доро́ге",
+   "baca": "pa da-RO-gye",
+   "id": "di jalan, sambil lewat"
+  },
+  {
+   "ru": "нена́долго",
+   "baca": "ni-NA-dal-ga",
+   "id": "sebentar saja"
+  },
+  {
+   "ru": "спра́вка",
+   "baca": "SPRAF-ka",
+   "id": "surat keterangan"
+  },
+  {
+   "ru": "по́чта",
+   "baca": "POCH-ta",
+   "id": "kantor pos"
+  },
+  {
+   "ru": "апте́ка",
+   "baca": "ap-TYE-ka",
+   "id": "apotek"
+  },
+  {
+   "ru": "у́лица",
+   "baca": "U-li-tsa",
+   "id": "jalan"
+  },
+  {
+   "ru": "почти́",
+   "baca": "pach-TI",
+   "id": "hampir"
+  },
+  {
+   "ru": "как раз",
+   "baca": "kak ras",
+   "id": "kebetulan, pas sekali"
+  },
+  {
+   "ru": "вме́сте",
+   "baca": "VMYES-tye",
+   "id": "bersama"
+  },
+  {
+   "ru": "означа́ть",
+   "baca": "a-zna-CHAT'",
+   "id": "berarti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata kerja berawalan yang tepat (bentuk lampau).",
+   "items": [
+    "Он ____ (прийти́) домо́й в семь.",
+    "Она́ ____ (уйти́) в де́сять утра́.",
+    "Мы ____ (зайти́) в магази́н по доро́ге.",
+    "Я ____ (вы́йти) из до́ма ра́но.",
+    "Они́ ____ (прие́хать) в Москву́ вчера́.",
+    "Ты ____ (дойти́) до апте́ки?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata depan yang cocok dengan awalannya.",
+   "items": [
+    "Я вы́шел ____ до́ма.",
+    "Она́ пришла́ ____ рабо́ты.",
+    "Мы вошли́ ____ кварти́ру.",
+    "Он дошёл ____ остано́вки.",
+    "Я зашёл ____ дру́гу."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "пришёл / он / в / домо́й / семь",
+    "магази́н / зашли́ / доро́ге / мы / по / в",
+    "из / вы́шла / она́ / до́ма / ра́но",
+    "апте́ку / я / схожу́ / в",
+    "у́лицу / перешёл / он / и / по́чту / нашёл"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Saya keluar rumah jam delapan.",
+    "Dia (perempuan) pergi jam sepuluh dan belum kembali.",
+    "Kami mampir ke toko di jalan.",
+    "Mereka sampai di Moskow kemarin.",
+    "Saya tidak sampai ke apotek.",
+    "Saya ke apotek sebentar (dan balik)."
+   ]
+  }
+ ],
+ "answers": [
+  "пришёл — ушла́ — зашли́ — вы́шел — прие́хали — дошёл",
+  "из — с — в — до — к",
+  "Он пришёл домо́й в семь. — Мы зашли́ в магази́н по доро́ге. — Она́ вы́шла из до́ма ра́но. — Я схожу́ в апте́ку. — Он перешёл у́лицу и нашёл по́чту.",
+  "Я вы́шел(вы́шла) из до́ма в во́семь. — Она́ ушла́ в де́сять и ещё не верну́лась. — Мы зашли́ в магази́н по доро́ге. — Они́ прие́хали в Москву́ вчера́. — Я не дошёл(дошла́) до апте́ки. — Я схожу́ в апте́ку."
+ ]
+}

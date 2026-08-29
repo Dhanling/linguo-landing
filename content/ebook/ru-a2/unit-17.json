@@ -1,0 +1,546 @@
+{
+ "title": "Sejam, dalam sejam, sejam yang lalu",
+ "title_target": "Час, за час, через час — chas, za chas, CHE-ris chas",
+ "goal": "Menyatakan waktu, lama waktu, dan selang waktu dengan tepat — bidang di mana satu kata depan yang salah mengubah seluruh isi kalimat.",
+ "bekal": [
+  "membedakan lama (два часа), hasil dalam waktu tertentu (за два часа), dan selang (через два часа)",
+  "memakai назад untuk waktu lampau dan через untuk waktu depan",
+  "memakai с... до... dan от... до... untuk rentang",
+  "menjawab когда, как долго, за сколько времени, как часто",
+  "memakai ungkapan frekuensi: раз в неделю, по вторникам, каждый день"
+ ],
+ "wave": "Ulangi **unit 15**: gambarkan lima orang atau benda di sekitarmu dengan lantang, tiap kalimat memakai *кото́рый* dalam kasus yang berbeda.",
+ "dialogs": [
+  {
+   "title": "Диалог — Wawancara magang",
+   "intro": "Ани diwawancarai untuk perpanjangan magang. Perhatikan bahwa setiap pertanyaan tentang waktu menuntut bentuk jawaban yang berbeda.",
+   "lines": [
+    {
+     "speaker": "Нача́льник:",
+     "text": "[Как|Kak] [долго|DOL-ga] [вы|vy] [у|u] [нас|nas] [работаете|ra-BO-ta-yi-tye]?",
+     "id": "Sudah berapa lama Anda bekerja di sini?",
+     "literal": "bagaimana — lama — Anda — pada — kami — bekerja?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Три|Tri] [месяца|MYE-si-tsa]. [Я|Ya] [начала|na-chi-LA] [в|v] [марте|MAR-tye].",
+     "id": "Tiga bulan. Saya mulai bulan Maret.",
+     "literal": "tiga — bulan(gen). saya — memulai(СВ, fem) — pada — Maret."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[А|A] [сколько|SKOL'-ka] [времени|VRYE-mi-ni] [вы|vy] [тратите|TRA-ti-tye] [на|na] [дорогу|da-RO-gu]?",
+     "id": "Berapa lama Anda habiskan di perjalanan?",
+     "literal": "dan — berapa — waktu(gen) — Anda — menghabiskan — pada — jalan?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Час|Chas] [в|v] [одну|ad-NU] [сторону|STO-ra-nu]. [Два|Dva] [часа|chi-SA] [в|v] [день|dyen'].",
+     "id": "Sejam sekali jalan. Dua jam sehari.",
+     "literal": "jam — ke — satu — arah. dua — jam(gen) — dalam — hari."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[За|Za] [сколько|SKOL'-ka] [времени|VRYE-mi-ni] [вы|vy] [переводите|pi-ri-VO-di-tye] [одну|ad-NU] [страницу|stra-NI-tsu]?",
+     "id": "Berapa lama Anda menerjemahkan satu halaman?",
+     "literal": "dalam — berapa — waktu(gen) — Anda — menerjemahkan — satu — halaman?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[За|Za] [двадцать|DVA-tsat'] [минут|mi-NUT], [если|YES-li] [текст|tyekst] [простой|pras-TOY].",
+     "id": "Dua puluh menit, kalau teksnya sederhana.",
+     "literal": "dalam — dua-puluh — menit(gen), jika — teks — sederhana."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[Заметьте|Za-MYET'-tye] [разницу|RAZ-ni-tsu]: «[двадцать|DVA-tsat'] [минут|mi-NUT]» [и|i] «[за|za] [двадцать|DVA-tsat'] [минут|mi-NUT]».",
+     "id": "Perhatikan bedanya: \"dua puluh menit\" dan \"dalam dua puluh menit\".",
+     "literal": "perhatikan(СВ) — perbedaan: «dua-puluh — menit» — dan — «dalam — dua-puluh — menit»."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Первое|PYER-va-ye] — [сколько|SKOL'-ka] [я|ya] [сидела|si-DYE-la]. [Второе|Fta-RO-ye] — [за|za] [сколько|SKOL'-ka] [закончила|za-KON-chi-la].",
+     "id": "Yang pertama berapa lama saya duduk. Yang kedua dalam berapa lama saya selesai.",
+     "literal": "pertama — berapa — saya — duduk(fem). kedua — dalam — berapa — menyelesaikan(fem)."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[Хорошо|Kha-ra-SHO]. [Когда|Kag-DA] [вы|vy] [сможете|SMO-zhy-tye] [начать|na-CHAT'] [полный|POL-nyy] [день|dyen']?",
+     "id": "Bagus. Kapan Anda bisa mulai kerja penuh?",
+     "literal": "bagus. kapan — Anda — bisa(СВ) — memulai(СВ) — penuh — hari?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Через|CHE-ris] [два|dva] [месяца|MYE-si-tsa], [после|POS-lye] [экзаменов|ek-ZA-mi-naf].",
+     "id": "Dua bulan lagi, setelah ujian.",
+     "literal": "lewat — dua — bulan(gen), sesudah — ujian(gen, jmk)."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[А|A] [когда|kag-DA] [вы|vy] [приехали|pri-YE-kha-li] [в|v] [Россию|Ra-SI-yu]?",
+     "id": "Dan kapan Anda datang ke Rusia?",
+     "literal": "dan — kapan — Anda — datang(jmk) — ke — Rusia?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Два|Dva] [года|GO-da] [назад|na-ZAT], [в|v] [сентябре|sin-tib-RYE].",
+     "id": "Dua tahun lalu, bulan September.",
+     "literal": "dua — tahun(gen) — lalu, pada — September."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[Как|Kak] [часто|CHAS-ta] [вы|vy] [бываете|by-VA-yi-tye] [дома|DO-ma]?",
+     "id": "Seberapa sering Anda pulang ke rumah?",
+     "literal": "bagaimana — sering — Anda — berada — di-rumah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Раз|Ras] [в|v] [год|got]. [Обычно|A-BYCH-na] [с|s] [июня|i-YU-nya] [до|da] [августа|AV-gus-ta].",
+     "id": "Setahun sekali. Biasanya dari Juni sampai Agustus.",
+     "literal": "kali — dalam — tahun. biasanya — dari — Juni(gen) — sampai — Agustus(gen)."
+    },
+    {
+     "speaker": "Нача́льник:",
+     "text": "[Тогда|Tag-DA] [давайте|da-VAY-tye] [встретимся|FSTRYE-tim-sya] [ещё|yi-SCHO] [раз|ras] [через|CHE-ris] [неделю|ni-DYE-lyu].",
+     "id": "Kalau begitu mari kita bertemu lagi seminggu lagi.",
+     "literal": "kalau-begitu — mari — bertemu-kita(СВ) — lagi — kali — lewat — minggu."
+    }
+   ],
+   "notes": [
+    "**Tiga bentuk yang paling sering tertukar, dan ketiganya memakai kata yang sama.** *два часа́* = selama dua jam (lama). *за два часа́* = dalam dua jam, dengan hasil (selesai). *че́рез два часа́* = dua jam lagi, atau setelah selang dua jam.",
+    "⚠️ **Ketiganya menuntut aspek yang berbeda.** *Я писа́л письмо́ два часа́* (НСВ — kegiatannya berlangsung dua jam). *Я написа́л письмо́ за два часа́* (СВ — selesai dalam dua jam). Kalau kamu memakai *за* dengan НСВ, kalimatnya langsung terdengar salah.",
+    "**Lama waktu berdiri dalam akusatif tanpa kata depan sama sekali:** *год, ме́сяц, неде́лю, час, всю ночь, всё у́тро*. Bahasa Indonesia memakai \"selama\", bahasa Rusia tidak memakai apa-apa.",
+    "**Наза́д (yang lalu) berdiri DI BELAKANG ukuran waktunya:** *два дня наза́д*, *год наза́д*, *мину́ту наза́д*. ⚠️ Sedangkan *че́рез* berdiri **di depan**: *че́рез два дня*. Dua kata yang berlawanan arti, dan letaknya pun berlawanan.",
+    "**Rentang waktu memakai с... до... (dari... sampai...) dengan genitif dua-duanya:** *с девяти́ до шести́*, *с понеде́льника до пя́тницы*, *с ию́ня до а́вгуста*. Bentuk *от... до...* juga ada tapi lebih untuk jarak dan ukuran.",
+    "**Frekuensi punya beberapa cara, dan semuanya sering dipakai:** *раз в неде́лю* (seminggu sekali), *два ра́за в ме́сяц*, *ка́ждый день*, *по вторникам* (tiap Selasa, datif jamak), *иногда́*, *ре́дко*, *ча́сто*, *всегда́*, *никогда́ не*.",
+    "**Pertanyaan menentukan jawabannya, dan ada empat yang berbeda:** *Когда́?* (kapan) → titik waktu. *Как до́лго? / Ско́лько вре́мени?* (berapa lama) → akusatif tanpa kata depan. *За ско́лько вре́мени?* (dalam berapa lama) → *за* + akusatif. *Как ча́сто?* (seberapa sering) → frekuensi.",
+    "**На + akusatif menyatakan lama rencana ke depan, bukan lama kegiatan.** *Я е́ду в Москву́ **на** неде́лю* = saya ke Moskow untuk seminggu (rencananya tinggal seminggu). ⚠️ Bandingkan: *Я е́хал в Москву́ неде́лю* = perjalanannya sendiri makan waktu seminggu. Beda satu kata, beda cerita."
+   ],
+   "grammars": [
+    {
+     "title": "Empat pertanyaan waktu, empat bentuk jawaban",
+     "body": [
+      "Kalau kamu bisa memilih baris yang benar, separuh kesalahan waktu hilang seketika."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Bentuk jawaban",
+       "Contoh",
+       "Aspek"
+      ],
+      "rows": [
+       [
+        "Когда́?",
+        "в / на / kata waktu",
+        "в понеде́льник, у́тром",
+        "bebas"
+       ],
+       [
+        "Как до́лго?",
+        "akusatif polos",
+        "два часа́, всю ночь",
+        "НСВ"
+       ],
+       [
+        "За ско́лько вре́мени?",
+        "за + akusatif",
+        "за два часа́",
+        "СВ"
+       ],
+       [
+        "Че́рез ско́лько?",
+        "че́рез + akusatif",
+        "че́рез два часа́",
+        "СВ biasanya"
+       ],
+       [
+        "Как давно́?",
+        "waktu + наза́д",
+        "два го́да наза́д",
+        "lampau"
+       ],
+       [
+        "Как ча́сто?",
+        "раз в / ка́ждый / по + dat.",
+        "раз в неде́лю",
+        "НСВ"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Waktu pada jam, hari, bulan, tahun",
+     "body": [
+      "Kata depannya berbeda menurut satuan waktunya, dan daftarnya pendek — hafalkan sekali."
+     ],
+     "table": {
+      "head": [
+       "Satuan",
+       "Kata depan",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "jam",
+        "в + akusatif",
+        "в три часа́",
+        "jam tiga"
+       ],
+       [
+        "hari",
+        "в + akusatif",
+        "в сре́ду",
+        "hari Rabu"
+       ],
+       [
+        "minggu",
+        "на + preposisional",
+        "на э́той неде́ле",
+        "minggu ini"
+       ],
+       [
+        "bulan",
+        "в + preposisional",
+        "в ма́е",
+        "bulan Mei"
+       ],
+       [
+        "tahun",
+        "в + preposisional",
+        "в две ты́сячи два́дцать шесто́м году́",
+        "tahun 2026"
+       ],
+       [
+        "bagian hari",
+        "instrumental",
+        "у́тром, ве́чером",
+        "pagi, malam"
+       ],
+       [
+        "musim",
+        "instrumental",
+        "ле́том, зимо́й",
+        "musim panas, musim dingin"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Berapa lama lagi",
+   "intro": "Percakapan singkat di ruang tunggu. Tiap baris memakai bentuk waktu yang berbeda.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Извините|Iz-vi-NI-tye], [вы|vy] [давно|dav-NO] [ждёте|ZHDYO-tye]?",
+     "id": "Maaf, Anda sudah lama menunggu?",
+     "literal": "maaf, Anda — lama — menunggu?"
+    },
+    {
+     "speaker": "Же́нщина:",
+     "text": "[Сорок|SO-rak] [минут|mi-NUT]. [А|A] [вы|vy]?",
+     "id": "Empat puluh menit. Anda?",
+     "literal": "empat-puluh — menit. dan — Anda?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Я|Ya] [только|TOL'-ka] [что|shto] [пришла|prish-LA]. [Сколько|SKOL'-ka] [обычно|a-BYCH-na] [ждут|zhdut]?",
+     "id": "Saya baru saja datang. Biasanya nunggu berapa lama?",
+     "literal": "saya — hanya — bahwa — datang(fem). berapa — biasanya — menunggu(jmk)?"
+    },
+    {
+     "speaker": "Же́нщина:",
+     "text": "[Час|Chas], [иногда|i-nag-DA] [полтора|pal-ta-RA]. [Врач|Vrach] [принимает|pri-ni-MA-yit] [с|s] [девяти|di-vi-TI].",
+     "id": "Sejam, kadang satu setengah. Dokternya buka dari jam sembilan.",
+     "literal": "jam, kadang — satu-setengah. dokter — menerima — dari — sembilan(gen)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Значит|ZNA-chit], [я|ya] [успею|us-PYE-yu] [на|na] [лекцию|LYEK-tsy-yu] [в|v] [час|chas]?",
+     "id": "Berarti saya keburu ke kuliah jam satu?",
+     "literal": "berarti, saya — sempat(СВ) — ke — kuliah — pada — jam?"
+    },
+    {
+     "speaker": "Же́нщина:",
+     "text": "[Если|YES-li] [вас|vas] [позовут|pa-za-VUT] [через|CHE-ris] [двадцать|DVA-tsat'] [минут|mi-NUT] — [да|da].",
+     "id": "Kalau Anda dipanggil dua puluh menit lagi — iya.",
+     "literal": "jika — Anda — memanggil(jmk, СВ) — lewat — dua-puluh — menit — ya."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [если|YES-li] [нет|nyet], [я|ya] [опоздаю|a-paz-DA-yu] [на|na] [полчаса|pal-chi-SA].",
+     "id": "Kalau tidak, saya telat setengah jam.",
+     "literal": "dan — jika — tidak, saya — terlambat(СВ) — sebanyak — setengah-jam."
+    },
+    {
+     "speaker": "Же́нщина:",
+     "text": "[Здесь|Zdyes'] [все|fsye] [опаздывают|a-PAZ-dy-va-yut]. [Это|E-ta] [традиция|tra-DI-tsy-ya] [старше|STAR-shy] [нас|nas].",
+     "id": "Di sini semua telat. Itu tradisi yang lebih tua dari kita.",
+     "literal": "di-sini — semua — terlambat. ini — tradisi — lebih-tua — kami(gen)."
+    }
+   ],
+   "notes": [
+    "**Perhatikan enam bentuk waktu berbeda dalam delapan baris:** *давно́*, *со́рок мину́т* (lama), *то́лько что*, *с девяти́* (rentang), *че́рез два́дцать мину́т* (selang), *на полчаса́* (selisih keterlambatan).",
+    "**На + akusatif juga menyatakan selisih keterlambatan:** *опозда́ть **на** полчаса́* (telat setengah jam), *опозда́ть **на** де́сять мину́т*. Pola yang sama dengan selisih perbandingan di unit 12.",
+    "**Позову́т tanpa pelaku (bentuk они́) berarti \"Anda akan dipanggil\".** Inilah cara Rusia menyatakan pasif di percakapan sehari-hari, dan akan muncul lagi di unit 21."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ungkapan waktu yang dipakai tiap hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup lajur kanan dan terjemahkan sendiri. Sebagian besar sudah kamu kenal potongannya; yang perlu dilatih adalah menyusunnya dengan cepat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Русский",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "сего́дня / вчера́ / за́втра",
+       "hari ini / kemarin / besok"
+      ],
+      [
+       "позавчера́ / послеза́втра",
+       "kemarin dulu / lusa"
+      ],
+      [
+       "на про́шлой неде́ле",
+       "minggu lalu"
+      ],
+      [
+       "на э́той неде́ле",
+       "minggu ini"
+      ],
+      [
+       "на сле́дующей неде́ле",
+       "minggu depan"
+      ],
+      [
+       "в про́шлом ме́сяце / году́",
+       "bulan / tahun lalu"
+      ],
+      [
+       "в сле́дующем году́",
+       "tahun depan"
+      ],
+      [
+       "ка́ждый день / ка́ждую неде́лю",
+       "tiap hari / tiap minggu"
+      ],
+      [
+       "раз в день / раз в неде́лю",
+       "sehari sekali / seminggu sekali"
+      ],
+      [
+       "по понеде́льникам",
+       "tiap Senin"
+      ],
+      [
+       "с девяти́ до шести́",
+       "dari jam sembilan sampai enam"
+      ],
+      [
+       "це́лый день / всю ночь",
+       "seharian penuh / semalaman"
+      ],
+      [
+       "в э́то вре́мя",
+       "pada waktu itu"
+      ],
+      [
+       "в после́днее вре́мя",
+       "belakangan ini"
+      ],
+      [
+       "до сих пор",
+       "sampai sekarang"
+      ],
+      [
+       "ско́ро / неда́вно / давно́",
+       "segera / baru-baru ini / sudah lama"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga jebakan yang tersisa",
+     "items": [
+      "⚠️ **Давно́ punya dua arti yang ditentukan aspek.** *Я давно́ здесь живу́* (НСВ) = saya sudah lama tinggal di sini, dan masih. *Я давно́ был в Москве́* = sudah lama saya tidak ke Moskow — waktunya jauh di belakang. Konteks dan bentuk kata kerjanya yang membedakan.",
+      "**Ско́лько вре́мени? punya dua pekerjaan.** Sebagai pertanyaan waktu di jam: \"jam berapa?\" Sebagai pertanyaan lama: \"berapa lama?\" Yang membedakan hanya sisa kalimatnya. Untuk menanyakan jam, lebih aman: *Кото́рый час?*",
+      "**Ungkapan lama waktu bisa dipertegas dengan це́лый:** *це́лый час* (sejam penuh), *це́лый день*, *це́лую неде́лю*. Dipakai kalau kamu ingin menekankan bahwa waktunya terasa lama."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "как до́лго",
+   "baca": "kak DOL-ga",
+   "id": "berapa lama"
+  },
+  {
+   "ru": "ско́лько вре́мени",
+   "baca": "SKOL'-ka VRYE-mi-ni",
+   "id": "berapa lama; jam berapa"
+  },
+  {
+   "ru": "как ча́сто",
+   "baca": "kak CHAS-ta",
+   "id": "seberapa sering"
+  },
+  {
+   "ru": "как давно́",
+   "baca": "kak dav-NO",
+   "id": "sejak kapan"
+  },
+  {
+   "ru": "це́лый",
+   "baca": "TSE-lyy",
+   "id": "penuh, sepanjang"
+  },
+  {
+   "ru": "неда́вно / давно́",
+   "baca": "ni-DAV-na / dav-NO",
+   "id": "baru-baru ini / sudah lama"
+  },
+  {
+   "ru": "ско́ро",
+   "baca": "SKO-ra",
+   "id": "segera"
+  },
+  {
+   "ru": "сле́дующий",
+   "baca": "SLYE-du-yu-schiy",
+   "id": "berikutnya"
+  },
+  {
+   "ru": "про́шлый",
+   "baca": "PROSH-lyy",
+   "id": "yang lalu"
+  },
+  {
+   "ru": "позавчера́ / послеза́втра",
+   "baca": "pa-zaf-chi-RA / pas-li-ZAF-tra",
+   "id": "kemarin dulu / lusa"
+  },
+  {
+   "ru": "тра́тить / потра́тить",
+   "baca": "TRA-tit' / pa-TRA-tit'",
+   "id": "menghabiskan"
+  },
+  {
+   "ru": "быва́ть",
+   "baca": "by-VAT'",
+   "id": "biasa berada, sering ke"
+  },
+  {
+   "ru": "смочь",
+   "baca": "smoch'",
+   "id": "bisa (СВ)"
+  },
+  {
+   "ru": "начина́ть / нача́ть",
+   "baca": "na-chi-NAT' / na-CHAT'",
+   "id": "memulai"
+  },
+  {
+   "ru": "страни́ца",
+   "baca": "stra-NI-tsa",
+   "id": "halaman"
+  },
+  {
+   "ru": "текст",
+   "baca": "tyekst",
+   "id": "teks"
+  },
+  {
+   "ru": "просто́й",
+   "baca": "pras-TOY",
+   "id": "sederhana"
+  },
+  {
+   "ru": "по́лный",
+   "baca": "POL-nyy",
+   "id": "penuh"
+  },
+  {
+   "ru": "сторона́",
+   "baca": "sta-ra-NA",
+   "id": "sisi, arah"
+  },
+  {
+   "ru": "нача́льник",
+   "baca": "na-CHAL'-nik",
+   "id": "atasan, kepala"
+  },
+  {
+   "ru": "до сих пор",
+   "baca": "da sikh por",
+   "id": "sampai sekarang"
+  },
+  {
+   "ru": "в после́днее вре́мя",
+   "baca": "f pas-LYED-ni-ye VRYE-mya",
+   "id": "belakangan ini"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan за, через, atau kosongkan (tanpa kata depan).",
+   "items": [
+    "Я писа́л письмо́ ____ два часа́ (selama).",
+    "Я написа́л письмо́ ____ два часа́ (dalam).",
+    "Я приду́ ____ два часа́ (dua jam lagi).",
+    "Она́ жила́ там ____ год (selama).",
+    "Он вы́учил слова́ ____ неде́лю (dalam)."
+   ]
+  },
+  {
+   "prompt": "Isi dengan назад atau через.",
+   "items": [
+    "Он прие́хал два го́да ____.",
+    "Мы встре́тимся ____ неде́лю.",
+    "Я звони́л мину́ту ____.",
+    "Экза́мен бу́дет ____ ме́сяц.",
+    "Она́ уе́хала неде́лю ____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "часа́ / письмо́ / за / написа́л / два / я",
+    "наза́д / прие́хал / го́да / он / два",
+    "неде́лю / раз / хожу́ / в / я / туда́",
+    "шести́ / до / рабо́таю / девяти́ / с / я",
+    "неде́лю / встре́тимся / че́рез / мы"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Saya menulis surat selama dua jam.",
+    "Saya menyelesaikan surat dalam dua jam.",
+    "Saya akan datang dua jam lagi.",
+    "Dia datang dua tahun yang lalu.",
+    "Saya bekerja dari jam sembilan sampai enam.",
+    "Saya ke sana seminggu sekali."
+   ]
+  }
+ ],
+ "answers": [
+  "(tanpa) — за — че́рез — (tanpa) — за",
+  "наза́д — че́рез — наза́д — че́рез — наза́д",
+  "Я написа́л письмо́ за два часа́. — Он прие́хал два го́да наза́д. — Я хожу́ туда́ раз в неде́лю. — Я рабо́таю с девяти́ до шести́. — Мы встре́тимся че́рез неде́лю.",
+  "Я писа́л письмо́ два часа́. — Я написа́л письмо́ за два часа́. — Я приду́ че́рез два часа́. — Он прие́хал два го́да наза́д. — Я рабо́таю с девяти́ до шести́. — Я хожу́ туда́ раз в неде́лю."
+ ]
+}

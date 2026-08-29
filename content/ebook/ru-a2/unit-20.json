@@ -1,0 +1,522 @@
+{
+ "title": "Di dokter dan di apotek",
+ "title_target": "У врача и в аптеке — u vra-CHA i v ap-TYE-kye",
+ "goal": "Menjelaskan keluhan, menjawab pertanyaan dokter, dan membeli obat — dengan susunan kalimat Rusia yang menempatkan tubuh sebagai pelaku, bukan kamu.",
+ "bekal": [
+  "memakai У меня болит + bagian tubuh, dan menyesuaikan kata kerjanya",
+  "menyebut bagian tubuh dalam bentuk tunggal dan jamak",
+  "menjawab pertanyaan dokter tentang lama dan sifat keluhan",
+  "memakai чувствовать себя dan bentuk keadaan lainnya",
+  "membeli obat, menanyakan aturan pakai, dan memahami resep"
+ ],
+ "wave": "Ulangi **unit 18**: sebutkan lima harga dan lima tanggal dengan lantang, halaman tertutup.",
+ "dialogs": [
+  {
+   "title": "Диалог — Di poliklinik",
+   "intro": "Ани akhirnya pergi ke dokter. Perhatikan bahwa dalam bahasa Rusia bukan kamu yang \"punya sakit\" — bagian tubuhmu yang sakit.",
+   "lines": [
+    {
+     "speaker": "Врач:",
+     "text": "[Здравствуйте|ZDRAST-vuy-tye], [садитесь|sa-DI-tyes']. [На|Na] [что|shto] [жалуетесь|ZHA-lu-yi-tyes']?",
+     "id": "Selamat siang, silakan duduk. Ada keluhan apa?",
+     "literal": "selamat, duduklah. pada — apa — mengeluh-Anda?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[У|U] [меня|mi-NYA] [болит|ba-LIT] [горло|GOR-la] [и|i] [несколько|NYES-kal'-ka] [дней|dnyey] [болят|ba-LYAT] [глаза|gla-ZA].",
+     "id": "Tenggorokan saya sakit dan beberapa hari ini mata saya sakit.",
+     "literal": "pada — saya — sakit(tunggal) — tenggorokan — dan — beberapa — hari — sakit(jamak) — mata-mata."
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Температура|Tim-pi-ra-TU-ra] [была|by-LA]?",
+     "id": "Ada demam?",
+     "literal": "suhu — ada(fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Вчера|Fchi-RA] [была|by-LA] [тридцать|TRI-tsat'] [семь|syem'] [и|i] [восемь|VO-sim']. [Сегодня|Si-VOD-nya] [меньше|MYEN'-shy].",
+     "id": "Kemarin tiga puluh tujuh koma delapan. Hari ini lebih rendah.",
+     "literal": "kemarin — ada(fem) — tiga-puluh — tujuh — dan — delapan. hari-ini — lebih-sedikit."
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Как|Kak] [давно|dav-NO] [это|E-ta] [началось|na-chi-LOS']?",
+     "id": "Sudah berapa lama begini?",
+     "literal": "bagaimana — lama — ini — dimulai(СВ)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Дней|Dnyey] [пять|pyat']. [Сначала|Sna-CHA-la] [я|ya] [думала|DU-ma-la], [что|shto] [это|E-ta] [от|at] [усталости|us-TA-las-ti].",
+     "id": "Sekitar lima hari. Awalnya saya kira karena kelelahan.",
+     "literal": "hari(gen) — lima. mula-mula — saya — berpikir(fem), bahwa — ini — dari — kelelahan(gen)."
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Откройте|Atk-ROY-tye] [рот|rot], [скажите|ska-ZHY-tye] «[а-а|a-A]». [Так|Tak]… [горло|GOR-la] [красное|KRAS-na-ye].",
+     "id": "Buka mulut, bilang \"aaa\". Nah... tenggorokannya merah.",
+     "literal": "buka(СВ) — mulut, katakan(СВ) — «a-a». begitu… tenggorokan — merah."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Это|E-ta] [серьёзно|sir-'YOZ-na]?",
+     "id": "Serius tidak?",
+     "literal": "ini — serius?"
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Нет|Nyet]. [Но|No] [вам|vam] [нужно|NUZH-na] [отдохнуть|at-dakh-NUT'] [три|tri] [дня|dnya].",
+     "id": "Tidak. Tapi Anda perlu istirahat tiga hari.",
+     "literal": "tidak. tapi — kepada-Anda — perlu — beristirahat(СВ) — tiga — hari."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[У|U] [меня|mi-NYA] [экзамен|ek-ZA-min] [в|v] [четверг|chit-VYERK].",
+     "id": "Saya ada ujian hari Kamis.",
+     "literal": "pada — saya — ujian — pada — Kamis."
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Я|Ya] [выпишу|VY-pi-shu] [вам|vam] [справку|SPRAF-ku]. [Экзамен|Ek-ZA-min] [подождёт|pa-dazh-DYOT].",
+     "id": "Saya akan buatkan surat keterangan. Ujiannya bisa menunggu.",
+     "literal": "saya — menuliskan(СВ) — kepada-Anda — surat-keterangan. ujian — menunggu(СВ)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Какие|Ka-KI-ye] [лекарства|li-KARST-va] [мне|mnye] [принимать|pri-ni-MAT']?",
+     "id": "Obat apa yang harus saya minum?",
+     "literal": "yang-mana(jmk) — obat-obat — kepada-saya — meminum?"
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Вот|Vot] [рецепт|ri-TSEPT]. [Три|Tri] [раза|RA-za] [в|v] [день|dyen'] [после|POS-lye] [еды|yi-DY], [пять|pyat'] [дней|dnyey].",
+     "id": "Ini resepnya. Tiga kali sehari sesudah makan, lima hari.",
+     "literal": "ini — resep. tiga — kali — dalam — hari — sesudah — makanan(gen), lima — hari."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [если|YES-li] [не|nye] [поможет|pa-MO-zhyt]?",
+     "id": "Kalau tidak mempan?",
+     "literal": "dan — jika — tidak — membantu(СВ)?"
+    },
+    {
+     "speaker": "Врач:",
+     "text": "[Тогда|Tag-DA] [приходите|pri-kha-DI-tye] [снова|SNO-va]. [Но|No] [сначала|sna-CHA-la] [попробуйте|pap-RO-buy-tye] [поспать|pas-PAT'].",
+     "id": "Kalau begitu datang lagi. Tapi coba dulu tidur yang cukup.",
+     "literal": "kalau-begitu — datanglah — lagi. tapi — mula-mula — cobalah(СВ) — tidur-sebentar(СВ)."
+    }
+   ],
+   "notes": [
+    "**Susunan baku keluhan: У меня́ боли́т + bagian tubuh.** Harfiahnya \"pada-saya sakit tenggorokan\" — tubuhnyalah yang jadi pelaku, bukan kamu. ⚠️ Karena itu kata kerjanya ikut bagian tubuhnya: *боли́т* untuk satu, *боля́т* untuk lebih dari satu. *У меня́ боли́т голова́* tapi *У меня́ боля́т глаза́*.",
+    "**Bentuk lampaunya juga ikut bagian tubuhnya, bukan orangnya:** *У меня́ боле́л зуб* (gigi, maskulin), *боле́ла голова́* (kepala, feminin), *боле́ли но́ги* (kaki, jamak). Ini tempat yang sangat sering keliru karena naluri kita menempelkannya pada \"saya\".",
+    "**Bagian tubuh yang berpasangan hampir selalu disebut jamak:** *глаза́* (mata), *у́ши* (telinga), *ру́ки* (tangan), *но́ги* (kaki), *зу́бы* (gigi). ⚠️ Perhatikan bahwa *рука́* mencakup lengan sampai jari, dan *нога́* mencakup kaki sampai paha — bahasa Rusia tidak memisahkannya seperti bahasa Inggris.",
+    "**Болеть punya dua arti dan dua pola tekukan yang berbeda.** *боле́ть (боле́ю, боле́ешь)* = sedang sakit, dipakai untuk orang: *Я боле́ю*. *боле́ть (боли́т, боля́т)* = terasa nyeri, dipakai untuk bagian tubuh. Ejaannya sama, artinya berbeda.",
+    "**Pertanyaan pertama dokter Rusia hampir selalu sama: На что жа́луетесь?** — harfiahnya \"mengeluh tentang apa\". Jawaban yang wajar langsung menyebut keluhan tanpa basa-basi panjang.",
+    "**Suhu badan disebut dengan koma dibaca «и»:** *три́дцать семь и во́семь* = 37,8. ⚠️ Ambang \"demam\" di Rusia adalah 37,0 — lebih rendah daripada kebiasaan di Indonesia, dan angka 37,2 sudah dianggap patut diperhatikan.",
+    "**Aturan pakai obat memakai pola tetap:** *три ра́за в день* (tiga kali sehari), *по́сле еды́ / до еды́* (sesudah / sebelum makan), *по одно́й табле́тке* (satu tablet tiap kali), *в тече́ние пяти́ дней* (selama lima hari).",
+    "**Спра́вка adalah surat keterangan sakit, dan di Rusia ia benar-benar dipakai.** Tanpa *спра́вка*, ketidakhadiran di kampus atau kantor dianggap bolos. ⚠️ Mintalah selalu: *Вы́пишите мне спра́вку, пожа́луйста.*"
+   ],
+   "grammars": [
+    {
+     "title": "Menyatakan keluhan",
+     "body": [
+      "Empat pola ini menutup hampir semua keluhan sehari-hari. Perhatikan bahwa hanya pola pertama yang memakai *у меня́*."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "У меня́ боли́т / боля́т…",
+        "У меня́ боли́т голова́.",
+        "Kepala saya sakit."
+       ],
+       [
+        "Мне + keadaan",
+        "Мне пло́хо. / Мне ду́рно.",
+        "Saya tidak enak badan."
+       ],
+       [
+        "Я чу́вствую себя́…",
+        "Я чу́вствую себя́ ху́же.",
+        "Saya merasa lebih buruk."
+       ],
+       [
+        "У меня́ + benda",
+        "У меня́ температу́ра / ка́шель.",
+        "Saya demam / batuk."
+       ],
+       [
+        "Я боле́ю…",
+        "Я боле́ю гри́ппом.",
+        "Saya sakit flu."
+       ],
+       [
+        "Мне не хвата́ет…",
+        "Мне не хвата́ет сна.",
+        "Saya kurang tidur."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Tubuh, dari kepala ke kaki",
+     "body": [
+      "Lajur ketiga memberi bentuk yang kamu pakai dalam kalimat keluhan — itulah bentuk yang benar-benar dibutuhkan."
+     ],
+     "table": {
+      "head": [
+       "Русский",
+       "Artinya",
+       "Dalam keluhan"
+      ],
+      "rows": [
+       [
+        "голова́",
+        "kepala",
+        "боли́т голова́"
+       ],
+       [
+        "го́рло",
+        "tenggorokan",
+        "боли́т го́рло"
+       ],
+       [
+        "зуб / зу́бы",
+        "gigi",
+        "боли́т зуб / боля́т зу́бы"
+       ],
+       [
+        "у́хо / у́ши",
+        "telinga",
+        "боли́т у́хо / боля́т у́ши"
+       ],
+       [
+        "глаз / глаза́",
+        "mata",
+        "боля́т глаза́"
+       ],
+       [
+        "живо́т",
+        "perut",
+        "боли́т живо́т"
+       ],
+       [
+        "спина́",
+        "punggung",
+        "боли́т спина́"
+       ],
+       [
+        "рука́ / ру́ки",
+        "tangan, lengan",
+        "боли́т рука́"
+       ],
+       [
+        "нога́ / но́ги",
+        "kaki",
+        "боля́т но́ги"
+       ],
+       [
+        "се́рдце",
+        "jantung",
+        "боли́т се́рдце"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Di apotek",
+   "intro": "Beberapa menit sesudah keluar dari poliklinik. Perhatikan pertanyaan-pertanyaan yang perlu kamu bisa ucapkan.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Здравствуйте|ZDRAST-vuy-tye]. [У|U] [меня|mi-NYA] [рецепт|ri-TSEPT] [от|at] [врача|vra-CHA].",
+     "id": "Selamat siang. Saya ada resep dari dokter.",
+     "literal": "selamat. pada — saya — resep — dari — dokter(gen)."
+    },
+    {
+     "speaker": "Апте́карь:",
+     "text": "[Минуту|Mi-NU-tu]… [Есть|Yest']. [Одна|Ad-NA] [упаковка|u-pa-KOF-ka] [или|I-li] [две|dvye]?",
+     "id": "Sebentar... Ada. Satu bungkus atau dua?",
+     "literal": "menit… ada. satu — bungkus — atau — dua?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Одна|Ad-NA]. [А|A] [сколько|SKOL'-ka] [раз|ras] [в|v] [день|dyen'] [принимать|pri-ni-MAT']?",
+     "id": "Satu. Sehari berapa kali diminum?",
+     "literal": "satu. dan — berapa — kali — dalam — hari — meminum?"
+    },
+    {
+     "speaker": "Апте́карь:",
+     "text": "[По|Pa] [одной|ad-NOY] [таблетке|tab-LYET-kye] [три|tri] [раза|RA-za], [после|POS-lye] [еды|yi-DY].",
+     "id": "Satu tablet tiga kali, sesudah makan.",
+     "literal": "menurut — satu(dat) — tablet(dat) — tiga — kali, sesudah — makanan(gen)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [есть|yest'] [что-нибудь|SHTO-ni-but'] [от|at] [горла|GOR-la] [без|byes] [рецепта|ri-TSEP-ta]?",
+     "id": "Ada obat tenggorokan yang tanpa resep?",
+     "literal": "dan — ada — sesuatu — untuk — tenggorokan(gen) — tanpa — resep(gen)?"
+    },
+    {
+     "speaker": "Апте́карь:",
+     "text": "[Есть|Yest'] [спрей|spryey] [и|i] [пастилки|pas-TIL-ki]. [Пастилки|Pas-TIL-ki] [дешевле|di-SHEV-lye].",
+     "id": "Ada semprot dan permen pelega. Permennya lebih murah.",
+     "literal": "ada — semprot — dan — permen. permen — lebih-murah."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Возьму|Vaz'-MU] [пастилки|pas-TIL-ki]. [Есть|Yest'] [побочные|pa-BOCH-ny-ye] [эффекты|e-FYEK-ty]?",
+     "id": "Saya ambil yang permen. Ada efek sampingnya?",
+     "literal": "mengambil-saya(СВ) — permen. ada — samping — efek-efek?"
+    },
+    {
+     "speaker": "Апте́карь:",
+     "text": "[Практически|Prak-TI-chis-ki] [нет|nyet]. [Но|No] [не|nye] [больше|BOL'-shy] [восьми|vas'-MI] [штук|shtuk] [в|v] [день|dyen'].",
+     "id": "Praktis tidak ada. Tapi jangan lebih dari delapan butir sehari.",
+     "literal": "praktis — tidak. tapi — tidak — lebih — delapan(gen) — butir(gen, jmk) — dalam — hari."
+    }
+   ],
+   "notes": [
+    "**По одно́й табле́тке memakai datif** — ini pemakaian *по* yang berarti \"masing-masing sekian\": *по одному́ ра́зу*, *по два часа́*, *по пять рубле́й*. Sangat sering di aturan pakai dan pembagian.",
+    "**От + genitif berarti \"untuk mengatasi\":** *от го́рла*, *от ка́шля*, *от головно́й бо́ли*. Perhatikan bahwa yang disebut adalah penyakitnya, bukan hasilnya.",
+    "**Шту́ка berarti \"butir, biji\", satuan hitung untuk benda apa pun** yang tidak punya satuan sendiri: *пять штук*, *две шту́ки*. Kata ini menyelamatkan banyak percakapan di toko."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di apotek",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Apotek Rusia (апте́ка) menjual banyak obat tanpa resep, dan apotekernya biasanya bersedia menyarankan. Kalimat-kalimat berikut sudah cukup untuk hampir semua kunjungan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Русский",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "Что вы посове́туете от ка́шля?",
+       "Anda sarankan apa untuk batuk?"
+      ],
+      [
+       "У вас есть что́-нибудь от головно́й бо́ли?",
+       "Ada obat sakit kepala?"
+      ],
+      [
+       "Э́то без реце́пта?",
+       "Ini tanpa resep?"
+      ],
+      [
+       "У меня́ есть реце́пт.",
+       "Saya punya resep."
+      ],
+      [
+       "Как принима́ть э́то лека́рство?",
+       "Obat ini diminum bagaimana?"
+      ],
+      [
+       "Ско́лько раз в день?",
+       "Berapa kali sehari?"
+      ],
+      [
+       "До еды́ или по́сле?",
+       "Sebelum atau sesudah makan?"
+      ],
+      [
+       "Есть ли побо́чные эффе́кты?",
+       "Ada efek sampingnya?"
+      ],
+      [
+       "Есть что́-нибудь деше́вле?",
+       "Ada yang lebih murah?"
+      ],
+      [
+       "Да́йте, пожа́луйста, одну́ упако́вку.",
+       "Tolong beri saya satu bungkus."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang perlu diketahui sebelum sakit",
+     "items": [
+      "⚠️ **Поликли́ника bukan rumah sakit.** *Поликли́ника* adalah tempat berobat jalan sehari-hari — di sanalah kamu pergi kalau demam. *Больни́ца* adalah rumah sakit untuk rawat inap. Menyebut yang salah bisa membuatmu diarahkan ke tempat yang keliru.",
+      "**Скорая (по́мощь) adalah ambulans, dan nomornya 103.** Kalimat yang perlu kamu bisa ucapkan tanpa berpikir: *Вы́зовите ско́рую!* (panggil ambulans!) dan alamatmu.",
+      "**Mahasiswa asing biasanya wajib punya полис ДМС** (asuransi kesehatan). Bawalah selalu bersama paspor; tanpa itu, kunjungan dokter dibayar penuh."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "боле́ть (боли́т)",
+   "baca": "ba-LYET' (ba-LIT)",
+   "id": "terasa sakit (bagian tubuh)"
+  },
+  {
+   "ru": "боль",
+   "baca": "bol'",
+   "id": "rasa sakit"
+  },
+  {
+   "ru": "голова́ / го́рло",
+   "baca": "ga-la-VA / GOR-la",
+   "id": "kepala / tenggorokan"
+  },
+  {
+   "ru": "живо́т / спина́",
+   "baca": "zhy-VOT / spi-NA",
+   "id": "perut / punggung"
+  },
+  {
+   "ru": "зуб / у́хо",
+   "baca": "zup / U-kha",
+   "id": "gigi / telinga"
+  },
+  {
+   "ru": "рука́ / нога́",
+   "baca": "ru-KA / na-GA",
+   "id": "tangan / kaki"
+  },
+  {
+   "ru": "се́рдце",
+   "baca": "SYER-tse",
+   "id": "jantung"
+  },
+  {
+   "ru": "температу́ра",
+   "baca": "tim-pi-ra-TU-ra",
+   "id": "suhu, demam"
+  },
+  {
+   "ru": "ка́шель / на́сморк",
+   "baca": "KA-shyl' / NAS-mark",
+   "id": "batuk / pilek"
+  },
+  {
+   "ru": "грипп / просту́да",
+   "baca": "grip / pras-TU-da",
+   "id": "flu / masuk angin"
+  },
+  {
+   "ru": "лека́рство",
+   "baca": "li-KAR-stva",
+   "id": "obat"
+  },
+  {
+   "ru": "табле́тка",
+   "baca": "tab-LYET-ka",
+   "id": "tablet"
+  },
+  {
+   "ru": "реце́пт",
+   "baca": "ri-TSEPT",
+   "id": "resep"
+  },
+  {
+   "ru": "апте́ка / полкли́ника",
+   "baca": "ap-TYE-ka / pa-li-KLI-ni-ka",
+   "id": "apotek / poliklinik"
+  },
+  {
+   "ru": "больни́ца",
+   "baca": "bal'-NI-tsa",
+   "id": "rumah sakit"
+  },
+  {
+   "ru": "ско́рая по́мощь",
+   "baca": "SKO-ra-ya PO-masch'",
+   "id": "ambulans"
+  },
+  {
+   "ru": "жа́ловаться",
+   "baca": "ZHA-la-va-tsa",
+   "id": "mengeluh"
+  },
+  {
+   "ru": "принима́ть / приня́ть",
+   "baca": "pri-ni-MAT' / pri-NYAT'",
+   "id": "meminum (obat), menerima"
+  },
+  {
+   "ru": "выпи́сывать / вы́писать",
+   "baca": "vy-PI-sy-vat' / VY-pi-sat'",
+   "id": "menuliskan (resep, surat)"
+  },
+  {
+   "ru": "отдыха́ть / отдохну́ть",
+   "baca": "ad-dy-KHAT' / ad-dakh-NUT'",
+   "id": "beristirahat"
+  },
+  {
+   "ru": "уста́лость",
+   "baca": "us-TA-last'",
+   "id": "kelelahan"
+  },
+  {
+   "ru": "еда́",
+   "baca": "yi-DA",
+   "id": "makanan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan болит atau болят.",
+   "items": [
+    "У меня́ ____ голова́.",
+    "У меня́ ____ глаза́.",
+    "У него́ ____ зуб.",
+    "У неё ____ но́ги.",
+    "У них ____ го́рло."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "У меня́ ____ три́дцать во́семь (demam).",
+    "Врач вы́писал мне ____ (resep).",
+    "Э́то лека́рство без ____ (resep, gen.).",
+    "Мне ну́жно ____ три дня (istirahat).",
+    "Я ____ себя́ ху́же (merasa)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "боли́т / меня́ / голова́ / у",
+    "жа́луетесь / что / на",
+    "день / три / в / ра́за",
+    "спра́вку / вы́пишите / пожа́луйста / мне",
+    "от / вы / посове́туете / ка́шля / что"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Kepala saya sakit.",
+    "Mata saya sakit.",
+    "Kemarin saya demam.",
+    "Obat ini diminum bagaimana?",
+    "Tiga kali sehari sesudah makan.",
+    "Tolong buatkan saya surat keterangan."
+   ]
+  }
+ ],
+ "answers": [
+  "боли́т — боля́т — боли́т — боля́т — боли́т",
+  "температу́ра — реце́пт — реце́пта — отдохну́ть — чу́вствую",
+  "У меня́ боли́т голова́. — На что жа́луетесь? — Три ра́за в день. — Вы́пишите мне спра́вку, пожа́луйста. — Что вы посове́туете от ка́шля?",
+  "У меня́ боли́т голова́. — У меня́ боля́т глаза́. — Вчера́ у меня́ была́ температу́ра. — Как принима́ть э́то лека́рство? — Три ра́за в день по́сле еды́. — Вы́пишите мне спра́вку, пожа́луйста."
+ ]
+}

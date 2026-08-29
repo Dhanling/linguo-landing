@@ -1,0 +1,545 @@
+{
+ "title": "Di mana, dan tentang apa",
+ "title_target": "Предложный падеж — pri-dLOZH-nyy pa-DYESH",
+ "goal": "Menyelesaikan kasus terakhir yang dipakai untuk tempat dan topik pembicaraan — kasus yang tak pernah berdiri tanpa kata depan.",
+ "bekal": [
+  "membentuk preposisional tunggal: -е, -и, -у",
+  "memilih в atau на untuk tempat, dan mengetahui daftar kata yang wajib на",
+  "memakai о / об / обо untuk topik pembicaraan",
+  "membedakan где (preposisional) dan куда (akusatif) tanpa berpikir",
+  "memakai bentuk -у khusus: в лесу, в саду, на полу, в году"
+ ],
+ "wave": "Ulangi **unit 7**: sebutkan lima hal yang harus kamu lakukan minggu ini dengan lantang, semuanya memakai надо atau нужно + datif.",
+ "dialogs": [
+  {
+   "title": "Диалог — Kamu di mana sekarang?",
+   "intro": "Percakapan telepon. Сергей mencari Ani lagi. Perhatikan bahwa tiap kali muncul tempat atau topik, ekornya berubah.",
+   "lines": [
+    {
+     "speaker": "Серге́й:",
+     "text": "[Алло|A-LO], [Ани|A-ni]? [Ты|Ty] [где|gdye]?",
+     "id": "Halo, Ani? Kamu di mana?",
+     "literal": "halo, Ani? kamu — di-mana?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|V] [библиотеке|bib-li-a-TYE-kye], [на|na] [втором|fta-ROM] [этаже|e-ta-ZHE]. [А|A] [ты|ty]?",
+     "id": "Di perpustakaan, lantai dua. Kamu?",
+     "literal": "di — perpustakaan(prep), di — kedua — lantai(prep). dan — kamu?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[На|Na] [кухне|KUKH-nye]. [Ищу|I-SCHU] [ложку|LOSH-ku] — [она|a-NA] [была|by-LA] [на|na] [столе|sta-LYE], [а|a] [теперь|ti-PYER'] [на|na] [полу|pa-LU].",
+     "id": "Di dapur. Cari sendok — tadi ada di meja, sekarang di lantai.",
+     "literal": "di — dapur(prep). mencari-saya — sendok — dia — ada(fem) — di — meja(prep), dan — sekarang — di — lantai(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Зачем|Za-CHEM] [ты|ty] [звонишь|zva-NISH] [мне|mnye] [о|a] [ложке|LOSH-kye]?",
+     "id": "Kenapa kamu telepon saya soal sendok?",
+     "literal": "untuk-apa — kamu — menelepon — kepada-saya — tentang — sendok(prep)?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Не|Nye] [о|a] [ложке|LOSH-kye]. [Я|Ya] [хотел|kha-TYEL] [поговорить|pa-ga-va-RIT'] [о|a] [завтрашней|ZAFT-rash-niy] [встрече|FSTRYE-chi].",
+     "id": "Bukan soal sendok. Saya mau bicara soal pertemuan besok.",
+     "literal": "tidak — tentang — sendok(prep). saya — ingin — berbicara(СВ) — tentang — besok-punya — pertemuan(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[О|A] [какой|ka-KOY] [встрече|FSTRYE-chi]?",
+     "id": "Pertemuan yang mana?",
+     "literal": "tentang — yang-mana — pertemuan(prep)?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[В|V] [университете|u-ni-vir-si-TYE-tye], [в|v] [комнате|KOM-na-tye] [тридцать|TRI-tsat'] [пять|pyat']. [Ты|Ty] [забыла|za-BY-la]?",
+     "id": "Di kampus, ruang tiga lima. Kamu lupa?",
+     "literal": "di — universitas(prep), di — ruang(prep) — tiga-puluh — lima. kamu — lupa(СВ, fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Совсем|Saf-SYEM] [забыла|za-BY-la]. [Я|Ya] [думала|DU-ma-la] [только|TOL'-ka] [об|ap] [экзамене|ek-ZA-mi-nye].",
+     "id": "Lupa total. Saya cuma mikirin ujian.",
+     "literal": "sama-sekali — lupa(СВ, fem). saya — berpikir(fem) — hanya — tentang — ujian(prep)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Кстати|KSTA-ti], [об|ap] [экзамене|ek-ZA-mi-nye]. [Он|On] [будет|BU-dit] [в|v] [мае|MA-ye] [или|I-li] [в|v] [июне|i-YU-nye]?",
+     "id": "Ngomong-ngomong soal ujian. Bulan Mei atau Juni?",
+     "literal": "omong-omong, tentang — ujian(prep). dia — akan — pada — Mei(prep) — atau — pada — Juni(prep)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[В|V] [мае|MA-ye]. [Точнее|Tach-NYE-ye], [в|v] [конце|kan-TSE] [мая|MA-ya].",
+     "id": "Mei. Lebih tepatnya, akhir Mei.",
+     "literal": "pada — Mei(prep). lebih-tepat, pada — akhir(prep) — Mei(gen)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Значит|ZNA-chit], [в|v] [апреле|ap-RYE-lye] [мы|my] [будем|BU-dim] [жить|zhyt'] [в|v] [библиотеке|bib-li-a-TYE-kye].",
+     "id": "Berarti April nanti kita bakal tinggal di perpustakaan.",
+     "literal": "berarti, pada — April(prep) — kami — akan — tinggal — di — perpustakaan(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ты|Ty] [будешь|BU-dish] [жить|zhyt'] [на|na] [диване|di-VA-nye] [и|i] [мечтать|mich-TAT'] [о|a] [каникулах|ka-NI-ku-lakh].",
+     "id": "Kamu bakal tinggal di sofa dan mimpiin liburan.",
+     "literal": "kamu — akan — tinggal — di — sofa(prep) — dan — bermimpi — tentang — liburan(prep)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Неправда|Nip-RAV-da]. [Я|Ya] [буду|BU-du] [мечтать|mich-TAT'] [о|a] [работе|ra-BO-tye], [о|a] [деньгах|DYEN'-gakh] [и|i] [о|a] [сне|snye].",
+     "id": "Tidak benar. Saya bakal mimpiin kerjaan, uang, dan tidur.",
+     "literal": "tidak-benar. saya — akan — bermimpi — tentang — kerja(prep), tentang — uang(prep) — dan — tentang — tidur(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ладно|LAD-na], [встретимся|FSTRYE-tim-sya] [завтра|ZAF-tra] [в|v] [десять|DYE-sit']. [Не|Nye] [опоздай|a-paz-DAY].",
+     "id": "Oke, ketemu besok jam sepuluh. Jangan sampai telat.",
+     "literal": "baiklah, bertemu-kita(СВ) — besok — pada — sepuluh. tidak — terlambat(СВ)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Я|Ya] [никогда|ni-kag-DA] [не|nye] [опаздываю|a-PAZ-dy-va-yu]. [Я|Ya] [просто|PROS-ta] [прихожу|pri-kha-ZHU] [позже|POZ-zhy].",
+     "id": "Saya tidak pernah telat. Saya cuma datang belakangan.",
+     "literal": "saya — tidak-pernah — tidak — terlambat(НСВ). saya — hanya — datang — lebih-lambat."
+    }
+   ],
+   "notes": [
+    "**Preposisional adalah satu-satunya kasus yang tak pernah berdiri sendiri** — ia selalu dipakai bersama kata depan, dan hanya empat: **в**, **на**, **о**, dan **при**. Karena itu namanya *предло́жный* — \"kasus berkata depan\".",
+    "**Ekornya paling sederhana dari semua kasus: hampir semuanya -е.** *стол → на столе́, кни́га → в кни́ге, окно́ → в окне́, Москва́ → в Москве́*. ⚠️ Pengecualiannya kecil: kata berakhir *-ия, -ие, -ий*, dan feminin *-ь* memakai **-и**: *Росси́я → в Росси́и*, *зда́ние → в зда́нии*, *дверь → в две́ри*.",
+    "**Pekerjaan pertama: tempat, dengan в atau на.** Aturan kasarnya: *в* untuk ruang tertutup, *на* untuk permukaan dan acara. ⚠️ Tapi ada daftar kata yang wajib *на* meski maknanya seperti \"di dalam\", dan daftar itu harus dihafal — ada di halaman berikutnya.",
+    "**Pekerjaan kedua: topik pembicaraan atau pikiran, dengan о.** *Я ду́маю **о рабо́те*** — saya memikirkan pekerjaan. *Мы говори́ли **о фи́льме***. ⚠️ *о* berubah jadi **об** di depan vokal (*об экза́мене*, *об Ани*) dan jadi **обо** di depan *мне* dan *всём* (*обо мне*, *обо всём*).",
+    "**Pasangan где / куда́ menentukan kasus, dan ini sudah muncul sejak A1.** *Я в библиоте́ке* (di, preposisional) tapi *Я иду́ в библиоте́ку* (ke, akusatif). ⚠️ Kalau ragu, tanyakan pada dirimu sendiri: apakah ada perpindahan? Ada → akusatif. Tidak ada → preposisional.",
+    "**Sekelompok kecil kata maskulin memakai -у́ bertekanan setelah в dan на, bukan -е:** *в лесу́* (di hutan), *в саду́* (di kebun), *на полу́* (di lantai), *в углу́* (di sudut), *в году́* (pada tahun), *на берегу́* (di tepi), *в шкафу́* (di lemari), *в аэропорту́* (di bandara). ⚠️ Bentuk ini hanya muncul dengan *в* dan *на*; dengan *о* mereka kembali normal: *о ле́се*.",
+    "**Bulan selalu preposisional dengan в:** *в январе́, в феврале́, в ма́рте, в апре́ле, в ма́е, в ию́не, в ию́ле, в а́вгусте, в сентябре́, в октябре́, в ноябре́, в декабре́*. Perhatikan bahwa tekanannya sering berpindah ke ekor.",
+    "**При menandai kehadiran atau masa:** *при мне* (di depan saya), *при Пу́шкине* (pada zaman Pushkin), *при университе́те* (yang bernaung di bawah universitas). Jarang di percakapan sehari-hari, tapi sering di teks tertulis."
+   ],
+   "grammars": [
+    {
+     "title": "Ekor preposisional tunggal",
+     "body": [
+      "Kasus termudah untuk dibentuk, dan salah satu yang paling sering dipakai. Kalau kamu ragu, **-е** adalah tebakan yang benar sekitar delapan dari sepuluh kali."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Nominatif",
+       "Ekor",
+       "Preposisional"
+      ],
+      "rows": [
+       [
+        "maskulin",
+        "стол, музе́й",
+        "**-е**",
+        "на столе́, в музе́е"
+       ],
+       [
+        "netral",
+        "окно́, мо́ре",
+        "**-е**",
+        "в окне́, в мо́ре"
+       ],
+       [
+        "feminin, -а / -я",
+        "Москва́, неде́ля",
+        "**-е**",
+        "в Москве́, на неде́ле"
+       ],
+       [
+        "berakhir -ия / -ие / -ий",
+        "Росси́я, зда́ние",
+        "**-и**",
+        "в Росси́и, в зда́нии"
+       ],
+       [
+        "feminin -ь",
+        "дверь, ночь",
+        "**-и**",
+        "в две́ри, но́чью"
+       ],
+       [
+        "kelompok -у́",
+        "лес, пол, сад, год",
+        "**-у́**",
+        "в лесу́, на полу́, в саду́, в году́"
+       ],
+       [
+        "kata ganti",
+        "я, ты, он, она́, мы, вы, они́",
+        "",
+        "обо мне, о тебе́, о нём, о ней, о нас, о вас, о них"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "В atau на — daftar yang harus dihafal",
+     "body": [
+      "Aturan \"tertutup versus permukaan\" gagal untuk sekelompok kata. Kata-kata berikut **selalu** memakai *на*, dan tidak ada logikanya — hafalkan sebagai daftar."
+     ],
+     "table": {
+      "head": [
+       "Selalu на",
+       "Artinya",
+       "Selalu в",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "на рабо́те",
+        "di tempat kerja",
+        "в о́фисе",
+        "di kantor"
+       ],
+       [
+        "на уро́ке",
+        "di pelajaran",
+        "в кла́ссе",
+        "di kelas"
+       ],
+       [
+        "на ле́кции",
+        "di kuliah",
+        "в университе́те",
+        "di universitas"
+       ],
+       [
+        "на по́чте",
+        "di kantor pos",
+        "в ба́нке",
+        "di bank"
+       ],
+       [
+        "на вокза́ле",
+        "di stasiun",
+        "в аэропорту́",
+        "di bandara"
+       ],
+       [
+        "на у́лице",
+        "di jalan / di luar",
+        "в до́ме",
+        "di rumah"
+       ],
+       [
+        "на заво́де",
+        "di pabrik",
+        "в магази́не",
+        "di toko"
+       ],
+       [
+        "на ю́ге / на се́вере",
+        "di selatan / utara",
+        "в го́роде",
+        "di kota"
+       ],
+       [
+        "на конце́рте",
+        "di konser",
+        "в теа́тре",
+        "di teater"
+       ],
+       [
+        "на ку́хне",
+        "di dapur",
+        "в ко́мнате",
+        "di kamar"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Sudah lama tidak bertemu",
+   "intro": "Dua tetangga bertemu di lift. Hampir tiap kalimat menyebut tempat atau topik — dua pekerjaan preposisional.",
+   "lines": [
+    {
+     "speaker": "Сосе́д:",
+     "text": "[Добрый|DOB-ryy] [вечер|VYE-chir]! [Давно|Dav-NO] [вас|vas] [не|nye] [видел|VI-dil].",
+     "id": "Selamat malam! Sudah lama tidak lihat Anda.",
+     "literal": "baik — malam! lama — Anda — tidak — melihat."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Я|Ya] [была|by-LA] [в|v] [Казани|Ka-ZA-ni], [на|na] [конференции|kan-fi-RYEN-tsy-i].",
+     "id": "Saya di Kazan, ikut konferensi.",
+     "literal": "saya — ada(fem) — di — Kazan(prep), pada — konferensi(prep)."
+    },
+    {
+     "speaker": "Сосе́д:",
+     "text": "[О|A] [чём|chom] [была|by-LA] [конференция|kan-fi-RYEN-tsy-ya]?",
+     "id": "Konferensi tentang apa?",
+     "literal": "tentang — apa(prep) — ada(fem) — konferensi?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[О|A] [переводе|pi-ri-VO-dye] [и|i] [об|ap] [искусственном|is-KUST-vi-nam] [интеллекте|in-ti-LYEK-tye].",
+     "id": "Tentang penerjemahan dan tentang kecerdasan buatan.",
+     "literal": "tentang — terjemahan(prep) — dan — tentang — buatan(prep) — kecerdasan(prep)."
+    },
+    {
+     "speaker": "Сосе́д:",
+     "text": "[Интересно|In-ti-RYES-na]. [И|I] [что|shto] [вы|vy] [думаете|DU-ma-yi-tye] [об|ap] [этом|E-tam]?",
+     "id": "Menarik. Dan Anda berpendapat apa soal itu?",
+     "literal": "menarik. dan — apa — Anda — berpikir — tentang — ini(prep)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Что|Shto] [в|v] [будущем|BU-du-schim] [надо|NA-da] [будет|BU-dit] [думать|DU-mat'] [больше|BOL'-shy], [а|a] [не|nye] [меньше|MYEN'-shy].",
+     "id": "Bahwa di masa depan kita harus lebih banyak berpikir, bukan lebih sedikit.",
+     "literal": "bahwa — pada — masa-depan(prep) — perlu — akan — berpikir — lebih-banyak, dan — bukan — lebih-sedikit."
+    },
+    {
+     "speaker": "Сосе́д:",
+     "text": "[Хороший|Kha-RO-shyy] [ответ|at-VYET]. [Расскажите|Ras-ka-ZHY-tye] [об|ap] [этом|E-tam] [на|na] [кухне|KUKH-nye] [за|za] [чаем|CHA-yim].",
+     "id": "Jawaban bagus. Ceritakan itu di dapur sambil minum teh.",
+     "literal": "bagus — jawaban. ceritakanlah(СВ) — tentang — ini — di — dapur(prep) — sambil — teh(instr)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[С|S] [удовольствием|u-da-VOL'ST-vi-yim]. [Только|TOL'-ka] [не|nye] [сегодня|si-VOD-nya] — [я|ya] [ещё|yi-SCHO] [в|v] [дороге|da-RO-gye].",
+     "id": "Dengan senang hati. Tapi jangan hari ini — saya masih dalam perjalanan.",
+     "literal": "dengan — kesenangan(instr). hanya — tidak — hari-ini — saya — masih — di — jalan(prep)."
+    }
+   ],
+   "notes": [
+    "**Perhatikan bahwa *о* berubah tiga kali:** *о чём*, *о перево́де*, tapi *об иску́сственном* dan *об э́том* — karena kata berikutnya dimulai vokal.",
+    "**За ча́ем (instrumental) berarti \"sambil minum teh\".** Pola *за* + instrumental untuk kegiatan yang menemani sangat sering: *за обе́дом*, *за рабо́той*, *за руле́м* (di balik kemudi).",
+    "**В доро́ге adalah ungkapan beku** yang berarti \"sedang dalam perjalanan\", dan dipakai juga untuk keadaan lelah sesudah perjalanan panjang."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Где atau куда — satu tabel untuk selamanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tabel ini menutup pasangan yang paling sering keliru dalam seluruh bahasa Rusia. Salin ke kertas dan tempel di dinding."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Где? (diam)",
+      "Kasus",
+      "Куда? (menuju)",
+      "Kasus"
+     ],
+     "rows": [
+      [
+       "в университе́те",
+       "preposisional",
+       "в университе́т",
+       "akusatif"
+      ],
+      [
+       "на рабо́те",
+       "preposisional",
+       "на рабо́ту",
+       "akusatif"
+      ],
+      [
+       "до́ма",
+       "bentuk khusus",
+       "домо́й",
+       "bentuk khusus"
+      ],
+      [
+       "здесь / там",
+       "bentuk khusus",
+       "сюда́ / туда́",
+       "bentuk khusus"
+      ],
+      [
+       "под столо́м",
+       "instrumental",
+       "под стол",
+       "akusatif"
+      ],
+      [
+       "за до́мом",
+       "instrumental",
+       "за дом",
+       "akusatif"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang menutup kebocoran",
+     "items": [
+      "⚠️ **До́ма bukan preposisional, dan домо́й bukan akusatif.** Keduanya sisa bentuk kuno yang bertahan. *Я до́ма* (saya di rumah), *Я иду́ домо́й* (saya pulang). Jangan pernah menulis *в дом* untuk \"pulang\".",
+      "**Kata depan о sering hilang dalam terjemahan Indonesia, dan itu jebakan.** \"Saya memikirkan pekerjaan\" tampak tanpa kata depan, tapi bahasa Rusia mengharuskan *ду́мать **о** рабо́те*. Sama dengan *говори́ть **о***, *мечта́ть **о***, *расска́зывать **о***.",
+      "**Kalau ada kata sifat, ia ikut berekor preposisional -ом / -ей:** *в но́вом до́ме*, *на большо́й у́лице*. Kata sifat dituntaskan di unit 12; untuk sekarang cukup mengenalinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "эта́ж",
+   "baca": "e-TASH",
+   "id": "lantai (tingkat)"
+  },
+  {
+   "ru": "пол",
+   "baca": "pol",
+   "id": "lantai (permukaan)"
+  },
+  {
+   "ru": "ку́хня",
+   "baca": "KUKH-nya",
+   "id": "dapur"
+  },
+  {
+   "ru": "ло́жка",
+   "baca": "LOSH-ka",
+   "id": "sendok"
+  },
+  {
+   "ru": "встре́ча",
+   "baca": "FSTRYE-cha",
+   "id": "pertemuan"
+  },
+  {
+   "ru": "ко́мната",
+   "baca": "KOM-na-ta",
+   "id": "kamar, ruang"
+  },
+  {
+   "ru": "экза́мен",
+   "baca": "ek-ZA-min",
+   "id": "ujian"
+  },
+  {
+   "ru": "кани́кулы",
+   "baca": "ka-NI-ku-ly",
+   "id": "liburan (sekolah)"
+  },
+  {
+   "ru": "дива́н",
+   "baca": "di-VAN",
+   "id": "sofa"
+  },
+  {
+   "ru": "лес / сад",
+   "baca": "lyes / sat",
+   "id": "hutan / kebun"
+  },
+  {
+   "ru": "у́гол",
+   "baca": "U-gal",
+   "id": "sudut, pojok"
+  },
+  {
+   "ru": "шкаф",
+   "baca": "shkaf",
+   "id": "lemari"
+  },
+  {
+   "ru": "аэропо́рт",
+   "baca": "a-e-ra-PORT",
+   "id": "bandara"
+  },
+  {
+   "ru": "вокза́л",
+   "baca": "vag-ZAL",
+   "id": "stasiun kereta"
+  },
+  {
+   "ru": "мечта́ть",
+   "baca": "mich-TAT'",
+   "id": "bermimpi, mendambakan"
+  },
+  {
+   "ru": "расска́зывать / рассказа́ть",
+   "baca": "ras-KA-zy-vat' / ras-ka-ZAT'",
+   "id": "menceritakan"
+  },
+  {
+   "ru": "иска́ть / найти́",
+   "baca": "is-KAT' / nay-TI",
+   "id": "mencari / menemukan"
+  },
+  {
+   "ru": "заче́м",
+   "baca": "za-CHEM",
+   "id": "untuk apa"
+  },
+  {
+   "ru": "кста́ти",
+   "baca": "KSTA-ti",
+   "id": "omong-omong"
+  },
+  {
+   "ru": "совсе́м",
+   "baca": "saf-SYEM",
+   "id": "sama sekali"
+  },
+  {
+   "ru": "точне́е",
+   "baca": "tach-NYE-ye",
+   "id": "lebih tepatnya"
+  },
+  {
+   "ru": "в конце́ / в нача́ле",
+   "baca": "f kan-TSE / v na-CHA-lye",
+   "id": "di akhir / di awal"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata dalam kurung jadi preposisional.",
+   "items": [
+    "Я живу́ в ____ (Москва́).",
+    "Кни́га на ____ (стол).",
+    "Мы говори́ли о ____ (фильм).",
+    "Она́ у́чится в ____ (университе́т).",
+    "Я ду́маю об ____ (экза́мен).",
+    "Они́ живу́т в ____ (Росси́я)."
+   ]
+  },
+  {
+   "prompt": "Isi dengan в atau на.",
+   "items": [
+    "Он ____ рабо́те.",
+    "Мы ____ ба́нке.",
+    "Она́ ____ уро́ке.",
+    "Я ____ аэропорту́.",
+    "Они́ ____ по́чте."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "живу́ / Москве́ / в / я",
+    "столе́ / кни́га / на",
+    "фи́льме / мы / о / говори́ли",
+    "университе́т / иду́ / я / в",
+    "мне / он / обо / ду́мает"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Saya di perpustakaan.",
+    "Saya sedang menuju perpustakaan.",
+    "Kami membicarakan film itu.",
+    "Dia (perempuan) bekerja di kantor pos.",
+    "Ujiannya bulan Mei.",
+    "Saya memikirkan pekerjaan."
+   ]
+  }
+ ],
+ "answers": [
+  "Москве́ — столе́ — фи́льме — университе́те — экза́мене — Росси́и",
+  "на — в — на — в — на",
+  "Я живу́ в Москве́. — Кни́га на столе́. — Мы говори́ли о фи́льме. — Я иду́ в университе́т. — Он ду́мает обо мне.",
+  "Я в библиоте́ке. — Я иду́ в библиоте́ку. — Мы говори́ли об э́том фи́льме. — Она́ рабо́тает на по́чте. — Экза́мен бу́дет в ма́е. — Я ду́маю о рабо́те."
+ ]
+}

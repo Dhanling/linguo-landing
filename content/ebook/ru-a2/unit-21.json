@@ -1,0 +1,563 @@
+{
+ "title": "Menyewa apartemen dan mengurus dokumen",
+ "title_target": "Квартира и документы — kvar-TI-ra i da-ku-MYEN-ty",
+ "goal": "Mengurus dua hal yang paling menentukan hidup sehari-hari di Rusia: tempat tinggal dan surat-surat — dengan bahasa yang tepat untuk keduanya.",
+ "bekal": [
+  "menanyakan dan menjelaskan syarat sewa apartemen",
+  "memakai kosakata perumahan: комната, кухня, залог, коммуналка",
+  "menjelaskan keperluanmu di kantor imigrasi dan bank",
+  "memakai kalimat tanpa pelaku untuk aturan: нужно, требуется, необходимо",
+  "menanyakan tenggat waktu dan biaya dengan tepat"
+ ],
+ "wave": "Ulangi **unit 19**: perankan satu panggilan telepon resmi dengan lantang, dari salam sampai penutup.",
+ "dialogs": [
+  {
+   "title": "Диалог — Melihat apartemen",
+   "intro": "Ани dan pemilik apartemen. Perhatikan bahwa aturan dan syarat hampir selalu diucapkan dalam kalimat tanpa pelaku.",
+   "lines": [
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Проходите|Pra-kha-DI-tye]. [Это|E-ta] [комната|KOM-na-ta], [там|tam] [кухня|KUKH-nya] [и|i] [ванная|VA-na-ya].",
+     "id": "Silakan masuk. Ini kamarnya, di sana dapur dan kamar mandi.",
+     "literal": "masuklah. ini — kamar, di-sana — dapur — dan — kamar-mandi."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Сколько|SKOL'-ka] [стоит|STO-it] [в|v] [месяц|MYE-sits]?",
+     "id": "Sebulan berapa?",
+     "literal": "berapa — berharga — dalam — bulan?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Тридцать|TRI-tsat'] [пять|pyat'] [тысяч|TY-sich] [плюс|plyus] [коммуналка|ka-mu-NAL-ka], [около|O-ka-la] [четырёх|chi-ty-RYOKH].",
+     "id": "Tiga puluh lima ribu plus iuran utilitas, sekitar empat ribu.",
+     "literal": "tiga-puluh — lima — ribu — plus — utilitas, sekitar — empat(gen)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [залог|za-LOK] [нужен|NU-zhyn]?",
+     "id": "Perlu deposit?",
+     "literal": "dan — deposit — diperlukan(mask)?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Да|Da], [один|a-DIN] [месяц|MYE-sits]. [Возвращается|Vazv-ra-SCHA-yi-tsa] [при|pri] [выезде|VY-yiz-dye].",
+     "id": "Ya, satu bulan. Dikembalikan waktu pindah keluar.",
+     "literal": "ya, satu — bulan. dikembalikan — pada — kepindahan(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Договор|Da-ga-VOR] [будет|BU-dit]?",
+     "id": "Ada kontraknya?",
+     "literal": "kontrak — akan?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Обязательно|A-bi-ZA-til'-na]. [Без|Byes] [договора|da-ga-VO-ra] [вас|vas] [не|nye] [зарегистрируют|za-ri-gist-RI-ru-yut].",
+     "id": "Pasti. Tanpa kontrak Anda tidak akan didaftarkan.",
+     "literal": "pasti. tanpa — kontrak(gen) — Anda — tidak — mendaftarkan(jmk)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Мне|Mnye] [как|kak] [раз|ras] [нужна|nuzh-NA] [регистрация|ri-gist-RA-tsy-ya]. [Я|Ya] [студентка|stu-DYENT-ka] [из|is] [Индонезии|In-da-NYE-zi-i].",
+     "id": "Saya justru butuh registrasi. Saya mahasiswi dari Indonesia.",
+     "literal": "kepada-saya — kebetulan — diperlukan(fem) — registrasi. saya — mahasiswi — dari — Indonesia(gen)."
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Тогда|Tag-DA] [нужен|NU-zhyn] [ваш|vash] [паспорт|PAS-part] [и|i] [миграционная|MIG-ra-tsy-a-na-ya] [карта|KAR-ta].",
+     "id": "Kalau begitu perlu paspor Anda dan kartu migrasi.",
+     "literal": "kalau-begitu — diperlukan(mask) — Anda-punya — paspor — dan — migrasi — kartu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[У|U] [меня|mi-NYA] [всё|fsyo] [есть|yest']. [Сколько|SKOL'-ka] [времени|VRYE-mi-ni] [это|E-ta] [занимает|za-ni-MA-yit]?",
+     "id": "Semuanya ada. Berapa lama prosesnya?",
+     "literal": "pada — saya — semua — ada. berapa — waktu(gen) — ini — memakan?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Обычно|A-BYCH-na] [неделю|ni-DYE-lyu]. [Заявление|Za-yiv-LYE-ni-ye] [подаётся|pa-da-YO-tsa] [в|v] [МФЦ|Mfts].",
+     "id": "Biasanya seminggu. Permohonannya diajukan di MFC.",
+     "literal": "biasanya — minggu(akus). permohonan — diajukan — ke — MFC."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [если|YES-li] [я|ya] [перееду|pi-ri-YE-du] [через|CHE-ris] [полгода|pal-GO-da]?",
+     "id": "Kalau saya pindah setengah tahun lagi bagaimana?",
+     "literal": "dan — jika — saya — pindah(СВ) — lewat — setengah-tahun?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Требуется|TRYE-bu-yi-tsa] [предупредить|pri-dup-ri-DIT'] [за|za] [месяц|MYE-sits]. [Так|Tak] [написано|na-PI-sa-na] [в|v] [договоре|da-ga-VO-rye].",
+     "id": "Harus memberi tahu sebulan sebelumnya. Begitu tertulis di kontrak.",
+     "literal": "diperlukan — memperingatkan(СВ) — sebanyak — bulan. begitu — tertulis — di — kontrak(prep)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Понятно|Pa-NYAT-na]. [Можно|MOZH-na] [посмотреть|pas-mat-RYET'] [договор|da-ga-VOR] [заранее|za-RA-ni-ye]?",
+     "id": "Jelas. Boleh saya lihat kontraknya dulu?",
+     "literal": "jelas. boleh — melihat(СВ) — kontrak — sebelumnya?"
+    },
+    {
+     "speaker": "Хозя́йка:",
+     "text": "[Конечно|Ka-NYESH-na]. [Прочитайте|Pra-chi-TAY-tye] [дома|DO-ma] [и|i] [позвоните|paz-va-NI-tye] [завтра|ZAF-tra].",
+     "id": "Tentu. Baca di rumah dan telepon besok.",
+     "literal": "tentu. bacalah(СВ) — di-rumah — dan — teleponlah(СВ) — besok."
+    }
+   ],
+   "notes": [
+    "**Aturan, syarat, dan prosedur hampir selalu diucapkan tanpa pelaku.** *Тре́буется предупреди́ть* (harus memberi tahu), *Заявле́ние подаётся* (permohonan diajukan), *Так напи́сано* (begitu tertulis). ⚠️ Tidak disebutkan siapa yang menuntut atau menulis — dan itu memang maksudnya.",
+    "**Bentuk -ся yang kamu pelajari di unit 13 di sinilah pekerjaan terbesarnya.** *Догово́р подпи́сывается* (kontrak ditandatangani), *Зало́г возвраща́ется* (deposit dikembalikan), *Докуме́нты принима́ются до пяти́* (dokumen diterima sampai jam lima). Inilah cara Rusia menyusun kalimat pasif sehari-hari.",
+    "**Ну́жен / нужна́ / ну́жно / нужны́ ikut benda yang dibutuhkan, bukan orangnya.** *Мне ну́жен па́спорт* (maskulin), *Мне нужна́ спра́вка* (feminin), *Мне ну́жно вре́мя* (netral), *Мне нужны́ докуме́нты* (jamak). ⚠️ Kesalahan di sini sangat mencolok karena ungkapannya dipakai berkali-kali sehari.",
+    "**Коммуна́лка (коммуна́льные услу́ги) adalah iuran air, pemanas, listrik, dan sampah**, dibayar terpisah dari sewa dan besarnya berubah tiap bulan — terutama di musim dingin. ⚠️ Selalu tanyakan: *Коммуна́лка вхо́дит в це́ну?* (utilitas termasuk harga?).",
+    "**Регистра́ция (dulu «прописка») adalah pendaftaran alamat, dan wajib bagi orang asing.** Tanpa itu, izin tinggalmu bermasalah. Yang mendaftarkan adalah pemilik apartemen atau kampus — karena itu kontrak sewa bukan formalitas.",
+    "**МФЦ (многофункциона́льный центр) adalah kantor pelayanan terpadu.** Hampir semua urusan surat-menyurat sipil dilakukan di sana. Kalimat yang perlu kamu bisa: *Мне ну́жно пода́ть заявле́ние* (saya perlu mengajukan permohonan).",
+    "**Kata kerja mengurus dokumen yang paling sering:** *подава́ть / пода́ть заявле́ние* (mengajukan permohonan), *заполня́ть / запо́лнить анке́ту* (mengisi formulir), *подпи́сывать / подписа́ть* (menandatangani), *продлева́ть / продли́ть* (memperpanjang), *получа́ть / получи́ть* (menerima).",
+    "**За + akusatif menyatakan tenggat \"sebelum\":** *предупреди́ть **за** ме́сяц* (memberi tahu sebulan sebelumnya), *позвони́ть **за** день* (menelepon sehari sebelumnya). ⚠️ Jangan dikacaukan dengan *че́рез ме́сяц* (sebulan lagi) — dua-duanya tentang waktu ke depan tapi maksudnya berbeda."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat aturan tanpa pelaku",
+     "body": [
+      "Empat pola ini muncul di setiap kontrak, pengumuman, dan penjelasan pegawai. Kenali dulu, pakai belakangan."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ну́жно / необходи́мо + kamus",
+        "Ну́жно запо́лнить анке́ту.",
+        "Perlu mengisi formulir."
+       ],
+       [
+        "тре́буется + kamus",
+        "Тре́буется предупреди́ть за ме́сяц.",
+        "Harus memberi tahu sebulan sebelumnya."
+       ],
+       [
+        "kata kerja -ся",
+        "Заявле́ния принима́ются до пяти́.",
+        "Permohonan diterima sampai jam lima."
+       ],
+       [
+        "напи́сано / разрешено́ / запрещено́",
+        "Здесь кури́ть запрещено́.",
+        "Merokok di sini dilarang."
+       ],
+       [
+        "мо́жно / нельзя́",
+        "Здесь нельзя́ пить.",
+        "Di sini tidak boleh minum."
+       ],
+       [
+        "они́ tanpa pelaku jelas",
+        "Вас зарегистри́руют за неде́лю.",
+        "Anda akan didaftarkan dalam seminggu."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Ну́жен, нужна́, ну́жно, нужны́",
+     "body": [
+      "Yang menentukan bentuknya adalah **benda yang dibutuhkan**. Orangnya selalu datif dan tidak memengaruhi apa pun."
+     ],
+     "table": {
+      "head": [
+       "Yang dibutuhkan",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "maskulin",
+        "ну́жен",
+        "Мне ну́жен па́спорт."
+       ],
+       [
+        "feminin",
+        "нужна́",
+        "Мне нужна́ спра́вка."
+       ],
+       [
+        "netral",
+        "ну́жно",
+        "Мне ну́жно вре́мя."
+       ],
+       [
+        "jamak",
+        "нужны́",
+        "Мне нужны́ докуме́нты."
+       ],
+       [
+        "kata kerja",
+        "ну́жно",
+        "Мне ну́жно идти́."
+       ],
+       [
+        "lampau",
+        "был / была́ / бы́ло / бы́ли",
+        "Мне была́ нужна́ спра́вка."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Di MFC",
+   "intro": "Mengurus perpanjangan dokumen. Perhatikan bahwa hampir semua kalimat pegawainya tanpa pelaku.",
+   "lines": [
+    {
+     "speaker": "Ани:",
+     "text": "[Здравствуйте|ZDRAST-vuy-tye]. [Мне|Mnye] [нужно|NUZH-na] [продлить|prad-LIT'] [регистрацию|ri-gist-RA-tsy-yu].",
+     "id": "Selamat siang. Saya perlu memperpanjang registrasi.",
+     "literal": "selamat. kepada-saya — perlu — memperpanjang(СВ) — registrasi."
+    },
+    {
+     "speaker": "Сотру́дник:",
+     "text": "[Паспорт|PAS-part], [миграционная|MIG-ra-tsy-a-na-ya] [карта|KAR-ta] [и|i] [договор|da-ga-VOR] [аренды|a-RYEN-dy].",
+     "id": "Paspor, kartu migrasi, dan kontrak sewa.",
+     "literal": "paspor, migrasi — kartu — dan — kontrak — sewa(gen)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Всё|Fsyo] [здесь|zdyes']. [Копии|KO-pi-i] [тоже|TO-zhy] [нужны|NUZH-ny]?",
+     "id": "Semuanya ada. Salinannya perlu juga?",
+     "literal": "semua — di-sini. salinan-salinan — juga — diperlukan(jmk)?"
+    },
+    {
+     "speaker": "Сотру́дник:",
+     "text": "[Копии|KO-pi-i] [делаются|DYE-la-yu-tsa] [у|u] [нас|nas]. [Заполните|Za-POL-ni-tye] [вот|vot] [эту|E-tu] [анкету|an-KYE-tu].",
+     "id": "Salinannya dibuat di sini. Isi formulir ini.",
+     "literal": "salinan-salinan — dibuat — pada — kami. isilah(СВ) — ini — ini(akus) — formulir."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Здесь|Zdyes'] [надо|NA-da] [писать|pi-SAT'] [адрес|AD-ris] [по-русски|pa-RUS-ki]?",
+     "id": "Di sini alamatnya harus ditulis dalam bahasa Rusia?",
+     "literal": "di-sini — perlu — menulis — alamat — dengan-cara-Rusia?"
+    },
+    {
+     "speaker": "Сотру́дник:",
+     "text": "[Да|Da], [печатными|pi-CHAT-ny-mi] [буквами|BUK-va-mi]. [И|I] [подпишите|pat-pi-SHY-tye] [внизу|vni-ZU].",
+     "id": "Ya, huruf cetak. Dan tanda tangan di bawah.",
+     "literal": "ya, cetak(instr) — huruf(instr, jmk). dan — tandatangani(СВ) — di-bawah."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Сколько|SKOL'-ka] [это|E-ta] [займёт|zay-MYOT]?",
+     "id": "Berapa lama prosesnya?",
+     "literal": "berapa — ini — memakan(СВ)?"
+    },
+    {
+     "speaker": "Сотру́дник:",
+     "text": "[Три|Tri] [рабочих|ra-BO-chikh] [дня|dnya]. [Вам|Vam] [придут|pri-DUT] [сообщение|sa-ap-SCHE-ni-ye].",
+     "id": "Tiga hari kerja. Anda akan dapat pesan.",
+     "literal": "tiga — kerja(gen, jmk) — hari(gen). kepada-Anda — datang(jmk, СВ) — pesan."
+    }
+   ],
+   "notes": [
+    "**Ко́пии де́лаются у нас** adalah kalimat pasif -ся yang khas kantor: yang membuat tidak disebutkan sama sekali. Bandingkan dengan *Мы де́лаем ко́пии* yang terdengar seperti janji pribadi.",
+    "**Печа́тными бу́квами (instrumental) berarti \"dengan huruf cetak\"** — instrumental sebagai alat, persis seperti *ру́чкой* di unit 8.",
+    "**Рабо́чий день berarti hari kerja**, dan *три рабо́чих дня* memakai genitif tunggal (aturan 2-4) dengan kata sifat genitif jamak — susunan yang sudah kamu lihat di unit 18."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Apartemen dan surat-surat: kosakata yang menentukan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua daftar berikut adalah kosakata yang paling sering kamu butuhkan di bulan-bulan pertama tinggal di Rusia — dan yang paling mahal kalau salah dimengerti."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Русский",
+      "Artinya",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "кварти́ра",
+       "apartemen",
+       "satuan tempat tinggal biasa"
+      ],
+      [
+       "ко́мната",
+       "kamar",
+       "*однокомнатная* = studio + dapur"
+      ],
+      [
+       "ку́хня / ва́нная",
+       "dapur / kamar mandi",
+       ""
+      ],
+      [
+       "зало́г",
+       "deposit",
+       "biasanya satu bulan sewa"
+      ],
+      [
+       "коммуна́лка",
+       "iuran utilitas",
+       "berubah tiap bulan"
+      ],
+      [
+       "аре́нда / снима́ть",
+       "sewa / menyewa",
+       "*снима́ю кварти́ру*"
+      ],
+      [
+       "хозя́ин / хозя́йка",
+       "pemilik",
+       "yang mendaftarkan alamatmu"
+      ],
+      [
+       "догово́р",
+       "kontrak",
+       "wajib untuk registrasi"
+      ],
+      [
+       "ме́бель",
+       "perabot",
+       "*с ме́белью* = berperabot"
+      ],
+      [
+       "перее́хать",
+       "pindah rumah",
+       ""
+      ],
+      [
+       "регистра́ция",
+       "pendaftaran alamat",
+       "wajib bagi orang asing"
+      ],
+      [
+       "ви́за / приглаше́ние",
+       "visa / undangan",
+       ""
+      ],
+      [
+       "ми́грационная ка́рта",
+       "kartu migrasi",
+       "jangan sampai hilang"
+      ],
+      [
+       "полис ДМС",
+       "asuransi kesehatan",
+       "dibawa bersama paspor"
+      ],
+      [
+       "заявле́ние",
+       "permohonan tertulis",
+       ""
+      ],
+      [
+       "анке́та",
+       "formulir isian",
+       ""
+      ],
+      [
+       "по́шлина",
+       "biaya administrasi",
+       ""
+      ],
+      [
+       "срок",
+       "tenggat, masa berlaku",
+       ""
+      ],
+      [
+       "продли́ть",
+       "memperpanjang",
+       "*продли́ть ви́зу*"
+      ],
+      [
+       "МФЦ",
+       "kantor pelayanan terpadu",
+       "urusan sipil sehari-hari"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga pertanyaan yang harus kamu tanyakan",
+     "items": [
+      "**Коммуна́лка вхо́дит в це́ну?** — Utilitas termasuk harga? Selisihnya bisa sepuluh persen dari sewa, dan di musim dingin lebih.",
+      "**Вы меня́ зарегистри́руете?** — Anda akan mendaftarkan alamat saya? Kalau jawabannya ragu-ragu, apartemen itu bukan pilihan, betapapun murahnya.",
+      "**Како́й срок догово́ра и как его́ продли́ть?** — Berapa lama kontraknya dan bagaimana memperpanjangnya? Tanyakan sebelum menandatangani, bukan sebulan sebelum habis."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "кварти́ра",
+   "baca": "kvar-TI-ra",
+   "id": "apartemen"
+  },
+  {
+   "ru": "ва́нная",
+   "baca": "VA-na-ya",
+   "id": "kamar mandi"
+  },
+  {
+   "ru": "зало́г",
+   "baca": "za-LOK",
+   "id": "deposit, jaminan"
+  },
+  {
+   "ru": "коммуна́лка",
+   "baca": "ka-mu-NAL-ka",
+   "id": "iuran utilitas"
+  },
+  {
+   "ru": "аре́нда",
+   "baca": "a-RYEN-da",
+   "id": "sewa"
+  },
+  {
+   "ru": "снима́ть / снять",
+   "baca": "sni-MAT' / snyat'",
+   "id": "menyewa"
+  },
+  {
+   "ru": "хозя́ин / хозя́йка",
+   "baca": "kha-ZYA-in / kha-ZYAY-ka",
+   "id": "pemilik (lk / pr)"
+  },
+  {
+   "ru": "догово́р",
+   "baca": "da-ga-VOR",
+   "id": "kontrak"
+  },
+  {
+   "ru": "ме́бель",
+   "baca": "MYE-bil'",
+   "id": "perabot"
+  },
+  {
+   "ru": "переезжа́ть / перее́хать",
+   "baca": "pi-ri-yi-ZHAT' / pi-ri-YE-khat'",
+   "id": "pindah rumah"
+  },
+  {
+   "ru": "регистра́ция",
+   "baca": "ri-gis-TRA-tsy-ya",
+   "id": "pendaftaran alamat"
+  },
+  {
+   "ru": "заявле́ние",
+   "baca": "za-yi-VLYE-ni-ye",
+   "id": "permohonan"
+  },
+  {
+   "ru": "анке́та",
+   "baca": "an-KYE-ta",
+   "id": "formulir"
+  },
+  {
+   "ru": "подава́ть / пода́ть",
+   "baca": "pa-da-VAT' / pa-DAT'",
+   "id": "mengajukan"
+  },
+  {
+   "ru": "заполня́ть / запо́лнить",
+   "baca": "za-pal-NYAT' / za-POL-nit'",
+   "id": "mengisi"
+  },
+  {
+   "ru": "подпи́сывать / подписа́ть",
+   "baca": "pat-PI-sy-vat' / pat-pi-SAT'",
+   "id": "menandatangani"
+  },
+  {
+   "ru": "продлева́ть / продли́ть",
+   "baca": "prad-li-VAT' / prad-LIT'",
+   "id": "memperpanjang"
+  },
+  {
+   "ru": "тре́буется",
+   "baca": "TRYE-bu-yi-tsa",
+   "id": "diperlukan, disyaratkan"
+  },
+  {
+   "ru": "срок",
+   "baca": "srok",
+   "id": "tenggat, masa berlaku"
+  },
+  {
+   "ru": "по́шлина",
+   "baca": "POSH-li-na",
+   "id": "biaya administrasi"
+  },
+  {
+   "ru": "предупрежда́ть / предупреди́ть",
+   "baca": "pri-du-priz-DAT' / pri-du-pri-DIT'",
+   "id": "memberi tahu lebih dulu"
+  },
+  {
+   "ru": "входи́ть в це́ну",
+   "baca": "fkha-DIT' f TSE-nu",
+   "id": "termasuk harga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan нужен, нужна, нужно, atau нужны.",
+   "items": [
+    "Мне ____ па́спорт.",
+    "Мне ____ спра́вка.",
+    "Мне ____ вре́мя.",
+    "Мне ____ докуме́нты.",
+    "Мне ____ идти́."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "Я ____ кварти́ру в це́нтре (menyewa).",
+    "Ну́жно ____ анке́ту (mengisi).",
+    "Я хочу́ ____ ви́зу (memperpanjang).",
+    "Мне ну́жно ____ заявле́ние (mengajukan).",
+    "____ предупреди́ть за ме́сяц (harus)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "нужна́ / мне / регистра́ция",
+    "в / коммуна́лка / вхо́дит / це́ну",
+    "ме́сяц / за / предупреди́ть / тре́буется",
+    "догово́ра / вас / без / зарегистри́руют / не",
+    "кварти́ру / снима́ю / в / я / це́нтре"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Sebulan berapa?",
+    "Perlu deposit?",
+    "Saya butuh registrasi.",
+    "Utilitas termasuk harga?",
+    "Boleh saya lihat kontraknya dulu?",
+    "Saya perlu memperpanjang visa."
+   ]
+  }
+ ],
+ "answers": [
+  "ну́жен — нужна́ — ну́жно — нужны́ — ну́жно",
+  "снима́ю — запо́лнить — продли́ть — пода́ть — Тре́буется",
+  "Мне нужна́ регистра́ция. — Коммуна́лка вхо́дит в це́ну? — Тре́буется предупреди́ть за ме́сяц. — Без догово́ра вас не зарегистри́руют. — Я снима́ю кварти́ру в це́нтре.",
+  "Ско́лько сто́ит в ме́сяц? — Зало́г ну́жен? — Мне нужна́ регистра́ция. — Коммуна́лка вхо́дит в це́ну? — Мо́жно посмотре́ть догово́р зара́нее? — Мне ну́жно продли́ть ви́зу."
+ ]
+}

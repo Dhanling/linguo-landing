@@ -1,0 +1,512 @@
+{
+ "title": "Besok saya akan mengerjakannya",
+ "title_target": "Завтра я это сделаю — ZAF-tra ya E-ta SDYE-la-yu",
+ "goal": "Membuat kalimat masa depan dengan dua cara yang berbeda maknanya — dan mengerti kenapa bentuk СВ yang kelihatan seperti kalimat sekarang justru berarti besok.",
+ "bekal": [
+  "memakai буду / будешь / будет + НСВ untuk kegiatan yang akan berlangsung",
+  "memakai bentuk СВ bertekuk seperti kalimat sekarang untuk hasil di masa depan",
+  "mengerti kenapa СВ tidak punya kalimat sekarang sama sekali",
+  "membuat janji, rencana, dan ancaman kecil yang wajar",
+  "memakai если dan когда yang di bahasa Rusia menuntut kata kerja masa depan"
+ ],
+ "dialogs": [
+  {
+   "title": "Диалог — Rencana minggu depan",
+   "intro": "Ani dan Сергей membicarakan minggu yang akan datang. Perhatikan dua cara membentuk masa depan, dan perhatikan bahwa keduanya tidak pernah tertukar.",
+   "lines": [
+    {
+     "speaker": "Серге́й:",
+     "text": "[Ани|A-ni], [что|shto] [ты|ty] [будешь|BU-dish] [делать|DYE-lat'] [в|v] [субботу|su-BO-tu]?",
+     "id": "Ani, kamu mau ngapain hari Sabtu?",
+     "literal": "Ani, apa — kamu — akan — melakukan(НСВ) — pada — Sabtu?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ещё|Yi-SCHO] [не|nye] [знаю|ZNA-yu]. [Наверное|Na-VYER-na-ye], [весь|vyes'] [день|dyen'] [буду|BU-du] [заниматься|za-ni-MA-tsa].",
+     "id": "Belum tahu. Mungkin saya akan belajar seharian.",
+     "literal": "masih — tidak — tahu. mungkin, seluruh — hari — akan — belajar(НСВ)."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Весь|Vyes'] [день|dyen']? [А|A] [когда|kag-DA] [ты|ty] [напишешь|na-PI-shysh] [свой|svoy] [доклад|dak-LAT]?",
+     "id": "Seharian? Terus kapan kamu akan menyelesaikan makalahmu?",
+     "literal": "seluruh — hari? dan — kapan — kamu — selesai-menulis(СВ) — sendiri — makalah?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Я|Ya] [напишу|na-pi-SHU] [его|yi-VO] [в|v] [воскресенье|vask-ri-SYEN-'ye] [утром|UT-ram]. [За|Za] [два|dva] [часа|chi-SA].",
+     "id": "Saya akan menyelesaikannya Minggu pagi. Dalam dua jam.",
+     "literal": "saya — selesai-menulis(СВ) — dia — pada — Minggu — pada-pagi. dalam — dua — jam."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[За|Za] [два|dva] [часа|chi-SA]? [Ты|Ty] [уверена|u-VYE-ri-na]?",
+     "id": "Dalam dua jam? Kamu yakin?",
+     "literal": "dalam — dua — jam? kamu — yakin(fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Нет|Nyet]. [Но|No] [я|ya] [так|tak] [думаю|DU-ma-yu] [каждое|KAZH-da-ye] [воскресенье|vask-ri-SYEN-'ye].",
+     "id": "Tidak. Tapi saya berpikir begitu tiap hari Minggu.",
+     "literal": "tidak. tapi — saya — begitu — berpikir — tiap — Minggu."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Слушай|SLU-shay], [если|YES-li] [ты|ty] [закончишь|za-KON-chish] [рано|RA-na], [мы|my] [пойдём|pay-DYOM] [в|v] [кино|ki-NO].",
+     "id": "Dengar, kalau kamu selesai lebih awal, kita pergi ke bioskop.",
+     "literal": "dengar, jika — kamu — selesaikan(СВ) — awal, kami — akan-pergi(СВ) — ke — bioskop."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [если|YES-li] [не|nye] [закончу|za-KON-chu]?",
+     "id": "Dan kalau tidak selesai?",
+     "literal": "dan — jika — tidak — selesaikan(СВ)?"
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Тогда|Tag-DA] [ты|ty] [будешь|BU-dish] [писать|pi-SAT'], [а|a] [я|ya] [буду|BU-du] [смотреть|smat-RYET'] [фильм|fil'm] [один|a-DIN]. [Как|Kak] [всегда|fsig-DA].",
+     "id": "Kalau begitu kamu akan menulis, dan saya akan menonton film sendirian. Seperti biasa.",
+     "literal": "kalau-begitu — kamu — akan — menulis(НСВ), dan — saya — akan — menonton(НСВ) — film — sendiri. seperti — selalu."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ладно|LAD-na]. [Я|Ya] [обещаю|a-bi-SCHA-yu]: [в|v] [субботу|su-BO-tu] [я|ya] [напишу|na-pi-SHU] [половину|pa-la-VI-nu].",
+     "id": "Baiklah. Saya janji: Sabtu saya akan menyelesaikan setengahnya.",
+     "literal": "baiklah. saya — berjanji: pada — Sabtu — saya — selesai-menulis(СВ) — setengah."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Половину|Pa-la-VI-nu] — [это|E-ta] [уже|u-ZHE] [результат|ri-zul'-TAT]. [Я|Ya] [буду|BU-du] [ждать|zhdat'].",
+     "id": "Setengah itu sudah hasil. Saya akan menunggu.",
+     "literal": "setengah — ini — sudah — hasil. saya — akan — menunggu(НСВ)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[И|I] [ещё|yi-SCHO]: [когда|kag-DA] [я|ya] [закончу|za-KON-chu], [ты|ty] [купишь|KU-pish] [мне|mnye] [кофе|KO-fye].",
+     "id": "Dan satu lagi: kalau saya selesai, kamu belikan saya kopi.",
+     "literal": "dan — lagi: ketika — saya — selesaikan(СВ), kamu — membeli(СВ) — kepada-saya — kopi."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Куплю|Kup-LYU]. [Но|No] [только|TOL'-ka] [когда|kag-DA] [увижу|u-VI-zhu] [доклад|dak-LAT].",
+     "id": "Akan saya belikan. Tapi hanya kalau saya sudah lihat makalahnya.",
+     "literal": "akan-beli(СВ). tapi — hanya — ketika — melihat(СВ) — makalah."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ты|Ty] [не|nye] [веришь|VYE-rish] [мне|mnye].",
+     "id": "Kamu tidak percaya saya.",
+     "literal": "kamu — tidak — percaya — kepada-saya."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Я|Ya] [верю|VYE-ryu]. [Просто|PROS-ta] [я|ya] [уже|u-ZHE] [два|dva] [месяца|MYE-si-tsa] [верю|VYE-ryu].",
+     "id": "Saya percaya. Cuma saya sudah percaya selama dua bulan.",
+     "literal": "saya — percaya. hanya — saya — sudah — dua — bulan — percaya."
+    }
+   ],
+   "notes": [
+    "**Bahasa Rusia punya dua kalimat masa depan, dan aspeklah yang memilihkan.** *Буду делать* (НСВ) — akan melakukan, kegiatannya berlangsung, tidak dijanjikan selesai. *Сделаю* (СВ) — akan selesai melakukan, sekali, dengan hasil.",
+    "**Masa depan НСВ = буду + bentuk kamus.** *буду, будешь, будет, будем, будете, будут* + *делать / читать / писать*. ⚠️ Yang berubah hanya *быть*; kata kerjanya tetap bentuk kamus, tak pernah bertekuk. Ini bentuk paling mudah dalam seluruh bahasa Rusia — pakai kalau ragu.",
+    "**Masa depan СВ tidak memakai буду sama sekali.** *Я напишу* — bentuknya persis seperti kalimat sekarang, ekornya sama: -у, -ешь, -ет, -ем, -ете, -ут. ⚠️ Inilah yang paling membingungkan pemula: *я пишу* = saya sedang menulis, *я напишу* = saya akan menyelesaikan tulisan. Bedanya cuma satu awalan.",
+    "**Sebabnya sederhana kalau dipikir sekali:** СВ berarti \"tuntas dengan hasil\", dan sesuatu yang tuntas tidak bisa sedang berlangsung sekarang. Jadi bentuk sekarang untuk СВ tidak dibutuhkan — dan ruang kosong itu dipakai untuk masa depan. ⚠️ **СВ tidak punya kalimat sekarang. Titik.**",
+    "**Никогда́ jangan pakai буду dengan СВ.** *Я буду сделать* salah total dan langsung terdengar seperti orang asing. Dua-duanya menandai masa depan; memakainya bersamaan seperti mengatakan \"akan akan\".",
+    "**Sesudah *если* dan *когда*, bahasa Rusia memakai masa depan — bahasa Indonesia tidak.** Kita bilang \"kalau saya **selesai**, kamu belikan kopi\" dengan bentuk biasa; Rusia mengharuskan *когда я зако́нчу* (masa depan). ⚠️ Kesalahan ini termasuk yang paling sering, karena bahasa Inggris pun memakai bentuk sekarang di sini (*when I finish*).",
+    "**Bentuk СВ dipakai untuk janji, dan НСВ untuk niat.** *Я напишу* terdengar seperti komitmen berhasil; *Я буду писать* terdengar seperti \"saya akan mengerjakannya\" tanpa jaminan apa pun. Sergey menangkap bedanya dan menyindir tepat di situ.",
+    "**За два часа́ berarti \"dalam dua jam\" (hasil tercapai), bukan \"selama dua jam\".** \"Selama dua jam\" = *два часа́* saja, tanpa kata depan. ⚠️ *Я писал два часа* = saya menulis selama dua jam. *Я написал за два часа* = saya menyelesaikannya dalam dua jam. Beda kata depan, beda aspek, beda cerita."
+   ],
+   "grammars": [
+    {
+     "title": "Dua masa depan berdampingan",
+     "body": [
+      "Perhatikan bahwa lajur kiri selalu dua kata dan lajur kanan selalu satu kata. Itu cara tercepat mengenalinya di teks."
+     ],
+     "table": {
+      "head": [
+       "",
+       "НСВ — буду + kamus",
+       "СВ — bertekuk sendiri"
+      ],
+      "rows": [
+       [
+        "я",
+        "бу́ду чита́ть",
+        "прочита́ю"
+       ],
+       [
+        "ты",
+        "бу́дешь чита́ть",
+        "прочита́ешь"
+       ],
+       [
+        "он / она́",
+        "бу́дет чита́ть",
+        "прочита́ет"
+       ],
+       [
+        "мы",
+        "бу́дем чита́ть",
+        "прочита́ем"
+       ],
+       [
+        "вы",
+        "бу́дете чита́ть",
+        "прочита́ете"
+       ],
+       [
+        "они́",
+        "бу́дут чита́ть",
+        "прочита́ют"
+       ],
+       [
+        "artinya",
+        "akan membaca (kegiatan)",
+        "akan selesai membaca (hasil)"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Pergeseran batang yang wajib dihafal",
+     "body": [
+      "Beberapa СВ yang paling sering dipakai berubah batangnya waktu bertekuk. Enam ini menutup sebagian besar kebutuhan sehari-hari."
+     ],
+     "table": {
+      "head": [
+       "СВ",
+       "я",
+       "ты",
+       "они́",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "написа́ть",
+        "напишу́",
+        "напи́шешь",
+        "напи́шут",
+        "selesai menulis"
+       ],
+       [
+        "сказа́ть",
+        "скажу́",
+        "ска́жешь",
+        "ска́жут",
+        "mengatakan"
+       ],
+       [
+        "купи́ть",
+        "куплю́",
+        "ку́пишь",
+        "ку́пят",
+        "membeli"
+       ],
+       [
+        "пойти́",
+        "пойду́",
+        "пойдёшь",
+        "пойду́т",
+        "pergi (berjalan)"
+       ],
+       [
+        "взять",
+        "возьму́",
+        "возьмёшь",
+        "возьму́т",
+        "mengambil"
+       ],
+       [
+        "уви́деть",
+        "уви́жу",
+        "уви́дишь",
+        "уви́дят",
+        "melihat"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Janji yang berbeda beratnya",
+   "intro": "Dua kalimat pendek yang kelihatan sama, tapi salah satunya janji dan yang lain cuma niat.",
+   "lines": [
+    {
+     "speaker": "Мари́на:",
+     "text": "[Ты|Ty] [будешь|BU-dish] [помогать|pa-ma-GAT'] [мне|mnye] [с|s] [переездом|pi-ri-YEZ-dam]?",
+     "id": "Kamu mau bantu saya pindahan?",
+     "literal": "kamu — akan — membantu(НСВ) — kepada-saya — dengan — kepindahan(instr)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Помогу|Pa-ma-GU]. [В|V] [субботу|su-BO-tu] [утром|UT-ram] [я|ya] [свободна|sva-BOD-na].",
+     "id": "Saya bantu. Sabtu pagi saya luang.",
+     "literal": "membantu-saya(СВ). pada — Sabtu — pada-pagi — saya — bebas(fem)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Слышишь|SLY-shysh], [как|kak] [это|E-ta] [звучит|zvu-CHIT]? «[Помогу|Pa-ma-GU]», [а|a] [не|nye] «[буду|BU-du] [помогать|pa-ma-GAT']».",
+     "id": "Dengar bunyinya? \"Saya bantu\", bukan \"saya akan membantu\".",
+     "literal": "mendengar-kamu, bagaimana — ini — berbunyi? «membantu-saya(СВ)», dan — bukan — «akan — membantu(НСВ)»."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Первое|PYER-va-ye] — [обещание|a-bi-SCHA-ni-ye], [второе|fta-RO-ye] — [настроение|nast-ra-YE-ni-ye].",
+     "id": "Yang pertama janji, yang kedua suasana hati.",
+     "literal": "pertama — janji, kedua — suasana-hati."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Ты|Ty] [начинаешь|na-chi-NA-yish] [понимать|pa-ni-MAT'] [русских|RUS-kikh].",
+     "id": "Kamu mulai mengerti orang Rusia.",
+     "literal": "kamu — mulai — mengerti — Rusia(gen, jmk)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[А|A] [что|shto] [будешь|BU-dish] [делать|DYE-lat'] [после|POS-lye] [переезда|pi-ri-YEZ-da]?",
+     "id": "Terus setelah pindahan kamu mau ngapain?",
+     "literal": "dan — apa — akan — melakukan(НСВ) — sesudah — kepindahan(gen)?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Буду|BU-du] [лежать|li-ZHAT']. [Долго|DOL-ga]. [Без|Byes] [планов|PLA-naf].",
+     "id": "Saya mau tiduran. Lama. Tanpa rencana.",
+     "literal": "akan — berbaring(НСВ). lama. tanpa — rencana(gen, jmk)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Вот|Vot] [это|E-ta] [настоящее|nas-ta-YA-schi-ye] [будущее|BU-du-schi-ye] [время|VRYE-mya].",
+     "id": "Nah itu baru masa depan yang sesungguhnya.",
+     "literal": "ini — ini — sungguhan — masa-depan — waktu."
+    }
+   ],
+   "notes": [
+    "**Perbedaan yang dibahas Марина adalah perbedaan yang benar-benar terdengar oleh penutur asli.** *Помогу́* (СВ) terdengar seperti komitmen; *бу́ду помога́ть* (НСВ) seperti pernyataan niat yang longgar.",
+    "**Kata kerja keadaan hanya punya masa depan НСВ:** *бу́ду лежа́ть, бу́ду ждать, бу́ду жить*. Tidak ada bentuk СВ untuk perbuatan yang memang tak berujung pada hasil.",
+    "**Начина́ть selalu diikuti bentuk kamus НСВ:** *начина́ю понима́ть*, bukan *начина́ю поня́ть*. Aturan ini berlaku juga untuk *продолжа́ть* dan *конча́ть*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat masa depan yang benar-benar kamu pakai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Empat situasi berikut menutup hampir semua kebutuhan masa depan sehari-hari. Hafalkan polanya, bukan kalimatnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Situasi",
+      "Aspek",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Rencana yang isinya kegiatan",
+       "НСВ",
+       "За́втра я бу́ду рабо́тать до́ма."
+      ],
+      [
+       "Janji dengan hasil",
+       "СВ",
+       "За́втра я зако́нчу прое́кт."
+      ],
+      [
+       "Kebiasaan yang akan berulang",
+       "НСВ",
+       "Ка́ждый день я бу́ду бе́гать."
+      ],
+      [
+       "Satu perbuatan sekali jalan",
+       "СВ",
+       "Я позвоню́ тебе́ ве́чером."
+      ],
+      [
+       "Sesudah если / когда",
+       "СВ (biasanya)",
+       "Когда́ я прие́ду, я напишу́."
+      ],
+      [
+       "Menolak dengan halus",
+       "НСВ",
+       "Я не бу́ду э́то де́лать."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua jebakan yang tak terlihat",
+     "items": [
+      "⚠️ **\"Saya tidak akan melakukannya\" hampir selalu НСВ:** *Я не буду это делать*. Memakai СВ (*Я это не сделаю*) berarti \"saya tidak akan berhasil melakukannya\" — pengakuan gagal, bukan penolakan.",
+      "⚠️ **Kalimat tanya sopan justru memakai НСВ:** *Вы бу́дете пить чай?* (Anda mau minum teh?). *Вы вы́пьете чай?* terdengar seperti menagih agar tehnya dihabiskan.",
+      "**Kata kerja yang mustahil СВ:** *быть, жить, работать, любить, знать, хотеть* — semuanya melukiskan keadaan, bukan perbuatan berbuah. Masa depannya selalu *буду жить, буду работать*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "занима́ться",
+   "baca": "za-ni-MA-tsa",
+   "id": "belajar, menekuni"
+  },
+  {
+   "ru": "докла́д",
+   "baca": "da-KLAT",
+   "id": "makalah, presentasi"
+  },
+  {
+   "ru": "зака́нчивать / зако́нчить",
+   "baca": "za-KAN-chi-vat' / za-KON-chit'",
+   "id": "menyelesaikan"
+  },
+  {
+   "ru": "обеща́ть / пообеща́ть",
+   "baca": "a-bi-SCHAT' / pa-a-bi-SCHAT'",
+   "id": "berjanji"
+  },
+  {
+   "ru": "ждать / подожда́ть",
+   "baca": "zhdat' / pa-da-ZHDAT'",
+   "id": "menunggu"
+  },
+  {
+   "ru": "ве́рить / пове́рить",
+   "baca": "VYE-rit' / pa-VYE-rit'",
+   "id": "percaya"
+  },
+  {
+   "ru": "говори́ть / сказа́ть",
+   "baca": "ga-va-RIT' / ska-ZAT'",
+   "id": "berbicara / mengatakan"
+  },
+  {
+   "ru": "брать / взять",
+   "baca": "brat' / vzyat'",
+   "id": "mengambil"
+  },
+  {
+   "ru": "идти́ / пойти́",
+   "baca": "i-TI / pay-TI",
+   "id": "pergi (jalan kaki)"
+  },
+  {
+   "ru": "наве́рное",
+   "baca": "na-VYER-na-ye",
+   "id": "mungkin, sepertinya"
+  },
+  {
+   "ru": "уве́рен / уве́рена",
+   "baca": "u-VYE-rin / u-VYE-ri-na",
+   "id": "yakin (lk / pr)"
+  },
+  {
+   "ru": "тогда́",
+   "baca": "tag-DA",
+   "id": "kalau begitu, waktu itu"
+  },
+  {
+   "ru": "ла́дно",
+   "baca": "LAD-na",
+   "id": "baiklah, oke"
+  },
+  {
+   "ru": "полови́на",
+   "baca": "pa-la-VI-na",
+   "id": "setengah"
+  },
+  {
+   "ru": "результа́т",
+   "baca": "ri-zul'-TAT",
+   "id": "hasil"
+  },
+  {
+   "ru": "про́сто",
+   "baca": "PROS-ta",
+   "id": "cuma, sekadar"
+  },
+  {
+   "ru": "ещё не",
+   "baca": "yi-SCHO nye",
+   "id": "belum"
+  },
+  {
+   "ru": "за (+ akusatif)",
+   "baca": "za",
+   "id": "dalam (rentang waktu, dengan hasil)"
+  },
+  {
+   "ru": "е́сли",
+   "baca": "YES-li",
+   "id": "jika, kalau"
+  },
+  {
+   "ru": "ра́но / по́здно",
+   "baca": "RA-na / POZ-na",
+   "id": "awal / terlambat"
+  },
+  {
+   "ru": "кино́",
+   "baca": "ki-NO",
+   "id": "bioskop, film"
+  },
+  {
+   "ru": "как всегда́",
+   "baca": "kak fsig-DA",
+   "id": "seperti biasa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan masa depan НСВ (буду + kamus) atau СВ, sesuai maknanya.",
+   "items": [
+    "За́втра я весь день ____ (рабо́тать).",
+    "Я ____ (написа́ть) письмо́ и пошлю́ его́.",
+    "Ка́ждое у́тро мы ____ (бе́гать) в па́рке.",
+    "Она́ ____ (купи́ть) хлеб по доро́ге домо́й.",
+    "Ве́чером я ____ (смотре́ть) фильм.",
+    "Когда́ я ____ (зако́нчить), я тебе́ позвоню́."
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk «я» dan «ты» masa depan dari kata kerja СВ berikut.",
+   "items": [
+    "сказа́ть → ____",
+    "купи́ть → ____",
+    "взять → ____",
+    "пойти́ → ____",
+    "уви́деть → ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "бу́ду / я / за́втра / рабо́тать / до́ма",
+    "позвоню́ / я / ве́чером / тебе́",
+    "не / э́то / я / бу́ду / де́лать",
+    "прие́ду / когда́ / напишу́ / я / я",
+    "часа́ / за / докла́д / напишу́ / два / я"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Besok saya akan bekerja seharian.",
+    "Besok saya akan menyelesaikan makalah ini.",
+    "Saya akan meneleponmu nanti malam.",
+    "Saya tidak akan melakukan itu.",
+    "Kalau kamu selesai lebih awal, kita pergi ke bioskop.",
+    "Anda mau minum teh?"
+   ]
+  }
+ ],
+ "answers": [
+  "бу́ду рабо́тать — напишу́ — бу́дем бе́гать — ку́пит — бу́ду смотре́ть — зако́нчу",
+  "скажу́, ска́жешь — куплю́, ку́пишь — возьму́, возьмёшь — пойду́, пойдёшь — уви́жу, уви́дишь",
+  "За́втра я бу́ду рабо́тать до́ма. — Я позвоню́ тебе́ ве́чером. — Я не бу́ду э́то де́лать. — Когда́ я прие́ду, я напишу́. — Я напишу́ докла́д за два часа́.",
+  "За́втра я бу́ду рабо́тать весь день. — За́втра я зако́нчу э́тот докла́д. — Я позвоню́ тебе́ ве́чером. — Я не бу́ду э́то де́лать. — Е́сли ты зако́нчишь ра́но, мы пойдём в кино́. — Вы бу́дете пить чай?"
+ ]
+}

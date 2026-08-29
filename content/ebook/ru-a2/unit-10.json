@@ -1,0 +1,515 @@
+{
+ "title": "Melihat meja, melihat abang",
+ "title_target": "Винительный падеж — vi-NI-til'-nyy pa-DYESH",
+ "goal": "Menuntaskan akusatif — termasuk aturan bernyawa yang membuat kata benda maskulin meminjam ekor genitif, dan pemakaiannya untuk waktu.",
+ "bekal": [
+  "membentuk akusatif tunggal untuk ketiga jenis kata benda",
+  "menerapkan aturan bernyawa: maskulin bernyawa memakai ekor genitif",
+  "memakai akusatif untuk arah (куда), lama waktu, dan pengulangan",
+  "memakai kata ganti akusatif: меня, тебя, его, её, нас, вас, их",
+  "memakai kata depan через, назад, про"
+ ],
+ "wave": "Ulangi **unit 8**: sebutkan lima orang yang kamu kenal dan pekerjaannya dengan lantang, semuanya memakai работает + instrumental.",
+ "dialogs": [
+  {
+   "title": "Диалог — Menunggu di kafe",
+   "intro": "Ani menunggu Марина yang terlambat. Perhatikan bahwa objek yang bernyawa dan tak bernyawa berekor berbeda, walaupun kasusnya sama.",
+   "lines": [
+    {
+     "speaker": "Мари́на:",
+     "text": "[Извини|Iz-vi-NI]! [Я|Ya] [опоздала|a-paz-DA-la] [на|na] [двадцать|DVA-tsat'] [минут|mi-NUT].",
+     "id": "Maaf! Saya telat dua puluh menit.",
+     "literal": "maaf! saya — terlambat(СВ, fem) — sebanyak — dua-puluh — menit(akus)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ничего|Ni-chi-VO]. [Я|Ya] [как|kak] [раз|ras] [читала|chi-TA-la] [эту|E-tu] [статью|stat-'YU].",
+     "id": "Tidak apa-apa. Saya kebetulan lagi baca artikel ini.",
+     "literal": "tak-apa. saya — kebetulan — membaca(fem) — ini(akus) — artikel(akus)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Про|Pra] [что|shto] [она|a-NA]?",
+     "id": "Tentang apa artikelnya?",
+     "literal": "tentang — apa(akus) — dia?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Про|Pra] [молодых|ma-la-DYKH] [врачей|vra-CHEY] [в|v] [деревне|di-RYEV-nye]. [Я|Ya] [уже|u-ZHE] [знаю|ZNA-yu] [этого|E-ta-va] [автора|AF-ta-ra].",
+     "id": "Tentang dokter-dokter muda di desa. Saya sudah kenal penulisnya.",
+     "literal": "tentang — muda(akus) — dokter-dokter(akus) — di — desa. saya — sudah — tahu — ini(akus) — penulis(akus)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Ты|Ty] [читаешь|chi-TA-yish] [газету|ga-ZYE-tu], [а|a] [я|ya] [только|TOL'-ka] [ищу|i-SCHU] [ключи|klyu-CHI].",
+     "id": "Kamu baca koran, saya cuma cari kunci.",
+     "literal": "kamu — membaca — koran(akus), dan — saya — hanya — mencari — kunci-kunci."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Опять|A-PYAT'] [потеряла|pa-ti-RYA-la]? [Ты|Ty] [теряешь|ti-RYA-yish] [их|ikh] [каждую|KAZH-du-yu] [неделю|ni-DYE-lyu].",
+     "id": "Hilang lagi? Kamu kehilangan itu tiap minggu.",
+     "literal": "lagi — kehilangan(СВ, fem)? kamu — kehilangan — mereka(akus) — tiap — minggu(akus)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Не|Nye] [каждую|KAZH-du-yu]. [Каждый|KAZH-dyy] [месяц|MYE-sits]. [Это|E-ta] [разные|RAZ-ny-ye] [вещи|VYE-schi].",
+     "id": "Bukan tiap minggu. Tiap bulan. Itu beda.",
+     "literal": "tidak — tiap(fem). tiap — bulan(akus). ini — berbeda — hal-hal."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Ты|Ty] [видела|VI-di-la] [Сергея|Sir-GYE-ya] [сегодня|si-VOD-nya]?",
+     "id": "Kamu lihat Sergey hari ini?",
+     "literal": "kamu — melihat(fem) — Sergey(akus) — hari-ini?"
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Видела|VI-di-la] [машину|ma-SHY-nu], [но|no] [не|nye] [видела|VI-di-la] [Сергея|Sir-GYE-ya].",
+     "id": "Lihat mobilnya, tapi tidak lihat Sergey.",
+     "literal": "melihat(fem) — mobil(akus), tapi — tidak — melihat(fem) — Sergey(akus)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Слышишь|SLY-shysh] [разницу|RAZ-ni-tsu]? [Машину|Ma-SHY-nu] — [но|no] [Сергея|Sir-GYE-ya].",
+     "id": "Dengar bedanya? \"Mashinu\" — tapi \"Sergeya\".",
+     "literal": "mendengar-kamu — perbedaan? mobil(akus) — tapi — Sergey(akus)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Слышу|SLY-shu]. [Ты|Ty] [говоришь|ga-va-RISH] [как|kak] [учитель|u-CHI-til'].",
+     "id": "Dengar kok. Kamu ngomong kayak guru.",
+     "literal": "mendengar-saya. kamu — berbicara — seperti — guru."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Через|CHE-ris] [два|dva] [года|GO-da] [я|ya] [и|i] [буду|BU-du] [учителем|u-CHI-ti-lim].",
+     "id": "Dua tahun lagi saya memang akan jadi guru.",
+     "literal": "lewat — dua — tahun(gen) — saya — memang — akan — guru(instr)."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[А|A] [два|dva] [года|GO-da] [назад|na-ZAT] [ты|ty] [хотела|kha-TYE-la] [быть|byt'] [врачом|vra-CHOM].",
+     "id": "Padahal dua tahun lalu kamu mau jadi dokter.",
+     "literal": "dan — dua — tahun — lalu — kamu — ingin(fem) — menjadi — dokter(instr)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Я|Ya] [меняю|mi-NYA-yu] [планы|PLA-ny] [каждый|KAZH-dyy] [год|got]. [Это|E-ta] [традиция|tra-DI-tsy-ya].",
+     "id": "Saya ganti rencana tiap tahun. Itu tradisi.",
+     "literal": "saya — mengganti — rencana-rencana(akus) — tiap — tahun(akus). ini — tradisi."
+    },
+    {
+     "speaker": "Мари́на:",
+     "text": "[Тогда|Tag-DA] [найди|nay-DI] [мои|ma-I] [ключи|klyu-CHI]. [Это|E-ta] [тоже|TO-zhy] [традиция|tra-DI-tsy-ya].",
+     "id": "Kalau begitu carikan kunci saya. Itu juga tradisi.",
+     "literal": "kalau-begitu — carikan(СВ) — saya-punya — kunci-kunci(akus). ini — juga — tradisi."
+    }
+   ],
+   "notes": [
+    "**Akusatif menandai sasaran langsung perbuatan** — yang dibaca, dilihat, dibeli, dicintai. Ekornya tunggal: feminin **-у / -ю** (*кни́га → кни́гу*), netral **tidak berubah** (*окно́ → окно́*), maskulin — tergantung bernyawa atau tidak.",
+    "**Inilah aturan yang khas Rusia: bernyawa versus tak bernyawa.** Kata benda maskulin **tak bernyawa** tidak berubah sama sekali di akusatif (*стол → стол*, *дом → дом*). Kata benda maskulin **bernyawa** meminjam ekor genitif (*брат → бра́та*, *Серге́й → Серге́я*, *врач → врача́*).",
+    "**\"Bernyawa\" berarti manusia dan binatang** — bukan tumbuhan, bukan benda. *Я ви́жу ко́шку* (kucing, feminin), *Я ви́жу кота́* (kucing jantan, maskulin bernyawa → berekor genitif). ⚠️ Ini satu-satunya tempat dalam bahasa Rusia di mana \"hidup atau tidak\" mengubah tata bahasanya.",
+    "**Feminin tidak peduli bernyawa atau tidak** — semuanya *-у / -ю*: *кни́гу, маши́ну, сестру́, Мари́ну*. Kelegaan yang layak dicatat.",
+    "**Pekerjaan kedua: arah, sesudah в dan на.** *Я иду́ в шко́лу* (ke sekolah). Bandingkan dengan preposisional di unit 9: *Я в шко́ле* (di sekolah). ⚠️ Pasangan ini akan kamu pakai puluhan kali sehari.",
+    "**Pekerjaan ketiga: lama waktu dan pengulangan, tanpa kata depan.** *Я жил там **год*** (setahun), *Я чита́л **два часа́*** (dua jam), *ка́ждый день*, *ка́ждую неде́лю*, *ка́ждое у́тро*. ⚠️ Perhatikan bahwa *ка́ждый* ikut berubah menurut jenis kata bendanya.",
+    "**Kata ganti akusatif sama bentuknya dengan genitif:** *меня́, тебя́, его́, её, нас, вас, их*. Satu daftar untuk dua kasus — hemat.",
+    "**Tiga kata depan berguna yang menuntut akusatif:** *че́рез* (setelah selang waktu, atau menyeberangi: *че́рез час*, *че́рез у́лицу*), *про* (tentang, lebih santai daripada *о*: *про что?*), dan *за* dalam arti membayar atau menjemput (*спаси́бо за по́мощь*). ⚠️ *наза́д* (yang lalu) berdiri **di belakang** ukuran waktunya: *два го́да наза́д*."
+   ],
+   "grammars": [
+    {
+     "title": "Akusatif tunggal, dengan aturan bernyawa",
+     "body": [
+      "Bacalah lajur \"maskulin\" dua kali. Di sanalah seluruh isi unit ini bekerja."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Nominatif",
+       "Akusatif",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "maskulin **tak bernyawa**",
+        "стол, дом, журна́л",
+        "стол, дом, журна́л",
+        "tidak berubah"
+       ],
+       [
+        "maskulin **bernyawa**",
+        "брат, врач, Серге́й",
+        "бра́та, врача́, Серге́я",
+        "= genitif"
+       ],
+       [
+        "feminin -а / -я",
+        "кни́га, неде́ля",
+        "кни́гу, неде́лю",
+        "selalu -у / -ю"
+       ],
+       [
+        "feminin -ь",
+        "дверь, ночь",
+        "дверь, ночь",
+        "tidak berubah"
+       ],
+       [
+        "netral",
+        "окно́, мо́ре",
+        "окно́, мо́ре",
+        "tidak pernah berubah"
+       ],
+       [
+        "kata ganti",
+        "я, ты, он, она́, мы, вы, они́",
+        "меня́, тебя́, его́, её, нас, вас, их",
+        "= genitif"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Waktu dalam akusatif",
+     "body": [
+      "Semua ungkapan waktu berikut berdiri dalam akusatif. Kebanyakan tanpa kata depan sama sekali."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "lama",
+        "Я жил там год.",
+        "Saya tinggal di sana setahun."
+       ],
+       [
+        "ка́ждый + waktu",
+        "ка́ждый день, ка́ждую неде́лю",
+        "tiap hari, tiap minggu"
+       ],
+       [
+        "в + hari",
+        "в понеде́льник, в сре́ду",
+        "pada Senin, pada Rabu"
+       ],
+       [
+        "че́рез + waktu",
+        "че́рез час, че́рез два го́да",
+        "satu jam lagi, dua tahun lagi"
+       ],
+       [
+        "waktu + наза́д",
+        "два дня наза́д",
+        "dua hari yang lalu"
+       ],
+       [
+        "на + lama rencana",
+        "Я е́ду туда́ на неде́лю.",
+        "Saya ke sana untuk seminggu."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Диалог 2 — Siapa melihat siapa",
+   "intro": "Percakapan pendek yang seluruhnya membangun aturan bernyawa dalam akusatif.",
+   "lines": [
+    {
+     "speaker": "Серге́й:",
+     "text": "[Ты|Ty] [знаешь|ZNA-yish] [этого|E-ta-va] [преподавателя|pri-pa-da-VA-ti-lya]?",
+     "id": "Kamu kenal dosen yang itu?",
+     "literal": "kamu — tahu — ini(akus) — dosen(akus)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Знаю|ZNA-yu]. [Я|Ya] [слушала|SLU-sha-la] [его|yi-VO] [лекцию|LYEK-tsy-yu] [в|v] [прошлом|PROSH-lam] [семестре|si-MYEST-rye].",
+     "id": "Kenal. Saya ikut kuliahnya semester lalu.",
+     "literal": "tahu-saya. saya — mendengarkan(fem) — dia-punya — kuliah — pada — lalu — semester."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[А|A] [его|yi-VO] [жену|zhy-NU] [ты|ty] [видела|VI-di-la]?",
+     "id": "Istrinya kamu pernah lihat?",
+     "literal": "dan — dia-punya — istri(akus) — kamu — melihat(fem)?"
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[Видела|VI-di-la]. [Она|A-NA] [ведёт|vi-DYOT] [наш|nash] [семинар|si-mi-NAR].",
+     "id": "Pernah. Dia yang memimpin seminar kami.",
+     "literal": "melihat(fem). dia — menuntun — kami-punya — seminar."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Значит|ZNA-chit], [ты|ty] [знаешь|ZNA-yish] [и|i] [его|yi-VO], [и|i] [её|yi-YO].",
+     "id": "Berarti kamu kenal dia dan dia juga.",
+     "literal": "berarti, kamu — tahu — dan — dia(akus), dan — dia(akus, fem)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[И|I] [тоже|TO-zhy] [живая|zhy-VA-ya]. [Поэтому|Pa-E-ta-mu] «[собаку|sa-BA-ku]» — [не|nye] «[собака|sa-BA-ka]».",
+     "id": "Dan juga bernyawa. Makanya \"sobaku\" — bukan \"sobaka\".",
+     "literal": "dan — juga — hidup(fem). karena-itu — «anjing(akus)» — bukan — «anjing(nom)»."
+    },
+    {
+     "speaker": "Серге́й:",
+     "text": "[Собаку|Sa-BA-ku] [знаю|ZNA-yu] [лучше|LUCH-shy]. [Она|A-NA] [добрая|DOB-ra-ya].",
+     "id": "Anjingnya saya kenal lebih baik. Dia baik.",
+     "literal": "anjing(akus) — tahu-saya — lebih-baik. dia — baik(fem)."
+    },
+    {
+     "speaker": "Ани:",
+     "text": "[И|I] [тоже|TO-zhy] [живая|zhy-VA-ya]. [Поэтому|Pa-E-ta-mu] «[собаку|sa-BA-ku]» — [не|nye] «[собака|sa-BA-ka]».",
+     "id": "Dan juga bernyawa. Makanya \"sobaku\" — bukan \"sobaka\".",
+     "literal": "dan — juga — hidup(fem). karena-itu — «anjing(akus)» — bukan — «anjing(nom)»."
+    }
+   ],
+   "notes": [
+    "**Perhatikan bahwa aturan bernyawa hanya kelihatan pada maskulin:** *преподава́теля*, *его́*, *их* berekor genitif. Feminin *жену́* dan *соба́ку* tetap *-у*, bernyawa atau tidak.",
+    "**Обо́их / обе́их berarti \"keduanya\"** dan ikut jenis kelamin: *обо́их* untuk laki-laki atau campuran, *обе́их* untuk perempuan semua.",
+    "**Соба́ка feminin, tapi ia binatang** — jadi di jamak akusatif ia mengikuti aturan bernyawa: *Я люблю́ соба́к* (bukan *соба́ки*). Aturan bernyawa muncul lagi di jamak untuk semua jenis."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat kasus berdampingan — kata yang sama",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tabel ini memperlihatkan satu kata melewati semua kasus yang sudah kamu pelajari. Bacalah menurun, bukan melintang: begitulah cara sebuah kata Rusia \"berjalan\" di dalam kalimat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kasus",
+      "брат (bernyawa)",
+      "стол",
+      "кни́га",
+      "окно́"
+     ],
+     "rows": [
+      [
+       "Nominatif — кто? что?",
+       "брат",
+       "стол",
+       "кни́га",
+       "окно́"
+      ],
+      [
+       "Genitif — кого́? чего́?",
+       "бра́та",
+       "стола́",
+       "кни́ги",
+       "окна́"
+      ],
+      [
+       "Datif — кому́? чему́?",
+       "бра́ту",
+       "столу́",
+       "кни́ге",
+       "окну́"
+      ],
+      [
+       "**Akusatif — кого́? что?**",
+       "**бра́та**",
+       "**стол**",
+       "**кни́гу**",
+       "**окно́**"
+      ],
+      [
+       "Instrumental — кем? чем?",
+       "бра́том",
+       "столо́м",
+       "кни́гой",
+       "окно́м"
+      ],
+      [
+       "Preposisional — о ком? о чём?",
+       "о бра́те",
+       "о столе́",
+       "о кни́ге",
+       "об окне́"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara memakai tabel ini dengan benar",
+     "items": [
+      "**Jangan menghafalnya melintang.** Menghafal \"брат, брата, брату, брата, братом, о брате\" sebagai deretan bunyi tidak menolong waktu berbicara. Yang menolong: mengucapkan enam **kalimat** pendek, satu per kasus, sampai ekornya keluar sendiri.",
+      "**Enam kalimat itu:** *Э́то мой брат* / *У меня́ нет бра́та* / *Я звоню́ бра́ту* / *Я ви́жу бра́та* / *Я иду́ с бра́том* / *Я ду́маю о бра́те*. Ganti *брат* dengan kata lain tiap hari.",
+      "⚠️ **Perhatikan bahwa genitif dan akusatif bernyawa bentuknya sama.** Itu bukan kebetulan — bahasa Rusia memang meminjamnya, supaya *Брат ви́дит врача́* tak bisa dibaca terbalik. Susunan kata dalam bahasa Rusia longgar justru karena ekornya ketat."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ru": "статья́",
+   "baca": "sta-T'YA",
+   "id": "artikel"
+  },
+  {
+   "ru": "газе́та",
+   "baca": "ga-ZYE-ta",
+   "id": "koran"
+  },
+  {
+   "ru": "а́втор",
+   "baca": "AF-tar",
+   "id": "penulis"
+  },
+  {
+   "ru": "ключ",
+   "baca": "klyuch",
+   "id": "kunci"
+  },
+  {
+   "ru": "дере́вня",
+   "baca": "di-RYEV-nya",
+   "id": "desa"
+  },
+  {
+   "ru": "теря́ть / потеря́ть",
+   "baca": "ti-RYAT' / pa-ti-RYAT'",
+   "id": "kehilangan"
+  },
+  {
+   "ru": "меня́ть / поменя́ть",
+   "baca": "mi-NYAT' / pa-mi-NYAT'",
+   "id": "mengganti"
+  },
+  {
+   "ru": "ви́деть / уви́деть",
+   "baca": "VI-dit' / u-VI-dit'",
+   "id": "melihat"
+  },
+  {
+   "ru": "слы́шать / услы́шать",
+   "baca": "SLY-shat' / u-SLY-shat'",
+   "id": "mendengar"
+  },
+  {
+   "ru": "план",
+   "baca": "plan",
+   "id": "rencana"
+  },
+  {
+   "ru": "тради́ция",
+   "baca": "tra-DI-tsy-ya",
+   "id": "tradisi"
+  },
+  {
+   "ru": "че́рез",
+   "baca": "CHE-ris",
+   "id": "setelah (waktu); menyeberangi"
+  },
+  {
+   "ru": "наза́д",
+   "baca": "na-ZAT",
+   "id": "yang lalu; ke belakang"
+  },
+  {
+   "ru": "про (+ akusatif)",
+   "baca": "pra",
+   "id": "tentang (santai)"
+  },
+  {
+   "ru": "опя́ть",
+   "baca": "a-PYAT'",
+   "id": "lagi"
+  },
+  {
+   "ru": "молодо́й",
+   "baca": "ma-la-DOY",
+   "id": "muda"
+  },
+  {
+   "ru": "ка́ждый / ка́ждая / ка́ждое",
+   "baca": "KAZH-dyy / KAZH-da-ya / KAZH-da-ye",
+   "id": "tiap"
+  },
+  {
+   "ru": "мину́та",
+   "baca": "mi-NU-ta",
+   "id": "menit"
+  },
+  {
+   "ru": "кот / ко́шка",
+   "baca": "kot / KOSH-ka",
+   "id": "kucing jantan / betina"
+  },
+  {
+   "ru": "ничего́",
+   "baca": "ni-chi-VO",
+   "id": "tidak apa-apa"
+  },
+  {
+   "ru": "находи́ть / найти́",
+   "baca": "na-kha-DIT' / nay-TI",
+   "id": "menemukan"
+  },
+  {
+   "ru": "учи́тель",
+   "baca": "u-CHI-til'",
+   "id": "guru"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah kata dalam kurung jadi akusatif.",
+   "items": [
+    "Я чита́ю ____ (кни́га).",
+    "Я ви́жу ____ (брат).",
+    "Она́ купи́ла ____ (стол).",
+    "Мы зна́ем ____ (Серге́й).",
+    "Он лю́бит ____ (му́зыка).",
+    "Я ви́жу ____ (окно́)."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang tepat: berubah atau tidak berubah.",
+   "items": [
+    "Я ви́жу ____ (дом).",
+    "Я ви́жу ____ (врач).",
+    "Я ви́жу ____ (ко́шка).",
+    "Я ви́жу ____ (кот).",
+    "Я ви́жу ____ (мо́ре)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "кни́гу / чита́ю / я",
+    "Серге́я / ви́дела / я / вчера́",
+    "неде́лю / теря́ет / ка́ждую / ключи́ / она́",
+    "го́да / два / че́рез / бу́ду / учи́телем / я",
+    "наза́д / дня / два / прие́хал / он"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Rusia.",
+   "items": [
+    "Saya membaca koran.",
+    "Saya melihat Sergey.",
+    "Saya melihat mobil.",
+    "Dia (perempuan) kehilangan kunci tiap minggu.",
+    "Dua tahun lagi saya akan jadi guru.",
+    "Dua hari yang lalu dia datang."
+   ]
+  }
+ ],
+ "answers": [
+  "кни́гу — бра́та — стол — Серге́я — му́зыку — окно́",
+  "дом — врача́ — ко́шку — кота́ — мо́ре",
+  "Я чита́ю кни́гу. — Вчера́ я ви́дела Серге́я. — Она́ теря́ет ключи́ ка́ждую неде́лю. — Че́рез два го́да я бу́ду учи́телем. — Он прие́хал два дня наза́д.",
+  "Я чита́ю газе́ту. — Я ви́жу Серге́я. — Я ви́жу маши́ну. — Она́ теря́ет ключи́ ка́ждую неде́лю. — Че́рез два го́да я бу́ду учи́телем. — Два дня наза́д он прие́хал."
+ ]
+}
