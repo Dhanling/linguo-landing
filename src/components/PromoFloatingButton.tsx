@@ -23,7 +23,11 @@ import { usePromoMerdeka } from "@/components/PromoMerdeka";
 // Samakan dengan daftar di PromoTopBar — halaman ber-chrome sendiri dilewati.
 // [kuis-layar-bersih-v1] /kuis ikut: sticker ini TIDAK bisa ditutup, dan di layar
 // soal ia cuma menghalangi tombol navigasi tanpa pernah jadi klik.
-const EXCLUDED = ["/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis"];
+const EXCLUDED = [
+  // [life-dashboard-v1] /life = dashboard privat, tidak boleh kena overlay promo.
+  "/life",
+  "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
+];
 
 const POS_KEY = "linguo_promo_merdeka_pos";
 const EDGE = 8; // jarak minimum dari tepi layar

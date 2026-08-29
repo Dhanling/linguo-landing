@@ -23,7 +23,11 @@ import { formatCountdown, usePromoMerdeka } from "@/components/PromoMerdeka";
 // [kuis-layar-bersih-v1] /kuis ikut dilewati: halaman pengerjaan soal bukan tempat
 // jualan, dan bar promo yang mendorong seluruh halaman turun memakan ruang layar HP
 // yang justru dipakai membaca soal.
-const EXCLUDED = ["/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis"];
+const EXCLUDED = [
+  // [life-dashboard-v1] /life = dashboard privat, tidak boleh kena overlay promo.
+  "/life",
+  "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
+];
 
 export default function PromoTopBar() {
   const pathname = usePathname() || "/";
