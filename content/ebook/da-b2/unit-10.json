@@ -1,0 +1,193 @@
+{
+ "title": "Anak kalimat penjelas, koma, dan kalimat yang dibelah",
+ "title_target": "Det er hendes svigermor, jeg er mest nervøs for",
+ "goal": "Menyambungkan keterangan panjang ke sebuah kata benda, memilih satu dari dua sistem koma Denmark, dan membelah kalimat untuk menyorot satu bagiannya.",
+ "bekal": [
+  "memilih di antara *der*, *som*, *hvis*, *hvor*, dan *hvilket*",
+  "mengetahui perbedaan dua sistem koma Denmark dan memilih satu dengan sadar",
+  "memasang koma penutup, satu-satunya koma yang wajib di kedua sistem",
+  "membelah kalimat dengan *det er… der…* untuk menyorot satu bagian"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Køkkenbordet, to dage før et bryllup",
+   "intro": "Ole harus berpidato di pernikahan putrinya hari Sabtu. Kirsten, teman lamanya yang bekerja sebagai penyunting, membaca naskahnya. Perhatikan dua hal sekaligus: bagaimana keterangan panjang ditempelkan ke kata benda, dan betapa serius orang Denmark memperlakukan koma.",
+   "lines": [
+    { "speaker": "Ole:", "text": "Kan du læse den igennem? Det er den tale, jeg skal holde på lørdag.", "id": "Bisa kamu baca? Ini pidato yang harus kubacakan Sabtu.", "literal": "bisa kamu baca itu [igennem]? itu ada itu pidato, saya harus pegang pada Sabtu." },
+    { "speaker": "Kirsten:", "text": "Gerne. Hvem er det, der bliver gift — er det Louise?", "id": "Boleh. Siapa yang menikah — Louise?", "literal": "senang. siapa ada itu, [der] jadi menikah — ada itu Louise?" },
+    { "speaker": "Ole:", "text": "Ja. Og det er hendes svigermor, jeg er mest nervøs for.", "id": "Iya. Dan yang paling bikin aku gugup itu ibu mertuanya.", "literal": "ya. dan itu ada dia ibu-mertua, saya ada paling gugup untuk." },
+    { "speaker": "Kirsten:", "text": "Her står der \"min datter som bor i Aarhus\". Der mangler et komma.", "id": "Di sini tertulis \"putriku yang tinggal di Aarhus\". Kurang koma.", "literal": "sini berdiri [der] \"saya anak-perempuan yang tinggal di Aarhus\". [der] kurang satu koma." },
+    { "speaker": "Ole:", "text": "Skal der altid det? Jeg troede, man var holdt op med det.", "id": "Selalu harus ya? Kukira orang sudah tidak pakai lagi.", "literal": "harus [der] selalu itu? saya kira-dulu, orang ada-dulu berhenti dengan itu." },
+    { "speaker": "Kirsten:", "text": "Der findes to systemer. Vælger du det traditionelle, sætter du komma foran alle ledsætninger.", "id": "Ada dua sistem. Kalau kamu pilih yang tradisional, kamu pasang koma di depan tiap anak kalimat.", "literal": "[der] ditemukan dua sistem. pilih kamu itu tradisional, pasang kamu koma di-depan semua anak-kalimat." },
+    { "speaker": "Ole:", "text": "Og det nye?", "id": "Kalau yang baru?", "literal": "dan itu baru?" },
+    { "speaker": "Kirsten:", "text": "Så dropper du kommaet foran, men du skal stadig lukke sætningen bagefter.", "id": "Kamu buang koma pembukanya, tapi tetap harus menutup anak kalimatnya.", "literal": "lalu buang kamu koma-nya di-depan, tapi kamu harus masih menutup kalimat-nya sesudah-itu." },
+    { "speaker": "Ole:", "text": "Så \"min datter, som bor i Aarhus, kommer fredag\" — det sidste komma er der altid?", "id": "Jadi \"putriku, yang tinggal di Aarhus, datang Jumat\" — koma terakhir itu selalu ada?", "literal": "lalu \"saya anak-perempuan, yang tinggal di Aarhus, datang Jumat\" — itu terakhir koma ada [der] selalu?" },
+    { "speaker": "Kirsten:", "text": "Altid. Og det er netop det, folk oftest glemmer.", "id": "Selalu. Dan justru itu yang paling sering orang lupakan.", "literal": "selalu. dan itu ada tepat itu, orang paling-sering melupakan." },
+    { "speaker": "Ole:", "text": "Hvad med \"det, der betyder mest for mig\"?", "id": "Kalau \"hal yang paling berarti buatku\"?", "literal": "apa dengan \"itu, [der] berarti paling untuk saya\"?" },
+    { "speaker": "Kirsten:", "text": "Med nyt komma hedder det \"det der betyder mest\". Vælg ét system, og bliv ved det.", "id": "Dengan koma baru jadinya \"det der betyder mest\". Pilih satu sistem, dan tetap di situ.", "literal": "dengan baru koma bernama itu \"itu [der] berarti paling\". pilih satu sistem, dan tinggal pada itu." },
+    { "speaker": "Ole:", "text": "Jeg skriver, som jeg taler. Det er nok problemet.", "id": "Aku menulis seperti aku bicara. Mungkin itu masalahnya.", "literal": "saya menulis, seperti saya berbicara. itu ada [nok] masalah-nya." },
+    { "speaker": "Kirsten:", "text": "Det er faktisk styrken. Men en tale, som ingen kan følge, hjælper ikke.", "id": "Justru itu kekuatannya. Tapi pidato yang tidak bisa diikuti siapa pun tidak menolong.", "literal": "itu ada nyatanya kekuatan-nya. tapi satu pidato, yang tak-seorang-pun bisa ikuti, menolong tidak." },
+    { "speaker": "Ole:", "text": "Skal jeg stryge det afsnit, hvor jeg citerer hendes farfar?", "id": "Perlu kuhapus bagian tempat aku mengutip kakeknya?", "literal": "harus saya coret itu bagian, di-mana saya mengutip dia kakek?" },
+    { "speaker": "Kirsten:", "text": "Nej, behold det. Det er det bedste i hele talen.", "id": "Jangan, simpan. Itu bagian terbaik di seluruh pidatonya.", "literal": "tidak, simpan itu. itu ada itu terbaik di seluruh pidato-nya." },
+    { "speaker": "Ole:", "text": "Så mangler jeg kun slutningen, hvilket jo altid er det sværeste.", "id": "Berarti tinggal penutupnya, yang memang selalu paling sulit.", "literal": "lalu kurang saya cuma penutup-nya, yang-mana [jo] selalu ada itu tersulit." }
+   ],
+   "notes": [
+    { "text": "**Baris 1, 2, dan 3: tiga kalimat yang dibelah.** *Det er den tale, jeg skal holde*, *Hvem er det, der bliver gift*, *Det er hendes svigermor, jeg er mest nervøs for*. Susunan *det er X, der/som…* adalah cara bahasa Denmark menyorot satu bagian kalimat, dan ia dipakai jauh lebih sering daripada padanannya dalam bahasa Indonesia. Kita menyorot dengan urutan dan penekanan suara (\"ibu mertuanya-lah yang…\"), bahasa Denmark menyorot dengan membelah kalimatnya jadi dua." },
+    { "text": "**Baris 6 sampai 12: dua sistem koma, dan ini bukan lelucon.** Bahasa Denmark punya dua sistem koma yang **dua-duanya resmi**, dan perbedaannya cuma satu: apakah kamu memasang koma **di depan** anak kalimat. *Grammatisk komma* memasangnya selalu; *nyt komma* membuangnya. Yang **tidak boleh** dalam sistem mana pun adalah mencampur keduanya dalam satu tulisan — dan itulah kesalahan yang paling cepat terlihat oleh pembaca Denmark." },
+    { "text": "**Baris 8 dan 9: koma penutup wajib di kedua sistem.** Kalau anak kalimatnya **disisipkan di tengah**, ia harus ditutup: *min datter, som bor i Aarhus**,** kommer fredag*. Membuang koma kedua adalah kesalahan yang benar-benar salah, bukan pilihan gaya. Ini juga kesalahan yang paling sering dilakukan orang Denmark sendiri." },
+    { "text": "**Baris 4 dan 14: *som* melawan *der* sekali lagi.** Dua-duanya menggantikan subjek, dan di posisi ini boleh dipilih bebas — tetapi *der* sedikit lebih lisan dan tak pernah bisa dipakai kalau yang digantikan **bukan** subjek. Di baris 14, *som ingen kan følge*, yang digantikan adalah objek, jadi *der* dilarang di situ." },
+    { "text": "**Baris 15: *hvor* untuk tempat, juga tempat kiasan.** *det afsnit, **hvor** jeg citerer…* — \"bagian tempat aku mengutip\". Bahasa Denmark memakai *hvor* jauh lebih longgar daripada \"tempat\" dalam bahasa Indonesia: *det år, hvor vi flyttede*, *den situation, hvor man skal vælge*. Alternatif resminya *hvori*, *hvorved*, yang sudah kamu temui di unit 9." },
+    { "text": "**Baris 17: *hvilket* menunjuk seluruh kalimat.** *…, **hvilket** jo altid er det sværeste* — yang dirujuk bukan sebuah kata benda melainkan seluruh isi kalimat sebelumnya. Ini satu-satunya pekerjaan *hvilket* di bahasa Denmark modern, dan ia selalu didahului koma. Padanan lisannya: *…, og det er jo altid det sværeste*." }
+   ],
+   "grammars": [
+    {
+     "title": "Enam penghubung, satu tabel",
+     "body": [
+      "Yang memutuskan bukan artinya, melainkan **peran** kata yang digantikan di dalam anak kalimatnya. Tabel ini adalah lanjutan dari kotak di unit 7, sekarang dengan ragamnya."
+     ],
+     "table": {
+      "head": ["Bentuk", "Menggantikan", "Contoh", "Ragam"],
+      "rows": [
+       ["der", "subjek", "manden, **der** ringede", "lisan & tulis"],
+       ["som", "subjek atau objek", "manden, **som** ringede", "netral"],
+       ["(kosong)", "objek", "filen (**som**) jeg sendte", "lisan"],
+       ["som + preposisi di ujung", "objek preposisi", "huset, **som** vi bor **i**", "lisan"],
+       ["hvori, hvorpå, hvorom", "objek preposisi", "huset, **hvori** vi bor", "surat resmi"],
+       ["hvis", "milik", "en kollega, **hvis** navn jeg glemte", "tulis"],
+       ["hvor", "tempat, waktu, keadaan", "det år, **hvor** vi flyttede", "netral"],
+       ["hvilket", "seluruh kalimat sebelumnya", "Han kom for sent, **hvilket** var uheldigt.", "tulis"]
+      ]
+     }
+    },
+    {
+     "title": "Dua sistem koma — dan yang sama di keduanya",
+     "body": [
+      "Dansk Sprognævn mengizinkan dua sistem. Pilih satu, tulis seluruh dokumen dengannya, dan jangan pernah mencampur. Sekolah Denmark mengajarkan *nyt komma*; koran dan penerbit sebagian besar memakai *grammatisk komma*.",
+      "⚠️ Yang **wajib di kedua sistem**: koma penutup pada anak kalimat yang disisipkan, koma di antara dua kalimat induk yang disambung *men*, dan koma pada perincian. Kalau kamu cuma mau mengingat satu hal dari unit ini, ingat koma penutupnya."
+     ],
+     "table": {
+      "head": ["Kalimat", "Grammatisk komma", "Nyt komma"],
+      "rows": [
+       ["Jeg tror at han kommer.", "Jeg tror**,** at han kommer.", "Jeg tror at han kommer."],
+       ["den tale jeg skal holde", "den tale**,** jeg skal holde", "den tale jeg skal holde"],
+       ["disisipkan di tengah", "min datter**,** som bor i Aarhus**,** kommer.", "min datter som bor i Aarhus**,** kommer."],
+       ["Han kom men han blev ikke længe.", "…kom**,** men han blev…", "…kom**,** men han blev…"],
+       ["perincian", "kaffe**,** te og vand", "kaffe**,** te og vand"],
+       ["dua kalimat induk + og", "Jeg ringer**,** og du skriver.", "Jeg ringer**,** og du skriver."],
+       ["anak kalimat di depan", "Hvis du kommer**,** ringer jeg.", "Hvis du kommer**,** ringer jeg."],
+       ["hvilket", "…for sent**,** hvilket var uheldigt.", "…for sent**,** hvilket var uheldigt."]
+      ]
+     }
+    },
+    {
+     "title": "Membelah kalimat: tabel rujukan",
+     "body": [
+      "Bahasa Denmark sangat sering membelah kalimat menjadi *det er X, der/som Y*. Bagian yang disorot pindah ke tengah, sisanya turun jadi anak kalimat. Pilihan *der* atau *som* mengikuti aturan yang sama: *der* kalau yang disorot adalah subjek."
+     ],
+     "table": {
+      "head": ["Kalimat biasa", "Dibelah", "Yang disorot"],
+      "rows": [
+       ["Louise bliver gift.", "Det er **Louise**, der bliver gift.", "siapa"],
+       ["Jeg er nervøs for svigermoren.", "Det er **svigermoren**, jeg er nervøs for.", "untuk siapa"],
+       ["Vi flyttede i 2019.", "Det var **i 2019**, vi flyttede.", "kapan"],
+       ["Han ringede i går.", "Det var **i går**, han ringede.", "kapan"],
+       ["Hun sagde det på mødet.", "Det var **på mødet**, hun sagde det.", "di mana"],
+       ["Derfor kom jeg.", "Det var **derfor**, jeg kom.", "kenapa"],
+       ["pertanyaan", "**Hvem** er det, der ringede?", "siapa"],
+       ["penyangkalan", "Det er ikke **mig**, der har sagt det.", "bukan aku"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Festtale: pidato di meja makan Denmark",
+   "blocks": [
+    { "type": "p", "text": "Pesta Denmark — pernikahan, ulang tahun bulat, pemakaman, bahkan makan malam biasa — dibangun di atas pidato. Ia bukan hiburan tambahan melainkan bentuk acaranya sendiri, dan tamu diharapkan mendengarkan penuh, tidak menyentuh makanan selama pidato berlangsung, lalu mengetuk gelas untuk pidato berikutnya." },
+    { "type": "tabel", "head": ["Dansk", "Cara baca", "Arti"], "rows": [
+     ["en tale", "TA-le", "pidato"],
+     ["en toastmaster", "TOAST-mas-da", "pemandu acara pidato"],
+     ["at holde tale", "HOL-e TA-le", "berpidato"],
+     ["skål!", "skol", "bersulang!"],
+     ["et bryllup", "BRÜ-lob", "pernikahan"],
+     ["en svigermor", "SVI-a-mor", "ibu mertua"],
+     ["en festsang", "FÈST-sang", "lagu pesta bertulis sendiri"],
+     ["tak for mad", "tak for madh", "terima kasih atas makanannya"],
+     ["et afsnit", "AU-snit", "paragraf, bagian"],
+     ["en slutning", "SLUT-ning", "penutup"]
+    ]},
+    { "type": "p", "text": "Satu kebiasaan yang mengagetkan tamu asing: **festsang**. Seseorang menulis lirik baru untuk lagu yang semua orang tahu, mencetaknya, dan seluruh meja menyanyikannya bersama. Tidak ada yang menganggapnya memalukan, dan menolak ikut menyanyi jauh lebih aneh daripada menyanyi dengan sumbang." },
+    { "type": "kotak", "title": "Bentuk baku pidato pendek Denmark", "items": [
+     "**Buka dengan satu kejadian nyata, bukan dengan pujian.** *Da Louise var seks, besluttede hun at…* Orang Denmark curiga pada pujian umum; cerita kecil yang benar jauh lebih dipercaya.",
+     "**Jangan memuji berlebihan.** *Hun er verdens bedste datter* terdengar berlebihan dan sedikit memalukan. *Hun er et menneske, man kan regne med* jauh lebih kuat di telinga Denmark. Ini Janteloven di meja makan — lihat unit 21.",
+     "**Empat sampai lima menit.** Pidato panjang di Denmark bukan tanda kehormatan melainkan tanda tidak siap.",
+     "**Tutup dengan ajakan bersulang.** *Vil I ikke rejse jer og skåle med mig for Louise og Emil?* Kalimat penutup ini nyaris tetap bentuknya, dan boleh kamu hafal apa adanya."
+    ]},
+    { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 8", "items": [
+     "Ambil dialog unit 8 dan belah lima kalimatnya: *Det er studieordningen, jeg har gennemgået.* Perhatikan bagian mana yang jadi tersorot, dan apakah itu memang yang ingin kamu sorot.",
+     "Lalu tulis ulang satu paragraf apa pun dari unit itu dua kali — sekali dengan *grammatisk komma*, sekali dengan *nyt komma*. Pilih yang mana pun yang kamu suka, lalu pakai terus di seluruh sisa modul ini."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "en tale", "baca": "TA-le", "id": "pidato" },
+  { "da": "at blive gift", "baca": "bli gift", "id": "menikah" },
+  { "da": "nervøs for", "baca": "nèa-VÖS for", "id": "gugup karena" },
+  { "da": "at mangle", "baca": "MANG-le", "id": "kurang, tidak ada" },
+  { "da": "et komma", "baca": "KO-ma", "id": "koma" },
+  { "da": "at tro", "baca": "troh", "id": "mengira, percaya" },
+  { "da": "et system", "baca": "sü-STEHM", "id": "sistem" },
+  { "da": "at vælge", "baca": "VÈL-e", "id": "memilih" },
+  { "da": "en ledsætning", "baca": "LÈDH-sèt-ning", "id": "anak kalimat" },
+  { "da": "at droppe", "baca": "DRO-be", "id": "membuang, meniadakan" },
+  { "da": "oftest", "baca": "OF-dest", "id": "paling sering" },
+  { "da": "at betyde", "baca": "be-TÜ-dhe", "id": "berarti" },
+  { "da": "en styrke", "baca": "STÜR-ge", "id": "kekuatan" },
+  { "da": "at følge", "baca": "FÖL-e", "id": "mengikuti" },
+  { "da": "at stryge", "baca": "STRÜ-e", "id": "mencoret, menghapus" },
+  { "da": "et afsnit", "baca": "AU-snit", "id": "bagian, paragraf" },
+  { "da": "at citere", "baca": "si-TEA-a", "id": "mengutip" },
+  { "da": "at beholde", "baca": "be-HOL-e", "id": "menyimpan, mempertahankan" },
+  { "da": "en slutning", "baca": "SLUT-ning", "id": "penutup" },
+  { "da": "svær", "baca": "svèa", "id": "sulit" }
+ ],
+ "exercises": [
+  { "prompt": "Isi dengan *der*, *som*, *hvis*, *hvor*, atau *hvilket*.", "items": [
+   "Det er den tale, ____ jeg skal holde på lørdag.",
+   "En kollega, ____ navn jeg har glemt, ringede i går.",
+   "Det år, ____ vi flyttede, var det koldeste i ti år.",
+   "Han kom en time for sent, ____ ingen kommenterede.",
+   "Manden, ____ bor på fjerde, er vicevært."
+  ]},
+  { "prompt": "Pasang koma penutup di tempat yang hilang.", "items": [
+   "Min datter som bor i Aarhus kommer på fredag.",
+   "Den løsning som vi blev enige om virker ikke.",
+   "Hvis du kommer i morgen ringer jeg til dig.",
+   "Talen som han holdt sidste år var kortere.",
+   "Filen som jeg sendte i går er væk."
+  ]},
+  { "prompt": "Belah kalimatnya sehingga bagian bercetak tebal tersorot.", "items": [
+   "**Louise** bliver gift på lørdag.",
+   "Jeg er mest nervøs for **svigermoren**.",
+   "Vi flyttede til Aarhus **i 2019**.",
+   "Hun sagde det **på mødet**.",
+   "**Derfor** ringede jeg til dig."
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Denmark.", "items": [
+   "Ini pidato yang harus kubacakan Sabtu.",
+   "Siapa yang menikah?",
+   "Pidato yang tidak bisa diikuti siapa pun tidak menolong.",
+   "Perlu kuhapus bagian tempat aku mengutip kakeknya?",
+   "Tinggal penutupnya, yang memang selalu paling sulit."
+  ]}
+ ],
+ "answers": [
+  "som — hvis — hvor — hvilket — der",
+  "Min datter som bor i Aarhus, kommer på fredag. — Den løsning som vi blev enige om, virker ikke. — Hvis du kommer i morgen, ringer jeg til dig. — Talen som han holdt sidste år, var kortere. — Filen som jeg sendte i går, er væk.",
+  "Det er Louise, der bliver gift på lørdag. — Det er svigermoren, jeg er mest nervøs for. — Det var i 2019, vi flyttede til Aarhus. — Det var på mødet, hun sagde det. — Det var derfor, jeg ringede til dig.",
+  "Det er den tale, jeg skal holde på lørdag. — Hvem er det, der bliver gift? — En tale, som ingen kan følge, hjælper ikke. — Skal jeg stryge det afsnit, hvor jeg citerer hendes farfar? — Så mangler jeg kun slutningen, hvilket jo altid er det sværeste."
+ ]
+}

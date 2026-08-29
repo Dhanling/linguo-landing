@@ -1,0 +1,192 @@
+{
+ "title": "Kalimat tak langsung dan cara menyebut sumber",
+ "title_target": "Han skal efter sigende have sagt det på mødet",
+ "goal": "Melaporkan ucapan orang lain dengan bentuk yang tepat, dan menandai seberapa jauh kamu sendiri berdiri di belakang kabar itu.",
+ "bekal": [
+  "mengubah ucapan langsung jadi anak kalimat *at*, *om*, dan bentuk dasar",
+  "menggeser waktu kata kerjanya — dan tahu kapan penggeseran itu boleh dilewati",
+  "memakai *skulle* dan *ville* sebagai penanda kabar yang belum kamu pastikan",
+  "memilih di antara *ifølge*, *efter sigende*, *angiveligt*, dan *efter hvad jeg har hørt*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kantinen, kvart over tolv",
+   "intro": "Yasmin dan Peter makan siang di kantin kantor. Sebuah kabar tentang penataan ulang organisasi sedang berjalan dari meja ke meja. Perhatikan bahwa hampir tak ada kalimat di dialog ini yang merupakan ucapan penuturnya sendiri — semuanya kabar dari orang lain, dan bahasa Denmark punya tanda tersendiri untuk itu.",
+   "lines": [
+    { "speaker": "Yasmin:", "text": "Har du hørt, hvad Henrik sagde på mødet i går?", "id": "Kamu sudah dengar apa yang Henrik bilang di rapat kemarin?", "literal": "punya kamu didengar, apa Henrik bilang-dulu pada rapat-nya kemarin?" },
+    { "speaker": "Peter:", "text": "Nej, jeg var på kursus. Sagde han noget om omstruktureringen?", "id": "Belum, aku ikut pelatihan. Dia bilang sesuatu soal restrukturisasinya?", "literal": "tidak, saya ada-dulu pada kursus. bilang-dulu dia sesuatu tentang restrukturisasi-nya?" },
+    { "speaker": "Yasmin:", "text": "Han sagde, at der ikke bliver afskedigelser i år.", "id": "Dia bilang tahun ini tidak akan ada pemecatan.", "literal": "dia bilang-dulu, bahwa [der] tidak jadi pemecatan-pemecatan di tahun." },
+    { "speaker": "Peter:", "text": "Sagde han det direkte, eller sagde han, at han ikke forventede det?", "id": "Dia bilang begitu langsung, atau bilang dia tidak memperkirakannya?", "literal": "bilang-dulu dia itu langsung, atau bilang-dulu dia, bahwa dia tidak memperkirakan-dulu itu?" },
+    { "speaker": "Yasmin:", "text": "Godt spørgsmål. Ordret sagde han: \"Der er ingen planer om afskedigelser.\"", "id": "Pertanyaan bagus. Persisnya dia bilang: \"Tidak ada rencana pemecatan.\"", "literal": "bagus pertanyaan. kata-per-kata bilang-dulu dia: \"[der] ada tidak-ada rencana tentang pemecatan-pemecatan.\"" },
+    { "speaker": "Peter:", "text": "Nå. Det er noget helt andet end at love, at der ikke kommer nogen.", "id": "Oh. Itu lain sekali dengan berjanji tidak akan ada.", "literal": "nah. itu ada sesuatu sepenuhnya lain daripada [at] berjanji, bahwa [der] tidak datang seorang-pun." },
+    { "speaker": "Yasmin:", "text": "Præcis. Og Mette mener, at ledelsen venter til efter regnskabet.", "id": "Persis. Dan Mette berpendapat manajemen menunggu sampai laporan keuangan keluar.", "literal": "persis. dan Mette berpendapat, bahwa pimpinan-nya menunggu sampai sesudah laporan-keuangan-nya." },
+    { "speaker": "Peter:", "text": "Hun skal efter sigende have talt med en fra HR.", "id": "Katanya dia sudah bicara dengan orang HR.", "literal": "dia harus menurut kabar punya berbicara dengan seorang dari HR." },
+    { "speaker": "Yasmin:", "text": "Det har jeg også hørt. Men jeg ved ikke, om det passer.", "id": "Aku juga dengar itu. Tapi aku tidak tahu apakah itu benar.", "literal": "itu punya saya juga didengar. tapi saya tahu tidak, apakah itu cocok." },
+    { "speaker": "Peter:", "text": "Ifølge referatet blev der slet ikke talt om afdelingen.", "id": "Menurut notulennya, divisi itu sama sekali tidak dibahas.", "literal": "menurut notulen-nya jadi-dulu [der] sama-sekali tidak dibicarakan tentang divisi-nya." },
+    { "speaker": "Yasmin:", "text": "Referater er jo heller ikke ordrette.", "id": "Notulen kan memang tidak kata per kata.", "literal": "notulen-notulen ada [jo] juga-tidak kata-per-kata." },
+    { "speaker": "Peter:", "text": "Nej. Han bad os i øvrigt om at holde det internt.", "id": "Betul. Ngomong-ngomong dia minta kita menjaga ini di dalam.", "literal": "tidak. dia minta-dulu kami ngomong-ngomong tentang [at] menjaga itu internal." },
+    { "speaker": "Yasmin:", "text": "Det sagde han også sidste år. Så stod det i Børsen ugen efter.", "id": "Tahun lalu dia juga bilang begitu. Minggu berikutnya beritanya di Børsen.", "literal": "itu bilang-dulu dia juga terakhir tahun. lalu berdiri-dulu itu di Børsen minggu-nya sesudah." },
+    { "speaker": "Peter:", "text": "Angiveligt fra en kilde tæt på ledelsen, ja.", "id": "Katanya dari sumber dekat manajemen, iya.", "literal": "menurut-pengakuan dari satu sumber dekat pada pimpinan-nya, ya." },
+    { "speaker": "Yasmin:", "text": "Jeg spurgte Henrik bagefter, om det gjaldt hele huset.", "id": "Habis itu aku tanya Henrik apakah itu berlaku untuk seluruh kantor.", "literal": "saya tanya-dulu Henrik sesudah-itu, apakah itu berlaku-dulu seluruh rumah-nya." },
+    { "speaker": "Peter:", "text": "Og hvad svarede han?", "id": "Dan dia jawab apa?", "literal": "dan apa jawab-dulu dia?" },
+    { "speaker": "Yasmin:", "text": "At han vendte tilbage. Det er nu tre uger siden.", "id": "Bahwa dia akan mengabari. Itu tiga minggu lalu.", "literal": "bahwa dia balik-dulu kembali. itu ada [nu] tiga minggu sejak." }
+   ],
+   "notes": [
+    { "text": "**Baris 8: *Hun skal efter sigende have talt med…*.** Modalverbum *skal* di sini tak ada hubungannya dengan kewajiban. Ia menandai **kabar yang bukan berasal dari penuturnya sendiri**: \"katanya dia…\". Bandingkan *hun **skal** være meget dygtig* (\"katanya dia hebat\") dengan *hun **vil** have talt med ham*, yang berarti \"dia mengaku sudah bicara dengannya\" — *ville* menyebut sumbernya sebagai orang itu sendiri, sering dengan nada ragu." },
+    { "text": "**Baris 3, 4, dan 7: penggeseran waktu yang tidak wajib.** Bahasa Denmark boleh menggeser waktu (*han sagde, at han ikke **forventede** det*) dan boleh membiarkannya (*Mette mener, at ledelsen **venter***). Aturan praktisnya: kalau kabarnya masih berlaku sekarang, biarkan; kalau kamu ingin menjauhkan diri darinya, geser. Bahasa Inggris jauh lebih ketat di sini, jadi pelajar yang datang lewat bahasa Inggris cenderung menggeser terlalu banyak." },
+    { "text": "**Baris 15 dan 17: *om* dan *at* sebagai jawaban.** *Jeg spurgte…, **om** det gjaldt* — pertanyaan yang dilaporkan selalu memakai *om*, tak pernah *hvis*. Dan baris 17 memperlihatkan kebiasaan lisan yang khas: menjawab pertanyaan dengan anak kalimat *at* yang berdiri sendiri (*At han vendte tilbage.*), seolah kalimat induknya sudah jelas dari pertanyaannya." },
+    { "text": "**Baris 12: *Han bad os om at holde det internt*.** Perintah yang dilaporkan tidak memakai *at*-sætning melainkan **bentuk dasar**: *bede nogen **om at** gøre noget*. Saudaranya: *han foreslog **at** vente*, *han lovede **at** ringe*, *han nægtede **at** svare*. Bandingkan dengan *han sagde, **at** vi skulle holde det internt*, yang juga benar dan sedikit lebih lunak." },
+    { "text": "**Baris 5: *Ordret sagde han: \"…\"*.** Kutipan langsung dalam bahasa Denmark memakai tanda kutip berbentuk \"…\" dan kata kerja pengantar boleh berdiri sesudah kutipannya dengan susunan terbalik: *\"Det passer ikke,\" **sagde han***. Perhatikan koma di dalam kutipan sebelum tanda kutip penutup — kebiasaan tanda baca Denmark, bukan titik." },
+    { "text": "**Baris 10, 14, dan 8: tiga tingkat jarak.** *Ifølge referatet* = sumber yang bisa diperiksa siapa pun. *Angiveligt* = ada yang mengaku begitu, aku tidak menjaminnya. *Efter sigende* = beredar sebagai kabar. Di tulisan berita ketiganya dipakai dengan sangat sadar, dan memilih yang salah bisa berarti perkara hukum — itulah sebabnya bahasa Denmark punya begitu banyak penanda semacam ini." }
+   ],
+   "grammars": [
+    {
+     "title": "Empat cara melaporkan ucapan",
+     "body": [
+      "Bentuk kalimat yang dilaporkan bergantung pada **jenis ucapannya** — berita, pertanyaan, perintah, atau tawaran — bukan pada kata kerja pengantarnya."
+     ],
+     "table": {
+      "head": ["Ucapan asli", "Jenis", "Bentuk laporan"],
+      "rows": [
+       ["\"Jeg kommer i morgen.\"", "berita", "Han sagde, **at** han kom i morgen."],
+       ["\"Kommer du i morgen?\"", "pertanyaan ya/tidak", "Han spurgte, **om** jeg kom."],
+       ["\"Hvornår kommer du?\"", "pertanyaan berkata tanya", "Han spurgte, **hvornår** jeg kom."],
+       ["\"Ring til mig!\"", "perintah", "Han bad mig **om at** ringe."],
+       ["\"Ring til mig!\" (lunak)", "perintah", "Han sagde, at jeg **skulle** ringe."],
+       ["\"Skal vi mødes?\"", "tawaran", "Han foreslog, at vi **mødtes**."],
+       ["\"Det gør jeg ikke.\"", "penolakan", "Han nægtede **at** gøre det."],
+       ["\"Jeg ringer i morgen.\"", "janji", "Han lovede **at** ringe."]
+      ]
+     }
+    },
+    {
+     "title": "Penggeseran waktu: kapan wajib, kapan tidak",
+     "body": [
+      "Denmark lebih longgar daripada bahasa Inggris. Yang menentukan bukan kata kerja pengantarnya melainkan **apakah isi kabarnya masih berlaku**.",
+      "⚠️ Satu hal yang wajib berubah: kata ganti orang dan kata penunjuk waktu-tempat. *\"Jeg kommer **i morgen**\"* dilaporkan hari berikutnya jadi *…at han kom **i dag***, dan *her* jadi *der*."
+     ],
+     "table": {
+      "head": ["Ucapan asli", "Masih berlaku", "Sudah lewat"],
+      "rows": [
+       ["Jeg er syg.", "…at han **er** syg.", "…at han **var** syg."],
+       ["Jeg kommer i morgen.", "…at han **kommer**.", "…at han **kom**."],
+       ["Jeg har ringet.", "…at han **har** ringet.", "…at han **havde** ringet."],
+       ["Jeg vil hjælpe.", "…at han **vil** hjælpe.", "…at han **ville** hjælpe."],
+       ["Jeg kan ikke.", "…at han **ikke kan**.", "…at han **ikke kunne**."],
+       ["Det bliver dyrt.", "…at det **bliver** dyrt.", "…at det **blev** dyrt."],
+       ["Jeg skal til møde.", "…at han **skal** til møde.", "…at han **skulle** til møde."],
+       ["Jeg ringer i morgen.", "…at han **ringer**.", "…at han **ringede**."]
+      ]
+     }
+    },
+    {
+     "title": "Menandai sumber: tabel rujukan",
+     "body": [
+      "Urutannya dari yang paling kuat menjaminmu sampai yang paling menjauhkanmu dari kabarnya. Di berita Denmark, memilih di baris mana kamu berdiri adalah keputusan sadar."
+     ],
+     "table": {
+      "head": ["Penanda", "Contoh", "Seberapa jauh kamu berdiri"],
+      "rows": [
+       ["Ifølge X", "**Ifølge** referatet blev det ikke nævnt.", "sumber terbuka, bisa diperiksa"],
+       ["X oplyser, at…", "Politiet **oplyser**, at…", "keterangan resmi"],
+       ["X siger, at…", "Hun **siger**, at det passer.", "netral"],
+       ["Efter hvad jeg har hørt", "**Efter hvad jeg har hørt**, stopper han.", "kabar yang kudengar sendiri"],
+       ["Efter sigende", "Han stopper **efter sigende** til sommer.", "beredar sebagai kabar"],
+       ["Angiveligt", "**Angiveligt** var der uenighed.", "ada yang mengaku begitu"],
+       ["skal + have + III", "Hun **skal have** talt med HR.", "katanya — tanpa menyebut siapa"],
+       ["vil + have + III", "Han **vil have** advaret dem.", "dia sendiri mengaku begitu"]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kantor, organisasi, dan kabar yang berjalan di lorong",
+   "blocks": [
+    { "type": "p", "text": "Kosakata perubahan organisasi adalah bagian bahasa Denmark yang paling cepat kamu butuhkan begitu bekerja di sana — dan paling jarang muncul di buku pelajaran, karena ia berada di antara bahasa resmi dan bahasa kantin." },
+    { "type": "tabel", "head": ["Dansk", "Cara baca", "Arti"], "rows": [
+     ["en omstrukturering", "OM-strok-tu-re-ring", "restrukturisasi"],
+     ["en afskedigelse", "AU-skè-dhi-el-se", "pemutusan hubungan kerja"],
+     ["en fyringsrunde", "FÜ-rings-ron-ne", "gelombang pemecatan (lisan)"],
+     ["ledelsen", "LÈ-dhel-sen", "manajemen, pimpinan"],
+     ["en medarbejder", "MEDH-ar-bai-da", "karyawan"],
+     ["tillidsrepræsentant", "ti-LIDHS-re-pre-sen-tant", "wakil karyawan di serikat"],
+     ["et regnskab", "RAIN-skab", "laporan keuangan"],
+     ["en afdeling", "AU-dai-ling", "divisi, bagian"],
+     ["internt", "in-TÈRNT", "di dalam saja, tidak untuk keluar"],
+     ["en kilde", "KIL-e", "sumber"]
+    ]},
+    { "type": "p", "text": "Satu lembaga yang perlu kamu kenal: **tillidsrepræsentant**, sering disingkat *TR*. Ia karyawan biasa yang dipilih rekan-rekannya untuk mewakili mereka berhadapan dengan manajemen. Di Denmark, sekitar dua pertiga pekerja adalah anggota serikat, dan *TR* adalah orang pertama yang dihubungi kalau ada masalah — bukan HR, yang bekerja untuk perusahaan." },
+    { "type": "kotak", "title": "Menyampaikan kabar yang belum pasti tanpa ikut bertanggung jawab", "items": [
+     "**Sebut sumbernya lebih dulu, isinya belakangan.** *Efter hvad jeg har hørt, stopper han til sommer* terdengar jauh lebih hati-hati daripada *Han stopper til sommer — det har jeg hørt.*",
+     "**Pisahkan yang kamu dengar dari yang kamu simpulkan.** *Hun sagde, at der ikke er planer* (yang dikatakan) bukan hal yang sama dengan *Hun lovede, at der ikke kommer afskedigelser* (yang kamu simpulkan). Di Denmark perbedaan itu diperhatikan, dan menukarnya bisa berbalik kepadamu.",
+     "**Kalau kamu tidak yakin, katakan.** *Det ved jeg ikke, om passer* adalah kalimat yang sangat sering diucapkan dan sama sekali tidak melemahkan posisimu — justru sebaliknya."
+    ]},
+    { "type": "kotak", "title": "Ulangan berjenjang — kembali ke unit 3", "items": [
+     "Ambil dialog unit 3 dan laporkan seluruhnya kepada orang ketiga: *Camilla spurgte, om Anders kunne tage hendes vagt. Han sagde, at han egentlig skulle hente sin datter…*",
+     "Perhatikan berapa banyak nada yang hilang begitu dilaporkan. Semua *lige*, *bare*, dan *godt* menguap. Itu bukan kebetulan: kata-kata kecil itu milik percakapan langsung, dan unit berikutnya seluruhnya tentang mereka."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "da": "et møde", "baca": "MÖ-dhe", "id": "rapat" },
+  { "da": "et kursus", "baca": "KOR-sos", "id": "pelatihan, kursus" },
+  { "da": "en afskedigelse", "baca": "AU-skè-dhi-el-se", "id": "pemecatan" },
+  { "da": "direkte", "baca": "di-RÈK-de", "id": "langsung" },
+  { "da": "at forvente", "baca": "for-VÈN-de", "id": "memperkirakan" },
+  { "da": "ordret", "baca": "OR-rèt", "id": "kata per kata" },
+  { "da": "at love", "baca": "LO-we", "id": "berjanji" },
+  { "da": "at mene", "baca": "MEH-ne", "id": "berpendapat" },
+  { "da": "ledelsen", "baca": "LÈ-dhel-sen", "id": "manajemen" },
+  { "da": "efter sigende", "baca": "ÈF-da SI-en-ne", "id": "menurut kabar" },
+  { "da": "at passe", "baca": "PA-se", "id": "benar, cocok" },
+  { "da": "ifølge", "baca": "i-FÖL-e", "id": "menurut" },
+  { "da": "et referat", "baca": "re-fe-RAT", "id": "notulen" },
+  { "da": "slet ikke", "baca": "slèt I-ge", "id": "sama sekali tidak" },
+  { "da": "at bede om", "baca": "BEH-dhe om", "id": "meminta" },
+  { "da": "i øvrigt", "baca": "i ÖV-rit", "id": "ngomong-ngomong" },
+  { "da": "angiveligt", "baca": "an-GI-ve-lit", "id": "konon, menurut pengakuan" },
+  { "da": "en kilde", "baca": "KIL-e", "id": "sumber" },
+  { "da": "at gælde", "baca": "GÈL-e", "id": "berlaku" },
+  { "da": "bagefter", "baca": "BA-èf-da", "id": "sesudahnya" }
+ ],
+ "exercises": [
+  { "prompt": "Laporkan ucapan berikut. Pertahankan waktunya kalau kabarnya masih berlaku.", "items": [
+   "\"Jeg kommer i morgen.\" → Han sagde, ____",
+   "\"Kan du hjælpe mig?\" → Hun spurgte, ____",
+   "\"Hvornår er fristen?\" → De spurgte, ____",
+   "\"Ring til kunden i dag!\" → Chefen bad mig ____",
+   "\"Jeg har ikke fået beskeden.\" → Han sagde, ____"
+  ]},
+  { "prompt": "Isi dengan *om* atau *at*.", "items": [
+   "Jeg ved ikke, ____ det passer.",
+   "Hun sagde, ____ hun ville vende tilbage.",
+   "Han spurgte, ____ mødet var flyttet.",
+   "Vi håber, ____ I kan nå det.",
+   "Der er tvivl om, ____ fristen kan overholdes."
+  ]},
+  { "prompt": "Tulis ulang dengan penanda sumber yang diminta.", "items": [
+   "Han stopper til sommer. (efter sigende)",
+   "Der var uenighed på mødet. (angiveligt)",
+   "Afdelingen blev ikke nævnt. (ifølge referatet)",
+   "Hun har talt med HR. (skal + have)",
+   "Han advarede dem i god tid. (vil + have)"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Denmark.", "items": [
+   "Dia bilang tahun ini tidak akan ada pemecatan.",
+   "Aku tidak tahu apakah itu benar.",
+   "Dia minta kita menjaga ini di dalam.",
+   "Habis itu aku tanya apakah itu berlaku untuk seluruh kantor.",
+   "Katanya dia sudah bicara dengan orang HR."
+  ]}
+ ],
+ "answers": [
+  "at han kommer i morgen. — om jeg kunne hjælpe hende. — hvornår fristen var. — om at ringe til kunden i dag. — at han ikke har fået beskeden.",
+  "om — at — om — at — om",
+  "Han stopper efter sigende til sommer. — Angiveligt var der uenighed på mødet. — Ifølge referatet blev afdelingen ikke nævnt. — Hun skal have talt med HR. — Han vil have advaret dem i god tid.",
+  "Han sagde, at der ikke bliver afskedigelser i år. — Jeg ved ikke, om det passer. — Han bad os om at holde det internt. — Bagefter spurgte jeg, om det gjaldt hele huset. — Hun skal efter sigende have talt med en fra HR."
+ ]
+}

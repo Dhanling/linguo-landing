@@ -1,0 +1,581 @@
+{
+ "title": "Kata kerja berpartikel dan tekanan yang mengubah arti",
+ "title_target": "Har du sat dig ind i, hvad det kræver?",
+ "goal": "Memakai kata kerja yang artinya ditentukan oleh partikel di belakangnya, menaruh objek di tempat yang benar, dan mendengar tekanan yang membedakan dua kata kerja yang tertulis nyaris sama.",
+ "bekal": [
+  "menaruh partikel sesudah objek — dan tahu bahwa kata ganti selalu mendahului partikelnya",
+  "membedakan *overse* dari *se over*, *gennemgå* dari *gå igennem*",
+  "membaca kata kerja tiga bagian seperti *finde ud af* dan *komme af sted*",
+  "mendengar mana suku kata yang ditekan, karena di situlah artinya diputuskan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — En café på Vesterbro, lørdag formiddag",
+   "intro": "Mikkel akan berhenti bekerja dan kembali kuliah. Sara belum tahu apa-apa. Perhatikan berapa banyak kata kerja di dialog ini yang berdiri bersama satu partikel kecil — dan bahwa membuang partikelnya akan mengubah artinya sepenuhnya, bukan sekadar melemahkannya.",
+   "lines": [
+    {
+     "speaker": "Sara:",
+     "text": "Nå, har du så fundet ud af, hvad du vil?",
+     "id": "Gimana, sudah ketemu kamu mau apa?",
+     "literal": "nah, punya kamu lalu ditemukan [ud af], apa kamu mau?"
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Jeg holder op til nytår. Det er besluttet.",
+     "id": "Aku berhenti kerja tahun baru. Sudah kuputuskan.",
+     "literal": "saya pegang [op] pada tahun-baru. itu ada diputuskan."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Holder du helt op, eller går du bare ned i tid?",
+     "id": "Berhenti total, atau cuma kurangi jam kerja?",
+     "literal": "pegang kamu sepenuhnya [op], atau pergi kamu [bare] turun di waktu?"
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Helt op. Jeg gider ikke gå på kompromis en gang til.",
+     "id": "Total. Aku sudah malas kompromi sekali lagi.",
+     "literal": "sepenuhnya [op]. saya [gider] tidak pergi pada kompromi satu kali lagi."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Hvordan regner du det ud rent økonomisk?",
+     "id": "Hitungannya gimana dari sisi uang?",
+     "literal": "bagaimana hitung kamu itu [ud] murni ekonomis?"
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Jeg har sat penge til side i to år.",
+     "id": "Aku sudah menyisihkan uang selama dua tahun.",
+     "literal": "saya punya ditaruh uang ke samping di dua tahun."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Det havde jeg slet ikke regnet med.",
+     "id": "Itu sama sekali tidak kuduga.",
+     "literal": "itu punya-dulu saya sama-sekali tidak dihitung dengan."
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Jeg har heller ikke snakket højt om det.",
+     "id": "Aku juga tidak membicarakannya keras-keras.",
+     "literal": "saya punya juga-tidak dibicarakan keras tentang itu."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Hvornår går du i gang med studiet?",
+     "id": "Kapan kamu mulai kuliahnya?",
+     "literal": "kapan pergi kamu di jalan dengan studi-nya?"
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Til september, hvis jeg kommer ind.",
+     "id": "September, kalau aku diterima.",
+     "literal": "pada September, kalau saya datang [ind]."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Du kommer ind. Har du sat dig ind i, hvad det kræver?",
+     "id": "Pasti diterima. Sudah kamu pelajari apa tuntutannya?",
+     "literal": "kamu datang [ind]. punya kamu ditaruh diri [ind i], apa itu menuntut?"
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Jeg har gennemgået hele studieordningen.",
+     "id": "Aku sudah menelaah seluruh peraturan studinya.",
+     "literal": "saya punya ditelaah seluruh peraturan-studi-nya."
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Så har du overset noget, hvis du stadig synes, det er en god idé.",
+     "id": "Berarti ada yang kelewat, kalau kamu masih merasa itu ide bagus.",
+     "literal": "lalu punya kamu terlewat sesuatu, kalau kamu masih rasa, itu ada satu bagus ide."
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Meget morsomt. Vil du se den igennem for mig?",
+     "id": "Lucu banget. Mau kamu periksa itu buat aku?",
+     "literal": "sangat lucu. mau kamu lihat itu [igennem] untuk saya?"
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Send den. Jeg kigger den igennem i weekenden.",
+     "id": "Kirim aja. Aku periksa akhir pekan.",
+     "literal": "kirim itu. saya lihat itu [igennem] di akhir-pekan-nya."
+    },
+    {
+     "speaker": "Mikkel:",
+     "text": "Tak. Og du siger ikke noget til Anne endnu, vel?",
+     "id": "Makasih. Dan jangan bilang Anne dulu ya?",
+     "literal": "terima-kasih. dan kamu bilang tidak sesuatu kepada Anne belum, [vel]?"
+    },
+    {
+     "speaker": "Sara:",
+     "text": "Nej nej. Det holder jeg for mig selv.",
+     "id": "Tenang. Kusimpan sendiri.",
+     "literal": "tidak tidak. itu pegang saya untuk saya sendiri."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 5 dan 11: partikel berdiri *sesudah* objek.** *Hvordan regner du **det ud**?* dan *Har du sat **dig ind i**…?* Ini beda besar dari bahasa Inggris, yang membolehkan dua-duanya (*work it out* / *work out the problem*). Di bahasa Denmark objek pendek — terutama kata ganti — **selalu** mendahului partikelnya: *tag den på*, *smid det ud*, *skru den ned*. *Tag på den* akan berarti sesuatu yang lain sama sekali."
+    },
+    {
+     "text": "**Baris 12 dan 13 melawan baris 14 dan 15: *gennemgå* dan *overse* melawan *se igennem*.** Kata kerja berawalan tak bertekanan (*gennem-*, *over-*, *for-*, *be-*, *und-*) **tak bisa dipisah** dan artinya sering kiasan: *gennemgå* = menelaah, *overse* = terlewat, tidak melihat. Pasangan berpartikelnya dipisah dan artinya harfiah: *se noget igennem* = memeriksa dari awal sampai akhir. Yang menentukan bukan ejaan melainkan **tekanan**: *gennemGÅ* satu kata dengan tekanan di belakang, *se det iGENnem* dengan tekanan di partikel."
+    },
+    {
+     "text": "**Baris 1 dan 6: kata kerja tiga bagian.** *finde ud af* (mencari tahu), *sætte til side* (menyisihkan), *komme af sted* (berangkat), *holde op med* (berhenti melakukan), *være ved at* (sedang). Bagian-bagiannya tak bisa dibongkar sendiri-sendiri: *finde ud* tanpa *af* bukan bahasa Denmark, dan *finde af* tak ada."
+    },
+    {
+     "text": "**Baris 2 dan 4: *holde op*.** Salah satu kata kerja berpartikel yang paling sering dipakai, dan artinya sama sekali tak berhubungan dengan *holde* (\"memegang\") maupun *op* (\"ke atas\"). *Holde op* = berhenti. Dengan pekerjaan yang disebut, ia menarik *med*: *holde op **med** at ryge*. Perhatikan juga baris 17: *holde noget **for sig selv*** = menyimpannya sendiri."
+    },
+    {
+     "text": "**Baris 7: *regne med* melawan baris 5: *regne ud*.** Satu kata kerja, dua partikel, dua arti yang tak berhubungan: *regne ud* = menghitung, *regne med* = mengira, memperhitungkan seseorang akan datang. Inilah sebabnya kata kerja berpartikel harus dihafal sebagai satu kesatuan, bukan sebagai kata kerja plus kata depan."
+    },
+    {
+     "text": "**Baris 9: *gå i gang med*.** Perhatikan bahwa banyak susunan tetap Denmark memakai kata benda **tanpa sandang**: *gå i gang*, *tage stilling*, *holde øje*, *komme i tanke om*, *gå i stå*. Menambahkan *en* atau *et* di situ langsung terdengar salah, dan tak ada aturannya — daftarnya harus dikenali satu per satu."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Di mana partikelnya berdiri",
+     "body": [
+      "Partikel bahasa Denmark tidak melompat ke ujung kalimat seperti di bahasa Jerman atau Belanda. Ia menempel dekat kata kerjanya, dan yang boleh menyelinap di antaranya cuma objek."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "tanpa objek",
+        "Han **holdt op** sidste år.",
+        "partikel langsung sesudah kata kerja"
+       ],
+       [
+        "objek kata benda",
+        "Jeg **tager jakken på**.",
+        "objek di antara"
+       ],
+       [
+        "objek kata ganti",
+        "Jeg **tager den på**.",
+        "kata ganti wajib di antara"
+       ],
+       [
+        "dengan *ikke*",
+        "Jeg **tager den ikke på**.",
+        "*ikke* sesudah objek pendek"
+       ],
+       [
+        "tingkat ketiga",
+        "Jeg har **taget den på**.",
+        "susunannya tetap"
+       ],
+       [
+        "anak kalimat",
+        "…at jeg ikke **tager den på**.",
+        "seperti biasa, *ikke* naik"
+       ],
+       [
+        "tiga bagian",
+        "Jeg **fandt det ud af**? ✗",
+        "→ **fandt ud af det** ✓"
+       ],
+       [
+        "bentuk dasar",
+        "Jeg prøver at **finde ud af det**.",
+        "kesatuan tak dibongkar"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Tekanan yang memutuskan arti",
+     "body": [
+      "Bahasa Denmark memakai pasangan seperti ini terus-menerus, dan bedanya tidak kelihatan di tulisan kecuali dari susunannya. Yang berawalan tak bertekanan hampir selalu lebih tertulis dan lebih kiasan; yang berpartikel lebih lisan dan lebih harfiah.",
+      "⚠️ Awalan tak bertekanan *be-*, *for-*, *er-*, *und-*, *gen-* tidak pernah dipisah: *betale*, *forstå*, *erfare*, *undgå*. Ia juga tidak memakai *ge-* pada tingkat ketiga — bahasa Denmark sudah membuang awalan itu berabad-abad lalu, tak seperti bahasa Jerman dan Belanda."
+     ],
+     "table": {
+      "head": [
+       "Tak bertekanan",
+       "Arti",
+       "Berpartikel",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "at overse",
+        "terlewat, tak terlihat",
+        "at se over",
+        "melihat sekilas"
+       ],
+       [
+        "at gennemgå",
+        "menelaah, memeriksa",
+        "at gå igennem",
+        "melewati, menembus"
+       ],
+       [
+        "at afholde",
+        "menyelenggarakan",
+        "at holde af",
+        "menyayangi"
+       ],
+       [
+        "at udgå",
+        "dicoret, dihapus",
+        "at gå ud",
+        "keluar, pergi keluar"
+       ],
+       [
+        "at indse",
+        "menyadari",
+        "at se ind",
+        "melihat ke dalam, mampir"
+       ],
+       [
+        "at oversætte",
+        "menerjemahkan",
+        "at sætte over",
+        "memindahkan; merebus"
+       ],
+       [
+        "at undgå",
+        "menghindari",
+        "at gå under",
+        "tenggelam, runtuh"
+       ],
+       [
+        "at forlade",
+        "meninggalkan",
+        "at lade for",
+        "—"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Dua puluh kata kerja berpartikel yang paling sering: tabel rujukan",
+     "body": [
+      "Yang di bawah ini muncul di percakapan sehari-hari Denmark lebih sering daripada sebagian besar kata kerja biasa. Hafalkan sebagai satu kesatuan, bukan sebagai kata kerja plus kata depan."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "finde ud af",
+        "mencari tahu",
+        "Jeg fandt ud af det i går."
+       ],
+       [
+        "holde op (med)",
+        "berhenti",
+        "Han holdt op med at ryge."
+       ],
+       [
+        "gå i gang (med)",
+        "mulai mengerjakan",
+        "Vi går i gang på mandag."
+       ],
+       [
+        "komme af sted",
+        "berangkat",
+        "Vi kom af sted klokken syv."
+       ],
+       [
+        "regne med",
+        "mengira, mengandalkan",
+        "Jeg regner med dig."
+       ],
+       [
+        "regne ud",
+        "menghitung",
+        "Kan du regne det ud?"
+       ],
+       [
+        "sætte sig ind i",
+        "mendalami",
+        "Sæt dig ind i reglerne."
+       ],
+       [
+        "tage stilling til",
+        "menentukan sikap",
+        "Vi må tage stilling til det."
+       ],
+       [
+        "slå op",
+        "mencari (di buku); putus",
+        "Slå det op i ordbogen."
+       ],
+       [
+        "give op",
+        "menyerah",
+        "Han gav op efter to timer."
+       ],
+       [
+        "skrue ned/op for",
+        "mengecilkan/membesarkan",
+        "Skru lige ned for musikken."
+       ],
+       [
+        "komme ind",
+        "diterima (kuliah)",
+        "Jeg kom ind på jura."
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Belajar lagi di usia dewasa: sistem pendidikan Denmark",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Denmark termasuk negara yang paling mudah dimasuki orang dewasa yang ingin belajar ulang. Kuliah tidak berbayar untuk warga Uni Eropa, dan mahasiswa justru **dibayar** lewat *SU*. Itu sebabnya kalimat seperti di dialog tadi — berhenti bekerja untuk kuliah di usia tiga puluhan — sama sekali tidak dianggap nekat di sana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dansk",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "SU (Statens Uddannelsesstøtte)",
+       "ès-U",
+       "tunjangan bulanan mahasiswa"
+      ],
+      [
+       "en studieordning",
+       "STU-di-or-ning",
+       "peraturan program studi"
+      ],
+      [
+       "en optagelse",
+       "ob-TA-el-se",
+       "penerimaan mahasiswa"
+      ],
+      [
+       "kvote 2",
+       "KVOH-de toh",
+       "jalur masuk berdasar pengalaman, bukan nilai"
+      ],
+      [
+       "en bachelor",
+       "BA-che-lo",
+       "sarjana"
+      ],
+      [
+       "en kandidat",
+       "kan-di-DAT",
+       "magister"
+      ],
+      [
+       "en erhvervsuddannelse",
+       "èa-VÈRVS-udh-da-nel-se",
+       "pendidikan vokasi"
+      ],
+      [
+       "et fag",
+       "fæ",
+       "mata kuliah"
+      ],
+      [
+       "en eksamen",
+       "èk-SA-men",
+       "ujian"
+      ],
+      [
+       "at bestå",
+       "be-STO",
+       "lulus"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu jalur yang perlu diketahui pendatang: **kvote 2**. Jalur ini menilai pengalaman kerja, perjalanan, dan kegiatan lain di samping nilai rapor — dan justru dirancang untuk orang yang tidak datang lurus dari bangku sekolah. Untuk orang yang pindah negara di usia dewasa, ini sering pintu yang paling terbuka."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja berpartikel yang berubah arti di dunia kuliah",
+     "items": [
+      "**at komme ind** = diterima. *Jeg kom ind på første prioritet.* Bukan \"masuk ke dalam\".",
+      "**at falde fra** = berhenti di tengah jalan. *Frafaldet på studiet er højt.* Kata benda *frafald* muncul di tiap berita pendidikan.",
+      "**at læse videre** = melanjutkan ke jenjang berikutnya, bukan \"membaca terus\". *Hun læser videre til kandidat.*",
+      "**at tage et sabbatår** = mengambil jeda setahun sesudah SMA. Kebiasaan yang begitu lazim sampai punya namanya sendiri, dan sama sekali tidak dianggap membuang waktu."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ulangan berjenjang — kembali ke unit 6",
+     "items": [
+      "Buka dialog unit 6 dan cari seluruh kata kerja berpartikel di dalamnya — ada lebih dari yang kamu kira. Tulis ulang tiap kalimat dengan objeknya diganti kata ganti: *Har du pakket teltet?* → *Har du pakket det?*",
+      "Lalu sisipkan satu partikel ke lima kalimat dialog unit ini dan lihat apakah artinya masih masuk akal. Yang tidak masuk akal justru yang paling banyak mengajarkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "da": "at finde ud af",
+   "baca": "FI-ne udh a",
+   "id": "mencari tahu"
+  },
+  {
+   "da": "at holde op",
+   "baca": "HOL-e ob",
+   "id": "berhenti"
+  },
+  {
+   "da": "nytår",
+   "baca": "NÜT-or",
+   "id": "tahun baru"
+  },
+  {
+   "da": "at gå ned i tid",
+   "baca": "go nedh i tidh",
+   "id": "mengurangi jam kerja"
+  },
+  {
+   "da": "et kompromis",
+   "baca": "kom-pro-MIS",
+   "id": "kompromi"
+  },
+  {
+   "da": "at regne ud",
+   "baca": "RAI-ne udh",
+   "id": "menghitung"
+  },
+  {
+   "da": "at sætte til side",
+   "baca": "SÈ-de til SI-dhe",
+   "id": "menyisihkan"
+  },
+  {
+   "da": "at regne med",
+   "baca": "RAI-ne medh",
+   "id": "mengira, mengandalkan"
+  },
+  {
+   "da": "at snakke højt om",
+   "baca": "SNA-ge hoit om",
+   "id": "membicarakan terbuka"
+  },
+  {
+   "da": "at gå i gang med",
+   "baca": "go i gang medh",
+   "id": "mulai mengerjakan"
+  },
+  {
+   "da": "at komme ind",
+   "baca": "KO-me in",
+   "id": "diterima (kuliah)"
+  },
+  {
+   "da": "at sætte sig ind i",
+   "baca": "SÈ-de sai in i",
+   "id": "mendalami"
+  },
+  {
+   "da": "at kræve",
+   "baca": "KRÈ-we",
+   "id": "menuntut, memerlukan"
+  },
+  {
+   "da": "at gennemgå",
+   "baca": "GÈ-nem-go",
+   "id": "menelaah"
+  },
+  {
+   "da": "at overse",
+   "baca": "o-va-SEH",
+   "id": "terlewat, tidak melihat"
+  },
+  {
+   "da": "morsom",
+   "baca": "MOR-som",
+   "id": "lucu"
+  },
+  {
+   "da": "at se igennem",
+   "baca": "seh i-GÈ-nem",
+   "id": "memeriksa dari awal sampai akhir"
+  },
+  {
+   "da": "endnu",
+   "baca": "e-NU",
+   "id": "belum, masih"
+  },
+  {
+   "da": "at holde for sig selv",
+   "baca": "HOL-e for sai sèl",
+   "id": "menyimpan sendiri"
+  },
+  {
+   "da": "at bestå",
+   "baca": "be-STO",
+   "id": "lulus; terdiri atas"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ganti objeknya jadi kata ganti dan susun ulang.",
+   "items": [
+    "Jeg tager jakken på.",
+    "Kan du regne regnestykket ud?",
+    "Han skruede musikken ned.",
+    "Vi smider papirerne ud.",
+    "Hun læste studieordningen igennem."
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang benar dari dua pilihan dalam kurung.",
+   "items": [
+    "Jeg har ____ en detalje i kontrakten. (overset, set over)",
+    "Vil du ____ tallene med mig? (gennemgå, gå igennem)",
+    "Foreningen ____ generalforsamling i marts. (afholder, holder af)",
+    "Punktet er ____ af dagsordenen. (udgået, gået ud)",
+    "Til sidst ____ han, at det ikke kunne lade sig gøre. (indså, så ind)"
+   ]
+  },
+  {
+   "prompt": "Isi partikel yang tepat: *ud af*, *op*, *med*, *ind i*, *i gang*.",
+   "items": [
+    "Har du fundet ____, hvad du vil?",
+    "Han holdt ____ at ryge sidste år.",
+    "Vi går ____ på mandag.",
+    "Du må sætte dig ____ reglerne først.",
+    "Jeg regner ____ dig på fredag."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Aku berhenti kerja tahun baru.",
+    "Aku sudah menyisihkan uang selama dua tahun.",
+    "Kapan kamu mulai kuliahnya?",
+    "Sudah kamu pelajari apa tuntutannya?",
+    "Mau kamu periksa itu buat aku?"
+   ]
+  }
+ ],
+ "answers": [
+  "Jeg tager den på. — Kan du regne det ud? — Han skruede den ned. — Vi smider dem ud. — Hun læste den igennem.",
+  "overset — gennemgå — afholder — udgået — indså",
+  "ud af — op med — i gang — ind i — med",
+  "Jeg holder op til nytår. — Jeg har sat penge til side i to år. — Hvornår går du i gang med studiet? — Har du sat dig ind i, hvad det kræver? — Vil du se den igennem for mig?"
+ ]
+}

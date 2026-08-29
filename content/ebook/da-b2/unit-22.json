@@ -1,0 +1,582 @@
+{
+ "title": "Bahasa surat kabar: judul, kutipan, dan genre",
+ "title_target": "Tre anholdt efter slagsmål i Aarhus",
+ "goal": "Membaca surat kabar Denmark tanpa kamus: memahami judul yang membuang separuh kalimatnya, mengenali siapa yang berbicara, dan membedakan berita dari pendapat.",
+ "bekal": [
+  "membaca judul yang membuang sandang, kata kerja bantu, dan pelaku",
+  "mengenali tanda titik dua sebagai penanda kutipan di judul",
+  "membedakan *nyhed*, *baggrund*, *leder*, *klumme*, *kronik*, dan *læserbrev*",
+  "membaca kata kerja pelaporan: *fastslår*, *afviser*, *erkender*, *hævder*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sprogcafé på et bibliotek, med dagens avis på bordet",
+   "intro": "Sekali seminggu, perpustakaan kota membuka *sprogcafé* — meja tempat pendatang berlatih bahasa Denmark dengan sukarelawan. Hari ini Sofie dan Amina membaca koran bersama.",
+   "lines": [
+    {
+     "speaker": "Sofie:",
+     "text": "Læs overskriften her: \"Minister: Vi må vente på tallene\".",
+     "id": "Baca judul ini: \"Menteri: Kita harus menunggu angkanya\".",
+     "literal": "baca judul-nya sini: \"menteri: kami harus menunggu pada angka-angka-nya\"."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Hvorfor står der kolon efter \"minister\"?",
+     "id": "Kenapa ada titik dua sesudah \"menteri\"?",
+     "literal": "kenapa berdiri [der] titik-dua sesudah \"menteri\"?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Det betyder, at ministeren selv siger det. Avisen står ikke inde for det.",
+     "id": "Artinya menteri sendiri yang mengatakannya. Korannya tidak menjamin isinya.",
+     "literal": "itu berarti, bahwa menteri-nya sendiri bilang itu. koran-nya berdiri tidak di-dalam untuk itu."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Og hvorfor mangler der et \"at\"?",
+     "id": "Dan kenapa \"at\"-nya tidak ada?",
+     "literal": "dan kenapa kurang [der] satu \"bahwa\"?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Overskrifter skærer alt væk, der kan skæres væk. Også \"er\" og \"har\".",
+     "id": "Judul membuang semua yang bisa dibuang. Termasuk \"er\" dan \"har\".",
+     "literal": "judul-judul memotong semua pergi, [der] bisa dipotong pergi. juga \"ada\" dan \"punya\"."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Her står \"Tre anholdt efter slagsmål i Aarhus\". Hvem anholdt dem?",
+     "id": "Ini tertulis \"Tiga ditangkap setelah perkelahian di Aarhus\". Siapa yang menangkap?",
+     "literal": "sini berdiri \"tiga ditangkap sesudah perkelahian di Aarhus\". siapa menangkap-dulu mereka?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Det står der ikke. Passiv uden aktør — det er hele pointen.",
+     "id": "Tidak tertulis. Pasif tanpa pelaku — memang itu maksudnya.",
+     "literal": "itu berdiri [der] tidak. pasif tanpa pelaku — itu ada seluruh inti-nya."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Hvad hedder det, når avisen selv mener noget?",
+     "id": "Namanya apa kalau korannya sendiri berpendapat?",
+     "literal": "apa bernama itu, ketika koran-nya sendiri berpendapat sesuatu?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Lederen. Den står altid samme sted, og der er ingen byline.",
+     "id": "Tajuk rencana. Selalu di tempat yang sama, dan tanpa nama penulis.",
+     "literal": "pemimpin-nya. itu berdiri selalu sama tempat, dan [der] ada tak-ada nama-baris."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Og det her, med billede af en, der skriver ret sjovt?",
+     "id": "Kalau yang ini, dengan foto orang yang menulisnya lucu?",
+     "literal": "dan itu sini, dengan gambar dari seorang, [der] menulis cukup lucu?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "En klumme. Der må hun mene lige, hvad hun vil.",
+     "id": "Kolom. Di situ dia boleh berpendapat apa saja.",
+     "literal": "satu kolom. di-sana boleh dia berpendapat [lige], apa dia mau."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Hvorfor står der \"angiveligt\" hele tiden?",
+     "id": "Kenapa \"angiveligt\" muncul terus?",
+     "literal": "kenapa berdiri [der] \"menurut-pengakuan\" seluruh waktu-nya?"
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Fordi de ikke kan bevise det endnu. Det er nærmest et juridisk ord.",
+     "id": "Karena mereka belum bisa membuktikannya. Itu nyaris istilah hukum.",
+     "literal": "karena mereka tidak bisa membuktikan itu belum. itu ada nyaris satu hukum kata."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Så avisen dækker sig ind.",
+     "id": "Jadi korannya melindungi diri.",
+     "literal": "jadi koran-nya menutupi diri masuk."
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Præcis. Læs så det sidste — læserbrevet nederst.",
+     "id": "Persis. Sekarang baca yang terakhir — surat pembaca di bawah.",
+     "literal": "persis. baca lalu itu terakhir — pembaca-surat-nya terbawah."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "\"Kære politikere: Prøv selv at tage bus 12 en tirsdag morgen.\"",
+     "id": "\"Para politikus: Coba sendiri naik bus 12 Selasa pagi.\"",
+     "literal": "\"terkasih politikus-politikus: coba sendiri [at] ambil bus 12 satu Selasa pagi.\""
+    },
+    {
+     "speaker": "Sofie:",
+     "text": "Det er hele genren: kort, vred, og med en pointe til sidst.",
+     "id": "Itulah genrenya: pendek, marah, dan ada tusukan di akhir.",
+     "literal": "itu ada seluruh genre-nya: pendek, marah, dan dengan satu inti pada terakhir."
+    }
+   ],
+   "notes": [
+    {
+     "text": "**Baris 1 sampai 5: tata bahasa judul.** Judul Denmark membuang apa saja yang bisa disimpulkan pembaca: sandang (*Minister*, bukan *Ministeren*), kata kerja bantu (*Tre anholdt*, bukan *Tre er blevet anholdt*), dan penghubung *at*. Yang **tidak** dibuang: kata kerja utamanya. Karena itu cara membaca judul adalah mengembalikan yang hilang: *Minister: Vi må vente* → *Ministeren siger, at vi må vente*."
+    },
+    {
+     "text": "**Baris 2 dan 3: titik dua.** Ini penanda tanggung jawab. *Minister: Vi må vente* berarti menteri yang mengatakannya; korannya tidak menyatakan bahwa itu benar. Bandingkan dengan judul tanpa titik dua — *Danmark må vente på tallene* — yang berarti koran itu sendiri yang menyatakannya. Perbedaan ini bukan gaya, melainkan hukum pers."
+    },
+    {
+     "text": "**Baris 6 dan 7: pasif tanpa pelaku di judul.** *Tre anholdt* — siapa yang menangkap tak disebut. Ini bukan kelalaian: selama perkara belum diputus, koran Denmark berhati-hati menyebut siapa melakukan apa. Ia juga alasan kenapa *angiveligt*, *sigtet*, dan *mistænkt* muncul begitu sering — ketiganya menandai tingkat kepastian yang berbeda-beda."
+    },
+    {
+     "text": "**Baris 12 dan 13: *angiveligt*.** Sama seperti di unit 5, tetapi di sini dengan bobot hukum. Menyebut seseorang bersalah sebelum putusan bisa berujung tuntutan, jadi koran Denmark memakai tangga tetap: *mistænkt* (dicurigai) ‹ *sigtet* (ditetapkan tersangka) ‹ *tiltalt* (didakwa) ‹ *dømt* (divonis). Menukar salah satunya adalah kesalahan serius, bukan sekadar tidak tepat."
+    },
+    {
+     "text": "**Baris 9 dan 11: *leder* melawan *klumme*.** *Leder* adalah pendapat **redaksi**, tanpa nama penulis, dan tempatnya tetap di halaman yang sama tiap hari. *Klumme* adalah pendapat **satu orang**, dengan foto dan nama, dan ia boleh lucu, tajam, atau tidak adil. Membedakan keduanya adalah keterampilan membaca yang paling penting di tingkat ini."
+    },
+    {
+     "text": "**Baris 16 dan 17: *læserbrev*.** Genre yang paling mudah kamu tulis sendiri: dua ratus sampai empat ratus kata, satu pokok saja, dan tusukan disimpan untuk kalimat terakhir. Koran lokal Denmark hampir selalu memuatnya, dan menulis satu adalah latihan bahasa terbaik yang bisa kamu lakukan di tingkat B2 — karena ia dibaca orang sungguhan."
+    }
+   ],
+   "grammars": [
+    {
+     "title": "Apa yang dibuang judul",
+     "body": [
+      "Tiap baris tabel ini adalah kaidah yang dipakai konsisten di seluruh surat kabar Denmark. Membalikkannya — mengembalikan yang hilang — adalah cara paling cepat memahami judul yang membingungkan."
+     ],
+     "table": {
+      "head": [
+       "Judul",
+       "Bentuk lengkapnya",
+       "Yang dibuang"
+      ],
+      "rows": [
+       [
+        "Minister: Vi må vente",
+        "Ministeren siger, at vi må vente.",
+        "sandang, *siger at*"
+       ],
+       [
+        "Tre anholdt efter slagsmål",
+        "Tre er blevet anholdt efter et slagsmål.",
+        "*er blevet*, sandang"
+       ],
+       [
+        "Ny rapport: Flere unge mistrives",
+        "En ny rapport viser, at flere unge mistrives.",
+        "*viser at*"
+       ],
+       [
+        "Regeringen klar med udspil",
+        "Regeringen er klar med et udspil.",
+        "*er*, sandang"
+       ],
+       [
+        "Bus 12 nedlægges til sommer",
+        "Bus 12 bliver nedlagt til sommer.",
+        "*bliver* → pasif *-s*"
+       ],
+       [
+        "Efter kritik: Kommune ændrer kurs",
+        "Efter kritikken har kommunen ændret kurs.",
+        "sandang, *har*"
+       ],
+       [
+        "Dansk firma vinder milliardordre",
+        "Et dansk firma har vundet en milliardordre.",
+        "*har*, sandang"
+       ],
+       [
+        "Sådan påvirker det din pension",
+        "Sådan påvirker det din pension.",
+        "tak ada — judul penjelas tetap utuh"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Genre surat kabar Denmark",
+     "body": [
+      "Koran Denmark menandai genre dengan jelas, dan pembaca diharapkan mengenalinya. Menyalahartikan *klumme* sebagai berita adalah kesalahan membaca yang paling sering dilakukan pendatang — dan juga penutur asli."
+     ],
+     "table": {
+      "head": [
+       "Genre",
+       "Siapa yang bicara",
+       "Ciri"
+      ],
+      "rows": [
+       [
+        "nyhed",
+        "wartawan, tanpa pendapat",
+        "siapa-apa-kapan di paragraf pertama"
+       ],
+       [
+        "baggrund",
+        "wartawan",
+        "menjelaskan sebab, lebih panjang"
+       ],
+       [
+        "analyse",
+        "wartawan ahli",
+        "menafsirkan, bernama"
+       ],
+       [
+        "leder",
+        "redaksi",
+        "tanpa nama, tempat tetap"
+       ],
+       [
+        "klumme",
+        "satu penulis tetap",
+        "foto, gaya bebas"
+       ],
+       [
+        "kronik",
+        "tamu ahli",
+        "panjang, bernalar"
+       ],
+       [
+        "debatindlæg",
+        "siapa saja yang terlibat",
+        "membela satu pihak"
+       ],
+       [
+        "læserbrev",
+        "pembaca",
+        "pendek, satu pokok"
+       ],
+       [
+        "interview",
+        "narasumber",
+        "tanya-jawab atau kutipan"
+       ],
+       [
+        "anmeldelse",
+        "kritikus",
+        "bintang atau hati"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Kata kerja pelaporan dan tangga hukum: tabel rujukan",
+     "body": [
+      "Pilihan kata kerja pelaporan menyampaikan sikap koran terhadap kabar itu. Ia hampir tak pernah netral, dan membacanya dengan sadar mengubah seluruh cara kamu membaca berita."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Yang tersirat"
+      ],
+      "rows": [
+       [
+        "siger",
+        "mengatakan",
+        "netral"
+       ],
+       [
+        "oplyser",
+        "menerangkan",
+        "keterangan resmi"
+       ],
+       [
+        "fastslår",
+        "menegaskan",
+        "koran menerimanya sebagai fakta"
+       ],
+       [
+        "understreger",
+        "menekankan",
+        "narasumber mengulang pokoknya"
+       ],
+       [
+        "erkender",
+        "mengakui",
+        "mengakui hal yang merugikan diri"
+       ],
+       [
+        "afviser",
+        "membantah",
+        "menolak tuduhan"
+       ],
+       [
+        "hævder",
+        "mendalilkan",
+        "⚠️ koran meragukannya"
+       ],
+       [
+        "mistænkt",
+        "dicurigai",
+        "belum ada tuduhan resmi"
+       ],
+       [
+        "sigtet",
+        "ditetapkan tersangka",
+        "polisi sudah menuduh"
+       ],
+       [
+        "tiltalt",
+        "didakwa",
+        "perkara masuk pengadilan"
+       ],
+       [
+        "dømt",
+        "divonis",
+        "sudah diputus"
+       ],
+       [
+        "frifundet",
+        "dibebaskan",
+        "diputus tidak bersalah"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Peta media Denmark, dan cara membacanya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Denmark punya pasar media yang kecil, padat, dan sangat dipercaya menurut ukuran internasional. Sebagian besar rumah tangga membaca setidaknya satu media nasional, dan siaran publik *DR* dibiayai lewat pajak. Yang perlu kamu ketahui sebagai pembaca B2 bukan cuma namanya, melainkan sudut pandangnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Media",
+      "Jenis",
+      "Sudut"
+     ],
+     "rows": [
+      [
+       "Politiken",
+       "harian nasional",
+       "kiri-tengah, budaya kuat"
+      ],
+      [
+       "Jyllands-Posten",
+       "harian nasional",
+       "kanan-tengah, berbasis Jylland"
+      ],
+      [
+       "Berlingske",
+       "harian nasional",
+       "konservatif-liberal, tertua"
+      ],
+      [
+       "Information",
+       "harian kecil",
+       "kiri, panjang dan bernalar"
+      ],
+      [
+       "Kristeligt Dagblad",
+       "harian",
+       "agama, etika, nada tenang"
+      ],
+      [
+       "Ekstra Bladet / BT",
+       "tabloid",
+       "keras, judul besar"
+      ],
+      [
+       "DR",
+       "penyiaran publik",
+       "wajib netral menurut undang-undang"
+      ],
+      [
+       "TV 2",
+       "penyiaran",
+       "sebagian publik, lebih populer"
+      ],
+      [
+       "Ritzau",
+       "kantor berita",
+       "sumber di balik banyak berita pendek"
+      ],
+      [
+       "lokalavisen",
+       "koran lokal gratis",
+       "tempat *læserbrev*-mu akan dimuat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kebiasaan yang berguna: kalau sebuah berita pendek berakhir dengan **/ritzau/**, ia berasal dari kantor berita dan akan muncul dengan kata-kata yang hampir sama di banyak media sekaligus. Berita semacam itu bagus untuk latihan membaca, karena bahasanya sederhana dan susunannya selalu sama."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis læserbrev sendiri: lima aturan",
+     "items": [
+      "**Satu pokok saja.** Dua ratus lima puluh sampai empat ratus kata. Dua pokok berarti tak satu pun akan diingat.",
+      "**Mulai dari hal yang kamu alami sendiri**, bukan dari statistik. *Jeg tager bus 12 hver tirsdag* jauh lebih kuat daripada *undersøgelser viser*.",
+      "**Sebut lawan bicaramu dengan sopan** — nama dan jabatan. Serangan pribadi tidak dimuat.",
+      "**Simpan kalimat terkuat untuk akhir.** Genre ini hidup dari kalimat terakhirnya.",
+      "**Tulis nama, kota, dan kalau relevan jabatanmu.** Surat pembaca anonim tidak dimuat di Denmark."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ulangan berjenjang — kembali ke unit 21",
+     "items": [
+      "Ambil dialog unit 21 dan tulis judul surat kabar untuknya: *Ny medarbejder tav på møde — kollega: \"Sådan gør man ikke her\"*. Perhatikan apa yang kamu buang.",
+      "Lalu tulis satu *læserbrev* sepanjang dua ratus kata tentang apa saja yang benar-benar mengganggumu di kotamu. Kirimkan ke koran lokal. Ini latihan bahasa yang paling tidak nyaman dan paling cepat menaikkan kemampuanmu di seluruh modul ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "da": "en overskrift",
+   "baca": "O-va-skrift",
+   "id": "judul berita"
+  },
+  {
+   "da": "et kolon",
+   "baca": "KOH-lon",
+   "id": "titik dua"
+  },
+  {
+   "da": "at stå inde for",
+   "baca": "sto I-ne for",
+   "id": "menjamin, bertanggung jawab atas"
+  },
+  {
+   "da": "at skære væk",
+   "baca": "SKÈ-a vèk",
+   "id": "memotong, membuang"
+  },
+  {
+   "da": "at anholde",
+   "baca": "AN-hol-e",
+   "id": "menangkap"
+  },
+  {
+   "da": "et slagsmål",
+   "baca": "SLAUS-mol",
+   "id": "perkelahian"
+  },
+  {
+   "da": "en aktør",
+   "baca": "ak-TÖA",
+   "id": "pelaku"
+  },
+  {
+   "da": "en leder",
+   "baca": "LEH-dha",
+   "id": "tajuk rencana; pemimpin"
+  },
+  {
+   "da": "en klumme",
+   "baca": "KLU-me",
+   "id": "kolom opini"
+  },
+  {
+   "da": "at bevise",
+   "baca": "be-VI-se",
+   "id": "membuktikan"
+  },
+  {
+   "da": "at dække sig ind",
+   "baca": "DÈ-ge sai in",
+   "id": "melindungi diri"
+  },
+  {
+   "da": "et læserbrev",
+   "baca": "LÈ-sa-brèu",
+   "id": "surat pembaca"
+  },
+  {
+   "da": "en genre",
+   "baca": "SHANG-ra",
+   "id": "genre"
+  },
+  {
+   "da": "vred",
+   "baca": "vrèdh",
+   "id": "marah"
+  },
+  {
+   "da": "en pointe",
+   "baca": "po-ÈNG-de",
+   "id": "inti, tusukan"
+  },
+  {
+   "da": "at hævde",
+   "baca": "HÈU-dhe",
+   "id": "mendalilkan, mengklaim"
+  },
+  {
+   "da": "at erkende",
+   "baca": "èa-KÈ-ne",
+   "id": "mengakui"
+  },
+  {
+   "da": "at afvise",
+   "baca": "AU-vi-se",
+   "id": "membantah"
+  },
+  {
+   "da": "sigtet",
+   "baca": "SIK-tedh",
+   "id": "berstatus tersangka"
+  },
+  {
+   "da": "en anmeldelse",
+   "baca": "AN-mèl-el-se",
+   "id": "resensi; laporan polisi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Kembalikan judul jadi kalimat lengkap.",
+   "items": [
+    "Minister: Vi må vente på tallene",
+    "Tre anholdt efter slagsmål i Aarhus",
+    "Ny rapport: Flere unge mistrives",
+    "Bus 12 nedlægges til sommer",
+    "Efter kritik: Kommune ændrer kurs"
+   ]
+  },
+  {
+   "prompt": "Genre apa ini?",
+   "items": [
+    "Tulisan pendapat redaksi, tanpa nama penulis",
+    "Tulisan pembaca sepanjang tiga ratus kata dengan nama dan kota",
+    "Tulisan panjang tamu ahli di halaman debat",
+    "Berita pendek berakhiran /ritzau/",
+    "Tulisan berkala satu penulis dengan foto, boleh lucu"
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja pelaporan yang tepat.",
+   "items": [
+    "Politiet ____, at der er rejst sigtelse. (keterangan resmi)",
+    "Ministeren ____ kritikken. (membantah)",
+    "Direktøren ____, at der er begået fejl. (mengakui hal merugikan)",
+    "Foreningen ____, at tallene er forkerte. (koran meragukannya)",
+    "Rapporten ____, at antallet er steget. (koran menerimanya sebagai fakta)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Denmark.",
+   "items": [
+    "Artinya menteri sendiri yang mengatakannya.",
+    "Judul membuang semua yang bisa dibuang.",
+    "Pasif tanpa pelaku — memang itu maksudnya.",
+    "Karena mereka belum bisa membuktikannya.",
+    "Pendek, marah, dan ada tusukan di akhir."
+   ]
+  }
+ ],
+ "answers": [
+  "Ministeren siger, at vi må vente på tallene. — Tre personer er blevet anholdt efter et slagsmål i Aarhus. — En ny rapport viser, at flere unge mistrives. — Bus 12 bliver nedlagt til sommer. — Efter kritikken har kommunen ændret kurs.",
+  "en leder — et læserbrev — en kronik — en nyhed fra Ritzau — en klumme",
+  "oplyser — afviser — erkender — hævder — fastslår",
+  "Det betyder, at ministeren selv siger det. — Overskrifter skærer alt væk, der kan skæres væk. — Passiv uden aktør; det er hele pointen. — Fordi de ikke kan bevise det endnu. — Kort, vred, og med en pointe til sidst."
+ ]
+}
