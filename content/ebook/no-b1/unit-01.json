@@ -1,0 +1,538 @@
+{
+ "title": "Dua bentuk lampau yang harus dipilih",
+ "title_target": "Preteritum eller perfektum?",
+ "goal": "Memilih dengan tepat antara *jeg kjøpte* dan *jeg har kjøpt* — dan tahu kata keterangan mana yang memaksa salah satunya.",
+ "bekal": [
+  "memakai preteritum untuk peristiwa yang waktunya sudah ditutup",
+  "memakai presens perfektum untuk pengalaman dan akibat yang masih terasa",
+  "mengenali pemicu *i går*, *i fjor*, *aldri*, *allerede*, *ennå*",
+  "berhenti menerjemahkan kata *sudah* menjadi *har* secara otomatis"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På kafé i Grünerløkka",
+   "intro": "Dewi sudah hampir dua tahun tinggal di Oslo. Kristin, kawan lamanya dari kursus norsk, menanyakan kabarnya. Perhatikan bahwa dua bentuk lampau berganti-ganti sepanjang percakapan — dan bahwa pergantiannya tidak sembarangan.",
+   "lines": [
+    {
+     "speaker": "Kristin:",
+     "text": "Hei! Så hyggelig å se deg igjen. Hvor lenge har du vært i Norge nå?",
+     "id": "Hai! Senang sekali ketemu kamu lagi. Sudah berapa lama kamu di Norwegia sekarang?",
+     "literal": "hei! begitu menyenangkan untuk melihat kamu lagi. berapa lama telah kamu ada di norwegia sekarang?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Snart to år. Jeg kom hit i august 2024.",
+     "id": "Sebentar lagi dua tahun. Saya datang ke sini Agustus 2024.",
+     "literal": "segera dua tahun. saya datang ke-sini di agustus 2024."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "To år allerede! Har du reist mye rundt i landet?",
+     "id": "Dua tahun juga ternyata! Kamu sudah banyak jalan-jalan keliling negeri ini?",
+     "literal": "dua tahun sudah! telah kamu bepergian banyak keliling di negeri-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ikke så mye. Jeg har vært i Bergen og i Tromsø, men det er alt.",
+     "id": "Nggak terlalu. Saya pernah ke Bergen dan Tromsø, tapi cuma itu.",
+     "literal": "tidak begitu banyak. saya telah ada di bergen dan di tromsø, tapi itu adalah semua."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Når var du i Tromsø?",
+     "id": "Kapan kamu di Tromsø?",
+     "literal": "kapan ada kamu di tromsø?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "I fjor vinter. Vi reiste opp i februar, og vi så nordlyset tre kvelder på rad.",
+     "id": "Musim dingin tahun lalu. Kami naik ke sana bulan Februari, dan kami lihat aurora tiga malam berturut-turut.",
+     "literal": "di tahun-lalu musim-dingin. kami bepergian naik di februari, dan kami melihat cahaya-utara-itu tiga malam pada baris."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Så heldige dere var! Jeg har bodd her hele livet og har aldri sett det ordentlig.",
+     "id": "Beruntung banget kalian! Saya tinggal di sini seumur hidup dan belum pernah lihat aurora yang benar-benar bagus.",
+     "literal": "begitu beruntung kalian ada! saya telah tinggal di-sini seluruh hidup-itu dan telah tak-pernah melihat itu sungguhan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det var iskaldt. Jeg frøs så mye at jeg måtte kjøpe nye støvler dagen etter.",
+     "id": "Dingin sekali waktu itu. Saya kedinginan sampai harus beli sepatu bot baru besoknya.",
+     "literal": "itu adalah es-dingin. saya membeku begitu banyak sehingga saya harus membeli baru sepatu-bot hari-itu sesudah."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Har du kjøpt vinterklær til i år også?",
+     "id": "Kamu sudah beli baju musim dingin buat tahun ini juga?",
+     "literal": "telah kamu membeli musim-dingin-pakaian untuk di tahun-ini juga?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ja, jeg har akkurat kjøpt en ordentlig dunjakke. Den kostet altfor mye.",
+     "id": "Ya, saya baru saja beli jaket bulu angsa yang beneran. Harganya kelewat mahal.",
+     "literal": "ya, saya telah baru-saja membeli sebuah sungguhan bulu-jaket. itu berharga terlalu banyak."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Alt koster altfor mye her. Hva gjorde du i helga, forresten?",
+     "id": "Semua di sini kelewat mahal. Ngomong-ngomong, akhir pekan kemarin kamu ngapain?",
+     "literal": "semua berharga terlalu banyak di-sini. apa melakukan kamu di akhir-pekan-itu, ngomong-ngomong?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg jobbet på lørdag, og på søndag sov jeg til klokka tolv.",
+     "id": "Sabtu saya kerja, dan Minggu saya tidur sampai jam dua belas.",
+     "literal": "saya bekerja pada sabtu, dan pada minggu tidur saya sampai jam dua-belas."
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Det har jeg ikke gjort på mange år. Jeg har fått to barn, vet du.",
+     "id": "Saya sudah bertahun-tahun nggak begitu. Saya sudah punya dua anak, lho.",
+     "literal": "itu telah saya tidak melakukan pada banyak tahun. saya telah mendapat dua anak, tahu kamu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Har de begynt på skolen?",
+     "id": "Mereka sudah mulai sekolah?",
+     "literal": "telah mereka mulai pada sekolah-itu?"
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Den eldste begynte i høst. Hun har allerede lært å lese.",
+     "id": "Yang paling besar mulai musim gugur ini. Dia sudah bisa baca.",
+     "literal": "itu tertua mulai di musim-gugur. dia telah sudah belajar untuk membaca."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så flink! Lærte hun det på skolen, eller lærte hun det hjemme?",
+     "id": "Pintar banget! Dia belajarnya di sekolah, atau di rumah?",
+     "literal": "begitu pintar! belajar dia itu pada sekolah-itu, atau belajar dia itu di-rumah?"
+    },
+    {
+     "speaker": "Kristin:",
+     "text": "Hjemme, tror jeg. Vi leste for henne hver eneste kveld i fjor.",
+     "id": "Di rumah, kayaknya. Tahun lalu kami bacain buat dia tiap malam tanpa kecuali.",
+     "literal": "di-rumah, kira saya. kami membaca untuk dia setiap satu-satunya malam di tahun-lalu."
+    }
+   ],
+   "notes": [
+    "**Preteritum menutup waktunya, perfektum membiarkannya terbuka.** *Vi reiste opp i februar* menyebut satu titik yang sudah lewat dan selesai. *Jeg har bodd her hele livet* menyebut sesuatu yang mulai di masa lalu dan **masih berlaku sekarang** — Kristin masih tinggal di sini. Inilah pembagian kerja pokoknya, dan sembilan dari sepuluh keputusan bisa diambil dengan pertanyaan tunggal: apakah waktunya sudah ditutup?",
+    "**Kalau ada keterangan waktu lampau tertentu, pakai preteritum. Selalu.** *I går*, *i fjor*, *i februar*, *på lørdag*, *for tre år siden*, *da jeg var liten* — semuanya menyeret kalimatnya ke preteritum. Perhatikan Dewi: *jeg har akkurat kjøpt en dunjakke* (belum ada waktunya), lalu langsung *den kostet altfor mye* (menunjuk peristiwa membeli yang sudah lewat).",
+    "**Pertanyaan *Når …?* hampir selalu preteritum.** *Når var du i Tromsø?* Karena pertanyaannya justru menanyakan titik waktunya, waktu itu tak mungkin dibiarkan terbuka. *Når har du vært i Tromsø?* terdengar salah bagi telinga Norwegia — dan itu kesalahan yang nyaris semua pelajar buat sekali.",
+    "**Enam kata ini menarik perfektum:** *aldri* (tak pernah), *allerede* (sudah), *akkurat* (baru saja), *ennå ikke* (belum), *noen gang* (pernah), *hittil* (sejauh ini). Semuanya menghitung dari dulu sampai **sekarang**, jadi waktunya menurut definisi belum ditutup. *Jeg har aldri sett det* — bukan *jeg så aldri det*.",
+    "**Jangan menerjemahkan kata *sudah* menjadi *har* secara otomatis.** Ini jebakan khusus penutur bahasa Indonesia. *Saya sudah beli kemarin* bukan *jeg har kjøpt i går*, melainkan *jeg kjøpte i går*. Kata *sudah* dalam bahasa Indonesia menandai bahwa perbuatannya rampung; ia tidak berkata apa-apa tentang apakah waktunya terbuka. Dua hal yang berbeda.",
+    "**Bentuk perfektum tidak pernah berubah.** *Har kjøpt*, *har kjøpt*, *har kjøpt* — sama untuk *jeg*, *du*, *vi*, *de*. Bahasa Norwegia tak mengubah kata kerja menurut orangnya sama sekali, di semua bentuk. Ini kabar baik yang jarang disebut: seluruh tabel konjugasi bahasa Eropa lain tidak berlaku di sini.",
+    "**Sesudah *har*, letak *ikke* tetap di kolom keempat:** *Det har jeg **ikke** gjort*. Kata kerja bernyawanya adalah *har*, jadi *har* yang naik ke tempat kedua, dan partisipnya (*gjort*) jatuh ke belakang. Unit 3 mengurus kerangka ini secara penuh."
+   ]
+  },
+  {
+   "title": "Dialog kedua — På legevakten",
+   "intro": "Dewi mengantar temannya ke unit gawat darurat. Di ruang tunggu, perawat menanyakan riwayat — dan riwayat, menurut tabiat bahasanya, hampir seluruhnya perfektum.",
+   "lines": [
+    {
+     "speaker": "Sykepleier:",
+     "text": "Har du hatt disse smertene lenge?",
+     "id": "Sudah lama nyerinya?",
+     "literal": "telah kamu punya ini-jamak nyeri-itu lama?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "De begynte i går kveld. Jeg har ikke sovet i det hele tatt.",
+     "id": "Mulainya tadi malam. Saya sama sekali belum tidur.",
+     "literal": "mereka mulai di kemarin malam. saya telah tidak tidur di itu seluruh diambil."
+    },
+    {
+     "speaker": "Sykepleier:",
+     "text": "Har du tatt noe mot smertene?",
+     "id": "Sudah minum obat pereda nyeri?",
+     "literal": "telah kamu mengambil sesuatu melawan nyeri-itu?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Jeg tok to paracet klokka fire i natt, men det hjalp ikke.",
+     "id": "Saya minum dua parasetamol jam empat tadi malam, tapi nggak ngefek.",
+     "literal": "saya mengambil dua parasetamol jam empat di malam-ini, tapi itu menolong tidak."
+    },
+    {
+     "speaker": "Sykepleier:",
+     "text": "Har du vært hos fastlegen din?",
+     "id": "Sudah ke dokter keluargamu?",
+     "literal": "telah kamu ada di dokter-tetap-itu milikmu?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Nei, jeg har aldri vært der. Jeg flyttet hit i januar.",
+     "id": "Belum, saya belum pernah ke sana. Saya pindah ke sini bulan Januari.",
+     "literal": "tidak, saya telah tak-pernah ada di-sana. saya pindah ke-sini di januari."
+    },
+    {
+     "speaker": "Sykepleier:",
+     "text": "Da registrerer vi deg nå. Har du fylt ut skjemaet?",
+     "id": "Kalau begitu kami daftarkan sekarang. Formulirnya sudah diisi?",
+     "literal": "maka mendaftarkan kami kamu sekarang. telah kamu mengisi keluar formulir-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg fylte det ut for henne for ti minutter siden.",
+     "id": "Sudah saya isikan buat dia sepuluh menit yang lalu.",
+     "literal": "saya mengisi itu keluar untuk dia untuk sepuluh menit lalu."
+    },
+    {
+     "speaker": "Sykepleier:",
+     "text": "Fint. Legen har akkurat blitt ledig. Bli med meg.",
+     "id": "Bagus. Dokternya baru saja kosong. Ikut saya.",
+     "literal": "bagus. dokter-itu telah baru-saja menjadi luang. jadilah dengan saya."
+    }
+   ],
+   "notes": [
+    "**Ruang tunggu adalah tempat perfektum bekerja paling keras.** Semua pertanyaan riwayat dibuka dengan *har du …*: *Har du hatt smerter?*, *Har du tatt medisin?*, *Har du vært hos legen?* Tak ada satu pun yang menyebut titik waktu, jadi tak ada satu pun yang memakai preteritum.",
+    "**Tapi begitu waktunya disebut, bentuknya berpindah seketika.** Ayu menjawab *jeg tok to paracet **klokka fire i natt*** — preteritum, karena jam empat adalah titik yang sudah ditutup. Dua kalimat berurutan, dua bentuk berbeda, dan yang memutuskan cuma ada-tidaknya keterangan waktu.",
+    "***I det hele tatt*** berarti sama sekali, dan hampir selalu berpasangan dengan *ikke*: *jeg har ikke sovet i det hele tatt*. Ungkapan ini termasuk yang paling sering dipakai di percakapan sehari-hari, dan tak bisa dipecah kata per kata.",
+    "***Fastlege*** adalah dokter keluarga yang ditunjuk untuk tiap penduduk Norwegia. Kamu tak bisa langsung ke rumah sakit untuk keluhan biasa; jalurnya selalu lewat fastlege, kecuali di *legevakt*, unit gawat darurat yang buka di luar jam kerja. Kata ini muncul di hampir semua surat resmi soal kesehatan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dua bentuk lampau: pemicu dan pemakaian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pemicu di kalimat",
+      "Bentuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "i går, i forrige uke, i fjor",
+       "preteritum",
+       "Jeg **jobbet** i går."
+      ],
+      [
+       "i 2019, i mai, på mandag",
+       "preteritum",
+       "Hun **begynte** i august."
+      ],
+      [
+       "for … siden",
+       "preteritum",
+       "Vi **flyttet** for to år siden."
+      ],
+      [
+       "da (waktu lampau tertentu)",
+       "preteritum",
+       "Da jeg **var** liten, **bodde** vi i Bandung."
+      ],
+      [
+       "Når …? (pertanyaan)",
+       "preteritum",
+       "**Når kom** du hit?"
+      ],
+      [
+       "aldri, noen gang",
+       "perfektum",
+       "Jeg **har aldri vært** i Kirkenes."
+      ],
+      [
+       "allerede, akkurat, nettopp",
+       "perfektum",
+       "Hun **har allerede spist**."
+      ],
+      [
+       "ennå ikke, fortsatt ikke",
+       "perfektum",
+       "Jeg **har ennå ikke fått** svar."
+      ],
+      [
+       "Hvor lenge …? (masih berlaku)",
+       "perfektum",
+       "**Hvor lenge har** du **bodd** her?"
+      ],
+      [
+       "i år, denne uka, i det siste",
+       "perfektum",
+       "Jeg **har lest** tre bøker i år."
+      ],
+      [
+       "tanpa keterangan waktu apa pun",
+       "perfektum",
+       "**Har** du **spist**?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji tiga detik",
+     "items": [
+      "**Langkah 1 — cari keterangan waktu.** Kalau kalimatnya menyebut waktu yang sudah lewat dan selesai (*i går*, *i fjor*, *på fredag*), berhenti di sini: preteritum.",
+      "**Langkah 2 — kalau tak ada keterangan waktu, tanyakan apakah akibatnya masih terasa sekarang.** *Jeg har mistet nøkkelen* berarti kuncinya masih hilang. *Jeg mistet nøkkelen i går* berarti kejadiannya kemarin, dan mungkin sudah ketemu.",
+      "**Langkah 3 — kalau kamu sedang bercerita berurutan, teruskan dengan preteritum.** Cerita di bahasa Norwegia hampir selalu dituturkan seluruhnya dalam preteritum. Perfektum boleh muncul di kalimat pembuka (*Jeg har opplevd noe rart*), lalu ceritanya sendiri berjalan dengan preteritum."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Keterangan waktu yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "i går",
+       "i GOOR",
+       "kemarin"
+      ],
+      [
+       "i forgårs",
+       "i FOR-goors",
+       "kemarin lusa"
+      ],
+      [
+       "i dag",
+       "i DAAG",
+       "hari ini"
+      ],
+      [
+       "i morgen",
+       "i MOR-`n",
+       "besok"
+      ],
+      [
+       "i overmorgen",
+       "i OO-ver-mor-`n",
+       "lusa"
+      ],
+      [
+       "i fjor",
+       "i FJUUR",
+       "tahun lalu"
+      ],
+      [
+       "i år",
+       "i OOR",
+       "tahun ini"
+      ],
+      [
+       "i forrige uke",
+       "i FOR-ri-ge UU-ke",
+       "minggu lalu"
+      ],
+      [
+       "for tre år siden",
+       "for tree oor SII-den",
+       "tiga tahun yang lalu"
+      ],
+      [
+       "om tre dager",
+       "om tree DAA-ger",
+       "tiga hari lagi"
+      ],
+      [
+       "i det siste",
+       "i de SIS-te",
+       "belakangan ini"
+      ],
+      [
+       "for lenge siden",
+       "for LENG-e SII-den",
+       "lama sekali yang lalu"
+      ],
+      [
+       "nettopp",
+       "NET-topp",
+       "baru saja"
+      ],
+      [
+       "ennå",
+       "EN-noo",
+       "masih, belum (dengan ikke)"
+      ],
+      [
+       "fortsatt",
+       "FORT-satt",
+       "masih"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua pasangan yang sering tertukar",
+     "items": [
+      "***I fjor*** berarti tahun lalu, ***i år*** berarti tahun ini. Bunyinya mirip di telinga yang belum terbiasa, tapi *i fjor* menarik preteritum dan *i år* menarik perfektum. Satu huruf memindahkan seluruh kalimat ke bentuk lain.",
+      "***Om*** menunjuk ke depan, ***for … siden*** menunjuk ke belakang. *Om tre dager* = tiga hari lagi; *for tre dager siden* = tiga hari yang lalu. Pelajar Indonesia sering memakai *i* untuk keduanya, karena bahasa Indonesia memakai kata yang sama (*tiga hari lagi*, *tiga hari lalu*) tanpa mengubah preposisinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å reise",
+   "baca": "o RÈI-se",
+   "id": "bepergian, berangkat"
+  },
+  {
+   "no": "hele livet",
+   "baca": "HEE-le LII-ve",
+   "id": "seumur hidup"
+  },
+  {
+   "no": "nordlyset",
+   "baca": "NOR-lüü-se",
+   "id": "cahaya utara, aurora"
+  },
+  {
+   "no": "på rad",
+   "baca": "po RAA",
+   "id": "berturut-turut"
+  },
+  {
+   "no": "heldig",
+   "baca": "HEL-di",
+   "id": "beruntung"
+  },
+  {
+   "no": "iskald",
+   "baca": "IIS-kall",
+   "id": "dingin sekali"
+  },
+  {
+   "no": "å fryse",
+   "baca": "o FRÜÜ-se",
+   "id": "kedinginan, membeku"
+  },
+  {
+   "no": "støvler",
+   "baca": "STÖV-ler",
+   "id": "sepatu bot"
+  },
+  {
+   "no": "vinterklær",
+   "baca": "VIN-ter-klèr",
+   "id": "pakaian musim dingin"
+  },
+  {
+   "no": "dunjakke",
+   "baca": "DUUN-jak-ke",
+   "id": "jaket bulu angsa"
+  },
+  {
+   "no": "altfor",
+   "baca": "ALT-for",
+   "id": "terlalu, kelewat"
+  },
+  {
+   "no": "å koste",
+   "baca": "o KOS-te",
+   "id": "berharga, memakan biaya"
+  },
+  {
+   "no": "forresten",
+   "baca": "for-RES-ten",
+   "id": "ngomong-ngomong"
+  },
+  {
+   "no": "helga",
+   "baca": "HEL-ga",
+   "id": "akhir pekan"
+  },
+  {
+   "no": "å begynne",
+   "baca": "o be-JÜN-ne",
+   "id": "mulai"
+  },
+  {
+   "no": "den eldste",
+   "baca": "den ELS-te",
+   "id": "yang tertua"
+  },
+  {
+   "no": "flink",
+   "baca": "flink",
+   "id": "pintar, cakap"
+  },
+  {
+   "no": "hver eneste",
+   "baca": "vèr EE-nes-te",
+   "id": "setiap satu tanpa kecuali"
+  },
+  {
+   "no": "ordentlig",
+   "baca": "OR-den-tli",
+   "id": "sungguhan, betul-betul"
+  },
+  {
+   "no": "snart",
+   "baca": "snaart",
+   "id": "sebentar lagi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih preteritum atau perfektum, lalu tulis bentuknya.",
+   "items": [
+    "Jeg ____ (å reise) til Bergen i fjor sommer.",
+    "Hun ____ (å bo) her siden 2018.",
+    "Vi ____ (å spise) middag klokka seks i går.",
+    "____ du noen gang ____ (å se) nordlyset?",
+    "De ____ (å flytte) til Tromsø for fem år siden."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi kalimat utama yang benar.",
+   "items": [
+    "i fjor / jeg / var / i Tromsø",
+    "har / hun / allerede / begynt / på skolen",
+    "kjøpte / vi / nye støvler / dagen etter",
+    "aldri / har / jeg / sett / det / ordentlig",
+    "på søndag / sov / jeg / til klokka tolv"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat berikut. Semuanya memakai bentuk lampau yang keliru.",
+   "items": [
+    "Når har du kommet til Norge?",
+    "Jeg har kjøpt jakka i går.",
+    "Hun bodde her hele livet, og hun bor her fortsatt.",
+    "Vi har reist til Bergen i februar.",
+    "Jeg så aldri nordlyset.",
+    "Har du spiste frokost?"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Sudah berapa lama kamu tinggal di Oslo?",
+    "Saya beli jaket baru kemarin.",
+    "Dia belum pernah ke Tromsø.",
+    "Kami baru saja makan.",
+    "Kapan mereka mulai sekolah?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan preteritum atau perfektum, sesuai keterangan waktu di kalimatnya.",
+   "items": [
+    "Jeg ____ (å ta) to tabletter klokka fire i natt.",
+    "____ du ____ (å være) hos fastlegen din?",
+    "Hun ____ (å flytte) hit i januar.",
+    "Vi ____ (å fylle) ut skjemaet for ti minutter siden.",
+    "Legen ____ (å bli) akkurat ledig."
+   ]
+  }
+ ],
+ "answers": [
+  "reiste — har bodd — spiste — Har … sett — flyttet",
+  "I fjor var jeg i Tromsø. — Hun har allerede begynt på skolen. — Vi kjøpte nye støvler dagen etter. — Jeg har aldri sett det ordentlig. — På søndag sov jeg til klokka tolv.",
+  "Når kom du til Norge? — Jeg kjøpte jakka i går. — Hun har bodd her hele livet. — Vi reiste til Bergen i februar. — Jeg har aldri sett nordlyset. — Har du spist frokost?",
+  "Hvor lenge har du bodd i Oslo? — Jeg kjøpte en ny jakke i går. — Hun har aldri vært i Tromsø. — Vi har akkurat spist. — Når begynte de på skolen?",
+  "tok — Har … vært — flyttet — fylte — har blitt"
+ ],
+ "wave": "Sebelum masuk unit 2, ceritakan minggumu sendiri keras-keras: lima kalimat dengan preteritum (*på mandag jobbet jeg …*), lalu tiga kalimat dengan perfektum tentang apa yang sudah kamu kerjakan tahun ini (*i år har jeg …*). Perhatikan telingamu sendiri: begitu kamu menyebut hari tertentu, mulutmu harus berpindah ke preteritum tanpa dipikir."
+}

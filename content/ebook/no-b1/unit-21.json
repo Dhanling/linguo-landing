@@ -1,0 +1,481 @@
+{
+ "title": "Menulis surat resmi",
+ "title_target": "Skriftlig norsk: e-post, klage og søknad",
+ "goal": "Menulis e-mail dan surat resmi dalam bahasa Norwegia — dengan pembuka, susunan, dan penutup yang dipakai orang Norwegia sungguhan.",
+ "bekal": [
+  "memilih sapaan dan penutup yang sesuai tingkat keresmiannya",
+  "menyusun surat keluhan dengan urutan yang diharapkan lembaga",
+  "memakai ungkapan tetap bahasa tulis tanpa terdengar kaku",
+  "membedakan nada e-mail kantor dari nada surat lembaga"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Vi skriver klagen sammen",
+   "intro": "Dewi menulis surat keluhan tentang tagihan listrik yang salah. Marius membantunya menyusun. Perhatikan bahwa bahasa tulis resmi Norwegia justru pendek dan langsung — bukan berbunga-bunga.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg har fått en faktura på tolv tusen. Den skulle vært på to.",
+     "id": "Saya dapat tagihan dua belas ribu. Harusnya dua ribu.",
+     "literal": "saya telah mendapat sebuah tagihan pada dua-belas ribu. itu akan ada pada dua."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Da skriver vi en klage. Har du kundenummeret?",
+     "id": "Kalau begitu kita tulis surat keluhan. Punya nomor pelanggan?",
+     "literal": "maka menulis kami sebuah keluhan. punya kamu pelanggan-nomor-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Her. Hva skriver jeg først?",
+     "id": "Ini. Nulis apa duluan?",
+     "literal": "di-sini. apa menulis saya pertama?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Emnefeltet. Skriv: Klage på faktura nr. 88214.",
+     "id": "Kolom subjek. Tulis: Keluhan atas tagihan no. 88214.",
+     "literal": "pokok-kolom-itu. tulis: keluhan pada tagihan nomor 88214."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og hilsenen? Kjære?",
+     "id": "Sapaannya? Kjære?",
+     "literal": "dan sapaan-itu? sayang?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Nei, aldri kjære til et firma. Skriv bare Hei, eller ingenting.",
+     "id": "Nggak, jangan pernah kjære ke perusahaan. Tulis Hei aja, atau nggak usah.",
+     "literal": "tidak, tak-pernah sayang untuk sebuah firma. tulis cuma hei, atau tak-sesuatu-pun."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så enkelt? I Indonesia hadde jeg skrevet tre høflige setninger først.",
+     "id": "Sesimpel itu? Di Indonesia saya bakal nulis tiga kalimat sopan dulu.",
+     "literal": "begitu sederhana? di indonesia telah saya menulis tiga sopan kalimat pertama."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Her går man rett på sak. Det regnes som høflig, ikke uhøflig.",
+     "id": "Di sini orang langsung ke pokok. Itu dianggap sopan, bukan nggak sopan.",
+     "literal": "di-sini berjalan orang lurus pada perkara. itu dihitung sebagai sopan, tidak tidak-sopan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Greit. Jeg viser til fakturaen datert 3. mai.",
+     "id": "Oke. Saya merujuk tagihan tertanggal 3 Mei.",
+     "literal": "oke. saya menunjuk pada tagihan-itu bertanggal 3 mei."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Perfekt. Så: Beløpet stemmer ikke med målerstanden min.",
+     "id": "Sempurna. Terus: Jumlahnya nggak cocok sama angka meteran saya.",
+     "literal": "sempurna. lalu: jumlah-itu cocok tidak dengan meteran-keadaan-itu milikku."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Skal jeg forklare hvorfor jeg tror det er feil?",
+     "id": "Perlu saya jelasin kenapa saya pikir itu salah?",
+     "literal": "akan saya menjelaskan kenapa saya kira itu adalah salah?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Ja, men kort. To setninger med tall. Ingen følelser.",
+     "id": "Perlu, tapi singkat. Dua kalimat dengan angka. Tanpa emosi.",
+     "literal": "ya, tapi pendek. dua kalimat dengan angka. tak-satu-pun perasaan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og til slutt?",
+     "id": "Terakhir?",
+     "literal": "dan sampai akhir?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Be om det du vil ha: Jeg ber om at fakturaen korrigeres.",
+     "id": "Minta apa yang kamu mau: Saya minta tagihannya dikoreksi.",
+     "literal": "minta tentang itu kamu mau punya: saya meminta tentang bahwa tagihan-itu dikoreksi."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og hilsen til slutt?",
+     "id": "Penutupnya?",
+     "literal": "dan salam sampai akhir?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Med vennlig hilsen, navnet ditt, telefonnummer. Ferdig.",
+     "id": "Med vennlig hilsen, nama kamu, nomor telepon. Selesai.",
+     "literal": "dengan ramah salam, nama-itu milikmu, telepon-nomor. selesai."
+    }
+   ],
+   "notes": [
+    "**Surat resmi Norwegia pendek, dan pendeknya disengaja.** Tak ada kalimat pembuka basa-basi, tak ada permintaan maaf karena mengganggu, tak ada pujian kepada penerima. Langsung ke pokok dianggap **menghormati waktu** orang lain, dan itulah tanda kesopanan yang berlaku.",
+    "***Kjære* hampir tak pernah dipakai kepada lembaga atau orang yang tak kamu kenal.** Ia terdengar akrab dan sedikit tua. Untuk e-mail kantor, *Hei* sudah cukup; untuk surat sangat resmi, banyak orang membuka tanpa sapaan sama sekali dan langsung menulis pokoknya.",
+    "***Jeg viser til …*** adalah pembuka baku yang paling berguna. *Jeg viser til fakturaen datert 3. mai.* *Jeg viser til samtalen vår i går.* Ia menandai apa yang sedang kamu bicarakan tanpa menceritakan seluruh kisahnya.",
+    "***Jeg ber om at …*** menyatakan apa yang kamu inginkan, dan hampir selalu diikuti kalimat pasif berakhiran *-s*: *at fakturaen korrigeres*, *at saken behandles på nytt*, *at beløpet refunderes*. Di sinilah unit 13 terpakai secara langsung.",
+    "**Angka dan tanggal menyelamatkan surat keluhan.** Nomor pelanggan, nomor tagihan, tanggal, jumlah, angka meteran. Lembaga Norwegia bekerja dengan berkas, bukan dengan cerita, dan surat yang penuh angka diproses jauh lebih cepat daripada surat yang penuh penjelasan.",
+    "***Med vennlig hilsen*** adalah penutup baku yang aman di semua keadaan resmi. Untuk e-mail kantor sehari-hari, cukup *Mvh* atau bahkan *Hilsen* diikuti nama. *Vennlig hilsen* tanpa *med* juga lazim.",
+    "**Bahasa tulis memakai bentuk penuh, bahasa lisan memakai bentuk pendek.** Tulislah *ikke*, bukan *ikkje*; *jeg*, bukan *jeg`a*; *det er*, bukan *det`e*. Dan hindari partikel dari unit 17 di surat resmi: *jo*, *da*, *nok*, dan *vel* membuat tulisan terdengar terlalu santai."
+   ]
+  },
+  {
+   "title": "Dialog kedua — E-post på jobben",
+   "intro": "E-mail internal kantor punya nada yang berbeda: masih pendek, tapi jauh lebih hangat. Sigrid menunjukkan perbedaannya.",
+   "lines": [
+    {
+     "speaker": "Sigrid:",
+     "text": "Til kolleger skriver du Hei Ingrid, ikke Til Ingrid Hansen.",
+     "id": "Ke rekan kerja tulisnya Hei Ingrid, bukan Kepada Ingrid Hansen.",
+     "literal": "untuk kolega-jamak menulis kamu hai ingrid, tidak untuk ingrid hansen."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og hvis jeg ber om noe?",
+     "id": "Kalau saya minta sesuatu?",
+     "literal": "dan kalau saya meminta tentang sesuatu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Skriv: Har du mulighet til å se på dette før fredag?",
+     "id": "Tulis: Ada kesempatan lihat ini sebelum Jumat?",
+     "literal": "tulis: punya kamu kemungkinan untuk untuk melihat pada ini sebelum jumat?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ikke bare kan du gjøre det?",
+     "id": "Bukan cuma bisa nggak kamu kerjain?",
+     "literal": "tidak cuma bisa kamu melakukan itu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Jo, men mulighet-formen gir folk rom til å si nei.",
+     "id": "Bisa juga, tapi bentuk mulighet ngasih ruang buat nolak.",
+     "literal": "ya, tapi kemungkinan-bentuk-itu memberi orang ruang untuk untuk mengatakan tidak."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og hvis det haster?",
+     "id": "Kalau mendesak?",
+     "literal": "dan kalau itu terburu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Da skriver du det rett ut: Dette haster litt, dessverre.",
+     "id": "Ya tulis terus terang: Ini agak mendesak, sayangnya.",
+     "literal": "maka menulis kamu itu lurus keluar: ini terburu sedikit, sayangnya."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og avslutningen?",
+     "id": "Penutupnya?",
+     "literal": "dan penutupan-itu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Takk på forhånd, så Mvh og navnet ditt. Aldri mer enn det.",
+     "id": "Takk på forhånd, terus Mvh dan nama kamu. Jangan lebih dari itu.",
+     "literal": "terima-kasih pada duluan, lalu mvh dan nama-itu milikmu. tak-pernah lebih daripada itu."
+    }
+   ],
+   "notes": [
+    "***Har du mulighet til å …?*** adalah bentuk permintaan yang paling sering dipakai di kantor Norwegia. Ia memberi ruang untuk menolak, dan justru karena itu ia dianggap sopan. Sepupunya: *kunne du …?*, *er det mulig å …?*, *jeg lurte på om du kunne …*",
+    "***Takk på forhånd*** berarti terima kasih sebelumnya, dan ia penutup baku sebelum salam di e-mail permintaan. Ia dipakai puluhan kali sehari di kantor mana pun.",
+    "***Mvh*** adalah singkatan *med vennlig hilsen* dan sepenuhnya diterima di e-mail internal. Di surat kepada lembaga atau pelanggan, tulislah lengkap.",
+    "**Perhatikan bahwa e-mail internal boleh memakai *dessverre* dan *litt*.** Bahasa kantor berada di antara bahasa lisan dan bahasa surat resmi: pelunak diperbolehkan, partikel seperti *jo* dan *da* sebaiknya tidak."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kerangka surat resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Emne",
+       "pokok surat, satu baris",
+       "Klage på faktura nr. 88214"
+      ],
+      [
+       "Hilsen",
+       "sapaan",
+       "Hei / Hei Ingrid / (tanpa sapaan)"
+      ],
+      [
+       "Innledning",
+       "rujukan",
+       "Jeg viser til fakturaen datert 3. mai."
+      ],
+      [
+       "Sak",
+       "apa yang terjadi, dengan angka",
+       "Beløpet er 12 000 kr. Målerstanden min viser 2 140 kWh."
+      ],
+      [
+       "Begrunnelse",
+       "kenapa menurutmu keliru, dua kalimat",
+       "Jeg har sendt inn måleravlesning hver måned."
+      ],
+      [
+       "Krav",
+       "apa yang kamu minta",
+       "Jeg ber om at fakturaen korrigeres."
+      ],
+      [
+       "Frist",
+       "kapan kamu mengharapkan jawaban",
+       "Jeg ber om svar innen 14 dager."
+      ],
+      [
+       "Avslutning",
+       "salam, nama, kontak",
+       "Med vennlig hilsen, Dewi Sari, tlf. 400 12 345"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ungkapan tetap yang wajib kamu punya",
+     "items": [
+      "**Pembuka:** *Jeg viser til …* · *Jeg skriver angående …* · *Jeg tar kontakt fordi …* · *I forbindelse med … ønsker jeg å …*",
+      "**Menyampaikan pokok:** *Saken gjelder …* · *Problemet er at …* · *Jeg vil gjerne gjøre oppmerksom på at …*",
+      "**Meminta:** *Jeg ber om at …* · *Jeg ønsker at … skal …* · *Kan dere bekrefte at …* · *Jeg ber om svar innen …*",
+      "**Menutup:** *Ta gjerne kontakt hvis noe er uklart.* · *Takk på forhånd.* · *Med vennlig hilsen*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tiga tingkat keresmian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Urusan",
+      "Sapaan",
+      "Nada",
+      "Penutup"
+     ],
+     "rows": [
+      [
+       "surat ke lembaga",
+       "Hei / tanpa sapaan",
+       "pendek, berangka, pasif",
+       "Med vennlig hilsen"
+      ],
+      [
+       "e-mail ke pelanggan",
+       "Hei Ingrid",
+       "sopan, aktif, tanpa partikel",
+       "Med vennlig hilsen"
+      ],
+      [
+       "e-mail internal",
+       "Hei / Hei alle",
+       "hangat, boleh dessverre dan litt",
+       "Mvh / Hilsen"
+      ],
+      [
+       "pesan singkat kolega",
+       "Hei / tanpa apa-apa",
+       "seperti lisan, partikel boleh",
+       "(tanpa penutup)"
+      ],
+      [
+       "lamaran kerja",
+       "Hei / Til rekrutteringsansvarlig",
+       "tegas, aktif, tanpa merendah",
+       "Med vennlig hilsen"
+      ],
+      [
+       "surat ke tetangga",
+       "Hei",
+       "ramah, langsung",
+       "Hilsen + nomor apartemen"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang membuat surat Indonesia terdengar aneh di Norwegia",
+     "items": [
+      "**Kalimat pembuka yang panjang.** \"Sebelumnya saya mohon maaf mengganggu waktu Bapak/Ibu\" tak punya padanan sama sekali, dan menerjemahkannya membuat penerima bingung mencari pokoknya.",
+      "**Merendahkan diri.** *Jeg er bare en vanlig kunde* atau *jeg er kanskje ikke flink nok* melemahkan surat tanpa menambah kesopanan. Sampaikan pokoknya dengan tenang; itu sudah sopan.",
+      "**Terlalu banyak gelar dan sapaan hormat.** Bahasa Norwegia tak memakai *De* sebagai sapaan hormat sejak lama, dan menyapa orang dengan *De* hari ini terdengar seperti sindiran. Semua orang, termasuk menteri, disapa *du*.",
+      "**Menutup dengan permintaan maaf.** *Beklager bryet* jarang dipakai kecuali kamu memang merepotkan seseorang. Gantilah dengan *takk på forhånd*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "faktura",
+   "baca": "fak-TUU-ra",
+   "id": "tagihan"
+  },
+  {
+   "no": "klage",
+   "baca": "KLAA-ge",
+   "id": "keluhan, gugatan"
+  },
+  {
+   "no": "kundenummer",
+   "baca": "KUN-ne-num-mer",
+   "id": "nomor pelanggan"
+  },
+  {
+   "no": "emnefelt",
+   "baca": "EM-ne-felt",
+   "id": "kolom subjek e-mail"
+  },
+  {
+   "no": "hilsen",
+   "baca": "HIL-sen",
+   "id": "salam, sapaan"
+  },
+  {
+   "no": "firma",
+   "baca": "FIR-ma",
+   "id": "perusahaan"
+  },
+  {
+   "no": "høflig",
+   "baca": "HÖF-li",
+   "id": "sopan"
+  },
+  {
+   "no": "rett på sak",
+   "baca": "rett po SAAK",
+   "id": "langsung ke pokok"
+  },
+  {
+   "no": "å vise til",
+   "baca": "o VII-se til",
+   "id": "merujuk pada"
+  },
+  {
+   "no": "datert",
+   "baca": "da-TEERT",
+   "id": "tertanggal"
+  },
+  {
+   "no": "beløp",
+   "baca": "be-LÖÖP",
+   "id": "jumlah uang"
+  },
+  {
+   "no": "målerstand",
+   "baca": "MOO-ler-stann",
+   "id": "angka meteran"
+  },
+  {
+   "no": "å korrigere",
+   "baca": "o ko-ri-GEE-re",
+   "id": "mengoreksi"
+  },
+  {
+   "no": "å be om",
+   "baca": "o bee om",
+   "id": "meminta"
+  },
+  {
+   "no": "kollega",
+   "baca": "kol-LEE-ga",
+   "id": "rekan kerja"
+  },
+  {
+   "no": "mulighet",
+   "baca": "MUU-li-heet",
+   "id": "kesempatan, kemungkinan"
+  },
+  {
+   "no": "rom",
+   "baca": "rumm",
+   "id": "ruang"
+  },
+  {
+   "no": "avslutning",
+   "baca": "AAV-slut-ning",
+   "id": "penutup"
+  },
+  {
+   "no": "på forhånd",
+   "baca": "po FOR-honn",
+   "id": "sebelumnya"
+  },
+  {
+   "no": "uklar",
+   "baca": "UU-klaar",
+   "id": "tidak jelas"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun bagian surat berikut sesuai urutan yang benar. Tulis nomornya saja dari 1 sampai 5.",
+   "items": [
+    "Med vennlig hilsen, Dewi Sari",
+    "Jeg viser til fakturaen datert 3. mai.",
+    "Klage på faktura nr. 88214",
+    "Jeg ber om at fakturaen korrigeres.",
+    "Beløpet stemmer ikke med målerstanden min."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ungkapan tetap yang tepat.",
+   "items": [
+    "____ samtalen vår i går. (merujuk)",
+    "____ at saken behandles på nytt. (meminta)",
+    "____ svar innen 14 dager. (meminta jawaban)",
+    "____ hvis noe er uklart. (silakan hubungi)",
+    "____ , Dewi Sari. (penutup resmi)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi permintaan yang lebih sopan untuk e-mail kantor.",
+   "items": [
+    "Gjør dette før fredag.",
+    "Send meg tallene i dag.",
+    "Svar meg fort.",
+    "Du må ringe kunden.",
+    "Sjekk dette nå."
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat berikut. Semuanya terdengar keliru di surat Norwegia.",
+   "items": [
+    "Kjære Strømselskapet AS,",
+    "Beklager at jeg bryr Dem med denne saken.",
+    "Jeg er bare en vanlig kunde og kan lite om dette.",
+    "Jeg tror kanskje det kanskje er litt feil, kanskje.",
+    "Jeg ber om at dere fikser det jo ganske raskt, da."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Saya merujuk tagihan tertanggal 3 Mei.",
+    "Jumlahnya nggak cocok sama angka meteran saya.",
+    "Saya minta tagihannya dikoreksi.",
+    "Ada kesempatan lihat ini sebelum Jumat?",
+    "Silakan hubungi saya kalau ada yang kurang jelas."
+   ]
+  }
+ ],
+ "answers": [
+  "5 — 2 — 1 — 4 — 3",
+  "Jeg viser til — Jeg ber om — Jeg ber om — Ta gjerne kontakt — Med vennlig hilsen",
+  "Har du mulighet til å se på dette før fredag? — Kunne du sendt meg tallene i dag? — Jeg setter pris på et raskt svar. — Har du mulighet til å ringe kunden? — Kan du sjekke dette når du får tid?",
+  "Hei, — Jeg viser til denne saken. — Jeg viser til fakturaen datert 3. mai. — Beløpet stemmer ikke med målerstanden min. — Jeg ber om at fakturaen korrigeres.",
+  "Jeg viser til fakturaen datert 3. mai. — Beløpet stemmer ikke med målerstanden min. — Jeg ber om at fakturaen korrigeres. — Har du mulighet til å se på dette før fredag? — Ta gjerne kontakt hvis noe er uklart."
+ ],
+ "wave": "Ulangi unit 20, lalu tulis satu surat keluhan sungguhan tentang apa pun yang benar-benar pernah mengganggumu: tagihan, kiriman yang tak sampai, tetangga yang berisik. Ikuti delapan baris kerangka di tabel pertama, dan batasi seluruh suratnya maksimal seratus lima puluh kata. Kalau lebih panjang dari itu, potong bagian penjelasannya, bukan bagian angkanya."
+}

@@ -1,0 +1,533 @@
+{
+ "title": "Kata kerja mengunci tempat kedua",
+ "title_target": "Verbet står alltid på plass to",
+ "goal": "Menaruh kata kerja bernyawa di tempat kedua, dan membalik subjeknya begitu ada bagian lain yang didahulukan.",
+ "bekal": [
+  "membalik subjek dan kata kerja sesudah keterangan yang dimajukan",
+  "mengenali apa saja yang boleh berdiri di bagian depan — dan bahwa isinya cuma satu",
+  "menyusun pertanyaan tanpa kata bantu tambahan",
+  "menghindari susunan *i går jeg gikk* yang langsung menandaimu sebagai pelajar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Jakten på en leilighet",
+   "intro": "Dewi sedang mencari tempat tinggal baru. Hampir tiap kalimat di dialog ini dimulai dengan sesuatu selain subjek — dan tiap kali itu terjadi, subjeknya terlempar ke belakang kata kerja. Tandai kata kerjanya: ia selalu kata kedua.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "I dag har jeg sett på tre leiligheter. Ingen av dem passet.",
+     "id": "Hari ini saya lihat tiga apartemen. Nggak ada yang cocok.",
+     "literal": "di hari-ini telah saya melihat pada tiga apartemen. tak-satu-pun dari mereka cocok."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Tre på én dag? Da må du være sliten.",
+     "id": "Tiga dalam sehari? Pasti capek dong.",
+     "literal": "tiga pada satu hari? maka harus kamu ada lelah."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Litt. På Grünerløkka var det altfor dyrt, og på Tøyen var det altfor lite.",
+     "id": "Lumayan. Di Grünerløkka kemahalan, di Tøyen kekecilan.",
+     "literal": "sedikit. pada grünerløkka ada itu terlalu mahal, dan pada tøyen ada itu terlalu kecil."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Hvor mye vil du betale?",
+     "id": "Kamu mau bayar berapa?",
+     "literal": "berapa banyak mau kamu membayar?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Under tolv tusen. Derfor leter jeg litt lenger unna sentrum.",
+     "id": "Di bawah dua belas ribu. Makanya saya cari agak jauh dari pusat kota.",
+     "literal": "di-bawah dua-belas ribu. karena-itu mencari saya sedikit lebih-jauh jauh pusat-kota."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "På Grorud får du mye mer for pengene.",
+     "id": "Di Grorud kamu dapat jauh lebih banyak dengan uang segitu.",
+     "literal": "pada grorud mendapat kamu banyak lebih untuk uang-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det vet jeg. Men da bruker jeg en time på jobben hver dag.",
+     "id": "Saya tahu. Tapi berarti saya habis sejam ke kantor tiap hari.",
+     "literal": "itu tahu saya. tapi maka memakai saya sebuah jam pada pekerjaan-itu setiap hari."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Sant nok. Har du prøvd Finn?",
+     "id": "Bener juga. Kamu udah coba Finn?",
+     "literal": "benar cukup. telah kamu mencoba finn?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hver eneste kveld sitter jeg og oppdaterer siden.",
+     "id": "Tiap malam saya duduk melototin halamannya terus.",
+     "literal": "setiap satu-satunya malam duduk saya dan memperbarui halaman-itu."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Og likevel finner du ingenting?",
+     "id": "Tapi tetap nggak nemu apa-apa?",
+     "literal": "dan tetap-saja menemukan kamu tak-sesuatu-pun?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jo, jeg finner masse. Men klokka åtte om morgenen er alt borte.",
+     "id": "Nemu kok, banyak. Tapi jam delapan pagi semuanya sudah habis.",
+     "literal": "ya, saya menemukan banyak. tapi jam delapan tentang pagi-itu adalah semua hilang."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Neste gang skal jeg ringe for deg. Norsk på telefon hjelper.",
+     "id": "Lain kali biar saya yang telepon buat kamu. Ngomong norsk di telepon itu ngaruh.",
+     "literal": "berikut kali akan saya menelepon untuk kamu. norwegia pada telepon menolong."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Tror du virkelig det?",
+     "id": "Kamu beneran mikir gitu?",
+     "literal": "kira kamu sungguh itu?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Dessverre gjør jeg det. Med et norsk navn kommer du først i køen.",
+     "id": "Sayangnya iya. Dengan nama Norwegia kamu masuk antrean paling depan.",
+     "literal": "sayangnya melakukan saya itu. dengan sebuah norwegia nama datang kamu pertama di antrean-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det har jeg hørt før, men jeg ville ikke tro det.",
+     "id": "Saya pernah dengar itu, tapi saya nggak mau percaya.",
+     "literal": "itu telah saya dengar sebelum, tapi saya mau tidak percaya itu."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Nå ringer jeg uansett. Om en uke bor du et sted.",
+     "id": "Sekarang saya telepon aja. Seminggu lagi kamu udah punya tempat.",
+     "literal": "sekarang menelepon saya bagaimanapun. tentang satu minggu tinggal kamu sebuah tempat."
+    }
+   ],
+   "notes": [
+    "**Hukum tempat kedua adalah satu-satunya aturan yang tak boleh dilanggar.** Di kalimat pernyataan, kata kerja bernyawa berdiri sebagai **bagian kedua**, apa pun yang berdiri di depannya. *I dag **har** jeg …*, *Derfor **leter** jeg …*, *Nå **ringer** jeg …*. Yang dihitung bukan kata kedua, melainkan bagian kedua: *Hver eneste kveld* adalah tiga kata, tapi satu bagian.",
+    "**Kalau bagian depan bukan subjek, subjeknya jatuh ke belakang kata kerja.** Ini yang disebut *inversjon*. Bahasa Indonesia tak mengenalnya sama sekali — *hari ini saya pergi* dan *saya pergi hari ini* dua-duanya wajar. Di bahasa Norwegia, *i dag jeg går* salah, dan salahnya terdengar seketika.",
+    "**Bagian depan cuma boleh diisi satu bagian.** *I går på jobben snakket jeg med sjefen* keliru karena dua keterangan berdesakan di depan. Pilih salah satu, dan lemparkan sisanya ke belakang: *I går snakket jeg med sjefen på jobben.*",
+    "**Yang boleh berdiri di depan hampir apa saja:** keterangan waktu (*i dag*), tempat (*på Grorud*), objek (*Det vet jeg*), anak kalimat penuh (*Hvis du vil, kommer jeg*), bahkan kata sifat. Mendahulukan objek seperti *Det har jeg hørt før* sangat lazim dan membuat kalimatmu terdengar jauh lebih Norwegia daripada *jeg har hørt det før*.",
+    "**Pertanyaan cuma memindahkan kata kerjanya ke depan.** *Har du prøvd Finn?* *Tror du virkelig det?* Tak ada kata bantu tambahan seperti *do* dalam bahasa Inggris, dan tak ada partikel seperti *apakah*. Untuk pertanyaan berkata tanya, kata tanyanya mengisi bagian depan dan kata kerjanya tetap di tempat kedua: *Hvor mye vil du betale?*",
+    "**Kata sambung setara tidak menghitung sebagai bagian depan.** *Og*, *men*, *for*, *eller*, dan *så* berdiri **di luar** kalimatnya. Karena itu *Og likevel finner du ingenting?* punya *likevel* sebagai bagian depan, bukan *og*. Ini menjelaskan kenapa *men jeg ville ikke tro det* tetap memakai urutan biasa.",
+    "**Waspadai *kanskje*.** Kata ini secara resmi memicu inversjon (*Kanskje kommer han i morgen*), tapi dalam percakapan sehari-hari orang Norwegia sering membiarkannya tanpa inversjon (*Kanskje han kommer i morgen*). Dua-duanya terdengar wajar; di tulisan resmi, pakailah yang pertama."
+   ]
+  },
+  {
+   "title": "Dialog kedua — På visning",
+   "intro": "Dewi akhirnya mendapat undangan melihat apartemen. Agennya berbicara cepat, dan hampir tiap kalimatnya membuka dengan keterangan — jadi hampir tiap kalimatnya membalik subjek.",
+   "lines": [
+    {
+     "speaker": "Megler:",
+     "text": "Velkommen! I dag har vi bare tjue minutter, dessverre.",
+     "id": "Selamat datang! Hari ini kita cuma punya dua puluh menit, sayangnya.",
+     "literal": "selamat-datang! di hari-ini punya kami cuma dua-puluh menit, sayangnya."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det går fint. Hvor mange har meldt seg på?",
+     "id": "Nggak apa-apa. Yang daftar ada berapa?",
+     "literal": "itu berjalan baik. berapa banyak telah mendaftarkan diri pada?"
+    },
+    {
+     "speaker": "Megler:",
+     "text": "Førti stykker. Om en time kommer det tjue til.",
+     "id": "Empat puluh orang. Sejam lagi datang dua puluh lagi.",
+     "literal": "empat-puluh potong. tentang satu jam datang itu dua-puluh lagi."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så mange? Da blir det budrunde i morgen.",
+     "id": "Sebanyak itu? Berarti besok ada lelang harga.",
+     "literal": "begitu banyak? maka menjadi itu tawaran-putaran di besok."
+    },
+    {
+     "speaker": "Megler:",
+     "text": "Sannsynligvis. Her har vi stua, og der borte ligger kjøkkenet.",
+     "id": "Kemungkinan besar. Ini ruang tamunya, dan di sebelah sana dapurnya.",
+     "literal": "kemungkinan-besar. di-sini punya kami ruang-tamu-itu, dan di-sana jauh berbaring dapur-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Er det fellesvaskeri i kjelleren?",
+     "id": "Ada laundry bersama di basemen?",
+     "literal": "adakah itu bersama-cucian di ruang-bawah-tanah-itu?"
+    },
+    {
+     "speaker": "Megler:",
+     "text": "Ja, og i tillegg får du en bod på fem kvadrat.",
+     "id": "Ada, plus kamu dapat gudang lima meter persegi.",
+     "literal": "ya, dan di tambahan mendapat kamu sebuah gudang pada lima persegi."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hvor mye er felleskostnadene?",
+     "id": "Iuran bersamanya berapa?",
+     "literal": "berapa banyak adalah bersama-biaya-jamak-itu?"
+    },
+    {
+     "speaker": "Megler:",
+     "text": "Tre tusen i måneden. Til gjengjeld er strøm inkludert.",
+     "id": "Tiga ribu sebulan. Sebagai gantinya, listrik sudah termasuk.",
+     "literal": "tiga ribu di bulan-itu. sebagai balasan adalah listrik termasuk."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det høres greit ut. Når må jeg gi bud?",
+     "id": "Kedengarannya oke. Kapan saya harus kasih penawaran?",
+     "literal": "itu terdengar oke keluar. kapan harus saya memberi tawaran?"
+    },
+    {
+     "speaker": "Megler:",
+     "text": "Innen klokka tolv i morgen. Etter det stenger vi runden.",
+     "id": "Paling lambat jam dua belas besok. Setelah itu kami tutup putarannya.",
+     "literal": "dalam jam dua-belas di besok. sesudah itu menutup kami putaran-itu."
+    }
+   ],
+   "notes": [
+    "**Bahasa penjualan Norwegia hidup dari inversjon.** *Her har vi stua*, *der borte ligger kjøkkenet*, *i tillegg får du en bod*, *til gjengjeld er strøm inkludert*. Memajukan keterangan ke depan membuat kalimatnya terdengar tertata dan sopan; memulai semuanya dengan *vi* atau *du* membuatnya terdengar seperti daftar.",
+    "***Det* sebagai subjek boneka muncul di *om en time kommer det tjue til*.** Yang benar-benar datang adalah dua puluh orang, tapi bahasa Norwegia tetap menuntut ada sesuatu di kursi subjek. Ini diurus penuh di unit 12.",
+    "***Budrunde*** adalah lelang terbuka yang menentukan harga hampir semua rumah di Norwegia: peminat saling menaikkan tawaran lewat telepon dalam hitungan jam. Kata-kata di sekitarnya — *bud*, *å gi bud*, *å legge inn bud*, *budfrist* — akan kamu temui di iklan mana pun.",
+    "***Til gjengjeld*** berarti sebagai gantinya dan hampir selalu berdiri di bagian depan kalimat, jadi ia hampir selalu memicu inversjon. Sepupunya: *i tillegg* (sebagai tambahan), *derimot* (sebaliknya), *for øvrig* (lagi pula)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Enam kolom kalimat Norwegia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "1 depan",
+      "2 kata kerja",
+      "3 subjek",
+      "4 adverbial",
+      "5 kerja sisa",
+      "6 sisanya"
+     ],
+     "rows": [
+      [
+       "",
+       "Jeg",
+       "",
+       "ikke",
+       "",
+       "liker kaffe → Jeg liker ikke kaffe"
+      ],
+      [
+       "I dag",
+       "har",
+       "jeg",
+       "ikke",
+       "sett",
+       "noe"
+      ],
+      [
+       "Derfor",
+       "leter",
+       "jeg",
+       "",
+       "",
+       "lenger unna"
+      ],
+      [
+       "Det",
+       "vet",
+       "jeg",
+       "godt",
+       "",
+       ""
+      ],
+      [
+       "",
+       "Har",
+       "du",
+       "allerede",
+       "prøvd",
+       "Finn?"
+      ],
+      [
+       "Hvor mye",
+       "vil",
+       "du",
+       "",
+       "betale",
+       "?"
+      ],
+      [
+       "Neste gang",
+       "skal",
+       "jeg",
+       "",
+       "ringe",
+       "for deg"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara menguji kalimatmu sendiri",
+     "items": [
+      "**Tunjuk kata kerja bernyawanya.** Itu kata yang berubah menurut waktu: *har*, *er*, *leter*, *skal*, *ville*. Kalau ada dua kata kerja, yang bernyawa adalah yang pertama.",
+      "**Hitung bagian di depannya.** Kalau lebih dari satu bagian, kalimatmu keliru. Kalau nol bagian, kalimatmu adalah pertanyaan atau perintah.",
+      "**Periksa subjeknya.** Kalau ada sesuatu di bagian depan dan subjeknya masih berdiri sebelum kata kerja, kamu baru saja membuat kesalahan paling khas pelajar bahasa Norwegia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata yang sering dimajukan ke depan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Arti",
+      "Contoh dengan inversjon"
+     ],
+     "rows": [
+      [
+       "derfor",
+       "karena itu",
+       "**Derfor leter** jeg lenger unna."
+      ],
+      [
+       "dessverre",
+       "sayangnya",
+       "**Dessverre kan** jeg ikke komme."
+      ],
+      [
+       "heldigvis",
+       "untungnya",
+       "**Heldigvis fant** vi hytta."
+      ],
+      [
+       "likevel",
+       "meski begitu",
+       "**Likevel finner** du ingenting."
+      ],
+      [
+       "kanskje",
+       "barangkali",
+       "**Kanskje kommer** han i morgen."
+      ],
+      [
+       "derimot",
+       "sebaliknya",
+       "**Derimot er** Grorud billigere."
+      ],
+      [
+       "etterpå",
+       "sesudah itu",
+       "**Etterpå drakk** vi te."
+      ],
+      [
+       "plutselig",
+       "tiba-tiba",
+       "**Plutselig ringte** telefonen."
+      ],
+      [
+       "da (maka)",
+       "maka",
+       "**Da må** du være sliten."
+      ],
+      [
+       "nå",
+       "sekarang",
+       "**Nå ringer** jeg uansett."
+      ],
+      [
+       "så (lalu)",
+       "lalu",
+       "**Så satt** vi foran peisen."
+      ],
+      [
+       "først",
+       "mula-mula",
+       "**Først spiste** vi, så gikk vi ut."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua kata kecil yang tidak memicu inversjon",
+     "items": [
+      "***Og*, *men*, *eller*, *for*, *så* sebagai penyambung** berdiri di luar kalimat, jadi kalimat sesudahnya berjalan biasa: *Jeg leter, **men jeg finner** ingenting.*",
+      "***Så*** punya dua wajah. Sebagai penyambung berarti \"jadi\" dan tak memicu apa-apa; sebagai keterangan berarti \"lalu\" dan memicu inversjon. *Vi spiste, **så gikk vi** ut* (lalu kami keluar) melawan *Jeg var sulten, **så jeg spiste*** (jadi saya makan). Perbedaannya kelihatan justru dari urutan katanya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "leilighet",
+   "baca": "LÈI-li-heet",
+   "id": "apartemen"
+  },
+  {
+   "no": "å passe",
+   "baca": "o PAS-se",
+   "id": "cocok, pas"
+  },
+  {
+   "no": "sliten",
+   "baca": "SLII-ten",
+   "id": "lelah"
+  },
+  {
+   "no": "dyr",
+   "baca": "düür",
+   "id": "mahal"
+  },
+  {
+   "no": "å lete",
+   "baca": "o LEE-te",
+   "id": "mencari"
+  },
+  {
+   "no": "lenger unna",
+   "baca": "LENG-er UN-na",
+   "id": "lebih jauh dari"
+  },
+  {
+   "no": "sentrum",
+   "baca": "SEN-trum",
+   "id": "pusat kota"
+  },
+  {
+   "no": "å bruke",
+   "baca": "o BRUU-ke",
+   "id": "memakai, menghabiskan (waktu)"
+  },
+  {
+   "no": "sant nok",
+   "baca": "sant NOKK",
+   "id": "benar juga"
+  },
+  {
+   "no": "å oppdatere",
+   "baca": "o opp-da-TEE-re",
+   "id": "memperbarui, me-refresh"
+  },
+  {
+   "no": "likevel",
+   "baca": "LII-ke-vel",
+   "id": "meski begitu"
+  },
+  {
+   "no": "masse",
+   "baca": "MAS-se",
+   "id": "banyak sekali"
+  },
+  {
+   "no": "borte",
+   "baca": "BOR-te",
+   "id": "hilang, tidak ada lagi"
+  },
+  {
+   "no": "neste gang",
+   "baca": "NES-te GANG",
+   "id": "lain kali"
+  },
+  {
+   "no": "å ringe",
+   "baca": "o RING-e",
+   "id": "menelepon"
+  },
+  {
+   "no": "virkelig",
+   "baca": "VIR-ke-li",
+   "id": "sungguh, benar-benar"
+  },
+  {
+   "no": "dessverre",
+   "baca": "des-VÈR-re",
+   "id": "sayangnya"
+  },
+  {
+   "no": "kø",
+   "baca": "kö",
+   "id": "antrean"
+  },
+  {
+   "no": "uansett",
+   "baca": "UU-an-sett",
+   "id": "bagaimanapun juga"
+  },
+  {
+   "no": "et sted",
+   "baca": "et STEE",
+   "id": "suatu tempat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Majukan bagian yang dicetak miring ke depan kalimat, lalu betulkan urutannya.",
+   "items": [
+    "Jeg har sett på tre leiligheter *i dag*.",
+    "Vi drakk te *etterpå*.",
+    "Jeg leter lenger unna *derfor*.",
+    "Han kan ikke komme *dessverre*.",
+    "Vi fant hytta *heldigvis*."
+   ]
+  },
+  {
+   "prompt": "Susun ulang menjadi kalimat yang benar.",
+   "items": [
+    "på Grorud / du / får / mye mer / for pengene",
+    "skal / neste gang / jeg / ringe / for deg",
+    "har / det / jeg / hørt / før",
+    "sitter / hver kveld / jeg / og oppdaterer / siden",
+    "bor / om en uke / du / et sted"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat berikut. Semuanya melanggar hukum tempat kedua.",
+   "items": [
+    "I går jeg gikk på kino.",
+    "Derfor jeg leter lenger unna.",
+    "I går på jobben snakket jeg med sjefen.",
+    "Nå jeg ringer uansett.",
+    "Plutselig telefonen ringte.",
+    "Om en uke du bor et sted."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia. Mulailah tiap kalimat dengan bagian yang dicetak tebal dalam bahasa Indonesianya.",
+   "items": [
+    "**Hari ini** saya sudah lihat tiga apartemen.",
+    "**Karena itu** saya cari lebih jauh dari pusat kota.",
+    "**Sayangnya** saya nggak bisa datang.",
+    "**Tiap malam** saya duduk dan me-refresh halamannya.",
+    "**Seminggu lagi** kamu sudah punya tempat tinggal."
+   ]
+  },
+  {
+   "prompt": "Majukan keterangan di dalam kurung ke depan kalimat, lalu tulis ulang kalimatnya.",
+   "items": [
+    "Vi har stua. (her)",
+    "Kjøkkenet ligger. (der borte)",
+    "Du får en bod. (i tillegg)",
+    "Strøm er inkludert. (til gjengjeld)",
+    "Vi stenger runden. (etter det)"
+   ]
+  }
+ ],
+ "answers": [
+  "I dag har jeg sett på tre leiligheter. — Etterpå drakk vi te. — Derfor leter jeg lenger unna. — Dessverre kan han ikke komme. — Heldigvis fant vi hytta.",
+  "På Grorud får du mye mer for pengene. — Neste gang skal jeg ringe for deg. — Det har jeg hørt før. — Hver kveld sitter jeg og oppdaterer siden. — Om en uke bor du et sted.",
+  "I går gikk jeg på kino. — Derfor leter jeg lenger unna. — I går snakket jeg med sjefen på jobben. — Nå ringer jeg uansett. — Plutselig ringte telefonen. — Om en uke bor du et sted.",
+  "I dag har jeg sett på tre leiligheter. — Derfor leter jeg lenger unna sentrum. — Dessverre kan jeg ikke komme. — Hver kveld sitter jeg og oppdaterer siden. — Om en uke bor du et sted.",
+  "Her har vi stua. — Der borte ligger kjøkkenet. — I tillegg får du en bod. — Til gjengjeld er strøm inkludert. — Etter det stenger vi runden."
+ ],
+ "wave": "Ulangi dialog unit 2, tapi kali ini majukan satu keterangan ke depan di tiap kalimat yang bisa: *På fredag dro vi …*, *I mørket kom vi fram …*, *Til slutt så vi et lys …*. Ucapkan keras-keras dan dengarkan sendiri bunyi subjek yang terlempar ke belakang kata kerja. Itu bunyi bahasa Norwegia yang benar."
+}

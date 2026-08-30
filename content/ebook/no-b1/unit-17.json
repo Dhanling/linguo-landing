@@ -1,0 +1,497 @@
+{
+ "title": "Kata kecil yang mengubah nada",
+ "title_target": "Småord: jo, da, nok, vel, altså",
+ "goal": "Memakai partikel percakapan yang tak punya arti kamus tapi menentukan bagaimana kalimatmu terdengar.",
+ "bekal": [
+  "menyelipkan *jo*, *da*, *nok*, *vel*, *altså* di kolom yang benar",
+  "melunakkan permintaan dan pernyataan dengan partikel",
+  "membedakan *jo* sebagai jawaban dari *jo* sebagai partikel",
+  "mengenali nada yang dibawa tiap partikel"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kaffepause",
+   "intro": "Percakapan biasa di ruang istirahat kantor. Yang membuatnya terdengar benar-benar Norwegia bukan kosakatanya, melainkan enam kata kecil yang bertaburan di seluruh kalimat.",
+   "lines": [
+    {
+     "speaker": "Odd:",
+     "text": "Du har jo vært her i to år nå.",
+     "id": "Kamu kan udah dua tahun di sini.",
+     "literal": "kamu telah memang ada di-sini di dua tahun sekarang."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Snart tre, faktisk. Tida går fort.",
+     "id": "Bentar lagi tiga, malah. Waktu cepet banget.",
+     "literal": "segera tiga, sebenarnya. waktu-itu berjalan cepat."
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Det gjør den vel. Savner du Indonesia?",
+     "id": "Iya sih ya. Kangen Indonesia?",
+     "literal": "itu melakukan itu kiranya. merindukan kamu indonesia?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Av og til. Men jeg savner nok maten mer enn været.",
+     "id": "Kadang-kadang. Tapi kayaknya lebih kangen makanannya daripada cuacanya.",
+     "literal": "dari dan sampai. tapi saya merindukan agaknya makanan-itu lebih daripada cuaca-itu."
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Det forstår jeg godt. Kom da og spis hos oss en søndag.",
+     "id": "Ngerti banget. Ayo dong Minggu nanti makan di tempat kami.",
+     "literal": "itu mengerti saya baik. datang deh dan makan di kami sebuah minggu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Mener du det?",
+     "id": "Serius?",
+     "literal": "berpendapat kamu itu?"
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Selvfølgelig. Kona mi lager jo altfor mye mat uansett.",
+     "id": "Ya jelas. Istri saya kan emang masaknya kebanyakan terus.",
+     "literal": "tentu-saja. istri-itu milikku membuat memang terlalu banyak makanan bagaimanapun."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Da kommer jeg gjerne. Skal jeg ta med noe?",
+     "id": "Boleh deh saya datang. Perlu bawa apa?",
+     "literal": "maka datang saya silakan. akan saya mengambil dengan sesuatu?"
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Bare deg selv. Vi har jo alt.",
+     "id": "Bawa diri aja. Kita kan udah punya semua.",
+     "literal": "cuma kamu sendiri. kami punya memang semua."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg tar med noe likevel. Det er altså sånn vi gjør det.",
+     "id": "Tetep saya bawa sesuatu. Emang begitu cara kami.",
+     "literal": "saya mengambil dengan sesuatu tetap-saja. itu adalah jadi begitu kami melakukan itu."
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Da tar du med noe, da.",
+     "id": "Ya udah, bawa deh.",
+     "literal": "maka mengambil kamu dengan sesuatu, deh."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Er klokka to allerede? Da må jeg nok gå.",
+     "id": "Udah jam dua? Kayaknya saya harus jalan.",
+     "literal": "adakah jam dua sudah? maka harus saya agaknya berjalan."
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Møtet ditt er vel klokka halv tre?",
+     "id": "Rapatmu setengah tiga kan?",
+     "literal": "rapat-itu milikmu adalah kiranya jam setengah tiga?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jo, men jeg må forberede meg litt.",
+     "id": "Iya, tapi saya perlu siap-siap dikit.",
+     "literal": "ya, tapi saya harus mempersiapkan diri sedikit."
+    },
+    {
+     "speaker": "Odd:",
+     "text": "Gå, da. Vi snakkes på søndag.",
+     "id": "Sana gih. Ngobrol lagi Minggu.",
+     "literal": "berjalan, deh. kami terbicarakan pada minggu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Vi snakkes. Og takk, altså.",
+     "id": "Iya. Dan makasih ya beneran.",
+     "literal": "kami terbicarakan. dan terima-kasih, sungguh."
+    }
+   ],
+   "notes": [
+    "***Jo* berarti \"seperti yang kita berdua tahu\".** *Du har **jo** vært her i to år.* Ia mengingatkan lawan bicara pada sesuatu yang sudah diketahui bersama, dan karena itu melunakkan kalimat yang kalau tanpanya akan terdengar seperti tuduhan. Padanan terdekat dalam bahasa Indonesia adalah *kan*: \"Kamu **kan** udah dua tahun di sini.\"",
+    "***Da* di ujung kalimat menghangatkan perintah dan permintaan.** *Kom **da**!* *Gå, **da**.* *Ta med noe, **da**.* Tanpa *da*, perintahnya kering; dengan *da*, ia menjadi ajakan. Ini sepadan dengan *dong* atau *deh* dalam bahasa Indonesia — dan seperti *dong*, ia hampir mustahil dijelaskan tanpa contoh.",
+    "***Nok* berarti agaknya, kiranya.** *Jeg savner **nok** maten mer.* *Da må jeg **nok** gå.* Ia melunakkan pernyataan dari kepastian menjadi dugaan, dan penutur Norwegia memakainya terus-menerus karena berkata terlalu pasti dianggap kurang sopan. Jangan bingung dengan *nok* yang berarti cukup (*nok mat*).",
+    "***Vel* menandai bahwa kamu mengharapkan persetujuan.** *Møtet ditt er **vel** klokka halv tre?* = rapatmu setengah tiga, kan? Ia berdiri di antara pernyataan dan pertanyaan. Bahasa Indonesia memakai *ya kan* atau nada naik di akhir kalimat.",
+    "***Altså* berarti jadi, maksudnya, sungguh.** Di awal kalimat ia merangkum (*Altså, vi møtes klokka to*), di tengah ia menegaskan (*Det er **altså** sånn vi gjør det*), di ujung ia menggarisbawahi perasaan (*Takk, **altså***). Tiga tempat, tiga nada.",
+    "**Semua partikel ini berdiri di kolom keempat, tempat *ikke* berdiri.** *Du har **jo ikke** sagt det.* *Jeg må **nok ikke** gå likevel.* Urutan di antara mereka sendiri cukup bebas, tapi mereka tak pernah berdiri di depan kata kerja di kalimat utama.",
+    "***Jo* punya wajah kedua sebagai jawaban.** Untuk membantah pertanyaan bersangkalan, jawabannya *jo*, bukan *ja*: *Kommer du ikke?* — *Jo, jeg kommer.* Menjawab *ja* di situ membingungkan lawan bicara, karena ia terdengar menyetujui sangkalannya."
+   ]
+  },
+  {
+   "title": "Dialog kedua — Uten småord og med",
+   "intro": "Percakapan yang sama diucapkan dua kali: pertama tanpa partikel, lalu dengan. Isinya sama persis, tapi yang kedua terdengar seperti manusia.",
+   "lines": [
+    {
+     "speaker": "Versi 1:",
+     "text": "Du kommer for sent. Møtet begynte klokka ni.",
+     "id": "Kamu telat. Rapatnya mulai jam sembilan.",
+     "literal": "kamu datang untuk terlambat. rapat-itu mulai jam sembilan."
+    },
+    {
+     "speaker": "Versi 2:",
+     "text": "Du kommer jo litt sent. Møtet begynte vel klokka ni?",
+     "id": "Kamu agak telat nih. Rapatnya mulai jam sembilan kan?",
+     "literal": "kamu datang memang sedikit terlambat. rapat-itu mulai kiranya jam sembilan?"
+    },
+    {
+     "speaker": "Versi 1:",
+     "text": "Jeg vet ikke. Spør Sigrid.",
+     "id": "Saya nggak tahu. Tanya Sigrid.",
+     "literal": "saya tahu tidak. bertanya sigrid."
+    },
+    {
+     "speaker": "Versi 2:",
+     "text": "Jeg vet ikke helt, altså. Spør Sigrid, da.",
+     "id": "Saya kurang tahu sih. Tanya Sigrid aja deh.",
+     "literal": "saya tahu tidak sepenuhnya, sungguh. bertanya sigrid, deh."
+    },
+    {
+     "speaker": "Versi 1:",
+     "text": "Det blir dyrt.",
+     "id": "Bakal mahal.",
+     "literal": "itu menjadi mahal."
+    },
+    {
+     "speaker": "Versi 2:",
+     "text": "Det blir nok litt dyrt, tror jeg.",
+     "id": "Kayaknya agak mahal sih, menurut saya.",
+     "literal": "itu menjadi agaknya sedikit mahal, kira saya."
+    },
+    {
+     "speaker": "Versi 1:",
+     "text": "Du må gjøre det i dag.",
+     "id": "Kamu harus kerjain hari ini.",
+     "literal": "kamu harus melakukan itu di hari-ini."
+    },
+    {
+     "speaker": "Versi 2:",
+     "text": "Kan du gjøre det i dag, da? Det haster jo litt.",
+     "id": "Bisa dikerjain hari ini nggak? Soalnya agak buru-buru.",
+     "literal": "bisa kamu melakukan itu di hari-ini, deh? itu terburu memang sedikit."
+    }
+   ],
+   "notes": [
+    "**Versi 1 tidak salah — ia cuma terdengar dingin.** Bahasa Norwegia lisan menghindari pernyataan telanjang, dan partikel adalah cara utamanya. Pelajar yang tata bahasanya sempurna tapi tak pernah memakai partikel sering dianggap kaku atau bahkan marah, tanpa pernah tahu sebabnya.",
+    "***Litt* adalah pelunak yang paling murah dan paling sering dipakai.** *Litt sent*, *litt dyrt*, *litt vanskelig* — hampir selalu berarti lebih dari sekadar sedikit. Menggabungkannya dengan *nok* atau *jo* melunakkan kalimat dua kali.",
+    "**Mengubah perintah menjadi pertanyaan adalah pelunak kedua.** *Du må gjøre det* menjadi *kan du gjøre det, da?* Perintah langsung jarang dipakai di antara orang dewasa Norwegia yang sederajat, bahkan dari atasan ke bawahan.",
+    "***Det haster*** berarti ini mendesak. Kata kerja *å haste* selalu memakai *det* sebagai subjek boneka, seperti kata kerja cuaca di unit 12."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Delapan partikel percakapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Partikel",
+      "Nada yang dibawa",
+      "Contoh",
+      "Padanan Indonesia"
+     ],
+     "rows": [
+      [
+       "**jo**",
+       "kita sama-sama tahu ini",
+       "Du har **jo** lovet det.",
+       "kan"
+      ],
+      [
+       "**da** (di ujung)",
+       "menghangatkan, mengajak",
+       "Kom **da**!",
+       "dong, deh"
+      ],
+      [
+       "**da** (di depan)",
+       "maka, kalau begitu",
+       "**Da** går vi.",
+       "kalau gitu"
+      ],
+      [
+       "**nok**",
+       "agaknya, kiranya",
+       "Det blir **nok** dyrt.",
+       "kayaknya"
+      ],
+      [
+       "**vel**",
+       "kan? bukan begitu?",
+       "Du kommer **vel**?",
+       "ya kan"
+      ],
+      [
+       "**altså**",
+       "maksudnya, sungguh",
+       "Takk, **altså**.",
+       "beneran, jadi"
+      ],
+      [
+       "**bare**",
+       "cuma, melunakkan perintah",
+       "**Bare** spør!",
+       "aja"
+      ],
+      [
+       "**vel** + **nok**",
+       "ragu berlapis",
+       "Det er **vel nok** riktig.",
+       "kayaknya sih iya"
+      ],
+      [
+       "**faktisk**",
+       "sebenarnya, ternyata",
+       "Det var **faktisk** bra.",
+       "malah, ternyata"
+      ],
+      [
+       "**egentlig**",
+       "sesungguhnya",
+       "Hva mener du **egentlig**?",
+       "sebenernya"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Letak partikel",
+     "items": [
+      "**Di kalimat utama, partikel berdiri di kolom keempat** — bersama *ikke*, sesudah subjek dan kata kerja: *Du har **jo** sagt det. Jeg må **nok** gå.*",
+      "**Di anak kalimat, ia berdiri di depan kata kerja**, sama seperti *ikke*: *… fordi du **jo** har sagt det.*",
+      "***Da* di ujung adalah perkecualian.** Ia berdiri di luar kerangka, sesudah semuanya: *Ta med noe, **da**.* Jangan bingung dengan *da* di awal kalimat, yang berarti maka dan memicu inversjon."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cara Norwegia melunakkan kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat telanjang",
+      "Versi yang dilunakkan",
+      "Yang dipakai"
+     ],
+     "rows": [
+      [
+       "Du kommer for sent.",
+       "Du kommer **jo litt** sent.",
+       "jo + litt"
+      ],
+      [
+       "Det blir dyrt.",
+       "Det blir **nok litt** dyrt.",
+       "nok + litt"
+      ],
+      [
+       "Gjør det i dag.",
+       "**Kan du** gjøre det i dag, **da**?",
+       "pertanyaan + da"
+      ],
+      [
+       "Jeg vil ha kaffe.",
+       "**Kunne jeg fått** en kaffe?",
+       "modal lampau"
+      ],
+      [
+       "Det er feil.",
+       "Det er **vel ikke helt** riktig.",
+       "vel + ikke helt"
+      ],
+      [
+       "Jeg er uenig.",
+       "Jeg **ser hva du mener, men** …",
+       "mengakui dulu"
+      ],
+      [
+       "Send det nå.",
+       "**Har du mulighet til å** sende det?",
+       "pertanyaan panjang"
+      ],
+      [
+       "Nei.",
+       "Det **passer dessverre dårlig**.",
+       "kiasan pengganti nei"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa ini bukan basa-basi",
+     "items": [
+      "Budaya kerja Norwegia bertumpu pada gagasan bahwa tak ada yang berdiri jauh di atas orang lain. Perintah langsung terdengar seolah kamu menempatkan diri di atas lawan bicara, dan itu membuat orang tak nyaman — bahkan ketika kamu memang atasannya.",
+      "Karena itu pelunak bukan hiasan. Ia bagian dari arti kalimatnya. Pelajar yang menguasai partikel biasanya dianggap jauh lebih fasih daripada pelajar yang kosakatanya lebih besar tapi kalimatnya telanjang.",
+      "Sebaliknya, jangan berlebihan. Tiga pelunak dalam satu kalimat pendek terdengar ragu-ragu, dan di rapat itu bisa membuat pendapatmu terdengar tak berbobot. Satu partikel per kalimat sudah cukup."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "faktisk",
+   "baca": "FAK-tisk",
+   "id": "sebenarnya, ternyata"
+  },
+  {
+   "no": "fort",
+   "baca": "fortt",
+   "id": "cepat"
+  },
+  {
+   "no": "å savne",
+   "baca": "o SAV-ne",
+   "id": "merindukan"
+  },
+  {
+   "no": "av og til",
+   "baca": "aav o TIL",
+   "id": "kadang-kadang"
+  },
+  {
+   "no": "vær",
+   "baca": "vèr",
+   "id": "cuaca"
+  },
+  {
+   "no": "gjerne",
+   "baca": "JÈR-ne",
+   "id": "dengan senang hati"
+  },
+  {
+   "no": "uansett",
+   "baca": "UU-an-sett",
+   "id": "bagaimanapun"
+  },
+  {
+   "no": "sånn",
+   "baca": "sonn",
+   "id": "begitu, seperti itu"
+  },
+  {
+   "no": "egentlig",
+   "baca": "ÈI-gen-tli",
+   "id": "sesungguhnya"
+  },
+  {
+   "no": "å haste",
+   "baca": "o HAS-te",
+   "id": "mendesak, buru-buru"
+  },
+  {
+   "no": "å mene",
+   "baca": "o MEE-ne",
+   "id": "berpendapat, memaksudkan"
+  },
+  {
+   "no": "uenig",
+   "baca": "UU-ee-ni",
+   "id": "tidak sependapat"
+  },
+  {
+   "no": "mulighet",
+   "baca": "MUU-li-heet",
+   "id": "kemungkinan, kesempatan"
+  },
+  {
+   "no": "å passe dårlig",
+   "baca": "o pas-se DOR-li",
+   "id": "kurang cocok waktunya"
+  },
+  {
+   "no": "helt",
+   "baca": "heelt",
+   "id": "sepenuhnya"
+  },
+  {
+   "no": "litt",
+   "baca": "litt",
+   "id": "sedikit"
+  },
+  {
+   "no": "riktig",
+   "baca": "RIK-ti",
+   "id": "benar"
+  },
+  {
+   "no": "å lage",
+   "baca": "o LAA-ge",
+   "id": "membuat, memasak"
+  },
+  {
+   "no": "selv",
+   "baca": "sell",
+   "id": "sendiri"
+  },
+  {
+   "no": "snart",
+   "baca": "snaart",
+   "id": "segera"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Selipkan partikel di dalam kurung di tempat yang benar.",
+   "items": [
+    "Du har vært her i to år. (jo)",
+    "Det blir dyrt. (nok)",
+    "Du kommer på fredag? (vel)",
+    "Kom og spis hos oss. (da)",
+    "Det er sånn vi gjør det. (altså)"
+   ]
+  },
+  {
+   "prompt": "Pilih ja atau jo.",
+   "items": [
+    "Kommer du i morgen? — ____, jeg kommer.",
+    "Kommer du ikke i morgen? — ____, jeg kommer.",
+    "Liker du fisk? — ____, veldig godt.",
+    "Har du ikke spist? — ____, jeg spiste nettopp.",
+    "Var det ikke dyrt? — ____, det kostet mye."
+   ]
+  },
+  {
+   "prompt": "Lunakkan kalimat berikut memakai partikel, pertanyaan, atau litt.",
+   "items": [
+    "Du kommer for sent.",
+    "Gjør det i dag.",
+    "Det er feil.",
+    "Jeg vil ha kaffe.",
+    "Nei, det går ikke."
+   ]
+  },
+  {
+   "prompt": "Susun ulang. Perhatikan bahwa partikel berdiri di kolom keempat.",
+   "items": [
+    "har / du / jo / sagt / det",
+    "må / jeg / nok / gå / nå",
+    "er / møtet / vel / klokka ni",
+    "gjør / vi / altså / det / sånn",
+    "kommer / hun / jo / ikke"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia, dengan partikel yang cocok.",
+   "items": [
+    "Kamu kan udah dua tahun di sini.",
+    "Kayaknya saya harus jalan.",
+    "Rapatmu setengah tiga kan?",
+    "Ayo dong Minggu makan di tempat kami.",
+    "Bisa dikerjain hari ini nggak? Soalnya agak buru-buru."
+   ]
+  }
+ ],
+ "answers": [
+  "Du har jo vært her i to år. — Det blir nok dyrt. — Du kommer vel på fredag? — Kom da og spis hos oss. — Det er altså sånn vi gjør det.",
+  "Ja — Jo — Ja — Jo — Jo",
+  "Du kommer jo litt sent. — Kan du gjøre det i dag, da? — Det er vel ikke helt riktig. — Kunne jeg fått en kaffe? — Det passer dessverre dårlig.",
+  "Du har jo sagt det. — Jeg må nok gå nå. — Møtet er vel klokka ni. — Vi gjør det altså sånn. — Hun kommer jo ikke.",
+  "Du har jo vært her i to år. — Da må jeg nok gå. — Møtet ditt er vel klokka halv tre? — Kom da og spis hos oss på søndag. — Kan du gjøre det i dag, da? Det haster jo litt."
+ ],
+ "wave": "Ulangi unit 16, lalu ambil sepuluh kalimat yang kamu tulis di unit mana pun sebelumnya dan tambahkan satu partikel ke masing-masing. Bacalah dua versinya keras-keras berturut-turut. Perbedaannya tak terlihat di kertas, tapi ia terdengar seketika — dan itulah yang membuat orang menganggapmu sudah lama tinggal di Norwegia."
+}

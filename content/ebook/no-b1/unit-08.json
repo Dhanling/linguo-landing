@@ -1,0 +1,485 @@
+{
+ "title": "Kata kerja yang menuntut dirinya sendiri",
+ "title_target": "Refleksive verb og seg",
+ "goal": "Memakai *meg*, *deg*, *seg*, *oss*, *dere* sebagai bagian wajib kata kerja — dan mengenali kata kerja yang tak berarti apa-apa tanpanya.",
+ "bekal": [
+  "menyusun *jeg gleder meg*, *han setter seg*, *vi treffes*",
+  "memilih bentuk refleksif yang sesuai dengan subjeknya",
+  "membedakan *seg* dari *ham/henne/dem*",
+  "mengenali bentuk *-s* yang berarti saling"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Morgenen før eksamen",
+   "intro": "Pagi hari sebelum ujian bahasa Norwegia. Hampir semua yang dilakukan orang pada dirinya sendiri — bangun, mandi, berpakaian, menenangkan diri — memakai kata kerja refleksif.",
+   "lines": [
+    {
+     "speaker": "Ayu:",
+     "text": "Har du våknet? Klokka er allerede sju.",
+     "id": "Udah bangun? Ini udah jam tujuh.",
+     "literal": "telah kamu terbangun? jam adalah sudah tujuh."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg reiste meg for ti minutter siden. Jeg må bare vaske meg.",
+     "id": "Saya udah bangkit sepuluh menit lalu. Tinggal cuci muka.",
+     "literal": "saya membangkitkan diri untuk sepuluh menit lalu. saya harus cuma mencuci diri."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Har du kledd på deg allerede?",
+     "id": "Udah pakai baju?",
+     "literal": "telah kamu memakaikan pada diri sudah?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Nei. Jeg husker aldri hvor genseren min er.",
+     "id": "Belum. Saya nggak pernah ingat sweter saya di mana.",
+     "literal": "tidak. saya mengingat tak-pernah di-mana sweter-itu milikku adalah."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Den ligger på stolen. Sett deg og spis noe først.",
+     "id": "Ada di kursi. Duduk dulu, makan sesuatu.",
+     "literal": "itu berbaring pada kursi-itu. dudukkan diri dan makan sesuatu pertama."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg orker ikke. Jeg føler meg helt tom i hodet.",
+     "id": "Nggak sanggup. Kepala saya rasanya kosong banget.",
+     "literal": "saya sanggup tidak. saya merasakan diri sepenuhnya kosong di kepala-itu."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Det går over. Du har forberedt deg i tre måneder.",
+     "id": "Nanti hilang sendiri. Kamu udah persiapan tiga bulan.",
+     "literal": "itu berjalan lewat. kamu telah mempersiapkan diri di tiga bulan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg vet. Men jeg bekymrer meg for den muntlige delen.",
+     "id": "Tahu sih. Tapi saya khawatir sama bagian lisannya.",
+     "literal": "saya tahu. tapi saya mengkhawatirkan diri untuk itu lisan bagian-itu."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Der klarer du deg fint. Du snakker jo hele dagen på jobben.",
+     "id": "Di situ kamu bakal aman kok. Kamu ngomong seharian di kantor.",
+     "literal": "di-sana mengatasi kamu diri baik. kamu berbicara memang seluruh hari-itu pada pekerjaan-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Der kjenner jeg alle. Nå må jeg presentere meg for fremmede.",
+     "id": "Di sana saya kenal semua orang. Nanti saya harus memperkenalkan diri ke orang asing.",
+     "literal": "di-sana mengenal saya semua. sekarang harus saya memperkenalkan diri untuk asing-jamak."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "De gleder seg sikkert til å høre historien din.",
+     "id": "Mereka pasti seneng dengar ceritamu.",
+     "literal": "mereka menggembirakan diri pasti untuk untuk mendengar cerita-itu milikmu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Du er snill. Skynd deg, ellers rekker vi ikke bussen.",
+     "id": "Kamu baik banget. Buruan, nanti nggak keburu busnya.",
+     "literal": "kamu adalah baik. bergegaskan diri, kalau-tidak sempat kami tidak bus-itu."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Vi ses klokka fire. Da tar vi en kaffe og snakkes.",
+     "id": "Ketemu jam empat ya. Nanti kita ngopi dan ngobrol.",
+     "literal": "kami terlihat jam empat. maka mengambil kami sebuah kopi dan terbicarakan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Avtale. Og hvis jeg stryker, trøster du meg.",
+     "id": "Deal. Dan kalau saya nggak lulus, kamu hibur saya ya.",
+     "literal": "perjanjian. dan kalau saya gagal, menghibur kamu saya."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Du stryker ikke. Men jeg trøster deg uansett.",
+     "id": "Kamu nggak bakal gagal. Tapi tetap saya hibur kok.",
+     "literal": "kamu gagal tidak. tapi saya menghibur kamu bagaimanapun."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det var det jeg ville høre. Nå kler jeg på meg.",
+     "id": "Nah itu yang mau saya denger. Sekarang saya pakai baju.",
+     "literal": "itu adalah itu saya mau mendengar. sekarang memakaikan saya pada diri."
+    }
+   ],
+   "notes": [
+    "**Kata gantinya berubah mengikuti subjek, kecuali di orang ketiga.** *Jeg gleder **meg***, *du gleder **deg***, *vi gleder **oss***, *dere gleder **dere*** — tapi *han/hun/de/den/det* semuanya memakai ***seg***. Satu kata untuk seluruh orang ketiga, tunggal maupun jamak.",
+    "***Seg* hanya menunjuk subjek kalimat itu sendiri.** *Han vasker **seg*** = ia mencuci dirinya. *Han vasker **ham*** = ia mencuci orang lain. Perbedaan ini persis sejalan dengan *sin* melawan *hans* di unit 9, dan dua-duanya bekerja dengan prinsip yang sama.",
+    "**Banyak kata kerja Norwegia sama sekali tak punya arti tanpa kata gantinya.** *Å glede seg* (menanti dengan gembira), *å skynde seg* (bergegas), *å bekymre seg* (khawatir), *å forberede seg* (bersiap), *å klare seg* (berhasil mengatasi). Menghilangkan *seg* bukan membuat kalimatnya kurang halus — ia membuatnya tak berarti.",
+    "***Å glede seg til*** tak punya padanan satu kata dalam bahasa Indonesia. *Jeg gleder meg til helga* berarti saya menanti akhir pekan dengan senang. Orang Norwegia mengucapkannya berkali-kali sehari, dan menjawab *jeg gleder meg* pada undangan adalah cara sopan yang paling lazim.",
+    "**Kata ganti refleksif berdiri di kolom keempat, tempat *ikke* juga berdiri.** Kalau keduanya muncul, refleksifnya lebih dulu: *Jeg føler **meg ikke** bra.* Bukan *jeg føler ikke meg bra*.",
+    "**Bentuk berakhiran *-s* sering berarti saling.** *Vi **ses*** (kita saling melihat), *vi **møtes***, *vi **snakkes***, *de **krangles***. Ini disebut bentuk resiprokal, dan ia jauh lebih pendek daripada susunan *hverandre*: *vi ser hverandre* boleh, tapi *vi ses* jauh lebih lazim.",
+    "**Perintah refleksif tetap membawa kata gantinya:** *Sett **deg***, *skynd **deg***, *ta **deg** en pause*, *kle **på deg***. Menghilangkannya membuat perintahnya terdengar terpotong, dan pada beberapa kata kerja membuatnya salah arti."
+   ]
+  },
+  {
+   "title": "Dialog kedua — På treningssenteret",
+   "intro": "Pusat kebugaran adalah tempat kata kerja refleksif berkumpul: memanaskan badan, meregangkan diri, melukai diri, mendaftarkan diri.",
+   "lines": [
+    {
+     "speaker": "Instruktør:",
+     "text": "Har du meldt deg inn i dag, eller har du vært her før?",
+     "id": "Kamu daftar hari ini, atau udah pernah ke sini?",
+     "literal": "telah kamu mendaftarkan diri dalam di hari-ini, atau telah kamu ada di-sini sebelum?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg meldte meg inn i går på nett.",
+     "id": "Saya daftar kemarin lewat internet.",
+     "literal": "saya mendaftarkan diri dalam di kemarin pada jaring."
+    },
+    {
+     "speaker": "Instruktør:",
+     "text": "Fint. Husk å varme deg opp før du begynner.",
+     "id": "Bagus. Jangan lupa pemanasan sebelum mulai.",
+     "literal": "bagus. ingat untuk memanaskan diri atas sebelum kamu mulai."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hvor lenge bør jeg holde på?",
+     "id": "Sebaiknya berapa lama?",
+     "literal": "berapa lama sebaiknya saya memegang pada?"
+    },
+    {
+     "speaker": "Instruktør:",
+     "text": "Ti minutter. Ellers risikerer du å skade deg.",
+     "id": "Sepuluh menit. Kalau nggak, kamu berisiko cedera.",
+     "literal": "sepuluh menit. kalau-tidak berisiko kamu untuk melukai diri."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Det har skjedd før. Jeg vred ankelen i fjor.",
+     "id": "Pernah kejadian. Tahun lalu pergelangan kaki saya terkilir.",
+     "literal": "itu telah terjadi sebelum. saya memelintir pergelangan-itu di tahun-lalu."
+    },
+    {
+     "speaker": "Instruktør:",
+     "text": "Da må du ta deg god tid. Og strekk deg etterpå.",
+     "id": "Berarti jangan buru-buru. Dan peregangan setelahnya.",
+     "literal": "maka harus kamu mengambil diri baik waktu. dan regangkan diri sesudah-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Skal vi ses her på torsdag?",
+     "id": "Kita ketemu di sini Kamis ya?",
+     "literal": "akan kami terlihat di-sini pada kamis?"
+    },
+    {
+     "speaker": "Instruktør:",
+     "text": "Jeg er her hver torsdag. Bare spør hvis du lurer på noe.",
+     "id": "Saya di sini tiap Kamis. Tanya aja kalau ada yang bingung.",
+     "literal": "saya adalah di-sini setiap kamis. cuma bertanya kalau kamu bertanya-tanya pada sesuatu."
+    }
+   ],
+   "notes": [
+    "***Å ta seg god tid*** berarti tidak terburu-buru — secara harfiah \"mengambil untuk diri waktu yang baik\". Sepupunya *å ta seg en pause* (mengambil istirahat) dan *å ta seg fri* (mengambil cuti). Semuanya menuntut kata ganti refleksif.",
+    "***Å lure på*** berarti bertanya-tanya, penasaran. *Jeg lurer på om han kommer* = saya penasaran apakah dia datang. Ungkapan ini muncul terus-menerus dalam percakapan, dan bentuk sopan *jeg lurte på om …* adalah cara paling lazim membuka permintaan.",
+    "***Å melde seg inn*** (mendaftar menjadi anggota) menggabungkan refleksif dan partikel sekaligus, seperti *å skrive seg opp* di unit 7. Sepupunya: *å melde seg på* (mendaftar ikut) dan *å melde seg ut* (keluar dari keanggotaan).",
+    "**Perhatikan bahwa *å skade seg* dan *å vri* bekerja berbeda.** *Jeg skadet meg* (saya melukai diri) menuntut refleksif; *jeg vred ankelen* (saya memelintir pergelangan) tidak, karena objeknya bagian tubuh yang disebut. Kalau kamu menyebut bagian tubuhnya, refleksifnya sering tak diperlukan lagi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata ganti refleksif dan pemakaiannya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Subjek",
+      "Refleksif",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "jeg",
+       "meg",
+       "Jeg gleder **meg**.",
+       "saya senang menanti"
+      ],
+      [
+       "du",
+       "deg",
+       "Skynd **deg**!",
+       "cepatlah"
+      ],
+      [
+       "han / hun",
+       "seg",
+       "Hun setter **seg**.",
+       "dia duduk"
+      ],
+      [
+       "den / det",
+       "seg",
+       "Døra lukker **seg**.",
+       "pintunya menutup sendiri"
+      ],
+      [
+       "vi",
+       "oss",
+       "Vi forbereder **oss**.",
+       "kami bersiap"
+      ],
+      [
+       "dere",
+       "dere",
+       "Kle på **dere**!",
+       "pakailah baju kalian"
+      ],
+      [
+       "de",
+       "seg",
+       "De bekymrer **seg**.",
+       "mereka khawatir"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dua puluh kata kerja refleksif yang wajib kamu punya",
+     "items": [
+      "**Tubuh dan kebiasaan pagi:** *å vaske seg* (mandi, cuci muka), *å dusje seg*, *å kle på seg* (berpakaian), *å kle av seg* (menanggalkan pakaian), *å barbere seg* (bercukur), *å reise seg* (bangkit berdiri), *å legge seg* (pergi tidur), *å sette seg* (duduk).",
+      "**Perasaan dan keadaan:** *å føle seg* (merasa), *å glede seg til* (menanti dengan gembira), *å bekymre seg for* (khawatir akan), *å kjede seg* (bosan), *å skamme seg* (malu), *å slappe av* (bersantai, tanpa refleksif tapi berpartikel).",
+      "**Tindakan dan urusan:** *å skynde seg* (bergegas), *å forberede seg* (bersiap), *å klare seg* (mengatasi, berhasil), *å melde seg på* (mendaftar), *å presentere seg* (memperkenalkan diri), *å konsentrere seg* (berkonsentrasi), *å skade seg* (cedera)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bentuk -s: saling, terjadi sendiri, dan pasif",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "vi ses",
+       "kita bertemu lagi",
+       "**Vi ses** på fredag!"
+      ],
+      [
+       "vi møtes",
+       "kita bertemu",
+       "**Vi møtes** utenfor kinoen."
+      ],
+      [
+       "vi snakkes",
+       "kita mengobrol lagi",
+       "**Vi snakkes** senere."
+      ],
+      [
+       "vi hilses",
+       "kita bersalaman",
+       "De **hilses** med et nikk."
+      ],
+      [
+       "de slåss",
+       "mereka berkelahi",
+       "Guttene **slåss** igjen."
+      ],
+      [
+       "de krangles",
+       "mereka bertengkar",
+       "Naboene **krangles** om parkering."
+      ],
+      [
+       "det finnes",
+       "ada, terdapat",
+       "**Det finnes** mange svar."
+      ],
+      [
+       "det synes",
+       "kelihatan",
+       "Det **synes** at du er sliten."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa -s dan seg tidak sama",
+     "items": [
+      "***Seg* menunjuk satu orang yang melakukan sesuatu pada dirinya sendiri.** *De vasker seg* = masing-masing mencuci dirinya sendiri.",
+      "***-s* menunjuk dua pihak yang melakukannya satu sama lain.** *De ses* = mereka saling bertemu. Kalau kamu memakai *seg* di sini, artinya berubah total: *de ser seg* berarti mereka melihat diri mereka sendiri.",
+      "**Bentuk *-s* juga membentuk kalimat pasif** — *døra låses klokka ti* (pintunya dikunci jam sepuluh). Yang membedakan cuma apakah subjeknya bisa saling melakukan sesuatu. Unit 13 mengurus wajah pasif ini."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å våkne",
+   "baca": "o VOOK-ne",
+   "id": "terbangun"
+  },
+  {
+   "no": "å reise seg",
+   "baca": "o RÈI-se sèi",
+   "id": "bangkit berdiri"
+  },
+  {
+   "no": "å vaske seg",
+   "baca": "o VAS-ke sèi",
+   "id": "cuci muka, mandi"
+  },
+  {
+   "no": "å kle på seg",
+   "baca": "o klee po sèi",
+   "id": "berpakaian"
+  },
+  {
+   "no": "å orke",
+   "baca": "o OR-ke",
+   "id": "sanggup"
+  },
+  {
+   "no": "tom",
+   "baca": "tomm",
+   "id": "kosong"
+  },
+  {
+   "no": "å gå over",
+   "baca": "o goo OO-ver",
+   "id": "reda, hilang sendiri"
+  },
+  {
+   "no": "å forberede seg",
+   "baca": "o for-be-REE-de sèi",
+   "id": "bersiap"
+  },
+  {
+   "no": "å bekymre seg",
+   "baca": "o be-KÜM-re sèi",
+   "id": "khawatir"
+  },
+  {
+   "no": "muntlig",
+   "baca": "MUNT-li",
+   "id": "lisan"
+  },
+  {
+   "no": "å klare seg",
+   "baca": "o KLAA-re sèi",
+   "id": "berhasil mengatasi"
+  },
+  {
+   "no": "fremmed",
+   "baca": "FREM-me",
+   "id": "orang asing, tak dikenal"
+  },
+  {
+   "no": "å glede seg til",
+   "baca": "o GLEE-de sèi til",
+   "id": "menanti dengan senang"
+  },
+  {
+   "no": "å skynde seg",
+   "baca": "o SYÜN-ne sèi",
+   "id": "bergegas"
+  },
+  {
+   "no": "å stryke",
+   "baca": "o STRÜÜ-ke",
+   "id": "tidak lulus"
+  },
+  {
+   "no": "å trøste",
+   "baca": "o TRÖS-te",
+   "id": "menghibur"
+  },
+  {
+   "no": "å melde seg inn",
+   "baca": "o MEL-de sèi INN",
+   "id": "mendaftar jadi anggota"
+  },
+  {
+   "no": "å varme opp",
+   "baca": "o VAR-me OPP",
+   "id": "pemanasan"
+  },
+  {
+   "no": "å skade seg",
+   "baca": "o SKAA-de sèi",
+   "id": "cedera"
+  },
+  {
+   "no": "å lure på",
+   "baca": "o LUU-re po",
+   "id": "penasaran, bertanya-tanya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan kata ganti refleksif yang tepat.",
+   "items": [
+    "Jeg gleder ____ til helga.",
+    "Han satte ____ ved vinduet.",
+    "Vi forberedte ____ i tre måneder.",
+    "Skynd ____, bussen går snart!",
+    "De bekymrer ____ for ingenting."
+   ]
+  },
+  {
+   "prompt": "Pilih seg atau ham, henne, dem.",
+   "items": [
+    "Han vasker ____ hver morgen. (dirinya sendiri)",
+    "Hun vasker ____ hver kveld. (anaknya)",
+    "De presenterte ____ for gruppa. (diri mereka sendiri)",
+    "Jeg presenterte ____ for gruppa. (Marius)",
+    "Barna kledde på ____ selv. (diri mereka sendiri)"
+   ]
+  },
+  {
+   "prompt": "Susun ulang. Perhatikan bahwa refleksifnya berdiri sebelum ikke.",
+   "items": [
+    "føler / jeg / meg / ikke / bra",
+    "gleder / seg / han / ikke / til møtet",
+    "meg / jeg / forberedte / godt / ikke",
+    "skynder / oss / vi / ikke",
+    "seg / de / konsentrerer / ikke"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk -s yang berarti saling.",
+   "items": [
+    "Vi ser hverandre på fredag.",
+    "Vi møter hverandre utenfor kinoen.",
+    "Vi snakker med hverandre senere.",
+    "Guttene slår hverandre igjen.",
+    "Naboene krangler med hverandre."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Saya khawatir sama bagian lisannya.",
+    "Duduk dulu, makan sesuatu.",
+    "Kepala saya rasanya kosong banget.",
+    "Jangan lupa pemanasan sebelum mulai.",
+    "Ketemu jam empat ya."
+   ]
+  }
+ ],
+ "answers": [
+  "meg — seg — oss — deg — seg",
+  "seg — henne — seg — ham — seg",
+  "Jeg føler meg ikke bra. — Han gleder seg ikke til møtet. — Jeg forberedte meg ikke godt. — Vi skynder oss ikke. — De konsentrerer seg ikke.",
+  "Vi ses på fredag. — Vi møtes utenfor kinoen. — Vi snakkes senere. — Guttene slåss igjen. — Naboene krangles.",
+  "Jeg bekymrer meg for den muntlige delen. — Sett deg og spis noe først. — Jeg føler meg helt tom i hodet. — Husk å varme deg opp før du begynner. — Vi ses klokka fire."
+ ],
+ "wave": "Ulangi unit 7, lalu ceritakan pagimu sendiri dari bangun sampai keluar rumah, memakai sepuluh kata kerja refleksif berturut-turut: *jeg våkner, jeg reiser meg, jeg vasker meg, jeg kler på meg …* Ulangi tiga kali sampai kata gantinya keluar tanpa dipikir. Di unit 9 kata ganti yang sama akan berubah menjadi urusan kepemilikan."
+}

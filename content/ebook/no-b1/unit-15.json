@@ -1,0 +1,513 @@
+{
+ "title": "Meneruskan perkataan orang",
+ "title_target": "Indirekte tale: at, om og spørreord",
+ "goal": "Mengubah perkataan langsung menjadi kalimat tak langsung — dengan pergeseran bentuk kata kerja, kata ganti, dan urutan kata sekaligus.",
+ "bekal": [
+  "memakai *at* untuk pernyataan dan *om* untuk pertanyaan ya-tidak",
+  "menyusun pertanyaan tak langsung tanpa membalik subjeknya",
+  "menggeser bentuk kata kerja satu langkah ke belakang",
+  "memakai *å be om*, *å foreslå*, *å nekte* untuk perintah dan tawaran"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hva sa legen?",
+   "intro": "Ayu baru pulang dari dokter, dan Dewi ingin tahu semuanya. Seluruh dialog ini adalah latihan meneruskan perkataan: apa yang dikatakan, apa yang ditanyakan, apa yang diminta.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Hva sa legen?",
+     "id": "Kata dokternya gimana?",
+     "literal": "apa berkata dokter-itu?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Hun sa at det ikke var noe alvorlig.",
+     "id": "Katanya nggak ada yang serius.",
+     "literal": "dia berkata bahwa itu tidak adalah sesuatu serius."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så bra. Spurte hun om du hadde hatt det før?",
+     "id": "Syukur. Dia tanya kamu pernah ngalamin sebelumnya nggak?",
+     "literal": "begitu bagus. bertanya dia apakah kamu telah punya itu sebelum?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Ja, og jeg sa at jeg hadde hatt det to ganger i fjor.",
+     "id": "Iya, dan saya bilang tahun lalu pernah dua kali.",
+     "literal": "ya, dan saya berkata bahwa saya telah punya itu dua kali di tahun-lalu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hva svarte hun da?",
+     "id": "Terus dia jawab apa?",
+     "literal": "apa menjawab dia maka?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Hun lurte på hvor lenge det hadde vart hver gang.",
+     "id": "Dia nanya tiap kali berapa lama.",
+     "literal": "dia bertanya-tanya pada berapa lama itu telah berlangsung setiap kali."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og du sa?",
+     "id": "Kamu jawab?",
+     "literal": "dan kamu berkata?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "At det gikk over etter tre dager. Da ba hun meg om å ta en blodprøve.",
+     "id": "Tiga hari terus hilang. Terus dia minta saya tes darah.",
+     "literal": "bahwa itu berjalan lewat sesudah tiga hari. maka meminta dia saya tentang untuk mengambil sebuah darah-uji."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Sa hun hvorfor?",
+     "id": "Dia bilang kenapa?",
+     "literal": "berkata dia kenapa?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Hun forklarte at hun ville utelukke noe. Hun sa ikke hva.",
+     "id": "Dia jelasin mau menyingkirkan satu kemungkinan. Nggak bilang apa.",
+     "literal": "dia menjelaskan bahwa dia mau menyingkirkan sesuatu. dia berkata tidak apa."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Typisk. Spurte du om når du får svar?",
+     "id": "Khas. Kamu tanya kapan hasilnya keluar?",
+     "literal": "khas. bertanya kamu apakah kapan kamu mendapat jawaban?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Hun sa at det tar en uke, og at de ringer hvis noe er galt.",
+     "id": "Katanya seminggu, dan mereka telepon kalau ada yang nggak beres.",
+     "literal": "dia berkata bahwa itu mengambil satu minggu, dan bahwa mereka menelepon kalau sesuatu adalah salah."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så ingen nyheter er gode nyheter.",
+     "id": "Berarti nggak ada kabar itu kabar baik.",
+     "literal": "jadi tak-satu-pun berita adalah baik berita."
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Det var akkurat det hun sa også.",
+     "id": "Persis itu juga yang dia bilang.",
+     "literal": "itu adalah persis itu dia berkata juga."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Foreslo hun noe annet?",
+     "id": "Dia nyaranin sesuatu yang lain?",
+     "literal": "mengusulkan dia sesuatu lain?"
+    },
+    {
+     "speaker": "Ayu:",
+     "text": "Hun foreslo at jeg sover mer og drikker mindre kaffe. Jeg nektet å love det.",
+     "id": "Dia saranin saya tidur lebih banyak dan ngurangin kopi. Saya nolak janji.",
+     "literal": "dia mengusulkan bahwa saya tidur lebih dan minum lebih-sedikit kopi. saya menolak untuk berjanji itu."
+    }
+   ],
+   "notes": [
+    "**Pernyataan diteruskan dengan *at*, pertanyaan ya-tidak dengan *om*.** *Hun sa **at** det ikke var alvorlig.* *Hun spurte **om** jeg hadde hatt det før.* Kata *om* di sini berarti apakah, bukan tentang — dan ia satu-satunya cara meneruskan pertanyaan yang jawabannya ya atau tidak.",
+    "**Pertanyaan berkata tanya mempertahankan kata tanyanya, tapi TIDAK membalik subjeknya.** Langsung: *Hvor lenge **varte det**?* Tak langsung: *Hun lurte på hvor lenge **det varte**.* Membalik subjeknya di kalimat tak langsung adalah kesalahan yang sangat sering, karena telinga mengira ia masih pertanyaan.",
+    "**Bentuk kata kerjanya mundur satu langkah kalau kata kerja pelapornya lampau.** *Det er ikke alvorlig* menjadi *hun sa at det **ikke var** alvorlig*. *Jeg har hatt det* menjadi *jeg sa at jeg **hadde hatt** det*. Bahasa Indonesia tak menggeser apa pun (*dia bilang tidak serius*), jadi pergeseran ini harus dipasang sadar-sadar sampai menjadi kebiasaan.",
+    "**Kata ganti dan keterangan waktu ikut bergeser.** *Jeg kommer i morgen* diteruskan sebagai *han sa at han kom **dagen etter***. *Her* menjadi *der*, *nå* menjadi *da*, *i går* menjadi *dagen før*. Pergeseran ini tak wajib kalau kamu bercerita di hari yang sama, tapi wajib begitu waktunya sudah lewat.",
+    "**Perintah diteruskan dengan *å be … om å*.** *Ta en blodprøve!* menjadi *hun **ba** meg **om å** ta en blodprøve*. Perhatikan bahwa objeknya (*meg*) berdiri sebelum *om*. Sepupunya: *å foreslå at* (mengusulkan), *å nekte å* (menolak), *å love å* (berjanji), *å tilby å* (menawarkan).",
+    "**Di anak kalimat tak langsung, seluruh aturan unit 4 berlaku.** *Hun sa at hun **ikke visste** det.* *Ikke* berdiri di depan kata kerja, sepanjang apa pun kalimatnya. Ini titik tempat dua unit bertemu, dan tempat kesalahan paling sering muncul di tulisan B1.",
+    "***At* boleh dibuang di percakapan, dan sering dibuang.** *Hun sa (at) det ikke var alvorlig.* Urutan katanya tetap urutan anak kalimat — jadi *ikke* tetap di depan kata kerja walau *at*-nya sudah hilang."
+   ]
+  },
+  {
+   "title": "Dialog kedua — Referat fra møtet",
+   "intro": "Dewi tak hadir di rapat dan minta ringkasannya. Notulen rapat adalah bentuk perkataan tak langsung yang paling murni.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Hva ble bestemt på møtet?",
+     "id": "Rapatnya mutusin apa?",
+     "literal": "apa menjadi diputuskan pada rapat-itu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Sjefen sa at budsjettet kuttes med ti prosent.",
+     "id": "Bos bilang anggarannya dipotong sepuluh persen.",
+     "literal": "bos-itu berkata bahwa anggaran-itu dipotong dengan sepuluh persen."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Sa han hva det betyr for oss?",
+     "id": "Dia bilang dampaknya buat kita apa?",
+     "literal": "berkata dia apa itu berarti untuk kami?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Han sa at ingen mister jobben, men at vi ikke ansetter flere i år.",
+     "id": "Katanya nggak ada yang di-PHK, tapi tahun ini nggak nambah orang.",
+     "literal": "dia berkata bahwa tak-satu-pun kehilangan pekerjaan-itu, tapi bahwa kami tidak mempekerjakan lebih di tahun-ini."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Spurte noen om overtiden?",
+     "id": "Ada yang nanyain lembur?",
+     "literal": "bertanya seseorang apakah lembur-itu?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Ingrid lurte på om vi fortsatt får betalt for den. Han svarte ikke direkte.",
+     "id": "Ingrid nanya lembur masih dibayar apa nggak. Dia nggak jawab langsung.",
+     "literal": "ingrid bertanya-tanya pada apakah kami terus mendapat dibayar untuk itu. dia menjawab tidak langsung."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hva sa han da?",
+     "id": "Dia bilang apa?",
+     "literal": "apa berkata dia maka?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Han foreslo at vi tar det opp igjen i august.",
+     "id": "Dia usul kita bahas lagi Agustus.",
+     "literal": "dia mengusulkan bahwa kami mengambil itu atas lagi di agustus."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Med andre ord: han sa nei uten å si nei.",
+     "id": "Dengan kata lain: dia bilang nggak tanpa bilang nggak.",
+     "literal": "dengan lain kata: dia berkata tidak tanpa untuk mengatakan tidak."
+    }
+   ],
+   "notes": [
+    "**Perhatikan bahwa kalimat kedua tidak menggeser bentuk kata kerjanya:** *sjefen sa at budsjettet **kuttes***, bukan *kuttedes*. Kalau isinya masih berlaku sekarang, penutur Norwegia sering mempertahankan bentuk sekarang. Pergeseran wajib hanya ketika isinya sudah tak berlaku lagi.",
+    "***At* diulang di kalimat majemuk.** *Han sa **at** ingen mister jobben, men **at** vi ikke ansetter flere.* Mengulang *at* sesudah *men* membuat kalimat panjang tetap jelas, dan itu kebiasaan tulis yang baik.",
+    "***Å ta noe opp*** berarti mengangkat sebuah pokok bahasan — bukan mengangkat benda. *Vi tar det opp i august* adalah kalimat yang akan kamu dengar di setiap rapat Norwegia, dan biasanya berarti pokok itu tak akan dibahas lagi.",
+    "***Med andre ord*** berarti dengan kata lain. Sepupunya yang sering dipakai untuk merangkum: *kort sagt* (singkatnya), *det vil si* (artinya), *altså* (jadi)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dari perkataan langsung ke tak langsung",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Langsung",
+      "Tak langsung",
+      "Yang berubah"
+     ],
+     "rows": [
+      [
+       "\"Det er ikke alvorlig.\"",
+       "Hun sa **at** det **ikke var** alvorlig.",
+       "at, letak ikke, bentuk kata kerja"
+      ],
+      [
+       "\"Har du hatt det før?\"",
+       "Hun spurte **om** jeg **hadde hatt** det før.",
+       "om, subjek tak dibalik"
+      ],
+      [
+       "\"Hvor lenge varte det?\"",
+       "Hun lurte på **hvor lenge** det **varte**.",
+       "kata tanya tetap, subjek tak dibalik"
+      ],
+      [
+       "\"Ta en blodprøve.\"",
+       "Hun **ba** meg **om å** ta en blodprøve.",
+       "perintah menjadi å-bentuk"
+      ],
+      [
+       "\"Jeg kommer i morgen.\"",
+       "Han sa at han **kom dagen etter**.",
+       "kata ganti dan waktu bergeser"
+      ],
+      [
+       "\"Sov mer.\"",
+       "Hun **foreslo at** jeg sover mer.",
+       "usul memakai at"
+      ],
+      [
+       "\"Nei, det gjør jeg ikke.\"",
+       "Han **nektet å** gjøre det.",
+       "penolakan memakai å"
+      ],
+      [
+       "\"Jeg skal hjelpe deg.\"",
+       "Hun **tilbød seg å** hjelpe meg.",
+       "tawaran memakai refleksif + å"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kesalahan yang paling sering",
+     "items": [
+      "**Membalik subjek di pertanyaan tak langsung.** *Hun spurte hvor lenge varte det* salah; yang benar *hvor lenge det varte*. Begitu pertanyaannya diteruskan, ia menjadi anak kalimat biasa.",
+      "**Memakai *hvis* untuk apakah.** *Hun spurte hvis jeg kom* salah. *Hvis* hanya berarti kalau; untuk apakah, pakailah *om*.",
+      "**Menaruh *ikke* di belakang kata kerja.** *Han sa at han kommer ikke* salah; yang benar *at han ikke kommer*. Ini kembali ke unit 4, dan di kalimat tak langsung ia paling sering terlewat karena kalimatnya panjang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja pelapor dan susunannya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Susunan",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "å si",
+       "at + anak kalimat",
+       "Han sa **at** han kom."
+      ],
+      [
+       "å spørre",
+       "om / kata tanya",
+       "Han spurte **om** jeg kom."
+      ],
+      [
+       "å lure på",
+       "om / kata tanya",
+       "Jeg lurer **på om** du kommer."
+      ],
+      [
+       "å svare",
+       "at",
+       "Hun svarte **at** hun ikke visste."
+      ],
+      [
+       "å fortelle",
+       "noen at",
+       "Han fortalte **meg at** det var over."
+      ],
+      [
+       "å forklare",
+       "at",
+       "Hun forklarte **at** det tar tid."
+      ],
+      [
+       "å be",
+       "noen om å",
+       "Hun ba **meg om å** vente."
+      ],
+      [
+       "å foreslå",
+       "at",
+       "Han foreslo **at** vi venter."
+      ],
+      [
+       "å nekte",
+       "å",
+       "Jeg nektet **å** love det."
+      ],
+      [
+       "å love",
+       "å / at",
+       "Han lovte **å** ringe."
+      ],
+      [
+       "å tilby seg",
+       "å",
+       "Hun tilbød **seg å** hjelpe."
+      ],
+      [
+       "å mene",
+       "at",
+       "Jeg mener **at** det er feil."
+      ],
+      [
+       "å påstå",
+       "at",
+       "Han påstår **at** han var der."
+      ],
+      [
+       "å innrømme",
+       "at",
+       "Hun innrømmet **at** hun tok feil."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Å si, å fortelle, å snakke, å prate",
+     "items": [
+      "***Å si*** = mengatakan sesuatu. Selalu ada isinya: *si noe*, *si at*, *si fra*.",
+      "***Å fortelle*** = menceritakan kepada seseorang. Menuntut penerima: *fortelle **meg** noe*.",
+      "***Å snakke*** = berbicara. Tak punya objek isi: *snakke norsk*, *snakke med noen*, *snakke om noe*.",
+      "***Å prate*** = mengobrol. Lebih santai daripada *snakke*, dan tak pernah dipakai di bahasa resmi. Menukar keempatnya adalah kesalahan kosakata yang paling sering di tingkat B1."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "alvorlig",
+   "baca": "al-VOR-li",
+   "id": "serius, gawat"
+  },
+  {
+   "no": "å vare",
+   "baca": "o VAA-re",
+   "id": "berlangsung"
+  },
+  {
+   "no": "blodprøve",
+   "baca": "BLUU-prö-ve",
+   "id": "tes darah"
+  },
+  {
+   "no": "å utelukke",
+   "baca": "o UU-te-luk-ke",
+   "id": "menyingkirkan kemungkinan"
+  },
+  {
+   "no": "typisk",
+   "baca": "TÜÜ-pisk",
+   "id": "khas, sudah biasa"
+  },
+  {
+   "no": "galt",
+   "baca": "galt",
+   "id": "salah, tidak beres"
+  },
+  {
+   "no": "nyhet",
+   "baca": "NÜÜ-heet",
+   "id": "berita"
+  },
+  {
+   "no": "å foreslå",
+   "baca": "o FOO-re-sloo",
+   "id": "mengusulkan"
+  },
+  {
+   "no": "å nekte",
+   "baca": "o NEK-te",
+   "id": "menolak"
+  },
+  {
+   "no": "referat",
+   "baca": "re-fe-RAAT",
+   "id": "notulen"
+  },
+  {
+   "no": "å bestemme",
+   "baca": "o be-STEM-me",
+   "id": "memutuskan"
+  },
+  {
+   "no": "budsjett",
+   "baca": "bud-SYETT",
+   "id": "anggaran"
+  },
+  {
+   "no": "å kutte",
+   "baca": "o KUT-te",
+   "id": "memotong"
+  },
+  {
+   "no": "å ansette",
+   "baca": "o AN-set-te",
+   "id": "mempekerjakan"
+  },
+  {
+   "no": "overtid",
+   "baca": "OO-ver-tiid",
+   "id": "lembur"
+  },
+  {
+   "no": "direkte",
+   "baca": "di-REK-te",
+   "id": "langsung"
+  },
+  {
+   "no": "å ta opp",
+   "baca": "o taa OPP",
+   "id": "mengangkat pokok bahasan"
+  },
+  {
+   "no": "med andre ord",
+   "baca": "me AN-dre UUR",
+   "id": "dengan kata lain"
+  },
+  {
+   "no": "å påstå",
+   "baca": "o PO-stoo",
+   "id": "mendalilkan, mengaku-aku"
+  },
+  {
+   "no": "å innrømme",
+   "baca": "o INN-röm-me",
+   "id": "mengakui"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi perkataan tak langsung dengan Hun sa at …",
+   "items": [
+    "\"Det er ikke alvorlig.\"",
+    "\"Jeg kommer ikke i dag.\"",
+    "\"Vi har allerede sendt brevet.\"",
+    "\"Han vil ikke svare.\"",
+    "\"Det tar en uke.\""
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pertanyaan tak langsung dengan Hun spurte …",
+   "items": [
+    "\"Har du hatt det før?\"",
+    "\"Hvor lenge varte det?\"",
+    "\"Kommer du på fredag?\"",
+    "\"Hvorfor sa du ingenting?\"",
+    "\"Når får jeg svar?\""
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat berikut.",
+   "items": [
+    "Hun spurte hvor lenge varte det.",
+    "Han sa at han kommer ikke.",
+    "Jeg lurer på hvis du kommer.",
+    "Hun spurte om når får jeg svar.",
+    "Han fortalte at han hadde ikke tid."
+   ]
+  },
+  {
+   "prompt": "Teruskan dengan kata kerja pelapor di dalam kurung.",
+   "items": [
+    "\"Vent litt.\" (å be meg om)",
+    "\"La oss vente til august.\" (å foreslå at)",
+    "\"Nei, jeg lover ingenting.\" (å nekte å)",
+    "\"Jeg skal hjelpe deg.\" (å tilby seg å)",
+    "\"Ja, jeg tok feil.\" (å innrømme at)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Katanya nggak ada yang serius.",
+    "Dia tanya kamu pernah ngalamin sebelumnya nggak?",
+    "Dia nanya tiap kali berapa lama.",
+    "Terus dia minta saya tes darah.",
+    "Dia usul kita bahas lagi Agustus."
+   ]
+  }
+ ],
+ "answers": [
+  "Hun sa at det ikke var alvorlig. — Hun sa at hun ikke kom den dagen. — Hun sa at de allerede hadde sendt brevet. — Hun sa at han ikke ville svare. — Hun sa at det tok en uke.",
+  "Hun spurte om jeg hadde hatt det før. — Hun spurte hvor lenge det varte. — Hun spurte om jeg kom på fredag. — Hun spurte hvorfor jeg ikke sa noe. — Hun spurte når hun fikk svar.",
+  "Hun spurte hvor lenge det varte. — Han sa at han ikke kommer. — Jeg lurer på om du kommer. — Hun spurte når hun fikk svar. — Han fortalte at han ikke hadde tid.",
+  "Hun ba meg om å vente litt. — Han foreslo at vi venter til august. — Jeg nektet å love noe. — Hun tilbød seg å hjelpe meg. — Han innrømmet at han tok feil.",
+  "Hun sa at det ikke var noe alvorlig. — Spurte hun om du hadde hatt det før? — Hun lurte på hvor lenge det hadde vart hver gang. — Da ba hun meg om å ta en blodprøve. — Han foreslo at vi tar det opp igjen i august."
+ ],
+ "wave": "Ulangi unit 14, lalu ambil percakapan terakhir yang benar-benar kamu alami hari ini — dalam bahasa apa pun — dan ceritakan ulang seluruhnya dalam bahasa Norwegia sebagai perkataan tak langsung: *hun sa at …*, *jeg spurte om …*, *han foreslo at …*. Latihan ini menggabungkan unit 4, 14, dan 15 sekaligus, dan hasilnya langsung terdengar di kelancaranmu."
+}

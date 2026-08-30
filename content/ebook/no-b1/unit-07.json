@@ -1,0 +1,539 @@
+{
+ "title": "Kata kerja berpartikel",
+ "title_target": "Partikkelverb: ta av, finne ut, gå ut",
+ "goal": "Mengenali kata kerja yang artinya ditentukan oleh partikel kecil di belakangnya, dan menaruh objeknya di tempat yang benar.",
+ "bekal": [
+  "membedakan partikel yang ditekan dari awalan yang menyatu",
+  "menaruh kata ganti pendek sebelum partikel, kata benda penuh sesudahnya",
+  "mengenali dua puluh kata kerja berpartikel yang paling sering dipakai",
+  "membaca arti kiasan yang tak bisa ditebak dari kata-katanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Flyttedag",
+   "intro": "Hari pindahan. Semua yang terjadi hari itu diucapkan dengan kata kerja berpartikel — mengangkat, membuang, mencari tahu, menyerah. Cobalah menandai kata kecil yang berdiri di belakang tiap kata kerja.",
+   "lines": [
+    {
+     "speaker": "Marius:",
+     "text": "Skal vi bære inn sofaen først, eller tar vi ut eskene?",
+     "id": "Sofanya kita angkat masuk dulu, atau kardusnya kita keluarin?",
+     "literal": "akan kami membawa dalam sofa-itu pertama, atau mengambil kami keluar kardus-jamak-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ta den inn først. Jeg finner ikke ut hvor esken med kopper er.",
+     "id": "Masukin sofanya dulu. Saya nggak nemu kardus yang isi cangkir.",
+     "literal": "ambil itu dalam pertama. saya menemukan tidak keluar di-mana kardus-itu dengan cangkir adalah."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Den satte du ned ved døra. Jeg så det.",
+     "id": "Kamu taruh di dekat pintu. Saya lihat kok.",
+     "literal": "itu menaruh kamu turun dekat pintu-itu. saya melihat itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Å ja. Kan du sette den opp på benken?",
+     "id": "Oh iya. Bisa taruh di atas meja dapur?",
+     "literal": "oh ya. bisa kamu menaruh itu atas pada meja-itu?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Klart. Skal vi kaste ut den gamle stolen?",
+     "id": "Beres. Kursi lama itu kita buang aja?",
+     "literal": "jelas. akan kami membuang keluar itu tua kursi-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ikke kast den ut! Jeg skal pusse den opp.",
+     "id": "Jangan dibuang! Mau saya perbaiki.",
+     "literal": "jangan membuang itu keluar! saya akan memoles itu atas."
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Du gir aldri opp, du.",
+     "id": "Kamu emang nggak pernah nyerah ya.",
+     "literal": "kamu memberi tak-pernah atas, kamu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Nei. Forresten, fant du ut hva naboen heter?",
+     "id": "Nggak dong. Eh, kamu udah tahu nama tetangganya?",
+     "literal": "tidak. ngomong-ngomong, menemukan kamu keluar apa tetangga-itu bernama?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Han heter Odd. Han kom bort til meg da jeg bar inn bordet.",
+     "id": "Namanya Odd. Dia menghampiri saya waktu saya angkat meja masuk.",
+     "literal": "dia bernama odd. dia datang pergi ke saya ketika saya membawa dalam meja-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Sa han noe om vaskeriet?",
+     "id": "Dia ngomongin laundry-nya nggak?",
+     "literal": "berkata dia sesuatu tentang cucian-itu?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Ja, du må skrive deg opp på lista i kjelleren.",
+     "id": "Iya, kamu harus daftarin nama di daftar yang di basemen.",
+     "literal": "ya, kamu harus menulis kamu atas pada daftar-itu di ruang-bawah-tanah-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Da går jeg ned nå. Slår du på varmen imens?",
+     "id": "Saya turun sekarang deh. Kamu nyalain penghangatnya ya sementara.",
+     "literal": "maka berjalan saya turun sekarang. memukul kamu pada panas-itu sementara?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Den er allerede på. Men strømmen gikk ut i sted.",
+     "id": "Udah nyala. Tapi tadi listriknya sempat mati.",
+     "literal": "itu adalah sudah pada. tapi listrik-itu berjalan keluar di tempat."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Hva? Fant du ut hvorfor?",
+     "id": "Hah? Kamu tahu kenapa?",
+     "literal": "apa? menemukan kamu keluar kenapa?"
+    },
+    {
+     "speaker": "Marius:",
+     "text": "Nei. Men jeg slo den på igjen, og nå går alt.",
+     "id": "Nggak. Tapi saya nyalain lagi, dan sekarang semua jalan.",
+     "literal": "tidak. tapi saya memukul itu pada lagi, dan sekarang berjalan semua."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Da gir jeg opp å forstå dette huset.",
+     "id": "Yaudah, saya nyerah ngertiin rumah ini.",
+     "literal": "maka memberi saya atas untuk mengerti ini rumah-itu."
+    }
+   ],
+   "notes": [
+    "**Partikelnya menentukan arti, dan artinya sering tak bisa ditebak.** *Å finne* berarti menemukan; *å finne ut* berarti mencari tahu. *Å gi* berarti memberi; *å gi opp* berarti menyerah. *Å slå* berarti memukul; *å slå på* berarti menyalakan. Kata kerja berpartikel harus dipelajari sebagai kata utuh, persis seperti kosakata baru.",
+    "**Kata ganti pendek menyelinap ke DEPAN partikel, kata benda penuh berdiri di BELAKANGNYA.** *Kast **den** ut* melawan *kast ut **den gamle stolen***. *Slå **den** på* melawan *slå på **varmen***. Aturan ini sama persis dengan bahasa Inggris (*turn it on* melawan *turn on the heater*), tapi tak punya padanan sama sekali dalam bahasa Indonesia.",
+    "**Partikelnya ditekan, dan tekanan itulah yang membedakannya dari awalan.** Bandingkan *å **kjøre** **over*** (menabrak, dua tekanan) dengan *å over**kjøre*** (menindas, satu tekanan di akhir). Kalau kata kerjanya ditulis menyatu — *overta*, *innse*, *avlyse* — partikelnya tak bisa dipisahkan lagi dan tekanannya berpindah.",
+    "**Di anak kalimat, partikelnya tetap menempel di belakang kata kerjanya.** *… fordi jeg ikke **fant ut** hvor esken var.* Yang berpindah cuma *ikke*; partikelnya tak ikut ke mana-mana. Ini berbeda dari bahasa Belanda atau Jerman, tempat partikelnya justru melompat.",
+    "**Beberapa partikel bisa berarti benar-benar arah, atau justru kiasan.** *Han kom **bort** til meg* = ia menghampiri (arah nyata). *Det er **bort**kastet* = itu sia-sia (kiasan). Konteksnya yang membedakan, dan biasanya jelas seketika.",
+    "***Å skrive seg opp*** berarti mendaftarkan namamu di daftar tertulis, dan ia menggabungkan tiga hal sekaligus: kata kerja, kata ganti refleksif, dan partikel. Susunan bertumpuk seperti ini biasa di bahasa Norwegia sehari-hari.",
+    "**Perintah bersangkalan meletakkan *ikke* di depan:** *Ikke kast den ut!* Partikelnya tetap di ekor, objek pendeknya tetap di tengah. Semua aturannya bekerja bersamaan di satu kalimat pendek."
+   ]
+  },
+  {
+   "title": "Dialog kedua — På butikken",
+   "intro": "Berbelanja adalah tempat kata kerja berpartikel muncul paling padat: membayar, menukar, mengembalikan, memeriksa.",
+   "lines": [
+    {
+     "speaker": "Dewi:",
+     "text": "Unnskyld, kan jeg bytte inn denne genseren?",
+     "id": "Permisi, saya boleh tukar sweter ini?",
+     "literal": "maaf, bisa saya menukar dalam ini sweter-itu?"
+    },
+    {
+     "speaker": "Ansatt:",
+     "text": "Har du tatt vare på kvitteringen?",
+     "id": "Strukanya masih disimpan?",
+     "literal": "telah kamu mengambil penjagaan pada struk-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ja, her. Jeg prøvde den på hjemme, men den var for liten.",
+     "id": "Iya, ini. Saya coba di rumah, tapi kekecilan.",
+     "literal": "ya, di-sini. saya mencoba itu pada di-rumah, tapi itu adalah terlalu kecil."
+    },
+    {
+     "speaker": "Ansatt:",
+     "text": "Da skriver jeg den ut på nytt. Vil du ha pengene tilbake?",
+     "id": "Kalau begitu saya cetak ulang. Mau uangnya dikembalikan?",
+     "literal": "maka menulis saya itu keluar pada baru. mau kamu punya uang-itu kembali?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Nei, jeg bytter den ut med en større.",
+     "id": "Nggak, saya tukar sama yang lebih besar.",
+     "literal": "tidak, saya menukar itu keluar dengan sebuah lebih-besar."
+    },
+    {
+     "speaker": "Ansatt:",
+     "text": "Vi har ikke flere igjen i den fargen. Skal jeg sjekke opp lageret?",
+     "id": "Warna itu stoknya habis. Perlu saya cek gudang?",
+     "literal": "kami punya tidak lebih lagi di itu warna-itu. akan saya memeriksa atas gudang-itu?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Ja takk, hvis det ikke tar for lang tid.",
+     "id": "Boleh, kalau nggak lama.",
+     "literal": "ya terima-kasih, kalau itu tidak mengambil untuk lama waktu."
+    },
+    {
+     "speaker": "Ansatt:",
+     "text": "To minutter. Kan du vente her mens jeg finner det ut?",
+     "id": "Dua menit. Bisa tunggu di sini sementara saya cek?",
+     "literal": "dua menit. bisa kamu menunggu di-sini sementara saya menemukan itu keluar?"
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Selvfølgelig. Jeg gir ikke opp så lett.",
+     "id": "Tentu saja. Saya nggak gampang nyerah.",
+     "literal": "tentu-saja. saya memberi tidak atas begitu mudah."
+    }
+   ],
+   "notes": [
+    "**Perhatikan *finner det ut* di anak kalimat.** Kata ganti *det* tetap menyelinap di depan partikel, walau kalimatnya anak kalimat. Letak kata ganti tak terpengaruh oleh jenis kalimat sama sekali.",
+    "***Å ta vare på*** berarti menjaga, merawat, menyimpan — tiga kata yang bekerja sebagai satu. Ungkapan berpartikel-ganda semacam ini banyak: *å se fram til* (menanti-nanti), *å høre opp med* (berhenti melakukan), *å komme over* (melewati, mengatasi).",
+    "***Å prøve på*** berarti mencoba memakai pakaian; *å prøve* saja berarti mencoba melakukan sesuatu. Partikel *på* memindahkan seluruh maknanya ke urusan pakaian.",
+    "***Igjen* punya dua arti yang berbeda jauh:** lagi (*kom igjen!*) dan tersisa (*vi har ikke flere igjen*). Yang menentukan adalah kata kerjanya. Bersama *bare*, *ennå*, dan *nok*, kata ini termasuk yang paling sering disalahartikan oleh pelajar."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dua puluh kata kerja berpartikel yang paling sering dipakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Arti harfiah",
+      "Arti sebenarnya"
+     ],
+     "rows": [
+      [
+       "å finne ut",
+       "menemukan keluar",
+       "mencari tahu, mengetahui"
+      ],
+      [
+       "å gi opp",
+       "memberi atas",
+       "menyerah"
+      ],
+      [
+       "å slå på / av",
+       "memukul pada / dari",
+       "menyalakan / mematikan"
+      ],
+      [
+       "å ta av",
+       "mengambil dari",
+       "melepas (pakaian); lepas landas"
+      ],
+      [
+       "å ta på",
+       "mengambil pada",
+       "memakai (pakaian); menyentuh"
+      ],
+      [
+       "å ta med",
+       "mengambil dengan",
+       "membawa serta"
+      ],
+      [
+       "å ta opp",
+       "mengambil atas",
+       "mengangkat; merekam; membahas"
+      ],
+      [
+       "å legge ved",
+       "meletakkan dekat",
+       "melampirkan"
+      ],
+      [
+       "å skrive ut",
+       "menulis keluar",
+       "mencetak"
+      ],
+      [
+       "å skrive seg opp",
+       "menulis diri atas",
+       "mendaftarkan nama"
+      ],
+      [
+       "å sette opp",
+       "menaruh atas",
+       "menyusun, memasang, menjadwalkan"
+      ],
+      [
+       "å sette ned",
+       "menaruh turun",
+       "menurunkan (harga); meletakkan"
+      ],
+      [
+       "å kaste ut",
+       "melempar keluar",
+       "membuang; mengusir"
+      ],
+      [
+       "å pusse opp",
+       "memoles atas",
+       "merenovasi"
+      ],
+      [
+       "å bytte inn / ut",
+       "menukar dalam / keluar",
+       "menukarkan / mengganti"
+      ],
+      [
+       "å sjekke opp",
+       "memeriksa atas",
+       "mengecek, mencari tahu"
+      ],
+      [
+       "å komme bort til",
+       "datang pergi ke",
+       "menghampiri"
+      ],
+      [
+       "å gå ut",
+       "berjalan keluar",
+       "keluar; padam; kedaluwarsa"
+      ],
+      [
+       "å høre opp",
+       "mendengar atas",
+       "berhenti, usai"
+      ],
+      [
+       "å se fram til",
+       "melihat maju ke",
+       "menanti-nanti"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Letak objek: dua aturan, tanpa perkecualian",
+     "items": [
+      "**Kata ganti pendek (den, det, dem, meg, deg, seg, ham, henne) berdiri DI DEPAN partikel.** *Slå **den** på. Kast **dem** ut. Finn **det** ut.*",
+      "**Kata benda penuh berdiri DI BELAKANG partikel.** *Slå på **varmen**. Kast ut **den gamle stolen**. Finn ut **hva han heter**.*",
+      "**Kalau objeknya panjang, ia tetap di belakang — sepanjang apa pun.** *Jeg fant ut **hvor esken med koppene sto***. Menaruhnya di tengah membuat kalimatnya pecah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Partikel terpisah melawan awalan menyatu",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Terpisah (partikel ditekan)",
+      "Arti",
+      "Menyatu (akhir ditekan)",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "å **kjøre** over",
+       "melindas",
+       "å over**kjøre**",
+       "menindas, mengabaikan"
+      ],
+      [
+       "å **se** inn",
+       "melihat ke dalam",
+       "å inn**se**",
+       "menyadari"
+      ],
+      [
+       "å **gå** under",
+       "tenggelam",
+       "å under**gå**",
+       "menjalani (pemeriksaan)"
+      ],
+      [
+       "å **stå** over",
+       "melewati giliran",
+       "å over**stå**",
+       "melewati (masa sulit)"
+      ],
+      [
+       "å **komme** fram",
+       "sampai",
+       "å fram**komme**",
+       "muncul (dalam laporan)"
+      ],
+      [
+       "å **føre** opp",
+       "mencantumkan",
+       "å opp**føre** seg",
+       "berperilaku"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa ini penting untuk telinga",
+     "items": [
+      "Bentuk **terpisah** adalah bahasa sehari-hari; bentuk **menyatu** hampir selalu bahasa tulis atau bahasa lembaga. Kalau kamu membaca surat dari kommunen dan bertemu *det fremkommer av søknaden*, itu versi resmi dari *det kommer fram i søknaden*.",
+      "Tekanan adalah satu-satunya tanda di telinga. Pada bentuk terpisah, tekanan jatuh di **kata kerjanya**; pada bentuk menyatu, di **suku kata terakhir**. Latihlah dengan mengucapkan pasangan *kjøre over* dan *overkjøre* berturut-turut sampai bedanya terdengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "eske",
+   "baca": "ES-ke",
+   "id": "kardus, kotak"
+  },
+  {
+   "no": "benk",
+   "baca": "benk",
+   "id": "meja dapur, bangku"
+  },
+  {
+   "no": "å kaste",
+   "baca": "o KAS-te",
+   "id": "melempar, membuang"
+  },
+  {
+   "no": "å pusse opp",
+   "baca": "o PUS-se OPP",
+   "id": "merenovasi"
+  },
+  {
+   "no": "å gi opp",
+   "baca": "o jii OPP",
+   "id": "menyerah"
+  },
+  {
+   "no": "nabo",
+   "baca": "NAA-buu",
+   "id": "tetangga"
+  },
+  {
+   "no": "vaskeri",
+   "baca": "vas-ke-RII",
+   "id": "tempat cuci bersama"
+  },
+  {
+   "no": "kjeller",
+   "baca": "KJEL-ler",
+   "id": "ruang bawah tanah"
+  },
+  {
+   "no": "å slå på",
+   "baca": "o sloo PO",
+   "id": "menyalakan"
+  },
+  {
+   "no": "varme",
+   "baca": "VAR-me",
+   "id": "penghangat, panas"
+  },
+  {
+   "no": "imens",
+   "baca": "i-MENS",
+   "id": "sementara itu"
+  },
+  {
+   "no": "strøm",
+   "baca": "ström",
+   "id": "listrik, arus"
+  },
+  {
+   "no": "i sted",
+   "baca": "i STEE",
+   "id": "tadi, barusan"
+  },
+  {
+   "no": "å bytte",
+   "baca": "o BÜT-te",
+   "id": "menukar"
+  },
+  {
+   "no": "genser",
+   "baca": "GEN-ser",
+   "id": "sweter"
+  },
+  {
+   "no": "kvittering",
+   "baca": "kvi-TEE-ring",
+   "id": "struk, kuitansi"
+  },
+  {
+   "no": "å ta vare på",
+   "baca": "o taa VAA-re po",
+   "id": "menjaga, menyimpan"
+  },
+  {
+   "no": "lager",
+   "baca": "LAA-ger",
+   "id": "gudang, stok"
+  },
+  {
+   "no": "farge",
+   "baca": "FAR-ge",
+   "id": "warna"
+  },
+  {
+   "no": "lett",
+   "baca": "lett",
+   "id": "mudah, ringan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ganti objeknya dengan kata ganti, lalu tulis ulang kalimatnya.",
+   "items": [
+    "Slå på varmen.",
+    "Kast ut den gamle stolen.",
+    "Ta med matpakken.",
+    "Skriv ut kvitteringen.",
+    "Sett opp esken på benken."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partikel yang tepat: ut, opp, av, på, med, inn, ned.",
+   "items": [
+    "Fant du ____ hva naboen heter?",
+    "Jeg gir aldri ____.",
+    "Kan du slå ____ lyset? Det er for mørkt her.",
+    "Han tok ____ seg jakka da han kom inn.",
+    "Vi skal pusse ____ leiligheten til våren.",
+    "Ta ____ deg paraply, det kommer til å regne."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi anak kalimat yang diawali fordi. Perhatikan letak ikke dan partikelnya.",
+   "items": [
+    "Jeg fant ikke ut hvor esken var.",
+    "Han slo ikke på varmen.",
+    "Vi kastet ikke ut stolen.",
+    "Hun skrev seg ikke opp på lista.",
+    "De ga ikke opp."
+   ]
+  },
+  {
+   "prompt": "Cocokkan arti sebenarnya. Tulis kata kerja Norwegia yang tepat.",
+   "items": [
+    "mencari tahu",
+    "menyerah",
+    "merenovasi",
+    "menanti-nanti",
+    "mendaftarkan nama di daftar"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Jangan dibuang! Mau saya perbaiki.",
+    "Bisa nyalain penghangatnya?",
+    "Saya nggak nemu kardus yang isi cangkir.",
+    "Kamu harus daftarin nama di daftar yang di basemen.",
+    "Saya coba di rumah, tapi kekecilan."
+   ]
+  }
+ ],
+ "answers": [
+  "Slå den på. — Kast den ut. — Ta den med. — Skriv den ut. — Sett den opp på benken.",
+  "ut — opp — på — av — opp — med",
+  "fordi jeg ikke fant ut hvor esken var — fordi han ikke slo på varmen — fordi vi ikke kastet ut stolen — fordi hun ikke skrev seg opp på lista — fordi de ikke ga opp",
+  "å finne ut — å gi opp — å pusse opp — å se fram til — å skrive seg opp",
+  "Ikke kast den ut! Jeg skal pusse den opp. — Kan du slå på varmen? — Jeg finner ikke ut hvor esken med koppene er. — Du må skrive deg opp på lista i kjelleren. — Jeg prøvde den på hjemme, men den var for liten."
+ ],
+ "wave": "Ulangi unit 6 sebentar, lalu ambil sepuluh kata kerja berpartikel dari tabel dan buat dua kalimat untuk masing-masing: satu dengan kata benda penuh sebagai objek, satu dengan kata ganti. *Slå på varmen* dan *slå den på*. Ucapkan berpasangan sampai perpindahan objeknya terasa otomatis di mulut."
+}

@@ -1,0 +1,503 @@
+{
+ "title": "Sin, si, sitt, sine — jaket siapa",
+ "title_target": "Sin eller hans? Refleksiv eiendom",
+ "goal": "Memilih antara *sin* dan *hans/hennes/deres*, dan tahu bahwa satu huruf memindahkan kepemilikan ke orang yang berbeda.",
+ "bekal": [
+  "memakai *sin* hanya ketika pemiliknya adalah subjek kalimat itu",
+  "menyesuaikan *sin/si/sitt/sine* dengan barangnya, bukan dengan pemiliknya",
+  "mengenali bahwa *sin* tak boleh menjadi bagian subjek",
+  "memilih letak kata milik: *bilen min* atau *min bil*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rot i garderoben",
+   "intro": "Sesudah pesta kantor, jaket-jaket tertukar. Dialog ini sepenuhnya berputar pada satu perbedaan: *sin* menunjuk kembali ke subjek, *hans* menunjuk ke orang lain. Satu kata memutuskan siapa yang membawa pulang jaket siapa.",
+   "lines": [
+    {
+     "speaker": "Sigrid:",
+     "text": "Marius gikk hjem med feil jakke i går.",
+     "id": "Kemarin Marius pulang bawa jaket yang salah.",
+     "literal": "marius berjalan pulang dengan salah jaket di kemarin."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Tok han jakka si, eller tok han jakka hans?",
+     "id": "Dia ambil jaketnya sendiri, atau jaket cowok itu?",
+     "literal": "mengambil dia jaket-itu miliknya-sendiri, atau mengambil dia jaket-itu miliknya?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Han tok Odds jakke. Sin egen hang fortsatt der klokka ni.",
+     "id": "Dia ambil jaketnya Odd. Punya dia sendiri masih tergantung di situ jam sembilan.",
+     "literal": "dia mengambil odd-punya jaket. miliknya-sendiri sendiri tergantung terus di-sana jam sembilan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Merket han det ikke?",
+     "id": "Dia nggak sadar?",
+     "literal": "menyadari dia itu tidak?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Nei. Han fant nøklene sine i lomma, så han trodde alt var i orden.",
+     "id": "Nggak. Dia nemu kuncinya sendiri di saku, jadi dia pikir aman.",
+     "literal": "tidak. dia menemukan kunci-jamak-itu miliknya-sendiri di saku-itu, jadi dia kira semua ada di keteraturan."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Rart. Hvordan havnet nøklene hans i Odds jakke?",
+     "id": "Aneh. Kok kuncinya dia bisa nyasar ke jaketnya Odd?",
+     "literal": "aneh. bagaimana mendarat kunci-jamak-itu miliknya di odd-punya jaket?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Odd lånte jakka hans tidligere på kvelden. Han glemte nøklene sine.",
+     "id": "Odd pinjam jaketnya Marius sebelumnya. Dia lupa kuncinya sendiri.",
+     "literal": "odd meminjam jaket-itu miliknya lebih-awal pada malam-itu. dia melupakan kunci-jamak-itu miliknya-sendiri."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Så nå har Marius Odds jakke, og Odd har nøklene sine i Marius sin lomme?",
+     "id": "Jadi sekarang Marius pegang jaket Odd, dan kunci Odd ada di saku Marius?",
+     "literal": "jadi sekarang punya marius odd-punya jaket, dan odd punya kunci-jamak-itu miliknya-sendiri di marius miliknya saku?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Nettopp. Og Odd står utenfor leiligheten sin akkurat nå.",
+     "id": "Persis. Dan Odd sekarang lagi berdiri di depan apartemennya sendiri.",
+     "literal": "persis. dan odd berdiri di-luar apartemen-itu miliknya-sendiri persis sekarang."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Stakkars mann. Har han ringt kona si?",
+     "id": "Kasihan. Dia udah telepon istrinya?",
+     "literal": "kasihan orang. telah dia menelepon istri-itu miliknya-sendiri?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Kona hans er i Bergen. Derfor ringte han meg.",
+     "id": "Istrinya lagi di Bergen. Makanya dia telepon saya.",
+     "literal": "istri-itu miliknya adalah di bergen. karena-itu menelepon dia saya."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Og du ringte Marius?",
+     "id": "Terus kamu telepon Marius?",
+     "literal": "dan kamu menelepon marius?"
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Jeg prøvde. Men telefonen hans lå i jakka hans, som Odd hadde på seg.",
+     "id": "Saya coba. Tapi HP-nya ada di jaketnya, yang lagi dipakai Odd.",
+     "literal": "saya mencoba. tapi telepon-itu miliknya berbaring di jaket-itu miliknya, yang odd punya pada diri."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Dette blir en lang kveld.",
+     "id": "Ini bakal jadi malam yang panjang.",
+     "literal": "ini menjadi sebuah panjang malam."
+    },
+    {
+     "speaker": "Sigrid:",
+     "text": "Odd har allerede tatt drosje til Marius sitt hus.",
+     "id": "Odd udah naik taksi ke rumah Marius.",
+     "literal": "odd telah sudah mengambil taksi ke marius miliknya rumah."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Da løser det seg. Fortell meg resten i morgen.",
+     "id": "Berarti beres sendiri. Ceritain sisanya besok ya.",
+     "literal": "maka memecahkan itu diri. ceritakan saya sisa-itu di besok."
+    }
+   ],
+   "notes": [
+    "***Sin* selalu menunjuk kembali ke SUBJEK kalimat itu.** *Han tok jakka **si*** = ia mengambil jaketnya sendiri. *Han tok jakka **hans*** = ia mengambil jaket lelaki lain. Bahasa Indonesia memakai *-nya* untuk kedua-duanya, jadi tak ada apa pun di bahasa ibu yang bisa menolong. Ini pembeda paling khas antara pelajar dan penutur di tingkat B1.",
+    "***Sin* menyesuaikan diri dengan BARANGNYA, bukan dengan pemiliknya.** *Jakka **si*** (feminin), *huset **sitt*** (netral), *bilen **sin*** (maskulin), *nøklene **sine*** (jamak). Pemiliknya boleh laki-laki, perempuan, tunggal, atau jamak — bentuknya tetap ditentukan oleh benda yang dimiliki.",
+    "***Sin* TIDAK BOLEH menjadi bagian dari subjek.** *Sin bil er rød* salah; yang benar *Bilen hans er rød*. Kalau kamu ragu, tanyakan: apakah kata milik ini berada di dalam subjek kalimat? Kalau ya, *sin* tak boleh dipakai.",
+    "**Untuk *jeg*, *du*, *vi*, *dere* masalah ini tidak ada.** *Jeg tok jakka **mi***, *du tok jakka **di*** — tak ada pilihan kedua yang bisa membingungkan. *Sin* cuma dibutuhkan di orang ketiga, tempat *hans*, *hennes*, dan *deres* punya kemungkinan menunjuk orang lain.",
+    "**Susunan kepemilikan Norwegia punya dua wajah.** *Bilen min* (kata benda tentu + kata milik) adalah bentuk sehari-hari yang paling lazim. *Min bil* (kata milik + kata benda tak tentu) terdengar lebih menekankan atau lebih resmi: *Dette er **min** bil, ikke din.*",
+    "**Bentuk kepemilikan dengan *-s* seperti *Odds jakke* dipakai untuk nama orang.** Perhatikan: tak ada tanda kutip sebelum *s*, berbeda dari bahasa Inggris. Untuk kata benda biasa, orang Norwegia lebih suka memakai *til*: *jakka til naboen*, bukan *naboens jakke*.",
+    "**Susunan *Marius sin lomme* adalah bentuk lisan yang sangat umum**, terutama di Norwegia barat, dan kini diterima juga di bokmål. Ia sepadan dengan *Marius' lomme* dan sering terdengar lebih jelas. Perhatikan bahwa *sin* di sini menyesuaikan bendanya: *Marius **sitt** hus*, *Marius **si** jakke*."
+   ]
+  },
+  {
+   "title": "Dialog kedua — Barnehagen ringer",
+   "intro": "Telepon dari taman kanak-kanak. Sembilan baris, enam kali pilihan antara *sin* dan *hans/hennes* — dan tiap kali, siapa subjeknya yang menentukan.",
+   "lines": [
+    {
+     "speaker": "Barnehagen:",
+     "text": "Hei, dette er Solsikken. Amir har glemt matboksen sin igjen.",
+     "id": "Halo, ini dari Solsikken. Amir lupa lagi bawa kotak bekalnya.",
+     "literal": "hai, ini adalah solsikken. amir telah melupakan makanan-kotak-itu miliknya-sendiri lagi."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Å nei. Faren hans la den på kjøkkenbenken i morges.",
+     "id": "Aduh. Ayahnya naruh di meja dapur tadi pagi.",
+     "literal": "oh tidak. ayah-itu miliknya meletakkan itu pada dapur-meja-itu di pagi-jamak."
+    },
+    {
+     "speaker": "Barnehagen:",
+     "text": "Kan noen komme med den? Han deler gjerne med vennene sine, men han blir sulten.",
+     "id": "Ada yang bisa antar? Dia sih mau berbagi sama teman-temannya, tapi nanti dia lapar.",
+     "literal": "bisa seseorang datang dengan itu? dia membagi silakan dengan teman-jamak-itu miliknya-sendiri, tapi dia menjadi lapar."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Jeg kommer. Broren min jobber i nærheten, jeg spør ham først.",
+     "id": "Saya datang. Adik saya kerja di dekat situ, saya tanya dia dulu.",
+     "literal": "saya datang. saudara-itu milikku bekerja di kedekatan-itu, saya bertanya dia pertama."
+    },
+    {
+     "speaker": "Barnehagen:",
+     "text": "Fint. Og en ting til: han har mistet vottene sine.",
+     "id": "Bagus. Satu lagi: sarung tangannya hilang.",
+     "literal": "bagus. dan sebuah hal lagi: dia telah kehilangan sarung-tangan-jamak-itu miliknya-sendiri."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Er de blå? Da ligger de sikkert i sekken hans.",
+     "id": "Yang biru? Pasti ada di ranselnya.",
+     "literal": "adalah mereka biru? maka berbaring mereka pasti di ransel-itu miliknya."
+    },
+    {
+     "speaker": "Barnehagen:",
+     "text": "Vi sjekket sekken hans. Der lå bare boka til søsteren.",
+     "id": "Ranselnya sudah kami cek. Di situ cuma ada bukunya adiknya.",
+     "literal": "kami memeriksa ransel-itu miliknya. di-sana berbaring cuma buku-itu untuk saudari-itu."
+    },
+    {
+     "speaker": "Dewi:",
+     "text": "Da har han byttet sekk med søsteren sin igjen.",
+     "id": "Berarti dia tuker ransel sama adiknya lagi.",
+     "literal": "maka telah dia menukar ransel dengan saudari-itu miliknya-sendiri lagi."
+    },
+    {
+     "speaker": "Barnehagen:",
+     "text": "Det forklarer alt. Vi ses klokka fire.",
+     "id": "Itu menjelaskan semuanya. Ketemu jam empat.",
+     "literal": "itu menjelaskan semua. kami terlihat jam empat."
+    }
+   ],
+   "notes": [
+    "**Bacalah ulang baris kedua dan keenam.** *Faren **hans*** (ayahnya Amir — subjeknya *faren* sendiri, bukan Amir) dan *sekken **hans*** (ranselnya Amir — subjeknya *de*, sarung tangan). Dalam dua kalimat itu pemiliknya bukan subjek, jadi *sin* mustahil dipakai.",
+    "**Bandingkan dengan baris pertama dan kedelapan:** *Amir har glemt matboksen **sin*** dan *han har byttet sekk med søsteren **sin***. Di sini pemiliknya persis subjek kalimatnya, jadi *sin* wajib.",
+    "***Broren min* dan *søsteren hans* menunjukkan bahwa bentuk sehari-hari selalu menempelkan kata milik di belakang** kata benda tentu. Bentuk *min bror* tetap benar tapi terdengar lebih menekankan.",
+    "***Boka til søsteren*** memperlihatkan cara Norwegia menyatakan kepemilikan untuk kata benda biasa: dengan *til*, bukan dengan *-s*. *Søsterens bok* benar secara tata bahasa tapi terdengar kaku di percakapan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sin melawan hans, hennes, deres",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Siapa pemiliknya",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "Han tok jakka **si**.",
+       "Han sendiri",
+       "*sin* menunjuk subjek"
+      ],
+      [
+       "Han tok jakka **hans**.",
+       "lelaki lain",
+       "*hans* menunjuk keluar dari subjek"
+      ],
+      [
+       "Hun ringte moren **sin**.",
+       "ibu Hun sendiri",
+       "subjek = Hun"
+      ],
+      [
+       "Hun ringte moren **hennes**.",
+       "ibu perempuan lain",
+       "*hennes* menunjuk keluar"
+      ],
+      [
+       "De solgte huset **sitt**.",
+       "rumah mereka sendiri",
+       "subjek = De"
+      ],
+      [
+       "De solgte huset **deres**.",
+       "rumah orang lain",
+       "*deres* menunjuk keluar"
+      ],
+      [
+       "Bilen **hans** er rød.",
+       "Han",
+       "*sin* tak boleh di dalam subjek"
+      ],
+      [
+       "Jeg tok jakka **mi**.",
+       "Jeg",
+       "orang pertama tak punya masalah ini"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk barangnya",
+      "Refleksif",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "maskulin (en bil)",
+       "**sin**",
+       "Han vasker bilen **sin**."
+      ],
+      [
+       "feminin (ei jakke)",
+       "**si**",
+       "Hun tok jakka **si**."
+      ],
+      [
+       "netral (et hus)",
+       "**sitt**",
+       "De solgte huset **sitt**."
+      ],
+      [
+       "jamak (nøkler)",
+       "**sine**",
+       "Han glemte nøklene **sine**."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji dua langkah",
+     "items": [
+      "**Langkah 1 — cari subjek kalimatnya.** Bukan pemilik yang kamu bayangkan, melainkan yang benar-benar melakukan kata kerjanya.",
+      "**Langkah 2 — tanyakan: apakah pemilik barang itu sama dengan subjeknya?** Kalau ya, pakai *sin/si/sitt/sine*. Kalau bukan, pakai *hans/hennes/deres*.",
+      "**Dan satu pagar terakhir:** kalau kata miliknya berada di dalam subjek kalimat, *sin* tak pernah boleh dipakai, bahkan ketika pemiliknya orang yang sama. *Bilen hans står ute* — bukan *bilen sin*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tiga cara menyatakan kepemilikan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Susunan",
+      "Contoh",
+      "Nada"
+     ],
+     "rows": [
+      [
+       "kata benda tentu + milik",
+       "bilen **min**, huset **vårt**",
+       "sehari-hari, paling lazim"
+      ],
+      [
+       "milik + kata benda tak tentu",
+       "**min** bil, **vårt** hus",
+       "menekankan atau resmi"
+      ],
+      [
+       "nama + s",
+       "**Odds** jakke, **Sigrids** bok",
+       "untuk nama orang, tanpa tanda kutip"
+      ],
+      [
+       "nama + sin/sitt",
+       "**Marius sin** lomme",
+       "lisan, kini diterima di bokmål"
+      ],
+      [
+       "kata benda + til",
+       "jakka **til naboen**",
+       "untuk kata benda biasa"
+      ],
+      [
+       "s pada kata benda",
+       "**naboens** jakke",
+       "kaku, lebih sering di tulisan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang sering keliru",
+     "items": [
+      "**Jangan menulis tanda kutip sebelum *-s*.** *Odds jakke*, bukan *Odd's jakke*. Bahasa Norwegia tak pernah memakai apostrof untuk kepemilikan — kecuali kalau namanya berakhir *s*, *x*, atau *z*: *Lars' bok*.",
+      "**Untuk benda dan tempat, pakailah *til*.** *Taket til huset*, bukan *husets tak*, kecuali dalam bahasa tulis resmi.",
+      "**Kata milik yang berdiri di belakang menuntut kata bendanya berbentuk tentu.** *Bilen min*, bukan *bil min*. Kata milik yang berdiri di depan menuntut bentuk tak tentu: *min bil*, bukan *min bilen*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "garderobe",
+   "baca": "gar-de-RUU-be",
+   "id": "tempat gantung jaket"
+  },
+  {
+   "no": "feil",
+   "baca": "fèil",
+   "id": "salah, keliru"
+  },
+  {
+   "no": "egen",
+   "baca": "ÈI-gen",
+   "id": "sendiri, milik sendiri"
+  },
+  {
+   "no": "å merke",
+   "baca": "o MÈR-ke",
+   "id": "menyadari, memperhatikan"
+  },
+  {
+   "no": "lomme",
+   "baca": "LOM-me",
+   "id": "saku"
+  },
+  {
+   "no": "i orden",
+   "baca": "i OR-den",
+   "id": "beres, dalam keadaan baik"
+  },
+  {
+   "no": "å havne",
+   "baca": "o HAV-ne",
+   "id": "berakhir di, nyasar ke"
+  },
+  {
+   "no": "å låne",
+   "baca": "o LOO-ne",
+   "id": "meminjam, meminjamkan"
+  },
+  {
+   "no": "stakkars",
+   "baca": "STAK-kars",
+   "id": "kasihan"
+  },
+  {
+   "no": "kone",
+   "baca": "KUU-ne",
+   "id": "istri"
+  },
+  {
+   "no": "drosje",
+   "baca": "DROS-ye",
+   "id": "taksi"
+  },
+  {
+   "no": "å løse seg",
+   "baca": "o LÖÖ-se sèi",
+   "id": "beres dengan sendirinya"
+  },
+  {
+   "no": "resten",
+   "baca": "RES-ten",
+   "id": "sisanya"
+  },
+  {
+   "no": "matboks",
+   "baca": "MAAT-boks",
+   "id": "kotak bekal"
+  },
+  {
+   "no": "å dele",
+   "baca": "o DEE-le",
+   "id": "berbagi, membagi"
+  },
+  {
+   "no": "i nærheten",
+   "baca": "i NÈR-hee-ten",
+   "id": "di dekat sini"
+  },
+  {
+   "no": "å miste",
+   "baca": "o MIS-te",
+   "id": "kehilangan"
+  },
+  {
+   "no": "votter",
+   "baca": "VOT-ter",
+   "id": "sarung tangan"
+  },
+  {
+   "no": "sekk",
+   "baca": "sekk",
+   "id": "ransel"
+  },
+  {
+   "no": "å forklare",
+   "baca": "o for-KLAA-re",
+   "id": "menjelaskan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih sin, si, sitt, sine, atau hans, hennes, deres.",
+   "items": [
+    "Han tok jakka ____ og gikk. (jaketnya sendiri)",
+    "Hun ringte moren ____ i går. (ibunya sendiri)",
+    "De solgte huset ____ i fjor. (rumah mereka sendiri)",
+    "Marius glemte nøklene ____ i lomma. (kuncinya sendiri)",
+    "Odd lånte jakka ____ tidligere. (jaket Marius)"
+   ]
+  },
+  {
+   "prompt": "Betulkan kalimat berikut. Semuanya memakai bentuk kepemilikan yang keliru.",
+   "items": [
+    "Sin bil er rød.",
+    "Han vasker bilen hans hver lørdag. (mobilnya sendiri)",
+    "Hun snakket med søsteren hennes. (adiknya sendiri)",
+    "De tok med barna deres på hytta. (anak mereka sendiri)",
+    "Jeg tok jakka si."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk refleksif yang cocok dengan barangnya: sin, si, sitt, sine.",
+   "items": [
+    "Han vasker bilen ____.",
+    "Hun tok jakka ____.",
+    "De solgte huset ____.",
+    "Han glemte nøklene ____.",
+    "Barnet mistet vottene ____.",
+    "Hun ringte broren ____."
+   ]
+  },
+  {
+   "prompt": "Tulis ulang memakai susunan sehari-hari (kata benda tentu + kata milik).",
+   "items": [
+    "min bil",
+    "vårt hus",
+    "hans jakke",
+    "deres barn",
+    "hennes bok"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia. Perhatikan siapa pemiliknya.",
+   "items": [
+    "Dia ambil jaketnya sendiri.",
+    "Dia ambil jaket Odd.",
+    "Amir lupa kotak bekalnya lagi.",
+    "Ayahnya naruh di meja dapur.",
+    "Mereka jual rumah mereka sendiri tahun lalu."
+   ]
+  }
+ ],
+ "answers": [
+  "si — sin — sitt — sine — hans",
+  "Bilen hans er rød. — Han vasker bilen sin hver lørdag. — Hun snakket med søsteren sin. — De tok med barna sine på hytta. — Jeg tok jakka mi.",
+  "sin — si — sitt — sine — sine — sin",
+  "bilen min — huset vårt — jakka hans — barna deres — boka hennes",
+  "Han tok jakka si. — Han tok jakka til Odd. — Amir har glemt matboksen sin igjen. — Faren hans la den på kjøkkenbenken. — De solgte huset sitt i fjor."
+ ],
+ "wave": "Ulangi unit 8, karena *seg* dan *sin* bekerja dengan prinsip yang sama: dua-duanya menunjuk kembali ke subjek. Lalu ceritakan keluargamu sendiri dalam sepuluh kalimat orang ketiga — *broren min ringte kona si*, *søsteren min mistet nøklene sine* — dan periksa tiap kalimat dengan uji dua langkah sebelum melanjutkan."
+}
