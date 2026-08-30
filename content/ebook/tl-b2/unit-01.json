@@ -1,0 +1,184 @@
+{
+  "title": "Fokus: kata mana yang berhak memakai ang",
+  "title_target": "Ang tinatanong ko, bakit hindi agad sinabi",
+  "goal": "Memilih fokus dengan sadar — bukan menghafal bentuknya, tapi memutuskan bagian mana dari kejadian yang sedang dibicarakan, lalu membiarkan bentuk kata kerjanya menyesuaikan.",
+  "bekal": [
+    "melihat bahwa *ang* tidak menandai subjek, melainkan menandai hal yang dianggap sudah diketahui bersama",
+    "mengubah satu kejadian yang sama ke dalam enam fokus tanpa mengubah artinya",
+    "menjelaskan kenapa *Kumain ako ng mangga* dan *Kinain ko ang mangga* dipakai di tempat yang berbeda",
+    "menangkap kapan penutur asli berpindah fokus di tengah percakapan, dan apa yang dia tandai dengan perpindahan itu",
+    "berhenti menerjemahkan kalimat pasif bahasa Indonesia menjadi kalimat berfokus sasaran satu-satu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog A — Lunes ng umaga, isang ahensya sa Makati",
+      "intro": "Ruang kerja sebuah agensi kecil di Makati, Senin pagi. Karla memimpin tim; Migs dan Bea mengerjakan laporan untuk klien yang tenggatnya siang ini. Perhatikan bagaimana Karla berpindah-pindah fokus: begitu sebuah hal sudah masuk ke percakapan, hal itulah yang dipakaikan *ang*.",
+      "lines": [
+        {"speaker":"Karla:","text":"Bakit ngayon lang ninyo sinabi 'yung problema sa report?","id":"Kenapa baru sekarang kalian bilang soal masalah di laporannya?","literal":"kenapa sekarang saja [ng-kalian] dikatakan [ang] masalah di laporan?"},
+        {"speaker":"Migs:","text":"Kagabi lang po namin nakita, Karla. Hindi po namin sinasadya.","id":"Baru semalam kami lihat, Bu. Kami tidak sengaja.","literal":"tadi-malam saja [po] [ng-kami] terlihat, Karla. tidak [po] [ng-kami] sedang-disengaja."},
+        {"speaker":"Karla:","text":"Alam ko naman. Ang tinatanong ko, bakit hindi agad na-report.","id":"Aku tahu, kok. Yang aku tanyakan, kenapa tidak langsung dilaporkan.","literal":"tahu saya [naman]. [ang] yang-sedang-ditanyakan saya, kenapa tidak segera ter-laporkan."},
+        {"speaker":"Bea:","text":"Inaayos pa po kasi namin. Ayaw naming mag-report ng hindi pa sigurado.","id":"Soalnya masih kami perbaiki, Bu. Kami tidak mau melapor kalau belum pasti.","literal":"sedang-diperbaiki masih [po] [kasi] [ng-kami]. tidak-mau [ng-kami]-[ng] melapor [ng] tidak masih pasti."},
+        {"speaker":"Karla:","text":"Ganito kasi 'yan. Kapag sinabi ninyo agad, ako ang sasagot sa kliyente. Kapag hindi, kayo.","id":"Begini, soalnya. Kalau kalian bilang segera, aku yang menjawab ke klien. Kalau tidak, kalian.","literal":"begini [kasi] itu. kalau dikatakan kalian segera, saya [ang] akan-menjawab ke klien. kalau tidak, kalian."},
+        {"speaker":"Migs:","text":"Naiintindihan ko po.","id":"Saya paham, Bu.","literal":"ter-mengerti saya [po]."},
+        {"speaker":"Karla:","text":"Hindi ko kayo pinapagalitan, ha. Pinapaliwanag ko lang.","id":"Aku tidak sedang memarahi kalian, lho. Aku cuma sedang menjelaskan.","literal":"tidak saya kalian sedang-dimarahi, [ha]. sedang-dijelaskan saya saja."},
+        {"speaker":"Bea:","text":"Ano po'ng gagawin namin ngayon?","id":"Sekarang kami harus apa, Bu?","literal":"apa [po]-[ng] akan-dikerjakan [ng-kami] sekarang?"},
+        {"speaker":"Karla:","text":"Ayusin ninyo 'yung mga numero bago mag-alas-dose. Ako na ang bahala sa e-mail.","id":"Kalian betulkan angka-angkanya sebelum jam dua belas. Soal emailnya biar aku.","literal":"perbaiki kalian [ang] jamak angka sebelum jadi-jam-dua-belas. saya [na] [ang] penanggung di e-mail."},
+        {"speaker":"Migs:","text":"Sige po. Ipapadala ko sa inyo pagkatapos.","id":"Baik, Bu. Nanti saya kirimkan ke Ibu sesudahnya.","literal":"baik [po]. akan-dikirimkan saya ke kalian sesudah."},
+        {"speaker":"Karla:","text":"Huwag mo nang i-e-mail. I-message mo na lang, mas mabilis.","id":"Jangan lewat email lagi. Kirim lewat pesan saja, lebih cepat.","literal":"jangan kamu [na]-[ng] di-e-mail. di-pesan kamu [na] saja, lebih cepat."},
+        {"speaker":"Bea:","text":"Sabi po kasi ni Sir Rome, dapat naka-e-mail lahat para may talaan.","id":"Soalnya kata Pak Rome, semuanya harus lewat email supaya ada catatannya.","literal":"kata [po] [kasi] [ni] Pak Rome, harus ber-e-mail semua supaya ada catatan."},
+        {"speaker":"Karla:","text":"Tama siya — pero para sa kliyente 'yun. Sa loob ng team, message.","id":"Dia benar — tapi itu untuk klien. Di dalam tim, pakai pesan.","literal":"benar dia — tapi untuk ke klien itu. di dalam [ng] tim, pesan."},
+        {"speaker":"Migs:","text":"Ah, kaya pala.","id":"Ah, pantas.","literal":"ah, sebab [pala]."},
+        {"speaker":"Karla:","text":"Isa pa. Kapag may nakita kayong mali, kahit maliit, sabihin ninyo agad.","id":"Satu lagi. Kalau kalian menemukan yang salah, sekecil apa pun, langsung bilang.","literal":"satu lagi. kalau ada terlihat kalian-[ng] salah, walau kecil, dikatakan kalian segera."},
+        {"speaker":"Bea:","text":"Salamat po. Akala po namin magagalit kayo.","id":"Terima kasih, Bu. Kami kira Ibu akan marah.","literal":"terima-kasih [po]. kira [po] [ng-kami] akan-marah kalian."},
+        {"speaker":"Karla:","text":"Nagagalit lang ako sa tinatago, hindi sa nagkakamali.","id":"Aku cuma marah pada yang disembunyikan, bukan pada yang berbuat salah.","literal":"sedang-marah saja saya ke yang-sedang-disembunyikan, tidak ke yang-sedang-berbuat-salah."},
+        {"speaker":"Migs:","text":"Naku, tatandaan po namin 'yan.","id":"Waduh, itu kami ingat betul, Bu.","literal":"aduh, akan-diingat [po] [ng-kami] itu."}
+      ]
+    },
+    {
+      "title": "Dialog B — Sa bahay, gabi ng araw ding iyon",
+      "intro": "Bea pulang malam. Percakapan pendek yang seluruhnya bergerak di antara dua fokus: apa yang dimakan, dan siapa yang makan.",
+      "lines": [
+        {"speaker":"Nanay:","text":"Kumain ka na ba?","id":"Kamu sudah makan?","literal":"makan kamu [na] [ba]?"},
+        {"speaker":"Bea:","text":"Kumain po ako ng tinapay kanina. Pero 'yung ulam, hindi ko pa nagagalaw.","id":"Tadi saya makan roti, Bu. Tapi lauknya belum saya sentuh.","literal":"makan [po] saya [ng] roti tadi. tapi [ang] lauk, tidak saya masih ter-sentuh."},
+        {"speaker":"Nanay:","text":"Kaya pala may natira. Akala ko hindi mo nagustuhan.","id":"Pantas ada sisanya. Kukira kamu tidak suka.","literal":"sebab [pala] ada ter-sisa. kira saya tidak kamu ter-sukai."},
+        {"speaker":"Bea:","text":"Nagustuhan ko po. Nabusog lang ako sa tinapay.","id":"Saya suka, Bu. Cuma sudah telanjur kenyang gara-gara rotinya.","literal":"ter-sukai saya [po]. ter-kenyangkan saja saya di roti."},
+        {"speaker":"Nanay:","text":"Initin mo na lang mamaya. Huwag mong hayaang lumamig nang magdamag.","id":"Nanti kamu hangatkan saja. Jangan dibiarkan dingin semalaman.","literal":"dipanaskan kamu [na] saja nanti. jangan kamu-[ng] biarkan-[ng] mendingin selama semalaman."},
+        {"speaker":"Bea:","text":"Opo. Kayo po, kumain na kayo?","id":"Baik, Bu. Ibu sendiri sudah makan?","literal":"iya-[po]. kalian [po], makan [na] kalian?"},
+        {"speaker":"Nanay:","text":"Oo, kanina pa. Naghintay kami ni Tatay, pero hindi ka pa rin dumarating.","id":"Sudah, dari tadi. Aku dan Ayah menunggu, tapi kamu tak kunjung datang.","literal":"iya, tadi masih. menunggu kami [ni] Ayah, tapi tidak kamu masih juga sedang-datang."},
+        {"speaker":"Bea:","text":"Pasensya na po. Napa-overtime kami.","id":"Maaf ya, Bu. Kami terpaksa lembur.","literal":"sabar [na] [po]. ter-lembur kami."},
+        {"speaker":"Nanay:","text":"Sinabi mo naman sana.","id":"Mestinya kamu bilang, dong.","literal":"dikatakan kamu [naman] [sana]."},
+        {"speaker":"Bea:","text":"Nag-message po ako kay Tatay.","id":"Saya sudah kirim pesan ke Ayah, Bu.","literal":"ber-pesan [po] saya ke Ayah."},
+        {"speaker":"Nanay:","text":"Ayan ka na naman. Ako ang sabihan mo, hindi siya.","id":"Nah, begitu lagi kamu. Aku yang kamu kasih tahu, bukan dia.","literal":"itu kamu [na] [naman]. saya [ang] diberitahu kamu, tidak dia."}
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Satu kejadian, enam cara menceritakannya",
+      "blocks": [
+        {"type":"p","text":"Buku pelajaran sering menerangkan fokus sebagai kembaran aktif–pasif bahasa Indonesia. Itu penjelasan yang cukup untuk A2 dan menyesatkan sesudahnya. Bahasa Tagalog tidak membedakan kalimat aktif dan kalimat pasif; ia membedakan **peran mana yang sedang dibicarakan**. Peran itulah yang dipakaikan *ang*, dan kata kerjanya lalu berganti bentuk untuk menunjuk peran itu."},
+        {"type":"p","text":"Cara paling cepat merasakannya: ambil satu kejadian, lalu ceritakan enam kali. Kejadiannya tetap satu — Ana memotong daging dengan pisau untuk ibunya di dapur — tapi tiap kali ada satu bagian yang naik ke depan sebagai hal yang sedang dibicarakan."},
+        {"type":"tabel","head":["Fokus","Kalimat","Yang jadi bahan pembicaraan"],"rows":[
+          ["pelaku","*Naghiwa si Ana ng karne.*","Ana — misalnya sesudah ditanya *Ano ang ginawa ni Ana?*"],
+          ["sasaran","*Hiniwa ni Ana ang karne.*","dagingnya — dagingnya sudah masuk pembicaraan"],
+          ["tempat/arah","*Hiniwaan ni Ana ang mesa.*","mejanya — di situlah kejadiannya berlangsung"],
+          ["penerima manfaat","*Ipinaghiwa ni Ana ang nanay niya.*","ibunya — untuk dialah pekerjaan itu"],
+          ["alat","*Ipinanghiwa ni Ana ang kutsilyo.*","pisaunya — pisau itulah yang dipakai"],
+          ["sebab","*Ikinahiwa ni Ana ang gutom niya.*","laparnya — itulah yang membuat ia memotong"]
+        ]},
+        {"type":"p","text":"Perhatikan apa yang **tidak** berubah: pelakunya tetap Ana di keenam kalimat. Yang berubah cuma penandanya — *si Ana* ketika Ana dibicarakan, *ni Ana* ketika bukan. Ini kebalikan dari kebiasaan bahasa Indonesia, yang menghilangkan pelaku begitu kalimatnya jadi pasif. Di bahasa Tagalog pelakunya tetap berdiri di sana, cuma memakai baju yang lain."},
+        {"type":"kotak","title":"Aturan yang dipakai penutur asli tanpa memikirkannya","items":[
+          "**Yang sudah diketahui bersama dipakaikan *ang*.** Begitu sebuah hal masuk ke percakapan, hal itu jadi calon utama *ang* di kalimat berikutnya. Itu sebabnya di Dialog A, laporan yang disebut Karla di baris pertama langsung jadi *ang* di baris ketiga.",
+          "**Yang baru diperkenalkan dipakaikan *ng*.** *Kumain ako ng mangga* berarti mangga yang mana pun. *Kinain ko ang mangga* berarti mangga yang tadi kita bicarakan.",
+          "**Kalau yang dibicarakan sudah tertentu, fokus pelaku terasa salah.** *Bumili ako ng libro* wajar. *Bumili ako ng libro na ibinigay mo* aneh — buku itu sudah tertentu, jadi mestinya *Binili ko ang libro na ibinigay mo*.",
+          "**Perintah hampir selalu berfokus sasaran.** *Ayusin ninyo ang numero*, bukan *Mag-ayos kayo ng numero* — kecuali kalau kamu memang sedang menyuruh orang mengerjakan sesuatu yang belum tertentu bendanya."
+        ]}
+      ]
+    },
+    {
+      "title": "Kenapa penutur Indonesia sering memilih fokus yang salah",
+      "blocks": [
+        {"type":"p","text":"Kesalahan yang bertahan paling lama bukan salah bentuk, melainkan salah pilih. Kalimatnya benar secara tata bahasa, tapi menandai hal yang keliru sebagai yang sedang dibicarakan — dan lawan bicaramu akan berhenti setengah detik untuk mencari benda yang kamu maksud."},
+        {"type":"p","text":"Sumbernya satu: bahasa Indonesia menandai ketertentuan lewat kata (*sebuah*, *itu*, *-nya*), bahasa Tagalog menandainya lewat **bentuk kata kerja**. Jadi ketika kita menerjemahkan dalam hati, penandanya hilang di tengah jalan."},
+        {"type":"tabel","head":["Yang biasanya keluar","Yang dipakai penutur asli","Kenapa"],"rows":[
+          ["*Nagluto ako ng adobo na hiningi mo.*","*Niluto ko ang adobo na hiningi mo.*","adobo-nya sudah tertentu — kamu sendiri yang meminta"],
+          ["*Bumili ako ng gamot para sa iyo.*","*Ibinili kita ng gamot.*","kalau kamu yang dipentingkan, pakai fokus penerima manfaat"],
+          ["*Nagbigay siya sa akin ng pera.*","*Binigyan niya ako ng pera.*","fokus penerima lebih lazim daripada fokus pelaku di sini"],
+          ["*Naglinis ako ng kuwarto ko.*","*Nilinis ko ang kuwarto ko.*","kamarnya jelas tertentu — kamarmu sendiri"],
+          ["*Kumuha ka ng susi sa mesa.*","*Kunin mo ang susi sa mesa.*","kuncinya kelihatan, jadi sudah diketahui bersama"]
+        ]},
+        {"type":"sub","text":"Dua patokan cepat"},
+        {"type":"list","items":[
+          "Kalau bendanya bisa ditunjuk dengan jari, hampir pasti fokus sasaran.",
+          "Kalau bendanya bisa diganti dengan *sesuatu*, hampir pasti fokus pelaku."
+        ]},
+        {"type":"kotak","title":"Yang bikin kamu ketahuan","items":[
+          "Memakai *ang* pada hal yang baru pertama disebut. *Kinain ko ang mangga* sebagai kalimat pembuka membuat orang bertanya, mangga yang mana.",
+          "Menerjemahkan setiap kalimat pasif Indonesia jadi fokus sasaran. *Rumahnya dibangun tahun lalu* paling sering keluar sebagai *Ipinagawa nila ang bahay noong isang taon* — dan itu benar hanya kalau memang ada penyuruhnya.",
+          "Berpindah fokus di tengah cerita tanpa alasan. Penutur asli berpindah untuk menandai bahwa perhatiannya pindah; kalau kamu berpindah asal-asalan, ceritamu terdengar seperti daftar.",
+          "Memakai *si/ni* untuk benda. *si* dan *ni* hanya untuk nama orang (dan hewan peliharaan yang dinamai); benda selalu *ang* dan *ng*."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"tl":"ayusin (mag-ayos, ayusin)","baca":"a-YU-sin","id":"membetulkan, merapikan"},
+    {"tl":"talaan","baca":"ta-la-AN","id":"catatan, rekaman tertulis"},
+    {"tl":"sinasadya","baca":"si-na-SAD-ya","id":"disengaja"},
+    {"tl":"agad","baca":"a-GAD","id":"segera, langsung"},
+    {"tl":"pagalitan","baca":"pa-ga-LI-tan","id":"memarahi"},
+    {"tl":"ipaliwanag","baca":"i-pa-li-WA-nag","id":"menjelaskan"},
+    {"tl":"bahala","baca":"ba-HA-la","id":"yang bertanggung jawab; *ako na ang bahala* = biar aku"},
+    {"tl":"kliyente","baca":"kli-YEN-te","id":"klien"},
+    {"tl":"itago","baca":"i-ta-GO","id":"menyembunyikan"},
+    {"tl":"magkamali","baca":"mag-ka-ma-LI","id":"berbuat salah, keliru"},
+    {"tl":"tandaan","baca":"tan-da-AN","id":"mengingat, mencamkan"},
+    {"tl":"ulam","baca":"U-lam","id":"lauk"},
+    {"tl":"galawin","baca":"ga-LA-win","id":"menyentuh, mengutak-atik"},
+    {"tl":"matira","baca":"ma-ti-RA","id":"tersisa"},
+    {"tl":"mabusog","baca":"ma-bu-SOG","id":"kenyang"},
+    {"tl":"initin","baca":"i-ni-TIN","id":"menghangatkan"},
+    {"tl":"magdamag","baca":"mag-da-MAG","id":"semalam suntuk"},
+    {"tl":"pasensya na","baca":"pa-SEN-sya na","id":"maaf ya (harfiah: sabar dulu)"},
+    {"tl":"hiwain (maghiwa, hiwain)","baca":"hi-WA-in","id":"memotong, mengiris"},
+    {"tl":"sabihan","baca":"sa-bi-HAN","id":"memberi tahu (orangnya yang jadi fokus)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah tiap kalimat berfokus pelaku ini menjadi berfokus sasaran. Perhatikan penanda pelakunya ikut berubah.",
+      "items": [
+        "Nagluto si Ana ng pansit.",
+        "Bumili ako ng tiket kahapon.",
+        "Nagbasa siya ng liham.",
+        "Kumuha kami ng papeles sa opisina.",
+        "Nagsulat sila ng ulat."
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang lebih wajar, lalu tulis kalimat lengkapnya.",
+      "items": [
+        "(Bumili ako / Binili ko) ng gatas sa tindahan.",
+        "(Naglinis ako / Nilinis ko) ang mesa na sinabi mo.",
+        "(Kumain siya / Kinain niya) ang natirang ulam.",
+        "(Nagbigay siya / Binigyan niya) ako ng pera.",
+        "(Kumuha ka / Kunin mo) ng tubig kung nauuhaw ka."
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Tagalog. Putuskan dulu bagian mana yang sedang dibicarakan.",
+      "items": [
+        "Aku sudah kirimkan laporannya ke klien.",
+        "Kenapa baru sekarang kamu bilang?",
+        "Kami tidak sengaja, Bu.",
+        "Biar aku yang urus emailnya.",
+        "Jangan disembunyikan kalau ada yang salah."
+      ]
+    },
+    {
+      "prompt": "Isi dengan penanda yang tepat: *ang*, *ng*, *sa*, *si*, *ni*, atau *kay*.",
+      "items": [
+        "Hiniwa ____ Ana ____ karne ____ kusina.",
+        "Ibinigay ko ____ susi ____ Tatay.",
+        "Bumili ____ Migs ____ tinapay kanina.",
+        "Nakita ____ bata ____ pusa ____ bubong.",
+        "Sinabi ____ Karla ____ problema ____ kliyente."
+      ]
+    },
+    {
+      "prompt": "Satu kejadian, empat fokus. Kejadiannya: *Migs mengirim laporan kepada Karla lewat email*. Tulis empat kalimat: fokus pelaku, fokus sasaran, fokus penerima, dan fokus alat.",
+      "items": [
+        "fokus pelaku (yang dibicarakan: Migs)",
+        "fokus sasaran (yang dibicarakan: laporannya)",
+        "fokus penerima (yang dibicarakan: Karla)",
+        "fokus alat (yang dibicarakan: emailnya)"
+      ]
+    }
+  ],
+  "answers": [
+    "Niluto ni Ana ang pansit. — Binili ko ang tiket kahapon. — Binasa niya ang liham. — Kinuha namin ang papeles sa opisina. — Sinulat nila ang ulat.",
+    "Bumili ako ng gatas sa tindahan. — Nilinis ko ang mesa na sinabi mo. — Kinain niya ang natirang ulam. — Binigyan niya ako ng pera. — Kumuha ka ng tubig kung nauuhaw ka.",
+    "Ipinadala ko na ang ulat sa kliyente. — Bakit ngayon mo lang sinabi? — Hindi po namin sinasadya. — Ako na ang bahala sa e-mail. — Huwag mong itago kung may mali.",
+    "ni, ng, sa — ang, kay — si, ng — ng, ang, sa — ni, ang, sa",
+    "Nagpadala si Migs ng ulat kay Karla. — Ipinadala ni Migs ang ulat kay Karla. — Pinadalhan ni Migs si Karla ng ulat. — Ipinampadala ni Migs ang e-mail."
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "title": "Melaporkan perkataan orang: *sabi*, *daw*, *ayon kay*",
+  "title_target": "Sabi raw niya, hindi raw siya sumang-ayon",
+  "goal": "Menyampaikan kembali ucapan orang lain dengan tepat, memilih di antara empat cara yang berbeda tingkat tanggung jawabnya, dan mengetahui apa yang bergeser dan apa yang tidak ketika kalimat dipindahkan.",
+  "bekal": [
+    "memakai *sabi* sebagai kata benda pelapor, bukan kata kerja",
+    "menempatkan *daw*/*raw* pada tempat partikel dan tahu ia melepaskan tanggung jawabmu",
+    "menggeser kata ganti dan keterangan tempat-waktu saat memindahkan kalimat",
+    "memakai *ayon kay*, *base sa*, *sang-ayon sa* dalam ragam tertulis",
+    "melaporkan pertanyaan dengan *kung* dan kata tanya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog A — Sa opisina ng barangay, umaga",
+      "intro": "Sengketa antartetangga. Semua orang melaporkan ucapan orang lain, dan tidak ada satu pun yang mau memikul tanggung jawab atas apa yang dilaporkannya.",
+      "lines": [
+        {"speaker":"Kap:","text":"Ano ba talaga ang nangyari? Isa-isa lang.","id":"Sebenarnya apa yang terjadi? Satu-satu saja.","literal":"apa [ba] sungguh [ang] yang-telah-terjadi? satu-satu saja."},
+        {"speaker":"Nene:","text":"Sabi po ni Aling Susan, ako raw ang naglagay ng basura sa harap nila.","id":"Kata Bu Susan, katanya saya yang menaruh sampah di depan rumah mereka.","literal":"kata [po] [ni] Bu Susan, saya [daw] [ang] yang-menaruh [ng] sampah di depan mereka."},
+        {"speaker":"Susan:","text":"Hindi ko sinabing siya. Sinabi kong may naglagay.","id":"Saya tidak bilang dia. Saya bilang ada yang menaruh.","literal":"tidak saya dikatakan-[ng] dia. dikatakan saya-[ng] ada yang-menaruh."},
+        {"speaker":"Nene:","text":"Pero sabi ni Mila, tinuro n'yo raw ako.","id":"Tapi kata Mila, katanya Ibu menunjuk saya.","literal":"tapi kata [ni] Mila, ditunjuk kalian [daw] saya."},
+        {"speaker":"Kap:","text":"Sandali. Nasaan si Mila?","id":"Sebentar. Mila di mana?","literal":"sebentar. di-mana [si] Mila?"},
+        {"speaker":"Susan:","text":"Hindi po siya pumunta. Sabi niya sa akin, may pasok daw siya.","id":"Dia tidak datang, Pak. Katanya ke saya, dia ada kerja.","literal":"tidak [po] dia datang. kata dia ke saya, ada masuk [daw] dia."},
+        {"speaker":"Kap:","text":"Kita n'yo? Kaya nga hindi puwedeng 'sabi-sabi' lang.","id":"Lihat, kan? Makanya tidak boleh cuma kata-katanya.","literal":"lihat kalian? sebab [nga] tidak bisa-[ng] kata-kata saja."},
+        {"speaker":"Nene:","text":"Kapitan, ang tanong ko lang po, sinong nagsabi sa kaniya?","id":"Pak, pertanyaan saya cuma, siapa yang memberi tahu dia?","literal":"Kapten, [ang] pertanyaan saya saja [po], siapa-[ng] yang-mengatakan ke dia?"},
+        {"speaker":"Susan:","text":"Ang alam ko lang, may nagsabi sa kaniya na galing sa kabila.","id":"Yang saya tahu cuma, ada yang bilang ke dia dari sebelah.","literal":"[ang] tahu saya saja, ada yang-mengatakan ke dia [na] asal di seberang."},
+        {"speaker":"Kap:","text":"Ayon sa reklamo, alas-sais ng umaga daw nangyari.","id":"Menurut laporannya, katanya kejadiannya jam enam pagi.","literal":"menurut di keluhan, jam-enam [ng] pagi [daw] telah-terjadi."},
+        {"speaker":"Nene:","text":"Imposible po. Alas-sais, nasa palengke pa ako.","id":"Tidak mungkin, Pak. Jam enam saya masih di pasar.","literal":"mustahil [po]. jam-enam, ada-di pasar masih saya."},
+        {"speaker":"Kap:","text":"May makapagpapatunay ba?","id":"Ada yang bisa membuktikannya?","literal":"ada bisa-membuktikan [ba]?"},
+        {"speaker":"Nene:","text":"Opo, si Aling Fely. Sabihan ko po ba siya?","id":"Ada, Pak, Bu Fely. Mau saya beri tahu dia, Pak?","literal":"iya-[po], [si] Bu Fely. diberitahu saya [po] [ba] dia?"},
+        {"speaker":"Kap:","text":"Huwag na. Ako na lang ang magpapatawag.","id":"Tidak usah. Biar saya saja yang memanggilnya.","literal":"jangan [na]. saya [na] saja [ang] yang-akan-menyuruh-panggil."},
+        {"speaker":"Susan:","text":"Kapitan, sabihin n'yo rin po sana kay Mila na huwag na siyang magdagdag.","id":"Pak, tolong bilang juga ke Mila supaya jangan menambah-nambahi.","literal":"Kapten, dikatakan kalian juga [po] [sana] ke Mila [na] jangan [na] dia-[ng] menambah."},
+        {"speaker":"Kap:","text":"Sasabihin ko. Pero kayong dalawa, wala nang sabi-sabi mula ngayon.","id":"Akan saya bilang. Tapi kalian berdua, mulai sekarang tidak ada lagi desas-desus.","literal":"akan-dikatakan saya. tapi kalian-[ng] dua, tidak-ada [na]-[ng] kata-kata mulai sekarang."},
+        {"speaker":"Nene:","text":"Opo, Kapitan.","id":"Baik, Pak.","literal":"iya-[po], Kapten."},
+        {"speaker":"Susan:","text":"Pasensya na po. Hindi ko naman sinadyang idamay siya.","id":"Maaf, Pak. Saya tidak bermaksud menyeret dia.","literal":"sabar [na] [po]. tidak saya [naman] disengaja-[ng] dilibatkan dia."}
+      ]
+    },
+    {
+      "title": "Dialog B — Sa labas, kausap ang kapitbahay",
+      "intro": "Baru keluar dari kantor barangay, dan laporan itu sudah dilaporkan lagi.",
+      "lines": [
+        {"speaker":"Fely:","text":"O, ano'ng nangyari sa loob?","id":"Nah, apa yang terjadi di dalam?","literal":"oh, apa-[ng] telah-terjadi di dalam?"},
+        {"speaker":"Nene:","text":"Sabi ng kapitan, wala raw dapat sabi-sabi mula ngayon.","id":"Kata Pak Kapten, katanya mulai sekarang tidak boleh ada desas-desus.","literal":"kata [ng] kapten, tidak-ada [daw] harus kata-kata mulai sekarang."},
+        {"speaker":"Fely:","text":"Sino raw ang nagreklamo?","id":"Katanya siapa yang melapor?","literal":"siapa [daw] [ang] yang-mengeluh?"},
+        {"speaker":"Nene:","text":"Si Aling Susan daw, pero sabi niya hindi raw ako ang tinuro niya.","id":"Katanya Bu Susan, tapi katanya bukan saya yang dia tunjuk.","literal":"[si] Bu Susan [daw], tapi kata dia tidak [daw] saya [ang] yang-ditunjuk dia."},
+        {"speaker":"Fely:","text":"Ay naku. Ako ang tinanong niya noong Martes, alam mo ba?","id":"Aduh. Selasa lalu aku yang dia tanyai, kamu tahu tidak?","literal":"aduh. saya [ang] yang-ditanya dia ketika Selasa, tahu kamu [ba]?"},
+        {"speaker":"Nene:","text":"Ano'ng tinanong niya sa 'yo?","id":"Dia tanya apa ke kamu?","literal":"apa-[ng] yang-ditanya dia ke kamu?"},
+        {"speaker":"Fely:","text":"Kung sino raw ang laging maagang lumalabas.","id":"Katanya, siapa yang selalu keluar pagi-pagi.","literal":"kalau siapa [daw] [ang] selalu pagi-[ng] sedang-keluar."},
+        {"speaker":"Nene:","text":"At ano'ng sagot mo?","id":"Dan apa jawabanmu?","literal":"dan apa-[ng] jawaban kamu?"},
+        {"speaker":"Fely:","text":"Sabi ko, marami. Ayokong may masabi akong pangalan.","id":"Kubilang, banyak. Aku tidak mau menyebut nama.","literal":"kata saya, banyak. tidak-mau-saya-[ng] ada ter-katakan saya-[ng] nama."},
+        {"speaker":"Nene:","text":"Salamat, Fely. Ikaw lang ang hindi nagsasalita nang hindi tinatanong.","id":"Makasih, Fely. Cuma kamu yang tidak bicara kalau tidak ditanya.","literal":"terima-kasih, Fely. kamu saja [ang] tidak sedang-berbicara selama tidak sedang-ditanya."}
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Empat cara melaporkan, empat tingkat tanggung jawab",
+      "blocks": [
+        {"type":"p","text":"Bahasa Tagalog punya cara yang sangat halus untuk mengatakan \"aku hanya menyampaikan, jangan salahkan aku\". Pilihanmu di antara empat bentuk berikut menentukan seberapa besar tanggung jawab yang kamu pikul atas isi laporanmu."},
+        {"type":"tabel","head":["Bentuk","Contoh","Tanggung jawabmu"],"rows":[
+          ["*Sabi ni X, …*","*Sabi ni Susan, wala siya.*","kamu memastikan X mengatakannya"],
+          ["*… daw/raw*","*Wala raw siya.*","kamu tidak menjamin apa-apa"],
+          ["*Sabi ni X, … daw*","*Sabi ni Susan, wala raw siya.*","dua lapis — paling aman"],
+          ["*Ayon kay X, …*","*Ayon kay Susan, wala siya.*","tertulis, menyebut sumber"],
+          ["*Nagsabi si X na …*","*Nagsabi si Susan na wala siya.*","kalimat penuh, agak resmi"]
+        ]},
+        {"type":"p","text":"Perhatikan bahwa *sabi* bukan kata kerja. Ia kata benda yang berarti \"perkataan\", jadi *Sabi ni Susan* harfiahnya \"perkataan Susan\". Itu sebabnya ia tidak berubah bentuk menurut aspek: tidak ada *\\*sasabi*, *\\*sinasabi ni Susan* dalam susunan ini. Kalau kamu memang mau memakai kata kerjanya, bentuknya *nagsabi*, *sinabi*, atau *sinabihan*."},
+        {"type":"kotak","title":"*daw* dan *raw*","items":[
+          "Bentuknya ditentukan bunyi terakhir kata sebelumnya: sesudah huruf hidup dan *w*/*y*, pakai ***raw***; sesudah huruf mati lain, pakai ***daw***. *Wala raw*, *Hindi raw*, *Umalis daw*, *Marami raw*.",
+          "Letaknya di tempat partikel — sesudah kata pertama, bukan di ujung kalimat.",
+          "Boleh muncul lebih dari sekali dalam satu kalimat panjang, dan penutur asli memang melakukannya: *Sabi raw niya, hindi raw siya sumang-ayon.*",
+          "Ia bukan penanda keraguan. Untuk ragu, pakai *yata* atau *siguro*. *daw* hanya menandai bahwa sumbernya orang lain."
+        ]}
+      ]
+    },
+    {
+      "title": "Apa yang bergeser, apa yang tidak",
+      "blocks": [
+        {"type":"p","text":"Berbeda dengan bahasa Inggris, bahasa Tagalog **tidak** menggeser bentuk kata kerjanya ketika kalimat dipindahkan. Yang bergeser hanya kata ganti dan keterangan tempat-waktu — dan itu pun mengikuti akal sehat, bukan aturan tata bahasa."},
+        {"type":"tabel","head":["Kalimat asli","Dilaporkan"],"rows":[
+          ["*\"Pupunta ako bukas.\"*","*Sabi niya, pupunta raw siya bukas.*"],
+          ["*\"Wala akong pera.\"*","*Sabi niya, wala raw siyang pera.*"],
+          ["*\"Nandito ako.\"*","*Sabi niya, nandoon daw siya.*"],
+          ["*\"Tawagan mo ako.\"*","*Sabi niya, tawagan ko raw siya.*"],
+          ["*\"Huwag kang pumunta.\"*","*Sabi niya, huwag daw akong pumunta.*"]
+        ]},
+        {"type":"p","text":"Perhatikan dua baris terakhir: perintah tetap berbentuk perintah. Bahasa Tagalog tidak mengubahnya jadi \"dia menyuruh aku untuk…\"; ia cukup menempelkan *daw* dan menggeser kata gantinya."},
+        {"type":"sub","text":"Melaporkan pertanyaan"},
+        {"type":"p","text":"Pertanyaan ya-tidak dilaporkan dengan *kung*; pertanyaan berkata tanya mempertahankan kata tanyanya, sering ditambah *kung* di depannya."},
+        {"type":"tabel","head":["Pertanyaan asli","Dilaporkan"],"rows":[
+          ["*\"Darating ka ba?\"*","*Tinanong niya kung darating ako.*"],
+          ["*\"Sino ang nagsabi?\"*","*Tinanong niya kung sino ang nagsabi.*"],
+          ["*\"Bakit ka umalis?\"*","*Tinanong niya kung bakit ako umalis.*"],
+          ["*\"Kailan kayo babalik?\"*","*Tinanong niya kung kailan kami babalik.*"],
+          ["*\"Magkano ito?\"*","*Tinanong niya kung magkano ito.*"]
+        ]},
+        {"type":"sub","text":"Ragam tertulis: menyebut sumber"},
+        {"type":"tabel","head":["Ungkapan","Dipakai di","Contoh"],"rows":[
+          ["*ayon kay / ayon sa*","berita, laporan","*Ayon sa ulat ng DOH…*"],
+          ["*batay sa*","tulisan ilmiah","*Batay sa pag-aaral ni Cruz…*"],
+          ["*sang-ayon kay*","tulisan resmi","*Sang-ayon kay Rizal…*"],
+          ["*sa pahayag ni*","berita","*Sa pahayag ni Mayor…*"],
+          ["*binanggit ni*","akademik","*Binanggit ni Constantino na…*"],
+          ["*diumano*","berita hukum: konon, diduga","*Siya diumano ang nagnakaw.*"]
+        ]},
+        {"type":"p","text":"*diumano* adalah kata yang wajib kamu kenali kalau membaca berita Filipina. Ia berarti \"diduga\" atau \"konon\" dan dipakai persis untuk melindungi wartawan dari tuduhan pencemaran nama baik — setara dengan \"alleged\" dalam berita berbahasa Inggris."},
+        {"type":"kotak","title":"Yang bikin kamu ketahuan","items":[
+          "Menaruh *daw* di ujung kalimat. *\\*Wala siya daw* salah; yang benar *Wala raw siya*.",
+          "Memakai *daw* sesudah huruf hidup. *\\*Wala daw* → yang benar *Wala raw*. Kesalahan ini juga dibuat penutur asli dalam tulisan, tapi tetap dianggap salah.",
+          "Memakai *sabi* seolah kata kerja. *\\*Sinabi ni Susan na sabi niya…* menumpuk dua kali; pilih salah satu.",
+          "Melaporkan pertanyaan tanpa *kung*. *\\*Tinanong niya darating ako* salah; yang benar *Tinanong niya kung darating ako*.",
+          "Memakai *diumano* di percakapan. Ia kata berita; di obrolan, orang memakai *daw* saja."
+        ]}
+      ]
+    }
+  ],
+  "vocab": [
+    {"tl":"sabi","baca":"SA-bi","id":"perkataan; kata (si)"},
+    {"tl":"sabi-sabi","baca":"sa-bi-SA-bi","id":"desas-desus"},
+    {"tl":"maglagay","baca":"mag-la-GAY","id":"menaruh"},
+    {"tl":"basura","baca":"ba-SU-ra","id":"sampah"},
+    {"tl":"ituro","baca":"i-tu-RO","id":"menunjuk"},
+    {"tl":"magreklamo","baca":"mag-rek-LA-mo","id":"melapor, mengeluh"},
+    {"tl":"reklamo","baca":"rek-LA-mo","id":"laporan, keluhan"},
+    {"tl":"imposible","baca":"im-po-SIB-le","id":"tidak mungkin"},
+    {"tl":"magpatunay","baca":"mag-pa-TU-nay","id":"membuktikan"},
+    {"tl":"magpatawag","baca":"mag-pa-ta-WAG","id":"menyuruh memanggil"},
+    {"tl":"magdagdag","baca":"mag-dag-DAG","id":"menambah-nambahi"},
+    {"tl":"idamay","baca":"i-da-MAY","id":"menyeret, melibatkan"},
+    {"tl":"kapitbahay","baca":"ka-pit-BA-hay","id":"tetangga"},
+    {"tl":"ayon kay","baca":"a-YON kay","id":"menurut (orang)"},
+    {"tl":"batay sa","baca":"BA-tay sa","id":"berdasarkan"},
+    {"tl":"pahayag","baca":"pa-HA-yag","id":"pernyataan"},
+    {"tl":"diumano","baca":"di-u-MA-no","id":"konon, diduga"},
+    {"tl":"sumang-ayon","baca":"su-mang-a-YON","id":"menyetujui"},
+    {"tl":"tanungin","baca":"ta-NU-ngin","id":"menanyai"},
+    {"tl":"maaga","baca":"ma-A-ga","id":"pagi-pagi, awal"},
+    {"tl":"masabi","baca":"ma-SA-bi","id":"terkatakan"},
+    {"tl":"kapitan","baca":"ka-pi-TAN","id":"kepala barangay"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi kalimat laporan dengan *sabi* + *daw/raw*.",
+      "items": [
+        "\"Pupunta ako bukas.\"",
+        "\"Wala akong pera.\"",
+        "\"Nandito ako sa opisina.\"",
+        "\"Tawagan mo ako mamaya.\"",
+        "\"Huwag kang pumunta doon.\""
+      ]
+    },
+    {
+      "prompt": "Pilih *daw* atau *raw*.",
+      "items": [
+        "Wala ____ siya kahapon.",
+        "Umalis ____ sila nang maaga.",
+        "Marami ____ ang dumating.",
+        "Hindi ____ totoo ang balita.",
+        "Ikaw ____ ang tinuro niya."
+      ]
+    },
+    {
+      "prompt": "Ubah jadi pertanyaan yang dilaporkan.",
+      "items": [
+        "\"Darating ka ba bukas?\"",
+        "\"Sino ang nagsabi sa iyo?\"",
+        "\"Bakit ka umalis nang maaga?\"",
+        "\"Magkano ang binayaran mo?\"",
+        "\"Kailan kayo babalik?\""
+      ]
+    },
+    {
+      "prompt": "Tulis ulang dengan ragam tertulis, memakai *ayon sa*, *batay sa*, *sa pahayag ni*, *binanggit ni*, atau *diumano*.",
+      "items": [
+        "Kata laporan Departemen Kesehatan, kasusnya berkurang.",
+        "Menurut penelitian Cruz, hasilnya berbeda.",
+        "Kata Wali Kota, jalannya akan diperbaiki.",
+        "Cruz menyebutkan bahwa datanya belum lengkap.",
+        "Katanya dialah yang mencuri (berita, belum terbukti)."
+      ]
+    },
+    {
+      "prompt": "Bayangkan kamu baru keluar dari rapat. Laporkan lima hal yang dikatakan orang di dalamnya, memakai bentuk yang berbeda-beda.",
+      "items": [
+        "dengan *Sabi ni …*",
+        "dengan *daw/raw* saja",
+        "dua lapis: *Sabi ni … daw*",
+        "sebuah perintah yang dilaporkan",
+        "sebuah pertanyaan yang dilaporkan"
+      ]
+    }
+  ],
+  "answers": [
+    "Sabi niya, pupunta raw siya bukas. — Sabi niya, wala raw siyang pera. — Sabi niya, nandoon daw siya sa opisina. — Sabi niya, tawagan ko raw siya mamaya. — Sabi niya, huwag daw akong pumunta doon.",
+    "raw — daw — raw — raw — daw",
+    "Tinanong niya kung darating ako bukas. — Tinanong niya kung sino ang nagsabi sa akin. — Tinanong niya kung bakit ako umalis nang maaga. — Tinanong niya kung magkano ang binayaran ko. — Tinanong niya kung kailan kami babalik.",
+    "Ayon sa ulat ng Kagawaran ng Kalusugan, bumaba ang mga kaso. — Batay sa pag-aaral ni Cruz, naiiba ang resulta. — Sa pahayag ni Mayor, aayusin ang kalsada. — Binanggit ni Cruz na hindi pa kumpleto ang datos. — Siya diumano ang nagnakaw.",
+    "Sabi ng manager, may bagong patakaran. — May dagdag na trabaho raw sa susunod na buwan. — Sabi ni Ate Let, wala raw dagdag na sahod. — Sabi niya, mag-file daw kami ng ulat bago mag-Biyernes. — Tinanong niya kung sino ang puwedeng mag-overtime."
+  ]
+}

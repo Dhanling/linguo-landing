@@ -1,0 +1,551 @@
+{
+  "title": "Birokrasi: barangay, loket, dan gaya tanpa pelaku",
+  "title_target": "Kailangan pong ipasa ang dokumento bago mag-katapusan",
+  "goal": "Mengurus keperluan di kantor pemerintah, membaca papan dan formulir yang bergaya nominal, dan mengenali kalimat yang sengaja tidak menyebut siapa yang bertanggung jawab.",
+  "bekal": [
+    "membaca kalimat resmi yang seluruhnya berupa kata benda turunan",
+    "menanyakan syarat, biaya, dan lama proses dengan tepat",
+    "mengenali kalimat tanpa pelaku dan mengubahnya kembali jadi kalimat biasa",
+    "mengurus surat keterangan barangay, NBI, dan keperluan bank",
+    "bertahan sopan ketika prosesnya berputar-putar"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog A — Sa tanggapan ng barangay, alas-nuwebe ng umaga",
+      "intro": "Mengurus *barangay clearance*. Percakapan seperti ini punya bentuk yang sangat mantap di seluruh Filipina, dan mengenali polanya menghemat banyak pagi.",
+      "lines": [
+        {
+          "speaker": "Reyna:",
+          "text": "Magandang umaga po. Kukuha po sana ako ng clearance.",
+          "id": "Selamat pagi. Saya mau mengurus surat keterangan.",
+          "literal": "bagus-[ng] pagi [po]. akan-mengambil [po] [sana] saya [ng] keterangan."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Para saan po?",
+          "id": "Untuk keperluan apa?",
+          "literal": "untuk di-mana [po]?"
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Para po sa trabaho.",
+          "id": "Untuk kerja.",
+          "literal": "untuk [po] di pekerjaan."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Sige po. Ano pong buong pangalan at tagal ninyo nang nakatira dito?",
+          "id": "Baik. Nama lengkap dan sudah berapa lama tinggal di sini?",
+          "literal": "baik [po]. apa [po]-[ng] utuh nama dan lama kalian [na]-[ng] ber-tinggal di-sini?"
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Reyna Alvarado po. Tatlong taon na po.",
+          "id": "Reyna Alvarado. Sudah tiga tahun.",
+          "literal": "Reyna Alvarado [po]. tiga-[ng] tahun [na] [po]."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "May dala po ba kayong ID at proof of residency?",
+          "id": "Bapak/Ibu bawa KTP dan bukti domisili?",
+          "literal": "ada bawa [po] [ba] kalian-[ng] identitas dan bukti tempat-tinggal?"
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "May ID po ako. 'Yung proof of residency po, ano po ba ang tinatanggap?",
+          "id": "KTP ada. Untuk bukti domisili, apa yang diterima?",
+          "literal": "ada identitas [po] saya. [ang] bukti tempat-tinggal [po], apa [po] [ba] [ang] sedang-diterima?"
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Bill ng kuryente o tubig, basta nasa pangalan ninyo.",
+          "id": "Tagihan listrik atau air, asal atas nama Anda.",
+          "literal": "tagihan [ng] listrik atau air, pokoknya ada-di nama kalian."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Nasa pangalan po ng may-ari ng bahay. Umuupa lang po kami.",
+          "id": "Atas nama pemilik rumahnya. Kami cuma menyewa.",
+          "literal": "ada-di nama [po] [ng] yang-punya [ng] rumah. sedang-menyewa saja [po] kami."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Ay. Kailangan po ninyong magpapirma ng sertipikasyon sa may-ari.",
+          "id": "Aduh. Anda perlu minta pemiliknya menandatangani surat pernyataan.",
+          "literal": "ah. perlu [po] kalian-[ng] menyuruh-tanda-tangan [ng] sertifikasi di yang-punya."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "May porma po ba kayo niyan?",
+          "id": "Ada formulirnya di sini?",
+          "literal": "ada formulir [po] [ba] kalian itu-[ng]?"
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Meron po. Isang daan po ang clearance, at limampu ang sertipikasyon.",
+          "id": "Ada. Surat keterangannya seratus, dan surat pernyataannya lima puluh.",
+          "literal": "ada [po]. satu ratus [po] [ang] keterangan, dan lima-puluh [ang] sertifikasi."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Gaano po katagal bago makuha?",
+          "id": "Berapa lama sampai bisa diambil?",
+          "literal": "seberapa [po] se-lama sebelum ter-ambil?"
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Kung kumpleto po ang dokumento bago mag-tanghali, puwede pong hapon din.",
+          "id": "Kalau berkasnya lengkap sebelum tengah hari, bisa sore ini juga.",
+          "literal": "kalau lengkap [po] [ang] dokumen sebelum jadi-tengah-hari, bisa [po]-[ng] sore juga."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Salamat po. Babalik po ako mamaya na may dalang pirma.",
+          "id": "Terima kasih. Nanti saya balik bawa tanda tangannya.",
+          "literal": "terima-kasih [po]. akan-kembali [po] saya nanti [na] ada bawa-[ng] tanda-tangan."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Sige po. Basta bago mag-alas-onse, para maiproseso agad.",
+          "id": "Baik. Asal sebelum jam sebelas, supaya bisa langsung diproses.",
+          "literal": "baik [po]. pokoknya sebelum jadi-jam-sebelas, supaya ter-diproses segera."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Opo. Salamat po ulit.",
+          "id": "Baik. Terima kasih sekali lagi.",
+          "literal": "iya-[po]. terima-kasih [po] lagi."
+        },
+        {
+          "speaker": "Kawani:",
+          "text": "Walang anuman po.",
+          "id": "Sama-sama.",
+          "literal": "tidak-ada apa-pun [po]."
+        }
+      ]
+    },
+    {
+      "title": "Dialog B — Sa bangko, pagkatapos ng tanghalian",
+      "intro": "Membuka rekening. Bahasa loket bank lebih formal lagi, dan penuh kalimat yang tidak menyebut siapa yang mengerjakannya.",
+      "lines": [
+        {
+          "speaker": "Teller:",
+          "text": "Magandang hapon po. Ano pong maitutulong ko?",
+          "id": "Selamat siang. Ada yang bisa saya bantu?",
+          "literal": "bagus-[ng] sore [po]. apa [po]-[ng] akan-bisa-dibantu saya?"
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Magbubukas po sana ako ng account.",
+          "id": "Saya mau membuka rekening.",
+          "literal": "akan-membuka [po] [sana] saya [ng] rekening."
+        },
+        {
+          "speaker": "Teller:",
+          "text": "Dalawang balido pong ID ang kinakailangan.",
+          "id": "Disyaratkan dua KTP yang berlaku.",
+          "literal": "dua [ng] sah [po]-[ng] identitas [ang] disyaratkan."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Ito po. Magkano po ang initial deposit?",
+          "id": "Ini. Setoran awalnya berapa?",
+          "literal": "ini [po]. berapa [po] [ang] awal setoran?"
+        },
+        {
+          "speaker": "Teller:",
+          "text": "Tatlong libo po. Pinapanatili pong hindi bababa sa dalawang libo ang balanse.",
+          "id": "Tiga ribu. Saldonya diwajibkan tidak turun di bawah dua ribu.",
+          "literal": "tiga ribu [po]. sedang-dipertahankan [po]-[ng] tidak akan-turun di dua ribu [ang] saldo."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Kung bumaba po, may bayad?",
+          "id": "Kalau turun, ada dendanya?",
+          "literal": "kalau turun [po], ada bayaran?"
+        },
+        {
+          "speaker": "Teller:",
+          "text": "Opo, may kaltas pong tatlong daan kada buwan.",
+          "id": "Ada, potongannya tiga ratus per bulan.",
+          "literal": "iya-[po], ada potongan [po]-[ng] tiga ratus tiap bulan."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "Naku. Puwede po bang 'yung mas mababa ang maintaining?",
+          "id": "Aduh. Bisa yang saldo minimalnya lebih rendah?",
+          "literal": "aduh. bisa [po] [ba]-[ng] [ang] lebih rendah [ang] penjagaan?"
+        },
+        {
+          "speaker": "Teller:",
+          "text": "Meron po — 'yung basic deposit account, dalawang daan lang po ang simula.",
+          "id": "Ada — rekening dasar, awalnya cuma dua ratus.",
+          "literal": "ada [po] — [ang] dasar setoran rekening, dua ratus saja [po] [ang] mula."
+        },
+        {
+          "speaker": "Reyna:",
+          "text": "'Yun na lang po. Salamat po sa pagpapaliwanag.",
+          "id": "Itu saja. Terima kasih atas penjelasannya.",
+          "literal": "itu [na] saja [po]. terima-kasih [po] di kegiatan-menjelaskan."
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang sengaja tidak menyebut siapa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa birokrasi Filipina punya satu ciri yang perlu kamu kenali bukan untuk ditiru, melainkan untuk dibaca: ia menghindari menyebut pelaku. Ini dikerjakan dengan dua alat yang sudah kamu punya — fokus sasaran tanpa pelaku, dan gaya nominal dari unit 10."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Yang tertulis",
+            "Yang sebenarnya terjadi",
+            "Alatnya"
+          ],
+          "rows": [
+            [
+              "*Kinakailangan ang dalawang ID.*",
+              "kami mewajibkan dua KTP",
+              "gaya nominal"
+            ],
+            [
+              "*Ipinagbabawal ang paninigarilyo.*",
+              "kami melarang merokok",
+              "fokus sasaran tanpa pelaku"
+            ],
+            [
+              "*Pinapanatili ang balanse sa dalawang libo.*",
+              "Anda wajib menjaga saldo",
+              "fokus sasaran tanpa pelaku"
+            ],
+            [
+              "*Isinasagawa ang pagproseso sa loob ng tatlong araw.*",
+              "kami memproses tiga hari",
+              "gaya nominal"
+            ],
+            [
+              "*Hindi tinatanggap ang lumang porma.*",
+              "kami menolak formulir lama",
+              "fokus sasaran tanpa pelaku"
+            ],
+            [
+              "*Maaaring magbago ang patakaran nang walang paunang abiso.*",
+              "kami boleh mengubah aturan kapan saja",
+              "modal + nominal"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan yang berguna: setiap kali kamu membaca papan atau formulir, coba kembalikan kalimatnya jadi kalimat biasa dengan pelaku. Kamu akan cepat melihat siapa yang sedang bersembunyi, dan itu berguna jauh di luar urusan bahasa."
+        },
+        {
+          "type": "kotak",
+          "title": "Papan yang akan kamu temui",
+          "items": [
+            "***Bawal pumarada.*** — dilarang parkir. *Bawal* + kata kerja fokus pelaku.",
+            "***Bawal ang basura dito.*** — dilarang membuang sampah di sini.",
+            "***Ipinagbabawal ang pagtawid.*** — menyeberang dilarang (versi resminya).",
+            "***Mag-ingat sa aso.*** — awas anjing.",
+            "***Pakiusap, huwag ingayan.*** — mohon jangan berisik.",
+            "***Nakabukas mula Lunes hanggang Biyernes.*** — buka Senin sampai Jumat.",
+            "***Sarado tuwing Linggo at pista opisyal.*** — tutup tiap Minggu dan hari libur nasional."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sepuluh kalimat yang menyelamatkan pagimu di loket",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Urusan di kantor pemerintah jarang gagal karena tata bahasa. Ia gagal karena orang tidak menanyakan tiga hal di depan: apa syaratnya, berapa biayanya, dan berapa lama. Sepuluh kalimat berikut menutup hampir semuanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Keperluan",
+            "Kalimat"
+          ],
+          "rows": [
+            [
+              "menanyakan syarat",
+              "*Ano po ba ang mga kailangan?*"
+            ],
+            [
+              "menanyakan yang diterima",
+              "*Ano po ang tinatanggap na proof of residency?*"
+            ],
+            [
+              "menanyakan biaya",
+              "*Magkano po lahat-lahat?*"
+            ],
+            [
+              "menanyakan lama proses",
+              "*Gaano po katagal bago makuha?*"
+            ],
+            [
+              "menanyakan bisa hari ini",
+              "*Puwede po bang ngayon din?*"
+            ],
+            [
+              "menanyakan jam tutup",
+              "*Hanggang anong oras po kayo?*"
+            ],
+            [
+              "memastikan berkas lengkap",
+              "*Kumpleto na po ba ito?*"
+            ],
+            [
+              "menanyakan langkah berikutnya",
+              "*Ano po ang susunod kong gagawin?*"
+            ],
+            [
+              "menanyakan tempat",
+              "*Saan po ako susunod pupunta?*"
+            ],
+            [
+              "menanyakan nama pegawainya",
+              "*Sino po ang hahanapin ko pagbalik?*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kalimat terakhir itu berharga lebih daripada kelihatannya. Menanyakan siapa yang harus dicari saat kembali mengubah urusanmu dari antrean anonim menjadi urusan dengan seseorang — dan di Filipina, itu perbedaan yang besar."
+        },
+        {
+          "type": "sub",
+          "text": "Ketika prosesnya berputar-putar"
+        },
+        {
+          "type": "p",
+          "text": "Kadang kamu dikirim dari satu meja ke meja lain. Marah tidak menolong; yang menolong adalah menyusun ulang keadaan dengan tenang, dan meminta kepastian."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Keadaan",
+            "Kalimat"
+          ],
+          "rows": [
+            [
+              "dikirim bolak-balik",
+              "*Pasensya na po — galing po ako doon, at dito raw po ako pinapunta.*"
+            ],
+            [
+              "syarat berubah",
+              "*Noong isang linggo po, iba po ang sinabi sa akin. Alin po ang tama?*"
+            ],
+            [
+              "meminta kepastian",
+              "*Para po sigurado — ito lang po ang kulang, tama po ba?*"
+            ],
+            [
+              "meminta ditulis",
+              "*Puwede po bang pakisulat kung ano pa ang kailangan?*"
+            ],
+            [
+              "menutup dengan baik",
+              "*Salamat po sa pasensya ninyo.*"
+            ],
+            [
+              "kalau benar-benar buntu",
+              "*Sino po kaya ang puwede kong kausapin tungkol dito?*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa tidak satu pun dari kalimat itu menuduh. Bahasa Filipina di loket bekerja dengan cara yang sama seperti bahasa penolakan di unit 15: yang menang adalah orang yang membuat lawan bicaranya tidak perlu membela diri."
+        },
+        {
+          "type": "kotak",
+          "title": "Yang bikin kamu ketahuan",
+          "items": [
+            "Memakai bahasa loket yang kaku ketika kamu justru sedang berurusan dengan tetangga di kantor barangay. Di banyak barangay, petugasnya kenal semua orang; nada yang terlalu resmi malah menjauhkan.",
+            "Melewatkan *po* ke petugas yang lebih muda darimu. *po* di sini tidak menandai usia melainkan kedudukan; petugas selalu di-*po*-kan.",
+            "Menerjemahkan \"tolong\" jadi kata terpisah, bukan lewat *paki-*.",
+            "Tidak menanyakan biaya total sejak awal. *Magkano po lahat-lahat?* menghemat perjalanan kedua.",
+            "Naik nada suara. Di ruang loket Filipina, orang yang meninggikan suara hampir selalu selesai lebih lambat, bukan lebih cepat."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "tanggapan",
+      "baca": "tang-GA-pan",
+      "id": "kantor, ruang penerimaan"
+    },
+    {
+      "tl": "kawani",
+      "baca": "ka-WA-ni",
+      "id": "pegawai, petugas"
+    },
+    {
+      "tl": "patunay",
+      "baca": "pa-TU-nay",
+      "id": "bukti, keterangan"
+    },
+    {
+      "tl": "paninirahan",
+      "baca": "pa-ni-ni-ra-HAN",
+      "id": "tempat tinggal, domisili"
+    },
+    {
+      "tl": "may-ari",
+      "baca": "may-A-ri",
+      "id": "pemilik"
+    },
+    {
+      "tl": "umupa",
+      "baca": "u-mu-PA",
+      "id": "menyewa"
+    },
+    {
+      "tl": "sertipikasyon",
+      "baca": "ser-ti-pi-kas-YON",
+      "id": "surat pernyataan"
+    },
+    {
+      "tl": "porma",
+      "baca": "POR-ma",
+      "id": "formulir"
+    },
+    {
+      "tl": "maiproseso",
+      "baca": "ma-i-pro-SE-so",
+      "id": "terproses"
+    },
+    {
+      "tl": "kumpleto",
+      "baca": "kum-PLE-to",
+      "id": "lengkap"
+    },
+    {
+      "tl": "balido",
+      "baca": "ba-LI-do",
+      "id": "berlaku, sah"
+    },
+    {
+      "tl": "panatilihin",
+      "baca": "pa-na-ti-LI-hin",
+      "id": "mempertahankan"
+    },
+    {
+      "tl": "balanse",
+      "baca": "ba-LAN-se",
+      "id": "saldo"
+    },
+    {
+      "tl": "kaltas",
+      "baca": "kal-TAS",
+      "id": "potongan"
+    },
+    {
+      "tl": "paunang abiso",
+      "baca": "pa-U-nang a-BI-so",
+      "id": "pemberitahuan awal"
+    },
+    {
+      "tl": "patakaran",
+      "baca": "pa-ta-ka-RAN",
+      "id": "kebijakan, aturan"
+    },
+    {
+      "tl": "pumarada",
+      "baca": "pu-ma-RA-da",
+      "id": "parkir"
+    },
+    {
+      "tl": "tumawid",
+      "baca": "tu-ma-WID",
+      "id": "menyeberang"
+    },
+    {
+      "tl": "pista opisyal",
+      "baca": "PIS-ta o-pis-YAL",
+      "id": "hari libur nasional"
+    },
+    {
+      "tl": "walang anuman",
+      "baca": "wa-LANG a-nu-MAN",
+      "id": "sama-sama"
+    },
+    {
+      "tl": "isagawa",
+      "baca": "i-sa-ga-WA",
+      "id": "melaksanakan"
+    },
+    {
+      "tl": "pakisulat",
+      "baca": "pa-ki-SU-lat",
+      "id": "tolong tuliskan"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Kembalikan kalimat birokrasi berikut jadi kalimat biasa yang menyebut pelakunya.",
+      "items": [
+        "Kinakailangan ang dalawang balidong ID.",
+        "Ipinagbabawal ang paninigarilyo sa loob.",
+        "Isinasagawa ang pagproseso sa loob ng tatlong araw.",
+        "Hindi tinatanggap ang lumang porma.",
+        "Maaaring magbago ang patakaran nang walang paunang abiso."
+      ]
+    },
+    {
+      "prompt": "Tanyakan hal berikut di loket, dengan kalimat yang wajar.",
+      "items": [
+        "syarat-syaratnya apa saja",
+        "biayanya semua berapa",
+        "berapa lama sampai jadi",
+        "apakah bisa selesai hari ini",
+        "siapa yang harus dicari saat kembali"
+      ]
+    },
+    {
+      "prompt": "Kamu sudah dikirim ke tiga meja yang berbeda. Susun lima kalimat untuk menyelesaikan keadaan itu tanpa menuduh siapa pun.",
+      "items": [
+        "menerangkan kamu sudah dari sana",
+        "menyebut keterangan yang berbeda minggu lalu",
+        "meminta kepastian apa yang masih kurang",
+        "meminta agar dituliskan",
+        "menutup dengan baik"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan papan pengumuman berikut ke bahasa Filipino.",
+      "items": [
+        "Dilarang parkir.",
+        "Dilarang membuang sampah di sini.",
+        "Buka Senin sampai Jumat.",
+        "Tutup tiap Minggu dan hari libur nasional.",
+        "Mohon jangan berisik."
+      ]
+    },
+    {
+      "prompt": "Tulis percakapan singkat (enam baris) untuk salah satu keperluan berikut, dua peran: kamu dan petugas.",
+      "items": [
+        "mengurus surat keterangan barangay",
+        "membuka rekening bank",
+        "mengurus perpanjangan izin tinggal",
+        "menanyakan tagihan listrik yang keliru",
+        "mendaftarkan usaha kecil"
+      ]
+    }
+  ],
+  "answers": [
+    "Kailangan namin ng dalawang balidong ID. — Ipinagbabawal namin ang paninigarilyo sa loob. / Bawal manigarilyo sa loob. — Pinoproseso namin ito sa loob ng tatlong araw. — Hindi namin tinatanggap ang lumang porma. — Puwede naming baguhin ang patakaran kahit kailan.",
+    "Ano po ba ang mga kailangan? — Magkano po lahat-lahat? — Gaano po katagal bago makuha? — Puwede po bang ngayon din? — Sino po ang hahanapin ko pagbalik?",
+    "Pasensya na po, galing po ako doon, at dito raw po ako pinapunta. — Noong isang linggo po kasi, iba po ang sinabi sa akin. Alin po ang tama? — Para po sigurado, ito na lang po ang kulang, tama po ba? — Puwede po bang pakisulat kung ano pa ang kailangan? — Salamat po sa pasensya ninyo.",
+    "Bawal pumarada. — Bawal magtapon ng basura dito. — Bukas mula Lunes hanggang Biyernes. — Sarado tuwing Linggo at pista opisyal. — Pakiusap, huwag ingayan.",
+    "Magandang umaga po, kukuha po sana ako ng barangay clearance para sa trabaho. — Magandang hapon po, magbubukas po sana ako ng account; dalawang ID po ba ang kailangan? — Magandang umaga po, magpapa-extend po sana ako ng permit ko; ano po ang mga kailangan? — Magandang araw po, mukhang mali po ang bill namin ngayong buwan; puwede po bang ipacheck? — Magandang umaga po, magrerehistro po sana ako ng maliit na negosyo; saan po ako mauuna?"
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "title": "Pers: judul berita, laporan, dan kolom opini",
+  "title_target": "Tumaas ang presyo ng bigas; ipinaliwanag ng DA ang dahilan",
+  "goal": "Membaca berita berbahasa Filipino dengan lancar — termasuk gaya judul yang membuang setengah kalimatnya — dan menangkap perbedaan antara berita, siaran pers, dan kolom opini.",
+  "bekal": [
+    "membaca judul berita yang membuang penanda dan kata kerja bantu",
+    "mengenali kata-kata yang hampir hanya hidup di berita",
+    "membedakan pernyataan, laporan, dan dugaan dalam satu paragraf",
+    "membaca kolom opini yang memakai ironi dan pertanyaan retoris",
+    "menulis ringkasan berita dalam tiga kalimat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog A — Sa newsroom ng isang lokal na istasyon",
+      "intro": "Redaksi berita daerah, satu jam sebelum siaran. Perbedaan antara apa yang boleh ditulis dan apa yang hanya diketahui dibicarakan terus-menerus di ruangan seperti ini.",
+      "lines": [
+        {
+          "speaker": "Ed:",
+          "text": "Ilang minuto na lang, kailangan ko na 'yung headline sa bigas.",
+          "id": "Tinggal beberapa menit, aku butuh judul untuk berita berasnya.",
+          "literal": "berapa menit [na] saja, perlu saya [na] [ang] judul di beras."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "'Tumaas ang presyo ng bigas sa Quezon' — ganito?",
+          "id": "*Harga beras di Quezon naik* — begini?",
+          "literal": "naik [ang] harga [ng] beras di Quezon — begini?"
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Masyadong mahaba. Alisin mo ang 'ang' at 'ng'.",
+          "id": "Terlalu panjang. Buang *ang* dan *ng*-nya.",
+          "literal": "terlalu panjang. dibuang kamu [ang] ang dan ng."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "'Presyo ng bigas sa Quezon, tumaas'?",
+          "id": "*Harga beras di Quezon, naik*?",
+          "literal": "harga [ng] beras di Quezon, naik?"
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Mas mabuti. Ilang porsyento?",
+          "id": "Lebih baik. Berapa persen?",
+          "literal": "lebih baik. berapa persen?"
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Labindalawa raw ayon sa DA. Pero sabi ng mga tindera, mas mataas.",
+          "id": "Katanya dua belas menurut Kementerian Pertanian. Tapi kata pedagang, lebih tinggi.",
+          "literal": "dua-belas [daw] menurut di DA. tapi kata [ng] jamak penjual, lebih tinggi."
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Alin ang ilalagay mo?",
+          "id": "Yang mana yang kamu tulis?",
+          "literal": "mana [ang] akan-ditaruh kamu?"
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Pareho. 'DA: 12 porsyento; tindera: hanggang 20'.",
+          "id": "Dua-duanya. *DA: 12 persen; pedagang: sampai 20*.",
+          "literal": "sama. DA: 12 persen; penjual: sampai 20."
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Ayan. Huwag mong isulat kung sino ang tama — hayaan mong basahin ng tao.",
+          "id": "Nah. Jangan tulis siapa yang benar — biarkan orang membacanya sendiri.",
+          "literal": "itu. jangan kamu-[ng] ditulis kalau siapa [ang] benar — dibiarkan kamu-[ng] dibaca [ng] orang."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Kuya Ed, may bagong text sa akin. Diumano raw may hoarding sa bodega.",
+          "id": "Mas Ed, aku dapat pesan baru. Katanya diduga ada penimbunan di gudang.",
+          "literal": "Kakak Ed, ada baru pesan ke saya. konon [daw] ada penimbunan di gudang."
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Sino'ng nagsabi?",
+          "id": "Siapa yang bilang?",
+          "literal": "siapa-[ng] yang-mengatakan?"
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Isang tindera. Ayaw magpakilala.",
+          "id": "Seorang pedagang. Tidak mau disebut namanya.",
+          "literal": "satu penjual. tidak-mau memperkenalkan-diri."
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Hindi puwedeng isahan lang. Hanapan mo ng pangalawang pinagmulan.",
+          "id": "Tidak boleh cuma satu. Cari sumber keduanya.",
+          "literal": "tidak bisa-[ng] satu-an saja. dicarikan kamu [ng] kedua-[ng] sumber."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Kung wala po hanggang alas-sais?",
+          "id": "Kalau sampai jam enam tidak ada?",
+          "literal": "kalau tidak-ada [po] sampai jam-enam?"
+        },
+        {
+          "speaker": "Ed:",
+          "text": "Hindi natin ilalabas. Mas mabuting mahuli kaysa magkamali.",
+          "id": "Kita tidak siarkan. Lebih baik terlambat daripada salah.",
+          "literal": "tidak kita akan-dikeluarkan. lebih baik-[ng] terlambat daripada berbuat-salah."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Opo. Sige, tatawagan ko 'yung isa pang bodega.",
+          "id": "Baik. Oke, kutelepon gudang yang satunya.",
+          "literal": "iya-[po]. baik, akan-ditelepon saya [ang] satu masih gudang."
+        },
+        {
+          "speaker": "Ed:",
+          "text": "At Mimi — huwag mong gamitin ang salitang 'nagtatago'. Gamitin mo ang 'hindi pa nakakapagsalita'.",
+          "id": "Dan Mimi — jangan pakai kata *bersembunyi*. Pakai *belum bisa dimintai keterangan*.",
+          "literal": "dan Mimi — jangan kamu-[ng] dipakai [ang] kata-[ng] sedang-bersembunyi. dipakai kamu [ang] tidak masih bisa-berbicara."
+        },
+        {
+          "speaker": "Mimi:",
+          "text": "Naiintindihan ko po.",
+          "id": "Saya paham.",
+          "literal": "ter-mengerti saya [po]."
+        }
+      ]
+    },
+    {
+      "title": "Dialog B — Sa jeep, may nagbabasa ng dyaryo",
+      "intro": "Dua penumpang membaca berita yang sama. Perhatikan bagaimana bahasa berita diterjemahkan sendiri jadi bahasa sehari-hari.",
+      "lines": [
+        {
+          "speaker": "Lolo:",
+          "text": "Ano'ng balita riyan, iho?",
+          "id": "Apa beritanya, Nak?",
+          "literal": "apa-[ng] kabar di-situ, nak?"
+        },
+        {
+          "speaker": "Binata:",
+          "text": "'Presyo ng bigas, tumaas.' Labindalawang porsyento raw po.",
+          "id": "*Harga beras naik.* Katanya dua belas persen.",
+          "literal": "harga [ng] beras, naik. dua-belas-[ng] persen [daw] [po]."
+        },
+        {
+          "speaker": "Lolo:",
+          "text": "Labindalawa? Mahigit dalawampu 'yan sa amin.",
+          "id": "Dua belas? Di tempat kami lebih dari dua puluh.",
+          "literal": "dua-belas? lebih dua-puluh itu di kami."
+        },
+        {
+          "speaker": "Binata:",
+          "text": "Sabi nga po ng ibang tindera dito, ganoon din.",
+          "id": "Kata pedagang lain di sini juga begitu.",
+          "literal": "kata [nga] [po] [ng] lain penjual di-sini, begitu juga."
+        },
+        {
+          "speaker": "Lolo:",
+          "text": "Ano raw ang dahilan?",
+          "id": "Katanya apa penyebabnya?",
+          "literal": "apa [daw] [ang] alasan?"
+        },
+        {
+          "speaker": "Binata:",
+          "text": "Ayon po sa DA, dahil sa bagyo at sa taas ng gastos sa pataba.",
+          "id": "Menurut Kementerian Pertanian, karena badai dan naiknya biaya pupuk.",
+          "literal": "menurut [po] di DA, karena di badai dan di ketinggian [ng] biaya di pupuk."
+        },
+        {
+          "speaker": "Lolo:",
+          "text": "Tuwing may bagyo, laging bigas ang sinisisi.",
+          "id": "Tiap ada badai, selalu beras yang disalahkan.",
+          "literal": "tiap ada badai, selalu beras [ang] sedang-disalahkan."
+        },
+        {
+          "speaker": "Binata:",
+          "text": "May sinulat din po dito na baka may nagtatago ng stock.",
+          "id": "Di sini juga ditulis mungkin ada yang menimbun stok.",
+          "literal": "ada ter-tulis juga [po] di-sini [na] mungkin ada sedang-menyembunyikan [ng] persediaan."
+        },
+        {
+          "speaker": "Lolo:",
+          "text": "'Baka' lang? Ibig sabihin, wala pang patunay.",
+          "id": "Cuma *mungkin*? Artinya belum ada buktinya.",
+          "literal": "mungkin saja? maksud dikatakan, tidak-ada masih bukti."
+        },
+        {
+          "speaker": "Binata:",
+          "text": "Tama po kayo, Lolo. Marunong po kayong magbasa ng dyaryo.",
+          "id": "Betul, Kek. Kakek pandai membaca koran.",
+          "literal": "benar [po] kalian, Kakek. pandai [po] kalian-[ng] membaca [ng] koran."
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Gaya judul: apa yang dibuang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Judul berita Filipino membuang hampir semua yang bisa dibuang, dan yang paling sering dibuang adalah penanda *ang*/*ng* serta kata kerja bantu. Hasilnya terlihat seperti kalimat yang rusak bagi pemelajar, padahal ia ragam tersendiri dengan aturan yang mantap."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat penuh",
+            "Judul berita"
+          ],
+          "rows": [
+            [
+              "*Tumaas ang presyo ng bigas sa Quezon.*",
+              "*Presyo ng bigas sa Quezon, tumaas*"
+            ],
+            [
+              "*Ipinaliwanag ng DA ang dahilan.*",
+              "*DA, nagpaliwanag*"
+            ],
+            [
+              "*Hindi pa nakakapagsalita ang alkalde.*",
+              "*Alkalde, tahimik pa*"
+            ],
+            [
+              "*Nahuli ang tatlong suspek kahapon.*",
+              "*3 suspek, timbog*"
+            ],
+            [
+              "*Nagsimula na ang klase sa buong bansa.*",
+              "*Klase, bumalik na*"
+            ],
+            [
+              "*Nagbigay ng tulong ang pamahalaan.*",
+              "*Ayuda, ipinamahagi*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua kebiasaan yang perlu dikenali. Pertama, **koma menggantikan penanda**: bagian sebelum koma adalah pokoknya, bagian sesudahnya predikatnya. Kedua, judul memakai kata-kata pendek yang jarang dipakai di percakapan justru karena pendeknya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kata judul",
+            "Arti",
+            "Kata sehari-harinya"
+          ],
+          "rows": [
+            [
+              "*timbog*",
+              "tertangkap",
+              "*nahuli*"
+            ],
+            [
+              "*ayuda*",
+              "bantuan",
+              "*tulong*"
+            ],
+            [
+              "*sugod*",
+              "serbu, gerebek",
+              "*sinalakay*"
+            ],
+            [
+              "*todo*",
+              "habis-habisan",
+              "*puspusan*"
+            ],
+            [
+              "*giit*",
+              "tegas menyatakan",
+              "*iginiit*"
+            ],
+            [
+              "*bawi*",
+              "tarik kembali",
+              "*binawi*"
+            ],
+            [
+              "*tutol*",
+              "menentang",
+              "*tumututol*"
+            ],
+            [
+              "*dagdag*",
+              "tambahan",
+              "*karagdagan*"
+            ],
+            [
+              "*bagsak*",
+              "jatuh, gagal",
+              "*bumagsak*"
+            ],
+            [
+              "*hataw*",
+              "gebrakan, kecaman",
+              "*binatikos*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kata-kata yang hampir hanya hidup di berita",
+          "items": [
+            "***diumano*** — diduga, konon. Melindungi wartawan dari tuduhan; jangan dipakai di percakapan.",
+            "***kinasuhan*** — didakwa. *Kinasuhan siya ng pandarambong.*",
+            "***nasawi*** — tewas. Bentuk halus dari *namatay* dalam berita musibah.",
+            "***sugatan*** — luka-luka. *Lima ang sugatan.*",
+            "***nagpahayag*** — menyatakan. Lebih resmi daripada *nagsabi*.",
+            "***nanawagan*** — menyerukan. *Nanawagan ang alkalde ng katahimikan.*",
+            "***isinailalim sa imbestigasyon*** — dijadikan objek penyelidikan; gaya nominal khas berita."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Berita, siaran pers, dan opini",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tiga jenis teks ini muncul di halaman yang sama dan sering terbaca mirip. Yang membedakannya bukan pokok bahasannya, melainkan **siapa yang bertanggung jawab atas kalimatnya**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Jenis",
+            "Ciri bahasanya",
+            "Contoh kalimat"
+          ],
+          "rows": [
+            [
+              "berita lurus",
+              "menyebut sumber di setiap pernyataan",
+              "*Ayon sa DA, tumaas nang 12 porsyento.*"
+            ],
+            [
+              "siaran pers",
+              "memuji tanpa sumber pembanding",
+              "*Matagumpay na naipamahagi ang ayuda.*"
+            ],
+            [
+              "kolom opini",
+              "memakai *sa tingin ko*, ironi, pertanyaan",
+              "*Gaano pa ba tayo kailangang maghintay?*"
+            ],
+            [
+              "berita bergaya opini",
+              "kata sifat menyelinap masuk",
+              "*Ang nakakabahalang pagtaas ng presyo…*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan membaca yang berguna: ambil satu paragraf berita, lalu tandai tiap kalimat sebagai **fakta bersumber**, **fakta tanpa sumber**, atau **penilaian**. Yang kedua dan ketiga itulah yang perlu kamu perhatikan."
+        },
+        {
+          "type": "sub",
+          "text": "Kolom opini: pertanyaan yang tidak menunggu jawaban"
+        },
+        {
+          "type": "p",
+          "text": "Kolom opini Filipino gemar memakai pertanyaan retoris, dan tandanya bukan tanda tanya melainkan pilihan katanya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ungkapan",
+            "Nadanya"
+          ],
+          "rows": [
+            [
+              "*Gaano pa ba tayo maghihintay?*",
+              "kelelahan, tuntutan"
+            ],
+            [
+              "*Ilang beses pa bago tayo matuto?*",
+              "kecaman halus"
+            ],
+            [
+              "*Sino ba ang nakinabang dito?*",
+              "tuduhan tanpa menuduh"
+            ],
+            [
+              "*Hindi ba't ito na ang ikatlong beses?*",
+              "mengingatkan"
+            ],
+            [
+              "*Kung tutuusin, sino ang may kasalanan?*",
+              "membuka renungan"
+            ],
+            [
+              "*Nakakapagtaka, hindi ba?*",
+              "ironi terbuka"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Meringkas berita dalam tiga kalimat"
+        },
+        {
+          "type": "p",
+          "text": "Kerangka yang dipakai wartawan sendiri, dan berguna sebagai latihan menulis: satu kalimat untuk kejadiannya, satu untuk sebab atau tanggapan, satu untuk apa yang berikutnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Isinya",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "1",
+              "apa yang terjadi, kapan, di mana",
+              "*Tumaas ng 12 porsyento ang presyo ng bigas sa Quezon nitong Setyembre.*"
+            ],
+            [
+              "2",
+              "sebab atau tanggapan bersumber",
+              "*Ayon sa DA, dulot ito ng bagyo at ng mataas na gastos sa pataba.*"
+            ],
+            [
+              "3",
+              "apa yang akan terjadi",
+              "*Magsasagawa ng imbestigasyon ang lokal na pamahalaan sa susunod na linggo.*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Yang bikin kamu ketahuan",
+          "items": [
+            "Memakai kata judul di percakapan. *\\*Timbog na siya kahapon* terdengar seperti membaca koran keras-keras; yang wajar *Nahuli na siya kahapon*.",
+            "Membaca judul tanpa memulihkan penandanya, lalu salah menangkap siapa pelakunya. *DA, nagpaliwanag* bukan berarti DA yang dijelaskan.",
+            "Menganggap *diumano* sebagai penegasan. Ia justru penyangkalan tanggung jawab.",
+            "Melewatkan kata sifat yang menyelinap di berita. *Nakakabahala*, *nakakadismaya*, *matagumpay* adalah penilaian, bukan fakta.",
+            "Menerjemahkan pertanyaan retoris jadi pertanyaan sungguhan, lalu menjawabnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "balita",
+      "baca": "ba-LI-ta",
+      "id": "berita"
+    },
+    {
+      "tl": "porsyento",
+      "baca": "por-SYEN-to",
+      "id": "persen"
+    },
+    {
+      "tl": "bodega",
+      "baca": "bo-DE-ga",
+      "id": "gudang"
+    },
+    {
+      "tl": "magpakilala",
+      "baca": "mag-pa-ki-LA-la",
+      "id": "memperkenalkan diri"
+    },
+    {
+      "tl": "pangalawang pinagmulan",
+      "baca": "pa-nga-LA-wang pi-nag-mu-LAN",
+      "id": "sumber kedua"
+    },
+    {
+      "tl": "ilabas",
+      "baca": "i-la-BAS",
+      "id": "menyiarkan, mengeluarkan"
+    },
+    {
+      "tl": "mahuli",
+      "baca": "ma-hu-LI",
+      "id": "terlambat; tertangkap"
+    },
+    {
+      "tl": "pataba",
+      "baca": "pa-ta-BA",
+      "id": "pupuk"
+    },
+    {
+      "tl": "bagyo",
+      "baca": "BAG-yo",
+      "id": "badai, topan"
+    },
+    {
+      "tl": "sisihin",
+      "baca": "si-SI-hin",
+      "id": "menyalahkan"
+    },
+    {
+      "tl": "timbog",
+      "baca": "TIM-bog",
+      "id": "tertangkap (bahasa judul)"
+    },
+    {
+      "tl": "ayuda",
+      "baca": "a-YU-da",
+      "id": "bantuan sosial"
+    },
+    {
+      "tl": "iginiit",
+      "baca": "i-gi-ni-IT",
+      "id": "ditegaskan"
+    },
+    {
+      "tl": "batikusin",
+      "baca": "ba-ti-KU-sin",
+      "id": "mengecam"
+    },
+    {
+      "tl": "nasawi",
+      "baca": "na-sa-WI",
+      "id": "tewas"
+    },
+    {
+      "tl": "sugatan",
+      "baca": "su-ga-TAN",
+      "id": "luka-luka"
+    },
+    {
+      "tl": "nanawagan",
+      "baca": "na-na-WA-gan",
+      "id": "menyerukan"
+    },
+    {
+      "tl": "imbestigasyon",
+      "baca": "im-bes-ti-gas-YON",
+      "id": "penyelidikan"
+    },
+    {
+      "tl": "ipamahagi",
+      "baca": "i-pa-ma-HA-gi",
+      "id": "membagikan"
+    },
+    {
+      "tl": "nakinabang",
+      "baca": "na-ki-na-BANG",
+      "id": "diuntungkan"
+    },
+    {
+      "tl": "nakakapagtaka",
+      "baca": "na-ka-ka-pag-ta-KA",
+      "id": "mengherankan"
+    },
+    {
+      "tl": "dyaryo",
+      "baca": "DYAR-yo",
+      "id": "koran"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah jadi gaya judul berita.",
+      "items": [
+        "Tumaas ang presyo ng gasolina sa buong bansa.",
+        "Nahuli ang limang suspek sa Maynila.",
+        "Ipinaliwanag ng alkalde ang bagong patakaran.",
+        "Nagsimula na ang klase sa mga paaralan.",
+        "Hindi pa nakakapagsalita ang kompanya."
+      ]
+    },
+    {
+      "prompt": "Kebalikannya: pulihkan judul berikut jadi kalimat penuh.",
+      "items": [
+        "Presyo ng bigas, tumaas",
+        "3 suspek, timbog",
+        "Ayuda, ipinamahagi",
+        "Alkalde, tahimik pa",
+        "Klase, bumalik na"
+      ]
+    },
+    {
+      "prompt": "Tandai tiap kalimat: fakta bersumber, fakta tanpa sumber, atau penilaian.",
+      "items": [
+        "Ayon sa DA, tumaas nang 12 porsyento ang presyo.",
+        "Nakakabahala ang sitwasyon sa merkado.",
+        "May nagtatago raw ng stock sa bodega.",
+        "Matagumpay na naipamahagi ang ayuda sa 3,000 pamilya.",
+        "Batay sa datos ng PSA, bumaba ang produksyon nitong taon."
+      ]
+    },
+    {
+      "prompt": "Ringkas berita berikut dalam tiga kalimat sesuai kerangka: kejadian, sebab bersumber, langkah berikutnya. Beritanya: harga beras di Quezon naik dua belas persen bulan September; Kementerian Pertanian menyebut penyebabnya badai dan mahalnya pupuk; pemerintah daerah akan menyelidiki minggu depan.",
+      "items": [
+        "kalimat 1 — kejadian",
+        "kalimat 2 — sebab bersumber",
+        "kalimat 3 — langkah berikutnya",
+        "sekarang tulis judul beritanya",
+        "sekarang tulis satu kalimat pembuka kolom opini tentang berita yang sama"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan.",
+      "items": [
+        "Menurut Kementerian Pertanian, penyebabnya badai.",
+        "Belum ada buktinya, jadi tulis *diduga*.",
+        "Lebih baik terlambat daripada salah.",
+        "Cari sumber keduanya sebelum jam enam.",
+        "Jangan tulis siapa yang benar — biarkan orang membacanya sendiri."
+      ]
+    }
+  ],
+  "answers": [
+    "Presyo ng gasolina, tumaas — 5 suspek, timbog — Alkalde, nagpaliwanag — Klase, nagsimula na — Kompanya, tahimik pa",
+    "Tumaas ang presyo ng bigas. — Nahuli ang tatlong suspek. — Ipinamahagi ang ayuda. — Hindi pa nakakapagsalita ang alkalde. — Bumalik na ang klase.",
+    "fakta bersumber — penilaian — fakta tanpa sumber — penilaian (memuji tanpa pembanding) — fakta bersumber",
+    "Tumaas nang labindalawang porsyento ang presyo ng bigas sa Quezon nitong Setyembre. — Ayon sa Kagawaran ng Agrikultura, dulot ito ng bagyo at ng mataas na gastos sa pataba. — Magsasagawa ng imbestigasyon ang lokal na pamahalaan sa susunod na linggo. — Presyo ng bigas sa Quezon, tumaas ng 12% — Ilang bagyo pa bago tayo maghanda nang maaga?",
+    "Ayon sa DA, dulot ito ng bagyo. — Wala pang patunay, kaya isulat mo ang 'diumano'. — Mas mabuting mahuli kaysa magkamali. — Hanapan mo ng pangalawang pinagmulan bago mag-alas-sais. — Huwag mong isulat kung sino ang tama, hayaan mong basahin ng tao."
+  ]
+}
