@@ -24,7 +24,7 @@ GAYA:
 - Ramah, hangat, ringkas ala chat (bukan esai). Panggil lawan bicara "kak". Pakai bahasa yang dipakai user (Indonesia/Inggris/dll). Boleh emoji secukupnya (😊🙏).
 - "kak" vs "kakak" (WAJIB, khusus balasan bahasa Indonesia): "kak" hanya boleh MENEMPEL NAMA ("Halo kak Sinta") atau jadi partikel sapaan di awal/akhir kalimat ("Baik kak", "ditunggu ya kak"). Kalau menyebut lawan bicara sebagai KATA GANTI ORANG di dalam kalimat, tulis "kakak" — bukan "kak". BENAR: "Kalau kakak berkenan…", "Apakah kakak ingin…?", "biar admin bisa bantu kakak". SALAH: "Kalau kak berkenan…", "apakah kak ingin…?".
 - Jangan bertele-tele. Jawab to the point lalu tawarkan langkah lanjut.
-- Tulis dalam TEKS BIASA (plain text). JANGAN pakai format markdown: jangan pakai **tebal**, *miring*, tanda pagar #, atau bullet dengan tanda * / -. Kalau perlu menyebut beberapa poin, tulis dengan kalimat biasa atau pisahkan per baris.
+- Tulis dalam TEKS BIASA (plain text). JANGAN pakai format markdown: jangan pakai bintang dobel untuk menebalkan, bintang tunggal untuk memiringkan, garis bawah dobel, tanda pagar # untuk judul, atau bullet dengan tanda * / +. Semua tanda itu TIDAK di-render — tampil mentah di layar user. Nama kelas/jadwal ditulis biasa: "Jerman A1.1: Kamis, 19.30-21.00 WIB, mulai 17 September". Kalau perlu daftar, satu item per baris diawali "- ". Kalau perlu menyebut beberapa poin, tulis dengan kalimat biasa atau pisahkan per baris.
 - Kamu (Ling) DAN admin itu satu tim Linguo — JANGAN bicara soal admin seolah pihak ketiga yang terpisah. Larang kata "mereka", "biar mereka cek", "mereka siap bantu", dsb. Saat perlu eskalasi, cukup arahkan langsung & simpel: "klik tombol Ngobrol langsung sama admin (WhatsApp) di atas ya kak, biar dibantu cek langsung 🙏". Jangan minta maaf berlebihan atau bilang "aku kurang detail".
 
 PRINSIP UTAMA — JAWAB DULU dari KNOWLEDGE BASE di bawah, jangan buru-buru lempar ke admin:
@@ -364,6 +364,23 @@ function parseBotOut(raw: string): BotOut {
   out.reply =
     "Maaf kak, boleh diulang pertanyaannya? Atau klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏";
   return out;
+}
+
+/* [no-markdown-reply-v1] Bubble chat Ling & pesan WA menampilkan teks apa
+   adanya — tidak ada yang me-render Markdown, jadi "**Jerman A1.1:**" tampil
+   mentah dengan bintang dobel (insiden 30 Agt 2026 di jawaban jadwal Reguler).
+   Prompt sudah melarangnya, tapi model tetap bocor kalau isinya berbentuk
+   daftar, jadi dibuang deterministik di sini. Salinan fungsi ini ada di
+   linguo-app/supabase/functions/suggest-reply — samakan kalau diubah. */
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/^\s{0,3}#{1,6}\s+/gm, "")
+    .replace(/^(\s*)[*+]\s+/gm, "$1- ")
+    .replace(/\*\*(?!\s)([^*\n]+?)(?<!\s)\*\*/g, "$1")
+    .replace(/__(?!\s)([^_\n]+?)(?<!\s)__/g, "$1")
+    .replace(/(^|[\s(])\*(?!\s)([^*\n]+?)(?<!\s)\*(?=[\s.,!?;:)]|$)/gm, "$1$2")
+    .replace(/(^|[\s(])_(?!\s)([^_\n]+?)(?<!\s)_(?=[\s.,!?;:)]|$)/gm, "$1$2")
+    .replace(/\*\*/g, "");
 }
 
 // Normalisasi nomor WA Indonesia: 0812… / +62… / 812… → 62812…
@@ -1209,6 +1226,9 @@ export async function POST(req: Request) {
     }
 
     const out = parseBotOut(rawText);
+    // [no-markdown-reply-v1] Bersihkan sebelum disimpan & dikirim, biar riwayat
+    // di ling_chat_messages ikut bersih.
+    if (out.reply) out.reply = stripMarkdown(out.reply);
     const finalReply =
       out.reply ||
       "Maaf, Ling belum bisa jawab itu. Klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏";
