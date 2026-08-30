@@ -138,7 +138,7 @@ async function completeTeacherPayout(admin: any, payoutId: string, xenditId: str
   // rincian per sesi dipakai bareng oleh notifikasi WA dan email
   const { data: items } = await admin
     .from('teacher_payout_items')
-    .select('session_date, student_name, duration_minutes, amount, note')
+    .select('schedule_id, session_date, student_name, language, level, duration_minutes, amount, note, sessions_count')
     .eq('payout_id', payout.id)
     .is('released_at', null)
     .order('session_date', { ascending: true });
@@ -222,6 +222,80 @@ async function resolveKurikulumSender(admin: any): Promise<string | null> {
  * KURIKULUM (Riny), bukan nomor bot CS — lihat resolveKurikulumSender.
  * Ini pengganti pesan manual + link Google Sheet yang selama ini dikirim tangan.
  */
+/* [fee-wa-rincian-per-kelas-v1] Rincian dikelompokkan PER KELAS, bukan per sesi.
+   Struk 28 sesi jadi 28 baris tanggal — panjang, harus di-scroll, dan justru
+   menyembunyikan yang mau dicek pengajar: "kelas ini berapa sesi, tarifnya berapa".
+   Satu kelas = satu baris. Kuncinya siswa+bahasa+level+durasi, jadi siswa yang naik
+   level di tengah bulan tetap dapat dua baris (memang dua kelas).
+   Cermin `kelompokkanKelas` di edge fn teacher-fee-notify (repo linguo-app). */
+type KelasRingkas = {
+  siswa: string; bahasa: string | null; level: string | null;
+  durasi: number | null; sesi: number; total: number;
+  perSesi: number | null; campur: boolean;
+};
+
+function kelompokkanKelas(items: any[], meta: Map<string, any>): KelasRingkas[] {
+  const map = new Map<string, KelasRingkas>();
+  for (const it of items) {
+    // Registrasi (lewat schedule) lebih dipercaya daripada kolom teks di rincian:
+    // baris impor lama sering menaruh bahasa di dalam nama siswa & level kosong.
+    const m = (it.schedule_id && meta.get(it.schedule_id)) || {};
+    const siswa = String(m.siswa || it.student_name || it.note || 'Sesi').trim();
+    const bahasa = m.bahasa || it.language || null;
+    const level = m.level || it.level || null;
+    const durasi = Number(it.duration_minutes) || Number(m.durasi) || null;
+    const sesi = Math.max(1, Number(it.sessions_count) || 1);
+    const total = Number(it.amount) || 0;
+    const per = total / sesi;
+
+    const key = [siswa.toLowerCase(), bahasa || '', level || '', durasi ?? ''].join('|');
+    const cur = map.get(key);
+    if (!cur) {
+      map.set(key, { siswa, bahasa, level, durasi, sesi, total, perSesi: per, campur: false });
+      continue;
+    }
+    // Tarif per sesi beda di dalam satu kelas (mis. sesi pengganti) → "× n" tidak
+    // ditulis, cukup totalnya, biar angkanya tidak bohong.
+    if (cur.perSesi === null || Math.abs(cur.perSesi - per) > 1) cur.campur = true;
+    cur.sesi += sesi;
+    cur.total += total;
+  }
+  return [...map.values()].sort((a, b) => b.total - a.total);
+}
+
+function barisKelas(g: KelasRingkas): string {
+  const judul = [g.siswa, g.bahasa, g.level].filter(Boolean).join(' · ');
+  const durasi = g.durasi ? ` (${g.durasi}m)` : '';
+  const hitung = !g.campur && g.sesi > 1 && g.perSesi
+    ? `${rupiah(g.perSesi)} × ${g.sesi} = `
+    : '';
+  return `• ${judul} · ${g.sesi} sesi${durasi} — ${hitung}${rupiah(g.total)}`;
+}
+
+/** Bahasa & level kelas diambil dari REGISTRASI lewat schedule — kolom teks di
+    `teacher_payout_items` sering kosong (level) atau kotor (bahasa menempel di nama
+    siswa). Satu query untuk semua sesi; gagal/kosong cukup jatuh ke kolom item. */
+async function metaKelas(admin: any, items: any[]): Promise<Map<string, any>> {
+  const map = new Map<string, any>();
+  const ids = [...new Set(items.map((it: any) => it.schedule_id).filter(Boolean))];
+  if (!ids.length) return map;
+  const { data } = await admin
+    .from('schedules')
+    .select('id, registrations(language, level, duration, students(name))')
+    .in('id', ids);
+  for (const row of (data || []) as any[]) {
+    const r = row.registrations;
+    if (!r) continue;
+    map.set(row.id, {
+      siswa: r.students?.name || null,
+      bahasa: r.language || null,
+      level: r.level || null,
+      durasi: Number(r.duration) || null,
+    });
+  }
+  return map;
+}
+
 async function notifyTeacher(admin: any, payout: any, items: any[], ref?: string | null, paidAtLabel?: string) {
   const phone = normalizePhone(payout.teachers?.whatsapp);
   if (!phone) return; // pengajar belum punya nomor — dilewati diam-diam
@@ -229,17 +303,11 @@ async function notifyTeacher(admin: any, payout: any, items: any[], ref?: string
   const periode = `${MONTHS[(payout.month || 1) - 1]} ${payout.year}`;
   const nama = String(payout.teachers?.name || '').split(' ')[0] || 'Kak';
   const list = items || [];
-  const MAX = 15;
+  const MAX = 12;
 
-  const rincian = list.slice(0, MAX).map((it: any) => {
-    const tgl = it.session_date
-      ? new Date(it.session_date).toLocaleDateString('id-ID', { day: '2-digit', month: 'short' })
-      : '-';
-    const label = it.student_name || it.note || 'Sesi';
-    const durasi = it.duration_minutes ? ` (${it.duration_minutes}m)` : '';
-    return `• ${tgl} · ${label}${durasi} — ${rupiah(it.amount)}`;
-  });
-  if (list.length > MAX) rincian.push(`• …dan ${list.length - MAX} sesi lainnya`);
+  const kelas = kelompokkanKelas(list, await metaKelas(admin, list));
+  const rincian = kelas.slice(0, MAX).map(barisKelas);
+  if (kelas.length > MAX) rincian.push(`• …dan ${kelas.length - MAX} kelas lainnya`);
 
   const adj = Number(payout.adjustment_amount) || 0;
   const bank = payout.bank_name || payout.bank_code || 'rekening terdaftar';
