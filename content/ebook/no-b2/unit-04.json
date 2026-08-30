@@ -1,0 +1,656 @@
+{
+ "title": "Kata kerja yang tidak mau ikut aturan",
+ "title_target": "Vi møttes, vi skiltes, og siden har vi ikke sagt et ord",
+ "goal": "Menguasai kata kerja kuat yang paling sering muncul, dan memakai keluarga kata kerja berakhiran *-s* yang tidak punya padanan sama sekali dalam bahasa Indonesia.",
+ "bekal": [
+  "menyebut tiga bentuk kata kerja kuat tanpa jeda",
+  "membedakan *synes*, *tror*, *mener* dan *tenker* menurut apa yang sedang kamu lakukan",
+  "memakai *møtes*, *ses*, *snakkes*, *skilles* sebagai kata kerja timbal balik",
+  "mengenali *-s* pasif dan *-s* timbal balik sebagai dua hal yang berbeda"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På en kafé i Trondheim, søndag formiddag",
+   "intro": "Dua sahabat lama, Kaja dan Rune, bertemu setelah bertahun-tahun. Hampir tiap kalimat memuat kata kerja kuat atau kata kerja berakhiran *-s*.",
+   "lines": [
+    {
+     "speaker": "Kaja:",
+     "text": "Herregud. Vi har ikke sett hverandre siden Petter giftet seg.",
+     "id": "Ya ampun. Kita belum ketemu sejak Petter menikah.",
+     "literal": "tuhan-ku. kami punya tidak dilihat satu-sama-lain sejak Petter kawin-dulu diri."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det stemmer. Det var i 2019. Jeg husker at det regnet hele dagen.",
+     "id": "Betul. Itu tahun 2019. Aku ingat hujan seharian.",
+     "literal": "itu cocok. itu ada-dulu di 2019. saya ingat bahwa itu hujan-dulu seluruh hari-nya."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Og at du ble stående ute og røyke med onkelen hans.",
+     "id": "Dan kamu berdiri terus di luar merokok bareng pamannya.",
+     "literal": "dan bahwa kamu jadi-dulu berdiri di-luar dan merokok dengan paman-nya dia."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Han fortalte om alle båtene han hadde eid. Jeg kom meg aldri unna.",
+     "id": "Dia bercerita tentang semua perahu yang pernah dia punya. Aku tidak pernah bisa kabur.",
+     "literal": "dia cerita-dulu tentang semua perahu-perahu-nya dia punya-dulu dimiliki. saya datang-dulu diri tak-pernah lepas."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Hva synes du egentlig om at de har flyttet til Spania?",
+     "id": "Menurutmu sebenarnya bagaimana soal mereka pindah ke Spanyol?",
+     "literal": "apa rasa kamu sebenarnya tentang bahwa mereka punya dipindah ke Spanyol?"
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Jeg tror det var riktig for dem. Men jeg synes det ble stille her etterpå.",
+     "id": "Kurasa itu benar buat mereka. Tapi menurutku di sini jadi sepi sesudahnya.",
+     "literal": "saya percaya itu ada-dulu benar untuk mereka. tapi saya rasa itu jadi-dulu sunyi di-sini sesudahnya."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Ja. Vi mistet liksom midtpunktet i gjengen.",
+     "id": "Iya. Kita seperti kehilangan titik pusat geng ini.",
+     "literal": "ya. kami hilang-dulu semacam tengah-titik-nya di rombongan-nya."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Vi ble aldri enige om hvem som skulle ta over festene.",
+     "id": "Kita tidak pernah sepakat siapa yang harus mengambil alih urusan pesta.",
+     "literal": "kami jadi-dulu tak-pernah setuju tentang siapa yang harus ambil alih pesta-pesta-nya."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Nei, og så skiltes vi bare litt etter litt, uten at noen sa noe.",
+     "id": "Tidak, lalu kita perlahan-lahan berpisah saja, tanpa ada yang bilang apa-apa.",
+     "literal": "tidak, dan lalu berpisah-dulu kami hanya sedikit demi sedikit, tanpa bahwa seseorang bilang-dulu sesuatu."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Sånt skjer. Folk får barn, bytter jobb, og plutselig ses man ikke.",
+     "id": "Hal begitu terjadi. Orang punya anak, ganti kerja, dan tiba-tiba tidak saling bertemu.",
+     "literal": "begitu terjadi. orang dapat anak, tukar pekerjaan, dan tiba-tiba terlihat orang tidak."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Men vi kan jo bare bestemme oss for å snakkes oftere.",
+     "id": "Tapi kita kan bisa saja memutuskan untuk lebih sering ngobrol.",
+     "literal": "tapi kami bisa [jo] hanya putuskan diri untuk [å] terbicarakan lebih-sering."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det sa vi sist også. Så gikk det tre år.",
+     "id": "Terakhir kali kita juga bilang begitu. Lalu lewat tiga tahun.",
+     "literal": "itu bilang-dulu kami terakhir juga. lalu pergi-dulu itu tiga tahun."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Da foreslår jeg noe konkret: første søndag i måneden, her.",
+     "id": "Kalau begitu aku usul yang konkret: Minggu pertama tiap bulan, di sini.",
+     "literal": "lalu usul saya sesuatu konkret: pertama Minggu di bulan-nya, di-sini."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det holder jeg. Jeg skriver det inn med en gang.",
+     "id": "Itu aku pegang. Langsung kucatat.",
+     "literal": "itu pegang saya. saya tulis itu masuk dengan satu kali."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Bra. Og hvis en av oss ikke kommer, ringer den andre.",
+     "id": "Bagus. Dan kalau salah satu tidak datang, yang satunya menelepon.",
+     "literal": "bagus. dan jika satu dari kami tidak datang, telepon itu lain."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Enig. Da ble det ordnet, da.",
+     "id": "Setuju. Jadi beres, deh.",
+     "literal": "setuju. lalu jadi-dulu itu dibereskan, [da]."
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Utenfor kafeen, ti minutter senere",
+   "intro": "Sebelum berpisah. Perhatikan *ses* dan *snakkes* dipakai sebagai salam perpisahan yang paling lazim di Norwegia.",
+   "lines": [
+    {
+     "speaker": "Rune:",
+     "text": "Det var virkelig godt å se deg igjen.",
+     "id": "Senang sekali bisa ketemu kamu lagi.",
+     "literal": "itu ada-dulu sungguh baik [å] lihat kamu lagi."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "I like måte. Jeg hadde nesten glemt hvor lett det er å snakke med deg.",
+     "id": "Sama-sama. Aku hampir lupa betapa gampangnya ngobrol denganmu.",
+     "literal": "di sama cara. saya punya-dulu hampir dilupakan betapa mudah itu ada [å] bicara dengan kamu."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det har alltid vært sånn. Det er derfor det er dumt at vi lot det gå.",
+     "id": "Memang selalu begitu. Makanya bodoh kita membiarkannya lewat.",
+     "literal": "itu punya selalu ada begitu. itu ada karena-itu itu ada bodoh bahwa kami biar-dulu itu pergi."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Vi lot det ikke gå. Vi bare glemte å gjøre noe med det.",
+     "id": "Kita tidak membiarkannya. Kita cuma lupa berbuat sesuatu soal itu.",
+     "literal": "kami biar-dulu itu tidak pergi. kami hanya lupa-dulu [å] membuat sesuatu dengan itu."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det er finere sagt.",
+     "id": "Itu lebih enak diucapkan.",
+     "literal": "itu ada lebih-bagus dikatakan."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Hils Ida fra meg. Og si at hun må bli med neste gang.",
+     "id": "Salam untuk Ida dariku. Dan bilang dia harus ikut lain kali.",
+     "literal": "sapa Ida dari saya. dan bilang bahwa dia harus jadi ikut berikut kali."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det skal jeg. Vi snakkes i uka.",
+     "id": "Pasti. Ngobrol lagi minggu ini.",
+     "literal": "itu harus saya. kami terbicarakan di minggu-nya."
+    },
+    {
+     "speaker": "Kaja:",
+     "text": "Vi ses. Og kjør forsiktig, det er glatt.",
+     "id": "Sampai jumpa. Hati-hati nyetirnya, jalanannya licin.",
+     "literal": "kami terlihat. dan kendarai hati-hati, itu ada licin."
+    },
+    {
+     "speaker": "Rune:",
+     "text": "Det skal gå bra. Ha det godt.",
+     "id": "Pasti aman. Baik-baik ya.",
+     "literal": "itu harus pergi baik. punya itu baik."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja kuat yang benar-benar kamu butuhkan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Norwegia punya sekitar seratus lima puluh kata kerja kuat, tapi daftar yang benar-benar menentukan apakah kamu terdengar mantap jauh lebih pendek. Yang di bawah ini adalah yang muncul di hampir tiap percakapan, disusun menurut pola perubahannya supaya lebih mudah menempel daripada kalau dihafal satu-satu."
+    },
+    {
+     "type": "sub",
+     "text": "Pola i – a – u"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitif",
+      "Preteritum",
+      "Partisipp",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*å finne*",
+       "fant",
+       "funnet",
+       "menemukan"
+      ],
+      [
+       "*å drikke*",
+       "drakk",
+       "drukket",
+       "minum"
+      ],
+      [
+       "*å synge*",
+       "sang",
+       "sunget",
+       "menyanyi"
+      ],
+      [
+       "*å binde*",
+       "bandt",
+       "bundet",
+       "mengikat"
+      ],
+      [
+       "*å vinne*",
+       "vant",
+       "vunnet",
+       "menang"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Pola i/y – ø – ø"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitif",
+      "Preteritum",
+      "Partisipp",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*å skrive*",
+       "skrev",
+       "skrevet",
+       "menulis"
+      ],
+      [
+       "*å bli*",
+       "ble",
+       "blitt",
+       "menjadi"
+      ],
+      [
+       "*å bryte*",
+       "brøt",
+       "brutt",
+       "mematahkan"
+      ],
+      [
+       "*å fly*",
+       "fløy",
+       "fløyet",
+       "terbang"
+      ],
+      [
+       "*å skyte*",
+       "skjøt",
+       "skutt",
+       "menembak"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Yang tak mau masuk pola mana pun"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitif",
+      "Preteritum",
+      "Partisipp",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*å være*",
+       "var",
+       "vært",
+       "ada, adalah"
+      ],
+      [
+       "*å gjøre*",
+       "gjorde",
+       "gjort",
+       "membuat, melakukan"
+      ],
+      [
+       "*å ha*",
+       "hadde",
+       "hatt",
+       "punya"
+      ],
+      [
+       "*å si*",
+       "sa",
+       "sagt",
+       "bilang"
+      ],
+      [
+       "*å se*",
+       "så",
+       "sett",
+       "melihat"
+      ],
+      [
+       "*å gå*",
+       "gikk",
+       "gått",
+       "pergi, berjalan"
+      ],
+      [
+       "*å få*",
+       "fikk",
+       "fått",
+       "mendapat"
+      ],
+      [
+       "*å komme*",
+       "kom",
+       "kommet",
+       "datang"
+      ],
+      [
+       "*å ta*",
+       "tok",
+       "tatt",
+       "mengambil"
+      ],
+      [
+       "*å gi*",
+       "ga",
+       "gitt",
+       "memberi"
+      ],
+      [
+       "*å vite*",
+       "visste",
+       "visst",
+       "tahu"
+      ],
+      [
+       "*å legge*",
+       "la",
+       "lagt",
+       "meletakkan"
+      ],
+      [
+       "*å spørre*",
+       "spurte",
+       "spurt",
+       "bertanya"
+      ],
+      [
+       "*å velge*",
+       "valgte",
+       "valgt",
+       "memilih"
+      ],
+      [
+       "*å late*",
+       "lot",
+       "latt",
+       "membiarkan"
+      ],
+      [
+       "*å miste*",
+       "mistet",
+       "mistet",
+       "kehilangan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat pasangan yang paling sering tertukar",
+     "items": [
+      "***å ligge*** (berbaring, terletak: *lå, ligget*) vs ***å legge*** (meletakkan: *la, lagt*). Yang pertama tidak punya objek, yang kedua wajib punya.",
+      "***å sitte*** (duduk: *satt, sittet*) vs ***å sette*** (mendudukkan, menaruh: *satte, satt*). Perhatikan bahwa partisipp keduanya sama-sama *satt* — konteks yang memisahkan.",
+      "***å henge*** (tergantung: *hang, hengt*) vs ***å henge*** (menggantungkan: *hengte, hengt*). Kata yang sama, dua kelakuan.",
+      "***å synes*** vs ***å tro*** vs ***å mene***. *Synes* = pendapat dari pengalaman sendiri; *tro* = dugaan tentang kenyataan; *mene* = pendirian yang bisa dibela. *Jeg synes filmen var kjedelig* (aku merasa begitu), *jeg tror den er lang* (aku menduga), *jeg mener den er overvurdert* (aku berpendirian)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja berakhiran *-s*: dua keluarga yang kebetulan mirip",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Akhiran *-s* pada kata kerja Norwegia mengerjakan dua hal yang sama sekali berbeda, dan bentuknya persis sama. Salah membacanya membuat kalimat terdengar aneh tanpa kamu tahu kenapa."
+    },
+    {
+     "type": "sub",
+     "text": "Keluarga pertama: timbal balik"
+    },
+    {
+     "type": "p",
+     "text": "*-s* di sini berarti \"satu sama lain\". Ia menggantikan *hverandre*, dan hanya bisa dipakai kalau pelakunya lebih dari satu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk *-s*",
+      "Sama dengan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*å møtes*",
+       "*å møte hverandre*",
+       "saling bertemu"
+      ],
+      [
+       "*å ses*",
+       "*å se hverandre*",
+       "saling melihat, ketemu lagi"
+      ],
+      [
+       "*å snakkes*",
+       "*å snakke sammen*",
+       "saling mengobrol"
+      ],
+      [
+       "*å skilles*",
+       "*å skille lag*",
+       "berpisah"
+      ],
+      [
+       "*å slåss*",
+       "*å slå hverandre*",
+       "berkelahi"
+      ],
+      [
+       "*å enes*",
+       "*å bli enige*",
+       "bersepakat"
+      ],
+      [
+       "*å kysses*",
+       "*å kysse hverandre*",
+       "berciuman"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Vi ses* dan *vi snakkes* adalah dua salam perpisahan paling lazim di Norwegia — lebih sering daripada *ha det bra* di antara orang yang saling kenal. Keduanya berbentuk presens tapi berarti masa depan."
+    },
+    {
+     "type": "sub",
+     "text": "Keluarga kedua: pasif"
+    },
+    {
+     "type": "p",
+     "text": "*-s* pasif menghilangkan pelakunya. Ia dipakai terutama untuk aturan, kebiasaan umum, dan bahasa tertulis, dan akan diurus penuh di unit 11."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Døra låses klokka ti.*",
+       "Pintunya dikunci pukul sepuluh."
+      ],
+      [
+       "*Skjemaet sendes til kommunen.*",
+       "Formulirnya dikirim ke kotamadya."
+      ],
+      [
+       "*Slikt gjøres ikke her.*",
+       "Hal begitu tidak dilakukan di sini."
+      ],
+      [
+       "*Plutselig ses man ikke.*",
+       "Tiba-tiba orang tidak saling bertemu."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang bikin kamu ketahuan",
+     "items": [
+      "**Memakai *-s* timbal balik dengan satu pelaku.** *Jeg møtes ham* salah; harus *jeg møter ham* atau *vi møtes*. Kalau pelakunya satu, keluarga ini tertutup.",
+      "**Memakai *hverandre* dan *-s* sekaligus.** *Vi møtes hverandre* mengulang hal yang sama dua kali. Pilih salah satu.",
+      "**Menyamakan *synes* dengan *tenker*.** *Jeg tenker at filmen var kjedelig* terdengar seperti terjemahan langsung dari bahasa Inggris. Orang Norwegia memakai *synes* untuk pendapat, dan *tenker* untuk proses berpikir yang sedang berlangsung.",
+      "**Lupa bahwa *å bli* berarti dua hal.** *Bli* = menjadi (*det ble stille*) **dan** tetap tinggal (*bli med*, *bli her*). Dari akar yang sama tumbuh seluruh pasif *bli*-nya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "hverandre",
+   "baca": "vær-AND-re",
+   "id": "satu sama lain"
+  },
+  {
+   "no": "å gifte seg",
+   "baca": "JIF-te sai",
+   "id": "menikah"
+  },
+  {
+   "no": "å huske",
+   "baca": "HUS-ke",
+   "id": "ingat"
+  },
+  {
+   "no": "å røyke",
+   "baca": "ROI-ke",
+   "id": "merokok"
+  },
+  {
+   "no": "å eie",
+   "baca": "AI-e",
+   "id": "memiliki"
+  },
+  {
+   "no": "å komme seg unna",
+   "baca": "KOM-me sai UN-na",
+   "id": "lolos, kabur"
+  },
+  {
+   "no": "stille",
+   "baca": "STIL-le",
+   "id": "sunyi, diam"
+  },
+  {
+   "no": "å miste",
+   "baca": "MIS-te",
+   "id": "kehilangan"
+  },
+  {
+   "no": "et midtpunkt",
+   "baca": "MIT-punkt",
+   "id": "titik pusat"
+  },
+  {
+   "no": "en gjeng",
+   "baca": "JENG",
+   "id": "rombongan, geng"
+  },
+  {
+   "no": "å bli enige om",
+   "baca": "bli E-ni-e om",
+   "id": "sepakat tentang"
+  },
+  {
+   "no": "å ta over",
+   "baca": "ta O-ver",
+   "id": "mengambil alih"
+  },
+  {
+   "no": "litt etter litt",
+   "baca": "lit ET-ter lit",
+   "id": "sedikit demi sedikit"
+  },
+  {
+   "no": "å bytte",
+   "baca": "BYT-te",
+   "id": "menukar, mengganti"
+  },
+  {
+   "no": "plutselig",
+   "baca": "PLUT-se-li",
+   "id": "tiba-tiba"
+  },
+  {
+   "no": "å foreslå",
+   "baca": "FO-re-slo",
+   "id": "mengusulkan"
+  },
+  {
+   "no": "konkret",
+   "baca": "kon-KRET",
+   "id": "konkret, nyata"
+  },
+  {
+   "no": "i like måte",
+   "baca": "i LI-ke MO-te",
+   "id": "sama-sama"
+  },
+  {
+   "no": "å la",
+   "baca": "LA",
+   "id": "membiarkan"
+  },
+  {
+   "no": "glatt",
+   "baca": "GLAT",
+   "id": "licin"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis preteritum dan partisipp kata kerja berikut.",
+   "items": [
+    "å finne",
+    "å skrive",
+    "å velge",
+    "å spørre",
+    "å late"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *synes*, *tror*, *mener* atau *tenker*.",
+   "items": [
+    "Jeg ____ filmen var altfor lang. (pendapat dari pengalaman sendiri)",
+    "Jeg ____ han kommer i morgen. (dugaan)",
+    "Hun ____ at loven bør endres. (pendirian yang dibela)",
+    "Hva ____ du på nå? (proses berpikir)",
+    "Vi ____ det ble stille her etterpå. (pendapat)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan kata kerja berakhiran *-s*.",
+   "items": [
+    "Vi møter hverandre på søndag.",
+    "Vi snakker sammen i uka.",
+    "De ble enige til slutt.",
+    "Vi ser hverandre i morgen.",
+    "De skilte lag etter festen."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Kita belum ketemu sejak Petter menikah.",
+    "Kita tidak pernah sepakat siapa yang harus mengambil alih.",
+    "Orang punya anak, ganti kerja, dan tiba-tiba tidak saling bertemu.",
+    "Aku hampir lupa betapa gampangnya ngobrol denganmu.",
+    "Sampai jumpa. Hati-hati nyetirnya, jalanannya licin."
+   ]
+  }
+ ],
+ "answers": [
+  "fant, funnet — skrev, skrevet — valgte, valgt — spurte, spurt — lot, latt",
+  "synes — tror — mener — tenker — synes",
+  "Vi møtes på søndag. — Vi snakkes i uka. — De entes til slutt. — Vi ses i morgen. — De skiltes etter festen.",
+  "Vi har ikke sett hverandre siden Petter giftet seg. — Vi ble aldri enige om hvem som skulle ta over. — Folk får barn, bytter jobb, og plutselig ses man ikke. — Jeg hadde nesten glemt hvor lett det er å snakke med deg. — Vi ses. Og kjør forsiktig, det er glatt."
+ ]
+}

@@ -1,0 +1,527 @@
+{
+ "title": "Ragam: yang ditulis, yang diucapkan, dan yang di-SMS",
+ "title_target": "Skal vi ta en kaffe? Passer det i morra?",
+ "goal": "Menggeser bahasamu naik-turun antara ragam resmi, ragam kantor, ragam lisan, dan ragam pesan singkat — dan tahu tanda-tandanya.",
+ "bekal": [
+  "mengenali bentuk lisan yang tidak pernah muncul di buku pelajaran",
+  "menulis surel kantor dengan panjang dan nada yang benar",
+  "membaca pesan singkat Norwegia beserta singkatannya",
+  "menghindari pencampuran ragam yang membuat kalimat terdengar janggal"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Samme beskjed, fire ganger",
+   "intro": "Sebuah pesan yang sama — rapat Kamis dibatalkan — disampaikan dalam empat ragam berbeda. Bacalah keempatnya berturut-turut, dan perhatikan apa yang berubah dan apa yang bertahan.",
+   "lines": [
+    {
+     "speaker": "Brev:",
+     "text": "Det informeres herved om at møtet den 12. mars er avlyst. Nytt tidspunkt vil bli meddelt.",
+     "id": "Dengan ini diinformasikan bahwa rapat tanggal 12 Maret dibatalkan. Waktu baru akan disampaikan.",
+     "literal": "itu diinformasikan dengan-ini tentang bahwa rapat-nya itu 12 Maret ada dibatalkan. baru waktu-titik mau jadi disampaikan."
+    },
+    {
+     "speaker": "E-post:",
+     "text": "Hei alle sammen. Møtet på torsdag er dessverre avlyst. Jeg sender nytt tidspunkt i morgen.",
+     "id": "Halo semuanya. Rapat Kamis sayangnya dibatalkan. Besok saya kirim jadwal baru.",
+     "literal": "hei semua bersama. rapat-nya pada Kamis ada sayangnya dibatalkan. saya kirim baru waktu-titik di besok."
+    },
+    {
+     "speaker": "Muntlig:",
+     "text": "Du, møtet på torsdag går ut. Vi finner et nytt tidspunkt.",
+     "id": "Eh, rapat Kamis batal. Nanti kita cari waktu baru.",
+     "literal": "kamu, rapat-nya pada Kamis pergi keluar. kami temukan satu baru waktu-titik."
+    },
+    {
+     "speaker": "SMS:",
+     "text": "Møtet torsdag er avlyst. Sender nytt tidspkt i morra.",
+     "id": "Rapat Kamis batal. Kirim jadwal baru besok.",
+     "literal": "rapat-nya Kamis ada dibatalkan. kirim baru waktu-titik di besok."
+    },
+    {
+     "speaker": "Kommentar:",
+     "text": "Legg merke til at bare den siste bruker \"i morra\". Den formen finnes ikke i brev.",
+     "id": "Perhatikan hanya yang terakhir memakai \"i morra\". Bentuk itu tidak ada di surat.",
+     "literal": "taruh tanda untuk bahwa hanya itu terakhir pakai \"besok\". itu bentuk-nya ada-tidak di surat."
+    },
+    {
+     "speaker": "Kommentar:",
+     "text": "Og bare den første bruker \"herved\" og \"meddele\". De ordene finnes ikke i tale.",
+     "id": "Dan hanya yang pertama memakai \"dengan ini\" dan \"menyampaikan\". Kata-kata itu tidak ada dalam percakapan.",
+     "literal": "dan hanya itu pertama pakai \"dengan-ini\" dan \"sampaikan\". itu kata-kata-nya ada-tidak di bicara."
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — To kolleger, én dag, tre kanaler",
+   "intro": "Sigrun dan Bendik berkomunikasi lewat tiga saluran dalam satu hari. Perhatikan bagaimana bahasanya bergeser walau isinya bersambung.",
+   "lines": [
+    {
+     "speaker": "E-post 08:14:",
+     "text": "Hei Bendik. Viser til samtalen vår i går. Kan du sende meg tallene for februar innen fredag?",
+     "id": "Halo Bendik. Merujuk obrolan kita kemarin. Bisa kirim angka Februari paling lambat Jumat?",
+     "literal": "hei Bendik. tunjuk pada percakapan-nya kami di kemarin. bisa kamu kirim saya angka-angka-nya untuk Februari dalam Jumat?"
+    },
+    {
+     "speaker": "E-post 08:31:",
+     "text": "Hei. Ja, det ordner seg. Jeg sender dem torsdag. Mvh Bendik",
+     "id": "Halo. Iya, beres. Saya kirim Kamis. Salam, Bendik",
+     "literal": "hei. ya, itu urus diri. saya kirim mereka Kamis. salam Bendik"
+    },
+    {
+     "speaker": "Sigrun 11:00:",
+     "text": "Du, fikk du sett på det jeg spurte om?",
+     "id": "Eh, sempat lihat yang aku tanyakan?",
+     "literal": "kamu, dapat-dulu kamu dilihat pada itu saya tanya-dulu tentang?"
+    },
+    {
+     "speaker": "Bendik:",
+     "text": "Ja da, jeg holder på. Det blir litt fram og tilbake med regnskap.",
+     "id": "Iya, lagi kukerjakan. Agak bolak-balik sama akuntansi.",
+     "literal": "ya [da], saya pegang pada. itu jadi sedikit maju dan kembali dengan pembukuan."
+    },
+    {
+     "speaker": "Sigrun:",
+     "text": "Trenger du at jeg maser på dem?",
+     "id": "Perlu aku desak mereka?",
+     "literal": "butuh kamu bahwa saya desak pada mereka?"
+    },
+    {
+     "speaker": "Bendik:",
+     "text": "Gjerne. Da går det nok fortere.",
+     "id": "Boleh. Pasti jadi lebih cepat.",
+     "literal": "silakan. lalu pergi itu [nok] lebih-cepat."
+    },
+    {
+     "speaker": "SMS 16:42:",
+     "text": "Sigrun: Fikk tallene. Sender dem videre nå. Ha en fin kveld!",
+     "id": "Sigrun: Dapat angkanya. Aku teruskan sekarang. Selamat malam!",
+     "literal": "dapat-dulu angka-angka-nya. kirim mereka lanjut sekarang. punya satu bagus malam!"
+    },
+    {
+     "speaker": "SMS:",
+     "text": "Bendik: Perfekt. Takk for hjelpa. Ses i morra.",
+     "id": "Bendik: Sempurna. Makasih bantuannya. Ketemu besok.",
+     "literal": "sempurna. terima-kasih untuk bantuan-nya. terlihat di besok."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat ragam, dan tanda pengenal masing-masing",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menggeser ragam adalah keterampilan tersendiri, dan pemelajar sering terjebak di satu ragam saja — biasanya ragam buku pelajaran, yang terletak di antara surel kantor dan tulisan resmi. Akibatnya, mereka terdengar terlalu formal di kedai kopi dan terlalu santai di surat lembaga."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ciri",
+      "Resmi tertulis",
+      "Surel kantor",
+      "Lisan",
+      "SMS"
+     ],
+     "rows": [
+      [
+       "sapaan",
+       "(tanpa)",
+       "*Hei Bendik.*",
+       "*Du, …*",
+       "*Hei* atau tanpa"
+      ],
+      [
+       "pasif",
+       "*-s*-pasif",
+       "*bli*-pasif",
+       "hampir tak ada",
+       "tak ada"
+      ],
+      [
+       "kata kecil",
+       "tak ada",
+       "sedikit",
+       "banyak",
+       "banyak"
+      ],
+      [
+       "kalimat",
+       "panjang, nominal",
+       "sedang",
+       "pendek",
+       "sangat pendek"
+      ],
+      [
+       "subjek",
+       "sering dibuang",
+       "selalu ada",
+       "selalu ada",
+       "sering dibuang"
+      ],
+      [
+       "penutup",
+       "*Med vennlig hilsen*",
+       "*Mvh*",
+       "*Vi ses*",
+       "tanpa, atau emoji"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris \"subjek\" pantas diperhatikan. Baik ragam resmi maupun SMS sama-sama membuang subjek, tapi dengan alasan berlawanan: yang pertama menyembunyikan pelaku, yang kedua menghemat ketikan. *Sender tallene i morgen* di SMS berarti \"aku kirim besok\" — subjeknya jelas dari konteks."
+    },
+    {
+     "type": "sub",
+     "text": "Bentuk lisan yang tak pernah masuk buku pelajaran"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk tulis",
+      "Bentuk lisan",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*i morgen*",
+       "*i morra*",
+       "sangat lazim di seluruh Norwegia"
+      ],
+      [
+       "*ikke*",
+       "*itj*",
+       "di Trøndelag"
+      ],
+      [
+       "*jeg*",
+       "*jei*, *æ*, *eg*",
+       "*æ* di utara, *eg* di barat"
+      ],
+      [
+       "*noe*",
+       "*noko*",
+       "di barat"
+      ],
+      [
+       "*hva*",
+       "*ka*",
+       "di utara dan barat"
+      ],
+      [
+       "*hvordan*",
+       "*åssen*, *korleis*",
+       "*åssen* di Oslo"
+      ],
+      [
+       "*sammen*",
+       "*i lag*",
+       "di utara"
+      ],
+      [
+       "*å snakke*",
+       "*å prate*",
+       "keduanya lazim di mana saja"
+      ],
+      [
+       "*mye*",
+       "*mykje*",
+       "di barat"
+      ],
+      [
+       "*hjelpen*",
+       "*hjelpa*",
+       "bentuk *-a* untuk kata benda *ei*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir menyentuh soal yang lebih besar. Bokmål mengizinkan **dua bentuk** untuk banyak kata benda perempuan: *boka* atau *boken*, *hjelpa* atau *hjelpen*, *jenta* atau *jenten*. Bentuk *-a* terdengar lebih hangat dan lebih Norwegia; bentuk *-en* lebih konservatif dan terdengar sedikit lebih resmi. Keduanya benar, dan orang memilih menurut selera dan asal."
+    },
+    {
+     "type": "kotak",
+     "title": "Pencampuran ragam: kesalahan yang paling terdengar",
+     "items": [
+      "***Herved bekreftes at jeg kommer i morra.*** Setengah surat kerajaan, setengah SMS. Pilih satu.",
+      "***Hei! Vedrørende ditt spørsmål vil jeg meddele at det ordner seg.*** *Hei* dan *meddele* tidak berjalan bersama.",
+      "Aturan praktis: **kata kecil (*jo*, *da*, *nok*) dan ragam resmi tidak pernah bertemu.** Kalau kalimatmu punya *jo*, ia lisan; kalau punya *herved*, ia resmi.",
+      "Surel kantor Norwegia jauh lebih santai daripada dugaan pemelajar. *Hei Bendik* + kalimat pendek + *Mvh* sudah lengkap. Menulis *Kjære herr Olsen* akan membuat penerimanya bingung."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Surel dan pesan singkat: contoh yang bisa langsung dipakai",
+   "blocks": [
+    {
+     "type": "sub",
+     "text": "Surel kantor: susunan empat baris"
+    },
+    {
+     "type": "p",
+     "text": "Surel Norwegia yang baik hampir selalu muat dalam empat baris, dan pertanyaannya diletakkan di awal, bukan di akhir. Menyimpan permintaan sampai paragraf terakhir dianggap membuang waktu pembaca."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Baris",
+      "Isi",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "1",
+       "sapaan dan rujukan",
+       "*Hei Bendik. Viser til samtalen vår i går.*"
+      ],
+      [
+       "2",
+       "permintaan, dengan tenggat",
+       "*Kan du sende meg tallene for februar innen fredag?*"
+      ],
+      [
+       "3",
+       "alasan atau konteks singkat",
+       "*Jeg trenger dem til rapporten som skal ut mandag.*"
+      ],
+      [
+       "4",
+       "penutup",
+       "*Si fra hvis det blir vanskelig. Mvh Sigrun*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Si fra hvis det blir vanskelig* adalah kalimat penutup yang sangat khas dan sangat berguna. Ia memberi jalan keluar, dan dengan begitu justru memperbesar kemungkinan permintaanmu dipenuhi."
+    },
+    {
+     "type": "sub",
+     "text": "Singkatan yang akan kamu temui"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*mvh*",
+       "*med vennlig hilsen*",
+       "salam hormat"
+      ],
+      [
+       "*ang.*",
+       "*angående*",
+       "perihal"
+      ],
+      [
+       "*ift.*",
+       "*i forhold til*",
+       "terkait"
+      ],
+      [
+       "*iht.*",
+       "*i henhold til*",
+       "sesuai dengan"
+      ],
+      [
+       "*jf.*",
+       "*jamfør*",
+       "lihat, bandingkan"
+      ],
+      [
+       "*bl.a.*",
+       "*blant annet*",
+       "antara lain"
+      ],
+      [
+       "*f.eks.*",
+       "*for eksempel*",
+       "misalnya"
+      ],
+      [
+       "*ca.*",
+       "*cirka*",
+       "kira-kira"
+      ],
+      [
+       "*evt.*",
+       "*eventuelt*",
+       "atau bisa juga"
+      ],
+      [
+       "*ifm.*",
+       "*i forbindelse med*",
+       "sehubungan dengan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Nada dalam pesan singkat",
+     "items": [
+      "Orang Norwegia memakai emoji dengan bebas dalam pesan pribadi dan cukup bebas dalam pesan kerja yang santai. Ia tidak dianggap kekanak-kanakan.",
+      "**Titik di ujung pesan singkat terbaca dingin**, sama seperti di banyak bahasa lain. *Ok.* terasa jauh lebih tajam daripada *Ok* saja.",
+      "*Ses* dan *snakkes* (unit 4) adalah penutup pesan yang paling lazim di antara orang yang saling kenal.",
+      "Balasan sangat pendek — *Supert*, *Flott*, *Notert*, *Skjønner* — adalah balasan yang wajar dan sopan, bukan tanda ketidakpedulian."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å avlyse",
+   "baca": "AV-ly-se",
+   "id": "membatalkan acara"
+  },
+  {
+   "no": "et tidspunkt",
+   "baca": "TIDS-punkt",
+   "id": "waktu, saat"
+  },
+  {
+   "no": "å meddele",
+   "baca": "ME-de-le",
+   "id": "menyampaikan secara resmi"
+  },
+  {
+   "no": "å informere",
+   "baca": "in-for-ME-re",
+   "id": "menginformasikan"
+  },
+  {
+   "no": "i morra",
+   "baca": "i MOR-ra",
+   "id": "besok (bentuk lisan)"
+  },
+  {
+   "no": "å vise til",
+   "baca": "VI-se til",
+   "id": "merujuk pada"
+  },
+  {
+   "no": "regnskap",
+   "baca": "RAIN-skap",
+   "id": "pembukuan, akuntansi"
+  },
+  {
+   "no": "fram og tilbake",
+   "baca": "fram o til-BA-ke",
+   "id": "bolak-balik"
+  },
+  {
+   "no": "å mase",
+   "baca": "MA-se",
+   "id": "mendesak berulang-ulang"
+  },
+  {
+   "no": "fortere",
+   "baca": "FOR-te-re",
+   "id": "lebih cepat"
+  },
+  {
+   "no": "å sende videre",
+   "baca": "SEN-ne VI-de-re",
+   "id": "meneruskan"
+  },
+  {
+   "no": "hjelpa",
+   "baca": "YEL-pa",
+   "id": "bantuan (bentuk -a)"
+  },
+  {
+   "no": "åssen",
+   "baca": "OS-sen",
+   "id": "bagaimana (lisan Oslo)"
+  },
+  {
+   "no": "i lag",
+   "baca": "i LAG",
+   "id": "bersama-sama (utara)"
+  },
+  {
+   "no": "å prate",
+   "baca": "PRA-te",
+   "id": "ngobrol"
+  },
+  {
+   "no": "eventuelt",
+   "baca": "e-ven-tu-ELT",
+   "id": "atau bisa juga"
+  },
+  {
+   "no": "angående",
+   "baca": "an-GO-en-ne",
+   "id": "perihal"
+  },
+  {
+   "no": "i forbindelse med",
+   "baca": "i for-BIN-nel-se me",
+   "id": "sehubungan dengan"
+  },
+  {
+   "no": "supert",
+   "baca": "SU-pert",
+   "id": "mantap, bagus sekali"
+  },
+  {
+   "no": "flott",
+   "baca": "FLOT",
+   "id": "bagus, keren"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis pesan \"Rapat Kamis dibatalkan\" dalam ragam yang disebut dalam kurung.",
+   "items": [
+    "(surat resmi)",
+    "(surel kantor)",
+    "(lisan kepada rekan)",
+    "(SMS)",
+    "(surel kepada lembaga)"
+   ]
+  },
+  {
+   "prompt": "Ubah bentuk lisan berikut jadi bentuk tulis baku.",
+   "items": [
+    "i morra",
+    "åssen går det?",
+    "takk for hjelpa",
+    "vi snakkes i lag på fredag",
+    "æ veit ikke"
+   ]
+  },
+  {
+   "prompt": "Tulis surel empat baris untuk situasi berikut.",
+   "items": [
+    "meminta rekan mengirim angka Februari paling lambat Jumat",
+    "memberi tahu klien bahwa pengiriman terlambat seminggu",
+    "meminta atasan izin pulang lebih awal hari Kamis",
+    "menagih jawaban yang belum datang",
+    "membatalkan janji temu dan mengusulkan waktu baru"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Halo Bendik. Merujuk obrolan kita kemarin.",
+    "Bisa kirim angka Februari paling lambat Jumat?",
+    "Kabari kalau ternyata sulit.",
+    "Agak bolak-balik sama akuntansi.",
+    "Makasih bantuannya. Ketemu besok."
+   ]
+  }
+ ],
+ "answers": [
+  "Det informeres herved om at møtet den 12. mars er avlyst. — Hei alle sammen. Møtet på torsdag er dessverre avlyst. — Du, møtet på torsdag går ut. — Møtet torsdag er avlyst. Sender nytt tidspkt i morra. — Vi viser til innkalling av 5. mars og informerer om at møtet er avlyst.",
+  "i morgen — hvordan går det? — takk for hjelpen — vi snakkes sammen på fredag — jeg vet ikke",
+  "Hei. Viser til samtalen vår. Kan du sende meg tallene for februar innen fredag? Jeg trenger dem til rapporten. Si fra hvis det blir vanskelig. Mvh — Hei. Viser til bestillingen din. Leveransen blir dessverre en uke forsinket. Vi beklager dette. Si fra hvis det skaper problemer. Mvh — Hei. Jeg lurte på om jeg kan gå litt tidligere på torsdag. Jeg skal hente barna. Si fra hvis det ikke passer. Mvh — Hei. Viser til forespørselen min i forrige uke. Kan dere gi meg en tilbakemelding innen onsdag? Jeg trenger den til budsjettet. Mvh — Hei. Jeg må dessverre flytte møtet på torsdag. Passer tirsdag klokka ti i stedet? Si fra hva som passer best. Mvh",
+  "Hei Bendik. Viser til samtalen vår i går. — Kan du sende meg tallene for februar innen fredag? — Si fra hvis det blir vanskelig. — Det blir litt fram og tilbake med regnskap. — Takk for hjelpa. Ses i morra."
+ ]
+}

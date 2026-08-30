@@ -1,0 +1,521 @@
+{
+ "title": "Pasif: tiga bentuk, tiga alasan berbeda",
+ "title_target": "Søknaden behandles nå, og du blir kontaktet i neste uke",
+ "goal": "Memilih di antara *s*-pasif, *bli*-pasif, dan *få*-pasif menurut apakah kamu sedang menyebut aturan, kejadian, atau akibat pada seseorang.",
+ "bekal": [
+  "membentuk *s*-pasif dan tahu bahwa ia tidak punya bentuk lampau sederhana",
+  "memakai *bli* + partisipp untuk kejadian tunggal di masa lalu",
+  "menyembunyikan pelaku dengan *man* dan *en* tanpa terdengar kaku",
+  "membaca kalimat pasif berlapis di surat lembaga tanpa tersesat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På NAV-kontoret, tirsdag klokka ni",
+   "intro": "Zahra mengurus tunjangan setelah kehilangan pekerjaan. Petugas, Even, berbicara dalam campuran bahasa sehari-hari dan bahasa lembaga. Perhatikan kapan ia beralih ke bentuk pasif, dan kenapa.",
+   "lines": [
+    {
+     "speaker": "Even:",
+     "text": "Søknaden din er registrert. Den behandles nå av saksbehandleren.",
+     "id": "Lamaran Anda sudah terdaftar. Sekarang sedang diproses oleh petugas kasus.",
+     "literal": "lamaran-nya kamu ada terdaftar. itu diproses sekarang oleh perkara-pengurus-nya."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Hvor lang tid tar det vanligvis?",
+     "id": "Biasanya berapa lama?",
+     "literal": "berapa panjang waktu ambil itu biasanya?"
+    },
+    {
+     "speaker": "Even:",
+     "text": "Saker som denne avgjøres normalt innen tre uker.",
+     "id": "Perkara seperti ini biasanya diputuskan dalam tiga minggu.",
+     "literal": "perkara-perkara yang ini diputuskan normal dalam tiga minggu."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Og hvis noe mangler? Blir jeg kontaktet da?",
+     "id": "Dan kalau ada yang kurang? Apakah saya dihubungi?",
+     "literal": "dan jika sesuatu kurang? jadi saya dihubungi lalu?"
+    },
+    {
+     "speaker": "Even:",
+     "text": "Ja. Du blir kontaktet på telefon eller via Digipost.",
+     "id": "Ya. Anda dihubungi lewat telepon atau Digipost.",
+     "literal": "ya. kamu jadi dihubungi pada telepon atau lewat Digipost."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Jeg fikk avslag i fjor uten at jeg forsto hvorfor.",
+     "id": "Tahun lalu saya ditolak tanpa saya paham kenapa.",
+     "literal": "saya dapat-dulu penolakan di tahun-lalu tanpa bahwa saya paham-dulu kenapa."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Da ble det nok sendt et brev med begrunnelse. Fikk du det ikke?",
+     "id": "Kalau begitu pasti dikirimkan surat berisi alasan. Anda tidak menerimanya?",
+     "literal": "lalu jadi-dulu itu [nok] dikirim satu surat dengan alasan. dapat-dulu kamu itu tidak?"
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Jeg fikk noe, men det var skrevet på en måte jeg ikke skjønte.",
+     "id": "Saya menerima sesuatu, tapi ditulis dengan cara yang tidak saya paham.",
+     "literal": "saya dapat-dulu sesuatu, tapi itu ada-dulu ditulis pada satu cara saya tidak paham-dulu."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Det hører jeg ofte. Vi jobber med å gjøre brevene enklere.",
+     "id": "Itu sering saya dengar. Kami sedang mengusahakan supaya suratnya lebih sederhana.",
+     "literal": "itu dengar saya sering. kami bekerja dengan [å] membuat surat-surat-nya lebih-sederhana."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Kan jeg få det forklart nå, hvis jeg viser deg brevet?",
+     "id": "Bisa dijelaskan sekarang, kalau saya tunjukkan suratnya?",
+     "literal": "bisa saya dapat itu dijelaskan sekarang, jika saya tunjuk kamu surat-nya?"
+    },
+    {
+     "speaker": "Even:",
+     "text": "Absolutt. Det er sånt vi er her for.",
+     "id": "Tentu. Untuk itulah kami ada di sini.",
+     "literal": "mutlak. itu ada begitu kami ada di-sini untuk."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Her. Det står at kravet ikke anses som oppfylt.",
+     "id": "Ini. Tertulis bahwa persyaratannya tidak dianggap terpenuhi.",
+     "literal": "di-sini. itu berdiri bahwa tuntutan-nya tidak dianggap sebagai dipenuhi."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Da manglet du arbeidstimer. Det burde vært sagt rett ut.",
+     "id": "Berarti jam kerja Anda kurang. Mestinya itu dibilang terus terang.",
+     "literal": "lalu kurang-dulu kamu kerja-jam-jam. itu sebaiknya ada-dulu dikatakan lurus keluar."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Det hadde spart meg for et halvt år.",
+     "id": "Itu bisa menghemat saya setengah tahun.",
+     "literal": "itu punya-dulu dihemat saya untuk satu setengah tahun."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Jeg skjønner. I år har du nok timer, så dette bør gå greit.",
+     "id": "Saya paham. Tahun ini jam Anda cukup, jadi ini mestinya lancar.",
+     "literal": "saya paham. di tahun punya kamu cukup jam, jadi ini sebaiknya pergi baik."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Takk. Det er godt å få det sagt av et menneske.",
+     "id": "Terima kasih. Enak bisa mendengarnya dari manusia.",
+     "literal": "terima-kasih. itu ada baik [å] dapat itu dikatakan oleh satu manusia."
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Brevet Zahra fikk i fjor",
+   "intro": "Kutipan surat lembaga yang dibicarakan di atas, dibacakan ulang oleh Even, lalu diterjemahkan ke bahasa sehari-hari. Perhatikan betapa banyak pasif yang menumpuk dalam empat kalimat.",
+   "lines": [
+    {
+     "speaker": "Brevet:",
+     "text": "Søknaden er behandlet og avslag er gitt.",
+     "id": "Lamaran sudah diproses dan penolakan diberikan.",
+     "literal": "lamaran-nya ada diproses dan penolakan ada diberikan."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Altså: vi har lest søknaden din, og vi sier nei.",
+     "id": "Maksudnya: kami sudah membaca lamaran Anda, dan kami bilang tidak.",
+     "literal": "[altså]: kami punya dibaca lamaran-nya kamu, dan kami bilang tidak."
+    },
+    {
+     "speaker": "Brevet:",
+     "text": "Kravet til opptjeningstid anses ikke som oppfylt.",
+     "id": "Persyaratan masa kerja tidak dianggap terpenuhi.",
+     "literal": "tuntutan-nya untuk perolehan-waktu dianggap tidak sebagai dipenuhi."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Altså: du har jobbet for få timer det siste året.",
+     "id": "Maksudnya: jam kerja Anda terlalu sedikit tahun lalu.",
+     "literal": "[altså]: kamu punya bekerja untuk sedikit jam itu terakhir tahun-nya."
+    },
+    {
+     "speaker": "Brevet:",
+     "text": "Vedtaket kan påklages innen seks uker.",
+     "id": "Keputusan dapat digugat dalam enam minggu.",
+     "literal": "keputusan-nya bisa digugat dalam enam minggu."
+    },
+    {
+     "speaker": "Even:",
+     "text": "Altså: er du uenig, kan du klage. Du har seks uker på deg.",
+     "id": "Maksudnya: kalau Anda tidak setuju, Anda bisa mengajukan keberatan. Anda punya enam minggu.",
+     "literal": "[altså]: ada kamu tidak-setuju, bisa kamu keberatan. kamu punya enam minggu pada kamu."
+    },
+    {
+     "speaker": "Zahra:",
+     "text": "Hvorfor kan de ikke bare skrive det sånn?",
+     "id": "Kenapa mereka tidak menulisnya begitu saja?",
+     "literal": "kenapa bisa mereka tidak hanya tulis itu begitu?"
+    },
+    {
+     "speaker": "Even:",
+     "text": "Det spørsmålet stilles hver eneste dag her.",
+     "id": "Pertanyaan itu diajukan setiap hari di sini.",
+     "literal": "itu pertanyaan-nya diajukan tiap satu-satunya hari di-sini."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga pasif, dan cara memilihnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Norwegia punya tiga cara membuat kalimat pasif, dan ketiganya bukan pilihan gaya belaka — masing-masing menandai jenis kejadian yang berbeda."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Menandai",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "***-s*-pasif**",
+       "aturan, kebiasaan, hal yang berulang",
+       "*Døra låses klokka ti.*"
+      ],
+      [
+       "***bli* + partisipp**",
+       "kejadian tunggal, perubahan keadaan",
+       "*Du blir kontaktet i morgen.*"
+      ],
+      [
+       "***være* + partisipp**",
+       "keadaan yang sudah selesai, hasilnya",
+       "*Søknaden er behandlet.*"
+      ],
+      [
+       "***få* + partisipp**",
+       "pasif yang menyebut siapa yang kena akibatnya",
+       "*Jeg fikk det forklart.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Selisih antara dua baris tengah pantas diperhatikan. *Døra ble låst klokka ti* menceritakan sebuah kejadian: seseorang mengunci pintu pada pukul sepuluh. *Døra er låst* menyebut keadaan sekarang: pintunya terkunci. Yang pertama menjawab \"apa yang terjadi\", yang kedua menjawab \"bagaimana keadaannya\"."
+    },
+    {
+     "type": "sub",
+     "text": "Batas *-s*-pasif"
+    },
+    {
+     "type": "p",
+     "text": "*-s*-pasif punya satu batas yang keras: **ia hampir tidak dipakai dalam bentuk lampau sederhana.** *Døra låstes klokka ti* secara teori ada, tapi terdengar kuno dan hampir tak pernah terdengar. Untuk masa lalu, orang beralih ke *bli*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Waktu",
+      "*-s*-pasif",
+      "*bli*-pasif"
+     ],
+     "rows": [
+      [
+       "presens",
+       "*behandles*",
+       "*blir behandlet*"
+      ],
+      [
+       "preteritum",
+       "(dihindari)",
+       "*ble behandlet*"
+      ],
+      [
+       "perfektum",
+       "(dihindari)",
+       "*har blitt behandlet*"
+      ],
+      [
+       "sesudah modal",
+       "*kan påklages*",
+       "*kan bli behandlet*"
+      ],
+      [
+       "infinitif",
+       "*å behandles*",
+       "*å bli behandlet*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris keempat menjelaskan kenapa surat lembaga Norwegia penuh dengan *-s*-pasif: bentuk *kan påklages*, *skal sendes*, *må dokumenteres* adalah cara paling ringkas menyebut aturan tanpa menyebut siapa pun. Ia efisien, dan itu juga sebabnya suratnya sulit dibaca."
+    },
+    {
+     "type": "kotak",
+     "title": "*Få* + partisipp: pasif yang berpihak pada penerima",
+     "items": [
+      "*Jeg fikk det forklart* berarti \"aku akhirnya mendapat penjelasan\". Yang disorot bukan siapa yang menjelaskan, melainkan bahwa **aku** yang menerimanya.",
+      "Bandingkan: *Det ble forklart* (dijelaskan — netral) vs *Jeg fikk det forklart* (aku dapat penjelasannya — berpihak padaku).",
+      "Bentuk ini juga dipakai untuk hal yang kamu suruh orang lain kerjakan: *Jeg fikk reparert bilen* = \"mobilku sudah kubawa diperbaiki\" — bukan aku sendiri yang memperbaikinya.",
+      "Ia lebih dekat ke bahasa sehari-hari daripada dua bentuk lainnya, dan ia satu-satunya pasif yang terdengar hangat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyembunyikan pelaku tanpa pasif",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sering kali yang kamu perlukan bukan kalimat pasif, melainkan sekadar cara tidak menyebut siapa pelakunya. Bahasa Norwegia punya beberapa kata untuk ini, dan pilihannya menentukan nada."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Nada",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*man*",
+       "umum, agak tertulis",
+       "*Man vet aldri.* (orang tidak pernah tahu)"
+      ],
+      [
+       "*en*",
+       "umum, lebih lisan dan lebih hangat",
+       "*En blir jo sliten.* (ya capek juga)"
+      ],
+      [
+       "*du*",
+       "umum, sangat lisan",
+       "*Du merker det med en gang.* (langsung kerasa)"
+      ],
+      [
+       "*folk*",
+       "orang-orang pada umumnya",
+       "*Folk sier så mye.*"
+      ],
+      [
+       "*de*",
+       "pihak berwenang yang tak disebut",
+       "*De har stengt veien.*"
+      ],
+      [
+       "*vi*",
+       "lembaga yang berbicara tentang dirinya",
+       "*Vi behandler søknaden din.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Man* dan *en* sepadan dengan \"orang\" dalam bahasa Indonesia. *Man* sedikit lebih netral dan lebih sering di tulisan; *en* lebih hangat dan lebih sering di percakapan, terutama di Norwegia bagian barat dan utara. Keduanya tidak pernah berarti \"laki-laki\" — itu *en mann*."
+    },
+    {
+     "type": "sub",
+     "text": "Membaca surat lembaga: tiga langkah"
+    },
+    {
+     "type": "p",
+     "text": "Surat dari NAV, Skatteetaten, atau kommune ditulis dalam ragam yang disebut *kansellistil*. Tiga langkah di bawah ini mengubah hampir semua kalimatnya jadi bahasa yang bisa dipahami."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Langkah",
+      "Kalimat surat",
+      "Sesudah diubah"
+     ],
+     "rows": [
+      [
+       "1. cari pelakunya",
+       "*Søknaden er behandlet.*",
+       "*Vi har behandlet søknaden.*"
+      ],
+      [
+       "2. bongkar kata bendanya",
+       "*Kravet anses ikke som oppfylt.*",
+       "*Du oppfyller ikke kravet.*"
+      ],
+      [
+       "3. balik ke orang kedua",
+       "*Vedtaket kan påklages.*",
+       "*Du kan klage på vedtaket.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Langkah kedua adalah yang paling menentukan, dan ia akan diurus penuh di unit 15. Bahasa lembaga Norwegia mengubah kata kerja jadi kata benda (*å kreve* → *et krav*, *å vedta* → *et vedtak*, *å begrunne* → *en begrunnelse*), lalu menaruhnya dalam kalimat pasif. Dua lapis itulah yang membuatnya terasa buram."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang bikin kamu ketahuan",
+     "items": [
+      "**Memakai *-s*-pasif di masa lalu.** *Brevet sendtes i går* terdengar seperti terjemahan dari bahasa Swedia. Yang benar: *Brevet ble sendt i går.*",
+      "**Memakai *er* padahal maksudnya kejadian.** *Døra er låst klokka ti* berarti \"pintunya terkunci pada pukul sepuluh\" sebagai keadaan; kalau maksudmu pintunya dikunci tiap pukul sepuluh, pakai *låses*.",
+      "**Terlalu banyak pasif dalam percakapan.** Bahasa Norwegia lisan sangat menyukai kalimat aktif. Memakai pasif di kedai kopi terdengar seperti kamu sedang membacakan surat.",
+      "**Memakai *man* berulang-ulang dalam satu paragraf.** Sesudah pemakaian pertama, orang Norwegia biasanya beralih ke *en* atau *du* supaya tidak terdengar seperti buku pedoman."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "en søknad",
+   "baca": "SØK-nad",
+   "id": "lamaran, permohonan"
+  },
+  {
+   "no": "å registrere",
+   "baca": "re-gis-TRE-re",
+   "id": "mendaftarkan"
+  },
+  {
+   "no": "en saksbehandler",
+   "baca": "SAKS-be-hand-ler",
+   "id": "petugas pengurus perkara"
+  },
+  {
+   "no": "å avgjøre",
+   "baca": "AV-jø-re",
+   "id": "memutuskan"
+  },
+  {
+   "no": "å kontakte",
+   "baca": "kon-TAK-te",
+   "id": "menghubungi"
+  },
+  {
+   "no": "et avslag",
+   "baca": "AV-slag",
+   "id": "penolakan"
+  },
+  {
+   "no": "en begrunnelse",
+   "baca": "be-GRUN-nel-se",
+   "id": "alasan tertulis"
+  },
+  {
+   "no": "et krav",
+   "baca": "KRAV",
+   "id": "tuntutan, persyaratan"
+  },
+  {
+   "no": "å anse som",
+   "baca": "AN-se som",
+   "id": "menganggap sebagai"
+  },
+  {
+   "no": "å oppfylle",
+   "baca": "OP-fyl-le",
+   "id": "memenuhi"
+  },
+  {
+   "no": "en arbeidstime",
+   "baca": "AR-baids-ti-me",
+   "id": "jam kerja"
+  },
+  {
+   "no": "å spare",
+   "baca": "SPA-re",
+   "id": "menghemat, menyelamatkan"
+  },
+  {
+   "no": "opptjeningstid",
+   "baca": "OP-tje-nings-tid",
+   "id": "masa kerja yang dihitung"
+  },
+  {
+   "no": "å påklage",
+   "baca": "PO-kla-ge",
+   "id": "mengajukan keberatan resmi"
+  },
+  {
+   "no": "å klage",
+   "baca": "KLA-ge",
+   "id": "mengeluh, mengajukan keberatan"
+  },
+  {
+   "no": "uenig",
+   "baca": "U-e-ni",
+   "id": "tidak setuju"
+  },
+  {
+   "no": "å stille et spørsmål",
+   "baca": "STIL-le et SPØRS-mol",
+   "id": "mengajukan pertanyaan"
+  },
+  {
+   "no": "å låse",
+   "baca": "LO-se",
+   "id": "mengunci"
+  },
+  {
+   "no": "å dokumentere",
+   "baca": "do-ku-men-TE-re",
+   "id": "membuktikan dengan dokumen"
+  },
+  {
+   "no": "et menneske",
+   "baca": "MEN-nes-ke",
+   "id": "manusia"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi *-s*-pasif (aturan yang berlaku umum).",
+   "items": [
+    "Vi låser døra klokka ti.",
+    "Man sender skjemaet til kommunen.",
+    "Vi behandler saker som denne innen tre uker.",
+    "Du kan påklage vedtaket.",
+    "Man gjør ikke slikt her."
+   ]
+  },
+  {
+   "prompt": "Ubah jadi *bli*-pasif dalam bentuk lampau.",
+   "items": [
+    "Vi sendte brevet i går.",
+    "De kontaktet henne på telefon.",
+    "Noen låste døra klokka ti.",
+    "Vi behandlet søknaden i mars.",
+    "De ga henne avslag."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan kalimat surat berikut ke bahasa Norwegia sehari-hari dengan pelaku yang jelas.",
+   "items": [
+    "Søknaden er behandlet.",
+    "Kravet anses ikke som oppfylt.",
+    "Vedtaket kan påklages innen seks uker.",
+    "Det ble sendt et brev med begrunnelse.",
+    "Saken avgjøres normalt innen tre uker."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Lamaran Anda sudah terdaftar dan sekarang sedang diproses.",
+    "Apakah saya dihubungi kalau ada yang kurang?",
+    "Ditulis dengan cara yang tidak saya paham.",
+    "Bisa dijelaskan sekarang, kalau saya tunjukkan suratnya?",
+    "Pertanyaan itu diajukan setiap hari di sini."
+   ]
+  }
+ ],
+ "answers": [
+  "Døra låses klokka ti. — Skjemaet sendes til kommunen. — Saker som denne behandles innen tre uker. — Vedtaket kan påklages. — Slikt gjøres ikke her.",
+  "Brevet ble sendt i går. — Hun ble kontaktet på telefon. — Døra ble låst klokka ti. — Søknaden ble behandlet i mars. — Hun ble gitt avslag.",
+  "Vi har behandlet søknaden din. — Du oppfyller ikke kravet. — Du kan klage på vedtaket innen seks uker. — Vi sendte deg et brev der vi forklarte hvorfor. — Vi avgjør saken normalt innen tre uker.",
+  "Søknaden din er registrert og behandles nå. — Blir jeg kontaktet hvis noe mangler? — Det var skrevet på en måte jeg ikke skjønte. — Kan jeg få det forklart nå, hvis jeg viser deg brevet? — Det spørsmålet stilles hver eneste dag her."
+ ]
+}

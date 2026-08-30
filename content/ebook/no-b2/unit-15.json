@@ -1,0 +1,571 @@
+{
+ "title": "Bahasa lembaga: kata benda yang menelan kata kerja",
+ "title_target": "Ved manglende innlevering vil søknaden bli avvist",
+ "goal": "Membaca surat dari NAV, Skatteetaten, dan kommune tanpa tersesat, lalu membalas dengan bahasa yang setara resminya.",
+ "bekal": [
+  "membongkar gaya nominal jadi kalimat berkata kerja",
+  "mengenali kata depan resmi *ved*, *vedrørende*, *i henhold til*, *jf.*",
+  "menulis surat keberatan dengan susunan yang diharapkan lembaga Norwegia",
+  "menerjemahkan tenggat, syarat, dan konsekuensi dengan tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Servicetorget på rådhuset, torsdag",
+   "intro": "Mehdi datang membawa surat dari kotamadya yang tidak ia pahami. Petugas, Grete, membacakannya dan menerjemahkannya kalimat demi kalimat ke bahasa sehari-hari.",
+   "lines": [
+    {
+     "speaker": "Mehdi:",
+     "text": "Jeg fikk dette brevet. Jeg skjønner omtrent halvparten.",
+     "id": "Saya menerima surat ini. Yang saya paham kira-kira separuhnya.",
+     "literal": "saya dapat-dulu ini surat-nya. saya paham kira-kira setengah-bagian-nya."
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Det er ikke rart. La oss ta det setning for setning.",
+     "id": "Wajar saja. Mari kita ambil kalimat per kalimat.",
+     "literal": "itu ada tidak aneh. biar kami ambil itu kalimat untuk kalimat."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Her: \"Ved manglende innlevering vil søknaden bli avvist.\"",
+     "id": "Ini: \"Dengan tidak diserahkannya, permohonan akan ditolak.\"",
+     "literal": "di-sini: \"pada kurang penyerahan mau lamaran-nya jadi ditolak.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Det betyr: leverer du ikke papirene, sier vi nei.",
+     "id": "Artinya: kalau Anda tidak menyerahkan berkasnya, kami bilang tidak.",
+     "literal": "itu berarti: serahkan kamu tidak kertas-kertas-nya, bilang kami tidak."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Så enkelt? Hvorfor skriver de det ikke sånn?",
+     "id": "Sesederhana itu? Kenapa mereka tidak menulisnya begitu?",
+     "literal": "begitu sederhana? kenapa tulis mereka itu tidak begitu?"
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Fordi brevet er en mal. Den er skrevet for tusen personer samtidig.",
+     "id": "Karena suratnya template. Ditulis untuk seribu orang sekaligus.",
+     "literal": "karena surat-nya ada satu cetakan. itu ada ditulis untuk seribu orang bersamaan."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Og denne: \"Frist for innsending er 15.03.\"",
+     "id": "Dan ini: \"Tenggat pengiriman 15.03.\"",
+     "literal": "dan ini: \"tenggat untuk pengiriman ada 15.03.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Det er datoen vi må ha papirene. Ikke datoen du sender dem.",
+     "id": "Itu tanggal kami harus sudah punya berkasnya. Bukan tanggal Anda mengirimnya.",
+     "literal": "itu ada tanggal-nya kami harus punya kertas-kertas-nya. tidak tanggal-nya kamu kirim mereka."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Den forskjellen er viktig.",
+     "id": "Perbedaan itu penting.",
+     "literal": "itu perbedaan-nya ada penting."
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Svært viktig. Og her står det \"jf. forvaltningsloven § 17\".",
+     "id": "Sangat penting. Dan di sini tertulis \"lih. Undang-Undang Administrasi pasal 17\".",
+     "literal": "sangat penting. dan di-sini berdiri itu \"lih. administrasi-undang-nya § 17\"."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Må jeg lese loven?",
+     "id": "Saya harus membaca undang-undangnya?",
+     "literal": "harus saya baca undang-nya?"
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Nei. \"Jf.\" betyr bare at det er der regelen står. Det er en henvisning.",
+     "id": "Tidak. \"Jf.\" cuma berarti aturannya ada di situ. Itu rujukan.",
+     "literal": "tidak. \"jf.\" berarti hanya bahwa itu ada di-situ aturan-nya berdiri. itu ada satu rujukan."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Og hvis jeg er uenig i vedtaket?",
+     "id": "Dan kalau saya tidak setuju dengan keputusannya?",
+     "literal": "dan jika saya ada tidak-setuju di keputusan-nya?"
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Da klager du. Du har tre uker fra du mottok brevet.",
+     "id": "Anda mengajukan keberatan. Anda punya tiga minggu sejak menerima suratnya.",
+     "literal": "lalu keberatan kamu. kamu punya tiga minggu dari kamu terima-dulu surat-nya."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Må klagen skrives på et bestemt vis?",
+     "id": "Keberatannya harus ditulis dengan cara tertentu?",
+     "literal": "harus keberatan-nya ditulis pada satu tertentu cara?"
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Fire ting: hvilket vedtak, hva du er uenig i, hvorfor, og hva du vil ha.",
+     "id": "Empat hal: keputusan yang mana, apa yang Anda tidak setujui, kenapa, dan Anda mau apa.",
+     "literal": "empat hal: keputusan-mana, apa kamu ada tidak-setuju di, kenapa, dan apa kamu mau punya."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Det høres overkommelig ut.",
+     "id": "Kedengarannya bisa diatasi.",
+     "literal": "itu terdengar teratasi keluar."
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Mehdi leser klagen sin høyt",
+   "intro": "Seminggu kemudian. Mehdi membacakan draf keberatannya, Grete mengomentari. Ini contoh langsung ragam tulis resmi yang benar tapi tidak berlebihan.",
+   "lines": [
+    {
+     "speaker": "Mehdi:",
+     "text": "\"Jeg viser til vedtak av 03.03.2026 om avslag på søknad om bostøtte.\"",
+     "id": "\"Saya merujuk pada keputusan tertanggal 03.03.2026 tentang penolakan permohonan tunjangan perumahan.\"",
+     "literal": "\"saya tunjuk pada keputusan dari 03.03.2026 tentang penolakan pada lamaran tentang tinggal-bantuan.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Perfekt åpning. Det er nøyaktig sånn den skal begynne.",
+     "id": "Pembuka sempurna. Persis begitu seharusnya dimulai.",
+     "literal": "sempurna pembukaan. itu ada persis begitu itu harus mulai."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "\"Jeg klager på vedtaket fordi inntekten min er beregnet feil.\"",
+     "id": "\"Saya mengajukan keberatan karena penghasilan saya dihitung keliru.\"",
+     "literal": "\"saya keberatan pada keputusan-nya karena penghasilan-nya saya ada dihitung salah.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Bra. Kort og konkret. Har du dokumentasjon?",
+     "id": "Bagus. Singkat dan konkret. Ada dokumennya?",
+     "literal": "bagus. pendek dan konkret. punya kamu dokumentasi?"
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "\"Vedlagt følger lønnsslipper for januar og februar.\"",
+     "id": "\"Terlampir slip gaji Januari dan Februari.\"",
+     "literal": "\"terlampir ikut gaji-slip-slip untuk Januari dan Februari.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Utmerket. Og hva ber du om?",
+     "id": "Bagus sekali. Dan Anda minta apa?",
+     "literal": "unggul. dan apa minta kamu tentang?"
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "\"Jeg ber om at vedtaket omgjøres og at søknaden behandles på nytt.\"",
+     "id": "\"Saya mohon keputusan dibatalkan dan permohonan diproses ulang.\"",
+     "literal": "\"saya minta tentang bahwa keputusan-nya dibalikkan dan bahwa lamaran-nya diproses pada baru.\""
+    },
+    {
+     "speaker": "Grete:",
+     "text": "Den klagen er bedre skrevet enn de fleste jeg leser.",
+     "id": "Keberatan itu ditulis lebih baik daripada kebanyakan yang saya baca.",
+     "literal": "itu keberatan-nya ada lebih-baik ditulis daripada itu terbanyak saya baca."
+    },
+    {
+     "speaker": "Mehdi:",
+     "text": "Jeg har hatt en god lærer.",
+     "id": "Guru saya bagus.",
+     "literal": "saya punya dipunyai satu bagus guru."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Gaya nominal: cara membongkarnya dalam tiga langkah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa lembaga Norwegia dibangun di atas satu kebiasaan: **mengubah kata kerja jadi kata benda**, lalu menyusun kalimat di sekelilingnya. Kalimat yang dihasilkan tetap benar dan sering lebih pendek, tapi pelakunya hilang dan perbuatannya terkubur."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Kata benda",
+      "Kalimat lembaga",
+      "Bahasa sehari-hari"
+     ],
+     "rows": [
+      [
+       "*å levere inn*",
+       "*innlevering*",
+       "*Ved manglende innlevering…*",
+       "*Hvis du ikke leverer…*"
+      ],
+      [
+       "*å sende inn*",
+       "*innsending*",
+       "*Frist for innsending er…*",
+       "*Du må sende det innen…*"
+      ],
+      [
+       "*å vedta*",
+       "*et vedtak*",
+       "*Vedtaket kan påklages.*",
+       "*Du kan klage.*"
+      ],
+      [
+       "*å begrunne*",
+       "*en begrunnelse*",
+       "*Begrunnelse er gitt.*",
+       "*Vi har forklart hvorfor.*"
+      ],
+      [
+       "*å beregne*",
+       "*en beregning*",
+       "*Beregningen er korrekt.*",
+       "*Vi har regnet riktig.*"
+      ],
+      [
+       "*å utbetale*",
+       "*en utbetaling*",
+       "*Utbetaling skjer den 20.*",
+       "*Vi betaler den 20.*"
+      ],
+      [
+       "*å behandle*",
+       "*en behandling*",
+       "*Saken er til behandling.*",
+       "*Vi holder på med saken.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga langkah membongkarnya: **(1)** cari kata bendanya yang berujung *-ing*, *-else*, *-ning*, *-sjon*; **(2)** kembalikan ke kata kerjanya; **(3)** tanyakan siapa pelakunya, lalu masukkan dia sebagai subjek. Hampir semua kalimat lembaga akan runtuh jadi bahasa biasa dalam tiga langkah itu."
+    },
+    {
+     "type": "sub",
+     "text": "Kata depan yang cuma hidup di surat resmi"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*ved*",
+       "kalau terjadi, pada saat",
+       "*ved manglende betaling* — kalau tidak dibayar"
+      ],
+      [
+       "*vedrørende* / *ang.*",
+       "perihal",
+       "*Vedrørende din søknad…*"
+      ],
+      [
+       "*i henhold til* / *iht.*",
+       "sesuai dengan",
+       "*i henhold til § 12*"
+      ],
+      [
+       "*jf.*",
+       "lihat, bandingkan",
+       "*jf. forvaltningsloven*"
+      ],
+      [
+       "*jf. ovennevnte*",
+       "sesuai yang disebut di atas",
+       "—"
+      ],
+      [
+       "*herved*",
+       "dengan ini",
+       "*Herved bekreftes at…*"
+      ],
+      [
+       "*innen*",
+       "paling lambat",
+       "*innen 15.03*"
+      ],
+      [
+       "*i løpet av*",
+       "dalam rentang",
+       "*i løpet av tre uker*"
+      ],
+      [
+       "*med forbehold om*",
+       "dengan syarat",
+       "*med forbehold om endringer*"
+      ],
+      [
+       "*å ettersende*",
+       "menyusulkan",
+       "*Dokumentene kan ettersendes.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "*Innen* dan *i løpet av*: jangan tertukar",
+     "items": [
+      "***Innen 15.03*** berarti paling lambat tanggal 15 — dan di Norwegia ia berarti berkasnya harus **sudah sampai**, bukan sudah dikirim.",
+      "***I løpet av tre uker*** menyebut rentangnya, bukan titik akhirnya; ia lebih longgar dan biasanya menandai perkiraan, bukan tenggat.",
+      "***Senest*** menegaskan tenggat mutlak: *senest fredag*.",
+      "Salah membaca yang pertama sebagai yang kedua adalah kesalahan yang benar-benar berbiaya, dan ia sering terjadi karena bahasa Indonesia memakai \"dalam\" untuk keduanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menulis balik: surat keberatan yang diterima lembaga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Lembaga Norwegia mengharapkan susunan tertentu, dan surat yang mengikutinya diproses lebih cepat — bukan karena sopan santun, melainkan karena petugas bisa menemukan empat hal yang ia butuhkan tanpa mencari."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi",
+      "Kalimat baku"
+     ],
+     "rows": [
+      [
+       "1. rujukan",
+       "keputusan yang mana",
+       "*Jeg viser til vedtak av 03.03.2026.*"
+      ],
+      [
+       "2. inti",
+       "apa yang kamu keberatkan",
+       "*Jeg klager på vedtaket fordi…*"
+      ],
+      [
+       "3. bukti",
+       "apa yang kamu lampirkan",
+       "*Vedlagt følger lønnsslipper for januar og februar.*"
+      ],
+      [
+       "4. tuntutan",
+       "kamu mau apa",
+       "*Jeg ber om at vedtaket omgjøres.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa tidak ada bagian untuk menjelaskan keadaanmu, membujuk, atau menyatakan kekecewaan. Surat resmi Norwegia sangat pendek — empat sampai delapan kalimat adalah panjang yang wajar, dan surat sepanjang dua halaman justru memperlambat penanganannya."
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat baku yang pantas dihafal utuh"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Jeg viser til…*",
+       "Saya merujuk pada…"
+      ],
+      [
+       "*Vedlagt følger…*",
+       "Terlampir…"
+      ],
+      [
+       "*Jeg ber om at…*",
+       "Saya mohon agar…"
+      ],
+      [
+       "*Jeg gjør oppmerksom på at…*",
+       "Saya ingin menegaskan bahwa…"
+      ],
+      [
+       "*Dersom noe er uklart, kan jeg kontaktes på…*",
+       "Kalau ada yang belum jelas, saya bisa dihubungi di…"
+      ],
+      [
+       "*Jeg imøteser svar.*",
+       "Saya menantikan jawaban."
+      ],
+      [
+       "*Med vennlig hilsen*",
+       "Hormat saya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Med vennlig hilsen* adalah penutup baku untuk hampir semua surat, termasuk surel kantor. Ia sering disingkat *Mvh* dalam surel sehari-hari. Penutup yang lebih resmi (*Med hilsen*) dipakai lembaga kepada warga; warga kepada lembaga tetap memakai *Med vennlig hilsen*."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang bikin kamu ketahuan",
+     "items": [
+      "**Menulis surat resmi sepanjang cerita.** Menjelaskan latar belakang selama satu halaman terasa sopan bagi telinga Indonesia; bagi lembaga Norwegia ia terbaca sebagai kamu tidak tahu apa yang kamu minta.",
+      "**Memakai gaya nominal saat berbicara.** *Innleveringen av dokumentene skjedde i går* di kedai kopi terdengar aneh. Ucapkan *Jeg leverte dokumentene i går.*",
+      "**Menerjemahkan *innen* jadi \"dalam\".** *Innen fredag* berarti \"paling lambat Jumat\", bukan \"dalam waktu seminggu\".",
+      "**Membalas surat lembaga dengan bahasa yang terlalu akrab.** *Hei! Jeg skjønner ikke dette brevet, kan dere hjelpe?* dalam surel resmi terdengar terlalu ringan; yang setara adalah *Jeg viser til brev av 03.03 og ber om en nærmere forklaring.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "et rådhus",
+   "baca": "ROD-hus",
+   "id": "balai kota"
+  },
+  {
+   "no": "et servicetorg",
+   "baca": "SØR-vis-torg",
+   "id": "loket layanan warga"
+  },
+  {
+   "no": "manglende",
+   "baca": "MANG-len-ne",
+   "id": "yang tidak ada, kurang"
+  },
+  {
+   "no": "en innlevering",
+   "baca": "IN-le-ve-ring",
+   "id": "penyerahan berkas"
+  },
+  {
+   "no": "å avvise",
+   "baca": "AV-vi-se",
+   "id": "menolak"
+  },
+  {
+   "no": "en mal",
+   "baca": "MAL",
+   "id": "template, cetakan"
+  },
+  {
+   "no": "samtidig",
+   "baca": "SAM-ti-di",
+   "id": "bersamaan"
+  },
+  {
+   "no": "en innsending",
+   "baca": "IN-sen-ning",
+   "id": "pengiriman berkas"
+  },
+  {
+   "no": "en henvisning",
+   "baca": "HEN-vis-ning",
+   "id": "rujukan"
+  },
+  {
+   "no": "forvaltningsloven",
+   "baca": "for-VALT-nings-lo-ven",
+   "id": "Undang-Undang Administrasi"
+  },
+  {
+   "no": "å motta",
+   "baca": "MOT-ta",
+   "id": "menerima"
+  },
+  {
+   "no": "bestemt",
+   "baca": "be-STEMT",
+   "id": "tertentu, tegas"
+  },
+  {
+   "no": "overkommelig",
+   "baca": "O-ver-kom-me-li",
+   "id": "bisa diatasi"
+  },
+  {
+   "no": "bostøtte",
+   "baca": "BU-støt-te",
+   "id": "tunjangan perumahan"
+  },
+  {
+   "no": "en inntekt",
+   "baca": "IN-tekt",
+   "id": "penghasilan"
+  },
+  {
+   "no": "å beregne",
+   "baca": "be-RAI-ne",
+   "id": "menghitung"
+  },
+  {
+   "no": "vedlagt",
+   "baca": "VED-lagt",
+   "id": "terlampir"
+  },
+  {
+   "no": "en lønnsslipp",
+   "baca": "LØNS-slip",
+   "id": "slip gaji"
+  },
+  {
+   "no": "utmerket",
+   "baca": "UT-mær-ket",
+   "id": "bagus sekali"
+  },
+  {
+   "no": "å imøtese",
+   "baca": "i-MØ-te-se",
+   "id": "menantikan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Bongkar jadi kalimat sehari-hari dengan pelaku yang jelas.",
+   "items": [
+    "Ved manglende innlevering vil søknaden bli avvist.",
+    "Utbetaling skjer den 20. i hver måned.",
+    "Beregningen er foretatt i henhold til § 12.",
+    "Saken er til behandling hos saksbehandler.",
+    "Vedtaket kan påklages innen tre uker."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *innen*, *i løpet av*, *senest* atau *fra*.",
+   "items": [
+    "Papirene må være hos oss ____ 15.03.",
+    "Du får svar ____ tre uker.",
+    "Klagefristen løper ____ du mottok brevet.",
+    "Møtet må avlyses ____ torsdag.",
+    "Vi behandler saker ____ fire til seks uker."
+   ]
+  },
+  {
+   "prompt": "Tulis satu kalimat baku surat resmi untuk tiap tujuan.",
+   "items": [
+    "merujuk pada keputusan tertanggal 3 Maret 2026",
+    "menyebut bahwa slip gaji dilampirkan",
+    "meminta keputusan dibatalkan",
+    "menyebut bahwa kamu bisa dihubungi kalau ada yang belum jelas",
+    "menutup surat"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Kalau Anda tidak menyerahkan berkasnya, kami bilang tidak.",
+    "Itu tanggal kami harus sudah punya berkasnya, bukan tanggal Anda mengirimnya.",
+    "Anda punya tiga minggu sejak menerima suratnya.",
+    "Saya mengajukan keberatan karena penghasilan saya dihitung keliru.",
+    "Saya mohon keputusan dibatalkan dan permohonan diproses ulang."
+   ]
+  }
+ ],
+ "answers": [
+  "Hvis du ikke leverer papirene, avviser vi søknaden. — Vi betaler ut den 20. hver måned. — Vi har regnet det ut slik § 12 sier. — En saksbehandler holder på med saken. — Du kan klage på vedtaket innen tre uker.",
+  "innen — i løpet av — fra — senest — i løpet av",
+  "Jeg viser til vedtak av 03.03.2026. — Vedlagt følger lønnsslipper. — Jeg ber om at vedtaket omgjøres. — Dersom noe er uklart, kan jeg kontaktes på telefon. — Med vennlig hilsen",
+  "Leverer du ikke papirene, sier vi nei. — Det er datoen vi må ha papirene, ikke datoen du sender dem. — Du har tre uker fra du mottok brevet. — Jeg klager på vedtaket fordi inntekten min er beregnet feil. — Jeg ber om at vedtaket omgjøres og at søknaden behandles på nytt."
+ ]
+}

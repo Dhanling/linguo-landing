@@ -1,0 +1,551 @@
+{
+ "title": "Kata majemuk: satu kata panjang, bukan dua kata pendek",
+ "title_target": "Det heter lammekoteletter, ikke lamme koteletter",
+ "goal": "Membentuk dan membaca kata majemuk Norwegia dengan benar, dan menghindari *orddelingsfeil* — kesalahan yang mengubah arti dan paling ditertawakan orang Norwegia.",
+ "bekal": [
+  "menyambung dua atau tiga kata jadi satu tanpa ragu",
+  "menempatkan huruf sambung *-e-* dan *-s-* di tempatnya",
+  "membaca kata majemuk panjang dengan memecahnya dari belakang",
+  "mengenali kata majemuk yang artinya tak bisa ditebak dari bagiannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — På matbutikken, lørdag formiddag",
+   "intro": "Tuva membantu temannya dari Indonesia, Rangga, berbelanja. Percakapan ini penuh kata majemuk panjang, dan satu kesalahan pemenggalan yang bikin keduanya tertawa.",
+   "lines": [
+    {
+     "speaker": "Rangga:",
+     "text": "Jeg leter etter noe som heter \"lamme koteletter\". Det sto på handlelista.",
+     "id": "Aku cari sesuatu bernama \"lamme koteletter\". Ada di daftar belanja.",
+     "literal": "saya cari sesudah sesuatu yang bernama \"lumpuh potongan-daging\". itu berdiri-dulu pada belanja-daftar-nya."
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Lammekoteletter. I ett ord. Med mellomrom betyr det \"koteletter som er lamme\".",
+     "id": "Lammekoteletter. Satu kata. Kalau dipisah artinya \"potongan daging yang lumpuh\".",
+     "literal": "domba-potongan. di satu kata. dengan antara-ruang berarti itu \"potongan yang ada lumpuh\"."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Åh nei. Så \"lamme\" betyr lammet?",
+     "id": "Aduh. Jadi \"lamme\" artinya lumpuh?",
+     "literal": "oh tidak. jadi \"lumpuh\" berarti dilumpuhkan?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Nettopp. Dette er nasjonalsporten vår: å le av feil orddeling.",
+     "id": "Persis. Ini olahraga nasional kami: menertawakan pemenggalan kata yang keliru.",
+     "literal": "persis. ini ada nasional-olahraga-nya kami: [å] tertawa dari salah kata-pemisahan."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Er det virkelig så vanlig?",
+     "id": "Apa benar sesering itu?",
+     "literal": "ada itu sungguh begitu lazim?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Ja. Det finnes hele nettsider som samler eksempler fra butikkskilt.",
+     "id": "Iya. Ada situs khusus yang mengumpulkan contoh dari papan toko.",
+     "literal": "ya. itu ada seluruh jaring-halaman-halaman yang kumpul contoh dari toko-papan."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Gi meg et eksempel til.",
+     "id": "Kasih contoh lagi dong.",
+     "literal": "beri saya satu contoh lagi."
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "\"Stekt kylling lever\" betyr at en stekt kylling lever fortsatt.",
+     "id": "\"Stekt kylling lever\" berarti ayam goreng itu masih hidup.",
+     "literal": "\"digoreng ayam hidup\" berarti bahwa satu digoreng ayam hidup terus."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Og riktig er?",
+     "id": "Dan yang benar?",
+     "literal": "dan benar ada?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Stekt kyllinglever. Lever i betydningen organ.",
+     "id": "Stekt kyllinglever. Lever dalam arti organ hati.",
+     "literal": "digoreng ayam-hati. hati di arti-nya organ."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Norsk er farlig.",
+     "id": "Bahasa Norwegia berbahaya.",
+     "literal": "Norwegia ada berbahaya."
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Bare litt. Regelen er enkel: hører det sammen, skriv det sammen.",
+     "id": "Cuma sedikit. Aturannya sederhana: kalau menyatu maknanya, tulis menyatu.",
+     "literal": "hanya sedikit. aturan-nya ada sederhana: dengar itu bersama, tulis itu bersama."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Men noen av dem blir jo veldig lange.",
+     "id": "Tapi sebagiannya kan jadi panjang sekali.",
+     "literal": "tapi beberapa dari mereka jadi [jo] sangat panjang."
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Da leser du dem baklengs. Siste ledd sier hva det er.",
+     "id": "Kalau begitu kamu baca dari belakang. Bagian terakhir menyebut bendanya apa.",
+     "literal": "lalu baca kamu mereka belakang-arah. terakhir bagian bilang apa itu ada."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Så \"arbeidsledighetstrygd\" er en trygd?",
+     "id": "Jadi \"arbeidsledighetstrygd\" itu semacam tunjangan?",
+     "literal": "jadi \"kerja-luang-an-tunjangan\" ada satu tunjangan?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Riktig. En trygd for arbeidsledighet. Du har skjønt systemet.",
+     "id": "Betul. Tunjangan untuk pengangguran. Kamu sudah paham sistemnya.",
+     "literal": "benar. satu tunjangan untuk kerja-luang-an. kamu punya dipahami sistem-nya."
+    }
+   ]
+  },
+  {
+   "title": "Dialog B — Hjemme hos Tuva, mens de rydder varene",
+   "intro": "Rangga mencoba membentuk kata majemuk sendiri. Perhatikan huruf sambung yang muncul di tengah.",
+   "lines": [
+    {
+     "speaker": "Rangga:",
+     "text": "Hva heter en pose for søppel?",
+     "id": "Kantong untuk sampah namanya apa?",
+     "literal": "apa bernama satu kantong untuk sampah?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Søppelpose. Uten noe imellom.",
+     "id": "Søppelpose. Tanpa apa pun di tengah.",
+     "literal": "sampah-kantong. tanpa sesuatu di-antara."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Og en plan for arbeid?",
+     "id": "Dan rencana untuk kerja?",
+     "literal": "dan satu rencana untuk kerja?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Arbeidsplan. Der kommer det en s inn.",
+     "id": "Arbeidsplan. Di situ muncul huruf s.",
+     "literal": "kerja-s-rencana. di-situ datang itu satu s masuk."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Hvorfor det?",
+     "id": "Kenapa begitu?",
+     "literal": "kenapa itu?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Fordi førsteleddet er sammensatt fra før. Da får det ofte s.",
+     "id": "Karena bagian pertamanya sendiri sudah majemuk. Biasanya lalu dapat s.",
+     "literal": "karena pertama-bagian-nya ada tersusun-bersama dari sebelum. lalu dapat itu sering s."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Og en dag med barn? Barndag?",
+     "id": "Dan hari dengan anak-anak? Barndag?",
+     "literal": "dan satu hari dengan anak? anak-hari?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Barnedag. Der kommer en e. Det må du bare høre deg fram til.",
+     "id": "Barnedag. Di situ muncul e. Yang itu memang harus kamu rasakan lewat telinga.",
+     "literal": "anak-e-hari. di-situ datang satu e. itu harus kamu hanya dengar diri maju untuk."
+    },
+    {
+     "speaker": "Rangga:",
+     "text": "Så det finnes ingen regel?",
+     "id": "Jadi tidak ada aturannya?",
+     "literal": "jadi itu ada tak-ada aturan?"
+    },
+    {
+     "speaker": "Tuva:",
+     "text": "Det finnes tendenser. Resten er vane. Sånn er det for oss også.",
+     "id": "Ada kecenderungan. Sisanya kebiasaan. Buat kami juga begitu.",
+     "literal": "itu ada kecenderungan-kecenderungan. sisa-nya ada kebiasaan. begitu ada itu untuk kami juga."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyambung: aturan pokok dan huruf di tengah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Norwegia, seperti bahasa Jerman dan Belanda, menyambungkan kata jadi satu tanpa spasi dan tanpa tanda hubung. Ini berlawanan dengan bahasa Indonesia, yang memisahkan hampir semuanya (\"kantong sampah\", \"rencana kerja\"), dan berlawanan dengan bahasa Inggris, yang memisahkan sebagian besar. Kebiasaan dari dua bahasa itulah sumber kesalahan yang paling sering."
+    },
+    {
+     "type": "p",
+     "text": "Aturan pokoknya: **kalau dua kata bersama-sama menyebut satu hal, tulis menyatu.** *En norsk lærer* adalah guru berkebangsaan Norwegia; *en norsklærer* adalah guru bahasa Norwegia. Spasi mengubah artinya, bukan sekadar tampilannya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dipisah",
+      "Artinya",
+      "Disatukan",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "*en norsk lærer*",
+       "guru orang Norwegia",
+       "*en norsklærer*",
+       "guru bahasa Norwegia"
+      ],
+      [
+       "*lamme koteletter*",
+       "potongan daging yang lumpuh",
+       "*lammekoteletter*",
+       "potongan daging domba"
+      ],
+      [
+       "*stekt kylling lever*",
+       "ayam goreng itu hidup",
+       "*stekt kyllinglever*",
+       "hati ayam goreng"
+      ],
+      [
+       "*røyk fritt*",
+       "merokoklah dengan bebas",
+       "*røykfritt*",
+       "bebas asap rokok"
+      ],
+      [
+       "*små kaker*",
+       "kue-kue kecil",
+       "*småkaker*",
+       "kue kering"
+      ],
+      [
+       "*ananas biter*",
+       "ananas menggigit",
+       "*ananasbiter*",
+       "potongan nanas"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Huruf sambung: *-e-*, *-s-*, atau tanpa apa-apa"
+    },
+    {
+     "type": "p",
+     "text": "Tidak ada aturan yang berlaku menyeluruh, tapi ada kecenderungan yang cukup kuat untuk dijadikan pegangan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sambungan",
+      "Kapan muncul",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "tanpa apa-apa",
+       "paling umum; bagian pertama bersuku satu",
+       "*søppelpose, husnøkkel, bilnøkkel, matbutikk*"
+      ],
+      [
+       "*-s-*",
+       "bagian pertama sudah majemuk atau berakhiran *-het*, *-ing*, *-else*",
+       "*arbeidsplan, sikkerhetskrav, utdanningssystem, arbeidsledighetstrygd*"
+      ],
+      [
+       "*-s-*",
+       "bagian pertama berakhiran *-dom*, *-skap*, *-nad*",
+       "*ungdomsklubb, vitenskapsmann, søknadsfrist*"
+      ],
+      [
+       "*-e-*",
+       "bagian pertama berupa kata benda bersuku satu yang jamaknya *-er*",
+       "*barnehage, barnedag, bygdeliv, jentelag*"
+      ],
+      [
+       "*-e-*",
+       "beberapa kata tetap",
+       "*gatelys, hjertelag, øyeblikk*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu ragu, **tanpa apa-apa** adalah tebakan yang paling sering benar. Dan kalau kamu salah menaruh huruf sambung, orang tetap memahamimu — berbeda dengan kalau kamu memisahkan kata, yang bisa mengubah artinya sepenuhnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca kata majemuk panjang: baca dari belakang",
+     "items": [
+      "**Bagian terakhir menyebut bendanya apa.** *Arbeidsledighetstrygd* adalah sejenis *trygd* (tunjangan).",
+      "**Bagian sebelumnya mempersempitnya.** Tunjangan untuk apa? Untuk *arbeidsledighet* (pengangguran).",
+      "**Pecah lagi kalau perlu.** *Arbeidsledighet* = *arbeid* + *ledighet* (kerja + keluangan).",
+      "Latihannya: pecah *folketrygdloven*, *barnehagelærerutdanning*, *sykepengegrunnlag*. Ketiganya muncul di surat resmi Norwegia dan ketiganya runtuh dalam dua langkah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata majemuk yang artinya tak bisa ditebak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata majemuk berarti persis jumlah bagiannya (*bilnøkkel* = kunci mobil). Sebagian lagi sudah berjalan jauh dari asalnya, dan inilah yang perlu dihafal sebagai kosakata baru."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Bagiannya",
+      "Artinya sekarang"
+     ],
+     "rows": [
+      [
+       "*å ta seg av*",
+       "ambil + diri + dari",
+       "mengurus"
+      ],
+      [
+       "*et øyeblikk*",
+       "mata + kejap",
+       "sekejap, sebentar"
+      ],
+      [
+       "*en hverdag*",
+       "tiap + hari",
+       "hari kerja biasa, keseharian"
+      ],
+      [
+       "*et menneskesyn*",
+       "manusia + pandangan",
+       "pandangan tentang manusia"
+      ],
+      [
+       "*å dugnad*",
+       "(kata tunggal)",
+       "kerja bakti sukarela — tak ada padanan pas"
+      ],
+      [
+       "*et arbeidsliv*",
+       "kerja + hidup",
+       "dunia kerja"
+      ],
+      [
+       "*en samboer*",
+       "bersama + penghuni",
+       "pasangan hidup tanpa nikah"
+      ],
+      [
+       "*et forhold*",
+       "(depan + pegangan)",
+       "hubungan; keadaan"
+      ],
+      [
+       "*en oppvekst*",
+       "atas + tumbuh",
+       "masa kecil, masa tumbuh"
+      ],
+      [
+       "*et utenforskap*",
+       "luar + keadaan",
+       "keterpinggiran sosial"
+      ],
+      [
+       "*en velferdsstat*",
+       "kesejahteraan + negara",
+       "negara kesejahteraan"
+      ],
+      [
+       "*å sette seg inn i*",
+       "taruh + diri + masuk + di",
+       "mendalami"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Dugnad* pantas disebut sendiri. Ia berarti kerja bersama tanpa bayaran untuk kepentingan bersama — membersihkan halaman rumah susun, mengecat balai desa, menyiapkan turnamen anak-anak. Ia bukan sekadar kata; ia salah satu gagasan yang paling sering disebut orang Norwegia ketika menjelaskan diri mereka sendiri. Kalau tetanggamu mengundangmu ke *dugnad*, itu undangan yang pantas diterima."
+    },
+    {
+     "type": "sub",
+     "text": "Membentuk kata sendiri"
+    },
+    {
+     "type": "p",
+     "text": "Salah satu kesenangan bahasa Norwegia: kamu boleh membuat kata majemuk baru, dan orang akan memahaminya asal bagiannya jelas. *Kaffepause*, *fredagsfølelse*, *middagsplan*, *tirsdagsmøte* — semuanya bisa kamu bentuk sendiri tanpa pernah membacanya di mana pun."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang bikin kamu ketahuan",
+     "items": [
+      "**Memisahkan kata majemuk.** Ini kesalahan tulis yang paling dikenali di Norwegia — namanya *særskriving*, dan ia dianggap tanda tulisan yang ceroboh, bahkan oleh orang yang sendiri sering melakukannya.",
+      "**Memakai tanda hubung.** *Arbeids-plan* salah; tanda hubung hanya dipakai kalau salah satu bagiannya angka, singkatan, atau nama diri (*EU-medlem*, *Oslo-området*, *20-årsjubileum*).",
+      "**Menekan bagian yang salah.** Tekanan kata majemuk Norwegia jatuh pada **bagian pertama**: *SØPPELpose*, *ARbeidsplan*, *NORSKlærer*. Menekan bagian kedua membuat kata itu terdengar seperti dua kata terpisah.",
+      "**Menerjemahkan frasa Indonesia kata demi kata.** \"Kantong sampah\" jadi *pose for søppel* memang bisa dipahami, tapi terdengar seperti definisi kamus. Bahasa Norwegia menyambung."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å lete etter",
+   "baca": "LE-te ET-ter",
+   "id": "mencari"
+  },
+  {
+   "no": "ei handleliste",
+   "baca": "HAND-le-lis-te",
+   "id": "daftar belanja"
+  },
+  {
+   "no": "lam",
+   "baca": "LAM",
+   "id": "lumpuh"
+  },
+  {
+   "no": "et lam",
+   "baca": "LAM",
+   "id": "anak domba"
+  },
+  {
+   "no": "et mellomrom",
+   "baca": "MEL-lom-rom",
+   "id": "spasi, jarak"
+  },
+  {
+   "no": "orddeling",
+   "baca": "ORD-de-ling",
+   "id": "pemenggalan kata"
+  },
+  {
+   "no": "en nettside",
+   "baca": "NET-si-de",
+   "id": "situs web"
+  },
+  {
+   "no": "et skilt",
+   "baca": "SHILT",
+   "id": "papan, tanda"
+  },
+  {
+   "no": "lever",
+   "baca": "LE-ver",
+   "id": "hati (organ); hidup"
+  },
+  {
+   "no": "baklengs",
+   "baca": "BAK-lengs",
+   "id": "terbalik dari belakang"
+  },
+  {
+   "no": "et ledd",
+   "baca": "LED",
+   "id": "bagian, mata rantai"
+  },
+  {
+   "no": "en trygd",
+   "baca": "TRYGD",
+   "id": "tunjangan negara"
+  },
+  {
+   "no": "arbeidsledighet",
+   "baca": "AR-baids-le-di-het",
+   "id": "pengangguran"
+  },
+  {
+   "no": "en søppelpose",
+   "baca": "SØP-pel-po-se",
+   "id": "kantong sampah"
+  },
+  {
+   "no": "sammensatt",
+   "baca": "SAM-men-sat",
+   "id": "majemuk, tersusun"
+  },
+  {
+   "no": "en tendens",
+   "baca": "ten-DENS",
+   "id": "kecenderungan"
+  },
+  {
+   "no": "en vane",
+   "baca": "VA-ne",
+   "id": "kebiasaan"
+  },
+  {
+   "no": "dugnad",
+   "baca": "DUG-nad",
+   "id": "kerja bakti sukarela"
+  },
+  {
+   "no": "en samboer",
+   "baca": "SAM-bo-er",
+   "id": "pasangan hidup tanpa nikah"
+  },
+  {
+   "no": "en oppvekst",
+   "baca": "OP-vekst",
+   "id": "masa tumbuh, masa kecil"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Gabungkan jadi satu kata majemuk yang benar.",
+   "items": [
+    "pose + søppel",
+    "plan + arbeid",
+    "hage + barn",
+    "krav + sikkerhet",
+    "lærer + norsk"
+   ]
+  },
+  {
+   "prompt": "Jelaskan selisih arti antara versi terpisah dan versi menyatu.",
+   "items": [
+    "en norsk lærer / en norsklærer",
+    "lamme koteletter / lammekoteletter",
+    "røyk fritt / røykfritt",
+    "små kaker / småkaker",
+    "stekt kylling lever / stekt kyllinglever"
+   ]
+  },
+  {
+   "prompt": "Pecah kata majemuk berikut dari belakang, lalu sebutkan bendanya apa.",
+   "items": [
+    "arbeidsledighetstrygd",
+    "barnehagelærerutdanning",
+    "folketrygdloven",
+    "sykepengegrunnlag",
+    "utdanningssystem"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Aku cari sesuatu yang ada di daftar belanja.",
+    "Satu kata. Kalau dipisah artinya lain.",
+    "Aturannya sederhana: kalau menyatu maknanya, tulis menyatu.",
+    "Bagian terakhir menyebut bendanya apa.",
+    "Ada kecenderungan. Sisanya kebiasaan."
+   ]
+  }
+ ],
+ "answers": [
+  "søppelpose — arbeidsplan — barnehage — sikkerhetskrav — norsklærer",
+  "guru orang Norwegia / guru bahasa Norwegia — potongan daging yang lumpuh / potongan daging domba — merokoklah dengan bebas / bebas asap rokok — kue-kue kecil / kue kering — ayam goreng itu hidup / hati ayam goreng",
+  "trygd for arbeidsledighet, altså en trygd — utdanning for barnehagelærere, altså en utdanning — loven om folketrygden, altså en lov — grunnlaget for sykepenger, altså et grunnlag — systemet for utdanning, altså et system",
+  "Jeg leter etter noe som sto på handlelista. — I ett ord. Med mellomrom betyr det noe annet. — Regelen er enkel: hører det sammen, skriv det sammen. — Siste ledd sier hva det er. — Det finnes tendenser. Resten er vane."
+ ]
+}
