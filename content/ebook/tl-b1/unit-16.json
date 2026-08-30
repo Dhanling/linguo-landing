@@ -1,0 +1,749 @@
+{
+ "title": "Mengeluh, menuntut, dan menyelesaikan masalah",
+ "title_target": "May problema po sa order ko",
+ "goal": "Menyampaikan keluhan dengan jelas tanpa marah, meminta ganti atau uang kembali, bertahan dengan sopan ketika ditolak, dan mengurus dokumen di kantor pemerintah.",
+ "bekal": [
+  "menyusun keluhan dalam tiga langkah: kenyataan, akibat, permintaan",
+  "meminta penggantian, perbaikan, atau pengembalian uang",
+  "bertahan dengan sopan sampai masalahnya selesai",
+  "menanyakan syarat dan alur pengurusan dokumen"
+ ],
+ "dialogs": [
+  {
+   "title": "Usapan A — Mali ang dumating",
+   "intro": "Paket yang datang bukan barang yang dipesan, dan sebagiannya penyok. Ana menelepon layanan pelanggan.",
+   "lines": [
+    {
+     "speaker": "Ana:",
+     "text": "Magandang hapon po. May problema po sa order ko.",
+     "id": "Selamat sore. Ada masalah dengan pesanan saya.",
+     "literal": "bagus-penghubung sore hormat. ada masalah hormat di pesanan aku-punya."
+    },
+    {
+     "speaker": "CS:",
+     "text": "Magandang hapon din po. Ano po ang nangyari?",
+     "id": "Selamat sore juga. Ada apa?",
+     "literal": "bagus-penghubung sore juga hormat. apa hormat si ter-jadi?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Iba po ang dumating. Blue po ang inorder ko, itim ang natanggap.",
+     "id": "Yang datang beda. Saya pesan biru, yang saya terima hitam.",
+     "literal": "lain hormat si datang. biru hormat si yang-dipesan aku-punya, hitam si ter-terima."
+    },
+    {
+     "speaker": "CS:",
+     "text": "Pasensya na po. Puwede po bang malaman ang order number?",
+     "id": "Mohon maaf. Boleh tahu nomor pesanannya?",
+     "literal": "sabar sudah hormat. boleh hormat apakah-penghubung ter-ketahui si nomor pesanan?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Opo, 4-4-7-2-1. At may yupi rin po ang kahon.",
+     "id": "Iya, 4-4-7-2-1. Kardusnya juga penyok.",
+     "literal": "ya-hormat, 4-4-7-2-1. dan ada penyok juga hormat si kardus."
+    },
+    {
+     "speaker": "CS:",
+     "text": "Nakita ko na po ang order ninyo. Kailan po dumating?",
+     "id": "Sudah saya lihat pesanan Anda. Datangnya kapan?",
+     "literal": "ter-lihat aku-punya sudah hormat si pesanan kalian-punya. kapan hormat datang?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Kaninang tanghali po. Hindi ko pa nagagamit.",
+     "id": "Tadi siang. Belum saya pakai.",
+     "literal": "tadi-penghubung siang hormat. tidak aku-punya masih sedang-ter-pakai."
+    },
+    {
+     "speaker": "CS:",
+     "text": "Mabuti po. Puwede po nating i-replace, o i-refund kung gusto ninyo.",
+     "id": "Bagus. Bisa kami ganti, atau uangnya dikembalikan kalau Anda mau.",
+     "literal": "baik hormat. boleh hormat kita-punya diganti, atau dikembalikan kalau ingin kalian-punya."
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Palitan na lang po. Pero kailan po darating ang panibago?",
+     "id": "Ganti saja. Tapi kapan yang barunya datang?",
+     "literal": "yang-diganti sudah saja hormat. tapi kapan hormat akan-datang si baru-lagi?"
+    },
+    {
+     "speaker": "CS:",
+     "text": "Tatlo hanggang limang araw po.",
+     "id": "Tiga sampai lima hari.",
+     "literal": "tiga hingga lima-penghubung hari hormat."
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Medyo matagal po 'yon. Kailangan ko sana bago mag-Sabado.",
+     "id": "Agak lama. Saya butuhnya sebelum Sabtu.",
+     "literal": "agak lama hormat itu. perlu aku-punya semoga sebelum meng-Sabtu."
+    },
+    {
+     "speaker": "CS:",
+     "text": "Susubukan po naming pabilisin. Puwede ko pong i-endorse sa supervisor.",
+     "id": "Kami coba percepat. Bisa saya teruskan ke supervisor.",
+     "literal": "akan-dicoba hormat kami-punya-penghubung dipercepat. boleh aku-punya hormat-penghubung diteruskan ke penyelia."
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Salamat po. Puwede po bang makakuha ako ng reference number?",
+     "id": "Terima kasih. Boleh saya minta nomor referensi?",
+     "literal": "terima-kasih hormat. boleh hormat apakah-penghubung sempat-mengambil saya punya nomor rujukan?"
+    },
+    {
+     "speaker": "CS:",
+     "text": "Opo. Ise-send ko po sa email ninyo ngayon din.",
+     "id": "Baik. Saya kirim ke email Anda sekarang juga.",
+     "literal": "ya-hormat. yang-akan-dikirim aku-punya hormat ke surel kalian-punya sekarang juga."
+    }
+   ],
+   "notes": [
+    "**May problema po sa order ko** adalah pembuka keluhan yang paling aman: menyebut adanya masalah **tanpa menuduh siapa pun**. Bandingkan dengan *Mali ang ginawa ninyo* yang langsung menyalahkan dan hampir selalu memperlambat penyelesaian.",
+    "**Iba po ang dumating** memakai susunan *ang … ang …* dari Unit 1 untuk menyorot fakta, bukan orangnya. Ini pilihan yang disengaja: keluhan yang menyorot barang terdengar jauh lebih tenang daripada yang menyorot pelaku.",
+    "**Yupi** berarti penyok. Kata sejenis yang berguna: *gasgas* (baret), *punit* (sobek), *basag* (pecah), *tulo* (bocor), *kalawang* (karat).",
+    "**Hindi ko pa nagagamit** — bentuk *na- + ulang* dengan *hindi pa* berarti \"belum sempat terpakai\". Kalimat ini penting dalam keluhan: ia membuktikan barangnya masih seperti waktu datang, dan penutur asli selalu menyebutkannya.",
+    "⚠️ **Palitan na lang po** — perhatikan bahwa *na lang* di sini bukan meremehkan, melainkan memilih di antara dua tawaran: \"yang diganti saja\". Tanpa *na lang*, kalimatnya jadi perintah telanjang.",
+    "**Medyo matagal po 'yon** adalah bantahan sopan. Rangkanya: *medyo* + keberatan + *po*. Ini yang dipakai untuk menolak tawaran tanpa menutup pembicaraan, dan hampir selalu diikuti alasan.",
+    "**Susubukan po naming pabilisin** — jawaban ini, seperti kamu pelajari di Unit 14, sering berarti \"belum tentu\". Kalau kamu perlu kepastian, tanyakan tanggalnya: *Kailan po natin malalaman?*",
+    "**I-endorse sa supervisor** adalah istilah baku layanan pelanggan Filipina: meneruskan perkara ke atasan. Kamu boleh memintanya sendiri: *Puwede po bang makausap ang supervisor?*",
+    "**Reference number** wajib kamu minta di setiap urusan layanan di Filipina — telepon, listrik, pengiriman, bank. Tanpa nomor itu, percakapanmu tadi secara resmi tidak pernah terjadi."
+   ],
+   "grammars": [
+    {
+     "title": "Keluhan dalam tiga langkah",
+     "body": [
+      "Keluhan yang berhasil hampir selalu punya susunan yang sama, dan susunan itulah yang menentukan hasilnya — bukan seberapa keras kamu bicara."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Rumus",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1. Kenyataan",
+        "*May problema po sa…*",
+        "*May problema po sa order ko.*"
+       ],
+       [
+        "1. Kenyataan",
+        "*Hindi po gumagana ang…*",
+        "*Hindi po gumagana ang aircon.*"
+       ],
+       [
+        "1. Kenyataan",
+        "*Mali po ang…*",
+        "*Mali po ang sukli ninyo.*"
+       ],
+       [
+        "2. Akibat",
+        "*Kaya po hindi ko…*",
+        "*Kaya po hindi ko magamit.*"
+       ],
+       [
+        "2. Akibat",
+        "*Dahil doon, na-late po ako.*",
+        "*Dahil doon, na-late po ako sa trabaho.*"
+       ],
+       [
+        "3. Permintaan",
+        "*Puwede po bang palitan?*",
+        "*Puwede po bang palitan ito?*"
+       ],
+       [
+        "3. Permintaan",
+        "*Ano po ang magagawa natin dito?*",
+        "menyerahkan jalan keluar kepada mereka"
+       ],
+       [
+        "3. Permintaan",
+        "*Sana po matulungan ninyo ako.*",
+        "paling halus"
+       ]
+      ]
+     },
+     "after": [
+      "Langkah ketiga adalah yang paling sering dilewatkan pelajar asing. Menyebut masalah tanpa menyebut apa yang kamu inginkan membuat percakapan berputar-putar. Sebutkan permintaanmu dalam satu kalimat pendek.",
+      "**Ano po ang magagawa natin dito?** adalah kalimat serba guna: kamu tidak menuntut apa pun, tetapi meminta mereka mengusulkan. Perhatikan *natin* (kita), bukan *ninyo* (kalian) — kata inilah yang membuat lawan bicaramu merasa berada di pihak yang sama.",
+      "⚠️ Meninggikan suara di Filipina hampir selalu memperburuk hasil. Yang bekerja adalah tetap tenang, menyebut fakta, dan mengulanginya dengan sabar. Pelanggan yang marah dicap *bastos*, dan petugas berhak menghentikan pembicaraan."
+     ]
+    },
+    {
+     "title": "Bertahan dengan sopan",
+     "body": [
+      "Kalau permintaanmu ditolak, ada tangga yang bisa kamu naiki satu per satu tanpa satu pun kata kasar."
+     ],
+     "table": {
+      "head": [
+       "Tingkat",
+       "Kalimat",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "1",
+        "*Naiintindihan ko po, pero…*",
+        "Saya mengerti, tapi…"
+       ],
+       [
+        "2",
+        "*Pasensya na po, pero kailangan ko talaga.*",
+        "Maaf, tapi saya memang butuh."
+       ],
+       [
+        "3",
+        "*May ibang paraan po kaya?*",
+        "Ada cara lain barangkali?"
+       ],
+       [
+        "4",
+        "*Puwede po bang makausap ang supervisor?*",
+        "Boleh bicara dengan supervisor?"
+       ],
+       [
+        "5",
+        "*Puwede po bang isulat ninyo 'yan?*",
+        "Boleh ditulis?"
+       ],
+       [
+        "6",
+        "*Saan po ako puwedeng magreklamo?*",
+        "Ke mana saya bisa mengadu?"
+       ],
+       [
+        "7",
+        "*Kukunin ko na lang po ang pangalan ninyo.*",
+        "Saya catat nama Anda saja."
+       ]
+      ]
+     },
+     "after": [
+      "Naiki tangganya satu per satu, jangan melompat. Melompat langsung ke tingkat empat membuat petugas di depanmu merasa dilewati, dan di Filipina itu melukai — bahkan kalau kamu memang benar.",
+      "Tingkat kelima dan ketujuh adalah senjata paling ampuh yang tidak terdengar mengancam. Meminta sesuatu ditulis atau mencatat nama petugas mengubah percakapan lisan jadi perkara yang tercatat, dan itu biasanya cukup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Usapan B — Sa barangay hall",
+   "intro": "Mengurus surat keterangan domisili. Antrean panjang, satu berkas kurang, dan satu petugas yang sedang makan siang.",
+   "lines": [
+    {
+     "speaker": "Ana:",
+     "text": "Magandang umaga po. Kukuha po sana ako ng barangay clearance.",
+     "id": "Selamat pagi. Saya mau mengurus surat keterangan barangay.",
+     "literal": "bagus-penghubung pagi hormat. akan-mengambil hormat semoga saya punya surat-keterangan."
+    },
+    {
+     "speaker": "Kawani:",
+     "text": "Ano po ang kailangan ninyo nito?",
+     "id": "Untuk keperluan apa?",
+     "literal": "apa hormat si diperlukan kalian-punya ini-punya?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Para po sa trabaho. Ano po ang mga requirements?",
+     "id": "Untuk kerja. Syaratnya apa saja?",
+     "literal": "untuk hormat ke pekerjaan. apa hormat si jamak persyaratan?"
+    },
+    {
+     "speaker": "Kawani:",
+     "text": "Valid ID at proof of residency po. May dala po kayo?",
+     "id": "KTP dan bukti domisili. Anda bawa?",
+     "literal": "sah kartu-pengenal dan bukti punya tempat-tinggal hormat. ada bawaan hormat kalian?"
+    },
+    {
+     "speaker": "Ana:",
+     "text": "ID po meron. Pero wala po akong proof of residency.",
+     "id": "KTP ada. Tapi bukti domisilinya tidak ada.",
+     "literal": "kartu-pengenal hormat ada. tapi tiada hormat aku-punya-penghubung bukti tempat-tinggal."
+    },
+    {
+     "speaker": "Kawani:",
+     "text": "Puwede rin po ang billing statement o kontrata ng renta.",
+     "id": "Bisa juga tagihan atau kontrak sewa.",
+     "literal": "boleh juga hormat si tagihan atau kontrak punya sewa."
+    },
+    {
+     "speaker": "Ana:",
+     "text": "Ah, meron po pala ako niyan sa cellphone. Puwede po bang screenshot?",
+     "id": "Oh, ternyata saya punya itu di ponsel. Boleh tangkapan layar?",
+     "literal": "ah, ada hormat ternyata saya itu-punya di ponsel. boleh hormat apakah-penghubung tangkapan-layar?"
+    },
+    {
+     "speaker": "Kawani:",
+     "text": "Kailangan po ng printed. May printing sa tapat, sampung piso lang.",
+     "id": "Harus yang dicetak. Ada tempat cetak di seberang, sepuluh peso saja.",
+     "literal": "perlu hormat punya tercetak. ada pencetakan di seberang, sepuluh-penghubung peso saja."
+    }
+   ],
+   "notes": [
+    "**Kukuha po sana ako ng…** adalah pembuka baku di kantor pemerintah mana pun: \"saya mau mengurus…\". Pelunak *sana* wajib; tanpanya kalimatnya terdengar menuntut.",
+    "**Kawani** berarti pegawai atau petugas, khususnya di lembaga pemerintah. Kata Taglish yang lebih sering: *staff*. Untuk pejabat dipakai *opisyal*.",
+    "**Requirements** hampir tidak pernah diterjemahkan. Kata Tagalognya *mga kailangan* atau *mga hinihingi*, tetapi setiap kantor memakai kata Inggrisnya. Pertanyaan bakunya: *Ano po ang mga requirements?*",
+    "⚠️ **Sa tapat** berarti di seberang, tepat berhadapan. Bandingkan dengan *sa harap* (di depan), *sa likod* (di belakang), *sa tabi* (di samping), *sa kabila* (di sisi yang lain). Kelima kata arah ini akan kamu pakai setiap hari."
+   ],
+   "grammars": [
+    {
+     "title": "Bertanya tentang alur dan syarat",
+     "body": [
+      "Tujuh pertanyaan berikut cukup untuk hampir semua urusan dokumen di Filipina, dari barangay sampai kantor imigrasi."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "*Ano po ang mga requirements?*",
+        "Apa saja syaratnya?"
+       ],
+       [
+        "*Magkano po ang bayad?*",
+        "Berapa biayanya?"
+       ],
+       [
+        "*Gaano po katagal ang proseso?*",
+        "Berapa lama prosesnya?"
+       ],
+       [
+        "*Saan po ang susunod na hakbang?*",
+        "Langkah berikutnya di mana?"
+       ],
+       [
+        "*Kailangan po bang bumalik?*",
+        "Perlu datang lagi?"
+       ],
+       [
+        "*Puwede po bang ibang tao ang kumuha?*",
+        "Boleh diambilkan orang lain?"
+       ],
+       [
+        "*May online po ba nito?*",
+        "Ada versi daringnya?"
+       ]
+      ]
+     },
+     "after": [
+      "Tanyakan **semuanya sekaligus di awal**, sebelum mengantre. Kantor pemerintah Filipina hampir selalu punya lebih dari satu loket, dan mengetahui urutannya lebih dahulu menghemat berjam-jam.",
+      "Kalimat penyelamat kalau kamu tersesat: *Pasensya na po, unang beses ko lang po dito. Saan po ako magsisimula?* — Maaf, saya baru pertama kali. Mulai dari mana? Kejujuran ini hampir selalu dibalas pertolongan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang rusak, garansi, dan pengembalian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kosakata yang menentukan apakah keluhanmu diproses atau ditolak. Sebagian kata Inggris, sebagian Tagalog, dan keduanya dipakai bercampur di gerai mana pun."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "sira",
+       "si-RA",
+       "rusak"
+      ],
+      [
+       "depekto",
+       "de-PEK-to",
+       "cacat produksi"
+      ],
+      [
+       "yupi",
+       "YU-pi",
+       "penyok"
+      ],
+      [
+       "gasgas",
+       "gas-GAS",
+       "baret"
+      ],
+      [
+       "punit",
+       "pu-NIT",
+       "sobek"
+      ],
+      [
+       "basag",
+       "ba-SAG",
+       "pecah"
+      ],
+      [
+       "kulang",
+       "KU-lang",
+       "kurang, tidak lengkap"
+      ],
+      [
+       "mali",
+       "ma-LI",
+       "salah"
+      ],
+      [
+       "resibo",
+       "re-SI-bo",
+       "struk, kuitansi"
+      ],
+      [
+       "waranti",
+       "wa-RAN-ti",
+       "garansi"
+      ],
+      [
+       "palitan",
+       "pa-li-TAN",
+       "penukaran, ganti"
+      ],
+      [
+       "isauli",
+       "i-sa-U-li",
+       "mengembalikan"
+      ],
+      [
+       "ibalik ang bayad",
+       "i-ba-LIK ang BA-yad",
+       "mengembalikan uang"
+      ],
+      [
+       "magreklamo",
+       "mag-rek-LA-mo",
+       "mengadu"
+      ],
+      [
+       "ayusin",
+       "a-YU-sin",
+       "memperbaiki"
+      ],
+      [
+       "kapalit",
+       "ka-pa-LIT",
+       "penggantinya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Resibo** adalah kata terpenting di daftar ini. Tanpa struk, hampir tidak ada gerai di Filipina yang mau mengganti barang, dan itu berlaku juga untuk pembelian daring — simpan surel konfirmasinya. Kalimat yang akan kamu dengar: *May resibo po ba kayo?*"
+    },
+    {
+     "type": "kotak",
+     "title": "Lima kalimat yang menyelesaikan urusan",
+     "items": [
+      "**May problema po sa binili ko.** — Ada masalah dengan barang yang saya beli.",
+      "**Puwede po bang palitan? May resibo po ako.** — Boleh ditukar? Saya punya struknya.",
+      "**Hindi ko pa po nagagamit.** — Belum saya pakai sama sekali.",
+      "**Kulang po ang sukli ninyo sa akin.** — Kembalian Anda kurang.",
+      "**Hanggang kailan po ang waranti?** — Garansinya sampai kapan?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Mengurus dokumen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir semua urusan resmi di Filipina dimulai dari barangay dan berakhir di kantor kota. Kosakata berikut muncul di setiap loket."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "barangay clearance",
+       "ba-rang-GAY KLI-rans",
+       "surat keterangan kelurahan"
+      ],
+      [
+       "sedula",
+       "se-DU-la",
+       "kartu keterangan penduduk"
+      ],
+      [
+       "katunayan",
+       "ka-tu-NA-yan",
+       "bukti, keterangan"
+      ],
+      [
+       "patunay",
+       "pa-TU-nay",
+       "bukti resmi"
+      ],
+      [
+       "pirma",
+       "PIR-ma",
+       "tanda tangan"
+      ],
+      [
+       "selyo",
+       "SEL-yo",
+       "meterai, cap"
+      ],
+      [
+       "notaryo",
+       "no-TAR-yo",
+       "notaris"
+      ],
+      [
+       "porma",
+       "POR-ma",
+       "formulir"
+      ],
+      [
+       "pila",
+       "PI-la",
+       "antrean"
+      ],
+      [
+       "numero",
+       "nu-ME-ro",
+       "nomor antrean"
+      ],
+      [
+       "bintanilya",
+       "bin-ta-NIL-ya",
+       "loket"
+      ],
+      [
+       "kawani",
+       "ka-WA-ni",
+       "petugas"
+      ],
+      [
+       "bayarin",
+       "ba-YA-rin",
+       "biaya yang harus dibayar"
+      ],
+      [
+       "kopya",
+       "KOP-ya",
+       "salinan"
+      ],
+      [
+       "orihinal",
+       "o-ri-hi-NAL",
+       "asli"
+      ],
+      [
+       "ipasa",
+       "i-PA-sa",
+       "menyerahkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Sedula** adalah dokumen kecil yang diminta di hampir setiap urusan resmi, harganya beberapa puluh peso, dan diambil di kantor kelurahan atau kantor kota. Kalau kamu tinggal di Filipina, ambil satu di awal tahun dan simpan salinannya — ia akan menghemat banyak perjalanan."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tl": "reklamo",
+   "baca": "rek-LA-mo",
+   "id": "keluhan"
+  },
+  {
+   "tl": "magreklamo",
+   "baca": "mag-rek-LA-mo",
+   "id": "mengadu"
+  },
+  {
+   "tl": "palitan",
+   "baca": "pa-li-TAN",
+   "id": "menukar, mengganti"
+  },
+  {
+   "tl": "kapalit",
+   "baca": "ka-pa-LIT",
+   "id": "penggantinya"
+  },
+  {
+   "tl": "isauli",
+   "baca": "i-sa-U-li",
+   "id": "mengembalikan"
+  },
+  {
+   "tl": "resibo",
+   "baca": "re-SI-bo",
+   "id": "struk"
+  },
+  {
+   "tl": "waranti",
+   "baca": "wa-RAN-ti",
+   "id": "garansi"
+  },
+  {
+   "tl": "depekto",
+   "baca": "de-PEK-to",
+   "id": "cacat"
+  },
+  {
+   "tl": "yupi",
+   "baca": "YU-pi",
+   "id": "penyok"
+  },
+  {
+   "tl": "gasgas",
+   "baca": "gas-GAS",
+   "id": "baret"
+  },
+  {
+   "tl": "basag",
+   "baca": "ba-SAG",
+   "id": "pecah"
+  },
+  {
+   "tl": "gumagana",
+   "baca": "gu-ma-GA-na",
+   "id": "berfungsi"
+  },
+  {
+   "tl": "magamit",
+   "baca": "ma-ga-MIT",
+   "id": "bisa dipakai"
+  },
+  {
+   "tl": "supervisor",
+   "baca": "su-per-BAY-ser",
+   "id": "penyelia"
+  },
+  {
+   "tl": "paraan",
+   "baca": "pa-ra-AN",
+   "id": "cara"
+  },
+  {
+   "tl": "proseso",
+   "baca": "pro-SE-so",
+   "id": "proses"
+  },
+  {
+   "tl": "hakbang",
+   "baca": "hak-BANG",
+   "id": "langkah"
+  },
+  {
+   "tl": "pila",
+   "baca": "PI-la",
+   "id": "antrean"
+  },
+  {
+   "tl": "bintanilya",
+   "baca": "bin-ta-NIL-ya",
+   "id": "loket"
+  },
+  {
+   "tl": "kawani",
+   "baca": "ka-WA-ni",
+   "id": "petugas"
+  },
+  {
+   "tl": "porma",
+   "baca": "POR-ma",
+   "id": "formulir"
+  },
+  {
+   "tl": "pirma",
+   "baca": "PIR-ma",
+   "id": "tanda tangan"
+  },
+  {
+   "tl": "patunay",
+   "baca": "pa-TU-nay",
+   "id": "bukti resmi"
+  },
+  {
+   "tl": "bayarin",
+   "baca": "ba-YA-rin",
+   "id": "biaya"
+  },
+  {
+   "tl": "sa tapat",
+   "baca": "sa ta-PAT",
+   "id": "di seberang"
+  },
+  {
+   "tl": "bastos",
+   "baca": "BAS-tos",
+   "id": "kasar, tidak sopan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Susun keluhan tiga langkah untuk tiap keadaan: kenyataan, akibat, permintaan.",
+   "items": [
+    "Barang yang datang salah warna.",
+    "AC di kamar kos tidak dingin sejak tiga hari lalu.",
+    "Kembalian dari penjual kurang lima puluh peso.",
+    "Paket sudah dibayar tapi belum sampai selama dua minggu.",
+    "Ponsel yang baru dibeli mati sendiri, masih bergaransi."
+   ]
+  },
+  {
+   "prompt": "Naikkan tangga bertahan dengan sopan. Tulis kalimat untuk tiap tingkat.",
+   "items": [
+    "tingkat 1: menyatakan mengerti tapi tetap keberatan",
+    "tingkat 2: menegaskan bahwa kamu memang membutuhkannya",
+    "tingkat 3: menanyakan cara lain",
+    "tingkat 4: meminta bicara dengan supervisor",
+    "tingkat 5: meminta jawabannya ditulis"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Boleh ditukar? Saya punya struknya.",
+    "Belum saya pakai sama sekali.",
+    "Garansinya sampai kapan?",
+    "Apa saja syaratnya dan berapa biayanya?",
+    "Perlu saya datang lagi besok?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat: *sira*, *yupi*, *kulang*, *mali*, atau *basag*.",
+   "items": [
+    "____ po ang kahon, pero okay pa ang laman.",
+    "____ po ang sukli ninyo, limampu ang kulang.",
+    "____ po ang kulay na dumating, itim, hindi blue.",
+    "____ na po ang salamin ng relo, hindi ko na nagamit.",
+    "____ po ang aircon, hindi na lumalamig."
+   ]
+  },
+  {
+   "prompt": "Tulis percakapan pendek lima baris di kantor pemerintah: kamu menanyakan syarat, biaya, lama proses, apakah bisa diwakilkan, dan apakah perlu kembali.",
+   "items": [
+    "baris pertama",
+    "baris kedua",
+    "baris ketiga",
+    "baris keempat",
+    "baris kelima"
+   ]
+  }
+ ],
+ "answers": [
+  "Contoh jawaban. May problema po sa order ko, iba po ang kulay na dumating. Kaya po hindi ko magagamit sa Sabado. Puwede po bang palitan? — Hindi po gumagana nang maayos ang aircon simula noong Miyerkules. Dahil doon, hindi po ako makatulog nang maayos. Puwede po bang ipaayos ninyo ngayong linggo? — Kulang po ang sukli ninyo sa akin, limampung piso po ang kulang. Kaya po hindi tama ang binayaran ko. Puwede po bang pakitingnan ulit? — Dalawang linggo na po ang nakalipas pero hindi pa dumarating ang bayad kong padala. Dahil doon, hindi ko po naibigay sa oras. Ano po ang magagawa natin dito? — Namatay po nang kusa ang bagong biling telepono, may waranti pa po ito. Kaya po hindi ko magamit sa trabaho. Puwede po bang palitan o ipaayos?",
+  "Naiintindihan ko po, pero kailangan ko talaga ito bago mag-Sabado. — Pasensya na po, pero binayaran ko na ito noong isang linggo. — May ibang paraan po kaya para mapabilis? — Puwede po bang makausap ang supervisor ninyo? — Puwede po bang isulat ninyo ang sinabi ninyo, para may kopya ako?",
+  "Puwede po bang palitan? May resibo po ako. — Hindi ko pa po nagagamit. — Hanggang kailan po ang waranti? — Ano po ang mga requirements at magkano po ang bayad? — Kailangan ko po bang bumalik bukas?",
+  "Yupi — Kulang — Mali — Basag — Sira",
+  "Contoh jawaban: Magandang umaga po. Kukuha po sana ako ng barangay clearance. Ano po ang mga requirements? — Magkano po ang bayad? — Gaano po katagal ang proseso? — Puwede po bang ibang tao ang kumuha nito para sa akin? — Kailangan ko po bang bumalik bukas o ngayon din po ito matatapos?"
+ ],
+ "wave": "Ulangi **unit 14**: ambil lima penolakan halus dari unit itu, lalu bayangkan kamu yang menerimanya di loket layanan. Tulis tanggapanmu untuk masing-masing memakai tangga bertahan dari unit ini."
+}

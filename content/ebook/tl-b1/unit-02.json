@@ -1,0 +1,272 @@
+{
+ "title": "Kalau bendanya yang jadi berita",
+ "title_target": "Kainin mo na 'yan",
+ "goal": "Menuntaskan kata kerja berfokus objek dalam tiga tahapan, mengenali kapan fokus objek **wajib**, dan memasangkannya dengan *gusto*, *ayaw*, *kailangan*, *puwede*, dan *dapat*.",
+ "bekal": [
+  "membentuk *kakainin – kinakain – kinain* untuk akar kata mana pun",
+  "menyuruh dengan dua cara: *Kumain ka!* dan *Kainin mo!*",
+  "tahu kapan bahasa Tagalog tidak memberimu pilihan selain fokus objek",
+  "menyambung *gusto ko* dengan kata kerja lewat penghubung *-ng*"
+ ],
+ "dialogs": [
+  {
+   "title": "Usapan A — Bago tayo umalis",
+   "intro": "Dua penghuni kos berkemas untuk pergi tiga hari. Kulkas masih penuh, dan tidak ada yang mau membuang makanan.",
+   "lines": [
+    { "speaker": "Mia:", "text": "Ano ang gagawin natin sa mga natirang pagkain?", "id": "Sisa makanan ini mau kita apakan?", "literal": "apa si yang-akan-dibuat kita-punya ke jamak tersisa-punya makanan?" },
+    { "speaker": "Jun:", "text": "Kainin na natin ang ulam. 'Wag na nating itapon.", "id": "Lauknya kita habiskan saja. Jangan dibuang.", "literal": "yang-dimakan sudah kita-punya si lauk. jangan sudah kita-punya-penghubung yang-dibuang." },
+    { "speaker": "Mia:", "text": "Hindi ko na kaya. Busog pa ako.", "id": "Saya sudah tidak sanggup. Masih kenyang.", "literal": "tidak aku-punya sudah sanggup. kenyang masih saya." },
+    { "speaker": "Jun:", "text": "Sige, ilagay mo na lang sa ref. Bukas ko na kakainin.", "id": "Ya sudah, taruh saja di kulkas. Besok saya makan.", "literal": "baiklah, yang-ditaruh kamu-punya sudah saja di kulkas. besok aku-punya sudah yang-akan-dimakan." },
+    { "speaker": "Mia:", "text": "Ang gulay, mabilis masira. Lutuin mo na ngayon.", "id": "Sayurnya cepat busuk. Masak sekarang saja.", "literal": "si sayur, cepat ter-rusak. yang-dimasak kamu-punya sudah sekarang." },
+    { "speaker": "Jun:", "text": "Puwede bang ikaw na lang? Mas magaling ka kumain ng luto ko.", "id": "Boleh kamu saja? Kamu lebih pandai memakan masakanku daripada memasaknya.", "literal": "boleh apakah-penghubung kamu sudah saja? lebih pandai kamu makan punya masakan aku-punya." },
+    { "speaker": "Mia:", "text": "Ayoko. Gusto kong magpahinga bago tayo umalis.", "id": "Tidak mau. Saya ingin istirahat dulu sebelum kita berangkat.", "literal": "tidak-mau-aku. ingin aku-punya-penghubung ber-istirahat sebelum kita pergi." },
+    { "speaker": "Jun:", "text": "O sige, ako na. Pero hugasan mo ang mga plato, ha?", "id": "Ya sudah, saya saja. Tapi piringnya kamu cuci ya?", "literal": "oh baiklah, saya sudah. tapi yang-dicuci kamu-punya si jamak piring, ya?" },
+    { "speaker": "Mia:", "text": "Deal. Saan ko ilalagay ang tira?", "id": "Setuju. Sisanya saya taruh di mana?", "literal": "sepakat. di-mana aku-punya yang-akan-ditaruh si sisa?" },
+    { "speaker": "Jun:", "text": "Sa lalagyang malinis, 'yong nasa taas ng aparador.", "id": "Di wadah yang bersih, yang di atas lemari itu.", "literal": "di wadah-penghubung bersih, yang berada-di atas punya lemari." },
+    { "speaker": "Mia:", "text": "Nakita ko na. Kailangan ko pa bang takpan?", "id": "Sudah saya lihat. Perlu saya tutup juga?", "literal": "ter-lihat aku-punya sudah. perlu aku-punya masih apakah-penghubung ditutup?" },
+    { "speaker": "Jun:", "text": "Oo, takpan mo. Kung hindi, aamoy ang buong ref.", "id": "Iya, tutup. Kalau tidak, seluruh kulkas bau.", "literal": "ya, yang-ditutup kamu-punya. kalau tidak, akan-berbau si seluruh-penghubung kulkas." },
+    { "speaker": "Mia:", "text": "Ayos. Tapos, patayin natin ang ilaw bago umalis.", "id": "Beres. Lalu lampunya kita matikan sebelum berangkat.", "literal": "beres. lalu, yang-dimatikan kita-punya si lampu sebelum pergi." },
+    { "speaker": "Jun:", "text": "At i-lock mo ang pinto. Nakalimutan mo 'yon noong isang linggo.", "id": "Dan pintunya dikunci. Minggu lalu kamu lupa.", "literal": "dan yang-dikunci kamu-punya si pintu. ter-lupakan kamu-punya itu waktu satu minggu." }
+   ],
+   "notes": [
+    "**Kainin na natin ang ulam** — bendanya sudah ada di depan mata dan sudah jadi topik bersama, jadi fokus objek adalah satu-satunya pilihan yang wajar. Kalau Jun berkata *Kumain na tayo ng ulam*, ia terdengar sedang mengusulkan makan lauk apa saja, bukan lauk yang itu.",
+    "⚠️ **'Wag na nating itapon** memperlihatkan aturan yang sering dilanggar: sesudah *huwag*, pelakunya memakai deret *ng* kalau kata kerjanya berfokus objek. *Huwag mong itapon*, bukan *Huwag ka itapon*. Bandingkan dengan *Huwag kang umalis* — fokus pelaku, jadi *ka*.",
+    "**Hindi ko na kaya** = \"saya sudah tidak sanggup\". *Kaya* di sini kata kerja bantu berarti \"mampu\", dan pelakunya memakai deret *ng* (*ko*), bukan *ako*. Ini satu dari tiga *kaya* yang berbeda; dua lainnya sudah kamu temui di Unit 1.",
+    "**Bukas ko na kakainin.** Keterangan waktu boleh berdiri paling depan, tetapi pelaku *ko* tetap menempel sesudah kata pertama. Ini hukum besi bahasa Tagalog: kata pendek seperti *ko*, *mo*, *na*, *pa*, *ba* selalu duduk di tempat kedua, apa pun yang ada di tempat pertama.",
+    "**Mabilis masira** — awalan *ma-* pada *sira* menghasilkan kejadian tanpa pelaku: rusak dengan sendirinya. Unit 4 menuntaskan keluarga imbuhan ini.",
+    "**Gusto kong magpahinga** memakai penghubung *-ng* yang menempel pada *ko*. Tanpa penghubung itu kalimatnya tidak berdiri: *Gusto ko magpahinga* terdengar seperti dua potongan yang tidak disambung.",
+    "**Hugasan mo ang mga plato** memakai akhiran *-an*, bukan *-in*, karena piringnya bukan dimusnahkan melainkan dikenai pekerjaan di permukaannya. Unit 3 menerangkan pembagian tugas antara *-in* dan *-an* selengkapnya; untuk sekarang, hafalkan *hugasan* apa adanya.",
+    "**'Yong** adalah bentuk lisan dari *iyong*, dan dipakai untuk menunjuk \"yang itu\". Dalam tulisan resmi ditulis *iyong* atau *yaong*; dalam pesan singkat orang menulis *yung*. Ketiganya kata yang sama.",
+    "**I-lock mo** menunjukkan bahwa kata pinjaman Inggris masuk ke sistem fokus dengan mulus. Awalan *i-* menyorot bendanya. Bentuk fokus pelakunya *mag-lock*: *Nag-lock ako ng pinto.*"
+   ],
+   "grammars": [
+    {
+     "title": "Fokus objek dalam tiga tahapan",
+     "body": [
+      "Akhiran *-in* punya pola yang tetap. Yang berubah cuma dua hal: sisipan *-in-* untuk tahapan yang sudah dan sedang, dan penggandaan suku kata pertama untuk tahapan yang sedang dan belum."
+     ],
+     "table": {
+      "head": ["Akar", "Belum mulai", "Sedang", "Sudah", "Arti"],
+      "rows": [
+       ["kain", "kakainin", "kinakain", "kinain", "dimakan"],
+       ["luto", "lulutuin", "niluluto", "niluto", "dimasak"],
+       ["basa", "babasahin", "binabasa", "binasa", "dibaca"],
+       ["gawa", "gagawin", "ginagawa", "ginawa", "dikerjakan"],
+       ["bili", "bibilhin", "binibili", "binili", "dibeli"],
+       ["kuha", "kukunin", "kinukuha", "kinuha", "diambil"],
+       ["dala", "dadalhin", "dinadala", "dinala", "dibawa"],
+       ["sabi", "sasabihin", "sinasabi", "sinabi", "dikatakan"],
+       ["inom", "iinumin", "iniinom", "ininom", "diminum"],
+       ["patay", "papatayin", "pinapatay", "pinatay", "dimatikan"]
+      ]
+     },
+     "after": [
+      "Kalau akar katanya mulai dengan huruf hidup, sisipan *-in-* pindah ke depan menjadi awalan: *inom* → *ininom*, bukan *iniom*. Hal yang sama berlaku untuk *abot* → *inabot* dan *alis* → *inalis*.",
+      "⚠️ Empat akar berubah bentuk waktu kena *-in*: *bili* → *bilhin*, *dala* → *dalhin*, *kuha* → *kunin*, *bigay* → *ibigay* (memakai *i-*, bukan *-in*). Sisanya mengikuti pola tanpa kejutan.",
+      "Penggandaan selalu mengambil **konsonan + huruf hidup pertama akar kata**, bukan suku kata utuh: *basa* → *ba-basahin*, *sulat* → *su-sulatin*. Untuk akar berawalan huruf hidup, huruf hidupnya sendiri yang digandakan: *inom* → *i-inumin*."
+     ]
+    },
+    {
+     "title": "Gusto, ayaw, kailangan, puwede, dapat — dan fokus di belakangnya",
+     "body": [
+      "Lima kata ini bukan kata kerja biasa. Mereka tidak punya tahapan sendiri, dan kata kerja di belakangnya tetap dalam bentuk dasar. Yang menentukan bentuk pelakunya adalah **fokus kata kerja yang mengikutinya**."
+     ],
+     "table": {
+      "head": ["Fokus di belakangnya", "Bentuk pelaku", "Contoh", "Arti"],
+      "rows": [
+       ["fokus pelaku", "deret **ng** + **-ng**", "Gusto **kong** kumain.", "Saya mau makan."],
+       ["fokus objek", "deret **ng** + **-ng**", "Gusto **kong** kainin **ang** mangga.", "Saya mau memakan mangganya."],
+       ["tanpa kata kerja", "deret **ang**", "Gusto **ko** **ng** mangga.", "Saya mau mangga."],
+       ["*ayaw*", "deret **ng**", "**Ayaw** **niyang** umalis.", "Dia tidak mau pergi."],
+       ["*kailangan*", "deret **ng**", "**Kailangan** **kong** matulog.", "Saya perlu tidur."],
+       ["*puwede*", "deret **ang**", "**Puwede** **akong** umalis?", "Boleh saya pergi?"],
+       ["*dapat*", "deret **ng** atau **ang**", "**Dapat** **kang** magpahinga.", "Kamu harus istirahat."]
+      ]
+     },
+     "after": [
+      "*Ayaw ko* sering dipendekkan jadi **ayoko** dalam percakapan. *Ayoko niyan* = \"saya tidak mau yang itu\". Bentuk panjangnya tetap dipakai dalam tulisan.",
+      "⚠️ Penghubung *-ng* wajib ada sebelum kata kerjanya, dan ia menempel pada kata ganti, bukan pada kata kerjanya: *Gusto kong kumain*, bukan *Gusto ko ngkumain* dan bukan *Gusto ko kumain*.",
+      "Bandingkan dua kalimat ini baik-baik. *Gusto kong kumain ng mangga* = saya ingin makan mangga (mangga apa saja). *Gusto kong kainin ang mangga* = saya ingin memakan mangga itu (yang sudah ada di meja). Perbedaan yang di bahasa Indonesia butuh kata \"itu\", di bahasa Tagalog cukup lewat bentuk kata kerjanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Usapan B — Sa tindahan ng damit",
+   "intro": "Di sebuah toko pakaian di Divisoria. Ana mencari kemeja, tetapi warnanya belum pas.",
+   "lines": [
+    { "speaker": "Ana:", "text": "Ate, puwede ko bang sukatin ito?", "id": "Mbak, boleh saya coba ini?", "literal": "kakak-perempuan, boleh aku-punya apakah-penghubung yang-diukur ini?" },
+    { "speaker": "Tindera:", "text": "Oo naman. Nandoon po ang fitting room.", "id": "Boleh saja. Ruang gantinya di sana, Bu.", "literal": "ya giliran. di-sana hormat si ruang-ganti." },
+    { "speaker": "Ana:", "text": "Ang kulay, medyo maitim. May iba pa ba kayong kulay?", "id": "Warnanya agak gelap. Ada warna lain?", "literal": "si warna, agak gelap. ada lain masih apakah kalian-punya-penghubung warna?" },
+    { "speaker": "Tindera:", "text": "Meron po. Kukunin ko lang sa likod.", "id": "Ada, Bu. Saya ambilkan dulu di belakang.", "literal": "ada hormat. yang-akan-diambil aku-punya saja di belakang." },
+    { "speaker": "Ana:", "text": "Salamat. Itabi niyo muna ito, ha?", "id": "Terima kasih. Yang ini disisihkan dulu ya?", "literal": "terima-kasih. yang-disimpan kalian-punya dahulu ini, ya?" },
+    { "speaker": "Tindera:", "text": "Sige po. Anong size po ang kailangan ninyo?", "id": "Baik, Bu. Ukuran berapa yang Ibu butuhkan?", "literal": "baiklah hormat. apa-penghubung ukuran hormat si diperlukan kalian-punya?" },
+    { "speaker": "Ana:", "text": "Medium. Kung wala, malaki na lang.", "id": "Medium. Kalau tidak ada, yang besar saja.", "literal": "sedang. kalau tiada, besar sudah saja." },
+    { "speaker": "Tindera:", "text": "Sandali lang po. Hahanapin ko sa stock.", "id": "Sebentar, Bu. Saya carikan di stok.", "literal": "sebentar saja hormat. yang-akan-dicari aku-punya di persediaan." }
+   ],
+   "notes": [
+    "**Puwede ko bang sukatin** — dua partikel pendek berbaris rapi sesudah kata pertama: *ko* lalu *ba*, lalu penghubung *-ng* menempel pada *ba*. Urutan ini tetap dan tidak boleh dibalik.",
+    "**Ate** dan **kuya** dipakai untuk menyapa orang tak dikenal yang usianya sebaya atau sedikit lebih tua, persis seperti \"mbak\" dan \"mas\". Untuk yang jauh lebih tua dipakai *tita*, *tito*, *nanay*, *tatay*, atau *lola* dan *lolo*.",
+    "**Kukunin ko lang sa likod** memakai fokus objek walaupun barangnya belum disebut, karena penjualnya sudah tahu persis barang apa yang dimaksud. Ini pemakaian yang lazim: **fokus objek dipilih begitu barangnya sudah pasti di kepala kedua pihak**, bukan hanya kalau sudah disebut dengan kata.",
+    "⚠️ **Itabi niyo** memakai *niyo* (deret *ng*), bukan *kayo*. Kata kerjanya berfokus objek, jadi pelakunya wajib deret *ng*. Kesalahan *Itabi kayo* mengubah artinya jadi \"menyingkirlah kalian\"."
+   ],
+   "grammars": [
+    {
+     "title": "Dua cara menyuruh, dua rasa",
+     "body": [
+      "Bahasa Indonesia cuma punya satu bentuk perintah. Bahasa Tagalog punya dua, dan bedanya bukan sopan santun melainkan **apa yang sedang kamu urus**."
+     ],
+     "table": {
+      "head": ["Fokus pelaku", "Fokus objek", "Bedanya"],
+      "rows": [
+       ["**Kumain ka.**", "**Kainin mo.**", "\"Makanlah\" vs \"makan yang itu\""],
+       ["**Bumili ka ng gatas.**", "**Bilhin mo ang gatas.**", "beli susu vs beli susunya"],
+       ["**Maglinis ka.**", "**Linisin mo ang mesa.**", "bersih-bersih vs bersihkan mejanya"],
+       ["**Magbasa ka.**", "**Basahin mo ito.**", "membacalah vs baca ini"],
+       ["**Tumawag ka.**", "**Tawagan mo si Ana.**", "meneleponlah vs telepon Ana"],
+       ["**Huwag kang umalis.**", "**Huwag mong alisin.**", "jangan pergi vs jangan disingkirkan"]
+      ]
+     },
+     "after": [
+      "Kalau ada benda tertentu yang kamu tunjuk, **fokus objek hampir selalu yang benar**. Perintah berfokus pelaku dipakai untuk kegiatan tanpa sasaran jelas.",
+      "Untuk melunakkan perintah, tambahkan *na lang* (\"begini saja\"), *muna* (\"dulu\"), atau *nga* (\"coba\"): *Kainin mo na lang.* / *Basahin mo muna.* / *Abutin mo nga.* Unit 14 membahas permintaan halus dengan *paki-*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kapan fokus objek wajib",
+   "blocks": [
+    { "type": "p", "text": "Di Unit 1 kamu belajar bahwa fokus adalah pilihan. Itu benar sebagian. Ada lima keadaan yang tidak memberimu pilihan sama sekali — dan penutur asli tidak pernah melanggarnya." },
+    { "type": "tabel", "head": ["Keadaan", "Contoh", "Kenapa"], "rows": [
+      ["bendanya ditunjuk dengan *ito/iyan/iyon*", "**Kainin mo ito.**", "benda yang ditunjuk selalu tertentu"],
+      ["bendanya sudah disebut sebelumnya", "**Binasa ko na ang libro.**", "sudah jadi topik bersama"],
+      ["bendanya bernama diri", "**Tinawagan ko si Ana.**", "nama orang tidak bisa jadi *ng* yang tak tentu"],
+      ["bendanya milik seseorang", "**Hiniram ko ang laptop mo.**", "kepemilikan membuatnya tertentu"],
+      ["jawaban atas \"apa yang kamu…\"", "**Ginawa ko ang ulat.**", "pertanyaannya sudah menyorot bendanya"]
+     ] },
+    { "type": "p", "text": "Bandingkan dengan kebalikannya. Kalau bendanya **tidak tentu** — \"sebuah\", \"beberapa\", \"apa saja\" — fokus pelakunya yang wajar: *Bumili ako ng gatas* (beli susu, susu apa saja). Memakai *Binili ko ang gatas* di situ akan terdengar seolah kamu membicarakan susu tertentu yang lawan bicaramu seharusnya sudah tahu." },
+    { "type": "kotak", "title": "Uji cepat sebelum kamu bicara", "items": [
+      "Bisakah kata bendanya kamu dahului dengan **\"itu\"** dalam bahasa Indonesia tanpa terdengar aneh? Kalau bisa, pakai fokus objek.",
+      "Apakah kamu bisa menunjuknya dengan jari saat ini juga? Fokus objek.",
+      "Apakah kamu baru menyebutnya untuk pertama kali dan bendanya bisa diganti barang serupa? Fokus pelaku.",
+      "Kalau masih ragu, dengarkan pertanyaan lawan bicaramu. Fokusnya hampir selalu sudah menentukan jawabanmu."
+     ] }
+   ]
+  },
+  {
+   "title": "Kata kerja rumah tangga",
+   "blocks": [
+    { "type": "p", "text": "Kata kerja berikut muncul di hampir setiap percakapan rumah. Hafalkan langsung dalam bentuk perintahnya, karena begitulah kamu akan paling sering mendengarnya." },
+    { "type": "tabel", "head": ["Perintah", "Cara baca", "Arti", "Fokus pelaku"], "rows": [
+      ["Kainin mo.", "ka-I-nin mo", "Makan itu.", "kumain"],
+      ["Inumin mo.", "i-NU-min mo", "Minum itu.", "uminom"],
+      ["Lutuin mo.", "lu-tu-IN mo", "Masak itu.", "magluto"],
+      ["Hugasan mo.", "hu-GA-san mo", "Cuci itu.", "maghugas"],
+      ["Linisin mo.", "li-NI-sin mo", "Bersihkan itu.", "maglinis"],
+      ["Walisin mo.", "wa-LI-sin mo", "Sapu itu.", "magwalis"],
+      ["Labhan mo.", "LAB-han mo", "Cuci (pakaian) itu.", "maglaba"],
+      ["Ilagay mo.", "i-la-GAY mo", "Taruh itu.", "maglagay"],
+      ["Itapon mo.", "i-TA-pon mo", "Buang itu.", "magtapon"],
+      ["Itabi mo.", "i-ta-BI mo", "Simpan itu.", "magtabi"],
+      ["Buksan mo.", "buk-SAN mo", "Buka itu.", "magbukas"],
+      ["Isara mo.", "i-sa-RA mo", "Tutup itu.", "magsara"],
+      ["Patayin mo.", "pa-ta-YIN mo", "Matikan itu.", "magpatay"],
+      ["Buhayin mo.", "bu-ha-YIN mo", "Nyalakan itu.", "magbuhay"]
+     ] },
+    { "type": "p", "text": "⚠️ *Patayin* berarti \"matikan\" untuk lampu dan mesin, tetapi juga \"bunuh\" untuk makhluk hidup. Konteksnya yang membedakan, dan tidak pernah ada yang salah paham. Untuk menyalakan lampu, orang lebih sering berkata *buksan mo ang ilaw* daripada *buhayin*." }
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "ulam", "baca": "U-lam", "id": "lauk" },
+  { "tl": "kanin", "baca": "KA-nin", "id": "nasi" },
+  { "tl": "tira", "baca": "ti-RA", "id": "sisa" },
+  { "tl": "busog", "baca": "bu-SOG", "id": "kenyang" },
+  { "tl": "gutom", "baca": "gu-TOM", "id": "lapar" },
+  { "tl": "masira", "baca": "ma-si-RA", "id": "rusak, basi" },
+  { "tl": "lalagyan", "baca": "la-lag-YAN", "id": "wadah" },
+  { "tl": "aparador", "baca": "a-pa-ra-DOR", "id": "lemari" },
+  { "tl": "takpan", "baca": "TAK-pan", "id": "tutup (dengan penutup)" },
+  { "tl": "umamoy", "baca": "u-ma-MOY", "id": "berbau, tercium" },
+  { "tl": "magpahinga", "baca": "mag-pa-hi-NGA", "id": "beristirahat" },
+  { "tl": "sukatin", "baca": "su-KA-tin", "id": "mencoba, mengukur" },
+  { "tl": "maitim", "baca": "ma-i-TIM", "id": "gelap, hitam" },
+  { "tl": "maputi", "baca": "ma-pu-TI", "id": "terang, putih" },
+  { "tl": "kulay", "baca": "ku-LAY", "id": "warna" },
+  { "tl": "damit", "baca": "da-MIT", "id": "pakaian" },
+  { "tl": "hiramin", "baca": "hi-RA-min", "id": "meminjam" },
+  { "tl": "isauli", "baca": "i-sa-U-li", "id": "mengembalikan" },
+  { "tl": "hanapin", "baca": "ha-NA-pin", "id": "mencari" },
+  { "tl": "abutin", "baca": "a-BU-tin", "id": "meraih, mengambilkan" },
+  { "tl": "magaling", "baca": "ma-ga-LING", "id": "pandai, hebat" },
+  { "tl": "muna", "baca": "MU-na", "id": "dulu, sementara" },
+  { "tl": "nga", "baca": "nga", "id": "coba; memang" },
+  { "tl": "medyo", "baca": "MED-yo", "id": "agak" },
+  { "tl": "kaya", "baca": "ka-YA", "id": "sanggup, mampu" },
+  { "tl": "nakalimutan", "baca": "na-ka-li-MU-tan", "id": "terlupakan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk fokus objek yang tepat sesuai tahapannya.",
+   "items": [
+    "____ ko na ang libro kahapon. (basa, sudah)",
+    "____ pa niya ang ulat ngayon. (gawa, sedang)",
+    "____ namin ang gulay mamaya. (luto, belum mulai)",
+    "____ mo na ba ang gamot? (inom, sudah)",
+    "____ ko ang mga plato tuwing gabi. (hugas, sedang)",
+    "____ ni Ben ang laptop bukas. (dala, belum mulai)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi perintah berfokus objek. Contoh: *Kumain ka ng ulam.* menjadi *Kainin mo ang ulam.*",
+   "items": [
+    "Uminom ka ng gamot.",
+    "Bumili ka ng tinapay.",
+    "Maglinis ka ng kuwarto.",
+    "Magtapon ka ng basura.",
+    "Tumawag ka kay Ana."
+   ]
+  },
+  {
+   "prompt": "Sambungkan dengan *gusto*, *ayaw*, *kailangan*, *puwede*, atau *dapat* sesuai arti dalam kurung, dan pasang penghubung yang benar.",
+   "items": [
+    "ako, matulog (perlu)",
+    "siya, umalis (tidak mau)",
+    "ka, magpahinga (harus)",
+    "ako, kainin ang mangga (ingin)",
+    "kami, umupo dito (boleh)"
+   ]
+  },
+  {
+   "prompt": "Tentukan fokus mana yang wajib, lalu tulis kalimatnya.",
+   "items": [
+    "Saya sudah membaca bukunya.",
+    "Saya membeli roti tadi pagi.",
+    "Tolong ambilkan garam itu.",
+    "Dia menelepon Ana kemarin.",
+    "Kami memasak sayur setiap hari."
+   ]
+  },
+  {
+   "prompt": "Perbaiki kalimatnya. Tiap baris memuat satu kesalahan bentuk atau kata ganti.",
+   "items": [
+    "Huwag ka itapon ang pagkain.",
+    "Gusto ko kumain ng mangga.",
+    "Itabi kayo ang damit ko.",
+    "Kailangan ako matulog.",
+    "Kinuha ako ang susi."
+   ]
+  }
+ ],
+ "answers": [
+  "Binasa — ginagawa — Lulutuin — Ininom — Hinuhugasan — Dadalhin",
+  "Inumin mo ang gamot. — Bilhin mo ang tinapay. — Linisin mo ang kuwarto. — Itapon mo ang basura. — Tawagan mo si Ana.",
+  "Kailangan kong matulog. — Ayaw niyang umalis. — Dapat kang magpahinga. — Gusto kong kainin ang mangga. — Puwede kaming umupo dito.",
+  "Binasa ko na ang libro. — Bumili ako ng tinapay kaninang umaga. — Abutin mo nga ang asin. — Tinawagan niya si Ana kahapon. — Nagluluto kami ng gulay araw-araw.",
+  "Huwag mong itapon ang pagkain. — Gusto kong kumain ng mangga. — Itabi ninyo ang damit ko. — Kailangan kong matulog. — Kinuha ko ang susi."
+ ],
+ "wave": "Ulangi **unit 1**: ambil kelima kalimat dari latihan terakhir unit 1, lalu ubah semuanya jadi perintah berfokus objek. Perhatikan bahwa pelakunya ikut berubah dari deret *ang* ke deret *ng*."
+}
