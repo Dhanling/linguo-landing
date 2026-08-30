@@ -1,0 +1,593 @@
+{
+ "title": "Di anak kalimat, ikke pindah ke depan",
+ "title_target": "Ordstilling i leddsetninger",
+ "goal": "Memasang satu aturan yang mengubah seluruh bahasa Norwegiamu: begitu kalimat punya anak kalimat, kata *ikke* — dan semua kata sejenisnya — melompat ke depan kata kerja.",
+ "bekal": [
+  "menyusun anak kalimat dengan letak *ikke* yang benar",
+  "mengenali sepuluh penyambung yang membuat anak kalimat",
+  "membalik induk kalimat ketika anak kalimat berdiri di depan",
+  "memakai *om* untuk «apakah»"
+ ],
+ "wave": "Ulangi **unit 2** dulu, halaman tertutup: ceritakan bagaimana kamu sampai di kota tempatmu tinggal sekarang, satu menit penuh, dengan minimal tiga kata perangkai (*først*, *så*, *etterpå*, *til slutt*).",
+ "dialogs": [
+  {
+   "title": "Dialog — Kan du ta lørdagsvakta?",
+   "intro": "Budi bekerja paruh waktu di sebuah kafe di Grünerløkka. Kari, atasannya, menelepon pada Kamis sore. Hitung berapa kali kata *ikke* muncul — dan perhatikan bahwa letaknya tidak selalu sama.",
+   "lines": [
+    {
+     "speaker": "Kari:",
+     "text": "Hei, Budi. Jeg lurer på om du kan jobbe på lørdag.",
+     "id": "Halo, Budi. Aku mau tanya, Sabtu kamu bisa kerja nggak?",
+     "literal": "hai, Budi. saya bertanya-tanya pada apakah kamu bisa bekerja pada Sabtu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeg vil gjerne, men jeg tror ikke at jeg rekker det.",
+     "id": "Aku sih mau, tapi kayaknya nggak sempat.",
+     "literal": "saya mau dengan-senang-hati, tetapi saya percaya tidak bahwa saya sempat itu."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Hvorfor ikke?",
+     "id": "Kenapa nggak?",
+     "literal": "mengapa tidak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Fordi jeg ikke er ferdig med oppgaven min.",
+     "id": "Soalnya tugasku belum kelar.",
+     "literal": "karena saya tidak adalah selesai dengan tugas-itu milikku."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Når skal du levere den?",
+     "id": "Kapan harus dikumpulkan?",
+     "literal": "kapan akan kamu menyerahkan itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mandag. Og hvis jeg ikke leverer i tide, mister jeg plassen på kurset.",
+     "id": "Senin. Dan kalau aku telat, aku kehilangan tempat di kursusnya.",
+     "literal": "Senin. dan jika saya tidak menyerahkan di waktu, kehilangan saya tempat-itu pada kursus-itu."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Det forstår jeg godt. Men vet du om Ahmad kan ta vakta?",
+     "id": "Aku ngerti banget. Tapi kamu tahu nggak Ahmad bisa ambil shiftnya?",
+     "literal": "itu memahami saya baik. tetapi tahu kamu apakah Ahmad bisa mengambil shift-itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeg vet at han ikke har planer i helga. Jeg kan spørre.",
+     "id": "Setahuku dia nggak ada acara akhir pekan ini. Nanti aku tanya.",
+     "literal": "saya tahu bahwa dia tidak punya rencana di akhir-pekan-itu. saya bisa bertanya."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Gjør det. Og si at jeg betaler helgetillegg.",
+     "id": "Coba tanya. Bilang juga aku bayar tunjangan akhir pekan.",
+     "literal": "lakukan itu. dan katakan bahwa saya membayar akhir-pekan-tambahan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da tror jeg ikke at han sier nei.",
+     "id": "Kalau gitu kayaknya dia nggak bakal nolak.",
+     "literal": "kalau-begitu percaya saya tidak bahwa dia berkata tidak."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Bra. Ring meg når du har snakket med ham.",
+     "id": "Bagus. Telepon aku kalau sudah ngomong sama dia.",
+     "literal": "baik. telepon saya ketika kamu punya berbicara dengan dia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Skal bli. Beklager at jeg ikke kan komme selv.",
+     "id": "Siap. Maaf ya aku sendiri nggak bisa datang.",
+     "literal": "akan menjadi. maaf bahwa saya tidak bisa datang sendiri."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Det går fint. Så lenge du sier fra i god tid, er alt greit.",
+     "id": "Nggak apa-apa. Selama kamu kasih kabar jauh-jauh hari, aman.",
+     "literal": "itu berjalan baik. selama kamu berkata dari di baik waktu, adalah semua oke."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Takk. Det setter jeg pris på.",
+     "id": "Makasih. Aku hargai banget.",
+     "literal": "terima-kasih. itu menaruh saya harga pada."
+    },
+    {
+     "speaker": "Kari:",
+     "text": "Lykke til med oppgaven!",
+     "id": "Semoga lancar tugasnya!",
+     "literal": "keberuntungan ke dengan tugas-itu!"
+    }
+   ],
+   "notes": [
+    "**Bandingkan dua baris ini, dan seluruh unit selesai.** *Jeg tror **ikke** at…* — induk kalimat, *ikke* sesudah kata kerja. *…fordi jeg **ikke** er ferdig* — anak kalimat, *ikke* sebelum kata kerja. Kalimat yang sama, kata yang sama, letak yang berlawanan.",
+    "***Jeg lurer på om…*** adalah cara paling halus untuk bertanya dalam bahasa Norwegia — harfiahnya «saya bertanya-tanya apakah». Jauh lebih sopan daripada bertanya langsung, dan sangat sering dipakai di e-mail kerja.",
+    "***Om* berarti «apakah»** ketika ia menyambung anak kalimat: *Vet du **om** han kan?* Jangan dikacaukan dengan *om* yang berarti «tentang» (*en bok om Norge*) atau «pada» dalam keterangan waktu (*om kvelden*).",
+    "***Hvis jeg ikke leverer i tide, mister jeg plassen.*** Anak kalimat berdiri di depan, jadi ia mengisi kotak pertama induk kalimat — dan induk kalimatnya **terbalik**: *mister jeg*, bukan *jeg mister*. Ini akibat langsung dari aturan V2 yang sudah kamu punya sejak A1.",
+    "***Skal bli*** adalah singkatan dari *det skal bli gjort* — «siap, akan saya kerjakan». Ungkapan tetap di tempat kerja.",
+    "***Det setter jeg pris på*** = «saya menghargainya». Kalimat ini membuka dengan objek *det*, jadi pelakunya bergeser ke belakang kata kerja. Kata *på* di ujung adalah bagian dari kata kerjanya (*å sette pris på*), bukan kata depan yang tercecer."
+   ],
+   "grammars": [
+    {
+     "title": "Skema anak kalimat — hafalkan lima kotaknya",
+     "body": [
+      "Setiap anak kalimat bahasa Norwegia muat dalam lima kotak, selalu dalam urutan ini. Kotak ketiga adalah yang membedakannya dari induk kalimat."
+     ],
+     "table": {
+      "head": [
+       "1. Penyambung",
+       "2. Pelaku",
+       "3. Keterangan",
+       "4. Kata kerja",
+       "5. Sisanya"
+      ],
+      "rows": [
+       [
+        "fordi",
+        "jeg",
+        "**ikke**",
+        "er",
+        "ferdig."
+       ],
+       [
+        "at",
+        "han",
+        "**alltid**",
+        "kommer",
+        "for sent."
+       ],
+       [
+        "hvis",
+        "du",
+        "**virkelig**",
+        "vil",
+        "lære norsk."
+       ],
+       [
+        "når",
+        "vi",
+        "**endelig**",
+        "får",
+        "svar."
+       ],
+       [
+        "om",
+        "hun",
+        "**kanskje**",
+        "kan",
+        "hjelpe oss."
+       ],
+       [
+        "som",
+        "jeg",
+        "**aldri**",
+        "har",
+        "møtt før."
+       ]
+      ]
+     },
+     "after": [
+      "Kotak 3 boleh kosong — dan kalau ia kosong, anak kalimat kelihatan persis seperti induk kalimat biasa. Itu sebabnya aturan ini sering baru terasa ketika ada *ikke* di dalamnya.",
+      "⚠️ **Tidak ada inversi di anak kalimat.** Pelaku selalu duluan, kata kerja menyusul. *fordi **jeg ikke er***, bukan *fordi er jeg ikke*. Ini kesalahan yang paling sering terdengar dari penutur bahasa Jerman dan Belanda.",
+      "Kalau ada dua kata kerja, yang pindah tempat cuma yang pertama: *…fordi jeg **ikke kan** komme.* Keterangan tetap berdiri di depan **kata kerja pertama**."
+     ]
+    },
+    {
+     "title": "Sepuluh penyambung yang membuat anak kalimat",
+     "body": [
+      "Begitu salah satu dari sepuluh kata ini muncul, kotak nomor tiga aktif dan susunan kalimat berubah. Hafalkan daftarnya sebagai daftar — inilah pemicu aturannya."
+     ],
+     "table": {
+      "head": [
+       "Norsk",
+       "Artinya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**at**",
+        "bahwa",
+        "Jeg vet **at** han ikke kommer."
+       ],
+       [
+        "**om**",
+        "apakah",
+        "Jeg vet ikke **om** han kommer."
+       ],
+       [
+        "**fordi**",
+        "karena",
+        "…**fordi** jeg ikke har tid."
+       ],
+       [
+        "**hvis / dersom**",
+        "kalau, jika",
+        "**Hvis** du ikke vil, er det greit."
+       ],
+       [
+        "**når**",
+        "ketika (berulang / nanti)",
+        "**Når** jeg ikke jobber, sover jeg."
+       ],
+       [
+        "**da**",
+        "ketika (sekali, dulu)",
+        "**Da** jeg ikke hadde penger…"
+       ],
+       [
+        "**siden**",
+        "karena, sejak",
+        "**Siden** du ikke svarte, dro jeg."
+       ],
+       [
+        "**mens**",
+        "sementara, selagi",
+        "**Mens** hun ikke var hjemme…"
+       ],
+       [
+        "**før**",
+        "sebelum",
+        "**Før** jeg ikke visste det…"
+       ],
+       [
+        "**som**",
+        "yang",
+        "en mann **som** ikke snakker norsk"
+       ]
+      ]
+     },
+     "after": [
+      "Kata *og*, *men*, *for*, *eller*, dan *så* **tidak** membuat anak kalimat — mereka menyambung dua kalimat setara, jadi susunan di kanan dan kirinya sama-sama susunan induk kalimat: *Jeg kommer, men jeg **kan ikke** bli lenge.*",
+      "Perbedaan ini penting justru karena *fordi* dan *for* sama-sama berarti «karena». *…**fordi** jeg **ikke** har tid* lawan *…**for** jeg **har ikke** tid.* Unit 5 membahas keduanya berdampingan."
+     ]
+    },
+    {
+     "title": "Anak kalimat di depan membalik induk kalimatnya",
+     "body": [
+      "Kalau anak kalimat berdiri paling depan, ia mengisi kotak pertama — dan kotak kedua tetap milik kata kerja induk kalimatnya. Pelaku bergeser."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Kalimat",
+       "Perhatikan"
+      ],
+      "rows": [
+       [
+        "Induk dulu",
+        "Jeg ringer deg **når jeg kommer fram**.",
+        "susunan biasa"
+       ],
+       [
+        "Anak dulu",
+        "**Når jeg kommer fram**, ringer jeg deg.",
+        "*ringer jeg*"
+       ],
+       [
+        "Induk dulu",
+        "Vi drar ikke **hvis det regner**.",
+        "susunan biasa"
+       ],
+       [
+        "Anak dulu",
+        "**Hvis det regner**, drar vi ikke.",
+        "*drar vi*"
+       ],
+       [
+        "Induk dulu",
+        "Han var sliten **fordi han ikke sov**.",
+        "susunan biasa"
+       ],
+       [
+        "Anak dulu",
+        "**Fordi han ikke sov**, var han sliten.",
+        "*var han*"
+       ]
+      ]
+     },
+     "after": [
+      "Koma di antara keduanya **wajib** kalau anak kalimat berdiri di depan, dan **boleh dihilangkan** kalau ia di belakang. Aturan yang sama berlaku di bahasa Indonesia, jadi ini gratis.",
+      "Bunyinya juga berubah: anak kalimat di depan diucapkan dengan nada naik di ujung, lalu berhenti sejenak. Latih dengan lantang — susunan ini terdengar jauh lebih matang daripada selalu memakai susunan biasa."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata mana saja yang ikut pindah?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bukan cuma *ikke*. Ada satu kelompok kata keterangan — namanya *setningsadverbial*, keterangan kalimat — yang seluruhnya mengikuti aturan yang sama: di induk kalimat mereka berdiri **sesudah** kata kerja pertama, di anak kalimat **sebelum**nya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Norsk",
+      "Artinya",
+      "Induk kalimat",
+      "Anak kalimat"
+     ],
+     "rows": [
+      [
+       "ikke",
+       "tidak",
+       "Jeg kommer **ikke**.",
+       "…at jeg **ikke** kommer."
+      ],
+      [
+       "aldri",
+       "tidak pernah",
+       "Han sier **aldri** noe.",
+       "…at han **aldri** sier noe."
+      ],
+      [
+       "alltid",
+       "selalu",
+       "Hun er **alltid** sen.",
+       "…fordi hun **alltid** er sen."
+      ],
+      [
+       "ofte",
+       "sering",
+       "Vi spiser **ofte** ute.",
+       "…når vi **ofte** spiser ute."
+      ],
+      [
+       "kanskje",
+       "mungkin",
+       "Det blir **kanskje** regn.",
+       "…om det **kanskje** blir regn."
+      ],
+      [
+       "dessverre",
+       "sayangnya",
+       "Jeg kan **dessverre** ikke.",
+       "…at jeg **dessverre** ikke kan."
+      ],
+      [
+       "sikkert",
+       "pasti, tentunya",
+       "Han har **sikkert** glemt det.",
+       "…at han **sikkert** har glemt det."
+      ],
+      [
+       "bare",
+       "cuma",
+       "Jeg vil **bare** hjelpe.",
+       "…at jeg **bare** vil hjelpe."
+      ],
+      [
+       "allerede",
+       "sudah",
+       "De har **allerede** dratt.",
+       "…siden de **allerede** har dratt."
+      ],
+      [
+       "virkelig",
+       "sungguh",
+       "Du må **virkelig** prøve.",
+       "…hvis du **virkelig** må prøve."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan baris *dessverre*: kalau dua keterangan bertemu, urutannya tetap sama dan keduanya sama-sama pindah — *…at jeg **dessverre ikke** kan.*"
+    }
+   ]
+  },
+  {
+   "title": "Sepuluh kalimat yang harus jadi refleks",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Aturan ini tidak akan pernah menjadi otomatis lewat penjelasan. Ia menjadi otomatis lewat pengulangan. Ucapkan sepuluh kalimat berikut dengan lantang, tiap hari, sampai kamu tidak lagi berpikir sebelum mengucapkannya."
+    },
+    {
+     "type": "list",
+     "items": [
+      "Jeg tror **ikke** at jeg **rekker** det.",
+      "Beklager at jeg **ikke kan** komme.",
+      "Jeg vet **ikke** om han **kommer**.",
+      "Det er fordi jeg **ikke har** tid.",
+      "Hvis du **ikke vil**, er det helt greit.",
+      "Han sa at han **ikke visste** det.",
+      "Siden jeg **ikke fikk** svar, dro jeg hjem.",
+      "Jeg håper at det **ikke blir** regn.",
+      "Er det noen som **ikke har** spist?",
+      "Når jeg **ikke jobber**, sover jeg lenge."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Uji dirimu tanpa buku",
+     "items": [
+      "Ambil sepuluh kalimat biasa yang kamu sudah bisa (*Jeg kommer ikke. Han har ikke tid. Vi drar ikke i dag.*), lalu tempelkan *Jeg tror at…* di depannya.",
+      "Kalau *ikke* tidak melompat, kamu belum selesai. Ulangi besok.",
+      "Setelah dua minggu, aturan ini berhenti terasa seperti aturan — dan mulai terasa salah kalau dilanggar. Itulah tandanya sudah masuk."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "no": "å lure på",
+   "baca": "o LU-re po",
+   "id": "bertanya-tanya, penasaran"
+  },
+  {
+   "no": "gjerne",
+   "baca": "YÆR-ne",
+   "id": "dengan senang hati"
+  },
+  {
+   "no": "ferdig",
+   "baca": "FÆR-di",
+   "id": "selesai"
+  },
+  {
+   "no": "ei oppgave",
+   "baca": "OP-ga-ve",
+   "id": "tugas"
+  },
+  {
+   "no": "å levere",
+   "baca": "o le-VE-re",
+   "id": "menyerahkan"
+  },
+  {
+   "no": "i tide",
+   "baca": "i TI-de",
+   "id": "tepat waktu"
+  },
+  {
+   "no": "å miste",
+   "baca": "o MIS-te",
+   "id": "kehilangan"
+  },
+  {
+   "no": "en plass",
+   "baca": "plas",
+   "id": "tempat"
+  },
+  {
+   "no": "et kurs",
+   "baca": "kursy",
+   "id": "kursus"
+  },
+  {
+   "no": "ei vakt",
+   "baca": "vakt",
+   "id": "shift, giliran jaga"
+  },
+  {
+   "no": "en plan",
+   "baca": "plan",
+   "id": "rencana"
+  },
+  {
+   "no": "et tillegg",
+   "baca": "TIL-leg",
+   "id": "tunjangan, tambahan"
+  },
+  {
+   "no": "å beklage",
+   "baca": "o be-KLA-ge",
+   "id": "meminta maaf"
+  },
+  {
+   "no": "å si fra",
+   "baca": "o si fra",
+   "id": "memberi kabar"
+  },
+  {
+   "no": "så lenge",
+   "baca": "so LENG-e",
+   "id": "selama"
+  },
+  {
+   "no": "å sette pris på",
+   "baca": "o SET-te pris po",
+   "id": "menghargai"
+  },
+  {
+   "no": "endelig",
+   "baca": "EN-de-li",
+   "id": "akhirnya"
+  },
+  {
+   "no": "sikkert",
+   "baca": "SIK-kert",
+   "id": "pasti, tentunya"
+  },
+  {
+   "no": "virkelig",
+   "baca": "VIR-ke-li",
+   "id": "sungguh"
+  },
+  {
+   "no": "dessverre",
+   "baca": "des-VÆR-re",
+   "id": "sayangnya"
+  },
+  {
+   "no": "å håpe",
+   "baca": "o HO-pe",
+   "id": "berharap"
+  },
+  {
+   "no": "sliten",
+   "baca": "SLI-ten",
+   "id": "capek"
+  },
+  {
+   "no": "greit",
+   "baca": "grayt",
+   "id": "tidak apa-apa, oke"
+  },
+  {
+   "no": "en sjef",
+   "baca": "syef",
+   "id": "atasan, bos"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah jadi anak kalimat dengan *at*. Perhatikan letak *ikke*.",
+   "items": [
+    "Han kommer ikke. → Jeg tror ____",
+    "Jeg har ikke tid. → Beklager ____",
+    "Hun er ikke hjemme. → Han sier ____",
+    "De vil ikke hjelpe. → Vi vet ____",
+    "Det blir ikke regn. → Jeg håper ____"
+   ]
+  },
+  {
+   "prompt": "Sambung kedua kalimat dengan penyambung dalam kurung. Anak kalimat di belakang.",
+   "items": [
+    "Jeg kan ikke komme. Jeg har ikke tid. (fordi)",
+    "Han sa noe. Han visste det ikke. (at)",
+    "Vi drar. Det regner ikke. (hvis)",
+    "Jeg vet ikke noe. Hun kommer. (om)",
+    "Jeg dro hjem. Jeg fikk ikke svar. (siden)",
+    "Det er rart. Du liker ikke kaffe. (at)"
+   ]
+  },
+  {
+   "prompt": "Balik urutannya: taruh anak kalimat di depan, dan betulkan induk kalimatnya.",
+   "items": [
+    "Jeg ringer deg når jeg kommer fram.",
+    "Vi drar ikke hvis det regner.",
+    "Han var sliten fordi han ikke sov.",
+    "Alt er greit så lenge du sier fra.",
+    "Jeg blir hjemme siden jeg ikke har penger."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Norwegia.",
+   "items": [
+    "Aku nggak yakin bisa sempat.",
+    "Soalnya tugasku belum selesai.",
+    "Kamu tahu nggak Ahmad bisa ambil shiftnya?",
+    "Maaf ya aku sendiri nggak bisa datang.",
+    "Kalau kamu kasih kabar jauh-jauh hari, semuanya aman.",
+    "Aku nggak tahu dia mungkin datang atau nggak."
+   ]
+  }
+ ],
+ "answers": [
+  "Jeg tror at han ikke kommer. — Beklager at jeg ikke har tid. — Han sier at hun ikke er hjemme. — Vi vet at de ikke vil hjelpe. — Jeg håper at det ikke blir regn.",
+  "Jeg kan ikke komme fordi jeg ikke har tid. — Han sa at han ikke visste det. — Vi drar hvis det ikke regner. — Jeg vet ikke om hun kommer. — Jeg dro hjem siden jeg ikke fikk svar. — Det er rart at du ikke liker kaffe.",
+  "Når jeg kommer fram, ringer jeg deg. — Hvis det regner, drar vi ikke. — Fordi han ikke sov, var han sliten. — Så lenge du sier fra, er alt greit. — Siden jeg ikke har penger, blir jeg hjemme.",
+  "Jeg tror ikke at jeg rekker det. — Det er fordi jeg ikke er ferdig med oppgaven min. — Vet du om Ahmad kan ta vakta? — Beklager at jeg ikke kan komme selv. — Hvis du sier fra i god tid, er alt greit. — Jeg vet ikke om hun kanskje kommer."
+ ]
+}
