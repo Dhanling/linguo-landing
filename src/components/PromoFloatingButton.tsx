@@ -24,8 +24,6 @@ import { usePromoMerdeka } from "@/components/PromoMerdeka";
 // [kuis-layar-bersih-v1] /kuis ikut: sticker ini TIDAK bisa ditutup, dan di layar
 // soal ia cuma menghalangi tombol navigasi tanpa pernah jadi klik.
 const EXCLUDED = [
-  // [life-dashboard-v1] /life = dashboard privat, tidak boleh kena overlay promo.
-  "/life",
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
 ];
 

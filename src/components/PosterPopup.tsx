@@ -39,7 +39,6 @@ const CTA_LABEL = "Lihat Jadwal & Daftar";
 const DELAY_MS = 1200;
 
 const EXCLUDED = [
-  "/life",          // [life-dashboard-v1] dashboard privat — bebas dari overlay promo
   "/akun",
   "/student",
   "/laporan-b2b",

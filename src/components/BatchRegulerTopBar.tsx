@@ -21,8 +21,6 @@ import { isPromoActive } from "@/lib/promoMerdeka";
 // Halaman ber-chrome sendiri (dashboard siswa, laporan, form, pengerjaan kuis)
 // dilewati — daftar yang sama dengan PromoTopBar.
 const EXCLUDED = [
-  // [life-dashboard-v1] /life = dashboard privat, tidak boleh kena overlay promo.
-  "/life",
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
 ];
 

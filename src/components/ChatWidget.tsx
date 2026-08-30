@@ -457,9 +457,7 @@ export default function ChatWidget() {
   // dasar layar HP. Bantuan bukan yang dia cari di menit-menit itu.
   if (
     pathname?.startsWith("/akun") || pathname?.startsWith("/watch") ||
-    pathname?.startsWith("/pendataan") || pathname?.startsWith("/kuis") ||
-    // [life-dashboard-v1] /life bukan halaman pengunjung — tidak ada CS di sana.
-    pathname?.startsWith("/life")
+    pathname?.startsWith("/pendataan") || pathname?.startsWith("/kuis")
   ) return null;
 
   return (

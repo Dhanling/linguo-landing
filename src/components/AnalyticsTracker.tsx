@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 // Path yang TIDAK dilacak (area login/akun & alur auth).
-const EXCLUDED_PREFIXES = ["/akun", "/student", "/onboarding", "/auth", "/life"];
+const EXCLUDED_PREFIXES = ["/akun", "/student", "/onboarding", "/auth"];
 // Kunjungan lebih pendek dari ini dianggap noise (mis. redirect kilat).
 const MIN_DURATION_MS = 1000;
 const SID_KEY = "linguo-analytics-sid";

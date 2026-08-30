@@ -74,8 +74,6 @@ const PRIVATE_PATHS = [
   "/kuis/",         // lembar kerja ber-token, satu siswa satu link
   "/kelas/konfirmasi/", // konfirmasi jadwal, ber-token per sesi
   "/laporan-b2b/",  // laporan klien, tidak untuk publik
-  "/life",          // dashboard keuangan pribadi — privat penuh
-  "/life/",
   "/riset",         // sudah noindex, sekalian jangan dirayapi
   "/riset/",
   "/pretest/",
