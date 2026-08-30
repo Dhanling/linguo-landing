@@ -242,6 +242,13 @@ export async function POST(req: NextRequest) {
     }
     const { amount, description } = priced;
 
+    // [funnel-etp-sessions-v1] Paket ETP itu tetap: 16 sesi @90 menit (harga
+    // paket, bukan per sesi). Form funnel tidak menanyakannya, jadi tanpa ini
+    // kolom Sesi & Durasi registrasi hasil konversi kosong "—" di admin.
+    const isEtp = program === "IELTS/TOEFL Prep";
+    const leadSessions = isEtp ? 16 : Number(sessions) || null;
+    const leadDuration = isEtp ? 90 : Number(duration) || null;
+
     const supaHeaders = {
       "Content-Type": "application/json",
       apikey: SUPABASE_KEY,
@@ -289,10 +296,10 @@ export async function POST(req: NextRequest) {
         language,
         program,
         level: level || null,
-        duration: Number(duration) || null, // leads-lang-level-duration-v1 — menit/sesi utk tampil di admin Leads
+        duration: leadDuration, // leads-lang-level-duration-v1 — menit/sesi utk tampil di admin Leads
         // funnel-sessions-sync-v1 — simpan jumlah sesi + tipe pengajar biar webhook bisa isi
         // registrations.sessions_total/duration/price_per_session otomatis (bukan null lagi).
-        sessions: Number(sessions) || null,
+        sessions: leadSessions,
         teacher_type: teacher_type === "native" ? "native" : teacher_type === "lokal" ? "lokal" : null,
         // offline-private-class-v1 — dibawa webhook ke registrations biar admin
         // langsung lihat mana kelas offline & di kota mana.
