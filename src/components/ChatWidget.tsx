@@ -23,6 +23,18 @@ const MENU_CHIPS: { n: string; label: string }[] = [
   { n: "6", label: "6️⃣ Chat admin" },
 ];
 
+// Arti tiap angka menu, buat dibawa ke WhatsApp saat handoff. Dicerminkan di
+// dashboard admin (src/components/wainbox/lingChatContext.ts) — kalau menunya
+// berubah, ubah di dua tempat.
+const MENU_TEXT: Record<string, string> = {
+  "1": "Info program & bahasa",
+  "2": "Info biaya",
+  "3": "Trial class",
+  "4": "Jadwal kelas reguler",
+  "5": "Cara daftar",
+  "6": "Chat langsung dengan admin",
+};
+
 // Proactive message ala Intercom: teaser nyapa duluan sesuai halaman yang lagi dibuka.
 // Sekali per halaman per sesi browser (sessionStorage), muncul setelah beberapa detik.
 const PROACTIVE: { prefix: string; text: string }[] = [
@@ -365,18 +377,31 @@ export default function ChatWidget() {
 
   // [ling-intercom-v1] handoff dengan konteks: minta ringkasan AI dulu, fallback
   // ke 3 pesan terakhir. Window dibuka sinkron (blank) biar ga kena popup blocker.
+  //
+  // [ling-handoff-menu-label-v1] Fallback-nya dulu menempel isi pesan MENTAH,
+  // padahal chip menu mengirim angka polos — admin & bot WA cuma menerima
+  // "Pertanyaan saya: 4 | 2" dan tak tahu apa-apa. Angka diterjemahkan balik ke
+  // label menunya, dan halaman yang sedang dibuka ikut dibawa.
   async function waHandoff() {
     setWaNudge(false);
-    const transcript = messages
-      .filter((m) => m.role === "user")
-      .slice(-3)
-      .map((m) => m.content)
-      .join(" | ");
+    const poin: string[] = [];
+    for (const m of messages) {
+      if (m.role !== "user") continue;
+      const t = m.content.trim();
+      if (!t) continue;
+      // "6" = tombol "chat admin" itu sendiri — bukan yang mau ditanyakan.
+      if (t === "6") continue;
+      const label = /^[1-5]$/.test(t) ? MENU_TEXT[t] : t;
+      if (label && !poin.includes(label)) poin.push(label);
+    }
+    const transcript = poin.slice(-3).join(" · ");
+    const halaman = pathname && pathname !== "/" ? ` Saya lagi buka halaman ${pathname}.` : "";
     const tiket = ticket ? ` (Tiket ${ticket})` : "";
     let text =
       "Halo Admin Linguo, saya dari chat website." +
       tiket +
-      (transcript ? ` Pertanyaan saya: ${transcript}` : "");
+      (transcript ? ` Yang saya tanyakan: ${transcript}.` : "") +
+      halaman;
     const w = window.open("", "_blank");
     try {
       const ctrl = new AbortController();
@@ -394,7 +419,8 @@ export default function ChatWidget() {
           "Halo Admin Linguo, saya dari chat website." +
           tiket +
           " Ringkasan chat saya: " +
-          data.summary;
+          data.summary +
+          halaman;
       }
     } catch {
       /* ringkasan gagal/lambat: pakai fallback */
