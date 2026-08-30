@@ -1,0 +1,589 @@
+{
+ "title": "Menyewa kamar dan hidup bertetangga",
+ "title_target": "Umuupa ako ng kuwarto",
+ "goal": "Mencari dan menyewa tempat tinggal, membicarakan kerusakan dan tagihan, serta hidup rukun dengan tetangga dalam bahasa Tagalog.",
+ "bekal": [
+  "menanyakan harga sewa, uang muka, dan apa saja yang termasuk",
+  "melaporkan kerusakan dan meminta perbaikan",
+  "membicarakan tagihan listrik dan air",
+  "berkenalan dan menjaga hubungan baik dengan tetangga"
+ ],
+ "wave": "Ulangi **unit 16**: jawab kelima pertanyaan wawancara yang paling sering dengan lantang, tanpa membuka halamannya.",
+ "dialogs": [
+  {
+   "title": "Dialog — Magkano ang upa dito?",
+   "intro": "Budi melihat papan *Room for Rent* di sebuah gang di Quezon City. Yang menerimanya adalah Aling Rosa, pemilik rumah yang tinggal di lantai bawah dan tahu segalanya tentang semua orang di gang itu.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Magandang hapon po. Nakita ko po 'yong sign sa labas — may bakante pa po ba?",
+     "id": "Selamat sore. Saya lihat papan di luar — masih ada kamar kosong?",
+     "literal": "bagus sore. terlihat olehku itu papan di luar — ada kosong masih apakah?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Meron, isa na lang. Nasa itaas, may sariling banyo.",
+     "id": "Ada, tinggal satu. Di atas, ada kamar mandi sendiri.",
+     "literal": "ada, satu sudah saja. di atas, ada sendiri-punya kamar-mandi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Magkano po ang upa kada buwan?",
+     "id": "Sewanya berapa per bulan?",
+     "literal": "berapa si sewa tiap bulan?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Anim na libo, kasama na ang tubig. Bukod ang kuryente.",
+     "id": "Enam ribu, sudah termasuk air. Listrik terpisah.",
+     "literal": "enam penghubung ribu, ikut sudah si air. terpisah si listrik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ilan pong buwan ang deposito?",
+     "id": "Depositnya berapa bulan?",
+     "literal": "berapa bulan si deposit?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Isang buwan deposit, isang buwan advance. Kaya mo ba 'yon?",
+     "id": "Satu bulan deposit, satu bulan di muka. Kamu sanggup?",
+     "literal": "satu bulan deposit, satu bulan di-muka. sanggup olehmu apakah itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaya ko po. May curfew po ba dito?",
+     "id": "Sanggup. Di sini ada jam malam nggak?",
+     "literal": "sanggup olehku. ada jam-malam apakah di-sini?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Alas-onse ang sarado ng gate. Pero may susi kayo, basta tahimik lang.",
+     "id": "Gerbang tutup jam sebelas. Tapi kalian punya kunci, asal tenang saja.",
+     "literal": "jam-sebelas si tertutup dari gerbang. tapi ada kunci kalian, asal tenang saja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Opo. Puwede po bang makita ang kuwarto?",
+     "id": "Baik. Boleh lihat kamarnya?",
+     "literal": "ya. boleh apakah bisa-dilihat si kamar?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Halika. Ay, sira pala ang gripo — ipapaayos ko bukas.",
+     "id": "Ayo. Eh, ternyata krannya rusak — besok saya suruh perbaiki.",
+     "literal": "mari. eh, rusak ternyata si kran — akan-disuruh-perbaiki olehku besok."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ayos lang po. Paano po ang kuryente, may sariling metro?",
+     "id": "Nggak apa-apa. Listriknya bagaimana, ada meteran sendiri?",
+     "literal": "beres saja. bagaimana si listrik, ada sendiri-punya meteran?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Oo, sub-meter. Sampung piso kada kilowatt. Bayad tuwing ikalimang araw.",
+     "id": "Iya, submeter. Sepuluh peso per kilowatt. Bayarnya tiap tanggal lima.",
+     "literal": "ya, sub-meter. sepuluh peso tiap kilowatt. bayar tiap ke-lima hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Naiintindihan ko po. Kailan po ako puwedeng lumipat?",
+     "id": "Saya mengerti. Kapan saya bisa pindah?",
+     "literal": "dimengerti olehku. kapan saya boleh penghubung pindah?"
+    },
+    {
+     "speaker": "Rosa:",
+     "text": "Kahit sa Sabado. Basta 'wag kang maingay, at makisama ka sa kapitbahay.",
+     "id": "Sabtu pun boleh. Asal jangan berisik, dan rukun sama tetangga.",
+     "literal": "walau di Sabtu. asal jangan kamu berisik, dan ikut-bergaul kamu di tetangga."
+    }
+   ],
+   "notes": [
+    "**Upa berarti sewa, dan umupa berarti menyewa.** *Magkano ang upa?* (berapa sewanya), *umuupa ako* (saya menyewa), *nangungupahan* (penyewa), *may-ari* (pemilik). Untuk kamar kos, kata yang dipakai *boarding house* atau *bedspace* — keduanya Inggris, dan keduanya bagian dari kosakata Tagalog sehari-hari.",
+    "**Kasama berarti termasuk, bukod berarti terpisah.** Dua kata ini menentukan berapa yang benar-benar kamu bayar tiap bulan. *Kasama na ang tubig* (air sudah termasuk), *bukod ang kuryente* (listrik terpisah). Tanyakan keduanya sebelum menyetujui apa pun.",
+    "**Deposito dan advance adalah dua hal berbeda.** *Deposito* adalah jaminan yang dikembalikan saat kamu keluar (kalau tak ada kerusakan); *advance* adalah sewa bulan pertama yang dibayar di muka. Pola *isang buwan deposit, isang buwan advance* adalah yang paling umum, tapi dua bulan deposit juga sering.",
+    "**Kada berarti \"per\" atau \"tiap\".** *Kada buwan* (per bulan), *kada araw* (per hari), *kada isa* (per orang). Bentuk Tagalog aslinya *tuwing* untuk waktu dan *bawat* untuk benda, tapi *kada* menang dalam urusan harga.",
+    "**Sira berarti rusak, dan bentuk kerjanya banyak.** *Sira ang gripo* (krannya rusak), *nasira* (jadi rusak), *sinira ko* (saya rusakkan), *ipapaayos ko* (saya suruh perbaiki), *sirang-sira* (rusak berat). Untuk melaporkan kerusakan, bentuk paling aman adalah *sira po ang…*, tanpa menyebut siapa yang merusakkannya.",
+    "**Bilangan urutan memakai awalan ika-.** *Ikalawa* (kedua), *ikatlo* (ketiga), *ikaapat* (keempat), *ikalima* (kelima). Untuk tanggal, orang lebih sering memakai angka Spanyol: *a-singko* (tanggal lima), *a-kinse* (tanggal lima belas).",
+    "**Makisama sa kapitbahay bukan basa-basi.** Di gang-gang padat Filipina, hubungan bertetangga menentukan kenyamanan hidup sehari-hari: siapa yang menerima paketmu, siapa yang memperingatkan kalau ada masalah, siapa yang membantu saat banjir. Menyapa tetangga setiap kali berpapasan adalah investasi, bukan kesopanan.",
+    "**Tahimik berarti tenang atau tidak berisik.** *Tahimik lang* (yang tenang saja) adalah syarat yang hampir selalu disebutkan pemilik rumah. Lawannya *maingay*, dan tuduhan *maingay ka* cukup untuk membuatmu diminta pindah.",
+    "**Halika berarti \"mari\" atau \"sini\".** Bentuk pendeknya *halika na* (ayo), dan bentuk jamaknya *halikayo* (mari kalian). Ia salah satu dari sedikit kata kerja Tagalog yang bentuknya tidak beraturan."
+   ],
+   "grammars": [
+    {
+     "title": "Menanyakan tempat tinggal",
+     "body": [
+      "Sepuluh pertanyaan yang wajib ditanyakan sebelum menyetujui sewa apa pun."
+     ],
+     "table": {
+      "head": [
+       "Tagalog",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "May bakante pa po ba?",
+        "Masih ada yang kosong?"
+       ],
+       [
+        "Magkano po ang upa kada buwan?",
+        "Sewanya berapa per bulan?"
+       ],
+       [
+        "Kasama na po ba ang tubig at kuryente?",
+        "Air dan listrik sudah termasuk?"
+       ],
+       [
+        "Ilang buwan po ang deposito?",
+        "Depositnya berapa bulan?"
+       ],
+       [
+        "May sariling banyo po ba?",
+        "Ada kamar mandi sendiri?"
+       ],
+       [
+        "May curfew po ba?",
+        "Ada jam malam?"
+       ],
+       [
+        "Puwede po bang magluto sa kuwarto?",
+        "Boleh masak di kamar?"
+       ],
+       [
+        "May wifi po ba?",
+        "Ada wifi?"
+       ],
+       [
+        "Ilan po ang kasama sa bahay?",
+        "Berapa orang penghuni rumahnya?"
+       ],
+       [
+        "Kailan po ako puwedeng lumipat?",
+        "Kapan saya bisa pindah?"
+       ]
+      ]
+     },
+     "after": [
+      "Pertanyaan tentang memasak layak ditanyakan sejak awal: banyak kamar sewa di Filipina melarang memasak di dalam kamar, dan aturan itu jarang tertulis."
+     ]
+    },
+    {
+     "title": "Melaporkan kerusakan",
+     "body": [
+      "Pola yang sama berlaku untuk hampir semua barang: *sira ang* + bendanya."
+     ],
+     "table": {
+      "head": [
+       "Tagalog",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Sira po ang gripo, tumutulo.",
+        "Krannya rusak, bocor."
+       ],
+       [
+        "Barado po ang lababo.",
+        "Wastafelnya mampet."
+       ],
+       [
+        "Walang tubig po sa itaas.",
+        "Di atas tidak ada air."
+       ],
+       [
+        "Nawalan po ng kuryente kagabi.",
+        "Semalam listriknya mati."
+       ],
+       [
+        "Hindi po gumagana ang aircon.",
+        "ACnya tidak berfungsi."
+       ],
+       [
+        "May tagas po sa kisame.",
+        "Ada bocor di plafon."
+       ],
+       [
+        "Sira po ang lock ng pinto.",
+        "Kunci pintunya rusak."
+       ],
+       [
+        "May ipis po sa kusina.",
+        "Ada kecoak di dapur."
+       ],
+       [
+        "Puwede po bang ipaayos?",
+        "Boleh minta diperbaiki?"
+       ],
+       [
+        "Kailan po kaya maaayos?",
+        "Kira-kira kapan bisa diperbaiki?"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *po* di setiap baris. Melaporkan kerusakan tanpa *po* kepada pemilik rumah terdengar seperti menuntut, dan itu jarang mempercepat perbaikan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berkenalan dengan tetangga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hari pertama di tempat baru menentukan bagaimana kamu diperlakukan berbulan-bulan berikutnya. Percakapannya pendek dan hampir selalu sama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Magandang umaga po!",
+       "Selamat pagi!",
+       "sapa lebih dulu, selalu"
+      ],
+      [
+       "Ako nga po pala si Budi, bagong lipat.",
+       "Oh iya, saya Budi, baru pindah.",
+       "perkenalan"
+      ],
+      [
+       "Sa itaas po ako nakatira.",
+       "Saya tinggal di atas.",
+       "menyebut posisi"
+      ],
+      [
+       "Taga-Indonesia po ako.",
+       "Saya dari Indonesia.",
+       "pasti ditanya"
+      ],
+      [
+       "Kayo po, matagal na po ba kayo dito?",
+       "Kalau Bapak/Ibu, sudah lama di sini?",
+       "membalikkan pertanyaan"
+      ],
+      [
+       "Pasensiya na po kung maingay kami kanina.",
+       "Maaf ya kalau tadi kami berisik.",
+       "pembuka hubungan baik"
+      ],
+      [
+       "Kung may kailangan po kayo, nandiyan lang po ako.",
+       "Kalau butuh apa-apa, saya ada di situ.",
+       "menawarkan"
+      ],
+      [
+       "Salamat po sa pagtanggap.",
+       "Terima kasih sudah menerima.",
+       "penutup"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Empat hal yang membuatmu diterima",
+     "items": [
+      "**Menyapa setiap kali berpapasan.** Bukan mengangguk — menyapa dengan suara. *Magandang umaga po* pada orang yang lebih tua, *uy* atau *kumusta* pada yang sebaya.",
+      "**Membagi makanan.** Kalau kamu memasak banyak atau membawa oleh-oleh, memberi sepiring ke tetangga adalah gerakan kecil yang bertahan lama di ingatan orang.",
+      "**Ikut menyapa anak-anak.** Anak tetangga akan menyebutmu *Kuya* atau *Ate*, dan menjawab mereka dengan ramah adalah cara tercepat diterima oleh orang tuanya.",
+      "**Meminta maaf lebih dulu.** Kalau kamu berisik semalam, sebutkan sendiri esok paginya sebelum ada yang mengeluh. Ini menghindarkan kekesalan yang disimpan — dan kekesalan yang disimpan adalah cara paling umum hubungan bertetangga rusak di Filipina."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tagihan, meteran, dan pembayaran",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sistem tagihan di rumah kontrakan Filipina hampir selalu berbasis submeter, dan angkanya dihitung sendiri oleh pemilik rumah. Karena itu, memahami kosakatanya berarti bisa memeriksa hitungannya tanpa terdengar menuduh."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tagalog",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "kuryente",
+       "listrik"
+      ],
+      [
+       "tubig",
+       "air"
+      ],
+      [
+       "metro / sub-meter",
+       "meteran"
+      ],
+      [
+       "kada kilowatt",
+       "per kilowatt"
+      ],
+      [
+       "basahin ang metro",
+       "membaca meteran"
+      ],
+      [
+       "singil",
+       "tagihan"
+      ],
+      [
+       "bayarin",
+       "yang harus dibayar"
+      ],
+      [
+       "due date",
+       "jatuh tempo"
+      ],
+      [
+       "multa",
+       "denda"
+      ],
+      [
+       "putol",
+       "diputus (aliran)"
+      ],
+      [
+       "magbayad nang maaga",
+       "membayar lebih awal"
+      ],
+      [
+       "resibo",
+       "kuitansi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau angka tagihanmu terasa terlalu tinggi, kalimat yang aman adalah *Puwede ko po bang makita ang basa ng metro?* (boleh saya lihat angka meterannya?). Ia menanyakan tanpa menuduh, dan hampir selalu dijawab dengan baik — sering sambil diajak melihat meterannya bersama-sama."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang perlu kamu tahu sejak awal",
+     "items": [
+      "**Brownout** — pemadaman listrik. Kata ini dipakai di Filipina untuk apa yang di tempat lain disebut *blackout*, dan ia bagian dari kehidupan normal, terutama pada musim badai.",
+      "**Simpan semua resibo.** Perselisihan soal deposit saat pindah keluar hampir selalu diselesaikan oleh kertas, bukan ingatan.",
+      "**Beritahu satu bulan sebelum pindah.** *Isang buwan bago umalis, sasabihin ko po* adalah kebiasaan yang diharapkan, dan mengabaikannya biasanya berarti kehilangan deposit."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tl": "upa",
+   "baca": "U-pa",
+   "id": "sewa"
+  },
+  {
+   "tl": "umupa",
+   "baca": "u-MU-pa",
+   "id": "menyewa"
+  },
+  {
+   "tl": "may-ari",
+   "baca": "may-a-RI",
+   "id": "pemilik"
+  },
+  {
+   "tl": "bakante",
+   "baca": "ba-KAN-te",
+   "id": "kosong, lowong"
+  },
+  {
+   "tl": "kuwarto",
+   "baca": "ku-WAR-to",
+   "id": "kamar"
+  },
+  {
+   "tl": "banyo",
+   "baca": "BAN-yo",
+   "id": "kamar mandi"
+  },
+  {
+   "tl": "kusina",
+   "baca": "ku-SI-na",
+   "id": "dapur"
+  },
+  {
+   "tl": "deposito",
+   "baca": "de-PO-si-to",
+   "id": "uang jaminan"
+  },
+  {
+   "tl": "kada",
+   "baca": "KA-da",
+   "id": "per, tiap"
+  },
+  {
+   "tl": "kasama",
+   "baca": "ka-SA-ma",
+   "id": "termasuk; teman"
+  },
+  {
+   "tl": "bukod",
+   "baca": "bu-KOD",
+   "id": "terpisah, selain"
+  },
+  {
+   "tl": "kuryente",
+   "baca": "kur-YEN-te",
+   "id": "listrik"
+  },
+  {
+   "tl": "gripo",
+   "baca": "GRI-po",
+   "id": "kran"
+  },
+  {
+   "tl": "lababo",
+   "baca": "la-BA-bo",
+   "id": "wastafel"
+  },
+  {
+   "tl": "barado",
+   "baca": "ba-RA-do",
+   "id": "mampet"
+  },
+  {
+   "tl": "tumulo",
+   "baca": "tu-MU-lo'",
+   "id": "menetes, bocor"
+  },
+  {
+   "tl": "kisame",
+   "baca": "ki-SA-me",
+   "id": "plafon"
+  },
+  {
+   "tl": "ipis",
+   "baca": "I-pis",
+   "id": "kecoak"
+  },
+  {
+   "tl": "gumana",
+   "baca": "gu-ma-NA",
+   "id": "berfungsi"
+  },
+  {
+   "tl": "singil",
+   "baca": "SI-ngil",
+   "id": "tagihan"
+  },
+  {
+   "tl": "multa",
+   "baca": "MUL-ta",
+   "id": "denda"
+  },
+  {
+   "tl": "brownout",
+   "baca": "BRAWN-awt",
+   "id": "pemadaman listrik"
+  },
+  {
+   "tl": "tahimik",
+   "baca": "ta-HI-mik",
+   "id": "tenang, sunyi"
+  },
+  {
+   "tl": "susi",
+   "baca": "su-SI",
+   "id": "kunci"
+  },
+  {
+   "tl": "halika",
+   "baca": "ha-li-KA",
+   "id": "mari, sini"
+  },
+  {
+   "tl": "bagong lipat",
+   "baca": "BA-gong LI-pat",
+   "id": "baru pindah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis pertanyaan Tagalog untuk hal berikut.",
+   "items": [
+    "Menanyakan apakah masih ada kamar kosong.",
+    "Menanyakan sewa per bulan.",
+    "Menanyakan apakah air dan listrik termasuk.",
+    "Menanyakan berapa bulan depositnya.",
+    "Menanyakan apakah ada jam malam.",
+    "Menanyakan kapan boleh pindah."
+   ]
+  },
+  {
+   "prompt": "Laporkan kerusakan berikut dalam bahasa Tagalog yang sopan.",
+   "items": [
+    "Krannya bocor.",
+    "Wastafelnya mampet.",
+    "Di atas tidak ada air.",
+    "Semalam listriknya mati.",
+    "ACnya tidak berfungsi.",
+    "Ada kecoak di dapur."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kasama, bukod, kada, atau kulang.",
+   "items": [
+    "Anim na libo, ____ na ang tubig.",
+    "____ ang kuryente sa upa.",
+    "Sampung piso ____ kilowatt.",
+    "____ pa ang bayad ko ng limang daan.",
+    "Magkano ang upa ____ buwan?",
+    "____ ba ang wifi sa bayad?"
+   ]
+  },
+  {
+   "prompt": "Ubah angka jadi bilangan urutan dengan ika-.",
+   "items": [
+    "dalawa",
+    "tatlo",
+    "apat",
+    "lima",
+    "anim",
+    "sampu"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "po / pa / may / ba / bakante / ?",
+    "po / upa / ang / magkano / buwan / kada / ?",
+    "na / ang / kasama / tubig",
+    "po / ang / sira / gripo / tumutulo",
+    "po / lumipat / ako / kailan / puwedeng / ?",
+    "ka / sa / makisama / kapitbahay"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Tagalog.",
+   "items": [
+    "Saya lihat papan di luar — masih ada kamar kosong?",
+    "Enam ribu, sudah termasuk air.",
+    "Satu bulan deposit, satu bulan di muka.",
+    "Boleh lihat kamarnya?",
+    "Listriknya bagaimana, ada meteran sendiri?",
+    "Asal jangan berisik, dan rukun sama tetangga."
+   ]
+  }
+ ],
+ "answers": [
+  "May bakante pa po ba? — Magkano po ang upa kada buwan? — Kasama na po ba ang tubig at kuryente? — Ilang buwan po ang deposito? — May curfew po ba? — Kailan po ako puwedeng lumipat?",
+  "Sira po ang gripo, tumutulo. — Barado po ang lababo. — Walang tubig po sa itaas. — Nawalan po ng kuryente kagabi. — Hindi po gumagana ang aircon. — May ipis po sa kusina.",
+  "kasama — Bukod — kada — Kulang — kada — Kasama",
+  "ikalawa — ikatlo — ikaapat — ikalima — ikaanim — ikasampu",
+  "May bakante pa po ba? — Magkano po ang upa kada buwan? — Kasama na ang tubig. — Sira po ang gripo, tumutulo. — Kailan po ako puwedeng lumipat? — Makisama ka sa kapitbahay.",
+  "Nakita ko po 'yong sign sa labas, may bakante pa po ba? — Anim na libo, kasama na ang tubig. — Isang buwan deposit, isang buwan advance. — Puwede po bang makita ang kuwarto? — Paano po ang kuryente, may sariling metro? — Basta 'wag kang maingay, at makisama ka sa kapitbahay."
+ ]
+}

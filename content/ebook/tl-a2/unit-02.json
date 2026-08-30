@@ -1,0 +1,205 @@
+{
+ "title": "Lampu sorot: siapa yang berdiri di bawahnya",
+ "title_target": "Kumain o kinain?",
+ "goal": "Memahami bahwa bahasa Tagalog tidak memilih antara aktif dan pasif, melainkan memilih peran mana yang disorot — dan mengubah bentuk kata kerjanya mengikuti pilihan itu.",
+ "bekal": [
+  "menjelaskan apa beda *Kumain ako ng mangga* dan *Kinain ko ang mangga*",
+  "memindahkan penanda *ang* dari pelaku ke benda, dan mengganti kata gantinya",
+  "mengenali kata kerja fokus objek dari bentuknya",
+  "menjawab pertanyaan dengan fokus yang sesuai dengan pertanyaannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sino ang kumain?",
+   "intro": "Sore hari di dapur Ate Cely. Ada satu bungkus *pancit* yang tinggal separuh, dan tak seorang pun mengaku. Dialog ini sengaja mengulang kata kerja yang sama dalam dua bentuk berbeda — hitung berapa kali, dan perhatikan di depan kata mana *ang* berdiri.",
+   "lines": [
+    { "speaker": "Cely:", "text": "Sino ang kumain ng pancit ko?", "id": "Siapa yang makan pancit saya?", "literal": "siapa si makan akan pancit saya-punya?" },
+    { "speaker": "Mia:", "text": "Hindi po ako. Kumain ako ng kanin kanina, hindi pancit.", "id": "Bukan saya. Tadi saya makan nasi, bukan pancit.", "literal": "tidak saya. makan saya akan nasi tadi, bukan pancit." },
+    { "speaker": "Cely:", "text": "Eh sino? Kalahati na lang ang natira.", "id": "Terus siapa? Yang tersisa tinggal separuh.", "literal": "eh siapa? separuh sudah saja si tersisa." },
+    { "speaker": "Ana:", "text": "Ay, Ate... kinain ko po 'yon. Akala ko po para sa amin.", "id": "Aduh, Kak... itu saya yang makan. Saya kira buat kami.", "literal": "aduh, Kak... dimakan olehku itu. sangka saya untuk di kami." },
+    { "speaker": "Cely:", "text": "Naku! Iyon ang dala ko para sa kapitbahay.", "id": "Aduh! Itu yang saya bawakan buat tetangga.", "literal": "aduh! itu si bawaan saya-punya untuk di tetangga." },
+    { "speaker": "Ana:", "text": "Pasensiya na po. Bibili po ako ng bago mamaya.", "id": "Maaf ya. Nanti saya beli yang baru.", "literal": "maaf sudah. akan-beli saya akan baru nanti." },
+    { "speaker": "Budi:", "text": "Ate, ako na po ang bibili. Alam ko po kung saan.", "id": "Kak, biar saya saja yang beli. Saya tahu di mana.", "literal": "Kak, saya sudah si akan-beli. tahu saya kalau di-mana." },
+    { "speaker": "Cely:", "text": "Sige. Bilhin mo 'yong sa kanto, mas masarap doon.", "id": "Oke. Beli yang di ujung jalan, di sana lebih enak.", "literal": "silakan. dibeli olehmu itu di sudut, lebih enak di-sana." },
+    { "speaker": "Budi:", "text": "Sige po. Ano pa po ang bibilhin ko?", "id": "Baik. Apa lagi yang harus saya beli?", "literal": "silakan. apa lagi si akan-dibeli olehku?" },
+    { "speaker": "Cely:", "text": "Bumili ka rin ng suka at toyo. Ubos na kasi.", "id": "Beli cuka sama kecap juga. Soalnya sudah habis.", "literal": "beli kamu juga akan cuka dan kecap. habis sudah soalnya." },
+    { "speaker": "Ana:", "text": "Sasama po ako. Bubuhatin ko po ang mga bag.", "id": "Saya ikut. Biar saya yang bawa tasnya.", "literal": "akan-ikut saya. akan-diangkat olehku si jamak tas." },
+    { "speaker": "Cely:", "text": "O sige, kayong dalawa na. Pero 'wag ninyong kainin sa daan!", "id": "Ya sudah, kalian berdua saja. Tapi jangan dimakan di jalan!", "literal": "oh silakan, kalian dua sudah. tapi jangan oleh-kalian dimakan di jalan!" },
+    { "speaker": "Budi:", "text": "Hindi po! Dadalhin po namin nang buo.", "id": "Nggak lah! Bakal kami bawa utuh.", "literal": "tidak! akan-dibawa oleh-kami dengan utuh." },
+    { "speaker": "Cely:", "text": "Ganyan nga. Ang huling kumain ng pancit ko, hindi na naimbitahan ulit.", "id": "Nah gitu. Orang terakhir yang makan pancit saya, nggak pernah diundang lagi.", "literal": "begitu memang. si terakhir makan akan pancit saya-punya, tidak sudah diundang lagi." }
+   ],
+   "notes": [
+    "**Bahasa Tagalog tidak punya kalimat aktif dan pasif.** Itu istilah bahasa Eropa, dan memakainya di sini justru menyesatkan. Yang dipunyai Tagalog adalah **fokus**: satu peran dalam kalimat dipilih untuk disorot, ditandai dengan *ang*, dan bentuk kata kerjanya menyesuaikan diri dengan peran yang dipilih itu. Kedua kalimat sama-sama biasa, sama-sama sehari-hari, tidak ada yang lebih sopan atau lebih resmi.",
+    "**Kumain ako ng mangga** menyorot **pelakunya**. *Ang*-nya ada di *ako* (yang tersembunyi, karena *ako* memang deret ANG), dan mangganya turun jadi *ng mangga* — benda yang tidak disorot, sehingga otomatis terdengar tak tentu: sebuah mangga, mangga apa saja.",
+    "**Kinain ko ang mangga** menyorot **mangganya**. Sekarang *ang* pindah ke mangga, dan pelakunya turun ke deret NG jadi *ko*. Karena mangga disorot, ia otomatis terdengar tertentu: mangga itu, mangga yang kita bicarakan tadi.",
+    "**Perhatikan dua hal yang selalu berubah bersamaan.** Pertama, bentuk kata kerjanya (*kumain* → *kinain*). Kedua, kata gantinya (*ako* → *ko*). Menukar yang satu tanpa yang lain adalah kesalahan A2 nomor satu, dan hasilnya bukan kalimat yang aneh melainkan kalimat yang salah.",
+    "**Fokus objek dibentuk dengan akhiran -in.** Aspek sudahnya menyisipkan *-in-* ke tengah: *bili* → *binili*, *luto* → *niluto*, *basa* → *binasa*. Kalau akar katanya mulai dengan vokal, sisipannya jadi awalan: *inom* → *ininom*, *abot* → *inabot*. Unit 3 menuntaskan seluruh tabelnya.",
+    "**Kalau ang berdiri di depan bendanya, bendanya pasti tertentu.** Ini akibat samping yang sangat berguna. Bahasa Tagalog tidak punya kata sandang seperti *the*; yang mengerjakan tugas itu adalah pilihan fokus. Karena itu penutur asli hampir selalu memakai fokus objek saat membicarakan barang yang sudah disebut sebelumnya.",
+    "**Sino ang kumain? menuntut jawaban berfokus pelaku.** Pertanyaan menentukan fokus jawabannya: kalau yang ditanya *sino* (siapa), sorotannya orang, jadi kata kerjanya *kumain*. Kalau yang ditanya *ano ang kinain mo* (apa yang kamu makan), sorotannya barang, jadi kata kerjanya *kinain*. Menjawab dengan fokus yang salah tidak membuatmu tak dimengerti — ia membuatmu terdengar seperti menjawab pertanyaan lain.",
+    "**Ako na ang bibili berarti \"biar saya yang beli\".** Susunan *ako na ang* + kata kerja adalah cara Filipina menawarkan diri, dan ia sangat sering dipakai. Bandingkan *Ako na* (biar saya) dengan *Sa akin na* (buat saya saja) — dua tawaran yang sama sekali berbeda.",
+    "**Kayong dalawa: penghubung -ng juga menempel pada kata ganti.** *Kayo* + *dalawa* jadi *kayong dalawa* (kalian berdua), *kami* + *tatlo* jadi *kaming tatlo*. Pola yang sama dipakai untuk *silang lahat* (mereka semua)."
+   ],
+   "grammars": [
+    {
+     "title": "Satu peristiwa, dua sorotan",
+     "body": ["Ketiga baris ini menceritakan kejadian yang persis sama. Yang berbeda cuma siapa yang berdiri di bawah lampu sorot."],
+     "table": {
+      "head": ["Kalimat", "Yang disorot", "Bentuk kerja", "Kata ganti pelaku", "Terjemahan"],
+      "rows": [
+       ["Kumain **ako** ng mangga.", "pelaku", "kumain (*-um-*)", "ako (deret ANG)", "Saya makan (sebuah) mangga."],
+       ["Kinain **ko ang** mangga.", "benda", "kinain (*-in*)", "ko (deret NG)", "Mangga itu saya makan."],
+       ["Binilhan **ko** siya **ng** mangga.", "penerima", "binilhan (*-an*)", "ko (deret NG)", "Saya belikan dia mangga."]
+      ]
+     },
+     "after": ["Baris ketiga baru dituntaskan di unit 5; ia dipasang di sini supaya kamu tahu sejak awal bahwa pilihannya bukan dua, melainkan empat."]
+    },
+    {
+     "title": "Pasangan kata kerja yang paling sering",
+     "body": ["Hafalkan berpasangan, jangan satu-satu. Kolom kiri untuk menyorot pelaku, kolom kanan untuk menyorot benda."],
+     "table": {
+      "head": ["Arti", "Fokus pelaku", "Fokus benda (sudah)", "Fokus benda (sedang)", "Fokus benda (akan)"],
+      "rows": [
+       ["makan", "kumain", "kinain", "kinakain", "kakainin"],
+       ["minum", "uminom", "ininom", "iniinom", "iinumin"],
+       ["beli", "bumili", "binili", "binibili", "bibilhin"],
+       ["masak", "nagluto", "niluto", "niluluto", "lulutuin"],
+       ["baca", "nagbasa", "binasa", "binabasa", "babasahin"],
+       ["ambil", "kumuha", "kinuha", "kinukuha", "kukunin"],
+       ["bawa", "nagdala", "dinala", "dinadala", "dadalhin"],
+       ["tulis", "sumulat", "sinulat", "sinusulat", "susulatin"]
+      ]
+     },
+     "after": ["Beberapa bentuk memendek dengan cara yang tak bisa ditebak: *bibilhin* (bukan *bibiliin*), *kukunin* (bukan *kukuhain*), *dadalhin* (bukan *dadalahin*). Kedelapan baris ini muncul terus sepanjang modul, jadi lebih murah dihafal sekarang."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kenapa penutur Indonesia sering keliru di sini",
+   "blocks": [
+    { "type": "p", "text": "Bahasa Indonesia sebenarnya punya sesuatu yang sangat mirip, dan justru itu yang membingungkan. *Saya makan mangga itu* dan *Mangga itu saya makan* memang beda penekanan — tapi di bahasa Indonesia perbedaannya **pilihan gaya**, boleh dipakai boleh tidak. Di Tagalog perbedaannya **wajib**, dan ia menentukan bentuk kata kerjanya." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Tagalog", "Catatan"], "rows": [
+      ["Saya makan mangga.", "Kumain ako ng mangga.", "mangga tak tentu — fokus pelaku"],
+      ["Mangga itu saya makan.", "Kinain ko ang mangga.", "mangga tertentu — fokus benda"],
+      ["Saya sudah baca bukunya.", "Binasa ko ang libro.", "buku tertentu → wajib fokus benda"],
+      ["Saya suka baca buku.", "Mahilig akong magbasa ng libro.", "buku umum → fokus pelaku"],
+      ["Siapa yang masak ini?", "Sino ang nagluto nito?", "yang ditanya orang → fokus pelaku"],
+      ["Apa yang kamu masak?", "Ano ang niluto mo?", "yang ditanya barang → fokus benda"]
+    ]},
+    { "type": "kotak", "title": "Tiga tanda bahwa kamu harus memakai fokus benda", "items": [
+      "Bendanya **sudah disebut sebelumnya** dalam percakapan — \"pancit itu\", \"bukunya\", \"yang tadi\".",
+      "Bendanya ditunjuk dengan *ito*, *iyan*, *iyon*, atau punya pemilik: *ang libro ko*, *ang pancit mo*.",
+      "Pertanyaannya dimulai dengan *ano* atau *alin* dan menanyakan **barang**, bukan orang."
+    ]},
+    { "type": "p", "text": "Dan tanda sebaliknya, yang menunjuk fokus pelaku: bendanya baru muncul pertama kali, jumlahnya tak penting, atau memang tidak ada benda sama sekali (*Natulog ako*, *Umalis siya*). Kata kerja yang tak punya objek selamanya berfokus pelaku — tidak ada pilihan yang perlu dibuat." }
+   ]
+  },
+  {
+   "title": "Latihan telinga: dengar ang-nya di mana",
+   "blocks": [
+    { "type": "p", "text": "Cara tercepat mengenali fokus sebuah kalimat bukan dengan melihat kata kerjanya, tapi dengan mencari *ang*. Apa pun yang berdiri sesudah *ang* adalah yang sedang disorot — dan bentuk kata kerjanya pasti mengikutinya." },
+    { "type": "tabel", "head": ["Kalimat", "Sesudah ang berdiri...", "Berarti fokusnya"], "rows": [
+      ["Kumain **ang bata** ng kanin.", "bata (anak)", "pelaku"],
+      ["Kinain **ng bata ang kanin**.", "kanin (nasi)", "benda"],
+      ["Nagluto **si Nanay** ng adobo.", "Nanay", "pelaku"],
+      ["Niluto **ni Nanay ang adobo**.", "adobo", "benda"],
+      ["Bumili **ako** ng gamot.", "ako (tersembunyi)", "pelaku"],
+      ["Binili **ko ang gamot**.", "gamot (obat)", "benda"]
+    ]},
+    { "type": "p", "text": "Perhatikan baris kedua dan keempat: begitu fokusnya pindah ke benda, pelakunya **tidak hilang** — ia cuma turun jadi *ng bata*, *ni Nanay*, *ko*. Inilah yang membuat terjemahan \"pasif\" menyesatkan: dalam kalimat pasif bahasa Indonesia pelakunya boleh dibuang, di Tagalog ia hampir selalu tetap disebut." },
+    { "type": "kotak", "title": "Kesalahan yang bikin kalimatmu terdengar aneh", "items": [
+      "*Kinain ako ang mangga* — salah. Kata ganti pelaku wajib turun ke deret NG: *Kinain ko ang mangga*.",
+      "*Kumain ko ng mangga* — salah. Kata kerja fokus pelaku menuntut deret ANG: *Kumain ako ng mangga*.",
+      "*Kinain ko ng mangga* — salah, dan ini yang paling sering. Kalau kata kerjanya sudah berfokus benda, bendanya wajib memakai *ang*, bukan *ng*."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "pancit", "baca": "pan-SIT", "id": "mi goreng khas Filipina" },
+  { "tl": "kalahati", "baca": "ka-la-HA-ti'", "id": "separuh" },
+  { "tl": "natira", "baca": "na-ti-RA", "id": "tersisa" },
+  { "tl": "kinain", "baca": "ki-NA-in", "id": "dimakan (fokus benda, sudah)" },
+  { "tl": "kakainin", "baca": "ka-ka-i-NIN", "id": "akan dimakan" },
+  { "tl": "bilhin", "baca": "bil-HIN", "id": "belilah (fokus benda)" },
+  { "tl": "binili", "baca": "bi-ni-LI", "id": "dibeli" },
+  { "tl": "niluto", "baca": "ni-lu-TO'", "id": "dimasak" },
+  { "tl": "dadalhin", "baca": "da-dal-HIN", "id": "akan dibawa" },
+  { "tl": "bubuhatin", "baca": "bu-bu-ha-TIN", "id": "akan diangkat" },
+  { "tl": "kanto", "baca": "KAN-to", "id": "sudut jalan, pojok" },
+  { "tl": "suka", "baca": "SU-ka'", "id": "cuka" },
+  { "tl": "toyo", "baca": "TO-yo'", "id": "kecap asin" },
+  { "tl": "ubos", "baca": "u-BOS", "id": "habis" },
+  { "tl": "buo", "baca": "bu-O'", "id": "utuh, penuh" },
+  { "tl": "pasensiya na", "baca": "pa-SEN-sya na", "id": "maaf ya" },
+  { "tl": "sumama", "baca": "su-ma-MA", "id": "ikut" },
+  { "tl": "imbitahan", "baca": "im-bi-TA-han", "id": "mengundang" },
+  { "tl": "huli", "baca": "hu-LI", "id": "terakhir" },
+  { "tl": "gamot", "baca": "ga-MOT", "id": "obat" },
+  { "tl": "libro", "baca": "LIB-ro", "id": "buku" },
+  { "tl": "mahilig", "baca": "ma-hi-LIG", "id": "gemar, hobi" },
+  { "tl": "alin", "baca": "a-LIN", "id": "yang mana" },
+  { "tl": "kumuha", "baca": "ku-MU-ha", "id": "mengambil" },
+  { "tl": "sumulat", "baca": "su-MU-lat", "id": "menulis" },
+  { "tl": "ganyan nga", "baca": "gan-YAN nga", "id": "nah begitu" }
+ ],
+ "exercises": [
+  { "prompt": "Tentukan fokus kalimat berikut: tulis pelaku atau benda.", "items": [
+    "Kumain ang bata ng kanin.",
+    "Kinain ng bata ang kanin.",
+    "Bumili ako ng gamot.",
+    "Binili ko ang gamot.",
+    "Nagluto si Nanay ng adobo.",
+    "Niluto ni Nanay ang adobo."
+  ]},
+  { "prompt": "Ubah kalimat berfokus pelaku ini jadi berfokus benda.", "items": [
+    "Kumain ako ng mangga.",
+    "Bumili siya ng tinapay.",
+    "Nagluto kami ng pancit.",
+    "Nagbasa ka ng libro.",
+    "Kumuha sila ng tubig.",
+    "Sumulat ako ng liham."
+  ]},
+  { "prompt": "Isi dengan kata ganti yang tepat.", "items": [
+    "Kinain ____ ang pancit. (saya)",
+    "Kumain ____ ng pancit. (saya)",
+    "Binili ____ ang gamot. (dia)",
+    "Bumili ____ ng gamot. (dia)",
+    "Niluto ____ ang adobo. (kami)",
+    "Nagluto ____ ng adobo. (kami)"
+  ]},
+  { "prompt": "Jawab dengan fokus yang sesuai dengan pertanyaannya.", "items": [
+    "Sino ang kumain ng pancit? (Ana)",
+    "Ano ang kinain mo? (nasi)",
+    "Sino ang bumili ng gamot? (saya)",
+    "Ano ang binili mo? (obat)",
+    "Sino ang nagluto nito? (Ibu)",
+    "Ano ang niluto ni Nanay? (adobo)"
+  ]},
+  { "prompt": "Perbaiki kalimat yang salah.", "items": [
+    "Kinain ako ang mangga.",
+    "Kumain ko ng mangga.",
+    "Binili ko ng gamot.",
+    "Bumili ako ang gamot.",
+    "Niluto siya ang adobo.",
+    "Nagluto niya ng adobo."
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Tagalog, pilih fokus yang tepat.", "items": [
+    "Siapa yang makan pancit saya?",
+    "Pancit itu saya yang makan.",
+    "Tadi saya makan nasi.",
+    "Beli yang di ujung jalan.",
+    "Biar saya saja yang beli.",
+    "Jangan dimakan di jalan!"
+  ]}
+ ],
+ "answers": [
+  "pelaku — benda — pelaku — benda — pelaku — benda",
+  "Kinain ko ang mangga. — Binili niya ang tinapay. — Niluto namin ang pancit. — Binasa mo ang libro. — Kinuha nila ang tubig. — Sinulat ko ang liham.",
+  "ko — ako — niya — siya — namin — kami",
+  "Si Ana ang kumain ng pancit. — Kanin ang kinain ko. — Ako ang bumili ng gamot. — Gamot ang binili ko. — Si Nanay ang nagluto nito. — Adobo ang niluto ni Nanay.",
+  "Kinain ko ang mangga. — Kumain ako ng mangga. — Binili ko ang gamot. — Bumili ako ng gamot. — Niluto niya ang adobo. — Nagluto siya ng adobo.",
+  "Sino ang kumain ng pancit ko? — Kinain ko ang pancit. — Kumain ako ng kanin kanina. — Bilhin mo 'yong sa kanto. — Ako na ang bibili. — 'Wag ninyong kainin sa daan!"
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "title": "Perjalanan jauh",
+ "title_target": "Sa terminal at paliparan",
+ "goal": "Memesan tiket, menanyakan jadwal, dan mengatasi perubahan rencana dalam perjalanan darat, laut, dan udara di Filipina.",
+ "bekal": [
+  "memesan tiket bus, feri, dan pesawat",
+  "menanyakan jadwal, lama perjalanan, dan bagasi",
+  "mengatasi keterlambatan dan pembatalan",
+  "bertanya arah di terminal yang ramai"
+ ],
+ "wave": "Ulangi **unit 18**: sebutkan sepuluh pertanyaan sewa kamar dan sepuluh laporan kerusakan dengan lantang, semuanya memakai *po*.",
+ "dialogs": [
+  {
+   "title": "Dialog — May bus pa po ba pa-Baguio?",
+   "intro": "Pukul setengah sembilan malam di terminal Cubao. Budi dan Ana tiba terlambat karena macet, dan bus terakhir mungkin sudah berangkat. Percakapan di loket tiket Filipina cepat, ramah, dan hampir tak pernah pakai kalimat panjang.",
+   "lines": [
+    { "speaker": "Budi:", "text": "Kuya, may bus pa po ba pa-Baguio ngayong gabi?", "id": "Bang, malam ini masih ada bus ke Baguio?", "literal": "kakak-laki, ada bus masih apakah ke-Baguio sekarang malam?" },
+    { "speaker": "Tiket:", "text": "Meron, alas-diyes ang huli. Ilan kayo?", "id": "Ada, yang terakhir jam sepuluh. Berapa orang?", "literal": "ada, jam-sepuluh si terakhir. berapa kalian?" },
+    { "speaker": "Budi:", "text": "Dalawa po. Magkano po ang pamasahe?", "id": "Dua. Ongkosnya berapa?", "literal": "dua. berapa si ongkos?" },
+    { "speaker": "Tiket:", "text": "Pitong daan bawat isa, deluxe na may banyo.", "id": "Tujuh ratus per orang, deluxe pakai toilet.", "literal": "tujuh ratus tiap satu, deluxe penghubung ada kamar-mandi." },
+    { "speaker": "Ana:", "text": "Gaano po katagal ang biyahe?", "id": "Perjalanannya berapa lama?", "literal": "berapa lama si perjalanan?" },
+    { "speaker": "Tiket:", "text": "Mga anim na oras kung hindi matrapik. May isang stopover sa Tarlac.", "id": "Sekitar enam jam kalau nggak macet. Ada satu istirahat di Tarlac.", "literal": "kira-kira enam penghubung jam kalau tidak macet. ada satu perhentian di Tarlac." },
+    { "speaker": "Budi:", "text": "Sige po, dalawang ticket. May bagahe po kaming malaki, okay lang po ba?", "id": "Baik, dua tiket. Kami bawa bagasi besar, nggak apa-apa?", "literal": "silakan, dua tiket. ada bagasi kami-punya besar, beres saja apakah?" },
+    { "speaker": "Tiket:", "text": "Ilagay n'yo na lang sa ilalim. Libre naman hanggang dalawang bag.", "id": "Taruh di bagasi bawah saja. Gratis kok sampai dua tas.", "literal": "ditaruh oleh-kalian sudah saja di bawah. gratis kok sampai dua tas." },
+    { "speaker": "Ana:", "text": "Anong oras po kami dapat nasa sakayan?", "id": "Jam berapa kami harus sudah di tempat naiknya?", "literal": "apa jam kami harus di tempat-naik?" },
+    { "speaker": "Tiket:", "text": "Alas-nuwebe y media, para sigurado. Bay six 'yon, sa dulo.", "id": "Setengah sepuluh, biar aman. Itu jalur enam, di ujung.", "literal": "jam-sembilan dan setengah, supaya pasti. jalur enam itu, di ujung." },
+    { "speaker": "Budi:", "text": "Salamat po. Ay, isa pa po — may charging po ba sa bus?", "id": "Terima kasih. Eh, satu lagi — di busnya ada colokan?", "literal": "terima-kasih. eh, satu lagi — ada pengisian apakah di bus?" },
+    { "speaker": "Tiket:", "text": "Meron, bawat upuan. Pero dalhin n'yo ang sariling jacket, malamig ang aircon.", "id": "Ada, tiap kursi. Tapi bawa jaket sendiri, ACnya dingin.", "literal": "ada, tiap kursi. tapi dibawa oleh-kalian si sendiri-punya jaket, dingin si AC." },
+    { "speaker": "Ana:", "text": "Salamat po sa paalala!", "id": "Terima kasih pengingatnya!", "literal": "terima-kasih di pengingat!" },
+    { "speaker": "Tiket:", "text": "Walang anuman. Ingat kayo sa biyahe.", "id": "Sama-sama. Hati-hati di perjalanan.", "literal": "tiada apa pun. hati-hati kalian di perjalanan." }
+   ],
+   "notes": [
+    "**Pa- di depan nama tempat berarti \"menuju\".** *Pa-Baguio* (ke Baguio), *pauwi* (menuju pulang), *paakyat* (menuju naik), *pababa* (menuju turun), *pabalik* (menuju kembali). Bentuk ini sangat pendek dan sangat sering; di terminal, kernet meneriakkannya terus-menerus.",
+    "**Pamasahe berarti ongkos perjalanan.** Kata ini dipakai untuk semua kendaraan umum: jeepney, bus, tricycle, feri. Kembarannya *bayad* (bayaran umum) dan *pasahe* (bentuk pendeknya, sama sering dipakai).",
+    "**Bawat isa berarti \"masing-masing\".** *Pitong daan bawat isa* (tujuh ratus per orang). Kembarannya *kada isa* dan *tig-pipito* — yang terakhir memakai pola *tig-* yang sudah kamu temui di unit 13.",
+    "**Matrapik adalah kata sifat dari trapik.** *Matrapik ngayon* (sekarang macet), *hindi matrapik* (tidak macet). Pola *ma-* + kata benda menghasilkan kata sifat yang berarti \"banyak\": *matao* (ramai), *maputik* (berlumpur), *maulan* (banyak hujan), *mabato* (berbatu).",
+    "**Sakayan berarti tempat naik kendaraan.** Akhiran *-an* pada kata benda menandai tempat: *sakayan* (tempat naik), *bayaran* (tempat bayar), *labahan* (tempat cuci), *kainan* (tempat makan), *tulugan* (tempat tidur). Ini pola pembentukan kata yang sangat produktif.",
+    "**Y media berarti \"setengah\" dalam penyebutan jam.** *Alas-nuwebe y media* (setengah sepuluh — harfiahnya jam sembilan lewat setengah). Perhatikan bedanya dengan bahasa Indonesia, yang menghitung ke jam berikutnya. *Alas-otso y media* = 8.30, bukan 7.30.",
+    "**Walang anuman adalah jawaban baku untuk terima kasih.** Bentuk lain yang sama seringnya: *wala 'yon* (nggak apa-apa itu) dan *ok lang*. Bentuk *walang anuman* sedikit lebih sopan, dan itulah yang dipakai kepada orang asing atau yang lebih tua.",
+    "**Paalala berarti pengingat.** Akarnya *alala* (ingat). *Salamat sa paalala* (terima kasih pengingatnya) adalah kalimat yang sangat berguna, dan mengucapkannya menandai bahwa kamu benar-benar mendengarkan.",
+    "**Jaket di bus bukan saran berlebihan.** AC bus jarak jauh di Filipina terkenal sangat dingin, dan penumpang berpengalaman selalu membawa jaket atau selendang. Ini salah satu nasihat perjalanan yang akan kamu dengar dari setiap orang lokal."
+   ],
+   "grammars": [
+    {
+     "title": "Di loket dan di terminal",
+     "body": ["Semua kalimat bisa dipakai untuk bus, feri, maupun pesawat."],
+     "table": {
+      "head": ["Tagalog", "Arti"],
+      "rows": [
+       ["May bus pa po ba pa-____?", "Masih ada bus ke ____?"],
+       ["Anong oras ang huling biyahe?", "Jam berapa keberangkatan terakhir?"],
+       ["Magkano po ang pamasahe?", "Ongkosnya berapa?"],
+       ["Gaano po katagal ang biyahe?", "Perjalanannya berapa lama?"],
+       ["Direkta po ba o may stopover?", "Langsung atau ada perhentian?"],
+       ["Saan po ang sakayan?", "Di mana tempat naiknya?"],
+       ["May bagahe po akong malaki.", "Saya bawa bagasi besar."],
+       ["Puwede po bang magpalit ng schedule?", "Boleh ganti jadwal?"],
+       ["Refundable po ba ang ticket?", "Tiketnya bisa dikembalikan?"],
+       ["Anong oras po kami dapat nandito?", "Jam berapa kami harus sudah di sini?"]
+      ]
+     },
+     "after": ["Untuk penerbangan, tiga kata Inggris dipakai apa adanya: *check-in*, *boarding*, *delayed*. Padanan Tagalognya ada tapi hampir tak pernah dipakai."]
+    },
+    {
+     "title": "Kendaraan umum Filipina",
+     "body": ["Beberapa di antaranya tidak ada padanannya di Indonesia dan perlu dikenali."],
+     "table": {
+      "head": ["Kendaraan", "Keterangan", "Kalimat wajib"],
+      "rows": [
+       ["**jeepney**", "angkutan sedang, rute tetap", "Para po!"],
+       ["**tricycle**", "motor bersidecar, jarak dekat", "Magkano po hanggang ____?"],
+       ["**bus**", "jarak jauh, ada AC dan non-AC", "Bayad po."],
+       ["**UV Express**", "van rute tetap", "May bakante pa po ba?"],
+       ["**LRT / MRT**", "kereta di Metro Manila", "Isang single journey po."],
+       ["**barko / ferry**", "kapal antarpulau", "Anong oras ang alis?"],
+       ["**habal-habal**", "ojek di daerah", "Hanggang sa may simbahan po."],
+       ["**Grab**", "aplikasi transportasi", "Nasaan na po kayo?"]
+      ]
+     },
+     "after": ["*Para po!* adalah kalimat paling penting dalam daftar ini: ia berarti \"berhenti\" dan diucapkan untuk turun dari jeepney. Tanpa itu, kendaraannya tidak akan berhenti."]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalau rencananya berubah",
+   "blocks": [
+    { "type": "p", "text": "Keterlambatan dan pembatalan adalah bagian normal dari perjalanan di Filipina, terutama pada musim badai. Kalimat-kalimat berikut membantumu mengurusnya tanpa panik." },
+    { "type": "tabel", "head": ["Tagalog", "Arti"], "rows": [
+      ["Na-delay po ba ang flight?", "Penerbangannya delay?"],
+      ["Kanselado po ba ang biyahe?", "Perjalanannya dibatalkan?"],
+      ["Hanggang kailan po ang delay?", "Delaynya sampai kapan?"],
+      ["May susunod pa po bang biyahe?", "Masih ada keberangkatan berikutnya?"],
+      ["Puwede po bang i-rebook?", "Boleh dijadwal ulang?"],
+      ["May bayad po ba ang rebooking?", "Ada biaya untuk penjadwalan ulang?"],
+      ["Saan po ako maghihintay?", "Saya menunggu di mana?"],
+      ["Naiwan po ako ng bus.", "Saya ketinggalan bus."],
+      ["Nawawala po ang bag ko.", "Tas saya hilang."],
+      ["Saan po ang lost and found?", "Di mana bagian barang hilang?"]
+    ]},
+    { "type": "kotak", "title": "Musim badai dan perjalanan laut", "items": [
+      "Kalau ada peringatan badai, penjaga pantai Filipina bisa menghentikan seluruh pelayaran — dan keputusannya mendadak. Kata yang perlu kamu kenali: *walang biyahe* (tidak ada pelayaran), *suspendido* (ditangguhkan), *stranded* (terlantar).",
+      "Untuk perjalanan laut, tanyakan sejak awal: *May bagyo po ba? Tuloy po ba ang biyahe bukas?*",
+      "Selalu siapkan rencana cadangan darat. Dalam bahasa lokal: *Baka mas mabuti pang mag-bus na lang tayo.*"
+    ]}
+   ]
+  },
+  {
+   "title": "Bertanya arah dan menerangkan letak",
+   "blocks": [
+    { "type": "p", "text": "Petunjuk arah di Filipina jarang memakai nama jalan. Yang dipakai adalah penanda: gereja, tugu, jembatan, dan yang paling sering — cabang Jollibee." },
+    { "type": "tabel", "head": ["Tagalog", "Arti"], "rows": [
+      ["Saan po ang pinakamalapit na terminal?", "Terminal terdekat di mana?"],
+      ["Paano po pumunta sa ____?", "Bagaimana cara ke ____?"],
+      ["Malayo pa po ba?", "Masih jauh?"],
+      ["Dumiretso lang po kayo.", "Lurus terus saja."],
+      ["Kumaliwa po kayo sa kanto.", "Belok kiri di pojokan."],
+      ["Kumanan po kayo pagkatapos ng simbahan.", "Belok kanan setelah gereja."],
+      ["Katapat po ng Jollibee.", "Persis di depan Jollibee."],
+      ["Tabi lang po ng palengke.", "Persis di samping pasar."],
+      ["Sa kabila po ng kalsada.", "Di seberang jalan."],
+      ["Sabihan n'yo po ako kung nandoon na.", "Kasih tahu saya kalau sudah sampai."]
+    ]},
+    { "type": "p", "text": "Kalimat terakhir layak selalu diucapkan saat naik jeepney di kota yang tidak kamu kenal. Kernet dan penumpang lain hampir selalu bersedia mengingatkan, dan mereka jarang lupa." },
+    { "type": "kotak", "title": "Naik jeepney: urutannya", "items": [
+      "**Naik dari belakang**, lalu duduk di bangku panjang. Kalau penuh, berdiri sambil membungkuk — atau tunggu yang berikutnya.",
+      "**Ucapkan *Bayad po*** sambil menyerahkan uang. Kalau kamu jauh dari sopir, uangmu akan diteruskan dari tangan ke tangan; ini normal dan aman.",
+      "**Sebutkan jumlah penumpang**: *Isa po* (satu orang), *dalawa po* (dua orang).",
+      "**Ucapkan *Para po!*** saat hendak turun. Bentuk lain: *Sa tabi lang po* atau mengetuk atap dengan koin."
+    ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "tl": "biyahe", "baca": "bi-YA-he", "id": "perjalanan" },
+  { "tl": "pamasahe", "baca": "pa-ma-SA-he", "id": "ongkos" },
+  { "tl": "sakayan", "baca": "sa-KA-yan", "id": "tempat naik kendaraan" },
+  { "tl": "bagahe", "baca": "ba-GA-he", "id": "bagasi" },
+  { "tl": "paliparan", "baca": "pa-li-PA-ran", "id": "bandara" },
+  { "tl": "daungan", "baca": "da-U-ngan", "id": "pelabuhan" },
+  { "tl": "barko", "baca": "BAR-ko", "id": "kapal" },
+  { "tl": "eroplano", "baca": "e-rop-LA-no", "id": "pesawat" },
+  { "tl": "bawat isa", "baca": "BA-wat i-SA", "id": "masing-masing" },
+  { "tl": "matrapik", "baca": "ma-TRA-pik", "id": "macet" },
+  { "tl": "huling biyahe", "baca": "hu-LING bi-YA-he", "id": "keberangkatan terakhir" },
+  { "tl": "direkta", "baca": "di-REK-ta", "id": "langsung" },
+  { "tl": "upuan", "baca": "u-PU-an", "id": "kursi" },
+  { "tl": "paalala", "baca": "pa-a-LA-la", "id": "pengingat" },
+  { "tl": "walang anuman", "baca": "wa-LANG a-nu-MAN", "id": "sama-sama" },
+  { "tl": "suspendido", "baca": "sus-pen-DI-do", "id": "ditangguhkan" },
+  { "tl": "naiwan", "baca": "na-I-wan", "id": "tertinggal" },
+  { "tl": "nawawala", "baca": "na-wa-WA-la", "id": "hilang" },
+  { "tl": "dumiretso", "baca": "du-mi-RET-so", "id": "lurus terus" },
+  { "tl": "kumaliwa", "baca": "ku-ma-li-WA'", "id": "belok kiri" },
+  { "tl": "kumanan", "baca": "ku-MA-nan", "id": "belok kanan" },
+  { "tl": "katapat", "baca": "ka-ta-PAT", "id": "berhadapan, di depan" },
+  { "tl": "tabi", "baca": "ta-BI", "id": "samping, pinggir" },
+  { "tl": "kalsada", "baca": "kal-SA-da", "id": "jalan raya" },
+  { "tl": "simbahan", "baca": "sim-BA-han", "id": "gereja" },
+  { "tl": "para po", "baca": "PA-ra po", "id": "berhenti (untuk turun)" }
+ ],
+ "exercises": [
+  { "prompt": "Tulis pertanyaan Tagalog untuk hal berikut.", "items": [
+    "Menanyakan apakah masih ada bus ke Baguio malam ini.",
+    "Menanyakan ongkosnya.",
+    "Menanyakan lama perjalanan.",
+    "Menanyakan di mana tempat naiknya.",
+    "Menanyakan apakah tiketnya bisa diubah jadwalnya.",
+    "Menanyakan jam berapa harus sudah di terminal."
+  ]},
+  { "prompt": "Lengkapi dengan pa-, pauwi, pabalik, paakyat, pababa, atau pasakay.", "items": [
+    "May jeep pa po ba ____-Cubao?",
+    "____ na ako, gabi na.",
+    "Nasa daan na ako, ____ sa opisina.",
+    "Ang hirap ____ ng bundok kapag maulan.",
+    "Mag-ingat ka ____ ng hagdan, madulas.",
+    "Tumawag ka kapag ____ ka na."
+  ]},
+  { "prompt": "Ubah jadi kata sifat dengan awalan ma-.", "items": [
+    "trapik",
+    "tao",
+    "putik",
+    "ulan",
+    "bato",
+    "ingay"
+  ]},
+  { "prompt": "Tulis kalimat Tagalog untuk keadaan berikut.", "items": [
+    "Penerbanganmu delay dan kamu ingin tahu sampai kapan.",
+    "Kamu ketinggalan bus.",
+    "Tas kamu hilang.",
+    "Kamu ingin menjadwal ulang tiket.",
+    "Kamu ingin turun dari jeepney.",
+    "Kamu minta diingatkan kalau sudah sampai."
+  ]},
+  { "prompt": "Susun jadi kalimat yang benar.", "items": [
+    "po / pa / ba / bus / may / pa-Baguio / ?",
+    "po / pamasahe / magkano / ang / ?",
+    "po / katagal / biyahe / gaano / ang / ?",
+    "isa / daan / bawat / pitong",
+    "n'yo / lang / sa / na / ilagay / ilalim",
+    "kayo / ingat / biyahe / sa"
+  ]},
+  { "prompt": "Terjemahkan ke bahasa Tagalog.", "items": [
+    "Malam ini masih ada bus ke Baguio?",
+    "Ada, yang terakhir jam sepuluh.",
+    "Sekitar enam jam kalau nggak macet.",
+    "Kami bawa bagasi besar, nggak apa-apa?",
+    "Setengah sepuluh, biar aman.",
+    "Bawa jaket sendiri, ACnya dingin."
+  ]}
+ ],
+ "answers": [
+  "May bus pa po ba pa-Baguio ngayong gabi? — Magkano po ang pamasahe? — Gaano po katagal ang biyahe? — Saan po ang sakayan? — Puwede po bang magpalit ng schedule? — Anong oras po kami dapat nandito?",
+  "pa — Pauwi — pabalik — paakyat — pababa — pasakay",
+  "matrapik — matao — maputik — maulan — mabato — maingay",
+  "Hanggang kailan po ang delay? — Naiwan po ako ng bus. — Nawawala po ang bag ko. — Puwede po bang i-rebook? — Para po! — Sabihan n'yo po ako kung nandoon na.",
+  "May bus pa po ba pa-Baguio? — Magkano po ang pamasahe? — Gaano po katagal ang biyahe? — Pitong daan bawat isa. — Ilagay n'yo na lang sa ilalim. — Ingat kayo sa biyahe.",
+  "May bus pa po ba pa-Baguio ngayong gabi? — Meron, alas-diyes ang huli. — Mga anim na oras kung hindi matrapik. — May bagahe po kaming malaki, okay lang po ba? — Alas-nuwebe y media, para sigurado. — Dalhin n'yo ang sariling jacket, malamig ang aircon."
+ ]
+}
