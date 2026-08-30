@@ -200,10 +200,21 @@ async function closeBatchIfSettled(admin: any, batchId: string | null) {
 async function resolveKurikulumSender(admin: any): Promise<string | null> {
   const { data } = await admin
     .from('wa_senders')
-    .select('id, allowed_roles, status')
+    .select('id, label, allowed_roles, status')
     .contains('allowed_roles', ['curriculum'])
     .eq('status', 'connected');
-  return data?.[0]?.id || null;
+  const list = (data || []) as any[];
+  if (!list.length) return null;
+  // allowed_roles saja tidak cukup: nomor 'kelas' (khusus grup kelas) juga
+  // memegang role curriculum dan urutan baris PostgREST tidak dijamin. Urutan
+  // pilih = label "kurikulum" (nomor koordinator) → nomor personal lain → kelas.
+  // Cermin resolveKurikulumSender di edge fn teacher-fee-notify (linguo-app).
+  const skor = (s: any) => {
+    if (/kurikulum/i.test(String(s.label || ''))) return 2;
+    if (String(s.id) === 'kelas') return 0;
+    return 1;
+  };
+  return list.slice().sort((a, b) => skor(b) - skor(a))[0]?.id || null;
 }
 
 /**
@@ -259,5 +270,14 @@ async function notifyTeacher(admin: any, payout: any, items: any[], ref?: string
 
   // gagal antre WA TIDAK boleh membatalkan status transfer — uangnya sudah keluar
   const { error } = await admin.from('wa_outbound').insert({ phone, body, sender });
-  if (error) console.error('[teacher-payout] gagal antre WA:', error.message);
+  if (error) { console.error('[teacher-payout] gagal antre WA:', error.message); return; }
+
+  // [fee-transfer-notify-wa-v1] Stempel jejak notifikasi. Jalur MANUAL (Tandai
+  // transfer manual / rekonsiliasi di /pencairan-pengajar) memakai edge fn
+  // teacher-fee-notify yang membaca kolom ini sebagai anti kirim dobel — tanpa
+  // stempel di sini, tombol "kirim notifikasi yang belum terkirim" akan
+  // mengabari ulang pengajar yang sudah dapat WA dari jalur Xendit.
+  await admin.from('teacher_payouts').update({
+    notified_status: 'done', notified_at: new Date().toISOString(),
+  }).eq('id', payout.id);
 }
