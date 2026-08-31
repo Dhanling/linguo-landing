@@ -178,6 +178,8 @@ type ComputedTier = {
   highlighted?: boolean;
   ctaLabel: string;
   note?: string;
+  /** semi-class-size-picker-v1 — simulasi harga per siswa menurut besar grup. */
+  ladder?: { size: number; perStudent: number }[];
 };
 
 function buildPricingTiers(languageSlug: string): ComputedTier[] {
@@ -186,6 +188,13 @@ function buildPricingTiers(languageSlug: string): ComputedTier[] {
   const cat = getLanguageCategory(langEn) || "C";
   const privA1 = PRICE_PRIVATE_60MIN[cat][0];
   const semi2PerStudent = Math.round(SEMI_PRIVATE_PRICE_BASIC[cat][1] / 2);
+  // Tangga harga per orang: 2–5 siswa, level A1, 60 menit. Angka dari tabel yang
+  // sama dengan funnel & WA Inbox — halaman ini statis, jadi ditampilkan sebagai
+  // daftar, bukan pemilih interaktif (pemilihnya ada di /daftar & /harga).
+  const semiLadder = [2, 3, 4, 5].map((size) => ({
+    size,
+    perStudent: Math.round(SEMI_PRIVATE_PRICE_BASIC[cat][size - 1] / size),
+  }));
 
   const tiers: ComputedTier[] = [
     {
@@ -215,7 +224,8 @@ function buildPricingTiers(languageSlug: string): ComputedTier[] {
         "Pengajar bersertifikat + akses LMS",
       ],
       ctaLabel: "Daftar Semi Privat",
-      note: "Harga grup 2 siswa, level A1.",
+      note: "Harga grup 2 siswa, level A1. Pilih jumlah siswa saat mendaftar.",
+      ladder: semiLadder,
     },
   ];
 
@@ -710,6 +720,24 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
                   {tier.priceUnit}
                 </div>
               </div>
+
+              {tier.ladder && (
+                <div className="mb-5 rounded-xl bg-slate-50 p-3">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+                    Simulasi per siswa / sesi
+                  </p>
+                  <div className="grid grid-cols-4 gap-1.5 text-center">
+                    {tier.ladder.map((row) => (
+                      <div key={row.size} className="rounded-lg bg-white px-1 py-1.5 ring-1 ring-slate-200">
+                        <div className="text-[11px] text-slate-400">{row.size} org</div>
+                        <div className="text-[11px] font-bold text-slate-700">
+                          {formatRupiah(row.perStudent)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <ul className="mb-6 flex-1 space-y-2.5 text-sm">
                 {tier.features.map((feat) => (

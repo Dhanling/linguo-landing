@@ -5,6 +5,17 @@ import Link from "next/link";
 import { Hand, Scroll, Globe, Landmark } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { matchesLangQuery } from "@/lib/langAlias";
+// semi-class-size-picker-v1 — kalkulator ini dulu Private-only. Angka Semi-Private
+// TIDAK ditulis ulang di sini: dipinjam dari sumber tunggal yang sama dengan
+// funnel /daftar, /api/create-funnel-invoice, dan WA Inbox (quickReplyData.ts).
+import {
+  SEMI_PRIVATE_PRICE_BASIC,
+  LEVEL_MULTIPLIER,
+  SEMI_PRIVATE_SIZES,
+  PRICE_PRIVATE_60MIN,
+  getPrivateLevelTier,
+  getLevelTier,
+} from "@/lib/trial-pricing";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -89,14 +100,7 @@ function LangFlag({ lang, muted }: { lang: LangEntry; muted?: boolean }) {
   return <RectFlag code={lang.code} h={26} className={wrap} />;
 }
 
-// Price per session (60 min) by [cat][levelIdx]
-const PRICE_TABLE: Record<string, number[]> = {
-  A: [120000, 130000, 140000, 150000],
-  B: [110000, 120000, 130000, 140000],
-  C: [100000, 110000, 120000, 130000],
-  D: [90000,  95000,  100000, 110000],
-  E: [150000, 160000, 170000, 180000],
-};
+
 
 // Pengajar native speaker = 2x tarif pengajar lokal.
 // Ubah konstanta ini kalau markup native mau disesuaikan.
@@ -105,11 +109,17 @@ const NATIVE_MULTIPLIER = 2;
 // Native speaker baru tersedia untuk bahasa berikut. Sisanya tampil "Coming soon".
 const NATIVE_AVAILABLE_LANGS = ["English", "Tagalog", "Spanish", "Arabic"];
 
+// price-source-single-v1 — B1 & B2 DIPISAH: di kategori C (Inggris, Jepang,
+// Korea, Mandarin, Prancis, Jerman, Arab) tarifnya beda 10rb per tingkat, dan
+// halaman ini dulu memakai tabel 4-tier sendiri → C1/C2 tampil Rp130.000
+// padahal funnel /daftar & registrasi menagih Rp140.000. Kategori lain tetap
+// menyamakan B1=B2 lewat getPrivateLevelTier().
 const LEVELS = [
-  { key: 0, label: "A1", sub: "Pemula" },
-  { key: 1, label: "A2", sub: "Dasar" },
-  { key: 2, label: "B1/B2", sub: "Menengah" },
-  { key: 3, label: "C1/C2", sub: "Mahir" },
+  { key: "A1", label: "A1", sub: "Pemula" },
+  { key: "A2", label: "A2", sub: "Dasar" },
+  { key: "B1", label: "B1", sub: "Menengah" },
+  { key: "B2", label: "B2", sub: "Menengah Atas" },
+  { key: "C1", label: "C1/C2", sub: "Mahir" },
 ];
 
 const SESSION_PRESETS = [1, 8, 16, 24, 32];
@@ -122,12 +132,22 @@ function formatRp(v: number) {
 
 // Harga per sesi sesuai kategori, level, dan tipe pengajar.
 // Native dibulatkan ke ribuan terdekat biar rapi.
-function priceFor(cat: string, levelIdx: number, teacherType: TeacherType) {
-  const base = PRICE_TABLE[cat][levelIdx];
+function priceFor(cat: string, levelKey: string, teacherType: TeacherType) {
+  const base = PRICE_PRIVATE_60MIN[cat][getPrivateLevelTier(levelKey, cat)];
   if (teacherType === "native") {
     return Math.round((base * NATIVE_MULTIPLIER) / 1000) * 1000;
   }
   return base;
+}
+
+// Harga PER SISWA / sesi 60 menit Semi-Private. Rumus identik WA Inbox
+// (semiPrivatePerStudent): total grup level Basic × multiplier level ÷ jumlah siswa.
+// Native tidak berlaku untuk Semi-Private.
+function semiPriceFor(cat: string, levelKey: string, classSize: number) {
+  const base60 = SEMI_PRIVATE_PRICE_BASIC[cat]?.[classSize - 1] ?? 0;
+  // Semi-Private tetap 4 tier (B1 = B2) — getLevelTier, bukan getPrivateLevelTier.
+  const totalGroup = Math.round(base60 * (LEVEL_MULTIPLIER[getLevelTier(levelKey)] ?? 1));
+  return { totalGroup, perStudent: Math.round(totalGroup / classSize) };
 }
 
 function buildWaLink(
@@ -136,20 +156,26 @@ function buildWaLink(
   sessions: number,
   price: number,
   teacherType: TeacherType,
+  classSize?: number,
 ) {
-  const tt = teacherType === "native" ? "Pengajar Native" : "Pengajar Lokal";
-  const msg = `Halo Min Ling! Saya tertarik daftar Kelas Private ${lang} (${tt}) level ${level} (${sessions} sesi = ${formatRp(price)}). Bisa info lebih lanjut?`;
+  const msg = classSize
+    ? `Halo Min Ling! Saya tertarik daftar Kelas Semi Private ${lang} (grup ${classSize} orang) level ${level} (${sessions} sesi = ${formatRp(price)}/orang). Bisa info lebih lanjut?`
+    : `Halo Min Ling! Saya tertarik daftar Kelas Private ${lang} (${teacherType === "native" ? "Pengajar Native" : "Pengajar Lokal"}) level ${level} (${sessions} sesi = ${formatRp(price)}). Bisa info lebih lanjut?`;
   return `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function HargaPage() {
-  const [levelIdx, setLevelIdx] = useState(0);
+  const [levelKey, setLevelKey] = useState("A1");
   const [sessions, setSessions] = useState(16);
   const [search, setSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
   const [teacherType, setTeacherType] = useState<TeacherType>("lokal");
+  // semi-class-size-picker-v1 — tipe kelas & besar grup.
+  const [classType, setClassType] = useState<"private" | "semi">("private");
+  const [classSize, setClassSize] = useState(2);
+  const isSemi = classType === "semi";
 
   const filtered = useMemo(() => {
     setShowAll(false);
@@ -159,8 +185,10 @@ export default function HargaPage() {
     return LANGUAGES.filter(l => matchesLangQuery(l.name, search));
   }, [search]);
 
-  const currentLevel = LEVELS[levelIdx];
-  const isNative = teacherType === "native";
+  const currentLevel = LEVELS.find(l => l.key === levelKey) ?? LEVELS[0];
+  // Semi-Private tidak menawarkan pengajar native → badge & markup native mati
+  // total di mode ini (kalau tidak, kartunya menagih 2× tarif yang tak pernah ada).
+  const isNative = !isSemi && teacherType === "native";
 
   return (
     <div className="min-h-screen bg-[#f8fafa] font-sans">
@@ -191,31 +219,67 @@ export default function HargaPage() {
       <div className="bg-white border-b border-slate-100 pt-14 pb-12 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <span className="inline-block bg-[#1A9E9E]/10 text-[#1A9E9E] text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
-            Kelas Private 1-on-1
+            {isSemi ? `Kelas Semi Private · grup ${classSize} orang` : "Kelas Private 1-on-1"}
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-4">
             Harga Jelas,<br />Pilih Bahasa & Level
           </h1>
           <p className="text-slate-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             60+ bahasa tersedia. Harga disesuaikan bahasa pilihan dan levelmu — transparan, tanpa biaya tersembunyi.
+            {isSemi && " Semi Private: makin ramai grupnya, makin murah per orang."}
           </p>
         </div>
       </div>
 
       {/* ── Sticky Controls ── */}
       <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-wrap">
+          {/* Tipe kelas — Private 1:1 vs Semi Private (semi-class-size-picker-v1) */}
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Kelas:</span>
+            <div className="inline-flex bg-slate-100 rounded-full p-0.5">
+              {([
+                { value: "private", label: "Private 1:1" },
+                { value: "semi", label: "Semi Private" },
+              ] as const).map(t => (
+                <button key={t.value} onClick={() => setClassType(t.value)}
+                  className={`px-3.5 py-1 rounded-full text-xs font-bold transition-all ${
+                    classType === t.value ? "bg-[#1A9E9E] text-white shadow-sm" : "text-slate-500 hover:text-slate-800"
+                  }`}>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Jumlah siswa — cuma relevan untuk Semi Private */}
+          {isSemi && (
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Siswa:</span>
+              {SEMI_PRIVATE_SIZES.map(n => (
+                <button key={n} onClick={() => setClassSize(n)}
+                  className={`w-7 h-7 rounded-full text-xs font-bold transition-all ${
+                    classSize === n ? "bg-[#1A9E9E] text-white shadow-sm" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}>
+                  {n}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="hidden sm:block h-5 w-px bg-slate-200 mx-1" />
+
           {/* Level */}
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Level:</span>
             {LEVELS.map(l => (
-              <button key={l.key} onClick={() => setLevelIdx(l.key)}
+              <button key={l.key} onClick={() => setLevelKey(l.key)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  levelIdx === l.key
+                  levelKey === l.key
                     ? "bg-[#1A9E9E] text-white shadow-sm"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}>
-                {l.label} <span className={`font-normal ${levelIdx === l.key ? "text-white/70" : "text-slate-400"}`}>{l.sub}</span>
+                {l.label} <span className={`font-normal ${levelKey === l.key ? "text-white/70" : "text-slate-400"}`}>{l.sub}</span>
               </button>
             ))}
           </div>
@@ -245,10 +309,10 @@ export default function HargaPage() {
             </div>
           </div>
 
-          <div className="hidden sm:block h-5 w-px bg-slate-200 mx-1" />
+          <div className={`h-5 w-px bg-slate-200 mx-1 ${isSemi ? "hidden" : "hidden sm:block"}`} />
 
-          {/* Teacher type */}
-          <div className="flex items-center gap-1.5">
+          {/* Teacher type — Semi Private tidak punya opsi native */}
+          <div className={`items-center gap-1.5 ${isSemi ? "hidden" : "flex"}`}>
             <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Pengajar:</span>
             <div className="inline-flex bg-slate-100 rounded-full p-0.5">
               {([
@@ -298,6 +362,17 @@ export default function HargaPage() {
           </div>
         )}
 
+        {/* Semi Private note */}
+        {isSemi && (
+          <div className="-mt-4 mb-7 flex items-start gap-2 text-xs bg-[#1A9E9E]/5 border border-[#1A9E9E]/15 rounded-xl px-3.5 py-2.5 max-w-xl">
+            <span className="font-extrabold text-[#1A9E9E] shrink-0">Semi Private</span>
+            <span className="text-slate-500 leading-relaxed">
+              — harga di kartu = porsi <b>per siswa</b> untuk grup {classSize} orang. Teman satu grup dicari
+              sendiri (Linguo tidak menggabungkan pendaftar lain), dan tiap anggota bayar porsinya masing-masing.
+            </span>
+          </div>
+        )}
+
         {/* Language Grid */}
         {filtered.length === 0 ? (
           <div className="text-center py-16 text-slate-400">
@@ -310,9 +385,13 @@ export default function HargaPage() {
               {(showAll ? filtered : filtered.slice(0, 12)).map(lang => {
                 const nativeAvail = NATIVE_AVAILABLE_LANGS.includes(lang.name);
                 const comingSoon = isNative && !nativeAvail;
-                const price = priceFor(lang.cat, levelIdx, teacherType);
+                const semi = isSemi ? semiPriceFor(lang.cat, levelKey, classSize) : null;
+                const price = semi ? semi.perStudent : priceFor(lang.cat, levelKey, teacherType);
                 const total = price * sessions;
-                const waLink = buildWaLink(lang.name, currentLevel.label, sessions, total, teacherType);
+                const waLink = buildWaLink(
+                  lang.name, currentLevel.label, sessions, total, teacherType,
+                  isSemi ? classSize : undefined,
+                );
                 return (
                   <div key={lang.name}
                     className={`group bg-white rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-200 ${comingSoon ? "border-slate-100 opacity-60" : "border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md"}`}>
@@ -344,7 +423,9 @@ export default function HargaPage() {
                         <div className="bg-slate-50 rounded-xl px-3 py-2.5">
                           <div className="flex items-baseline justify-between">
                             <div>
-                              <p className="text-[11px] text-slate-400 font-medium">Per sesi (60 min)</p>
+                              <p className="text-[11px] text-slate-400 font-medium">
+                                {isSemi ? `Per siswa / sesi (grup ${classSize})` : "Per sesi (60 min)"}
+                              </p>
                               <p className="text-lg font-extrabold text-[#1A9E9E] leading-tight">{formatRp(price)}</p>
                             </div>
                             <div className="text-right">
@@ -352,6 +433,12 @@ export default function HargaPage() {
                               <p className="text-sm font-bold text-slate-700">{formatRp(total)}</p>
                             </div>
                           </div>
+                          {semi && (
+                            <div className="mt-2 pt-2 border-t border-slate-200/70 flex items-baseline justify-between text-[11px] text-slate-400">
+                              <span>Satu grup / sesi</span>
+                              <span className="font-semibold text-slate-600">{formatRp(semi.totalGroup)}</span>
+                            </div>
+                          )}
                         </div>
                         <a href={waLink} target="_blank" rel="noopener noreferrer"
                           className="flex items-center justify-center gap-1.5 bg-[#1A9E9E] hover:bg-[#178585] text-white text-xs font-bold py-2.5 rounded-xl transition-colors">
@@ -384,7 +471,9 @@ export default function HargaPage() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {[
-              "Kelas 1-on-1 via Zoom, jadwal fleksibel",
+              isSemi
+                ? `Kelas grup kecil ${classSize} orang via Zoom, jadwal disepakati bareng`
+                : "Kelas 1-on-1 via Zoom, jadwal fleksibel",
               "Recording setiap sesi",
               "Soft file materi pembelajaran",
               "Request topik & jadwal sesukamu",

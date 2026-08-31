@@ -35,6 +35,9 @@ import {
   applyOfflineSurcharge,
   supportsOffline,
   OFFLINE_SURCHARGE_PER_SESSION,
+  SEMI_PRIVATE_SIZES,
+  SEMI_PRIVATE_MIN,
+  SEMI_PRIVATE_MAX,
 } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
@@ -89,7 +92,13 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   );
   const [duration, setDuration] = useState(Number(sp.get("durasi")) || 60);
   const [sessions, setSessions] = useState(Number(sp.get("sesi")) || 12);
-  const [classSize, setClassSize] = useState(Number(sp.get("peserta")) || 2);
+  // semi-class-size-picker-v1 — jumlah siswa Semi-Private dipilih sendiri (2–10).
+  // Query ?peserta= boleh diketik orang, jadi dijepit ke rentang yang sah biar
+  // simulasi di layar tidak pernah beda dari hitungan ulang server.
+  const [classSize, setClassSize] = useState(() => {
+    const n = Number(sp.get("peserta")) || SEMI_PRIVATE_MIN;
+    return Math.min(Math.max(Math.round(n), SEMI_PRIVATE_MIN), SEMI_PRIVATE_MAX);
+  });
   const [classMode, setClassMode] = useState<"online" | "offline">(
     sp.get("mode") === "offline" ? "offline" : "online",
   );
@@ -187,6 +196,13 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   const kidsKey = KIDS_LEVEL_KEY[selLevel];
   const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, duration, teacherType, lang) : 0;
   const semiPrice = program === "Semi Private" ? getSemiPrivatePrice(lang, selLevel, classSize, duration) : null;
+  // Pembanding "hemat X%": tarif privat 1-on-1 di bahasa, level & durasi yang
+  // sama (tanpa markup native — Semi-Private memang tidak menawarkan native).
+  const semiSoloPerSession = Math.round((privateBase60 * duration) / 60);
+  const semiSavingPct =
+    program === "Semi Private" && semiPrice?.perStudent && semiSoloPerSession
+      ? Math.round(((semiSoloPerSession - semiPrice.perStudent) / semiSoloPerSession) * 100)
+      : 0;
 
   const isSessionProg = program === "Kelas Private" || program === "Semi Private" || program === "Kelas Kids";
   const canOffline = supportsOffline(program || "");
@@ -460,6 +476,36 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </section>
           )}
 
+          {/* Jumlah siswa — khusus Semi Private (semi-class-size-picker-v1) */}
+          {program === "Semi Private" && (
+            <section className="mt-6">
+              <h2 className="text-base font-bold text-slate-900">Jumlah siswa</h2>
+              <p className="mb-3 text-sm text-slate-500">
+                Belajar bareng berapa orang? Makin ramai, makin murah per orangnya.
+              </p>
+              <div className="grid grid-cols-5 gap-2">
+                {SEMI_PRIVATE_SIZES.map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => setClassSize(n)}
+                    className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${classSize === n ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-[11px] leading-relaxed text-slate-400">
+                Termasuk kamu. Teman satu grup dicari sendiri ya — Linguo tidak menggabungkan
+                siswa dari pendaftar lain. Tiap anggota bayar porsinya masing-masing.
+              </p>
+              {semiSavingPct > 0 && (
+                <p className="mt-1.5 text-[11px] font-semibold text-[#1A9E9E]">
+                  Hemat {semiSavingPct}% per orang dibanding kelas privat 1-on-1.
+                </p>
+              )}
+            </section>
+          )}
+
           {/* Durasi & jumlah sesi — program berbasis sesi */}
           {isSessionProg && (
             <>
@@ -522,8 +568,24 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 </span>
                 <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
               </div>
+              {/* Semi-Private: tampilkan juga hitungan satu grup, supaya orang
+                  yang mengumpulkan temannya tahu total yang harus dikumpulkan.
+                  Yang DITAGIH tetap porsi satu orang (perSession × sesi). */}
+              {program === "Semi Private" && (
+                <div className="mt-2.5 rounded-xl bg-white/70 px-3 py-2.5">
+                  <div className="flex items-center justify-between text-[11px] text-slate-500">
+                    <span>Satu grup / sesi ({classSize} orang)</span>
+                    <span>{fmtRp(perSession * classSize)}</span>
+                  </div>
+                  <div className="mt-1 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>Total satu grup ({sessions} sesi)</span>
+                    <span className="font-bold text-slate-700">{fmtRp(perSession * classSize * sessions)}</span>
+                  </div>
+                </div>
+              )}
               <p className="mt-1.5 text-[11px] leading-relaxed text-slate-400">
                 Bayar aman via Xendit. Jadwal diatur Admin setelah pembayaran.
+                {program === "Semi Private" && " Tiap anggota grup daftar & bayar porsinya sendiri lewat halaman ini."}
               </p>
             </div>
           )}

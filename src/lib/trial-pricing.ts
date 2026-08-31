@@ -36,12 +36,27 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     // (setara Inggris/Jepang — kemahalan). Setara peer-nya di kategori A
     // (Norwegia/Swedia/Ceko dkk).
     "Icelandic", "Bulgarian", "Ukrainian", "Lao", "Burmese",
+    // linguo-patch:price-cat-wainbox-parity-v1 — bahasa yang SUDAH punya
+    // kategori di WA Inbox (quickReplyData.ts LANG_CAT) tapi belum di sini.
+    // Tanpa ini getSemiPrivatePrice() memulangkan 0 (kartu harga kosong) dan
+    // quote landing beda dari quote CS di WhatsApp.
+    "Croatian", "Kazakh", "Basque", "Tamil", "Punjabi", "Nepali", "Mongolian",
+    "Armenian", "Amharic", "Yoruba", "Zulu", "Portuguese - Brazilian",
+    "English - British",
   ],
   B: ["Russian", "Dutch", "Italian", "Spanish", "Thai", "Sign Language"],
-  C: ["Arabic", "English", "Japanese", "German", "Korean", "Mandarin", "French"],
+  C: [
+    "Arabic", "English", "Japanese", "German", "Korean", "Mandarin", "French",
+    // price-cat-wainbox-parity-v1 — dialek Arab Mesir ikut tarif Arab (C),
+    // bukan "Ancient Egyptian" (A). "English - Conversation" = nama kelas
+    // Reguler bahasa Inggris yang tersimpan di registrasi.
+    "Egyptian Arabic Dialect", "English - Conversation",
+  ],
   D: [
     "Javanese", "Sundanese", "Betawi", "Madurese", "Batak", "Banjar", "Balinese",
     "Bugis",
+    // price-cat-wainbox-parity-v1 — bahasa daerah Nusantara lain di WA Inbox.
+    "Acehnese", "Minangkabau",
   ],
   E: ["BIPA"],
 };
@@ -327,6 +342,20 @@ export function getLevelTier(level: string): number {
   return 0;
 }
 
+/**
+ * Batas ukuran grup Semi-Private. Sumber tunggal untuk pemilih "Jumlah siswa"
+ * di funnel /daftar, kartu /kursus, kalkulator /harga DAN validasi server
+ * /api/create-funnel-invoice — jangan tulis angka 2/10 lagi di tempat lain.
+ * Mirror WA Inbox (semiPrivatePerStudent menjepit classSize ke 2–10).
+ */
+export const SEMI_PRIVATE_MIN = 2;
+export const SEMI_PRIVATE_MAX = 10;
+/** Opsi jumlah siswa yang ditawarkan di UI (2..10). */
+export const SEMI_PRIVATE_SIZES: number[] = Array.from(
+  { length: SEMI_PRIVATE_MAX - SEMI_PRIVATE_MIN + 1 },
+  (_, i) => SEMI_PRIVATE_MIN + i,
+);
+
 export interface SemiPrivatePrice {
   totalGroup: number;
   perStudent: number;
@@ -342,9 +371,14 @@ export function getSemiPrivatePrice(
   classSize: number,
   duration: number = 60
 ): SemiPrivatePrice {
-  if (!language || classSize < 2 || classSize > 10) return { totalGroup: 0, perStudent: 0 };
-  const cat = getLanguageCategory(language);
-  if (!cat || !SEMI_PRIVATE_PRICE_BASIC[cat]) return { totalGroup: 0, perStudent: 0 };
+  if (!language || classSize < SEMI_PRIVATE_MIN || classSize > SEMI_PRIVATE_MAX) {
+    return { totalGroup: 0, perStudent: 0 };
+  }
+  // Fallback "C" — mirror getPrivateBase60. Sebelumnya bahasa yang belum
+  // dikategorikan memulangkan {0,0}: simulasi harga di layar jadi kosong padahal
+  // kelasnya dibuka. Kategori di atas sudah disamakan dgn WA Inbox, ini jaring
+  // pengaman untuk bahasa baru.
+  const cat = getLanguageCategory(language) || "C";
   const tier = getLevelTier(level || "A1");
   const baseTotal60 = SEMI_PRIVATE_PRICE_BASIC[cat][classSize - 1];
   const adjusted60 = baseTotal60 * LEVEL_MULTIPLIER[tier];
