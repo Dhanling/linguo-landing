@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { BookOpen, Clapperboard } from "lucide-react";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import CheckoutSection from "./CheckoutSection";
+import PratinjauButton from "./PratinjauButton";
 import { masihDijual } from "@/lib/elearningBundle";
 
 const supabase = createClient(
@@ -16,7 +17,7 @@ async function getProduct(slug: string) {
   const { data, error } = await supabase
     .from("digital_products")
     .select(`
-      id, type, title, slug, description, cover_url, preview_url,
+      id, type, title, slug, description, cover_url, preview_url, file_url,
       language, level, category, file_size_mb, pages, format,
       total_duration_min, modules_count, video_provider, is_active,
       digital_product_pricing (
@@ -58,6 +59,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   // linguo-patch:toko-rectflag-lucide-v1 — cover tanpa gambar: bendera SVG
   // rounded-rectangle kalau bahasanya kita kenal, selain itu ikon Lucide.
   const isEbook = product.type === "ebook";
+  // [ebook-pratinjau-unit1-v1] berkas di storage kita (bukan http link luar)
+  const fileUrl = (product as { file_url?: string | null }).file_url ?? null;
+  const bisaDicicipi = !!fileUrl && !/^https?:\/\//i.test(fileUrl) && pricingTiers.length > 0;
   const TypeIcon = isEbook ? BookOpen : Clapperboard;
   const flagCode = product.language
     ? FLAG_CODE_BY_SLUG[String(product.language).trim().toLowerCase()]
@@ -157,6 +161,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 }}
                 pricingTiers={pricingTiers}
               />
+
+              {/* [ebook-pratinjau-unit1-v1] Cicipan cuma untuk modul yang dibaca
+                  di reader kita: produk yang berkasnya masih link luar (Drive)
+                  tak punya batas halaman yang bisa dijaga siapa pun. */}
+              {isEbook && bisaDicicipi && (
+                <PratinjauButton productId={product.id} slug={slug} />
+              )}
             </div>
           </div>
         </div>

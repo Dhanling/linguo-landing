@@ -2640,10 +2640,16 @@ export default function AkunPage() {
     const menu = sp.get("menu");
     const sesi = sp.get("sesi");
     const view = sp.get("view");
+    /* [ebook-pratinjau-unit1-v1] ?ebook=<purchaseId> → mendarat di Perpustakaan
+       DENGAN readernya sudah terbuka. Dipakai tombol "Baca Gratis Unit 1" di
+       halaman produk: sesudah barisnya terbit, orangnya tak boleh disuruh
+       mencari sendiri modul yang barusan dia klik. */
+    const ebookId = sp.get("ebook");
     let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | null = null;
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
     if (view === "live" || view === "mandiri") { resolved = "materi"; } // [beranda-tanpa-tab-mandiri-v1] view lama tetap mendarat di Kelas & Materi
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
+    if (ebookId) { setBukaEbook(ebookId); resolved = "pustaka"; } // [ebook-pratinjau-unit1-v1]
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup")) resolved = menu;
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
     // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
@@ -2658,10 +2664,10 @@ export default function AkunPage() {
     }
     if (resolved) setActiveTab(resolved);
     // bersihin deep-link param sekali pakai, biar refresh berikutnya andelin tab tersimpan (bukan param nyangkut)
-    if (menu || sesi || view) {
+    if (menu || sesi || view || ebookId) {
       try {
         const u = new URL(window.location.href);
-        ["menu", "sesi", "view"].forEach((k) => u.searchParams.delete(k));
+        ["menu", "sesi", "view", "ebook"].forEach((k) => u.searchParams.delete(k));
         window.history.replaceState(null, "", u.toString());
       } catch {}
     }
