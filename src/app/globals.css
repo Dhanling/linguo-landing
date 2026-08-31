@@ -332,3 +332,10 @@ body { animation: pageEnter 0.5s ease-out both; }
 @media (prefers-reduced-motion: reduce) {
   .silabus-rise { animation: none !important; }
 }
+
+/* [ebook-pratinjau-publik-v2] Reader cicipan (popup "Baca Gratis Unit 1") layar
+   penuh, tapi gelembung Ling duduk di z-index 9990 — jauh di atasnya — dan
+   mendarat persis menimpa tombol "Beli Sekarang" di kaki reader. Selama reader
+   terbuka gelembungnya disembunyikan; ia kembali begitu popupnya ditutup. */
+body.ebook-cicip-buka .lingw-launcher,
+body.ebook-cicip-buka .lingw-teaser { display: none !important; }

@@ -104,7 +104,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             {/* Cover */}
-            <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center p-6 text-white sm:p-8">
+            {/* [ebook-sampul-tanpa-latar-v1] Latar gradien teal dicabut 31 Agu
+                2026. Sampul modul memang sudah punya latar penuh warnanya
+                sendiri (bendera, judul, ilustrasi); menaruhnya di atas kotak
+                teal berarti dua bidang warna bertarung, dan sampulnya menyusut
+                jadi kartu kecil di tengah kolom. Sekarang kertas putih halaman
+                yang jadi latarnya — yang dilihat calon pembeli tinggal
+                sampulnya. */}
+            <div className="flex items-center justify-center bg-white p-6 text-gray-300 sm:p-8">
               {product.cover_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 /* [ebook-sampul-utuh-v1] `object-cover` dulu memenuhi kolom ini
@@ -206,7 +213,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   di reader kita: produk yang berkasnya masih link luar (Drive)
                   tak punya batas halaman yang bisa dijaga siapa pun. */}
               {bisaDicicipi && (
-                <PratinjauButton slug={slug} title={product.title} />
+                <PratinjauButton slug={slug} title={product.title} language={product.language} />
               )}
             </div>
           </div>

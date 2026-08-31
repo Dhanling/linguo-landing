@@ -453,6 +453,32 @@ function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuff
   return janji;
 }
 
+/* [ebook-pratinjau-publik-v2] Byte pratinjau Unit 1 — jalur TAMU.
+
+   Terpisah dari ambilBerkas di atas dan sengaja jauh lebih pendek: tak ada
+   token yang diperiksa, tak ada laci IndexedDB, tak ada pemeriksaan edisi.
+   Berkas ini memang gratis, kecil (~600 KB), dan sama untuk semua orang —
+   CDN yang menyimpannya, bukan perangkat pembacanya (yang belum tentu pernah
+   kembali). Simpanan memori di bawah cuma menahan buka-tutup popup di satu
+   kunjungan supaya tak menarik berkas yang sama dua kali. */
+const cicipCache = new Map<string, Promise<ArrayBuffer>>();
+function ambilPratinjau(url: string): Promise<ArrayBuffer> {
+  const ada = cicipCache.get(url);
+  if (ada) return ada;
+  const janji = (async () => {
+    const res = await fetch(url);
+    if (!res.ok) {
+      const j = await res.json().catch(() => ({}));
+      throw new Error((j as any)?.error || tr("Pratinjau modul ini belum tersedia."));
+    }
+    return res.arrayBuffer();
+  })();
+  // Gagal jangan dikenang: klik berikutnya berhak mencoba lagi.
+  janji.catch(() => cicipCache.delete(url));
+  cicipCache.set(url, janji);
+  return janji;
+}
+
 /* ── membuka modul dari potongan ───────────────────────────────────────────
    [ebook-buka-cepat-v4] Kepala & ekor berkas ditarik BARENGAN di muka.
 
@@ -887,12 +913,20 @@ export interface EbookReaderProps {
      readernya melempar ke /toko sendiri, jadi tombolnya tak pernah jadi tombol
      mati di pemanggil yang belum sempat menyambungkannya. */
   onBeli?: () => void;
+  /* [ebook-pratinjau-publik-v2] Alamat berkas PDF Unit 1 yang boleh dibaca
+     TANPA login. Diisi = reader tak menyentuh /api/ebook sama sekali: bytenya
+     ditarik dari sini, tak ada berkas latihan, dan tak ada jejak baca yang
+     dititipkan ke perangkat (tamu belum punya identitas untuk mengekorinya —
+     lihat lib/jejakPemilik). Dipakai popup "Baca Gratis Unit 1" di /toko. */
+  pratinjauUrl?: string;
   onClose: () => void;
 }
 
 export default function EbookReader({
-  purchaseId, title, accessToken, language, onBeli, onClose,
+  purchaseId, title, accessToken, language, onBeli, pratinjauUrl, onClose,
 }: EbookReaderProps) {
+  /** Mode cicip publik: satu bendera yang dibaca semua cabang di bawah. */
+  const cicip = !!pratinjauUrl;
   /* [ebook-buka-instan-v1] Modul yang barusan dibaca masih hidup di memori →
      dipasang sebagai nilai AWAL, jadi rendernya yang pertama pun sudah berisi
      halaman; tak ada "Menyiapkan modul…" yang berkelip. */
@@ -1129,6 +1163,29 @@ export default function EbookReader({
 
     (async () => {
       try {
+        /* [ebook-pratinjau-publik-v2] Jalur tamu: satu berkas kecil, sekali
+           tarik, selesai. Semua kerumitan di bawah (laci perangkat, potongan
+           Range, penukaran ke berkas utuh, pemeriksaan edisi) lahir dari modul
+           berbayar 3,5–7,5 MB milik seseorang — tak satu pun berlaku di sini. */
+        if (pratinjauUrl) {
+          const pdfjs = await muatPdfjs();
+          if (!hidup) return;
+          pdfjsRef.current = pdfjs;
+          const buf = await ambilPratinjau(pratinjauUrl);
+          if (!hidup) return;
+          const d = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+          if (!hidup) { d.destroy?.(); return; }
+          docRef.current = d;
+          setDoc(d);
+          setTotal(d.numPages);
+          setPage(1);
+          /* Tak ada halaman yang perlu digembok — berkasnya MEMANG cuma Unit 1
+             (server yang memotongnya). Batasnya dipasang di jumlah halaman
+             supaya ajakan beli di bilah atas tetap muncul tanpa gembok apa pun
+             ikut terpasang. */
+          setBatasBebas(d.numPages);
+          return;
+        }
         // [ebook-reader-paralel-v1] Bundel pdf.js, byte yang mungkin sudah
         // tersimpan, dan alamat berkasnya diminta BARENGAN — tiga penantian itu
         // tidak saling bergantung, jadi waktu tunggunya tinggal yang paling
@@ -1231,21 +1288,23 @@ export default function EbookReader({
       teksRef.current.clear();
       hentikanEbookTts();
     };
-  }, [purchaseId, accessToken]);
+  }, [purchaseId, accessToken, pratinjauUrl]);
 
   /* Berkas soal diminta terpisah dari PDF-nya dan TIDAK ditunggu: modulnya
      harus sudah bisa dibaca walau soalnya belum sampai (atau tak ada). */
   useEffect(() => {
+    if (cicip) return; // berkas soal ikut berbayar — lihat /api/ebook
     let hidup = true;
     void ambilSoal(purchaseId, accessToken).then((j) => { if (hidup) setSoal(j); });
     return () => { hidup = false; };
-  }, [purchaseId, accessToken]);
+  }, [purchaseId, accessToken, cicip]);
 
   /* [ebook-pratinjau-unit1-v1] Batas halaman baris cicip. Dimintanya terpisah
      supaya modul yang dibuka dari simpanan (yang tak lagi menyentuh /api/ebook)
      tetap tahu gemboknya harus dipasang. `ambilMeta` bersimpanan, jadi ini tak
      menambah perjalanan jaringan pada pembukaan biasa. */
   useEffect(() => {
+    if (cicip) return; // batasnya sudah dipasang waktu berkas cicip dibuka
     let hidup = true;
     ambilMeta(purchaseId, accessToken)
       .then((m) => { if (hidup) setBatasBebas(m.pratinjau); })
@@ -1254,7 +1313,7 @@ export default function EbookReader({
       // gembok gara-gara satu permintaan yang gagal.
       .catch(() => {});
     return () => { hidup = false; };
-  }, [purchaseId, accessToken]);
+  }, [purchaseId, accessToken, cicip]);
 
   /** Halaman ini di balik gembok? */
   const terkunci = useCallback(
@@ -1535,7 +1594,7 @@ export default function EbookReader({
         await p.render({ canvasContext: ctx, viewport }).promise;
         gambarNomor(ctx, viewport.width, viewport.height, n);
         // [lingbook-sampul-kartu-v1] halaman 1 = sampul → titipkan versi kecilnya
-        if (n === 1) simpanSampul(purchaseId, canvas);
+        if (n === 1 && !cicip) simpanSampul(purchaseId, canvas);
         const bm: Bitmap = { canvas, w: Math.floor(viewport.width), h: Math.floor(viewport.height) };
         // Hasil generasi lama (skala sudah berubah) dibuang, bukan disimpan —
         // dibandingkan lewat ref, karena `generasi` di closure ini nilainya
@@ -1555,7 +1614,7 @@ export default function EbookReader({
     })();
     antreRef.current.set(n, tugas);
     return tugas;
-  }, [generasi, gambarNomor, purchaseId]);
+  }, [generasi, gambarNomor, purchaseId, cicip]);
 
   /** Salin bitmap ke canvas yang tampak. drawImage = blit, jauh lebih murah dari render ulang. */
   const pasang = useCallback((target: HTMLCanvasElement | null, bm: Bitmap | null) => {
@@ -1621,7 +1680,7 @@ export default function EbookReader({
      pernah punya gambarnya. Sekali, waktu browser senggang, halaman 1 dirender
      diam-diam khusus untuk ditangkap. Cuma kalau belum tersimpan. */
   useEffect(() => {
-    if (!doc || !ukuran) return;
+    if (!doc || !ukuran || cicip) return;
     try {
       if (localStorage.getItem(sampulKey(purchaseId))) return;
     } catch {
@@ -1637,10 +1696,13 @@ export default function EbookReader({
       if (idle) w.cancelIdleCallback?.(id);
       else clearTimeout(id);
     };
-  }, [doc, ukuran, siapkan, purchaseId]);
+  }, [doc, ukuran, siapkan, purchaseId, cicip]);
 
   useEffect(() => {
-    if (!doc) return;
+    /* Tamu tak dititipi jejak: kunci localStorage-nya berekor "tamu" (lihat
+       lib/jejakPemilik), jadi cicipan orang di warnet akan muncul sebagai
+       "Lanjutkan Belajar" milik siapa pun yang membuka dashboard sesudahnya. */
+    if (!doc || cicip) return;
     localStorage.setItem(halamanKey(purchaseId), `${page}/${doc.numPages}`);
     /* [lanjutkan-belajar-v1] Stempel waktu ditulis TERPISAH, bukan disisipkan ke
        nilai "halaman/total" di atas — format itu sudah dibaca waktu modul dibuka,
@@ -1651,7 +1713,7 @@ export default function EbookReader({
       localStorage.setItem(halamanTsKey(purchaseId), String(Date.now()));
       localStorage.setItem(jejakKey(purchaseId), JSON.stringify({ title, language: language || null }));
     } catch {}
-  }, [page, purchaseId, doc, title, language]);
+  }, [page, purchaseId, doc, title, language, cicip]);
 
   /* ── membalik halaman ──────────────────────────────────────────────────── */
   const kurangGerak = () =>
@@ -2427,10 +2489,14 @@ export default function EbookReader({
      pojok kiri atas. */
   useEffect(() => {
     if (!doc || memuat || galat || kerjakan) return;
+    /* [ebook-pratinjau-publik-v2] Tur tujuh langkah itu untuk siswa yang baru
+       memegang modul yang SUDAH dibelinya. Menyambut calon pembeli dengan
+       tutorial berarti menutupi halaman yang justru datang ia lihat. */
+    if (cicip) return;
     try { if (localStorage.getItem(PANDUAN_KEY)) return; } catch { return; }
     const jam = window.setTimeout(() => setTur((v) => v ?? "penuh"), 700);
     return () => window.clearTimeout(jam);
-  }, [doc, memuat, galat, kerjakan]);
+  }, [doc, memuat, galat, kerjakan, cicip]);
 
   /* Sorotan tombol latihan: sekali seumur akun, waktu halaman latihan pertama
      terbuka. Tidak dipaksakan menimpa panduan penuh yang mungkin sedang jalan. */
@@ -3366,6 +3432,25 @@ export default function EbookReader({
           </div>
         )}
       </div>
+
+      {/* [ebook-pratinjau-publik-v2] Kaki cicipan: pembacanya sedang menimbang
+          beli, jadi tombolnya harus ada di tempat matanya berhenti — bukan cuma
+          di pojok bilah atas yang sudah tergulir jauh dari perhatian. */}
+      {cicip && !galat && (
+        <div className="flex shrink-0 items-center gap-3 border-t border-white/10 bg-black/40 px-3 py-2.5 sm:px-4">
+          <p className="hidden min-w-0 flex-1 items-center gap-1.5 text-[12.5px] font-medium text-white/55 sm:flex">
+            <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2.2} />
+            {t("Unit 2 sampai akhir modul terbuka setelah pembelian.")}
+          </p>
+          <button
+            onClick={() => (onBeli ? onBeli() : window.open("/toko", "_blank", "noopener,noreferrer"))}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#12A37E] px-5 py-2.5 text-[13.5px] font-extrabold text-white transition hover:bg-[#0C8163] active:scale-[0.98] sm:flex-none"
+          >
+            <ShoppingBag className="h-4 w-4" strokeWidth={2.3} />
+            {t("Beli Sekarang")}
+          </button>
+        </div>
+      )}
 
       {/* bilah bawah — [ebook-navigasi-halaman-v1] dulu isinya cuma dua panah &
           nomor halaman: satu-satunya cara sampai ke halaman 28 adalah membalik
