@@ -71,6 +71,9 @@ interface DProduct {
 interface Purchase {
   id: string;
   payment_status: string;
+  /* [ebook-pratinjau-unit1-v1] 'preview' = baris CICIP (Rp0, Unit 1 saja).
+     Nilai lain (xendit/manual/promo/…) = kepemilikan penuh. */
+  source: string | null;
   access_granted: boolean;
   expires_at: string | null;
   download_count: number;
@@ -232,6 +235,12 @@ type Access =
   | { kind: "soon"; days: number }
   | { kind: "dated"; until: string };
 
+/* [ebook-pratinjau-unit1-v1] Baris cicip: masuk rak seperti milik sendiri, tapi
+   readernya cuma membuka Unit 1 dan kartunya bertanda "Pratinjau". Sengaja tidak
+   disembunyikan dari rak — justru di rak itu orang kembali membukanya, dan tiap
+   pembukaan adalah kesempatan tombol belinya terlihat lagi. */
+const cicipan = (p: Purchase) => p.source === "preview";
+
 function accessInfo(p: Purchase): Access {
   if (!p.expires_at) return { kind: "forever" };
   const ms = new Date(p.expires_at).getTime() - Date.now();
@@ -373,7 +382,7 @@ async function runLoadLibrary(
   const purchasesBase = supabase
     .from("digital_purchases")
     .select(`
-      id, payment_status, access_granted, expires_at, download_count, created_at,
+      id, payment_status, access_granted, expires_at, download_count, created_at, source,
       digital_products (
         id, type, title, slug, cover_url, file_url, video_playlist_url,
         language, level, pages, modules_count, total_duration_min
@@ -577,7 +586,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
   /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
   const [reading, setReading] = useState<
-    { purchaseId: string; title: string; accessToken: string; watermark: string; language: string | null } | null
+    {
+      purchaseId: string; title: string; accessToken: string; watermark: string;
+      language: string | null;
+      /* [ebook-pratinjau-unit1-v1] dipakai tombol "Beli untuk lanjut baca" di
+         dalam reader untuk menemukan produk katalognya. */
+      productId: string;
+    } | null
   >(null);
 
   /* [pustaka-terakhir-dibuka-v1] Baris "Terakhir dibuka". Jejaknya hidup di
@@ -796,6 +811,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
         || (u.email?.split("@")[0] ?? "Siswa Linguo");
       setReading({
         purchaseId: p.id,
+        productId: prod.id,
         title: prod.title,
         accessToken: session.access_token,
         watermark: `${nama} · ${u.email ?? ""}`.trim(),
@@ -808,6 +824,48 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
       toast.error("Terjadi kesalahan saat membuka e-book.");
     } finally {
       setBusy(null);
+    }
+  }
+
+  /* [ebook-pratinjau-unit1-v1] "Coba gratis" di kartu tergembok: terbitkan baris
+     cicip lalu LANGSUNG buka readernya. Menyuruh orang mencari sendiri modulnya
+     di rak sesudah klik itu satu langkah mundur — yang dia mau adalah membaca,
+     bukan menambah koleksi. */
+  const [cobaBusy, setCobaBusy] = useState<string | null>(null);
+  async function cobaGratis(item: CatalogItem) {
+    if (preview) { toast("Mode pratinjau — hanya tampilan."); return; }
+    setCobaBusy(item.id);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) { toast.error("Sesi kamu sudah habis. Masuk ulang ya."); return; }
+      const res = await fetch("/api/ebook/pratinjau", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ accessToken: session.access_token, productId: item.id }),
+      });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok || !j?.ok) throw new Error(j?.error || "Gagal membuka pratinjau.");
+      // Baris barunya belum ada di state; readernya dibuka dari data yang sudah
+      // di tangan (produk katalog + id baris yang baru terbit), dan rak
+      // menyusul di belakang layar.
+      libCache = null;
+      void openProduct({
+        id: String(j.purchase_id),
+        payment_status: "Lunas",
+        access_granted: true,
+        expires_at: j.expires_at ?? null,
+        download_count: 0,
+        created_at: new Date().toISOString(),
+        source: "preview",
+        digital_products: item,
+        digital_product_pricing: null,
+      });
+      toast.success(j.sudahPunya ? "Modul ini sudah jadi milikmu." : "Pratinjau Unit 1 terbuka — selamat mencoba!");
+      setTimeout(fetchAll, 1200);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Gagal membuka pratinjau.");
+    } finally {
+      setCobaBusy(null);
     }
   }
 
@@ -1391,6 +1449,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                 onBuy={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setBuyFor(k))}
                 diKeranjang={keranjang.some((x) => x.productId === k.id)}
                 onKeranjang={() => toggleKeranjang(k)}
+                /* [ebook-pratinjau-unit1-v1] cuma Lingbook: e-learning tak punya
+                   "unit 1" yang bisa dipagari. */
+                onCoba={k.type === "ebook" ? () => cobaGratis(k) : undefined}
+                cobaBusy={cobaBusy === k.id}
               />
             ))}
           </div>
@@ -1475,6 +1537,16 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           accessToken={reading.accessToken}
           watermark={reading.watermark}
           language={reading.language}
+          /* [ebook-pratinjau-unit1-v1] Gembok di halaman berbayar → popup beli
+             yang sama dengan katalog. Readernya ditutup dulu: popupnya digambar
+             di bawah lapisan reader (z-[100] vs reader yang layar penuh), jadi
+             kalau readernya dibiarkan terbuka tombolnya seolah tak berfungsi. */
+          onBeli={() => {
+            const k = katalog.find((x) => x.id === reading.productId);
+            setReading(null);
+            if (k) setBuyFor(k);
+            else window.open("/toko", "_blank", "noopener,noreferrer");
+          }}
           onClose={() => setReading(null)}
         />
       )}
@@ -1672,6 +1744,13 @@ function ProductCard({
           ) : (
             <p className="mt-1.5 text-[11.5px] font-bold text-rose-500">Akses berakhir</p>
           )
+        ) : cicipan(p) ? (
+          /* [ebook-pratinjau-unit1-v1] Rak tak boleh membuat orang mengira
+             modulnya sudah utuh miliknya — sisa harinya kalah penting dari
+             kenyataan bahwa isinya baru satu unit. */
+          <p className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-[#12A37E]/10 px-2 py-0.5 text-[10.5px] font-extrabold text-[#0C8163]">
+            <Sparkles className="h-3 w-3" strokeWidth={2.6} /> Pratinjau · Unit 1
+          </p>
         ) : a.kind === "soon" ? (
           <p className="mt-1.5 text-[11.5px] font-bold text-amber-600">Sisa {a.days} hari</p>
         ) : !ready ? (
@@ -1735,7 +1814,15 @@ function ProductRow({
           <TitleFlag language={prod.language} />
           <h3 title={prod.title} className="truncate text-[15px] font-extrabold text-[#12172B]">{judulRingkas(prod.title)}</h3>
         </div>
-        <p className="text-[12px] font-medium text-slate-400">Dibeli {fmtDate(p.created_at)}</p>
+        <p className="text-[12px] font-medium text-slate-400">
+          {cicipan(p) ? `Pratinjau sejak ${fmtDate(p.created_at)}` : `Dibeli ${fmtDate(p.created_at)}`}
+        </p>
+        {/* [ebook-pratinjau-unit1-v1] */}
+        {cicipan(p) && !expired && (
+          <p className="mt-1 inline-flex items-center gap-1 rounded-full bg-[#12A37E]/10 px-2 py-0.5 text-[11px] font-extrabold text-[#0C8163]">
+            <Sparkles className="h-3 w-3" strokeWidth={2.6} /> Pratinjau — cuma Unit 1 yang terbuka
+          </p>
+        )}
         {/* [materi-belum-siap-v1] */}
         {!ready && !expired && (
           <p className="mt-1 text-[11px] font-semibold text-amber-600">Materi sedang disiapkan tim Linguo</p>
@@ -1952,11 +2039,13 @@ function RenewModal({
 // yang materinya belum dipasang admin TIDAK bisa dibeli — menjual dulu lalu
 // menyuruh siswa menunggu berkasnya itu cara tercepat bikin permintaan refund.
 function LockedCard({
-  item, ready, onBuy, diKeranjang, onKeranjang,
+  item, ready, onBuy, diKeranjang, onKeranjang, onCoba, cobaBusy,
 }: {
   item: CatalogItem; ready: boolean; onBuy: () => void;
   /* [pustaka-keranjang-v1] */
   diKeranjang: boolean; onKeranjang: () => void;
+  /* [ebook-pratinjau-unit1-v1] undefined = produk ini tak bisa dicicipi. */
+  onCoba?: () => void; cobaBusy?: boolean;
 }) {
   const mulai = hargaMulai(item);
   const bisaBeli = ready && mulai !== null;
@@ -2028,6 +2117,23 @@ function LockedCard({
             </button>
           )}
         </div>
+
+        {/* [ebook-pratinjau-unit1-v1] Jalur ketiga: baca dulu, bayar belakangan.
+            Barisnya sendiri (bukan ikon ketiga di baris Beli) supaya kalimatnya
+            terbaca utuh — "Unit 1" itu janji yang menentukan orang mengkliknya
+            atau tidak. Hanya muncul kalau modulnya memang siap dibuka. */}
+        {onCoba && bisaBeli && (
+          <button
+            onClick={onCoba}
+            disabled={cobaBusy}
+            className="mt-1.5 inline-flex h-7 w-full items-center justify-center gap-1.5 rounded-lg bg-[#12A37E]/10 text-[11.5px] font-bold text-[#0C8163] ring-1 ring-[#12A37E]/30 transition hover:bg-[#12A37E]/15 active:scale-[0.98] disabled:opacity-60"
+          >
+            {cobaBusy
+              ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              : <BookOpen className="h-3.5 w-3.5" strokeWidth={2.4} fill="none" />}
+            Coba gratis Unit 1
+          </button>
+        )}
       </div>
     </div>
   );

@@ -48,6 +48,37 @@ const enc = (jalur: string) => jalur.split("/").map(encodeURIComponent).join("/"
 // dianggap statis oleh perantara mana pun.
 const NO_STORE = { "Cache-Control": "no-store, private, max-age=0" };
 
+/* [ebook-pratinjau-unit1-v1] Baris ber-source 'preview' = akses CICIP: cuma
+   sampai akhir Unit 1, sisanya digembok di reader dengan tombol beli.
+
+   Batas halamannya DIHITUNG DI SINI, bukan di browser: yang tahu unit 1 berakhir
+   di halaman berapa adalah berkas soal pendamping modul (`*.latihan.json`), dan
+   angka yang datang dari klien tinggal diubah sendiri lewat console.
+
+   Jujur soal jangkauannya: byte PDF-nya tetap dikirim utuh (readernya perlu itu
+   untuk MEMBURAMKAN halaman terkunci, dan memotong PDF per permintaan berarti
+   merakit ulang berkas di fungsi serverless tiap kali modul dibuka). Jadi ini
+   pagar etalase, bukan DRM — cukup untuk calon pembeli, tidak untuk penadah. */
+const PRATINJAU_CADANGAN = 14;
+
+/** Halaman terakhir yang boleh dibaca gratis. Modul tanpa berkas soal jatuh ke
+    angka cadangan: bagian depan modul (sampul + daftar isi + unit pertama) di
+    semua modul rakitan kita duduk di kisaran itu. */
+function batasPratinjau(soal: unknown): number {
+  const unit = (soal as { unit?: Array<{ hal?: number | null; sampai?: number | null; halLatihan?: number | null }> } | null)?.unit;
+  if (!Array.isArray(unit) || unit.length === 0) return PRATINJAU_CADANGAN;
+  const u1 = unit[0];
+  // `sampai` = halaman terakhir unit (sudah termasuk latihan + kunci jawaban).
+  // Modul lama dirakit sebelum kolom itu ada → pakai halaman latihan + kuncinya,
+  // dan kalau itu pun kosong, mundur ke halaman sebelum unit 2 dimulai.
+  const akhir =
+    u1?.sampai ??
+    (u1?.halLatihan ? u1.halLatihan + 1 : null) ??
+    (unit[1]?.hal ? unit[1].hal! - 1 : null) ??
+    PRATINJAU_CADANGAN;
+  return Math.max(1, Number(akhir) || PRATINJAU_CADANGAN);
+}
+
 function tolak(pesan: string, status: number) {
   return NextResponse.json({ error: pesan }, { status, headers: NO_STORE });
 }
@@ -84,7 +115,7 @@ export async function POST(req: NextRequest) {
     userClient.auth.getUser(),
     admin
       .from("digital_purchases")
-      .select("id, auth_user_id, buyer_email, payment_status, access_granted, expires_at, download_count, digital_products(id, type, title, file_url)")
+      .select("id, auth_user_id, buyer_email, payment_status, access_granted, expires_at, download_count, source, digital_products(id, type, title, file_url)")
       .eq("id", purchaseId)
       .maybeSingle(),
   ]);
@@ -115,6 +146,20 @@ export async function POST(req: NextRequest) {
   if (!prod || prod.type !== "ebook") return tolak("Produk ini bukan e-book", 400);
   // Link eksternal (Drive dsb) tidak lewat sini — reader hanya untuk berkas milik kita.
   if (!isStoragePath(prod.file_url)) return tolak("E-book ini tidak disimpan sebagai berkas", 400);
+
+  // [ebook-pratinjau-unit1-v1] Baris cicipan — lihat batasPratinjau() di atas.
+  const pratinjau = beli.source === "preview";
+
+  /** Berkas soal pendamping modul (dipakai batas pratinjau & jalur "latihan"). */
+  const bacaSoal = async (): Promise<{ unit: unknown[] } | null> => {
+    const nama = prod.file_url!.replace(/\.pdf$/i, "") + ".latihan.json";
+    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${enc(nama)}`, {
+      headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
+      cache: "no-store",
+    }).catch(() => null);
+    if (!res?.ok) return null;
+    return res.json().catch(() => null);
+  };
 
   /** Catat akses — best-effort, jangan pernah menahan modul gara-gara statistik. */
   const catatAkses = () => {
@@ -148,6 +193,10 @@ export async function POST(req: NextRequest) {
       return tolak("Berkas modul belum diunggah tim Linguo. Hubungi CS ya.", 404);
     }
     catatAkses();
+    // Batas cicipan dihitung dari berkas soalnya — satu tarikan kecil (puluhan
+    // KB) dan HANYA untuk baris pratinjau, jadi pembeli sungguhan tak ikut
+    // menunggunya.
+    const batas = pratinjau ? batasPratinjau(await bacaSoal()) : null;
     // Dua alamat, dua tugas:
     //   • `url` (langsung ke CDN Supabase) untuk menarik modul UTUH ke simpanan
     //     perangkat — tidak lewat server kita, jadi tidak makan egress Vercel;
@@ -160,25 +209,32 @@ export async function POST(req: NextRequest) {
         urlPotong: `/api/ebook/berkas?p=${tiket.p}&exp=${tiket.exp}&sig=${encodeURIComponent(tiket.sig)}`,
         // Modul pihak ketiga tak punya berkas soal — URL-nya tetap dikirim,
         // yang menjawab 400 nanti cuma bikin tombol latihannya tidak muncul.
-        urlSoal: tandaSoal.data?.signedUrl ?? null,
+        //
+        // [ebook-pratinjau-unit1-v1] Untuk pencicip alamat mentahnya DITAHAN:
+        // berkas itu memuat soal SELURUH unit apa adanya. Readernya otomatis
+        // jatuh ke jalur "latihan" di bawah, yang memotongnya jadi unit 1 saja.
+        urlSoal: pratinjau ? null : (tandaSoal.data?.signedUrl ?? null),
         versi: kepala?.headers.get("etag") ?? null,
         umur: UMUR_TANDA,
+        // null = akses penuh. Angka = halaman terakhir yang boleh dibaca.
+        pratinjau: batas,
       },
       { headers: NO_STORE },
     );
   }
 
   if (bagian === "latihan") {
-    const namaSoal = prod.file_url!.replace(/\.pdf$/i, "") + ".latihan.json";
-    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${enc(namaSoal)}`, {
-      headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
-      cache: "no-store",
-    }).catch(() => null);
+    const soal = await bacaSoal();
     // Modul pihak ketiga tak punya berkas soal — itu keadaan normal, bukan
     // galat: readernya cuma tidak menampilkan tombol latihan.
-    if (!res?.ok) return NextResponse.json({ unit: [] }, { headers: NO_STORE });
-    const isi = await res.text();
-    return new NextResponse(isi, { headers: { ...NO_STORE, "Content-Type": "application/json" } });
+    if (!soal) return NextResponse.json({ unit: [] }, { headers: NO_STORE });
+    // [ebook-pratinjau-unit1-v1] Soal unit 2 dst TIDAK ikut dikirim ke pencicip.
+    // Kalau ikut, seluruh isi latihan modul terbaca dari tab Network — bagian
+    // yang justru paling ingin dibeli orang.
+    const isi = pratinjau
+      ? { ...soal, unit: (soal.unit ?? []).slice(0, 1) }
+      : soal;
+    return NextResponse.json(isi, { headers: NO_STORE });
   }
 
   // ── 4. Ambil berkasnya ────────────────────────────────────────────────────

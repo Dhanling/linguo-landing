@@ -18,7 +18,10 @@ export const dynamic = "force-dynamic";
 type Row = Record<string, any>;
 
 const PURCHASE_SELECT = [
-  "id,payment_status,access_granted,expires_at,download_count,created_at",
+  // [ebook-pratinjau-unit1-v1] `source` ikut: kartu bertanda "Pratinjau"
+  // harus terbaca sama di POV staf, kalau tidak staf melihat rak yang berbeda
+  // dari yang dilihat siswanya.
+  "id,payment_status,access_granted,expires_at,download_count,created_at,source",
   "digital_products(id,type,title,slug,cover_url,file_url,video_playlist_url,language,level,pages,modules_count,total_duration_min)",
   "digital_product_pricing(display_label,duration_days)",
 ].join(",");

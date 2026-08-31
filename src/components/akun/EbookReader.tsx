@@ -36,7 +36,7 @@ import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
-  ChevronDown, Eye, EyeOff, PenLine, HelpCircle,
+  ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles,
 } from "lucide-react";
 import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
 // [ebook-panduan-tour-v1]
@@ -316,6 +316,10 @@ type MetaModul = {
   urlSoal: string | null;
   versi: string | null;
   kedaluwarsa: number;
+  /* [ebook-pratinjau-unit1-v1] Halaman terakhir yang boleh dibaca. null = akses
+     penuh. Angkanya datang dari server (dihitung dari berkas soal modul) — kalau
+     dihitung di sini, gemboknya tinggal digeser sendiri dari console. */
+  pratinjau: number | null;
 };
 const metaCache = new Map<string, MetaModul>();
 const metaAntre = new Map<string, Promise<MetaModul>>();
@@ -344,6 +348,7 @@ function ambilMeta(purchaseId: string, accessToken: string): Promise<MetaModul> 
       urlSoal: j.urlSoal ? String(j.urlSoal) : null,
       versi: j.versi ? String(j.versi) : null,
       kedaluwarsa: Date.now() + (Number(j.umur) || 300) * 1000,
+      pratinjau: Number(j.pratinjau) > 0 ? Number(j.pratinjau) : null,
     };
     metaCache.set(purchaseId, meta);
     return meta;
@@ -878,11 +883,15 @@ export interface EbookReaderProps {
    *  Kosong pun tak apa — bahasanya ditebak dari judul. Kalau tetap tak
    *  terbaca, ketuk-untuk-mendengar tidak diaktifkan sama sekali. */
   language?: string | null;
+  /* [ebook-pratinjau-unit1-v1] Dipanggil dari gembok halaman terkunci. Kosong =
+     readernya melempar ke /toko sendiri, jadi tombolnya tak pernah jadi tombol
+     mati di pemanggil yang belum sempat menyambungkannya. */
+  onBeli?: () => void;
   onClose: () => void;
 }
 
 export default function EbookReader({
-  purchaseId, title, accessToken, language, onClose,
+  purchaseId, title, accessToken, language, onBeli, onClose,
 }: EbookReaderProps) {
   /* [ebook-buka-instan-v1] Modul yang barusan dibaca masih hidup di memori →
      dipasang sebagai nilai AWAL, jadi rendernya yang pertama pun sudah berisi
@@ -1014,6 +1023,10 @@ export default function EbookReader({
      dikerjakan. Keduanya pelengkap: modul tanpa berkas soal jalan seperti biasa. */
   const [soal, setSoal] = useState<BerkasLatihan | null>(null);
   const [kerjakan, setKerjakan] = useState<UnitLatihan | null>(null);
+  /* [ebook-pratinjau-unit1-v1] Halaman terakhir yang terbuka untuk baris cicip.
+     null = akses penuh (juga selama batasnya belum terjawab server — halaman
+     yang sudah tergambar tak boleh berkelip jadi gembok lalu terbuka lagi). */
+  const [batasBebas, setBatasBebas] = useState<number | null>(null);
   /* [ebook-panduan-tour-v1] Tur yang sedang berjalan. "penuh" = panduan
      pemakaian dari tombol tanda tanya; "latihan" = sorotan sekali jalan yang
      memperkenalkan tombol Kerjakan latihan waktu siswa pertama kali sampai di
@@ -1227,6 +1240,27 @@ export default function EbookReader({
     void ambilSoal(purchaseId, accessToken).then((j) => { if (hidup) setSoal(j); });
     return () => { hidup = false; };
   }, [purchaseId, accessToken]);
+
+  /* [ebook-pratinjau-unit1-v1] Batas halaman baris cicip. Dimintanya terpisah
+     supaya modul yang dibuka dari simpanan (yang tak lagi menyentuh /api/ebook)
+     tetap tahu gemboknya harus dipasang. `ambilMeta` bersimpanan, jadi ini tak
+     menambah perjalanan jaringan pada pembukaan biasa. */
+  useEffect(() => {
+    let hidup = true;
+    ambilMeta(purchaseId, accessToken)
+      .then((m) => { if (hidup) setBatasBebas(m.pratinjau); })
+      // Gagal = biarkan terbuka: yang menjaga uangnya tetap gerbang di server
+      // (soal unit 2+ tak pernah dikirim), dan pembeli sah tak boleh kena
+      // gembok gara-gara satu permintaan yang gagal.
+      .catch(() => {});
+    return () => { hidup = false; };
+  }, [purchaseId, accessToken]);
+
+  /** Halaman ini di balik gembok? */
+  const terkunci = useCallback(
+    (n: number | null | undefined) => !!n && batasBebas !== null && n > batasBebas,
+    [batasBebas],
+  );
 
   /* ── skala: satu bentangan penuh harus MUAT di layar ───────────────────── */
   // [ebook-reader-fit-v1] Skala dasar = muat penuh (lebar DAN tinggi), bukan
@@ -2248,6 +2282,56 @@ export default function EbookReader({
     );
   }, [kunciKotak, kunciBuka, skalaTampil, pw, t]);
 
+  /* [ebook-pratinjau-unit1-v1] Gembok halaman berbayar.
+     Isinya SENGAJA masih tergambar di bawahnya lalu diburamkan (backdrop-blur),
+     bukan diganti kotak kosong: yang bikin orang membeli adalah melihat ada
+     sesuatu di balik kaca — halaman putih polos cuma terbaca seperti modulnya
+     habis. Buramnya 12px + kerudung putih: bentuk paragrafnya kelihatan, satu
+     kata pun tidak.
+
+     Lapisannya menangkap ketukan (bukan pointer-events-none) — itu sekaligus
+     yang mematikan ketuk-kata dan salin teks di halaman terkunci. */
+  const gambarGembok = useCallback((n: number | null | undefined, kiriSlot: number, beku: boolean) => {
+    if (!terkunci(n)) return null;
+    const sudut = dua ? (kiriSlot === 0 ? "8px 2px 2px 8px" : "2px 8px 8px 2px") : 8;
+    return (
+      <div
+        key={`gembok-${n}`}
+        className="absolute z-20 flex flex-col items-center justify-center px-4 text-center"
+        style={{
+          left: kiriSlot, top: 0, width: pw, height: ph, borderRadius: sudut,
+          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+          background: "rgba(255,255,255,0.62)",
+        }}
+        onClick={(e) => e.stopPropagation()}
+        onPointerDown={(e) => e.stopPropagation()}
+      >
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#12172B] text-white shadow-lg">
+          <Lock className="h-[22px] w-[22px]" strokeWidth={2.2} />
+        </span>
+        <p className="mt-3 text-[14px] font-extrabold leading-snug text-[#12172B]">
+          {t("Bagian ini masih terkunci")}
+        </p>
+        <p className="mt-1 max-w-[240px] text-[12px] font-semibold leading-snug text-[#12172B]/60">
+          {t("Kamu sedang membaca pratinjau gratis — cuma Unit 1 yang terbuka.")}
+        </p>
+        {!beku && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onBeli) onBeli();
+              else window.open("/toko", "_blank", "noopener,noreferrer");
+            }}
+            className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-[#12A37E] px-4 py-2.5 text-[12.5px] font-extrabold text-white shadow-lg transition hover:bg-[#0C8163] active:scale-[0.98]"
+          >
+            <ShoppingBag className="h-4 w-4" strokeWidth={2.4} />
+            {t("Beli untuk lanjut baca")}
+          </button>
+        )}
+      </div>
+    );
+  }, [terkunci, dua, pw, ph, onBeli, t]);
+
   /* [ebook-latihan-interaktif-v1] Unit yang halamannya sedang terbuka — dasar
      tombol "Kerjakan latihan". Rentang halamannya dihitung waktu modul dirakit,
      bukan di sini: paginasi PDF ditentukan mesin cetak, dan menebaknya dari
@@ -2270,10 +2354,14 @@ export default function EbookReader({
         const mulai = u.halLatihan ?? u.hal;
         const habis = u.sampai ?? u.halLatihan ?? u.hal;
         if (!mulai || !habis) return false;
+        // [ebook-pratinjau-unit1-v1] Soalnya memang tak dikirim ke pencicip,
+        // tapi tombolnya pun jangan muncul: "Kerjakan latihan" yang membuka
+        // kartu kosong terbaca sebagai modul rusak.
+        if (terkunci(mulai)) return false;
         return halaman.some((n) => n >= mulai && n <= habis);
       }) ?? null
     );
-  }, [soal, tampil.kiri, tampil.kanan]);
+  }, [soal, tampil.kiri, tampil.kanan, terkunci]);
 
   /* ── panduan berpandu ──────────────────────────────────────────────────
      [ebook-panduan-tour-v1] Isi langkahnya ditulis di sini, bukan di dalam
@@ -2853,6 +2941,20 @@ export default function EbookReader({
         </button>
         <BookOpen className="hidden h-5 w-5 shrink-0 text-[#3ED9C0] sm:block" />
         <h2 className="min-w-0 flex-1 truncate text-[14px] font-bold text-white sm:text-[15px]">{title}</h2>
+        {/* [ebook-pratinjau-unit1-v1] Pencicip harus tahu sejak halaman pertama
+            kenapa modulnya berhenti di tengah — bukan baru waktu membentur
+            gembok di halaman 15. */}
+        {batasBebas !== null && (
+          <button
+            onClick={() => (onBeli ? onBeli() : window.open("/toko", "_blank", "noopener,noreferrer"))}
+            className="flex h-9 shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-2.5 text-[12px] font-extrabold text-white transition hover:bg-[#0C8163] active:scale-[0.97] sm:px-3"
+            title={t("Pratinjau gratis Unit 1 — beli untuk membuka semua unit")}
+          >
+            <Sparkles className="h-4 w-4" strokeWidth={2.4} />
+            <span className="hidden sm:inline">{t("Pratinjau · Beli semua unit")}</span>
+            <span className="sm:hidden">{t("Beli")}</span>
+          </button>
+        )}
         <div data-panduan="zoom" className="hidden items-center gap-1 sm:flex">
           {muatDua && (
             <button
@@ -3082,6 +3184,7 @@ export default function EbookReader({
                   />
                   {/* Muka depan = halaman yang sedang ditinggalkan. */}
                   {gambarTirai(dua ? (balik.arah > 0 ? tampil.kanan : tampil.kiri) : tampil.kiri, 0, true)}
+                  {gambarGembok(dua ? (balik.arah > 0 ? tampil.kanan : tampil.kiri) : tampil.kiri, 0, true)}
                   <div className="ebook-bayang" style={{ borderRadius: sudutDaun }} />
                 </div>
                 <div className="ebook-muka ebook-punggung">
@@ -3092,6 +3195,13 @@ export default function EbookReader({
                   />
                   {/* Punggung = halaman baru yang tersingkap di balik kertas. */}
                   {gambarTirai(
+                    dua
+                      ? (balik.arah > 0 ? balik.tujuan.kiri : balik.tujuan.kanan)
+                      : (balik.tujuan.kiri ?? balik.tujuan.kanan),
+                    0,
+                    true,
+                  )}
+                  {gambarGembok(
                     dua
                       ? (balik.arah > 0 ? balik.tujuan.kiri : balik.tujuan.kanan)
                       : (balik.tujuan.kiri ?? balik.tujuan.kanan),
@@ -3118,6 +3228,11 @@ export default function EbookReader({
                 <>
                   {gambarTirai(kiriHal, 0, !!balik)}
                   {dua && gambarTirai(kananHal, pw + GAP, !!balik)}
+                  {/* [ebook-pratinjau-unit1-v1] gembok halaman berbayar —
+                      digambar SESUDAH tirai kunci jawaban supaya menutupinya
+                      juga (halaman terkunci tak boleh punya tombol apa pun). */}
+                  {gambarGembok(kiriHal, 0, !!balik)}
+                  {dua && gambarGembok(kananHal, pw + GAP, !!balik)}
                 </>
               );
             })()}
