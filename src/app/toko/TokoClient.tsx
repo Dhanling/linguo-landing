@@ -16,6 +16,7 @@ import {
 import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { Product } from './page';
 import { BRAND_FACTS } from '@/lib/brand-facts';
+import { LABEL_NEW_EDITION, adalahNewEdition } from '@/lib/ebookEdisi';
 
 // linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
 // (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
@@ -80,7 +81,15 @@ export default function TokoClient({ products }: { products: Product[] }) {
     return products.filter((p) => {
       if (filter !== 'all' && p.type !== filter) return false;
       if (q) {
-        const haystack = [p.title, p.language, p.description, p.category]
+        const haystack = [
+          p.title,
+          p.language,
+          p.description,
+          p.category,
+          // Label edisinya cuma hiasan di kartu; tanpa baris ini mengetik
+          // "new edition" di kotak cari malah menghasilkan nol produk.
+          adalahNewEdition(p.title, p.type) ? LABEL_NEW_EDITION : null,
+        ]
           .filter(Boolean)
           .join(' ')
           .toLowerCase();
@@ -209,6 +218,7 @@ export default function TokoClient({ products }: { products: Product[] }) {
             {filtered.map((product, i) => {
               const { price, label } = getDisplayPrice(product);
               const isEbook = product.type === 'ebook';
+              const newEdition = adalahNewEdition(product.title, product.type);
               const headerGradient = isEbook
                 ? 'from-teal-500 to-teal-700'
                 : 'from-amber-400 to-orange-500';
@@ -253,6 +263,16 @@ export default function TokoClient({ products }: { products: Product[] }) {
                         )}
                         {isEbook ? 'E-Book' : 'E-Learning'}
                       </div>
+                      {/* [ebook-new-edition-label-v1] Penanda edisi baru di
+                          kepala kartu — bukan disisipkan ke judul, supaya judul
+                          di etalase tetap sama persis dengan judul di invoice,
+                          Perpustakaan, dan reader. */}
+                      {newEdition && (
+                        <div className="absolute bottom-2 right-3 inline-flex items-center gap-1 rounded-full bg-yellow-400/95 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-900 shadow">
+                          <Sparkles className="h-3 w-3" strokeWidth={2} aria-hidden />
+                          {LABEL_NEW_EDITION}
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-4">

@@ -6,6 +6,7 @@ import CheckoutSection from "./CheckoutSection";
 import PratinjauButton from "./PratinjauButton";
 import Deskripsi from "./Deskripsi";
 import { masihDijual } from "@/lib/elearningBundle";
+import { LABEL_NEW_EDITION, adalahNewEdition } from "@/lib/ebookEdisi";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -95,6 +96,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const bisaDicicipi =
     isEbook && pricingTiers.length > 0 && (await punyaPratinjau(fileUrl));
   const TypeIcon = isEbook ? BookOpen : Clapperboard;
+  // [ebook-new-edition-label-v1] Label edisi, dari pola judul (tak ada kolomnya).
+  const newEdition = adalahNewEdition(product.title, product.type);
   const flagCode = product.language
     ? FLAG_CODE_BY_SLUG[String(product.language).trim().toLowerCase()]
     : undefined;
@@ -158,6 +161,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 {product.level && (
                   <span className="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-600">
                     Level {product.level}
+                  </span>
+                )}
+                {/* [ebook-new-edition-label-v1] Chip, bukan sisipan ke judul:
+                    judul produk dipakai ulang di invoice Xendit, Perpustakaan,
+                    dan reader — kalau kata ini ikut ke dalamnya, ketiganya ikut
+                    berubah dan judul lama di riwayat pembelian jadi tak cocok. */}
+                {newEdition && (
+                  <span className="inline-flex items-center gap-1 rounded bg-yellow-400/95 px-2 py-1 text-xs font-bold uppercase tracking-wide text-slate-900">
+                    {LABEL_NEW_EDITION}
                   </span>
                 )}
               </div>
