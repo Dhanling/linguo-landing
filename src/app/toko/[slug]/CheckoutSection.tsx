@@ -97,22 +97,26 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
   return (
     <>
       {/* Pricing tier selector */}
+      {/* [toko-produk-compact-v1] Tinggi tiap blok di bawah dipangkas supaya
+          harga + tombol beli + tombol cicip muat satu layar bersama sampulnya.
+          Yang dikurangi cuma padding & ukuran huruf — tak satu pun keterangan
+          dihilangkan. */}
       {pricingTiers.length > 1 && (
-        <div className="space-y-2 mb-4">
-          <label className="text-sm font-medium text-gray-700">Pilih Durasi Akses</label>
+        <div className="mb-3 space-y-1.5">
+          <label className="text-[13px] font-medium text-gray-700">Pilih Durasi Akses</label>
           <div className="grid grid-cols-3 gap-2">
             {pricingTiers.map((tier) => (
               <button
                 key={tier.id}
                 onClick={() => setSelectedTier(tier)}
-                className={`px-3 py-3 rounded-xl border-2 text-center transition-all ${
+                className={`rounded-xl border-2 px-2 py-2 text-center transition-all ${
                   selectedTier?.id === tier.id
                     ? "border-teal-500 bg-teal-50"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
-                <div className="text-xs text-gray-500 mb-0.5">{tier.display_label}</div>
-                <div className="text-sm font-semibold text-gray-900">
+                <div className="text-[11px] text-gray-500">{tier.display_label}</div>
+                <div className="text-[13px] font-semibold text-gray-900">
                   Rp {formatRupiah(tier.price)}
                 </div>
               </button>
@@ -122,12 +126,14 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
       )}
 
       {/* Selected price */}
-      <div className="bg-teal-50 rounded-2xl p-4 mb-4">
-        <div className="text-xs text-gray-600 mb-1">Total Bayar</div>
-        <div className="text-3xl font-bold text-teal-600">
-          Rp {formatRupiah(selectedTier.price)}
+      <div className="mb-3 flex items-baseline justify-between gap-3 rounded-2xl bg-teal-50 px-4 py-3">
+        <div>
+          <div className="text-[11px] font-medium text-gray-600">Total Bayar</div>
+          <div className="text-[26px] font-bold leading-tight text-teal-600">
+            Rp {formatRupiah(selectedTier.price)}
+          </div>
         </div>
-        <div className="text-xs text-gray-600 mt-1">{selectedTier.display_label}</div>
+        <div className="text-[12px] font-semibold text-gray-600">{selectedTier.display_label}</div>
       </div>
 
       <button
@@ -136,7 +142,7 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
            memperbaikinya. Jangan ganti id-nya tanpa mengubah pemanggil itu. */
         id="tombol-beli-sekarang"
         onClick={() => setShowCheckoutModal(true)}
-        className="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 rounded-2xl transition-colors text-lg"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 py-3.5 text-[17px] font-semibold text-white transition-colors hover:bg-teal-700"
       >
         <CreditCard className="h-5 w-5" strokeWidth={2} aria-hidden />
         Beli Sekarang

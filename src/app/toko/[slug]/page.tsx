@@ -4,6 +4,7 @@ import { BookOpen, Clapperboard } from "lucide-react";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import CheckoutSection from "./CheckoutSection";
 import PratinjauButton from "./PratinjauButton";
+import Deskripsi from "./Deskripsi";
 import { masihDijual } from "@/lib/elearningBundle";
 
 const supabase = createClient(
@@ -98,9 +99,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     ? FLAG_CODE_BY_SLUG[String(product.language).trim().toLowerCase()]
     : undefined;
 
+  /* [toko-produk-compact-v1] `min-h-screen` selalu memaksa satu layar PENUH di
+     bawah bar promo yang tingginya sudah didorong ke <body> lewat padding-top —
+     hasilnya halaman ini punya bilah gulir setinggi bar itu yang tak berisi
+     apa-apa, padahal seluruh isinya sudah muat. Tinggi minimumnya dikurangi
+     setinggi bar (variabelnya 0px kalau barnya tutup). */
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-5xl mx-auto px-4 py-12">
+    <div className="min-h-[calc(100vh-var(--promo-bar-h,0px))] bg-gray-50">
+      {/* [toko-produk-compact-v1] Sasaran tata letak ini: di layar laptop
+          (±800 px tinggi) sampul, harga, "Beli Sekarang", dan "Baca Gratis
+          Unit 1" harus terlihat SEKALIGUS tanpa menggulir. Yang dulu memakan
+          ruangnya bukan isi, melainkan napas: py-12 di halaman, p-8 di kolom,
+          judul 3xl, deskripsi sembilan baris, dan dua kotak meta setinggi 70 px
+          untuk dua angka. */}
+      <div className="mx-auto max-w-5xl px-4 py-6 sm:py-8">
         <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             {/* Cover */}
@@ -111,7 +123,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 jadi kartu kecil di tengah kolom. Sekarang kertas putih halaman
                 yang jadi latarnya — yang dilihat calon pembeli tinggal
                 sampulnya. */}
-            <div className="flex items-center justify-center bg-white p-6 text-gray-300 sm:p-8">
+            <div className="flex items-center justify-center bg-white p-5 text-gray-300 sm:p-6">
               {product.cover_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 /* [ebook-sampul-utuh-v1] `object-cover` dulu memenuhi kolom ini
@@ -124,7 +136,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <img
                   src={product.cover_url}
                   alt={product.title}
-                  className="max-h-[560px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+                  /* Tinggi sampul diikat ke TINGGI LAYAR, bukan angka tetap:
+                     560 px di layar 800 px sudah menghabiskan jatah sebelum
+                     tombol belinya sempat kebagian. */
+                  className="max-h-[52vh] w-auto max-w-full rounded-xl object-contain shadow-2xl sm:max-h-[62vh]"
                 />
               ) : flagCode ? (
                 <RectFlag code={flagCode} h={112} className="shadow-xl" />
@@ -134,8 +149,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
 
             {/* Info */}
-            <div className="p-8">
-              <div className="flex items-center gap-2 mb-3">
+            <div className="p-6 sm:p-7">
+              <div className="mb-2 flex items-center gap-2">
                 <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded bg-teal-50 text-teal-700">
                   <TypeIcon className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
                   {isEbook ? "E-Book" : "E-Learning"}
@@ -147,11 +162,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 )}
               </div>
 
-              <h1 className="text-3xl font-bold text-gray-900 mb-3">{product.title}</h1>
-              <p className="text-gray-600 leading-relaxed mb-6">{product.description}</p>
+              <h1 className="mb-2 text-2xl font-bold text-gray-900 sm:text-[28px]">{product.title}</h1>
+              {product.description && <Deskripsi teks={product.description} />}
 
               {productLangs.length > 0 && (
-                <div className="mb-6">
+                <div className="mb-4">
                   <span className="mb-2 block text-xs font-semibold uppercase tracking-wide text-gray-400">
                     {productLangs.length} bahasa termasuk
                   </span>
@@ -172,31 +187,33 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 </div>
               )}
 
-              {/* Meta info */}
-              <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
+              {/* Meta info — [toko-produk-compact-v1] dulu dua kartu abu-abu
+                  setinggi 70 px untuk memuat dua angka pendek. Sekarang satu
+                  baris chip: keterangan yang sama, seperempat tingginya. */}
+              <div className="mb-4 flex flex-wrap items-center gap-2 text-[13px]">
                 {product.type === "ebook" && product.pages && (
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <span className="text-gray-500 block text-xs">Halaman</span>
-                    <span className="font-semibold">{product.pages} hal</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600">
+                    <span className="text-gray-400">Halaman</span>
+                    <b className="font-semibold text-gray-900">{product.pages} hal</b>
+                  </span>
                 )}
                 {product.type === "ebook" && product.file_size_mb && (
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <span className="text-gray-500 block text-xs">Ukuran File</span>
-                    <span className="font-semibold">{product.file_size_mb} MB</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600">
+                    <span className="text-gray-400">Ukuran</span>
+                    <b className="font-semibold text-gray-900">{product.file_size_mb} MB</b>
+                  </span>
                 )}
                 {product.type === "elearning" && product.modules_count && (
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <span className="text-gray-500 block text-xs">Total Sesi</span>
-                    <span className="font-semibold">{product.modules_count} sesi</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600">
+                    <span className="text-gray-400">Total sesi</span>
+                    <b className="font-semibold text-gray-900">{product.modules_count} sesi</b>
+                  </span>
                 )}
                 {product.type === "elearning" && product.total_duration_min && (
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <span className="text-gray-500 block text-xs">Total Durasi</span>
-                    <span className="font-semibold">{Math.round(product.total_duration_min / 60)} jam</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5 text-gray-600">
+                    <span className="text-gray-400">Total durasi</span>
+                    <b className="font-semibold text-gray-900">{Math.round(product.total_duration_min / 60)} jam</b>
+                  </span>
                 )}
               </div>
 

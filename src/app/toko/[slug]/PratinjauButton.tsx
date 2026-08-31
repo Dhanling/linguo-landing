@@ -83,15 +83,15 @@ export default function PratinjauButton({
 
   return (
     <>
-      <div className="mt-3">
+      <div className="mt-2.5">
         <button
           onClick={() => setBuka(true)}
-          className="w-full inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-teal-600 bg-white py-3.5 text-[15px] font-semibold text-teal-700 transition-colors hover:bg-teal-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-teal-600 bg-white py-3 text-[15px] font-semibold text-teal-700 transition-colors hover:bg-teal-50"
         >
           <BookOpen className="h-5 w-5" strokeWidth={2} aria-hidden />
           Baca Gratis Unit 1
         </button>
-        <p className="mt-2 text-center text-xs text-gray-500">
+        <p className="mt-1.5 text-center text-[11.5px] text-gray-500">
           Coba dulu sebelum beli — Unit 1 terbuka penuh, gratis, tanpa perlu daftar.
         </p>
       </div>
