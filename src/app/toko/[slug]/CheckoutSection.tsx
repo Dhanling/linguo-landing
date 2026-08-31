@@ -131,6 +131,10 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
       </div>
 
       <button
+        /* [ebook-pratinjau-publik-v1] Dipanggil juga dari kaki popup pratinjau
+           (PratinjauButton.keCheckout) — satu alur bayar, satu tempat
+           memperbaikinya. Jangan ganti id-nya tanpa mengubah pemanggil itu. */
+        id="tombol-beli-sekarang"
         onClick={() => setShowCheckoutModal(true)}
         className="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 rounded-2xl transition-colors text-lg"
       >

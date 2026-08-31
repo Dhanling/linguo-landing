@@ -13,6 +13,36 @@ const supabase = createClient(
 
 export const dynamic = "force-dynamic";
 
+/* [ebook-pratinjau-publik-v1] Tombol pratinjau baru boleh muncul kalau berkas
+   potongannya MEMANG ada di bucket (dirakit scripts/build-ebook-pratinjau.mjs).
+   Tanpa penjagaan ini, delapan produk "English Edition" yang file_url-nya
+   menunjuk berkas yang belum pernah diunggah tetap menawarkan "Baca Gratis
+   Unit 1" — dan yang mengkliknya disambut pesan galat. Janji yang tak bisa
+   ditepati lebih buruk daripada tombol yang tak ada.
+
+   Ragu = tampilkan: kalau HEAD-nya gagal karena JARINGAN, routenya toh bisa
+   merakit potongannya sendiri saat diklik. Yang dihitung sebagai "tidak ada"
+   adalah jawaban 4xx dari storage — objek yang hilang dijawab 400 di sini,
+   bukan 404 (jadi jangan menyaring 404 saja: itu yang bikin delapan produk
+   rusak lolos di percobaan pertama). */
+async function punyaPratinjau(fileUrl: string | null): Promise<boolean> {
+  if (!fileUrl || /^https?:\/\//i.test(fileUrl)) return false; // link Drive dsb
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!key) return false;
+  const jalur = (fileUrl.replace(/\.pdf$/i, "") + ".pratinjau.pdf")
+    .split("/").map(encodeURIComponent).join("/");
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/ebook-files/${jalur}`,
+      { method: "HEAD", headers: { apikey: key, Authorization: `Bearer ${key}` }, cache: "no-store" },
+    );
+    if (res.ok) return true;
+    return !(res.status >= 400 && res.status < 500);
+  } catch {
+    return true;
+  }
+}
+
 async function getProduct(slug: string) {
   const { data, error } = await supabase
     .from("digital_products")
@@ -59,9 +89,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   // linguo-patch:toko-rectflag-lucide-v1 — cover tanpa gambar: bendera SVG
   // rounded-rectangle kalau bahasanya kita kenal, selain itu ikon Lucide.
   const isEbook = product.type === "ebook";
-  // [ebook-pratinjau-unit1-v1] berkas di storage kita (bukan http link luar)
+  // [ebook-pratinjau-publik-v1] tombol "Baca Gratis Unit 1"
   const fileUrl = (product as { file_url?: string | null }).file_url ?? null;
-  const bisaDicicipi = !!fileUrl && !/^https?:\/\//i.test(fileUrl) && pricingTiers.length > 0;
+  const bisaDicicipi =
+    isEbook && pricingTiers.length > 0 && (await punyaPratinjau(fileUrl));
   const TypeIcon = isEbook ? BookOpen : Clapperboard;
   const flagCode = product.language
     ? FLAG_CODE_BY_SLUG[String(product.language).trim().toLowerCase()]
@@ -73,12 +104,21 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             {/* Cover */}
-            <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white">
+            <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center p-6 text-white sm:p-8">
               {product.cover_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                // [ebook-sampul-produk-v1] sampul modul itu potret — jangkar atas
-                // supaya judulnya tidak ikut terpotong di kotak yang lebih persegi
-                <img src={product.cover_url} alt={product.title} className="w-full h-full object-cover object-top" />
+                /* [ebook-sampul-utuh-v1] `object-cover` dulu memenuhi kolom ini
+                   dengan cara MEMOTONG: sampul modul potret (1:√2) dipaksa masuk
+                   kotak yang jauh lebih jangkung, jadi sisi kiri-kanannya —
+                   tempat bendera & label "LEVEL A1" berada — hilang dari layar.
+                   Sekarang sampulnya dimuat utuh di tengah, latar gradiennya
+                   yang mengisi sisa ruang. Sampul memang barang jualan: separuh
+                   sampul menjual separuhnya saja. */
+                <img
+                  src={product.cover_url}
+                  alt={product.title}
+                  className="max-h-[560px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+                />
               ) : flagCode ? (
                 <RectFlag code={flagCode} h={112} className="shadow-xl" />
               ) : (
@@ -165,8 +205,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               {/* [ebook-pratinjau-unit1-v1] Cicipan cuma untuk modul yang dibaca
                   di reader kita: produk yang berkasnya masih link luar (Drive)
                   tak punya batas halaman yang bisa dijaga siapa pun. */}
-              {isEbook && bisaDicicipi && (
-                <PratinjauButton productId={product.id} slug={slug} />
+              {bisaDicicipi && (
+                <PratinjauButton slug={slug} title={product.title} />
               )}
             </div>
           </div>
