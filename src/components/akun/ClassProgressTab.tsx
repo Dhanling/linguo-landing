@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
+import RecordingModal from './RecordingModal';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
 import { SkillRow } from '@/components/akun/SkillBar';
@@ -61,6 +62,8 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
   const [studentName, setStudentName] = useState('Siswa');
   // [progress-delta-v1] status tombol bagikan: '' | 'copied' | 'failed'
   const [shareState, setShareState] = useState('');
+  // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
+  const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -320,17 +323,28 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                   )}
 
                   {s.recording_url && (
-                    <a
-                      // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard cuma
-                      // bisa dibuka tim — dialihkan ke pemutar siswa di linguo.id.
-                      href={studentRecordingHref(s.recording_url)}
-                      {...(isInternalRecordingHref(studentRecordingHref(s.recording_url))
-                        ? {}
-                        : { target: "_blank", rel: "noreferrer" })}
-                      className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
-                    >
-                      <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
-                    </a>
+                    // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard cuma
+                    // bisa dibuka tim — rekamannya diputar lewat /api/class-recording.
+                    // [vc-recmodal-v1] …dan diputar sebagai POP-UP di halaman ini,
+                    // supaya daftar sesi yang sedang dibaca tidak ikut hilang.
+                    isInternalRecordingHref(studentRecordingHref(s.recording_url)) ? (
+                      <button
+                        type="button"
+                        onClick={() => setRekaman({ url: s.recording_url!, title: t('Tonton Recording') })}
+                        className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
+                      >
+                        <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
+                      </button>
+                    ) : (
+                      <a
+                        href={studentRecordingHref(s.recording_url)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
+                      >
+                        <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
+                      </a>
+                    )
                   )}
                 </div>
               );
@@ -338,6 +352,9 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
           </div>
         )}
       </section>
+      {rekaman && (
+        <RecordingModal recordingUrl={rekaman.url} title={rekaman.title} onClose={() => setRekaman(null)} />
+      )}
     </div>
   );
 }

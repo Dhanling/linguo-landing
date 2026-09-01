@@ -15,6 +15,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Loader2, RefreshCw, Video, ArrowLeft } from "lucide-react";
 import { resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
+import { ClassVideoPlayer } from "@/components/akun/ClassVideoPlayer";
 
 interface RecordingItem {
   key: string;
@@ -98,15 +99,10 @@ export default function RekamanKelasPage() {
           </div>
         ) : recordings.length ? (
           <div className="mt-5 flex flex-col gap-5">
-            {recordings.map((r) => (
+            {recordings.map((r, i) => (
               <div key={r.key} className="overflow-hidden rounded-2xl border border-slate-100 bg-white">
-                <video
-                  src={r.url}
-                  controls
-                  playsInline
-                  className="aspect-video w-full bg-black"
-                  preload="metadata"
-                />
+                {/* [vc-player-v1] Pemutar sendiri: ← → maju/mundur, spasi putar/jeda. */}
+                <ClassVideoPlayer src={r.url} autoPlay={false} keyboard={i === 0} />
                 <div className="flex items-center justify-between gap-3 px-4 py-3">
                   <span className="text-[13px] font-bold text-[#12172B]">{fmtDate(r.recordedAt)}</span>
                   <span className="text-[12px] font-medium text-gray-400">{fmtSize(r.sizeBytes)}</span>

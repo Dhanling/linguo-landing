@@ -19,6 +19,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
+import RecordingModal from "./RecordingModal";
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
@@ -732,6 +733,8 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
   const rec = e.recordingUrl ? studentRecordingHref(e.recordingUrl) : null;
+  // [vc-recmodal-v1] Rekaman ditonton di pop-up — kalender tetap di posisinya.
+  const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
   return (
     <div
       className="rounded-2xl bg-slate-50 p-3"
@@ -811,18 +814,30 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             </a>
           )}
           {/* jadwal-riwayat-v1: rekaman sesi lampau */}
-          {rec && (
+          {rec && (isInternalRecordingHref(rec) ? (
+            <button
+              type="button"
+              onClick={() => setRekaman({ url: e.recordingUrl!, title: `${tt("Rekaman")} — ${e.language}` })}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] hover:bg-[#EAF3F2]"
+            >
+              <PlayCircle className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Rekaman")}
+            </button>
+          ) : (
             <a
               href={rec}
-              {...(isInternalRecordingHref(rec) ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] hover:bg-[#EAF3F2]"
             >
               <PlayCircle className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Rekaman")}
             </a>
-          )}
+          ))}
         </span>
       </div>
       <MaterialBlock s={e} />
+      {rekaman && (
+        <RecordingModal recordingUrl={rekaman.url} title={rekaman.title} onClose={() => setRekaman(null)} />
+      )}
     </div>
   );
 }

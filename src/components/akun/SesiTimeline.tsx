@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { Calendar, Clock, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
 import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
+import RecordingModal from './RecordingModal';
 import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
 // bukan sebagai tautan — lihat ItemRow.
@@ -120,6 +121,8 @@ export default function SesiTimeline({
   variant: 'sesi' | 'materi';
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
+  const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
   // Lampiran pengajar cuma dibutuhkan di tab Materi — jangan query di tab Sesi.
   const [materials, setMaterials] = useState<any[] | null>(variant === 'materi' ? null : []);
   useEffect(() => {
@@ -333,12 +336,24 @@ export default function SesiTimeline({
 
                     {variant === 'sesi' && s?.recording_url && (() => {
                       const href = studentRecordingHref(s.recording_url!);
-                      const internal = isInternalRecordingHref(href);
+                      // [vc-recmodal-v1] Rekaman kita sendiri dibuka sebagai
+                      // pop-up di halaman ini; tautan luar tetap ke tab baru.
+                      if (isInternalRecordingHref(href)) {
+                        return (
+                          <button
+                            type="button"
+                            onClick={() => setRekaman({ url: s.recording_url!, title: `${t('Rekaman')} — ${t('Sesi')} ${no}` })}
+                            className="mt-2.5 inline-flex h-9 items-center gap-1.5 rounded-xl bg-[#16796E] px-3 text-[12px] font-bold text-white transition hover:bg-[#0F5A52]"
+                          >
+                            <Video className="h-3.5 w-3.5" strokeWidth={2.5} />{t('Tonton rekaman')}
+                          </button>
+                        );
+                      }
                       return (
                         <a
                           href={href}
-                          target={internal ? undefined : '_blank'}
-                          rel={internal ? undefined : 'noreferrer'}
+                          target="_blank"
+                          rel="noreferrer"
                           className="mt-2.5 inline-flex h-9 items-center gap-1.5 rounded-xl bg-[#16796E] px-3 text-[12px] font-bold text-white transition hover:bg-[#0F5A52]"
                         >
                           <Video className="h-3.5 w-3.5" strokeWidth={2.5} />{t('Tonton rekaman')}
@@ -351,6 +366,9 @@ export default function SesiTimeline({
             );
           })}
         </ol>
+      )}
+      {rekaman && (
+        <RecordingModal recordingUrl={rekaman.url} title={rekaman.title} onClose={() => setRekaman(null)} />
       )}
     </div>
   );
