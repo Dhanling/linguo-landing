@@ -18,7 +18,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 
@@ -113,6 +113,14 @@ const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), {
 const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'), { ssr: false });
 // [materi-sesi-timeline-v1] linimasa sesi (jadwal, rekaman & materi per sesi) di tab Kelas & Materi
 const SesiTimeline = dynamic(() => import('@/components/akun/SesiTimeline'), { ssr: false });
+/* [materi-tab-kuis-rapor-v1] Kuis & Rapor dulu cuma ada di halaman detail kelas
+   (/akun/kelas/[id]). Kartu kelas di Beranda melempar ke sana, jadi siswa punya DUA
+   tempat berbeda buat satu kelas yang sama: menu "Kelas & Materi" (sesi+materi) dan
+   halaman detail (materi+progress+kuis+rapor). Sekarang keempat tab itu menyatu di
+   menu "Kelas & Materi" — komponennya persis yang dipakai halaman detail, bukan
+   salinan baru, biar tak ada dua versi tampilan yang harus dijaga sinkron. */
+const ClassKuisTab = dynamic(() => import('@/components/akun/ClassKuisTab'), { ssr: false, loading: TabLoading });
+const ClassRaporTab = dynamic(() => import('@/components/akun/ClassRaporTab'), { ssr: false, loading: TabLoading });
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 // jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
 const SesiMendatangCard = dynamic(() => import('@/components/akun/SesiMendatangCard'), { ssr: false });
@@ -294,6 +302,12 @@ type Schedule = {
   // jadwal-riwayat-v1: sesi lampau ikut ditarik, jadi presensi & rekamannya perlu
   attendance_status?: string | null;
   recording_url?: string | null;
+  // [materi-tab-kuis-rapor-v1] nilai kuis & PR per sesi — dipakai tab "Kuis"
+  quiz_score?: number | null;
+  quiz_max?: number | null;
+  quiz_source?: string | null;
+  quiz_submission_id?: string | null;
+  homework?: any;
 };
 
 // ── Constants ────────────────────────────────────────────────────────────
@@ -2624,7 +2638,7 @@ export default function AkunPage() {
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
-  const [materiTab, setMateriTab] = useState<"sesi" | "materi">("sesi");
+  const [materiTab, setMateriTab] = useState<"sesi" | "materi" | "kuis" | "rapor">("sesi"); // [materi-tab-kuis-rapor-v1]
   const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
   const [materiSearch, setMateriSearch] = useState("");
   // [beranda-ringkas-v2] state seksi "Jelajahi Bahasa" (jelajahiQ, jelajahiAll,
@@ -2645,7 +2659,13 @@ export default function AkunPage() {
        halaman produk: sesudah barisnya terbit, orangnya tak boleh disuruh
        mencari sendiri modul yang barusan dia klik. */
     const ebookId = sp.get("ebook");
+    /* [materi-tab-kuis-rapor-v1] ?reg=<id>&ktab=<sesi|materi|kuis|rapor> — dipakai kartu
+       kelas Beranda waktu dibuka di tab baru (klik biasa ditangani in-shell). */
+    const regParam = sp.get("reg");
+    const ktab = sp.get("ktab");
     let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | null = null;
+    if (regParam) { setMateriSel(regParam); resolved = "materi"; }
+    if (ktab === "sesi" || ktab === "materi" || ktab === "kuis" || ktab === "rapor") { setMateriTab(ktab); resolved = "materi"; }
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
     if (view === "live" || view === "mandiri") { resolved = "materi"; } // [beranda-tanpa-tab-mandiri-v1] view lama tetap mendarat di Kelas & Materi
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
@@ -2664,10 +2684,10 @@ export default function AkunPage() {
     }
     if (resolved) setActiveTab(resolved);
     // bersihin deep-link param sekali pakai, biar refresh berikutnya andelin tab tersimpan (bukan param nyangkut)
-    if (menu || sesi || view || ebookId) {
+    if (menu || sesi || view || ebookId || regParam || ktab) {
       try {
         const u = new URL(window.location.href);
-        ["menu", "sesi", "view", "ebook"].forEach((k) => u.searchParams.delete(k));
+        ["menu", "sesi", "view", "ebook", "reg", "ktab"].forEach((k) => u.searchParams.delete(k));
         window.history.replaceState(null, "", u.toString());
       } catch {}
     }
@@ -3376,7 +3396,11 @@ export default function AkunPage() {
               //   terdahulu, dan potongan 12 bulan diam-diam mengosongkan level lama
               //   siswa yang sudah les >1 tahun. Payloadnya tetap kecil — jumlah baris
               //   dibatasi jumlah sesi paket yang pernah dibeli siswa itu sendiri.
-              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url")
+              // [materi-tab-kuis-rapor-v1] + kolom kuis & PR: tab "Kuis" di Kelas & Materi
+              //   membaca baris jadwal yang SAMA. Tanpa empat kolom quiz_* + homework
+              //   di sini tabnya bakal selalu tampil kosong (halaman detail kelas lolos
+              //   cuma karena dia query `select('*')` sendiri).
+              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework")
               .in("registration_id", regIds)
               .order("scheduled_at", { ascending: true })
           : Promise.resolve({ data: null } as any),
@@ -4068,7 +4092,9 @@ export default function AkunPage() {
                       id: `kelas-${r.id}`, kind: "Kelas",
                       label: `${displayLanguage(r.language)}${r.level ? ` — ${r.level}` : ""}`,
                       sub: PRODUCT_BADGE[r.product]?.label || r.product || "Kelas live",
-                      run: () => router.push(previewId ? `/akun/kelas/${r.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${r.id}`),
+                      // [materi-tab-kuis-rapor-v1] hasil cari kelas mendarat di tempat yang
+                      // sama dengan kartu Beranda: menu "Kelas & Materi", kelas terpilih.
+                      run: () => { setMateriSel(r.id); setMateriTab("sesi"); setMateriFilter("all"); setMateriSearch(""); setActiveTab("materi"); },
                     });
                   });
                   teacherList.forEach((t) => {
@@ -4438,15 +4464,33 @@ export default function AkunPage() {
                                 const wrapProps: any = ytLink
                                   ? { href: ytLink, target: "_blank", rel: "noopener noreferrer" }
                                   : {
-                                      // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
-                                      // ikut. Tanpa itu halaman detail kehilangan identitas
-                                      // pratinjau → tombol menu di sana balik ke /akun polos
-                                      // dan mendarat di gate login (terasa "keluar akun").
-                                      href: previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`,
+                                      /* [materi-tab-kuis-rapor-v1] Kartu kelas dulu melempar ke halaman
+                                         terpisah /akun/kelas/[id] — satu kelas jadi punya dua rumah yang
+                                         isinya beda-beda tipis. Sekarang mendarat di menu "Kelas & Materi"
+                                         dengan kelas itu TERPILIH, jadi sidebar & daftar kelas tak hilang.
+                                         Href-nya tetap URL asli (bukan <button>) supaya Cmd/klik-tengah
+                                         "buka di tab baru" tetap jalan — itu sebabnya klik biasa yang
+                                         di-preventDefault, bukan tautannya yang dibuang.
+                                         [preview-keep-param-v1] `?preview=` WAJIB ikut di mode POV staf:
+                                         tanpa itu halaman tujuan kehilangan identitas pratinjau dan
+                                         mendarat di gate login (terasa "keluar akun"). */
+                                      href: previewId ? `/akun?menu=materi&reg=${reg.id}&preview=${encodeURIComponent(previewId)}` : `/akun?menu=materi&reg=${reg.id}`,
                                       prefetch: true,
-                                      // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
-                                      // render instan tanpa nunggu query (anti mental balik ke beranda)
-                                      onClick: () => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} },
+                                      onClick: (e: any) => {
+                                        // [kelas-detail-resilient-v1] titipan reg dipertahankan — halaman
+                                        // detail /akun/kelas/[id] masih hidup (dibuka dari tab baru).
+                                        try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {}
+                                        if (e?.metaKey || e?.ctrlKey || e?.shiftKey || e?.altKey || e?.button === 1) return;
+                                        e?.preventDefault?.();
+                                        // filter & pencarian di panel Kelas & Materi ikut direset:
+                                        // kalau tidak, kelas yang barusan diklik bisa tersaring keluar
+                                        // dari daftar dan panelnya nyangkut di kelas lain.
+                                        setMateriSel(reg.id);
+                                        setMateriTab("sesi");
+                                        setMateriFilter("all");
+                                        setMateriSearch("");
+                                        setActiveTab("materi");
+                                      },
                                     };
                                 return (
                                   <Wrap
@@ -5141,9 +5185,24 @@ export default function AkunPage() {
                             })()}
 
                             {/* tabs */}
-                            <div className="flex items-center gap-2">
-                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />{tt("Sesi & Rekaman")}</button>
-                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />{tt("Materi")}</button>
+                            {/* [materi-tab-kuis-rapor-v1] Kuis & Rapor ikut ke sini — dulu cuma
+                                bisa dilihat dari halaman detail kelas, sekarang satu kelas =
+                                satu tempat. Bisa digulir di layar sempit (4 tab tak muat di HP). */}
+                            <div className="-mx-1 flex items-center gap-2 overflow-x-auto px-1 pb-1">
+                              {([
+                                ["sesi", tt("Sesi & Rekaman"), Video],
+                                ["materi", tt("Materi"), BookOpen],
+                                ["kuis", tt("Kuis"), ClipboardCheck],
+                                ["rapor", tt("Rapor"), BarChart2],
+                              ] as const).map(([k, label, Icon]) => (
+                                <button
+                                  key={k}
+                                  onClick={() => setMateriTab(k)}
+                                  className={`flex h-10 shrink-0 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === k ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}
+                                >
+                                  <Icon className="h-4 w-4" strokeWidth={2.5} />{label}
+                                </button>
+                              ))}
                             </div>
 
                             {/* body */}
@@ -5153,6 +5212,11 @@ export default function AkunPage() {
                                 sesi tertentu. Sekarang dua-duanya linimasa sesi bernomor, terbaru di atas. */}
                             {materiTab === "sesi" ? (
                               <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="sesi" />
+                            ) : materiTab === "kuis" ? (
+                              /* [materi-tab-kuis-rapor-v1] komponen yang sama dgn halaman detail kelas */
+                              <ClassKuisTab reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} />
+                            ) : materiTab === "rapor" ? (
+                              <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} />
                             ) : (
                               <div className="flex flex-col gap-6">
                               <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="materi" />
