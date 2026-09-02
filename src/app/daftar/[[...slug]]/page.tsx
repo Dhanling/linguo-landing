@@ -168,6 +168,8 @@ export default async function DaftarPage({ params }: PageProps) {
           <Link href="/harga" className="hover:text-[#1A9E9E]">Harga</Link>
           <span className="mx-2 text-slate-300">·</span>
           <Link href="/syarat-ketentuan" className="hover:text-[#1A9E9E]">Syarat &amp; Ketentuan</Link>
+          <span className="mx-2 text-slate-300">·</span>
+          <Link href="/pengembalian-dana" className="hover:text-[#1A9E9E]">Pengembalian Dana</Link>
         </p>
       </footer>
     </div>

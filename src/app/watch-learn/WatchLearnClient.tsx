@@ -1032,6 +1032,9 @@ function Footer() {
           <Link href="/syarat-ketentuan" className="hover:text-slate-900">
             Syarat &amp; Ketentuan
           </Link>
+          <Link href="/pengembalian-dana" className="hover:text-slate-900">
+            Pengembalian Dana
+          </Link>
           <Link href="/privacy" className="hover:text-slate-900">
             Privasi
           </Link>

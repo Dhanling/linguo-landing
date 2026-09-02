@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 const WA = "https://wa.me/6282116859493";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -416,7 +417,10 @@ export default function CorporatePage() {
           </Link>
           <p className="text-white/60 text-sm mb-2">PT. Linguo Edu Indonesia</p>
           <p className="text-white/40 text-xs">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p>
-          <div className="border-t border-white/20 mt-6 pt-6 text-xs text-white/40">© {new Date().getFullYear()} Linguo.id</div>
+          <div className="border-t border-white/20 mt-6 pt-6 text-xs text-white/40">
+            <TautanLegal className="mb-2" />
+            © {new Date().getFullYear()} Linguo.id
+          </div>
         </div>
       </footer>
     </div>

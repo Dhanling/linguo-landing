@@ -21,6 +21,7 @@ import {
   Building2,
   Sparkles,
 } from "lucide-react";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 const WA = "6285798745252";
 const waMsg = (text: string) =>
@@ -514,6 +515,7 @@ export default function TranslatorB2BPage() {
             Bandung 40135
           </p>
           <div className="border-t border-white/20 mt-6 pt-6 text-xs text-white/40">
+            <TautanLegal className="mb-2" />
             © {new Date().getFullYear()} Linguo.id
           </div>
         </div>

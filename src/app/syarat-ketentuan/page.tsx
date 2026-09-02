@@ -129,8 +129,16 @@ export default function SyaratKetentuanPage() {
           <p>
             Refund (apabila berlaku sesuai ketentuan di atas) diproses secara
             manual oleh tim Linguo dalam <strong>3 hari kerja</strong> ke
-            rekening atau metode yang disepakati. Untuk pengajuan refund,
-            silakan hubungi tim Linguo melalui kontak di bawah.
+            metode pembayaran yang sama dengan saat transaksi. Rincian syarat,
+            cara pengajuan, dan lama proses per metode pembayaran diatur dalam{" "}
+            <Link
+              href="/pengembalian-dana"
+              className="font-medium hover:underline"
+              style={{ color: TEAL }}
+            >
+              Ketentuan Pengembalian Dana
+            </Link>
+            .
           </p>
         </Section>
 
@@ -181,6 +189,25 @@ export default function SyaratKetentuanPage() {
             .
           </p>
         </Section>
+      </div>
+
+      <div className="mt-12 border-t border-gray-200 pt-6 text-sm text-gray-500">
+        Baca juga:{" "}
+        <Link
+          href="/pengembalian-dana"
+          className="font-medium hover:underline"
+          style={{ color: TEAL }}
+        >
+          Ketentuan Pengembalian Dana
+        </Link>{" "}
+        ·{" "}
+        <Link
+          href="/privacy"
+          className="font-medium hover:underline"
+          style={{ color: TEAL }}
+        >
+          Kebijakan Privasi
+        </Link>
       </div>
     </main>
   );

@@ -13,6 +13,7 @@ import { jsonLd, faqSchema } from "@/lib/schema"; // [aeo-schema-v1] // [aeo-bra
 import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier, applyOfflineSurcharge, supportsOffline, OFFLINE_SURCHARGE_PER_SESSION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1 · offline-private-class-v1
 
 import TokoCTA from "@/components/TokoCTA";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 import { TESTIMONIALS } from "@/data/testimonials";
@@ -2120,7 +2121,10 @@ export default function Home() {
             <li><a href="/kursus" className="font-semibold text-white hover:underline">Lihat Semua &rarr;</a></li>
           </ul>
         </nav>
-        <div className="border-t border-white/20 pt-6 text-center text-sm text-white/60">© {new Date().getFullYear()} PT. Linguo Edu Indonesia</div>
+        <div className="border-t border-white/20 pt-6 text-center text-sm text-white/60">
+          <TautanLegal className="mb-3 text-white/70" />
+          © {new Date().getFullYear()} PT. Linguo Edu Indonesia
+        </div>
       </div>
     </footer>
     <TokoCTA />

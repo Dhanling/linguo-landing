@@ -109,6 +109,7 @@ const STATIC_ROUTES: Array<{
   // Legal — nilai peringkat nol, tapi sinyal kepercayaan untuk Google
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/syarat-ketentuan", priority: 0.2, changeFrequency: "yearly" },
+  { path: "/pengembalian-dana", priority: 0.2, changeFrequency: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

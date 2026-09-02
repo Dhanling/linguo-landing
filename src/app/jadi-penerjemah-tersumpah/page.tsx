@@ -27,6 +27,7 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 // ============================================================================
 // CONSTANTS
@@ -645,6 +646,7 @@ export default function JadiPenerjemahTersumpahPage() {
               Bandung 40135
             </p>
             <div className="border-t border-white/20 mt-6 pt-6 text-xs text-white/40">
+              <TautanLegal className="mb-2" />
               © {new Date().getFullYear()} Linguo.id
             </div>
           </div>

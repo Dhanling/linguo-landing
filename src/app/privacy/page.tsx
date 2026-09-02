@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 export const metadata = {
   alternates: { canonical: "https://linguo.id/privacy" },
@@ -116,6 +117,7 @@ export default function PrivacyPage() {
       </main>
 
       <footer className="bg-slate-50 py-6 text-center text-xs text-slate-400">
+        <TautanLegal className="mb-2 px-4 text-slate-500" />
         © {new Date().getFullYear()} PT. Linguo Edu Indonesia
       </footer>
     </div>

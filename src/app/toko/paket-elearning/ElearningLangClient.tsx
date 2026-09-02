@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { ElearningProduct, PricingTier } from './page';
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 // [elearning-per-bahasa-v1] Etalase e-learning per bahasa. Dulu halaman ini
 // satu form checkout untuk paket "12+ bahasa sekaligus"; sekarang tiap bahasa
@@ -280,6 +281,11 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-100 bg-white py-6 text-center text-xs text-slate-400">
+        <TautanLegal className="mb-2 px-4 text-slate-500" />
+        © {new Date().getFullYear()} PT. Linguo Edu Indonesia
+      </footer>
     </main>
   );
 }

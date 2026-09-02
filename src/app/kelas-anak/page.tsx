@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 const WA = "https://wa.me/6282116859493";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -363,6 +364,7 @@ export default function KelasAnakPage() {
         <Link href="/">
           <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} className="h-8 w-auto mx-auto mb-3 opacity-60" />
         </Link>
+        <TautanLegal className="mb-3 px-4 text-slate-400 text-xs" />
         <p className="text-slate-500 text-xs">© {new Date().getFullYear()} Linguo.id — All rights reserved.</p>
       </footer>
     </div>

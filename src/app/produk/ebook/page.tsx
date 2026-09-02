@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Check, FileText, Infinity as InfinityIcon, PenLine, RefreshCw, Star, Lock, Zap, Globe, X, ArrowLeft } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
@@ -367,7 +368,10 @@ export default function EbookPage() {
       {/* Footer */}
       <footer className="border-t border-slate-100 py-8">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-400">© 2026 Linguo.id</p>
+          <div className="flex flex-col items-center gap-2 md:items-start">
+            <p className="text-sm text-slate-400">© 2026 Linguo.id</p>
+            <TautanLegal className="text-xs text-slate-500" />
+          </div>
           <div className="flex gap-4">
             <a href="https://wa.me/6282116859493" target="_blank" className="text-sm text-slate-500 hover:text-teal-600">WhatsApp</a>
             <a href="https://instagram.com/linguo.id" target="_blank" className="text-sm text-slate-500 hover:text-teal-600">Instagram</a>

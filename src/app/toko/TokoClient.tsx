@@ -17,6 +17,7 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { Product } from './page';
 import { BRAND_FACTS } from '@/lib/brand-facts';
 import { LABEL_NEW_EDITION, adalahNewEdition } from '@/lib/ebookEdisi';
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 // linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
 // (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
@@ -343,6 +344,11 @@ export default function TokoClient({ products }: { products: Product[] }) {
           animation: fadeUp 0.5s ease-out;
         }
       `}</style>
+
+      <footer className="border-t border-slate-100 bg-white py-6 text-center text-xs text-slate-400">
+        <TautanLegal className="mb-2 px-4 text-slate-500" />
+        © {new Date().getFullYear()} PT. Linguo Edu Indonesia
+      </footer>
     </main>
   );
 }

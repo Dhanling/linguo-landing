@@ -7,6 +7,7 @@ import PratinjauButton from "./PratinjauButton";
 import Deskripsi from "./Deskripsi";
 import { masihDijual } from "@/lib/elearningBundle";
 import { LABEL_NEW_EDITION, adalahNewEdition } from "@/lib/ebookEdisi";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -248,6 +249,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </div>
+
+      <footer className="border-t border-slate-100 bg-white py-6 text-center text-xs text-slate-400">
+        <TautanLegal className="mb-2 px-4 text-slate-500" />
+        © {new Date().getFullYear()} PT. Linguo Edu Indonesia
+      </footer>
     </div>
   );
 }

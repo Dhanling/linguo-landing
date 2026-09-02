@@ -16,6 +16,7 @@ import {
   getPrivateLevelTier,
   getLevelTier,
 } from "@/lib/trial-pricing";
+import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -521,6 +522,7 @@ export default function HargaPage() {
 
       {/* Footer */}
       <footer className="mt-4 border-t border-slate-100 bg-white text-center py-6 text-xs text-slate-400">
+        <TautanLegal className="mb-2 text-slate-500" />
         © {new Date().getFullYear()} PT. Linguo Edu Indonesia · <a href="/" className="hover:text-[#1A9E9E] transition-colors">linguo.id</a>
       </footer>
     </div>
