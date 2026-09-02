@@ -130,11 +130,11 @@ export default function PengembalianDanaPage() {
           <p>
             Ajukan melalui email{" "}
             <a
-              href="mailto:official.linguo@gmail.com"
+              href="mailto:hello@linguo.id"
               className="font-medium hover:underline"
               style={{ color: TEAL }}
             >
-              official.linguo@gmail.com
+              hello@linguo.id
             </a>{" "}
             atau WhatsApp{" "}
             <a
@@ -208,11 +208,11 @@ export default function PengembalianDanaPage() {
           <p>
             PT Linguo Edu Indonesia · Email{" "}
             <a
-              href="mailto:official.linguo@gmail.com"
+              href="mailto:hello@linguo.id"
               className="font-medium hover:underline"
               style={{ color: TEAL }}
             >
-              official.linguo@gmail.com
+              hello@linguo.id
             </a>{" "}
             · Tel (022) 85942550 · WhatsApp{" "}
             <a

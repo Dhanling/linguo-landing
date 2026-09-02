@@ -166,7 +166,7 @@ export const BRAND_FACTS = {
     phoneE164: "+62-22-85942550",
     whatsapp: "6282116859493",
     whatsappUrl: "https://wa.me/6282116859493",
-    email: "official.linguo@gmail.com",
+    email: "hello@linguo.id",
   },
   address: {
     streetAddress: "Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong",

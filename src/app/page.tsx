@@ -2089,7 +2089,7 @@ export default function Home() {
           <div><h4 className="font-bold mb-4">Kontak</h4>
             <div className="text-sm text-white/80 space-y-1">
               <p>{BRAND_FACTS.address.streetAddress},</p><p>{BRAND_FACTS.address.addressLocality} {BRAND_FACTS.address.postalCode}</p>
-              <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
+              <p className="mt-3">Tel: (022) 85942550</p><p>Email: hello@linguo.id</p>
             </div>
             <div className="flex gap-3 mt-4">
               {[

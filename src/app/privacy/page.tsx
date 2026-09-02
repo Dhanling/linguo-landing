@@ -82,7 +82,7 @@ export default function PrivacyPage() {
               <li>Meminta penghapusan data pribadi Anda</li>
               <li>Menarik persetujuan penggunaan data kapan saja</li>
             </ul>
-            <p>Untuk menggunakan hak-hak tersebut, hubungi kami di <a href="mailto:official.linguo@gmail.com" className="text-[#1A9E9E] hover:underline">official.linguo@gmail.com</a></p>
+            <p>Untuk menggunakan hak-hak tersebut, hubungi kami di <a href="mailto:hello@linguo.id" className="text-[#1A9E9E] hover:underline">hello@linguo.id</a></p>
           </section>
 
           <section>
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-lg font-bold text-slate-900">8. Penghapusan Data</h2>
-            <p>Jika Anda ingin menghapus seluruh data Anda dari sistem kami, silakan kirim email ke <a href="mailto:official.linguo@gmail.com" className="text-[#1A9E9E] hover:underline">official.linguo@gmail.com</a> dengan subjek "Permintaan Penghapusan Data". Kami akan memproses dalam 14 hari kerja.</p>
+            <p>Jika Anda ingin menghapus seluruh data Anda dari sistem kami, silakan kirim email ke <a href="mailto:hello@linguo.id" className="text-[#1A9E9E] hover:underline">hello@linguo.id</a> dengan subjek "Permintaan Penghapusan Data". Kami akan memproses dalam 14 hari kerja.</p>
           </section>
 
           <section>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-bold text-slate-900">10. Kontak</h2>
             <p>Jika ada pertanyaan mengenai kebijakan privasi ini, hubungi kami:</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Email: <a href="mailto:official.linguo@gmail.com" className="text-[#1A9E9E] hover:underline">official.linguo@gmail.com</a></li>
+              <li>Email: <a href="mailto:hello@linguo.id" className="text-[#1A9E9E] hover:underline">hello@linguo.id</a></li>
               <li>WhatsApp: <a href="https://wa.me/6282116859493" className="text-[#1A9E9E] hover:underline">+62 821-1685-9493</a></li>
               <li>Alamat: Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</li>
             </ul>

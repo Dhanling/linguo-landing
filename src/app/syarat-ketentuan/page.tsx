@@ -180,11 +180,11 @@ export default function SyaratKetentuanPage() {
           <p>
             Pertanyaan terkait Syarat &amp; Ketentuan dapat diajukan melalui{" "}
             <a
-              href="mailto:halo@linguo.id"
+              href="mailto:hello@linguo.id"
               className="font-medium hover:underline"
               style={{ color: TEAL }}
             >
-              halo@linguo.id
+              hello@linguo.id
             </a>
             .
           </p>
