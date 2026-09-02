@@ -67,7 +67,13 @@ const SISTEM =
   "reply with ONLY a JSON object (no markdown fences, no commentary): " +
   '{"meaning":"arti singkat dalam bahasa Indonesia, maksimal 6 kata",' +
   '"type":"kelas kata dalam bahasa Indonesia (kata benda/kata kerja/kata sifat/kata ganti/kata depan/kata seru/angka)",' +
-  '"base":"bentuk dasar/kamus kalau kata ini bentuk turunan atau terkonjugasi, kalau tidak string kosong"}. ' +
+  '"base":"bentuk dasar/kamus kalau kata ini bentuk turunan atau terkonjugasi, kalau tidak string kosong",' +
+  '"translit":"Latin-alphabet romanization of the word, using that language standard scheme ' +
+  '(Russian/Arabic/Persian/Urdu: ALA-LC; Japanese: Hepburn; Mandarin: Hanyu Pinyin WITH tone marks; ' +
+  'Korean: Revised Romanization; Hindi/Bengali: IAST; Greek: ISO 843; Thai: RTGS). ' +
+  'Empty string ONLY when the word is already written in the Latin alphabet"}. ' +
+  'Example for Russian: {"meaning":"sedikit","type":"kata keterangan","base":"","translit":"nemnogo"}. ' +
+  'Example for Spanish: {"meaning":"rumah","type":"kata benda","base":"","translit":""}. ' +
   "Give the meaning the word carries IN THAT SENTENCE, not every possible meaning.";
 
 const pesan = (kata: string, kalimat: string, bahasa: string) =>
@@ -189,8 +195,19 @@ function admin() {
   return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
 }
 
+/* [ebook-kata-translit-v1] Versi BENTUK jawaban ikut jadi kunci cache. Entri
+   yang sudah tersimpan sebelum kolom `translit` ada isinya cuma meaning/type/
+   base — tanpa versi ini, kata yang pernah diketuk siapa pun akan selamanya
+   membalas dari cache tanpa cara baca, dan fiturnya tampak "kadang muncul,
+   kadang tidak" tanpa pola yang bisa ditelusuri. */
+const VERSI_JAWABAN = "v2";
+
 const jalurCache = (bahasa: string, kata: string, kalimat: string) =>
-  `${bahasa}/${crypto.createHash("sha256").update(`${bahasa}|${kata}|${kalimat}`).digest("hex").slice(0, 40)}.json`;
+  `${bahasa}/${VERSI_JAWABAN}-${crypto
+    .createHash("sha256")
+    .update(`${bahasa}|${kata}|${kalimat}`)
+    .digest("hex")
+    .slice(0, 40)}.json`;
 
 async function dariCache(jalur: string): Promise<Record<string, unknown> | null> {
   const sb = admin();
@@ -245,6 +262,9 @@ export async function POST(req: NextRequest) {
       meaning: typeof p.meaning === "string" ? p.meaning.trim().slice(0, 120) : "",
       type: typeof p.type === "string" ? p.type.trim().slice(0, 40) : "",
       base: typeof p.base === "string" ? p.base.trim().slice(0, 60) : "",
+      /* [ebook-kata-translit-v1] Cara baca beraksara Latin — kosong untuk bahasa
+         yang memang sudah Latin (klien menyembunyikan barisnya). */
+      translit: typeof p.translit === "string" ? p.translit.trim().slice(0, 80) : "",
     };
     if (!hasil.meaning && !hasil.type) return NextResponse.json({ error: "arti kosong" }, { status: 502 });
 

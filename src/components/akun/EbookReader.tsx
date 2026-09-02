@@ -65,6 +65,10 @@ const JEDA_KOMIT_ZOOM = 160;
 /** Batas kerapatan render — 3x di layar HP modern bikin canvas boros memori. */
 const DPR_MAX = 2;
 /** Sisa ruang di sekeliling halaman (px) — dipakai menghitung skala muat-penuh. */
+/* [ebook-kata-translit-v1] Tinggi kartu kata sesudah baris cara baca ikut
+   masuk: kata yang duduk lebih tinggi dari ini tak punya ruang di ATASNYA, jadi
+   kartunya ditaruh di bawah. Dulu 170 (kartu tanpa baris transliterasi). */
+const AMBANG_KARTU_ATAS = 190;
 const PADDING_X = 36;
 const PADDING_Y = 36;
 /** Jarak antar dua halaman (punggung buku). */
@@ -3343,13 +3347,13 @@ export default function EbookReader({
                     siswa yang tak paham artinya tetap harus membuka kamus. */}
                 <div
                   className={`pointer-events-auto absolute w-[252px] -translate-x-1/2 rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15 ${
-                    ucap.y > 170 ? "-translate-y-full" : ""
+                    ucap.y > AMBANG_KARTU_ATAS ? "-translate-y-full" : ""
                   }`}
                   style={{
                     left: Math.min(Math.max(ucap.x + ucap.w / 2, 132), Math.max(132, lebarBuku - 132)),
                     // Di baris paling atas halaman, kartunya ditaruh DI BAWAH kata —
                     // di atas berarti keluar dari kertas.
-                    top: ucap.y > 170 ? ucap.y - 10 : ucap.y + ucap.h + 10,
+                    top: ucap.y > AMBANG_KARTU_ATAS ? ucap.y - 10 : ucap.y + ucap.h + 10,
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -3383,6 +3387,17 @@ export default function EbookReader({
                           <X className="h-3.5 w-3.5" />
                         </button>
                       </div>
+
+                      {/* [ebook-kata-translit-v1] Cara baca beraksara Latin,
+                          tepat DI BAWAH katanya supaya mata membacanya sebagai
+                          satu kesatuan (pola yang sama dengan ruby di modulnya).
+                          Cuma untuk aksara non-Latin; bahasa Latin tak pernah
+                          menampilkan baris ini. */}
+                      {arti && arti !== "mati" && arti.translit && (
+                        <p className="mt-0.5 text-[12px] font-semibold italic leading-snug text-[#7fe3e0]">
+                          {arti.translit}
+                        </p>
+                      )}
 
                       {/* Baris arti hilang sepenuhnya waktu layanannya memang
                           sedang mati (kuota AI habis) — popupnya menyusut jadi

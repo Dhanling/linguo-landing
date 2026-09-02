@@ -25,6 +25,24 @@ export interface ArtiKata {
   kelas: string;
   /** Bentuk dasar untuk verba terkonjugasi (mis. "llamo" → "llamar"). */
   dasar?: string;
+  /**
+   * [ebook-kata-translit-v1] Cara baca beraksara Latin ("немного" → "nemnogo").
+   * Kosong/undefined untuk bahasa yang aksaranya memang sudah Latin — barisnya
+   * disembunyikan, karena "casa → casa" cuma menambah baris tanpa isi.
+   */
+  translit?: string;
+}
+
+/**
+ * Kata ini beraksara non-Latin? Pemicunya SKRIP teksnya, bukan kode bahasanya:
+ * satu modul bisa mencampur dua aksara (tabel kosakata Rusia yang memuat kata
+ * serapan Latin, judul bab berbahasa Inggris), dan memakai kode bahasa membuat
+ * baris cara baca muncul di kata yang tak membutuhkannya.
+ */
+export function perluTranslit(kata: string): boolean {
+  const huruf = kata.match(/\p{L}/gu);
+  if (!huruf?.length) return false;
+  return huruf.some((h) => !/\p{Script=Latin}/u.test(h));
 }
 
 /** "mati" = layanan artinya sedang tak bisa dipakai (kuota AI habis) — beda
@@ -85,11 +103,18 @@ export async function artiKataEbook(
     const arti = typeof p.meaning === "string" ? p.meaning.trim() : "";
     const kelas = typeof p.type === "string" ? p.type.trim() : "";
     const dasar = typeof p.base === "string" ? p.base.trim() : "";
+    const translit = typeof p.translit === "string" ? p.translit.trim() : "";
     if (!arti && !kelas) return null;
     const hasil: ArtiKata = {
       arti,
       kelas,
       dasar: dasar && dasar.toLowerCase() !== kata.toLowerCase() ? dasar : undefined,
+      // Model kadang mengembalikan kata aslinya bulat-bulat untuk bahasa Latin;
+      // itu bukan cara baca, jadi dibuang di sini sekali untuk semua pemakai.
+      translit:
+        translit && perluTranslit(kata) && translit.toLowerCase() !== kata.toLowerCase()
+          ? translit
+          : undefined,
     };
     // Cuma hasil yang BERHASIL yang disimpan: kegagalan sesaat (jaringan siswa
     // putus sebentar) tak boleh membekukan kata itu jadi "tak ada arti"
