@@ -43,25 +43,30 @@ export default function RekamanKelasPage() {
       // getSession() menjawab null sesaat (lihat resolveSessionForGate).
       const v = await resolveSessionForGate();
       const session = v.session;
-      if (!session?.access_token) {
+      if (!session?.access_token && v.uncertain) {
         // Ragu (jaringan/Auth server ngadat, bukan sesi mati) → biarkan user di
         // halaman ini dengan pesan; melemparnya ke login itu vonis yang salah.
-        if (v.uncertain) {
-          if (alive) setError("Sesi belum siap. Coba muat ulang halaman.");
-          return;
-        }
-        router.replace("/akun");
+        if (alive) setError("Sesi belum siap. Coba muat ulang halaman.");
         return;
       }
       try {
+        // [rekaman-pov-pratinjau-v1] Tanpa sesi Supabase pun tetap ditanyakan ke
+        // server: mode "POV siswa" sah lewat cookie pratinjau. Baru kalau server
+        // menolak (401) user dilempar ke /akun.
         const res = await fetch("/api/class-recording", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ roomId: params.roomId, accessToken: session.access_token }),
+          credentials: "same-origin",
+          body: JSON.stringify(
+            session?.access_token
+              ? { roomId: params.roomId, accessToken: session.access_token }
+              : { roomId: params.roomId },
+          ),
         });
         const body = await res.json();
         if (!alive) return;
         if (!res.ok) {
+          if (res.status === 401 && !session?.access_token) { router.replace("/akun"); return; }
           setError(body?.error || "Gagal memuat rekaman");
           setRecordings([]);
           return;

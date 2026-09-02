@@ -17,6 +17,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { previewStudentId } from "@/lib/previewSession";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -38,23 +39,47 @@ interface RecordingItem {
 export async function POST(req: NextRequest) {
   try {
     const { roomId, accessToken } = await req.json();
-    if (!roomId || !accessToken) {
-      return NextResponse.json({ error: "roomId dan accessToken wajib diisi" }, { status: 400 });
-    }
-
-    // ── 1. Siapa yang meminta? ───────────────────────────────────────────────
-    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-      global: { headers: { Authorization: `Bearer ${accessToken}` } },
-      auth: { persistSession: false, autoRefreshToken: false },
-    });
-    const { data: { user }, error: authErr } = await userClient.auth.getUser();
-    if (authErr || !user?.email) {
-      return NextResponse.json({ error: "Sesi tidak valid atau sudah habis" }, { status: 401 });
+    if (!roomId) {
+      return NextResponse.json({ error: "roomId wajib diisi" }, { status: 400 });
     }
 
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
+
+    // ── 1. Siapa yang meminta? ───────────────────────────────────────────────
+    // Dua jalur sah: sesi Supabase siswa sendiri, ATAU sesi pratinjau "POV siswa"
+    // (cookie terbitan owner/admin) yang sudah mengunci satu student_id.
+    // [rekaman-pov-pratinjau-v1] Sebelum ini jalur kedua tidak ada: staf yang
+    // membuka /akun?preview=<id> selalu mentok "Kamu perlu masuk dulu" — padahal
+    // seluruh isi dashboard lain di layar itu memang ditarik tanpa login.
+    let ownedIds = new Set<string>();
+    if (accessToken) {
+      const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        global: { headers: { Authorization: `Bearer ${accessToken}` } },
+        auth: { persistSession: false, autoRefreshToken: false },
+      });
+      const { data: { user }, error: authErr } = await userClient.auth.getUser();
+      if (authErr || !user?.email) {
+        return NextResponse.json({ error: "Sesi tidak valid atau sudah habis" }, { status: 401 });
+      }
+      // Semua baris `students` dengan email ini — satu orang kadang punya lebih
+      // dari satu baris (registrasi lama dibuat manual admin, lihat /akun).
+      const { data: students } = await admin
+        .from("students")
+        .select("id")
+        .ilike("email", user.email);
+      ownedIds = new Set((students ?? []).map((s: { id: string }) => s.id));
+      if (!ownedIds.size) {
+        return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
+      }
+    } else {
+      const previewId = await previewStudentId(req);
+      if (!previewId) {
+        return NextResponse.json({ error: "Kamu perlu masuk dulu untuk menonton rekaman." }, { status: 401 });
+      }
+      ownedIds = new Set([previewId]);
+    }
 
     // ── 2. Rekaman ini memang milik dia? ─────────────────────────────────────
     // Room id kelas terjadwal deterministik: `sched-<schedule.id>`. Room instan
@@ -71,17 +96,6 @@ export async function POST(req: NextRequest) {
       .maybeSingle();
     if (!sched) {
       return NextResponse.json({ error: "Sesi kelas tidak ditemukan" }, { status: 404 });
-    }
-
-    // Semua baris `students` dengan email ini — satu orang kadang punya lebih
-    // dari satu baris (registrasi lama dibuat manual admin, lihat /akun).
-    const { data: students } = await admin
-      .from("students")
-      .select("id")
-      .ilike("email", user.email);
-    const ownedIds = new Set((students ?? []).map((s: { id: string }) => s.id));
-    if (!ownedIds.size) {
-      return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
     }
 
     let owns = !!sched.student_id && ownedIds.has(sched.student_id);

@@ -54,21 +54,28 @@ export default function RecordingModal({
     const roomId = recordingRoomId(recordingUrl);
     if (!roomId) { setSt({ s: "external", url: recordingUrl }); return; }
     (async () => {
+      // [rekaman-pov-pratinjau-v1] Tanpa sesi Supabase pun tetap dicoba: mode
+      // "POV siswa" (/akun?preview=…) sah lewat cookie pratinjau, dan servernya
+      // yang memutuskan. Dulu klien menolak duluan, jadi seluruh dashboard
+      // tampil normal tapi rekamannya sendiri selalu bilang "perlu masuk dulu".
       const v = await resolveSessionForGate();
       const token = v.session?.access_token;
-      if (!token) {
-        if (alive) setSt({ s: "error", msg: v.uncertain ? "Sesi belum siap. Coba muat ulang halaman." : "Kamu perlu masuk dulu untuk menonton rekaman." });
-        return;
-      }
       try {
         const res = await fetch("/api/class-recording", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ roomId, accessToken: token }),
+          credentials: "same-origin", // cookie sesi pratinjau ikut
+          body: JSON.stringify(token ? { roomId, accessToken: token } : { roomId }),
         });
         const body = await res.json();
         if (!alive) return;
-        if (!res.ok) { setSt({ s: "error", msg: body?.error || "Gagal memuat rekaman" }); return; }
+        if (!res.ok) {
+          const msg = res.status === 401 && v.uncertain
+            ? "Sesi belum siap. Coba muat ulang halaman."
+            : body?.error || "Gagal memuat rekaman";
+          setSt({ s: "error", msg });
+          return;
+        }
         const items: RecordingItem[] = body.recordings || [];
         setSt(items.length
           ? { s: "ok", items }
