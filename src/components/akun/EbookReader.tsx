@@ -69,6 +69,9 @@ const DPR_MAX = 2;
    masuk: kata yang duduk lebih tinggi dari ini tak punya ruang di ATASNYA, jadi
    kartunya ditaruh di bawah. Dulu 170 (kartu tanpa baris transliterasi). */
 const AMBANG_KARTU_ATAS = 190;
+/* [ebook-kartu-ikut-zoom-v1] Lebar dasar kartu kata di zoom 100%. Dipakai untuk
+   lebar kotaknya sekaligus jepitan kiri/kanan supaya tak keluar kertas. */
+const KARTU_W = 252;
 const PADDING_X = 36;
 const PADDING_Y = 36;
 /** Jarak antar dua halaman (punggung buku). */
@@ -1979,6 +1982,10 @@ export default function EbookReader({
   const pw = ukuran?.w ?? 0;
   const ph = ukuran?.h ?? 0;
   const lebarBuku = dua ? pw * 2 + GAP : pw;
+  /* [ebook-kartu-ikut-zoom-v1] Pengali ukuran kartu kata — lihat pemakaiannya
+     di bawah. Ikut `zoom` yang sudah diraster (bukan `zoomLive`): selama cubitan
+     seluruh kotak buku memang sudah diskalakan CSS, kartunya ikut sendiri. */
+  const kartuSkala = Math.min(Math.max(zoom, 0.85), 1.9);
   // Bentangan yang cuma berisi satu halaman (sampul, atau halaman terakhir yang
   // ganjil) digeser ke tengah layar — kalau tidak, halamannya duduk melenceng ke
   // kanan dengan lubang selebar satu halaman di sebelahnya. Lebar kotak bukunya
@@ -3346,11 +3353,25 @@ export default function EbookReader({
                     dua tombol suara. Dulu isinya cuma nama katanya sendiri, jadi
                     siswa yang tak paham artinya tetap harus membuka kamus. */}
                 <div
-                  className={`pointer-events-auto absolute w-[252px] -translate-x-1/2 rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15 ${
-                    ucap.y > AMBANG_KARTU_ATAS ? "-translate-y-full" : ""
-                  }`}
+                  className="pointer-events-auto absolute rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15"
                   style={{
-                    left: Math.min(Math.max(ucap.x + ucap.w / 2, 132), Math.max(132, lebarBuku - 132)),
+                    width: KARTU_W,
+                    /* [ebook-kartu-ikut-zoom-v1] Kartu ikut membesar bersama
+                       halamannya. Dulu tetap 252px berapa pun zoomnya: di zoom
+                       besar kartunya menyusut jadi label kecil yang menempel di
+                       huruf sebesar jempol — katanya sendiri kalah besar dari
+                       kata di kertas yang ia terangkan. Dikatrol lewat transform
+                       supaya semua jarak di dalamnya ikut utuh, dan dijepit
+                       0,85–1,9 supaya tak pernah tak terbaca ataupun menutupi
+                       halaman. Titik jangkarnya pojok kiri-atas: scale DULU baru
+                       geser, jadi -50% tetap setengah lebar yang sudah besar dan
+                       kartunya tetap duduk di tengah katanya. */
+                    transformOrigin: "0 0",
+                    transform: `scale(${kartuSkala}) translateX(-50%)${ucap.y > AMBANG_KARTU_ATAS ? " translateY(-100%)" : ""}`,
+                    left: Math.min(
+                      Math.max(ucap.x + ucap.w / 2, (KARTU_W / 2) * kartuSkala),
+                      Math.max((KARTU_W / 2) * kartuSkala, lebarBuku - (KARTU_W / 2) * kartuSkala),
+                    ),
                     // Di baris paling atas halaman, kartunya ditaruh DI BAWAH kata —
                     // di atas berarti keluar dari kertas.
                     top: ucap.y > AMBANG_KARTU_ATAS ? ucap.y - 10 : ucap.y + ucap.h + 10,
