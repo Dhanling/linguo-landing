@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ExternalLink, Loader2, Video, X } from "lucide-react";
 import { resolveSessionForGate } from "@/lib/supabase-client";
-import { roomIdFromRecordingUrl } from "@/lib/classRoom";
+import { recordingRoomId, isDirectVideoUrl } from "@/lib/classRoom";
 import { ClassVideoPlayer } from "./ClassVideoPlayer";
 
 interface RecordingItem {
@@ -33,9 +33,6 @@ type State =
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
 
-/** Deep link dashboard → diputar di sini. Tautan lain (Drive/Zoom) → tab baru. */
-const isDashboardDeepLink = (url: string) =>
-  url.includes("dashboard.linguo.id") && url.includes("room=");
 
 export default function RecordingModal({
   recordingUrl, title, onClose,
@@ -48,7 +45,13 @@ export default function RecordingModal({
 
   useEffect(() => {
     let alive = true;
-    const roomId = isDashboardDeepLink(recordingUrl) ? roomIdFromRecordingUrl(recordingUrl) : null;
+    // [vc-recmodal-v2] Berkas video langsung (mp4/webm) diputar apa adanya —
+    // tak perlu lewat /api/class-recording, tak perlu pindah halaman.
+    if (isDirectVideoUrl(recordingUrl)) {
+      setSt({ s: "ok", items: [{ key: recordingUrl, url: recordingUrl, recordedAt: "", sizeBytes: 0 }] });
+      return;
+    }
+    const roomId = recordingRoomId(recordingUrl);
     if (!roomId) { setSt({ s: "external", url: recordingUrl }); return; }
     (async () => {
       const v = await resolveSessionForGate();
@@ -138,7 +141,7 @@ export default function RecordingModal({
             {st.items.map((r, i) => (
               <div key={r.key}>
                 <ClassVideoPlayer src={r.url} autoPlay={i === 0} keyboard={i === 0} />
-                {st.items.length > 1 && (
+                {st.items.length > 1 && r.recordedAt && (
                   <p className="m-0 px-4 py-1.5 text-[12px] font-bold text-[#8FB8B4]">{fmtDate(r.recordedAt)}</p>
                 )}
               </div>

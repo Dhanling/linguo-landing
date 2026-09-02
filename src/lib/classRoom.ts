@@ -40,6 +40,9 @@ export function isJoinable(scheduledAt: string | Date): boolean {
 // Di sisi siswa, tautan itu kita alihkan ke pemutar sendiri di linguo.id yang
 // memverifikasi kepemilikan lalu membuat signed URL (bucket rekaman privat).
 
+/** roomId itu selalu turunan id jadwal / registrasi (`sched-…`, `reg-…`). */
+const ROOM_ID_RE = /^(?:sched|reg|room)-[A-Za-z0-9._:-]+$/i;
+
 /** Ambil roomId dari nilai `schedules.recording_url` apa pun bentuknya. */
 export function roomIdFromRecordingUrl(recordingUrl: string): string | null {
   if (!recordingUrl) return null;
@@ -56,16 +59,50 @@ export function roomIdFromRecordingUrl(recordingUrl: string): string | null {
 }
 
 /**
+ * [vc-recmodal-v2] roomId kalau rekaman itu MILIK KITA — apa pun bentuk tautannya.
+ *
+ * Dulu pengenalnya cuma "mengandung dashboard.linguo.id DAN room=". Padahal
+ * `recordingDeepLink` di dashboard merangkai tautan dari `window.location.origin`,
+ * jadi sesi yang dilengkapi pengajar dari domain lain (preview Vercel, localhost,
+ * domain dashboard lama) tersimpan dengan host berbeda — di sisi siswa tautan itu
+ * lolos sebagai "link eksternal" dan tombolnya melempar dia ke layar login
+ * dashboard admin. Sekarang yang dipakai adalah bentuk roomId-nya, bukan host-nya.
+ */
+export function recordingRoomId(recordingUrl: string): string | null {
+  const raw = (recordingUrl || "").trim();
+  if (!raw) return null;
+  // Kolomnya kadang cuma diisi roomId telanjang.
+  if (ROOM_ID_RE.test(raw)) return raw;
+  // Sudah berupa tautan pemutar siswa.
+  const local = raw.match(/\/akun\/rekaman\/([^/?#]+)/);
+  if (local) return decodeURIComponent(local[1]);
+  const id = roomIdFromRecordingUrl(raw);
+  return id && ROOM_ID_RE.test(id) ? id : null;
+}
+
+/** Berkas video langsung (mp4/webm/…) — bisa diputar apa adanya di pop-up. */
+export function isDirectVideoUrl(url: string): boolean {
+  const raw = (url || "").trim();
+  if (!/^https?:\/\//i.test(raw)) return false;
+  try {
+    return /\.(mp4|webm|ogg|ogv|m4v|mov|m3u8)$/i.test(new URL(raw).pathname);
+  } catch {
+    return false;
+  }
+}
+
+/** Rekaman yang bisa diputar di pop-up (tak perlu pindah halaman sama sekali). */
+export const isPlayableRecording = (recordingUrl: string) =>
+  !!recordingRoomId(recordingUrl) || isDirectVideoUrl(recordingUrl);
+
+/**
  * Tautan "Tonton Recording" yang benar untuk siswa.
- * - Deep link Riwayat dashboard → pemutar internal `/akun/rekaman/<roomId>`.
+ * - Rekaman kelas kita → pemutar internal `/akun/rekaman/<roomId>`.
  * - URL lain (mis. link Zoom/Drive yang ditempel pengajar manual) dibiarkan apa
  *   adanya — itu memang tautan eksternal yang sengaja dibagikan.
  */
 export function studentRecordingHref(recordingUrl: string): string {
-  const isDashboardDeepLink =
-    recordingUrl.includes("dashboard.linguo.id") && recordingUrl.includes("room=");
-  if (!isDashboardDeepLink) return recordingUrl;
-  const roomId = roomIdFromRecordingUrl(recordingUrl);
+  const roomId = recordingRoomId(recordingUrl);
   return roomId ? `/akun/rekaman/${encodeURIComponent(roomId)}` : recordingUrl;
 }
 

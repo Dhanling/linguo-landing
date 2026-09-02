@@ -16,7 +16,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
-import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
+import { isPlayableRecording, studentRecordingHref } from '@/lib/classRoom';
 import RecordingModal from './RecordingModal';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
@@ -110,9 +110,27 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
   const completedChrono = schedules
     .filter((s) => s.status === 'completed')
     .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
-  const timeline = completedChrono
-    .map((s, i) => ({ ...s, sessionNo: i + 1 }))
-    .reverse();
+  const bernomor = completedChrono.map((s, i) => ({ ...s, sessionNo: i + 1 }));
+
+  // [sesi-sehari-gabung-v1] Kelas 2 sesi sekaligus (blok 2 jam) itu SATU kali
+  // datang buat siswa — dulu linimasanya menampilkan dua kartu dengan tanggal
+  // yang sama persis, terbaca seolah dia kelas dua hari. Sesi selesai di HARI
+  // yang sama sekarang dilebur jadi satu kartu bernomor rentang (mis. "Sesi 5–6"),
+  // isinya (topik/PR/catatan/rekaman) tetap lengkap per sesi di dalamnya.
+  // Hitungan di judul tetap SESI, bukan kartu — lihat [[sesi-beruntun-kartu-gabung]].
+  const hariKey = (iso: string) => {
+    const d = new Date(iso);
+    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+  };
+  type Blok = { key: string; hari: string; items: typeof bernomor };
+  const blokChrono: Blok[] = [];
+  for (const s of bernomor) {
+    const hari = hariKey(s.scheduled_at);
+    const last = blokChrono[blokChrono.length - 1];
+    if (last && last.hari === hari) last.items.push(s);
+    else blokChrono.push({ key: s.id, hari, items: [s] });
+  }
+  const timeline = blokChrono.slice().reverse();
 
   // [presensi-blocks-v1] Grid presensi read-only — jumlah blok dari sessions_total
   // (bukan dari baris `schedules`, sama seperti admin Registrations), jadi tetap
@@ -268,7 +286,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
 
       {/* ── Timeline sesi ── */}
       <section>
-        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">{t('Perjalanan Belajar')} ({timeline.length} {t('sesi')})</h2>
+        <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">{t('Perjalanan Belajar')} ({completedChrono.length} {t('sesi')})</h2>
         {timeline.length === 0 ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center">
             <ClipboardList className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.5} />
@@ -277,74 +295,126 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
           </div>
         ) : (
           <div className="relative space-y-3 pl-5 before:absolute before:bottom-2 before:left-[7px] before:top-2 before:w-px before:bg-gray-200">
-            {timeline.map((s) => {
-              const parsed = parseSessionNotes(s.notes);
-              const att = ATTENDANCE_BADGE[s.attendance_status] || null;
+            {timeline.map((blok) => {
+              const head = blok.items[0];
+              const ekor = blok.items[blok.items.length - 1];
+              const label = blok.items.length > 1
+                ? `${t('Sesi')} ${head.sessionNo}–${ekor.sessionNo}`
+                : `${t('Sesi')} ${head.sessionNo}`;
+              // Laporan pengajar bisa berbeda tiap sesi dalam satu blok — tiap
+              // sesi yang punya isi tetap tampil terpisah, cuma di dalam SATU kartu.
+              const isi = blok.items
+                .map((s) => ({ s, p: parseSessionNotes(s.notes) }))
+                .filter(({ p }) => p.topic || p.homework || p.message || p.extras.length > 0);
+              // Rekaman kembar (satu tautan dipakai dua sesi) cukup sekali.
+              const rekamanSesi = blok.items.filter((s) => s.recording_url);
+              const rekamanUnik = rekamanSesi.filter(
+                (s, i) => rekamanSesi.findIndex((x) => x.recording_url === s.recording_url) === i,
+              );
+              // Presensi: status sama di seluruh blok cukup satu chip (+ jumlahnya).
+              const presensi: { status: string; n: number }[] = [];
+              blok.items.forEach((s) => {
+                if (!s.attendance_status || !ATTENDANCE_BADGE[s.attendance_status]) return;
+                const found = presensi.find((x) => x.status === s.attendance_status);
+                if (found) found.n += 1;
+                else presensi.push({ status: s.attendance_status, n: 1 });
+              });
               return (
-                <div key={s.id} className="relative rounded-2xl bg-white p-4">
+                <div key={blok.key} className="relative rounded-2xl bg-white p-4">
                   <span className="absolute -left-[19px] top-5 h-3 w-3 rounded-full border-2 border-white bg-[#16796E]" />
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">{t('Sesi')} {s.sessionNo}</div>
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">
+                        {label}
+                        {blok.items.length > 1 && (
+                          <span className="ml-1.5 rounded-full bg-[#16796E]/10 px-1.5 py-0.5 text-[10px] font-bold normal-case tracking-normal">
+                            {blok.items.length} {t('sesi')}
+                          </span>
+                        )}
+                      </div>
                       <div className="text-sm font-semibold text-gray-900">
-                        {new Date(s.scheduled_at).toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                        {new Date(head.scheduled_at).toLocaleDateString(dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                       </div>
                     </div>
-                    <div className="flex shrink-0 items-center gap-1.5">
+                    <div className="flex shrink-0 flex-wrap items-center justify-end gap-1.5">
                       {/* [nilai-per-pertemuan-v1] nilai kuis sesi ini — angkanya ditulis
                           penuh (bukan warna saja) supaya kebaca tanpa membedakan warna */}
-                      {(() => {
+                      {blok.items.map((s) => {
                         const pct = quizPct(s.quiz_score, s.quiz_max);
                         return pct === null ? null : (
                           <span
-                            title={`${t('Nilai kuis')} ${s.quiz_score}/${s.quiz_max}`}
+                            key={`q-${s.id}`}
+                            title={`${t('Nilai kuis')} ${s.quiz_score}/${s.quiz_max} — ${t('Sesi')} ${s.sessionNo}`}
                             className="rounded-full bg-[#16796E]/10 px-2 py-1 text-xs font-bold text-[#16796E]"
                           >
                             {t('Kuis')} {pct}%
                           </span>
                         );
-                      })()}
-                      {att && <span className={`rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>{t(att.label)}</span>}
+                      })}
+                      {presensi.map(({ status, n }) => {
+                        const att = ATTENDANCE_BADGE[status];
+                        return (
+                          <span key={`a-${status}`} className={`rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>
+                            {t(att.label)}{n > 1 ? ` ×${n}` : ''}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {(parsed.topic || parsed.homework || parsed.message || parsed.extras.length > 0) && (
-                    <div className="mt-2.5 space-y-1.5 border-t border-gray-100 pt-2.5 text-[13px]">
-                      {parsed.topic && <div><span className="font-semibold text-gray-700">📚 {t('Topik')}:</span> <span className="text-gray-600">{parsed.topic}</span></div>}
-                      {parsed.homework && <div><span className="font-semibold text-gray-700">📝 {t('PR')}:</span> <span className="text-gray-600">{parsed.homework}</span></div>}
-                      {parsed.message && (
-                        <div className="flex items-start gap-1.5 rounded-xl bg-[#F0FAF8] px-3 py-2 text-gray-700">
-                          <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" strokeWidth={2} />
-                          <span>{parsed.message}</span>
+                  {isi.length > 0 && (
+                    <div className="mt-2.5 space-y-2.5 border-t border-gray-100 pt-2.5 text-[13px]">
+                      {isi.map(({ s, p: parsed }) => (
+                        <div key={`n-${s.id}`} className="space-y-1.5">
+                          {isi.length > 1 && (
+                            <div className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400">{t('Sesi')} {s.sessionNo}</div>
+                          )}
+                          {parsed.topic && <div><span className="font-semibold text-gray-700">📚 {t('Topik')}:</span> <span className="text-gray-600">{parsed.topic}</span></div>}
+                          {parsed.homework && <div><span className="font-semibold text-gray-700">📝 {t('PR')}:</span> <span className="text-gray-600">{parsed.homework}</span></div>}
+                          {parsed.message && (
+                            <div className="flex items-start gap-1.5 rounded-xl bg-[#F0FAF8] px-3 py-2 text-gray-700">
+                              <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" strokeWidth={2} />
+                              <span>{parsed.message}</span>
+                            </div>
+                          )}
+                          {parsed.extras.map((line, i) => <div key={i} className="text-gray-500">{line}</div>)}
                         </div>
-                      )}
-                      {parsed.extras.map((line, i) => <div key={i} className="text-gray-500">{line}</div>)}
+                      ))}
                     </div>
                   )}
 
-                  {s.recording_url && (
-                    // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard cuma
-                    // bisa dibuka tim — rekamannya diputar lewat /api/class-recording.
-                    // [vc-recmodal-v1] …dan diputar sebagai POP-UP di halaman ini,
-                    // supaya daftar sesi yang sedang dibaca tidak ikut hilang.
-                    isInternalRecordingHref(studentRecordingHref(s.recording_url)) ? (
-                      <button
-                        type="button"
-                        onClick={() => setRekaman({ url: s.recording_url!, title: t('Tonton Recording') })}
-                        className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
-                      >
-                        <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
-                      </button>
-                    ) : (
-                      <a
-                        href={studentRecordingHref(s.recording_url)}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
-                      >
-                        <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Tonton Recording')}
-                      </a>
-                    )
+                  {rekamanUnik.length > 0 && (
+                    <div className="mt-2.5 flex flex-wrap gap-2">
+                      {rekamanUnik.map((s) => {
+                        const url = s.recording_url as string;
+                        const suffix = rekamanUnik.length > 1 ? ` · ${t('Sesi')} ${s.sessionNo}` : '';
+                        const judul = `${t('Tonton Recording')}${suffix}`;
+                        // [vc-recmodal-v2] Rekaman SELALU dibuka sebagai pop-up di
+                        // halaman ini. Tautan luar (Drive/Zoom) pun lewat pop-up dulu,
+                        // supaya tidak ada lagi tombol yang diam-diam melempar siswa
+                        // ke layar login dashboard admin.
+                        return isPlayableRecording(url) ? (
+                          <button
+                            key={`r-${s.id}`}
+                            type="button"
+                            onClick={() => setRekaman({ url, title: judul })}
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
+                          >
+                            <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {judul}
+                          </button>
+                        ) : (
+                          <a
+                            key={`r-${s.id}`}
+                            href={studentRecordingHref(url)}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
+                          >
+                            <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> {judul}
+                          </a>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
               );

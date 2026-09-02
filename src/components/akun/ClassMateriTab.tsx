@@ -28,7 +28,8 @@ import { supabase } from '@/lib/supabase-client';
 import { readCache, writeCache, useIsoLayoutEffect, materiKey } from '@/lib/kelasCache';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
-import { studentRecordingHref } from '@/lib/classRoom';
+import { studentRecordingHref, isPlayableRecording } from '@/lib/classRoom';
+import RecordingModal from './RecordingModal';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
 import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
@@ -201,6 +202,40 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
           <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
         </button>
         {baca && <TeksMateriOverlay m={m} onClose={() => setBaca(false)} />}
+      </>
+    );
+  }
+
+  /* [vc-recmodal-v2] Kartu rekaman dibuka sebagai pop-up di halaman ini —
+     bukan tab baru yang (kalau tautannya tersimpan dgn host lain) berujung di
+     layar login dashboard admin. */
+  if (kind === 'recording' && isPlayableRecording(m.url || '')) {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={() => setBaca(true)}
+          className="group flex w-full items-center gap-3 rounded-2xl bg-white p-3.5 text-left transition hover:shadow-sm"
+        >
+          {yt ? (
+            <img src={`https://img.youtube.com/vi/${yt}/mqdefault.jpg`} alt="" className="h-12 w-20 shrink-0 rounded-lg object-cover" />
+          ) : (
+            <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${meta.cls}`}>
+              <meta.Icon className="h-5 w-5" strokeWidth={2} />
+            </span>
+          )}
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
+            {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
+            <div className="mt-0.5 text-[11px] text-gray-400">
+              {t(meta.label)}
+              {teacherName ? ` · ${teacherName}` : ''}
+              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short' })}` : ''}
+            </div>
+          </div>
+          <Play className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
+        </button>
+        {baca && <RecordingModal recordingUrl={m.url} title={m.title} onClose={() => setBaca(false)} />}
       </>
     );
   }

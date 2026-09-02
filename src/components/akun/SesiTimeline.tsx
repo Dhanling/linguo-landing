@@ -18,7 +18,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { Calendar, Clock, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
-import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
+import { studentRecordingHref, isInternalRecordingHref, isPlayableRecording } from '@/lib/classRoom';
 import RecordingModal from './RecordingModal';
 import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
@@ -66,6 +66,9 @@ function ItemRow({ it }: { it: Item }) {
   const meta = KIND_META[kind] || KIND_META.link;
   const internal = isInternalRecordingHref(it.url || '');
   const [buka, setBuka] = useState(false);
+  // [vc-recmodal-v2] Baris rekaman ikut jadi pop-up — sebelumnya dia satu-satunya
+  // lampiran yang menendang siswa keluar dari daftar materi yang sedang dibaca.
+  const [rekaman, setRekaman] = useState(false);
 
   const isi = (
     <>
@@ -83,6 +86,20 @@ function ItemRow({ it }: { it: Item }) {
   /* [materi-slide-v1] Materi tanpa url dibuka DI TEMPAT. Dek slide jadi
      slideshow, materi teks jadi overlay baca. Sebelum ini keduanya dirender
      sebagai tautan href="#" — terlihat bisa diklik, tapi tidak ke mana-mana. */
+  if (internal || (kind === 'recording' && isPlayableRecording(it.url || ''))) {
+    return (
+      <>
+        <button type="button" onClick={() => setRekaman(true)} className={kelas}>
+          {isi}
+          <Play className="h-3.5 w-3.5 shrink-0 text-gray-400 group-hover:text-[#16796E]" strokeWidth={2.2} />
+        </button>
+        {rekaman && (
+          <RecordingModal recordingUrl={it.url} title={it.title} onClose={() => setRekaman(false)} />
+        )}
+      </>
+    );
+  }
+
   const dek = parseDeck(it.content);
   if (dek || (!it.url && it.content)) {
     return (
@@ -338,7 +355,7 @@ export default function SesiTimeline({
                       const href = studentRecordingHref(s.recording_url!);
                       // [vc-recmodal-v1] Rekaman kita sendiri dibuka sebagai
                       // pop-up di halaman ini; tautan luar tetap ke tab baru.
-                      if (isInternalRecordingHref(href)) {
+                      if (isPlayableRecording(s.recording_url!)) {
                         return (
                           <button
                             type="button"
