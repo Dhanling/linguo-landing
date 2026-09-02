@@ -7,6 +7,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
+  // [vc-notranslate-v1] Matikan tawaran terjemahan Chrome di dashboard siswa
+  // saja (halaman publik TIDAK ikut — pengunjung dari 60+ bahasa memang butuh).
+  // Gelembung "Google Translate" mendarat di POJOK KIRI ATAS begitu video masuk
+  // layar penuh, tepat menimpa materi di rekaman kelas; dan dashboard ini sudah
+  // punya pemilih bahasa ID/EN sendiri.
+  other: { google: "notranslate" },
 };
 
 export default function NoIndexLayout({ children }: { children: React.ReactNode }) {
