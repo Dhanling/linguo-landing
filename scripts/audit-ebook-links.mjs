@@ -12,7 +12,7 @@
 //
 // Pakai: node scripts/audit-ebook-links.mjs
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 
 if (existsSync(".env.local")) {
@@ -68,6 +68,24 @@ for (const p of data) {
   if (p.type !== "ebook" || !v || isUrl(v)) continue;
   if (/placeholder/i.test(v)) { console.log(`·   belum diisi: ${p.slug} → ${v}`); continue; }
   if (!adaBerkas.has(v)) { temuan++; console.log(`⚠️  BERKAS HILANG di bucket: ${p.slug} → ${v}`); }
+}
+
+// [ebook-modul-rakitan-menang-v1] Modul buatan sendiri (`content/ebook/<slug>`)
+// yang barisnya justru menunjuk LINK http: readernya mati diam-diam, siswa dapat
+// PDF Drive edisi lama. Sumber kebenarannya meta.json, sama dengan `ebook-publish`.
+const bySlug = new Map(data.map((p) => [p.slug, p]));
+for (const dir of readdirSync("content/ebook").sort()) {
+  const jalurMeta = `content/ebook/${dir}/meta.json`;
+  if (!existsSync(jalurMeta)) continue;
+  const meta = JSON.parse(readFileSync(jalurMeta, "utf8"));
+  const slugProduk = meta?.product?.slug ?? dir;
+  const berkas = meta?.product?.file ?? `${dir}.pdf`;
+  const row = bySlug.get(slugProduk);
+  if (!row || (row.file_url ?? "").trim() === berkas) continue;
+  temuan++;
+  console.log(`⚠️  MODUL RAKITAN TERTIMBUN: ${slugProduk} (${dir})`);
+  console.log(`      sekarang: ${row.file_url}`);
+  console.log(`      seharusnya: ${berkas}  → node scripts/fix-link-ebook-storage.mjs --terapkan`);
 }
 
 console.log(temuan === 0 ? "\n✓ tidak ada link kembar / berkas hilang" : `\n${temuan} temuan perlu dibereskan`);
