@@ -65,13 +65,63 @@ const JEDA_KOMIT_ZOOM = 160;
 /** Batas kerapatan render — 3x di layar HP modern bikin canvas boros memori. */
 const DPR_MAX = 2;
 /** Sisa ruang di sekeliling halaman (px) — dipakai menghitung skala muat-penuh. */
-/* [ebook-kata-translit-v1] Tinggi kartu kata sesudah baris cara baca ikut
-   masuk: kata yang duduk lebih tinggi dari ini tak punya ruang di ATASNYA, jadi
-   kartunya ditaruh di bawah. Dulu 170 (kartu tanpa baris transliterasi). */
+/* [ebook-kata-translit-v1] Tinggi kartu kata PADA SKALA 1 sesudah baris cara
+   baca ikut masuk: kata yang duduk lebih tinggi dari ini tak punya ruang di
+   ATASNYA, jadi kartunya ditaruh di bawah. Dulu 170 (kartu tanpa baris
+   transliterasi). Waktu dipakai, angkanya dikalikan `kartuSkala` — kalau tidak,
+   kartu yang mengecil di halaman kecil masih dianggap setinggi 190px dan
+   melompat ke bawah kata padahal ruang di atasnya cukup. */
 const AMBANG_KARTU_ATAS = 190;
 /* [ebook-kartu-ikut-zoom-v1] Lebar dasar kartu kata di zoom 100%. Dipakai untuk
    lebar kotaknya sekaligus jepitan kiri/kanan supaya tak keluar kertas. */
 const KARTU_W = 252;
+/* [ebook-kartu-seukuran-teks-v1] Kartu kata diukur dari SKALA HALAMAN yang
+   sedang dirender — lihat `kartuSkala`. Isi modul dicetak 10,5pt (lihat
+   scripts/build-ebook-pdf.mjs), jadi di layar tingginya 10,5 x skala; baris
+   arti di kartu 12,5px pada skala 1. Bandingannya membuat tulisan di kartu
+   seukuran tulisan di halaman di belakangnya, bukan dua kali lebih besar. */
+const EBOOK_PT_ISI = 10.5;
+const KARTU_PX_ARTI = 12.5;
+const KARTU_BANDING_ISI = EBOOK_PT_ISI / KARTU_PX_ARTI;
+/* Pita nyaman: selama pengalinya di dalam pita ini kartu mengikuti teks
+   halaman satu banding satu. Di LUAR pita pertumbuhannya cuma diperlambat
+   (akar), bukan dihentikan — kartu yang berhenti tumbuh di zoom 300% terlihat
+   menciut sendiri sementara halamannya terus membesar, kartu yang tumbuh lurus
+   jadi papan. Jepitan di bawah ini tinggal rem darurat, bukan aturan harian. */
+const KARTU_NYAMAN_MIN = 0.8;
+const KARTU_NYAMAN_MAKS = 1.15;
+const KARTU_SKALA_MIN = 0.58;
+const KARTU_SKALA_MAKS = 2.4;
+
+/** Pengali ukuran kartu kata untuk skala halaman yang sedang dirender.
+ *
+ *  [ebook-kartu-seukuran-teks-v1] Dulu diambil dari LEBAR halaman dengan lantai
+ *  208px: di jendela sempit (atau mode dua halaman) lantai itu yang menang, jadi
+ *  kartunya melar sampai lebih dari separuh kertas dan tulisannya dua kali lebih
+ *  besar dari teks modul di belakangnya. Sekarang pengalinya ikut SKALA render
+ *  halaman, jadi tulisan kartu selalu sebesar tulisan halaman: mengecil bersama
+ *  halaman, membesar bersama zoom.
+ *
+ *  ⚠️ KEMBAR dengan `skalaKartu()` di `PustakaReader.tsx` (reader pengajar,
+ *  repo linguo-admin-dashboard) — ubah satu, ubah keduanya.
+ *
+ *  @param skalaHalaman skala render halaman (muat x zoom), 0 kalau belum siap
+ *  @param pw           lebar SATU halaman di layar, buat pagar terakhir
+ */
+function skalaKartu(skalaHalaman: number, pw: number) {
+  const ideal = (skalaHalaman > 0 ? skalaHalaman : 1) * KARTU_BANDING_ISI;
+  const lunak =
+    ideal > KARTU_NYAMAN_MAKS
+      ? KARTU_NYAMAN_MAKS * Math.sqrt(ideal / KARTU_NYAMAN_MAKS)
+      : ideal < KARTU_NYAMAN_MIN
+        ? KARTU_NYAMAN_MIN * Math.sqrt(ideal / KARTU_NYAMAN_MIN)
+        : ideal;
+  const jepit = Math.min(Math.max(lunak, KARTU_SKALA_MIN), KARTU_SKALA_MAKS);
+  // Pagar terakhir diukur dari SATU halaman, bukan lebar bentangan: di mode dua
+  // halaman "92% bentangan" praktis tak pernah menjepit apa pun, padahal yang
+  // tak boleh tertutup kartunya justru halaman yang sedang dibaca.
+  return pw ? Math.min(jepit, (pw * 0.92) / KARTU_W) : jepit;
+}
 const PADDING_X = 36;
 const PADDING_Y = 36;
 /** Jarak antar dua halaman (punggung buku). */
@@ -1982,10 +2032,12 @@ export default function EbookReader({
   const pw = ukuran?.w ?? 0;
   const ph = ukuran?.h ?? 0;
   const lebarBuku = dua ? pw * 2 + GAP : pw;
-  /* [ebook-kartu-ikut-zoom-v1] Pengali ukuran kartu kata — lihat pemakaiannya
-     di bawah. Ikut `zoom` yang sudah diraster (bukan `zoomLive`): selama cubitan
-     seluruh kotak buku memang sudah diskalakan CSS, kartunya ikut sendiri. */
-  const kartuSkala = Math.min(Math.max(zoom, 0.85), 1.9);
+  /* [ebook-kartu-seukuran-teks-v1] Ukuran kartu kata — lihat `skalaKartu()`.
+     Ikut `skalaTampil` (skala yang SUDAH diraster), bukan `zoomLive`: selama
+     jari masih mencubit, seluruh kotak buku — kartunya termasuk — sudah
+     diskalakan CSS lewat `faktorZoom`, jadi kartunya membesar/mengecil
+     berbarengan dengan halamannya tanpa menunggu raster berikutnya. */
+  const kartuSkala = skalaKartu(skalaTampil, pw);
   // Bentangan yang cuma berisi satu halaman (sampul, atau halaman terakhir yang
   // ganjil) digeser ke tengah layar — kalau tidak, halamannya duduk melenceng ke
   // kanan dengan lubang selebar satu halaman di sebelahnya. Lebar kotak bukunya
@@ -3356,25 +3408,22 @@ export default function EbookReader({
                   className="pointer-events-auto absolute rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15"
                   style={{
                     width: KARTU_W,
-                    /* [ebook-kartu-ikut-zoom-v1] Kartu ikut membesar bersama
-                       halamannya. Dulu tetap 252px berapa pun zoomnya: di zoom
-                       besar kartunya menyusut jadi label kecil yang menempel di
-                       huruf sebesar jempol — katanya sendiri kalah besar dari
-                       kata di kertas yang ia terangkan. Dikatrol lewat transform
-                       supaya semua jarak di dalamnya ikut utuh, dan dijepit
-                       0,85–1,9 supaya tak pernah tak terbaca ataupun menutupi
-                       halaman. Titik jangkarnya pojok kiri-atas: scale DULU baru
-                       geser, jadi -50% tetap setengah lebar yang sudah besar dan
-                       kartunya tetap duduk di tengah katanya. */
+                    /* [ebook-kartu-proporsional-v1] Kartu ikut ukuran halaman:
+                       pengalinya dihitung di `kartuSkala` dari lebar halaman,
+                       bukan dari angka zoom. Dikatrol lewat transform (bukan
+                       ukuran font satu per satu) supaya semua jarak di dalamnya
+                       ikut utuh. Titik jangkarnya pojok kiri-atas: scale DULU
+                       baru geser, jadi -50% tetap setengah lebar yang sudah
+                       diskalakan dan kartunya duduk persis di tengah katanya. */
                     transformOrigin: "0 0",
-                    transform: `scale(${kartuSkala}) translateX(-50%)${ucap.y > AMBANG_KARTU_ATAS ? " translateY(-100%)" : ""}`,
+                    transform: `scale(${kartuSkala}) translateX(-50%)${ucap.y > AMBANG_KARTU_ATAS * kartuSkala ? " translateY(-100%)" : ""}`,
                     left: Math.min(
                       Math.max(ucap.x + ucap.w / 2, (KARTU_W / 2) * kartuSkala),
                       Math.max((KARTU_W / 2) * kartuSkala, lebarBuku - (KARTU_W / 2) * kartuSkala),
                     ),
                     // Di baris paling atas halaman, kartunya ditaruh DI BAWAH kata —
                     // di atas berarti keluar dari kertas.
-                    top: ucap.y > AMBANG_KARTU_ATAS ? ucap.y - 10 : ucap.y + ucap.h + 10,
+                    top: ucap.y > AMBANG_KARTU_ATAS * kartuSkala ? ucap.y - 10 : ucap.y + ucap.h + 10,
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
