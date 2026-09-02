@@ -76,7 +76,12 @@ export async function POST(req: NextRequest) {
     } else {
       const previewId = await previewStudentId(req);
       if (!previewId) {
-        return NextResponse.json({ error: "Kamu perlu masuk dulu untuk menonton rekaman." }, { status: 401 });
+        // Dibedakan dari pesan klien lama supaya jelas mana yang perlu login dan
+        // mana sesi pratinjau yang sudah kedaluwarsa (idle 30 menit).
+        return NextResponse.json(
+          { error: "Sesi kamu sudah habis — masuk lagi, atau buka ulang tautan pratinjau dari dashboard." },
+          { status: 401 },
+        );
       }
       ownedIds = new Set([previewId]);
     }
