@@ -36,6 +36,7 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG, masihDijual } from "@/lib/elearningBundle";
+import { saringEdisiLama } from "@/lib/ebookEdisi";
 /* [pustaka-terakhir-dibuka-v1] baris pintas "Terakhir dibuka" — sama seperti di
    Perpustakaan dashboard pengajar, dirakit dari jejak reader di perangkat ini */
 import { bacaTerakhirDibuka, hapusTerakhirDibuka, type JejakPustaka } from "@/lib/pustakaTerakhir";
@@ -497,8 +498,12 @@ async function loadKatalog(supabase: SupabaseClient): Promise<CatalogItem[]> {
         .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
       return { ...prod, pricing } as CatalogItem;
     });
-    katalogCache = rows;
-    return rows;
+    // [etalase-sembunyikan-edisi-lama-v1] modul edisi lama disembunyikan dari
+    // kartu tergembok kalau bahasanya sudah punya edisi baru — pembeli sempat
+    // membayar edisi lama karena dua kartunya berdampingan.
+    const dijual = saringEdisiLama(rows);
+    katalogCache = dijual;
+    return dijual;
   })().finally(() => { katalogInflight = null; });
   return katalogInflight;
 }

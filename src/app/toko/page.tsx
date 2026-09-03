@@ -1,5 +1,6 @@
 import { createServerClient } from '@/lib/supabase-server';
 import { ELEARNING_BUNDLE_SLUG } from '@/lib/elearningBundle';
+import { saringEdisiLama } from '@/lib/ebookEdisi';
 import TokoClient from './TokoClient';
 
 // ISR: halaman di-render sekali lalu di-cache 1 jam. Tidak lagi query Supabase
@@ -69,5 +70,7 @@ export default async function TokoPage() {
     console.error('[/toko] fetch error:', error.message);
   }
 
-  return <TokoClient products={(products as Product[] | null) ?? []} />;
+  // [etalase-sembunyikan-edisi-lama-v1] modul edisi lama tidak ditawarkan lagi di
+  // bahasa yang sudah punya edisi baru — pembeli sempat salah pilih kartu.
+  return <TokoClient products={saringEdisiLama((products as Product[] | null) ?? [])} />;
 }

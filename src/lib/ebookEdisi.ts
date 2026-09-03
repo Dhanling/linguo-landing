@@ -23,3 +23,38 @@ export function adalahNewEdition(
   if (type && type !== 'ebook') return false;
   return POLA_NEW_EDITION.test(title);
 }
+
+type ProdukEdisi = {
+  title?: string | null;
+  type?: string | null;
+  language?: string | null;
+};
+
+/**
+ * [etalase-sembunyikan-edisi-lama-v1] Buang modul edisi LAMA dari etalase kalau
+ * bahasa yang sama sudah punya modul edisi baru.
+ *
+ * Kenapa perlu: 26 bahasa punya DUA kartu berdampingan — "Modul Belajar Bahasa
+ * Polandia … (English Edition)" 100 halaman Rp79.000 "Lifetime" dan "Polish 101 -
+ * A1" 152 halaman Rp79.000/6 bulan. Pembeli yang mengira keduanya modul yang sama
+ * memilih yang lifetime, lalu protes karena yang terbuka modul lama (2 Sep 2026:
+ * Bahrun; sejak Juni ada 17 pembelian lain yang jatuh ke edisi lama).
+ *
+ * Barisnya sengaja TIDAK dimatikan di DB: `is_active` masih dipakai halaman
+ * /toko/[slug] dan join perpustakaan pembeli lama — mereka harus tetap bisa
+ * membuka modul yang sudah dibayar. Yang disembunyikan cuma etalasenya.
+ */
+export function saringEdisiLama<T extends ProdukEdisi>(produk: T[]): T[] {
+  const kunci = (p: ProdukEdisi) => (p.language ?? '').toLowerCase().trim();
+  const punyaEdisiBaru = new Set(
+    produk
+      .filter((p) => adalahNewEdition(p.title, p.type) && kunci(p))
+      .map(kunci),
+  );
+  return produk.filter((p) => {
+    if (p.type && p.type !== 'ebook') return true;          // e-learning tak kena
+    if (adalahNewEdition(p.title, p.type)) return true;
+    const k = kunci(p);
+    return !k || !punyaEdisiBaru.has(k);                     // tanpa bahasa → biarkan
+  });
+}
