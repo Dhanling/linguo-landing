@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,8 +21,26 @@ const PROGRAMS = [
   { title: "Business Communication", desc: "Tingkatkan kemampuan komunikasi bisnis tim Anda dalam bahasa asing — email, meeting, presentasi, dan negosiasi.", langs: ["English", "Mandarin", "Japanese", "Korean"], levels: "A1 – B2", sessions: "16–32 sesi", color: "from-teal-500 to-teal-600" },
   { title: "General Language Training", desc: "Program bahasa umum untuk karyawan — membangun fondasi komunikasi dan kepercayaan diri berbahasa asing.", langs: ["60+ bahasa tersedia"], levels: "A1 – B2", sessions: "16–32 sesi", color: "from-blue-500 to-blue-600" },
   { title: "IELTS / TOEFL Preparation", desc: "Persiapan tes bahasa Inggris untuk karyawan yang butuh sertifikasi — IELTS, TOEFL, atau tes internal perusahaan.", langs: ["English"], levels: "Intermediate+", sessions: "16 sesi @90 menit", color: "from-amber-500 to-amber-600" },
+  { title: "Juru Bahasa / Interpreter", desc: "Interpreter untuk acara, site visit, audit, meeting, dan kunjungan delegasi — simultan, konsekutif, atau pendamping. Termasuk alat simultan (transmitter + headset) dan teknisi bila dibutuhkan.", langs: ["Japanese", "English", "Mandarin", "Korean", "60+ bahasa"], levels: "Interpreter profesional", sessions: "Per hari / per acara", color: "from-rose-500 to-rose-600" },
+  { title: "Penerjemahan Dokumen", desc: "Penerjemahan dokumen umum, teknis, maupun tersumpah (sworn translation) untuk keperluan legal dan bisnis.", langs: ["60+ bahasa"], levels: "Umum & tersumpah", sessions: "Per halaman", color: "from-indigo-500 to-indigo-600" },
   { title: "Custom Program", desc: "Butuh sesuatu yang berbeda? Kami bisa rancang program khusus sesuai kebutuhan perusahaan Anda.", langs: ["Semua bahasa"], levels: "Custom", sessions: "Flexible", color: "from-purple-500 to-purple-600" },
 ];
+
+// [b2b-service-type-v1] Form ini dulu hanya menampung kelas training, padahal
+// permintaan yang masuk lewat WA kerap soal JURU BAHASA acara (tanggal, lokasi,
+// alat simultan, teknisi, perjalanan interpreter) atau penerjemahan dokumen.
+const SERVICES = [
+  { id: "training", icon: "🎓", title: "Corporate Class Training", desc: "Kelas bahasa rutin untuk tim / karyawan" },
+  { id: "interpreting", icon: "🎧", title: "Juru Bahasa / Interpreter", desc: "Acara, site visit, audit, meeting, kunjungan delegasi" },
+  { id: "translation", icon: "📄", title: "Penerjemahan Dokumen", desc: "Dokumen umum, teknis, atau tersumpah" },
+];
+const INTERPRET_MODES = ["Simultan (headset/booth)", "Konsekutif (bergantian)", "Pendamping / escort", "Bisikan (whispering)", "Belum tahu — mohon disarankan"];
+const EQUIPMENT = ["Alat simultan (transmitter + headset)", "Booth interpreter", "Sound system & microphone", "Teknisi / operator alat", "Sudah tersedia dari kami", "Belum tahu"];
+const TRAVEL_OPTS = ["Ya, masukkan ke penawaran", "Tidak — kami yang atur", "Belum tahu"];
+const DAILY_HOURS = ["≤ 4 jam (half day)", "8 jam (full day)", "> 8 jam / lembur", "Belum tahu"];
+const INTERPRETER_COUNT = ["1 interpreter", "2 interpreter (tim simultan)", "Lebih dari 2", "Belum tahu — mohon disarankan"];
+const DOC_TYPES = ["Legal / kontrak", "Teknis", "Materi presentasi", "Laporan / company profile", "Sertifikat & dokumen resmi", "Lainnya"];
+const SWORN_OPTS = ["Ya, tersumpah", "Tidak perlu", "Belum tahu"];
 
 const CLIENTS = [
   { name: "AIESEC", img: "/images/clients/aiesec.png" },
@@ -53,6 +71,12 @@ export default function CorporatePage() {
     company_name: "", industry: "", company_size: "", pic_name: "", pic_title: "",
     pic_email: "", pic_phone: "", languages: [] as string[], participant_count: "",
     training_goal: [] as string[], level: "", budget_range: "", timeline: "", notes: "",
+    // [b2b-service-type-v1]
+    services: [] as string[],
+    event_name: "", event_start: "", event_end: "", event_location: "",
+    interpret_mode: "", language_pairs: "", interpreter_count: "", daily_hours: "",
+    equipment: [] as string[], travel_cover: "",
+    doc_types: [] as string[], doc_pages: "", doc_sworn: "", doc_deadline: "",
   });
   const setF = (k: string, v: any) => setForm(f => ({ ...f, [k]: v }));
   const toggleArr = (k: string, val: string) => {
@@ -66,23 +90,95 @@ export default function CorporatePage() {
   const LANGUAGES = ["English", "Mandarin", "Japanese", "Korean", "German", "French", "Spanish", "Arabic", "Dutch", "Thai", "Vietnamese", "Turkish", "Russian", "Portuguese", "Italian", "BIPA", "Lainnya"];
   const GOALS = ["Business Communication", "Email & Writing", "Meeting & Presentation", "Negotiation", "Customer Service", "Technical Language", "General Conversation", "IELTS/TOEFL Prep", "Cultural Training"];
 
+  // Langkah wizard mengikuti layanan yang dipilih: yang tak dipilih tidak
+  // ditanyakan sama sekali (klien juru bahasa tak perlu ditanya "tujuan training").
+  const hasTraining = form.services.includes("training");
+  const hasInterpreting = form.services.includes("interpreting");
+  const hasTranslation = form.services.includes("translation");
+  const wizardSteps = useMemo(() => {
+    const st: { key: string; label: string }[] = [
+      { key: "service", label: "Layanan" },
+      { key: "company", label: "Perusahaan" },
+    ];
+    if (hasTraining || form.services.length === 0) st.push({ key: "training", label: "Kebutuhan" });
+    if (hasInterpreting) st.push({ key: "event", label: "Detail Acara" });
+    if (hasTranslation) st.push({ key: "doc", label: "Dokumen" });
+    st.push({ key: "pic", label: "PIC & Kirim" });
+    return st;
+  }, [hasTraining, hasInterpreting, hasTranslation, form.services.length]);
+  // Daftar langkah bisa menyusut saat pilihan layanan diubah → jaga indeksnya.
+  const stepIdx = Math.min(step, wizardSteps.length - 1);
+  const cur = wizardSteps[stepIdx].key;
+  const isLast = stepIdx === wizardSteps.length - 1;
+  const canNext =
+    cur === "service" ? form.services.length > 0 && form.languages.length > 0
+    : cur === "company" ? !!form.company_name && !!form.industry
+    : true;
+
+  // Ringkasan permintaan — dipakai untuk pesan WA sekaligus ditempel ke `notes`
+  // supaya rincian acara tetap terbaca di menu Corporate dashboard.
+  const buildSummary = () => {
+    const L: string[] = [];
+    L.push(`Layanan: ${form.services.map(id => SERVICES.find(s2 => s2.id === id)?.title || id).join(" + ")}`);
+    L.push(`Bahasa: ${form.languages.join(", ") || "-"}`);
+    if (hasTraining) {
+      L.push(`Tujuan training: ${form.training_goal.join(", ") || "-"}`);
+      L.push(`Peserta: ${form.participant_count || "-"} · Timeline: ${form.timeline || "-"}`);
+    }
+    if (hasInterpreting) {
+      L.push(`Acara: ${form.event_name || "-"}`);
+      L.push(`Tanggal: ${form.event_start || "-"}${form.event_end ? ` s/d ${form.event_end}` : ""} · Lokasi: ${form.event_location || "-"}`);
+      L.push(`Mode interpretasi: ${form.interpret_mode || "-"} · Arah bahasa: ${form.language_pairs || "-"}`);
+      L.push(`Jumlah interpreter: ${form.interpreter_count || "-"} · Jam/hari: ${form.daily_hours || "-"} · Pendengar: ${form.participant_count || "-"}`);
+      L.push(`Alat: ${form.equipment.join(", ") || "-"}`);
+      L.push(`Akomodasi & transport interpreter: ${form.travel_cover || "-"}`);
+    }
+    if (hasTranslation) {
+      L.push(`Dokumen: ${form.doc_types.join(", ") || "-"} · ${form.doc_pages || "-"} halaman · ${form.doc_sworn || "-"}`);
+      L.push(`Deadline dokumen: ${form.doc_deadline || "-"}`);
+    }
+    L.push(`Budget: ${form.budget_range || "-"}`);
+    return L;
+  };
+
   const handleSubmit = async () => {
     if (!form.company_name || !form.pic_name || !form.pic_email) return;
     setSaving(true);
+    const summary = buildSummary();
+    const notesFull = [form.notes?.trim(), ...summary].filter(Boolean).join("\n");
+    const serviceDetail: Record<string, any> = { services: form.services, languages: form.languages };
+    if (hasInterpreting) {
+      serviceDetail.event = {
+        name: form.event_name, start_date: form.event_start || null, end_date: form.event_end || null,
+        location: form.event_location, mode: form.interpret_mode, language_pairs: form.language_pairs,
+        interpreter_count: form.interpreter_count, daily_hours: form.daily_hours,
+        audience: form.participant_count, equipment: form.equipment, travel_cover: form.travel_cover,
+      };
+    }
+    if (hasTranslation) {
+      serviceDetail.document = {
+        types: form.doc_types, pages: form.doc_pages, sworn: form.doc_sworn, deadline: form.doc_deadline || null,
+      };
+    }
     try {
       // Save to Supabase
-      const res = await fetch("/api/corporate-lead", {
+      await fetch("/api/corporate-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          notes: notesFull,
+          service_type: form.services.join("+") || "training",
+          service_detail: serviceDetail,
+        }),
       });
       // Also send WA
-      const msg = `Halo, saya ${form.pic_name} (${form.pic_title}) dari ${form.company_name} (${form.industry}).\n\n📋 Kebutuhan Corporate Training:\n• Bahasa: ${form.languages.join(", ")}\n• Peserta: ${form.participant_count}\n• Tujuan: ${form.training_goal.join(", ")}\n• Budget: ${form.budget_range}\n• Timeline: ${form.timeline}\n\n📧 ${form.pic_email}\n📱 ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
+      const msg = `Halo, saya ${form.pic_name}${form.pic_title ? ` (${form.pic_title})` : ""} dari ${form.company_name}${form.industry ? ` (${form.industry})` : ""}.\n\n📋 Permintaan B2B:\n${summary.map(l => `• ${l}`).join("\n")}\n\n📧 ${form.pic_email}\n📱 ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
       window.open(waMsg(msg), "_blank");
       setSubmitted(true);
     } catch (e) {
       // Still open WA even if API fails
-      const msg = `Halo, saya ${form.pic_name} dari ${form.company_name}. Saya tertarik Corporate Training Linguo. Email: ${form.pic_email}, Telp: ${form.pic_phone}`;
+      const msg = `Halo, saya ${form.pic_name} dari ${form.company_name}. Saya tertarik layanan B2B Linguo (${form.services.join(", ") || "corporate"}). Email: ${form.pic_email}, Telp: ${form.pic_phone}`;
       window.open(waMsg(msg), "_blank");
       setSubmitted(true);
     }
@@ -118,7 +214,7 @@ export default function CorporatePage() {
               Tingkatkan Skill Bahasa<br />Tim Anda Bersama <span className="text-[#fbbf24]">Linguo</span>
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
-              Program pelatihan bahasa asing yang dirancang khusus untuk kebutuhan perusahaan Anda. Fleksibel, terstruktur, dan terukur.
+              Pelatihan bahasa, juru bahasa acara, dan penerjemahan dokumen — dirancang khusus untuk kebutuhan perusahaan Anda. Fleksibel, terstruktur, dan terukur.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#form" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full transition-all active:scale-95 text-sm">
@@ -170,7 +266,7 @@ export default function CorporatePage() {
           <motion.div {...fade} className="text-center mb-14">
             <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">Program Kami</p>
             <h2 className="text-2xl sm:text-3xl font-bold">Pilih Program yang Sesuai</h2>
-            <p className="text-slate-500 mt-3 max-w-lg mx-auto text-sm">Semua program bisa di-custom sesuai kebutuhan. Harga khusus untuk corporate.</p>
+            <p className="text-slate-500 mt-3 max-w-lg mx-auto text-sm">Kelas training, juru bahasa acara, hingga penerjemahan dokumen — semuanya bisa di-custom. Harga khusus untuk corporate.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-5">
             {PROGRAMS.map((p, i) => (
@@ -197,6 +293,7 @@ export default function CorporatePage() {
           <motion.div {...fade} className="text-center mt-10">
             <p className="text-slate-500 text-sm mb-4">Harga corporate mulai dari <span className="font-bold text-[#1A9E9E] text-lg">Rp 75.000</span>/sesi/orang</p>
             <p className="text-xs text-slate-400">*Harga final tergantung jumlah peserta, durasi program, dan bahasa yang dipilih</p>
+            <p className="text-xs text-slate-400 mt-1">Juru bahasa &amp; penerjemahan dokumen dihitung per acara/dokumen — kirim detailnya lewat form di bawah untuk penawaran rinci.</p>
           </motion.div>
         </div>
       </section>
@@ -225,7 +322,7 @@ export default function CorporatePage() {
         <div className="relative max-w-2xl mx-auto px-4">
           <motion.div {...fade} className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Minta Proposal Gratis</h2>
-            <p className="text-white/70 text-sm">3 langkah mudah — tim kami akan menghubungi Anda dalam 1×24 jam kerja.</p>
+            <p className="text-white/70 text-sm">Kelas training, juru bahasa, atau penerjemahan dokumen — tim kami menghubungi Anda dalam 1×24 jam kerja.</p>
           </motion.div>
 
           {submitted ? (
@@ -241,19 +338,51 @@ export default function CorporatePage() {
             <motion.div {...fade} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
               {/* Progress */}
               <div className="flex items-center gap-2 mb-6">
-                {["Perusahaan", "Kebutuhan", "PIC & Kirim"].map((label, i) => (
-                  <div key={i} className="flex-1">
-                    <div className={`h-1.5 rounded-full transition-all ${i <= step ? "bg-[#1A9E9E]" : "bg-slate-200"}`} />
-                    <p className={`text-[10px] mt-1 text-center font-medium ${i <= step ? "text-[#1A9E9E]" : "text-slate-400"}`}>{label}</p>
+                {wizardSteps.map((sv, i) => (
+                  <div key={sv.key} className="flex-1">
+                    <div className={`h-1.5 rounded-full transition-all ${i <= stepIdx ? "bg-[#1A9E9E]" : "bg-slate-200"}`} />
+                    <p className={`text-[10px] mt-1 text-center font-medium ${i <= stepIdx ? "text-[#1A9E9E]" : "text-slate-400"}`}>{sv.label}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Step 1: Company Info */}
-              {step === 0 && (
+              {/* Langkah 1: Jenis layanan + bahasa */}
+              {cur === "service" && (
                 <div className="space-y-4">
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama Perusahaan *</label>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Layanan yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
+                    <div className="grid sm:grid-cols-3 gap-2">
+                      {SERVICES.map(sv => (
+                        <button key={sv.id} onClick={() => toggleArr("services", sv.id)}
+                          className={`px-4 py-3 rounded-xl border-2 text-left transition-all ${
+                            form.services.includes(sv.id) ? "border-[#1A9E9E] bg-[#1A9E9E]/5" : "border-slate-200 hover:border-slate-300"
+                          }`}>
+                          <span className="text-xl block mb-1">{sv.icon}</span>
+                          <span className={`block text-xs font-bold ${form.services.includes(sv.id) ? "text-[#1A9E9E]" : "text-slate-700"}`}>{sv.title}</span>
+                          <span className="block text-[10px] text-slate-400 leading-snug mt-1">{sv.desc}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
+                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                      {LANGUAGES.map(l => (
+                        <button key={l} onClick={() => toggleArr("languages", l)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
+                            form.languages.includes(l) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{l}</button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Langkah 2: Profil perusahaan */}
+              {cur === "company" && (
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama Perusahaan / Instansi *</label>
                     <input type="text" value={form.company_name} onChange={e => setF("company_name", e.target.value)} placeholder="PT. Example Indonesia"
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                   </div>
@@ -271,31 +400,20 @@ export default function CorporatePage() {
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Ukuran Perusahaan</label>
                     <div className="grid grid-cols-2 gap-2">
-                      {["1-50 karyawan", "50-200 karyawan", "200-500 karyawan", "500+ karyawan"].map(s => (
-                        <button key={s} onClick={() => setF("company_size", s)}
+                      {["1-50 karyawan", "50-200 karyawan", "200-500 karyawan", "500+ karyawan"].map(sz => (
+                        <button key={sz} onClick={() => setF("company_size", sz)}
                           className={`px-3 py-2.5 rounded-xl border-2 text-xs font-medium transition-all ${
-                            form.company_size === s ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
-                          }`}>{s}</button>
+                            form.company_size === sz ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{sz}</button>
                       ))}
                     </div>
                   </div>
                 </div>
               )}
 
-              {/* Step 2: Training Needs */}
-              {step === 1 && (
+              {/* Langkah 3a: Kebutuhan kelas training */}
+              {cur === "training" && (
                 <div className="space-y-4">
-                  <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                      {LANGUAGES.map(l => (
-                        <button key={l} onClick={() => toggleArr("languages", l)}
-                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
-                            form.languages.includes(l) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
-                          }`}>{l}</button>
-                      ))}
-                    </div>
-                  </div>
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Tujuan Training (bisa pilih lebih dari 1)</label>
                     <div className="grid grid-cols-2 gap-2">
@@ -307,26 +425,16 @@ export default function CorporatePage() {
                       ))}
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Jumlah Peserta</label>
-                      <select value={form.participant_count} onChange={e => setF("participant_count", e.target.value)}
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
-                        <option value="">Pilih</option>
-                        {["5-10 orang", "11-20 orang", "21-50 orang", "50-100 orang", "100+ orang"].map(s => <option key={s} value={s}>{s}</option>)}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Budget Range</label>
-                      <select value={form.budget_range} onChange={e => setF("budget_range", e.target.value)}
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
-                        <option value="">Pilih</option>
-                        {["< Rp 5 juta", "Rp 5-15 juta", "Rp 15-50 juta", "Rp 50-100 juta", "> Rp 100 juta", "Belum ditentukan"].map(b => <option key={b} value={b}>{b}</option>)}
-                      </select>
-                    </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Jumlah Peserta</label>
+                    <select value={form.participant_count} onChange={e => setF("participant_count", e.target.value)}
+                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                      <option value="">Pilih</option>
+                      {["5-10 orang", "11-20 orang", "21-50 orang", "50-100 orang", "100+ orang"].map(sz => <option key={sz} value={sz}>{sz}</option>)}
+                    </select>
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Timeline Mulai</label>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Timeline Mulai</label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {["Segera", "1 bulan", "2-3 bulan", "Masih survei"].map(t => (
                         <button key={t} onClick={() => setF("timeline", t)}
@@ -339,67 +447,202 @@ export default function CorporatePage() {
                 </div>
               )}
 
-              {/* Step 3: PIC & Submit */}
-              {step === 2 && (
+              {/* Langkah 3b: Detail acara juru bahasa */}
+              {cur === "event" && (
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama / Jenis Acara *</label>
+                    <input type="text" value={form.event_name} onChange={e => setF("event_name", e.target.value)}
+                      placeholder="Mis. RSPO Post-RT Tour / Field Visit" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Tanggal Mulai</label>
+                      <input type="date" value={form.event_start} onChange={e => setF("event_start", e.target.value)} className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Tanggal Selesai</label>
+                      <input type="date" value={form.event_end} onChange={e => setF("event_end", e.target.value)} className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Lokasi Acara</label>
+                    <input type="text" value={form.event_location} onChange={e => setF("event_location", e.target.value)}
+                      placeholder="Mis. Palangka Raya, Kalimantan Tengah (atau: Online / Zoom)" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Arah Bahasa</label>
+                    <input type="text" value={form.language_pairs} onChange={e => setF("language_pairs", e.target.value)}
+                      placeholder="Mis. Jepang ⇄ Indonesia, Jepang ⇄ Inggris" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Mode Interpretasi</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {INTERPRET_MODES.map(m => (
+                        <button key={m} onClick={() => setF("interpret_mode", m)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.interpret_mode === m ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{m}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Jumlah Peserta / Pendengar</label>
+                      <select value={form.participant_count} onChange={e => setF("participant_count", e.target.value)}
+                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                        <option value="">Pilih</option>
+                        {["< 10 orang", "10-30 orang", "31-50 orang", "51-100 orang", "100+ orang"].map(sz => <option key={sz} value={sz}>{sz}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Jumlah Interpreter</label>
+                      <select value={form.interpreter_count} onChange={e => setF("interpreter_count", e.target.value)}
+                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                        <option value="">Pilih</option>
+                        {INTERPRETER_COUNT.map(c => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Durasi Kerja per Hari</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {DAILY_HOURS.map(h => (
+                        <button key={h} onClick={() => setF("daily_hours", h)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
+                            form.daily_hours === h ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{h}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Kebutuhan Alat (bisa pilih lebih dari 1)</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {EQUIPMENT.map(eq => (
+                        <button key={eq} onClick={() => toggleArr("equipment", eq)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.equipment.includes(eq) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{eq}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Perjalanan, Akomodasi &amp; Konsumsi Interpreter</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {TRAVEL_OPTS.map(t => (
+                        <button key={t} onClick={() => setF("travel_cover", t)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
+                            form.travel_cover === t ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{t}</button>
+                      ))}
+                    </div>
+                    <p className="text-[10px] text-slate-400 mt-1.5">Untuk acara di luar Bandung/Jakarta, penawaran bisa mencakup tiket, hari perjalanan, penginapan, transport lokal, dan konsumsi.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Langkah 3c: Penerjemahan dokumen */}
+              {cur === "doc" && (
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Jenis Dokumen (bisa pilih lebih dari 1)</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {DOC_TYPES.map(d => (
+                        <button key={d} onClick={() => toggleArr("doc_types", d)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.doc_types.includes(d) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{d}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Perkiraan Jumlah Halaman</label>
+                      <input type="text" value={form.doc_pages} onChange={e => setF("doc_pages", e.target.value)} placeholder="Mis. 25" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Deadline</label>
+                      <input type="date" value={form.doc_deadline} onChange={e => setF("doc_deadline", e.target.value)} className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Perlu Penerjemah Tersumpah?</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {SWORN_OPTS.map(o => (
+                        <button key={o} onClick={() => setF("doc_sworn", o)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
+                            form.doc_sworn === o ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{o}</button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Langkah terakhir: PIC & kirim */}
+              {cur === "pic" && (
                 <div className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama PIC *</label>
-                      <input type="text" value={form.pic_name} onChange={e => setF("pic_name", e.target.value)} placeholder="John Doe"
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                      <input type="text" value={form.pic_name} onChange={e => setF("pic_name", e.target.value)} placeholder="John Doe" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Jabatan</label>
-                      <input type="text" value={form.pic_title} onChange={e => setF("pic_title", e.target.value)} placeholder="HR Manager"
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                      <input type="text" value={form.pic_title} onChange={e => setF("pic_title", e.target.value)} placeholder="HR Manager" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Email PIC *</label>
-                      <input type="email" value={form.pic_email} onChange={e => setF("pic_email", e.target.value)} placeholder="john@company.com"
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                      <input type="email" value={form.pic_email} onChange={e => setF("pic_email", e.target.value)} placeholder="john@company.com" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1.5 block">No. Telepon PIC *</label>
-                      <input type="tel" value={form.pic_phone} onChange={e => setF("pic_phone", e.target.value)} placeholder="0812-3456-7890"
-                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                      <input type="tel" value={form.pic_phone} onChange={e => setF("pic_phone", e.target.value)} placeholder="0812-3456-7890" className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                     </div>
                   </div>
                   <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Perkiraan Budget</label>
+                    <select value={form.budget_range} onChange={e => setF("budget_range", e.target.value)} className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                      <option value="">Pilih</option>
+                      {["< Rp 5 juta", "Rp 5-15 juta", "Rp 15-50 juta", "Rp 50-100 juta", "> Rp 100 juta", "Belum ditentukan"].map(b => <option key={b} value={b}>{b}</option>)}
+                    </select>
+                  </div>
+                  <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Catatan Tambahan</label>
-                    <textarea value={form.notes} onChange={e => setF("notes", e.target.value)} rows={3} placeholder="Jelaskan kebutuhan spesifik tim Anda..."
+                    <textarea value={form.notes} onChange={e => setF("notes", e.target.value)} rows={3} placeholder="Rundown acara, kebutuhan khusus, atau hal lain yang perlu kami tahu..."
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors resize-none" />
                   </div>
                   {/* Summary */}
-                  <div className="bg-slate-50 rounded-xl p-4 space-y-1.5 text-xs">
+                  <div className="bg-slate-50 rounded-xl p-4 space-y-1 text-xs">
                     <p className="font-semibold text-sm text-slate-700 mb-2">📋 Ringkasan</p>
                     <p><span className="text-slate-400">Perusahaan:</span> <span className="font-medium">{form.company_name}</span> · {form.industry} · {form.company_size}</p>
-                    <p><span className="text-slate-400">Bahasa:</span> <span className="font-medium">{form.languages.join(", ") || "-"}</span></p>
-                    <p><span className="text-slate-400">Tujuan:</span> <span className="font-medium">{form.training_goal.join(", ") || "-"}</span></p>
-                    <p><span className="text-slate-400">Peserta:</span> {form.participant_count || "-"} · <span className="text-slate-400">Budget:</span> {form.budget_range || "-"} · <span className="text-slate-400">Timeline:</span> {form.timeline || "-"}</p>
+                    {buildSummary().map((line, i) => {
+                      const [k, ...rest] = line.split(":");
+                      return <p key={i}><span className="text-slate-400">{k}:</span> <span className="font-medium">{rest.join(":").trim()}</span></p>;
+                    })}
                   </div>
                 </div>
               )}
 
               {/* Navigation */}
               <div className="flex gap-3 mt-6">
-                {step > 0 && (
-                  <button onClick={() => setStep(s => s - 1)}
+                {stepIdx > 0 && (
+                  <button onClick={() => setStep(stepIdx - 1)}
                     className="flex-1 border-2 border-slate-200 text-slate-600 font-semibold py-3.5 rounded-full text-sm hover:border-slate-300 transition-all">
                     ← Kembali
                   </button>
                 )}
-                {step < 2 ? (
-                  <button onClick={() => setStep(s => s + 1)}
-                    disabled={step === 0 && (!form.company_name || !form.industry)}
+                {!isLast ? (
+                  <button onClick={() => setStep(stepIdx + 1)} disabled={!canNext}
                     className="flex-1 bg-[#1A9E9E] hover:bg-[#178888] disabled:bg-slate-300 text-white font-bold py-3.5 rounded-full transition-all active:scale-[0.98] text-sm">
                     Lanjut →
                   </button>
                 ) : (
-                  <button onClick={handleSubmit} disabled={saving || !form.pic_name || !form.pic_email}
+                  <button onClick={handleSubmit} disabled={saving || !form.pic_name || !form.pic_email || !form.pic_phone}
                     className="flex-1 bg-[#1A9E9E] hover:bg-[#178888] disabled:bg-slate-300 text-white font-bold py-3.5 rounded-full transition-all active:scale-[0.98] text-sm">
-                    {saving ? "Mengirim..." : "Kirim Proposal Request →"}
+                    {saving ? "Mengirim..." : "Kirim Permintaan Penawaran →"}
                   </button>
                 )}
               </div>

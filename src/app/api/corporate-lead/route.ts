@@ -29,11 +29,16 @@ export async function POST(req: NextRequest) {
         budget_range: body.budget_range,
         timeline: body.timeline,
         notes: body.notes,
+        // [b2b-service-type-v1] Layanan non-kelas (juru bahasa / penerjemahan)
+        // ikut disimpan: `service_type` untuk penyaringan, `service_detail` untuk
+        // rincian acara (tanggal, lokasi, mode, alat, akomodasi) atau dokumen.
+        service_type: body.service_type || "training",
+        service_detail: body.service_detail ?? null,
         // Kolom `status` bergerbang CHECK (cold_lead|prospek|deal|on_hold|lost).
         // Sebelumnya diisi "new" → SETIAP insert ditolak Postgres dan tak satu
         // pun lead dari form ini pernah masuk ke menu Corporate.
         status: "cold_lead",
-        program_type: "corporate",
+        program_type: body.service_type && body.service_type !== "training" ? body.service_type : "corporate",
         lead_date: new Date().toISOString().slice(0, 10),
       }),
     });
