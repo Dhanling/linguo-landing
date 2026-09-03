@@ -137,6 +137,19 @@ function jangkarSampul(p: DProduct): string {
 // Kita buang penggal yang isinya "Modul Belajar/Mandiri ..." atau cuma merek "Linguo",
 // lalu sisakan penggal pertama yang benar-benar menamai produknya.
 const PENGGAL_BOILERPLATE = /(modul\s+(belajar|mandiri)|^linguo$|^bahasa\s+\w+$)/i;
+
+// [pustaka-judul-level-v1] Judul modul cetakan baru sudah membawa tingkatnya di
+// ekor ("Danish 101 - A2"), tapi pemenggal di atas memotong tepat di " - " itu
+// juga — empat modul Danish jadi empat kartu berjudul "Danish 101" yang mustahil
+// dibedakan siswa. Tingkatnya dipasang balik setelah judul diringkas. Cuma ekor
+// CEFR TUNGGAL yang dihitung: rentang edisi lama ("A1-B1") menandai isi modul,
+// bukan tingkatnya, dan judul edisi lama memang tak pernah memakai pola ini.
+const EKOR_LEVEL = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\s*$/i;
+function tingkatJudul(raw: string): string | null {
+  const m = (raw || "").trim().match(EKOR_LEVEL);
+  return m ? m[1].toUpperCase() : null;
+}
+
 function judulRingkas(raw: string): string {
   const penggal = (raw || "")
     .split(/\s+[—–|]\s+|\s+-\s+/)
@@ -144,7 +157,10 @@ function judulRingkas(raw: string): string {
     .filter(Boolean);
   const sisa = penggal.filter((x) => !PENGGAL_BOILERPLATE.test(x));
   const judul = (sisa[0] || penggal[0] || raw || "").replace(/\s*\bLinguo\b\s*/gi, " ").trim();
-  return judul || raw;
+  const inti = judul || raw;
+  const level = tingkatJudul(raw);
+  if (!level || new RegExp(`\\b${level}\\s*$`, "i").test(inti)) return inti;
+  return `${inti} - ${level}`;
 }
 
 // [pustaka-judul-bendera-v1] Bendera negara di kiri judul kartu. Semua kartu
