@@ -111,12 +111,35 @@ export async function POST(req: NextRequest) {
     email.split("@")[0];
   const sampai = new Date(Date.now() + HARI * 86_400_000).toISOString();
 
+  // [ebook-pratinjau-nomor-wa-v1] Nomor WA ikut dititipkan ke barisnya kalau
+  // orangnya sudah pernah tercatat. Akun /akun cuma punya email, dan di Tagihan
+  // Manual baris pratinjau tanpa nomor = calon pembeli yang tak bisa dihubungi
+  // sama sekali (dashboard punya penambal lewat email, tapi menyimpannya di sini
+  // membuat nomornya melekat sejak awal). Gagal? Diamkan: pratinjaunya lebih
+  // penting daripada kolom nomor.
+  let telepon: string | null = null;
+  try {
+    const [siswa, lead, beli] = await Promise.all([
+      admin.from("students").select("whatsapp").ilike("email", email).not("whatsapp", "is", null).limit(1),
+      admin.from("leads").select("wa_number").ilike("email", email).not("wa_number", "is", null).limit(1),
+      admin.from("digital_purchases").select("buyer_phone").ilike("buyer_email", email).not("buyer_phone", "is", null).limit(1),
+    ]);
+    telepon =
+      (siswa.data?.[0] as { whatsapp?: string } | undefined)?.whatsapp ??
+      (beli.data?.[0] as { buyer_phone?: string } | undefined)?.buyer_phone ??
+      (lead.data?.[0] as { wa_number?: string } | undefined)?.wa_number ??
+      null;
+  } catch (e) {
+    console.error("[ebook-pratinjau] cari nomor gagal:", e);
+  }
+
   const { data: baris, error: insErr } = await admin
     .from("digital_purchases")
     .insert({
       product_id: productId,
       buyer_email: user.email,
       buyer_name: nama,
+      buyer_phone: telepon,
       amount: 0,
       payment_status: "Belum Bayar",
       // Tak ada invoice Xendit di jalur ini; "PENDING" menjaga baris ini dari
