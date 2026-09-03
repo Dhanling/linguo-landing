@@ -18,13 +18,14 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Bug, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 
 import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
 // [ui-lang-switcher-v1] pemilih bahasa antarmuka dashboard (ID ⇄ EN)
+import BugReportDialog from '@/components/akun/BugReportDialog'; // [bug-report-topbar-siswa-v1]
 import UiLangSwitcher from '@/components/akun/UiLangSwitcher';
 import { useT, useUiLang, setUiLang } from '@/lib/uiLang';
 // [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
@@ -32,7 +33,6 @@ const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { 
 // [remove-onesignal-prompt] provider dimatikan — hilangkan popup auto-prompt notifikasi
 // const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
-import AvatarUploader from '@/components/akun/AvatarUploader';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 // [lanjutkan-belajar-v1] pintasan lintas-menu di paling atas Beranda
@@ -2574,6 +2574,8 @@ export default function AkunPage() {
   const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
+  // [bug-report-topbar-siswa-v1] dialog Lapor Bug dari top bar beranda
+  const [bugOpen, setBugOpen] = useState(false);
   /* [preview-idle-session-v1] Sesi pratinjau yang sudah habis dulu TIDAK kelihatan:
      data siswa tetap terpampang dari cache sessionStorage, sementara semua hal yang
      minta server diam-diam mati (menu "Grup Kelas" hilang dari sidebar, chat grup
@@ -2632,7 +2634,6 @@ export default function AkunPage() {
   const tabHidden = (k: string) => (activeTab === k ? undefined : ({ display: "none" } as const));
 
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
-  const [profileOpen, setProfileOpen] = useState(false);
   // [beranda-riwayat-kelas-v1] Kelas Live cuma tampilin yang aktif; yang selesai pindah ke view "Riwayat"
   const [liveView, setLiveView] = useState<"aktif" | "riwayat">("aktif");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
@@ -3976,6 +3977,9 @@ export default function AkunPage() {
   return (
     <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri} previewStudentId={previewId}>
 
+      {/* [bug-report-topbar-siswa-v1] dialognya dipasang sekali di akar dashboard */}
+      {!previewMode && <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />}
+
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
         <div
@@ -4058,7 +4062,6 @@ export default function AkunPage() {
                 const liveRegs = liveRegsAll.filter((r: any) => !isKelasSelesai(r));
                 const riwayatRegs = liveRegsAll.filter((r: any) => isKelasSelesai(r));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
-                const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
                 const teacherMap = new Map<string, { name: string; count: number; langs: Set<string>; avatar_url: string | null }>();
                 activeRegs.forEach((r: any) => {
                   // [teacher-avatar-sync-v1] nama + foto dari direktori teachers (fallback embed)
@@ -4167,116 +4170,7 @@ export default function AkunPage() {
                 });
 
                 return (
-                  <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
-
-                    {/* ════ KOLOM PROFIL (kiri di desktop) — collapsible, default tertutup ════ */}
-                    <aside className={`order-2 flex-col lg:order-1 lg:border-r lg:border-slate-100 ${profileOpen ? "flex" : "hidden"}`}>
-                      {/* header teal (polos, tanpa ornamen) + tombol tutup */}
-                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
-                        <button onClick={() => setProfileOpen(false)} aria-label="Tutup profil" className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25">
-                          <X className="h-4 w-4" strokeWidth={2.4} />
-                        </button>
-                      </div>
-
-                      {/* body — relative z-10 biar avatar naik di atas header teal (full keliatan) */}
-                      <div className="relative z-10 -mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
-                        <AvatarUploader
-                          avatarUrl={avatarUrl}
-                          firstName={firstName}
-                          studentId={student?.id}
-                          supabase={supabase}
-                          onUploaded={(url) => setStudent((s: any) => (s ? { ...s, avatar_url: url } : s))}
-                        />
-
-                        <h2 className="mt-4 text-[22px] font-extrabold leading-tight text-[#12172B]">{firstName}</h2>
-
-                        {/* stats: Bahasa Aktif + Sertifikat CEFR */}
-                        <div className="mt-5 grid grid-cols-2 gap-3">
-                          <div className="rounded-2xl bg-slate-50 p-4">
-                            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
-                              <Languages className="h-[18px] w-[18px]" strokeWidth={2.2} />
-                            </div>
-                            <div className="text-2xl font-extrabold leading-none text-[#12172B]">{activeLangCount}</div>
-                            <div className="mt-1.5 text-[12px] font-medium text-gray-500">Bahasa Aktif</div>
-                          </div>
-                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl bg-slate-50 p-4 text-left transition hover:-translate-y-0.5 hover:bg-slate-100">
-                            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2CB05]/20 text-[#B9890A]">
-                              <Award className="h-[18px] w-[18px]" strokeWidth={2.2} />
-                            </div>
-                            <span className="inline-flex items-center gap-0.5 rounded-md bg-[#F2CB05]/20 px-2 py-0.5 text-[11px] font-bold text-[#B9890A]">Lihat <ChevronRight className="h-3 w-3" /></span>
-                            <div className="mt-1.5 text-[12px] font-medium text-gray-500">Sertifikat CEFR</div>
-                          </button>
-                        </div>
-
-                        {/* jadwal mendatang */}
-                        <div className="mt-7 flex items-center justify-between">
-                          <h3 className="text-[16px] font-extrabold text-[#12172B]">Jadwal Mendatang</h3>
-                          <button onClick={() => setActiveTab("jadwal")} className="text-[12px] font-bold text-[#16796E] hover:text-[#0F5A52]">Lihat Semua</button>
-                        </div>
-
-                        {upcomingSchedules.length > 0 ? (
-                          <div className="mt-3 flex flex-col gap-3 overflow-y-auto pb-2 pr-1" style={{ maxHeight: 320 }}>
-                            {upcomingSchedules.slice(0, 5).map((s) => {
-                              const d = new Date(s.scheduled_at);
-                              const reg = student?.registrations?.find((r) => r.id === s.registration_id);
-                              const lang = reg?.language || "";
-                              const joinable = isJoinable(s.scheduled_at);
-                              return (
-                                <div key={s.id} className="rounded-2xl bg-white">
-                                  <button
-                                    onClick={() => setActiveTab("jadwal")}
-                                    className="group flex w-full items-center gap-3 rounded-2xl p-3 text-left transition-shadow"
-                                  >
-                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
-                                    <span className="min-w-0 flex-1">
-                                      <span className="flex items-center gap-1.5">
-                                        <span className="min-w-0 flex-1 truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
-                                        {/* jadwal-recurring-materi-v1: pertemuan ke berapa
-                                            [sesi-nomor-sinkron-v1] nomor dari peta terpusat */}
-                                        {nomorSesiMap.get(s.id) ? (
-                                          <span className="shrink-0 rounded-full bg-[#16796E]/10 px-1.5 py-0.5 text-[10px] font-extrabold text-[#16796E]">#{nomorSesiMap.get(s.id)}</span>
-                                        ) : null}
-                                      </span>
-                                      <span className="block text-[12px] font-medium text-gray-500">
-                                        {d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
-                                      </span>
-                                      {/* jadwal-recurring-materi-v1: topik yang bakal dibahas */}
-                                      {s.session_title && (
-                                        <span className="mt-0.5 block truncate text-[11.5px] font-bold text-[#16796E]">{s.session_title}</span>
-                                      )}
-                                    </span>
-                                    <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
-                                  </button>
-                                  {/* [kelas-video-siswa-v1] pintu masuk kelas video — sebelumnya
-                                      siswa cuma bisa masuk lewat link yang dikirim manual */}
-                                  {joinable && (
-                                    <a
-                                      href={classRoomUrl(s.id, {
-                                        title: lang ? `Kelas ${lang}` : "Kelas Linguo",
-                                        // Siswa sudah login di sini — jangan suruh dia
-                                        // ketik namanya lagi di halaman masuk kelas.
-                                        name: student?.name || undefined,
-                                      })}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="mx-3 mb-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
-                                    >
-                                      <Video className="h-3.5 w-3.5" /> Masuk Kelas
-                                    </a>
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <div className="mt-3 rounded-2xl border border-dashed border-slate-200 bg-white/60 px-4 py-6 text-center">
-                            <Calendar className="mx-auto mb-2 h-7 w-7 text-slate-300" strokeWidth={1.8} />
-                            <p className="text-[13px] font-semibold text-gray-500">Belum ada jadwal mendatang</p>
-                            <p className="mt-0.5 text-[12px] font-medium text-gray-500">Jadwal kelas kamu bakal muncul di sini.</p>
-                          </div>
-                        )}
-                      </div>
-                    </aside>
+                  <div className="flex min-h-[calc(100vh-2rem)] flex-col bg-white lg:block">
 
                     {/* ════ KOLOM UTAMA (kanan di desktop) ════ */}
                     {/* [beranda-compact-v1] Ritme vertikal dirapatkan (gap-7→gap-5,
@@ -4341,16 +4235,37 @@ export default function AkunPage() {
                           {/* [ui-lang-switcher-v1] pemilih bahasa antarmuka — kanan atas,
                               persis di kiri lonceng & avatar. */}
                           <UiLangSwitcher />
+                          {/* [bug-report-topbar-siswa-v1] Lapor Bug naik ke top bar, sebelah
+                              lonceng — persis seperti dashboard pengajar. Sebelumnya tombolnya
+                              cuma nangkring di dasar sidebar (desktop) & top bar HP, jadi
+                              masukan siswa nyaris tak pernah masuk Bug Tracker.
+                              Disembunyikan di mode pratinjau: pelapornya bukan siswa asli. */}
+                          {!previewMode && (
+                            <div className="hidden md:block">
+                              <button
+                                onClick={() => setBugOpen(true)}
+                                aria-label={tt("Lapor Bug")}
+                                title={tt("Lapor Bug")}
+                                className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#12172B] shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:text-[#16796E]"
+                              >
+                                <Bug className="h-[20px] w-[20px]" strokeWidth={2.2} />
+                              </button>
+                            </div>
+                          )}
                           {student?.id && (
                             <div className="hidden md:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
                             </div>
                           )}
-                          {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil — rounded rectangle biar seragam sama lonceng notif */}
+                          {/* [profil-panel-dicabut-v1] Dulu avatar membuka panel profil kiri
+                              (avatar + Bahasa Aktif + Sertifikat CEFR + Jadwal Mendatang).
+                              Isinya duplikat: jadwal sudah ada di kolom "Sesi Mendatang" dan
+                              sertifikat punya menunya sendiri — panelnya cuma menyempitkan
+                              beranda. Sekarang avatar langsung ke menu Pengaturan. */}
                           <button
-                            onClick={() => setProfileOpen((v) => !v)}
-                            aria-label={profileOpen ? tt("Tutup panel profil") : tt("Buka panel profil")}
-                            aria-expanded={profileOpen}
+                            onClick={() => setActiveTab("akun")}
+                            aria-label={tt("Buka Pengaturan")}
+                            title={tt("Pengaturan")}
                             className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]/40"
                           >
                             {avatarUrl ? (
