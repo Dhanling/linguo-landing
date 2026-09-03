@@ -23,7 +23,7 @@ import RecordingModal from "./RecordingModal";
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
-import { isSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1]
+import { idSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
   addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
@@ -83,12 +83,13 @@ export default function JadwalCalendar({
      membuangnya sejak lama; ini menyamakan sisi siswa. Barisnya tetap DIHITUNG
      sebagai sesi yang sudah lewat supaya angka riwayat di kepala kalender tak
      berubah. */
-  const sesiSintetisLewat = useMemo(() => sessions.filter((s) => isSesiSintetis(s)).length, [sessions]);
+  const sintetis = useMemo(() => idSesiSintetis(sessions), [sessions]);
+  const sesiSintetisLewat = sintetis.size;
 
   const items = useMemo<NormSession[]>(
     () =>
       sessions
-        .filter((s) => s.scheduledAt && !isSesiSintetis(s))
+        .filter((s) => s.scheduledAt && !sintetis.has(s.id))
         .map((s) => {
           const d = new Date(s.scheduledAt);
           const end = s.durationMinutes ? new Date(d.getTime() + s.durationMinutes * 60000) : null;
@@ -108,7 +109,7 @@ export default function JadwalCalendar({
             _joinable: !isDead(s.status) && isJoinable(d) && (!s.isBatch || !!s.joinUrl),
           };
         }),
-    [sessions, now]
+    [sessions, sintetis, now]
   );
 
   /** Sesi mendatang saja — dasar hitungan di kepala kalender. */
