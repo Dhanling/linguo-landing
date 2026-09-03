@@ -104,3 +104,28 @@ export const GENDERS = [
   { value: "female", label: "Wanita" },
   { value: "other", label: "Lainnya" },
 ] as const;
+
+// [interpreter-equipment-v1] Kebutuhan alat & logistik — dulu tak ditanyakan sama
+// sekali, padahal inquiry simultaneous hampir selalu menyebut transmitter, headset,
+// teknisi, dan siapa yang menanggung perjalanan interpreter.
+export const EQUIPMENT_NEEDS = [
+  "Alat simultan (transmitter + headset)",
+  "Booth interpreter",
+  "Sound system & microphone",
+  "Teknisi / operator alat",
+  "Sudah tersedia dari klien",
+  "Belum tahu — mohon disarankan",
+] as const;
+
+export const DAILY_HOURS = [
+  "≤ 4 jam (half day)",
+  "8 jam (full day)",
+  "> 8 jam / lembur",
+  "Belum tahu",
+] as const;
+
+export const TRAVEL_COVER = [
+  "Masukkan ke penawaran Linguo",
+  "Ditanggung klien",
+  "Belum tahu",
+] as const;

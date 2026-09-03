@@ -364,6 +364,12 @@ export default function CorporatePage() {
                       ))}
                     </div>
                   </div>
+                  {(hasInterpreting || hasTranslation) && (
+                    <p className="text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 leading-relaxed">
+                      Butuh brief acara yang lebih rinci (jam, materi prep, platform online)? Kakak juga bisa isi form khusus juru bahasa di{" "}
+                      <a href="/interpreter" className="text-[#1A9E9E] font-semibold underline">linguo.id/interpreter</a>.
+                    </p>
+                  )}
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">

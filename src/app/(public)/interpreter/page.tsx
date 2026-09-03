@@ -13,6 +13,7 @@ import { supabase } from "@/lib/supabase-client";
 import { BRAND_FACTS } from "@/lib/brand-facts";
 import {
   LANGUAGES, INDUSTRIES, MODES, LOCATION_TYPES, ONLINE_PLATFORMS, BUDGET_RANGES,
+  EQUIPMENT_NEEDS, DAILY_HOURS, TRAVEL_COVER,
 } from "@/components/interpreter/constants";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
@@ -64,6 +65,7 @@ type FormState = {
   bidirectional: boolean; mode: string; interpreter_count: number;
   location_type: string; venue_address: string; venue_city: string;
   online_platform: string; prep_materials_url: string; client_notes: string;
+  equipment_needs: string[]; equipment_notes: string; daily_hours: string; travel_cover: string;
   company_name: string; contact_name: string; contact_email: string;
   contact_phone: string; budget_range: string;
 };
@@ -79,6 +81,7 @@ const initialForm: FormState = {
   bidirectional: true, mode: "", interpreter_count: 1,
   location_type: "", venue_address: "", venue_city: "",
   online_platform: "", prep_materials_url: "", client_notes: "",
+  equipment_needs: [], equipment_notes: "", daily_hours: "", travel_cover: "",
   company_name: "", contact_name: "", contact_email: "",
   contact_phone: "", budget_range: "",
 };
@@ -200,6 +203,10 @@ export default function InterpreterPage() {
       venue_city: isOnsiteOrHybrid ? form.venue_city.trim() || null : null,
       online_platform: isOnlineOrHybrid ? form.online_platform || null : null,
       prep_materials_url: form.prep_materials_url.trim() || null,
+      equipment_needs: form.equipment_needs.length ? form.equipment_needs : null,
+      equipment_notes: form.equipment_notes.trim() || null,
+      daily_hours: form.daily_hours || null,
+      travel_cover: form.travel_cover || null,
       client_notes: form.client_notes.trim() || null,
       budget_range: form.budget_range || null,
       status: "new",
@@ -726,6 +733,53 @@ function Step3Location({ form, set, isOnsiteOrHybrid, isOnlineOrHybrid }: any) {
             <option value="">Pilih platform</option>
             {ONLINE_PLATFORMS.map((p) => <option key={p} value={p}>{p}</option>)}
           </select>
+        </Field>
+      )}
+      {/* [interpreter-equipment-v1] Alat & logistik: penentu besar harga penawaran. */}
+      <Field label="Kebutuhan alat">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {EQUIPMENT_NEEDS.map((eq) => {
+            const active = form.equipment_needs.includes(eq);
+            return (
+              <label key={eq}
+                className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer text-sm transition ${active ? "border-[#1A9E9E] bg-[#1A9E9E]/10 text-[#1A9E9E]" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
+                <input type="checkbox" checked={active}
+                  onChange={() => set("equipment_needs", active
+                    ? form.equipment_needs.filter((v: string) => v !== eq)
+                    : [...form.equipment_needs, eq])}
+                  className="h-4 w-4 text-[#1A9E9E] focus:ring-[#1A9E9E] rounded" />
+                {eq}
+              </label>
+            );
+          })}
+        </div>
+        <input type="text" value={form.equipment_notes}
+          onChange={(e) => set("equipment_notes", e.target.value)}
+          placeholder="Mis. headset untuk 30 peserta, 1 teknisi standby" className={`${inputCls} mt-2`} />
+      </Field>
+      <Field label="Durasi kerja per hari">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          {DAILY_HOURS.map((h) => (
+            <button key={h} type="button" onClick={() => set("daily_hours", h)}
+              className={`p-2.5 rounded-lg border text-xs transition ${form.daily_hours === h ? "border-[#1A9E9E] bg-[#1A9E9E]/10 text-[#1A9E9E]" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
+              {h}
+            </button>
+          ))}
+        </div>
+      </Field>
+      {isOnsiteOrHybrid && (
+        <Field label="Perjalanan, akomodasi & konsumsi interpreter">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {TRAVEL_COVER.map((t) => (
+              <button key={t} type="button" onClick={() => set("travel_cover", t)}
+                className={`p-2.5 rounded-lg border text-xs transition ${form.travel_cover === t ? "border-[#1A9E9E] bg-[#1A9E9E]/10 text-[#1A9E9E]" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
+                {t}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-gray-500 mt-1">
+            Untuk event di luar Jakarta/Bandung, penawaran bisa mencakup tiket, hari perjalanan, penginapan, transport lokal, dan konsumsi.
+          </p>
         </Field>
       )}
       <Field label="Link materi prep (opsional)">
