@@ -98,7 +98,7 @@ export async function GET(req: NextRequest) {
       (await rest(
         `schedules?registration_id=in.(${regIds.join(",")})` +
           `&select=id,registration_id,scheduled_at,duration_minutes,status,session_number,` +
-          `session_title,material_notes,material_links,attendance_status,recording_url` +
+          `session_title,material_notes,material_links,attendance_status,recording_url,notes` +
           `&order=scheduled_at.asc`
       )) || [];
   }

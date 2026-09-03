@@ -17,6 +17,7 @@ import { sameLanguage } from '@/lib/languageSlug';
 import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
 // [kelas-switch-instan-v1] cache sesi + pasang-sebelum-paint biar pindah level tak kedip
 import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey, STUDENT_ID_KEY, simpanDaftarLevel } from '@/lib/kelasCache';
+import { tanpaSesiSintetis } from '@/lib/sesiSintetis'; // [jadwal-hantu-hidden-v1]
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -91,7 +92,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   const uiLang = useUiLang();
   const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
-  const [schedules, setSchedules] = useState<any[]>([]);
+  /* [jadwal-hantu-hidden-v1] Baris presensi sintetis ("Dicatat otomatis dari blok
+     sesi") dibuang di ambang masuk komponen ini, jadi tab Progress/Materi/Kuis tak
+     pernah menampilkan pertemuan hantu jam 12.00 yang tanggalnya cuma tebakan.
+     Hitungan sesi terpakai tidak ikut turun: `sesiTerpakai` di bawah memakai angka
+     TERBESAR antara `registrations.sessions_used` (yang sudah memuat sesi itu) dan
+     jumlah baris `completed`. */
+  const [schedules, setSchedulesRaw] = useState<any[]>([]);
+  const setSchedules = (rows: any[]) => setSchedulesRaw(tanpaSesiSintetis(rows || []));
   const [loading, setLoading] = useState(true);
   // [kelas-switch-instan-v1] Jadwal level yang pernah dibuka dipasang dari cache
   // sebelum paint: linimasa & kartu "Sesi Berikutnya" langsung terisi, query di

@@ -38,6 +38,8 @@ export type JadwalSession = {
   attendanceStatus?: string | null;
   /** schedules.recording_url — mentah; ditautkan lewat studentRecordingHref */
   recordingUrl?: string | null;
+  /** schedules.notes — dipakai mengenali baris presensi sintetis (lihat lib/sesiSintetis). */
+  notes?: string | null;
   /* [jadwal-batch-kalender-v1] Pertemuan kelas grup (Reguler/ETP) yang DIHITUNG dari
      pola batch — tak ada baris `schedules`-nya. Karena itu tak punya ruang kelas,
      materi, presensi, maupun rekaman; kalender merendernya sebagai jadwal tetap.

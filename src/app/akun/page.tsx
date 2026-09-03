@@ -11,6 +11,7 @@ import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] n
 import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
 import { simpanDaftarLevel } from "@/lib/kelasCache"; // [kelas-level-switcher-v3] titip daftar level buat strip di halaman detail
 import { petaNomorSesi } from "@/lib/nomorSesi"; // [sesi-nomor-sinkron-v1] nomor sesi nyambung dengan sessions_used
+import { tanpaSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1] baris presensi pembukuan disembunyikan
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
@@ -302,6 +303,8 @@ type Schedule = {
   // jadwal-riwayat-v1: sesi lampau ikut ditarik, jadi presensi & rekamannya perlu
   attendance_status?: string | null;
   recording_url?: string | null;
+  // [jadwal-hantu-hidden-v1] penanda baris presensi sintetis (lib/sesiSintetis)
+  notes?: string | null;
   // [materi-tab-kuis-rapor-v1] nilai kuis & PR per sesi — dipakai tab "Kuis"
   quiz_score?: number | null;
   quiz_max?: number | null;
@@ -2602,12 +2605,21 @@ export default function AkunPage() {
       )
       .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
   }, [allSchedules]);
+  /* [jadwal-hantu-hidden-v1] Baris presensi sintetis ("Dicatat otomatis dari blok
+     sesi") lahir waktu pengajar menaikkan angka sesi lewat blok presensi — tanggal
+     aslinya tak diketahui, jadi ditaruh jam 12.00 di hari pencatatan. Buat siswa itu
+     pertemuan hantu: muncul di kalender & linimasa pada jam yang tak pernah ada
+     kelasnya, dan ikut menggeser penomoran sesi. Barisnya tetap dibiarkan hidup di
+     database (fee pengajar dihitung dari situ) — cukup disembunyikan dari tampilan.
+     Sesi itu tidak hilang dari hitungan: `petaNomorSesi` tetap menghitungnya lewat
+     `registrations.sessions_used` sebagai slot tanpa baris jadwal. */
+  const jadwalNyata = useMemo(() => tanpaSesiSintetis(allSchedules), [allSchedules]);
   // [sesi-nomor-sinkron-v1] Nomor sesi dihitung sekali untuk SEMUA baris jadwal
   // (bukan dibaca mentah dari `schedules.session_number`) supaya kartu kelas
   // "Sesi 14/16" dan label "#15/#16" di jadwal berikutnya bercerita hal yang sama.
   const nomorSesiMap = useMemo(
-    () => petaNomorSesi(allSchedules as any, (student?.registrations || []) as any),
-    [allSchedules, student?.registrations]
+    () => petaNomorSesi(jadwalNyata as any, (student?.registrations || []) as any),
+    [jadwalNyata, student?.registrations]
   );
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
@@ -3401,7 +3413,7 @@ export default function AkunPage() {
               //   membaca baris jadwal yang SAMA. Tanpa empat kolom quiz_* + homework
               //   di sini tabnya bakal selalu tampil kosong (halaman detail kelas lolos
               //   cuma karena dia query `select('*')` sendiri).
-              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework")
+              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework")
               .in("registration_id", regIds)
               .order("scheduled_at", { ascending: true })
           : Promise.resolve({ data: null } as any),
@@ -4739,6 +4751,9 @@ export default function AkunPage() {
                     status: s.status,
                     attendanceStatus: s.attendance_status ?? null,
                     recordingUrl: s.recording_url ?? null,
+                    // [jadwal-hantu-hidden-v1] kalender yang memutuskan baris presensi
+                    // sintetis tak usah digambar (tapi tetap dihitung "sudah lewat").
+                    notes: s.notes ?? null,
                   };
                 });
                 // jadwal-gcal-v1: kartu rekap per kelas ("Sesi 5 dari 16" + progress bar)
@@ -5126,7 +5141,7 @@ export default function AkunPage() {
                                 rekamannya ada), dan "Materi" cuma silabus level tanpa jalan ke materi
                                 sesi tertentu. Sekarang dua-duanya linimasa sesi bernomor, terbaru di atas. */}
                             {materiTab === "sesi" ? (
-                              <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="sesi" />
+                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="sesi" />
                             ) : materiTab === "kuis" ? (
                               /* [materi-tab-kuis-rapor-v1] komponen yang sama dgn halaman detail kelas */
                               <ClassKuisTab reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} />
@@ -5134,7 +5149,7 @@ export default function AkunPage() {
                               <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} />
                             ) : (
                               <div className="flex flex-col gap-6">
-                              <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="materi" />
+                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="materi" />
                               {/* silabus level tetap ada di bawah linimasa — itu peta levelnya,
                                   bukan materi sesi yang sudah/akan dibahas pengajar */}
                               <div>

@@ -23,6 +23,7 @@ import RecordingModal from "./RecordingModal";
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
+import { isSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
   addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
@@ -74,10 +75,20 @@ export default function JadwalCalendar({
     return () => clearInterval(t);
   }, []);
 
+  /* [jadwal-hantu-hidden-v1] Baris presensi sintetis (notes = AUTO_PRESENSI_NOTE)
+     itu catatan pembukuan fee, bukan kelas yang benar-benar dijadwalkan: jamnya
+     ditebak 12.00 di hari pencatatan. Kalau ikut digambar, kalender siswa memunculkan
+     tumpukan blok palsu jam 12.00 — dan karena lajur dulu dihitung se-HARI, blok
+     asli pagi harinya ikut menyempit jadi sepertiga kolom. Dashboard pengajar sudah
+     membuangnya sejak lama; ini menyamakan sisi siswa. Barisnya tetap DIHITUNG
+     sebagai sesi yang sudah lewat supaya angka riwayat di kepala kalender tak
+     berubah. */
+  const sesiSintetisLewat = useMemo(() => sessions.filter((s) => isSesiSintetis(s)).length, [sessions]);
+
   const items = useMemo<NormSession[]>(
     () =>
       sessions
-        .filter((s) => s.scheduledAt)
+        .filter((s) => s.scheduledAt && !isSesiSintetis(s))
         .map((s) => {
           const d = new Date(s.scheduledAt);
           const end = s.durationMinutes ? new Date(d.getTime() + s.durationMinutes * 60000) : null;
@@ -105,7 +116,10 @@ export default function JadwalCalendar({
     () => items.filter((i) => !i._past && !isDead(i.status)).sort((a, b) => a._d.getTime() - b._d.getTime()),
     [items]
   );
-  const pastCount = useMemo(() => items.filter((i) => i._past || isDead(i.status)).length, [items]);
+  const pastCount = useMemo(
+    () => items.filter((i) => i._past || isDead(i.status)).length + sesiSintetisLewat,
+    [items, sesiSintetisLewat]
+  );
 
   // jadwal-gcal-v1: default Minggu — sama dengan kalender pengajar (calView="week").
   const [mode, setMode] = useState<ViewMode>("week");
@@ -239,21 +253,45 @@ export default function JadwalCalendar({
   }, [items, gridDays]);
 
   /**
-   * Susun sesi satu hari jadi jalur (lane) supaya sesi yang jamnya tabrakan
-   * tampil bersebelahan, bukan tumpuk-tumpukan.
+   * Susun sesi satu hari jadi jalur (lane) supaya sesi yang jamnya tabrakan tampil
+   * bersebelahan, bukan tumpuk-tumpukan.
+   *
+   * [jadwal-lajur-kelompok-v1] Lebar lajur dihitung per KELOMPOK BENTROK, bukan
+   * se-hari — sama persis dengan kalender dashboard pengajar (layoutDayBlocks).
+   * Dulu satu tabrakan di jam 12.00 bikin SELURUH blok hari itu menyusut jadi
+   * sepertiga kolom, jadi kelas pagi yang tak bentrok apa-apa ikut kepotong dan
+   * beda sendiri dari hari-hari tetangganya.
    */
   const layoutDay = (evs: NormSession[]) => {
-    const sorted = [...evs].sort((a, b) => a._d.getTime() - b._d.getTime());
-    const laneEnd: number[] = [];
-    const placed = sorted.map((e) => {
-      const s = e._d.getTime();
-      const t = s + (e.durationMinutes || 60) * 60000;
-      let lane = laneEnd.findIndex((end) => end <= s);
-      if (lane === -1) { lane = laneEnd.length; laneEnd.push(t); }
-      else laneEnd[lane] = t;
-      return { e, lane };
+    const sorted = [...evs]
+      .map((e) => {
+        const mulai = e._d.getTime();
+        return { e, mulai, selesai: mulai + (e.durationMinutes || 60) * 60000 };
+      })
+      .sort((a, b) => a.mulai - b.mulai);
+
+    const placed: { e: NormSession; lane: number; lanes: number }[] = [];
+    let kelompok: typeof sorted = [];
+    let kelompokSelesai = -Infinity;
+    const tutup = () => {
+      if (!kelompok.length) return;
+      const laneEnd: number[] = [];
+      const berlajur = kelompok.map((ev) => {
+        let lane = laneEnd.findIndex((end) => end <= ev.mulai);
+        if (lane === -1) { lane = laneEnd.length; laneEnd.push(0); }
+        laneEnd[lane] = ev.selesai;
+        return { ev, lane };
+      });
+      berlajur.forEach(({ ev, lane }) => placed.push({ e: ev.e, lane, lanes: laneEnd.length }));
+    };
+    sorted.forEach((ev) => {
+      // mulai kelompok baru begitu ada jeda bersih dari semua blok sebelumnya
+      if (ev.mulai >= kelompokSelesai) { tutup(); kelompok = []; }
+      kelompokSelesai = kelompok.length ? Math.max(kelompokSelesai, ev.selesai) : ev.selesai;
+      kelompok.push(ev);
     });
-    return { placed, lanes: Math.max(1, laneEnd.length) };
+    tutup();
+    return placed;
   };
 
   /**
@@ -563,7 +601,7 @@ export default function JadwalCalendar({
 
                         {gridDays.map((d) => {
                           const iso = ymd(d);
-                          const { placed, lanes } = layoutDay(eventsOn(iso));
+                          const placed = layoutDay(eventsOn(iso));
                           const isToday = iso === todayIso;
                           const libur = liburOn(iso); // [kalender-hari-libur-v1]
                           return (
@@ -591,7 +629,7 @@ export default function JadwalCalendar({
                                   <div className="absolute -left-1 -top-[5px] h-2.5 w-2.5 rounded-full bg-red-500" />
                                 </div>
                               )}
-                              {placed.map(({ e, lane }) => {
+                              {placed.map(({ e, lane, lanes }) => {
                                 const c = langColor(e.language);
                                 const mins = e.durationMinutes || 60;
                                 const hPx = Math.max(((mins / 60) * hourPx) - 2, 22);
