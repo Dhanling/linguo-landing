@@ -13,7 +13,7 @@ import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
-  Lock, Ticket, ShoppingCart, Trash2, Plus, History,
+  Lock, Ticket, ShoppingCart, Trash2, Plus, History, Eye,
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -541,9 +541,15 @@ export function prewarmLibrary(supabase: SupabaseClient, userId: string) {
     /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
   });
 }
+/* [pratinjau-beli-langsung-v1] Identitas siswa yang sedang dipratinjau, dipakai
+   popup Beli/Perpanjang sebagai pengganti supabase.auth.getUser() (di POV tak
+   ada sesi login sama sekali). Datang dari /api/preview-library — service role,
+   dikunci cookie pratinjau — jadi tagihan selalu atas nama siswa itu saja. */
+type PreviewBuyer = { email: string; name: string; phone: string | null } | null;
+
 // [perf:preview-cache-v1] cache terpisah untuk mode pratinjau (per siswa) — jangan
 // menumpang libCache biar pustaka siswa yang dipratinjau tak bocor ke sesi staf.
-let libPreviewCache: { student: string; purchases: Purchase[] } | null = null;
+let libPreviewCache: { student: string; purchases: Purchase[]; buyer: PreviewBuyer } | null = null;
 
 // [preview-session-v1] mode POV siswa: tanpa sesi login, `auth_user_id` mustahil
 // dicocokkan dan policy digital_purchases (role authenticated) memblokir semua
@@ -560,6 +566,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   const pvCached = preview && libPreviewCache?.student === previewStudentId ? libPreviewCache : null;
   const cached = !preview && libCache && libCache.userId === userId ? libCache : null;
   const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? pvCached?.purchases ?? []);
+  // [pratinjau-beli-langsung-v1] null = belum dimuat / siswa tanpa email → beli dimatikan
+  const [previewBuyer, setPreviewBuyer] = useState<PreviewBuyer>(pvCached?.buyer ?? null);
 
   // [ebook-reader-cepat-v2] Begitu terlihat siswa punya e-book, bundel pdf.js
   // diunduh saat browser senggang. Dulu unduhan itu baru mulai PADA DETIK
@@ -676,15 +684,18 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
         const res = await fetch(`/api/preview-library?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" });
         const j = res.ok ? await res.json() : null;
         const next = ((j?.purchases ?? []) as unknown) as Purchase[];
+        const pembeli = (j?.buyer ?? null) as PreviewBuyer;
         setPurchases(next);
+        setPreviewBuyer(pembeli);
         // baris bahasa boleh dibaca anon (policy dpl_public_read) → pratinjau ikut dapat
         const pvLangs = await fetchProductLangs(supabase, next.map((p) => p.digital_products?.id));
         // [pustaka-katalog-terkunci-v1] gabung, jangan timpa: baris bahasa produk
         // katalog dimuat effect lain dan masih dipakai kartu tergembok.
         setProdLangs((prev) => ({ ...prev, ...pvLangs }));
-        if (j) libPreviewCache = { student: previewStudentId, purchases: next };
+        if (j) libPreviewCache = { student: previewStudentId, purchases: next, buyer: pembeli };
       } catch {
         setPurchases([]);
+        setPreviewBuyer(null);
       }
       setByLang({});
       setLoading(false);
@@ -1412,7 +1423,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
               onPrefetch={() => panaskanEbook(p)}
-              onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
+              onRenew={() => {
+                if (preview && !previewBuyer) {
+                  toast.error("Siswa ini belum punya email — tagihan tak bisa dibuat.");
+                  return;
+                }
+                setRenewFor(p);
+              }}
             />
           ))}
         </div>
@@ -1431,7 +1448,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
               onPrefetch={() => panaskanEbook(p)}
-              onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
+              onRenew={() => {
+                if (preview && !previewBuyer) {
+                  toast.error("Siswa ini belum punya email — tagihan tak bisa dibuat.");
+                  return;
+                }
+                setRenewFor(p);
+              }}
             />
           ))}
         </div>
@@ -1462,7 +1485,17 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                 item={k}
                 /* [materi-belum-siap-v1] jangan jual yang materinya belum dipasang */
                 ready={materialReady(k, prodLangs[k.id])}
-                onBuy={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setBuyFor(k))}
+                /* [pratinjau-beli-langsung-v1] Beli TIDAK ikut dipagari pratinjau:
+                   membeli tak butuh sesi siswa (invoice dibuat edge function dari
+                   pricing_id + identitas siswa), sedangkan membuka produk butuh.
+                   Yang masih mati di POV cuma yang memang perlu login siswa. */
+                onBuy={() => {
+                  if (preview && !previewBuyer) {
+                    toast.error("Siswa ini belum punya email — tagihan tak bisa dibuat.");
+                    return;
+                  }
+                  setBuyFor(k);
+                }}
                 diKeranjang={keranjang.some((x) => x.productId === k.id)}
                 onKeranjang={() => toggleKeranjang(k)}
                 /* [ebook-pratinjau-unit1-v1] cuma Lingbook: e-learning tak punya
@@ -1515,7 +1548,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
 
       {/* [perpanjang-inplace-v1] popup perpanjang akses */}
       {renewFor && (
-        <RenewModal purchase={renewFor} supabase={supabase} onClose={() => setRenewFor(null)} />
+        <RenewModal
+          purchase={renewFor}
+          supabase={supabase}
+          previewBuyer={preview ? previewBuyer : null}
+          previewStudentId={previewStudentId}
+          onClose={() => setRenewFor(null)}
+        />
       )}
 
       {/* [pustaka-katalog-terkunci-v1] popup beli produk katalog */}
@@ -1523,6 +1562,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
         <BuyModal
           item={buyFor}
           supabase={supabase}
+          previewBuyer={preview ? previewBuyer : null}
+          previewStudentId={previewStudentId}
           onClose={() => setBuyFor(null)}
           /* [pustaka-promo-kode-v1] cache modul dibuang dulu — tanpa itu kartu
              hasil klaim baru muncul sesudah halaman dimuat ulang. */
@@ -1866,11 +1907,32 @@ function ProductRow({
 // [perpanjang-inplace-v1] Popup perpanjang akses — pilih durasi & checkout Xendit
 // TANPA pindah page (invoice dibuka di tab baru, halaman Perpustakaan tetap).
 // Reuse edge function xendit-create-digital-invoice (sama dgn /toko).
+/* [pratinjau-beli-langsung-v1] Membeli dari POV siswa MENERBITKAN tagihan sungguhan:
+   edge function menyalakan should_send_email + notifikasi WA Xendit, jadi siswanya
+   langsung dapat invoice. Karena staf yang menekan tombolnya, ke siapa tagihan itu
+   pergi harus terbaca sebelum ditekan — bukan sesudah. */
+function NotaPratinjau({ buyer }: { buyer: { email: string; name: string; phone: string | null } }) {
+  return (
+    <div className="mb-3 flex items-start gap-2.5 rounded-2xl bg-amber-50 p-3 ring-1 ring-amber-200">
+      <Eye className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" strokeWidth={2.4} />
+      <p className="text-[12px] font-medium leading-snug text-amber-900">
+        Mode pratinjau — tagihan dibuat atas nama{" "}
+        <span className="font-extrabold">{buyer.name}</span> dan link pembayaran dikirim
+        ke <span className="font-extrabold">{buyer.email}</span>
+        {buyer.phone ? <> &amp; WA <span className="font-extrabold">{buyer.phone}</span></> : null}.
+      </p>
+    </div>
+  );
+}
+
 function RenewModal({
-  purchase, supabase, onClose,
+  purchase, supabase, onClose, previewBuyer = null, previewStudentId = null,
 }: {
   purchase: Purchase; supabase: SupabaseClient; onClose: () => void;
+  /* [pratinjau-beli-langsung-v1] terisi HANYA di POV siswa — pengganti sesi login */
+  previewBuyer?: PreviewBuyer; previewStudentId?: string | null;
 }) {
+  const pratinjau = !!previewBuyer;
   const prod = purchase.digital_products;
   const [tiers, setTiers] = useState<RenewTier[]>([]);
   const [loading, setLoading] = useState(true);
@@ -1882,8 +1944,11 @@ function RenewModal({
     let alive = true;
     (async () => {
       setLoading(true);
-      // buyer info dari auth (email wajib utk invoice; phone opsional)
-      const { data: userRes } = await supabase.auth.getUser();
+      // buyer info dari auth (email wajib utk invoice; phone opsional).
+      // [pratinjau-beli-langsung-v1] di POV tak ada sesi → identitasnya dari server.
+      const { data: userRes } = pratinjau
+        ? { data: null }
+        : await supabase.auth.getUser();
       const u = userRes?.user;
       // tier harga produk ini
       const { data, error } = await supabase
@@ -1892,7 +1957,9 @@ function RenewModal({
         .eq("id", prod.id)
         .single();
       if (!alive) return;
-      if (u) {
+      if (pratinjau) {
+        setBuyer(previewBuyer!);
+      } else if (u) {
         setBuyer({
           email: u.email ?? "",
           name: (u.user_metadata?.full_name as string) || (u.user_metadata?.name as string) || (u.email?.split("@")[0] ?? "Siswa Linguo"),
@@ -1941,6 +2008,10 @@ function RenewModal({
             buyer_email: buyer.email,
             buyer_name: buyer.name,
             buyer_phone: buyer.phone,
+            /* [pratinjau-beli-langsung-v1] Di POV kita TAHU siswanya; ikat
+               barisnya sekalian supaya produknya mendarat di rak yang benar
+               walau email pembeli beda dari email login siswa nanti. */
+            ...(previewStudentId ? { student_id: previewStudentId } : {}),
           }),
         }
       );
@@ -2032,13 +2103,20 @@ function RenewModal({
         {/* footer */}
         {!loading && tiers.length > 0 && (
           <div className="border-t border-slate-100 px-5 py-4">
+            {pratinjau && <NotaPratinjau buyer={previewBuyer!} />}
             <button
               onClick={handlePay}
               disabled={!selected || submitting}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
             >
               {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
-              {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+              {submitting
+                ? "Menyiapkan…"
+                : !selected
+                  ? "Pilih paket"
+                  : pratinjau
+                    ? `Kirim tagihan ${fmtRupiah(selected.price)}`
+                    : `Bayar ${fmtRupiah(selected.price)}`}
             </button>
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
               Pembayaran aman via Xendit · akses aktif otomatis setelah lunas
@@ -2323,8 +2401,11 @@ function CartModal({
 // tier harganya sudah ikut terbawa dari katalog jadi tak perlu query lagi.
 function BuyModal({
   item, supabase, onClose, onClaimed, diKeranjang, onKeranjang,
+  previewBuyer = null, previewStudentId = null,
 }: {
   item: CatalogItem; supabase: SupabaseClient; onClose: () => void;
+  /* [pratinjau-beli-langsung-v1] terisi HANYA di POV siswa — pengganti sesi login */
+  previewBuyer?: PreviewBuyer; previewStudentId?: string | null;
   /** [pustaka-promo-kode-v1] dipanggil sesudah akses promo terbit → pustaka dimuat ulang */
   onClaimed: () => void;
   /* [pustaka-keranjang-v1] tier yang sedang dipilih ikut dibawa ke keranjang */
@@ -2343,10 +2424,15 @@ function BuyModal({
   const [promo, setPromo] = useState<{ code: string; label: string; hari: number } | null>(null);
   const [cekBusy, setCekBusy] = useState(false);
   const [promoErr, setPromoErr] = useState<string | null>(null);
+  const pratinjau = !!previewBuyer;
 
   useEffect(() => {
     let alive = true;
     (async () => {
+      /* [pratinjau-beli-langsung-v1] POV siswa: tak ada sesi untuk diminta —
+         identitas pembeli sudah dititipkan server. Kode promo tetap mati di
+         sini (klaimnya menerbitkan kepemilikan atas nama akun yang login). */
+      if (pratinjau) { if (alive) setBuyer(previewBuyer!); return; }
       const { data: sesi } = await supabase.auth.getSession();
       if (alive) setToken(sesi?.session?.access_token ?? "");
       const { data: userRes } = await supabase.auth.getUser();
@@ -2425,6 +2511,10 @@ function BuyModal({
             buyer_email: buyer.email,
             buyer_name: buyer.name,
             buyer_phone: buyer.phone,
+            /* [pratinjau-beli-langsung-v1] Di POV kita TAHU siswanya; ikat
+               barisnya sekalian supaya produknya mendarat di rak yang benar
+               walau email pembeli beda dari email login siswa nanti. */
+            ...(previewStudentId ? { student_id: previewStudentId } : {}),
           }),
         }
       );
@@ -2506,7 +2596,7 @@ function BuyModal({
           {/* [pustaka-promo-kode-v1] kode promo — divalidasi server, bukan di sini:
               kalau syaratnya dinilai di browser, "gratis" tinggal dipanggil sendiri
               dari console. Kode yang lolos mengganti tombol bayar jadi klaim. */}
-          {tiers.length > 0 && (
+          {tiers.length > 0 && !pratinjau && (
             <div className="mt-4 rounded-2xl border border-dashed border-slate-200 p-3.5">
               <p className="flex items-center gap-1.5 text-[12.5px] font-extrabold text-[#12172B]">
                 <Ticket className="h-4 w-4 text-[#12A37E]" strokeWidth={2.4} /> Punya kode promo?
@@ -2554,6 +2644,7 @@ function BuyModal({
         {/* footer */}
         {tiers.length > 0 && (
           <div className="border-t border-slate-100 px-5 py-4">
+            {pratinjau && <NotaPratinjau buyer={previewBuyer!} />}
             {promo ? (
               <button
                 onClick={klaimGratis}
@@ -2570,14 +2661,20 @@ function BuyModal({
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
               >
                 {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
-                {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+                {submitting
+                  ? "Menyiapkan…"
+                  : !selected
+                    ? "Pilih paket"
+                    : pratinjau
+                      ? `Kirim tagihan ${fmtRupiah(selected.price)}`
+                      : `Bayar ${fmtRupiah(selected.price)}`}
               </button>
             )}
 
             {/* [pustaka-keranjang-v1] Alternatif "bayar sekarang": simpan paket
                 yang dipilih lalu lanjut belanja. Disembunyikan saat kode promo
                 aktif — klaim gratis tak lewat keranjang sama sekali. */}
-            {!promo && selected && (
+            {!promo && selected && !pratinjau && (
               <button
                 onClick={() => { onKeranjang(selected); onClose(); }}
                 disabled={submitting}
@@ -2595,7 +2692,9 @@ function BuyModal({
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
               {promo
                 ? "Akses promo terbit langsung — tanpa halaman pembayaran."
-                : "Pembayaran aman via Xendit · produk terbuka otomatis setelah lunas"}
+                : pratinjau
+                  ? "Tagihan Xendit dikirim ke siswa · produknya terbuka otomatis setelah lunas"
+                  : "Pembayaran aman via Xendit · produk terbuka otomatis setelah lunas"}
             </p>
           </div>
         )}

@@ -12,6 +12,12 @@ import { previewStudentId, serviceRest } from "@/lib/previewSession";
 //
 // Siswa dicocokkan lewat student_id DAN buyer_email: pembelian digital lama
 // masuk lewat funnel tanpa akun, jadi barisnya sering cuma punya email.
+//
+// [pratinjau-beli-langsung-v1] Selain rak, route ini juga menyerahkan identitas
+// pembeli (nama/email/WA siswa). Tanpa itu popup Beli di POV mati total: dia
+// mengambil `buyer` dari supabase.auth.getUser(), yang di pratinjau kosong.
+// Identitasnya diambil server dari baris students — TIDAK dari input klien —
+// supaya tagihan tak bisa dialihkan ke email lain lewat devtools.
 
 export const dynamic = "force-dynamic";
 
@@ -36,8 +42,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "preview session required" }, { status: 403 });
   }
 
-  const rows = (await serviceRest(`students?id=eq.${student}&select=email&limit=1`)) as Row[] | null;
-  const email = (rows?.[0]?.email as string | null)?.trim() || null;
+  const rows = (await serviceRest(
+    `students?id=eq.${student}&select=email,name,whatsapp&limit=1`,
+  )) as Row[] | null;
+  const siswa = rows?.[0] ?? null;
+  const email = (siswa?.email as string | null)?.trim() || null;
 
   const filter = email
     ? `or=(student_id.eq.${student},buyer_email.ilike.${encodeURIComponent(email)})`
@@ -48,5 +57,15 @@ export async function GET(req: NextRequest) {
       `digital_purchases?select=${PURCHASE_SELECT}&payment_status=eq.Lunas&${filter}&order=created_at.desc`,
     )) as Row[] | null) ?? [];
 
-  return NextResponse.json({ purchases });
+  // [pratinjau-beli-langsung-v1] `buyer` null kalau siswanya belum punya email —
+  // popup Beli membaca itu sebagai "tak bisa ditagih" dan bilang apa adanya.
+  const buyer = email
+    ? {
+        email,
+        name: ((siswa?.name as string | null) ?? "").trim() || email.split("@")[0],
+        phone: ((siswa?.whatsapp as string | null) ?? "").trim() || null,
+      }
+    : null;
+
+  return NextResponse.json({ purchases, buyer });
 }
