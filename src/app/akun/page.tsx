@@ -2979,7 +2979,19 @@ export default function AkunPage() {
       try {
         const res = await fetch(`/api/preview-student?id=${encodeURIComponent(previewId)}`, { cache: "no-store" });
         // 403 = cookie pratinjau habis/dicabut, bukan gangguan jaringan sesaat.
-        if (res.status === 403) setPreviewExpired(true);
+        if (res.status === 403) {
+          setPreviewExpired(true);
+          /* [preview-stale-jadwal-v1] Begitu sesinya habis, layar ini berhenti bisa
+             menyegarkan diri — yang tergambar cuma snapshot sessionStorage dari
+             kunjungan sebelumnya, dan snapshot itu bertahan melewati reload. Untuk
+             data lain salinan lama masih bisa dimaklumi, tapi JADWAL jadi menyesatkan:
+             sesi yang sudah dihapus/dirapikan di database tetap tampil sebagai kelas
+             nyata (kasus 3 Sep 2026 — Jumat menampilkan 4 blok padahal `schedules`
+             tinggal 2). Snapshotnya dibuang dan kalendernya dikosongkan; bannernya
+             yang menjelaskan kenapa, jadi tak ada angka bohong di layar. */
+          try { sessionStorage.removeItem(`linguo_preview_cache_${previewId}`); } catch {}
+          setAllSchedules([]);
+        }
         if (!res.ok) throw new Error("preview fetch failed");
         setPreviewExpired(false);
         const json = await res.json();
