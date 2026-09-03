@@ -4,17 +4,26 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
+// [b2b-form-no-emoji-v1] Emoji dibuang: bentuknya beda-beda per OS/browser dan
+// tingginya ikut baseline font, jadi kartu layanan terlihat miring di Windows.
+// Ikon = lucide (satu siluet, stroke seragam), bendera bahasa = rounded-rectangle
+// blade-flags — mirror section "Tersedia 60+ Bahasa" di beranda.
+import {
+  CalendarDays, ChartColumnIncreasing, CircleCheckBig, ClipboardList, Clock, FileText,
+  Globe, GraduationCap, Headphones, Layers, ScrollText, Target, Users,
+} from "lucide-react";
+import { RectFlag } from "@/components/RectFlag";
 
 const WA = "https://wa.me/6282116859493";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
 
 const BENEFITS = [
-  { icon: "🎯", title: "Custom Curriculum", desc: "Materi disesuaikan dengan kebutuhan industri & goals perusahaan Anda" },
-  { icon: "📅", title: "Jadwal Fleksibel", desc: "Kelas bisa dijadwalkan sesuai jam kerja tim Anda — pagi, siang, atau sore" },
-  { icon: "👥", title: "Group Class", desc: "Satu kelas untuk tim Anda (5-15 orang), lebih efisien & membangun team bonding" },
-  { icon: "📊", title: "Progress Report", desc: "Laporan perkembangan bulanan untuk setiap peserta, langsung ke HR/PIC" },
-  { icon: "📜", title: "E-Certificate", desc: "Sertifikat resmi dari Linguo.id untuk setiap peserta yang menyelesaikan program" },
-  { icon: "🌍", title: "60+ Bahasa", desc: "Dari English & Mandarin hingga Korean, Japanese, German, French, dan lainnya" },
+  { Icon: Target, title: "Custom Curriculum", desc: "Materi disesuaikan dengan kebutuhan industri & goals perusahaan Anda" },
+  { Icon: CalendarDays, title: "Jadwal Fleksibel", desc: "Kelas bisa dijadwalkan sesuai jam kerja tim Anda — pagi, siang, atau sore" },
+  { Icon: Users, title: "Group Class", desc: "Satu kelas untuk tim Anda (5-15 orang), lebih efisien & membangun team bonding" },
+  { Icon: ChartColumnIncreasing, title: "Progress Report", desc: "Laporan perkembangan bulanan untuk setiap peserta, langsung ke HR/PIC" },
+  { Icon: ScrollText, title: "E-Certificate", desc: "Sertifikat resmi dari Linguo.id untuk setiap peserta yang menyelesaikan program" },
+  { Icon: Globe, title: "60+ Bahasa", desc: "Dari English & Mandarin hingga Korean, Japanese, German, French, dan lainnya" },
 ];
 
 const PROGRAMS = [
@@ -30,9 +39,9 @@ const PROGRAMS = [
 // permintaan yang masuk lewat WA kerap soal JURU BAHASA acara (tanggal, lokasi,
 // alat simultan, teknisi, perjalanan interpreter) atau penerjemahan dokumen.
 const SERVICES = [
-  { id: "training", icon: "🎓", title: "Corporate Class Training", desc: "Kelas bahasa rutin untuk tim / karyawan" },
-  { id: "interpreting", icon: "🎧", title: "Juru Bahasa / Interpreter", desc: "Acara, site visit, audit, meeting, kunjungan delegasi" },
-  { id: "translation", icon: "📄", title: "Penerjemahan Dokumen", desc: "Dokumen umum, teknis, atau tersumpah" },
+  { id: "training", Icon: GraduationCap, title: "Corporate Class Training", desc: "Kelas bahasa rutin untuk tim / karyawan" },
+  { id: "interpreting", Icon: Headphones, title: "Juru Bahasa / Interpreter", desc: "Acara, site visit, audit, meeting, kunjungan delegasi" },
+  { id: "translation", Icon: FileText, title: "Penerjemahan Dokumen", desc: "Dokumen umum, teknis, atau tersumpah" },
 ];
 const INTERPRET_MODES = ["Simultan (headset/booth)", "Konsekutif (bergantian)", "Pendamping / escort", "Bisikan (whispering)", "Belum tahu — mohon disarankan"];
 const EQUIPMENT = ["Alat simultan (transmitter + headset)", "Booth interpreter", "Sound system & microphone", "Teknisi / operator alat", "Sudah tersedia dari kami", "Belum tahu"];
@@ -41,6 +50,22 @@ const DAILY_HOURS = ["≤ 4 jam (half day)", "8 jam (full day)", "> 8 jam / lemb
 const INTERPRETER_COUNT = ["1 interpreter", "2 interpreter (tim simultan)", "Lebih dari 2", "Belum tahu — mohon disarankan"];
 const DOC_TYPES = ["Legal / kontrak", "Teknis", "Materi presentasi", "Laporan / company profile", "Sertifikat & dokumen resmi", "Lainnya"];
 const SWORN_OPTS = ["Ya, tersumpah", "Tidak perlu", "Belum tahu"];
+
+// Kode negara ISO-2 untuk bendera rounded-rectangle. Label yang bukan negara
+// ("BIPA" = bahasa Indonesia untuk penutur asing → id; "Lainnya", "60+ bahasa")
+// jatuh ke ikon Globe lewat <LangFlagChip/>.
+const LANG_FLAG: Record<string, string> = {
+  English: "gb", Mandarin: "cn", Japanese: "jp", Korean: "kr", German: "de",
+  French: "fr", Spanish: "es", Arabic: "sa", Dutch: "nl", Thai: "th",
+  Vietnamese: "vn", Turkish: "tr", Russian: "ru", Portuguese: "pt", Italian: "it",
+  BIPA: "id",
+};
+
+function LangFlagChip({ label, h = 14 }: { label: string; h?: number }) {
+  const code = LANG_FLAG[label];
+  if (!code) return <Globe aria-hidden style={{ height: h, width: h }} className="shrink-0 text-slate-300" strokeWidth={2} />;
+  return <RectFlag code={code} h={h} />;
+}
 
 const CLIENTS = [
   { name: "AIESEC", img: "/images/clients/aiesec.png" },
@@ -173,7 +198,7 @@ export default function CorporatePage() {
         }),
       });
       // Also send WA
-      const msg = `Halo, saya ${form.pic_name}${form.pic_title ? ` (${form.pic_title})` : ""} dari ${form.company_name}${form.industry ? ` (${form.industry})` : ""}.\n\n📋 Permintaan B2B:\n${summary.map(l => `• ${l}`).join("\n")}\n\n📧 ${form.pic_email}\n📱 ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
+      const msg = `Halo, saya ${form.pic_name}${form.pic_title ? ` (${form.pic_title})` : ""} dari ${form.company_name}${form.industry ? ` (${form.industry})` : ""}.\n\nPermintaan B2B:\n${summary.map(l => `• ${l}`).join("\n")}\n\nEmail: ${form.pic_email}\nWhatsApp: ${form.pic_phone}\n\nCatatan: ${form.notes || "-"}`;
       window.open(waMsg(msg), "_blank");
       setSubmitted(true);
     } catch (e) {
@@ -251,7 +276,9 @@ export default function CorporatePage() {
             {BENEFITS.map((b, i) => (
               <motion.div key={i} {...fade} transition={{ delay: i * 0.08 }}
                 className="bg-white border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all group">
-                <span className="text-3xl mb-3 block">{b.icon}</span>
+                <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#1A9E9E]/10 text-[#1A9E9E] group-hover:bg-[#1A9E9E] group-hover:text-white transition-colors">
+                  <b.Icon aria-hidden className="h-5 w-5" strokeWidth={1.9} />
+                </span>
                 <h3 className="font-bold text-base mb-2 group-hover:text-[#1A9E9E] transition-colors">{b.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{b.desc}</p>
               </motion.div>
@@ -279,12 +306,14 @@ export default function CorporatePage() {
                   <p className="text-sm text-slate-600 leading-relaxed mb-4">{p.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {p.langs.map((l, li) => (
-                      <span key={li} className="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">{l}</span>
+                      <span key={li} className="inline-flex items-center gap-1.5 text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">
+                        {LANG_FLAG[l] ? <RectFlag code={LANG_FLAG[l]} h={12} /> : null}{l}
+                      </span>
                     ))}
                   </div>
                   <div className="flex gap-4 text-xs text-slate-400">
-                    <span>📚 {p.levels}</span>
-                    <span>🕐 {p.sessions}</span>
+                    <span className="inline-flex items-center gap-1.5"><Layers aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />{p.levels}</span>
+                    <span className="inline-flex items-center gap-1.5"><Clock aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />{p.sessions}</span>
                   </div>
                 </div>
               </motion.div>
@@ -328,7 +357,7 @@ export default function CorporatePage() {
           {submitted ? (
             <motion.div {...fade} className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl text-center">
               <div className="h-20 w-20 bg-[#1A9E9E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">✅</span>
+                <CircleCheckBig aria-hidden className="h-9 w-9 text-[#1A9E9E]" strokeWidth={2} />
               </div>
               <h3 className="text-2xl font-bold text-slate-800 mb-3">Terima Kasih!</h3>
               <p className="text-slate-500 text-sm mb-2">Proposal akan kami kirim ke <strong>{form.pic_email}</strong></p>
@@ -357,7 +386,11 @@ export default function CorporatePage() {
                           className={`px-4 py-3 rounded-xl border-2 text-left transition-all ${
                             form.services.includes(sv.id) ? "border-[#1A9E9E] bg-[#1A9E9E]/5" : "border-slate-200 hover:border-slate-300"
                           }`}>
-                          <span className="text-xl block mb-1">{sv.icon}</span>
+                          <span className={`mb-2 inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
+                            form.services.includes(sv.id) ? "bg-[#1A9E9E] text-white" : "bg-slate-100 text-slate-500"
+                          }`}>
+                            <sv.Icon aria-hidden className="h-[18px] w-[18px]" strokeWidth={1.9} />
+                          </span>
                           <span className={`block text-xs font-bold ${form.services.includes(sv.id) ? "text-[#1A9E9E]" : "text-slate-700"}`}>{sv.title}</span>
                           <span className="block text-[10px] text-slate-400 leading-snug mt-1">{sv.desc}</span>
                         </button>
@@ -375,9 +408,12 @@ export default function CorporatePage() {
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                       {LANGUAGES.map(l => (
                         <button key={l} onClick={() => toggleArr("languages", l)}
-                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
+                          className={`flex items-center justify-center gap-2 px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all ${
                             form.languages.includes(l) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
-                          }`}>{l}</button>
+                          }`}>
+                          <LangFlagChip label={l} />
+                          <span className="truncate">{l}</span>
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -622,7 +658,9 @@ export default function CorporatePage() {
                   </div>
                   {/* Summary */}
                   <div className="bg-slate-50 rounded-xl p-4 space-y-1 text-xs">
-                    <p className="font-semibold text-sm text-slate-700 mb-2">📋 Ringkasan</p>
+                    <p className="font-semibold text-sm text-slate-700 mb-2 flex items-center gap-1.5">
+                      <ClipboardList aria-hidden className="h-4 w-4 text-slate-400" strokeWidth={2} />Ringkasan
+                    </p>
                     <p><span className="text-slate-400">Perusahaan:</span> <span className="font-medium">{form.company_name}</span> · {form.industry} · {form.company_size}</p>
                     {buildSummary().map((line, i) => {
                       const [k, ...rest] = line.split(":");
