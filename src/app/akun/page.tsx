@@ -3990,7 +3990,7 @@ export default function AkunPage() {
     <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri} previewStudentId={previewId}>
 
       {/* [bug-report-topbar-siswa-v1] dialognya dipasang sekali di akar dashboard */}
-      {!previewMode && <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />}
+      <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
@@ -4251,19 +4251,21 @@ export default function AkunPage() {
                               lonceng — persis seperti dashboard pengajar. Sebelumnya tombolnya
                               cuma nangkring di dasar sidebar (desktop) & top bar HP, jadi
                               masukan siswa nyaris tak pernah masuk Bug Tracker.
-                              Disembunyikan di mode pratinjau: pelapornya bukan siswa asli. */}
-                          {!previewMode && (
-                            <div className="hidden md:block">
-                              <button
-                                onClick={() => setBugOpen(true)}
-                                aria-label={tt("Lapor Bug")}
-                                title={tt("Lapor Bug")}
-                                className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#12172B] shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:text-[#16796E]"
-                              >
-                                <Bug className="h-[20px] w-[20px]" strokeWidth={2.2} />
-                              </button>
-                            </div>
-                          )}
+                              [bug-report-topbar-pratinjau-v1] TETAP hidup di mode pratinjau
+                              ("Lihat sebagai siswa"): justru dari POV itulah admin & pengajar
+                              menemukan tampilan yang rusak. Pelapornya aman — RPC
+                              submit_bug_report meresolve identitas dari akun yang login,
+                              bukan dari siswa yang sedang dilihat. */}
+                          <div className="hidden md:block">
+                            <button
+                              onClick={() => setBugOpen(true)}
+                              aria-label={tt("Lapor Bug")}
+                              title={tt("Lapor Bug")}
+                              className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#12172B] shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:text-[#16796E]"
+                            >
+                              <Bug className="h-[20px] w-[20px]" strokeWidth={2.2} />
+                            </button>
+                          </div>
                           {student?.id && (
                             <div className="hidden md:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />

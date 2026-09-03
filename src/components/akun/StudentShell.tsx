@@ -240,10 +240,14 @@ export default function StudentShell({
   // & Sertifikat SAMA SEKALI ga bisa dibuka di HP/tablet.
   const [drawerOpen, setDrawerOpen] = useState(false);
   /* [bug-report-pengajar-siswa-v1] Form lapor bug hidup di SHELL supaya tombolnya ikut
-     ke semua halaman LMS. Di mode pratinjau (POV staf) disembunyikan: yang login di
-     sana bukan siswanya, laporan atas namanya cuma bikin salah alamat. */
+     ke semua halaman LMS.
+     [bug-report-topbar-pratinjau-v1] Dulu disembunyikan di mode pratinjau (POV staf)
+     dengan alasan "laporan atas nama siswa salah alamat" — keliru: RPC
+     submit_bug_report meresolve pelapor dari akun yang LOGIN, bukan dari siswa yang
+     dilihat. Sementara justru dari POV pratinjau-lah staf menemukan layar rusak,
+     jadi menyembunyikannya cuma membuang jalur laporan yang paling sering dipakai. */
   const [bugOpen, setBugOpen] = useState(false);
-  const canReportBug = !previewStudentId;
+  const canReportBug = true;
   useEffect(() => {
     if (!drawerOpen) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setDrawerOpen(false); };
