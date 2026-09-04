@@ -27,7 +27,10 @@ import ClassRaporTab from '@/components/akun/ClassRaporTab';
 // [kelas-tab-kuis-v1] Kuis tiap pertemuan: grafik skor + rincian benar/salah + pembahasan
 import ClassKuisTab from '@/components/akun/ClassKuisTab';
 import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
-import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, ClipboardCheck, CalendarClock, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, ClipboardCheck, CalendarClock, NotebookPen, type LucideIcon } from 'lucide-react';
+// [student-workspace-v1] Catatan milik siswa untuk kelas ini (lazy — tab yg jarang dibuka duluan).
+import dynamic from 'next/dynamic';
+const CatatanWorkspace = dynamic(() => import('@/components/akun/CatatanWorkspace'), { ssr: false });
 
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
@@ -55,13 +58,16 @@ interface Props {
 // "Sesi Berikutnya" kini kartu tetap di atas tab bar (selalu kelihatan, tak perlu
 // diklik), dan seluruh daftar sesi pindah jadi linimasa milestone di tab Materi —
 // yang otomatis jadi tab pertama karena itu yang paling sering dibuka siswa.
-export type ClassTab = 'materi' | 'progress' | 'kuis' | 'rapor';
+export type ClassTab = 'materi' | 'progress' | 'kuis' | 'rapor' | 'catatan';
 
 const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
   { id: 'materi', label: 'Materi', icon: BookOpen },
   { id: 'progress', label: 'Progress', icon: TrendingUp },
   { id: 'kuis', label: 'Kuis', icon: ClipboardCheck },
   { id: 'rapor', label: 'Rapor', icon: BarChart2 },
+  // [student-workspace-v1] Catatan pribadi siswa untuk kelas ini — bukan materi
+  // pengajar. Sengaja jadi tab terpisah supaya tab "Materi" tetap murni isi kelas.
+  { id: 'catatan', label: 'Catatan Saya', icon: NotebookPen },
 ];
 
 const isValidTab = (t: string | null | undefined): t is ClassTab =>
@@ -619,6 +625,17 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         {/* [kelas-tab-kuis-v1] Kuis = grafik nilai antar pertemuan + rincian benar/salah
             + pembahasan per soal. PR (kalau ada) ikut di bawahnya. */}
         {!loading && activeTab === 'kuis' && <ClassKuisTab reg={reg} schedules={schedules} />}
+
+        {/* [student-workspace-v1] Catatan Saya = catatan/berkas/PR siswa untuk kelas INI.
+            Komponennya sama persis dengan menu "Catatan Saya" di sidebar, cuma dikunci
+            ke satu registrasi (embedded) — bukan salinan. */}
+        {!loading && activeTab === 'catatan' && (
+          reg?.student_id ? (
+            <CatatanWorkspace studentId={reg.student_id} regs={[reg]} regId={reg.id} embedded />
+          ) : (
+            <p className="py-10 text-center text-sm text-gray-400">{tl('Catatan belum bisa dimuat — coba muat ulang halaman.')}</p>
+          )
+        )}
 
         {/* [kelas-tab-v1] Rapor = class_reports yang published + sertifikat (rapor akhir) */}
         {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} teacherFullName={teacher?.name || undefined} />}

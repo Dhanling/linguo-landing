@@ -7,7 +7,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, NotebookPen, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popup-akun-v1]
@@ -15,7 +15,7 @@ import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popu
 import { useT } from "@/lib/uiLang";
 import UiLangSwitcher from "@/components/akun/UiLangSwitcher";
 
-export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi" | "grup"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1] [nav-tab-grup-pustaka-v1]
+export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi" | "grup" | "catatan"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1] [nav-tab-grup-pustaka-v1] [student-workspace-v1]
 
 // [shell-nav-groups-v1] key menu yang bukan tab (route terpisah) ikut dipakai sbg
 // penanda "active" — dulu di-cast paksa ke AkunTab, jadi highlight-nya ga pernah nyala.
@@ -55,6 +55,11 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
     title: "Belajar",
     items: [
       { key: "materi", label: "Kelas & Materi", icon: BookOpen },
+      /* [student-workspace-v1] "Catatan Saya" — ruang siswa MENYIMPAN sendiri
+         (catatan, berkas, PR) + Mode Belajar Sendiri (Pomodoro). Sengaja bertetangga
+         dengan "Kelas & Materi": yang satu bahan dari pengajar, yang satu bahan
+         bikinan siswa sendiri. */
+      { key: "catatan", label: "Catatan Saya", icon: NotebookPen },
       /* [lingbook-lebur-pustaka-v1] "Lingbook" DICABUT dari sidebar. Dulu ada tiga
          pintu ke barang yang sama — Kelas & Materi, Perpustakaan, dan Lingbook —
          dan siswa harus menebak yang mana. Sekarang Perpustakaan jadi satu-satunya
@@ -117,6 +122,7 @@ const BOTTOM_TAB: Record<string, "beranda" | "jadwal" | "materi" | "akun"> = {
   beranda: "beranda",
   jadwal: "jadwal",
   materi: "materi",
+  catatan: "materi", // [student-workspace-v1]
   simulasi: "materi",
   pustaka: "materi",
   lingbook: "materi",

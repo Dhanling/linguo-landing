@@ -135,6 +135,8 @@ const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'
    jadi tak ada dua versi tampilan yang harus dijaga sinkron. */
 const StudentGroupChat = dynamic(() => import('@/components/akun/StudentGroupChat'), { ssr: false, loading: TabLoading });
 const LibraryView = dynamic(() => import('@/components/akun/LibraryView'), { ssr: false, loading: TabLoading });
+// [student-workspace-v1] Ruang catatan/berkas/PR milik siswa + Mode Belajar Sendiri.
+const CatatanWorkspace = dynamic(() => import('@/components/akun/CatatanWorkspace'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
@@ -2629,7 +2631,7 @@ export default function AkunPage() {
   );
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
   const [bukaEbook, setBukaEbook] = useState<string | null>(null);
@@ -2682,14 +2684,14 @@ export default function AkunPage() {
        kelas Beranda waktu dibuka di tab baru (klik biasa ditangani in-shell). */
     const regParam = sp.get("reg");
     const ktab = sp.get("ktab");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | "catatan" | null = null;
     if (regParam) { setMateriSel(regParam); resolved = "materi"; }
     if (ktab === "sesi" || ktab === "materi" || ktab === "kuis" || ktab === "rapor") { setMateriTab(ktab); resolved = "materi"; }
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
     if (view === "live" || view === "mandiri") { resolved = "materi"; } // [beranda-tanpa-tab-mandiri-v1] view lama tetap mendarat di Kelas & Materi
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
     if (ebookId) { setBukaEbook(ebookId); resolved = "pustaka"; } // [ebook-pratinjau-unit1-v1]
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan")) resolved = menu;
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
     // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
     // di Simulasi Tes / Sertifikat. Sekarang cuma sessionStorage: refresh di tab
@@ -2698,7 +2700,7 @@ export default function AkunPage() {
     if (!resolved) {
       try {
         const saved = sessionStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -4049,7 +4051,7 @@ export default function AkunPage() {
           halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : activeTab === "catatan" ? "mx-auto w-full max-w-[1320px] pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
             fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
             ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
@@ -5272,6 +5274,16 @@ export default function AkunPage() {
               [nav-tab-grup-pustaka-v1] isinya LibraryView (sama dgn /akun/perpustakaan),
               bukan lagi PerpustakaanSaya: dua tampilan berbeda utk menu yang sama cuma
               bikin siswa lihat isi yang tak sama tergantung pintu masuknya. */}
+          {/* [student-workspace-v1] TAB CATATAN SAYA — catatan/berkas/PR milik siswa
+              + tombol Mode Belajar Sendiri (Pomodoro). */}
+          {tabShown("catatan") && (
+            <motion.div key="catatan" initial={false} animate={{ opacity: 1 }} className="w-full pb-8" style={tabHidden("catatan")}>
+              {student?.id && (
+                <CatatanWorkspace studentId={student.id} regs={student?.registrations || []} />
+              )}
+            </motion.div>
+          )}
+
           {tabShown("pustaka") && (
             <motion.div key="pustaka" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("pustaka")}>
               {(user?.id || previewId) && (
