@@ -545,7 +545,10 @@ const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
     { icon:Users, title:"Semi Private", desc:"Belajar bareng teman dalam grup kecil, lebih hemat", prog:"Semi Private" },
     { icon:School, title:"Kelas Reguler", desc:"Grup class jadwal tetap, paling terjangkau", prog:"Kelas Reguler", schedHref:"/jadwal-kelas-reguler", schedLabel:"Cek jadwal →" },
     { icon:Baby, title:"Kelas Kids", desc:"1-on-1 untuk anak 5–12 tahun, fun & interaktif", prog:"Kelas Kids" },
-    { icon:ClipboardList, title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", prog:"IELTS/TOEFL Prep", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Cek jadwal ETP →" },
+    // etp-menu-langsung-daftar-v1: dulu kartu ini masuk /daftar (alur umum yang
+    // mulai dari "mau belajar bahasa apa?" — mubazir, ETP selalu bahasa Inggris).
+    // Sekarang langsung ke daftar batch TOEFL/IELTS.
+    { icon:ClipboardList, title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", href:"/jadwal-kelas-reguler?tab=etp", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Lihat batch & harga →" },
     { icon:Languages, title:"Persiapan Ujian Bahasa", desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private", href:"/persiapan-tes" },
   ]},
   { group: "Belajar Mandiri", items: [
@@ -706,7 +709,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href={daftarHref("Semi Private")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Semi Private</a>{/* linguo-patch:nav-semi-private-v1 */}
               <a href={daftarHref("Kelas Reguler")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Kelas Reguler</a>
               <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Jadwal Batch Terbaru</a>
-              <a href={daftarHref("IELTS/TOEFL Prep")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">IELTS / TOEFL</a>
+              <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-base py-3 text-left">IELTS / TOEFL</a>
               <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Cek Jadwal ETP</a>
               <a href="/persiapan-tes" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Persiapan Ujian (HSK/JLPT/TOPIK/Goethe)</a>
               <a href={daftarHref("Kelas Kids")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Kelas Kids</a>
@@ -1386,7 +1389,11 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
   const objPos = card.objPos || "object-[50%_25%]";
 
   const handleClick = () => {
-    if(p.tab>=0){window.location.href = daftarHref(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
+    // ETP tak lewat /daftar lagi — kartunya langsung ke daftar batch TOEFL/IELTS.
+    if(p.tab>=0){
+      const prog = ["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"";
+      window.location.href = prog==="IELTS/TOEFL Prep" ? "/jadwal-kelas-reguler?tab=etp" : daftarHref(prog);
+    }
     else if((p).href){window.location.href=(p).href}
     else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
   };

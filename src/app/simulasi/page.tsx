@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import Link from "next/link";
-import { BookOpen, Headphones, PenLine, Mic, type LucideIcon } from "lucide-react";
+import { BookOpen, Headphones, PenLine, Mic, ArrowLeft, type LucideIcon } from "lucide-react";
 import { promoAmountFor } from "@/lib/promoMerdeka";
 import { PRICE, formatRp } from "@/lib/simulasiPakets";
 import { PromoMerdekaRibbon } from "@/components/PromoMerdeka";
@@ -46,6 +46,17 @@ export default function SimulasiLandingPage() {
   return (
     <main className="min-h-screen bg-white">
       <BreadcrumbLd trail={[{ name: "Simulasi TOEFL", path: "/simulasi" }]} />
+      {/* Top bar — halaman ini di luar layout landing, jadi tanpa bar ini
+          pengunjung mentok tanpa jalan pulang ke beranda. */}
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+          <Link href="/" className="flex items-center gap-2 font-bold text-slate-800 transition hover:text-teal-600">
+            <ArrowLeft className="h-4 w-4" /> Kembali ke Beranda
+          </Link>
+          <a href="https://wa.me/6282116859493" target="_blank" className="text-sm font-medium text-teal-600">Butuh bantuan?</a>
+        </div>
+      </header>
+
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
         <div className="mx-auto max-w-5xl px-5 py-20 text-center text-white sm:py-28">

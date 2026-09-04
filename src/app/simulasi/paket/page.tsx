@@ -101,9 +101,13 @@ export default function SimulasiPaketPage() {
       {/* Top bar */}
       <header className="sticky top-[var(--promo-bar-h,0px)] z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 h-16">
-          <Link href="/simulasi" className="flex items-center gap-2 font-bold text-slate-800 hover:text-teal-600">
-            <ArrowLeft className="h-4 w-4" /> Simulasi
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/simulasi" className="flex items-center gap-2 font-bold text-slate-800 hover:text-teal-600">
+              <ArrowLeft className="h-4 w-4" /> Simulasi
+            </Link>
+            <span className="text-slate-300">/</span>
+            <Link href="/" className="text-sm font-medium text-slate-500 hover:text-teal-600">Beranda</Link>
+          </div>
           <a href="https://wa.me/6282116859493" target="_blank" className="text-sm font-medium text-teal-600">Butuh bantuan?</a>
         </div>
       </header>
