@@ -33,6 +33,10 @@ import {
   type TestPrepFormat,
 } from "@/lib/testPrep";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
+// [reguler-lang-gate-server-v1] Gerbang program × bahasa. UI sudah menyaring,
+// tapi endpoint ini bisa dipanggil langsung — tanpa ini lahir invoice & lead
+// "Kelas Reguler Danish" untuk batch yang tidak pernah ada.
+import { programLangRejection } from "@/lib/programLanguages";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -146,6 +150,8 @@ function computeFunnelAmount(input: {
   }
 
   if (program === "Kelas Reguler") {
+    // Reguler = kelas batch. Bahasa tanpa batch tidak boleh dijual di sini.
+    if (programLangRejection(program, language)) return null;
     return {
       amount: REGULER_PRICE,
       perSession: 0,
@@ -214,6 +220,14 @@ export async function POST(req: NextRequest) {
         { error: "Isi kota/area kelas dulu untuk kelas offline ya." },
         { status: 400 }
       );
+    }
+
+    // [reguler-lang-gate-server-v1] Program × bahasa dulu, sebelum harga —
+    // biar pesannya jelas ("Reguler nggak ada bahasa Denmark"), bukan sekadar
+    // "kombinasi tidak valid".
+    const langRejection = programLangRejection(program, language);
+    if (langRejection) {
+      return NextResponse.json({ error: langRejection }, { status: 400 });
     }
 
     // ── 2. Hitung harga SERVER-SIDE (anti-tamper) ──────────────────────────

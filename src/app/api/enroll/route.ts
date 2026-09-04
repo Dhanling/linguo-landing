@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse, after } from "next/server";
+import { programLangRejection } from "@/lib/programLanguages";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
 // Pendaftaran "Daftar Kelas Baru" (akun dashboard) dipindah ke server route.
@@ -142,6 +143,15 @@ export async function POST(req: NextRequest) {
 
     if (!email || !product) {
       return NextResponse.json({ error: "email & product wajib." }, { status: 400 });
+    }
+
+    // [reguler-lang-gate-server-v1] Kelas Reguler = kelas batch: cuma bahasa
+    // yang punya jadwal di /jadwal-kelas-reguler. Tanpa gerbang ini pendaftaran
+    // "Kelas Reguler Danish" tetap bisa masuk lewat panggilan langsung ke route
+    // ini, dan registrasinya nyangkut tanpa batch tujuan.
+    const langRejection = programLangRejection(product, language);
+    if (langRejection) {
+      return NextResponse.json({ error: langRejection }, { status: 400 });
     }
 
     // 1. Select-or-insert student by email (service role → bypass RLS).

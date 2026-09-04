@@ -23,7 +23,7 @@
 
 import { languageDetails } from "@/data/languages-detail";
 import { languages as CURRICULUM_LANGUAGES } from "@/data/curriculum/languages";
-import { REGULER_LANGS } from "@/lib/programLanguages";
+import { isRegulerLang } from "@/lib/programLanguages";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BAHASA
@@ -169,7 +169,7 @@ export function programFromSlug(slug: string): string | null {
  */
 export function programsForLang(langEn: string): ProgramSlug[] {
   const list: ProgramSlug[] = ["private", "semi-private"];
-  if (REGULER_LANGS.includes(langEn)) list.push("reguler");
+  if (isRegulerLang(langEn)) list.push("reguler");
   list.push("kids");
   if (langEn === "English") list.push("ielts-toefl");
   return list;

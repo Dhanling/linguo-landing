@@ -7,6 +7,7 @@ import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+import { REGULER_LANGS } from "@/lib/programLanguages"; // [reguler-lang-gate-server-v1] bahasa yang punya batch reguler — satu sumber dengan funnel landing
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
 import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
 import { simpanDaftarLevel } from "@/lib/kelasCache"; // [kelas-level-switcher-v3] titip daftar level buat strip di halaman detail
@@ -403,7 +404,12 @@ const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
 ];
 const LANGS_BY_PROGRAM: Record<string, string[]> = {
   "Kelas Private": PRIVATE_LANG_GROUPS.flatMap(g => g.langs), // [linguo-patch:onboarding-lang-catalog-v1]
-  "Kelas Reguler": ["English","Japanese","Korean","Mandarin","French","Spanish","German","Arabic"],
+  // [reguler-lang-gate-server-v1] JANGAN ditulis ulang di sini — daftarnya ikut
+  // REGULER_LANGS (satu sumber dengan funnel landing & /jadwal-kelas-reguler).
+  // Salinan lama ketinggalan 3 bahasa yang batchnya sudah jalan (Italia,
+  // Belanda, Tagalog) sekaligus berisiko kebalikannya: bahasa tanpa batch ikut
+  // kejual.
+  "Kelas Reguler": REGULER_LANGS,
   "Kelas Kids": ["English","Japanese","Korean","Mandarin","French","Spanish"],
   "English Test Preparation": [],
 };
