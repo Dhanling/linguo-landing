@@ -559,10 +559,18 @@ const BUANG_NOMOR = /^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u;
    Jepang tak mengenal huruf besar, jadi \p{Lo} ikut dihitung nama penutur —
    tanpa itu nomor baris dialog modul Jepang tak pernah terpangkas. */
 const BUANG_NOMOR_DIALOG = /^\s*\d{1,2}\s+(?=[\p{Lu}\p{Lo}][\p{L}'’.\-]{0,14}\s*[:：])/u;
-/* Hanya "=" dan "→". Titik dua SENGAJA tidak ikut: baris dialog modul ditulis
-   "Ana: Hola, ¿qué tal?" — memenggalnya di titik dua menyisakan nama tokohnya
-   saja. Baris "harfiah: …" tetap tersaring oleh penjagaan bahasa Indonesia. */
-const PISAH_ARTI = /\s*(?:=|→)\s*/;
+/* Hanya "=", "→", dan pisah em/en dash. Titik dua SENGAJA tidak ikut: baris
+   dialog modul ditulis "Ana: Hola, ¿qué tal?" — memenggalnya di titik dua
+   menyisakan nama tokohnya saja. Baris "harfiah: …" tetap tersaring oleh
+   penjagaan bahasa Indonesia.
+
+   [ebook-tts-pisah-emdash-v1] Modul new edition menulis contoh kalimat dalam
+   SATU baris: "У нас есть кошка. — Kami punya kucing." Tanpa tanda pisah ini,
+   tombol "Putar kalimat" membacakan terjemahannya sekalian — mesin suara Rusia
+   mengeja "Kami punya kucing" dengan lidah Rusia. Spasi WAJIB ada di kedua sisi
+   supaya rentang angka ("2019–2021") dan kata bertanda hubung tidak ikut
+   terpenggal. */
+const PISAH_ARTI = /\s*(?:=|→)\s*|\s+[–—]\s+/;
 
 /* [ebook-tts-tanpa-penutur-v1] Nama penutur di kepala baris dialog ("たなか:",
    "Ana:") BUKAN bagian kalimatnya. Dulu ikut terbaca, jadi tiap kali siswa
