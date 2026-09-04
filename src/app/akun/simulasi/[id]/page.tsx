@@ -174,12 +174,16 @@ const CMS_HTML_CLASS =
   "[&_th]:border [&_th]:border-slate-300 [&_th]:bg-slate-100 [&_th]:px-2.5 [&_th]:py-2 [&_th]:font-semibold [&_th]:text-slate-700 [&_th]:align-top " +
   "[&_td]:border [&_td]:border-slate-300 [&_td]:px-2.5 [&_td]:py-2 [&_td]:align-top";
 function SmartText({ text, className }: { text: string; className?: string }) {
-  if (isHtml(text)) {
+  // Objek dangerouslySetInnerHTML WAJIB stabil: React 19 menulis ulang innerHTML
+  // tiap identitas objeknya berubah, dan layar ujian re-render tiap detik — bacaan
+  // jadi dibangun ulang terus (sorotan teks siswa hilang, scroll tabel meloncat).
+  const htmlProp = useMemo(() => (isHtml(text) ? { __html: sanitizeCmsHtml(text) } : null), [text]);
+  if (htmlProp) {
     return (
       // Tabel lebar tidak boleh mendorong lebar halaman di HP → digulir sendiri.
       <div
         className={`${className ?? ""} ${CMS_HTML_CLASS} overflow-x-auto`.trim()}
-        dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(text) }}
+        dangerouslySetInnerHTML={htmlProp}
       />
     );
   }
@@ -226,12 +230,25 @@ function TableFillHtml({ html, qs, answers, onChange, qNumber, className }: {
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [hosts, setHosts] = useState<HTMLElement[]>([]);
+  // React 19 menulis ulang innerHTML tiap kali OBJEK dangerouslySetInnerHTML
+  // berganti identitas — walau isi stringnya sama persis. Halaman ini re-render
+  // tiap detik (tick timer), jadi objek literal `{ __html }` bikin tabel dibangun
+  // ulang terus: <span data-sim-blank> yang sudah dipegang state jadi node yatim
+  // dan portal isian mendarat di DOM yang lepas → kotak jawaban tak pernah
+  // kelihatan. Dikunci lewat useMemo supaya innerHTML cuma ditulis saat html ganti.
+  const htmlProp = useMemo(() => ({ __html: html }), [html]);
   useEffect(() => {
     setHosts(Array.from(ref.current?.querySelectorAll<HTMLElement>("[data-sim-blank]") ?? []));
   }, [html]);
+  // Jaring pengaman: kalau penanda di DOM ternyata beda dgn yang dipegang state
+  // (mis. ada yang menulis ulang isi tabel), ambil ulang — isian tak boleh hilang.
+  useEffect(() => {
+    const live = Array.from(ref.current?.querySelectorAll<HTMLElement>("[data-sim-blank]") ?? []);
+    if (live.length !== hosts.length || live.some((el, i) => el !== hosts[i])) setHosts(live);
+  });
   return (
     <div className="relative">
-      <div ref={ref} className={`${className ?? ""} ${CMS_HTML_CLASS} overflow-x-auto`.trim()} dangerouslySetInnerHTML={{ __html: html }} />
+      <div ref={ref} className={`${className ?? ""} ${CMS_HTML_CLASS} overflow-x-auto`.trim()} dangerouslySetInnerHTML={htmlProp} />
       {hosts.map((el, i) => {
         const q = qs[i];
         if (!q) return null;
