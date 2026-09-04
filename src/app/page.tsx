@@ -1652,7 +1652,12 @@ const PRICING_TABS = [
     wa:"Kelas Reguler",
   },
   {
-    id:"ielts",label:"IELTS / TOEFL",desc:"Persiapan tes bahasa Inggris intensif.",
+    // etp-pricing-cta-v2: tombol Get Started tab ini dulu memanggil
+    // onGetStarted("IELTS / TOEFL") → programSlugOf() tak kenal label itu →
+    // daftarHref jatuh ke "/daftar" polos, jadi yang muncul malah "Mau belajar
+    // bahasa apa?" (60+ bahasa) padahal ETP selalu bahasa Inggris. Sama seperti
+    // kartu Our Program & ProductDock, tab ini langsung ke daftar batch ETP.
+    id:"ielts",label:"IELTS / TOEFL",href:"/jadwal-kelas-reguler?tab=etp",desc:"Persiapan tes bahasa Inggris intensif.",
     plans:[
       {name:"2 Bulan",desc:"16 sesi @90 menit",price:"Rp 300.000",highlighted:true,badge:"INTENSIVE"},
     ],
@@ -1700,7 +1705,7 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
               <p className="font-bold text-sm sm:text-lg mt-2">{p.name}</p>
               <p className="text-[10px] sm:text-xs text-slate-400 mt-1 mb-3 sm:mb-4">{p.desc}</p>
               <p className={`text-lg sm:text-2xl font-bold mb-3 sm:mb-5 ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
-              <button onClick={()=>onGetStarted(t.label)}
+              <button onClick={()=>{ if ((t as {href?:string}).href) { window.location.href = (t as {href?:string}).href!; return; } onGetStarted(t.label); }}
                 className={`inline-block w-full px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>
                 Get Started
               </button>

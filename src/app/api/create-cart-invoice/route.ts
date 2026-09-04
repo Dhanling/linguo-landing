@@ -48,14 +48,27 @@ function tolak(pesan: string, status: number) {
 
 interface ItemMasuk { productId: string; pricingId: string }
 
+// [elearning-keranjang-tamu-v1] Identitas pembeli yang BELUM login. Etalase
+// e-learning (/toko/paket-elearning) terbuka untuk publik — memaksa login dulu
+// cuma memindahkan orang keluar dari alur beli. Barisnya lahir tanpa
+// auth_user_id; kepemilikan tetap ketemu karena Perpustakaan mencocokkan
+// buyer_email juga (akun yang dibuat sesudah bayar auth_user_id-nya NULL).
+interface Tamu { nama: string; email: string; telepon: string | null }
+
 export async function POST(req: NextRequest) {
   let accessToken = "";
   let items: ItemMasuk[] = [];
   let referralCode: string | null = null;
+  let tamu: Tamu | null = null;
   try {
     const body = await req.json();
     accessToken = String(body.accessToken ?? "");
     referralCode = body.referral_code ? String(body.referral_code) : null;
+    const email = String(body.buyer_email ?? "").trim().toLowerCase();
+    const nama = String(body.buyer_name ?? "").trim();
+    if (!accessToken && email) {
+      tamu = { nama, email, telepon: body.buyer_phone ? String(body.buyer_phone).trim() : null };
+    }
     items = Array.isArray(body.items)
       ? body.items
           .map((x: unknown) => {
@@ -67,7 +80,10 @@ export async function POST(req: NextRequest) {
   } catch {
     return tolak("Permintaan tidak terbaca", 400);
   }
-  if (!accessToken) return tolak("Sesi tidak terbaca — coba muat ulang halaman.", 401);
+  if (!accessToken && !tamu) return tolak("Sesi tidak terbaca — coba muat ulang halaman.", 401);
+  if (tamu && (!tamu.nama || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(tamu.email))) {
+    return tolak("Nama dan email yang valid wajib diisi.", 400);
+  }
   if (items.length === 0) return tolak("Keranjang kosong.", 400);
   if (items.length > MAKS_ITEM) return tolak(`Maksimal ${MAKS_ITEM} produk sekali checkout.`, 400);
 
@@ -78,13 +94,34 @@ export async function POST(req: NextRequest) {
   items = [...unik.values()];
 
   // ── 1. Siapa yang meminta? ────────────────────────────────────────────────
-  const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    global: { headers: { Authorization: `Bearer ${accessToken}` } },
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-  const { data: { user }, error: authErr } = await userClient.auth.getUser();
-  if (authErr || !user?.email) return tolak("Sesi tidak valid atau sudah habis", 401);
-  const email = user.email.toLowerCase();
+  // Dua jalur: sesi login (Perpustakaan) atau tamu (etalase publik). Sisa alur
+  // di bawah cuma memakai `email`, `pembeliNama`, `authUserId` — jadi tak ada
+  // percabangan lain sesudah blok ini.
+  let email: string;
+  let pembeliNama: string;
+  let pembeliTelepon: string | null = null;
+  let authUserId: string | null = null;
+
+  if (accessToken) {
+    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      global: { headers: { Authorization: `Bearer ${accessToken}` } },
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const { data: { user }, error: authErr } = await userClient.auth.getUser();
+    if (authErr || !user?.email) return tolak("Sesi tidak valid atau sudah habis", 401);
+    email = user.email.toLowerCase();
+    authUserId = user.id;
+    pembeliNama =
+      (user.user_metadata?.full_name as string) ||
+      (user.user_metadata?.name as string) ||
+      email.split("@")[0];
+    pembeliTelepon =
+      (user.user_metadata?.phone as string) || (user.phone ? `+${user.phone}` : null);
+  } else {
+    email = tamu!.email;
+    pembeliNama = tamu!.nama;
+    pembeliTelepon = tamu!.telepon;
+  }
 
   const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
@@ -115,7 +152,11 @@ export async function POST(req: NextRequest) {
     .from("digital_purchases")
     .select("product_id")
     .eq("payment_status", "Lunas")
-    .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${email}`);
+    .or(
+      authUserId
+        ? `auth_user_id.eq.${authUserId},buyer_email.ilike.${email}`
+        : `buyer_email.ilike.${email}`,
+    );
   const dimiliki = new Set((milik ?? []).map((r: { product_id: string }) => r.product_id));
 
   const langs = await fetchProductLangs(admin, ids);
@@ -153,13 +194,6 @@ export async function POST(req: NextRequest) {
   const total = sah.reduce((n, x) => n + (x.tier.price ?? 0), 0);
   if (total <= 0) return tolak("Total belanja tidak valid.", 400);
 
-  const nama =
-    (user.user_metadata?.full_name as string) ||
-    (user.user_metadata?.name as string) ||
-    email.split("@")[0];
-  const telepon =
-    (user.user_metadata?.phone as string) || (user.phone ? `+${user.phone}` : null);
-
   // ── 5. Baris kepemilikan lahir dulu sebagai "Belum Bayar" ─────────────────
   // Urutannya: baris dulu → invoice. Kalau invoice gagal, barisnya dihapus lagi
   // (bersih). Kalau dibalik, invoice yang gagal dicatat akan jadi tagihan hidup
@@ -168,9 +202,9 @@ export async function POST(req: NextRequest) {
   const payload = sah.map((x, i) => ({
     product_id: x.prod.id,
     pricing_id: x.tier.id,
-    buyer_email: user.email,
-    buyer_name: nama,
-    buyer_phone: telepon,
+    buyer_email: email,
+    buyer_name: pembeliNama,
+    buyer_phone: pembeliTelepon,
     amount: x.tier.price,
     payment_status: "Belum Bayar",
     xendit_status: "PENDING",
@@ -180,7 +214,7 @@ export async function POST(req: NextRequest) {
     xendit_external_id: i === 0 ? extId : `${extId}-${i + 1}`,
     access_granted: false,
     source: "xendit",
-    auth_user_id: user.id,
+    ...(authUserId ? { auth_user_id: authUserId } : {}),
     ...(referralCode ? { affiliate_ref_code: referralCode } : {}),
   }));
 
@@ -209,7 +243,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         external_id: extId,
         amount: total,
-        payer_email: user.email,
+        payer_email: email,
         description:
           sah.length === 1
             ? `Linguo — ${sah[0].prod.title}`
@@ -222,8 +256,10 @@ export async function POST(req: NextRequest) {
           invoice_reminder: ["email", "whatsapp"],
           invoice_paid: ["email", "whatsapp"],
         },
-        success_redirect_url: `${BASE_URL}/akun?menu=pustaka&bayar=sukses`,
-        failure_redirect_url: `${BASE_URL}/akun?menu=pustaka`,
+        success_redirect_url: authUserId
+          ? `${BASE_URL}/akun?menu=pustaka&bayar=sukses`
+          : `${BASE_URL}/toko/success`,
+        failure_redirect_url: authUserId ? `${BASE_URL}/akun?menu=pustaka` : `${BASE_URL}/toko/failed`,
         // Rinciannya ikut ke halaman Xendit + email tagihan, jadi pembeli bisa
         // memeriksa isi keranjangnya sebelum membayar.
         items: sah.map((x) => ({

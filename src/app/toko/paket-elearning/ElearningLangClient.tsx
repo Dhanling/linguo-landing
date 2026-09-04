@@ -1,19 +1,24 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
   Check,
   Clapperboard,
   Globe,
+  Loader2,
   MessageCircle,
+  Plus,
   Search,
   SearchX,
   ShieldCheck,
+  ShoppingCart,
   Sparkles,
   Star,
+  X,
 } from 'lucide-react';
+import { supabase } from '@/lib/supabase-client';
 import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { ElearningProduct, PricingTier } from './page';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
@@ -22,6 +27,15 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // satu form checkout untuk paket "12+ bahasa sekaligus"; sekarang tiap bahasa
 // produknya sendiri dan checkout-nya di /toko/<slug> (CheckoutSection), jadi di
 // sini cukup kartu bahasa + penjelasan harga.
+//
+// [elearning-multi-bahasa-v1] Satu bahasa per transaksi dulu memaksa orang yang
+// mau Inggris + Jepang + Korea bayar tiga kali (tiga invoice, tiga biaya
+// transfer). Sekarang kartunya bisa dicentang dan seluruh pilihan dibayar lewat
+// SATU invoice keranjang (`/api/create-cart-invoice`, external_id
+// `LINGUO-CART-*`) — jalur yang sama dengan keranjang Perpustakaan, jadi
+// pemenuhannya sudah ditangani `handleCartPurchase` di edge fn xendit-webhook.
+// Tombol "Lihat" per kartu sengaja dipertahankan: yang cuma mau satu bahasa
+// tetap lewat halaman produk seperti biasa.
 
 const WA_URL =
   'https://wa.me/6282116859493?text=' +
@@ -55,8 +69,85 @@ function namaBahasa(p: ElearningProduct): string {
   return (m ? m[1] : p.language ?? p.title).replace(/\s*Linguo\s*$/i, '').trim();
 }
 
+/** Tier produk pada urutan durasi ke-`idx`; jatuh ke termurah kalau tak ada. */
+function tierPada(p: ElearningProduct, idx: number): PricingTier | null {
+  const t = sortedTiers(p);
+  return t[idx] ?? t[0] ?? null;
+}
+
 export default function ElearningLangClient({ products }: { products: ElearningProduct[] }) {
   const [search, setSearch] = useState('');
+  // ── Keranjang: id produk yang dicentang + pilihan durasi (indeks tier).
+  // Durasinya SATU untuk seisi keranjang: harga e-learning rata untuk semua
+  // bahasa, jadi pilihan per-bahasa cuma menambah kebingungan.
+  const [dipilih, setDipilih] = useState<string[]>([]);
+  const [durasiIdx, setDurasiIdx] = useState(0);
+  const [formOpen, setFormOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', ref: '' });
+  const [kirim, setKirim] = useState(false);
+  const [salah, setSalah] = useState<string | null>(null);
+
+  // Kalau pengunjung sudah login, data dirinya tak perlu diketik ulang.
+  useEffect(() => {
+    let batal = false;
+    supabase.auth.getUser().then(({ data }) => {
+      const u = data.user;
+      if (batal || !u?.email) return;
+      setForm((f) => ({
+        ...f,
+        name: f.name || (u.user_metadata?.full_name as string) || (u.user_metadata?.name as string) || '',
+        email: f.email || u.email!,
+      }));
+    });
+    return () => { batal = true; };
+  }, []);
+
+  const terpilih = useMemo(
+    () => dipilih.map((id) => products.find((p) => p.id === id)).filter((p): p is ElearningProduct => !!p),
+    [dipilih, products],
+  );
+  const totalKeranjang = terpilih.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
+
+  const toggle = (id: string) =>
+    setDipilih((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+
+  async function checkout() {
+    setSalah(null);
+    if (!form.name.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim())) {
+      setSalah('Nama dan email yang valid wajib diisi.');
+      return;
+    }
+    setKirim(true);
+    try {
+      const { data } = await supabase.auth.getSession();
+      const res = await fetch('/api/create-cart-invoice', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          // Sesi login dikirim kalau ada supaya barisnya langsung nempel ke akun;
+          // tanpa itu server memakai jalur tamu (cocok lewat email).
+          accessToken: data.session?.access_token ?? '',
+          buyer_name: form.name.trim(),
+          buyer_email: form.email.trim(),
+          buyer_phone: form.phone.trim() || null,
+          referral_code:
+            form.ref.trim() ||
+            (typeof document !== 'undefined'
+              ? ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? null
+              : null),
+          items: terpilih
+            .map((p) => ({ productId: p.id, pricingId: tierPada(p, durasiIdx)?.id ?? '' }))
+            .filter((x) => x.pricingId),
+        }),
+      });
+      const j = await res.json();
+      if (!res.ok || !j.invoice_url) throw new Error(j.error ?? 'Gagal membuat invoice');
+      window.location.href = j.invoice_url;
+    } catch (e) {
+      setSalah(e instanceof Error ? e.message : 'Terjadi kesalahan');
+      setKirim(false);
+    }
+  }
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -89,8 +180,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             <span className="font-serif italic text-teal-600">rekaman kelas</span>, per bahasa
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-            Pilih satu bahasa, tonton rekaman kelas level Basic dari pengajar Linguo sesuka kamu.
-            Bayar cuma untuk bahasa yang kamu pelajari.
+            Tonton rekaman kelas level Basic dari pengajar Linguo sesuka kamu. Bayar cuma untuk
+            bahasa yang kamu pelajari — <strong>boleh pilih beberapa bahasa sekaligus</strong> dalam
+            satu pembayaran.
           </p>
 
           {/* Dua pilihan durasi — harga sama untuk semua bahasa */}
@@ -136,6 +228,24 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             <Globe className="h-4 w-4 text-teal-600" strokeWidth={2} aria-hidden />
             {products.length} bahasa tersedia
           </div>
+          {/* [elearning-multi-bahasa-v1] Durasi dipilih SEKALI untuk semua
+              bahasa di keranjang — harganya rata untuk tiap bahasa. */}
+          {sortedTiers(products[0] ?? ({} as ElearningProduct)).length > 1 && (
+            <div className="inline-flex items-center gap-1 rounded-full bg-slate-100 p-1 text-xs font-semibold">
+              {sortedTiers(products[0]).map((t, i) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setDurasiIdx(i)}
+                  className={`rounded-full px-3 py-1.5 transition ${
+                    durasiIdx === i ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                  }`}
+                >
+                  {t.display_label}
+                </button>
+              ))}
+            </div>
+          )}
           <div className="relative w-full sm:w-64">
             <input
               type="text"
@@ -168,8 +278,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((p) => {
-              const tier = cheapest(p);
+              const tier = tierPada(p, durasiIdx) ?? cheapest(p);
               const code = flagCodeFor(p.language);
+              const dicentang = dipilih.includes(p.id);
               return (
                 <Link
                   key={p.id}
@@ -177,9 +288,30 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                   prefetch={false}
                   className="group relative block"
                 >
+                  {/* [elearning-multi-bahasa-v1] Centang = masuk keranjang.
+                      preventDefault dipakai karena tombolnya duduk DI DALAM
+                      <Link> — tanpa itu satu klik ikut membuka halaman produk. */}
+                  <button
+                    type="button"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(p.id); }}
+                    aria-pressed={dicentang}
+                    aria-label={`${dicentang ? 'Hapus' : 'Tambah'} Bahasa ${namaBahasa(p)} ${dicentang ? 'dari' : 'ke'} keranjang`}
+                    className={`absolute right-2.5 top-2.5 z-10 inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[11px] font-bold shadow-sm ring-1 transition ${
+                      dicentang
+                        ? 'bg-teal-600 text-white ring-teal-600'
+                        : 'bg-white/90 text-slate-700 ring-slate-200 backdrop-blur hover:bg-white'
+                    }`}
+                  >
+                    {dicentang ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Plus className="h-3.5 w-3.5" strokeWidth={3} />}
+                    {dicentang ? 'Dipilih' : 'Pilih'}
+                  </button>
                   <article
-                    className={`relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                      p.is_featured ? 'ring-2 ring-yellow-400 shadow-lg shadow-yellow-400/20' : 'shadow-sm'
+                    className={`relative h-full rounded-2xl overflow-hidden bg-white border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                      dicentang
+                        ? 'border-teal-500 ring-2 ring-teal-500 shadow-lg shadow-teal-600/15'
+                        : p.is_featured
+                          ? 'border-slate-200 ring-2 ring-yellow-400 shadow-lg shadow-yellow-400/20'
+                          : 'border-slate-200 shadow-sm'
                     }`}
                   >
                     <div className="relative h-36 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center overflow-hidden">
@@ -210,7 +342,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                       <div className="mt-3 flex items-end justify-between gap-2">
                         <div>
                           <div className="text-xs text-slate-500">
-                            {tier ? `mulai ${tier.display_label}` : 'Segera hadir'}
+                            {tier ? `akses ${tier.display_label}` : 'Segera hadir'}
                           </div>
                           <div className="font-bold text-slate-900 text-lg leading-none">
                             {tier ? formatRupiah(tier.price) : '—'}
@@ -286,6 +418,134 @@ export default function ElearningLangClient({ products }: { products: ElearningP
         <TautanLegal className="mb-2 px-4 text-slate-500" />
         © {new Date().getFullYear()} PT. Linguo Edu Indonesia
       </footer>
+
+      {/* ── KERANJANG (bilah bawah) ───────────────────────────────────────── */}
+      {terpilih.length > 0 && (
+        <>
+          {/* Ruang kosong biar bilahnya tak menutupi baris terakhir halaman. */}
+          <div className="h-24" aria-hidden />
+          <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur">
+            <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <ShoppingCart className="h-4 w-4 text-teal-600" strokeWidth={2} aria-hidden />
+                  {terpilih.length} bahasa dipilih
+                  <button
+                    type="button"
+                    onClick={() => setDipilih([])}
+                    className="text-xs font-medium text-slate-400 underline hover:text-slate-600"
+                  >
+                    kosongkan
+                  </button>
+                </div>
+                <p className="mt-0.5 truncate text-xs text-slate-500">
+                  {terpilih.map((p) => namaBahasa(p)).join(', ')}
+                </p>
+              </div>
+              <div className="flex items-center justify-between gap-4 sm:justify-end">
+                <div className="text-right">
+                  <div className="text-[11px] text-slate-500">
+                    Total · akses {tierPada(terpilih[0], durasiIdx)?.display_label ?? ''}
+                  </div>
+                  <div className="text-lg font-bold leading-tight text-slate-900">
+                    {formatRupiah(totalKeranjang)}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setFormOpen(true)}
+                  className="inline-flex items-center gap-2 rounded-2xl bg-teal-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
+                >
+                  Bayar sekaligus
+                  <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ── FORM DATA PEMBELI ─────────────────────────────────────────────── */}
+      {formOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4"
+          onClick={() => !kirim && setFormOpen(false)}
+        >
+          <div
+            className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <h2 className="text-lg font-bold text-slate-900">Data pembeli</h2>
+                <p className="text-sm text-slate-500">
+                  Akses dikirim ke email ini dan bisa dibuka di linguo.id/akun.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => !kirim && setFormOpen(false)}
+                aria-label="Tutup"
+                className="rounded-full p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <ul className="mb-4 space-y-1 rounded-2xl bg-slate-50 p-3 text-sm">
+              {terpilih.map((p) => (
+                <li key={p.id} className="flex items-center justify-between gap-3">
+                  <span className="truncate text-slate-700">Bahasa {namaBahasa(p)}</span>
+                  <span className="shrink-0 font-medium text-slate-900">
+                    {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
+                  </span>
+                </li>
+              ))}
+              <li className="mt-1 flex items-center justify-between gap-3 border-t border-slate-200 pt-2 font-bold text-slate-900">
+                <span>Total</span>
+                <span>{formatRupiah(totalKeranjang)}</span>
+              </li>
+            </ul>
+
+            <div className="space-y-3">
+              {[
+                { k: 'name' as const, label: 'Nama lengkap *', type: 'text', ph: 'Nama kamu' },
+                { k: 'email' as const, label: 'Email *', type: 'email', ph: 'email@kamu.com' },
+                { k: 'phone' as const, label: 'Nomor WhatsApp', type: 'tel', ph: '08xxxxxxxxxx' },
+                { k: 'ref' as const, label: 'Kode referral (opsional)', type: 'text', ph: 'Kode afiliator' },
+              ].map((f) => (
+                <label key={f.k} className="block">
+                  <span className="mb-1 block text-[13px] font-medium text-slate-700">{f.label}</span>
+                  <input
+                    type={f.type}
+                    value={form[f.k]}
+                    onChange={(e) => setForm((v) => ({ ...v, [f.k]: e.target.value }))}
+                    placeholder={f.ph}
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                  />
+                </label>
+              ))}
+            </div>
+
+            {salah && (
+              <p className="mt-3 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">{salah}</p>
+            )}
+
+            <button
+              type="button"
+              onClick={checkout}
+              disabled={kirim}
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-700 disabled:opacity-60"
+            >
+              {kirim ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
+              {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalKeranjang)}`}
+            </button>
+            <p className="mt-3 text-center text-[11px] text-slate-400">
+              Pembayaran diproses Xendit. Bahasa yang sudah kamu miliki otomatis tidak ditagih lagi.
+            </p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

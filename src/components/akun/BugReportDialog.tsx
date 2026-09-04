@@ -48,6 +48,9 @@ export default function BugReportDialog({
   const [sending, setSending] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [mounted, setMounted] = useState(false);
+  // Efek paste (di bawah) butuh addFiles versi terbaru tanpa memasang ulang
+  // listener tiap render — isinya diperbarui sesudah addFiles didefinisikan.
+  const addFilesRef = useRef<(l: FileList | File[] | null) => void>(() => {});
 
   useEffect(() => setMounted(true), []);
 
@@ -74,9 +77,41 @@ export default function BugReportDialog({
     };
   }, [open, onClose]);
 
+  // linguo-patch:bug-paste-screenshot-v1
+  // Screenshot yang baru di-copy cuma ada di clipboard; sebelum ini pelapor
+  // harus menyimpannya jadi berkas dulu baru di-upload. Listener-nya di
+  // `document` supaya Ctrl+V tetap kena walau fokusnya belum di kolom mana pun.
+  // Tempelan tanpa gambar dibiarkan lewat — paste teks ke Judul/Deskripsi jangan
+  // ikut dibajak.
+  useEffect(() => {
+    if (!open) return;
+    const onPaste = (e: ClipboardEvent) => {
+      const files = Array.from(e.clipboardData?.items ?? [])
+        .filter((it) => it.kind === "file" && /^(image|video)\//.test(it.type))
+        .map((it) => it.getAsFile())
+        .filter((f): f is File => !!f)
+        .map(
+          (f, i) =>
+            new File(
+              [f],
+              f.name && f.name !== "image.png"
+                ? f.name
+                : `tempelan-${Date.now()}${i ? `-${i + 1}` : ""}.${(f.type.split("/")[1] || "png").replace("jpeg", "jpg")}`,
+              { type: f.type },
+            ),
+        );
+      if (files.length === 0) return;
+      e.preventDefault();
+      addFilesRef.current(files);
+      toast.success(files.length > 1 ? `${files.length} tempelan dilampirkan` : "Screenshot dilampirkan");
+    };
+    document.addEventListener("paste", onPaste);
+    return () => document.removeEventListener("paste", onPaste);
+  }, [open]);
+
   if (!open || !mounted) return null;
 
-  const addFiles = (list: FileList | null) => {
+  const addFiles = (list: FileList | File[] | null) => {
     if (!list || list.length === 0) return;
     const room = MAX_FILES - picked.length;
     if (room <= 0) {
@@ -98,6 +133,8 @@ export default function BugReportDialog({
     if (overflow > 0) toast.error(`Cuma ${MAX_FILES} lampiran yang muat — sisanya dilewat`);
     if (accepted.length > 0) setPicked((prev) => [...prev, ...accepted]);
   };
+
+  addFilesRef.current = addFiles;
 
   const removeAt = (idx: number) => {
     setPicked((prev) => {
@@ -290,6 +327,10 @@ aria-label={t("Tutup")}
                 </span>
                 <span className="text-[11px]">
                   {t("Gambar maks")} {MAX_MB}MB · {t("video maks")} {MAX_VIDEO_MB}MB
+                </span>
+                {/* linguo-patch:bug-paste-screenshot-v1 */}
+                <span className="text-[11px] font-semibold text-[#16796E]">
+                  {t("…atau tempel langsung: Ctrl + V / ⌘ + V")}
                 </span>
               </button>
             )}
