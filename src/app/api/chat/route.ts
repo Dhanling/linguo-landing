@@ -104,6 +104,13 @@ Biaya Reguler:
 - Reguler IELTS/TOEFL Prep: Rp 300.000, 16x pertemuan (2x/minggu, 90 menit), total 2 bulan. Ini KELAS GRUP (batch ETP) — bukan satu-satunya pilihan IELTS/TOEFL, lihat bagian Test Prep di bawah.
 - Pembayaran via website linguo.id: VA transfer bank, e-wallet, QRIS.
 
+# Siswa dari LUAR NEGERI & mata uang asing
+- SEMUA harga di knowledge ini dalam RUPIAH (IDR), dan tagihan/link pembayaran Linguo SELALU terbit dalam Rupiah — tidak ada invoice dalam ringgit, dolar, won, dsb.
+- Linguo TIDAK punya rekening bank luar negeri, TIDAK memakai Wise/PayPal, dan TIDAK melayani "transfer internasional" sebagai metode terpisah. DILARANG menjanjikannya.
+- Pertanyaan "kalau bayar pakai ringgit/dolar berapa": jawab dengan ANGKA, dihitung dari blok "KURS MATA UANG ASING" yang disuntikkan ke prompt (kurs live harian, sama dengan yang dipakai admin di dashboard). Tulis harga Rupiahnya dulu, konversinya jadi keterangan — "Rp 1.600.000 (± RM 375)" — dan sebutkan sekali bahwa angka asingnya perkiraan.
+- Kalau blok kurs tidak ada di prompt, JANGAN mengarang kurs sendiri: bilang akan dibantu dihitungkan admin.
+- Kelas untuk siswa di luar negeri sendiri tidak masalah: semua kelas online lewat Zoom. Yang perlu diingat, jam di knowledge & jadwal batch selalu WIB (UTC+7) — sebutkan "WIB" dan bantu hitung selisih jamnya kalau siswanya menyebut zona waktu lain.
+
 Test Prep / Persiapan Ujian (dua keluarga produk, JANGAN dicampur):
 A. IELTS & TOEFL (bahasa Inggris) — ada versi GRUP dan versi PRIVATE.
 - Kelas Grup (batch ETP): Rp 300.000, 16 sesi @90 menit, 2x seminggu, total 2 bulan. Jadwal batchnya ikut blok "JADWAL BATCH ..." / linguo.id/jadwal-kelas-reguler.
@@ -976,6 +983,81 @@ ${daftar}
 - Bahasa daerah Nusantara (Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura) & BIPA: JANGAN bahas native/lokal sama sekali — pengajarnya memang penutur asli bahasa itu.`;
 }
 
+// ── [fx-kurs-invoice-v1] Blok kurs mata uang asing ──────────────────────────
+// Calon siswa dari luar negeri sering bertanya "kalau bayar pakai ringgit
+// berapa". Tanpa blok ini AI mengarang (pernah menjanjikan "transfer
+// internasional" yang tidak pernah ada di knowledge mana pun). Sumbernya tabel
+// `fx_rates` — sama dengan yang dipakai panel Pembayaran WA Inbox dashboard,
+// jadi angka Ling = angka CS.
+let fxCache: { text: string; at: number } = { text: "", at: 0 };
+const FX_TTL_MS = 60 * 60 * 1000; // kurs cuma diperbarui 1x sehari
+
+const FX_CURRENCIES: [string, string][] = [
+  ["MYR", "Malaysia"], ["SGD", "Singapura"], ["USD", "Amerika Serikat"],
+  ["AUD", "Australia"], ["EUR", "Eropa"], ["GBP", "Inggris"],
+  ["JPY", "Jepang"], ["KRW", "Korea Selatan"], ["CNY", "Tiongkok"],
+  ["HKD", "Hong Kong"], ["TWD", "Taiwan"], ["THB", "Thailand"],
+  ["VND", "Vietnam"], ["PHP", "Filipina"], ["BND", "Brunei"],
+  ["AED", "Uni Emirat Arab"], ["SAR", "Arab Saudi"], ["CAD", "Kanada"],
+  ["NZD", "Selandia Baru"], ["TRY", "Turki"],
+];
+
+const FX_NOTE = `CATATAN KURS (WAJIB DIPATUHI):
+- Tagihan & link pembayaran Linguo SELALU terbit dalam RUPIAH. Linguo TIDAK menerbitkan invoice dalam mata uang asing dan TIDAK punya rekening bank luar negeri. DILARANG menjanjikan "transfer internasional", rekening luar negeri, Wise, PayPal, atau pembayaran dalam mata uang asing — itu semua tidak ada.
+- Calon siswa dari luar negeri bertanya "berapa kalau pakai ringgit/dolar/won/…": HITUNG sendiri dari kurs di atas (harga rupiah ÷ kurs) lalu SEBUTKAN angkanya. Jangan menjawab "nanti dicek admin dulu".
+- Angka mata uang asing itu PERKIRAAN. Sebutkan sekali (jangan diulang tiap baris) bahwa tagihannya dalam Rupiah, jadi jumlah persisnya mengikuti kurs bank/kartu yang dipakai kakaknya.
+- Harga resmi tetap ditulis dalam Rupiah lebih dulu, konversinya jadi keterangan di belakangnya. Contoh: "Rp 1.600.000 (± RM 375)".
+- Mata uang yang TIDAK ada di daftar di atas: jangan mengarang kursnya. Tawarkan perkiraan dalam USD, atau bilang akan dibantu dicek admin.
+- CARA membayar dari luar negeri (metode apa yang bisa dipakai kalau tidak punya rekening/e-wallet Indonesia) BELUM tentu tersedia — jangan menjanjikan metode apa pun. Kalau ditanya caranya, sampaikan link pembayarannya menerima QRIS, VA bank Indonesia & e-wallet, lalu tawarkan dibantu admin untuk opsi dari luar negeri.`;
+
+async function getFxBlock(): Promise<string> {
+  if (Date.now() - fxCache.at < FX_TTL_MS) return fxCache.text;
+  const client = sb();
+  if (!client) return fxCache.text;
+  try {
+    const [{ data: rates }, { data: settings }] = await Promise.all([
+      client.from("fx_rates").select("currency, idr_per_unit, rate_date"),
+      client.from("app_settings").select("value").eq("key", "fx_markup_pct"),
+    ]);
+    if (!rates?.length) return fxCache.text;
+
+    const markupRaw = Number((settings as { value: unknown }[] | null)?.[0]?.value);
+    const markup = Number.isFinite(markupRaw) && markupRaw >= 0 && markupRaw <= 25 ? markupRaw : 3;
+    const byCode = new Map(
+      (rates as { currency: string; idr_per_unit: number; rate_date: string | null }[]).map((r) => [
+        String(r.currency).toUpperCase(),
+        r,
+      ]),
+    );
+    // Kurs efektif DIBAGI (1+markup) — arah markupnya menurunkan rupiah per unit
+    // supaya nominal asing yang dikutip sedikit lebih besar, menutup selisih
+    // kurs beli bank. Sama dengan effectiveRate() di dashboard (src/lib/fx.ts).
+    const lines = FX_CURRENCIES.filter(([code]) => Number(byCode.get(code)?.idr_per_unit) > 0).map(
+      ([code, negara]) => {
+        const eff = Number(byCode.get(code)!.idr_per_unit) / (1 + markup / 100);
+        return `- 1 ${code} (${negara}) ± Rp ${Math.round(eff).toLocaleString("id-ID")}`;
+      },
+    );
+    if (!lines.length) return fxCache.text;
+
+    const tanggal = [...byCode.values()]
+      .map((r) => r.rate_date)
+      .filter(Boolean)
+      .sort()
+      .pop();
+    const text = [
+      `=== KURS MATA UANG ASING${tanggal ? ` (per ${fmtDateID(tanggal as string)})` : ""} ===`,
+      ...lines,
+      "",
+      FX_NOTE,
+    ].join("\n");
+    fxCache = { text, at: Date.now() };
+    return text;
+  } catch {
+    return fxCache.text;
+  }
+}
+
 async function getTeacherBlock(): Promise<string> {
   if (Date.now() - teacherCache.at < TEACHER_TTL_MS) return teacherCache.text;
   const client = sb();
@@ -1225,12 +1307,13 @@ export async function POST(req: Request) {
     }
 
     const systemPrompt = await (async () => {
-      const [sched, offline, teacher] = await Promise.all([
+      const [sched, offline, teacher, fxBlock] = await Promise.all([
         getScheduleBlock(),
         getOfflineBlock(),
         getTeacherBlock(),
+        getFxBlock(),
       ]);
-      return [SYSTEM, sched, offline, teacher].filter(Boolean).join("\n\n");
+      return [SYSTEM, sched, offline, teacher, fxBlock].filter(Boolean).join("\n\n");
     })();
 
     const rawText = await callChatLLM(systemPrompt, msgs);
