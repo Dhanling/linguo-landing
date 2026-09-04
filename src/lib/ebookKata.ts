@@ -45,16 +45,31 @@ export function perluTranslit(kata: string): boolean {
   return huruf.some((h) => !/\p{Script=Latin}/u.test(h));
 }
 
-/** "mati" = layanan artinya sedang tak bisa dipakai (kuota AI habis) — beda
- *  dari `null` yang berarti satu kata itu saja yang gagal dibaca. Popup
- *  MENYEMBUNYIKAN baris arti waktu "mati": menampilkan "gagal dimuat" di tiap
- *  ketukan cuma bikin fitur yang bekerja (pelafalan) ikut terasa rusak. */
+/** "mati" = layanan artinya sedang tak bisa dipakai (kuota AI habis / penyedia
+ *  ngadat) — beda dari `null` yang berarti satu kata itu saja yang gagal
+ *  dibaca. Popup MENYEMBUNYIKAN baris arti waktu "mati": menampilkan "gagal
+ *  dimuat" di tiap ketukan cuma bikin fitur yang bekerja (pelafalan) ikut
+ *  terasa rusak. Berlakunya SEMENTARA — lihat [ebook-kata-mati-sementara-v1]. */
 export type HasilArti = ArtiKata | null | "mati";
 
 /* Kuota AI habis berlaku untuk SELURUH sesi, bukan untuk satu kata: sekali
    ketahuan habis, ketukan berikutnya tidak menembak edge function lagi. */
-let mati = false;
-export const artiSedangMati = () => mati;
+/* [ebook-kata-mati-sementara-v1] "Mati" itu JEDA, bukan vonis sepanjang sesi.
+   Dulu satu balasan 502 mengunci baris arti sampai tab ditutup — dan 502 ikut
+   dipakai untuk kegagalan yang cuma menyangkut SATU kata (jawaban model bukan
+   JSON, arti kosong). Akibatnya: siswa membaca beberapa halaman dengan arti +
+   cara baca lengkap, lalu tiba-tiba popupnya jadi kartu pelafalan telanjang di
+   halaman berikutnya tanpa sebab yang kelihatan.
+
+   Sekarang galat per kata dibalas 422 oleh rute/edge function (dianggap `null`
+   = kata itu saja), dan 502/429 cuma menahan tembakan sebentar. Kuota AI yang
+   benar-benar habis tetap tak menghujani API: satu ketukan tiap beberapa menit.
+*/
+const JEDA_TUMBANG_MS = 90_000;   // 502 — penyedia lagi ngadat
+const JEDA_KUOTA_MS = 10 * 60_000; // 429 — kuota/rate limit
+let matiSampai = 0;
+const sedangMati = () => Date.now() < matiSampai;
+export const artiSedangMati = () => sedangMati();
 
 /* Satu kata yang sama diketuk berkali-kali sepanjang satu modul — cache memori
    ini yang menahannya jadi puluhan panggilan AI. Kuncinya memuat kalimat:
@@ -66,7 +81,7 @@ const kunci = (kode: string, kata: string, kalimat: string) =>
 export function artiTersimpan(kata: string, kalimat: string, kode: string): HasilArti | undefined {
   const ada = memori.get(kunci(kode, kata, kalimat));
   if (ada) return ada;
-  return mati ? "mati" : undefined;
+  return sedangMati() ? "mati" : undefined;
 }
 
 /**
@@ -82,7 +97,7 @@ export async function artiKataEbook(
   const k = kunci(kode, kata, kalimat);
   const ada = memori.get(k);
   if (ada) return ada;
-  if (mati) return "mati";
+  if (sedangMati()) return "mati";
 
   try {
     const res = await fetch("/api/ebook-kata", {
@@ -98,7 +113,10 @@ export async function artiKataEbook(
     const p = (await res.json().catch(() => ({}))) as Record<string, unknown>;
     // 502 dari rute = SEMUA penyedia gagal (biasanya kuota). Bukan galat sesaat
     // per kata — matikan sampai sesi berakhir, jangan diulang tiap ketukan.
-    if (res.status === 429 || res.status === 502) { mati = true; return "mati"; }
+    if (res.status === 429 || res.status === 502) {
+      matiSampai = Date.now() + (res.status === 429 ? JEDA_KUOTA_MS : JEDA_TUMBANG_MS);
+      return "mati";
+    }
     if (!res.ok) return null;
     const arti = typeof p.meaning === "string" ? p.meaning.trim() : "";
     const kelas = typeof p.type === "string" ? p.type.trim() : "";

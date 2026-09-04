@@ -253,11 +253,21 @@ export async function POST(req: NextRequest) {
     if (tersimpan) return NextResponse.json({ ...tersimpan, cached: true });
 
     const { teks, oleh } = await tanyaAI(kata, kalimat, bahasa);
+    /* [ebook-kata-galat-per-kata-v1] Sesudah titik ini penyedianya SUDAH
+       menjawab — yang rusak cuma jawaban untuk kata itu. Statusnya 422, bukan
+       502: klien memakai 502 sebagai tanda "layanan artinya tumbang" dan
+       berhenti menembak, jadi satu jawaban rusak dulu mematikan baris arti di
+       seluruh sisa sesi membaca. */
     // Model kadang tetap membungkus JSON-nya dengan pagar ```json.
     const a = teks.indexOf("{");
     const b = teks.lastIndexOf("}");
-    if (a === -1 || b <= a) return NextResponse.json({ error: "jawaban bukan JSON" }, { status: 502 });
-    const p = JSON.parse(teks.slice(a, b + 1)) as Record<string, unknown>;
+    if (a === -1 || b <= a) return NextResponse.json({ error: "jawaban bukan JSON" }, { status: 422 });
+    let p: Record<string, unknown>;
+    try {
+      p = JSON.parse(teks.slice(a, b + 1)) as Record<string, unknown>;
+    } catch {
+      return NextResponse.json({ error: "JSON rusak" }, { status: 422 });
+    }
     const hasil = {
       meaning: typeof p.meaning === "string" ? p.meaning.trim().slice(0, 120) : "",
       type: typeof p.type === "string" ? p.type.trim().slice(0, 40) : "",
@@ -266,7 +276,7 @@ export async function POST(req: NextRequest) {
          yang memang sudah Latin (klien menyembunyikan barisnya). */
       translit: typeof p.translit === "string" ? p.translit.trim().slice(0, 80) : "",
     };
-    if (!hasil.meaning && !hasil.type) return NextResponse.json({ error: "arti kosong" }, { status: 502 });
+    if (!hasil.meaning && !hasil.type) return NextResponse.json({ error: "arti kosong" }, { status: 422 });
 
     await keCache(jalur, hasil);
     return NextResponse.json({ ...hasil, by: oleh });
