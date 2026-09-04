@@ -38,6 +38,10 @@ import {
   SEMI_PRIVATE_SIZES,
   SEMI_PRIVATE_MIN,
   SEMI_PRIVATE_MAX,
+  offersTeacherTypeChoice,
+  supportsAddon,
+  ADDON_EBOOK_RECORDING_PRICE,
+  KIDS_PRICE_LEVELS,
 } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
@@ -62,8 +66,19 @@ import {
 const SESSION_OPTS = [4, 8, 12, 16, 24];
 const IELTS_PRICE = 300000;
 const REGULER_PRICE = 150000;
-const REGULER_ADDON_PRICE = 150000;
+// [private-addon-ebook-recording-v1] Satu angka untuk Reguler DAN Private —
+// sumbernya lib/trial-pricing, sama dengan yang dihitung ulang server.
+const REGULER_ADDON_PRICE = ADDON_EBOOK_RECORDING_PRICE;
 const FORM_KEY = "linguo_daftar_form";
+
+// [kids-cefr-level-v1] Keterangan singkat tiap level untuk orang tua — CEFR
+// mentah ("A2") tidak berarti apa-apa buat mereka.
+const KIDS_LEVEL_DESC: Record<string, string> = {
+  A1: "Baru mulai",
+  A2: "Sudah kenal kata dasar",
+  B1: "Bisa ngobrol sederhana",
+  B2: "Lancar & percaya diri",
+};
 
 type FormData = {
   name: string;
@@ -104,6 +119,17 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   );
   const [offlineCity, setOfflineCity] = useState(sp.get("kota") || "");
   const [addAddon, setAddAddon] = useState(sp.get("addon") === "1");
+  // [kids-cefr-level-v1] Kelas Kids punya DUA sumbu: kelompok usia (Little
+  // Learner / Young Explorer — itu yang jadi segmen `level` di URL) dan level
+  // kemampuan bahasa. Sebelumnya sumbu kedua tidak pernah ditanyakan, jadi anak
+  // bilingual yang sudah di A2/B1 tetap ditagih tarif A1 — padahal
+  // computeKidsPerSession() memang sudah sadar level sejak kids-lang-pricing-v1.
+  // Levelnya ikut sebagai query `lvl` (bukan segmen path) supaya URL langkah
+  // Kids tetap /daftar/<bahasa>/kids/<kelompok-usia>.
+  const [kidsLevel, setKidsLevel] = useState(() => {
+    const q = (sp.get("lvl") || "").toUpperCase();
+    return KIDS_PRICE_LEVELS.includes(q) ? q : "A1";
+  });
 
   // Level dipilih di halaman langkah 3 (bareng durasi & paket), baru dibawa ke URL.
   // ?level= dipakai alur tes penempatan: hasilnya (A1/A2/B1/B2) sudah tahu level
@@ -161,10 +187,12 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   function optionQuery(): string {
     const q = new URLSearchParams();
     if (programSlug === "private" || programSlug === "kids") {
-      q.set("pengajar", teacherType);
+      if (hasTeacherPick) q.set("pengajar", teacherType);
       q.set("durasi", String(duration));
       q.set("sesi", String(sessions));
     }
+    // [kids-cefr-level-v1] level kemampuan bahasa anak — sumbu kedua Kids.
+    if (programSlug === "kids") q.set("lvl", kidsLevel);
     if (programSlug === "semi-private") {
       q.set("peserta", String(classSize));
       q.set("durasi", String(duration));
@@ -174,7 +202,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
       q.set("mode", classMode);
       if (classMode === "offline" && offlineCity.trim()) q.set("kota", offlineCity.trim());
     }
-    if (programSlug === "reguler" && addAddon) q.set("addon", "1");
+    // [private-addon-ebook-recording-v1] add-on ikut di query untuk SEMUA program
+    // yang menawarkannya, bukan cuma Reguler — kalau tidak, centang di langkah 3
+    // Private hilang begitu orang menekan Back.
+    if (addAddon && supportsAddon(program || "")) q.set("addon", "1");
     const s = q.toString();
     return s ? `?${s}` : "";
   }
@@ -188,13 +219,24 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   // itu kunci pricelist & kolom bahasa di dashboard.
   const langLabel = isRegulerFlow && lang ? regulerLangName(lang) : lang;
   const langDisplay = isRegulerFlow ? langLabel : lang ? langNameId(lang) : "";
+  const nativeAvailable = isNativeAvailable(lang);
+  // [bahasa-daerah-teacher-type-v1] Bahasa daerah Nusantara pengajarnya memang
+  // orang lokal yang sekaligus penutur asli, jadi dikotomi "Lokal vs Native"
+  // tidak berlaku di sana — blok pilihannya disembunyikan dan tipe pengajar
+  // dikunci ke lokal (server juga menurunkannya, lihat create-funnel-invoice).
+  // Didefinisikan SEBELUM blok harga: harga per sesi membacanya.
+  const hasTeacherPick =
+    (program === "Kelas Private" || program === "Kelas Kids") && offersTeacherTypeChoice(lang);
+  const effTeacherType = hasTeacherPick ? teacherType : "lokal";
   const privateBase60 = getPrivateBase60(lang, selLevel || "A1");
   const privatePerSession = applyNativeMultiplier(
     Math.round((privateBase60 * duration) / 60),
-    teacherType,
+    effTeacherType,
   );
   const kidsKey = KIDS_LEVEL_KEY[selLevel];
-  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, duration, teacherType, lang) : 0;
+  const kidsPerSession = kidsKey
+    ? computeKidsPerSession(kidsKey, duration, effTeacherType, lang, kidsLevel)
+    : 0;
   const semiPrice = program === "Semi Private" ? getSemiPrivatePrice(lang, selLevel, classSize, duration) : null;
   // Pembanding "hemat X%": tarif privat 1-on-1 di bahasa, level & durasi yang
   // sama (tanpa markup native — Semi-Private memang tidak menawarkan native).
@@ -214,14 +256,16 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     : 0;
   const perSession = canOffline ? applyOfflineSurcharge(perSessionOnline, classMode) : perSessionOnline;
   const offlineReady = !isOffline || offlineCity.trim().length >= 3;
+  // [private-addon-ebook-recording-v1] Add-on modul + recording sekarang juga
+  // ditawarkan di Kelas Private, bukan cuma Reguler.
+  const canAddon = supportsAddon(program || "");
+  const addonAmount = canAddon && addAddon ? REGULER_ADDON_PRICE : 0;
   const totalAmount =
-    isSessionProg ? perSession * sessions
+    (isSessionProg ? perSession * sessions
     : program === "IELTS/TOEFL Prep" ? IELTS_PRICE
-    : program === "Kelas Reguler" ? REGULER_PRICE + (addAddon ? REGULER_ADDON_PRICE : 0)
-    : 0;
+    : program === "Kelas Reguler" ? REGULER_PRICE
+    : 0) + addonAmount;
 
-  const nativeAvailable = isNativeAvailable(lang);
-  const hasTeacherPick = program === "Kelas Private" || program === "Kelas Kids";
   const durationProg = program === "Kelas Private" || program === "Kelas Kids";
   const DURATION_OPTS = program === "Kelas Kids" ? [30, 45, 60] : [30, 45, 60, 75, 90];
 
@@ -295,8 +339,13 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           program,
           language: lang,
           level,
+          // [kids-cefr-level-v1] level kemampuan bahasa anak (A1–B2). Dikirim
+          // terpisah dari `level` karena untuk Kids `level` = kelompok usia.
+          kids_level: program === "Kelas Kids" ? kidsLevel : null,
           duration,
           teacher_type: hasTeacherPick ? teacherType : null,
+          // [private-addon-ebook-recording-v1] server menghitung ulang nominalnya.
+          addon: canAddon && addAddon,
           sessions: isSessionProg ? sessions : null,
           class_size: program === "Semi Private" ? classSize : null,
           class_mode: canOffline ? classMode : "online",
@@ -343,6 +392,23 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           <p className="mt-1 text-sm text-slate-500">
             {program === "Kelas Kids" ? "Sesuaikan dengan usia anak" : "Mulai dari mana, dan berapa lama tiap sesi?"}
           </p>
+
+          {/* [semi-private-mekanisme-grup-v1] Penjelasan mekanisme grup dipasang
+              PALING ATAS, sebelum orang menyentuh harga. Kalimatnya sama persis
+              dengan yang ada di langkah 1 (StepLang) & kartu program — salah
+              paham "Linguo yang mencarikan teman satu grup" adalah keberatan
+              paling sering di WhatsApp, jadi diulang di tiap titik keputusan. */}
+          {program === "Semi Private" && (
+            <div className="mt-5 rounded-2xl border-2 border-amber-200 bg-amber-50 p-4">
+              <p className="text-sm font-bold text-amber-900">💡 Info Semi-Private</p>
+              <p className="mt-1 text-[12px] leading-relaxed text-amber-900/90">
+                Program Semi-Private diperuntukkan bagi kamu yang <b>sudah punya anggota grup sendiri</b> —
+                teman, keluarga, atau rekan kerja. <b>Linguo tidak mengumpulkan siswa</b> dari pendaftar lain
+                untuk membentuk grup. Grup berisi {SEMI_PRIVATE_MIN}–{SEMI_PRIVATE_MAX} orang dan tiap anggota
+                mendaftar &amp; membayar porsinya masing-masing.
+              </p>
+            </div>
+          )}
 
           {/* Tipe pengajar — Private & Kids */}
           {hasTeacherPick && (
@@ -427,6 +493,37 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
               <p className="mt-3 text-xs text-slate-400">*Kelas Reguler saat ini tersedia untuk level A1</p>
             )}
           </section>
+
+          {/* [kids-cefr-level-v1] Level kemampuan bahasa anak — sumbu kedua Kids.
+              Usia TIDAK menentukan level: anak bilingual bisa saja sudah di A2/B1.
+              Tarifnya ikut level, sama seperti kelas dewasa (KIDS_PRICE_LL/YE). */}
+          {program === "Kelas Kids" && (
+            <section className="mt-6">
+              <h2 className="text-base font-bold text-slate-900">Level bahasa anak</h2>
+              <p className="mb-3 text-sm text-slate-500">
+                Kelompok usia menentukan gaya belajarnya; level ini menentukan materinya.
+                Anak yang sudah terbiasa dua bahasa boleh mulai di level yang lebih tinggi.
+              </p>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {KIDS_PRICE_LEVELS.map((lv) => (
+                  <button
+                    key={lv}
+                    onClick={() => setKidsLevel(lv)}
+                    className={`rounded-xl border-2 px-2 py-2.5 text-center transition-all ${kidsLevel === lv ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
+                  >
+                    <span className="block text-sm font-bold">{lv}</span>
+                    <span className={`block text-[10px] leading-tight ${kidsLevel === lv ? "text-white/80" : "text-slate-400"}`}>
+                      {KIDS_LEVEL_DESC[lv]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-[11px] text-slate-400">
+                Belum yakin? Pilih {KIDS_PRICE_LEVELS[0]} — pengajar akan menyesuaikan di sesi pertama,
+                dan level bisa dinaikkan tanpa biaya tambahan sebelum kelas dimulai.
+              </p>
+            </section>
+          )}
 
           {/* Mode kelas — Private & Semi Private */}
           {canOffline && (
@@ -543,6 +640,39 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </>
           )}
 
+          {/* [private-addon-ebook-recording-v1] Add-on modul + recording untuk
+              Kelas Private. Sebelumnya opsi ini cuma ada di jalur WhatsApp:
+              siswa yang daftar sendiri lewat web tidak pernah tahu fasilitasnya
+              ada, dan admin kehilangan penjualan tambahan. Nominalnya tetap
+              dihitung ulang di /api/create-funnel-invoice. */}
+          {program === "Kelas Private" && selLevel && (
+            <section className="mt-6">
+              <h2 className="text-base font-bold text-slate-900">Tambahan (opsional)</h2>
+              <p className="mb-3 text-sm text-slate-500">Bisa ditambahkan sekarang, tanpa transaksi terpisah</p>
+              <button
+                type="button"
+                onClick={() => setAddAddon((v) => !v)}
+                className={`group flex w-full items-start justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all ${addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
+              >
+                <span className="flex items-start gap-2.5">
+                  <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
+                    {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                  </span>
+                  <span>
+                    <span className="block text-sm font-bold text-slate-800">Modul (E-Book) + Recording Kelas</span>
+                    <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">
+                      Modul lengkap sesuai bahasa &amp; levelmu, plus rekaman semua sesi — akses selamanya,
+                      bisa diulang kapan saja.
+                    </span>
+                  </span>
+                </span>
+                <span className={`whitespace-nowrap text-sm font-bold ${addAddon ? "text-[#1A9E9E]" : "text-slate-400"}`}>
+                  +{fmtRp(REGULER_ADDON_PRICE)}
+                </span>
+              </button>
+            </section>
+          )}
+
           {/* Ringkasan harga */}
           {selLevel && isSessionProg && perSessionOnline > 0 && (
             <div className="mt-6 rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
@@ -562,6 +692,12 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 <span>Jumlah sesi</span>
                 <span>× {sessions}</span>
               </div>
+              {addonAmount > 0 && (
+                <div className="mt-1 flex items-center justify-between text-xs text-slate-500">
+                  <span>Modul + Recording Kelas</span>
+                  <span>+{fmtRp(addonAmount)}</span>
+                </div>
+              )}
               <div className="mt-2.5 flex items-center justify-between border-t border-[#1A9E9E]/15 pt-2.5">
                 <span className="text-sm font-semibold text-slate-700">
                   Total tagihan{program === "Semi Private" ? " (kamu)" : ""}
@@ -740,7 +876,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             {canOffline && <Row label="Mode kelas" value={isOffline ? "Offline (pengajar datang)" : "Online (Zoom)"} />}
             {isOffline && offlineCity.trim() && <Row label="Lokasi kelas" value={offlineCity.trim()} />}
             {program === "Semi Private" && <Row label="Jumlah peserta" value={`${classSize} orang`} />}
-            <Row label="Level" value={levelLabel(level || "")} />
+            <Row label={program === "Kelas Kids" ? "Kelompok usia" : "Level"} value={levelLabel(level || "")} />
+            {program === "Kelas Kids" && (
+              <Row label="Level bahasa" value={`${kidsLevel} — ${KIDS_LEVEL_DESC[kidsLevel] ?? ""}`} />
+            )}
             {isSessionProg && <Row label="Durasi / sesi" value={`${duration} menit`} />}
             {isSessionProg && <Row label="Jumlah sesi" value={`${sessions} sesi`} />}
 
@@ -778,19 +917,42 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                     <b>Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota
                     belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
                   </p>
+                  {/* [reguler-pengalihan-saldo-v1] Kalimat lama berbunyi "Namun
+                      saldo bisa dialihkan ke Kelas Private atau produk lain" tanpa
+                      syarat apa pun — padahal pengalihan HANYA berlaku selama
+                      kelasnya belum dimulai. Begitu batch berjalan, saldo tidak
+                      bisa dipindah ke mana pun. Dipisah jadi dua kondisi supaya
+                      siswa tidak merasa dijanjikan sesuatu yang tak ada. */}
                   <p className="text-[11px] leading-relaxed text-amber-900">
-                    <b>Kebijakan pembayaran:</b> Setelah kelas berjalan, pembayaran tidak dapat di-refund. Namun saldo bisa
-                    dialihkan ke Kelas Private atau produk lain.
+                    <b>Kebijakan pembayaran:</b>
                   </p>
+                  <ul className="ml-3.5 list-disc space-y-1 text-[11px] leading-relaxed text-amber-900">
+                    <li>
+                      <b>Kelas belum dimulai:</b> saldo dapat dialihkan ke Kelas Private atau program lain
+                      sesuai kebijakan yang berlaku, dengan mengajukan perubahan program ke tim kami.
+                    </li>
+                    <li>
+                      <b>Kelas sudah berjalan:</b> pembayaran tidak dapat di-refund dan saldo{" "}
+                      <b>tidak dapat dialihkan</b> ke Kelas Private maupun produk/program lain.
+                    </li>
+                  </ul>
                 </div>
               </>
             ) : (
-              <div className="mt-2.5 flex items-center justify-between border-t-2 border-slate-200 pt-2.5">
-                <span className="text-sm font-bold text-slate-800">
-                  Total tagihan{program === "Semi Private" ? " (kamu)" : ""}
-                </span>
-                <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
-              </div>
+              <>
+                {addonAmount > 0 && (
+                  <div className="mt-2.5 flex items-center justify-between border-t border-slate-200 pt-2.5 text-xs text-slate-500">
+                    <span>Modul (E-Book) + Recording Kelas</span>
+                    <span>+{fmtRp(addonAmount)}</span>
+                  </div>
+                )}
+                <div className="mt-2.5 flex items-center justify-between border-t-2 border-slate-200 pt-2.5">
+                  <span className="text-sm font-bold text-slate-800">
+                    Total tagihan{program === "Semi Private" ? " (kamu)" : ""}
+                  </span>
+                  <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+                </div>
+              </>
             )}
           </div>
 

@@ -5,6 +5,17 @@ import Link from "next/link";
 import { Check, FileText, Infinity as InfinityIcon, PenLine, RefreshCw, Star, Lock, Zap, Globe, X, ArrowLeft } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
+// [ebook-harga-katalog-sync-v1] harga paket & daftar paket dipusatkan — halaman
+// ini dan /api/create-invoice membaca tabel yang sama.
+import {
+  EBOOK_PAKET,
+  EBOOK_PRICES,
+  EBOOK_HARGA_TERENDAH,
+  EBOOK_EDITION_LABEL,
+  hargaEbook,
+  type EbookEditionId,
+  type EbookPaketId,
+} from "@/lib/ebookPricing";
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
@@ -30,28 +41,19 @@ const LANGS: { name: string; code: string }[] = [
 
 const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
 
-type EditionId = "id" | "en";
-const EDITIONS: { id: EditionId; label: string; hint: number }[] = [
-  { id: "id", label: "Bahasa Indonesia", hint: 99000 },
-  { id: "en", label: "English", hint: 79000 },
-];
+type EditionId = EbookEditionId;
+const EDITIONS: { id: EditionId; label: string; hint: number }[] = (
+  ["id", "en"] as EditionId[]
+).map((id) => ({ id, label: EBOOK_EDITION_LABEL[id], hint: hargaEbook(id, "satuan") }));
 
-type Paket = { id: string; label: string; qty: number; hemat: number };
-const PAKETS: Paket[] = [
-  { id: "satuan",  label: "Satuan",         qty: 1,  hemat: 0 },
-  { id: "hemat",   label: "Bundle Hemat",   qty: 3,  hemat: 20 },
-  { id: "populer", label: "Bundle Populer", qty: 5,  hemat: 29 },
-  { id: "all",     label: "All-Access",     qty: 20, hemat: 62 },
-];
+type Paket = (typeof EBOOK_PAKET)[number];
+const PAKETS: Paket[] = EBOOK_PAKET;
 
-const PRICES: Record<EditionId, Record<string, number>> = {
-  id: { satuan: 99000, hemat: 239000, populer: 349000, all: 749000 },
-  en: { satuan: 79000, hemat: 189000, populer: 279000, all: 599000 },
-};
+const PRICES = EBOOK_PRICES;
 
 export default function EbookPage() {
   const [edition, setEdition] = useState<EditionId>("id");
-  const [paketId, setPaketId] = useState("satuan");
+  const [paketId, setPaketId] = useState<EbookPaketId>("satuan");
   const [picked, setPicked] = useState<string[]>([]);
 
   // ── checkout Xendit ──
@@ -75,7 +77,7 @@ export default function EbookPage() {
   const remaining = quota - picked.length;
   const langLabel = isAll ? "Semua 20 bahasa" : selected.join(", ");
 
-  const choosePaket = (id: string) => {
+  const choosePaket = (id: EbookPaketId) => {
     const p = PAKETS.find((x) => x.id === id) ?? PAKETS[0];
     setPaketId(id);
     setPicked((prev) => prev.slice(0, p.qty));
@@ -157,7 +159,7 @@ export default function EbookPage() {
             E-Book Belajar Bahasa
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-teal-500">
-              Mulai dari Rp 79.000
+              Mulai dari {formatRp(EBOOK_HARGA_TERENDAH)}
             </span>
           </h1>
           <p className="text-lg text-slate-500 max-w-xl mx-auto">

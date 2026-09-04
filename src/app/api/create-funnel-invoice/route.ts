@@ -26,6 +26,11 @@ import {
   applyOfflineSurcharge,
   normalizeClassMode,
   supportsOffline,
+  offersTeacherTypeChoice,
+  supportsAddon,
+  ADDON_EBOOK_RECORDING_PRICE,
+  ADDON_EBOOK_RECORDING_LABEL,
+  KIDS_PRICE_LEVELS,
 } from "@/lib/trial-pricing";
 import {
   getTestPrepProduct,
@@ -65,8 +70,9 @@ function computeFunnelAmount(input: {
   testPrepFormat: string;
   classMode: string;
   classCity: string;
+  kidsLevel: string;
 }): PriceResult | null {
-  const { program, language, level, duration, teacherType, sessions, classSize, testPrepId, testPrepFormat } = input;
+  const { program, language, level, duration, teacherType, sessions, classSize, testPrepId, testPrepFormat, kidsLevel } = input;
   // offline-private-class-v1 — offline (pengajar datang) cuma untuk Private &
   // Semi Private; program lain dipaksa online biar tak ada tagihan +50rb yang
   // tak pernah bisa dijalankan.
@@ -138,13 +144,17 @@ function computeFunnelAmount(input: {
     // native-pricing-v1 — Kids ikut aturan yang sama dengan dewasa: native = 2× lokal.
     // kids-lang-pricing-v1 — tarif dasar ikut kategori bahasa (Belanda ≠ Inggris),
     // jadi `language` WAJIB ikut dihitung; tanpa itu semua bahasa ketagih tarif kat. C.
-    const perSession = computeKidsPerSession(key, duration, teacherType, language);
+    // kids-cefr-level-v1 — level kemampuan bahasa anak jadi parameter harga juga.
+    // Nilai di luar daftar dianggap A1 (bukan ditolak): itu perilaku lama, dan
+    // tarif A1 adalah yang termurah, jadi tidak ada celah menekan tagihan.
+    const lvl = KIDS_PRICE_LEVELS.includes(kidsLevel) ? kidsLevel : "A1";
+    const perSession = computeKidsPerSession(key, duration, teacherType, language, lvl);
     if (!perSession) return null;
     return {
       amount: perSession * sessions,
       perSession,
       description:
-        `Kelas Kids ${language} — ${level} — ${sessions} sesi @${duration} menit` +
+        `Kelas Kids ${language} — ${level} — Level ${lvl} — ${sessions} sesi @${duration} menit` +
         (teacherType === "native" ? " (Pengajar Native)" : ""),
     };
   }
@@ -197,6 +207,8 @@ export async function POST(req: NextRequest) {
       test_prep_format,
       class_mode,
       class_city,
+      kids_level,
+      addon,
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
@@ -231,22 +243,32 @@ export async function POST(req: NextRequest) {
     }
 
     // ── 2. Hitung harga SERVER-SIDE (anti-tamper) ──────────────────────────
+    // native-pricing-v1 — "native" cuma dihormati untuk bahasa yang memang punya
+    // pengajar native; selain itu turunkan ke lokal supaya tidak ada tagihan 2×
+    // untuk kelas yang tetap diajar pengajar lokal.
+    // bahasa-daerah-teacher-type-v1 — bahasa daerah Nusantara tidak menawarkan
+    // pilihan tipe pengajar sama sekali (pengajarnya penutur asli lokal), jadi
+    // apa pun yang dikirim client dikunci ke "lokal" di sini juga.
+    const teacherType =
+      teacher_type === "native" &&
+      isNativeAvailable(language) &&
+      offersTeacherTypeChoice(language)
+        ? "native"
+        : "lokal";
+
     const priced = computeFunnelAmount({
       program,
       language,
       level: level || "",
       duration: Number(duration) || 0,
-      // native-pricing-v1 — "native" cuma dihormati untuk bahasa yang memang
-      // punya pengajar native; selain itu turunkan ke lokal supaya tidak ada
-      // tagihan 2× untuk kelas yang tetap diajar pengajar lokal.
-      teacherType:
-        teacher_type === "native" && isNativeAvailable(language) ? "native" : "lokal",
+      teacherType,
       sessions: Number(sessions) || 0,
       classSize: Number(class_size) || 0,
       testPrepId: typeof test_prep_id === "string" ? test_prep_id : "",
       testPrepFormat: typeof test_prep_format === "string" ? test_prep_format : "",
       classMode,
       classCity,
+      kidsLevel: typeof kids_level === "string" ? kids_level.toUpperCase() : "",
     });
     if (!priced || priced.amount <= 0) {
       return NextResponse.json(
@@ -254,7 +276,13 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    const { amount, description } = priced;
+
+    // [private-addon-ebook-recording-v1] Add-on modul + recording. Nominalnya
+    // TIDAK pernah diambil dari client — cuma "mau / tidak mau" yang dipercaya.
+    const wantsAddon = addon === true && supportsAddon(program);
+    const addonAmount = wantsAddon ? ADDON_EBOOK_RECORDING_PRICE : 0;
+    const amount = priced.amount + addonAmount;
+    const description = priced.description + (wantsAddon ? ` + ${ADDON_EBOOK_RECORDING_LABEL}` : "");
 
     // [funnel-etp-sessions-v1] Paket ETP itu tetap: 16 sesi @90 menit (harga
     // paket, bukan per sesi). Form funnel tidak menanyakannya, jadi tanpa ini
@@ -314,7 +342,10 @@ export async function POST(req: NextRequest) {
         // funnel-sessions-sync-v1 — simpan jumlah sesi + tipe pengajar biar webhook bisa isi
         // registrations.sessions_total/duration/price_per_session otomatis (bukan null lagi).
         sessions: leadSessions,
-        teacher_type: teacher_type === "native" ? "native" : teacher_type === "lokal" ? "lokal" : null,
+        // Simpan tipe pengajar yang SUDAH dinormalisasi server (bukan yang dikirim
+        // client) — kalau tidak, registrasi bahasa daerah bisa tercatat "native"
+        // padahal ditagih & diajar sebagai lokal.
+        teacher_type: program === "Kelas Private" || program === "Kelas Kids" ? teacherType : null,
         // offline-private-class-v1 — dibawa webhook ke registrations biar admin
         // langsung lihat mana kelas offline & di kota mana.
         class_mode: classMode,
@@ -325,6 +356,15 @@ export async function POST(req: NextRequest) {
         amount,
         affiliate_ref_code: affiliateRefCode,
         affiliate_id: affiliateId,
+        // [private-addon-ebook-recording-v1] kolom add-on cuma ditulis kalau
+        // memang opt-in — mirror /api/create-invoice (jalur Kelas Reguler).
+        ...(wantsAddon
+          ? {
+              addon_ebook_recording: true,
+              addon_amount: addonAmount,
+              addon_type: program === "Kelas Private" ? "private_bundle" : "reguler_bundle",
+            }
+          : {}),
       }),
     });
     if (!leadRes.ok) {

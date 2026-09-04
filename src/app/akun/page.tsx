@@ -9,7 +9,10 @@ import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visu
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { REGULER_LANGS } from "@/lib/programLanguages"; // [reguler-lang-gate-server-v1] bahasa yang punya batch reguler — satu sumber dengan funnel landing
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
-import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
+import {
+  batchOccurrencesWithOverrides,
+  type BatchScheduleOverride,
+} from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
 import { simpanDaftarLevel } from "@/lib/kelasCache"; // [kelas-level-switcher-v3] titip daftar level buat strip di halaman detail
 import { petaNomorSesi } from "@/lib/nomorSesi"; // [sesi-nomor-sinkron-v1] nomor sesi nyambung dengan sessions_used
 import { tanpaSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1] baris presensi pembukuan disembunyikan
@@ -3128,6 +3131,22 @@ export default function AkunPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [student?.registrations]);
 
+  /* [jadwal-batch-override-v1] Penyesuaian per pertemuan kelas grup (libur
+     nasional, pengajar berhalangan) yang dibuat admin dari kalender Overview.
+     Tanpa ini kalender siswa tetap menampilkan pertemuan yang sudah diliburkan
+     — jadwal di dashboard siswa dan yang diumumkan admin jadi berbeda. */
+  const [batchOverrides, setBatchOverrides] = useState<BatchScheduleOverride[]>([]);
+  useEffect(() => {
+    let batal = false;
+    (async () => {
+      const { data } = await supabase
+        .from("batch_schedule_overrides")
+        .select("batch_kind,batch_id,occurrence_date,action,new_date,new_time");
+      if (!batal && data) setBatchOverrides(data as BatchScheduleOverride[]);
+    })();
+    return () => { batal = true; };
+  }, []);
+
   /* [lingbook-lebur-pustaka-v1] Lingbook masih development — gerbangnya email
      allowlist yang sama dengan tab "Interaktif" di Perpustakaan. Dipakai blok
      "Lanjutkan Belajar" biar tak menawarkan bab ke siswa yang tak bisa membukanya. */
@@ -4812,10 +4831,11 @@ export default function AkunPage() {
                     : null;
                   if (!src || src.ended) return [];
                   const tDir = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
-                  return batchOccurrences({
+                  return batchOccurrencesWithOverrides({
                     days: src.days, time: src.time,
                     startDate: src.startDate, endDate: src.endDate, totalSessions: src.totalSessions,
-                  }).map((d, i) => ({
+                  }, batchOverrides.filter((o) => o.batch_kind === src.kind && o.batch_id === src.id))
+                  .map((d, i) => ({
                     id: `batch:${src.kind}:${src.id}:${i}`,
                     scheduledAt: d.toISOString(),
                     durationMinutes: Number(src.duration) || 90,

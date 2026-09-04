@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { ebookSkuPrices } from "@/lib/ebookPricing";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { promoAmountFor } from "@/lib/promoMerdeka";
@@ -25,14 +26,10 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
   "simulasi-toefl": { amount: 79000, description: "Simulasi TOEFL iBT — penilaian AI (akses lifetime)" },
   "simulasi-ielts": { amount: 79000, description: "Simulasi IELTS — penilaian AI (akses lifetime)" },
   // ── ebook-xendit-v3: SKU bundle e-book per-edisi (id=Bahasa Indonesia, en=English) ──
-  "ebook-satuan-id":  { amount: 99000,  description: "E-Book Satuan - 1 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-hemat-id":   { amount: 239000, description: "E-Book Bundle Hemat - 3 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-populer-id": { amount: 349000, description: "E-Book Bundle Populer - 5 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-all-id":     { amount: 749000, description: "E-Book All-Access - 20 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-satuan-en":  { amount: 79000,  description: "E-Book Satuan - 1 bahasa (Edisi English)" },
-  "ebook-hemat-en":   { amount: 189000, description: "E-Book Bundle Hemat - 3 bahasa (Edisi English)" },
-  "ebook-populer-en": { amount: 279000, description: "E-Book Bundle Populer - 5 bahasa (Edisi English)" },
-  "ebook-all-en":     { amount: 599000, description: "E-Book All-Access - 20 bahasa (Edisi English)" },
+  // [ebook-harga-katalog-sync-v1] angkanya TIDAK lagi ditulis di sini — halaman
+  // /produk/ebook dan route ini membaca tabel yang sama (src/lib/ebookPricing),
+  // supaya harga di layar tak bisa lagi berbeda dari harga yang ditagih.
+  ...ebookSkuPrices(),
 };
 
 // ── lms-subscription-v1 ──────────────────────────────────────────────────

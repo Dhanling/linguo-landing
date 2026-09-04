@@ -54,14 +54,17 @@ function programMeta(slug: ProgramSlug, langEn: string) {
       const perDua = getSemiPrivatePrice(langEn, "A1", 2, 60).perStudent;
       const perSepuluh = getSemiPrivatePrice(langEn, "A1", 10, 60).perStudent;
       return {
-        desc: "Grup kecil 2–10 orang, lebih hemat per orang",
+        // [semi-private-mekanisme-grup-v1] Deskripsi kartu menyebut siapa yang
+        // mengumpulkan grupnya — supaya salah paham "Linguo yang carikan teman"
+        // sudah terbantah di kartu, bukan cuma di halaman berikutnya.
+        desc: "Grup kecil 2–10 orang yang kamu kumpulkan sendiri — lebih hemat per orang",
         price:
           perDua > 0 ? "Mulai " + fmtRp(perDua) + "/orang/sesi" : "Patungan grup — hemat per orang",
         highlight: false,
         note:
           perSepuluh > 0
-            ? `*Makin ramai makin hemat — sampai ${fmtRp(perSepuluh)}/orang di grup 10`
-            : "",
+            ? `*Anggota grup dicari sendiri (teman/keluarga/rekan kerja). Makin ramai makin hemat — sampai ${fmtRp(perSepuluh)}/orang di grup 10`
+            : "*Anggota grup dicari sendiri (teman/keluarga/rekan kerja)",
       };
     }
     case "reguler":

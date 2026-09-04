@@ -426,3 +426,42 @@ export function supportsOffline(program: string): boolean {
 export function formatRupiah(n: number): string {
   return "Rp " + Math.round(n).toLocaleString("id-ID");
 }
+
+// =============================================================================
+// linguo-patch:bahasa-daerah-teacher-type-v1
+// Bahasa daerah Nusantara (kategori harga D) pengajarnya SELALU orang lokal yang
+// sekaligus penutur asli — tidak ada dikotomi "lokal vs native" seperti bahasa
+// asing. Menawarkan pilihan "Tipe pengajar" di sana cuma bikin bingung (dan
+// pilihan Native-nya toh mati, karena NATIVE_AVAILABLE_LANGS tidak memuatnya).
+// Dipakai funnel /daftar untuk menyembunyikan blok pilihannya.
+// =============================================================================
+
+/** Bahasa daerah Nusantara (Jawa, Sunda, Betawi, …) — kategori harga D. */
+export function isBahasaDaerah(language: string): boolean {
+  return getLanguageCategory(language) === "D";
+}
+
+/**
+ * Bahasa ini menawarkan pilihan tipe pengajar? Bahasa daerah TIDAK (pengajarnya
+ * penutur asli lokal), sisanya iya — meski opsi Native-nya mungkin "coming soon".
+ */
+export function offersTeacherTypeChoice(language: string): boolean {
+  return !isBahasaDaerah(language);
+}
+
+// =============================================================================
+// linguo-patch:private-addon-ebook-recording-v1
+// Add-on "E-Book + Recording Kelas" dulu cuma ditawarkan di Kelas Reguler
+// (/api/create-invoice, ADDON_PRICE hardcode di sana). Siswa Private yang daftar
+// sendiri lewat web karenanya tak pernah tahu fasilitas itu ada — padahal admin
+// selalu menawarkannya di jalur WhatsApp. Angka & label dipusatkan di sini biar
+// funnel, /api/create-invoice dan /api/create-funnel-invoice tak bisa berbeda.
+// =============================================================================
+export const ADDON_EBOOK_RECORDING_PRICE = 150000;
+export const ADDON_EBOOK_RECORDING_LABEL = "Bundle E-Book + Recording Kelas (akses selamanya)";
+
+/** Program yang boleh menambah add-on e-book + recording saat checkout. */
+export const ADDON_PROGRAMS = ["Kelas Reguler", "Kelas Private"];
+export function supportsAddon(program: string): boolean {
+  return ADDON_PROGRAMS.includes(program);
+}

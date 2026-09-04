@@ -100,3 +100,95 @@ export function batchOccurrences(p: BatchPattern): Date[] {
   }
   return out;
 }
+
+
+// =============================================================================
+// [jadwal-batch-override-v1]
+// Pola jadwal batch itu seragam; kenyataannya tidak. Ada hari raya, tanggal
+// merah, pengajar berhalangan. Sebelum ini satu-satunya cara menyesuaikan
+// adalah mengubah pola batch-nya — yang menggeser SELURUH sisa pertemuan, dan
+// pola itu juga dipakai batch lain yang menyalin template yang sama.
+//
+// `batch_schedule_overrides` menyimpan penyesuaian PER PERTEMUAN:
+//   action 'skip' → pertemuan tanggal itu ditiadakan (libur)
+//   action 'move' → dipindah ke new_date (+ new_time kalau jamnya ikut ganti)
+//
+// Penting: menghilangkan satu pertemuan TIDAK boleh mengurangi jumlah sesi yang
+// dibayar siswa. Makanya deret pertemuan dihitung dengan kuota LEBIH DULU
+// (batchOccurrences dipanggil dengan totalSessions + jumlah yang di-skip), baru
+// yang di-skip dibuang — hasil akhirnya tetap sebanyak sesi yang dijanjikan,
+// cuma mundur ke tanggal berikutnya.
+// =============================================================================
+
+export type BatchScheduleOverride = {
+  batch_kind?: string | null;
+  batch_id?: string | null;
+  occurrence_date: string;          // "YYYY-MM-DD" — tanggal pertemuan ASLI
+  action: "skip" | "move" | string;
+  new_date?: string | null;
+  new_time?: string | null;         // "HH:MM" / "HH:MM:SS"
+};
+
+/** "YYYY-MM-DD" dari sebuah Date, di zona waktu lokal (bukan UTC). */
+export function occurrenceKey(d: Date): string {
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/**
+ * Terapkan penyesuaian ke deret pertemuan. Hasilnya tetap urut menaik.
+ * Override untuk tanggal yang tidak ada di deret diabaikan diam-diam — itu sisa
+ * dari pola batch yang sudah berubah, bukan kesalahan yang perlu diteriakkan.
+ */
+export function applyScheduleOverrides(
+  occurrences: Date[],
+  overrides: BatchScheduleOverride[] | null | undefined,
+): Date[] {
+  if (!overrides || overrides.length === 0) return occurrences;
+  const byDate = new Map<string, BatchScheduleOverride>();
+  for (const o of overrides) {
+    if (o?.occurrence_date) byDate.set(String(o.occurrence_date).slice(0, 10), o);
+  }
+  if (byDate.size === 0) return occurrences;
+
+  const out: Date[] = [];
+  for (const d of occurrences) {
+    const o = byDate.get(occurrenceKey(d));
+    if (!o) { out.push(d); continue; }
+    if (o.action === "skip") continue;
+    if (o.action === "move" && o.new_date) {
+      const t = parseBatchTime(o.new_time) ?? [d.getHours(), d.getMinutes()];
+      const moved = new Date(`${String(o.new_date).slice(0, 10)}T00:00:00`);
+      if (isNaN(moved.getTime())) { out.push(d); continue; }
+      moved.setHours(t[0], t[1], 0, 0);
+      out.push(moved);
+      continue;
+    }
+    out.push(d);
+  }
+  return out.sort((a, b) => a.getTime() - b.getTime());
+}
+
+/**
+ * Deret pertemuan yang SUDAH memperhitungkan penyesuaian. Ini yang seharusnya
+ * dipakai kalender mana pun — `batchOccurrences()` mentah cuma menggambarkan
+ * polanya, bukan jadwal sebenarnya.
+ */
+export function batchOccurrencesWithOverrides(
+  p: BatchPattern,
+  overrides: BatchScheduleOverride[] | null | undefined,
+): Date[] {
+  const skipped = (overrides ?? []).filter((o) => o?.action === "skip").length;
+  // Meliburkan satu pertemuan berarti pertemuan terakhir MUNDUR, bukan hilang.
+  // `endDate` batch tidak ikut dimundurkan otomatis, jadi selama masih ada
+  // kuota sesi, batas tanggal itu dilepas — kalau tidak, sesi penggantinya
+  // terpotong diam-diam dan siswa kehilangan pertemuan yang sudah dibayar.
+  // Batch tanpa `totalSessions` tidak punya kuota untuk dijaga, jadi
+  // `endDate`-nya tetap dihormati.
+  const kuota = Number(p.totalSessions);
+  const pola: BatchPattern =
+    skipped > 0 && Number.isFinite(kuota) && kuota > 0
+      ? { ...p, totalSessions: kuota + skipped, endDate: null }
+      : p;
+  return applyScheduleOverrides(batchOccurrences(pola), overrides);
+}

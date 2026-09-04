@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { REGULER_LANGS } from "@/lib/programLanguages";
+import { SEMI_PRIVATE_MIN, SEMI_PRIVATE_MAX } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
   ALL_FUNNEL_LANGS,
@@ -31,6 +32,11 @@ export default function StepLang() {
 
   // Masuk lewat menu "Kelas Reguler" → cuma bahasa yang punya batch reguler.
   const regulerOnly = hints.program === "reguler";
+  // [semi-private-mekanisme-grup-v1] Masuk lewat menu "Semi Private" → mekanisme
+  // pembentukan grup dijelaskan SEBELUM bahasa dipilih. Banyak calon siswa mengira
+  // Linguo yang mengumpulkan beberapa pendaftar jadi satu grup kecil; kalau salah
+  // pahamnya baru ketahuan di percakapan WhatsApp setelah bayar, itu sudah telat.
+  const semiPrivateEntry = hints.program === "semi-private";
 
   const pool = useMemo(() => {
     if (regulerOnly) return REGULER_LANGS;
@@ -60,8 +66,29 @@ export default function StepLang() {
       <p className="mt-1 text-sm text-slate-500">
         {regulerOnly
           ? "Bahasa yang punya jadwal Kelas Reguler"
+          : semiPrivateEntry
+          ? "Pilih bahasa untuk kelas Semi-Private grup kecilmu."
           : "Pilih bahasa yang kamu minati — 60+ bahasa, pengajar bersertifikat, kelas mulai dari Rp 90.000/sesi."}
       </p>
+
+      {semiPrivateEntry && (
+        <div className="mt-4 rounded-2xl border-2 border-amber-200 bg-amber-50 p-4">
+          <p className="text-sm font-bold text-amber-900">💡 Info Semi-Private</p>
+          <p className="mt-1 text-[12px] leading-relaxed text-amber-900/90">
+            Program Semi-Private diperuntukkan bagi kamu yang <b>sudah memiliki anggota grup sendiri</b>,
+            seperti teman, keluarga, atau rekan kerja yang ingin belajar bersama.{" "}
+            <b>Linguo tidak mengumpulkan siswa</b> dari pendaftar lain untuk membentuk grup.
+          </p>
+          <p className="mt-2 text-[12px] leading-relaxed text-amber-900/90">
+            Satu grup berisi <b>{SEMI_PRIVATE_MIN}–{SEMI_PRIVATE_MAX} orang</b>, dan tiap anggota mendaftar
+            serta membayar porsinya masing-masing lewat halaman ini. Belum punya teman belajar?{" "}
+            <Link href="/daftar?program=private" className="font-semibold underline">
+              Kelas Private 1-on-1
+            </Link>{" "}
+            mungkin lebih cocok.
+          </p>
+        </div>
+      )}
 
       <div className="relative mt-5">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />

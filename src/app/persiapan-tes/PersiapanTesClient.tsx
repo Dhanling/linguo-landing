@@ -13,6 +13,8 @@ import { RectFlag } from "@/components/RectFlag";
 import {
   TEST_PREP_PRODUCTS, quoteTestPrep, formatRupiah, SESSION_MINUTES,
   SEMI_SESSIONS, PRIVATE_SESSION_OPTS, DEFAULT_PRIVATE_SESSIONS,
+  SEMI_GROUP_MIN, SEMI_GROUP_MAX, SEMI_GROUP_OPEN_AT,
+  privatePerSessionFor, semiPriceFor, semiSavingPct,
   type TestPrepProduct, type TestPrepFormat,
 } from "@/lib/testPrep";
 
@@ -85,7 +87,12 @@ export default function PersiapanTesClient() {
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400">Mulai dari</p>
                     <p className="text-xl font-extrabold text-slate-900">{formatRupiah(p.semiPrice)}</p>
-                    <p className="text-[11px] text-slate-400">/orang · {SEMI_SESSIONS} sesi semi-private</p>
+                    {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & format
+                        semi-private. Tarifnya naik untuk level yang lebih tinggi — disebut
+                        di sini supaya angka di kartu tak terbaca sebagai harga semua level. */}
+                    <p className="text-[11px] text-slate-400">
+                      /orang · {SEMI_SESSIONS} sesi semi-private · level {p.levels[0]?.label}
+                    </p>
                   </div>
                   <span className="rounded-2xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110" style={{ background: p.accent }}>
                     Daftar
@@ -104,7 +111,7 @@ export default function PersiapanTesClient() {
               <p className="font-bold text-slate-900">Semi-Private (grup kecil)</p>
             </div>
             <ul className="space-y-1.5 text-sm text-slate-600">
-              {["Grup 3–6 orang, harga per orang lebih hemat", "Ada partner latihan speaking & writing", "Paket 12 sesi @90 menit, kurikulum terstruktur", "Cukup 3 orang untuk buka kelas"].map((f) => (
+              {[`Grup ${SEMI_GROUP_MIN}–${SEMI_GROUP_MAX} orang, harga per orang lebih hemat`, "Ada partner latihan speaking & writing", `Paket ${SEMI_SESSIONS} sesi @${SESSION_MINUTES} menit, kurikulum terstruktur`, `Cukup ${SEMI_GROUP_OPEN_AT} orang untuk buka kelas`].map((f) => (
                 <li key={f} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{f}</li>
               ))}
             </ul>
@@ -194,7 +201,7 @@ function CheckoutModal({ product, onClose }: { product: TestPrepProduct; onClose
             <p className="mb-2 text-xs font-semibold text-slate-500">Pilih format kelas</p>
             <div className="grid grid-cols-2 gap-2">
               {([
-                { k: "semi", icon: Users, label: "Semi-Private", sub: "Grup kecil, hemat" },
+                { k: "semi", icon: Users, label: "Semi-Private", sub: `Grup ${SEMI_GROUP_MIN}–${SEMI_GROUP_MAX} orang` },
                 { k: "private", icon: User, label: "Private 1-on-1", sub: "Fokus & fleksibel" },
               ] as const).map((f) => {
                 const Icon = f.icon; const on = format === f.k;
@@ -210,6 +217,36 @@ function CheckoutModal({ product, onClose }: { product: TestPrepProduct; onClose
             </div>
           </div>
 
+          {/* [test-prep-semi-group-info-v1] Mekanisme semi-private, DI DALAM modal.
+              Sebelum ini penjelasannya cuma ada di bagian perbandingan format jauh
+              di atas halaman; orang yang langsung mengklik "Daftar" dari kartu
+              produk cuma melihat "harga per orang" + total, tanpa pernah tahu
+              per orang dari berapa orang, atau siapa yang mengumpulkan grupnya. */}
+          {format === "semi" && (
+            <div className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4">
+              <p className="mb-1.5 flex items-center gap-1.5 text-sm font-bold text-teal-800">
+                <Users className="h-4 w-4" /> Cara kerja kelas Semi-Private
+              </p>
+              <ul className="space-y-1.5 text-[12px] leading-relaxed text-slate-700">
+                <li className="flex gap-2">
+                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-600" />
+                  Kapasitas <b>{SEMI_GROUP_MIN}–{SEMI_GROUP_MAX} orang</b> per grup. Kelas dibuka setelah
+                  minimal <b>{SEMI_GROUP_OPEN_AT} orang</b> terkumpul.
+                </li>
+                <li className="flex gap-2">
+                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-600" />
+                  Harga yang tampil di bawah adalah <b>harga per orang</b>, bukan harga satu grup.
+                  Tiap anggota mendaftar &amp; membayar porsinya masing-masing lewat halaman ini.
+                </li>
+                <li className="flex gap-2">
+                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-600" />
+                  Anggota grup <b>kamu kumpulkan sendiri</b> — teman, keluarga, atau rekan kerja.
+                  Linguo tidak menggabungkan pendaftar dari luar jadi satu grup.
+                </li>
+              </ul>
+            </div>
+          )}
+
           {/* Level */}
           <div>
             <p className="mb-2 text-xs font-semibold text-slate-500">Target level ujian</p>
@@ -224,6 +261,16 @@ function CheckoutModal({ product, onClose }: { product: TestPrepProduct; onClose
                 );
               })}
             </div>
+            {/* [test-prep-level-pricing-v1] Tarif naik per level — dinyatakan
+                terang-terangan supaya harga yang berubah saat level diklik tidak
+                terlihat seperti kesalahan. */}
+            <p className="mt-2 text-[11px] leading-relaxed text-slate-400">
+              Tarif menyesuaikan level ujian:{" "}
+              {format === "semi"
+                ? `${formatRupiah(semiPriceFor(product, product.levels[0].id))} (${product.levels[0].label}) – ${formatRupiah(semiPriceFor(product, product.levels[product.levels.length - 1].id))} (${product.levels[product.levels.length - 1].label}) per orang`
+                : `${formatRupiah(privatePerSessionFor(product, product.levels[0].id))} (${product.levels[0].label}) – ${formatRupiah(privatePerSessionFor(product, product.levels[product.levels.length - 1].id))} (${product.levels[product.levels.length - 1].label}) per sesi`}
+              .
+            </p>
           </div>
 
           {/* Jumlah sesi (private) */}
@@ -248,12 +295,27 @@ function CheckoutModal({ product, onClose }: { product: TestPrepProduct; onClose
           <div className="rounded-2xl bg-slate-50 p-4">
             <div className="flex items-center gap-1.5 text-xs text-slate-500">
               <Clock className="h-3.5 w-3.5" /> {quote.sessions} sesi @{SESSION_MINUTES} menit
-              {format === "semi" && <span>· harga per orang</span>}
+              {format === "semi" && <span>· grup {SEMI_GROUP_MIN}–{SEMI_GROUP_MAX} orang</span>}
             </div>
             <div className="mt-1 flex items-baseline gap-2">
               <span className="text-2xl font-extrabold text-slate-900">{formatRupiah(quote.amount)}</span>
-              {format === "private" && <span className="text-xs text-slate-400">({formatRupiah(quote.perSession)}/sesi)</span>}
+              <span className="text-xs text-slate-400">
+                ({formatRupiah(quote.perSession)}/sesi{format === "semi" ? " · per orang" : ""})
+              </span>
             </div>
+            {format === "semi" && (
+              <>
+                <p className="mt-1 text-[11px] text-slate-500">
+                  Ini tagihan <b>satu orang</b>. Satu grup {SEMI_GROUP_MIN} orang mengumpulkan{" "}
+                  {formatRupiah(quote.amount * SEMI_GROUP_MIN)} — dibayar masing-masing, bukan sekaligus.
+                </p>
+                {semiSavingPct(product, level) > 0 && (
+                  <p className="mt-1 text-[11px] font-semibold text-teal-600">
+                    Hemat {semiSavingPct(product, level)}% per orang dibanding Private 1-on-1 dengan jumlah sesi yang sama.
+                  </p>
+                )}
+              </>
+            )}
           </div>
 
           {/* Identitas */}
