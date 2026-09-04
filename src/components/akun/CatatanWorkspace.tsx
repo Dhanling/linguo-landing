@@ -308,7 +308,7 @@ export default function CatatanWorkspace({
         {/* ── Kolom kiri: daftar ── */}
         <div className={`${mobileEditor ? 'hidden lg:block' : ''} rounded-2xl border border-gray-200 bg-white p-3`}>
           <div className="mb-2 flex gap-1 rounded-xl bg-gray-100 p-1">
-            {([['catatan', t('Catatan'), NotebookPen], ['tugas', t('Tugas & PR'), ListTodo]] as const).map(([k, label, Ikon]) => (
+            {([['catatan', t('Semua catatan'), NotebookPen], ['tugas', t('Tugas & PR'), ListTodo]] as const).map(([k, label, Ikon]) => (
               <button
                 key={k}
                 onClick={() => setSisi(k as any)}
