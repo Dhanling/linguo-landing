@@ -17,6 +17,7 @@ import {
   ShoppingCart,
   Sparkles,
   Star,
+  Trash2,
   X,
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase-client';
@@ -90,11 +91,10 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   const [dipilih, setDipilih] = useState<string[]>([]);
   const [durasiIdx, setDurasiIdx] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
-  // [elearning-beli-satu-halaman-v1] Klik kartu tidak lagi pindah ke halaman
-  // produk: bahasa yang diklik masuk ke sini dan modal checkout langsung terbuka
-  // (pilih durasi → data pembeli → Xendit). Keranjang multi-bahasa tetap jalan
-  // lewat tombol "Pilih"; modal memakai `beli` kalau ada, kalau tidak isi keranjang.
-  const [beli, setBeli] = useState<ElearningProduct | null>(null);
+  // [elearning-keranjang-modal-v1] Panel "tambah bahasa lain" di dalam modal —
+  // keranjang bisa ditambah tanpa menutup checkout, seperti marketplace.
+  const [tambahOpen, setTambahOpen] = useState(false);
+  const [cariTambah, setCariTambah] = useState('');
   const [form, setForm] = useState({ name: '', email: '', phone: '', ref: '' });
   const [kirim, setKirim] = useState(false);
   const [salah, setSalah] = useState<string | null>(null);
@@ -120,24 +120,35 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   );
   const totalKeranjang = terpilih.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
 
-  // Isi modal checkout: satu bahasa kalau kartunya diklik, kalau tidak seisi keranjang.
-  const dibayar = beli ? [beli] : terpilih;
-  const totalBayar = dibayar.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
-
   const toggle = (id: string) =>
     setDipilih((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
 
+  const tambah = (id: string) =>
+    setDipilih((prev) => (prev.includes(id) ? prev : [...prev, id]));
+
+  const buang = (id: string) => setDipilih((prev) => prev.filter((x) => x !== id));
+
+  /** Klik kartu: bahasa masuk keranjang lalu checkout langsung terbuka. */
   function bukaBeli(p: ElearningProduct) {
     setSalah(null);
-    setBeli(p);
+    tambah(p.id);
     setFormOpen(true);
   }
 
   function tutupForm() {
     if (kirim) return;
     setFormOpen(false);
-    setBeli(null);
+    setTambahOpen(false);
+    setCariTambah('');
   }
+
+  // Bahasa yang belum di keranjang — isi panel "tambah bahasa lain" di modal.
+  const sisaBahasa = useMemo(() => {
+    const q = cariTambah.trim().toLowerCase();
+    return products
+      .filter((p) => !dipilih.includes(p.id))
+      .filter((p) => !q || [p.title, p.language].filter(Boolean).join(' ').toLowerCase().includes(q));
+  }, [products, dipilih, cariTambah]);
 
   async function checkout() {
     setSalah(null);
@@ -163,7 +174,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             (typeof document !== 'undefined'
               ? ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? null
               : null),
-          items: dibayar
+          items: terpilih
             .map((p) => ({ productId: p.id, pricingId: tierPada(p, durasiIdx)?.id ?? '' }))
             .filter((x) => x.pricingId),
         }),
@@ -355,8 +366,8 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                         : 'bg-white/90 text-slate-700 ring-slate-200 backdrop-blur hover:bg-white'
                     }`}
                   >
-                    {dicentang ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Plus className="h-3.5 w-3.5" strokeWidth={3} />}
-                    {dicentang ? 'Dipilih' : 'Pilih'}
+                    {dicentang ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <ShoppingCart className="h-3.5 w-3.5" strokeWidth={2.5} />}
+                    {dicentang ? 'Di keranjang' : 'Tambah'}
                   </button>
                   {/* [elearning-kartu-tanpa-outline-v1] Kartu tak lagi memakai ring:
                       ring kuning "featured" bikin satu bahasa terlihat spesial padahal
@@ -532,7 +543,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 </div>
                 <button
                   type="button"
-                  onClick={() => { setSalah(null); setBeli(null); setFormOpen(true); }}
+                  onClick={() => { setSalah(null); setFormOpen(true); }}
                   className="inline-flex items-center gap-2 rounded-2xl bg-teal-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
                 >
                   Bayar sekaligus
@@ -545,7 +556,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
       )}
 
       {/* ── FORM DATA PEMBELI ─────────────────────────────────────────────── */}
-      {formOpen && dibayar.length > 0 && (
+      {formOpen && terpilih.length > 0 && (
         <div
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4"
           onClick={tutupForm}
@@ -557,7 +568,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             <div className="mb-4 flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-lg font-bold text-slate-900">
-                  {beli ? `E-Learning Bahasa ${namaBahasa(beli)}` : 'Data pembeli'}
+                  {terpilih.length === 1
+                    ? `E-Learning Bahasa ${namaBahasa(terpilih[0])}`
+                    : `Keranjang · ${terpilih.length} bahasa`}
                 </h2>
                 <p className="text-sm text-slate-500">
                   Akses dikirim ke email ini dan bisa dibuka di linguo.id/akun.
@@ -575,13 +588,13 @@ export default function ElearningLangClient({ products }: { products: ElearningP
 
             {/* [elearning-beli-satu-halaman-v1] Durasi dipilih di sini juga supaya
                 pembelian satu bahasa selesai tanpa pindah halaman. */}
-            {sortedTiers(dibayar[0]).length > 1 && (
+            {sortedTiers(terpilih[0]).length > 1 && (
               <div className="mb-4">
                 <span className="mb-1.5 block text-[13px] font-medium text-slate-700">
                   Pilih durasi akses
                 </span>
                 <div className="grid grid-cols-2 gap-2">
-                  {sortedTiers(dibayar[0]).map((t, i) => (
+                  {sortedTiers(terpilih[0]).map((t, i) => (
                     <button
                       key={t.id}
                       type="button"
@@ -600,20 +613,102 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               </div>
             )}
 
-            <ul className="mb-4 space-y-1 rounded-2xl bg-slate-50 p-3 text-sm">
-              {dibayar.map((p) => (
-                <li key={p.id} className="flex items-center justify-between gap-3">
-                  <span className="truncate text-slate-700">Bahasa {namaBahasa(p)}</span>
-                  <span className="shrink-0 font-medium text-slate-900">
-                    {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
-                  </span>
-                </li>
-              ))}
+            <ul className="mb-3 space-y-1.5 rounded-2xl bg-slate-50 p-3 text-sm">
+              {terpilih.map((p) => {
+                const code = flagCodeFor(p.language);
+                return (
+                  <li key={p.id} className="flex items-center gap-2">
+                    {code && <RectFlag code={code} h={14} className="shrink-0 shadow-sm" />}
+                    <span className="min-w-0 flex-1 truncate text-slate-700">
+                      Bahasa {namaBahasa(p)}
+                    </span>
+                    <span className="shrink-0 font-medium text-slate-900">
+                      {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
+                    </span>
+                    {/* Baris terakhir tak bisa dibuang dari sini: keranjang kosong
+                        berarti tidak ada yang dibayar — tutup modalnya saja. */}
+                    <button
+                      type="button"
+                      onClick={() => buang(p.id)}
+                      disabled={kirim || terpilih.length === 1}
+                      aria-label={`Hapus Bahasa ${namaBahasa(p)} dari keranjang`}
+                      className="shrink-0 rounded-full p-1 text-slate-400 transition hover:bg-slate-200 hover:text-slate-700 disabled:invisible"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" strokeWidth={2} />
+                    </button>
+                  </li>
+                );
+              })}
               <li className="mt-1 flex items-center justify-between gap-3 border-t border-slate-200 pt-2 font-bold text-slate-900">
-                <span>Total · akses {tierPada(dibayar[0], durasiIdx)?.display_label ?? ''}</span>
-                <span>{formatRupiah(totalBayar)}</span>
+                <span>Total · akses {tierPada(terpilih[0], durasiIdx)?.display_label ?? ''}</span>
+                <span>{formatRupiah(totalKeranjang)}</span>
               </li>
             </ul>
+
+            {/* [elearning-keranjang-modal-v1] Tambah bahasa TANPA menutup checkout.
+                Orang yang sudah sampai form pembayaran sering baru ingat mau bahasa
+                kedua; menutup modal cuma untuk mencentang kartu lain itu ongkos yang
+                tak perlu — dan satu invoice untuk semuanya lebih murah buat mereka. */}
+            {products.length > terpilih.length && (
+              <div className="mb-4">
+                <button
+                  type="button"
+                  onClick={() => setTambahOpen((v) => !v)}
+                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-2xl border border-dashed border-teal-300 bg-teal-50/50 px-4 py-2.5 text-sm font-semibold text-teal-700 transition hover:bg-teal-50"
+                >
+                  <Plus className="h-4 w-4" strokeWidth={2.5} aria-hidden />
+                  Tambah bahasa lain
+                  <span className="font-normal text-teal-600/70">
+                    (hemat, satu pembayaran)
+                  </span>
+                </button>
+
+                {tambahOpen && (
+                  <div className="mt-2 rounded-2xl border border-slate-200 p-2">
+                    <div className="relative mb-2">
+                      <input
+                        type="text"
+                        value={cariTambah}
+                        onChange={(e) => setCariTambah(e.target.value)}
+                        placeholder="Cari bahasa…"
+                        className="w-full rounded-xl border border-slate-300 py-2 pl-8 pr-3 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                      />
+                      <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" strokeWidth={2} aria-hidden />
+                    </div>
+                    <div className="max-h-52 space-y-1 overflow-y-auto">
+                      {sisaBahasa.length === 0 ? (
+                        <p className="px-2 py-3 text-center text-sm text-slate-500">
+                          Semua bahasa yang cocok sudah ada di keranjang.
+                        </p>
+                      ) : (
+                        sisaBahasa.map((p) => {
+                          const code = flagCodeFor(p.language);
+                          return (
+                            <button
+                              key={p.id}
+                              type="button"
+                              onClick={() => tambah(p.id)}
+                              className="flex w-full items-center gap-2 rounded-xl px-2 py-2 text-left text-sm transition hover:bg-slate-50"
+                            >
+                              {code && <RectFlag code={code} h={14} className="shrink-0 shadow-sm" />}
+                              <span className="min-w-0 flex-1 truncate text-slate-700">
+                                Bahasa {namaBahasa(p)}
+                              </span>
+                              <span className="shrink-0 text-slate-500">
+                                {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
+                              </span>
+                              <span className="shrink-0 rounded-full bg-teal-600 p-1 text-white">
+                                <Plus className="h-3 w-3" strokeWidth={3} aria-hidden />
+                              </span>
+                            </button>
+                          );
+                        })
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="space-y-3">
               {[
@@ -646,7 +741,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-700 disabled:opacity-60"
             >
               {kirim ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
-              {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalBayar)}`}
+              {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalKeranjang)}`}
             </button>
             <p className="mt-3 text-center text-[11px] text-slate-400">
               Pembayaran diproses Xendit. Bahasa yang sudah kamu miliki otomatis tidak ditagih lagi.
