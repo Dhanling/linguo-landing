@@ -99,6 +99,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   // keranjang bisa ditambah tanpa menutup checkout, seperti marketplace.
   const [tambahOpen, setTambahOpen] = useState(false);
   const [cariTambah, setCariTambah] = useState('');
+  const [refOpen, setRefOpen] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', ref: '' });
   const [kirim, setKirim] = useState(false);
   const [salah, setSalah] = useState<string | null>(null);
@@ -576,18 +577,18 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           onClick={tutupForm}
         >
           <div
-            className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl"
+            className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-5 shadow-2xl sm:rounded-3xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="mb-4 flex items-start justify-between gap-3">
+            <div className="mb-3 flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-lg font-bold text-slate-900">
                   {terpilih.length === 1
                     ? `E-Learning Bahasa ${namaBahasa(terpilih[0])}`
                     : `Keranjang · ${terpilih.length} bahasa`}
                 </h2>
-                <p className="text-sm text-slate-500">
-                  Akses dikirim ke email ini dan bisa dibuka di linguo.id/akun.
+                <p className="text-[13px] leading-snug text-slate-500">
+                  Akses dikirim ke email ini &amp; bisa dibuka di linguo.id/akun.
                 </p>
               </div>
               <button
@@ -630,7 +631,10 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             {/* [elearning-durasi-per-bahasa-v1] Rincian per bahasa: durasinya
                 masing-masing bisa diganti di sini (Jepang 6 bulan, Arab setahun),
                 jadi tak perlu dipecah jadi dua transaksi. */}
-            <ul className="mb-3 space-y-2 rounded-2xl bg-slate-50 p-3 text-sm">
+            <div className="mb-3 rounded-2xl bg-slate-50 p-3 text-sm">
+            {/* Keranjang bisa berisi 13 bahasa — daftarnya digulung sendiri supaya
+                tombol bayar tetap kelihatan tanpa scroll panjang. */}
+            <ul className="max-h-56 space-y-2 overflow-y-auto">
               {terpilih.map((p) => {
                 const code = flagCodeFor(p.language);
                 const tiers = sortedTiers(p);
@@ -678,32 +682,31 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                   </li>
                 );
               })}
-              <li className="flex items-center justify-between gap-3 border-t border-slate-200 pt-2.5 font-bold text-slate-900">
+            </ul>
+              <div className="mt-2.5 flex items-center justify-between gap-3 border-t border-slate-200 pt-2.5 font-bold text-slate-900">
                 <span>
                   {durasiSeragam
                     ? `Total · akses ${tierDari(terpilih[0])?.display_label ?? ''}`
                     : 'Total'}
                 </span>
                 <span>{formatRupiah(totalKeranjang)}</span>
-              </li>
-            </ul>
+              </div>
+            </div>
 
             {/* [elearning-keranjang-modal-v1] Tambah bahasa TANPA menutup checkout.
                 Orang yang sudah sampai form pembayaran sering baru ingat mau bahasa
                 kedua; menutup modal cuma untuk mencentang kartu lain itu ongkos yang
                 tak perlu — dan satu invoice untuk semuanya lebih murah buat mereka. */}
             {products.length > terpilih.length && (
-              <div className="mb-4">
+              <div className="mb-3">
                 <button
                   type="button"
                   onClick={() => setTambahOpen((v) => !v)}
-                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-2xl border border-dashed border-teal-300 bg-teal-50/50 px-4 py-2.5 text-sm font-semibold text-teal-700 transition hover:bg-teal-50"
+                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-dashed border-teal-300 bg-teal-50/50 px-3 py-2 text-[13px] font-semibold text-teal-700 transition hover:bg-teal-50"
                 >
                   <Plus className="h-4 w-4" strokeWidth={2.5} aria-hidden />
                   Tambah bahasa lain
-                  <span className="font-normal text-teal-600/70">
-                    (hemat, satu pembayaran)
-                  </span>
+                  <span className="font-normal text-teal-600/70">— satu pembayaran</span>
                 </button>
 
                 {tambahOpen && (
@@ -756,25 +759,50 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               </div>
             )}
 
-            <div className="space-y-3">
+            {/* [elearning-form-mampat-v1] Label di atas kolom bikin form ini setinggi
+                empat baris ekstra — pembeli harus scroll cuma untuk sampai ke tombol
+                bayar. Labelnya pindah ke placeholder (aria-label tetap ada untuk
+                pembaca layar), email & WA berdampingan, dan kode referral disembunyikan
+                di balik satu tautan karena yang mengisinya cuma segelintir orang. */}
+            <div className="grid gap-2 sm:grid-cols-2">
               {[
-                { k: 'name' as const, label: 'Nama lengkap *', type: 'text', ph: 'Nama kamu' },
-                { k: 'email' as const, label: 'Email *', type: 'email', ph: 'email@kamu.com' },
-                { k: 'phone' as const, label: 'Nomor WhatsApp', type: 'tel', ph: '08xxxxxxxxxx' },
-                { k: 'ref' as const, label: 'Kode referral (opsional)', type: 'text', ph: 'Kode afiliator' },
+                { k: 'name' as const, label: 'Nama lengkap', type: 'text', ph: 'Nama lengkap *', wide: true },
+                { k: 'email' as const, label: 'Email', type: 'email', ph: 'Email *', wide: false },
+                { k: 'phone' as const, label: 'Nomor WhatsApp', type: 'tel', ph: 'Nomor WhatsApp', wide: false },
               ].map((f) => (
-                <label key={f.k} className="block">
-                  <span className="mb-1 block text-[13px] font-medium text-slate-700">{f.label}</span>
-                  <input
-                    type={f.type}
-                    value={form[f.k]}
-                    onChange={(e) => setForm((v) => ({ ...v, [f.k]: e.target.value }))}
-                    placeholder={f.ph}
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                  />
-                </label>
+                <input
+                  key={f.k}
+                  type={f.type}
+                  value={form[f.k]}
+                  onChange={(e) => setForm((v) => ({ ...v, [f.k]: e.target.value }))}
+                  placeholder={f.ph}
+                  aria-label={f.label}
+                  className={`w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30 ${
+                    f.wide ? 'sm:col-span-2' : ''
+                  }`}
+                />
               ))}
             </div>
+
+            {refOpen || form.ref ? (
+              <input
+                type="text"
+                value={form.ref}
+                onChange={(e) => setForm((v) => ({ ...v, ref: e.target.value }))}
+                placeholder="Kode afiliator"
+                aria-label="Kode referral"
+                autoFocus
+                className="mt-2 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setRefOpen(true)}
+                className="mt-2 text-[13px] font-medium text-slate-500 underline decoration-dotted underline-offset-2 hover:text-teal-700"
+              >
+                Punya kode referral?
+              </button>
+            )}
 
             {salah && (
               <p className="mt-3 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">{salah}</p>
@@ -784,12 +812,12 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               type="button"
               onClick={checkout}
               disabled={kirim}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-700 disabled:opacity-60"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-700 disabled:opacity-60"
             >
               {kirim ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
               {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalKeranjang)}`}
             </button>
-            <p className="mt-3 text-center text-[11px] text-slate-400">
+            <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">
               Pembayaran diproses Xendit. Bahasa yang sudah kamu miliki otomatis tidak ditagih lagi.
             </p>
           </div>
