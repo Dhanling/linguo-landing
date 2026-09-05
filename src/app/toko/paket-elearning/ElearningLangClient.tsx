@@ -38,8 +38,11 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // SATU invoice keranjang (`/api/create-cart-invoice`, external_id
 // `LINGUO-CART-*`) — jalur yang sama dengan keranjang Perpustakaan, jadi
 // pemenuhannya sudah ditangani `handleCartPurchase` di edge fn xendit-webhook.
-// Tombol "Lihat" per kartu sengaja dipertahankan: yang cuma mau satu bahasa
-// tetap lewat halaman produk seperti biasa.
+//
+// [elearning-beli-satu-halaman-v1] Klik kartu TIDAK lagi membuka /toko/<slug>:
+// checkout satu bahasa selesai di halaman ini lewat modal (pilih durasi → nama,
+// email, WA → invoice Xendit), jalur invoice-nya sama dengan keranjang. Halaman
+// produk per bahasa tetap ada dan tetap bisa diakses langsung/lewat sitemap.
 
 const WA_URL =
   'https://wa.me/6282116859493?text=' +
@@ -87,6 +90,11 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   const [dipilih, setDipilih] = useState<string[]>([]);
   const [durasiIdx, setDurasiIdx] = useState(0);
   const [formOpen, setFormOpen] = useState(false);
+  // [elearning-beli-satu-halaman-v1] Klik kartu tidak lagi pindah ke halaman
+  // produk: bahasa yang diklik masuk ke sini dan modal checkout langsung terbuka
+  // (pilih durasi → data pembeli → Xendit). Keranjang multi-bahasa tetap jalan
+  // lewat tombol "Pilih"; modal memakai `beli` kalau ada, kalau tidak isi keranjang.
+  const [beli, setBeli] = useState<ElearningProduct | null>(null);
   const [form, setForm] = useState({ name: '', email: '', phone: '', ref: '' });
   const [kirim, setKirim] = useState(false);
   const [salah, setSalah] = useState<string | null>(null);
@@ -112,8 +120,24 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   );
   const totalKeranjang = terpilih.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
 
+  // Isi modal checkout: satu bahasa kalau kartunya diklik, kalau tidak seisi keranjang.
+  const dibayar = beli ? [beli] : terpilih;
+  const totalBayar = dibayar.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
+
   const toggle = (id: string) =>
     setDipilih((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+
+  function bukaBeli(p: ElearningProduct) {
+    setSalah(null);
+    setBeli(p);
+    setFormOpen(true);
+  }
+
+  function tutupForm() {
+    if (kirim) return;
+    setFormOpen(false);
+    setBeli(null);
+  }
 
   async function checkout() {
     setSalah(null);
@@ -139,7 +163,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             (typeof document !== 'undefined'
               ? ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? null
               : null),
-          items: terpilih
+          items: dibayar
             .map((p) => ({ productId: p.id, pricingId: tierPada(p, durasiIdx)?.id ?? '' }))
             .filter((x) => x.pricingId),
         }),
@@ -306,18 +330,23 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               const foto = getLangPhoto(p.language);
               const dicentang = dipilih.includes(p.id);
               return (
-                <Link
+                <div
                   key={p.id}
-                  href={`/toko/${p.slug}`}
-                  prefetch={false}
-                  className="group relative block"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => bukaBeli(p)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bukaBeli(p); }
+                  }}
+                  aria-label={`Beli E-Learning Bahasa ${namaBahasa(p)}`}
+                  className="group relative block cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
                 >
                   {/* [elearning-multi-bahasa-v1] Centang = masuk keranjang.
-                      preventDefault dipakai karena tombolnya duduk DI DALAM
-                      <Link> — tanpa itu satu klik ikut membuka halaman produk. */}
+                      stopPropagation dipakai karena tombolnya duduk DI DALAM kartu
+                      — tanpa itu satu klik ikut membuka modal beli satu bahasa. */}
                   <button
                     type="button"
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(p.id); }}
+                    onClick={(e) => { e.stopPropagation(); toggle(p.id); }}
                     aria-pressed={dicentang}
                     aria-label={`${dicentang ? 'Hapus' : 'Tambah'} Bahasa ${namaBahasa(p)} ${dicentang ? 'dari' : 'ke'} keranjang`}
                     className={`absolute right-2.5 top-2.5 z-10 inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[11px] font-bold shadow-sm ring-1 transition ${
@@ -329,13 +358,13 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                     {dicentang ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Plus className="h-3.5 w-3.5" strokeWidth={3} />}
                     {dicentang ? 'Dipilih' : 'Pilih'}
                   </button>
+                  {/* [elearning-kartu-tanpa-outline-v1] Kartu tak lagi memakai ring:
+                      ring kuning "featured" bikin satu bahasa terlihat spesial padahal
+                      harganya sama, dan ring tebal saat dicentang berisik di grid.
+                      Status "dipilih" sudah kelihatan dari tombol Pilih → Dipilih. */}
                   <article
-                    className={`relative h-full rounded-2xl overflow-hidden bg-white border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                      dicentang
-                        ? 'border-teal-500 ring-2 ring-teal-500 shadow-lg shadow-teal-600/15'
-                        : p.is_featured
-                          ? 'border-slate-200 ring-2 ring-yellow-400 shadow-lg shadow-yellow-400/20'
-                          : 'border-slate-200 shadow-sm'
+                    className={`relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                      dicentang ? 'shadow-lg shadow-teal-600/10' : 'shadow-sm'
                     }`}
                   >
                     {/* [elearning-kartu-foto-v1] Banner poster ala kartu kelas dashboard
@@ -389,10 +418,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                     </div>
 
                     <div className="p-4">
-                      <p className="text-sm text-slate-600 line-clamp-2">
-                        Rekaman kelas level Basic, bisa diulang kapan saja.
-                      </p>
-                      <div className="mt-3 flex items-end justify-between gap-2">
+                      <div className="flex items-end justify-between gap-2">
                         <div>
                           <div className="text-xs text-slate-500">
                             {tier ? `akses ${tier.display_label}` : 'Segera hadir'}
@@ -402,13 +428,13 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                           </div>
                         </div>
                         <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                          Lihat
+                          Beli
                           <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
                         </span>
                       </div>
                     </div>
                   </article>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -506,7 +532,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 </div>
                 <button
                   type="button"
-                  onClick={() => setFormOpen(true)}
+                  onClick={() => { setSalah(null); setBeli(null); setFormOpen(true); }}
                   className="inline-flex items-center gap-2 rounded-2xl bg-teal-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
                 >
                   Bayar sekaligus
@@ -519,10 +545,10 @@ export default function ElearningLangClient({ products }: { products: ElearningP
       )}
 
       {/* ── FORM DATA PEMBELI ─────────────────────────────────────────────── */}
-      {formOpen && (
+      {formOpen && dibayar.length > 0 && (
         <div
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4"
-          onClick={() => !kirim && setFormOpen(false)}
+          onClick={tutupForm}
         >
           <div
             className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl"
@@ -530,14 +556,16 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           >
             <div className="mb-4 flex items-start justify-between gap-3">
               <div>
-                <h2 className="text-lg font-bold text-slate-900">Data pembeli</h2>
+                <h2 className="text-lg font-bold text-slate-900">
+                  {beli ? `E-Learning Bahasa ${namaBahasa(beli)}` : 'Data pembeli'}
+                </h2>
                 <p className="text-sm text-slate-500">
                   Akses dikirim ke email ini dan bisa dibuka di linguo.id/akun.
                 </p>
               </div>
               <button
                 type="button"
-                onClick={() => !kirim && setFormOpen(false)}
+                onClick={tutupForm}
                 aria-label="Tutup"
                 className="rounded-full p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
               >
@@ -545,8 +573,35 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               </button>
             </div>
 
+            {/* [elearning-beli-satu-halaman-v1] Durasi dipilih di sini juga supaya
+                pembelian satu bahasa selesai tanpa pindah halaman. */}
+            {sortedTiers(dibayar[0]).length > 1 && (
+              <div className="mb-4">
+                <span className="mb-1.5 block text-[13px] font-medium text-slate-700">
+                  Pilih durasi akses
+                </span>
+                <div className="grid grid-cols-2 gap-2">
+                  {sortedTiers(dibayar[0]).map((t, i) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => setDurasiIdx(i)}
+                      className={`rounded-2xl border px-3 py-2.5 text-left transition ${
+                        durasiIdx === i
+                          ? 'border-teal-600 bg-teal-50 text-teal-800'
+                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
+                      }`}
+                    >
+                      <span className="block text-xs text-slate-500">{t.display_label}</span>
+                      <span className="block text-sm font-bold">{formatRupiah(t.price)}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <ul className="mb-4 space-y-1 rounded-2xl bg-slate-50 p-3 text-sm">
-              {terpilih.map((p) => (
+              {dibayar.map((p) => (
                 <li key={p.id} className="flex items-center justify-between gap-3">
                   <span className="truncate text-slate-700">Bahasa {namaBahasa(p)}</span>
                   <span className="shrink-0 font-medium text-slate-900">
@@ -555,8 +610,8 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 </li>
               ))}
               <li className="mt-1 flex items-center justify-between gap-3 border-t border-slate-200 pt-2 font-bold text-slate-900">
-                <span>Total</span>
-                <span>{formatRupiah(totalKeranjang)}</span>
+                <span>Total · akses {tierPada(dibayar[0], durasiIdx)?.display_label ?? ''}</span>
+                <span>{formatRupiah(totalBayar)}</span>
               </li>
             </ul>
 
@@ -591,7 +646,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-700 disabled:opacity-60"
             >
               {kirim ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
-              {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalKeranjang)}`}
+              {kirim ? 'Menyiapkan invoice…' : `Bayar ${formatRupiah(totalBayar)}`}
             </button>
             <p className="mt-3 text-center text-[11px] text-slate-400">
               Pembayaran diproses Xendit. Bahasa yang sudah kamu miliki otomatis tidak ditagih lagi.
