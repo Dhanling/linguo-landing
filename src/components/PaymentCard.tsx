@@ -14,7 +14,12 @@ import {
 
 const WA_ADMIN = "6282116859493";
 
-function calculateDefaultAmount(product: string, level: string): number {
+// [akun-pay-fallback-amount-v1] Registrasi dari OnboardingWizard lahir dengan
+// total_amount = 0 (wizard tak menanyakan paket). Kartu menampilkan nominal
+// patokan ini, dan nominal yang SAMA wajib dikirim ke xendit-create-invoice —
+// dulu klien mengirim `total_amount || 0` → server menolak "Missing required
+// fields: amount" → siswa lihat "Gagal generate link pembayaran".
+export function calculateDefaultAmount(product: string, level: string): number {
   if (product === "Kelas Private") return 720000;
   if (product === "Kelas Reguler") return 150000;
   if (product === "IELTS/TOEFL Prep") return 300000;
@@ -51,7 +56,8 @@ type Props = {
   userId: string;
   // [enroll-remove-manual-transfer-v1] dipertahankan utk kompat caller (upload manual sudah dihapus).
   onUploadSuccess?: () => void;
-  onRegenerateXendit?: () => Promise<string | null>;
+  // Menerima nominal yang ditampilkan di kartu (sudah pakai fallback bila total_amount 0).
+  onRegenerateXendit?: (amount: number) => Promise<string | null>;
 };
 
 export default function PaymentCard({
@@ -80,7 +86,7 @@ export default function PaymentCard({
     }
     setRegenerating(true);
     try {
-      const url = await onRegenerateXendit();
+      const url = await onRegenerateXendit(amount);
       if (url) {
         window.location.href = url;
       } else {

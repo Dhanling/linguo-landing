@@ -27,7 +27,7 @@ import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Bug, 
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 
-import PaymentCard from '@/components/PaymentCard';
+import PaymentCard, { calculateDefaultAmount } from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
 // [ui-lang-switcher-v1] pemilih bahasa antarmuka dashboard (ID ⇄ EN)
 import BugReportDialog from '@/components/akun/BugReportDialog'; // [bug-report-topbar-siswa-v1]
@@ -1326,12 +1326,15 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const bayarSekarang = async (r: StudentReg) => {
     setPayingId(r.id);
     try {
+      // [akun-pay-fallback-amount-v1] registrasi wizard punya total_amount 0 →
+      // pakai nominal patokan yang sama dengan PaymentCard, jangan kirim 0.
+      const amount = r.total_amount > 0 ? r.total_amount : calculateDefaultAmount(r.product, r.level);
       const res = await fetch("https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}` },
         body: JSON.stringify({
           registration_id: r.id,
-          amount: r.total_amount || 0,
+          amount,
           description: progLabel(r),
           payer_name: displayName,
           payer_email: user?.email || "",
@@ -1341,6 +1344,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       });
       const data = await res.json();
       if (data?.success && data?.invoice_url) { window.location.href = data.invoice_url; return; }
+      console.error("xendit-create-invoice gagal:", res.status, data);
       alert("Gagal membuat invoice. Coba lagi atau hubungi admin ya.");
     } catch {
       alert("Gagal membuat invoice. Coba lagi atau hubungi admin ya.");
@@ -5402,7 +5406,7 @@ export default function AkunPage() {
               registration={r as any}
               userId={uid}
               onUploadSuccess={() => window.location.reload()}
-              onRegenerateXendit={async () => {
+              onRegenerateXendit={async (amount: number) => {
                 try {
                   const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
                   const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : displayLanguage(r.language);
@@ -5417,7 +5421,8 @@ export default function AkunPage() {
                       },
                       body: JSON.stringify({
                         registration_id: r.id,
-                        amount: r.total_amount || 0,
+                        // [akun-pay-fallback-amount-v1] nominal dari kartu (fallback bila total_amount 0)
+                        amount,
                         description: desc,
                         payer_name: displayName,
                         payer_email: user?.email || "",
@@ -5433,6 +5438,7 @@ export default function AkunPage() {
                     // jadi persist xendit_invoice_url dikerjain di server. Client cukup pakai URL-nya buat redirect.
                     return data.invoice_url as string;
                   }
+                  console.error("xendit-create-invoice gagal:", res.status, data);
                   return null;
                 } catch (e) {
                   console.error("Regenerate Xendit error:", e);
