@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
+  ArrowLeft,
   ArrowRight,
   Check,
   Clapperboard,
@@ -20,6 +21,9 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase-client';
 import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
+// [elearning-kartu-foto-v1] Foto stok bahasa — sumber yang sama dengan kartu kelas
+// di dashboard siswa & katalog Perpustakaan (public/lang/<slug>.jpg).
+import { getLangPhoto } from '@/lib/lang-visuals';
 import type { ElearningProduct, PricingTier } from './page';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
@@ -163,8 +167,27 @@ export default function ElearningLangClient({ products }: { products: ElearningP
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
+      {/* [nav-kembali-beranda-v1] Halaman ini sering dibuka LANGSUNG dari iklan,
+          link afiliator, dan hasil pencarian — tanpa header, pengunjung mentok di
+          sini tanpa jalan pulang. Offset `--promo-bar-h` wajib: pita batch reguler
+          itu `fixed`, jadi header `top-0` bakal ketutupan olehnya. */}
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-slate-800 transition-colors hover:text-teal-600"
+          >
+            <ArrowLeft className="h-5 w-5" aria-hidden />
+            <span className="text-base font-bold">Linguo.id</span>
+          </Link>
+          <Link href="/toko" className="text-sm font-medium text-teal-600 hover:text-teal-700">
+            Semua Produk Digital
+          </Link>
+        </div>
+      </header>
+
       {/* HERO */}
-      <section className="relative overflow-hidden pt-20 pb-12 md:pt-28 md:pb-16">
+      <section className="relative overflow-hidden pt-12 pb-12 md:pt-20 md:pb-16">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute top-10 left-1/4 h-72 w-72 rounded-full bg-amber-300/30 blur-3xl" />
           <div className="absolute top-20 right-1/4 h-72 w-72 rounded-full bg-teal-300/30 blur-3xl" />
@@ -280,6 +303,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             {filtered.map((p) => {
               const tier = tierPada(p, durasiIdx) ?? cheapest(p);
               const code = flagCodeFor(p.language);
+              const foto = getLangPhoto(p.language);
               const dicentang = dipilih.includes(p.id);
               return (
                 <Link
@@ -314,29 +338,58 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                           : 'border-slate-200 shadow-sm'
                     }`}
                   >
-                    <div className="relative h-36 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
-                      {code ? (
-                        <RectFlag code={code} h={64} className="relative shadow-lg" />
+                    {/* [elearning-kartu-foto-v1] Banner poster ala kartu kelas dashboard
+                        siswa: foto bahasa memenuhi banner, nama bahasa duduk DI DALAM
+                        foto di atas gradien hitam. Gradiennya wajib — tanpa itu teks
+                        putih hilang di sampul terang (mis. langit siang). Bahasa yang
+                        belum punya foto jatuh balik ke banner oranye + bendera. */}
+                    <div
+                      className={`relative isolate flex h-44 items-end overflow-hidden transform-gpu [backface-visibility:hidden] ${
+                        foto ? 'bg-[#0E1526]' : 'bg-gradient-to-br from-amber-400 to-orange-500'
+                      }`}
+                    >
+                      {foto ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={foto}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]"
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                        />
                       ) : (
-                        <span
-                          aria-hidden
-                          className="relative inline-flex h-16 w-[89px] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
-                        >
-                          <Clapperboard className="h-8 w-8 text-white" strokeWidth={1.8} />
-                        </span>
+                        <>
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
+                          {code ? (
+                            <RectFlag code={code} h={64} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[65%] shadow-lg" />
+                          ) : (
+                            <span
+                              aria-hidden
+                              className="absolute left-1/2 top-1/2 inline-flex h-16 w-[89px] -translate-x-1/2 -translate-y-[65%] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
+                            >
+                              <Clapperboard className="h-8 w-8 text-white" strokeWidth={1.8} />
+                            </span>
+                          )}
+                        </>
                       )}
-                      <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+                      <span className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-black/35 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
                         <Clapperboard className="h-3 w-3" strokeWidth={2} aria-hidden />
                         {p.level ? `Basic ${p.level}` : 'E-Learning'}
+                      </span>
+                      <div className="relative w-full p-3">
+                        <div className="flex items-center gap-2">
+                          {code && <RectFlag code={code} h={16} className="shrink-0 shadow" />}
+                          <h2 className="truncate text-[15px] font-extrabold leading-tight text-white drop-shadow">
+                            Bahasa {namaBahasa(p)}
+                          </h2>
+                        </div>
                       </div>
                     </div>
 
                     <div className="p-4">
-                      <h2 className="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">
-                        Bahasa {namaBahasa(p)}
-                      </h2>
-                      <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
+                      <p className="text-sm text-slate-600 line-clamp-2">
                         Rekaman kelas level Basic, bisa diulang kapan saja.
                       </p>
                       <div className="mt-3 flex items-end justify-between gap-2">

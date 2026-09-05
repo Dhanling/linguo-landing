@@ -262,11 +262,15 @@ export async function POST(req: NextRequest) {
     // nominal. Baris `leads` tidak menyimpan productKey, dan harga bundle bisa
     // bentrok antar-edisi (mis. 99.000 = e-book satuan edisi ID *dan* e-learning
     // 6 bulan) — jadi SKU-nya harus ikut di external_id.
-    const ebookMatch = /^ebook-(satuan|hemat|populer|all)-(id|en)$/.exec(productKey || "");
+    // [ebook-durasi-akses-v1] SKU-nya kini membawa DURASI juga:
+    // `ebook-<paket>-id-<6bln|12bln|selamanya>`. Segmen durasi opsional supaya
+    // SKU lama (tanpa durasi = akses selamanya) tetap dilayani.
+    const ebookMatch =
+      /^ebook-(satuan|hemat|populer|all)-(id|en)(?:-(6bln|12bln|selamanya))?$/.exec(productKey || "");
     const externalId = simMatch
       ? `LINGUO-SIM-${simMatch[1]}-${Date.now()}`
       : ebookMatch
-      ? `LINGUO-EBOOK-${ebookMatch[1]}-${ebookMatch[2]}-${Date.now()}`
+      ? `LINGUO-EBOOK-${ebookMatch[1]}-${ebookMatch[2]}-${ebookMatch[3] ?? "selamanya"}-${Date.now()}`
       : `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
     // ── addon-ebook-recording-v1: cross-sell bundle e-book + recording (Reguler) ──

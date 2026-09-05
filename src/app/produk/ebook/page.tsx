@@ -1,8 +1,12 @@
 "use client";
-// ebook-xendit-v3 — edisi toggle + paket bundle + multi-select kuota + checkout Xendit otomatis
+// ebook-xendit-v3 — paket bundle + multi-select kuota + checkout Xendit otomatis
+// [ebook-durasi-akses-v1] Pemilih EDISI dihapus: landing cuma menjual seri "101
+// new edition" (pengantar Bahasa Indonesia). Gantinya pemilih DURASI AKSES —
+// 6 Bulan / 12 Bulan / Selamanya — persis tier di `digital_product_pricing`,
+// supaya "mulai Rp 79.000" di iklan & etalase /toko cocok dengan harga di sini.
 import { useState } from "react";
 import Link from "next/link";
-import { Check, FileText, Infinity as InfinityIcon, PenLine, RefreshCw, Star, Lock, Zap, Globe, X, ArrowLeft } from "lucide-react";
+import { CalendarClock, Check, FileText, Infinity as InfinityIcon, PenLine, RefreshCw, Star, Lock, Zap, Globe, X, ArrowLeft } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // [ebook-harga-katalog-sync-v1] harga paket & daftar paket dipusatkan — halaman
@@ -11,9 +15,9 @@ import {
   EBOOK_PAKET,
   EBOOK_PRICES,
   EBOOK_HARGA_TERENDAH,
-  EBOOK_EDITION_LABEL,
+  EBOOK_DURASI,
   hargaEbook,
-  type EbookEditionId,
+  type EbookDurasiId,
   type EbookPaketId,
 } from "@/lib/ebookPricing";
 
@@ -39,12 +43,16 @@ const LANGS: { name: string; code: string }[] = [
   { name: "Norwegia", code: "no" }, { name: "Finlandia", code: "fi" },
 ];
 
-const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
+const featuresFor = (durasiLabel: string) => [
+  "Format PDF",
+  `Akses ${durasiLabel.toLowerCase()}`,
+  "Kosakata praktis",
+  "Latihan soal",
+  "Contoh percakapan",
+  "Update gratis",
+];
 
-type EditionId = EbookEditionId;
-const EDITIONS: { id: EditionId; label: string; hint: number }[] = (
-  ["id", "en"] as EditionId[]
-).map((id) => ({ id, label: EBOOK_EDITION_LABEL[id], hint: hargaEbook(id, "satuan") }));
+const DURASI = EBOOK_DURASI;
 
 type Paket = (typeof EBOOK_PAKET)[number];
 const PAKETS: Paket[] = EBOOK_PAKET;
@@ -52,7 +60,7 @@ const PAKETS: Paket[] = EBOOK_PAKET;
 const PRICES = EBOOK_PRICES;
 
 export default function EbookPage() {
-  const [edition, setEdition] = useState<EditionId>("id");
+  const [durasi, setDurasi] = useState<EbookDurasiId>("6bln");
   const [paketId, setPaketId] = useState<EbookPaketId>("satuan");
   const [picked, setPicked] = useState<string[]>([]);
 
@@ -70,8 +78,10 @@ export default function EbookPage() {
   const paket = PAKETS.find((p) => p.id === paketId) ?? PAKETS[0];
   const isAll = paket.id === "all";
   const quota = paket.qty;
-  const price = PRICES[edition][paket.id];
-  const editionLabel = EDITIONS.find((e) => e.id === edition)?.label ?? "Bahasa Indonesia";
+  const price = PRICES[durasi][paket.id];
+  const durasiLabel = DURASI.find((d) => d.id === durasi)?.label ?? "6 Bulan";
+  const selamanya = durasi === "selamanya";
+  const aksesLabel = selamanya ? "akses selamanya" : `akses ${durasiLabel.toLowerCase()}`;
   const selected = isAll ? LANGS.map((l) => l.name) : picked;
   const ready = isAll || picked.length === quota;
   const remaining = quota - picked.length;
@@ -118,7 +128,7 @@ export default function EbookPage() {
           // dua-duanya tampil "digital" mentah. Sekarang eksplisit "e-book" (nilai
           // yang sudah dikenal PROGRAM_LABELS admin) dan /produk kirim "e-learning".
           program: "e-book",
-          productKey: `ebook-${paket.id}-${edition}`,
+          productKey: `ebook-${paket.id}-id-${durasi}`,
           // referral-code-field-v1 — input manual menang; fallback ke cookie linguo_ref / ?ref=
           referral_source: refCode.trim() || storedRef() || undefined,
           ref_code: refCode.trim() || storedRef() || undefined,
@@ -136,7 +146,9 @@ export default function EbookPage() {
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      {/* [ebook-durasi-akses-v1] Offset --promo-bar-h: bar batch reguler itu `fixed`,
+          jadi header `top-0` ketutupan olehnya dan tombol kembali ke beranda ikut hilang. */}
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-slate-800 hover:text-teal-600">
             <ArrowLeft className="h-5 w-5" />
@@ -168,23 +180,33 @@ export default function EbookPage() {
         </div>
       </section>
 
-      {/* Edition selector */}
+      {/* Durasi akses */}
       <section className="max-w-6xl mx-auto px-4 pt-8 pb-2">
-        <h2 className="text-xl font-bold text-slate-900 text-center mb-1">Pilih Edisi E-Book</h2>
-        <p className="text-sm text-slate-500 text-center mb-5">Edisi menentukan bahasa pengantar materi.</p>
-        <div className="flex gap-3 max-w-md mx-auto">
-          {EDITIONS.map((e) => {
-            const active = e.id === edition;
+        <h2 className="text-xl font-bold text-slate-900 text-center mb-1">Pilih Durasi Akses</h2>
+        <p className="text-sm text-slate-500 text-center mb-5">
+          Materinya sama — yang berbeda hanya lama kamu bisa membukanya.
+        </p>
+        <div className="grid grid-cols-3 gap-3 max-w-2xl mx-auto">
+          {DURASI.map((d) => {
+            const active = d.id === durasi;
             return (
               <button
-                key={e.id}
-                onClick={() => setEdition(e.id)}
-                className={`flex-1 rounded-2xl border-2 p-4 text-center transition-all ${
+                key={d.id}
+                onClick={() => setDurasi(d.id)}
+                className={`relative rounded-2xl border-2 p-4 text-center transition-all ${
                   active ? "border-indigo-500 bg-indigo-50" : "border-slate-200 bg-white hover:border-indigo-200"
                 }`}
               >
-                <p className="text-sm font-semibold text-slate-900">{e.label}</p>
-                <p className="text-xs text-slate-400 mt-1">mulai {formatRp(e.hint)}</p>
+                {d.id === "selamanya" && (
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Sekali beli
+                  </span>
+                )}
+                <p className="text-sm font-semibold text-slate-900">{d.label}</p>
+                <p className="text-lg font-extrabold text-slate-900 mt-1">
+                  {formatRp(hargaEbook(d.id, "satuan"))}
+                </p>
+                <p className="text-[11px] text-slate-400">per e-book</p>
               </button>
             );
           })}
@@ -198,7 +220,7 @@ export default function EbookPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {PAKETS.map((p) => {
             const active = p.id === paketId;
-            const pPrice = PRICES[edition][p.id];
+            const pPrice = PRICES[durasi][p.id];
             return (
               <button
                 key={p.id}
@@ -233,20 +255,20 @@ export default function EbookPage() {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="flex-1">
               <span className="inline-flex items-center gap-2 bg-indigo-100 rounded-full px-3 py-1 mb-4 text-xs font-semibold text-indigo-700">
-                {paket.label} · Edisi {editionLabel}
+                {paket.label} · Akses {durasiLabel}
               </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
                 {isAll ? "Semua Bahasa, Sekali Beli" : `Pilih ${quota} Bahasa Favoritmu`}
               </h2>
               <p className="text-slate-500 mb-4">
-                Rakit paketmu sendiri. Setiap e-book disusun rapi oleh tim kurikulum Linguo — format PDF, akses selamanya.
+                Rakit paketmu sendiri. Setiap e-book disusun rapi oleh tim kurikulum Linguo — format PDF, {aksesLabel}.
               </p>
               <div className="flex items-baseline gap-3 mb-6">
                 <span className="text-4xl font-extrabold text-slate-900">{formatRp(price)}</span>
                 <span className="text-sm text-slate-400">/ {quota} bahasa</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
-                {FEATURES.map((f) => (
+                {featuresFor(durasiLabel).map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm text-slate-600">
                     <Check className="h-4 w-4 text-indigo-500 shrink-0" strokeWidth={2.5} />
                     {f}
@@ -300,7 +322,7 @@ export default function EbookPage() {
               </button>
               <a
                 href={`https://wa.me/6282116859493?text=${encodeURIComponent(
-                  `Halo Linguo.id! Saya mau tanya soal e-book ${paket.label} (Edisi ${editionLabel}).`
+                  `Halo Linguo.id! Saya mau tanya soal e-book ${paket.label} (akses ${durasiLabel}).`
                 )}`}
                 target="_blank"
                 className="block text-center text-xs text-slate-400 hover:text-indigo-500 mt-2.5"
@@ -315,7 +337,9 @@ export default function EbookPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           {[
             { Icon: FileText, l: "Format PDF", s: "Buka di HP / laptop" },
-            { Icon: InfinityIcon, l: "Akses Selamanya", s: "Sekali beli, simpan terus" },
+            selamanya
+              ? { Icon: InfinityIcon, l: "Akses Selamanya", s: "Sekali beli, simpan terus" }
+              : { Icon: CalendarClock, l: `Akses ${durasiLabel}`, s: "Perpanjang kapan saja" },
             { Icon: PenLine, l: "Latihan Soal", s: "Latih pemahamanmu" },
             { Icon: RefreshCw, l: "Update Gratis", s: "Revisi terbaru gratis" },
           ].map((f) => (
@@ -397,7 +421,7 @@ export default function EbookPage() {
                 <div>
                   <p className="text-indigo-100 text-xs">Checkout E-Book</p>
                   <h3 className="text-lg font-bold">
-                    {paket.label} · {editionLabel}
+                    {paket.label} · Akses {durasiLabel}
                   </h3>
                 </div>
                 <button
