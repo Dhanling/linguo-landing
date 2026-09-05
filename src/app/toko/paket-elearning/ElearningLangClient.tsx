@@ -90,6 +90,10 @@ export default function ElearningLangClient({ products }: { products: ElearningP
   // bahasa, jadi pilihan per-bahasa cuma menambah kebingungan.
   const [dipilih, setDipilih] = useState<string[]>([]);
   const [durasiIdx, setDurasiIdx] = useState(0);
+  // [elearning-durasi-per-bahasa-v1] Durasi boleh beda per bahasa: Jepang 6 bulan
+  // sementara Arab setahun. `durasiIdx` tetap jadi durasi bawaan (toggle etalase
+  // & bahasa yang baru masuk keranjang); yang di sini cuma pengecualiannya.
+  const [durasiPer, setDurasiPer] = useState<Record<string, number>>({});
   const [formOpen, setFormOpen] = useState(false);
   // [elearning-keranjang-modal-v1] Panel "tambah bahasa lain" di dalam modal —
   // keranjang bisa ditambah tanpa menutup checkout, seperti marketplace.
@@ -114,11 +118,19 @@ export default function ElearningLangClient({ products }: { products: ElearningP
     return () => { batal = true; };
   }, []);
 
+  /** Indeks durasi yang berlaku untuk satu bahasa (pengecualian → bawaan). */
+  const idxDari = (p: ElearningProduct) => durasiPer[p.id] ?? durasiIdx;
+  /** Tier yang benar-benar dibayar untuk satu bahasa. */
+  const tierDari = (p: ElearningProduct) => tierPada(p, idxDari(p));
+
   const terpilih = useMemo(
     () => dipilih.map((id) => products.find((p) => p.id === id)).filter((p): p is ElearningProduct => !!p),
     [dipilih, products],
   );
-  const totalKeranjang = terpilih.reduce((n, p) => n + (tierPada(p, durasiIdx)?.price ?? 0), 0);
+  const totalKeranjang = terpilih.reduce((n, p) => n + (tierDari(p)?.price ?? 0), 0);
+  // Semua bahasa di keranjang durasinya sama? Label total ikut menyesuaikan.
+  const durasiSeragam =
+    terpilih.length > 0 && terpilih.every((p) => idxDari(p) === idxDari(terpilih[0]));
 
   const toggle = (id: string) =>
     setDipilih((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
@@ -175,7 +187,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               ? ('; ' + document.cookie).split('; linguo_ref=')[1]?.split(';')[0] ?? null
               : null),
           items: terpilih
-            .map((p) => ({ productId: p.id, pricingId: tierPada(p, durasiIdx)?.id ?? '' }))
+            .map((p) => ({ productId: p.id, pricingId: tierDari(p)?.id ?? '' }))
             .filter((x) => x.pricingId),
         }),
       });
@@ -294,7 +306,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                 <button
                   key={t.id}
                   type="button"
-                  onClick={() => setDurasiIdx(i)}
+                  onClick={() => { setDurasiIdx(i); setDurasiPer({}); }}
                   className={`rounded-full px-3 py-1.5 transition ${
                     durasiIdx === i ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
                   }`}
@@ -336,7 +348,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((p) => {
-              const tier = tierPada(p, durasiIdx) ?? cheapest(p);
+              const tier = tierDari(p) ?? cheapest(p);
               const code = flagCodeFor(p.language);
               const foto = getLangPhoto(p.language);
               const dicentang = dipilih.includes(p.id);
@@ -522,7 +534,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                   {terpilih.length} bahasa dipilih
                   <button
                     type="button"
-                    onClick={() => setDipilih([])}
+                    onClick={() => { setDipilih([]); setDurasiPer({}); }}
                     className="text-xs font-medium text-slate-400 underline hover:text-slate-600"
                   >
                     kosongkan
@@ -535,7 +547,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               <div className="flex items-center justify-between gap-4 sm:justify-end">
                 <div className="text-right">
                   <div className="text-[11px] text-slate-500">
-                    Total · akses {tierPada(terpilih[0], durasiIdx)?.display_label ?? ''}
+                    {durasiSeragam
+                      ? `Total · akses ${tierDari(terpilih[0])?.display_label ?? ''}`
+                      : 'Total · durasi campur'}
                   </div>
                   <div className="text-lg font-bold leading-tight text-slate-900">
                     {formatRupiah(totalKeranjang)}
@@ -588,7 +602,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
 
             {/* [elearning-beli-satu-halaman-v1] Durasi dipilih di sini juga supaya
                 pembelian satu bahasa selesai tanpa pindah halaman. */}
-            {sortedTiers(terpilih[0]).length > 1 && (
+            {terpilih.length === 1 && sortedTiers(terpilih[0]).length > 1 && (
               <div className="mb-4">
                 <span className="mb-1.5 block text-[13px] font-medium text-slate-700">
                   Pilih durasi akses
@@ -598,9 +612,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                     <button
                       key={t.id}
                       type="button"
-                      onClick={() => setDurasiIdx(i)}
+                      onClick={() => setDurasiPer((v) => ({ ...v, [terpilih[0].id]: i }))}
                       className={`rounded-2xl border px-3 py-2.5 text-left transition ${
-                        durasiIdx === i
+                        idxDari(terpilih[0]) === i
                           ? 'border-teal-600 bg-teal-50 text-teal-800'
                           : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                       }`}
@@ -613,34 +627,63 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               </div>
             )}
 
-            <ul className="mb-3 space-y-1.5 rounded-2xl bg-slate-50 p-3 text-sm">
+            {/* [elearning-durasi-per-bahasa-v1] Rincian per bahasa: durasinya
+                masing-masing bisa diganti di sini (Jepang 6 bulan, Arab setahun),
+                jadi tak perlu dipecah jadi dua transaksi. */}
+            <ul className="mb-3 space-y-2 rounded-2xl bg-slate-50 p-3 text-sm">
               {terpilih.map((p) => {
                 const code = flagCodeFor(p.language);
+                const tiers = sortedTiers(p);
                 return (
-                  <li key={p.id} className="flex items-center gap-2">
-                    {code && <RectFlag code={code} h={14} className="shrink-0 shadow-sm" />}
-                    <span className="min-w-0 flex-1 truncate text-slate-700">
-                      Bahasa {namaBahasa(p)}
-                    </span>
-                    <span className="shrink-0 font-medium text-slate-900">
-                      {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
-                    </span>
-                    {/* Baris terakhir tak bisa dibuang dari sini: keranjang kosong
-                        berarti tidak ada yang dibayar — tutup modalnya saja. */}
-                    <button
-                      type="button"
-                      onClick={() => buang(p.id)}
-                      disabled={kirim || terpilih.length === 1}
-                      aria-label={`Hapus Bahasa ${namaBahasa(p)} dari keranjang`}
-                      className="shrink-0 rounded-full p-1 text-slate-400 transition hover:bg-slate-200 hover:text-slate-700 disabled:invisible"
-                    >
-                      <Trash2 className="h-3.5 w-3.5" strokeWidth={2} />
-                    </button>
+                  <li key={p.id} className="rounded-xl bg-white p-2.5 ring-1 ring-slate-200/70">
+                    <div className="flex items-center gap-2">
+                      {code && <RectFlag code={code} h={14} className="shrink-0 shadow-sm" />}
+                      <span className="min-w-0 flex-1 truncate font-medium text-slate-800">
+                        Bahasa {namaBahasa(p)}
+                      </span>
+                      <span className="shrink-0 font-semibold text-slate-900">
+                        {formatRupiah(tierDari(p)?.price ?? 0)}
+                      </span>
+                      {/* Baris terakhir tak bisa dibuang dari sini: keranjang kosong
+                          berarti tidak ada yang dibayar — tutup modalnya saja. */}
+                      <button
+                        type="button"
+                        onClick={() => buang(p.id)}
+                        disabled={kirim || terpilih.length === 1}
+                        aria-label={`Hapus Bahasa ${namaBahasa(p)} dari keranjang`}
+                        className="shrink-0 rounded-full p-1 text-slate-400 transition hover:bg-slate-200 hover:text-slate-700 disabled:invisible"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" strokeWidth={2} />
+                      </button>
+                    </div>
+                    {terpilih.length > 1 && tiers.length > 1 && (
+                      <div className="mt-1.5 inline-flex rounded-full bg-slate-100 p-0.5 text-[11px] font-semibold">
+                        {tiers.map((t, i) => (
+                          <button
+                            key={t.id}
+                            type="button"
+                            onClick={() => setDurasiPer((v) => ({ ...v, [p.id]: i }))}
+                            aria-pressed={idxDari(p) === i}
+                            className={`rounded-full px-2.5 py-1 transition ${
+                              idxDari(p) === i
+                                ? 'bg-white text-teal-700 shadow-sm'
+                                : 'text-slate-500 hover:text-slate-700'
+                            }`}
+                          >
+                            {t.display_label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 );
               })}
-              <li className="mt-1 flex items-center justify-between gap-3 border-t border-slate-200 pt-2 font-bold text-slate-900">
-                <span>Total · akses {tierPada(terpilih[0], durasiIdx)?.display_label ?? ''}</span>
+              <li className="flex items-center justify-between gap-3 border-t border-slate-200 pt-2.5 font-bold text-slate-900">
+                <span>
+                  {durasiSeragam
+                    ? `Total · akses ${tierDari(terpilih[0])?.display_label ?? ''}`
+                    : 'Total'}
+                </span>
                 <span>{formatRupiah(totalKeranjang)}</span>
               </li>
             </ul>
@@ -696,6 +739,9 @@ export default function ElearningLangClient({ products }: { products: ElearningP
                               </span>
                               <span className="shrink-0 text-slate-500">
                                 {formatRupiah(tierPada(p, durasiIdx)?.price ?? 0)}
+                                <span className="ml-1 text-[11px] text-slate-400">
+                                  /{tierPada(p, durasiIdx)?.display_label ?? ''}
+                                </span>
                               </span>
                               <span className="shrink-0 rounded-full bg-teal-600 p-1 text-white">
                                 <Plus className="h-3 w-3" strokeWidth={3} aria-hidden />
