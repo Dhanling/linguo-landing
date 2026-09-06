@@ -24,7 +24,7 @@ import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, Mic, Square,
   Loader2, CheckCircle2, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
   Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
-  PlayCircle, Moon, Sun, Maximize, Minimize,
+  PlayCircle, Moon, Sun, Maximize, Minimize, ChevronsLeft, ChevronsRight,
   User, Mail, Phone, Lock, ShieldAlert,
 } from "lucide-react";
 
@@ -730,18 +730,35 @@ export default function SimulasiRunnerPage() {
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
 
-  // Penomoran soal RESET ke 1 tiap bagian (part), mengikuti struktur ujian asli
-  // (mis. TOEFL ITP: tiap Part A/B/C & Structure mulai dari 1 lagi) — bukan
-  // menyambung sepanjang tes. `questions` sudah terurut per section dari
-  // fetchSimulation; ikuti urutan `sections` supaya konsisten dgn navigasi.
+  // Penomoran soal: TOEFL ITP dkk. RESET ke 1 tiap bagian (part), mengikuti
+  // struktur ujian asli (Part A/B/C & Structure mulai dari 1 lagi — permintaan
+  // Kurikulum Jul 2026). [sim-ielts-nomor-berurut-v1] IELTS (format Cambridge)
+  // justru BERURUTAN di dalam satu skill: Listening 1–40 lintas Part 1–4,
+  // Reading 1–40 lintas Passage 1–3 — baru kembali ke 1 saat ganti skill
+  // (permintaan Kurikulum 6 Sep 2026). `questions` sudah terurut per section
+  // dari fetchSimulation; ikuti urutan `sections` supaya konsisten dgn navigasi.
   const qNumber = useMemo(() => {
     const m: Record<string, number> = {};
+    const berurut = sim?.test_type === "ielts";
+    const lanjut = new Map<string, number>();
     sections.forEach((s) => {
-      let n = 1;
+      let n = berurut ? (lanjut.get(s.skill) ?? 1) : 1;
       questions.filter((q) => q.section_id === s.id).forEach((q) => { m[q.id] = n++; });
+      lanjut.set(s.skill, n);
     });
     return m;
-  }, [questions, sections]);
+  }, [questions, sections, sim?.test_type]);
+
+  // [sim-part-sidebar-v1] Sidebar daftar part (desktop) bisa diciutkan — pilihan
+  // diingat di localStorage supaya peserta yang mau fokus tak perlu menutupnya
+  // tiap ganti bagian.
+  const [sideOpen, setSideOpen] = useState(true);
+  useEffect(() => { try { setSideOpen(localStorage.getItem("sim-part-sidebar") !== "0"); } catch { /* ignore */ } }, []);
+  const toggleSide = () => setSideOpen((o) => {
+    const v = !o;
+    try { localStorage.setItem("sim-part-sidebar", v ? "1" : "0"); } catch { /* ignore */ }
+    return v;
+  });
 
   // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
   function goToQuestion(targetSecIdx: number, qid: string) {
@@ -1070,7 +1087,9 @@ export default function SimulasiRunnerPage() {
         setGradingMsg(`${t("Menilai jawaban")} ${q.type === "speaking_task" ? "speaking" : "writing"} (${aiDone}/${aiCount}) ${t("secara otomatis…")}`);
         let audioUrl: string | null = a.audioUrl;
         if (q.type === "speaking_task" && a.audioBlob && !audioUrl) {
-          audioUrl = await uploadRecording(attemptId, q.id, a.audioBlob);
+          // unggahan saat merekam bisa gagal (sinyal HP) → coba lagi di sini, dua kali
+          audioUrl = (await uploadRecording(attemptId, q.id, a.audioBlob))
+            ?? (await uploadRecording(attemptId, q.id, a.audioBlob));
         }
         const graded = await gradeWithAI({
           test_type: sim.test_type,
@@ -1300,6 +1319,14 @@ export default function SimulasiRunnerPage() {
   const gPos = activeGroup.secIdxs.indexOf(secIdx);
   const isLastInGroup = gPos === activeGroup.secIdxs.length - 1;
   const groupSections = activeGroup.secIdxs.map((si) => sections[si]);
+  // [sim-part-label-v1] Part dibaca dari JUDUL bagian & bagian berjudul part yang
+  // sama digabung — IELTS Listening yang disimpan 10 bagian tetap tampil Part 1–4.
+  const navParts = activeGroup.secIdxs.map((si) => ({ si, section: sections[si], qs: questions.filter((q) => q.section_id === sections[si].id) }));
+  const partGroups = groupParts(navParts);
+  const partGroupIdx = Math.max(0, partGroups.findIndex((g) => g.items.some((p) => p.si === secIdx)));
+  const partTitle = partGroups.length > 1
+    ? `${partGroups[partGroupIdx]?.label ?? `Part ${gPos + 1}`} · ${partGroupIdx + 1}/${partGroups.length}`
+    : `Part ${gPos + 1}/${groupSections.length}`;
   const gQsAll = groupQuestions(activeGroup);
   const gAnswered = gQsAll.filter((q) => isAnswered(q, answers[q.id])).length;
 
@@ -1377,7 +1404,7 @@ export default function SimulasiRunnerPage() {
         <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
-            <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Part {gPos + 1}/{groupSections.length}
+            <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · {partTitle}
           </div>
           <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
           <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
@@ -1417,7 +1444,7 @@ export default function SimulasiRunnerPage() {
   // bacaan & soal dapat lebar penuh.
   const navBar = (
     <ExamNavBar
-      parts={activeGroup.secIdxs.map((si) => ({ si, section: sections[si], qs: questions.filter((q) => q.section_id === sections[si].id) }))}
+      parts={navParts}
       answers={answers}
       currentSecIdx={secIdx}
       maxVisitedSecIdx={maxSecIdx}
@@ -1429,11 +1456,29 @@ export default function SimulasiRunnerPage() {
       onFinish={() => finishGroup()}
       answered={gAnswered}
       total={gQsAll.length}
-      partPos={gPos}
-      partCount={groupSections.length}
       skillLabel={SKILL_LABEL[activeGroup.skill]}
     />
   );
+
+  // [sim-part-sidebar-v1] Sidebar part (lg+), ala TOEFL Simulation lama — bisa
+  // diciutkan jadi rel tipis. Satu subtes saja yang punya >1 part yang memakainya.
+  const partSidebar = partGroups.length > 1 ? (
+    <PartSidebar
+      groups={partGroups}
+      currentSecIdx={secIdx}
+      answers={answers}
+      open={sideOpen}
+      onToggle={toggleSide}
+      onJump={goToQuestion}
+    />
+  ) : null;
+
+  // [sim-rekam-unggah-langsung-v1] Rekaman speaking diunggah BEGITU selesai
+  // direkam (bukan menunggu tombol kumpulkan), jadi "Rekaman tersimpan" jujur &
+  // rekaman selamat walau tab ditutup. Preview tidak punya attempt → tidak diunggah.
+  const recUpload = !preview && attemptId
+    ? (qid: string, blob: Blob) => uploadRecording(attemptId, qid, blob)
+    : null;
 
   // Tombol selesaikan subtes — nonaktif selama kunci menit minimal belum lewat.
   const finishGroupBtn = (
@@ -1477,7 +1522,9 @@ export default function SimulasiRunnerPage() {
           bar progres lama + panel kanan. */}
       {navBar}
 
-      <div className="min-w-0">
+      <div className="lg:flex lg:items-start lg:gap-4">
+      {partSidebar}
+      <div className="min-w-0 lg:flex-1">
       {/* Navigasi halaman soal — di atas (di bawah bar nomor soal), kanan.
           Maks PAGE_SIZE soal/halaman → tak perlu menggulir jauh untuk lanjut. */}
       <div className="mb-4 flex items-center justify-between gap-3">
@@ -1543,7 +1590,7 @@ export default function SimulasiRunnerPage() {
 
             <div className="mt-5 space-y-5 first:mt-0">
               {pageQs.map((q) => (
-                <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
+                <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} upload={recUpload ? (b) => recUpload(q.id, b) : undefined} />
               ))}
               {secQs.length === 0 && <p className="text-sm text-slate-400">{t("Tidak ada soal di bagian ini.")}</p>}
             </div>
@@ -1555,6 +1602,7 @@ export default function SimulasiRunnerPage() {
         if (soloTable) return hasMedia ? mediaCard : questionsCard;
         return hasMedia ? <SplitPane left={mediaCard} right={questionsCard} /> : questionsCard;
       })()}
+      </div>
       </div>
     </Shell>
   );
@@ -1938,7 +1986,10 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
   const [askExit, setAskExit] = useState(false);
   // wide = layout split materi|soal (butuh ruang 2 kolom di desktop). Kartu
   // dibuat lebih lebar (memanjang ke kiri & kanan) supaya bacaan & soal lega.
-  const maxW = wide ? "max-w-[92rem]" : "max-w-3xl";
+  // [sim-area-lebar-v1] Layar kerja dibuat selebar mungkin (IELTS Reading = teks
+  // panjang; Kurikulum minta area soal maksimal) — dibatasi hanya di monitor
+  // sangat lebar supaya barisnya masih enak dibaca.
+  const maxW = wide ? "max-w-[120rem]" : "max-w-3xl";
   // Tombol back keluar simulasi. Mode preview dibuka admin di tab baru & tanpa sesi
   // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
   // dulu"). Pakai katalog publik /simulasi yang bebas login.
@@ -2180,7 +2231,88 @@ function isAnswered(q: Question, s?: AnswerState) {
 //    dapat lebar penuh. Timer TIDAK diulang di sini — cukup yang di header.
 type NavStatus = "answered" | "skipped" | "todo";
 
-function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQids, qNumber, onJump, lockLeft, lockMin, onFinish, answered, total, partPos, partCount, skillLabel }: {
+// [sim-part-label-v1] Label part dibaca dari judul bagian ("Part 2 — Questions
+// 11-14" → "Part 2", "Reading Passage 3 — …" → "Passage 3"). Bagian-bagian yang
+// berurutan dan berjudul part sama digabung jadi satu kelompok di navigasi &
+// sidebar, supaya IELTS Listening yang disimpan 10 bagian tetap tampil Part 1–4
+// seperti ujian aslinya (bukan "Part 1–10" mengikuti jumlah bagian).
+function partLabelOf(section: Section, fallbackIdx: number): string {
+  const m = (section.title || "").match(/^\s*(?:(?:reading|listening|speaking|writing)\s*[—–-]?\s*)?(part|passage|section|task|bagian)\s*([0-9]+|[A-D])\b/i);
+  if (m) return `${m[1][0].toUpperCase()}${m[1].slice(1).toLowerCase()} ${m[2].toUpperCase()}`;
+  return `Part ${fallbackIdx + 1}`;
+}
+function groupParts<T extends { si: number; section: Section }>(parts: T[]): { label: string; items: T[] }[] {
+  const out: { label: string; items: T[] }[] = [];
+  parts.forEach((p, i) => {
+    const label = partLabelOf(p.section, i);
+    const last = out[out.length - 1];
+    if (last && last.label === label) last.items.push(p);
+    else out.push({ label, items: [p] });
+  });
+  return out;
+}
+
+// [sim-part-sidebar-v1] Sidebar part di desktop — permintaan Kurikulum (6 Sep
+// 2026): "sidebar seperti TOEFL Simulation sebelumnya, bisa di-minimize".
+// Diciutkan = rel tipis berisi P1/P2/… supaya area soal tetap maksimal.
+function PartSidebar({ groups, currentSecIdx, answers, open, onToggle, onJump }: {
+  groups: { label: string; items: { si: number; section: Section; qs: Question[] }[] }[];
+  currentSecIdx: number;
+  answers: Record<string, AnswerState>;
+  open: boolean;
+  onToggle: () => void;
+  onJump: (secIdx: number, qid: string) => void;
+}) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  return (
+    <aside className={`hidden shrink-0 transition-[width] duration-200 lg:sticky lg:top-[152px] lg:block ${open ? "lg:w-48" : "lg:w-12"}`}>
+      <div className="rounded-2xl border border-slate-200 bg-white p-1.5">
+        <button
+          type="button"
+          onClick={onToggle}
+          title={open ? t("Sembunyikan daftar part") : t("Tampilkan daftar part")}
+          className={`flex h-8 w-full items-center gap-2 rounded-lg px-2 text-[11px] font-bold text-slate-500 hover:bg-slate-100 ${open ? "justify-between" : "justify-center"}`}
+        >
+          {open && <span>{t("Daftar part")}</span>}
+          {open ? <ChevronsLeft className="h-4 w-4" /> : <ChevronsRight className="h-4 w-4" />}
+        </button>
+        <ul className="mt-1 space-y-1">
+          {groups.map((g, gi) => {
+            const qs = g.items.flatMap((p) => p.qs);
+            const done = qs.filter((q) => isAnswered(q, answers[q.id])).length;
+            const active = g.items.some((p) => p.si === currentSecIdx);
+            const first = g.items[0];
+            const firstQ = first?.qs[0];
+            const pendek = g.label.replace(/^([A-Za-z])[A-Za-z]*\s*/, "$1");
+            return (
+              <li key={`${g.label}-${gi}`}>
+                <button
+                  type="button"
+                  onClick={() => { if (first && firstQ) onJump(first.si, firstQ.id); }}
+                  title={`${g.label} · ${done}/${qs.length} ${t("terisi")}`}
+                  className={`flex w-full items-center gap-2 rounded-lg px-1.5 py-1.5 text-left text-xs font-semibold transition ${active ? "text-white" : "text-slate-600 hover:bg-slate-100"}`}
+                  style={active ? { background: TEAL_DEEP } : undefined}
+                >
+                  <span className={`flex h-6 min-w-6 shrink-0 items-center justify-center rounded-md px-1 text-[11px] font-bold tabular-nums ${active ? "bg-white/20" : done === qs.length && qs.length > 0 ? "bg-emerald-50 text-emerald-600" : "bg-slate-100"}`}>
+                    {open ? gi + 1 : pendek}
+                  </span>
+                  {open && <span className="min-w-0 flex-1 truncate">{g.label}</span>}
+                  {open && (
+                    <span className={`shrink-0 text-[10px] tabular-nums ${active ? "text-white/80" : done === qs.length && qs.length > 0 ? "text-emerald-600" : "text-slate-400"}`}>
+                      {done}/{qs.length}
+                    </span>
+                  )}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </aside>
+  );
+}
+
+function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQids, qNumber, onJump, lockLeft, lockMin, onFinish, answered, total, skillLabel }: {
   parts: { si: number; section: Section; qs: Question[] }[];
   answers: Record<string, AnswerState>;
   currentSecIdx: number;
@@ -2193,13 +2325,14 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
   onFinish: () => void;
   answered: number;
   total: number;
-  partPos: number;   // indeks part aktif di dalam subtes
-  partCount: number;
   skillLabel: string;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const stripRef = useRef<HTMLDivElement>(null);
   const firstCurrent = parts.find((p) => p.si === currentSecIdx)?.qs.find((q) => currentQids.has(q.id))?.id;
+  // [sim-part-label-v1] bagian berjudul part yang sama digabung jadi satu kelompok
+  const groups = groupParts(parts);
+  const gIdx = Math.max(0, groups.findIndex((g) => g.items.some((p) => p.si === currentSecIdx)));
 
   // Geser strip ke nomor yang sedang dikerjakan tiap ganti halaman/part —
   // `block:"nearest"` supaya halaman soal tidak ikut melompat.
@@ -2218,7 +2351,7 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
     <div className="sticky top-[60px] z-30 -mx-4 mb-4 border-b border-slate-200 bg-slate-50 px-4 pb-2 pt-2 sm:-mx-6 sm:px-6">
       <div className="mb-1.5 flex items-center gap-3">
         <span className="shrink-0 text-[11px] font-semibold text-slate-500 tabular-nums">
-          {skillLabel}{partCount > 1 && <> · Part {partPos + 1}/{partCount}</>}
+          {skillLabel}{groups.length > 1 && <> · {groups[gIdx]?.label} ({gIdx + 1}/{groups.length})</>}
         </span>
         {/* Legenda status — ala CBT: saat ini / kosong / terisi */}
         <div className="ml-auto hidden items-center gap-x-3 text-[11px] font-medium text-slate-500 md:flex">
@@ -2244,15 +2377,15 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
       </div>
 
       <div ref={stripRef} className="sim-navstrip flex items-center gap-1.5 overflow-x-auto pb-1">
-        {parts.map((p, pi) => (
-          <div key={p.section.id} className="flex shrink-0 items-center gap-1.5">
-            {pi > 0 && <span className="mx-1 h-6 w-px shrink-0 bg-slate-200" />}
-            {parts.length > 1 && (
-              <span className={`shrink-0 text-[11px] font-bold ${p.si === currentSecIdx ? "text-teal-700" : "text-slate-400"}`}>
-                Part {pi + 1}
+        {groups.map((g, gi) => (
+          <div key={`${g.label}-${gi}`} className="flex shrink-0 items-center gap-1.5">
+            {gi > 0 && <span className="mx-1 h-6 w-px shrink-0 bg-slate-200" />}
+            {groups.length > 1 && (
+              <span className={`shrink-0 text-[11px] font-bold ${gi === gIdx ? "text-teal-700" : "text-slate-400"}`}>
+                {g.label}
               </span>
             )}
-            {p.qs.map((q) => {
+            {g.items.flatMap((p) => p.qs.map((q) => {
               const st = statusOf(q, p.si);
               const isCurrent = p.si === currentSecIdx && currentQids.has(q.id);
               const cls = isCurrent
@@ -2275,7 +2408,7 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
                   {qNumber[q.id]}
                 </button>
               );
-            })}
+            }))}
           </div>
         ))}
       </div>
@@ -2420,8 +2553,9 @@ function IdentifyErrorInline({ tokens, state, onChange }: {
   );
 }
 
-function QuestionBlock({ index, q, state, onChange }: {
+function QuestionBlock({ index, q, state, onChange, upload }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
+  upload?: (blob: Blob) => Promise<string | null>;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
@@ -2499,40 +2633,77 @@ alt={t("Visual soal")}
       )}
 
       {q.type === "speaking_task" && (
-        <SpeakingRecorder state={state} onChange={onChange} />
+        <SpeakingRecorder state={state} onChange={onChange} upload={upload} />
       )}
     </div>
   );
 }
 
 // ── Mic recorder (MediaRecorder) ────────────────────────────────────────────
-function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (p: Partial<AnswerState>) => void }) {
+// [sim-rekam-mime-v1] Safari/iPad TIDAK bisa merekam webm — MediaRecorder-nya
+// menghasilkan audio/mp4. Dulu blob-nya dipaksa berlabel "audio/webm" (dan
+// diunggah sebagai .webm), jadi pratinjau <audio> di iPad memajang "Error"
+// dan Whisper menerima berkas berekstensi salah. Sekarang tipe MIME dipilih
+// dari yang didukung peramban dan diikuti apa adanya sampai ke penyimpanan.
+function pickRecorderMime(): string {
+  const cands = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4;codecs=mp4a.40.2", "audio/mp4", "audio/ogg;codecs=opus", "audio/aac"];
+  try {
+    for (const c of cands) if (typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported?.(c)) return c;
+  } catch { /* ignore */ }
+  return "";
+}
+type UploadState = "idle" | "uploading" | "done" | "failed";
+function SpeakingRecorder({ state, onChange, upload }: {
+  state: AnswerState;
+  onChange: (p: Partial<AnswerState>) => void;
+  upload?: (blob: Blob) => Promise<string | null>;
+}) {
   const t = useT(); // [ui-lang-switcher-v1]
   const [recording, setRecording] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [err, setErr] = useState("");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [up, setUp] = useState<UploadState>("idle");
   const mediaRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const mountedRef = useRef(true);
 
+  useEffect(() => { mountedRef.current = true; return () => { mountedRef.current = false; }; }, []);
   useEffect(() => () => { if (timerRef.current) clearInterval(timerRef.current); if (previewUrl) URL.revokeObjectURL(previewUrl); }, [previewUrl]);
+
+  // [sim-rekam-unggah-langsung-v1] Unggah begitu rekaman selesai — rekaman yang
+  // cuma hidup di memori tab hilang saat halaman dimuat ulang / tab ditutup,
+  // dan "Rekaman tersimpan" dulu ditulis walau belum ada apa pun di server.
+  async function kirim(blob: Blob) {
+    if (!upload) return;
+    setUp("uploading");
+    let url: string | null = null;
+    try { url = await upload(blob); } catch { url = null; }
+    if (!mountedRef.current) return;
+    if (url) { onChange({ audioUrl: url }); setUp("done"); }
+    else setUp("failed");
+  }
 
   async function startRec() {
     setErr("");
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mr = new MediaRecorder(stream);
+      const mime = pickRecorderMime();
+      const mr = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
       chunksRef.current = [];
       mr.ondataavailable = (e) => { if (e.data.size > 0) chunksRef.current.push(e.data); };
       mr.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+        const type = mr.mimeType || mime || chunksRef.current[0]?.type || "audio/webm";
+        const blob = new Blob(chunksRef.current, { type });
         const url = URL.createObjectURL(blob);
         setPreviewUrl(url);
-        onChange({ audioBlob: blob });
+        // rekam ulang = rekaman lama di server tak berlaku lagi
+        onChange({ audioBlob: blob, audioUrl: null });
         stream.getTracks().forEach((t) => t.stop());
+        void kirim(blob);
       };
-      mr.start();
+      mr.start(1000);
       mediaRef.current = mr;
       setRecording(true);
       setSeconds(0);
@@ -2550,6 +2721,14 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
+  const hasRec = !!(state.audioBlob || state.audioUrl);
+  // rekaman yang dipulihkan dari sesi sebelumnya (blob lokal sudah hilang) tetap bisa diputar dari server
+  const playUrl = previewUrl || (!state.audioBlob && state.audioUrl) || null;
+  const status = recording ? null
+    : up === "uploading" ? { cls: "text-slate-500", icon: <Loader2 className="h-3.5 w-3.5 animate-spin" />, text: t("Mengunggah rekaman…") }
+    : up === "failed" ? { cls: "text-amber-600", icon: <AlertCircle className="h-3.5 w-3.5" />, text: t("Rekaman ada di perangkat ini, belum terunggah — akan dicoba lagi saat dikumpulkan.") }
+    : hasRec && (state.audioUrl || !upload) ? { cls: "text-emerald-600", icon: <CheckCircle2 className="h-3.5 w-3.5" />, text: upload ? t("Rekaman tersimpan") : t("Rekaman siap (mode preview — tidak diunggah)") }
+    : null;
 
   return (
     <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
@@ -2561,13 +2740,13 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
           </button>
         ) : (
           <button onClick={startRec} className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: TEAL }}>
-            <Mic className="h-4 w-4" />{state.audioBlob ? t("Rekam ulang") : t("Mulai rekam")}
+            <Mic className="h-4 w-4" />{hasRec ? t("Rekam ulang") : t("Mulai rekam")}
           </button>
         )}
         {recording && <span className="flex items-center gap-1.5 text-sm font-medium text-red-500"><span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />{mm}:{ss}</span>}
       </div>
-      {previewUrl && !recording && <audio controls src={previewUrl} className="mt-3 w-full" />}
-      {state.audioBlob && !recording && <p className="mt-2 flex items-center gap-1 text-xs text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />{t("Rekaman tersimpan")}</p>}
+      {playUrl && !recording && <audio controls preload="metadata" src={playUrl} className="mt-3 w-full" />}
+      {status && <p className={`mt-2 flex items-center gap-1 text-xs ${status.cls}`}>{status.icon}{status.text}</p>}
       {err && <p className="mt-2 text-xs text-red-500">{err}</p>}
     </div>
   );

@@ -443,9 +443,13 @@ export async function createAttempt(simulationId: string, info: StudentInfo): Pr
 
 // ── Upload rekaman speaking ──────────────────────────────────────────────────
 export async function uploadRecording(attemptId: string, questionId: string, blob: Blob): Promise<string | null> {
-  const path = `${attemptId}/${questionId}-${Date.now()}.webm`;
+  // [sim-rekam-mime-v1] Safari/iPad merekam audio/mp4 — ekstensi WAJIB ikut tipe
+  // aslinya; ".webm" berisi mp4 bikin pemutar & Whisper salah baca.
+  const type = (blob.type || "audio/webm").toLowerCase();
+  const ext = /mp4|aac|m4a/.test(type) ? "m4a" : /ogg/.test(type) ? "ogg" : /mpeg|mp3/.test(type) ? "mp3" : /wav/.test(type) ? "wav" : "webm";
+  const path = `${attemptId}/${questionId}-${Date.now()}.${ext}`;
   const { error } = await supabase.storage.from("simulation-recordings").upload(path, blob, {
-    contentType: blob.type || "audio/webm", upsert: true,
+    contentType: type, upsert: true,
   });
   if (error) return null;
   const { data } = supabase.storage.from("simulation-recordings").getPublicUrl(path);

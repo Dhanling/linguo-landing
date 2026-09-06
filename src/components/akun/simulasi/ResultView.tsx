@@ -219,15 +219,19 @@ export default function ResultView({
   const t = useT(); // [ui-lang-switcher-v1]
   const pct = totals.max_score > 0 ? Math.round((totals.score / totals.max_score) * 100) : 0;
 
-  // Nomor soal RESET ke 1 tiap bagian (part) — samakan dgn tampilan saat mengerjakan.
+  // Nomor soal — samakan dgn tampilan saat mengerjakan: RESET ke 1 tiap bagian
+  // (part), kecuali IELTS [sim-ielts-nomor-berurut-v1] yang berurutan di dalam
+  // satu skill (Listening 1–40, Reading 1–40) dan baru reset saat ganti skill.
   const resultNo = useMemo(() => {
-    const arr: number[] = []; let prevSec = ""; let n = 0;
+    const berurut = sim.test_type === "ielts";
+    const arr: number[] = []; let prevKey = ""; let n = 0;
     results.forEach((r) => {
-      if (r.section_id !== prevSec) { prevSec = r.section_id; n = 1; } else { n += 1; }
+      const key = berurut ? String(r.skill) : r.section_id;
+      if (key !== prevKey) { prevKey = key; n = 1; } else { n += 1; }
       arr.push(n);
     });
     return arr;
-  }, [results]);
+  }, [results, sim.test_type]);
 
   // Kelompokkan pembahasan PER SUBTES (skill) — sama seperti pembagian saat
   // mengerjakan; tiap subtes jadi satu tab supaya tidak jadi daftar panjang.
