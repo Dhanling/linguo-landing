@@ -50,6 +50,13 @@ const SECTION_LOCK_MINUTES = 30;
 // [sim-proctor-v1] Proctoring anti-curang: pindah tab / keluar layar penuh
 // tercatat sebagai pelanggaran; mencapai batas ini → jawaban auto-submit.
 const MAX_VIOLATIONS = 3;
+// [sim-proctor-v3] Keluar dari layar ujian (Esc / layar penuh mati, tab hilang,
+// pindah aplikasi) TIDAK langsung dihitung pelanggaran: siswa diberi masa
+// tenggang sekian detik untuk kembali. Kembali tepat waktu = PERINGATAN saja.
+const RETURN_GRACE_MS = 25_000;
+// Berapa kali "kembali tepat waktu" masih dimaafkan sebelum ikut dihitung
+// pelanggaran (mis. sekadar mengambil tangkapan layar / salah pencet Esc).
+const FREE_WARNINGS = 2;
 // [sim-idle-expire-v1] Sesi yang ditinggal lebih dari sehari dianggap kedaluwarsa:
 // begitu siswa membukanya lagi, jawaban yang sempat tersimpan langsung dikumpulkan
 // (auto-submit) — bukan dilanjutkan seolah waktunya masih berjalan. Angka yang sama
@@ -64,8 +71,8 @@ let leavingSim = false;
 // diterjemahkan saat render (kamus dibaca dari store bahasa, bukan saat impor).
 const extraRules = () => [
   { text: tr("Subtes dikerjakan BERURUTAN seperti ujian aslinya (mis. Listening → Structure → Reading, atau Listening → Reading → Writing → Speaking). Subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan, dan yang sudah selesai tidak bisa dibuka lagi.") },
-  { text: `${tr("Tiap subtes punya batas waktu sendiri dan dikunci minimal")} ${SECTION_LOCK_MINUTES} ${tr("menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).")}` },
-  { text: `${tr("Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh tercatat sebagai pelanggaran.")} ${MAX_VIOLATIONS}× ${tr("pelanggaran → jawaban otomatis dikumpulkan.")}` },
+  { text: `${tr("Tiap subtes punya batas waktu sendiri dan dikunci minimal")} ${SECTION_LOCK_MINUTES} ${tr("menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis ATAU semua soal subtes itu sudah kamu jawab: tombol Selesaikan Subtes langsung terbuka).")}` },
+  { text: `${tr("Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh akan memunculkan hitung mundur")} ${Math.round(RETURN_GRACE_MS / 1000)} ${tr("detik untuk kembali. Kembali tepat waktu cuma tercatat sebagai peringatan")} (${FREE_WARNINGS}× ${tr("pertama dimaafkan)")}; ${tr("tidak kembali = 1 pelanggaran.")} ${MAX_VIOLATIONS}× ${tr("pelanggaran → jawaban otomatis dikumpulkan.")}` },
   { text: tr("Selama mengerjakan, klik kanan, blok-salin teks soal, tempel jawaban dari luar, cetak/simpan halaman, dan pintasan devtools diblokir. Yang bisa dipakai hanya tombol di layar ujian (navigasi soal, Selesaikan Subtes, dan tombol keluar).") },
 ];
 
@@ -605,6 +612,12 @@ export default function SimulasiRunnerPage() {
   const [violations, setViolations] = useState(0);
   const violationsRef = useRef(0);
   const [violationMsg, setViolationMsg] = useState<string | null>(null);
+  // [sim-proctor-v3] Peringatan = keluar layar tapi kembali sebelum tenggang habis.
+  // graceLeft != null → modal hitung mundur "kembali ke layar ujian" sedang tampil.
+  const [warnings, setWarnings] = useState(0);
+  const warningsRef = useRef(0);
+  const [graceLeft, setGraceLeft] = useState<number | null>(null);
+  const [graceMsg, setGraceMsg] = useState("");
   const [promo, setPromo] = useState<PromoAttemptStatus | null>(null); // jatah gratis (null = tak dibatasi)
   const [guestTitle, setGuestTitle] = useState<string>(""); // judul sim di form identitas tamu
   const [guestBusy, setGuestBusy] = useState(false);
@@ -933,8 +946,60 @@ export default function SimulasiRunnerPage() {
         setViolationMsg(msg);
       }
     };
-    const onVis = () => { if (document.visibilityState === "hidden") violate(t("Kamu terdeteksi berpindah tab / meninggalkan layar ujian.")); };
-    const onFs = () => { if (!fsElement()) violate(t("Kamu terdeteksi keluar dari mode layar penuh.")); };
+
+    // [sim-proctor-v3] SEMUA kejadian "meninggalkan layar ujian" bermuara ke satu
+    // jendela tenggang: modal hitung mundur, dan siswa yang kembali sebelum waktu
+    // habis cuma dapat peringatan (dua kali pertama dimaafkan). Ini sekaligus
+    // menghapus hitungan dobel — satu kejadian (Esc, laptop tidur, Cmd+Tab)
+    // biasanya memicu fullscreenchange + blur + visibilitychange sekaligus, dan
+    // dulu itu langsung jadi 3 pelanggaran alias ujian gagal seketika.
+    let graceTimer: ReturnType<typeof setInterval> | null = null;
+    let graceUntil = 0;
+    let graceReason = "";
+    const backOnScreen = () => document.visibilityState !== "hidden" && document.hasFocus() && !!fsElement();
+    const stopGrace = () => {
+      if (graceTimer) { clearInterval(graceTimer); graceTimer = null; }
+      graceUntil = 0;
+      setGraceLeft(null);
+    };
+    // Kembali tepat waktu → peringatan. Lewat jatah maaf → baru pelanggaran.
+    const forgive = (msg: string) => {
+      warningsRef.current += 1;
+      setWarnings(warningsRef.current);
+      if (warningsRef.current > FREE_WARNINGS) violate(msg);
+    };
+    const settleIfBack = () => {
+      if (!graceTimer || !backOnScreen()) return;
+      const reason = graceReason;
+      stopGrace();
+      forgive(reason);
+    };
+    const leftScreen = (msg: string) => {
+      if (leavingSim || submittingRef.current || graceTimer) return;
+      graceReason = msg;
+      graceUntil = Date.now() + RETURN_GRACE_MS;
+      setGraceMsg(msg);
+      setGraceLeft(Math.ceil(RETURN_GRACE_MS / 1000));
+      graceTimer = setInterval(() => {
+        if (leavingSim || submittingRef.current) { stopGrace(); return; }
+        if (backOnScreen()) { settleIfBack(); return; }
+        const left = Math.ceil((graceUntil - Date.now()) / 1000);
+        if (left > 0) { setGraceLeft(left); return; }
+        // Tenggang habis (termasuk kasus laptop tidur/mati: timer baru jalan lagi
+        // saat bangun, jadi tercatat SEKALI, bukan beruntun).
+        stopGrace();
+        violate(msg);
+      }, 250);
+    };
+
+    const onVis = () => {
+      if (document.visibilityState === "hidden") leftScreen(t("Kamu terdeteksi berpindah tab / meninggalkan layar ujian."));
+      else settleIfBack();
+    };
+    const onFs = () => {
+      if (!fsElement()) leftScreen(t("Kamu terdeteksi keluar dari mode layar penuh."));
+      else settleIfBack();
+    };
 
     // [sim-proctor-v2] Pindah APLIKASI/jendela lain (Alt+Tab, Cmd+Tab, klik
     // jendela lain, minimize) sering TIDAK memicu visibilitychange → pakai
@@ -947,10 +1012,10 @@ export default function SimulasiRunnerPage() {
       if (blurTimer) clearTimeout(blurTimer);
       blurTimer = setTimeout(() => {
         if (document.hasFocus() || document.activeElement?.tagName === "IFRAME") return;
-        violate(t("Kamu terdeteksi berpindah ke aplikasi/jendela lain."));
+        leftScreen(t("Kamu terdeteksi berpindah ke aplikasi/jendela lain."));
       }, 600);
     };
-    const onFocus = () => { if (blurTimer) { clearTimeout(blurTimer); blurTimer = null; } };
+    const onFocus = () => { if (blurTimer) { clearTimeout(blurTimer); blurTimer = null; } settleIfBack(); };
 
     const block = (e: Event) => e.preventDefault();
 
@@ -998,6 +1063,8 @@ export default function SimulasiRunnerPage() {
     window.addEventListener("beforeprint", onPrint);
     return () => {
       if (blurTimer) clearTimeout(blurTimer);
+      if (graceTimer) clearInterval(graceTimer);
+      setGraceLeft(null);
       document.removeEventListener("visibilitychange", onVis);
       document.removeEventListener("fullscreenchange", onFs);
       document.removeEventListener("webkitfullscreenchange", onFs);
@@ -1243,6 +1310,12 @@ export default function SimulasiRunnerPage() {
             {t("Pelanggaran tercatat")}: {violations}/{MAX_VIOLATIONS}. {t("Mencapai")} {MAX_VIOLATIONS}× → {t("jawaban otomatis dikumpulkan.")}
           </p>
         )}
+        {violations === 0 && warnings > 0 && (
+          <p className="mt-4 flex items-center gap-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm font-semibold text-amber-700">
+            <ShieldAlert className="h-4 w-4 shrink-0" />
+            {t("Peringatan")}: {warnings}/{FREE_WARNINGS}. {t("Kamu sempat keluar layar ujian tapi kembali tepat waktu — belum dihitung pelanggaran.")}
+          </p>
+        )}
 
         <h2 className="mt-6 mb-3 text-sm font-bold text-slate-800">{t("Subtes yang diujikan")}</h2>
         <div className="space-y-3">
@@ -1301,7 +1374,7 @@ export default function SimulasiRunnerPage() {
           <span>
             {t("Subtes dikerjakan")} <b className="font-bold">{t("berurutan")}</b> {t("seperti ujian aslinya")}
             {skillGroups.length > 1 && <> ({skillGroups.map((g) => SKILL_LABEL[g.skill]).join(" → ")})</>} — {t("subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan. Tiap subtes punya batas waktu sendiri dan dikunci minimal")}{" "}
-            {SECTION_LOCK_MINUTES} {t("menit setelah dimulai, dan subtes yang sudah diselesaikan tidak bisa dibuka lagi. Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.")}
+            {SECTION_LOCK_MINUTES} {t("menit setelah dimulai — kunci itu langsung terbuka begitu semua soal subtesnya kamu jawab. Subtes yang sudah diselesaikan tidak bisa dibuka lagi, dan saat subtes terakhir selesai seluruh jawaban otomatis dikumpulkan.")}
           </span>
         </p>
       </Shell>
@@ -1332,8 +1405,13 @@ export default function SimulasiRunnerPage() {
 
   // Kunci subtes: sebelum lewat, tombol "Selesaikan Subtes" nonaktif. Nilai ini
   // dihitung ulang tiap render — re-render tiap detik sudah dijamin tick timer.
+  // [sim-finish-early-v1] Kunci ini gunanya menahan siswa yang mau kabur dari
+  // subtes tanpa mengerjakan. Kalau SEMUA soal subtes sudah terjawab, tak ada
+  // lagi yang perlu ditahan — dulu siswa yang sudah selesai terpaksa menunggui
+  // layar sampai waktunya habis (dan sering ditinggal → kena pelanggaran).
   const lockMin = Math.min(SECTION_LOCK_MINUTES, groupDurationMin(activeGroup));
-  const lockLeft = preview ? 0 : Math.max(0, Math.ceil(((groupStartedAt[activeGroup.skill] ?? 0) + lockMin * 60_000 - Date.now()) / 1000));
+  const allAnswered = gQsAll.length > 0 && gAnswered >= gQsAll.length;
+  const lockLeft = preview || allAnswered ? 0 : Math.max(0, Math.ceil(((groupStartedAt[activeGroup.skill] ?? 0) + lockMin * 60_000 - Date.now()) / 1000));
 
   // [sim-table-fill-v1] Soal "lengkapi tabel": isian ditanam di dalam tabelnya,
   // jadi soal-soal itu TIDAK diulang lagi sebagai daftar di kolom kanan.
@@ -1402,6 +1480,7 @@ export default function SimulasiRunnerPage() {
     return (
       <Shell sim={sim} preview={preview} confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
         <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
+        <ReturnGraceModal left={graceLeft} msg={graceMsg} warnings={warnings} onBack={enterFullscreen} />
         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
             <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · {partTitle}
@@ -1486,7 +1565,7 @@ export default function SimulasiRunnerPage() {
       type="button"
       disabled={lockLeft > 0}
       onClick={() => finishGroup()}
-      title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}` : undefined}
+      title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}. ${t("Jawab semua soal untuk bisa selesai lebih awal.")}` : undefined}
       className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white disabled:opacity-50"
       style={{ background: TEAL_DEEP }}
     >
@@ -1517,6 +1596,7 @@ export default function SimulasiRunnerPage() {
   return (
     <Shell sim={sim} preview={preview} wide confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
+      <ReturnGraceModal left={graceLeft} msg={graceMsg} warnings={warnings} onBack={enterFullscreen} />
 
       {/* Navigasi nomor soal horizontal (sticky di bawah header) — menggantikan
           bar progres lama + panel kanan. */}
@@ -2366,7 +2446,7 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
           type="button"
           disabled={lockLeft > 0}
           onClick={onFinish}
-          title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}` : undefined}
+          title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}. ${t("Jawab semua soal untuk bisa selesai lebih awal.")}` : undefined}
           className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold text-white disabled:opacity-50"
           style={{ background: TEAL_DEEP }}
         >
@@ -2411,6 +2491,45 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
             }))}
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+// ── [sim-proctor-v3] Modal masa tenggang "kembali ke layar ujian" ────────────
+// Tampil begitu siswa keluar layar penuh / pindah tab. Selama hitung mundur
+// belum habis, belum ada pelanggaran yang dicatat — kembali tepat waktu cuma
+// tercatat sebagai peringatan.
+function ReturnGraceModal({ left, msg, warnings, onBack }: { left: number | null; msg: string; warnings: number; onBack: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  if (left == null) return null;
+  const free = Math.max(0, FREE_WARNINGS - warnings);
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" />
+      <div className="relative w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-xl">
+        <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-500">
+          <ShieldAlert className="h-6 w-6" />
+        </span>
+        <p className="mt-3 text-base font-bold text-slate-900">{t("Kembali ke layar ujian")}</p>
+        <p className="mt-1 text-sm leading-relaxed text-slate-600">{msg}</p>
+        <p className="mt-3 text-4xl font-black tabular-nums text-slate-900">{left}</p>
+        <p className="mt-1 text-xs font-medium text-slate-500">
+          {t("detik lagi. Kembali sebelum hitungan habis → belum dihitung pelanggaran.")}
+        </p>
+        <button
+          type="button"
+          onClick={onBack}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white"
+          style={{ background: TEAL }}
+        >
+          <PlayCircle className="h-4 w-4" />{t("Lanjutkan Ujian (layar penuh)")}
+        </button>
+        <p className="mt-2 text-[11px] leading-relaxed text-slate-400">
+          {free > 0
+            ? `${t("Sisa toleransi kembali tepat waktu")}: ${free}×.`
+            : t("Toleransi habis — keluar layar berikutnya langsung dihitung pelanggaran.")}
+        </p>
       </div>
     </div>
   );
