@@ -139,9 +139,21 @@ export async function POST(req: NextRequest) {
       experience,        // "beginner" | "some"
       lead_source,       // override kolom leads.source (mis. "Onboarding Wizard")
       pipeline_status,   // opsional — biarin default DB kalau tak dikirim
+      // [onboarding-belanja-v1] true → HANYA select-or-insert baris students
+      // (+ lead), tanpa registrations. Dipakai pembeli produk digital dari
+      // onboarding: mereka tidak mendaftar kelas apa pun, tapi tetap butuh baris
+      // students supaya /akun punya dashboard sepulang dari Xendit — tanpa itu
+      // halaman melempar mereka balik ke wizard dan barang yang sudah dibayar
+      // seperti hilang. Baris registrations Rp 0 sengaja TIDAK dibuat: menu
+      // Registrasi menyaringnya (reg-hide-zero-amount-v1) dan itu cuma menambah
+      // sampah pendaftaran palsu.
+      profile_only,
     } = body || {};
 
-    if (!email || !product) {
+    if (!email) {
+      return NextResponse.json({ error: "email wajib." }, { status: 400 });
+    }
+    if (!profile_only && !product) {
       return NextResponse.json({ error: "email & product wajib." }, { status: 400 });
     }
 
@@ -149,9 +161,11 @@ export async function POST(req: NextRequest) {
     // yang punya jadwal di /jadwal-kelas-reguler. Tanpa gerbang ini pendaftaran
     // "Kelas Reguler Danish" tetap bisa masuk lewat panggilan langsung ke route
     // ini, dan registrasinya nyangkut tanpa batch tujuan.
-    const langRejection = programLangRejection(product, language);
-    if (langRejection) {
-      return NextResponse.json({ error: langRejection }, { status: 400 });
+    if (!profile_only) {
+      const langRejection = programLangRejection(product, language);
+      if (langRejection) {
+        return NextResponse.json({ error: langRejection }, { status: 400 });
+      }
     }
 
     // 1. Select-or-insert student by email (service role → bypass RLS).
@@ -236,6 +250,20 @@ export async function POST(req: NextRequest) {
     }
     if (!studentId) {
       return NextResponse.json({ error: "Gagal membaca id siswa." }, { status: 500 });
+    }
+
+    // [onboarding-belanja-v1] Jalur profil saja — berhenti di sini.
+    if (profile_only) {
+      after(async () => {
+        await captureLead({
+          email, name, wa_number,
+          product: product || "Produk Digital",
+          language, level, amount: 0,
+          source: lead_source || "Onboarding Belanja",
+          experience, birthdate: birth_date, domicile,
+        });
+      });
+      return NextResponse.json({ success: true, profile_only: true, student_id: studentId });
     }
 
     // 2. Insert registration (status Menunggu Pembayaran). Service role bypass RLS.

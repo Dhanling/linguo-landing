@@ -26,6 +26,7 @@ import successAnim from "../payment/success/success-anim.json";
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Bug, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
+import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/OnboardingBelanja"; // [onboarding-belanja-v1] produk digital ikut ditawarkan di onboarding
 
 import PaymentCard, { calculateDefaultAmount } from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
@@ -399,6 +400,18 @@ const WIZARD_PROGRAMS: { key: string; label: string; icon: LucideIcon; iconTint:
   { key: "Kelas Kids", label: "Kelas Kids", icon: Baby, iconTint: "bg-purple-50 text-purple-600", desc: "Untuk anak usia 5–12 tahun", price: "Mulai Rp75k/sesi" },
   { key: "English Test Preparation", label: "IELTS / TOEFL Prep", icon: ClipboardList, iconTint: "bg-amber-50 text-amber-600", desc: "Persiapan tes bahasa Inggris bersertifikat", price: "Rp300k/2 bulan (16 sesi @90 mnt)" },
 ];
+// [onboarding-belanja-v1] Produk yang bisa dibeli & dipakai DETIK ITU JUGA.
+// Sebelumnya langkah "Program" cuma menawarkan empat kelas dengan pengajar dan
+// semuanya berujung di WhatsApp — Simulasi Tes, E-Book, dan E-Learning tak
+// pernah disebut, padahal tiga-tiganya tak butuh jadwal, pengajar, atau
+// negosiasi harga. Memilih salah satunya membuka layar belanja (keranjang +
+// satu invoice Xendit), bukan jalur pendaftaran kelas.
+const WIZARD_DIGITAL: { key: KategoriBelanja; label: string; icon: LucideIcon; iconTint: string; desc: string; price: string; badge?: string }[] = [
+  { key: "simulasi", label: "Simulasi Tes IELTS / TOEFL", icon: ClipboardCheck, iconTint: "bg-violet-50 text-violet-600", desc: "Full test + skor & pembahasan otomatis", price: "Rp79.000 · akses selamanya", badge: "Langsung Bisa" },
+  { key: "ebook", label: "E-Book (Lingbook)", icon: BookMarked, iconTint: "bg-amber-50 text-amber-600", desc: "Modul belajar mandiri per bahasa, 60+ pilihan", price: "Mulai Rp79.000" },
+  { key: "elearning", label: "E-Learning", icon: Video, iconTint: "bg-sky-50 text-sky-600", desc: "Rekaman kelas per bahasa, belajar kapan saja", price: "Mulai Rp79.000" },
+];
+
 // [linguo-patch:onboarding-lang-catalog-v1] katalog bahasa Kelas Private — lengkap, dikelompokkan per region
 const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
   { region: "Eropa", langs: ["English","French","German","Spanish","Italian","Portuguese","Dutch","Russian","Polish","Czech","Hungarian","Romanian","Bulgarian","Ukrainian","Greek","Turkish","Danish","Swedish","Norwegian","Finnish","Icelandic"] },
@@ -556,6 +569,9 @@ function OnboardingWizard({ user, studentId, onDone }: {
   user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; level: string; avatarFile?: File | null}) => void;
 }) {
   const [step, setStep] = useState(0);
+  // [onboarding-belanja-v1] kategori produk digital yang sedang dibelanjakan;
+  // non-null = wizard kelas dilangkahi, layar belanja yang tampil.
+  const [belanja, setBelanja] = useState<KategoriBelanja | null>(null);
   const [program, setProgram] = useState("");
   const [testType, setTestType] = useState("");
   const [lang, setLang] = useState("");
@@ -638,6 +654,21 @@ function OnboardingWizard({ user, studentId, onDone }: {
     `. Mohon info jadwal dan biayanya ya. Terima kasih!`
   );
 
+  // [onboarding-belanja-v1] Jalur produk digital: keranjang + bayar Xendit,
+  // TIDAK lewat onDone/api-enroll (tak ada kelas yang didaftarkan). Setelah
+  // profil tersimpan, halaman dimuat ulang supaya dashboard membaca baris
+  // students yang baru — jauh lebih murah daripada menyulam state siswa palsu.
+  if (belanja) {
+    return (
+      <OnboardingBelanja
+        user={user}
+        kategoriAwal={belanja}
+        onKembali={() => setBelanja(null)}
+        onSelesai={() => { window.location.href = "/akun"; }}
+      />
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex items-center justify-center p-4 overflow-y-auto">
       {step >= 1 && (
@@ -675,9 +706,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
             <div>
               <div className="text-center mb-6">
                 <div className="mb-3 flex justify-center"><span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-teal-50 text-teal-600"><Target className="w-6 h-6" /></span></div>
-                <h2 className="text-xl font-extrabold text-gray-900">Program apa yang kamu inginkan?</h2>
+                <h2 className="text-xl font-extrabold text-gray-900">Kamu lagi cari apa?</h2>
                 <p className="text-gray-400 text-sm mt-1">Pilih satu — langsung lanjut otomatis</p>
               </div>
+              <p className="mb-2 px-0.5 text-[11px] font-bold uppercase tracking-wide text-gray-400">Kelas dengan pengajar</p>
               <div className="space-y-3">
                 {WIZARD_PROGRAMS.map(p => {
                   const Icon = p.icon;
@@ -695,6 +727,31 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     </div>
                     {program === p.key && <span className="text-teal-500 font-bold shrink-0 mt-0.5"><Check className="w-4 h-4" /></span>}
                   </button>
+                  );
+                })}
+              </div>
+
+              {/* [onboarding-belanja-v1] Produk yang bisa langsung dibayar & dipakai */}
+              <p className="mb-2 mt-6 px-0.5 text-[11px] font-bold uppercase tracking-wide text-gray-400">
+                Belajar mandiri — bayar &amp; langsung dipakai
+              </p>
+              <div className="space-y-3">
+                {WIZARD_DIGITAL.map(d => {
+                  const Icon = d.icon;
+                  return (
+                    <button key={d.key} onClick={() => setBelanja(d.key)}
+                      className="w-full flex items-start gap-4 p-4 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all text-left active:scale-[0.98]">
+                      <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0 mt-0.5 ${d.iconTint}`}><Icon className="w-5 h-5" /></span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-bold text-sm text-gray-800">{d.label}</span>
+                          {d.badge && <span className="text-[10px] bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded-full font-semibold">{d.badge}</span>}
+                        </div>
+                        <div className="text-xs text-gray-400 mt-0.5">{d.desc}</div>
+                        <div className="text-xs text-teal-600 font-semibold mt-1">{d.price}</div>
+                      </div>
+                      <ChevronRight className="mt-2.5 h-4 w-4 shrink-0 text-gray-300" />
+                    </button>
                   );
                 })}
               </div>
@@ -1045,11 +1102,22 @@ function OnboardingWizard({ user, studentId, onDone }: {
               {isReguler && (
                 <div className="mb-4"><RegulerTermsBox checked={agreeReguler} onChange={setAgreeReguler} /></div>
               )}
+              {/* [onboarding-belanja-v1] Bayar dulu, tanya belakangan: tombol utama
+                  sekarang menyelesaikan pendaftaran lalu mendarat di kartu
+                  pembayaran dashboard. WhatsApp turun jadi pilihan kedua —
+                  dulu satu-satunya jalan keluar, jadi tiap calon siswa harus
+                  menunggu balasan CS sebelum bisa membayar apa pun. */}
+              <button
+                onClick={() => { if (isReguler && !agreeReguler) return; finish(); }}
+                aria-disabled={isReguler && !agreeReguler}
+                className={`mb-3 w-full rounded-2xl bg-teal-600 py-4 text-base font-bold text-white shadow-md shadow-teal-200 transition-all hover:bg-teal-700 active:scale-[0.98] ${isReguler && !agreeReguler ? "opacity-40 pointer-events-none" : ""}`}>
+                Lanjut ke Pembayaran →
+              </button>
               <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
                 onClick={(e) => { if (isReguler && !agreeReguler) { e.preventDefault(); return; } finish(); }}
                 className={`w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl text-sm transition-all shadow-md shadow-green-100 active:scale-[0.98] mb-3 ${isReguler && !agreeReguler ? "opacity-40 pointer-events-none" : ""}`}>
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
-                Daftar via WhatsApp
+                Tanya dulu via WhatsApp
               </a>
               {level === "TBD" && !isTestPrep && placementSlug(lang) && (
                 <a href={`/silabus/${placementSlug(lang)}/coba`} onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-slate-200 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">

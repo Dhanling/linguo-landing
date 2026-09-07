@@ -37,6 +37,7 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG, masihDijual } from "@/lib/elearningBundle";
 import { saringEdisiLama } from "@/lib/ebookEdisi";
+import { judulRingkas, labelBahasa } from "@/lib/katalogDigital";
 /* [pustaka-terakhir-dibuka-v1] baris pintas "Terakhir dibuka" — sama seperti di
    Perpustakaan dashboard pengajar, dirakit dari jejak reader di perangkat ini */
 import { bacaTerakhirDibuka, hapusTerakhirDibuka, type JejakPustaka } from "@/lib/pustakaTerakhir";
@@ -132,37 +133,9 @@ function jangkarSampul(p: DProduct): string {
   return p.cover_url ? " object-top" : "";
 }
 
-// [pustaka-judul-ringkas-v1] Judul katalog dari admin panjangnya bisa dua baris penuh
-// ("Modul Belajar Bahasa Arab Linguo — Arabic 101 (Edisi Bahasa Indonesia)"). Di kartu
-// yang dibaca sekilas, potongan boilerplate itu cuma bikin semua kartu kelihatan sama.
-// Kita buang penggal yang isinya "Modul Belajar/Mandiri ..." atau cuma merek "Linguo",
-// lalu sisakan penggal pertama yang benar-benar menamai produknya.
-const PENGGAL_BOILERPLATE = /(modul\s+(belajar|mandiri)|^linguo$|^bahasa\s+\w+$)/i;
-
-// [pustaka-judul-level-v1] Judul modul cetakan baru sudah membawa tingkatnya di
-// ekor ("Danish 101 - A2"), tapi pemenggal di atas memotong tepat di " - " itu
-// juga — empat modul Danish jadi empat kartu berjudul "Danish 101" yang mustahil
-// dibedakan siswa. Tingkatnya dipasang balik setelah judul diringkas. Cuma ekor
-// CEFR TUNGGAL yang dihitung: rentang edisi lama ("A1-B1") menandai isi modul,
-// bukan tingkatnya, dan judul edisi lama memang tak pernah memakai pola ini.
-const EKOR_LEVEL = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\s*$/i;
-function tingkatJudul(raw: string): string | null {
-  const m = (raw || "").trim().match(EKOR_LEVEL);
-  return m ? m[1].toUpperCase() : null;
-}
-
-function judulRingkas(raw: string): string {
-  const penggal = (raw || "")
-    .split(/\s+[—–|]\s+|\s+-\s+/)
-    .map((x) => x.trim())
-    .filter(Boolean);
-  const sisa = penggal.filter((x) => !PENGGAL_BOILERPLATE.test(x));
-  const judul = (sisa[0] || penggal[0] || raw || "").replace(/\s*\bLinguo\b\s*/gi, " ").trim();
-  const inti = judul || raw;
-  const level = tingkatJudul(raw);
-  if (!level || new RegExp(`\\b${level}\\s*$`, "i").test(inti)) return inti;
-  return `${inti} - ${level}`;
-}
+// [onboarding-belanja-v1] judulRingkas/labelBahasa pindah ke lib/katalogDigital
+// — checkout onboarding memakai helper yang sama, dan dua salinan berarti judul
+// kartu bisa berbeda untuk produk yang sama.
 
 // [pustaka-judul-bendera-v1] Bendera negara di kiri judul kartu. Semua kartu
 // katalog berjudul "<Bahasa> 101 (…)", jadi bahasanya cuma bisa dikenali dengan
@@ -204,26 +177,6 @@ function adalahNewEdition(p: { title: string }) {
   return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul);
 }
 
-// `digital_products.language` isinya nama Inggris ("Sundanese", "Persian"),
-// sementara dashboard siswa berbahasa Indonesia. Dipetakan di sini saja supaya
-// tidak menyeret seluruh master kurikulum ke bundel halaman Perpustakaan.
-const NAMA_BAHASA_ID: Record<string, string> = {
-  arabic: "Arab", basque: "Basque", bengali: "Bengali", cantonese: "Kanton",
-  chinese: "Mandarin", czech: "Ceko", danish: "Denmark", dutch: "Belanda",
-  english: "Inggris", estonian: "Estonia", finnish: "Finlandia", french: "Prancis",
-  georgian: "Georgia", german: "Jerman", greek: "Yunani", hebrew: "Ibrani",
-  hindi: "Hindi", hungarian: "Hungaria", icelandic: "Islandia", indonesian: "Indonesia",
-  italian: "Italia", japanese: "Jepang", javanese: "Jawa", khmer: "Khmer",
-  korean: "Korea", lao: "Laos", malay: "Melayu", mandarin: "Mandarin",
-  myanmar: "Myanmar", norwegian: "Norwegia", persian: "Persia", polish: "Polandia",
-  portuguese: "Portugis", russian: "Rusia", serbian: "Serbia", slovak: "Slovakia",
-  slovenian: "Slovenia", spanish: "Spanyol", sundanese: "Sunda", swahili: "Swahili",
-  swedish: "Swedia", tagalog: "Tagalog", thai: "Thailand", turkish: "Turki",
-  ukrainian: "Ukraina", urdu: "Urdu", uzbek: "Uzbek", vietnamese: "Vietnam",
-};
-function labelBahasa(raw: string) {
-  return NAMA_BAHASA_ID[raw.trim().toLowerCase()] ?? raw.trim();
-}
 
 // Level dipakai apa adanya ("A1", "A2", "B1", "A1-B1"); yang kosong hanya muncul
 // di pilihan "Semua level".

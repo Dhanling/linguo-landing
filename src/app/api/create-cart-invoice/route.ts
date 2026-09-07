@@ -29,9 +29,19 @@
 // (nilai yang memang sudah ada), BUKAN nilai baru seperti "cart" — nilai baru
 // akan ditolak constraint dan seluruh checkout gagal.
 
+// [onboarding-belanja-v1] Keranjang kini boleh berisi SIMULASI TES juga.
+// Simulasi tidak punya baris di `digital_products` (aksesnya lewat
+// `simulation_entitlements` per email + jenis tes), jadi ia tak bisa jadi baris
+// digital_purchases. Yang dititipkan ke invoice ini: satu baris `leads`
+// program='simulasi' per jenis tes, ber-xendit_external_id `<extId>-sim-<jenis>`.
+// Pemenuhannya di edge fn `xendit-webhook` → `handleCartPurchase`, yang mencari
+// lead-lead itu lewat xendit_invoice_id lalu menerbitkan entitlement-nya.
+// Kalau pola external_id di sini diubah, ubah juga di sana.
+
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
+import { promoAmountFor } from "@/lib/promoMerdeka";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -41,6 +51,18 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
 
 const NO_STORE = { "Cache-Control": "no-store, private, max-age=0" };
 const MAKS_ITEM = 20;
+
+// [onboarding-belanja-v1] Simulasi Tes. Harga normalnya sama dengan
+// PRODUCT_PRICES di /api/create-invoice (79.000) dan tetap ditentukan SERVER;
+// promoAmountFor menutup jendela promonya sendiri tanpa deploy.
+const SIM_TEST_TYPES = ["toefl", "ielts"] as const;
+type SimTestType = (typeof SIM_TEST_TYPES)[number];
+const SIM_HARGA_NORMAL = 79000;
+const hargaSimulasi = (t: SimTestType) => promoAmountFor(`simulasi-${t}`) ?? SIM_HARGA_NORMAL;
+const SIM_LABEL: Record<SimTestType, string> = {
+  toefl: "Simulasi TOEFL — ITP & iBT (akses selamanya)",
+  ielts: "Simulasi IELTS — Academic & General (akses selamanya)",
+};
 
 function tolak(pesan: string, status: number) {
   return NextResponse.json({ ok: false, error: pesan }, { status, headers: NO_STORE });
@@ -58,6 +80,7 @@ interface Tamu { nama: string; email: string; telepon: string | null }
 export async function POST(req: NextRequest) {
   let accessToken = "";
   let items: ItemMasuk[] = [];
+  let simMinta: SimTestType[] = [];
   let referralCode: string | null = null;
   let tamu: Tamu | null = null;
   try {
@@ -77,6 +100,15 @@ export async function POST(req: NextRequest) {
           })
           .filter((x: ItemMasuk) => x.productId && x.pricingId)
       : [];
+    simMinta = Array.isArray(body.sim_items)
+      ? Array.from(
+          new Set(
+            body.sim_items
+              .map((x: unknown) => String((x as Record<string, unknown>)?.testType ?? "").toLowerCase())
+              .filter((t: string): t is SimTestType => (SIM_TEST_TYPES as readonly string[]).includes(t)),
+          ),
+        )
+      : [];
   } catch {
     return tolak("Permintaan tidak terbaca", 400);
   }
@@ -84,8 +116,10 @@ export async function POST(req: NextRequest) {
   if (tamu && (!tamu.nama || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(tamu.email))) {
     return tolak("Nama dan email yang valid wajib diisi.", 400);
   }
-  if (items.length === 0) return tolak("Keranjang kosong.", 400);
-  if (items.length > MAKS_ITEM) return tolak(`Maksimal ${MAKS_ITEM} produk sekali checkout.`, 400);
+  if (items.length === 0 && simMinta.length === 0) return tolak("Keranjang kosong.", 400);
+  if (items.length + simMinta.length > MAKS_ITEM) {
+    return tolak(`Maksimal ${MAKS_ITEM} produk sekali checkout.`, 400);
+  }
 
   // Produk kembar di satu keranjang = dua baris kepemilikan untuk barang yang
   // sama. Dibuang di sini, bukan cuma di UI.
@@ -131,10 +165,12 @@ export async function POST(req: NextRequest) {
   // Harga yang dikirim klien sengaja tidak dipakai sama sekali. Yang dipercaya
   // cuma pasangan (productId, pricingId); nominalnya dari digital_product_pricing.
   const ids = items.map((x) => x.productId);
-  const { data: prods, error: prodErr } = await admin
-    .from("digital_products")
-    .select("id, type, title, slug, language, is_active, file_url, video_playlist_url, digital_product_pricing ( id, price, duration_days, display_label, is_active )")
-    .in("id", ids);
+  const { data: prods, error: prodErr } = ids.length
+    ? await admin
+        .from("digital_products")
+        .select("id, type, title, slug, language, is_active, file_url, video_playlist_url, digital_product_pricing ( id, price, duration_days, display_label, is_active )")
+        .in("id", ids)
+    : { data: [], error: null };
   if (prodErr) return tolak("Gagal membaca katalog produk", 500);
 
   type Tier = { id: string; price: number | null; duration_days: number | null; display_label: string | null; is_active: boolean };
@@ -159,11 +195,29 @@ export async function POST(req: NextRequest) {
     );
   const dimiliki = new Set((milik ?? []).map((r: { product_id: string }) => r.product_id));
 
-  const langs = await fetchProductLangs(admin, ids);
+  // [onboarding-belanja-v1] Simulasi yang sudah dimiliki tidak dijual ulang —
+  // aksesnya lifetime per jenis tes, jadi bayar kedua kali tidak menambah apa
+  // pun. Kuncinya EMAIL (sama seperti has_simulation_access()).
+  const simSah: SimTestType[] = [];
+  const simDitolak: string[] = [];
+  if (simMinta.length > 0) {
+    const { data: entitled } = await admin
+      .from("simulation_entitlements")
+      .select("test_type")
+      .ilike("email", email)
+      .eq("status", "active");
+    const punya = new Set((entitled ?? []).map((r: { test_type: string }) => String(r.test_type).toLowerCase()));
+    for (const t of simMinta) {
+      if (punya.has(t)) simDitolak.push(`Simulasi ${t.toUpperCase()} sudah bisa kamu akses`);
+      else simSah.push(t);
+    }
+  }
+
+  const langs = ids.length ? await fetchProductLangs(admin, ids) : {};
 
   // ── 4. Susun baris yang sah ───────────────────────────────────────────────
   const sah: { prod: Prod; tier: Tier }[] = [];
-  const ditolak: string[] = [];
+  const ditolak: string[] = [...simDitolak];
   for (const it of items) {
     const p = katalog.find((x) => x.id === it.productId);
     if (!p || p.is_active === false) { ditolak.push("produk tidak ditemukan"); continue; }
@@ -184,14 +238,17 @@ export async function POST(req: NextRequest) {
     sah.push({ prod: p, tier });
   }
 
-  if (sah.length === 0) {
+  if (sah.length === 0 && simSah.length === 0) {
     return tolak(
       ditolak.length > 0 ? `Tak ada yang bisa dibayar: ${ditolak.join("; ")}.` : "Keranjang kosong.",
       409,
     );
   }
 
-  const total = sah.reduce((n, x) => n + (x.tier.price ?? 0), 0);
+  const simBaris = simSah.map((t) => ({ testType: t, harga: hargaSimulasi(t) }));
+  const total =
+    sah.reduce((n, x) => n + (x.tier.price ?? 0), 0) +
+    simBaris.reduce((n, x) => n + x.harga, 0);
   if (total <= 0) return tolak("Total belanja tidak valid.", 400);
 
   // ── 5. Baris kepemilikan lahir dulu sebagai "Belum Bayar" ─────────────────
@@ -218,18 +275,57 @@ export async function POST(req: NextRequest) {
     ...(referralCode ? { affiliate_ref_code: referralCode } : {}),
   }));
 
-  const { data: baris, error: insErr } = await admin
-    .from("digital_purchases")
-    .insert(payload)
-    .select("id");
-  if (insErr || !baris || baris.length === 0) {
-    console.error("[create-cart-invoice] insert gagal:", insErr);
-    return tolak(
-      `Gagal menyiapkan pesanan${insErr?.code ? ` (kode ${insErr.code})` : ""}. Coba lagi sebentar.`,
-      500,
-    );
+  let barisIds: string[] = [];
+  if (payload.length > 0) {
+    const { data: baris, error: insErr } = await admin
+      .from("digital_purchases")
+      .insert(payload)
+      .select("id");
+    if (insErr || !baris || baris.length === 0) {
+      console.error("[create-cart-invoice] insert gagal:", insErr);
+      return tolak(
+        `Gagal menyiapkan pesanan${insErr?.code ? ` (kode ${insErr.code})` : ""}. Coba lagi sebentar.`,
+        500,
+      );
+    }
+    barisIds = baris.map((r: { id: string }) => r.id);
   }
-  const barisIds = baris.map((r: { id: string }) => r.id);
+
+  // [onboarding-belanja-v1] Baris `leads` untuk tiap Simulasi Tes di keranjang.
+  // Bentuknya sengaja sama dengan lead yang dibuat /api/create-invoice untuk
+  // pembelian simulasi satuan (program='simulasi', level=<jenis tes>) — itu satu-
+  // satunya sumber baris "Simulasi Tes" di Overview, dan webhook membacanya untuk
+  // tahu email siapa yang berhak.
+  let simLeadIds: string[] = [];
+  if (simBaris.length > 0) {
+    const { data: leadRows, error: leadErr } = await admin
+      .from("leads")
+      .insert(simBaris.map((x) => ({
+        name: pembeliNama,
+        email,
+        wa_number: pembeliTelepon,
+        program: "simulasi",
+        level: x.testType,
+        source: "landing-page",
+        payment_status: "PENDING",
+        xendit_external_id: `${extId}-sim-${x.testType}`,
+        amount: x.harga,
+        ...(referralCode ? { affiliate_ref_code: referralCode } : {}),
+      })))
+      .select("id");
+    if (leadErr || !leadRows || leadRows.length === 0) {
+      console.error("[create-cart-invoice] lead simulasi gagal:", leadErr);
+      if (barisIds.length > 0) await admin.from("digital_purchases").delete().in("id", barisIds);
+      return tolak("Gagal menyiapkan pesanan Simulasi Tes. Coba lagi sebentar.", 500);
+    }
+    simLeadIds = leadRows.map((r: { id: string }) => r.id);
+  }
+
+  /** Bersih-bersih saat invoice gagal — jangan tinggalkan pesanan tanpa tagihan. */
+  const batalkanBaris = async () => {
+    if (barisIds.length > 0) await admin.from("digital_purchases").delete().in("id", barisIds);
+    if (simLeadIds.length > 0) await admin.from("leads").delete().in("id", simLeadIds);
+  };
 
   // ── 6. Invoice Xendit ─────────────────────────────────────────────────────
   const rapiTipe = (t: string) => (t === "ebook" ? "E-Book" : t === "elearning" ? "E-Learning" : "Produk");
@@ -245,9 +341,9 @@ export async function POST(req: NextRequest) {
         amount: total,
         payer_email: email,
         description:
-          sah.length === 1
-            ? `Linguo — ${sah[0].prod.title}`
-            : `Linguo — ${sah.length} produk digital (Perpustakaan)`,
+          sah.length + simBaris.length === 1
+            ? `Linguo — ${sah[0] ? sah[0].prod.title : SIM_LABEL[simBaris[0].testType]}`
+            : `Linguo — ${sah.length + simBaris.length} produk digital (Perpustakaan)`,
         currency: "IDR",
         invoice_duration: 86400,
         should_send_email: true,
@@ -262,11 +358,14 @@ export async function POST(req: NextRequest) {
         failure_redirect_url: authUserId ? `${BASE_URL}/akun?menu=pustaka` : `${BASE_URL}/toko/failed`,
         // Rinciannya ikut ke halaman Xendit + email tagihan, jadi pembeli bisa
         // memeriksa isi keranjangnya sebelum membayar.
-        items: sah.map((x) => ({
-          name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}`,
-          quantity: 1,
-          price: x.tier.price,
-        })),
+        items: [
+          ...sah.map((x) => ({
+            name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}`,
+            quantity: 1,
+            price: x.tier.price,
+          })),
+          ...simBaris.map((x) => ({ name: SIM_LABEL[x.testType], quantity: 1, price: x.harga })),
+        ],
       }),
     });
 
@@ -275,15 +374,21 @@ export async function POST(req: NextRequest) {
       console.error("[create-cart-invoice] Xendit gagal:", errTeks);
       let detail = errTeks;
       try { const j = JSON.parse(errTeks); detail = j.message || j.error_code || errTeks; } catch {}
-      await admin.from("digital_purchases").delete().in("id", barisIds);
+      await batalkanBaris();
       return tolak(`Gagal membuat invoice: ${detail}`, 502);
     }
 
     const invoice = await xres.json();
-    await admin
-      .from("digital_purchases")
-      .update({ xendit_invoice_id: invoice.id })
-      .in("id", barisIds);
+    if (barisIds.length > 0) {
+      await admin
+        .from("digital_purchases")
+        .update({ xendit_invoice_id: invoice.id })
+        .in("id", barisIds);
+    }
+    // Kunci pencarian webhook untuk lead simulasi = xendit_invoice_id.
+    if (simLeadIds.length > 0) {
+      await admin.from("leads").update({ xendit_invoice_id: invoice.id }).in("id", simLeadIds);
+    }
 
     return NextResponse.json(
       {
@@ -292,7 +397,7 @@ export async function POST(req: NextRequest) {
         invoice_id: invoice.id,
         external_id: extId,
         total,
-        jumlah: sah.length,
+        jumlah: sah.length + simBaris.length,
         // Item yang gugur dilaporkan apa adanya supaya UI bisa bilang mana yang
         // tak ikut dibayar — bukan diam-diam menagih lebih sedikit.
         ditolak,
@@ -301,7 +406,7 @@ export async function POST(req: NextRequest) {
     );
   } catch (e) {
     console.error("[create-cart-invoice] error:", e);
-    await admin.from("digital_purchases").delete().in("id", barisIds);
+    await batalkanBaris();
     return tolak("Gagal menghubungi Xendit. Coba lagi sebentar.", 502);
   }
 }
