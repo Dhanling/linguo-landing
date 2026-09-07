@@ -10,8 +10,9 @@ import { PromoMerdekaRibbon } from "@/components/PromoMerdeka";
 // muncul/hilang saat deploy berikutnya. 5 menit cukup rapat untuk promo 3 hari.
 export const revalidate = 300;
 
-/** Harga termurah yang sedang berlaku (TOEFL = satu-satunya paket yang aktif). */
-const currentPrice = () => promoAmountFor("simulasi-toefl") ?? PRICE;
+/** Harga termurah yang sedang berlaku di antara paket aktif (TOEFL ITP & IELTS Academic, harga sama). */
+const currentPrice = () =>
+  Math.min(promoAmountFor("simulasi-toefl") ?? PRICE, promoAmountFor("simulasi-ielts") ?? PRICE);
 
 export async function generateMetadata(): Promise<Metadata> {
   const price = formatRp(currentPrice());

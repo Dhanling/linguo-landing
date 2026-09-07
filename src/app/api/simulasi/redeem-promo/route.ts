@@ -41,6 +41,15 @@ export async function POST(req: NextRequest) {
     if (!VALID_TEST_TYPES.has(testType)) {
       return NextResponse.json({ error: "Jenis tes tidak valid." }, { status: 400 });
     }
+    // [simulasi-ielts-open-v1] Kode yang dikunci ke satu jenis tes (mis.
+    // GRATISIELTS) tak boleh dipakai buat jenis tes lain — UI sudah menyembunyikan
+    // tombolnya, tapi body request bisa dikirim langsung.
+    if (promo.testType && promo.testType !== testType) {
+      return NextResponse.json(
+        { error: `Kode ${promo.code} hanya berlaku untuk Simulasi ${promo.testType.toUpperCase()}.` },
+        { status: 400 },
+      );
+    }
     // Jenis tes yang masih "soon" (belum ada paket aktif) belum bisa diklaim.
     if (!testTypeHasAvailable(testType)) {
       return NextResponse.json({ error: "Simulasi ini masih dalam pengembangan." }, { status: 400 });

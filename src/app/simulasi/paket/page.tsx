@@ -25,7 +25,7 @@ export default function SimulasiPaketPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
+  const freePromo = getFreePromo(code, paket?.testType); // kode gratis (mis. GRATISIELTS) → klaim tanpa bayar; kode terkunci jenis tes lain = dianggap kode afiliator biasa
 
   // ── promo-merdeka-v1 ──────────────────────────────────────────────────────
   // Tanpa kode promo: harga turun otomatis selama jendela waktunya buka. Nominal

@@ -31,12 +31,17 @@ export type Paket = {
 // 4 varian tes. Entitlement di-grant per test_type (toefl/ielts) oleh webhook,
 // jadi sekali bayar TOEFL sudah membuka ITP & iBT — begitu pula IELTS utk
 // Academic & General. `variant` cuma dikirim utk pelabelan invoice.
-// soon: TOEFL iBT & IELTS (Academic/General) masih under development → ditandai
-// "Segera" dan belum bisa dibeli. Hanya TOEFL ITP yang aktif untuk saat ini.
+// soon: paket yang soalnya belum terbit (test_simulations.is_published=false)
+// → ditandai "Segera" dan belum bisa dibeli. Aktif: TOEFL ITP (Agu 2026) dan
+// IELTS Academic (7 Sep 2026, "Simulasi IELTS Academic — Full Test (Paket 1)").
+// TOEFL iBT & IELTS General masih disusun. Karena entitlement per test_type,
+// pembeli IELTS otomatis ikut dapat General begitu paketnya terbit.
+// [simulasi-ielts-open-v1] Cermin manual di admin dashboard:
+// src/components/wainbox/quickReplyData.ts (SIM_PAKETS) — samakan flag `soon`.
 export const PAKET: Paket[] = [
   { productKey: "simulasi-toefl", variant: "itp", testType: "toefl", title: "Simulasi TOEFL ITP", short: "TOEFL ITP", tag: "Format ITP", accent: "#1A9E9E", skills: ["listening", "structure", "reading"], covers: "1x bayar TOEFL: akses ITP & iBT" },
   { productKey: "simulasi-toefl", variant: "ibt", testType: "toefl", title: "Simulasi TOEFL iBT", short: "TOEFL iBT", tag: "Format iBT", accent: "#1A9E9E", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar TOEFL: akses ITP & iBT", soon: true },
-  { productKey: "simulasi-ielts", variant: "academic", testType: "ielts", title: "Simulasi IELTS Academic", short: "IELTS Academic", tag: "Academic", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General", soon: true },
+  { productKey: "simulasi-ielts", variant: "academic", testType: "ielts", title: "Simulasi IELTS Academic", short: "IELTS Academic", tag: "Academic", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General" },
   { productKey: "simulasi-ielts", variant: "general", testType: "ielts", title: "Simulasi IELTS General", short: "IELTS General", tag: "General Training", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General", soon: true },
 ];
 
@@ -71,10 +76,22 @@ export const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 // pembelian berbayar (yang unlimited) → cap attempt hanya berlaku utk promo.
 // Prefix ini juga dipakai enforcement di simulations.ts (jangan diubah).
 export const PROMO_SOURCE_PREFIX = "PROMO-";
-export type FreePromo = { code: string; attemptLimit: number; label: string };
+// `testType` (opsional) = kode cuma berlaku untuk satu jenis tes. Tanpa itu kode
+// bisa dipakai di semua jenis tes yang sudah aktif. Ditegakkan di SERVER
+// (api/simulasi/redeem-promo) — UI cuma menyembunyikan tombol klaim.
+export type FreePromo = { code: string; attemptLimit: number; label: string; testType?: "toefl" | "ielts" };
 export const FREE_PROMOS: Record<string, FreePromo> = {
   LINGUOHEMAT: { code: "LINGUOHEMAT", attemptLimit: 3, label: "Gratis coba 3x" },
+  // [simulasi-ielts-open-v1] Kode gratis khusus IELTS (Academic; General ikut
+  // begitu terbit) — 3x pengerjaan yang benar-benar dikumpulkan per akun.
+  GRATISIELTS: { code: "GRATISIELTS", attemptLimit: 3, label: "Gratis coba 3x Simulasi IELTS", testType: "ielts" },
 };
 export const normalizePromo = (raw: string) => raw.trim().toUpperCase();
-export const getFreePromo = (raw: string): FreePromo | null =>
-  FREE_PROMOS[normalizePromo(raw)] ?? null;
+/** Kode gratis yang cocok. `testType` diisi → kode yang dikunci ke jenis tes lain
+ *  dianggap tidak berlaku (mis. GRATISIELTS di paket TOEFL). */
+export const getFreePromo = (raw: string, testType?: string): FreePromo | null => {
+  const promo = FREE_PROMOS[normalizePromo(raw)] ?? null;
+  if (!promo) return null;
+  if (promo.testType && testType && promo.testType !== testType) return null;
+  return promo;
+};

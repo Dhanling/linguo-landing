@@ -6,6 +6,7 @@ import {
   ArrowRight,
   BookOpen,
   Clapperboard,
+  ClipboardCheck,
   Globe,
   Search,
   SearchX,
@@ -18,6 +19,11 @@ import type { Product } from './page';
 import { BRAND_FACTS } from '@/lib/brand-facts';
 import { LABEL_NEW_EDITION, adalahNewEdition } from '@/lib/ebookEdisi';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
+// [toko-simulasi-tab-v1] Simulasi Tes ikut dipajang di etalase toko. Sumber
+// datanya BUKAN digital_products (entitlement-nya tabel lain:
+// simulation_entitlements per jenis tes), jadi kartunya statik dari
+// lib/simulasiPakets dan tombolnya mengarah ke checkout /simulasi/paket.
+import { PAKET, PRICE, SKILL_META, promoPriceFor, type Paket } from '@/lib/simulasiPakets';
 
 // linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
 // (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
@@ -71,14 +77,31 @@ function getDisplayPrice(product: Product): { price: number; label: string } {
   };
 }
 
-type FilterKey = 'all' | 'ebook' | 'elearning';
+type FilterKey = 'all' | 'ebook' | 'elearning' | 'simulasi';
+
+/** Paket simulasi yang sudah terbit (soal siap) — yang `soon` tak dipajang. */
+const SIM_ITEMS: Paket[] = PAKET.filter((p) => !p.soon);
 
 export default function TokoClient({ products }: { products: Product[] }) {
   const [filter, setFilter] = useState<FilterKey>('all');
   const [search, setSearch] = useState('');
 
+  // [toko-simulasi-tab-v1] kartu simulasi ikut tab "Semua"/"Simulasi Tes" + kotak cari.
+  const simFiltered = useMemo(() => {
+    if (filter !== 'all' && filter !== 'simulasi') return [] as Paket[];
+    const q = search.trim().toLowerCase();
+    if (!q) return SIM_ITEMS;
+    return SIM_ITEMS.filter((p) =>
+      [p.title, p.tag, p.testType, 'simulasi tes', 'prediction test', 'inggris english']
+        .join(' ')
+        .toLowerCase()
+        .includes(q),
+    );
+  }, [filter, search]);
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
+    if (filter === 'simulasi') return [];
     return products.filter((p) => {
       if (filter !== 'all' && p.type !== filter) return false;
       if (q) {
@@ -102,9 +125,10 @@ export default function TokoClient({ products }: { products: Product[] }) {
 
   const counts = useMemo(
     () => ({
-      all: products.length,
+      all: products.length + SIM_ITEMS.length,
       ebook: products.filter((p) => p.type === 'ebook').length,
       elearning: products.filter((p) => p.type === 'elearning').length,
+      simulasi: SIM_ITEMS.length,
     }),
     [products]
   );
@@ -113,6 +137,7 @@ export default function TokoClient({ products }: { products: Product[] }) {
     { key: 'all', label: 'Semua', Icon: Sparkles },
     { key: 'ebook', label: 'E-Book', Icon: BookOpen },
     { key: 'elearning', label: 'E-Learning', Icon: Clapperboard },
+    { key: 'simulasi', label: 'Simulasi Tes', Icon: ClipboardCheck },
   ];
 
   return (
@@ -193,7 +218,7 @@ export default function TokoClient({ products }: { products: Product[] }) {
 
       {/* GRID */}
       <section className="mx-auto max-w-7xl px-4 py-10">
-        {filtered.length === 0 ? (
+        {filtered.length === 0 && simFiltered.length === 0 ? (
           <div className="py-20 text-center">
             <SearchX
               className="mx-auto mb-4 h-12 w-12 text-slate-300"
@@ -216,6 +241,70 @@ export default function TokoClient({ products }: { products: Product[] }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {/* [toko-simulasi-tab-v1] Kartu Simulasi Tes — checkout-nya di
+                /simulasi/paket (nama/email/WA + kode promo → Xendit). */}
+            {simFiltered.map((p, i) => {
+              const price = promoPriceFor(p.productKey);
+              return (
+                <Link
+                  key={`sim-${p.variant}`}
+                  href="/simulasi/paket"
+                  prefetch={true}
+                  className="group relative block opacity-0 animate-fadeUp"
+                  style={{ animationDelay: `${i * 50}ms`, animationFillMode: 'forwards' }}
+                >
+                  <article className="relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div
+                      className="relative h-40 flex items-center justify-center overflow-hidden"
+                      style={{ background: `linear-gradient(135deg, ${p.accent}, #0F6E56)` }}
+                    >
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
+                      <span
+                        aria-hidden
+                        className="relative inline-flex h-16 w-[89px] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
+                      >
+                        <ClipboardCheck className="h-8 w-8 text-white" strokeWidth={1.8} />
+                      </span>
+                      <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
+                        <ClipboardCheck className="h-3 w-3" strokeWidth={2} aria-hidden />
+                        Simulasi Tes
+                      </div>
+                      <div className="absolute bottom-2 right-3 inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-bold text-slate-800 shadow">
+                        {p.tag}
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-teal-700 transition-colors">
+                        {p.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
+                        {p.skills.map((k) => SKILL_META[k].label).join(' · ')} — skor & pembahasan langsung keluar.
+                      </p>
+                      <div className="mt-3 flex items-end justify-between gap-2">
+                        <div>
+                          <div className="text-xs text-slate-500">
+                            {price < PRICE ? (
+                              <>
+                                <span className="line-through">{formatRupiah(PRICE)}</span> · sekali bayar
+                              </>
+                            ) : (
+                              'sekali bayar, akses selamanya'
+                            )}
+                          </div>
+                          <div className="font-bold text-slate-900 text-lg leading-none">
+                            {formatRupiah(price)}
+                          </div>
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                          Beli
+                          <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
             {filtered.map((product, i) => {
               const { price, label } = getDisplayPrice(product);
               const isEbook = product.type === 'ebook';
