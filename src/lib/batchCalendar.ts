@@ -124,7 +124,10 @@ export type BatchScheduleOverride = {
   batch_kind?: string | null;
   batch_id?: string | null;
   occurrence_date: string;          // "YYYY-MM-DD" — tanggal pertemuan ASLI
-  action: "skip" | "move" | string;
+  /* [jadwal-batch-tambah-pengajar-v1] 'add' = pertemuan TAMBAHAN di luar pola
+     (dibuat pengajar dari Grup Kelas: sesi pengganti/ekstra). Kuncinya
+     `occurrence_date` = tanggal pertemuan barunya sendiri; jamnya di `new_time`. */
+  action: "skip" | "move" | "add" | string;
   new_date?: string | null;
   new_time?: string | null;         // "HH:MM" / "HH:MM:SS"
 };
@@ -143,15 +146,36 @@ export function occurrenceKey(d: Date): string {
 export function applyScheduleOverrides(
   occurrences: Date[],
   overrides: BatchScheduleOverride[] | null | undefined,
+  /* [jadwal-batch-tambah-pengajar-v1] Jam pola batch ("HH:MM") — dipakai
+     pertemuan 'add' yang jamnya tak disebut. Tanpa ini jatuh ke jam pertemuan
+     pertama deret, lalu 00:00. */
+  fallbackTime?: string | null,
 ): Date[] {
   if (!overrides || overrides.length === 0) return occurrences;
   const byDate = new Map<string, BatchScheduleOverride>();
+  const adds: BatchScheduleOverride[] = [];
   for (const o of overrides) {
-    if (o?.occurrence_date) byDate.set(String(o.occurrence_date).slice(0, 10), o);
+    if (!o?.occurrence_date) continue;
+    // Pertemuan tambahan bukan penyesuaian atas pertemuan pola, jadi tidak
+    // boleh menimpa (atau ditimpa) skip/move di tanggal yang sama.
+    if (o.action === "add") { adds.push(o); continue; }
+    byDate.set(String(o.occurrence_date).slice(0, 10), o);
   }
-  if (byDate.size === 0) return occurrences;
+  if (byDate.size === 0 && adds.length === 0) return occurrences;
 
   const out: Date[] = [];
+  const seen = new Set<number>();
+  for (const o of adds) {
+    const t = parseBatchTime(o.new_time)
+      ?? parseBatchTime(fallbackTime)
+      ?? (occurrences[0] ? [occurrences[0].getHours(), occurrences[0].getMinutes()] : [0, 0]);
+    const d = new Date(`${String(o.new_date || o.occurrence_date).slice(0, 10)}T00:00:00`);
+    if (isNaN(d.getTime())) continue;
+    d.setHours(t[0], t[1], 0, 0);
+    if (seen.has(d.getTime())) continue;
+    seen.add(d.getTime());
+    out.push(d);
+  }
   for (const d of occurrences) {
     const o = byDate.get(occurrenceKey(d));
     if (!o) { out.push(d); continue; }
@@ -166,7 +190,10 @@ export function applyScheduleOverrides(
     }
     out.push(d);
   }
-  return out.sort((a, b) => a.getTime() - b.getTime());
+  // Pertemuan 'add' yang jatuh persis di jam pertemuan pola = satu pertemuan.
+  const unik = new Map<number, Date>();
+  for (const d of out) if (!unik.has(d.getTime())) unik.set(d.getTime(), d);
+  return Array.from(unik.values()).sort((a, b) => a.getTime() - b.getTime());
 }
 
 /**
@@ -190,5 +217,5 @@ export function batchOccurrencesWithOverrides(
     skipped > 0 && Number.isFinite(kuota) && kuota > 0
       ? { ...p, totalSessions: kuota + skipped, endDate: null }
       : p;
-  return applyScheduleOverrides(batchOccurrences(pola), overrides);
+  return applyScheduleOverrides(batchOccurrences(pola), overrides, p.time);
 }
