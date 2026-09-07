@@ -229,7 +229,9 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
             sebelumnya di mana?". Pratinjau staf tak punya sesi → dilewati. */}
         {!preview && <RiwayatSkor />}
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {/* [simulasi-ielts-open-v1] 4 kartu per baris di layar lebar supaya kartu
+            terkunci + kartu paket yang dimiliki tetap kompak (kartu 16/7 jadi kecil). */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {/* Paket terkunci (belum dibeli) → CTA ke halaman checkout */}
           {lockedTypes.map((t) => {
             const comingSoon = !testTypeHasAvailable(t); // semua paket jenis tes ini masih "soon"
@@ -273,7 +275,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                   <>
                     <p className="mt-3 text-sm text-slate-500">{tl("Beli sekali, akses selamanya.")}</p>
                     <div className="mt-3 flex items-baseline gap-1.5">
-                      <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+                      <span className="text-lg font-extrabold text-slate-900">{formatRp(PRICE)}</span>
                       <span className="text-xs text-slate-400">/ {tl("sekali bayar")}</span>
                     </div>
                     <button
