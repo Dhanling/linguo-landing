@@ -8,7 +8,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Sparkles, Check, Loader2, Tag, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
-import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, formatRp, getFreePromo } from "@/lib/simulasiPakets";
+import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, TEST_GROUPS, formatRp, getFreePromo, paketsFor, defaultVariantFor, type Variant } from "@/lib/simulasiPakets";
 import { PromoMerdekaRibbon, usePromoMerdeka } from "@/components/PromoMerdeka";
 import { fetchMyEntitlements, type TestType } from "@/lib/simulations";
 
@@ -24,6 +24,11 @@ export default function SimulasiPaketPage() {
   const [code, setCode] = useState(""); // kode promo / afiliator
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  // [simulasi-2-kartu-tab-v1] varian yang sedang dibuka per jenis tes.
+  const [varian, setVarian] = useState<Record<string, Variant>>(() =>
+    Object.fromEntries(TEST_GROUPS.map((g) => [g.testType, defaultVariantFor(g.testType)])),
+  );
+  const variantOf = (testType: string) => varian[testType] ?? defaultVariantFor(testType);
 
   const freePromo = getFreePromo(code, paket?.testType); // kode gratis (mis. GRATISIELTS) → klaim tanpa bayar; kode terkunci jenis tes lain = dianggap kode afiliator biasa
 
@@ -128,14 +133,42 @@ export default function SimulasiPaketPage() {
         </div>
       </section>
 
-      {/* Paket cards — `relative z-10` wajib: section Hero di atas pakai
-          position:relative, jadi tanpa ini kartu (yang ditarik naik -mt-10)
-          ketutupan/overlap oleh hero. */}
+      {/* [simulasi-2-kartu-tab-v1] Satu kartu per JENIS tes; varian (ITP/iBT,
+          Academic/General) dipilih lewat tab di dalam kartu. Dulu 4 kartu
+          sejajar — dua di antaranya "Segera Hadir", jadi halaman terasa penuh
+          barang yang tak bisa dibeli.
+          `relative z-10` wajib: section Hero di atas pakai position:relative,
+          jadi tanpa ini kartu (yang ditarik naik -mt-10) ketutupan hero. */}
       <section className="relative z-10 mx-auto -mt-10 max-w-4xl px-5 pb-16">
         <div className="grid gap-5 sm:grid-cols-2">
-          {PAKET.map((p) => (
-            <div key={p.variant} className={`flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] ${p.soon ? "opacity-75" : ""}`}>
-              <div className="flex flex-wrap items-center gap-2">
+          {TEST_GROUPS.map((g) => {
+            const varian = paketsFor(g.testType);
+            const p = varian.find((v) => v.variant === variantOf(g.testType)) ?? varian[0];
+            const punya = owned.includes(g.testType as TestType);
+            return (
+            <div key={g.testType} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+              {/* Tab varian */}
+              <div className="flex gap-1 rounded-2xl bg-slate-100 p-1">
+                {varian.map((v) => {
+                  const aktif = v.variant === p.variant;
+                  return (
+                    <button
+                      key={v.variant}
+                      type="button"
+                      onClick={() => setVarian((m) => ({ ...m, [g.testType]: v.variant }))}
+                      className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl px-2 py-2 text-xs font-bold transition ${aktif ? "bg-white shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                      style={aktif ? { color: v.accent } : undefined}
+                    >
+                      {v.tabLabel}
+                      {v.soon && (
+                        <span className="rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-700">Segera</span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2">
                 <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
                   {p.tag}
                 </span>
@@ -145,14 +178,14 @@ export default function SimulasiPaketPage() {
                   </span>
                 )}
               </div>
-              <h2 className="mt-4 text-xl font-bold text-slate-900">{p.title}</h2>
+              <h2 className="mt-3 text-xl font-bold text-slate-900">{p.title}</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {p.skills.map((key) => {
-                  const s = SKILL_META[key];
-                  const Icon = s.icon;
+                  const sk = SKILL_META[key];
+                  const Icon = sk.icon;
                   return (
                     <span key={key} className="inline-flex items-center gap-1 rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
-                      <Icon className="h-3.5 w-3.5" style={{ color: p.accent }} /> {s.label}
+                      <Icon className="h-3.5 w-3.5" style={{ color: p.accent }} /> {sk.label}
                     </span>
                   );
                 })}
@@ -181,27 +214,45 @@ export default function SimulasiPaketPage() {
                 <span className="text-sm text-slate-400">/ sekali bayar</span>
               </div>
               <p className="mt-1.5 text-xs font-medium" style={{ color: p.accent }}>{p.covers}</p>
-              {p.soon ? (
-                <button disabled
-                  className="mt-4 w-full cursor-not-allowed rounded-2xl bg-slate-200 py-3.5 text-sm font-bold text-slate-500">
-                  Segera Hadir
-                </button>
-              ) : owned.includes(p.testType as TestType) ? (
-                <Link href="/akun?menu=simulasi"
-                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
-                  style={{ background: "#059669" }}>
-                  <CheckCircle2 className="h-4 w-4" /> Sudah Dimiliki — Kerjakan
-                </Link>
-              ) : (
-                <button
-                  onClick={() => openCheckout(p)}
-                  className="mt-4 w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
-                  style={{ background: p.accent }}>
-                  Beli {p.short}
-                </button>
-              )}
+              {/* Tombol menyusul di bawah kartu (mt-auto) supaya dua kartu tetap
+                  sejajar walau daftar skill-nya beda panjang. */}
+              <div className="mt-auto pt-4">
+                {punya ? (
+                  <Link href="/akun?menu=simulasi"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
+                    style={{ background: "#059669" }}>
+                    <CheckCircle2 className="h-4 w-4" /> Sudah Dimiliki — Kerjakan
+                  </Link>
+                ) : p.soon ? (
+                  <>
+                    <button disabled
+                      className="w-full cursor-not-allowed rounded-2xl bg-slate-200 py-3.5 text-sm font-bold text-slate-500">
+                      Segera Hadir
+                    </button>
+                    {/* Varian lain di jenis tes yang sama sudah bisa dibeli, dan
+                        sekali bayar mencakup dua-duanya — jangan biarkan tab
+                        "Segera" terlihat seperti jalan buntu. */}
+                    {varian.some((v) => !v.soon) && (
+                      <button
+                        type="button"
+                        onClick={() => setVarian((m) => ({ ...m, [g.testType]: defaultVariantFor(g.testType) }))}
+                        className="mt-2 w-full text-xs font-semibold text-slate-500 underline-offset-2 hover:underline">
+                        Beli {varian.find((v) => !v.soon)!.short} dulu — {g.label} lainnya ikut terbuka
+                      </button>
+                    )}
+                  </>
+                ) : (
+                  <button
+                    onClick={() => openCheckout(p)}
+                    className="w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
+                    style={{ background: p.accent }}>
+                    Beli {p.short}
+                  </button>
+                )}
+              </div>
             </div>
-          ))}
+            );
+          })}
         </div>
         <p className="mx-auto mt-8 max-w-xl text-center text-xs text-slate-400">
           Setelah pembayaran, akses simulasi otomatis terbuka di dashboard. Gunakan email yang sama

@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import {
-  fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo, fetchSimulationCovers,
+  fetchPublishedSimulations, fetchMyEntitlements, fetchSimulationCovers,
   TEST_TYPE_LABEL, testTypeLabel, type Simulation, type TestType,
 } from "@/lib/simulations";
 import {
@@ -42,13 +42,39 @@ let simPreviewCache: { student: string; sims: Simulation[]; owned: TestType[]; c
 export async function prewarmSimulasiCatalog() {
   if (simCache) return;
   try {
-    const [info, sims, owned, covers] = await Promise.all([
-      getStudentInfo(),
+    // [perf:simulasi-identitas-lokal-v1] identitas dibaca dari sesi LOKAL —
+    // getStudentInfo() ikut menarik baris `profiles` lewat jaringan, padahal
+    // katalog cuma butuh tahu "sudah login atau belum".
+    const { data: { session } } = await supabase.auth.getSession();
+    const [sims, owned, covers] = await Promise.all([
       fetchPublishedSimulations(),
       fetchMyEntitlements(),
       fetchSimulationCovers(),
     ]);
-    if (!simCache) simCache = { sims, owned, authed: !!info, covers };
+    if (!simCache) simCache = { sims, owned, authed: !!session?.user, covers };
+  } catch {
+    /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
+  }
+}
+
+/**
+ * [perf:simulasi-prewarm-v1] Versi mode pratinjau (POV siswa). Dulu pemanasan
+ * SENGAJA dilewati saat pratinjau, jadi justru layar yang paling lambat —
+ * satu route server + beberapa gelombang query — yang tak pernah dipanaskan.
+ */
+export async function prewarmSimulasiPreview(studentId: string) {
+  if (!studentId || simPreviewCache?.student === studentId) return;
+  try {
+    const res = await fetch(`/api/preview-simulasi?student=${encodeURIComponent(studentId)}`);
+    if (!res.ok) return;
+    const j = await res.json();
+    if (simPreviewCache?.student === studentId) return;
+    simPreviewCache = {
+      student: studentId,
+      sims: (j.simulations || []) as Simulation[],
+      owned: (j.owned || []) as TestType[],
+      covers: (j.covers || {}) as Partial<Record<TestType, string>>,
+    };
   } catch {
     /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
   }
@@ -118,24 +144,28 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
       setLoading(false);
       return;
     }
-    // [perf:simulasi-parallel-v1] dulu getStudentInfo() ditunggu SENDIRIAN dulu
-    // (auth + query profiles) baru sisanya jalan → satu round-trip ekstra yang
-    // menahan seluruh katalog. Sekarang keempatnya berangkat bareng.
+    // [perf:simulasi-parallel-v1] dulu identitas ditunggu SENDIRIAN dulu baru
+    // sisanya jalan → satu round-trip ekstra yang menahan seluruh katalog.
     // [sim-fetch-retry-v1] Fetcher kini MELEMPAR bila query tetap gagal setelah
     // retry. Kegagalan JANGAN ditulis ke simCache — dulu hasil kosong palsu
     // (token sedang dirotasi) tersimpan di cache modul, lalu tiap buka tab siswa
     // berbayar terus disuguhi kartu terkunci "Beli Paket".
     try {
-      const [info, data, ents, cov] = await Promise.all([
-        getStudentInfo(),
+      // [perf:simulasi-identitas-lokal-v1] Identitas diambil dari sesi LOKAL
+      // (tanpa jaringan). Dulu getStudentInfo() menahan seluruh katalog demi
+      // satu baris `profiles` yang cuma dipakai untuk pra-isi form checkout —
+      // dan form itu memanggilnya sendiri saat popup beli dibuka.
+      const { data: { session } } = await supabase.auth.getSession();
+      const user = session?.user ?? null;
+      setUid(user?.id ?? null);
+      setEmail(user?.email ?? null);
+      const [data, ents, cov] = await Promise.all([
         fetchPublishedSimulations(),
         fetchMyEntitlements(),
         fetchSimulationCovers(),
       ]);
-      simCache = { sims: data, owned: ents, authed: !!info, covers: cov };
-      setAuthed(!!info);
-      setUid(info?.user_id ?? null);
-      setEmail(info?.email ?? null);
+      simCache = { sims: data, owned: ents, authed: !!user, covers: cov };
+      setAuthed(!!user);
       setSims(data);
       setOwned(ents);
       setCovers(cov);
@@ -281,11 +311,20 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                     <button
                       onClick={() => setBeliType(t)}
                       disabled={preview}
+                      title={preview ? tl("Mode pratinjau — pembelian hanya bisa dari akun siswa sendiri.") : undefined}
                       className={`mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition ${preview ? "cursor-not-allowed opacity-60" : "active:scale-95"}`}
                       style={{ background: TEAL }}
                     >
                       <Sparkles className="h-4 w-4" /> {tl("Beli Paket")}
                     </button>
+                    {/* Tombol beli memang MATI di pratinjau POV siswa (staf tak
+                        boleh checkout atas nama orang). Tanpa keterangan ini
+                        tombolnya cuma "tidak bereaksi" dan terbaca sebagai rusak. */}
+                    {preview && (
+                      <p className="mt-2 text-center text-[11px] leading-snug text-amber-600">
+                        {tl("Mode pratinjau — tombol beli dimatikan. Di akun siswa sendiri tombol ini membuka form checkout.")}
+                      </p>
+                    )}
                     {/* Akses dicocokkan by email — kalau siswa checkout pakai email lain,
                         baris ini yang bikin dia (dan admin) langsung tahu penyebabnya. */}
                     {email && (

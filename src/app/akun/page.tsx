@@ -2815,7 +2815,11 @@ export default function AkunPage() {
       // [perf:simulasi-prewarm-v1] chunk-nya ditarik SEKALIGUS datanya dipanaskan:
       // klik "Simulasi Tes" jadi render dari cache, bukan mulai 4 query dari nol.
       import("@/components/akun/SimulasiKatalog").then((m) => {
-        if (!previewMode) m.prewarmSimulasiCatalog?.();
+        // [perf:simulasi-prewarm-v1] Pratinjau POV siswa ikut dipanaskan: layar
+        // itu justru yang paling lambat (route server + beberapa gelombang
+        // query), dan dulu satu-satunya yang tak pernah dipanaskan.
+        if (previewMode) { if (previewId) void m.prewarmSimulasiPreview?.(previewId); }
+        else m.prewarmSimulasiCatalog?.();
       });
       import("@/components/akun/JadwalCalendar");
       import("@/components/akun/SertifikatTab");
@@ -2834,11 +2838,12 @@ export default function AkunPage() {
     if (ric) { const id = ric(warm, { timeout: 4000 }); return () => (window as any).cancelIdleCallback?.(id); }
     const t = setTimeout(warm, 1500);
     return () => clearTimeout(t);
-    // previewMode ikut dep: mode pratinjau baru ketahuan setelah efek auth jalan,
-    // dan pemanasan data (butuh sesi login) tak boleh ikut jalan di mode itu.
+    // previewMode & previewId ikut dep: mode pratinjau baru ketahuan setelah efek
+    // auth jalan, dan pemanasan yang butuh sesi login tak boleh jalan di mode itu
+    // (pratinjau dipanaskan lewat jalur endpoint-nya sendiri).
     // warmUid ikut dep: pustaka dikunci per user, jadi pemanasannya baru bisa
     // berangkat setelah sesi ketahuan (cache modulnya yang jaga agar tak dobel).
-  }, [previewMode, warmUid]);
+  }, [previewMode, previewId, warmUid]);
   // [materi-bahasa-siswa-v1] menu "Kelas & Materi" sudah dibuka untuk semua siswa —
   // gate per-email (materi-gate-v1) dicabut, termasuk lemparan balik ke Beranda buat
   // deep-link ?menu=materi. Pembatasannya sekarang di DATA: kelas live = registrasi

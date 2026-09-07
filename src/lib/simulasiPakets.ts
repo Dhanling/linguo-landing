@@ -22,6 +22,8 @@ export type Paket = {
   title: string;
   short: string;
   tag: string;
+  /** Label pendek untuk tab varian di dalam kartu ("ITP", "Academic"). */
+  tabLabel: string;
   accent: string;
   skills: SkillKey[];
   covers: string; // catatan jujur: 1x bayar mencakup kedua varian
@@ -39,11 +41,29 @@ export type Paket = {
 // [simulasi-ielts-open-v1] Cermin manual di admin dashboard:
 // src/components/wainbox/quickReplyData.ts (SIM_PAKETS) — samakan flag `soon`.
 export const PAKET: Paket[] = [
-  { productKey: "simulasi-toefl", variant: "itp", testType: "toefl", title: "Simulasi TOEFL ITP", short: "TOEFL ITP", tag: "Format ITP", accent: "#1A9E9E", skills: ["listening", "structure", "reading"], covers: "1x bayar TOEFL: akses ITP & iBT" },
-  { productKey: "simulasi-toefl", variant: "ibt", testType: "toefl", title: "Simulasi TOEFL iBT", short: "TOEFL iBT", tag: "Format iBT", accent: "#1A9E9E", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar TOEFL: akses ITP & iBT", soon: true },
-  { productKey: "simulasi-ielts", variant: "academic", testType: "ielts", title: "Simulasi IELTS Academic", short: "IELTS Academic", tag: "Academic", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General" },
-  { productKey: "simulasi-ielts", variant: "general", testType: "ielts", title: "Simulasi IELTS General", short: "IELTS General", tag: "General Training", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General", soon: true },
+  { productKey: "simulasi-toefl", variant: "itp", testType: "toefl", title: "Simulasi TOEFL ITP", short: "TOEFL ITP", tag: "Format ITP", tabLabel: "ITP", accent: "#1A9E9E", skills: ["listening", "structure", "reading"], covers: "1x bayar TOEFL: akses ITP & iBT" },
+  { productKey: "simulasi-toefl", variant: "ibt", testType: "toefl", title: "Simulasi TOEFL iBT", short: "TOEFL iBT", tag: "Format iBT", tabLabel: "iBT", accent: "#1A9E9E", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar TOEFL: akses ITP & iBT", soon: true },
+  { productKey: "simulasi-ielts", variant: "academic", testType: "ielts", title: "Simulasi IELTS Academic", short: "IELTS Academic", tag: "Academic", tabLabel: "Academic", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General" },
+  { productKey: "simulasi-ielts", variant: "general", testType: "ielts", title: "Simulasi IELTS General", short: "IELTS General", tag: "General Training", tabLabel: "General", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General", soon: true },
 ];
+
+// ── simulasi-2-kartu-tab-v1 ─────────────────────────────────────────────────
+// Halaman paket menampilkan 1 kartu per JENIS TES (TOEFL, IELTS); variannya
+// dipilih lewat tab di dalam kartu. Sebelumnya 4 kartu sejajar — dua di
+// antaranya "Segera", jadi halaman terlihat penuh barang yang tak bisa dibeli.
+export const TEST_GROUPS: { testType: string; label: string; accent: string }[] = [
+  { testType: "toefl", label: "TOEFL", accent: "#1A9E9E" },
+  { testType: "ielts", label: "IELTS", accent: "#6D5AE6" },
+];
+
+/** Semua varian satu jenis tes, urut sesuai PAKET. */
+export const paketsFor = (testType: string): Paket[] => PAKET.filter((p) => p.testType === testType);
+
+/** Varian yang ditampilkan duluan: yang sudah terbit, bukan yang masih "Segera". */
+export const defaultVariantFor = (testType: string): Variant => {
+  const list = paketsFor(testType);
+  return (list.find((p) => !p.soon) ?? list[0]).variant;
+};
 
 // Jenis tes punya minimal 1 paket yang sudah aktif (bukan "soon")?
 export const testTypeHasAvailable = (testType: string) =>

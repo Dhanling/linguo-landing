@@ -60,9 +60,17 @@ export default function SimulasiBeliModal({
   }, []);
 
   // Reset pilihan tiap kali modal dibuka.
+  // [simulasi-2-kartu-tab-v1] Kalau jenis tes ini cuma punya SATU varian yang
+  // sudah terbit (mis. IELTS: Academic terbit, General masih "Segera"), langkah
+  // "pilih paket" cuma berisi satu tombol yang bisa diklik — jadi langsung
+  // lompat ke form checkout.
   useEffect(() => {
-    if (open) { setPaket(null); setError(""); setCode(""); }
-  }, [open]);
+    if (!open) return;
+    setError(""); setCode("");
+    const siapJual = list.filter((p) => !p.soon);
+    setPaket(siapJual.length === 1 ? siapJual[0] : null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, testType]);
 
   // Klaim kode promo GRATIS (mis. LINGUOHEMAT) → grant akses via endpoint, tanpa Xendit.
   const claimFree = async () => {

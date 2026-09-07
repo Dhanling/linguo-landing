@@ -17,18 +17,19 @@ export const dynamic = "force-dynamic";
 
 type Row = Record<string, any>;
 
-export async function GET(req: NextRequest) {
-  const student = req.nextUrl.searchParams.get("student");
-  if (!student || !/^[0-9a-f-]{36}$/i.test(student)) {
-    return NextResponse.json({ error: "invalid student" }, { status: 400 });
-  }
-  const allowed = await previewStudentId(req);
-  if (!allowed || allowed !== student) {
-    return NextResponse.json({ error: "preview session required" }, { status: 403 });
-  }
+// [perf:preview-simulasi-cache-v1] Bagian katalog (daftar simulasi terbit +
+// hitungan bagian/soal + cover) SAMA untuk semua siswa — cuma penyaring
+// "sudah dimiliki" yang per orang. Dulu keempat query itu diulang tiap kali
+// tab Simulasi dibuka di mode pratinjau. Sekarang disimpan sebentar di memori
+// proses; staf yang membuka beberapa siswa berturut-turut tinggal menunggu
+// query entitlement-nya saja.
+const CATALOG_TTL_MS = 60_000;
+let catalogMemo: { at: number; simulations: Row[]; coverMap: Record<string, string> } | null = null;
 
-  // Katalog terbit + hitungan bagian/soal (bentuknya menyamai
-  // fetchPublishedSimulations di src/lib/simulations.ts).
+async function loadCatalog(): Promise<{ simulations: Row[]; coverMap: Record<string, string> }> {
+  if (catalogMemo && Date.now() - catalogMemo.at < CATALOG_TTL_MS) {
+    return { simulations: catalogMemo.simulations, coverMap: catalogMemo.coverMap };
+  }
   const [sims, secs, qs, covers] = await Promise.all([
     serviceRest("test_simulations?is_published=eq.true&select=*&order=created_at.desc") as Promise<Row[] | null>,
     serviceRest("test_simulation_sections?select=id,simulation_id") as Promise<Row[] | null>,
@@ -59,10 +60,35 @@ export async function GET(req: NextRequest) {
     if (c.cover_url) coverMap[c.test_type] = c.cover_url;
   });
 
+  // Katalog kosong = kemungkinan besar query gagal, bukan katalognya habis —
+  // jangan disimpan, nanti seluruh pratinjau selama semenit jadi layar kosong.
+  if (simulations.length) catalogMemo = { at: Date.now(), simulations, coverMap };
+  return { simulations, coverMap };
+}
+
+export async function GET(req: NextRequest) {
+  const student = req.nextUrl.searchParams.get("student");
+  if (!student || !/^[0-9a-f-]{36}$/i.test(student)) {
+    return NextResponse.json({ error: "invalid student" }, { status: 400 });
+  }
+  const allowed = await previewStudentId(req);
+  if (!allowed || allowed !== student) {
+    return NextResponse.json({ error: "preview session required" }, { status: 403 });
+  }
+
+  // Katalog terbit + hitungan bagian/soal (bentuknya menyamai
+  // fetchPublishedSimulations di src/lib/simulations.ts).
+  // [perf:preview-simulasi-cache-v1] Email siswa berangkat BARENG katalog —
+  // dulu ia menunggu keempat query katalog selesai dulu padahal tak memakai
+  // hasilnya, jadi satu gelombang round-trip terbuang percuma.
+  const [{ simulations, coverMap }, rows] = await Promise.all([
+    loadCatalog(),
+    serviceRest(`students?id=eq.${student}&select=email&limit=1`) as Promise<Row[] | null>,
+  ]);
+
   // Entitlement siswa. Identitas siswa di LMS berpegang pada EMAIL (tabel
   // students tak punya user_id), jadi cocokkan lewat email dan — bila emailnya
   // sudah punya akun — lewat user_id juga.
-  const rows = (await serviceRest(`students?id=eq.${student}&select=email&limit=1`)) as Row[] | null;
   const email = (rows?.[0]?.email as string | null)?.trim() || null;
   const owned = new Set<string>();
   if (email) {

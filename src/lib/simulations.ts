@@ -181,19 +181,24 @@ async function retryQuery<T>(
 // Melempar error bila query tetap gagal setelah retry — pemanggil (katalog) yang
 // memutuskan mempertahankan cache lama, JANGAN menimpa dengan daftar kosong.
 export async function fetchPublishedSimulations(): Promise<Simulation[]> {
-  const data = await retryQuery<Simulation[]>(() =>
-    supabase
-      .from("test_simulations")
-      .select("*")
-      .eq("is_published", true)
-      .order("created_at", { ascending: false }),
-  );
-  if (!data) return [];
-
-  const [{ data: secs }, { data: qs }] = await Promise.all([
+  // [perf:simulasi-1-gelombang-v1] Dulu daftar simulasi ditunggu SENDIRIAN dulu,
+  // baru bagian & soal berangkat — dua gelombang round-trip padahal kedua query
+  // hitungan itu tak memakai hasil query pertama (keduanya ambil seluruh tabel
+  // lalu dijodohkan di sini). Sekarang ketiganya berangkat bareng, jadi waktu
+  // buka menu Simulasi tinggal satu round-trip terlama, bukan penjumlahan dua.
+  const [data, { data: secs }, { data: qs }] = await Promise.all([
+    retryQuery<Simulation[]>(() =>
+      supabase
+        .from("test_simulations")
+        .select("*")
+        .eq("is_published", true)
+        .order("created_at", { ascending: false }),
+    ),
     supabase.from("test_simulation_sections").select("id, simulation_id"),
     supabase.from("test_simulation_questions").select("id, section_id"),
   ]);
+  if (!data) return [];
+
   const secToSim: Record<string, string> = {};
   const secCount: Record<string, number> = {};
   (secs || []).forEach((s: any) => {
