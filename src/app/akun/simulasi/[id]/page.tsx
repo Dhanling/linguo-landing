@@ -568,6 +568,30 @@ function exitFs() {
   const fn = document.exitFullscreen || (document as any).webkitExitFullscreen;
   try { fn?.call(document); } catch { /* ignore */ }
 }
+// [sim-proctor-v3] Sebagian perangkat (Safari iPhone) TIDAK punya Fullscreen API
+// untuk elemen halaman. Di situ "kembali ke layar penuh" mustahil dipenuhi, jadi
+// syarat itu tak boleh ikut menentukan apakah siswa sudah kembali — kalau tidak,
+// tenggangnya tak pernah bisa diselamatkan dan tombol modalnya diam saja.
+function fsSupported(): boolean {
+  if (typeof document === "undefined") return false;
+  return !!(document.fullscreenEnabled ?? (document as any).webkitFullscreenEnabled);
+}
+
+// [sim-proctor-v3] Dialog bawaan browser (confirm/alert) MENCURI fokus halaman:
+// `document.hasFocus()` jadi false selama dialog tampil, dan itu terbaca sebagai
+// "pindah ke aplikasi lain". Semua dialog lewat dua pembungkus ini supaya
+// konfirmasi kita sendiri tak melahirkan peringatan palsu.
+let proctorPausedUntil = 0;
+const pauseProctor = () => { proctorPausedUntil = Date.now() + 1500; };
+const proctorIdle = () => leavingSim || Date.now() < proctorPausedUntil;
+function askConfirm(msg: string): boolean {
+  pauseProctor();
+  try { return window.confirm(msg); } finally { pauseProctor(); }
+}
+function notifyDialog(msg: string) {
+  pauseProctor();
+  try { window.alert(msg); } finally { pauseProctor(); }
+}
 
 export default function SimulasiRunnerPage() {
   const t = useT(); // [ui-lang-switcher-v1]
@@ -715,7 +739,7 @@ export default function SimulasiRunnerPage() {
     const studentInfo = await startGuestSession(name, email || null, whatsapp || null);
     if (!studentInfo) {
       setGuestBusy(false);
-      alert("Gagal memulai sesi tamu. Coba lagi, atau hubungi admin bila terus berulang.");
+      notifyDialog("Gagal memulai sesi tamu. Coba lagi, atau hubungi admin bila terus berulang.");
       return;
     }
     setPhase("loading");
@@ -851,8 +875,14 @@ export default function SimulasiRunnerPage() {
     const g = activeGroup;
     if (!g || finishedRef.current.has(g.skill)) return;
     if (!auto && !preview) {
+      // Menyelesaikan subtes TIDAK bisa dibatalkan — sejak kunci 30 menit boleh
+      // dilewati saat semua soal terjawab ([sim-finish-early-v1]), tombol ini
+      // gampang tersenggol, jadi konfirmasinya wajib untuk kedua keadaan.
       const un = groupQuestions(g).filter((q) => !isAnswered(q, answers[q.id])).length;
-      if (un > 0 && !window.confirm(`${t("Masih ada")} ${un} ${t("soal belum dijawab di subtes ini. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi. Yakin selesai?")}`)) return;
+      const ask = un > 0
+        ? `${t("Masih ada")} ${un} ${t("soal belum dijawab di subtes ini. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi. Yakin selesai?")}`
+        : `${t("Semua soal subtes ini sudah terjawab. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi dan sisa waktunya hangus. Yakin selesai sekarang?")}`;
+      if (!askConfirm(ask)) return;
     }
     finishedRef.current.add(g.skill);
     setGroupDone(new Set(finishedRef.current));
@@ -878,7 +908,7 @@ export default function SimulasiRunnerPage() {
       setAttemptId("preview"); // tak menyimpan attempt sungguhan
     } else {
       const aid = await createAttempt(sim.id, info);
-      if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
+      if (!aid) { notifyDialog("Gagal memulai simulasi. Coba lagi."); return; }
       setAttemptId(aid);
     }
     // [sim-subtes-v1] tidak ada lagi timer global — masuk hub Detail Tryout;
@@ -928,7 +958,7 @@ export default function SimulasiRunnerPage() {
   useEffect(() => {
     if (!staleResume || preview || phase !== "running" || !attemptId) return;
     setStaleResume(false);
-    alert(t("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai."));
+    notifyDialog(t("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai."));
     submitRef.current(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [staleResume, preview, phase, attemptId]);
@@ -936,7 +966,7 @@ export default function SimulasiRunnerPage() {
   useEffect(() => {
     if (preview || phase !== "running" || view !== "work") return;
     const violate = (msg: string) => {
-      if (leavingSim || submittingRef.current) return;
+      if (proctorIdle() || submittingRef.current) return;
       violationsRef.current += 1;
       setViolations(violationsRef.current);
       if (violationsRef.current >= MAX_VIOLATIONS) {
@@ -956,7 +986,8 @@ export default function SimulasiRunnerPage() {
     let graceTimer: ReturnType<typeof setInterval> | null = null;
     let graceUntil = 0;
     let graceReason = "";
-    const backOnScreen = () => document.visibilityState !== "hidden" && document.hasFocus() && !!fsElement();
+    const backOnScreen = () =>
+      document.visibilityState !== "hidden" && document.hasFocus() && (!!fsElement() || !fsSupported());
     const stopGrace = () => {
       if (graceTimer) { clearInterval(graceTimer); graceTimer = null; }
       graceUntil = 0;
@@ -975,13 +1006,13 @@ export default function SimulasiRunnerPage() {
       forgive(reason);
     };
     const leftScreen = (msg: string) => {
-      if (leavingSim || submittingRef.current || graceTimer) return;
+      if (proctorIdle() || submittingRef.current || graceTimer) return;
       graceReason = msg;
       graceUntil = Date.now() + RETURN_GRACE_MS;
       setGraceMsg(msg);
       setGraceLeft(Math.ceil(RETURN_GRACE_MS / 1000));
       graceTimer = setInterval(() => {
-        if (leavingSim || submittingRef.current) { stopGrace(); return; }
+        if (proctorIdle() || submittingRef.current) { stopGrace(); return; }
         if (backOnScreen()) { settleIfBack(); return; }
         const left = Math.ceil((graceUntil - Date.now()) / 1000);
         if (left > 0) { setGraceLeft(left); return; }
@@ -1103,7 +1134,7 @@ export default function SimulasiRunnerPage() {
     if (!force) {
       const unanswered = questions.filter((q) => !isAnswered(q, answers[q.id]));
       if (unanswered.length > 0) {
-        alert(`${t("Masih ada")} ${unanswered.length} ${t("soal yang belum dijawab. Lengkapi semua soal dulu sebelum mengirim — cek panel Navigasi Soal (tanda merah = terlewati).")}`);
+        notifyDialog(`${t("Masih ada")} ${unanswered.length} ${t("soal yang belum dijawab. Lengkapi semua soal dulu sebelum mengirim — cek panel Navigasi Soal (tanda merah = terlewati).")}`);
         return;
       }
     }
