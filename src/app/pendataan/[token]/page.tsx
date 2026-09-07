@@ -16,10 +16,11 @@ import { useParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
-  ChevronDown, ChevronLeft, ChevronRight, Clock, GraduationCap, Heart, History, Loader2, Mail,
+  ChevronDown, ChevronLeft, ChevronRight, Clock, Globe, GraduationCap, Heart, History, Loader2, Mail,
   MapPin, Megaphone, MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
 } from "lucide-react";
 import { WILAYAH_ID, getCitiesByProvince } from "@/lib/wilayah-id";
+import { NEGARA, NEGARA_ID, isIndonesia } from "@/lib/negara";
 
 const TEAL = "#1A9E9E";
 const WA_CS = "6282116859493";
@@ -44,6 +45,10 @@ type IntakeForm = {
   hobby: string | null;
   prior_experience: string | null;
   // [pendataan-domisili-referral-v1]
+  // [pendataan-negara-v1] `country` kosong = baris lama, waktu itu formulirnya
+  // cuma bisa Indonesia. `province` menampung "negara bagian / wilayah" untuk
+  // siswa luar negeri — kolomnya sengaja tidak digandakan.
+  country: string | null;
   province: string | null;
   city: string | null;
   referral_source: string | null;
@@ -713,6 +718,7 @@ export default function PendataanPage() {
   const [birthMonth, setBirthMonth] = useState("");
   const [birthYear, setBirthYear] = useState("");
   const [institution, setInstitution] = useState("");
+  const [country, setCountry] = useState(NEGARA_ID);
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
   const [district, setDistrict] = useState("");
@@ -742,6 +748,7 @@ export default function PendataanPage() {
         setInstitution(d.institution || "");
         setGoal(d.learning_goal || "");
         setHobby(d.hobby || "");
+        setCountry(d.country || NEGARA_ID);
         setProvince(d.province || "");
         setCity(d.city || "");
         setDistrict(d.district || "");
@@ -779,6 +786,13 @@ export default function PendataanPage() {
   // [pendataan-alamat-offline-v1] Pengajar datang ke tempat siswa, jadi
   // kelas offline butuh alamat yang bisa didatangi — bukan cuma kota.
   const isOffline = form?.class_mode === "offline";
+
+  // [pendataan-negara-v1] Di luar Indonesia daftar provinsi & kab/kota kita
+  // tidak berlaku, jadi wilayahnya diketik bebas. Kelas offline pun tidak
+  // dilayani di luar negeri — pengajarnya tidak bisa datang — jadi blok alamat
+  // detailnya ikut disembunyikan supaya tidak jadi jalan buntu.
+  const luarNegeri = !isIndonesia(country);
+  const mintaAlamat = isOffline && !luarNegeri;
 
   const birthdate = birthYear && birthMonth && birthDay
     ? `${birthYear}-${birthMonth.padStart(2, "0")}-${birthDay.padStart(2, "0")}`
@@ -829,9 +843,15 @@ export default function PendataanPage() {
       if (!fullName.trim()) return "Nama lengkap wajib diisi";
       if (!nickname.trim()) return "Nama panggilan wajib diisi";
       if (!birthdate) return "Lengkapi tanggal lahir";
-      if (!province) return "Pilih provinsi domisilimu";
-      if (!city) return "Pilih kota / kabupaten domisilimu";
-      if (isOffline) {
+      if (!country) return "Pilih negara tempat kamu tinggal";
+      if (luarNegeri) {
+        if (!province.trim()) return "Isi negara bagian / provinsi / wilayah domisilimu";
+        if (!city.trim()) return "Isi kota domisilimu";
+      } else {
+        if (!province) return "Pilih provinsi domisilimu";
+        if (!city) return "Pilih kota / kabupaten domisilimu";
+      }
+      if (mintaAlamat) {
         if (!district.trim()) return "Kecamatan wajib diisi untuk kelas offline";
         if (!address.trim()) return "Alamat lengkap wajib diisi untuk kelas offline";
         if (address.trim().length < 10) return "Alamat lengkap kurang detail — tulis nama jalan, nomor rumah, dan patokannya";
@@ -903,11 +923,12 @@ export default function PendataanPage() {
           whatsapp,
           email,
           birth_date: birthdate,
-          province,
-          city,
-          district: isOffline ? district : "",
-          address: isOffline ? address : "",
-          postal_code: isOffline ? postalCode : "",
+          country,
+          province: province.trim(),
+          city: city.trim(),
+          district: mintaAlamat ? district : "",
+          address: mintaAlamat ? address : "",
+          postal_code: mintaAlamat ? postalCode : "",
           referral_source: referralNote.trim() ? `${referral} — ${referralNote.trim()}` : referral,
           institution,
           hobby,
@@ -1090,31 +1111,63 @@ export default function PendataanPage() {
                   {/* [pendataan-domisili-referral-v1] Domisili: dipakai buat
                       mencocokkan pengajar offline & membaca sebaran siswa.
                       Kota baru bisa dipilih setelah provinsi — daftarnya
-                      ~480 kab/kota, tanpa penyaring provinsi itu tidak manusiawi. */}
+                      ~480 kab/kota, tanpa penyaring provinsi itu tidak manusiawi.
+
+                      [pendataan-negara-v1] Negara ditanyakan lebih dulu. Di luar
+                      Indonesia daftar provinsi & kab/kota kita tidak berlaku,
+                      jadi dua kolomnya berubah jadi isian bebas — bukan dropdown
+                      yang tidak memuat tempat tinggalnya. */}
+                  <Field label="Negara tempat tinggal" icon={Globe} required>
+                    <PilihWilayah nilai={country} opsi={NEGARA}
+                      placeholder="Pilih negara"
+                      onPilih={(v) => {
+                        // Daftar wilayahnya berganti total, jadi jawaban lama
+                        // tidak boleh ikut terbawa ke negara yang baru.
+                        if (v !== country) { setProvince(""); setCity(""); }
+                        setCountry(v);
+                      }} />
+                  </Field>
+
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Field label="Provinsi" icon={MapPin} required>
-                      <PilihWilayah nilai={province} opsi={PROVINCE_NAMES}
-                        placeholder="Pilih provinsi"
-                        onPilih={(v) => { setProvince(v); setCity(""); }} />
+                    <Field label={luarNegeri ? "Negara bagian / provinsi / wilayah" : "Provinsi"} icon={MapPin} required>
+                      {luarNegeri ? (
+                        <input type="text" value={province} onChange={(e) => setProvince(e.target.value)}
+                          placeholder="contoh: New South Wales / Bayern / Selangor" className={inputClass} />
+                      ) : (
+                        <PilihWilayah nilai={province} opsi={PROVINCE_NAMES}
+                          placeholder="Pilih provinsi"
+                          onPilih={(v) => { setProvince(v); setCity(""); }} />
+                      )}
                     </Field>
-                    <Field label="Kota / Kabupaten" icon={MapPin} required>
-                      <PilihWilayah nilai={city} opsi={getCitiesByProvince(province)}
-                        placeholder={province ? "Pilih kota / kabupaten" : "Pilih provinsi dulu"}
-                        disabled={!province} onPilih={setCity} />
+                    <Field label={luarNegeri ? "Kota" : "Kota / Kabupaten"} icon={MapPin} required>
+                      {luarNegeri ? (
+                        <input type="text" value={city} onChange={(e) => setCity(e.target.value)}
+                          placeholder="contoh: Sydney / München / Kuala Lumpur" className={inputClass} />
+                      ) : (
+                        <PilihWilayah nilai={city} opsi={getCitiesByProvince(province)}
+                          placeholder={province ? "Pilih kota / kabupaten" : "Pilih provinsi dulu"}
+                          disabled={!province} onPilih={setCity} />
+                      )}
                     </Field>
                   </div>
-                  {!isOffline && (
+                  {luarNegeri ? (
+                    <p className="-mt-2 text-sm leading-relaxed text-slate-600">
+                      Kamu tinggal di luar Indonesia — tulis wilayah &amp; kotamu apa adanya
+                      (boleh bahasa setempat). Ini kami pakai untuk menyesuaikan jam kelas
+                      dengan zona waktumu.
+                    </p>
+                  ) : !isOffline ? (
                     <p className="-mt-2 text-sm leading-relaxed text-slate-600">
                       Domisili dipakai untuk menyesuaikan zona waktu kelas dan mencarikan
                       pengajar offline kalau kamu butuh.
                     </p>
-                  )}
+                  ) : null}
 
                   {/* [pendataan-alamat-offline-v1] Kelas offline = pengajar
                       datang ke tempat siswa, jadi kota/kabupaten saja tidak
                       cukup. Kolomnya sengaja cuma muncul untuk kelas offline:
                       siswa online tidak perlu menyerahkan alamat rumahnya. */}
-                  {isOffline && (
+                  {mintaAlamat && (
                     <div className="space-y-4 rounded-2xl border border-dashed p-4 sm:p-5"
                       style={{ borderColor: `${TEAL}66`, backgroundColor: `${TEAL}0D` }}>
                       <p className="flex items-center gap-1.5 text-base font-bold text-slate-900">

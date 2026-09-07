@@ -25,6 +25,8 @@ const SELECT_COLS = [
   "hobby", "prior_experience",
   // [pendataan-domisili-referral-v1] migrasi pendataan_domisili_referral_20260813
   "province", "city", "referral_source",
+  // [pendataan-negara-v1] migrasi 20260907120000
+  "country",
   // [pendataan-alamat-offline-v1] migrasi 20260820120000
   "address", "district", "postal_code",
 ].join(",");
@@ -120,6 +122,10 @@ export async function POST(req: NextRequest) {
     const email = clean(body.email, 160);
     const birthDate = clean(body.birth_date, 10);
     const institution = clean(body.institution, 160);
+    // [pendataan-negara-v1] Negara kosong dianggap Indonesia — sama seperti
+    // baris lama yang dibuat waktu formulirnya belum menanyakan negara.
+    const country = clean(body.country, 80) || "Indonesia";
+    const luarNegeri = country.trim().toLowerCase() !== "indonesia";
     const province = clean(body.province, 80);
     const city = clean(body.city, 120);
     // [pendataan-alamat-offline-v1] Hanya dipakai kalau kelasnya offline.
@@ -138,8 +144,8 @@ export async function POST(req: NextRequest) {
     if (!fullName) return NextResponse.json({ error: "Nama lengkap wajib diisi" }, { status: 400 });
     if (!nickname) return NextResponse.json({ error: "Nama panggilan wajib diisi" }, { status: 400 });
     if (!birthDate) return NextResponse.json({ error: "Tanggal lahir wajib diisi" }, { status: 400 });
-    if (!province) return NextResponse.json({ error: "Provinsi domisili wajib diisi" }, { status: 400 });
-    if (!city) return NextResponse.json({ error: "Kota / kabupaten domisili wajib diisi" }, { status: 400 });
+    if (!province) return NextResponse.json({ error: luarNegeri ? "Negara bagian / provinsi / wilayah wajib diisi" : "Provinsi domisili wajib diisi" }, { status: 400 });
+    if (!city) return NextResponse.json({ error: luarNegeri ? "Kota domisili wajib diisi" : "Kota / kabupaten domisili wajib diisi" }, { status: 400 });
     if (!referralSource) return NextResponse.json({ error: "Pilih dari mana kamu tahu Linguo" }, { status: 400 });
     if (!institution) return NextResponse.json({ error: "Sekolah / instansi / perusahaan wajib diisi" }, { status: 400 });
     if (!hobby) return NextResponse.json({ error: "Hobi & minat wajib diisi" }, { status: 400 });
@@ -165,7 +171,9 @@ export async function POST(req: NextRequest) {
     if (!Array.isArray(modeRows) || modeRows.length === 0) {
       return NextResponse.json({ error: "Link tidak sah" }, { status: 404 });
     }
-    const isOffline = classModeOf(modeRows[0]) === "offline";
+    // Kelas offline di luar negeri tidak dilayani — pengajarnya tidak bisa
+    // datang — jadi alamat detailnya tidak dipaksakan ke siswa luar Indonesia.
+    const isOffline = classModeOf(modeRows[0]) === "offline" && !luarNegeri;
     if (isOffline) {
       if (!district) return NextResponse.json({ error: "Kecamatan wajib diisi untuk kelas offline" }, { status: 400 });
       if (!address) return NextResponse.json({ error: "Alamat lengkap wajib diisi untuk kelas offline" }, { status: 400 });
@@ -189,7 +197,8 @@ export async function POST(req: NextRequest) {
       age: ageFromBirthDate(birthDate),
       institution,
       // [pendataan-domisili-referral-v1] Domisili & sumber tahu Linguo. Trigger
-      // tg_intake_form_sync menyalinnya ke students.province/city/source.
+      // tg_intake_form_sync menyalinnya ke students.country/province/city/source.
+      country,
       province,
       city,
       referral_source: referralSource,
