@@ -1,0 +1,591 @@
+{
+ "title": "Apa yang kamu bawa?",
+ "title_target": "Quid portas?",
+ "goal": "Menandai sasaran perbuatan dengan akhiran -am dan -um, memakai enam bentuk kata kerja kelompok pertama, dan menyusun kalimat lengkap pelaku-sasaran-kata kerja.",
+ "bekal": [
+  "mengubah kata benda menjadi bentuk sasaran dan tahu kenapa itu penting",
+  "menyatakan *saya membawa, kamu membawa, kami membawa* dengan satu pola",
+  "menyusun kalimat tiga kata yang benar tanpa bantuan urutan"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Cena paratur",
+   "intro": "Sore hari di rumah keluarga Quintus. Cornelia menyiapkan makan malam, dan semua orang membawa sesuatu.",
+   "lines": [
+    {
+     "speaker": "Cornelia:",
+     "text": "Marce! Quid portas?",
+     "id": "Marcus! Kamu bawa apa?",
+     "literal": "Marcus-panggil! apa bawa-kamu?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Aquam porto, mater. Aqua frigida est.",
+     "id": "Saya bawa air, Bu. Airnya dingin.",
+     "literal": "air-sasaran bawa-saya, ibu-panggil. air dingin-perempuan adalah-dia."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Bene. Et Iulia? Quid parat?",
+     "id": "Bagus. Dan Iulia? Dia sedang menyiapkan apa?",
+     "literal": "baik. dan Iulia? apa siapkan-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Iulia cenam parat. Sed cantat quoque!",
+     "id": "Iulia menyiapkan makan malam. Tapi dia juga menyanyi!",
+     "literal": "Iulia makan-malam-sasaran siapkan-dia. tapi nyanyi-dia juga!"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Iulia semper cantat. Fabulamne narrat?",
+     "id": "Iulia memang selalu menyanyi. Dia lagi bercerita juga?",
+     "literal": "Iulia selalu nyanyi-dia. cerita-sasaran-kah ceritakan-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ita, fabulam longam narrat. Sextus fabulam laudat.",
+     "id": "Iya, dia bercerita panjang. Sextus memuji ceritanya.",
+     "literal": "ya, cerita-sasaran panjang-sasaran ceritakan-dia. Sextus cerita-sasaran puji-dia."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Ubi est Sextus? Cur non laborat?",
+     "id": "Sextus di mana? Kenapa dia tidak ikut kerja?",
+     "literal": "di-mana adalah-dia Sextus? kenapa tidak kerja-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Sextus ambulat et cantat. Non laborat!",
+     "id": "Sextus jalan-jalan sambil menyanyi. Dia tidak kerja!",
+     "literal": "Sextus jalan-dia dan nyanyi-dia. tidak kerja-dia!"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Sextum voco. Cenam exspectamus!",
+     "id": "Saya panggil Sextus. Kita menunggu makan malam!",
+     "literal": "Sextus-sasaran panggil-saya. makan-malam-sasaran tunggu-kami!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ego mensam porto. Iulia aquam portat.",
+     "id": "Saya yang membawa mejanya. Iulia membawa airnya.",
+     "literal": "saya meja-sasaran bawa-saya. Iulia air-sasaran bawa-dia."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Bonus filius es, Marce. Te laudo.",
+     "id": "Kamu anak yang baik, Marcus. Ibu memujimu.",
+     "literal": "baik-lelaki anak-lelaki adalah-kamu, Marcus-panggil. kamu-sasaran puji-saya."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Gratias, mater! Nunc cenam paramus.",
+     "id": "Terima kasih, Bu! Sekarang kita siapkan makan malamnya.",
+     "literal": "terima-kasih, ibu-panggil! sekarang makan-malam-sasaran siapkan-kami."
+    }
+   ],
+   "notes": [
+    "**Aqua dan aquam adalah dua hal yang berbeda.** *Aqua frigida est* — \"airnya dingin\"; di sini air adalah pelakunya. *Aquam porto* — \"saya membawa air\"; di sini air adalah yang dikenai perbuatan, dan ekornya berubah menjadi *-am*. Perubahan satu huruf inilah yang menggantikan seluruh urusan urutan kata dalam bahasa Indonesia.",
+    "**Kata sifat ikut memakai topi sasaran.** Lihat *fabulam longam*: karena *fabulam* memakai ekor sasaran, *longam* wajib ikut. Kata sifat selalu memakai baju yang sama persis dengan kata bendanya — jenis, jumlah, dan tugasnya harus cocok bertiga.",
+    "**Semua kata kerja di dialog ini berpola sama.** *Porto, parat, narrat, laudat, laborat, ambulat, cantat, voco, exspectamus, paramus* — sepuluh kata kerja, satu pola. Kelompok ini disebut konjugasi pertama, dan ia yang terbesar sekaligus paling teratur di seluruh bahasa Latin.",
+    "**Te laudo — kata ganti pun punya bentuk sasaran.** *Ego* menjadi *me*, *tu* menjadi *te*. Jadi *te laudo* berarti \"saya memuji kamu\" dan *me laudas* berarti \"kamu memuji saya\". Urutannya boleh dibalik tanpa mengubah arti, karena ekornya yang bekerja."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk sasaran: topi -am dan -um",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau sebuah kata benda menjadi sasaran perbuatan — yang dibawa, yang dilihat, yang dipanggil — ia memakai bentuk khusus. Dalam istilah tata bahasa namanya akusatif; dalam modul ini ia ditandai `-sasaran` di lapis harfiah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Pelaku",
+      "Sasaran",
+      "Contoh kalimat"
+     ],
+     "rows": [
+      [
+       "deklinasi I (-a)",
+       "puella",
+       "puell**am**",
+       "Marcus **puellam** vocat."
+      ],
+      [
+       "",
+       "aqua",
+       "aqu**am**",
+       "**Aquam** porto."
+      ],
+      [
+       "",
+       "fabula",
+       "fabul**am**",
+       "Iulia **fabulam** narrat."
+      ],
+      [
+       "deklinasi II (-us)",
+       "amicus",
+       "amic**um**",
+       "**Amicum** exspecto."
+      ],
+      [
+       "",
+       "hortus",
+       "hort**um**",
+       "Servus **hortum** curat."
+      ],
+      [
+       "",
+       "Sextus",
+       "Sext**um**",
+       "**Sextum** voco."
+      ],
+      [
+       "deklinasi II (-um)",
+       "templum",
+       "templ**um**",
+       "**Templum** specto."
+      ],
+      [
+       "",
+       "donum",
+       "don**um**",
+       "**Donum** porto."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan baris terakhir: kata netral **tidak berubah sama sekali**. *Templum* adalah pelaku dan sekaligus sasaran, dan hanya kalimatnya yang memberi tahu mana yang dimaksud. Aturan ini berlaku di kelima deklinasi dan tidak pernah dilanggar — kata netral selalu punya bentuk pelaku dan sasaran yang kembar."
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa ini alat yang ampuh",
+     "items": [
+      "*Puella puerum vocat* dan *Puerum puella vocat* sama artinya: gadis itu memanggil anak lelaki itu. Ekornya sudah menjelaskan siapa berbuat apa, jadi urutan bebas dipakai untuk menekankan.",
+      "*Puellam puer vocat* artinya kebalikannya, walaupun kata-katanya sama. Bacalah ekornya lebih dulu, bukan urutannya.",
+      "Karena itu, waktu membaca kalimat Latin, biasakan mencari kata berekor sasaran duluan. Ia hampir selalu menempel pada kata kerjanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Konjugasi pertama: kata kerja -are",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk kamus kata kerja Latin diawali bentuk \"saya\": *porto, portare* — \"saya membawa, membawa\". Kalau bentuk keduanya berakhir *-are*, kata kerja itu masuk kelompok pertama, dan seluruh bentuknya bisa kamu susun sendiri. Caranya: buang *-re* dari *portare*, sisanya *porta-*, lalu tempelkan enam ekor pelaku."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "port**o**",
+       "bawa-saya",
+       "saya membawa"
+      ],
+      [
+       "port**as**",
+       "bawa-kamu",
+       "kamu membawa"
+      ],
+      [
+       "port**at**",
+       "bawa-dia",
+       "dia membawa"
+      ],
+      [
+       "port**amus**",
+       "bawa-kami",
+       "kami membawa"
+      ],
+      [
+       "port**atis**",
+       "bawa-kalian",
+       "kalian membawa"
+      ],
+      [
+       "port**ant**",
+       "bawa-mereka",
+       "mereka membawa"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Enam ekor itu — *-o, -s, -t, -mus, -tis, -nt* — adalah ekor pelaku untuk **semua** kata kerja Latin, di semua kelompok, di hampir semua kala. Kamu baru saja menghafal sepertiga dari seluruh sistem kata kerja bahasa Latin. Yang berbeda antar kelompok cuma huruf penyambung sebelum ekornya."
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa bentuk \"saya\" menelan huruf *a*: bukan *portao*, melainkan *porto*. Ini satu-satunya kejanggalan di kelompok pertama, dan berlaku untuk semuanya: *amo*, *voco*, *laboro*, *specto*."
+    },
+    {
+     "type": "sub",
+     "text": "Satu kalimat, tiga bagian"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "Sasaran",
+      "Kata kerja",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "Marcus",
+       "aquam",
+       "portat",
+       "Marcus membawa air."
+      ],
+      [
+       "Iulia",
+       "fabulam",
+       "narrat",
+       "Iulia bercerita."
+      ],
+      [
+       "Cornelia",
+       "cenam",
+       "parat",
+       "Cornelia menyiapkan makan malam."
+      ],
+      [
+       "(saya)",
+       "Sextum",
+       "voco",
+       "Saya memanggil Sextus."
+      ],
+      [
+       "Discipuli",
+       "magistrum",
+       "laudant",
+       "Murid-murid memuji gurunya."
+      ],
+      [
+       "Nauta",
+       "villam",
+       "spectat",
+       "Pelaut itu memandangi rumah itu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom pelaku boleh kosong, karena ekor kata kerjanya sudah menyebutkannya. Kolom sasaran juga boleh kosong kalau perbuatannya tidak mengenai apa pun: *Sextus ambulat* — \"Sextus berjalan\"."
+    }
+   ]
+  },
+  {
+   "title": "Dua puluh kata kerja -are yang paling berguna",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kalau kamu hafal daftar ini, kamu sudah bisa menyusun ratusan kalimat sederhana. Semuanya berpola sama persis dengan *porto*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Latin",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "amo, amare",
+       "mencintai",
+       "laboro, laborare",
+       "bekerja"
+      ],
+      [
+       "porto, portare",
+       "membawa",
+       "laudo, laudare",
+       "memuji"
+      ],
+      [
+       "paro, parare",
+       "menyiapkan",
+       "narro, narrare",
+       "menceritakan"
+      ],
+      [
+       "voco, vocare",
+       "memanggil",
+       "canto, cantare",
+       "menyanyi"
+      ],
+      [
+       "specto, spectare",
+       "menonton, memandang",
+       "clamo, clamare",
+       "berteriak"
+      ],
+      [
+       "ambulo, ambulare",
+       "berjalan",
+       "intro, intrare",
+       "masuk"
+      ],
+      [
+       "habito, habitare",
+       "tinggal, menghuni",
+       "exspecto, exspectare",
+       "menunggu"
+      ],
+      [
+       "rogo, rogare",
+       "bertanya, meminta",
+       "saluto, salutare",
+       "menyapa"
+      ],
+      [
+       "puto, putare",
+       "mengira",
+       "curo, curare",
+       "mengurus, merawat"
+      ],
+      [
+       "nato, natare",
+       "berenang",
+       "aedifico, aedificare",
+       "membangun"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata serapan yang menolong ingatanmu",
+     "items": [
+      "*Amare* → **amatir**: orang yang melakukan sesuatu karena cinta, bukan karena bayaran.",
+      "*Portare* → **portir, transportasi, portable**: semuanya soal membawa.",
+      "*Laborare* → **laboratorium, kolaborasi**: tempat dan cara bekerja.",
+      "*Spectare* → **spektator, inspeksi, spektakuler**: semuanya soal memandang.",
+      "*Aedificare* → **edifikasi**; *curare* → **kurator, kuratif**; *clamare* → **reklamasi, proklamasi**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "porto, portare",
+   "baca": "POR-to",
+   "id": "membawa"
+  },
+  {
+   "la": "paro, parare",
+   "baca": "PA-ro",
+   "id": "menyiapkan"
+  },
+  {
+   "la": "voco, vocare",
+   "baca": "WO-ko",
+   "id": "memanggil"
+  },
+  {
+   "la": "laudo, laudare",
+   "baca": "LAU-do",
+   "id": "memuji"
+  },
+  {
+   "la": "narro, narrare",
+   "baca": "NAR-ro",
+   "id": "menceritakan"
+  },
+  {
+   "la": "canto, cantare",
+   "baca": "KAN-to",
+   "id": "menyanyi"
+  },
+  {
+   "la": "laboro, laborare",
+   "baca": "la-BO-ro",
+   "id": "bekerja"
+  },
+  {
+   "la": "ambulo, ambulare",
+   "baca": "AM-bu-lo",
+   "id": "berjalan"
+  },
+  {
+   "la": "exspecto, exspectare",
+   "baca": "eks-SPEK-to",
+   "id": "menunggu"
+  },
+  {
+   "la": "specto, spectare",
+   "baca": "SPEK-to",
+   "id": "memandang, menonton"
+  },
+  {
+   "la": "amo, amare",
+   "baca": "A-mo",
+   "id": "mencintai, menyukai"
+  },
+  {
+   "la": "habito, habitare",
+   "baca": "HA-bi-to",
+   "id": "tinggal, menghuni"
+  },
+  {
+   "la": "rogo, rogare",
+   "baca": "RO-go",
+   "id": "bertanya, meminta"
+  },
+  {
+   "la": "saluto, salutare",
+   "baca": "sa-LU-to",
+   "id": "menyapa"
+  },
+  {
+   "la": "curo, curare",
+   "baca": "KU-ro",
+   "id": "mengurus, merawat"
+  },
+  {
+   "la": "clamo, clamare",
+   "baca": "KLA-mo",
+   "id": "berteriak"
+  },
+  {
+   "la": "intro, intrare",
+   "baca": "IN-tro",
+   "id": "masuk"
+  },
+  {
+   "la": "puto, putare",
+   "baca": "PU-to",
+   "id": "mengira, menganggap"
+  },
+  {
+   "la": "aqua",
+   "baca": "A-kwa",
+   "id": "air"
+  },
+  {
+   "la": "cena",
+   "baca": "KE-na",
+   "id": "makan malam"
+  },
+  {
+   "la": "mensa",
+   "baca": "MEN-sa",
+   "id": "meja"
+  },
+  {
+   "la": "filius, filia",
+   "baca": "FI-li-us",
+   "id": "anak lelaki, anak perempuan"
+  },
+  {
+   "la": "mater",
+   "baca": "MA-ter",
+   "id": "ibu"
+  },
+  {
+   "la": "pater",
+   "baca": "PA-ter",
+   "id": "ayah"
+  },
+  {
+   "la": "servus",
+   "baca": "SER-wus",
+   "id": "orang yang diperbudak, pelayan tak bebas"
+  },
+  {
+   "la": "dominus, domina",
+   "baca": "DO-mi-nus",
+   "id": "tuan, nyonya rumah"
+  },
+  {
+   "la": "epistula",
+   "baca": "e-PIS-tu-la",
+   "id": "surat"
+  },
+  {
+   "la": "frigidus",
+   "baca": "FRI-gi-dus",
+   "id": "dingin"
+  },
+  {
+   "la": "calidus",
+   "baca": "KA-li-dus",
+   "id": "panas"
+  },
+  {
+   "la": "me, te",
+   "baca": "ME, TE",
+   "id": "saya (sasaran), kamu (sasaran)"
+  },
+  {
+   "la": "nos, vos",
+   "baca": "NOS, WOS",
+   "id": "kami, kalian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk sasaran.",
+   "items": [
+    "aqua",
+    "hortus",
+    "templum",
+    "fabula",
+    "amicus",
+    "donum"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kata kerjanya sesuai pelakunya.",
+   "items": [
+    "Ego cenam par____.",
+    "Tu aquam port____.",
+    "Marcus fabulam narr____.",
+    "Nos amicum exspect____.",
+    "Vos magistrum laud____.",
+    "Puellae cant____."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar, kata kerja di akhir.",
+   "items": [
+    "portat / aquam / Iulia",
+    "voco / amicum / ego",
+    "parant / cenam / servi",
+    "laudas / magistrum / tu",
+    "spectat / templum / nauta",
+    "narramus / fabulam / nos"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Saya menunggu teman.",
+    "Kamu membawa air.",
+    "Cornelia menyiapkan makan malam.",
+    "Kami memuji guru.",
+    "Gadis itu menyanyi.",
+    "Sextus tidak bekerja."
+   ]
+  }
+ ],
+ "answers": [
+  "aquam — hortum — templum — fabulam — amicum — donum",
+  "paro — portas — narrat — exspectamus — laudatis — cantant",
+  "Iulia aquam portat. — Ego amicum voco. — Servi cenam parant. — Tu magistrum laudas. — Nauta templum spectat. — Nos fabulam narramus.",
+  "Amicum exspecto. — Aquam portas. — Cornelia cenam parat. — Magistrum laudamus. — Puella cantat. — Sextus non laborat."
+ ]
+}

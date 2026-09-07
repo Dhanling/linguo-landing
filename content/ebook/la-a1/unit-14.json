@@ -1,0 +1,214 @@
+{
+ "title": "Bisa, mau, pergi, membawa",
+ "title_target": "Possum, volo, eo",
+ "goal": "Memakai lima kata kerja tak beraturan yang paling sering, menggabungkannya dengan bentuk dasar kata kerja lain, dan mengenali bentuk dasar yang dipakai sebagai kata benda.",
+ "bekal": [
+  "menyusun *possum*, *volo*, *nolo*, *eo*, dan *fero* dalam enam bentuk",
+  "membuat kalimat berpola \"ingin/harus/bisa + bentuk dasar\"",
+  "membaca pepatah Latin yang memuat bentuk dasar sebagai pelaku"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Iter ad villam",
+   "intro": "Quintus merencanakan perjalanan ke rumah pertanian keluarga. Tidak semua orang boleh ikut.",
+   "lines": [
+    { "speaker": "Quintus:", "text": "Cras ad villam ire volo. Quis venire vult?", "id": "Besok Ayah mau pergi ke rumah pertanian. Siapa yang mau ikut?", "literal": "besok ke rumah-sasaran pergi mau-saya. siapa datang mau-dia?" },
+    { "speaker": "Marcus:", "text": "Ego venire volo! Sed non possum — magister me exspectat.", "id": "Saya mau ikut! Tapi tidak bisa, guru saya menunggu.", "literal": "saya datang mau-saya! tapi tidak bisa-saya — guru saya-sasaran tunggu-dia." },
+    { "speaker": "Iulia:", "text": "Ego ire possum! Nihil facere debeo.", "id": "Saya bisa pergi! Saya tidak ada tugas apa-apa.", "literal": "saya pergi bisa-saya! tidak-apa-apa-sasaran buat harus-saya." },
+    { "speaker": "Cornelia:", "text": "Iulia, tu domi manere debes. Litteras scribere debes.", "id": "Iulia, kamu harus tinggal di rumah. Kamu harus menulis surat.", "literal": "Iulia, kamu di-rumah tinggal harus-kamu. surat-jamak-sasaran tulis harus-kamu." },
+    { "speaker": "Iulia:", "text": "Nolo litteras scribere! Ambulare volo!", "id": "Saya tidak mau menulis surat! Saya mau jalan-jalan!", "literal": "tidak-mau-saya surat-jamak-sasaran tulis! jalan mau-saya!" },
+    { "speaker": "Cornelia:", "text": "Scribere non vis, sed dona accipere vis.", "id": "Menulis tidak mau, tapi terima hadiah mau.", "literal": "tulis tidak mau-kamu, tapi hadiah-jamak-sasaran terima mau-kamu." },
+    { "speaker": "Marcus:", "text": "Pater, quid ad villam ferre debemus?", "id": "Yah, kita harus membawa apa ke sana?", "literal": "ayah-panggil, apa-sasaran ke rumah-sasaran bawa harus-kami?" },
+    { "speaker": "Quintus:", "text": "Cibum et aquam ferre debemus. Cetera servi ferunt.", "id": "Kita harus bawa makanan dan air. Sisanya dibawa para pelayan.", "literal": "makanan-sasaran dan air-sasaran bawa harus-kami. sisa-jamak-sasaran pelayan-jamak bawa-mereka." },
+    { "speaker": "Iulia:", "text": "Possumusne equos ducere?", "id": "Boleh kita bawa kuda?", "literal": "bisa-kami-kah kuda-jamak-sasaran bawa?" },
+    { "speaker": "Quintus:", "text": "Possumus. Sed tu equum regere non potes!", "id": "Bisa. Tapi kamu belum bisa mengendalikan kuda!", "literal": "bisa-kami. tapi kamu kuda-sasaran kendalikan tidak bisa-kamu!" },
+    { "speaker": "Iulia:", "text": "Possum! Discere volo.", "id": "Bisa kok! Saya mau belajar.", "literal": "bisa-saya! belajar mau-saya." },
+    { "speaker": "Quintus:", "text": "Bene dicis, filia. Qui vult, potest.", "id": "Bagus, Nak. Yang mau, pasti bisa.", "literal": "baik katakan-kamu, anak-perempuan-panggil. yang mau-dia, bisa-dia." }
+   ],
+   "notes": [
+    "**Volo, vis, vult — tiga bentuk yang tak ada miripnya.** Kata kerja \"mau\" adalah salah satu yang paling tua dan paling rusak bentuknya dalam bahasa Latin. Hafalkan bunyinya sebagai tiga kata terpisah: *volo* (saya mau), *vis* (kamu mau), *vult* (dia mau). Jamaknya lebih ramah: *volumus, vultis, volunt*.",
+    "**Nolo adalah non + volo yang menyatu.** *Non volo* dipendekkan menjadi *nolo*, dan seluruh bentuknya ikut: *nolo, non vis, non vult, nolumus, non vultis, nolunt*. Dari kata inilah datang perintah larangan yang akan kamu pelajari di Unit 16: *noli!*, \"jangan!\"",
+    "**Ire, venire, scribere, facere — bentuk dasar sesudah kata kerja pertama.** Kalau dua kata kerja bertemu dalam satu kalimat, yang kedua memakai bentuk dasar, yaitu bentuk kamus yang berakhir *-re*. Susunannya sama persis dengan bahasa Indonesia: \"saya mau **pergi**\", \"kamu harus **menulis**\".",
+    "**Qui vult, potest — pepatah yang layak dihafal.** Harfiahnya \"orang yang mau, bisa\". Kata *qui* di sini berarti \"orang yang\", dan cara kerjanya dibongkar penuh di Unit 15. Untuk sekarang, hafalkan saja kalimatnya utuh; ia salah satu pepatah Latin yang paling sering dikutip."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat kata kerja kehendak",
+   "blocks": [
+    { "type": "p", "text": "*Possum*, *volo*, *nolo*, dan *malo* hampir selalu muncul bersama bentuk dasar kata kerja lain. Keempatnya tak beraturan, tetapi ketiga yang terakhir bersaudara dekat: hafalkan *volo*, dan dua lainnya menyusul sendiri." },
+    {
+     "type": "tabel",
+     "head": ["Pelaku", "possum (bisa)", "volo (mau)", "nolo (tak mau)", "malo (lebih suka)"],
+     "rows": [
+      ["saya", "possum", "volo", "nolo", "malo"],
+      ["kamu", "potes", "vis", "non vis", "mavis"],
+      ["dia", "potest", "vult", "non vult", "mavult"],
+      ["kami", "possumus", "volumus", "nolumus", "malumus"],
+      ["kalian", "potestis", "vultis", "non vultis", "mavultis"],
+      ["mereka", "possunt", "volunt", "nolunt", "malunt"],
+      ["dulu", "poteram", "volebam", "nolebam", "malebam"],
+      ["sudah", "potui", "volui", "nolui", "malui"]
+     ]
+    },
+    { "type": "p", "text": "*Possum* sebenarnya gabungan *potis* (\"mampu\") dan *sum*, dan itu terlihat jelas: *pot-* bertemu *sum* menjadi *possum*, bertemu *es* menjadi *potes*. Kalau kamu hafal *sum*, kamu sudah setengah hafal *possum*." },
+    { "type": "sub", "text": "Harus: debeo dan necesse est" },
+    {
+     "type": "tabel",
+     "head": ["Latin", "Terjemahan", "Catatan"],
+     "rows": [
+      ["Scribere **debeo**.", "Saya harus menulis.", "kewajiban pribadi, dari \"berhutang\""],
+      ["**Necesse est** scribere.", "Perlu menulis.", "keharusan keadaan, tanpa pelaku"],
+      ["**Necesse est** mihi scribere.", "Saya perlu menulis.", "dengan bentuk kepada"],
+      ["Scribere non **possum**.", "Saya tidak bisa menulis.", "kemampuan"],
+      ["Scribere **nolo**.", "Saya tidak mau menulis.", "kehendak"],
+      ["Legere quam scribere **malo**.", "Saya lebih suka membaca daripada menulis.", "*malo* berpasangan dengan *quam*"]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Eo dan fero: dua yang paling liar",
+   "blocks": [
+    { "type": "p", "text": "*Eo* (\"pergi\") pendek sekali sampai hampir hilang; *fero* (\"membawa\") membuang huruf penyambungnya di beberapa tempat. Keduanya sangat sering dipakai, jadi tidak bisa dihindari." },
+    {
+     "type": "tabel",
+     "head": ["Pelaku", "eo (pergi)", "fero (membawa)", "Bentuk dulu", "Bentuk sudah"],
+     "rows": [
+      ["saya", "eo", "fero", "ibam / ferebam", "ii / tuli"],
+      ["kamu", "is", "fers", "ibas / ferebas", "isti / tulisti"],
+      ["dia", "it", "fert", "ibat / ferebat", "iit / tulit"],
+      ["kami", "imus", "ferimus", "ibamus / ferebamus", "iimus / tulimus"],
+      ["kalian", "itis", "fertis", "ibatis / ferebatis", "istis / tulistis"],
+      ["mereka", "eunt", "ferunt", "ibant / ferebant", "ierunt / tulerunt"]
+     ]
+    },
+    { "type": "p", "text": "Bentuk dasarnya *ire* dan *ferre*. Perhatikan *fers* dan *fert* yang kehilangan huruf *i*-nya; sisanya berpola kelompok ketiga biasa. Bentuk sudah *tuli* tidak ada miripnya sama sekali dengan *fero* — ia berasal dari kata kerja lain yang lebih tua dan lama-lama menempel." },
+    { "type": "sub", "text": "Gabungan yang paling sering" },
+    {
+     "type": "tabel",
+     "head": ["Latin", "Susunannya", "Arti"],
+     "rows": [
+      ["exeo", "ex + eo", "keluar"],
+      ["redeo", "red + eo", "kembali"],
+      ["ineo", "in + eo", "masuk, memulai"],
+      ["transeo", "trans + eo", "menyeberang"],
+      ["pereo", "per + eo", "binasa"],
+      ["affero", "ad + fero", "membawa datang"],
+      ["aufero", "ab + fero", "membawa pergi"],
+      ["confero", "cum + fero", "mengumpulkan, membandingkan"],
+      ["refero", "re + fero", "membawa kembali, melaporkan"]
+     ]
+    },
+    { "type": "p", "text": "*Confero* melahirkan singkatan *cf.* yang kamu temui di catatan kaki, dan *refero* melahirkan *referensi*. Semua gabungan itu memakai tabel yang sama persis dengan induknya — jadi begitu kamu hafal *eo* dan *fero*, kamu hafal dua puluh kata sekaligus." }
+   ]
+  },
+  {
+   "title": "Bentuk dasar sebagai kata benda",
+   "blocks": [
+    { "type": "p", "text": "Bentuk dasar Latin bisa berdiri sendiri sebagai pelaku kalimat, persis seperti \"membaca itu menyenangkan\" dalam bahasa Indonesia. Kalau ia jadi pelaku, kata sifat yang menyifatinya memakai baju netral." },
+    {
+     "type": "tabel",
+     "head": ["Latin", "Terjemahan", "Siapa"],
+     "rows": [
+      ["**Errare** humanum est.", "Berbuat salah itu manusiawi.", "peribahasa, dari Seneca"],
+      ["**Vivere** est cogitare.", "Hidup adalah berpikir.", "Cicero"],
+      ["**Navigare** necesse est.", "Berlayar itu perlu.", "moto pelaut, dikutip Plutarkhos"],
+      ["Dulce et decorum est pro patria **mori**.", "Manis dan pantas mati demi tanah air.", "Horatius"],
+      ["**Docere** est discere.", "Mengajar adalah belajar.", "peribahasa sekolah"],
+      ["**Dicere** non est **facere**.", "Berkata bukan berbuat.", "peribahasa"]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Susunan yang bisa langsung kamu pakai",
+     "items": [
+      "*… volo* — \"saya mau …\". Contoh: *Latine legere volo.* — \"Saya mau membaca dalam bahasa Latin.\"",
+      "*… debeo* — \"saya harus …\". Contoh: *Cotidie discere debeo.* — \"Saya harus belajar tiap hari.\"",
+      "*… possum* — \"saya bisa …\". Contoh: *Iam pauca dicere possum.* — \"Saya sudah bisa mengatakan beberapa hal.\"",
+      "*… nolo* — \"saya tidak mau …\". Contoh: *Nolo tacere.* — \"Saya tidak mau diam.\"",
+      "Empat susunan itu sudah cukup untuk menyatakan hampir semua rencana dan keinginan sehari-hari."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "la": "possum, posse, potui", "baca": "POS-sum", "id": "bisa, mampu" },
+  { "la": "volo, velle, volui", "baca": "WO-lo", "id": "mau, ingin" },
+  { "la": "nolo, nolle, nolui", "baca": "NO-lo", "id": "tidak mau" },
+  { "la": "malo, malle, malui", "baca": "MA-lo", "id": "lebih suka" },
+  { "la": "eo, ire, ii", "baca": "E-o, I-re", "id": "pergi" },
+  { "la": "fero, ferre, tuli", "baca": "FE-ro", "id": "membawa, menahan" },
+  { "la": "debeo, debere, debui", "baca": "DE-be-o", "id": "harus, berhutang" },
+  { "la": "necesse est", "baca": "ne-KES-se EST", "id": "perlu, harus" },
+  { "la": "exeo, exire", "baca": "EK-se-o", "id": "keluar" },
+  { "la": "redeo, redire", "baca": "RE-de-o", "id": "kembali" },
+  { "la": "transeo, transire", "baca": "TRAN-se-o", "id": "menyeberang" },
+  { "la": "affero, afferre", "baca": "AF-fe-ro", "id": "membawa datang" },
+  { "la": "aufero, auferre", "baca": "AU-fe-ro", "id": "membawa pergi, merampas" },
+  { "la": "maneo, manere, mansi", "baca": "MA-ne-o", "id": "tinggal, menetap" },
+  { "la": "accipio, accipere, accepi", "baca": "ak-KI-pi-o", "id": "menerima" },
+  { "la": "disco, discere, didici", "baca": "DIS-ko", "id": "belajar" },
+  { "la": "cogito, cogitare", "baca": "KO-gi-to", "id": "berpikir" },
+  { "la": "erro, errare", "baca": "ER-ro", "id": "berbuat salah, tersesat" },
+  { "la": "morior, mori", "baca": "MO-ri-or", "id": "mati" },
+  { "la": "navigo, navigare", "baca": "NA-wi-go", "id": "berlayar" },
+  { "la": "rego, regere, rexi", "baca": "RE-go", "id": "memerintah, mengendalikan" },
+  { "la": "iter, itineris", "baca": "I-ter", "id": "perjalanan, jalan" },
+  { "la": "cibus, cibi", "baca": "KI-bus", "id": "makanan" },
+  { "la": "equus, equi", "baca": "E-kwus", "id": "kuda" },
+  { "la": "humanus, humana", "baca": "hu-MA-nus", "id": "manusiawi" },
+  { "la": "dulcis, dulce", "baca": "DUL-kis", "id": "manis" },
+  { "la": "necesse", "baca": "ne-KES-se", "id": "perlu" },
+  { "la": "nihil", "baca": "NI-hil", "id": "tidak apa-apa" },
+  { "la": "cras", "baca": "KRAS", "id": "besok" },
+  { "la": "Latine", "baca": "la-TI-ne", "id": "dalam bahasa Latin" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi dengan bentuk possum yang tepat.",
+   "items": [
+    "Ego venire ____ .",
+    "Tu equum regere non ____ .",
+    "Marcus ire ____ .",
+    "Nos manere ____ .",
+    "Vos scribere ____ .",
+    "Pueri tacere non ____ ."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk volo atau nolo sesuai keterangannya.",
+   "items": [
+    "Ego discere ____ . (mau)",
+    "Tu scribere ____ . (tidak mau)",
+    "Iulia ambulare ____ . (mau)",
+    "Nos manere ____ . (tidak mau)",
+    "Vos legere ____ . (mau)",
+    "Pueri dormire ____ . (mau)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk dasar (yang berakhir -re).",
+   "items": ["porto", "video", "mitto", "audio", "sum", "eo"]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Saya mau belajar bahasa Latin.",
+    "Kamu harus menulis surat.",
+    "Kami tidak bisa datang.",
+    "Iulia lebih suka membaca daripada menulis.",
+    "Berbuat salah itu manusiawi.",
+    "Yang mau, bisa."
+   ]
+  }
+ ],
+ "answers": [
+  "possum — potes — potest — possumus — potestis — possunt",
+  "volo — non vis — vult — nolumus — vultis — volunt",
+  "portare — videre — mittere — audire — esse — ire",
+  "Latine discere volo. — Litteras scribere debes. — Venire non possumus. — Iulia legere quam scribere mavult. — Errare humanum est. — Qui vult, potest."
+ ]
+}

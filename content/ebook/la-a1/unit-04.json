@@ -1,0 +1,561 @@
+{
+ "title": "Milik siapa?",
+ "title_target": "Cuius est?",
+ "goal": "Menyatakan kepunyaan dengan akhiran -ae dan -i, memakai kata milik meus dan tuus dengan benar, dan menyebut anggota keluarga Romawi.",
+ "bekal": [
+  "bertanya *cuius est?* dan menjawabnya dengan bentuk punya",
+  "membaca bentuk kamus kata benda dan tahu kenapa selalu ditulis dua bentuk",
+  "memakai *meus, tua, nostrum* pada barang yang tepat, bukan pada pemiliknya"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Anulus in horto",
+   "intro": "Iulia menemukan sebuah cincin di kebun. Seisi rumah menebak-nebak pemiliknya.",
+   "lines": [
+    {
+     "speaker": "Iulia:",
+     "text": "Ecce anulus! Cuius est anulus?",
+     "id": "Lihat, ada cincin! Punya siapa cincin ini?",
+     "literal": "lihat cincin! siapa-punya adalah-dia cincin?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Meus non est. Fortasse anulus Sexti est.",
+     "id": "Bukan punya saya. Mungkin cincinnya Sextus.",
+     "literal": "milik-saya tidak adalah-dia. barangkali cincin Sextus-punya adalah-dia."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Sextine? Cur?",
+     "id": "Sextus? Kenapa?",
+     "literal": "Sextus-punya-kah? kenapa?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Sextus semper hic ambulat.",
+     "id": "Sextus kan selalu jalan-jalan di sini.",
+     "literal": "Sextus selalu di-sini jalan-dia."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Fortasse. Sed anulus feminae est, non viri.",
+     "id": "Mungkin. Tapi ini cincin perempuan, bukan cincin lelaki.",
+     "literal": "barangkali. tapi cincin perempuan-punya adalah-dia, tidak lelaki-punya."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ergo anulus Corneliae est?",
+     "id": "Berarti cincinnya Cornelia?",
+     "literal": "jadi cincin Cornelia-punya adalah-dia?"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Fortasse. Cornelia anulum amat.",
+     "id": "Mungkin. Cornelia memang suka cincin.",
+     "literal": "barangkali. Cornelia cincin-sasaran cinta-dia."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Quid clamatis, liberi?",
+     "id": "Kalian ribut apa, anak-anak?",
+     "literal": "apa teriak-kalian, anak-jamak-panggil?"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Ecce anulus, mater! Tuusne est?",
+     "id": "Ini ada cincin, Bu! Punya Ibu?",
+     "literal": "lihat cincin, ibu-panggil! milik-kamu-kah adalah-dia?"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Ita, meus est! Anulus aviae meae est.",
+     "id": "Iya, punya Ibu! Ini cincin nenek Ibu.",
+     "literal": "ya, milik-saya adalah-dia! cincin nenek-punya milik-saya-punya adalah-dia."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Anulus aviae? Ergo antiquus est!",
+     "id": "Cincin nenek? Berarti tua sekali!",
+     "literal": "cincin nenek-punya? jadi tua-lelaki adalah-dia!"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Ita. Gratias, liberi. Filia bona et filius bonus estis.",
+     "id": "Betul. Terima kasih, anak-anak. Kalian anak-anak yang baik.",
+     "literal": "ya. terima-kasih, anak-jamak-panggil. anak-perempuan baik-perempuan dan anak-lelaki baik-lelaki adalah-kalian."
+    }
+   ],
+   "notes": [
+    "**Cuius est? — \"punya siapa?\"** Ini bentuk punya dari *quis*. Jawabannya juga memakai bentuk punya: *Corneliae est* (\"punya Cornelia\"), *Sexti est* (\"punya Sextus\"), *viri est* (\"punya lelaki itu\"). Perhatikan bahwa bahasa Latin tidak memerlukan kata \"punya\" sama sekali — ekornya sudah membawa arti itu.",
+    "**Anulus feminae, non viri.** Dua kata dalam satu baris memperlihatkan dua kelompok sekaligus: *femina* menjadi *feminae*, *vir* menjadi *viri*. Bentuk punya inilah yang dipakai kamus untuk menandai kelompok sebuah kata, dan karena itu semua kata benda selalu dicatat dua kali: *femina, feminae* dan *vir, viri*.",
+    "**Anulus aviae meae — dua ekor punya berturut-turut.** *Aviae* berarti \"punya nenek\", dan *meae* menyesuaikan diri dengan *aviae*, bukan dengan *anulus*. Kata milik selalu mengikuti kata yang paling dekat dengannya. Terjemahannya: \"cincin milik nenekku\".",
+    "**Liberi berarti \"anak-anak\", bukan \"orang-orang bebas\".** Kata ini bentuk jamak dari *liber* (\"bebas\") yang dipakai sebagai kata benda: di sebuah rumah tangga Romawi, anak-anak adalah orang-orang bebas di dalamnya — berbeda dari orang yang diperbudak. Ini salah satu kata yang isinya menyimpan sejarah pahit; ia dipakai apa adanya di dalam modul ini."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk punya: topi -ae dan -i",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk punya — namanya genitif — menyatakan kepunyaan, asal, dan hubungan. Ia menerjemahkan \"punya\", \"milik\", \"dari\", dan \"-nya\" dalam bahasa Indonesia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Pelaku",
+      "Punya",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "deklinasi I",
+       "puella",
+       "puell**ae**",
+       "liber **puellae** — bukunya si gadis"
+      ],
+      [
+       "",
+       "Cornelia",
+       "Cornel**iae**",
+       "villa **Corneliae** — rumah Cornelia"
+      ],
+      [
+       "",
+       "schola",
+       "schol**ae**",
+       "ianua **scholae** — pintu sekolah"
+      ],
+      [
+       "deklinasi II (-us)",
+       "amicus",
+       "amic**i**",
+       "epistula **amici** — surat dari teman"
+      ],
+      [
+       "",
+       "Sextus",
+       "Sext**i**",
+       "anulus **Sexti** — cincin Sextus"
+      ],
+      [
+       "",
+       "vir",
+       "vir**i**",
+       "vox **viri** — suara lelaki itu"
+      ],
+      [
+       "deklinasi II (-um)",
+       "templum",
+       "templ**i**",
+       "ianua **templi** — pintu kuil"
+      ],
+      [
+       "",
+       "oppidum",
+       "oppid**i**",
+       "forum **oppidi** — alun-alun kota"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata berekor *-us* dan kata netral berekor *-um* memakai bentuk punya yang sama: *-i*. Kata berekor *-er* seperti *magister* dan *liber* kehilangan huruf *e*-nya: *magistri*, *libri*, *agri* — kecuali *puer* yang justru mempertahankannya: *pueri*. Kata seperti ini sedikit, dan kamus selalu memberitahumu."
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa kamus menulis dua bentuk",
+     "items": [
+      "Bentuk kamus kata benda Latin selalu dua: *puella, puellae* — bentuk pelaku dan bentuk punya. Yang kedua itulah yang memberi tahu kelompoknya.",
+      "Berakhir *-ae* → deklinasi I. Berakhir *-i* → deklinasi II. Berakhir *-is* → deklinasi III (Unit 10). Berakhir *-us* → deklinasi IV, berakhir *-ei* → deklinasi V (Unit 17).",
+      "Karena itu, hafalkan kata benda selalu berdua. *Hortus, horti* menempel jauh lebih kuat daripada *hortus* saja, dan sekali hafal, seluruh bentuk lainnya bisa kamu susun sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata milik: meus, tuus, noster, vester",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata milik dalam bahasa Latin berperilaku seperti kata sifat biasa: ia berganti baju mengikuti **barang yang dimiliki**, bukan mengikuti pemiliknya. Ini kebalikan dari kebiasaan bahasa Inggris, dan sering membingungkan di awal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pemilik",
+      "Untuk barang lelaki",
+      "Untuk barang perempuan",
+      "Untuk barang netral"
+     ],
+     "rows": [
+      [
+       "saya",
+       "meus",
+       "mea",
+       "meum"
+      ],
+      [
+       "kamu",
+       "tuus",
+       "tua",
+       "tuum"
+      ],
+      [
+       "dia (barang orang lain)",
+       "eius (tak berubah)",
+       "eius",
+       "eius"
+      ],
+      [
+       "kami",
+       "noster",
+       "nostra",
+       "nostrum"
+      ],
+      [
+       "kalian",
+       "vester",
+       "vestra",
+       "vestrum"
+      ],
+      [
+       "dia sendiri",
+       "suus",
+       "sua",
+       "suum"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Terjemahan",
+      "Kenapa begitu"
+     ],
+     "rows": [
+      [
+       "Marcus dicit: \"Amica **mea** est.\"",
+       "Marcus berkata: \"Dia teman saya.\"",
+       "*amica* perempuan → *mea*, walaupun Marcus lelaki"
+      ],
+      [
+       "Lydia dicit: \"Liber **meus** est.\"",
+       "Lydia berkata: \"Ini buku saya.\"",
+       "*liber* lelaki → *meus*, walaupun Lydia perempuan"
+      ],
+      [
+       "Villa **nostra** magna est.",
+       "Rumah kami besar.",
+       "*villa* perempuan → *nostra*"
+      ],
+      [
+       "Templum **vestrum** antiquum est.",
+       "Kuil kalian tua.",
+       "*templum* netral → *vestrum*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata milik boleh berdiri di depan atau di belakang. *Amicus meus* adalah susunan biasa; *meus amicus* terdengar seperti menekan: \"teman **saya**, bukan temanmu\". Dalam sapaan, kata milik justru hampir selalu di depan: *mi fili* (\"anakku\") — dan perhatikan *mi*, bentuk panggil tak beraturan dari *meus*."
+    }
+   ]
+  },
+  {
+   "title": "Keluarga Romawi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Beberapa kata keluarga masuk deklinasi ketiga yang baru diajarkan di Unit 10. Untuk sekarang, hafalkan saja bentuknya; kolom kanan menunjukkan bentuk punya, yang sudah bisa kamu pakai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Bentuk punya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "pater",
+       "patris",
+       "ayah"
+      ],
+      [
+       "mater",
+       "matris",
+       "ibu"
+      ],
+      [
+       "filius",
+       "filii",
+       "anak lelaki"
+      ],
+      [
+       "filia",
+       "filiae",
+       "anak perempuan"
+      ],
+      [
+       "frater",
+       "fratris",
+       "saudara lelaki"
+      ],
+      [
+       "soror",
+       "sororis",
+       "saudara perempuan"
+      ],
+      [
+       "avus",
+       "avi",
+       "kakek"
+      ],
+      [
+       "avia",
+       "aviae",
+       "nenek"
+      ],
+      [
+       "maritus",
+       "mariti",
+       "suami"
+      ],
+      [
+       "uxor",
+       "uxoris",
+       "istri"
+      ],
+      [
+       "liberi",
+       "liberorum",
+       "anak-anak"
+      ],
+      [
+       "familia",
+       "familiae",
+       "seisi rumah tangga"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Familia bukan \"keluarga\"",
+     "items": [
+      "Dalam bahasa Latin, *familia* mencakup **seluruh isi rumah**: ayah, ibu, anak-anak, kerabat yang menumpang, dan orang-orang yang diperbudak di dalamnya. Ia lebih dekat ke \"seisi rumah\" daripada ke \"keluarga inti\".",
+      "Kepala rumah tangga disebut *pater familias* — perhatikan bentuk punya kunonya, *familias*, bukan *familiae*. Ungkapan ini membeku dari zaman yang lebih tua dan tidak pernah diperbarui.",
+      "Kata *domus* berarti rumah sebagai tempat tinggal keluarga, sedangkan *villa* adalah rumah pertanian di luar kota, dan *insula* adalah rumah susun bertingkat tempat kebanyakan warga Roma sebenarnya tinggal."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "cuius?",
+   "baca": "KU-yus",
+   "id": "punya siapa?"
+  },
+  {
+   "la": "anulus, anuli",
+   "baca": "A-nu-lus",
+   "id": "cincin"
+  },
+  {
+   "la": "pater, patris",
+   "baca": "PA-ter",
+   "id": "ayah"
+  },
+  {
+   "la": "mater, matris",
+   "baca": "MA-ter",
+   "id": "ibu"
+  },
+  {
+   "la": "filius, filii",
+   "baca": "FI-li-us",
+   "id": "anak lelaki"
+  },
+  {
+   "la": "filia, filiae",
+   "baca": "FI-li-a",
+   "id": "anak perempuan"
+  },
+  {
+   "la": "frater, fratris",
+   "baca": "FRA-ter",
+   "id": "saudara lelaki"
+  },
+  {
+   "la": "soror, sororis",
+   "baca": "SO-ror",
+   "id": "saudara perempuan"
+  },
+  {
+   "la": "avus, avi",
+   "baca": "A-wus",
+   "id": "kakek"
+  },
+  {
+   "la": "avia, aviae",
+   "baca": "A-wi-a",
+   "id": "nenek"
+  },
+  {
+   "la": "uxor, uxoris",
+   "baca": "UK-sor",
+   "id": "istri"
+  },
+  {
+   "la": "maritus, mariti",
+   "baca": "ma-RI-tus",
+   "id": "suami"
+  },
+  {
+   "la": "liberi, liberorum",
+   "baca": "LI-be-ri",
+   "id": "anak-anak"
+  },
+  {
+   "la": "familia, familiae",
+   "baca": "fa-MI-li-a",
+   "id": "seisi rumah tangga"
+  },
+  {
+   "la": "domus",
+   "baca": "DO-mus",
+   "id": "rumah"
+  },
+  {
+   "la": "insula, insulae",
+   "baca": "IN-su-la",
+   "id": "rumah susun; pulau"
+  },
+  {
+   "la": "vita, vitae",
+   "baca": "WI-ta",
+   "id": "hidup, kehidupan"
+  },
+  {
+   "la": "nomen",
+   "baca": "NO-men",
+   "id": "nama"
+  },
+  {
+   "la": "vox, vocis",
+   "baca": "WOKS",
+   "id": "suara"
+  },
+  {
+   "la": "meus, mea, meum",
+   "baca": "ME-us",
+   "id": "milik saya"
+  },
+  {
+   "la": "tuus, tua, tuum",
+   "baca": "TU-us",
+   "id": "milik kamu"
+  },
+  {
+   "la": "noster, nostra",
+   "baca": "NOS-ter",
+   "id": "milik kami"
+  },
+  {
+   "la": "vester, vestra",
+   "baca": "WES-ter",
+   "id": "milik kalian"
+  },
+  {
+   "la": "suus, sua, suum",
+   "baca": "SU-us",
+   "id": "miliknya sendiri"
+  },
+  {
+   "la": "eius",
+   "baca": "E-yus",
+   "id": "miliknya (orang lain)"
+  },
+  {
+   "la": "ergo",
+   "baca": "ER-go",
+   "id": "jadi, maka"
+  },
+  {
+   "la": "hic",
+   "baca": "HIK",
+   "id": "di sini"
+  },
+  {
+   "la": "fortasse",
+   "baca": "for-TAS-se",
+   "id": "barangkali"
+  },
+  {
+   "la": "clamo, clamare",
+   "baca": "KLA-mo",
+   "id": "berteriak"
+  },
+  {
+   "la": "amo, amare",
+   "baca": "A-mo",
+   "id": "mencintai, menyukai"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk punya.",
+   "items": [
+    "puella",
+    "amicus",
+    "templum",
+    "Cornelia",
+    "vir",
+    "oppidum"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk punya kata di dalam kurung.",
+   "items": [
+    "liber ____ (magister)",
+    "villa ____ (femina)",
+    "ianua ____ (schola)",
+    "anulus ____ (avia)",
+    "forum ____ (oppidum)",
+    "epistula ____ (filius)"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk kata milik yang benar untuk barangnya.",
+   "items": [
+    "amicus ____ (milik saya)",
+    "villa ____ (milik kami)",
+    "templum ____ (milik kalian)",
+    "filia ____ (milik kamu)",
+    "hortus ____ (milik kami)",
+    "donum ____ (milik saya)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Ini cincin nenek.",
+    "Punya siapa buku ini?",
+    "Rumah kami besar.",
+    "Dia teman saya. (dikatakan seorang perempuan)",
+    "Pintu kuil itu tinggi.",
+    "Saya anak Cornelia. (anak lelaki)"
+   ]
+  }
+ ],
+ "answers": [
+  "puellae — amici — templi — Corneliae — viri — oppidi",
+  "magistri — feminae — scholae — aviae — oppidi — filii",
+  "meus — nostra — vestrum — tua — noster — meum",
+  "Anulus aviae est. — Cuius est liber? — Villa nostra magna est. — Amicus meus est. — Ianua templi alta est. — Filius Corneliae sum."
+ ]
+}

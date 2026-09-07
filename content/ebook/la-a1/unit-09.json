@@ -1,0 +1,597 @@
+{
+ "title": "Kepada siapa?",
+ "title_target": "Cui?",
+ "goal": "Melengkapi keenam bentuk kata benda dengan bentuk kepada, memakai kata kerja yang menuntutnya, dan menyatakan kepunyaan dengan cara Romawi est mihi.",
+ "bekal": [
+  "membuat bentuk kepada tunggal dan jamak untuk dua kelompok pertama",
+  "memakai *mihi*, *tibi*, *nobis*, *vobis* di tempat yang benar",
+  "mengatakan \"saya punya\" dengan dua cara: *habeo* dan *est mihi*"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Epistula ad avum",
+   "intro": "Marcus menulis surat kepada kakeknya di Sisilia. Iulia menyadari sesuatu yang tidak adil.",
+   "lines": [
+    {
+     "speaker": "Iulia:",
+     "text": "Cui epistulam scribis, Marce?",
+     "id": "Kamu menulis surat untuk siapa, Marcus?",
+     "literal": "kepada-siapa surat-sasaran tulis-kamu, Marcus-panggil?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Avo scribo. Avus in Sicilia habitat.",
+     "id": "Untuk Kakek. Kakek tinggal di Sisilia.",
+     "literal": "kakek-kepada tulis-saya. kakek di Sisilia-di tinggal-dia."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Et quid avo narras?",
+     "id": "Kamu cerita apa ke Kakek?",
+     "literal": "dan apa kakek-kepada ceritakan-kamu?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Avo de schola narro. Et de dono quoque.",
+     "id": "Saya cerita soal sekolah. Dan soal hadiah juga.",
+     "literal": "kakek-kepada tentang sekolah-tentang ceritakan-saya. dan tentang hadiah-tentang juga."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Avusne tibi donum dat?",
+     "id": "Kakek suka kasih kamu hadiah?",
+     "literal": "kakek-kah kamu-kepada hadiah-sasaran beri-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ita! Avus mihi semper dona mittit.",
+     "id": "Iya! Kakek selalu kirim hadiah ke saya.",
+     "literal": "ya! kakek saya-kepada selalu hadiah-jamak-sasaran kirim-dia."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Et mihi? Avus mihi numquam dona mittit!",
+     "id": "Kalau saya? Kakek tidak pernah kirim hadiah ke saya!",
+     "literal": "dan saya-kepada? kakek saya-kepada tidak-pernah hadiah-jamak-sasaran kirim-dia!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Tu avo non scribis, Iulia! Ergo avus tibi non mittit.",
+     "id": "Kamu kan tidak pernah menulis ke Kakek! Makanya Kakek tidak kirim apa-apa.",
+     "literal": "kamu kakek-kepada tidak tulis-kamu, Iulia! jadi kakek kamu-kepada tidak kirim-dia."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Vera dicis. Hodie avo et aviae scribo.",
+     "id": "Betul juga. Hari ini saya menulis untuk Kakek dan Nenek.",
+     "literal": "benar-jamak-netral-sasaran katakan-kamu. hari-ini kakek-kepada dan nenek-kepada tulis-saya."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Bene, filia. Litterae amicis gaudium dant.",
+     "id": "Bagus, Nak. Surat itu memberi kegembiraan buat orang yang menerimanya.",
+     "literal": "baik, anak-perempuan-panggil. surat-jamak teman-jamak-kepada kegembiraan-sasaran beri-mereka."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Mater, estne tibi stilus?",
+     "id": "Bu, Ibu punya pena?",
+     "literal": "ibu-panggil, adalah-kah kamu-kepada pena?"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Est mihi stilus, sed non est mihi patientia!",
+     "id": "Ibu punya pena, tapi Ibu tidak punya kesabaran!",
+     "literal": "adalah-dia saya-kepada pena, tapi tidak adalah-dia saya-kepada kesabaran!"
+    }
+   ],
+   "notes": [
+    "**Cui? — \"kepada siapa?\"** Ini bentuk kepada dari *quis*. Perhatikan bahwa bahasa Latin memakai satu bentuk untuk apa yang bahasa Indonesia sebut \"kepada\", \"untuk\", dan \"buat\". Karena itu *avo scribo* bisa diterjemahkan \"saya menulis kepada kakek\" atau \"saya menulis untuk kakek\" — dan keduanya benar.",
+    "**Est mihi stilus — cara Romawi berkata \"saya punya\".** Harfiahnya \"ada pena bagiku\". Bahasa Latin punya kata *habeo* juga, tetapi susunan ini lebih tua dan terdengar lebih wajar untuk barang yang memang ada pada seseorang. Perhatikan bahwa yang dimiliki menjadi **pelaku**, bukan sasaran: *stilus* bukan *stilum*.",
+    "**Avo, aviae, amicis — tiga ekor kepada dalam satu dialog.** Kelompok kedua memakai *-o*, kelompok pertama memakai *-ae*, dan bentuk jamak keduanya memakai *-is*. Ekor *-is* yang sama juga dipakai untuk bentuk dengan/di, jadi satu bentuk mengerjakan dua tugas — kata depannya yang membedakan.",
+    "**Vera dicis — kata sifat netral jamak sebagai kata benda.** *Vera* berarti \"hal-hal yang benar\", jadi *vera dicis* adalah \"kamu mengatakan hal-hal yang benar\", yaitu \"kamu benar\". Ini pola yang sudah kamu lihat di *multa* dan *cetera*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Enam bentuk, lengkap",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dengan bentuk kepada, tabel kata benda kelompok pertama dan kedua sekarang lengkap. Tidak akan ada bentuk baru lagi sampai akhir modul; yang tersisa hanyalah kelompok kata benda lain yang memakai ekor berbeda."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "I tunggal",
+      "I jamak",
+      "II tunggal",
+      "II jamak",
+      "II netral tunggal",
+      "II netral jamak"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "puella",
+       "puellae",
+       "amicus",
+       "amici",
+       "donum",
+       "dona"
+      ],
+      [
+       "panggil",
+       "puella",
+       "puellae",
+       "amice",
+       "amici",
+       "donum",
+       "dona"
+      ],
+      [
+       "sasaran",
+       "puellam",
+       "puellas",
+       "amicum",
+       "amicos",
+       "donum",
+       "dona"
+      ],
+      [
+       "punya",
+       "puellae",
+       "puellarum",
+       "amici",
+       "amicorum",
+       "doni",
+       "donorum"
+      ],
+      [
+       "**kepada**",
+       "puell**ae**",
+       "puell**is**",
+       "amic**o**",
+       "amic**is**",
+       "don**o**",
+       "don**is**"
+      ],
+      [
+       "dengan/di",
+       "puella",
+       "puellis",
+       "amico",
+       "amicis",
+       "dono",
+       "donis"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kembaran baru muncul dan sebaiknya kamu sadari sejak sekarang. Pertama, *puellae* kini bisa berarti tiga hal: punya tunggal, pelaku jamak, atau kepada tunggal. Kedua, *amicis* dan *puellis* dipakai untuk kepada jamak dan dengan/di jamak sekaligus. Bahasa Latin hidup damai dengan kembaran ini karena kalimatnya selalu memberi petunjuk: kata kerja, kata depan, dan akal sehat."
+    },
+    {
+     "type": "sub",
+     "text": "Kata ganti bentuk kepada"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Orang",
+      "Pelaku",
+      "Sasaran",
+      "Kepada"
+     ],
+     "rows": [
+      [
+       "saya",
+       "ego",
+       "me",
+       "**mihi**"
+      ],
+      [
+       "kamu",
+       "tu",
+       "te",
+       "**tibi**"
+      ],
+      [
+       "dia",
+       "is, ea",
+       "eum, eam",
+       "**ei**"
+      ],
+      [
+       "kami",
+       "nos",
+       "nos",
+       "**nobis**"
+      ],
+      [
+       "kalian",
+       "vos",
+       "vos",
+       "**vobis**"
+      ],
+      [
+       "mereka",
+       "ei, eae",
+       "eos, eas",
+       "**eis**"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang menuntut bentuk kepada",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata kerja \"memberi\" jenisnya banyak, dan semuanya berpola sama: yang diberikan memakai bentuk sasaran, yang menerima memakai bentuk kepada."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "do, dare",
+       "memberi",
+       "Donum **amico** do.",
+       "Saya memberi hadiah kepada teman."
+      ],
+      [
+       "mitto, mittere",
+       "mengirim",
+       "Epistulam **avo** mitto.",
+       "Saya mengirim surat kepada kakek."
+      ],
+      [
+       "dico, dicere",
+       "berkata",
+       "**Tibi** verum dico.",
+       "Saya mengatakan yang benar kepadamu."
+      ],
+      [
+       "narro, narrare",
+       "menceritakan",
+       "Fabulam **liberis** narrat.",
+       "Ia bercerita kepada anak-anak."
+      ],
+      [
+       "monstro, monstrare",
+       "menunjukkan",
+       "Villam **amicis** monstro.",
+       "Saya menunjukkan rumah kepada teman-teman."
+      ],
+      [
+       "scribo, scribere",
+       "menulis",
+       "**Aviae** scribo.",
+       "Saya menulis kepada nenek."
+      ],
+      [
+       "respondeo, respondere",
+       "menjawab",
+       "**Magistro** respondet.",
+       "Ia menjawab gurunya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ada juga sekelompok kata kerja yang dalam bahasa Indonesia terasa seperti punya sasaran biasa, tetapi dalam bahasa Latin justru menuntut bentuk kepada. Kelompok ini kecil, dan sebaiknya dihafal utuh."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "credo, credere",
+       "percaya kepada",
+       "**Amico** credo. — Saya percaya kepada teman."
+      ],
+      [
+       "noceo, nocere",
+       "mencelakai",
+       "**Nemini** noceo. — Saya tidak mencelakai siapa pun."
+      ],
+      [
+       "placeo, placere",
+       "menyenangkan",
+       "Fabula **mihi** placet. — Ceritanya saya suka."
+      ],
+      [
+       "pareo, parere",
+       "menuruti",
+       "**Magistro** paremus. — Kami menuruti guru."
+      ],
+      [
+       "faveo, favere",
+       "berpihak kepada",
+       "**Tibi** faveo. — Saya mendukungmu."
+      ],
+      [
+       "ignosco, ignoscere",
+       "memaafkan",
+       "**Tibi** ignosco. — Saya memaafkanmu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Placet* pantas dihafal utuh: *mihi placet* adalah cara Latin berkata \"saya suka\", harfiahnya \"itu menyenangkan bagiku\". Bahasa Spanyol dan Italia mewarisi cara berpikir ini dengan *me gusta* dan *mi piace*."
+    }
+   ]
+  },
+  {
+   "title": "Tiga pekerjaan bentuk kepada",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pekerjaan",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "penerima",
+       "Librum **puellae** do.",
+       "Saya memberi buku kepada gadis itu."
+      ],
+      [
+       "kepemilikan",
+       "**Mihi** est liber.",
+       "Saya punya buku."
+      ],
+      [
+       "untuk siapa hal itu dilakukan",
+       "Cenam **liberis** paro.",
+       "Saya menyiapkan makan malam untuk anak-anak."
+      ],
+      [
+       "",
+       "**Tibi** canto.",
+       "Saya menyanyi untukmu."
+      ],
+      [
+       "",
+       "Non **scholae** sed vitae discimus.",
+       "Kita belajar bukan untuk sekolah, melainkan untuk hidup."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir itu — *non scholae sed vitae discimus* — adalah keluhan Seneca yang dibalik oleh orang-orang sekolah kemudian, dan sampai sekarang terpahat di banyak gedung sekolah di Eropa. Kamu sudah bisa membacanya kata demi kata."
+    },
+    {
+     "type": "kotak",
+     "title": "Dua cara berkata \"punya\"",
+     "items": [
+      "*Librum habeo.* — pemiliknya jadi pelaku, barangnya jadi sasaran. Ini yang paling dekat dengan kebiasaan bahasa Indonesia.",
+      "*Mihi est liber.* — barangnya jadi pelaku, pemiliknya memakai bentuk kepada. Ini yang paling Romawi, dan yang paling sering dipakai untuk sifat: *mihi est patientia* (\"saya punya kesabaran\").",
+      "Keduanya benar. Untuk barang yang dipegang, *habeo* lebih wajar; untuk sifat, hubungan, dan nama, *est mihi* lebih wajar: *nomen mihi est Marcus* — \"nama saya Marcus\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "cui?",
+   "baca": "KU-i",
+   "id": "kepada siapa?"
+  },
+  {
+   "la": "mihi, tibi",
+   "baca": "MI-hi, TI-bi",
+   "id": "kepada saya, kepada kamu"
+  },
+  {
+   "la": "nobis, vobis",
+   "baca": "NO-bis, WO-bis",
+   "id": "kepada kami, kepada kalian"
+  },
+  {
+   "la": "do, dare",
+   "baca": "DO, DA-re",
+   "id": "memberi"
+  },
+  {
+   "la": "monstro, monstrare",
+   "baca": "MONS-tro",
+   "id": "menunjukkan"
+  },
+  {
+   "la": "credo, credere",
+   "baca": "KRE-do",
+   "id": "percaya kepada"
+  },
+  {
+   "la": "placeo, placere",
+   "baca": "PLA-ke-o",
+   "id": "menyenangkan, disukai"
+  },
+  {
+   "la": "pareo, parere",
+   "baca": "PA-re-o",
+   "id": "menuruti"
+  },
+  {
+   "la": "noceo, nocere",
+   "baca": "NO-ke-o",
+   "id": "mencelakai"
+  },
+  {
+   "la": "ignosco, ignoscere",
+   "baca": "ig-NOS-ko",
+   "id": "memaafkan"
+  },
+  {
+   "la": "faveo, favere",
+   "baca": "FA-we-o",
+   "id": "berpihak, mendukung"
+  },
+  {
+   "la": "epistula, epistulae",
+   "baca": "e-PIS-tu-la",
+   "id": "surat"
+  },
+  {
+   "la": "litterae, litterarum",
+   "baca": "LIT-te-rai",
+   "id": "surat, tulisan, sastra"
+  },
+  {
+   "la": "stilus, stili",
+   "baca": "STI-lus",
+   "id": "pena, alat tulis"
+  },
+  {
+   "la": "charta, chartae",
+   "baca": "KHAR-ta",
+   "id": "lembar tulis, kertas papirus"
+  },
+  {
+   "la": "donum, doni",
+   "baca": "DO-num",
+   "id": "hadiah"
+  },
+  {
+   "la": "gaudium, gaudii",
+   "baca": "GAU-di-um",
+   "id": "kegembiraan"
+  },
+  {
+   "la": "verum, veri",
+   "baca": "WE-rum",
+   "id": "kebenaran, hal yang benar"
+  },
+  {
+   "la": "consilium, consilii",
+   "baca": "kon-SI-li-um",
+   "id": "nasihat, rencana"
+  },
+  {
+   "la": "auxilium, auxilii",
+   "baca": "auk-SI-li-um",
+   "id": "pertolongan"
+  },
+  {
+   "la": "beneficium, beneficii",
+   "baca": "be-ne-FI-ki-um",
+   "id": "kebaikan, jasa"
+  },
+  {
+   "la": "praemium, praemii",
+   "baca": "PRAI-mi-um",
+   "id": "hadiah, upah"
+  },
+  {
+   "la": "numquam",
+   "baca": "NUM-kwam",
+   "id": "tidak pernah"
+  },
+  {
+   "la": "saepe",
+   "baca": "SAI-pe",
+   "id": "sering"
+  },
+  {
+   "la": "nemo",
+   "baca": "NE-mo",
+   "id": "tidak seorang pun"
+  },
+  {
+   "la": "nihil",
+   "baca": "NI-hil",
+   "id": "tidak apa-apa, nihil"
+  },
+  {
+   "la": "avus, avi",
+   "baca": "A-wus",
+   "id": "kakek"
+  },
+  {
+   "la": "avia, aviae",
+   "baca": "A-wi-a",
+   "id": "nenek"
+  },
+  {
+   "la": "Sicilia, Siciliae",
+   "baca": "si-KI-li-a",
+   "id": "Sisilia"
+  },
+  {
+   "la": "verus, vera, verum",
+   "baca": "WE-rus",
+   "id": "benar, sejati"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk kepada, tunggal.",
+   "items": [
+    "puella",
+    "amicus",
+    "donum",
+    "magister",
+    "avia",
+    "filius"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk kepada, jamak.",
+   "items": [
+    "puella",
+    "amicus",
+    "donum",
+    "discipula",
+    "puer",
+    "templum"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata ganti bentuk kepada yang tepat.",
+   "items": [
+    "Avus ____ donum dat. (kepada saya)",
+    "____ fabulam narro. (kepada kamu)",
+    "Magister ____ respondet. (kepada kami)",
+    "Epistulam ____ mitto. (kepada kalian)",
+    "Fabula ____ placet. (kepada saya)",
+    "____ credimus. (kepada kamu)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Saya menulis surat kepada Kakek.",
+    "Kami memberi hadiah kepada teman-teman.",
+    "Cornelia punya pena.",
+    "Saya suka cerita itu.",
+    "Guru menjawab murid-murid.",
+    "Saya tidak percaya kepada Sextus."
+   ]
+  }
+ ],
+ "answers": [
+  "puellae — amico — dono — magistro — aviae — filio",
+  "puellis — amicis — donis — discipulis — pueris — templis",
+  "mihi — Tibi — nobis — vobis — mihi — Tibi",
+  "Avo epistulam scribo. — Amicis donum damus. — Corneliae est stilus. — Fabula mihi placet. — Magister discipulis respondet. — Sexto non credo."
+ ]
+}

@@ -1,0 +1,580 @@
+{
+ "title": "Di mana dan dengan siapa",
+ "title_target": "Ubi et cum quo?",
+ "goal": "Menyatakan tempat, alat, dan teman dengan bentuk ablatif, memakai dua belas kata depan yang paling sering, dan membedakan diam di suatu tempat dari berpindah ke sana.",
+ "bekal": [
+  "menjawab *ubi?* dengan *in* dan bentuk yang tepat",
+  "memakai *cum*, *sine*, *ex*, *de*, *ab* tanpa ragu",
+  "membedakan *in villa* (di dalam rumah) dari *in villam* (masuk ke rumah)"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Ad forum",
+   "intro": "Quintus hendak ke alun-alun kota. Seperti biasa, urusan harga akan panjang.",
+   "lines": [
+    {
+     "speaker": "Quintus:",
+     "text": "Hodie ad forum ambulo. Quis mecum ambulat?",
+     "id": "Hari ini Ayah mau ke alun-alun. Siapa ikut?",
+     "literal": "hari-ini ke alun-alun-sasaran jalan-saya. siapa dengan-saya jalan-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ego, pater! In foro sunt tabernae.",
+     "id": "Saya, Yah! Di alun-alun ada toko-toko.",
+     "literal": "saya, ayah-panggil! di alun-alun-di adalah-mereka toko-jamak."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Et ego! Sed cum Lydia ambulo.",
+     "id": "Saya juga! Tapi saya jalan sama Lydia.",
+     "literal": "dan saya! tapi dengan Lydia-dengan jalan-saya."
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Bene. Ubi est Lydia nunc?",
+     "id": "Boleh. Lydia sekarang di mana?",
+     "literal": "baik. di-mana adalah-dia Lydia sekarang?"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "In villa est, cum Cornelia.",
+     "id": "Ada di rumah, sama Ibu.",
+     "literal": "di rumah-di adalah-dia, dengan Cornelia-dengan."
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Sine Lydia non ambulamus. Exspectamus.",
+     "id": "Tanpa Lydia kita tidak berangkat. Kita tunggu.",
+     "literal": "tanpa Lydia-dengan tidak jalan-kami. tunggu-kami."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Pater, cur ad forum ambulamus?",
+     "id": "Yah, kenapa kita ke alun-alun?",
+     "literal": "ayah-panggil, kenapa ke alun-alun-sasaran jalan-kami?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "In foro frumentum paro. Et de pretio disputo!",
+     "id": "Ayah mau menyiapkan gandum di sana. Dan bertengkar soal harga!",
+     "literal": "di alun-alun-di gandum-sasaran siapkan-saya. dan tentang harga-tentang berbantah-saya!"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Pater semper de pretio disputat!",
+     "id": "Ayah memang selalu ribut soal harga!",
+     "literal": "ayah selalu tentang harga-tentang berbantah-dia!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ecce, Sextus ex horto ambulat!",
+     "id": "Lihat, Sextus keluar dari kebun!",
+     "literal": "lihat, Sextus dari kebun-dari jalan-dia!"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Bene. Cum Sexto semper laeti sumus.",
+     "id": "Bagus. Kalau ada Sextus kita selalu senang.",
+     "literal": "baik. dengan Sextus-dengan selalu senang-jamak adalah-kami."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ad forum, ad forum! In forum intramus!",
+     "id": "Ke alun-alun, ke alun-alun! Kita masuk ke alun-alun!",
+     "literal": "ke alun-alun-sasaran, ke alun-alun-sasaran! ke-dalam alun-alun-sasaran masuk-kami!"
+    }
+   ],
+   "notes": [
+    "**In foro dan in forum tidak sama.** *In foro* berarti \"di dalam alun-alun\", tanpa perpindahan. *In forum* berarti \"masuk ke alun-alun\", ada gerak menuju ke dalam. Kata depannya sama; yang membedakan bentuk kata bendanya. Bahasa Indonesia memakai \"di\" dan \"ke\" untuk membedakan hal yang sama.",
+    "**Mecum, bukan cum me.** Kata depan *cum* menempel di belakang kata ganti: *mecum* (bersamaku), *tecum* (bersamamu), *nobiscum* (bersama kami), *vobiscum* (bersama kalian). Susunan terbalik ini membeku sejak zaman kuno, dan masih terdengar sampai sekarang dalam ucapan *Dominus vobiscum* di gereja.",
+    "**In villa — perhatikan bahwa bentuknya sama persis dengan bentuk pelaku.** Ini kekhasan deklinasi pertama: bentuk pelaku dan bentuk dengan/di sama-sama ditulis *villa*. Orang Romawi membedakannya lewat panjang bunyi vokal terakhir, yang tidak pernah mereka tulis. Kamu membedakannya lewat kata depannya: kalau ada *in*, *cum*, *sine*, *ex*, atau *de* di depannya, sudah pasti itu bentuk dengan/di.",
+    "**De pretio disputat.** *De* berarti \"tentang\" dan juga \"turun dari\". Dari sinilah kata *deskripsi* (menulis tentang) dan *deduksi* (menarik turun) berasal. Kata depan Latin hampir selalu punya dua nyawa: satu ruang, satu kiasan."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk dengan/di: topi -a dan -o",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk ini — namanya ablatif — adalah bentuk paling serbaguna dalam bahasa Latin. Ia menyatakan tempat, alat, teman, cara, sebab, dan waktu sekaligus. Untungnya bentuknya sederhana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Pelaku",
+      "Dengan/di",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "deklinasi I",
+       "villa",
+       "vill**a**",
+       "in **villa** — di dalam rumah"
+      ],
+      [
+       "",
+       "schola",
+       "schol**a**",
+       "in **schola** — di sekolah"
+      ],
+      [
+       "",
+       "Lydia",
+       "Lydi**a**",
+       "cum **Lydia** — bersama Lydia"
+      ],
+      [
+       "deklinasi II (-us)",
+       "hortus",
+       "hort**o**",
+       "ex **horto** — keluar dari kebun"
+      ],
+      [
+       "",
+       "Sextus",
+       "Sext**o**",
+       "cum **Sexto** — bersama Sextus"
+      ],
+      [
+       "deklinasi II (-um)",
+       "forum",
+       "for**o**",
+       "in **foro** — di alun-alun"
+      ],
+      [
+       "",
+       "templum",
+       "templ**o**",
+       "de **templo** — tentang kuil itu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Jadi cuma dua ekor yang perlu dihafal: *-a* untuk kelompok pertama, *-o* untuk kelompok kedua. Bandingkan dengan bentuk punya (*-ae* dan *-i*) dan bentuk sasaran (*-am* dan *-um*), dan kamu sudah memegang empat dari enam bentuk yang ada."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat bentuk yang sudah kamu punya",
+     "items": [
+      "**pelaku**: puella · hortus · templum — siapa berbuat, atau apa yang disebut",
+      "**sasaran**: puellam · hortum · templum — yang dikenai perbuatan",
+      "**punya**: puellae · horti · templi — kepunyaan, \"dari\", \"-nya\"",
+      "**dengan/di**: puella · horto · templo — tempat, alat, teman, cara",
+      "Yang belum: bentuk **kepada**, yang datang di Unit 9. Sesudah itu daftarnya lengkap dan tidak bertambah lagi sampai akhir buku."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dua belas kata depan yang paling sering",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata depan Latin memilih bentuk yang mengikutinya, dan pilihannya tidak bisa ditawar. Sebagian besar memakai bentuk dengan/di; sekelompok kecil memakai bentuk sasaran."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata depan",
+      "Diikuti",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "**in**",
+       "dengan/di",
+       "di, di dalam",
+       "in villa — di rumah"
+      ],
+      [
+       "**cum**",
+       "dengan/di",
+       "bersama",
+       "cum amico — bersama teman"
+      ],
+      [
+       "**sine**",
+       "dengan/di",
+       "tanpa",
+       "sine aqua — tanpa air"
+      ],
+      [
+       "**ex, e**",
+       "dengan/di",
+       "keluar dari",
+       "ex horto — dari kebun"
+      ],
+      [
+       "**ab, a**",
+       "dengan/di",
+       "dari, menjauh dari",
+       "a villa — dari arah rumah"
+      ],
+      [
+       "**de**",
+       "dengan/di",
+       "tentang; turun dari",
+       "de pretio — soal harga"
+      ],
+      [
+       "**pro**",
+       "dengan/di",
+       "demi, di depan",
+       "pro patria — demi tanah air"
+      ],
+      [
+       "**sub**",
+       "dengan/di",
+       "di bawah",
+       "sub mensa — di bawah meja"
+      ],
+      [
+       "**ad**",
+       "sasaran",
+       "ke, menuju",
+       "ad forum — ke alun-alun"
+      ],
+      [
+       "**per**",
+       "sasaran",
+       "lewat, melalui",
+       "per viam — lewat jalan"
+      ],
+      [
+       "**ante, post**",
+       "sasaran",
+       "sebelum, sesudah",
+       "ante cenam — sebelum makan malam"
+      ],
+      [
+       "**contra**",
+       "sasaran",
+       "melawan",
+       "contra periculum — melawan bahaya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Ex* dan *ab* memendek menjadi *e* dan *a* di depan kata yang mulai dengan huruf mati: *ex horto* tetapi *e villa*; *ab amico* tetapi *a villa*. Ini murni soal enak didengar, sama seperti \"di antara\" dan \"antara\" dalam bahasa Indonesia."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata depan yang sudah kamu pakai tiap hari",
+     "items": [
+      "*ad* → **adaptasi, adiksi**; *ex* → **ekspor, eksit**; *in* → **injeksi, invasi**; *per* → **permanen, persepsi**.",
+      "*sub* → **submarin, substansi**; *contra* → **kontradiksi, kontra**; *pro* → **proyeksi, produksi**; *de* → **deduksi, deportasi**.",
+      "Kalau kamu ragu arti sebuah kata depan Latin, cari kata serapan yang memuatnya. Artinya hampir selalu masih terasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Diam di sana atau berpindah ke sana",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua kata depan — *in* dan *sub* — bisa diikuti dua bentuk yang berbeda, dan pilihan itu mengubah artinya. Aturannya satu kalimat: kalau ada perpindahan, pakai bentuk sasaran; kalau tidak, pakai bentuk dengan/di."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tanpa perpindahan",
+      "Arti",
+      "Dengan perpindahan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "in villa sum",
+       "saya di dalam rumah",
+       "in villam intro",
+       "saya masuk ke rumah"
+      ],
+      [
+       "in foro ambulo",
+       "saya berjalan-jalan di alun-alun",
+       "in forum ambulo",
+       "saya berjalan masuk ke alun-alun"
+      ],
+      [
+       "in horto laborat",
+       "dia bekerja di kebun",
+       "in hortum portat",
+       "dia membawanya masuk ke kebun"
+      ],
+      [
+       "sub mensa est",
+       "ia ada di bawah meja",
+       "sub mensam currit",
+       "ia berlari ke bawah meja"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Nama kota tidak memakai kata depan"
+    },
+    {
+     "type": "p",
+     "text": "Untuk nama kota dan pulau kecil, bahasa Latin membuang kata depannya sama sekali. Bentuk \"di kota itu\" kebetulan sama dengan bentuk punya untuk kota berekor *-a* dan *-us*; ahli bahasa menyebutnya lokatif."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "**Romae** sum",
+       "saya di Roma",
+       "bukan *in Roma*"
+      ],
+      [
+       "**Romam** ambulo",
+       "saya berjalan ke Roma",
+       "bukan *ad Romam*"
+      ],
+      [
+       "**Roma** ambulo",
+       "saya berjalan dari Roma",
+       "bukan *ex Roma*"
+      ],
+      [
+       "**domi** sum",
+       "saya di rumah",
+       "bentuk beku dari *domus*"
+      ],
+      [
+       "**domum** ambulo",
+       "saya pulang",
+       "harfiah \"saya berjalan ke rumah\""
+      ],
+      [
+       "**ruri**",
+       "di desa",
+       "dari *rus*, \"desa\""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aturan ini hanya berlaku untuk nama kota, pulau kecil, dan tiga kata beku: *domus*, *rus*, *humus*. Untuk semua tempat lain — negeri, gunung, sungai — kata depannya tetap dipakai seperti biasa: *in Italia*, *ad silvam*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "forum, fori",
+   "baca": "FO-rum",
+   "id": "alun-alun, pusat kota"
+  },
+  {
+   "la": "taberna, tabernae",
+   "baca": "ta-BER-na",
+   "id": "kedai, toko"
+  },
+  {
+   "la": "via, viae",
+   "baca": "WI-a",
+   "id": "jalan"
+  },
+  {
+   "la": "pretium, pretii",
+   "baca": "PRE-ti-um",
+   "id": "harga"
+  },
+  {
+   "la": "frumentum, frumenti",
+   "baca": "fru-MEN-tum",
+   "id": "gandum, bahan pangan"
+  },
+  {
+   "la": "pecunia, pecuniae",
+   "baca": "pe-KU-ni-a",
+   "id": "uang"
+  },
+  {
+   "la": "silva, silvae",
+   "baca": "SIL-wa",
+   "id": "hutan"
+  },
+  {
+   "la": "ager, agri",
+   "baca": "A-ger",
+   "id": "ladang"
+  },
+  {
+   "la": "patria, patriae",
+   "baca": "PA-tri-a",
+   "id": "tanah air"
+  },
+  {
+   "la": "locus, loci",
+   "baca": "LO-kus",
+   "id": "tempat"
+  },
+  {
+   "la": "periculum, periculi",
+   "baca": "pe-RI-ku-lum",
+   "id": "bahaya"
+  },
+  {
+   "la": "in",
+   "baca": "IN",
+   "id": "di, di dalam; ke dalam"
+  },
+  {
+   "la": "cum",
+   "baca": "KUM",
+   "id": "bersama"
+  },
+  {
+   "la": "sine",
+   "baca": "SI-ne",
+   "id": "tanpa"
+  },
+  {
+   "la": "ex, e",
+   "baca": "EKS, E",
+   "id": "keluar dari"
+  },
+  {
+   "la": "ab, a",
+   "baca": "AB, A",
+   "id": "dari, menjauh dari; oleh"
+  },
+  {
+   "la": "de",
+   "baca": "DE",
+   "id": "tentang; turun dari"
+  },
+  {
+   "la": "ad",
+   "baca": "AD",
+   "id": "ke, menuju"
+  },
+  {
+   "la": "per",
+   "baca": "PER",
+   "id": "lewat, melalui"
+  },
+  {
+   "la": "pro",
+   "baca": "PRO",
+   "id": "demi, di depan"
+  },
+  {
+   "la": "sub",
+   "baca": "SUB",
+   "id": "di bawah"
+  },
+  {
+   "la": "ante",
+   "baca": "AN-te",
+   "id": "sebelum, di depan"
+  },
+  {
+   "la": "post",
+   "baca": "POST",
+   "id": "sesudah, di belakang"
+  },
+  {
+   "la": "contra",
+   "baca": "KON-tra",
+   "id": "melawan"
+  },
+  {
+   "la": "mecum, tecum",
+   "baca": "ME-kum, TE-kum",
+   "id": "bersamaku, bersamamu"
+  },
+  {
+   "la": "disputo, disputare",
+   "baca": "DIS-pu-to",
+   "id": "berbantah, berdebat"
+  },
+  {
+   "la": "Roma, Romae",
+   "baca": "RO-ma",
+   "id": "Roma"
+  },
+  {
+   "la": "Italia, Italiae",
+   "baca": "i-TA-li-a",
+   "id": "Italia"
+  },
+  {
+   "la": "domi",
+   "baca": "DO-mi",
+   "id": "di rumah"
+  },
+  {
+   "la": "domum",
+   "baca": "DO-mum",
+   "id": "pulang, ke rumah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk dengan/di.",
+   "items": [
+    "villa",
+    "hortus",
+    "forum",
+    "Sextus",
+    "schola",
+    "templum"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk yang tepat sesudah in: ada perpindahan atau tidak.",
+   "items": [
+    "Marcus in ____ est. (villa)",
+    "Marcus in ____ intrat. (villa)",
+    "Servi in ____ laborant. (hortus)",
+    "Aquam in ____ porto. (hortus)",
+    "Discipuli in ____ cantant. (schola)",
+    "Magister in ____ intrat. (schola)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata depan yang tepat (in, cum, sine, ex, ad, de).",
+   "items": [
+    "____ Lydia ambulo.",
+    "____ aqua non laboramus.",
+    "____ forum ambulamus.",
+    "____ horto ambulat.",
+    "____ villa sumus.",
+    "____ pretio disputant."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Kami tinggal di Roma.",
+    "Saya berjalan bersama teman.",
+    "Sextus keluar dari kebun.",
+    "Tanpa uang kami tidak menunggu.",
+    "Anak-anak masuk ke rumah.",
+    "Ayah berdebat soal harga."
+   ]
+  }
+ ],
+ "answers": [
+  "villa — horto — foro — Sexto — schola — templo",
+  "villa — villam — horto — hortum — schola — scholam",
+  "Cum — Sine — Ad — Ex — In — De",
+  "Romae habitamus. — Cum amico ambulo. — Sextus ex horto ambulat. — Sine pecunia non exspectamus. — Liberi in villam intrant. — Pater de pretio disputat."
+ ]
+}

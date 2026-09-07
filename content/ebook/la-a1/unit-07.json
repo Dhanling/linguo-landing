@@ -1,0 +1,648 @@
+{
+ "title": "Apa yang kamu kerjakan?",
+ "title_target": "Quid agis?",
+ "goal": "Mengenali keempat kelompok kata kerja dari bentuk kamusnya dan memakai semuanya dalam bentuk sekarang, termasuk kelompok campuran seperti facio.",
+ "bekal": [
+  "menebak kelompok sebuah kata kerja hanya dari bentuk keduanya",
+  "menyusun enam bentuk *video*, *mitto*, dan *audio* tanpa melihat tabel",
+  "membaca kalimat Latin yang memuat kata kerja dari empat kelompok sekaligus"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — In schola, hora tertia",
+   "intro": "Jam pelajaran ketiga. Semua orang sedang mengerjakan sesuatu — kecuali satu orang.",
+   "lines": [
+    {
+     "speaker": "Titus:",
+     "text": "Quid agis, Marce?",
+     "id": "Sedang apa, Marcus?",
+     "literal": "apa lakukan-kamu, Marcus-panggil?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Librum lego, magister. Fabulam de Roma lego.",
+     "id": "Saya sedang membaca buku, Pak. Cerita tentang Roma.",
+     "literal": "buku-sasaran baca-saya, guru-panggil. cerita-sasaran tentang Roma-tentang baca-saya."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Bene. Et tu, Lydia? Quid facis?",
+     "id": "Bagus. Dan kamu, Lydia? Sedang apa?",
+     "literal": "baik. dan kamu, Lydia-panggil? apa buat-kamu?"
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Epistulam scribo. Sed non bene audio — pueri clamant.",
+     "id": "Saya menulis surat. Tapi saya tidak bisa dengar dengan jelas, anak-anak lelaki berisik.",
+     "literal": "surat-sasaran tulis-saya. tapi tidak baik dengar-saya — anak-lelaki-jamak teriak-mereka."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Ita, pueri semper clamant. Quid vident?",
+     "id": "Iya, mereka memang selalu berisik. Mereka lihat apa?",
+     "literal": "ya, anak-lelaki-jamak selalu teriak-mereka. apa lihat-mereka?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "In horto Sextum vident. Sextus dormit!",
+     "id": "Mereka melihat Sextus di kebun. Sextus tidur!",
+     "literal": "di kebun-di Sextus-sasaran lihat-mereka. Sextus tidur-dia!"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Dormit? In horto? Cur non venit?",
+     "id": "Tidur? Di kebun? Kenapa dia tidak masuk?",
+     "literal": "tidur-dia? di kebun-di? kenapa tidak datang-dia?"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Fessus est, magister. Semper dormit.",
+     "id": "Dia capek, Pak. Kerjanya memang tidur.",
+     "literal": "lelah-lelaki adalah-dia, guru-panggil. selalu tidur-dia."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Nos laboramus, Sextus dormit. Sic vita est!",
+     "id": "Kita kerja, Sextus tidur. Begitulah hidup!",
+     "literal": "kami kerja-kami, Sextus tidur-dia. begitu hidup adalah-dia!"
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Magister, quid hodie doces?",
+     "id": "Pak, hari ini Bapak mengajar apa?",
+     "literal": "guru-panggil, apa hari-ini ajar-kamu?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Hodie de Graecia dicimus et fabulas antiquas audimus.",
+     "id": "Hari ini kita bicara tentang Yunani dan mendengar cerita-cerita kuno.",
+     "literal": "hari-ini tentang Yunani-tentang bicara-kami dan cerita-jamak-sasaran kuno-jamak-sasaran dengar-kami."
+    },
+    {
+     "speaker": "Discipuli:",
+     "text": "Audimus, magister! Semper audimus!",
+     "id": "Kami dengarkan, Pak! Kami selalu dengarkan!",
+     "literal": "dengar-kami, guru-panggil! selalu dengar-kami!"
+    }
+   ],
+   "notes": [
+    "**Quid agis? punya dua arti sekaligus.** Secara harfiah \"apa yang kamu lakukan?\", tetapi dalam sapaan sehari-hari ia berarti \"apa kabar?\". Jawaban bakunya *bene* (\"baik\"), *optime* (\"baik sekali\"), atau *male* (\"tidak enak badan\"). Titus di sini memakainya dalam arti yang harfiah.",
+    "**Lego, legis, legit — huruf penyambungnya berubah.** Kata kerja kelompok ketiga memakai *-i-* di sebagian bentuk dan *-u-* di bentuk \"mereka\": *legimus*, tetapi *legunt*. Ini satu-satunya kelompok yang tidak setia pada satu huruf, dan justru kelompok inilah yang paling banyak anggotanya.",
+    "**Facio dan audio berbeda satu huruf, tetapi tetap dua kelompok.** *Audio, audire* masuk kelompok keempat; *facio, facere* masuk kelompok ketiga yang bercampur. Bedanya kelihatan di bentuk keduanya: *audire* berakhiran *-ire*, *facere* berakhiran *-ere*. Karena itu bentuk kamus selalu ditulis berdua.",
+    "**Sic vita est.** *Sic* berarti \"begitu, demikian\". Kamu sudah pernah melihatnya di dalam kutipan yang ditulis apa adanya lengkap dengan salahnya, ditandai *[sic]* — artinya \"memang begitu tertulis\"."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat kelompok, satu tanda pengenal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Semua kata kerja Latin masuk salah satu dari empat kelompok, dan kelompoknya bisa kamu baca langsung dari bentuk kamus yang kedua — bentuk yang berakhiran *-re*. Yang menentukan adalah huruf tepat sebelum *-re* itu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Bentuk kamus",
+      "Tandanya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "I",
+       "amo, am**are**",
+       "-**a**re",
+       "mencintai"
+      ],
+      [
+       "II",
+       "video, vid**ere**",
+       "-**e**re dengan e panjang",
+       "melihat"
+      ],
+      [
+       "III",
+       "mitto, mitt**ere**",
+       "-**e**re dengan e pendek",
+       "mengirim"
+      ],
+      [
+       "III bercampur",
+       "facio, fac**ere**",
+       "-ere, tetapi bentuk pertamanya -io",
+       "membuat"
+      ],
+      [
+       "IV",
+       "audio, aud**ire**",
+       "-**i**re",
+       "mendengar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kelompok II dan III sama-sama berakhir *-ere*, dan bedanya cuma panjang bunyi huruf *e* — sesuatu yang tidak ditulis. Karena itu kamu perlu satu petunjuk lagi: lihat bentuk pertamanya. Kelompok II selalu *-eo* (*video*, *habeo*, *doceo*); kelompok III selalu *-o* polos (*mitto*, *lego*, *dico*)."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara cepat menebak kelompok",
+     "items": [
+      "Bentuk pertama berakhir **-o** dan bentuk kedua **-are** → kelompok I. Contoh: *porto, portare*.",
+      "Bentuk pertama berakhir **-eo** → kelompok II. Contoh: *video, videre*; *habeo, habere*.",
+      "Bentuk pertama berakhir **-o** dan bentuk kedua **-ere** → kelompok III. Contoh: *lego, legere*.",
+      "Bentuk pertama berakhir **-io** dan bentuk kedua **-ire** → kelompok IV. Contoh: *audio, audire*.",
+      "Bentuk pertama berakhir **-io** tetapi bentuk kedua **-ere** → kelompok III bercampur. Contoh: *facio, facere*; *capio, capere*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tabel lengkap bentuk sekarang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ekor pelakunya sama di semua kelompok — *-o, -s, -t, -mus, -tis, -nt* — persis yang kamu hafal di Unit 3. Yang berbeda cuma huruf penyambung sebelum ekornya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "I: amare",
+      "II: videre",
+      "III: mittere",
+      "IV: audire"
+     ],
+     "rows": [
+      [
+       "saya",
+       "am**o**",
+       "vide**o**",
+       "mitt**o**",
+       "audi**o**"
+      ],
+      [
+       "kamu",
+       "am**as**",
+       "vid**es**",
+       "mitt**is**",
+       "aud**is**"
+      ],
+      [
+       "dia",
+       "am**at**",
+       "vid**et**",
+       "mitt**it**",
+       "aud**it**"
+      ],
+      [
+       "kami",
+       "am**amus**",
+       "vid**emus**",
+       "mitt**imus**",
+       "aud**imus**"
+      ],
+      [
+       "kalian",
+       "am**atis**",
+       "vid**etis**",
+       "mitt**itis**",
+       "aud**itis**"
+      ],
+      [
+       "mereka",
+       "am**ant**",
+       "vid**ent**",
+       "mitt**unt**",
+       "audi**unt**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bacalah tabel itu menurun, bukan mendatar. Kelompok I setia pada *a*, kelompok II setia pada *e*, kelompok IV setia pada *i*. Hanya kelompok III yang berpindah-pindah: *i* di tengah, *u* di baris terakhir."
+    },
+    {
+     "type": "sub",
+     "text": "Kelompok tiga bercampur: facio"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "facere (membuat)",
+      "capere (menangkap)",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "saya",
+       "faci**o**",
+       "capi**o**",
+       "seperti kelompok IV"
+      ],
+      [
+       "kamu",
+       "fac**is**",
+       "cap**is**",
+       "seperti kelompok III"
+      ],
+      [
+       "dia",
+       "fac**it**",
+       "cap**it**",
+       "seperti kelompok III"
+      ],
+      [
+       "kami",
+       "fac**imus**",
+       "cap**imus**",
+       "seperti kelompok III"
+      ],
+      [
+       "kalian",
+       "fac**itis**",
+       "cap**itis**",
+       "seperti kelompok III"
+      ],
+      [
+       "mereka",
+       "faci**unt**",
+       "capi**unt**",
+       "seperti kelompok IV"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Anggota kelompok campuran ini tidak banyak, tetapi semuanya kata yang sering dipakai: *facio* (membuat), *capio* (mengambil), *fugio* (lari), *iacio* (melempar), *rapio* (merampas), *cupio* (ingin). Hafalkan enamnya sekaligus dan urusan ini selesai."
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang wajib kamu kenal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Daftar ini bukan untuk dihafal sekaligus. Bacalah sekali, lalu kembalilah ke sini setiap kali kamu bertemu salah satunya di dalam dialog."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok II",
+      "Arti",
+      "Kelompok III",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "video, videre",
+       "melihat",
+       "lego, legere",
+       "membaca, memungut"
+      ],
+      [
+       "habeo, habere",
+       "punya",
+       "dico, dicere",
+       "berkata"
+      ],
+      [
+       "doceo, docere",
+       "mengajar",
+       "scribo, scribere",
+       "menulis"
+      ],
+      [
+       "teneo, tenere",
+       "memegang",
+       "mitto, mittere",
+       "mengirim"
+      ],
+      [
+       "moveo, movere",
+       "menggerakkan",
+       "duco, ducere",
+       "memimpin, membawa"
+      ],
+      [
+       "timeo, timere",
+       "takut",
+       "curro, currere",
+       "berlari"
+      ],
+      [
+       "rideo, ridere",
+       "tertawa",
+       "vivo, vivere",
+       "hidup"
+      ],
+      [
+       "sedeo, sedere",
+       "duduk",
+       "bibo, bibere",
+       "minum"
+      ],
+      [
+       "taceo, tacere",
+       "diam",
+       "credo, credere",
+       "percaya"
+      ],
+      [
+       "respondeo, respondere",
+       "menjawab",
+       "disco, discere",
+       "belajar"
+      ],
+      [
+       "debeo, debere",
+       "harus, berhutang",
+       "pono, ponere",
+       "meletakkan"
+      ],
+      [
+       "moneo, monere",
+       "mengingatkan",
+       "vinco, vincere",
+       "menang"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok IV",
+      "Arti",
+      "Kelompok III bercampur",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "audio, audire",
+       "mendengar",
+       "facio, facere",
+       "membuat, melakukan"
+      ],
+      [
+       "venio, venire",
+       "datang",
+       "capio, capere",
+       "mengambil, menangkap"
+      ],
+      [
+       "dormio, dormire",
+       "tidur",
+       "fugio, fugere",
+       "lari, kabur"
+      ],
+      [
+       "sentio, sentire",
+       "merasa",
+       "iacio, iacere",
+       "melempar"
+      ],
+      [
+       "invenio, invenire",
+       "menemukan",
+       "rapio, rapere",
+       "merampas"
+      ],
+      [
+       "scio, scire",
+       "tahu",
+       "cupio, cupere",
+       "ingin"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Jejaknya di bahasa Indonesia",
+     "items": [
+      "*videre* → **video, visual, revisi**; *audire* → **audio, audiensi, auditorium**.",
+      "*scribere* → **skrip, deskripsi, manuskrip**; *dicere* → **diksi, dikte, kontradiksi**.",
+      "*ducere* → **produksi, induksi, konduktor**; *facere* → **fakta, faksimile, efektif**.",
+      "*capere* → **kapasitas, resepsi, kapten**; *credere* → **kredit, kredibel**; *ponere* → **posisi, komponen, deposito**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "ago, agere",
+   "baca": "A-go",
+   "id": "melakukan, menggiring"
+  },
+  {
+   "la": "lego, legere",
+   "baca": "LE-go",
+   "id": "membaca, memungut"
+  },
+  {
+   "la": "scribo, scribere",
+   "baca": "SKRI-bo",
+   "id": "menulis"
+  },
+  {
+   "la": "dico, dicere",
+   "baca": "DI-ko",
+   "id": "berkata"
+  },
+  {
+   "la": "mitto, mittere",
+   "baca": "MIT-to",
+   "id": "mengirim"
+  },
+  {
+   "la": "duco, ducere",
+   "baca": "DU-ko",
+   "id": "memimpin, membawa"
+  },
+  {
+   "la": "curro, currere",
+   "baca": "KUR-ro",
+   "id": "berlari"
+  },
+  {
+   "la": "vivo, vivere",
+   "baca": "WI-wo",
+   "id": "hidup"
+  },
+  {
+   "la": "bibo, bibere",
+   "baca": "BI-bo",
+   "id": "minum"
+  },
+  {
+   "la": "disco, discere",
+   "baca": "DIS-ko",
+   "id": "belajar"
+  },
+  {
+   "la": "credo, credere",
+   "baca": "KRE-do",
+   "id": "percaya"
+  },
+  {
+   "la": "pono, ponere",
+   "baca": "PO-no",
+   "id": "meletakkan"
+  },
+  {
+   "la": "video, videre",
+   "baca": "WI-de-o",
+   "id": "melihat"
+  },
+  {
+   "la": "habeo, habere",
+   "baca": "HA-be-o",
+   "id": "punya"
+  },
+  {
+   "la": "doceo, docere",
+   "baca": "DO-ke-o",
+   "id": "mengajar"
+  },
+  {
+   "la": "teneo, tenere",
+   "baca": "TE-ne-o",
+   "id": "memegang"
+  },
+  {
+   "la": "timeo, timere",
+   "baca": "TI-me-o",
+   "id": "takut"
+  },
+  {
+   "la": "rideo, ridere",
+   "baca": "RI-de-o",
+   "id": "tertawa"
+  },
+  {
+   "la": "sedeo, sedere",
+   "baca": "SE-de-o",
+   "id": "duduk"
+  },
+  {
+   "la": "taceo, tacere",
+   "baca": "TA-ke-o",
+   "id": "diam"
+  },
+  {
+   "la": "respondeo, respondere",
+   "baca": "res-PON-de-o",
+   "id": "menjawab"
+  },
+  {
+   "la": "audio, audire",
+   "baca": "AU-di-o",
+   "id": "mendengar"
+  },
+  {
+   "la": "venio, venire",
+   "baca": "WE-ni-o",
+   "id": "datang"
+  },
+  {
+   "la": "dormio, dormire",
+   "baca": "DOR-mi-o",
+   "id": "tidur"
+  },
+  {
+   "la": "sentio, sentire",
+   "baca": "SEN-ti-o",
+   "id": "merasa"
+  },
+  {
+   "la": "invenio, invenire",
+   "baca": "in-WE-ni-o",
+   "id": "menemukan"
+  },
+  {
+   "la": "scio, scire",
+   "baca": "SKI-o",
+   "id": "tahu"
+  },
+  {
+   "la": "facio, facere",
+   "baca": "FA-ki-o",
+   "id": "membuat, melakukan"
+  },
+  {
+   "la": "capio, capere",
+   "baca": "KA-pi-o",
+   "id": "mengambil, menangkap"
+  },
+  {
+   "la": "fugio, fugere",
+   "baca": "FU-gi-o",
+   "id": "lari, kabur"
+  },
+  {
+   "la": "sic",
+   "baca": "SIK",
+   "id": "begitu, demikian"
+  },
+  {
+   "la": "bene, male",
+   "baca": "BE-ne, MA-le",
+   "id": "dengan baik, dengan buruk"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis kelompoknya: I, II, III, III bercampur, atau IV.",
+   "items": [
+    "porto, portare",
+    "video, videre",
+    "mitto, mittere",
+    "audio, audire",
+    "facio, facere",
+    "doceo, docere"
+   ]
+  },
+  {
+   "prompt": "Lengkapi kata kerjanya sesuai pelakunya.",
+   "items": [
+    "Ego librum leg____.",
+    "Tu epistulam scrib____.",
+    "Marcus fabulam aud____.",
+    "Nos templum vid____.",
+    "Vos verba dic____.",
+    "Pueri in horto dorm____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk jamak yang sepadan.",
+   "items": [
+    "lego",
+    "audit",
+    "vides",
+    "facio",
+    "dormit",
+    "scribis"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Saya menulis surat.",
+    "Guru itu mengajar.",
+    "Kami mendengar cerita-cerita.",
+    "Anak-anak lelaki itu berlari.",
+    "Kamu membaca buku.",
+    "Mereka membuat kuil."
+   ]
+  }
+ ],
+ "answers": [
+  "I — II — III — IV — III bercampur — II",
+  "lego — scribis — audit — videmus — dicitis — dormiunt",
+  "legimus — audiunt — videtis — facimus — dormiunt — scribitis",
+  "Epistulam scribo. — Magister docet. — Fabulas audimus. — Pueri currunt. — Librum legis. — Templum faciunt."
+ ]
+}

@@ -1,0 +1,634 @@
+{
+ "title": "Kelompok ketiga: yang terbesar",
+ "title_target": "Rex et miles",
+ "goal": "Membaca dan membentuk kata benda deklinasi ketiga dengan bertumpu pada bentuk punya, termasuk kata netral dan anak kelompok ber-i.",
+ "bekal": [
+  "menemukan batang kata deklinasi ketiga dari bentuk punyanya",
+  "menyusun keenam bentuk *rex*, *nomen*, dan *urbs*",
+  "mengenali kata deklinasi ketiga di dalam kalimat walau bentuk pelakunya tak tertebak"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — De regibus antiquis",
+   "intro": "Pelajaran sejarah. Titus bercerita tentang raja-raja pertama Roma, dan murid-murid punya banyak pertanyaan.",
+   "lines": [
+    {
+     "speaker": "Titus:",
+     "text": "Hodie de regibus antiquis dicimus.",
+     "id": "Hari ini kita bicara tentang raja-raja kuno.",
+     "literal": "hari-ini tentang raja-jamak-tentang kuno-jamak bicara-kami."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "De quo rege, magister?",
+     "id": "Raja yang mana, Pak?",
+     "literal": "tentang siapa-tentang raja-tentang, guru-panggil?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "De Numa. Numa rex bonus in fabulis est.",
+     "id": "Tentang Numa. Dalam cerita, Numa raja yang baik.",
+     "literal": "tentang Numa-tentang. Numa raja baik-lelaki di cerita-jamak-di adalah-dia."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Estne rex in urbe nostra hodie?",
+     "id": "Sekarang ada raja di kota kita?",
+     "literal": "adalah-kah raja di kota-di milik-kami-di hari-ini?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Minime! Romani reges non amant. Nunc consules urbem regunt.",
+     "id": "Sama sekali tidak! Orang Roma tidak suka raja. Sekarang para konsul yang memerintah kota.",
+     "literal": "sama-sekali-tidak! Roma-jamak raja-jamak-sasaran tidak cinta-mereka. sekarang konsul-jamak kota-sasaran perintah-mereka."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Et milites? Milites urbem servant?",
+     "id": "Kalau tentara? Tentara yang menjaga kota?",
+     "literal": "dan tentara-jamak? tentara-jamak kota-sasaran jaga-mereka?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Ita. Milites urbem et cives servant.",
+     "id": "Betul. Tentara menjaga kota dan warganya.",
+     "literal": "ya. tentara-jamak kota-sasaran dan warga-jamak-sasaran jaga-mereka."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Magister, quid est nomen regis primi?",
+     "id": "Pak, nama raja pertamanya siapa?",
+     "literal": "guru-panggil, apa adalah-dia nama raja-punya pertama-punya?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Nomen regis primi Romulus est. Romulus urbem condit.",
+     "id": "Nama raja pertamanya Romulus. Romulus yang mendirikan kota itu.",
+     "literal": "nama raja-punya pertama-punya Romulus adalah-dia. Romulus kota-sasaran dirikan-dia."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Et mare? Habentne Romani naves?",
+     "id": "Dan lautnya? Orang Roma punya kapal?",
+     "literal": "dan laut? punya-mereka-kah Roma-jamak kapal-jamak-sasaran?"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Multas naves habent. Mare nostrum dicunt!",
+     "id": "Mereka punya banyak kapal. Lautnya mereka sebut Mare Nostrum!",
+     "literal": "banyak-jamak-sasaran kapal-jamak-sasaran punya-mereka. laut milik-kami-netral katakan-mereka!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Mare nostrum — nomen bonum est!",
+     "id": "Mare Nostrum, laut kita — nama yang bagus!",
+     "literal": "laut milik-kami-netral — nama baik-netral adalah-dia!"
+    }
+   ],
+   "notes": [
+    "**Rex, regis — bentuk pelakunya tidak bisa diandalkan.** Deklinasi ketiga adalah kelompok terbesar sekaligus paling liar bentuk pelakunya: *rex*, *miles*, *nomen*, *urbs*, *corpus*, *homo*. Yang teratur justru bentuk **punya**-nya, yang selalu berakhir *-is*. Dari sanalah semua bentuk lain disusun: buang *-is*, sisanya batang kata. *Regis* → batang *reg-*; *militis* → batang *milit-*; *nominis* → batang *nomin-*.",
+    "**Mare nostrum — nostrum, bukan noster.** *Mare* berjenis netral, jadi kata miliknya memakai baju netral. Ini nama yang benar-benar dipakai orang Romawi untuk Laut Tengah, dan bukan kesombongan kosong: pada abad pertama seluruh pantainya memang berada di dalam satu kekaisaran.",
+    "**Urbe, urbem, urbs — tiga wajah satu kata.** Ikuti jejak batangnya: *urbs, urbis* → batang *urb-*, lalu *urbem* (sasaran), *urbe* (dengan/di), *urbis* (punya). Bentuk pelakunya yang pendek dan padat itulah yang menipu; sisanya lurus.",
+    "**Reges non amant — kenapa Romawi membenci kata \"raja\".** Republik Roma lahir dari pengusiran raja terakhir, dan selama lima ratus tahun sesudahnya kata *rex* adalah tuduhan, bukan gelar. Bahkan Caesar pun menolak disebut *rex*. Ini sebabnya kata *raja* nyaris hilang dari bahasa politik Romawi."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Deklinasi ketiga: cari batangnya di bentuk punya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kelompok ketiga memuat lebih banyak kata daripada kelompok satu dan dua digabung, dan di dalamnya ada kata-kata yang paling sering dipakai dalam seluruh bahasa Latin: *rex*, *lex*, *pax*, *homo*, *tempus*, *corpus*, *nomen*, *urbs*, *mater*, *pater*. Semuanya memakai satu tabel yang sama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "rex, regis (lelaki)",
+      "vox, vocis (perempuan)",
+      "nomen, nominis (netral)"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "rex",
+       "vox",
+       "nomen"
+      ],
+      [
+       "sasaran",
+       "reg**em**",
+       "voc**em**",
+       "nomen"
+      ],
+      [
+       "punya",
+       "reg**is**",
+       "voc**is**",
+       "nomin**is**"
+      ],
+      [
+       "kepada",
+       "reg**i**",
+       "voc**i**",
+       "nomin**i**"
+      ],
+      [
+       "dengan/di",
+       "reg**e**",
+       "voc**e**",
+       "nomin**e**"
+      ],
+      [
+       "pelaku jamak",
+       "reg**es**",
+       "voc**es**",
+       "nomin**a**"
+      ],
+      [
+       "sasaran jamak",
+       "reg**es**",
+       "voc**es**",
+       "nomin**a**"
+      ],
+      [
+       "punya jamak",
+       "reg**um**",
+       "voc**um**",
+       "nomin**um**"
+      ],
+      [
+       "kepada jamak",
+       "reg**ibus**",
+       "voc**ibus**",
+       "nomin**ibus**"
+      ],
+      [
+       "dengan/di jamak",
+       "reg**ibus**",
+       "voc**ibus**",
+       "nomin**ibus**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa jenis lelaki dan perempuan memakai ekor yang persis sama. Dalam kelompok ini, jenis kata tidak bisa ditebak dari bentuknya sama sekali — *rex* lelaki, *vox* perempuan, dan keduanya berpola identik. Yang bisa kamu andalkan cuma kamus dan kata sifat yang menyertainya."
+    },
+    {
+     "type": "kotak",
+     "title": "Aturan kerja yang harus jadi kebiasaan",
+     "items": [
+      "Lihat bentuk punya di kamus: *miles, milit**is***. Buang *-is*. Batangnya *milit-*.",
+      "Tempelkan ekor kelompok ketiga: *militem*, *militi*, *milite*, *milites*, *militum*, *militibus*.",
+      "Kata netral punya dua kekhususan tetap: pelaku dan sasaran selalu kembar, dan jamaknya selalu *-a*. Itu berlaku di semua deklinasi, jadi bukan hal baru.",
+      "Kalau bentuk pelakunya sangat pendek — *rex*, *lex*, *pax*, *nox*, *dux* — hampir pasti ada huruf yang tersembunyi di batangnya: *reg-*, *leg-*, *pac-*, *noct-*, *duc-*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anak kelompok ber-i",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sekelompok kata deklinasi ketiga menyisipkan huruf *i* di dua tempat: bentuk punya jamak menjadi *-ium* dan, untuk kata netral, bentuk dengan/di menjadi *-i* serta jamaknya *-ia*. Kelompok kecil ini disebut batang-i."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "civis, civis (warga)",
+      "urbs, urbis (kota)",
+      "mare, maris (laut, netral)"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "civis",
+       "urbs",
+       "mare"
+      ],
+      [
+       "sasaran",
+       "civem",
+       "urbem",
+       "mare"
+      ],
+      [
+       "punya",
+       "civis",
+       "urbis",
+       "maris"
+      ],
+      [
+       "kepada",
+       "civi",
+       "urbi",
+       "mari"
+      ],
+      [
+       "dengan/di",
+       "cive",
+       "urbe",
+       "mar**i**"
+      ],
+      [
+       "pelaku jamak",
+       "cives",
+       "urbes",
+       "mar**ia**"
+      ],
+      [
+       "sasaran jamak",
+       "cives",
+       "urbes",
+       "mar**ia**"
+      ],
+      [
+       "punya jamak",
+       "civ**ium**",
+       "urb**ium**",
+       "mar**ium**"
+      ],
+      [
+       "kepada jamak",
+       "civibus",
+       "urbibus",
+       "maribus"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Cara mengenalinya: kata yang bentuk pelaku dan bentuk punyanya sama panjang (*civis, civis*; *nubes, nubis*), dan kata yang batangnya berakhir dua huruf mati (*urbs, urbis*; *pars, partis*; *mons, montis*). Untuk pemula, cukup hafalkan bahwa bentuk punya jamaknya *-ium*; sisanya sama saja dengan tabel utama."
+    },
+    {
+     "type": "p",
+     "text": "Kata netral berakhiran *-e*, *-al*, dan *-ar* selalu masuk kelompok ini: *mare* (laut), *animal* (binatang), *exemplar* (contoh). Bentuk jamaknya *maria*, *animalia*, *exemplaria* — dari sinilah datang kata *animalia* yang masih dipakai di dalam biologi."
+    }
+   ]
+  },
+  {
+   "title": "Kata deklinasi ketiga yang paling sering",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hafalkan selalu berdua: bentuk pelaku dan bentuk punya. Tanpa yang kedua, kamu tidak bisa membentuk apa pun."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Orang",
+      "Arti",
+      "Barang dan tempat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "homo, hominis",
+       "manusia",
+       "urbs, urbis",
+       "kota"
+      ],
+      [
+       "pater, patris",
+       "ayah",
+       "mare, maris",
+       "laut"
+      ],
+      [
+       "mater, matris",
+       "ibu",
+       "mons, montis",
+       "gunung"
+      ],
+      [
+       "frater, fratris",
+       "saudara lelaki",
+       "flumen, fluminis",
+       "sungai"
+      ],
+      [
+       "soror, sororis",
+       "saudara perempuan",
+       "nox, noctis",
+       "malam"
+      ],
+      [
+       "rex, regis",
+       "raja",
+       "lux, lucis",
+       "cahaya"
+      ],
+      [
+       "miles, militis",
+       "prajurit",
+       "panis, panis",
+       "roti"
+      ],
+      [
+       "dux, ducis",
+       "panglima",
+       "navis, navis",
+       "kapal"
+      ],
+      [
+       "civis, civis",
+       "warga",
+       "pes, pedis",
+       "kaki"
+      ],
+      [
+       "hostis, hostis",
+       "musuh",
+       "caput, capitis",
+       "kepala"
+      ],
+      [
+       "iudex, iudicis",
+       "hakim",
+       "corpus, corporis",
+       "tubuh"
+      ],
+      [
+       "uxor, uxoris",
+       "istri",
+       "tempus, temporis",
+       "waktu"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hal tak berwujud",
+      "Arti",
+      "Jejaknya dalam bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "lex, legis",
+       "hukum",
+       "legal, legislatif"
+      ],
+      [
+       "pax, pacis",
+       "damai",
+       "pasifik, pasifis"
+      ],
+      [
+       "ius, iuris",
+       "hak, hukum",
+       "yuridis, yurisdiksi"
+      ],
+      [
+       "mors, mortis",
+       "kematian",
+       "mortal, mortalitas"
+      ],
+      [
+       "salus, salutis",
+       "keselamatan",
+       "salut, salutasi"
+      ],
+      [
+       "virtus, virtutis",
+       "keberanian, keutamaan",
+       "virtual, virtuoso"
+      ],
+      [
+       "nomen, nominis",
+       "nama",
+       "nomina, nominasi"
+      ],
+      [
+       "opus, operis",
+       "karya",
+       "opera, operasi"
+      ],
+      [
+       "genus, generis",
+       "jenis, bangsa",
+       "genus, generik"
+      ],
+      [
+       "vox, vocis",
+       "suara",
+       "vokal, vokalis"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pola *-us* yang menipu di kolom kanan: *corpus*, *tempus*, *opus*, *genus* semuanya **netral** dan masuk deklinasi ketiga, bukan deklinasi kedua. Bentuk punyanya membongkar samarannya: *corporis*, *temporis*, *operis*, *generis*. Jamaknya *corpora*, *tempora*, *opera*, *genera* — dan justru bentuk jamak itulah yang paling sering diserap ke dalam bahasa Indonesia."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "rex, regis",
+   "baca": "REKS, RE-gis",
+   "id": "raja"
+  },
+  {
+   "la": "lex, legis",
+   "baca": "LEKS, LE-gis",
+   "id": "hukum, undang-undang"
+  },
+  {
+   "la": "pax, pacis",
+   "baca": "PAKS, PA-kis",
+   "id": "damai"
+  },
+  {
+   "la": "vox, vocis",
+   "baca": "WOKS, WO-kis",
+   "id": "suara"
+  },
+  {
+   "la": "nox, noctis",
+   "baca": "NOKS, NOK-tis",
+   "id": "malam"
+  },
+  {
+   "la": "lux, lucis",
+   "baca": "LUKS, LU-kis",
+   "id": "cahaya"
+  },
+  {
+   "la": "dux, ducis",
+   "baca": "DUKS, DU-kis",
+   "id": "panglima, pemimpin"
+  },
+  {
+   "la": "homo, hominis",
+   "baca": "HO-mo",
+   "id": "manusia"
+  },
+  {
+   "la": "miles, militis",
+   "baca": "MI-les",
+   "id": "prajurit"
+  },
+  {
+   "la": "civis, civis",
+   "baca": "KI-wis",
+   "id": "warga kota"
+  },
+  {
+   "la": "hostis, hostis",
+   "baca": "HOS-tis",
+   "id": "musuh"
+  },
+  {
+   "la": "iudex, iudicis",
+   "baca": "YU-deks",
+   "id": "hakim"
+  },
+  {
+   "la": "urbs, urbis",
+   "baca": "URBS",
+   "id": "kota (terutama Roma)"
+  },
+  {
+   "la": "mare, maris",
+   "baca": "MA-re",
+   "id": "laut"
+  },
+  {
+   "la": "mons, montis",
+   "baca": "MONS",
+   "id": "gunung"
+  },
+  {
+   "la": "flumen, fluminis",
+   "baca": "FLU-men",
+   "id": "sungai"
+  },
+  {
+   "la": "navis, navis",
+   "baca": "NA-wis",
+   "id": "kapal"
+  },
+  {
+   "la": "panis, panis",
+   "baca": "PA-nis",
+   "id": "roti"
+  },
+  {
+   "la": "pes, pedis",
+   "baca": "PES",
+   "id": "kaki"
+  },
+  {
+   "la": "caput, capitis",
+   "baca": "KA-put",
+   "id": "kepala"
+  },
+  {
+   "la": "corpus, corporis",
+   "baca": "KOR-pus",
+   "id": "tubuh"
+  },
+  {
+   "la": "tempus, temporis",
+   "baca": "TEM-pus",
+   "id": "waktu"
+  },
+  {
+   "la": "opus, operis",
+   "baca": "O-pus",
+   "id": "karya, pekerjaan"
+  },
+  {
+   "la": "genus, generis",
+   "baca": "GE-nus",
+   "id": "jenis, keturunan"
+  },
+  {
+   "la": "nomen, nominis",
+   "baca": "NO-men",
+   "id": "nama"
+  },
+  {
+   "la": "mors, mortis",
+   "baca": "MORS",
+   "id": "kematian"
+  },
+  {
+   "la": "virtus, virtutis",
+   "baca": "WIR-tus",
+   "id": "keberanian, keutamaan"
+  },
+  {
+   "la": "animal, animalis",
+   "baca": "A-ni-mal",
+   "id": "binatang"
+  },
+  {
+   "la": "condo, condere",
+   "baca": "KON-do",
+   "id": "mendirikan, menyimpan"
+  },
+  {
+   "la": "rego, regere",
+   "baca": "RE-go",
+   "id": "memerintah, mengarahkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis batang katanya dari bentuk punya yang diberikan.",
+   "items": [
+    "rex, regis",
+    "miles, militis",
+    "nomen, nominis",
+    "corpus, corporis",
+    "urbs, urbis",
+    "homo, hominis"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk sasaran tunggal.",
+   "items": [
+    "rex",
+    "vox",
+    "urbs",
+    "nomen",
+    "miles",
+    "tempus"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk yang diminta.",
+   "items": [
+    "Milites ____ servant. (urbs, sasaran)",
+    "Nomen ____ Romulus est. (rex, punya)",
+    "In ____ navigamus. (mare, dengan/di)",
+    "____ credimus. (rex, kepada)",
+    "Voces ____ audimus. (civis, punya jamak)",
+    "Cum ____ ambulamus. (miles, dengan/di jamak)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Raja itu memerintah kota.",
+    "Kami mendengar suara manusia.",
+    "Tentara punya kapal.",
+    "Nama gunung itu panjang.",
+    "Pada malam hari kami tidur.",
+    "Damai itu baik."
+   ]
+  }
+ ],
+ "answers": [
+  "reg- — milit- — nomin- — corpor- — urb- — homin-",
+  "regem — vocem — urbem — nomen — militem — tempus",
+  "urbem — regis — mari — Regi — civium — militibus",
+  "Rex urbem regit. — Vocem hominis audimus. — Milites naves habent. — Nomen montis longum est. — Nocte dormimus. — Pax bona est."
+ ]
+}

@@ -1,0 +1,597 @@
+{
+ "title": "Sudah terjadi",
+ "title_target": "Quid vidisti?",
+ "goal": "Menceritakan kejadian yang sudah selesai dengan bentuk perfectum, mengenali batang perfectum dari bentuk kamus ketiga, dan memilih antara bentuk dulu dan bentuk sudah.",
+ "bekal": [
+  "membentuk keenam bentuk perfectum dari batang mana pun",
+  "menghafal lima pola batang perfectum yang paling sering",
+  "memutuskan sendiri kapan memakai *ambulabam* dan kapan *ambulavi*"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Elephantus in foro",
+   "intro": "Marcus pulang dari alun-alun dengan berita yang sulit dipercaya.",
+   "lines": [
+    {
+     "speaker": "Iulia:",
+     "text": "Marce! Ubi fuisti?",
+     "id": "Marcus! Kamu dari mana?",
+     "literal": "Marcus-panggil! di-mana adalah-kamu-sudah?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "In foro fui. Rem miram vidi!",
+     "id": "Saya dari alun-alun. Saya lihat sesuatu yang aneh!",
+     "literal": "di alun-alun-di adalah-saya-sudah. hal-sasaran ajaib-sasaran lihat-saya-sudah!"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Quid vidisti?",
+     "id": "Kamu lihat apa?",
+     "literal": "apa lihat-kamu-sudah?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Elephantum vidi! Mercator elephantum ex Africa duxit.",
+     "id": "Saya lihat gajah! Ada pedagang yang membawanya dari Afrika.",
+     "literal": "gajah-sasaran lihat-saya-sudah! pedagang gajah-sasaran dari Afrika-dari bawa-dia-sudah."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Elephantum? Non credo!",
+     "id": "Gajah? Saya tidak percaya!",
+     "literal": "gajah-sasaran? tidak percaya-saya!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Vera dixi! Multi cives venerunt et clamaverunt.",
+     "id": "Saya bicara benar! Banyak warga datang dan berteriak-teriak.",
+     "literal": "benar-jamak-netral-sasaran katakan-saya-sudah! banyak-jamak warga-jamak datang-mereka-sudah dan teriak-mereka-sudah."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Et tu? Quid fecisti?",
+     "id": "Terus kamu? Kamu ngapain?",
+     "literal": "dan kamu? apa buat-kamu-sudah?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Stabam et spectabam. Deinde elephantus me spectavit!",
+     "id": "Saya berdiri sambil melihat. Lalu gajahnya balik menatap saya!",
+     "literal": "berdiri-saya-dulu dan pandang-saya-dulu. lalu gajah saya-sasaran pandang-dia-sudah!"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Timuistine?",
+     "id": "Kamu takut?",
+     "literal": "takut-kamu-sudah-kah?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Minime! Sed Sextus timuit et in aquam cecidit.",
+     "id": "Sama sekali tidak! Tapi Sextus ketakutan dan jatuh ke air.",
+     "literal": "sama-sekali-tidak! tapi Sextus takut-dia-sudah dan ke-dalam air-sasaran jatuh-dia-sudah."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Sextus semper cadit! Quid postea accidit?",
+     "id": "Sextus memang selalu jatuh! Habis itu apa yang terjadi?",
+     "literal": "Sextus selalu jatuh-dia! apa sesudah-itu terjadi-dia-sudah?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Mercator elephantum ad portum duxit. Ego domum cucurri.",
+     "id": "Pedagangnya membawa gajahnya ke pelabuhan. Saya lari pulang.",
+     "literal": "pedagang gajah-sasaran ke pelabuhan-sasaran bawa-dia-sudah. saya rumah-sasaran lari-saya-sudah."
+    }
+   ],
+   "notes": [
+    "**Ekor bentuk sudah tidak sama dengan ekor kala lain.** *-i, -isti, -it, -imus, -istis, -erunt*. Perhatikan bahwa bentuk \"saya\" berakhir *-i* dan bentuk \"mereka\" berakhir *-erunt* — dua ekor yang tidak muncul di kala mana pun. Begitu kamu melihatnya, kamu tahu kalimat itu bercerita tentang sesuatu yang sudah selesai.",
+    "**Vidi, dixi, duxi, veni — batangnya harus dihafal.** Bentuk sudah tidak dibangun dari batang biasa, melainkan dari batang tersendiri yang dicatat di kamus sebagai bagian ketiga: *video, videre, **vidi***; *dico, dicere, **dixi***; *venio, venire, **veni***. Inilah satu-satunya bagian sistem kata kerja Latin yang benar-benar harus dihafal satu per satu.",
+    "**Stabam et spectabam, deinde spectavit.** Perhatikan pergantian di baris kedelapan. Dua kata kerja pertama memakai bentuk dulu karena melukiskan keadaan yang berlangsung; yang ketiga memakai bentuk sudah karena satu kejadian tiba-tiba memotongnya. Inilah cara semua pengarang Latin bercerita: latar dengan bentuk dulu, kejutan dengan bentuk sudah.",
+    "**Cecidit dan cucurri — batang yang mengulang suku katanya.** Sekelompok kata kerja tua membentuk batang sudahnya dengan mengulang suku kata pertama: *cado* → *cecidi*, *curro* → *cucurri*, *do* → *dedi*, *cano* → *cecini*, *disco* → *didici*. Bentuk berulang ini sisa dari lapisan bahasa yang jauh lebih tua daripada Roma sendiri."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bentuk sudah: satu ekor untuk semua kelompok",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Berbeda dari kala lain, bentuk sudah tidak peduli kata kerjanya masuk kelompok mana. Ambil batang sudahnya, tempelkan enam ekor yang sama, selesai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "Ekor",
+      "portavi (bawa)",
+      "vidi (lihat)",
+      "dixi (kata)",
+      "veni (datang)"
+     ],
+     "rows": [
+      [
+       "saya",
+       "-i",
+       "portav**i**",
+       "vid**i**",
+       "dix**i**",
+       "ven**i**"
+      ],
+      [
+       "kamu",
+       "-isti",
+       "portav**isti**",
+       "vid**isti**",
+       "dix**isti**",
+       "ven**isti**"
+      ],
+      [
+       "dia",
+       "-it",
+       "portav**it**",
+       "vid**it**",
+       "dix**it**",
+       "ven**it**"
+      ],
+      [
+       "kami",
+       "-imus",
+       "portav**imus**",
+       "vid**imus**",
+       "dix**imus**",
+       "ven**imus**"
+      ],
+      [
+       "kalian",
+       "-istis",
+       "portav**istis**",
+       "vid**istis**",
+       "dix**istis**",
+       "ven**istis**"
+      ],
+      [
+       "mereka",
+       "-erunt",
+       "portav**erunt**",
+       "vid**erunt**",
+       "dix**erunt**",
+       "ven**erunt**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Batang sudahnya kamu dapat dengan membuang *-i* dari bentuk kamus ketiga: *portavi* → *portav-*, *vidi* → *vid-*, *dixi* → *dix-*. Tidak ada sisipan, tidak ada huruf penyambung, tidak ada perbedaan antar kelompok."
+    },
+    {
+     "type": "kotak",
+     "title": "Dua perangkap yang harus kamu kenali",
+     "items": [
+      "*venit* bisa berarti \"dia datang\" (sekarang) **atau** \"dia sudah datang\". Orang Romawi membedakannya lewat panjang vokal yang tidak ditulis. Kalimatnya yang menolongmu: kalau ada *heri*, *deinde*, *subito*, hampir pasti bentuk sudah.",
+      "*legit*, *fugit*, *vertit* punya kembaran yang sama. Daftarnya pendek, dan semuanya kata kerja kelompok ketiga yang batang sudahnya sama dengan batang biasanya.",
+      "*Vidimus* selalu \"kami sudah melihat\", tidak pernah \"kami melihat\" — karena bentuk sekarangnya *videmus*, dengan *e*. Perbedaan satu huruf itu penting."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lima pola batang sudah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Batang sudah memang harus dihafal, tetapi ia tidak sepenuhnya semberono. Hampir semuanya masuk salah satu dari lima pola di bawah ini, dan mengenali polanya membuat hafalan jauh lebih ringan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pola",
+      "Ciri",
+      "Contoh",
+      "Terutama di kelompok"
+     ],
+     "rows": [
+      [
+       "menambah **-v-**",
+       "batang + vi",
+       "porto → portavi; amo → amavi; audio → audivi",
+       "I dan IV"
+      ],
+      [
+       "menambah **-u-**",
+       "batang + ui",
+       "habeo → habui; doceo → docui; timeo → timui",
+       "II"
+      ],
+      [
+       "menambah **-s-** atau **-x-**",
+       "huruf mati berubah",
+       "dico → dixi; duco → duxi; scribo → scripsi; mitto → misi",
+       "III"
+      ],
+      [
+       "memanjangkan atau mengganti vokal",
+       "bentuknya nyaris sama",
+       "video → vidi; venio → veni; lego → legi; facio → **feci** (a berganti e)",
+       "II dan III"
+      ],
+      [
+       "mengulang suku kata",
+       "suku pertama berdua",
+       "cado → cecidi; curro → cucurri; do → dedi; disco → didici",
+       "III (kata tua)"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Tiga puluh batang yang paling sering"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sekarang",
+      "Sudah",
+      "Sekarang",
+      "Sudah"
+     ],
+     "rows": [
+      [
+       "sum",
+       "fui",
+       "facio",
+       "feci"
+      ],
+      [
+       "possum",
+       "potui",
+       "capio",
+       "cepi"
+      ],
+      [
+       "eo",
+       "ii",
+       "fugio",
+       "fugi"
+      ],
+      [
+       "volo",
+       "volui",
+       "venio",
+       "veni"
+      ],
+      [
+       "fero",
+       "tuli",
+       "audio",
+       "audivi"
+      ],
+      [
+       "do",
+       "dedi",
+       "invenio",
+       "inveni"
+      ],
+      [
+       "habeo",
+       "habui",
+       "dico",
+       "dixi"
+      ],
+      [
+       "video",
+       "vidi",
+       "duco",
+       "duxi"
+      ],
+      [
+       "moveo",
+       "movi",
+       "scribo",
+       "scripsi"
+      ],
+      [
+       "rideo",
+       "risi",
+       "mitto",
+       "misi"
+      ],
+      [
+       "respondeo",
+       "respondi",
+       "lego",
+       "legi"
+      ],
+      [
+       "timeo",
+       "timui",
+       "vinco",
+       "vici"
+      ],
+      [
+       "teneo",
+       "tenui",
+       "vivo",
+       "vixi"
+      ],
+      [
+       "sedeo",
+       "sedi",
+       "pono",
+       "posui"
+      ],
+      [
+       "doceo",
+       "docui",
+       "curro",
+       "cucurri"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan tiga di antaranya yang sudah kamu kenal seumur hidup: *vici* dari kalimat Caesar *veni, vidi, vici*; *fui* yang muncul di batu nisan Romawi; dan *dixi* yang masih dipakai sebagai penutup pidato — \"saya sudah berbicara\"."
+    }
+   ]
+  },
+  {
+   "title": "Dulu atau sudah?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia tidak memaksamu memilih; bahasa Latin memaksa. Untunglah pilihannya bisa diringkas dalam satu pertanyaan: apakah perbuatannya punya ujung?"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dulu",
+      "Bentuk sudah",
+      "Bedanya"
+     ],
+     "rows": [
+      [
+       "Romae **habitabam**.",
+       "Romae **habitavi**.",
+       "\"dulu saya tinggal di Roma\" — lawan — \"saya pernah tinggal di Roma (dan sudah selesai)\""
+      ],
+      [
+       "Fabulam **narrabat**.",
+       "Fabulam **narravit**.",
+       "\"ia sedang bercerita\" — lawan — \"ia menceritakan satu cerita\""
+      ],
+      [
+       "Cotidie **currebam**.",
+       "Semel **cucurri**.",
+       "kebiasaan — lawan — satu kali"
+      ],
+      [
+       "Schola parva **erat**.",
+       "Schola parva **fuit**.",
+       "gambaran latar — lawan — pernyataan yang selesai"
+      ],
+      [
+       "**Timebam**.",
+       "**Timui**.",
+       "\"saya sedang takut\" — lawan — \"saya jadi takut\""
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sepupu dekat yang belum diajarkan",
+     "items": [
+      "**Sudah lebih dulu** (*plusquamperfectum*): batang sudah + *-eram*. *Veneram* — \"saya sudah datang (sebelum hal lain terjadi)\". Bentuknya gampang ditebak begitu kamu hafal batang sudahnya.",
+      "**Sudah nanti** (*futurum exactum*): batang sudah + *-ero*. *Venero* — \"saya akan sudah datang\". Sering muncul di anak kalimat dengan *si* dan *cum*.",
+      "Keduanya tidak dilatih di modul ini, tetapi kamu sudah punya semua bahannya. Kalau bertemu di teks, kenali batangnya dulu, lalu ekornya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "fui, fuisti",
+   "baca": "FU-i",
+   "id": "saya sudah, kamu sudah (dari sum)"
+  },
+  {
+   "la": "vidi, vidisti",
+   "baca": "WI-di",
+   "id": "saya sudah lihat"
+  },
+  {
+   "la": "dixi, dixisti",
+   "baca": "DIK-si",
+   "id": "saya sudah berkata"
+  },
+  {
+   "la": "veni, venisti",
+   "baca": "WE-ni",
+   "id": "saya sudah datang"
+  },
+  {
+   "la": "feci, fecisti",
+   "baca": "FE-ki",
+   "id": "saya sudah membuat"
+  },
+  {
+   "la": "cepi, cepisti",
+   "baca": "KE-pi",
+   "id": "saya sudah mengambil"
+  },
+  {
+   "la": "duxi, scripsi, misi",
+   "baca": "DUK-si, SKRIP-si, MI-si",
+   "id": "sudah membawa, menulis, mengirim"
+  },
+  {
+   "la": "vici",
+   "baca": "WI-ki",
+   "id": "saya sudah menang"
+  },
+  {
+   "la": "cecidi",
+   "baca": "KE-ki-di",
+   "id": "saya sudah jatuh"
+  },
+  {
+   "la": "cucurri",
+   "baca": "ku-KUR-ri",
+   "id": "saya sudah berlari"
+  },
+  {
+   "la": "dedi",
+   "baca": "DE-di",
+   "id": "saya sudah memberi"
+  },
+  {
+   "la": "tuli",
+   "baca": "TU-li",
+   "id": "saya sudah membawa (dari fero)"
+  },
+  {
+   "la": "cado, cadere, cecidi",
+   "baca": "KA-do",
+   "id": "jatuh"
+  },
+  {
+   "la": "accido, accidere, accidi",
+   "baca": "AK-ki-do",
+   "id": "terjadi"
+  },
+  {
+   "la": "sto, stare, steti",
+   "baca": "STO",
+   "id": "berdiri"
+  },
+  {
+   "la": "vinco, vincere, vici",
+   "baca": "WIN-ko",
+   "id": "menang, mengalahkan"
+  },
+  {
+   "la": "vivo, vivere, vixi",
+   "baca": "WI-wo",
+   "id": "hidup"
+  },
+  {
+   "la": "moveo, movere, movi",
+   "baca": "MO-we-o",
+   "id": "menggerakkan"
+  },
+  {
+   "la": "mercator, mercatoris",
+   "baca": "mer-KA-tor",
+   "id": "pedagang"
+  },
+  {
+   "la": "elephantus, elephanti",
+   "baca": "e-le-PHAN-tus",
+   "id": "gajah"
+  },
+  {
+   "la": "portus, portus",
+   "baca": "POR-tus",
+   "id": "pelabuhan"
+  },
+  {
+   "la": "Africa, Africae",
+   "baca": "A-fri-ka",
+   "id": "Afrika"
+  },
+  {
+   "la": "res, rei",
+   "baca": "RES",
+   "id": "hal, perkara"
+  },
+  {
+   "la": "mirus, mira, mirum",
+   "baca": "MI-rus",
+   "id": "ajaib, mengherankan"
+  },
+  {
+   "la": "semel, bis",
+   "baca": "SE-mel, BIS",
+   "id": "sekali, dua kali"
+  },
+  {
+   "la": "deinde",
+   "baca": "DE-in-de",
+   "id": "lalu, sesudah itu"
+  },
+  {
+   "la": "postea",
+   "baca": "POS-te-a",
+   "id": "sesudah itu"
+  },
+  {
+   "la": "subito",
+   "baca": "SU-bi-to",
+   "id": "tiba-tiba"
+  },
+  {
+   "la": "timeo, timere, timui",
+   "baca": "TI-me-o",
+   "id": "takut"
+  },
+  {
+   "la": "clamo, clamare, clamavi",
+   "baca": "KLA-mo",
+   "id": "berteriak"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk sudah, pelaku tetap sama.",
+   "items": [
+    "porto",
+    "video",
+    "dico",
+    "venio",
+    "sum",
+    "facio"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk sudah yang tepat.",
+   "items": [
+    "Heri elephantum ____ . (videre, saya)",
+    "Cives in forum ____ . (venire, mereka)",
+    "Quid ____ ? (facere, kamu)",
+    "Epistulam ____ . (scribere, kami)",
+    "Sextus in aquam ____ . (cadere, dia)",
+    "Ubi ____ ? (esse, kalian)"
+   ]
+  },
+  {
+   "prompt": "Pilih: bentuk dulu atau bentuk sudah.",
+   "items": [
+    "Cotidie ad forum ____ . (ambulare, saya)",
+    "Heri ad forum ____ . (ambulare, saya)",
+    "Schola parva ____ semper. (esse, dia)",
+    "Subito magister ____ . (clamare, dia)",
+    "Marcus legebat, Iulia ____ . (cantare, dia)",
+    "Denique mercator elephantum ____ . (ducere, dia)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Saya sudah melihat gajah.",
+    "Warga-warga datang dan berteriak.",
+    "Kamu sudah bilang apa?",
+    "Kami sudah menulis surat.",
+    "Sextus jatuh ke air.",
+    "Saya datang, saya melihat, saya menang."
+   ]
+  }
+ ],
+ "answers": [
+  "portavi — vidi — dixi — veni — fui — feci",
+  "vidi — venerunt — fecisti — scripsimus — cecidit — fuistis",
+  "ambulabam — ambulavi — erat — clamavit — cantabat — duxit",
+  "Elephantum vidi. — Cives venerunt et clamaverunt. — Quid dixisti? — Epistulam scripsimus. — Sextus in aquam cecidit. — Veni, vidi, vici."
+ ]
+}

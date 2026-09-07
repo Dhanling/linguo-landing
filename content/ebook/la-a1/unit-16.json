@@ -1,0 +1,593 @@
+{
+ "title": "Besok, dan perintah",
+ "title_target": "Cras ibimus!",
+ "goal": "Membentuk kala nanti di keempat kelompok, memberi perintah kepada satu atau banyak orang, dan melarang dengan noli.",
+ "bekal": [
+  "membedakan dua pola kala nanti dan tahu kelompok mana memakai yang mana",
+  "membuat perintah tunggal dan jamak dari kata kerja mana pun",
+  "melarang dengan sopan memakai *noli* dan *nolite*"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Ante iter",
+   "intro": "Malam sebelum berangkat. Quintus membagi tugas, dan tidak semuanya diterima dengan senang hati.",
+   "lines": [
+    {
+     "speaker": "Quintus:",
+     "text": "Cras ad villam ibimus. Mane surgetis!",
+     "id": "Besok kita berangkat ke rumah pertanian. Kalian harus bangun pagi!",
+     "literal": "besok ke rumah-sasaran pergi-kami-nanti. pagi bangun-kalian-nanti!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Quando exibimus, pater?",
+     "id": "Kita berangkat jam berapa, Yah?",
+     "literal": "kapan keluar-kami-nanti, ayah-panggil?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Hora prima exibimus. Nolite tardi esse!",
+     "id": "Kita berangkat jam pertama. Jangan telat!",
+     "literal": "jam pertama-dengan keluar-kami-nanti. jangan-kalian terlambat-jamak ada!"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Quid portabimus?",
+     "id": "Kita bawa apa?",
+     "literal": "apa-sasaran bawa-kami-nanti?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Vos cibum portabitis. Ego pecuniam portabo.",
+     "id": "Kalian bawa makanan. Ayah bawa uang.",
+     "literal": "kalian makanan-sasaran bawa-kalian-nanti. saya uang-sasaran bawa-saya-nanti."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Marce, audi me: aquam quoque porta!",
+     "id": "Marcus, dengar Ibu: bawa air juga!",
+     "literal": "Marcus-panggil, dengar-lah saya-sasaran: air-sasaran juga bawa-lah!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Audio, mater. Aquam portabo.",
+     "id": "Iya, Bu. Nanti saya bawa airnya.",
+     "literal": "dengar-saya, ibu-panggil. air-sasaran bawa-saya-nanti."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Eritne longum iter?",
+     "id": "Perjalanannya jauh?",
+     "literal": "adalah-dia-nanti-kah panjang-netral perjalanan?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Longum erit, sed pulchrum. Videbitis mare!",
+     "id": "Jauh, tapi indah. Kalian akan lihat laut!",
+     "literal": "panjang-netral adalah-dia-nanti, tapi indah-netral. lihat-kalian-nanti laut-sasaran!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Mare! Natare potero?",
+     "id": "Laut! Saya boleh berenang?",
+     "literal": "laut! berenang bisa-saya-nanti?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Poteris. Sed noli solus natare!",
+     "id": "Boleh. Tapi jangan berenang sendirian!",
+     "literal": "bisa-kamu-nanti. tapi jangan-kamu sendirian-lelaki berenang!"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Et nolite clamare in via. Dormire volo!",
+     "id": "Dan jangan berisik di jalan. Ibu mau tidur!",
+     "literal": "dan jangan-kalian teriak di jalan-di. tidur mau-saya!"
+    }
+   ],
+   "notes": [
+    "**Dua pola untuk satu kala.** Kelompok I dan II memakai *-bo, -bis, -bit* (*portabo*, *videbo*); kelompok III dan IV memakai *-am, -es, -et* (*mittam*, *audiam*). Tidak ada alasannya; ini sisa dua cara berbeda yang dipakai bahasa induk, dan keduanya membeku bersama-sama di dalam bahasa Latin.",
+    "**Mittet dan mittit hanya beda satu huruf.** *Mittit* berarti \"dia mengirim\", *mittet* berarti \"dia akan mengirim\". Perbedaan sekecil itu memutuskan seluruh arti kalimat, dan inilah alasan lain kenapa membaca sampai huruf terakhir tidak bisa ditawar.",
+    "**Porta! Audi! — perintah dibentuk dengan membuang.** Ambil bentuk dasarnya, buang *-re*, dan yang tersisa adalah perintah untuk satu orang: *portare* → *porta!*, *audire* → *audi!*, *videre* → *vide!*. Untuk banyak orang, tambahkan *-te*: *portate!*, *audite!*, *videte!* Kamu sudah memakainya sejak Unit 1 tanpa sadar: *salve* dan *salvete*, *vale* dan *valete*.",
+    "**Noli, nolite — larangan yang sopan.** Bahasa Latin tidak melarang dengan *non* + perintah. Ia memakai perintah dari *nolo* (\"jangan mau\") ditambah bentuk dasar: *noli clamare!* — harfiahnya \"jangan mau berteriak\". Untuk banyak orang: *nolite clamare!*"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kala nanti: dua pola",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kelompok mana memakai pola mana ditentukan sekali dan selamanya, jadi begitu kamu tahu kelompok kata kerjanya, kamu tahu polanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "I: portare",
+      "II: videre",
+      "III: mittere",
+      "IV: audire"
+     ],
+     "rows": [
+      [
+       "saya",
+       "porta**bo**",
+       "vide**bo**",
+       "mitt**am**",
+       "audi**am**"
+      ],
+      [
+       "kamu",
+       "porta**bis**",
+       "vide**bis**",
+       "mitt**es**",
+       "audi**es**"
+      ],
+      [
+       "dia",
+       "porta**bit**",
+       "vide**bit**",
+       "mitt**et**",
+       "audi**et**"
+      ],
+      [
+       "kami",
+       "porta**bimus**",
+       "vide**bimus**",
+       "mitt**emus**",
+       "audi**emus**"
+      ],
+      [
+       "kalian",
+       "porta**bitis**",
+       "vide**bitis**",
+       "mitt**etis**",
+       "audi**etis**"
+      ],
+      [
+       "mereka",
+       "porta**bunt**",
+       "vide**bunt**",
+       "mitt**ent**",
+       "audi**ent**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kelompok tiga bercampur ikut kelompok empat: *facio* → *faciam, facies, faciet*. Perhatikan bahwa hanya bentuk \"saya\" pada pola kedua yang berakhir *-am*; sisanya berpola *-e-* yang rapi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sekarang",
+      "Nanti",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "sum",
+       "**ero**, eris, erit",
+       "saya akan",
+       "erimus, eritis, **erunt**"
+      ],
+      [
+       "possum",
+       "**potero**, poteris",
+       "saya akan bisa",
+       "poterimus, poterunt"
+      ],
+      [
+       "eo",
+       "**ibo**, ibis, ibit",
+       "saya akan pergi",
+       "ibimus, ibitis, ibunt"
+      ],
+      [
+       "volo",
+       "**volam**, voles",
+       "saya akan mau",
+       "pola kedua"
+      ],
+      [
+       "fero",
+       "**feram**, feres",
+       "saya akan bawa",
+       "pola kedua"
+      ],
+      [
+       "adsum",
+       "**adero**",
+       "saya akan hadir",
+       "ikut *ero*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Perangkap yang wajib kamu kenali",
+     "items": [
+      "*erunt* berarti \"mereka akan ada\"; *erant* berarti \"mereka dulu ada\". Satu huruf memindahkan kalimat dari masa depan ke masa lalu.",
+      "*mittet* (akan mengirim) melawan *mittit* (mengirim); *audiet* (akan mendengar) melawan *audit* (mendengar).",
+      "*portabis* tidak pernah bisa tertukar dengan apa pun — pola *-bo* memang lebih aman. Justru pola kedua yang menuntut perhatian."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Perintah",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perintah hanya punya dua bentuk: satu untuk satu orang, satu untuk banyak orang. Keduanya dibuat dari bentuk dasar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk dasar",
+      "Kepada satu orang",
+      "Kepada banyak orang",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "portare",
+       "porta!",
+       "portate!",
+       "bawa!"
+      ],
+      [
+       "videre",
+       "vide!",
+       "videte!",
+       "lihat!"
+      ],
+      [
+       "mittere",
+       "mitte!",
+       "mittite!",
+       "kirim!"
+      ],
+      [
+       "audire",
+       "audi!",
+       "audite!",
+       "dengar!"
+      ],
+      [
+       "esse",
+       "es!",
+       "este!",
+       "jadilah!"
+      ],
+      [
+       "ire",
+       "i!",
+       "ite!",
+       "pergi!"
+      ],
+      [
+       "tacere",
+       "tace!",
+       "tacete!",
+       "diam!"
+      ],
+      [
+       "venire",
+       "veni!",
+       "venite!",
+       "datang!"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Empat perintah yang memendek"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Perintah tunggal",
+      "Perintah jamak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "dicere",
+       "**dic!**",
+       "dicite!",
+       "katakan!"
+      ],
+      [
+       "ducere",
+       "**duc!**",
+       "ducite!",
+       "pimpin! bawa!"
+      ],
+      [
+       "facere",
+       "**fac!**",
+       "facite!",
+       "buat! lakukan!"
+      ],
+      [
+       "ferre",
+       "**fer!**",
+       "ferte!",
+       "bawa!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Keempatnya kehilangan huruf *e* di ujung, dan hanya keempat itu. Hafalkan sebagai satu deretan bunyi: *dic, duc, fac, fer*. Kamu akan bertemu keempatnya di dalam kalimat-kalimat terkenal: *fac ut vivas* (\"berbuatlah supaya kamu hidup\") dan *dic mihi* (\"katakan padaku\")."
+    },
+    {
+     "type": "kotak",
+     "title": "Meminta dengan sopan",
+     "items": [
+      "*Quaeso* — \"saya mohon\". Diselipkan di tengah kalimat: *Dic mihi, quaeso.*",
+      "*Sis* (pendekan dari *si vis*, \"kalau kamu mau\") — sepadan dengan \"tolong\": *Veni, sis.*",
+      "*Amabo te* — harfiahnya \"saya akan mencintaimu\", dipakai persis seperti \"ya, please\": *Amabo te, tace!*",
+      "*Cave!* — \"awas!\" Dari sini datang kalimat yang terpahat di lantai rumah Romawi: *Cave canem* — \"awas anjing\".",
+      "Untuk melarang, jangan pernah memakai *non* + perintah. Selalu *noli* atau *nolite* + bentuk dasar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berbicara tentang rencana",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kala nanti dipakai jauh lebih ketat dalam bahasa Latin daripada dalam bahasa Indonesia. Kalau perbuatannya belum terjadi, bahasa Latin menuntut kala nanti — termasuk di anak kalimat, di tempat bahasa Indonesia biasa memakai bentuk biasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "Cras ad villam **ibimus**.",
+       "Besok kami akan pergi ke rumah pertanian."
+      ],
+      [
+       "Mane te **exspectabo**.",
+       "Besok pagi saya akan menunggumu."
+      ],
+      [
+       "Iter longum **erit**.",
+       "Perjalanannya akan jauh."
+      ],
+      [
+       "**Videbitis** mare et **natare poteritis**.",
+       "Kalian akan melihat laut dan bisa berenang."
+      ],
+      [
+       "Si **veneris**, gaudebo.",
+       "Kalau kamu datang, saya akan senang."
+      ],
+      [
+       "Quid **facies** cras?",
+       "Besok kamu akan melakukan apa?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat kelima memakai bentuk yang belum diajarkan — *veneris*, \"kamu akan sudah datang\". Bahasa Latin memakainya di anak kalimat yang perbuatannya mendahului induknya. Kamu tidak perlu membuatnya sendiri; cukup kenali kalau bertemu."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "surgo, surgere, surrexi",
+   "baca": "SUR-go",
+   "id": "bangun, bangkit"
+  },
+  {
+   "la": "exeo, exire",
+   "baca": "EK-se-o",
+   "id": "keluar, berangkat"
+  },
+  {
+   "la": "redeo, redire",
+   "baca": "RE-de-o",
+   "id": "kembali, pulang"
+  },
+  {
+   "la": "noli, nolite",
+   "baca": "NO-li, no-LI-te",
+   "id": "jangan"
+  },
+  {
+   "la": "quaeso",
+   "baca": "KWAI-so",
+   "id": "saya mohon, tolong"
+  },
+  {
+   "la": "cave!",
+   "baca": "KA-we",
+   "id": "awas!"
+  },
+  {
+   "la": "amabo te",
+   "baca": "a-MA-bo TE",
+   "id": "tolong ya (permintaan halus)"
+  },
+  {
+   "la": "mane",
+   "baca": "MA-ne",
+   "id": "pagi-pagi"
+  },
+  {
+   "la": "tardus, tarda",
+   "baca": "TAR-dus",
+   "id": "terlambat, lambat"
+  },
+  {
+   "la": "solus, sola, solum",
+   "baca": "SO-lus",
+   "id": "sendirian"
+  },
+  {
+   "la": "iter, itineris",
+   "baca": "I-ter",
+   "id": "perjalanan"
+  },
+  {
+   "la": "gaudeo, gaudere",
+   "baca": "GAU-de-o",
+   "id": "bergembira"
+  },
+  {
+   "la": "spero, sperare",
+   "baca": "SPE-ro",
+   "id": "berharap"
+  },
+  {
+   "la": "paro, parare",
+   "baca": "PA-ro",
+   "id": "menyiapkan"
+  },
+  {
+   "la": "relinquo, relinquere",
+   "baca": "re-LIN-kwo",
+   "id": "meninggalkan"
+  },
+  {
+   "la": "quaero, quaerere",
+   "baca": "KWAI-ro",
+   "id": "mencari, bertanya"
+  },
+  {
+   "la": "peto, petere",
+   "baca": "PE-to",
+   "id": "menuju, meminta"
+  },
+  {
+   "la": "aperio, aperire",
+   "baca": "a-PE-ri-o",
+   "id": "membuka"
+  },
+  {
+   "la": "claudo, claudere",
+   "baca": "KLAU-do",
+   "id": "menutup"
+  },
+  {
+   "la": "sino, sinere",
+   "baca": "SI-no",
+   "id": "membiarkan, mengizinkan"
+  },
+  {
+   "la": "canis, canis",
+   "baca": "KA-nis",
+   "id": "anjing"
+  },
+  {
+   "la": "casa, casae",
+   "baca": "KA-sa",
+   "id": "pondok, rumah kecil"
+  },
+  {
+   "la": "porta, portae",
+   "baca": "POR-ta",
+   "id": "gerbang"
+  },
+  {
+   "la": "custos, custodis",
+   "baca": "KUS-tos",
+   "id": "penjaga"
+  },
+  {
+   "la": "sarcina, sarcinae",
+   "baca": "SAR-ki-na",
+   "id": "barang bawaan"
+  },
+  {
+   "la": "vestis, vestis",
+   "baca": "WES-tis",
+   "id": "pakaian"
+  },
+  {
+   "la": "calceus, calcei",
+   "baca": "KAL-ke-us",
+   "id": "sepatu"
+  },
+  {
+   "la": "lectus, lecti",
+   "baca": "LEK-tus",
+   "id": "tempat tidur"
+  },
+  {
+   "la": "somnus, somni",
+   "baca": "SOM-nus",
+   "id": "tidur, mimpi"
+  },
+  {
+   "la": "fortuna, fortunae",
+   "baca": "for-TU-na",
+   "id": "nasib, keberuntungan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi kala nanti, pelaku tetap sama.",
+   "items": [
+    "porto",
+    "video",
+    "mitto",
+    "audio",
+    "sum",
+    "possum"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kala nanti yang tepat.",
+   "items": [
+    "Cras ad villam ____ . (ire, kami)",
+    "Mane te ____ . (exspectare, saya)",
+    "Iter longum ____ . (esse, dia)",
+    "Vos mare ____ . (videre, kalian)",
+    "Marcus epistulam ____ . (mittere, dia)",
+    "Pueri fabulam ____ . (audire, mereka)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi perintah, untuk satu orang lalu untuk banyak orang.",
+   "items": [
+    "portare",
+    "audire",
+    "tacere",
+    "venire",
+    "dicere",
+    "facere"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Besok kami akan berangkat.",
+    "Kalian akan melihat laut.",
+    "Bawa airnya! (kepada satu orang)",
+    "Jangan berteriak! (kepada banyak orang)",
+    "Saya akan menunggumu.",
+    "Awas anjing!"
+   ]
+  }
+ ],
+ "answers": [
+  "portabo — videbo — mittam — audiam — ero — potero",
+  "ibimus — exspectabo — erit — videbitis — mittet — audient",
+  "porta / portate — audi / audite — tace / tacete — veni / venite — dic / dicite — fac / facite",
+  "Cras exibimus. — Mare videbitis. — Aquam porta! — Nolite clamare! — Te exspectabo. — Cave canem!"
+ ]
+}

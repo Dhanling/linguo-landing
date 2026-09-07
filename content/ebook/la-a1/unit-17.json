@@ -1,0 +1,220 @@
+{
+ "title": "Tangan dan hari",
+ "title_target": "Manus et dies",
+ "goal": "Melengkapi kelima kelompok kata benda dengan deklinasi keempat dan kelima, lalu menyatakan waktu dengan dua cara yang berbeda.",
+ "bekal": [
+  "mengenali *manus* dan *dies* sebagai kelompok tersendiri, bukan salah eja",
+  "membedakan \"kapan\" dari \"berapa lama\" lewat bentuk kata bendanya",
+  "menyebut musim, bulan, dan tanggal dengan cara Romawi"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — In villa, quinque dies",
+   "intro": "Hari kedua di rumah pertanian. Cuaca bagus, dan semua orang punya pendapat tentang musim.",
+   "lines": [
+    { "speaker": "Marcus:", "text": "Quot dies in villa manebimus?", "id": "Kita akan tinggal di sini berapa hari?", "literal": "berapa hari-jamak-sasaran di rumah-di tinggal-kami-nanti?" },
+    { "speaker": "Quintus:", "text": "Quinque dies. Post quinque dies domum redibimus.", "id": "Lima hari. Setelah lima hari kita pulang.", "literal": "lima hari-jamak-sasaran. sesudah lima hari-jamak-sasaran rumah-sasaran pulang-kami-nanti." },
+    { "speaker": "Iulia:", "text": "Quo tempore anni villa pulcherrima est?", "id": "Musim apa rumah ini paling indah?", "literal": "apa waktu-di tahun-punya rumah paling-indah-perempuan adalah-dia?" },
+    { "speaker": "Quintus:", "text": "Vere et autumno. Aestate nimis calidum est.", "id": "Musim semi dan musim gugur. Kalau musim panas terlalu gerah.", "literal": "musim-semi-di dan musim-gugur-di. musim-panas-di terlalu panas-netral adalah-dia." },
+    { "speaker": "Cornelia:", "text": "Hieme frigidum est, sed ignis in casa bonus est.", "id": "Musim dingin dingin sekali, tapi api di pondok enak.", "literal": "musim-dingin-di dingin-netral adalah-dia, tapi api di pondok-di baik-lelaki adalah-dia." },
+    { "speaker": "Marcus:", "text": "Manus meae frigidae sunt iam nunc!", "id": "Tangan saya sudah dingin dari sekarang!", "literal": "tangan-jamak milik-saya-jamak dingin-jamak adalah-mereka sudah sekarang!" },
+    { "speaker": "Quintus:", "text": "Duas horas in aqua natabas, Marce!", "id": "Kamu berenang dua jam, Marcus!", "literal": "dua-sasaran jam-jamak-sasaran di air-di berenang-kamu-dulu, Marcus-panggil!" },
+    { "speaker": "Iulia:", "text": "Pater, quae res est quam portas?", "id": "Yah, yang Ayah bawa itu apa?", "literal": "ayah-panggil, apa hal adalah-dia yang-sasaran bawa-kamu?" },
+    { "speaker": "Quintus:", "text": "Fructus sunt. Ex arboribus cepi.", "id": "Buah. Ayah petik dari pohon-pohonnya.", "literal": "buah-jamak adalah-mereka. dari pohon-jamak-dari ambil-saya-sudah." },
+    { "speaker": "Cornelia:", "text": "Bonum est. Spes mea est: cras pluviam non videbimus.", "id": "Bagus. Harapan Ibu: besok tidak ada hujan.", "literal": "baik-netral adalah-dia. harapan milik-saya-perempuan adalah-dia: besok hujan-sasaran tidak lihat-kami-nanti." },
+    { "speaker": "Marcus:", "text": "Fides mea in caelo est! Sol lucet.", "id": "Saya percaya sama langitnya! Mataharinya terang.", "literal": "kepercayaan milik-saya-perempuan di langit-di adalah-dia! matahari bersinar-dia." },
+    { "speaker": "Quintus:", "text": "Bene. Hodie fortuna nobiscum est.", "id": "Bagus. Hari ini nasib sedang berpihak pada kita.", "literal": "baik. hari-ini nasib dengan-kami adalah-dia." }
+   ],
+   "notes": [
+    "**Manus berekor -us, tetapi bukan deklinasi kedua.** Bandingkan: *hortus, horti* (kelompok dua) dengan *manus, manus* (kelompok empat). Yang membedakan bentuk punyanya, seperti biasa. Kalau kamu memperlakukan *manus* sebagai kelompok dua, kamu akan menulis *mani* yang tidak ada dalam bahasa Latin.",
+    "**Vere, aestate, hieme, autumno — musim memakai bentuk dengan/di.** Untuk menyatakan kapan sesuatu terjadi, bahasa Latin memakai bentuk dengan/di tanpa kata depan sama sekali: *hieme* (\"pada musim dingin\"), *nocte* (\"pada malam hari\"), *hora prima* (\"pada jam pertama\").",
+    "**Duas horas natabas — berapa lama memakai bentuk sasaran.** Perhatikan bedanya dengan catatan di atas. *Hora prima* berarti \"pada jam pertama\"; *duas horas* berarti \"selama dua jam\". Satu pertanyaan menanyakan titik waktu, satu lagi menanyakan panjangnya, dan bahasa Latin memakai dua bentuk berbeda untuk keduanya.",
+    "**Res, spes, fides — tiga kata besar dari kelompok kelima.** Kelompok ini paling kecil jumlahnya tetapi memuat kata-kata yang paling sering dikutip: *res* (hal, perkara), *spes* (harapan), *fides* (kepercayaan, kesetiaan), dan *dies* (hari). Dari *res* datang *res publica* — \"urusan bersama\" — yang menjadi kata *republik*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Deklinasi keempat dan kelima",
+   "blocks": [
+    { "type": "p", "text": "Dua kelompok terakhir ini jumlah katanya sedikit, tetapi kata-katanya sering. Keduanya gampang dikenali dari bentuk punyanya: *-us* untuk kelompok empat, *-ei* untuk kelompok lima." },
+    {
+     "type": "tabel",
+     "head": ["Tugas", "IV: manus, manus", "IV netral: cornu", "V: dies, diei", "V: res, rei"],
+     "rows": [
+      ["pelaku", "manus", "cornu", "dies", "res"],
+      ["sasaran", "man**um**", "cornu", "di**em**", "r**em**"],
+      ["punya", "man**us**", "corn**us**", "di**ei**", "r**ei**"],
+      ["kepada", "man**ui**", "cornu", "di**ei**", "r**ei**"],
+      ["dengan/di", "man**u**", "cornu", "di**e**", "r**e**"],
+      ["pelaku jamak", "man**us**", "corn**ua**", "di**es**", "r**es**"],
+      ["sasaran jamak", "man**us**", "corn**ua**", "di**es**", "r**es**"],
+      ["punya jamak", "man**uum**", "corn**uum**", "di**erum**", "r**erum**"],
+      ["kepada, dengan/di jamak", "man**ibus**", "corn**ibus**", "di**ebus**", "r**ebus**"]
+     ]
+    },
+    { "type": "p", "text": "*Manus* memakai bentuk yang sama untuk empat tugas berbeda — pelaku tunggal, punya tunggal, pelaku jamak, dan sasaran jamak. Ini terdengar mengerikan, tetapi dalam kalimat sungguhan tidak pernah menjadi masalah: kata kerja dan kata sifat di sekitarnya selalu memberi tahu yang mana." },
+    { "type": "sub", "text": "Kata yang perlu kamu kenal" },
+    {
+     "type": "tabel",
+     "head": ["Deklinasi IV", "Arti", "Deklinasi V", "Arti"],
+     "rows": [
+      ["manus, manus", "tangan; pasukan", "dies, diei", "hari"],
+      ["exercitus, exercitus", "tentara", "res, rei", "hal, perkara, harta"],
+      ["fructus, fructus", "buah, hasil", "spes, spei", "harapan"],
+      ["senatus, senatus", "senat", "fides, fidei", "kepercayaan, kesetiaan"],
+      ["portus, portus", "pelabuhan", "acies, aciei", "barisan perang"],
+      ["adventus, adventus", "kedatangan", "species, speciei", "rupa, jenis"],
+      ["metus, metus", "ketakutan", "", ""],
+      ["cornu, cornus", "tanduk; sayap pasukan", "", ""]
+     ]
+    },
+    { "type": "p", "text": "*Domus* (\"rumah\") berperilaku campuran: sebagian bentuknya kelompok empat, sebagian kelompok dua. Untuk sekarang cukup hafalkan tiga bentuk bekunya yang sudah kamu pakai sejak Unit 5: *domi* (di rumah), *domum* (pulang), *domo* (dari rumah)." }
+   ]
+  },
+  {
+   "title": "Kapan dan berapa lama",
+   "blocks": [
+    { "type": "p", "text": "Dua pertanyaan tentang waktu dijawab dengan dua bentuk yang berbeda, dan keduanya tidak memakai kata depan." },
+    {
+     "type": "tabel",
+     "head": ["Pertanyaan", "Bentuk", "Contoh", "Terjemahan"],
+     "rows": [
+      ["**quando?** kapan", "dengan/di", "hora prima", "pada jam pertama"],
+      ["", "", "nocte", "pada malam hari"],
+      ["", "", "hieme", "pada musim dingin"],
+      ["", "", "eo tempore", "pada waktu itu"],
+      ["", "", "tertio die", "pada hari ketiga"],
+      ["**quam diu?** berapa lama", "sasaran", "duas horas", "selama dua jam"],
+      ["", "", "multos annos", "bertahun-tahun"],
+      ["", "", "totam noctem", "sepanjang malam"],
+      ["", "", "tres dies", "selama tiga hari"]
+     ]
+    },
+    { "type": "sub", "text": "Musim, bulan, dan hari" },
+    {
+     "type": "tabel",
+     "head": ["Latin", "Arti", "Latin", "Arti"],
+     "rows": [
+      ["ver, veris", "musim semi", "vere", "pada musim semi"],
+      ["aestas, aestatis", "musim panas", "aestate", "pada musim panas"],
+      ["autumnus, autumni", "musim gugur", "autumno", "pada musim gugur"],
+      ["hiems, hiemis", "musim dingin", "hieme", "pada musim dingin"],
+      ["Ianuarius, Februarius", "Januari, Februari", "Martius, Aprilis", "Maret, April"],
+      ["Maius, Iunius", "Mei, Juni", "Iulius, Augustus", "Juli, Agustus"],
+      ["September, October", "September, Oktober", "November, December", "November, Desember"]
+     ]
+    },
+    { "type": "p", "text": "Tanggal Romawi dihitung mundur dari tiga titik tetap tiap bulan: *Kalendae* (tanggal 1), *Nonae* (tanggal 5 atau 7), dan *Idus* (tanggal 13 atau 15). *Idus Martiae* — Ides bulan Maret, hari Caesar dibunuh — adalah tanggal 15 Maret. Sistem hitung mundur ini rumit dan tidak dilatih di modul ini, tetapi ketiga namanya layak kamu kenali karena sering muncul." }
+   ]
+  },
+  {
+   "title": "Res: satu kata, sepuluh arti",
+   "blocks": [
+    { "type": "p", "text": "*Res* adalah kata paling luwes dalam bahasa Latin. Ia berarti \"hal\", tetapi isinya ditentukan kata yang menemaninya, dan banyak di antaranya masih hidup sampai sekarang." },
+    {
+     "type": "tabel",
+     "head": ["Ungkapan", "Harfiah", "Artinya"],
+     "rows": [
+      ["res publica", "hal umum", "negara, republik"],
+      ["res gestae", "hal-hal yang dikerjakan", "riwayat perbuatan, sejarah"],
+      ["rerum natura", "sifat segala hal", "alam semesta"],
+      ["res novae", "hal-hal baru", "pemberontakan, revolusi"],
+      ["res familiaris", "hal rumah tangga", "harta keluarga"],
+      ["in medias res", "ke tengah perkara", "langsung ke pokoknya"],
+      ["rebus sic stantibus", "dengan keadaan berdiri begini", "selama keadaan tidak berubah"],
+      ["res ipsa loquitur", "perkaranya berbicara sendiri", "sudah jelas dengan sendirinya"]
+     ]
+    },
+    { "type": "p", "text": "Perhatikan *res novae*. Bagi orang Romawi, \"hal-hal baru\" bukan pujian melainkan tuduhan: yang menginginkan *res novae* adalah orang yang ingin menjungkirkan tatanan. Kata *revolusi* mewarisi ketegangan itu sampai hari ini." },
+    {
+     "type": "kotak",
+     "title": "Empat ungkapan waktu yang layak dihafal",
+     "items": [
+      "*hoc tempore* — pada saat ini. *illo tempore* — pada waktu itu.",
+      "*multos annos* — bertahun-tahun. *paucos dies* — beberapa hari.",
+      "*in dies* — dari hari ke hari, makin lama makin.",
+      "*ad tempus* — untuk sementara. *ante tempus* — sebelum waktunya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  { "la": "manus, manus", "baca": "MA-nus", "id": "tangan; rombongan" },
+  { "la": "fructus, fructus", "baca": "FRUK-tus", "id": "buah, hasil" },
+  { "la": "exercitus, exercitus", "baca": "ek-SER-ki-tus", "id": "tentara" },
+  { "la": "senatus, senatus", "baca": "se-NA-tus", "id": "senat" },
+  { "la": "portus, portus", "baca": "POR-tus", "id": "pelabuhan" },
+  { "la": "metus, metus", "baca": "ME-tus", "id": "ketakutan" },
+  { "la": "adventus, adventus", "baca": "ad-WEN-tus", "id": "kedatangan" },
+  { "la": "cornu, cornus", "baca": "KOR-nu", "id": "tanduk" },
+  { "la": "dies, diei", "baca": "DI-es", "id": "hari" },
+  { "la": "res, rei", "baca": "RES", "id": "hal, perkara, harta" },
+  { "la": "spes, spei", "baca": "SPES", "id": "harapan" },
+  { "la": "fides, fidei", "baca": "FI-des", "id": "kepercayaan, kesetiaan" },
+  { "la": "ver, veris", "baca": "WER", "id": "musim semi" },
+  { "la": "aestas, aestatis", "baca": "AIS-tas", "id": "musim panas" },
+  { "la": "autumnus, autumni", "baca": "au-TUM-nus", "id": "musim gugur" },
+  { "la": "hiems, hiemis", "baca": "HI-ems", "id": "musim dingin" },
+  { "la": "ignis, ignis", "baca": "IG-nis", "id": "api" },
+  { "la": "pluvia, pluviae", "baca": "PLU-wi-a", "id": "hujan" },
+  { "la": "nix, nivis", "baca": "NIKS", "id": "salju" },
+  { "la": "sol, solis", "baca": "SOL", "id": "matahari" },
+  { "la": "umbra, umbrae", "baca": "UM-bra", "id": "bayangan, naungan" },
+  { "la": "arbor, arboris", "baca": "AR-bor", "id": "pohon" },
+  { "la": "luceo, lucere", "baca": "LU-ke-o", "id": "bersinar" },
+  { "la": "maneo, manere, mansi", "baca": "MA-ne-o", "id": "tinggal, bertahan" },
+  { "la": "nimis", "baca": "NI-mis", "id": "terlalu" },
+  { "la": "adhuc", "baca": "AD-huk", "id": "sampai sekarang, masih" },
+  { "la": "Kalendae, Idus", "baca": "ka-LEN-dai, I-dus", "id": "tanggal satu, pertengahan bulan" },
+  { "la": "tempus, temporis", "baca": "TEM-pus", "id": "waktu" },
+  { "la": "annus, anni", "baca": "AN-nus", "id": "tahun" },
+  { "la": "mensis, mensis", "baca": "MEN-sis", "id": "bulan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis bentuk punya tunggalnya, lalu sebutkan kelompoknya.",
+   "items": ["manus", "dies", "hortus", "res", "fructus", "spes"]
+  },
+  {
+   "prompt": "Pilih: bentuk dengan/di (kapan) atau bentuk sasaran (berapa lama).",
+   "items": [
+    "____ natabam. (dua jam)",
+    "____ frigidum est. (pada musim dingin)",
+    "____ in villa mansimus. (lima hari)",
+    "____ exibimus. (pada jam pertama)",
+    "____ Romae habitavi. (bertahun-tahun)",
+    "____ dormimus. (pada malam hari)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk yang diminta.",
+   "items": [
+    "____ meae frigidae sunt. (manus, pelaku jamak)",
+    "Spes ____ magna est. (res, punya)",
+    "Post quinque ____ redibimus. (dies, sasaran jamak)",
+    "In ____ multi milites sunt. (exercitus, dengan/di)",
+    "____ ex arboribus cepi. (fructus, sasaran jamak)",
+    "De ____ publica dicimus. (res, dengan/di)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Kami akan tinggal lima hari.",
+    "Pada musim panas terlalu gerah.",
+    "Tangan saya dingin.",
+    "Harapan saya besar.",
+    "Pada hari ketiga kami pulang.",
+    "Kami berbicara tentang republik."
+   ]
+  }
+ ],
+ "answers": [
+  "manus, IV — diei, V — horti, II — rei, V — fructus, IV — spei, V",
+  "Duas horas — Hieme — Quinque dies — Hora prima — Multos annos — Nocte",
+  "Manus — rei — dies — exercitu — Fructus — re",
+  "Quinque dies manebimus. — Aestate nimis calidum est. — Manus meae frigidae sunt. — Spes mea magna est. — Tertio die domum redimus. — De re publica dicimus."
+ ]
+}

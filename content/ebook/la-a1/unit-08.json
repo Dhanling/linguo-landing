@@ -1,0 +1,678 @@
+{
+ "title": "Berapa banyak, jam berapa",
+ "title_target": "Quot? Quota hora est?",
+ "goal": "Menghitung sampai seribu, memakai angka urutan, menyebut umur dan jam dengan cara Romawi, dan membaca angka Romawi di gedung dan buku.",
+ "bekal": [
+  "menghitung sampai seratus dan menulisnya dengan angka Romawi",
+  "menjawab *quot annos habes?* dengan benar",
+  "menyebut jam dengan *hora* dan angka urutan"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — In taberna Publii",
+   "intro": "Di kedai gandum milik Publius. Quintus tidak pernah membayar harga pertama.",
+   "lines": [
+    {
+     "speaker": "Publius:",
+     "text": "Salve, Quinte! Quid hodie emis?",
+     "id": "Halo, Quintus! Hari ini mau beli apa?",
+     "literal": "sehat-lah, Quintus-panggil! apa hari-ini beli-kamu?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Frumentum emo. Quot modii in taberna sunt?",
+     "id": "Saya mau beli gandum. Ada berapa takar di kedai?",
+     "literal": "gandum-sasaran beli-saya. berapa takar-jamak di kedai-di adalah-mereka?"
+    },
+    {
+     "speaker": "Publius:",
+     "text": "Viginti modii sunt. Et boni sunt!",
+     "id": "Ada dua puluh takar. Dan bagus-bagus!",
+     "literal": "dua-puluh takar-jamak adalah-mereka. dan baik-jamak adalah-mereka!"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Bene. Quot denarios postulas?",
+     "id": "Bagus. Kamu minta berapa dinar?",
+     "literal": "baik. berapa dinar-jamak-sasaran minta-kamu?"
+    },
+    {
+     "speaker": "Publius:",
+     "text": "Decem denarios. Pretium bonum est!",
+     "id": "Sepuluh dinar. Itu harga bagus!",
+     "literal": "sepuluh dinar-jamak-sasaran. harga baik-netral adalah-dia!"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Decem? Nimium est! Octo do.",
+     "id": "Sepuluh? Kemahalan! Saya kasih delapan.",
+     "literal": "sepuluh? terlalu-banyak adalah-dia! delapan beri-saya."
+    },
+    {
+     "speaker": "Publius:",
+     "text": "Octo? Novem, et frumentum tuum est.",
+     "id": "Delapan? Sembilan, dan gandumnya jadi milikmu.",
+     "literal": "delapan? sembilan, dan gandum milik-kamu-netral adalah-dia."
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Novem. Bene! Ecce pecunia.",
+     "id": "Sembilan. Baiklah! Ini uangnya.",
+     "literal": "sembilan. baik! lihat uang."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Pater, quota hora est?",
+     "id": "Yah, sekarang jam berapa?",
+     "literal": "ayah-panggil, keberapa jam adalah-dia?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Hora quinta est. Cena hora nona est.",
+     "id": "Jam kelima. Makan malamnya jam kesembilan.",
+     "literal": "jam kelima adalah-dia. makan-malam jam kesembilan-dengan adalah-dia."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Quattuor horae! Esurio iam nunc!",
+     "id": "Empat jam lagi! Saya sudah lapar sekarang!",
+     "literal": "empat jam-jamak! lapar-saya sudah sekarang!"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Patientia, fili! Quot annos habes? Tredecim — iam vir es.",
+     "id": "Sabar, Nak! Umurmu berapa? Tiga belas — sudah lelaki kamu.",
+     "literal": "kesabaran, anak-lelaki-panggil! berapa tahun-jamak-sasaran punya-kamu? tiga-belas — sudah lelaki adalah-kamu."
+    }
+   ],
+   "notes": [
+    "**Quot annos habes? — umur itu \"dimiliki\".** Harfiahnya \"berapa tahun kamu punya?\", dan jawabannya *… annos habeo*. Bahasa Spanyol, Prancis, dan Italia mewarisi cara ini dari bahasa Latin; bahasa Indonesia justru memakai \"berumur\". Ada cara kedua yang juga sering muncul di batu nisan: *annos tredecim natus* — \"terlahir tiga belas tahun\".",
+    "**Hora quinta bukan pukul lima pagi.** Orang Romawi membagi waktu antara matahari terbit dan matahari terbenam menjadi dua belas jam yang sama panjang. Karena panjang siang berubah menurut musim, satu *hora* di bulan Juni lebih panjang daripada di bulan Desember. *Hora prima* dimulai saat matahari terbit, jadi *hora quinta* jatuh sekitar pukul sepuluh atau sebelas pagi.",
+    "**Quota hora est? — angka urutan, bukan angka biasa.** Orang Romawi tidak bertanya \"jam berapa\" dengan angka hitung, melainkan dengan angka urutan: \"jam keberapa?\". Jawabannya juga urutan: *hora prima, secunda, tertia*. Kebiasaan ini masih hidup di jam gereja dan di penomoran abad.",
+    "**Denarius, modius — satuan yang sebaiknya dibiarkan.** *Denarius* adalah koin perak yang kira-kira sepadan dengan upah sehari seorang buruh; *modius* adalah takaran gandum kira-kira delapan sampai sembilan liter. Kata *denarius* masih hidup sebagai *dinar*."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menghitung sampai seribu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kabar baik untuk pemula: kecuali tiga angka pertama dan ratusan mulai dari dua ratus, semua angka hitung bahasa Latin **tidak berubah bentuk sama sekali**. Kamu cukup menghafal bunyinya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Latin",
+      "Cara baca",
+      "Angka",
+      "Latin",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "1",
+       "unus",
+       "U-nus",
+       "11",
+       "undecim",
+       "UN-de-kim"
+      ],
+      [
+       "2",
+       "duo",
+       "DU-o",
+       "12",
+       "duodecim",
+       "du-O-de-kim"
+      ],
+      [
+       "3",
+       "tres",
+       "TRES",
+       "13",
+       "tredecim",
+       "TRE-de-kim"
+      ],
+      [
+       "4",
+       "quattuor",
+       "KWAT-tu-or",
+       "14",
+       "quattuordecim",
+       "kwat-tu-OR-de-kim"
+      ],
+      [
+       "5",
+       "quinque",
+       "KWIN-kwe",
+       "15",
+       "quindecim",
+       "KWIN-de-kim"
+      ],
+      [
+       "6",
+       "sex",
+       "SEKS",
+       "16",
+       "sedecim",
+       "SE-de-kim"
+      ],
+      [
+       "7",
+       "septem",
+       "SEP-tem",
+       "17",
+       "septendecim",
+       "sep-TEN-de-kim"
+      ],
+      [
+       "8",
+       "octo",
+       "OK-to",
+       "18",
+       "duodeviginti",
+       "du-o-de-wi-GIN-ti"
+      ],
+      [
+       "9",
+       "novem",
+       "NO-wem",
+       "19",
+       "undeviginti",
+       "un-de-wi-GIN-ti"
+      ],
+      [
+       "10",
+       "decem",
+       "DE-kem",
+       "20",
+       "viginti",
+       "wi-GIN-ti"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan 18 dan 19. Bahasa Latin menghitungnya mundur dari dua puluh: *duodeviginti* berarti \"dua diambil dari dua puluh\", *undeviginti* berarti \"satu diambil dari dua puluh\". Pola ini berulang di tiap puluhan: 28 adalah *duodetriginta*, 29 adalah *undetriginta*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Latin",
+      "Angka",
+      "Latin"
+     ],
+     "rows": [
+      [
+       "30",
+       "triginta",
+       "80",
+       "octoginta"
+      ],
+      [
+       "40",
+       "quadraginta",
+       "90",
+       "nonaginta"
+      ],
+      [
+       "50",
+       "quinquaginta",
+       "100",
+       "centum"
+      ],
+      [
+       "60",
+       "sexaginta",
+       "200",
+       "ducenti"
+      ],
+      [
+       "70",
+       "septuaginta",
+       "1000",
+       "mille"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Angka gabungan disusun besar-dulu dengan *et* di tengah, atau kecil-dulu tanpa *et*: 21 boleh *viginti unus* atau *unus et viginti*. Keduanya benar dan sama-sama sering."
+    }
+   ]
+  },
+  {
+   "title": "Tiga angka yang berubah bentuk, dan angka urutan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hanya *unus*, *duo*, dan *tres* yang ikut berganti baju seperti kata sifat. Sisanya diam saja, bahkan waktu kata bendanya berubah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "satu (lelaki, perempuan, netral)",
+      "dua",
+      "tiga"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "unus, una, unum",
+       "duo, duae, duo",
+       "tres, tres, tria"
+      ],
+      [
+       "sasaran",
+       "unum, unam, unum",
+       "duos, duas, duo",
+       "tres, tres, tria"
+      ],
+      [
+       "punya",
+       "unius",
+       "duorum, duarum",
+       "trium"
+      ],
+      [
+       "dengan/di",
+       "uno, una, uno",
+       "duobus, duabus",
+       "tribus"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Contohnya: *unus amicus* (satu teman), *unam epistulam scribo* (saya menulis satu surat), *cum duabus puellis* (bersama dua gadis), *tria templa* (tiga kuil). Mulai dari empat, tidak ada lagi yang berubah: *quattuor puellas video*, *cum quattuor amicis*."
+    },
+    {
+     "type": "sub",
+     "text": "Angka urutan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Urutan",
+      "Latin",
+      "Urutan",
+      "Latin"
+     ],
+     "rows": [
+      [
+       "ke-1",
+       "primus, prima, primum",
+       "ke-7",
+       "septimus"
+      ],
+      [
+       "ke-2",
+       "secundus",
+       "ke-8",
+       "octavus"
+      ],
+      [
+       "ke-3",
+       "tertius",
+       "ke-9",
+       "nonus"
+      ],
+      [
+       "ke-4",
+       "quartus",
+       "ke-10",
+       "decimus"
+      ],
+      [
+       "ke-5",
+       "quintus",
+       "ke-100",
+       "centesimus"
+      ],
+      [
+       "ke-6",
+       "sextus",
+       "terakhir",
+       "ultimus"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Angka urutan berperilaku seperti kata sifat biasa dan berganti baju mengikuti kata bendanya: *hora prima*, *liber primus*, *bellum primum*. Nama-nama Romawi seperti Quintus dan Sextus memang berasal dari angka urutan — anak kelima dan anak keenam."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka Latin yang sudah kamu pakai",
+     "items": [
+      "*unus* → **uni**versitas, **uni**form, **uni**k. *duo* → **du**et, **du**a. *tres* → **tri**o, **tri**ple.",
+      "*quattuor* → **kuar**tet, **kuar**tal. *quinque* → **kuin**tet. *sex* → **seks**tet. *centum* → **sen**timeter, per**sen**.",
+      "*primus* → **prima**dona, **prim**er. *secundus* → **sekun**der, **sekon**. *ultimus* → **ultim**atum.",
+      "*mille* → **mil**iar, **mil**imeter, **mil**enium. Perhatikan bahwa *mille* berarti seribu, sedangkan *milia* berarti ribuan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Jam Romawi dan angka Romawi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Menyebut waktu dalam bahasa Latin memakai angka urutan bersama kata *hora*. Bentuk yang dipakai adalah bentuk dengan/di, karena waktu termasuk keterangan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Kira-kira membentang"
+     ],
+     "rows": [
+      [
+       "hora prima",
+       "jam pertama",
+       "06.00–07.00 — mulai matahari terbit"
+      ],
+      [
+       "hora tertia",
+       "jam ketiga",
+       "08.00–09.00"
+      ],
+      [
+       "hora sexta",
+       "jam keenam",
+       "11.00–12.00 — berakhir di tengah hari"
+      ],
+      [
+       "hora nona",
+       "jam kesembilan",
+       "14.00–15.00"
+      ],
+      [
+       "hora duodecima",
+       "jam kedua belas",
+       "17.00–18.00 — sampai matahari terbenam"
+      ],
+      [
+       "media nocte",
+       "tengah malam",
+       "00.00"
+      ],
+      [
+       "mane",
+       "pagi hari",
+       "—"
+      ],
+      [
+       "vespere",
+       "petang",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Hora sexta* adalah tengah hari, dan dari kata itulah bahasa Spanyol mendapat *siesta* — tidur siang di jam keenam. *Hora nona* melahirkan kata Inggris *noon*, walaupun artinya bergeser tiga jam sepanjang Abad Pertengahan."
+    },
+    {
+     "type": "sub",
+     "text": "Angka Romawi"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tanda",
+      "Nilai",
+      "Tanda",
+      "Nilai"
+     ],
+     "rows": [
+      [
+       "I",
+       "1",
+       "C",
+       "100"
+      ],
+      [
+       "V",
+       "5",
+       "D",
+       "500"
+      ],
+      [
+       "X",
+       "10",
+       "M",
+       "1000"
+      ],
+      [
+       "L",
+       "50",
+       "",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca angka Romawi",
+     "items": [
+      "Tanda yang lebih kecil **sesudah** yang besar ditambahkan: VI = 6, XII = 12, LX = 60.",
+      "Tanda yang lebih kecil **sebelum** yang besar dikurangkan: IV = 4, IX = 9, XL = 40, XC = 90, CM = 900.",
+      "Orang Romawi sendiri sering menulis IIII, bukan IV — lihat jam-jam tua yang masih memakainya. Aturan pengurangan baru menjadi baku jauh sesudah zaman Romawi.",
+      "Latihan: MCMXLV = 1945; MMXXVI = 2026; XIX = 19; XLIV = 44."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "unus, duo, tres",
+   "baca": "U-nus, DU-o, TRES",
+   "id": "satu, dua, tiga"
+  },
+  {
+   "la": "quattuor, quinque",
+   "baca": "KWAT-tu-or, KWIN-kwe",
+   "id": "empat, lima"
+  },
+  {
+   "la": "sex, septem, octo",
+   "baca": "SEKS, SEP-tem, OK-to",
+   "id": "enam, tujuh, delapan"
+  },
+  {
+   "la": "novem, decem",
+   "baca": "NO-wem, DE-kem",
+   "id": "sembilan, sepuluh"
+  },
+  {
+   "la": "viginti",
+   "baca": "wi-GIN-ti",
+   "id": "dua puluh"
+  },
+  {
+   "la": "centum",
+   "baca": "KEN-tum",
+   "id": "seratus"
+  },
+  {
+   "la": "mille",
+   "baca": "MIL-le",
+   "id": "seribu"
+  },
+  {
+   "la": "primus, secundus",
+   "baca": "PRI-mus, se-KUN-dus",
+   "id": "pertama, kedua"
+  },
+  {
+   "la": "tertius, quartus",
+   "baca": "TER-ti-us, KWAR-tus",
+   "id": "ketiga, keempat"
+  },
+  {
+   "la": "ultimus",
+   "baca": "UL-ti-mus",
+   "id": "terakhir"
+  },
+  {
+   "la": "quot?",
+   "baca": "KWOT",
+   "id": "berapa banyak?"
+  },
+  {
+   "la": "quota hora est?",
+   "baca": "KWO-ta HO-ra EST",
+   "id": "jam berapa sekarang?"
+  },
+  {
+   "la": "hora, horae",
+   "baca": "HO-ra",
+   "id": "jam"
+  },
+  {
+   "la": "annus, anni",
+   "baca": "AN-nus",
+   "id": "tahun"
+  },
+  {
+   "la": "dies",
+   "baca": "DI-es",
+   "id": "hari"
+  },
+  {
+   "la": "nox, noctis",
+   "baca": "NOKS",
+   "id": "malam"
+  },
+  {
+   "la": "mane",
+   "baca": "MA-ne",
+   "id": "pagi hari"
+  },
+  {
+   "la": "vespere",
+   "baca": "WES-pe-re",
+   "id": "petang"
+  },
+  {
+   "la": "emo, emere",
+   "baca": "E-mo",
+   "id": "membeli"
+  },
+  {
+   "la": "vendo, vendere",
+   "baca": "WEN-do",
+   "id": "menjual"
+  },
+  {
+   "la": "postulo, postulare",
+   "baca": "POS-tu-lo",
+   "id": "menuntut, meminta"
+  },
+  {
+   "la": "do, dare",
+   "baca": "DO, DA-re",
+   "id": "memberi"
+  },
+  {
+   "la": "esurio, esurire",
+   "baca": "e-SU-ri-o",
+   "id": "lapar"
+  },
+  {
+   "la": "denarius, denarii",
+   "baca": "de-NA-ri-us",
+   "id": "dinar, koin perak"
+  },
+  {
+   "la": "modius, modii",
+   "baca": "MO-di-us",
+   "id": "takaran gandum"
+  },
+  {
+   "la": "pecunia, pecuniae",
+   "baca": "pe-KU-ni-a",
+   "id": "uang"
+  },
+  {
+   "la": "nimium",
+   "baca": "NI-mi-um",
+   "id": "terlalu banyak"
+  },
+  {
+   "la": "patientia, patientiae",
+   "baca": "pa-ti-EN-ti-a",
+   "id": "kesabaran"
+  },
+  {
+   "la": "iam",
+   "baca": "YAM",
+   "id": "sudah, kini"
+  },
+  {
+   "la": "mensis, mensis",
+   "baca": "MEN-sis",
+   "id": "bulan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis angkanya dengan huruf Latin.",
+   "items": [
+    "7",
+    "12",
+    "19",
+    "20",
+    "40",
+    "100"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan angka Romawi ini menjadi angka biasa.",
+   "items": [
+    "XIV",
+    "XL",
+    "LXXVII",
+    "XCIX",
+    "MCMXCV",
+    "MMXXVI"
+   ]
+  },
+  {
+   "prompt": "Pilih bentuk angka yang benar.",
+   "items": [
+    "____ amicus venit. (satu)",
+    "____ puellae cantant. (dua)",
+    "____ templa spectamus. (tiga)",
+    "Cum ____ amicis ambulo. (dua)",
+    "____ libros lego. (empat)",
+    "Hora ____ est. (kelima)"
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Umur saya dua puluh tahun.",
+    "Sekarang jam ketiga.",
+    "Saya membeli sepuluh buku.",
+    "Kami menunggu dua jam.",
+    "Buku pertama itu panjang.",
+    "Kamu minta berapa dinar?"
+   ]
+  }
+ ],
+ "answers": [
+  "septem — duodecim — undeviginti — viginti — quadraginta — centum",
+  "14 — 40 — 77 — 99 — 1995 — 2026",
+  "Unus — Duae — Tria — duobus — Quattuor — quinta",
+  "Viginti annos habeo. — Hora tertia est. — Decem libros emo. — Duas horas exspectamus. — Liber primus longus est. — Quot denarios postulas?"
+ ]
+}

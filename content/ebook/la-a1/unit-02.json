@@ -1,0 +1,613 @@
+{
+ "title": "Kata pun punya jenis kelamin",
+ "title_target": "Quis es et qualis es?",
+ "goal": "Mengenali tiga jenis kata benda Latin, memakai dua kelompok akhiran yang paling sering, dan mencocokkan kata sifat dengan kata bendanya.",
+ "bekal": [
+  "menebak jenis sebuah kata benda dari ekornya",
+  "memasangkan *bonus*, *bona*, atau *bonum* pada kata benda yang tepat",
+  "menggambarkan orang dan barang dengan kata sifat yang paling sering dipakai"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Schola et hortus",
+   "intro": "Marcus mengajak Lydia berkeliling. Semua yang mereka tunjuk berhenti di bentuk pelaku, jadi kamu bisa memusatkan perhatian pada ekornya.",
+   "lines": [
+    {
+     "speaker": "Marcus:",
+     "text": "Ecce schola! Parva est, sed pulchra.",
+     "id": "Ini sekolahnya! Kecil, tapi bagus.",
+     "literal": "lihat sekolah! kecil-perempuan adalah-dia, tapi cantik-perempuan."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Ita, pulchra est. Et hortus magnus est.",
+     "id": "Iya, bagus. Dan kebunnya besar.",
+     "literal": "ya, cantik-perempuan adalah-dia. dan kebun besar-lelaki adalah-dia."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Et ecce tabula. Tabula nigra et lata est.",
+     "id": "Dan itu papannya. Papannya hitam dan lebar.",
+     "literal": "dan lihat papan. papan hitam-perempuan dan lebar-perempuan adalah-dia."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Quid est ibi? Liberne est?",
+     "id": "Yang di sana apa? Buku, ya?",
+     "literal": "apa adalah-dia di-sana? buku-kah adalah-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ita, liber est. Liber longus est, sed bonus.",
+     "id": "Iya, buku. Bukunya tebal, tapi bagus.",
+     "literal": "ya, buku adalah-dia. buku panjang-lelaki adalah-dia, tapi baik-lelaki."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Et ibi? Templumne est?",
+     "id": "Dan yang di sana? Kuil, ya?",
+     "literal": "dan di-sana? kuil-kah adalah-dia?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ita. Templum antiquum et altum est.",
+     "id": "Iya. Kuil itu tua dan tinggi.",
+     "literal": "ya. kuil tua-netral dan tinggi-netral adalah-dia."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Quis est puella parva?",
+     "id": "Anak perempuan yang kecil itu siapa?",
+     "literal": "siapa adalah-dia gadis kecil-perempuan?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Iulia est, amica mea. Puella laeta et benigna est.",
+     "id": "Itu Iulia, teman saya. Anaknya ceria dan baik hati.",
+     "literal": "Iulia adalah-dia, teman-perempuan milik-saya-perempuan. gadis senang-perempuan dan ramah-perempuan adalah-dia."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Et puer? Quis est puer?",
+     "id": "Dan anak laki-laki itu? Siapa?",
+     "literal": "dan anak-lelaki? siapa adalah-dia anak-lelaki?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Sextus est, amicus meus. Bonus est, sed piger.",
+     "id": "Itu Sextus, teman saya. Dia baik, tapi malas.",
+     "literal": "Sextus adalah-dia, teman-lelaki milik-saya-lelaki. baik-lelaki adalah-dia, tapi malas-lelaki."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Schola bona est, Marce. Laeta sum!",
+     "id": "Sekolahnya bagus, Marcus. Saya senang!",
+     "literal": "sekolah baik-perempuan adalah-dia, Marcus-panggil. senang-perempuan adalah-saya!"
+    }
+   ],
+   "notes": [
+    "**Setiap kata benda Latin punya jenis, dan jenis itu bukan soal biologi.** *Schola* (sekolah) berjenis perempuan, *hortus* (kebun) berjenis lelaki, *templum* (kuil) berjenis netral — padahal ketiganya benda mati. Yang menentukan bukan wujudnya, melainkan kelompok akhirannya. Jangan mencari alasan; hafalkan kata bersama ekornya, seperti orang menghafal *the* dan *a* dalam bahasa Inggris.",
+    "**Kata sifat berganti baju mengikuti kata bendanya.** Perhatikan satu kata yang muncul tiga kali dengan tiga wajah: *pulchra* (untuk *schola*), *bonus* (untuk *Sextus*), *antiquum* (untuk *templum*). Ketiganya kata yang sama; yang berubah cuma ekornya supaya cocok dengan yang disifati. Ini aturan tunggal yang paling sering dipakai dalam seluruh bahasa Latin.",
+    "**Kata sifat biasanya berdiri di belakang.** *Puella parva*, *templum antiquum*, *hortus magnus* — susunannya kebalikan dari bahasa Inggris dan justru sama dengan bahasa Indonesia: \"gadis kecil\", \"kuil tua\". Kalau kata sifat ditaruh di depan, ia jadi menonjol, seperti kita mengatakan \"si kecil itu\".",
+    "**Liber punya dua nyawa.** *Liber* dengan ekor *-er* berarti \"buku\"; *liber, libera, liberum* berarti \"bebas\". Keduanya kata yang berbeda dengan tulisan yang mirip, dan keduanya masih hidup di dalam bahasa Indonesia: *libretto* dan *liberal*. Kalau ragu, lihat apa ia dipakai sebagai barang atau sebagai sifat."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga jenis, dua kelompok akhiran",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata benda Latin dibagi ke dalam lima kelompok akhiran yang disebut deklinasi. Dua kelompok pertama saja sudah menutupi lebih dari separuh kata yang akan kamu temui, dan keduanya gampang dikenali dari bentuk kamusnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kelompok",
+      "Ekor bentuk pelaku",
+      "Jenis",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "deklinasi I",
+       "**-a**",
+       "hampir selalu perempuan",
+       "puella, schola, tabula, villa, aqua, fabula"
+      ],
+      [
+       "deklinasi II",
+       "**-us**",
+       "hampir selalu lelaki",
+       "hortus, amicus, dominus, servus, liber*"
+      ],
+      [
+       "deklinasi II",
+       "**-um**",
+       "selalu netral",
+       "templum, oppidum, verbum, donum, forum"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Beberapa kata deklinasi II berjenis lelaki tidak berakhir *-us*, melainkan *-er* atau *-ir*: *puer* (anak lelaki), *magister* (guru), *ager* (ladang), *liber* (buku), *vir* (lelaki). Semua sisanya berperilaku sama persis seperti *hortus*, jadi ini cuma soal satu bentuk yang harus diingat."
+    },
+    {
+     "type": "sub",
+     "text": "Kecuali yang wajib diketahui sejak awal"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Ekornya",
+      "Tetapi jenisnya",
+      "Sebabnya"
+     ],
+     "rows": [
+      [
+       "nauta",
+       "-a",
+       "lelaki",
+       "artinya \"pelaut\" — pekerjaan lelaki di dunia Romawi"
+      ],
+      [
+       "poeta",
+       "-a",
+       "lelaki",
+       "artinya \"penyair\""
+      ],
+      [
+       "agricola",
+       "-a",
+       "lelaki",
+       "artinya \"petani\""
+      ],
+      [
+       "humus",
+       "-us",
+       "perempuan",
+       "artinya \"tanah\""
+      ],
+      [
+       "pirata",
+       "-a",
+       "lelaki",
+       "artinya \"bajak laut\""
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata-kata itu tetap memakai ekor deklinasi I, tetapi kata sifatnya harus berbentuk lelaki: *nauta bonus*, bukan *nauta bona*. Jumlahnya sedikit, dan hampir semuanya nama pekerjaan."
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat: satu kata, tiga baju",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata sifat Latin ditulis di kamus dengan tiga bentuk sekaligus: *bonus, bona, bonum*. Ketiganya bukan tiga kata, melainkan satu kata dengan tiga baju: baju lelaki, baju perempuan, baju netral. Kamu memilih bajunya sesuai kata benda yang disifati."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata benda",
+      "Jenisnya",
+      "Kata sifat yang dipakai",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "amicus",
+       "lelaki",
+       "amicus **bonus**",
+       "teman yang baik"
+      ],
+      [
+       "puella",
+       "perempuan",
+       "puella **bona**",
+       "gadis yang baik"
+      ],
+      [
+       "templum",
+       "netral",
+       "templum **bonum**",
+       "kuil yang bagus"
+      ],
+      [
+       "hortus",
+       "lelaki",
+       "hortus **magnus**",
+       "kebun yang besar"
+      ],
+      [
+       "villa",
+       "perempuan",
+       "villa **magna**",
+       "rumah yang besar"
+      ],
+      [
+       "oppidum",
+       "netral",
+       "oppidum **magnum**",
+       "kota yang besar"
+      ],
+      [
+       "nauta",
+       "lelaki (walau berekor -a)",
+       "nauta **bonus**",
+       "pelaut yang baik"
+      ],
+      [
+       "puer",
+       "lelaki (tanpa -us)",
+       "puer **bonus**",
+       "anak lelaki yang baik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua baris terakhir adalah ujian sesungguhnya. Kata sifat tidak meniru **ekor** kata bendanya; ia mengikuti **jenisnya**. *Nauta* berekor *-a* tetapi berjenis lelaki, jadi kata sifatnya *bonus*. *Puer* tidak punya ekor *-us* tetapi berjenis lelaki, jadi kata sifatnya juga *bonus*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kesalahan yang khas penutur bahasa Indonesia",
+     "items": [
+      "Menyamakan ekor kata sifat dengan ekor kata bendanya. *Nauta bona* salah; yang benar *nauta bonus*. Cocokkan **jenis**, bukan huruf.",
+      "Lupa bahwa kata sifat juga berubah waktu berdiri sendiri sesudah *est*: *Schola pulchra est*, bukan *Schola pulcher est*.",
+      "Menerjemahkan \"yang\" secara harfiah. *Puella bona* sudah berarti \"gadis yang baik\"; tidak ada kata tambahan yang perlu disisipkan.",
+      "Mengira urutan kata menentukan arti. *Bona puella* dan *puella bona* sama-sama benar dan sama artinya — yang pertama sekadar menekankan sifatnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat pertama yang paling berguna",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir semua kata sifat di bawah ini memakai pola *bonus, bona, bonum*, jadi begitu kamu hafal satu, kamu bisa memakai semuanya. Di daftar ini hanya bentuk lelakinya yang ditulis."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Lawannya",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "magnus",
+       "besar",
+       "parvus",
+       "kecil"
+      ],
+      [
+       "longus",
+       "panjang",
+       "—",
+       "(pendek: *brevis*, kelompok lain)"
+      ],
+      [
+       "latus",
+       "lebar",
+       "angustus",
+       "sempit"
+      ],
+      [
+       "altus",
+       "tinggi, dalam",
+       "—",
+       "(rendah: *humilis*, kelompok lain)"
+      ],
+      [
+       "bonus",
+       "baik",
+       "malus",
+       "buruk, jahat"
+      ],
+      [
+       "novus",
+       "baru",
+       "antiquus",
+       "kuno, tua"
+      ],
+      [
+       "pulcher",
+       "cantik, tampan",
+       "foedus",
+       "buruk rupa"
+      ],
+      [
+       "albus",
+       "putih",
+       "niger",
+       "hitam"
+      ],
+      [
+       "clarus",
+       "terang, terkenal",
+       "obscurus",
+       "gelap, tak dikenal"
+      ],
+      [
+       "plenus",
+       "penuh",
+       "vacuus",
+       "kosong"
+      ],
+      [
+       "laetus",
+       "senang",
+       "iratus",
+       "marah"
+      ],
+      [
+       "strenuus",
+       "rajin",
+       "piger",
+       "malas"
+      ],
+      [
+       "doctus",
+       "terpelajar",
+       "indoctus",
+       "tak terpelajar"
+      ],
+      [
+       "benignus",
+       "ramah, murah hati",
+       "durus",
+       "keras, kejam"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *pulcher* dan *piger*: keduanya kehilangan huruf *e* begitu berganti baju — *pulcher, pulchra, pulchrum* dan *piger, pigra, pigrum*. Pola ini sama seperti *liber* (buku) yang bentuk lainnya *libri*. Kata sifat berekor *-er* memang begitu kelakuannya, dan jumlahnya sedikit."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "schola",
+   "baca": "SKO-la",
+   "id": "sekolah"
+  },
+  {
+   "la": "hortus",
+   "baca": "HOR-tus",
+   "id": "kebun, taman"
+  },
+  {
+   "la": "tabula",
+   "baca": "TA-bu-la",
+   "id": "papan tulis, papan"
+  },
+  {
+   "la": "liber",
+   "baca": "LI-ber",
+   "id": "buku"
+  },
+  {
+   "la": "villa",
+   "baca": "WIL-la",
+   "id": "rumah di luar kota, rumah pertanian"
+  },
+  {
+   "la": "ianua",
+   "baca": "YA-nu-a",
+   "id": "pintu"
+  },
+  {
+   "la": "fenestra",
+   "baca": "fe-NES-tra",
+   "id": "jendela"
+  },
+  {
+   "la": "templum",
+   "baca": "TEM-plum",
+   "id": "kuil"
+  },
+  {
+   "la": "forum",
+   "baca": "FO-rum",
+   "id": "alun-alun, pasar kota"
+  },
+  {
+   "la": "oppidum",
+   "baca": "OP-pi-dum",
+   "id": "kota"
+  },
+  {
+   "la": "verbum",
+   "baca": "WER-bum",
+   "id": "kata"
+  },
+  {
+   "la": "donum",
+   "baca": "DO-num",
+   "id": "hadiah"
+  },
+  {
+   "la": "puer",
+   "baca": "PU-er",
+   "id": "anak lelaki"
+  },
+  {
+   "la": "puella",
+   "baca": "pu-EL-la",
+   "id": "anak perempuan, gadis"
+  },
+  {
+   "la": "vir",
+   "baca": "WIR",
+   "id": "lelaki"
+  },
+  {
+   "la": "femina",
+   "baca": "FE-mi-na",
+   "id": "perempuan"
+  },
+  {
+   "la": "amicus, amica",
+   "baca": "a-MI-kus",
+   "id": "teman"
+  },
+  {
+   "la": "nauta",
+   "baca": "NAU-ta",
+   "id": "pelaut"
+  },
+  {
+   "la": "poeta",
+   "baca": "po-E-ta",
+   "id": "penyair"
+  },
+  {
+   "la": "agricola",
+   "baca": "a-GRI-ko-la",
+   "id": "petani"
+  },
+  {
+   "la": "magnus",
+   "baca": "MAG-nus",
+   "id": "besar"
+  },
+  {
+   "la": "parvus",
+   "baca": "PAR-wus",
+   "id": "kecil"
+  },
+  {
+   "la": "longus",
+   "baca": "LON-gus",
+   "id": "panjang"
+  },
+  {
+   "la": "latus",
+   "baca": "LA-tus",
+   "id": "lebar"
+  },
+  {
+   "la": "altus",
+   "baca": "AL-tus",
+   "id": "tinggi, dalam"
+  },
+  {
+   "la": "pulcher, pulchra",
+   "baca": "PUL-kher",
+   "id": "cantik, tampan, indah"
+  },
+  {
+   "la": "niger, nigra",
+   "baca": "NI-ger",
+   "id": "hitam"
+  },
+  {
+   "la": "albus",
+   "baca": "AL-bus",
+   "id": "putih"
+  },
+  {
+   "la": "antiquus",
+   "baca": "an-TI-kwus",
+   "id": "kuno, tua"
+  },
+  {
+   "la": "benignus",
+   "baca": "be-NIG-nus",
+   "id": "ramah, murah hati"
+  },
+  {
+   "la": "piger, pigra",
+   "baca": "PI-ger",
+   "id": "malas"
+  },
+  {
+   "la": "iratus",
+   "baca": "i-RA-tus",
+   "id": "marah"
+  },
+  {
+   "la": "ecce",
+   "baca": "EK-ke",
+   "id": "lihat! ini dia!"
+  },
+  {
+   "la": "ibi",
+   "baca": "I-bi",
+   "id": "di sana"
+  },
+  {
+   "la": "cur?",
+   "baca": "KUR",
+   "id": "kenapa?"
+  },
+  {
+   "la": "semper",
+   "baca": "SEM-per",
+   "id": "selalu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Tulis jenis kata benda ini: lelaki, perempuan, atau netral.",
+   "items": [
+    "hortus",
+    "puella",
+    "templum",
+    "nauta",
+    "verbum",
+    "puer"
+   ]
+  },
+  {
+   "prompt": "Pilih baju kata sifat yang benar (bonus, bona, atau bonum).",
+   "items": [
+    "amicus ____",
+    "schola ____",
+    "donum ____",
+    "poeta ____",
+    "villa ____",
+    "oppidum ____"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk magnus yang tepat.",
+   "items": [
+    "Hortus ____ est.",
+    "Tabula ____ est.",
+    "Templum ____ est.",
+    "Vir ____ est.",
+    "Fenestra ____ est.",
+    "Forum ____ est."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin. Taruh kata sifat sesudah kata bendanya.",
+   "items": [
+    "kebun yang besar",
+    "gadis yang senang",
+    "kuil yang tua",
+    "buku yang panjang",
+    "pelaut yang baik",
+    "kota yang kecil"
+   ]
+  }
+ ],
+ "answers": [
+  "lelaki — perempuan — netral — lelaki (walau berekor -a) — netral — lelaki",
+  "bonus — bona — bonum — bonus — bona — bonum",
+  "magnus — magna — magnum — magnus — magna — magnum",
+  "hortus magnus — puella laeta — templum antiquum — liber longus — nauta bonus — oppidum parvum"
+ ]
+}

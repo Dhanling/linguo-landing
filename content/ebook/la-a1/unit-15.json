@@ -1,0 +1,617 @@
+{
+ "title": "Dia, ini, itu, yang",
+ "title_target": "Is, hic, ille, qui",
+ "goal": "Menunjuk orang dan barang dengan tiga kata tunjuk, memakai kata ganti orang ketiga, dan menyambung dua kalimat dengan anak kalimat qui.",
+ "bekal": [
+  "membedakan *hic* (ini, dekat saya) dari *ille* (itu, jauh)",
+  "memakai *is, ea, id* sebagai \"dia\" dan \"-nya\"",
+  "menyusun anak kalimat *qui* dengan bentuk yang benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — In foro, ante tabernam",
+   "intro": "Keluarga Quintus berpapasan dengan orang-orang yang tidak semuanya mereka kenal.",
+   "lines": [
+    {
+     "speaker": "Cornelia:",
+     "text": "Quis est ille vir? Eum non novi.",
+     "id": "Lelaki itu siapa? Saya tidak kenal dia.",
+     "literal": "siapa adalah-dia itu-lelaki lelaki? dia-sasaran tidak kenal-saya-sudah."
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Ille est Publius, mercator. Eius taberna in foro est.",
+     "id": "Itu Publius, pedagang. Kedainya ada di alun-alun.",
+     "literal": "itu-lelaki adalah-dia Publius, pedagang. dia-punya kedai di alun-alun-di adalah-dia."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Et haec femina? Estne uxor eius?",
+     "id": "Dan perempuan ini? Istrinya?",
+     "literal": "dan ini-perempuan perempuan? adalah-kah istri dia-punya?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Ita. Haec est Flavia. Ea Graeca est.",
+     "id": "Iya. Ini Flavia. Dia orang Yunani.",
+     "literal": "ya. ini-perempuan adalah-dia Flavia. dia-perempuan Yunani-perempuan adalah-dia."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Pater, quis est puer qui cum eis ambulat?",
+     "id": "Yah, anak lelaki yang jalan sama mereka itu siapa?",
+     "literal": "ayah-panggil, siapa adalah-dia anak-lelaki yang dengan mereka-dengan jalan-dia?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Is est filius eorum. Nomen ei est Gaius.",
+     "id": "Itu anak mereka. Namanya Gaius.",
+     "literal": "dia-lelaki adalah-dia anak-lelaki mereka-punya. nama dia-kepada adalah-dia Gaius."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Gaius! Puer quem heri in schola vidi!",
+     "id": "Gaius! Anak yang kemarin saya lihat di sekolah!",
+     "literal": "Gaius! anak-lelaki yang-sasaran kemarin di sekolah-di lihat-saya-sudah!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Hic puer? Minime. Ille quem vidisti alius erat.",
+     "id": "Anak ini? Bukan. Yang kamu lihat itu anak lain.",
+     "literal": "ini-lelaki anak-lelaki? sama-sekali-tidak. itu-lelaki yang-sasaran lihat-kamu-sudah lain adalah-dia-dulu."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Ipsa vidi, Marce! Oculi mei boni sunt.",
+     "id": "Saya sendiri yang lihat, Marcus! Mata saya bagus.",
+     "literal": "sendiri-perempuan lihat-saya-sudah, Marcus-panggil! mata-jamak milik-saya-jamak baik-jamak adalah-mereka."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Eos ad cenam invitare debemus.",
+     "id": "Kita harus mengundang mereka makan malam.",
+     "literal": "mereka-sasaran ke makan-malam-sasaran undang harus-kami."
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Ita. Cena quam Cornelia parat optima est!",
+     "id": "Betul. Makan malam yang disiapkan Cornelia itu paling enak!",
+     "literal": "ya. makan-malam yang-sasaran Cornelia siapkan-dia paling-baik-perempuan adalah-dia!"
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Id verum est. Sed hodie tu cenam paras!",
+     "id": "Itu memang benar. Tapi hari ini kamu yang masak!",
+     "literal": "itu-netral benar-netral adalah-dia. tapi hari-ini kamu makan-malam-sasaran siapkan-kamu!"
+    }
+   ],
+   "notes": [
+    "**Hic, ille, is — tiga jarak yang berbeda.** *Hic* menunjuk yang dekat pembicara (\"ini\"), *ille* menunjuk yang jauh (\"itu, yang di sana\"), dan *is* menunjuk yang sudah disebut sebelumnya (\"dia, yang itu tadi\"). Bahasa Indonesia memakai \"ini\", \"itu\", dan \"-nya\" untuk perbedaan yang sama.",
+    "**Eius berarti \"-nya\", milik orang lain.** Perhatikan *taberna eius* (\"kedainya\") dan *uxor eius* (\"istrinya\"). *Eius* tidak pernah berganti baju — satu bentuk untuk lelaki, perempuan, dan netral. Ia berbeda dari *suus*, yang dipakai kalau pemiliknya adalah pelaku kalimat itu sendiri.",
+    "**Puer quem vidi — bentuk kata sambungnya ikut anak kalimatnya.** *Quem* berbentuk sasaran karena di dalam anak kalimat ia menjadi sasaran dari *vidi*. Jenis dan jumlahnya diambil dari *puer*, tetapi tugasnya diambil dari kalimatnya sendiri. Aturan dua sumber ini adalah inti seluruh unit.",
+    "**Ipsa vidi — \"saya sendiri yang melihat\".** *Ipse, ipsa, ipsum* berarti \"sendiri\" dan dipakai untuk menekankan. Iulia perempuan, jadi ia berkata *ipsa*. Dari kata ini datang ungkapan *ipso facto* — \"oleh perbuatan itu sendiri\"."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga kata tunjuk",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ketiganya berganti baju seperti kata sifat, tetapi memakai dua ekor khusus yang sama: bentuk punya berakhir *-ius* dan bentuk kepada berakhir *-i*. Hafalkan dua ekor itu sekali, lalu ketiganya jadi mudah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "is, ea, id (dia, yang tadi)",
+      "hic, haec, hoc (ini)",
+      "ille, illa, illud (itu)"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "is / ea / id",
+       "hic / haec / hoc",
+       "ille / illa / illud"
+      ],
+      [
+       "sasaran",
+       "eum / eam / id",
+       "hunc / hanc / hoc",
+       "illum / illam / illud"
+      ],
+      [
+       "punya",
+       "eius",
+       "huius",
+       "illius"
+      ],
+      [
+       "kepada",
+       "ei",
+       "huic",
+       "illi"
+      ],
+      [
+       "dengan/di",
+       "eo / ea / eo",
+       "hoc / hac / hoc",
+       "illo / illa / illo"
+      ],
+      [
+       "pelaku jamak",
+       "ei / eae / ea",
+       "hi / hae / haec",
+       "illi / illae / illa"
+      ],
+      [
+       "sasaran jamak",
+       "eos / eas / ea",
+       "hos / has / haec",
+       "illos / illas / illa"
+      ],
+      [
+       "punya jamak",
+       "eorum / earum",
+       "horum / harum",
+       "illorum / illarum"
+      ],
+      [
+       "kepada, dengan/di jamak",
+       "eis",
+       "his",
+       "illis"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ketiganya bisa berdiri sendiri (\"itu\", \"dia\") atau menempel pada kata benda (\"lelaki itu\"). *Ille vir* berarti \"lelaki itu\"; *ille* sendirian berarti \"dia yang di sana\". Tidak ada perbedaan bentuk antara keduanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Jejak ketiganya di bahasa-bahasa sekarang",
+     "items": [
+      "*ille* melahirkan kata sandang bahasa Prancis *le*, Italia *il*, dan Spanyol *el*. Bahasa Latin tidak punya kata sandang; anak-anaknya membuatnya dari kata tunjuk ini.",
+      "*ipse* melahirkan *ipso facto* dan *ipse dixit* (\"ia sendiri yang bilang\").",
+      "*idem, eadem, idem* berarti \"yang sama\", dan masih dipakai di catatan kaki sebagai *ibid.* dan *id.*",
+      "*hic et nunc* — \"di sini dan sekarang\" — memakai *hic* dalam arti tempat, bukan arti \"ini\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sambung qui, quae, quod",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Anak kalimat \"yang …\" disambung dengan *qui*. Bentuknya diambil dari dua tempat sekaligus, dan inilah satu-satunya hal yang perlu dilatih."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "Lelaki",
+      "Perempuan",
+      "Netral"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "qui",
+       "quae",
+       "quod"
+      ],
+      [
+       "sasaran",
+       "quem",
+       "quam",
+       "quod"
+      ],
+      [
+       "punya",
+       "cuius",
+       "cuius",
+       "cuius"
+      ],
+      [
+       "kepada",
+       "cui",
+       "cui",
+       "cui"
+      ],
+      [
+       "dengan/di",
+       "quo",
+       "qua",
+       "quo"
+      ],
+      [
+       "pelaku jamak",
+       "qui",
+       "quae",
+       "quae"
+      ],
+      [
+       "sasaran jamak",
+       "quos",
+       "quas",
+       "quae"
+      ],
+      [
+       "punya jamak",
+       "quorum",
+       "quarum",
+       "quorum"
+      ],
+      [
+       "kepada, dengan/di jamak",
+       "quibus",
+       "quibus",
+       "quibus"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Aturan dua sumber"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Terjemahan",
+      "Kenapa bentuknya begitu"
+     ],
+     "rows": [
+      [
+       "Puer **qui** venit amicus meus est.",
+       "Anak yang datang itu teman saya.",
+       "lelaki tunggal dari *puer*; pelaku karena ia yang datang"
+      ],
+      [
+       "Puer **quem** vidi amicus meus est.",
+       "Anak yang saya lihat itu teman saya.",
+       "lelaki tunggal dari *puer*; sasaran karena ia yang dilihat"
+      ],
+      [
+       "Puella **cuius** librum lego …",
+       "Gadis yang bukunya saya baca …",
+       "perempuan tunggal; punya karena bukunya"
+      ],
+      [
+       "Amicus **cui** epistulam misi …",
+       "Teman yang saya kirimi surat …",
+       "lelaki tunggal; kepada karena ia penerimanya"
+      ],
+      [
+       "Cena **quam** paras optima est.",
+       "Makan malam yang kamu siapkan paling enak.",
+       "perempuan tunggal dari *cena*; sasaran di anak kalimatnya"
+      ],
+      [
+       "Milites **qui** urbem servant fortes sunt.",
+       "Prajurit yang menjaga kota itu berani.",
+       "lelaki jamak; pelaku di anak kalimatnya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Cara memeriksanya: tutup anak kalimatnya, lalu tanyakan \"di dalam anak kalimat ini, dia berbuat atau dikenai perbuatan?\" Jawabannya menentukan bentuknya. Jenis dan jumlahnya cukup disalin dari kata yang diterangkan."
+    },
+    {
+     "type": "p",
+     "text": "*Qui* juga bisa berdiri tanpa kata yang diterangkan, dan berarti \"orang yang\": *qui vult, potest* — \"orang yang mau, bisa\". Bentuk netralnya berarti \"apa yang\": *quod dicis verum est* — \"apa yang kamu katakan itu benar\"."
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dengan kata ganti",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata tanya *quis* dan *quid* memakai tabel yang hampir sama dengan *qui*, dan sebagian bentuknya sudah kamu pakai sejak Unit 1."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tugas",
+      "Orang",
+      "Barang",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "pelaku",
+       "quis?",
+       "quid?",
+       "Quis venit? — Siapa yang datang?"
+      ],
+      [
+       "sasaran",
+       "quem?",
+       "quid?",
+       "Quem vides? — Kamu lihat siapa?"
+      ],
+      [
+       "punya",
+       "cuius?",
+       "cuius?",
+       "Cuius liber est? — Buku siapa ini?"
+      ],
+      [
+       "kepada",
+       "cui?",
+       "cui?",
+       "Cui scribis? — Kamu menulis untuk siapa?"
+      ],
+      [
+       "dengan/di",
+       "quo?",
+       "quo?",
+       "Cum quo ambulas? — Kamu jalan sama siapa?"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata tanya lain",
+      "Arti",
+      "Kata tanya lain",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ubi?",
+       "di mana?",
+       "unde?",
+       "dari mana?"
+      ],
+      [
+       "quo?",
+       "ke mana?",
+       "qua?",
+       "lewat mana?"
+      ],
+      [
+       "quando?",
+       "kapan?",
+       "quam diu?",
+       "berapa lama?"
+      ],
+      [
+       "cur?",
+       "kenapa?",
+       "quomodo?",
+       "bagaimana?"
+      ],
+      [
+       "quot?",
+       "berapa banyak?",
+       "quantus?",
+       "sebesar apa?"
+      ],
+      [
+       "qualis?",
+       "yang bagaimana?",
+       "uter?",
+       "yang mana dari dua?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa hampir semua kata tanya Latin dimulai dengan huruf *qu-*. Ini bukan kebetulan: bahasa Inggris punya pola yang sama dengan *wh-*, dan keduanya mewarisinya dari bahasa induk yang sama, ribuan tahun sebelum Roma berdiri."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "is, ea, id",
+   "baca": "IS, E-a, ID",
+   "id": "dia, itu (yang sudah disebut)"
+  },
+  {
+   "la": "hic, haec, hoc",
+   "baca": "HIK, HAIK, HOK",
+   "id": "ini"
+  },
+  {
+   "la": "ille, illa, illud",
+   "baca": "IL-le",
+   "id": "itu, yang di sana"
+  },
+  {
+   "la": "ipse, ipsa, ipsum",
+   "baca": "IP-se",
+   "id": "sendiri"
+  },
+  {
+   "la": "idem, eadem, idem",
+   "baca": "I-dem",
+   "id": "yang sama"
+  },
+  {
+   "la": "qui, quae, quod",
+   "baca": "KWI, KWAI, KWOD",
+   "id": "yang"
+  },
+  {
+   "la": "eius",
+   "baca": "E-yus",
+   "id": "-nya, miliknya"
+  },
+  {
+   "la": "eorum, earum",
+   "baca": "e-O-rum, e-A-rum",
+   "id": "milik mereka"
+  },
+  {
+   "la": "quando?",
+   "baca": "KWAN-do",
+   "id": "kapan?"
+  },
+  {
+   "la": "unde?",
+   "baca": "UN-de",
+   "id": "dari mana?"
+  },
+  {
+   "la": "quo?",
+   "baca": "KWO",
+   "id": "ke mana?"
+  },
+  {
+   "la": "quomodo?",
+   "baca": "KWO-mo-do",
+   "id": "bagaimana?"
+  },
+  {
+   "la": "qualis?",
+   "baca": "KWA-lis",
+   "id": "yang bagaimana?"
+  },
+  {
+   "la": "quantus?",
+   "baca": "KWAN-tus",
+   "id": "sebesar apa?"
+  },
+  {
+   "la": "alius, alia, aliud",
+   "baca": "A-li-us",
+   "id": "yang lain"
+  },
+  {
+   "la": "alter, altera, alterum",
+   "baca": "AL-ter",
+   "id": "yang satunya lagi"
+  },
+  {
+   "la": "nosco, noscere, novi",
+   "baca": "NOS-ko",
+   "id": "mengenal"
+  },
+  {
+   "la": "invito, invitare",
+   "baca": "IN-wi-to",
+   "id": "mengundang"
+  },
+  {
+   "la": "saluto, salutare",
+   "baca": "sa-LU-to",
+   "id": "menyapa"
+  },
+  {
+   "la": "Graecus, Graeca",
+   "baca": "GRAI-kus",
+   "id": "orang Yunani"
+  },
+  {
+   "la": "mercator, mercatoris",
+   "baca": "mer-KA-tor",
+   "id": "pedagang"
+  },
+  {
+   "la": "uxor, uxoris",
+   "baca": "UK-sor",
+   "id": "istri"
+  },
+  {
+   "la": "oculus, oculi",
+   "baca": "O-ku-lus",
+   "id": "mata"
+  },
+  {
+   "la": "auris, auris",
+   "baca": "AU-ris",
+   "id": "telinga"
+  },
+  {
+   "la": "manus, manus",
+   "baca": "MA-nus",
+   "id": "tangan"
+  },
+  {
+   "la": "amicitia, amicitiae",
+   "baca": "a-mi-KI-ti-a",
+   "id": "persahabatan"
+  },
+  {
+   "la": "veritas, veritatis",
+   "baca": "WE-ri-tas",
+   "id": "kebenaran"
+  },
+  {
+   "la": "hic et nunc",
+   "baca": "HIK et NUNK",
+   "id": "di sini dan sekarang"
+  },
+  {
+   "la": "ipso facto",
+   "baca": "IP-so FAK-to",
+   "id": "oleh perbuatan itu sendiri"
+  },
+  {
+   "la": "idem",
+   "baca": "I-dem",
+   "id": "hal yang sama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Pilih bentuk hic yang tepat untuk kata bendanya.",
+   "items": [
+    "____ puer (pelaku)",
+    "____ puella (pelaku)",
+    "____ templum (pelaku)",
+    "____ puerum (sasaran)",
+    "____ puellam (sasaran)",
+    "____ pueri (jamak, pelaku)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata bergaris bawah dengan bentuk is, ea, id yang tepat.",
+   "items": [
+    "Marcum video. (ganti Marcum)",
+    "Iuliae librum do. (ganti Iuliae)",
+    "Cum Sexto ambulo. (ganti Sexto)",
+    "Liber Marci est. (ganti Marci)",
+    "Pueros voco. (ganti Pueros)",
+    "Puellis fabulam narro. (ganti Puellis)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan bentuk qui yang tepat.",
+   "items": [
+    "Puer ____ venit amicus meus est.",
+    "Puella ____ vidi Lydia est.",
+    "Liber ____ lego longus est.",
+    "Amicus ____ epistulam misi Romae habitat.",
+    "Milites ____ urbem servant fortes sunt.",
+    "Femina ____ filius aeger est tristis est."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Lelaki itu pedagang.",
+    "Anak ini teman saya.",
+    "Saya tidak kenal dia.",
+    "Kedainya ada di alun-alun.",
+    "Anak yang saya lihat kemarin itu Gaius.",
+    "Apa yang kamu katakan itu benar."
+   ]
+  }
+ ],
+ "answers": [
+  "hic — haec — hoc — hunc — hanc — hi",
+  "eum — ei — eo — eius — eos — eis",
+  "qui — quam — quem — cui — qui — cuius",
+  "Ille vir mercator est. — Hic puer amicus meus est. — Eum non novi. — Taberna eius in foro est. — Puer quem heri vidi Gaius est. — Quod dicis verum est."
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "title": "Salam dari Roma",
+ "title_target": "Salve!",
+ "goal": "Menyapa dan berpamitan, menyebut nama dan sifat diri dengan kata kerja sum, bertanya ya/tidak dengan -ne, dan memanggil nama orang dengan bentuk yang benar.",
+ "bekal": [
+  "menyapa satu orang dan banyak orang, lalu berpamitan",
+  "mengatakan *saya … , kamu … , dia …* dengan enam bentuk kata kerja *sum*",
+  "membuat pertanyaan ya/tidak hanya dengan menempelkan *-ne*"
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — In schola",
+   "intro": "Hari pertama di sekolah kecil milik Titus. Marcus sudah lama belajar di sana; Lydia baru datang.",
+   "lines": [
+    {
+     "speaker": "Marcus:",
+     "text": "Salve! Marcus sum.",
+     "id": "Halo! Saya Marcus.",
+     "literal": "sehat-lah! Marcus adalah-saya."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Salve, Marce! Lydia sum.",
+     "id": "Halo, Marcus! Saya Lydia.",
+     "literal": "sehat-lah, Marcus-panggil! Lydia adalah-saya."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Esne Romana?",
+     "id": "Kamu orang Roma?",
+     "literal": "adalah-kamu-kah Roma-perempuan?"
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Ita, Romana sum. Et tu?",
+     "id": "Ya, saya orang Roma. Dan kamu?",
+     "literal": "ya, Roma-perempuan adalah-saya. dan kamu?"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Ego quoque Romanus sum. Discipulus sum.",
+     "id": "Saya juga orang Roma. Saya murid di sini.",
+     "literal": "saya juga Roma-lelaki adalah-saya. murid-lelaki adalah-saya."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Ego quoque discipula sum. Nova sum.",
+     "id": "Saya juga murid. Saya murid baru.",
+     "literal": "saya juga murid-perempuan adalah-saya. baru-perempuan adalah-saya."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Salvete, discipuli!",
+     "id": "Selamat pagi, murid-murid!",
+     "literal": "sehat-lah-kalian, murid-jamak-panggil!"
+    },
+    {
+     "speaker": "Marcus et Lydia:",
+     "text": "Salve, magister!",
+     "id": "Selamat pagi, Pak Guru!",
+     "literal": "sehat-lah, guru-panggil!"
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Esne tu Lydia? Nova discipula es.",
+     "id": "Kamu Lydia, ya? Kamu murid baru.",
+     "literal": "adalah-kamu-kah kamu Lydia? baru-perempuan murid-perempuan adalah-kamu."
+    },
+    {
+     "speaker": "Lydia:",
+     "text": "Ita, magister. Laeta sum, sed timida.",
+     "id": "Ya, Pak. Saya senang, tapi gugup.",
+     "literal": "ya, guru-panggil. senang-perempuan adalah-saya, tapi takut-perempuan."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Timida non es! Bona discipula es.",
+     "id": "Kamu tidak perlu gugup! Kamu murid yang baik.",
+     "literal": "takut-perempuan tidak adalah-kamu! baik-perempuan murid-perempuan adalah-kamu."
+    },
+    {
+     "speaker": "Titus:",
+     "text": "Nunc, discipuli: hodie fabula nova est. Fabulae bonae sunt!",
+     "id": "Nah, anak-anak: hari ini ada cerita baru. Cerita itu barang bagus!",
+     "literal": "sekarang, murid-jamak-panggil: hari-ini cerita baru adalah-dia. cerita-jamak baik-jamak adalah-mereka!"
+    }
+   ],
+   "notes": [
+    "**Salve berarti \"sehatlah\".** Orang Romawi tidak menyapa dengan \"selamat pagi\", melainkan dengan doa pendek: *salve* dari *salvus* (\"selamat, utuh\"), dan *vale* dari *valere* (\"sehat, kuat\"). Untuk satu orang: *salve* dan *vale*. Untuk lebih dari satu orang, tambahkan *-te*: *salvete*, *valete*. Titus menyapa dua murid sekaligus, jadi ia berkata *salvete*; kedua murid menjawab satu guru, jadi mereka berkata *salve*.",
+    "**Marce, bukan Marcus.** Waktu kamu memanggil seseorang, namanya berganti ekor. Nama yang berakhir *-us* memakai *-e*: *Marcus* menjadi *Marce*, *Quintus* menjadi *Quinte*. Nama perempuan tidak berubah: *Lydia* tetap *Lydia*. Bentuk ini disebut bentuk panggil, dan dalam terjemahan harfiah modul ini ditandai `-panggil`.",
+    "**Esne? — bertanya cukup dengan menempel.** Bahasa Latin tidak punya kata seperti \"apakah\". Untuk bertanya ya/tidak, ambil kata yang paling ingin kamu tanyakan, taruh di depan kalimat, lalu tempelkan *-ne* di ekornya: *es* → *esne*, *aeger* → *aegerne*, *Romana* → *Romanane*. Jawabnya *ita* (ya) atau *minime* (sama sekali tidak).",
+    "**Tidak ada kata untuk \"sebuah\" dan \"itu\".** *Fabula* bisa berarti \"cerita\", \"sebuah cerita\", atau \"cerita itu\" — bahasa Latin tidak punya kata sandang sama sekali, persis seperti bahasa Indonesia. Yang juga sering hilang adalah kata ganti: *sum* sudah berarti \"saya adalah\", jadi *ego* dipakai hanya kalau kamu ingin menekankan (\"**saya** juga\", seperti kata Marcus)."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja pertama: sum, \"adalah\"",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Sum* adalah kata kerja yang paling sering dipakai dalam bahasa Latin, dan sekaligus yang paling tak beraturan. Untungnya ia cuma enam bentuk, dan enam bentuk itu akan menemanimu sampai unit terakhir. Hafalkan bunyinya, bukan tabelnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Harfiah",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**sum**",
+       "adalah-saya",
+       "saya adalah"
+      ],
+      [
+       "**es**",
+       "adalah-kamu",
+       "kamu adalah"
+      ],
+      [
+       "**est**",
+       "adalah-dia",
+       "dia adalah, ia ada"
+      ],
+      [
+       "**sumus**",
+       "adalah-kami",
+       "kami adalah"
+      ],
+      [
+       "**estis**",
+       "adalah-kalian",
+       "kalian adalah"
+      ],
+      [
+       "**sunt**",
+       "adalah-mereka",
+       "mereka adalah, ada"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa keenam bentuk itu sudah memuat pelakunya di dalam ekornya. *Sum* bukan \"adalah\", melainkan \"saya adalah\". Karena itu kalimat Latin sering hanya dua kata: *Discipulus sum.* — \"Saya murid.\" Menambahkan *ego* tidak salah, tetapi terdengar seperti menekan suara: \"**Saya** murid.\""
+    },
+    {
+     "type": "p",
+     "text": "*Est* dan *sunt* punya tugas kedua: menyatakan keberadaan, seperti \"ada\" dalam bahasa Indonesia. *Fabula est.* bisa berarti \"Itu sebuah cerita\" atau \"Ada sebuah cerita\", tergantung isi kalimatnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja jatuh di ujung",
+     "items": [
+      "Susunan kalimat Latin yang paling wajar meletakkan kata kerja di **akhir**: *Marcus discipulus est.* Harfiahnya \"Marcus murid adalah-dia\".",
+      "Aturan ini tidak mengikat — penyair dan pembicara membolak-baliknya sesuka hati — tetapi selama modul ini, biasakan menulis kata kerja di belakang. Telingamu akan lebih cepat mengenali pola bacaan Latin nanti.",
+      "Yang satu-satunya benar-benar tetap: kata *non* selalu berdiri **tepat di depan** kata yang diingkarinya. *Non sum discipulus* (\"saya bukan murid\") berbeda rasa dari *Discipulus non sum*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Memanggil orang: bentuk panggil",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Latin punya bentuk khusus untuk nama orang yang sedang disapa. Bahasa Indonesia melakukannya dengan tanda koma dan nada suara; bahasa Latin melakukannya dengan mengganti ekor kata. Kabar baiknya: cuma satu kelompok kata yang benar-benar berubah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk biasa",
+      "Kalau dipanggil",
+      "Contoh kalimat"
+     ],
+     "rows": [
+      [
+       "Marcus",
+       "**Marce**",
+       "Salve, **Marce**!"
+      ],
+      [
+       "Quintus",
+       "**Quinte**",
+       "Vale, **Quinte**!"
+      ],
+      [
+       "magister",
+       "**magister** (tetap)",
+       "Salve, **magister**!"
+      ],
+      [
+       "Iulius",
+       "**Iuli**",
+       "Ubi es, **Iuli**?"
+      ],
+      [
+       "Lydia",
+       "**Lydia** (tetap)",
+       "Salve, **Lydia**!"
+      ],
+      [
+       "Cornelia",
+       "**Cornelia** (tetap)",
+       "Vale, **Cornelia**!"
+      ],
+      [
+       "discipuli (jamak)",
+       "**discipuli** (tetap)",
+       "Salvete, **discipuli**!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Jadi hanya kata berakhiran *-us* yang berganti menjadi *-e*, dan kata berakhiran *-ius* yang memendek menjadi *-i*. Semua yang lain memakai bentuk yang sama seperti biasa. Inilah satu-satunya tempat di seluruh bahasa Latin di mana bentuk panggil berbeda dari bentuk pelaku — di semua kata lain keduanya kembar."
+    },
+    {
+     "type": "kotak",
+     "title": "Kesalahan yang khas",
+     "items": [
+      "Menulis *Salve, Marcus!* Ini terdengar seperti menyebut namanya kepada orang lain, bukan menyapanya. Yang benar *Salve, Marce!*",
+      "Memakai *salve* untuk banyak orang. Kalau lawan bicaramu lebih dari satu, wajib *salvete*.",
+      "Mengira *vale* berarti \"selamat tinggal\" secara harfiah. Artinya \"sehatlah\" — sama seperti *salve*, hanya dipakai di ujung perjumpaan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bertanya dan menjawab",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga alat tanya sudah cukup untuk unit ini: *-ne* untuk pertanyaan ya/tidak, lalu dua kata tanya untuk orang dan barang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "**-ne**",
+       "apakah …?",
+       "Esne Romanus?",
+       "Kamu orang Roma?"
+      ],
+      [
+       "**quis**",
+       "siapa?",
+       "Quis es?",
+       "Kamu siapa?"
+      ],
+      [
+       "**quid**",
+       "apa?",
+       "Quid est?",
+       "Itu apa?"
+      ],
+      [
+       "**ubi**",
+       "di mana?",
+       "Ubi est Iulia?",
+       "Iulia di mana?"
+      ],
+      [
+       "**nonne**",
+       "bukankah …?",
+       "Nonne discipulus es?",
+       "Kamu murid, kan?"
+      ],
+      [
+       "**num**",
+       "masa …?",
+       "Num aeger es?",
+       "Masa kamu sakit?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua yang terakhir sudah membawa jawaban di dalam pertanyaannya. *Nonne* dipakai kalau penanya yakin jawabannya \"ya\"; *num* kalau ia yakin jawabannya \"tidak\". Bahasa Indonesia melakukan hal yang sama dengan \"kan?\" dan \"masa?\"."
+    },
+    {
+     "type": "sub",
+     "text": "Menjawab"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Arti",
+      "Rasanya"
+     ],
+     "rows": [
+      [
+       "ita",
+       "ya",
+       "biasa, netral"
+      ],
+      [
+       "ita vero",
+       "ya, betul",
+       "lebih tegas"
+      ],
+      [
+       "certe",
+       "tentu saja",
+       "yakin"
+      ],
+      [
+       "non",
+       "tidak",
+       "biasa"
+      ],
+      [
+       "minime",
+       "sama sekali tidak",
+       "menolak dengan tegas"
+      ],
+      [
+       "fortasse",
+       "barangkali",
+       "ragu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Latin sebenarnya tidak punya kata \"ya\" dan \"tidak\" yang benar-benar netral seperti bahasa Indonesia. Cara paling Romawi menjawab pertanyaan adalah mengulang kata kerjanya: *Esne discipulus?* — *Sum.* (\"Iya.\") atau *Non sum.* (\"Bukan.\") Cara ini akan sering kamu temui di teks asli."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "salve, salvete",
+   "baca": "SAL-we, sal-WE-te",
+   "id": "halo (kepada satu orang / banyak orang)"
+  },
+  {
+   "la": "vale, valete",
+   "baca": "WA-le, wa-LE-te",
+   "id": "selamat tinggal, sehat-sehatlah"
+  },
+  {
+   "la": "sum, esse",
+   "baca": "SUM, ES-se",
+   "id": "adalah, ada"
+  },
+  {
+   "la": "es",
+   "baca": "ES",
+   "id": "kamu adalah"
+  },
+  {
+   "la": "est",
+   "baca": "EST",
+   "id": "dia adalah, ada"
+  },
+  {
+   "la": "sumus",
+   "baca": "SU-mus",
+   "id": "kami adalah"
+  },
+  {
+   "la": "estis",
+   "baca": "ES-tis",
+   "id": "kalian adalah"
+  },
+  {
+   "la": "sunt",
+   "baca": "SUNT",
+   "id": "mereka adalah, ada"
+  },
+  {
+   "la": "ego",
+   "baca": "E-go",
+   "id": "saya"
+  },
+  {
+   "la": "tu",
+   "baca": "TU",
+   "id": "kamu"
+  },
+  {
+   "la": "et",
+   "baca": "ET",
+   "id": "dan"
+  },
+  {
+   "la": "sed",
+   "baca": "SED",
+   "id": "tetapi"
+  },
+  {
+   "la": "quoque",
+   "baca": "KWO-kwe",
+   "id": "juga"
+  },
+  {
+   "la": "non",
+   "baca": "NON",
+   "id": "tidak, bukan"
+  },
+  {
+   "la": "ita",
+   "baca": "I-ta",
+   "id": "ya, begitu"
+  },
+  {
+   "la": "minime",
+   "baca": "MI-ni-me",
+   "id": "sama sekali tidak"
+  },
+  {
+   "la": "certe",
+   "baca": "KER-te",
+   "id": "tentu saja"
+  },
+  {
+   "la": "fortasse",
+   "baca": "for-TAS-se",
+   "id": "barangkali"
+  },
+  {
+   "la": "quis?",
+   "baca": "KWIS",
+   "id": "siapa?"
+  },
+  {
+   "la": "quid?",
+   "baca": "KWID",
+   "id": "apa?"
+  },
+  {
+   "la": "ubi?",
+   "baca": "U-bi",
+   "id": "di mana?"
+  },
+  {
+   "la": "hodie",
+   "baca": "HO-di-e",
+   "id": "hari ini"
+  },
+  {
+   "la": "nunc",
+   "baca": "NUNK",
+   "id": "sekarang"
+  },
+  {
+   "la": "discipulus, discipula",
+   "baca": "dis-KI-pu-lus",
+   "id": "murid (lelaki, perempuan)"
+  },
+  {
+   "la": "magister, magistra",
+   "baca": "ma-GIS-ter",
+   "id": "guru (lelaki, perempuan)"
+  },
+  {
+   "la": "fabula",
+   "baca": "FA-bu-la",
+   "id": "cerita, dongeng"
+  },
+  {
+   "la": "schola",
+   "baca": "SKO-la",
+   "id": "sekolah"
+  },
+  {
+   "la": "Romanus, Romana",
+   "baca": "ro-MA-nus",
+   "id": "orang Roma; berkaitan dengan Roma"
+  },
+  {
+   "la": "novus, nova",
+   "baca": "NO-wus",
+   "id": "baru"
+  },
+  {
+   "la": "bonus, bona",
+   "baca": "BO-nus",
+   "id": "baik, bagus"
+  },
+  {
+   "la": "laetus, laeta",
+   "baca": "LAI-tus",
+   "id": "senang, gembira"
+  },
+  {
+   "la": "fessus, fessa",
+   "baca": "FES-sus",
+   "id": "lelah"
+  },
+  {
+   "la": "aeger, aegra",
+   "baca": "AI-ger",
+   "id": "sakit"
+  },
+  {
+   "la": "timidus, timida",
+   "baca": "TI-mi-dus",
+   "id": "takut, gugup"
+  },
+  {
+   "la": "gratias (ago)",
+   "baca": "GRA-ti-as",
+   "id": "terima kasih"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Isi dengan bentuk kata kerja sum yang tepat.",
+   "items": [
+    "Ego discipulus ____.",
+    "Tu magistra ____.",
+    "Marcus Romanus ____.",
+    "Nos discipuli ____.",
+    "Vos laeti ____.",
+    "Fabulae bonae ____."
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk panggil, lalu pakai dalam sapaan Salve, …!",
+   "items": [
+    "Marcus",
+    "Lydia",
+    "Quintus",
+    "magister",
+    "Iulius",
+    "Cornelia"
+   ]
+  },
+  {
+   "prompt": "Jadikan pertanyaan ya/tidak dengan menempelkan -ne pada kata pertama.",
+   "items": [
+    "Romanus es.",
+    "Aegra est.",
+    "Discipuli sumus.",
+    "Fabula nova est.",
+    "Laeti estis.",
+    "Magister est."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin. Taruh kata kerjanya di akhir kalimat.",
+   "items": [
+    "Saya murid.",
+    "Kamu bukan guru.",
+    "Lydia orang Roma.",
+    "Kami senang.",
+    "Halo, Marcus! (sapaan)",
+    "Cerita itu baru."
+   ]
+  }
+ ],
+ "answers": [
+  "sum — es — est — sumus — estis — sunt",
+  "Salve, Marce! — Salve, Lydia! — Salve, Quinte! — Salve, magister! — Salve, Iuli! — Salve, Cornelia!",
+  "Romanusne es? — Aegrane est? — Discipuline sumus? — Fabulane nova est? — Laetine estis? — Magisterne est?",
+  "Discipulus sum. — Magister non es. — Lydia Romana est. — Laeti sumus. — Salve, Marce! — Fabula nova est."
+ ]
+}

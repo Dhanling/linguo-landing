@@ -1,0 +1,587 @@
+{
+ "title": "Dikerjakan, bukan mengerjakan",
+ "title_target": "Aedificatur",
+ "goal": "Membalik kalimat menjadi bentuk pasif di tiga kala, menyebut pelakunya dengan a atau ab, dan mengenali kata kerja deponen yang berbentuk pasif tetapi berarti aktif.",
+ "bekal": [
+  "mengubah *aedificat* menjadi *aedificatur* dan sebaliknya",
+  "membedakan pelaku (*a fabris*) dari alat (*equis*)",
+  "tidak kaget waktu bertemu *loquitur* yang berbentuk pasif tetapi berarti \"dia berbicara\""
+ ],
+ "dialogs": [
+  {
+   "title": "Colloquium — Thermae novae",
+   "intro": "Di tepi jalan besar, sebuah pemandian umum sedang dibangun. Marcus ingin tahu semuanya.",
+   "lines": [
+    {
+     "speaker": "Marcus:",
+     "text": "Pater, quid hic aedificatur?",
+     "id": "Yah, ini lagi dibangun apa?",
+     "literal": "ayah-panggil, apa di-sini dibangun-dia?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Thermae novae aedificantur. A civibus amantur!",
+     "id": "Pemandian baru. Warga senang sekali dengan pemandian!",
+     "literal": "pemandian-jamak baru-jamak dibangun-mereka. oleh warga-jamak-oleh dicintai-mereka!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "A quo aedificantur?",
+     "id": "Dibangun oleh siapa?",
+     "literal": "oleh siapa-oleh dibangun-mereka?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "A fabris. Lapides ex montibus portantur.",
+     "id": "Oleh tukang-tukang. Batunya diangkut dari pegunungan.",
+     "literal": "oleh tukang-jamak-oleh. batu-jamak dari gunung-jamak-dari dibawa-mereka."
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Quomodo portantur? Equis?",
+     "id": "Diangkutnya bagaimana? Pakai kuda?",
+     "literal": "bagaimana dibawa-mereka? kuda-jamak-dengan?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Equis et navibus portantur. Via Appia longa est.",
+     "id": "Pakai kuda dan kapal. Via Appia itu panjang.",
+     "literal": "kuda-jamak-dengan dan kapal-jamak-dengan dibawa-mereka. jalan Appia panjang-perempuan adalah-dia."
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Et aqua? Unde aqua in urbem ducitur?",
+     "id": "Kalau air? Air dibawa ke kota dari mana?",
+     "literal": "dan air? dari-mana air ke-dalam kota-sasaran dibawa-dia?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Per aquaeductum ducitur. Opus mirum est!",
+     "id": "Lewat saluran air. Bangunannya luar biasa!",
+     "literal": "lewat saluran-air-sasaran dibawa-dia. karya ajaib-netral adalah-dia!"
+    },
+    {
+     "speaker": "Iulia:",
+     "text": "Ego quoque aedificare volo. Sed a matre non sinor.",
+     "id": "Saya juga mau membangun. Tapi tidak diizinkan Ibu.",
+     "literal": "saya juga membangun mau-saya. tapi oleh ibu-oleh tidak diizinkan-saya."
+    },
+    {
+     "speaker": "Cornelia:",
+     "text": "Parva es adhuc, Iulia. Sed olim docebis me!",
+     "id": "Kamu masih kecil, Iulia. Tapi nanti kamu yang mengajari Ibu!",
+     "literal": "kecil-perempuan adalah-kamu masih, Iulia. tapi kelak ajar-kamu-nanti saya-sasaran!"
+    },
+    {
+     "speaker": "Marcus:",
+     "text": "Pater, quando thermae aperientur?",
+     "id": "Yah, pemandiannya dibuka kapan?",
+     "literal": "ayah-panggil, kapan pemandian-jamak dibuka-mereka-nanti?"
+    },
+    {
+     "speaker": "Quintus:",
+     "text": "Post duos annos aperientur. Tum omnes lavabimur!",
+     "id": "Dua tahun lagi. Nanti kita semua bisa mandi di sana!",
+     "literal": "sesudah dua-sasaran tahun-jamak-sasaran dibuka-mereka-nanti. waktu-itu semua-jamak dimandikan-kami-nanti!"
+    }
+   ],
+   "notes": [
+    "**Aedificat menjadi aedificatur.** Ekor pasif adalah *-r* yang ditempelkan pada ekor pelaku biasa, kadang dengan sedikit perubahan: *-o* → *-or*, *-t* → *-tur*, *-nt* → *-ntur*. Karena itu sebagian besar bentuk pasif terasa lebih berat satu suku kata, dan gampang dikenali dari jauh.",
+    "**A fabris tetapi equis.** Kalau yang melakukan adalah **orang**, bahasa Latin memakai *a* atau *ab* di depannya: *a fabris*, *a matre*, *a civibus*. Kalau yang dipakai adalah **alat atau cara**, kata depannya dibuang sama sekali: *equis portantur* (\"diangkut dengan kuda\"), *gladio vulneratur* (\"dilukai dengan pedang\").",
+    "**Thermae selalu jamak.** Beberapa kata Latin tidak punya bentuk tunggal sama sekali: *thermae* (pemandian umum), *castra* (perkemahan), *litterae* dalam arti surat, *arma* (senjata), *divitiae* (kekayaan). Kata sifat dan kata kerjanya wajib ikut jamak, walaupun yang dimaksud satu bangunan.",
+    "**Sinor — bentuk \"saya\" pasif berakhir -or.** Iulia berkata *non sinor*, \"saya tidak diizinkan\". Perhatikan bahwa ekor *-or* ini persis sama dengan ekor kata benda seperti *mercator* dan *doctor*. Kemiripan itu kebetulan — akhiran pasif dan akhiran nama pelaku berasal dari dua sumber yang berbeda — jadi jangan sampai tertukar: *mercator* itu kata benda, *sinor* kata kerja."
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ekor pasif di tiga kala",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Enam ekor pasif dipakai di semua kelompok dan semua kala yang sudah kamu pelajari, kecuali kala sudah. Hafalkan enamnya sekali saja."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelaku",
+      "Ekor aktif",
+      "Ekor pasif",
+      "Contoh (amare)"
+     ],
+     "rows": [
+      [
+       "saya",
+       "-o",
+       "**-or**",
+       "am**or** — saya dicintai"
+      ],
+      [
+       "kamu",
+       "-s",
+       "**-ris**",
+       "ama**ris** — kamu dicintai"
+      ],
+      [
+       "dia",
+       "-t",
+       "**-tur**",
+       "ama**tur** — dia dicintai"
+      ],
+      [
+       "kami",
+       "-mus",
+       "**-mur**",
+       "ama**mur** — kami dicintai"
+      ],
+      [
+       "kalian",
+       "-tis",
+       "**-mini**",
+       "ama**mini** — kalian dicintai"
+      ],
+      [
+       "mereka",
+       "-nt",
+       "**-ntur**",
+       "ama**ntur** — mereka dicintai"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kala",
+      "I: amare",
+      "II: videre",
+      "III: mittere",
+      "IV: audire"
+     ],
+     "rows": [
+      [
+       "sekarang",
+       "amatur",
+       "videtur",
+       "mittitur",
+       "auditur"
+      ],
+      [
+       "",
+       "amantur",
+       "videntur",
+       "mittuntur",
+       "audiuntur"
+      ],
+      [
+       "dulu",
+       "amabatur",
+       "videbatur",
+       "mittebatur",
+       "audiebatur"
+      ],
+      [
+       "",
+       "amabantur",
+       "videbantur",
+       "mittebantur",
+       "audiebantur"
+      ],
+      [
+       "nanti",
+       "amabitur",
+       "videbitur",
+       "mittetur",
+       "audietur"
+      ],
+      [
+       "",
+       "amabuntur",
+       "videbuntur",
+       "mittentur",
+       "audientur"
+      ],
+      [
+       "bentuk dasar",
+       "amari",
+       "videri",
+       "mitti",
+       "audiri"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bentuk dasar pasifnya. Kelompok I, II, dan IV cukup menukar *-re* menjadi *-ri*: *amare* → *amari*. Kelompok III memendek habis: *mittere* → *mitti*, *legere* → *legi*, *duci* dari *ducere*. Bentuk ini muncul di kalimat seperti *Amari volo* — \"saya ingin dicintai\"."
+    }
+   ]
+  },
+  {
+   "title": "Membalik kalimat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Membalik kalimat aktif menjadi pasif menukar dua peran: sasaran menjadi pelaku, dan pelaku lama pindah ke belakang *a* atau *ab*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aktif",
+      "Pasif",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "Faber murum aedificat.",
+       "Murus **a fabro** aedificatur.",
+       "Tembok itu dibangun oleh tukang."
+      ],
+      [
+       "Magister discipulos laudat.",
+       "Discipuli **a magistro** laudantur.",
+       "Murid-murid dipuji guru."
+      ],
+      [
+       "Cives thermas amant.",
+       "Thermae **a civibus** amantur.",
+       "Pemandian itu disukai warga."
+      ],
+      [
+       "Mater me non sinit.",
+       "**A matre** non sinor.",
+       "Saya tidak diizinkan Ibu."
+      ],
+      [
+       "Equi lapides portant.",
+       "Lapides **equis** portantur.",
+       "Batu-batu itu diangkut dengan kuda."
+      ],
+      [
+       "Aqua urbem servat.",
+       "Urbs **aqua** servatur.",
+       "Kota itu diselamatkan oleh air."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua baris terakhir memperlihatkan aturan yang paling sering dilupakan: kuda dan air bukan orang, jadi keduanya berdiri tanpa kata depan. Kalau kamu menulis *ab equis*, kalimatnya berubah arti menjadi \"oleh kuda-kuda itu sebagai pelaku sadar\" — sesuatu yang hanya masuk akal di dalam dongeng."
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa bahasa Latin sering memilih pasif",
+     "items": [
+      "Karena pelakunya tidak penting atau tidak diketahui: *dicitur* — \"dikatakan orang\", \"konon\".",
+      "Karena yang penting justru barangnya: *thermae aedificantur* menaruh perhatian pada bangunannya, bukan pada tukangnya.",
+      "Karena tulisan resmi memang begitu bunyinya. Undang-undang, prasasti, dan pengumuman Romawi hampir seluruhnya pasif — persis seperti bahasa peraturan kita.",
+      "*Videtur* punya arti khusus yang sangat sering: bukan \"dia dilihat\", melainkan \"tampaknya\". *Mihi videtur* — \"menurut saya\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pasif yang sudah, dan kata kerja deponen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Untuk kala sudah, bahasa Latin tidak memakai ekor pasif sama sekali. Ia memakai dua kata: bentuk sifat dari kata kerja, ditambah *sum*. Bentuk sifat itu berganti baju seperti *bonus*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Harfiah",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "Murus **aedificatus est**.",
+       "tembok terbangun adalah-dia",
+       "Tembok itu sudah dibangun."
+      ],
+      [
+       "Villa **aedificata est**.",
+       "rumah terbangun-perempuan adalah-dia",
+       "Rumah itu sudah dibangun."
+      ],
+      [
+       "Templa **aedificata sunt**.",
+       "kuil-jamak terbangun-jamak adalah-mereka",
+       "Kuil-kuil itu sudah dibangun."
+      ],
+      [
+       "Epistula **scripta est**.",
+       "surat tertulis adalah-dia",
+       "Suratnya sudah ditulis."
+      ],
+      [
+       "Urbs **capta est**.",
+       "kota terebut adalah-dia",
+       "Kota itu sudah direbut."
+      ],
+      [
+       "**Missus sum**.",
+       "terkirim adalah-saya",
+       "Saya sudah dikirim."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bentuk sifat itu — namanya partisip — diambil dari bagian keempat bentuk kamus: *amo, amare, amavi, **amatum***. Ia dipelajari penuh di tingkat berikutnya, tetapi kamu sudah mengenal banyak di antaranya sebagai kata serapan: *fakta* dari *factum*, *diktum* dari *dictum*, *data* dari *datum*, *skrip* dari *scriptum*."
+    },
+    {
+     "type": "sub",
+     "text": "Kata kerja yang berbaju pasif tetapi berarti aktif"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Latin",
+      "Kelihatannya",
+      "Artinya sebenarnya"
+     ],
+     "rows": [
+      [
+       "loquitur",
+       "\"dia dibicarakan\"",
+       "**dia berbicara**"
+      ],
+      [
+       "sequitur",
+       "\"dia diikuti\"",
+       "**dia mengikuti**"
+      ],
+      [
+       "patitur",
+       "\"dia diderita\"",
+       "**dia menderita**"
+      ],
+      [
+       "moritur",
+       "\"dia dimatikan\"",
+       "**dia mati**"
+      ],
+      [
+       "nascitur",
+       "\"dia dilahirkan\"",
+       "**dia lahir**"
+      ],
+      [
+       "conatur",
+       "\"dia diusahakan\"",
+       "**dia berusaha**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata kerja seperti ini disebut deponen — harfiahnya \"yang sudah meletakkan\" bentuk aktifnya. Jumlahnya tidak banyak tetapi sering muncul, dan kamu sudah mengenal jejaknya: *sequitur* melahirkan *sekuens* dan *konsekuensi*, *nascitur* melahirkan *natal* dan *nasional*, *patitur* melahirkan *pasien* dan *pasif*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "la": "aedifico, aedificare",
+   "baca": "ai-DI-fi-ko",
+   "id": "membangun"
+  },
+  {
+   "la": "sino, sinere, sivi",
+   "baca": "SI-no",
+   "id": "mengizinkan, membiarkan"
+  },
+  {
+   "la": "lavo, lavare",
+   "baca": "LA-wo",
+   "id": "mencuci, memandikan"
+  },
+  {
+   "la": "servo, servare",
+   "baca": "SER-wo",
+   "id": "menjaga, menyelamatkan"
+  },
+  {
+   "la": "vulnero, vulnerare",
+   "baca": "WUL-ne-ro",
+   "id": "melukai"
+  },
+  {
+   "la": "capio, capere, cepi, captum",
+   "baca": "KA-pi-o",
+   "id": "merebut, mengambil"
+  },
+  {
+   "la": "loquor, loqui",
+   "baca": "LO-kwor",
+   "id": "berbicara (deponen)"
+  },
+  {
+   "la": "sequor, sequi",
+   "baca": "SE-kwor",
+   "id": "mengikuti (deponen)"
+  },
+  {
+   "la": "morior, mori",
+   "baca": "MO-ri-or",
+   "id": "mati (deponen)"
+  },
+  {
+   "la": "nascor, nasci",
+   "baca": "NAS-kor",
+   "id": "lahir (deponen)"
+  },
+  {
+   "la": "conor, conari",
+   "baca": "KO-nor",
+   "id": "berusaha (deponen)"
+  },
+  {
+   "la": "patior, pati",
+   "baca": "PA-ti-or",
+   "id": "menderita, membiarkan (deponen)"
+  },
+  {
+   "la": "thermae, thermarum",
+   "baca": "THER-mai",
+   "id": "pemandian umum (selalu jamak)"
+  },
+  {
+   "la": "faber, fabri",
+   "baca": "FA-ber",
+   "id": "tukang, pengrajin"
+  },
+  {
+   "la": "lapis, lapidis",
+   "baca": "LA-pis",
+   "id": "batu"
+  },
+  {
+   "la": "murus, muri",
+   "baca": "MU-rus",
+   "id": "tembok"
+  },
+  {
+   "la": "opus, operis",
+   "baca": "O-pus",
+   "id": "karya, bangunan"
+  },
+  {
+   "la": "aquaeductus, aquaeductus",
+   "baca": "a-kwai-DUK-tus",
+   "id": "saluran air"
+  },
+  {
+   "la": "via, viae",
+   "baca": "WI-a",
+   "id": "jalan"
+  },
+  {
+   "la": "pons, pontis",
+   "baca": "PONS",
+   "id": "jembatan"
+  },
+  {
+   "la": "columna, columnae",
+   "baca": "ko-LUM-na",
+   "id": "tiang"
+  },
+  {
+   "la": "tectum, tecti",
+   "baca": "TEK-tum",
+   "id": "atap"
+  },
+  {
+   "la": "castra, castrorum",
+   "baca": "KAS-tra",
+   "id": "perkemahan (selalu jamak)"
+  },
+  {
+   "la": "divitiae, divitiarum",
+   "baca": "di-WI-ti-ai",
+   "id": "kekayaan (selalu jamak)"
+  },
+  {
+   "la": "gladius, gladii",
+   "baca": "GLA-di-us",
+   "id": "pedang"
+  },
+  {
+   "la": "dicitur",
+   "baca": "DI-ki-tur",
+   "id": "dikatakan orang, konon"
+  },
+  {
+   "la": "videtur",
+   "baca": "wi-DE-tur",
+   "id": "tampaknya"
+  },
+  {
+   "la": "factum, facti",
+   "baca": "FAK-tum",
+   "id": "perbuatan, fakta"
+  },
+  {
+   "la": "datum, dati",
+   "baca": "DA-tum",
+   "id": "hal yang diberikan, data"
+  },
+  {
+   "la": "scriptum, scripti",
+   "baca": "SKRIP-tum",
+   "id": "tulisan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Ubah menjadi bentuk pasif, pelaku dan kala tetap sama.",
+   "items": [
+    "amat",
+    "amant",
+    "videt",
+    "mittit",
+    "audit",
+    "portamus"
+   ]
+  },
+  {
+   "prompt": "Balik kalimat aktif ini menjadi pasif.",
+   "items": [
+    "Faber murum aedificat.",
+    "Magister discipulos laudat.",
+    "Cives thermas amant.",
+    "Mater epistulam scribit.",
+    "Milites urbem servant.",
+    "Puella librum legit."
+   ]
+  },
+  {
+   "prompt": "Pilih: pakai a atau ab, atau tanpa kata depan sama sekali.",
+   "items": [
+    "Murus ____ fabro aedificatur.",
+    "Lapides ____ equis portantur.",
+    "Discipuli ____ magistro laudantur.",
+    "Urbs ____ aqua servatur.",
+    "Epistula ____ matre scribitur.",
+    "Hostis ____ gladio vulneratur."
+   ]
+  },
+  {
+   "prompt": "Terjemahkan ke bahasa Latin.",
+   "items": [
+    "Pemandian itu sedang dibangun.",
+    "Kami dipuji oleh guru.",
+    "Batu diangkut dengan kapal.",
+    "Surat itu sudah ditulis.",
+    "Tampaknya begitu.",
+    "Dia berbicara."
+   ]
+  }
+ ],
+ "answers": [
+  "amatur — amantur — videtur — mittitur — auditur — portamur",
+  "Murus a fabro aedificatur. — Discipuli a magistro laudantur. — Thermae a civibus amantur. — Epistula a matre scribitur. — Urbs a militibus servatur. — Liber a puella legitur.",
+  "a — (tanpa kata depan) — a — (tanpa kata depan) — a — (tanpa kata depan)",
+  "Thermae aedificantur. — A magistro laudamur. — Lapides navibus portantur. — Epistula scripta est. — Ita videtur. — Loquitur."
+ ]
+}
