@@ -43,7 +43,7 @@ import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatih
 import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
-  bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
+  bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
   hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
@@ -1029,7 +1029,9 @@ export default function EbookReader({
      sorotan + gelembung kecil di atasnya. Koordinatnya sudah dalam px layar
      relatif terhadap kotak buku. */
   const [ucap, setUcap] = useState<
-    { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean }
+    /* [ebook-tts-semua-section-v1] kode/kalimatKode = suara yang dipakai — kata
+       Indonesia di paragraf penjelasan dibacakan dengan suara Indonesia. */
+    { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean; kode: string; kalimatKode: string }
     | null
   >(null);
   const [bunyi, setBunyi] = useState<"kata" | "kalimat" | null>(null);
@@ -2820,8 +2822,8 @@ export default function EbookReader({
      audio) dan waktu klik-nya benar-benar jadi. null = tak ada yang perlu
      diubah di popup, "kosong" = ketukan mendarat di luar teks. */
   type Ketuk = {
-    unit: string; kalimat: string; terjemahan: boolean;
-    ucap: { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean };
+    unit: string; kalimat: string; terjemahan: boolean; kode: string;
+    ucap: NonNullable<typeof ucap>;
   };
   const resolusiKetuk = useCallback(async (
     box: DOMRect, clientX: number, clientY: number
@@ -2843,7 +2845,6 @@ export default function EbookReader({
     const barisKena = baris.find((b) => Math.abs(b.y - kena.y) <= Math.max(b.h, kena.h) * 0.6);
     // Di baris tabel, yang dipakai adalah SEL tempat katanya duduk — lihat Segmen.
     const sel = barisKena?.segmen.find((g) => xp >= g.x0 - 2 && xp <= g.x1 + 2);
-    const kalimat = kalimatTarget(sel?.teks ?? barisKena?.teks ?? kena.str, kodeBahasa);
     /* [ebook-tts-frasa-v1] "buenos días" dibunyikan sebagai satu satuan, bukan
        "buenos" saja — lihat catatan pada frasaSel. Sorotannya ikut melebar ke
        seluruh sel supaya jelas yang dibunyikan memang keduanya. */
@@ -2865,10 +2866,11 @@ export default function EbookReader({
     const kotak = frasa && sel
       ? { x: sel.x0, w: Math.max(6, sel.x1 - sel.x0) }
       : { x: kata.x, w: Math.max(6, kata.w) };
-    /* Kata bahasa Indonesia (baris terjemahan/penjelasan) tidak dibunyikan dan
-       tidak dicarikan arti: bahasa Indonesia berlogat Spanyol justru yang paling
-       tidak boleh ditiru siswa A1. Ketukannya tetap ditandai supaya tak terasa
-       seperti tombol rusak.
+    /* [ebook-tts-semua-section-v1] Semua kata berbunyi. Kata bahasa Indonesia
+       (baris terjemahan/penjelasan) dibacakan dengan suara INDONESIA — bahasa
+       Indonesia berlogat Spanyol justru yang paling tidak boleh ditiru siswa
+       A1 — dan tidak dicarikan arti. Kalimatnya = rentetan kata sebahasa di
+       sekitar kata yang diketuk; lihat kalimatSekitar.
 
        [ebook-jaga-bahasa-id-v2] Konteksnya SEL dulu, barisnya belakangan: di
        tabel kosakata, sel adalah satu kolom penuh ("Januari"), sementara di
@@ -2876,11 +2878,13 @@ export default function EbookReader({
        dari dirinya sendiri ("lengkap") diputuskan dari klausa tempat ia duduk —
        lihat kataIndonesia di lib/ebookTts. */
     const konteks = sel?.teks || barisKena?.teks || kena.str;
-    const terjemahan = kataIndonesia(kata.kata, kodeBahasa, konteks);
+    const { teks: kalimat, kode: kodeKata } = kalimatSekitar(konteks, kata.kata, kodeBahasa);
+    const terjemahan = kodeKata !== kodeBahasa;
     return {
       unit,
       kalimat,
       terjemahan,
+      kode: kodeKata,
       ucap: {
         hal,
         kata: unit,
@@ -2890,6 +2894,8 @@ export default function EbookReader({
         w: kotak.w * skalaTampil,
         h: kena.h * skalaTampil,
         terjemahan,
+        kode: kodeKata,
+        kalimatKode: kodeKata,
       },
     };
   }, [ttsAktif, kodeBahasa, skalaTampil, titikHal, ambilTeks, kataDi]);
@@ -2998,8 +3004,8 @@ export default function EbookReader({
     const box = e.currentTarget.getBoundingClientRect();
     const { clientX, clientY } = e;
     void resolusiKetuk(box, clientX, clientY).then((r) => {
-      if (!r || r === "kosong" || r.terjemahan) return;
-      siapkanEbook(r.unit, kodeBahasa);
+      if (!r || r === "kosong") return;
+      siapkanEbook(r.unit, r.kode);
     });
   }, [ttsAktif, kodeBahasa, resolusiKetuk]);
 
@@ -3025,29 +3031,34 @@ export default function EbookReader({
     const r = await resolusiKetuk(box, clientX, clientY);
     if (!r) return;
     if (r === "kosong") { setUcap(null); return; }
-    const { unit, kalimat, terjemahan } = r;
+    const { unit, kalimat, terjemahan, kode } = r;
     setUcap(r.ucap);
-    if (terjemahan) { setArti(undefined); return; }
-
-    // Arti & bunyi jalan BARENGAN: suara adalah alasan utama fitur ini ada, dan
-    // tak boleh ikut menunggu AI yang butuh satu-dua detik.
-    const kunciArti = `${unit}|${kalimat}`;
-    ucapKunciRef.current = kunciArti;
-    setArti(artiTersimpan(unit, kalimat, kodeBahasa));
-    void artiKataEbook(unit, kalimat, kodeBahasa).then((a) => {
-      // Siswa mungkin sudah mengetuk kata lain — jangan timpa popup yang baru.
-      if (ucapKunciRef.current === kunciArti) setArti(a);
-    });
+    if (terjemahan) {
+      // Kata Indonesia: tak ada arti yang perlu dicari — kartunya cuma pelafalan.
+      ucapKunciRef.current = "";
+      setArti("mati");
+    } else {
+      // Arti & bunyi jalan BARENGAN: suara adalah alasan utama fitur ini ada, dan
+      // tak boleh ikut menunggu AI yang butuh satu-dua detik.
+      const kunciArti = `${unit}|${kalimat}`;
+      ucapKunciRef.current = kunciArti;
+      setArti(artiTersimpan(unit, kalimat, kodeBahasa));
+      void artiKataEbook(unit, kalimat, kodeBahasa).then((a) => {
+        // Siswa mungkin sudah mengetuk kata lain — jangan timpa popup yang baru.
+        if (ucapKunciRef.current === kunciArti) setArti(a);
+      });
+    }
     setBunyi("kata");
-    await ucapkanEbook(unit, kodeBahasa);
+    await ucapkanEbook(unit, kode);
     setBunyi(null);
   }, [ttsAktif, kodeBahasa, resolusiKetuk, isiDiTitik, ke]);
 
-  const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat") => {
-    if (!kodeBahasa) return;
+  const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat", kode?: string) => {
+    const k = kode || kodeBahasa;
+    if (!k) return;
     bukaKunciAudio();
     setBunyi(jenis);
-    await ucapkanEbook(teks, kodeBahasa);
+    await ucapkanEbook(teks, k);
     setBunyi(null);
   }, [kodeBahasa]);
 
@@ -3405,8 +3416,8 @@ export default function EbookReader({
                     top: ucap.y - 1,
                     width: ucap.w + 4,
                     height: ucap.h + 2,
-                    background: ucap.terjemahan ? "rgba(148,163,184,0.30)" : "rgba(62,217,192,0.34)",
-                    boxShadow: ucap.terjemahan ? "none" : "0 0 0 1px rgba(26,158,158,0.6)",
+                    background: "rgba(62,217,192,0.34)",
+                    boxShadow: "0 0 0 1px rgba(26,158,158,0.6)",
                   }}
                 />
                 {/* [ebook-popup-kata-v1] Kartu kata — bentuknya sengaja meniru
@@ -3436,15 +3447,11 @@ export default function EbookReader({
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {ucap.terjemahan ? (
-                    <p className="text-[12px] font-semibold leading-snug text-white/70">
-                      {t("Yang bisa dibunyikan hanya teks")} {langLabel(kodeBahasa)}.
-                    </p>
-                  ) : (
+                  {(
                     <>
                       <div className="flex items-start gap-2">
                         <button
-                          onClick={() => void ucapkanLagi(ucap.kata, "kata")}
+                          onClick={() => void ucapkanLagi(ucap.kata, "kata", ucap.kode)}
                           className="flex min-w-0 flex-1 items-center gap-2 text-left"
                           title={t("Dengar pelafalannya")}
                         >
@@ -3453,6 +3460,16 @@ export default function EbookReader({
                             : <Volume2 className="h-4 w-4 shrink-0 text-[#3ED9C0]" />}
                           <span className="truncate text-[16px] font-extrabold leading-tight">{ucap.kata}</span>
                         </button>
+                        {/* [ebook-tts-semua-section-v1] Kata Indonesia dibacakan
+                            dengan suara Indonesia — chip ini yang memberi tahu. */}
+                        {ucap.terjemahan && (
+                          <span
+                            className="shrink-0 rounded-md bg-white/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/60"
+                            title={`${t("Dibacakan dengan suara")} ${langLabel("id")}`}
+                          >
+                            {langLabel("id")}
+                          </span>
+                        )}
                         {arti && arti !== "mati" && arti.kelas && (
                           <span className="shrink-0 rounded-md bg-[#3ED9C0]/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#7fe3e0]">
                             {arti.kelas}
@@ -3508,7 +3525,7 @@ export default function EbookReader({
                             {ucap.kalimat}
                           </p>
                           <button
-                            onClick={() => void ucapkanLagi(ucap.kalimat, "kalimat")}
+                            onClick={() => void ucapkanLagi(ucap.kalimat, "kalimat", ucap.kalimatKode)}
                             className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-lg bg-white/10 px-2 py-1.5 text-[12px] font-bold text-white/85 transition hover:bg-white/20 hover:text-white"
                           >
                             {bunyi === "kalimat"

@@ -539,8 +539,16 @@ export function kataIndonesia(kata: string, kode: string, konteks?: string): boo
     return klausaIndonesia(klausaKata(konteks, k) || konteks, kode);
   }
   if (kataIdMurni(k, kode)) return true;
-  if (!konteks) return false;
-  return klausaIndonesia(klausaKata(konteks, k) || konteks, kode);
+  /* [ebook-tts-semua-section-v1] Kata yang TAK dikenal daftar Indonesia dianggap
+     bahasa target — klausanya tidak lagi ikut memutuskan. Dulu "Morgen" di
+     kalimat penjelasan "Guten Morgen sampai sekitar pukul sepuluh" dibungkam:
+     klausanya memang berbahasa Indonesia, tapi katanya tidak. Di modul bahasa,
+     kata asing yang disisipkan ke prosa Indonesia PERSIS kata yang ingin
+     didengar siswa, jadi salah menebak ke arah itu jauh lebih mahal daripada
+     satu kata Indonesia yang luput dari leksikon (leksikonnya diperas dari
+     prosa modul sendiri, jadi yang luput sedikit). Serapan Inggris di atas
+     tetap ditimbang lewat klausanya. */
+  return false;
 }
 
 /* Yang dibuang dari sebuah baris sebelum dibunyikan sebagai kalimat:
@@ -611,6 +619,57 @@ export function kalimatTarget(baris: string, kode: string): string {
   if (s.length < 2) return "";
   if (barisTerjemahan(s, kode)) return "";
   return s.slice(0, 400);
+}
+
+/* [ebook-tts-semua-section-v1] Kalimat yang ditawarkan untuk SETIAP ketukan —
+   termasuk di paragraf penjelasan berbahasa Indonesia yang cuma menyelipkan
+   kata bahasa target ("… Guten Morgen sampai sekitar pukul sepuluh, Guten Tag
+   sepanjang siang …"). Dulu baris seperti itu dibungkam seluruhnya oleh
+   kalimatTarget, dan kata Jermannya ikut tak berbunyi. Sekarang:
+     • baris utuh berbahasa target → seluruh barisnya, seperti sebelumnya;
+     • baris campuran → rentetan kata SEBAHASA yang bersambung dengan kata yang
+       diketuk, berhenti di tanda baca atau di kata dari bahasa lain
+       ("Guten Morgen"); kalau rentetannya cuma kata itu sendiri, "" — tombol
+       kalimatnya memang tak punya apa-apa untuk ditawarkan.
+   Kode suaranya ikut dikembalikan: kata Indonesia dibacakan dengan suara
+   Indonesia (id-ID ada di katalog Chirp), bukan dibungkam — dan bukan pula
+   dilafalkan berlogat bahasa target. */
+export function bahasaKata(kata: string, kode: string, konteks?: string): string {
+  return kataIndonesia(kata, kode, konteks) ? "id" : kode;
+}
+
+const TOKEN_KATA = /[\p{L}\p{M}\p{N}'’-]+|[^\p{L}\p{M}\p{N}'’-]+/gu;
+const PUTUS_KLAUSA = /[.,;:!?()[\]{}"“”«»…—–|=/→]/u;
+
+export function kalimatSekitar(baris: string, kata: string, kode: string): { teks: string; kode: string } {
+  const k = String(kata || "").trim();
+  const kodeKata = bahasaKata(k, kode, baris);
+  if (kodeKata === kode) {
+    const utuh = kalimatTarget(baris, kode);
+    if (utuh) return { teks: utuh, kode };
+  }
+  const s = String(baris || "")
+    .replace(BUANG_KURUNG, " ")
+    .replace(BUANG_NOMOR_DIALOG, "")
+    .replace(BUANG_NOMOR, "")
+    .replace(BUANG_PENUTUR, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+  const token = s.match(TOKEN_KATA) ?? [];
+  const isKata = (t: string) => /[\p{L}\p{N}]/u.test(t);
+  const cari = k.toLowerCase().split(/\s+/)[0] ?? ""; // frasa → kata pertamanya
+  if (!cari) return { teks: "", kode: kodeKata };
+  let i = token.findIndex((t) => isKata(t) && t.toLowerCase() === cari);
+  // Aksara tanpa spasi (日本語, 中文): satu token = satu bentangan; katanya di dalamnya.
+  if (i < 0) i = token.findIndex((t) => isKata(t) && t.includes(k));
+  if (i < 0) return { teks: "", kode: kodeKata };
+  const sebahasa = (t: string) => bahasaKata(t, kode) === kodeKata;
+  let a = i;
+  let b = i;
+  while (a - 2 >= 0 && !PUTUS_KLAUSA.test(token[a - 1]) && isKata(token[a - 2]) && sebahasa(token[a - 2])) a -= 2;
+  while (b + 2 < token.length && !PUTUS_KLAUSA.test(token[b + 1]) && isKata(token[b + 2]) && sebahasa(token[b + 2])) b += 2;
+  const teks = token.slice(a, b + 1).join("").trim();
+  return { teks: teks.length >= 2 ? teks.slice(0, 400) : "", kode: kodeKata };
 }
 
 /** Potongan ini kelihatan bahasa Indonesia (baris terjemahan), bukan bahasa target? */
@@ -849,8 +908,35 @@ function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise
   return kerja;
 }
 
-/** Panjang teks yang dipakai sebagai kunci — sama di prasiapan & pemutaran. */
-const rapikan = (t: string) => String(t || "").trim().slice(0, BATAS_TEKS_TTS);
+/* [tts-kunci-kanonik-v1] Satu kata = satu mp3, di mana pun ia diketuk.
+
+   Kuncinya dulu teks ketukan apa adanya, jadi kata yang sama di dua lokasi
+   berbeda mudah jatuh ke entri cache yang berbeda — dan Chirp menyintesisnya
+   dua kali padahal bunyinya sama persis:
+     • huruf kapital awal kalimat / kata benda Jerman: "Heiße" ≠ "heiße";
+     • bentuk Unicode: sebagian fon PDF menyerahkan "ß"/"ü" sebagai huruf +
+       tanda gabung (NFD), fon lain sebagai satu kode (NFC);
+     • tanda kutip melengkung vs lurus ("l’ami" / "l'ami"), pemenggal lunak,
+       spasi tak-putus, dan spasi ganda hasil penataan kolom.
+   Kanonisasi ini dipakai di SEMUA lapis — memori, Cache API, kunci CDN, dan
+   teks yang dikirim ke /api/tts — supaya seluruh lapisan menunjuk berkas yang
+   sama. Huruf awal cuma dikecilkan untuk KATA TUNGGAL berpola kapital-awal
+   ("Student" → "student"); singkatan ("DVD", "USA") dan kalimat dibiarkan,
+   karena di situ kapitalisasi bisa mengubah cara baca. Yang ditampilkan di
+   gelembung tetap teks aslinya — ini kunci cache, bukan tampilan. */
+export function kanonikTeksTts(t: string): string {
+  let s = String(t || "")
+    .normalize("NFC")
+    .replace(/[\u00AD\u200B-\u200D\u2060\uFEFF]/g, "") // pemenggal lunak & zero-width
+    .replace(/[’ʼ‘]/g, "'")
+    .replace(/[\s\u00A0]+/g, " ")
+    .trim();
+  if (!s.includes(" ") && /^\p{Lu}[\p{Ll}\p{M}'-]+$/u.test(s)) s = s[0].toLowerCase() + s.slice(1);
+  return s.slice(0, BATAS_TEKS_TTS);
+}
+
+/** Kunci & teks yang dibunyikan — sama di prasiapan, pemutaran, dan Kelas Video. */
+const rapikan = kanonikTeksTts;
 
 /**
  * [tts-prasiap-v1] Siapkan audio sebuah kata TANPA membunyikannya — dipanggil

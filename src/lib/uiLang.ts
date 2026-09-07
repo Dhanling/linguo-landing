@@ -964,6 +964,7 @@ const EN: Record<string, string> = {
   "Dengar pelafalannya": "Hear it pronounced",
   "Ketuk kata untuk mendengar pelafalannya": "Tap a word to hear it pronounced",
   "Yang bisa dibunyikan hanya teks": "Only text can be read aloud in",
+  "Dibacakan dengan suara": "Read aloud with the voice for",
   "Perbesar": "Zoom in",
   "Periksa": "Check",
   "Perkecil": "Zoom out",
