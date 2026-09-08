@@ -20,6 +20,7 @@ import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [aut
 // [kelas-switch-instan-v1] pasang data handoff sebelum paint → pindah level tanpa kedip
 import { useIsoLayoutEffect, simpanDaftarLevel } from "@/lib/kelasCache";
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
+import BootLoader, { BootHold } from "@/components/akun/BootLoader"; // [boot-splash-v1]
 import ClassDetailView from "@/components/akun/ClassDetailView";
 
 // Kunci handoff dari card beranda (lihat onClick Link card di /akun page.tsx).
@@ -217,9 +218,11 @@ function KelasDetailInner() {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center py-24">
-          <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
-        </div>
+        <BootHold>
+          <div className="flex items-center justify-center py-24">
+            <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
+          </div>
+        </BootHold>
       )}
     </StudentShell>
   );
@@ -229,11 +232,7 @@ export default function KelasDetailPage() {
   // useSearchParams wajib dibungkus Suspense di App Router (CSR bailout saat build).
   return (
     <Suspense
-      fallback={
-        <div className="flex min-h-screen items-center justify-center bg-[#EEF1F4]">
-          <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
-        </div>
-      }
+      fallback={<BootLoader />}
     >
       <KelasDetailInner />
     </Suspense>

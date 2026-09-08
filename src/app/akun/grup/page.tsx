@@ -19,6 +19,7 @@ import { Loader2 } from "lucide-react";
 import { supabase, resolveSessionForGate, peekSessionUser } from "@/lib/supabase-client"; // [auth-gate-resilient-v1] [perf:grup-peek-gate-v1]
 import StudentShell, { GROUP_NAV_KEY, type AkunTab } from "@/components/akun/StudentShell";
 import StudentGroupChat from "@/components/akun/StudentGroupChat";
+import { BootHold } from "@/components/akun/BootLoader"; // [boot-splash-v1]
 
 export default function GrupKelasPage() {
   const router = useRouter();
@@ -118,9 +119,11 @@ export default function GrupKelasPage() {
         {ready ? (
           <StudentGroupChat previewStudentId={previewId} />
         ) : (
-          <div className="flex items-center justify-center py-24">
-            <Loader2 className="h-7 w-7 animate-spin text-gray-300" />
-          </div>
+          <BootHold>
+            <div className="flex items-center justify-center py-24">
+              <Loader2 className="h-7 w-7 animate-spin text-gray-300" />
+            </div>
+          </BootHold>
         )}
       </main>
     </StudentShell>

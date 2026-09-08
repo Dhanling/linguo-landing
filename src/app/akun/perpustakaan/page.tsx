@@ -9,6 +9,7 @@ import { Loader2 } from "lucide-react";
 import { supabase, resolveSessionForGate, peekSessionUser } from "@/lib/supabase-client"; // [auth-gate-resilient-v1] [perf:pustaka-peek-gate-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LibraryView from "@/components/akun/LibraryView";
+import BootLoader, { BootHold } from "@/components/akun/BootLoader"; // [boot-splash-v1]
 
 function PerpustakaanInner() {
   const router = useRouter();
@@ -64,9 +65,11 @@ function PerpustakaanInner() {
         {ready && (userId || previewId) ? (
           <LibraryView userId={userId ?? ""} supabase={supabase} previewStudentId={previewId} />
         ) : (
-          <div className="flex items-center justify-center py-24">
-            <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
-          </div>
+          <BootHold>
+            <div className="flex items-center justify-center py-24">
+              <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
+            </div>
+          </BootHold>
         )}
       </main>
     </StudentShell>
@@ -76,7 +79,7 @@ function PerpustakaanInner() {
 export default function PerpustakaanPage() {
   // useSearchParams butuh Suspense boundary di App Router (build error kalau tidak).
   return (
-    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><Loader2 className="h-7 w-7 animate-spin text-slate-300" /></div>}>
+    <Suspense fallback={<BootLoader />}>
       <PerpustakaanInner />
     </Suspense>
   );

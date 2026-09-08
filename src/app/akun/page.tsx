@@ -45,6 +45,7 @@ import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import LanjutkanBelajar from '@/components/akun/LanjutkanBelajar';
 // [shell-mobile-drawer-v1] TopBarMinimal & MobileBottomNav sekarang dirender StudentShell.
 import StudentShell from '@/components/akun/StudentShell';
+import BootLoader from '@/components/akun/BootLoader'; // [boot-splash-v1] pemuat layar penuh yang menahan tirai muat-ulang
 import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 // [lms-content-readiness-v1] sesi Belajar Mandiri yang materinya belum ditulis jangan ikut dihitung
 import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
@@ -142,7 +143,6 @@ const LibraryView = dynamic(() => import('@/components/akun/LibraryView'), { ssr
 // [student-workspace-v1] Ruang catatan/berkas/PR milik siswa + Mode Belajar Sendiri.
 const CatatanWorkspace = dynamic(() => import('@/components/akun/CatatanWorkspace'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
-import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
 // [akun-batalkan-hard-delete-v1] pakai client anon kanonik dari @/lib/supabase-client
 // (bukan service-role) — session-aware (persistSession) biar RLS jalan benar.
@@ -2706,7 +2706,17 @@ export default function AkunPage() {
   );
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
+  /* [boot-splash-v1] Tab AWAL dibaca dari ?menu= secara sinkron. Dulu selalu mulai
+     "beranda" lalu efek di bawah baru memindahkannya → datang dari Perpustakaan/Grup
+     (router.push("/akun?menu=jadwal")) Beranda sempat terpaint satu frame sebelum
+     loncat ke Jadwal. Aman terhadap hidrasi: saat HTML awal (server) tab tak
+     pernah dirender karena authLoading masih true. Deep-link lain (?reg, ?sesi,
+     ?ebook, tab tersimpan) tetap diselesaikan efek di bawah. */
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan">(() => {
+    if (typeof window === "undefined") return "beranda";
+    const m = new URLSearchParams(window.location.search).get("menu");
+    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" ? m : "beranda";
+  }); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
   const [bukaEbook, setBukaEbook] = useState<string | null>(null);
@@ -3757,13 +3767,7 @@ export default function AkunPage() {
   // ═══════════════════════════════════════════════════════════════════
   // LOGIN SCREEN
   // ═══════════════════════════════════════════════════════════════════
-  if (authLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
-        <Spinner size={160} />
-      </div>
-    );
-  }
+  if (authLoading) return <BootLoader />; /* [boot-splash-v1] */
 
   if (!user && !previewMode) {
     return (
@@ -3914,13 +3918,7 @@ export default function AkunPage() {
   }
 
   // Loading
-  if (dataLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
-        <Spinner size={160} />
-      </div>
-    );
-  }
+  if (dataLoading) return <BootLoader />; /* [boot-splash-v1] */
 
   // [preview-student-v1] preview gagal / id tidak ketemu → pesan sederhana (bukan onboarding)
   if (!student && previewMode) {
