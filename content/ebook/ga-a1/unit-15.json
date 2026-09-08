@@ -1,0 +1,628 @@
+{
+  "title": "Makanan dan minuman",
+  "title_target": "Bia agus deoch",
+  "goal": "Memesan makanan dan minuman, menyebut nama makanan, dan berbicara tentang rasa.",
+  "bekal": [
+    "memesan di kedai dan restoran dengan *Ba mhaith liom …*",
+    "menyebut makanan, minuman, dan nama waktu makan",
+    "mengatakan rasa dengan *blasta, milis, goirt, te*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Sa bhialann",
+      "intro": "Budi dan Seán makan siang di sebuah restoran kecil di pusat kota. Pelayannya menyapa dalam bahasa Irlandia.",
+      "lines": [
+        {
+          "speaker": "Freastalaí:",
+          "text": "Dia daoibh. An bhfuil sibh réidh le hordú?",
+          "id": "Halo. Sudah siap memesan?",
+          "literal": "Tuhan kepada-kalian. apakah berada kalian siap dengan memesan?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá. Ba mhaith liom anraith agus ceapaire cáise.",
+          "id": "Ya. Saya mau sup dan roti lapis keju.",
+          "literal": "berada. akan baik dengan-saya sup dan roti-lapis keju-punya."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cad a mholann tú?",
+          "id": "Kamu sarankan apa?",
+          "literal": "apa yang menyarankan kamu?"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Tá an bradán an-mhaith inniu. Nó an stobhach — tá sé traidisiúnta.",
+          "id": "Salmonnya bagus sekali hari ini. Atau semur — itu tradisional.",
+          "literal": "berada si salmon sangat-baik hari-ini. atau si semur — berada itu tradisional."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ba mhaith liom an stobhach, le do thoil. Tá ocras mór orm!",
+          "id": "Saya mau semurnya, tolong. Saya lapar sekali!",
+          "literal": "akan baik dengan-saya si semur, dengan milikmu kehendak. berada lapar besar atas-saya!"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Go breá. Agus le hól?",
+          "id": "Baik. Dan minumnya?",
+          "literal": "secara bagus. dan dengan minum?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gloine uisce, le do thoil. Tá tart orm freisin.",
+          "id": "Segelas air, tolong. Saya juga haus.",
+          "literal": "gelas air, dengan milikmu kehendak. berada haus atas-saya juga."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Agus pionta bainne domsa!",
+          "id": "Dan segelas besar susu untuk saya!",
+          "literal": "dan pint susu untuk-saya!"
+        },
+        {
+          "speaker": "Freastalaí:",
+          "text": "Ceart go leor. Beidh sé réidh i gceann deich nóiméad.",
+          "id": "Baik. Siap dalam sepuluh menit.",
+          "literal": "benar secukupnya. akan-berada itu siap di kepala sepuluh menit."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá an stobhach seo an-bhlasta. Tá sé beagán milis.",
+          "id": "Semur ini enak sekali. Rasanya agak manis.",
+          "literal": "berada si semur ini sangat-enak. berada itu sedikit manis."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Sea, tá prátaí agus cairéid ann. An bhfuil tú sásta?",
+          "id": "Iya, ada kentang dan wortelnya. Kamu suka?",
+          "literal": "adalah demikian, berada kentang-kentang dan wortel-wortel di-dalamnya. apakah berada kamu puas?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé an-sásta. An bille, le do thoil!",
+          "id": "Saya puas sekali. Minta bonnya, ya!",
+          "literal": "berada saya sangat-puas. si tagihan, dengan milikmu kehendak!"
+        }
+      ],
+      "notes": [
+        "**Ceapaire cáise — bahan diletakkan dalam bentuk kepunyaan.** \"Roti lapis keju\" keluar sebagai \"roti lapis keju-punya\": *cáis* menjadi *cáise*. Pola yang sama untuk *cupán tae* (secangkir teh), *gloine uisce* (segelas air), *pionta bainne* (segelas besar susu). Untuk sekarang hafalkan pasangannya; membentuk sendiri bentuk kepunyaan adalah bahan tingkat A2.",
+        "**Le hól, le hordú — h yang menyelip lagi.** Kata depan *le* menambahkan *h* di depan kata berikutnya yang berawal huruf hidup: *le hól* (\"untuk diminum\"), *le hordú* (\"untuk dipesan\"), *le hithe* (\"untuk dimakan\"). Sekarang kamu sudah melihat pola *h* ini pada *go*, *na*, *cé*, *ní*, angka, dan *le* — enam tempat, satu kebiasaan yang sama.",
+        "**Beidh sé réidh — \"akan siap\".** *Beidh* adalah bentuk masa depan dari *tá*, dan ia berperilaku persis sama: *beidh mé*, *beidh tú*, *beidh sé*. Bentuk masa depan lengkap dibahas di Unit 18; untuk sekarang cukup kenali *beidh* kalau terdengar, dan pakailah untuk menjanjikan sesuatu.",
+        "**Domsa, liomsa — bentuk yang ditegaskan.** Menambahkan *-sa* atau *-se* pada kata depan berkata ganti memberi tekanan, seperti \"untuk **saya**\" dengan suara ditinggikan. *Dom* → *domsa*, *liom* → *liomsa*, *agam* → *agamsa*, *uirthi* → *uirthise*. Dipakai kalau ada perbandingan: *Tae domsa, caife duitse*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bia — makanan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "arán",
+              "a-RAAN",
+              "roti",
+              "iasc",
+              "II-ask",
+              "ikan"
+            ],
+            [
+              "im",
+              "IM",
+              "mentega",
+              "bradán",
+              "BRA-daan",
+              "salmon"
+            ],
+            [
+              "cáis",
+              "KAASY",
+              "keju",
+              "sicín",
+              "SYI-kiin",
+              "ayam"
+            ],
+            [
+              "ubh",
+              "UW",
+              "telur",
+              "mairteoil",
+              "MAR-tyool",
+              "daging sapi"
+            ],
+            [
+              "bagún",
+              "BA-guun",
+              "bacon",
+              "muiceoil",
+              "MWI-kyool",
+              "daging babi"
+            ],
+            [
+              "ispín",
+              "IS-piin",
+              "sosis",
+              "anraith",
+              "AN-ri",
+              "sup"
+            ],
+            [
+              "práta",
+              "PRAA-ta",
+              "kentang",
+              "stobhach",
+              "STO-wakh",
+              "semur"
+            ],
+            [
+              "cairéad",
+              "KA-reed",
+              "wortel",
+              "ceapaire",
+              "KYA-pi-re",
+              "roti lapis"
+            ],
+            [
+              "glasraí",
+              "GLAS-rii",
+              "sayuran",
+              "brachán",
+              "BRA-khaan",
+              "bubur"
+            ],
+            [
+              "torthaí",
+              "TOR-hii",
+              "buah-buahan",
+              "milseog",
+              "MIL-syoog",
+              "makanan penutup"
+            ],
+            [
+              "úll",
+              "UUL",
+              "apel",
+              "cáca",
+              "KAA-ka",
+              "kue"
+            ],
+            [
+              "oráiste",
+              "o-RAAS-tye",
+              "jeruk",
+              "rís",
+              "RIISY",
+              "nasi"
+            ],
+            [
+              "banana",
+              "ba-NAA-na",
+              "pisang",
+              "salann",
+              "SA-lan",
+              "garam"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "bricfeasta",
+              "BRIK-fyas-ta",
+              "sarapan"
+            ],
+            [
+              "lón",
+              "LOON",
+              "makan siang"
+            ],
+            [
+              "dinnéar",
+              "di-NYEER",
+              "makan malam"
+            ],
+            [
+              "suipéar",
+              "si-PYEER",
+              "makan malam ringan"
+            ],
+            [
+              "deoch",
+              "DYOKH",
+              "minuman"
+            ],
+            [
+              "uisce",
+              "ISY-ke",
+              "air"
+            ],
+            [
+              "sú oráiste",
+              "suu o-RAAS-tye",
+              "jus jeruk"
+            ],
+            [
+              "beoir",
+              "BYOOR",
+              "bir"
+            ],
+            [
+              "fíon",
+              "FII-un",
+              "anggur"
+            ],
+            [
+              "gloine",
+              "GLI-nye",
+              "gelas"
+            ],
+            [
+              "buidéal",
+              "BWI-dyeel",
+              "botol"
+            ],
+            [
+              "pionta",
+              "PYUN-ta",
+              "pint, gelas besar"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Memesan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Ba mhaith liom …, le do thoil.",
+              "ba WA lyum",
+              "Saya mau …, tolong."
+            ],
+            [
+              "An bhfuil … agaibh?",
+              "an wil … A-giv",
+              "Apakah ada …?"
+            ],
+            [
+              "Cad a mholann tú?",
+              "kod a WO-lan tuu",
+              "Kamu sarankan apa?"
+            ],
+            [
+              "Cé mhéad atá air?",
+              "kyee veed a-TAA er",
+              "Berapa harganya?"
+            ],
+            [
+              "An bille, le do thoil.",
+              "an BI-le",
+              "Minta bonnya."
+            ],
+            [
+              "Tá sé an-bhlasta.",
+              "taa syee an-VLAS-ta",
+              "Enak sekali."
+            ],
+            [
+              "Tá mé lán.",
+              "taa mee LAAN",
+              "Saya kenyang."
+            ],
+            [
+              "Ní ithim feoil.",
+              "niil mee eg I-he FYO-la",
+              "Saya tidak makan daging."
+            ],
+            [
+              "An bhfuil sé te?",
+              "an wil syee TYE",
+              "Ini pedas?"
+            ],
+            [
+              "Gan siúcra, le do thoil.",
+              "gan SYUU-kra",
+              "Tanpa gula, tolong."
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Rasa",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "blasta",
+              "BLAS-ta",
+              "enak"
+            ],
+            [
+              "milis",
+              "MI-lisy",
+              "manis"
+            ],
+            [
+              "goirt",
+              "GORTJ",
+              "asin"
+            ],
+            [
+              "searbh",
+              "SYA-ruw",
+              "pahit"
+            ],
+            [
+              "te",
+              "TYE",
+              "panas, pedas"
+            ],
+            [
+              "fuar",
+              "FU-ar",
+              "dingin"
+            ],
+            [
+              "úr",
+              "UUR",
+              "segar"
+            ],
+            [
+              "trom",
+              "TRUM",
+              "berat, mengenyangkan"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Te berarti panas dan pedas sekaligus",
+          "items": [
+            "Bahasa Irlandia tidak membedakan panas suhu dari pedas rasa; keduanya *te*. Jadi *Tá an tae te* (\"tehnya panas\") dan *Tá an bia te* (\"makanannya pedas\") memakai kata yang sama.",
+            "Kalau kamu perlu jelas, tambahkan keterangan: *te ó spíosraí* (\"pedas karena rempah\") atau *róthe le hithe* (\"terlalu panas untuk dimakan\").",
+            "Makanan Irlandia jarang pedas, jadi kalau kamu berkata *Is maith liom bia te*, tuan rumah kemungkinan besar akan menghangatkan piringmu."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "freastalaí",
+      "baca": "FRAS-ta-lii",
+      "id": "pelayan"
+    },
+    {
+      "ga": "bialann",
+      "baca": "BII-a-lan",
+      "id": "restoran"
+    },
+    {
+      "ga": "ag ordú",
+      "baca": "eg OR-duu",
+      "id": "memesan"
+    },
+    {
+      "ga": "anraith",
+      "baca": "AN-ri",
+      "id": "sup"
+    },
+    {
+      "ga": "ceapaire",
+      "baca": "KYA-pi-re",
+      "id": "roti lapis"
+    },
+    {
+      "ga": "cáis",
+      "baca": "KAASY",
+      "id": "keju"
+    },
+    {
+      "ga": "bradán",
+      "baca": "BRA-daan",
+      "id": "salmon"
+    },
+    {
+      "ga": "stobhach",
+      "baca": "STO-wakh",
+      "id": "semur"
+    },
+    {
+      "ga": "gloine",
+      "baca": "GLI-nye",
+      "id": "gelas"
+    },
+    {
+      "ga": "pionta",
+      "baca": "PYUN-ta",
+      "id": "gelas besar, pint"
+    },
+    {
+      "ga": "ceart go leor",
+      "baca": "kyart gu LYOOR",
+      "id": "baiklah, oke"
+    },
+    {
+      "ga": "i gceann",
+      "baca": "i GYAUN",
+      "id": "dalam (waktu)"
+    },
+    {
+      "ga": "milis",
+      "baca": "MI-lisy",
+      "id": "manis"
+    },
+    {
+      "ga": "goirt",
+      "baca": "GORTJ",
+      "id": "asin"
+    },
+    {
+      "ga": "searbh",
+      "baca": "SYA-ruw",
+      "id": "pahit"
+    },
+    {
+      "ga": "cairéad",
+      "baca": "KA-reed",
+      "id": "wortel"
+    },
+    {
+      "ga": "bille",
+      "baca": "BI-le",
+      "id": "bon, tagihan"
+    },
+    {
+      "ga": "lán",
+      "baca": "LAAN",
+      "id": "penuh, kenyang"
+    },
+    {
+      "ga": "feoil",
+      "baca": "FYOOL",
+      "id": "daging"
+    },
+    {
+      "ga": "glasraí",
+      "baca": "GLAS-rii",
+      "id": "sayuran"
+    },
+    {
+      "ga": "torthaí",
+      "baca": "TOR-hii",
+      "id": "buah-buahan"
+    },
+    {
+      "ga": "úll",
+      "baca": "UUL",
+      "id": "apel"
+    },
+    {
+      "ga": "ubh",
+      "baca": "UW",
+      "id": "telur"
+    },
+    {
+      "ga": "lón",
+      "baca": "LOON",
+      "id": "makan siang"
+    },
+    {
+      "ga": "deoch",
+      "baca": "DYOKH",
+      "id": "minuman"
+    },
+    {
+      "ga": "sú",
+      "baca": "SUU",
+      "id": "jus"
+    },
+    {
+      "ga": "beoir",
+      "baca": "BYOOR",
+      "id": "bir"
+    },
+    {
+      "ga": "buidéal",
+      "baca": "BWI-dyeel",
+      "id": "botol"
+    },
+    {
+      "ga": "domsa",
+      "baca": "DOM-sa",
+      "id": "untuk saya (ditegaskan)"
+    },
+    {
+      "ga": "gan",
+      "baca": "GAN",
+      "id": "tanpa"
+    },
+    {
+      "ga": "mholann",
+      "baca": "WO-lan",
+      "id": "menyarankan (sesudah *a*)"
+    },
+    {
+      "ga": "sicín",
+      "baca": "SYI-kiin",
+      "id": "ayam"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pesan hal berikut dengan *Ba mhaith liom …, le do thoil.*",
+      "items": [
+        "secangkir teh",
+        "segelas air",
+        "sup",
+        "roti lapis keju",
+        "jus jeruk",
+        "makanan penutup"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Saya lapar sekali.",
+        "Saya juga haus.",
+        "Kamu sarankan apa?",
+        "Ini enak sekali.",
+        "Minta bonnya, tolong.",
+        "Saya tidak makan daging."
+      ]
+    },
+    {
+      "prompt": "Pilih kata rasa yang tepat (blasta, milis, goirt, searbh, te, fuar).",
+      "items": [
+        "Tá an cáca ____ . (manis)",
+        "Tá an t-anraith ____ . (asin)",
+        "Tá an caife ____ . (pahit)",
+        "Tá an bia ____ . (enak)",
+        "Tá an bainne ____ . (dingin)",
+        "Tá an tae ____ . (panas)"
+      ]
+    },
+    {
+      "prompt": "Jawab pertanyaan berikut dengan kalimat lengkap.",
+      "items": [
+        "An maith leat iasc?",
+        "Cad a itheann tú don bhricfeasta?",
+        "An bhfuil ocras ort anois?",
+        "Cad is fearr leat, tae nó caife?",
+        "An maith leat bia te?",
+        "Cad a ólann tú gach lá?"
+      ]
+    }
+  ],
+  "answers": [
+    "Ba mhaith liom cupán tae, le do thoil. — Ba mhaith liom gloine uisce, le do thoil. — Ba mhaith liom anraith, le do thoil. — Ba mhaith liom ceapaire cáise, le do thoil. — Ba mhaith liom sú oráiste, le do thoil. — Ba mhaith liom milseog, le do thoil.",
+    "Tá ocras mór orm. — Tá tart orm freisin. — Cad a mholann tú? — Tá sé an-bhlasta. — An bille, le do thoil. — Ní ithim feoil.",
+    "milis — goirt — searbh — blasta — fuar — te",
+    "Is maith liom iasc. — Ithim arán agus ubh. — Tá, tá ocras orm. — Is fearr liom tae. — Ní maith liom bia an-te. — Ólaim tae agus uisce."
+  ]
+}

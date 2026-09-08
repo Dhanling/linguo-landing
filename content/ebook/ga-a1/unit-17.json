@@ -1,0 +1,188 @@
+{
+  "title": "Kemarin saya pergi ke Conamara",
+  "title_target": "Chuaigh mé go Conamara inné",
+  "goal": "Menceritakan hal yang sudah lewat dengan masa lampau, menyangkalnya, dan menanyakannya.",
+  "bekal": [
+    "membentuk masa lampau: *d'ól mé*, *cheannaigh mé*, *d'fhan mé*",
+    "memakai *níor* dan *ar*, yang keduanya membawa séimhiú",
+    "mengenali sebelas bentuk lampau tak beraturan"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An deireadh seachtaine a bhí ann",
+      "intro": "Senin pagi di kelas. Aoife bertanya bagaimana akhir pekan Budi.",
+      "lines": [
+        { "speaker": "Aoife:", "text": "Dia duit, a Bhudi. Conas a bhí an deireadh seachtaine?", "id": "Halo, Budi. Bagaimana akhir pekanmu?", "literal": "Tuhan kepada-kamu, hai Budi. bagaimana yang ada si akhir minggu-punya?" },
+        { "speaker": "Budi:", "text": "Bhí sé ar fheabhas! Chuaigh mé go Conamara Dé Sathairn.", "id": "Luar biasa! Saya pergi ke Conamara hari Sabtu.", "literal": "ada itu atas keunggulan! pergi saya ke Conamara hari Sabtu." },
+        { "speaker": "Aoife:", "text": "Ar thaitin sé leat?", "id": "Kamu menikmatinya?", "literal": "apakah-lampau menyenangkan itu dengan-kamu?" },
+        { "speaker": "Budi:", "text": "Thaitin go mór. Chonaic mé an fharraige agus na sléibhte.", "id": "Sangat. Saya melihat laut dan gunung-gunungnya.", "literal": "menyenangkan secara besar. melihat saya si laut dan si gunung-gunung." },
+        { "speaker": "Aoife:", "text": "An raibh an aimsir go maith?", "id": "Cuacanya bagus?", "literal": "apakah ada si cuaca secara baik?" },
+        { "speaker": "Budi:", "text": "Ní raibh! Bhí sé ag cur báistí ar maidin. Ach ghlan sé tráthnóna.", "id": "Tidak! Paginya hujan. Tapi sorenya cerah.", "literal": "tidak ada! ada itu pada meletakkan hujan-punya pada pagi. tetapi membersihkan itu sore." },
+        { "speaker": "Aoife:", "text": "Cad a rinne tú ansin?", "id": "Lalu kamu ngapain?", "literal": "apa yang melakukan kamu itu-lalu?" },
+        { "speaker": "Budi:", "text": "D'ith mé dinnéar i mbialann bheag agus d'ól mé tae.", "id": "Saya makan malam di restoran kecil dan minum teh.", "literal": "makan saya makan-malam di restoran kecil dan minum saya teh." },
+        { "speaker": "Aoife:", "text": "Ar labhair tú Gaeilge?", "id": "Kamu bicara bahasa Irlandia?", "literal": "apakah-lampau berbicara kamu Irlandia?" },
+        { "speaker": "Budi:", "text": "Labhair! Bhí gach duine ag labhairt Gaeilge ansin.", "id": "Iya! Semua orang di sana bicara bahasa Irlandia.", "literal": "berbicara! ada setiap orang pada berbicara Irlandia di-situ." },
+        { "speaker": "Aoife:", "text": "Sin an Ghaeltacht duit. Ar cheannaigh tú aon rud?", "id": "Ya begitulah Gaeltacht. Kamu beli sesuatu?", "literal": "itu si Gaeltacht kepada-kamu. apakah-lampau membeli kamu satu hal?" },
+        { "speaker": "Budi:", "text": "Cheannaigh mé leabhar. Níor fhan mé i bhfad, ach bhí lá iontach agam.", "id": "Saya beli buku. Saya tidak lama di sana, tapi hari itu luar biasa.", "literal": "membeli saya buku. tidak-lampau tinggal saya di panjang, tetapi ada hari menakjubkan pada-saya." }
+      ],
+      "notes": [
+        "**Masa lampau dibuat dengan mengubah huruf depan, bukan akhiran.** Kata kerja berawal **konsonan** mendapat séimhiú: *ceannaigh* → *cheannaigh mé*, *glan* → *ghlan mé*, *tuig* → *thuig mé*. Kata kerja berawal **huruf hidup atau f** mendapat *d'* di depannya: *ól* → *d'ól mé*, *ith* → *d'ith mé*, *fan* → *d'fhan mé*, *éirigh* → *d'éirigh mé*. Tidak ada akhiran yang perlu dihafal untuk orang yang berbeda — *cheannaigh mé*, *cheannaigh tú*, *cheannaigh sé* semuanya sama.",
+        "**Níor dan ar, keduanya membawa séimhiú.** Berbeda dari masa sekarang, di mana *ní* membawa séimhiú tetapi *an* membawa urú, di masa lampau **keduanya** membawa séimhiú: *níor cheannaigh mé*, *ar cheannaigh tú?* Perhatikan juga bahwa *d'* hilang begitu ada *níor* atau *ar* di depannya: *d'ól mé* → *níor ól mé*, *ar ól tú?*",
+        "**Jawabannya tetap mengulang kata kerjanya, dalam bentuk lampau.** *Ar cheannaigh tú leabhar?* dijawab *Cheannaigh* atau *Níor cheannaigh*. *Ar thaitin sé leat?* dijawab *Thaitin* atau *Níor thaitin*. Perhatikan Budi menjawab *Labhair!* — satu kata, dan itu jawaban penuh.",
+        "**Chuaigh, chonaic, rinne, bhí — yang tak beraturan.** Sebelas kata kerja bahasa Irlandia punya bentuk lampau yang tidak bisa ditebak, dan di sinilah mereka paling menyimpang. *Téigh* menjadi *chuaigh*; *feic* menjadi *chonaic*; *déan* menjadi *rinne*; *tar* menjadi *tháinig*; *faigh* menjadi *fuair*. Ada tabelnya di bawah, dan lima itulah yang paling sering kamu perlukan."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Masa lampau, kata kerja biasa",
+      "blocks": [
+        { "type": "tabel", "head": ["Dasar", "Arti", "Lampau", "Menyangkal", "Bertanya"], "rows": [
+          ["ól", "minum", "d'ól mé", "níor ól mé", "ar ól tú?"],
+          ["ith", "makan", "d'ith mé", "níor ith mé", "ar ith tú?"],
+          ["éirigh", "bangun", "d'éirigh mé", "níor éirigh mé", "ar éirigh tú?"],
+          ["fan", "menunggu", "d'fhan mé", "níor fhan mé", "ar fhan tú?"],
+          ["féach", "memandang", "d'fhéach mé", "níor fhéach mé", "ar fhéach tú?"],
+          ["ceannaigh", "membeli", "cheannaigh mé", "níor cheannaigh mé", "ar cheannaigh tú?"],
+          ["glan", "membersihkan", "ghlan mé", "níor ghlan mé", "ar ghlan tú?"],
+          ["tuig", "mengerti", "thuig mé", "níor thuig mé", "ar thuig tú?"],
+          ["can", "menyanyi", "chan mé", "níor chan mé", "ar chan tú?"],
+          ["dún", "menutup", "dhún mé", "níor dhún mé", "ar dhún tú?"],
+          ["scríobh", "menulis", "scríobh mé", "níor scríobh mé", "ar scríobh tú?"],
+          ["labhair", "berbicara", "labhair mé", "níor labhair mé", "ar labhair tú?"],
+          ["léigh", "membaca", "léigh mé", "níor léigh mé", "ar léigh tú?"],
+          ["rith", "berlari", "rith mé", "níor rith mé", "ar rith tú?"]
+        ] },
+        { "type": "kotak", "title": "Kenapa empat baris terakhir tidak berubah", "items": [
+          "Huruf **l, n, r** tidak bisa dilembutkan dalam ejaan bahasa Irlandia, jadi *labhair*, *léigh*, dan *rith* tampak sama saja di masa lampau dan dalam bentuk perintah. Yang membedakannya cuma kata gantinya: *Léigh!* (\"bacalah!\") lawan *Léigh mé* (\"saya membaca\").",
+          "Huruf **s** yang diikuti konsonan keras (*sc-, sm-, sp-, st-*) juga tidak dilembutkan: *scríobh mé*, *stop mé*.",
+          "Semua kata kerja lain yang berawal konsonan **selalu** dilembutkan. Kalau kamu ragu, lembutkan — itu benar sembilan dari sepuluh kali."
+        ] },
+        { "type": "p", "text": "Bentuk \"kami\" punya akhiran khusus: *d'ólamar*, *cheannaíomar*, *ghlanamar*. Bentuk terpisah *d'ól muid* juga benar dan lebih sering terdengar sehari-hari, jadi kamu boleh memakai yang mana pun." }
+      ]
+    },
+    {
+      "title": "Sebelas kata kerja tak beraturan, masa lampau",
+      "blocks": [
+        { "type": "tabel", "head": ["Dasar", "Arti", "Lampau", "Menyangkal", "Bertanya"], "rows": [
+          ["bí", "berada", "bhí mé", "ní raibh mé", "an raibh tú?"],
+          ["abair", "berkata", "dúirt mé", "ní dúirt mé", "an ndúirt tú?"],
+          ["beir", "menangkap", "rug mé", "níor rug mé", "ar rug tú?"],
+          ["clois", "mendengar", "chuala mé", "níor chuala mé", "ar chuala tú?"],
+          ["déan", "membuat", "rinne mé", "ní dhearna mé", "an ndearna tú?"],
+          ["faigh", "mendapat", "fuair mé", "ní bhfuair mé", "an bhfuair tú?"],
+          ["feic", "melihat", "chonaic mé", "ní fhaca mé", "an bhfaca tú?"],
+          ["ith", "makan", "d'ith mé", "níor ith mé", "ar ith tú?"],
+          ["tabhair", "memberi", "thug mé", "níor thug mé", "ar thug tú?"],
+          ["tar", "datang", "tháinig mé", "níor tháinig mé", "ar tháinig tú?"],
+          ["téigh", "pergi", "chuaigh mé", "ní dheachaigh mé", "an ndeachaigh tú?"]
+        ] },
+        { "type": "p", "text": "Cara bacanya: *bhí* = VII, *dúirt* = DUURTJ, *chuala* = KHU-a-la, *rinne* = RI-nye, *fuair* = FU-ir, *chonaic* = KHO-nik, *thug* = HUG, *tháinig* = HAA-nig, *chuaigh* = KHU-a." },
+        { "type": "kotak", "title": "Lima yang benar-benar perlu kamu punya sekarang", "items": [
+          "*Bhí mé* (saya tadi) dan *ní raibh mé* (saya tadi tidak) — ini yang paling sering dari semuanya.",
+          "*Chuaigh mé* (saya pergi) — dan perhatikan bentuk menyangkalnya yang aneh, *ní dheachaigh mé*.",
+          "*Chonaic mé* (saya melihat) — menyangkal *ní fhaca mé*, yang dibaca \"nii A-ka\" karena *fh* diam.",
+          "*Rinne mé* (saya melakukan) — menyangkal *ní dhearna mé*.",
+          "*Fuair mé* (saya mendapat) — menyangkal *ní bhfuair mé*, satu-satunya yang memakai urú sesudah *ní*.",
+          "Enam sisanya boleh kamu kenali saja dulu; ia akan menempel sendiri lewat pemakaian."
+        ] },
+        { "type": "tabel", "head": ["Penanda waktu lampau", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["inné", "i-NYEE", "kemarin"],
+          ["aréir", "a-REER", "tadi malam"],
+          ["arú inné", "a-RUU i-NYEE", "kemarin dulu"],
+          ["an tseachtain seo caite", "an TYAKH-tin syo KA-tye", "minggu lalu"],
+          ["an mhí seo caite", "an VII syo KA-tye", "bulan lalu"],
+          ["anuraidh", "a-NU-rii", "tahun lalu"],
+          ["ar ball", "er BAL", "tadi (barusan)"],
+          ["fadó", "fa-DOO", "dahulu kala"]
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ga": "bhí", "baca": "VII", "id": "tadi ada, dulu ada" },
+    { "ga": "ní raibh", "baca": "nii ROV", "id": "tadi tidak ada" },
+    { "ga": "an raibh?", "baca": "an ROV", "id": "apakah tadi ada?" },
+    { "ga": "chuaigh mé", "baca": "KHU-a mee", "id": "saya pergi" },
+    { "ga": "chonaic mé", "baca": "KHO-nik mee", "id": "saya melihat" },
+    { "ga": "rinne mé", "baca": "RI-nye mee", "id": "saya melakukan" },
+    { "ga": "fuair mé", "baca": "FU-ir mee", "id": "saya mendapat" },
+    { "ga": "thug mé", "baca": "HUG mee", "id": "saya memberi" },
+    { "ga": "tháinig mé", "baca": "HAA-nig mee", "id": "saya datang" },
+    { "ga": "dúirt mé", "baca": "DUURTJ mee", "id": "saya berkata" },
+    { "ga": "chuala mé", "baca": "KHU-a-la mee", "id": "saya mendengar" },
+    { "ga": "níor", "baca": "NYIIR", "id": "tidak (masa lampau)" },
+    { "ga": "ar", "baca": "er", "id": "apakah (masa lampau)" },
+    { "ga": "ar fheabhas", "baca": "er AU-as", "id": "luar biasa" },
+    { "ga": "thaitin", "baca": "HA-tyin", "id": "menyenangkan (lampau)" },
+    { "ga": "go mór", "baca": "gu MOOR", "id": "sangat" },
+    { "ga": "sliabh", "baca": "SYLII-uw", "id": "gunung" },
+    { "ga": "sléibhte", "baca": "SYLYAY-tye", "id": "gunung-gunung" },
+    { "ga": "Gaeltacht", "baca": "GEEL-takht", "id": "daerah berbahasa Irlandia" },
+    { "ga": "aon rud", "baca": "een RUD", "id": "sesuatu, apa saja" },
+    { "ga": "inné", "baca": "i-NYEE", "id": "kemarin" },
+    { "ga": "aréir", "baca": "a-REER", "id": "tadi malam" },
+    { "ga": "anuraidh", "baca": "a-NU-rii", "id": "tahun lalu" },
+    { "ga": "fadó", "baca": "fa-DOO", "id": "dahulu kala" },
+    { "ga": "ar ball", "baca": "er BAL", "id": "tadi, barusan" },
+    { "ga": "seo caite", "baca": "syo KA-tye", "id": "yang lalu" },
+    { "ga": "d'ól", "baca": "DOOL", "id": "minum (lampau)" },
+    { "ga": "d'ith", "baca": "DYI", "id": "makan (lampau)" },
+    { "ga": "cheannaigh", "baca": "KHYA-nii", "id": "membeli (lampau)" },
+    { "ga": "d'fhan", "baca": "DAN", "id": "tinggal, menunggu (lampau)" },
+    { "ga": "ghlan", "baca": "GHLAN", "id": "membersihkan (lampau)" },
+    { "ga": "labhair", "baca": "LOW-ir", "id": "berbicara (lampau & perintah)" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah ke masa lampau (bentuk \"saya\").",
+      "items": [
+        "ól",
+        "ith",
+        "ceannaigh",
+        "glan",
+        "fan",
+        "tuig"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi kalimat menyangkal. Ingat *níor* membawa séimhiú, dan *d'* hilang.",
+      "items": [
+        "D'ól mé tae.",
+        "Cheannaigh mé leabhar.",
+        "D'fhan mé sa bhaile.",
+        "Ghlan sí an chistin.",
+        "Thuig sé an cheist.",
+        "D'ith siad dinnéar."
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk lampau kata kerja tak beraturan berikut (bentuk \"saya\").",
+      "items": [
+        "téigh",
+        "feic",
+        "déan",
+        "faigh",
+        "tar",
+        "bí"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Saya pergi ke Conamara hari Sabtu.",
+        "Saya melihat lautnya.",
+        "Cuacanya tidak bagus.",
+        "Saya makan malam di restoran kecil.",
+        "Kamu beli sesuatu?",
+        "Saya tidak lama di sana."
+      ]
+    }
+  ],
+  "answers": [
+    "d'ól mé — d'ith mé — cheannaigh mé — ghlan mé — d'fhan mé — thuig mé",
+    "Níor ól mé tae. — Níor cheannaigh mé leabhar. — Níor fhan mé sa bhaile. — Níor ghlan sí an chistin. — Níor thuig sé an cheist. — Níor ith siad dinnéar.",
+    "chuaigh mé — chonaic mé — rinne mé — fuair mé — tháinig mé — bhí mé",
+    "Chuaigh mé go Conamara Dé Sathairn. — Chonaic mé an fharraige. — Ní raibh an aimsir go maith. — D'ith mé dinnéar i mbialann bheag. — Ar cheannaigh tú aon rud? — Níor fhan mé i bhfad."
+  ]
+}

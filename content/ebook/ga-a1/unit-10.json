@@ -1,0 +1,609 @@
+{
+  "title": "Saya minum teh setiap pagi",
+  "title_target": "Ólaim tae gach maidin",
+  "goal": "Memakai kata kerja masa sekarang untuk kebiasaan, menyangkalnya dengan *ní*, dan menanyakannya dengan *an*.",
+  "bekal": [
+    "menyusun bentuk masa sekarang golongan pertama: *ólaim, ólann tú, ólaimid*",
+    "membedakan kebiasaan (*Ólaim tae*) dari yang sedang berlangsung (*Tá mé ag ól tae*)",
+    "memakai *ní* dengan séimhiú dan *an* dengan urú"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Gnáthlá Bhudi",
+      "intro": "Di kelas, Aoife meminta setiap murid menceritakan hari biasanya. Giliran Budi.",
+      "lines": [
+        {
+          "speaker": "Aoife:",
+          "text": "A Bhudi, inis dúinn faoi do lá. Cén t-am a éiríonn tú?",
+          "id": "Budi, ceritakan tentang harimu. Jam berapa kamu bangun?",
+          "literal": "hai Budi, ceritakan kepada-kami tentang milikmu hari. apa waktu yang bangun kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Éirím ar a seacht. Ólaim tae agus ithim arán.",
+          "id": "Saya bangun jam tujuh. Saya minum teh dan makan roti.",
+          "literal": "bangun-saya atas si tujuh. minum-saya teh dan makan-saya roti."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An ólann tú caife riamh?",
+          "id": "Kamu pernah minum kopi?",
+          "literal": "apakah minum kamu kopi pernah?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní ólaim caife. Ní maith liom é.",
+          "id": "Saya tidak minum kopi. Saya tidak suka.",
+          "literal": "tidak minum-saya kopi. tidak baik dengan-saya itu."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Agus ansin?",
+          "id": "Lalu?",
+          "literal": "dan itu-lalu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Siúlaim chuig an scoil. Fanaim anseo go dtí a trí.",
+          "id": "Saya jalan kaki ke sekolah. Saya di sini sampai jam tiga.",
+          "literal": "berjalan-saya kepada si sekolah. tinggal-saya di-sini sampai si tiga."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An dtuigeann tú gach rud sa rang?",
+          "id": "Kamu mengerti semuanya di kelas?",
+          "literal": "apakah mengerti kamu setiap hal di-si kelas?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ní thuigim gach rud, ach tuigim go leor.",
+          "id": "Saya tidak mengerti semuanya, tapi cukup mengerti.",
+          "literal": "tidak mengerti-saya setiap hal, tetapi mengerti-saya secukupnya."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Maith thú! Cad a dhéanann tú tráthnóna?",
+          "id": "Bagus! Kamu ngapain sore hari?",
+          "literal": "baik kamu! apa yang melakukan kamu sore?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Léim leabhar nó féachaim ar an teilifís. Uaireanta glanaim an chistin.",
+          "id": "Saya baca buku atau nonton televisi. Kadang saya bersihkan dapur.",
+          "literal": "baca-saya buku atau memandang-saya atas si televisi. kadang bersihkan-saya si dapur."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "An gcanann tú?",
+          "id": "Kamu menyanyi?",
+          "literal": "apakah menyanyi kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Canaim sa seomra folctha amháin!",
+          "id": "Cuma di kamar mandi!",
+          "literal": "menyanyi-saya di-si kamar mandi-punya saja!"
+        }
+      ],
+      "notes": [
+        "**Ólaim, tapi ólann tú.** Bahasa Irlandia hampir tidak mengubah kata kerjanya untuk orang yang berbeda. Hanya bentuk \"saya\" dan \"kami\" yang punya akhiran khusus (*-aim* dan *-aimid*); untuk semua orang lain dipakai satu bentuk yang sama, *-ann*, ditambah kata gantinya. Jadi cuma ada **tiga** bentuk yang perlu dihafal per kata kerja, bukan enam.",
+        "**Ólaim tae bukan sama dengan Tá mé ag ól tae.** *Ólaim tae* berarti \"saya (biasa) minum teh\" — kebiasaan, seperti *present simple* bahasa Inggris. *Tá mé ag ól tae* berarti \"saya sedang minum teh sekarang\". Bahasa Indonesia sering tidak membedakannya, jadi inilah tempat penutur bahasa Indonesia paling sering salah pilih. Kalau ada kata seperti *gach lá*, *go minic*, *uaireanta* di kalimatnya, hampir pasti yang dipakai bentuk kebiasaan.",
+        "**Ní thuigim, an dtuigeann tú — dua kata kecil yang membawa perubahan huruf.** *Ní* (\"tidak\") membawa **séimhiú**: *tuigim* → *ní thuigim*, *canaim* → *ní chanaim*. *An* (\"apakah\") membawa **urú**: *tuigeann* → *an dtuigeann*, *canann* → *an gcanann*. Kata yang berawal huruf hidup tidak tersentuh keduanya: *ólaim* → *ní ólaim*, *an ólann tú?*",
+        "**Kata kerja berdiri paling depan.** *Ólaim tae* — kata kerja, lalu bendanya. Kalau pelakunya disebut namanya, ia masuk di tengah: *Ólann Seán tae* (\"Seán minum teh\"). Susunan kata kerja–pelaku–benda ini tetap sama di semua masa, jadi sekali terbiasa, ia tidak akan menyusahkanmu lagi."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Masa sekarang, golongan pertama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Golongan pertama adalah kata kerja yang bentuk dasarnya satu suku kata: *ól, fan, can, glan, dún, léigh, tuig, cuir*. Bentuknya ditentukan oleh vokal terakhir bentuk dasar itu — apakah **lebar** (a, o, u) atau **tipis** (e, i)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Orang",
+            "Dasar lebar: ól (minum)",
+            "Dasar tipis: tuig (mengerti)"
+          ],
+          "rows": [
+            [
+              "mé",
+              "ólaim",
+              "tuigim"
+            ],
+            [
+              "tú",
+              "ólann tú",
+              "tuigeann tú"
+            ],
+            [
+              "sé / sí",
+              "ólann sé / sí",
+              "tuigeann sé / sí"
+            ],
+            [
+              "muid",
+              "ólaimid",
+              "tuigimid"
+            ],
+            [
+              "sibh",
+              "ólann sibh",
+              "tuigeann sibh"
+            ],
+            [
+              "siad",
+              "ólann siad",
+              "tuigeann siad"
+            ],
+            [
+              "menyangkal",
+              "ní ólaim",
+              "ní thuigim"
+            ],
+            [
+              "bertanya",
+              "an ólann tú?",
+              "an dtuigeann tú?"
+            ],
+            [
+              "menyangkal + tanya",
+              "nach n-ólann tú?",
+              "nach dtuigeann tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cara bacanya: *ólaim* = OO-lim, *ólann* = OO-lan, *ólaimid* = OO-li-mid, *tuigim* = TI-gyim, *tuigeann* = TI-gyan. Akhiran *-ann* dan *-eann* dibaca sama-sama \"an\" pendek; huruf *e* di dalamnya cuma penanda bahwa konsonan sebelumnya tipis."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Arti",
+            "Saya",
+            "Kamu / dia",
+            "Kami"
+          ],
+          "rows": [
+            [
+              "ól",
+              "minum",
+              "ólaim",
+              "ólann tú",
+              "ólaimid"
+            ],
+            [
+              "fan",
+              "menunggu, tinggal",
+              "fanaim",
+              "fanann tú",
+              "fanaimid"
+            ],
+            [
+              "can",
+              "menyanyi",
+              "canaim",
+              "canann tú",
+              "canaimid"
+            ],
+            [
+              "glan",
+              "membersihkan",
+              "glanaim",
+              "glanann tú",
+              "glanaimid"
+            ],
+            [
+              "dún",
+              "menutup",
+              "dúnaim",
+              "dúnann tú",
+              "dúnaimid"
+            ],
+            [
+              "féach",
+              "memandang",
+              "féachaim",
+              "féachann tú",
+              "féachaimid"
+            ],
+            [
+              "tuig",
+              "mengerti",
+              "tuigim",
+              "tuigeann tú",
+              "tuigimid"
+            ],
+            [
+              "cuir",
+              "meletakkan",
+              "cuirim",
+              "cuireann tú",
+              "cuirimid"
+            ],
+            [
+              "bris",
+              "memecahkan",
+              "brisim",
+              "briseann tú",
+              "brisimid"
+            ],
+            [
+              "rith",
+              "berlari",
+              "rithim",
+              "ritheann tú",
+              "rithimid"
+            ],
+            [
+              "léigh",
+              "membaca",
+              "léim",
+              "léann tú",
+              "léimid"
+            ],
+            [
+              "suigh",
+              "duduk",
+              "suím",
+              "suíonn tú",
+              "suímid"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua bentuk yang menyimpang",
+          "items": [
+            "Kata kerja berakhiran *-igh* (*léigh*, *suigh*, *nigh*) kehilangan *gh*-nya: *léim*, *léann*; *suím*, *suíonn*; *ním*, *níonn*.",
+            "*Léim* berarti \"saya membaca\" — tetapi juga kebetulan berarti \"lompatan\" sebagai kata benda. Yang membedakannya cuma tempatnya dalam kalimat.",
+            "Bentuk \"kami\" boleh juga ditulis terpisah: *ólann muid* sama benar dengan *ólaimid*, dan lebih sering terdengar di Connacht dan Ulster."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kebiasaan — dan kata yang menandainya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "gach lá",
+              "gakh LAA",
+              "setiap hari"
+            ],
+            [
+              "gach maidin",
+              "gakh MA-dyin",
+              "setiap pagi"
+            ],
+            [
+              "gach seachtain",
+              "gakh SYAKH-tin",
+              "setiap minggu"
+            ],
+            [
+              "go minic",
+              "gu MI-nik",
+              "sering"
+            ],
+            [
+              "uaireanta",
+              "U-a-ryan-ta",
+              "kadang-kadang"
+            ],
+            [
+              "i gcónaí",
+              "i GOO-nii",
+              "selalu"
+            ],
+            [
+              "riamh",
+              "RII-uv",
+              "pernah; tak pernah (dalam kalimat menyangkal)"
+            ],
+            [
+              "go hannamh",
+              "gu HA-nuv",
+              "jarang"
+            ],
+            [
+              "arís",
+              "a-RIISY",
+              "lagi"
+            ],
+            [
+              "anois",
+              "a-NISY",
+              "sekarang"
+            ],
+            [
+              "ansin",
+              "an-SYIN",
+              "lalu, kemudian"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Harfiah",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Ólaim tae gach maidin.",
+              "minum-saya teh setiap pagi",
+              "Saya minum teh setiap pagi."
+            ],
+            [
+              "Ní ólaim caife riamh.",
+              "tidak minum-saya kopi pernah",
+              "Saya tidak pernah minum kopi."
+            ],
+            [
+              "An itheann tú feoil?",
+              "apakah makan kamu daging",
+              "Kamu makan daging?"
+            ],
+            [
+              "Fanaimid sa bhaile go minic.",
+              "tinggal-kami di-rumah sering",
+              "Kami sering di rumah."
+            ],
+            [
+              "Ní thuigim an cheist.",
+              "tidak mengerti-saya si pertanyaan",
+              "Saya tidak mengerti pertanyaannya."
+            ],
+            [
+              "Siúlann sí chuig an scoil.",
+              "berjalan dia kepada si sekolah",
+              "Dia jalan kaki ke sekolah."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bandingkan sendiri",
+          "items": [
+            "*Ólaim tae.* — Saya (biasa) minum teh. Kebiasaan, tidak terikat waktu.",
+            "*Tá mé ag ól tae.* — Saya sedang minum teh. Sekarang, di depan matamu.",
+            "*Ólaim tae gach maidin, ach tá mé ag ól caife anois.* — \"Saya biasanya minum teh setiap pagi, tapi sekarang saya sedang minum kopi.\" Kalimat ini memuat keduanya sekaligus, dan ada baiknya kamu hafalkan sebagai patokan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "éirím",
+      "baca": "AY-riim",
+      "id": "saya bangun"
+    },
+    {
+      "ga": "ólaim",
+      "baca": "OO-lim",
+      "id": "saya minum"
+    },
+    {
+      "ga": "ithim",
+      "baca": "I-him",
+      "id": "saya makan"
+    },
+    {
+      "ga": "siúlaim",
+      "baca": "SYUU-lim",
+      "id": "saya berjalan"
+    },
+    {
+      "ga": "fanaim",
+      "baca": "FA-nim",
+      "id": "saya menunggu, tinggal"
+    },
+    {
+      "ga": "tuigim",
+      "baca": "TI-gyim",
+      "id": "saya mengerti"
+    },
+    {
+      "ga": "léim",
+      "baca": "LYEEM",
+      "id": "saya membaca"
+    },
+    {
+      "ga": "féachaim",
+      "baca": "FEE-a-khim",
+      "id": "saya memandang"
+    },
+    {
+      "ga": "glanaim",
+      "baca": "GLA-nim",
+      "id": "saya membersihkan"
+    },
+    {
+      "ga": "canaim",
+      "baca": "KA-nim",
+      "id": "saya menyanyi"
+    },
+    {
+      "ga": "dúnaim",
+      "baca": "DUU-nim",
+      "id": "saya menutup"
+    },
+    {
+      "ga": "cuirim",
+      "baca": "KI-rim",
+      "id": "saya meletakkan"
+    },
+    {
+      "ga": "ní",
+      "baca": "nii",
+      "id": "tidak (di depan kata kerja)"
+    },
+    {
+      "ga": "an",
+      "baca": "an",
+      "id": "apakah (di depan kata kerja)"
+    },
+    {
+      "ga": "nach",
+      "baca": "NAKH",
+      "id": "bukankah"
+    },
+    {
+      "ga": "gnáthlá",
+      "baca": "GNAA-laa",
+      "id": "hari biasa"
+    },
+    {
+      "ga": "inis",
+      "baca": "I-nisy",
+      "id": "ceritakan"
+    },
+    {
+      "ga": "faoi",
+      "baca": "FWII",
+      "id": "tentang; di bawah"
+    },
+    {
+      "ga": "cén t-am?",
+      "baca": "kyeen TAM",
+      "id": "jam berapa?"
+    },
+    {
+      "ga": "riamh",
+      "baca": "RII-uv",
+      "id": "pernah; tak pernah"
+    },
+    {
+      "ga": "uaireanta",
+      "baca": "U-a-ryan-ta",
+      "id": "kadang-kadang"
+    },
+    {
+      "ga": "gach lá",
+      "baca": "gakh LAA",
+      "id": "setiap hari"
+    },
+    {
+      "ga": "go dtí",
+      "baca": "gu DYII",
+      "id": "sampai"
+    },
+    {
+      "ga": "anois",
+      "baca": "a-NISY",
+      "id": "sekarang"
+    },
+    {
+      "ga": "ansin",
+      "baca": "an-SYIN",
+      "id": "lalu, kemudian"
+    },
+    {
+      "ga": "nó",
+      "baca": "NOO",
+      "id": "atau"
+    },
+    {
+      "ga": "maith thú!",
+      "baca": "ma HUU",
+      "id": "bagus, kamu hebat!"
+    },
+    {
+      "ga": "seomra folctha",
+      "baca": "SYOOM-ra FOL-ka",
+      "id": "kamar mandi"
+    },
+    {
+      "ga": "feoil",
+      "baca": "FYOOL",
+      "id": "daging"
+    },
+    {
+      "ga": "iasc",
+      "baca": "II-ask",
+      "id": "ikan"
+    },
+    {
+      "ga": "seachtain",
+      "baca": "SYAKH-tin",
+      "id": "minggu"
+    },
+    {
+      "ga": "arís",
+      "baca": "a-RIISY",
+      "id": "lagi"
+    },
+    {
+      "ga": "gnáth-",
+      "baca": "GNAA",
+      "id": "biasa (awalan)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk \"saya\" dari kata kerja berikut.",
+      "items": [
+        "ól",
+        "fan",
+        "glan",
+        "tuig",
+        "cuir",
+        "léigh"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi kalimat menyangkal. Ingat *ní* membawa séimhiú.",
+      "items": [
+        "Ólaim caife.",
+        "Tuigim an cheist.",
+        "Canaim gach lá.",
+        "Glanann sé an chistin.",
+        "Fanann siad sa bhaile.",
+        "Itheann tú feoil."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pertanyaan. Ingat *an* membawa urú.",
+      "items": [
+        "Ólann tú tae.",
+        "Tuigeann tú Gaeilge.",
+        "Canann sí go minic.",
+        "Fanann sibh anseo.",
+        "Glanann siad an teach.",
+        "Itheann sé arán."
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk kebiasaan atau bentuk *ag*, lalu terjemahkan.",
+      "items": [
+        "Saya minum teh setiap pagi.",
+        "Saya sedang minum teh sekarang.",
+        "Dia sering berjalan kaki ke sekolah.",
+        "Dia sedang berjalan ke sekolah.",
+        "Saya tidak pernah minum kopi.",
+        "Kami sedang membersihkan dapur."
+      ]
+    }
+  ],
+  "answers": [
+    "ólaim — fanaim — glanaim — tuigim — cuirim — léim",
+    "Ní ólaim caife. — Ní thuigim an cheist. — Ní chanaim gach lá. — Ní ghlanann sé an chistin. — Ní fhanann siad sa bhaile. — Ní itheann tú feoil.",
+    "An ólann tú tae? — An dtuigeann tú Gaeilge? — An gcanann sí go minic? — An bhfanann sibh anseo? — An nglanann siad an teach? — An itheann sé arán?",
+    "Ólaim tae gach maidin. — Tá mé ag ól tae anois. — Siúlann sí chuig an scoil go minic. — Tá sí ag siúl chuig an scoil. — Ní ólaim caife riamh. — Tá muid ag glanadh na cistine."
+  ]
+}

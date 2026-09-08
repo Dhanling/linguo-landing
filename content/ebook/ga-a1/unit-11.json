@@ -1,0 +1,617 @@
+{
+  "title": "Saya membeli, saya pergi, saya melihat",
+  "title_target": "Ceannaím, téim, feicim",
+  "goal": "Memakai kata kerja golongan kedua dan sebelas kata kerja tak beraturan dalam masa sekarang.",
+  "bekal": [
+    "menyusun bentuk masa sekarang golongan kedua: *ceannaím, ceannaíonn tú, ceannaímid*",
+    "mengenali kata kerja yang hurufnya rontok di tengah: *oscail* → *osclaím*",
+    "memakai sebelas kata kerja tak beraturan yang paling sering dipakai"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An deireadh seachtaine",
+      "intro": "Seán bertanya apa yang biasa dilakukan Budi pada akhir pekan.",
+      "lines": [
+        {
+          "speaker": "Seán:",
+          "text": "Cá dtéann tú ag an deireadh seachtaine?",
+          "id": "Kamu biasanya ke mana kalau akhir pekan?",
+          "literal": "di-mana pergi kamu pada si akhir minggu-punya?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Téim go dtí an chathair. Ceannaím bia sa mhargadh.",
+          "id": "Saya pergi ke kota. Saya beli makanan di pasar.",
+          "literal": "pergi-saya sampai si kota. beli-saya makanan di-si pasar."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An dtagann do chairde leat?",
+          "id": "Teman-temanmu ikut?",
+          "literal": "apakah datang milikmu teman-teman dengan-kamu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tagann, uaireanta. Tosaímid ar a deich.",
+          "id": "Kadang ikut. Kami mulai jam sepuluh.",
+          "literal": "datang, kadang-kadang. mulai-kami atas si sepuluh."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Cad a dhéanann sibh ansin?",
+          "id": "Lalu kalian ngapain?",
+          "literal": "apa yang melakukan kalian itu-lalu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Féachaimid ar na siopaí. Uaireanta faighimid caife.",
+          "id": "Kami lihat-lihat toko. Kadang kami cari kopi.",
+          "literal": "memandang-kami atas si toko-toko. kadang-kadang dapat-kami kopi."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An bhfeiceann tú na sráidcheoltóirí?",
+          "id": "Kamu lihat pengamen jalanan?",
+          "literal": "apakah melihat kamu si jalan-pemusik-pemusik?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Feicim iad gach Satharn. Tugaim euro dóibh.",
+          "id": "Saya lihat mereka setiap Sabtu. Saya kasih mereka satu euro.",
+          "literal": "melihat-saya mereka setiap Sabtu. memberi-saya euro kepada-mereka."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Deas! An imíonn tú go luath?",
+          "id": "Bagus! Kamu pulang cepat?",
+          "literal": "bagus! apakah pergi kamu secara awal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Imím ar a cúig. Críochnaím an lá le dinnéar.",
+          "id": "Saya pergi jam lima. Saya tutup hari itu dengan makan malam.",
+          "literal": "pergi-saya atas si lima. selesaikan-saya si hari dengan makan-malam."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An gcabhraíonn tú le Mam sa chistin?",
+          "id": "Kamu bantu Ibu di dapur?",
+          "literal": "apakah menolong kamu dengan Ibu di-si dapur?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cabhraím go minic — ach ní ullmhaím an dinnéar!",
+          "id": "Sering — tapi bukan saya yang menyiapkan makan malamnya!",
+          "literal": "menolong-saya sering — tetapi tidak siapkan-saya si makan-malam!"
+        }
+      ],
+      "notes": [
+        "**Golongan kedua: akhirannya panjang.** Kalau golongan pertama memakai *-aim / -ann*, golongan kedua memakai *-aím / -aíonn*. Yang membedakan cuma satu tanda fada, tetapi bunyinya jelas berbeda: *ólaim* (OO-lim) lawan *ceannaím* (KYA-niim). Cara mengenalinya: kata kerja golongan kedua punya **dua suku kata atau lebih**, dan hampir selalu berakhiran *-igh* — *ceannaigh*, *tosaigh*, *críochnaigh*, *imigh*, *cabhraigh*, *ullmhaigh*.",
+        "**Oscail → osclaím: ada huruf yang rontok.** Sekelompok kata kerja golongan kedua berakhiran *-il, -in, -ir, -is* kehilangan vokal di tengahnya begitu diberi akhiran: *oscail* → *osclaím*, *inis* → *insím*, *freagair* → *freagraím*, *imir* → *imrím*, *codail* → *codlaím*, *labhair* → *labhraím*. Gejala ini disebut perontokan, dan ia terjadi karena bahasa Irlandia menghindari tiga suku kata lemah berturut-turut.",
+        "**Faighimid, feicim, tugaim, tagaim, téim — bentuk yang tidak bisa ditebak.** Sebelas kata kerja bahasa Irlandia tidak beraturan, dan celakanya kesebelasnya justru yang paling sering dipakai. Kabar baiknya: dalam masa sekarang, sebagian besar berperilaku biasa begitu kamu tahu batangnya — *faigh* → *faighim*, *feic* → *feicim*, *tabhair* → *tugaim*, *tar* → *tagaim*, *téigh* → *téim*. Yang berubah drastis baru muncul di masa lampau (Unit 17).",
+        "**Cá dtéann tú? — cá membawa urú, sama seperti an.** Sudah kamu lihat di *Cá bhfuil …?* pada Unit 3. Sekarang polanya lengkap: *cá* dan *an* sama-sama membawa urú pada kata kerja sesudahnya, sedangkan *ní* membawa séimhiú. Tiga kata kecil, tiga perilaku, dan ketiganya akan terus muncul di setiap unit sisanya."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Masa sekarang, golongan kedua",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Orang",
+            "Dasar lebar: ceannaigh (membeli)",
+            "Dasar tipis: imigh (pergi)"
+          ],
+          "rows": [
+            [
+              "mé",
+              "ceannaím",
+              "imím"
+            ],
+            [
+              "tú",
+              "ceannaíonn tú",
+              "imíonn tú"
+            ],
+            [
+              "sé / sí",
+              "ceannaíonn sé / sí",
+              "imíonn sé / sí"
+            ],
+            [
+              "muid",
+              "ceannaímid",
+              "imímid"
+            ],
+            [
+              "sibh",
+              "ceannaíonn sibh",
+              "imíonn sibh"
+            ],
+            [
+              "siad",
+              "ceannaíonn siad",
+              "imíonn siad"
+            ],
+            [
+              "menyangkal",
+              "ní cheannaím",
+              "ní imím"
+            ],
+            [
+              "bertanya",
+              "an gceannaíonn tú?",
+              "an imíonn tú?"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Arti",
+            "Saya",
+            "Kamu / dia",
+            "Kami"
+          ],
+          "rows": [
+            [
+              "ceannaigh",
+              "membeli",
+              "ceannaím",
+              "ceannaíonn tú",
+              "ceannaímid"
+            ],
+            [
+              "tosaigh",
+              "memulai",
+              "tosaím",
+              "tosaíonn tú",
+              "tosaímid"
+            ],
+            [
+              "críochnaigh",
+              "menyelesaikan",
+              "críochnaím",
+              "críochnaíonn tú",
+              "críochnaímid"
+            ],
+            [
+              "cabhraigh",
+              "menolong",
+              "cabhraím",
+              "cabhraíonn tú",
+              "cabhraímid"
+            ],
+            [
+              "ullmhaigh",
+              "menyiapkan",
+              "ullmhaím",
+              "ullmhaíonn tú",
+              "ullmhaímid"
+            ],
+            [
+              "éirigh",
+              "bangun, menjadi",
+              "éirím",
+              "éiríonn tú",
+              "éirímid"
+            ],
+            [
+              "imigh",
+              "pergi",
+              "imím",
+              "imíonn tú",
+              "imímid"
+            ],
+            [
+              "cuimhnigh",
+              "mengingat",
+              "cuimhním",
+              "cuimhníonn tú",
+              "cuimhnímid"
+            ],
+            [
+              "oibrigh",
+              "bekerja",
+              "oibrím",
+              "oibríonn tú",
+              "oibrímid"
+            ],
+            [
+              "oscail",
+              "membuka",
+              "osclaím",
+              "osclaíonn tú",
+              "osclaímid"
+            ],
+            [
+              "inis",
+              "menceritakan",
+              "insím",
+              "insíonn tú",
+              "insímid"
+            ],
+            [
+              "freagair",
+              "menjawab",
+              "freagraím",
+              "freagraíonn tú",
+              "freagraímid"
+            ],
+            [
+              "imir",
+              "bermain",
+              "imrím",
+              "imríonn tú",
+              "imrímid"
+            ],
+            [
+              "codail",
+              "tidur",
+              "codlaím",
+              "codlaíonn tú",
+              "codlaímid"
+            ],
+            [
+              "labhair",
+              "berbicara",
+              "labhraím",
+              "labhraíonn tú",
+              "labhraímid"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bagaimana membedakan golongan pertama dan kedua",
+          "items": [
+            "**Satu suku kata → golongan pertama.** *Ól, fan, glan, dún, cuir, bris, tuig, rith, léigh.*",
+            "**Dua suku kata berakhir -igh → golongan kedua.** *Ceannaigh, tosaigh, éirigh, imigh, cabhraigh.*",
+            "**Dua suku kata berakhir -il, -in, -ir, -is → golongan kedua, dan hurufnya rontok.** *Oscail, inis, freagair, imir, codail, labhair.*",
+            "Kekecualian yang perlu dihafal: *foghlaim* (belajar) bergolongan kedua walau tidak berakhiran *-igh* — *foghlaimím, foghlaimíonn tú*. Sebaliknya *tiomáin* (menyetir) terlihat seperti golongan kedua tetapi bukan — ia golongan **pertama**, karena vokalnya panjang: *tiomáinim*, *tiomáineann tú*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sebelas kata kerja tak beraturan, masa sekarang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Perhatikan kolom \"menyangkal\" dan \"bertanya\" — di situlah sebagian besar kejutannya berada."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dasar",
+            "Arti",
+            "Saya",
+            "Kamu / dia",
+            "Menyangkal",
+            "Bertanya"
+          ],
+          "rows": [
+            [
+              "bí",
+              "berada",
+              "tá mé",
+              "tá tú",
+              "níl mé",
+              "an bhfuil tú?"
+            ],
+            [
+              "abair",
+              "berkata",
+              "deirim",
+              "deir tú",
+              "ní deirim",
+              "an ndeir tú?"
+            ],
+            [
+              "beir",
+              "menangkap",
+              "beirim",
+              "beireann tú",
+              "ní bheirim",
+              "an mbeireann tú?"
+            ],
+            [
+              "clois",
+              "mendengar",
+              "cloisim",
+              "cloiseann tú",
+              "ní chloisim",
+              "an gcloiseann tú?"
+            ],
+            [
+              "déan",
+              "membuat",
+              "déanaim",
+              "déanann tú",
+              "ní dhéanaim",
+              "an ndéanann tú?"
+            ],
+            [
+              "faigh",
+              "mendapat",
+              "faighim",
+              "faigheann tú",
+              "ní fhaighim",
+              "an bhfaigheann tú?"
+            ],
+            [
+              "feic",
+              "melihat",
+              "feicim",
+              "feiceann tú",
+              "ní fheicim",
+              "an bhfeiceann tú?"
+            ],
+            [
+              "ith",
+              "makan",
+              "ithim",
+              "itheann tú",
+              "ní ithim",
+              "an itheann tú?"
+            ],
+            [
+              "tabhair",
+              "memberi",
+              "tugaim",
+              "tugann tú",
+              "ní thugaim",
+              "an dtugann tú?"
+            ],
+            [
+              "tar",
+              "datang",
+              "tagaim",
+              "tagann tú",
+              "ní thagaim",
+              "an dtagann tú?"
+            ],
+            [
+              "téigh",
+              "pergi",
+              "téim",
+              "téann tú",
+              "ní théim",
+              "an dtéann tú?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cara bacanya untuk lima yang paling sering: *deirim* = DYE-rim, *déanaim* = DYEE-nim, *faighim* = FAI-yim, *feicim* = FE-kim, *tugaim* = TU-gim, *tagaim* = TA-gim, *téim* = TYEEM."
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang menjebak di tabel ini",
+          "items": [
+            "**Bentuk dasar dan bentuk masa sekarang sering berjauhan.** *Tabhair* → *tugaim*; *tar* → *tagaim*; *téigh* → *téim*; *abair* → *deirim*. Kalau kamu mencari *tugaim* di kamus, carilah di bawah *tabhair*.",
+            "**Ní deirim tidak mendapat séimhiú.** *Abair* adalah satu-satunya kata kerja yang tidak dilembutkan sesudah *ní*. Semua yang lain patuh: *ní dhéanaim*, *ní thugaim*, *ní théim*.",
+            "**Faighim dan feicim mendapat bhf- dalam pertanyaan,** bukan *bf-*: *an bhfaigheann tú?*, *an bhfeiceann tú?* Ini urú biasa pada huruf *f*, sama seperti *an bhfuil*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "ceannaím",
+      "baca": "KYA-niim",
+      "id": "saya membeli"
+    },
+    {
+      "ga": "tosaím",
+      "baca": "TO-siim",
+      "id": "saya memulai"
+    },
+    {
+      "ga": "críochnaím",
+      "baca": "KRII-akh-niim",
+      "id": "saya menyelesaikan"
+    },
+    {
+      "ga": "cabhraím",
+      "baca": "KOW-riim",
+      "id": "saya menolong"
+    },
+    {
+      "ga": "ullmhaím",
+      "baca": "UL-wiim",
+      "id": "saya menyiapkan"
+    },
+    {
+      "ga": "imím",
+      "baca": "I-miim",
+      "id": "saya pergi"
+    },
+    {
+      "ga": "osclaím",
+      "baca": "OS-kliim",
+      "id": "saya membuka"
+    },
+    {
+      "ga": "insím",
+      "baca": "IN-syiim",
+      "id": "saya menceritakan"
+    },
+    {
+      "ga": "freagraím",
+      "baca": "FRA-griim",
+      "id": "saya menjawab"
+    },
+    {
+      "ga": "imrím",
+      "baca": "IM-riim",
+      "id": "saya bermain"
+    },
+    {
+      "ga": "codlaím",
+      "baca": "KOD-liim",
+      "id": "saya tidur"
+    },
+    {
+      "ga": "labhraím",
+      "baca": "LOW-riim",
+      "id": "saya berbicara"
+    },
+    {
+      "ga": "oibrím",
+      "baca": "E-briim",
+      "id": "saya bekerja"
+    },
+    {
+      "ga": "téim",
+      "baca": "TYEEM",
+      "id": "saya pergi"
+    },
+    {
+      "ga": "tagaim",
+      "baca": "TA-gim",
+      "id": "saya datang"
+    },
+    {
+      "ga": "tugaim",
+      "baca": "TU-gim",
+      "id": "saya memberi"
+    },
+    {
+      "ga": "feicim",
+      "baca": "FE-kim",
+      "id": "saya melihat"
+    },
+    {
+      "ga": "faighim",
+      "baca": "FAI-yim",
+      "id": "saya mendapat"
+    },
+    {
+      "ga": "déanaim",
+      "baca": "DYEE-nim",
+      "id": "saya membuat, melakukan"
+    },
+    {
+      "ga": "deirim",
+      "baca": "DYE-rim",
+      "id": "saya berkata"
+    },
+    {
+      "ga": "cloisim",
+      "baca": "KLO-syim",
+      "id": "saya mendengar"
+    },
+    {
+      "ga": "deireadh seachtaine",
+      "baca": "DYE-ru SYAKH-ti-nye",
+      "id": "akhir pekan"
+    },
+    {
+      "ga": "margadh",
+      "baca": "MA-ra-ga",
+      "id": "pasar"
+    },
+    {
+      "ga": "cairde",
+      "baca": "KAAR-dye",
+      "id": "teman-teman"
+    },
+    {
+      "ga": "leat",
+      "baca": "LYAT",
+      "id": "denganmu"
+    },
+    {
+      "ga": "dóibh",
+      "baca": "DOOV",
+      "id": "kepada mereka"
+    },
+    {
+      "ga": "go luath",
+      "baca": "gu LU-a",
+      "id": "cepat, awal"
+    },
+    {
+      "ga": "go déanach",
+      "baca": "gu DYEE-nakh",
+      "id": "terlambat"
+    },
+    {
+      "ga": "bia",
+      "baca": "BII-a",
+      "id": "makanan"
+    },
+    {
+      "ga": "sráidcheoltóir",
+      "baca": "SRAADJ-khyool-toor",
+      "id": "pengamen jalanan"
+    },
+    {
+      "ga": "timpeall",
+      "baca": "TIM-pal",
+      "id": "berkeliling, sekitar"
+    },
+    {
+      "ga": "scéal",
+      "baca": "SKYEEL",
+      "id": "cerita, kabar"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis bentuk \"saya\" dan bentuk \"kamu\" dari kata kerja berikut.",
+      "items": [
+        "ceannaigh",
+        "tosaigh",
+        "imigh",
+        "oscail",
+        "inis",
+        "codail"
+      ]
+    },
+    {
+      "prompt": "Tulis bentuk \"saya\" dari kata kerja tak beraturan berikut.",
+      "items": [
+        "téigh",
+        "tar",
+        "tabhair",
+        "feic",
+        "faigh",
+        "abair"
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi kalimat menyangkal.",
+      "items": [
+        "Téim go Gaillimh.",
+        "Feicim an cat.",
+        "Déanaim an obair.",
+        "Ceannaím bia sa mhargadh.",
+        "Tugaim euro dó.",
+        "Tagaim gach lá."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pertanyaan.",
+      "items": [
+        "Téann tú go Gaillimh.",
+        "Feiceann tú an siopa.",
+        "Ceannaíonn sí bia.",
+        "Déanann sibh an obair.",
+        "Itheann sé arán.",
+        "Tagann siad gach lá."
+      ]
+    }
+  ],
+  "answers": [
+    "ceannaím, ceannaíonn tú — tosaím, tosaíonn tú — imím, imíonn tú — osclaím, osclaíonn tú — insím, insíonn tú — codlaím, codlaíonn tú",
+    "téim — tagaim — tugaim — feicim — faighim — deirim",
+    "Ní théim go Gaillimh. — Ní fheicim an cat. — Ní dhéanaim an obair. — Ní cheannaím bia sa mhargadh. — Ní thugaim euro dó. — Ní thagaim gach lá.",
+    "An dtéann tú go Gaillimh? — An bhfeiceann tú an siopa? — An gceannaíonn sí bia? — An ndéanann sibh an obair? — An itheann sé arán? — An dtagann siad gach lá?"
+  ]
+}

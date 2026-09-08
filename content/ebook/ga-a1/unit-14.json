@@ -1,0 +1,674 @@
+{
+  "title": "Jam berapa sekarang?",
+  "title_target": "Cén t-am é?",
+  "goal": "Menyebut jam, hari, bulan, dan membuat janji bertemu.",
+  "bekal": [
+    "menyebut jam berapa dengan *a chlog*, *tar éis*, dan *chun*",
+    "memakai *ar a …* untuk mengatakan pukul berapa sesuatu terjadi",
+    "menyebut hari dengan *Dé …* dan bulan dengan *i mí …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Coinne a dhéanamh",
+      "intro": "Di lorong kampus. Niamh sedang terburu-buru, dan Budi ingin mengajaknya menonton pertandingan.",
+      "lines": [
+        {
+          "speaker": "Niamh:",
+          "text": "Cén t-am é anois?",
+          "id": "Sekarang jam berapa?",
+          "literal": "apa waktu itu sekarang?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sé ceathrú chun a dó.",
+          "id": "Jam dua kurang seperempat.",
+          "literal": "berada itu seperempat menuju si dua."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Ó, tá mé déanach! Tosaíonn an rang ar a dó.",
+          "id": "Oh, saya telat! Kelasnya mulai jam dua.",
+          "literal": "oh, berada saya terlambat! mulai si kelas atas si dua."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén lá atá an rang?",
+          "id": "Kelasnya hari apa?",
+          "literal": "apa hari yang-ada si kelas?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Dé Luain agus Déardaoin, ar a dó. Agus Dé hAoine ar a deich ar maidin.",
+          "id": "Senin dan Kamis jam dua. Dan Jumat jam sepuluh pagi.",
+          "literal": "hari Senin dan hari Kamis, atas si dua. dan hari Jumat atas si sepuluh pada pagi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil tú saor Dé Sathairn?",
+          "id": "Kamu senggang hari Sabtu?",
+          "literal": "apakah berada kamu bebas hari Sabtu?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Tá. Cén fáth?",
+          "id": "Ya. Kenapa?",
+          "literal": "berada. apa sebab?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá cluiche ann ar a trí. Ar mhaith leat teacht?",
+          "id": "Ada pertandingan jam tiga. Mau ikut?",
+          "literal": "berada pertandingan di-dalamnya atas si tiga. apakah-akan baik dengan-kamu datang?"
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Ba mhaith! Cén t-am?",
+          "id": "Mau! Jam berapa?",
+          "literal": "akan baik! apa waktu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ar leathuair tar éis a dó, ag an stáisiún.",
+          "id": "Jam setengah tiga, di stasiun.",
+          "literal": "atas setengah-jam sesudah si dua, pada si stasiun."
+        },
+        {
+          "speaker": "Niamh:",
+          "text": "Go breá. Feicfidh mé thú Dé Sathairn.",
+          "id": "Bagus. Sampai bertemu hari Sabtu.",
+          "literal": "secara bagus. akan-melihat saya kamu hari Sabtu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Slán go fóill!",
+          "id": "Sampai nanti!",
+          "literal": "sehat sampai sebentar!"
+        }
+      ],
+      "notes": [
+        "**Jam memakai daftar angka berhitung, lengkap dengan *a*-nya.** *Tá sé a dó a chlog* — \"jam dua\". Kata *a chlog* (dari bahasa Inggris *o'clock*, yang sendirinya dari *of the clock*) dilembutkan oleh kata kecil *a* di depannya — bukan oleh angkanya. Angka sendiri tidak melembutkan apa-apa di sini: bandingkan *deich nóiméad* dan *cúig euro*, yang tetap utuh. Untuk jam yang tidak bulat, *a chlog* dilepas: *ceathrú chun a dó*, bukan *ceathrú chun a dó a chlog*.",
+        "**Tar éis untuk lewat, chun untuk kurang.** *Deich tar éis a trí* = \"sepuluh lewat jam tiga\", yaitu 15.10. *Deich chun a trí* = \"sepuluh menuju jam tiga\", yaitu 14.50. Perhatikan bahwa bahasa Irlandia — seperti bahasa Inggris dan tidak seperti bahasa Indonesia — menghitung mundur dari jam berikutnya begitu melewati setengah.",
+        "**Ar a dó — pukul dua.** Untuk mengatakan **kapan** sesuatu terjadi, ditambahkan *ar* di depan angkanya: *ar a hocht* (jam delapan), *ar leathuair tar éis a naoi* (jam setengah sepuluh). Ini *ar* yang sama seperti dalam *Tá ocras orm*; bahasa Irlandia meletakkan waktu di atas kejadian.",
+        "**Dé Luain, Déardaoin — kata Dé sudah berarti \"pada hari\".** Jadi *Dé Luain* sudah berarti \"pada hari Senin\", dan tidak perlu menambahkan kata depan apa pun. Kalau kamu ingin menyebut harinya saja sebagai kata benda — \"hari Senin\" sebagai benda — dipakai *an Luan*. Perhatikan *Déardaoin* (Kamis) yang menyatu jadi satu kata dan *Dé hAoine* (Jumat) yang mendapat *h* karena *Aoine* berawal huruf hidup."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cén t-am é?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Tá sé a haon a chlog.",
+              "taa syee a HEEN a KHLOG",
+              "Jam satu."
+            ],
+            [
+              "Tá sé a cúig a chlog.",
+              "taa syee a KUU-ig a KHLOG",
+              "Jam lima."
+            ],
+            [
+              "Tá sé leathuair tar éis a dó.",
+              "LYA-hu-ir tar ESY a DOO",
+              "Jam setengah tiga."
+            ],
+            [
+              "Tá sé ceathrú tar éis a trí.",
+              "KYA-ruu tar ESY a TRII",
+              "Jam tiga lewat seperempat."
+            ],
+            [
+              "Tá sé ceathrú chun a ceathair.",
+              "KYA-ruu khun a KYA-hir",
+              "Jam empat kurang seperempat."
+            ],
+            [
+              "Tá sé deich tar éis a sé.",
+              "DE tar ESY a SYEE",
+              "Jam enam lewat sepuluh."
+            ],
+            [
+              "Tá sé fiche chun a seacht.",
+              "FI-khe khun a SYAKHT",
+              "Jam tujuh kurang dua puluh."
+            ],
+            [
+              "Tá sé meán lae.",
+              "taa syee myaan LEE",
+              "Tengah hari."
+            ],
+            [
+              "Tá sé meán oíche.",
+              "taa syee myaan II-khe",
+              "Tengah malam."
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "ar a hocht",
+              "er a HOKHT",
+              "pukul delapan"
+            ],
+            [
+              "ar leathuair tar éis a naoi",
+              "er LYA-hu-ir",
+              "pukul setengah sepuluh"
+            ],
+            [
+              "ar maidin",
+              "er MA-dyin",
+              "pagi hari"
+            ],
+            [
+              "tráthnóna",
+              "traa-NOO-na",
+              "sore hari"
+            ],
+            [
+              "san oíche",
+              "san II-khe",
+              "malam hari"
+            ],
+            [
+              "go luath",
+              "gu LU-a",
+              "cepat, awal"
+            ],
+            [
+              "déanach",
+              "DYEE-nakh",
+              "terlambat"
+            ],
+            [
+              "in am",
+              "in AM",
+              "tepat waktu"
+            ],
+            [
+              "nóiméad",
+              "NOO-meed",
+              "menit"
+            ],
+            [
+              "uair an chloig",
+              "U-ir an KHLIG",
+              "satu jam (lamanya)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Uair punya dua arti — perhatikan kalimatnya",
+          "items": [
+            "*Uair* berarti **jam** sebagai satuan lamanya: *uair an chloig* = satu jam penuh, *dhá uair an chloig* = dua jam.",
+            "*Uair* juga berarti **kali**: *uair amháin* = sekali, *trí huaire* = tiga kali. Perhatikan bentuk jamaknya *huaire* dengan h.",
+            "Untuk bertanya berapa lama: *Cé chomh fada?* (kyee khoo FA-da). Untuk bertanya berapa kali: *Cé mhéad uair?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pada hari …",
+            "Cara baca",
+            "Nama harinya",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Dé Luain",
+              "dyee LU-in",
+              "an Luan",
+              "Senin"
+            ],
+            [
+              "Dé Máirt",
+              "dyee MAARTJ",
+              "an Mháirt",
+              "Selasa"
+            ],
+            [
+              "Dé Céadaoin",
+              "dyee KYEE-deen",
+              "an Chéadaoin",
+              "Rabu"
+            ],
+            [
+              "Déardaoin",
+              "dyeer-DEEN",
+              "an Déardaoin",
+              "Kamis"
+            ],
+            [
+              "Dé hAoine",
+              "dyee HEE-nye",
+              "an Aoine",
+              "Jumat"
+            ],
+            [
+              "Dé Sathairn",
+              "dyee SA-harn",
+              "an Satharn",
+              "Sabtu"
+            ],
+            [
+              "Dé Domhnaigh",
+              "dyee DOO-nii",
+              "an Domhnach",
+              "Minggu"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "inniu",
+              "i-NYUU",
+              "hari ini"
+            ],
+            [
+              "inné",
+              "i-NYEE",
+              "kemarin"
+            ],
+            [
+              "amárach",
+              "a-MAA-rakh",
+              "besok"
+            ],
+            [
+              "arú inné",
+              "a-RUU i-NYEE",
+              "kemarin dulu"
+            ],
+            [
+              "arú amárach",
+              "a-RUU a-MAA-rakh",
+              "lusa"
+            ],
+            [
+              "anocht",
+              "a-NOKHT",
+              "malam ini"
+            ],
+            [
+              "aréir",
+              "a-REER",
+              "tadi malam"
+            ],
+            [
+              "an tseachtain seo caite",
+              "an TYAKH-tin syo KA-tye",
+              "minggu lalu"
+            ],
+            [
+              "an tseachtain seo chugainn",
+              "an TYAKH-tin syo KHU-gin",
+              "minggu depan"
+            ],
+            [
+              "deireadh seachtaine",
+              "DYE-ru SYAKH-ti-nye",
+              "akhir pekan"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bulan dan musim",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bulan",
+            "Gaeilge",
+            "Cara baca",
+            "Bulan"
+          ],
+          "rows": [
+            [
+              "Eanáir",
+              "A-naar",
+              "Januari",
+              "Iúil",
+              "UU-il",
+              "Juli"
+            ],
+            [
+              "Feabhra",
+              "FYAU-ra",
+              "Februari",
+              "Lúnasa",
+              "LUU-na-sa",
+              "Agustus"
+            ],
+            [
+              "Márta",
+              "MAAR-ta",
+              "Maret",
+              "Meán Fómhair",
+              "myaan FOO-war",
+              "September"
+            ],
+            [
+              "Aibreán",
+              "A-bryaan",
+              "April",
+              "Deireadh Fómhair",
+              "DYE-ru FOO-war",
+              "Oktober"
+            ],
+            [
+              "Bealtaine",
+              "BYAL-ti-nye",
+              "Mei",
+              "Samhain",
+              "SAU-in",
+              "November"
+            ],
+            [
+              "Meitheamh",
+              "ME-hu",
+              "Juni",
+              "Nollaig",
+              "NO-lig",
+              "Desember"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk mengatakan \"pada bulan …\" dipakai *i mí*: *i mí Eanáir*, *i mí Lúnasa*, *i mí na Nollag* (bulan Desember memakai bentuk kepunyaan karena *an Nollaig* juga berarti \"Natal\")."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia",
+            "Bulannya"
+          ],
+          "rows": [
+            [
+              "earrach",
+              "A-rakh",
+              "musim semi",
+              "Feabhra – Aibreán"
+            ],
+            [
+              "samhradh",
+              "SAU-ra",
+              "musim panas",
+              "Bealtaine – Iúil"
+            ],
+            [
+              "fómhar",
+              "FOO-war",
+              "musim gugur",
+              "Lúnasa – Deireadh Fómhair"
+            ],
+            [
+              "geimhreadh",
+              "GYIV-ra",
+              "musim dingin",
+              "Samhain – Eanáir"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat nama bulan yang menyimpan sejarahnya sendiri",
+          "items": [
+            "*Bealtaine* (Mei) adalah nama perayaan api pertengahan musim semi yang lebih tua daripada agama Kristen di Irlandia.",
+            "*Lúnasa* (Agustus) diambil dari *Lugh*, nama dewa dalam cerita rakyat Irlandia, dan pesta panennya *Lughnasadh*.",
+            "*Samhain* (November) adalah awal tahun dalam kalender lama — dan asal kata **Halloween**, yang sampai hari ini disebut *Oíche Shamhna* di Irlandia.",
+            "*Meán Fómhair* dan *Deireadh Fómhair* harfiahnya \"tengah musim gugur\" dan \"akhir musim gugur\", jadi kedua nama bulan itu sekaligus memberi tahu kamu kapan musim gugur berlangsung."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "cén t-am é?",
+      "baca": "kyeen TAM EE",
+      "id": "jam berapa sekarang?"
+    },
+    {
+      "ga": "a chlog",
+      "baca": "a KHLOG",
+      "id": "pukul, jam"
+    },
+    {
+      "ga": "leathuair",
+      "baca": "LYA-hu-ir",
+      "id": "setengah jam"
+    },
+    {
+      "ga": "ceathrú",
+      "baca": "KYA-ruu",
+      "id": "seperempat"
+    },
+    {
+      "ga": "tar éis",
+      "baca": "tar ESY",
+      "id": "sesudah, lewat"
+    },
+    {
+      "ga": "chun",
+      "baca": "KHUN",
+      "id": "menuju, kurang"
+    },
+    {
+      "ga": "meán lae",
+      "baca": "myaan LEE",
+      "id": "tengah hari"
+    },
+    {
+      "ga": "meán oíche",
+      "baca": "myaan II-khe",
+      "id": "tengah malam"
+    },
+    {
+      "ga": "déanach",
+      "baca": "DYEE-nakh",
+      "id": "terlambat"
+    },
+    {
+      "ga": "in am",
+      "baca": "in AM",
+      "id": "tepat waktu"
+    },
+    {
+      "ga": "uair an chloig",
+      "baca": "U-ir an KHLIG",
+      "id": "satu jam lamanya"
+    },
+    {
+      "ga": "coinne",
+      "baca": "KI-nye",
+      "id": "janji bertemu"
+    },
+    {
+      "ga": "Dé Luain",
+      "baca": "dyee LU-in",
+      "id": "hari Senin"
+    },
+    {
+      "ga": "Dé Máirt",
+      "baca": "dyee MAARTJ",
+      "id": "hari Selasa"
+    },
+    {
+      "ga": "Dé Céadaoin",
+      "baca": "dyee KYEE-deen",
+      "id": "hari Rabu"
+    },
+    {
+      "ga": "Déardaoin",
+      "baca": "dyeer-DEEN",
+      "id": "hari Kamis"
+    },
+    {
+      "ga": "Dé hAoine",
+      "baca": "dyee HEE-nye",
+      "id": "hari Jumat"
+    },
+    {
+      "ga": "Dé Sathairn",
+      "baca": "dyee SA-harn",
+      "id": "hari Sabtu"
+    },
+    {
+      "ga": "Dé Domhnaigh",
+      "baca": "dyee DOO-nii",
+      "id": "hari Minggu"
+    },
+    {
+      "ga": "inné",
+      "baca": "i-NYEE",
+      "id": "kemarin"
+    },
+    {
+      "ga": "amárach",
+      "baca": "a-MAA-rakh",
+      "id": "besok"
+    },
+    {
+      "ga": "anocht",
+      "baca": "a-NOKHT",
+      "id": "malam ini"
+    },
+    {
+      "ga": "aréir",
+      "baca": "a-REER",
+      "id": "tadi malam"
+    },
+    {
+      "ga": "seo caite",
+      "baca": "syo KA-tye",
+      "id": "yang lalu"
+    },
+    {
+      "ga": "seo chugainn",
+      "baca": "syo KHU-gin",
+      "id": "yang akan datang"
+    },
+    {
+      "ga": "mí",
+      "baca": "MII",
+      "id": "bulan"
+    },
+    {
+      "ga": "Nollaig",
+      "baca": "NO-lig",
+      "id": "Desember; Natal"
+    },
+    {
+      "ga": "samhradh",
+      "baca": "SAU-ra",
+      "id": "musim panas"
+    },
+    {
+      "ga": "geimhreadh",
+      "baca": "GYIV-ra",
+      "id": "musim dingin"
+    },
+    {
+      "ga": "earrach",
+      "baca": "A-rakh",
+      "id": "musim semi"
+    },
+    {
+      "ga": "fómhar",
+      "baca": "FOO-war",
+      "id": "musim gugur"
+    },
+    {
+      "ga": "slán go fóill",
+      "baca": "slaan gu FOOL",
+      "id": "sampai nanti"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis jamnya dalam bahasa Irlandia.",
+      "items": [
+        "01.00",
+        "05.00",
+        "14.30",
+        "15.15",
+        "15.45",
+        "18.10"
+      ]
+    },
+    {
+      "prompt": "Tulis harinya dalam bentuk *Dé …*",
+      "items": [
+        "Senin",
+        "Rabu",
+        "Kamis",
+        "Jumat",
+        "Sabtu",
+        "Minggu"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Sekarang jam berapa?",
+        "Kelasnya mulai jam dua.",
+        "Saya senggang hari Sabtu.",
+        "Sampai bertemu besok.",
+        "Ada pertandingan jam tiga.",
+        "Saya telat!"
+      ]
+    },
+    {
+      "prompt": "Jawab pertanyaan berikut dengan kalimat lengkap.",
+      "items": [
+        "Cén t-am é anois?",
+        "Cén lá é inniu?",
+        "An bhfuil tú saor Dé Sathairn?",
+        "Cén mhí í seo?",
+        "Cén t-am a éiríonn tú?",
+        "Cén séasúr is fearr leat?"
+      ]
+    }
+  ],
+  "answers": [
+    "Tá sé a haon a chlog. — Tá sé a cúig a chlog. — Tá sé leathuair tar éis a dó. — Tá sé ceathrú tar éis a trí. — Tá sé ceathrú chun a ceathair. — Tá sé deich tar éis a sé.",
+    "Dé Luain — Dé Céadaoin — Déardaoin — Dé hAoine — Dé Sathairn — Dé Domhnaigh",
+    "Cén t-am é anois? — Tosaíonn an rang ar a dó. — Tá mé saor Dé Sathairn. — Feicfidh mé thú amárach. — Tá cluiche ann ar a trí. — Tá mé déanach!",
+    "Tá sé a deich a chlog. — Dé Luain atá ann inniu. — Tá, tá mé saor Dé Sathairn. — Mí Eanáir. — Éirím ar a seacht. — Is fearr liom an samhradh."
+  ]
+}

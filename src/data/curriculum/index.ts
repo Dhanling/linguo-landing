@@ -26,6 +26,7 @@ import portuguesePt from "./data/portuguese-pt"; // __PATCH_PORTUGUESE_PT_BUNDLE
 import portugueseBr from "./data/portuguese-br"; // __PATCH_PORTUGUESE_BR_BUNDLE__
 import italian from "./data/italian"; // __PATCH_ITALIAN_BUNDLE__
 import icelandic from "./data/icelandic"; // __PATCH_ICELANDIC_BUNDLE__
+import irish from "./data/irish"; // linguo-patch:silabus-irish-v1
 import finnish from "./data/finnish"; // __PATCH_FINNISH_BUNDLE__
 import swedish from "./data/swedish"; // __PATCH_SWEDISH_BUNDLE__
 import norwegian from "./data/norwegian";
@@ -77,6 +78,7 @@ const registry: Record<string, LanguageCurriculum> = {
   "portuguese-br": portugueseBr,
   italian,
   icelandic,
+  irish,
   finnish,
   swedish,
   norwegian,

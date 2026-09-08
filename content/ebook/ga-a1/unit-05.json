@@ -1,0 +1,698 @@
+{
+  "title": "Berapa banyak?",
+  "title_target": "Cé mhéad?",
+  "goal": "Menghitung sampai seratus, membedakan tiga daftar angka yang berbeda, menghitung orang, dan menyebut umur.",
+  "bekal": [
+    "memakai angka untuk berhitung, untuk benda, dan untuk orang — tiga daftar yang berbeda",
+    "mengetahui bahwa angka 2–6 membawa séimhiú dan angka 7–10 membawa urú",
+    "bertanya *Cé mhéad …?* dan menyebut umur dengan *… bliain d'aois*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Ag ullmhú don dinnéar",
+      "intro": "Sore hari di dapur. Máire menyiapkan makan malam untuk tamu, dan Budi membantu menghitung kursi.",
+      "lines": [
+        {
+          "speaker": "Máire:",
+          "text": "A Bhudi, an bhfuil tú saor tráthnóna?",
+          "id": "Budi, kamu senggang sore ini?",
+          "literal": "hai Budi, apakah berada kamu bebas sore?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá. Cad atá ar siúl?",
+          "id": "Ya. Ada apa?",
+          "literal": "berada. apa yang-ada atas jalan?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá dinnéar mór againn. Tá seachtar ag teacht.",
+          "id": "Kita ada makan malam besar. Tujuh orang datang.",
+          "literal": "berada makan-malam besar pada-kami. berada tujuh-orang pada datang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Seachtar! Cé mhéad cathaoir atá againn?",
+          "id": "Tujuh orang! Kita punya berapa kursi?",
+          "literal": "tujuh-orang! berapa banyak kursi yang-ada pada-kami?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá sé chathaoir sa chistin agus trí chathaoir sa seomra suí.",
+          "id": "Ada enam kursi di dapur dan tiga kursi di ruang duduk.",
+          "literal": "berada enam kursi di-si dapur dan tiga kursi di-si ruang duduk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naoi gcathaoir ar fad. Tá sin go leor.",
+          "id": "Sembilan kursi seluruhnya. Itu cukup.",
+          "literal": "sembilan kursi atas panjang. berada itu secukupnya."
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Agus tá dhá bhord againn — bord mór agus bord beag.",
+          "id": "Dan kita punya dua meja — meja besar dan meja kecil.",
+          "literal": "dan berada dua meja pada-kami — meja besar dan meja kecil."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cé mhéad duine atá sa teaghlach?",
+          "id": "Ada berapa orang di keluarga ini?",
+          "literal": "berapa banyak orang yang-ada di-si keluarga?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Ceathrar: mise, Seán, agus beirt iníonacha.",
+          "id": "Empat orang: saya, Seán, dan dua anak perempuan.",
+          "literal": "empat-orang: saya, Seán, dan dua-orang anak-perempuan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cén aois iad?",
+          "id": "Berapa umur mereka?",
+          "literal": "apa umur mereka?"
+        },
+        {
+          "speaker": "Máire:",
+          "text": "Tá Sinéad sé bliana déag d'aois agus tá Órla deich mbliana d'aois.",
+          "id": "Sinéad enam belas tahun dan Órla sepuluh tahun.",
+          "literal": "berada Aoife enam tahun belas dari-umur dan berada Niamh sepuluh tahun dari-umur."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé fiche bliain d'aois. Tá mé níos sine ná iad!",
+          "id": "Saya dua puluh tahun. Saya lebih tua dari mereka!",
+          "literal": "berada saya dua-puluh tahun dari-umur. berada saya lebih tua daripada mereka!"
+        }
+      ],
+      "notes": [
+        "**Tiga daftar angka, dan kamu harus tahu mana yang dipakai kapan.** Untuk berhitung tanpa benda — nomor telepon, nomor rumah, menghitung satu-dua-tiga — dipakai bentuk berawalan *a*: *a haon, a dó, a trí*. Untuk benda dipakai bentuk telanjang: *dhá bhord, trí chathaoir*. Untuk orang dipakai daftar yang sama sekali lain: *beirt, triúr, ceathrar*. Salah daftar bukan salah kecil — *trí* dan *triúr* terdengar sejauh \"tiga\" dan \"bertiga\".",
+        "**Sé chathaoir tapi naoi gcathaoir.** Angka 2 sampai 6 membawa **séimhiú**: *dhá bhord*, *trí chathaoir*, *ceithre chathaoir*, *cúig bhord*, *sé chathaoir*. Angka 7 sampai 10 membawa **urú**: *seacht mbord*, *ocht gcathaoir*, *naoi gcathaoir*, *deich mbord*. Angka 1 dan angka di atas 10 tidak mengubah apa-apa.",
+        "**Kata bendanya tetap tunggal.** *Naoi gcathaoir*, bukan *naoi gcathaoireacha*. Ini kebiasaan yang sama persis dengan bahasa Indonesia — kita berkata \"sembilan kursi\", bukan \"sembilan kursi-kursi\" — jadi tidak ada yang perlu dilawan di kepala. Kekecualiannya cuma segelintir kata yang punya bentuk khusus untuk dihitung, seperti *bliain* yang menjadi *bliana* sesudah angka 3 sampai 10.",
+        "**Beirt iníonacha, ceathrar — orang punya daftarnya sendiri.** Kesepuluh kata ini (*duine amháin, beirt, triúr, ceathrar, cúigear, seisear, seachtar, ochtar, naonúr, deichniúr*) dipakai untuk manusia saja, dan masing-masing sudah mengandung arti \"orang\" di dalamnya. Karena itu *Tá seachtar ag teacht* sudah lengkap tanpa kata *duine* — harfiahnya \"ada bertujuh datang\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tiga daftar angka",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bacalah tabel ini dari kiri ke kanan, satu baris satu angka. Kolom kedua untuk berhitung telanjang, kolom ketiga untuk benda, kolom keempat untuk orang."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Berhitung",
+            "Untuk benda (leabhar)",
+            "Untuk orang",
+            "Cara baca (orang)"
+          ],
+          "rows": [
+            [
+              "1",
+              "a haon",
+              "leabhar amháin",
+              "duine amháin",
+              "DI-nye a-WAAN"
+            ],
+            [
+              "2",
+              "a dó",
+              "dhá leabhar",
+              "beirt",
+              "BERTJ"
+            ],
+            [
+              "3",
+              "a trí",
+              "trí leabhar",
+              "triúr",
+              "TRUUR"
+            ],
+            [
+              "4",
+              "a ceathair",
+              "ceithre leabhar",
+              "ceathrar",
+              "KYA-rar"
+            ],
+            [
+              "5",
+              "a cúig",
+              "cúig leabhar",
+              "cúigear",
+              "KUU-gyar"
+            ],
+            [
+              "6",
+              "a sé",
+              "sé leabhar",
+              "seisear",
+              "SYE-syar"
+            ],
+            [
+              "7",
+              "a seacht",
+              "seacht leabhar",
+              "seachtar",
+              "SYAKH-tar"
+            ],
+            [
+              "8",
+              "a hocht",
+              "ocht leabhar",
+              "ochtar",
+              "OKH-tar"
+            ],
+            [
+              "9",
+              "a naoi",
+              "naoi leabhar",
+              "naonúr",
+              "NEE-nuur"
+            ],
+            [
+              "10",
+              "a deich",
+              "deich leabhar",
+              "deichniúr",
+              "DE-nyuur"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan tiga hal di kolom \"untuk benda\": angka 2 memakai bentuk *dhá* (bukan *dó*), angka 4 memakai *ceithre* (bukan *ceathair*), dan angka 1 diletakkan **di belakang** kata bendanya sebagai *amháin*. Ketiganya kekecualian yang perlu dihafal."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Angka",
+            "Berhitung",
+            "Cara baca",
+            "Angka",
+            "Berhitung",
+            "Cara baca"
+          ],
+          "rows": [
+            [
+              "11",
+              "a haon déag",
+              "a HEEN DYEEG",
+              "20",
+              "fiche",
+              "FI-khe"
+            ],
+            [
+              "12",
+              "a dó dhéag",
+              "a DOO YEEG",
+              "30",
+              "tríocha",
+              "TRII-a-kha"
+            ],
+            [
+              "13",
+              "a trí déag",
+              "a TRII DYEEG",
+              "40",
+              "daichead",
+              "DA-had"
+            ],
+            [
+              "14",
+              "a ceathair déag",
+              "a KYA-hir DYEEG",
+              "50",
+              "caoga",
+              "KEE-ga"
+            ],
+            [
+              "15",
+              "a cúig déag",
+              "a KUU-ig DYEEG",
+              "60",
+              "seasca",
+              "SYAS-ka"
+            ],
+            [
+              "16",
+              "a sé déag",
+              "a SYEE DYEEG",
+              "70",
+              "seachtó",
+              "SYAKH-too"
+            ],
+            [
+              "17",
+              "a seacht déag",
+              "a SYAKHT DYEEG",
+              "80",
+              "ochtó",
+              "OKH-too"
+            ],
+            [
+              "18",
+              "a hocht déag",
+              "a HOKHT DYEEG",
+              "90",
+              "nócha",
+              "NOO-kha"
+            ],
+            [
+              "19",
+              "a naoi déag",
+              "a NEE DYEEG",
+              "100",
+              "céad",
+              "KYEED"
+            ],
+            [
+              "20",
+              "fiche",
+              "FI-khe",
+              "1000",
+              "míle",
+              "MII-le"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kenapa ada huruf a dan h di depan angka",
+          "items": [
+            "*A* di depan angka berhitung adalah penanda kosong yang menandai bahwa angka itu berdiri sendiri, tanpa benda. Ia dibaca sangat ringan, hampir seperti \"e\" pepet.",
+            "*A haon* dan *a hocht* mendapat **h** karena keduanya berawal huruf hidup — pola yang sama seperti *go hiontach* di Unit 2. Begitu juga *a haon déag* dan *a hocht déag*.",
+            "Untuk nomor telepon dan nomor rumah, selalu pakai daftar ini: *a náid* (nol), *a haon*, *a dó* … Nomor 087 dibaca *a náid, a hocht, a seacht*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menghitung orang, dan menyebut umur",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kata penghitung orang sudah mengandung arti \"orang\" di dalamnya, jadi ia bisa berdiri sendiri sebagai jawaban penuh."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Harfiah",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Tá beirt anseo.",
+              "berada dua-orang di-sini",
+              "Ada dua orang di sini."
+            ],
+            [
+              "Tá triúr fear ag obair.",
+              "berada tiga-orang lelaki pada kerja",
+              "Tiga lelaki sedang bekerja."
+            ],
+            [
+              "Tá beirt bhan sa siopa.",
+              "berada dua-orang perempuan di-si toko",
+              "Ada dua perempuan di toko."
+            ],
+            [
+              "Cé mhéad duine atá ann?",
+              "berapa banyak orang yang-ada di-dalamnya",
+              "Ada berapa orang?"
+            ],
+            [
+              "Ceathrar.",
+              "empat-orang",
+              "Empat orang."
+            ],
+            [
+              "Tá seisear páistí sa rang.",
+              "berada enam-orang anak di-si kelas",
+              "Ada enam anak di kelas."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Beirt* — dan hanya *beirt* — membawa séimhiú pada kata sesudahnya: *beirt fhear*, *beirt bhan*, *beirt mhac*. Penghitung yang lain tidak mengubah apa-apa."
+        },
+        {
+          "type": "sub",
+          "text": "Umur"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Cén aois tú?",
+              "kyeen EESY TUU",
+              "Berapa umurmu?"
+            ],
+            [
+              "Tá mé bliain d'aois.",
+              "taa mee BLII-in DEESY",
+              "Saya satu tahun."
+            ],
+            [
+              "Tá mé dhá bhliain d'aois.",
+              "taa mee ghaa VLII-in DEESY",
+              "Saya dua tahun."
+            ],
+            [
+              "Tá mé cúig bliana d'aois.",
+              "taa mee KUU-ig BLII-a-na",
+              "Saya lima tahun."
+            ],
+            [
+              "Tá mé deich mbliana d'aois.",
+              "taa mee de MLII-a-na",
+              "Saya sepuluh tahun."
+            ],
+            [
+              "Tá mé fiche bliain d'aois.",
+              "taa mee FI-khe BLII-in",
+              "Saya dua puluh tahun."
+            ],
+            [
+              "Tá sé sé bliana déag d'aois.",
+              "taa syee syee BLII-a-na DYEEG",
+              "Dia enam belas tahun."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bliain, bliana, mbliana — satu kata tiga wujud",
+          "items": [
+            "Sesudah angka 1 dan 2, dan sesudah angka di atas 20: **bliain**. *Bliain amháin*, *dhá bhliain*, *fiche bliain*, *tríocha bliain*.",
+            "Sesudah angka 3 sampai 6: **bliana**. *Trí bliana*, *ceithre bliana*, *cúig bliana*, *sé bliana*.",
+            "Sesudah angka 7 sampai 10: **mbliana**. *Seacht mbliana*, *ocht mbliana*, *naoi mbliana*, *deich mbliana*. Huruf *m* di depan itu urú biasa, dan *b* di belakangnya berhenti dibunyikan.",
+            "*D'aois* harfiahnya \"dari umur\" dan selalu ditambahkan di ujung. Tanpa itu, *Tá mé fiche bliain* berarti \"saya (sudah ada di sini selama) dua puluh tahun\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cé mhéad — bertanya jumlah dan harga",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Cé mhéad* dibaca kyee VEED, harfiahnya \"berapa banyak\". Kata benda sesudahnya selalu **tunggal**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Cé mhéad duine?",
+              "kyee veed DI-ne",
+              "Berapa orang?"
+            ],
+            [
+              "Cé mhéad leabhar?",
+              "kyee veed LYAU-er",
+              "Berapa buku?"
+            ],
+            [
+              "Cé mhéad uair?",
+              "kyee veed U-ir",
+              "Berapa kali? / Jam berapa lama?"
+            ],
+            [
+              "Cé mhéad atá air?",
+              "kyee veed a-TAA ER",
+              "Harganya berapa?"
+            ],
+            [
+              "Cé mhéad atá ar an gcaife?",
+              "kyee veed a-TAA er an GA-fe",
+              "Kopinya berapa?"
+            ],
+            [
+              "Tá sé euro air.",
+              "taa syee YU-roo ER",
+              "Harganya enam euro."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa harga pun diletakkan **di atas** barangnya: *Tá trí euro air* harfiahnya \"ada tiga euro di atasnya\". Pola *ar* yang sama sudah kamu lihat pada *Tá ocras orm* di Unit 2, dan akan kembali lagi di Unit 8."
+        },
+        {
+          "type": "kotak",
+          "title": "Angka yang akan kamu pakai tiap hari",
+          "items": [
+            "**Nomor telepon** dibaca satu per satu dengan daftar berhitung: 086 231 4457 → *a náid, a hocht, a sé — a dó, a trí, a haon — a ceathair, a ceathair, a cúig, a seacht*.",
+            "**Harga** memakai euro dan *cent*: *dhá euro caoga* (€2,50), *seacht euro* (€7).",
+            "**Angka gabungan di atas dua puluh** disusun dengan *a*: *fiche a haon* (21), *tríocha a cúig* (35), *céad a deich* (110). Bentuk lama yang memakai *is* — *aon is fiche* — masih terdengar di lagu dan sajak."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "saor",
+      "baca": "SIIR",
+      "id": "bebas, senggang; murah"
+    },
+    {
+      "ga": "tráthnóna",
+      "baca": "traa-NOO-na",
+      "id": "sore, petang"
+    },
+    {
+      "ga": "ar siúl",
+      "baca": "er SYUUL",
+      "id": "sedang berlangsung"
+    },
+    {
+      "ga": "dinnéar",
+      "baca": "di-NYEER",
+      "id": "makan malam"
+    },
+    {
+      "ga": "againn",
+      "baca": "A-gin",
+      "id": "pada kami"
+    },
+    {
+      "ga": "ag teacht",
+      "baca": "eg TYAKHT",
+      "id": "sedang datang"
+    },
+    {
+      "ga": "cé mhéad?",
+      "baca": "kyee VEED",
+      "id": "berapa banyak?"
+    },
+    {
+      "ga": "seomra suí",
+      "baca": "SYOOM-ra SII",
+      "id": "ruang duduk"
+    },
+    {
+      "ga": "ar fad",
+      "baca": "er FAD",
+      "id": "seluruhnya, sama sekali"
+    },
+    {
+      "ga": "teaghlach",
+      "baca": "TYAI-lakh",
+      "id": "keluarga"
+    },
+    {
+      "ga": "iníon",
+      "baca": "i-NYIIN",
+      "id": "anak perempuan"
+    },
+    {
+      "ga": "aois",
+      "baca": "EESY",
+      "id": "umur"
+    },
+    {
+      "ga": "bliain",
+      "baca": "BLII-in",
+      "id": "tahun"
+    },
+    {
+      "ga": "níos sine",
+      "baca": "nyiis SYI-ne",
+      "id": "lebih tua"
+    },
+    {
+      "ga": "níos óige",
+      "baca": "nyiis OO-gye",
+      "id": "lebih muda"
+    },
+    {
+      "ga": "ná",
+      "baca": "NAA",
+      "id": "daripada"
+    },
+    {
+      "ga": "a haon",
+      "baca": "a HEEN",
+      "id": "satu"
+    },
+    {
+      "ga": "a dó",
+      "baca": "a DOO",
+      "id": "dua"
+    },
+    {
+      "ga": "a trí",
+      "baca": "a TRII",
+      "id": "tiga"
+    },
+    {
+      "ga": "a ceathair",
+      "baca": "a KYA-hir",
+      "id": "empat"
+    },
+    {
+      "ga": "a cúig",
+      "baca": "a KUU-ig",
+      "id": "lima"
+    },
+    {
+      "ga": "a sé",
+      "baca": "a SYEE",
+      "id": "enam"
+    },
+    {
+      "ga": "a seacht",
+      "baca": "a SYAKHT",
+      "id": "tujuh"
+    },
+    {
+      "ga": "a hocht",
+      "baca": "a HOKHT",
+      "id": "delapan"
+    },
+    {
+      "ga": "a naoi",
+      "baca": "a NEE",
+      "id": "sembilan"
+    },
+    {
+      "ga": "a deich",
+      "baca": "a DE",
+      "id": "sepuluh"
+    },
+    {
+      "ga": "a náid",
+      "baca": "a NAADJ",
+      "id": "nol"
+    },
+    {
+      "ga": "fiche",
+      "baca": "FI-khe",
+      "id": "dua puluh"
+    },
+    {
+      "ga": "céad",
+      "baca": "KYEED",
+      "id": "seratus"
+    },
+    {
+      "ga": "beirt",
+      "baca": "BERTJ",
+      "id": "dua orang"
+    },
+    {
+      "ga": "triúr",
+      "baca": "TRUUR",
+      "id": "tiga orang"
+    },
+    {
+      "ga": "ceathrar",
+      "baca": "KYA-rar",
+      "id": "empat orang"
+    },
+    {
+      "ga": "seachtar",
+      "baca": "SYAKH-tar",
+      "id": "tujuh orang"
+    },
+    {
+      "ga": "uair",
+      "baca": "U-ir",
+      "id": "jam, kali"
+    },
+    {
+      "ga": "euro",
+      "baca": "YU-roo",
+      "id": "euro"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Tulis angkanya dalam bentuk berhitung (dengan *a*).",
+      "items": [
+        "3",
+        "8",
+        "10",
+        "1",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "prompt": "Gabungkan angka dengan kata benda. Ingat séimhiú untuk 2–6 dan urú untuk 7–10.",
+      "items": [
+        "2 + bord",
+        "3 + cathaoir",
+        "5 + leabhar",
+        "7 + bord",
+        "9 + cathaoir",
+        "10 + peann"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata penghitung orang yang tepat (beirt, triúr, ceathrar, cúigear, seisear, seachtar).",
+      "items": [
+        "Tá ____ sa teaghlach. (4 orang)",
+        "Tá ____ ag teacht. (7 orang)",
+        "Tá ____ fear ag obair. (3 orang)",
+        "Tá ____ bhan sa siopa. (2 orang)",
+        "Tá ____ páistí sa rang. (6 orang)",
+        "Tá ____ ag fanacht. (5 orang)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Berapa umurmu?",
+        "Saya dua puluh tahun.",
+        "Dia sepuluh tahun.",
+        "Ada berapa kursi?",
+        "Ada sembilan kursi.",
+        "Harganya berapa?"
+      ]
+    }
+  ],
+  "answers": [
+    "a trí — a hocht — a deich — a haon — a naoi — a haon déag",
+    "dhá bhord — trí chathaoir — cúig leabhar — seacht mbord — naoi gcathaoir — deich bpeann",
+    "ceathrar — seachtar — triúr — beirt — seisear — cúigear",
+    "Cén aois tú? — Tá mé fiche bliain d'aois. — Tá sé deich mbliana d'aois. — Cé mhéad cathaoir atá ann? — Tá naoi gcathaoir ann. — Cé mhéad atá air?"
+  ]
+}

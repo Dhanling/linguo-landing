@@ -1,0 +1,180 @@
+{
+  "title": "Belanja",
+  "title_target": "Ag siopadóireacht",
+  "goal": "Berbelanja: menanyakan harga, menyebut warna dan ukuran, dan membayar.",
+  "bekal": [
+    "menanyakan dan mengerti harga dengan *Cé mhéad …?*",
+    "menyebut warna, dan tahu bahwa warna ikut berubah pada kata benda perempuan",
+    "memakai kalimat baku di toko: mencoba, meminta ukuran lain, membayar"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Sa siopa éadaigh",
+      "intro": "Cuaca mulai dingin dan Budi butuh sweter. Ia masuk ke toko pakaian di jalan besar.",
+      "lines": [
+        { "speaker": "Siopadóir:", "text": "Dia duit. An bhfuil cabhair uait?", "id": "Halo. Ada yang bisa dibantu?", "literal": "Tuhan kepada-kamu. apakah berada bantuan dari-kamu?" },
+        { "speaker": "Budi:", "text": "Tá, go raibh maith agat. Tá geansaí uaim.", "id": "Iya, terima kasih. Saya cari sweter.", "literal": "berada, semoga ada baik pada-kamu. berada sweter dari-saya." },
+        { "speaker": "Siopadóir:", "text": "Cén dath atá uait?", "id": "Mau warna apa?", "literal": "apa warna yang-ada dari-kamu?" },
+        { "speaker": "Budi:", "text": "Ceann gorm nó ceann glas, b'fhéidir.", "id": "Yang biru atau yang hijau, mungkin.", "literal": "satu biru atau satu hijau, mungkin." },
+        { "speaker": "Siopadóir:", "text": "Seo geansaí gorm. Tá sé an-te agus tá sé déanta in Éirinn.", "id": "Ini sweter biru. Hangat sekali dan dibuat di Irlandia.", "literal": "ini sweter biru. berada itu sangat-hangat dan berada itu dibuat di Irlandia." },
+        { "speaker": "Budi:", "text": "Tá sé go hálainn. Cé mhéad atá air?", "id": "Bagus sekali. Berapa harganya?", "literal": "berada itu secara indah. berapa banyak yang-ada atas-nya?" },
+        { "speaker": "Siopadóir:", "text": "Caoga euro. Tá sé ar lascaine — bhí sé seachtó.", "id": "Lima puluh euro. Sedang potong harga — tadinya tujuh puluh.", "literal": "lima-puluh euro. berada itu atas potongan — ada itu tujuh-puluh." },
+        { "speaker": "Budi:", "text": "An bhfuil ceann níos mó agaibh?", "id": "Ada yang lebih besar?", "literal": "apakah berada satu lebih besar pada-kalian?" },
+        { "speaker": "Siopadóir:", "text": "Tá. Seo é an ceann mór. Bain triail as.", "id": "Ada. Ini yang besar. Coba saja.", "literal": "berada. ini dia si satu besar. ambil percobaan dari-nya." },
+        { "speaker": "Budi:", "text": "Tá sé foirfe. Tógfaidh mé é.", "id": "Pas sekali. Saya ambil.", "literal": "berada itu sempurna. akan-ambil saya itu." },
+        { "speaker": "Siopadóir:", "text": "Go hiontach. Airgead nó cárta?", "id": "Bagus. Tunai atau kartu?", "literal": "secara menakjubkan. uang atau kartu?" },
+        { "speaker": "Budi:", "text": "Cárta, le do thoil. Go raibh míle maith agat!", "id": "Kartu, tolong. Terima kasih banyak!", "literal": "kartu, dengan milikmu kehendak. semoga ada seribu baik pada-kamu!" }
+      ],
+      "notes": [
+        "**Tá geansaí uaim — \"ada sweter dari saya\".** Untuk mengatakan \"saya butuh\" atau \"saya mau\", bahasa Irlandia memakai kata depan *ó* (\"dari\") dengan bentuk berkata gantinya: *uaim, uait, uaidh, uaithi, uainn, uaibh, uathu*. Harfiahnya \"sesuatu diinginkan **dari** saya\". Ini kata depan keempat yang menelan kata gantinya, sesudah *ag*, *ar*, dan *le*.",
+        "**Ceann gorm — ceann berarti \"satu\" untuk benda.** Kata *ceann* (yang aslinya berarti \"kepala\") dipakai persis seperti \"yang\" dalam bahasa Indonesia: *ceann gorm* (\"yang biru\"), *ceann mór* (\"yang besar\"), *ceann eile* (\"yang lain\"), *an ceann seo* (\"yang ini\"). Ia menggantikan kata benda yang sudah jelas dari kalimat sebelumnya.",
+        "**Níos mó — cara membandingkan.** *Níos* + bentuk pembanding: *níos mó* (lebih besar), *níos lú* (lebih kecil), *níos fearr* (lebih baik), *níos measa* (lebih buruk), *níos daoire* (lebih mahal), *níos saoire* (lebih murah). Untuk menyebutkan pembandingnya dipakai *ná*: *níos mó ná é seo* (\"lebih besar daripada yang ini\").",
+        "**Bain triail as — perintah dengan kata depan di ujung.** Sejumlah ungkapan bahasa Irlandia menyimpan kata depan berkata ganti di ujungnya: *Bain triail as* (\"cobalah\"), *Suigh síos* (\"duduklah\"), *Tar isteach* (\"masuklah\"), *Éist liom* (\"dengarkan saya\"). Ungkapan seperti ini paling baik dihafal utuh."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dathanna — warna",
+      "blocks": [
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia", "Contoh"], "rows": [
+          ["bán", "BAAN", "putih", "léine bhán"],
+          ["dubh", "DUW", "hitam", "bróga dubha"],
+          ["dearg", "DYA-rag", "merah", "cóta dearg"],
+          ["gorm", "GO-rum", "biru", "geansaí gorm"],
+          ["glas", "GLAS", "hijau (alami)", "féar glas"],
+          ["uaine", "U-a-nye", "hijau (terang, buatan)", "gúna uaine"],
+          ["buí", "BWII", "kuning", "grian bhuí"],
+          ["donn", "DAUN", "cokelat", "hata donn"],
+          ["liath", "LII-a", "abu-abu", "spéir liath"],
+          ["bándearg", "BAAN-dya-rag", "merah muda", "sciorta bándearg"],
+          ["oráiste", "o-RAAS-tye", "oranye", "úll oráiste"],
+          ["corcra", "KOR-kra", "ungu", "scairf chorcra"]
+        ] },
+        { "type": "p", "text": "Bahasa Irlandia punya **dua** kata untuk hijau, dan pilihannya bukan soal warna melainkan soal asal-usul. *Glas* dipakai untuk hijau yang tumbuh — rumput, daun, laut. *Uaine* dipakai untuk hijau buatan — cat, kain, lampu lalu lintas. Menukar keduanya tidak membuat kalimatnya salah, tetapi langsung terdengar seperti bahasa buku." },
+        { "type": "kotak", "title": "Warna ikut berubah pada kata benda perempuan", "items": [
+          "Kata sifat yang menempel pada kata benda perempuan mendapat séimhiú: *léine bhán* (kemeja putih, *léine* perempuan), *scairf chorcra*, *grian bhuí*.",
+          "Pada kata benda lelaki tidak ada perubahan: *cóta dearg*, *geansaí gorm*, *hata donn*.",
+          "Pada kata benda jamak, kata sifatnya menambah *-a* atau menipis: *bróga dubha*, *tithe bána*, *fir mhóra*.",
+          "Kalau kata sifat berdiri sesudah *tá*, ia tidak pernah berubah: *Tá an léine bán*, *Tá na bróga dubh*. Perubahan hanya terjadi kalau ia menempel langsung pada kata bendanya."
+        ] }
+      ]
+    },
+    {
+      "title": "Éadaí agus siopadóireacht",
+      "blocks": [
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia", "Gaeilge", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["éadaí", "EE-dii", "pakaian", "bróga", "BROO-ga", "sepatu"],
+          ["léine", "LYEE-nye", "kemeja", "stocaí", "STO-kii", "kaus kaki"],
+          ["geansaí", "GYAN-sii", "sweter", "hata", "HA-ta", "topi"],
+          ["cóta", "KOO-ta", "mantel", "scairf", "SKARF", "syal"],
+          ["gúna", "GUU-na", "gaun", "lámhainní", "LAA-wi-nii", "sarung tangan"],
+          ["sciorta", "SKYUR-ta", "rok", "mála", "MAA-la", "tas"],
+          ["bríste", "BRIISY-tye", "celana panjang", "spéaclaí", "SPYEE-klii", "kacamata"]
+        ] },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["Cé mhéad atá air?", "kyee veed a-TAA er", "Berapa harganya?"],
+          ["Tá sé daor.", "taa syee DEER", "Itu mahal."],
+          ["Tá sé saor.", "taa syee SEER", "Itu murah."],
+          ["Tá sé ar lascaine.", "taa syee er LAS-ki-nye", "Sedang potong harga."],
+          ["An bhfuil ceann eile agaibh?", "an wil kyaun E-le A-giv", "Ada yang lain?"],
+          ["An bhfuil ceann níos mó agaibh?", "… nyiis MOO", "Ada yang lebih besar?"],
+          ["Bain triail as.", "ban TRII-al AS", "Coba saja."],
+          ["Tá sé foirfe.", "taa syee FOR-fe", "Pas sekali."],
+          ["Tógfaidh mé é.", "TOOG-hii mee EE", "Saya ambil."],
+          ["Airgead nó cárta?", "A-ri-gyad noo KAAR-ta", "Tunai atau kartu?"],
+          ["An bhfuil sóinseáil agat?", "an wil SOON-syaal A-gut", "Ada kembalian?"],
+          ["Tá sin go leor.", "taa syin gu LYOOR", "Itu sudah cukup."]
+        ] },
+        { "type": "p", "text": "Bentuk pembanding yang paling sering: *níos mó* (lebih besar), *níos lú* (lebih kecil), *níos daoire* (lebih mahal), *níos saoire* (lebih murah), *níos fearr* (lebih baik), *níos measa* (lebih buruk). Perhatikan bahwa *níos fearr* dan *níos measa* sama sekali tidak mirip kata dasarnya *maith* dan *olc* — persis seperti \"baik\" dan \"lebih baik\" yang menyimpang di banyak bahasa." }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ga": "siopadóireacht", "baca": "SYU-pa-doo-rakht", "id": "berbelanja" },
+    { "ga": "siopadóir", "baca": "SYU-pa-door", "id": "pemilik toko" },
+    { "ga": "éadaí", "baca": "EE-dii", "id": "pakaian" },
+    { "ga": "geansaí", "baca": "GYAN-sii", "id": "sweter" },
+    { "ga": "léine", "baca": "LYEE-nye", "id": "kemeja" },
+    { "ga": "cóta", "baca": "KOO-ta", "id": "mantel" },
+    { "ga": "bróga", "baca": "BROO-ga", "id": "sepatu" },
+    { "ga": "hata", "baca": "HA-ta", "id": "topi" },
+    { "ga": "uaim", "baca": "U-im", "id": "dari saya; saya butuh" },
+    { "ga": "uait", "baca": "U-itj", "id": "dari kamu; kamu butuh" },
+    { "ga": "cabhair", "baca": "KOW-ir", "id": "bantuan" },
+    { "ga": "ceann", "baca": "KYAUN", "id": "satu, yang; kepala" },
+    { "ga": "gorm", "baca": "GO-rum", "id": "biru" },
+    { "ga": "glas", "baca": "GLAS", "id": "hijau (alami)" },
+    { "ga": "uaine", "baca": "U-a-nye", "id": "hijau (terang)" },
+    { "ga": "bán", "baca": "BAAN", "id": "putih" },
+    { "ga": "dubh", "baca": "DUW", "id": "hitam" },
+    { "ga": "dearg", "baca": "DYA-rag", "id": "merah" },
+    { "ga": "buí", "baca": "BWII", "id": "kuning" },
+    { "ga": "donn", "baca": "DAUN", "id": "cokelat" },
+    { "ga": "liath", "baca": "LII-a", "id": "abu-abu" },
+    { "ga": "corcra", "baca": "KOR-kra", "id": "ungu" },
+    { "ga": "déanta", "baca": "DYEEN-ta", "id": "dibuat, selesai" },
+    { "ga": "ar lascaine", "baca": "er LAS-ki-nye", "id": "sedang potong harga" },
+    { "ga": "daor", "baca": "DIIR", "id": "mahal" },
+    { "ga": "saor", "baca": "SIIR", "id": "murah; bebas" },
+    { "ga": "níos mó", "baca": "nyiis MOO", "id": "lebih besar" },
+    { "ga": "níos lú", "baca": "nyiis LUU", "id": "lebih kecil" },
+    { "ga": "bain triail as", "baca": "ban TRII-al AS", "id": "cobalah" },
+    { "ga": "foirfe", "baca": "FOR-fe", "id": "sempurna, pas" },
+    { "ga": "cárta", "baca": "KAAR-ta", "id": "kartu" },
+    { "ga": "sóinseáil", "baca": "SOON-syaal", "id": "kembalian" },
+    { "ga": "spéir", "baca": "SPYEER", "id": "langit" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan warna berikut, dan pasangkan pada kata bendanya dengan bentuk yang benar.",
+      "items": [
+        "sweter biru (geansaí — lelaki)",
+        "kemeja putih (léine — perempuan)",
+        "sepatu hitam (bróga — jamak)",
+        "mantel merah (cóta — lelaki)",
+        "syal ungu (scairf — perempuan)",
+        "topi cokelat (hata — lelaki)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Berapa harganya?",
+        "Itu mahal.",
+        "Ada yang lebih besar?",
+        "Saya cari sweter.",
+        "Saya ambil.",
+        "Tunai atau kartu?"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan bentuk pembanding (níos mó, níos lú, níos fearr, níos daoire, níos saoire, níos measa).",
+      "items": [
+        "Tá an geansaí seo ____ . (lebih besar)",
+        "Tá an ceann sin ____ . (lebih kecil)",
+        "Tá an bia anseo ____ . (lebih baik)",
+        "Tá an cóta ____ ná an léine. (lebih mahal)",
+        "Tá na bróga ____ inniu. (lebih murah)",
+        "Tá an aimsir ____ inniu. (lebih buruk)"
+      ]
+    },
+    {
+      "prompt": "Susun percakapan pendek di toko. Tulis kalimat bahasa Irlandia untuk tiap keterangan.",
+      "items": [
+        "Kamu menyapa pemilik toko.",
+        "Kamu bilang kamu cari mantel.",
+        "Kamu ditanya mau warna apa; kamu jawab hitam.",
+        "Kamu tanya harganya.",
+        "Kamu bilang itu mahal.",
+        "Kamu bilang kamu ambil, dan berterima kasih."
+      ]
+    }
+  ],
+  "answers": [
+    "geansaí gorm — léine bhán — bróga dubha — cóta dearg — scairf chorcra — hata donn",
+    "Cé mhéad atá air? — Tá sé daor. — An bhfuil ceann níos mó agaibh? — Tá geansaí uaim. — Tógfaidh mé é. — Airgead nó cárta?",
+    "níos mó — níos lú — níos fearr — níos daoire — níos saoire — níos measa",
+    "Dia duit. — Tá cóta uaim. — Ceann dubh, le do thoil. — Cé mhéad atá air? — Tá sé daor. — Tógfaidh mé é, go raibh maith agat."
+  ]
+}

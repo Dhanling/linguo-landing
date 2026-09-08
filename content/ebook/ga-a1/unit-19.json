@@ -1,0 +1,594 @@
+{
+  "title": "Semua aturan perubahan huruf",
+  "title_target": "Séimhiú agus urú",
+  "goal": "Mengumpulkan seluruh aturan séimhiú dan urú yang sudah muncul sepanjang modul, dan tahu cara membuka \"topi\" kata untuk mencarinya di kamus.",
+  "bekal": [
+    "menyebutkan kata mana membawa séimhiú dan kata mana membawa urú",
+    "memasang perubahan yang benar tanpa berpikir lama",
+    "menemukan kata dasar sebuah kata yang berubah, supaya bisa dicari di kamus"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An comhartha ar an mbóthar",
+      "intro": "Budi melihat papan nama di jalan masuk sebuah kota kecil dan bertanya kepada Aoife sesudah kelas.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "A Aoife, chonaic mé comhartha inné: \"Fáilte go dtí ár mBaile\".",
+          "id": "Aoife, kemarin saya lihat papan: \"Selamat datang ke kampung kami\".",
+          "literal": "hai Aoife, melihat saya papan kemarin: \"selamat-datang sampai milik-kami kampung\"."
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Sin urú. \"Baile\" a bhí ann, agus chuir \"ár\" urú air.",
+          "id": "Itu urú. Kata aslinya \"baile\", dan \"ár\" memasang urú di atasnya.",
+          "literal": "itu penutupan. \"kampung\" yang ada di-dalamnya, dan meletakkan \"milik-kami\" penutupan atas-nya."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus cén fáth \"mo bhaile\" ach \"ár mBaile\"?",
+          "id": "Lalu kenapa \"mo bhaile\" tapi \"ár mBaile\"?",
+          "literal": "dan apa sebab \"milikku kampung\" tetapi \"milik-kami kampung\"?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Mar go gcuireann \"mo\" séimhiú, agus \"ár\" urú. Sin an difríocht ar fad.",
+          "id": "Karena \"mo\" membawa séimhiú dan \"ár\" membawa urú. Cuma itu bedanya.",
+          "literal": "sebab bahwa meletakkan \"milikku\" pelembutan, dan \"milik-kami\" penutupan. itu si perbedaan atas panjang."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil liosta ann?",
+          "id": "Ada daftarnya?",
+          "literal": "apakah berada daftar di-dalamnya?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Tá. Séimhiú i ndiaidh mo, do, ní, agus na huimhreacha a dó go sé.",
+          "id": "Ada. Séimhiú sesudah mo, do, ní, dan angka dua sampai enam.",
+          "literal": "berada. pelembutan di sesudah milikku, milikmu, tidak, dan si angka-angka si dua sampai enam."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus urú?",
+          "id": "Dan urú?",
+          "literal": "dan penutupan?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "I ndiaidh i, ár, bhur, a (iolra), an, cá, agus a seacht go deich.",
+          "id": "Sesudah i, ár, bhur, a (jamak), an, cá, dan angka tujuh sampai sepuluh.",
+          "literal": "di sesudah di, milik-kami, milik-kalian, milik-mereka (jamak), apakah, di-mana, dan si tujuh sampai sepuluh."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cad a dhéanfaidh mé leis an bhfoclóir?",
+          "id": "Kalau di kamus bagaimana?",
+          "literal": "apa yang akan-melakukan saya dengan si kamus?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Bain an hata den fhocal. \"Bhean\" — bain an h. \"MBaile\" — bain an m.",
+          "id": "Lepas topinya dari kata itu. \"Bhean\" — buang h-nya. \"MBaile\" — buang m-nya.",
+          "literal": "ambil si topi dari-si kata. \"perempuan\" — ambil si h. \"kampung\" — ambil si m."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus \"bhfuil\"?",
+          "id": "Kalau \"bhfuil\"?",
+          "literal": "dan \"berada\"?"
+        },
+        {
+          "speaker": "Aoife:",
+          "text": "Bain dhá litir: \"fuil\", ó \"bí\". Sin an ceann is deacra ar fad!",
+          "id": "Buang dua huruf: \"fuil\", dari \"bí\". Itu yang paling sulit dari semuanya!",
+          "literal": "ambil dua huruf: \"fuil\", dari \"berada\". itu si satu adalah tersulit atas panjang!"
+        }
+      ],
+      "notes": [
+        "**Séimhiú dan urú bukan hiasan — keduanya membawa arti.** Kamu sudah melihat buktinya di Unit 8: *a theach*, *a teach*, dan *a dteach* semuanya ditulis dengan kata *a* yang sama, dan cuma perubahan hurufnya yang memberi tahu apakah rumah itu milik seorang lelaki, seorang perempuan, atau sekelompok orang. Mengabaikan perubahan huruf sama dengan mengabaikan sebagian besar tata bahasanya.",
+        "**Yang mengubah selalu kata yang berdiri di depan.** Bukan kata bendanya yang \"punya\" séimhiú, melainkan *mo*, *an*, *dhá*, *ar* yang memasangnya. Karena itu daftar yang perlu kamu hafal adalah daftar **pemicunya**, bukan daftar katanya — dan pemicunya cuma sekitar dua puluh kata kecil, yang semuanya sudah kamu pakai di unit-unit sebelumnya.",
+        "**Tujuh huruf saja yang bisa mendapat urú.** *b, c, d, f, g, p, t* — ditambah huruf hidup yang mendapat *n-*. Huruf *l, m, n, r, s* dan gabungan *sc-, sm-, sp-, st-* tidak pernah tersentuh urú. Untuk séimhiú, sembilan huruf: *b, c, d, f, g, m, p, s, t*.",
+        "**Kalau ragu di percakapan, tetap bicara.** Kesalahan séimhiú dan urú adalah kesalahan yang paling sering dilakukan pemula, dan penutur asli tetap mengerti tanpa kesulitan. Peribahasa yang ada di belakang buku ini bukan basa-basi: *Is fearr Gaeilge bhriste ná Béarla cliste* — bahasa Irlandia yang patah lebih baik daripada bahasa Inggris yang lancar."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Séimhiú — seluruh pemicunya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Séimhiú menyisipkan huruf **h** sesudah huruf pertama. Sembilan huruf yang bisa mendapatnya: *b, c, d, f, g, m, p, s, t*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pemicu",
+            "Contoh",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "*an* + kata benda perempuan",
+              "an bhean, an chathaoir, an mhí",
+              "4"
+            ],
+            [
+              "*mo, do, a* (miliknya, lelaki)",
+              "mo theach, do charr, a mhac",
+              "8"
+            ],
+            [
+              "angka *dhá, trí, ceithre, cúig, sé*",
+              "dhá bhord, trí chathaoir, sé phunt",
+              "5"
+            ],
+            [
+              "*beirt*",
+              "beirt fhear, beirt bhan",
+              "5"
+            ],
+            [
+              "kata depan *ar, do, de, faoi, ó, roimh, trí, mar*",
+              "ar bhord, ó bhaile, faoi chathaoir",
+              "3"
+            ],
+            [
+              "*sa* (di dalam si)",
+              "sa charr, sa bhaile, sa chistin",
+              "3"
+            ],
+            [
+              "*ní* (tidak, masa sekarang & depan)",
+              "ní thuigim, ní cheannóidh mé",
+              "10, 18"
+            ],
+            [
+              "*níor* dan *ar* (masa lampau)",
+              "níor cheannaigh mé, ar thuig tú?",
+              "17"
+            ],
+            [
+              "masa lampau, kata kerja berawal konsonan",
+              "cheannaigh mé, ghlan sé, thuig sí",
+              "17"
+            ],
+            [
+              "*a* memanggil orang",
+              "a Sheáin, a Mháire, a Bhudi",
+              "1"
+            ],
+            [
+              "*a* penghubung (yang)",
+              "an fear a thagann, cad a dhéanann tú?",
+              "9"
+            ],
+            [
+              "awalan *an-* dan *ró-*",
+              "an-mhaith, rófhuar, an-chiúin",
+              "2"
+            ],
+            [
+              "kata sifat sesudah kata benda perempuan",
+              "léine bhán, scairf chorcra, peil Ghaelach",
+              "16"
+            ],
+            [
+              "*cé* + méad",
+              "cé mhéad",
+              "5"
+            ],
+            [
+              "*den* dan *don*",
+              "den fhocal, don fhear, den bhord",
+              "19"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Kapan séimhiú tidak terjadi walaupun ada pemicunya",
+          "items": [
+            "**Sesudah *an*, huruf *d* dan *t* tidak dilembutkan.** *An deoch*, *an tine* — walaupun keduanya kata perempuan.",
+            "**Huruf *l, n, r* tidak pernah bisa dilembutkan.** *Mo lámh*, *níor labhair mé*, *rith mé*.",
+            "**Gabungan *sc-, sm-, sp-, st-* tidak dilembutkan.** *Mo scoil*, *níor stop mé*, *an scoil*.",
+            "**Huruf hidup tidak dilembutkan** — tapi *mo* dan *do* luluh di depannya: *m'athair*, *d'aghaidh*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Urú — seluruh pemicunya",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Urú menuliskan huruf baru **di depan** huruf pertama, dan huruf asli berhenti dibunyikan. Tujuh pasangannya: *mb, gc, nd, bhf, ng, bp, dt*. Huruf hidup mendapat *n-*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pemicu",
+            "Contoh",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "*i* (di dalam)",
+              "i nGaillimh, i mBaile Átha Cliath",
+              "3"
+            ],
+            [
+              "*ár, bhur, a* (milik mereka)",
+              "ár dteach, bhur gcarr, a bpáistí",
+              "8"
+            ],
+            [
+              "angka *seacht, ocht, naoi, deich*",
+              "seacht mbord, naoi gcathaoir",
+              "5"
+            ],
+            [
+              "*an* + kata kerja (apakah)",
+              "an bhfuil, an dtuigeann tú?",
+              "2, 10"
+            ],
+            [
+              "*cá* (di mana)",
+              "cá bhfuil, cá dtéann tú?",
+              "3, 11"
+            ],
+            [
+              "*nach* dan *go*",
+              "nach dtuigeann tú?, go bhfuil",
+              "12"
+            ],
+            [
+              "kata depan + *an*",
+              "ar an mbord, leis an gcaife, faoin gcathaoir, ón mbaile",
+              "3, 13"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ejaan",
+            "Dibaca",
+            "Ejaan",
+            "Dibaca"
+          ],
+          "rows": [
+            [
+              "mb-",
+              "m",
+              "ng-",
+              "ng"
+            ],
+            [
+              "gc-",
+              "g",
+              "bp-",
+              "b"
+            ],
+            [
+              "nd-",
+              "n",
+              "dt-",
+              "d"
+            ],
+            [
+              "bhf-",
+              "w atau v",
+              "n- + vokal",
+              "n"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bahasa Irlandia utara memakai séimhiú di tempat urú",
+          "items": [
+            "Di Donegal dan Ulster, *ar an mbord* sering menjadi *ar an bhord* dan *leis an gcaife* menjadi *leis an chaife*.",
+            "Modul ini memakai urú karena itu bentuk *An Caighdeán Oifigiúil* dan yang paling sering kamu temui di buku; bentuk Ulster diterima luas dalam pemakaian, walau bukan bentuk baku.",
+            "Kalau kamu belajar dari penutur Ulster dan mendengar séimhiú di tempat yang menurut buku ini urú, jangan bingung — mereka tidak salah."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Membuka topi kata — cara mencari di kamus",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kamus menyimpan kata dalam bentuk telanjangnya. Kalau kata yang kamu cari tidak ada, hampir pasti ia sedang memakai topi. Tiga langkah berikut menyelesaikan sembilan dari sepuluh kasus."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Huruf kedua adalah *h*?** Buang *h*-nya. *Bhean* → *bean*. *Chathaoir* → *cathaoir*. *Thuig* → *tuig*. *Mháthair* → *máthair*.",
+            "**Dua huruf pertama salah satu pasangan urú?** Buang huruf pertamanya. *MBaile* → *baile*. *Gcarr* → *carr*. *Ndoras* → *doras*. *Dteach* → *teach*. *Bpáiste* → *páiste*.",
+            "**Diawali *bhf-*?** Buang **dua** huruf. *Bhfuil* → *fuil* (dari kata kerja *bí*). *Bhfeiceann* → *feiceann* (dari *feic*).",
+            "**Diawali *d'* atau *n-* atau *t-* atau *h-*?** Buang bagian itu beserta tanda hubungnya. *D'ól* → *ól*. *N-athair* → *athair*. *T-arán* → *arán*. *HÉireann* → *Éire*.",
+            "**Masih tidak ketemu?** Kata itu mungkin bentuk berubah dari sebuah kata kerja tak beraturan. Periksa tabel di Unit 11, 17, dan 18 — di sanalah *chuaigh*, *rinne*, *fuair*, *tugaim*, *deirim*, dan *rachaidh* bersembunyi."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Yang kamu lihat",
+            "Topinya",
+            "Kata dasarnya",
+            "Artinya"
+          ],
+          "rows": [
+            [
+              "an bhean",
+              "séimhiú dari an",
+              "bean",
+              "perempuan"
+            ],
+            [
+              "mo charr",
+              "séimhiú dari mo",
+              "carr",
+              "mobil"
+            ],
+            [
+              "ár gcarr",
+              "urú dari ár",
+              "carr",
+              "mobil"
+            ],
+            [
+              "i nGaillimh",
+              "urú dari i",
+              "Gaillimh",
+              "Galway"
+            ],
+            [
+              "an bhfuil?",
+              "urú dari an",
+              "bí",
+              "berada"
+            ],
+            [
+              "ní fhaca mé",
+              "séimhiú dari ní",
+              "feic",
+              "melihat"
+            ],
+            [
+              "d'fhan mé",
+              "d' + séimhiú, lampau",
+              "fan",
+              "menunggu"
+            ],
+            [
+              "a Sheáin",
+              "séimhiú dari a memanggil",
+              "Seán",
+              "nama Seán"
+            ],
+            [
+              "na hoifigí",
+              "h dari na",
+              "oifig",
+              "kantor"
+            ],
+            [
+              "an t-arán",
+              "t dari an",
+              "arán",
+              "roti"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "comhartha",
+      "baca": "KOOR-ha",
+      "id": "papan nama, tanda"
+    },
+    {
+      "ga": "bóthar",
+      "baca": "BOO-har",
+      "id": "jalan raya"
+    },
+    {
+      "ga": "liosta",
+      "baca": "LIS-ta",
+      "id": "daftar"
+    },
+    {
+      "ga": "foclóir",
+      "baca": "FOK-loor",
+      "id": "kamus"
+    },
+    {
+      "ga": "focal",
+      "baca": "FO-kal",
+      "id": "kata"
+    },
+    {
+      "ga": "litir",
+      "baca": "LI-tyir",
+      "id": "huruf; surat"
+    },
+    {
+      "ga": "difríocht",
+      "baca": "DI-frii-akht",
+      "id": "perbedaan"
+    },
+    {
+      "ga": "uimhir",
+      "baca": "I-vir",
+      "id": "angka, nomor"
+    },
+    {
+      "ga": "uimhreacha",
+      "baca": "IV-ra-kha",
+      "id": "angka-angka"
+    },
+    {
+      "ga": "iolra",
+      "baca": "IL-ra",
+      "id": "jamak"
+    },
+    {
+      "ga": "uatha",
+      "baca": "U-a-ha",
+      "id": "tunggal"
+    },
+    {
+      "ga": "i ndiaidh",
+      "baca": "i NYAI",
+      "id": "sesudah"
+    },
+    {
+      "ga": "bain",
+      "baca": "BAN",
+      "id": "ambil, lepaskan"
+    },
+    {
+      "ga": "hata",
+      "baca": "HA-ta",
+      "id": "topi"
+    },
+    {
+      "ga": "den",
+      "baca": "DYEN",
+      "id": "dari si"
+    },
+    {
+      "ga": "deacair",
+      "baca": "DYA-kir",
+      "id": "sulit"
+    },
+    {
+      "ga": "is deacra",
+      "baca": "is DYA-kra",
+      "id": "paling sulit, lebih sulit"
+    },
+    {
+      "ga": "furasta",
+      "baca": "FU-ras-ta",
+      "id": "mudah"
+    },
+    {
+      "ga": "mar",
+      "baca": "MAR",
+      "id": "karena; seperti"
+    },
+    {
+      "ga": "chuir",
+      "baca": "KHIR",
+      "id": "meletakkan (lampau)"
+    },
+    {
+      "ga": "briste",
+      "baca": "BRIS-tye",
+      "id": "patah, rusak"
+    },
+    {
+      "ga": "cliste",
+      "baca": "KLIS-tye",
+      "id": "pintar"
+    },
+    {
+      "ga": "riail",
+      "baca": "RII-il",
+      "id": "aturan"
+    },
+    {
+      "ga": "rialacha",
+      "baca": "RII-a-la-kha",
+      "id": "aturan-aturan"
+    },
+    {
+      "ga": "eisceacht",
+      "baca": "ESY-kyakht",
+      "id": "kekecualian"
+    },
+    {
+      "ga": "gramadach",
+      "baca": "GRA-ma-dakh",
+      "id": "tata bahasa"
+    },
+    {
+      "ga": "canúint",
+      "baca": "KA-nuuntj",
+      "id": "dialek"
+    },
+    {
+      "ga": "caighdeán",
+      "baca": "KAI-dyaan",
+      "id": "standar, baku"
+    },
+    {
+      "ga": "consan",
+      "baca": "KON-san",
+      "id": "huruf mati, konsonan"
+    },
+    {
+      "ga": "guta",
+      "baca": "GU-ta",
+      "id": "huruf hidup, vokal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Pasang séimhiú kalau perlu.",
+      "items": [
+        "mo + teach",
+        "an + bean",
+        "trí + cathaoir",
+        "ní + tuigim",
+        "a (lelaki) + mac",
+        "ar + bord"
+      ]
+    },
+    {
+      "prompt": "Pasang urú kalau perlu.",
+      "items": [
+        "i + Gaillimh",
+        "ár + carr",
+        "naoi + cathaoir",
+        "an + tuigeann tú?",
+        "cá + téann tú?",
+        "ar an + bord"
+      ]
+    },
+    {
+      "prompt": "Buka topinya. Tulis kata dasar yang akan kamu cari di kamus.",
+      "items": [
+        "bhean",
+        "gcarr",
+        "bhfuil",
+        "d'ól",
+        "na hoifigí",
+        "an t-arán"
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang benar, lalu tulis alasannya dalam satu kalimat bahasa Indonesia.",
+      "items": [
+        "mo (bhaile atau mbaile)?",
+        "ár (bhaile atau mBaile)?",
+        "an (bhean atau mbean)?",
+        "trí (chathaoir atau gcathaoir)?",
+        "naoi (chathaoir atau gcathaoir)?",
+        "ní (thuigim atau dtuigim)?"
+      ]
+    }
+  ],
+  "answers": [
+    "mo theach — an bhean — trí chathaoir — ní thuigim — a mhac — ar bhord",
+    "i nGaillimh — ár gcarr — naoi gcathaoir — an dtuigeann tú? — cá dtéann tú? — ar an mbord",
+    "bean — carr — bí (lewat fuil) — ól — oifig — arán",
+    "mo bhaile (séimhiú: *mo* selalu melembutkan) — ár mBaile (urú: *ár* selalu menutupi) — an bhean (séimhiú: *bean* kata perempuan) — trí chathaoir (séimhiú: angka 2–6 melembutkan) — naoi gcathaoir (urú: angka 7–10 menutupi) — ní thuigim (séimhiú: *ní* melembutkan)"
+  ]
+}

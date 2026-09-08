@@ -1,0 +1,207 @@
+{
+  "title": "Dingin dan basah hari ini",
+  "title_target": "Tá sé fuar agus fliuch inniu",
+  "goal": "Menyangkal dan bertanya dengan kata kerja *tá*, menjawab tanpa kata \"ya\" dan \"tidak\", memakai kata sifat, dan berbicara tentang cuaca.",
+  "bekal": [
+    "mengubah *tá* menjadi *níl* dan *an bhfuil* dengan benar",
+    "menjawab pertanyaan tanpa memakai kata \"ya\" atau \"tidak\"",
+    "menyusun kata sifat sesudah kata benda dan menguatkannya dengan *an-*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Bricfeasta sa chistin",
+      "intro": "Pagi pertama Budi di rumah Máire. Hujan turun di luar, dan sarapan sudah tersedia di meja dapur.",
+      "lines": [
+        { "speaker": "Máire:", "text": "Dia duit ar maidin, a Bhudi. An bhfuil tú tuirseach?", "id": "Selamat pagi, Budi. Kamu capek?", "literal": "Tuhan kepada-kamu pada pagi, hai Budi. apakah berada kamu capek?" },
+        { "speaker": "Budi:", "text": "Níl. Tá mé go breá. Tá an teach seo an-chiúin.", "id": "Tidak. Saya baik sekali. Rumah ini tenang sekali.", "literal": "tidak-berada. berada saya secara bagus. berada si rumah ini sangat-tenang." },
+        { "speaker": "Máire:", "text": "Tá sé ciúin, cinnte. An bhfuil ocras ort?", "id": "Memang tenang. Kamu lapar?", "literal": "berada itu tenang, pasti. apakah berada lapar atas-kamu?" },
+        { "speaker": "Budi:", "text": "Tá, tá ocras mór orm.", "id": "Ya, saya lapar sekali.", "literal": "berada, berada lapar besar atas-saya." },
+        { "speaker": "Máire:", "text": "Tá arán úr agus im ar an mbord. Tá an tae te fós.", "id": "Ada roti segar dan mentega di meja. Tehnya masih panas.", "literal": "berada roti segar dan mentega atas si meja. berada si teh panas masih." },
+        { "speaker": "Budi:", "text": "Go hálainn. Cén sórt aimsire atá ann inniu?", "id": "Bagus sekali. Cuacanya bagaimana hari ini?", "literal": "secara indah. apa jenis cuaca-punya yang-ada di-dalamnya hari-ini?" },
+        { "speaker": "Máire:", "text": "Tá sé fuar agus fliuch. Tá sé ag cur báistí.", "id": "Dingin dan basah. Sedang hujan.", "literal": "berada itu dingin dan basah. berada itu pada meletakkan hujan-punya." },
+        { "speaker": "Budi:", "text": "An bhfuil sé fuar i gcónaí i nGaillimh?", "id": "Apakah di Galway selalu dingin?", "literal": "apakah berada itu dingin di selalu di Galway?" },
+        { "speaker": "Máire:", "text": "Níl sé fuar i gcónaí, ach tá sé fliuch go minic!", "id": "Tidak selalu dingin, tapi sering basah!", "literal": "tidak-berada itu dingin di selalu, tetapi berada itu basah secara sering!" },
+        { "speaker": "Seán:", "text": "Tá an aimsir go dona inniu, ach tá an bricfeasta go hiontach.", "id": "Cuacanya jelek hari ini, tapi sarapannya luar biasa.", "literal": "berada si cuaca secara buruk hari-ini, tetapi berada si sarapan secara menakjubkan." },
+        { "speaker": "Budi:", "text": "Tá an t-arán an-bhlasta. Go raibh maith agat.", "id": "Rotinya enak sekali. Terima kasih.", "literal": "berada si roti sangat-enak. semoga ada baik pada-kamu." },
+        { "speaker": "Máire:", "text": "Tá fáilte romhat. Ith leat!", "id": "Sama-sama. Silakan makan!", "literal": "berada sambutan di-depan-kamu. makan dengan-kamu!" }
+      ],
+      "notes": [
+        "**Níl bukan \"tidak\" ditambah \"tá\".** Ia satu kata utuh yang menggantikan seluruh *tá*, hasil luluhnya *ní* (penyangkal) dengan *fuil* (bentuk lain dari *tá*). Jadi *Tá mé tuirseach* menjadi *Níl mé tuirseach*, bukan \"ní tá mé\". Bentuk ketiga muncul dalam pertanyaan: *An bhfuil mé tuirseach?* Ketiganya kata kerja yang sama.",
+        "**Tá dan Níl adalah \"ya\" dan \"tidak\".** Bahasa Irlandia tidak punya kata untuk keduanya. Ditanya *An bhfuil ocras ort?*, kamu menjawab dengan mengulang kata kerjanya: *Tá* atau *Níl*. Ditanya dengan kata kerja lain, jawabannya pun kata kerja itu — *An ólann tú tae?* dijawab *Ólaim* atau *Ní ólaim*. Kebiasaan ini terbawa ke bahasa Inggris orang Irlandia: \"I do, yeah.\"",
+        "**An-chiúin, an-bhlasta — penguat yang membawa séimhiú.** Awalan *an-* berarti \"sangat\", ditulis dengan tanda hubung, dan selalu melembutkan huruf sesudahnya: *ciúin* → *an-chiúin*, *blasta* → *an-bhlasta*, *mór* → *an-mhór*. Saudaranya *ró-* berarti \"terlalu\" dan berlaku sama: *róthe* (terlalu panas), *rófhuar* (terlalu dingin).",
+        "**Tá ocras orm — lapar diletakkan di atas orang.** Bahasa Irlandia tidak berkata \"saya lapar\" melainkan \"ada lapar di atas saya\". Pola ini dipakai untuk hampir semua rasa badan dan perasaan: *tart* (haus), *tuirse* (lelah), *áthas* (gembira), *brón* (sedih), *fearg* (marah). Kata depannya *ar*, yang menelan kata gantinya menjadi *orm, ort, air, uirthi*. Dibahas penuh di Unit 8."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tá, Níl, An bhfuil — tiga wajah satu kata kerja",
+      "blocks": [
+        { "type": "p", "text": "Yang perlu kamu hafal cuma tiga bentuk, dan ketiganya tidak berubah untuk orang yang berbeda. Kata gantinya saja yang diganti." },
+        { "type": "tabel", "head": ["Berita", "Menyangkal", "Bertanya", "Jawaban"], "rows": [
+          ["Tá mé sásta.", "Níl mé sásta.", "An bhfuil tú sásta?", "Tá. / Níl."],
+          ["Tá sé fuar.", "Níl sé fuar.", "An bhfuil sé fuar?", "Tá. / Níl."],
+          ["Tá sí anseo.", "Níl sí anseo.", "An bhfuil sí anseo?", "Tá. / Níl."],
+          ["Tá muid réidh.", "Níl muid réidh.", "An bhfuil muid réidh?", "Tá. / Níl."],
+          ["Tá siad tuirseach.", "Níl siad tuirseach.", "An bhfuil siad tuirseach?", "Tá. / Níl."]
+        ] },
+        { "type": "p", "text": "Cara bacanya: *tá* = TAA, *níl* = NIIL, *an bhfuil* = an WIL. Perhatikan *bhfuil* — inilah urú yang sudah kamu lihat di bab pelafalan: huruf *bh* ditulis di depan *f*, dan *f* itu berhenti dibunyikan. Buang dua huruf pertamanya dan kamu dapat *fuil*, yang di kamus tercatat di bawah kata kerja *bí*." },
+        { "type": "kotak", "title": "Jangan mencari kata \"ya\" — ia tidak ada", "items": [
+          "Ditanya *An bhfuil tú go maith?* jawablah *Tá* (bukan \"sea\", bukan \"yeah\").",
+          "Untuk pertanyaan tentang **jati diri** yang memakai kata kerja *is*, jawabannya lain lagi: *Sea* dan *Ní hea*. Itu dibahas di Unit 6. Untuk sekarang, semua pertanyaan yang dimulai *An bhfuil …* dijawab *Tá* atau *Níl*.",
+          "Kalau kamu ingin menegaskan, ulangi seluruh kalimatnya: *Tá, tá mé go maith.* Ini yang paling wajar didengar dan tidak pernah salah."
+        ] }
+      ]
+    },
+    {
+      "title": "Kata sifat berdiri di belakang",
+      "blocks": [
+        { "type": "p", "text": "Kebalikan dari bahasa Inggris, dan kebetulan sama persis dengan bahasa Indonesia: kata sifat datang **sesudah** kata bendanya. *Teach mór* — \"rumah besar\". *Tae te* — \"teh panas\". Tidak ada yang perlu dibalik di kepala." },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia", "Lawannya"], "rows": [
+          ["mór", "MOOR", "besar", "beag (BYUG) kecil"],
+          ["fada", "FA-da", "panjang", "gearr (GYAR) pendek"],
+          ["ard", "AARD", "tinggi", "íseal (II-syal) rendah"],
+          ["te", "TYE", "panas", "fuar (FU-ar) dingin"],
+          ["fliuch", "FLYUKH", "basah", "tirim (TI-rim) kering"],
+          ["nua", "NU-a", "baru", "sean (SYAN) tua, lama"],
+          ["óg", "OOG", "muda", "críonna (KRII-na) tua (orang)"],
+          ["deas", "DYAS", "manis, bagus", "gránna (GRAA-na) jelek"],
+          ["daor", "DIIR", "mahal", "saor (SEER) murah"],
+          ["blasta", "BLAS-ta", "enak", "searbh (SYA-ruw) pahit"],
+          ["ciúin", "KYUUN", "tenang", "glórach (GLOO-rakh) berisik"],
+          ["sásta", "SAAS-ta", "senang", "míshásta (MII-haas-ta) tidak senang"]
+        ] },
+        { "type": "p", "text": "Kata sifat yang berdiri sesudah *tá* tidak berubah bentuknya sama sekali: *Tá an teach mór*, *Tá na tithe mór*. Perubahan bentuk kata sifat baru muncul kalau ia menempel langsung pada kata benda perempuan atau kata benda jamak — sesuatu yang dibahas di Unit 4." },
+        { "type": "tabel", "head": ["Penguat", "Arti", "Contoh", "Cara baca"], "rows": [
+          ["an- + séimhiú", "sangat", "an-mhaith", "an-WA"],
+          ["ró- + séimhiú", "terlalu", "róthe", "roo-HYE"],
+          ["go leor (di belakang)", "cukup", "maith go leor", "MA gu LYOOR"],
+          ["beagán", "sedikit", "beagán fuar", "BYU-gaan FU-ar"],
+          ["go hiomlán", "sepenuhnya", "go hiomlán réidh", "gu HI-um-laan"]
+        ] },
+        { "type": "kotak", "title": "Dua kesalahan yang khas", "items": [
+          "**Jangan menulis *an* tanpa tanda hubung.** *An mhaith* berarti \"si baik\" dengan kata sandang; *an-mhaith* berarti \"sangat baik\". Tanda hubungnya membedakan arti.",
+          "**Kata sifat sesudah *go* bukan penguat, melainkan pengubah jadi keterangan.** *Tá sé maith* berarti \"ia bagus (benda)\"; *Tá sé go maith* berarti \"ia dalam keadaan baik\". Untuk kabar orang, selalu pakai *go maith*.",
+          "*Go* menambahkan huruf **h** kalau kata berikutnya berawal vokal: *go hiontach*, *go hálainn*, *go holc* (buruk)."
+        ] }
+      ]
+    },
+    {
+      "title": "An aimsir — cuaca, dan percakapan yang tak pernah gagal",
+      "blocks": [
+        { "type": "p", "text": "Di Irlandia cuaca bukan basa-basi kosong; ia benar-benar berubah empat kali sehari, dan orang benar-benar membicarakannya. Tiga belas kalimat berikut cukup untuk seluruh tahun." },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["Tá sé go breá.", "taa syee gu BRAA", "Cuacanya bagus."],
+          ["Tá sé go dona.", "taa syee gu DO-na", "Cuacanya jelek."],
+          ["Tá sé fuar.", "taa syee FU-ar", "Dingin."],
+          ["Tá sé te.", "taa syee TYE", "Panas."],
+          ["Tá sé fliuch.", "taa syee FLYUKH", "Basah."],
+          ["Tá sé tirim.", "taa syee TI-rim", "Kering."],
+          ["Tá sé ag cur báistí.", "taa syee eg kur BAAS-tii", "Sedang hujan."],
+          ["Tá sé ag cur sneachta.", "taa syee eg kur SNYAKH-ta", "Sedang turun salju."],
+          ["Tá sé scamallach.", "taa syee SKA-ma-lakh", "Berawan."],
+          ["Tá sé grianmhar.", "taa syee GRII-an-war", "Cerah, banyak matahari."],
+          ["Tá gaoth ann.", "taa GEE AUN", "Ada angin."],
+          ["Tá ceo ann.", "taa KYOO AUN", "Ada kabut."],
+          ["Tá sé ag stealladh báistí.", "taa syee eg SYA-la BAAS-tii", "Hujannya deras sekali."]
+        ] },
+        { "type": "p", "text": "Kata *ann* di tiga kalimat terakhir harfiahnya \"di dalamnya\" dan dipakai untuk menyatakan bahwa sesuatu **ada di luar sana**. *Tá gaoth ann* = \"ada angin di dalamnya\", yaitu \"anginnya ada\". Bentuk yang sama dipakai untuk musim: *Tá an samhradh ann* — \"sekarang musim panas\"." },
+        { "type": "kotak", "title": "Empat musim, dan kenapa namanya sudah kamu kenal", "items": [
+          "*earrach* (A-rakh) musim semi · *samhradh* (SAU-ra) musim panas · *fómhar* (FOO-war) musim gugur · *geimhreadh* (GYIV-ra) musim dingin.",
+          "*Samhain* — nama bulan November dan awal musim dingin dalam kalender lama — adalah asal kata **Halloween**, yang di Irlandia sampai hari ini disebut *Oíche Shamhna*, \"malam Samhain\".",
+          "*Deireadh Fómhair* harfiahnya \"akhir musim gugur\" dan dipakai sebagai nama bulan Oktober; *Meán Fómhair*, \"tengah musim gugur\", adalah September."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ga": "maidin", "baca": "MA-dyin", "id": "pagi" },
+    { "ga": "inniu", "baca": "i-NYUU", "id": "hari ini" },
+    { "ga": "an-", "baca": "an", "id": "sangat (awalan)" },
+    { "ga": "ciúin", "baca": "KYUUN", "id": "tenang, sunyi" },
+    { "ga": "cinnte", "baca": "KYIN-tye", "id": "pasti, tentu" },
+    { "ga": "ocras", "baca": "O-kras", "id": "lapar (kata benda)" },
+    { "ga": "tart", "baca": "TART", "id": "haus (kata benda)" },
+    { "ga": "orm", "baca": "O-rum", "id": "atas saya" },
+    { "ga": "ort", "baca": "ORT", "id": "atas kamu" },
+    { "ga": "arán", "baca": "a-RAAN", "id": "roti" },
+    { "ga": "úr", "baca": "UUR", "id": "segar, baru" },
+    { "ga": "im", "baca": "IM", "id": "mentega" },
+    { "ga": "bord", "baca": "BOORD", "id": "meja" },
+    { "ga": "te", "baca": "TYE", "id": "panas, hangat" },
+    { "ga": "fuar", "baca": "FU-ar", "id": "dingin" },
+    { "ga": "fós", "baca": "FOOS", "id": "masih, belum" },
+    { "ga": "álainn", "baca": "AA-lin", "id": "indah" },
+    { "ga": "aimsir", "baca": "AM-syir", "id": "cuaca" },
+    { "ga": "fliuch", "baca": "FLYUKH", "id": "basah" },
+    { "ga": "tirim", "baca": "TI-rim", "id": "kering" },
+    { "ga": "ag cur báistí", "baca": "eg kur BAAS-tii", "id": "sedang hujan" },
+    { "ga": "i gcónaí", "baca": "i GOO-nii", "id": "selalu" },
+    { "ga": "go minic", "baca": "gu MI-nik", "id": "sering" },
+    { "ga": "ach", "baca": "AKH", "id": "tetapi" },
+    { "ga": "agus", "baca": "A-gus", "id": "dan" },
+    { "ga": "go dona", "baca": "gu DO-na", "id": "buruk, jelek" },
+    { "ga": "bricfeasta", "baca": "BRIK-fyas-ta", "id": "sarapan" },
+    { "ga": "blasta", "baca": "BLAS-ta", "id": "enak" },
+    { "ga": "mór", "baca": "MOOR", "id": "besar" },
+    { "ga": "beag", "baca": "BYUG", "id": "kecil" },
+    { "ga": "gaoth", "baca": "GEE", "id": "angin" },
+    { "ga": "grian", "baca": "GRII-an", "id": "matahari" },
+    { "ga": "sneachta", "baca": "SNYAKH-ta", "id": "salju" },
+    { "ga": "ann", "baca": "AUN", "id": "di dalamnya, di sana" },
+    { "ga": "teach", "baca": "TYAKH", "id": "rumah" },
+    { "ga": "cistin", "baca": "KISY-tyin", "id": "dapur" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Ubah menjadi kalimat menyangkal.",
+      "items": [
+        "Tá mé tuirseach.",
+        "Tá sé fuar inniu.",
+        "Tá an tae te.",
+        "Tá siad sásta.",
+        "Tá ocras orm.",
+        "Tá an aimsir go breá."
+      ]
+    },
+    {
+      "prompt": "Ubah menjadi pertanyaan, lalu tulis jawabannya sesuai keterangan dalam kurung.",
+      "items": [
+        "Tá tú go maith. (ya)",
+        "Tá sé fliuch. (tidak)",
+        "Tá an bricfeasta réidh. (ya)",
+        "Tá Máire anseo. (tidak)",
+        "Tá tart ort. (ya)",
+        "Tá siad tuirseach. (tidak)"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata sifat yang tepat (te, fuar, blasta, mór, ciúin, fliuch).",
+      "items": [
+        "Tá an tae ____ . (panas)",
+        "Tá an teach ____ . (besar)",
+        "Tá an t-arán ____ . (enak)",
+        "Tá an aimsir ____ . (basah)",
+        "Tá an chistin ____ . (tenang)",
+        "Tá an sneachta ____ . (dingin)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Cuacanya bagus hari ini.",
+        "Saya tidak capek.",
+        "Apakah kamu lapar?",
+        "Rumah ini sangat tenang.",
+        "Sedang hujan di Galway.",
+        "Tehnya masih panas."
+      ]
+    }
+  ],
+  "answers": [
+    "Níl mé tuirseach. — Níl sé fuar inniu. — Níl an tae te. — Níl siad sásta. — Níl ocras orm. — Níl an aimsir go breá.",
+    "An bhfuil tú go maith? Tá. — An bhfuil sé fliuch? Níl. — An bhfuil an bricfeasta réidh? Tá. — An bhfuil Máire anseo? Níl. — An bhfuil tart ort? Tá. — An bhfuil siad tuirseach? Níl.",
+    "te — mór — blasta — fliuch — ciúin — fuar",
+    "Tá an aimsir go breá inniu. — Níl mé tuirseach. — An bhfuil ocras ort? — Tá an teach seo an-chiúin. — Tá sé ag cur báistí i nGaillimh. — Tá an tae te fós."
+  ]
+}

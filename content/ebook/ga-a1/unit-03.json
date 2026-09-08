@@ -1,0 +1,681 @@
+{
+  "title": "Di mana tokonya?",
+  "title_target": "Cá bhfuil an siopa?",
+  "goal": "Menanyakan dan menunjukkan tempat, memakai kata depan letak, dan mengatakan di mana kamu tinggal.",
+  "bekal": [
+    "bertanya *Cá bhfuil …?* dan mengerti bahwa *cá* membawa urú",
+    "memakai *i, ar, ag, in aice le, os comhair* untuk menunjukkan letak",
+    "mengatakan tempat tinggal dengan *Tá mé i mo chónaí i …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — Ag siúl sa chathair",
+      "intro": "Sore hari. Seán mengajak Budi berjalan kaki mengelilingi pusat kota Galway untuk menunjukkan tempat-tempat penting.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "A Sheáin, cá bhfuil an siopa?",
+          "id": "Seán, di mana tokonya?",
+          "literal": "hai Seán, di-mana berada si toko?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá an siopa ar an tsráid seo, in aice leis an mbanc.",
+          "id": "Tokonya di jalan ini, di sebelah bank.",
+          "literal": "berada si toko atas si jalan ini, di dekat dengan si bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Agus cá bhfuil oifig an phoist?",
+          "id": "Dan di mana kantor posnya?",
+          "literal": "dan di-mana berada kantor si pos-punya?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá sí thall ansin, os comhair na heaglaise.",
+          "id": "Itu di seberang sana, di depan gereja.",
+          "literal": "berada dia di-sana itu, di hadapan si gereja-punya."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "An bhfuil sí i bhfad ó seo?",
+          "id": "Apakah jauh dari sini?",
+          "literal": "apakah berada dia di panjang dari ini?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Níl. Tá sí cúpla nóiméad ar shiúl.",
+          "id": "Tidak. Cuma beberapa menit dari sini.",
+          "literal": "tidak-berada. berada dia beberapa menit atas jalan."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cá bhfuil tú i do chónaí?",
+          "id": "Kamu tinggal di mana?",
+          "literal": "di-mana berada kamu di milikmu tinggal?"
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Tá mé i mo chónaí anseo i nGaillimh, in aice leis an bhfarraige.",
+          "id": "Saya tinggal di sini di Galway, dekat laut.",
+          "literal": "berada saya di milikku tinggal di-sini di Galway, di dekat dengan si laut."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá mé i mo chónaí in Iacárta, i lár na cathrach.",
+          "id": "Saya tinggal di Jakarta, di tengah kota.",
+          "literal": "berada saya di milikku tinggal di Jakarta, di tengah si kota-punya."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "An bhfuil an chathair mór?",
+          "id": "Kotanya besar?",
+          "literal": "apakah berada si kota besar?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tá sí ollmhór. Tá deich milliún duine ann.",
+          "id": "Besar sekali. Ada sepuluh juta orang di sana.",
+          "literal": "berada dia raksasa. berada sepuluh juta orang di-dalamnya."
+        },
+        {
+          "speaker": "Seán:",
+          "text": "Ó, tá Gaillimh beag mar sin! Tá ochtó míle duine anseo.",
+          "id": "Oh, kalau begitu Galway kecil! Di sini ada delapan puluh ribu orang.",
+          "literal": "oh, berada Galway kecil seperti itu! berada delapan-puluh ribu orang di-sini."
+        }
+      ],
+      "notes": [
+        "**Cá bhfuil — kata tanya yang membawa urú.** *Cá* berarti \"di mana\", dan ia selalu diikuti bentuk *bhfuil*, bukan *tá*. Bentuk itu sama persis dengan yang muncul sesudah *an* dalam pertanyaan biasa. Aturan pendeknya: begitu ada *an* atau *cá* di depan, *tá* berubah jadi *bhfuil*.",
+        "**Ar an tsráid, leis an mbanc — kata depan + an membawa perubahan.** Kalau kata sandang *an* berdiri sesudah kata depan seperti *ar*, *ag*, *le*, *ó*, kata bendanya mendapat urú: *ar an mbord*, *leis an mbanc*, *faoin gcathaoir*. Kekecualiannya kata yang berawal *s*: ia mendapat *t* di depannya, *an tsráid*, dan *sr-* itu dibaca \"tr\". Di Ulster séimhiú dipakai menggantikan urú (*ar an bhord*) — keduanya benar.",
+        "**Tá mé i mo chónaí — \"saya di dalam tinggalku\".** Bahasa Irlandia tidak punya kata kerja tunggal untuk \"tinggal, berdiam\". Yang dipakai adalah susunan *i* + kata milik + *cónaí*: *i mo chónaí* (saya), *i do chónaí* (kamu), *ina chónaí* (dia lelaki), *ina cónaí* (dia perempuan). Kata milik itulah yang berubah, bukan kata kerjanya.",
+        "**Os comhair na heaglaise — kata kedua berubah bentuk.** Sesudah kata depan panjang seperti *os comhair* (di depan), *in aice* (di dekat), *i lár* (di tengah), kata benda berikutnya masuk bentuk kepunyaan: *eaglais* → *na heaglaise*, *cathair* → *na cathrach*. Bentuk ini disebut genitif dan lengkapnya baru dipelajari di tingkat A2; untuk sekarang, hafalkan saja pasangannya sebagai satu kesatuan."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Cá bhfuil …? — bertanya letak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Satu pola untuk semua: *Cá bhfuil* + benda. Jawabannya *Tá sé/sí* + tempat."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pertanyaan",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Cá bhfuil an siopa?",
+              "kaa WIL an SYU-pa",
+              "Di mana tokonya?"
+            ],
+            [
+              "Cá bhfuil an leithreas?",
+              "kaa WIL an LE-hras",
+              "Di mana toiletnya?"
+            ],
+            [
+              "Cá bhfuil an stáisiún?",
+              "kaa WIL an STAA-syuun",
+              "Di mana stasiunnya?"
+            ],
+            [
+              "Cá bhfuil an t-ospidéal?",
+              "kaa WIL an TOS-pi-dyeel",
+              "Di mana rumah sakitnya?"
+            ],
+            [
+              "Cá bhfuil tú?",
+              "kaa WIL TUU",
+              "Kamu di mana?"
+            ],
+            [
+              "Cá bhfuil sé ina chónaí?",
+              "kaa WIL syee i-na KHOO-nii",
+              "Dia tinggal di mana?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Untuk arah, bukan letak, dipakai *cá* juga tetapi dengan kata kerja lain: *Cá bhfuil tú ag dul?* — \"kamu mau ke mana?\" Jawabannya memakai *go*: *Tá mé ag dul go Gaillimh*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tempat",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "siopa",
+              "SYU-pa",
+              "toko"
+            ],
+            [
+              "banc",
+              "BANK",
+              "bank"
+            ],
+            [
+              "oifig an phoist",
+              "E-fig an FWISYT",
+              "kantor pos"
+            ],
+            [
+              "eaglais",
+              "A-glisy",
+              "gereja"
+            ],
+            [
+              "scoil",
+              "SKOL",
+              "sekolah"
+            ],
+            [
+              "ospidéal",
+              "OS-pi-dyeel",
+              "rumah sakit"
+            ],
+            [
+              "stáisiún",
+              "STAA-syuun",
+              "stasiun"
+            ],
+            [
+              "aerfort",
+              "EER-fort",
+              "bandara"
+            ],
+            [
+              "bialann",
+              "BII-a-lan",
+              "restoran"
+            ],
+            [
+              "teach tábhairne",
+              "tyakh TAA-wir-nye",
+              "kedai, pub"
+            ],
+            [
+              "leabharlann",
+              "LYAU-ar-lan",
+              "perpustakaan"
+            ],
+            [
+              "margadh",
+              "MA-ra-ga",
+              "pasar"
+            ],
+            [
+              "sráid",
+              "SRAADJ",
+              "jalan"
+            ],
+            [
+              "farraige",
+              "FA-ri-ge",
+              "laut"
+            ],
+            [
+              "cathair",
+              "KA-hir",
+              "kota"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kata depan letak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sepuluh kata depan berikut menutup hampir semua kebutuhan sehari-hari. Perhatikan kolom terakhir: sebagian membawa perubahan huruf pada kata sesudahnya."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Arti",
+            "Perubahan yang dibawanya"
+          ],
+          "rows": [
+            [
+              "i / in",
+              "i / in",
+              "di dalam",
+              "urú: *i nGaillimh*; *in* dipakai sebelum vokal"
+            ],
+            [
+              "ar",
+              "ER",
+              "di atas, pada",
+              "séimhiú: *ar bhord*"
+            ],
+            [
+              "ag",
+              "EG",
+              "di, pada",
+              "tidak ada"
+            ],
+            [
+              "le",
+              "LE",
+              "dengan",
+              "tidak ada"
+            ],
+            [
+              "ó",
+              "OO",
+              "dari",
+              "séimhiú: *ó bhaile*"
+            ],
+            [
+              "go",
+              "GU",
+              "ke (tempat)",
+              "tidak ada"
+            ],
+            [
+              "faoi",
+              "FWII",
+              "di bawah",
+              "séimhiú: *faoi bhord*; *faoin* + urú: *faoin mbord*"
+            ],
+            [
+              "idir",
+              "I-dyir",
+              "di antara",
+              "séimhiú hanya dalam arti \"baik … maupun\""
+            ],
+            [
+              "in aice le",
+              "in A-ke le",
+              "di sebelah",
+              "tidak ada"
+            ],
+            [
+              "os comhair",
+              "os KOO-ir",
+              "di depan",
+              "bentuk kepunyaan"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat",
+            "Harfiah",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "Tá an leabhar ar an mbord.",
+              "berada si buku atas si meja",
+              "Bukunya di atas meja."
+            ],
+            [
+              "Tá an cat faoin gcathaoir.",
+              "berada si kucing bawah-si kursi",
+              "Kucingnya di bawah kursi."
+            ],
+            [
+              "Tá Seán sa siopa.",
+              "berada Seán di-si toko",
+              "Seán di toko."
+            ],
+            [
+              "Tá mé i mo chónaí i mBaile Átha Cliath.",
+              "berada saya di milikku tinggal di Dublin",
+              "Saya tinggal di Dublin."
+            ],
+            [
+              "Tá an banc in aice leis an eaglais.",
+              "berada si bank di dekat dengan si gereja",
+              "Banknya di sebelah gereja."
+            ],
+            [
+              "Tá an bia ar an mbord idir an dá chathaoir.",
+              "berada si makanan atas si meja antara si dua kursi",
+              "Makanannya di meja di antara dua kursi."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sa — kata depan yang paling sering dan paling menjebak",
+          "items": [
+            "*Sa* adalah luluhnya *i* + *an*, jadi artinya \"di dalam si\". *Sa siopa* = di toko itu. *Sa bhaile* = di rumah.",
+            "*Sa* membawa **séimhiú**, bukan urú: *sa charr*, *sa bhaile*, *sa chistin*. Tapi ia tidak menyentuh *d, t, s*: *sa doras*, *sa teach*, *sa siopa*.",
+            "Sebelum vokal ia menjadi *san*: *san oifig*, *san uisce*. Dan untuk jamak dipakai *sna*: *sna siopaí* (di toko-toko).",
+            "*Sa bhaile* berarti \"di rumah\" sedangkan *abhaile* berarti \"pulang ke rumah\". Dua kata yang bunyinya hampir sama tapi artinya bergerak berlawanan."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Anseo, ansin, ansiúd — tiga jarak",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bahasa Irlandia membagi \"di sini\" dan \"di sana\" jadi tiga tingkat jarak, persis seperti bahasa Indonesia membagi ini–itu–anu."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gaeilge",
+            "Cara baca",
+            "Jarak",
+            "Pasangan penunjuk"
+          ],
+          "rows": [
+            [
+              "anseo",
+              "an-SYO",
+              "di sini, dekat penutur",
+              "seo (ini)"
+            ],
+            [
+              "ansin",
+              "an-SYIN",
+              "di situ, dekat lawan bicara",
+              "sin (itu)"
+            ],
+            [
+              "ansiúd",
+              "an-SYUUD",
+              "di sana, jauh dari keduanya",
+              "siúd (anu)"
+            ],
+            [
+              "thall",
+              "HAL",
+              "di seberang sana",
+              "—"
+            ],
+            [
+              "thíos",
+              "HIIS",
+              "di bawah sana",
+              "—"
+            ],
+            [
+              "thuas",
+              "HU-as",
+              "di atas sana",
+              "—"
+            ],
+            [
+              "istigh",
+              "isy-TYII",
+              "di dalam",
+              "—"
+            ],
+            [
+              "amuigh",
+              "a-MWII",
+              "di luar",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ketiganya sering digabung untuk memperjelas: *thall ansin* (\"di seberang situ\"), *thíos ansiúd* (\"di bawah sana\"), *istigh anseo* (\"di dalam sini\"). Gabungan itu terdengar sangat wajar dan sebaiknya kamu tiru."
+        },
+        {
+          "type": "kotak",
+          "title": "Jangan tertukar: seo/sin menempel, anseo/ansin berdiri sendiri",
+          "items": [
+            "*Seo* dan *sin* menerangkan benda dan berdiri **sesudah** kata bendanya: *an teach seo* (rumah ini), *an fear sin* (lelaki itu).",
+            "*Anseo* dan *ansin* menerangkan tempat dan berdiri sendiri: *Tá mé anseo* (saya di sini), *Tá sé ansin* (dia di situ).",
+            "Untuk menunjuk sambil memperkenalkan, dipakai *Seo é* (ini dia, lelaki/benda) dan *Seo í* (ini dia, perempuan): *Seo é Seán*, *Seo í Máire*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ga": "cá bhfuil?",
+      "baca": "kaa WIL",
+      "id": "di mana?"
+    },
+    {
+      "ga": "siopa",
+      "baca": "SYU-pa",
+      "id": "toko"
+    },
+    {
+      "ga": "sráid",
+      "baca": "SRAADJ",
+      "id": "jalan"
+    },
+    {
+      "ga": "in aice le",
+      "baca": "in A-ke le",
+      "id": "di sebelah"
+    },
+    {
+      "ga": "banc",
+      "baca": "BANK",
+      "id": "bank"
+    },
+    {
+      "ga": "oifig",
+      "baca": "E-fig",
+      "id": "kantor"
+    },
+    {
+      "ga": "post",
+      "baca": "POST",
+      "id": "pos, surat"
+    },
+    {
+      "ga": "thall",
+      "baca": "HAL",
+      "id": "di seberang sana"
+    },
+    {
+      "ga": "os comhair",
+      "baca": "os KOO-ir",
+      "id": "di depan"
+    },
+    {
+      "ga": "eaglais",
+      "baca": "A-glisy",
+      "id": "gereja"
+    },
+    {
+      "ga": "cúpla",
+      "baca": "KUUP-la",
+      "id": "beberapa, sepasang"
+    },
+    {
+      "ga": "nóiméad",
+      "baca": "NOO-meed",
+      "id": "menit"
+    },
+    {
+      "ga": "ar shiúl",
+      "baca": "er HYUUL",
+      "id": "pergi, jauh dari sini"
+    },
+    {
+      "ga": "cónaí",
+      "baca": "KOO-nii",
+      "id": "tempat tinggal"
+    },
+    {
+      "ga": "farraige",
+      "baca": "FA-ri-ge",
+      "id": "laut"
+    },
+    {
+      "ga": "lár",
+      "baca": "LAAR",
+      "id": "tengah, pusat"
+    },
+    {
+      "ga": "cathair",
+      "baca": "KA-hir",
+      "id": "kota"
+    },
+    {
+      "ga": "ollmhór",
+      "baca": "OL-woor",
+      "id": "raksasa, besar sekali"
+    },
+    {
+      "ga": "duine",
+      "baca": "DI-nye",
+      "id": "orang"
+    },
+    {
+      "ga": "míle",
+      "baca": "MII-le",
+      "id": "seribu"
+    },
+    {
+      "ga": "milliún",
+      "baca": "MI-lyuun",
+      "id": "juta"
+    },
+    {
+      "ga": "mar sin",
+      "baca": "mar SYIN",
+      "id": "kalau begitu, jadi"
+    },
+    {
+      "ga": "scoil",
+      "baca": "SKOL",
+      "id": "sekolah"
+    },
+    {
+      "ga": "ospidéal",
+      "baca": "OS-pi-dyeel",
+      "id": "rumah sakit"
+    },
+    {
+      "ga": "stáisiún",
+      "baca": "STAA-syuun",
+      "id": "stasiun"
+    },
+    {
+      "ga": "bialann",
+      "baca": "BII-a-lan",
+      "id": "restoran"
+    },
+    {
+      "ga": "leabharlann",
+      "baca": "LYAU-ar-lan",
+      "id": "perpustakaan"
+    },
+    {
+      "ga": "leithreas",
+      "baca": "LE-hras",
+      "id": "toilet"
+    },
+    {
+      "ga": "sa",
+      "baca": "sa",
+      "id": "di dalam si"
+    },
+    {
+      "ga": "faoi",
+      "baca": "FWII",
+      "id": "di bawah, tentang"
+    },
+    {
+      "ga": "idir",
+      "baca": "I-dyir",
+      "id": "di antara"
+    },
+    {
+      "ga": "ansin",
+      "baca": "an-SYIN",
+      "id": "di situ"
+    },
+    {
+      "ga": "ansiúd",
+      "baca": "an-SYUUD",
+      "id": "di sana (jauh)"
+    },
+    {
+      "ga": "istigh",
+      "baca": "isy-TYII",
+      "id": "di dalam"
+    },
+    {
+      "ga": "amuigh",
+      "baca": "a-MWII",
+      "id": "di luar"
+    },
+    {
+      "ga": "cathaoir",
+      "baca": "KA-hir",
+      "id": "kursi"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Buat pertanyaan *Cá bhfuil …?* untuk tempat berikut.",
+      "items": [
+        "toko",
+        "bank",
+        "sekolah",
+        "rumah sakit",
+        "kantor pos",
+        "toilet"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata depan yang tepat (ar, sa, in aice le, os comhair, faoi, idir).",
+      "items": [
+        "Tá an leabhar ____ an mbord. (di atas)",
+        "Tá Seán ____ siopa. (di dalam)",
+        "Tá an banc ____ an mbialann. (di sebelah)",
+        "Tá an cat ____ gcathaoir. (di bawah)",
+        "Tá an eaglais ____ na hoifige. (di depan)",
+        "Tá an bord ____ an dá chathaoir. (di antara)"
+      ]
+    },
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Saya tinggal di Jakarta.",
+        "Dia (lelaki) tinggal di Galway.",
+        "Di mana kamu tinggal?",
+        "Tokonya di jalan ini.",
+        "Kotanya besar sekali.",
+        "Banknya tidak jauh dari sini."
+      ]
+    },
+    {
+      "prompt": "Pilih *anseo*, *ansin*, *ansiúd*, *istigh* atau *amuigh* sesuai keterangannya.",
+      "items": [
+        "Kamu menunjuk kursi di sampingmu: Tá an chathaoir ____ .",
+        "Kamu menunjuk toko di dekat lawan bicara: Tá an siopa ____ .",
+        "Kamu menunjuk gunung yang jauh: Tá an sliabh ____ .",
+        "Anak-anak bermain di luar rumah: Tá na páistí ____ .",
+        "Máire ada di dalam rumah: Tá Máire ____ .",
+        "Kamu memberi tahu bahwa kamu sendiri ada di sini: Tá mé ____ ."
+      ]
+    }
+  ],
+  "answers": [
+    "Cá bhfuil an siopa? — Cá bhfuil an banc? — Cá bhfuil an scoil? — Cá bhfuil an t-ospidéal? — Cá bhfuil oifig an phoist? — Cá bhfuil an leithreas?",
+    "ar — sa — in aice leis — faoin — os comhair — idir",
+    "Tá mé i mo chónaí in Iacárta. — Tá sé ina chónaí i nGaillimh. — Cá bhfuil tú i do chónaí? — Tá an siopa ar an tsráid seo. — Tá an chathair an-mhór. — Níl an banc i bhfad ó seo.",
+    "anseo — ansin — ansiúd — amuigh — istigh — anseo"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "Dia duit! Cén t-ainm atá ort?",
+  "goal": "Menyapa dan membalas sapaan, menyebut nama dan asal, menanyakan kabar, serta mengenal dua kata kerja \"adalah\" yang berbeda tugas.",
+  "bekal": [
+    "menyapa dengan *Dia duit* dan membalasnya dengan benar",
+    "menyebut nama sendiri dengan *Is mise …* dan *… is ainm dom*",
+    "memakai *tá mé / tá tú / tá sé* untuk mengatakan keadaan"
+  ],
+  "dialogs": [
+    {
+      "title": "Comhrá — An chéad lá i nGaillimh",
+      "intro": "Hari pertama di Galway. Budi baru turun dari bus dan sampai di rumah keluarga yang akan menampungnya. Máire, ibu rumah itu, membuka pintu.",
+      "lines": [
+        { "speaker": "Máire:", "text": "Dia duit! Fáilte go Gaillimh.", "id": "Halo! Selamat datang di Galway.", "literal": "Tuhan kepada-kamu! selamat-datang ke Galway." },
+        { "speaker": "Budi:", "text": "Dia is Muire duit. Go raibh maith agat.", "id": "Halo. Terima kasih.", "literal": "Tuhan dan Maria kepada-kamu. semoga ada baik pada-kamu." },
+        { "speaker": "Máire:", "text": "Is mise Máire. Cén t-ainm atá ort?", "id": "Saya Máire. Siapa namamu?", "literal": "adalah saya Máire. apa nama yang-ada atas-kamu?" },
+        { "speaker": "Budi:", "text": "Budi is ainm dom.", "id": "Nama saya Budi.", "literal": "Budi adalah nama untuk-saya." },
+        { "speaker": "Máire:", "text": "Conas atá tú, a Bhudi?", "id": "Apa kabar, Budi?", "literal": "bagaimana berada kamu, hai Budi?" },
+        { "speaker": "Budi:", "text": "Tá mé go maith, go raibh maith agat. Agus tú féin?", "id": "Saya baik, terima kasih. Dan kamu sendiri?", "literal": "berada saya secara baik, semoga ada baik pada-kamu. dan kamu sendiri?" },
+        { "speaker": "Máire:", "text": "Tá mé go breá. Seo é Seán, mo mhac.", "id": "Saya baik sekali. Ini Seán, anak saya.", "literal": "berada saya secara bagus. ini dia Seán, milikku anak-lelaki." },
+        { "speaker": "Seán:", "text": "Dia duit, a Bhudi. Cé as tú?", "id": "Halo, Budi. Kamu dari mana?", "literal": "Tuhan kepada-kamu, hai Budi. siapa dari kamu?" },
+        { "speaker": "Budi:", "text": "Is as an Indinéis mé. As Iacárta.", "id": "Saya dari Indonesia. Dari Jakarta.", "literal": "adalah dari si Indonesia saya. dari Jakarta." },
+        { "speaker": "Seán:", "text": "Tá sé sin i bhfad ó bhaile!", "id": "Itu jauh sekali dari rumah!", "literal": "berada itu itu di panjang dari rumah!" },
+        { "speaker": "Budi:", "text": "Tá. Tá mé ag foghlaim Gaeilge.", "id": "Ya. Saya sedang belajar bahasa Irlandia.", "literal": "berada. berada saya pada belajar Irlandia." },
+        { "speaker": "Máire:", "text": "Go hiontach! Tar isteach. Tá an tae réidh.", "id": "Hebat! Masuklah. Tehnya sudah siap.", "literal": "secara menakjubkan! datang ke-dalam. berada si teh siap." }
+      ],
+      "notes": [
+        "**Dia duit harfiahnya \"Tuhan kepadamu\".** Ini sapaan sehari-hari yang biasa, sama netralnya dengan \"halo\", dan dipakai orang beragama maupun tidak. Balasannya bukan pengulangan melainkan penambahan: *Dia is Muire duit* — \"Tuhan dan Maria kepadamu\". Kalau ada orang ketiga menyapa sesudahnya, ia menambah lagi: *Dia is Muire duit is Pádraig*. Kepada lebih dari satu orang: *Dia daoibh*.",
+        "**A Bhudi — memanggil orang mengubah huruf depan namanya.** Untuk menyapa seseorang, bahasa Irlandia meletakkan kata kecil *a* di depan nama, dan *a* itu membawa séimhiú: *Budi* → *a Bhudi*, *Máire* → *a Mháire*, *Seán* → *a Sheáin*. Kata *a* itu sendiri nyaris tak terdengar. Inilah sisa terakhir bentuk \"panggilan\" yang dulu ada di seluruh bahasa Eropa, dan bahasa Irlandia masih memakainya setiap hari.",
+        "**Dua cara menyebut nama, dua susunan yang berbeda.** *Is mise Budi* berarti \"sayalah Budi\" — pas untuk memperkenalkan diri. *Budi is ainm dom* harfiahnya \"Budi adalah nama untuk saya\", dan itu jawaban baku untuk pertanyaan *Cén t-ainm atá ort?* — yang sendirinya harfiahnya \"nama apa yang ada di atasmu?\". Bahasa Irlandia meletakkan nama **di atas** orang, bukan memberikannya.",
+        "**Tá mé, bukan is mé.** Ada dua kata kerja \"adalah\" dalam bahasa ini. *Tá* dipakai untuk keadaan yang bisa berubah — *Tá mé go maith* (saya sedang baik), *Tá an tae réidh* (tehnya siap). *Is* dipakai untuk jati diri — *Is mise Máire*, *Is as an Indinéis mé*. Menukar keduanya adalah kesalahan pemula yang paling sering, dan seluruh Unit 13 nanti khusus membahasnya."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Kalimat yang menolongmu bertahan",
+      "blocks": [
+        { "type": "p", "text": "Dua belas kalimat berikut bukan bahan tata bahasa — ia perkakas darurat. Hafalkan bentuk utuhnya sekarang, pahami susunannya nanti." },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["Sea / Ní hea", "SYA / nii HA", "Ya / Bukan (untuk pertanyaan jati diri)"],
+          ["Go raibh maith agat", "gu ROV MA A-gut", "Terima kasih"],
+          ["Tá fáilte romhat", "taa FAAL-tye ROO-at", "Sama-sama"],
+          ["Le do thoil", "le do HOL", "Tolong, silakan"],
+          ["Gabh mo leithscéal", "gow mo LESY-kyeel", "Maaf / Permisi"],
+          ["Níl a fhios agam", "niil a IS A-gum", "Saya tidak tahu"],
+          ["Ní thuigim", "nii HI-gyim", "Saya tidak mengerti"],
+          ["Abair arís é, le do thoil", "A-bir a-RIISY ee, le do HOL", "Tolong ulangi"],
+          ["Go mall, le do thoil", "gu MAL, le do HOL", "Pelan-pelan, tolong"],
+          ["An bhfuil Béarla agat?", "an WIL BYEER-la A-gut", "Anda bisa bahasa Inggris?"],
+          ["Cad é seo as Gaeilge?", "kod ee SYO as GEEL-ge", "Ini bahasa Irlandianya apa?"],
+          ["Cabhair, le do thoil!", "KOW-ir, le do HOL", "Tolong (saya)!"]
+        ] },
+        { "type": "p", "text": "*Níl a fhios agam* harfiahnya \"tidak ada pengetahuannya pada saya\" — perhatikan *fhios* yang huruf f-nya diam sama sekali, jadi terbaca \"IS\". Bentuk pendek yang sama seringnya di percakapan: *N'fheadar* (NYA-dar) di Munster." },
+        { "type": "kotak", "title": "Satu kalimat yang mengubah pengalamanmu di Irlandia", "items": [
+          "*Tá mé ag foghlaim Gaeilge. An bhfuil Gaeilge agat?* — \"Saya sedang belajar bahasa Irlandia. Apakah kamu bisa bahasa Irlandia?\"",
+          "Semua penutur bahasa Irlandia juga fasih berbahasa Inggris, jadi mereka otomatis beralih begitu mendengar aksen asing. Kalimat di atas menghentikan peralihan itu — dan hampir selalu disambut dengan senyum, karena orang luar yang belajar bahasa mereka masih jarang.",
+          "Perhatikan susunannya: bahasa Irlandia tidak berkata \"kamu bisa bahasa Irlandia\" melainkan \"ada bahasa Irlandia **pada** kamu\". Kemampuan pun diletakkan sebagai barang milik. Ini dibahas penuh di Unit 7."
+        ] }
+      ]
+    },
+    {
+      "title": "Sapaan menurut waktu dan keadaan",
+      "blocks": [
+        { "type": "p", "text": "Bahasa Irlandia tidak membagi sapaan menurut jam seperti \"selamat pagi\" dan \"selamat sore\". *Dia duit* dipakai sepanjang hari. Yang berubah menurut waktu justru ucapan **perpisahan** dan doa malam." },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Kapan dipakai"], "rows": [
+          ["Dia duit", "DYI-a GHWIT", "menyapa satu orang, kapan saja"],
+          ["Dia daoibh", "DYI-a GHIIV", "menyapa lebih dari satu orang"],
+          ["Dia is Muire duit", "DYI-a is MI-re GHWIT", "membalas sapaan"],
+          ["Haigh / Heileo", "HAI / HE-li-oo", "sapaan santai antara teman"],
+          ["Slán", "SLAAN", "sampai jumpa (yang pergi maupun yang tinggal)"],
+          ["Slán abhaile", "SLAAN a-WA-le", "kepada orang yang pulang"],
+          ["Slán go fóill", "slaan gu FOOL", "sampai nanti"],
+          ["Oíche mhaith", "II-khe WA", "selamat malam (waktu berpisah)"],
+          ["Codladh sámh", "KO-la SAAV", "tidur nyenyak"],
+          ["Feicfidh mé thú", "FEK-hii mee HUU", "sampai bertemu lagi"],
+          ["Go n-éirí leat", "gu NAY-rii LYAT", "semoga berhasil"],
+          ["Ádh mór ort", "aa MOOR ORT", "semoga beruntung"]
+        ] },
+        { "type": "kotak", "title": "Tiga cara menjawab \"Conas atá tú?\"", "items": [
+          "*Tá mé go maith* (taa mee gu MA) — baik. Jawaban netral yang selalu aman.",
+          "*Tá mé go breá* (taa mee gu BRAA) — baik sekali. Sedikit lebih hangat.",
+          "*Níl mé go maith* (niil mee gu MA) — saya kurang baik. Perhatikan *níl* menggantikan seluruh *tá*, bukan menambahkan kata sangkal di depannya.",
+          "Kata *go* di depan sifat mengubahnya jadi keterangan, seperti \"-ly\" bahasa Inggris. Kalau sifatnya berawal vokal, *go* menambahkan h: *go hiontach*, *go hálainn*."
+        ] },
+        { "type": "p", "text": "Pertanyaan kabarnya sendiri berbeda-beda menurut daerah, dan ketiganya sama benar: *Conas atá tú?* (selatan dan bentuk baku), *Cén chaoi a bhfuil tú?* (kyeen KHII a WIL tuu — Galway dan Connacht), *Cad é mar atá tú?* (kod ee mar a-TAA tuu — Donegal dan Ulster). Modul ini memakai yang pertama karena ia paling pendek, tetapi jangan kaget mendengar dua sisanya." }
+      ]
+    },
+    {
+      "title": "Tá — kata kerja pertamamu",
+      "blocks": [
+        { "type": "p", "text": "*Tá* berarti \"berada\" atau \"ada\", dan ia kata kerja yang paling sering dipakai dalam bahasa Irlandia. Perhatikan dua hal sekaligus: ia berdiri **di depan** pelakunya, dan bentuknya **tidak berubah** untuk orang yang berbeda — cukup kata gantinya yang diganti." },
+        { "type": "tabel", "head": ["Gaeilge", "Cara baca", "Bahasa Indonesia"], "rows": [
+          ["tá mé", "taa MEE", "saya berada / saya sedang"],
+          ["tá tú", "taa TUU", "kamu berada"],
+          ["tá sé", "taa SYEE", "dia (lelaki) berada"],
+          ["tá sí", "taa SYII", "dia (perempuan) berada"],
+          ["tá muid", "taa MID", "kami berada"],
+          ["tá sibh", "taa SYIV", "kalian berada"],
+          ["tá siad", "taa SYI-ad", "mereka berada"]
+        ] },
+        { "type": "p", "text": "Untuk \"saya\" dan \"kami\" ada bentuk pendek yang menyatu: *táim* (TAA-im) dan *táimid* (TAA-mid). Keduanya sama benar dengan *tá mé* dan *tá muid*, dan lebih sering terdengar di selatan. Modul ini memakai bentuk terpisah karena lebih mudah dilihat susunannya." },
+        { "type": "tabel", "head": ["Kalimat", "Harfiah", "Bahasa Indonesia"], "rows": [
+          ["Tá mé tuirseach.", "berada saya capek", "Saya capek."],
+          ["Tá sé fuar.", "berada itu dingin", "Cuacanya dingin."],
+          ["Tá Máire sásta.", "berada Máire senang", "Máire senang."],
+          ["Tá an tae te.", "berada si teh panas", "Tehnya panas."],
+          ["Tá muid anseo.", "berada kami di-sini", "Kami di sini."],
+          ["Tá siad sa bhaile.", "berada mereka di-rumah", "Mereka di rumah."]
+        ] },
+        { "type": "kotak", "title": "Jebakan: kata kerja duduk di depan", "items": [
+          "Bahasa Indonesia berkata \"Máire senang\"; bahasa Irlandia berkata \"berada Máire senang\" — *Tá Máire sásta*. Kata kerjanya **selalu** kata pertama dalam kalimat berita.",
+          "Karena itu jangan pernah memulai kalimat dengan nama atau kata ganti. *Mé tá go maith* salah; yang benar *Tá mé go maith*.",
+          "Susunan ini disebut kata kerja–pelaku–benda, dan bahasa Irlandia berbagi kebiasaan ini dengan bahasa Arab, Wales, dan Filipina — bukan dengan bahasa Inggris atau Indonesia."
+        ] }
+      ]
+    }
+  ],
+  "vocab": [
+    { "ga": "Dia duit", "baca": "DYI-a GHWIT", "id": "halo (kepada satu orang)" },
+    { "ga": "Dia is Muire duit", "baca": "DYI-a is MI-re GHWIT", "id": "halo (balasan)" },
+    { "ga": "fáilte", "baca": "FAAL-tye", "id": "selamat datang, sambutan" },
+    { "ga": "go", "baca": "gu", "id": "ke; juga penanda kata keterangan" },
+    { "ga": "Gaillimh", "baca": "GA-liv", "id": "Galway" },
+    { "ga": "go raibh maith agat", "baca": "gu ROV MA A-gut", "id": "terima kasih" },
+    { "ga": "is mise", "baca": "is MI-sye", "id": "saya adalah (memperkenalkan diri)" },
+    { "ga": "ainm", "baca": "A-nim", "id": "nama" },
+    { "ga": "cén t-ainm atá ort?", "baca": "kyeen TA-nim a-TAA ORT", "id": "siapa namamu?" },
+    { "ga": "dom", "baca": "DOM", "id": "untuk saya, kepada saya" },
+    { "ga": "conas atá tú?", "baca": "KO-nas a-TAA TUU", "id": "apa kabar?" },
+    { "ga": "tá", "baca": "TAA", "id": "berada, ada, sedang" },
+    { "ga": "níl", "baca": "NIIL", "id": "tidak berada, tidak ada" },
+    { "ga": "mé", "baca": "MEE", "id": "saya" },
+    { "ga": "tú", "baca": "TUU", "id": "kamu" },
+    { "ga": "sé", "baca": "SYEE", "id": "dia (lelaki), itu" },
+    { "ga": "sí", "baca": "SYII", "id": "dia (perempuan)" },
+    { "ga": "muid", "baca": "MID", "id": "kami" },
+    { "ga": "sibh", "baca": "SYIV", "id": "kalian" },
+    { "ga": "siad", "baca": "SYI-ad", "id": "mereka" },
+    { "ga": "go maith", "baca": "gu MA", "id": "baik" },
+    { "ga": "go breá", "baca": "gu BRAA", "id": "baik sekali, bagus" },
+    { "ga": "féin", "baca": "FEEN", "id": "sendiri" },
+    { "ga": "seo", "baca": "SYO", "id": "ini" },
+    { "ga": "sin", "baca": "SYIN", "id": "itu" },
+    { "ga": "mac", "baca": "MAK", "id": "anak lelaki" },
+    { "ga": "cé as tú?", "baca": "KYEE as TUU", "id": "kamu dari mana?" },
+    { "ga": "an Indinéis", "baca": "an IN-di-neesy", "id": "Indonesia" },
+    { "ga": "i bhfad", "baca": "i WAD", "id": "jauh" },
+    { "ga": "baile", "baca": "BA-le", "id": "rumah, kampung" },
+    { "ga": "ag foghlaim", "baca": "eg FOU-lim", "id": "sedang belajar" },
+    { "ga": "Gaeilge", "baca": "GEEL-ge", "id": "bahasa Irlandia" },
+    { "ga": "go hiontach", "baca": "gu HIIN-takh", "id": "hebat, menakjubkan" },
+    { "ga": "tar isteach", "baca": "tar is-TYAKH", "id": "masuklah" },
+    { "ga": "tae", "baca": "TEE", "id": "teh" },
+    { "ga": "réidh", "baca": "REE", "id": "siap, selesai" },
+    { "ga": "tuirseach", "baca": "TIR-syakh", "id": "capek" },
+    { "ga": "sásta", "baca": "SAAS-ta", "id": "senang, puas" },
+    { "ga": "anseo", "baca": "an-SYO", "id": "di sini" },
+    { "ga": "slán", "baca": "SLAAN", "id": "sampai jumpa" }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Irlandia.",
+      "items": [
+        "Halo! Saya Budi.",
+        "Apa kabar?",
+        "Saya baik, terima kasih.",
+        "Siapa namamu?",
+        "Saya sedang belajar bahasa Irlandia.",
+        "Sampai jumpa!"
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan kata ganti yang tepat (mé, tú, sé, sí, muid, sibh, siad).",
+      "items": [
+        "Tá ____ go maith. (saya)",
+        "Tá ____ tuirseach. (kamu)",
+        "Tá ____ sásta. (dia, perempuan)",
+        "Tá ____ anseo. (kami)",
+        "Tá ____ sa bhaile. (mereka)",
+        "Tá ____ go breá. (dia, lelaki)"
+      ]
+    },
+    {
+      "prompt": "Pilih sapaan atau jawaban yang tepat. Tulis jawabannya lengkap.",
+      "items": [
+        "Seseorang menyapamu dengan *Dia duit*. Kamu menjawab ____.",
+        "Kamu berterima kasih kepada seseorang. Kamu bilang ____.",
+        "Kamu pamit kepada teman yang akan pulang. Kamu bilang ____.",
+        "Kamu tidak mengerti apa yang dikatakan orang. Kamu bilang ____.",
+        "Kamu ingin orang mengulangi kalimatnya. Kamu bilang ____.",
+        "Kamu berpisah dengan tuan rumah menjelang tidur. Kamu bilang ____."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar. Ingat: kata kerja lebih dulu.",
+      "items": [
+        "mé / tá / maith / go",
+        "Máire / tá / sásta",
+        "an / tá / te / tae",
+        "mise / Budi / is",
+        "tú / cé / as / ?",
+        "foghlaim / mé / tá / Gaeilge / ag"
+      ]
+    }
+  ],
+  "answers": [
+    "Dia duit! Is mise Budi. — Conas atá tú? — Tá mé go maith, go raibh maith agat. — Cén t-ainm atá ort? — Tá mé ag foghlaim Gaeilge. — Slán!",
+    "mé — tú — sí — muid — siad — sé",
+    "Dia is Muire duit. — Go raibh maith agat. — Slán abhaile. — Ní thuigim. — Abair arís é, le do thoil. — Oíche mhaith.",
+    "Tá mé go maith. — Tá Máire sásta. — Tá an tae te. — Is mise Budi. — Cé as tú? — Tá mé ag foghlaim Gaeilge."
+  ]
+}

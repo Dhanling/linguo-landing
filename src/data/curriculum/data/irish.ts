@@ -1,0 +1,426 @@
+import type { LanguageCurriculum, SessionPreview } from "../types";
+import { getLanguageBySlug } from "../languages";
+
+// Compact format: [number, title] or [number, title, topics[]]
+type Raw = [number, string, string[]?];
+
+const toSessions = (raw: Raw[]): SessionPreview[] =>
+  raw.map(([number, title, topics]) => ({ number, title, ...(topics ? { topics } : {}) }));
+
+// ============ A1 — 3 sublevels ============
+const a1_1 = toSessions([
+  [1, "Aibítir — 18 Litir Amháin", ["a b c d e f g h i l m n o p r s t u", "TIDAK ADA j k q v w x y z", "fada (á é í ó ú) = vokal PANJANG, bukan tekanan", "tekanan hampir selalu di suku kata PERTAMA"]],
+  [2, "Séimhiú — Huruf h yang Melembutkan", ["bh mh = w/v · ch = kh · dh gh = gh berat", "fh = DIAM · ph = f · sh th = h", "bean → an bhean, teach → mo theach", "th BUKAN bunyi 'th' Inggris"]],
+  [3, "Urú — Huruf yang Menutupi", ["mb gc nd bhf ng bp dt", "huruf pertama dibaca, huruf asli DIAM", "baile → i mBaile, carr → ár gcarr", "vokal → n-: ár n-athair"]],
+  [4, "Caol le Caol, Leathan le Leathan", ["a o u = konsonan LEBAR · e i = konsonan TIPIS", "sean = 'syan' — e cuma penipis, tidak dibunyikan", "vokal 'mubazir' itu punya tugas", "aturan ejaan yang menjelaskan semuanya"]],
+  [5, "Beannachtaí — Sapaan", ["Dia duit → Dia is Muire duit", "Dia daoibh (jamak)", "slán, slán abhaile, oíche mhaith", "go raibh maith agat"]],
+  [6, "Cén t-ainm atá ort?", ["Is mise … (memperkenalkan diri)", "… is ainm dom", "nama diletakkan DI ATAS orang, bukan diberikan", "a Sheáin, a Mháire — memanggil + séimhiú"]],
+  [7, "An Briathar 'Bí' — Tá", ["tá mé/tú/sé/sí/muid/sibh/siad", "táim & táimid (bentuk menyatu)", "kata kerja PALING DEPAN: Tá Máire sásta", "susunan VSO — bukan SVO"]],
+  [8, "Níl & An bhfuil", ["níl = ní + fuil, satu kata utuh", "an bhfuil …? (urú pada fuil)", "cara membuat sangkal & tanya", "cá bhfuil …?"]],
+  [9, "TIDAK ADA Kata 'Ya' dan 'Tidak'", ["jawaban = ULANGI kata kerjanya", "An bhfuil tú go maith? → Tá / Níl", "kebiasaan ini terbawa ke Hiberno-English", "'I did, yeah'"]],
+  [10, "Forainmneacha — Kata Ganti", ["mé, tú, sé, sí, muid, sibh, siad", "é, í, iad (sebagai sasaran)", "mise, tusa (bentuk ditegaskan)", "tidak ada bentuk sopan/kasar"]],
+  [11, "Aidiachtaí — Kata Sifat di Belakang", ["teach mór, tae te — sama seperti bahasa Indonesia", "go maith / go breá (keterangan)", "an- = sangat (+séimhiú): an-mhaith", "ró- = terlalu: ró-fhuar"]],
+  [12, "An Aimsir — Cuaca", ["Tá sé fuar / te / fliuch / tirim", "Tá sé ag cur báistí", "Tá gaoth ann · Tá ceo ann", "percakapan yang tak pernah gagal di Irlandia"]],
+  [13, "Uimhreacha 1–10", ["a haon, a dó, a trí … a deich (berhitung)", "dhá bhord, trí chathaoir — 2–6 + SÉIMHIÚ", "seacht mbord, naoi gcathaoir — 7–10 + URÚ", "kata bendanya tetap TUNGGAL"]],
+  [14, "Ag Comhaireamh Daoine", ["duine amháin, beirt, triúr, ceathrar", "cúigear, seisear, seachtar, ochtar", "naonúr, deichniúr", "beirt + séimhiú: beirt fhear, beirt bhan"]],
+  [15, "An t-Alt 'An' — Jenis Kata Benda", ["an fear (lelaki) vs an bhean (perempuan + séimhiú)", "an t-arán (lelaki, vokal) vs an oifig (perempuan, vokal)", "an tsráid (perempuan, s + vokal/l/n/r)", "an deoch & an tine — d/t TIDAK dilembutkan"]],
+  [16, "Iolra & Athbhreithniú", ["na fir, na mná, na tithe", "na hoifigí — vokal dapat h-", "6 pola jamak: fir, bróga, cailíní, busanna, cathaoireacha, mná", "percakapan pertama: sapaan + nama + asal"]],
+]);
+
+const a1_2 = toSessions([
+  [1, "An Chopail 'Is' — Kata Kerja Kedua", ["Is múinteoir mé — 'adalah guru saya'", "Ní múinteoir mé · An múinteoir tú?", "jawaban: Sea / Ní hea (BUKAN Tá/Níl)", "is TIDAK PERNAH berubah bentuk"]],
+  [2, "Is vs Tá — Cara Memutuskan", ["kata sifat/tempat → tá", "kata benda jati diri → is", "uji: bisakah berubah besok?", "Tá mé tuirseach vs Is Éireannach mé"]],
+  [3, "Tíortha & Náisiúntachtaí", ["Éire → Éireannach · An Indinéis → Indinéiseach", "akhiran -ach membentuk nama bangsa", "An Fhrainc, An Ghearmáin, An tSín (alt melekat)", "Béarla = bahasa Inggris, BUKAN dari Sasana"]],
+  [4, "Post & Gairm — Pekerjaan", ["múinteoir, dochtúir, altra, mac léinn", "akhiran -óir/-eoir/-aí = pelaku", "semua bergolongan lelaki, walau orangnya perempuan", "Cén obair atá agat?"]],
+  [5, "Tá … agam — TIDAK ADA Kata 'Punya'", ["Tá teach agam = 'ada rumah pada saya'", "agam, agat, aige, aici, againn, agaibh, acu", "Tá Gaeilge agam = saya bisa bahasa Irlandia", "Níl a fhios agam = saya tidak tahu"]],
+  [6, "An Teaghlach — Keluarga", ["athair, máthair, deartháir, deirfiúr", "mac, iníon, tuismitheoirí, clann", "seanathair, seanmháthair, uncail, aintín", "clann = anak-anak, BUKAN marga"]],
+  [7, "Aidiachtaí Sealbhacha — Kata Milik", ["mo/do + séimhiú, luluh: m'athair, d'aghaidh", "a (lelaki) + séimhiú vs a (perempuan) tanpa perubahan", "ár/bhur/a (mereka) + urú", "a theach · a teach · a dteach = tiga arti"]],
+  [8, "Ar — Perasaan Diletakkan di Atas Orang", ["orm, ort, air, uirthi, orainn, oraibh, orthu", "Tá ocras orm · Tá tart orm · Tá tuirse orm", "Tá áthas/brón/fearg/eagla orm", "Tá brón orm = maaf"]],
+  [9, "An Corp — Badan", ["ceann, aghaidh, súil, béal, cluas, lámh, cos", "Cad tá ort? = kamu kenapa?", "rasa pakai ar, bagian badan pakai kata milik", "Tá mo scornach tinn"]],
+  [10, "Ag + Ainm Briathartha — Sedang", ["Tá mé ag ithe / ag ól / ag obair", "'ada saya PADA makan' — seperti a-hunting", "ag féachaint AR, ag éisteacht LE", "Cad atá tú a dhéanamh?"]],
+  [11, "Sa Bhaile — Rumah", ["teach, seomra, cistin, seomra suí, seomra folctha", "bord, cathaoir, leaba, doras, fuinneog", "sa + séimhiú: sa charr, sa bhaile", "sa bhaile (di rumah) vs abhaile (pulang)"]],
+  [12, "Bia agus Deoch", ["arán, im, cáis, ubh, feoil, iasc, prátaí", "tae, caife, uisce, bainne, sú", "bricfeasta, lón, dinnéar", "te = panas DAN pedas sekaligus"]],
+  [13, "Ag Ordú Bia", ["Ba mhaith liom …, le do thoil", "Cad a mholann tú?", "An bille, le do thoil", "blasta, milis, goirt, searbh"]],
+  [14, "Cén t-am é?", ["a haon a chlog … a dó dhéag", "leathuair tar éis / ceathrú tar éis / ceathrú chun", "ar a hocht = pukul delapan", "meán lae, meán oíche"]],
+  [15, "Laethanta & Míonna", ["Dé Luain, Dé Máirt, Dé Céadaoin, Déardaoin", "Dé hAoine, Dé Sathairn, Dé Domhnaigh", "Eanáir … Nollaig · i mí Eanáir", "Samhain = November DAN asal kata Halloween"]],
+  [16, "Athbhreithniú — Mo Ghnáthlá", ["menceritakan hari biasa dari bangun sampai tidur", "gabungan tá + is + agam + ar + ag", "inniu, inné, amárach, anocht", "3 menit bercerita tanpa berhenti"]],
+]);
+
+const a1_3 = toSessions([
+  [1, "Aimsir Láithreach — 1. Réimniú", ["ólaim, ólann tú, ólaimid", "dasar LEBAR -aim/-ann · dasar TIPIS -im/-eann", "hanya 3 bentuk yang perlu dihafal, bukan 6", "kebiasaan, bukan yang sedang berlangsung"]],
+  [2, "Aimsir Láithreach — 2. Réimniú", ["ceannaím, ceannaíonn tú, ceannaímid", "dasar berakhir -igh: tosaigh, éirigh, imigh", "perontokan: oscail → osclaím, inis → insím", "foghlaim = kekecualian golongan 2"]],
+  [3, "11 Briathar Neamhrialta — Láithreach", ["bí, abair, beir, clois, déan, faigh", "feic, ith, tabhair, tar, téigh", "tugaim (dari tabhair), tagaim (dari tar), téim", "deirim (dari abair) — cari di kamus lewat dasarnya"]],
+  [4, "Ní & An pada Kata Kerja", ["ní + SÉIMHIÚ: ní thuigim, ní cheannaím", "an + URÚ: an dtuigeann tú?, an gceannaíonn tú?", "vokal tak tersentuh: ní ólaim, an ólann tú?", "nach = bukankah (+urú)"]],
+  [5, "Ceisteanna — Kata Tanya", ["cé, cad/céard, cá (+urú), cathain", "conas, cén fáth, cé mhéad, cé leis", "cé hé / cé hí — h sebelum vokal", "TIDAK ADA kata bantu seperti 'do'"]],
+  [6, "Cén + Ainmfhocal", ["cén = cé + an, selalu diikuti kata benda", "cén t-am, cén t-ainm (lelaki, vokal)", "cén chaoi, cén cheist (perempuan, séimhiú)", "jangan tambah 'an' lagi sesudah cén"]],
+  [7, "Is Maith Liom — Suka", ["liom, leat, leis, léi, linn, libh, leo", "Is maith liom = 'adalah baik dengan saya'", "jawaban: Is maith / Ní maith", "is breá / is fearr / is fuath / is cuma liom"]],
+  [8, "Ba Mhaith Liom — Meminta Sopan", ["Is maith liom tae (selera) vs Ba mhaith liom tae (memesan)", "Ar mhaith leat …? → Ba mhaith / Níor mhaith", "le do thoil, go raibh maith agat", "Seo dhuit"]],
+  [9, "Ag Siopadóireacht", ["Cé mhéad atá air? · Tá sé daor/saor", "Tá geansaí uaim (uaim, uait, uaidh, uaithi)", "ceann mór, ceann eile, ceann níos mó", "airgead nó cárta?"]],
+  [10, "Dathanna & Éadaí", ["bán, dubh, dearg, gorm, buí, donn, liath", "glas (hijau alami) vs uaine (hijau buatan)", "léine bhán — kata sifat + séimhiú pada kata perempuan", "geansaí, cóta, bróga, hata, scairf"]],
+  [11, "Treoracha sa Bhaile Mór", ["Cá bhfuil …? · Gabh ar clé / ar dheis", "díreach ar aghaidh, ar an gcúinne", "in aice le, os comhair, idir, faoi", "siopa, banc, oifig an phoist, eaglais"]],
+  [12, "Iompar — Kendaraan", ["bus, traein, tacsaí, rothar, carr", "ar an mbus, sa charr, de shiúl na gcos", "Cá bhfuil an stáisiún?", "ticéad fillte / ticéad singil"]],
+  [13, "Ar an bhFón", ["Dia duit, … anseo", "An bhfuil … ann?", "Fan nóiméad · Glaoigh ar ais orm", "uimhir fóin — a náid, a hocht, a sé …"]],
+  [14, "Ag Déanamh Coinne", ["An bhfuil tú saor Dé Sathairn?", "Ar mhaith leat teacht?", "Ar leathuair tar éis a dó, ag an stáisiún", "Feicfidh mé thú — masa depan sebagai ungkapan"]],
+  [15, "Téacs & Ríomhphost Simplí", ["A chara, / A Sheáin, a chara,", "Le meas, / Slán go fóill,", "kalimat pendek: Tá mé ag …, Ba mhaith liom …", "sms & pesan singkat sehari-hari"]],
+  [16, "Athbhreithniú & An Ghaeltacht", ["Gaeltacht: Dún na nGall, Maigh Eo, Gaillimh, Ciarraí, Corcaigh, Port Láirge, An Mhí", "Tá mé ag foghlaim Gaeilge — kalimat pembuka paling berguna", "Is fearr Gaeilge bhriste ná Béarla cliste", "membaca papan nama & peribahasa pendek"]],
+]);
+
+// ============ A2 — 4 sublevels ============
+const a2_1 = toSessions([
+  [1, "Aimsir Chaite — Kata Kerja Biasa", ["konsonan + SÉIMHIÚ: cheannaigh mé, ghlan sé", "vokal & f + d': d'ól mé, d'fhan mé, d'ith mé", "bentuknya SAMA untuk semua orang", "d'ólamar / d'ól muid"]],
+  [2, "Níor & Ar — Sangkal & Tanya Lampau", ["KEDUANYA membawa séimhiú (beda dari masa sekarang)", "níor cheannaigh mé · ar cheannaigh tú?", "d' hilang: d'ól mé → níor ól mé", "jawaban: Cheannaigh / Níor cheannaigh"]],
+  [3, "Aimsir Chaite — 11 Neamhrialta", ["bhí, dúirt, rug, chuala, rinne, fuair", "chonaic, d'ith, thug, tháinig, chuaigh", "sangkal menyimpang: ní raibh, ní dhearna, ní bhfuair, ní fhaca, ní dheachaigh", "an raibh? an bhfaca? an ndeachaigh?"]],
+  [4, "Litreacha nach nDéantar Séimhiú", ["l, n, r tidak pernah dilembutkan: léigh mé, rith mé", "sc-, sm-, sp-, st- juga tidak: scríobh mé", "jadi bentuk lampau = bentuk perintah", "yang membedakan cuma kata gantinya"]],
+  [5, "Ag Insint Scéil — Bercerita", ["urutan: ar dtús → ansin → ina dhiaidh sin → ar deireadh", "penanda waktu: inné, aréir, an tseachtain seo caite, anuraidh", "menyambung kalimat lampau", "cerita akhir pekan 5 kalimat"]],
+  [6, "Aimsir Fháistineach — 1. Réimniú", ["-faidh (lebar) / -fidh (tipis): ólfaidh, cuirfidh", "f dibaca seperti h: ólfaidh = 'OOL-hii'", "ólfaimid (kami)", "huruf depan TIDAK disentuh"]],
+  [7, "Aimsir Fháistineach — 2. Réimniú & Neamhrialta", ["-óidh / -eoidh: ceannóidh, imeoidh", "beidh, rachaidh, tiocfaidh, gheobhaidh, feicfidh, íosfaidh", "gheobhaidh mé TAPI ní bhfaighidh mé", "ní + séimhiú, an + urú (seperti masa sekarang)"]],
+  [8, "Pleananna — Rencana", ["amárach, anocht, an tseachtain seo chugainn", "Tá mé ag dul … amárach (ag lebih sering dari masa depan)", "Beidh mé ar ais · Rachaidh mé abhaile", "ar feadh míosa, go luath, lá éigin"]],
+  [9, "Comparáid — níos", ["níos mó, níos lú, níos fearr, níos measa", "níos daoire, níos saoire, níos sine, níos óige", "ná = daripada", "fearr & measa sama sekali tak mirip maith & olc"]],
+  [10, "Sárchéim — Paling", ["is fearr, is mó, is tábhachtaí, is cáiliúla", "an ceann is fearr", "bentuk sama dengan níos, cuma kata depannya ganti", "ar fad = dari semuanya"]],
+  [11, "Réamhfhocail Réimnithe — Daftar Lengkap", ["ag, ar, le, do, i, ó, faoi, roimh, chuig, as", "agam/orm/liom/dom/ionam/uaim/fúm/romham/chugam/asam", "uaim = 'saya butuh'", "domsa, liomsa — bentuk ditegaskan"]],
+  [12, "Réamhfhocal + An = Urú", ["ar an mbord, ag an ndoras, leis an gcaife", "faoin gcathaoir, ón mbaile, don fhear", "kekecualian s: ar an tsráid", "Ulster memakai séimhiú — sama benar"]],
+  [13, "An Tuiseal Ginideach — Pengantar", ["bia na hÉireann, lár na cathrach, os comhair na heaglaise", "ceapaire cáise, gloine uisce, cupán tae", "an → na, dan h- sebelum vokal", "hafalkan pasangannya dulu, aturannya di B1"]],
+  [14, "Uimhreacha Móra & Dátaí", ["fiche, tríocha, daichead, caoga … céad, míle", "fiche a haon, tríocha a cúig", "an chéad lá de Mhárta, an dara lá déag", "2026 = dhá mhíle fiche a sé"]],
+  [15, "An Aimsir & Séasúir", ["earrach, samhradh, fómhar, geimhreadh", "Meán Fómhair & Deireadh Fómhair = tengah/akhir musim gugur", "réamhaisnéis na haimsire", "scamallach, grianmhar, stoirmiúil, sioc"]],
+  [16, "Athbhreithniú — Trí Aimsir", ["lampau · sekarang · masa depan dalam satu cerita", "aturan mutasi tiap masa dibandingkan", "ní/an di tiga masa", "menulis 10 kalimat tentang minggu lalu, hari ini, minggu depan"]],
+]);
+
+const a2_2 = toSessions([
+  [1, "Ag Taisteal — Bepergian", ["Tá mé ag dul go … · Táim ar saoire", "eitilt, bád, traein, bus", "pas, ticéad, bagáiste", "Cén t-am a fhágann sé?"]],
+  [2, "San Óstán", ["Tá seomra curtha in áirithe agam", "seomra singil / dúbailte, oíche amháin", "Cá bhfuil an bricfeasta?", "eochair, ardaitheoir, glanadh"]],
+  [3, "Ag an Aerfort & Stáisiún", ["seiceáil isteach, geata, moill", "ardán, ticéad fillte, ticéad singil", "Cén t-ardán?", "Ar chaill mé an traein?"]],
+  [4, "Ag Fiafraí Treoracha", ["Gabh mo leithscéal, cá bhfuil …?", "cas ar clé/ar dheis, díreach ar aghaidh", "an chéad chasadh eile", "cúig nóiméad de shiúl na gcos"]],
+  [5, "Obair & An Oifig", ["oifig, cruinniú, comhghleacaí, bainisteoir", "Tá mé ag obair ar …", "sceideal, spriocdháta, tionscadal", "Tá mé gnóthach"]],
+  [6, "Ríomhphost Gairmiúil", ["A chara / A Uasail / A Bhean Uasail", "Le meas, Is mise le meas", "Táim ag scríobh chugat maidir le …", "Ag súil le cloisteáil uait"]],
+  [7, "Agallamh Poist — Dasar", ["Inis dom fút féin", "Tá taithí agam ar …", "Is í mo láidreacht ná …", "Cén fáth ar chuir tú isteach ar an bpost?"]],
+  [8, "Ag an Dochtúir", ["Tá tinneas cinn/boilg orm", "Tá pian i mo …", "le trí lá anuas", "oideas, cógas, coinne"]],
+  [9, "Éigeandáil", ["Cabhair! · Glaoigh ar 112 nó 999", "otharcharr, gardaí, briogáid dóiteáin", "Tharla timpiste", "Tá duine gortaithe"]],
+  [10, "Ag Cur Síos ar Dhaoine", ["ard, íseal, tanaí, téagartha", "gruaig fhionn/dhonn/dhubh/rua", "súile gorma/donna/glasa", "kata sifat jamak: súile gorma"]],
+  [11, "Pearsantacht", ["cairdiúil, cineálta, cliste, greannmhar", "ciúin, cainteach, foighneach", "Is duine … é/í", "Tá sé/sí an-lách"]],
+  [12, "Ag Cur Síos ar Áiteanna", ["cathair, baile, sráidbhaile, tuath", "gnóthach, ciúin, álainn, salach", "Tá a lán … ann", "Tá clú air as …"]],
+  [13, "Caitheamh Aimsire", ["Is maith liom a bheith ag léamh/ag siúl/ag snámh", "ag imirt (olahraga) vs ag seinm (musik)", "gach deireadh seachtaine", "ball de chlub"]],
+  [14, "Spórt — CLG", ["Cumann Lúthchleas Gael (GAA)", "peil Ghaelach, iomáint, camógaíocht", "Páirc an Chrócaigh, Craobh na hÉireann", "foireann, cluiche, scór, imreoir"]],
+  [15, "Ceol Traidisiúnta", ["seisiún, fidil, bodhrán, feadóg mhór, cairdín", "port, ríl, cornphíopa", "sean-nós = menyanyi tanpa iringan", "fleadh cheoil"]],
+  [16, "Athbhreithniú — Turas go hÉirinn", ["merancang perjalanan lengkap dalam bahasa Irlandia", "memesan, bertanya arah, membeli tiket", "menulis surel pemesanan", "bermain peran 3 adegan"]],
+]);
+
+const a2_3 = toSessions([
+  [1, "An Modh Ordaitheach — Perintah", ["bentuk dasar = perintah: ól! fan! suigh!", "jamak: ólaigí! fanaigí!", "ná = jangan: Ná bí buartha, Ná déan sin", "ná tidak membawa perubahan huruf"]],
+  [2, "Séimhiú i ndiaidh Réamhfhocal", ["ar, do, de, faoi, ó, roimh, trí, mar + séimhiú", "ar bhord, ó bhaile, faoi chathaoir", "sa + séimhiú tapi tidak menyentuh d/t/s", "i + urú: i nGaillimh, i mBaile Átha Cliath"]],
+  [3, "Clásail Choibhneasta — a + Séimhiú", ["an fear a thagann · an bhean a cheannaíonn", "cad a dhéanann tú?", "a = 'yang', membawa séimhiú", "bentuk langsung (direct relative)"]],
+  [4, "Go & Nach — Kalimat Bersambung", ["Deirim go bhfuil sé fuar", "Sílim nach dtuigeann sé", "go & nach membawa URÚ", "go n-ólann (n- sebelum vokal)"]],
+  [5, "Briathra + Réamhfhocail", ["féach AR, éist LE, fan LE, caint LE", "smaoinigh AR, cabhraigh LE, iarr AR", "kata depannya bagian dari kata kerjanya", "hafalkan sepasang, jangan terjemahkan"]],
+  [6, "Ag Cur Tuairime in Iúl", ["Sílim go … · Ceapaim go … · Measaim go …", "Is dóigh liom go …", "Dar liom …", "Níl mé cinnte"]],
+  [7, "Aontú & Easaontú", ["Aontaím leat · Ní aontaím leat", "Tá an ceart agat · Níl an ceart agat", "B'fhéidir, ach …", "Ar an lámh eile"]],
+  [8, "Mothúcháin Chasta", ["Tá díomá orm · Tá iontas orm", "Tá imní orm faoi …", "Tá mé bródúil as …", "Tá cumha orm i ndiaidh an bhaile"]],
+  [9, "Scéal Pearsanta", ["bercerita 5 menit tentang diri", "menggabungkan tiga masa", "penanda urutan & sebab", "mar, toisc go, dá bhrí sin"]],
+  [10, "An Aimsir Ghnáthláithreach — Bíonn", ["bíonn = 'biasanya ada', bentuk kebiasaan dari bí", "Bíonn sé fuar i mí Eanáir", "ní bhíonn, an mbíonn?", "tidak ada padanannya di bahasa Inggris baku"]],
+  [11, "Bíonn vs Tá — Beda yang Sangat Irlandia", ["Tá sé fuar = dingin SEKARANG", "Bíonn sé fuar = biasanya dingin", "Hiberno-English: 'he does be working'", "salah pilih = arti berubah total"]],
+  [12, "Tá … le Déanamh — Keharusan", ["Tá obair le déanamh agam", "Tá litir le scríobh agam", "susunan: tá + benda + le + kata benda kerja", "cara halus menyatakan kewajiban"]],
+  [13, "Caithfidh mé — Harus", ["Caithfidh mé imeacht", "Ní mór dom … (lebih resmi)", "Ba cheart dom … = sebaiknya saya", "Níl orm … = saya tidak perlu"]],
+  [14, "Is Féidir Liom — Bisa", ["Is féidir liom snámh · Ní féidir liom …", "Tá mé in ann … (Connacht)", "An féidir leat cabhrú liom?", "beda 'bisa' kemampuan vs izin"]],
+  [15, "Blag Gearr a Scríobh", ["struktur: teideal, réamhrá, corp, deireadh", "menulis 150 kata", "menyambung kalimat dengan agus/ach/mar/ansin", "membaca ulang & memperbaiki mutasi"]],
+  [16, "Athbhreithniú — Mé Féin i 200 Focal", ["karangan pribadi 200 kata", "3 masa + bíonn + opini", "pemeriksaan mandiri: séimhiú, urú, VSO", "membaca keras-keras"]],
+]);
+
+const a2_4 = toSessions([
+  [1, "Stair na Gaeilge", ["Ogham (abad 4) → Sean-Ghaeilge → Nua-Ghaeilge", "bahasa tertulis tertua di Eropa Barat sesudah Latin & Yunani", "Cath Chionn tSáile 1601, Peindlíthe", "athbheochan — kebangkitan abad 19–20"]],
+  [2, "Na Trí Chanúint", ["Mumhan (selatan), Connachta (tengah), Ulaidh (utara)", "tekanan Munster bisa pindah ke vokal panjang", "Ulster: séimhiú menggantikan urú sesudah kata depan+an", "pilih satu dialek di tahun pertama"]],
+  [3, "An Ghaeltacht Inniu", ["7 wilayah: Dún na nGall, Maigh Eo, Gaillimh, Ciarraí, Corcaigh, Port Láirge, An Mhí", "±70.000 penutur harian", "Údarás na Gaeltachta", "coláiste samhraidh"]],
+  [4, "Logainmneacha", ["baile (kampung) → Bally-", "cill (gereja) → Kil-", "dún (benteng) → Dun-/-doon", "Baile Átha Cliath, Gaillimh, Corcaigh, Béal Feirste"]],
+  [5, "Sloinnte — Ó & Mac", ["Ó = cucu dari · Mac = anak dari", "Ó Cinnéide → Kennedy, Mac Cárthaigh → McCarthy", "bentuk perempuan: Ní, Nic, Uí, Mhic", "Máire Ní Bhriain vs Seán Ó Briain"]],
+  [6, "Seanfhocail", ["Is fearr Gaeilge bhriste ná Béarla cliste", "Tús maith, leath na hoibre", "Ní neart go cur le chéile", "Ar scáth a chéile a mhaireann na daoine"]],
+  [7, "Béaloideas", ["sí, bean sí, leipreachán, púca", "Fionn Mac Cumhaill & na Fianna", "Táin Bó Cúailnge & Cú Chulainn", "seanchaí — juru cerita"]],
+  [8, "Féilte", ["Lá Fhéile Pádraig (17 Márta)", "Oíche Shamhna — asal Halloween", "Bealtaine, Lá Bealtaine", "Nollaig & Lá Fhéile Stiofáin"]],
+  [9, "Ceol & Damhsa", ["céilí, set dancing, damhsa ar an sean-nós", "The Chieftains, Altan, Clannad", "Riverdance & pengaruhnya", "Óró sé do bheatha 'bhaile"]],
+  [10, "TG4 & RTÉ Raidió na Gaeltachta", ["TG4 dengan fotheidil Gaeilge", "Ros na Rún — sinetron berbahasa Irlandia", "RnaG untuk melatih telinga", "10 menit sehari, jangan berusaha mengerti semua"]],
+  [11, "Litríocht do Thosaitheoirí", ["Séideán Sí, seri Gafa", "Tuairisc.ie untuk berita mudah", "leabhair dhátheangacha", "membaca nyaring 5 menit sehari"]],
+  [12, "Peil Ghaelach & Iomáint", ["iomáint = olahraga lapangan tercepat di dunia", "camán & sliotar", "Craobh na hÉireann, Páirc an Chrócaigh", "amatir sepenuhnya — pemain tidak dibayar"]],
+  [13, "Bia Traidisiúnta", ["bagún & cabáiste, stobhach Gaelach", "arán sóide, brachán coirce", "boxty, colcannon, champ", "uisce beatha = 'air kehidupan' → whiskey"]],
+  [14, "An Ghaeilge sa Bhéarla", ["Hiberno-English: 'I'm after eating' dari tar éis", "'Do be' dari bíonn", "whiskey, slogan, galore, banshee, smithereens", "susunan Irlandia yang tersisa di bahasa Inggris Irlandia"]],
+  [15, "Comharthaí Bóthair", ["An Lár, Amach, Isteach, Mná, Fir", "Géill Slí, Go Mall, Oscailte/Dúnta", "papan nama dwibahasa & Gaeltacht (hanya Irlandia)", "membaca papan tanpa kamus"]],
+  [16, "Athbhreithniú Cultúrtha", ["cur i láthair 5 menit tentang satu topik budaya", "kosakata budaya terkumpul", "menghubungkan bahasa dengan tempat & sejarahnya", "persiapan masuk B1"]],
+]);
+
+// ============ B1 — 5 sublevels ============
+const b1_1 = toSessions([
+  [1, "An Tuiseal Ginideach — Sistem Penuh", ["fungsi: kepunyaan, bahan, sesudah kata benda kerja", "an → na, na h- sebelum vokal", "hata an fhir, cóta na mná", "kasus yang paling menentukan di Irlandia"]],
+  [2, "Ginideach Uatha — 5 Díochlaonadh", ["1: fear → fir · 2: bróg → bróige", "3: múinteoir → múinteora · 4: tidak berubah", "5: cathair → cathrach", "mengenali golongan dari akhirannya"]],
+  [3, "Ginideach Iolra", ["na bhfear, na mban, na dtithe", "urú pada jamak genitif", "na gcarranna, na bpáistí", "beda dari genitif tunggal"]],
+  [4, "An Aidiacht sa Ghinideach", ["cóta an fhir mhóir", "teach na mná óige", "kata sifat ikut berubah", "urutan: benda + kata sifat, keduanya genitif"]],
+  [5, "Iolra Lag & Iolra Láidir", ["jamak lemah: fir → na bhfear", "jamak kuat: tithe → na dtithe (tidak berubah)", "cara mengenalinya", "kenapa ini penting untuk genitif"]],
+  [6, "An Chopail — Bentuk Lengkap", ["is, ní, an, nach (sekarang)", "ba, níor, ar, nár (lampau & pengandaian)", "b' & arbh sebelum vokal", "gur, nár dalam anak kalimat"]],
+  [7, "Is é / Is í / Is iad", ["menyamakan dua hal tertentu", "Is é Seán an múinteoir", "Is iad na páistí is tábhachtaí", "beda dari penggolongan (Is múinteoir é)"]],
+  [8, "Sealbhach + Cuid", ["mo chuid Gaeilge, do chuid airgid", "cuid untuk hal tak terhitung", "a cuid gruaige", "tanpa cuid = terdengar memiliki seluruhnya"]],
+  [9, "An Aimsir Ghnáthchaite", ["d'óladh mé = dulu biasa minum", "bhínn, bhíteá, bhíodh sé", "beda dari aimsir chaite biasa", "cerita masa kecil"]],
+  [10, "An Modh Coinníollach 1", ["d'ólfainn, d'ólfá, d'ólfadh sé", "-f- + akhiran orang", "séimhiú & d' seperti masa lampau", "kesopanan tingkat tinggi"]],
+  [11, "An Modh Coinníollach 2 — Neamhrialta", ["bheinn, déarfainn, rachainn, thiocfainn", "gheobhainn / ní bhfaighinn", "d'íosfainn, thabharfainn, d'fheicfinn", "tabel 11 kata kerja"]],
+  [12, "Dá & Má — Pengandaian", ["má + aimsir chaite/láithreach (nyata)", "dá + modh coinníollach (tidak nyata)", "Dá mbeadh airgead agam, cheannóinn …", "dá membawa urú, má membawa séimhiú"]],
+  [13, "Clásail Ama", ["nuair a … (+séimhiú)", "sula, tar éis do, ó tháinig", "chomh luath agus a …", "urutan waktu dalam kalimat majemuk"]],
+  [14, "Ag Cur Síos ar Nósanna", ["bíonn + ag + ainm briathartha", "de ghnáth, go hiondúil, i gcónaí", "membandingkan kebiasaan dulu & sekarang", "gnáthchaite vs gnáthláithreach"]],
+  [15, "Scéal Fada", ["cerita 400 kata dengan alur", "campuran 5 masa", "dialog di dalam cerita", "penyuntingan mandiri"]],
+  [16, "Athbhreithniú B1.1", ["genitif + copula + pengandaian", "audit mutasi menyeluruh", "uji mandiri 40 soal", "kesalahan khas penutur Indonesia"]],
+]);
+
+const b1_2 = toSessions([
+  [1, "Nuacht & Teidil", ["membaca judul berita Tuairisc.ie", "ciri bahasa judul: tanpa kata kerja bí", "kosakata berita dasar", "menebak isi dari judul"]],
+  [2, "TG4 gan Fotheidil", ["menonton 10 menit tanpa teks", "strategi menangkap gagasan utama", "Nuacht TG4", "mencatat 5 kata baru"]],
+  [3, "Ag Plé Nuachta", ["Chuala mé go … · Léigh mé faoi …", "Is é mo thuairim ná …", "menanggapi berita", "kosakata isu terkini"]],
+  [4, "Polaitíocht na hÉireann", ["Dáil Éireann, Seanad, Taoiseach, Uachtarán", "Áras an Uachtaráin, Teach Laighean", "toghchán, páirtí, vótáil", "Bunreacht na hÉireann"]],
+  [5, "Tíreolaíocht na hÉireann", ["32 contae, 4 cúige: Laighin, Mumhain, Connacht, Ulaidh", "An tSionainn, Sléibhte Mhic Ghiolla Phádraig", "Poblacht na hÉireann & Tuaisceart Éireann", "nama contae dalam bahasa Irlandia"]],
+  [6, "Stair: An Gorta Mór", ["1845–1852, sekitar 1 juta meninggal", "1 juta lagi beremigrasi", "runtuhnya penutur Irlandia", "hubungan langsung dengan surutnya bahasa"]],
+  [7, "Stair: 1916 & Saoirse", ["Éirí Amach na Cásca 1916", "Forógra na Poblachta", "Pádraig Mac Piarais & bahasa Irlandia", "Saorstát 1922, Poblacht 1949"]],
+  [8, "An Tuaisceart", ["Gaeilge di Béal Feirste — Bóthar Seoighe", "Acht na Gaeilge", "Comhaontú Aoine an Chéasta", "kebangkitan bahasa di kota"]],
+  [9, "Imirce & An Diaspóra", ["70 juta orang keturunan Irlandia di dunia", "Meiriceá, Astráil, Sasana", "Gaeilge di luar negeri", "Lá Fhéile Pádraig sedunia"]],
+  [10, "Éire Nua-aimseartha", ["ekonomi, teknologi, imigrasi", "Éire ilbhudaí — masyarakat majemuk", "perubahan sosial 30 tahun terakhir", "isu perumahan & biaya hidup"]],
+  [11, "Ealaín & Scannáin", ["An Cailín Ciúin (2022) — Oscar", "Arracht, Róise & Frank", "TG4 & Screen Ireland", "menonton film berbahasa Irlandia"]],
+  [12, "Filíocht Nua-Ghaeilge", ["Nuala Ní Dhomhnaill, Cathal Ó Searcaigh", "Máirtín Ó Direáin, Seán Ó Ríordáin", "membaca satu sajak utuh", "menerjemahkan bait"]],
+  [13, "Nuachtáin: Tuairisc.ie", ["struktur artikel", "membaca 1 artikel penuh per minggu", "kosakata yang berulang", "membuat ringkasan 5 kalimat"]],
+  [14, "Podchraoltaí", ["Beo ar Éigean, Motherfoclóir", "mendengar sambil membaca transkrip", "kecepatan bicara alami", "meniru irama"]],
+  [15, "Alt Gearr a Scríobh", ["artikel 300 kata bergaya berita", "judul, lead, isi", "mengutip orang", "gaya tulis vs gaya bicara"]],
+  [16, "Athbhreithniú B1.2", ["cur i láthair tentang satu isu Irlandia", "kosakata berita & sejarah", "diskusi 10 menit", "uji membaca"]],
+]);
+
+const b1_3 = toSessions([
+  [1, "An Saorbhriathar — Kalimat Tanpa Pelaku", ["óltar, ceannaítear = 'diminum', 'dibeli'", "tidak menyebut siapa pelakunya", "sangat sering di papan & aturan", "Labhraítear Gaeilge anseo"]],
+  [2, "Saorbhriathar sna hAimsirí", ["óladh (lampau), ólfar (depan)", "d'óltaí (gnáthchaite)", "níor óladh, ar óladh?", "tabel lengkap"]],
+  [3, "An Fhaí Chéasta", ["Tá an obair déanta agam", "Tá sé tar éis a dhéanamh", "aidiacht bhriathartha sebagai pasif", "beda dari saorbhriathar"]],
+  [4, "Ainm Briathartha mar Ainmfhocal", ["ag léamh leabhair (objek jadi genitif)", "chun ithe, le déanamh", "a dhéanamh sesudah objek", "susunan yang membingungkan pemula"]],
+  [5, "An Aidiacht Bhriathartha", ["déanta, scríofa, briste, dúnta", "cara membentuknya dari kata kerja", "Tá an doras dúnta", "menyatakan hasil, bukan perbuatan"]],
+  [6, "Struchtúir Chasta", ["menggabungkan 3 anak kalimat", "urutan yang alami", "menghindari kalimat Inggris yang diterjemahkan", "membaca ulang keras-keras"]],
+  [7, "Clásail Choibhneasta Indíreacha", ["a + URÚ untuk hubungan tak langsung", "an fear a bhfuil a mhac anseo", "beda dari a + séimhiú (langsung)", "kesalahan paling sering di B1"]],
+  [8, "Nach & Nár", ["nach dtuigeann (sekarang), nár thuig (lampau)", "dalam anak kalimat menyangkal", "Deir sé nach bhfuil sé ann", "urú vs séimhiú"]],
+  [9, "Caint Indíreach", ["Dúirt sé go raibh sé tuirseach", "perubahan masa dalam kalimat tak langsung", "go/nach + bentuk yang tepat", "melaporkan percakapan"]],
+  [10, "Béim & Ord Focal", ["Is é Seán a rinne é (penegasan)", "memindahkan bagian yang ditekankan ke depan", "susunan cleft — sangat khas Irlandia", "asal 'It's tired I am' di Hiberno-English"]],
+  [11, "Forainmneacha Treise", ["mise, tusa, eisean, ise, sinne, sibhse, siadsan", "agamsa, ortsa, liomsa", "kapan dipakai & kapan berlebihan", "perbandingan & pertentangan"]],
+  [12, "Ag Argóint go Múinte", ["Tuigim do phointe, ach …", "Ní aontaím ar fad leis sin", "Cad faoi …?", "menjaga nada sopan"]],
+  [13, "Comhrá Foirmiúil", ["sapaan resmi & panggilan", "Gabhaim buíochas leat", "bahasa rapat & acara", "beda dari percakapan santai"]],
+  [14, "Aiste Ghearr", ["esai 350 kata berstruktur", "réamhrá, argóint, conclúid", "penghubung antar alinea", "pemeriksaan mutasi & genitif"]],
+  [15, "Cur i Láthair", ["presentasi 7 menit", "membuka & menutup", "menjawab pertanyaan", "bahasa tubuh & tempo"]],
+  [16, "Athbhreithniú B1.3", ["saorbhriathar + relatif + cleft", "menulis & berbicara", "uji mandiri 50 soal", "koreksi teman"]],
+]);
+
+const b1_4 = toSessions([
+  [1, "Meafair & Nathanna", ["ungkapan kiasan sehari-hari", "Tá sé ar mhuin na muice = sangat beruntung", "Tá cloigeann maith air", "menerjemahkan makna, bukan kata"]],
+  [2, "Nathanna Cainte", ["Tá sé ina chac ar fud na háite (kasar) — tahu tapi hindari", "Ar buile, ar bís, ar fionraí", "ungkapan dengan ar / i / faoi", "50 ungkapan paling sering"]],
+  [3, "Greann & Íoróin", ["humor Irlandia & understatement", "'Grand' & 'not too bad'", "meniru nada bercanda", "kapan tidak lucu"]],
+  [4, "Insint Scéil Bhéil", ["tradisi seanchaí", "membangun ketegangan", "pengulangan & irama", "bercerita 5 menit tanpa naskah"]],
+  [5, "Filíocht — Meadaracht", ["irama & rima dalam sajak Irlandia", "amhrán meter", "assonance khas Irlandia", "membaca sajak keras-keras"]],
+  [6, "Amhráin ar an Sean-nós", ["menyanyi tanpa iringan", "ornamentasi & kebebasan irama", "Róisín Dubh, Dónall Óg", "mendengar & mengikuti lirik"]],
+  [7, "Scríbhneoireacht Chruthaitheach", ["memilih sudut pandang", "menulis adegan 200 kata", "menunjukkan, bukan menceritakan", "menyunting"]],
+  [8, "Dialann & Blag", ["menulis harian dalam bahasa Irlandia", "20 menit sehari", "kesalahan tidak apa-apa", "melacak kemajuan"]],
+  [9, "Cur Síos Mionsonraithe", ["mendeskripsikan tempat & suasana", "kata sifat yang tepat", "menghindari pengulangan", "menggunakan panca indera"]],
+  [10, "Carachtair a Chruthú", ["membangun tokoh lewat ucapan", "dialek dalam tulisan", "nama & latar", "konsistensi tokoh"]],
+  [11, "Comhrá i Scéal", ["menulis dialog yang wajar", "tanda baca dialog Irlandia", "menyisipkan aksi", "membaca keras untuk menguji"]],
+  [12, "Aistriú ó Bhéarla", ["menerjemahkan tanpa Béarlachas", "menyusun ulang kalimat, bukan kata", "susunan VSO & cleft", "membandingkan hasil"]],
+  [13, "Botúin Choitianta — Béarlachas", ["'Tá mé ag déanamh mo dhícheall' vs terjemahan harfiah", "kata depan yang salah", "susunan Inggris yang menyusup", "cara mengenalinya sendiri"]],
+  [14, "Stíl Nádúrtha", ["kalimat pendek & jelas", "kata kerja lebih kuat dari kata benda", "menghindari nominalisasi berlebihan", "membaca penutur asli untuk menyerap gaya"]],
+  [15, "Tionscadal Scríbhneoireachta", ["proyek 1000 kata", "perencanaan, draf, revisi", "umpan balik", "penerbitan di blog"]],
+  [16, "Athbhreithniú B1.4", ["portofolio tulisan", "membaca karya sendiri di depan orang", "penilaian mandiri", "target B2"]],
+]);
+
+const b1_5 = toSessions([
+  [1, "Gaeilge san Ionad Oibre", ["kosakata kantor & rapat", "Gaeilge sa tseirbhís phoiblí", "komunikasi internal", "email harian"]],
+  [2, "CV & Litir Iarratais", ["struktur CV Irlandia", "Curriculum Vitae dalam bahasa Irlandia", "litir chumhdaigh", "menonjolkan kemampuan bahasa"]],
+  [3, "Agallamh Poist", ["pertanyaan yang sering muncul", "STAR dalam bahasa Irlandia", "menjawab tentang kelemahan", "latihan simulasi"]],
+  [4, "Cruinnithe & Miontuairiscí", ["clár oibre, cathaoirleach, rún", "mencatat notulen", "frasa rapat baku", "menyimpulkan keputusan"]],
+  [5, "Ríomhphost Foirmiúil", ["nada resmi vs setengah resmi", "permintaan, keluhan, ucapan terima kasih", "penutup yang tepat", "kesalahan nada yang sering"]],
+  [6, "Tuairiscí", ["struktur laporan", "menyajikan angka & data", "kesimpulan & saran", "laporan 500 kata"]],
+  [7, "Téarmaíocht", ["tearma.ie & focloir.ie", "cara mencari istilah baru", "istilah teknis yang belum baku", "An Coiste Téarmaíochta"]],
+  [8, "An Ghaeilge san AE", ["bahasa resmi Uni Eropa sejak 2007, penuh sejak 2022", "peluang kerja penerjemah", "dokumen resmi", "peluang karier"]],
+  [9, "Aistriúchán Oifigiúil", ["prinsip penerjemahan resmi", "konsistensi istilah", "alat bantu", "pemeriksaan mutu"]],
+  [10, "Acht na dTeangacha Oifigiúla", ["kewajiban lembaga negara", "An Coimisinéir Teanga", "hak penutur", "praktiknya sehari-hari"]],
+  [11, "Gaeloideachas", ["Gaelscoileanna & Gaelcholáistí", "pertumbuhan sekolah berbahasa Irlandia", "hasil belajar", "peran orang tua"]],
+  [12, "Múineadh na Gaeilge", ["metode pengajaran", "bahan ajar", "kesalahan pemelajar & cara menanganinya", "menjadi tutor"]],
+  [13, "Na Meáin Ghaeilge", ["TG4, RnaG, Tuairisc, Nós", "peluang di media", "menulis untuk media", "media sosial berbahasa Irlandia"]],
+  [14, "Fiontraíocht Ghaeltachta", ["Údarás na Gaeltachta", "usaha berbasis bahasa", "pariwisata budaya", "studi kasus"]],
+  [15, "Líonrú Gairmiúil", ["Pop-Up Gaeltacht & Ciorcal Comhrá", "memperkenalkan diri secara profesional", "menjaga hubungan", "acara berbahasa Irlandia"]],
+  [16, "Athbhreithniú B1.5", ["berkas lamaran lengkap dalam bahasa Irlandia", "simulasi wawancara", "penilaian", "persiapan B2"]],
+]);
+
+// ============ B2 — 7 sublevels ============
+const b2_1 = toSessions([
+  [1, "An Modh Foshuiteach — Harapan", ["go raibh, go dté, go n-éirí", "bukan bentuk lampau — bentuk harapan", "foshuiteach láithreach", "hidup terutama di ucapan doa"]],
+  [2, "Foshuiteach i mBeannachtaí", ["Go raibh maith agat · Go n-éirí an bóthar leat", "Go dté tú slán · Go mbeannaí Dia duit", "Nár lige Dia!", "cara kerja go + urú di dalamnya"]],
+  [3, "Struchtúir Fhoirmiúla", ["susunan tulisan resmi", "menghindari susunan lisan", "kalimat panjang yang tetap jernih", "membaca teks undang-undang"]],
+  [4, "Réamhfhocail Chomhshuite", ["ar feadh, i rith, ar son, de réir, i gcomparáid le", "diikuti bentuk kepunyaan", "os cionn, taobh thiar de, i measc", "kesalahan yang sering"]],
+  [5, "Copail Chasta", ["ba, níorbh, arbh, gurbh, murab", "b'fhéidir, b'áil liom", "sebelum vokal & fh", "kapan copula dipakai dalam anak kalimat"]],
+  [6, "Ord Focal Béime", ["Is amhlaidh a …", "Is é an rud ná …", "cleft berlapis", "menekankan bagian mana pun dalam kalimat"]],
+  [7, "Frásaí Idiomacha Ardleibhéil", ["ar bhonn, i bhfianaise, dá bharr sin", "gan trácht ar, chomh maith le", "50 frasa penghubung tingkat lanjut", "memakainya tanpa berlebihan"]],
+  [8, "Ceangail & Loighic", ["mar sin féin, ina ainneoin sin, dá réir sin", "ar an gcéad dul síos, ar deireadh thiar", "membangun alur argumen", "menghindari pengulangan penghubung"]],
+  [9, "Argóint Struchtúrtha", ["tesis, bukti, bantahan, kesimpulan", "mengantisipasi keberatan", "menyebut sumber", "esai argumentatif 600 kata"]],
+  [10, "Achoimriú", ["meringkas teks 1000 kata jadi 150", "memilih gagasan utama", "parafrase, bukan menyalin", "ringkasan lisan"]],
+  [11, "Athinsint", ["menceritakan ulang dengan kata sendiri", "mengubah sudut pandang", "caint indíreach tingkat lanjut", "menjaga ketepatan"]],
+  [12, "Nuance & Ton", ["halus vs langsung", "kesantunan bertingkat", "sindiran & understatement", "menyesuaikan nada dengan lawan bicara"]],
+  [13, "Cruinneas Gramadaí", ["audit mandiri: séimhiú, urú, ginideach", "kesalahan yang tersisa di B2", "daftar periksa pribadi", "koreksi silang"]],
+  [14, "Aiste Fhada", ["esai 800 kata", "struktur akademik", "kutipan & rujukan", "revisi dua putaran"]],
+  [15, "Díospóireacht", ["debat berpasangan", "membangun & membongkar argumen", "menjawab spontan", "penilaian juri"]],
+  [16, "Athbhreithniú B2.1", ["portofolio tulisan & rekaman", "uji tata bahasa 60 soal", "umpan balik", "target B2.2"]],
+]);
+
+const b2_2 = toSessions([
+  [1, "Gaeilge Dhlíthiúil", ["Bunreacht na hÉireann — teks Irlandia yang mengikat", "cúirt, dlí, achtanna", "istilah hukum dasar", "membaca pasal pendek"]],
+  [2, "Gaeilge Leighis", ["ospidéal, othar, cóireáil, diagnóis", "berkomunikasi dengan pasien", "istilah anatomi", "surat rujukan"]],
+  [3, "Gaeilge Ghnó", ["cuideachta, brabús, caillteanas, buiséad", "tuairisc bhliantúil", "presentasi bisnis", "istilah keuangan"]],
+  [4, "Gaeilge Theicniúil", ["ríomhaireacht, bogearraí, crua-earraí", "idirlíon, sonraí, líonra", "istilah TI berbahasa Irlandia", "menerjemahkan antarmuka"]],
+  [5, "Gaeilge Riaracháin", ["Roinn, Aire, Rannóg, Coiste", "foirmeacha oifigiúla", "surat dinas", "gaya birokrasi & bahayanya"]],
+  [6, "Tuairisc Theicniúil", ["struktur laporan teknis", "menjelaskan proses", "tabel & grafik dalam bahasa Irlandia", "laporan 800 kata"]],
+  [7, "Cás-staidéar", ["menganalisis kasus", "menyajikan temuan", "rekomendasi", "presentasi 10 menit"]],
+  [8, "Cur i Láthair Gairmiúil", ["struktur presentasi profesional", "sleaid & catatan", "menangani pertanyaan sulit", "waktu & tempo"]],
+  [9, "Idirbheartaíocht", ["bahasa tawar-menawar", "menyatakan batas", "mencari titik temu", "simulasi negosiasi"]],
+  [10, "Ríomhphost Casta", ["menyampaikan kabar buruk", "menolak dengan sopan", "menagih tanpa menyinggung", "rangkaian surel"]],
+  [11, "Comhfhreagras Oifigiúil", ["surat resmi ke lembaga negara", "hak berbahasa Irlandia", "mengajukan keluhan", "menuntut layanan dwibahasa"]],
+  [12, "Téarmaíocht Speisialaithe", ["tearma.ie tingkat lanjut", "istilah yang belum ada", "mengusulkan istilah baru", "konsistensi dalam satu dokumen"]],
+  [13, "Aistriú Doiciméad", ["menerjemahkan dokumen resmi", "menjaga makna hukum", "catatan penerjemah", "kendali mutu"]],
+  [14, "Prófáil & Eagarthóireacht", ["membaca pruf sendiri & orang lain", "tanda koreksi", "kesalahan yang paling sering lolos", "daftar periksa"]],
+  [15, "An Gramadóir & Uirlisí", ["pemeriksa tata bahasa otomatis & batasnya", "kamus & korpus daring", "alat bantu penerjemahan", "jangan percaya buta"]],
+  [16, "Athbhreithniú B2.2", ["berkas profesional lengkap", "simulasi rapat & negosiasi", "penilaian", "target B2.3"]],
+]);
+
+const b2_3 = toSessions([
+  [1, "Canúint Chonnacht", ["Conamara & Maigh Eo", "ciri bunyi & kosakata", "bentuk kata kerja khas", "penutur rujukan"]],
+  [2, "Canúint na Mumhan", ["Ciarraí, Corcaigh, Port Láirge", "tekanan berpindah ke vokal panjang", "bentuk -ann/-eann & akhiran orang", "Peig & sastra Blascaod"]],
+  [3, "Canúint Uladh", ["Dún na nGall", "séimhiú menggantikan urú sesudah kata depan + an", "kosakata dekat Gaelik Skotlandia", "ciri irama"]],
+  [4, "Aithint Canúintí", ["membedakan tiga dialek dalam 30 detik", "latihan mendengar berpasangan", "teanglann.ie rekaman tiga dialek", "memilih satu untuk diri sendiri"]],
+  [5, "Caint Thapa", ["mendengar bicara cepat alami", "penyusutan & peluluhan bunyi", "menangkap tanpa menerjemahkan", "latihan bayangan (shadowing)"]],
+  [6, "Gaeilge na Sráide", ["bahasa anak muda & kota", "campuran Irlandia–Inggris & sikap terhadapnya", "kata pinjaman baru", "batas antara alami & malas"]],
+  [7, "Nathanna Réigiúnacha", ["ungkapan khas tiap wilayah", "sapaan setempat", "julukan & lelucon daerah", "kapan aman dipakai"]],
+  [8, "Béarlachas a Sheachaint", ["susunan Inggris yang menyusup", "kata depan yang salah", "menerjemahkan makna, bukan kata", "menguji dengan telinga"]],
+  [9, "Rithim & Tuin Chainte", ["irama kalimat Irlandia", "nada pertanyaan", "penekanan kata", "meniru rekaman"]],
+  [10, "Éisteacht Ardleibhéil", ["berita, wawancara, debat radio", "mencatat sambil mendengar", "menangkap sikap penutur", "30 menit tanpa teks"]],
+  [11, "Comhrá Nádúrtha", ["mengisi jeda: bhuel, féach, mar a déarfá", "menyela dengan sopan", "menjaga giliran bicara", "percakapan 20 menit"]],
+  [12, "Cluichí Focal", ["permainan kata & teka-teki", "tomhaiseanna", "puns dalam bahasa Irlandia", "kreativitas berbahasa"]],
+  [13, "Greann Gaelach", ["humor kering & understatement", "lawak berbahasa Irlandia", "kapan bercanda tidak pas", "menonton komedi TG4"]],
+  [14, "Cultúr Comhaimseartha", ["musik, film, meme berbahasa Irlandia", "Kneecap & gelombang baru", "media sosial Gaeilge", "mengikuti perkembangan"]],
+  [15, "Immersion Gaeltachta", ["merancang minggu di Gaeltacht", "coláiste samhraidh untuk dewasa", "tinggal di rumah penduduk", "aturan tidak berbahasa Inggris"]],
+  [16, "Athbhreithniú B2.3", ["uji dengar tiga dialek", "percakapan panjang dinilai", "rencana immersion pribadi", "target B2.4"]],
+]);
+
+const b2_4 = toSessions([
+  [1, "Gaeilge Acadúil", ["ragam ilmiah", "objektivitas & hedging", "kata kerja akademik", "beda dari gaya jurnalistik"]],
+  [2, "Struchtúr Aiste", ["réamhrá, corp, conclúid", "satu gagasan per alinea", "kalimat topik", "kerangka sebelum menulis"]],
+  [3, "Taighde & Foinsí", ["mencari sumber berbahasa Irlandia", "menilai keandalan", "membaca cepat", "mencatat"]],
+  [4, "Tagairtí & Leabharliosta", ["gaya rujukan", "mengutip langsung & tidak langsung", "menghindari plagiarisme", "daftar pustaka"]],
+  [5, "Anailís Théacsúil", ["membedah teks", "gaya, nada, tujuan", "bukti dari teks", "menulis analisis 500 kata"]],
+  [6, "Léirmheas Leabhair", ["struktur resensi", "ringkasan tanpa membocorkan", "penilaian beralasan", "resensi 600 kata"]],
+  [7, "Tráchtas Gearr", ["skripsi mini 2000 kata", "pertanyaan penelitian", "metode & temuan", "penjadwalan"]],
+  [8, "Léachtaí a Thuiscint", ["mengikuti kuliah berbahasa Irlandia", "mencatat cepat", "istilah yang berulang", "bertanya di kelas"]],
+  [9, "Nótaí Léinn", ["sistem mencatat", "meringkas bacaan", "peta gagasan", "mengulang efektif"]],
+  [10, "Seimineár & Plé", ["berpendapat di forum akademik", "menanggapi makalah orang", "sopan tapi tegas", "memimpin diskusi"]],
+  [11, "Teangeolaíocht na Gaeilge", ["fonologi: lebar & tipis", "morfologi: mutasi awal", "sintaksis VSO", "posisi Irlandia dalam rumpun Keltik"]],
+  [12, "Stair na Teanga", ["Sean-Ghaeilge, Meán-Ghaeilge, Nua-Ghaeilge", "Gaeilge Chlasaiceach", "perubahan besar tiap zaman", "membaca contoh tiap periode"]],
+  [13, "Ogham & Lámhscríbhinní", ["aksara Ogham & batu bertulis", "Leabhar Cheanannais (Book of Kells)", "Lebor na hUidre", "warisan naskah"]],
+  [14, "Litríocht Chlasaiceach", ["Táin Bó Cúailnge", "Buile Shuibhne", "Cúirt an Mheán Oíche", "membaca petikan dengan bantuan"]],
+  [15, "Tionscadal Taighde", ["proyek penelitian mandiri", "presentasi hasil", "tanya jawab", "penulisan akhir"]],
+  [16, "Athbhreithniú B2.4", ["portofolio akademik", "presentasi seminar", "penilaian", "target B2.5"]],
+]);
+
+const b2_5 = toSessions([
+  [1, "Óráidíocht", ["dasar berpidato", "membangun struktur", "mengendalikan gugup", "suara & jeda"]],
+  [2, "Óráid Fhoirmiúil", ["pidato resmi 7 menit", "pembukaan yang menarik", "penutup yang diingat", "menulis untuk telinga"]],
+  [3, "Cathaoirleacht Cruinnithe", ["memimpin rapat", "menjaga agenda & waktu", "memberi giliran", "menyimpulkan keputusan"]],
+  [4, "Idirbheartaíocht Ardleibhéil", ["negosiasi bertaruh tinggi", "membaca lawan bicara", "menawarkan jalan tengah", "menutup kesepakatan"]],
+  [5, "Bainistíocht Foirne", ["memberi arahan", "mendelegasikan", "memotivasi", "menangani konflik kecil"]],
+  [6, "Aiseolas a Thabhairt", ["umpan balik yang membangun", "memuji secara spesifik", "mengoreksi tanpa merendahkan", "percakapan sulit"]],
+  [7, "Coinbhleacht a Réiteach", ["mendengar aktif", "memisahkan orang dari masalah", "bahasa yang menurunkan tensi", "mencapai kesepakatan"]],
+  [8, "Teanga Dhioplómaitiúil", ["mengatakan tidak tanpa menutup pintu", "ambiguitas yang disengaja", "protokol & gelar", "kesalahan yang mahal"]],
+  [9, "Ócáidí Stáit", ["acara kenegaraan berbahasa Irlandia", "sapaan pejabat", "Uachtarán & Taoiseach", "etiket"]],
+  [10, "Preasagallamh", ["menghadapi wartawan", "pesan kunci", "menangani pertanyaan menjebak", "simulasi"]],
+  [11, "Agallamh Raidió & Teilifíse", ["berbicara singkat & jelas", "irama siaran", "RnaG & TG4", "latihan rekaman"]],
+  [12, "Meáin Shóisialta", ["menulis pendek yang kuat", "nada di ruang publik", "kampanye berbahasa Irlandia", "menghadapi komentar negatif"]],
+  [13, "Gníomhaíochas Teanga", ["gerakan hak bahasa", "Conradh na Gaeilge", "kampanye Acht na Gaeilge", "aksi sehari-hari"]],
+  [14, "Beartas Teanga", ["Straitéis 20 Bliain", "kebijakan Gaeltacht", "membandingkan dengan Wales & Basque", "menilai keberhasilan"]],
+  [15, "Ceannaireacht Phobail", ["membangun kelompok penutur", "Ciorcal Comhrá & Pop-Up Gaeltacht", "menjaga keberlanjutan", "merangkul pemula"]],
+  [16, "Athbhreithniú B2.5", ["pidato dinilai", "simulasi wawancara media", "rencana kepemimpinan bahasa", "target B2.6"]],
+]);
+
+const b2_6 = toSessions([
+  [1, "Filíocht na Sean-Ghaeilge", ["sajak pendek biara abad 8–9", "Pangur Bán", "citra alam", "membaca dengan bantuan"]],
+  [2, "Filíocht na Nua-Ghaeilge", ["Máirtín Ó Direáin, Seán Ó Ríordáin", "Nuala Ní Dhomhnaill, Biddy Jenkinson", "tema & suara", "menghafal satu sajak"]],
+  [3, "Máirtín Ó Cadhain — Cré na Cille", ["novel berbahasa Irlandia paling terkenal abad 20", "seluruhnya dialog dari dalam kubur", "dialek Conamara", "membaca petikan"]],
+  [4, "Prós Comhaimseartha", ["penulis masa kini", "novel & cerpen", "penerbit Cló Iar-Chonnacht & Cois Life", "memilih bacaan sendiri"]],
+  [5, "Drámaíocht", ["naskah drama berbahasa Irlandia", "membaca peran", "An Taibhdhearc, Galway", "menulis adegan"]],
+  [6, "An Scéalaíocht Bhéil", ["tradisi seanchaí", "struktur cerita rakyat", "irama & pengulangan", "bercerita 10 menit"]],
+  [7, "Amhránaíocht ar an Sean-nós", ["ornamentasi & kebebasan irama", "lagu-lagu besar", "menyanyi satu bait", "Oireachtas na Gaeilge"]],
+  [8, "Scríbhneoireacht Chruthaitheach Ardleibhéil", ["suara penulis", "sudut pandang & waktu", "revisi tanpa ampun", "bengkel menulis"]],
+  [9, "Gearrscéal", ["cerpen 1500 kata", "satu gagasan, satu perubahan", "akhir yang tidak diumumkan", "menyunting"]],
+  [10, "Aistriúchán Liteartha", ["menerjemahkan sastra", "irama & gaya, bukan cuma makna", "membandingkan versi", "menerjemahkan satu sajak"]],
+  [11, "Léirmheastóireacht", ["mengkritik karya", "kriteria & bukti", "menulis kritik 700 kata", "sopan tapi jujur"]],
+  [12, "Scannánaíocht Ghaeilge", ["An Cailín Ciúin, Arracht, Róise & Frank", "naskah film", "subtitel & terjemahan", "menganalisis satu film"]],
+  [13, "Iriseoireacht Chruthaitheach", ["feature & profil", "wawancara sebagai bahan", "membuka tulisan dengan adegan", "artikel 1000 kata"]],
+  [14, "Blagáil & Podchraoladh", ["membangun audiens berbahasa Irlandia", "menulis untuk layar", "merekam & menyunting suara", "konsistensi terbit"]],
+  [15, "Tionscadal Cruthaitheach", ["proyek besar pilihan sendiri", "perencanaan & tenggat", "umpan balik sejawat", "penerbitan"]],
+  [16, "Athbhreithniú B2.6", ["portofolio kreatif", "pembacaan karya di depan umum", "penilaian", "target B2.7"]],
+]);
+
+const b2_7 = toSessions([
+  [1, "Teastas Eorpach na Gaeilge — Forbhreathnú", ["TEG: A1, A2, B1, B2, C1", "diselenggarakan Ollscoil Mhá Nuad", "diakui untuk kerja & pengajaran", "struktur ujian tiap tingkat"]],
+  [2, "TEG B2 — Cluastuiscint", ["format bagian mendengar", "jenis rekaman & pertanyaan", "strategi mencatat", "latihan penuh"]],
+  [3, "TEG B2 — Léamhthuiscint", ["jenis teks yang muncul", "membaca cepat & teliti", "menjawab tanpa terjebak", "latihan penuh"]],
+  [4, "TEG B2 — Scríbhneoireacht", ["surat, artikel, laporan", "manajemen waktu", "kriteria penilaian", "dua latihan lengkap"]],
+  [5, "TEG B2 — An Chuid Chainte", ["wawancara lisan", "topik yang sering muncul", "menjawab panjang tapi terarah", "simulasi terekam"]],
+  [6, "An Ardteistiméireacht — Overview", ["Gaeilge Ardleibhéal & Gnáthleibhéal", "bobot tiap bagian", "silabus resmi", "perbedaan dengan TEG"]],
+  [7, "Ardteist — An Bhéaltriail", ["40% dari nilai total", "sraith pictiúr & filíocht bhéil", "comhrá", "latihan intensif"]],
+  [8, "Ardteist — Cluastuiscint", ["tiga bagian rekaman", "aksen tiga dialek", "menangkap angka & nama", "latihan penuh"]],
+  [9, "Ardteist — Ceapadóireacht", ["aiste, scéal, díospóireacht, alt", "memilih jenis yang tepat", "kerangka cepat", "menulis dalam batas waktu"]],
+  [10, "Ardteist — Prós & Filíocht", ["teks wajib & pertanyaan khas", "menghafal kutipan", "menjawab dengan bukti", "latihan soal"]],
+  [11, "Straitéisí Scrúdaithe", ["membaca soal dengan benar", "menjawab yang ditanya", "menabung waktu", "menangani soal yang tak dikuasai"]],
+  [12, "Bainistíocht Ama", ["membagi waktu per bagian", "latihan dengan pengatur waktu", "kapan melanjutkan", "sisa waktu untuk memeriksa"]],
+  [13, "Botúin Choitianta sa Scrúdú", ["séimhiú & urú yang terlewat", "ginideach yang salah", "Béarlachas di bawah tekanan", "daftar periksa pribadi"]],
+  [14, "Scrúdú Bréige 1", ["ujian tiruan penuh, waktu sebenarnya", "koreksi & analisis", "titik lemah", "rencana perbaikan"]],
+  [15, "Scrúdú Bréige 2", ["ujian tiruan kedua", "membandingkan hasil", "target akhir", "kesiapan mental"]],
+  [16, "Athbhreithniú Deiridh", ["rangkuman seluruh 19 sublevel", "rencana belajar mandiri sesudah B2", "jalur ke C1", "Beatha teanga í a labhairt"]],
+]);
+
+const curriculum: LanguageCurriculum = {
+  meta: getLanguageBySlug("irish")!,
+  overview:
+    "Bahasa Irlandia (Gaeilge) adalah bahasa resmi pertama Republik Irlandia, salah satu bahasa resmi Uni Eropa, dan bahasa tertulis tertua di Eropa Barat sesudah Latin dan Yunani. Ia bekerja dengan cara yang benar-benar lain: kata kerja jatuh di AWAL kalimat (VSO), tidak ada kata untuk \"ya\" dan \"tidak\", tidak ada kata kerja \"punya\", dan huruf pertama sebuah kata berubah tergantung kata yang berdiri di depannya (séimhiú & urú). Kurikulum 19 sublevel ini membawa semuanya pelan-pelan — dari 18 huruf abjad sampai membaca Cré na Cille — dengan jalur ujian TEG dan Ardteistiméireacht di ujungnya.",
+  levels: [
+    {
+      code: "A1", name: "Elementary Foundation",
+      description: "Fondasi: 18 huruf & tanda fada, séimhiú & urú, konsonan lebar/tipis, susunan VSO, tá vs is, tidak ada ya/tidak, kata depan berkata ganti (ag/ar/le), kata milik + mutasi, ag + ainm briathartha, dua réimniú, dan tiga masa dasar.",
+      sublevels: [
+        { code: "A1.1", name: "First Steps",   sessions: a1_1, preview: true },
+        { code: "A1.2", name: "Daily Life",    sessions: a1_2, preview: true },
+        { code: "A1.3", name: "Social Basics", sessions: a1_3, preview: true },
+      ],
+    },
+    {
+      code: "A2", name: "Pre-Intermediate",
+      description: "Beyond basics: aimsir chaite (níor/ar + séimhiú) & fháistineach, 11 briathar neamhrialta lengkap, perbandingan, réamhfhocail réimnithe penuh, bíonn (habitual be) yang khas Irlandia, plus budaya Éire — canúintí, Gaeltacht, seanfhocail, CLG, ceol traidisiúnta.",
+      sublevels: [
+        { code: "A2.1", name: "Beyond Basics",        sessions: a2_1, preview: true },
+        { code: "A2.2", name: "Travel & Work",        sessions: a2_2, preview: true },
+        { code: "A2.3", name: "Self-Expression",      sessions: a2_3, preview: true },
+        { code: "A2.4", name: "Cultural Foundations", sessions: a2_4, preview: true },
+      ],
+    },
+    {
+      code: "B1", name: "Intermediate",
+      description: "Fluency foundations: tuiseal ginideach penuh (5 díochlaonadh), copail lengkap, modh coinníollach, saorbhriathar, clásail choibhneasta díreach & indíreach, susunan cleft yang khas — plus konteks Éire: An Gorta Mór, 1916, TG4, Tuairisc.ie, dan jembatan ke dunia kerja berbahasa Irlandia.",
+      sublevels: [
+        { code: "B1.1", name: "Fluency Foundations",  sessions: b1_1, preview: true },
+        { code: "B1.2", name: "Cultural Fluency",     sessions: b1_2, preview: true },
+        { code: "B1.3", name: "Complex Topics",       sessions: b1_3, preview: true },
+        { code: "B1.4", name: "Creative Expression",  sessions: b1_4, preview: true },
+        { code: "B1.5", name: "Professional Bridge",  sessions: b1_5, preview: true },
+      ],
+    },
+    {
+      code: "B2", name: "Upper Intermediate",
+      description: "Advanced expression: modh foshuiteach, copail chasta, ragam hukum/medis/bisnis, tiga canúint dibedakan lewat telinga, sastra dari Pangur Bán sampai Cré na Cille, dan persiapan ujian Teastas Eorpach na Gaeilge B2 + Ardteistiméireacht.",
+      sublevels: [
+        { code: "B2.1", name: "Advanced Expression",       sessions: b2_1, preview: true },
+        { code: "B2.2", name: "Professional Irish",        sessions: b2_2, preview: true },
+        { code: "B2.3", name: "Near-Native Communication", sessions: b2_3, preview: true },
+        { code: "B2.4", name: "Academic Mastery",          sessions: b2_4, preview: true },
+        { code: "B2.5", name: "Leadership & Diplomacy",    sessions: b2_5, preview: true },
+        { code: "B2.6", name: "Creative & Literary",       sessions: b2_6, preview: true },
+        { code: "B2.7", name: "Test Prep (TEG B2 + Ardteist)", sessions: b2_7, preview: true },
+      ],
+    },
+  ],
+};
+
+export default curriculum;

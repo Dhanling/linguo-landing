@@ -42,6 +42,7 @@ export const languages: LanguageMeta[] = [
   { slug: "bulgarian",  name: "Bulgaria",  nativeName: "Български",   flag: "🇧🇬", region: "european", available: true },
   { slug: "ukrainian",  name: "Ukraina",   nativeName: "Українська",  flag: "🇺🇦", region: "european", available: true },
   { slug: "icelandic",  name: "Islandia",  nativeName: "Íslenska",    flag: "🇮🇸", region: "european", available: true,  description: "Bahasa Skandinavia paling archaic — preserve Old Norse paling lengkap (native bisa BACA Sagas abad ke-13!). 32 huruf incl þ thorn + ð eth, 4 cases, 3 genders, subjunctive preserved, patronymic naming (no surnames), language purism aggressive. Próf í íslensku + citizenship track ready." }, // __PATCH_ICELANDIC_BUNDLE__
+  { slug: "irish",      name: "Irlandia",  nativeName: "Gaeilge",     flag: "🇮🇪", region: "european", available: true,  description: "Bahasa resmi PERTAMA Republik Irlandia & bahasa resmi Uni Eropa — bahasa tertulis tertua di Eropa Barat sesudah Latin & Yunani. 18 huruf saja, kata kerja di AWAL kalimat (VSO), TIDAK ADA kata 'ya'/'tidak', tidak ada kata kerja 'punya', dan huruf pertama kata berubah (séimhiú & urú). Jalur TEG + Ardteistiméireacht siap.", aliases: ["irlandia","irish","gaeilge","gaelic","gaelik","irlandia gaelik","eire","éire","dublin","celtic","keltik"] }, // linguo-patch:silabus-irish-v1
 
   // === Asian ===
   { slug: "cantonese",  name: "Kanton",    nativeName: "廣東話",       flag: "🇭🇰", region: "asian", available: true, aliases: ["kanton","cantonese","hongkong","hong kong","macau","guangzhou","jyutping"] },
