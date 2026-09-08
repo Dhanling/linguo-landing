@@ -26,6 +26,9 @@ export const CHIRP_LOCALES: Record<string, string> = {
   pa: "pa-IN", yue: "yue-HK",
   fil: "fil-PH", tl: "fil-PH",
   eu: "eu-ES",
+  /* [ebook-tts-islandia-v1] Islandia belum punya Chirp 3 HD; satu-satunya suara
+     di katalog Google = is-IS-Standard-B (dicek live 8 Sep 2026) → VOICE_OVERRIDE. */
+  is: "is-IS",
   ms: "ms-MY",
   /* Basa Jawa tak punya suara sama sekali di katalog Google (dicek 25 Agu 2026:
      nol voice untuk jv-*). Dipetakan ke id-ID karena ejaan Jawa memakai
@@ -63,6 +66,8 @@ export const VOICE_OVERRIDE: Record<string, string> = {
   "fil-PH": "fil-ph-Neural2-A",
   // Euskara belum punya Chirp 3 HD; satu-satunya suara yang ada di katalog Google.
   "eu-ES": "eu-ES-Standard-B",
+  // Íslenska belum punya Chirp 3 HD; satu-satunya suara di katalog Google (8 Sep 2026).
+  "is-IS": "is-IS-Standard-B",
 };
 
 export const BUCKET_TTS = "tts-cache";

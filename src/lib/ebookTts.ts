@@ -460,8 +460,21 @@ const MORFOLOGI_EN = MORFOLOGI_ID.filter((p) => {
   return !src.startsWith("^(?:peng") && !src.startsWith("^(?:meng") && !src.startsWith("^ber");
 });
 
+/* [ebook-tts-kecuali-target-v1] Kata bahasa target yang ejaannya KEBETULAN sama
+   persis dengan kata Indonesia (atau kena pola imbuhan di atas), padahal di
+   modulnya nyaris selalu bahasa target. Tanpa daftar ini "allt í lagi",
+   "klukkan sjö", "koma", dan "sama eftirnafn" bisu di modul Islandia — dan
+   *klukkan* muncul di hampir tiap dialog tentang waktu. Daftar per bahasa,
+   dan sengaja PENDEK: cuma kata yang terbukti muncul di modulnya. Kata yang
+   dua-duanya wajar di prosa Indonesia (mis. "dan", "kata") JANGAN dimasukkan —
+   itu membalikkan masalahnya ke arah lain. */
+const KECUALI_TARGET: Record<string, Set<string>> = {
+  is: new Set(["lagi", "sama", "sami", "koma", "klukkan"]),
+};
+
 /** Kata ini bahasa Indonesia dilihat dari dirinya sendiri (tanpa konteks)? */
 function kataIdMurni(k: string, kode: string): boolean {
+  if (KECUALI_TARGET[kode]?.has(k)) return false;
   if (SET_ID.has(k)) return true;
   const morfologi = kode === "en" ? MORFOLOGI_EN
     : AKSARA_SUKU_KATA.has(kode) ? MORFOLOGI_AMAN : MORFOLOGI_ID;
@@ -714,7 +727,7 @@ const SUARA_BROWSER: Record<string, string> = {
   th: "th-TH", vi: "vi-VN", tr: "tr-TR", en: "en-US", id: "id-ID", ms: "ms-MY",
   da: "da-DK", sv: "sv-SE", no: "nb-NO", fi: "fi-FI", pl: "pl-PL", cs: "cs-CZ",
   el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
-  eu: "eu-ES",
+  eu: "eu-ES", is: "is-IS",
   jv: "id-ID", // lihat catatan jv di CHIRP_LOCALES (src/lib/ttsVoice.ts)
   su: "id-ID", // idem — basa Sunda dipinjamkan ke suara Indonesia
 };
