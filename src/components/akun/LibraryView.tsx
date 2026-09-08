@@ -148,30 +148,14 @@ function TitleFlag({ language, h = 15 }: { language: string | null; h?: number }
   return <RectFlag code={code} h={h} className="shadow-sm" />;
 }
 
-// [pustaka-filter-edisi-v1] Katalog e-book terbit dalam dua edisi bahasa pengantar:
-// "(Edisi Bahasa Indonesia)" dan "(English Edition)" — jadi tiap judul muncul dua
-// kali di daftar dan siswa harus membaca ekor judulnya satu per satu. Edisi tidak
-// punya kolom sendiri di `digital_products`, jadi dibaca dari slug (`…-id` / `…-en`)
-// dengan judul sebagai cadangan. Per 20 Agu 2026: 27 EN, 20 ID, 1 tanpa edisi
-// (paket 12+ bahasa) — yang tanpa edisi cuma tampil di pilihan "Semua".
-type Edisi = "id" | "en";
-function edisiProduk(p: { title: string; slug?: string | null }): Edisi | null {
-  const s = `${p.slug ?? ""} ${p.title}`.toLowerCase();
-  if (/english edition|\(en\)|-en\b/.test(s)) return "en";
-  if (/edisi (bahasa )?indonesia|\(id\)|-id\b/.test(s)) return "id";
-  return null;
-}
-
-// [pustaka-filter-lanjutan-v1] Tiga saringan tambahan yang paling sering ditanya
-// siswa di Perpustakaan: "mana modul yang baru", "yang bahasa X", "yang level A1".
-// Ketiganya dibaca dari kolom yang SUDAH ada di `digital_products` (title/language/
-// level) — tidak ada perubahan skema.
+// [pustaka-filter-lanjutan-v1] Saringan bahasa & level dibaca dari kolom yang
+// SUDAH ada di `digital_products` (language/level) — tidak ada perubahan skema.
 
 // [judul-ebook-inggris-v2] Modul cetakan baru dikenali dari pola judul barunya
 // "<Bahasa> 101 - A1" (dulu bertanda "… new edition"; pola lama tetap dikenali
-// supaya produk yang belum tersinkron tidak hilang dari saringan). E-Learning dan
-// modul edisi lama tidak pernah cocok, jadi memilih "New edition" otomatis
-// menyisakan Lingbook cetakan baru saja — itu memang perilaku yang diharapkan.
+// supaya produk yang belum tersinkron tidak hilang). E-Learning dan modul edisi
+// lama tidak pernah cocok — dipakai [pustaka-hanya-new-edition-v1] untuk menyaring
+// katalog tergembok supaya cuma Lingbook cetakan baru yang ditawarkan.
 function adalahNewEdition(p: { title: string }) {
   const judul = p.title || "";
   return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul);
@@ -542,10 +526,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
      saja — e-book berkas yang benar-benar dibeli siswa. Dua rak yang sama-sama
      mengaku Lingbook cuma bikin siswa mengira modulnya hilang. */
   const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
-  // [pustaka-filter-edisi-v1] "all" = kedua edisi (plus produk tanpa edisi)
-  const [edisi, setEdisi] = useState<"all" | Edisi>("all");
-  // [pustaka-filter-lanjutan-v1] versi cetakan · bahasa · level
-  const [versi, setVersi] = useState<"all" | "new" | "lama">("all");
+  /* [pustaka-filter-satu-baris-v1] Saringan edisi (ID/EN) & versi cetakan
+     (new edition/lama) DICABUT: katalog sekarang cuma memuat Lingbook cetakan
+     baru, dan cetakan baru hanya terbit dalam edisi Indonesia — dua saringan itu
+     tinggal memilah barang yang sudah tidak ada. Yang tersisa bahasa & level,
+     sebaris dengan tab jenis produk. */
   const [bahasa, setBahasa] = useState("all");
   const [level, setLevel] = useState("all");
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -922,12 +907,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   // kartu milik siswa, kartu tergembok) — kalau dipisah, angka tab gampang
   // berbohong seperti dulu waktu saringan edisi belum ikut dihitung.
   const cocokSaring = useCallback((p: DProduct) => {
-    if (edisi !== "all" && edisiProduk(p) !== edisi) return false;
-    if (versi !== "all" && (versi === "new") !== adalahNewEdition(p)) return false;
     if (bahasa !== "all" && (p.language ?? "").trim().toLowerCase() !== bahasa) return false;
     if (level !== "all" && (p.level ?? "").trim() !== level) return false;
     return true;
-  }, [edisi, versi, bahasa, level]);
+  }, [bahasa, level]);
 
   // Pilihan bahasa & level dibangun dari katalog yang benar-benar ada, bukan dari
   // daftar hardcode — kalau modul baru terbit, saringannya ikut tanpa disentuh.
@@ -953,8 +936,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     return [...set].sort(urutLevel);
   }, [purchases, katalog]);
 
-  const adaSaringan = edisi !== "all" || versi !== "all" || bahasa !== "all" || level !== "all";
-  const resetSaringan = () => { setEdisi("all"); setVersi("all"); setBahasa("all"); setLevel("all"); };
+  const adaSaringan = bahasa !== "all" || level !== "all";
+  const resetSaringan = () => { setBahasa("all"); setLevel("all"); };
 
   // [pustaka-tab-hitung-katalog-v1] Angka di tab dulu cuma menghitung produk yang
   // SUDAH dibeli, jadi selalu "0" padahal daftar di bawahnya berisi 47 produk
@@ -962,10 +945,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   // (milik siswa + katalog yang belum dimiliki).
   const counts = useMemo(() => {
     const punya = new Set(purchases.map((p) => p.digital_products?.id).filter(Boolean));
-    // [pustaka-filter-edisi-v1] angka ikut saringan edisi yang sedang aktif —
-    // kalau tidak, tabnya menjanjikan 47 produk padahal daftarnya cuma 20.
+    // angka ikut saringan bahasa/level yang sedang aktif — kalau tidak, tabnya
+    // menjanjikan 47 produk padahal daftarnya cuma 20.
     const milik = purchases.filter((p) => cocokSaring(p.digital_products));
-    const belum = katalog.filter((k) => !punya.has(k.id) && cocokSaring(k));
+    const belum = katalog.filter((k) =>
+      !punya.has(k.id) && cocokSaring(k) && (k.type !== "ebook" || adalahNewEdition(k)));
     const hitung = (tipe: ProductType) =>
       milik.filter((p) => p.digital_products.type === tipe).length +
       belum.filter((k) => k.type === tipe).length;
@@ -1001,6 +985,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
     const needle = q.trim().toLowerCase();
     return katalog.filter((k) => {
       if (punya.has(k.id)) return false;
+      /* [pustaka-hanya-new-edition-v1] Modul cetakan lama tidak ditawarkan lagi
+         di rak — walau bahasanya belum punya cetakan baru. Yang sudah dibeli
+         siswa tetap tampil di rak "milik saya" (bukan lewat daftar ini). */
+      if (k.type === "ebook" && !adalahNewEdition(k)) return false;
       if (tab !== "all" && k.type !== tab) return false;
       if (!cocokSaring(k)) return false;
       if (needle && !k.title.toLowerCase().includes(needle)) return false;
@@ -1241,40 +1229,6 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
               <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
                 {counts[k]}
               </span>
-            </button>
-          ))}
-        </div>
-
-        {/* [pustaka-filter-edisi-v1] edisi bahasa pengantar — tiap modul terbit
-            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua. */}
-        <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
-          {([["all", "Semua edisi"], ["id", "Indonesia"], ["en", "English"]] as const).map(([k, label]) => (
-            <button
-              key={k}
-              onClick={() => setEdisi(k)}
-              className={`rounded-xl px-3 py-2 text-[13px] font-bold transition ${
-                edisi === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
-              }`}
-            >
-              {t(label)}
-            </button>
-          ))}
-        </div>
-
-        {/* [pustaka-filter-lanjutan-v1] versi cetakan — modul "new edition" adalah
-            tulisan ulang 20 unit; siswa yang punya edisi lama datang ke sini justru
-            untuk mencari yang baru. */}
-        <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
-          {([["all", "Semua versi"], ["new", "New edition"], ["lama", "Edisi lama"]] as const).map(([k, label]) => (
-            <button
-              key={k}
-              onClick={() => setVersi(k)}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-[13px] font-bold transition ${
-                versi === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
-              }`}
-            >
-              {k === "new" && <Sparkles className="h-3.5 w-3.5" strokeWidth={2.4} />}
-              {t(label)}
             </button>
           ))}
         </div>
@@ -2103,24 +2057,90 @@ function LockedCard({
   const bisaBeli = ready && mulai !== null;
 
   // [pustaka-rak-sampul-v1] Seragam dengan rak "sudah dimiliki": sampul potret,
-  // judul kecil di bawahnya. Bedanya sampul di sini diredam + digembok, dan di
-  // bawah judul ada harga + dua tombol (Beli / Keranjang) yang tetap bisa disentuh
-  // di HP — bukan ikon kecil di pojok sampul.
+  // judul kecil di bawahnya. Bedanya sampul di sini diredam + digembok.
+  //
+  // [pustaka-aksi-hover-v1] Tombol Beli / Keranjang / Coba gratis TIDAK lagi
+  // berderet di bawah judul (tiga baris tombol × 118 kartu bikin rak terbaca
+  // seperti etalase diskon). Ketiganya muncul di atas sampul saat kursor
+  // menunjuk kartu — sama seperti tombol "Baca" di rak milik siswa. Di layar
+  // sentuh tak ada hover, jadi lapisan aksinya selalu tampak (media hover:none);
+  // di sana tak ada cara lain menjangkau "Coba gratis".
+  const geser = bisaBeli ? "group-hover:-translate-y-1.5" : "";
+  const stop = (fn?: () => void) => (e: React.MouseEvent) => { e.stopPropagation(); fn?.(); };
   return (
     <div className="group">
       <div className="relative">
         <button
           onClick={bisaBeli ? onBuy : undefined}
           disabled={!bisaBeli}
-          className={`block w-full text-left transition duration-300 disabled:cursor-default ${bisaBeli ? "group-hover:-translate-y-1.5" : ""}`}
+          className={`block w-full text-left transition duration-300 disabled:cursor-default ${geser}`}
         >
           <ShelfCover p={item} locked dim />
-          <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-500 shadow-lg transition duration-300 group-hover:scale-105">
+          {/* gembok menyingkir waktu lapisan aksinya muncul */}
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center transition duration-300 group-hover:opacity-0 [@media(hover:none)]:opacity-0">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-500 shadow-lg">
               <Lock className="h-[18px] w-[18px]" strokeWidth={2.4} />
             </span>
           </span>
         </button>
+
+        {/* lapisan aksi: klik di luar tombol = Beli (sama dengan klik sampul) */}
+        <div
+          role="presentation"
+          onClick={bisaBeli ? onBuy : undefined}
+          className={`absolute inset-0 flex flex-col items-center justify-end gap-1.5 rounded-xl bg-gradient-to-t from-black/75 via-black/30 to-transparent px-3 pb-3 opacity-0 transition duration-300 group-hover:pointer-events-auto group-hover:opacity-100 [@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100 ${geser} ${bisaBeli ? "pointer-events-none cursor-pointer" : "pointer-events-none"}`}
+        >
+          {bisaBeli ? (
+            <>
+              <div className="flex w-full items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={stop(onBuy)}
+                  className="inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-full bg-[#12A37E] text-[12px] font-bold text-white shadow-lg transition hover:bg-[#0C8163] active:scale-[0.98]"
+                >
+                  <ShoppingBag className="h-3.5 w-3.5" strokeWidth={2.4} /> Beli
+                </button>
+                {/* [pustaka-keranjang-v1] jalur kedua: kumpulkan dulu, bayar sekalian */}
+                <button
+                  type="button"
+                  onClick={stop(onKeranjang)}
+                  aria-label={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
+                  title={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full shadow-lg transition active:scale-[0.98] ${
+                    diKeranjang
+                      ? "bg-[#12A37E] text-white ring-2 ring-white/80"
+                      : "bg-white/95 text-[#12172B] hover:bg-white"
+                  }`}
+                >
+                  {diKeranjang ? <Check className="h-4 w-4" strokeWidth={3} /> : <Plus className="h-4 w-4" strokeWidth={2.6} />}
+                </button>
+              </div>
+              {/* [ebook-pratinjau-unit1-v1] Jalur ketiga: baca dulu, bayar belakangan.
+                  Barisnya sendiri supaya "Unit 1" terbaca utuh — itu janji yang
+                  menentukan orang mengkliknya atau tidak. */}
+              {onCoba && (
+                <button
+                  type="button"
+                  onClick={stop(onCoba)}
+                  disabled={cobaBusy}
+                  className="inline-flex h-7 w-full items-center justify-center gap-1.5 rounded-full bg-white/95 text-[11.5px] font-bold text-[#0C8163] shadow-lg transition hover:bg-white active:scale-[0.98] disabled:opacity-60"
+                >
+                  {cobaBusy
+                    ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    : <BookOpen className="h-3.5 w-3.5" strokeWidth={2.4} fill="none" />}
+                  Coba gratis Unit 1
+                </button>
+              )}
+            </>
+          ) : (
+            /* [pustaka-segera-hadir-kontras-v1] materinya belum dipasang admin —
+               jangan dijual dulu; teks gelap supaya terbaca di mode gelap. */
+            <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-slate-200 px-3.5 text-[12px] font-bold text-slate-700 shadow-lg">
+              <Clock className="h-3.5 w-3.5" strokeWidth={2.4} /> Segera
+            </span>
+          )}
+        </div>
+
         <span className="pointer-events-none absolute left-2 top-2 transition duration-300 group-hover:-translate-y-1.5">
           <TypeDot type={item.type} />
         </span>
@@ -2138,54 +2158,6 @@ function LockedCard({
             ? `${item.pricing.length > 1 ? "mulai " : ""}${fmtRupiah(mulai)}`
             : "Harga menyusul"}
         </p>
-
-        <div className="mt-2 flex items-center gap-1.5">
-          {/* [pustaka-segera-hadir-kontras-v1] tombol nonaktif pakai kelas biasa +
-              teks gelap supaya tetap terbaca di mode gelap dashboard. */}
-          <button
-            onClick={onBuy}
-            disabled={!bisaBeli}
-            className={`inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-lg text-[12px] font-bold transition active:scale-[0.98] ${
-              bisaBeli
-                ? "bg-[#12A37E] text-white hover:bg-[#0C8163]"
-                : "cursor-default bg-slate-200 text-slate-700 ring-1 ring-slate-300 active:scale-100"
-            }`}
-          >
-            {bisaBeli ? <><ShoppingBag className="h-3.5 w-3.5" strokeWidth={2.4} /> Beli</> : <><Clock className="h-3.5 w-3.5" strokeWidth={2.4} /> Segera</>}
-          </button>
-          {/* [pustaka-keranjang-v1] jalur kedua: kumpulkan dulu, bayar sekalian */}
-          {bisaBeli && (
-            <button
-              onClick={onKeranjang}
-              aria-label={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
-              title={diKeranjang ? "Sudah di keranjang" : "Masukkan keranjang"}
-              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition active:scale-[0.98] ${
-                diKeranjang
-                  ? "bg-[#12A37E]/10 text-[#0C8163] ring-1 ring-[#12A37E]/40 hover:bg-[#12A37E]/15"
-                  : "bg-slate-100 text-slate-600 ring-1 ring-slate-200 hover:bg-slate-200"
-              }`}
-            >
-              {diKeranjang ? <Check className="h-4 w-4" strokeWidth={3} /> : <Plus className="h-4 w-4" strokeWidth={2.6} />}
-            </button>
-          )}
-        </div>
-
-        {/* [ebook-pratinjau-unit1-v1] Jalur ketiga: baca dulu, bayar belakangan.
-            Barisnya sendiri (bukan ikon ketiga di baris Beli) supaya kalimatnya
-            terbaca utuh — "Unit 1" itu janji yang menentukan orang mengkliknya
-            atau tidak. Hanya muncul kalau modulnya memang siap dibuka. */}
-        {onCoba && bisaBeli && (
-          <button
-            onClick={onCoba}
-            disabled={cobaBusy}
-            className="mt-1.5 inline-flex h-7 w-full items-center justify-center gap-1.5 rounded-lg bg-[#12A37E]/10 text-[11.5px] font-bold text-[#0C8163] ring-1 ring-[#12A37E]/30 transition hover:bg-[#12A37E]/15 active:scale-[0.98] disabled:opacity-60"
-          >
-            {cobaBusy
-              ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              : <BookOpen className="h-3.5 w-3.5" strokeWidth={2.4} fill="none" />}
-            Coba gratis Unit 1
-          </button>
-        )}
       </div>
     </div>
   );
