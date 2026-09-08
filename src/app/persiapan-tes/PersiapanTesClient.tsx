@@ -10,6 +10,7 @@ import {
   ArrowLeft, Clock, Sparkles, type LucideIcon,
 } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
+import { getLangPhoto } from "@/lib/lang-visuals";
 import {
   TEST_PREP_PRODUCTS, quoteTestPrep, formatRupiah, SESSION_MINUTES,
   SEMI_SESSIONS, PRIVATE_SESSION_OPTS, DEFAULT_PRIVATE_SESSIONS,
@@ -59,44 +60,75 @@ export default function PersiapanTesClient() {
         <div className="grid gap-5 sm:grid-cols-2">
           {TEST_PREP_PRODUCTS.map((p) => {
             const Icon = ICON[p.icon] ?? Award;
+            const foto = getLangPhoto(p.language);
+            const bahasa = p.language === "Japanese" ? "Jepang" : p.language === "Korean" ? "Korea" : p.language === "German" ? "Jerman" : "Mandarin";
             return (
               <button
                 key={p.id}
                 onClick={() => setActive(p)}
-                className="group flex flex-col rounded-3xl border-2 border-slate-100 p-6 text-left transition-all hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl"
-                style={{ background: p.bg }}
+                aria-label={`Daftar persiapan ${p.test} (${bahasa})`}
+                className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-sm" style={{ background: p.accent }}>
-                      <Icon className="h-6 w-6" />
+                {/* [test-prep-kartu-foto-v1] Banner poster ala kartu E-Learning (/toko/paket-elearning):
+                    foto stok bahasa memenuhi banner, nama ujian duduk DI DALAM foto di atas
+                    gradien hitam. Gradiennya wajib — tanpa itu teks putih hilang di sampul
+                    terang. Bahasa tanpa foto jatuh balik ke warna aksen produk + ikon. */}
+                <div
+                  className="relative isolate flex h-44 items-end overflow-hidden transform-gpu [backface-visibility:hidden]"
+                  style={{ background: foto ? "#0E1526" : p.accent }}
+                >
+                  {foto ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={foto}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
+                      <Icon className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-[65%] text-white/80" strokeWidth={1.6} />
+                    </>
+                  )}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+                  {p.demandTag && (
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">
+                      <Sparkles className="h-3 w-3" strokeWidth={2} aria-hidden />
+                      {p.demandTag}
                     </span>
-                    <div>
-                      <p className="text-lg font-extrabold text-slate-900">{p.test}</p>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                        <RectFlag code={p.flagCode} h={13} /> {p.language === "Japanese" ? "Jepang" : p.language === "Korean" ? "Korea" : p.language === "German" ? "Jerman" : "Mandarin"}
-                      </div>
+                  )}
+                  <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl text-white shadow-md ring-1 ring-white/30" style={{ background: p.accent }}>
+                    <Icon className="h-[18px] w-[18px]" strokeWidth={2} />
+                  </span>
+                  <div className="relative w-full p-4">
+                    <div className="flex items-center gap-2">
+                      <RectFlag code={p.flagCode} h={16} className="shrink-0 shadow" />
+                      <h2 className="text-xl font-extrabold leading-tight text-white drop-shadow">{p.test}</h2>
+                      <span className="text-sm font-medium text-white/85 drop-shadow">· {bahasa}</span>
                     </div>
                   </div>
-                  {p.demandTag && (
-                    <span className="rounded-full bg-white/70 px-2.5 py-1 text-[11px] font-semibold" style={{ color: p.accent }}>{p.demandTag}</span>
-                  )}
                 </div>
-                <p className="mb-5 flex-1 text-sm leading-relaxed text-slate-600">{p.blurb}</p>
-                <div className="flex items-end justify-between">
-                  <div>
-                    <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400">Mulai dari</p>
-                    <p className="text-xl font-extrabold text-slate-900">{formatRupiah(p.semiPrice)}</p>
-                    {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & format
-                        semi-private. Tarifnya naik untuk level yang lebih tinggi — disebut
-                        di sini supaya angka di kartu tak terbaca sebagai harga semua level. */}
-                    <p className="text-[11px] text-slate-400">
-                      /orang · {SEMI_SESSIONS} sesi semi-private · level {p.levels[0]?.label}
-                    </p>
+
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="mb-5 flex-1 text-sm leading-relaxed text-slate-600">{p.blurb}</p>
+                  <div className="flex items-end justify-between gap-3">
+                    <div>
+                      <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400">Mulai dari</p>
+                      <p className="text-xl font-extrabold text-slate-900">{formatRupiah(p.semiPrice)}</p>
+                      {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & format
+                          semi-private. Tarifnya naik untuk level yang lebih tinggi — disebut
+                          di sini supaya angka di kartu tak terbaca sebagai harga semua level. */}
+                      <p className="text-[11px] text-slate-400">
+                        /orang · {SEMI_SESSIONS} sesi semi-private · level {p.levels[0]?.label}
+                      </p>
+                    </div>
+                    <span className="shrink-0 rounded-2xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110" style={{ background: p.accent }}>
+                      Daftar
+                    </span>
                   </div>
-                  <span className="rounded-2xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110" style={{ background: p.accent }}>
-                    Daftar
-                  </span>
                 </div>
               </button>
             );
