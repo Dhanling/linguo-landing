@@ -50,17 +50,22 @@ function sameClass(a: NormSession, b: NormSession) {
 
 function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
   const out: SesiBlok[] = [];
-  for (const s of list) {
-    const last = out[out.length - 1];
-    const prev = last?.items[last.items.length - 1];
-    const prevEnd = prev ? prev._d.getTime() + (prev.durationMinutes || 60) * 60000 : 0;
-    const nyambung =
-      !!prev &&
+  // [sesi-beruntun-gabung-v2] Ekor yang dicocokkan = SEMUA blok, bukan cuma blok
+  // terakhir. Kalau ada sesi kelas lain yang jamnya terselip di antara dua sesi
+  // beruntun (urutan waktu: A 15:30, B 15:30, A 16:15), rantai A dulu putus dan
+  // tampil jadi dua kartu.
+  const nyambungKe = (prev: NormSession, s: NormSession) => {
+    const prevEnd = prev._d.getTime() + (prev.durationMinutes || 60) * 60000;
+    return (
       sameClass(prev, s) &&
       prev._d.toDateString() === s._d.toDateString() &&
       s._d.getTime() - prevEnd <= GAP_TOLERANCE_MS &&
-      s._d.getTime() >= prevEnd - 60_000;
-    if (nyambung) last.items.push(s);
+      s._d.getTime() >= prevEnd - 60_000
+    );
+  };
+  for (const s of list) {
+    const host = out.find((b) => nyambungKe(b.items[b.items.length - 1], s));
+    if (host) host.items.push(s);
     else out.push({ key: s.id, items: [s], head: s, _d: s._d, _time: s._time, _end: s._end, _weekday: s._weekday, _live: false, totalMinutes: 0, join: null });
   }
   return out.map((b) => {
