@@ -63,6 +63,9 @@ const NAME_TO_CODE: Record<string, string> = {
   bulgarian: "bg", bulgaria: "bg",
   ukrainian: "uk", ukraina: "uk",
   icelandic: "is", islandia: "is",
+  /* [tts-azure-minoritas-v1] Irlandia dulu sengaja TIDAK dipetakan (Google nol
+     suara `ga`); sejak ada jalur Azure (ga-IE-OrlaNeural) modulnya berbunyi. */
+  irish: "ga", gaeilge: "ga", irlandia: "ga",
   filipino: "tl", tagalog: "tl",
   basque: "eu", euskara: "eu", euskera: "eu",
   khmer: "km", kamboja: "km",
@@ -103,7 +106,7 @@ const CODE_TO_LABEL: Record<string, string> = {
   hi: "Hindi", pt: "Portugis", da: "Denmark", sv: "Swedia", no: "Norwegia",
   fi: "Finlandia", pl: "Polandia", cs: "Ceko", el: "Yunani", fa: "Persia",
   he: "Ibrani", ka: "Georgia", hu: "Hongaria", ro: "Rumania", bg: "Bulgaria",
-  uk: "Ukraina", is: "Islandia", tl: "Filipino", km: "Khmer", lo: "Lao",
+  uk: "Ukraina", is: "Islandia", ga: "Irlandia", tl: "Filipino", km: "Khmer", lo: "Lao",
   my: "Myanmar", ur: "Urdu", sw: "Swahili", ms: "Melayu", id: "Indonesia",
   jv: "Jawa", su: "Sunda", ban: "Bali", bbc: "Batak", bug: "Bugis", mad: "Madura",
   eu: "Basque",
@@ -157,7 +160,7 @@ const CODE_TO_EN: Record<string, string> = {
   vi: "Vietnamese", hi: "Hindi", pt: "Portuguese", da: "Danish", sv: "Swedish",
   no: "Norwegian", fi: "Finnish", pl: "Polish", cs: "Czech", el: "Greek",
   fa: "Persian", he: "Hebrew", ka: "Georgian", hu: "Hungarian", ro: "Romanian",
-  bg: "Bulgarian", uk: "Ukrainian", is: "Icelandic", tl: "Filipino",
+  bg: "Bulgarian", uk: "Ukrainian", is: "Icelandic", ga: "Irish", tl: "Filipino",
   km: "Khmer", lo: "Lao", my: "Burmese", ur: "Urdu", sw: "Swahili",
   ms: "Malay", id: "Indonesian", jv: "Javanese", su: "Sundanese",
   ban: "Balinese", bbc: "Batak Toba", bug: "Buginese", mad: "Madurese",

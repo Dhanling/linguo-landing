@@ -1,4 +1,4 @@
-/* [tts-kunci-bersama-v1] Nama voice Chirp + kunci cache TTS — SATU sumber untuk
+/* [tts-kunci-bersama-v1] Nama voice + kunci cache TTS — SATU sumber untuk
  * server (/api/tts) dan klien (reader e-book).
  *
  * Kenapa dipisah ke sini: sejak reader boleh mengambil mp3 langsung dari
@@ -8,10 +8,23 @@
  * dan setiap ketukan jatuh ke jalur lambat tanpa satu pun galat yang kelihatan.
  *
  * ⚠️ Jangan menyalin isi berkas ini ke tempat lain — impor.
+ *
+ * [tts-azure-minoritas-v1] Dua penyedia, satu peta:
+ *   • Google Chirp 3 HD  — bahasa besar (CHIRP_LOCALES).
+ *   • Azure Neural       — bahasa yang di katalog Google NIHIL (Irlandia, Lao,
+ *     Khmer, Myanmar, Uzbek, Persia, Georgia), cuma punya suara Standard tua
+ *     (Islandia, Basque), atau selama ini DIPINJAMKAN ke suara bahasa lain
+ *     (Jawa & Sunda → id-ID, Mongolia → ru-RU, Pashto → ur-IN).
+ *   Penyedianya ditentukan dari KODE BAHASA, bukan dari env server: klien
+ *   menghitung nama berkas cache dari nama voice, jadi nama itu harus sama
+ *   di mana pun dihitung. Kalau kunci Azure belum terpasang di server, rute
+ *   /api/tts turun ke suara Google lama (kalau ada) dan menyimpan di bawah
+ *   nama Google-nya — lebih lambat (lewat rute, bukan CDN), tapi tetap berbunyi.
  */
 
 /** Kode bahasa → locale BCP-47 yang punya voice Chirp 3 HD (diverifikasi live
- *  lewat GET /v1/voices; lihat catatan di /api/tts). */
+ *  lewat GET /v1/voices; lihat catatan di /api/tts). Bahasa yang juga ada di
+ *  AZURE_VOICES dipakai HANYA sebagai cadangan waktu kunci Azure tak ada. */
 export const CHIRP_LOCALES: Record<string, string> = {
   es: "es-ES", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-BR",
   nl: "nl-NL", ja: "ja-JP", ko: "ko-KR", zh: "cmn-CN", ru: "ru-RU",
@@ -25,64 +38,97 @@ export const CHIRP_LOCALES: Record<string, string> = {
   te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", mr: "mr-IN",
   pa: "pa-IN", yue: "yue-HK",
   fil: "fil-PH", tl: "fil-PH",
-  eu: "eu-ES",
-  /* [ebook-tts-islandia-v1] Islandia belum punya Chirp 3 HD; satu-satunya suara
-     di katalog Google = is-IS-Standard-B (dicek live 8 Sep 2026) → VOICE_OVERRIDE. */
-  is: "is-IS",
   ms: "ms-MY",
-  /* Basa Jawa tak punya suara sama sekali di katalog Google (dicek 25 Agu 2026:
-     nol voice untuk jv-*). Dipetakan ke id-ID karena ejaan Jawa memakai
-     kesepakatan huruf yang sama dengan bahasa Indonesia — suara Indonesia
-     membacanya nyaris benar, kecuali `a` di ujung kata yang berbunyi `o` dan
-     pasangan dh/th. Tanpa pemetaan ini ia jatuh ke en-US dan terbaca kacau. */
+  /* ── cadangan Google untuk bahasa yang utamanya Azure (lihat AZURE_VOICES) ──
+     Dipakai hanya waktu AZURE_SPEECH_KEY tak terpasang di server. */
+  eu: "eu-ES",   // eu-ES-Standard-B (VOICE_OVERRIDE)
+  is: "is-IS",   // is-IS-Standard-B (VOICE_OVERRIDE), dicek live 8 Sep 2026
+  /* Basa Jawa & Sunda tak punya suara di katalog Google (nol voice jv-* dan su-*,
+     25 Agu 2026). Dipinjamkan ke id-ID karena ejaannya memakai kesepakatan
+     huruf yang sama — nyaris benar kecuali `a` akhir Jawa yang berbunyi `o`,
+     pasangan dh/th, dan vokal `eu` Sunda. */
   jv: "id-ID",
-  /* [ebook-tts-sunda-v1] Sama seperti jv: katalog Google nol voice untuk su-*
-     (dicek 25 Agu 2026). Basa Sunda memakai kesepakatan huruf Latin yang sama
-     dengan bahasa Indonesia, jadi suara id-ID membacanya nyaris benar —
-     kecuali vokal `eu` yang keluar sebagai dua bunyi terpisah. */
   su: "id-ID",
-  /* [ebook-tts-mongolia-v1] Katalog Google nol voice untuk mn-* (dicek live
-     lewat GET /v1/voices, 27 Agu 2026). Dipetakan ke ru-RU karena Kiril Mongol
-     adalah Kiril Rusia + dua huruf; suara Rusia membaca sebagian besar katanya
-     mendekati benar. ⚠️ Yang meleset justru dua huruf khas Mongolia: ө dan ү
-     tak ada di bahasa Rusia dan keluar sebagai o/u biasa. Tanpa pemetaan ini
-     ia jatuh ke en-US dan Kiril-nya terbaca kacau sama sekali. */
+  /* Mongolia: Kiril Mongol = Kiril Rusia + ө/ү; suara Rusia membaca sebagian
+     besar katanya, dua huruf khas itu keluar sebagai o/u. Pashto: aksara sama
+     persis dengan Urdu; ښ ږ ځ څ ې ۍ keluar sebagai bunyi terdekatnya. */
   mn: "ru-RU",
-  /* [ebook-tts-pashto-v1] Katalog Google nol voice untuk ps-* (bahasa Pashto tak
-     pernah masuk katalog Text-to-Speech, dicek 27 Agu 2026). Dipetakan ke ur-IN
-     karena Urdu memakai aksara yang sama persis — termasuk پ چ ژ ګ dan huruf
-     berlidah melipat — sehingga suara Urdu membaca sebagian besar katanya
-     mendekati benar. ⚠️ Yang meleset justru huruf khas Pashto: ښ ږ ځ څ ې ۍ tak
-     ada di Urdu dan keluar sebagai bunyi terdekatnya. Tanpa pemetaan ini ia
-     jatuh ke en-US dan aksara Arabnya terbaca kacau sama sekali. */
   ps: "ur-IN",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */
 export const CHIRP_SPEAKER = "Kore";
 
-/** Locale yang belum punya Chirp 3 HD → voice terbaik yang tersedia. */
+/** Locale yang belum punya Chirp 3 HD → voice Google terbaik yang tersedia. */
 export const VOICE_OVERRIDE: Record<string, string> = {
   "fil-PH": "fil-ph-Neural2-A",
-  // Euskara belum punya Chirp 3 HD; satu-satunya suara yang ada di katalog Google.
+  // Euskara & Íslenska belum punya Chirp 3 HD; satu-satunya suara di katalog Google.
   "eu-ES": "eu-ES-Standard-B",
-  // Íslenska belum punya Chirp 3 HD; satu-satunya suara di katalog Google (8 Sep 2026).
   "is-IS": "is-IS-Standard-B",
 };
 
+/* [tts-azure-minoritas-v1] Bahasa yang suara neural-nya ada di Azure Speech.
+   Nama voice = nama resmi Azure (`<locale>-<Nama>Neural`), dipakai APA ADANYA
+   sebagai folder cache di bucket `tts-cache` — jadi mengganti suara di sini
+   otomatis memisahkan cache lama. Semua suara perempuan supaya warnanya
+   seragam dengan Kore di jalur Google. Daftar ini hanya bahasa yang ADA di
+   katalog e-book; verifikasi nama voice live pakai `scripts/cek-azure-tts.mjs`
+   sebelum menambah baris. */
+export const AZURE_VOICES: Record<string, { locale: string; voice: string }> = {
+  is: { locale: "is-IS", voice: "is-IS-GudrunNeural" },
+  ga: { locale: "ga-IE", voice: "ga-IE-OrlaNeural" },
+  eu: { locale: "eu-ES", voice: "eu-ES-AinhoaNeural" },
+  lo: { locale: "lo-LA", voice: "lo-LA-KeomanyNeural" },
+  km: { locale: "km-KH", voice: "km-KH-SreymomNeural" },
+  my: { locale: "my-MM", voice: "my-MM-NilarNeural" },
+  mn: { locale: "mn-MN", voice: "mn-MN-YesuiNeural" },
+  ps: { locale: "ps-AF", voice: "ps-AF-LatifaNeural" },
+  jv: { locale: "jv-ID", voice: "jv-ID-SitiNeural" },
+  su: { locale: "su-ID", voice: "su-ID-TutiNeural" },
+  uz: { locale: "uz-UZ", voice: "uz-UZ-MadinaNeural" },
+  fa: { locale: "fa-IR", voice: "fa-IR-DilaraNeural" },
+  ka: { locale: "ka-GE", voice: "ka-GE-EkaNeural" },
+};
+
+/** Format keluaran Azure — mp3 supaya satu bucket, satu tipe berkas. */
+export const AZURE_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
+
+/** Semua kode bahasa yang bisa dibunyikan lewat /api/tts (Google ∪ Azure). */
+export const KODE_TTS: ReadonlySet<string> = new Set([
+  ...Object.keys(CHIRP_LOCALES), ...Object.keys(AZURE_VOICES),
+]);
+
 export const BUCKET_TTS = "tts-cache";
 
-/** Locale Chirp untuk sebuah kode bahasa; null = tak ada suaranya. */
+const kodeDasar = (kode?: string | null) =>
+  String(kode || "").trim().toLowerCase().split("-")[0];
+
+/** Penyedia untuk sebuah kode bahasa; null = tak ada suaranya sama sekali. */
+export function penyediaTts(kode?: string | null): "azure" | "google" | null {
+  const k = kodeDasar(kode);
+  if (!k) return null;
+  if (AZURE_VOICES[k]) return "azure";
+  return CHIRP_LOCALES[k] ? "google" : null;
+}
+
+/** Locale Chirp (Google) untuk sebuah kode bahasa; null = tak ada suaranya. */
 export function localeChirp(kode?: string | null): string | null {
-  const k = String(kode || "").trim().toLowerCase().split("-")[0];
+  const k = kodeDasar(kode);
   return (k && CHIRP_LOCALES[k]) || null;
+}
+
+/** Nama voice GOOGLE persis seperti yang dipakai /api/tts waktu menyimpan ke
+ *  cache — juga jadi cadangan bahasa Azure waktu kuncinya belum ada. */
+export function namaVoiceGoogle(kode?: string | null): string | null {
+  const locale = localeChirp(kode);
+  if (!locale) return null;
+  return VOICE_OVERRIDE[locale] ?? `${locale}-Chirp3-HD-${CHIRP_SPEAKER}`;
 }
 
 /** Nama voice persis seperti yang dipakai /api/tts waktu menyimpan ke cache. */
 export function namaVoice(kode?: string | null): string | null {
-  const locale = localeChirp(kode);
-  if (!locale) return null;
-  return VOICE_OVERRIDE[locale] ?? `${locale}-Chirp3-HD-${CHIRP_SPEAKER}`;
+  const az = AZURE_VOICES[kodeDasar(kode)];
+  return az ? az.voice : namaVoiceGoogle(kode);
 }
 
 /** Sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·".

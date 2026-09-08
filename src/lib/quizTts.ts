@@ -12,13 +12,14 @@
  * daripada tidak ada suara sama sekali. Bahasa di luar daftar Chirp → tombolnya
  * tidak ditampilkan.
  */
-import { CHIRP_LOCALES } from "@/lib/ttsVoice";
+import { KODE_TTS } from "@/lib/ttsVoice";
 
-/** Locale yang punya suara Chirp 3 HD di /api/tts — kode di luar daftar ini
+/** Kode bahasa yang punya suara di /api/tts (Google Chirp 3 HD ∪ Azure Neural,
+ *  lihat [tts-azure-minoritas-v1] di ttsVoice.ts) — kode di luar daftar ini
  *  dibalas 422 oleh rute itu, jadi disaring sejak di klien supaya tombolnya tak
  *  pernah muncul sia-sia. Daftarnya DITURUNKAN dari peta bersama, bukan disalin:
  *  salinan kedua yang dulu ada di sini tinggal menunggu waktu untuk melenceng. */
-export const KODE_CHIRP = new Set(Object.keys(CHIRP_LOCALES));
+export const KODE_CHIRP = KODE_TTS;
 
 export function bisaTts(kode?: string | null): boolean {
   const k = (kode || "").trim().toLowerCase();

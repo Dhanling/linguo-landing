@@ -22,7 +22,8 @@ import { readFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {
-  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, localeChirp, namaVoice,
+  AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts,
+  localeChirp, namaVoiceGoogle, penyediaTts,
 } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
@@ -96,6 +97,52 @@ async function getAccessToken(): Promise<string> {
   const j = await res.json();
   _token = { value: j.access_token, exp: now + (j.expires_in || 3600) };
   return _token.value;
+}
+
+/* ── Azure Speech (bahasa minoritas) ───────────────────────────────────────
+   [tts-azure-minoritas-v1] Google tak punya suara untuk Irlandia/Lao/Khmer/
+   Myanmar/Uzbek/Persia/Georgia, dan untuk Islandia/Basque cuma suara Standard
+   yang kaku; Jawa/Sunda/Mongolia/Pashto selama ini dipinjamkan ke suara bahasa
+   lain. Azure punya suara neural asli untuk semuanya (peta di AZURE_VOICES).
+
+   REST-nya sederhana: kunci langganan langsung di header, tak perlu tukar
+   token. Tier gratis F0 = 500 ribu karakter/bulan — jauh di atas pemakaian
+   reader yang tiap frasanya cuma disintesis SEKALI seumur hidup (cache bersama
+   di bawah). Env: AZURE_SPEECH_KEY + AZURE_SPEECH_REGION (mis. southeastasia).
+
+   Tanpa kunci, bahasa Azure yang punya cadangan Google (CHIRP_LOCALES) tetap
+   berbunyi lewat suara lamanya — disimpan di bawah NAMA GOOGLE-nya, supaya
+   begitu kunci dipasang cache Azure dimulai bersih. Yang tak punya cadangan
+   (ga, lo, km, my, uz, fa, ka) dibalas 503 → klien jatuh ke suara browser. */
+const AZURE_KEY = process.env.AZURE_SPEECH_KEY || "";
+const AZURE_REGION = process.env.AZURE_SPEECH_REGION || "";
+const azureSiap = () => !!(AZURE_KEY && AZURE_REGION);
+
+const escXml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/** base64 mp3 dari Azure, atau lempar Error berisi status + potongan balasan. */
+async function sintesisAzure(locale: string, voice: string, text: string): Promise<string> {
+  const ssml =
+    `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${locale}">` +
+    `<voice name="${voice}">${escXml(text)}</voice></speak>`;
+  const res = await fetch(`https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`, {
+    method: "POST",
+    headers: {
+      "Ocp-Apim-Subscription-Key": AZURE_KEY,
+      "Content-Type": "application/ssml+xml",
+      "X-Microsoft-OutputFormat": AZURE_FORMAT,
+      "User-Agent": "linguo-tts",
+    },
+    body: ssml,
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`azure ${res.status}: ${detail.slice(0, 300)}`);
+  }
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (!buf.length) throw new Error("azure: balasan kosong");
+  return buf.toString("base64");
 }
 
 // ---- resolve voice sekali (TTS_VOICE override, atau auto-pick Chirp3-HD pertama) ----
@@ -185,28 +232,53 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
   // 3 HD sesuai bahasa itu. Tanpa `lang` → perilaku lama (kuis vi-VN) tetap utuh.
   const langRaw = typeof langMentah === "string" ? langMentah.trim().toLowerCase() : "";
   const langBase = langRaw.split("-")[0];
-  const chirpLocale = langBase ? localeChirp(langBase) : null;
+  let penyedia = langBase ? penyediaTts(langBase) : null;
 
-  // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. fa, km, am):
+  // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. am, la):
   // JANGAN jatuh ke voice vi-VN (kedengaran bahasa Vietnam!) — balas 422 supaya
   // client fallback ke Web Speech browser.
-  if (langBase && !chirpLocale) {
+  if (langBase && !penyedia) {
     return { status: 422, body: { error: `lang tidak didukung: ${langBase}` } };
+  }
+  // Bahasa Azure tapi kuncinya belum terpasang: turun ke suara Google lama
+  // kalau ada; kalau tidak, 503 (bukan 422 — bahasanya didukung, servernya
+  // yang belum siap) supaya klien tetap jatuh ke suara browser.
+  if (penyedia === "azure" && !azureSiap()) {
+    if (!localeChirp(langBase)) {
+      return { status: 503, body: { error: `AZURE_SPEECH_KEY belum dipasang; ${langBase} butuh Azure` } };
+    }
+    penyedia = "google";
   }
 
   // ⚠️ Token OAuth SENGAJA tidak diambil di sini. Untuk bahasa ber-Chirp, nama
   // voice-nya bisa dihitung tanpa memanggil Google sama sekali — dan kalau
   // mp3-nya sudah ada di cache, seluruh perjalanan ke Google jadi mubazir.
   // Jalur lawas (tanpa `lang`) tetap butuh token karena voice-nya ditanyakan.
-  const languageCode = chirpLocale ?? LANG_CODE;
-  const voice = chirpLocale
-    ? (namaVoice(langBase) as string)
-    : await resolveVoice(await getAccessToken());
+  const azure = penyedia === "azure" ? AZURE_VOICES[langBase] : null;
+  const chirpLocale = penyedia === "google" ? localeChirp(langBase) : null;
+  const languageCode = azure?.locale ?? chirpLocale ?? LANG_CODE;
+  const voice = azure
+    ? azure.voice
+    : chirpLocale
+      ? (namaVoiceGoogle(langBase) as string)
+      : await resolveVoice(await getAccessToken());
 
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
   const jalur = jalurCache(voice, text);
   const tersimpan = await dariCache(jalur);
   if (tersimpan) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
+
+  if (azure) {
+    let audioContent: string;
+    try {
+      audioContent = await sintesisAzure(azure.locale, azure.voice, text);
+    } catch (e: any) {
+      return { status: 502, body: { error: "tts failed", detail: String(e?.message || e).slice(0, 300) } };
+    }
+    // Ditunggu, bukan dilepas — alasannya sama dengan jalur Google di bawah.
+    await keCache(jalur, audioContent);
+    return { status: 200, body: { audioContent }, abadi: true };
+  }
 
   const token = await getAccessToken();
   const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {

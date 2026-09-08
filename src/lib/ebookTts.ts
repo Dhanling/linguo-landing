@@ -4,8 +4,9 @@
  * sebelah siswa yang bisa ditanya "ini bunyinya bagaimana". Ketuk katanya di
  * halaman, suaranya keluar — itu saja lubang yang ditutup fitur ini.
  *
- * Suaranya lewat /api/tts (Google Chirp 3 HD), rute yang sama dengan TTS kuis &
- * Watch and Learn — tidak ada kredensial maupun tagihan baru.
+ * Suaranya lewat /api/tts (Google Chirp 3 HD; Azure Neural untuk bahasa yang
+ * Google tak punya suaranya — lihat AZURE_VOICES di ttsVoice.ts), rute yang
+ * sama dengan TTS kuis & Watch and Learn.
  *
  * Soal biaya: Chirp ditagih per KARAKTER, dan satu kata yang sama diketuk
  * berkali-kali oleh siswa yang sama (dan oleh ratusan siswa lain yang membaca
@@ -23,8 +24,9 @@ import {
   BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, namaVoice,
 } from "@/lib/ttsVoice";
 
-/** Bahasa ini punya suara Chirp 3 HD? Beda dengan `bisaTts` di kuis: di sini
- *  Indonesia IKUT, karena modul BIPA memang bahasa targetnya Indonesia. */
+/** Bahasa ini punya suara di /api/tts (Chirp 3 HD atau Azure Neural)? Beda
+ *  dengan `bisaTts` di kuis: di sini Indonesia IKUT, karena modul BIPA memang
+ *  bahasa targetnya Indonesia. */
 export function bisaDibunyikan(kode?: string | null): boolean {
   const k = (kode || "").trim().toLowerCase();
   return !!k && KODE_CHIRP.has(k);
@@ -470,6 +472,11 @@ const MORFOLOGI_EN = MORFOLOGI_ID.filter((p) => {
    itu membalikkan masalahnya ke arah lain. */
 const KECUALI_TARGET: Record<string, Set<string>> = {
   is: new Set(["lagi", "sama", "sami", "koma", "klukkan"]),
+  /* Irlandia (pemindaian ga-a1, 8 Sep 2026): `agus` (= dan, 53×) kena leksikon
+     lewat nama orang "Agus"; `Dia` = Tuhan, separuh dari sapaan "Dia duit"
+     yang jadi kalimat pertama modul; `leo` = dengan mereka. `air`/`cuma`/`cara`
+     sengaja TIDAK — cuma 1–4× di modul, tapi lazim di prosa Indonesia. */
+  ga: new Set(["agus", "dia", "leo"]),
 };
 
 /** Kata ini bahasa Indonesia dilihat dari dirinya sendiri (tanpa konteks)? */
@@ -688,10 +695,11 @@ export function kalimatSekitar(baris: string, kata: string, kode: string): { tek
 /** Potongan ini kelihatan bahasa Indonesia (baris terjemahan), bukan bahasa target? */
 export function barisTerjemahan(teks: string, kode: string): boolean {
   /* [ebook-tts-sunda-v1] id & ms: bahasa Indonesia memang bahasa targetnya.
-     su ikut dilepas karena alasan lain — suara basa Sunda DIPINJAM dari id-ID
-     (lihat CHIRP_LOCALES), jadi membungkam kata yang kebetulan juga kata
-     Indonesia (buku, acara, kantor, harga, bulan) tidak menyelamatkan apa pun:
-     kata itu memang akan dibacakan dengan lidah yang benar. */
+     su ikut dilepas karena alasan lain — kosakata Sunda & Indonesia tumpang
+     tindih luas (buku, acara, kantor, harga, bulan), jadi membungkam kata yang
+     kebetulan juga kata Indonesia justru memangkas separuh modulnya. (Dulu
+     suaranya dipinjam dari id-ID; kini su-ID-TutiNeural lewat Azure — alasan
+     ini tetap berlaku.) */
   if (kode === "id" || kode === "ms" || kode === "su") return false;
   return klausaIndonesia(teks, kode);
 }
@@ -728,6 +736,11 @@ const SUARA_BROWSER: Record<string, string> = {
   da: "da-DK", sv: "sv-SE", no: "nb-NO", fi: "fi-FI", pl: "pl-PL", cs: "cs-CZ",
   el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
   eu: "eu-ES", is: "is-IS",
+  /* Bahasa jalur Azure (lihat AZURE_VOICES di ttsVoice.ts). Tag browser-nya
+     dipakai hanya kalau rute gagal; jv/su tetap dipinjamkan ke id-ID di sini
+     karena mesin TTS HP nyaris tak pernah punya suara Jawa/Sunda. */
+  ga: "ga-IE", lo: "lo-LA", km: "km-KH", my: "my-MM", mn: "mn-MN", ps: "ps-AF",
+  uz: "uz-UZ", fa: "fa-IR", ka: "ka-GE",
   jv: "id-ID", // lihat catatan jv di CHIRP_LOCALES (src/lib/ttsVoice.ts)
   su: "id-ID", // idem — basa Sunda dipinjamkan ke suara Indonesia
 };
