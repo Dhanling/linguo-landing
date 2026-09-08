@@ -486,11 +486,11 @@ function StepIndicator({ step, jumpTo }: { step: number; jumpTo: (s: number) => 
       {/* Mobile: compact bar */}
       <div className="sm:hidden">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold text-[#1A9E9E]">Step {step + 1} / {STEPS.length}</span>
-          <span className="text-xs text-gray-500">{STEPS[step].title}</span>
+          <span className="text-xs font-semibold text-white">Step {step + 1} / {STEPS.length}</span>
+          <span className="text-xs text-white/80">{STEPS[step].title}</span>
         </div>
-        <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-[#1A9E9E] to-[#24b8b8] transition-all duration-300"
+        <div className="h-1.5 bg-white/25 rounded-full overflow-hidden">
+          <div className="h-full bg-white transition-all duration-300"
             style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
         </div>
       </div>
@@ -501,17 +501,17 @@ function StepIndicator({ step, jumpTo }: { step: number; jumpTo: (s: number) => 
           <Fragment key={i}>
             <button type="button" onClick={() => jumpTo(i)}
               disabled={i > step}
-              className={`group flex flex-col items-center gap-2 ${i < step ? "cursor-pointer" : i === step ? "cursor-default" : "cursor-not-allowed opacity-60"}`}>
+              className={`group flex flex-col items-center gap-2 ${i < step ? "cursor-pointer" : i === step ? "cursor-default" : "cursor-not-allowed"}`}>
               <div className={`h-10 w-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-200
-                ${i < step ? "bg-[#1A9E9E] text-white shadow-md shadow-[#1A9E9E]/30" :
-                  i === step ? "bg-[#1A9E9E] text-white ring-4 ring-[#1A9E9E]/20 shadow-lg shadow-[#1A9E9E]/30" :
-                  "bg-gray-100 text-gray-400"}`}>
+                ${i < step ? "bg-white text-[#1A9E9E] shadow-md shadow-black/20" :
+                  i === step ? "bg-white text-[#1A9E9E] ring-4 ring-white/30 shadow-lg shadow-black/25" :
+                  "bg-white/15 text-white border border-white/40"}`}>
                 {i < step ? <Check className="h-5 w-5" /> : i + 1}
               </div>
-              <span className={`text-xs font-medium ${i <= step ? "text-gray-900" : "text-gray-400"}`}>{s.short}</span>
+              <span className={`text-xs font-medium ${i <= step ? "text-white" : "text-white/70"}`}>{s.short}</span>
             </button>
             {i < STEPS.length - 1 && (
-              <div className={`h-0.5 flex-1 mx-3 mb-6 transition-all duration-300 ${i < step ? "bg-[#1A9E9E]" : "bg-gray-200"}`} />
+              <div className={`h-0.5 flex-1 mx-3 mb-6 transition-all duration-300 ${i < step ? "bg-white" : "bg-white/30"}`} />
             )}
           </Fragment>
         ))}
