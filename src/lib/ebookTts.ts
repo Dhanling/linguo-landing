@@ -635,10 +635,67 @@ export function kalimatTarget(baris: string, kode: string): string {
   // dengan tidak ada di materi A1.
   const bagian = s.split(PISAH_ARTI).map((x) => x.trim()).filter(Boolean);
   if (bagian.length > 1) s = bagian[0];
+  s = buangTranslit(s, kode); // [ebook-ruby-translit-v1]
   s = s.replace(/\s{2,}/g, " ").trim();
   if (s.length < 2) return "";
   if (barisTerjemahan(s, kode)) return "";
   return s.slice(0, 400);
+}
+
+/* [ebook-ruby-translit-v1] Aksara asli tiap bahasa beraksara BUKAN Latin.
+   Di modul-modul ini setiap kata bahasa target PASTI memuat aksaranya sendiri,
+   jadi potongan yang seluruhnya huruf Latin cuma bisa dua hal: kata Indonesia
+   (baris terjemahan — itu dibacakan dengan suara Indonesia, lihat bahasaKata)
+   atau transliterasi cara baca yang dicetak di atas katanya ("u-MYE-yu",
+   "Saf-SYEM", romaji di atas kana). Transliterasi BUKAN bahasa mana pun: dibaca
+   mesin suara Rusia ia jadi ejaan asing yang aneh, dan sebagai kalimat ia malah
+   membuat seluruh permintaan TTS-nya gagal — itulah sebabnya tombol "Putar
+   kalimat" sempat diam total. Jadi ia tak dibunyikan sama sekali.
+
+   Pagar TATA LETAK-nya ada di `tandaiRubyBaris` (ebookTeksHal.ts) dan itu yang
+   utama; ini jaring keduanya, untuk halaman yang anotasinya terlanjur menyatu
+   dengan barisnya. Bahasa beraksara Latin tak punya entri di sini, jadi
+   modul Spanyol/Jerman/Inggris sama sekali tak tersentuh. */
+const AKSARA_ASLI: Record<string, RegExp> = {
+  ru: /\p{Script=Cyrillic}/u, uk: /\p{Script=Cyrillic}/u, mn: /\p{Script=Cyrillic}/u,
+  ja: /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u,
+  zh: /\p{Script=Han}/u, ko: /\p{Script=Hangul}/u, th: /\p{Script=Thai}/u,
+  lo: /\p{Script=Lao}/u, km: /\p{Script=Khmer}/u, my: /\p{Script=Myanmar}/u,
+  el: /\p{Script=Greek}/u, he: /\p{Script=Hebrew}/u, ka: /\p{Script=Georgian}/u,
+  hi: /\p{Script=Devanagari}/u, am: /\p{Script=Ethiopic}/u,
+  ar: /\p{Script=Arabic}/u, fa: /\p{Script=Arabic}/u, ps: /\p{Script=Arabic}/u,
+  ur: /\p{Script=Arabic}/u,
+};
+
+/** Modul ini ditulis dengan aksara bukan-Latin? Kembalinya pola aksara aslinya. */
+function aksaraAsli(kode: string): RegExp | null {
+  return AKSARA_ASLI[String(kode || "").toLowerCase().split("-")[0]] ?? null;
+}
+
+/** Buang sisa transliterasi dari sebuah kalimat bahasa target. Cuma jalan kalau
+ *  kalimatnya memang masih memuat aksara aslinya — kalau seluruhnya jadi kosong,
+ *  teks aslinya yang dikembalikan (biar pagar bahasa berikutnya yang memutus). */
+function buangTranslit(teks: string, kode: string): string {
+  const aksara = aksaraAsli(kode);
+  const s = String(teks || "");
+  if (!aksara || !aksara.test(s)) return s;
+  /* Yang dibuang RENTETAN huruf Latin-nya, bukan "kata"-nya: waktu anotasi
+     terlanjur menyatu dengan barisnya, ia menempel TANPA spasi —
+     "СовсемSaf-SYEM неnye умею." cuma punya tiga "kata" menurut hitungan spasi,
+     dan ketiganya memuat aksara Cyrillic. */
+  const sisa = s.replace(/\p{Script=Latin}[\p{Script=Latin}\p{M}'’-]*/gu, " ");
+  const rapi = sisa.replace(/\s+([,.;:!?…])/gu, "$1").replace(/\s{2,}/g, " ").trim();
+  return aksara.test(rapi) ? rapi : s;
+}
+
+/** Potongan ini transliterasi cara baca, bukan kata bahasa target maupun kata
+ *  Indonesia? Cuma berlaku di modul beraksara bukan-Latin. */
+export function kataTranslit(teks: string, kode: string): boolean {
+  const aksara = aksaraAsli(kode);
+  if (!aksara) return false;
+  const s = String(teks || "");
+  if (!/\p{L}/u.test(s) || aksara.test(s)) return false;
+  return !kataIndonesia(s, kode);
 }
 
 /* [ebook-tts-semua-section-v1] Kalimat yang ditawarkan untuk SETIAP ketukan —
@@ -655,7 +712,49 @@ export function kalimatTarget(baris: string, kode: string): string {
    Indonesia (id-ID ada di katalog Chirp), bukan dibungkam — dan bukan pula
    dilafalkan berlogat bahasa target. */
 export function bahasaKata(kata: string, kode: string, konteks?: string): string {
-  return kataIndonesia(kata, kode, konteks) ? "id" : kode;
+  if (kataIndonesia(kata, kode, konteks)) return "id";
+  // [ebook-ruby-translit-v1] "" = tak berbahasa apa pun → jangan dibunyikan.
+  if (kataTranslit(kata, kode)) return "";
+  return kode;
+}
+
+/* [ebook-tts-satu-kalimat-v1] Satu baris modul kerap memuat DUA kalimat —
+   "Я никогда не готовлю. Совсем не умею." Tombol "Putar kalimat" dulu
+   membacakan seluruh barisnya; yang diminta pengajar cuma kalimat tempat kata
+   yang diketuk berdiri. Dipecah tanpa lookbehind (Safari lama belum punya) dan
+   titik hanya dianggap akhir kalimat kalau yang menyusulnya spasi atau ujung
+   baris — "2.500" & "hal. 12" tidak ikut terpotong. Tanda baca CJK (。！？)
+   memang tak pernah diikuti spasi, jadi ia selalu memotong. */
+const TANDA_AKHIR = /[.!?…。！？]/u;
+const TANDA_LANJUT = /[.!?…。！？"'»”’)]/u;
+export function pecahKalimat(teks: string): string[] {
+  const huruf = Array.from(String(teks || ""));
+  const hasil: string[] = [];
+  let buf = "";
+  for (let i = 0; i < huruf.length; i++) {
+    const ch = huruf[i];
+    buf += ch;
+    if (!TANDA_AKHIR.test(ch)) continue;
+    while (i + 1 < huruf.length && TANDA_LANJUT.test(huruf[i + 1])) buf += huruf[++i];
+    const lanjut = huruf[i + 1];
+    const cjk = /[。！？]/u.test(buf.slice(-1));
+    if (lanjut !== undefined && !/\s/u.test(lanjut) && !cjk) continue;
+    hasil.push(buf.trim());
+    buf = "";
+  }
+  if (buf.trim()) hasil.push(buf.trim());
+  return hasil.filter(Boolean);
+}
+
+/** Kalimat (satu saja) tempat `kata` berdiri di dalam `teks`. */
+export function kalimatBerisiKata(teks: string, kata: string): string {
+  const bagian = pecahKalimat(teks);
+  if (bagian.length < 2) return String(teks || "").trim();
+  const k = String(kata || "").trim().toLowerCase();
+  if (!k) return bagian[0];
+  const pola = new RegExp(`(^|\\P{L})${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\P{L})`, "iu");
+  // Aksara tanpa spasi tak punya batas kata — di sana cocokkan apa adanya.
+  return bagian.find((b) => pola.test(b)) ?? bagian.find((b) => b.toLowerCase().includes(k)) ?? bagian[0];
 }
 
 const TOKEN_KATA = /[\p{L}\p{M}\p{N}'’-]+|[^\p{L}\p{M}\p{N}'’-]+/gu;
@@ -664,9 +763,12 @@ const PUTUS_KLAUSA = /[.,;:!?()[\]{}"“”«»…—–|=/→]/u;
 export function kalimatSekitar(baris: string, kata: string, kode: string): { teks: string; kode: string } {
   const k = String(kata || "").trim();
   const kodeKata = bahasaKata(k, kode, baris);
+  // [ebook-ruby-translit-v1] Yang diketuk transliterasi — tak ada yang dibunyikan.
+  if (!kodeKata) return { teks: "", kode: "" };
   if (kodeKata === kode) {
     const utuh = kalimatTarget(baris, kode);
-    if (utuh) return { teks: utuh, kode };
+    // [ebook-tts-satu-kalimat-v1] SATU kalimat saja: yang memuat kata itu.
+    if (utuh) return { teks: kalimatBerisiKata(utuh, k), kode };
   }
   const s = String(baris || "")
     .replace(BUANG_KURUNG, " ")

@@ -10,7 +10,10 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { kataIndonesia, klausaKata } from "./ebookTts";
+import {
+  bahasaKata, kalimatSekitar, kalimatTarget, kataIndonesia, kataTranslit, klausaKata,
+  pecahKalimat,
+} from "./ebookTts";
 
 const AKAR = path.join(process.cwd(), "content/ebook");
 const MIRING = /(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g;
@@ -191,5 +194,41 @@ describe("modul Inggris — huruf Latin polos, tanpa bukti aksara", () => {
     for (const kata of ["member", "berries", "pedestrian"]) {
       expect(kataIndonesia(kata, "en", `The ${kata} is here.`)).toBe(false);
     }
+  });
+});
+
+/* [ebook-ruby-translit-v1] + [ebook-tts-satu-kalimat-v1] — modul new edition
+   mencetak cara baca di ATAS tiap kata bahasa target. Anotasinya sering
+   terlanjur menyatu dengan barisnya waktu pdf.js membacanya, dan sejak itu
+   "Putar kalimat" mengirim campuran Cyrillic + Latin ke mesin suara (yang
+   membuatnya gagal total) sambil membacakan dua kalimat sekaligus. */
+describe("transliterasi & satu kalimat", () => {
+  it("transliterasi tak berbahasa apa pun", () => {
+    expect(kataTranslit("u-MYE-yu", "ru")).toBe(true);
+    expect(kataTranslit("Saf-SYEM", "ru")).toBe(true);
+    expect(kataTranslit("умею", "ru")).toBe(false);
+    expect(bahasaKata("u-MYE-yu", "ru")).toBe("");
+    // Kata Indonesia tetap dibacakan dengan suara Indonesia, bukan dibisukan.
+    expect(bahasaKata("rumah", "ru")).toBe("id");
+  });
+
+  it("modul beraksara Latin tak tersentuh pagar ini", () => {
+    expect(kataTranslit("Morgen", "de")).toBe(false);
+    expect(bahasaKata("Morgen", "de")).toBe("de");
+  });
+
+  it("sisa transliterasi yang menempel tanpa spasi ikut dibuang", () => {
+    expect(kalimatTarget("СовсемSaf-SYEM неnye умею.", "ru")).toBe("Совсем не умею.");
+  });
+
+  it("Putar kalimat cuma membunyikan SATU kalimat — yang memuat katanya", () => {
+    const baris = "Ани: Я никогда не готовлю. Совсем не умею.";
+    expect(kalimatSekitar(baris, "умею", "ru")).toEqual({ teks: "Совсем не умею.", kode: "ru" });
+    expect(kalimatSekitar(baris, "готовлю", "ru")).toEqual({ teks: "Я никогда не готовлю.", kode: "ru" });
+  });
+
+  it("angka & singkatan tak dikira akhir kalimat, tanda baca CJK selalu memotong", () => {
+    expect(pecahKalimat("Harganya 2.500 rubel. Murah.")).toEqual(["Harganya 2.500 rubel.", "Murah."]);
+    expect(pecahKalimat("わたしは がくせいです。よろしく。")).toEqual(["わたしは がくせいです。", "よろしく。"]);
   });
 });

@@ -731,7 +731,12 @@ export function prewarmEbookModul(purchaseId: string, accessToken: string) {
 
 /* [ebook-tts-ketuk-kata-v1] Satu potong teks dari getTextContent(), koordinatnya
    dalam SATUAN HALAMAN (viewport skala 1) supaya tetap sahih waktu di-zoom. */
-type ItemTeks = { str: string; x: number; y: number; w: number; h: number };
+type ItemTeks = {
+  str: string; x: number; y: number; w: number; h: number;
+  /** [ebook-ruby-translit-v1] Potongan ini anotasi cara baca di atas kata,
+   *  bukan teksnya sendiri. Lihat `tandaiRubyBaris`. */
+  ruby?: boolean;
+};
 
 /* [ebook-tts-kalimat-v1] Satu BARIS halaman: kumpulan potongan yang duduk di
    ketinggian yang sama, diurutkan kiri→kanan.
@@ -748,7 +753,44 @@ type Baris = { teks: string; y: number; h: number; segmen: Segmen[]; fam?: strin
    target dan terjemahannya sekalian. Batas kolom dikenali dari JARAK MENDATAR
    antar potongan, bukan dari garis tabelnya (garis tabel bukan teks). */
 type Segmen = { teks: string; x0: number; x1: number };
-type HalTeks = { items: ItemTeks[]; baris: Baris[] };
+/* `items` = potongan yang bisa diketuk (anotasi cara baca SUDAH dibuang),
+   `ruby` = anotasi itu sendiri — dipakai untuk mengalihkan ketukan yang mendarat
+   di atasnya ke kata induknya. Lihat `tandaiRubyBaris`. */
+type HalTeks = { items: ItemTeks[]; baris: Baris[]; ruby: ItemTeks[] };
+
+/* [ebook-ruby-translit-v1] Anotasi cara baca — transliterasi yang dicetak KECIL
+   persis di atas kata bahasa target: "u-MYE-yu" di atas умею, "Saf-SYEM" di atas
+   Совсем, romaji di atas kana. Buat pdf.js itu teks biasa yang duduk di
+   ketinggian yang sama dengan barisnya, jadi tanpa penandaan ini ia ikut masuk
+   ke teks barisnya — dan karena baris disusun kiri→kanan, huruf Latinnya
+   berselang-seling dengan aksara aslinya: "Совсем не умею." terbaca
+   "СовсемSaf-SYEM неnye u-MYE-yuумею.". Kalimat begitu tak bisa dibunyikan sama
+   sekali (mesin suara Rusia tersedak huruf Latin), dan tiap penggal translit-nya
+   sendiri jadi "kata" yang bisa diketuk lalu dibacakan berlogat bahasa target —
+   persis yang paling aneh didengar.
+
+   Dikenali dari TATA LETAK, bukan isinya (transliterasi ada yang beraksara
+   Latin, ada yang kana), dan sengaja hanya DI DALAM satu baris yang memang sudah
+   menyatu: potongan yang lebih pendek dari potongan tertinggi di barisnya, yang
+   duduk di atas potongan itu dan tumpang tindih mendatar dengannya. Baris
+   terjemahan di atasnya tak pernah kena — ia baris tersendiri, tak pernah masuk
+   ke kumpulan yang sama. Nomor baris dialog di pias kiri juga tidak: ia tak
+   tumpang tindih dengan kata mana pun. */
+const RUBY_TINGGI = 0.85;
+function tandaiRubyBaris(rapi: (ItemTeks & { kosong: boolean })[]): void {
+  const isi = rapi.filter((i) => !i.kosong && /\p{L}|\p{N}/u.test(i.str));
+  if (isi.length < 2) return;
+  const hMaks = Math.max(...isi.map((i) => i.h));
+  const induk = isi.filter((i) => i.h >= hMaks * RUBY_TINGGI);
+  if (!induk.length) return;
+  for (const it of isi) {
+    if (it.h >= hMaks * RUBY_TINGGI) continue;
+    const bawah = it.y + it.h; // garis alas potongan kecil ini
+    if (induk.some((m) => bawah <= m.y + m.h * 0.35 && it.x < m.x + m.w && it.x + it.w > m.x)) {
+      it.ruby = true;
+    }
+  }
+}
 
 /* [ebook-tts-kalimat-v1] Layakkah barisnya dibunyikan sebagai KALIMAT, terpisah
    dari kata yang diketuk? Baris "¿cómo?" cuma katanya sendiri berpakaian tanda
@@ -2093,7 +2135,7 @@ export default function EbookReader({
   const kodeBahasa = useMemo(() => kodeBahasaEbook(language, title), [language, title]);
   const ttsAktif = bisaDibunyikan(kodeBahasa);
 
-  const KOSONG: HalTeks = useMemo(() => ({ items: [], baris: [] }), []);
+  const KOSONG: HalTeks = useMemo(() => ({ items: [], baris: [], ruby: [] }), []);
 
   /* [ebook-teks-safari-v1] Ini yang membuat ketuk-kata DIAM TOTAL di Safari —
      bukan audionya.
@@ -2160,10 +2202,9 @@ export default function EbookReader({
         const fam = String(gaya[it.fontName]?.fontFamily ?? "").toLowerCase();
         semua.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h, kosong: !str.trim(), fam });
       }
-      // Ketukan diadu hanya dengan potongan yang benar-benar berisi huruf.
-      const items: ItemTeks[] = semua
-        .filter((i) => !i.kosong)
-        .map(({ str, x, y, w, h }) => ({ str, x, y, w, h }));
+      /* Barisnya disusun DULUAN — di situlah anotasi cara baca ditandai
+         ([ebook-ruby-translit-v1]), dan `items` (bahan ketukan) baru disaring
+         sesudahnya supaya keduanya sepakat potongan mana yang teks sungguhan. */
 
       // Potongan → baris. Toleransi 0,6 tinggi huruf: cukup longgar untuk
       // superskrip & campuran ukuran font dalam satu baris, cukup ketat supaya
@@ -2174,6 +2215,7 @@ export default function EbookReader({
       const tutup = () => {
         if (!kump.length) return;
         const rapi = [...kump].sort((a, b) => a.x - b.x);
+        tandaiRubyBaris(rapi); // [ebook-ruby-translit-v1]
         const segmen: Segmen[] = [];
         let sel: typeof semua = [];
         const tutupSel = () => {
@@ -2185,6 +2227,8 @@ export default function EbookReader({
           sel = [];
         };
         for (const it of rapi) {
+          // Cara baca bukan bagian kalimatnya — lihat [ebook-ruby-translit-v1].
+          if (it.ruby) continue;
           const sblm = sel[sel.length - 1];
           // Dua penanda batas kolom: jarak mendatar yang menganga, dan potongan
           // spasi yang lebarnya sendiri lebih dari satu setengah tinggi huruf
@@ -2195,7 +2239,7 @@ export default function EbookReader({
           sel.push(it);
         }
         tutupSel();
-        const isiBaris = rapi.filter((i) => !i.kosong);
+        const isiBaris = rapi.filter((i) => !i.kosong && !i.ruby);
         const teks = segmen.map((g) => g.teks).join(" ").trim();
         if (teks && isiBaris.length) {
           // Keluarga huruf baris cuma diisi kalau SELURUH barisnya seragam:
@@ -2219,7 +2263,15 @@ export default function EbookReader({
       }
       tutup();
 
-      const hasil: HalTeks = { items, baris };
+      /* Ketukan diadu hanya dengan potongan yang benar-benar berisi huruf, dan
+         anotasi cara baca disimpan TERPISAH: ketukan yang mendarat di atasnya
+         dialihkan ke kata induknya, bukan dibunyikan sendiri. */
+      const bersih = ({ str, x, y, w, h }: ItemTeks): ItemTeks => ({ str, x, y, w, h });
+      const berhuruf = semua.filter((i) => !i.kosong);
+      const ruby: ItemTeks[] = berhuruf.filter((i) => i.ruby).map(bersih);
+      const items: ItemTeks[] = berhuruf.filter((i) => !i.ruby).map(bersih);
+
+      const hasil: HalTeks = { items, baris, ruby };
       teksRef.current.set(n, hasil);
       return hasil;
     } catch {
@@ -2831,12 +2883,28 @@ export default function EbookReader({
     if (!ttsAktif || !kodeBahasa) return null;
     const titik = titikHal(box, clientX, clientY);
     if (!titik) return null;
-    const { hal, xp, yp, kiriSlot } = titik;
+    const { hal, yp, kiriSlot } = titik;
+    let { xp } = titik;
 
-    const { items, baris } = await ambilTeks(hal);
-    const kena = items.find(
-      (it) => xp >= it.x - 1 && xp <= it.x + it.w + 1 && yp >= it.y - 1 && yp <= it.y + it.h + 1
-    );
+    const { items, baris, ruby } = await ambilTeks(hal);
+    const didalam = (it: ItemTeks) =>
+      xp >= it.x - 1 && xp <= it.x + it.w + 1 && yp >= it.y - 1 && yp <= it.y + it.h + 1;
+    let kena = items.find(didalam);
+    /* [ebook-ruby-translit-v1] Ketukan mendarat di anotasi cara baca ("u-MYE-yu"
+       di atas умею): yang dimaksud pasti kata di BAWAHnya — anotasinya sendiri
+       tak pernah dibunyikan. Anotasi duduk pas di atas katanya, jadi kolom x
+       ketukan langsung dipakai untuk memilih kata mana di dalam potongan induk. */
+    if (!kena) {
+      const anotasi = ruby.find(didalam);
+      if (anotasi) {
+        const alas = anotasi.y + anotasi.h;
+        kena = items.find(
+          (it) => alas <= it.y + it.h * 0.35 && alas >= it.y - it.h * 1.2 &&
+            anotasi.x < it.x + it.w && anotasi.x + anotasi.w > it.x
+        );
+        if (kena) xp = Math.min(Math.max(xp, kena.x + 0.5), kena.x + kena.w - 0.5);
+      }
+    }
     const kata = kena ? kataDi(kena, xp) : null;
     if (!kena || !kata) return "kosong";
 
@@ -2879,6 +2947,10 @@ export default function EbookReader({
        lihat kataIndonesia di lib/ebookTts. */
     const konteks = sel?.teks || barisKena?.teks || kena.str;
     const { teks: kalimat, kode: kodeKata } = kalimatSekitar(konteks, kata.kata, kodeBahasa);
+    /* [ebook-ruby-translit-v1] Transliterasi yang terlanjur menyatu dengan
+       barisnya (tata letaknya tak terbaca sebagai anotasi) tak berbahasa apa
+       pun — jaring terakhir supaya ia tak pernah ikut dibunyikan. */
+    if (!kodeKata) return "kosong";
     const terjemahan = kodeKata !== kodeBahasa;
     return {
       unit,
