@@ -1,21 +1,29 @@
 "use client";
 /* linguo-patch:harga-native-toggle-v2 */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Hand, Scroll, Globe, Landmark } from "lucide-react";
+import { Hand, Scroll, Globe, Landmark, Plus, ShoppingCart } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { matchesLangQuery } from "@/lib/langAlias";
+import { getLangPhoto } from "@/lib/lang-visuals";
 // semi-class-size-picker-v1 — kalkulator ini dulu Private-only. Angka Semi-Private
 // TIDAK ditulis ulang di sini: dipinjam dari sumber tunggal yang sama dengan
 // funnel /daftar, /api/create-funnel-invoice, dan WA Inbox (quickReplyData.ts).
+//
+// [harga-keranjang-kelas-v1] Harga kartu TIDAK lagi dihitung dengan rumus lokal:
+// semuanya lewat quoteKelasItem() — fungsi yang sama yang dipakai server saat
+// membuat invoice. Dengan begitu angka di layar mustahil beda dari yang ditagih.
 import {
-  SEMI_PRIVATE_PRICE_BASIC,
-  LEVEL_MULTIPLIER,
   SEMI_PRIVATE_SIZES,
-  PRICE_PRIVATE_60MIN,
-  getPrivateLevelTier,
-  getLevelTier,
+  NATIVE_MULTIPLIER,
+  NATIVE_AVAILABLE_LANGS,
+  getSemiPrivatePrice,
 } from "@/lib/trial-pricing";
+import {
+  normalizeKelasItem, quoteKelasItem, cartItemKey, loadCart, saveCart,
+  CART_MAX_ITEMS, type KelasCartItem,
+} from "@/lib/kelasCart";
+import { KeranjangBar, CheckoutKelasModal } from "@/components/harga/KeranjangKelas";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -23,7 +31,11 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // `code` = ISO-2 negara untuk bendera rounded rectangle (sama seperti menu registrasi).
 // Bahasa tanpa negara (isyarat, Latin, Esperanto, Mesir Kuno) pakai ikon lucide via `icon`.
 type LangIcon = "sign" | "scroll" | "globe" | "landmark";
-type LangEntry = { code?: string; icon?: LangIcon; name: string; cat: "A" | "B" | "C" | "D" | "E" };
+type LangEntry = {
+  code?: string; icon?: LangIcon; name: string; cat: "A" | "B" | "C" | "D" | "E";
+  /** Nama versi PRICELIST kalau beda dari nama tampilan (lihat priceName). */
+  price?: string;
+};
 type TeacherType = "lokal" | "native";
 
 // Sorted by demand (most popular first)
@@ -84,7 +96,9 @@ const LANGUAGES: LangEntry[] = [
   { code: "id", name: "Banjar",           cat: "D" },
   { code: "id", name: "Madurese",         cat: "D" },
   // E — BIPA
-  { code: "id", name: "BIPA (Indonesian for Foreigners)", cat: "E" },
+  // Pricelist menyimpannya sebagai "BIPA" polos — tanpa `price` di bawah,
+  // getLanguageCategory() tidak menemukannya dan harga jatuh ke kategori C.
+  { code: "id", name: "BIPA (Indonesian for Foreigners)", cat: "E", price: "BIPA" },
 ];
 
 // Bendera kartu: SVG rounded rectangle, atau ikon lucide untuk bahasa tanpa negara.
@@ -103,12 +117,8 @@ function LangFlag({ lang, muted }: { lang: LangEntry; muted?: boolean }) {
 
 
 
-// Pengajar native speaker = 2x tarif pengajar lokal.
-// Ubah konstanta ini kalau markup native mau disesuaikan.
-const NATIVE_MULTIPLIER = 2;
-
-// Native speaker baru tersedia untuk bahasa berikut. Sisanya tampil "Coming soon".
-const NATIVE_AVAILABLE_LANGS = ["English", "Tagalog", "Spanish", "Arabic"];
+/** Nama bahasa yang dikenal pricelist (dipakai untuk hitung harga & keranjang). */
+const priceName = (lang: LangEntry) => lang.price ?? lang.name;
 
 // price-source-single-v1 — B1 & B2 DIPISAH: di kategori C (Inggris, Jepang,
 // Korea, Mandarin, Prancis, Jerman, Arab) tarifnya beda 10rb per tingkat, dan
@@ -131,40 +141,6 @@ function formatRp(v: number) {
   }).format(v);
 }
 
-// Harga per sesi sesuai kategori, level, dan tipe pengajar.
-// Native dibulatkan ke ribuan terdekat biar rapi.
-function priceFor(cat: string, levelKey: string, teacherType: TeacherType) {
-  const base = PRICE_PRIVATE_60MIN[cat][getPrivateLevelTier(levelKey, cat)];
-  if (teacherType === "native") {
-    return Math.round((base * NATIVE_MULTIPLIER) / 1000) * 1000;
-  }
-  return base;
-}
-
-// Harga PER SISWA / sesi 60 menit Semi-Private. Rumus identik WA Inbox
-// (semiPrivatePerStudent): total grup level Basic × multiplier level ÷ jumlah siswa.
-// Native tidak berlaku untuk Semi-Private.
-function semiPriceFor(cat: string, levelKey: string, classSize: number) {
-  const base60 = SEMI_PRIVATE_PRICE_BASIC[cat]?.[classSize - 1] ?? 0;
-  // Semi-Private tetap 4 tier (B1 = B2) — getLevelTier, bukan getPrivateLevelTier.
-  const totalGroup = Math.round(base60 * (LEVEL_MULTIPLIER[getLevelTier(levelKey)] ?? 1));
-  return { totalGroup, perStudent: Math.round(totalGroup / classSize) };
-}
-
-function buildWaLink(
-  lang: string,
-  level: string,
-  sessions: number,
-  price: number,
-  teacherType: TeacherType,
-  classSize?: number,
-) {
-  const msg = classSize
-    ? `Halo Min Ling! Saya tertarik daftar Kelas Semi Private ${lang} (grup ${classSize} orang) level ${level} (${sessions} sesi = ${formatRp(price)}/orang). Bisa info lebih lanjut?`
-    : `Halo Min Ling! Saya tertarik daftar Kelas Private ${lang} (${teacherType === "native" ? "Pengajar Native" : "Pengajar Lokal"}) level ${level} (${sessions} sesi = ${formatRp(price)}). Bisa info lebih lanjut?`;
-  return `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
-}
-
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function HargaPage() {
@@ -178,6 +154,51 @@ export default function HargaPage() {
   const [classSize, setClassSize] = useState(2);
   const isSemi = classType === "semi";
 
+  // [harga-keranjang-kelas-v1] Keranjang: beberapa paket → satu invoice Xendit.
+  const [cart, setCart] = useState<KelasCartItem[]>([]);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  // Tab level DI DALAM kartu. Isinya cuma penyimpangan dari filter atas: kartu
+  // tanpa entri di sini mengikuti `levelKey`, dan begitu filter atas diubah
+  // semua penyimpangan dibuang supaya kartu kembali seragam ("sync").
+  const [levelKartu, setLevelKartu] = useState<Record<string, string>>({});
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setCart(loadCart()); }, []);
+  const updateCart = (next: KelasCartItem[]) => { setCart(next); saveCart(next); };
+
+  const pilihLevelFilter = (key: string) => { setLevelKey(key); setLevelKartu({}); };
+
+  /** Item keranjang untuk satu kartu pada level yang sedang dipilih di kartu itu. */
+  const buatItem = (lang: LangEntry, level: string): KelasCartItem | null =>
+    normalizeKelasItem({
+      language: priceName(lang),
+      level,
+      sessions,
+      classType,
+      classSize: isSemi ? classSize : 1,
+      teacherType: isSemi ? "lokal" : teacherType,
+    });
+
+  // Pembaruan FUNGSIONAL (bukan dari `cart` di closure): dua kartu yang diklik
+  // beruntun sebelum render berikutnya akan sama-sama masuk. Versi closure
+  // membuat klik kedua menimpa hasil klik pertama.
+  const tambahKeKeranjang = (item: KelasCartItem) => {
+    const key = cartItemKey(item);
+    setCart((prev) => {
+      const next = [...prev.filter((c) => cartItemKey(c) !== key), item].slice(-CART_MAX_ITEMS);
+      saveCart(next);
+      return next;
+    });
+  };
+  const beliSekarang = (item: KelasCartItem) => { tambahKeKeranjang(item); setCheckoutOpen(true); };
+
+  // Nama & bendera untuk daftar di modal checkout (keranjang menyimpan nama
+  // pricelist, bukan nama tampilan — lihat priceName).
+  const resolveLabel = (language: string) => {
+    const e = LANGUAGES.find((l) => priceName(l) === language);
+    return { label: e?.name ?? language, code: e?.code };
+  };
+
   const filtered = useMemo(() => {
     setShowAll(false);
     if (!search.trim()) return LANGUAGES;
@@ -186,7 +207,6 @@ export default function HargaPage() {
     return LANGUAGES.filter(l => matchesLangQuery(l.name, search));
   }, [search]);
 
-  const currentLevel = LEVELS.find(l => l.key === levelKey) ?? LEVELS[0];
   // Semi-Private tidak menawarkan pengajar native → badge & markup native mati
   // total di mode ini (kalau tidak, kartunya menagih 2× tarif yang tak pernah ada).
   const isNative = !isSemi && teacherType === "native";
@@ -203,9 +223,10 @@ export default function HargaPage() {
             <Link href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium hidden sm:block">Home</Link>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium hidden sm:block">Blog</Link>
             {/* [daftar-page-funnel-v1] "Daftar Sekarang" tidak lagi lempar ke
-                WhatsApp — sekarang ada halaman pendaftarannya sendiri. Tombol
-                "Daftar via WhatsApp" per kartu di bawah sengaja DIBIARKAN: itu
-                jalur konsultasi, bukan checkout. */}
+                WhatsApp — sekarang ada halaman pendaftarannya sendiri.
+                [harga-keranjang-kelas-v1] Tombol "Daftar via WhatsApp" per kartu
+                sudah DIGANTI tombol Beli / Tambah ke keranjang (checkout Xendit
+                langsung). Jalur konsultasi WA tetap ada di CTA bawah halaman. */}
             <Link
               href="/daftar"
               className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors"
@@ -274,7 +295,7 @@ export default function HargaPage() {
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Level:</span>
             {LEVELS.map(l => (
-              <button key={l.key} onClick={() => setLevelKey(l.key)}
+              <button key={l.key} onClick={() => pilihLevelFilter(l.key)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                   levelKey === l.key
                     ? "bg-[#1A9E9E] text-white shadow-sm"
@@ -382,72 +403,137 @@ export default function HargaPage() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+            <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {(showAll ? filtered : filtered.slice(0, 12)).map(lang => {
                 const nativeAvail = NATIVE_AVAILABLE_LANGS.includes(lang.name);
                 const comingSoon = isNative && !nativeAvail;
-                const semi = isSemi ? semiPriceFor(lang.cat, levelKey, classSize) : null;
-                const price = semi ? semi.perStudent : priceFor(lang.cat, levelKey, teacherType);
-                const total = price * sessions;
-                const waLink = buildWaLink(
-                  lang.name, currentLevel.label, sessions, total, teacherType,
-                  isSemi ? classSize : undefined,
-                );
+                // Level kartu: penyimpangan lokal kalau ada, kalau tidak ikut filter atas.
+                const lvl = levelKartu[lang.name] ?? levelKey;
+                const item = buatItem(lang, lvl);
+                const quote = item ? quoteKelasItem(item) : null;
+                const price = quote?.perSession ?? 0;
+                const total = quote?.amount ?? 0;
+                const semi = isSemi ? getSemiPrivatePrice(priceName(lang), lvl, classSize, 60) : null;
+                const foto = getLangPhoto(priceName(lang));
+                const diKeranjang = cart.some(c => item && cartItemKey(c) === cartItemKey(item));
                 return (
                   <div key={lang.name}
-                    className={`group bg-white rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-200 ${comingSoon ? "border-slate-100 opacity-60" : "border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md"}`}>
-                    <div className="flex items-center gap-3">
-                      <LangFlag lang={lang} muted={comingSoon} />
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5">
-                          <p className="font-bold text-slate-900 text-sm truncate">{lang.name}</p>
-                          {isNative && (nativeAvail ? (
-                            <span className="shrink-0 text-[9px] font-extrabold bg-[#fbbf24] text-slate-900 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Native</span>
-                          ) : (
-                            <span className="shrink-0 text-[9px] font-extrabold bg-slate-200 text-slate-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Coming soon</span>
-                          ))}
-                        </div>
-                        <p className="text-xs text-slate-400 mt-0.5">{currentLevel.label} · {currentLevel.sub}</p>
+                    className={`group flex flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-200 ${comingSoon ? "border-slate-100 opacity-60" : "border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md"}`}>
+
+                    {/* [harga-kartu-banner-v1] Banner foto bahasa — nama & bendera
+                        di dalam foto, di atas gradien gelap (teks putih hilang di
+                        sampul terang). Bahasa tanpa foto stok pakai gradien teal. */}
+                    <div className="relative isolate flex h-24 items-end overflow-hidden transform-gpu [backface-visibility:hidden]"
+                      style={{ background: "#0E1526" }}>
+                      {foto ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img src={foto} alt="" loading="lazy" decoding="async"
+                          className="absolute inset-0 h-full w-full transform-gpu scale-[1.02] object-cover transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]"
+                          onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#1A9E9E] via-[#17918f] to-[#0e7070]" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                      <div className="relative flex w-full items-center gap-2 p-3">
+                        <LangFlag lang={lang} muted={comingSoon} />
+                        <p className="min-w-0 flex-1 truncate text-sm font-bold text-white drop-shadow">{lang.name}</p>
+                        {isNative && (nativeAvail ? (
+                          <span className="shrink-0 rounded-full bg-[#fbbf24] px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wide text-slate-900">Native</span>
+                        ) : (
+                          <span className="shrink-0 rounded-full bg-white/25 px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wide text-white">Soon</span>
+                        ))}
                       </div>
+
+                      {/* Aksi muncul saat kursor di atas kartu (desktop). Di HP
+                          tidak ada hover → tombol yang sama dirender di badan kartu. */}
+                      {!comingSoon && item && (
+                        <div className="absolute inset-0 z-10 hidden items-center justify-center gap-2 bg-slate-900/70 opacity-0 backdrop-blur-[1px] transition-opacity duration-200 group-hover:opacity-100 sm:flex">
+                          <button onClick={() => beliSekarang(item)}
+                            className="rounded-xl bg-[#1A9E9E] px-3.5 py-2 text-xs font-bold text-white shadow transition-colors hover:bg-[#178585]">
+                            Beli
+                          </button>
+                          <button onClick={() => tambahKeKeranjang(item)}
+                            className="flex items-center gap-1 rounded-xl bg-white px-3 py-2 text-xs font-bold text-slate-700 shadow transition-colors hover:bg-slate-50">
+                            <Plus className="h-3.5 w-3.5" /> Keranjang
+                          </button>
+                        </div>
+                      )}
                     </div>
-                    {comingSoon ? (
-                      <>
-                        <div className="bg-slate-50 rounded-xl px-3 py-3.5 text-center">
-                          <p className="text-xs text-slate-400 font-medium leading-relaxed">Pengajar native <span className="font-bold text-slate-500">{lang.name}</span> belum tersedia</p>
-                        </div>
-                        <div className="flex items-center justify-center gap-1.5 bg-slate-100 text-slate-400 text-xs font-bold py-2.5 rounded-xl cursor-not-allowed select-none">
-                          Segera Hadir
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="bg-slate-50 rounded-xl px-3 py-2.5">
-                          <div className="flex items-baseline justify-between">
-                            <div>
-                              <p className="text-[11px] text-slate-400 font-medium">
-                                {isSemi ? `Per siswa / sesi (grup ${classSize})` : "Per sesi (60 min)"}
-                              </p>
-                              <p className="text-lg font-extrabold text-[#1A9E9E] leading-tight">{formatRp(price)}</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-[11px] text-slate-400 font-medium">{sessions} sesi</p>
-                              <p className="text-sm font-bold text-slate-700">{formatRp(total)}</p>
-                            </div>
+
+                    <div className="flex flex-1 flex-col gap-2.5 p-3.5">
+                      {/* Tab level per kartu — awalnya ikut filter atas, boleh
+                          ditimpa untuk kartu ini saja (mis. Korea B1, Jepang A1).
+                          Kartu "Segera Hadir" tidak menampilkannya: harganya pun
+                          tidak ditampilkan, jadi memilih level tak ada artinya. */}
+                      <div className={`flex-wrap gap-1 ${comingSoon ? "hidden" : "flex"}`}>
+                        {LEVELS.map(l => (
+                          <button key={l.key}
+                            onClick={() => setLevelKartu(prev => ({ ...prev, [lang.name]: l.key }))}
+                            aria-label={`Level ${l.label} ${lang.name}`}
+                            className={`rounded-lg px-2 py-1 text-[10px] font-bold transition-all ${
+                              lvl === l.key
+                                ? "bg-[#1A9E9E] text-white shadow-sm"
+                                : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                            }`}>
+                            {l.key}
+                          </button>
+                        ))}
+                      </div>
+
+                      {comingSoon ? (
+                        <>
+                          <div className="bg-slate-50 rounded-xl px-3 py-3.5 text-center">
+                            <p className="text-xs text-slate-400 font-medium leading-relaxed">Pengajar native <span className="font-bold text-slate-500">{lang.name}</span> belum tersedia</p>
                           </div>
-                          {semi && (
-                            <div className="mt-2 pt-2 border-t border-slate-200/70 flex items-baseline justify-between text-[11px] text-slate-400">
-                              <span>Satu grup / sesi</span>
-                              <span className="font-semibold text-slate-600">{formatRp(semi.totalGroup)}</span>
+                          <div className="mt-auto flex items-center justify-center gap-1.5 bg-slate-100 text-slate-400 text-xs font-bold py-2.5 rounded-xl cursor-not-allowed select-none">
+                            Segera Hadir
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="bg-slate-50 rounded-xl px-3 py-2.5">
+                            <div className="flex items-baseline justify-between">
+                              <div>
+                                <p className="text-[11px] text-slate-400 font-medium">
+                                  {isSemi ? `Per siswa / sesi (grup ${classSize})` : "Per sesi (60 min)"}
+                                </p>
+                                <p className="text-lg font-extrabold text-[#1A9E9E] leading-tight">{formatRp(price)}</p>
+                              </div>
+                              <div className="text-right">
+                                <p className="text-[11px] text-slate-400 font-medium">{sessions} sesi</p>
+                                <p className="text-sm font-bold text-slate-700">{formatRp(total)}</p>
+                              </div>
+                            </div>
+                            {semi && semi.totalGroup > 0 && (
+                              <div className="mt-2 pt-2 border-t border-slate-200/70 flex items-baseline justify-between text-[11px] text-slate-400">
+                                <span>Satu grup / sesi</span>
+                                <span className="font-semibold text-slate-600">{formatRp(semi.totalGroup)}</span>
+                              </div>
+                            )}
+                          </div>
+
+                          {diKeranjang && (
+                            <p className="flex items-center gap-1 text-[11px] font-semibold text-[#1A9E9E]">
+                              <ShoppingCart className="h-3 w-3" /> Sudah di keranjang
+                            </p>
+                          )}
+
+                          {/* Versi HP dari aksi hover di banner. */}
+                          {item && (
+                            <div className="mt-auto flex gap-2 sm:hidden">
+                              <button onClick={() => beliSekarang(item)}
+                                className="flex-1 rounded-xl bg-[#1A9E9E] py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#178585]">
+                                Beli
+                              </button>
+                              <button onClick={() => tambahKeKeranjang(item)}
+                                className="flex flex-1 items-center justify-center gap-1 rounded-xl border border-slate-200 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:border-[#1A9E9E]/40 hover:text-[#1A9E9E]">
+                                <Plus className="h-3.5 w-3.5" /> Keranjang
+                              </button>
                             </div>
                           )}
-                        </div>
-                        <a href={waLink} target="_blank" rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 bg-[#1A9E9E] hover:bg-[#178585] text-white text-xs font-bold py-2.5 rounded-xl transition-colors">
-                          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                          Daftar via WhatsApp
-                        </a>
-                      </>
-                    )}
+                        </>
+                      )}
+                    </div>
                   </div>
                 );
               })}
@@ -519,6 +605,19 @@ export default function HargaPage() {
           </div>
         </div>
       </div>
+
+      {/* [harga-keranjang-kelas-v1] Bilah keranjang + checkout */}
+      <KeranjangBar items={cart} hidden={checkoutOpen} onCheckout={() => setCheckoutOpen(true)} />
+      {checkoutOpen && (
+        <CheckoutKelasModal
+          items={cart}
+          resolveLabel={resolveLabel}
+          onRemove={key => updateCart(cart.filter(c => cartItemKey(c) !== key))}
+          onAddMore={() => { setCheckoutOpen(false); gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }}
+          onClose={() => setCheckoutOpen(false)}
+          onPaid={() => updateCart([])}
+        />
+      )}
 
       {/* Footer */}
       <footer className="mt-4 border-t border-slate-100 bg-white text-center py-6 text-xs text-slate-400">

@@ -86,21 +86,6 @@ export function saveCart(items: TestPrepCartItem[]): void {
   } catch { /* penyimpanan penuh / private mode — abaikan */ }
 }
 
-export interface CartIdentity { name: string; email: string; wa: string }
-
-export function loadIdentity(): CartIdentity {
-  if (typeof window === "undefined") return { name: "", email: "", wa: "" };
-  try {
-    const o = JSON.parse(localStorage.getItem(IDENT_KEY) || "{}");
-    return {
-      name: typeof o?.name === "string" ? o.name : "",
-      email: typeof o?.email === "string" ? o.email : "",
-      wa: typeof o?.wa === "string" ? o.wa : "",
-    };
-  } catch { return { name: "", email: "", wa: "" }; }
-}
-
-export function saveIdentity(id: CartIdentity): void {
-  if (typeof window === "undefined") return;
-  try { localStorage.setItem(IDENT_KEY, JSON.stringify(id)); } catch { /* abaikan */ }
-}
+// Identitas pendaftar pindah ke lib/checkoutIdentity — dipakai bareng keranjang
+// /harga supaya pengunjung tidak mengisi nama/email/WA dua kali.
+export { loadIdentity, saveIdentity, type CartIdentity } from "./checkoutIdentity";

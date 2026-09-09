@@ -46,6 +46,8 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   mandarin: "mandarin", "mandarin (china)": "mandarin", china: "mandarin", chinese: "mandarin",
   hindi: "hindi",
   indonesia: "indonesian", indonesian: "indonesian", "bahasa indonesia": "indonesian",
+  // [harga-kartu-banner-v1] Kartu BIPA di /harga — pricelist menyimpannya "BIPA".
+  bipa: "indonesian",
   sunda: "sundanese", sundanese: "sundanese", "bahasa sunda": "sundanese",
   ibrani: "hebrew", hebrew: "hebrew",
   "mesir kuno": "ancient-egypt", "ancient egypt": "ancient-egypt", hieroglif: "ancient-egypt",

@@ -679,11 +679,13 @@ export async function POST(req: NextRequest) {
       updateData.payment_channel = payment_channel;
     }
 
-    // [test-prep-keranjang-v1] Satu invoice keranjang Persiapan Ujian menanam
-    // N baris leads: `LINGUO-TP-<id>`, `LINGUO-TP-<id>-2`, … — semuanya harus
-    // ikut berubah status, bukan cuma baris pertama.
-    const isTestPrepCart = /^LINGUO-TP-/.test(external_id || "");
-    const leadFilter = isTestPrepCart
+    // [test-prep-keranjang-v1] + [harga-keranjang-kelas-v1] Satu invoice
+    // keranjang menanam N baris leads: `LINGUO-TP-<id>`, `LINGUO-TP-<id>-2`, …
+    // (Persiapan Ujian) atau `LINGUO-KLS-<id>`, `-2`, … (Kelas Private/Semi
+    // dari kalkulator /harga) — semuanya harus ikut berubah status, bukan
+    // cuma baris pertama.
+    const isMultiLeadCart = /^LINGUO-(TP|KLS)-/.test(external_id || "");
+    const leadFilter = isMultiLeadCart
       ? `xendit_external_id=like.${encodeURIComponent(external_id)}*`
       : `xendit_external_id=eq.${external_id}`;
     const res = await fetch(
@@ -713,7 +715,7 @@ export async function POST(req: NextRequest) {
       // funnel-autoconvert-v1: lead funnel landing yang LUNAS → registrations otomatis
       // biar langsung nongol di Overview (line chart, Pendaftaran Terbaru, omzet).
       // Skip diam-diam kalau bukan lead funnel / digital / sudah dikonversi.
-      if (isTestPrepCart) {
+      if (isMultiLeadCart) {
         // Tiap paket di keranjang = satu registrasi sendiri (bahasa & level beda).
         try {
           const sibRes = await fetch(
@@ -725,7 +727,7 @@ export async function POST(req: NextRequest) {
             if (sib?.xendit_external_id) await autoConvertPaidLeadToRegistration(sib.xendit_external_id);
           }
         } catch (e) {
-          console.error("Test prep cart autoconvert error (non-fatal):", e);
+          console.error("Cart autoconvert error (non-fatal):", e);
         }
       } else {
         await autoConvertPaidLeadToRegistration(external_id);
