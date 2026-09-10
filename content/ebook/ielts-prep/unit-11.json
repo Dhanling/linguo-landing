@@ -1,0 +1,301 @@
+{
+ "jenis": "testprep",
+ "skill": "WRITING TASK 1 · ACADEMIC",
+ "title": "Pai, tabel, diagram proses & peta",
+ "title_target": "Describing proportions, processes and changes to a place",
+ "goal": "Menulis laporan 150+ kata untuk empat bahan visual yang tidak punya garis tren: grafik pai, tabel angka, diagram proses, dan peta perubahan — masing-masing dengan overview dan bahasa yang khas.",
+ "bekal": [
+  "memilih fitur utama dari tabel lima baris tanpa mendaftar semua angkanya",
+  "mendeskripsikan proses delapan tahap memakai present simple passive dan penanda urutan",
+  "menulis perubahan sebuah tempat dengan was demolished, was replaced by, has been converted into"
+ ],
+ "sections": [
+  {
+   "title": "Empat bahan yang belum kamu latih",
+   "blocks": [
+    {"type": "p", "text": "Unit 10 melatih grafik garis dan batang: bahasanya tren, waktunya lampau, kata kerjanya *rose*, *fell*, *fluctuated*. Empat bahan di unit ini tidak berjalan seperti itu, dan siswa yang memakai bahasa tren di tempat yang salah kehilangan nilai Task Achievement dengan cepat — misalnya menulis *the process increased* untuk diagram proses, atau *coal decreased* untuk dua grafik pai yang sebenarnya boleh (karena ada dua tahun), tapi *the map rose* yang jelas tidak."},
+    {"type": "tabel", "head": ["Bahan", "Yang dicari pemeriksa di overview", "Tata bahasa inti"], "rows": [
+     ["Grafik pai (1–3 pai)", "Irisan terbesar & terkecil; kalau ada dua tahun: apa yang bertukar posisi", "Bahasa proporsi: *accounted for, made up, a quarter*. Past tense kalau tahunnya sudah lewat."],
+     ["Tabel angka", "Nilai tertinggi & terendah di kolom yang paling penting; satu baris yang menyimpang dari pola", "Perbandingan: *the highest, twice as many as, whereas*"],
+     ["Diagram proses", "Jumlah tahap, di mana proses mulai dan berakhir, linear atau berputar, alami atau buatan manusia", "**Present simple passive** + penanda urutan. TANPA angka, TANPA past tense."],
+     ["Peta (dua waktu)", "Perubahan besar keseluruhan: tempat itu jadi apa; apa yang tetap", "Past simple + present perfect passive, arah mata angin"]
+    ]},
+    {"type": "p", "text": "Empat paragraf yang kamu pakai di Unit 10 tetap berlaku: **introduction** (parafrase soal), **overview** (*Overall,* … tanpa angka), lalu **dua paragraf detail**. Yang berubah hanya isi paragraf detail: untuk proses, bagilah tahapnya jadi dua kelompok (misal 1–4 dan 5–8); untuk peta, bagilah menurut wilayah (utara jalan vs pesisir) atau menurut jenis perubahan (yang hilang vs yang dibangun) — jangan menurut tahun, karena itu memaksamu mengulang deskripsi yang sama dua kali."}
+   ]
+  },
+  {
+   "title": "Grafik pai: bahasa proporsi",
+   "blocks": [
+    {"type": "p", "text": "*The charts below show the sources of electricity generated in Country X in 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.*"},
+    {"type": "grafik", "jenis": "pai", "judul": "Sources of electricity, Country X (%)", "satuan": "%",
+     "pai": [
+      {"judul": "2000", "irisan": [
+       {"nama": "Coal", "nilai": 48}, {"nama": "Gas", "nilai": 20}, {"nama": "Nuclear", "nilai": 15}, {"nama": "Hydro", "nilai": 12}, {"nama": "Renewables", "nilai": 5}
+      ]},
+      {"judul": "2020", "irisan": [
+       {"nama": "Coal", "nilai": 25}, {"nama": "Gas", "nilai": 30}, {"nama": "Nuclear", "nilai": 10}, {"nama": "Hydro", "nilai": 13}, {"nama": "Renewables", "nilai": 22}
+      ]}
+     ], "caption": "Dua pai untuk tahun yang berbeda = kamu WAJIB membandingkan keduanya, bukan mendeskripsikan satu per satu."},
+    {"type": "sub", "text": "Kata dan pecahan yang harus otomatis"},
+    {"type": "tabel", "head": ["Angka", "Cara menulisnya", "Contoh kalimat"], "rows": [
+     ["25%", "a quarter · one in four", "Coal **accounted for** exactly **a quarter** of electricity in 2020."],
+     ["30%", "just under a third · almost a third", "Gas **made up just under a third** of the total."],
+     ["48%", "just under a half · nearly half", "In 2000, coal supplied **just under half** of all electricity."],
+     ["20%", "a fifth · one in five", "Gas **represented a fifth** of the mix in 2000."],
+     ["10% / 12%", "a tenth / around an eighth", "Nuclear power **was responsible for a tenth** of generation."],
+     ["5%", "a twentieth · a small fraction · negligible", "Renewables **were negligible**, at just 5%."]
+    ]},
+    {"type": "kotak", "title": "Kata kerja proporsi (semua berarti \"berjumlah\")", "items": [
+     "*Coal **accounted for** 48% of the total.* — paling sering dipakai, selalu diikuti *for*.",
+     "*Gas **made up** a fifth of the mix.* / *Renewables **represented** 5%.* / *Nuclear **was responsible for** 15%.*",
+     "*Coal **had the largest share**, at 48%.* — *share* dan *proportion* adalah kata benda yang jauh lebih baik daripada mengulang *percentage*.",
+     "Balik arahnya untuk variasi: ***The largest proportion of** electricity, 48%, **came from** coal.* / ***Half of** the country's electricity **was generated by** coal-fired stations.*"
+    ]},
+    {"type": "sub", "text": "Model paragraf (dua pai, 2000 vs 2020)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The two pie charts compare the sources of electricity generation in Country X at the beginning and the end of a 20-year period.",
+     "Overall, the country moved away from coal towards gas and renewable energy, although fossil fuels still supplied more than half of all electricity in 2020. The share of nuclear power fell, while hydroelectricity was the only source that barely changed.",
+     "In 2000, coal was by far the largest source, accounting for just under half of the total (48%), while gas made up a fifth. Nuclear power and hydroelectricity were responsible for 15% and 12% respectively, and renewables were negligible, at only 5%.",
+     "By 2020 the mix was more balanced. Gas had become the leading source, at just under a third, and coal had fallen to exactly a quarter. The most dramatic change was in renewables, whose share rose more than fourfold to 22%, overtaking both hydroelectricity, which stood at 13%, and nuclear power, which fell by a third to 10%."
+    ]},
+    {"type": "p", "text": "Perhatikan dua hal. Pertama, tidak ada satu pun kalimat yang mendeskripsikan 2020 tanpa menyinggung 2000 — tiap angka baru dibandingkan (*had become*, *had fallen*, *rose more than fourfold*, *overtaking*). Kedua, sepuluh angka di kedua pai hanya perlu ditulis sekali; menyebut *48% and 25%* berdua di satu kalimat lebih hemat daripada dua paragraf terpisah."}
+   ]
+  },
+  {
+   "title": "Tabel angka: pilih, jangan daftar",
+   "blocks": [
+    {"type": "p", "text": "Tabel adalah bahan Task 1 yang paling banyak angkanya dan paling sedikit petunjuk visualnya. Lima baris kali tiga kolom = 15 angka; kalau semuanya kamu tulis, laporanmu jadi 250 kata membosankan dan tetap Band 5 untuk Task Achievement karena tidak ada **pemilihan**. Aturan praktis: sebut **tertinggi dan terendah di tiap kolom**, plus **satu baris yang menyimpang dari pola** — biasanya di situ letak fitur yang paling menarik."},
+    {"type": "tabel", "head": ["Country", "Arrivals (millions)", "Revenue (US$bn)", "Average stay (nights)"], "rows": [
+     ["France", "90", "64", "6.5"],
+     ["Spain", "84", "80", "7.5"],
+     ["Thailand", "40", "60", "9.5"],
+     ["Japan", "32", "46", "6.0"],
+     ["Egypt", "13", "13", "10.0"]
+    ]},
+    {"type": "p", "text": "*The table below shows the number of international tourist arrivals, tourism revenue and average length of stay in five countries in 2019.*"},
+    {"type": "sub", "text": "Dua menit membaca tabel"},
+    {"type": "list", "items": [
+     "**Baca judul kolomnya dulu, bukan angkanya.** Tiga kolom ini mengukur tiga hal berbeda: berapa banyak orang datang, berapa uang yang masuk, berapa lama mereka tinggal.",
+     "**Cari yang tertinggi dan terendah tiap kolom:** France (arrivals), Spain (revenue), Egypt (stay). Sudah tiga fakta — cukup untuk overview.",
+     "**Cari yang tidak konsisten.** France menerima pengunjung paling banyak tapi BUKAN pendapatan paling besar; Thailand hanya menerima kurang dari separuh pengunjung France tapi pendapatannya hampir sama. Inilah kalimat yang membedakan Band 7 dari Band 6.",
+     "**Abaikan sisanya.** Japan boleh disebut satu kali sebagai pembanding, boleh juga tidak sama sekali."
+    ]},
+    {"type": "kotak", "title": "Overview + satu paragraf detail", "items": [
+     "*Overall, France and Spain attracted far more visitors than the other three countries, but it was Spain that earned the most from tourism. Egypt, which received by far the fewest arrivals, kept its visitors for the longest.*",
+     "*France received the largest number of tourists, at 90 million, closely followed by Spain with 84 million. Spain nevertheless generated the highest revenue, at US$80bn, a quarter more than France earned from a slightly larger number of visitors. Thailand shows the same pattern even more clearly: with 40 million arrivals, fewer than half the French figure, it still took US$60bn, which is explained by the length of its visitors' stay — 9.5 nights on average, three nights longer than in France.*",
+     "Angka yang dipakai: 8 dari 15. Sisanya (Japan, Egypt revenue, Spain stay) masuk di paragraf detail kedua atau dilewati."
+    ]},
+    {"type": "p", "text": "Kalau tabelnya punya kolom tahun (2000, 2010, 2020), perlakukan seperti grafik garis: bahasanya kembali jadi bahasa tren. Yang menentukan bukan bentuk bahannya, tapi ada-tidaknya **waktu** di dalamnya."}
+   ]
+  },
+  {
+   "title": "Diagram proses: pasif dan urutan",
+   "blocks": [
+    {"type": "p", "text": "*The diagram below shows how waste paper is recycled. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.*"},
+    {"type": "gambar", "file": "proses-11.svg", "lebar": "160mm", "caption": "Diagram proses: delapan tahap, dibaca dari kiri atas ke kanan lalu turun dan kembali ke kiri."},
+    {"type": "sub", "text": "Tiga hal yang wajib ada di overview proses"},
+    {"type": "list", "items": [
+     "**Berapa tahap.** *The process consists of eight stages* — hitung kotaknya, jangan mengarang.",
+     "**Mulai dan berakhir dengan apa.** *…beginning with the collection of used paper and ending with the delivery of finished rolls to printers.* Frasa *begins with* dan *ends with* diikuti kata benda atau -ing, bukan klausa.",
+     "**Linear atau berputar (cyclical).** Diagram ini linear — bahan bakunya masuk sekali dan keluar sebagai produk. Kalau ada panah yang kembali ke tahap awal, tulis *the process is cyclical* dan itu langsung jadi fitur utama."
+    ]},
+    {"type": "tabel", "head": ["Fungsi", "Frasa", "Contoh"], "rows": [
+     ["memulai", "First, · To begin with, · The process begins when/with", "**First**, waste paper **is collected** from homes and offices."],
+     ["melanjutkan", "Next, · Then · After that, · In the following stage,", "**In the following stage**, the paper **is sorted** by grade."],
+     ["menyambung dalam satu kalimat", "after which · before being · where · so that", "The paper is shredded, **after which** it **is mixed** with water."],
+     ["menyatakan syarat/selesainya tahap", "Once … has been … · When this has been done,", "**Once** the pulp **has been produced**, it is passed through a screen."],
+     ["mengakhiri", "Finally, · In the final stage, · The process ends with", "**Finally**, the paper is cut, rolled **and sent** to printers."]
+    ]},
+    {"type": "kotak", "title": "Pasif: bentuk yang dipakai, dan kenapa", "items": [
+     "**Present simple passive** (*is collected, are removed, is dried*) dipakai karena yang penting APA yang terjadi, bukan SIAPA yang melakukannya — dan karena proses ini berlaku kapan saja, bukan sekali di masa lalu. *Workers collect the paper* tidak salah tata bahasa, tapi memberi informasi yang tidak ada di diagram.",
+     "**Present perfect passive** setelah *once / when / after*: *Once the ink **has been removed**, the pulp is pressed.*",
+     "**-ing passive** setelah preposisi: *before **being dried** on heated rollers*, *after **being mixed** with water*.",
+     "Kesalahan paling sering: menghilangkan *is/are* (*the paper collected from homes*) dan memakai past tense (*the paper was collected*). Diagram proses tanpa tahun = present tense."
+    ]},
+    {"type": "sub", "text": "Model jawaban (Band 7.5, 185 kata)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The diagram illustrates how used paper is processed and turned into new paper for printing.",
+     "Overall, the process consists of eight stages, beginning with the collection of waste paper from households and offices and ending with the delivery of finished rolls to printers. It is a linear, entirely mechanical process, in which the paper is first broken down into pulp and then cleaned before being formed into sheets again.",
+     "First, waste paper is collected from homes and offices and taken to a recycling plant, where it is sorted by grade and quality. The sorted paper is then shredded into small pieces, after which it is mixed with water to form a thick pulp.",
+     "Once the pulp has been produced, it is passed through a screen so that staples and glue can be removed. In the next stage, the ink is taken out in flotation tanks, where air bubbles carry it to the surface. The clean pulp is then pressed and dried on heated rollers, and in the final stage the resulting paper is cut, rolled and sent to printers, where it is used once again."
+    ]},
+    {"type": "tabel", "head": ["Kriteria", "Yang dilakukan model"], "rows": [
+     ["Task Achievement", "Overview menyebut jumlah tahap, titik awal, titik akhir, dan sifat prosesnya (linear, mekanis) — empat hal, tanpa mengulang rincian tahap. Kedelapan tahap disebut, tidak ada yang hilang dan tidak ada yang ditambah."],
+     ["Coherence", "Dibagi dua paragraf detail: tahap 1–4 (memecah kertas) dan 5–8 (membersihkan lalu membentuk kembali). Penanda urutan tidak diulang: *First, then, after which, Once, In the next stage, in the final stage*."],
+     ["Lexical", "Parafrase label diagram, bukan penyalinan: *waste paper* → *used paper*, *de-inked* → *the ink is taken out*, *sent to printers* → *the delivery of finished rolls*. Kata benda proses: *collection, delivery, stage, plant*."],
+     ["Grammar", "Pasif konsisten dan bervariasi bentuknya: *is collected, is sorted, has been produced, before being formed, can be removed*. Ada klausa relatif (*where it is sorted*, *where air bubbles carry it*) dan klausa tujuan (*so that*)."]
+    ]}
+   ]
+  },
+  {
+   "title": "Peta: apa yang hilang, apa yang datang",
+   "blocks": [
+    {"type": "p", "text": "*The maps below show the coastal village of Hallam Bay in 1990 and in 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.*"},
+    {"type": "gambar", "file": "peta-11.svg", "lebar": "160mm", "caption": "Bandingkan panel demi panel: apa yang hilang, apa yang menggantikannya, apa yang tetap."},
+    {"type": "sub", "text": "Cara membaca peta dalam dua menit"},
+    {"type": "list", "items": [
+     "**Cari yang TIDAK berubah dulu.** Di sini: jalan pesisir, sungai, dan rumah-rumah di sebelah barat. Benda yang tetap adalah titik acuanmu untuk menjelaskan letak semua yang lain — dan satu kalimat *remained unchanged* di overview langsung menaikkan Task Achievement.",
+     "**Beri nama perubahan besarnya dalam satu frasa.** Desa pertanian → tujuan wisata. Itulah kalimat overview-mu; sisanya hanya bukti.",
+     "**Kelompokkan menurut wilayah**, bukan menurut tahun: sebelah utara jalan (pertanian → perumahan, hutan → sebagian jadi parkir) dan sepanjang pantai (dermaga → marina, hotel diperluas).",
+     "**Pakai kompas, bukan kiri-kanan.** *to the north of the road*, *in the south-east corner*, *along the coast*. Menulis *on the left of the map* dianggap bahasa yang lemah."
+    ]},
+    {"type": "tabel", "head": ["Perubahan", "Frasa", "Contoh"], "rows": [
+     ["hilang / dirobohkan", "was demolished · was pulled down · was removed · disappeared", "The pier **was demolished** at some point after 1990."],
+     ["diganti", "was replaced by · gave way to · now stands on the site of", "The farmland **gave way to** a housing estate."],
+     ["dialihfungsikan (bangunan tetap ada)", "was converted into · was turned into", "The farmhouse **has been converted into** a café."],
+     ["diperbesar / diperpanjang", "was extended · was enlarged · was widened", "The hotel **has been extended** eastwards."],
+     ["dibangun baru", "was built · was constructed · has been added", "A footbridge **has been built** over the river."],
+     ["dibuka / ditebang", "was cleared · was cut down · was replaced with", "Part of the woodland **was cleared** to make room for a car park."],
+     ["tetap", "remained unchanged · was left untouched · still runs", "Coast Road **still runs** along the seafront."]
+    ]},
+    {"type": "kotak", "title": "Past simple atau present perfect?", "items": [
+     "Keduanya benar dan sebaiknya dipakai bergantian. **Past simple** kalau kamu menyebut waktunya atau membandingkan dua peta secara langsung: *In 1990 the site **was occupied** by farmland.*",
+     "**Present perfect** kalau kamu melihat hasilnya sekarang: *The farmhouse **has been converted** into a café.* Aman kalau peta kedua bertahun sekarang atau tanpa tahun.",
+     "**Past perfect** untuk menegaskan urutan di dalam kalimat perbandingan: *By 2020 the farmland **had been replaced** by housing.*",
+     "Jangan pakai present simple (*the farmland is replaced*) — itu tata bahasa diagram proses, bukan peta."
+    ]},
+    {"type": "sub", "text": "Model jawaban (Band 7.5, 186 kata)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The two maps show how the coastal village of Hallam Bay developed between 1990 and 2020.",
+     "Overall, the village changed from a small farming settlement into a tourist destination: agricultural land to the north of the main road has given way to housing, and the seafront has been completely rebuilt. Coast Road itself, the river and the row of houses in the west remained unchanged throughout the period.",
+     "In 1990, the area north of Coast Road was occupied by farmland, with a farmhouse at its centre and woodland to the west. By 2020 this land had been replaced by a housing estate, and the farmhouse had been converted into a café. Roughly half of the woodland was cleared to make room for a car park.",
+     "The most striking changes took place along the coast. The pier that ran into the sea to the east of the houses was demolished and replaced by a marina, while the hotel beside it has been extended to almost twice its original size. A footbridge has also been built across the river, which previously could only be crossed at the road."
+    ]},
+    {"type": "tabel", "head": ["Kriteria", "Yang dilakukan model"], "rows": [
+     ["Task Achievement", "Overview menyebut sifat perubahan (*farming settlement → tourist destination*) DAN apa yang tetap — dua hal yang paling sering hilang di jawaban Band 6. Tujuh perubahan konkret dilaporkan, tidak ada yang dikarang."],
+     ["Coherence", "Dua paragraf detail dibagi menurut wilayah (utara jalan · pesisir), bukan menurut tahun, sehingga tiap perubahan dijelaskan satu kali saja. Referensi tempat memakai bangunan yang tidak berubah sebagai patokan."],
+     ["Lexical", "*gave way to, was occupied by, had been replaced, was converted into, was cleared, was demolished, has been extended* — tujuh cara berbeda menyatakan perubahan, tidak ada *changed* yang diulang."],
+     ["Grammar", "Campuran past simple, past perfect dan present perfect passive yang dipakai dengan alasan, bukan acak; klausa relatif (*the pier that ran into the sea*, *which previously could only be crossed*) menaikkan variasi kalimat kompleks."]
+    ]},
+    {"type": "kotak", "title": "Tiga kesalahan yang mahal", "items": [
+     "**Menebak sebab.** *The pier was demolished because it was old* — peta tidak memberi tahu alasannya. Laporkan yang terlihat saja.",
+     "**Menghitung jarak.** *The hotel is 200 metres from the river* — tidak ada skala. Pakai *next to, beside, opposite, on the far side of*.",
+     "**Mendeskripsikan dua peta terpisah** (satu paragraf 1990, satu paragraf 2020). Isinya jadi berulang dan tidak ada perbandingan — Coherence dan Task Achievement turun bersamaan."
+    ]}
+   ]
+  },
+  {
+   "title": "Tugas menulis (20 menit, dengan timer)",
+   "blocks": [
+    {"type": "p", "text": "*The pie charts below show how a typical household in Country Y spent its income in 1995 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.*"},
+    {"type": "grafik", "jenis": "pai", "judul": "Household spending by category, Country Y (%)", "satuan": "%",
+     "pai": [
+      {"judul": "1995", "irisan": [
+       {"nama": "Food", "nilai": 32}, {"nama": "Housing", "nilai": 24}, {"nama": "Transport", "nilai": 15}, {"nama": "Leisure", "nilai": 10}, {"nama": "Other", "nilai": 19}
+      ]},
+      {"judul": "2020", "irisan": [
+       {"nama": "Food", "nilai": 18}, {"nama": "Housing", "nilai": 33}, {"nama": "Transport", "nilai": 17}, {"nama": "Leisure", "nilai": 20}, {"nama": "Other", "nilai": 12}
+      ]}
+     ]},
+    {"type": "p", "text": "Periksa dirimu dengan tiga pertanyaan sebelum melihat model di bagian *Pembahasan*: (1) Apakah overview-mu menyebut pertukaran posisi antara dua kategori terbesar, tanpa angka? (2) Apakah tiap angka 2020 kamu sandingkan dengan angka 1995-nya di kalimat yang sama? (3) Apakah kamu memakai minimal tiga kata proporsi berbeda (*accounted for, made up, share, proportion*)?"}
+   ]
+  },
+  {
+   "title": "Sebelum mengerjakan latihan",
+   "blocks": [
+    {"type": "p", "text": "Latihan 1 memakai angka dari dua grafik pai listrik Country X, Latihan 2 dan 3 memakai diagram proses kertas daur ulang, Latihan 4 memakai dua peta Hallam Bay, dan Latihan 5 menguji overview dari ketiganya. Kerjakan tanpa melihat model jawaban."}
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Grafik pai Country X. Lengkapi kalimat dengan ungkapan proporsi yang tepat dari bank kata. Tiap ungkapan hanya dipakai sekali.",
+   "tipe": "isian",
+   "pilihan": ["a quarter", "just under a third", "just under a half", "a fifth", "a tenth"],
+   "items": [
+    "In 2020, coal accounted for exactly ____ of the electricity generated.",
+    "Gas made up ____ of the total in 2020, at 30%.",
+    "In 2000, coal supplied ____ of all electricity, at 48%.",
+    "Gas represented ____ of the mix in 2000, at 20%."
+   ]
+  },
+  {
+   "prompt": "Diagram proses kertas daur ulang. Lengkapi dengan bentuk pasif yang tepat dari bank kata. Ada dua ungkapan yang tidak terpakai.",
+   "tipe": "isian",
+   "pilihan": ["is collected", "is sorted", "is shredded", "is mixed", "is pressed", "are removed"],
+   "items": [
+    "The process begins when waste paper ____ from homes and offices.",
+    "At the recycling plant, the paper ____ by grade and quality.",
+    "Staples and glue ____ when the pulp is passed through a screen.",
+    "In the seventh stage, the clean pulp ____ and dried on heated rollers."
+   ]
+  },
+  {
+   "prompt": "Masih diagram proses. Pilih penanda urutan yang tepat dari bank kata. Ada dua penanda yang tidak terpakai.",
+   "tipe": "isian",
+   "pilihan": ["First", "Once", "after which", "Finally", "before"],
+   "items": [
+    "____ the paper has been sorted, it is shredded into small pieces.",
+    "The pulp is screened, ____ the ink is removed in flotation tanks.",
+    "____, the dried paper is cut, rolled and sent to printers."
+   ]
+  },
+  {
+   "prompt": "Dua peta Hallam Bay. Lengkapi dengan kata kerja perubahan tempat dari bank kata. Ada satu ungkapan yang tidak terpakai.",
+   "tipe": "isian",
+   "pilihan": ["was replaced by", "was demolished", "was converted into", "has been extended", "was cleared", "were built"],
+   "items": [
+    "The farmland to the north of Coast Road ____ a housing estate.",
+    "The old pier ____, and a marina now stands close to the same spot.",
+    "The farmhouse ____ a café, although the building itself still stands.",
+    "The hotel ____ eastwards and is now almost twice its original size."
+   ]
+  },
+  {
+   "prompt": "TRUE kalau pernyataan tentang overview atau isi bahan visual di unit ini benar, FALSE kalau tidak.",
+   "tipe": "isian",
+   "pilihan": ["TRUE", "FALSE"],
+   "items": [
+    "Overall, Country X became less dependent on coal and more dependent on gas and renewables. ____",
+    "Nuclear power made up a larger share of Country X's electricity in 2020 than in 2000. ____",
+    "The process of recycling paper begins with sorting and ends with de-inking. ____"
+   ]
+  }
+ ],
+ "answers": [
+  "a quarter — just under a third — just under a half — a fifth",
+  "is collected — is sorted — are removed — is pressed",
+  "Once — after which — Finally",
+  "was replaced by — was demolished — was converted into — has been extended",
+  "TRUE — FALSE — FALSE"
+ ],
+ "pembahasan": [
+  {
+   "title": "Pembahasan",
+   "blocks": [
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan"], "rows": [
+     ["1.1", "a quarter", "25% persis. *Exactly* di kalimatnya adalah petunjuk: hanya angka bulat yang boleh dipasangkan dengan *exactly*."],
+     ["1.2", "just under a third", "Sepertiga = 33,3%. 30% sedikit di bawahnya, jadi *just under*. Menulis *just over a third* untuk 30% adalah kesalahan aritmetika yang langsung terlihat pemeriksa."],
+     ["1.3", "just under a half", "48% mendekati 50% dari bawah. Kalau angkanya 52%, jawabannya *just over a half*."],
+     ["1.4", "a fifth", "20% = 1/5 persis. Perhatikan kata kerjanya: *represented*, *accounted for*, *made up* semua dipakai di soal 1–4 supaya kamu terbiasa menggantinya."],
+     ["2.3", "are removed", "Subjeknya jamak (*staples and glue*), jadi *are*, bukan *is*. Soal ini menguji kesesuaian subjek-kata kerja di dalam kalimat pasif — kesalahan yang sangat umum."],
+     ["2.4", "is pressed", "*The clean pulp is pressed and dried* — satu subjek, dua kata kerja pasif berbagi satu *is*. Tidak perlu menulis *is pressed and is dried*."],
+     ["3.1", "Once", "*Once + present perfect* (*has been sorted*) untuk tahap yang harus selesai dulu. *Before* tidak cocok karena artinya jadi terbalik."],
+     ["3.2", "after which", "Menyambung dua tahap dalam SATU kalimat kompleks, tanpa titik. Ini pola yang paling sering muncul di jawaban Band 7+; kalau kamu hanya memakai *then, then, then*, Coherence tertahan."],
+     ["4.1", "was replaced by", "Lahannya hilang seluruhnya dan digantikan bangunan lain → *replaced by*. *Converted into* salah di sini karena tidak ada bangunan lama yang dipertahankan."],
+     ["4.3", "was converted into", "Bangunannya masih ada, fungsinya berubah — persis definisi *convert*. Klausa *although the building itself still stands* adalah petunjuknya."],
+     ["5.2", "FALSE", "Nuklir turun dari 15% ke 10%. Pengecoh: irisan nuklir di pai 2020 terlihat mirip besarnya dengan hidro (13%), jadi mata mudah tertipu — baca angkanya, jangan bentuknya."],
+     ["5.3", "FALSE", "Proses dimulai dengan pengumpulan (tahap 1) dan berakhir dengan pengiriman ke percetakan (tahap 8). Sorting adalah tahap 2 dan de-inking tahap 6. Salah menyebut titik awal atau akhir proses adalah kesalahan overview yang paling merugikan."]
+    ]},
+    {"type": "sub", "text": "Model jawaban tugas menulis (Band 7, 182 kata)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The two pie charts compare the proportion of household income spent on five categories in Country Y in 1995 and 2020.",
+     "Overall, spending patterns changed considerably over the 25-year period. Food, which took up the largest share of the budget in 1995, was overtaken by housing, and leisure became a far more significant item of expenditure, whereas transport costs changed very little.",
+     "In 1995, food accounted for just under a third of household spending, at 32%, followed by housing at 24%. Leisure activities took up only a tenth of the budget, while 15% went on transport and the remaining 19% on other items.",
+     "By 2020 the positions of the two largest categories had been reversed. Housing made up exactly a third of household expenditure, an increase of nine percentage points, whereas the proportion spent on food had almost halved, to 18%. The share of spending on leisure doubled to a fifth of the total, overtaking both transport, which rose marginally to 17%, and other items, which fell to 12%. Housing and leisure together therefore absorbed more than half of the 2020 budget."
+    ]},
+    {"type": "tabel", "head": ["Kriteria", "Catatan"], "rows": [
+     ["Task Achievement", "Overview memuat pertukaran posisi (food ↔ housing) dan satu kategori yang stabil, tanpa angka. Sepuluh angka pai dipakai semua, tapi selalu berpasangan 1995–2020, jadi tidak terasa seperti daftar."],
+     ["Coherence", "Paragraf 3 = 1995, paragraf 4 = 2020 — untuk pai dua tahun pembagian ini boleh, ASAL paragraf 2020 terus-menerus merujuk ke 1995 (*had been reversed, had almost halved, doubled*)."],
+     ["Lexical", "*accounted for, took up, made up, went on, the share of, the proportion spent on, absorbed* — tujuh cara menyatakan proporsi dalam 180 kata."],
+     ["Grammar", "*an increase of nine percentage points* (bukan *nine per cent*), klausa relatif non-defining (*which rose marginally to 17%*), past perfect untuk membandingkan dengan keadaan sebelumnya."]
+    ]},
+    {"type": "kotak", "title": "Yang perlu dicatat dari unit ini", "items": [
+     "Tiga bahan, tiga tata bahasa inti: pai dan tabel memakai bahasa proporsi/perbandingan, proses memakai present simple passive, peta memakai past simple dan present perfect passive. Salah tenses di sini bukan kesalahan kecil — pemeriksa membacanya sebagai tanda kamu tidak mengenali jenis tugasnya.",
+     "Overview selalu jawab pertanyaan yang sama: *kalau saya hanya boleh mengatakan dua hal tentang gambar ini, apa yang paling penting?* Untuk proses: berapa tahap, mulai dan berakhir di mana. Untuk peta: tempat itu berubah jadi apa, dan apa yang tetap.",
+     "Sisakan dua menit di akhir untuk memeriksa tiga hal saja: ada paragraf *Overall*, jumlah kata di atas 150, dan tidak ada angka yang salah salin. Tiga cek itu menyelamatkan lebih banyak nilai daripada menambah satu kalimat baru."
+    ]}
+   ]
+  }
+ ]
+}

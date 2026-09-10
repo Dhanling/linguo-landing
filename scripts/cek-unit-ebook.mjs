@@ -6,7 +6,7 @@ import path from "node:path";
 const slug = process.argv[2];
 if (!slug) { console.error("pakai: node scripts/cek-unit-ebook.mjs <slug>"); process.exit(1); }
 const dir = path.join("content/ebook", slug);
-const JENIS_BLOK = new Set(["p", "list", "tabel", "kotak", "sub"]);
+const JENIS_BLOK = new Set(["p", "list", "tabel", "kotak", "sub", "passage", "transkrip", "gambar", "grafik"]);
 let salah = 0;
 const lapor = (f, pesan) => { console.log(`  ✗ ${f}: ${pesan}`); salah++; };
 
@@ -24,7 +24,11 @@ let totalSoal = 0, totalHal = 0;
 const berkas = fs.readdirSync(dir).filter((n) => /^unit-\d+\.json$/.test(n)).sort();
 for (const f of berkas) {
   const u = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
-  for (const k of ["title", "title_target", "goal", "bekal", "dialogs", "sections", "vocab", "exercises", "answers"])
+  // [ebook-testprep-v1] Unit persiapan tes tak punya dialog & kosakata.
+  const wajib = u.jenis === "testprep"
+    ? ["title", "title_target", "goal", "skill", "sections", "exercises", "answers"]
+    : ["title", "title_target", "goal", "bekal", "dialogs", "sections", "vocab", "exercises", "answers"];
+  for (const k of wajib)
     if (u[k] == null) lapor(f, `kunci "${k}" hilang`);
   u.exercises?.forEach((e, i) => {
     totalSoal += e.items.length;
@@ -42,6 +46,14 @@ for (const f of berkas) {
     d.lines?.forEach((l, j) => { if (!l.text || !l.id) lapor(f, `dialog ${i} baris ${j}: text/id kosong`); });
   });
   u.sections?.forEach((s, i) => cekBlok(f, s.blocks, `bagian ${i}`));
+  u.pembahasan?.forEach((s, i) => cekBlok(f, s.blocks, `pembahasan ${i}`));
+  u.exercises?.forEach((e, i) => {
+    if (e.tipe && !["isian", "terjemah", "susun"].includes(e.tipe)) lapor(f, `latihan ${i}: tipe "${e.tipe}" tak dikenal`);
+    if (e.pilihan) {
+      const kunci = (u.answers?.[i] ?? "").split(" — ").map((k) => k.trim());
+      kunci.forEach((k, j) => { if (k && !e.pilihan.includes(k)) lapor(f, `latihan ${i} soal ${j}: kunci "${k}" tak ada di pilihan`); });
+    }
+  });
   const vocabKunci = new Set(u.vocab?.map((v) => Object.keys(v).join(",")));
   if (vocabKunci.size > 1) lapor(f, `kosakata punya bentuk kunci campur: ${[...vocabKunci].join(" | ")}`);
 }

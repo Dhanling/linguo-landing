@@ -1,0 +1,748 @@
+{
+ "brand": "LINGUO",
+ "cover": "cover.png",
+ "title": "IELTS Prep",
+ "subtitle": "Strategi dan latihan Listening, Reading, Writing, Speaking untuk Band 6.5+",
+ "level": "Target Band 6.5–7.5",
+ "edition": "Edisi Bahasa Indonesia",
+ "ruby": false,
+ "testprep": true,
+ "font_size": "10.2pt",
+ "page_margin": "16mm 15mm 15mm",
+ "labels": {
+  "unit": "Unit",
+  "exercises": "Latihan",
+  "answers": "Kunci jawaban",
+  "bekal": "Di ujung unit ini kamu bisa:"
+ },
+ "product": {
+  "slug": "modul-ielts-prep-id",
+  "title": "IELTS Prep - Band 6.5+",
+  "type": "ebook",
+  "language": "English",
+  "level": "Band 6.5+",
+  "file": "ielts-prep-id.pdf",
+  "description": "Modul persiapan IELTS (Academic & General Training) berpengantar bahasa Indonesia: 17 unit strategi per skill — Listening Part 1–4 dengan transkrip, Reading dengan lima passage otentik dan semua tipe soal (True/False/Not Given, matching headings, summary completion, MCQ), Writing Task 1 dengan grafik garis/batang/pai, tabel, diagram proses dan peta, Task 2 dengan model jawaban Band 6 vs Band 8, Speaking Part 1–3 dengan cue card dan frasa siap pakai. Tiap unit: strategi → contoh dibedah → latihan yang dikoreksi otomatis di reader → pembahasan. Lampiran kosakata akademik, band descriptor ringkas, dan akses tes lengkap berwaktu di Simulasi.",
+  "pages": 154
+ },
+ "cover_design": {
+  "bg": "#0F2E4C",
+  "accent": "#F2A65A",
+  "label": "PERSIAPAN TES",
+  "judul": "IELTS",
+  "judul_size": "220px",
+  "cap": "7.0",
+  "cap_size": "380px",
+  "pola_opacity": 0.35,
+  "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 2px, transparent 2px 36px),repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 2px, transparent 2px 36px);",
+  "merek_sub": "MODUL PERSIAPAN TES · BAND 6.5+",
+  "angka": "Prep",
+  "ringkas": "Tujuh belas unit yang membedah tiap tipe soal IELTS: cara membaca passage tanpa memahami tiap kata, mendengar jawaban sebelum diucapkan, mendeskripsikan grafik dalam 20 menit, dan menjawab pemeriksa Speaking tanpa menghafal.",
+  "catatan": "Latihannya dikoreksi otomatis di reader Lingbook, dan tes lengkap berwaktu — dengan audio dan penilaian AI — tersedia di menu Simulasi.",
+  "kaki_sub": "unit · Listening · Reading · Writing · Speaking"
+ },
+ "front": [
+  {
+   "title": "Kata pengantar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "IELTS bukan tes seberapa pintar bahasa Inggrismu. IELTS adalah tes seberapa kenal kamu dengan **cara IELTS bertanya**. Dua orang dengan kemampuan bahasa yang sama bisa terpaut satu band penuh hanya karena satu di antaranya tahu bahwa jawaban Listening selalu muncul berurutan, bahwa *Not Given* bukan berarti *False*, dan bahwa Task 1 tidak boleh diberi pendapat."
+    },
+    {
+     "type": "p",
+     "text": "Modul ini ditulis untuk penutur bahasa Indonesia yang sudah bisa berbahasa Inggris tingkat menengah (kira-kira B1–B2) dan mengincar Band 6.5 sampai 7.5. Kalau tata bahasa dasarmu masih goyah, kerjakan dulu *English 102* atau *103* — modul ini tidak mengajarkan bahasa Inggris dari nol, ia mengajarkan cara mengubah bahasa Inggris yang sudah kamu punya menjadi skor."
+    },
+    {
+     "type": "p",
+     "text": "Tiap unit memakai pola yang sama: **strategi** yang bisa dipakai di ruang ujian, **contoh yang dibedah** langkah demi langkah, **latihan** yang bisa dikerjakan langsung di reader dan dikoreksi otomatis, lalu **pembahasan** yang menjelaskan bukan hanya jawaban yang benar tapi kenapa pengecohnya salah. Yang terakhir itulah yang paling sering hilang dari buku IELTS pada umumnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang tidak ada di buku ini, dan di mana mencarinya",
+     "items": [
+      "**Audio Listening dan tes lengkap berwaktu** ada di menu *Simulasi* di dashboardmu, bukan di PDF ini. Di sana Listening diputar sekali seperti tes asli, Speaking direkam dan dinilai AI, dan skormu dihitung otomatis. Buku ini menyiapkan strateginya; Simulasi mengukur hasilnya.",
+      "**Kunci jawaban** ada di tiap unit, tapi jangan dibuka sebelum mengerjakan. Di reader, latihannya bisa dikerjakan langsung dan kuncinya baru muncul setelah kamu menjawab.",
+      "**Ketuk kata apa pun** di passage untuk mendengar pelafalannya dan melihat artinya — fitur reader Lingbook yang paling berguna justru di unit Reading."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kerjakan berurutan kalau waktumu lebih dari sebulan. Kalau ujianmu dua minggu lagi, baca *Rencana belajar* di halaman berikut dan pilih jalur cepatnya. Selamat berlatih."
+    }
+   ]
+  },
+  {
+   "title": "Mengenal IELTS",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "IELTS (*International English Language Testing System*) menguji empat keterampilan dalam satu hari tes — Listening, Reading, dan Writing berturut-turut tanpa jeda (2 jam 40 menit), lalu Speaking sebagai wawancara tatap muka, bisa di hari yang sama atau hari lain. Ada dua versi: **Academic** (kuliah, profesi kesehatan, registrasi profesional) dan **General Training** (migrasi, kerja, pelatihan). Listening dan Speaking-nya sama persis; yang berbeda hanya Reading dan Writing."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Waktu",
+      "Isi",
+      "Academic vs General"
+     ],
+     "rows": [
+      [
+       "Listening",
+       "30 menit + 10 menit pindah jawaban (kertas)",
+       "4 part, 40 soal, audio diputar SEKALI",
+       "Sama"
+      ],
+      [
+       "Reading",
+       "60 menit",
+       "3 passage, 40 soal",
+       "Academic: teks jurnal/majalah. General: pengumuman, iklan, teks kerja, satu teks panjang"
+      ],
+      [
+       "Writing",
+       "60 menit",
+       "Task 1 (150 kata, 20 menit) + Task 2 (250 kata, 40 menit)",
+       "Academic Task 1: deskripsi grafik/diagram. General Task 1: surat"
+      ],
+      [
+       "Speaking",
+       "11–14 menit",
+       "Part 1 tanya jawab, Part 2 cue card, Part 3 diskusi",
+       "Sama"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Band score"
+    },
+    {
+     "type": "p",
+     "text": "Tiap skill dinilai Band 0–9 dengan kelipatan 0,5, lalu dirata-rata menjadi *Overall Band*. Listening dan Reading dihitung dari jumlah jawaban benar (dari 40); Writing dan Speaking dinilai pemeriksa memakai empat kriteria. Rata-rata dibulatkan ke 0,5 terdekat: 6,125 → 6,0; 6,25 → 6,5; 6,75 → 7,0."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Band",
+      "Listening (benar/40)",
+      "Reading Academic",
+      "Reading General",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "9",
+       "39–40",
+       "39–40",
+       "40",
+       "Expert"
+      ],
+      [
+       "8",
+       "35–36",
+       "35–36",
+       "37–38",
+       "Very good"
+      ],
+      [
+       "7",
+       "30–31",
+       "30–31",
+       "34–35",
+       "Good — syarat umum S2 & profesi"
+      ],
+      [
+       "6.5",
+       "26–27",
+       "27–29",
+       "32–33",
+       "Syarat umum S1 & visa kerja"
+      ],
+      [
+       "6",
+       "23–24",
+       "23–24",
+       "30–31",
+       "Competent"
+      ],
+      [
+       "5.5",
+       "18–19",
+       "19–20",
+       "27–28",
+       "Modest"
+      ],
+      [
+       "5",
+       "16–17",
+       "15–16",
+       "23–24",
+       "Modest"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Angka konversi Listening/Reading sedikit bergeser tiap versi tes; tabel di atas adalah patokan yang dipublikasikan penyelenggara. Perhatikan: untuk Band 7 kamu boleh salah **9–10 soal** dari 40. Itu berarti kamu tidak perlu memahami setiap kata — kamu perlu mengamankan 30 soal yang bisa kamu jawab dan tidak membuang waktu untuk 10 sisanya."
+    },
+    {
+     "type": "sub",
+     "text": "Empat kriteria Writing & Speaking"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Writing",
+      "Speaking",
+      "Yang dinilai"
+     ],
+     "rows": [
+      [
+       "Task Achievement / Response",
+       "Fluency & Coherence",
+       "Menjawab yang ditanya, lengkap, dikembangkan"
+      ],
+      [
+       "Coherence & Cohesion",
+       "(masuk kriteria di atas)",
+       "Alur paragraf, kata penghubung, rujukan"
+      ],
+      [
+       "Lexical Resource",
+       "Lexical Resource",
+       "Kosakata tepat, kolokasi, tidak berulang"
+      ],
+      [
+       "Grammatical Range & Accuracy",
+       "Grammatical Range & Accuracy",
+       "Variasi struktur, sedikit kesalahan"
+      ],
+      [
+       "—",
+       "Pronunciation",
+       "Bisa dipahami, tekanan kata, intonasi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiap kriteria bobotnya 25%. Konsekuensinya: esai berkosakata mewah tapi tidak menjawab pertanyaan kalah dari esai sederhana yang tepat sasaran. Ringkasan *band descriptor* per kriteria ada di lampiran belakang."
+    }
+   ]
+  },
+  {
+   "title": "Rencana belajar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Modul ini 17 unit. Ada dua cara memakainya, tergantung berapa lama lagi tesmu."
+    },
+    {
+     "type": "sub",
+     "text": "Jalur 4 minggu (disarankan)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Minggu",
+      "Unit",
+      "Fokus",
+      "Simulasi"
+     ],
+     "rows": [
+      [
+       "1",
+       "1–4 (Listening) + 15 (Speaking Part 1)",
+       "Prediksi jawaban, ejaan, angka; bicara 20 menit/hari",
+       "Tes diagnosa: kerjakan 1 tes lengkap, catat band tiap skill"
+      ],
+      [
+       "2",
+       "5–9 (Reading)",
+       "Satu passage per hari, ukur waktu: 20 menit/passage",
+       "Reading section saja, ulang 2×"
+      ],
+      [
+       "3",
+       "10–14 (Writing)",
+       "Satu Task 1 dan satu Task 2 tiap dua hari; bandingkan dengan model",
+       "—"
+      ],
+      [
+       "4",
+       "16–17 (Speaking) + ulang unit terlemah",
+       "Cue card 2 menit direkam & dinilai AI",
+       "Tes lengkap kedua: bandingkan dengan minggu 1"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Jalur cepat 10 hari"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Hari 1: *Mengenal IELTS* + tes diagnosa di Simulasi. Lihat skill mana yang terpaut paling jauh dari target.",
+      "Hari 2–3: Unit 6, 7, 8 (tipe soal Reading yang paling banyak muncul) dan Unit 1, 4 (Listening Part 1 & 4, yang paling mudah dan paling sulit).",
+      "Hari 4–6: Unit 10 (atau 12 untuk General), 13, 14. Tulis minimal tiga esai penuh dengan timer.",
+      "Hari 7–8: Unit 15, 16, 17. Rekam dirimu menjawab cue card, dengarkan ulang.",
+      "Hari 9: Tes lengkap kedua di Simulasi.",
+      "Hari 10: Istirahat. Baca ulang *band descriptor* dan kesalahan umummu sendiri, bukan materi baru."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kebiasaan yang menaikkan band lebih cepat dari materi apa pun",
+     "items": [
+      "**Selalu pakai timer.** Kesalahan terbanyak di Reading bukan salah paham, tapi kehabisan waktu di passage 3. Berlatih tanpa timer melatih keterampilan yang tidak diuji.",
+      "**Catat kesalahan, bukan jawaban.** Buku catatan berisi *kenapa* kamu salah (\"tergoda kata yang sama di teks\", \"tidak baca instruksi *NO MORE THAN TWO WORDS*\") lebih berharga daripada daftar kosakata.",
+      "**Bicara dan tulis setiap hari**, walau 10 menit. Listening dan Reading naik lewat latihan soal; Writing dan Speaking hanya naik lewat produksi."
+     ]
+    }
+   ]
+  },
+  {
+   "type": "isi",
+   "title": "Daftar isi",
+   "intro": "Unit dikelompokkan per skill, urutannya mengikuti urutan hari tes. Tiap unit berdiri sendiri — boleh melompat ke skill yang paling kamu butuhkan."
+  }
+ ],
+ "back": [
+  {
+   "title": "Kosakata akademik per topik",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata-kata di bawah ini muncul berulang di passage Reading, soal Listening Part 4, dan topik Task 2. Bukan untuk dihafal sekaligus — pakai sebagai daftar periksa: kata yang sudah kamu pakai sendiri dalam kalimat, coret."
+    },
+    {
+     "type": "sub",
+     "text": "Pendidikan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata / frasa",
+      "Arti",
+      "Contoh kolokasi"
+     ],
+     "rows": [
+      [
+       "curriculum",
+       "kurikulum",
+       "a broad / narrow curriculum"
+      ],
+      [
+       "compulsory",
+       "wajib",
+       "compulsory education until 16"
+      ],
+      [
+       "vocational training",
+       "pelatihan kejuruan",
+       "invest in vocational training"
+      ],
+      [
+       "literacy rate",
+       "angka melek huruf",
+       "the adult literacy rate rose"
+      ],
+      [
+       "tuition fees",
+       "biaya kuliah",
+       "abolish tuition fees"
+      ],
+      [
+       "rote learning",
+       "belajar hafalan",
+       "rely on rote learning"
+      ],
+      [
+       "critical thinking",
+       "berpikir kritis",
+       "foster critical thinking"
+      ],
+      [
+       "distance learning",
+       "pembelajaran jarak jauh",
+       "distance learning platforms"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Lingkungan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata / frasa",
+      "Arti",
+      "Contoh kolokasi"
+     ],
+     "rows": [
+      [
+       "carbon emissions",
+       "emisi karbon",
+       "cut carbon emissions by half"
+      ],
+      [
+       "renewable energy",
+       "energi terbarukan",
+       "a shift towards renewable energy"
+      ],
+      [
+       "deforestation",
+       "penggundulan hutan",
+       "large-scale deforestation"
+      ],
+      [
+       "biodiversity",
+       "keanekaragaman hayati",
+       "a loss of biodiversity"
+      ],
+      [
+       "sustainable",
+       "berkelanjutan",
+       "sustainable development"
+      ],
+      [
+       "deplete",
+       "menguras / menghabiskan",
+       "deplete natural resources"
+      ],
+      [
+       "endangered species",
+       "spesies terancam punah",
+       "protect endangered species"
+      ],
+      [
+       "landfill",
+       "tempat pembuangan akhir",
+       "end up in landfill"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Teknologi & pekerjaan"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata / frasa",
+      "Arti",
+      "Contoh kolokasi"
+     ],
+     "rows": [
+      [
+       "automation",
+       "otomasi",
+       "automation threatens low-skilled jobs"
+      ],
+      [
+       "obsolete",
+       "usang",
+       "become obsolete within a decade"
+      ],
+      [
+       "remote working",
+       "kerja jarak jauh",
+       "the rise of remote working"
+      ],
+      [
+       "work-life balance",
+       "keseimbangan kerja-hidup",
+       "a healthy work-life balance"
+      ],
+      [
+       "job security",
+       "keamanan kerja",
+       "little job security"
+      ],
+      [
+       "breakthrough",
+       "terobosan",
+       "a scientific breakthrough"
+      ],
+      [
+       "digital divide",
+       "kesenjangan digital",
+       "narrow the digital divide"
+      ],
+      [
+       "surveillance",
+       "pengawasan",
+       "mass surveillance"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kesehatan & masyarakat"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata / frasa",
+      "Arti",
+      "Contoh kolokasi"
+     ],
+     "rows": [
+      [
+       "sedentary lifestyle",
+       "gaya hidup kurang gerak",
+       "a sedentary lifestyle leads to obesity"
+      ],
+      [
+       "preventive measures",
+       "langkah pencegahan",
+       "take preventive measures"
+      ],
+      [
+       "life expectancy",
+       "angka harapan hidup",
+       "life expectancy has risen"
+      ],
+      [
+       "ageing population",
+       "populasi menua",
+       "the challenge of an ageing population"
+      ],
+      [
+       "urbanisation",
+       "urbanisasi",
+       "rapid urbanisation"
+      ],
+      [
+       "social cohesion",
+       "kohesi sosial",
+       "strengthen social cohesion"
+      ],
+      [
+       "disparity",
+       "kesenjangan",
+       "income disparity"
+      ],
+      [
+       "welfare",
+       "kesejahteraan",
+       "the welfare system"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata kerja akademik yang sering jadi kunci jawaban"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Sinonim yang dipakai soal (paraphrase)"
+     ],
+     "rows": [
+      [
+       "decline",
+       "menurun",
+       "fall, drop, decrease, dwindle"
+      ],
+      [
+       "surge",
+       "melonjak",
+       "soar, rocket, climb sharply"
+      ],
+      [
+       "fluctuate",
+       "naik-turun",
+       "vary, oscillate"
+      ],
+      [
+       "plateau",
+       "mendatar",
+       "level off, remain stable, stagnate"
+      ],
+      [
+       "attribute (to)",
+       "menghubungkan (dengan sebab)",
+       "put down to, ascribe to"
+      ],
+      [
+       "hinder",
+       "menghambat",
+       "impede, hamper, obstruct"
+      ],
+      [
+       "facilitate",
+       "memudahkan",
+       "enable, make possible, aid"
+      ],
+      [
+       "advocate",
+       "menganjurkan",
+       "argue for, call for, promote"
+      ],
+      [
+       "undermine",
+       "melemahkan",
+       "weaken, erode, compromise"
+      ],
+      [
+       "allocate",
+       "mengalokasikan",
+       "assign, set aside, earmark"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Band descriptor ringkas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pemeriksa menilai Writing dan Speaking dengan tabel deskriptor publik yang panjang. Ringkasan di bawah memuat **pembeda** antara Band 6, 7, dan 8 — bagian yang menentukan apakah esaimu naik setengah band atau tidak."
+    },
+    {
+     "type": "sub",
+     "text": "Writing Task 2"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kriteria",
+      "Band 6",
+      "Band 7",
+      "Band 8"
+     ],
+     "rows": [
+      [
+       "Task Response",
+       "Menjawab semua bagian tapi ada yang dangkal; posisi ada tapi kadang tidak jelas",
+       "Menjawab semua bagian; posisi jelas sepanjang esai; ide dikembangkan, kadang kurang fokus",
+       "Menjawab semua bagian dengan baik; posisi jelas dan dikembangkan penuh dengan contoh relevan"
+      ],
+      [
+       "Coherence & Cohesion",
+       "Ada paragraf tapi logikanya kadang lompat; kata penghubung berlebihan atau mekanis",
+       "Paragraf logis, tiap paragraf satu ide pokok; penghubung dipakai wajar, sesekali kurang pas",
+       "Paragraf mengalir; penghubung nyaris tak terasa; rujukan (this, such, it) tepat"
+      ],
+      [
+       "Lexical Resource",
+       "Cukup untuk topiknya; ada kesalahan pilihan kata yang tidak mengganggu makna",
+       "Kosakata cukup luas dan fleksibel; tahu kolokasi; sedikit kesalahan",
+       "Luas dan alami; kolokasi tepat; kesalahan jarang dan sepele"
+      ],
+      [
+       "Grammar",
+       "Campuran kalimat sederhana & kompleks; kesalahan ada tapi makna tetap sampai",
+       "Banyak kalimat kompleks bebas kesalahan; kesalahan sedikit",
+       "Struktur beragam; mayoritas kalimat bebas kesalahan"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Writing Task 1"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kriteria",
+      "Band 6",
+      "Band 7",
+      "Band 8"
+     ],
+     "rows": [
+      [
+       "Task Achievement",
+       "Fitur utama disebut tapi rinciannya kurang atau tidak relevan; overview mungkin kurang jelas",
+       "Overview jelas; fitur utama disorot dengan data; bisa dikembangkan lebih",
+       "Overview jelas; fitur utama dipilih dengan tepat dan dibandingkan; data akurat"
+      ],
+      [
+       "Kesalahan yang menahan di Band 6",
+       "Tidak ada overview; mendaftar semua angka; memberi pendapat; di bawah 150 kata",
+       "",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Speaking"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kriteria",
+      "Band 6",
+      "Band 7",
+      "Band 8"
+     ],
+     "rows": [
+      [
+       "Fluency & Coherence",
+       "Bicara panjang tapi ada jeda, pengulangan, koreksi diri; penghubung kadang salah",
+       "Bicara panjang tanpa usaha; jeda biasanya karena mencari ide, bukan kata",
+       "Lancar, jeda hanya untuk isi; topik dikembangkan runtut"
+      ],
+      [
+       "Lexical Resource",
+       "Cukup untuk bicara panjang; parafrase kadang berhasil",
+       "Fleksibel; ada idiom dan kolokasi, sesekali kurang tepat",
+       "Luas; idiom alami; parafrase mudah"
+      ],
+      [
+       "Grammar",
+       "Campuran sederhana & kompleks; kesalahan sering tapi jarang mengganggu",
+       "Kalimat kompleks beragam, sering bebas kesalahan",
+       "Beragam dan fleksibel; kesalahan jarang"
+      ],
+      [
+       "Pronunciation",
+       "Umumnya dipahami; salah lafal kadang mengurangi kejelasan",
+       "Fitur Band 6 dan 8 bercampur",
+       "Mudah dipahami; tekanan kata & intonasi dipakai untuk makna; aksen tidak mengganggu"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tes lengkap di Simulasi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Latihan di buku ini melatih tiap tipe soal secara terpisah. Yang belum kamu latih adalah **daya tahan**: 2 jam 40 menit berturut-turut, Listening yang hanya diputar sekali, dan Reading yang harus selesai sebelum waktu habis. Itu semua diukur di menu *Simulasi* di dashboard siswa."
+    },
+    {
+     "type": "list",
+     "items": [
+      "Buka dashboard siswa → menu **Simulasi** → pilih paket **IELTS Academic**.",
+      "Listening diputar satu kali seperti tes asli; jawaban dinilai otomatis dan dikonversi ke band.",
+      "Writing dan Speaking dinilai AI dengan empat kriteria yang sama dengan pemeriksa asli, lengkap dengan catatan per kriteria.",
+      "Pakai kode **GRATISIELTS** saat memilih paket IELTS Academic di Simulasi: berlaku untuk tiga kali pengerjaan penuh, dan harus diklaim sambil login dengan akun yang sama dengan akun Perpustakaanmu."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan mengerjakannya",
+     "items": [
+      "**Sebelum mulai modul** (tes diagnosa): supaya tahu skill mana yang paling jauh dari target, dan supaya angka band-mu punya pembanding.",
+      "**Setelah selesai modul**: bandingkan per skill. Skill yang tidak naik = unit yang perlu diulang, bukan materi baru yang perlu dicari."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau hasil Speaking atau Writing-mu tertahan di band yang sama setelah dua tes, itu biasanya bukan soal kosakata — hampir selalu soal *Task Response* atau *Coherence*. Baca ulang lampiran *Band descriptor* dan Unit 13–14 sebelum mencari materi lain."
+    }
+   ]
+  }
+ ]
+}

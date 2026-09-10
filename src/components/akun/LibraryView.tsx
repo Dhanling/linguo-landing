@@ -156,9 +156,14 @@ function TitleFlag({ language, h = 15 }: { language: string | null; h?: number }
 // supaya produk yang belum tersinkron tidak hilang). E-Learning dan modul edisi
 // lama tidak pernah cocok — dipakai [pustaka-hanya-new-edition-v1] untuk menyaring
 // katalog tergembok supaya cuma Lingbook cetakan baru yang ditawarkan.
+// [pustaka-testprep-v1] Modul persiapan tes ("IELTS Prep - Band 6.5+") tidak
+// memakai pola 101–104/A1–B2, jadi tanpa cabang ini ia hilang dari rak katalog
+// tergembok padahal sudah dijual di /toko (10 Sep 2026: cari "ielts" di
+// Perpustakaan kosong).
 function adalahNewEdition(p: { title: string }) {
   const judul = p.title || "";
-  return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul);
+  return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul)
+    || /\bPrep\s*-\s*Band\b/i.test(judul);
 }
 
 

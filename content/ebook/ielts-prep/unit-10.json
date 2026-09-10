@@ -1,0 +1,201 @@
+{
+ "jenis": "testprep",
+ "skill": "WRITING TASK 1 · ACADEMIC",
+ "title": "Grafik garis & batang",
+ "title_target": "Describing trends and comparisons",
+ "goal": "Menulis laporan 150+ kata tentang grafik garis atau batang dalam 20 menit dengan overview yang jelas, angka yang dipilih (bukan didaftar), dan bahasa tren yang tepat.",
+ "bekal": [
+  "menyusun laporan Task 1 dalam empat paragraf yang selalu sama",
+  "memilih tiga sampai empat fitur utama dari grafik apa pun dalam dua menit",
+  "memakai 20 kata kerja/kata benda tren dengan kolokasinya"
+ ],
+ "sections": [
+  {
+   "title": "Apa yang sebenarnya dinilai",
+   "blocks": [
+    {"type": "p", "text": "Task 1 Academic memberi grafik, tabel, atau diagram dan meminta kamu *summarise the information by selecting and reporting the main features, and make comparisons where relevant*. Tiga kata di dalam instruksi itu menentukan skormu: **selecting** (bukan semua angka), **main features** (bukan rincian), **comparisons** (bukan daftar). Laporan yang menyebut setiap angka di grafik secara berurutan tertahan di Band 5–6 walau tata bahasanya sempurna, karena tidak ada pemilihan."},
+    {"type": "kotak", "title": "Empat paragraf yang tidak pernah berubah", "items": [
+     "**1. Introduction (1 kalimat)** — parafrase soal. Ganti *shows* → *illustrates / compares*, *the number of* → *how many*, *from 2000 to 2020* → *over a 20-year period*. Jangan menyalin soal kata demi kata: pemeriksa tidak menghitungnya sebagai tulisanmu.",
+     "**2. Overview (2 kalimat)** — dua atau tiga fitur paling besar TANPA angka: tren umum, yang tertinggi/terendah, perubahan paling mencolok. Mulai dengan *Overall,*. Paragraf ini menentukan Task Achievement lebih dari paragraf lain.",
+     "**3. Detail 1 (3–4 kalimat)** — kelompok data pertama, DENGAN angka. Pilih titik awal, titik akhir, puncak, dan persilangan.",
+     "**4. Detail 2 (3–4 kalimat)** — kelompok data kedua, dibandingkan dengan yang pertama.",
+     "Tidak ada kesimpulan, tidak ada pendapat, tidak ada *I think*. Task 1 adalah laporan, bukan esai. Total 160–190 kata; di bawah 150 dipotong nilainya, di atas 200 membuang waktu Task 2 yang bobotnya dua kali lipat."
+    ]}
+   ]
+  },
+  {
+   "title": "Bahasa tren: kata kerja, kata benda, dan derajatnya",
+   "blocks": [
+    {"type": "p", "text": "Grafik garis menuntut variasi. Kalau kamu memakai *increased* enam kali, Lexical Resource tertahan di Band 6. Latih sampai tabel ini keluar tanpa berpikir."},
+    {"type": "tabel", "head": ["Arah", "Kata kerja (past)", "Kata benda", "Pola kalimat"], "rows": [
+     ["naik", "rose, increased, grew, climbed", "a rise, an increase, growth", "Sales **rose** from 2m to 5m. / There **was a rise** in sales, from 2m to 5m."],
+     ["naik tajam", "soared, surged, rocketed, jumped", "a surge, a jump", "Prices **surged** in 2008."],
+     ["turun", "fell, declined, dropped, decreased", "a fall, a decline, a drop", "The figure **fell** to 12%. / **A drop** of 8% was recorded."],
+     ["turun tajam", "plummeted, plunged, slumped", "a slump, a plunge", "Output **plummeted** after the crisis."],
+     ["mendatar", "remained stable, levelled off, plateaued, stayed constant", "a plateau, stability", "Unemployment **levelled off** at around 5%."],
+     ["naik-turun", "fluctuated, varied", "fluctuation, variation", "The rate **fluctuated** between 3% and 7%."],
+     ["puncak / titik terendah", "peaked at, reached a high of / hit a low of, bottomed out at", "a peak, a low", "Visitor numbers **peaked at** 40,000 in July."]
+    ]},
+    {"type": "tabel", "head": ["Derajat", "Adverbia (dengan kata kerja)", "Adjektiva (dengan kata benda)"], "rows": [
+     ["besar", "sharply, dramatically, significantly, considerably, substantially", "sharp, dramatic, significant, considerable, substantial"],
+     ["sedang", "steadily, gradually, moderately", "steady, gradual, moderate"],
+     ["kecil", "slightly, marginally, modestly", "slight, marginal, modest"],
+     ["cepat / lambat", "rapidly, quickly / slowly", "rapid / slow"]
+    ]},
+    {"type": "kotak", "title": "Preposisi yang paling sering salah", "items": [
+     "**from … to …** untuk titik awal dan akhir: *rose from 20% to 35%*.",
+     "**by** untuk selisihnya: *rose by 15 percentage points* (bukan *rose 15%*, dan bukan *by 15%* kalau satuannya sudah persen — 20% ke 35% adalah kenaikan 15 *percentage points*, atau 75 *per cent*).",
+     "**to** untuk titik akhir saja: *fell to 12%*. **at** untuk titik diam: *peaked at 40,000*, *remained stable at 5%*.",
+     "**between … and …** untuk rentang waktu: *between 2010 and 2015*. **over / during** untuk periode: *over the following decade*."
+    ]}
+   ]
+  },
+  {
+   "title": "Contoh dibedah: grafik garis",
+   "blocks": [
+    {"type": "p", "text": "*The graph below shows the percentage of households in three countries with access to the internet between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.*"},
+    {"type": "grafik", "jenis": "garis", "judul": "Households with internet access, 2000–2020 (%)", "sumbu_y": "Percentage of households", "satuan": "%", "maks": 100,
+     "kategori": ["2000", "2005", "2010", "2015", "2020"],
+     "seri": [
+      {"nama": "Country A", "nilai": [28, 55, 74, 86, 92]},
+      {"nama": "Country B", "nilai": [10, 21, 45, 73, 88]},
+      {"nama": "Country C", "nilai": [3, 6, 15, 34, 61]}
+     ]},
+    {"type": "sub", "text": "Langkah 1 — dua menit membaca grafik, sebelum menulis apa pun"},
+    {"type": "list", "items": [
+     "**Tren umum:** ketiganya naik sepanjang periode. Tidak ada yang turun.",
+     "**Peringkat:** A selalu tertinggi, C selalu terendah — urutannya tidak pernah berubah.",
+     "**Yang mencolok:** B mengejar A — selisih 18 poin di 2000 tinggal 4 poin di 2020. C mulai sangat rendah dan baru melesat setelah 2010.",
+     "**Angka yang layak disebut:** titik awal & akhir tiap negara, dan satu titik tengah untuk menunjukkan percepatan (B 2010 → 2015, C 2015 → 2020). Angka lainnya tidak perlu."
+    ]},
+    {"type": "sub", "text": "Langkah 2 — model jawaban (Band 7.5, 178 kata)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The line graph illustrates the proportion of households with an internet connection in three countries over a 20-year period from 2000 to 2020.",
+     "Overall, internet access rose considerably in all three countries, and Country A remained the most connected throughout. The most striking change, however, was in Country B, which almost closed the gap with A by the end of the period, while Country C, despite rapid growth after 2010, still lagged well behind.",
+     "In 2000, just over a quarter of households in Country A had internet access, compared with 10% in B and only 3% in C. Access in A then climbed steadily, reaching 74% in 2010 and 92% in 2020. Country B grew more slowly at first, but its figure more than doubled between 2005 and 2010, and by 2020 it stood at 88%, only four percentage points below A.",
+     "Country C showed a different pattern. Its figure remained below 15% until 2010, after which it rose sharply, peaking at 61% in 2020 – still around 30 points lower than the other two countries."
+    ]},
+    {"type": "sub", "text": "Langkah 3 — kenapa ini Band 7.5, bukan 6"},
+    {"type": "tabel", "head": ["Kriteria", "Yang dilakukan model"], "rows": [
+     ["Task Achievement", "Overview menyebut tiga fitur (tren umum, peringkat, B mengejar) tanpa angka; angka di paragraf detail dipilih (8 dari 15 titik data), tiap paragraf punya perbandingan."],
+     ["Coherence", "Paragraf 3 = A dan B (dibandingkan langsung), paragraf 4 = C sebagai kontras. *however, despite, compared with, after which, still* menyambung tanpa mekanis."],
+     ["Lexical", "*proportion, connected, closed the gap, lagged behind, more than doubled, stood at, percentage points, peaking at* — tidak ada kata tren yang diulang."],
+     ["Grammar", "Kalimat kompleks bebas kesalahan: *which almost closed…*, *despite rapid growth…*, *after which it rose…*. Past tense konsisten karena periodenya sudah lewat."]
+    ]}
+   ]
+  },
+  {
+   "title": "Grafik batang: bandingkan, jangan ceritakan",
+   "blocks": [
+    {"type": "p", "text": "Grafik batang biasanya tidak punya sumbu waktu, atau hanya dua–tiga titik waktu. Bahasa yang dibutuhkan bukan *rose/fell*, tapi **perbandingan**: *twice as many as, the highest proportion, considerably more than, while / whereas, in contrast, similarly*. Kesalahan paling umum: memperlakukan grafik batang seperti grafik garis dan menulis \"increased\" untuk perbedaan antar-kategori, padahal tidak ada yang berubah — hanya berbeda."},
+    {"type": "grafik", "jenis": "batang", "judul": "Main reason for choosing a university, by gender (%)", "sumbu_y": "Percentage of respondents", "satuan": "%", "label_nilai": true,
+     "kategori": ["Reputation", "Course content", "Location", "Cost", "Friends"],
+     "seri": [
+      {"nama": "Male", "nilai": [34, 22, 18, 20, 6]},
+      {"nama": "Female", "nilai": [25, 35, 16, 19, 5]}
+     ]},
+    {"type": "kotak", "title": "Overview yang bisa ditulis dari grafik ini", "items": [
+     "*Overall, reputation and course content were the two dominant factors for both groups, but their order was reversed: men were most influenced by a university's reputation, whereas women prioritised the content of the course. The remaining three factors were cited by similar, and much smaller, proportions of each gender.*",
+     "Tiga hal sekaligus: fitur terbesar, perbedaan utama antar-kelompok, dan kesamaan sisanya — tanpa satu angka pun."
+    ]},
+    {"type": "tabel", "head": ["Pola perbandingan", "Contoh dari grafik"], "rows": [
+     ["X was … times as high as Y", "The proportion of men citing reputation was almost **one and a half times as high as** that of women (34% vs 25%)."],
+     ["X, compared with / as opposed to Y", "35% of women chose course content, **compared with** just 22% of men."],
+     ["while / whereas (kontras dalam satu kalimat)", "Location was chosen by 18% of men, **whereas** 16% of women gave this reason."],
+     ["a similar proportion / roughly equal", "Cost was mentioned by **a similar proportion** of both groups, at around a fifth."],
+     ["the least / the smallest", "Friends' choices were **the least** influential factor, accounting for only 5–6% in each group."]
+    ]}
+   ]
+  },
+  {
+   "title": "Tugas menulis (20 menit, dengan timer)",
+   "blocks": [
+    {"type": "p", "text": "*The chart below shows the number of international students enrolled at a university in three subject areas from 2016 to 2022. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.*"},
+    {"type": "grafik", "jenis": "batang", "judul": "International student enrolments by subject area", "sumbu_y": "Number of students",
+     "kategori": ["2016", "2018", "2020", "2022"],
+     "seri": [
+      {"nama": "Engineering", "nilai": [1200, 1450, 1100, 1900]},
+      {"nama": "Business", "nilai": [2100, 2300, 1500, 2000]},
+      {"nama": "Arts", "nilai": [600, 650, 400, 550]}
+     ]},
+    {"type": "p", "text": "Tulis di kertas atau di catatan reader, lalu bandingkan dengan model di bagian *Pembahasan*. Periksa dirimu dengan tiga pertanyaan: (1) Apakah ada paragraf *Overall* tanpa angka? (2) Apakah kamu menyebut penurunan 2020 dan pemulihan 2022 sebagai SATU fitur, bukan dua belas angka? (3) Apakah ada kalimat perbandingan antar-subjek, bukan hanya per subjek?"}
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Lengkapi kalimat tentang grafik internet (Country A, B, C) dengan kata kerja tren yang tepat dalam bentuk lampau.",
+   "tipe": "isian",
+   "pilihan": ["rose", "fell", "remained stable", "peaked", "fluctuated", "doubled"],
+   "items": [
+    "Between 2000 and 2020, internet access in Country A ____ from 28% to 92%.",
+    "Country C's figure ____ below 15% until 2010.",
+    "Access in Country B more than ____ between 2005 and 2010.",
+    "Country A's figure ____ at 92% in 2020, the highest point on the graph."
+   ]
+  },
+  {
+   "prompt": "Pilih adverbia atau adjektiva yang cocok. Perhatikan apakah yang dilengkapi kata kerja (butuh adverbia) atau kata benda (butuh adjektiva).",
+   "tipe": "isian",
+   "pilihan": ["sharp", "sharply", "gradual", "gradually", "slight", "slightly"],
+   "items": [
+    "There was a ____ rise in Country C's figure after 2010, from 15% to 61%.",
+    "Country A's figure grew ____ throughout the period, with no sudden jumps.",
+    "In 2020, Country B's figure was only ____ lower than Country A's.",
+    "Country C experienced a ____ increase of just three percentage points between 2000 and 2005."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan preposisi yang tepat.",
+   "tipe": "isian",
+   "pilihan": ["from", "to", "by", "at", "between"],
+   "items": [
+    "The proportion of men citing reputation stood ____ 34%.",
+    "Internet access in Country B rose ____ 10% to 88%.",
+    "Country A's figure increased ____ 64 percentage points over the period.",
+    "Enrolments in Business fell ____ 1,500 in 2020.",
+    "The figures for Country C rose sharply ____ 2015 and 2020."
+   ]
+  },
+  {
+   "prompt": "Grafik batang universitas (reputation, course content…): TRUE kalau kalimatnya didukung grafik, FALSE kalau tidak.",
+   "tipe": "isian",
+   "pilihan": ["TRUE", "FALSE"],
+   "items": [
+    "Course content was the most common reason given by women. ____",
+    "The proportion of women choosing reputation increased over the period. ____",
+    "Cost was chosen by roughly a fifth of both men and women. ____",
+    "Men were more than twice as likely as women to choose location. ____"
+   ]
+  }
+ ],
+ "answers": [
+  "rose — remained stable — doubled — peaked",
+  "sharp — gradually — slightly — slight",
+  "at — from — by — to — between",
+  "TRUE — FALSE — TRUE — FALSE"
+ ],
+ "pembahasan": [
+  {
+   "title": "Pembahasan",
+   "blocks": [
+    {"type": "tabel", "head": ["Latihan", "Catatan"], "rows": [
+     ["1.3", "*more than doubled* — 21% → 45% lebih dari dua kali lipat. *Doubled* dipakai sebagai kata kerja, bukan *rose double*."],
+     ["2.1 / 2.4", "*a sharp rise*, *a slight increase* — sesudah *a* dan sebelum kata benda, yang dipakai ADJEKTIVA. Kesalahan *a sharply rise* termasuk yang paling sering di Band 5–6."],
+     ["2.3", "*slightly lower* — adverbia menerangkan adjektiva *lower*. 88% vs 92% memang selisih kecil."],
+     ["3.3", "*increased by 64 percentage points* — selisih memakai *by*. Dan karena satuannya persen, selisihnya *percentage points*, bukan *per cent*."],
+     ["4.2", "FALSE — grafik batang ini tidak punya sumbu waktu, jadi *increased over the period* tidak mungkin didukung. Ini jebakan yang dibahas di atas: grafik batang tanpa waktu tidak punya tren."],
+     ["4.4", "FALSE — 18% vs 16% hampir sama, jauh dari *twice as likely*. Selalu hitung sebelum memakai *twice / three times*."]
+    ]},
+    {"type": "sub", "text": "Model jawaban tugas menulis (Band 7, 171 kata)"},
+    {"type": "kotak", "title": "Model", "items": [
+     "The bar chart compares the number of international students studying Engineering, Business and Arts at a university in four different years between 2016 and 2022.",
+     "Overall, Business attracted the largest number of international students in every year shown, while Arts consistently had the fewest. All three subjects experienced a drop in 2020 followed by a recovery, and Engineering was the only area whose enrolments in 2022 exceeded their earlier peak.",
+     "In 2016, around 2,100 international students were enrolled in Business, almost twice the figure for Engineering (1,200) and more than three times that for Arts (600). Both Business and Engineering grew slightly by 2018, to 2,300 and 1,450 respectively, whereas Arts remained almost unchanged.",
+     "All three subjects then fell in 2020, with Business showing the steepest decline, to 1,500. By 2022, Engineering had risen sharply to 1,900, its highest level in the period, while Business recovered to 2,000, still below its 2018 peak. Arts also rebounded, to 550, but stayed well below the other two subjects."
+    ]},
+    {"type": "p", "text": "Perhatikan bagaimana model memperlakukan 2020: satu kalimat untuk ketiganya (*All three subjects then fell in 2020*), lalu satu rincian yang paling mencolok (*Business showing the steepest decline*). Dua belas angka di grafik hanya sembilan yang disebut, dan tiap paragraf detail memuat minimal satu perbandingan antar-subjek."}
+   ]
+  }
+ ]
+}

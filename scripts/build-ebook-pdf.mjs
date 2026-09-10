@@ -18,6 +18,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
+import { grafik } from "./lib/ebook-grafik.mjs";
 
 const slug = process.argv[2];
 if (!slug) { console.error("pakai: node scripts/build-ebook-pdf.mjs <slug>"); process.exit(1); }
@@ -91,13 +92,13 @@ const ruby = (s) => s.replace(RUBY, (_, dasar, baca) => `<ruby>${dasar}<rt>${bac
    dibalik sendiri oleh peramban, tapi tanda bacanya ikut melompat ke ujung yang
    salah begitu kalimatnya bersinggungan dengan teks Latin ("Ahmad:" di kepala
    baris dialog, tanda kurung, nomor). Jadi tiap potongan bahasa target dipagari
-   sendiri: dir rtl + unicode-bidi isolate, supaya urusan arah berhenti di tepi
-   potongannya dan tak merembet ke kalimat Indonesia di sekitarnya.
+   sendiri: `dir="rtl"` + `unicode-bidi: isolate`, supaya urusan arah berhenti di
+   tepi potongannya dan tak merembet ke kalimat Indonesia di sekitarnya.
 
    Ruby TIDAK dipakai di modul begini: cara baca yang dicetak di atas aksara Arab
    ikut tersusun kanan-ke-kiri sementara transliterasinya Latin, dan hasilnya
-   terbaca terbalik. Cara bacanya turun jadi barisnya sendiri (baca di tiap baris
-   dialog, kolom "Cara baca" di tabel kosakata). */
+   terbaca terbalik. Cara bacanya turun jadi barisnya sendiri (`baca` di tiap
+   baris dialog, kolom "Cara baca" di tabel kosakata). */
 const RTL = meta.rtl === true;
 const FON_RTL = meta.font_rtl ?? `"Geeza Pro", "Al Bayan", "Baghdad", "Noto Naskh Arabic", "Times New Roman"`;
 
@@ -208,7 +209,47 @@ const halamanIsi = (h, nomor) => `
 
 /** Satu blok isi bebas — dipakai halaman pengantar/penutup DAN bagian di
  *  dalam unit (lihat `sections`), supaya penulisnya cuma menghafal satu skema. */
+/* [ebook-testprep-v1] Blok untuk modul PERSIAPAN TES (IELTS Prep), yang
+   susunannya bukan dialog→kosakata→latihan melainkan strategi→bacaan/grafik→
+   soal→pembahasan. Empat blok ini tak dipakai modul bahasa:
+   - `passage`   bacaan panjang berparagraf A/B/C… di kotak sendiri, meniru
+                 lembar soal Reading (paragraf berlabel supaya soal matching
+                 information bisa merujuknya);
+   - `transkrip` naskah Listening, penutur dicetak tebal di tiap baris;
+   - `gambar`    berkas SVG/PNG di folder modul, ditanam data URI (alasannya
+                 sama dengan sampul: jalur relatif meleset begitu HTML pindah);
+   - `grafik`    grafik garis/batang/pai yang digambar dari data (lihat
+                 scripts/lib/ebook-grafik.mjs) untuk Writing Task 1. */
+const gambar = (b) => {
+  const f = `${DIR}/${b.file}`;
+  if (!existsSync(f)) throw new Error(`gambar tidak ada: ${f}`);
+  const ext = b.file.split(".").pop().toLowerCase();
+  const jenis = ext === "svg" ? "image/svg+xml" : JENIS_GAMBAR[ext];
+  const src = `data:${jenis};base64,${readFileSync(f).toString("base64")}`;
+  return `<figure class="gambar"><img src="${src}" alt="" style="width:${esc(b.lebar ?? "150mm")}">${b.caption ? `<figcaption>${teks(b.caption)}</figcaption>` : ""}</figure>`;
+};
+const passage = (b) => `
+<div class="passage">
+  ${b.title ? `<h4 class="passage-judul">${teks(b.title)}</h4>` : ""}
+  ${b.intro ? `<p class="passage-intro">${teks(b.intro)}</p>` : ""}
+  ${(b.paragraphs ?? []).map((par) => {
+    const label = typeof par === "string" ? null : par.label;
+    const isi = typeof par === "string" ? par : par.text;
+    return `<p class="passage-par">${label ? `<span class="passage-label">${esc(label)}</span>` : ""}${teks(isi)}</p>`;
+  }).join("")}
+  ${b.words ? `<p class="passage-kata">${esc(b.words)} words</p>` : ""}
+</div>`;
+const transkrip = (b) => `
+<div class="transkrip">
+  ${b.title ? `<h4 class="passage-judul">${teks(b.title)}</h4>` : ""}
+  ${(b.lines ?? []).map((l) => `<p class="transkrip-baris">${l.speaker ? `<b>${teks(l.speaker)}:</b> ` : ""}${teks(l.text)}</p>`).join("")}
+</div>`;
+
 const blok = (b) => {
+  if (b.type === "passage") return passage(b);
+  if (b.type === "transkrip") return transkrip(b);
+  if (b.type === "gambar") return gambar(b);
+  if (b.type === "grafik") return `<figure class="gambar">${grafik(b)}${b.caption ? `<figcaption>${teks(b.caption)}</figcaption>` : ""}</figure>`;
   if (b.type === "p") return `<p>${barisTeks(b.text)}</p>`;
   if (b.type === "list") return `<ul>${b.items.map((i) => `<li>${barisTeks(i)}</li>`).join("")}</ul>`;
   if (b.type === "tabel") return tabel(b);
@@ -287,7 +328,7 @@ const dialogHtml = (d) => `
 const unitHal = (u, i) => `
 <section class="hal unit">
   <div class="unit-kepala">
-    <span class="unit-no">${esc(LABEL.unit)} ${i + 1}</span>
+    <span class="unit-no">${esc(LABEL.unit)} ${i + 1}${u.skill ? ` &middot; ${esc(u.skill)}` : ""}</span>
     <h2>${esc(u.title)}<span class="unit-asing">${teks(u.title_target ?? "")}</span></h2>
     ${u.goal ? `<p class="unit-tujuan">${teks(u.goal)}</p>` : ""}
     ${u.bekal?.length ? `<p class="unit-bekal"><b>${esc(LABEL.bekal)}</b> ${u.bekal.map(teks).join(" &middot; ")}</p>` : ""}
@@ -314,6 +355,7 @@ const unitHal = (u, i) => `
   ${u.exercises.map((e, k) => `
     <div class="latihan">
       <p class="latihan-judul">${k + 1}. ${teks(e.prompt)}</p>
+      ${e.pilihan?.length ? `<p class="latihan-pilihan">${e.pilihan.map((p) => `<span>${teks(p)}</span>`).join("")}</p>` : ""}
       <ol class="soal">${e.items.map((it) => `<li>${barisTeks(it)}</li>`).join("")}</ol>
     </div>`).join("")}` : ""}
 
@@ -322,6 +364,10 @@ const unitHal = (u, i) => `
     <h4>${esc(LABEL.answers)}</h4>
     ${u.answers.map((a, k) => `<p><b>${k + 1}.</b> ${barisTeks(a)}</p>`).join("")}
   </div>` : ""}
+
+  ${(u.pembahasan ?? []).map((s) => `
+  <h3>${teks(s.title)}</h3>
+  ${(s.blocks ?? []).map(blok).join("\n")}`).join("\n")}
 
   ${u.wave ? `<p class="ombak"><b>${esc(LABEL.wave)}</b> ${teks(u.wave)}</p>` : ""}
 </section>`;
@@ -473,7 +519,29 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .isi-asing { display: block; font-size: 9pt; font-style: italic; color: #8A93A3; }
   .isi-hal { width: 14mm; text-align: right; color: #5A6478; white-space: nowrap; }
 
+  /* [ebook-testprep-v1] Bacaan Reading, transkrip Listening, dan gambar/grafik. */
+  .passage { border: 1px solid #D8E3E1; border-radius: 3mm; padding: 4mm 5mm; margin: 3mm 0 4mm;
+             font-size: 10pt; line-height: 1.5; }
+  .passage-judul { font-family: "Charter", "Georgia", serif; font-size: 12.5pt; font-weight: 700;
+                   text-align: center; margin: 0 0 2.5mm; }
+  .passage-intro { font-style: italic; color: #5A6478; text-align: center; font-size: 9.5pt; }
+  .passage-par { text-align: justify; hyphens: auto; }
+  .passage-label { display: inline-block; min-width: 6mm; font-family: "Helvetica Neue", Arial, sans-serif;
+                   font-weight: 800; color: #1A9E9E; }
+  .passage-kata { text-align: right; font-size: 8.5pt; color: #8A93A3; margin: 1mm 0 0; }
+  .transkrip { background: #F7F9F9; border-left: 3px solid #D8E3E1; padding: 3mm 4mm; margin: 3mm 0 4mm; font-size: 9.6pt; }
+  .transkrip-baris { margin-bottom: 1.4mm; }
+  .transkrip-baris b { color: #12776F; }
+  figure.gambar { margin: 3mm auto 4mm; text-align: center; page-break-inside: avoid; }
+  figure.gambar svg, figure.gambar img { display: block; margin: 0 auto; max-width: 100%; }
+  figure.gambar figcaption { font-size: 9pt; color: #5A6478; margin-top: 1.5mm; font-style: italic; }
+  .latihan-pilihan { font-size: 9pt; margin: 0 0 1.5mm; }
+  .latihan-pilihan span { display: inline-block; border: 1px solid #D8E3E1; border-radius: 2mm;
+                          padding: 0 2mm; margin: 0 1.5mm 1mm 0; color: #12776F; font-weight: 700; }
   .latihan { margin-bottom: 3.5mm; page-break-inside: avoid; }
+  /* Latihan test-prep bisa 13 soal panjang — jangan dipaksa satu halaman. */
+  .testprep .latihan { page-break-inside: auto; }
+  .testprep .latihan-judul { page-break-after: avoid; }
   .latihan-judul { font-weight: 700; }
   .soal li { margin-bottom: 1.2mm; }
   ul, ol { margin: 0 0 2.5mm; padding-left: 5.5mm; }
@@ -481,15 +549,15 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   /* [ebook-rtl-arab-v1] Aksara kanan-ke-kiri. Fonnya dipasang di span pemagar,
      bukan di badan teks: kalau fon Arab ikut menaungi seluruh halaman, huruf
      Latin di sekitarnya ikut berganti bentuk tanpa alasan. Ukurannya dinaikkan
-     seperlima karena tinggi huruf Arab jauh lebih kecil daripada huruf Latin
+     seperempat karena tinggi huruf Arab jauh lebih kecil daripada huruf Latin
      pada ukuran pt yang sama, dan harakatnya butuh ruang di atas-bawah. */
   .rtl-modul .rtl { direction: rtl; unicode-bidi: isolate;
                     font-family: ${FON_RTL}, serif; font-size: 1.2em; }
   /* Baris dialog seluruhnya bahasa target, jadi ARAH BARISNYA sendiri yang
      dibalik — bukan cuma potongan aksaranya. Kalau cuma potongannya, nama
      penutur dan titik di ujung kalimat (dua-duanya "netral" bagi peramban)
-     terlempar ke tepi kiri: yang terbaca jadi nama berkolon terbalik dan titik
-     menggantung di depan kalimat. */
+     terlempar ke tepi kiri: yang terbaca jadi ":أحمد" dan titik menggantung
+     di depan kalimat. */
   .rtl-modul .asing { direction: rtl; text-align: right; font-size: 1.24em;
                       line-height: 1.7; font-family: ${FON_RTL}, serif; }
   .rtl-modul .asing .rtl { font-size: 1em; }
@@ -500,7 +568,7 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .rtl-modul td:has(.rtl), .rtl-modul th:has(.rtl) { line-height: 1.68; }
   .rtl-modul .baca { margin-bottom: .4mm; }
   /* Cara baca turun jadi barisnya sendiri — lihat catatan ruby di atas. */
-  .rtl-modul .baca { font-size: 8.8pt; color: #12776F; letter-spacing: .01em; }
+  .rtl-modul .baca { font-size: 8.8pt; color: #12776F; letter-spacing: .01em; margin-bottom: .8mm; }
   /* [ebook-rtl-baris-plaintext-v1] Satu baris latihan yang MEMUAT bahasa target
      di tengahnya — "נֹעָה, ____ מוֹרָה?" — pecah jadi dua pagar karena garis
      isian bukan aksara Ibrani. Dua pagar bersebelahan diurutkan kiri-ke-kanan
@@ -516,8 +584,9 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
      Dinyalakan per modul (meta.rtl_baris_plaintext) supaya modul Arab yang
      sudah terbit tetap tercetak byte demi byte sama. */
   .rtl-modul .baris-rtl { display: inline-block; max-width: 100%; direction: rtl; unicode-bidi: isolate; text-align: right; }
-  .rtl-modul .unit-asing, .rtl-modul .isi-asing { font-style: normal; }
-</style></head><body class="${[meta.ruby ? "beraksara" : "", RTL ? "rtl-modul" : ""].filter(Boolean).join(" ")}">
+  .rtl-modul .unit-asing { font-style: normal; }
+  .rtl-modul .isi-asing { font-style: normal; }
+</style></head><body class="${[meta.ruby ? "beraksara" : "", RTL ? "rtl-modul" : "", meta.testprep ? "testprep" : ""].filter(Boolean).join(" ")}">
 ${sampul()}
 ${(meta.front ?? []).map((h) => halamanTeks(h, nomor)).join("\n")}
 ${units.map(unitHal).join("\n")}
@@ -550,7 +619,9 @@ const cetak = () => execFileSync(chrome, [
    balik dari PDF yang barusan dicetak — sekali di sini, bukan tiap kali modulnya
    dibuka siswa. */
 
-const LABEL_UNIT = new RegExp(`^${LABEL.unit}\\.?(\\d+)$`, "i");
+/* [ebook-testprep-v1] Kepala unit test-prep berbunyi "Unit 6 · READING" —
+   ekor sesudah titik tengah diabaikan waktu nomor unitnya dibaca balik. */
+const LABEL_UNIT = new RegExp(`^${LABEL.unit}\\.?(\\d+)(?:·.*)?$`, "i");
 /* Kepala bagian latihan, tanpa spasi & tanpa huruf besar — dibandingkan apa
    adanya, bukan lewat pola, supaya judul berbahasa apa pun aman. */
 const KEPALA_LATIHAN = LABEL.exercises.replace(/\s+/g, "").toLowerCase();
@@ -677,13 +748,18 @@ function tulisLatihan({ halaman, mulai, latihanHal, judul }) {
       const soal = e.items.map((it, j) => ({ teks: polos(it), kunci: polos(kunci[j] ?? "") }));
       // Jenis soal ditentukan dari BENTUK soalnya, bukan dari perintahnya:
       // perintah ditulis bebas oleh penulis modul, bentuk soalnya tidak.
-      const tipe = soal.some((s) => / \/ /.test(s.teks)) ? "susun"
+      // [ebook-testprep-v1] Modul test-prep menulis tipe & bank pilihannya
+      // sendiri: TRUE / FALSE / NOT GIVEN dua kata, jadi lolos dari aturan
+      // "satu kata" di bawah, dan pilihan A–D tak boleh diturunkan dari kunci
+      // (bank yang cuma berisi huruf jawaban membocorkan pola jawabannya).
+      const tipe = e.tipe ?? (soal.some((s) => / \/ /.test(s.teks)) ? "susun"
         : soal.some((s) => /_{2,}/.test(s.teks)) ? "isian"
-        : "terjemah";
+        : "terjemah");
       // Bank kata cuma masuk akal kalau seluruh kuncinya satu kata — di soal
       // "07.00 — ____" kuncinya kalimat penuh, chip-nya jadi konyol.
       const satuKata = soal.length > 1 && soal.every((s) => s.kunci && !/\s/.test(s.kunci));
-      const pilihan = tipe === "isian" && satuKata ? [...new Set(soal.map((s) => s.kunci))].sort() : undefined;
+      const pilihan = e.pilihan?.length ? e.pilihan.map(polos)
+        : tipe === "isian" && satuKata ? [...new Set(soal.map((s) => s.kunci))].sort() : undefined;
       return { perintah: polos(e.prompt), tipe, soal: soal.filter((s) => s.kunci), ...(pilihan ? { pilihan } : {}) };
     }).filter((l) => l.soal.length);
     return {
