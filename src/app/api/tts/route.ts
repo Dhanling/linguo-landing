@@ -15,7 +15,7 @@
 // (1) dibereskan di bawah — token baru diambil kalau memang harus menyintesis.
 // (2) dibereskan lewat GET yang boleh disimpan CDN + jalur langsung ke Storage
 //     di klien (lihat src/lib/ebookTts.ts).
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -265,6 +265,12 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
 
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
   const jalur = jalurCache(voice, text);
+  // [tts-klik-pertama-v1] Token Google diminta BERSAMAAN dengan pemeriksaan
+  // cache, bukan sesudahnya: cache miss di kontainer yang belum punya token
+  // dulu membayar dua perjalanan berurutan (Storage, lalu OAuth) sebelum
+  // Chirp disentuh. Kalau cache-nya ternyata ada, token yang telanjur diminta
+  // cuma mengisi simpanan kontainer — tak ada yang ditagih.
+  const tokenAwal = chirpLocale ? getAccessToken().catch(() => null) : null;
   const tersimpan = await dariCache(jalur);
   if (tersimpan) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
 
@@ -275,12 +281,12 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
     } catch (e: any) {
       return { status: 502, body: { error: "tts failed", detail: String(e?.message || e).slice(0, 300) } };
     }
-    // Ditunggu, bukan dilepas — alasannya sama dengan jalur Google di bawah.
-    await keCache(jalur, audioContent);
+    // Lewat after() — alasannya sama dengan jalur Google di bawah.
+    after(() => keCache(jalur, audioContent));
     return { status: 200, body: { audioContent }, abadi: true };
   }
 
-  const token = await getAccessToken();
+  const token = (await tokenAwal) ?? (await getAccessToken());
   const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -295,9 +301,13 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
     return { status: 502, body: { error: "tts failed", detail: detail.slice(0, 300) } };
   }
   const j = await res.json();
-  // Ditunggu, bukan dilepas: fungsi serverless bisa dimatikan begitu balasan
-  // terkirim, dan unggahan yang keburu terpotong = cache yang tak pernah isi.
-  if (j.audioContent) await keCache(jalur, j.audioContent);
+  // [tts-klik-pertama-v1] Unggahan ke cache bersama TIDAK lagi ditunggu di
+  // depan balasan: siswa yang mengetuk tak perlu ikut menanti Storage (0,2–0,6
+  // detik). Dulu sengaja ditunggu karena fungsi serverless bisa dimatikan
+  // begitu balasan terkirim, dan unggahan yang terpotong = cache yang tak
+  // pernah isi — `after()` dari next/server persis menutup celah itu: Vercel
+  // menahan kontainernya sampai pekerjaan di dalamnya selesai.
+  if (j.audioContent) { const isi = j.audioContent as string; after(() => keCache(jalur, isi)); }
   // [ling-lms-quiz-tts-v2] balikin base64 apa adanya dari Google → client decode (atob→Uint8Array→Blob).
   // Lebih robust dari body biner di Next route handler, dan match pola decode di client.
   return { status: 200, body: { audioContent: j.audioContent }, abadi: true };
@@ -358,9 +368,31 @@ export async function POST(req: NextRequest) {
    yang berhasil boleh disimpan CDN Vercel + cache browser selama setahun. Kata
    yang sudah pernah diketuk siapa pun di POP yang sama tak lagi membangunkan
    fungsi ini — 1,5 detik jadi puluhan milidetik. */
+/* [tts-klik-pertama-v1] Pemanasan. Klik pertama di reader yang mp3-nya belum
+   ada di cache bersama dulu menanggung TIGA hal berurutan: membangunkan
+   kontainer Vercel yang dingin (7–20 detik), menukar JWT jadi token OAuth
+   Google, baru Chirp. Reader kini memanggil `?warm=1` begitu dibuka (dan
+   tiap beberapa menit selama terbuka, lihat jagaHangatTts di ebookTts.ts):
+   kontainernya sudah bangun DAN tokennya sudah di tangan sebelum kata pertama
+   diketuk. Tanpa teks, tanpa sintesis, tanpa karakter yang ditagih. Balasannya
+   204 no-store — jangan sampai CDN menyajikannya dan pemanasannya tak pernah
+   sampai ke fungsi. */
+async function hangatkan(): Promise<void> {
+  await Promise.allSettled([
+    getAccessToken(),
+    // Membangunkan klien Storage sekalian — bukan permintaan jaringan, cuma
+    // supaya modul supabase-js sudah termuat di kontainer ini.
+    Promise.resolve(admin()),
+  ]);
+}
+
 export async function GET(req: NextRequest) {
   try {
     const q = req.nextUrl.searchParams;
+    if (q.get("warm")) {
+      await hangatkan();
+      return new NextResponse(null, { status: 204, headers: { "Cache-Control": "no-store", ...headerAsal(req) } });
+    }
     return balas(await sintesis(q.get("text"), q.get("lang")), true, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });

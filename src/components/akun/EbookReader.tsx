@@ -44,7 +44,7 @@ import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
-  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris,
+  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris, jagaHangatTts,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -2134,6 +2134,8 @@ export default function EbookReader({
      dilafalkan dengan fonem bahasa lain lebih merusak daripada tak ada suara. */
   const kodeBahasa = useMemo(() => kodeBahasaEbook(language, title), [language, title]);
   const ttsAktif = bisaDibunyikan(kodeBahasa);
+  // [tts-klik-pertama-v1] Fungsi /api/tts dibangunkan begitu reader terbuka.
+  useEffect(() => (ttsAktif ? jagaHangatTts(kodeBahasa) : undefined), [ttsAktif, kodeBahasa]);
 
   const KOSONG: HalTeks = useMemo(() => ({ items: [], baris: [], ruby: [] }), []);
 

@@ -1036,6 +1036,41 @@ function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise
   return kerja;
 }
 
+/* [tts-klik-pertama-v1] Pemanasan fungsi /api/tts.
+   Klik pertama pada kata yang belum ada di cache bersama dulu terasa 7–20 detik:
+   bukan Chirp yang lambat, melainkan kontainer Vercel yang harus dibangunkan
+   lebih dulu, lalu menukar token Google, baru menyintesis. Begitu reader dibuka
+   di modul yang bahasanya bersuara, `?warm=1` dikirim — fungsinya bangun dan
+   tokennya siap SEBELUM kata pertama diketuk. Diulang tiap beberapa menit
+   selama reader terbuka (kontainer yang menganggur ditidurkan lagi) dan tiap
+   tab kembali terlihat. Tanpa teks: nol karakter ditagih.
+   🔴 Salinan lintas repo (landing & admin) — bedanya cuma asal rutenya. */
+const JEDA_HANGAT = 4 * 60_000;
+let hangatTerakhir = 0;
+
+export function hangatkanTts(kode?: string | null) {
+  if (typeof window === "undefined" || !bisaDibunyikan(kode)) return;
+  const kini = Date.now();
+  if (kini - hangatTerakhir < JEDA_HANGAT) return;
+  hangatTerakhir = kini;
+  try {
+    void fetch("/api/tts?warm=1", { cache: "no-store" }).catch(() => {});
+  } catch { /* diam — pemanasan gagal bukan alasan TTS gagal */ }
+}
+
+/** Jaga fungsi TTS tetap hangat selama reader terbuka. Kembalikan fungsi
+ *  penghenti — pasang di useEffect. */
+export function jagaHangatTts(kode?: string | null): () => void {
+  if (typeof window === "undefined" || !bisaDibunyikan(kode)) return () => {};
+  hangatkanTts(kode);
+  const id = window.setInterval(() => {
+    if (document.visibilityState === "visible") hangatkanTts(kode);
+  }, JEDA_HANGAT);
+  const lihat = () => { if (document.visibilityState === "visible") hangatkanTts(kode); };
+  document.addEventListener("visibilitychange", lihat);
+  return () => { window.clearInterval(id); document.removeEventListener("visibilitychange", lihat); };
+}
+
 /* [tts-kunci-kanonik-v1] Satu kata = satu mp3, di mana pun ia diketuk.
 
    Kuncinya dulu teks ketukan apa adanya, jadi kata yang sama di dua lokasi
