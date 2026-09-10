@@ -6,6 +6,8 @@
 // akun, jadi callback afiliator DAN pengajar mendarat di sini. Pemilahnya
 // reference_id:
 //   "TCH-<uuid>" -> fee pengajar  -> teacher_payouts (+ WA otomatis)
+//   "RFD-<uuid>" -> refund siswa  -> refunds via rpc complete/fail_student_refund
+//                   (+ WA ke siswa dari bot CS) — [refund-xendit-disburse-v1]
 //   "<uuid>"     -> komisi afiliator -> complete/fail_affiliate_payout (perilaku lama)
 //
 // PENTING: daftarin URL ini + callback token di dashboard Xendit pada bagian
@@ -16,6 +18,7 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
 const TEACHER_PREFIX = 'TCH-';
+const REFUND_PREFIX = 'RFD-';
 const MONTHS = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
   'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
@@ -86,6 +89,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true });
     }
 
+    // ── Refund siswa (prefix RFD-) — [refund-xendit-disburse-v1] ────────
+    if (String(referenceId).startsWith(REFUND_PREFIX)) {
+      const refundId = String(referenceId).slice(REFUND_PREFIX.length);
+      if (isSuccess) await completeStudentRefund(admin, refundId, xenditId, data);
+      else if (isFailed) {
+        const reason = data.failure_code || data.failure_reason || 'Xendit melaporkan pencairan gagal';
+        await admin.rpc('fail_student_refund', { p_refund_id: refundId, p_reason: String(reason) });
+      }
+      return NextResponse.json({ ok: true });
+    }
+
     if (isSuccess) {
       const { error } = await admin.rpc('complete_affiliate_payout', {
         p_payout_id: referenceId,
@@ -106,6 +120,65 @@ export async function POST(req: Request) {
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || 'error' }, { status: 500 });
   }
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Refund siswa — [refund-xendit-disburse-v1]
+// ═══════════════════════════════════════════════════════════════════════
+
+/** Payout refund SUKSES → rpc complete_student_refund (status completed + omzet
+ *  registrasi disesuaikan, idempoten), lalu kabari siswa lewat WA dari bot CS. */
+async function completeStudentRefund(admin: any, refundId: string, xenditId: string | null, data: any) {
+  const { data: before } = await admin
+    .from('refunds').select('status, notified_at').eq('id', refundId).maybeSingle();
+  if (!before) return;
+  // callback dobel → jangan kirim WA dua kali
+  if (before.status === 'completed') return;
+
+  const fee = Number(data?.fee?.amount ?? 0) || null;
+  const { data: refund, error } = await admin.rpc('complete_student_refund', {
+    p_refund_id: refundId,
+    p_provider_ref: xenditId,
+    p_fee: fee,
+  });
+  if (error) {
+    console.error('[refund-webhook] complete_student_refund gagal:', error.message);
+    return;
+  }
+  const r = Array.isArray(refund) ? refund[0] : refund;
+  if (!r || r.notified_at) return;
+
+  const phone = normalizePhone(r.student_whatsapp);
+  if (!phone) return;
+
+  const nama = String(r.student_name || '').split(' ')[0] || 'Kak';
+  const kelas = r.batch_label || [r.product, r.language, r.level].filter(Boolean).join(' ') || 'kelas Linguo';
+  const bank = r.bank_name || String(r.bank_code || '').replace(/^ID_/, '') || 'rekening terdaftar';
+  const last4 = String(r.account_number || '').slice(-4);
+  const paidAtLabel = new Date().toLocaleString('id-ID', {
+    day: '2-digit', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta',
+  }).replace(/\./g, ':') + ' WIB';
+
+  const body = [
+    `Halo Kak ${nama} 👋`,
+    ``,
+    `Refund untuk *${kelas}* sudah kami transfer ya.`,
+    ``,
+    `*Nominal: ${rupiah(r.refund_amount)}*`,
+    `Ke ${bank}${last4 ? ` ···${last4}` : ''} a.n. ${r.account_holder || '-'}`,
+    `Status: Berhasil ✅`,
+    `Waktu: ${paidAtLabel}`,
+    ...(xenditId ? [`No. referensi: ${xenditId}`] : []),
+    ``,
+    `Dana biasanya masuk dalam beberapa menit, tergantung bank tujuan. Kalau belum masuk dalam 1×24 jam, balas pesan ini ya. Terima kasih 🙏`,
+  ].join('\n');
+
+  // sender null = bot CS (nomor yang memang dipakai siswa). Gagal antre WA tidak
+  // boleh membatalkan status transfer — uangnya sudah keluar.
+  const { error: waErr } = await admin.from('wa_outbound').insert({ phone, body, sender: null });
+  if (waErr) { console.error('[refund-webhook] gagal antre WA:', waErr.message); return; }
+  await admin.from('refunds').update({ notified_at: new Date().toISOString() }).eq('id', refundId);
 }
 
 // ═══════════════════════════════════════════════════════════════════════
