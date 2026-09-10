@@ -981,6 +981,79 @@ function ukurCtx(): CanvasRenderingContext2D | null {
   return ukurCanvas;
 }
 
+/** Semua kata sebuah potongan beserta kotaknya (satuan halaman), kiri→kanan.
+ *  Pengukurannya sama persis dengan `kataDi`. */
+function kataKataDi(it: ItemTeks): { kata: string; x: number; w: number }[] {
+  const ctx = ukurCtx();
+  if (!ctx) return [];
+  const huruf = Array.from(it.str);
+  ctx.font = `${Math.max(4, it.h)}px sans-serif`;
+  const lebarUkur = ctx.measureText(it.str).width;
+  if (!lebarUkur) return [];
+  const f = (it.w || lebarUkur) / lebarUkur;
+  const batas = [0];
+  let acc = 0;
+  for (const ch of huruf) { acc += ctx.measureText(ch).width; batas.push(acc * f); }
+  const hasil: { kata: string; x: number; w: number }[] = [];
+  let a = -1;
+  for (let i = 0; i <= huruf.length; i++) {
+    const isHuruf = i < huruf.length && HURUF.test(huruf[i]);
+    if (isHuruf && a < 0) a = i;
+    if (!isHuruf && a >= 0) {
+      hasil.push({ kata: huruf.slice(a, i).join(""), x: it.x + batas[a], w: batas[i] - batas[a] });
+      a = -1;
+    }
+  }
+  return hasil;
+}
+
+/* [ebook-sorot-frasa-v1] Kotak sorotan sebuah FRASA: cuma kata-kata frasanya,
+   bukan seluruh sel. Dulu sorotan frasa selalu selebar sel — pas untuk kolom
+   tabel "buenos días", tapi di paragraf catatan "Nie wierzę — perhatikan nie
+   selalu berdiri …" frasaSel sudah memangkasnya jadi "Nie wierzę" saja
+   (pemisah " — ", "/", nomor urut), sementara sorotannya tetap menyapu satu
+   baris penuh sampai ke penjelasan Indonesianya. Siswa membaca sorotan itu
+   sebagai "inilah yang dibunyikan", padahal yang berbunyi cuma dua kata
+   Polandianya.
+
+   Yang dicari: jendela kata berurutan di baris itu (di dalam selnya) yang
+   teksnya = kata-kata frasa, dan memuat kata yang diketuk. Pembandingnya
+   huruf saja — tanda baca dan besar-kecil huruf diabaikan. Tak ketemu → null,
+   pemanggil jatuh ke kotak kata yang diketuk (lebih jujur daripada sel utuh).
+   🔴 Salinan lintas repo: `src/lib/ebookTeksHal.ts` di linguo-admin-dashboard. */
+function kotakFrasa(
+  items: ItemTeks[], kena: ItemTeks, sel: Segmen, frasa: string, kataX: number,
+): { x: number; w: number } | null {
+  const inti = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{M}\p{N}]/gu, "");
+  const target = frasa.split(/\s+/).map(inti).filter(Boolean);
+  if (!target.length) return null;
+  const tinggi = Math.max(1, kena.h);
+  const kata = items
+    .filter((it) =>
+      Math.abs(it.y - kena.y) <= Math.max(it.h, tinggi) * 0.6 &&
+      it.x + it.w > sel.x0 - 2 && it.x < sel.x1 + 2)
+    .sort((a, b) => a.x - b.x)
+    .flatMap(kataKataDi)
+    .filter((k) => inti(k.kata));
+  if (!kata.length) return null;
+  // Frasa = seluruh isi sel → kotak selnya, persis seperti dulu.
+  if (kata.map((k) => inti(k.kata)).join(" ") === target.join(" ")) {
+    return { x: sel.x0, w: Math.max(6, sel.x1 - sel.x0) };
+  }
+  const cocok = (a: number) =>
+    a >= 0 && a + target.length <= kata.length &&
+    target.every((t, j) => inti(kata[a + j].kata) === t);
+  const diketuk = kata.findIndex((k) => kataX >= k.x - 1 && kataX <= k.x + k.w + 1);
+  let awal = -1;
+  if (diketuk >= 0) {
+    for (let a = diketuk; a >= diketuk - target.length + 1; a--) if (cocok(a)) { awal = a; break; }
+  }
+  if (awal < 0) for (let a = 0; a < kata.length; a++) if (cocok(a)) { awal = a; break; }
+  if (awal < 0) return null;
+  const akhir = kata[awal + target.length - 1];
+  return { x: kata[awal].x, w: Math.max(6, akhir.x + akhir.w - kata[awal].x) };
+}
+
 type Bitmap = { canvas: HTMLCanvasElement; w: number; h: number };
 type Bentangan = { kiri: number | null; kanan: number | null };
 
@@ -2917,7 +2990,8 @@ export default function EbookReader({
     const sel = barisKena?.segmen.find((g) => xp >= g.x0 - 2 && xp <= g.x1 + 2);
     /* [ebook-tts-frasa-v1] "buenos días" dibunyikan sebagai satu satuan, bukan
        "buenos" saja — lihat catatan pada frasaSel. Sorotannya ikut melebar ke
-       seluruh sel supaya jelas yang dibunyikan memang keduanya. */
+       kata-kata frasanya supaya jelas yang dibunyikan memang keduanya — dan
+       CUMA keduanya, bukan satu baris penuh; lihat kotakFrasa. */
     /* [ebook-tts-tanpa-penutur-v1] Nama penutur ("たなか:") bukan bahasa yang
        dipelajari — mengetuknya dulu membunyikan nama tokoh dan memunculkan
        artinya di popup. Sekarang ketukannya diabaikan diam-diam. Yang diadu
@@ -2933,9 +3007,8 @@ export default function EbookReader({
     // ("senang berkenalan") tak boleh ikut dibunyikan berlogat bahasa target.
     if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa, frasa))) frasa = "";
     const unit = frasa || kata.kata;
-    const kotak = frasa && sel
-      ? { x: sel.x0, w: Math.max(6, sel.x1 - sel.x0) }
-      : { x: kata.x, w: Math.max(6, kata.w) };
+    const kotak = (frasa && sel ? kotakFrasa(items, kena, sel, frasa, kata.x) : null)
+      ?? { x: kata.x, w: Math.max(6, kata.w) };
     /* [ebook-tts-semua-section-v1] Semua kata berbunyi. Kata bahasa Indonesia
        (baris terjemahan/penjelasan) dibacakan dengan suara INDONESIA — bahasa
        Indonesia berlogat Spanyol justru yang paling tidak boleh ditiru siswa
