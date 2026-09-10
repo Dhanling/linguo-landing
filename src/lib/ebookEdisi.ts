@@ -10,7 +10,12 @@
 // BARU (French, Persian, Portuguese, Levantine Arabic 101) berkasnya masih
 // menumpang Drive. Pola judul satu-satunya penanda yang tidak bohong.
 // Sama persis dengan saringan rak Perpustakaan pengajar di repo dashboard.
-const POLA_NEW_EDITION = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\b/i;
+// [pustaka-testprep-v1] Modul persiapan tes ("IELTS Prep - Band 6.5+") ikut
+// dihitung edisi baru. Tanpa ini, saringEdisiLama() menyapunya sebagai "edisi
+// lama bahasa Inggris" karena English sudah punya 101–104 — produknya ada di
+// /toko/[slug] tapi hilang dari etalase /toko dan rak Perpustakaan siswa
+// (10 Sep 2026, cari "ielts" kosong).
+const POLA_NEW_EDITION = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\b|\bPrep\s*[-–—]\s*Band\b/i;
 
 export const LABEL_NEW_EDITION = 'New Edition';
 
