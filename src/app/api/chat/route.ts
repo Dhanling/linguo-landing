@@ -177,7 +177,7 @@ Biaya Semi-Private (kelas grup kecil yang dibikin siswa sendiri) — PER SISWA p
 - Kategori A: Rp 105.000 | 97.000 | 85.000
 - Kategori D: Rp 75.000 | 66.667 | 55.000
 - Kategori E: Rp 135.000 | 127.000 | 115.000
-Paket yang disarankan 16 sesi (bukan minimum — lihat JUMLAH SESI & CARA BAYAR), plus paket Recording (+E-book) per siswa. Angka di atas HANYA untuk level Basic, 60 menit, grup 2-4 orang — untuk level/durasi lain atau grup 5-10 orang JANGAN menghitung sendiri, bilang dihitungkan admin setelah tahu jumlah anggota grup, level & durasinya.
+Paket yang disarankan 16 sesi (bukan minimum — lihat JUMLAH SESI & CARA BAYAR), plus paket Recording (+E-book) per siswa (opsional per orang — tidak wajib semua anggota grup ambil; mis. grup 2 siswa bisa cuma 1 yang beli modul, ditagih 1×). Angka di atas HANYA untuk level Basic, 60 menit, grup 2-4 orang — untuk level/durasi lain atau grup 5-10 orang JANGAN menghitung sendiri, bilang dihitungkan admin setelah tahu jumlah anggota grup, level & durasinya.
 
 Trial Class (BERBAYAR, bukan gratis):
 - Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom.
