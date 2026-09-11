@@ -105,6 +105,9 @@ export const FREE_PROMOS: Record<string, FreePromo> = {
   // [simulasi-ielts-open-v1] Kode gratis khusus IELTS (Academic; General ikut
   // begitu terbit) — 3x pengerjaan yang benar-benar dikumpulkan per akun.
   GRATISIELTS: { code: "GRATISIELTS", attemptLimit: 3, label: "Gratis coba 3x Simulasi IELTS", testType: "ielts" },
+  // [ebook-toefl-itp-v1] Kembaran GRATISIELTS untuk pembeli e-book "TOEFL ITP Prep -
+  // Skor 550+": lampiran modulnya mengarahkan ke Simulasi TOEFL ITP dengan kode ini.
+  GRATISTOEFL: { code: "GRATISTOEFL", attemptLimit: 3, label: "Gratis coba 3x Simulasi TOEFL", testType: "toefl" },
 };
 export const normalizePromo = (raw: string) => raw.trim().toUpperCase();
 /** Kode gratis yang cocok. `testType` diisi → kode yang dikunci ke jenis tes lain

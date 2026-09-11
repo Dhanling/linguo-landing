@@ -15,7 +15,8 @@
 // lama bahasa Inggris" karena English sudah punya 101–104 — produknya ada di
 // /toko/[slug] tapi hilang dari etalase /toko dan rak Perpustakaan siswa
 // (10 Sep 2026, cari "ielts" kosong).
-const POLA_NEW_EDITION = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\b|\bPrep\s*[-–—]\s*Band\b/i;
+// [pustaka-testprep-v2] "TOEFL ITP Prep - Skor 550+" (11 Sep 2026) memakai skor, bukan band.
+const POLA_NEW_EDITION = /\b\d{3}\s*[-–—]\s*(A1|A2|B1|B2|C1|C2)\b|\bPrep\s*[-–—]\s*(Band|Skor|Score)\b/i;
 
 export const LABEL_NEW_EDITION = 'New Edition';
 

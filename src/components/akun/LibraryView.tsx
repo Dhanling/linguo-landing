@@ -163,7 +163,7 @@ function TitleFlag({ language, h = 15 }: { language: string | null; h?: number }
 function adalahNewEdition(p: { title: string }) {
   const judul = p.title || "";
   return /\bnew edition\b/i.test(judul) || /\b10\d\s*-\s*[ABC][12]\b/i.test(judul)
-    || /\bPrep\s*-\s*Band\b/i.test(judul);
+    || /\bPrep\s*-\s*(Band|Skor|Score)\b/i.test(judul); // [pustaka-testprep-v2] TOEFL ITP Prep - Skor 550+
 }
 
 
