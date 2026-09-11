@@ -191,7 +191,7 @@ Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
-- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu sampaikan pendaftaran batch itu SUDAH DITUTUP — sejak 26 Agustus 2026 tidak ada lagi gabung menyusul untuk bahasa mana pun. Sesudah itu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftaran diperpanjang sampai H-1 kelas pertama tiap bahasa, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jam tiap bahasa ambil dari blok JADWAL BATCH REGULER, jangan dikarang).
+- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu — KECUALI penandanya bilang PENDAFTARAN DIPERPANJANG (gelombang September 2026 dibuka sampai 19 September 2026, boleh gabung menyusul) — sampaikan pendaftaran batch itu SUDAH DITUTUP — sejak 26 Agustus 2026 tidak ada lagi gabung menyusul untuk bahasa mana pun. Sesudah itu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftaran diperpanjang sampai 19 September 2026, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jam tiap bahasa ambil dari blok JADWAL BATCH REGULER, jangan dikarang).
 - JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
 - BATAS PENDAFTARAN (deadline) batch Reguler/ETP juga cuma ada di penanda [PENDAFTARAN] pada blok "JADWAL BATCH ...". Jangan menghitung atau mengarang tanggal penutupan sendiri.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
@@ -489,9 +489,10 @@ const todayWIB = todayWIBISO;
 // linguo-app/suggest-reply, linguo-wa-bot/db.js, linguo-landing chat route &
 // linguo-admin-dashboard (mirror).
 const LATE_JOIN_LANGS: string[] = [];
-// 11 Sep 2026: pendaftaran Batch September diperpanjang sampai H-1 kelas pertama
-// tiap batch (closes_at per baris regular_batches), bukan lagi serentak 10 Sep.
-const NEXT_REGULER_BATCH = "September 2026 (pendaftaran diperpanjang sampai H-1 kelas pertama tiap bahasa, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jamnya ada di blok JADWAL BATCH REGULER)";
+// 11 Sep 2026: pendaftaran Batch September diperpanjang sampai 19 Sep 23:59 WIB
+// (closes_at regular_batches) — batch yang kelasnya mulai 14–18 Sep ikut boleh
+// disusul sampai tanggal itu (penanda PENDAFTARAN DIPERPANJANG di batchTag).
+const NEXT_REGULER_BATCH = "September 2026 (pendaftaran diperpanjang sampai 19 September 2026, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jamnya ada di blok JADWAL BATCH REGULER)";
 
 /** Batch Reguler bahasa ini masih boleh disusul walau kelasnya sudah mulai? */
 function acceptsLateJoin(language: unknown): boolean {
@@ -502,9 +503,15 @@ function acceptsLateJoin(language: unknown): boolean {
 /** Penanda status batch. `lateJoin` DEFAULT false: sejak 26 Agt 2026 batch yang
  *  kelasnya sudah mulai dianggap tertutup untuk semua bahasa (dulu ETP ikut
  *  default true sehingga ditandai "masih menerima susulan"). */
-function batchTag(startIso: string | null, today: string, lateJoin = false): string {
+function batchTag(startIso: string | null, today: string, lateJoin = false, closesAt?: unknown): string {
   if (!startIso) return "[TANGGAL MULAI BELUM DITENTUKAN]";
   if (String(startIso) > today) return "[BELUM MULAI — pendaftaran masih dibuka]";
+  // Perpanjangan (11 Sep 2026): kelas sudah mulai tapi closes_at masih ke depan →
+  // batch ini sengaja dibuka untuk penyusul sampai tanggal itu.
+  const close = closesAt ? String(closesAt).slice(0, 10) : "";
+  if (close && close >= today) {
+    return `[SUDAH BERJALAN — PENDAFTARAN DIPERPANJANG sampai ${fmtDateID(close)}: kelas sudah mulai sejak tanggal itu (WAJIB diberitahu ke user), tapi batch ini MASIH menerima pendaftar menyusul sampai tanggal itu. Ajak daftar & konfirmasi secepatnya; jangan menjanjikan rekaman/pengulangan sesi yang terlewat]`;
+  }
   return lateJoin
     ? "[SUDAH BERJALAN — kelas sudah mulai sejak tanggal itu, WAJIB diberitahu ke user; batch ini MASIH menerima pendaftar susulan, sesi yang terlewat ditonton lewat rekaman]"
     : `[SUDAH BERJALAN & PENDAFTARAN DITUTUP — kelas sudah mulai sejak tanggal itu dan batch ini TIDAK menerima pendaftar baru lagi. Sampaikan apa adanya, lalu tawarkan Private/Semi-Private atau batch Reguler berikutnya: ${NEXT_REGULER_BATCH}]`;
@@ -635,7 +642,10 @@ function daysUntil(fromIso: string, toIso: string): number {
 function deadlineTag(startIso: string | null, today: string, closesAt?: unknown): string {
   if (!startIso) return "";
   const start = String(startIso).slice(0, 10);
-  if (start <= today) return ""; // batch sudah berjalan — sudah ditangani batchTag
+  // Batch sudah berjalan ditangani batchTag — kecuali pendaftarannya diperpanjang
+  // (closes_at masih ke depan): sisa harinya tetap dihitung di bawah.
+  const diperpanjang = !!closesAt && String(closesAt).slice(0, 10) >= today;
+  if (start <= today && !diperpanjang) return "";
   const close = closesAt ? String(closesAt).slice(0, 10) : shiftISO(start, -1);
   const sisa = daysUntil(today, close);
   if (isNaN(sisa)) return "";
@@ -664,6 +674,7 @@ CATATAN JADWAL (WAJIB DIPATUHI):
 - Status batch: pakai penanda [BELUM MULAI] / [SUDAH BERJALAN] apa adanya. DILARANG menebak sendiri apakah suatu batch sudah jalan atau belum — bandingkan tanggal mulai dengan TANGGAL HARI INI di atas.
 - Penanda dalam kurung siku itu CATATAN INTERNAL. JANGAN pernah menyalinnya ke balasan. Sampaikan maksudnya dengan kalimat biasa ("pendaftaran masih dibuka", "kelasnya sedang berjalan").
 - Batch [SUDAH BERJALAN]: WAJIB diberitahu ke user bahwa kelasnya SUDAH MULAI (sebutkan tanggal mulainya) — jangan menyebut jadwalnya seolah-olah batch baru yang belum jalan. Batch yang kelasnya sudah mulai = pendaftarannya SUDAH DITUTUP, tanpa kecuali.
+- PENGECUALIAN PERPANJANGAN (keputusan tim 11 September 2026): pendaftaran batch Reguler gelombang September 2026 DIPERPANJANG sampai 19 September 2026, TERMASUK batch yang kelasnya sudah mulai. Batch berpenanda [SUDAH BERJALAN — PENDAFTARAN DIPERPANJANG ...] MASIH BOLEH didaftar (gabung menyusul) sampai tanggal di penanda itu: sebutkan kelasnya sudah mulai tanggal berapa, lalu ajak daftar & konfirmasi secepatnya. Penanda DIPERPANJANG itu BUKAN penanda lama — jangan diabaikan, dan semua larangan 'batch berjalan = ditutup' di bawah TIDAK berlaku untuk batch itu. Jangan menjanjikan rekaman atau pengulangan sesi yang sudah terlewat.
 - PENDAFTARAN BATCH YANG SUDAH BERJALAN DITUTUP UNTUK SEMUA BAHASA (keputusan tim 26 Agustus 2026, mencabut kelonggaran susulan Jepang & Inggris): DILARANG menawarkan gabung menyusul ke batch mana pun yang kelasnya sudah mulai, dilarang menjanjikan rekaman sesi yang terlewat sebagai cara mengejar materi, dan dilarang menjanjikan "nanti dicek dulu ke tim". Kalau ada penanda lama yang bilang masih menerima susulan, ABAIKAN — aturan ini yang berlaku.
 - Batch [SUDAH BERJALAN & PENDAFTARAN DITUTUP] (SEMUA batch Reguler/ETP yang kelasnya sudah mulai): DILARANG menawarkan gabung menyusul ke batch itu, dan dilarang menjanjikan "nanti coba dicek dulu". Sampaikan terus terang pendaftaran batch bahasa itu sudah ditutup karena kelasnya sudah berjalan, lalu SELALU tawarkan dua gantinya sekaligus: (1) Kelas Private / Semi-Private — jadwal fleksibel, bisa mulai kapan saja, materinya sama; atau (2) menunggu batch Reguler berikutnya, gelombang ${NEXT_REGULER_BATCH}. Jangan menyuruh "tunggu saja" tanpa menyebut opsi Private, dan jangan menutup balasan tanpa mengajak pilih salah satu.
 - Rekaman kelas TIDAK boleh lagi dipakai sebagai iming-iming gabung menyusul (dulu boleh untuk Jepang & Inggris, sekarang tidak). Paket Recording berbayar Rp100.000/Rp250.000 itu urusan lain: rekaman sesi kelas yang siswanya ikuti sendiri, bukan sesi yang sudah lewat sebelum dia daftar.
@@ -688,7 +699,7 @@ BATAS PENDAFTARAN / DEADLINE (WAJIB):
 - Sampaikan pakai kalimat biasa dan gabungkan dengan kuotanya, mis. "pendaftarannya masih dibuka sampai 12 Agustus (tinggal 5 hari lagi) dan slotnya masih 11 dari 15".
 - Sisa 3 hari atau kurang / hari terakhir: sampaikan urgensinya apa adanya dan ajak konfirmasi hari itu juga — jangan dibikin santai, tapi jangan menakut-nakuti dengan angka karangan.
 - [PENDAFTARAN: SUDAH DITUTUP ...]: jangan menyuruh menunggu tanpa solusi. Sampaikan pendaftarannya sudah ditutup, lalu tawarkan batch berikutnya, Private, atau Semi-Private.
-- Batch [SUDAH BERJALAN]: pendaftarannya sudah ditutup, semua bahasa, tanpa opsi menyusul — jawab "pendaftaran batch ini sudah ditutup", lalu tawarkan Private/Semi-Private atau batch Reguler berikutnya: ${NEXT_REGULER_BATCH}. Batch [KUOTA: PENUH ...] juga tertutup.
+- Batch [SUDAH BERJALAN] yang TIDAK berpenanda PENDAFTARAN DIPERPANJANG: pendaftarannya sudah ditutup, semua bahasa, tanpa opsi menyusul — jawab "pendaftaran batch ini sudah ditutup", lalu tawarkan Private/Semi-Private atau batch Reguler berikutnya: ${NEXT_REGULER_BATCH}. Batch [KUOTA: PENUH ...] juga tertutup.
 - DILARANG memperpanjang deadline atau memberi diskon/dispensasi. (Batch yang kelasnya sudah berjalan jangan dibuka-bukakan lagi walaupun usernya memaksa.) Kalau user minta keringanan lain, arahkan konfirmasi ke admin.`;
 
 async function getScheduleBlock(): Promise<string> {
@@ -721,9 +732,12 @@ async function getScheduleBlock(): Promise<string> {
     // Siklus lama yang pendaftarannya sudah tutup dibuang KALAU bahasa+levelnya
     // sudah punya batch penerus yang masih buka — penyaringan yang sama dipakai
     // halaman /jadwal-kelas-reguler, biar daftar Ling tidak beda dengan landing.
+    // closes_at menang kalau diisi — batch yang pendaftarannya diperpanjang tetap
+    // dihitung buka walau kelasnya sudah mulai (sama dengan masihBuka di page.tsx).
     const regBuka = (b: any) =>
-      (!b.closes_at || new Date(b.closes_at).getTime() >= Date.now()) &&
-      String(b.start_date).slice(0, 10) >= today;
+      b.closes_at
+        ? new Date(b.closes_at).getTime() >= Date.now()
+        : String(b.start_date).slice(0, 10) >= today;
     const adaPenerus = new Set(
       (reg || []).filter(regBuka).map((b: any) => `${b.language}|${b.level}`)
     );
@@ -741,7 +755,7 @@ async function getScheduleBlock(): Promise<string> {
       const batas = isFull(b.actual_enrolled, b.max_capacity)
         ? ""
         : deadlineTag(b.start_date, today, b.closes_at);
-      return `- ${langLabel(b.language)} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, 1x per minggu, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today, acceptsLateJoin(b.language))}${kuota}${batas}`;
+      return `- ${langLabel(b.language)} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, 1x per minggu, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today, acceptsLateJoin(b.language), b.closes_at)}${kuota}${batas}`;
     });
     const etpLines = etpLive.map((b: any) => {
       const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";

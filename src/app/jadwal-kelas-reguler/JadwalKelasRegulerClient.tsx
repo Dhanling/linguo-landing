@@ -248,10 +248,12 @@ function regDeadline(batch: Batch): Date {
 
 // Pendaftaran ditutup kalau batas tadi sudah lewat, ATAU kelasnya terlanjur mulai.
 // Tanggal mulai dibandingkan per hari (bukan per jam) supaya batch yang mulai
-// hari ini masih bisa didaftar.
+// hari ini masih bisa didaftar. Kalau closes_at diisi, dia yang menentukan —
+// batch yang pendaftarannya diperpanjang tetap buka walau kelasnya sudah mulai.
 function isBatchClosed(batch: Batch): boolean {
   const now = new Date();
   if (regDeadline(batch).getTime() < now.getTime()) return true;
+  if (batch.closes_at) return false;
   const start = new Date(batch.start_date);
   start.setHours(0, 0, 0, 0);
   const today = new Date();
