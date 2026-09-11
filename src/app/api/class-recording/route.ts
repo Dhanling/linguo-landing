@@ -18,6 +18,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { previewStudentId } from "@/lib/previewSession";
+// [addon-akses-rekaman-v1] rekaman = add-on berbayar. Gerbang UI saja tak ada
+// artinya: roomId-nya `sched-<uuid>` dan siswa bisa memanggil route ini langsung.
+import { aksesRekaman, ADDON_REG_COLUMNS, type AddonRow } from "@/lib/addonAccess";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -115,6 +118,35 @@ export async function POST(req: NextRequest) {
     }
     if (!owns) {
       return NextResponse.json({ error: "Rekaman ini bukan milik akun kamu" }, { status: 403 });
+    }
+
+    // ── 2b. Paketnya memang mencakup rekaman? ────────────────────────────────
+    // [addon-akses-rekaman-v1] Add-on "Recording" (Rp 100.000) diinput admin per
+    // registrasi dan tersimpan di TIGA tempat (tabel registration_addons,
+    // registrations.addons jsonb, registrations.addon_ebook_recording buat bundel
+    // e-book+rekaman dari penawaran WA) — helper aksesRekaman() membaca ketiganya.
+    // Hanya status "tidak" yang ditolak: itu berarti admin SUDAH mendata pembelian
+    // tambahannya dan rekaman tak termasuk. "belum-didata" (17 registrasi di
+    // produksi per 11 Sep 2026 nol catatan add-on) tetap diizinkan — mencabut
+    // rekaman yang sudah bisa ditonton jauh lebih merugikan.
+    if (sched.registration_id) {
+      const [regRes, addonRes] = await Promise.all([
+        admin.from("registrations").select(`id, ${ADDON_REG_COLUMNS}`).eq("id", sched.registration_id).maybeSingle(),
+        admin
+          .from("registration_addons")
+          .select("addon_type, payment_status, quantity")
+          .eq("registration_id", sched.registration_id),
+      ]);
+      const akses = aksesRekaman(regRes.data || {}, (addonRes.data || []) as AddonRow[]);
+      if (akses === "tidak") {
+        return NextResponse.json(
+          {
+            error:
+              "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo.",
+          },
+          { status: 403 },
+        );
+      }
     }
 
     // ── 3. Ambil filenya ─────────────────────────────────────────────────────

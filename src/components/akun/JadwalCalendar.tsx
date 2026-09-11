@@ -17,9 +17,11 @@
 //     pengajar: gutter jam, garis jam, kolom bergaris, penanda "sekarang" merah.
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2, Lock } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import RecordingModal from "./RecordingModal";
+// [addon-akses-rekaman-v1] rekaman sesi cuma buat kelas yang beli add-on Recording.
+import { rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from "@/lib/addonAccess";
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
@@ -55,11 +57,16 @@ export default function JadwalCalendar({
   sessions,
   regularBatches = [],
   studentName,
+  aksesRekaman,
 }: {
   sessions: JadwalSession[];
   regularBatches?: RegularBatch[];
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
+  /** [addon-akses-rekaman-v1] registration_id → hak rekaman ("punya" | "tidak" |
+   *  "belum-didata"). Registrasi yang tak ada di peta dianggap "belum-didata",
+   *  jadi rekamannya TETAP terlihat (lihat lib/addonAccess.ts). */
+  aksesRekaman?: Map<string, AksesAddon>;
 }) {
   // [ui-lang-switcher-v1] `tt`, bukan `t` — `t` sudah dipakai buat handle interval di bawah.
   const tt = useT();
@@ -723,7 +730,7 @@ export default function JadwalCalendar({
               </div>
               <div className="flex flex-col gap-3 rounded-2xl border border-slate-100 p-3 sm:p-4">
                 {agendaEvents.map((e) => (
-                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} />
+                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} aksesRekaman={aksesRekaman} />
                 ))}
               </div>
             </div>
@@ -767,11 +774,17 @@ export default function JadwalCalendar({
  * Kartu sesi lengkap (jam, kelas, pengajar, aksi, materi) — dipakai agenda di
  * bawah kalender pada SEMUA view.
  */
-function SessionCard({ e, now, studentName }: { e: NormSession; now: number; studentName?: string }) {
+function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; now: number; studentName?: string; aksesRekaman?: Map<string, AksesAddon> }) {
   const tt = useT(); // [ui-lang-switcher-v1]
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
-  const rec = e.recordingUrl ? studentRecordingHref(e.recordingUrl) : null;
+  // [addon-akses-rekaman-v1] "tidak" = admin sudah mendata pembelian tambahan kelas
+  // ini dan Recording tak termasuk. Tanpa peta (atau registrasi tak dikenal) →
+  // "belum-didata", rekaman tetap tampil.
+  const bolehRekaman = rekamanBolehTampil(
+    (e.registrationId ? aksesRekaman?.get(e.registrationId) : undefined) ?? "belum-didata",
+  );
+  const rec = e.recordingUrl && bolehRekaman ? studentRecordingHref(e.recordingUrl) : null;
   // [vc-recmodal-v1] Rekaman ditonton di pop-up — kalender tetap di posisinya.
   const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
   return (
@@ -851,6 +864,15 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             >
               <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Masuk Kelas")}
             </a>
+          )}
+          {/* [addon-akses-rekaman-v1] rekamannya ada, paketnya tidak mencakup */}
+          {e.recordingUrl && !bolehRekaman && (
+            <span
+              title={tt(PESAN_REKAMAN_TERKUNCI)}
+              className="inline-flex max-w-[118px] items-center gap-1.5 text-right text-[11.5px] font-semibold leading-snug text-[#9CA3AF]"
+            >
+              <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2.2} /> {tt("Rekaman tak termasuk paket")}
+            </span>
           )}
           {/* jadwal-riwayat-v1: rekaman sesi lampau */}
           {rec && (isInternalRecordingHref(rec) ? (

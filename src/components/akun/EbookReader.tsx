@@ -30,13 +30,13 @@
 // Issuu. Sampul (halaman 1) berdiri sendiri, sisanya berpasangan genap–ganjil.
 // Layar sempit otomatis balik ke satu halaman.
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
-  ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles,
+  ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles, Headphones,
 } from "lucide-react";
 import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
 // [ebook-panduan-tour-v1]
@@ -951,13 +951,14 @@ async function kotakKunciGambar(hal: any, pdfjs: any, isi: Kotak): Promise<Kotak
   return pilih;
 }
 
-/** Satu entri daftar isi. */
-type Bab = { hal: number; judul: string; label?: string; utama: boolean; anak: SubBab[] };
+/** Satu entri daftar isi. `no` = nomor unit yang terbaca di labelnya (dipakai
+ *  memasangkan entri ini dengan berkas soal modul). */
+type Bab = { hal: number; judul: string; label?: string; no?: number; utama: boolean; anak: SubBab[] };
 
 /* [ebook-daftar-isi-timeline-v1] Entri daftar isi + rentang halamannya. `sampai`
    dihitung dari awal bab BERIKUTNYA, bukan dibaca dari PDF: modulnya tak
    menuliskan "unit ini 3 halaman" di mana pun. */
-type BabRentang = Bab & { sampai: number };
+type BabRentang = Bab & { sampai: number; bagian?: string };
 
 /* [ebook-isi-lompat-v1] Satu baris pada halaman "Daftar isi" CETAK (halaman di
    dalam PDF-nya, bukan panel di tepi kiri) beserta kotak ketuknya dalam satuan
@@ -1240,6 +1241,10 @@ export default function EbookReader({
      dikerjakan. Keduanya pelengkap: modul tanpa berkas soal jalan seperti biasa. */
   const [soal, setSoal] = useState<BerkasLatihan | null>(null);
   const [kerjakan, setKerjakan] = useState<UnitLatihan | null>(null);
+  /* [ebook-transkrip-audio-v1] Pemutar naskah Listening terbuka? Sengaja TIDAK
+     terbuka sendiri begitu halaman naskahnya sampai: audio yang menyala tanpa
+     diminta mengagetkan siswa yang sedang membaca di tempat umum. */
+  const [audioBuka, setAudioBuka] = useState(false);
   /* [ebook-pratinjau-unit1-v1] Halaman terakhir yang terbuka untuk baris cicip.
      null = akses penuh (juga selama batasnya belum terjawab server — halaman
      yang sudah tergambar tak boleh berkelip jadi gembok lalu terbuka lagi). */
@@ -2626,6 +2631,34 @@ export default function EbookReader({
     );
   }, [soal, tampil.kiri, tampil.kanan, terkunci]);
 
+  /* [ebook-transkrip-audio-v1] Naskah Listening yang halamannya sedang terbuka —
+     dasar tombol "Putar audio". Batasnya HALAMAN NASKAHNYA, bukan rentang
+     unitnya: unit Listening tebalnya 7 halaman dan enam di antaranya (strategi,
+     latihan, pembahasan) tak ada hubungannya dengan rekaman itu. */
+  const naskahKini = useMemo<UnitLatihan | null>(() => {
+    if (!soal?.unit?.length) return null;
+    const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
+    return (
+      soal.unit.find((u) => {
+        const t = u.transkrip;
+        if (!t?.audio) return false;
+        // Halaman naskahnya dibaca balik dari PDF waktu modul dirakit. Kalau
+        // judulnya tak terbaca di sana (hal null), tombolnya muncul sepanjang
+        // unit — tombol yang kurang presisi lebih baik daripada audio yang tak
+        // bisa dibuka sama sekali.
+        const mulai = t.hal ?? u.hal;
+        const habis = t.hal ?? u.sampai ?? u.hal;
+        if (!mulai || !habis) return false;
+        if (terkunci(mulai)) return false;
+        return halaman.some((n) => n >= mulai && n <= habis);
+      }) ?? null
+    );
+  }, [soal, tampil.kiri, tampil.kanan, terkunci]);
+
+  /* Halaman berpindah keluar dari naskahnya → pemutarnya ikut tutup, audionya
+     berhenti. Tanpa ini suaranya terus jalan sementara tombolnya sudah hilang. */
+  useEffect(() => { if (!naskahKini) setAudioBuka(false); }, [naskahKini]);
+
   /* ── panduan berpandu ──────────────────────────────────────────────────
      [ebook-panduan-tour-v1] Isi langkahnya ditulis di sini, bukan di dalam
      EbookPanduan: yang tahu tombol mana yang sedang ada di layar cuma reader.
@@ -2743,13 +2776,28 @@ export default function EbookReader({
   /* Diuji pada teks yang SPASINYA SUDAH DIBUANG. Label "Unit 1" dicetak dengan
      letter-spacing lebar, dan pdf.js membaca renggangnya sebagai spasi sungguhan
      — teks yang sampai ke sini berbunyi "U n i t 1". */
+  /* [ebook-testprep-v1] Ekor sesudah titik tengah WAJIB ditoleransi: kepala unit
+     modul persiapan tes berbunyi "Unit 6 · READING", dan pola yang menuntut
+     nomor di UJUNG baris membuang seluruh unit IELTS — entri daftar isinya
+     kehilangan eyebrow "UNIT 6" dan dianggap bukan bab utama. Pola yang sama
+     sudah dipakai perakit waktu membaca balik PDF-nya (LABEL_UNIT di
+     scripts/build-ebook-pdf.mjs). */
   const LABEL_BAB = useMemo(
-    () => /^(unit|bab|pelajaran|lecci[oó]n|lesson|le[çc]on|lezione|unidade|unidad|kapitel|part|bagian)\.?\d+$/i,
+    () => /^(unit|bab|pelajaran|lecci[oó]n|lesson|le[çc]on|lezione|unidade|unidad|kapitel|part|bagian)\.?(\d+)(?:·.*)?$/i,
     []
   );
 
-  /** "U n i t 1" / "Unit 1" → "Unit 1". */
-  const rapikanLabel = (teks: string) => teks.replace(/\s+/g, "").replace(/(\d+)$/, " $1");
+  /** "U n i t 1" → {kata:"Unit", no:1}; "Unit 6 · READING" → {kata:"Unit", no:6}. */
+  const pecahLabel = (teks: string) => {
+    const m = teks.replace(/\s+/g, "").match(LABEL_BAB);
+    return m ? { kata: m[1], no: Number(m[2]) } : null;
+  };
+
+  /** "U n i t 1" / "Unit 6 · READING" → "Unit 1" / "Unit 6". */
+  const rapikanLabel = (teks: string) => {
+    const p = pecahLabel(teks);
+    return p ? `${p.kata} ${p.no}` : teks.replace(/\s+/g, "").replace(/(\d+)$/, " $1");
+  };
 
   const pindaiDaftar = useCallback(async () => {
     const d = docRef.current;
@@ -2793,6 +2841,7 @@ export default function EbookReader({
               hal: n,
               judul: teks,
               label: label ? rapikanLabel(label.teks).slice(0, 24) : undefined,
+              no: label ? pecahLabel(label.teks)?.no : undefined,
               utama: !!label,
               anak: [],
             });
@@ -2863,8 +2912,19 @@ export default function EbookReader({
      dibaca menunjukkan posisi di DALAM babnya sendiri. */
   const garisWaktu = useMemo<BabRentang[]>(() => {
     if (!bab?.length || !total) return [];
-    return bab.map((b, i) => ({ ...b, sampai: Math.max(b.hal, (bab[i + 1]?.hal ?? total + 1) - 1) }));
-  }, [bab, total]);
+    return bab.map((b, i) => ({
+      ...b,
+      sampai: Math.max(b.hal, (bab[i + 1]?.hal ?? total + 1) - 1),
+      /* [ebook-daftar-isi-bagian-v1] Bagian (Listening/Reading/Writing/Speaking)
+         tidak bisa dibaca dari teks PDF-nya: kepala unit tercetak dengan
+         letter-spacing lebar dan pdf.js membaca renggangnya sebagai spasi
+         sungguhan, jadi batas kata skill-nya hilang ("WRITINGTASK1"). Nilainya
+         ikut berkas soal modul (perakit menuliskannya dari berkas unit) dan
+         dipasangkan lewat nomor unit yang terbaca di labelnya. Modul tanpa
+         bagian — seluruh modul bahasa — dapat undefined dan panelnya tetap datar. */
+      bagian: b.no ? soal?.unit?.find((u) => u.no === b.no)?.bagian : undefined,
+    }));
+  }, [bab, total, soal]);
 
   /** Halaman paling kiri yang sedang tampil — acuan "kamu di sini". */
   const halKini = tampil.kiri ?? tampil.kanan ?? 1;
@@ -3710,6 +3770,37 @@ export default function EbookReader({
         </div>
       )}
 
+      {/* [ebook-transkrip-audio-v1] Pemutar naskah Listening. Pemutar BAWAAN
+          peramban, bukan tiga tombol gambar sendiri: play/pause, penggeser posisi,
+          kecepatan, dan aksesibilitasnya sudah ada di sana, dan berkasnya MP3
+          biasa di bucket publik. Letaknya sebaris di atas bilah bawah supaya
+          halaman bukunya tidak tertutup. */}
+      {!galat && audioBuka && naskahKini?.transkrip?.audio && (
+        <div className="flex shrink-0 items-center gap-3 border-t border-white/10 bg-black/40 px-3 py-2 sm:px-4">
+          <Headphones className="h-4 w-4 shrink-0 text-[#3ED9C0]" />
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[11.5px] font-bold text-white/60">
+              {naskahKini.transkrip.judul ?? t("Naskah Listening")}
+            </p>
+            <audio
+              key={naskahKini.transkrip.audio}
+              src={naskahKini.transkrip.audio}
+              controls
+              autoPlay
+              preload="metadata"
+              className="mt-1 h-8 w-full"
+            />
+          </div>
+          <button
+            onClick={() => setAudioBuka(false)}
+            className="shrink-0 rounded-lg p-1.5 text-white/50 transition hover:bg-white/10 hover:text-white"
+            aria-label={t("Tutup pemutar audio")}
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+
       {/* bilah bawah — [ebook-navigasi-halaman-v1] dulu isinya cuma dua panah &
           nomor halaman: satu-satunya cara sampai ke halaman 28 adalah membalik
           14 kali. Sekarang ada penggeser (tarik untuk menyusur cepat) dan nomor
@@ -3812,6 +3903,23 @@ export default function EbookReader({
               <PenLine className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">{t("Kerjakan latihan")}</span>
               <span className="sm:hidden">Unit {unitKini.no}</span>
+            </button>
+          )}
+
+          {/* [ebook-transkrip-audio-v1] Muncul cuma di halaman naskah Listening
+              yang MP3-nya sudah dibuat — bukan di sepanjang unitnya. */}
+          {naskahKini?.transkrip?.audio && (
+            <button
+              onClick={() => setAudioBuka((v) => !v)}
+              aria-expanded={audioBuka}
+              className={`ml-1 flex shrink-0 items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] font-extrabold transition ${
+                audioBuka ? "bg-[#3ED9C0] text-black" : "bg-white/10 text-white hover:bg-white/[0.16]"
+              }`}
+              title={t("Putar audio naskah Listening ini")}
+            >
+              <Headphones className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">{t("Putar audio")}</span>
+              <span className="sm:hidden">{t("Audio")}</span>
             </button>
           )}
 
@@ -3939,9 +4047,22 @@ export default function EbookReader({
                 // yang membuat ujung nyalanya berhenti tepat di posisi siswa.
                 const relAtas = lewat || aktif;
                 const buka = babBuka === i && b.anak.length > 0;
+                /* [ebook-daftar-isi-bagian-v1] Kepala BAGIAN (Listening/Reading/…) di atas
+                   unit pertama tiap bagian, bernomor sama dengan daftar isi PDF-nya
+                   ("Bagian 1 — Listening"). Cuma modul persiapan tes yang punya `bagian`;
+                   modul bahasa dapat undefined dan daftarnya tetap datar seperti dulu. */
+                const bagianBaru = b.bagian && b.bagian !== garisWaktu[i - 1]?.bagian ? b.bagian : null;
+                const nomorBagian = bagianBaru
+                  ? garisWaktu.slice(0, i + 1).filter((x, j, arr) => x.bagian && x.bagian !== arr[j - 1]?.bagian).length
+                  : 0;
                 return (
+                  <Fragment key={`${b.hal}-${b.judul}`}>
+                  {bagianBaru && (
+                    <p className={`px-2 pb-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/40 ${i === 0 ? "pt-1" : "pt-3"}`}>
+                      {t("Bagian")} {nomorBagian} — {bagianBaru}
+                    </p>
+                  )}
                   <div
-                    key={`${b.hal}-${b.judul}`}
                     className={`flex w-full gap-2.5 rounded-lg pr-2 transition ${
                       aktif ? "bg-[#3ED9C0]/10" : "hover:bg-white/5"
                     }`}
@@ -4065,6 +4186,7 @@ export default function EbookReader({
                       )}
                     </div>
                   </div>
+                  </Fragment>
                 );
               })}
             </div>

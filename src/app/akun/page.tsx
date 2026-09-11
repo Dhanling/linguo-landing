@@ -51,6 +51,9 @@ import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
 import { externalLinkFor, isPlaceholderLink } from "@/lib/digitalAccess"; // [elearning-kartu-langsung-youtube-v1]
 import { orMilikSaya } from "@/lib/digitalOwnership"; // [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi
+// [addon-akses-rekaman-v1] rekaman sesi cuma buat yang beli add-on Recording —
+// add-on tersimpan di 3 tempat, semuanya dibaca helper ini.
+import { muatAksesRekamanMap, type AksesAddon } from "@/lib/addonAccess";
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -2704,6 +2707,30 @@ export default function AkunPage() {
     () => petaNomorSesi(jadwalNyata as any, (student?.registrations || []) as any),
     [jadwalNyata, student?.registrations]
   );
+  /* [addon-akses-rekaman-v1] Akses rekaman per registrasi: "punya" | "tidak" |
+     "belum-didata". Dihitung di satu tempat lalu dititipkan ke kalender Jadwal &
+     linimasa Sesi, supaya tombol "Tonton rekaman" tak pernah beda jawaban antar tab.
+     Efeknya berdiri sendiri (bukan di dalam loadStudentData) karena /akun punya
+     BANYAK jalur muat — cache localStorage, API snapshot, query Supabase, pratinjau
+     POV staf; satu efek yang ikut daftar id registrasi menutup semuanya sekaligus.
+     Selama peta belum datang, isinya kosong → semua dianggap "belum-didata" alias
+     tetap terlihat; gerbang yang sesungguhnya ada di /api/class-recording. */
+  const [aksesRekamanMap, setAksesRekamanMap] = useState<Map<string, AksesAddon>>(() => new Map());
+  const regIdsKey = (student?.registrations || []).map((r: any) => r.id).join(",");
+  useEffect(() => {
+    const regs = (student?.registrations || []) as any[];
+    if (regs.length === 0) { setAksesRekamanMap(new Map()); return; }
+    let alive = true;
+    (async () => {
+      // Snapshot cache lama belum menyimpan kolom add-on → minta helper menambalnya.
+      const ambilKolomReg = regs.some((r) => r?.addons === undefined || r?.addon_ebook_recording === undefined);
+      const map = await muatAksesRekamanMap(supabase, regs, { ambilKolomReg });
+      if (alive) setAksesRekamanMap(map);
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [regIdsKey]);
+
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
   /* [boot-splash-v1] Tab AWAL dibaca dari ?menu= secara sinkron. Dulu selalu mulai
@@ -3452,6 +3479,7 @@ export default function AkunPage() {
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
           pipeline_status, archived_at,
+          addons, addon_ebook_recording,
           teachers(name, whatsapp, avatar_url)
         `)
         .eq("student_id", studentData.id)
@@ -4947,7 +4975,7 @@ export default function AkunPage() {
                         scheduleTime: String(r.testPrepBatch.schedule_time || "").slice(0, 5),
                         zoomLink: null,
                       }));
-                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
+                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap} />;
               })()}
             </motion.div>
           )}
@@ -5258,7 +5286,7 @@ export default function AkunPage() {
                                 rekamannya ada), dan "Materi" cuma silabus level tanpa jalan ke materi
                                 sesi tertentu. Sekarang dua-duanya linimasa sesi bernomor, terbaru di atas. */}
                             {materiTab === "sesi" ? (
-                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="sesi" />
+                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="sesi" aksesRekaman={aksesRekamanMap.get(selected.id)} />
                             ) : materiTab === "kuis" ? (
                               /* [materi-tab-kuis-rapor-v1] komponen yang sama dgn halaman detail kelas */
                               <ClassKuisTab reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} />
@@ -5266,7 +5294,7 @@ export default function AkunPage() {
                               <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} />
                             ) : (
                               <div className="flex flex-col gap-6">
-                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="materi" />
+                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="materi" aksesRekaman={aksesRekamanMap.get(selected.id)} />
                               {/* silabus level tetap ada di bawah linimasa — itu peta levelnya,
                                   bukan materi sesi yang sudah/akan dibahas pengajar */}
                               <div>

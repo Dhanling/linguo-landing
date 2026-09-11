@@ -34,9 +34,18 @@ export type Latihan = {
 export type UnitLatihan = {
   no: number;
   judul: string;
+  /* [ebook-daftar-isi-bagian-v1] Badge skill unit apa adanya ("LISTENING · PART 1")
+     dan BAGIAN turunannya ("Listening") — dipakai reader untuk mengelompokkan
+     daftar isinya. Cuma ada di modul persiapan tes; modul bahasa tak punya skill. */
+  skill?: string;
+  bagian?: string;
   hal: number | null;
   sampai: number | null;
   halLatihan: number | null;
+  /* [ebook-transkrip-audio-v1] Naskah Listening unit ini: halaman tempat naskahnya
+     tercetak (null kalau judulnya tak terbaca waktu modul dirakit) dan MP3 publik
+     hasil scripts/ebook-transkrip-audio.mjs. Tidak ada kalau audionya belum dibuat. */
+  transkrip?: { hal: number | null; audio: string; judul: string | null };
   latihan: Latihan[];
 };
 export type BerkasLatihan = { slug?: string; halaman?: number; unit: UnitLatihan[] };

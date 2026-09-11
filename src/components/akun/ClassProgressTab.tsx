@@ -17,6 +17,10 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 import { isPlayableRecording, studentRecordingHref } from '@/lib/classRoom';
+// [addon-akses-rekaman-v1] rekaman sesi = add-on berbayar (Rp 100.000). Tab ini
+// dipakai halaman detail kelas yang tak menghitung peta akses, jadi kalau propnya
+// tak dikirim dia menanyakannya sendiri sekali per registrasi.
+import { muatAksesRekamanSatu, rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
 import RecordingModal from './RecordingModal';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
@@ -24,7 +28,7 @@ import { SkillRow } from '@/components/akun/SkillBar';
 import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 // [nilai-per-pertemuan-v1] nilai kuis tiap pertemuan (schedules.quiz_*)
 import { quizPct } from '@/components/akun/ClassQuizScores';
-import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, type LucideIcon } from 'lucide-react';
+import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, Lock, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
   { key: 'speaking', label: 'Speaking', Icon: Mic },
@@ -53,7 +57,13 @@ const ATT_SOLID: Record<string, { label: string; solid: string; dot: string }> =
 };
 const ATT_ORDER = ['hadir', 'izin', 'sakit', 'alpa'] as const;
 
-export default function ClassProgressTab({ reg, schedules }: { reg: any; schedules: any[] }) {
+export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
+  reg: any;
+  schedules: any[];
+  /** [addon-akses-rekaman-v1] hak rekaman registrasi ini. Kalau tak dikirim,
+   *  komponen ini memuatnya sendiri (lihat efek di bawah). */
+  aksesRekaman?: AksesAddon;
+}) {
   const t = useT(); // [ui-lang-switcher-v1]
   const uiLang = useUiLang();
   const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
@@ -64,6 +74,22 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
   const [shareState, setShareState] = useState('');
   // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
   const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
+  /* [addon-akses-rekaman-v1] Default 'belum-didata' = tetap terlihat: 17 registrasi
+     di produksi tak punya catatan add-on apa pun, dan mencabut rekaman yang sudah
+     bisa ditonton lebih merugikan daripada kebocoran beberapa rekaman lama. */
+  const [akses, setAkses] = useState<AksesAddon>(aksesRekaman ?? 'belum-didata');
+  useEffect(() => {
+    if (aksesRekaman) { setAkses(aksesRekaman); return; }
+    let alive = true;
+    (async () => {
+      const a = await muatAksesRekamanSatu(supabase, reg.id, reg);
+      if (alive) setAkses(a);
+    })();
+    return () => { alive = false; };
+    // `reg` sengaja tak masuk deps: objeknya bisa identitas baru tiap render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aksesRekaman, reg.id]);
+  const bolehRekaman = rekamanBolehTampil(akses);
 
   useEffect(() => {
     let alive = true;
@@ -383,7 +409,16 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                     </div>
                   )}
 
-                  {rekamanUnik.length > 0 && (
+                  {/* [addon-akses-rekaman-v1] paket kelas ini tak mencakup add-on
+                      Recording — tombolnya diganti keterangan, bukan dihilangkan diam-diam. */}
+                  {rekamanUnik.length > 0 && !bolehRekaman && (
+                    <div className="mt-2.5 flex items-center gap-1.5 text-xs text-gray-400">
+                      <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+                      {t(PESAN_REKAMAN_TERKUNCI)}
+                    </div>
+                  )}
+
+                  {rekamanUnik.length > 0 && bolehRekaman && (
                     <div className="mt-2.5 flex flex-wrap gap-2">
                       {rekamanUnik.map((s) => {
                         const url = s.recording_url as string;

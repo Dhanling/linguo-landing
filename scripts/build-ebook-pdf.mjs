@@ -153,6 +153,8 @@ const barisTeks = (s) => {
    di meta.json saja sudah cukup; tak ada pola yang perlu disunting dua kali. */
 const LABEL = {
   unit: "Unit",
+  /* [ebook-daftar-isi-bagian-v1] Kepala kelompok di daftar isi — "Bagian 1 — Listening". */
+  bagian: "Bagian",
   dialog: "Diálogo",
   notes: "Catatan",
   vocab: "Kosakata unit ini",
@@ -161,6 +163,11 @@ const LABEL = {
   bekal: "Di ujung unit ini kamu bisa:",
   literal: "harfiah:",
   wave: "Ulangan berjenjang:",
+  /* [ebook-transkrip-audio-v1] Satu baris di bawah naskah Listening. PDF yang
+     dicetak Chromium TIDAK bisa memuat audio yang benar-benar bisa diputar —
+     yang bisa cuma reader di dashboard — jadi yang dicetak di sini penunjuk
+     jalan, bukan pemutarnya. */
+  audio_note: "Audio naskah ini bisa diputar di reader Lingbook: buka modul ini di dashboard siswa, lalu tekan tombol Putar audio di bilah bawah saat halaman ini terbuka.",
   ...(meta.labels ?? {}),
 };
 
@@ -190,21 +197,62 @@ const sampul = () => (sampulGambar ? `
    nomor putaran pertama tetap sahih. Putarannya diulang sampai nomor yang
    dibaca sama dengan nomor yang dicetak — kalau modulnya tumbuh dan daftar
    isinya meluber jadi dua halaman, putaran ketiga yang membereskan. */
-const barisIsi = () => [
-  ...(meta.front ?? []).filter((h) => h.type !== "isi").map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
-  ...units.map((u, i) => ({ kunci: `unit:${i + 1}`, label: `${LABEL.unit} ${i + 1} — ${u.title}`, sub: u.title_target })),
-  ...(meta.back ?? []).map((h) => ({ kunci: `judul:${h.title}`, label: h.title })),
-];
+/* [ebook-daftar-isi-bagian-v1] Daftar isi modul persiapan tes dikelompokkan per
+   BAGIAN, bukan 17 baris berderet tanpa sela.
+
+   Alasannya bukan kosmetik: daftar datar tak memberi tahu siswa bahwa unit 1–4
+   itu Listening dan unit 10–14 Writing, padahal pengantar daftar isinya sendiri
+   sudah menjanjikan "unit dikelompokkan per skill" (laporan Faujiah 11 Sep 2026).
+
+   Bagiannya DITURUNKAN dari `skill` tiap unit — potongan sebelum titik tengah
+   pertama — jadi tak ada daftar bagian yang perlu dirawat terpisah dan urutan
+   bagiannya otomatis mengikuti urutan unitnya: "LISTENING · PART 1" sampai
+   "LISTENING · PART 4" jatuh ke satu bagian, begitu juga "WRITING TASK 1 ·
+   ACADEMIC" dengan "WRITING TASK 1 · GENERAL TRAINING". Writing Task 1 dan
+   Task 2 sengaja TETAP dua bagian: di hari tes keduanya satu sesi, tapi yang
+   dicari siswa di daftar isi adalah "bagian grafik/surat" atau "bagian esai".
+
+   Modul yang unitnya tak punya `skill` (seluruh modul bahasa) sama sekali tak
+   berubah: tanpa skill tak ada baris bagian yang disisipkan.
+
+   Jumlah BARIS tabelnya tetap sama di tiap putaran cetak — lihat catatan
+   paginasi di atas: isi barisnya cuma bergantung pada berkas unit, bukan pada
+   nomor halaman yang sedang ditebak. */
+const rapihBagian = (s) => s.toLowerCase().replace(/(^|[\s(/–-])(\p{L})/gu, (_, a, b) => a + b.toUpperCase());
+const bagianUnit = (u) => {
+  const pokok = String(u.skill ?? "").split("·")[0].trim();
+  return pokok ? rapihBagian(pokok) : null;
+};
+
+const barisIsi = () => {
+  const baris = [];
+  for (const h of (meta.front ?? []).filter((h) => h.type !== "isi"))
+    baris.push({ kunci: `judul:${h.title}`, label: h.title });
+  let bagianKini = null;
+  let nomorBagian = 0;
+  units.forEach((u, i) => {
+    const bagian = bagianUnit(u);
+    if (bagian && bagian !== bagianKini) {
+      bagianKini = bagian;
+      nomorBagian += 1;
+      baris.push({ bagian: `${LABEL.bagian} ${nomorBagian} — ${bagian}` });
+    }
+    baris.push({ kunci: `unit:${i + 1}`, label: `${LABEL.unit} ${i + 1} — ${u.title}`, sub: u.title_target });
+  });
+  for (const h of meta.back ?? []) baris.push({ kunci: `judul:${h.title}`, label: h.title });
+  return baris;
+};
 
 const halamanIsi = (h, nomor) => `
 <section class="hal">
   <h2>${esc(h.title)}</h2>
   ${h.intro ? `<p class="isi-intro">${teks(h.intro)}</p>` : ""}
-  <table class="isi"><tbody>${barisIsi().map((b) => `
+  <table class="isi"><tbody>${barisIsi().map((b) => (b.bagian ? `
+    <tr class="isi-bagian"><td colspan="2">${esc(b.bagian)}</td></tr>` : `
     <tr>
       <td>${esc(b.label)}${b.sub ? `<span class="isi-asing">${teks(b.sub)}</span>` : ""}</td>
       <td class="isi-hal">${nomor.get(b.kunci) ?? "&mdash;"}</td>
-    </tr>`).join("")}</tbody></table>
+    </tr>`)).join("")}</tbody></table>
 </section>`;
 
 /** Satu blok isi bebas — dipakai halaman pengantar/penutup DAN bagian di
@@ -243,6 +291,7 @@ const transkrip = (b) => `
 <div class="transkrip">
   ${b.title ? `<h4 class="passage-judul">${teks(b.title)}</h4>` : ""}
   ${(b.lines ?? []).map((l) => `<p class="transkrip-baris">${l.speaker ? `<b>${teks(l.speaker)}:</b> ` : ""}${teks(l.text)}</p>`).join("")}
+  ${b.audio ? `<p class="transkrip-audio">${teks(LABEL.audio_note)}</p>` : ""}
 </div>`;
 
 const blok = (b) => {
@@ -518,6 +567,13 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   table.isi td { border-bottom: 1px dotted #D8E3E1; padding: 2.2mm 0; }
   .isi-asing { display: block; font-size: 9pt; font-style: italic; color: #8A93A3; }
   .isi-hal { width: 14mm; text-align: right; color: #5A6478; white-space: nowrap; }
+  /* [ebook-daftar-isi-bagian-v1] Kepala kelompok: sewarna kepala bagian (h3) dan
+     label unit, tanpa garis titik-titik — barisnya bukan tujuan yang bisa
+     dilompati, cuma penanda tempat daftar unitnya berganti skill. */
+  table.isi tr.isi-bagian td { border-bottom: none; padding: 5mm 0 1mm;
+       font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.8pt; font-weight: 800;
+       text-transform: uppercase; letter-spacing: .14em; color: #1A9E9E; }
+  table.isi tr.isi-bagian:first-child td { padding-top: 1mm; }
 
   /* [ebook-testprep-v1] Bacaan Reading, transkrip Listening, dan gambar/grafik. */
   .passage { border: 1px solid #D8E3E1; border-radius: 3mm; padding: 4mm 5mm; margin: 3mm 0 4mm;
@@ -532,6 +588,9 @@ const bangunHtml = (nomor) => `<!doctype html><html lang="id"><head><meta charse
   .transkrip { background: #F7F9F9; border-left: 3px solid #D8E3E1; padding: 3mm 4mm; margin: 3mm 0 4mm; font-size: 9.6pt; }
   .transkrip-baris { margin-bottom: 1.4mm; }
   .transkrip-baris b { color: #12776F; }
+  /* [ebook-transkrip-audio-v1] Penunjuk jalan ke pemutar di reader. */
+  .transkrip-audio { margin: 2.5mm 0 0; padding-top: 2mm; border-top: 1px solid #D8E3E1;
+                     font-size: 8.8pt; font-style: italic; color: #12776F; }
   figure.gambar { margin: 3mm auto 4mm; text-align: center; page-break-inside: avoid; }
   figure.gambar svg, figure.gambar img { display: block; margin: 0 auto; max-width: 100%; }
   figure.gambar figcaption { font-size: 9pt; color: #5A6478; margin-top: 1.5mm; font-style: italic; }
@@ -622,6 +681,21 @@ const cetak = () => execFileSync(chrome, [
 /* [ebook-testprep-v1] Kepala unit test-prep berbunyi "Unit 6 · READING" —
    ekor sesudah titik tengah diabaikan waktu nomor unitnya dibaca balik. */
 const LABEL_UNIT = new RegExp(`^${LABEL.unit}\\.?(\\d+)(?:·.*)?$`, "i");
+/* [ebook-transkrip-audio-v1] Halaman tempat naskah Listening dicetak — dasar
+   tombol "Putar audio" di reader, yang cuma boleh muncul di halaman naskahnya
+   sendiri (bukan sepanjang unit: unit Listening punya 7 halaman dan enam di
+   antaranya tak ada hubungannya dengan rekamannya).
+
+   Judul naskah dicetak sebagai .passage-judul 12,5pt di tengah, jadi halamannya
+   dikenali dari teks yang SAMA PERSIS dengan `title` blok transkripnya. Kalau
+   judulnya terpecah dua baris dan tak ketemu, halamannya dibiarkan null dan
+   reader jatuh ke rentang unit — tombolnya tetap ada, cuma kurang presisi. */
+const kunciTeks = (s) => String(s ?? "").replace(/\s+/g, " ").trim().toLowerCase();
+const blokTranskrip = (u) => (u.sections ?? []).flatMap((s) => s.blocks ?? []).find((b) => b.type === "transkrip") ?? null;
+const judulTranskrip = new Map(
+  units.map((u, i) => [kunciTeks(blokTranskrip(u)?.title), i + 1]).filter(([k]) => k),
+);
+
 /* Kepala bagian latihan, tanpa spasi & tanpa huruf besar — dibandingkan apa
    adanya, bukan lewat pola, supaya judul berbahasa apa pun aman. */
 const KEPALA_LATIHAN = LABEL.exercises.replace(/\s+/g, "").toLowerCase();
@@ -681,6 +755,7 @@ async function bacaPdf() {
   // halaman awal tiap unit + halaman tempat bagian LATIHAN-nya mulai
   const mulai = new Map();   // nomor unit → halaman
   const latihanHal = new Map();
+  const transkripHal = new Map();  // nomor unit → halaman naskah Listening
   const judul = new Map();   // judul halaman pengantar/penutup → halaman
   for (let n = 1; n <= doc.numPages; n++) {
     const baris = await barisHalaman(pdfjs, doc, n);
@@ -689,6 +764,8 @@ async function bacaPdf() {
       const m = b.teks.replace(/\s+/g, "").match(LABEL_UNIT);
       if (m && !mulai.has(Number(m[1]))) mulai.set(Number(m[1]), n);
       if (b.h >= ambang && judulHalaman.has(b.teks) && !judul.has(b.teks)) judul.set(b.teks, n);
+      const unitNaskah = judulTranskrip.get(kunciTeks(b.teks));
+      if (unitNaskah && !transkripHal.has(unitNaskah)) transkripHal.set(unitNaskah, n);
       if (b.teks.replace(/\s+/g, "").toLowerCase() === KEPALA_LATIHAN) {
         // Unit yang halamannya sedang berjalan = unit terakhir yang sudah mulai.
         const no = [...mulai.entries()].filter(([, h]) => h <= n).map(([u]) => u).pop();
@@ -696,7 +773,7 @@ async function bacaPdf() {
       }
     }
   }
-  return { halaman: doc.numPages, mulai, latihanHal, judul };
+  return { halaman: doc.numPages, mulai, latihanHal, transkripHal, judul };
 }
 
 /** Hasil pembacaan → peta yang dipakai halaman daftar isi. */
@@ -731,7 +808,7 @@ if (PNG) {
   console.log(`PNG   → ${OUT}/${slug}.png`);
 }
 
-function tulisLatihan({ halaman, mulai, latihanHal, judul }) {
+function tulisLatihan({ halaman, mulai, latihanHal, transkripHal, judul }) {
   /* Unit terakhir berhenti di halaman penutup, bukan di halaman terakhir PDF:
      tanpa batas ini, lampiran tata bahasa di belakang ikut terhitung sebagai
      bagian unit 10 dan reader menyorotinya sebagai isi unit. */
@@ -762,12 +839,27 @@ function tulisLatihan({ halaman, mulai, latihanHal, judul }) {
         : tipe === "isian" && satuKata ? [...new Set(soal.map((s) => s.kunci))].sort() : undefined;
       return { perintah: polos(e.prompt), tipe, soal: soal.filter((s) => s.kunci), ...(pilihan ? { pilihan } : {}) };
     }).filter((l) => l.soal.length);
+    /* [ebook-daftar-isi-bagian-v1] `skill` & bagiannya ikut ke berkas soal supaya
+       reader bisa mengelompokkan daftar isinya tanpa menebak-nebak dari teks PDF:
+       kepala unit tercetak "Unit 6 · READING" dan pdf.js membaca renggang
+       letter-spacing-nya sebagai spasi, jadi batas katanya tak bisa dipulihkan
+       dari sana ("WRITINGTASK1"). */
+    /* [ebook-transkrip-audio-v1] Naskah Listening + audionya. Tanpa `audio`
+       (MP3-nya belum dibuat) kuncinya tidak ditulis sama sekali, jadi reader
+       tidak memunculkan tombol yang menunjuk berkas kosong. */
+    const naskah = blokTranskrip(u);
+    const bagian = bagianUnit(u);
     return {
       no,
       judul: u.title,
+      ...(u.skill ? { skill: u.skill } : {}),
+      ...(bagian ? { bagian } : {}),
       hal,
       sampai: hal ? (berikut ?? awalPenutup) - 1 : null,
       halLatihan: latihanHal.get(no) ?? null,
+      ...(naskah?.audio
+        ? { transkrip: { hal: transkripHal?.get(no) ?? null, audio: naskah.audio, judul: naskah.title ?? null } }
+        : {}),
       latihan,
     };
   }).filter((u) => u.hal && u.latihan.length);

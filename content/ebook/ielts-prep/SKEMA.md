@@ -46,7 +46,11 @@ BACA KEDUANYA DULU sebelum menulis.
 
 ## Latihan (WAJIB dikoreksi otomatis di reader — ikuti persis)
 ```json
-{"prompt":"Questions 1–7. Instruksi ala IELTS (Inggris) …",   // JANGAN diawali "Latihan 1." — nomor ditambah perakit
+{"prompt":"Questions 1–7. Instruksi ala IELTS (Inggris) … — Artinya: terjemahan instruksinya dalam bahasa Indonesia",   // JANGAN diawali "Latihan 1." — nomor ditambah perakit
+// [ebook-perintah-dua-bahasa-v1] (laporan Faujiah 11 Sep 2026) Perintah berbahasa Inggris WAJIB
+// disusul " — Artinya: " + terjemahan Indonesianya. Rubrik Inggrisnya tetap ditulis lebih dulu
+// supaya siswa hafal kalimat soal asli, tapi siswa A2–B1 tidak boleh salah paham aturan
+// jawabannya (mis. "NO MORE THAN TWO WORDS"). Perintah yang sudah berbahasa Indonesia tak perlu.
  "tipe":"isian",
  "pilihan":["TRUE","FALSE","NOT GIVEN"],                        // hanya untuk jawaban tertutup; hapus untuk isian terbuka
  "items":["Kalimat soal … ____", "…"]}

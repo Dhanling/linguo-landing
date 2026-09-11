@@ -17,8 +17,11 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
-import { Calendar, Clock, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
+import { Calendar, Clock, Video, BookOpen, ExternalLink, Play, Lock } from 'lucide-react';
 import { studentRecordingHref, isInternalRecordingHref, isPlayableRecording } from '@/lib/classRoom';
+// [addon-akses-rekaman-v1] rekaman sesi = add-on berbayar; 'tidak' berarti admin
+// sudah mendata pembelian tambahannya dan Recording TIDAK dibeli.
+import { rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
 import RecordingModal from './RecordingModal';
 import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
@@ -132,10 +135,15 @@ export default function SesiTimeline({
   reg,
   schedules,
   variant,
+  aksesRekaman = 'belum-didata',
 }: {
   reg: any;
   schedules: TimelineSchedule[];
   variant: 'sesi' | 'materi';
+  /** [addon-akses-rekaman-v1] hak rekaman registrasi ini — dihitung di /akun.
+   *  Bawaannya 'belum-didata' (= tetap terlihat) supaya pemanggil lama tak
+   *  diam-diam mencabut akses siswa yang add-on-nya belum didata. */
+  aksesRekaman?: AksesAddon;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
@@ -215,9 +223,12 @@ export default function SesiTimeline({
     bySchedule.set(m.schedule_id, arr);
   });
 
+  // [addon-akses-rekaman-v1] satu patokan buat dua varian tab.
+  const bolehRekaman = rekamanBolehTampil(aksesRekaman);
+
   const itemsOf = (s: TimelineSchedule): Item[] => {
     const out: Item[] = [];
-    if (s.recording_url) {
+    if (s.recording_url && bolehRekaman) {
       out.push({
         id: `rec-${s.id}`,
         title: tr('Rekaman sesi'),
@@ -234,7 +245,7 @@ export default function SesiTimeline({
     return out;
   };
 
-  const totalRekaman = rows.filter(({ s }) => !!s?.recording_url).length;
+  const totalRekaman = bolehRekaman ? rows.filter(({ s }) => !!s?.recording_url).length : 0;
   const totalLampiran = rows.reduce((n, { s }) => n + (s ? (bySchedule.get(s.id)?.length || 0) + (Array.isArray(s.material_links) ? s.material_links.length : 0) : 0), 0);
 
   return (
@@ -351,7 +362,17 @@ export default function SesiTimeline({
                       )
                     )}
 
-                    {variant === 'sesi' && s?.recording_url && (() => {
+                    {/* [addon-akses-rekaman-v1] Rekaman ada di server, tapi paket kelas ini
+                        tak mencakup add-on Recording — katakan apa adanya, jangan biarkan
+                        tombolnya hilang tanpa penjelasan. */}
+                    {s?.recording_url && !bolehRekaman && (
+                      <p className="mt-2.5 inline-flex items-center gap-1.5 text-[12px] font-medium text-gray-400">
+                        <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2.2} />
+                        {t(PESAN_REKAMAN_TERKUNCI)}
+                      </p>
+                    )}
+
+                    {variant === 'sesi' && s?.recording_url && bolehRekaman && (() => {
                       const href = studentRecordingHref(s.recording_url!);
                       // [vc-recmodal-v1] Rekaman kita sendiri dibuka sebagai
                       // pop-up di halaman ini; tautan luar tetap ke tab baru.

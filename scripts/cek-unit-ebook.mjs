@@ -10,9 +10,27 @@ const JENIS_BLOK = new Set(["p", "list", "tabel", "kotak", "sub", "passage", "tr
 let salah = 0;
 const lapor = (f, pesan) => { console.log(`  ✗ ${f}: ${pesan}`); salah++; };
 
+/* [ebook-transkrip-audio-v1] Naskah Listening boleh membawa `audio`: URL publik
+   MP3 hasil scripts/ebook-transkrip-audio.mjs. SENGAJA opsional — naskah yang
+   audionya belum dibuat tetap sah (modulnya tetap bisa dirakit), jadi yang
+   diperiksa cuma bentuk URL-nya, plus hitungannya dicetak di ringkasan supaya
+   naskah yang belum beraudio tidak lolos tanpa terlihat. */
+const POLA_AUDIO = /^https:\/\/[^\s"]+\.mp3(\?[^\s"]*)?$/;
+let naskah = 0, naskahAudio = 0;
+
 const cekBlok = (f, blocks, dari) => {
   for (const [i, b] of (blocks ?? []).entries()) {
     if (!JENIS_BLOK.has(b.type)) lapor(f, `${dari} blok ${i}: type "${b.type}" tak dikenal`);
+    if (b.type === "transkrip") {
+      naskah++;
+      if (!(b.lines ?? []).length) lapor(f, `${dari} blok ${i}: transkrip tanpa lines`);
+      (b.lines ?? []).forEach((l, j) => { if (!l.text) lapor(f, `${dari} blok ${i} baris ${j}: text kosong`); });
+      if (b.audio != null) {
+        naskahAudio++;
+        if (typeof b.audio !== "string" || !POLA_AUDIO.test(b.audio))
+          lapor(f, `${dari} blok ${i}: audio "${b.audio}" bukan URL https yang berujung .mp3`);
+      }
+    }
     if (b.type === "tabel") {
       const lebar = b.head.length;
       b.rows.forEach((r, j) => { if (r.length !== lebar) lapor(f, `${dari} blok ${i} baris ${j}: ${r.length} sel, kepala ${lebar}`); });
@@ -61,5 +79,6 @@ for (const f of berkas) {
 const meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
 ["front", "back"].forEach((k) => (meta[k] ?? []).forEach((h, i) => cekBlok("meta.json", h.blocks, `${k}[${i}]`)));
 
-console.log(`\n${berkas.length} unit • ${totalSoal} soal • ${salah} masalah`);
+const naskahInfo = naskah ? ` • ${naskah} naskah listening (${naskahAudio} beraudio${naskah - naskahAudio ? `, ${naskah - naskahAudio} belum` : ""})` : "";
+console.log(`\n${berkas.length} unit • ${totalSoal} soal${naskahInfo} • ${salah} masalah`);
 process.exit(salah ? 1 : 0);
