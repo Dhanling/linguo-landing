@@ -191,7 +191,7 @@ Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
-- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu sampaikan pendaftaran batch itu SUDAH DITUTUP — sejak 26 Agustus 2026 tidak ada lagi gabung menyusul untuk bahasa mana pun. Sesudah itu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftaran 21 Agustus – 10 September 2026, kelasnya mulai pekan 14 September 2026 — hari & jam tiap bahasa ambil dari blok JADWAL BATCH REGULER, jangan dikarang).
+- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), lalu sampaikan pendaftaran batch itu SUDAH DITUTUP — sejak 26 Agustus 2026 tidak ada lagi gabung menyusul untuk bahasa mana pun. Sesudah itu tawarkan Kelas Private/Semi-Private (jadwal fleksibel, bisa mulai kapan saja) atau batch Reguler berikutnya gelombang September 2026 (pendaftaran diperpanjang sampai H-1 kelas pertama tiap bahasa, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jam tiap bahasa ambil dari blok JADWAL BATCH REGULER, jangan dikarang).
 - JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
 - BATAS PENDAFTARAN (deadline) batch Reguler/ETP juga cuma ada di penanda [PENDAFTARAN] pada blok "JADWAL BATCH ...". Jangan menghitung atau mengarang tanggal penutupan sendiri.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
@@ -489,7 +489,9 @@ const todayWIB = todayWIBISO;
 // linguo-app/suggest-reply, linguo-wa-bot/db.js, linguo-landing chat route &
 // linguo-admin-dashboard (mirror).
 const LATE_JOIN_LANGS: string[] = [];
-const NEXT_REGULER_BATCH = "September 2026 (pendaftaran dibuka 21 Agustus – 10 September 2026, kelasnya mulai pekan 14 September 2026 — hari & jamnya ada di blok JADWAL BATCH REGULER)";
+// 11 Sep 2026: pendaftaran Batch September diperpanjang sampai H-1 kelas pertama
+// tiap batch (closes_at per baris regular_batches), bukan lagi serentak 10 Sep.
+const NEXT_REGULER_BATCH = "September 2026 (pendaftaran diperpanjang sampai H-1 kelas pertama tiap bahasa, kelasnya mulai 14–20 September 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jamnya ada di blok JADWAL BATCH REGULER)";
 
 /** Batch Reguler bahasa ini masih boleh disusul walau kelasnya sudah mulai? */
 function acceptsLateJoin(language: unknown): boolean {
