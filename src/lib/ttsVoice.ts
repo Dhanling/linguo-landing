@@ -93,9 +93,21 @@ export const AZURE_VOICES: Record<string, { locale: string; voice: string }> = {
 /** Format keluaran Azure — mp3 supaya satu bucket, satu tipe berkas. */
 export const AZURE_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
 
-/** Semua kode bahasa yang bisa dibunyikan lewat /api/tts (Google ∪ Azure). */
+/* [tts-latin-espeak-v1] Bahasa yang TAK punya suara di penyedia komersial mana
+   pun — Google, Azure, ElevenLabs, Narakeet, dan daftar resmi OpenAI semuanya
+   nihil untuk Latin (dicek 13 Sep 2026). Disintesis di dalam /api/tts sendiri
+   pakai eSpeak NG (WebAssembly, lihat src/lib/ttsEspeak.ts): robotik, tapi
+   lafalnya KLASIK (c=k, v=w, ae=ai), sama dengan kolom cara baca modul.
+   `voice` adalah nama buatan kita dan jadi folder cache di `tts-cache` — versinya
+   ikut di nama: kamus macron (tekanan kata) diperbaiki = NAIKKAN versinya,
+   kalau tidak mp3 lama bertekanan salah terus disajikan dari CDN. */
+export const ESPEAK_VOICES: Record<string, { voice: string; espeak: string }> = {
+  la: { voice: "la-espeak-ng-v1", espeak: "la" },
+};
+
+/** Semua kode bahasa yang bisa dibunyikan lewat /api/tts (Google ∪ Azure ∪ eSpeak). */
 export const KODE_TTS: ReadonlySet<string> = new Set([
-  ...Object.keys(CHIRP_LOCALES), ...Object.keys(AZURE_VOICES),
+  ...Object.keys(CHIRP_LOCALES), ...Object.keys(AZURE_VOICES), ...Object.keys(ESPEAK_VOICES),
 ]);
 
 export const BUCKET_TTS = "tts-cache";
@@ -104,9 +116,10 @@ const kodeDasar = (kode?: string | null) =>
   String(kode || "").trim().toLowerCase().split("-")[0];
 
 /** Penyedia untuk sebuah kode bahasa; null = tak ada suaranya sama sekali. */
-export function penyediaTts(kode?: string | null): "azure" | "google" | null {
+export function penyediaTts(kode?: string | null): "azure" | "google" | "espeak" | null {
   const k = kodeDasar(kode);
   if (!k) return null;
+  if (ESPEAK_VOICES[k]) return "espeak";
   if (AZURE_VOICES[k]) return "azure";
   return CHIRP_LOCALES[k] ? "google" : null;
 }
@@ -127,6 +140,8 @@ export function namaVoiceGoogle(kode?: string | null): string | null {
 
 /** Nama voice persis seperti yang dipakai /api/tts waktu menyimpan ke cache. */
 export function namaVoice(kode?: string | null): string | null {
+  const es = ESPEAK_VOICES[kodeDasar(kode)];
+  if (es) return es.voice;
   const az = AZURE_VOICES[kodeDasar(kode)];
   return az ? az.voice : namaVoiceGoogle(kode);
 }

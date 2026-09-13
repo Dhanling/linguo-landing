@@ -96,6 +96,10 @@ const NAME_TO_CODE: Record<string, string> = {
   /* Uzbek belum punya voice Chirp sama sekali — dipetakan supaya labelnya benar,
      suaranya tetap mati sendiri lewat bisaDibunyikan(). */
   uzbek: "uz", uzbekistan: "uz",
+  /* [tts-latin-espeak-v1] Latin dulu sengaja TIDAK dipetakan (tak ada satu pun
+     suara di katalog komersial); sejak /api/tts punya jalur eSpeak NG, modul
+     Latina 101 berbunyi dengan lafal klasik. */
+  latin: "la", latina: "la",
 };
 
 /** Nama tampil (Bahasa Indonesia) per kode — dipakai judul halaman kuis & pesan WA. */
@@ -111,7 +115,7 @@ const CODE_TO_LABEL: Record<string, string> = {
   jv: "Jawa", su: "Sunda", ban: "Bali", bbc: "Batak", bug: "Bugis", mad: "Madura",
   eu: "Basque",
   bn: "Bengali", et: "Estonia", mn: "Mongolia", ps: "Pashto", sr: "Serbia",
-  sk: "Slovakia", sl: "Slovenia", uz: "Uzbek",
+  sk: "Slovakia", sl: "Slovenia", uz: "Uzbek", la: "Latin",
 };
 
 /**
@@ -165,7 +169,7 @@ const CODE_TO_EN: Record<string, string> = {
   ms: "Malay", id: "Indonesian", jv: "Javanese", su: "Sundanese",
   ban: "Balinese", bbc: "Batak Toba", bug: "Buginese", mad: "Madurese",
   bn: "Bengali", et: "Estonian", mn: "Mongolian", ps: "Pashto", sr: "Serbian",
-  sk: "Slovak", sl: "Slovenian", uz: "Uzbek",
+  sk: "Slovak", sl: "Slovenian", uz: "Uzbek", la: "Latin",
 };
 
 export function langEnglishName(code?: string | null): string {

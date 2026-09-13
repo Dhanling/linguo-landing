@@ -22,8 +22,8 @@ import { readFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {
-  AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts,
-  localeChirp, namaVoiceGoogle, penyediaTts,
+  AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, ESPEAK_VOICES, bersihkanTeksTts,
+  jalurCacheTts, localeChirp, namaVoiceGoogle, penyediaTts,
 } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
@@ -234,7 +234,7 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
   const langBase = langRaw.split("-")[0];
   let penyedia = langBase ? penyediaTts(langBase) : null;
 
-  // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. am, la):
+  // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. am):
   // JANGAN jatuh ke voice vi-VN (kedengaran bahasa Vietnam!) — balas 422 supaya
   // client fallback ke Web Speech browser.
   if (langBase && !penyedia) {
@@ -254,14 +254,17 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
   // voice-nya bisa dihitung tanpa memanggil Google sama sekali — dan kalau
   // mp3-nya sudah ada di cache, seluruh perjalanan ke Google jadi mubazir.
   // Jalur lawas (tanpa `lang`) tetap butuh token karena voice-nya ditanyakan.
+  const espeak = penyedia === "espeak" ? ESPEAK_VOICES[langBase] : null;
   const azure = penyedia === "azure" ? AZURE_VOICES[langBase] : null;
   const chirpLocale = penyedia === "google" ? localeChirp(langBase) : null;
   const languageCode = azure?.locale ?? chirpLocale ?? LANG_CODE;
-  const voice = azure
-    ? azure.voice
-    : chirpLocale
-      ? (namaVoiceGoogle(langBase) as string)
-      : await resolveVoice(await getAccessToken());
+  const voice = espeak
+    ? espeak.voice
+    : azure
+      ? azure.voice
+      : chirpLocale
+        ? (namaVoiceGoogle(langBase) as string)
+        : await resolveVoice(await getAccessToken());
 
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
   const jalur = jalurCache(voice, text);
@@ -273,6 +276,21 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
   const tokenAwal = chirpLocale ? getAccessToken().catch(() => null) : null;
   const tersimpan = await dariCache(jalur);
   if (tersimpan) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
+
+  // [tts-latin-espeak-v1] Disintesis di kontainer ini sendiri — tanpa kunci,
+  // tanpa tagihan per karakter. Modulnya dimuat dinamis supaya 23 MB data
+  // eSpeak cuma dibaca kontainer yang memang pernah melayani bahasa ini.
+  if (espeak) {
+    let audioContent: string;
+    try {
+      const { sintesisEspeak } = await import("@/lib/ttsEspeak");
+      audioContent = await sintesisEspeak(espeak.espeak, text);
+    } catch (e: any) {
+      return { status: 502, body: { error: "tts failed", detail: String(e?.message || e).slice(0, 300) } };
+    }
+    after(() => keCache(jalur, audioContent));
+    return { status: 200, body: { audioContent }, abadi: true };
+  }
 
   if (azure) {
     let audioContent: string;

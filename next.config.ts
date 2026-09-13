@@ -1,6 +1,16 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // [tts-latin-espeak-v1] eSpeak NG (WebAssembly) untuk suara bahasa Latin di
+  // /api/tts. Paketnya dibiarkan di node_modules (bukan dibundel) karena ia
+  // mencari `espeak-ng.data` (23 MB, kamus + suara) di sebelah berkas JS-nya
+  // lewat import.meta.url — dibundel, jalurnya patah. Berkas .data itu dibaca
+  // saat berjalan, jadi penelusur Next tak melihatnya: wajib dimasukkan
+  // manual lewat outputFileTracingIncludes, atau di produksi rute ini 500.
+  serverExternalPackages: ['@echogarden/espeak-ng-emscripten'],
+  outputFileTracingIncludes: {
+    '/api/tts': ['./node_modules/@echogarden/espeak-ng-emscripten/**/*'],
+  },
   experimental: {
     // Tree-shake barrel-file libraries: only the icons/exports actually used
     // get bundled, instead of the whole package.
