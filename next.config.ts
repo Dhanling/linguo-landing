@@ -11,6 +11,19 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/tts': ['./node_modules/@echogarden/espeak-ng-emscripten/**/*'],
   },
+  // Rute /api/tts membaca kredensial Google lewat readFileSync berjalur hasil
+  // hitungan, jadi penelusur memilih aman dan menyeret seisi proyek — diukur
+  // 13 Sep 2026: 205 MB dari 266 MB bundelnya adalah content/ebook (JSON &
+  // sampul modul e-book) yang tak pernah dibacanya. Ditambah 25 MB eSpeak,
+  // fungsinya lewat batas 250 MB Vercel. /api/blog-tts kena penyakit yang sama
+  // (240 MB, cuma membaca kunci di ~/linguo-audio-gen) — satu-dua modul e-book
+  // lagi dan deploy landing ditolak. Pengecualian SENGAJA per rute dan
+  // berjangkar ./ — pola global '**/*' pernah mematikan semua rute dinamis
+  // (lihat catatan .vercelignore).
+  outputFileTracingExcludes: {
+    '/api/tts': ['./content/**/*', './public/**/*'],
+    '/api/blog-tts': ['./content/**/*', './public/**/*'],
+  },
   experimental: {
     // Tree-shake barrel-file libraries: only the icons/exports actually used
     // get bundled, instead of the whole package.
