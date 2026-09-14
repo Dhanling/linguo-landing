@@ -64,6 +64,33 @@ const SIM_LABEL: Record<SimTestType, string> = {
   ielts: "Simulasi IELTS — Academic & General (akses selamanya)",
 };
 
+// [ebook-modul-dashboard-v1] Tab Pembayaran WA Inbox (dashboard.linguo.id) memakai
+// route ini lewat jalur TAMU untuk menagih modul e-book atas nama siswa — satu
+// link untuk banyak modul, dan saat lunas barisnya langsung jadi akses
+// Perpustakaan (beda dengan create-manual-invoice yang cuma membuat registrasi).
+// Beda origin → butuh CORS; yang diizinkan cuma subdomain internal Linguo.
+const ORIGIN_INTERNAL = /^https:\/\/(dashboard|teach|meet)\.linguo\.id$|^http:\/\/localhost:\d+$/;
+function corsUntuk(req: NextRequest): Record<string, string> {
+  const origin = req.headers.get("origin") ?? "";
+  if (!ORIGIN_INTERNAL.test(origin)) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "content-type",
+    Vary: "Origin",
+  };
+}
+
+export function OPTIONS(req: NextRequest) {
+  return new NextResponse(null, { status: 204, headers: corsUntuk(req) });
+}
+
+export async function POST(req: NextRequest) {
+  const res = await buatInvoice(req);
+  for (const [k, v] of Object.entries(corsUntuk(req))) res.headers.set(k, v);
+  return res;
+}
+
 function tolak(pesan: string, status: number) {
   return NextResponse.json({ ok: false, error: pesan }, { status, headers: NO_STORE });
 }
@@ -77,7 +104,7 @@ interface ItemMasuk { productId: string; pricingId: string }
 // buyer_email juga (akun yang dibuat sesudah bayar auth_user_id-nya NULL).
 interface Tamu { nama: string; email: string; telepon: string | null }
 
-export async function POST(req: NextRequest) {
+async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   let accessToken = "";
   let items: ItemMasuk[] = [];
   let simMinta: SimTestType[] = [];
