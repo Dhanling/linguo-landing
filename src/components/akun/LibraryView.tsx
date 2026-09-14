@@ -41,6 +41,7 @@ import { judulRingkas, labelBahasa } from "@/lib/katalogDigital";
 /* [pustaka-terakhir-dibuka-v1] baris pintas "Terakhir dibuka" — sama seperti di
    Perpustakaan dashboard pengajar, dirakit dari jejak reader di perangkat ini */
 import { bacaTerakhirDibuka, hapusTerakhirDibuka, type JejakPustaka } from "@/lib/pustakaTerakhir";
+import { kunciJejak } from "@/lib/jejakPemilik";
 // [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
@@ -199,6 +200,67 @@ type Access =
    disembunyikan dari rak — justru di rak itu orang kembali membukanya, dan tiap
    pembukaan adalah kesempatan tombol belinya terlihat lagi. */
 const cicipan = (p: Purchase) => p.source === "preview";
+
+/* [ebook-upgrade-selamanya-v1] Perpanjang & upgrade menerbitkan baris BARU untuk
+   modul yang sama, jadi satu modul bisa punya beberapa baris lunas (12 Bulan lama
+   + Selamanya hasil upgrade). Rak cukup menampilkan satu — yang aksesnya paling
+   luas; urutan asal (terbaru dulu) tetap. */
+function nilaiAkses(p: Purchase): number {
+  const a = accessInfo(p);
+  if (a.kind === "expired") return 0;
+  if (cicipan(p)) return 1;
+  if (a.kind === "forever") return Number.MAX_SAFE_INTEGER;
+  return new Date(p.expires_at as string).getTime();
+}
+/* Baris yang disembunyikan → baris yang mewakilinya di rak. Jejak "Lanjutkan
+   Belajar" dikunci id BARIS beli; tanpa peta ini kartunya hilang begitu modulnya
+   di-upgrade (jejak menunjuk baris 12 Bulan yang kini tak tampil). */
+const barisPengganti = new Map<string, string>();
+
+/* Halaman terakhir, sampul & jejak reader tersimpan per id BARIS beli (lihat
+   EbookReader). Baris Selamanya hasil upgrade id-nya baru — tanpa salinan ini
+   modul yang sudah dibaca sampai hal. 80 terbuka lagi dari halaman 1. */
+const KUNCI_JEJAK_BARIS = ["ebook-hal", "ebook-hal-ts", "ebook-jejak", "ebook-sampul"];
+function salinJejakBaris(dari: string, ke: string) {
+  if (typeof window === "undefined") return;
+  try {
+    if (localStorage.getItem(kunciJejak(`ebook-hal:${ke}`))) return; // baris baru sudah punya jejak sendiri
+    for (const k of KUNCI_JEJAK_BARIS) {
+      const v = localStorage.getItem(kunciJejak(`${k}:${dari}`));
+      if (v !== null) localStorage.setItem(kunciJejak(`${k}:${ke}`), v);
+    }
+  } catch {
+    /* storage penuh/diblokir — halaman terakhir cuma kemudahan */
+  }
+}
+
+function pilihTerbaikPerProduk(rows: Purchase[]): Purchase[] {
+  const terbaik = new Map<string, Purchase>();
+  for (const p of rows) {
+    const id = p.digital_products?.id;
+    if (!id) continue;
+    const lama = terbaik.get(id);
+    if (!lama || nilaiAkses(p) > nilaiAkses(lama)) terbaik.set(id, p);
+  }
+  return rows.filter((p) => {
+    const wakil = p.digital_products?.id ? terbaik.get(p.digital_products.id) : p;
+    if (wakil && wakil !== p) {
+      barisPengganti.set(p.id, wakil.id);
+      salinJejakBaris(p.id, wakil.id);
+    }
+    return wakil === p;
+  });
+}
+
+/* [ebook-upgrade-selamanya-v1] E-book new edition berakses 6/12 bulan (termasuk
+   modul 1 tahun bawaan paket kelas) yang masih aktif boleh dijadikan Selamanya
+   dengan membayar selisihnya. Nominalnya dihitung server, bukan di sini. */
+function bisaUpgrade(p: Purchase): boolean {
+  const prod = p.digital_products;
+  return prod?.type === "ebook" && !cicipan(p) && !!p.expires_at
+    && new Date(p.expires_at).getTime() > Date.now()
+    && adalahNewEdition(prod) && masihDijual(prod.slug);
+}
 
 function accessInfo(p: Purchase): Access {
   if (!p.expires_at) return { kind: "forever" };
@@ -369,7 +431,7 @@ async function runLoadLibrary(
     console.error("Gagal memuat perpustakaan:", pRes.error);
     return null;
   }
-  const purchases = (pRes.data ?? []) as unknown as Purchase[];
+  const purchases = pilihTerbaikPerProduk((pRes.data ?? []) as unknown as Purchase[]);
 
   let byLang: LangProgress = libCache?.userId === userId ? libCache.byLang : {};
   if (!mRes.error && !lRes.error) {
@@ -543,6 +605,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
   // [perpanjang-inplace-v1] popup perpanjang akses — checkout langsung tanpa pindah page
   const [renewFor, setRenewFor] = useState<Purchase | null>(null);
+  // [ebook-upgrade-selamanya-v1] popup upgrade akses → Selamanya (bayar selisih)
+  const [upgradeFor, setUpgradeFor] = useState<Purchase | null>(null);
   // [pustaka-katalog-terkunci-v1] katalog produk lain + popup beli
   const [katalog, setKatalog] = useState<CatalogItem[]>(katalogCache ?? []);
   const [buyFor, setBuyFor] = useState<CatalogItem | null>(null);
@@ -631,7 +695,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
       try {
         const res = await fetch(`/api/preview-library?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" });
         const j = res.ok ? await res.json() : null;
-        const next = ((j?.purchases ?? []) as unknown) as Purchase[];
+        const next = pilihTerbaikPerProduk(((j?.purchases ?? []) as unknown) as Purchase[]);
         const pembeli = (j?.buyer ?? null) as PreviewBuyer;
         setPurchases(next);
         setPreviewBuyer(pembeli);
@@ -1013,9 +1077,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
      jejak cuma dipakai sebagai cadangan terakhir. */
   const terakhirKartu = useMemo(
     () => terakhir
-      .map((j) => ({ j, p: purchases.find((x) => x.id === j.purchaseId) }))
+      .map((j) => {
+        const id = barisPengganti.get(j.purchaseId) ?? j.purchaseId; // [ebook-upgrade-selamanya-v1]
+        return { j, p: purchases.find((x) => x.id === id) };
+      })
       .filter((x): x is { j: JejakPustaka; p: Purchase } =>
-        !!x.p && x.p.digital_products?.type === "ebook" && accessInfo(x.p).kind !== "expired"),
+        !!x.p && x.p.digital_products?.type === "ebook" && accessInfo(x.p).kind !== "expired")
+      // Jejak baris lama (dipetakan ke baris upgrade) & jejak baris barunya menunjuk
+      // pembelian yang sama — tampilkan sekali (yang terbaru, urutan terakhir sudah desc).
+      .filter((x, i, arr) => arr.findIndex((y) => y.p.id === x.p.id) === i),
     [terakhir, purchases],
   );
 
@@ -1347,6 +1417,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                 }
                 setRenewFor(p);
               }}
+              onUpgrade={() => {
+                if (preview && !previewBuyer) {
+                  toast.error("Siswa ini belum punya email — tagihan tak bisa dibuat.");
+                  return;
+                }
+                setUpgradeFor(p);
+              }}
             />
           ))}
         </div>
@@ -1371,6 +1448,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                   return;
                 }
                 setRenewFor(p);
+              }}
+              onUpgrade={() => {
+                if (preview && !previewBuyer) {
+                  toast.error("Siswa ini belum punya email — tagihan tak bisa dibuat.");
+                  return;
+                }
+                setUpgradeFor(p);
               }}
             />
           ))}
@@ -1471,6 +1555,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           previewBuyer={preview ? previewBuyer : null}
           previewStudentId={previewStudentId}
           onClose={() => setRenewFor(null)}
+        />
+      )}
+
+      {/* [ebook-upgrade-selamanya-v1] popup upgrade ke Selamanya */}
+      {upgradeFor && (
+        <UpgradeModal
+          purchase={upgradeFor}
+          previewBuyer={preview ? previewBuyer : null}
+          onClose={() => setUpgradeFor(null)}
         />
       )}
 
@@ -1617,12 +1710,14 @@ function TypeDot({ type }: { type: ProductType }) {
 }
 
 function ProductCard({
-  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onPrefetch,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onUpgrade, onPrefetch,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
   ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
+  /* [ebook-upgrade-selamanya-v1] */
+  onUpgrade?: () => void;
   /* [ebook-buka-instan-v1] kursor/jari menyentuh kartu → modulnya mulai diunduh */
   onPrefetch?: () => void;
 }) {
@@ -1730,18 +1825,29 @@ function ProductCard({
         ) : !ready ? (
           <p className="mt-1.5 text-[11.5px] font-bold text-amber-600">Materi disiapkan</p>
         ) : null}
+        {/* [ebook-upgrade-selamanya-v1] */}
+        {onUpgrade && bisaUpgrade(p) && (
+          <button
+            onClick={onUpgrade}
+            className="mt-1.5 flex items-center gap-1 text-[11.5px] font-bold text-[#12A37E] hover:text-[#0C8163]"
+          >
+            <InfinityIcon className="h-3.5 w-3.5" strokeWidth={2.4} /> Upgrade ke Selamanya
+          </button>
+        )}
       </div>
     </div>
   );
 }
 
 function ProductRow({
-  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onPrefetch,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onUpgrade, onPrefetch,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
   ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
+  /* [ebook-upgrade-selamanya-v1] */
+  onUpgrade?: () => void;
   /* [ebook-buka-instan-v1] kursor/jari menyentuh kartu → modulnya mulai diunduh */
   onPrefetch?: () => void;
 }) {
@@ -1800,6 +1906,15 @@ function ProductRow({
         {/* [materi-belum-siap-v1] */}
         {!ready && !expired && (
           <p className="mt-1 text-[11px] font-semibold text-amber-600">Materi sedang disiapkan tim Linguo</p>
+        )}
+        {/* [ebook-upgrade-selamanya-v1] */}
+        {onUpgrade && bisaUpgrade(p) && (
+          <button
+            onClick={(e) => { e.stopPropagation(); onUpgrade(); }}
+            className="mt-1 flex items-center gap-1 text-[12px] font-bold text-[#12A37E] hover:text-[#0C8163]"
+          >
+            <InfinityIcon className="h-3.5 w-3.5" strokeWidth={2.4} /> Upgrade ke Selamanya
+          </button>
         )}
       </div>
       <div className="hidden sm:block"><AccessChip a={a} /></div>
@@ -2037,6 +2152,150 @@ function RenewModal({
             </button>
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
               Pembayaran aman via Xendit · akses aktif otomatis setelah lunas
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// [ebook-upgrade-selamanya-v1] Upgrade e-book 6/12 bulan → Selamanya dengan membayar
+// SELISIHNYA. Nominal dihitung edge fn checkout yang sama (mode dry_run) — harga
+// Selamanya dikurangi yang sudah dibayar — jadi angka di popup = angka di chat CS =
+// angka yang ditagih. Saat lunas webhook menerbitkan baris Selamanya; rak memilih
+// baris terbaik per modul (pilihTerbaikPerProduk), progres belajar tak tersentuh.
+interface UpgradeQuote {
+  product_title: string; from_label: string; expires_at: string;
+  target_label: string; target_price: number; credit: number; amount: number;
+}
+
+async function panggilUpgrade(purchaseId: string, dryRun: boolean): Promise<{ upgrade: UpgradeQuote; invoice_url?: string }> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/xendit-create-digital-invoice`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ upgrade_from_purchase_id: purchaseId, dry_run: dryRun }),
+    }
+  );
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data?.success || !data?.upgrade) throw new Error(data?.error ?? "Gagal menghitung upgrade.");
+  return data;
+}
+
+function UpgradeModal({
+  purchase, onClose, previewBuyer = null,
+}: {
+  purchase: Purchase; onClose: () => void;
+  /* [pratinjau-beli-langsung-v1] terisi HANYA di POV siswa */
+  previewBuyer?: PreviewBuyer;
+}) {
+  const pratinjau = !!previewBuyer;
+  const prod = purchase.digital_products;
+  const [quote, setQuote] = useState<UpgradeQuote | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    panggilUpgrade(purchase.id, true)
+      .then((d) => { if (alive) setQuote(d.upgrade); })
+      .catch((e) => { if (alive) setErr(e instanceof Error ? e.message : "Gagal menghitung upgrade."); });
+    return () => { alive = false; };
+  }, [purchase.id]);
+
+  async function handlePay() {
+    if (!quote) return;
+    // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik masih hidup
+    const tabBayar = siapkanTabPembayaran();
+    setSubmitting(true);
+    try {
+      const d = await panggilUpgrade(purchase.id, false);
+      if (!d.invoice_url) throw new Error("Gagal membuat invoice");
+      const tabBaru = tabBayar.arahkan(d.invoice_url);
+      if (tabBaru) toast.success("Halaman pembayaran dibuka. Akses Selamanya aktif otomatis setelah bayar.");
+      onClose();
+    } catch (e) {
+      tabBayar.batal();
+      toast.error(e instanceof Error ? e.message : "Terjadi kesalahan.");
+      setSubmitting(false);
+    }
+  }
+
+  const baris = (label: string, nilai: string, tebal = false) => (
+    <div className="flex items-center justify-between gap-3 py-1.5">
+      <span className={`text-[13px] ${tebal ? "font-extrabold text-[#12172B]" : "font-medium text-slate-500"}`}>{label}</span>
+      <span className={`shrink-0 text-[14px] ${tebal ? "font-extrabold text-[#12172B]" : "font-bold text-slate-700"}`}>{nilai}</span>
+    </div>
+  );
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="flex max-h-[92vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-5 py-4">
+          <div className="min-w-0">
+            <h3 className="text-[17px] font-extrabold text-[#12172B]">Upgrade ke Selamanya</h3>
+            <p className="mt-0.5 truncate text-[13px] font-medium text-slate-500">{prod.title}</p>
+          </div>
+          <button onClick={onClose} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200">
+            <X className="h-5 w-5" strokeWidth={2.2} />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          {err ? (
+            <p className="py-8 text-center text-[14px] font-semibold text-slate-500">{err}</p>
+          ) : !quote ? (
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-6 w-6 animate-spin text-slate-300" />
+            </div>
+          ) : (
+            <>
+              <p className="mb-3 text-[13px] font-medium leading-snug text-slate-500">
+                Cukup bayar selisihnya — yang sudah kamu bayar untuk akses {quote.from_label} dipotong dari harga akses {quote.target_label}.
+              </p>
+              <div className="rounded-2xl border border-slate-200 px-3.5 py-2">
+                {baris(`Akses sekarang`, `${quote.from_label} · s.d. ${fmtDate(quote.expires_at)}`)}
+                {baris(`Harga akses ${quote.target_label}`, fmtRupiah(quote.target_price))}
+                {quote.credit > 0 && baris("Sudah dibayar", `−${fmtRupiah(quote.credit)}`)}
+                <div className="my-1 border-t border-dashed border-slate-200" />
+                {baris("Yang perlu dibayar", fmtRupiah(quote.amount), true)}
+              </div>
+              <p className="mt-3 flex items-start gap-1.5 text-[12px] font-medium text-slate-500">
+                <InfinityIcon className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#12A37E]" strokeWidth={2.4} />
+                Setelah lunas modul ini tak punya batas waktu lagi. Progres belajarmu tetap tersimpan.
+              </p>
+            </>
+          )}
+        </div>
+
+        {quote && !err && (
+          <div className="border-t border-slate-100 px-5 py-4">
+            {pratinjau && <NotaPratinjau buyer={previewBuyer!} />}
+            <button
+              onClick={handlePay}
+              disabled={submitting}
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+            >
+              {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
+              {submitting
+                ? "Menyiapkan…"
+                : pratinjau
+                  ? `Kirim tagihan ${fmtRupiah(quote.amount)}`
+                  : `Bayar ${fmtRupiah(quote.amount)}`}
+            </button>
+            <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
+              Pembayaran aman via Xendit · akses Selamanya aktif otomatis setelah lunas
             </p>
           </div>
         )}
