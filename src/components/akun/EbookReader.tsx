@@ -44,7 +44,7 @@ import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
-  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris, jagaHangatTts,
+  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris, tanpaPenutur, jagaHangatTts,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -783,10 +783,24 @@ function tandaiRubyBaris(rapi: (ItemTeks & { kosong: boolean })[]): void {
   const hMaks = Math.max(...isi.map((i) => i.h));
   const induk = isi.filter((i) => i.h >= hMaks * RUBY_TINGGI);
   if (!induk.length) return;
-  for (const it of isi) {
+  /* [ebook-ruby-spasi-v1] Yang dipindai SEMUA potongan baris, termasuk potongan
+     spasi — bukan cuma yang berhuruf. Spasi di baris cara baca ikut LEBAR
+     (anotasi "MYED-li-ni-ye" lebih panjang dari katanya, jadi spasi sesudahnya
+     28 pt pada tinggi 6 pt); tanpa tanda ruby ia lolos ke penyusun sel dan
+     dianggap batas KOLOM: "7 Нина: Медленнее, пожалуйста!" terpenggal jadi
+     "7 Нина: Медленнее" | ", пожалуйста" — nama penutur ikut jadi "frasa"
+     dan tombol Putar kalimat lenyap karena kalimatnya tinggal satu kata.
+     `induk`/`hMaks` tetap dihitung dari potongan berhuruf saja. */
+  for (const it of rapi) {
     if (it.h >= hMaks * RUBY_TINGGI) continue;
     const bawah = it.y + it.h; // garis alas potongan kecil ini
-    if (induk.some((m) => bawah <= m.y + m.h * 0.35 && it.x < m.x + m.w && it.x + it.w > m.x)) {
+    /* [ebook-ruby-spasi-v2] Spasi baris cara baca sering duduk di atas CELAH
+       antar kata induk ("BU-du␣borsch" di atas "буду борщ"), tak tumpang tindih
+       dengan kata mana pun — syarat mendatar membuatnya lolos jadi batas kolom,
+       dan "Марко: Да. Я буду борщ и чёрный чай." tetap terpenggal per kata.
+       Potongan spasi tak membawa huruf, jadi cukup ia duduk di atas barisnya. */
+    if (induk.some((m) => bawah <= m.y + m.h * 0.35 &&
+      (it.kosong || (it.x < m.x + m.w && it.x + it.w > m.x)))) {
       it.ruby = true;
     }
   }
@@ -837,8 +851,10 @@ const POLA_CARA_BACA = /\p{Lu}+[-‑]\p{Ll}/u;
 function frasaSel(selTeks: string, kata: string): string {
   let s = String(selTeks || "")
     .replace(/\([^)]*\)/g, " ")     // "(KA-sa)" — petunjuk cara baca
-    .replace(/[…]+/g, " ")           // "me llamo…" → "me llamo"
-    .replace(/^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u, "")
+    .replace(/[…]+/g, " ")          // "me llamo…" → "me llamo"
+    .replace(/\s{2,}/g, " ")
+    .trim();
+  s = tanpaPenutur(s)               // [ebook-tts-tanpa-penutur-v2] "7 Нина: Медленнее" → "Медленнее"
     .replace(/\s{2,}/g, " ")
     .trim();
   if (!s || POLA_CARA_BACA.test(s)) return "";
@@ -3081,11 +3097,26 @@ export default function EbookReader({
        dari dirinya sendiri ("lengkap") diputuskan dari klausa tempat ia duduk —
        lihat kataIndonesia di lib/ebookTts. */
     const konteks = sel?.teks || barisKena?.teks || kena.str;
-    const { teks: kalimat, kode: kodeKata } = kalimatSekitar(konteks, kata.kata, kodeBahasa);
+    /* [ebook-tts-kalimat-diketuk-v1] Kata yang sama ke berapa (dari kiri) di sel/
+       barisnya — "лет" di "Сколько вам лет? — Ему семь лет." ada dua. */
+    const kataKecil = kata.kata.toLowerCase();
+    const ke = items
+      .filter((it) => Math.abs(it.y - kena.y) <= Math.max(it.h, kena.h) * 0.6 &&
+        (!sel || (it.x + it.w > sel.x0 - 2 && it.x < sel.x1 + 2)))
+      .flatMap(kataKataDi)
+      .filter((w) => w.x < kata.x - 1 && w.kata.toLowerCase() === kataKecil).length;
+    const { teks: kalimat, kode: kodeKata } = kalimatSekitar(konteks, kata.kata, kodeBahasa, ke);
     /* [ebook-ruby-translit-v1] Transliterasi yang terlanjur menyatu dengan
        barisnya (tata letaknya tak terbaca sebagai anotasi) tak berbahasa apa
        pun — jaring terakhir supaya ia tak pernah ikut dibunyikan. */
     if (!kodeKata) return "kosong";
+    /* [ebook-tts-hanya-target-v1] Kata bahasa Indonesia (baris terjemahan,
+       penjelasan, kolom arti) TIDAK dibunyikan sama sekali — TTS modul fokus ke
+       bahasa yang dipelajari. Dulu ([ebook-tts-semua-section-v1]) dibacakan
+       dengan suara Indonesia; sekarang ketukannya diabaikan seperti nama penutur.
+       Modul yang bahasa targetnya memang Indonesia (kode "id") tak terpengaruh
+       karena kodeKata === kodeBahasa. */
+    if (kodeKata !== kodeBahasa) return "kosong";
     const terjemahan = kodeKata !== kodeBahasa;
     return {
       unit,

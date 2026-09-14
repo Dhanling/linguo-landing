@@ -620,6 +620,17 @@ export function penuturBaris(baris: string): string {
   return m[0].replace(/[:：]\s*$/u, "").trim();
 }
 
+/** [ebook-tts-tanpa-penutur-v2] Baris tanpa nomor baris & nama penuturnya:
+ *  "7 Нина: Медленнее, пожалуйста!" → "Медленнее, пожалуйста!". Dipakai frasaSel:
+ *  sel dialog PENDEK ("7 Нина: Медленнее") dulu lolos jadi "frasa" tiga kata dan
+ *  nama tokohnya ikut dibunyikan — padahal penutur bukan bahasa yang dipelajari. */
+export function tanpaPenutur(baris: string): string {
+  return String(baris || "")
+    .replace(BUANG_NOMOR_DIALOG, "")
+    .replace(BUANG_NOMOR, "")
+    .replace(BUANG_PENUTUR, "");
+}
+
 /**
  * [ebook-tts-kalimat-v1] Satu baris halaman → kalimat bahasa target yang layak
  * diputar. Kosong = tak ada yang bisa dibunyikan dari baris itu.
@@ -760,12 +771,51 @@ export function kalimatBerisiKata(teks: string, kata: string): string {
 const TOKEN_KATA = /[\p{L}\p{M}\p{N}'’-]+|[^\p{L}\p{M}\p{N}'’-]+/gu;
 const PUTUS_KLAUSA = /[.,;:!?()[\]{}"“”«»…—–|=/→]/u;
 
-export function kalimatSekitar(baris: string, kata: string, kode: string): { teks: string; kode: string } {
+/* [ebook-tts-kalimat-diketuk-v1] Kunci jawaban modul new edition menderetkan
+   beberapa kalimat bahasa target dalam SATU baris, dipisah " — ":
+   "4. Сколько вам лет? — Мне двадцать один год. — Ему семь лет. — Медленнее, …".
+   kalimatTarget selalu mengambil potongan pertama (pas untuk "kalimat — arti"),
+   jadi kata mana pun yang diketuk, "Putar kalimat" membunyikan kalimat paling
+   kiri. Di sini tiap potongan dibersihkan sendiri-sendiri, dipecah per kalimat,
+   lalu dipilih kalimat tempat kata itu duduk. `ke` = kata yang sama ke berapa
+   (dari kiri) di baris itu — "лет" muncul di "Сколько вам лет?" DAN
+   "Ему семь лет.", jadi mencocokkan teksnya saja masih bisa meleset. */
+function kalimatDiketuk(baris: string, kata: string, kode: string, ke: number): string {
+  const k = kata.toLowerCase();
+  if (!k) return "";
+  const pola = new RegExp(`(^|\\P{L})${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?=$|\\P{L})`, "giu");
+  const kalimat: string[] = [];
+  for (const bagian of String(baris || "").split(PISAH_ARTI)) {
+    const bersih = kalimatTarget(bagian, kode);
+    if (bersih) kalimat.push(...pecahKalimat(bersih));
+  }
+  // Aksara tanpa spasi tak punya batas kata — di sana hitung apa adanya.
+  const berbatas = kalimat.some((s) => (s.match(pola) ?? []).length > 0);
+  const jumlah = (s: string) => berbatas
+    ? (s.match(pola) ?? []).length
+    : s.toLowerCase().split(k).length - 1;
+  let sisa = Math.max(0, ke);
+  let pertama = "";
+  for (const s of kalimat) {
+    const n = jumlah(s);
+    if (!n) continue;
+    if (!pertama) pertama = s;
+    if (sisa < n) return s;
+    sisa -= n;
+  }
+  return pertama;
+}
+
+export function kalimatSekitar(
+  baris: string, kata: string, kode: string, ke = 0,
+): { teks: string; kode: string } {
   const k = String(kata || "").trim();
   const kodeKata = bahasaKata(k, kode, baris);
   // [ebook-ruby-translit-v1] Yang diketuk transliterasi — tak ada yang dibunyikan.
   if (!kodeKata) return { teks: "", kode: "" };
   if (kodeKata === kode) {
+    const diketuk = kalimatDiketuk(baris, k, kode, ke);
+    if (diketuk) return { teks: diketuk, kode };
     const utuh = kalimatTarget(baris, kode);
     // [ebook-tts-satu-kalimat-v1] SATU kalimat saja: yang memuat kata itu.
     if (utuh) return { teks: kalimatBerisiKata(utuh, k), kode };

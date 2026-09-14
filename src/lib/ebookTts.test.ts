@@ -12,7 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   bahasaKata, kalimatSekitar, kalimatTarget, kataIndonesia, kataTranslit, klausaKata,
-  pecahKalimat,
+  pecahKalimat, penuturBaris, tanpaPenutur,
 } from "./ebookTts";
 
 const AKAR = path.join(process.cwd(), "content/ebook");
@@ -227,8 +227,52 @@ describe("transliterasi & satu kalimat", () => {
     expect(kalimatSekitar(baris, "готовлю", "ru")).toEqual({ teks: "Я никогда не готовлю.", kode: "ru" });
   });
 
+  /* [ebook-tts-kalimat-diketuk-v1] Kunci jawaban: beberapa kalimat target dalam
+     satu baris dipisah " — " — dulu yang berbunyi selalu kalimat paling kiri. */
+  it("kunci jawaban berderet: kalimat tempat kata yang diketuk, bukan yang paling kiri", () => {
+    const baris = "4. Сколько вам лет? — Мне двадцать один год. — Ему семь лет. — Медленнее, пожалуйста. — Можно пять книг?";
+    expect(kalimatSekitar(baris, "Медленнее", "ru")).toEqual({ teks: "Медленнее, пожалуйста.", kode: "ru" });
+    expect(kalimatSekitar(baris, "Сколько", "ru")).toEqual({ teks: "Сколько вам лет?", kode: "ru" });
+    expect(kalimatSekitar(baris, "книг", "ru")).toEqual({ teks: "Можно пять книг?", kode: "ru" });
+    // Kata kembar: "лет" kedua di baris itu.
+    expect(kalimatSekitar(baris, "лет", "ru", 0)).toEqual({ teks: "Сколько вам лет?", kode: "ru" });
+    expect(kalimatSekitar(baris, "лет", "ru", 1)).toEqual({ teks: "Ему семь лет.", kode: "ru" });
+  });
+
+  it("baris dialog bernomor & berpenutur: nama penutur tak ikut kalimatnya", () => {
+    const baris = "2 Марко: Да. Я буду борщ и чёрный чай.";
+    expect(kalimatSekitar(baris, "борщ", "ru")).toEqual({ teks: "Я буду борщ и чёрный чай.", kode: "ru" });
+    expect(kalimatSekitar("1 Официант: Добрый день! Вы готовы?", "Добрый", "ru"))
+      .toEqual({ teks: "Добрый день!", kode: "ru" });
+  });
+
+  it("kalimat — terjemahan tetap membunyikan sisi bahasa target", () => {
+    expect(kalimatSekitar("У нас есть кошка. — Kami punya kucing.", "кошка", "ru"))
+      .toEqual({ teks: "У нас есть кошка.", kode: "ru" });
+  });
+
   it("angka & singkatan tak dikira akhir kalimat, tanda baca CJK selalu memotong", () => {
     expect(pecahKalimat("Harganya 2.500 rubel. Murah.")).toEqual(["Harganya 2.500 rubel.", "Murah."]);
     expect(pecahKalimat("わたしは がくせいです。よろしく。")).toEqual(["わたしは がくせいです。", "よろしく。"]);
+  });
+});
+
+/* [ebook-tts-tanpa-penutur-v2] Nama penutur & nomor baris dialog bukan bagian
+   kalimat — sel dialog pendek pernah lolos jadi "frasa" "7 Нина: Медленнее". */
+describe("tanpaPenutur", () => {
+  it("membuang nomor baris & nama penutur dialog", () => {
+    expect(tanpaPenutur("7 Нина: Медленнее, пожалуйста! Ещё раз.")).toBe("Медленнее, пожалуйста! Ещё раз.");
+    expect(tanpaPenutur("3 Ana: ¡Hola!")).toBe("¡Hola!");
+    expect(tanpaPenutur("たなか: はじめまして。")).toBe("はじめまして。");
+    expect(penuturBaris("7 Нина: Медленнее")).toBe("Нина");
+    // Sel dialog yang terpenggal di "!" — yang tersorot & berbunyi cuma katanya.
+    expect(tanpaPenutur("9 Ани: Подожди!")).toBe("Подожди!");
+    expect(kalimatSekitar("9 Ани: Подожди! Я хочу мороженое.", "Подожди", "ru"))
+      .toEqual({ teks: "Подожди!", kode: "ru" });
+  });
+  it("membiarkan kalimat yang sungguh diawali angka atau tanpa penutur", () => {
+    expect(tanpaPenutur("24 horas al día")).toBe("24 horas al día");
+    expect(tanpaPenutur("buenos días")).toBe("buenos días");
+    expect(tanpaPenutur("Медленнее, пожалуйста!")).toBe("Медленнее, пожалуйста!");
   });
 });
