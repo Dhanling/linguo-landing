@@ -11,7 +11,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, countdownLabel, fmtTime, isDead, isLiveNow,
-  langColor, langFlagCode, TeacherAvatar,
+  langColor, langFlagCode, TeacherAvatar, gabungSesiBeruntun, nomorSesiLabel,
   type JadwalSession, type NormSession,
 } from "./jadwalShared";
 
@@ -37,63 +37,32 @@ type SesiBlok = {
   join: NormSession | null;
 };
 
-/** Jeda maksimum antar-sesi yang masih dianggap satu blok (mis. istirahat 10 menit). */
-const GAP_TOLERANCE_MS = 20 * 60_000;
-
-function sameClass(a: NormSession, b: NormSession) {
-  return (
-    a.language === b.language &&
-    (a.level || "") === (b.level || "") &&
-    (a.teacher || "") === (b.teacher || "")
-  );
-}
-
+// Aturan "nyambung" (kelas & hari sama, jeda ≤ 20 menit, ekor SEMUA blok dicocokkan —
+// sesi-beruntun-gabung-v2) tinggal di jadwalShared: kalender Jadwal memakainya juga.
 function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
-  const out: SesiBlok[] = [];
-  // [sesi-beruntun-gabung-v2] Ekor yang dicocokkan = SEMUA blok, bukan cuma blok
-  // terakhir. Kalau ada sesi kelas lain yang jamnya terselip di antara dua sesi
-  // beruntun (urutan waktu: A 15:30, B 15:30, A 16:15), rantai A dulu putus dan
-  // tampil jadi dua kartu.
-  const nyambungKe = (prev: NormSession, s: NormSession) => {
-    const prevEnd = prev._d.getTime() + (prev.durationMinutes || 60) * 60000;
-    return (
-      sameClass(prev, s) &&
-      prev._d.toDateString() === s._d.toDateString() &&
-      s._d.getTime() - prevEnd <= GAP_TOLERANCE_MS &&
-      s._d.getTime() >= prevEnd - 60_000
-    );
-  };
-  for (const s of list) {
-    const host = out.find((b) => nyambungKe(b.items[b.items.length - 1], s));
-    if (host) host.items.push(s);
-    else out.push({ key: s.id, items: [s], head: s, _d: s._d, _time: s._time, _end: s._end, _weekday: s._weekday, _live: false, totalMinutes: 0, join: null });
-  }
-  return out.map((b) => {
-    const tail = b.items[b.items.length - 1];
+  return gabungSesiBeruntun(list).map((items) => {
+    const head = items[0];
+    const tail = items[items.length - 1];
     const endMs = tail._d.getTime() + (tail.durationMinutes || 60) * 60000;
     return {
-      ...b,
+      key: head.id,
+      items,
+      head,
+      _d: head._d,
+      _time: head._time,
       _end: fmtTime(new Date(endMs)),
-      _live: b.items.some((s) => s._live),
-      totalMinutes: b.items.reduce((n, s) => n + (s.durationMinutes || 60), 0),
+      _weekday: head._weekday,
+      _live: items.some((s) => s._live),
+      totalMinutes: items.reduce((n, s) => n + (s.durationMinutes || 60), 0),
       // Room id itu per sesi (`sched-<id>`), jadi tombolnya harus menunjuk sesi
       // yang jamnya sedang jalan — kalau blok ini dipatok ke sesi pertama terus,
       // pukul 09.10 siswa masuk room kosong sementara pengajar ada di sesi kedua.
       join:
-        b.items.find((s) => s._joinable && s._d.getTime() + (s.durationMinutes || 60) * 60000 > now) ||
-        b.items.find((s) => s._joinable) ||
+        items.find((s) => s._joinable && s._d.getTime() + (s.durationMinutes || 60) * 60000 > now) ||
+        items.find((s) => s._joinable) ||
         null,
     };
   });
-}
-
-/** "#6–7" untuk nomor beruntun, "#6, #9" kalau lompat, "" kalau nomornya kosong. */
-function nomorLabel(items: NormSession[]): string {
-  const nums = items.map((s) => s.sessionNumber).filter((n): n is number => !!n);
-  if (!nums.length) return "";
-  if (nums.length === 1) return `#${nums[0]}`;
-  const runut = nums.every((n, i) => i === 0 || n === nums[i - 1] + 1);
-  return runut ? `#${nums[0]}–${nums[nums.length - 1]}` : nums.map((n) => `#${n}`).join(", ");
 }
 
 export default function SesiMendatangCard({
@@ -275,7 +244,7 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
   const s = b.head;
   const c = langColor(s.language);
   const hasFlag = !!langFlagCode(s.language);
-  const nomor = nomorLabel(b.items);
+  const nomor = nomorSesiLabel(b.items);
   const jumlah = b.items.length;
   return (
     <div

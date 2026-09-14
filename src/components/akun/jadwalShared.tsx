@@ -243,3 +243,59 @@ export function countdownLabel(start: Date, now: number) {
   const days = Math.round(hours / 24);
   return `${days} ${tr("hari lagi")}`;
 }
+
+// ── [jadwal-blok-gabung-v1] sesi beruntun sehari = SATU blok ─────────────────
+// Dulu hidup di SesiMendatangCard saja; kalender Jadwal masih menggambar kartu per
+// sesi, jadi kelas 2×30 menit tampil sebagai dua kartu bertumpuk (#1 07.30, #2
+// 08.00). Sekarang aturannya satu di sini dan dipakai dua-duanya — sama dengan
+// kalender dashboard pengajar (mergeAdjacentSessions).
+
+/** Jeda maksimum antar-sesi yang masih dianggap satu blok (mis. istirahat 10 menit). */
+const GAP_BERUNTUN_MS = 20 * 60_000;
+
+function kelasSama(a: NormSession, b: NormSession) {
+  return (
+    a.language === b.language &&
+    (a.level || "") === (b.level || "") &&
+    (a.teacher || "") === (b.teacher || "") &&
+    !!a.isBatch === !!b.isBatch &&
+    // sesi batal jangan dilebur ke sesi yang tetap jalan — coretnya jadi tak kelihatan
+    isDead(a.status) === isDead(b.status)
+  );
+}
+
+function nyambung(prev: NormSession, s: NormSession) {
+  const prevEnd = prev._d.getTime() + (prev.durationMinutes || 60) * 60000;
+  return (
+    kelasSama(prev, s) &&
+    prev._d.toDateString() === s._d.toDateString() &&
+    s._d.getTime() - prevEnd <= GAP_BERUNTUN_MS &&
+    s._d.getTime() >= prevEnd - 60_000
+  );
+}
+
+/**
+ * Kelompokkan sesi beruntun (kelas & hari sama, jeda ≤ 20 menit) — hasilnya urut
+ * waktu, tiap kelompok minimal satu sesi.
+ * [sesi-beruntun-gabung-v2] Ekor yang dicocokkan = SEMUA kelompok, bukan cuma yang
+ * terakhir: sesi kelas lain yang jamnya terselip di antara dua sesi beruntun
+ * (A 15:30, B 15:30, A 16:15) dulu memutus rantai A jadi dua kartu.
+ */
+export function gabungSesiBeruntun<T extends NormSession>(list: T[]): T[][] {
+  const out: T[][] = [];
+  for (const s of [...list].sort((a, b) => a._d.getTime() - b._d.getTime())) {
+    const host = out.find((g) => nyambung(g[g.length - 1], s));
+    if (host) host.push(s);
+    else out.push([s]);
+  }
+  return out;
+}
+
+/** "#6–7" untuk nomor beruntun, "#6, #9" kalau lompat, "" kalau nomornya kosong. */
+export function nomorSesiLabel(items: NormSession[]): string {
+  const nums = items.map((s) => s.sessionNumber).filter((n): n is number => !!n);
+  if (!nums.length) return "";
+  if (nums.length === 1) return `#${nums[0]}`;
+  const runut = nums.every((n, i) => i === 0 || n === nums[i - 1] + 1);
+  return runut ? `#${nums[0]}–${nums[nums.length - 1]}` : nums.map((n) => `#${n}`).join(", ");
+}

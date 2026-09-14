@@ -28,8 +28,8 @@ import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalende
 import { idSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
-  addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
-  startOfWeek, statusMeta, ymd,
+  addDays, countdownLabel, fmtTime, gabungSesiBeruntun, isDead, isLiveNow, isoOf, langColor, langFlagCode,
+  nomorSesiLabel, pad, startOfWeek, statusMeta, ymd,
   type JadwalSession, type LangColor, type NormSession,
 } from "./jadwalShared";
 
@@ -170,6 +170,23 @@ export default function JadwalCalendar({
 
   const eventsOn = (iso: string) => items.filter((i) => i._iso === iso).sort((a, b) => a._d.getTime() - b._d.getTime());
 
+  /* [jadwal-blok-hover-zoom-v1] Blok di grid cuma muat judul + jam. Arahkan mouse →
+     panel detail "zoom" keluar dari bloknya (pengajar, jam blok, status, rincian tiap
+     sesi). Posisinya fixed dari getBoundingClientRect supaya tak terpotong wadah
+     scroll grid; ditutup begitu apa pun digulir karena posisinya jadi basi. */
+  const [hover, setHover] = useState<{ items: NormSession[]; rect: DOMRect } | null>(null);
+  useEffect(() => { setHover(null); }, [mode, cursor, fullscreen]);
+  useEffect(() => {
+    if (!hover) return;
+    const tutup = () => setHover(null);
+    window.addEventListener("scroll", tutup, true);
+    window.addEventListener("resize", tutup);
+    return () => {
+      window.removeEventListener("scroll", tutup, true);
+      window.removeEventListener("resize", tutup);
+    };
+  }, [hover]);
+
   const legend = useMemo(() => {
     const seen = new Map<string, LangColor>();
     for (const i of items) if (!seen.has(i.language)) seen.set(i.language, langColor(i.language));
@@ -270,15 +287,17 @@ export default function JadwalCalendar({
    * sepertiga kolom, jadi kelas pagi yang tak bentrok apa-apa ikut kepotong dan
    * beda sendiri dari hari-hari tetangganya.
    */
-  const layoutDay = (evs: NormSession[]) => {
-    const sorted = [...evs]
-      .map((e) => {
-        const mulai = e._d.getTime();
-        return { e, mulai, selesai: mulai + (e.durationMinutes || 60) * 60000 };
+  // [jadwal-blok-gabung-v1] satuannya BLOK (sesi beruntun sehari sudah dilebur),
+  // bukan sesi — mulai = sesi pertama, selesai = akhir sesi terakhir.
+  const layoutDay = (groups: NormSession[][]) => {
+    const sorted = groups
+      .map((items) => {
+        const tail = items[items.length - 1];
+        return { items, mulai: items[0]._d.getTime(), selesai: tail._d.getTime() + (tail.durationMinutes || 60) * 60000 };
       })
       .sort((a, b) => a.mulai - b.mulai);
 
-    const placed: { e: NormSession; lane: number; lanes: number }[] = [];
+    const placed: { items: NormSession[]; mulai: number; selesai: number; lane: number; lanes: number }[] = [];
     let kelompok: typeof sorted = [];
     let kelompokSelesai = -Infinity;
     const tutup = () => {
@@ -290,7 +309,7 @@ export default function JadwalCalendar({
         laneEnd[lane] = ev.selesai;
         return { ev, lane };
       });
-      berlajur.forEach(({ ev, lane }) => placed.push({ e: ev.e, lane, lanes: laneEnd.length }));
+      berlajur.forEach(({ ev, lane }) => placed.push({ items: ev.items, mulai: ev.mulai, selesai: ev.selesai, lane, lanes: laneEnd.length }));
     };
     sorted.forEach((ev) => {
       // mulai kelompok baru begitu ada jeda bersih dari semua blok sebelumnya
@@ -348,7 +367,10 @@ export default function JadwalCalendar({
         .lms-dark .libur-sel{background-color:rgba(244,63,94,0.16);}
         .libur-kolom{background-color:rgba(244,63,94,0.05);}
         .lms-dark .libur-kolom{background-color:rgba(244,63,94,0.10);}
+        .jadwal-blok-zoom{animation:jadwal-blok-zoom .16s cubic-bezier(.2,.9,.3,1.15);}
+        @keyframes jadwal-blok-zoom{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
       `}</style>
+      {hover && <BlokHoverDetail items={hover.items} rect={hover.rect} now={now} />}
       {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
           [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
@@ -428,7 +450,8 @@ export default function JadwalCalendar({
                   className="text-[12px] font-bold px-3 h-8 rounded-lg transition"
                   style={mode === m ? { background: "#16796E", color: "#fff" } : { color: "#6B7280" }}
                 >
-                  {tt(label)}
+                  {/* "Minggu" di kamus = nama hari (Sunday); di sini artinya pekan */}
+                  {m === "week" && uiLang === "en" ? "Week" : tt(label)}
                 </button>
               ))}
             </div>
@@ -609,7 +632,7 @@ export default function JadwalCalendar({
 
                         {gridDays.map((d) => {
                           const iso = ymd(d);
-                          const placed = layoutDay(eventsOn(iso));
+                          const placed = layoutDay(gabungSesiBeruntun(eventsOn(iso)));
                           const isToday = iso === todayIso;
                           const libur = liburOn(iso); // [kalender-hari-libur-v1]
                           return (
@@ -637,18 +660,28 @@ export default function JadwalCalendar({
                                   <div className="absolute -left-1 -top-[5px] h-2.5 w-2.5 rounded-full bg-red-500" />
                                 </div>
                               )}
-                              {placed.map(({ e, lane, lanes }) => {
+                              {placed.map(({ items: blok, mulai, selesai, lane, lanes }) => {
+                                // [jadwal-blok-gabung-v1] satu kartu per blok beruntun; `e` = sesi pertama
+                                const e = blok[0];
                                 const c = langColor(e.language);
-                                const mins = e.durationMinutes || 60;
+                                const mins = Math.round((selesai - mulai) / 60000);
                                 const hPx = Math.max(((mins / 60) * hourPx) - 2, 22);
                                 const w = 100 / lanes;
-                                const st = statusMeta(e); // jadwal-riwayat-v1
+                                const live = blok.some((s) => s._live);
+                                const dead = blok.every((s) => isDead(s.status));
+                                const redup = blok.every((s) => s._past || isDead(s.status));
+                                const st = statusBlok(blok); // jadwal-riwayat-v1
+                                const akhir = fmtTime(new Date(selesai));
+                                const nomor = nomorSesiLabel(blok);
                                 return (
                                   <button
                                     key={e.id}
                                     onClick={() => setSelected(iso)}
-                                    title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${e._live ? " · Sedang berlangsung" : st ? ` · ${st.label}` : ""}`}
-                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.02] ${e._live ? "z-20" : "z-10"}`}
+                                    // title bawaan browser dibuang: detailnya sudah dijawab panel hover
+                                    aria-label={`${e._time}–${akhir} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${blok.length > 1 ? ` · ${blok.length} ${tt("sesi")}` : ""}`}
+                                    onPointerEnter={(ev) => { if (ev.pointerType === "mouse") setHover({ items: blok, rect: ev.currentTarget.getBoundingClientRect() }); }}
+                                    onPointerLeave={() => setHover(null)}
+                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.03] ${live ? "z-20" : "z-10"}`}
                                     style={{
                                       top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * hourPx + 1,
                                       height: hPx,
@@ -658,9 +691,9 @@ export default function JadwalCalendar({
                                       color: c.text,
                                       // jadwal-live-now-v1: sesi berjalan dikelilingi cincin merah
                                       // (sewarna garis "sekarang") biar kelihatan dari seberang layar.
-                                      borderLeft: `3px solid ${e._live ? LIVE_COLOR : st ? st.color : c.dot}`,
-                                      boxShadow: e._live ? `0 0 0 2px ${LIVE_COLOR}` : undefined,
-                                      opacity: e._past || isDead(e.status) ? 0.6 : 1,
+                                      borderLeft: `3px solid ${live ? LIVE_COLOR : st ? st.color : c.dot}`,
+                                      boxShadow: live ? `0 0 0 2px ${LIVE_COLOR}` : undefined,
+                                      opacity: redup ? 0.6 : 1,
                                     }}
                                   >
                                     {/* Susunan ala Google Calendar: judul kelas dulu, jam di bawahnya.
@@ -671,7 +704,7 @@ export default function JadwalCalendar({
                                     <p className="flex items-center gap-1 truncate text-[10px] font-extrabold leading-tight">
                                       {/* jadwal-live-now-v1: titik denyut menggantikan bendera saat
                                           sesinya jalan — di blok sesempit ini cuma muat satu penanda. */}
-                                      {e._live ? (
+                                      {live ? (
                                         <span className="relative flex h-2 w-2 shrink-0">
                                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ background: LIVE_COLOR }} />
                                           <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: LIVE_COLOR }} />
@@ -679,18 +712,18 @@ export default function JadwalCalendar({
                                       ) : (
                                         <LangFlag language={e.language} h={9} />
                                       )}
-                                      <span className={`truncate ${isDead(e.status) ? "line-through" : ""}`}>{e.language}{e.level ? ` ${e.level}` : ""}</span>
+                                      <span className={`truncate ${dead ? "line-through" : ""}`}>{e.language}{e.level ? ` ${e.level}` : ""}</span>
                                       {hPx < 32 && <span className="shrink-0 font-bold opacity-70">{e._time}</span>}
-                                      {e.sessionNumber ? (
-                                        <span className="ml-auto shrink-0 rounded-full bg-black/10 px-1.5 text-[8px] font-bold leading-[14px]">#{e.sessionNumber}</span>
+                                      {nomor ? (
+                                        <span className="ml-auto shrink-0 rounded-full bg-black/10 px-1.5 text-[8px] font-bold leading-[14px]">{nomor}</span>
                                       ) : null}
                                     </p>
                                     {hPx >= 32 && (
                                       <p className="flex items-center gap-1 text-[10px] font-semibold leading-tight opacity-80">
-                                        {e._live ? (
-                                          <span className="truncate font-extrabold" style={{ color: LIVE_COLOR }}>Sedang berlangsung</span>
+                                        {live ? (
+                                          <span className="truncate font-extrabold" style={{ color: LIVE_COLOR }}>{tt("Sedang berlangsung")}</span>
                                         ) : (
-                                          <span className="truncate">{e._time}{e._end ? `–${e._end}` : ""}</span>
+                                          <span className="truncate">{e._time}–{akhir}</span>
                                         )}
                                         {e.teacher && (
                                           <span className="ml-auto flex shrink-0 items-center">
@@ -765,6 +798,113 @@ export default function JadwalCalendar({
             </div>
           )}
         </div>
+      </div>
+    </div>
+  );
+}
+
+/** Status satu blok — cuma kalau semua sesinya seragam; campur (Hadir + mendatang) → null. */
+function statusBlok(items: NormSession[]) {
+  const semua = items.map(statusMeta);
+  return semua.every((m) => m?.label === semua[0]?.label) ? semua[0] : null;
+}
+
+const HOVER_W = 288;
+
+/**
+ * [jadwal-blok-hover-zoom-v1] Panel detail yang membesar dari blok di time-grid
+ * saat diarahkan mouse. pointer-events-none: panel menutupi bloknya sendiri, dan
+ * kalau ia menangkap pointer, blok menerima pointerleave → panel kedip-kedip.
+ */
+function BlokHoverDetail({ items, rect, now }: { items: NormSession[]; rect: DOMRect; now: number }) {
+  const tt = useT();
+  const head = items[0];
+  const tail = items[items.length - 1];
+  const c = langColor(head.language);
+  const selesai = tail._d.getTime() + (tail.durationMinutes || 60) * 60000;
+  const mins = Math.round((selesai - head._d.getTime()) / 60000);
+  const live = items.some((s) => s._live);
+  const mendatang = !live && items.every((s) => !s._past && !isDead(s.status));
+  const st = statusBlok(items);
+  const nomor = nomorSesiLabel(items);
+  const d = head._d;
+
+  // Tengahnya sejajar blok, dijepit ke viewport; blok di bagian bawah layar → panel naik.
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const left = Math.min(Math.max(8, rect.left + rect.width / 2 - HOVER_W / 2), vw - HOVER_W - 8);
+  const turun = rect.top < vh * 0.55;
+  const pos = turun ? { top: Math.max(8, rect.top - 6) } : { bottom: Math.max(8, vh - rect.bottom - 6) };
+  const originX = Math.min(HOVER_W, Math.max(0, rect.left + rect.width / 2 - left));
+
+  return (
+    <div
+      role="tooltip"
+      className="jadwal-blok-zoom pointer-events-none fixed z-[80] overflow-hidden rounded-2xl bg-white shadow-[0_24px_60px_-20px_rgba(18,23,43,0.55)] ring-1 ring-slate-200"
+      style={{ ...pos, left, width: HOVER_W, transformOrigin: `${originX}px ${turun ? "0" : "100%"}` }}
+    >
+      <div className="px-3.5 pb-2.5 pt-3" style={{ background: c.bg, color: c.text }}>
+        <div className="flex items-center gap-2">
+          {langFlagCode(head.language)
+            ? <LangFlag language={head.language} h={14} />
+            : <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: c.dot }} />}
+          <span className={`min-w-0 flex-1 truncate text-[15px] font-extrabold leading-tight ${isDead(head.status) ? "line-through" : ""}`}>
+            {head.language}{head.level ? ` ${head.level}` : ""}
+          </span>
+          {nomor && <span className="shrink-0 rounded-full bg-black/10 px-2 py-0.5 text-[11px] font-extrabold">{nomor}</span>}
+        </div>
+        <p className="mt-1 text-[12px] font-bold opacity-80">
+          {tt(DOWS_FULL[(d.getDay() + 6) % 7])}, {d.getDate()} {tt(MONTHS[d.getMonth()])} · {head._time}–{fmtTime(new Date(selesai))}
+        </p>
+      </div>
+
+      <div className="space-y-2.5 px-3.5 py-3">
+        {head.teacher && (
+          <div className="flex items-center gap-2.5">
+            <TeacherAvatar name={head.teacher} src={head.teacherAvatarUrl} size={40} />
+            <div className="min-w-0">
+              <p className="truncate text-[14px] font-extrabold text-[#12172B]">{head.teacher}</p>
+              <p className="text-[11px] font-semibold text-[#6B7280]">{tt("Pengajar")}</p>
+            </div>
+          </div>
+        )}
+
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12px] font-semibold text-[#6B7280]">
+          <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" strokeWidth={2.2} /> {mins} {tt("menit")}</span>
+          {items.length > 1 && <span>{items.length} {tt("sesi")}</span>}
+          {head.product && <span className="truncate">{head.product}</span>}
+        </div>
+
+        {(live || st || mendatang) && (
+          <div className="flex flex-wrap items-center gap-1.5">
+            {live ? <LiveBadge /> : st ? (
+              <span className="rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>{tt(st.label)}</span>
+            ) : null}
+            {mendatang && <span className="text-[12px] font-bold text-[#16796E]">{countdownLabel(head._d, now)}</span>}
+          </div>
+        )}
+
+        {/* Blok gabungan: rincian per sesi (nomor, jam, topik, presensi masing-masing). */}
+        {items.length > 1 ? (
+          <ul className="space-y-1 border-t border-slate-100 pt-2">
+            {items.map((s) => {
+              const m = statusMeta(s);
+              return (
+                <li key={s.id} className="flex items-center gap-2 text-[11.5px] font-semibold text-[#6B7280]">
+                  <span className="w-8 shrink-0 font-extrabold text-[#12172B]">{s.sessionNumber ? `#${s.sessionNumber}` : "•"}</span>
+                  <span className="shrink-0 tabular-nums">{s._time}–{fmtTime(new Date(s._d.getTime() + (s.durationMinutes || 60) * 60000))}</span>
+                  <span className="min-w-0 flex-1 truncate">{s.materialTitle || ""}</span>
+                  {m && !st && <span className="shrink-0 font-bold" style={{ color: m.color }}>{tt(m.label)}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        ) : head.materialTitle ? (
+          <p className="flex items-center gap-1.5 border-t border-slate-100 pt-2 text-[12px] font-bold text-[#16796E]">
+            <BookOpen className="h-3.5 w-3.5 shrink-0" strokeWidth={2.4} />
+            <span className="truncate">{head.materialTitle}</span>
+          </p>
+        ) : null}
       </div>
     </div>
   );
