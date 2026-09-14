@@ -23,7 +23,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Bug, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/OnboardingBelanja"; // [onboarding-belanja-v1] produk digital ikut ditawarkan di onboarding
@@ -31,7 +31,6 @@ import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/Onboa
 import PaymentCard, { calculateDefaultAmount } from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
 // [ui-lang-switcher-v1] pemilih bahasa antarmuka dashboard (ID ⇄ EN)
-import BugReportDialog from '@/components/akun/BugReportDialog'; // [bug-report-topbar-siswa-v1]
 import UiLangSwitcher from '@/components/akun/UiLangSwitcher';
 import { useT, useUiLang, setUiLang } from '@/lib/uiLang';
 // [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
@@ -2664,7 +2663,6 @@ export default function AkunPage() {
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
   // [bug-report-topbar-siswa-v1] dialog Lapor Bug dari top bar beranda
-  const [bugOpen, setBugOpen] = useState(false);
   /* [preview-idle-session-v1] Sesi pratinjau yang sudah habis dulu TIDAK kelihatan:
      data siswa tetap terpampang dari cache sessionStorage, sementara semua hal yang
      minta server diam-diam mati (menu "Grup Kelas" hilang dari sidebar, chat grup
@@ -4132,7 +4130,6 @@ export default function AkunPage() {
     <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri} previewStudentId={previewId}>
 
       {/* [bug-report-topbar-siswa-v1] dialognya dipasang sekali di akar dashboard */}
-      <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
@@ -4389,25 +4386,8 @@ export default function AkunPage() {
                           {/* [ui-lang-switcher-v1] pemilih bahasa antarmuka — kanan atas,
                               persis di kiri lonceng & avatar. */}
                           <UiLangSwitcher />
-                          {/* [bug-report-topbar-siswa-v1] Lapor Bug naik ke top bar, sebelah
-                              lonceng — persis seperti dashboard pengajar. Sebelumnya tombolnya
-                              cuma nangkring di dasar sidebar (desktop) & top bar HP, jadi
-                              masukan siswa nyaris tak pernah masuk Bug Tracker.
-                              [bug-report-topbar-pratinjau-v1] TETAP hidup di mode pratinjau
-                              ("Lihat sebagai siswa"): justru dari POV itulah admin & pengajar
-                              menemukan tampilan yang rusak. Pelapornya aman — RPC
-                              submit_bug_report meresolve identitas dari akun yang login,
-                              bukan dari siswa yang sedang dilihat. */}
-                          <div className="hidden md:block">
-                            <button
-                              onClick={() => setBugOpen(true)}
-                              aria-label={tt("Lapor Bug")}
-                              title={tt("Lapor Bug")}
-                              className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#12172B] shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:text-[#16796E]"
-                            >
-                              <Bug className="h-[20px] w-[20px]" strokeWidth={2.2} />
-                            </button>
-                          </div>
+                          {/* [bug-report-topbar-dicabut-v1] Tombol Lapor Bug di top bar desktop
+                              dicabut — dobel dengan tombol Lapor Bug di dasar sidebar kiri. */}
                           {student?.id && (
                             <div className="hidden md:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
