@@ -32,9 +32,15 @@ export const TFNG = ["True", "False", "Not Given"];
 
 // Buang prefiks label "(A) " / "A. " / "A) " bawaan import — badge A/B/C/D sudah
 // dirender sendiri, jadi tanpa ini teksnya jadi dobel ("(A) (A) Each of").
+// Penomoran Romawi "i. " / "(iv) " (daftar heading IELTS Matching Headings) ikut
+// dibuang — laporan kurikulum 14 Sep 2026: badge A–J + "vi." bikin opsi dobel label.
+const ROMAN_LABEL_RE = /^\s*\(?(?=[ivx])x{0,3}(?:ix|iv|v?i{0,3})[.)]\s+/i;
 export function stripOptionLabel(opt: string, i: number): string {
   const letter = String.fromCharCode(65 + i);
-  const stripped = opt.replace(new RegExp(`^\\s*[([]?${letter}[)\\].:\\-]?\\s+`, "i"), "").trim();
+  const stripped = opt
+    .replace(new RegExp(`^\\s*[([]?${letter}[)\\].:\\-]?\\s+`, "i"), "")
+    .replace(ROMAN_LABEL_RE, "")
+    .trim();
   return stripped || opt;
 }
 
