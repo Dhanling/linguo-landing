@@ -174,7 +174,22 @@ export default function JadwalCalendar({
      panel detail "zoom" keluar dari bloknya (pengajar, jam blok, status, rincian tiap
      sesi). Posisinya fixed dari getBoundingClientRect supaya tak terpotong wadah
      scroll grid; ditutup begitu apa pun digulir karena posisinya jadi basi. */
-  const [hover, setHover] = useState<{ items: NormSession[]; rect: DOMRect } | null>(null);
+  /* [jadwal-blok-hover-halus-v2] `open` terpisah dari mount: panel lahir tak terlihat lalu
+     ditransisikan masuk, dan saat ditutup memudar dulu baru dicabut. Pindah blok ke blok
+     tak menutup panel — dia meluncur ke blok baru (transisi left/top). */
+  const [hover, setHover] = useState<{ items: NormSession[]; rect: DOMRect; open: boolean } | null>(null);
+  const hoverTimer = useRef<number | null>(null);
+  const bukaHover = (items: NormSession[], rect: DOMRect) => {
+    if (hoverTimer.current) window.clearTimeout(hoverTimer.current);
+    setHover((h) => ({ items, rect, open: !!h }));
+    hoverTimer.current = window.setTimeout(() => setHover((h) => (h ? { ...h, open: true } : h)), 60);
+  };
+  const tutupHover = () => {
+    if (hoverTimer.current) window.clearTimeout(hoverTimer.current);
+    setHover((h) => (h ? { ...h, open: false } : h));
+    hoverTimer.current = window.setTimeout(() => setHover(null), 240);
+  };
+  useEffect(() => () => { if (hoverTimer.current) window.clearTimeout(hoverTimer.current); }, []);
   useEffect(() => { setHover(null); }, [mode, cursor, fullscreen]);
   useEffect(() => {
     if (!hover) return;
@@ -367,10 +382,8 @@ export default function JadwalCalendar({
         .lms-dark .libur-sel{background-color:rgba(244,63,94,0.16);}
         .libur-kolom{background-color:rgba(244,63,94,0.05);}
         .lms-dark .libur-kolom{background-color:rgba(244,63,94,0.10);}
-        .jadwal-blok-zoom{animation:jadwal-blok-zoom .16s cubic-bezier(.2,.9,.3,1.15);}
-        @keyframes jadwal-blok-zoom{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
       `}</style>
-      {hover && <BlokHoverDetail items={hover.items} rect={hover.rect} now={now} />}
+      {hover && <BlokHoverDetail items={hover.items} rect={hover.rect} open={hover.open} now={now} />}
       {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
           [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
@@ -679,9 +692,9 @@ export default function JadwalCalendar({
                                     onClick={() => setSelected(iso)}
                                     // title bawaan browser dibuang: detailnya sudah dijawab panel hover
                                     aria-label={`${e._time}–${akhir} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${blok.length > 1 ? ` · ${blok.length} ${tt("sesi")}` : ""}`}
-                                    onPointerEnter={(ev) => { if (ev.pointerType === "mouse") setHover({ items: blok, rect: ev.currentTarget.getBoundingClientRect() }); }}
-                                    onPointerLeave={() => setHover(null)}
-                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.03] ${live ? "z-20" : "z-10"}`}
+                                    onPointerEnter={(ev) => { if (ev.pointerType === "mouse") bukaHover(blok, ev.currentTarget.getBoundingClientRect()); }}
+                                    onPointerLeave={(ev) => { if (ev.pointerType === "mouse") tutupHover(); }}
+                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(.16,1,.3,1)] hover:z-20 hover:scale-[1.04] hover:shadow-md ${live ? "z-20" : "z-10"}`}
                                     style={{
                                       top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * hourPx + 1,
                                       height: hPx,
@@ -816,7 +829,9 @@ const HOVER_W = 288;
  * saat diarahkan mouse. pointer-events-none: panel menutupi bloknya sendiri, dan
  * kalau ia menangkap pointer, blok menerima pointerleave → panel kedip-kedip.
  */
-function BlokHoverDetail({ items, rect, now }: { items: NormSession[]; rect: DOMRect; now: number }) {
+const HOVER_EASE = "cubic-bezier(.16,1,.3,1)";
+
+function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rect: DOMRect; open: boolean; now: number }) {
   const tt = useT();
   const head = items[0];
   const tail = items[items.length - 1];
@@ -840,8 +855,17 @@ function BlokHoverDetail({ items, rect, now }: { items: NormSession[]; rect: DOM
   return (
     <div
       role="tooltip"
-      className="jadwal-blok-zoom pointer-events-none fixed z-[80] overflow-hidden rounded-2xl bg-white shadow-[0_24px_60px_-20px_rgba(18,23,43,0.55)] ring-1 ring-slate-200"
-      style={{ ...pos, left, width: HOVER_W, transformOrigin: `${originX}px ${turun ? "0" : "100%"}` }}
+      className="pointer-events-none fixed z-[80] overflow-hidden rounded-2xl bg-white shadow-[0_24px_60px_-20px_rgba(18,23,43,0.55)] ring-1 ring-slate-200"
+      style={{
+        ...pos,
+        left,
+        width: HOVER_W,
+        transformOrigin: `${originX}px ${turun ? "0" : "100%"}`,
+        opacity: open ? 1 : 0,
+        transform: open ? "translateY(0) scale(1)" : `translateY(${turun ? -6 : 6}px) scale(0.94)`,
+        transition: `opacity 220ms ease-out, transform 280ms ${HOVER_EASE}, left 280ms ${HOVER_EASE}, top 280ms ${HOVER_EASE}, bottom 280ms ${HOVER_EASE}`,
+        willChange: "transform, opacity",
+      }}
     >
       <div className="px-3.5 pb-2.5 pt-3" style={{ background: c.bg, color: c.text }}>
         <div className="flex items-center gap-2">
