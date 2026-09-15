@@ -149,7 +149,25 @@ export function namaVoice(kode?: string | null): string | null {
 /** Sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·".
  *  Teks yang MASUK ke kunci cache adalah hasil fungsi ini, bukan teks mentah. */
 export function bersihkanTeksTts(s: string): string {
-  return String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
+  const t = String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
+  return buangIsianRumpang(t);
+}
+
+/* [tts-tanpa-isian-v1] Latihan isian rumpang "Я ____ кофе." — garis bawahnya
+   bukan bagian kalimat; dibacakan mesin suara ia jadi jeda aneh atau malah
+   dieja "underscore". Garisnya dibuang, sisa spasi & spasi sebelum tanda baca
+   dirapikan ("Ты ____ есть?" → "Ты есть?"). Teks TANPA garis isian dikembalikan
+   apa adanya supaya kunci cache audio yang sudah tersimpan tidak bergeser.
+   🔴 KEMBAR dengan src/lib/ttsVoice.ts di linguo-admin-dashboard — kunci cache
+   klien & rute /api/tts harus sama. */
+const ISIAN_RUMPANG = /[_＿‗]{2,}/u;
+function buangIsianRumpang(t: string): string {
+  if (!ISIAN_RUMPANG.test(t)) return t;
+  return t
+    .replace(/[_＿‗]{2,}/gu, " ")
+    .replace(/\s+([,.;:!?…。！？])/gu, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 /** Batas panjang yang dipakai rute TTS — ikut disalin klien supaya kuncinya sama. */
