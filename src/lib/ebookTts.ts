@@ -606,7 +606,17 @@ const BUANG_NOMOR_DIALOG =
    mengeja "Kami punya kucing" dengan lidah Rusia. Spasi WAJIB ada di kedua sisi
    supaya rentang angka ("2019–2021") dan kata bertanda hubung tidak ikut
    terpenggal. */
-const PISAH_ARTI = /\s*(?:=|→)\s*|\s+[–—]\s+/;
+/* [ebook-tts-garis-miring-v1] Garis miring pasangan bentuk ("o professor /
+   a professora", "o estudante / a estudante") juga pemisah: dulu baris seperti
+   itu dibacakan utuh, garis miringnya ikut berbunyi, dan dua pilihan yang
+   mestinya berdiri sendiri disambung jadi satu. Garis miring di antara dua
+   angka (tanggal "12/05", pecahan "1/2") tidak ikut.
+
+   [ebook-tts-panah-v1] Panah ketikan "->" / "=>" dan kerabat "→" (⇒ ➜ ➔ ⟶ ←
+   ↔) sama perlakuannya: pemisah, tak pernah dibacakan. "=>" wajib dicocokkan
+   sebelum "=" — kalau tidak, ">" tersisa di potongan kanan. */
+const GARIS_MIRING = /(?<!\d)\s*\/\s*(?!\d)/;
+const PISAH_ARTI = /\s*(?:=>|->|-->|=|[→⇒➜➔➝➞⟶⟹←↔⇔])\s*|\s+[–—]\s+|(?<!\d)\s*\/\s*(?!\d)/;
 
 /* [ebook-tts-tanpa-penutur-v1] Nama penutur di kepala baris dialog ("たなか:",
    "Ana:") BUKAN bagian kalimatnya. Dulu ikut terbaca, jadi tiap kali siswa
@@ -794,7 +804,7 @@ export function kalimatBerisiKata(teks: string, kata: string): string {
 }
 
 const TOKEN_KATA = /[\p{L}\p{M}\p{N}'’-]+|[^\p{L}\p{M}\p{N}'’-]+/gu;
-const PUTUS_KLAUSA = /[.,;:!?()[\]{}"“”«»…—–|=/→]/u;
+const PUTUS_KLAUSA = /[.,;:!?()[\]{}"“”«»…—–|=/→<>⇒➜➔➝➞⟶⟹←↔⇔]/u; // [ebook-tts-panah-v1]
 
 /* [ebook-tts-kalimat-diketuk-v1] Kunci jawaban modul new edition menderetkan
    beberapa kalimat bahasa target dalam SATU baris, dipisah " — ":
@@ -810,9 +820,15 @@ function kalimatDiketuk(baris: string, kata: string, kode: string, ke: number): 
   if (!k) return "";
   const pola = new RegExp(`(^|\\P{L})${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?=$|\\P{L})`, "giu");
   const kalimat: string[] = [];
+  // [ebook-tts-garis-miring-v1] Baris bergaris miring itu DAFTAR pasangan
+  // ("o amigo / a amiga, o brasileiro / a brasileira") — koma di sana juga
+  // memisahkan butir, jadi yang dibunyikan cukup bentuk yang diketuk.
+  const daftar = GARIS_MIRING.test(String(baris || ""));
   for (const bagian of String(baris || "").split(PISAH_ARTI)) {
-    const bersih = kalimatTarget(bagian, kode);
-    if (bersih) kalimat.push(...pecahKalimat(bersih));
+    for (const butir of daftar ? bagian.split(/\s*[,;]\s*/) : [bagian]) {
+      const bersih = kalimatTarget(butir, kode);
+      if (bersih) kalimat.push(...pecahKalimat(bersih));
+    }
   }
   // Aksara tanpa spasi tak punya batas kata — di sana hitung apa adanya.
   const berbatas = kalimat.some((s) => (s.match(pola) ?? []).length > 0);

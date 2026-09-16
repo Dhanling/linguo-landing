@@ -868,8 +868,9 @@ function frasaSel(selTeks: string, kata: string): string {
   /* [ebook-tts-pisah-emdash-v1] "да — ya" itu kata target BESERTA artinya yang
      kebetulan muat jadi "frasa" dua kata; tanpa penjagaan ini mesin suara Rusia
      ikut mengeja "ya". Yang dibunyikan sisi tempat kata yang diketuk duduk. */
-  if (/\s[–—]\s/.test(s)) {
-    const sisi = s.split(/\s+[–—]\s+/).map((x) => x.trim()).filter(Boolean);
+  // [ebook-tts-panah-v1] Panah "casa -> rumah" / "→" / "=>" sama: pemisah, bukan bacaan.
+  if (/\s[–—]\s|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔]/.test(s)) {
+    const sisi = s.split(/\s+[–—]\s+|\s*(?:-->|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔])\s*/).map((x) => x.trim()).filter(Boolean);
     const pilih = sisi.find((x) =>
       new RegExp(`(^|\\P{L})${kata.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\P{L})`, "iu").test(x));
     s = pilih || "";
