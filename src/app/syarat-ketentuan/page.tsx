@@ -60,8 +60,9 @@ export default function SyaratKetentuanPage() {
               e-book.
             </li>
             <li>
-              <strong>Add-on E-Book + Recording</strong> — paket tambahan khusus
-              pembeli Kelas Reguler.
+              <strong>Add-on Modul (E-Book) &amp; Recording Kelas</strong> — pembelian
+              tambahan untuk peserta Kelas Reguler dan Kelas Private, bisa diambil
+              salah satu atau keduanya.
             </li>
           </ul>
         </Section>
@@ -115,13 +116,16 @@ export default function SyaratKetentuanPage() {
           </p>
         </Section>
 
-        <Section n="7" title="Add-on E-Book + Recording (Kelas Reguler)">
+        <Section n="7" title="Add-on Modul (E-Book) & Recording Kelas">
           <p>
-            Add-on senilai Rp150.000 mencakup e-book dan rekaman seluruh sesi
-            kelas, keduanya berlaku <strong>selamanya (lifetime)</strong>.
-            Pengiriman dilakukan secara manual oleh admin ke email yang kamu
-            daftarkan setelah pembayaran terkonfirmasi. Pastikan email yang kamu
-            isi aktif dan benar.
+            Add-on dijual per jenis dan bisa diambil salah satu atau keduanya:{" "}
+            <strong>Modul (E-Book) Rp150.000</strong> dan{" "}
+            <strong>Recording Kelas Rp100.000</strong> — kalau keduanya diambil,
+            totalnya <strong>Rp250.000</strong>. Akses berlaku{" "}
+            <strong>selamanya (lifetime)</strong> dan hanya mencakup jenis yang
+            kamu beli. Modul dikirim/dibukakan aksesnya oleh admin ke email yang
+            kamu daftarkan setelah pembayaran terkonfirmasi, jadi pastikan
+            emailnya aktif dan benar.
           </p>
         </Section>
 
