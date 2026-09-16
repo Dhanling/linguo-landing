@@ -585,8 +585,16 @@ const BUANG_NOMOR = /^\s*(?:\d{1,3}[.):]|[-–—•·*])\s*/u;
    penutur (kata berawal huruf besar lalu titik dua), supaya kalimat yang
    sungguh dimulai angka — "24 horas al día" — tidak ikut terpangkas. Aksara
    Jepang tak mengenal huruf besar, jadi \p{Lo} ikut dihitung nama penutur —
-   tanpa itu nomor baris dialog modul Jepang tak pernah terpangkas. */
-const BUANG_NOMOR_DIALOG = /^\s*\d{1,2}\s+(?=[\p{Lu}\p{Lo}][\p{L}'’.\-]{0,14}\s*[:：])/u;
+   tanpa itu nomor baris dialog modul Jepang tak pernah terpangkas.
+
+   [ebook-tts-tanpa-penutur-v3] Nama penutur boleh DUA patah kata ("Frau Weber:",
+   "Pak Budi:") — persis seperti BUANG_PENUTUR di bawah. Tanpa patah kedua,
+   baris "3 Frau Weber: Und wo wohnen Sie jetzt?" tak terbaca sebagai dialog
+   sama sekali: nomornya bertahan, lalu BUANG_PENUTUR pun ikut gagal karena
+   barisnya kini diawali angka — jadi "Putar kalimat" membacakan "tiga Frau
+   Weber" lebih dulu. */
+const BUANG_NOMOR_DIALOG =
+  /^\s*\d{1,2}\s+(?=[\p{Lu}\p{Lo}][\p{L}'’.\-]{0,14}(?:\s[\p{L}'’.\-]{1,16})?\s*[:：])/u;
 /* Hanya "=", "→", dan pisah em/en dash. Titik dua SENGAJA tidak ikut: baris
    dialog modul ditulis "Ana: Hola, ¿qué tal?" — memenggalnya di titik dua
    menyisakan nama tokohnya saja. Baris "harfiah: …" tetap tersaring oleh
@@ -629,6 +637,23 @@ export function tanpaPenutur(baris: string): string {
     .replace(BUANG_NOMOR_DIALOG, "")
     .replace(BUANG_NOMOR, "")
     .replace(BUANG_PENUTUR, "");
+}
+
+/** [ebook-tts-tanpa-penutur-v3] Berapa KATA di kepala baris yang bukan bahan
+ *  bacaan: nomor baris dialog + nama penuturnya. "3 Frau Weber: Und wo …" → 3
+ *  ("3", "Frau", "Weber"), baris biasa → 0.
+ *
+ *  Kenapa jumlah kata, bukan mengadu teksnya: reader memakai angka ini untuk
+ *  memutuskan ketukan mana yang diabaikan, dan nama dua patah kata tak bisa
+ *  diadu satu per satu ("Weber" sendirian bukan nama penutur). Ketiga
+ *  pembuangnya berjangkar di AWAL baris, jadi sisanya selalu ekor baris itu —
+ *  kalau ternyata tidak, angkanya 0 dan tak ada yang dibungkam. */
+export function kataKepalaBaris(baris: string): number {
+  const s = String(baris || "");
+  const sisa = tanpaPenutur(s);
+  if (sisa === s || !s.endsWith(sisa)) return 0;
+  const kepala = s.slice(0, s.length - sisa.length);
+  return (kepala.match(/[\p{L}\p{M}\p{N}'’-]+/gu) ?? []).length;
 }
 
 /**

@@ -11,8 +11,8 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import {
-  bahasaKata, kalimatSekitar, kalimatTarget, kataIndonesia, kataTranslit, klausaKata,
-  pecahKalimat, penuturBaris, tanpaPenutur,
+  bahasaKata, kalimatSekitar, kalimatTarget, kataIndonesia, kataKepalaBaris, kataTranslit,
+  klausaKata, pecahKalimat, penuturBaris, tanpaPenutur,
 } from "./ebookTts";
 
 const AKAR = path.join(process.cwd(), "content/ebook");
@@ -274,5 +274,28 @@ describe("tanpaPenutur", () => {
     expect(tanpaPenutur("24 horas al día")).toBe("24 horas al día");
     expect(tanpaPenutur("buenos días")).toBe("buenos días");
     expect(tanpaPenutur("Медленнее, пожалуйста!")).toBe("Медленнее, пожалуйста!");
+  });
+});
+
+/* [ebook-tts-tanpa-penutur-v3] Nama penutur DUA patah kata — "3 Frau Weber:"
+   di modul German 101. Nomornya dulu bertahan (lookahead-nya tak mengenal nama
+   berspasi), dan begitu barisnya diawali angka, pembuang penutur ikut gagal:
+   yang berbunyi "tiga Frau Weber Und wo wohnen Sie jetzt". */
+describe("penutur dua patah kata", () => {
+  it("nomor baris & nama dua kata dibuang dari kalimat yang diputar", () => {
+    const baris = "3 Frau Weber: Und wo wohnen Sie jetzt?";
+    expect(tanpaPenutur(baris)).toBe("Und wo wohnen Sie jetzt?");
+    expect(penuturBaris(baris)).toBe("Frau Weber");
+    expect(kalimatSekitar(baris, "wohnen", "de")).toEqual({ teks: "Und wo wohnen Sie jetzt?", kode: "de" });
+  });
+
+  it("kataKepalaBaris menghitung kata kepala yang tak boleh diketuk", () => {
+    // "3", "Frau", "Weber" — ketukan di ketiganya diabaikan reader.
+    expect(kataKepalaBaris("3 Frau Weber: Und wo wohnen Sie jetzt?")).toBe(3);
+    expect(kataKepalaBaris("7 Нина: Медленнее, пожалуйста!")).toBe(2);
+    expect(kataKepalaBaris("たなか: はじめまして。")).toBe(1);
+    // Baris biasa tak punya kepala — tak ada kata yang dibungkam.
+    expect(kataKepalaBaris("24 horas al día")).toBe(0);
+    expect(kataKepalaBaris("Guten Tag. Ich bin Frau Weber.")).toBe(0);
   });
 });

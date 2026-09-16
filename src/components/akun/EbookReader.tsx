@@ -36,7 +36,7 @@ import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
-  ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles, Headphones,
+  ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles, GripVertical, Headphones,
 } from "lucide-react";
 import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
 // [ebook-panduan-tour-v1]
@@ -44,7 +44,7 @@ import EbookPanduan, { type LangkahPanduan } from "./EbookPanduan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatSekitar, ucapkanEbook,
-  hentikanEbookTts, bukaKunciAudio, siapkanEbook, penuturBaris, tanpaPenutur, jagaHangatTts,
+  hentikanEbookTts, bukaKunciAudio, siapkanEbook, kataKepalaBaris, tanpaPenutur, jagaHangatTts,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -1071,6 +1071,69 @@ function kotakFrasa(
   return { x: kata[awal].x, w: Math.max(6, akhir.x + akhir.w - kata[awal].x) };
 }
 
+/* [ebook-sorot-kalimat-v1] Kotak sorotan sebuah KALIMAT — dipakai waktu tombol
+   "Putar kalimat" ditekan, supaya yang sedang dibacakan kelihatan di halamannya,
+   bukan cuma terbaca di kartu. Kalimatnya selalu duduk di SATU baris: ia diambil
+   dari sel/baris tempat kata itu diketuk (lihat kalimatSekitar), jadi yang dicari
+   cuma rentang mendatar di baris itu.
+
+   Bedanya dengan kotakFrasa: pembandingnya ALIRAN HURUF, bukan deret kata.
+   Kalimat yang dibunyikan sudah dibersihkan (nomor baris, nama penutur, kurung
+   cara baca, sisi terjemahan), jadi deret katanya tak pernah sama persis dengan
+   deret kata di halaman — dan aksara tanpa spasi (日本語) tak punya deret kata
+   sama sekali. Tak ketemu → jendela kata pertama..terakhir di sekitar kata yang
+   diketuk; tetap gagal → null, dan sorotan kalimatnya memang tak digambar.
+   🔴 Salinan lintas repo: `src/lib/ebookTeksHal.ts` di linguo-admin-dashboard. */
+function kotakKalimat(
+  items: ItemTeks[], kena: ItemTeks, sel: Segmen | null, kalimat: string, kataX: number,
+): { x: number; w: number } | null {
+  const inti = (t: string) => t.toLowerCase().replace(/[^\p{L}\p{M}\p{N}]/gu, "");
+  const target = inti(kalimat);
+  if (target.length < 2) return null;
+  const tinggi = Math.max(1, kena.h);
+  const kata = items
+    .filter((it) =>
+      Math.abs(it.y - kena.y) <= Math.max(it.h, tinggi) * 0.6 &&
+      (!sel || (it.x + it.w > sel.x0 - 2 && it.x < sel.x1 + 2)))
+    .sort((a, b) => a.x - b.x)
+    .flatMap(kataKataDi)
+    .filter((k) => inti(k.kata));
+  if (!kata.length) return null;
+  const potong = kata.map((k) => inti(k.kata));
+  const mulai: number[] = [];
+  let aliran = "";
+  for (const t of potong) { mulai.push(aliran.length); aliran += t; }
+  const diketuk = kata.findIndex((k) => kataX >= k.x - 1 && kataX <= k.x + k.w + 1);
+  const rentang = (a: number, b: number) =>
+    ({ x: kata[a].x, w: Math.max(6, kata[b].x + kata[b].w - kata[a].x) });
+  /* Kalimat utuh ketemu di baris ini → kata mana pun yang hurufnya tersentuh
+     potongan itu ikut tersorot. Kalimat kembar di satu baris ("Ему семь лет.")
+     dipilih yang memuat kata yang diketuk. */
+  let pilih: [number, number] | null = null;
+  for (let p = aliran.indexOf(target); p >= 0; p = aliran.indexOf(target, p + 1)) {
+    const a = kata.findIndex((_, i) => mulai[i] + potong[i].length > p);
+    if (a < 0) continue;
+    let b = a;
+    while (b + 1 < kata.length && mulai[b + 1] < p + target.length) b++;
+    if (!pilih) pilih = [a, b];
+    if (diketuk >= a && diketuk <= b) { pilih = [a, b]; break; }
+  }
+  if (pilih) return rentang(pilih[0], pilih[1]);
+  /* Tak utuh — kalimatnya memuat bagian yang memang dibuang dari halaman
+     (kurung cara baca di tengah kalimat). Jatuh ke kata PERTAMA & TERAKHIR-nya
+     yang mengapit kata yang diketuk: lebih jujur daripada tak menyorot apa pun. */
+  const kataKalimat = kalimat.split(/\s+/).map(inti).filter(Boolean);
+  if (kataKalimat.length < 2 || diketuk < 0) return null;
+  const depan = kataKalimat[0];
+  const belakang = kataKalimat[kataKalimat.length - 1];
+  let a = -1;
+  for (let i = diketuk; i >= 0; i--) if (potong[i] === depan) { a = i; break; }
+  let b = -1;
+  for (let i = diketuk; i < kata.length; i++) if (potong[i] === belakang) { b = i; break; }
+  if (a < 0 || b < 0 || b < a) return null;
+  return rentang(a, b);
+}
+
 type Bitmap = { canvas: HTMLCanvasElement; w: number; h: number };
 type Bentangan = { kiri: number | null; kanan: number | null };
 
@@ -1163,13 +1226,28 @@ export default function EbookReader({
   const [ucap, setUcap] = useState<
     /* [ebook-tts-semua-section-v1] kode/kalimatKode = suara yang dipakai — kata
        Indonesia di paragraf penjelasan dibacakan dengan suara Indonesia. */
-    { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean; kode: string; kalimatKode: string }
+    /* [ebook-sorot-kalimat-v1] kx/kw = kotak KALIMATNYA di baris yang sama
+       (px layar, seperti x/w) — digambar selama tombol Putar kalimat berbunyi.
+       undefined = kalimatnya tak ketemu di halaman, jadi tak ada yang disorot. */
+    {
+      hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number;
+      terjemahan: boolean; kode: string; kalimatKode: string; kx?: number; kw?: number;
+    }
     | null
   >(null);
   const [bunyi, setBunyi] = useState<"kata" | "kalimat" | null>(null);
   /* [ebook-popup-kata-v1] Arti kata yang sedang tampil di popup.
      undefined = masih dicari, null = tak terbaca (popup tetap tampil). */
   const [arti, setArti] = useState<HasilArti | undefined>(undefined);
+  /* [ebook-kartu-seret-v1] Kartu kata bisa DISERET. Ia duduk tepat di atas
+     katanya, jadi sering menutupi baris berikutnya — dan tak ada cara
+     menyingkirkannya selain menutup lalu mengetuk lagi. Geserannya disimpan
+     bersama KUNCI kata yang sedang tampil: ketuk kata lain → kuncinya beda →
+     kartunya kembali duduk di tempat bawaannya, tanpa effect yang telat satu
+     frame. dx/dy dalam satuan kotak buku (sebelum faktorZoom). */
+  const [geserKartu, setGeserKartu] = useState<{ kunci: string; dx: number; dy: number } | null>(null);
+  const seretKartuRef = useRef<{ id: number; x0: number; y0: number; dx0: number; dy0: number; aktif: boolean } | null>(null);
+  const [menyeretKartu, setMenyeretKartu] = useState(false);
 
   /* [ebook-daftar-isi-v1] Daftar isi + lompat halaman. */
   const [daftarBuka, setDaftarBuka] = useState(false);
@@ -2185,6 +2263,9 @@ export default function EbookReader({
      diskalakan CSS lewat `faktorZoom`, jadi kartunya membesar/mengecil
      berbarengan dengan halamannya tanpa menunggu raster berikutnya. */
   const kartuSkala = skalaKartu(skalaTampil, pw);
+  /* [ebook-kartu-seret-v1] Identitas kata yang sedang tampil — geseran kartu
+     cuma berlaku selama kuncinya sama. */
+  const kunciKartu = ucap ? `${ucap.hal}:${ucap.x}:${ucap.y}:${ucap.kata}` : "";
   // Bentangan yang cuma berisi satu halaman (sampul, atau halaman terakhir yang
   // ganjil) digeser ke tengah layar — kalau tidak, halamannya duduk melenceng ke
   // kanan dengan lubang selebar satu halaman di sebelahnya. Lebar kotak bukunya
@@ -2412,8 +2493,32 @@ export default function EbookReader({
      mencoba", dan pencocokan awalan menutupinya dengan tirai. */
   const KUNCI_JUDUL = useMemo(() => /^(kunci\s*jawaban|jawaban|answer\s*key)$/i, []);
   const kunciRef = useRef<Map<number, KotakKunci | null>>(new Map());
+  /** Dokumen yang terakhir dipakai mencari tirai — lihat catatan di efeknya. */
+  const kunciDocRef = useRef<PdfDoc | null>(null);
 
   useEffect(() => {
+    /* [ebook-kunci-tirai-tahan-balapan-v1] Tiga pagar untuk kunci jawaban yang
+       "kadang tidak tertutup" — laporan 10 Sep 2026, padahal deteksinya sendiri
+       benar di 20/20 unit tiap modul:
+
+       1. Tanpa dokumen, jangan cari apa pun. Dulu efek ini sudah jalan waktu
+          reader baru terpasang (docRef masih kosong), `ambilTeks` membalas
+          KOSONG, dan halaman itu dikenang sebagai "tak punya kunci" selamanya.
+       2. Halaman TANPA SATU BARIS PUN = teksnya gagal dibaca, bukan halaman
+          tanpa kunci. Itu terjadi persis waktu dokumen potongan ditukar ke
+          berkas utuh ([ebook-buka-cepat-v3]): getPage dokumen lama ditolak
+          sebelum React sempat membatalkan efek ini. Hasil kosong tak boleh
+          dikenang — dicari lagi di putaran berikutnya.
+       3. Dokumen berganti → kenangan "tak punya kunci" dibuang, dan hasil
+          pencarian SELALU dipublikasikan walau putaran ini tak menemukan yang
+          baru: putaran sebelumnya bisa saja sudah mengisi kotaknya lalu
+          dibatalkan sebelum sempat memanggil setKunciKotak. */
+    const d = docRef.current;
+    if (!d || !pdfjsRef.current) return;
+    if (kunciDocRef.current !== d) {
+      kunciDocRef.current = d;
+      for (const [k, v] of [...kunciRef.current]) if (!v) kunciRef.current.delete(k);
+    }
     const kini = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
     /* Bentangan TETANGGA ikut dicari di muka. Pencarian tirai ini asinkron
        (teks halaman + daftar operator gambar), dan dulu cuma dijalankan untuk
@@ -2423,12 +2528,11 @@ export default function EbookReader({
     const halaman = [...kini, ...tepi.filter((n) => n >= 1 && (!total || n <= total))];
     let hidup = true;
     (async () => {
-      let berubah = false;
       for (const n of halaman) {
         if (kunciRef.current.has(n)) continue;
         const { baris } = await ambilTeks(n);
         if (!hidup) return;
-        berubah = true;
+        if (!baris.length) continue; // pagar 2: gagal baca ≠ tak punya kunci
         const i = baris.findIndex((b) => KUNCI_JUDUL.test(b.teks.replace(/\s+/g, " ").trim()));
         if (i < 0) { kunciRef.current.set(n, null); continue; }
         // Kotak berakhir waktu jaraknya menganga: di dalam kotak jarak antar
@@ -2465,11 +2569,15 @@ export default function EbookReader({
         } catch { /* daftar operator gagal dibaca → pakai kotak dari tulisan */ }
         kunciRef.current.set(n, kotak);
       }
-      if (hidup && berubah) {
-        const rapi = new Map<number, KotakKunci>();
-        kunciRef.current.forEach((v, k) => { if (v) rapi.set(k, v); });
-        setKunciKotak(rapi);
-      }
+      if (!hidup) return;
+      // Pagar 3: selalu dipublikasikan; state lama dipertahankan kalau isinya
+      // memang sama supaya tidak ada render ulang sia-sia.
+      const rapi = new Map<number, KotakKunci>();
+      kunciRef.current.forEach((v, k) => { if (v) rapi.set(k, v); });
+      setKunciKotak((lama) => {
+        if (lama.size === rapi.size && [...rapi].every(([k, v]) => lama.get(k) === v)) return lama;
+        return rapi;
+      });
     })();
     return () => { hidup = false; };
   }, [tampil.kiri, tampil.kanan, total, doc, ambilTeks, KUNCI_JUDUL]);
@@ -3068,15 +3176,26 @@ export default function EbookReader({
        "buenos" saja — lihat catatan pada frasaSel. Sorotannya ikut melebar ke
        kata-kata frasanya supaya jelas yang dibunyikan memang keduanya — dan
        CUMA keduanya, bukan satu baris penuh; lihat kotakFrasa. */
-    /* [ebook-tts-tanpa-penutur-v1] Nama penutur ("たなか:") bukan bahasa yang
-       dipelajari — mengetuknya dulu membunyikan nama tokoh dan memunculkan
-       artinya di popup. Sekarang ketukannya diabaikan diam-diam. Yang diadu
-       nama penuturnya sendiri, bukan sembarang kata di kepala baris: nama yang
-       muncul lagi di tengah kalimat ("たなかさんは") tetap berbunyi. */
-    const penutur = penuturBaris(barisKena?.teks ?? kena.str);
-    if (penutur && kata.kata === penutur.replace(/[^\p{L}\p{M}\p{N}]/gu, "")) {
-      const awal = barisKena?.segmen.find((g) => /\p{L}/u.test(g.teks));
-      if (awal && kata.x <= awal.x0 + 2) return "kosong";
+    /* [ebook-tts-tanpa-penutur-v1] Nomor baris dialog & nama penutur ("3 Frau
+       Weber:", "たなか:") bukan bahasa yang dipelajari — mengetuknya dulu
+       membunyikan nama tokoh dan memunculkan artinya di popup. Sekarang
+       ketukannya diabaikan diam-diam.
+
+       [ebook-tts-tanpa-penutur-v3] Yang diadu POSISI katanya, bukan teksnya:
+       nama dua patah kata ("Frau Weber") tak bisa diadu satu per satu, dan
+       nomor barisnya ("3") bukan nama siapa pun. kataKepalaBaris memberi tahu
+       berapa kata di kepala baris yang memang dibuang dari kalimatnya; ketukan
+       di kata sesudah itu tetap berbunyi, jadi nama yang muncul lagi di tengah
+       kalimat ("たなかさんは", "Frau Weber" di dalam dialognya) tak ikut
+       terbungkam. */
+    const kepala = kataKepalaBaris(barisKena?.teks ?? kena.str);
+    if (kepala > 0) {
+      const urut = items
+        .filter((it) => Math.abs(it.y - kena.y) <= Math.max(it.h, kena.h) * 0.6)
+        .sort((a, b) => a.x - b.x)
+        .flatMap(kataKataDi);
+      const ke0 = urut.findIndex((w) => xp >= w.x - 1 && xp <= w.x + w.w + 1);
+      if (ke0 >= 0 && ke0 < kepala) return "kosong";
     }
     let frasa = sel && !AKSARA_TANPA_SPASI.test(kata.kata) ? frasaSel(sel.teks, kata.kata) : "";
     // Satu kata Indonesia di dalamnya sudah cukup membatalkan frasa: kolom arti
@@ -3118,6 +3237,9 @@ export default function EbookReader({
        karena kodeKata === kodeBahasa. */
     if (kodeKata !== kodeBahasa) return "kosong";
     const terjemahan = kodeKata !== kodeBahasa;
+    /* [ebook-sorot-kalimat-v1] Kotak kalimatnya dihitung SEKARANG, waktu potongan
+       teks halamannya masih di tangan — tombol Putar kalimat cuma menyalakannya. */
+    const kotakKal = kalimat ? kotakKalimat(items, kena, sel ?? null, kalimat, kata.x) : null;
     return {
       unit,
       kalimat,
@@ -3134,6 +3256,8 @@ export default function EbookReader({
         terjemahan,
         kode: kodeKata,
         kalimatKode: kodeKata,
+        kx: kotakKal ? kiriSlot + kotakKal.x * skalaTampil : undefined,
+        kw: kotakKal ? kotakKal.w * skalaTampil : undefined,
       },
     };
   }, [ttsAktif, kodeBahasa, skalaTampil, titikHal, ambilTeks, kataDi]);
@@ -3647,6 +3771,25 @@ export default function EbookReader({
                 tetap mendarat di halaman, bukan tertahan lapisan ini. */}
             {ucap && !balik && (ucap.hal === tampil.kiri || ucap.hal === tampil.kanan) && (
               <div className="pointer-events-none absolute inset-0 z-10">
+                {/* [ebook-sorot-kalimat-v1] Selama "Putar kalimat" berbunyi,
+                    kalimat yang sedang dibacakan ikut tersorot di halamannya —
+                    lebih pudar daripada sorotan katanya, jadi kata yang diketuk
+                    tetap kelihatan sebagai titik berangkat. Tanpa ini siswa
+                    cuma mendengar suara tanpa tahu bagian mana yang dibaca
+                    (kalimat di kartu terpotong tiga baris). */}
+                {bunyi === "kalimat" && ucap.kx !== undefined && ucap.kw !== undefined && (
+                  <span
+                    className="absolute rounded-[3px]"
+                    style={{
+                      left: ucap.kx - 2,
+                      top: ucap.y - 1,
+                      width: ucap.kw + 4,
+                      height: ucap.h + 2,
+                      background: "rgba(62,217,192,0.17)",
+                      boxShadow: "0 0 0 1px rgba(26,158,158,0.35)",
+                    }}
+                  />
+                )}
                 <span
                   className="absolute rounded-[3px]"
                   style={{
@@ -3663,9 +3806,12 @@ export default function EbookReader({
                     dua tombol suara. Dulu isinya cuma nama katanya sendiri, jadi
                     siswa yang tak paham artinya tetap harus membuka kamus. */}
                 <div
-                  className="pointer-events-auto absolute rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15"
+                  className={`pointer-events-auto absolute select-none rounded-2xl bg-[#0A1212]/97 p-3 text-white shadow-2xl ring-1 ring-white/15 ${menyeretKartu ? "cursor-grabbing" : "cursor-grab"}`}
                   style={{
                     width: KARTU_W,
+                    /* [ebook-kartu-seret-v1] Sentuhan di kartu jatah seretan,
+                       bukan gulir/cubit halaman. */
+                    touchAction: "none",
                     /* [ebook-kartu-proporsional-v1] Kartu ikut ukuran halaman:
                        pengalinya dihitung di `kartuSkala` dari lebar halaman,
                        bukan dari angka zoom. Dikatrol lewat transform (bukan
@@ -3678,12 +3824,46 @@ export default function EbookReader({
                     left: Math.min(
                       Math.max(ucap.x + ucap.w / 2, (KARTU_W / 2) * kartuSkala),
                       Math.max((KARTU_W / 2) * kartuSkala, lebarBuku - (KARTU_W / 2) * kartuSkala),
-                    ),
+                    ) + (geserKartu?.kunci === kunciKartu ? geserKartu.dx : 0),
                     // Di baris paling atas halaman, kartunya ditaruh DI BAWAH kata —
                     // di atas berarti keluar dari kertas.
-                    top: ucap.y > AMBANG_KARTU_ATAS * kartuSkala ? ucap.y - 10 : ucap.y + ucap.h + 10,
+                    top: (ucap.y > AMBANG_KARTU_ATAS * kartuSkala ? ucap.y - 10 : ucap.y + ucap.h + 10)
+                      + (geserKartu?.kunci === kunciKartu ? geserKartu.dy : 0),
                   }}
                   onClick={(e) => e.stopPropagation()}
+                  /* [ebook-kartu-seret-v1] Seret kartu. Tombol di dalamnya
+                     (bunyi, tutup, putar kalimat) TIDAK memulai seretan supaya
+                     kliknya tetap jatuh ke tombol; sisanya — arti, kalimat,
+                     pegangan — bisa ditarik. Geseran di bawah 4px dianggap
+                     klik biasa. Pointer capture: jarinya boleh keluar kartu,
+                     seretannya tetap ikut. */
+                  onPointerDown={(e) => {
+                    e.stopPropagation();
+                    if ((e.target as HTMLElement).closest("button")) return;
+                    const g = geserKartu?.kunci === kunciKartu ? geserKartu : null;
+                    seretKartuRef.current = { id: e.pointerId, x0: e.clientX, y0: e.clientY, dx0: g?.dx ?? 0, dy0: g?.dy ?? 0, aktif: false };
+                    e.currentTarget.setPointerCapture(e.pointerId);
+                  }}
+                  onPointerMove={(e) => {
+                    const d = seretKartuRef.current;
+                    if (!d || d.id !== e.pointerId) return;
+                    const sx = (e.clientX - d.x0) / faktorZoom;
+                    const sy = (e.clientY - d.y0) / faktorZoom;
+                    if (!d.aktif && Math.abs(sx) < 4 && Math.abs(sy) < 4) return;
+                    if (!d.aktif) { d.aktif = true; setMenyeretKartu(true); }
+                    setGeserKartu({ kunci: kunciKartu, dx: d.dx0 + sx, dy: d.dy0 + sy });
+                  }}
+                  onPointerUp={(e) => {
+                    if (seretKartuRef.current?.id !== e.pointerId) return;
+                    seretKartuRef.current = null;
+                    setMenyeretKartu(false);
+                    try { e.currentTarget.releasePointerCapture(e.pointerId); } catch { /* sudah lepas */ }
+                  }}
+                  onPointerCancel={() => { seretKartuRef.current = null; setMenyeretKartu(false); }}
+                  /* Geseran jari di kartu jangan sampai dibaca wadah halaman
+                     sebagai perintah balik halaman (onTouchEnd di wadahRef). */
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
                 >
                   {(
                     <>
@@ -3713,6 +3893,16 @@ export default function EbookReader({
                             {arti.kelas}
                           </span>
                         )}
+                        {/* [ebook-kartu-seret-v1] Pegangan seret — penanda
+                            bahwa kartunya bisa dipindah. Bukan tombol, jadi
+                            tekanannya langsung memulai seretan. */}
+                        <span
+                          className="shrink-0 cursor-grab rounded-md p-0.5 text-white/25 transition hover:bg-white/10 hover:text-white/60"
+                          title={t("Seret untuk memindahkan")}
+                          aria-hidden="true"
+                        >
+                          <GripVertical className="h-3.5 w-3.5" />
+                        </span>
                         <button
                           onClick={() => setUcap(null)}
                           className="shrink-0 rounded-md p-0.5 text-white/35 transition hover:bg-white/10 hover:text-white"
