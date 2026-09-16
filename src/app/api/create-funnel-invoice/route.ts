@@ -28,8 +28,14 @@ import {
   supportsOffline,
   offersTeacherTypeChoice,
   supportsAddon,
-  ADDON_EBOOK_RECORDING_PRICE,
-  ADDON_EBOOK_RECORDING_LABEL,
+  normalizeAddonPick,
+  addonPickAmount,
+  addonPickLabel,
+  addonPickLeadType,
+  ADDON_EBOOK_PRICE,
+  ADDON_RECORDING_PRICE,
+  ADDON_EBOOK_LABEL,
+  ADDON_RECORDING_LABEL,
   KIDS_PRICE_LEVELS,
 } from "@/lib/trial-pricing";
 import {
@@ -208,7 +214,6 @@ export async function POST(req: NextRequest) {
       class_mode,
       class_city,
       kids_level,
-      addon,
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
@@ -279,10 +284,15 @@ export async function POST(req: NextRequest) {
 
     // [private-addon-ebook-recording-v1] Add-on modul + recording. Nominalnya
     // TIDAK pernah diambil dari client — cuma "mau / tidak mau" yang dipercaya.
-    const wantsAddon = addon === true && supportsAddon(program);
-    const addonAmount = wantsAddon ? ADDON_EBOOK_RECORDING_PRICE : 0;
+    // [addon-harga-per-jenis-v1] sejak 16 Sep 2026 keduanya add-on terpisah:
+    // Modul Rp150.000, Recording Rp100.000 (dua-duanya Rp250.000).
+    const addonPick = supportsAddon(program)
+      ? normalizeAddonPick(body)
+      : { ebook: false, recording: false };
+    const wantsAddon = addonPick.ebook || addonPick.recording;
+    const addonAmount = addonPickAmount(addonPick);
     const amount = priced.amount + addonAmount;
-    const description = priced.description + (wantsAddon ? ` + ${ADDON_EBOOK_RECORDING_LABEL}` : "");
+    const description = priced.description + (wantsAddon ? ` + ${addonPickLabel(addonPick)}` : "");
 
     // [funnel-etp-sessions-v1] Paket ETP itu tetap: 16 sesi @90 menit (harga
     // paket, bukan per sesi). Form funnel tidak menanyakannya, jadi tanpa ini
@@ -358,11 +368,14 @@ export async function POST(req: NextRequest) {
         affiliate_id: affiliateId,
         // [private-addon-ebook-recording-v1] kolom add-on cuma ditulis kalau
         // memang opt-in — mirror /api/create-invoice (jalur Kelas Reguler).
+        // [addon-harga-per-jenis-v1] `addon_ebook_recording` = REKAMAN ikut
+        // (dipakai gerbang akses rekaman), jadi pembeli modul-saja tidak
+        // menyalakannya; jenis pastinya dibawa `addon_type`.
         ...(wantsAddon
           ? {
-              addon_ebook_recording: true,
+              addon_ebook_recording: addonPick.recording,
               addon_amount: addonAmount,
-              addon_type: program === "Kelas Private" ? "private_bundle" : "reguler_bundle",
+              addon_type: addonPickLeadType(program, addonPick),
             }
           : {}),
       }),
@@ -407,7 +420,12 @@ export async function POST(req: NextRequest) {
         },
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
-        items: [{ name: description, quantity: 1, price: amount }],
+        items: [
+          { name: priced.description, quantity: 1, price: priced.amount },
+          // [addon-harga-per-jenis-v1] modul & rekaman jadi baris sendiri.
+          ...(addonPick.ebook ? [{ name: ADDON_EBOOK_LABEL, quantity: 1, price: ADDON_EBOOK_PRICE }] : []),
+          ...(addonPick.recording ? [{ name: ADDON_RECORDING_LABEL, quantity: 1, price: ADDON_RECORDING_PRICE }] : []),
+        ],
       }),
     });
 

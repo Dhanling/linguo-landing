@@ -10,7 +10,12 @@ import { X, Loader2, MessageCircle, Calendar, Clock, Check } from "lucide-react"
 
 const WA_NUMBER = "6282116859493";
 const TEAL = "#1A9E9E";
-const ADDON_PRICE = 150000; // bundle e-book + recording, akses selamanya
+// [addon-harga-per-jenis-v1] (laporan Faujiah 16 Sep 2026) Modul & Recording
+// dijual terpisah: Rp150.000 + Rp100.000 (dua-duanya Rp250.000). Dulu satu
+// centang bundel +Rp150.000. Angkanya dari lib/trial-pricing — /api/create-invoice
+// menghitung ulang dari sumber yang sama.
+const ADDON_EBOOK_PRICE = 150000;
+const ADDON_RECORDING_PRICE = 100000;
 
 // Minimal shape — cukup field yang dipakai modal (sinkron dgn Batch di page).
 export interface RegulerBatchLite {
@@ -66,7 +71,8 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [addAddon, setAddAddon] = useState(false);
+  const [addEbook, setAddEbook] = useState(false);
+  const [addRecording, setAddRecording] = useState(false);
 
   // Reset form tiap kali batch berubah (modal dibuka untuk batch baru).
   useEffect(() => {
@@ -76,7 +82,8 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
       setEmail("");
       setError(null);
       setSubmitting(false);
-      setAddAddon(false);
+      setAddEbook(false);
+      setAddRecording(false);
     }
   }, [batch]);
 
@@ -93,7 +100,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
   if (!batch) return null;
 
   const price = batch.current_price_per_student || batch.price_regular;
-  const total = price + (addAddon ? ADDON_PRICE : 0);
+  const total = price + (addEbook ? ADDON_EBOOK_PRICE : 0) + (addRecording ? ADDON_RECORDING_PRICE : 0);
   const waMsg = encodeURIComponent(
     `Halo Linguo! Saya mau tanya soal Kelas Reguler ${batch.language} ${batch.level} (${batch.batch_code}).`
   );
@@ -117,7 +124,8 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
           email: email.trim(),
           wa_number: e164,
           language: `${batch!.language} ${batch!.level} (${batch!.batch_code})`,
-          addon: addAddon,
+          addon_ebook: addEbook,
+          addon_recording: addRecording,
         }),
       });
       const data = await res.json();
@@ -195,39 +203,41 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
             </span>
           </div>
 
-          {/* addon-ebook-recording-v1: cross-sell bundle */}
-          <button
-            type="button"
-            onClick={() => setAddAddon((v) => !v)}
-            disabled={submitting}
-            className={`mt-3 w-full text-left rounded-xl border p-3 transition-colors ${
-              addAddon ? "border-[#1A9E9E] bg-teal-50" : "border-slate-200 hover:border-slate-300"
-            }`}
-          >
-            <div className="flex items-start gap-2.5">
-              <span
-                className={`mt-0.5 h-5 w-5 shrink-0 rounded-md border flex items-center justify-center ${
-                  addAddon ? "border-[#1A9E9E]" : "border-slate-300"
-                }`}
-                style={addAddon ? { backgroundColor: TEAL } : undefined}
-              >
-                {addAddon && <Check className="h-3.5 w-3.5 text-white" />}
-              </span>
-              <span className="flex-1">
-                <span className="flex items-center justify-between gap-2">
-                  <span className="text-sm font-semibold text-slate-800">
-                    Tambah E-Book + Recording Kelas
-                  </span>
-                  <span className="text-sm font-bold whitespace-nowrap" style={{ color: TEAL }}>
-                    +{formatIDR(ADDON_PRICE)}
-                  </span>
+          {/* addon-ebook-recording-v1 → [addon-harga-per-jenis-v1]: dua add-on terpisah */}
+          {[
+            { on: addEbook, toggle: () => setAddEbook((v) => !v), price: ADDON_EBOOK_PRICE, title: "Tambah Modul (E-Book)", desc: "Materi e-book lengkap sesuai bahasa & levelmu. Akses selamanya, dikirim ke email kamu." },
+            { on: addRecording, toggle: () => setAddRecording((v) => !v), price: ADDON_RECORDING_PRICE, title: "Tambah Recording Kelas", desc: "Rekaman semua sesi kelas. Akses selamanya, bisa diulang kapan saja." },
+          ].map((opt) => (
+            <button
+              key={opt.title}
+              type="button"
+              onClick={opt.toggle}
+              disabled={submitting}
+              className={`mt-3 w-full text-left rounded-xl border p-3 transition-colors ${
+                opt.on ? "border-[#1A9E9E] bg-teal-50" : "border-slate-200 hover:border-slate-300"
+              }`}
+            >
+              <div className="flex items-start gap-2.5">
+                <span
+                  className={`mt-0.5 h-5 w-5 shrink-0 rounded-md border flex items-center justify-center ${
+                    opt.on ? "border-[#1A9E9E]" : "border-slate-300"
+                  }`}
+                  style={opt.on ? { backgroundColor: TEAL } : undefined}
+                >
+                  {opt.on && <Check className="h-3.5 w-3.5 text-white" />}
                 </span>
-                <span className="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                  Materi e-book lengkap + rekaman semua sesi. Akses selamanya, dikirim ke email kamu.
+                <span className="flex-1">
+                  <span className="flex items-center justify-between gap-2">
+                    <span className="text-sm font-semibold text-slate-800">{opt.title}</span>
+                    <span className="text-sm font-bold whitespace-nowrap" style={{ color: TEAL }}>
+                      +{formatIDR(opt.price)}
+                    </span>
+                  </span>
+                  <span className="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">{opt.desc}</span>
                 </span>
-              </span>
-            </div>
-          </button>
+              </div>
+            </button>
+          ))}
         </div>
 
         {/* Form */}

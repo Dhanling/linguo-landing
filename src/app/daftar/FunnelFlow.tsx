@@ -41,6 +41,8 @@ import {
   offersTeacherTypeChoice,
   supportsAddon,
   ADDON_EBOOK_RECORDING_PRICE,
+  ADDON_EBOOK_PRICE,
+  ADDON_RECORDING_PRICE,
   KIDS_PRICE_LEVELS,
 } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
@@ -66,9 +68,6 @@ import {
 const SESSION_OPTS = [4, 8, 12, 16, 24];
 const IELTS_PRICE = 300000;
 const REGULER_PRICE = 150000;
-// [private-addon-ebook-recording-v1] Satu angka untuk Reguler DAN Private —
-// sumbernya lib/trial-pricing, sama dengan yang dihitung ulang server.
-const REGULER_ADDON_PRICE = ADDON_EBOOK_RECORDING_PRICE;
 const FORM_KEY = "linguo_daftar_form";
 
 // [kids-cefr-level-v1] Keterangan singkat tiap level untuk orang tua — CEFR
@@ -118,7 +117,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     sp.get("mode") === "offline" ? "offline" : "online",
   );
   const [offlineCity, setOfflineCity] = useState(sp.get("kota") || "");
-  const [addAddon, setAddAddon] = useState(sp.get("addon") === "1");
+  /* [addon-harga-per-jenis-v1] Modul & Recording dipilih SENDIRI-SENDIRI
+     (Rp150.000 + Rp100.000). `?addon=1` dari tautan lama = dua-duanya. */
+  const [addEbook, setAddEbook] = useState(sp.get("addon") === "1" || sp.get("modul") === "1");
+  const [addRecording, setAddRecording] = useState(sp.get("addon") === "1" || sp.get("rekaman") === "1");
   // [kids-cefr-level-v1] Kelas Kids punya DUA sumbu: kelompok usia (Little
   // Learner / Young Explorer — itu yang jadi segmen `level` di URL) dan level
   // kemampuan bahasa. Sebelumnya sumbu kedua tidak pernah ditanyakan, jadi anak
@@ -205,7 +207,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     // [private-addon-ebook-recording-v1] add-on ikut di query untuk SEMUA program
     // yang menawarkannya, bukan cuma Reguler — kalau tidak, centang di langkah 3
     // Private hilang begitu orang menekan Back.
-    if (addAddon && supportsAddon(program || "")) q.set("addon", "1");
+    if (supportsAddon(program || "")) {
+      if (addEbook) q.set("modul", "1");
+      if (addRecording) q.set("rekaman", "1");
+    }
     const s = q.toString();
     return s ? `?${s}` : "";
   }
@@ -259,7 +264,14 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   // [private-addon-ebook-recording-v1] Add-on modul + recording sekarang juga
   // ditawarkan di Kelas Private, bukan cuma Reguler.
   const canAddon = supportsAddon(program || "");
-  const addonAmount = canAddon && addAddon ? REGULER_ADDON_PRICE : 0;
+  const wantEbook = canAddon && addEbook;
+  const wantRecording = canAddon && addRecording;
+  const addonAmount = (wantEbook ? ADDON_EBOOK_PRICE : 0) + (wantRecording ? ADDON_RECORDING_PRICE : 0);
+  const addonLabelDipilih =
+    wantEbook && wantRecording ? "Modul (E-Book) + Recording Kelas"
+    : wantEbook ? "Modul (E-Book)"
+    : wantRecording ? "Recording Kelas"
+    : "";
   const totalAmount =
     (isSessionProg ? perSession * sessions
     : program === "IELTS/TOEFL Prep" ? IELTS_PRICE
@@ -317,7 +329,8 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             program: "reguler",
             level: level,
             productKey: "reguler-" + String(level).toLowerCase(),
-            addon: addAddon,
+            addon_ebook: wantEbook,
+            addon_recording: wantRecording,
             referral_source: localStorage.getItem("linguo_ref") || undefined,
             ref_code: refFinal || undefined,
           }),
@@ -345,7 +358,8 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           duration,
           teacher_type: hasTeacherPick ? teacherType : null,
           // [private-addon-ebook-recording-v1] server menghitung ulang nominalnya.
-          addon: canAddon && addAddon,
+          addon_ebook: wantEbook,
+          addon_recording: wantRecording,
           sessions: isSessionProg ? sessions : null,
           class_size: program === "Semi Private" ? classSize : null,
           class_mode: canOffline ? classMode : "online",
@@ -649,27 +663,51 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             <section className="mt-6">
               <h2 className="text-base font-bold text-slate-900">Tambahan (opsional)</h2>
               <p className="mb-3 text-sm text-slate-500">Bisa ditambahkan sekarang, tanpa transaksi terpisah</p>
-              <button
-                type="button"
-                onClick={() => setAddAddon((v) => !v)}
-                className={`group flex w-full items-start justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all ${addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
-              >
-                <span className="flex items-start gap-2.5">
-                  <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
-                    {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
-                  </span>
-                  <span>
-                    <span className="block text-sm font-bold text-slate-800">Modul (E-Book) + Recording Kelas</span>
-                    <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">
-                      Modul lengkap sesuai bahasa &amp; levelmu, plus rekaman semua sesi — akses selamanya,
-                      bisa diulang kapan saja.
+              {/* [addon-harga-per-jenis-v1] Dua baris terpisah — dulu satu centang
+                  bundel, jadi yang cuma butuh rekaman ikut bayar modul. */}
+              <div className="space-y-2">
+                {[
+                  {
+                    on: addEbook,
+                    toggle: () => setAddEbook((v) => !v),
+                    price: ADDON_EBOOK_PRICE,
+                    title: "Modul (E-Book)",
+                    desc: "Modul lengkap sesuai bahasa & levelmu — akses selamanya, bisa dibaca kapan saja.",
+                  },
+                  {
+                    on: addRecording,
+                    toggle: () => setAddRecording((v) => !v),
+                    price: ADDON_RECORDING_PRICE,
+                    title: "Recording Kelas",
+                    desc: "Rekaman semua sesi kelasmu — akses selamanya, bisa diulang kapan saja.",
+                  },
+                ].map((opt) => (
+                  <button
+                    key={opt.title}
+                    type="button"
+                    onClick={opt.toggle}
+                    className={`group flex w-full items-start justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
+                  >
+                    <span className="flex items-start gap-2.5">
+                      <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
+                        {opt.on && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                      </span>
+                      <span>
+                        <span className="block text-sm font-bold text-slate-800">{opt.title}</span>
+                        <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">{opt.desc}</span>
+                      </span>
                     </span>
-                  </span>
-                </span>
-                <span className={`whitespace-nowrap text-sm font-bold ${addAddon ? "text-[#1A9E9E]" : "text-slate-400"}`}>
-                  +{fmtRp(REGULER_ADDON_PRICE)}
-                </span>
-              </button>
+                    <span className={`whitespace-nowrap text-sm font-bold ${opt.on ? "text-[#1A9E9E]" : "text-slate-400"}`}>
+                      +{fmtRp(opt.price)}
+                    </span>
+                  </button>
+                ))}
+                {addEbook && addRecording && (
+                  <p className="px-1 text-[11px] text-slate-500">
+                    Modul + Recording — total tambahan {fmtRp(ADDON_EBOOK_RECORDING_PRICE)}
+                  </p>
+                )}
+              </div>
             </section>
           )}
 
@@ -694,7 +732,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
               </div>
               {addonAmount > 0 && (
                 <div className="mt-1 flex items-center justify-between text-xs text-slate-500">
-                  <span>Modul + Recording Kelas</span>
+                  <span>{addonLabelDipilih}</span>
                   <span>+{fmtRp(addonAmount)}</span>
                 </div>
               )}
@@ -890,24 +928,33 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                   <span className="text-xs text-slate-500">Biaya kelas</span>
                   <span className="text-sm font-medium">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setAddAddon((v) => !v)}
-                  className="group mt-1 flex w-full items-center justify-between gap-3 border-t border-slate-200 pt-3 text-left"
-                >
-                  <span className="flex items-start gap-2.5">
-                    <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
-                      {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                {/* [addon-harga-per-jenis-v1] Modul Rp150.000 & Recording Rp100.000
+                    dipilih terpisah; dua-duanya = Rp250.000. Harga di layar ini dulu
+                    tertulis +Rp150.000 untuk bundel — itu isi laporannya. */}
+                {[
+                  { on: addEbook, toggle: () => setAddEbook((v) => !v), price: ADDON_EBOOK_PRICE, title: "Tambah Modul (E-Book)", desc: "Materi lengkap sesuai bahasa & levelmu · akses selamanya" },
+                  { on: addRecording, toggle: () => setAddRecording((v) => !v), price: ADDON_RECORDING_PRICE, title: "Tambah Recording Kelas", desc: "Rekaman semua sesi · akses selamanya" },
+                ].map((opt) => (
+                  <button
+                    key={opt.title}
+                    type="button"
+                    onClick={opt.toggle}
+                    className="group mt-1 flex w-full items-center justify-between gap-3 border-t border-slate-200 pt-3 text-left"
+                  >
+                    <span className="flex items-start gap-2.5">
+                      <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
+                        {opt.on && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                      </span>
+                      <span>
+                        <span className="block text-sm font-medium text-slate-700">{opt.title}</span>
+                        <span className="mt-0.5 block text-[11px] leading-snug text-slate-400">{opt.desc}</span>
+                      </span>
                     </span>
-                    <span>
-                      <span className="block text-sm font-medium text-slate-700">Tambah E-Book + Recording Kelas</span>
-                      <span className="mt-0.5 block text-[11px] leading-snug text-slate-400">Materi lengkap + rekaman semua sesi · akses selamanya</span>
+                    <span className={`whitespace-nowrap text-sm font-semibold transition-colors ${opt.on ? "text-[#1A9E9E]" : "text-slate-400"}`}>
+                      +{fmtRp(opt.price)}
                     </span>
-                  </span>
-                  <span className={`whitespace-nowrap text-sm font-semibold transition-colors ${addAddon ? "text-[#1A9E9E]" : "text-slate-400"}`}>
-                    +Rp150.000
-                  </span>
-                </button>
+                  </button>
+                ))}
                 <div className="mt-1 flex items-center justify-between border-t-2 border-slate-200 pt-3">
                   <span className="text-sm font-bold text-slate-800">Total</span>
                   <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
@@ -942,7 +989,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
               <>
                 {addonAmount > 0 && (
                   <div className="mt-2.5 flex items-center justify-between border-t border-slate-200 pt-2.5 text-xs text-slate-500">
-                    <span>Modul (E-Book) + Recording Kelas</span>
+                    <span>{addonLabelDipilih}</span>
                     <span>+{fmtRp(addonAmount)}</span>
                   </div>
                 )}

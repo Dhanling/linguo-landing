@@ -457,8 +457,64 @@ export function offersTeacherTypeChoice(language: string): boolean {
 // selalu menawarkannya di jalur WhatsApp. Angka & label dipusatkan di sini biar
 // funnel, /api/create-invoice dan /api/create-funnel-invoice tak bisa berbeda.
 // =============================================================================
-export const ADDON_EBOOK_RECORDING_PRICE = 150000;
-export const ADDON_EBOOK_RECORDING_LABEL = "Bundle E-Book + Recording Kelas (akses selamanya)";
+// [addon-harga-per-jenis-v1] (laporan Faujiah 16 Sep 2026 "Harga Opsi Tambahan
+// Modul + Recording Belum Ter-update") Dulu add-on ini SATU centang bundel
+// +Rp150.000 — padahal modul & rekaman dijual terpisah dan harganya sudah naik:
+// Modul (E-Book) Rp150.000, Recording Kelas Rp100.000, keduanya Rp250.000.
+// Siswa yang cuma mau rekaman jadi ikut bayar modul, dan yang beli keduanya
+// cuma ditagih Rp150.000. Angkanya aditif (150 + 100 = 250), jadi tak ada
+// harga bundel khusus — cukup dua add-on yang bisa dipilih sendiri-sendiri.
+export const ADDON_EBOOK_PRICE = 150000;
+export const ADDON_RECORDING_PRICE = 100000;
+/** Harga kalau dua-duanya diambil (Rp 250.000). Nama lama dipertahankan. */
+export const ADDON_EBOOK_RECORDING_PRICE = ADDON_EBOOK_PRICE + ADDON_RECORDING_PRICE;
+export const ADDON_EBOOK_LABEL = "Modul (E-Book) — akses selamanya";
+export const ADDON_RECORDING_LABEL = "Recording Kelas — akses selamanya";
+export const ADDON_EBOOK_RECORDING_LABEL = "Modul (E-Book) + Recording Kelas (akses selamanya)";
+
+/** Apa saja yang dibeli. */
+export type AddonPick = { ebook: boolean; recording: boolean };
+
+/**
+ * Terima bentuk lama maupun baru dari body request / query string:
+ *   • `addon: true`                      → dua-duanya (checkout lama, link lama `?addon=1`)
+ *   • `addon_ebook` / `addon_recording`  → per jenis
+ */
+export function normalizeAddonPick(body: {
+  addon?: unknown;
+  addon_ebook?: unknown;
+  addon_recording?: unknown;
+}): AddonPick {
+  const ebook = body?.addon_ebook === true;
+  const recording = body?.addon_recording === true;
+  if (ebook || recording) return { ebook, recording };
+  const legacy = body?.addon === true;
+  return { ebook: legacy, recording: legacy };
+}
+
+export function addonPickAmount(pick: AddonPick): number {
+  return (pick.ebook ? ADDON_EBOOK_PRICE : 0) + (pick.recording ? ADDON_RECORDING_PRICE : 0);
+}
+
+export function addonPickLabel(pick: AddonPick): string {
+  if (pick.ebook && pick.recording) return ADDON_EBOOK_RECORDING_LABEL;
+  if (pick.ebook) return ADDON_EBOOK_LABEL;
+  if (pick.recording) return ADDON_RECORDING_LABEL;
+  return "";
+}
+
+/**
+ * Nilai `leads.addon_type` — dibaca xendit-webhook untuk memutuskan akses mana
+ * yang diberikan, dan oleh `bundle_includes_ebook()` di DB (regex mencari
+ * `ebook|modul|bundle`), jadi kata "ebook"/"bundle" di sini BUKAN kosmetik.
+ */
+export function addonPickLeadType(program: string, pick: AddonPick): string | null {
+  const base = program === "Kelas Reguler" ? "reguler" : "private";
+  if (pick.ebook && pick.recording) return `${base}_bundle`;
+  if (pick.ebook) return `${base}_ebook`;
+  if (pick.recording) return `${base}_recording`;
+  return null;
+}
 
 /** Program yang boleh menambah add-on e-book + recording saat checkout. */
 export const ADDON_PROGRAMS = ["Kelas Reguler", "Kelas Private"];

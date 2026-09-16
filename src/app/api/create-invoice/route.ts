@@ -3,6 +3,16 @@ import { ebookSkuPrices } from "@/lib/ebookPricing";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { promoAmountFor } from "@/lib/promoMerdeka";
+import {
+  normalizeAddonPick,
+  addonPickAmount,
+  addonPickLabel,
+  addonPickLeadType,
+  ADDON_EBOOK_PRICE,
+  ADDON_RECORDING_PRICE,
+  ADDON_EBOOK_LABEL,
+  ADDON_RECORDING_LABEL,
+} from "@/lib/trial-pricing";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -193,7 +203,7 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code, variant, sessions, duration, etp_batch_id } = body;
+    const { name, email, wa_number, language, program, level, productKey: directKey, ref_code, variant, sessions, duration, etp_batch_id } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
@@ -273,13 +283,18 @@ export async function POST(req: NextRequest) {
       ? `LINGUO-EBOOK-${ebookMatch[1]}-${ebookMatch[2]}-${ebookMatch[3] ?? "selamanya"}-${Date.now()}`
       : `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
-    // ── addon-ebook-recording-v1: cross-sell bundle e-book + recording (Reguler) ──
-    const ADDON_PRICE = 150000;
-    const ADDON_DESC = "Bundle E-Book + Recording Kelas (akses selamanya)";
-    const wantsAddon = addon === true;
+    // ── addon-ebook-recording-v1 → [addon-harga-per-jenis-v1] ────────────────
+    // Modul (E-Book) Rp150.000 dan Recording Kelas Rp100.000 kini add-on
+    // TERPISAH (dua-duanya Rp250.000); dulu satu bundel Rp150.000 untuk
+    // keduanya — laporan Faujiah 16 Sep 2026. Body lama (`addon: true`) tetap
+    // dilayani lewat normalizeAddonPick() = dua-duanya.
+    const addonPick = normalizeAddonPick(body);
+    const wantsAddon = addonPick.ebook || addonPick.recording;
+    const addonAmount = addonPickAmount(addonPick);
+    const ADDON_DESC = addonPickLabel(addonPick);
     const finalUnitAmount = etpAmount ?? unitAmount;
     const finalDescription = etpDescription ?? productDescription;
-    const totalAmount = finalUnitAmount + (wantsAddon ? ADDON_PRICE : 0);
+    const totalAmount = finalUnitAmount + addonAmount;
 
     // ── affiliate-attribution-v1 ─────────────────────────────────────────
     // Last-touch referral: middleware drops a `linguo_ref` cookie when a
@@ -342,8 +357,15 @@ export async function POST(req: NextRequest) {
         ...(Number(sessions) > 0 ? { sessions: Number(sessions) } : {}),
         ...(Number(duration) > 0 ? { duration: Number(duration) } : {}),
         // addon fields cuma dikirim kalau opt-in -> pendaftaran normal ga nyentuh kolom baru
+        // [addon-harga-per-jenis-v1] `addon_ebook_recording` dibaca sebagai
+        // "REKAMAN ikut" (lihat lib/addonAccess + xendit-webhook), jadi pembeli
+        // modul-saja TIDAK boleh menyalakannya — jenis pastinya di `addon_type`.
         ...(wantsAddon
-          ? { addon_ebook_recording: true, addon_amount: ADDON_PRICE, addon_type: "reguler_bundle" }
+          ? {
+              addon_ebook_recording: addonPick.recording,
+              addon_amount: addonAmount,
+              addon_type: addonPickLeadType("Kelas Reguler", addonPick),
+            }
           : {}),
       }),
     });
@@ -364,7 +386,7 @@ export async function POST(req: NextRequest) {
         external_id: externalId,
         amount: totalAmount,
         payer_email: email,
-        description: `${finalDescription}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
+        description: `${finalDescription}${wantsAddon ? ` + ${ADDON_DESC}` : ""}${language ? ` — ${language}` : ""}`,
         currency: "IDR",
         invoice_duration: 86400,
         // invoice-email-notif-v1 — set notifikasi eksplisit supaya Xendit
@@ -386,7 +408,9 @@ export async function POST(req: NextRequest) {
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
         items: [
           { name: finalDescription, quantity: 1, price: finalUnitAmount },
-          ...(wantsAddon ? [{ name: ADDON_DESC, quantity: 1, price: ADDON_PRICE }] : []),
+          // [addon-harga-per-jenis-v1] modul & rekaman jadi baris sendiri di invoice.
+          ...(addonPick.ebook ? [{ name: ADDON_EBOOK_LABEL, quantity: 1, price: ADDON_EBOOK_PRICE }] : []),
+          ...(addonPick.recording ? [{ name: ADDON_RECORDING_LABEL, quantity: 1, price: ADDON_RECORDING_PRICE }] : []),
         ],
       }),
     });
