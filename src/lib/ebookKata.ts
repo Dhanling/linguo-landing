@@ -78,10 +78,64 @@ const memori = new Map<string, ArtiKata>();
 const kunci = (kode: string, kata: string, kalimat: string) =>
   `${kode}|${kata.toLowerCase()}|${kalimat.slice(0, 120)}`;
 
+/* [ebook-kata-cache-lokal-v1] 17 Sep 2026 — arti yang pernah dimuat disimpan
+   juga di localStorage (bertahan lintas muat ulang), dan permintaan kembar
+   untuk kata yang sama digabung. Di server, /api/ebook-kata sudah punya cache
+   bersama (bucket ai-kata-cache). Kembar dengan lib/ebookKata.ts di
+   linguo-admin-dashboard. */
+const LS_KUNCI = "ebook-kata-arti:v2";
+const LS_MAKS = 1500;
+let lokal: Record<string, ArtiKata & { t?: number }> | null = null;
+function bacaLokal(): Record<string, ArtiKata & { t?: number }> {
+  if (lokal) return lokal;
+  try {
+    lokal = JSON.parse(localStorage.getItem(LS_KUNCI) || "{}") || {};
+  } catch {
+    lokal = {};
+  }
+  return lokal!;
+}
+let tulisTertunda: ReturnType<typeof setTimeout> | null = null;
+function simpanLokal(k: string, a: ArtiKata) {
+  const isi = bacaLokal();
+  isi[k] = { ...a, t: Date.now() };
+  if (tulisTertunda != null) return;
+  tulisTertunda = setTimeout(() => {
+    tulisTertunda = null;
+    try {
+      const semua = Object.keys(isi);
+      if (semua.length > LS_MAKS) {
+        semua
+          .sort((a, b) => (isi[a].t ?? 0) - (isi[b].t ?? 0))
+          .slice(0, semua.length - LS_MAKS)
+          .forEach((x) => delete isi[x]);
+      }
+      localStorage.setItem(LS_KUNCI, JSON.stringify(isi));
+    } catch {
+      /* penyimpanan penuh / diblokir — cache memori tetap jalan */
+    }
+  }, 1000);
+}
+function ambilTersimpan(k: string): ArtiKata | undefined {
+  const ada = memori.get(k);
+  if (ada) return ada;
+  const l = bacaLokal()[k];
+  if (!l) return undefined;
+  const { t: _t, ...arti } = l;
+  memori.set(k, arti);
+  return arti;
+}
+const sedangJalan = new Map<string, Promise<HasilArti>>();
+
 export function artiTersimpan(kata: string, kalimat: string, kode: string): HasilArti | undefined {
-  const ada = memori.get(kunci(kode, kata, kalimat));
+  const ada = ambilTersimpan(kunci(kode, kata, kalimat));
   if (ada) return ada;
   return sedangMati() ? "mati" : undefined;
+}
+
+/** Ambil arti di belakang layar (kursor berhenti di atas kata) — hasilnya cuma masuk cache. */
+export function siapkanArti(kata: string, kalimat: string, kode: string): void {
+  void artiKataEbook(kata, kalimat, kode);
 }
 
 /**
@@ -95,10 +149,17 @@ export async function artiKataEbook(
   kode: string,
 ): Promise<HasilArti> {
   const k = kunci(kode, kata, kalimat);
-  const ada = memori.get(k);
+  const ada = ambilTersimpan(k);
   if (ada) return ada;
   if (sedangMati()) return "mati";
+  const jalan = sedangJalan.get(k);
+  if (jalan) return jalan;
+  const janji = tanyaArti(k, kata, kalimat, kode).finally(() => sedangJalan.delete(k));
+  sedangJalan.set(k, janji);
+  return janji;
+}
 
+async function tanyaArti(k: string, kata: string, kalimat: string, kode: string): Promise<HasilArti> {
   try {
     const res = await fetch("/api/ebook-kata", {
       method: "POST",
@@ -138,6 +199,7 @@ export async function artiKataEbook(
     // putus sebentar) tak boleh membekukan kata itu jadi "tak ada arti"
     // sepanjang sesi — ketukan berikutnya berhak mencoba lagi.
     memori.set(k, hasil);
+    simpanLokal(k, hasil);
     return hasil;
   } catch {
     return null;

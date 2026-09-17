@@ -47,7 +47,7 @@ import {
   hentikanEbookTts, bukaKunciAudio, siapkanEbook, kataKepalaBaris, tanpaPenutur, jagaHangatTts,
 } from "@/lib/ebookTts";
 // [ebook-popup-kata-v1]
-import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
+import { artiKataEbook, artiTersimpan, siapkanArti, type HasilArti } from "@/lib/ebookKata";
 import { langLabel } from "@/lib/quiz/language";
 import { kunciJejak } from "@/lib/jejakPemilik"; // [jejak-belajar-per-siswa-v1]
 
@@ -128,6 +128,11 @@ const PADDING_Y = 36;
 const GAP = 0; // bentangan menempel — celah apa pun tampak sebagai garis hitam di tengah buku
 /** Lebar minimum wadah sebelum tampilan dua halaman masuk akal. */
 const LEBAR_DUA_HALAMAN = 760;
+/** [ebook-testprep-pas-lebar-v1] Lebar maksimum halaman modul tes (px CSS). */
+const LEBAR_PAS_MAKS = 1080;
+/** [ebook-audio-tempo-v1] Pilihan kecepatan pemutar naskah Listening. */
+const TEMPO_AUDIO = [1, 1.1, 1.25] as const;
+const KUNCI_TEMPO = "ebook-audio-tempo";
 /** Lama animasi balik halaman. Lebih dari ini terasa lambat, kurang jadi kedip. */
 const DURASI_BALIK = 620;
 /** Halaman yang bitmap-nya disimpan. 40 halaman sekaligus terlalu boros memori. */
@@ -1213,8 +1218,26 @@ export default function EbookReader({
      berkelip sekejap justru terasa lebih lambat daripada tanpa spinner. */
   const [tundaMemuat, setTundaMemuat] = useState(false);
   const [galat, setGalat] = useState<string | null>(null);
+  /* [ebook-testprep-pas-lebar-v1] 17 Sep 2026, review Rini (86f1efa7) — modul
+     IELTS/TOEFL padat teks & soal; dibuka dua halaman yang dimuatkan ke TINGGI
+     layar, hurufnya kekecilan sampai siswa harus memperbesar sendiri. Modul
+     persiapan tes kini dibuka SATU halaman selebar layar (dibatasi supaya tak
+     raksasa di monitor lebar) — digulir ke bawah seperti dokumen. */
+  const [tempoAudio, setTempoAudio] = useState<number>(() => {
+    try {
+      const v = Number(localStorage.getItem(KUNCI_TEMPO));
+      return (TEMPO_AUDIO as readonly number[]).includes(v) ? v : 1.1;
+    } catch {
+      return 1.1;
+    }
+  });
+  const pilihTempo = useCallback((v: number) => {
+    setTempoAudio(v);
+    try { localStorage.setItem(KUNCI_TEMPO, String(v)); } catch { /* tak apa */ }
+  }, []);
+  const modulTes = /\b(ielts|toefl|toeic|test prep)\b/i.test(title ?? "");
   /** null = ikut lebar layar; true/false = pilihan siswa dari bilah atas. */
-  const [duaManual, setDuaManual] = useState<boolean | null>(null);
+  const [duaManual, setDuaManual] = useState<boolean | null>(() => (modulTes ? false : null));
   const [muatDua, setMuatDua] = useState(false);
   /** Ukuran halaman terpasang (CSS px) — dipakai menata slot & flipper. */
   const [ukuran, setUkuran] = useState<{ w: number; h: number } | null>(null);
@@ -1620,7 +1643,9 @@ export default function EbookReader({
 
     const lebarTersedia = Math.max(240, wadah.clientWidth - PADDING_X) - (kolom - 1) * GAP;
     const tinggiTersedia = Math.max(240, wadah.clientHeight - PADDING_Y);
-    const muat = Math.min(lebarTersedia / (dasar.width * kolom), tinggiTersedia / dasar.height);
+    const muat = modulTes && !dua
+      ? Math.min(lebarTersedia, LEBAR_PAS_MAKS) / dasar.width
+      : Math.min(lebarTersedia / (dasar.width * kolom), tinggiTersedia / dasar.height);
     const skala = muat * zoom;
 
     const w = Math.floor(dasar.width * skala);
@@ -1636,7 +1661,7 @@ export default function EbookReader({
     setUkuran({ w, h });
     setSkalaTampil(skala);
     setGenerasi((g) => g + 1);
-  }, [page, zoom, dua]);
+  }, [page, zoom, dua, modulTes]);
 
   useEffect(() => { if (doc) void hitungSkala(); }, [doc, hitungSkala]);
 
@@ -3356,7 +3381,21 @@ export default function EbookReader({
     void isiDiTitik(box, clientX, clientY).then((r) => {
       setIsiSorot((s) => (r?.hal === s?.hal && r?.y === s?.y ? s : r));
     });
-  }, [tepiSiap, isiDiTitik]);
+    /* [ebook-kata-cache-lokal-v1] Kursor BERHENTI 250 ms di atas kata → artinya
+       diambil di belakang layar, jadi kartu langsung terisi begitu diklik. */
+    if (hoverArtiRef.current != null) clearTimeout(hoverArtiRef.current);
+    const el = e.currentTarget;
+    hoverArtiRef.current = setTimeout(() => {
+      hoverArtiRef.current = null;
+      if (!ttsAktif || !kodeBahasa) return;
+      void resolusiKetuk(el.getBoundingClientRect(), clientX, clientY).then((k) => {
+        if (!k || k === "kosong" || k.terjemahan) return;
+        siapkanArti(k.unit, k.kalimat, kodeBahasa);
+      });
+    }, 250);
+  }, [tepiSiap, isiDiTitik, ttsAktif, kodeBahasa, resolusiKetuk]);
+  const hoverArtiRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (hoverArtiRef.current != null) clearTimeout(hoverArtiRef.current); }, []);
 
   /* [tts-prasiap-v1] Jari menyentuh halaman → audionya sudah mulai disiapkan,
      jauh sebelum `click` menyala (di ponsel jaraknya ratusan milidetik). Cuma
@@ -4011,7 +4050,24 @@ export default function EbookReader({
               autoPlay
               preload="metadata"
               className="mt-1 h-8 w-full"
+              /* [ebook-audio-tempo-v1] Review Rini: audio Listening terasa lambat
+                 dibanding tes aslinya. Default 1.1×, bisa dipilih di sebelah. */
+              onLoadedMetadata={(e) => { e.currentTarget.playbackRate = tempoAudio; }}
+              ref={(el) => { if (el && el.playbackRate !== tempoAudio) el.playbackRate = tempoAudio; }}
             />
+          </div>
+          <div className="flex shrink-0 overflow-hidden rounded-lg border border-white/10">
+            {TEMPO_AUDIO.map((v) => (
+              <button
+                key={v}
+                onClick={() => pilihTempo(v)}
+                className={`px-1.5 py-1 text-[11px] font-bold tabular-nums transition ${
+                  tempoAudio === v ? "bg-[#3ED9C0] text-black" : "text-white/60 hover:bg-white/10"
+                }`}
+              >
+                {v}×
+              </button>
+            ))}
           </div>
           <button
             onClick={() => setAudioBuka(false)}

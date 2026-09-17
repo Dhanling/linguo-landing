@@ -76,6 +76,42 @@ function acak<T>(arr: T[], benih: number): T[] {
 
 const BLANK = /_{2,}/g;
 
+/* [ebook-latihan-pilihan-ganda-v1] 17 Sep 2026, review Rini (86f1efa7) — soal
+   pilihan ganda TOEFL/IELTS dulu tampil sebagai SATU paragraf "Soal? (A) … (B) …"
+   dengan chip huruf berjajar di sampingnya. Opsinya kini dipecah di sini (tanpa
+   merakit ulang modul) dan ditampilkan bersusun di BAWAH soal.
+   `sisip` = Written Expression: penanda (A)–(D) ada DI DALAM kalimat, jadi
+   kalimatnya dibiarkan utuh (penandanya disorot) dan tombolnya memuat potongan
+   bertanda itu. */
+type Opsi = { huruf: string; teks: string };
+type SoalPilihan = { stem: string; opsi: Opsi[]; sisip: boolean; utuh: string };
+
+function pecahPilihan(teks: string, pilihan: string[] | undefined, perintah: string): SoalPilihan | null {
+  if (!pilihan || pilihan.length < 2 || !pilihan.every((p) => /^[A-H]$/.test(p))) return null;
+  const utuh = teks.replace(/\s*_{2,}\s*$/, "").trim();
+  const posisi: number[] = [];
+  let dari = 0;
+  for (const h of pilihan) {
+    const i = utuh.indexOf(`(${h})`, dari);
+    if (i < 0) return null;
+    posisi.push(i);
+    dari = i + 3;
+  }
+  const opsi = pilihan.map((huruf, k) => ({
+    huruf,
+    teks: utuh.slice(posisi[k] + 3, k + 1 < posisi.length ? posisi[k + 1] : undefined).trim(),
+  }));
+  const sisip = /underlined|garis bawah/i.test(perintah);
+  if (sisip) {
+    // Potongan bertanda cukup beberapa kata — sisanya kalimat biasa.
+    for (const o of opsi) {
+      const kata = o.teks.split(/\s+/);
+      if (kata.length > 5) o.teks = kata.slice(0, 5).join(" ") + " …";
+    }
+  }
+  return { stem: utuh.slice(0, posisi[0]).trim(), opsi, sisip, utuh };
+}
+
 export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onClose: () => void }) {
   const t = useT();
 
@@ -105,6 +141,13 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
       idx + 1
     );
   }, [butir, idx]);
+
+  const pg = useMemo(
+    () => (butir && butir.latihan.tipe !== "susun"
+      ? pecahPilihan(butir.soal.teks, butir.latihan.pilihan, butir.latihan.perintah)
+      : null),
+    [butir],
+  );
 
   const jawaban = butir?.latihan.tipe === "susun" ? keping.map((k) => kepingan[k]).join(" ") : ketik;
 
@@ -146,6 +189,11 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") { onClose(); return; }
+      // Pilihan ganda: tekan hurufnya langsung (A/B/C/D).
+      if (pg && !nilai && !selesai && e.key.length === 1) {
+        const h = e.key.toUpperCase();
+        if (pg.opsi.some((o) => o.huruf === h)) { setKetik(h); return; }
+      }
       if (e.key !== "Enter" || selesai) return;
       e.preventDefault();
       if (nilai) lanjut();
@@ -153,7 +201,7 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [nilai, selesai, periksa, lanjut, onClose]);
+  }, [nilai, selesai, periksa, lanjut, onClose, pg]);
 
   const total = semua.length;
   const skor = benar.size;
@@ -163,7 +211,7 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
       {/* Tinggi mengikuti isi (max-h, bukan h): soal terjemahan cuma butuh
             sepertiga layar, dan kartu setinggi 86vh membuat tombol Periksa
             terdampar jauh di bawah pertanyaannya. */}
-        <div className="flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl border border-white/10 bg-[#101314] shadow-2xl sm:max-h-[86vh] sm:rounded-3xl">
+        <div className="flex max-h-[94vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl border border-white/10 bg-[#101314] shadow-2xl sm:max-h-[86vh] sm:rounded-3xl">
         {/* kepala */}
         <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3">
           <PenLine className="h-4 w-4 shrink-0 text-[#3ED9C0]" />
@@ -224,9 +272,58 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
         ) : (
           <>
             <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5">
-              <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
+              <p className="text-[13px] font-semibold leading-relaxed text-[#3ED9C0]">
                 {butir.latihan.perintah}
               </p>
+
+              {pg ? (
+                <>
+                  {(pg.sisip || pg.stem) && (
+                    <p className="mt-4 text-[20px] font-bold leading-relaxed text-white sm:text-[22px]">
+                      {pg.sisip
+                        ? pg.utuh.split(/(\([A-H]\))/).map((b, i) =>
+                            /^\([A-H]\)$/.test(b) ? (
+                              <span key={i} className="mx-0.5 rounded-md bg-[#3ED9C0]/15 px-1 text-[0.8em] text-[#3ED9C0]">
+                                {b}
+                              </span>
+                            ) : (
+                              <span key={i}>{b}</span>
+                            ))
+                        : pg.stem}
+                    </p>
+                  )}
+                  <div className="mt-5 flex flex-col gap-2">
+                    {pg.opsi.map((o) => {
+                      const dipilih = ketik === o.huruf;
+                      const kunciIni = !!nilai && samakan(butir.soal.kunci) === samakan(o.huruf);
+                      return (
+                        <button
+                          key={o.huruf}
+                          disabled={!!nilai}
+                          onClick={() => setKetik(o.huruf)}
+                          className={`flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-left text-[16px] font-semibold leading-snug transition disabled:cursor-default ${
+                            kunciIni
+                              ? "border-[#3ED9C0]/70 bg-[#3ED9C0]/15 text-white"
+                              : dipilih
+                                ? nilai === "salah"
+                                  ? "border-red-400/60 bg-red-500/15 text-white"
+                                  : "border-[#3ED9C0]/60 bg-[#3ED9C0]/15 text-white"
+                                : "border-white/10 bg-white/[0.04] text-white/90 hover:bg-white/[0.09]"
+                          }`}
+                        >
+                          <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[13px] font-extrabold ${
+                            dipilih || kunciIni ? "bg-[#3ED9C0] text-black" : "bg-white/10 text-white/70"
+                          }`}>
+                            {o.huruf}
+                          </span>
+                          <span className="min-w-0 flex-1">{o.teks}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              ) : (
+              <>
 
               {/* Soal isian ditulis ulang dengan jawaban yang sudah diketik di
                   tempat titik-titiknya, supaya kalimatnya terbaca utuh. */}
@@ -326,6 +423,8 @@ export default function EbookLatihan({ unit, onClose }: { unit: UnitLatihan; onC
                     </div>
                   )}
                 </div>
+              )}
+              </>
               )}
             </div>
 
