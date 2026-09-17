@@ -99,24 +99,70 @@ const SUARA_PENUTUR = {
   mina: "shimmer",          // mahasiswa perempuan, beda warna dari tutornya
   // unit-04 — kuliah
   lecturer: "fable",        // dosen, gaya ceramah
+
+  /* [ebook-transkrip-audio-v2] TOEFL ITP Prep — penuturnya generik ("Man",
+     "Woman"), jadi tanpa entri di sini rotasi memberi "Man" suara perempuan
+     (nova). Aksen Amerika diminta lewat GAYA, bukan lewat pilihan suara. */
+  man: "onyx",              // laki-laki, Part A
+  woman: "coral",           // perempuan, Part A
+  narrator: "alloy",        // pembaca "Conversation 1", judul naskah
+  student: "ash",           // bawaan; jenis kelaminnya beda per naskah → lihat SUARA_BLOK
+  advisor: "sage",          // penasihat akademik
+  technician: "onyx",       // petugas lab (laki-laki: "Why does the man mention…")
+  guide: "nova",            // pemandu tur kampus — namanya Renee, perempuan
+  professor: "echo",        // dosen laki-laki (fable terlalu British untuk TOEFL)
 };
+/** Suara per penutur KHUSUS satu naskah — kunci `judul blok|penutur`, huruf kecil.
+ *  Perlu karena label yang sama dipakai orang berbeda: "Student" di Conversation 1
+ *  unit-03 laki-laki ("He missed…"), di Conversation 2 perempuan ("Why does the
+ *  woman go…"). Dicek lebih dulu daripada SUARA_PENUTUR. */
+const SUARA_BLOK = {
+  "conversation 1: a student visits an academic advisor|student": "ash",
+  "conversation 1: a student visits an academic advisor|advisor": "coral",
+  "conversation 2: a student borrows equipment from a laboratory|student": "nova",
+  "conversation 2: a student borrows equipment from a laboratory|technician": "onyx",
+  // dua kuliah beruntun jangan terdengar dosen yang sama
+  "talk 3: history lecture on the pony express|professor": "sage",
+};
+const NARATOR = "Narrator";
 const ROTASI = ["nova", "onyx", "sage", "ash", "shimmer", "echo"];
 
 /** Gaya bicara yang diminta ke gpt-4o-mini-tts. Naskah IELTS dibacakan dengan
- *  aksen British, tempo ujian (tidak dramatis, tidak dipercepat). */
-const GAYA_DIALOG = "Read in a natural British English accent, as a real person speaking in a recorded IELTS Listening test. Conversational, steady pace, clear consonants. Do not dramatise.";
-const GAYA_MONOLOG = "Read in a natural British English accent as an IELTS Listening monologue (Part 2/Part 4): measured, informative, slight pauses at commas. Do not dramatise.";
+ *  aksen British, tempo ujian (tidak dramatis, tidak dipercepat).
+ *  ⚠️ Teks IELTS JANGAN diubah tanpa alasan — audionya sudah terbit; keluhan
+ *  "terlalu pelan" dijawab lewat kontrol kecepatan putar di reader. */
+const GAYA_IELTS = {
+  dialog: "Read in a natural British English accent, as a real person speaking in a recorded IELTS Listening test. Conversational, steady pace, clear consonants. Do not dramatise.",
+  monolog: "Read in a natural British English accent as an IELTS Listening monologue (Part 2/Part 4): measured, informative, slight pauses at commas. Do not dramatise.",
+  narator: "Read in a natural British English accent as the neutral announcer of an IELTS Listening recording. Clear and even. Do not dramatise.",
+};
+/** [ebook-transkrip-audio-v2] TOEFL ITP: aksen Amerika, tempo rekaman ujian asli
+ *  yang cenderung cepat (IELTS dilaporkan "terlalu pelan" — jangan diulang). */
+const GAYA_TOEFL = {
+  dialog: "Read in a natural General American English accent, as a real person speaking in a recorded TOEFL ITP Listening test conversation. Natural pace of a real exam recording, do not slow down, no extra pauses. Casual, conversational. Do not dramatise.",
+  monolog: "Read in a natural General American English accent as a TOEFL ITP Listening talk or lecture. Natural pace of a real exam recording, do not slow down, no extra pauses. Informative, fluent. Do not dramatise.",
+  narator: "Read in a natural General American English accent as the neutral narrator of a TOEFL test recording. Clear, natural pace of a real exam recording, do not slow down, no extra pauses.",
+};
+const GAYA = /toefl/i.test(slug) ? GAYA_TOEFL : GAYA_IELTS;
 
 /* ── pembantu ──────────────────────────────────────────────────────────────── */
 
 const sb = KERING ? null : createClient(URL_SB, KEY_SB, { auth: { persistSession: false } });
 
-/** Giliran bicara: baris berurutan dari penutur yang sama digabung jadi satu. */
+/** Markdown ringan (`**Conversation 1**`) dibuang supaya bintangnya tak ikut
+ *  dibacakan; ujung tanpa tanda baca diberi titik agar TTS berhenti sejenak. */
+const polos = (t) => {
+  const s = String(t ?? "").replace(/[*_`#]+/g, "").replace(/\s+/g, " ").trim();
+  return s && !/[.!?:;]$/.test(s) ? s + "." : s;
+};
+
+/** Giliran bicara: baris berurutan dari penutur yang sama digabung jadi satu.
+ *  Baris TANPA penutur (pemisah "Conversation N") dibacakan narator. */
 function giliran(lines) {
   const out = [];
   for (const l of lines ?? []) {
-    const penutur = String(l.speaker ?? "").trim();
-    const teks = String(l.text ?? "").trim();
+    const penutur = String(l.speaker ?? "").trim() || NARATOR;
+    const teks = penutur === NARATOR ? polos(l.text) : String(l.text ?? "").trim();
     if (!teks) continue;
     const akhir = out[out.length - 1];
     if (akhir && akhir.penutur === penutur) akhir.teks += " " + teks;
@@ -186,8 +232,21 @@ const jalurBucket = (url) => url.split(`/object/public/${BUCKET}/`)[1] ?? null;
    pada berkas mentahnya — bukan JSON.parse → JSON.stringify. Berkas unit ditulis
    tangan dengan susunan baris yang rapat (satu baris per baris dialog); round-trip
    JSON akan merapikan ulang seluruh berkas dan membuat diff-nya tak terbaca. */
-function tulisAudio(berkas, url) {
+function tulisAudio(berkas, url, judul) {
   const raw = readFileSync(berkas, "utf8");
+  /* [ebook-transkrip-audio-v2] Unit dengan beberapa blok transkrip: yang ditulisi
+     adalah blok yang judulnya cocok (bukan sekadar blok pertama = cuplikan). */
+  if (judul) {
+    const jd = JSON.stringify(judul).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const polaJudul = new RegExp(`(\\{\\s*"type":\\s*"transkrip",)(\\s*)(?:"audio":\\s*"[^"]*",\\s*)?(?="title":\\s*${jd})`);
+    if (polaJudul.test(raw)) {
+      writeFileSync(berkas, raw.replace(polaJudul, (_, kepala, jeda) =>
+        `${kepala}${jeda}"audio": ${JSON.stringify(url)},${jeda || " "}`), "utf8");
+      return;
+    }
+    // Menulis ke blok pertama bisa salah alamat (cuplikan) — lebih baik gagal.
+    throw new Error(`blok transkrip berjudul ${JSON.stringify(judul)} tak ditemukan di ${berkas}`);
+  }
   /* Blok bisa ditulis rapat (`{"type": "transkrip", "title": …` — unit 1, 3, 4) ATAU
      bertingkat dengan `"type"` di baris sendiri (unit 2). Pola lama cuma kenal yang
      rapat, jadi unit 2 sempat gagal SESUDAH MP3-nya terunggah. Spasi/baris baru di
@@ -209,10 +268,30 @@ for (const f of berkasUnit) {
   const no = Number(f.match(/\d+/)[0]);
   if (unitPilih && no !== unitPilih) continue;
   const u = JSON.parse(readFileSync(`${DIR}/${f}`, "utf8"));
-  const blok = (u.sections ?? []).flatMap((s) => s.blocks ?? []).find((b) => b.type === "transkrip");
+  /* [ebook-transkrip-audio-v2] Semua naskah latihan unit digabung jadi SATU MP3
+     (u03 TOEFL: dua percakapan, u04: tiga kuliah). Blok "Cuplikan…" hanyalah
+     contoh di bagian pembahasan — tidak diberi audio. Audio ditulis ke blok
+     naskah pertama; IELTS cuma punya satu blok, jadi hasilnya tak berubah. */
+  const semuaBlok = (u.sections ?? []).flatMap((s) => s.blocks ?? [])
+    .filter((b) => b.type === "transkrip" && !/^\s*cuplikan\b/i.test(b.title ?? ""));
+  const blok = semuaBlok[0];
   if (!blok) continue;
+  const banyak = semuaBlok.length > 1;
 
-  const turn = giliran(blok.lines);
+  // Giliran per blok; `kunci` = pemilik suara (blok + penutur), `gaya` per blok.
+  const turn = semuaBlok.flatMap((b, bi) => {
+    const t = giliran(b.lines);
+    // Beberapa naskah dalam satu MP3: narator membacakan judulnya sebagai penanda.
+    if (banyak && b.title) t.unshift({ penutur: NARATOR, teks: polos(b.title) });
+    const bicara = new Set(t.map((x) => x.penutur).filter((p) => p !== NARATOR));
+    const g = bicara.size > 1 ? GAYA.dialog : GAYA.monolog;
+    return t.map((x) => ({
+      ...x,
+      kunci: x.penutur === NARATOR ? NARATOR : `${bi}|${x.penutur}`,
+      judul: String(b.title ?? "").toLowerCase(),
+      gaya: x.penutur === NARATOR ? GAYA.narator : g,
+    }));
+  });
   const penutur = [...new Set(turn.map((t) => t.penutur).filter(Boolean))];
   const huruf = turn.reduce((a, t) => a + t.teks.length, 0);
   console.log(`\n${f} · ${turn.length} giliran · ${huruf} huruf · penutur: ${penutur.join(", ") || "(tanpa nama)"}`);
@@ -223,28 +302,28 @@ for (const f of berkasUnit) {
     continue;
   }
 
-  // Suara per penutur: peta tangan dulu, sisanya rotasi yang belum terpakai.
+  // Suara per (blok, penutur): peta blok → peta penutur → rotasi yang belum terpakai.
   const suara = new Map();
-  for (const p of penutur) {
-    const pilih = SUARA_PENUTUR[p.toLowerCase()];
-    if (pilih) suara.set(p, pilih);
+  const pemilik = [...new Map(turn.map((t) => [t.kunci, t])).values()];
+  for (const t of pemilik) {
+    const pilih = SUARA_BLOK[`${t.judul}|${t.penutur.toLowerCase()}`] ?? SUARA_PENUTUR[t.penutur.toLowerCase()];
+    if (pilih) suara.set(t.kunci, pilih);
   }
-  for (const p of penutur) {
-    if (suara.has(p)) continue;
+  for (const t of pemilik) {
+    if (suara.has(t.kunci)) continue;
     const sisa = ROTASI.find((v) => ![...suara.values()].includes(v)) ?? ROTASI[0];
-    suara.set(p, sisa);
-    console.log(`  ⚠️  penutur "${p}" belum ada di SUARA_PENUTUR — dipakai "${sisa}"`);
+    suara.set(t.kunci, sisa);
+    console.log(`  ⚠️  penutur "${t.penutur}" belum ada di SUARA_PENUTUR — dipakai "${sisa}"`);
   }
-  for (const [p, v] of suara) console.log(`  ${p} → ${v}`);
+  for (const t of pemilik) console.log(`  ${banyak && t.penutur !== NARATOR ? `[${t.kunci.split("|")[0]}] ` : ""}${t.penutur} → ${suara.get(t.kunci)}`);
 
-  const gaya = penutur.length > 1 ? GAYA_DIALOG : GAYA_MONOLOG;
-  const potongan = turn.flatMap((t) => potong(t.teks).map((teks) => ({ teks, voice: suara.get(t.penutur) ?? ROTASI[0] })));
+  const potongan = turn.flatMap((t) => potong(t.teks).map((teks) => ({ teks, voice: suara.get(t.kunci) ?? ROTASI[0], gaya: t.gaya })));
   console.log(`  ${potongan.length} panggilan TTS`);
   if (KERING) continue;
 
   const bagian = [];
   for (const [i, p] of potongan.entries()) {
-    const url = await ttsPotong(p.teks, p.voice, gaya);
+    const url = await ttsPotong(p.teks, p.voice, p.gaya);
     const jalur = jalurBucket(url);
     if (jalur) sampah.push(jalur);
     bagian.push(await unduh(url));
@@ -256,7 +335,7 @@ for (const f of berkasUnit) {
     .upload(jalurAkhir, mp3, { contentType: "audio/mpeg", upsert: true, cacheControl: "3600" });
   if (error) throw new Error(`unggah ${jalurAkhir} gagal: ${error.message}`);
   const publik = `${URL_SB}/storage/v1/object/public/${BUCKET}/${jalurAkhir}`;
-  tulisAudio(`${DIR}/${f}`, publik);
+  tulisAudio(`${DIR}/${f}`, publik, blok.title);
   console.log(`\n  ✓ ${jalurAkhir} (${Math.round(mp3.length / 1024)} KB) → ${f} dapat "audio"`);
   dibuat++;
 }

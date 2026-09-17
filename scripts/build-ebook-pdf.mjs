@@ -691,7 +691,15 @@ const LABEL_UNIT = new RegExp(`^${LABEL.unit}\\.?(\\d+)(?:·.*)?$`, "i");
    judulnya terpecah dua baris dan tak ketemu, halamannya dibiarkan null dan
    reader jatuh ke rentang unit — tombolnya tetap ada, cuma kurang presisi. */
 const kunciTeks = (s) => String(s ?? "").replace(/\s+/g, " ").trim().toLowerCase();
-const blokTranskrip = (u) => (u.sections ?? []).flatMap((s) => s.blocks ?? []).find((b) => b.type === "transkrip") ?? null;
+/* [ebook-transkrip-audio-v2] Unit Listening TOEFL bisa memuat beberapa blok
+   transkrip (u03/u04: cuplikan contoh + dua–tiga naskah latihan). Audionya satu
+   MP3 per unit dan ditulis di blok naskah latihan pertama — bukan di cuplikan —
+   jadi blok yang ber-`audio` didahulukan; judulnya pula yang dipakai mencari
+   halaman naskah di PDF, sehingga tombol "Putar audio" muncul di halaman itu. */
+const blokTranskrip = (u) => {
+  const semua = (u.sections ?? []).flatMap((s) => s.blocks ?? []).filter((b) => b.type === "transkrip");
+  return semua.find((b) => b.audio) ?? semua[0] ?? null;
+};
 const judulTranskrip = new Map(
   units.map((u, i) => [kunciTeks(blokTranskrip(u)?.title), i + 1]).filter(([k]) => k),
 );
