@@ -90,6 +90,7 @@
    "title": "Transkrip",
    "blocks": [
     {"type": "p", "text": "Berhenti di sini. **Lompat dulu ke Latihan**, baca sepuluh soalnya, dan tulis prediksimu untuk tiap nomor. Baru setelah itu kembali dan baca transkrip ini **satu kali, dari atas ke bawah, tanpa mengulang** — sepanjang percakapan ini, dalam kecepatan bicara normal, memakan sekitar empat menit."},
+    {"type": "gambar", "file": "formulir-01.svg", "lebar": "140mm", "caption": "Formulir untuk soal 1–5 — beginilah bentuk form completion di lembar soal asli. Isi lubangnya sambil membaca transkrip."},
     {"type": "transkrip", "audio": "https://jbtgciepdmqxxcjflrxz.supabase.co/storage/v1/object/public/lms-audio/ebook/ielts-prep/unit-01.mp3", "title": "Enrolling in an evening course at Riverbank Community Centre", "lines": [
      {"speaker": "Receptionist", "text": "Good morning, Riverbank Community Centre, Kate speaking. How can I help?"},
      {"speaker": "Caller", "text": "Hello. I'd like to sign up for one of your evening courses — the photography one, if there are still places."},
@@ -135,7 +136,7 @@
  ],
  "exercises": [
   {
-   "prompt": "Questions 1–5. Complete the enrolment form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Tulis angka dengan angka, dan nomor telepon tanpa spasi.",
+   "prompt": "Questions 1–5. Complete the enrolment form (see the form before the transcript). Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. — Artinya: lengkapi formulir pendaftaran (gambarnya ada sebelum transkrip). Tulis maksimal DUA KATA DAN/ATAU SATU ANGKA; angka ditulis dengan angka, nomor telepon tanpa spasi.",
    "tipe": "isian",
    "items": [
     "RIVERBANK COMMUNITY CENTRE — Course: Digital Photography (Wednesday evenings). Family name: ____",

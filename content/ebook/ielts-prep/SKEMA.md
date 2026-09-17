@@ -43,6 +43,11 @@ BACA KEDUANYA DULU sebelum menulis.
      "kategori":["2000","2010"], "seri":[{"nama":"Men","nilai":[10,20]}], ...}`
   pai: `"pai":[{"judul":"2000","irisan":[{"nama":"Coal","nilai":40},…]}, …]` (1–3 pai berdampingan)
 - `{"type":"gambar","file":"nama.svg","lebar":"150mm","caption":"…"}` — berkas SVG/PNG di folder modul ini (untuk diagram proses, peta, denah)
+  [ebook-testprep-visual-v1] (review Rini 17 Sep 2026: "pertanyaan dengan gambar masih kurang") — soal yang
+  di tes aslinya BERGAMBAR wajib digambar juga, jangan cuma jadi tabel/daftar: form completion (formulir-01.svg),
+  diagram labelling (diagram-04.svg), table completion (tabel-05.svg), flow-chart (flowchart-09.svg), peta/denah.
+  Tulis nomor soal + titik-titik di gambar, JANGAN mencetak jawabannya atau kata yang membocorkan soal lain
+  di latihan yang sama. Perintah latihannya menunjuk gambar itu ("Complete the table above").
 
 ## Latihan (WAJIB dikoreksi otomatis di reader — ikuti persis)
 ```json
