@@ -56,7 +56,28 @@ let modulEn = false;
 const teksEn = (s) => { if (modulEn && typeof s === "string") catat(enKuat, s); };
 const teksEnMiring = (s) => { if (modulEn && typeof s === "string") catat(enLemah, s); };
 const pecah = (s) => String(s).toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
-const catat = (m, s) => pecah(s).forEach((w) => m.set(w, (m.get(w) || 0) + 1));
+const catat = (m, s) => pecah(s).forEach((w) => {
+  m.set(w, (m.get(w) || 0) + 1);
+  if (m === idF) (idModul.get(w) ?? idModul.set(w, new Set()).get(w)).add(modulKini);
+});
+/* [ebook-jaga-bahasa-id-v3] Di modul mana saja kata itu tercetak di prosa
+   Indonesia. Bocoran bahasa target (kata tanpa tanda miring di contoh) hampir
+   selalu milik SATU modul; kata Indonesia sungguhan berulang lintas modul. */
+const idModul = new Map();
+let modulKini = "";
+/** Modul yang bahasa targetnya Indonesia/Melayu: ruas targetnya justru kata
+ *  Indonesia, jadi tak boleh ikut menimbang perbandingan 6:1. */
+const MODUL_SERUMPUN = /^(id|ms)-/;
+let modulSerumpun = false;
+/* Kata yang pernah tercetak di ruas bahasa target YANG DIJAMIN SKEMA (baris
+   dialog, `title_target`, kolom vocab) di modul mana pun — nama tokoh "Budi",
+   "gratis" di dialog Spanyol, "piring" di dialog Jawa. Kata begini tidak
+   dikunci sama sekali: membungkamnya berarti memotong kalimat target. Modul
+   Sunda dikecualikan karena pagarnya memang mati untuk `su`. */
+const tgSkema = new Set();
+const teksSkema = (s) => {
+  if (typeof s === "string" && !modulSerumpun && !modulKini.startsWith("su-")) pecah(s).forEach((w) => tgSkema.add(w));
+};
 
 /** Teks Indonesia: penggalan *miring* di dalamnya justru bahasa target. */
 function teksId(s) {
@@ -66,7 +87,7 @@ function teksId(s) {
   teksEnMiring(miring);                             // *miring* = bahasa target, menurut aturan modul
   catat(idF, s.replace(MIRING, " "));
 }
-const teksTarget = (s) => { if (typeof s === "string") catat(tgF, s); };
+const teksTarget = (s) => { if (typeof s === "string" && !modulSerumpun) catat(tgF, s); };
 const daftarId = (v) => (Array.isArray(v) ? v : [v]).forEach(teksId);
 
 function blok(b) {
@@ -91,18 +112,18 @@ function blok(b) {
 }
 
 function unit(j) {
-  teksId(j.title); teksTarget(j.title_target); teksEn(j.title_target); teksId(j.goal); daftarId(j.bekal);
+  teksId(j.title); teksTarget(j.title_target); teksSkema(j.title_target); teksEn(j.title_target); teksId(j.goal); daftarId(j.bekal);
   for (const d of j.dialogs || []) {
     teksTarget(d.title); teksId(d.intro);
-    for (const l of d.lines || []) { teksTarget(l.text); teksEn(l.text); teksId(l.id); teksId(l.literal); }
+    for (const l of d.lines || []) { teksTarget(l.text); teksSkema(l.text); teksEn(l.text); teksId(l.id); teksId(l.literal); }
   }
   for (const s of j.sections || []) { teksId(s.title); (s.blocks || []).forEach(blok); }
-  /* Kunci kolom bahasa target per modul: es, ja, en, it, de, zh. Modul baru
-     WAJIB menambah kuncinya di sini — kalau tidak, kata bahasa targetnya tak
-     pernah terhitung di ruas target, lolos perbandingan 6:1, lalu ikut terperas
-     jadi "kata Indonesia" dan dibungkam di reader. */
+  /* Kolom bahasa target = semua kunci vocab selain `id` (arti) dan `baca`
+     (cara baca). Dulu daftarnya ditulis tangan (es, ja, en, …) dan modul baru
+     yang lupa ditambahkan — pl, sv, tl, … — lolos perbandingan 6:1, lalu kata
+     bahasa targetnya ikut terperas jadi "kata Indonesia". */
   for (const v of j.vocab || []) {
-    for (const k of ["es", "ja", "en", "it", "de", "zh", "ms"]) teksTarget(v[k]);
+    for (const k of Object.keys(v)) if (k !== "id" && k !== "baca") { teksTarget(v[k]); teksSkema(v[k]); }
     teksEn(v.en); teksId(v.id);
   }
   for (const e of j.exercises || []) { teksId(e.title); teksId(e.prompt); daftarId(e.items); }
@@ -116,6 +137,8 @@ for (const modul of fs.readdirSync(AKAR)) {
   const dir = path.join(AKAR, modul);
   if (!fs.statSync(dir).isDirectory()) continue;
   modulEn = /^en-/.test(modul);
+  modulKini = modul;
+  modulSerumpun = MODUL_SERUMPUN.test(modul);
   for (const berkas of fs.readdirSync(dir)) {
     if (!berkas.endsWith(".json")) continue;
     unit(JSON.parse(fs.readFileSync(path.join(dir, berkas), "utf8")));
@@ -127,7 +150,11 @@ for (const modul of fs.readdirSync(AKAR)) {
    satu arah — kalau kata itu ternyata bahasa target, ia sudah tersaring lebih
    dulu oleh perbandingan 6:1 di atas. */
 const kata = [...idF.entries()]
-  .filter(([w, n]) => n >= 1 && w.length >= 3 && /^[a-z]+$/.test(w) && n >= 6 * (tgF.get(w) || 0))
+  /* Minimal di 2 modul: tanpa syarat ini daftar melar ke ~20 ribu kata, dan
+     ekornya penuh kata bahasa target yang tercetak tanpa tanda miring di
+     prosa satu modul saja. */
+  .filter(([w, n]) => w.length >= 3 && /^[a-z]+$/.test(w) && n >= 6 * (tgF.get(w) || 0) &&
+    (idModul.get(w)?.size || 0) >= 2 && !tgSkema.has(w))
   .map(([w]) => w)
   .filter((w) => !BUANG.has(w) && !EKOR_ASING.test(w))
   .sort();
