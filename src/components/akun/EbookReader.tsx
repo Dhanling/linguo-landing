@@ -2832,7 +2832,7 @@ export default function EbookReader({
   const langkahPenuh = useMemo<LangkahPanduan[]>(() => [
     {
       judul: t("Cara memakai reader ini"),
-      isi: t("Tujuh langkah singkat, kurang dari satu menit. Kamu bisa membukanya lagi kapan saja."),
+      isi: t("Delapan langkah singkat, sekitar satu menit. Kamu bisa membukanya lagi kapan saja."),
       tip: t("Tekan Esc untuk keluar, panah kiri/kanan untuk berpindah langkah."),
     },
     {
@@ -2866,6 +2866,14 @@ export default function EbookReader({
       target: ['[data-panduan="latihan"]', '[data-panduan="navigasi"]'],
       judul: t("Kerjakan latihannya di layar"),
       isi: t("Di halaman yang ada blok LATIHAN-nya, tombol ini muncul di bilah bawah. Soalnya dikerjakan langsung di sini dan dinilai otomatis — tanpa kertas."),
+    },
+    /* [ebook-panduan-audio-v1] Tombol audio cuma ada di halaman naskah
+       Listening — di halaman lain langkahnya menyorot bilah bawah, tempat
+       tombol itu nanti muncul. */
+    {
+      target: ['[data-panduan="audio"]', '[data-panduan="navigasi"]'],
+      judul: t("Dengarkan audio Listening"),
+      isi: t("Di halaman naskah Listening, tombol Putar audio muncul di bilah bawah. Putar audionya sambil membaca naskahnya."),
     },
     {
       target: ['[data-panduan="panduan"]'],
@@ -4203,6 +4211,7 @@ export default function EbookReader({
           {naskahKini?.transkrip?.audio && (
             <button
               onClick={() => setAudioBuka((v) => !v)}
+              data-panduan="audio"
               aria-expanded={audioBuka}
               className={`ml-1 flex shrink-0 items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] font-extrabold transition ${
                 audioBuka ? "bg-[#3ED9C0] text-black" : "bg-white/10 text-white hover:bg-white/[0.16]"

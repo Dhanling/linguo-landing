@@ -60,6 +60,9 @@ const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'
 const OnbSuccessLottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 // [akun-login-redesign-v1] Efek typewriter untuk sapaan multi-bahasa di panel kiri login.
+// [ebook-email-baca-titip-v1] ?ebook=<id> yang dititipkan melewati login.
+const TITIP_EBOOK_KEY = "linguo_titip_ebook";
+
 const LOGIN_GREETINGS = ["Halo!", "Bonjour!", "안녕!", "¡Hola!", "Ciao!", "こんにちは!", "你好!", "Hallo!", "Olá!", "안녕하세요!"];
 function GreetingTypewriter() {
   const [idx, setIdx] = useState(0);
@@ -2801,6 +2804,23 @@ export default function AkunPage() {
     if (view === "live" || view === "mandiri") { resolved = "materi"; } // [beranda-tanpa-tab-mandiri-v1] view lama tetap mendarat di Kelas & Materi
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
     if (ebookId) { setBukaEbook(ebookId); resolved = "pustaka"; } // [ebook-pratinjau-unit1-v1]
+    /* [ebook-email-baca-titip-v1] Tombol "Baca E-Book Sekarang" di email akses
+       menunjuk /akun?ebook=<id>, tapi pembeli baru biasanya BELUM login — dan
+       link login email / Google membuka halaman baru tanpa param itu. Id-nya
+       dititipkan sebentar supaya readernya tetap terbuka sesudah masuk. */
+    try {
+      if (ebookId) {
+        localStorage.setItem(TITIP_EBOOK_KEY, JSON.stringify({ id: ebookId, ts: Date.now() }));
+      } else if (!resolved) {
+        const titip = JSON.parse(localStorage.getItem(TITIP_EBOOK_KEY) || "null");
+        if (titip?.id && Date.now() - Number(titip.ts) < 2 * 3600_000) {
+          setBukaEbook(String(titip.id));
+          resolved = "pustaka";
+        } else if (titip) {
+          localStorage.removeItem(TITIP_EBOOK_KEY);
+        }
+      }
+    } catch {}
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan")) resolved = menu;
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
     // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
@@ -5395,7 +5415,10 @@ export default function AkunPage() {
                   supabase={supabase}
                   previewStudentId={previewId}
                   autoOpenEbookId={bukaEbook}
-                  onAutoOpened={() => setBukaEbook(null)}
+                  onAutoOpened={() => {
+                    setBukaEbook(null);
+                    try { localStorage.removeItem(TITIP_EBOOK_KEY); } catch {}
+                  }}
                 />
               )}
             </motion.div>

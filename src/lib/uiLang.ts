@@ -718,7 +718,10 @@ const EN: Record<string, string> = {
   "Kerjakan latihan": "Do the exercises",
   /* [ebook-panduan-tour-v1] Panduan berpandu di reader e-book. */
   "Cara memakai reader ini": "How to use this reader",
-  "Tujuh langkah singkat, kurang dari satu menit. Kamu bisa membukanya lagi kapan saja.": "Seven quick steps, under a minute. You can reopen it any time.",
+  "Delapan langkah singkat, sekitar satu menit. Kamu bisa membukanya lagi kapan saja.": "Eight quick steps, about a minute. You can reopen it any time.",
+  // [ebook-panduan-audio-v1]
+  "Dengarkan audio Listening": "Listen to the Listening audio",
+  "Di halaman naskah Listening, tombol Putar audio muncul di bilah bawah. Putar audionya sambil membaca naskahnya.": "On a Listening script page, a Play audio button appears in the bottom bar. Play the audio while you read along.",
   "Tekan Esc untuk keluar, panah kiri/kanan untuk berpindah langkah.": "Press Esc to leave, left/right arrows to move between steps.",
   "Lompat lewat daftar isi": "Jump around with the contents",
   "Semua unit modul terdaftar di sini beserta nomor halamannya — ketuk satu unit untuk langsung ke sana, tanpa membalik satu per satu.": "Every unit is listed here with its page number — tap one to go straight there instead of flipping page by page.",
