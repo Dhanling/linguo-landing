@@ -342,10 +342,750 @@ const TAMBAHAN_ID = `
   sendiri sendirinya biasa umumnya intinya pokoknya singkatnya artinya maksudnya
 `;
 
+/* [ebook-jaga-bahasa-id-v3] Perasan ULANG dari 96 modul (17 Sep 2026) — hanya
+   kata yang belum ada di dua daftar di atas. LEKSIKON_ID diperas waktu
+   modulnya masih segelintir, jadi prosa modul new edition penuh kata Indonesia
+   yang tak dikenalnya — "Kalimat *penyelamat* nomor satu" di Polish 101 — dan
+   kata tak dikenal dianggap bahasa target, lalu dibunyikan berlogat Polandia.
+   Syarat masuknya lebih ketat dari perasan pertama: tercetak di prosa ≥ 2
+   modul, dan TAK PERNAH muncul di baris dialog/kosakata/judul target modul
+   mana pun (selain Sunda) — lihat scripts/leksikon-id-ebook.mjs. */
+const LEKSIKON_ID_V3 = `
+  abad abadi abaikan abangnya abjadnya above absorb acaranya aceh acnya acuan adab adabnya
+  adakan adaptasi adapun adat adatnya adegan adem adikku adikmu adiknya adil adit
+  administrasi administrasinya adobonya adu aduk afghanistan aflyste afrika agaknya agama
+  agen agennya agensi agresif agrikultura agung ahad ahli aib airnya ajaib ajak ajar
+  ajarin ajarkan ajukan akademis akal akanlah akarnya akhiran akhirannya akhiri aksenmu
+  aksennya akses akta aktifnya aktivitas aktor aktris aktrisnya akulah akun akuntansi akur
+  akurat akus alamatmu alamatnya alami alarmku alarmnya alasanmu alatnya album alergimu
+  alipay alive alkitab allah alternatif alternatifnya alunnya alur alvarez amal amandel
+  amandelnya amankan amannya amati ambilkan ambillah ambulans amiche amman amplop ampuh
+  amusons anakku anakmu anaknya analis analisis analog andai andaian andaikan andal
+  andalan andalkan andat andavamo andremmo andremo anehnya anggap anggaran anggarannya
+  angguk anggurnya anginnya angkamu angkatan angkut angkutan angsa angsur anisa anjingnya
+  anjlok anjuran anonim antar antarkan antarmuka antarteman antei antibiotik antre
+  antreannya apaan apabila apakan apanya apartemenku apartemenmu apartemennya apelnya
+  apinya aplikasinya apostrof apoteker apotekernya appeared appears arab arabmu arabnya
+  arahan arahmu arahnya arak area argo argonya argumen argumenmu arithmetic arloji aroma
+  arrangements arrivent arrivi arsip arsipnya arsitek arsitektur artikelmu artikelnya arus
+  asal asalan asalkan asalnya asap asas asean asisten asli asmara aspek aspeknya asrama
+  assimil astaga asumsi asuransi asuransinya atap atapnya atasanmu atasannya atasmu atik
+  atlantik attach atur audionya aurora austronesia avviser awalan awalnya awas awasi
+  ayahnya ayat babak babi babinya babnya bacain bacakan bacon badanku bagaimanapun bagan
+  bagasi bagasinya bagianmu bagikan bagimu baguslah bagusnya bahas bahasamu bahasan bahaya
+  baht bahunya baikan baitnya bajumu bajunya bakarnya bakat bakcang baklava bakpau bakteri
+  bakti bakunya balapan balas balasan balasannya balau bales balikin baliknya balkan
+  balkonnya balok bambini banding bandingkan bangga banggakan bangi bangku bangsal
+  bangsanya bangunan bangunannya bangunkan bangunnya banjir bantah bantahannya bantal
+  bantalnya banter bantuanmu bantunya banyakkan banyaknya barangkali barangnya barengan
+  baret baring baringkan barisnya barista barulah barumu barusan basemen basement basque
+  batal batalin batalkan batangnya batasi bate baterai baterainya batin batuk batuknya
+  batunya bau baunya bawaannya bawahi bawahnya bawain bawakan bawalah bawangnya bayam
+  bayangannya bayangin bayarannya bbc beasiswa bebannya beda bedah bedoeld bee beekeepers
+  bees begadang begini beginilah begituan begitulah behaves beijing bekal bekalnya beker
+  belah belajarlah belajarmu belajarnya belaka belakangmu belanda belandamu belandanya
+  belanjaanmu belanjakan belanjanya belasan belasnya beliau believes beliin belikan
+  belilah belokkanlah beloklah benang benarkah benarkan benarnya bencana beneran benerin
+  bengkak bengkel bengkok bensin bentang bentangkan bentar benteng bentrok bentukan
+  bepergian berabad beradalah beradu beragama berair berakal berakar berakhiran beraksara
+  beralih beramai berambut berangkatnya berangsur berani beranjak berantakan berantem
+  berarah berargumen berasa berasnya berasumsi beratnya beraturannya berawalan berayun
+  berbagai berbahagia berbahaya berbaik berbaikan berbakti berbalas berbaris berbatasan
+  berbau berbayar berbelit berbeloklah berbenturan berbicaralah berbincang berbobot
+  berbohong berbuat berbulan berbunga berbunyi bercabang bercahaya bercakap bercanda
+  berceritamu bercetak bercukur berdamai berdarah berdasar berdasarkan berdaya berdebat
+  berdebu berdempet berdentang berderet berdering berdesakan berdirilah berdiskusi
+  berempat berencana berendam beres beresi beresin bereskan berfokus berfoto bergabung
+  bergambar berganda bergandengan bergaris bergaul bergaya bergegas bergelar bergelembung
+  bergema bergembira bergerak bergiliran bergosip berguguran bergurau berhadapan berhak
+  berhalangan berharakat berhari berhemat berhentilah berhentinya berhitung berhubung
+  berhujan berhuruf berikan berilah berimbuhan beristirahatlah beristri beritahu beritamu
+  beritanya berjadwal berjaga berjajar berjalanlah berjam berjamak berjanggut berjangka
+  berjauhan berjemur berjenggot berjenis berjenjang berjualan berjuang berjumlah berjumpa
+  berkabar berkacamata berkah berkaitan berkaki berkala berkali berkas berkasmu berkasnya
+  berkatalah berkebalikan berkeberatan berkedudukan berkelahi berkelanjutan berkeliling
+  berkelok berkeluarga berkemas berkenan berkendara berkepala berkepentingan berkerabat
+  berkeringat berkesan berkesempatan berketerangan berkewajiban berkirim berkisah berkisar
+  berkomentar berkonotasi berkonsentrasi berkonsultasi berkuasa berkumpul berkunjung
+  berkurang berkurung berlabel berlalu berlama berlampu berlangganan berlanjut berlapis
+  berlarut berlatar berlawanan berlebih berlibur berliku berlimpah berlipat bermacam
+  bermain bermaksud bermarga bermata berminggu berminyak bermotor bermuatan bermukim
+  bermula bernada bernapas berniat bernilai bernyanyi berobat berongga beroperasi
+  berpadanan berpagar berpantul berpapasan berpartikel berpemanas berpendapat
+  berpengalaman berpengaruh berpenghasilan berperabot berperangai berperilaku berpihak
+  berpikir berpikirmu berpikirnya berpuasa berpuluh berpura berpusat berputar bersaing
+  bersalah bersalaman bersamaan bersamaku bersamanya bersangkal bersangkalan bersangkutan
+  bersantai bersarapan bersasaran bersayap bersebelahan bersedia bersekolah berselisih
+  bersemangat bersembahyang bersenandung bersenang bersepakat bersepeda berseru bersiaplah
+  bersidang bersifat bersikap bersikeras bersilangan bersimpati bersin bersinar
+  berspekulasi berstatus berstruktur bersulang bersumber bersumpah bersungguh bersusah
+  bersusunan bersyukur berta bertabrakan bertahap bertali bertamu bertanda bertandang
+  bertanggung bertanyalah bertanyanya bertaruh bertebaran berteduh bertele bertelepon
+  berteman bertempat bertemu bertenaga bertengkar bertepuk bertepung berteriak berterima
+  bertetangga bertindak bertingkah bertipe bertitik bertiup bertugas bertulis bertulisan
+  bertuliskan bertumbuh berturut berturutan berubahnya berujung berumah berunding beruntun
+  beruntung berupaya berurusan berusia berutang berwajah berwaktu berwisata berwujud
+  besaran besarannya besi besoknya bete betulkan biarin biarkanlah biarlah biarpun
+  biasakan biasamu bibinya bibirmu bibirnya bicaraku bicaralah bidang bidangnya bihun
+  bijak bijaksana biji bikinin bikinnya bilangan bilangannya bilangin bilangnya bimbang
+  bimbingan bimbingannya bina bingkai bintang biola bioskopnya birnya birokrasi biryani
+  bisalah bisanya bisita biskuit bisnis bius blak blakan blok blus bobot bobotnya bocor
+  bocornya bodoh body boekje bohong bolak bolehkah bolehlah bolong bombay bongkah
+  bongkahan bongkar boros bosen bosku bosmu bosnya botol botolnya bowl branch breaking
+  british brussel buahan buahnya buang buatan buatku buatlah bubar bubuhkan bubuk bugar
+  bukalah bukankah bukanlah bukannya bukit bukti buktikan bukunya bulanan bulanannya
+  bulatan bulatnya bulu bumbunya bundar bundaran bunganya bungkukkan bungkusan bungkusnya
+  bunyimu buram buruknya burung busnya busuk buta butir butirnya butuhin butuhkan butuhnya
+  cabainya cabang cabut cacat cadang cahaya cahayanya cairan cakap cakep cakupan
+  cakupannya calon camerieri camilan candi candra capai capaian cards carikan carilah
+  catat catatanmu catatannya catatlah catur cctv cedera cegah cekatan ceko celah celahnya
+  celananya cemas cemerlang cenderung centang cepatkan cepatlah cepatnya cepetan cerdik
+  cerewet ceritain ceritakanlah ceritanya cermin cerminnya cerna ceroboh cetak cetakan
+  cetakkan cewek cherchais cherchons chien choose cicilan cicip cicipilah cincin ciri
+  clara closer cocokkan coklat college colokan combined conference confidential congrats
+  contains continent contohkan contohnya costi counting cowok criticism croissant cru
+  cucian cucinya cucunya cuka curah curam curang curiga curigai cute cutinya cuy dacha
+  daerah daerahmu daerahnya daftarkan daftarnya dagang dagangan dahak dahi dahulu daily
+  dakwaan dalih damai dampaknya dana dananya danau danaunya dapatkan darah daratan dariku
+  darimu daring darinya darmi daruratnya dasarmu dashboardmu datamu datangi datanglah
+  datangnya datanya daulat daur daya dayung debat debit dedikasi definisinya degan deh
+  dehidrasi dejarlo deket delf deliberately delima demam demamnya demikian denah dendam
+  dendanya denganku denganmu dengannya dengarkanlah dengarlah dengarnya denger dengerin
+  denmark denmarkmu denmarknya denyut departamento deped depositnya derajatnya deret
+  deretnya derita desa desain desainer desak desakan descend description desimal desisyon
+  deskripsi detailnya devanagari dewa dewan dewasa diabetes diacak diaduk diagnosis
+  diajari diajarkan diajukan diakhiri diakses diakui dialah dialami dialek dialeknya
+  diamlah dianalisis diandalkan diangkat diangkut diantar diantarkan diapa diapain diapit
+  diarahkan diawali diawasi dibacakan dibacanya dibagi dibagikan dibahas dibakar dibakukan
+  dibalikin dibanding dibandingkan dibanggakan dibantu dibatasi dibayangkan dibayar
+  dibayarkan dibebaskan dibela dibelanjakan dibelikan dibenci dibentangkan dibentuk
+  dibereskan diberhentikan diberitahu diberitahukan diberkahi diberkati diberlakukan
+  dibersihin dibersihkan dibesarkan dibetulkan dibiarkan dibiasakan dibikin dibilang
+  dibilangin dibisa dibohongi dibongkar dibuang dibuktikan dibunyikannya dibutuhkannya
+  dicabut dicampur dicantumkan dicap dicapai dicarikan dicat dicatat dicegah dicek
+  diceritain diceritakan dicicil dicicip dicicipi dicoret dictionaries dictionary dicuci
+  dicukur dicuri dicurigai didaki didatangi didenda didengar didengarkan didukung difoto
+  digagalkan digambarkan digandakan diganggu diganti digantung digarap digelar
+  digeneralisasi digeser digoreng digubris digugat dihabiskan dihadapi dihadiri dihafalkan
+  dihapus dihargai diharuskan dihemat dihentikan dihidangkan dihidupkan dihilangkan
+  dihitung dihubungi diinformasikan diingatkan diingetin diinjak diisap diisi diizinkan
+  dijadikan dijalan dijalani dijalankan dijamakkan dijamu dijangkau dijatuhkan dijemput
+  dijual dijumlah dikabari dikabarin dikabarkan dikabulkan dikacaukan dikalahkan dikali
+  dikalikan dikarang dikasih dikatakan dikecilkan dikehendaki dikelola dikelompokkan
+  dikeluarkan dikeluhkan dikemas dikembalikan dikenali dikenalnya dikeringkan diketahui
+  diketuk dikhawatirkan dikira dikirim dikirimi dikirimkan dikit diklaim dikocok
+  dikonfirmasi dikonversi dikoreksi dikritik diksi dikte dikuasai dikumpulkan dikunci
+  dikunjungi dikurangi dikutip dilacak dilaksanakan dilakuin dilakukan dilampirkan
+  dilanggar dilanjutkan dilaporkan dilarang dilawan dilayani dilebih dilegalisasi
+  dilembutkan dilengkapi dilewat dilewatkan dilihatnya dilipat dilirik dilokalkan
+  dilontarkan dilukiskan dilunasi diluncurkan diluruskan dima dimaafkan dimakan dimaklumi
+  dimaksud dimaksudkan dimandikan dimanfaatkan dimarahi dimasakkan dimasukin dimasukkan
+  dimatikan dimenangkan dimengerti diminum diminumnya dimohon dimudahkan dimulai
+  dimuliakan dimundurkan dinaikkan dinamai dinar dinas dinegosiasikan dinginnya dini
+  dinikmati dinilai dinyalakan dinyanyikan dinyatakan dinyatakannya diomongin dioperasi
+  dipahat dipakai dipanaskan dipandang dipangkas diparafrase diparkir dipasang dipasifkan
+  dipatuhi dipecah dipecat dipekerjakan dipelajarinya dipendekin dipendekkan dipenuhi
+  diperbaiki diperbarui diperbolehkan dipercaya dipercepat diperdebatkan diperebutkan
+  diperhatikan diperiksakan diperingatkan diperintah diperjelas diperjuangkan
+  diperkenalkan diperkirakan diperlakukan diperlihatkan diperluas diperlukan dipermalukan
+  diperpanjang dipersiapkan dipersilakan dipersoalkan dipertahankan dipertaruhkan
+  dipertimbangkan dipesan dipesankan dipijak dipikirin dipikirkan dipilah dipindai
+  dipinjam dipinjami dipisah dipisahkan diproses dipublikasikan dipuji dipungut dipunyai
+  diputar diputus diputuskan dirakit diramalkan dirangkum dirapikan dirasakan dirawat
+  dirayakan direbut direkam direkomendasikan direksi direktur direkturnya direndahkan
+  direndam direnovasi diresepkan direvisi dirikan diriku dirilis dirindukan diringkas
+  dirmelo dirugikan dirundingkan disadari disalahkan disalahpahami disamakan disambungkan
+  disampaikan disangka disangkal disapa disappointing disapu disatukan disayangkan
+  discover disebutkan disederhanakan disediakan diseduh diselamatkan diselenggarakan
+  diselesaikan disembunyikan disengaja disepakati diserahkan diserang diserap disesali
+  disetujui disewa disewakan disiapkan disifati disifatinya disimpan disinggung
+  disingkirkan disiplin disisihkan disuguhi disukai disusul disyaratkan ditabrak
+  ditafsirkan ditagih ditaksir ditakuti ditakutkan ditambal ditanam ditandai ditandainya
+  ditandatangani ditanggapi ditangguhkan ditanggung ditangkap ditanyai ditanyain ditarik
+  ditaruh ditata ditawari ditawarkan ditegakkan ditegaskan ditegur ditekan ditelaah
+  ditelepon ditemani ditempati ditempatkan ditempel ditempeli ditempelinya ditempelkan
+  ditempuh ditemukan ditengok ditentukan ditepati diterangkannya diterapkan diterbitkan
+  diterima ditertawakan diteruskan ditetapkan ditiduri ditinggali ditinggikan ditinjau
+  ditiru dititipkan ditonton ditransfer dituang ditujukan ditulis ditulisnya ditunda
+  ditunggu dituntaskan ditutupi dituturkan diukur diumumkan diundang diundur diungkit
+  diurus diusulkan diutak divalidasi diverifikasi divisi divoting diwajibkan diwarisi
+  diwariskan diwawancara diwawancarai doa doakan doang dobr dokternya dokumen dokumennya
+  dokumentasi domisili dompetmu dompetnya dongeng donnes dormendo dorong doryoku dosenmu
+  dosennya download doyan draf drafnya drastis dresden drops dsb dudukkan duduklah
+  duduknya duga dugaanku dugaannya dukung dukungan duluan dupa duri durinya dusnya
+  dwibahasa efek efisien efisiensi ehm eja ekonomis ekor ekornya eksis ekspedisi
+  ekspektasi ekspresi eksternal ekstrem elegan elektronik eliminasi elok emailku emailnya
+  emang emangnya embel embun emisi emosi emosional empatnya empedu enakan enamnya
+  endingnya eneg energi enggak enggan engkau engsel enrolment entah entahlah enteng enter
+  entradas entres entri equipment equivalent esai esainya estropear etalase evaluasi
+  examiner exercises experienced facebook fajar faktanya faktor faktur fakturnya fakultas
+  falso fantastis farah fasad fase fasih fasilitas fatima favoritmu favourite femininnya
+  femke feri fields figures filenya filipina filosofis finisci finlandia fiskal fitnah
+  flowering flu fokusnya formalitas formulirnya fossil fotografer fotografi fotoin
+  fotokopi fotolah fotonya francese frasanya frisch frustrasi fuka fuman fungsi fungsinya
+  fusha gabung gabungan gabungannya gabungkan gadis gagang gagangnya gagasan gajah gajian
+  gajinya galat gambar gambarannya gambarnya gandum ganggu ganteng gantian gantiin
+  gantikan gantinya gantung gantungan garam garamnya garansi garansinya garasi gardez
+  garing garpu gaul gawat gayanya gedungmu gedungnya gejala gejalanya gekauft gelang gelap
+  gelapnya gelar gelasnya gelembung geli gelisah gemar gemas gembira gembok gemboknya
+  gemetar gempa gemuk gemukan genangan genap gendang generasi generator generik generiknya
+  genggam genggamnya gengsi genuine georgia gerai gerakannya gerakkan geraknya gerbangnya
+  gerbong gerejanya gerobak gesa gesek gesekan geser gestuurd getarkan gevaarlijk giga
+  gigih gigit gih gila gilirannya gini ginjal giron gitu godaan godaannya golongannya
+  gonggong gorden gosip gosong gotong goyah grafiknya grass greater grup gua guangzhou
+  guchi gudang gudangnya gugatan gugup gujarat gulanya gumpalan guna gunakan guncangan
+  gundukan gundul gunting guntur gunungnya gupit gusi gyeongbokgung habisan habisin
+  habislah habisnya hadap hadapi hadiahnya hadir hadirin hafalannya haikei hajatan hak
+  hakikat hakmu haknya halal halamannya halnya halusnya hambatan hamil hampa hancur
+  handful handuk handuknya hangeul hangus hanyalah hape hapenya hapus harakat harapkan
+  hardest harfiahnya hargai hariku haring harta harum haruslah harusnya hasilkan hatian
+  hatiku hatilah hatimu hatinya heboh heden helai helm helsinki hemat hematnya hembusan
+  hembusannya hendak hendra hening henti hentikan hewannya hibrida hibur hiburan
+  hidangannya hide hidung hidungmu hidupnya hijriah hiku hilangkan hindu hingga hinugasan
+  hipotek hipotesis hiro hisab hitunganmu hitungannya hitunglah hive hoaks hobimu hoki
+  hokkien homens hont hormati hormatnya hotelnya hotpot hubieran hubung hubungan
+  hubunganmu hubungannya hubungi hujannya hukum hukuman hummus humor hunian hutan ibadah
+  ibrani ibunya idealnya identik identitasmu identitasnya idenya idhafah idiom idiomnya
+  idulfitri igd ijazah ikannya iklan iklannya iklim ikutilah ikutin ilmu ilmuwan iman
+  imbalannya imbauan imbuhan imbuhannya imigrasi immigration impas impor imut inap incar
+  independence indera indo indomaret indra induknya induksi infeksi infinitifnya infonya
+  informasi informasinya informatika infrastruktur ingatanmu ingatkan ingetin inggrismu
+  ingkarnya ingus ininom injak insiden insister instalasi installed institut instr
+  instruksi insyaallah interior internetnya interrupting intervensi intip inversinya
+  investasi investigasi iramanya iran irina iris irlandia ironis isan iseng islam islami
+  islandia issues istilahnya istirahatlah istirahatnya istrimu isyarat italiamu italianya
+  iuran ivan iyalah izinkan izinnya jabatan jabatannya jadikan jadilah jadinya jadwalnya
+  jagain jagalah jahat jahe jahit jahitan jahitannya jaketmu jaketnya jalanan jalankan
+  jalanlah jalanmu jalur jalurnya jamaknya jambu jamin jaminan jaminanmu jaminannya jamuan
+  jamurnya jangankan janganlah janggut jangka jangkau jangkauan janjikan janjinya jantung
+  japanese jaring jatah jatuhnya jauhnya jawabku jawablah jawabmu jawabnya jebakan
+  jebakannya jebol jedanya jedo jejak jelas jelasin jelaskan jelek jeleknya jeli jempol
+  jendelanya jenggot jenguk jenis jenisnya jenjang jeonse jepangmu jepit jerih jerman
+  jermanmu jermannya jernih jersey jeruknya jilbab jilid jiwa jorok jual jualan juara
+  jubah judul judulnya jujurnya jumlah juntrungannya jurusan jutaan kabarin kabel kabin
+  kabinnya kabupaten kaca kacamata kacangan kacanya kacau kadarnya kadonya kafenya kaidah
+  kainnya kairo kait kakakku kakakmu kakaotalk kakekku kakekmu kakeknya kakiku kakinya
+  kalangan kalaupun kalbu kaleng kalengan kalian kaligrafi kalikan kambing kameranya
+  kampanye kampungan kampusnya kamulah kanakan kananmu kandidat kanton kantongnya kantoran
+  kantormu kapalnya kapasitas kapel kapital kapnya kaprah kapten karachi karang karangan
+  karaoke karat karbon kardus kardusmu kardusnya karenanya karier karpet kartunya karya
+  kasar kasarnya kasihkan kasingmahal kasirnya kastet kastil kasurnya kasus kasusnya
+  katakan katakanlah katalog katamu kategori katering katte kau kaupakai kaus kawan
+  kawannya kawasan kawin kayak keadaanmu keadaannya keadilan keagamaan keahlian keajaiban
+  keamanan keanehan keanggotaan keasinan keausan kebablasan kebagian kebahagiaan kebaikan
+  kebaikanmu kebajikan kebakar kebakaran kebalikan kebalikannya kebanggaan kebangun
+  kebanjiran kebasahan kebebasan kebenarannya keberadaannya keberanian keberaniannya
+  keberapa keberatan keberatannya keberhasilan kebersihan keberuntungan kebiasaanmu
+  kebiasaannya kebijakan kebijaksanaan kebingungan kebingungannya kebisingan kebocoran
+  kebohongan kebosanan kebudayaan kebun kebunnya keburu kecamatan kecanduan kecantikan
+  kecelakaan kecenderungan kecepatanmu kecepatannya kecepetan keceplosan kecerdasan
+  kecerobohan kecilan kecilkan kecilmu kecualinya kecurian kedai kedainya kedaluwarsa
+  kedap kedatanganmu kedatangannya kedelapan kedengeran kediaman kedinginan kedip keduamu
+  kedudukan kedudukannya kedutaan keenamnya keesokan kefasihan kefir kegagalan kegelapan
+  kegemaran kegembiraan kegiatan kegiatanmu kegunaan kehadiran kehadiranmu kehadirannya
+  kehalusan kehangatan keharusan kehati kehausan kehidupan kehormatan kehujanan keindahan
+  keindahannya keisatsu kejadiannya kejam kejanggalan kejar kejauhan kejayaan kejunya
+  kejuruan kejutan kejutannya kekacauan kekanak kekasaran kekasih kekayaan kekecewaan
+  kekecualian kekecualiannya kekejar kekeliruan kekerabatan kekerapan kekerasannya
+  kekeringan kekesalan kekhasan kekhawatiran kekosongan kekosongannya kekuatan kekuatanmu
+  kekuatannya kekurangajaran kekurangannya kela kelahiran kelak kelakuannya kelalaian
+  kelamaan kelambu kelamin kelaminmu kelaminnya kelancangan kelancaran kelanjutan kelapa
+  kelapanya kelaparan kelar kelarin kelasmu kelaziman kelebihan kelebihanmu keledai
+  kelegaan kelemahan kelembagaan kelembapan kelewat kelewatan keliling kelimanya kelipatan
+  kelompokkan kelompokmu kelompoknya kelonggaran kelontong keluangan keluaran keluargamu
+  keluarganya keluarin keluarkan keluarlah keluarnya keluhan keluhanmu keluhannya
+  kelulusan kelupaan kelurahan kemacetan kemah kemahalan kemahiran kemajuanmu kemajuannya
+  kemalaman kemalasan kemampuannya kemangi kemanginya kemanusiaan kemarahan kemari
+  kemarilah kemarinmu kemasan kemasannya kematian kembalikan kembar kembaran kembarannya
+  kementerian kemiripan kemiskinan kemudahan kemudi kemunculan kemunduran kemurahan
+  kenaikan kenaikannya kenalanmu kenalannya kenangan kencang kencing kendala kendalikan
+  kendara kendaraannya kendarai kenduri kentara kenyamanan kenyang kenyataan kenyataannya
+  kep kepadaku kepadanya kepadatan kepagian kepal kepalaku kepalanya kepanasan kepanjangan
+  kepastiannya kepedasan kepedulian kepekaan kependekan kepentingan kepentingannya
+  kepercayaan kepercayaannya kepergian keperluan keperluanmu keperluannya kepikiran
+  kepindahan keping kepingin kepo kepolisian keponakannya kepuasan kepulangan kepulauan
+  kepunyaan kepunyaanku kepunyaanmu kepunyaannya keputusan keputusanmu keputusannya
+  kerabat keraguan keramahan keramaian keran keranjang kerap kerasa kerasnya kerbau keren
+  kerendahan kerepotan keresmian keributan keriting kerjaanku kerjaanmu kerjaannya kerjain
+  kerjanyalah kern kertas kertasnya kerudung kerugian kerugiannya kerukunan kerumitan
+  kerusakan kerusakannya kesabaran kesabarannya kesadaran kesakitan kesaksian kesal
+  kesalahanmu kesalahannya kesalahpahaman kesalkan kesamaan kesanggupan kesanmu kesannya
+  kesatu kesatuan kesebelas kesedihan keseharian kesehatan kesehatanmu kesehatannya
+  keseimbangan keselamatan keselarasan keseleo keseluruhan kesembilan kesempatannya
+  kesempitan kesempurnaan kesempurnaannya kesenjangan kesepian keseratus keseringan
+  kesetiaan kesialan kesiangan kesibukan kesimpulanmu kesimpulannya kesombongan kesopanan
+  kesukaanmu kesuksesan kesulitan kesulitanmu kesulitannya kesunyian kesusahan ketahuan
+  ketahuannya ketahui ketakutan ketawa ketegangan ketegasan ketelitian ketemunya
+  ketenagakerjaan ketenangan ketentuan ketepatan ketepatannya keterampilan keteranganmu
+  keterangannya keteraturan keterbatasan keterbatasannya keterima keterkejutan keterlaluan
+  keterlibatan keterpaksaan ketertiban keterusan keterusterangan ketetapan ketiadaannya
+  ketidakcocokan ketidakjujuran ketidaknyamanan ketidaknyamanannya ketidakpastian
+  ketidakpedulian ketidakpuasan ketidakramahan ketidaksetujuan ketidaksukaan ketiduran
+  ketik ketinggian ketsuron ketua ketujuh ketuker ketumbar keturunan ketus keuangan
+  keuntungan keuntungannya kewajiban kewalahan keyakinan keyakinanmu khasiat khatulistiwa
+  khawatirkan khawatirlah khawatirnya khayalan khmer khotbah khususnya kiamat kiasan kikuk
+  kinerja kininya kinmu kinuha kios kipas kiranya kiril kirim kirimannya kirimi kirimin
+  kirimkan kirimkanlah kirimlah kirimnya kirimu kirinya kisah kisaran klaim klaimnya
+  klausanya klausul klien kliennya klik kliniknya kloset kocok kode kodenya koki kokoh
+  kolaborasi kolam kollegin kolomnya komanya kombinasi komedi komentar komentarnya
+  komersial komisi komite komparativ kompartemen kompensasi kompetensi komplain komponen
+  kompor kompornya komunikasi komunikasikan komunitas kondektur kondisi kondisinya
+  kondominium koneksi koneksinya konektor konferensi konfirmasi konfirmasinya konfrontasi
+  konjugasinya konon konsentrasi konsep konsepnya konser konsernya konsistensi
+  konsistensinya konsonannya konstruksi konsultan konsultasi konsumen konsumsi kontainer
+  kontainernya kontak kontaknya konteksnya konter kontradiksi kontrak kontrakan kontrakmu
+  kontraknya kontrakten kontraktor kontroversi konversi konyol koordinasi koordinator
+  kopenhagen koper koperasi kopermu kopernya kopinya koran korannya korban koreamu
+  koreanya korelasi koridor koridornya kosakatamu kosnya kosongkan kostum kotaknya
+  kotamadya kotapraja kramanya kran kreatif kristen kristin kriteria kritis kroasia
+  ksatria ktp kuakui kuala kuali kualitasnya kuartal kuartalnya kuas kuasa kubaca kubah
+  kubahnya kubalas kubalikin kubantu kubawa kubayangkan kubeli kuberikan kubikin kubilang
+  kucatat kuceritain kuceritakan kucingnya kudaftar kudapat kudengar kuduga kue kuenya
+  kuesioner kuhapus kuitansi kuitansinya kujawab kukasih kukira kukirim kulakukan kuliahmu
+  kuliahnya kulihat kuliner kulkas kulkasnya kuman kuminta kumpul kumpulan kumpulkan
+  kumulatif kunciku kuncimu kuncinya kuningnya kunjung kunjungan kunjungannya kunjungi
+  kupahami kupakai kupas kuperiksa kupikir kupikirin kupikirkan kupinjamkan kuputuskan
+  kurangi kurangnya kurasa kurir kurirnya kurma kursinya kursusnya kurun kusampaikan
+  kusangka kuselesaikan kusut kutahan kutanya kutaruh kutelepon kutub kutulis kutunggu
+  kututup kuyup kuzu kyakusama laba labelnya laboratorium laci lacinya lafal lafalmu
+  lagian lagipula lagunya lahan lahirmu lahore laila lainnya laju lajur lakinya laku
+  lakuin lakukanlah lalai lamaku lamamu lamanya lamar lamaran lamarannya lambangnya
+  lambung lampaui lampirannya lampirkan lampunya lancang landai landas landasan langganan
+  langka langkahmu langkahnya langsing langsungnya lanjut lanjutkanlah lansia lantainya
+  lantang lao lapak lapangan lapisan lapisnya lapor laporan laporanku laporanmu laporannya
+  laporkan laptopmu laptopnya larangannya laranglah larilah lasagna lassi lasting latarnya
+  latih latihanmu latihlah latinnya lauknya laundry lautan lautnya layanan layarnya
+  lazimnya leading lebaran lebarnya lebat lebay lebihkan lebihnya lecet ledeng ledengnya
+  legendaris leggendo leher leipzig lekas leker lelakinya leluasa leluconnya lemak
+  lemarinya lemas lembaga lembur lemburnya lembutkan lemon lemot lempar lengan lengannya
+  lengket lengkung lenyap lepas lepaskan lesu letakkan levant levert lewatin lewatkan
+  lewatnya lha liaison liar liat libatkan liburanmu liburannya liburku licin lidahmu
+  lifted liftnya lihatnya lilin lilinnya limit limun lindqvist lindung lingkar lingkari
+  lingkungan lingkungannya linguistik linknya lintasan lintasnya liputan lisannya lisbon
+  lisensi listriknya lleguen loak lobak lobi locking logam logat logatmu logatnya logika
+  logikanya login logistik loh lokal lokasi lokasinya lokatif loker lolos lompat lompatan
+  lompati london longsor lonjakan losmen loteng lottery lowongan lowongannya luangkan
+  luasnya lubang lucunya lugas lukisan lukisannya luluhnya lulus lulusan lulutuin lumpuh
+  lumpur lumut lunakkan lunas luntur lupain lupalah luput luring lusinan lutut luwes macam
+  macetnya madilim madu magang magpalit mahalnya mahasiswamu mahasiswanya mahkamah mainan
+  mainnya majelis majikan majukan makainya makaka makakain makalah makananmu makanlah
+  makannya makasih makelar makian maklum maklumat makmur maknanya maksa maksudkan maksudku
+  maksudmu malaikat malammu malaysia malilimutan malnya malu mampat mampet mampirlah mampu
+  manajemen manajer manajermu manajernya mancing mancur mandara mandarinmu mandarinnya
+  mandinya mandiri manfaatkan manfaatnya mangeons mangganya manisan manisnya manjur mantan
+  mantra manual manusia manusiawi mapan margin marilah marina marine markets marks
+  marktplaats maroko masakanku masakanmu masakannya masakkan masalahmu masalahnya masam
+  masehi masjidnya maskapai masukan masukanmu masuki masukin masukkan masuklah masuknya
+  masyaallah masyhur matahari mataharinya mataku matalik matches materi matian matiin
+  matikan matinya maukah maulah maunya mayoritas medis mejamu mejanya mekanik mekar
+  melabeli melacak melafalkan melafalkannya melahirkan melaksanakan melakukannya melalui
+  melamarnya melambangkan melambat melampaui melampirkan melamun melanggarnya melangkah
+  melanjutkannya melapor melaporkan melaporkannya melarang melarangnya melati melatihmu
+  melatihnya melayang melayani melayanimu melbourne melebih melebihi meledak meledek
+  melegakan melek melekat meleleh melemah melemahkan melembutkannya melempar melenceng
+  melengkapinya melepas melepaskan melepasnya meler melewati melewatinya melewatkannya
+  melibatkan melindungi melingkar melingkari melingkupi melintang melintasi melintir melon
+  melonjak melonjaknya meluangkan meluas melukai melukis melukiskan melulu melunakkannya
+  melupakannya meluruh memaafkan memadai memadamkan memadatkan memadatkannya memadukan
+  memagari memahaminya memajukan memakaikan memakainya memakannya memaksa memaksakan
+  memaksakannya memaksanya memaksudkan memalukan memamerkan memampatkan memanaskan
+  memandang memandangi memandangnya memandu memanfaatkan memanfaatkannya memanggang
+  memanggilmu memanggilnya memangkas memanjat memantau memar memarahi memarkir memasaknya
+  memasangkan memasangnya memasifkan memasok memastikannya memasuki memasukkan
+  memasukkannya mematikan mematikannya mematuhi membacakan membacamu membagikan
+  membagikannya membahas membahasnya membakar membalas membalasnya membalikkannya
+  membaliknya membandingkannya membangkang membangkitkan membangunkan membangunnya
+  membanjir membantahnya membanting membantumu membantunya membasuh membatalkan
+  membawakannya membawamu membawanya membayangkannya membayarnya membebani membebaskanmu
+  membedah membelanjakan membelanya membenci membencinya membendakan membengkak membentang
+  membentangkan membentuknya member memberanikan membereskan membereskannya memberikan
+  memberimu memberinya memberitahu memberitahukan memberitahuku memberitahumu
+  memberitahunya memberitakan memberlakukan membesar membesarkan membetulkanmu
+  membetulkannya membiasakan membiayai membicarakannya membimbing membingungkanmu
+  membisukan memblokir membocorkan membolak membolehkan membolehkannya membolos membongkar
+  membongkarnya membosankan membuahkan membuangnya membuatkan membuatku membuatmu
+  membubarkan membukakan membukanya membuktikan membuktikannya membumi membungkus membunuh
+  membunyikannya memburu memburuk memburunya membutuhkannya memecah memecahnya memecat
+  memedulikan memegangnya memelas memelihara memeluk memenangkan memencet memendekkan
+  memendekkannya memengaruhi mementingkan memenuhi memerah memercayai memeriksakan
+  memeriksalah memeriksanya memerintah memerlukan memerlukannya memesannya memetakan
+  memihak memikirkan memikirkanmu memikirkannya memikul memilah memilahnya memiliki
+  memilikinya memimpikan memimpin memindahkan memindahkanmu memindahkannya memindai
+  meminjam meminjami meminjamkan meminjamkannya meminjamnya memintamu memintanya meminum
+  meminumnya memisahkannya memohon memoles memori memotongmu memotongnya memotretnya
+  mempan mempekerjakan mempelajari mempelajarinya memperbaikinya memperbarui memperbesar
+  mempercayai mempercayainya mempercepat memperdebatkan memperhalus memperhatikan
+  memperhatikannya memperindah memperjelas memperkenalkannya memperkirakan
+  memperkirakannya memperkuat memperlakukan memperlakukanmu memperlakukannya memperlambat
+  memperluas mempermalukan mempermasalahkan memperoleh memperpanjang memperpanjangnya
+  mempersempit mempersiapkan mempersilakanmu mempersingkat mempertahankan
+  mempertahankannya mempertajam mempertanyakan mempresentasikan memproduksi memproduksinya
+  memproses memuaskan memuatnya memudahkan memudar memuja memujimu memukul memulailah
+  memulainya memulangkan memuliakan memulihkan memundurkan memungkinkan memungutnya
+  memusatkan memusingkan memutar memutuskan memvalidasi memverifikasi menabrakkanmu
+  menaburkan menaburkannya menahannya menaik menaiki menaikkannya menakar menaklukkan
+  menaksir menakut menakuti menamai menamainya menamatkan menambahkannya menambahnya
+  menambal menampilkan menampung menanak menanam menandai menandaimu menandainya
+  menandatangani menandatanganinya menangani menanganinya menanggalkan menanggapi
+  menanggapinya menanggung menanggungnya menangis menangkapnya menanjak menantikan
+  menantikannya menantunya menanyai menanyainya menaranya menariknya menaruhnya menasihati
+  menasihatinya menata menatap menawarkannya mencabut mencairkan mencakup mencamkan
+  mencampur mencampuradukkan mencampurnya mencantumkan mencapai mencatat mencatatkan
+  mencegah mencegat mencela mencemari menceritakannya mencetak mencetaknya mencicipinya
+  mencintaimu menciptakan mencium mencobanya mencocokkan mencolok mencoret mencret
+  mencubit mencukupi mencukur mencuri mencurigai mencurigakan mendadak mendaftarkan
+  mendahului mendahuluinya mendahulukan mendaki mendalam mendalami mendalilkan mendapati
+  mendapatkan mendapatkannya mendarat mendasar mendasarinya mendasarkan mendata mendatang
+  mendatangi mendekat mendelegasikan mendengarkannya mendengarmu mendengarnya menderita
+  mendesak mendiktekan mending mendingan mendingin mendinginkan mendirikan mendoakan
+  mendoakannya mendorong mendorongnya mendua mendukung menebaknya menebus menegang
+  menegangkan menegosiasikan menegurmu menekan menekuni menelaah menelan menelantarkan
+  meneleponmu meneleponnya menelusuri menemanimu menemaninya menembak menembus menempati
+  menempatkan menempatkanmu menempatkannya menempelkannya menempuh menempuhnya menemui
+  menemuinya menemukanlah menemukannya menendang menengah menengahi menengok menentang
+  menentukan menepati menepuk menerangi menerangkannya menerapkan menerapkannya
+  menerbitkan menerimanya menerjemahkan menertawakan meneruskan meneruskannya menetapkan
+  menetes mengabaikan mengabari mengabarkan mengabulkan mengacau mengacaukan mengacu
+  mengada mengadakan mengadakannya mengadu mengaduk mengagetkan mengait mengajakmu
+  mengajaknya mengajari mengajarimu mengajarinya mengajarkan mengajarkanmu mengajarkannya
+  mengaji mengajukan mengakhirinya mengakibatkan mengakuinya mengalami mengalir
+  mengalokasikan mengamankan mengamati mengambang mengambilnya menganalisis mengancam
+  mengandaikan mengandalkan mengandalkannya menganggap menganggapmu mengangguk
+  menganggukkan menganggur mengangkatnya mengangkut menganjurkan mengantarkan mengantarmu
+  mengantarnya mengantre mengantuk mengapung mengarahkan mengarang mengasah mengatakannya
+  mengatasi mengatasinya mengawasi mengebut mengecat mengeceknya mengecewakan
+  mengecewakanmu mengedit mengejek mengejutkan mengejutkanmu mengelilinginya mengeliminasi
+  mengelola mengeluarkannya mengeluh mengeluhkan mengeluhkannya mengemas mengembalikannya
+  mengembangkan mengemudi mengemudikan mengena mengenakan mengenalkan mengenalnya
+  mengenang mengencangkan mengendalikan mengendap mengepel mengeraskan mengerikan
+  mengering mengeringkan mengerjai mengerut mengesahkan mengesankan mengetahui
+  mengetahuinya mengetikkan menggabungkan menggambarkannya menggandakan menggandeng
+  mengganggu mengganggumu mengganjal menggantikannya menggantinya menggantung menggarami
+  menggarap menggelap menggemaskan menggembirakan menggemuk menggenang menggendong
+  menggerakkan menggerutu menggeser menggigil menggigit menggiring menggoda menggolongkan
+  menggonggong menggoreng menggumpal menggunakan menghabiskan menghadap menghadapi
+  menghadapinya menghadapkan menghadiahkan menghadiri menghadirkan menghakimi
+  menghalanginya menghambat menghampiri menghampirinya menghancurkan menghantam menghantui
+  menghapus menghapusnya mengharapkan mengharapkannya menghargai mengharuskan menghasilkan
+  menghendaki menghentikan menghentikanmu menghentikannya mengherankan menghibur
+  menghidupkan menghilangkan menghilangkannya menghimpun menghindarinya menghindarkan
+  menghindarkanmu menghubungi menghujani menghukum mengikat mengikatnya mengikuti
+  mengikutimu menginap mengingatkanmu mengingkari mengingkarinya menginjak mengintip
+  mengiranya mengirimi mengirimimu mengirimkan mengirimnya mengiris mengisinya mengiyakan
+  mengizinkan mengkhawatirkan mengklaim mengklaimnya mengobati mengocok mengomel
+  mengomentari mengonfirmasi mengoordinasi mengoper mengoperkan mengorek mengoreksimu
+  mengoreksinya mengorganisasi mengosongkan mengotori menguasai menguasainya menguatkan
+  mengubah menguji mengujinya mengukir mengukur mengukus mengulangi mengulanginya
+  mengulangnya mengulek mengulurkan mengumpulkan mengumpulkannya mengumumkan mengundang
+  mengundangmu mengunduh mengundurkan mengunggah mengunggahnya mengungkapkan menguntungkan
+  mengupas mengurai mengurangi menguras mengurungkan mengurus mengurusnya mengusahakan
+  mengusulkannya mengutip meniadakan menidurkan menikahkan menikmatinya menilainya
+  menimbang menimbulkan menimpa menimpamu menindaklanjuti menindaklanjutinya meninggal
+  meninggalkannya meninggikan meningkat meninjau menipis meniru menirukan menirunya
+  menitipkan menjadwalkan menjagamu menjalani menjalankannya menjamakkan menjaminnya
+  menjamu menjamumu menjangkau menjanjikan menjauh menjawabnya menjebakmu menjelang
+  menjelaskannya menjemput menjemputmu menjemputnya menjemur menjengkelkan menjerat
+  menolakmu menolaknya menolongmu menonjol mensyaratkan mental mentega mentereng menteri
+  mentok mentraktir mentransfer menua menuai menuangkan menugaskan menuju menukar
+  menukarnya menular menularkan menuliskan menuliskannya menumbuhkan menumis menumpahkan
+  menumpang menumpuknya menundanya menunduk menunggumu menunggunya menunjukkannya
+  menunjuknya menuntun menuntutmu menuntutnya menurun menuruni menurunkan menurunkannya
+  menurutku menutupnya menyadari menyadarinya menyahut menyajikan menyakitimu menyakitkan
+  menyaksikan menyala menyalakan menyalami menyalinnya menyamakannya menyamar
+  menyamaratakan menyambar menyambungkan menyampaikannya menyamping menyandang
+  menyandarkan menyangka menyangkalnya menyangkut menyanyikan menyanyikannya menyapamu
+  menyapanya menyapu menyarankan menyaring menyasar menyatu menyatukan menyatukannya
+  menyayangi menyebabkan menyebalkan menyebar menyebarkan menyeberangi menyederhanakan
+  menyedihkan menyeduh menyegarkan menyehatkan menyehatkanmu menyelamatkanmu menyelaraskan
+  menyelenggarakan menyelidik menyelidiki menyelinap menyelipkan menyeluruh menyembuhkan
+  menyembuhkanmu menyembunyikan menyembunyikannya menyempatkan menyempitkan menyendok
+  menyengat menyentuhnya menyerahkan menyerahkannya menyerang menyerap menyerapnya
+  menyeret menyertaimu menyertainya menyertakan menyesal menyesatkan menyetel menyetop
+  menyetujuinya menyewakan menyia menyiarkan menyibukkan menyikat menyiksa menyilangkan
+  menyimak menyimpannya menyindir menyingkirkan menyiram menyisip menyisipkan menyombong
+  menyombongkan menyorot menyudutkan menyukai menyukainya menyulitkan menyumbang menyurat
+  menyuruh menyuruhku menyusahkanmu menyusul menyusulkan menyusunnya menyusuri menyusut
+  meraba merahnya meraih merajuk merakit merampas merancang merapatkan merapikan
+  merapikannya merasakan merasakannya merawat merayakan merayakannya merdeka merebus
+  merebut merece mereda meregangkan merek merekalah merekam merekrut merelakan merembes
+  merembet merencanakan merenovasi merenung merepotkan meresepkan merevisi merilis
+  merindukan merintis merobek merobohkan merokok merosot merugi merugikan merugikanmu
+  merujuk merupakan merusak merusakkan mesin mesir meskipun mesti mestinya meteorologen
+  meterai meteran metronya mewajibkan mewakili mewarisi mewarisinya mewawancarai
+  meyakinkan middle migran migrasi mikirin mikirnya milan miliar miliki milikmu miliknya
+  mimbar mimpi mimpin minat minati mindahin mineral mingguanmu minggunya minimalnya
+  minimum minivan mintai mintalah minumannya minumlah minyaknya miring mirip miripnya
+  misal miskin mobilku mobilmu modalmu modalnya modelnya modulnya mogok molor moncong
+  mongolia monsun monyet mood motif motifnya motivasi motong motto mottomo muak mual muat
+  muatan mubazir mudahan mudahnya mudik mukamu mukjizat mulia mulus munculnya mundurkan
+  mungil mungkinkah murahan murahnya murbei muridnya murninya musibah musicians musiknya
+  musiman musimnya muslim muson mustahil musuh musyawarah mutakhir muter mutiara mutsanna
+  mutu mutunya mutusin myanmar myeongdong nababasa nabung nacho nadamu nafsu nagamit nagih
+  nahwu naikin naiknya nakabukas nakakuha nakal nakalipas nakapila nakuti nalar naluri
+  nalurimu namaku nambah nambahin nampan nanas nangkep nantikan nanya nanyain napakabait
+  napas napasnya naruh nasib nasihat nasihati nasihatnya naskah naskahnya native natuloy
+  nawarin nebak negasi negerimu negerinya negosiasi nekat nelayan nelepon nemenin nempel
+  nemuin nenekmu neneknya nengok nengokin nerea nerima netralnya ngabarin ngajarin ngaku
+  ngalamin ngambek ngambil ngantre ngarang ngasih ngatur ngawur ngebantu ngebut ngecek
+  ngefek ngeh ngejar ngelakuin ngeluh ngeluhin ngerasa ngeri ngerjain nggak ngikutin
+  nginap nginep nginepin ngingetin ngira ngobrolin ngobrolnya ngomel ngomongin ngomongmu
+  ngomongnya ngopi ngubah ngukur ngulang ngundang ngurangin ngurus niatnya nikah nikmat
+  nikmati ninggalin nisbah niscaya nobel nolak nomorku nomormu nomornya norwegia
+  norwegiamu norwegianya notanya notaris notifikasi notulen notulennya nowruz nuansa
+  nuansanya nulisnya numpang nunda nunggu nungguin nunggunya nunjukin nyadar nyala nyalain
+  nyalakan nyali nyambung nyampe nyamuk nyamuknya nyangka nyangkut nyaranin nyari nyaring
+  nyatakan nyatanya nyawa nyebelin nyeberang nyebut nyelametin nyelesaiin nyenyak nyerah
+  nyerahin nyeri nyerinya nyesel nyewa nyiakan nyiapin nyinggung obatan obatnya obj
+  objektif obrolan offices official olahraga olehku olehmu olehnya ombak omelan omong
+  omongan omongannya omongin omzet ongkos ongkosnya onto opbel operasi operasinya
+  operasional operator operatornya oposisi opsi opsinya opsional optimis option oralit
+  organik organisasi orientasi orientasinya otakmu otodidak otomatisasi otoritas otot otw
+  ova oven ovennya overnight pacaran pacarnya padaku padam padamu padanya padat padatkan
+  padi paduan pagimu paginya paglipat pagoda pahala pahami pahit pajakmu pajaknya
+  pakaianmu pakaiannya pakaikan pakailah pakainya pakar paketnya pakistan paksa paksaan
+  paku pali palsu palu pamer pameran panah panaskan panasnya panca pancasila panci
+  pancuran pandai pandang pandangan pandangnya panduan panduannya panekuk panggil
+  panggilkan panggillah panggung pangkalan pangsa panitia panjangkan panjangmu panjar
+  panjat pantang pantangan pantau pantesan panti pantul papannya papers paragrafmu
+  paragrafnya parasetamol pariwisata parkir parkiran parkirnya parlarle parlemen partai
+  paru pasal pasangannya pascasarjana pashto pasi pasien pasifnya paskah pasokan paspormu
+  paspornya passengers pastikan pastinya pasukan patented patokannya patuh patuhi patungan
+  patut paula payah payungku payungnya pdf pecahan peci pedagang pedagangnya pedang pede
+  pedesaan pedih pedoman peduli pegal pegang pegangan pegunungan pejalan peka pekerja
+  pekerjaannya pelacakan pelafalan pelajarnya pelaksanaan pelakunya pelamar pelancong
+  pelanggannya pelanggaran pelaporan pelarian pelat pelatih pelatihan pelayanan pelayannya
+  pelayaran pelega pelemahan pelembut pelembutan pelengkapnya pelihara peliharaan pelit
+  peluang peluangmu peluangnya peluit peluk pelukan pelunasan peluncuran pelupa pemadam
+  pemadaman pemahamanmu pemainnya pemakai pemakaman pemalu pemampatan pemanas pemanasan
+  pemanasnya pemandangan pemandangannya pemandu pemanduan pemangkasan pemanis pemantauan
+  pemarah pemasaran pemasok pemasoknya pemasukan pembacaan pembacanya pembagian
+  pembagiannya pembahasannya pembalikannya pembangunan pembaruan pembatalan pembatas
+  pembatasan pembawa pembayaran pembayarannya pembebasan pembedaan pembedanya pembelajaran
+  pembelian pembentuk pembentukannya pemberhentian pemberi pemberian pemberinya
+  pemberitahuan pemberitahuannya pemberontakan pembersihan pembicaraannya pembicaranya
+  pembimbing pembimbingnya pembongkaran pembuangan pembuat pembubuhan pembukaan
+  pembukaannya pembukamu pembukanya pembuktian pembukuan pemegang pemelajar pemeliharaan
+  pemendekan pemeran pemeriksa pemeriksaan pemeriksaannya pemerintah pemerintahan
+  pemesanan pemikiran pemilahan pemilihan pemiliknya pemilu pemimpin peminat pemindahan
+  peminjaman pemisahan pemisahnya pemkot pemrosesan pemuda pemulihan pemunduran pemutusan
+  penakut penalaran penambahan penampilan penandanya penanganan penanganannya penanggung
+  penantian penarikan penasihat penata penataan penawar penawaran penawarannya pencahayaan
+  pencapaian pencarian pencatatan pencegahan pencegahannya pencet pencetak pencocokan
+  pencurian pendaftarannya pendahuluan pendakian pendampingan pendapatan pendapatnya
+  pendatang pendekatan pendekkan pendekmu pendeknya pendengar pendengaran pendengarmu
+  pendengarnya penderitanya pendiam pendidikan pendidikannya penduduk penduduknya
+  pendukung penekanannya penelaahan penelepon peneliti penelitian penelitianmu penempatan
+  penentu penerang penerapan penerbangan penerbangannya penerbit penerbitan penerimaannya
+  penerjemah penerjemahan penetapan pengacara pengadaan pengadilan pengaduan pengajuan
+  pengajuannya pengalaman pengalamanku pengaman pengamatan pengambilan pengampunan
+  pengandaiannya penganggur pengangguran pengangkutan pengantarnya pengantin pengantinnya
+  pengap pengarang pengaruh pengatur pengaturan pengaturannya pengawas pengawasan
+  pengecohnya pengecualiannya pengelola pengelolaan pengeluaran pengembalian pengembang
+  pengemudi pengen pengenalnya pengeras pengertian pengertiannya pengesahan pengetahuan
+  pengetahuannya pengganggu penggantian penggantinya penggeseran penggolong pengguna
+  penghalang penghalus penghambat penghangat penghapusan penghargaan penghasilannya
+  penghematan penghentian penghibur penghiburan penghijauan penghinaan penghitung
+  penghitungan penghormatan penghubung penghubungnya penghuni penghuninya penginapan
+  penginapannya pengingat pengingatnya pengingkar pengirim pengiriman pengirimannya
+  pengisi pengisian pengkritik penglihatan pengobatan pengolahan pengorbanan penguasa
+  penguasaan penguji pengujian pengukur pengulangannya pengumuman pengumumannya
+  pengunduran pengungsian pengunjung pengurangan pengurus pengurusan penilainya
+  peninggalan peninjauan penipuan penisilin penitipan penjadwalan penjagaan penjahit
+  penjamin penjual penjualan penjualannya penjualnya penolakanmu penolakannya penolong
+  penomorannya penonjolan penonton pensiun pensiunan penuaan penuhnya penukaran penulis
+  penulisan penulisnya penundaan penunjukan penunjuknya penuntun penurun penurunan
+  penutupan penutupnya penyair penyakit penyangga penyangkalannya penyanyi penyanyinya
+  penyaring penyebaran penyeberangan penyedia penyedot penyegar penyelamat penyelamatnya
+  penyelenggara penyelesaian penyelia penyelidikan penyemangat penyerahan penyesalannya
+  penyesuaian penyewa penyimpanan penyimpanannya penyimpangan penyok penyunting penyusun
+  penyusunan perabotnya perahu perahunya peralatan peralihan perangkai perangkap
+  perangkapnya perangkat perannya perantara perantaraan perantau perantauan perapian
+  perasaannya peraturan perawatannya perawatnya perayaan perbaikannya perban
+  perbandingannya perbarui perbatasan perbendaharaan perbuatanmu percakapanmu percaya
+  percayai percepatan percuma perdagangan perdana perdebatannya perdebatkan pereda
+  peredaran perekrut perekrutan perempatan perempuannya perencana perencanaan peresmian
+  pergantiannya pergelangan pergeseran pergeserannya pergilah perginya perguruan perhalus
+  perhatian perhatiannya perhatiin perhentian perhimpunan perhitungan perhitungkan
+  perhubungan peri perihal periksakan periksalah periksanya perilaku perincian peringatan
+  peringatannya peringkat perintahmu perintahnya period periode periods perjalananmu
+  perjanjian perjelas perjuangan perjumpaan perkakas perkakasnya perkara perkaranya
+  perkataan perkawinan perkecualian perkecualiannya perkedel perkemahan perkembangannya
+  perkenalkan perkiraan perkirakan perkotaan perlahan perlakukan perlawanan perlengkapan
+  perlihatkan perlindungan perluas perluasan perlukan perlunya permainan permanen permen
+  permintaanmu permintaannya permohonan permohonanmu permohonannya permukaan permukiman
+  permulaan permusuhan pernikahannya pernyataannya perorangan perpanjang perpanjangan
+  perpanjangannya perpindahannya perpustakaanmu perpustakaannya perputaran persahabatan
+  persaingan persamaan persatuan persediaan perselisihan persembahkan persen persentase
+  persepsi perseroan persetujuannya persia persik persimpangan persisnya persoalan
+  persoalannya personalia persyaratan pertahankan pertamaku pertanda pertandingan
+  pertandingannya pertanian pertanyaanmu pertemanan pertengkaran pertiga pertolongan
+  pertukaran pertumbuhan pertumbuhannya pertunjukan peru perubahannya perumahan
+  perumpamaan perundingan perusahaanmu perutku perutmu perutnya perwakilan pesaing
+  pesananmu pesankan pesanmu pesawatnya pesimis pesisir peso petak petang petanya
+  petersburg peti petik pewawancara pewawancaranya phrasal pidana pijakan piketnya pikiran
+  pikiranmu pikirannya pikirin pikirkan pikirnya pikul pilah pilek pilihanmu pilipino
+  pilot pimpin pimpinan pin pindahan pindahannya pindahkan pindahnya pindai pinggiran
+  pinggul pingsan pinjamkan pinjemin pintasnya pintunya pinus pipa pipanya pir piringmu
+  piringnya pisahkan pisangnya pisau pistachio pistasio pizze plang platform plester
+  plusquamperfekt pochi pohonnya pojokan polandia poli polis polite polusi pompa pompanya
+  pondok pondoknya ponselku ponselnya populasi porsinya portable portal portugismu
+  portugisnya posisimu posisinya positifnya posmu potongannya potonglah potongnya potret
+  pound power praktik praktiknya pramuniaga prancis prancisnya prasasti predikatnya
+  prefektur prep preposisinya presentasi presentasimu presentasinya prestasi prestasinya
+  prevents pria pribadimu prinsip prinsipnya printernya prioritas prioritasnya prises
+  priya produk produknya produksi produktivitas profesinya profits programer progres
+  projects promo promosi pronomina properti proporsi prosedur prosedurnya proses prospek
+  protes protokol provides provinsi proyek proyeknya proyeksi proyekto puas publik pucat
+  pudar puitis pujianmu pukulan pulih pulihkan pulsa puluhannya punah punggungku
+  punggungmu punggungnya punyalah punyanya pura purnajual purnama pusing pustaka putar
+  putaran putari putihnya puts putus putusan putuskan quelles quieran quieren rab raba
+  racun radang radiator ragam ragamnya ragu ragukan rahasia rahasianya rajut raknya rakus
+  rakyat ramainya ramalannya rambu rambutku rambutmu ramping ramuan rancangan rancu rangga
+  rangkai rangkaiannya rangkanya rangkum ransel ranselnya rantai rapat rapatnya rapor
+  rasakan rasanya rasio raut rawa rawat raya rayain react reactie reader reaksinya
+  realistis rebahan rebana recognise records reda redaksi reefs refleks reformasi
+  registrasi regular rejected rekam rekaman rekamannya rekan rekanmu rekannya reklamasi
+  rekomendasi rekor rekrutmen rel rela relakan relatifnya relawan relokasi remnya rempah
+  renang rencanain rencanakan rendahnya rendam renovasi rentang rentangnya renzoku
+  republik reputasinya resensi resep resepkan resepnya resepsi resepsionis reservasi
+  resinya resminya responden respondennya respons respuesta retak retakan retur revisi
+  rewel rezeki ribet ribut rikai rileks rinci rincian rincinya rindu rindukan ringkas
+  ringkasannya ringkasnya rintangan rintisan risalah risikonya ritme riwayat robot roda
+  rokok romanisasi romanisasinya romantis romawi rombongan roots rotinya royong ruanganmu
+  ruangannya ruangnya ruas rubel rubrik ruft rugi ruginya rujukannya rukun rumahan
+  rumahnya rumi rumit rumpun rumput rumus rumuskan runtuh rupanya rupawan rupee rusa
+  rusaknya rusia rusiamu rusianya sabar sabaran sabuk sadar sadari sahabat sahabatnya
+  sahaya sahih sains sakelar sakitan sakiti saklar saksama saksikan sakti sakunen salahkan
+  salahmu salahnya salaman salami salammu salep salib salinan salinannya saljunya salmon
+  saluran samakan samanya samar sambalnya sambilan sambung sambungan sambungannya
+  sambungkan sambungnya sambut sambutan samin sampah sampahnya sampainya sampel sampelnya
+  samping sampingan sampingmu sampingnya samples sampul samudra samuel sanak sandal
+  sandang sandaran sandi sandinya sanggah sangka sangkaan sangkal sangkalannya sangkalnya
+  sanskerta santa santun santunnya sapaanmu sapaannya sapunya saran saranin sarankan
+  saranku sarannya sarapannya sarhe saringan sarjana sarung sasakyan sasarannya satuan
+  satuannya satukan saudaraku saudaramu saudaranya saudari sauerkraut sausnya sayangnya
+  sayurnya schwarz schwarzen sdm seabad seadanya seakan seandainya seangkatan sebagaimana
+  sebagiannya sebagus sebaik sebal sebanding sebanyak sebatang sebatas sebegini sebegitu
+  sebelahmu sebenernya seberangilah seberangnya seberat seberisik sebesar sebetulnya
+  sebisa sebungkus sebunyi seburuk sebutannya sebutir secarik secepat secepatnya
+  secukupnya sedangkan sedapat sedarah sedekah sedekat sedemikian sederas sederet
+  sederhananya sedetik sedikitnya sedunia seenak seenaknya segala segampang segan segar
+  segelintir segenggam segini segitunya seharga seharusnya sehubungan seikat seimbang
+  seiring seisi sejahtera sejalan sejam sejarahnya sejati sejauh sejelas sejenisnya
+  sejujurnya sejumlah sekalian sekamar sekamarnya sekampung sekantong sekantornya
+  sekaranglah sekarangnya sekati sekecil sekejap sekeliling sekelilingmu sekelilingnya
+  sekeping sekeranjang sekerja sekiranya sekota sekotak sekretaris sekretarisnya sekrup
+  seksi sektor sekuat sekujur sekumpulan sekurang sekutu sela selada selagi selamanya
+  selamatan selamatkan selang selanya selarut selebihnya seleksi selembar selendang
+  selengkapnya selera seleranya selesaikan selimut selipkan selisih seliter selokan seluar
+  seluas semacam semahal semakin semalam semalaman semangka semarang semasa semboyan
+  sembuhlah sembunyi sembunyikan semenit sementara semestinya semprot semudah semula
+  semurah senangnya senantiasa senapan senarai senat sendat sendok sengketa seniornya
+  senmonka sentakan senter sentimeter sentral sentuh sentuhan senyap senyum seolah sepadan
+  sepadat sepagi sepagian sepaham sepakat sepakati sepanas sepanjangnya separah separuhnya
+  sepatah sepatuku sepatumu sepatunya sepatutnya sepedaan sepedaku sepedamu sepedanya
+  sepekan sepele sependapat sependek sepenting sepenuh sepersepuluh sepertiga sepertiganya
+  sepiring sepopuler seprai sepupuku sepupumu sepupunya seputar seragam serah serahkan
+  serangkai serapan seratusan serbaguna serbet serbu serem sergey seri serigala seringnya
+  seriously seriusnya sertakan sertifikasi serumah serunya serupa serverer serviced
+  servisin sesaat sesalkan sesama sesamanya sesederhana sesering sesi sesiang sesingkat
+  sesopan sesorean sesuka sesukanya sesulit sesungguhnya setahu setahuku setahunan setapak
+  setelan setempat setengahnya setetes setia setidaknya setimnya setimpal setinggi
+  setingkat setipis setir setor setoran setuju setujui setumpuk seumur seumuranmu
+  seumurannya seutuhnya sewajarnya sewakan sewamu sewanya seyakin shanghai shapes shenzhen
+  shiai shiftnya shinrai shoji shokkan shokushu shokuzen shortens shorui shown sialnya
+  siangnya sichuan sidang sif signifikan sikapmu sikat silabus silence simpan simpanan
+  simpang simpankan simpanlah simpul simpulkan simultan sinar sinematografi
+  sinematografinya sinetron singa singgah singkatan siniar sinis sintetis sinyal sinyalnya
+  sipil sirup sisa sisakan sisihkan sisilia sisinya sisipan sistemnya situasinya situs
+  situsnya skala skalanya skeptis skhohl skormu skornya skripsi sks slang slavia slide
+  slip slovenia smp sofanya sofia solid solusinya sopannya sopirnya sopo sorot sortis
+  sosial sosialnya sosis southern spanduk spasi spazieren speakers specific speech
+  spending spesialis spoiler sriwijaya stadion staf standar statistik statistiknya stava
+  stempel stok stoknya strategi strateginya stres stronger strukmya struktural strukturnya
+  studi stur suam suaminya suapan suaramu suasana suasananya subjektif subjungtif submit
+  subsidi subtitel subtitle suci sudahi sudahkah sudahlah sudden sudi sudilah suhunya
+  sukai sukanya sukarela sukses sukunya sumbang sumbangan sumbu sumpah sunda sungainya
+  sungguhnya sungkan suntikan suntuk sunyi superlativ supermarket supermarkets supnya
+  suratmu suratnya surel surelmu surelnya surga suriah suruh survei surya susahnya susul
+  susulan susulkan susunya sutradara suvenir sweater sweatermu swedia swiss syam syaratnya
+  syllables syukuran syukuri syutingnya tabir tablet tabrak tabungan tachiba tadinya
+  tagalogmu tagalognya tagih tagihanmu tagihannya tahap tahapan tahapnya tahulah tahunan
+  tahunmu tahunnya tahunya taisaku taiwan tajikistan tajuk takaran takbenda takhayul
+  takhta taksinya taksiran takutkan takutlah takutnya tamannya tamasya tambahannya tambal
+  tambang tampaknya tampil tampilannya tamunya tanam tanaman tanda tandai tandatangani
+  tanduk tangani tangannya tangganya tanggap tanggapanmu tanggapi tanggung tanggungan
+  tangkap tangkapan tangkis tanpanya tantangan tantenya tanya tanyai tanyain tanyalah
+  taplak taraf targetmu tarian tarif tarifnya tarikan tariklah taruhan taruhlah tasku
+  tasmu tasnya tatanan tatanggapin tatra taufik tautan tawa tawar tawarannya tawarkan
+  tebakan tebakanmu tegang tegaskan teguh tehlah tehmu tehnya teika tekankan teknik teknis
+  teknisi teknisinya teknisnya teko teksnya telaah telah telak telan telanjur telapak telc
+  teleponan teleponlah teleponnya teleserye televisinya telinganya teliti teluk telunjuk
+  telur telurnya telusuri temani temanmu temanya tembok temboknya tembus tembusan
+  tempatkan tempatku tempatmu tempatnya tempel tempelan tempelkan templat tempuh temukan
+  tenaga tenagamu tenda tendang tendanya tenggang tenggara tenggatnya tenggelam
+  tenggorokan tenggorokanku tenggorokanmu tenggorokannya tentangmu tentangnya tentukan
+  tentunya tenunan teori tepatnya tepi terakhirmu terakhirnya terampil terancam terang
+  terangan terangkan teras teratasi terbagi terbaikmu terbaiknya terbakar terbantahkan
+  terbantu terbanyak terbaring terbaru terbasah terbata terbawa terbawah terbayar
+  terbebani terbelah terbentuk terbentur terberat terbesar terbesarmu terbesarnya
+  terbicarakan terbit terbitan terbitnya terbuang terbuat terbukti terburuk tercakup
+  tercantum tercapai tercatat tercecer tercinta terdaftar terdahulu terdampak terdampar
+  terdapat terdekat terdekatnya terdidik terdingin terdiri terduga terganggu tergeletak
+  tergelincir tergenang tergesa tergoda tergores tergoyahkan terguncang terhafal terhalang
+  terhambat terhapus terharu terhenti terhindar terhindarkan teri teriak terimalah
+  terimanya terindah teringat terinjak teriris terisi terjaga terjangkau terjatuh terjebak
+  terjepit terjual terjun terkait terkasih terkatakan terkecoh terkejar terkejut terkemuka
+  terkena terkenang terkesan terkilir terkini terkirim terkonfirmasi terkoreksi terkuat
+  terkubur terkumpul terkunci terkuras terlaksana terlama terlampaui terlampir terlantar
+  terlarang terlatih terlebih terlelap terlempar terlepas terletak terlewat terlibat
+  terlihat terluka terlupa terlupakan termahal termal termometer termuat termuda ternak
+  terorganisir terowongan terpadu terpakai terpaksa terpaku terparkir terpaut terpelajar
+  terpeleset terpendek terpengaruh terpenting terpentingnya terpenuhi terpercaya
+  terperinci terpisahkan terpukul terpusat terputus tersamar tersambung tersampaikan
+  tersandung tersangka tersangkut tersayang tersembunyi tersendiri tersentuh tersenyum
+  tersenyumlah terserah tersibuk tersinggung tersingkap tersisa terstruktur tersulitnya
+  tersumbat tersusul tersusun tertabrak tertahankan tertanam tertanggal tertarik tertata
+  tertawakan tertebak tertekan tertib tertidur tertimpa tertinggal tertipu tertulis
+  tertulisnya tertunda terukur terulang terurai teruskan terutama terwujud tesmu tesnya
+  tested tetanggaku tetanggamu tetapkan tetaplah tetapnya tetep tetes tewas textile
+  thailand throughout tht tiada tibalah tidakkah tidaknya tiduran tidurlah tidurmu tiket
+  tikungan timbangan timbul timku timnya timpang timun tindahang tindih tinggali
+  tinggalkan tinggallah tingginya tingkatan tingkatannya tionghoa tiongkok tipikal tips
+  tipsnya tipu tiri tiruan tirukan tirulah titipan titipkan tivi tobias toilet toiletnya
+  tokoh tokohnya tokonya tolak tolaklah toleransi tolok tomatnya tonjolkan tonpuku tonton
+  tontonlah topan topiknya topinya totalnya trabahong tradisi traditional tranquillement
+  transaksinya transit transkrip trik triknya trinke triwulan troli tropis trotoar truk
+  tuangkan tuanya tubuhmu tubuhnya tugasmu tuh tuhan tukangnya tukar tula tulislah tulismu
+  tulisnya tumbang tumbuh tumbuhan tumpah tumpangan tumpuk tumpukannya tumpul tunainya
+  tunawisma tunduk tunggakan tunggalnya tunggulah tungkai tungkunya tunjangan tunjukan
+  tunjukin tunjukkanlah tuntasnya tuntutannya turki turunin turunkan turunlah turunnya
+  tusukan tutupkan tutuplah tutupnya tutur uang uangku uangmu uangnya ubahlah ucap
+  ucapanmu ucapannya udah udahlah udaranya uji ujianmu ujilah ujungnya ukraina ukur
+  ukuranmu ulangan ulangnya ulasan umm umumkan umurku undakan undang undangannya unduh
+  undur unggahan unggul ungkapannya unik universal universitasnya untaian untukku untukmu
+  untuknya untung untunglah untungnya unusually upah upahnya upaya uraian uraikan urat
+  urban urdu urus urusan urusanmu urutkan urutnya usahakan usahamu usahanya usang usati
+  usciti usg ushi usia usianya ustaz usual usulan usulanmu usulannya usulkan usulmu
+  usulnya utamamu utc utilitas utuhnya vaksin variabel vegetarian venivo veranos
+  verifikasi verranno versinya versus victoria videonya visanya visual vlog volumenya
+  voting wacananya wadah waduk wafel wahai wajah wajahnya wajan wajibnya wakil waktuku
+  waktunya walaupun wang wangi warga warganya warsawa wartawannya warungnya waspada
+  waspadai wast wastafel watak wawancaranya web wechat weker wewenang wifinya wihara wijen
+  wilayah wilayahnya wina wisatawan wkwk wol woy wreda wujud xiao xinhua yakin yasmin
+  yayasan yerusalem yoga york youtube yth yuan yunani yunaninya yurisdiksi zaitun zhang
+  zhongshan zhou
+`;
+
 function kataDaftar(teks: string): Set<string> {
   return new Set(teks.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 1));
 }
 const SET_ID = new Set([...kataDaftar(LEKSIKON_ID), ...kataDaftar(TAMBAHAN_ID)]);
+/* Terpisah dari SET_ID dan TIDAK dipakai modul Inggris: prosa Indonesia penuh
+   serapan Inggris ("member", "meeting"), dan untuk modul Inggris kata begitu
+   justru bahasa targetnya. Modul Inggris sudah punya LEKSIKON_EN sebagai
+   penimbang. */
+const SET_ID_V3 = kataDaftar(LEKSIKON_ID_V3);
 
 /* [ebook-jaga-bahasa-en-v1] Leksikon Inggris — bukan untuk membungkam, tapi
    untuk MEMBEBASKAN.
@@ -483,6 +1223,7 @@ const KECUALI_TARGET: Record<string, Set<string>> = {
 function kataIdMurni(k: string, kode: string): boolean {
   if (KECUALI_TARGET[kode]?.has(k)) return false;
   if (SET_ID.has(k)) return true;
+  if (kode !== "en" && SET_ID_V3.has(k)) return true;
   const morfologi = kode === "en" ? MORFOLOGI_EN
     : AKSARA_SUKU_KATA.has(kode) ? MORFOLOGI_AMAN : MORFOLOGI_ID;
   if (morfologi.some((p) => p.test(k))) return true;
@@ -491,7 +1232,8 @@ function kataIdMurni(k: string, kode: string): boolean {
      sudah cukup: gabungan seperti itu tak pernah jadi kata bahasa target. */
   if (!k.includes("-")) return false;
   const penggal = k.split(/[-'’]+/).filter(Boolean);
-  return penggal.length > 1 && penggal.some((p) => SET_ID.has(p) || morfologi.some((r) => r.test(p)));
+  return penggal.length > 1 && penggal.some((p) =>
+    SET_ID.has(p) || (kode !== "en" && SET_ID_V3.has(p)) || morfologi.some((r) => r.test(p)));
 }
 
 /** Kata ini pasti bahasa target (huruf/aksara yang tak dipakai bahasa Indonesia)? */
