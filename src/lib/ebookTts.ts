@@ -825,7 +825,9 @@ function kalimatDiketuk(baris: string, kata: string, kode: string, ke: number): 
   // memisahkan butir, jadi yang dibunyikan cukup bentuk yang diketuk.
   const daftar = GARIS_MIRING.test(String(baris || ""));
   for (const bagian of String(baris || "").split(PISAH_ARTI)) {
-    for (const butir of daftar ? bagian.split(/\s*[,;]\s*/) : [bagian]) {
+    // [ebook-tts-titik-koma-v1] Titik koma juga pemisah butir ("to år; en ting"):
+    // tak pernah dibacakan, yang diputar cukup butir tempat kata itu duduk.
+    for (const butir of bagian.split(daftar ? /\s*[,;；]\s*/ : /\s*[;；]\s*/)) {
       const bersih = kalimatTarget(butir, kode);
       if (bersih) kalimat.push(...pecahKalimat(bersih));
     }

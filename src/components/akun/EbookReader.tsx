@@ -853,7 +853,24 @@ const FRASA_MAKS_HURUF = 34;
 /* Kolom "cara baca" ("BUE-nos DI-as") bukan bahasa target — membunyikannya
    utuh cuma menghasilkan ejaan Indonesia berlogat aneh. */
 const POLA_CARA_BACA = /\p{Lu}+[-‑]\p{Ll}/u;
-function frasaSel(selTeks: string, kata: string): string {
+/* [ebook-tts-titik-koma-v1] Sisi tempat kata yang diketuk duduk. `sisa.ke` =
+   kata yang sama ke berapa (dari kiri) — "et år → to år" memuat "år" dua kali,
+   dan mengetuk yang kanan tak boleh membunyikan yang kiri. */
+function sisiDiketuk(sisi: string[], kata: string, sisa: { ke: number }): string {
+  const pola = new RegExp(`(^|\\P{L})${kata.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?=$|\\P{L})`, "giu");
+  let pertama = "";
+  for (const x of sisi) {
+    const n = (x.match(pola) ?? []).length;
+    if (!n) continue;
+    if (!pertama) pertama = x;
+    if (sisa.ke < n) return x;
+    sisa.ke -= n;
+  }
+  sisa.ke = 0;
+  return pertama;
+}
+function frasaSel(selTeks: string, kata: string, ke = 0): string {
+  const sisa = { ke: Math.max(0, ke) };
   let s = String(selTeks || "")
     .replace(/\([^)]*\)/g, " ")     // "(KA-sa)" — petunjuk cara baca
     .replace(/[…]+/g, " ")          // "me llamo…" → "me llamo"
@@ -866,19 +883,16 @@ function frasaSel(selTeks: string, kata: string): string {
   // "encantado / encantada" & "él / ella es" itu dua pilihan, bukan satu frasa:
   // yang dibunyikan sisi tempat kata yang diketuk duduk.
   if (s.includes("/")) {
-    const sisi = s.split("/").map((x) => x.trim()).filter(Boolean);
-    const pilih = sisi.find((x) => new RegExp(`(^|\\P{L})${kata.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\P{L})`, "iu").test(x));
-    s = pilih || "";
+    s = sisiDiketuk(s.split("/").map((x) => x.trim()).filter(Boolean), kata, sisa);
   }
   /* [ebook-tts-pisah-emdash-v1] "да — ya" itu kata target BESERTA artinya yang
      kebetulan muat jadi "frasa" dua kata; tanpa penjagaan ini mesin suara Rusia
      ikut mengeja "ya". Yang dibunyikan sisi tempat kata yang diketuk duduk. */
   // [ebook-tts-panah-v1] Panah "casa -> rumah" / "→" / "=>" sama: pemisah, bukan bacaan.
-  if (/\s[–—]\s|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔]/.test(s)) {
-    const sisi = s.split(/\s+[–—]\s+|\s*(?:-->|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔])\s*/).map((x) => x.trim()).filter(Boolean);
-    const pilih = sisi.find((x) =>
-      new RegExp(`(^|\\P{L})${kata.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\P{L})`, "iu").test(x));
-    s = pilih || "";
+  // [ebook-tts-titik-koma-v1] "et år → to år; en ting → to ting": titik koma pun pemisah.
+  if (/\s[–—]\s|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔;；]/.test(s)) {
+    const sisi = s.split(/\s+[–—]\s+|\s*(?:-->|->|=>|[→⇒➜➔➝➞⟶⟹←↔⇔;；])\s*/).map((x) => x.trim()).filter(Boolean);
+    s = sisiDiketuk(sisi, kata, sisa);
   }
   s = s.replace(/^[^\p{L}\p{N}¿¡]+|[^\p{L}\p{N}?!.]+$/gu, "").trim();
   if (!s || s.length > FRASA_MAKS_HURUF) return "";
@@ -3223,7 +3237,15 @@ export default function EbookReader({
       const ke0 = urut.findIndex((w) => xp >= w.x - 1 && xp <= w.x + w.w + 1);
       if (ke0 >= 0 && ke0 < kepala) return "kosong";
     }
-    let frasa = sel && !AKSARA_TANPA_SPASI.test(kata.kata) ? frasaSel(sel.teks, kata.kata) : "";
+    /* [ebook-tts-kalimat-diketuk-v1] Kata yang sama ke berapa (dari kiri) di sel/
+       barisnya — "лет" di "Сколько вам лет? — Ему семь лет." ada dua. */
+    const kataKecil = kata.kata.toLowerCase();
+    const ke = items
+      .filter((it) => Math.abs(it.y - kena.y) <= Math.max(it.h, kena.h) * 0.6 &&
+        (!sel || (it.x + it.w > sel.x0 - 2 && it.x < sel.x1 + 2)))
+      .flatMap(kataKataDi)
+      .filter((w) => w.x < kata.x - 1 && w.kata.toLowerCase() === kataKecil).length;
+    let frasa = sel && !AKSARA_TANPA_SPASI.test(kata.kata) ? frasaSel(sel.teks, kata.kata, ke) : "";
     // Satu kata Indonesia di dalamnya sudah cukup membatalkan frasa: kolom arti
     // ("senang berkenalan") tak boleh ikut dibunyikan berlogat bahasa target.
     if (frasa && frasa.split(/[^\p{L}\p{N}'’-]+/u).some((w) => w && kataIndonesia(w, kodeBahasa, frasa))) frasa = "";
@@ -3242,14 +3264,6 @@ export default function EbookReader({
        dari dirinya sendiri ("lengkap") diputuskan dari klausa tempat ia duduk —
        lihat kataIndonesia di lib/ebookTts. */
     const konteks = sel?.teks || barisKena?.teks || kena.str;
-    /* [ebook-tts-kalimat-diketuk-v1] Kata yang sama ke berapa (dari kiri) di sel/
-       barisnya — "лет" di "Сколько вам лет? — Ему семь лет." ada dua. */
-    const kataKecil = kata.kata.toLowerCase();
-    const ke = items
-      .filter((it) => Math.abs(it.y - kena.y) <= Math.max(it.h, kena.h) * 0.6 &&
-        (!sel || (it.x + it.w > sel.x0 - 2 && it.x < sel.x1 + 2)))
-      .flatMap(kataKataDi)
-      .filter((w) => w.x < kata.x - 1 && w.kata.toLowerCase() === kataKecil).length;
     const { teks: kalimat, kode: kodeKata } = kalimatSekitar(konteks, kata.kata, kodeBahasa, ke);
     /* [ebook-ruby-translit-v1] Transliterasi yang terlanjur menyatu dengan
        barisnya (tata letaknya tak terbaca sebagai anotasi) tak berbahasa apa
