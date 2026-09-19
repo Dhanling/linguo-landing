@@ -63,6 +63,22 @@ export function clearProgress(id: string, uid: string | null | undefined) {
   try { localStorage.removeItem(progressKey(id, uid)); } catch { /* ignore */ }
 }
 
+// [sim-draft-tak-mengunci-v1] Buang SEMUA progres simulasi ini, apa pun uid-nya.
+// readAnyProgress membaca lintas key, jadi membersihkan satu key saja menyisakan
+// draf "hantu": tes yang sudah dikumpulkan hidup lagi dengan semua subtes berstatus
+// Selesai dan tanpa tombol apa pun — peserta terkunci selamanya.
+export function clearAllProgress(id: string) {
+  try {
+    const prefix = `sim-progress:v1:${id}:`;
+    const keys: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith(prefix)) keys.push(k);
+    }
+    keys.forEach((k) => localStorage.removeItem(k));
+  } catch { /* ignore */ }
+}
+
 // Jumlah soal terjawab dari snapshot (heuristik lintas-tipe: ada pilihan / teks /
 // rekaman). Dipakai untuk progress bar di kartu katalog.
 export function answeredCount(p: SavedProgress): number {

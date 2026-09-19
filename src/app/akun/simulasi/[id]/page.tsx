@@ -8,12 +8,12 @@ import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   peekSimulationAccess, startGuestSession, getPromoAttemptStatus,
-  gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
+  gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt, fetchAttemptState, abandonAttempt,
   AUTO_GRADED, SKILL_LABEL, testTypeLabel, effectiveDurationMinutes,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill, type PromoAttemptStatus,
 } from "@/lib/simulations";
-import { readProgress, readAnyProgress, saveProgress, clearProgress, type SavedProgress } from "@/lib/simProgress";
+import { readProgress, readAnyProgress, saveProgress, clearAllProgress, answeredCount, type SavedProgress } from "@/lib/simProgress";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 // [sim-official-score-v1] Layar hasil dipindah ke komponen bersama — dipakai juga
 // oleh /akun/simulasi/hasil/[attemptId] (buka hasil lama dari Riwayat Skor).
@@ -550,7 +550,7 @@ function RangedAudio({ url, className }: { url: string; className?: string }) {
 }
 
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
-type Phase = "loading" | "guestform" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound" | "promoexhausted";
+type Phase = "loading" | "guestform" | "intro" | "running" | "staledraft" | "grading" | "result" | "noauth" | "notfound" | "promoexhausted";
 // ── Fullscreen API lintas-browser ────────────────────────────────────────────
 // Safari memakai prefiks `webkit`; versi unprefixed saja bikin fitur diam-diam
 // mati (requestFullscreen/exitFullscreen/fullscreenElement = undefined → `?.()`
@@ -649,6 +649,14 @@ export default function SimulasiRunnerPage() {
   // Sesi lama (>24 jam) yang baru dibuka lagi → kumpulkan otomatis, lihat efek
   // di bawah definisi submit().
   const [staleResume, setStaleResume] = useState(false);
+  // [sim-draft-tak-mengunci-v1] Draf yang belum dikumpulkan TIDAK boleh mengunci
+  // peserta. draftNote = kabar di layar intro saat draf lama dibuang otomatis;
+  // staleAnswered = jumlah jawaban di draf >24 jam (peserta memilih: kumpulkan
+  // atau mulai ulang); restartingRef mencegah efek simpan menulis ulang draf yang
+  // baru saja dibuang.
+  const [draftNote, setDraftNote] = useState<string | null>(null);
+  const [staleAnswered, setStaleAnswered] = useState(0);
+  const restartingRef = useRef(false);
 
   // Ambil paket soal + siapkan state jawaban, lalu tampilkan layar intro.
   async function loadExam(studentInfo: StudentInfo) {
@@ -681,7 +689,28 @@ export default function SimulasiRunnerPage() {
     // sebelumnya (lompati layar intro). Audio rekaman lokal tak ikut dipulihkan.
     // Utamakan key uid saat ini; fallback pindai semua key sim ini supaya sesi
     // yang tersimpan di bawah identitas berbeda (race auth / tamu) tetap bisa dilanjut.
-    const saved = preview ? null : (readProgress(id, studentInfo.user_id) ?? readAnyProgress(id));
+    let saved = preview ? null : (readProgress(id, studentInfo.user_id) ?? readAnyProgress(id));
+    // [sim-draft-tak-mengunci-v1] Pastikan draf masih sah di server. Draf milik
+    // attempt yang SUDAH dikumpulkan (sisa key uid lain / tab tertutup tepat sesudah
+    // nilai tersimpan) dulu hidup lagi sebagai hub dengan semua subtes "Selesai"
+    // tanpa tombol → tes cuma bisa dikerjakan sekali. Sekarang dibuang, peserta
+    // mendarat di intro dan bisa mulai percobaan baru. Gagal baca (null) = lanjut
+    // seperti biasa, jangan sampai gangguan jaringan menghapus draf yang sah.
+    if (saved) {
+      const st = await fetchAttemptState(saved.attemptId);
+      if (st && (st.submitted || st.status === "missing")) {
+        clearAllProgress(id);
+        saved = null;
+      }
+    }
+    // Draf >24 jam tanpa satu pun jawaban: tak ada yang bisa dinilai → buang saja,
+    // jangan dikumpulkan paksa jadi "hasil ujian" kosong.
+    if (saved && saved.savedAt && Date.now() - saved.savedAt > IDLE_EXPIRE_MS && answeredCount(saved) === 0) {
+      void abandonAttempt(saved.attemptId);
+      clearAllProgress(id);
+      saved = null;
+      setDraftNote(t("Sesi sebelumnya ditinggalkan lebih dari 24 jam tanpa jawaban, jadi tidak dikumpulkan. Kamu bisa mulai lagi dari awal."));
+    }
     if (saved) {
       const restored = { ...init };
       Object.entries(saved.answers || {}).forEach(([qid, v]) => {
@@ -703,7 +732,21 @@ export default function SimulasiRunnerPage() {
       setViolations(saved.violations ?? 0);
       // [sim-idle-expire-v1] Ditinggal lebih dari sehari → sesinya sudah lewat;
       // jawaban yang tersimpan dikumpulkan otomatis begitu state siap.
-      if (saved.savedAt && Date.now() - saved.savedAt > IDLE_EXPIRE_MS) setStaleResume(true);
+      // [sim-draft-tak-mengunci-v1] …tapi TIDAK lagi dikumpulkan paksa: tes baru
+      // dianggap selesai kalau peserta sendiri yang mengumpulkan. Ia memilih di
+      // layar "staledraft": kumpulkan jawaban tersimpan, atau mulai ulang.
+      if (saved.savedAt && Date.now() - saved.savedAt > IDLE_EXPIRE_MS) {
+        setStaleAnswered(answeredCount(saved));
+        setPhase("staledraft");
+        return;
+      }
+      // Semua subtes sudah selesai tapi attempt belum terkumpul (tab ditutup saat
+      // penilaian / simpan gagal) → efek hub tak akan pernah memicu submit karena
+      // tak ada subtes yang "baru" selesai. Kumpulkan sekarang lewat jalur yang sama
+      // dengan sesi kedaluwarsa.
+      const skillsAll = new Set(secsWithQs.map((s) => s.skill));
+      const doneAll = skillsAll.size > 0 && [...skillsAll].every((sk) => (saved!.groupDone ?? []).includes(sk));
+      if (doneAll) setStaleResume(true);
       setView("hub");
       setPhase("running");
       return;
@@ -754,7 +797,7 @@ export default function SimulasiRunnerPage() {
   // Simpan progres tiap kali jawaban/posisi berubah selama tes berjalan → bisa
   // keluar & lanjut lagi dari sisa waktu yang sama. Preview tak disimpan.
   useEffect(() => {
-    if (preview || phase !== "running" || !attemptId || !info) return;
+    if (preview || phase !== "running" || !attemptId || !info || restartingRef.current) return;
     const ser: SavedProgress["answers"] = {};
     Object.entries(answers).forEach(([qid, a]) => { ser[qid] = { selected_index: a.selected_index, text: a.text, audioUrl: a.audioUrl }; });
     saveProgress(id, info.user_id, {
@@ -958,7 +1001,8 @@ export default function SimulasiRunnerPage() {
   useEffect(() => {
     if (!staleResume || preview || phase !== "running" || !attemptId) return;
     setStaleResume(false);
-    notifyDialog(t("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai."));
+    // Hanya dipicu peserta sendiri (tombol "Kumpulkan jawaban tersimpan") atau saat
+    // semua subtes memang sudah ia selesaikan — bukan lagi otomatis karena 24 jam.
     submitRef.current(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [staleResume, preview, phase, attemptId]);
@@ -1222,11 +1266,24 @@ export default function SimulasiRunnerPage() {
     if (!preview) { // mode preview tidak menyimpan attempt/jawaban ke database
       await saveAnswers(attemptId, payloads);
       await finalizeAttempt(attemptId, tot);
-      clearProgress(id, info?.user_id); // tes selesai → buang progres tersimpan
+      clearAllProgress(id); // tes selesai → buang progres tersimpan (semua key uid)
     }
     setTotals(tot);
     setResults(resultItems);
     setPhase("result");
+  }
+
+  // [sim-draft-tak-mengunci-v1] Mulai ulang dari awal: draf dibuang, attempt lama
+  // ditandai kedaluwarsa (submitted_at tetap NULL → jatah promo & Riwayat Skor tak
+  // tersentuh), lalu halaman dimuat ulang supaya seluruh state runner bersih.
+  async function restartFromScratch(needConfirm: boolean) {
+    if (needConfirm && !askConfirm(t("Mulai ulang dari awal? Semua jawaban dan sisa waktu di sesi ini akan dihapus, dan tes dimulai lagi dari subtes pertama."))) return;
+    restartingRef.current = true;
+    leavingSim = true; // muat ulang disengaja → jangan tercatat pelanggaran
+    clearAllProgress(id);
+    if (attemptId && attemptId !== "preview") { try { await abandonAttempt(attemptId); } catch { /* ignore */ } }
+    if (fsElement()) exitFs();
+    window.location.reload();
   }
 
   // ── Render states ──────────────────────────────────────────────────────────
@@ -1293,6 +1350,31 @@ export default function SimulasiRunnerPage() {
 
   if (!sim) return null;
 
+  // [sim-draft-tak-mengunci-v1] Draf lama (>24 jam) yang masih berisi jawaban —
+  // peserta yang memutuskan, bukan sistem.
+  if (phase === "staledraft") return (
+    <Centered>
+      <div className="max-w-md text-center">
+        <Clock className="mx-auto h-8 w-8 text-slate-400" />
+        <p className="mt-2 font-semibold text-slate-800">{t("Sesi sebelumnya belum dikumpulkan")}</p>
+        <p className="mt-1 text-sm text-slate-500">
+          {t("Kamu meninggalkan simulasi ini lebih dari 24 jam lalu dengan")} {staleAnswered} {t("jawaban tersimpan. Waktu sesinya sudah habis, jadi tidak bisa dilanjutkan — pilih kumpulkan jawaban itu untuk dinilai, atau mulai lagi dari awal.")}
+        </p>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <button onClick={() => restartFromScratch(false)} className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
+            <RotateCcw className="h-4 w-4" />{t("Mulai ulang dari awal")}
+          </button>
+          <button onClick={() => { setStaleResume(true); setView("hub"); setPhase("running"); }} className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700">
+            {t("Kumpulkan jawaban tersimpan")}
+          </button>
+        </div>
+        <Link href="/akun?menu=simulasi" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
+          <ArrowLeft className="h-4 w-4" />{t("Kembali ke daftar")}
+        </Link>
+      </div>
+    </Centered>
+  );
+
   if (phase === "grading") return (
     <Centered>
       <div className="text-center">
@@ -1311,6 +1393,11 @@ export default function SimulasiRunnerPage() {
   if (phase === "intro") {
     return (
       <Shell sim={sim} preview={preview}>
+        {draftNote && (
+          <p className="mb-4 flex items-start gap-2 rounded-xl border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm text-sky-800">
+            <Info className="mt-0.5 h-4 w-4 shrink-0" />{draftNote}
+          </p>
+        )}
         <IntroWizard sim={sim} sections={sections} questions={questions} onStart={start} promo={promo} />
       </Shell>
     );
@@ -1408,6 +1495,24 @@ export default function SimulasiRunnerPage() {
             {SECTION_LOCK_MINUTES} {t("menit setelah dimulai — kunci itu langsung terbuka begitu semua soal subtesnya kamu jawab. Subtes yang sudah diselesaikan tidak bisa dibuka lagi, dan saat subtes terakhir selesai seluruh jawaban otomatis dikumpulkan.")}
           </span>
         </p>
+
+        {/* [sim-draft-tak-mengunci-v1] Sesi yang belum dikumpulkan tak boleh jadi
+            jalan buntu: waktu subtes tetap berjalan saat tab ditutup, jadi peserta
+            yang kembali dan mendapati subtesnya terkunci selalu bisa mengulang. */}
+        {!preview && (
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-xs leading-relaxed text-slate-500">
+              {t("Sesi ini belum dikumpulkan. Kalau waktunya terlanjur habis saat kamu keluar, kamu boleh mengulang dari awal — jatah percobaan tidak berkurang.")}
+            </p>
+            <button
+              type="button"
+              onClick={() => restartFromScratch(true)}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100"
+            >
+              <RotateCcw className="h-3.5 w-3.5" />{t("Mulai ulang dari awal")}
+            </button>
+          </div>
+        )}
       </Shell>
     );
   }

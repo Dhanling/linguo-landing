@@ -716,6 +716,31 @@ export async function fetchAttemptReview(attemptId: string): Promise<{
   };
 }
 
+// [sim-draft-tak-mengunci-v1] Keadaan attempt di server — dipakai runner untuk
+// memastikan draf localStorage masih sah sebelum dilanjutkan. null = gagal dibaca
+// (jaringan/sesi belum siap) → pemanggil memperlakukannya "tidak tahu", bukan "hilang".
+export async function fetchAttemptState(attemptId: string): Promise<{ status: string; submitted: boolean } | null> {
+  const { data, error } = await supabase
+    .from("simulation_attempts")
+    .select("status, submitted_at")
+    .eq("id", attemptId)
+    .maybeSingle();
+  if (error) return null;
+  if (!data) return { status: "missing", submitted: false };
+  return { status: (data as any).status as string, submitted: !!(data as any).submitted_at };
+}
+
+// Draf yang ditinggalkan peserta (mulai ulang dari awal) → tandai kedaluwarsa supaya
+// tab Peserta admin tak menampilkannya "Sedang dikerjakan" sampai cron lewat.
+// submitted_at dibiarkan NULL: jatah promo & Riwayat Skor tak tersentuh.
+export async function abandonAttempt(attemptId: string): Promise<void> {
+  await supabase
+    .from("simulation_attempts")
+    .update({ status: "expired" })
+    .eq("id", attemptId)
+    .is("submitted_at", null);
+}
+
 export async function finalizeAttempt(attemptId: string, totals: {
   score: number; max_score: number; auto_score: number; ai_score: number;
 }): Promise<boolean> {
