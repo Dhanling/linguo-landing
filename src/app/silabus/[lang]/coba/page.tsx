@@ -40,6 +40,7 @@ import { norwegianPlacementTest } from "@/data/placement/norwegian";
 import { danishPlacementTest } from "@/data/placement/danish";
 import { icelandicPlacementTest } from "@/data/placement/icelandic";
 import { irishPlacementTest } from "@/data/placement/irish"; // linguo-patch:placement-irish-v1
+import { bosnianPlacementTest } from "@/data/placement/bosnian"; // linguo-patch:placement-bosnian-v1
 import { finnishPlacementTest } from "@/data/placement/finnish";
 import { hungarianPlacementTest } from "@/data/placement/hungarian";
 import { turkishPlacementTest } from "@/data/placement/turkish";
@@ -357,6 +358,7 @@ const CEFR_QUESTIONS: Record<string, PlacementQuestion[]> = {
   danish: danishPlacementTest,
   icelandic: icelandicPlacementTest,
   irish: irishPlacementTest,
+  bosnian: bosnianPlacementTest,
   finnish: finnishPlacementTest,
   hungarian: hungarianPlacementTest,
   turkish: turkishPlacementTest,

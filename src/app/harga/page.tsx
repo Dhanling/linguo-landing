@@ -83,6 +83,7 @@ const LANGUAGES: LangEntry[] = [
   { code: "tw", name: "Traditional Chinese", cat: "A" },
   { code: "ge", name: "Georgian",         cat: "A" },
   { code: "ie", name: "Irish",            cat: "A" },
+  { code: "ba", name: "Bosnian",          cat: "A" },
   { code: "iq", name: "Kurdish",          cat: "A" },
   { icon: "scroll",   name: "Latin",            cat: "A" },
   { icon: "landmark", name: "Ancient Egyptian", cat: "A" },

@@ -33,7 +33,7 @@ import { isRegulerLang } from "@/lib/programLanguages";
 export const LANG_CATEGORIES: Array<{ label: string; langs: string[] }> = [
   { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
   { label: "Asia", langs: ["Japanese","Korean","Mandarin","Arabic","Thai","Vietnamese","Hindi","Turkish","Hebrew","Persian","Tagalog","Malay","Georgian","Urdu","Bengali"] },
-  { label: "Eropa", langs: ["English","French","German","Spanish","Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish","Finnish","Greek","Czech","Hungarian","Romanian"] },
+  { label: "Eropa", langs: ["English","French","German","Spanish","Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish","Finnish","Greek","Czech","Hungarian","Romanian","Bosnian"] },
   { label: "Nusantara", langs: ["Javanese","Sundanese","Betawi","BIPA"] },
   { label: "Afrika", langs: ["Swahili"] },
 ];

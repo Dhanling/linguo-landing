@@ -88,6 +88,7 @@ const PRICELIST_ONLY: Record<string, { name: string; nativeName: string; region:
   Serbian: { name: "Serbia", nativeName: "Српски", region: "european" },
   Estonian: { name: "Estonia", nativeName: "Eesti", region: "european" },
   Irish: { name: "Irlandia", nativeName: "Gaeilge", region: "european" },
+  Bosnian: { name: "Bosnia", nativeName: "Bosanski", region: "european" },
   "Ancient Egyptian": { name: "Mesir Kuno", nativeName: "Hieroglif", region: "other" },
   "Sign Language": { name: "Bahasa Isyarat Indonesia", nativeName: "BISINDO", region: "nusantara" },
 };

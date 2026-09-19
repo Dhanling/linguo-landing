@@ -419,7 +419,7 @@ const WIZARD_DIGITAL: { key: KategoriBelanja; label: string; icon: LucideIcon; i
 
 // [linguo-patch:onboarding-lang-catalog-v1] katalog bahasa Kelas Private — lengkap, dikelompokkan per region
 const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
-  { region: "Eropa", langs: ["English","French","German","Spanish","Italian","Portuguese","Dutch","Russian","Polish","Czech","Hungarian","Romanian","Bulgarian","Ukrainian","Greek","Turkish","Danish","Swedish","Norwegian","Finnish","Icelandic"] },
+  { region: "Eropa", langs: ["English","French","German","Spanish","Italian","Portuguese","Dutch","Russian","Polish","Czech","Hungarian","Romanian","Bulgarian","Ukrainian","Greek","Turkish","Danish","Swedish","Norwegian","Finnish","Icelandic","Bosnian"] },
   { region: "Asia", langs: ["Japanese","Korean","Mandarin","Cantonese","Thai","Vietnamese","Filipino","Khmer","Lao","Burmese","Hindi","Urdu"] },
   { region: "Timur Tengah", langs: ["Arabic","Hebrew","Persian"] },
   { region: "Nusantara", langs: ["Javanese","Sundanese","Balinese","Batak","Bugis","Madurese","BIPA"] },
@@ -1931,7 +1931,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     Portuguese: "A", Finnish: "A", Czech: "A", "Traditional Chinese": "A", Hungarian: "A",
     Esperanto: "A", Farsi: "A", "English British": "A", Romanian: "A", Khmer: "A",
     Danish: "A", Uzbek: "A", Serbian: "A", Estonian: "A", Latin: "A",
-    "Ancient Egyptian": "A", Georgian: "A", Irish: "A", Malay: "A",
+    "Ancient Egyptian": "A", Georgian: "A", Irish: "A", Malay: "A", Bosnian: "A",
     Russian: "B", Dutch: "B", Italian: "B", Spanish: "B", Thai: "B", "Sign Language": "B",
     Arabic: "C", English: "C", Japanese: "C", German: "C", Korean: "C", Mandarin: "C", French: "C",
     Javanese: "D", Sundanese: "D", Madurese: "D", Batak: "D", Banjar: "D",

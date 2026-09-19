@@ -51,6 +51,7 @@ export const LANG_SEARCH_ALIAS: Record<string, string[]> = {
   Swahili: ["swahili", "kenya"],
   Georgian: ["georgia"],
   Irish: ["irlandia"],
+  Bosnian: ["bosnia", "bosanski"],
   Kurdish: ["kurdi"],
   Javanese: ["jawa"],
   Sundanese: ["sunda"],

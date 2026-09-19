@@ -23,6 +23,8 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     "Esperanto", "Farsi", "English British", "Romanian", "Khmer", "Danish",
     "Uzbek", "Serbian", "Estonian", "Latin", "Ancient Egyptian", "Georgian",
     "Irish",
+    // linguo-patch:silabus-bosnian-v1 — setara Serbia/Kroasia (kategori A).
+    "Bosnian",
     // linguo-patch:private-pricing-v1 — nama bahasa di funnel landing tidak
     // 100% sama dgn pricelist: "Persian" (= Farsi, sudah ada di atas) dan
     // "Bengali" sebelumnya tidak ketemu kategori → harga jatuh ke fallback.

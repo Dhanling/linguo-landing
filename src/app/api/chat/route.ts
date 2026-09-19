@@ -149,7 +149,7 @@ Kenaikan sub-level otomatis per 16 sesi (sesi 1-16 = A1.1, 17-32 = A1.2, 33-48 =
 Kategori bahasa (INTERNAL, jangan disebut):
 - Kategori C: English, Korean, Japanese, Mandarin, French, German, Arabic.
 - Kategori B: Spanish, Italian, Russian, Dutch, Thai, Sign Language.
-- Kategori A: Portuguese, Vietnamese, Hindi, Turkish, Polish, Swedish, Greek, Norwegian, Danish, Hebrew, Tagalog, Farsi/Persia, English British, Czech, Finnish, Romanian, Hungarian, Malay, Urdu, Khmer, Uzbek, Serbian, Estonian, Swahili, Traditional Chinese, Cantonese, Georgian, Irish, Latin, Esperanto, Mesir Kuno (Ancient Egyptian), dan bahasa langka/Eropa/klasik lain.
+- Kategori A: Portuguese, Vietnamese, Hindi, Turkish, Polish, Swedish, Greek, Norwegian, Danish, Hebrew, Tagalog, Farsi/Persia, English British, Czech, Finnish, Romanian, Hungarian, Malay, Urdu, Khmer, Uzbek, Serbian, Estonian, Swahili, Traditional Chinese, Cantonese, Georgian, Irish, Bosnian, Latin, Esperanto, Mesir Kuno (Ancient Egyptian), dan bahasa langka/Eropa/klasik lain.
 - Kategori D (bahasa daerah Nusantara): Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura. (Melayu TIDAK termasuk D — Melayu bahasa asing Malaysia/Brunei/Singapura, masuk kategori A.)
 - Kategori E: BIPA (Indonesian for Foreigners).
 Tarif per sesi 60 menit (= tarif "per jam" yang dikutip ke user) — kolom: Basic (A1) | Upper Basic (A2) | Intermediate (B1/B2) | Advance (C1/C2).
@@ -594,6 +594,7 @@ const LANG_ID: Record<string, string> = {
   Estonian: "Estonia",
   Serbian: "Serbia",
   Irish: "Irlandia",
+  Bosnian: "Bosnia",
   Latin: "Latin",
   Esperanto: "Esperanto",
   "Ancient Egyptian": "Mesir Kuno",

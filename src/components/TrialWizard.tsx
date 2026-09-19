@@ -148,6 +148,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   "Ancient Egyptian": { flag: "eg", region: "lainnya" },
   Georgian: { flag: "ge", region: "asia" },
   Irish: { flag: "ie", region: "eropa" },
+  Bosnian: { flag: "ba", region: "eropa" },
   Persian: { flag: "ir", region: "timur-tengah" },
   Bengali: { flag: "bd", region: "asia" },
   // Kategori D (Nusantara)
