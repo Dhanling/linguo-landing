@@ -1233,10 +1233,18 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
                 <X className="h-5 w-5"/>
               </button>
             </div>
-            <p className="text-xs text-slate-500 mb-4">
+            <p className="text-xs text-slate-500 mb-2">
               {lang==="id"
                 ? `Isi data singkat ini dulu, lalu kamu langsung tersambung ke WhatsApp kami (${countryCode}${waNumber}).`
                 : `Fill in these quick details, then you'll be connected to our WhatsApp (${countryCode}${waNumber}).`}
+            </p>
+            {/* promo-klaim-diskon-6-bulan-v1 — wujud diskonnya ditulis terang di sini
+                supaya janji di form sama dengan yang dijawab admin/AI: e-book gratis
+                akses 6 bulan, syaratnya mendaftar kelas (bukan sekadar isi form). */}
+            <p className="text-[11px] leading-snug text-[#1A9E9E] bg-[#1A9E9E]/10 rounded-xl px-3 py-2 mb-4">
+              {lang==="id"
+                ? "Promo: e-book gratis akses 6 bulan. Berlaku setelah kamu mendaftar kelas (Private, Semi Private, Reguler, Kids, atau Test Prep)."
+                : "Promo: free e-book with 6 months of access. Valid once you enroll in a class (Private, Semi Private, Regular, Kids, or Test Prep)."}
             </p>
             <div className="space-y-2.5">
               <input type="text" placeholder={lang==="id"?"Nama kamu":"Your name"} value={qName}
