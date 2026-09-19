@@ -9,18 +9,24 @@
 // tombol "Tonton rekaman" muncul buat siapa pun — tak peduli dia beli add-on
 // Recording atau tidak. Jadi add-on Rp 100.000 itu praktis gratis.
 //
-// ── Kenapa BUKAN boolean, tapi tiga keadaan ───────────────────────────────────
-// Data add-on di produksi TIDAK lengkap. Hitungan per 11 Sep 2026:
-//   • 45 registrasi punya rekaman (schedules.recording_url terisi),
-//   • cuma 21 registrasi punya catatan add-on sama sekali,
-//   • 17 registrasi NOL data add-on dalam bentuk apa pun.
-// Kalau gerbangnya boolean ("tidak ada catatan = tidak beli"), 17 siswa itu
-// langsung KEHILANGAN rekaman yang hari ini bisa mereka tonton — padahal yang
-// hilang bukan haknya, tapi pendataannya. Mencabut akses yang sudah jalan jauh
-// lebih mahal (keluhan + kepercayaan) daripada kebocoran beberapa rekaman lama.
-// KEPUTUSAN EKSPLISIT: "belum-didata" TETAP TERLIHAT. Begitu admin mendata
-// add-on registrasi itu (apa pun jenisnya), barisnya otomatis pindah ke "punya"
-// atau "tidak" tanpa perlu ganti kode.
+// ── Tiga keadaan data, SATU aturan akses ──────────────────────────────────────
+// [rekaman-wajib-beli-v1] (19 Sep 2026, keputusan owner) Rekaman HANYA untuk
+// registrasi yang membeli add-on Recording / paket yang memuat Recording. Tanpa
+// catatan pembelian = tidak beli = terkunci — berlaku untuk SEMUA siswa.
+//
+// Sebelumnya (11 Sep 2026) registrasi yang nol catatan add-on ("belum-didata")
+// sengaja tetap boleh menonton supaya siswa lama tak kehilangan akses. Akibatnya
+// setiap registrasi BARU tanpa add-on (keadaan paling umum: siswa memang tak
+// beli apa-apa) otomatis dapat rekaman gratis — add-on Rp 100.000 praktis tak
+// perlu dibeli. Per 19 Sep 2026 ada 24 registrasi (74 rekaman) yang menonton
+// lewat celah itu. Siswa yang ternyata memang beli tapi belum didata: admin
+// cukup mencatat add-on Recording di menu Registrasi → aksesnya langsung kembali
+// tanpa ganti kode.
+//
+// Keadaan "belum-didata" tetap dibedakan dari "tidak" HANYA untuk keperluan
+// audit/diagnosa; hak aksesnya sama-sama terkunci. "memuat" = peta akses belum
+// datang — UI tak menampilkan tombol maupun gembok supaya pembeli sah tak melihat
+// kedipan "terkunci".
 //
 // ── Add-on tersimpan di TIGA tempat — jangan pernah baca satu saja ────────────
 //   1. tabel `registration_addons` — (registration_id, addon_type
@@ -38,7 +44,7 @@
 // gampang ditebak), dan policy RLS di sql/registration_addons_rls_siswa_20260911.sql
 // supaya siswa boleh membaca baris add-on miliknya sendiri.
 
-export type AksesAddon = "punya" | "tidak" | "belum-didata";
+export type AksesAddon = "punya" | "tidak" | "belum-didata" | "memuat";
 
 /** Baris `registration_addons` — sekadar yang dibutuhkan gerbang ini. */
 export type AddonRow = {
@@ -84,7 +90,7 @@ function addonsJsonb(reg: RegAddonFields): Record<string, any> | null {
  *      Artinya admin memang sudah mendata pembelian tambahannya dan rekaman
  *      TIDAK termasuk di situ.
  *   5. tak ada catatan apa pun                             → "belum-didata"
- *      (tampilkan — lihat blok keputusan di atas).
+ *      (TERKUNCI juga — lihat [rekaman-wajib-beli-v1] di atas).
  */
 export function aksesRekaman(reg: RegAddonFields, addonRows: AddonRow[]): AksesAddon {
   const rows = Array.isArray(addonRows) ? addonRows : [];
@@ -105,16 +111,19 @@ export function aksesRekaman(reg: RegAddonFields, addonRows: AddonRow[]): AksesA
   // 4) add-on sudah didata, rekaman tidak termasuk.
   // `addon_ebook_recording === false` SENGAJA tidak dihitung sebagai "sudah didata":
   // kolomnya NOT NULL default false, jadi false = "tak pernah disentuh", bukan
-  // "admin memutuskan tanpa rekaman". Menghitungnya mencabut rekaman 18 kelas yang
-  // nol catatan add-on (dicek di prod 11 Sep 2026).
+  // "admin memutuskan tanpa rekaman". (Hak aksesnya kini sama dengan "belum-didata";
+  // pembedaan ini tinggal untuk audit.)
   if (rows.length > 0 || j !== null) return "tidak";
 
   // 5) belum pernah didata sama sekali.
   return "belum-didata";
 }
 
-/** Rekaman boleh ditampilkan/di-stream? "belum-didata" ikut boleh (lihat di atas). */
-export const rekamanBolehTampil = (a: AksesAddon) => a !== "tidak";
+/** Rekaman boleh ditampilkan/di-stream? HANYA pembeli Recording. [rekaman-wajib-beli-v1] */
+export const rekamanBolehTampil = (a: AksesAddon) => a === "punya";
+
+/** Tampilkan gembok + penjelasan? Tidak selama peta akses masih dimuat. */
+export const rekamanTerkunci = (a: AksesAddon) => a === "tidak" || a === "belum-didata";
 
 /** Kalimat penolakan yang dipakai UI maupun API — satu sumber, satu nada. */
 export const PESAN_REKAMAN_TERKUNCI = "Rekaman sesi tidak termasuk paket kelas ini";
@@ -131,9 +140,10 @@ type SupabaseLike = {
  * men-select ADDON_REG_COLUMNS; kalau belum, lewatkan `ambilKolomReg: true` supaya
  * helper ini menambalnya sendiri (dipakai jalur cache /akun yang snapshot-nya lama).
  *
- * Gagal query (policy belum dipasang, tabel belum ada) TIDAK boleh menutup akses:
- * hasilnya dibiarkan kosong → semua registrasi jatuh ke "belum-didata"/terlihat,
- * dan gerbang sebenarnya tetap ada di API route yang pakai service key.
+ * Gagal query `registration_addons` (jaringan, policy) → registrasi yang tak
+ * terbukti "punya" dari kolom registrasinya dikembalikan "memuat", BUKAN terkunci:
+ * pembeli sah tak boleh melihat gembok hanya karena query-nya gagal. Tombol di UI
+ * bukan gerbangnya — gerbang sebenarnya `/api/class-recording` (service key).
  */
 export async function muatAksesRekamanMap(
   client: SupabaseLike,
@@ -145,18 +155,20 @@ export async function muatAksesRekamanMap(
   if (ids.length === 0) return out;
 
   const perReg = new Map<string, AddonRow[]>();
+  let addonGagal = false;
   try {
-    const { data } = await client
+    const { data, error } = await client
       .from("registration_addons")
       .select("registration_id, addon_type, payment_status, quantity")
       .in("registration_id", ids);
+    if (error) addonGagal = true;
     (data || []).forEach((r: any) => {
       const arr = perReg.get(r.registration_id) || [];
       arr.push(r as AddonRow);
       perReg.set(r.registration_id, arr);
     });
   } catch {
-    // biarkan kosong — lihat catatan di atas.
+    addonGagal = true;
   }
 
   let fields = new Map<string, RegAddonFields>((regs || []).map((r) => [r.id, r]));
@@ -169,7 +181,10 @@ export async function muatAksesRekamanMap(
     }
   }
 
-  ids.forEach((id) => out.set(id, aksesRekaman(fields.get(id) || {}, perReg.get(id) || [])));
+  ids.forEach((id) => {
+    const a = aksesRekaman(fields.get(id) || {}, perReg.get(id) || []);
+    out.set(id, addonGagal && a !== "punya" ? "memuat" : a);
+  });
   return out;
 }
 

@@ -29,7 +29,11 @@ const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const BUCKET = "class-recordings"; // privat — tujuan rekaman baru
 const LEGACY_BUCKET = "class-materials"; // publik — rekaman lama (read-only)
 const PREFIX = "video-recordings";
-const SIGNED_TTL_SEC = 60 * 60; // 1 jam, cukup untuk menonton satu sesi
+// Rekaman kelas rutin lebih panjang dari satu jam (sesi 60 menit + pembukaan
+// jadi berkas ~67 menit), dan ditonton sambil dijeda. Tautan 1 jam MATI DI
+// TENGAH tontonan: Storage menolak potongan berikutnya dan pemutar cuma bisa
+// bilang "Rekaman gagal dimuat" padahal berkasnya utuh.
+const SIGNED_TTL_SEC = 6 * 60 * 60;
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 interface RecordingItem {
@@ -125,11 +129,19 @@ export async function POST(req: NextRequest) {
     // registrasi dan tersimpan di TIGA tempat (tabel registration_addons,
     // registrations.addons jsonb, registrations.addon_ebook_recording buat bundel
     // e-book+rekaman dari penawaran WA) — helper aksesRekaman() membaca ketiganya.
-    // Hanya status "tidak" yang ditolak: itu berarti admin SUDAH mendata pembelian
-    // tambahannya dan rekaman tak termasuk. "belum-didata" (17 registrasi di
-    // produksi per 11 Sep 2026 nol catatan add-on) tetap diizinkan — mencabut
-    // rekaman yang sudah bisa ditonton jauh lebih merugikan.
-    if (sched.registration_id) {
+    // [rekaman-wajib-beli-v1] (19 Sep 2026, keputusan owner) HANYA "punya" yang
+    // lolos. Dulu "belum-didata" (nol catatan add-on) ikut diizinkan, sehingga
+    // setiap registrasi baru tanpa add-on menonton gratis. Jadwal tanpa
+    // registration_id tak bisa dibuktikan pembeliannya → ditolak juga (per 19 Sep
+    // 2026 semua 197 rekaman punya registration_id). Gagal membaca data add-on =
+    // 503, bukan lolos dan bukan vonis "tidak beli".
+    {
+      if (!sched.registration_id) {
+        return NextResponse.json(
+          { error: "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo." },
+          { status: 403 },
+        );
+      }
       const [regRes, addonRes] = await Promise.all([
         admin.from("registrations").select(`id, ${ADDON_REG_COLUMNS}`).eq("id", sched.registration_id).maybeSingle(),
         admin
@@ -137,8 +149,14 @@ export async function POST(req: NextRequest) {
           .select("addon_type, payment_status, quantity")
           .eq("registration_id", sched.registration_id),
       ]);
+      if (regRes.error || addonRes.error) {
+        return NextResponse.json(
+          { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
+          { status: 503 },
+        );
+      }
       const akses = aksesRekaman(regRes.data || {}, (addonRes.data || []) as AddonRow[]);
-      if (akses === "tidak") {
+      if (akses !== "punya") {
         return NextResponse.json(
           {
             error:

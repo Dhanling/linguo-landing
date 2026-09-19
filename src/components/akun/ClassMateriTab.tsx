@@ -30,6 +30,7 @@ import { readCache, writeCache, useIsoLayoutEffect, materiKey } from '@/lib/kela
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref, isPlayableRecording } from '@/lib/classRoom';
 import RecordingModal from './RecordingModal';
+import { muatAksesRekamanSatu, rekamanBolehTampil, type AksesAddon } from '@/lib/addonAccess';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
 import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
@@ -604,6 +605,22 @@ export default function ClassMateriTab({
   useIsoLayoutEffect(() => {
     setMaterials(readCache<any[]>(materiKey(reg.id)));
   }, [reg.id]);
+  /* [rekaman-wajib-beli-v1] "Recording Sesi" hanya masuk daftar materi kalau paket
+     kelas ini memuat add-on Recording. Tab ini dulu satu-satunya tampilan rekaman
+     yang tak lewat gerbang lib/addonAccess. Keterangan "terkunci"-nya ada di tab
+     Progress; di sini barisnya cukup tidak muncul. */
+  const [aksesRek, setAksesRek] = useState<AksesAddon>('memuat');
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      const a = await muatAksesRekamanSatu(supabase, reg.id, reg);
+      if (alive) setAksesRek(a);
+    })();
+    return () => { alive = false; };
+    // `reg` sengaja tak masuk deps: objeknya bisa identitas baru tiap render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reg.id]);
+  const bolehRekaman = rekamanBolehTampil(aksesRek);
   const [kosongTerbuka, setKosongTerbuka] = useState(false);
   const [sesiTerbuka, setSesiTerbuka] = useState<number | null>(null); // nomor sesi di drawer
   // [kelas-materi-silabus-sesi-v1] Silabus level kelas ini (16 sesi). null = tidak
@@ -718,7 +735,7 @@ export default function ClassMateriTab({
         created_at: sched.scheduled_at,
       });
     });
-    if (sched.status === 'completed' && sched.recording_url) {
+    if (sched.status === 'completed' && sched.recording_url && bolehRekaman) {
       out.unshift({
         id: `rec-${sched.id}`,
         title: tr('Recording Sesi'),

@@ -21,7 +21,7 @@ import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileTe
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import RecordingModal from "./RecordingModal";
 // [addon-akses-rekaman-v1] rekaman sesi cuma buat kelas yang beli add-on Recording.
-import { rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from "@/lib/addonAccess";
+import { rekamanBolehTampil, rekamanTerkunci, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from "@/lib/addonAccess";
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
@@ -63,9 +63,9 @@ export default function JadwalCalendar({
   regularBatches?: RegularBatch[];
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
-  /** [addon-akses-rekaman-v1] registration_id → hak rekaman ("punya" | "tidak" |
-   *  "belum-didata"). Registrasi yang tak ada di peta dianggap "belum-didata",
-   *  jadi rekamannya TETAP terlihat (lihat lib/addonAccess.ts). */
+  /** [addon-akses-rekaman-v1] registration_id → hak rekaman. [rekaman-wajib-beli-v1]
+   *  Hanya "punya" yang boleh menonton. Peta kosong = masih dimuat (tombol & gembok
+   *  belum tampil); registrasi yang tak ada di peta yang sudah terisi = terkunci. */
   aksesRekaman?: Map<string, AksesAddon>;
 }) {
   // [ui-lang-switcher-v1] `tt`, bukan `t` — `t` sudah dipakai buat handle interval di bawah.
@@ -942,12 +942,14 @@ function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; no
   const tt = useT(); // [ui-lang-switcher-v1]
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
-  // [addon-akses-rekaman-v1] "tidak" = admin sudah mendata pembelian tambahan kelas
-  // ini dan Recording tak termasuk. Tanpa peta (atau registrasi tak dikenal) →
-  // "belum-didata", rekaman tetap tampil.
-  const bolehRekaman = rekamanBolehTampil(
-    (e.registrationId ? aksesRekaman?.get(e.registrationId) : undefined) ?? "belum-didata",
-  );
+  // [rekaman-wajib-beli-v1] Hanya pembeli Recording ("punya") yang dapat tombolnya.
+  // Peta belum datang → "memuat" (tak ada tombol, tak ada gembok); registrasi tak
+  // dikenal / sesi tanpa registrasi → terkunci.
+  const aksesSesi: AksesAddon = !aksesRekaman || aksesRekaman.size === 0
+    ? "memuat"
+    : (e.registrationId ? aksesRekaman.get(e.registrationId) : undefined) ?? "belum-didata";
+  const bolehRekaman = rekamanBolehTampil(aksesSesi);
+  const rekamanDikunci = rekamanTerkunci(aksesSesi);
   const rec = e.recordingUrl && bolehRekaman ? studentRecordingHref(e.recordingUrl) : null;
   // [vc-recmodal-v1] Rekaman ditonton di pop-up — kalender tetap di posisinya.
   const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
@@ -1030,7 +1032,7 @@ function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; no
             </a>
           )}
           {/* [addon-akses-rekaman-v1] rekamannya ada, paketnya tidak mencakup */}
-          {e.recordingUrl && !bolehRekaman && (
+          {e.recordingUrl && rekamanDikunci && (
             <span
               title={tt(PESAN_REKAMAN_TERKUNCI)}
               className="inline-flex max-w-[118px] items-center gap-1.5 text-right text-[11.5px] font-semibold leading-snug text-[#9CA3AF]"

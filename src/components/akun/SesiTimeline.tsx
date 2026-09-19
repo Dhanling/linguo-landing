@@ -21,7 +21,7 @@ import { Calendar, Clock, Video, BookOpen, ExternalLink, Play, Lock } from 'luci
 import { studentRecordingHref, isInternalRecordingHref, isPlayableRecording } from '@/lib/classRoom';
 // [addon-akses-rekaman-v1] rekaman sesi = add-on berbayar; 'tidak' berarti admin
 // sudah mendata pembelian tambahannya dan Recording TIDAK dibeli.
-import { rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
+import { rekamanBolehTampil, rekamanTerkunci, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
 import RecordingModal from './RecordingModal';
 import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
@@ -135,14 +135,14 @@ export default function SesiTimeline({
   reg,
   schedules,
   variant,
-  aksesRekaman = 'belum-didata',
+  aksesRekaman = 'memuat',
 }: {
   reg: any;
   schedules: TimelineSchedule[];
   variant: 'sesi' | 'materi';
   /** [addon-akses-rekaman-v1] hak rekaman registrasi ini — dihitung di /akun.
-   *  Bawaannya 'belum-didata' (= tetap terlihat) supaya pemanggil lama tak
-   *  diam-diam mencabut akses siswa yang add-on-nya belum didata. */
+   *  [rekaman-wajib-beli-v1] Bawaannya 'memuat' (peta belum datang): tombol
+   *  maupun gembok sama-sama belum tampil. Hanya 'punya' yang boleh menonton. */
   aksesRekaman?: AksesAddon;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
@@ -225,6 +225,7 @@ export default function SesiTimeline({
 
   // [addon-akses-rekaman-v1] satu patokan buat dua varian tab.
   const bolehRekaman = rekamanBolehTampil(aksesRekaman);
+  const rekamanDikunci = rekamanTerkunci(aksesRekaman);
 
   const itemsOf = (s: TimelineSchedule): Item[] => {
     const out: Item[] = [];
@@ -365,7 +366,7 @@ export default function SesiTimeline({
                     {/* [addon-akses-rekaman-v1] Rekaman ada di server, tapi paket kelas ini
                         tak mencakup add-on Recording — katakan apa adanya, jangan biarkan
                         tombolnya hilang tanpa penjelasan. */}
-                    {s?.recording_url && !bolehRekaman && (
+                    {s?.recording_url && rekamanDikunci && (
                       <p className="mt-2.5 inline-flex items-center gap-1.5 text-[12px] font-medium text-gray-400">
                         <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2.2} />
                         {t(PESAN_REKAMAN_TERKUNCI)}

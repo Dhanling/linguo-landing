@@ -20,7 +20,7 @@ import { isPlayableRecording, studentRecordingHref } from '@/lib/classRoom';
 // [addon-akses-rekaman-v1] rekaman sesi = add-on berbayar (Rp 100.000). Tab ini
 // dipakai halaman detail kelas yang tak menghitung peta akses, jadi kalau propnya
 // tak dikirim dia menanyakannya sendiri sekali per registrasi.
-import { muatAksesRekamanSatu, rekamanBolehTampil, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
+import { muatAksesRekamanSatu, rekamanBolehTampil, rekamanTerkunci, PESAN_REKAMAN_TERKUNCI, type AksesAddon } from '@/lib/addonAccess';
 import RecordingModal from './RecordingModal';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
@@ -74,10 +74,9 @@ export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
   const [shareState, setShareState] = useState('');
   // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
   const [rekaman, setRekaman] = useState<{ url: string; title: string } | null>(null);
-  /* [addon-akses-rekaman-v1] Default 'belum-didata' = tetap terlihat: 17 registrasi
-     di produksi tak punya catatan add-on apa pun, dan mencabut rekaman yang sudah
-     bisa ditonton lebih merugikan daripada kebocoran beberapa rekaman lama. */
-  const [akses, setAkses] = useState<AksesAddon>(aksesRekaman ?? 'belum-didata');
+  /* [rekaman-wajib-beli-v1] Default 'memuat': selama hak aksesnya belum diketahui,
+     tombol maupun gembok belum tampil. Hanya 'punya' yang boleh menonton. */
+  const [akses, setAkses] = useState<AksesAddon>(aksesRekaman ?? 'memuat');
   useEffect(() => {
     if (aksesRekaman) { setAkses(aksesRekaman); return; }
     let alive = true;
@@ -90,6 +89,7 @@ export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aksesRekaman, reg.id]);
   const bolehRekaman = rekamanBolehTampil(akses);
+  const rekamanDikunci = rekamanTerkunci(akses);
 
   useEffect(() => {
     let alive = true;
@@ -411,7 +411,7 @@ export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
 
                   {/* [addon-akses-rekaman-v1] paket kelas ini tak mencakup add-on
                       Recording — tombolnya diganti keterangan, bukan dihilangkan diam-diam. */}
-                  {rekamanUnik.length > 0 && !bolehRekaman && (
+                  {rekamanUnik.length > 0 && rekamanDikunci && (
                     <div className="mt-2.5 flex items-center gap-1.5 text-xs text-gray-400">
                       <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
                       {t(PESAN_REKAMAN_TERKUNCI)}

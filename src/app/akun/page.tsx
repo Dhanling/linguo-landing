@@ -2714,8 +2714,9 @@ export default function AkunPage() {
      Efeknya berdiri sendiri (bukan di dalam loadStudentData) karena /akun punya
      BANYAK jalur muat — cache localStorage, API snapshot, query Supabase, pratinjau
      POV staf; satu efek yang ikut daftar id registrasi menutup semuanya sekaligus.
-     Selama peta belum datang, isinya kosong → semua dianggap "belum-didata" alias
-     tetap terlihat; gerbang yang sesungguhnya ada di /api/class-recording. */
+     [rekaman-wajib-beli-v1] Hanya "punya" yang boleh menonton. Selama peta belum
+     datang isinya kosong → dianggap "memuat" (tombol & gembok belum tampil);
+     gerbang yang sesungguhnya ada di /api/class-recording. */
   const [aksesRekamanMap, setAksesRekamanMap] = useState<Map<string, AksesAddon>>(() => new Map());
   const regIdsKey = (student?.registrations || []).map((r: any) => r.id).join(",");
   useEffect(() => {
