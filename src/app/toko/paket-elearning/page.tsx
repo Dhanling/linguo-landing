@@ -13,7 +13,7 @@ export const metadata = {
   alternates: { canonical: "https://linguo.id/toko/paket-elearning" },
   title: 'E-Learning Linguo — Rekaman Kelas per Bahasa, Rp 79.000',
   description:
-    'Rekaman kelas level Basic per bahasa: belajar mandiri lewat video kapan saja. Rp 79.000 akses 6 bulan, Rp 150.000 akses 1 tahun.',
+    'Rekaman kelas level Basic (A1.1) per bahasa: belajar mandiri lewat video kapan saja. Rp 79.000 akses 6 bulan, Rp 150.000 akses 1 tahun.',
 };
 
 export type PricingTier = {

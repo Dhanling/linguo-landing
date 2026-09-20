@@ -352,7 +352,7 @@ ${kidsTable()}
 
 - Kelas Reguler: ${BRAND_FACTS.price.regulerLabel} untuk 8 pertemuan @90 menit, kelas grup 8-15 siswa.
 - IELTS & TOEFL Preparation: ${BRAND_FACTS.price.testPrepLabel} untuk 16 sesi @90 menit, termasuk mock test.
-- E-Learning per bahasa: ${rupiah(79000)} akses 6 bulan, ${rupiah(150000)} akses 1 tahun. Isinya rekaman kelas level Basic (A1).
+- E-Learning per bahasa: ${rupiah(79000)} akses 6 bulan, ${rupiah(150000)} akses 1 tahun. Isinya rekaman kelas level Basic (A1.1) saja — A1.2 ke atas lewat kelas Private.
 - E-Book per bahasa: ${BRAND_FACTS.price.ebookFromLabel}, format PDF, akses selamanya.
 - Kelas offline (tatap muka) tersedia untuk Private dan Semi Private dengan tambahan ${rupiah(50000)} per sesi, terbatas kota tertentu.
 

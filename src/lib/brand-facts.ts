@@ -127,7 +127,7 @@ export const BRAND_FACTS = {
       name: "E-Learning",
       slug: "/toko/paket-elearning",
       priceLabel: `${rupiah(79000)}/6 bulan`,
-      detail: "Rekaman kelas level Basic per bahasa, belajar mandiri kapan saja.",
+      detail: "Rekaman kelas level Basic (A1.1) per bahasa, belajar mandiri kapan saja.",
     },
     {
       name: "E-Book",

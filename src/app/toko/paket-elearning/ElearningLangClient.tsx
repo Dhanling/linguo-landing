@@ -251,7 +251,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
             <span className="font-serif italic text-teal-600">rekaman kelas</span>, per bahasa
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-            Tonton rekaman kelas level Basic dari pengajar Linguo sesuka kamu. Bayar cuma untuk
+            Tonton rekaman kelas level Basic (A1.1) dari pengajar Linguo sesuka kamu. Bayar cuma untuk
             bahasa yang kamu pelajari — <strong>boleh pilih beberapa bahasa sekaligus</strong> dalam
             satu pembayaran.
           </p>
@@ -471,7 +471,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           <h2 className="text-2xl font-bold text-slate-900">Yang kamu dapat</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
-              'Rekaman kelas level Basic (A1) untuk bahasa yang kamu pilih',
+              'Rekaman kelas level Basic (A1.1) untuk bahasa yang kamu pilih',
               'Ditonton kapan saja dari HP atau laptop, boleh diulang',
               'Akses lewat dashboard linguo.id/akun sesuai durasi yang dibeli',
               'Bisa diperpanjang kapan saja tanpa mengulang dari awal',
@@ -488,7 +488,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               <ShieldCheck className="h-4 w-4 text-teal-600" strokeWidth={2} aria-hidden />
               Jujur soal isinya
             </div>
-            Materi e-learning berhenti di level Basic (A1). Kalau kamu mau lanjut ke A2 ke atas,
+            Materi e-learning berhenti di level Basic (A1.1). Kalau kamu mau lanjut ke A1.2 ke atas,
             jalurnya kelas Private bareng pengajar — bukan menambah durasi e-learning.{' '}
             <Link href="/kursus" className="font-medium text-teal-700 hover:underline">
               Lihat kelas Private
