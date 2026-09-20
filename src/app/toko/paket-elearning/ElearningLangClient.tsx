@@ -27,6 +27,7 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import { getLangPhoto } from '@/lib/lang-visuals';
 import type { ElearningProduct, PricingTier } from './page';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
+import { normalisasiWa } from '@/lib/waPembeli';
 
 // [elearning-per-bahasa-v1] Etalase e-learning per bahasa. Dulu halaman ini
 // satu form checkout untuk paket "12+ bahasa sekaligus"; sekarang tiap bahasa
@@ -171,6 +172,12 @@ export default function ElearningLangClient({ products }: { products: ElearningP
       setSalah('Nama dan email yang valid wajib diisi.');
       return;
     }
+    // [wa-wajib-digital-v1] WA dulu opsional → pembelinya tak bisa di-follow-up.
+    const waPembeli = normalisasiWa(form.phone);
+    if (!waPembeli) {
+      setSalah('Nomor WhatsApp aktif wajib diisi (contoh: 0812 3456 7890).');
+      return;
+    }
     setKirim(true);
     try {
       const { data } = await supabase.auth.getSession();
@@ -183,7 +190,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
           accessToken: data.session?.access_token ?? '',
           buyer_name: form.name.trim(),
           buyer_email: form.email.trim(),
-          buyer_phone: form.phone.trim() || null,
+          buyer_phone: waPembeli,
           referral_code:
             form.ref.trim() ||
             (typeof document !== 'undefined'
@@ -771,7 +778,7 @@ export default function ElearningLangClient({ products }: { products: ElearningP
               {[
                 { k: 'name' as const, label: 'Nama lengkap', type: 'text', ph: 'Nama lengkap *', wide: true },
                 { k: 'email' as const, label: 'Email', type: 'email', ph: 'Email *', wide: false },
-                { k: 'phone' as const, label: 'Nomor WhatsApp', type: 'tel', ph: 'Nomor WhatsApp', wide: false },
+                { k: 'phone' as const, label: 'Nomor WhatsApp', type: 'tel', ph: 'Nomor WhatsApp *', wide: false },
               ].map((f) => (
                 <input
                   key={f.k}

@@ -44,6 +44,8 @@ import { bacaTerakhirDibuka, hapusTerakhirDibuka, type JejakPustaka } from "@/li
 import { kunciJejak } from "@/lib/jejakPemilik";
 // [pustaka-popup-blocked-v1] tab bayar dibuka di dalam gestur klik, bukan sesudah fetch
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
+import KolomWaPembeli, { useWaPembeli } from "@/components/akun/KolomWaPembeli"; // [wa-wajib-digital-v1]
+import { KODE_WA_WAJIB } from "@/lib/waPembeli";
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
 import {
   useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
@@ -1971,6 +1973,7 @@ function RenewModal({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [buyer, setBuyer] = useState<{ email: string; name: string; phone: string | null }>({ email: "", name: "", phone: null });
+  const wa = useWaPembeli(supabase, pratinjau); // [wa-wajib-digital-v1]
 
   useEffect(() => {
     let alive = true;
@@ -2019,10 +2022,13 @@ function RenewModal({
   async function handlePay() {
     if (!selected) return;
     if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    // [wa-wajib-digital-v1] dicek SEBELUM tab pembayaran dibuka
+    if (wa.perluIsi && !wa.nomor) { toast.error("Isi nomor WhatsApp aktif dulu ya."); return; }
     // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik masih hidup
     const tabBayar = siapkanTabPembayaran();
     setSubmitting(true);
     try {
+      await wa.simpan();
       const refCookie = typeof document !== "undefined"
         ? (("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null)
         : null;
@@ -2039,7 +2045,7 @@ function RenewModal({
             referral_code: refCookie,
             buyer_email: buyer.email,
             buyer_name: buyer.name,
-            buyer_phone: buyer.phone,
+            buyer_phone: wa.nomor ?? buyer.phone,
             /* [pratinjau-beli-langsung-v1] Di POV kita TAHU siswanya; ikat
                barisnya sekalian supaya produknya mendarat di rak yang benar
                walau email pembeli beda dari email login siswa nanti. */
@@ -2136,9 +2142,10 @@ function RenewModal({
         {!loading && tiers.length > 0 && (
           <div className="border-t border-slate-100 px-5 py-4">
             {pratinjau && <NotaPratinjau buyer={previewBuyer!} />}
+            <KolomWaPembeli wa={wa} disabled={submitting} />
             <button
               onClick={handlePay}
-              disabled={!selected || submitting}
+              disabled={!selected || submitting || !wa.siap}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
             >
               {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
@@ -2443,6 +2450,7 @@ function CartModal({
   onKosongkan: () => void;
 }) {
   const [submitting, setSubmitting] = useState(false);
+  const wa = useWaPembeli(supabase); // [wa-wajib-digital-v1]
   const total = items.reduce((n, x) => n + (Number(x.price) || 0), 0);
 
   // Keranjang yang dikosongkan dari dalam popup tak menyisakan apa pun untuk
@@ -2451,6 +2459,8 @@ function CartModal({
 
   async function bayar() {
     if (items.length === 0) return;
+    // [wa-wajib-digital-v1] dicek SEBELUM tab pembayaran dibuka
+    if (wa.perluIsi && !wa.nomor) { toast.error("Isi nomor WhatsApp aktif dulu ya."); return; }
     // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik hidup
     const tabBayar = siapkanTabPembayaran();
     setSubmitting(true);
@@ -2469,10 +2479,12 @@ function CartModal({
         body: JSON.stringify({
           accessToken: token,
           referral_code: refCookie,
+          buyer_phone: wa.perluIsi ? wa.nomor : null, // [wa-wajib-digital-v1] server menyimpannya ke profil
           items: items.map((x) => ({ productId: x.productId, pricingId: x.pricingId })),
         }),
       });
       const data = await res.json().catch(() => ({}));
+      if (data?.code === KODE_WA_WAJIB) wa.minta(); // profil ternyata belum punya nomor → munculkan kolomnya
       if (!res.ok || !data?.invoice_url) throw new Error(data?.error ?? "Gagal membuat invoice");
 
       // Item yang gugur di server (sudah dimiliki / materi belum siap) dikatakan
@@ -2569,13 +2581,14 @@ function CartModal({
 
         {/* footer */}
         <div className="border-t border-slate-100 px-5 py-4">
+          <KolomWaPembeli wa={wa} disabled={submitting} />
           <div className="mb-3 flex items-center justify-between">
             <span className="text-[13px] font-bold text-slate-500">Total</span>
             <span className="text-[19px] font-extrabold text-[#12172B]">{fmtRupiah(total)}</span>
           </div>
           <button
             onClick={bayar}
-            disabled={submitting || items.length === 0}
+            disabled={submitting || items.length === 0 || !wa.siap}
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
           >
             {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
@@ -2619,6 +2632,7 @@ function BuyModal({
   const [cekBusy, setCekBusy] = useState(false);
   const [promoErr, setPromoErr] = useState<string | null>(null);
   const pratinjau = !!previewBuyer;
+  const wa = useWaPembeli(supabase, pratinjau); // [wa-wajib-digital-v1]
 
   useEffect(() => {
     let alive = true;
@@ -2648,9 +2662,13 @@ function BuyModal({
     const res = await fetch("/api/promo-digital", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ accessToken: token, productId: item.id, pricingId: selectedId, code, mode }),
+      body: JSON.stringify({
+        accessToken: token, productId: item.id, pricingId: selectedId, code, mode,
+        buyer_phone: wa.perluIsi ? wa.nomor : null, // [wa-wajib-digital-v1]
+      }),
     });
     const data = await res.json().catch(() => ({}));
+    if (data?.code === KODE_WA_WAJIB) wa.minta();
     if (!res.ok || !data?.ok) {
       setPromoErr(data?.error ?? "Kode promo tidak bisa dipakai.");
       setPromo(null);
@@ -2671,6 +2689,8 @@ function BuyModal({
   }
 
   async function klaimGratis() {
+    // [wa-wajib-digital-v1] klaim gratis pun wajib meninggalkan nomor WA
+    if (wa.perluIsi && !wa.nomor) { toast.error("Isi nomor WhatsApp aktif dulu ya."); return; }
     setSubmitting(true);
     const hasil = await panggilPromo("klaim");
     if (!hasil) { setSubmitting(false); return; }
@@ -2684,10 +2704,13 @@ function BuyModal({
   async function handlePay() {
     if (!selected) return;
     if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    // [wa-wajib-digital-v1] dicek SEBELUM tab pembayaran dibuka
+    if (wa.perluIsi && !wa.nomor) { toast.error("Isi nomor WhatsApp aktif dulu ya."); return; }
     // [pustaka-popup-blocked-v1] tab dibuka SEKARANG, selagi gestur klik masih hidup
     const tabBayar = siapkanTabPembayaran();
     setSubmitting(true);
     try {
+      await wa.simpan();
       const refCookie = typeof document !== "undefined"
         ? (("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null)
         : null;
@@ -2704,7 +2727,7 @@ function BuyModal({
             referral_code: refCookie,
             buyer_email: buyer.email,
             buyer_name: buyer.name,
-            buyer_phone: buyer.phone,
+            buyer_phone: wa.nomor ?? buyer.phone,
             /* [pratinjau-beli-langsung-v1] Di POV kita TAHU siswanya; ikat
                barisnya sekalian supaya produknya mendarat di rak yang benar
                walau email pembeli beda dari email login siswa nanti. */
@@ -2839,10 +2862,11 @@ function BuyModal({
         {tiers.length > 0 && (
           <div className="border-t border-slate-100 px-5 py-4">
             {pratinjau && <NotaPratinjau buyer={previewBuyer!} />}
+            <KolomWaPembeli wa={wa} disabled={submitting} />
             {promo ? (
               <button
                 onClick={klaimGratis}
-                disabled={submitting}
+                disabled={submitting || !wa.siap}
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
               >
                 {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <Sparkles className="h-5 w-5" strokeWidth={2.2} />}
@@ -2851,7 +2875,7 @@ function BuyModal({
             ) : (
               <button
                 onClick={handlePay}
-                disabled={!selected || submitting}
+                disabled={!selected || submitting || !wa.siap}
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
               >
                 {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}

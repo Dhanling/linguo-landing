@@ -3,6 +3,8 @@ import { ebookSkuPrices } from "@/lib/ebookPricing";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { promoAmountFor } from "@/lib/promoMerdeka";
+import { createClient } from "@supabase/supabase-js";
+import { KODE_WA_WAJIB, PESAN_WA_WAJIB, normalisasiWa, pastikanWaPembeli } from "@/lib/waPembeli";
 import {
   normalizeAddonPick,
   addonPickAmount,
@@ -203,7 +205,8 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number, language, program, level, productKey: directKey, ref_code, variant, sessions, duration, etp_batch_id } = body;
+    const { name, email, wa_number: waMasuk, language, program, level, productKey: directKey, ref_code, variant, sessions, duration, etp_batch_id } = body;
+    let wa_number: string | undefined = waMasuk; // [wa-wajib-digital-v1] bisa diisi dari profil siswa di bawah
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
@@ -282,6 +285,19 @@ export async function POST(req: NextRequest) {
       : ebookMatch
       ? `LINGUO-EBOOK-${ebookMatch[1]}-${ebookMatch[2]}-${ebookMatch[3] ?? "selamanya"}-${Date.now()}`
       : `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+
+    // [wa-wajib-digital-v1] Simulasi & e-book: nomor WA WAJIB. Dulu user login
+    // boleh checkout tanpa WA → lead lahir cuma dengan email dan tak bisa
+    // di-follow-up. Nomor dari form dipakai apa adanya; kalau kosong dicari di
+    // profil siswa; kosong dua-duanya → ditolak, klien memunculkan kolomnya.
+    if (simMatch || ebookMatch) {
+      const admin = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
+      const waPasti = await pastikanWaPembeli(admin, { email: String(email || ""), kiriman: wa_number });
+      if (!waPasti) {
+        return NextResponse.json({ error: PESAN_WA_WAJIB, code: KODE_WA_WAJIB }, { status: 400 });
+      }
+      if (!normalisasiWa(wa_number)) wa_number = `+${waPasti}`;
+    }
 
     // ── addon-ebook-recording-v1 → [addon-harga-per-jenis-v1] ────────────────
     // Modul (E-Book) Rp150.000 dan Recording Kelas Rp100.000 kini add-on

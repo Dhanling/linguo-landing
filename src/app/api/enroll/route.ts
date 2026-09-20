@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse, after } from "next/server";
 import { programLangRejection } from "@/lib/programLanguages";
+import { createClient } from "@supabase/supabase-js";
+import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
 // Pendaftaran "Daftar Kelas Baru" (akun dashboard) dipindah ke server route.
@@ -157,6 +159,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "email & product wajib." }, { status: 400 });
     }
 
+    // [wa-wajib-digital-v1] Jalur profil saja = orang yang masuk dari pilihan
+    // produk digital di onboarding. Dulu tombol "Lihat dashboard dulu" menyimpan
+    // profil + lead TANPA nomor WA → lead "Produk Digital" cuma berisi email
+    // (kasus Evika, 18 Sep 2026). Sekarang nomor wajib ada: dari form, atau
+    // sudah tersimpan di profil siswa.
+    let waPasti: string | null = null;
+    if (profile_only) {
+      const admin = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
+      waPasti = await pastikanWaPembeli(admin, { email: String(email), kiriman: wa_number });
+      if (!waPasti) {
+        return NextResponse.json({ error: PESAN_WA_WAJIB, code: KODE_WA_WAJIB }, { status: 400 });
+      }
+    }
+
     // [reguler-lang-gate-server-v1] Kelas Reguler = kelas batch: cuma bahasa
     // yang punya jadwal di /jadwal-kelas-reguler. Tanpa gerbang ini pendaftaran
     // "Kelas Reguler Danish" tetap bisa masuk lewat panggilan langsung ke route
@@ -256,7 +272,7 @@ export async function POST(req: NextRequest) {
     if (profile_only) {
       after(async () => {
         await captureLead({
-          email, name, wa_number,
+          email, name, wa_number: wa_number || waPasti,
           product: product || "Produk Digital",
           language, level, amount: 0,
           source: lead_source || "Onboarding Belanja",

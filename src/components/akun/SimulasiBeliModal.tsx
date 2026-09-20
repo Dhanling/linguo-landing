@@ -11,6 +11,8 @@ import { supabase } from "@/lib/supabase-client";
 import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, formatRp, getFreePromo, type Paket } from "@/lib/simulasiPakets";
 import { usePromoMerdeka } from "@/components/PromoMerdeka";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+import { KODE_WA_WAJIB, normalisasiWa } from "@/lib/waPembeli";
+import { bacaWaTersimpan } from "@/components/akun/KolomWaPembeli";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -35,6 +37,7 @@ export default function SimulasiBeliModal({
   const [wa, setWa] = useState("");
   const [code, setCode] = useState(""); // kode promo / afiliator
   const [loggedIn, setLoggedIn] = useState(false);
+  const [mintaWa, setMintaWa] = useState(false); // [wa-wajib-digital-v1] user login tanpa nomor tersimpan
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -55,7 +58,10 @@ export default function SimulasiBeliModal({
       setLoggedIn(true);
       if (info.name) setName(info.name);
       if (info.email) setEmail(info.email);
-      if (info.whatsapp) setWa(info.whatsapp);
+      // [wa-wajib-digital-v1] nomor dicari di profiles LALU students; kosong
+      // dua-duanya → kolom WA dimunculkan walau sudah login.
+      const waAda = info.whatsapp || (await bacaWaTersimpan(supabase));
+      if (waAda) setWa(waAda); else setMintaWa(true);
     })();
   }, []);
 
@@ -92,9 +98,15 @@ export default function SimulasiBeliModal({
   };
 
   const checkout = async () => {
-    // User login: WA opsional (sudah dari profil / boleh kosong). Tamu: semua wajib.
+    // [wa-wajib-digital-v1] WA WAJIB untuk semua — dulu user login boleh kosong
+    // dan lead simulasinya lahir cuma dengan email. Nomor yang sudah tersimpan
+    // di profil siswa (tapi tak terbaca di sini) tetap dikenali server; kalau
+    // memang belum ada, server menjawab KODE_WA_WAJIB dan kolomnya dimunculkan.
     if (!name.trim() || !email.trim() || (!loggedIn && !wa.trim())) {
       setError("Lengkapi semua field"); return;
+    }
+    if ((!loggedIn || mintaWa) && !normalisasiWa(wa)) {
+      setError("Nomor WhatsApp aktif wajib diisi (contoh: 0812 3456 7890)"); return;
     }
     setLoading(true); setError("");
     try {
@@ -110,6 +122,7 @@ export default function SimulasiBeliModal({
         }),
       });
       const data = await res.json();
+      if (data?.code === KODE_WA_WAJIB) setMintaWa(true);
       if (!res.ok) throw new Error(data.error || "Gagal membuat invoice");
       window.location.href = data.invoice_url;
     } catch (e: any) { setError(e.message); setLoading(false); }
@@ -220,7 +233,15 @@ export default function SimulasiBeliModal({
                       <p className="truncate text-xs text-slate-500">{t("Akses terbuka di")} {email}</p>
                     </div>
                   </div>
-                ) : (
+                ) : null}
+                {loggedIn && mintaWa && (
+                  <div>
+                    <label className="mb-1.5 block text-xs font-semibold text-slate-500">{t("Nomor WhatsApp aktif")} *</label>
+                    <input type="tel" inputMode="tel" value={wa} onChange={(e) => setWa(e.target.value)} placeholder="0812 3456 7890" disabled={loading}
+                      className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
+                  </div>
+                )}
+                {loggedIn ? null : (
                   <>
                     <div>
                       <label className="mb-1.5 block text-xs font-semibold text-slate-500">{t("Nama Lengkap")}</label>

@@ -42,6 +42,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
 import { promoAmountFor } from "@/lib/promoMerdeka";
+import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -91,8 +92,8 @@ export async function POST(req: NextRequest) {
   return res;
 }
 
-function tolak(pesan: string, status: number) {
-  return NextResponse.json({ ok: false, error: pesan }, { status, headers: NO_STORE });
+function tolak(pesan: string, status: number, code?: string) {
+  return NextResponse.json({ ok: false, error: pesan, ...(code ? { code } : {}) }, { status, headers: NO_STORE });
 }
 
 interface ItemMasuk { productId: string; pricingId: string }
@@ -110,9 +111,12 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   let simMinta: SimTestType[] = [];
   let referralCode: string | null = null;
   let tamu: Tamu | null = null;
+  // [wa-wajib-digital-v1] nomor dari form — dibaca untuk tamu MAUPUN sesi login
+  let teleponKiriman: string | null = null;
   try {
     const body = await req.json();
     accessToken = String(body.accessToken ?? "");
+    teleponKiriman = body.buyer_phone ? String(body.buyer_phone).trim() : null;
     referralCode = body.referral_code ? String(body.referral_code) : null;
     const email = String(body.buyer_email ?? "").trim().toLowerCase();
     const nama = String(body.buyer_name ?? "").trim();
@@ -187,6 +191,13 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
+
+  // [wa-wajib-digital-v1] Tanpa nomor WA pembelinya tak bisa di-follow-up —
+  // lead & baris pembelian lahir cuma dengan email. Nomor dicari dari form
+  // dulu, lalu profil siswa yang sudah tersimpan; kosong dua-duanya = ditolak
+  // dan klien memunculkan kolom WA-nya (KODE_WA_WAJIB).
+  pembeliTelepon = await pastikanWaPembeli(admin, { email, authUserId, kiriman: teleponKiriman ?? pembeliTelepon });
+  if (!pembeliTelepon) return tolak(PESAN_WA_WAJIB, 400, KODE_WA_WAJIB);
 
   // ── 2. Produk & harganya dibaca ULANG dari DB ─────────────────────────────
   // Harga yang dikirim klien sengaja tidak dipakai sama sekali. Yang dipercaya

@@ -18,6 +18,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
+import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -114,12 +115,13 @@ async function kirimEmailUcapan(opts: {
   }
 }
 
-function tolak(pesan: string, status: number) {
-  return NextResponse.json({ ok: false, error: pesan }, { status, headers: NO_STORE });
+function tolak(pesan: string, status: number, code?: string) {
+  return NextResponse.json({ ok: false, error: pesan, ...(code ? { code } : {}) }, { status, headers: NO_STORE });
 }
 
 export async function POST(req: NextRequest) {
   let accessToken = "", productId = "", pricingId: string | null = null, kode = "", mode = "cek";
+  let teleponKiriman: string | null = null; // [wa-wajib-digital-v1]
   try {
     const body = await req.json();
     accessToken = String(body.accessToken ?? "");
@@ -127,6 +129,7 @@ export async function POST(req: NextRequest) {
     pricingId = body.pricingId ? String(body.pricingId) : null;
     kode = String(body.code ?? "").trim().toUpperCase();
     mode = body.mode === "klaim" ? "klaim" : "cek";
+    teleponKiriman = body.buyer_phone ? String(body.buyer_phone).trim() : null;
   } catch {
     return tolak("Permintaan tidak terbaca", 400);
   }
@@ -211,6 +214,11 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // [wa-wajib-digital-v1] Klaim gratis pun wajib meninggalkan nomor WA — justru
+  // pengklaim promo yang paling perlu di-follow-up ke kelas berbayar.
+  const telepon = await pastikanWaPembeli(admin, { email, authUserId: user.id, kiriman: teleponKiriman });
+  if (!telepon) return tolak(PESAN_WA_WAJIB, 400, KODE_WA_WAJIB);
+
   // ── 4. Terbitkan akses: insert "Belum Bayar" → UPDATE jadi Lunas ──────────
   const nama =
     (user.user_metadata?.full_name as string) ||
@@ -223,6 +231,7 @@ export async function POST(req: NextRequest) {
       pricing_id: pricingId,
       buyer_email: user.email,
       buyer_name: nama,
+      buyer_phone: telepon,
       amount: 0,
       payment_status: "Belum Bayar",
       // Tidak ada invoice Xendit di jalur ini. "PENDING" dipertahankan karena

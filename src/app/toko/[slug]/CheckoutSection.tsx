@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CreditCard, Mail, X } from "lucide-react";
+import { normalisasiWa } from "@/lib/waPembeli";
 
 interface PricingTier {
   id: string;
@@ -51,6 +52,12 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
       setError("Nama dan email wajib diisi");
       return;
     }
+    // [wa-wajib-digital-v1] WA dulu "opsional" → pembelinya tak bisa di-follow-up.
+    const waPembeli = normalisasiWa(form.phone);
+    if (!waPembeli) {
+      setError("Nomor WhatsApp aktif wajib diisi (contoh: 0812 3456 7890)");
+      return;
+    }
 
     if (!selectedTier) return;
 
@@ -75,7 +82,7 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
                 : null),
             buyer_email: form.email,
             buyer_name: form.name,
-            buyer_phone: form.phone || null,
+            buyer_phone: waPembeli,
           }),
         }
       );
@@ -212,10 +219,12 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
 
               <div>
                 <label className="text-sm font-medium text-gray-700 block mb-1">
-                  No. WhatsApp (opsional)
+                  No. WhatsApp Aktif *
                 </label>
                 <input
                   type="tel"
+                  required
+                  inputMode="tel"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 outline-none"

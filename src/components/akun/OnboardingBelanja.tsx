@@ -98,6 +98,10 @@ export default function OnboardingBelanja({
   const [cari, setCari] = useState("");
   const [keranjang, setKeranjang] = useState<ItemBelanja[]>([]);
   const [layar, setLayar] = useState<"pilih" | "bayar">("pilih");
+  // [wa-wajib-digital-v1] Layar data diri dipakai dua tujuan: membayar isi
+  // keranjang, atau sekadar membuka dashboard. Dua-duanya WAJIB lewat kolom WA —
+  // dulu "Lihat dashboard dulu" melompatinya dan lead-nya lahir tanpa nomor.
+  const [tujuan, setTujuan] = useState<"bayar" | "dashboard">("bayar");
   const [nama, setNama] = useState(user?.user_metadata?.full_name || "");
   const [wa, setWa] = useState("");
   const [sibuk, setSibuk] = useState(false);
@@ -196,6 +200,7 @@ export default function OnboardingBelanja({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           accessToken: session?.access_token ?? "",
+          buyer_phone: waNorm, // [wa-wajib-digital-v1] ikut ke digital_purchases & lead simulasi
           items: keranjang.filter((x): x is Extract<ItemBelanja, { kind: "digital" }> => x.kind === "digital")
             .map((x) => ({ productId: x.productId, pricingId: x.pricingId })),
           sim_items: keranjang.filter((x): x is Extract<ItemBelanja, { kind: "simulasi" }> => x.kind === "simulasi")
@@ -218,21 +223,35 @@ export default function OnboardingBelanja({
   };
 
   const lewati = async () => {
-    setSibuk(true);
-    try { await simpanProfil(); } catch (e) { console.warn("[onboarding-belanja] profil gagal:", e); }
-    onSelesai();
+    // [wa-wajib-digital-v1] Belum isi nama/WA → minta dulu, baru boleh lanjut.
+    if (!dataValid) { setGalat(""); setTujuan("dashboard"); setLayar("bayar"); return; }
+    setSibuk(true); setGalat("");
+    try {
+      await simpanProfil();
+      onSelesai();
+    } catch (e: any) {
+      console.warn("[onboarding-belanja] profil gagal:", e);
+      setGalat(e?.message || "Gagal menyimpan data. Coba lagi sebentar.");
+      setTujuan("dashboard"); setLayar("bayar");
+      setSibuk(false);
+    }
   };
 
   // ── Layar 2: data diri + rincian tagihan ─────────────────────────────────
   if (layar === "bayar") {
+    const keDashboard = tujuan === "dashboard";
     return (
       <div className="fixed inset-0 z-[100] overflow-y-auto bg-gradient-to-br from-teal-50 via-white to-teal-50">
         <div className="mx-auto w-full max-w-lg px-5 py-8">
           <button onClick={() => setLayar("pilih")} className="mb-4 flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-600">
-            <ArrowLeft className="h-4 w-4" /> Kembali ke keranjang
+            <ArrowLeft className="h-4 w-4" /> {keDashboard ? "Kembali ke pilihan produk" : "Kembali ke keranjang"}
           </button>
           <h2 className="text-xl font-extrabold text-gray-900">Satu langkah lagi</h2>
-          <p className="mt-1 text-sm text-gray-400">Data ini dipakai untuk tagihan &amp; pengiriman akses.</p>
+          <p className="mt-1 text-sm text-gray-400">
+            {keDashboard
+              ? "Isi nama & nomor WhatsApp dulu supaya tim Linguo bisa menghubungi kamu."
+              : <>Data ini dipakai untuk tagihan &amp; pengiriman akses.</>}
+          </p>
 
           <div className="mt-5 space-y-3 rounded-2xl bg-white p-4">
             <div>
@@ -259,7 +278,7 @@ export default function OnboardingBelanja({
             </div>
           </div>
 
-          <div className="mt-4 rounded-2xl bg-white p-4">
+          {!keDashboard && <div className="mt-4 rounded-2xl bg-white p-4">
             <p className="mb-2 text-xs font-bold uppercase tracking-wide text-gray-400">Rincian</p>
             {keranjang.map((x) => (
               <div key={x.key} className="flex items-start justify-between gap-3 py-1.5 text-sm">
@@ -274,7 +293,7 @@ export default function OnboardingBelanja({
               <span className="font-bold text-gray-800">Total</span>
               <span className="text-lg font-extrabold text-teal-700">{fmtRupiah(total)}</span>
             </div>
-          </div>
+          </div>}
 
           {galat && (
             <div className="mt-3 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-3 py-2.5 text-[12px] text-red-700">
@@ -282,14 +301,18 @@ export default function OnboardingBelanja({
             </div>
           )}
 
-          <button onClick={bayar} disabled={sibuk || !dataValid}
+          <button onClick={keDashboard ? lewati : bayar} disabled={sibuk || !dataValid}
             className={`mt-4 flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-base font-bold transition-all active:scale-[0.98] ${
               sibuk || !dataValid ? "cursor-not-allowed bg-gray-200 text-gray-400" : "bg-teal-600 text-white shadow-md shadow-teal-200 hover:bg-teal-700"}`}>
-            {sibuk ? <><Loader2 className="h-5 w-5 animate-spin" /> Menyiapkan tagihan…</> : <>Bayar {fmtRupiah(total)}</>}
+            {sibuk
+              ? <><Loader2 className="h-5 w-5 animate-spin" /> {keDashboard ? "Menyimpan…" : "Menyiapkan tagihan…"}</>
+              : keDashboard ? <>Simpan &amp; buka dashboard</> : <>Bayar {fmtRupiah(total)}</>}
           </button>
-          <p className="mt-2 text-center text-[11px] text-gray-400">
-            Pembayaran diproses Xendit — QRIS, VA bank, e-wallet, kartu.
-          </p>
+          {!keDashboard && (
+            <p className="mt-2 text-center text-[11px] text-gray-400">
+              Pembayaran diproses Xendit — QRIS, VA bank, e-wallet, kartu.
+            </p>
+          )}
         </div>
       </div>
     );
@@ -434,7 +457,7 @@ export default function OnboardingBelanja({
               <span className="block text-[11px] text-gray-400">{keranjang.length} produk</span>
               <span className="block text-lg font-extrabold text-teal-700">{fmtRupiah(total)}</span>
             </span>
-            <button onClick={() => { setGalat(""); setLayar("bayar"); }}
+            <button onClick={() => { setGalat(""); setTujuan("bayar"); setLayar("bayar"); }}
               className="rounded-2xl bg-teal-600 px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-teal-200 transition-all hover:bg-teal-700 active:scale-[0.98]">
               Lanjut Bayar
             </button>
