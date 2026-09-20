@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase-client';
 import { ELEARNING_BUNDLE_SLUG } from '@/lib/elearningBundle';
+import { materialReady } from '@/lib/digitalAccess';
 import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import ElearningLangClient from './ElearningLangClient';
 
@@ -33,6 +34,9 @@ export type ElearningProduct = {
   language: string | null;
   level: string | null;
   is_featured: boolean;
+  /** [elearning-siap-v1] false = playlist-nya belum diisi → `/api/create-cart-invoice`
+      menolaknya ("materinya belum siap"), jadi kartunya tampil "Segera hadir". */
+  ready: boolean;
   digital_product_pricing: PricingTier[];
 };
 
@@ -54,6 +58,8 @@ export default async function ElearningPage() {
       language,
       level,
       is_featured,
+      file_url,
+      video_playlist_url,
       digital_product_pricing (
         id,
         price,
@@ -73,6 +79,17 @@ export default async function ElearningPage() {
     console.error('[/toko/paket-elearning] fetch error:', error.message);
   }
 
+  // [elearning-siap-v1] Aturan siapnya SAMA dengan route keranjang (materialReady),
+  // dan link playlist-nya dibuang di server — itu isi berbayar, jangan sampai ikut
+  // terkirim ke browser. Yang siap di depan, urutan lain tetap.
+  type Mentah = Omit<ElearningProduct, 'ready'> & { file_url: string | null; video_playlist_url: string | null };
+  const products: ElearningProduct[] = ((data as Mentah[] | null) ?? [])
+    .map(({ file_url, video_playlist_url, ...p }) => ({
+      ...p,
+      ready: materialReady({ type: 'elearning', file_url, video_playlist_url }),
+    }))
+    .sort((a, b) => Number(b.ready) - Number(a.ready));
+
   return (
     <>
       <BreadcrumbLd
@@ -81,7 +98,7 @@ export default async function ElearningPage() {
           { name: "E-Learning", path: "/toko/paket-elearning" },
         ]}
       />
-      <ElearningLangClient products={(data as ElearningProduct[] | null) ?? []} />
+      <ElearningLangClient products={products} />
     </>
   );
 }
