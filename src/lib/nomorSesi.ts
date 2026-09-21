@@ -72,11 +72,19 @@ export function petaNomorSesi(
     const kurang = Math.max(0, total - hidup.length);
     // Sesi yang terpakai tapi tak punya baris jadwal — pemakan nomor di depan.
     const semuSelesai = Math.max(0, Math.min(dipakai - selesaiNyata, kurang));
-    // Kalau baris jadwalnya lengkap satu paket DAN semuanya bernomor, percaya
-    // nomor dari admin: mencampur session_number dengan urutan kronologis gampang
-    // bikin nomor kembar.
-    const semuaBernomor =
-      hidup.length > 0 && kurang === 0 && hidup.every((s) => Number.isFinite(Number(s.session_number)));
+    // Kalau baris jadwalnya lengkap satu paket DAN nomor tersimpannya urut rapat,
+    // percaya nomor dari admin: mencampur session_number dengan urutan kronologis
+    // gampang bikin nomor kembar.
+    // [nomor-sesi-rapat-v1] "Rapat" = dibaca menurut jam, tiap baris tepat satu
+    // lebih besar dari baris sebelumnya. Penomoran berlubang atau tertukar (sisa
+    // hapus sesi, baris yang digeser, dua baris bertumpuk di jam yang sama) dulu
+    // ikut dipercaya — di kalender pengajar satu pertemuan berisi 2 sesi sempat
+    // memajang badge "#1–4", rentang yang terbaca seperti empat pertemuan.
+    const nomorTersimpan = hidup.map((s) => Number(s.session_number));
+    const nomorRapat = nomorTersimpan.every(
+      (n, i) => Number.isFinite(n) && n >= 1 && (i === 0 || n === nomorTersimpan[i - 1] + 1)
+    );
+    const semuaBernomor = hidup.length > 0 && kurang === 0 && nomorRapat;
 
     hidup.forEach((s, i) => {
       const no = semuaBernomor ? Number(s.session_number) : semuSelesai + i + 1;
