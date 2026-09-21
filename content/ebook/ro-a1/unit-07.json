@@ -1,0 +1,233 @@
+{
+  "title": "Jam berapa?",
+  "title_target": "Cât este ceasul?",
+  "goal": "Menyebut jam dan hari, bercerita soal jadwal kerja — dan memasang kelompok kata kerja terbesar, yang berakhiran *-a*, beserta dua polanya: yang polos dan yang bersisipan *-ez*.",
+  "bekal": [
+    "bertanya dan menyebut jam: *și un sfert, și jumătate, fără un sfert*, serta *la* + jam",
+    "mengonjugasikan kata kerja berakhiran *-a* dengan dua pola: *cânt* lawan *lucrez*",
+    "menyebut hari dan bagian hari, dan membedakan *sâmbătă* (Sabtu ini) dari *sâmbăta* (tiap Sabtu)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Dimineața, în bucătărie",
+      "intro": "Pagi hari di dapur apartemen. Andrei baru bangun dan masih mencari ponselnya; Budi sudah memegang kunci, hampir berangkat ke kantor.",
+      "lines": [
+        {"speaker": "Andrei:", "text": "Bună dimineața, Budi! Cât este ceasul?", "id": "Selamat pagi, Budi! Jam berapa sekarang?", "literal": "baik-pr pagi-nya, Budi! berapa ia-adalah jam-nya?"},
+        {"speaker": "Budi:", "text": "Este opt și un sfert.", "id": "Jam delapan lewat seperempat.", "literal": "ia-adalah delapan dan sebuah-lk seperempat."},
+        {"speaker": "Andrei:", "text": "Deja? La ce oră începi lucrul?", "id": "Sudah jam segitu? Jam berapa kamu mulai kerja?", "literal": "sudah? pada apa jam kamu-mulai pekerjaan-nya?"},
+        {"speaker": "Budi:", "text": "Încep la nouă. Și tu? La ce oră începe cursul?", "id": "Aku mulai jam sembilan. Kamu? Kuliahnya mulai jam berapa?", "literal": "saya-mulai pada sembilan. dan kamu? pada apa jam ia-mulai kuliah-nya?"},
+        {"speaker": "Andrei:", "text": "La zece și jumătate. Am timp. Lucrezi în fiecare zi?", "id": "Jam setengah sebelas. Masih ada waktu. Kamu kerja tiap hari?", "literal": "pada sepuluh dan setengah. saya-punya waktu. kamu-bekerja di setiap hari?"},
+        {"speaker": "Budi:", "text": "Lucrez de luni până vineri. Sâmbăta nu lucrez.", "id": "Aku kerja dari Senin sampai Jumat. Hari Sabtu aku tidak kerja.", "literal": "saya-bekerja dari senin sampai jumat. sabtu-nya tidak saya-bekerja."},
+        {"speaker": "Andrei:", "text": "Și unde mănânci la prânz?", "id": "Terus makan siangnya di mana?", "literal": "dan di-mana kamu-makan pada tengah-hari?"},
+        {"speaker": "Budi:", "text": "La prânz mănânc la unu, cu colegii.", "id": "Siang aku makan jam satu, bareng teman-teman kantor.", "literal": "pada tengah-hari saya-makan pada satu, dengan rekan-jamak-nya."},
+        {"speaker": "Andrei:", "text": "Eu mănânc acasă. Iar seara cânt într-o trupă.", "id": "Kalau aku makan di rumah. Dan malamnya aku menyanyi di sebuah band.", "literal": "saya saya-makan di-rumah. dan malam-nya saya-bernyanyi di-dalam sebuah-pr band."},
+        {"speaker": "Budi:", "text": "Serios? Și când cântați?", "id": "Serius? Kapan kalian manggung?", "literal": "serius? dan kapan kalian-bernyanyi?"},
+        {"speaker": "Andrei:", "text": "Vineri seara, la opt și jumătate, în Centrul Vechi. Ești liber?", "id": "Jumat malam, jam setengah sembilan, di Centrul Vechi. Kamu kosong?", "literal": "jumat malam-nya, pada delapan dan setengah, di pusat-nya tua. kamu-adalah bebas?"},
+        {"speaker": "Budi:", "text": "Da, vineri seara sunt liber. Oh, e deja opt și douăzeci! Pa!", "id": "Ya, Jumat malam aku kosong. Aduh, sudah jam delapan lewat dua puluh! Dah!", "literal": "ya, jumat malam-nya saya-adalah bebas. oh, ia-adalah sudah delapan dan dua-puluh! dah!"},
+        {"speaker": "Andrei:", "text": "Pa! O zi bună!", "id": "Dah! Semoga harimu lancar!", "literal": "dah! sebuah-pr hari baik-pr!"}
+      ],
+      "notes": [
+        "**Cât este ceasul?** harfiahnya \"berapa jam (dinding) itu?\" — *ceas* adalah bendanya: arloji, jam dinding. Pertanyaan lain yang sama lazimnya: *Ce oră este?* dan, lebih santai, *Cât e ceasul?* Jawabannya selalu dibuka dengan *Este…* atau *E…*",
+        "**La nouă, la unu, la zece și jumătate.** \"Pada jam sekian\" selalu *la* + angka; kata *ora* boleh disebut (*la ora nouă*), boleh tidak. Perhatikan: *zece și jumătate* = sepuluh **lewat** setengah = 10.30 — bukan \"setengah sepuluh\" ala Indonesia yang berarti 9.30. Bahasa Rumania menghitung maju dari jam yang sudah lewat.",
+        "**Începi lucrul.** *Lucru* (nt) berarti \"pekerjaan\", dan karena berakhiran *-u* ia cukup ditempeli *-l*: *lucrul* — aturan unit 4. Kata kerjanya *a începe* (memulai): *încep, începi, începe, începem, începeți, încep*. Ia termasuk kelompok berakhiran *-e*, yang dirapikan di unit 8.",
+        "**De luni până vineri. Sâmbăta nu lucrez.** Nama hari tidak butuh kata depan: *vineri seara* = (pada) Jumat malam. Tetapi begitu diberi artikel tentu, artinya berubah menjadi **kebiasaan**: *sâmbăta* = tiap Sabtu, *seara* = (tiap) malam hari. Satu huruf *-a* menggantikan \"setiap\".",
+        "**Într-o trupă, cu colegii.** *În* tidak bisa berdiri langsung di depan *un/o*; ia memanjang menjadi *într-un, într-o*: *într-o trupă, într-un parc*. Dan *cu colegii* memperlihatkan dua hal dari unit 6 sekaligus: artikel jamak lelaki *-ii*, dan *cu* sebagai satu-satunya kata depan yang mempertahankan artikel."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut jam",
+          "body": [
+            "Polanya sederhana: separuh pertama jam dihitung **maju** dengan *și* (dan), separuh kedua dihitung **mundur** dari jam berikutnya dengan *fără* (tanpa, kurang). *Un sfert* = seperempat, *jumătate* = setengah."
+          ],
+          "table": {
+            "head": ["Jam", "Română", "Harfiah"],
+            "rows": [
+              ["8.00", "*Este (ora) opt.* / *Este opt fix.*", "adalah (jam) delapan / delapan tepat"],
+              ["8.10", "*Este opt și zece.*", "delapan dan sepuluh"],
+              ["8.15", "*Este opt și un sfert.*", "delapan dan seperempat"],
+              ["8.30", "*Este opt și jumătate.*", "delapan dan setengah"],
+              ["8.45", "*Este nouă fără un sfert.*", "sembilan kurang seperempat"],
+              ["8.50", "*Este nouă fără zece.*", "sembilan kurang sepuluh"],
+              ["1.00 · 2.00", "*Este ora unu.* · *Este ora două.*", "jam satu · jam dua"],
+              ["12.00", "*Este ora douăsprezece.*", "jam dua belas"]
+            ]
+          },
+          "after": [
+            "**Jam itu perempuan — hampir selalu.** Karena *oră* kata perempuan, angka yang punya dua bentuk memakai bentuk perempuannya: *ora **două***, *ora **douăsprezece***, *douăzeci și **două***. Satu-satunya yang membangkang adalah angka satu: bentuk bakunya *ora **unu***, bukan *ora una*. Hafalkan saja: *la unu, la două*.",
+            "**Pagi atau malam?** Dalam percakapan orang memakai jam 1–12 dan menambahkan bagian hari bila perlu: *la opt dimineața* (jam 8 pagi), *la opt seara* (jam 8 malam), *la trei după-amiaza* (jam 3 sore). Di jadwal kereta, bioskop, dan pengumuman resmi dipakai sistem 24 jam: *șaptesprezece și treizeci* = 17.30.",
+            "Kata kecil yang berguna di sekitar jam: *fix* (tepat), *aproape* (hampir — *e aproape nouă*), *deja* (sudah), *de la… până la…* (dari… sampai…): *de la nouă până la cinci*."
+          ]
+        },
+        {
+          "title": "Kata kerja berakhiran -a: dua pola",
+          "body": [
+            "Kelompok *-a* adalah yang terbesar, dan semua kata kerja baru yang masuk ke bahasa Rumania bergabung ke sini. Ia terbagi dua: sebagian menempelkan ekor langsung pada akar kata, sebagian menyisipkan ***-ez*** lebih dulu — seperti *-esc* pada *vorbesc* di unit 2. *A mânca* (makan) ikut pola polos, tetapi akarnya berganti sedikit."
+          ],
+          "table": {
+            "head": ["Pelaku", "a cânta (bernyanyi)", "a lucra (bekerja)", "a mânca (makan)"],
+            "rows": [
+              ["eu", "cânt", "lucr**ez**", "mănânc"],
+              ["tu", "cânți", "lucr**ezi**", "mănânci"],
+              ["el / ea", "cântă", "lucr**ează**", "mănâncă"],
+              ["noi", "cântăm", "lucrăm", "mâncăm"],
+              ["voi", "cântați", "lucrați", "mâncați"],
+              ["ei / ele", "cântă", "lucr**ează**", "mănâncă"]
+            ]
+          },
+          "after": [
+            "**Bentuk \"dia\" dan \"mereka\" selalu kembar** di kelompok ini: *el cântă, ei cântă*; *ea lucrează, ele lucrează*. Itulah sebabnya *costă* di unit 5 berlaku untuk satu tiket maupun sepuluh.",
+            "**Sisipan *-ez* hanya muncul di empat bentuk** — *eu, tu, el/ea, ei/ele*. Bentuk *noi* dan *voi* selalu polos: *lucrăm, lucrați*, tidak pernah *lucrezăm*. Hal yang sama terjadi pada *a mânca*: akar panjang *mănânc-* di empat bentuk itu, akar pendek *mânc-* di *noi* dan *voi*.",
+            "**Mana yang memakai *-ez*?** Tidak bisa ditebak dari infinitifnya; karena itu kosakata buku ini selalu mencantumkan bentuk *eu* di dalam kurung. Bersisipan: *a lucra (lucrez), a traversa (traversez), a studia (studiez), a vizita (vizitez), a dansa (dansez)*. Polos: *a cânta (cânt), a asculta (ascult), a întreba (întreb), a ajuta (ajut), a pleca (plec), a cumpăra (cumpăr)*.",
+            "Perhatikan *cânți*: ekor *-i* melunakkan *t* menjadi *ț*, persis seperti *student → studenți* di unit 5. Pergantian bunyi yang sama bekerja di kata benda dan kata kerja — belajar sekali, terpakai dua kali."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hari-hari dalam seminggu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia", "Setiap hari itu"],
+          "rows": [
+            ["**luni**", "lun'", "Senin", "*lunea*"],
+            ["**marți**", "marts'", "Selasa", "*marțea*"],
+            ["**miercuri**", "MYÉR-kur'", "Rabu", "*miercurea*"],
+            ["**joi**", "zhoy", "Kamis", "*joia*"],
+            ["**vineri**", "VI-nér'", "Jumat", "*vinerea*"],
+            ["**sâmbătă**", "SÎM-be-te", "Sabtu", "*sâmbăta*"],
+            ["**duminică**", "du-MI-ni-ke", "Minggu", "*duminica*"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Nama hari ditulis dengan **huruf kecil** dan semuanya berjenis perempuan. Tanpa artikel ia menunjuk satu hari tertentu: *Vineri sunt liber* (Jumat ini saya kosong). Dengan artikel ia menjadi kebiasaan: *Vinerea cânt într-o trupă* (tiap Jumat saya menyanyi di band). Kata penunjuk waktu di sekitarnya: *azi* (hari ini), *mâine* (besok), *ieri* (kemarin), *în weekend* (di akhir pekan), *în fiecare zi* (setiap hari), *săptămâna aceasta* (minggu ini)."
+        },
+        {
+          "type": "kotak",
+          "title": "Dari mana nama hari itu datang",
+          "items": [
+            "Lima hari kerja dinamai menurut benda langit dan dewa Romawi, warisan langsung dari bahasa Latin: *luni* (Luna, bulan), *marți* (Mars), *miercuri* (Merkurius), *joi* (Jupiter), *vineri* (Venus). Kalau kamu pernah belajar bahasa Spanyol, Prancis, atau Italia, kamu akan mengenali semuanya.",
+            "*Sâmbătă* berasal dari kata \"sabat\" — sama seperti *Sabtu* kita. Dan *duminică* berarti \"hari Tuhan\", dari Latin *dominica*; kata *Minggu* dalam bahasa Indonesia datang dari Portugis *domingo*, yang akarnya persis sama. Dua nama hari kita ternyata bersaudara jauh dengan nama hari Rumania.",
+            "Pekan di Rumania dimulai hari **Senin**; kalender dinding pun dicetak mulai dari *luni*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bagian-bagian hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**dimineața**", "di-mi-NYA-tsa", "pagi hari"],
+            ["**la prânz**", "la prînz", "tengah hari, waktu makan siang"],
+            ["**după-amiaza**", "DU-pe a-MYA-za", "siang sampai sore"],
+            ["**seara**", "SÉA-ra", "malam (petang sampai jam tidur)"],
+            ["**noaptea**", "NOAP-tya", "malam larut"],
+            ["**azi-dimineață**", "az' di-mi-NYA-tse", "tadi pagi, pagi ini"],
+            ["**diseară**", "di-SÉA-re", "nanti malam"],
+            ["**mâine dimineață**", "MÎY-né di-mi-NYA-tse", "besok pagi"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sama seperti nama hari, bagian hari yang **berartikel** berdiri sendiri tanpa kata depan dan berarti \"pada waktu itu, biasanya\": *Dimineața lucrez acasă. După-amiaza studiez româna. Seara ascult muzică. Noaptea nu lucrez.* Hanya *prânz* yang meminta *la*. Dan karena *seara* dimulai kira-kira pukul enam, orang Rumania sudah mengucapkan *Bună seara!* ketika di Indonesia kita masih berkata \"selamat sore\"."
+        },
+        {
+          "type": "kotak",
+          "title": "Program: jam buka di pintu toko",
+          "items": [
+            "Tulisan ***Program*** di pintu toko, bank, atau apotek bukan acara — itu **jam buka**. Hari-hari disingkat *L, Ma, Mi, J, V, S, D*; jadi *L–V 9–18* berarti Senin sampai Jumat pukul sembilan sampai enam sore.",
+            "*Deschis* = buka, *închis* = tutup. Banyak toko kecil tutup lebih awal pada hari Sabtu dan tutup sama sekali pada hari Minggu, jadi jangan menunda belanja sampai *duminică*.",
+            "Papan ***Non-Stop*** menandai toko kecil atau apotek yang buka 24 jam — penyelamat kalau kamu, seperti Budi, baru ingat makan malam menjelang tengah malam."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 5",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Berapa harga satu tiket? — Harganya lima lei.", "*Cât costă un bilet? — Costă cinci lei.*"],
+            ["Umurmu berapa? — Umur saya dua puluh delapan.", "*Câți ani ai? — Am douăzeci și opt de ani.*"],
+            ["Saya punya dua saudara lelaki dan dua saudara perempuan.", "*Am doi frați și două surori.*"],
+            ["Itu terlalu mahal.", "*Este prea scump.*"],
+            ["Nomor teleponmu berapa?", "*Care este numărul tău de telefon?*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "ceas, ceasuri", "baca": "cas, CA-sur'", "id": "jam (bendanya): arloji, jam dinding (nt)"},
+    {"ro": "oră, ore", "baca": "O-re, O-ré", "id": "jam (satuan waktu); pukul (pr)"},
+    {"ro": "sfert, sferturi", "baca": "sfért, SFÉR-tur'", "id": "seperempat (nt)"},
+    {"ro": "jumătate", "baca": "zhu-me-TA-té", "id": "setengah (pr)"},
+    {"ro": "zi, zile", "baca": "zi, ZI-lé", "id": "hari (pr)"},
+    {"ro": "săptămână, săptămâni", "baca": "sep-te-MÎ-ne, sep-te-MÎN'", "id": "minggu, pekan (pr)"},
+    {"ro": "lucru", "baca": "LU-kru", "id": "pekerjaan (nt)"},
+    {"ro": "prânz", "baca": "prînz", "id": "tengah hari; makan siang (nt)"},
+    {"ro": "a lucra (lucrez)", "baca": "a lu-KRA (lu-KRÉZ)", "id": "bekerja"},
+    {"ro": "a mânca (mănânc)", "baca": "a mîn-KA (me-NÎNK)", "id": "makan"},
+    {"ro": "a cânta (cânt)", "baca": "a kîn-TA (kînt)", "id": "bernyanyi; memainkan alat musik"},
+    {"ro": "a începe (încep)", "baca": "a în-CÉ-pé (în-CÉP)", "id": "memulai; mulai"},
+    {"ro": "când", "baca": "kînd", "id": "kapan"},
+    {"ro": "deja", "baca": "dé-ZHA", "id": "sudah"},
+    {"ro": "fără", "baca": "FE-re", "id": "tanpa; kurang (pada jam)"},
+    {"ro": "până", "baca": "PÎ-ne", "id": "sampai"},
+    {"ro": "liber, liberă", "baca": "LI-bér, LI-bé-re", "id": "bebas, kosong (lk, pr)"},
+    {"ro": "acasă", "baca": "a-KA-se", "id": "di rumah; pulang ke rumah"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Jam berapa sekarang?",
+        "Jam delapan lewat seperempat.",
+        "Jam berapa kamu mulai kerja?",
+        "Saya bekerja dari Senin sampai Jumat.",
+        "Siang saya makan jam satu.",
+        "Tiap Sabtu saya tidak bekerja."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+      "items": [
+        "Eu ____ în București. (a lucra)",
+        "Tu ____ la prânz? (a mânca)",
+        "Andrei ____ într-o trupă. (a cânta)",
+        "Noi ____ acasă. (a mânca)",
+        "Voi ____ sâmbăta? (a lucra)",
+        "Ioana ____ de luni până vineri. (a lucra)",
+        "Ei ____ la unu. (a mânca)",
+        "Eu nu ____ bine. (a cânta)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ceasul / este / cât / ?",
+        "jumătate / este / și / zece",
+        "un / fără / este / sfert / nouă",
+        "oră / ce / lucrul / la / începi / ?",
+        "lucrez / nu / duminica"
+      ]
+    }
+  ],
+  "answers": [
+    "Cât este ceasul? — Este opt și un sfert. — La ce oră începi lucrul? — Lucrez de luni până vineri. — La prânz mănânc la unu. — Sâmbăta nu lucrez.",
+    "lucrez — mănânci — cântă — mâncăm — lucrați — lucrează — mănâncă — cânt",
+    "Cât este ceasul? — Este zece și jumătate. — Este nouă fără un sfert. — La ce oră începi lucrul? — Duminica nu lucrez."
+  ]
+}

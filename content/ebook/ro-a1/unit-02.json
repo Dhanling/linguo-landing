@@ -1,0 +1,209 @@
+{
+  "title": "Kamu dari mana?",
+  "title_target": "De unde ești?",
+  "goal": "Menyebut asal, tempat tinggal, dan bahasa yang kamu kuasai — sambil memasang sangkalan *nu* dan kelompok kata kerja pertama: yang bersisipan *-esc*.",
+  "bekal": [
+    "menanyakan dan menyebut asal dengan *de unde* dan *din*, serta tempat tinggal dengan *unde* dan *în*",
+    "menyangkal kalimat apa pun dengan satu kata *nu* — untuk \"tidak\", \"bukan\", dan \"belum\" sekaligus",
+    "mengonjugasikan *a vorbi* dan *a locui*, dan menyebut kebangsaan dalam bentuk lelaki dan perempuan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — În pauza de prânz",
+      "intro": "Jam istirahat siang di kantor. Ioana mengajak seorang temannya, Maria, makan bersama dan memperkenalkannya kepada Budi.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Budi, ea este Maria, prietena mea.", "id": "Budi, ini Maria, teman saya.", "literal": "Budi, dia-pr ia-adalah Maria, teman-pr-nya milikku-pr."},
+        {"speaker": "Maria:", "text": "Bună, Budi! De unde ești?", "id": "Hai, Budi! Kamu dari mana?", "literal": "baik-pr, Budi! dari mana kamu-adalah?"},
+        {"speaker": "Budi:", "text": "Sunt din Indonezia, din Bandung.", "id": "Saya dari Indonesia, dari Bandung.", "literal": "saya-adalah dari-dalam Indonesia, dari-dalam Bandung."},
+        {"speaker": "Maria:", "text": "Din Indonezia! Și unde locuiești acum?", "id": "Dari Indonesia! Lalu sekarang kamu tinggal di mana?", "literal": "dari-dalam Indonesia! dan di-mana kamu-tinggal sekarang?"},
+        {"speaker": "Budi:", "text": "Acum locuiesc în București, cu Andrei. El este din Cluj.", "id": "Sekarang saya tinggal di București, bersama Andrei. Dia dari Cluj.", "literal": "sekarang saya-tinggal di-dalam București, dengan Andrei. dia-lk ia-adalah dari-dalam Cluj."},
+        {"speaker": "Maria:", "text": "Vorbești românește?", "id": "Kamu bisa bahasa Rumania?", "literal": "kamu-bicara cara-Rumania?"},
+        {"speaker": "Budi:", "text": "Puțin. Încă nu vorbesc bine. Scuze!", "id": "Sedikit. Saya belum bisa bicara dengan baik. Maaf!", "literal": "sedikit. masih tidak saya-bicara baik. maaf-jamak!"},
+        {"speaker": "Maria:", "text": "Nu-i nimic. Vorbești foarte bine! Ce limbi vorbești?", "id": "Tidak apa-apa. Kamu bicaranya bagus sekali! Bahasa apa saja yang kamu bisa?", "literal": "tidak-ia-adalah tiada-apa. kamu-bicara sangat baik! apa bahasa-jamak kamu-bicara?"},
+        {"speaker": "Budi:", "text": "Vorbesc indoneziană, engleză și puțin română. Tu ești româncă?", "id": "Saya bisa bahasa Indonesia, Inggris, dan sedikit Rumania. Kamu orang Rumania?", "literal": "saya-bicara Indonesia-pr, Inggris-pr dan sedikit Rumania-pr. kamu kamu-adalah orang-Rumania-pr?"},
+        {"speaker": "Maria:", "text": "Da, sunt româncă, dar nu sunt din București. Sunt din Sibiu.", "id": "Ya, saya orang Rumania, tetapi bukan dari București. Saya dari Sibiu.", "literal": "ya, saya-adalah orang-Rumania-pr, tetapi tidak saya-adalah dari-dalam București. saya-adalah dari-dalam Sibiu."},
+        {"speaker": "Ioana:", "text": "Maria vorbește și germană. La birou vorbim engleză, dar în pauză vorbim românește.", "id": "Maria juga bisa bahasa Jerman. Di kantor kami berbahasa Inggris, tetapi saat istirahat kami berbahasa Rumania.", "literal": "Maria ia-bicara juga Jerman-pr. di kantor kami-bicara Inggris-pr, tetapi di-dalam jeda kami-bicara cara-Rumania."},
+        {"speaker": "Budi:", "text": "Foarte bine! Mulțumesc.", "id": "Bagus sekali! Terima kasih.", "literal": "sangat baik! saya-berterima-kasih."}
+      ],
+      "notes": [
+        "**De unde ești? — tanya dengan *de*, jawab dengan *din*.** *Unde* = di mana, *de unde* = dari mana. Jawabannya memakai *din*, leburan *de* + *în*: \"dari dalam\". Kepada orang yang dihormati: *De unde sunteți?* Perhatikan bahwa kata kerjanya tetap *a fi* — orang Rumania \"adalah dari\" suatu tempat, bukan \"berasal dari\".",
+        "**Încă nu = belum.** Bahasa Indonesia punya satu kata khusus, bahasa Rumania merangkainya dari dua: *încă* (masih) + *nu* (tidak). Urutannya tetap dan *nu* selalu menempel di depan kata kerjanya: *Încă nu vorbesc bine*, *Încă nu sunt gata*.",
+        "**Nu-i nimic harfiahnya \"bukan tidak ada apa-apa\".** *Nu-i* adalah *nu este* yang dipendekkan, dan *nimic* berarti \"tidak ada apa pun\". Dua sangkalan sekaligus — dan dalam bahasa Rumania itu wajib, bukan salah. Ini jawaban baku ketika seseorang meminta maaf.",
+        "**Românește bukan nama bahasanya, melainkan caranya.** *Vorbesc românește* harfiahnya \"saya berbicara secara Rumania\". Nama bahasanya sendiri *româna* atau *limba română*. Keduanya sama lazimnya: *Vorbești românește?* = *Vorbești română?*",
+        "**Și berarti \"dan\" sekaligus \"juga\".** Di antara dua hal ia \"dan\": *engleză și română*. Di depan satu kata ia \"juga\": *Maria vorbește și germană* = \"Maria bisa bahasa Jerman **juga**\". Di unit 1 kamu sudah memakainya tanpa sadar: *Și eu* — \"saya juga\"."
+      ],
+      "grammars": [
+        {
+          "title": "Nu — satu sangkalan untuk tidak, bukan, dan belum",
+          "body": [
+            "Bahasa Indonesia memilah *tidak* untuk kata kerja dan *bukan* untuk kata benda. Bahasa Rumania tidak peduli: cukup taruh **nu** tepat di depan kata kerjanya, apa pun yang disangkal."
+          ],
+          "table": {
+            "head": ["Kalimat positif", "Kalimat negatif", "Bahasa Indonesia"],
+            "rows": [
+              ["*Sunt din București.*", "***Nu** sunt din București.*", "Saya bukan dari București."],
+              ["*Vorbesc bine.*", "***Nu** vorbesc bine.*", "Saya tidak bicara dengan baik."],
+              ["*Ești român?*", "***Nu** ești român?*", "Kamu bukan orang Rumania?"],
+              ["*Locuim aici.*", "***Nu** locuim aici.*", "Kami tidak tinggal di sini."],
+              ["*Este student.*", "***Nu** este student.* / ***Nu-i** student.*", "Dia bukan mahasiswa."],
+              ["*Înțeleg.*", "***Nu** înțeleg.*", "Saya tidak mengerti."]
+            ]
+          },
+          "after": [
+            "***Nu* juga berarti \"tidak\" sebagai jawaban**, sehingga ia sering muncul dua kali berturut-turut dengan pekerjaan berbeda: *Nu, nu sunt din București* — yang pertama menjawab, yang kedua menyangkal. Di ujung kalimat, *nu?* menjadi \"kan?\": *Ești student, nu?*",
+            "**Sangkalan ganda itu wajib.** Kata seperti *nimic* (tidak ada apa pun), *nimeni* (tak seorang pun), dan *niciodată* (tidak pernah) selalu ditemani *nu*: *Nu înțeleg nimic* = \"Saya tidak mengerti apa-apa\". Membuang *nu*-nya justru salah.",
+            "**Dalam percakapan *nu* suka melebur dengan kata sesudahnya**: *nu este → nu-i*, dan *nu am → n-am* (\"saya tidak punya\" — kata kerja *a avea* dipasang di unit 3). Kamu tidak wajib memakainya, tetapi wajib mengenalinya, karena begitulah orang berbicara."
+          ]
+        },
+        {
+          "title": "A vorbi dan a locui — kata kerja bersisipan -esc",
+          "body": [
+            "Infinitif Rumania selalu didahului kata kecil *a*: *a vorbi* (berbicara), *a locui* (tinggal). Sebagian besar kata kerja berakhiran *-i* menyelipkan **-esc-** di antara batang dan ekornya — tetapi hanya di empat dari enam bentuk."
+          ],
+          "table": {
+            "head": ["Pelaku", "a vorbi", "Cara baca", "a locui", "Cara baca"],
+            "rows": [
+              ["eu", "vorb**esc**", "vor-BÉSK", "locui**esc**", "lo-ku-YÉSK"],
+              ["tu", "vorb**ești**", "vor-BÉSYT'", "locui**ești**", "lo-ku-YÉSYT'"],
+              ["el / ea", "vorb**ește**", "vor-BÉSY-té", "locui**ește**", "lo-ku-YÉSY-té"],
+              ["noi", "vorb**im**", "vor-BIM", "locu**im**", "lo-ku-IM"],
+              ["voi", "vorb**iți**", "vor-BITS'", "locu**iți**", "lo-ku-ITS'"],
+              ["ei / ele", "vorb**esc**", "vor-BÉSK", "locui**esc**", "lo-ku-YÉSK"]
+            ]
+          },
+          "after": [
+            "**Sisipannya hilang di *noi* dan *voi*.** Di dua bentuk itu tekanannya pindah ke ekor (*vor-BIM, vor-BITS'*), dan *-esc-* tidak diperlukan lagi. Di empat bentuk lainnya tekanan selalu jatuh pada sisipannya. Bunyi *sc* melunak menjadi *șt* di depan *i* dan *e*: *-esc, -ești, -ește*.",
+            "**Bentuk *eu* dan *ei/ele* kembar**, persis seperti *sunt* di unit 1: *vorbesc* = \"saya berbicara\" dan \"mereka berbicara\". Kalau keadaannya tidak jelas, barulah kata gantinya dimunculkan: *Ei vorbesc germană*.",
+            "**Pola ini membuka puluhan kata kerja sekaligus**: *a citi* (citesc — membaca), *a dori* (doresc — menginginkan), *a plăti* (plătesc — membayar), *a găti* (gătesc — memasak), dan yang sudah kamu pakai sejak hari pertama: *a mulțumi* → *mulțumesc*, *mulțumim*. Tidak semua kata kerja *-i* ikut pola ini (unit 8), sehingga daftar kosakata modul ini selalu mencantumkan bentuk *eu* di dalam kurung."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Negara, kebangsaan, dan bahasa",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Negara", "Lelaki", "Perempuan", "Bahasa"],
+          "rows": [
+            ["România", "român", "româncă", "română"],
+            ["Indonezia", "indonezian", "indoneziancă", "indoneziană"],
+            ["Anglia", "englez", "englezoaică", "engleză"],
+            ["Germania", "german", "germană", "germană"],
+            ["Franța", "francez", "franțuzoaică", "franceză"],
+            ["Italia", "italian", "italiancă", "italiană"],
+            ["Ungaria", "ungur", "unguroaică", "maghiară"],
+            ["Olanda", "olandez", "olandeză", "olandeză"],
+            ["Japonia", "japonez", "japoneză", "japoneză"],
+            ["China", "chinez", "chinezoaică", "chineză"]
+          ]
+        },
+        {"type": "p", "text": "**Huruf kecil.** Hanya nama negara yang berhuruf besar; kebangsaan dan nama bahasa ditulis kecil: *Sunt indonezian. Vorbesc engleză.* Dan seperti pekerjaan di unit 1, kebangsaan sesudah *a fi* tidak diberi kata sandang."},
+        {"type": "p", "text": "**Bentuk perempuannya punya tiga akhiran, dan kamu harus menghafalnya per kata**: *-că* (*româncă, indoneziancă, italiancă*), *-oaică* (*englezoaică, franțuzoaică, chinezoaică*), atau cukup *-ă* (*germană, olandeză, japoneză*). Yang paling penting bagimu tentu *indonezian* [in-do-né-zi-AN] dan *indoneziancă* [in-do-né-zi-AN-ke]."},
+        {"type": "p", "text": "**Nama bahasa = bentuk perempuan kata sifatnya**, karena ia mengikuti kata *limbă* (bahasa), yang perempuan: *limba română*, *limba engleză*. Beberapa bahasa juga punya bentuk \"cara\" berakhiran *-ește*: *românește, englezește, franțuzește, nemțește* (cara Jerman), *ungurește*. Bentuk ini hanya dipakai bersama kata kerja seperti *a vorbi* dan tidak pernah berubah. Untuk bahasa Indonesia tidak ada bentuk *-ește* yang lazim, jadi katakan *vorbesc indoneziană*."},
+        {
+          "type": "kotak",
+          "title": "Pulau bahasa Latin di Eropa Timur",
+          "items": [
+            "Bahasa Rumania bersaudara dengan bahasa Italia, Prancis, Spanyol, dan Portugis — semuanya keturunan bahasa Latin. Nama *România* sendiri berasal dari kata *roman*. Tetangganya justru berbahasa Slavia dan Hungaria, sehingga Rumania sering dijuluki pulau Latin di Eropa Timur. Bahasa yang sama juga dipakai di Republik Moldova.",
+            "Di Transilvania — termasuk Cluj, kota asal Andrei — tinggal banyak penutur bahasa Hungaria. Sibiu, kota asal Maria, dibangun oleh pendatang Jerman (orang *sași*, Sachsen) pada abad pertengahan dan punya nama Jerman: Hermannstadt. Itu sebabnya Maria bisa berbahasa Jerman.",
+            "Kabar baik untukmu: kosakata Latin itu banyak yang sudah kamu kenal lewat kata serapan bahasa Indonesia — *familie, problemă, muzică, doctor, bilet, universitate*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Din lawan în — dari mana dan di mana",
+      "blocks": [
+        {"type": "p", "text": "Dua pertanyaan, dua kata depan, dan keduanya berpasangan rapi. Yang sering tertukar oleh pemula adalah *din* dan *de*, jadi perhatikan kolom contohnya."},
+        {
+          "type": "tabel",
+          "head": ["Kata", "Cara baca", "Arti", "Contoh"],
+          "rows": [
+            ["**unde**", "UN-dé", "di mana; ke mana", "*Unde locuiești?*"],
+            ["**în**", "în", "di (dalam)", "*Locuiesc în București. Sunt în România.*"],
+            ["**de unde**", "dé UN-dé", "dari mana", "*De unde ești?*"],
+            ["**din**", "din", "dari (dalam)", "*Sunt din Indonezia. El este din Cluj.*"],
+            ["**la**", "la", "di; ke (suatu titik: kantor, stasiun, acara)", "*Sunt la birou. Vorbim engleză la birou.*"],
+            ["**cu**", "ku", "dengan; bersama", "*Locuiesc cu Andrei.*"]
+          ]
+        },
+        {"type": "p", "text": "Rumusnya: **unde → în**, **de unde → din**. Negara dan kota selalu memakai pasangan ini: *în Indonezia — din Indonezia*, *în Sibiu — din Sibiu*. Kata depan *la* dipakai untuk tempat yang dipandang sebagai titik atau kegiatan, bukan ruang yang kamu berada di dalamnya: *la birou* (di kantor), *la universitate* (di kampus). Perbedaan *în* dan *la* diselesaikan di unit 6; untuk sekarang hafalkan contohnya."},
+        {
+          "type": "tabel",
+          "head": ["Kalimat penolong soal bahasa", "Bahasa Indonesia"],
+          "rows": [
+            ["*Vorbiți engleză?*", "Anda bisa bahasa Inggris?"],
+            ["*Vorbesc puțin românește.*", "Saya bisa sedikit bahasa Rumania."],
+            ["*Nu vorbesc bine românește.*", "Bahasa Rumania saya belum bagus."],
+            ["*Înțeleg, dar nu vorbesc.*", "Saya mengerti, tetapi tidak bisa berbicara."],
+            ["*Nu înțeleg nimic.*", "Saya tidak mengerti apa-apa."],
+            ["*Ce limbă vorbiți acasă?*", "Di rumah Anda berbahasa apa?"]
+          ]
+        },
+        {"type": "p", "text": "Orang Rumania hampir selalu menyambut usahamu berbahasa Rumania dengan pujian — *Vorbești foarte bine!* — walaupun kamu baru bisa tiga kalimat. Terima saja dengan *Mulțumesc!*, dan teruskan dalam bahasa Rumania. Berpindah ke bahasa Inggris pada saat itu adalah cara paling cepat untuk berhenti belajar."}
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "a vorbi (vorbesc)", "baca": "a vor-BI (vor-BÉSK)", "id": "berbicara"},
+    {"ro": "a locui (locuiesc)", "baca": "a lo-ku-I (lo-ku-YÉSK)", "id": "tinggal; berdiam"},
+    {"ro": "unde / de unde", "baca": "UN-dé / dé UN-dé", "id": "di mana / dari mana"},
+    {"ro": "din", "baca": "din", "id": "dari (dalam)"},
+    {"ro": "în", "baca": "în", "id": "di (dalam)"},
+    {"ro": "acum", "baca": "a-KUM", "id": "sekarang"},
+    {"ro": "încă", "baca": "ÎN-ke", "id": "masih; *încă nu* = belum"},
+    {"ro": "puțin", "baca": "pu-TSIN", "id": "sedikit"},
+    {"ro": "foarte", "baca": "FOAR-té", "id": "sangat"},
+    {"ro": "dar", "baca": "dar", "id": "tetapi"},
+    {"ro": "nimic", "baca": "ni-MIK", "id": "tidak ada apa pun"},
+    {"ro": "limbă", "baca": "LIM-be", "id": "bahasa; lidah (pr)"},
+    {"ro": "țară", "baca": "TSA-re", "id": "negara; negeri (pr)"},
+    {"ro": "oraș", "baca": "o-RASY", "id": "kota (nt)"},
+    {"ro": "prieten / prietenă", "baca": "pri-YÉ-tén / pri-YÉ-té-ne", "id": "teman (lk / pr)"},
+    {"ro": "român / româncă", "baca": "ro-MÎN / ro-MÎN-ke", "id": "orang Rumania (lk / pr)"},
+    {"ro": "indonezian / indoneziancă", "baca": "in-do-né-zi-AN / in-do-né-zi-AN-ke", "id": "orang Indonesia (lk / pr)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Kamu dari mana?",
+        "Saya dari Indonesia.",
+        "Sekarang saya tinggal di București.",
+        "Kamu bisa bahasa Rumania?",
+        "Sedikit. Saya belum bisa bicara dengan baik.",
+        "Bahasa apa saja yang kamu bisa?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata kerja dalam kurung yang tepat.",
+      "items": [
+        "Eu ____ în București. (a locui)",
+        "Tu ____ românește? (a vorbi)",
+        "Maria ____ germană. (a vorbi)",
+        "Noi ____ engleză la birou. (a vorbi)",
+        "Unde ____ dumneavoastră? (a locui)",
+        "Andrei și Budi ____ în București. (a locui)",
+        "Ioana nu ____ indoneziană. (a vorbi)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "ești / unde / de / ?",
+        "din / sunt / nu / bucurești",
+        "bine / nu / încă / vorbesc",
+        "nimic / nu-i",
+        "limbi / vorbești / ce / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "De unde ești? — Sunt din Indonezia. — Acum locuiesc în București. — Vorbești românește? — Puțin. Încă nu vorbesc bine. — Ce limbi vorbești?",
+    "locuiesc — vorbești — vorbește — vorbim — locuiți — locuiesc — vorbește",
+    "De unde ești? — Nu sunt din București. — Încă nu vorbesc bine. — Nu-i nimic. — Ce limbi vorbești?"
+  ]
+}

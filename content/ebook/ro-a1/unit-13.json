@@ -1,0 +1,250 @@
+{
+  "title": "Rumahku",
+  "title_target": "Casa mea",
+  "goal": "Memperkenalkan tempat tinggalmu dan menyebut siapa pemilik apa, dengan memasang satu-satunya kasus Rumania yang benar-benar mengubah bentuk kata benda: genitif-datif.",
+  "bekal": [
+    "menyebut ruangan, perabot, dan letaknya di apartemenmu",
+    "menyatakan kepunyaan dengan ekor genitif: *mașina vecinului*, *ușa camerei*, *camera lui Andrei*, *mașina Ioanei*",
+    "menyebut harga sewa dengan angka ratusan dan ribuan"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Apartamentul lui Budi",
+      "intro": "Ioana untuk pertama kalinya mampir ke apartemen yang disewa Budi bersama Andrei, tak jauh dari Piața Obor. Budi mengajaknya berkeliling.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Ce frumos este aici! Apartamentul este mare?", "id": "Bagus sekali di sini! Apartemennya besar?", "literal": "betapa indah ia-adalah di-sini! apartemen-nya ia-adalah besar?"},
+        {"speaker": "Budi:", "text": "Nu foarte mare. Apartamentul are două camere și o bucătărie.", "id": "Tidak terlalu besar. Apartemennya punya dua kamar dan satu dapur.", "literal": "tidak sangat besar. apartemen-nya ia-punya dua-pr kamar-jamak dan sebuah-pr dapur."},
+        {"speaker": "Ioana:", "text": "Care este camera ta?", "id": "Yang mana kamarmu?", "literal": "yang-mana ia-adalah kamar-nya milikmu-pr?"},
+        {"speaker": "Budi:", "text": "Camera mea este la dreapta. Camera lui Andrei este mică, dar are balcon.", "id": "Kamarku di sebelah kanan. Kamar Andrei kecil, tapi ada balkonnya.", "literal": "kamar-nya milikku-pr ia-adalah di kanan. kamar-nya si-genitif Andrei ia-adalah kecil-pr, tapi ia-punya balkon."},
+        {"speaker": "Ioana:", "text": "Ce mașină frumoasă, acolo jos! Este mașina ta?", "id": "Bagus sekali mobil yang di bawah itu! Itu mobilmu?", "literal": "betapa mobil indah-pr, di-sana bawah! ia-adalah mobil-nya milikmu-pr?"},
+        {"speaker": "Budi:", "text": "Nu, eu nu am mașină. Aceasta este mașina vecinului.", "id": "Bukan, aku tidak punya mobil. Ini mobil tetangga.", "literal": "tidak, saya tidak saya-punya mobil. ini-pr ia-adalah mobil-nya tetangga-nya-genitif."},
+        {"speaker": "Ioana:", "text": "Și cât este chiria?", "id": "Lalu sewanya berapa?", "literal": "dan berapa ia-adalah sewa-nya?"},
+        {"speaker": "Budi:", "text": "Chiria este patru sute de euro pe lună, fără utilități.", "id": "Sewanya empat ratus euro per bulan, belum termasuk listrik-air-gas.", "literal": "sewa-nya ia-adalah empat ratus-jamak dari euro per bulan, tanpa utilitas-jamak."},
+        {"speaker": "Ioana:", "text": "Nu este scump pentru centrul orașului. Cine este proprietarul?", "id": "Tidak mahal untuk ukuran pusat kota. Siapa pemiliknya?", "literal": "tidak ia-adalah mahal untuk pusat-nya kota-nya-genitif. siapa ia-adalah pemilik-nya?"},
+        {"speaker": "Budi:", "text": "Este apartamentul doamnei Popescu. Ea locuiește la etajul doi.", "id": "Ini apartemen Bu Popescu. Beliau tinggal di lantai dua.", "literal": "ia-adalah apartemen-nya nyonya-nya-genitif Popescu. dia-pr ia-tinggal di lantai-nya dua."},
+        {"speaker": "Ioana:", "text": "Bine. Eu trebuie să plec acum. Unde sunt cheile mașinii?", "id": "Baiklah. Aku harus pergi sekarang. Kunci mobilnya di mana?", "literal": "baik. saya harus agar saya-pergi sekarang. di-mana mereka-adalah kunci-jamak-nya mobil-nya-genitif?"},
+        {"speaker": "Budi:", "text": "Cheile sunt pe masă, în bucătărie.", "id": "Kuncinya di atas meja, di dapur.", "literal": "kunci-jamak-nya mereka-adalah di-atas meja, di-dalam dapur."}
+      ],
+      "notes": [
+        "**Mașina vecinului — susunannya persis bahasa Indonesia.** Barang dulu, pemilik sesudahnya: *mașina vecinului* = \"mobilnya tetangga\". Yang baru hanyalah ekor pada si pemilik: *vecinul* (tetangga itu) menjadi *vecin**ului*** (milik tetangga itu). Tak ada kata \"dari\", tak ada kata \"punya\" — ekor itulah yang mengerjakan semuanya.",
+        "**Camera lui Andrei.** Nama lelaki tidak bisa ditempeli ekor, jadi bahasa Rumania menaruh *lui* di depannya. Di baris harfiah *lui* ditulis \"si-genitif\": ia tidak berarti apa-apa selain menandai bahwa nama sesudahnya adalah pemilik.",
+        "**Doamnei, mașinii, orașului — tiga genitif lagi di dialog ini.** *Doamna → doamnei* dan *mașina → mașinii* adalah kata perempuan; *orașul → orașului* kata netral, yang di tunggal berperilaku seperti lelaki. Pola ketiganya dipasang lengkap di kotak tata bahasa pertama.",
+        "**Patru sute de euro.** *O sută* (seratus) punya jamak: *două sute, trei sute, patru sute*. Kata *de* yang kamu kenal dari unit 5 tetap muncul sesudah ratusan bulat. *Euro* sendiri tak pernah berubah bentuk, sedangkan *leu* tetap menjadi *lei*: *patru sute de lei*.",
+        "**Pe masă tanpa artikel, la etajul doi dengan artikel.** Aturan emas unit 6 masih berlaku: sesudah kata depan, kata benda polos kehilangan artikelnya (*pe masă, în bucătărie*), tetapi begitu ia diberi keterangan — di sini angka *doi* — artikelnya kembali: *la etajul doi*. *Pe lună* = \"per bulan\", bongkahan yang sama dengan *pe zi* dan *pe an*."
+      ],
+      "grammars": [
+        {
+          "title": "Genitif-datif — ekornya menempel pada artikel",
+          "body": [
+            "Bahasa Rumania punya kasus, tetapi jauh lebih hemat daripada bahasa-bahasa Slavia: untuk kata benda hanya ada **satu bentuk tambahan** yang perlu kamu pelajari, dan bentuk itu dipakai untuk dua tugas sekaligus — **genitif** (milik siapa?) dan **datif** (kepada siapa?).",
+            "Ekornya tidak menempel pada kata bendanya, melainkan pada **artikel tentu** yang sudah kamu kenal sejak unit 4. Jadi rumusnya: ambil bentuk berartikel, lalu ganti artikelnya."
+          ],
+          "table": {
+            "head": ["Jenis", "Ekor", "Berartikel → genitif-datif", "Contoh"],
+            "rows": [
+              ["**lk / nt tunggal**", "**-ului**", "*vecinul → vecinului*, *orașul → orașului*", "*mașina vecin**ului*** — mobil tetangga"],
+              ["**lk berakhiran -e**", "**-lui**", "*fratele → fratelui*, *câinele → câinelui*", "*camera frate**lui** meu* — kamar kakakku"],
+              ["**pr tunggal**", "**-ei / -ii**", "*camera → camerei*, *mașina → mașinii*", "*ușa camer**ei*** — pintu kamar"],
+              ["**pr berakhiran -ie**", "**-iei**", "*bucătăria → bucătăriei*, *familia → familiei*", "*fereastra bucătări**ei*** — jendela dapur"],
+              ["**jamak, semua jenis**", "**-lor**", "*vecinii → vecinilor*, *camerele → camerelor*", "*copiii vecini**lor*** — anak-anak para tetangga"]
+            ]
+          },
+          "after": [
+            "**Trik untuk kata perempuan: bentuk jamak + *-i*.** Genitif tunggal kata perempuan selalu dibangun dari bentuk **jamak**-nya: *cameră → camere → camerei*, *masă → mese → mesei*, *fată → fete → fetei*, *mașină → mașini → mașinii*, *stradă → străzi → străzii*, *ușă → uși → ușii*, *cheie → chei → cheii*. Itu sebabnya sejak unit 5 kosakata selalu mencantumkan jamaknya — sekarang ia terpakai dua kali. Hanya kata berakhiran konsonan + *-ie* yang berangkat dari tunggalnya: *bucătărie → bucătăriei*, *chirie → chiriei*.",
+            "**Beberapa bentuk yang sering dipakai dan layak dihafal utuh:** *tatăl → tatălui*, *mama → mamei*, *sora → surorii*, *doamna → doamnei*, *domnul → domnului*. Kata sifat posesif tinggal menyusul: *mașina tatălui meu*, *camera surorii mele* (bentuk *mele* dipakai karena *surorii* dibangun dari jamak — cukup hafalkan bongkahannya).",
+            "**Tugas kedua: datif.** Bentuk yang sama menjawab \"kepada siapa?\": *Îi dau vecinului cheile* = \"Saya memberikan kunci itu kepada tetangga\". Kata ganti *îi* dari unit 10 ikut muncul sebagai gandaan. Pemakaian datif dilatih penuh di unit 19; untuk sekarang cukup tahu bahwa bentuknya tidak perlu dipelajari dua kali."
+          ]
+        },
+        {
+          "title": "Nama orang, *unui / unei*, dan si kecil *al, a, ai, ale*",
+          "body": [
+            "Tidak semua pemilik punya artikel tentu untuk ditempeli. Nama orang dan kata benda ber-*un/o* punya jalannya sendiri — tetap pendek, tetap teratur."
+          ],
+          "table": {
+            "head": ["Pemiliknya", "Rumus", "Contoh", "Arti"],
+            "rows": [
+              ["nama lelaki", "***lui*** + nama", "*camera lui Andrei*, *laptopul lui Budi*", "kamar Andrei, laptop Budi"],
+              ["nama perempuan ber-*-a*", "*-a* → ***-ei***", "*mașina Ioanei*, *casa Mariei*", "mobil Ioana, rumah Maria"],
+              ["nama perempuan lain", "***lui*** + nama", "*geanta lui Carmen*", "tas Carmen"],
+              ["*un* + lk / nt", "***unui***", "*camera unui student*", "kamar seorang mahasiswa"],
+              ["*o* + pr", "***unei*** + bentuk genitif", "*mașina unei vecine*, *numele unei străzi*", "mobil seorang tetangga (pr), nama sebuah jalan"],
+              ["kata tanya", "***cui*** (datif), ***al / a cui*** (milik)", "*A cui este mașina?*", "Mobil ini milik siapa?"]
+            ]
+          },
+          "after": [
+            "**Sesudah *unei*, kata bendanya tetap memakai bentuk \"jamak\"-nya:** *o vecină → unei vecine*, *o stradă → unei străzi*, *o colegă → unei colege*. Sesudah *unui* kata bendanya tidak berubah sama sekali: *un vecin → unui vecin*.",
+            "**Al, a, ai, ale.** Genitif hanya boleh berdiri **tepat sesudah** kata benda berartikel tentu. Begitu syarat itu tak terpenuhi — barangnya ber-*un/o*, ada kata lain yang menyela, atau barangnya tidak disebut — muncullah kata kecil penyambung yang ikut jenis **barangnya**: *un coleg **al** lui Andrei* (lk), *o prietenă **a** Ioanei* (pr), *doi colegi **ai** lui Budi* (lk jamak), *două prietene **ale** Ioanei* (pr jamak). Juga: *Mașina este **a** vecinului* = \"Mobil itu milik tetangga\".",
+            "Aturan lengkap *al, a, ai, ale* adalah bahan tingkat A2. Untuk sekarang hafalkan empat contoh di atas sebagai bongkahan, dan pakai pola aman yang selalu benar: **barang berartikel + pemilik**, tanpa apa pun di tengahnya."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ruangan dan perabot",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**cameră, camere** (pr)", "KA-mé-re, KA-mé-ré", "kamar; ruangan"],
+            ["**sufragerie, sufragerii** (pr)", "su-fra-jé-RI-yé", "ruang tamu, ruang keluarga"],
+            ["**dormitor, dormitoare** (nt)", "dor-mi-TOR", "kamar tidur"],
+            ["**baie, băi** (pr)", "BA-yé, bey", "kamar mandi"],
+            ["**hol, holuri** (nt)", "hol", "lorong depan, ruang masuk"],
+            ["**balcon, balcoane** (nt)", "bal-KON", "balkon"],
+            ["**ușă, uși** (pr)", "U-sye, usy'", "pintu"],
+            ["**fereastră, ferestre** (pr)", "fé-RYAS-tre", "jendela"],
+            ["**pat, paturi** (nt)", "pat", "tempat tidur"],
+            ["**scaun, scaune** (nt)", "SKA-un", "kursi"],
+            ["**dulap, dulapuri** (nt)", "du-LAP", "lemari"],
+            ["**canapea, canapele** (pr)", "ka-na-PYA", "sofa"],
+            ["**frigider, frigidere** (nt)", "fri-ji-DÉR", "kulkas"],
+            ["**aragaz, aragaze** (nt)", "a-ra-GAZ", "kompor"],
+            ["**mașină de spălat** (pr)", "ma-SYI-ne dé spe-LAT", "mesin cuci"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Hampir semua perabot berjenis netral (*pat, scaun, dulap, frigider*) dan hampir semua ruangan berjenis perempuan (*cameră, baie, bucătărie, sufragerie*). Untuk menyebut letaknya, pakai kata depan unit 6 tanpa artikel: *Patul este lângă fereastră. Frigiderul este în bucătărie. Cheile sunt pe masă.* Begitu pemiliknya disebut, artikelnya kembali dan genitif menyusul: *pe masa lui Andrei*, *lângă ușa camerei mele*."
+        },
+        {
+          "type": "kotak",
+          "title": "Cara orang Rumania menghitung kamar",
+          "items": [
+            "Iklan *apartament cu două camere* **bukan** berarti dua kamar tidur. Yang dihitung adalah semua ruang tinggal, termasuk ruang tamu: dua *camere* = satu *sufragerie* + satu *dormitor*. Dapur dan kamar mandi tidak ikut dihitung.",
+            "***Garsonieră*** adalah apartemen satu ruang — yang di Indonesia disebut tipe studio. Pilihan termurah, dan paling banyak dicari mahasiswa.",
+            "***Parter*** adalah lantai dasar; *etajul unu* baru lantai di atasnya. Jadi *etajul doi*-nya doamna Popescu adalah lantai tiga menurut hitungan Indonesia.",
+            "Sebagian besar orang București tinggal di ***bloc***, gedung apartemen bertingkat. Dan seperti di Indonesia, sepatu dilepas di pintu: tuan rumah biasanya langsung menyodorkan *papuci* (sandal rumah) untuk tamunya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menyewa apartemen — dan angka besar untuk membayarnya",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Angka", "Română", "Cara baca"],
+          "rows": [
+            ["100", "**o sută**", "o SU-te"],
+            ["200", "**două sute**", "DO-we SU-té"],
+            ["350", "**trei sute cincizeci**", "tréy SU-té cinc'-ZÉC'"],
+            ["400", "**patru sute**", "PA-tru SU-té"],
+            ["1 000", "**o mie**", "o MI-yé"],
+            ["2 000", "**două mii**", "DO-we miy"],
+            ["2 500", "**două mii cinci sute**", "DO-we miy cinc' SU-té"],
+            ["2026", "**două mii douăzeci și șase**", "DO-we miy do-we-ZÉC' syi SYA-sé"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sută* dan *mie* adalah kata benda perempuan biasa, maka angka di depannya memakai bentuk perempuan: **o** sută, **două** sute, **o** mie, **două** mii. Ratusan, puluhan, dan satuan dijajarkan begitu saja tanpa kata sambung — *și* hanya muncul di antara puluhan dan satuan, seperti di unit 5. Soal *de*: lihat **dua angka terakhir**. Kalau 01–19, tanpa *de* (*o sută zece lei*); kalau 00 atau 20–99, pakai *de* (*o sută **de** lei, trei sute cincizeci **de** euro, două mii **de** lei*)."
+        },
+        {
+          "type": "tabel",
+          "head": ["Kata dan kalimat sewa-menyewa", "Bahasa Indonesia"],
+          "rows": [
+            ["*De închiriat* · *De vânzare*", "Disewakan · Dijual (tulisan di jendela dan iklan)"],
+            ["*Caut o garsonieră aproape de metrou.*", "Saya mencari studio dekat metro."],
+            ["*Cât este chiria pe lună?*", "Berapa sewanya per bulan?"],
+            ["*Utilitățile sunt incluse?*", "Listrik, air, dan gas sudah termasuk?"],
+            ["*La ce etaj este? Blocul are lift?*", "Di lantai berapa? Gedungnya ada lift?"],
+            ["*Apartamentul este mobilat?*", "Apartemennya berperabot?"],
+            ["*Cât este garanția?*", "Berapa uang jaminannya?"],
+            ["*Pot să văd apartamentul mâine?*", "Boleh saya lihat apartemennya besok?"],
+            ["*Proprietarul locuiește în același bloc.*", "Pemiliknya tinggal di gedung yang sama."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal soal sewa di București",
+          "items": [
+            "**Sewa disebut dalam euro, dibayar bulanan.** Inilah satu-satunya tempat di buku ini kamu bertemu euro; belanja, makan, dan tiket tetap dalam *lei*.",
+            "***Garanție*** — uang jaminan, lazimnya senilai satu atau dua bulan sewa — diserahkan di awal dan kembali saat kamu keluar, kalau apartemennya utuh.",
+            "Di luar sewa masih ada ***utilități*** (listrik, gas, internet) dan ***întreținere***: iuran bulanan gedung yang mencakup air, kebersihan tangga, dan di musim dingin pemanas. Tanyakan dua-duanya sebelum menandatangani *contract de închiriere*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 11",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Saya mau belajar bahasa Rumania.", "*Vreau să învăț limba română.*"],
+            ["Kamu bisa membantuku?", "*Poți să mă ajuți?*"],
+            ["Saya harus pergi sekarang.", "*Trebuie să plec acum.*"],
+            ["Saya tidak bisa datang besok.", "*Nu pot să vin mâine.*"],
+            ["Kamu bisa memasak?", "*Știi să gătești?*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "casă, case", "baca": "KA-se, KA-sé", "id": "rumah (pr)"},
+    {"ro": "apartament, apartamente", "baca": "a-par-ta-MÉNT", "id": "apartemen (nt)"},
+    {"ro": "bucătărie, bucătării", "baca": "bu-ke-te-RI-yé", "id": "dapur (pr)"},
+    {"ro": "masă, mese", "baca": "MA-se, MÉ-sé", "id": "meja (pr)"},
+    {"ro": "cheie, chei", "baca": "KÉ-yé, kéy", "id": "kunci (pr)"},
+    {"ro": "mașină, mașini", "baca": "ma-SYI-ne, ma-SYIN'", "id": "mobil; mesin (pr)"},
+    {"ro": "vecin, vecini / vecină, vecine", "baca": "vé-CIN, vé-CIN' / vé-CI-ne", "id": "tetangga (lk / pr)"},
+    {"ro": "proprietar, proprietari", "baca": "pro-pri-yé-TAR", "id": "pemilik (lk)"},
+    {"ro": "chirie, chirii", "baca": "ki-RI-yé", "id": "uang sewa (pr)"},
+    {"ro": "utilități", "baca": "u-ti-li-TETS'", "id": "listrik, air, gas (pr, jamak)"},
+    {"ro": "etaj, etaje", "baca": "é-TAZH", "id": "lantai, tingkat (nt)"},
+    {"ro": "bloc, blocuri", "baca": "blok, BLO-kur'", "id": "gedung apartemen (nt)"},
+    {"ro": "lună, luni", "baca": "LU-ne, lun'", "id": "bulan (pr)"},
+    {"ro": "a închiria (închiriez)", "baca": "a în-ki-ri-YA (în-ki-ri-YÉZ)", "id": "menyewa; menyewakan"},
+    {"ro": "curat", "baca": "ku-RAT", "id": "bersih"},
+    {"ro": "fără", "baca": "FE-re", "id": "tanpa"},
+    {"ro": "jos / sus", "baca": "zhos / sus", "id": "di bawah / di atas"},
+    {"ro": "sută, sute · mie, mii", "baca": "SU-te, SU-té · MI-yé, miy", "id": "ratus · ribu (pr)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Apartemennya punya dua kamar dan satu dapur.",
+        "Kamar Andrei kecil, tapi ada balkonnya.",
+        "Ini mobil tetangga.",
+        "Sewanya empat ratus euro per bulan.",
+        "Kuncinya di atas meja, di dapur.",
+        "Ini apartemen Bu Popescu."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk genitif dari kata di dalam kurung.",
+      "items": [
+        "Aceasta este mașina ____ . (vecinul)",
+        "Ușa ____ este la stânga. (camera)",
+        "Laptopul ____ este pe masă. (Andrei)",
+        "Unde este geanta ____ ? (Ioana)",
+        "Fereastra ____ este mare. (bucătăria)",
+        "Cheile ____ sunt la doamna Popescu. (apartamentul)",
+        "Copiii ____ sunt la școală. (vecinii)",
+        "Este camera ____ student. (un)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "vecinului / este / mașina / aceasta",
+        "pe / sunt / masă / cheile",
+        "lui / mică / camera / este / andrei",
+        "chiria / cât / este / ?",
+        "etajul / la / locuiește / doi / ea"
+      ]
+    }
+  ],
+  "answers": [
+    "Apartamentul are două camere și o bucătărie. — Camera lui Andrei este mică, dar are balcon. — Aceasta este mașina vecinului. — Chiria este patru sute de euro pe lună. — Cheile sunt pe masă, în bucătărie. — Este apartamentul doamnei Popescu.",
+    "vecinului — camerei — lui Andrei — Ioanei — bucătăriei — apartamentului — vecinilor — unui",
+    "Aceasta este mașina vecinului. — Cheile sunt pe masă. — Camera lui Andrei este mică. — Cât este chiria? — Ea locuiește la etajul doi."
+  ]
+}

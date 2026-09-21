@@ -1,0 +1,228 @@
+{
+  "title": "Di kafe",
+  "title_target": "La cafenea",
+  "goal": "Memesan minuman dan makanan ringan, meminta nota, dan memasang ciri paling khas bahasa Rumania: artikel tentu yang menempel di belakang kata benda — saudara jauh *-nya* bahasa Indonesia.",
+  "bekal": [
+    "memesan dengan sopan memakai *aș vrea…* dan *…, vă rog*, serta tahu kapan *vreau* terdengar terlalu keras",
+    "memberi artikel tentu pada kata benda tunggal apa pun: *-ul, -l, -le, -a, -ua*",
+    "meminta saran, meminta nota, dan membayar dengan kartu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — La o cafenea în Centrul Vechi",
+      "intro": "Sabtu sore. Ioana mengajak Budi ke sebuah kafe di Centrul Vechi, kawasan kota tua București. Pelayan datang menghampiri meja mereka.",
+      "lines": [
+        {"speaker": "Chelnerul:", "text": "Bună ziua! Ce doriți?", "id": "Selamat siang! Mau pesan apa?", "literal": "baik-pr hari-nya! apa kalian-ingin?"},
+        {"speaker": "Ioana:", "text": "Bună ziua. Aș vrea o cafea, vă rog.", "id": "Selamat siang. Saya mau minta satu kopi.", "literal": "baik-pr hari-nya. saya-akan mau sebuah-pr kopi, kalian-sopan saya-mohon."},
+        {"speaker": "Chelnerul:", "text": "Cu lapte sau fără lapte?", "id": "Pakai susu atau tanpa susu?", "literal": "dengan susu atau tanpa susu?"},
+        {"speaker": "Ioana:", "text": "Cu lapte, vă rog. Și un pahar cu apă.", "id": "Pakai susu. Dan segelas air.", "literal": "dengan susu, kalian-sopan saya-mohon. dan sebuah-lk gelas dengan air."},
+        {"speaker": "Budi:", "text": "Eu vreau ceva dulce. Ce îmi recomandați?", "id": "Kalau saya mau yang manis-manis. Apa yang Anda sarankan?", "literal": "saya saya-mau sesuatu manis. apa saya-datif kalian-menyarankan?"},
+        {"speaker": "Chelnerul:", "text": "Vă recomand papanași. Avem și plăcintă cu mere.", "id": "Saya sarankan papanași. Kami juga punya pai apel.", "literal": "kalian-datif-sopan saya-menyarankan papanași. kami-punya juga pai dengan apel-jamak."},
+        {"speaker": "Budi:", "text": "Atunci papanași și un ceai, vă rog.", "id": "Kalau begitu papanași dan satu teh.", "literal": "kalau-begitu papanași dan sebuah-lk teh, kalian-sopan saya-mohon."},
+        {"speaker": "Chelnerul:", "text": "Imediat. … Poftiți! Poftă bună!", "id": "Segera. … Silakan! Selamat menikmati!", "literal": "segera. … silakan-sopan! selera baik-pr!"},
+        {"speaker": "Ioana:", "text": "Mulțumim! Mmm, cafeaua este foarte bună.", "id": "Terima kasih! Hmm, kopinya enak sekali.", "literal": "kami-berterima-kasih! mmm, kopi-nya ia-adalah sangat baik-pr."},
+        {"speaker": "Budi:", "text": "Și ceaiul este bun. Nota, vă rog!", "id": "Tehnya juga enak. Minta notanya!", "literal": "dan teh-nya ia-adalah baik-lk. nota-nya, kalian-sopan saya-mohon!"},
+        {"speaker": "Chelnerul:", "text": "Sigur. Plătiți cash sau cu cardul?", "id": "Tentu. Bayar tunai atau pakai kartu?", "literal": "tentu. kalian-membayar tunai atau dengan kartu-nya?"},
+        {"speaker": "Budi:", "text": "Pot să plătesc cu cardul?", "id": "Boleh saya bayar pakai kartu?", "literal": "saya-bisa agar saya-membayar dengan kartu-nya?"},
+        {"speaker": "Chelnerul:", "text": "Da, sigur. Poftiți!", "id": "Ya, tentu. Silakan!", "literal": "ya, tentu. silakan-sopan!"}
+      ],
+      "notes": [
+        "**O cafea, lalu cafeaua.** Saat memesan, kopinya belum ada dan belum dikenal: *o cafea* — \"sebuah kopi\". Begitu cangkirnya sudah di meja, ia menjadi *cafeaua* — \"kopinya\". Begitu pula *un ceai → ceaiul*. Persis saat itulah bahasa Indonesia juga berpindah dari \"kopi\" ke \"kopinya\", dan itu pokok unit ini.",
+        "**Aș vrea lebih halus daripada vreau.** Ioana, yang memesan kepada pelayan, memakai *aș vrea* (\"saya ingin\"). Budi memakai *vreau* — tetapi ia sedang menyatakan seleranya, bukan memerintah, lalu menutup pesanannya dengan *vă rog*. Rinciannya ada di kotak tata bahasa kedua.",
+        "**Ce îmi recomandați? — hafalkan utuh.** *Îmi* berarti \"kepada saya\", dan pelayan menjawab dengan pasangannya: *Vă recomand…* (\"kepada Anda saya sarankan…\"). Kata ganti kecil semacam ini dipasang di unit 10 dan 19; untuk sekarang cukup kalimat jadinya.",
+        "**Pot să plătesc…? juga bongkahan.** *Pot să* + kata kerja = \"bolehkah / bisakah saya…\". Susunan dengan *să* baru dipasang di unit 11. Perhatikan *cu cardul*: sesudah *cu*, kata bendanya tetap berartikel — kebalikan dari kebanyakan kata depan lain, yang dibahas di unit 6.",
+        "**Poftiți dan Poftă bună.** *Poftiți* adalah bentuk sopan dari *poftim* (unit 1): \"silakan, ini dia\". *Poftă bună* harfiahnya \"selera yang baik\" dan diucapkan sebelum makan oleh siapa pun di meja — termasuk pelayan kepada tamunya. Jawabnya *Mulțumesc, la fel!* (\"Terima kasih, Anda juga!\")."
+      ],
+      "grammars": [
+        {
+          "title": "Artikel tentu — ekor yang menempel di belakang",
+          "body": [
+            "Bahasa Inggris menaruh *the* di depan. Bahasa Rumania — satu-satunya di antara saudara-saudara Latinnya — menempelkannya **di belakang** kata benda sebagai ekor, seperti *-nya* dalam \"kopinya\" dan \"notanya\". Ekor mana yang dipakai ditentukan oleh jenis kelamin dan huruf terakhir katanya."
+          ],
+          "table": {
+            "head": ["Jenis dan akhiran", "Ekor", "Tak tentu", "Tentu"],
+            "rows": [
+              ["**lk / nt** berakhiran konsonan atau *-i*", "**-ul**", "*un ceai, un pahar, un card*", "*ceai**ul**, pahar**ul**, card**ul***"],
+              ["**lk / nt** berakhiran *-u*", "**-l**", "*un leu, un metrou, un fiu*", "*leu**l**, metrou**l**, fiu**l***"],
+              ["**lk / nt** berakhiran *-e*", "**-le**", "*un frate, un câine, un lapte*", "*frate**le**, câine**le**, lapte**le***"],
+              ["**pr** berakhiran *-ă*", "**-a** menggantikan *-ă*", "*o notă, o apă, o masă*", "*not**a**, ap**a**, mas**a***"],
+              ["**pr** berakhiran *-e*", "**-a** ditambahkan", "*o carte, o bere, o pâine*", "*carte**a**, bere**a**, pâine**a***"],
+              ["**pr** berakhiran *-ie*", "**-a** menggantikan *-e*", "*o familie, o farmacie*", "*famili**a**, farmaci**a***"],
+              ["**pr** berakhiran *-ea* atau *-a* bertekanan", "**-ua**", "*o cafea, o cafenea, o stea*", "*cafea**ua**, cafenea**ua**, stea**ua***"]
+            ]
+          },
+          "after": [
+            "**Sekarang teka-teki unit 3 terjawab.** *Mama mea, sora mea, familia mea* memakai ekor *-a*; *fratele meu* memakai *-le*; *copilul meu* dan *soțul meu* memakai *-ul*. Kata milik menuntut artikel tentu, maka ekornya selalu ada. Dua bentuk yang menyimpang dan perlu dihafal: *tată → tatăl* dan *zi → ziua* (karena itulah *bună ziua*).",
+            "**Kapan dipakai?** Hampir selalu ketika bahasa Indonesia bisa memakai *-nya*, *itu*, atau *tadi*: benda yang sudah disebut atau sudah jelas bagi kedua pihak (*Nota, vă rog*), dan kata benda yang menjadi pokok kalimat (*Cafeaua este bună*). **Kapan tidak?** Sesudah *un / o*, sesudah *a fi* + pekerjaan, dan sesudah kebanyakan kata depan (unit 6).",
+            "**Yang kamu dengar di jalan.** Dalam percakapan cepat, huruf *l* pada *-ul* nyaris selalu ditelan: *cardul* terdengar \"kardu\", *ceaiul* terdengar \"cayu\". Dalam tulisan *l* itu wajib; di telingamu, bunyi *-u* di ujung kata sudah cukup sebagai tanda artikel."
+          ]
+        },
+        {
+          "title": "Vreau lawan aș vrea — mau dan ingin",
+          "body": [
+            "*A vrea* (mau) tak beraturan, tetapi pendek. Di sampingnya ada bentuk halusnya — bentuk pengandaian — yang dipakai setiap kali kamu meminta sesuatu kepada orang yang tidak kamu kenal."
+          ],
+          "table": {
+            "head": ["Pelaku", "a vrea", "Cara baca", "Bentuk halus", "Cara baca"],
+            "rows": [
+              ["eu", "**vreau**", "vryau", "**aș vrea**", "asy vrya"],
+              ["tu", "**vrei**", "vréy", "ai vrea", "ay vrya"],
+              ["el / ea", "**vrea**", "vrya", "ar vrea", "ar vrya"],
+              ["noi", "**vrem**", "vrém", "am vrea", "am vrya"],
+              ["voi", "**vreți**", "vréts'", "ați vrea", "ats' vrya"],
+              ["ei / ele", "**vor**", "vor", "ar vrea", "ar vrya"]
+            ]
+          },
+          "after": [
+            "**Bedanya persis seperti \"saya mau kopi\" dan \"saya ingin pesan kopi\".** *Vreau o cafea* kepada pelayan tidak salah tata bahasanya, tetapi terdengar seperti anak kecil yang menuntut. *Aș vrea o cafea* selalu aman. Yang sama halusnya: *Aș dori o cafea*. Dan yang paling sederhana pun sudah sopan, asalkan ditutup dengan kata ajaibnya: *O cafea, vă rog.*",
+            "**Di antara teman, *vreau* dan *vrei* biasa saja**: *Vrei o cafea? — Da, vreau.* Yang kasar bukan kata kerjanya, melainkan memakainya untuk menyuruh orang yang sedang melayanimu.",
+            "**Untuk sekarang pakai *a vrea* dengan kata benda saja**: *Vreau un ceai*, *Vrem nota*. Kalau yang dimaui sebuah perbuatan — \"saya mau membayar\" — bahasa Rumania memerlukan *să*: *Vreau să plătesc*. Itu pokok unit 11. Lajur bentuk halus di tabel cukup kamu kenali; yang wajib hafal hanya *aș vrea*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Minuman dan makanan ringan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia", "Berartikel"],
+          "rows": [
+            ["**cafea** (pr)", "ka-FYA", "kopi", "*cafeaua*"],
+            ["**ceai** (nt)", "cay", "teh", "*ceaiul*"],
+            ["**apă** (pr)", "A-pe", "air", "*apa*"],
+            ["**lapte** (nt)", "LAP-té", "susu", "*laptele*"],
+            ["**suc** (nt)", "suk", "jus; minuman ringan", "*sucul*"],
+            ["**limonadă** (pr)", "li-mo-NA-de", "limun segar", "*limonada*"],
+            ["**bere** (pr)", "BÉ-ré", "bir", "*berea*"],
+            ["**vin** (nt)", "vin", "anggur", "*vinul*"],
+            ["**prăjitură** (pr)", "pre-zhi-TU-re", "kue", "*prăjitura*"],
+            ["**plăcintă** (pr)", "ple-CIN-te", "pai; pastel isi", "*plăcinta*"],
+            ["**înghețată** (pr)", "în-gé-TSA-te", "es krim", "*înghețata*"],
+            ["**covrig** (lk)", "ko-VRIG", "roti cincin gurih", "*covrigul*"]
+          ]
+        },
+        {"type": "p", "text": "Kalau kamu memesan air, pelayan akan balik bertanya: *Plată sau minerală?* — *apă plată* adalah air putih biasa, *apă minerală* air bersoda. Dan kalau kamu memesan *o cafea* begitu saja, yang datang biasanya espresso; untuk kopi susu mintalah *o cafea cu lapte* atau sebut langsung *un cappuccino*."},
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang layak dicicipi",
+          "items": [
+            "**Papanași** — donat goreng dari adonan keju segar (*brânză de vaci*), disajikan hangat, disiram krim asam (*smântână*) dan selai buah beri. Hampir setiap restoran Rumania punya; satu porsi biasanya cukup untuk berdua.",
+            "**Covrigi** — roti cincin bertabur wijen, biji poppy, atau garam kasar, dijual hangat di kios *covrigărie* yang ada di hampir setiap sudut București. Murah, dan menjadi sarapan sambil jalan bagi separuh isi kota.",
+            "**Cafea la ibric** — kopi bubuk yang direbus di teko tembaga kecil bergagang panjang dan dituang bersama ampasnya. Inilah cara lama orang Rumania membuat kopi di rumah, dan yang paling akrab bagi lidah penggemar kopi tubruk."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kalimat di kafe, dari duduk sampai membayar",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Aveți o masă liberă?*", "Ada meja kosong?"],
+            ["*Meniul, vă rog.*", "Minta menunya."],
+            ["*Aș vrea… / Aș dori…*", "Saya ingin…"],
+            ["*Încă o cafea, vă rog.*", "Satu kopi lagi."],
+            ["*Fără zahăr, vă rog.*", "Tanpa gula."],
+            ["*Ce îmi recomandați?*", "Apa yang Anda sarankan?"],
+            ["*Nu mănânc carne de porc.*", "Saya tidak makan daging babi."],
+            ["*Nota, vă rog.*", "Minta notanya."],
+            ["*Pot să plătesc cu cardul?*", "Boleh bayar dengan kartu?"],
+            ["*Plătim împreună.* / *Plătim separat.*", "Kami bayar sekaligus. / Kami bayar sendiri-sendiri."],
+            ["*Păstrați restul.*", "Simpan saja kembaliannya."]
+          ]
+        },
+        {"type": "p", "text": "Perhatikan betapa seringnya artikel tentu muncul di tabel ini: *meniul, nota, cardul, restul*. Semuanya benda yang sudah jelas bagi kamu dan pelayan — hanya ada satu menu, satu nota, satu kembalian. Sebaliknya *o masă liberă* dan *o cafea* tak tentu, karena yang mana pun boleh. Kalimat *Nu mănânc carne de porc* memakai kata kerja yang baru dipasang di unit 7; hafalkan utuh, sebab masakan Rumania banyak memakai daging babi dan kamu mungkin memerlukannya sejak hari pertama."},
+        {
+          "type": "kotak",
+          "title": "Dua kebiasaan meja yang perlu diketahui",
+          "items": [
+            "**Bacșiș** (uang tip) tidak termasuk dalam harga dan lazimnya sekitar sepuluh persen. Banyak restoran mencantumkan baris khusus *bacșiș* di nota, sehingga jumlahnya bisa kamu tambahkan sekalipun membayar dengan kartu. Kalau membayar tunai, sebut jumlah bulatnya atau katakan *Păstrați restul*.",
+            "**Noroc!** adalah ucapan saat bersulang — harfiahnya \"keberuntungan!\". Orang Rumania saling menatap mata ketika gelas beradu. Ucapan yang lebih resmi: *Sănătate!* (\"kesehatan!\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 2",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Kamu dari mana? — Saya dari Indonesia.", "*De unde ești? — Sunt din Indonezia.*"],
+            ["Sekarang saya tinggal di București.", "*Acum locuiesc în București.*"],
+            ["Kamu bisa bahasa Rumania? — Sedikit. Saya belum bisa bicara dengan baik.", "*Vorbești românește? — Puțin. Încă nu vorbesc bine.*"],
+            ["Bahasa apa saja yang kamu bisa?", "*Ce limbi vorbești?*"],
+            ["Tidak apa-apa.", "*Nu-i nimic.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "cafenea", "baca": "ka-fé-NYA", "id": "kafe (pr)"},
+    {"ro": "chelner / chelneriță", "baca": "KÉL-nér / kél-né-RI-tse", "id": "pelayan (lk / pr)"},
+    {"ro": "a vrea (vreau)", "baca": "a vrya (vryau)", "id": "mau"},
+    {"ro": "a dori (doresc)", "baca": "a do-RI (do-RÉSK)", "id": "menginginkan"},
+    {"ro": "a plăti (plătesc)", "baca": "a ple-TI (ple-TÉSK)", "id": "membayar"},
+    {"ro": "a recomanda (recomand)", "baca": "a ré-ko-man-DA (ré-ko-MAND)", "id": "menyarankan"},
+    {"ro": "notă", "baca": "NO-te", "id": "nota; bon (pr)"},
+    {"ro": "card", "baca": "kard", "id": "kartu bank (nt)"},
+    {"ro": "pahar", "baca": "pa-HAR", "id": "gelas (nt)"},
+    {"ro": "zahăr", "baca": "ZA-her", "id": "gula (nt)"},
+    {"ro": "bun / bună", "baca": "bun / BU-ne", "id": "baik; enak (lk / pr)"},
+    {"ro": "dulce", "baca": "DUL-cé", "id": "manis"},
+    {"ro": "cu", "baca": "ku", "id": "dengan"},
+    {"ro": "fără", "baca": "FE-re", "id": "tanpa"},
+    {"ro": "ceva", "baca": "cé-VA", "id": "sesuatu"},
+    {"ro": "atunci", "baca": "a-TUNC'", "id": "kalau begitu; saat itu"},
+    {"ro": "sigur", "baca": "SI-gur", "id": "tentu; pasti"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Selamat siang. Saya ingin satu kopi.",
+        "Pakai susu atau tanpa susu?",
+        "Apa yang Anda sarankan?",
+        "Kopinya enak sekali.",
+        "Minta notanya.",
+        "Boleh saya bayar dengan kartu?"
+      ]
+    },
+    {
+      "prompt": "Beri artikel tentu pada kata benda berikut.",
+      "items": [
+        "o cafea → ____",
+        "un ceai → ____",
+        "o notă → ____",
+        "un frate → ____",
+        "o bere → ____",
+        "un pahar → ____",
+        "o familie → ____",
+        "un metrou → ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "cafea / vrea / o / aș / rog / vă / ,",
+        "recomandați / îmi / ce / ?",
+        "bună / este / cafeaua / foarte",
+        "rog / nota / vă / ,",
+        "cu / plătesc / pot / cardul / să / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Bună ziua. Aș vrea o cafea, vă rog. — Cu lapte sau fără lapte? — Ce îmi recomandați? — Cafeaua este foarte bună. — Nota, vă rog. — Pot să plătesc cu cardul?",
+    "cafeaua — ceaiul — nota — fratele — berea — paharul — familia — metroul",
+    "Aș vrea o cafea, vă rog. — Ce îmi recomandați? — Cafeaua este foarte bună. — Nota, vă rog. — Pot să plătesc cu cardul?"
+  ]
+}

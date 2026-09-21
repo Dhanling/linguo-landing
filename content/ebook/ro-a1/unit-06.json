@@ -1,0 +1,240 @@
+{
+  "title": "Di mana stasiun?",
+  "title_target": "Unde este gara?",
+  "goal": "Bertanya dan menunjukkan jalan di kota, dan memasang aturan emas kata depan: sesudah *în, la, pe, lângă* dan kawan-kawannya, kata benda justru **melepas** artikel tentunya.",
+  "bekal": [
+    "menyebut letak sesuatu dengan *în, la, pe, sub, lângă, între, aproape de, departe de*",
+    "tahu kapan kata benda sesudah kata depan kehilangan artikelnya — dan kapan ia mendapatkannya kembali",
+    "memasang artikel tentu pada kata benda jamak: *studenții, străzile, trenurile*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Unde este gara?",
+      "intro": "Sabtu pagi Budi mau membeli tiket kereta ke Brașov, tetapi ia tersesat beberapa blok dari Gara de Nord. Ia menghentikan orang yang lewat.",
+      "lines": [
+        {"speaker": "Budi:", "text": "Scuzați-mă, unde este gara?", "id": "Permisi, di mana stasiun?", "literal": "maafkan-sopan-saya-akusatif, di-mana ia-adalah stasiun-nya?"},
+        {"speaker": "Un domn:", "text": "Scuze, nu sunt de aici.", "id": "Maaf, saya bukan orang sini.", "literal": "maaf-jamak, tidak saya-adalah dari sini."},
+        {"speaker": "Budi:", "text": "Nu-i nimic. Bună ziua, doamnă! Unde este Gara de Nord, vă rog?", "id": "Tidak apa-apa. Selamat siang, Bu! Gara de Nord di mana, ya?", "literal": "tidak-adalah apa-pun. baik-pr hari-nya, nyonya! di-mana ia-adalah stasiun-nya dari utara, anda-akusatif saya-minta?"},
+        {"speaker": "O doamnă:", "text": "Gara de Nord? Mergeți drept înainte, apoi la stânga.", "id": "Gara de Nord? Jalan lurus saja, lalu belok kiri.", "literal": "stasiun-nya dari utara? kalian-pergi-sopan lurus ke-depan, kemudian ke kiri."},
+        {"speaker": "Budi:", "text": "Este departe?", "id": "Jauh?", "literal": "ia-adalah jauh?"},
+        {"speaker": "O doamnă:", "text": "Nu, este aproape, lângă parc. Zece minute pe jos.", "id": "Tidak, dekat kok, di samping taman. Sepuluh menit jalan kaki.", "literal": "tidak, ia-adalah dekat, di-samping taman. sepuluh menit-jamak di-atas bawah."},
+        {"speaker": "Budi:", "text": "Și este o bancă pe aici?", "id": "Dan apakah ada bank di sekitar sini?", "literal": "dan ia-adalah sebuah-pr bank di-sekitar sini?"},
+        {"speaker": "O doamnă:", "text": "Da. Banca este între hotel și farmacie, în fața gării.", "id": "Ada. Banknya di antara hotel dan apotek, di depan stasiun.", "literal": "ya. bank-nya ia-adalah di-antara hotel dan apotek, di muka-nya stasiun-genitif."},
+        {"speaker": "Budi:", "text": "Între hotel și farmacie. Mulțumesc mult!", "id": "Di antara hotel dan apotek. Terima kasih banyak!", "literal": "di-antara hotel dan apotek. saya-berterima-kasih banyak!"},
+        {"speaker": "O doamnă:", "text": "Cu plăcere. Sunteți turist?", "id": "Sama-sama. Anda turis?", "literal": "dengan kesenangan. kalian-adalah-sopan turis?"},
+        {"speaker": "Budi:", "text": "Nu, locuiesc în București, dar sunt nou în oraș.", "id": "Bukan, saya tinggal di București, tapi saya orang baru di kota ini.", "literal": "tidak, saya-tinggal di București, tetapi saya-adalah baru di kota."},
+        {"speaker": "O doamnă:", "text": "Atunci bun venit! Și atenție: taxiurile de la gară sunt scumpe.", "id": "Kalau begitu selamat datang! Dan hati-hati: taksi-taksi dari stasiun mahal.", "literal": "kalau-begitu baik-lk datang! dan awas: taksi-jamak-nya dari di stasiun mereka-adalah mahal-pr-jamak."},
+        {"speaker": "Budi:", "text": "Mulțumesc pentru sfat. O zi bună!", "id": "Terima kasih atas sarannya. Semoga hari Anda menyenangkan!", "literal": "saya-berterima-kasih untuk nasihat. sebuah-pr hari baik-pr!"}
+      ],
+      "notes": [
+        "**Scuzați-mă dan mergeți** adalah bentuk perintah sopan, yang sebenarnya tidak lain dari bentuk *voi* kala kini. Imperatif baru dipasang di unit 17; untuk sekarang hafalkan keduanya utuh. Kepada teman sebaya bentuknya *scuză-mă*. Kalimat pembuka *Scuzați-mă, unde este…?* sudah cukup untuk menghentikan siapa pun di trotoar dengan sopan.",
+        "**Unde este *gara*?** tetapi **de la *gară*.** Di kalimat pertama stasiun adalah subjek — benda tertentu yang sedang dicari — maka ia berartikel: *gara*. Begitu ada kata depan di mukanya, artikel itu lepas: *la gară, de la gară, lângă parc, între hotel și farmacie, în oraș*. Bahasa Indonesia tidak punya padanannya, dan justru karena itulah aturan ini jadi pokok unit ini.",
+        "**Nu sunt de aici** — \"saya bukan dari sini\". Dengan nama tempat kamu memakai *din* (*sunt din Indonezia*, unit 2), tetapi dengan kata tunjuk tempat dipakai *de*: *de aici* (dari sini), *de acolo* (dari sana), *de unde* (dari mana).",
+        "**În fața gării** = di depan stasiun. Ungkapan *în fața* (di muka) dan *în spatele* (di belakang) menuntut bentuk genitif — *gară → gării, hotel → hotelului, bancă → băncii*. Genitif baru dipasang di unit 13; untuk sekarang hafalkan tiga bongkahan itu apa adanya.",
+        "**Taxiurile** adalah jamak berartikel: *taxi → taxiuri → taxiurile*, \"taksi-taksi itu\". Kata sifatnya ikut menjadi jamak: *scump → scumpe*. Artikel jamak ada di kotak kedua; persesuaian kata sifat dibahas tuntas di unit 9."
+      ],
+      "grammars": [
+        {
+          "title": "Kata depan tempat dan aturan emasnya",
+          "body": [
+            "Kata depan Rumania sendiri tidak sulit — jumlahnya sedikit dan artinya dekat dengan \"di, ke, pada\" kita. Yang menjegal adalah apa yang terjadi pada kata benda **sesudahnya**."
+          ],
+          "table": {
+            "head": ["Kata depan", "Arti", "Contoh"],
+            "rows": [
+              ["**în**", "di dalam; di (kota, negara)", "*în parc, în oraș, în România*"],
+              ["**la**", "di, ke (suatu titik tujuan)", "*la gară, la hotel, la Brașov*"],
+              ["**pe**", "di atas; di (jalan)", "*pe masă, pe stradă*"],
+              ["**sub**", "di bawah", "*sub pod, sub masă*"],
+              ["**lângă**", "di samping", "*lângă parc, lângă farmacie*"],
+              ["**între**", "di antara", "*între hotel și farmacie*"],
+              ["**aproape de**", "dekat dari", "*aproape de gară*"],
+              ["**departe de**", "jauh dari", "*departe de centru*"],
+              ["**în fața** + genitif", "di depan", "*în fața gării, în fața hotelului*"],
+              ["**în spatele** + genitif", "di belakang", "*în spatele băncii*"]
+            ]
+          },
+          "after": [
+            "**Aturan emas: sesudah kata depan, kata benda melepas artikel tentunya** — walaupun yang dimaksud benda yang sangat tertentu. *Gara este mare* (stasiun itu besar), tetapi *Sunt la gară* (saya di stasiun itu). *Parcul este aproape*, tetapi *Budi este în parc*.",
+            "**Artikelnya kembali begitu kata benda itu diberi keterangan** — kata sifat, nama, kata milik, atau apa pun yang menerangkannya: *în parc* → *în parc**ul** mare*, *în parc**ul** Cișmigiu*; *pe stradă* → *pe strad**a** Lipscani*; *la gară* → *la gar**a** de Nord*. Itu sebabnya nama jalan dan nama tempat selalu berartikel.",
+            "**Satu-satunya pengecualian penting adalah *cu*** (dengan): ia tetap meminta artikel. Kamu sudah memakainya di unit 4 — *Pot să plătesc cu card**ul**?* — dan akan bertemu lagi di *cu tren**ul**, cu metro**ul***.",
+            "*La* berarti \"di\" sekaligus \"ke\": *Sunt la gară* (saya di stasiun) dan *Merg la gară* (saya pergi ke stasiun). Kata kerjanyalah yang membedakan — satu kerepotan lebih sedikit."
+          ]
+        },
+        {
+          "title": "Artikel tentu jamak",
+          "body": [
+            "Di unit 4 kamu menempelkan artikel pada kata benda tunggal, di unit 5 kamu membentuk jamak. Sekarang keduanya digabung: artikel jamak menempel **di belakang ekor jamak**. Hanya ada dua ekor yang perlu diingat."
+          ],
+          "table": {
+            "head": ["Jenis", "Jamak", "Jamak + artikel", "Arti"],
+            "rows": [
+              ["**lk** → **-i**", "*studenți, frați, pomi*", "*studenț**ii**, fraț**ii**, pom**ii***", "para mahasiswa itu, saudara-saudara itu, pohon-pohon itu"],
+              ["**pr** → **-le**", "*fete, case*", "*fete**le**, case**le***", "gadis-gadis itu, rumah-rumah itu"],
+              ["**pr** → **-le**", "*străzi, gări, farmacii*", "*străzi**le**, gări**le**, farmacii**le***", "jalan-jalan itu, stasiun-stasiun itu, apotek-apotek itu"],
+              ["**nt** → **-le**", "*trenuri, parcuri, taxiuri*", "*trenuri**le**, parcuri**le**, taxiuri**le***", "kereta-kereta itu, taman-taman itu, taksi-taksi itu"],
+              ["**nt** → **-le**", "*bilete, hoteluri*", "*bilete**le**, hoteluri**le***", "tiket-tiket itu, hotel-hotel itu"]
+            ]
+          },
+          "after": [
+            "**Kata lelaki: tambah satu *-i* lagi.** Inilah saat *-i* yang tadinya nyaris bisu menjadi bunyi penuh: *studenți* dibaca *stu-DÉNTS'*, tetapi *studenții* dibaca *stu-DÉN-tsi*. Telinga orang Rumania menangkap bedanya dengan jelas, jadi ucapkan *i*-nya sungguh-sungguh.",
+            "**Kata perempuan dan netral: tambah *-le*** pada bentuk jamak apa pun — lagi-lagi netral berperilaku perempuan di jamak. *Biletele sunt scumpe. Străzile sunt frumoase.*",
+            "Rekor dipegang kata *copil* (anak): jamaknya *copii*, dan dengan artikel menjadi ***copiii*** — tiga huruf *i* berturut-turut, dibaca *ko-PI-i*. Bukan salah cetak.",
+            "Aturan emas tetap berlaku di jamak: *Studenții sunt în parc*, tetapi *Vorbesc cu studenții* (karena *cu*) dan *o cafenea pentru studenți* (tanpa artikel sesudah *pentru*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tempat-tempat di kota",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**gară, gări** (pr)", "GA-re, ger'", "stasiun kereta"],
+            ["**stație, stații** (pr)", "STA-tsi-é, STA-tsi", "halte; stasiun metro"],
+            ["**stradă, străzi** (pr)", "STRA-de, strez'", "jalan"],
+            ["**piață, piețe** (pr)", "PYA-tse, PYÉ-tsé", "pasar; alun-alun"],
+            ["**parc, parcuri** (nt)", "park, PAR-kur'", "taman"],
+            ["**bancă, bănci** (pr)", "BAN-ke, benc'", "bank"],
+            ["**farmacie, farmacii** (pr)", "far-ma-CI-é, far-ma-CI-i", "apotek"],
+            ["**spital, spitale** (nt)", "spi-TAL, spi-TA-lé", "rumah sakit"],
+            ["**magazin, magazine** (nt)", "ma-ga-ZIN, ma-ga-ZI-né", "toko"],
+            ["**biserică, biserici** (pr)", "bi-SÉ-ri-ke, bi-SÉ-ric'", "gereja"],
+            ["**muzeu, muzee** (nt)", "mu-ZÉU, mu-ZÉ-é", "museum"],
+            ["**pod, poduri** (nt)", "pod, PO-dur'", "jembatan"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Separuh daftar ini sudah kamu kenal dari bahasa Indonesia: *parc*, *bancă*, *farmacie*, *hotel*, *muzeu*, *restaurant*. Tenagamu cukup dipakai untuk jamaknya — dan untuk *magazin*, kawan palsu yang artinya \"toko\", bukan majalah (majalah = *revistă*)."
+        },
+        {
+          "type": "kotak",
+          "title": "Membaca peta București",
+          "items": [
+            "**Piață** punya dua arti: pasar (*Piața Obor*, pasar terbesar di kota) dan alun-alun atau bundaran (*Piața Unirii, Piața Victoriei, Piața Romană*). Kalau orang berkata *la piață* tanpa nama, maksudnya pasar.",
+            "Pintu masuk metro ditandai huruf **M** besar. *Gara de Nord* adalah stasiun kereta utama București dan punya stasiun metro sendiri dengan nama yang sama.",
+            "Di alamat kamu akan melihat *Strada* (Str.), *Bulevardul* (Bd.), *Calea*, dan *Șoseaua* (Șos.) — semuanya berartikel karena diikuti nama: *pe Calea Victoriei*, *pe strada Lipscani*. *Centrul Vechi*, kota tua, terletak di sekitar jalan Lipscani itu."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menunjukkan jalan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Cum ajung la Piața Unirii?*", "Bagaimana saya bisa sampai ke Piața Unirii?"],
+            ["*Mergeți drept înainte.*", "Jalan lurus terus."],
+            ["*La stânga.* / *La dreapta.*", "Ke kiri. / Ke kanan."],
+            ["*Prima stradă la dreapta.*", "Jalan pertama ke kanan."],
+            ["*Traversați strada.*", "Seberangi jalan."],
+            ["*Mergeți până la semafor.*", "Jalan sampai lampu lalu lintas."],
+            ["*Este la colț.*", "Ada di pojok jalan."],
+            ["*Este aici.* / *Este acolo.*", "Ada di sini. / Ada di sana."],
+            ["*Este la cinci minute pe jos.*", "Lima menit jalan kaki."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Jebakan: drept lawan dreapta",
+          "items": [
+            "***Drept** (înainte)* = **lurus**. ***Dreapta*** = **kanan**. Keduanya dari akar kata yang sama, bunyinya mirip, dan artinya membawamu ke arah yang berbeda. Pegangan: *la dreapt**a*** dan *la stâng**a*** sama-sama berakhiran *-a* dan sama-sama didahului *la*.",
+            "Orang Rumania yang ditanya jalan suka menjawab cepat dan panjang. Tangkap tiga kata saja — *drept*, *stânga*, *dreapta* — lalu **ulangi** arahnya seperti Budi di dialog (*Între hotel și farmacie.*). Kalau kamu salah tangkap, mereka akan langsung membetulkan."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Cum ajung la…?* memakai kata kerja *a ajunge* (tiba, sampai). Hafalkan sebagai bongkahan; ia kalimat paling berguna di halaman ini, dan jawabannya hampir selalu tersusun dari potongan-potongan di tabel di atas."
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Saya mau satu kopi, tolong.", "*Aș vrea o cafea, vă rog.*"],
+            ["Kopinya enak sekali.", "*Cafeaua este foarte bună.*"],
+            ["Apa yang Anda sarankan untuk saya?", "*Ce îmi recomandați?*"],
+            ["Bon, tolong.", "*Nota, vă rog.*"],
+            ["Boleh saya bayar dengan kartu?", "*Pot să plătesc cu cardul?*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "gară, gări", "baca": "GA-re, ger'", "id": "stasiun kereta (pr)"},
+    {"ro": "stradă, străzi", "baca": "STRA-de, strez'", "id": "jalan (pr)"},
+    {"ro": "parc, parcuri", "baca": "park, PAR-kur'", "id": "taman (nt)"},
+    {"ro": "bancă, bănci", "baca": "BAN-ke, benc'", "id": "bank (pr)"},
+    {"ro": "farmacie, farmacii", "baca": "far-ma-CI-é, far-ma-CI-i", "id": "apotek (pr)"},
+    {"ro": "hotel, hoteluri", "baca": "ho-TÉL, ho-TÉ-lur'", "id": "hotel (nt)"},
+    {"ro": "oraș, orașe", "baca": "o-RASY, o-RA-syé", "id": "kota (nt)"},
+    {"ro": "minut, minute", "baca": "mi-NUT, mi-NU-té", "id": "menit (nt)"},
+    {"ro": "a merge (merg)", "baca": "a MÉR-jé (mérg)", "id": "pergi; berjalan"},
+    {"ro": "a traversa (traversez)", "baca": "a tra-vér-SA (tra-vér-SÉZ)", "id": "menyeberang"},
+    {"ro": "unde", "baca": "UN-dé", "id": "di mana"},
+    {"ro": "aici / acolo", "baca": "a-IC' / a-KO-lo", "id": "di sini / di sana"},
+    {"ro": "aproape / departe", "baca": "a-PROA-pé / dé-PAR-té", "id": "dekat / jauh"},
+    {"ro": "lângă", "baca": "LÎN-ge", "id": "di samping"},
+    {"ro": "între", "baca": "ÎN-tré", "id": "di antara"},
+    {"ro": "la stânga / la dreapta", "baca": "la STÎN-ga / la DRYAP-ta", "id": "ke kiri / ke kanan"},
+    {"ro": "drept înainte", "baca": "drépt î-na-IN-té", "id": "lurus terus"},
+    {"ro": "apoi", "baca": "a-POY", "id": "kemudian, lalu"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Permisi, di mana stasiun?",
+        "Jalan lurus terus, lalu belok kiri.",
+        "Tidak jauh, dekat kok, di samping taman.",
+        "Banknya di antara hotel dan apotek.",
+        "Saya bukan orang sini.",
+        "Tiket-tiketnya mahal."
+      ]
+    },
+    {
+      "prompt": "Pilih bentuk yang benar: dengan artikel atau tanpa artikel?",
+      "items": [
+        "Sunt la ____ . (gară atau gara)",
+        "____ este departe. (Gară atau Gara)",
+        "Budi este în ____ . (parc atau parcul)",
+        "Budi este în ____ Cișmigiu. (parc atau parcul)",
+        "Banca este lângă ____ . (hotel atau hotelul)",
+        "Plătesc cu ____ . (card atau cardul)",
+        "____ sunt scumpe. (Bilete atau Biletele)",
+        "____ sunt în parc. (Studenți atau Studenții)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "gara / este / unde / ?",
+        "aici / sunt / nu / de",
+        "este / parc / lângă / farmacia",
+        "la / apoi / dreapta / mergeți / drept / înainte / ,",
+        "departe / este / gară / de / hotelul"
+      ]
+    }
+  ],
+  "answers": [
+    "Scuzați-mă, unde este gara? — Mergeți drept înainte, apoi la stânga. — Nu este departe, este aproape, lângă parc. — Banca este între hotel și farmacie. — Nu sunt de aici. — Biletele sunt scumpe.",
+    "gară — Gara — parc — parcul — hotel — cardul — Biletele — Studenții",
+    "Unde este gara? — Nu sunt de aici. — Farmacia este lângă parc. — Mergeți drept înainte, apoi la dreapta. — Hotelul este departe de gară."
+  ]
+}

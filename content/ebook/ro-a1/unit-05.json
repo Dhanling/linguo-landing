@@ -1,0 +1,251 @@
+{
+  "title": "Berapa harganya?",
+  "title_target": "Cât costă?",
+  "goal": "Bertanya harga, menyebut umur dan nomor telepon — dan untuk itu memasang dua hal yang tidak dikenal bahasa Indonesia: angka yang ikut jenis kelamin, dan kata benda yang wajib berubah begitu jumlahnya lebih dari satu.",
+  "bekal": [
+    "menghitung dari 0 sampai 100, termasuk tahu kapan harus menyelipkan kata kecil *de*",
+    "membentuk jamak kata benda lelaki, perempuan, dan netral — beserta tiga pergantian bunyi yang paling sering muncul",
+    "bertanya harga, umur, dan nomor telepon, lalu menjawabnya"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — La chioșc",
+      "intro": "Budi dan Ioana berhenti di kios tiket dekat halte. Budi butuh tiket bus; sambil menunggu, Ioana baru sadar ia belum punya nomor telepon Budi.",
+      "lines": [
+        {"speaker": "Budi:", "text": "Bună ziua! Cât costă un bilet?", "id": "Selamat siang! Berapa harga satu tiket?", "literal": "baik-pr hari-nya! berapa ia-berharga sebuah-lk tiket?"},
+        {"speaker": "Vânzătoarea:", "text": "Costă cinci lei.", "id": "Harganya lima lei.", "literal": "ia-berharga lima leu-jamak."},
+        {"speaker": "Budi:", "text": "Două bilete, vă rog. Și cât costă un abonament?", "id": "Dua tiket, tolong. Dan berapa harga kartu langganan?", "literal": "dua-pr tiket-jamak, anda-akusatif saya-minta. dan berapa ia-berharga sebuah-lk langganan?"},
+        {"speaker": "Vânzătoarea:", "text": "Optzeci de lei pe lună.", "id": "Delapan puluh lei sebulan.", "literal": "delapan-puluh dari leu-jamak per bulan."},
+        {"speaker": "Budi:", "text": "Hm, este prea scump. Doar două bilete, vă rog.", "id": "Hm, terlalu mahal. Dua tiket saja, tolong.", "literal": "hm, ia-adalah terlalu mahal. hanya dua-pr tiket-jamak, anda-akusatif saya-minta."},
+        {"speaker": "Vânzătoarea:", "text": "Zece lei, vă rog.", "id": "Sepuluh lei.", "literal": "sepuluh leu-jamak, anda-akusatif saya-minta."},
+        {"speaker": "Budi:", "text": "Poftiți. Mulțumesc!", "id": "Ini, silakan. Terima kasih!", "literal": "silakan-sopan. saya-berterima-kasih!"},
+        {"speaker": "Ioana:", "text": "Apropo, Budi, câți ani ai?", "id": "Omong-omong, Budi, umurmu berapa?", "literal": "omong-omong, Budi, berapa-lk-jamak tahun-jamak kamu-punya?"},
+        {"speaker": "Budi:", "text": "Am douăzeci și opt de ani. Și tu?", "id": "Umurku dua puluh delapan. Kalau kamu?", "literal": "saya-punya dua-puluh dan delapan dari tahun-jamak. dan kamu?"},
+        {"speaker": "Ioana:", "text": "Douăzeci și nouă. Ai o familie mare?", "id": "Dua puluh sembilan. Keluargamu besar?", "literal": "dua-puluh dan sembilan. kamu-punya sebuah-pr keluarga besar?"},
+        {"speaker": "Budi:", "text": "Da. Am doi frați și două surori.", "id": "Ya. Aku punya dua saudara lelaki dan dua saudara perempuan.", "literal": "ya. saya-punya dua-lk saudara-jamak dan dua-pr saudari-jamak."},
+        {"speaker": "Ioana:", "text": "Care este numărul tău de telefon? Am doar e-mailul tău.", "id": "Nomor teleponmu berapa? Aku cuma punya e-mailmu.", "literal": "yang-mana ia-adalah nomor-nya milikmu-lk dari telepon? saya-punya hanya e-mail-nya milikmu-lk."},
+        {"speaker": "Budi:", "text": "Zero șapte zero zero, unu doi trei, patru cinci șase.", "id": "Nol tujuh nol nol, satu dua tiga, empat lima enam.", "literal": "nol tujuh nol nol, satu dua tiga, empat lima enam."}
+      ],
+      "notes": [
+        "**Cât costă?** Kata kerjanya *a costa*, dan bentuk *costă* dipakai baik untuk satu barang maupun banyak: *Cât costă un bilet?* dan *Cât costă biletele?* Di kelompok kata kerja berakhiran *-a*, bentuk \"dia\" dan \"mereka\" memang selalu kembar. Satu bentuk untuk semua harga — hadiah kecil dari bahasa ini.",
+        "**Cinci lei, tetapi optzeci *de* lei.** Dari angka 20 ke atas, bahasa Rumania menyelipkan *de* di antara angka dan kata bendanya; harfiahnya \"delapan puluh dari lei\". Di bawah 20 tidak ada apa-apa: *zece lei*, *nouăsprezece lei*. Inilah kesalahan yang paling lama bertahan pada pelajar, jadi biasakan dari sekarang.",
+        "**Am douăzeci și opt de ani.** Umur itu **dipunyai**, bukan \"adalah\": kata kerjanya *a avea* dari unit 3, persis bahasa Prancis atau Spanyol. Pertanyaannya *Câți ani ai?* — \"berapa tahun kamu punya?\". *Câți* adalah bentuk lelaki jamak karena *an* kata lelaki; untuk kata perempuan dan netral dipakai *câte*: *Câte bilete?*",
+        "**Doi frați, două surori, două bilete.** Angka dua ikut jenis kelamin kata bendanya. Yang sering mengejutkan: *bilet* itu netral, dan kata netral di jamak berperilaku perempuan — maka *două bilete*, bukan *doi bilete*. Inilah arti nyata dari \"lelaki di tunggal, perempuan di jamak\" yang kamu baca di unit 3.",
+        "**Prea scump** = terlalu mahal; jangan tertukar dengan *foarte scump* (sangat mahal). Dan perhatikan susunan *numărul tău de telefon*: kata milik menempel langsung pada kata benda berartikel, baru sesudahnya datang *de telefon*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka 0–100",
+          "body": [
+            "Angka Rumania serumpun dengan angka Latin yang sudah kamu kenal dari kata serapan: *doi* (duo), *trei* (trio), *opt* (oktaf), *zece* (desimal). Polanya teratur: belasan = satuan + *-sprezece* (\"di atas sepuluh\"), puluhan = satuan + *-zeci* (\"puluh-puluh\").",
+            "Waspadai tiga bentuk yang memendek: **pai**sprezece (14), **șai**sprezece (16), dan **șai**zeci (60) — bukan *patrusprezece*, *șasesprezece*, *șasezeci*."
+          ],
+          "table": {
+            "head": ["Angka", "Română", "Cara baca"],
+            "rows": [
+              ["0 · 1 · 2", "*zero · unu (una) · doi (două)*", "ZÉ-ro · U-nu (U-na) · doy (DO-we)"],
+              ["3 · 4 · 5", "*trei · patru · cinci*", "tréy · PA-tru · cinc'"],
+              ["6 · 7 · 8", "*șase · șapte · opt*", "SYA-sé · SYAP-té · opt"],
+              ["9 · 10", "*nouă · zece*", "NO-we · ZÉ-cé"],
+              ["11 · 12", "*unsprezece · doisprezece (douăsprezece)*", "UN-spré-zé-cé · DOY-spré-zé-cé"],
+              ["13 · 14 · 15", "*treisprezece · paisprezece · cincisprezece*", "TRÉY- · PAY- · CINC'-spré-zé-cé"],
+              ["16 · 17", "*șaisprezece · șaptesprezece*", "SYAY- · SYAP-té-spré-zé-cé"],
+              ["18 · 19", "*optsprezece · nouăsprezece*", "OPT- · NO-we-spré-zé-cé"],
+              ["20 · 30 · 40", "*douăzeci · treizeci · patruzeci*", "do-we-ZÉC' · tréy-ZÉC' · pa-tru-ZÉC'"],
+              ["50 · 60", "*cincizeci · șaizeci*", "cinc'-ZÉC' · syay-ZÉC'"],
+              ["70 · 80 · 90", "*șaptezeci · optzeci · nouăzeci*", "syap-té-ZÉC' · opt-ZÉC' · no-we-ZÉC'"],
+              ["21 · 35 · 99", "*douăzeci și unu · treizeci și cinci · nouăzeci și nouă*", "puluhan + *și* (dan) + satuan"],
+              ["100", "*o sută*", "o SU-te"]
+            ]
+          },
+          "after": [
+            "**Unu, un, o.** Untuk berhitung, menyebut nomor telepon, dan di ujung angka majemuk dipakai *unu*: *zero, unu, doi…*, *douăzeci și unu*. Tetapi di depan kata benda, \"satu\" tidak lain adalah artikel tak tentu yang sudah kamu kenal: *un bilet*, *o cafea*. Jangan berkata *unu bilet*.",
+            "**Doi dan două menular ke angka majemuk:** *doisprezece lei* tetapi *douăsprezece bilete*; *douăzeci și doi de ani* tetapi *douăzeci și două de cafele*. Angka lain tidak peduli jenis kelamin.",
+            "**Aturan *de*:** 1–19 langsung (*cinci lei, nouăsprezece ani*), 20–100 memakai *de* (*douăzeci de lei, optzeci și cinci de ani, o sută de lei*). Kalau kata bendanya tidak disebut, *de* ikut hilang: *Câți ani ai? — Douăzeci și opt.*",
+            "Di jalan kamu akan mendengar belasan yang dipotong: *unșpe, doișpe, treișpe, paișpe, cinșpe, șaișpe…* Itu bahasa lisan sehari-hari; cukup dikenali dulu, tidak perlu ditiru."
+          ]
+        },
+        {
+          "title": "Jamak kata benda",
+          "body": [
+            "Bahasa Indonesia tenang-tenang saja berkata \"dua tiket\". Bahasa Rumania tidak: begitu jumlahnya lebih dari satu, kata bendanya **wajib** berganti ekor. Ekor mana yang dipakai bergantung pada jenis kelaminnya."
+          ],
+          "table": {
+            "head": ["Jenis", "Ekor jamak", "Tunggal → jamak"],
+            "rows": [
+              ["**lk**", "**-i**", "*student → studenți, frate → frați, leu → lei, an → ani*"],
+              ["**pr** berakhiran -ă", "**-e**", "*fată → fete, casă → case, studentă → studente*"],
+              ["**pr** berakhiran -ă", "**-i**", "*stradă → străzi, gară → gări, lună → luni*"],
+              ["**pr** berakhiran -e", "**-i**", "*carte → cărți, floare → flori, familie → familii*"],
+              ["**pr** berakhiran -ea / -a bertekanan", "**-le**", "*cafea → cafele, stea → stele, sarma → sarmale*"],
+              ["**nt**", "**-uri**", "*tren → trenuri, ceai → ceaiuri, preț → prețuri*"],
+              ["**nt**", "**-e**", "*bilet → bilete, oraș → orașe, număr → numere*"]
+            ]
+          },
+          "after": [
+            "**Ekor *-i* melunakkan huruf di depannya.** Tiga pergantian ini muncul terus: **t → ț** (*student → studenți, frate → frați*), **d → z** (*stradă → străzi*), **s → ș** (*urs → urși*, beruang). Ingat dari bab Pelafalan: *-i* itu sendiri nyaris tak terdengar — *studenți* dibaca *stu-DÉNTS'*.",
+            "**Huruf hidup di tengah kata juga sering bergeser:** *a → e* (*fată → fete*), *a → ă* (*stradă → străzi, carte → cărți*), *o → oa* (*telefon → telefoane*). Ada pula yang benar-benar tak beraturan: *soră → surori*, *om → oameni* (orang), *copil → copii* (anak).",
+            "Jujur saja: untuk kata perempuan dan netral, tidak ada rumus yang selalu bisa menebak *-e* atau *-i*, *-uri* atau *-e*. Orang Rumania sendiri menghafalnya kata demi kata. Karena itu mulai unit ini daftar kosakata mencantumkan jamaknya — *bilet, bilete* — dan hafalkan keduanya sebagai satu pasangan."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Uang dan harga",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**leu, lei** (lk)", "léu, léy", "leu — mata uang Rumania"],
+            ["**ban, bani** (lk)", "ban, ban'", "ban (1 leu = 100 bani); *bani* juga berarti \"uang\""],
+            ["**preț, prețuri** (nt)", "préts, PRÉ-tsur'", "harga"],
+            ["**bancnotă, bancnote** (pr)", "bank-NO-te, bank-NO-té", "uang kertas"],
+            ["**monedă, monede** (pr)", "mo-NÉ-de, mo-NÉ-dé", "uang logam"],
+            ["**rest** (nt)", "rést", "uang kembalian"],
+            ["**mărunt**", "me-RUNT", "uang receh"],
+            ["**bon, bonuri** (nt)", "bon, BO-nur'", "struk"],
+            ["**reducere, reduceri** (pr)", "ré-DU-cé-ré, ré-DU-cér'", "diskon"],
+            ["**scump · ieftin · gratis**", "skump · YÉF-tin · GRA-tis", "mahal · murah · gratis"]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": ["Kalimat di kasir", "Bahasa Indonesia"],
+          "rows": [
+            ["*Cât costă o cafea?*", "Berapa harga secangkir kopi?"],
+            ["*Cât costă biletele?*", "Berapa harga tiket-tiketnya?"],
+            ["*Cât face?*", "Jadi semuanya berapa?"],
+            ["*Face treizeci și doi de lei.*", "Semuanya tiga puluh dua lei."],
+            ["*Se poate cu cardul?*", "Bisa pakai kartu?"],
+            ["*Aveți mărunt?* / *Nu am mărunt.*", "Ada uang receh? / Saya tidak punya receh."],
+            ["*Păstrați restul.*", "Simpan saja kembaliannya."],
+            ["*Nu am bani.*", "Saya tidak punya uang."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Uang Rumania",
+          "items": [
+            "Mata uangnya **leu** (kode RON), jamaknya **lei**. Kata *leu* juga berarti \"singa\" — jadi secara harfiah kamu membayar kopi dengan beberapa ekor singa.",
+            "Uang kertasnya bukan kertas: semuanya dari **polimer** (plastik), tahan air dan sulit sobek. Pecahannya 1, 5, 10, 20, 50, 100, 200, dan 500 lei. Uang logamnya 1, 5, 10, dan 50 bani.",
+            "Kartu diterima hampir di mana-mana di București, tetapi di pasar, kios kecil, dan desa-desa uang tunai masih raja. Harga di buku ini hanyalah contoh untuk berlatih angka; harga sungguhan berubah terus."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Umur dan nomor telepon",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Câți ani ai?* / *Câți ani aveți?*", "Umurmu berapa? / Umur Anda berapa?"],
+            ["*Am treizeci și unu de ani.*", "Umur saya tiga puluh satu."],
+            ["*Câți ani are Andrei? — Are douăzeci și doi de ani.*", "Umur Andrei berapa? — Dua puluh dua."],
+            ["*Fratele meu are nouăsprezece ani.*", "Adik lelakiku berumur sembilan belas."],
+            ["*Care este numărul dumneavoastră de telefon?*", "Berapa nomor telepon Anda?"],
+            ["*Numărul meu este…*", "Nomor saya…"],
+            ["*Mai rar, vă rog.*", "Tolong lebih pelan."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan baris keempat: *nouăsprezece ani* tanpa *de*, karena sembilan belas masih di bawah dua puluh — sedangkan *douăzeci și doi **de** ani* memakainya. Umur adalah tempat latihan terbaik untuk aturan ini, sebab kamu akan ditanya umur jauh lebih sering daripada yang kamu kira. Menanyakan umur di Rumania lumrah di antara teman sebaya; kepada orang yang lebih tua atau yang baru dikenal, tunggu sampai mereka yang membuka topik."
+        },
+        {
+          "type": "kotak",
+          "title": "Cara orang Rumania menyebut nomor telepon",
+          "items": [
+            "Nomor ponsel Rumania terdiri atas sepuluh angka dan selalu diawali **07**. Kode negaranya **+40**; kalau dipakai, angka nol di depan dibuang.",
+            "Nomor biasanya didiktekan angka demi angka dalam kelompok tiga atau empat, persis yang dilakukan Budi. Sebagian orang membacanya berpasangan — *zero șapte, douăzeci și doi…* — jadi angka puluhanmu harus sudah siap.",
+            "Angka 1 dan 2 di nomor telepon selalu bentuk lelaki: *unu, doi* — bukan *una, două*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 3",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Kamu punya saudara lelaki atau perempuan? — Saya punya satu saudara lelaki dan satu saudara perempuan.", "*Ai frați sau surori? — Am un frate și o soră.*"],
+            ["Siapa dia? — Dia ibu saya.", "*Cine este ea? — Este mama mea.*"],
+            ["Saudara perempuan saya mahasiswi.", "*Sora mea este studentă.*"],
+            ["Ayah saya insinyur.", "*Tatăl meu este inginer.*"],
+            ["Saya tidak punya anak.", "*Nu am copii.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "bilet, bilete", "baca": "bi-LÉT, bi-LÉ-té", "id": "tiket (nt)"},
+    {"ro": "leu, lei", "baca": "léu, léy", "id": "leu, mata uang Rumania (lk)"},
+    {"ro": "ban, bani", "baca": "ban, ban'", "id": "ban; jamaknya juga \"uang\" (lk)"},
+    {"ro": "an, ani", "baca": "an, an'", "id": "tahun (lk)"},
+    {"ro": "lună, luni", "baca": "LU-ne, lun'", "id": "bulan (pr)"},
+    {"ro": "număr, numere", "baca": "NU-mer, NU-mé-ré", "id": "nomor; angka (nt)"},
+    {"ro": "telefon, telefoane", "baca": "té-lé-FON, té-lé-FOA-né", "id": "telepon (nt)"},
+    {"ro": "preț, prețuri", "baca": "préts, PRÉ-tsur'", "id": "harga (nt)"},
+    {"ro": "abonament, abonamente", "baca": "a-bo-na-MÉNT, a-bo-na-MÉN-té", "id": "kartu langganan (nt)"},
+    {"ro": "a costa (costă)", "baca": "a kos-TA (KOS-te)", "id": "berharga (bentuk \"dia/mereka\")"},
+    {"ro": "a cumpăra (cumpăr)", "baca": "a kum-pe-RA (KUM-per)", "id": "membeli"},
+    {"ro": "cât, câți, câte", "baca": "kît, kîts', KÎ-té", "id": "berapa (umum, lk jamak, pr/nt jamak)"},
+    {"ro": "scump", "baca": "skump", "id": "mahal"},
+    {"ro": "ieftin", "baca": "YÉF-tin", "id": "murah"},
+    {"ro": "prea", "baca": "prya", "id": "terlalu"},
+    {"ro": "doar", "baca": "doar", "id": "hanya, saja"},
+    {"ro": "poftiți", "baca": "pof-TITS'", "id": "silakan (sambil menyerahkan sesuatu; sopan)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Berapa harga satu tiket?",
+        "Harganya dua puluh lei.",
+        "Itu terlalu mahal.",
+        "Umurmu berapa? — Umur saya dua puluh delapan.",
+        "Saya punya dua saudara lelaki dan dua saudara perempuan.",
+        "Nomor teleponmu berapa?"
+      ]
+    },
+    {
+      "prompt": "Ubah kata dalam kurung ke bentuk jamak.",
+      "items": [
+        "doi ____ (frate)",
+        "două ____ (soră)",
+        "trei ____ (bilet)",
+        "cinci ____ (leu)",
+        "patru ____ (student)",
+        "două ____ (fată)",
+        "șase ____ (stradă)",
+        "zece ____ (an)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "costă / un / cât / bilet / ?",
+        "de / lei / optzeci / costă",
+        "ani / câți / ai / ?",
+        "treizeci / ani / am / de",
+        "scump / este / prea"
+      ]
+    }
+  ],
+  "answers": [
+    "Cât costă un bilet? — Costă douăzeci de lei. — Este prea scump. — Câți ani ai? Am douăzeci și opt de ani. — Am doi frați și două surori. — Care este numărul tău de telefon?",
+    "frați — surori — bilete — lei — studenți — fete — străzi — ani",
+    "Cât costă un bilet? — Costă optzeci de lei. — Câți ani ai? — Am treizeci de ani. — Este prea scump."
+  ]
+}

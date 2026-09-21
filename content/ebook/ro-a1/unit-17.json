@@ -1,0 +1,265 @@
+{
+  "title": "Di dokter",
+  "title_target": "La doctor",
+  "goal": "Menjelaskan apa yang sakit, memahami anjuran dokter, dan memasang dua hal sekaligus: pola *mă doare* — yang sakit jadi subjek, kamu jadi sasarannya — serta imperatif, bentuk perintah.",
+  "bekal": [
+    "menyebut apa yang sakit dengan *mă doare* (satu) dan *mă dor* (banyak), tanpa kata \"saya punya\"",
+    "menyebut keadaan badan dengan datif: *mi-e rău, mi-e foame, mi-e sete, mi-e somn, mi-e frică*",
+    "memahami dan memberi perintah: *luați!* untuk orang yang dihormati, *ia!* dan *nu lua!* untuk teman"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — La cabinetul medical",
+      "intro": "Sejak kemarin Budi tidak enak badan, jadi pagi ini ia ke praktik dokter di dekat Piața Obor. Dokter menyapanya dengan *dumneavoastră*. Dua baris terakhir terjadi di apartemen, ketika Andrei mengambil alih peran perawat — dengan *tu*.",
+      "lines": [
+        {"speaker": "Doctorul:", "text": "Bună ziua! Luați loc, vă rog. Ce vă doare?", "id": "Selamat siang! Silakan duduk. Apa yang sakit?", "literal": "baik-pr hari-nya! kalian-ambillah tempat, Anda-akusatif saya-minta. apa Anda-akusatif ia-menyakiti?"},
+        {"speaker": "Budi:", "text": "Bună ziua, domnule doctor. Mă doare capul și mă doare gâtul.", "id": "Selamat siang, Dok. Kepala saya sakit dan tenggorokan saya sakit.", "literal": "baik-pr hari-nya, tuan-panggilan dokter. saya-akusatif ia-menyakiti kepala-nya dan saya-akusatif ia-menyakiti tenggorokan-nya."},
+        {"speaker": "Doctorul:", "text": "De când nu vă simțiți bine?", "id": "Sejak kapan Anda merasa tidak enak badan?", "literal": "dari kapan tidak diri-sopan kalian-merasa baik?"},
+        {"speaker": "Budi:", "text": "De ieri. Nu mă simt bine deloc: am febră și tușesc.", "id": "Sejak kemarin. Saya sama sekali tidak enak badan: saya demam dan batuk.", "literal": "dari kemarin. tidak diri saya-merasa baik sama-sekali: saya-punya demam dan saya-batuk."},
+        {"speaker": "Doctorul:", "text": "Vă dor și picioarele?", "id": "Kaki Anda juga sakit?", "literal": "Anda-akusatif mereka-menyakiti juga kaki-jamak-nya?"},
+        {"speaker": "Budi:", "text": "Da, mă dor picioarele și mi-e frig tot timpul.", "id": "Ya, kaki saya sakit dan saya kedinginan terus.", "literal": "ya, saya-akusatif mereka-menyakiti kaki-jamak-nya dan saya-datif-adalah dingin semua waktu-nya."},
+        {"speaker": "Doctorul:", "text": "Deschideți gura și spuneți „A”. Aveți gâtul roșu, dar nu este nimic grav: este doar o răceală.", "id": "Buka mulut dan katakan \"A\". Tenggorokan Anda merah, tapi tidak ada yang parah: hanya selesma.", "literal": "kalian-bukalah mulut-nya dan kalian-katakanlah „A”. kalian-punya tenggorokan-nya merah, tapi tidak adalah tidak-ada-apa-apa parah: adalah hanya sebuah-pr selesma."},
+        {"speaker": "Budi:", "text": "Trebuie să iau antibiotice?", "id": "Apa saya harus minum antibiotik?", "literal": "harus agar saya-ambil antibiotik-jamak?"},
+        {"speaker": "Doctorul:", "text": "Nu, nu este nevoie. Poftiți rețeta: luați o pastilă de trei ori pe zi, după masă. Beți mult ceai cald și stați acasă două-trei zile.", "id": "Tidak, tidak perlu. Ini resepnya: minum satu pil tiga kali sehari, sesudah makan. Minumlah banyak teh hangat dan tinggallah di rumah dua-tiga hari.", "literal": "tidak, tidak adalah keperluan. silakan resep-nya: kalian-ambillah sebuah-pr pil dari tiga kali per hari, sesudah makan. kalian-minumlah banyak teh hangat dan kalian-tinggallah di-rumah dua-tiga hari-jamak."},
+        {"speaker": "Budi:", "text": "Am înțeles. Mulțumesc mult, domnule doctor.", "id": "Saya mengerti. Terima kasih banyak, Dok.", "literal": "saya-telah mengerti. saya-berterima-kasih banyak, tuan-panggilan dokter."},
+        {"speaker": "Doctorul:", "text": "Cu plăcere. Multă sănătate!", "id": "Sama-sama. Semoga sehat selalu!", "literal": "dengan kesenangan. banyak-pr kesehatan!"},
+        {"speaker": "Andrei:", "text": "Gata, acum stai în pat și bea ceaiul ăsta. Și nu ieși din casă!", "id": "Sudah, sekarang tiduran di kasur dan minum teh ini. Dan jangan keluar rumah!", "literal": "selesai, sekarang kamu-tinggallah di ranjang dan minumlah teh-nya ini. dan jangan keluar dari rumah!"},
+        {"speaker": "Budi:", "text": "Mulțumesc, Andrei. Mi-e somn și mi-e sete.", "id": "Makasih, Andrei. Aku ngantuk dan haus.", "literal": "saya-berterima-kasih, Andrei. saya-datif-adalah kantuk dan saya-datif-adalah haus."}
+      ],
+      "notes": [
+        "**Mă doare capul — bukan \"capul meu doare\".** Inilah pokok unit ini. Kata kerja *a durea* berarti \"menyakiti\": yang sakit (*capul*) adalah **subjek**, dan kamu adalah sasarannya, dalam bentuk akusatif *mă*. Harfiahnya \"kepala menyakiti saya\". Karena pemiliknya sudah jelas dari *mă*, bagian tubuhnya cukup diberi artikel tentu — tanpa *meu*. Polanya sama dengan *îmi place* di unit 10: yang dibicarakan jadi subjek, kamu cuma kena imbasnya.",
+        "**Mă dor picioarele.** Karena bagian tubuh adalah subjeknya, kata kerjanya ikut jumlah **bagian tubuh itu**, bukan jumlah orangnya: satu → *doare*, banyak → *dor*. *Mă doare un picior* (sebelah kaki), *mă dor picioarele* (dua-duanya). Persis *place* lawan *plac*.",
+        "**Luați, deschideți, spuneți, beți, stați** — semua perintah dokter adalah imperatif sopan, dan bentuknya sama persis dengan bentuk *voi* kala kini. Kamu sudah memakainya sejak unit 6 tanpa sadar: *Scuzați-mă*, *Mergeți drept înainte*, *Traversați*. Tidak ada yang baru untuk dihafal.",
+        "**Stai, bea, nu ieși.** Andrei ber-*tu*, jadi perintahnya pendek: *stai!* (tinggallah), *bea!* (minumlah). Larangannya punya aturan yang unik tapi gampang: **nu + infinitif** — *nu ieși!*, *nu lua!*, *nu bea!*. Jadi \"jangan minum\" bukan *nu bei*, melainkan *nu bea*.",
+        "**De trei ori pe zi** = tiga kali sehari. Polanya: *o dată* (sekali), *de două ori* (dua kali), *de trei ori*, lalu *pe zi / pe săptămână / pe lună*. Dan *domnule doctor* adalah bentuk panggilan (vokatif) dari *domnul* — dokter di Rumania selalu disapa begitu, atau *doamna doctor* untuk dokter perempuan."
+      ],
+      "grammars": [
+        {
+          "title": "Mă doare lawan mă dor — yang sakit adalah subjeknya",
+          "body": [
+            "Bahasa Indonesia berkata \"kepala saya sakit\"; bahasa Rumania berkata \"kepala menyakiti saya\". Orang yang kesakitan muncul sebagai kata ganti **akusatif** dari unit 12 (*mă, te, îl, o, ne, vă, îi, le*), dan bagian tubuhnya berartikel tentu.",
+            "Kata kerjanya hanya punya dua bentuk yang perlu kamu ingat: **doare** untuk satu bagian tubuh, **dor** untuk lebih dari satu."
+          ],
+          "table": {
+            "head": ["Siapa", "Kata ganti", "Satu: doare", "Banyak: dor"],
+            "rows": [
+              ["eu", "**mă**", "*Mă doare capul.*", "*Mă dor ochii.*"],
+              ["tu", "**te**", "*Te doare stomacul?*", "*Te dor picioarele?*"],
+              ["el", "**îl**", "*Îl doare spatele.*", "*Îl dor dinții.*"],
+              ["ea", "**o**", "*O doare gâtul.*", "*O dor urechile.*"],
+              ["noi", "**ne**", "*Ne doare capul.*", "*Ne dor picioarele.*"],
+              ["voi / dvs.", "**vă**", "*Ce vă doare?*", "*Vă dor ochii?*"],
+              ["ei", "**îi**", "*Îi doare burta.*", "*Îi dor mâinile.*"],
+              ["ele", "**le**", "*Le doare capul.*", "*Le dor picioarele.*"]
+            ]
+          },
+          "after": [
+            "**Kalau orangnya disebut namanya**, berlaku penggandaan dari unit 12: *Pe Andrei îl doare un dinte.* *Pe Ioana o doare capul.* Kata ganti pendeknya tetap wajib hadir.",
+            "**Di kala lampau** polanya ikut unit 15: *M-a durut capul toată ziua* (kepala saya sakit seharian), *m-au durut picioarele*. Negasinya biasa: *Nu mă doare nimic* — \"tidak ada yang sakit\".",
+            "**Keadaan badan memakai datif, bukan akusatif.** Pola *mi-e cald / mi-e frig* dari unit 16 berlaku untuk semua rasa: *mi-e rău* (saya mual, tidak enak badan), *mi-e foame* (lapar), *mi-e sete* (haus), *mi-e somn* (ngantuk), *mi-e frică* (takut). Untuk orang lain tinggal ganti kata gantinya: *ți-e foame?*, *îi este somn*, *ne e sete*, *vă e frig?*. Jangan berkata *sunt foame* — dalam bahasa Rumania lapar itu \"ada padamu\", bukan \"adalah kamu\"."
+          ]
+        },
+        {
+          "title": "Imperatif — menyuruh dan melarang",
+          "body": [
+            "Imperatif hanya punya dua lawan bicara: **tu** (satu orang, akrab) dan **voi / dumneavoastră** (banyak orang, atau satu orang yang dihormati). Bentuk kedua gratis — sama dengan kala kini. Bentuk *tu* perlu sedikit perhatian."
+          ],
+          "table": {
+            "head": ["Infinitif", "tu", "voi / dumneavoastră", "Larangan untuk tu"],
+            "rows": [
+              ["a lua — mengambil", "**ia!**", "luați!", "nu lua!"],
+              ["a sta — tinggal, diam", "**stai!**", "stați!", "nu sta!"],
+              ["a bea — minum", "**bea!**", "beți!", "nu bea!"],
+              ["a veni — datang", "**vino!**", "veniți!", "nu veni!"],
+              ["a spune — berkata", "**spune!**", "spuneți!", "nu spune!"],
+              ["a face — berbuat", "**fă!**", "faceți!", "nu face!"],
+              ["a deschide — membuka", "**deschide!**", "deschideți!", "nu deschide!"],
+              ["a aștepta — menunggu", "**așteaptă!**", "așteptați!", "nu aștepta!"],
+              ["a merge — pergi", "**mergi!**", "mergeți!", "nu merge!"]
+            ]
+          },
+          "after": [
+            "**Patokan untuk bentuk *tu*:** kebanyakan kata kerja memakai bentuk *el/ea* kala kini — *așteaptă!*, *ascultă!*, *spune!*, *deschide!*, *citește!*. Sebagian lain memakai bentuk *tu* kala kini, terutama kata kerja yang tidak punya sasaran: *mergi!*, *dormi!*, *stai!*, *vezi!*. Beberapa yang pendek tak beraturan dan sangat sering dipakai: **fă!**, **zi!** (katakan), **vino!**, **fii!** (jadilah — *Fii atent!* \"hati-hati!\").",
+            "**Larangan:** untuk *tu* pakai **nu + infinitif tanpa *a*** — *nu lua!*, *nu face!*, *nu fi trist!*. Untuk *voi / dumneavoastră* cukup tambahkan *nu* di depan bentuk biasa: *nu luați!*, *nu beți cafea!*, *nu mergeți la lucru!*.",
+            "**Kata ganti pendek pindah ke belakang** perintah dan disambung tanda hubung: *Scuzați-mă!*, *Așteaptă-mă!* (tunggu aku), *Ia-o!* (ambillah itu), *Spune-mi!* (katakan padaku). Di larangan ia kembali ke depan: *Nu mă aștepta!*. Kata kerja refleksif berperilaku sama: *Trezește-te!* (bangun!), *Nu te culca târziu!*",
+            "Supaya perintah tidak terdengar kasar, tambahkan *te rog* atau *vă rog* — atau pakai *Poți să…? / Puteți să…?* dari unit 11."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bagian tubuh",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**cap, capete** (nt)", "kap, KA-pé-té", "kepala"],
+            ["**ochi, ochi** (lk)", "ok'", "mata"],
+            ["**ureche, urechi** (pr)", "u-RÉ-ké, u-RÉK'", "telinga"],
+            ["**nas, nasuri** (nt)", "nas, NA-sur'", "hidung"],
+            ["**gură, guri** (pr)", "GU-re, gur'", "mulut"],
+            ["**dinte, dinți** (lk)", "DIN-té, dints'", "gigi"],
+            ["**gât, gâturi** (nt)", "gît, GÎ-tur'", "leher; tenggorokan"],
+            ["**spate, spate** (nt)", "SPA-té", "punggung"],
+            ["**stomac, stomacuri** (nt)", "sto-MAK", "lambung"],
+            ["**burtă, burți** (pr)", "BUR-te, burts'", "perut"],
+            ["**mână, mâini** (pr)", "MÎ-ne, mîyn'", "tangan"],
+            ["**deget, degete** (nt)", "DÉ-jét, DÉ-jé-té", "jari"],
+            ["**picior, picioare** (nt)", "pi-COR, pi-COA-ré", "kaki"],
+            ["**genunchi, genunchi** (lk)", "jé-NUNK'", "lutut"],
+            ["**inimă, inimi** (pr)", "I-ni-me, I-nim'", "jantung; hati"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sesudah *mă doare* dan *mă dor* bagian tubuh selalu berartikel tentu, jadi biasakan telingamu dengan bentuk ini: *capul, gâtul, stomacul, piciorul, spatele* · *gura, mâna, burta, inima* · *ochii, dinții, genunchii* · *urechile, mâinile, picioarele, degetele*. Perhatikan *mână → mâini*: jamaknya tak beraturan, dan karena tangan hampir selalu disebut berdua, bentuk jamak inilah yang paling sering kamu dengar. *Spate* tidak berubah di jamak, sedangkan *ochi* dan *genunchi* sama di tunggal dan jamak — bedanya baru tampak pada artikelnya: *ochiul* (mata itu, satu) lawan *ochii* (kedua mata)."
+        },
+        {
+          "type": "kotak",
+          "title": "Tangan yang dicium: Sărut mâna",
+          "items": [
+            "***Sărut mâna*** harfiahnya \"saya cium tangan\" — sapaan hormat yang diucapkan lelaki kepada perempuan, dan anak muda kepada perempuan yang lebih tua. Tangannya tidak sungguh dicium; yang tinggal hanyalah kalimatnya.",
+            "Budi memakainya kepada doamna Popescu setiap pagi. Kepada lelaki yang lebih tua sapaan ini tidak dipakai; cukup *Bună ziua*.",
+            "Anak-anak juga mengucapkannya sebagai \"terima kasih\" kepada nenek atau bibi sesudah diberi makan. Jawaban yang lazim: *Să crești mare!* — \"semoga kamu tumbuh besar!\""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Gejala dan apotek",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**febră** (pr)", "FÉ-bre", "demam"],
+            ["**tuse** (pr)", "TU-sé", "batuk"],
+            ["**răceală, răceli** (pr)", "re-CA-le, re-CÉL'", "selesma, masuk angin"],
+            ["**gripă** (pr)", "GRI-pe", "flu"],
+            ["**durere, dureri** (pr)", "du-RÉ-ré, du-RÉR'", "rasa sakit, nyeri"],
+            ["**rețetă, rețete** (pr)", "ré-TSÉ-te, ré-TSÉ-té", "resep"],
+            ["**pastilă, pastile** (pr)", "pas-TI-le, pas-TI-lé", "pil, tablet"],
+            ["**sirop, siropuri** (nt)", "si-ROP", "sirup"],
+            ["**medicament, medicamente** (nt)", "mé-di-ka-MÉNT", "obat"],
+            ["**farmacie, farmacii** (pr)", "far-ma-CI-é, far-ma-CIY", "apotek"]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Nu mă simt bine.* · *Mi-e rău.*", "Saya tidak enak badan. · Saya mual."],
+            ["*Sunt răcit.* (lk) · *Sunt răcită.* (pr)", "Saya sedang pilek (masuk angin)."],
+            ["*Am o durere de cap.*", "Saya sakit kepala."],
+            ["*Îmi curge nasul.*", "Hidung saya meler."],
+            ["*Aveți ceva pentru tuse?*", "Ada obat untuk batuk?"],
+            ["*Am nevoie de rețetă?*", "Apakah saya perlu resep?"],
+            ["*Sunt alergic la…* (lk) · *Sunt alergică la…* (pr)", "Saya alergi terhadap…"],
+            ["*De câte ori pe zi?*", "Berapa kali sehari?"],
+            ["*Înainte sau după masă?*", "Sebelum atau sesudah makan?"],
+            ["*Însănătoșire grabnică!*", "Semoga lekas sembuh!"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kabar baik untuk penutur Indonesia: separuh kosakata medis Rumania sudah kamu kenal lewat kata serapan — *doctor, farmacie, sirop, pastilă, antibiotic, alergic, gripă, temperatură, vitamină*. Yang perlu dilatih justru kata sehari-harinya: *răceală* berasal dari *rece* (dingin), persis logika \"masuk angin\". *Îmi curge nasul* harfiahnya \"hidung mengalir padaku\" — datif kepunyaan yang baru dipasang di tingkat berikutnya; untuk sekarang hafalkan utuh."
+        },
+        {
+          "type": "kotak",
+          "title": "Sakit di Rumania: yang perlu diketahui",
+          "items": [
+            "**112** adalah nomor darurat tunggal — ambulans, polisi, pemadam kebakaran. Apotek ditandai salib hijau, dan antibiotik hanya diberikan dengan *rețetă*.",
+            "**Sănătate!** atau **Noroc!** diucapkan kepada orang yang bersin. *Multă sănătate!* adalah harapan umum saat berpisah dengan orang sakit — dan juga saat ulang tahun.",
+            "**Curentul** — angin silang dari dua jendela yang terbuka — dipercaya banyak orang Rumania sebagai biang pilek, sakit telinga, dan sakit leher. Kalimat *Te trage curentul!* (\"kamu kena angin!\") akan kamu dengar dari doamna Popescu begitu jendela dan pintu terbuka bersamaan. Sepupu dekat \"masuk angin\" kita.",
+            "Obat rumahan yang pertama ditawarkan hampir selalu teh: *ceai de tei* (bunga linden) atau *ceai de mușețel* (kamomil), dengan madu dan lemon."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 15",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Hari Sabtu saya bangun siang.", "*Sâmbătă m-am trezit târziu.*"],
+            ["Kami jalan-jalan keliling Centrul Vechi.", "*Ne-am plimbat prin Centrul Vechi.*"],
+            ["Saya pergi ke gunung bersama teman-teman.", "*Am mers la munte cu prietenii.*"],
+            ["Saya tidak sempat.", "*Nu am avut timp.*"],
+            ["Kamu suka? — Ya, saya suka sekali.", "*Ți-a plăcut? — Da, mi-a plăcut mult.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "doctor, doctori", "baca": "DOK-tor, DOK-tor'", "id": "dokter (lk)"},
+    {"ro": "a durea (mă doare)", "baca": "a du-RYA (me DOA-ré)", "id": "menyakiti; terasa sakit"},
+    {"ro": "a se simți (mă simt)", "baca": "a sé sim-TSI (me simt)", "id": "merasa (keadaan badan)"},
+    {"ro": "a tuși (tușesc)", "baca": "a tu-SYI (tu-SYÉSK)", "id": "batuk"},
+    {"ro": "a lua (iau)", "baca": "a lu-A (yau)", "id": "mengambil; minum obat"},
+    {"ro": "a sta (stau)", "baca": "a sta (stau)", "id": "tinggal, diam, berada"},
+    {"ro": "a deschide (deschid)", "baca": "a dés-KI-dé (dés-KID)", "id": "membuka"},
+    {"ro": "a ieși (ies)", "baca": "a yé-SYI (yés)", "id": "keluar"},
+    {"ro": "sănătate", "baca": "se-ne-TA-té", "id": "kesehatan (pr)"},
+    {"ro": "bolnav, bolnavă", "baca": "bol-NAV, bol-NA-ve", "id": "sakit (orangnya)"},
+    {"ro": "grav", "baca": "grav", "id": "parah, serius"},
+    {"ro": "nevoie", "baca": "né-VO-yé", "id": "keperluan (pr); *am nevoie de* = saya perlu"},
+    {"ro": "pat, paturi", "baca": "pat, PA-tur'", "id": "ranjang (nt)"},
+    {"ro": "după masă", "baca": "DU-pe MA-se", "id": "sesudah makan"},
+    {"ro": "de trei ori pe zi", "baca": "dé tréy or' pé zi", "id": "tiga kali sehari"},
+    {"ro": "doar", "baca": "doar", "id": "hanya, cuma"},
+    {"ro": "gata", "baca": "GA-ta", "id": "selesai, sudah; siap"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Apa yang sakit? (kepada orang yang dihormati)",
+        "Kepala saya sakit.",
+        "Saya demam dan batuk.",
+        "Saya tidak enak badan.",
+        "Minumlah satu pil tiga kali sehari. (sopan)",
+        "Aku ngantuk dan haus."
+      ]
+    },
+    {
+      "prompt": "Isi dengan doare atau dor.",
+      "items": [
+        "Mă ____ capul.",
+        "Mă ____ ochii.",
+        "Te ____ gâtul?",
+        "Îl ____ picioarele.",
+        "Ne ____ spatele.",
+        "O ____ dinții.",
+        "Vă ____ stomacul?",
+        "Pe Andrei îl ____ mâinile."
+      ]
+    },
+    {
+      "prompt": "Dokter berkata begini kepada Budi. Ubah menjadi perintah akrab (tu), seperti Andrei.",
+      "items": [
+        "Luați o pastilă!",
+        "Stați acasă!",
+        "Beți mult ceai!",
+        "Veniți mâine!",
+        "Spuneți „A”!",
+        "Nu luați antibiotice!",
+        "Nu beți cafea!"
+      ]
+    }
+  ],
+  "answers": [
+    "Ce vă doare? — Mă doare capul. — Am febră și tușesc. — Nu mă simt bine. — Luați o pastilă de trei ori pe zi. — Mi-e somn și mi-e sete.",
+    "doare — dor — doare — dor — doare — dor — doare — dor",
+    "Ia o pastilă! — Stai acasă! — Bea mult ceai! — Vino mâine! — Spune „A”! — Nu lua antibiotice! — Nu bea cafea!"
+  ]
+}

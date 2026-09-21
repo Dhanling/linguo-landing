@@ -1,0 +1,515 @@
+{
+  "title": "Di pasar",
+  "title_target": "La piață",
+  "goal": "Berbelanja buah dan sayur di pasar, dan memasang kata sifat: letaknya di belakang kata benda, dan bentuknya yang ikut jenis kelamin serta jumlah — ditambah kata penunjuk \"ini\".",
+  "bekal": [
+    "meminta barang dengan takaran: *un kilogram de*, *o jumătate de kilogram de*, *o legătură de*",
+    "memilih bentuk kata sifat yang cocok dengan kata bendanya: *bun, bună, buni, bune*",
+    "menunjuk barang dengan *acest pepene*, *pepenele acesta*, dan bentuk lisan *ăsta / asta*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — La Piața Obor",
+      "intro": "Sabtu pagi Budi berbelanja di Piața Obor, pasar besar di București. Ia berhenti di lapak seorang penjual buah dan sayur.",
+      "lines": [
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Bună ziua! Poftiți, ce doriți?",
+          "id": "Selamat siang! Silakan, mau beli apa?",
+          "literal": "baik-pr hari-nya! silakan-sopan, apa kalian-menginginkan?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bună ziua. Roșiile sunt proaspete?",
+          "id": "Selamat siang. Tomatnya segar?",
+          "literal": "baik-pr hari-nya. tomat-jamak-nya mereka-adalah segar-pr-jamak?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Sigur, sunt foarte proaspete, de azi-dimineață.",
+          "id": "Tentu, segar sekali, baru tadi pagi.",
+          "literal": "tentu, mereka-adalah sangat segar-pr-jamak, dari hari-ini-pagi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bine. Un kilogram de roșii, vă rog.",
+          "id": "Baik. Sekilo tomat, tolong.",
+          "literal": "baik. sebuah-lk kilogram dari tomat-jamak, kalian-akusatif saya-mohon."
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Poftiți. Avem și mere. Merele acestea sunt foarte dulci.",
+          "id": "Ini, silakan. Kami juga punya apel. Apel-apel ini manis sekali.",
+          "literal": "silakan-sopan. kami-punya juga apel-jamak. apel-jamak-nya ini-pr-jamak mereka-adalah sangat manis-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atunci o jumătate de kilogram de mere. Și cât costă pepenii?",
+          "id": "Kalau begitu setengah kilo apel. Dan semangkanya berapa?",
+          "literal": "kalau-begitu sebuah-pr setengah dari kilogram dari apel-jamak. dan berapa mereka-berharga semangka-jamak-nya?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Trei lei kilogramul. Pepenii sunt mari și dulci.",
+          "id": "Tiga lei sekilo. Semangkanya besar-besar dan manis.",
+          "literal": "tiga lei kilogram-nya. semangka-jamak-nya mereka-adalah besar-jamak dan manis-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Acest pepene este prea mare. Aveți și pepeni mici?",
+          "id": "Semangka ini terlalu besar. Ada juga semangka yang kecil?",
+          "literal": "ini-lk semangka ia-adalah terlalu besar. kalian-punya juga semangka-jamak kecil-jamak?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Da, ăsta este mic și bun. Are patru kilograme.",
+          "id": "Ada, yang ini kecil dan bagus. Beratnya empat kilo.",
+          "literal": "ya, ini-lk-lisan ia-adalah kecil dan baik. ia-punya empat kilogram-jamak."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfect. Și o legătură de pătrunjel, vă rog.",
+          "id": "Sip. Dan seikat peterseli, tolong.",
+          "literal": "sempurna. dan sebuah-pr ikatan dari peterseli, kalian-akusatif saya-mohon."
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Mai doriți ceva?",
+          "id": "Ada lagi?",
+          "literal": "lagi kalian-menginginkan sesuatu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Atât, mulțumesc. Cât face în total?",
+          "id": "Itu saja, terima kasih. Semuanya jadi berapa?",
+          "literal": "sekian, saya-berterima-kasih. berapa ia-membuat dalam total?"
+        },
+        {
+          "speaker": "Vânzătoarea:",
+          "text": "Douăzeci și doi de lei. O zi bună!",
+          "id": "Dua puluh dua lei. Semoga harimu menyenangkan!",
+          "literal": "dua-puluh dan dua dari lei. sebuah-pr hari baik-pr!"
+        }
+      ],
+      "notes": [
+        "**Un kilogram de roșii — takaran selalu disambung *de*.** Polanya sama dengan *douăzeci de lei* di unit 5: takaran + *de* + kata benda **tanpa artikel**. Barang yang bisa dihitung ditulis jamak (*de roșii, de mere*), barang yang tak terhitung tetap tunggal (*de pătrunjel, de brânză*).",
+        "**Roșiile = \"tomat-tomatnya\".** Rantainya: *roșie* (satu tomat) → *roșii* (jamak) → *roșiile* (jamak berartikel tentu, ekor *-le* dari unit 6).",
+        "**Proaspete ikut *roșiile*.** Inilah pokok unit ini: kata sifat Rumania selalu menyalin jenis kelamin dan jumlah kata bendanya — juga ketika keduanya dipisahkan *sunt*. *Roșiile* perempuan jamak, maka *proaspete*; *pepenii* lelaki jamak, maka *mari și dulci*.",
+        "**Acest pepene, merele acestea, ăsta.** Tiga wajah kata \"ini\" dalam satu dialog: bentuk pendek di depan kata benda polos, bentuk ber-*-a* di belakang kata benda berartikel, dan bentuk lisan *ăsta / asta* di mulut orang pasar.",
+        "**Poftiți dan Atât.** *Poftiți* adalah kata serbaguna penjual: \"silakan\", \"ini barangnya\", \"ini kembaliannya\". *Atât* harfiahnya \"sekian\" — jawaban baku untuk *Mai doriți ceva?*."
+      ],
+      "grammars": [
+        {
+          "title": "Kata sifat — di belakang, dan ikut kata bendanya",
+          "body": [
+            "Kabar baik dulu: letak kata sifat Rumania **sama dengan bahasa Indonesia** — sesudah kata benda. *O roșie proaspătă* = \"sebuah tomat segar\", *un pepene mare* = \"sebuah semangka besar\".",
+            "Yang baru: kata sifat itu berganti ekor mengikuti jenis kelamin dan jumlah kata bendanya. Paling banyak ada empat bentuk, dan banyak kata sifat hanya punya tiga atau dua."
+          ],
+          "table": {
+            "head": [
+              "Golongan",
+              "lk tunggal",
+              "pr tunggal",
+              "lk jamak",
+              "pr jamak"
+            ],
+            "rows": [
+              [
+                "**empat bentuk**",
+                "*bun*",
+                "*bună*",
+                "*buni*",
+                "*bune*"
+              ],
+              [
+                "**empat bentuk**",
+                "*frumos*",
+                "*frumoasă*",
+                "*frumoși*",
+                "*frumoase*"
+              ],
+              [
+                "**empat bentuk**",
+                "*proaspăt*",
+                "*proaspătă*",
+                "*proaspeți*",
+                "*proaspete*"
+              ],
+              [
+                "**tiga bentuk**",
+                "*mic*",
+                "*mică*",
+                "*mici*",
+                "*mici*"
+              ],
+              [
+                "**tiga bentuk**",
+                "*românesc*",
+                "*românească*",
+                "*românești*",
+                "*românești*"
+              ],
+              [
+                "**dua bentuk**",
+                "*mare*",
+                "*mare*",
+                "*mari*",
+                "*mari*"
+              ],
+              [
+                "**dua bentuk**",
+                "*dulce*",
+                "*dulce*",
+                "*dulci*",
+                "*dulci*"
+              ]
+            ]
+          },
+          "after": [
+            "**Pola dasarnya: — , -ă, -i, -e**, persis ekor kata benda yang sudah kamu kenal. Pergantian bunyinya pun sama dengan unit 5: *-i* melunakkan konsonan (*frumos → frumoși*, *proaspăt → proaspeți*), dan *o* menjadi *oa* di bentuk perempuan (*frumos → frumoasă*).",
+            "**Kata sifat berakhiran *-e*** (*mare, dulce, verde*) tidak membedakan jenis kelamin — hanya tunggal lawan jamak. Kata sifat berakhiran *-c* atau *-esc* punya satu bentuk jamak untuk semua: *mici*, *românești*.",
+            "**Kata benda netral** tetap setia pada wataknya: bentuk lk di tunggal, bentuk pr di jamak. *Un măr bun* → *două mere bune*; *un bilet scump* → *bilete scumpe*.",
+            "**Sesudah *a fi* aturannya sama:** *Cafeaua este bună. Pepenii sunt mari. Merele sunt dulci.* Sedangkan *foarte* (sangat) dan *prea* (terlalu) tidak pernah berubah: *foarte bună, prea mari*."
+          ]
+        },
+        {
+          "title": "Kata penunjuk — acest pepene, pepenele acesta, pepenele ăsta",
+          "body": [
+            "Bahasa Rumania punya dua susunan untuk \"semangka ini\", dan artinya sama persis. Bedanya hanya di mana kata penunjuk berdiri — dan itu menentukan apakah kata bendanya berartikel."
+          ],
+          "table": {
+            "head": [
+              "Susunan",
+              "lk tunggal",
+              "pr tunggal",
+              "lk jamak",
+              "pr jamak"
+            ],
+            "rows": [
+              [
+                "**di depan** (kata benda polos)",
+                "*acest pepene*",
+                "*această roșie*",
+                "*acești pepeni*",
+                "*aceste roșii*"
+              ],
+              [
+                "**di belakang** (kata benda berartikel)",
+                "*pepenele acesta*",
+                "*roșia aceasta*",
+                "*pepenii aceștia*",
+                "*roșiile acestea*"
+              ],
+              [
+                "**lisan**, di belakang",
+                "*pepenele ăsta*",
+                "*roșia asta*",
+                "*pepenii ăștia*",
+                "*roșiile astea*"
+              ]
+            ]
+          },
+          "after": [
+            "**Jangan dicampur.** Di depan: bentuk pendek + kata benda polos (*acest pepene*). Di belakang: kata benda berartikel + bentuk ber-*-a* (*pepenele acesta*). *Acest pepenele* dan *pepene acesta* dua-duanya salah. Susunan depan lebih rapi dan lazim di tulisan; susunan belakang, apalagi dengan *ăsta / asta*, adalah bahasa sehari-hari.",
+            "**Kata benda netral** lagi-lagi membelah diri: *acest măr* → *aceste mere*; *mărul acesta* → *merele acestea*.",
+            "**Berdiri sendiri** dipakai bentuk ber-*-a*: *Acesta este mic* (\"Yang ini kecil\"), *Aceasta este Ioana*. Bentuk *asta* juga berarti \"ini / itu\" secara umum, tanpa menunjuk kata benda tertentu: *Ce este asta?* (Apa ini?), *Cât costă asta?* (Ini berapa?), *Asta e tot* (Itu saja)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Buah dan sayur",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Română",
+            "Cara baca",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**măr, mere** (nt)",
+              "mer, MÉ-ré",
+              "apel"
+            ],
+            [
+              "**pară, pere** (pr)",
+              "PA-re, PÉ-ré",
+              "pir"
+            ],
+            [
+              "**căpșună, căpșuni** (pr)",
+              "kep-SYU-ne, kep-SYUN'",
+              "stroberi"
+            ],
+            [
+              "**pepene, pepeni** (lk)",
+              "PÉ-pé-né",
+              "semangka; melon"
+            ],
+            [
+              "**roșie, roșii** (pr)",
+              "RO-syi-yé, RO-syi",
+              "tomat"
+            ],
+            [
+              "**cartof, cartofi** (lk)",
+              "kar-TOF",
+              "kentang"
+            ],
+            [
+              "**ceapă, cepe** (pr)",
+              "CA-pe, CÉ-pé",
+              "bawang bombai"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Di pasar Rumania",
+          "items": [
+            "**Pepene** sendirian bisa berarti dua buah. Kalau perlu jelas: *pepene roșu* (\"pepene merah\") = semangka, *pepene galben* (\"pepene kuning\") = melon. Semangka dari Dăbuleni, di selatan negeri, adalah yang paling dibanggakan penjual.",
+            "**Piața Obor** adalah salah satu pasar terbesar dan tertua di București. *Mici* bakar di Obor — sosis daging cincang tanpa kulit, dimakan dengan moster dan roti — sudah jadi tujuan tersendiri.",
+            "Harga ditulis per kilogram. Beberapa barang dijual *la bucată* (per biji), dan daun-daunan seperti *pătrunjel* (peterseli) atau *ceapă verde* (daun bawang) dijual per *legătură* — per ikat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Takaran dan kalimat di depan lapak",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Takaran",
+            "Contoh",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "**un kilogram de**",
+              "*un kilogram de cartofi*",
+              "sekilo kentang"
+            ],
+            [
+              "**o jumătate de kilogram de**",
+              "*o jumătate de kilogram de căpșuni*",
+              "setengah kilo stroberi"
+            ],
+            [
+              "**o legătură de**",
+              "*o legătură de pătrunjel*",
+              "seikat peterseli"
+            ],
+            [
+              "**o bucată de**",
+              "*o bucată de brânză*",
+              "sepotong keju"
+            ],
+            [
+              "**o pungă**",
+              "*O pungă, vă rog.*",
+              "Minta kantong satu."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kilogram* itu netral, jadi angkanya memakai bentuk perempuan di jamak: *două kilograme*, bukan *doi*. Di lapak kamu juga akan mendengar bentuk pendeknya, *un kil*. Dan ingat: sesudah *de* kata bendanya selalu polos — *un kilogram de roșii*, tidak pernah *de roșiile*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Kalimat lain di pasar",
+            "Bahasa Indonesia"
+          ],
+          "rows": [
+            [
+              "*Cât costă kilogramul?*",
+              "Sekilonya berapa?"
+            ],
+            [
+              "*Cât face în total?*",
+              "Semuanya jadi berapa?"
+            ],
+            [
+              "*Pot să gust?*",
+              "Boleh saya cicipi?"
+            ],
+            [
+              "*Mai doriți ceva? — Atât, mulțumesc.*",
+              "Ada lagi? — Itu saja, terima kasih."
+            ],
+            [
+              "*Poftiți restul.*",
+              "Ini kembaliannya."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dua hal soal uang di pasar",
+          "items": [
+            "**Bawa uang tunai.** Banyak lapak hanya menerima *numerar* (tunai), dan penjual senang kalau kamu punya uang kecil. Pertanyaan yang sering muncul: *Aveți mărunt?* — \"Ada uang receh?\"",
+            "**Tawar-menawar tidak selazim di Indonesia.** Harga biasanya tertulis di papan kecil dan berlaku apa adanya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 7",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "Română"
+          ],
+          "rows": [
+            [
+              "Jam berapa sekarang? — Jam delapan lewat seperempat.",
+              "*Cât este ceasul? — Este opt și un sfert.*"
+            ],
+            [
+              "Jam berapa kamu mulai kerja? — Saya mulai jam sembilan.",
+              "*La ce oră începi lucrul? — Încep la nouă.*"
+            ],
+            [
+              "Saya bekerja dari Senin sampai Jumat.",
+              "*Lucrez de luni până vineri.*"
+            ],
+            [
+              "Siang hari saya makan jam satu.",
+              "*La prânz mănânc la unu.*"
+            ],
+            [
+              "Tiap Sabtu saya tidak bekerja.",
+              "*Sâmbăta nu lucrez.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ro": "piață, piețe",
+      "baca": "PYA-tse, PYÉ-tsé",
+      "id": "pasar; alun-alun (pr)"
+    },
+    {
+      "ro": "vânzător / vânzătoare",
+      "baca": "vîn-ze-TOR / -TOA-ré",
+      "id": "penjual (lk / pr)"
+    },
+    {
+      "ro": "kilogram, kilograme",
+      "baca": "ki-lo-GRAM",
+      "id": "kilogram (nt)"
+    },
+    {
+      "ro": "jumătate",
+      "baca": "zhu-me-TA-té",
+      "id": "setengah (pr)"
+    },
+    {
+      "ro": "legătură, legături",
+      "baca": "lé-ge-TU-re",
+      "id": "ikat (pr)"
+    },
+    {
+      "ro": "bucată, bucăți",
+      "baca": "bu-KA-te, bu-KETS'",
+      "id": "potong; biji (pr)"
+    },
+    {
+      "ro": "pungă, pungi",
+      "baca": "PUN-ge, punj'",
+      "id": "kantong (pr)"
+    },
+    {
+      "ro": "proaspăt, proaspătă",
+      "baca": "PROAS-pet, PROAS-pe-te",
+      "id": "segar"
+    },
+    {
+      "ro": "dulce, dulci",
+      "baca": "DUL-cé, dulc'",
+      "id": "manis"
+    },
+    {
+      "ro": "mare, mari",
+      "baca": "MA-ré, mar'",
+      "id": "besar"
+    },
+    {
+      "ro": "mic, mică",
+      "baca": "mik, MI-ke",
+      "id": "kecil"
+    },
+    {
+      "ro": "a dori (doresc)",
+      "baca": "a do-RI (do-RÉSK)",
+      "id": "menginginkan"
+    },
+    {
+      "ro": "acest / această",
+      "baca": "a-CÉST / a-CAS-te",
+      "id": "ini (lk / pr)"
+    },
+    {
+      "ro": "atât",
+      "baca": "a-TÎT",
+      "id": "sekian; itu saja"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Sekilo tomat, tolong.",
+        "Tomatnya segar?",
+        "Semangka ini terlalu besar. (kata penunjuk di depan)",
+        "Apel-apel ini manis sekali. (kata penunjuk di belakang)",
+        "Anda mau yang lain lagi?",
+        "Itu saja, terima kasih."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk kata sifat yang tepat.",
+      "items": [
+        "o roșie ____ (proaspăt)",
+        "doi pepeni ____ (mare)",
+        "două mere ____ (dulce)",
+        "un măr ____ (bun)",
+        "roșii ____ (proaspăt)",
+        "o cafea ____ (mic)",
+        "cartofi ____ (bun)",
+        "o pară ____ (frumos)"
+      ]
+    },
+    {
+      "prompt": "Pindahkan kata penunjuk ke belakang kata benda (contoh: acest pepene → pepenele acesta).",
+      "items": [
+        "acest măr",
+        "această roșie",
+        "aceste mere",
+        "acești cartofi",
+        "această piață",
+        "aceste roșii"
+      ]
+    }
+  ],
+  "answers": [
+    "Un kilogram de roșii, vă rog. — Roșiile sunt proaspete? — Acest pepene este prea mare. — Merele acestea sunt foarte dulci. — Mai doriți ceva? — Atât, mulțumesc.",
+    "proaspătă — mari — dulci — bun — proaspete — mică — buni — frumoasă",
+    "mărul acesta — roșia aceasta — merele acestea — cartofii aceștia — piața aceasta — roșiile acestea"
+  ]
+}
