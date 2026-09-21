@@ -28,7 +28,7 @@ import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalende
 import { idSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
-  addDays, countdownLabel, fmtTime, gabungSesiBeruntun, isDead, isLiveNow, isoOf, langColor, langFlagCode,
+  addDays, akhirBlokMs, countdownLabel, fmtTime, gabungSesiBeruntun, isDead, isLiveNow, isoOf, langColor, langFlagCode,
   nomorSesiLabel, pad, startOfWeek, statusMeta, ymd,
   type JadwalSession, type LangColor, type NormSession,
 } from "./jadwalShared";
@@ -306,10 +306,9 @@ export default function JadwalCalendar({
   // bukan sesi — mulai = sesi pertama, selesai = akhir sesi terakhir.
   const layoutDay = (groups: NormSession[][]) => {
     const sorted = groups
-      .map((items) => {
-        const tail = items[items.length - 1];
-        return { items, mulai: items[0]._d.getTime(), selesai: tail._d.getTime() + (tail.durationMinutes || 60) * 60000 };
-      })
+      // [jadwal-blok-gabung-v3] selesai = jam selesai TERJAUH blok (sesi yang jam
+      // mulainya kembar bikin "sesi terakhir" belum tentu yang paling belakang).
+      .map((items) => ({ items, mulai: items[0]._d.getTime(), selesai: akhirBlokMs(items) }))
       .sort((a, b) => a.mulai - b.mulai);
 
     const placed: { items: NormSession[]; mulai: number; selesai: number; lane: number; lanes: number }[] = [];

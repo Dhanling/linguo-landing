@@ -11,7 +11,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, countdownLabel, fmtTime, isDead, isLiveNow,
-  langColor, langFlagCode, TeacherAvatar, gabungSesiBeruntun, nomorSesiLabel,
+  akhirBlokMs, langColor, langFlagCode, TeacherAvatar, gabungSesiBeruntun, nomorSesiLabel,
   type JadwalSession, type NormSession,
 } from "./jadwalShared";
 
@@ -42,8 +42,9 @@ type SesiBlok = {
 function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
   return gabungSesiBeruntun(list).map((items) => {
     const head = items[0];
-    const tail = items[items.length - 1];
-    const endMs = tail._d.getTime() + (tail.durationMinutes || 60) * 60000;
+    // [jadwal-blok-gabung-v3] ujung blok = jam selesai terjauh (dua sesi bisa tersimpan
+    // di jam mulai yang sama), bukan sekadar sesi terakhir di daftar.
+    const endMs = akhirBlokMs(items);
     return {
       key: head.id,
       items,
@@ -53,7 +54,13 @@ function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
       _end: fmtTime(new Date(endMs)),
       _weekday: head._weekday,
       _live: items.some((s) => s._live),
-      totalMinutes: items.reduce((n, s) => n + (s.durationMinutes || 60), 0),
+      // Menit yang ditulis di kartu ikut RENTANG bloknya, biar sebaris dengan jam
+      // 09.15–10.15 yang tepat di sebelahnya (dua sesi 60 menit yang jam mulainya
+      // kembar itu satu pertemuan 60 menit, bukan 120).
+      totalMinutes: Math.max(
+        Math.round((endMs - head._d.getTime()) / 60000),
+        head.durationMinutes || 60
+      ),
       // Room id itu per sesi (`sched-<id>`), jadi tombolnya harus menunjuk sesi
       // yang jamnya sedang jalan — kalau blok ini dipatok ke sesi pertama terus,
       // pukul 09.10 siswa masuk room kosong sementara pengajar ada di sesi kedua.

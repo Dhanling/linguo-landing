@@ -264,13 +264,32 @@ function kelasSama(a: NormSession, b: NormSession) {
   );
 }
 
-function nyambung(prev: NormSession, s: NormSession) {
-  const prevEnd = prev._d.getTime() + (prev.durationMinutes || 60) * 60000;
+/**
+ * Jam selesai TERJAUH di sebuah blok. Sengaja bukan "sesi terakhir": kalau ada dua
+ * baris di jam mulai yang sama, yang terakhir di daftar belum tentu yang paling
+ * belakang jamnya.
+ */
+export function akhirBlokMs(items: NormSession[]): number {
+  return items.reduce(
+    (m, s) => Math.max(m, s._d.getTime() + (s.durationMinutes || 60) * 60000),
+    0
+  );
+}
+
+/* [jadwal-blok-gabung-v3] Dulu sesi berikutnya wajib mulai PERSIS sesudah sesi
+   sebelumnya selesai (`>= prevEnd - 1 menit`). Pertemuan yang dua barisnya tersimpan
+   di jam mulai yang SAMA — satu jam yang dihitung 2 sesi, mis. Bosnia Private Selasa
+   09.15–10.15 — jatuh di luar syarat itu dan tergambar sebagai dua kartu kembar
+   berdampingan. Padahal itu satu pertemuan, sama seperti dua sesi berurutan. Jadi
+   sekarang sesi yang jamnya BERIRISAN (termasuk jam mulai yang sama) ikut dilebur;
+   ujung yang dipakai jam selesai terjauh blok, bukan sesi terakhirnya. */
+function nyambung(blok: NormSession[], s: NormSession) {
+  const head = blok[0];
   return (
-    kelasSama(prev, s) &&
-    prev._d.toDateString() === s._d.toDateString() &&
-    s._d.getTime() - prevEnd <= GAP_BERUNTUN_MS &&
-    s._d.getTime() >= prevEnd - 60_000
+    kelasSama(head, s) &&
+    head._d.toDateString() === s._d.toDateString() &&
+    s._d.getTime() >= head._d.getTime() &&
+    s._d.getTime() - akhirBlokMs(blok) <= GAP_BERUNTUN_MS
   );
 }
 
@@ -284,7 +303,7 @@ function nyambung(prev: NormSession, s: NormSession) {
 export function gabungSesiBeruntun<T extends NormSession>(list: T[]): T[][] {
   const out: T[][] = [];
   for (const s of [...list].sort((a, b) => a._d.getTime() - b._d.getTime())) {
-    const host = out.find((g) => nyambung(g[g.length - 1], s));
+    const host = out.find((g) => nyambung(g, s));
     if (host) host.push(s);
     else out.push([s]);
   }
