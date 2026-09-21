@@ -1,0 +1,296 @@
+{
+  "title": "Surat & surel resmi",
+  "title_target": "O cerere și un e-mail",
+  "goal": "Menulis dua teks yang cepat atau lambat akan kamu butuhkan di Rumania: *cerere* — surat permohonan bertanda tangan yang diminta hampir setiap lembaga — dan surel kerja sehari-hari. Rumusnya baku: begitu kamu hafal, sisanya cuma mengisi.",
+  "bekal": [
+    "menyusun *cerere* lengkap dari *Stimate domnule director,* sampai *Cu stimă*",
+    "mengubah kalimat lisan jadi gaya tulis resmi dengan nominalisasi: *faptul că, posibilitatea de a, în vederea, în urma*",
+    "memilih pembuka dan penutup surel yang pas: *Vă transmit atașat…*, *Cu mulțumiri*, *Numai bine*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Cum se scrie o cerere",
+      "intro": "Budi ingin mengambil cuti sepuluh hari di bulan Agustus dan mengira satu surel sudah cukup. Doamna Ionescu dari HR menjelaskan bahwa di Rumania cuti minta kertas — dan sekalian mendiktekan rumusnya.",
+      "lines": [
+        {"speaker": "Budi:", "text": "Bună ziua, doamnă Ionescu. Aveți un minut pentru o întrebare?", "id": "Selamat siang, Bu Ionescu. Ada waktu semenit untuk satu pertanyaan?", "literal": "baik-pr hari-nya, nyonya Ionescu. Anda-punya sebuah-lk menit untuk sebuah-pr pertanyaan?"},
+        {"speaker": "dna Ionescu:", "text": "Bună ziua, domnule Santoso. Spuneți, vă ascult.", "id": "Selamat siang, Pak Santoso. Silakan, saya dengarkan.", "literal": "baik-pr hari-nya, tuan Santoso. bilang-lah-sopan, Anda-akusatif saya-dengar."},
+        {"speaker": "Budi:", "text": "Vreau să iau zece zile în august. E de ajuns un e-mail?", "id": "Saya mau ambil sepuluh hari di bulan Agustus. Cukup dengan surel?", "literal": "saya-mau agar saya-ambil sepuluh hari-jamak dalam Agustus. ia-adalah dari cukup sebuah-lk surel?"},
+        {"speaker": "dna Ionescu:", "text": "Nu. Pentru concediu ne trebuie o cerere scrisă și semnată; e-mailul e doar pentru anunț.", "id": "Tidak. Untuk cuti kami perlu cerere tertulis dan bertanda tangan; surel hanya pemberitahuan.", "literal": "tidak. untuk cuti kami-datif ia-perlu sebuah-pr permohonan tertulis-pr dan ditandatangani-pr; surel-nya hanya untuk pengumuman."},
+        {"speaker": "Budi:", "text": "Am înțeles. Și cum se scrie o cerere? La noi formularele sunt altfel.", "id": "Saya paham. Dan bagaimana cara menulis cerere? Di tempat saya formulirnya lain.", "literal": "saya-sudah mengerti. dan bagaimana ia-refleksif tulis sebuah-pr permohonan? pada kami formulir-jamak-nya lain."},
+        {"speaker": "dna Ionescu:", "text": "Structura e fixă. Sus scrieți către cine, apoi formula de adresare: *Stimate domnule director,*", "id": "Strukturnya baku. Di atas Anda tulis kepada siapa, lalu rumus sapaan: *Stimate domnule director,*", "literal": "struktur-nya ia-adalah tetap. di-atas Anda-tulis kepada siapa, lalu rumus-nya dari sapaan: terhormat-lk tuan direktur,"},
+        {"speaker": "Budi:", "text": "Cu virgulă la sfârșit?", "id": "Dengan koma di akhir?", "literal": "dengan koma pada akhir?"},
+        {"speaker": "dna Ionescu:", "text": "Da, virgulă, iar rândul următor începe cu literă mică. Apoi: *Subsemnatul Budi Santoso, angajat în cadrul Departamentului IT…*", "id": "Ya, koma, dan baris berikutnya dimulai huruf kecil. Lalu: *Subsemnatul Budi Santoso, angajat în cadrul Departamentului IT…*", "literal": "ya, koma, dan baris-nya berikut ia-mulai dengan huruf kecil-pr. lalu: yang-bertanda-tangan-nya Budi Santoso, pegawai dalam kerangka departemen-nya-genitif IT…"},
+        {"speaker": "Budi:", "text": "Și cererea în sine, cum o formulez?", "id": "Dan permohonannya sendiri, bagaimana saya merumuskannya?", "literal": "dan permohonan-nya dalam diri, bagaimana dia-pr-akusatif saya-rumuskan?"},
+        {"speaker": "dna Ionescu:", "text": "*Vă rog să îmi aprobați cererea de concediu de odihnă pentru perioada 4–15 august.*", "id": "*Saya mohon Bapak menyetujui permohonan cuti tahunan saya untuk periode 4–15 Agustus.*", "literal": "Anda-akusatif saya-mohon agar saya-datif Anda-setujui permohonan-nya dari cuti dari istirahat untuk periode-nya 4–15 Agustus."},
+        {"speaker": "Budi:", "text": "Și la final?", "id": "Dan di bagian akhir?", "literal": "dan pada akhir?"},
+        {"speaker": "dna Ionescu:", "text": "*Rămân la dispoziția dumneavoastră pentru orice informații suplimentare.* Apoi *Cu stimă* și semnătura.", "id": "*Saya tetap siap memberi keterangan tambahan apa pun.* Lalu *Cu stimă* dan tanda tangan.", "literal": "saya-tinggal pada ketersediaan-nya Anda-sopan untuk apa-pun keterangan-jamak tambahan-jamak. lalu dengan penghormatan dan tanda-tangan-nya."},
+        {"speaker": "Budi:", "text": "Deci: *Cu stimă, Budi Santoso.* Când o aduc?", "id": "Jadi: *Cu stimă, Budi Santoso.* Kapan saya bawa?", "literal": "jadi: dengan penghormatan, Budi Santoso. kapan dia-pr-akusatif saya-bawa?"},
+        {"speaker": "dna Ionescu:", "text": "Până joi, vă rog. O semnați, o lăsați la mine, iar eu o duc la director.", "id": "Sampai Kamis, tolong. Anda tanda tangani, tinggalkan di saya, lalu saya bawa ke direktur.", "literal": "sampai Kamis, Anda-akusatif saya-mohon. dia-pr-akusatif Anda-tandatangani, Anda-tinggalkan pada saya, dan saya dia-pr-akusatif saya-bawa pada direktur."}
+      ],
+      "notes": [
+        "**Stimate domnule director, — koma lalu huruf kecil.** *Stimate* adalah vokatif dari *stimat*, ke laki-laki; ke perempuan *Stimată doamnă*. Sesudah sapaan selalu **koma**, baris berikutnya huruf **kecil**.",
+        "**Subsemnatul…** Setiap *cerere* dibuka dengan kata ini: \"yang bertanda tangan di bawah ini\". Laki-laki *subsemnatul*, perempuan *subsemnata*. Sesudahnya jati dirimu: *angajat în cadrul Departamentului IT, în funcția de…*",
+        "**Vă rog să îmi aprobați.** Di tulisan resmi klitik datif ditulis penuh — *să îmi*, bukan *să-mi*. *A aproba* minta objek langsung: *aprobați cererea*.",
+        "**O cerere scrisă și semnată.** Dua partisip yang dipakai sebagai kata sifat, jadi keduanya ikut *cerere* yang perempuan. Kalau yang dibicarakan *documentele*: *scrise, semnate*.",
+        "**Rămân la dispoziția dumneavoastră.** Harfiah \"saya tetap pada ketersediaan Anda\". *Dispoziția* berartikel tentu karena diikuti pemilik genitif; versi pendeknya *Rămân la dispoziție*.",
+        "**Kenapa harus kertas?** Banyak urusan di Rumania tetap minta *cerere* bertanda tangan: cuti, izin, permohonan ke primărie atau universitas. Surat diserahkan ke *registratură*, dan kamu berhak minta *număr de înregistrare*."
+      ],
+      "grammars": [
+        {
+          "title": "Anatomi sebuah *cerere*",
+          "body": [
+            "Urutannya tidak boleh diubah, dan itu kabar baiknya: satu kali kamu hafal kerangka ini, kamu bisa menulis permohonan apa pun."
+          ],
+          "table": {
+            "head": ["Bagian", "Rumus", "Catatan"],
+            "rows": [
+              ["tujuan", "*Către · S.C. TehnoPlus S.R.L. · Domnului Director General*", "kanan atas, tanpa titik"],
+              ["sapaan", "*Stimate domnule director,*", "koma; baris berikut huruf kecil"],
+              ["jati diri", "*Subsemnatul Budi Santoso, angajat în cadrul…, în funcția de…,*", "*subsemnata* kalau perempuan"],
+              ["inti permohonan", "*vă rog să îmi aprobați…*", "huruf kecil, menyambung"],
+              ["rincian", "*pentru o perioadă de 10 zile lucrătoare, în intervalul 4 – 15 august 2026*", "tanggal ditulis penuh"],
+              ["penutup isi", "*Rămân la dispoziția dumneavoastră.*", "atau *Vă mulțumesc pentru înțelegere.*"],
+              ["salam akhir", "*Cu stimă,* · *Cu respect,*", "koma, lalu nama di baris baru"],
+              ["kaki surat", "*Data: 10 iulie 2026* · *Semnătura:*", "tanggal kiri, tanda tangan kanan"]
+            ]
+          },
+          "after": [
+            "**Satu halaman, satu permintaan.** *Cerere* yang meminta dua hal sekaligus sering dikembalikan; kalau butuh dua, tulis dua surat.",
+            "**Kata yang sering muncul di badan surat:** *în vederea* (demi), *având în vedere* (mengingat), *conform* (sesuai), *menționez*, *anexez*, *solicit*."
+          ]
+        },
+        {
+          "title": "Nominalisasi — kata kerja jadi kata benda",
+          "body": [
+            "Gaya tulis resmi Rumania lebih suka kata benda daripada kata kerja. Lisan berkata *vreau să plec*; surat berkata *vă rog să îmi aprobați plecarea*. Nominalisasi menghapus \"aku mau\" dari kalimat — itulah yang membuatnya resmi."
+          ],
+          "table": {
+            "head": ["Lisan (kata kerja)", "Tulis resmi (kata benda)", "Arti"],
+            "rows": [
+              ["*Vreau să plec în concediu.*", "*Vă rog să îmi aprobați plecarea în concediu.*", "mohon persetujuan cuti"],
+              ["*Am aflat că firma se mută.*", "*Am luat la cunoștință faptul că firma se mută.*", "saya mengetahui bahwa…"],
+              ["*Vreau să știu dacă pot lucra de acasă.*", "*Vă rog să îmi confirmați posibilitatea de a lucra de acasă.*", "…kemungkinan untuk…"],
+              ["*Ca să îmi fac dosarul…*", "*În vederea întocmirii dosarului…*", "demi penyusunan berkas…"],
+              ["*După ce am discutat ieri…*", "*În urma discuției de ieri…*", "menindaklanjuti pembicaraan…"],
+              ["*Pentru că am fost bolnav…*", "*Având în vedere starea mea de sănătate…*", "mengingat kondisi kesehatan…"]
+            ]
+          },
+          "after": [
+            "***Faptul că*** adalah kuda beban nominalisasi: ia mengubah seluruh anak kalimat jadi satu kata benda, sehingga bisa dipasangi kata depan — *din cauza faptului că…*",
+            "***În vederea*** dan ***în urma*** menuntut **genitif**: *în vederea întocmirii dosarului*, *în urma cererii dumneavoastră*. Dan jangan berlebihan: empat nominalisasi sekaligus membuat suratmu tak terbaca — orang Rumania menyebutnya *limbaj de lemn*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Un e-mail de birou",
+      "intro": "Surel kerja berdiri di tengah: lebih longgar daripada *cerere*, lebih rapi daripada pesan WhatsApp. Ioana membaca draf Budi dan membetulkan dua hal yang paling sering salah — subjek dan penutup.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Budi, ai trimis e-mailul către firma de audit?", "id": "Budi, kamu sudah kirim surel ke kantor audit itu?", "literal": "Budi, kamu-sudah kirim surel-nya kepada perusahaan-nya dari audit?"},
+        {"speaker": "Budi:", "text": "Încă nu. L-am scris, dar nu știu cum să-l încep.", "id": "Belum. Sudah kutulis, tapi aku tidak tahu cara membukanya.", "literal": "masih tidak. dia-lk-akusatif-saya-sudah tulis, tapi tidak saya-tahu bagaimana agar-dia-lk-akusatif saya-mulai."},
+        {"speaker": "Ioana:", "text": "Arată-mi. Ce ai pus la subiect?", "id": "Coba lihat. Kamu tulis apa di subjeknya?", "literal": "tunjukkan-lah-saya-datif. apa kamu-sudah taruh pada subjek?"},
+        {"speaker": "Budi:", "text": "„Documente”. Atât.", "id": "„Dokumen”. Segitu saja.", "literal": "„dokumen-jamak”. sekian."},
+        {"speaker": "Ioana:", "text": "Prea puțin. Scrie: „Documente solicitate – contract 214/2026”. Așa se găsește imediat.", "id": "Terlalu sedikit. Tulis: „Documente solicitate – contract 214/2026”. Begitu baru langsung ketemu.", "literal": "terlalu sedikit. tulis-lah: „dokumen-jamak diminta-jamak – kontrak 214/2026”. begitu ia-refleksif ditemukan segera."},
+        {"speaker": "Budi:", "text": "Am înțeles. Și prima frază?", "id": "Paham. Dan kalimat pertamanya?", "literal": "saya-sudah mengerti. dan pertama-pr-nya kalimat?"},
+        {"speaker": "Ioana:", "text": "*Stimată doamnă Dinu, vă transmit atașat documentele solicitate.* Simplu și clar.", "id": "*Stimată doamnă Dinu, saya kirimkan terlampir dokumen yang diminta.* Sederhana dan jelas.", "literal": "terhormat-pr nyonya Dinu, Anda-datif saya-sampaikan terlampir dokumen-jamak-nya diminta-jamak. sederhana dan jelas."},
+        {"speaker": "Budi:", "text": "Iar la sfârșit *Cu stimă*?", "id": "Dan di akhir *Cu stimă*?", "literal": "dan pada akhir dengan penghormatan?"},
+        {"speaker": "Ioana:", "text": "La un e-mail de lucru e de ajuns *Cu mulțumiri* sau *O zi bună*. *Cu stimă* îl păstrezi pentru cereri.", "id": "Untuk surel kerja cukup *Cu mulțumiri* atau *O zi bună*. *Cu stimă* kamu simpan untuk cerere.", "literal": "pada sebuah-lk surel dari kerja ia-adalah cukup dengan terima-kasih-jamak atau sebuah-pr hari baik-pr. dengan penghormatan untuk permohonan-jamak."},
+        {"speaker": "Budi:", "text": "Bine. Îl trimit acum și te pun în copie.", "id": "Oke. Kukirim sekarang dan kamu kumasukkan ke CC.", "literal": "baik. dia-lk-akusatif saya-kirim sekarang dan kamu-akusatif saya-taruh dalam salinan."}
+      ],
+      "notes": [
+        "**Subiectul.** Subjek surel Rumania ditulis seperti judul arsip: pokok masalah, lalu nomor rujukan — *Documente solicitate – contract 214/2026*. Satu kata saja membuat suratmu hilang di kotak masuk.",
+        "**Atașat · în atașament · anexat.** *Vă transmit atașat documentele* dan *Găsiți atașat oferta* yang paling biasa. *Anexat* lebih berat, cocok untuk *cerere*.",
+        "**Te pun în copie.** \"Aku masukkan kamu ke CC.\" Kata bendanya *copie*: *în copie*, *în copie ascunsă* (Bcc). Tombol \"balas ke semua\": *răspuns către toți*.",
+        "**Îl trimit acum.** Klitik *îl* menggantikan *e-mailul*, yang lelaki; kalau yang kamu kirim *cererea*, klitiknya *o*. Di konjunktif ia menempel ke *să*: *să-l trimit*."
+      ],
+      "grammars": [
+        {
+          "title": "Penutup surat: tangga kesopanan",
+          "body": [
+            "Memilih penutup yang salah adalah kesalahan yang paling terasa, karena ia berada tepat di atas namamu. Urutannya dari paling resmi ke paling akrab; yang paling resmi dari semua, *Cu deosebită considerație*, untuk surat kelembagaan."
+          ],
+          "table": {
+            "head": ["Penutup", "Kadar", "Dipakai untuk"],
+            "rows": [
+              ["*Cu stimă,*", "resmi baku", "*cerere*, lembaga, surel pertama"],
+              ["*Cu respect,*", "resmi, lebih hangat", "atasan, orang yang jauh lebih senior"],
+              ["*Cu mulțumiri,*", "resmi-ringan", "surel kerja saat kamu minta sesuatu"],
+              ["*O zi bună,* · *Numai bine,*", "netral-hangat", "surel harian antar rekan kerja"],
+              ["*Cu drag,* · *Pe curând,*", "akrab", "teman; jangan ke HR atau ke lembaga"]
+            ]
+          },
+          "after": [
+            "**Sesudah penutup selalu koma**, lalu namamu di baris baru. *Cu stimă, Budi Santoso* dalam satu baris dipakai di surel, tetapi di *cerere* dipisah.",
+            "**Kalau tidak yakin, pilih *Cu stimă*** — cukup resmi untuk lembaga, tidak pernah dingin untuk rekan kerja."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Teks bacaan — *Cerere de concediu de odihnă*",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Inilah surat yang akhirnya ditulis Budi. Bacalah dua kali: pertama kolom Rumania saja, lalu bandingkan dengan terjemahannya. Perhatikan bahwa baris ketiga dan keempat sebenarnya satu kalimat — ciri khas *cerere*."
+        },
+        {
+          "type": "tabel",
+          "head": ["Română", "Bahasa Indonesia"],
+          "rows": [
+            ["Către *S.C. TehnoPlus S.R.L.* — Domnului Director General", "Kepada PT TehnoPlus — Bapak Direktur Utama"],
+            ["*Stimate domnule director,*", "Yang terhormat Bapak Direktur,"],
+            ["*subsemnatul Budi Santoso, angajat în cadrul Departamentului IT, în funcția de programator,*", "yang bertanda tangan di bawah ini, Budi Santoso, pegawai di Departemen IT, dengan jabatan programmer,"],
+            ["*vă rog să îmi aprobați efectuarea concediului de odihnă pentru o perioadă de 10 zile lucrătoare, în intervalul 4 – 15 august 2026.*", "saya mohon Bapak menyetujui pengambilan cuti tahunan saya selama 10 hari kerja, pada rentang 4 – 15 Agustus 2026."],
+            ["*Menționez că, în această perioadă, activitatea mea va fi preluată de colegul Andrei Pop.*", "Saya sampaikan bahwa pada periode itu pekerjaan saya akan diambil alih oleh rekan Andrei Pop."],
+            ["*Anexez, în copie, planificarea concediilor pe echipă, aprobată de coordonatorul de proiect.*", "Saya lampirkan salinan rencana cuti tim, yang disetujui koordinator proyek."],
+            ["*Rămân la dispoziția dumneavoastră pentru orice informații suplimentare.*", "Saya tetap siap memberi keterangan tambahan apa pun."],
+            ["*Vă mulțumesc pentru înțelegere.*", "Terima kasih atas pengertian Bapak."],
+            ["*Cu stimă,* / *Budi Santoso* / *Data: 10 iulie 2026 · Semnătura: Budi Santoso*", "Hormat saya, / Budi Santoso / Tanggal: 10 Juli 2026 · Tanda tangan: Budi Santoso"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang dilihat petugas sebelum isi suratnya",
+          "items": [
+            "**Tanda tangan basah.** *Cerere* tanpa tanda tangan bukan *cerere*. Versi pindai pun ditandatangani dulu di kertas.",
+            "**Tanggal** ditulis di kaki surat, sebelah kiri, bulannya berupa kata: *10 iulie 2026*, bukan *10.07.2026*.",
+            "**Număr de înregistrare.** Saat menyerahkan surat ke *registratură*, minta nomor pendaftarannya dan tulis di salinanmu — itu bukti suratmu masuk."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Surel kantor sehari-hari",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Rumus", "Bahasa Indonesia"],
+          "rows": [
+            ["*Stimată doamnă Dinu,* · *Bună ziua, domnule Radu,*", "Yang terhormat Bu Dinu, · Selamat siang, Pak Radu,"],
+            ["*Vă transmit atașat documentele solicitate.*", "Saya kirimkan terlampir dokumen yang diminta."],
+            ["*Conform discuției telefonice de vineri,…*", "Sesuai pembicaraan telepon hari Jumat,…"],
+            ["*Vă rog să îmi confirmați primirea.*", "Mohon konfirmasi bahwa ini sudah Anda terima."],
+            ["*Vă rog să mă scuzați pentru răspunsul întârziat.*", "Mohon maaf atas jawaban yang terlambat."],
+            ["*Vă mulțumesc anticipat pentru sprijin.*", "Terima kasih sebelumnya atas bantuan Anda."],
+            ["*Rămân la dispoziția dumneavoastră. Cu mulțumiri,*", "Saya tetap siap membantu. Cu mulțumiri,"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Surel kerja Rumania lebih pendek daripada yang diduga orang: tiga baris sudah dianggap lengkap — sapaan, satu kalimat isi, penutup. Yang justru wajib ada adalah **sapaan dan penutup**; surel yang langsung mulai dengan \"berkasnya terlampir\" terasa seperti pintu dibuka tanpa mengetuk. Kalau balasan tak datang, susullah sesudah tiga hari kerja: *Revin cu întrebarea de mai jos.*"
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga jebakan surel",
+          "items": [
+            "**Jangan menerjemahkan \"Dear\" jadi *Dragă*.** *Dragă Ioana* hanya untuk orang yang benar-benar dekat; padanan \"Dear Ms. Dinu\" adalah *Stimată doamnă Dinu*.",
+            "**Jangan memakai *Cu drag* ke HR atau lembaga.** Hangat di antara rekan, tetapi di surat resmi salah alamat.",
+            "**Jangan lupa diakritik.** Surel tanpa ă, â, î, ș, ț terlihat asal-asalan — dan *vă* yang ditulis *va* ganti arti."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 10",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Menurutku, tidak sebanding dengan usahanya.", "*După mine, nu merită efortul.*"],
+            ["Aku tidak yakin itu ide bagus.", "*Nu cred că e o idee bună.*"],
+            ["Menurutku agak mahal.", "*Mi se pare cam scump.*"],
+            ["Dari satu sisi kamu benar, tapi…", "*Ai dreptate într-un fel, dar…*"],
+            ["Justru berarti, kok!", "*Ba da, chiar contează!*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "cerere, cereri", "baca": "cé-RÉ-ré, cé-RÉR'", "id": "surat permohonan; permintaan (pr)"},
+    {"ro": "e-mail, e-mailuri", "baca": "i-MÉYL, i-MÉY-lur'", "id": "surel (nt)"},
+    {"ro": "subiect, subiecte", "baca": "su-BYÉKT, su-BYÉK-té", "id": "subjek surel; pokok bahasan (nt)"},
+    {"ro": "atașament, atașamente", "baca": "a-ta-sya-MÉNT, a-ta-sya-MÉN-té", "id": "lampiran surel (nt)"},
+    {"ro": "semnătură, semnături", "baca": "sém-ne-TU-re, sém-ne-TUR'", "id": "tanda tangan (pr)"},
+    {"ro": "formulă de adresare", "baca": "FOR-mu-le dé a-dré-SA-ré", "id": "rumus sapaan (pr)"},
+    {"ro": "concediu de odihnă", "baca": "kon-CÉ-dyu dé o-DIH-ne", "id": "cuti tahunan (nt)"},
+    {"ro": "zi lucrătoare, zile lucrătoare", "baca": "zi lu-kre-TOA-ré", "id": "hari kerja (pr)"},
+    {"ro": "perioadă, perioade", "baca": "pé-ri-OA-de, pé-ri-OA-dé", "id": "periode, kurun (pr)"},
+    {"ro": "departament, departamente", "baca": "dé-par-ta-MÉNT, dé-par-ta-MÉN-té", "id": "departemen, bagian (nt)"},
+    {"ro": "funcție, funcții", "baca": "FUNK-tsi-yé, FUNK-tsi'", "id": "jabatan; fungsi (pr)"},
+    {"ro": "subsemnatul, subsemnata", "baca": "sub-sém-NA-tul, sub-sém-NA-ta", "id": "yang bertanda tangan di bawah ini"},
+    {"ro": "a aproba (aprob)", "baca": "a a-pro-BA (a-PROB)", "id": "menyetujui"},
+    {"ro": "a solicita (solicit)", "baca": "a so-li-ci-TA (so-LI-cit)", "id": "meminta, mengajukan"},
+    {"ro": "a transmite (transmit, transmis)", "baca": "a trans-MI-té (trans-MIT, trans-MIS)", "id": "menyampaikan, mengirimkan"},
+    {"ro": "a semna (semnez)", "baca": "a sém-NA (sém-NÉZ)", "id": "menandatangani"},
+    {"ro": "a menționa (menționez)", "baca": "a mén-tsi-o-NA (mén-tsi-o-NÉZ)", "id": "menyebutkan, menyampaikan"},
+    {"ro": "a confirma (confirm)", "baca": "a kon-fir-MA (kon-FIRM)", "id": "membenarkan, mengonfirmasi"},
+    {"ro": "a întocmi (întocmesc)", "baca": "a în-tok-MI (în-tok-MÉSK)", "id": "menyusun (dokumen)"},
+    {"ro": "stimat, stimată", "baca": "sti-MAT, sti-MA-te", "id": "terhormat"},
+    {"ro": "suplimentar, suplimentară", "baca": "su-pli-mén-TAR, su-pli-mén-TA-re", "id": "tambahan"},
+    {"ro": "Cu stimă · Cu respect", "baca": "ku STI-me · ku rés-PÉKT", "id": "Hormat saya (penutup surat)"},
+    {"ro": "Rămân la dispoziția dumneavoastră.", "baca": "re-MÎN la dis-po-ZI-tsi-a dum-nya-VOAS-tre", "id": "Saya tetap siap membantu Anda."},
+    {"ro": "în vederea · în urma", "baca": "în vé-DÉ-rya · în UR-ma", "id": "demi · menindaklanjuti (+ genitif)"},
+    {"ro": "faptul că", "baca": "FAP-tul ke", "id": "kenyataan bahwa"},
+    {"ro": "registratură", "baca": "ré-jis-tra-TU-re", "id": "loket pendaftaran surat (pr)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Yang terhormat Bapak Direktur,",
+        "Saya mohon Bapak menyetujui permohonan cuti saya.",
+        "Saya kirimkan terlampir dokumen yang diminta.",
+        "Saya tetap siap membantu Anda.",
+        "Hormat saya, Budi Santoso.",
+        "Yang bertanda tangan di bawah ini, Budi Santoso, pegawai di Departemen IT…"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk yang tepat.",
+      "items": [
+        "____ domnule director, (sapaan resmi untuk laki-laki)",
+        "____ doamnă Ionescu, (sapaan resmi untuk perempuan)",
+        "____ Budi Santoso, angajat în cadrul Departamentului IT… (pembuka cerere, laki-laki)",
+        "Vă rog să îmi ____ cererea de concediu. (a aproba)",
+        "Vă transmit atașat documentele ____. (a solicita, partisip jamak)",
+        "Rămân la ____ dumneavoastră. (kata benda)",
+        "Cu ____, Budi Santoso. (penutup resmi baku)"
+      ]
+    },
+    {
+      "prompt": "Ubah ke gaya tulis resmi dengan ungkapan di dalam kurung.",
+      "items": [
+        "Vreau să plec în concediu. (aprobați + plecarea)",
+        "Am aflat că firma se mută. (faptul că)",
+        "Vă trimit actele. (vă transmit atașat)",
+        "După ce am discutat ieri, am schimbat planul. (în urma)",
+        "Ca să îmi fac dosarul, am nevoie de o adeverință. (în vederea)",
+        "Vreau să știu dacă pot lucra de acasă. (posibilitatea de a)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "vă / rog / să / îmi / aprobați / cererea / de / concediu",
+        "vă / transmit / atașat / documentele / solicitate",
+        "rămân / la / dispoziția / dumneavoastră",
+        "stimate / domnule / director",
+        "vă / mulțumesc / pentru / înțelegere"
+      ]
+    }
+  ],
+  "answers": [
+    "Stimate domnule director, — Vă rog să îmi aprobați cererea de concediu. — Vă transmit atașat documentele solicitate. — Rămân la dispoziția dumneavoastră. — Cu stimă, Budi Santoso. — Subsemnatul Budi Santoso, angajat în cadrul Departamentului IT…",
+    "Stimate — Stimată — Subsemnatul — aprobați — solicitate — dispoziția — stimă",
+    "Vă rog să îmi aprobați plecarea în concediu. — Am luat la cunoștință faptul că firma se mută. — Vă transmit atașat actele. — În urma discuției de ieri, am schimbat planul. — În vederea întocmirii dosarului, am nevoie de o adeverință. — Vă rog să îmi confirmați posibilitatea de a lucra de acasă.",
+    "Vă rog să îmi aprobați cererea de concediu. — Vă transmit atașat documentele solicitate. — Rămân la dispoziția dumneavoastră. — Stimate domnule director. — Vă mulțumesc pentru înțelegere."
+  ]
+}

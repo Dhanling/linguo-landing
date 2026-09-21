@@ -1,0 +1,294 @@
+{
+  "title": "Kesehatan",
+  "title_target": "La medicul specialist",
+  "goal": "Memakai konjunktif sesudah ungkapan tanpa pelaku — *e necesar să*, *se recomandă să*, *este important să*, *e posibil să* — bahasa yang dipakai dokter, apotek, dan tulisan resmi di Rumania. Sekaligus belajar berjalan di sistem kesehatan Rumania yang sungguhan.",
+  "bekal": [
+    "menyusun anjuran dan keharusan tanpa menunjuk siapa pun: *se recomandă să…*, *nu e nevoie să…*",
+    "membaca petunjuk resmi yang ditulis dengan *se* pasif dan *a fi* + partisip",
+    "memakai *de când* untuk keadaan yang berubah, dan menerangkan gejala dengan kata yang tepat"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — La cabinetul medicului specialist",
+      "intro": "Sudah dua minggu perut Budi tidak enak. Dokter keluarganya memberi surat rujukan, dan hari ini ia duduk di ruang tunggu sebuah poliklinik dekat Piața Victoriei.",
+      "lines": [
+        {"speaker": "Asistenta:", "text": "Bună ziua. Aveți programare la ora unsprezece?", "id": "Selamat siang. Anda punya jadwal jam sebelas?", "literal": "baik-pr hari-nya. Anda-punya jadwal pada jam-nya sebelas?"},
+        {"speaker": "Budi:", "text": "Da, pe numele Budi Santoso. Am o trimitere de la medicul de familie.", "id": "Ya, atas nama Budi Santoso. Saya punya surat rujukan dari dokter keluarga.", "literal": "ya, pada nama-nya Budi Santoso. saya-punya sebuah-pr rujukan dari pada dokter-nya dari keluarga."},
+        {"speaker": "Asistenta:", "text": "Cardul de sănătate, vă rog. Aveți asigurare?", "id": "Kartu kesehatannya, silakan. Anda punya asuransi?", "literal": "kartu-nya dari kesehatan, Anda-akusatif saya-mohon. Anda-punya asuransi?"},
+        {"speaker": "Budi:", "text": "Da, prin firmă. Contribuția se plătește din salariu.", "id": "Ya, lewat perusahaan. Iurannya dipotong dari gaji.", "literal": "ya, lewat perusahaan. iuran-nya ia-refleksif dibayar dari gaji."},
+        {"speaker": "Asistenta:", "text": "Bine. Luați loc, doamna doctor vă cheamă imediat.", "id": "Baik. Silakan duduk, dokternya akan memanggil Anda sebentar lagi.", "literal": "baik. ambil-lah tempat, nyonya-nya dokter Anda-akusatif ia-memanggil segera."},
+        {"speaker": "Doctorul:", "text": "Bună ziua, domnule Santoso. Spuneți-mi, ce vă supără?", "id": "Selamat siang, Pak Santoso. Ceritakan, apa keluhan Anda?", "literal": "baik-pr hari-nya, tuan-sapaan Santoso. katakan-lah-saya-datif, apa Anda-akusatif ia-mengganggu?"},
+        {"speaker": "Budi:", "text": "Mă doare stomacul de vreo două săptămâni, mai ales seara. Și obosesc repede.", "id": "Perut saya sakit sekitar dua minggu ini, terutama malam. Dan saya cepat lelah.", "literal": "saya-akusatif ia-menyakiti perut-nya dari kira-kira dua-pr minggu-jamak, lebih terutama malam-nya. dan saya-lelah cepat."},
+        {"speaker": "Doctorul:", "text": "Ați mai avut probleme de acest fel? Mâncați la ore fixe?", "id": "Anda pernah punya keluhan semacam ini? Anda makan di jam yang tetap?", "literal": "Anda-sudah lagi punya masalah-jamak dari ini-lk macam? Anda-makan pada jam-jamak tetap-pr-jamak?"},
+        {"speaker": "Budi:", "text": "N-am mai avut. Și nu prea — mănânc cum apuc, de când am schimbat locul de muncă.", "id": "Belum pernah. Dan tidak juga — saya makan sekenanya, sejak saya berganti tempat kerja.", "literal": "tidak-saya-sudah lagi punya. dan tidak terlalu — saya-makan bagaimana saya-sempat, dari kapan saya-sudah ganti tempat-nya dari kerja."},
+        {"speaker": "Doctorul:", "text": "Înțeleg. E necesar să facem niște analize înainte să spunem ceva sigur.", "id": "Saya paham. Perlu kita lakukan beberapa pemeriksaan lab sebelum mengatakan sesuatu yang pasti.", "literal": "saya-paham. ia-adalah perlu agar kami-buat beberapa pemeriksaan-jamak sebelum agar kami-katakan sesuatu pasti."},
+        {"speaker": "Budi:", "text": "Sper să nu fie nimic grav.", "id": "Semoga tidak ada yang serius.", "literal": "saya-harap agar tidak ia-adalah tak-ada-apa-pun berat."},
+        {"speaker": "Doctorul:", "text": "E posibil să fie doar stres și mese neregulate, dar nu ghicim. Se recomandă să faceți analize o dată pe an.", "id": "Bisa jadi cuma stres dan makan tak teratur, tapi kita tidak menduga-duga. Dianjurkan memeriksa lab sekali setahun.", "literal": "ia-adalah mungkin agar ia-adalah hanya stres dan makan-jamak tak-teratur-pr-jamak, tapi tidak kami-menduga. ia-refleksif dianjurkan agar Anda-buat pemeriksaan-jamak sebuah-pr kali pada tahun."},
+        {"speaker": "Budi:", "text": "Unde le fac și cât mă costă?", "id": "Di mana saya melakukannya dan berapa biayanya?", "literal": "di-mana mereka-pr-akusatif saya-buat dan berapa saya-akusatif ia-berbiaya?"},
+        {"speaker": "Doctorul:", "text": "La laborator, la etajul întâi, dimineața pe nemâncate. Și dacă vă dau un tratament, e necesar să luați tratamentul până la capăt.", "id": "Di laboratorium, lantai satu, pagi dengan perut kosong. Dan kalau saya memberi Anda pengobatan, perlu Anda minum pengobatannya sampai habis.", "literal": "pada laboratorium, pada lantai-nya pertama, pagi-nya pada tak-termakan-jamak. dan kalau Anda-datif saya-beri sebuah-lk pengobatan, ia-adalah perlu agar Anda-ambil pengobatan-nya sampai ke ujung."}
+      ],
+      "notes": [
+        "**Ungkapan tanpa pelaku selalu menarik konjunktif.** *E necesar să facem*, *e posibil să fie*, *se recomandă să faceți* — tidak ada yang \"mengharuskan\", jadi kata kerja kedua wajib memakai *să*. Bandingkan *trebuie să faceți*, yang terasa seperti perintah langsung.",
+        "**Ce vă supără?** adalah kalimat baku dokter Rumania, harfiah \"apa yang mengganggu Anda?\". Saudaranya: *Ce vă doare?*, *De când vă simțiți așa?* Jawabannya dengan *a durea* + klitik akusatif: *mă doare capul*, *mă dor picioarele*.",
+        "**De când punya dua muka.** Dengan kala kini ia menandai keadaan yang masih berjalan (*de când sunt în România…*); dengan perfect compus ia menandai titik perubahan (*de când am schimbat locul de muncă*).",
+        "**Trimitere** adalah kata kunci sistem kesehatan Rumania: surat rujukan dari *medic de familie* ke spesialis atau laboratorium. Dengan rujukan itu, *analizele sunt gratuite*; tanpanya, bayar sendiri.",
+        "**Mănânc cum apuc.** *Cum apuc* = \"sebisanya, sekenanya\"; begitu juga *cum pot*. Dan *masă* berarti meja, hidangan, sekaligus waktu makan.",
+        "**Pe nemâncate.** Keluarga adverbia dari *pe* + partisip jamak perempuan: *pe nemâncate* (perut kosong), *pe nepregătite* (tanpa persiapan), *pe neașteptate* (tak terduga) — bentuknya beku."
+      ],
+      "grammars": [
+        {
+          "title": "Konjunktif sesudah ungkapan impersonal",
+          "body": [
+            "Ungkapan impersonal adalah ungkapan yang **tidak punya subjek**: *e necesar*, *e posibil*, *se recomandă*, *e bine*, *nu e nevoie*. Karena tak ada pelaku, bahasa Rumania menyambungkannya ke kata kerja berikutnya dengan *să* + konjunktif — dan konjunktif orang ke-3 tunggal dan jamak sama bentuknya: *să fie*, *să facă*, *să ia*, *să vină*."
+          ],
+          "table": {
+            "head": ["Ungkapan", "Contoh", "Nadanya"],
+            "rows": [
+              ["**e necesar să**", "*E necesar să luați tratamentul până la capăt.*", "keharusan, resmi tapi netral"],
+              ["**se recomandă să**", "*Se recomandă să faceți analize o dată pe an.*", "anjuran resmi, tanpa penunjuk"],
+              ["**este important să**", "*Este important să mănânci la ore fixe.*", "menekankan, masih ramah"],
+              ["**e posibil să**", "*E posibil să fie doar stres.*", "kemungkinan, hati-hati"],
+              ["**e bine să**", "*E bine să întrebi farmacistul.*", "saran lembut"],
+              ["**nu e nevoie să**", "*Nu e nevoie să veniți mâine.*", "menghapus keharusan"]
+            ]
+          },
+          "after": [
+            "**Kalau pelakunya perlu disebut, masukkan *ca … să*:** *E necesar ca el să vină personal.* Tanpa *ca*, *E necesar el să vină* terdengar rusak.",
+            "***E* atau *este*?** Artinya sama: *e* untuk lisan, *este* untuk tulisan resmi. Dan jangan memakai infinitif — *e necesar a lua* hanya hidup di teks hukum."
+          ]
+        },
+        {
+          "title": "Bentuk tanpa pelaku dalam petunjuk resmi",
+          "body": [
+            "Begitu urusannya menyangkut aturan klinik, jam buka, atau prosedur, bahasa Rumania berpindah ke bentuk yang menyembunyikan pelaku. Pola di bawah ini menutup hampir semua tulisan di pintu poliklinik."
+          ],
+          "table": {
+            "head": ["Pola", "Contoh", "Bahasa Indonesia"],
+            "rows": [
+              ["*se* + orang ke-3", "*Analizele se fac dimineața.*", "Pemeriksaan lab dilakukan pagi."],
+              ["*se recomandă să* + konjunktif", "*Se recomandă să reveniți la control.*", "Dianjurkan datang kontrol lagi."],
+              ["*a fi* + partisip (kala depan)", "*Rezultatele vor fi gata mâine.*", "Hasilnya akan siap besok."],
+              ["*este* + partisip (keadaan)", "*Cabinetul este închis între 13 și 14.*", "Ruang praktiknya tutup antara 13 dan 14."],
+              ["*nu se* + orang ke-3 (larangan)", "*Nu se fumează în curtea spitalului.*", "Tidak boleh merokok di halaman rumah sakit."]
+            ]
+          },
+          "after": [
+            "***Se* pasif lawan pasif penuh (unit 8).** *Analizele se fac dimineața* adalah aturan umum tanpa pelaku; *Analizele au fost făcute ieri* berbicara tentang satu kejadian tertentu.",
+            "**Kalimat yang selalu berguna di loket:** *Ce trebuie să fac mai departe?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Rezultatele și farmacia non-stop",
+      "intro": "Sepuluh hari kemudian. Cristina — kakak Ioana, dokter keluarga — menelepon Budi membacakan hasilnya.",
+      "lines": [
+        {"speaker": "Cristina:", "text": "Am primit rezultatele tale. Nimic grav — ai o mică anemie, atât.", "id": "Aku sudah terima hasilmu. Tidak ada yang serius — kamu agak anemia, itu saja.", "literal": "saya-sudah terima hasil-jamak-nya kamu-jamak. tak-ada-apa-pun berat — kamu-punya sebuah-pr kecil-pr anemia, sekian."},
+        {"speaker": "Budi:", "text": "Ce ușurare. Mă simt mult mai bine de când am schimbat tratamentul.", "id": "Lega sekali. Aku merasa jauh lebih baik sejak aku mengganti pengobatannya.", "literal": "apa kelegaan. saya-refleksif saya-merasa banyak lebih baik dari kapan saya-sudah ganti pengobatan-nya."},
+        {"speaker": "Cristina:", "text": "Bine. Totuși, e important să mănânci la ore fixe, nu pe fugă.", "id": "Bagus. Meski begitu, penting kamu makan di jam yang tetap, bukan sambil lari.", "literal": "baik. namun, ia-adalah penting agar kamu-makan pada jam-jamak tetap-pr-jamak, tidak pada larian."},
+        {"speaker": "Budi:", "text": "Știu. Vecina mi-a recomandat un ceai.", "id": "Tahu. Tetangga merekomendasikan sebuah teh untukku.", "literal": "saya-tahu. tetangga-pr-nya saya-datif-sudah rekomendasikan sebuah-lk teh."},
+        {"speaker": "Cristina:", "text": "Ceaiul nu strică, dar nu ține loc de tratament. Iar despre pastile întrebi farmacistul.", "id": "Teh tidak merugikan, tapi tidak menggantikan pengobatan. Dan soal obat kamu tanya apoteker.", "literal": "teh-nya tidak ia-merusak, tapi tidak ia-memegang tempat dari pengobatan. sedangkan tentang tablet-jamak kamu-tanya apoteker-nya."},
+        {"speaker": "Budi:", "text": "Corect. Aseară m-a durut capul și n-am găsit nicio farmacie deschisă.", "id": "Benar. Tadi malam kepalaku sakit dan aku tidak menemukan satu apotek pun yang buka.", "literal": "benar. tadi-malam saya-akusatif-sudah sakit kepala-nya dan tidak-saya-sudah temukan tak-satu-pun-pr apotek terbuka-pr."},
+        {"speaker": "Cristina:", "text": "Există farmacii non-stop, două chiar în centru. Se recomandă să ai numărul salvat.", "id": "Ada apotek 24 jam, dua di pusat kota malah. Dianjurkan kamu menyimpan nomornya.", "literal": "ia-ada apotek-jamak non-stop, dua-pr bahkan dalam pusat. ia-refleksif dianjurkan agar kamu-punya nomor-nya tersimpan."},
+        {"speaker": "Budi:", "text": "Și dacă se întâmplă ceva serios noaptea?", "id": "Dan kalau terjadi sesuatu yang serius di malam hari?", "literal": "dan kalau ia-refleksif terjadi sesuatu serius-lk malam-nya?"},
+        {"speaker": "Cristina:", "text": "Suni la 112 — numărul unic de urgență, gratuit. Sau te duci la camera de gardă.", "id": "Kamu telepon 112 — nomor darurat tunggal, gratis. Atau kamu ke unit gawat darurat.", "literal": "kamu-menelepon ke 112 — nomor-nya tunggal dari kegawatan, gratis. atau kamu-refleksif kamu-pergi ke kamar-nya dari jaga."},
+        {"speaker": "Budi:", "text": "Notez tot. Mulțumesc, Cristina — și salutări Ioanei.", "id": "Aku catat semua. Terima kasih, Cristina — dan salam untuk Ioana.", "literal": "saya-catat semua. saya-berterima-kasih, Cristina — dan salam-jamak Ioana-datif."}
+      ],
+      "notes": [
+        "**Ce ușurare!** — \"Lega sekali!\" Sekeluarga dengannya: *Slavă Domnului!*, *Ce bine!*, *Mi-a luat o piatră de pe inimă*. Pola *Ce* + kata benda tanpa artikel adalah cara Rumania berseru: *Ce noroc!*",
+        "**M-a durut capul.** *A durea* di perfect compus tetap memakai klitik akusatif, partisipnya *durut*: *m-a durut*, *ne-a durut*. Kalau sakitnya berulang: *am dureri de cap*.",
+        "**Nu ține loc de** = tidak menggantikan, tidak berfungsi sebagai: *Canapeaua ține loc de pat.* Pasangannya di baris yang sama, *nu strică*, berarti \"tak ada ruginya\".",
+        "**112 dan camera de gardă adalah fakta, bukan hiasan dialog.** *112* adalah nomor darurat tunggal di Rumania dan seluruh Uni Eropa, gratis dari jaringan mana pun; *camera de gardă* (atau *UPU*) adalah gawat darurat rumah sakit yang buka semalam."
+      ],
+      "grammars": [
+        {
+          "title": "De când, de, din — menandai sejak kapan",
+          "body": [
+            "Bahasa Indonesia memakai satu kata \"sejak\" untuk tiga hal berbeda: titik peristiwa, lama waktu, dan tanggal mulai. Bahasa Rumania membedakannya, dan penutur Indonesia hampir selalu tergelincir di sini."
+          ],
+          "table": {
+            "head": ["Pola", "Contoh", "Artinya"],
+            "rows": [
+              ["*de când* + kala kini", "*De când sunt în România, gătesc mai mult.*", "sejak — keadaan masih berjalan"],
+              ["*de când* + perfect compus", "*De când am schimbat tratamentul, mă simt mai bine.*", "sejak peristiwa itu terjadi"],
+              ["*De când…?*", "*De când vă simțiți așa?*", "sejak kapan? (pertanyaan dokter)"],
+              ["*de* + lama waktu", "*Mă doare de două săptămâni.*", "sudah dua minggu"],
+              ["*din* + titik waktu", "*Din luni sunt în concediu.*", "mulai Senin"]
+            ]
+          },
+          "after": [
+            "***De când* bukan *când*.** *Când am schimbat tratamentul, m-am simțit mai bine* berbicara tentang satu saat lampau; *De când am schimbat tratamentul, mă simt mai bine* berbicara tentang sekarang.",
+            "**Untuk lama waktu, *de* saja cukup**, dengan kata kerja kala kini: *Aștept de o oră.* — \"Aku sudah menunggu sejam.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sistem kesehatan Rumania — dari medic de familie sampai 112",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pahami dulu jalannya, karena urutan inilah yang menentukan kata yang kamu butuhkan. Setiap orang yang membayar iuran terdaftar di daftar seorang **medic de familie**. Dialah pintu pertama: konsultasi, *rețetă*, dan **trimitere** ke spesialis atau ke laboratorium."
+        },
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Apa artinya di lapangan"],
+          "rows": [
+            ["**medic de familie**", "MÉ-dik dé fa-MI-li-yé", "dokter keluarga tempat kamu terdaftar; pintu masuk sistem"],
+            ["**trimitere**", "tri-MI-té-ré", "surat rujukan ke spesialis atau laboratorium"],
+            ["**analize**", "a-na-LI-zé", "pemeriksaan laboratorium (darah, urin)"],
+            ["**rețetă**", "ré-TSÉ-te", "resep, kini elektronik"],
+            ["**asigurare de sănătate**", "a-si-gu-RA-ré dé se-ne-TA-té", "asuransi kesehatan negara, iurannya dari gaji"],
+            ["**card de sănătate**", "kard dé se-ne-TA-té", "kartu yang dibawa ke tiap kunjungan"],
+            ["**camera de gardă · UPU**", "KA-mé-ra dé GAR-de", "gawat darurat rumah sakit, buka semalam"],
+            ["**farmacie non-stop**", "far-ma-CI-yé non-STOP", "apotek 24 jam"],
+            ["**112**", "o SU-te doy-SPRÉ-zé-cé", "nomor darurat tunggal, gratis dari semua jaringan"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Empat hal yang membuat hidupmu lebih mudah",
+          "items": [
+            "**Programare adalah kunci.** Hampir semua yang bukan gawat darurat berjalan dengan janji temu: *Aș vrea să fac o programare.* — *Pentru când?* Di loket, kalimat paling berguna: *Care e primul loc liber?*",
+            "**Negeri dan swasta hidup berdampingan.** Banyak orang memakai *medic de familie* negara untuk rujukan dan resep, lalu pergi ke klinik swasta lewat *abonament medical* dari kantor. Dua kalimat penyelamat: *Puteți repeta mai încet, vă rog?* dan *Îmi puteți scrie asta pe hârtie?*",
+            "**CNAS adalah nama sistemnya.** *Casa Națională de Asigurări de Sănătate* mengelola asuransi kesehatan negara, dengan kantor daerah *CAS* di tiap *județ*. Iurannya (*CASS*) dipotong dari gajimu, dan haknya berjalan selama pemberi kerja menyetorkannya.",
+            "**Tanpa trimitere, kamu bayar sendiri.** Rujukan itu punya masa berlaku dan menyebut ke mana kamu dikirim; bawa selalu *cardul de sănătate* dan kartu identitas. Di apotek, resep elektronik cukup dengan namamu."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menerangkan gejala dengan tepat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Satu pola harus kamu kuasai sebelum yang lain: *Mă doare* + nama bagian badan **dengan artikel tentu** — bukan \"saya punya sakit\", melainkan \"bagian itu menyakiti saya\". Kalau yang sakit dua, kata kerjanya jamak: *mă dor picioarele*."
+        },
+        {
+          "type": "tabel",
+          "head": ["Română", "Bahasa Indonesia"],
+          "rows": [
+            ["*Mă doare capul de ieri.*", "Kepalaku sakit sejak kemarin."],
+            ["*Mă dor picioarele după drum.*", "Kakiku sakit setelah jalan jauh."],
+            ["*Am dureri de stomac, mai ales seara.*", "Aku sakit perut, terutama malam."],
+            ["*Am febră: treizeci și opt cu două.*", "Aku demam: tiga puluh delapan koma dua."],
+            ["*Am amețeli când mă ridic repede.*", "Aku pusing kalau bangun cepat-cepat."],
+            ["*Nu am poftă de mâncare de câteva zile.*", "Aku tidak nafsu makan beberapa hari ini."],
+            ["*Am avut o răceală, dar mi-a trecut.*", "Aku masuk angin, tapi sudah sembuh."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga jebakan kata",
+          "items": [
+            "***A durea* lawan *a avea dureri*.** *Mă doare* untuk sakit yang terasa sekarang; *am dureri de…* untuk sakit yang berulang: *am dureri de spate de un an*.",
+            "***Mi-a trecut* adalah cara Rumania berkata \"sembuh\":** datif dan tanpa pelaku — *mi-a trecut răceala*, *i-a trecut febra*. Untuk sembuh sama sekali: *m-am făcut bine*. Jangan memakai *a vindeca* (\"menyembuhkan orang lain\").",
+            "***Analize* lawan *investigații*.** *Analize* dari darah atau urin; *investigații* untuk pemeriksaan bergambar (*ecografie*, *radiografie*)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 13",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Menurut balai kota, pekerjaannya akan selesai pada musim gugur.", "*Potrivit primăriei, lucrările vor fi gata în toamnă.*"],
+            ["Seorang lelaki diduga mencuri uang dari kasir.", "*Un bărbat ar fi furat bani din casierie.*"],
+            ["Jumlah turis naik 12% dibanding tahun lalu.", "*Numărul turiștilor a crescut cu 12% față de anul trecut.*"],
+            ["Menteri itu menyatakan bahwa ia tidak akan mundur.", "*Ministrul a declarat că nu va demisiona.*"],
+            ["Berikutnya berita olahraga.", "*Urmează știrile sportive.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "medic de familie", "baca": "MÉ-dik dé fa-MI-li-yé", "id": "dokter keluarga (lk)"},
+    {"ro": "medic specialist", "baca": "MÉ-dik spé-cya-LIST", "id": "dokter spesialis (lk)"},
+    {"ro": "cabinet, cabinete", "baca": "ka-bi-NÉT, ka-bi-NÉ-té", "id": "ruang praktik dokter (nt)"},
+    {"ro": "programare, programări", "baca": "pro-gra-MA-ré, pro-gra-MER'", "id": "janji temu, jadwal (pr)"},
+    {"ro": "trimitere, trimiteri", "baca": "tri-MI-té-ré, tri-MI-tér'", "id": "surat rujukan (pr)"},
+    {"ro": "analiză, analize", "baca": "a-na-LI-ze, a-na-LI-zé", "id": "pemeriksaan laboratorium (pr)"},
+    {"ro": "rezultat, rezultate", "baca": "ré-zul-TAT, ré-zul-TA-té", "id": "hasil (nt)"},
+    {"ro": "asigurare de sănătate", "baca": "a-si-gu-RA-ré dé se-ne-TA-té", "id": "asuransi kesehatan (pr)"},
+    {"ro": "card de sănătate", "baca": "kard dé se-ne-TA-té", "id": "kartu kesehatan (nt)"},
+    {"ro": "rețetă, rețete", "baca": "ré-TSÉ-te, ré-TSÉ-té", "id": "resep dokter (pr)"},
+    {"ro": "tratament, tratamente", "baca": "tra-ta-MÉNT, tra-ta-MÉN-té", "id": "pengobatan (nt)"},
+    {"ro": "farmacie non-stop", "baca": "far-ma-CI-yé non-STOP", "id": "apotek 24 jam (pr)"},
+    {"ro": "spital, spitale", "baca": "spi-TAL, spi-TA-lé", "id": "rumah sakit (nt)"},
+    {"ro": "urgență, urgențe", "baca": "ur-JÉN-tse, ur-JÉN-tsé", "id": "kegawatan, keadaan darurat (pr)"},
+    {"ro": "ambulanță, ambulanțe", "baca": "am-bu-LAN-tse, am-bu-LAN-tsé", "id": "ambulans (pr)"},
+    {"ro": "camera de gardă", "baca": "KA-mé-ra dé GAR-de", "id": "unit gawat darurat (pr)"},
+    {"ro": "control, controale", "baca": "kon-TROL, kon-TROA-lé", "id": "pemeriksaan lanjutan (nt)"},
+    {"ro": "durere, dureri", "baca": "du-RÉ-ré, du-RÉR'", "id": "rasa sakit (pr)"},
+    {"ro": "febră", "baca": "FÉ-bre", "id": "demam (pr)"},
+    {"ro": "amețeală, amețeli", "baca": "a-mé-TSYA-le, a-mé-TSÉL'", "id": "pusing (pr)"},
+    {"ro": "laborator, laboratoare", "baca": "la-bo-ra-TOR, la-bo-ra-TOA-ré", "id": "laboratorium (nt)"},
+    {"ro": "a prescrie (prescriu, prescris)", "baca": "a prés-KRI-yé (prés-KRIU, prés-KRIS)", "id": "meresepkan"},
+    {"ro": "a recomanda (recomand)", "baca": "a ré-ko-man-DA (ré-ko-MAND)", "id": "menganjurkan, merekomendasikan"},
+    {"ro": "a supăra (supăr)", "baca": "a su-pe-RA (SU-per)", "id": "mengganggu; membuat kesal"},
+    {"ro": "a slăbi (slăbesc)", "baca": "a sle-BI (sle-BÉSK)", "id": "turun berat badan; melemah"},
+    {"ro": "pe nemâncate", "baca": "pé né-mîn-KA-té", "id": "dengan perut kosong"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Dianjurkan memeriksa lab sekali setahun.",
+        "Anda perlu meminum pengobatannya sampai habis.",
+        "Saya punya surat rujukan dari dokter keluarga.",
+        "Aku merasa jauh lebih baik sejak aku mengganti pengobatannya.",
+        "Semoga tidak ada yang serius.",
+        "Ada apotek 24 jam di pusat kota."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk konjunktif yang tepat.",
+      "items": [
+        "Se recomandă să ____ analize o dată pe an. (a face, dumneavoastră)",
+        "E necesar să ____ tratamentul până la capăt. (a lua, dumneavoastră)",
+        "E posibil să ____ doar stres. (a fi)",
+        "Este important să ____ la ore fixe. (a mânca, tu)",
+        "Nu e nevoie să ____ iar mâine. (a veni, dumneavoastră)",
+        "Sper să nu ____ nimic grav. (a fi)",
+        "E bine să ____ farmacistul înainte. (a întreba, tu)"
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat ini memakai ungkapan di dalam kurung.",
+      "items": [
+        "Trebuie să faceți analize o dată pe an. (se recomandă)",
+        "Trebuie să luați tratamentul până la capăt. (e necesar)",
+        "Poate că e doar stres. (e posibil)",
+        "Mănâncă la ore fixe! (este important)",
+        "Nu trebuie să veniți mâine. (nu e nevoie)",
+        "Analizele le fac dimineața. (bentuk se pasif)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "analize / se / să / o dată / recomandă / faceți / pe an",
+        "trimitere / am / de familie / o / de la / medicul",
+        "grav / nu / să / nimic / sper / fie",
+        "mă simt / de când / mult / am schimbat / bine / mai / tratamentul",
+        "necesar / capăt / e / tratamentul / la / luați / până / să"
+      ]
+    }
+  ],
+  "answers": [
+    "Se recomandă să faceți analize o dată pe an. — E necesar să luați tratamentul până la capăt. — Am o trimitere de la medicul de familie. — Mă simt mult mai bine de când am schimbat tratamentul. — Sper să nu fie nimic grav. — Există farmacii non-stop în centru.",
+    "faceți — luați — fie — mănânci — veniți — fie — întrebi",
+    "Se recomandă să faceți analize o dată pe an. — E necesar să luați tratamentul până la capăt. — E posibil să fie doar stres. — Este important să mănânci la ore fixe. — Nu e nevoie să veniți mâine. — Analizele se fac dimineața.",
+    "Se recomandă să faceți analize o dată pe an. — Am o trimitere de la medicul de familie. — Sper să nu fie nimic grav. — Mă simt mult mai bine de când am schimbat tratamentul. — E necesar să luați tratamentul până la capăt."
+  ]
+}

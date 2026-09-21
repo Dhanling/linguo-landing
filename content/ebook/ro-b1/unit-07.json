@@ -1,0 +1,321 @@
+{
+  "title": "Mungkin, katanya",
+  "title_target": "S-ar putea, se pare că",
+  "goal": "Berbicara tentang hal yang belum pasti tanpa kedengaran mengarang: melunakkan kabar dengan *poate, probabil, s-ar putea să, se pare că*, menandai kabar orang lain dengan *cică* dan *chipurile*, lalu menebak dengan bentuk khas Rumania yang tak ada padanannya di bahasa Indonesia — *prezumtivul*: *o fi uitat, or fi plecat, o fi dormind*.",
+  "bekal": [
+    "menyusun tangga kepastian, dari *sigur* sampai *cică*, dan tahu mana yang menuntut konjunktif (*s-ar putea să plece*) dan mana yang indikatif (*se pare că pleacă*)",
+    "memakai prezumtiv *o fi* + partisip untuk menebak masa lampau dan *o fi* + gerunziu untuk menebak yang sedang berlangsung",
+    "menandai kabar yang bukan milikmu — *cică, chipurile, se spune că, ar fi…* — dan bertanya-tanya sendirian dengan *oare*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Zvonuri la birou",
+      "intro": "Setengah sembilan lewat di kantor baru Budi di Piața Victoriei. Rapat mingguan seharusnya sudah mulai, tetapi ruangannya kosong. Ioana datang dengan gelas kopi dan kabar yang setengah matang. Perhatikan: hampir tiap kalimat di dialog ini dilapisi satu kata kecil yang berarti \"aku tidak menjamin\".",
+      "lines": [
+        {"speaker": "Budi:", "text": "Ioana, ședința nu era la zece? Nu e nimeni în sală.", "id": "Ioana, rapatnya bukan jam sepuluh? Tidak ada siapa-siapa di ruangan.", "literal": "Ioana, rapat-nya tidak ia-dulu-ada pada sepuluh? tidak ia-ada tak-seorang di ruang."},
+        {"speaker": "Ioana:", "text": "Se pare că au schimbat programul. Am văzut un e-mail azi-dimineață, dar l-am citit pe fugă.", "id": "Sepertinya jadwalnya diubah. Aku lihat ada surel tadi pagi, tapi kubaca sambil buru-buru.", "literal": "ia-refleksif-tampak bahwa mereka-sudah ubah program-nya. saya-sudah lihat sebuah-lk surel hari-ini-pagi, tetapi dia-lk-akusatif-saya-sudah baca pada lari."},
+        {"speaker": "Budi:", "text": "Oare ce s-a întâmplat? Ieri nimeni nu spunea nimic.", "id": "Sebenarnya apa yang terjadi, ya? Kemarin tidak ada yang bilang apa-apa.", "literal": "kiranya apa ia-refleksif-sudah terjadi? kemarin tak-seorang tidak ia-dulu-bilang tidak-ada-apa-apa."},
+        {"speaker": "Ioana:", "text": "Habar n-am. Poate că doamna Ionescu a mutat-o după-amiază.", "id": "Sama sekali tidak tahu. Mungkin Bu Ionescu memindahkannya ke sore.", "literal": "kabar tidak-saya-punya. mungkin bahwa nyonya-nya Ionescu ia-sudah pindahkan-dia-pr-akusatif sesudah-siang."},
+        {"speaker": "Budi:", "text": "Și domnul Marinescu? El vine?", "id": "Lalu Pak Marinescu? Dia datang?", "literal": "dan tuan-nya Marinescu? ia ia-datang?"},
+        {"speaker": "Ioana:", "text": "S-ar putea să întârzie puțin — probabil e încă în trafic.", "id": "Bisa jadi dia sedikit terlambat — kemungkinan masih di jalan.", "literal": "ia-refleksif-andai bisa agar ia-terlambat sedikit — barangkali ia-ada masih di lalu-lintas."},
+        {"speaker": "Budi:", "text": "Am auzit ceva despre Mihai. Cică s-ar muta la Cluj.", "id": "Aku dengar sesuatu soal Mihai. Katanya dia mau pindah ke Cluj.", "literal": "saya-sudah dengar sesuatu tentang Mihai. katanya ia-refleksif-andai pindah ke Cluj."},
+        {"speaker": "Ioana:", "text": "Cică, cică… De unde ai auzit?", "id": "Katanya, katanya… Dari mana kamu dengar?", "literal": "katanya, katanya… dari mana kamu-sudah dengar?"},
+        {"speaker": "Budi:", "text": "De la Andrei. El zice că Mihai și-a găsit ceva la un start-up de acolo.", "id": "Dari Andrei. Katanya Mihai sudah dapat tempat di sebuah start-up di sana.", "literal": "dari pada Andrei. ia ia-bilang bahwa Mihai diri-datif-ia-sudah temukan sesuatu pada sebuah-lk start-up dari di-sana."},
+        {"speaker": "Ioana:", "text": "S-ar putea să fie adevărat, dar până semnează, e doar un zvon.", "id": "Bisa jadi benar, tapi sebelum dia tanda tangan, itu cuma kabar angin.", "literal": "ia-refleksif-andai bisa agar ia-ada benar, tetapi sampai ia-tanda-tangan, ia-ada hanya sebuah-lk rumor."},
+        {"speaker": "Budi:", "text": "Chipurile, ar fi vorbit deja cu cei de la HR.", "id": "Konon dia sudah bicara dengan orang-orang HR.", "literal": "kabarnya, ia-andai ada bicara sudah dengan yang-lk-jamak dari pada HR."},
+        {"speaker": "Ioana:", "text": "Mă îndoiesc. Dacă ar fi vorbit, aș fi știut și eu.", "id": "Aku ragu. Kalau dia sudah bicara, aku pasti tahu juga.", "literal": "saya-refleksif saya-ragukan. kalau ia-andai ada bicara, saya-andai ada tahu juga saya."},
+        {"speaker": "Budi:", "text": "Uite, nu răspunde la telefon. O fi uitat, cine știe.", "id": "Nah, teleponnya tidak diangkat. Mungkin dia lupa, siapa tahu.", "literal": "lihat, tidak ia-jawab pada telepon. akan-ia ada lupa, siapa ia-tahu."},
+        {"speaker": "Ioana:", "text": "Sau o fi dormind. Aseară a stat până la două la un proiect.", "id": "Atau mungkin dia sedang tidur. Tadi malam dia kerja proyek sampai jam dua.", "literal": "atau akan-ia ada sedang-tidur. kemarin-malam ia-sudah diam sampai pada dua-pr pada sebuah-lk proyek."},
+        {"speaker": "Budi:", "text": "Atunci așteptăm. Între timp, îmi iau o cafea.", "id": "Kalau begitu kita tunggu. Sementara itu, aku ambil kopi.", "literal": "kalau-begitu kami-tunggu. antara waktu, saya-datif saya-ambil sebuah-pr kopi."},
+        {"speaker": "Ioana:", "text": "Ia-mi și mie una, te rog. Se pare că avem timp.", "id": "Ambilkan aku satu juga, ya. Sepertinya kita punya waktu.", "literal": "ambil-lah-saya-datif juga saya-datif satu-pr, kamu-akusatif saya-mohon. ia-refleksif-tampak bahwa kami-punya waktu."}
+      ],
+      "notes": [
+        "**Se pare că + indikatif.** *Se pare că au schimbat programul* — sesudah *se pare că* kata kerjanya biasa, bukan konjunktif. Jangan tertukar dengan ***mi se pare că***, yang menambahkan \"menurut perasaanku\": *Mi se pare cam scump* (unit 10). Ada juga sisipan singkat *pare-se*, yang diselipkan di tengah kalimat resmi: *Lucrările, pare-se, încep în toamnă.*",
+        "**S-ar putea să + konjunktif.** Bentuk ini harfiahnya \"bisa saja jadi bahwa…\" dan **selalu** menuntut *să*: *S-ar putea să întârzie*, bukan *s-ar putea că întârzie*. Untuk dugaan tentang masa lampau, *să* disusul *fi* + partisip — pola dari unit 2: *S-ar putea să fi uitat* (\"bisa jadi dia sudah lupa\"). Saudara netralnya *se poate să*, sedikit lebih kering dan lebih sering di mulut petugas.",
+        "**Poate ≠ poate.** Satu bentuk, dua pekerjaan: *poate* sebagai kata kerja (\"dia bisa\", *el poate veni*) dan *poate* sebagai kata keterangan (\"mungkin\", *poate vine*). Kalau ada bahaya salah paham, tambahkan *că*: *Poate că vine*. Yang **tidak** boleh: memasang konjunktif sesudahnya — *poate să vină* artinya \"dia boleh datang\", bukan \"mungkin dia datang\".",
+        "**Cică — kata paling Rumania di unit ini.** Asalnya lumer dari *se zice că* (\"dikatakan bahwa\"), dan pemakaiannya: melempar kabar tanpa memikulnya. Biasanya diikuti indikatif (*Cică se mută la Cluj*), tetapi kalau kamu ingin menjauh satu langkah lagi, pasang condițional: *Cică s-ar muta la Cluj*. Ini murni bahasa lisan — jangan sekali-kali menuliskannya di surel kantor.",
+        "**Chipurile** menambahkan sesuatu yang *cică* tidak punya: ketidakpercayaan si pembicara. *Chipurile, ar fi vorbit cu HR-ul* berarti \"katanya begitu, tapi aku tidak beli\". Sepupunya *vezi Doamne*, dengan nada mencemooh yang lebih keras lagi.",
+        "**O fi uitat. Sau o fi dormind.** Inilah prezumtiv: bentuk masa depan yang dipinjam untuk menebak. *O fi* + partisip = tebakan tentang yang sudah terjadi (*o fi uitat*, \"mungkin dia lupa\"); *o fi* + gerunziu = tebakan tentang yang sedang terjadi (*o fi dormind*, \"jangan-jangan dia sedang tidur\"). Pasangannya yang hampir wajib: *cine știe* di ujung kalimat."
+      ],
+      "grammars": [
+        {
+          "title": "Tangga kepastian — dari *sigur* sampai *cică*",
+          "body": [
+            "Bahasa Indonesia melunakkan kalimat dengan \"mungkin\", \"kayaknya\", \"katanya\", \"jangan-jangan\". Bahasa Rumania punya persediaan yang lebih rapi, dan yang membedakannya bukan cuma derajat keyakinan, melainkan **bentuk kata kerja yang dituntutnya**.",
+            "Hafalkan satu belahan saja: *s-ar putea* dan *se poate* menarik **konjunktif**; semua yang lain berjalan dengan **indikatif**."
+          ],
+          "table": {
+            "head": ["Seberapa yakin", "Penanda", "Bentuk kata kerja", "Contoh"],
+            "rows": [
+              ["kamu tahu", "*Știu că…*", "indikatif", "*Știu că a plecat.*"],
+              ["hampir yakin", "*Sigur…* · *Cu siguranță…*", "indikatif", "*Sigur a plecat deja.*"],
+              ["besar kemungkinan", "*Probabil…* · *Cred că…*", "indikatif", "*Probabil a plecat.*"],
+              ["mungkin", "*Poate…* · *Poate că…*", "indikatif", "*Poate că a plecat.*"],
+              ["bisa jadi", "**S-ar putea să…** · *Se poate să…*", "**konjunktif**", "*S-ar putea să plece.*"],
+              ["bisa jadi (lampau)", "**S-ar putea să fi…**", "**konjunktif perfect**", "*S-ar putea să fi plecat.*"],
+              ["tampaknya", "*Se pare că…* · *pare-se*", "indikatif", "*Se pare că a plecat.*"],
+              ["tebakan tanpa dasar", "prezumtiv **o fi…**", "*fi* + partisip / gerunziu", "*O fi plecat.*"],
+              ["kabar orang", "*Cică…* · *Chipurile…*", "indikatif atau condițional", "*Cică ar fi plecat.*"],
+              ["bertanya-tanya sendiri", "*Oare…?*", "indikatif", "*Oare a plecat?*"]
+            ]
+          },
+          "after": [
+            "**Oare tidak menuntut jawaban.** Ia menandai pertanyaan yang kamu ajukan kepada diri sendiri, atau yang kamu lemparkan ke udara: *Oare ce s-a întâmplat? Oare vine? Oare de ce n-a sunat?* Kalau kamu betul-betul menanyakannya kepada orang, buang *oare*. Di kalimat berita ia berarti \"barangkali saja\": *Oare n-ar fi mai bine să sunăm?*",
+            "**Letaknya di awal, tapi tidak wajib.** *Probabil, poate, sigur, pare-se* bisa berdiri di depan (*Probabil a plecat*), disisipkan (*A plecat, probabil, ieri*), atau berdiri sendiri sebagai jawaban (*— Vine? — Probabil.*). Yang **tidak** bisa berdiri sendiri: *s-ar putea* justru bisa (*— Vine? — S-ar putea.*), sedangkan *cică* tidak pernah.",
+            "**Negasi ganda tetap wajib.** Perhatikan baris ketiga dialog: *nimeni **nu** spunea **nimic***. Sebanyak apa pun kata negatif dalam satu kalimat Rumania, *nu* tetap harus ada — kebiasaan yang justru mudah bagi penutur Indonesia yang terbiasa menumpuk penegas.",
+            "**Jangan menumpuk dua penanda dugaan** dalam satu kalimat. *Probabil că s-ar putea să plece* terdengar seperti orang yang takut bicara. Pilih satu: *Probabil pleacă* atau *S-ar putea să plece*."
+          ]
+        },
+        {
+          "title": "Prezumtivul — masa depan yang dipakai untuk menebak",
+          "body": [
+            "Di sini bahasa Rumania melakukan sesuatu yang tak punya padanan di bahasa Indonesia: ia meminjam kata bantu masa depan (*voi, vei, va…*, dan versi pendeknya *oi, oi, o, om, oți, or*) untuk menyatakan **dugaan tentang sekarang atau masa lalu**. \"Dia akan sudah lupa\" dipakai untuk mengatakan \"mungkin dia lupa\".",
+            "Susunannya tetap: kata bantu + ***fi*** + partisip (dugaan tentang yang sudah selesai) atau + **gerunziu** (dugaan tentang yang sedang berjalan). Bentuk *fi* tidak pernah berubah."
+          ],
+          "table": {
+            "head": ["Pelaku", "Bentuk lisan", "Bentuk tulis", "+ partisip (dugaan lampau)", "+ gerunziu (dugaan kini)"],
+            "rows": [
+              ["eu", "**oi fi**", "*voi fi*", "*oi fi uitat*", "*oi fi dormind*"],
+              ["tu", "**oi fi** · *ăi fi*", "*vei fi*", "*oi fi uitat*", "*oi fi dormind*"],
+              ["el / ea", "**o fi**", "*va fi*", "*o fi uitat*", "*o fi dormind*"],
+              ["noi", "**om fi**", "*vom fi*", "*om fi uitat*", "*om fi dormind*"],
+              ["voi", "**oți fi**", "*veți fi*", "*oți fi uitat*", "*oți fi dormind*"],
+              ["ei / ele", "**or fi**", "*vor fi*", "*or fi uitat*", "*or fi dormind*"]
+            ]
+          },
+          "after": [
+            "**Gerunziu itu bentuk *-ând/-ind*** yang sudah kamu lihat di *mergând, dormind, lucrând, fiind, având*. Aturannya: kata kerja berakhiran *-a, -â, -ea, -e* mengambil *-ând* (*lucrând, coborând, văzând, mergând*), yang berakhiran *-i* mengambil *-ind* (*dormind, venind, citind*). Untuk unit ini kamu cuma perlu memasangkannya di belakang *o fi*.",
+            "**Tiga baris yang paling sering kamu dengar di jalan:** *O fi* + kata sifat, tanpa partisip (*O fi bolnav.* \"Mungkin dia sakit.\"), *Ce or fi făcut?* (\"Apa kira-kira yang mereka lakukan?\"), dan *Unde o fi?* (\"Di mana dia, ya?\"). Untuk pertanyaan, prezumtiv sering dipasangkan dengan *oare*: *Oare o fi uitat?*",
+            "**Bentuk lisan *o fi* lebih hidup daripada *va fi*.** *Va fi uitat* benar dan terpelajar, tetapi terdengar seperti bahasa buku; di percakapan orang memakai *o fi uitat*. Di sisi lain, *o fi* jangan dicampuradukkan dengan masa depan *o să* + konjunktif: *o să uite* = \"dia akan lupa\" (masa depan sungguhan), *o fi uitat* = \"mungkin dia sudah lupa\" (dugaan).",
+            "**Prezumtiv juga menyampaikan pengakuan kalah** dalam perdebatan: *Bine, o fi cum zici tu.* — \"Oke, mungkin memang seperti katamu.\" Nada yang sama dipakai untuk menutup obrolan yang tak ada ujungnya: *O fi, n-o fi… vedem.*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Verificăm zvonul",
+      "intro": "Sore itu Budi bertemu Raluca, teman barunya yang bekerja di redaksi berita daring. Ia penasaran: kalau di kantor saja rumor berjalan secepat itu, bagaimana orang yang pekerjaannya justru memeriksa kabar?",
+      "lines": [
+        {"speaker": "Budi:", "text": "Raluca, tu ești jurnalistă. Cum verifici un zvon?", "id": "Raluca, kamu jurnalis. Bagaimana caramu memeriksa sebuah rumor?", "literal": "Raluca, kamu kamu-adalah jurnalis-pr. bagaimana kamu-periksa sebuah-lk rumor?"},
+        {"speaker": "Raluca:", "text": "Întâi întreb: cine spune? Dacă nimeni nu-și pune numele, rămâne zvon.", "id": "Pertama aku tanya: siapa yang bilang? Kalau tidak ada yang mau menyebut namanya, ya tetap rumor.", "literal": "pertama saya-tanya: siapa ia-bilang? kalau tak-seorang tidak-diri-datif ia-taruh nama-nya, ia-tetap rumor."},
+        {"speaker": "Budi:", "text": "La birou se spune că unul dintre colegi ar pleca la Cluj.", "id": "Di kantor dikatakan bahwa salah satu rekan kerja akan pergi ke Cluj.", "literal": "pada kantor ia-refleksif-bilang bahwa satu-lk dari-antara rekan-jamak ia-andai pergi ke Cluj."},
+        {"speaker": "Raluca:", "text": "Vezi? „Ar pleca”. Chiar tu ai spus-o la condițional, fără să-ți dai seama.", "id": "Lihat? \"Akan pergi\". Kamu sendiri mengatakannya dalam bentuk kondisional, tanpa sadar.", "literal": "kamu-lihat? „ia-andai pergi”. justru kamu kamu-sudah bilang-dia-pr-akusatif pada kondisional, tanpa agar-kamu-datif kamu-beri kesadaran."},
+        {"speaker": "Budi:", "text": "Deci și voi folosiți condiționalul ca să vă acoperiți?", "id": "Jadi kalian juga pakai kondisional supaya aman?", "literal": "jadi juga kalian kalian-pakai kondisional-nya agar kalian-refleksif kalian-tutupi?"},
+        {"speaker": "Raluca:", "text": "Exact. „Ar fi demisionat” nu e același lucru cu „a demisionat”.", "id": "Tepat. \"Katanya mengundurkan diri\" bukan hal yang sama dengan \"mengundurkan diri\".", "literal": "tepat. „ia-andai ada mengundurkan-diri” tidak ia-ada sama hal dengan „ia-sudah mengundurkan-diri”."},
+        {"speaker": "Budi:", "text": "Și cum sună când sunteți siguri?", "id": "Lalu bunyinya bagaimana kalau kalian yakin?", "literal": "dan bagaimana ia-berbunyi ketika kalian-adalah yakin-lk-jamak?"},
+        {"speaker": "Raluca:", "text": "Simplu, la indicativ: a demisionat ieri. Fără cică, fără chipurile.", "id": "Sederhana, pakai indikatif: dia mengundurkan diri kemarin. Tanpa cică, tanpa chipurile.", "literal": "sederhana, pada indikatif: ia-sudah mengundurkan-diri kemarin. tanpa katanya, tanpa kabarnya."},
+        {"speaker": "Budi:", "text": "Interesant. Eu credeam că cică e doar o vorbă de la țară.", "id": "Menarik. Aku pikir cică itu cuma kata orang kampung.", "literal": "menarik. saya saya-dulu-percaya bahwa katanya ia-ada hanya sebuah-pr kata dari pada desa."},
+        {"speaker": "Raluca:", "text": "Se folosește peste tot, dar numai vorbit. Într-o știre n-o scrii niciodată.", "id": "Dipakai di mana-mana, tapi cuma lisan. Di sebuah berita kamu tidak akan pernah menuliskannya.", "literal": "ia-refleksif-pakai atas semua, tetapi hanya berbicara. di-dalam-sebuah-pr berita tidak-dia-pr-akusatif kamu-tulis tak-pernah."},
+        {"speaker": "Budi:", "text": "Atunci de acum spun „se pare că”. Sună mai serios.", "id": "Kalau begitu mulai sekarang aku bilang \"se pare că\". Kedengaran lebih serius.", "literal": "kalau-begitu dari sekarang saya-bilang „ia-refleksif-tampak bahwa”. ia-berbunyi lebih serius."},
+        {"speaker": "Raluca:", "text": "Bravo. Și dacă chiar nu știi, spune sincer: nu știu. Sună mai bine decât o presupunere greșită.", "id": "Bagus. Dan kalau memang tidak tahu, bilang terus terang: aku tidak tahu. Kedengaran lebih baik daripada dugaan yang salah.", "literal": "bagus. dan kalau sungguh tidak kamu-tahu, bilang-lah tulus: tidak saya-tahu. ia-berbunyi lebih baik daripada sebuah-pr dugaan salah-pr."}
+      ],
+      "notes": [
+        "**Se spune că… — pelakunya sengaja disembunyikan.** Bentuk *se* + kata kerja orang ketiga ini adalah cara paling umum mengatakan \"orang bilang\", \"dikabarkan\": *se spune, se zice, se aude, se vorbește*. Ia keluarga dekat pasif *se* yang dipasang lengkap di unit 8.",
+        "**Ar pleca — condițional sebagai tameng.** Di mulut Raluca, condițional bukan pengandaian lagi, melainkan penanda \"belum kami pastikan\". Inilah *condiționalul jurnalistic*: *ar fi furat, ar fi declarat, ar fi demisionat*. Di berita Rumania kamu akan menemuinya setiap hari, dan unit 13 akan membedahnya lebih jauh.",
+        "**Fără să-ți dai seama.** *A-și da seama* (menyadari) selalu membawa kata ganti datif yang ikut pelakunya: *îmi dau seama, îți dai seama, și-a dat seama, ne-am dat seama*. Pasangan *fără să* + konjunktif sudah kamu pasang di unit 6.",
+        "**Nu e același lucru cu…** — kerangka pembanding yang sangat berguna untuk berdebat: *Nu e același lucru cu…*, *Nu e chiar la fel*, *E cu totul altceva*. Perhatikan *același* (lk) lawan *aceeași* (pr): *același lucru*, *aceeași problemă*.",
+        "**Nu știu — jawaban yang paling sering kurang dipakai.** Di akhir dialog Raluca memberi nasihat yang berlaku dalam bahasa apa pun. Versi Rumania yang enak dipakai: *Nu știu, sincer.* · *Chiar nu știu.* · *Prefer să nu spun, ca să nu greșesc.*"
+      ],
+      "grammars": [
+        {
+          "title": "Kalau kabarnya belum pasti: lima cara aman",
+          "body": [
+            "Kelima baris di bawah menyampaikan isi yang sama — *Mihai pindah ke Cluj* — tetapi menempatkan tanggung jawab di tempat yang berbeda. Pilih menurut seberapa jauh kamu ingin berdiri dari kabarnya."
+          ],
+          "table": {
+            "head": ["Bentuk", "Contoh", "Yang tersirat"],
+            "rows": [
+              ["*Se spune că…*", "*Se spune că se mută la Cluj.*", "banyak orang bilang; aku tak menjamin"],
+              ["*Am auzit că…*", "*Am auzit că se mută la Cluj.*", "aku dengar dari seseorang yang tak kusebut"],
+              ["condițional *ar…*", "*S-ar muta la Cluj.*", "belum dipastikan siapa pun — ragam pers"],
+              ["*Cică…*", "*Cică se mută la Cluj.*", "hanya lisan; tak pernah masuk berita tertulis"],
+              ["*Chipurile…*", "*Chipurile se mută la Cluj.*", "kabarnya begitu, tapi aku sendiri tak percaya"]
+            ]
+          },
+          "after": [
+            "Kalau kamu **yakin**, buang semuanya dan biarkan indikatif berdiri telanjang: *Se mută la Cluj.* Kalimat pendek tanpa lapisan justru yang paling meyakinkan — dan di bahasa Rumania, seperti di bahasa Indonesia, orang yang melapisi setiap kalimat dengan *cică* lama-lama tidak didengar lagi."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Seberapa yakin kamu?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**sigur** · **cu siguranță**", "SI-gur · ku si-gu-RAN-tse", "pasti · dengan pasti"],
+            ["**desigur** · **normal că da**", "dé-SI-gur · nor-MAL ke da", "tentu saja · jelas iya"],
+            ["**probabil**", "pro-BA-bil", "kemungkinan besar"],
+            ["**poate** · **poate că**", "POA-té · POA-té ke", "mungkin"],
+            ["**s-ar putea**", "sar pu-TYA", "bisa jadi"],
+            ["**se pare că**", "sé PA-ré ke", "sepertinya"],
+            ["**pare-se**", "PA-ré sé", "rupanya (disisipkan di tengah)"],
+            ["**cică**", "CI-ke", "katanya, kabarnya"],
+            ["**chipurile**", "KI-pu-ri-lé", "konon (dengan nada tak percaya)"],
+            ["**oare**", "OA-ré", "kira-kira, apa gerangan"],
+            ["**habar n-am**", "ha-BAR nam", "sama sekali tidak tahu"],
+            ["**cine știe**", "CI-né SYTI-yé", "siapa tahu"],
+            ["**mă îndoiesc**", "me în-do-YÉSK", "aku ragu"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dua jebakan kecil di daftar ini. Pertama, *s-ar putea* tak pernah berdiri tanpa *să* kalau ada kata kerja di belakangnya — tetapi **boleh** berdiri sendiri sebagai jawaban: *— Vine Ioana? — S-ar putea.* Kedua, *poate* yang berarti \"mungkin\" tidak ikut pelaku sama sekali; ia batu yang tak bergerak: *Poate vin, poate vii, poate venim*. Begitu kamu menulis *poate să vină*, artinya berubah jadi \"dia boleh datang\". Dan perhatikan cara baca *cică*: *ci* dibaca **ci**, jadi `CI-ke` — bukan `si-ke`."
+        },
+        {
+          "type": "kotak",
+          "title": "Gura lumii — empat kata untuk kabar yang berjalan sendiri",
+          "items": [
+            "***zvon*** (nt, jamak *zvonuri*) — kabar angin, rumor. Netral: *un zvon se confirmă sau se infirmă*. Kata kerjanya *a se auzi*: *Se aude că…*",
+            "***bârfă*** (pr, jamak *bârfe*) — gosip, dan *a bârfi* berarti membicarakan orang di belakangnya. Ini bukan netral: *bârfă* selalu sedikit kotor.",
+            "***gura lumii*** — harfiahnya \"mulut dunia\", persis \"kata orang\" bahasa Indonesia. Nasihat yang sering kamu dengar: *Nu te lua după gura lumii.*",
+            "***pe surse*** — istilah redaksi: kabar yang dikutip dari sumber yang tak disebut namanya. Di berita Rumania kamu akan membaca *informații pe surse*, dan sesudahnya hampir pasti muncul condițional *ar fi…*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menanggapi kabar yang belum pasti",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Serios? De unde știi?*", "Serius? Dari mana kamu tahu?"],
+            ["*Cine ți-a spus?*", "Siapa yang bilang ke kamu?"],
+            ["*Mă îndoiesc.* · *Nu cred.*", "Aku ragu. · Aku tidak percaya."],
+            ["*Se poate.* · *Totul e posibil.*", "Bisa jadi. · Segala hal mungkin."],
+            ["*Nu m-ar surprinde.*", "Aku tidak akan kaget."],
+            ["*Nu știu ce să zic.*", "Aku tidak tahu harus bilang apa."],
+            ["*Să vedem.* · *Rămâne de văzut.*", "Kita lihat saja. · Masih harus dilihat."],
+            ["*Deocamdată nu e sigur nimic.*", "Sampai sekarang belum ada yang pasti."],
+            ["*Până se confirmă, e doar un zvon.*", "Sebelum dipastikan, itu cuma kabar angin."],
+            ["*Eu n-am auzit nimic.*", "Aku belum dengar apa-apa."],
+            ["*O fi, n-o fi… vedem.*", "Mungkin iya, mungkin tidak… kita lihat."],
+            ["*Lasă, nu te lua după gura lumii.*", "Sudahlah, jangan ikut kata orang."],
+            ["*Hai să nu tragem concluzii pripite.*", "Jangan buru-buru menyimpulkan."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Satu pilihan halus yang layak kamu ketahui: sesudah *nu cred*, bahasa Rumania boleh memakai indikatif atau konjunktif, dan keduanya tidak sama beratnya. *Nu cred că e adevărat* = \"aku tidak percaya itu benar\" — kamu punya pendapat. *Nu cred să fie adevărat* = \"aku rasa itu tidak benar\" — lebih lembut, lebih ragu, dan lebih sopan di kantor. Pola yang sama berlaku untuk *nu zic că* dan *nu spun că*. Kalau kamu ingin melunakkan sekali lagi, tambahkan *sincer* atau *după câte știu*: *Sincer, nu cred să fie adevărat.* · *După câte știu, încă nu s-a semnat nimic.*"
+        },
+        {
+          "type": "kotak",
+          "title": "Menonton berita di Rumania: di mana kata-kata unit ini muncul",
+          "items": [
+            "Siaran berita yang paling sering dinyalakan orang di rumah adalah *Digi24*, *Antena 3* dan *Observator* di Antena 1, plus *Știrile Pro TV*. Rubriknya diakhiri *știrile sportive* dan *vremea*.",
+            "Dengarkan bagaimana pembaca berita membungkus kabar yang belum pasti: *ar fi declarat*, *surse din anchetă susțin că*, *potrivit unor surse*. Semuanya menyampaikan hal yang sama dengan *cică* — hanya dengan setelan jas.",
+            "Sebaliknya, *cică* dan *chipurile* hidup di dapur, di halte bus, dan di grup WhatsApp keluarga. Kalau kamu ingin terdengar seperti orang setempat dan bukan seperti pembaca berita, dua kata ini lebih berguna daripada sepuluh kata resmi.",
+            "Latihan kecil yang manjur: tonton satu berita tiga menit tanpa membaca teks, lalu ceritakan ulang kepada dirimu sendiri dengan tiga tingkat kepastian — *Sigur…*, *Se pare că…*, *Cică…* Kamu akan langsung merasakan mana yang jujur dan mana yang sedang berlindung."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 5",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Aku terlambat karena lalu lintas.", "*Am întârziat din cauza traficului.*"],
+            ["Berkat Ioana aku menemukan apartemen itu.", "*Datorită Ioanei am găsit apartamentul.*"],
+            ["Aku tidak datang, sebab aku sedang sakit.", "*N-am venit, deoarece eram bolnav.*"],
+            ["Ramai sekali, sampai-sampai aku tidak bisa masuk.", "*Era atât de aglomerat, încât n-am putut intra.*"],
+            ["Karena itu, kita harus mengubah rencananya.", "*Prin urmare, trebuie să schimbăm planul.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "zvon, zvonuri", "baca": "zvon, ZVO-nur'", "id": "kabar angin, rumor (nt)"},
+    {"ro": "bârfă, bârfe", "baca": "BÎR-fe, BÎR-fé", "id": "gosip (pr)"},
+    {"ro": "presupunere, presupuneri", "baca": "pré-su-PU-né-ré, pré-su-PU-nér'", "id": "dugaan (pr)"},
+    {"ro": "sursă, surse", "baca": "SUR-se, SUR-sé", "id": "sumber (pr)"},
+    {"ro": "știre, știri", "baca": "SYTI-ré, SYTIR'", "id": "berita (pr)"},
+    {"ro": "adevăr, adevăruri", "baca": "a-dé-VER, a-dé-VE-rur'", "id": "kebenaran (nt)"},
+    {"ro": "minciună, minciuni", "baca": "min-CYU-ne, min-CYUN'", "id": "kebohongan (pr)"},
+    {"ro": "a se îndoi (mă îndoiesc)", "baca": "a sé în-do-I (me în-do-YÉSK)", "id": "meragukan"},
+    {"ro": "a verifica (verific)", "baca": "a vé-ri-fi-KA (vé-RI-fik)", "id": "memeriksa, mengecek"},
+    {"ro": "a confirma (confirm)", "baca": "a kon-fir-MA (kon-FIRM)", "id": "memastikan, mengonfirmasi"},
+    {"ro": "a presupune (presupun, presupus)", "baca": "a pré-su-PU-né (pré-su-PUN, pré-su-PUS)", "id": "menduga, mengira"},
+    {"ro": "a bănui (bănuiesc)", "baca": "a be-nu-I (be-nu-YÉSK)", "id": "menduga, mencurigai"},
+    {"ro": "a se întâmpla (se întâmplă)", "baca": "a sé în-tîm-PLA (sé în-TÎM-ple)", "id": "terjadi"},
+    {"ro": "a întârzia (întârzii)", "baca": "a în-tîr-zi-A (în-TÎR-zi)", "id": "terlambat, menunda"},
+    {"ro": "a se muta (mă mut)", "baca": "a sé mu-TA (me mut)", "id": "pindah"},
+    {"ro": "a demisiona (demisionez)", "baca": "a dé-mi-si-o-NA (dé-mi-si-o-NÉZ)", "id": "mengundurkan diri"},
+    {"ro": "a bârfi (bârfesc)", "baca": "a bîr-FI (bîr-FÉSK)", "id": "menggosipkan"},
+    {"ro": "a-și da seama", "baca": "asy' da SÉA-ma", "id": "menyadari"},
+    {"ro": "cică", "baca": "CI-ke", "id": "katanya, kabarnya"},
+    {"ro": "chipurile", "baca": "KI-pu-ri-lé", "id": "konon (nada tak percaya)"},
+    {"ro": "pare-se", "baca": "PA-ré sé", "id": "rupanya"},
+    {"ro": "oare", "baca": "OA-ré", "id": "kira-kira, apa gerangan"},
+    {"ro": "probabil", "baca": "pro-BA-bil", "id": "kemungkinan besar"},
+    {"ro": "desigur", "baca": "dé-SI-gur", "id": "tentu saja"},
+    {"ro": "deocamdată", "baca": "dé-o-kam-DA-te", "id": "sampai sekarang, untuk sementara"},
+    {"ro": "habar n-am", "baca": "ha-BAR nam", "id": "sama sekali tidak tahu"},
+    {"ro": "cine știe", "baca": "CI-né SYTI-yé", "id": "siapa tahu"},
+    {"ro": "gura lumii", "baca": "GU-ra LU-mi", "id": "kata orang, mulut orang"},
+    {"ro": "între timp", "baca": "ÎN-tré timp", "id": "sementara itu"},
+    {"ro": "pe fugă", "baca": "pé FU-ge", "id": "sambil buru-buru"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Bisa jadi dia sedikit terlambat.",
+        "Sepertinya mereka mengubah jadwalnya.",
+        "Katanya dia mau pindah ke Cluj. (pakai *cică* dan condițional)",
+        "Sebenarnya apa yang terjadi, ya?",
+        "Mungkin dia lupa, siapa tahu. (pakai prezumtiv)",
+        "Aku ragu. Aku belum dengar apa-apa."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk dugaan yang diminta di dalam kurung.",
+      "items": [
+        "____ uitat, cine știe. (prezumtiv, el)",
+        "S-ar putea să ____ puțin. (a întârzia, el)",
+        "Se pare că ____ programul. (a schimba, ei)",
+        "Cică ____ la Cluj. (a se muta, condițional, el)",
+        "Unde ____ Andrei acum? (prezumtiv, el)",
+        "____ ce s-a întâmplat? (kata penanda \"kira-kira\")",
+        "Or fi ____ deja. (a pleca)"
+      ]
+    },
+    {
+      "prompt": "Ubah kalimat yang pasti ini jadi kalimat dugaan, dengan penanda yang diminta di dalam kurung.",
+      "items": [
+        "A uitat. (prezumtiv)",
+        "Întârzie puțin. (s-ar putea să)",
+        "Au schimbat programul. (se pare că)",
+        "Se mută la Cluj. (cică + condițional)",
+        "Ce s-a întâmplat? (oare)",
+        "Andrei doarme acum. (prezumtiv dengan gerunziu)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "puțin / întârzie / să / s-ar putea",
+        "programul / se pare / au schimbat / că",
+        "la cluj / cică / s-ar muta",
+        "s-a întâmplat / ce / oare / ?",
+        "o fi / uitat / , / cine / știe"
+      ]
+    }
+  ],
+  "answers": [
+    "S-ar putea să întârzie puțin. — Se pare că au schimbat programul. — Cică s-ar muta la Cluj. — Oare ce s-a întâmplat? — O fi uitat, cine știe. — Mă îndoiesc. N-am auzit nimic.",
+    "O fi — întârzie — au schimbat — s-ar muta — o fi — Oare — plecat",
+    "O fi uitat. — S-ar putea să întârzie puțin. — Se pare că au schimbat programul. — Cică s-ar muta la Cluj. — Oare ce s-a întâmplat? — Andrei o fi dormind acum.",
+    "S-ar putea să întârzie puțin. — Se pare că au schimbat programul. — Cică s-ar muta la Cluj. — Oare ce s-a întâmplat? — O fi uitat, cine știe."
+  ]
+}

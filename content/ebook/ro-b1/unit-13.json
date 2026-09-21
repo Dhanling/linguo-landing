@@ -1,0 +1,307 @@
+{
+  "title": "Berita hari ini",
+  "title_target": "Știrile de azi",
+  "goal": "Membaca dan mendengar berita Rumania tanpa panik: menyebut sumber dengan *potrivit / conform* + genitif, memakai *ar fi* + partisip untuk kabar yang belum dipastikan, dan menyebut angka serta persen dengan rumus yang dipakai semua redaksi.",
+  "bekal": [
+    "menyebut sumber berita dengan *potrivit* dan *conform* + genitif (*potrivit primăriei, conform poliției*)",
+    "memakai prezumtiv jurnalistik *ar fi* + partisip (*ar fi furat, ar fi declarat*) untuk menjaga jarak dari kabar yang belum pasti",
+    "membaca judul tanpa kata kerja dan menyebut perubahan angka dengan *a crescut cu … față de …*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ce scrie în știri?",
+      "intro": "Raluca bekerja di sebuah redaksi berita daring dekat Piața Victoriei. Budi mampir sesudah jam kantor karena penasaran: kenapa judul berita Rumania terasa seperti kalimat yang belum selesai, dan kenapa semua berita kriminal ditulis dengan *ar fi*.",
+      "lines": [
+        {"speaker": "Raluca:", "text": "Bine ai venit în redacție! Stai jos, mai am zece minute până trimit știrile.", "id": "Selamat datang di redaksi! Duduk dulu, aku masih punya sepuluh menit sebelum mengirim beritanya.", "literal": "baik kamu-sudah datang di redaksi! duduk-lah bawah, lagi saya-punya sepuluh menit-jamak sampai saya-kirim berita-jamak-nya."},
+        {"speaker": "Budi:", "text": "Spune-mi ceva: titlurile voastre n-au niciodată verb. De ce?", "id": "Coba jelaskan: judul-judul kalian tidak pernah punya kata kerja. Kenapa?", "literal": "katakan-lah-saya-datif sesuatu: judul-jamak-nya kalian-punya tidak-mereka-punya tak-pernah kata-kerja. dari apa?"},
+        {"speaker": "Raluca:", "text": "În titlu punem numai esențialul: *Lucrări noi în centru*, *Trafic blocat pe centură*. Ca la telegraf.", "id": "Di judul kami taruh yang paling penting saja: *Lucrări noi în centru*, *Trafic blocat pe centură*. Seperti telegram.", "literal": "di judul kami-taruh hanya inti-nya: pekerjaan-jamak baru-pr-jamak di pusat, lalu-lintas terhalang pada lingkar-nya. seperti pada telegraf."},
+        {"speaker": "Budi:", "text": "Și în text? Tot așa de scurt?", "id": "Lalu di dalam teksnya? Sependek itu juga?", "literal": "dan di teks? semua begitu dari pendek?"},
+        {"speaker": "Raluca:", "text": "Nu, în text ai nevoie de sursă. **Potrivit primăriei, lucrările vor fi gata în toamnă.**", "id": "Tidak, di dalam teks kamu butuh sumber. *Potrivit primăriei, lucrările vor fi gata în toamnă.*", "literal": "tidak, di teks kamu-punya kebutuhan dari sumber. menurut kota-nya-genitif, pekerjaan-jamak-nya akan ada siap di musim-gugur."},
+        {"speaker": "Budi:", "text": "*Potrivit primăriei* — deci genitiv, ca la *conform legii*.", "id": "*Potrivit primăriei* — jadi genitif, seperti di *conform legii*.", "literal": "menurut kota-nya-genitif — jadi genitif, seperti pada sesuai hukum-nya-genitif."},
+        {"speaker": "Raluca:", "text": "Exact. Iar când informația nu e confirmată, trecem la condițional: **Un bărbat ar fi furat bani din casierie.**", "id": "Tepat. Dan kalau informasinya belum dipastikan, kami pindah ke kondisional: *Un bărbat ar fi furat bani din casierie.*", "literal": "tepat. dan ketika informasi-nya tidak ia-adalah dipastikan-pr, kami-pindah pada kondisional: sebuah-lk lelaki ia-andai ada mencuri uang-jamak dari kasir-nya."},
+        {"speaker": "Budi:", "text": "*Ar fi furat*, ca la *aș fi vrut*? Credeam că formula aia e numai pentru regrete.", "id": "*Ar fi furat*, seperti di *aș fi vrut*? Kupikir rumus itu cuma untuk penyesalan.", "literal": "ia-andai ada mencuri, seperti pada saya-andai ada mau? saya-mengira bahwa rumus-nya itu-pr ia-adalah hanya untuk penyesalan-jamak."},
+        {"speaker": "Raluca:", "text": "Aceeași formă, altă treabă. În presă înseamnă \"diduga\": poliția anchetează, noi nu afirmăm nimic.", "id": "Bentuknya sama, kerjanya lain. Di pers artinya \"diduga\": polisi menyelidiki, kami tidak menyatakan apa pun.", "literal": "sama-pr bentuk, lain-pr kerja. di pers ia-berarti diduga: polisi-nya ia-selidiki, kami tidak kami-nyatakan tak-apa-pun."},
+        {"speaker": "Budi:", "text": "E ca *cică* de la unitatea șapte, dar fără bârfă.", "id": "Mirip *cică* dari unit tujuh, tapi tanpa gosip.", "literal": "ia-adalah seperti katanya dari unit-nya tujuh, tetapi tanpa gosip."},
+        {"speaker": "Raluca:", "text": "Bine spus. Dacă avem înregistrarea, scriem simplu: **Ministrul a declarat că nu va demisiona.**", "id": "Tepat. Kalau rekamannya ada, kami tulis lugas: *Ministrul a declarat că nu va demisiona.*", "literal": "baik dikatakan. kalau kami-punya rekaman-nya, kami-tulis sederhana: menteri-nya ia-sudah menyatakan bahwa tidak ia-akan mundur."},
+        {"speaker": "Budi:", "text": "Și cifrele? Mă pierd mereu la procente.", "id": "Lalu angka-angkanya? Aku selalu tersesat di persen.", "literal": "dan angka-jamak-nya? saya-refleksif saya-hilang selalu pada persen-jamak."},
+        {"speaker": "Raluca:", "text": "Formula e fixă: *a crescut cu* atât *față de* ce compari. **Numărul turiștilor a crescut cu 12% față de anul trecut.**", "id": "Rumusnya baku: *a crescut cu* sekian *față de* apa yang kamu bandingkan. *Numărul turiștilor a crescut cu 12% față de anul trecut.*", "literal": "rumus-nya ia-adalah tetap: ia-sudah naik dengan sebanyak terhadap dari apa kamu-bandingkan. jumlah-nya turis-jamak-nya-genitif ia-sudah naik dengan dua-belas persen terhadap dari tahun-nya lewat."},
+        {"speaker": "Raluca:", "text": "Gata, am trimis. Aprinde televizorul, e ora unu. Auzi? **Urmează știrile sportive.**", "id": "Sudah, terkirim. Nyalakan televisinya, jam satu. Dengar? *Urmează știrile sportive.*", "literal": "siap, saya-sudah kirim. nyalakan-lah televisi-nya, ia-adalah jam satu. kamu-dengar? ia-menyusul berita-jamak-nya olahraga-pr-jamak."},
+        {"speaker": "Budi:", "text": "Atunci mai rămân un sfert de oră, fără subtitrare.", "id": "Kalau begitu aku tinggal seperempat jam lagi, tanpa teks terjemahan.", "literal": "kalau-begitu lagi saya-tinggal sebuah-lk seperempat dari jam, tanpa teks-terjemahan."}
+      ],
+      "notes": [
+        "**Potrivit primăriei — sumber dulu, berita kemudian.** *Potrivit* dan *conform* menuntut bentuk genitif-datif: *primărie → primăriei*, *poliție → poliției*, *lege → legii*, *ministru → ministrului*, *surse → surselor*. Kabar baiknya, untuk kata benda Rumania genitif dan datif berbentuk **sama**, jadi cukup satu bentuk. Letaknya hampir selalu di awal kalimat dan dipisah koma, persis \"menurut…\" dalam bahasa Indonesia.",
+        "**Titlu tanpa kata kerja.** Judul dipadatkan sampai tinggal intinya: *Lucrări noi în centru*, *Trafic blocat pe centură*, *Turiști mai mulți la munte*. Kata kerjanya dibuang, artikelnya sering dibuang juga; yang tinggal adalah kata benda + kata sifat atau partisip. Begitu masuk ke tubuh berita, kalimatnya kembali lengkap dan berartikel: *lucrări* jadi *lucrările*.",
+        "**Ar fi furat — kabar yang belum dipastikan.** Bentuknya sama dengan *condițional perfect* unit 2 (*aș fi vrut*), tetapi tugasnya lain: bukan penyesalan, melainkan **jarak**. Redaksi memakainya supaya tidak menuduh. *Ar fi furat* = \"diduga mencuri\", *ar fi declarat* = \"disebut menyatakan\", *ar fi demisionat* = \"dikabarkan mengundurkan diri\".",
+        "**A crescut cu 12% față de anul trecut.** Tiga bagian yang tak boleh ditukar: kata kerja perubahan (*a crescut, a scăzut*), *cu* + besar perubahannya, lalu *față de* + pembandingnya. Awas jebakan yang juga menjegal orang Rumania: *cu* menyebut **selisih** (*a crescut cu 12%* = naik 12%), *la* menyebut **hasil akhir** (*a crescut la 12%* = naik menjadi 12%).",
+        "**Urmează.** Satu kata untuk \"berikutnya…\", \"sebentar lagi…\". Kata kerjanya *a urma*, dan di siaran ia berdiri di depan: *Urmează știrile sportive. Urmează publicitate.* Di kantor bentuk lainnya sama bergunanya: *Ce urmează?* dan *Urmează să semnăm contractul* (\"kontraknya menyusul kami tanda tangani\").",
+        "**Numărul turiștilor.** Gaya pers hidup dari genitif berantai: *numărul turiștilor*, *prețul biletelor*, *decizia primăriei*, *rezultatele anchetei*. Jamak lelaki dan jamak perempuan sama-sama berakhir *-lor* (*turiști → turiștilor*, *bilete → biletelor*). Kalau kalimatnya mulai melilit, potong jadi dua — teknik unit 9 tetap berlaku di sini."
+      ],
+      "grammars": [
+        {
+          "title": "Prezumtiv jurnalistik — *ar fi* + partisip",
+          "body": [
+            "Bentuknya kamu sudah punya sejak unit 2: kata bantu *condițional* + *fi* + partisip. Yang baru hanya **tugasnya**. Di unit 2 ia berbunyi \"seharusnya, sayangnya\"; di berita ia berbunyi \"katanya, diduga, belum dipastikan\". *Fi* tidak berubah, partisipnya juga tidak — dan di berita kata bantunya hampir selalu *ar fi*, karena beritanya tentang orang ketiga."
+          ],
+          "table": {
+            "head": ["Pelaku", "Kata bantu", "Contoh", "Arti di berita"],
+            "rows": [
+              ["eu", "*aș fi*", "*aș fi greșit cifra*", "barangkali saya salah tulis angkanya"],
+              ["tu", "*ai fi*", "*ai fi uitat parola*", "kamu rupanya lupa kata sandinya"],
+              ["el / ea", "**ar fi**", "*ar fi furat bani*", "diduga mencuri uang"],
+              ["noi", "*am fi*", "*am fi pierdut dosarul*", "kami rupanya kehilangan berkasnya"],
+              ["voi", "*ați fi*", "*ați fi semnat deja*", "Anda disebut sudah menandatangani"],
+              ["ei / ele", "**ar fi**", "*ar fi plecat aseară*", "mereka diduga pergi tadi malam"]
+            ]
+          },
+          "after": [
+            "**Untuk keadaan sekarang, *fi* berdiri sendiri tanpa partisip:** *Prejudiciul ar fi de câteva mii de lei. Suspectul ar fi un bărbat de treizeci de ani.* Terjemahannya tetap \"diduga\".",
+            "**Saingannya, prezumtiv unit 7** (*o fi furat, va fi plecat*), lebih lisan dan lebih spekulatif: *O fi uitat, cine știe.* Redaksi memilih *ar fi* karena terdengar netral, bukan menggosip.",
+            "**Begitu ada konfirmasi, *ar fi* langsung hilang:** *Poliția a confirmat că bărbatul a furat banii.* Kalau satu paragraf memakai *ar fi* dan paragraf berikutnya indikatif, itu bukan kelalaian penulis — ia sedang menandai mana yang sudah pasti.",
+            "**Negasinya di depan kata bantu:** *nu ar fi furat*, dalam percakapan *n-ar fi furat*."
+          ]
+        },
+        {
+          "title": "Angka, persen, dan arah perubahan",
+          "body": [
+            "Bagian berita yang paling gampang dipelajari, karena rumusnya sedikit dan berulang terus. Subjeknya hampir selalu angka, jadi kata kerjanya selalu orang ketiga."
+          ],
+          "table": {
+            "head": ["Rumus", "Contoh", "Arti"],
+            "rows": [
+              ["*a crescut* **cu** + selisih", "*a crescut cu 12%*", "naik 12%"],
+              ["*a crescut* **la** + hasil akhir", "*a crescut la 12%*", "naik menjadi 12%"],
+              ["*a scăzut cu* + selisih", "*a scăzut cu o treime*", "turun sepertiga"],
+              ["*s-a dublat*", "*numărul s-a dublat*", "jumlahnya berlipat dua"],
+              ["*s-a menținut*", "*prețul s-a menținut*", "harganya tidak berubah"],
+              ["**față de** + pembanding", "*față de anul trecut*", "dibandingkan tahun lalu"],
+              ["*în medie*", "*în medie trei nopți*", "rata-rata tiga malam"],
+              ["*circa* · *peste*", "*peste o mie de oameni*", "sekitar · lebih dari"],
+              ["*unul din trei*", "*unul din trei locuitori*", "satu dari tiga penduduk"]
+            ]
+          },
+          "after": [
+            "**Cara membaca persen.** *12%* dibaca *doisprezece la sută*, bukan *doisprezece procente*. Kata *procent* disimpan untuk selisih antar-persen: *cu două procente mai mult decât în mai*. Dan *de* penghubung dari tingkat A2 tetap berlaku: *nouăsprezece lei*, tetapi *douăzeci de lei*.",
+            "**Koma dan titik seperti kebiasaan Indonesia, bukan Inggris:** *3,5%* = *trei virgulă cinci la sută*; *12.000* = *douăsprezece mii*.",
+            "**Kata kerja perubahan yang paling sering muncul:** *a crește (crescut)*, *a scădea (scăzut)*, *a se menține*, *a se dubla*, *a ajunge la*, *a depăși* (melampaui). Semuanya mengikuti angkanya: *Numărul a crescut*, tetapi *Prețurile au crescut*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Jurnalul de seară",
+      "intro": "Di apartemen, pukul tujuh malam. Andrei punya kebiasaan menonton warta berita sambil memasak, dan Budi baru sadar bahwa kebiasaan itulah yang paling banyak menambah kosakatanya.",
+      "lines": [
+        {"speaker": "Andrei:", "text": "Dă mai tare, te rog. Începe jurnalul.", "id": "Kencangkan sedikit, tolong. Wartanya mulai.", "literal": "beri-lah lebih keras, kamu-akusatif saya-mohon. ia-mulai warta-nya."},
+        {"speaker": "Budi:", "text": "De ce te uiți la știri în fiecare seară? Sunt cam la fel.", "id": "Kenapa kamu nonton berita tiap malam? Isinya mirip-mirip.", "literal": "dari apa kamu-refleksif kamu-lihat pada berita-jamak di tiap-pr malam? mereka-adalah agak pada sama."},
+        {"speaker": "Andrei:", "text": "Pentru limbă, mai ales. Prezentatorii vorbesc clar și rar.", "id": "Terutama untuk bahasa. Pembawa acaranya bicara jelas dan lambat.", "literal": "untuk bahasa, lebih terutama. pembawa-jamak-nya mereka-bicara jelas dan jarang."},
+        {"speaker": "Budi:", "text": "Recunosc. Dar la televiziunile de știri vorbesc de trei ori mai repede.", "id": "Aku ngaku. Tapi di televisi berita mereka bicara tiga kali lebih cepat.", "literal": "saya-akui. tetapi pada televisi-jamak-nya dari berita-jamak mereka-bicara dari tiga kali lebih cepat."},
+        {"speaker": "Andrei:", "text": "Alea transmit toată ziua, de-aia. Uite, acum e rubrica externă, apoi vine sportul și la final meteo.", "id": "Yang itu siaran sepanjang hari, itu sebabnya. Nih, sekarang rubrik luar negeri, lalu olahraga dan di akhir cuaca.", "literal": "itu-pr-jamak mereka-siarkan seluruh-pr hari-nya, dari-itu. lihat, sekarang ia-adalah rubrik-nya luar-pr, lalu ia-datang olahraga-nya dan pada akhir cuaca."},
+        {"speaker": "Budi:", "text": "Am prins un cuvânt nou: *anchetă*. Se spune și pentru poliție și pentru jurnaliști?", "id": "Aku dapat satu kata baru: *anchetă*. Dipakai untuk polisi dan untuk jurnalis juga?", "literal": "saya-sudah tangkap sebuah-lk kata baru: penyelidikan. ia-refleksif berkata juga untuk polisi dan untuk jurnalis-jamak?"},
+        {"speaker": "Andrei:", "text": "Pentru amândouă. *Ancheta poliției* e dosarul, *ancheta jurnalistică* e reportajul lung. Raluca scrie anchete jurnalistice.", "id": "Untuk dua-duanya. *Ancheta poliției* itu berkas perkaranya, *ancheta jurnalistică* itu reportase panjang. Raluca menulis anchetă jurnalistik.", "literal": "untuk kedua-pr. penyelidikan-nya polisi-nya-genitif ia-adalah berkas-nya, penyelidikan-nya jurnalistik-pr ia-adalah reportase-nya panjang. Raluca ia-tulis penyelidikan-jamak jurnalistik-pr-jamak."},
+        {"speaker": "Budi:", "text": "Și *se pare că* de la unitatea șapte — apare și la televizor?", "id": "Dan *se pare că* dari unit tujuh — muncul juga di televisi?", "literal": "dan ia-refleksif tampak bahwa dari unit-nya tujuh — ia-muncul juga pada televisi?"},
+        {"speaker": "Andrei:", "text": "Mai rar. La televizor preferă *se pare*, în scris preferă *ar fi*. Ascultă titlul de aici: *Potrivit unor surse, negocierile ar fi eșuat.*", "id": "Lebih jarang. Di televisi mereka pilih *se pare*, dalam tulisan mereka pilih *ar fi*. Dengar judul yang ini: *Potrivit unor surse, negocierile ar fi eșuat.*", "literal": "lebih jarang. pada televisi mereka-pilih ia-refleksif tampak, di tulisan mereka-pilih ia-andai ada. dengar-lah judul-nya dari sini: menurut beberapa-genitif sumber-jamak, perundingan-jamak-nya ia-andai ada gagal."},
+        {"speaker": "Budi:", "text": "Două straturi de prudență într-o singură propoziție. Mâine iau un ziar de sâmbătă.", "id": "Dua lapis kehati-hatian dalam satu kalimat saja. Besok aku ambil surat kabar edisi Sabtu.", "literal": "dua-pr lapis-jamak dari kehati-hatian di-dalam-sebuah-pr tunggal-pr kalimat. besok saya-ambil sebuah-lk surat-kabar dari sabtu."},
+        {"speaker": "Andrei:", "text": "Bună idee: are mai multe reportaje și mai puține titluri de scandal.", "id": "Ide bagus: reportasenya lebih banyak dan judul sensasinya lebih sedikit.", "literal": "baik-pr gagasan: ia-punya lebih banyak-pr-jamak reportase-jamak dan lebih sedikit-pr-jamak judul-jamak dari skandal."}
+      ],
+      "notes": [
+        "**Warta berita yang benar-benar ada.** *Telejurnal* adalah nama warta berita TVR, televisi publik Rumania; *Știrile Pro TV* di Pro TV; *Observator* di Antena 1; *Digi24* adalah saluran berita yang mengudara sepanjang hari. Radio publiknya bernama *Radio România Actualități* — namanya sendiri mengajarkan satu kata, *actualități* (peristiwa terkini).",
+        "**Rubrica.** Satu warta dibagi jadi rubrik: *știri interne*, *știri externe*, *economic*, *social*, *sport*, dan penutupnya *meteo*; di sela-selanya *publicitate* (iklan). Kalau penyiar berkata *rămâneți cu noi*, artinya \"jangan pindah saluran\".",
+        "**Se pare că lawan ar fi.** Keduanya menjaga jarak, tetapi caranya beda. *Se pare că negocierile au eșuat* memakai kalimat lengkap sesudah *că* dan terdengar lisan; *Negocierile ar fi eșuat* memadatkannya jadi satu kata kerja dan terdengar seperti tulisan.",
+        "**Potrivit unor surse.** Kalau sumbernya tidak mau disebut namanya, dipakai genitif tak tentu: *unui martor* (seorang saksi), *unei firme*, *unor surse*. Ini bentuk *un/o/niște* yang ikut berkasus.",
+        "**De-aia** adalah bentuk lisan dari *de aceea* (\"karena itu\"). Sepasang dengannya: *aia, ăla, alea, ăia* = *aceea, acela, acelea, aceia* versi percakapan. Di tulisan resmi pakai bentuk panjang; di depan televisi, semua orang memakai yang pendek."
+      ],
+      "grammars": [
+        {
+          "title": "Menyebut sumber — tujuh cara yang dipakai redaksi",
+          "body": [
+            "Aturan tak tertulis di pers Rumania: tiap angka dan tiap tuduhan harus punya sumber. Karena itu ungkapan di bawah ini muncul berkali-kali dalam satu halaman berita."
+          ],
+          "table": {
+            "head": ["Ungkapan", "Contoh", "Rasa bahasanya"],
+            "rows": [
+              ["**potrivit** + genitif", "*Potrivit primăriei, lucrările continuă.*", "paling netral, paling sering"],
+              ["**conform** + genitif", "*Conform legii, este obligatoriu.*", "lebih resmi, banyak di dokumen"],
+              ["**în conformitate cu** + akuzatif", "*În conformitate cu contractul…*", "gaya hukum, panjang"],
+              ["**potrivit unor surse**", "*Potrivit unor surse, ar fi demisionat.*", "sumber tanpa nama"],
+              ["**după** + kata benda", "*După datele hotelului…*", "lebih lisan, lebih ringan"],
+              ["**în urma** + genitif", "*În urma anchetei, dosarul s-a închis.*", "\"menyusul, setelah\""],
+              ["**se arată în** + kata benda", "*…se arată în raportul anual.*", "\"demikian tertulis dalam…\""]
+            ]
+          },
+          "after": [
+            "**Genitif atau datif?** Buku tata bahasa berdebat soal ini, tetapi kamu tidak perlu ikut: untuk kata benda Rumania kedua kasus itu berbentuk sama. *Primăriei* sama saja dipakai di *potrivit primăriei* dan di *i-am scris primăriei*.",
+            "**Yang perlu dijaga hanyalah bentuknya**, dan bentuk itu sudah dipasang di tingkat A2: *o primărie → primăriei*, *poliția → poliției*, *legea → legii*, *un ministru → ministrului*, *niște surse → unor surse*.",
+            "**Satu ungkapan yang tidak ada di daftar tapi sering dipakai:** *susține că…* (\"ia bersikeras bahwa…\"), untuk klaim yang redaksi tidak sepakati. *Primăria susține că lucrările sunt în grafic* menyiratkan keraguan; *Potrivit primăriei, lucrările sunt în grafic* tidak."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Teks bacaan — trei știri scurte",
+      "blocks": [
+        {"type": "p", "text": "Tiga berita pendek berikut dikarang untuk buku ini, dengan angka dan tempat yang sengaja dibuat samar — jadi jangan mengutipnya sebagai fakta. Yang perlu kamu perhatikan justru **bentuknya**: judul tanpa kata kerja, sumber di awal kalimat, dan *ar fi* yang muncul persis di kalimat yang belum dipastikan. Baca dulu kolom Rumania sampai habis tanpa melihat terjemahannya."},
+        {
+          "type": "tabel",
+          "head": ["Română", "Bahasa Indonesia"],
+          "rows": [
+            ["**Lucrări la pasajul din centru**", "**Perbaikan di terowongan pusat kota**"],
+            ["*Potrivit primăriei, lucrările vor fi gata în toamnă.*", "Menurut pemerintah kota, pekerjaannya akan selesai musim gugur."],
+            ["*Până atunci, traficul este deviat pe două străzi laterale, iar o linie de tramvai circulă pe traseu scurtat.*", "Sampai saat itu, lalu lintas dialihkan ke dua jalan samping, dan satu jalur trem beroperasi dengan rute yang dipendekkan."],
+            ["**Mai mulți turiști în oraș**", "**Turis bertambah di kota**"],
+            ["*Numărul turiștilor a crescut cu 12% față de anul trecut, arată datele unui hotel din centru.*", "Jumlah turis naik 12% dibandingkan tahun lalu, demikian data sebuah hotel di pusat kota."],
+            ["*Cei mai mulți vizitatori vin în iulie și august, iar șederea medie este de trei nopți.*", "Pengunjung terbanyak datang pada Juli dan Agustus, dan lama tinggal rata-ratanya tiga malam."],
+            ["**Furt la un magazin de cartier**", "**Pencurian di sebuah toko kelontong**"],
+            ["*Un bărbat ar fi furat bani din casierie, marți seara, dintr-un magazin de cartier.*", "Seorang lelaki diduga mencuri uang dari kasir, Selasa malam, di sebuah toko kelontong di kawasan permukiman."],
+            ["*Poliția a deschis o anchetă. Suspectul ar fi plecat pe jos, iar prejudiciul ar fi de câteva sute de lei.*", "Polisi membuka penyelidikan. Tersangkanya diduga kabur dengan berjalan kaki, dan kerugiannya disebut beberapa ratus lei."],
+            ["*Urmează știrile sportive și, la final, meteo.*", "Berikutnya berita olahraga dan, di akhir, prakiraan cuaca."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga hal yang bisa kamu ukur di teks itu — dan satu latihan",
+          "items": [
+            "**Judul tak punya kata kerja, tubuh berita punya.** *Lucrări la pasajul din centru* → *lucrările vor fi gata*. Artikel tentu yang menempel muncul begitu beritanya dimulai.",
+            "**Hitung *ar fi*-nya: tiga kali, semuanya di berita ketiga.** Dua berita pertama memakai indikatif karena sumbernya jelas. Begitu ceritanya menyangkut seseorang yang belum diadili, kalimatnya pindah ke *ar fi*.",
+            "**Kalau *din* atau *de la* cukup, orang Rumania memilih itu, bukan genitif:** *pasajul din centru*, *un magazin de cartier* — tetapi *datele unui hotel*, *numărul turiștilor*.",
+            "**Latihan yang hemat waktu:** salin satu berita, tutup kolom Rumania, lalu tulis ulang dari terjemahannya. Kesalahan yang muncul adalah daftar pekerjaan rumahmu."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Menonton dan membaca berita Rumania",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**știre, știri** (pr)", "SYTI-ré, sytir'", "berita (satu butir)"],
+            ["**jurnal de știri**", "zhur-NAL dé sytir'", "siaran warta berita"],
+            ["**prezentator, prezentatoare**", "pré-zén-ta-TOR, pré-zén-ta-TOA-ré", "pembawa acara (lk, pr)"],
+            ["**rubrică, rubrici** (pr)", "RU-bri-ke, RU-bric'", "rubrik"],
+            ["**știri interne · știri externe**", "sytir' in-TÉR-né · éks-TÉR-né", "berita dalam negeri · luar negeri"],
+            ["**actualitate, actualități** (pr)", "ak-tu-a-li-TA-té, ak-tu-a-li-TETS'", "peristiwa terkini"],
+            ["**sport** (nt) · **meteo**", "sport · MÉ-té-o", "olahraga · prakiraan cuaca"],
+            ["**reportaj, reportaje** (nt)", "ré-por-TAZH, ré-por-TA-zhé", "reportase"],
+            ["**în direct** · **înregistrat**", "în di-RÉKT · în-ré-jis-TRAT", "siaran langsung · rekaman"],
+            ["**publicitate** (pr)", "pu-bli-ci-TA-té", "iklan"],
+            ["**presă** (pr) · **redacție** (pr)", "PRÉ-se · ré-DAK-tsi-yé", "pers · redaksi"],
+            ["**Rămâneți cu noi!**", "re-mî-NÉTS' ku noy", "Jangan pindah saluran!"]
+          ]
+        },
+        {"type": "p", "text": "Untuk telinga pemula, urutan yang paling ramah adalah: **meteo** dulu (kalimatnya pendek dan berulang tiap hari), lalu **sport** (nama pemain dan angka menolong), baru **știri interne**. Rubrik *externe* justru paling gampang isinya — beritanya sudah kamu tahu dari bahasa Indonesia — jadi pakai itu untuk menebak kata baru. Yang paling berat adalah wawancara politik: kalimatnya panjang, penuh *ar fi*, dan penuh nominalisasi dari unit 12 (*posibilitatea de a, în vederea, în urma*)."},
+        {
+          "type": "kotak",
+          "title": "Tiga kebiasaan yang mempercepat telingamu — dan satu peringatan",
+          "items": [
+            "**Tonton warta yang sama dua kali.** Pertama tanpa apa-apa, kedua dengan buku catatan. Yang kedua selalu terasa dua kali lebih lambat, dan itu bukan ilusi: otakmu sudah tahu isinya, jadi ia bisa memperhatikan bentuknya.",
+            "**Kumpulkan judul, bukan kalimat.** Sepuluh judul sehari lebih berguna daripada satu artikel panjang, karena judul memaksamu mengenali kata benda + kata sifat — inti tiap kalimat Rumania.",
+            "**Tandai tiap *ar fi* yang kamu lihat selama seminggu.** Sesudah tiga puluh contoh, bentuk itu berhenti terasa asing dan mulai terasa seperti tanda baca: \"hati-hati, ini belum pasti\".",
+            "**Satu peringatan jujur:** jangan belajar dari kolom komentar. Di sana ejaannya sering tanpa diakritik dan kalimatnya justru lebih sulit daripada beritanya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 11",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Bagaimana jalannya proyek itu, Pak Marinescu?", "*Cum vă merge cu proiectul, domnule Marinescu?*"],
+            ["Yah, maksudnya… aku kurang tahu harus bilang apa.", "*Păi, adică… nu prea știu ce să zic.*"],
+            ["Kita ketemu sekitar jam enam, ya?", "*Ne vedem pe la șase, da?*"],
+            ["Mohon maafkan keterlambatan saya.", "*Vă rog să mă scuzați pentru întârziere.*"],
+            ["Ya sudah, bye, nanti kita ngobrol lagi!", "*Hai, pa, ne auzim!*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "știre, știri", "baca": "SYTI-ré, sytir'", "id": "berita (pr)"},
+    {"ro": "ziar, ziare", "baca": "zi-AR, zi-A-ré", "id": "surat kabar (nt)"},
+    {"ro": "presă", "baca": "PRÉ-se", "id": "pers (pr)"},
+    {"ro": "redacție, redacții", "baca": "ré-DAK-tsi-yé, ré-DAK-tsi'", "id": "redaksi (pr)"},
+    {"ro": "titlu, titluri", "baca": "TIT-lu, TIT-lur'", "id": "judul (nt)"},
+    {"ro": "sursă, surse", "baca": "SUR-se, SUR-sé", "id": "sumber (pr)"},
+    {"ro": "primărie, primării", "baca": "pri-me-RI-yé, pri-me-RIY", "id": "kantor pemerintah kota (pr)"},
+    {"ro": "lucrare, lucrări", "baca": "lu-KRA-ré, lu-KRER'", "id": "pekerjaan, proyek pembangunan (pr)"},
+    {"ro": "anchetă, anchete", "baca": "an-KÉ-te, an-KÉ-té", "id": "penyelidikan; liputan mendalam (pr)"},
+    {"ro": "casierie, casierii", "baca": "ka-si-é-RI-yé, ka-si-é-RIY", "id": "kasir, loket kas (pr)"},
+    {"ro": "prejudiciu, prejudicii", "baca": "pré-zhu-DI-cyu, pré-zhu-DI-ci'", "id": "kerugian (nt)"},
+    {"ro": "suspect, suspecți", "baca": "sus-PÉKT, sus-PÉKTS'", "id": "tersangka (lk)"},
+    {"ro": "ministru, miniștri", "baca": "mi-NIS-tru, mi-NISY-tri", "id": "menteri (lk)"},
+    {"ro": "turist, turiști", "baca": "tu-RIST, tu-RISYT'", "id": "turis (lk)"},
+    {"ro": "număr, numere", "baca": "NU-mer, NU-mé-ré", "id": "jumlah; nomor (nt)"},
+    {"ro": "procent, procente", "baca": "pro-CÉNT, pro-CÉN-té", "id": "persen, persentase (nt)"},
+    {"ro": "trafic", "baca": "TRA-fik", "id": "lalu lintas (nt)"},
+    {"ro": "centură, centuri", "baca": "CÉN-tu-re, CÉN-tur'", "id": "jalan lingkar (pr)"},
+    {"ro": "a declara (declar)", "baca": "a dé-kla-RA (dé-KLAR)", "id": "menyatakan"},
+    {"ro": "a crește (cresc, crescut)", "baca": "a KRÉSY-té (krésk, krés-KUT)", "id": "naik, bertambah; tumbuh"},
+    {"ro": "a scădea (scad, scăzut)", "baca": "a ske-DYA (skad, ske-ZUT)", "id": "turun, berkurang"},
+    {"ro": "a fura (fur, furat)", "baca": "a fu-RA (fur, fu-RAT)", "id": "mencuri"},
+    {"ro": "a demisiona (demisionez)", "baca": "a dé-mi-si-o-NA (dé-mi-si-o-NÉZ)", "id": "mengundurkan diri"},
+    {"ro": "a urma (urmez)", "baca": "a ur-MA (ur-MÉZ)", "id": "menyusul, berikutnya"},
+    {"ro": "a anunța (anunț)", "baca": "a a-nun-TSA (a-NUNTS)", "id": "mengumumkan"},
+    {"ro": "potrivit", "baca": "po-tri-VIT", "id": "menurut"},
+    {"ro": "conform", "baca": "kon-FORM", "id": "sesuai dengan, menurut"},
+    {"ro": "față de", "baca": "FA-tse dé", "id": "dibandingkan dengan"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Menurut pemerintah kota, pekerjaannya akan selesai musim gugur.",
+        "Seorang lelaki diduga mencuri uang dari kasir.",
+        "Jumlah turis naik 12% dibandingkan tahun lalu.",
+        "Menteri menyatakan bahwa ia tidak akan mengundurkan diri.",
+        "Berikutnya berita olahraga.",
+        "Menurut polisi, penyelidikannya masih berjalan."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk yang diminta. Untuk kata kerja, pakai prezumtiv jurnalistik *ar fi* + partisip kecuali kalau kalimatnya sudah pasti.",
+      "items": [
+        "Potrivit ____, lucrările vor fi gata în toamnă. (primărie)",
+        "Conform ____, traficul a scăzut în centru. (poliție)",
+        "Un bărbat ____ bani din casierie. (a fura, belum dipastikan)",
+        "Hoții ____ prin fereastră. (a intra, belum dipastikan, orang ketiga jamak)",
+        "Numărul turiștilor ____ cu 12% față de anul trecut. (a crește, sudah pasti)",
+        "Prețurile ____ cu trei la sută luna trecută. (a scădea, sudah pasti)",
+        "____ știrile meteo. (a urma)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi gaya pers seperti yang diminta.",
+      "items": [
+        "Cred că un bărbat a furat bani din casierie. Tulis sebagai kabar yang belum dipastikan: ____",
+        "Ministrul a demisionat, dar redacția nu are confirmarea: ____",
+        "Primăria spune că lucrările vor fi gata în toamnă. Pakai *potrivit*: ____",
+        "Poliția anunță că ancheta continuă. Pakai *conform*: ____",
+        "Anul trecut au venit o mie de turiști, iar acum o mie o sută douăzeci. Tulis dengan persen: Numărul turiștilor ____",
+        "Traficul este blocat pe centură. Tulis sebagai judul tanpa kata kerja dan tanpa artikel: ____"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "bani / ar fi / un bărbat / din casierie / furat",
+        "sportive / știrile / urmează",
+        "a crescut / numărul / cu 12% / turiștilor / față de anul trecut",
+        "declarat / nu / ministrul / că / a / va demisiona",
+        "prețurile / față de anul trecut / au crescut / mult"
+      ]
+    }
+  ],
+  "answers": [
+    "Potrivit primăriei, lucrările vor fi gata în toamnă. — Un bărbat ar fi furat bani din casierie. — Numărul turiștilor a crescut cu 12% față de anul trecut. — Ministrul a declarat că nu va demisiona. — Urmează știrile sportive. — Potrivit poliției, ancheta continuă.",
+    "primăriei — poliției — ar fi furat — ar fi intrat — a crescut — au scăzut — Urmează",
+    "Un bărbat ar fi furat bani din casierie. — Ministrul ar fi demisionat. — Potrivit primăriei, lucrările vor fi gata în toamnă. — Conform poliției, ancheta continuă. — a crescut cu doisprezece la sută față de anul trecut. — Trafic blocat pe centură",
+    "Un bărbat ar fi furat bani din casierie. — Urmează știrile sportive. — Numărul turiștilor a crescut cu 12% față de anul trecut. — Ministrul a declarat că nu va demisiona. — Prețurile au crescut mult față de anul trecut."
+  ]
+}
