@@ -1,0 +1,302 @@
+{
+  "title": "Nasihat & suruhan",
+  "title_target": "Sfaturi și porunci",
+  "goal": "Menyuruh, melarang, dan menasihati tanpa terdengar kasar. Kuncinya satu kebiasaan yang harus jadi refleks: pada suruhan, kata ganti pendek **menempel di belakang** kata kerja (*spune-mi*), tetapi pada larangan ia **melompat ke depan** (*nu-mi spune*).",
+  "bekal": [
+    "membentuk imperatif *tu* positif dan negatif (*nu* + infinitif) tanpa tertukar",
+    "memindahkan klitik ke belakang pada suruhan dan ke depan pada larangan, termasuk dua klitik sekaligus (*dă-mi-l* ↔ *nu mi-l da*)",
+    "memakai bentuk *voi / dumneavoastră* untuk petunjuk umum, dan memanggil orang dengan vocativ"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Sfaturi pentru un nou venit",
+      "intro": "Dimas, programer dari Jakarta, baru dua minggu di București dan duduk di kantin kantor dengan wajah kusut. Budi ingat betul rasanya tahun lalu, jadi ia dan Ioana langsung menghujaninya nasihat.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Dimas, arăți obosit. Spune-mi ce s-a întâmplat!", "id": "Dimas, kamu kelihatan lelah. Cerita dong, ada apa?", "literal": "Dimas, kamu-tampak lelah-lk. bilang-lah-saya-datif apa ia-refleksif-sudah terjadi!"},
+        {"speaker": "Dimas:", "text": "Nimic grav. M-am pierdut iar. Ieri am luat autobuzul greșit de trei ori.", "id": "Tidak parah. Aku nyasar lagi. Kemarin aku salah naik bus tiga kali.", "literal": "tidak-apa-pun parah. saya-refleksif-sudah hilang lagi. kemarin saya-sudah ambil bus-nya salah dari tiga kali."},
+        {"speaker": "Budi:", "text": "Atunci ascultă-mă. Nu te grăbi, mai avem timp. Îți arăt tot pe rând.", "id": "Kalau begitu dengarkan aku. Jangan buru-buru, waktu kita masih ada. Aku tunjukkan semuanya satu-satu.", "literal": "kalau-begitu dengar-lah-saya-akusatif. tidak kamu-refleksif buru-buru, lagi kami-punya waktu. kamu-datif saya-tunjuk semua pada urutan."},
+        {"speaker": "Ioana:", "text": "Întâi, ia-ți un abonament la metrou. Nu cumpăra bilete în fiecare zi.", "id": "Pertama, beli kartu langganan metro. Jangan beli tiket setiap hari.", "literal": "pertama, ambil-lah-kamu-datif sebuah-lk langganan pada metro. tidak beli tiket-jamak di tiap hari."},
+        {"speaker": "Dimas:", "text": "Unde se cumpără?", "id": "Belinya di mana?", "literal": "di-mana ia-refleksif beli?"},
+        {"speaker": "Ioana:", "text": "La orice stație. Uită-te la aplicație, e mai simplu.", "id": "Di stasiun mana saja. Lihat di aplikasi saja, lebih gampang.", "literal": "pada apa-pun stasiun. lihat-lah-kamu-refleksif pada aplikasi, ia-adalah lebih sederhana."},
+        {"speaker": "Budi:", "text": "Și un sfat de la mine: nu spune «da» la orice. Dacă nu înțelegi, zi «mai încet, vă rog».", "id": "Dan satu nasihat dariku: jangan bilang «ya» untuk semua hal. Kalau tidak paham, bilang «lebih lambat, tolong».", "literal": "dan sebuah-lk nasihat dari pada saya: tidak bilang «ya» pada apa-pun. kalau tidak kamu-paham, bilang-lah «lebih pelan, kalian-akusatif saya-mohon»."},
+        {"speaker": "Dimas:", "text": "Asta îmi place. Și la piață? Cum să cer un kilogram de roșii?", "id": "Itu aku suka. Kalau di pasar? Minta satu kilo tomat gimana?", "literal": "ini-pr saya-datif ia-suka. dan di pasar? bagaimana agar saya-minta sebuah-lk kilogram dari tomat-jamak?"},
+        {"speaker": "Budi:", "text": "Arată cu mâna și spune «un kilogram, vă rog». Și nu uita «Sărut mâna» la doamnele mai în vârstă.", "id": "Tunjuk dengan tangan dan bilang «satu kilo, tolong». Dan jangan lupa «Sărut mâna» untuk ibu-ibu yang lebih sepuh.", "literal": "tunjuk-lah dengan tangan-nya dan bilang-lah «sebuah-lk kilogram, kalian-akusatif saya-mohon». dan tidak lupa «saya-cium tangan-nya» pada nyonya-jamak-nya lebih di umur."},
+        {"speaker": "Ioana:", "text": "Budi, nu-l speria! Dimas, fii tu însuți, oamenii sunt cumsecade.", "id": "Budi, jangan bikin dia takut! Dimas, jadilah diri sendiri, orang-orang di sini baik.", "literal": "Budi, tidak dia-lk-akusatif takut-kan! Dimas, ada-lah kamu sendiri-lk, orang-jamak-nya mereka-adalah baik-hati."},
+        {"speaker": "Dimas:", "text": "Ai planul metroului la tine? Dă-mi-l, te rog!", "id": "Kamu bawa peta jalur metronya? Kasih ke aku, ya!", "literal": "kamu-punya peta-nya metro-genitif pada kamu? beri-lah-saya-datif-dia-lk-akusatif, kamu-akusatif saya-mohon!"},
+        {"speaker": "Ioana:", "text": "Uite-l. Notează-ți și numărul meu, dar nu mă suna la șase dimineața!", "id": "Ini. Catat juga nomorku, tapi jangan telepon aku jam enam pagi!", "literal": "lihat-lah-dia-lk-akusatif. catat-lah-kamu-datif juga nomor-nya saya-genitif, tapi tidak saya-akusatif telepon pada enam pagi-nya!"},
+        {"speaker": "Budi:", "text": "Hai, du-te acasă și odihnește-te. Mâine începi la nouă.", "id": "Ayo, pulang dan istirahat. Besok kamu mulai jam sembilan.", "literal": "ayo, pergi-lah-kamu-refleksif di-rumah dan istirahat-lah-kamu-refleksif. besok kamu-mulai pada sembilan."}
+      ],
+      "notes": [
+        "**Spune-mi ce s-a întâmplat!** Pada suruhan, kata ganti pendek menempel di belakang kata kerja dan disambung tanda hubung: *spune-**mi***, *ascultă-**mă***, *notează-**ți***. Tanda hubung itu wajib — ia bukan hiasan, melainkan penanda bahwa dua kata itu dibaca sebagai satu. *S-a întâmplat* adalah perfect compus dari *a se întâmpla* (terjadi).",
+        "**Nu te grăbi.** Larangan untuk *tu* dibuat dari *nu* + **infinitif tanpa *a***, dan klitiknya kembali ke posisi biasa, yaitu di depan kata kerja. Bandingkan sepasang-sepasang: *grăbește-te* ↔ *nu te grăbi*; *du-te* ↔ *nu te duce*; *sună-mă* ↔ *nu mă suna*. Ini satu-satunya tempat bahasa Rumania memakai infinitif sebagai perintah.",
+        "**Ia-ți un abonament.** Klitik datif di sini berarti \"untuk dirimu sendiri\" — sesuatu yang bahasa Indonesia tidak perlu katakan. Sama juga *notează-ți numărul* (catat untuk dirimu) dan *cumpără-ți o cafea*. Tanpa *-ți*, kalimatnya tetap benar tetapi terdengar seperti perintah untuk membelikan orang lain.",
+        "**Nu-l speria!** Dua jebakan sekaligus. Pertama, klitik akusatif *l* melebur dengan *nu* jadi *nu-l*. Kedua, hati-hati dengan pasangan *a uita* (lupa) dan *a se uita* (melihat): *nu uita* berarti \"jangan lupa\", sedangkan *nu te uita* berarti \"jangan lihat\". Satu *te* mengubah seluruh isi kalimat.",
+        "**Hai, du-te acasă.** *Hai* bukan kata kerja, melainkan pemantik: *Hai!* (ayo), *Haide!* (bentuk panjangnya), *Hai să mergem!* (ayo kita pergi — dengan *să* dari unit 5). Ia melunakkan perintah apa pun, dan orang Rumania memakainya puluhan kali sehari. Perhatikan juga *fii* (jadilah), bentuk imperatif *a fi* yang tak beraturan."
+      ],
+      "grammars": [
+        {
+          "title": "Imperatif *tu* — satu bentuk untuk menyuruh, bentuk lain untuk melarang",
+          "body": [
+            "Imperatif hanya punya dua lawan bicara: *tu* dan *voi / dumneavoastră*. Yang kedua gratis — sama persis dengan kala kini. Yang pertama perlu dihafal, karena sebagian kata kerja memakai bentuk *el/ea* dan sebagian lain bentuk *tu*."
+          ],
+          "table": {
+            "head": ["Infinitif", "tu positif", "tu negatif", "voi / dumneavoastră"],
+            "rows": [
+              ["a asculta — mendengarkan", "**ascultă!**", "nu asculta!", "ascultați!"],
+              ["a cumpăra — membeli", "**cumpără!**", "nu cumpăra!", "cumpărați!"],
+              ["a citi — membaca", "**citește!**", "nu citi!", "citiți!"],
+              ["a merge — pergi", "**mergi!**", "nu merge!", "mergeți!"],
+              ["a veni — datang", "**vino!**", "nu veni!", "veniți!"],
+              ["a spune — berkata", "**spune!** · **zi!**", "nu spune!", "spuneți!"],
+              ["a face — berbuat", "**fă!**", "nu face!", "faceți!"],
+              ["a da — memberi", "**dă!**", "nu da!", "dați!"],
+              ["a lua — mengambil", "**ia!**", "nu lua!", "luați!"],
+              ["a fi — jadi", "**fii!**", "nu fi!", "fiți!"],
+              ["a se duce — pergi", "**du-te!**", "nu te duce!", "duceți-vă!"],
+              ["a se grăbi — buru-buru", "**grăbește-te!**", "nu te grăbi!", "grăbiți-vă!"]
+            ]
+          },
+          "after": [
+            "**Patokan kasar untuk bentuk *tu*:** kata kerja yang punya sasaran memakai bentuk *el/ea* (*ascultă, cumpără, citește, arată, așteaptă, deschide*), sedangkan yang tanpa sasaran memakai bentuk *tu* (*mergi, dormi, stai, vino*). Yang pendek dan sangat sering dipakai tak beraturan dan harus dihafal: **fă, dă, ia, fii, vino, zi, adu, du**.",
+            "**Larangan cuma satu resep:** *nu* + infinitif, untuk kata kerja apa pun — *nu fugi, nu lua, nu face, nu fi trist*. Untuk *voi / dumneavoastră* jauh lebih mudah: tambahkan *nu* di depan bentuk biasa (*nu luați, nu vă grăbiți*).",
+            "**Imperatif Rumania tidak otomatis kasar.** Tambahkan *te rog* atau *vă rog* dan ia langsung menjadi permintaan biasa: *Spune-mi, te rog.* Kalau kamu ingin lebih halus lagi, pinjam unit 10: *Ai putea să-mi spui?*"
+          ]
+        },
+        {
+          "title": "Klitik: menempel di belakang, melompat ke depan",
+          "body": [
+            "Inilah otot yang perlu dilatih sampai jadi refleks. Isi kalimatnya sama; yang berpindah hanyalah kata ganti pendeknya. Urutan dua klitik tetap seperti unit 6 — datif dulu, akusatif kemudian."
+          ],
+          "table": {
+            "head": ["Suruhan", "Arti", "Larangan"],
+            "rows": [
+              ["*Spune-mi!*", "Bilang ke aku!", "*Nu-mi spune!*"],
+              ["*Dă-mi-l!*", "Kasih itu ke aku! (lk/nt)", "*Nu mi-l da!*"],
+              ["*Dă-mi-o!*", "Kasih itu ke aku! (pr)", "*Nu mi-o da!*"],
+              ["*Ia-o!*", "Ambil itu! (pr)", "*Nu o lua!*"],
+              ["*Sună-mă!*", "Telepon aku!", "*Nu mă suna!*"],
+              ["*Uită-te!*", "Lihat!", "*Nu te uita!*"],
+              ["*Arată-mi-o!*", "Perlihatkan itu ke aku!", "*Nu mi-o arăta!*"],
+              ["*Dați-mi-l!*", "Berikan itu kepada saya! (sopan)", "*Nu mi-l dați!*"]
+            ]
+          },
+          "after": [
+            "**Bentuk kata kerjanya bisa memendek** begitu klitik menempel: *a se duce* → *du-te* (bukan *duce-te*), *a aduce* → *adu-mi*. Kelompok ini kecil dan semuanya kata kerja yang sering dipakai, jadi ia cepat masuk telinga.",
+            "**Untuk *voi / dumneavoastră* aturannya sama:** *spuneți-mi, dați-mi, uitați-vă, duceți-vă, cumpărați-le*; larangannya *nu-mi spuneți, nu vă uitați, nu le cumpărați*.",
+            "***Uite* ikut pola ini** walau ia bukan kata kerja penuh: *uite-l* (ini dia, lk), *uite-o* (ini dia, pr), *uite-i*, *uite-le*. Jangan tertukar dengan *uită-te* (lihatlah) — *uite* menyerahkan, *uită-te* menyuruh melihat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — La biroul de informații",
+      "intro": "Gara de Nord, Jumat sore. Budi dan Dimas berencana ke Sinaia besok dan menghampiri loket informasi. Petugasnya menyapa mereka dengan *dumneavoastră*, jadi semua suruhannya berbentuk jamak.",
+      "lines": [
+        {"speaker": "Dimas:", "text": "Bună ziua. Am vrea să mergem la Sinaia sâmbătă. Ce ne recomandați?", "id": "Selamat siang. Kami mau ke Sinaia Sabtu ini. Anda menyarankan apa?", "literal": "baik-pr hari-nya. kami-andai mau agar kami-pergi pada Sinaia sabtu. apa kami-datif kalian-sarankan?"},
+        {"speaker": "Funcționara:", "text": "Uitați-vă la harta aceasta! Aveți două trenuri dimineața, la șase și la opt.", "id": "Coba lihat peta ini! Ada dua kereta pagi, jam enam dan jam delapan.", "literal": "lihat-lah-kalian-refleksif pada peta-nya ini-pr! kalian-punya dua-nt kereta-jamak pagi-nya, pada enam dan pada delapan."},
+        {"speaker": "Budi:", "text": "Care e mai bun?", "id": "Yang mana lebih bagus?", "literal": "yang-mana ia-adalah lebih baik?"},
+        {"speaker": "Funcționara:", "text": "Luați trenul de la șase și nu vă grăbiți la întoarcere. Coborâți la Sinaia, nu la Bușteni.", "id": "Ambil yang jam enam, dan jangan buru-buru saat pulang. Turun di Sinaia, bukan di Bușteni.", "literal": "ambil-lah-kalian kereta-nya dari pada enam dan tidak kalian-refleksif buru-buru pada kembali-nya. turun-lah-kalian pada Sinaia, tidak pada Bușteni."},
+        {"speaker": "Dimas:", "text": "Și biletele? Unde se cumpără?", "id": "Tiketnya? Belinya di mana?", "literal": "dan tiket-jamak-nya? di-mana ia-refleksif beli?"},
+        {"speaker": "Funcționara:", "text": "Cumpărați-le online, e mai ieftin. Nu le luați în tren!", "id": "Beli lewat internet, lebih murah. Jangan beli di dalam kereta!", "literal": "beli-lah-kalian-mereka-pr-akusatif online, ia-adalah lebih murah. tidak mereka-pr-akusatif kalian-ambil di kereta!"},
+        {"speaker": "Budi:", "text": "Mulțumim. Ne puteți spune cât durează drumul?", "id": "Terima kasih. Bisa beri tahu berapa lama perjalanannya?", "literal": "kami-terima-kasih. kami-datif kalian-bisa bilang berapa ia-berlangsung jalan-nya?"},
+        {"speaker": "Funcționara:", "text": "Aproximativ două ore. Luați o geacă, la munte e mai frig.", "id": "Sekitar dua jam. Bawa jaket, di gunung lebih dingin.", "literal": "kira-kira dua-pr jam-jamak. ambil-lah-kalian sebuah-pr jaket, pada gunung ia-adalah lebih dingin."},
+        {"speaker": "Dimas:", "text": "Vă mulțumim frumos! O zi bună!", "id": "Terima kasih banyak! Selamat beraktivitas!", "literal": "kalian-akusatif kami-terima-kasih indah! sebuah-pr hari baik-pr!"}
+      ],
+      "notes": [
+        "**Uitați-vă la harta aceasta!** Kata kerja refleksif bentuk jamak menempelkan *-vă* di belakang, persis seperti *-te* pada *tu*: *uitați-vă, duceți-vă, grăbiți-vă, odihniți-vă, așezați-vă* (silakan duduk). Di larangan, *vă* kembali ke depan: *nu vă uitați*.",
+        "**Nu vă grăbiți.** Perhatikan bahwa bentuk jamak positif dan negatif memakai kata kerja yang **sama** — hanya *nu* yang ditambahkan. Bentuk *tu* adalah satu-satunya yang punya dua wajah berbeda. Kalau kamu ragu dengan imperatif *tu*, jalan darurat yang selalu benar adalah beralih ke bentuk jamak yang sopan.",
+        "**Cumpărați-le ↔ Nu le luați.** Kalimat ini memperlihatkan lompatan itu dengan klitik jamak: *-le* menempel di belakang suruhan, lalu berdiri di depan larangan. Pola yang sama berlaku untuk *-l, -o, -i, -mi, -ne*.",
+        "**Ne puteți spune…?** Ini bentuk pendek dari *Puteți să ne spuneți…?* — sesudah *a putea*, bahasa Rumania boleh memakai infinitif tanpa *să*, dan klitiknya lalu berdiri di depan *puteți*. Keduanya benar dan sama sopan; yang pendek terdengar lebih lancar."
+      ],
+      "grammars": [
+        {
+          "title": "Vocativ — memanggil orang yang kamu ajak bicara",
+          "body": [
+            "Kalau kamu menyebut nama atau gelar orang **sebelum** menyuruhnya, nama itu masuk bentuk sapaan. Sebagian bentuk berubah, sebagian tidak."
+          ],
+          "table": {
+            "head": ["Bentuk dasar", "Vocativ", "Catatan"],
+            "rows": [
+              ["domnul Marinescu", "**domnule Marinescu!**", "selalu *domnule* + nama keluarga"],
+              ["doamna Popescu", "**doamnă Popescu!**", "di depan hadirin: *doamnelor și domnilor!*"],
+              ["Andrei", "**Andrei!**", "nama lelaki umumnya tak berubah"],
+              ["Ioana", "**Ioana!**", "*Ioană!* ada, tapi terdengar seperti menegur"],
+              ["băiat", "**băiete!**", "ke anak lelaki; *fetițo!* ke anak perempuan"],
+              ["prieten", "**prietene!**", "\"kawan!\" — hangat, sedikit bergaya"],
+              ["bunica", "**bunico!**", "ekor *-o* khas sapaan kekeluargaan"]
+            ]
+          },
+          "after": [
+            "**Kata benda lelaki mengambil *-e*** (*băiete, domnule, prietene, Vasile*), sedangkan sapaan kekeluargaan perempuan mengambil *-o* (*bunico, mamo, tanti Mario*). Untuk *doamnă* pakai apa adanya: *Bună ziua, doamnă!*",
+            "**Vocativ boleh dilewati.** Dalam sehari-hari orang sering langsung menyuruh tanpa menyebut nama, atau menyebut nama dalam bentuk biasa. Yang **tidak** boleh dilewati adalah *domnule* dan *doamnă* ketika kamu menyapa orang asing — tanpa keduanya, kalimatmu terdengar memerintah."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Nasihat sehari-hari untuk pendatang baru",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Ai răbdare!**", "ay reb-DA-ré", "Sabar!"],
+            ["**Ai grijă!**", "ay GRI-zhe", "Hati-hati!"],
+            ["**Fii atent!**", "fiy a-TÉNT", "Perhatikan! Awas!"],
+            ["**Nu-ți face griji!**", "nuts' FA-cé GRIZH'", "Jangan khawatir!"],
+            ["**Stai liniștit.**", "stay li-nisy-TIT", "Tenang saja."],
+            ["**Lasă-mă puțin!**", "LA-se-me pu-TSIN", "Beri aku waktu sebentar!"],
+            ["**Ține minte!**", "TSI-né MIN-té", "Ingat, ya!"],
+            ["**Zi-mi!**", "ZI-mi", "Bilang!"],
+            ["**Hai să mergem!**", "hay se MÉR-jém", "Ayo kita pergi!"],
+            ["**Nu-i nimic.**", "nuy ni-MIK", "Tidak apa-apa."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Perhatikan bahwa beberapa nasihat paling sering justru memakai *a avea*: *ai răbdare* (harfiahnya \"punyailah kesabaran\"), *ai grijă*, *ai încredere*. Dan *nu-ți face griji* memperlihatkan lompatan klitik dengan dua kata sekaligus — *nu* + *ți*. Pasangan positifnya jarang dipakai, jadi hafalkan saja bentuk larangannya utuh."
+        },
+        {
+          "type": "kotak",
+          "title": "*Nea* dan *tanti* — sapaan hangat di tangga blok",
+          "items": [
+            "Di lingkungan tempat tinggal, lelaki yang jauh lebih tua sering disapa ***nea*** + nama depan: *nea Vasile*, *nea Gheorghe*. Padanan perempuannya ***tanti***: *tanti Maria*. Keduanya lebih hangat daripada *domnule/doamnă*, tetapi tetap menjaga hormat.",
+            "Anak-anak memakai keduanya untuk semua orang dewasa di sekitar rumah, dan pendatang baru biasanya ikut memakainya begitu ia mulai dikenali tetangga.",
+            "Kepada orang asing di kantor, di bank, atau di jalan, tetaplah pada *domnule* dan *doamnă* + *dumneavoastră*. *Nea* dan *tanti* tidak pernah dipakai di surel atau di ruang rapat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Petunjuk pemakaian — resep dan alat",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Kalimat", "Bahasa Indonesia"],
+          "rows": [
+            ["*Tăiați ceapa mărunt.*", "Potong bawangnya kecil-kecil."],
+            ["*Puneți puțin ulei în tigaie.*", "Tuang sedikit minyak ke wajan."],
+            ["*Amestecați bine.*", "Aduk rata."],
+            ["*Adăugați sare și piper.*", "Tambahkan garam dan merica."],
+            ["*Lăsați la foc mic zece minute.*", "Biarkan di api kecil sepuluh menit."],
+            ["*Se fierbe o jumătate de oră.*", "Direbus setengah jam."],
+            ["*Nu deschideți capacul!*", "Jangan buka tutupnya!"],
+            ["*Apăsați butonul verde.*", "Tekan tombol hijau."],
+            ["*Băgați aparatul în priză.*", "Pasang alatnya ke colokan."],
+            ["*Citiți instrucțiunile înainte de folosire.*", "Baca petunjuknya sebelum dipakai."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Resep dan buku petunjuk di Rumania hampir selalu memakai bentuk *voi / dumneavoastră* — *tăiați, puneți, amestecați* — atau bentuk *se* tak berpelaku dari unit 9: *se taie, se pune, se fierbe*. Keduanya boleh bercampur dalam satu resep. Dan satu kata yang bekerja di dua dunia: *rețetă* berarti resep masakan **dan** resep dokter, yang akan kamu butuhkan di unit berikutnya."
+        },
+        {
+          "type": "kotak",
+          "title": "*Mici* — panggangan yang menyatukan orang Rumania",
+          "items": [
+            "***Mici*** (juga disebut *mititei*, \"yang kecil-kecil\") adalah gulungan daging cincang berbumbu yang dibakar di atas bara. Ia dijual di kios pasar, di kedai bir, dan di setiap pesta bakar-bakar.",
+            "Pasangan wajibnya: ***muștar*** (mustar), sepotong roti putih, dan bir dingin. Menghitungnya per potong — *zece mici, vă rog* — bukan per porsi.",
+            "Panggangan di alam terbuka disebut ***la iarbă verde***, \"di rumput hijau\", dan puncaknya adalah **1 Mai**, ketika taman dan tepi danau di seluruh Rumania berbau asap *mici*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 9",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Permohonannya diserahkan di mana?", "*Unde se depune cererea?*"],
+            ["Formulirnya diisi dengan huruf kapital.", "*Formularul se completează cu majuscule.*"],
+            ["Di sini tidak bisa bayar dengan kartu.", "*Aici nu se poate plăti cu cardul.*"],
+            ["Dokumen apa saja yang harus dibawa?", "*Ce documente trebuie aduse?*"],
+            ["Katanya makan waktu dua minggu.", "*Se spune că durează două săptămâni.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "sfat, sfaturi", "baca": "sfat, SFA-tur'", "id": "nasihat (nt)"},
+    {"ro": "poruncă, porunci", "baca": "po-RUN-ke, po-RUNC'", "id": "perintah, suruhan (pr)"},
+    {"ro": "abonament, abonamente", "baca": "a-bo-na-MÉNT, a-bo-na-MÉN-té", "id": "kartu langganan (nt)"},
+    {"ro": "stație, stații", "baca": "STA-tsi-yé, STA-tsiy", "id": "stasiun, perhentian (pr)"},
+    {"ro": "hartă, hărți", "baca": "HAR-te, hérts'", "id": "peta (pr)"},
+    {"ro": "plan, planuri", "baca": "plan, PLA-nur'", "id": "rencana; peta jalur (nt)"},
+    {"ro": "a se grăbi (mă grăbesc)", "baca": "a sé gre-BI (me gre-BÉSK)", "id": "buru-buru, bergegas"},
+    {"ro": "a se odihni (mă odihnesc)", "baca": "a sé o-dih-NI (me o-dih-NÉSK)", "id": "beristirahat"},
+    {"ro": "a se pierde (mă pierd, pierdut)", "baca": "a sé PYÉR-dé (me pyérd, pyér-DUT)", "id": "nyasar, tersesat"},
+    {"ro": "a se întâmpla (se întâmplă)", "baca": "a sé în-tîm-PLA (sé în-TÎM-ple)", "id": "terjadi"},
+    {"ro": "a asculta (ascult)", "baca": "a as-kul-TA (as-KULT)", "id": "mendengarkan"},
+    {"ro": "a arăta (arăt)", "baca": "a a-re-TA (a-RET)", "id": "menunjukkan; tampak"},
+    {"ro": "a nota (notez)", "baca": "a no-TA (no-TÉZ)", "id": "mencatat"},
+    {"ro": "a speria (sperii)", "baca": "a spé-ri-YA (SPÉ-riy)", "id": "menakuti"},
+    {"ro": "a amesteca (amestec)", "baca": "a a-més-té-KA (a-MÉS-ték)", "id": "mengaduk, mencampur"},
+    {"ro": "a tăia (tai)", "baca": "a te-YA (tay)", "id": "memotong"},
+    {"ro": "a apăsa (apăs)", "baca": "a a-pe-SA (A-pes)", "id": "menekan"},
+    {"ro": "a coborî (cobor, coborât)", "baca": "a ko-bo-RÎ (ko-BOR, ko-bo-RÎT)", "id": "turun"},
+    {"ro": "răbdare", "baca": "reb-DA-ré", "id": "kesabaran (pr); *ai răbdare!*"},
+    {"ro": "grijă, griji", "baca": "GRI-zhe, grizh'", "id": "perhatian, kekhawatiran (pr)"},
+    {"ro": "atent, atentă", "baca": "a-TÉNT, a-TÉN-te", "id": "awas, cermat"},
+    {"ro": "cumsecade", "baca": "kum-sé-KA-dé", "id": "baik hati (tak berubah)"},
+    {"ro": "priză, prize", "baca": "PRI-ze, PRI-zé", "id": "colokan listrik (pr)"},
+    {"ro": "tigaie, tigăi", "baca": "ti-GA-yé, ti-GÉY", "id": "wajan (pr)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Bilang ke aku apa yang terjadi!",
+        "Jangan buru-buru, waktu kita masih ada.",
+        "Kasih itu ke aku, ya! (barang netral)",
+        "Coba lihat peta ini! (kepada Anda)",
+        "Ayo, pulang dan istirahat!",
+        "Jangan lupa tiketnya!"
+      ]
+    },
+    {
+      "prompt": "Isi dengan imperatif *tu* dari kata kerja di dalam kurung.",
+      "items": [
+        "Te rog, ____ mai încet! (a vorbi)",
+        "Dimas, ____ la aplicație! (a se uita)",
+        "Nu ____ bilete în fiecare zi! (a cumpăra)",
+        "Hai, ____ acasă, e târziu! (a se duce)",
+        "Nu-mi ____ nimic încă! (a spune)",
+        "Andrei, ____ atent, te rog! (a fi)",
+        "Nu te ____, mai avem timp! (a grăbi)"
+      ]
+    },
+    {
+      "prompt": "Ubah jadi larangan untuk *tu*.",
+      "items": [
+        "Spune-mi!",
+        "Dă-mi-l!",
+        "Du-te acasă!",
+        "Ia-o!",
+        "Grăbește-te!",
+        "Sună-mă diseară!"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "s-a / spune-mi / întâmplat / ce / !",
+        "harta / la / uitați-vă / aceasta / !",
+        "bilete / nu / în / cumpăra / zi / fiecare",
+        "un / ia-ți / la / abonament / metrou",
+        "acasă / du-te / și / odihnește-te"
+      ]
+    }
+  ],
+  "answers": [
+    "Spune-mi ce s-a întâmplat! — Nu te grăbi, mai avem timp. — Dă-mi-l, te rog! — Uitați-vă la harta aceasta! — Hai, du-te acasă și odihnește-te! — Nu uita biletul!",
+    "vorbește — uită-te — cumpăra — du-te — spune — fii — grăbi",
+    "Nu-mi spune! — Nu mi-l da! — Nu te duce acasă! — Nu o lua! — Nu te grăbi! — Nu mă suna diseară!",
+    "Spune-mi ce s-a întâmplat! — Uitați-vă la harta aceasta! — Nu cumpăra bilete în fiecare zi. — Ia-ți un abonament la metrou. — Du-te acasă și odihnește-te."
+  ]
+}

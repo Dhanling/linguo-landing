@@ -1,0 +1,296 @@
+{
+  "title": "Belanja online",
+  "title_target": "Cumpărături online",
+  "goal": "Menumpuk **dua klitik sekaligus** — datif dulu, akusatif kemudian — dan menaruhnya dengan benar di kala kini, di perfect compus, sesudah *să*, dan di imperatif: *mi-l trimiți*, *mi l-a dat*, *mi-a dat-o*, *să mi-o dai*, *arată-mi-l*.",
+  "bekal": [
+    "menyusun pasangan klitik yang benar (*mi-l, ți-o, i le, ni-l, vi-o, li le*) tanpa berpikir lama",
+    "memindahkan pasangan itu ke perfect compus, termasuk jebakan *o* yang melompat ke belakang partisip",
+    "mengurus pesanan daring dari awal sampai akhir: memesan, melacak, mengeluh dengan sopan, dan mengembalikan barang"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Comanda n-a ajuns încă",
+      "intro": "Rabu siang di kantor. Budi tidak bisa berhenti melirik layar ponselnya, dan Ioana akhirnya bertanya.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Ce te uiți așa la telefon?", "id": "Kenapa melihat HP begitu?", "literal": "apa kamu-refleksif lihat begitu pada telepon?"},
+        {"speaker": "Budi:", "text": "Aștept un colet. Am comandat un rucsac acum cinci zile și nu mi l-au trimis încă.", "id": "Aku menunggu paket. Aku memesan ransel lima hari lalu dan mereka belum mengirimkannya padaku.", "literal": "saya-tunggu sebuah-lk paket. saya-sudah pesan sebuah-lk ransel sekarang lima hari-jamak dan tidak saya-datif dia-akusatif-mereka-sudah kirim lagi."},
+        {"speaker": "Ioana:", "text": "Ți-au trimis confirmarea comenzii?", "id": "Mereka sudah mengirimi kamu konfirmasi pesanan?", "literal": "kamu-datif-mereka-sudah kirim konfirmasi-nya pesanan-genitif?"},
+        {"speaker": "Budi:", "text": "Mi-au trimis-o imediat, dar de atunci nimic.", "id": "Itu langsung mereka kirim ke aku, tapi sejak itu tidak ada apa-apa.", "literal": "saya-datif-mereka-sudah kirim-dia-akusatif-pr segera, tapi dari waktu-itu tidak-apa-pun."},
+        {"speaker": "Ioana:", "text": "Intră în cont și caută AWB-ul. Dacă îl ai, poți urmări coletul pe site-ul curierului.", "id": "Masuk ke akunmu dan cari nomor AWB-nya. Kalau ada, kamu bisa lacak paketnya di situs kurir.", "literal": "masuk-lah di akun dan cari-lah AWB-nya. kalau dia-akusatif kamu-punya, kamu-bisa lacak paket-nya pada situs-nya kurir-genitif."},
+        {"speaker": "Budi:", "text": "Am intrat. Scrie doar «în curs de livrare».", "id": "Sudah. Cuma tertulis «sedang dikirim».", "literal": "saya-sudah masuk. ia-tulis hanya «di dalam-perjalanan dari pengiriman»."},
+        {"speaker": "Ioana:", "text": "Atunci mai ai răbdare o zi. Lunea curierii sunt aglomerați.", "id": "Kalau begitu sabar sehari lagi. Hari Senin kurir-kurirnya kebanjiran kerjaan.", "literal": "kalau-begitu masih kamu-punya kesabaran satu-pr hari. senin-nya kurir-jamak-nya mereka-adalah penuh-lk-jamak."},
+        {"speaker": "Budi:", "text": "Și factura? Nu mi-au trimis-o nici pe aceea.", "id": "Terus fakturnya? Itu pun belum mereka kirimkan padaku.", "literal": "dan faktur-nya? tidak saya-datif-mereka-sudah kirim-dia-akusatif-pr juga-tidak pada itu-pr."},
+        {"speaker": "Ioana:", "text": "Factura vine în colet. Dacă n-o găsești, o ceri din cont și ți-o generează pe loc.", "id": "Fakturnya ada di dalam paket. Kalau tidak ketemu, kamu minta dari akun dan mereka membuatkannya saat itu juga.", "literal": "faktur-nya ia-datang di paket. kalau tidak-dia-akusatif-pr kamu-temukan, dia-akusatif-pr kamu-minta dari akun dan kamu-datif-dia-akusatif-pr ia-buat pada tempat."},
+        {"speaker": "Budi:", "text": "Uite, ăsta e rucsacul. Îți place?", "id": "Nih, ini ranselnya. Kamu suka?", "literal": "lihat, ini-lk ia-adalah ransel-nya. kamu-datif ia-menyenangkan?"},
+        {"speaker": "Ioana:", "text": "E chiar frumos. Și buzunarul pentru laptop e mare.", "id": "Bagus juga. Kantong laptopnya besar.", "literal": "ia-adalah sungguh indah-lk. dan kantong-nya untuk laptop ia-adalah besar-lk."},
+        {"speaker": "Budi:", "text": "Mai sunt două pe stoc. Dacă îți place, ți-l cumpăr.", "id": "Masih ada dua di stok. Kalau kamu suka, aku belikan untukmu.", "literal": "masih mereka-adalah dua-pr pada stok. kalau kamu-datif ia-menyenangkan, kamu-datif-dia-akusatif saya-beli."},
+        {"speaker": "Ioana:", "text": "Nu, mulțumesc — vreau doar linkul. Mi-l trimiți pe e-mail, te rog?", "id": "Tidak, terima kasih — aku cuma mau tautannya. Kirimkan itu ke emailku, ya?", "literal": "tidak, saya-terima-kasih — saya-mau hanya tautan-nya. saya-datif-dia-akusatif kamu-kirim pada surel, kamu-akusatif saya-minta?"},
+        {"speaker": "Budi:", "text": "Ți-l trimit acum. Și dacă nu-mi convine mărimea, îl returnez în paisprezece zile.", "id": "Aku kirim sekarang. Dan kalau ukurannya tidak cocok buatku, aku kembalikan dalam empat belas hari.", "literal": "kamu-datif-dia-akusatif saya-kirim sekarang. dan kalau tidak-saya-datif ia-cocok ukuran-nya, dia-akusatif saya-kembalikan dalam empat-belas hari-jamak."}
+      ],
+      "notes": [
+        "**Nu mi l-au trimis încă.** Inilah rangka unit ini: datif dulu (*mi*), akusatif kemudian (*l-*), dan keduanya berdiri **di depan** kata bantu. Jangan pernah menyelipkannya di antara kata bantu dan partisip.",
+        "**Mi-au trimis-o.** Satu-satunya pengecualian adalah *o*: ia melompat ke belakang partisip. Dan begitu *o* pergi ke belakang, klitik datifnya kembali ke bentuk biasanya di depan kata bantu — *mi-au … -o*, bukan *mi-o au*.",
+        "**Confirmarea comenzii.** Bentuk genitif (\"konfirmasi **dari** pesanan itu\") dipasang lengkap di unit 7. Untuk sekarang hafalkan utuh: *comandă → comenzii*, *curier → curierului*.",
+        "**Nu-mi convine mărimea.** *A conveni* selalu memakai datif, dan subjeknya adalah barangnya, bukan kamu: harfiahnya \"ukurannya tidak cocok **bagiku**\". Pola yang sama: *îmi place, îmi trebuie, mi se pare*.",
+        "**Lunea curierii sunt aglomerați.** Nama hari berartikel berarti \"tiap hari …\": *lunea, marțea, duminica*. Dipasang penuh di unit 19; sekarang cukup dikenali.",
+        "**Pe loc** = saat itu juga, di tempat. Jangan tertukar dengan *în loc de* (sebagai ganti) dan *în locul meu* (di posisiku)."
+      ],
+      "grammars": [
+        {
+          "title": "Dua klitik: datif dulu, akusatif kemudian",
+          "body": [
+            "Urutannya tidak pernah berubah: siapa yang **menerima** disebut lebih dulu, apa yang **diberikan** menyusul. Yang berubah adalah bentuk klitik datifnya — *ne, vă, le* berganti menjadi *ni, vi, li* begitu ada klitik akusatif di belakangnya."
+          ],
+          "table": {
+            "head": ["Datif", "+ îl (lk/nt tg)", "+ o (pr tg)", "+ îi (lk jm)", "+ le (pr/nt jm)"],
+            "rows": [
+              ["**îmi** (padaku)", "**mi-l**", "**mi-o**", "**mi-i**", "**mi le**"],
+              ["**îți** (padamu)", "**ți-l**", "**ți-o**", "**ți-i**", "**ți le**"],
+              ["**îi** (padanya)", "**i-l**", "**i-o**", "**i-i**", "**i le**"],
+              ["**ne** (pada kami)", "**ni-l**", "**ni-o**", "**ni-i**", "**ni le**"],
+              ["**vă** (pada kalian/Anda)", "**vi-l**", "**vi-o**", "**vi-i**", "**vi le**"],
+              ["**le** (pada mereka)", "**li-l**", "**li-o**", "**li-i**", "**li le**"]
+            ]
+          },
+          "after": [
+            "**Yang ber-tanda hubung dan yang tidak.** *le* akusatif tidak pernah memendek, jadi ia ditulis terpisah: *mi le dă, ni le aduce, vi le trimit*. Semua pasangan lain disambung tanda hubung.",
+            "**Tekanan jatuh pada kata kerjanya.** *Mi-l trimiți* dibaca dalam satu tarikan, `mil tri-MITS'` — klitiknya nyaris tidak terdengar. Kalau kamu menekannya, kalimatmu terdengar seperti dikte."
+          ]
+        },
+        {
+          "title": "Letak pasangan klitik di tiap bentuk",
+          "body": [
+            "Hafalkan satu kata kerja lewat baris-baris ini, lalu tukar-tukar datifnya. Perhatikan baris perfect compus: *-l* dan *le* menempel pada kata bantu, sedangkan *o* pindah ke belakang partisip."
+          ],
+          "table": {
+            "head": ["Bentuk", "dengan *îl*", "dengan *o*", "dengan *le*"],
+            "rows": [
+              ["Kala kini", "*mi-l dă*", "*mi-o dă*", "*mi le dă*"],
+              ["Perfect compus", "*mi **l-a** dat*", "*mi-**a** dat**-o***", "*mi **le-a** dat*"],
+              ["Negasi", "*nu mi l-a dat*", "*nu mi-a dat-o*", "*nu mi le-a dat*"],
+              ["Konjunktif *să*", "*să mi-l dai*", "*să mi-o dai*", "*să mi le dai*"],
+              ["Masa depan *o să*", "*o să mi-l dea*", "*o să mi-o dea*", "*o să mi le dea*"],
+              ["Imperatif positif", "*dă-mi-l!*", "*dă-mi-o!*", "*dă-mi-le!*"],
+              ["Imperatif negatif", "*nu mi-l da!*", "*nu mi-o da!*", "*nu mi le da!*"]
+            ]
+          },
+          "after": [
+            "**Jebakan *o* yang paling sering menjegal.** Karena *o* pindah ke belakang, datifnya kehilangan pasangannya dan kembali ke bentuk dasar: *ni-l dă* → *ni l-a dat*, tetapi *ni-o dă* → ***ne**-a dat-o*. Begitu juga *vi-o* → *v-a dat-o* dan *li-o* → *le-a dat-o*.",
+            "**Di imperatif positif semuanya menempel di belakang**, dan di situ *le* memakai tanda hubung: *dă-mi-le, trimite-ne-le*. Begitu kalimatnya jadi larangan, semuanya melompat kembali ke depan: *nu mi le da*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — La ușă, cu curierul",
+      "intro": "Kamis pagi, bel apartemen berbunyi sebelum jam sembilan. Andrei yang masih bersarung mandi menonton dari dapur.",
+      "lines": [
+        {"speaker": "Curierul:", "text": "Bună ziua! Am un colet pentru Budi Santoso. Semnați aici, vă rog.", "id": "Selamat siang! Ada paket untuk Budi Santoso. Tanda tangan di sini, ya.", "literal": "baik-pr siang-nya! saya-punya sebuah-lk paket untuk Budi Santoso. tanda-tangani-lah di-sini, kalian-akusatif saya-minta."},
+        {"speaker": "Budi:", "text": "Bună ziua! Gata. Vă mulțumesc frumos!", "id": "Selamat siang! Beres. Terima kasih banyak!", "literal": "baik-pr siang-nya! selesai. kalian-akusatif saya-terima-kasih indah!"},
+        {"speaker": "Andrei:", "text": "În sfârșit! Arată-mi-l, te rog!", "id": "Akhirnya juga! Tunjukkan itu padaku, dong!", "literal": "akhirnya! tunjukkan-lah-saya-datif-dia-akusatif, kamu-akusatif saya-minta!"},
+        {"speaker": "Budi:", "text": "Poftim. Uite, are și o husă de ploaie.", "id": "Nih. Lihat, ada sarung hujannya juga.", "literal": "silakan. lihat, ia-punya juga sebuah-pr sarung dari hujan."},
+        {"speaker": "Andrei:", "text": "Frumos. Dar accesoriile? Le-ai comandat separat, nu?", "id": "Bagus. Tapi aksesorisnya? Kamu pesan terpisah, kan?", "literal": "indah-lk. tapi aksesori-jamak-nya? mereka-akusatif-kamu-sudah pesan terpisah, tidak?"},
+        {"speaker": "Budi:", "text": "Da. Nu mi le-a adus încă. Zice că vin cu alt colet.", "id": "Iya. Itu belum dibawakan untukku. Katanya datang dengan paket lain.", "literal": "ya. tidak saya-datif mereka-akusatif-ia-sudah bawa lagi. ia-bilang bahwa mereka-datang dengan lain-lk paket."},
+        {"speaker": "Andrei:", "text": "Apropo, factura de la imprimantă unde e? Am nevoie de ea pentru garanție.", "id": "Ngomong-ngomong, faktur printer itu di mana? Aku butuh buat garansi.", "literal": "ngomong-ngomong, faktur-nya dari pada printer di-mana ia-adalah? saya-punya kebutuhan akan dia-pr untuk garansi."},
+        {"speaker": "Budi:", "text": "I-am dat-o Ioanei ieri, voia s-o scaneze. Ți-o aduce luni.", "id": "Aku memberikannya kepada Ioana kemarin, dia mau memindainya. Dia bawakan untukmu hari Senin.", "literal": "dia-datif-saya-sudah beri-dia-akusatif-pr pada-Ioana-datif kemarin, ia-dulu-mau agar-dia-akusatif-pr ia-pindai. kamu-datif-dia-akusatif-pr ia-bawa senin."},
+        {"speaker": "Andrei:", "text": "Bine. Și dacă se strică ceva, le scrii pe e-mail și ți-l schimbă.", "id": "Oke. Dan kalau ada yang rusak, kamu tulis email ke mereka dan mereka tukarkan untukmu.", "literal": "baik. dan kalau ia-refleksif rusak sesuatu, mereka-datif kamu-tulis pada surel dan kamu-datif-dia-akusatif ia-tukar."},
+        {"speaker": "Budi:", "text": "Sper să nu fie nevoie. Mâine îl duc la birou și îl încerc toată ziua.", "id": "Semoga tidak perlu. Besok aku bawa ke kantor dan kucoba seharian.", "literal": "saya-harap agar tidak ia-jadi kebutuhan. besok dia-akusatif saya-bawa ke kantor dan dia-akusatif saya-coba seluruh-pr hari-nya."}
+      ],
+      "notes": [
+        "**Arată-mi-l!** Di imperatif positif, kedua klitik menempel di belakang kata kerja dengan urutan yang sama — datif lalu akusatif. Tekanannya tetap di suku kata kata kerjanya: `a-RA-te-mil`.",
+        "**Nu mi le-a adus încă.** Larangan dan negasi tidak menggeser pasangan klitik sama sekali; yang berubah cuma tambahan *nu* di depan. *Încă* di ujung kalimat bersama *nu* berarti \"belum\".",
+        "**I-am dat-o Ioanei.** Klitik datif tetap wajib walaupun orangnya sudah disebut penuh: bahasa Rumania **menggandakan** *Ioanei* dengan *i-*. Dan karena bendanya *factura*, *o* pindah ke belakang partisip.",
+        "**Ți-o aduce luni. · Ți-l schimbă.** Pasangan yang sama di kala kini, dengan pelaku yang sengaja tidak disebut — cara paling wajar mengatakan \"nanti ditukarkan\" tanpa menunjuk siapa pun."
+      ],
+      "grammars": [
+        {
+          "title": "Imperatif yang ramah: *arată-mi-l*, *trimite-mi-o*",
+          "body": [
+            "Imperatif lengkap baru dipasang di unit 11, tetapi lima kata kerja di bawah ini terlalu sering dipakai untuk ditunda. Hafalkan bentuk *tu*-nya, lalu tempelkan pasangan klitik di belakangnya."
+          ],
+          "table": {
+            "head": ["Imperatif", "+ satu klitik", "+ dua klitik", "Bahasa Indonesia"],
+            "rows": [
+              ["*dă!*", "*dă-mi!*", "***dă-mi-l!***", "berikan itu padaku"],
+              ["*arată!*", "*arată-mi!*", "***arată-mi-l!***", "tunjukkan itu padaku"],
+              ["*trimite!*", "*trimite-mi!*", "***trimite-mi-o!***", "kirimkan itu padaku"],
+              ["*spune!*", "*spune-mi!*", "***spune-mi-le!***", "katakan semuanya padaku"],
+              ["*adu!*", "*adu-mi!*", "***adu-mi-le!***", "bawakan semuanya untukku"],
+              ["*nu da!*", "*nu-mi da!*", "***nu mi-l da!***", "jangan berikan itu padaku"]
+            ]
+          },
+          "after": [
+            "**Bentuk sopan tinggal menambah *-ți*:** *dați-mi-l, arătați-mi-l, trimiteți-mi-o, spuneți-mi*. Dengan *dumneavoastră* inilah yang kamu pakai di toko dan di kantor.",
+            "**Larangan memakai infinitif**, bukan imperatif: *nu da, nu trimite, nu spune* — dan klitiknya kembali ke depan. Bandingkan *spune-mi!* dengan *nu-mi spune!*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Comandă, livrare, retur",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Am plasat o comandă.**", "am pla-SAT o ko-MAN-de", "Saya sudah memesan."],
+            ["**Comanda e în curs de livrare.**", "ko-MAN-da yé în kurs dé li-VRA-ré", "Pesanannya sedang dikirim."],
+            ["**plata la livrare (ramburs)**", "PLA-ta la li-VRA-ré (ram-BURS)", "bayar di tempat"],
+            ["**Am paisprezece zile de retur.**", "am pay-spré-ZÉ-cé ZI-lé dé ré-TUR", "Saya punya 14 hari untuk mengembalikan."],
+            ["**Produsul nu e pe stoc.**", "pro-DU-sul nu yé pé stok", "Barangnya tidak ada stok."],
+            ["**Îmi dați și factura, vă rog?**", "îm' dats' sy fak-TU-ra, ve rog", "Boleh minta fakturnya juga?"],
+            ["**Coletul a ajuns deteriorat.**", "ko-LÉ-tul a a-ZHUNS dé-té-ri-o-RAT", "Paketnya sampai dalam keadaan rusak."],
+            ["**Vă rog să-mi returnați banii.**", "ve rog se-m' ré-tur-NATS' BA-niy", "Tolong kembalikan uang saya."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Memesan dikatakan *a comanda ceva **de pe** un site* (dari situsnya) atau *a comanda **de la** cineva* (dari penjualnya). Barang yang sudah berjalan disebut *colet* kalau dikirim kurir dan *pachet* kalau lewat pos. Nomor pelacakannya disebut **AWB**, dibaca huruf demi huruf `a dublu-vé bé` (W dalam bahasa Rumania bernama *dublu ve*). Kalau kamu mau mengembalikan barang, kata kerjanya *a returna* dan hasilnya *un retur*; kalau kamu mau menukar, *a schimba*."
+        },
+        {
+          "type": "kotak",
+          "title": "Cumpărături online în România",
+          "items": [
+            "**eMAG** adalah toko daring terbesar di Rumania, dan ia pula yang membawa **Black Friday** ke sini pada 2011. Sejak itu hari diskon besar tahunan jatuh pada satu hari Jumat di bulan November — bukan di bulan lain.",
+            "**Plata ramburs** (bayar tunai kepada kurir waktu barang sampai) masih sangat umum. Kalau kamu memilihnya, siapkan uang pas: kurir jarang membawa kembalian banyak.",
+            "Banyak paket tidak diantar ke pintu, melainkan ke lemari otomatis (**easybox**) di depan supermarket; kamu menerima kode lewat SMS lalu mengambil sendiri, kapan saja.",
+            "Hak mengembalikan barang dalam **14 hari** untuk pembelian daring berlaku di seluruh Uni Eropa, termasuk Rumania — karena itu *paisprezece zile de retur* muncul di hampir tiap situs."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A reclama frumos",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**Am o problemă cu comanda.**", "am o pro-BLÉ-me ku ko-MAN-da", "Saya ada masalah dengan pesanan."],
+            ["**Nu mi-a ajuns coletul.**", "nu mya a-ZHUNS ko-LÉ-tul", "Paket saya belum sampai."],
+            ["**Mi-ați trimis alt model.**", "myats' tri-MIS alt mo-DÉL", "Anda mengirimi saya model lain."],
+            ["**Se poate schimba?**", "sé POA-té skim-BA", "Bisa ditukar?"],
+            ["**Aș vrea să fac o reclamație.**", "asy vrya se fak o ré-kla-MA-tsi-yé", "Saya ingin mengajukan keluhan."],
+            ["**Îmi pare rău că insist, dar…**", "îm' PA-ré reu ke in-SIST, dar", "Maaf saya mendesak, tapi…"],
+            ["**Când îmi puteți da un răspuns?**", "kînd îm' pu-TÉTS' da un res-PUNS", "Kapan saya bisa dapat jawaban?"],
+            ["**Vă mulțumesc pentru înțelegere.**", "ve mul-tsu-MÉSK PÉN-tru în-tsé-LÉ-jé-ré", "Terima kasih atas pengertiannya."]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Orang Rumania mengeluh dengan **lugas**, tetapi kelugasan itu dibungkus dua lapis kesopanan: *vă rog* di awal dan *vă mulțumesc pentru înțelegere* di akhir. Yang tidak pernah dipakai adalah basa-basi panjang seperti di Indonesia — sebut masalahnya di kalimat kedua, jangan di kalimat kesepuluh. Satu bongkahan yang perlu kamu hafalkan sekarang: ***aș vrea*** (\"saya ingin\"), bentuk kondisional yang dipasang lengkap di unit 10; untuk sementara pakai saja utuh, karena ia melembutkan permintaan apa pun."
+        },
+        {
+          "type": "kotak",
+          "title": "Kalimat yang menyelamatkan keluhanmu",
+          "items": [
+            "*Îmi cer scuze* (\"saya minta maaf\") lebih formal daripada *Scuze!*, dan dipakai kalau kesalahannya memang di pihakmu. Kalau bukan salahmu, cukup *Îmi pare rău* — \"sayang sekali\".",
+            "*Nu e vina dumneavoastră, dar…* (\"Ini bukan salah Anda, tapi…\") adalah pembuka ajaib waktu kamu bicara dengan petugas yang tidak bisa memutuskan apa-apa.",
+            "*Am nevoie de o confirmare scrisă.* — minta konfirmasi tertulis. Kata *scris/scrisă* adalah partisip *a scrie* yang dipakai sebagai kata sifat; bentuk lengkapnya dipasang di unit 17.",
+            "**ANPC** (*Autoritatea Națională pentru Protecția Consumatorilor*) adalah lembaga perlindungan konsumen Rumania. Toko wajib memajang datanya, dan menyebut namanya dengan sopan sering mempercepat penyelesaian."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 4",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Tahun depan aku akan pindah ke apartemen yang lebih besar.", "*Anul viitor o să mă mut într-un apartament mai mare.*"],
+            ["Aku akan pergi cuti pada tanggal 3 Agustus.", "*Voi pleca în concediu pe 3 august.*"],
+            ["Aku akan belajar menyetir sampai akhir tahun.", "*Am să învăț să conduc până la sfârșitul anului.*"],
+            ["Kalau nanti aku punya waktu, aku akan mengunjungi Maramureș.", "*Dacă o să am timp, o să vizitez Maramureșul.*"],
+            ["Ulang tahunku tanggal 1 Mei.", "*Ziua mea este pe întâi mai.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "a comanda (comand)", "baca": "a ko-man-DA (ko-MAND)", "id": "memesan"},
+    {"ro": "a livra (livrez)", "baca": "a li-VRA (li-VRÉZ)", "id": "mengantar, mengirim barang"},
+    {"ro": "a returna (returnez)", "baca": "a ré-tur-NA (ré-tur-NÉZ)", "id": "mengembalikan barang"},
+    {"ro": "a arăta (arăt)", "baca": "a a-re-TA (a-RET)", "id": "menunjukkan"},
+    {"ro": "a trimite (trimit, trimis)", "baca": "a tri-MI-té (tri-MIT, tri-MIS)", "id": "mengirim"},
+    {"ro": "a primi (primesc)", "baca": "a pri-MI (pri-MÉSK)", "id": "menerima"},
+    {"ro": "a urmări (urmăresc)", "baca": "a ur-me-RI (ur-me-RÉSK)", "id": "melacak, mengikuti"},
+    {"ro": "a se strica (se strică)", "baca": "a sé stri-KA (sé STRI-ke)", "id": "rusak"},
+    {"ro": "comandă, comenzi", "baca": "KO-man-de, ko-MÉNZ'", "id": "pesanan (pr)"},
+    {"ro": "colet, colete", "baca": "ko-LÉT, ko-LÉ-té", "id": "paket kiriman (nt)"},
+    {"ro": "livrare, livrări", "baca": "li-VRA-ré, li-VRER'", "id": "pengiriman (pr)"},
+    {"ro": "curier, curieri", "baca": "ku-ri-YÉR, ku-ri-YÉR'", "id": "kurir (lk)"},
+    {"ro": "retur, retururi", "baca": "ré-TUR, ré-TU-rur'", "id": "pengembalian barang (nt)"},
+    {"ro": "garanție, garanții", "baca": "ga-ran-TSI-yé, ga-ran-TSIY", "id": "garansi (pr)"},
+    {"ro": "factură, facturi", "baca": "fak-TU-re, fak-TUR'", "id": "faktur, tagihan (pr)"},
+    {"ro": "chitanță, chitanțe", "baca": "ki-TAN-tse, ki-TAN-tsé", "id": "kuitansi (pr)"},
+    {"ro": "stoc, stocuri", "baca": "stok, STO-kur'", "id": "stok (nt)"},
+    {"ro": "rucsac, rucsacuri", "baca": "ruk-SAK, ruk-SA-kur'", "id": "ransel (nt)"},
+    {"ro": "mărime, mărimi", "baca": "me-RI-mé, me-RIM'", "id": "ukuran (pr)"},
+    {"ro": "reducere, reduceri", "baca": "ré-DU-cé-ré, ré-du-CÉR'", "id": "diskon (pr)"},
+    {"ro": "cont, conturi", "baca": "kont, KON-tur'", "id": "akun; rekening (nt)"},
+    {"ro": "link, linkuri", "baca": "link, LIN-kur'", "id": "tautan (nt)"},
+    {"ro": "pe loc", "baca": "pé lok", "id": "saat itu juga, di tempat"},
+    {"ro": "de încredere", "baca": "dé în-KRÉ-dé-ré", "id": "tepercaya"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Kirimkan itu ke emailku, ya? (tautan)",
+        "Aku memberikannya kepada Ioana kemarin. (faktur)",
+        "Dia belum membawakannya untukku. (aksesoris, jamak)",
+        "Kalau kamu suka, aku belikan untukmu. (ransel)",
+        "Tunjukkan itu padaku, dong! (ransel)",
+        "Fakturnya? Aku kirimkan untukmu besok."
+      ]
+    },
+    {
+      "prompt": "Lengkapi dengan pasangan klitik yang benar.",
+      "items": [
+        "____ trimiți pe e-mail, te rog? (îmi + îl)",
+        "Dacă îți place, ____ cumpăr. (îți + îl)",
+        "Cheile? ____ dau eu diseară. (vă + le)",
+        "Curierul ____ aduce mâine dimineață. (ne + îl)",
+        "Vă rog să ____ arătați încă o dată. (îmi + o)",
+        "Am o veste bună: ____ spun imediat. (vă + o)",
+        "Nu ____ da acum, dă-mi-l mâine! (îmi + îl)"
+      ]
+    },
+    {
+      "prompt": "Ubah ke perfect compus, dengan klitik di tempat yang benar.",
+      "items": [
+        "Mi-l trimite pe e-mail.",
+        "I-o dau Ioanei.",
+        "Nu mi le aduce.",
+        "Ni-l arată în magazin.",
+        "Vi-o explică la telefon.",
+        "Ți-i prezintă pe colegi."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "mi-l / pe e-mail / trimiți / , / te rog / ?",
+        "dat-o / i-am / ieri / ioanei",
+        "încă / nu / adus / mi le-a",
+        "place / dacă / îți / , / cumpăr / ți-l",
+        "arată-mi-l / , / te rog / !"
+      ]
+    }
+  ],
+  "answers": [
+    "Mi-l trimiți pe e-mail, te rog? — I-am dat-o Ioanei ieri. — Nu mi le-a adus încă. — Dacă îți place, ți-l cumpăr. — Arată-mi-l, te rog! — Factura? Ți-o trimit mâine.",
+    "Mi-l — ți-l — Vi le — ni-l — mi-o — vi-o — mi-l",
+    "Mi l-a trimis pe e-mail. — I-am dat-o Ioanei. — Nu mi le-a adus. — Ni l-a arătat în magazin. — V-a explicat-o la telefon. — Ți i-a prezentat pe colegi.",
+    "Mi-l trimiți pe e-mail, te rog? — I-am dat-o Ioanei ieri. — Nu mi le-a adus încă. — Dacă îți place, ți-l cumpăr. — Arată-mi-l, te rog!"
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "title": "Angka dan ukuran",
+  "title_target": "Cifre și măsuri",
+  "goal": "Menghitung dengan lantang: lantai ke berapa, setengah dan seperempat, naik sepuluh persen, kami berdua, tahun 2019, dua puluh lei per jam — bentuk yang muncul setiap kali uang disebut.",
+  "bekal": [
+    "menyusun numeral ordinal (*al treilea*, *a douăsprezecea*) dan bertanya *Al câtelea?*",
+    "memakai pecahan dan persen dengan pasangan kata yang benar: *jumătate de*, *jumătate dintre*, *un sfert de oră*, *a crescut cu zece la sută*",
+    "membaca harga, gaji, tahun, dan ukuran — termasuk kapan angka harus disusul *de*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Factura de la sfârșitul lunii",
+      "intro": "Akhir bulan. Doamna Popescu naik sendiri ke lantai tiga karena lift mati, membawa tagihan bulanan. Percakapan ini penuh angka — dan di sinilah penutur Indonesia paling sering tersandung, sebab hampir setiap angka menuntut kata kecil tambahan.",
+      "lines": [
+        {"speaker": "Doamna Popescu:", "text": "Bună seara, Budi. Am urcat cu factura de la asociație.", "id": "Selamat malam, Budi. Saya naik membawa tagihan dari pengurus gedung.", "literal": "baik-pr malam, Budi. saya-sudah naik dengan tagihan-nya dari perkumpulan."},
+        {"speaker": "Budi:", "text": "Bună seara, doamnă Popescu. Locuiesc la etajul al treilea și liftul e iar stricat.", "id": "Selamat malam, Bu Popescu. Saya tinggal di lantai tiga dan liftnya rusak lagi.", "literal": "baik-pr malam, nyonya Popescu. saya-tinggal di lantai-nya ke-tiga-lk dan lift-nya ia-adalah lagi rusak."},
+        {"speaker": "Doamna Popescu:", "text": "Știu. Chiria rămâne aceeași, două sute cincizeci de euro, dar utilitățile au crescut.", "id": "Saya tahu. Sewanya tetap sama, dua ratus lima puluh euro, tapi biaya air-listrik-gasnya naik.", "literal": "saya-tahu. sewa-nya ia-tetap sama-pr, dua-pr ratus-jamak lima-puluh dari euro, tetapi utilitas-jamak-nya mereka-sudah naik."},
+        {"speaker": "Budi:", "text": "Cu cât?", "id": "Naik berapa?", "literal": "dengan berapa?"},
+        {"speaker": "Doamna Popescu:", "text": "Prețurile au crescut cu zece la sută. În total, o sută optzeci de lei pe lună.", "id": "Harga-harganya naik sepuluh persen. Totalnya seratus delapan puluh lei sebulan.", "literal": "harga-jamak-nya mereka-sudah naik dengan sepuluh pada seratus. di total, sebuah-pr ratus delapan-puluh dari lei per bulan."},
+        {"speaker": "Budi:", "text": "La curent plătesc mai mult, pentru că lucrez de acasă. Jumătate dintre colegii mei lucrează de acasă acum.", "id": "Untuk listrik saya bayar lebih banyak karena kerja dari rumah. Separuh rekan kerja saya sekarang kerja dari rumah.", "literal": "pada listrik saya-bayar lebih banyak, karena saya-kerja dari di-rumah. setengah di-antara rekan-jamak-nya milikku-jamak mereka-kerja dari di-rumah sekarang."},
+        {"speaker": "Doamna Popescu:", "text": "Toată lumea. Fiul meu stă opt ore în fața calculatorului.", "id": "Semua orang begitu. Anak saya duduk delapan jam di depan komputer.", "literal": "seluruh-pr dunia-nya. anak-lk-nya milikku-lk ia-duduk delapan jam-jamak di depan-nya komputer-genitif."},
+        {"speaker": "Budi:", "text": "Pot să plătesc jumătate acum și jumătate la sfârșitul lunii?", "id": "Boleh saya bayar setengah sekarang dan setengahnya akhir bulan?", "literal": "saya-bisa agar saya-bayar setengah sekarang dan setengah pada akhir-nya bulan-genitif?"},
+        {"speaker": "Doamna Popescu:", "text": "Sigur. Dați-mi un avans de o sută de lei, iar restul pe douăzeci.", "id": "Tentu. Beri saya uang muka seratus lei, sisanya tanggal dua puluh.", "literal": "tentu. kalian-berilah-saya-datif sebuah-lk muka dari sebuah-pr ratus dari lei, sedangkan sisa-nya pada dua-puluh."},
+        {"speaker": "Budi:", "text": "Bine. Și apa caldă? Săptămâna trecută avea vreo treizeci de grade.", "id": "Baik. Kalau air panasnya? Minggu lalu cuma sekitar tiga puluh derajat.", "literal": "baik. dan air-nya hangat-pr? minggu-nya lewat-pr ia-dulu-punya kira-kira tiga-puluh dari derajat-jamak."},
+        {"speaker": "Doamna Popescu:", "text": "S-a stricat centrala. Vine instalatorul mâine. Și nu uitați: factura se plătește până pe cincisprezece.", "id": "Pemanasnya rusak. Tukangnya datang besok. Dan jangan lupa: tagihannya dibayar paling lambat tanggal lima belas.", "literal": "ia-refleksif-sudah rusak pemanas-nya. ia-datang tukang-nya besok. dan tidak kalian-lupa: tagihan-nya ia-refleksif ia-dibayar sampai pada lima-belas."},
+        {"speaker": "Budi:", "text": "Am notat. Atunci rămân acasă până la prânz.", "id": "Sudah saya catat. Kalau begitu saya di rumah sampai tengah hari.", "literal": "saya-sudah catat. kalau-begitu saya-tinggal di-rumah sampai pada tengah-hari."}
+      ],
+      "notes": [
+        "**Etajul al treilea.** Ordinal berdiri di belakang kata benda yang sudah berartikel: *etajul al treilea*, *rândul al doilea*. Dalam percakapan orang juga bilang *etajul trei*, sama benarnya. Lantai dasar bernama *parter*, jadi *etajul al treilea* adalah tingkat keempat dari jalan.",
+        "**Kapan *de* muncul.** Angka 1–19 menempel langsung pada kata bendanya (*cinci lei*), tetapi mulai 20 wajib ada *de*: *douăzeci **de** lei*, *o sută **de** oameni*. Penutur Indonesia hampir selalu melupakannya, dan itulah yang paling cepat terdengar.",
+        "**Cu cât? — *cu* untuk selisih.** Untuk perubahan atau beda pakai *cu*: *au crescut cu zece la sută*, *e cu douăzeci de lei mai scump*.",
+        "**Jumătate dintre colegii mei.** Tiga pasangan: *jumătate **de*** + ukuran (*jumătate de kilogram*), *jumătate **dintre*** + kelompok berartikel (*jumătate dintre colegi*), *jumătate **din*** + sesuatu yang utuh (*jumătate din salariu*). Kata kerjanya jamak: *Două treimi dintre studenți au plecat*.",
+        "**Pe douăzeci — dan *vreo*.** Tanggal memakai *pe* + angka biasa seperti unit 4; hanya tanggal 1 memakai *întâi*. \"Kira-kira\" adalah *vreo* (pr dan jamak) atau *vreun* (lk tunggal): *vreo două ore*, *vreun kilogram*. Padanan resminya *aproximativ* — dan *de* tetap hadir."
+      ],
+      "grammars": [
+        {
+          "title": "Numeral ordinal — *al … -lea* dan *a … -a*",
+          "body": [
+            "Rumusnya satu: **al** + angka + **-lea** untuk lelaki dan netral, **a** + angka + **-a** untuk perempuan — dipilih sesuai kata bendanya, jadi *etajul al treilea* tetapi *ziua a treia*. Yang perlu dihafal cuma penyesuaian kecil: *doi → doilea/doua*, *patru → patrulea/patra*, *opt → optulea/opta*, *nouă → nouălea/noua*. \"Pertama\" berdiri di luar pola."
+          ],
+          "table": {
+            "head": ["Angka", "Lelaki / netral", "Perempuan", "Contoh"],
+            "rows": [
+              ["1", "**primul**", "prima", "*primul etaj*"],
+              ["2", "**al doilea**", "a doua", "*a doua zi*"],
+              ["3", "**al treilea**", "a treia", "*etajul al treilea*"],
+              ["4, 5", "**al patrulea, al cincilea**", "a patra, a cincea", "*clasa a cincea*"],
+              ["6, 7, 8", "**al șaselea, al șaptelea, al optulea**", "a șasea, a șaptea, a opta", "*a opta zi*"],
+              ["9, 10", "**al nouălea, al zecelea**", "a noua, a zecea", "*al zecelea an*"],
+              ["11, 12", "**al unsprezecelea, al doisprezecelea**", "a unsprezecea, a douăsprezecea", "*a douăsprezecea lună*"],
+              ["20", "**al douăzecilea**", "a douăzecea", "*secolul al douăzecilea*"]
+            ]
+          },
+          "after": [
+            "**Di belakang atau di depan?** Di belakang, kata bendanya berartikel: *etajul al treilea*. Di depan, tanpa artikel: *al treilea etaj*, *a doua zi* — yang terakhir berarti \"hari berikutnya\". Bertanya urutan: *Al câtelea?* (lk), *A câta?* (pr).",
+            "***Oară* hanya hidup bersama numeral:** *prima oară*, *a doua oară*; untuk \"tiga kali\" bentuknya jamak dengan *de*: *de trei ori pe zi*. Pisahkan *o dată* (satu kali) dari *odată* (pada suatu ketika). Bentuk *întâi* tak berubah: *pe întâi decembrie*, *clasa întâi*."
+          ]
+        },
+        {
+          "title": "Pecahan, persen, dan kata kolektif",
+          "body": [
+            "Pecahan adalah kata benda biasa dengan jenis kelamin sendiri, jadi ia butuh artikel: *o jumătate*, *un sfert*, *o treime*. Persen memakai *la sută* — harfiahnya \"pada seratus\". Dan *amândoi* menutup lubang yang tak ada padanannya di bahasa Indonesia: \"yang dua-duanya\", dalam satu kata."
+          ],
+          "table": {
+            "head": ["Bentuk", "Cara baca", "Arti", "Contoh"],
+            "rows": [
+              ["**jumătate** (pr)", "zhu-me-TA-té", "setengah", "*jumătate de kilogram*"],
+              ["**un sfert** (nt)", "un sfért", "seperempat", "*un sfert de oră*"],
+              ["**o treime** (pr)", "o tré-I-mé", "sepertiga", "*două treimi dintre ei*"],
+              ["**… și jumătate**", "syi zhu-me-TA-té", "… setengah (2½)", "*două ore și jumătate*"],
+              ["**… la sută**", "la SU-te", "… persen", "*zece la sută*"],
+              ["**amândoi / amândouă**", "a-mîn-DOY · a-mîn-DO-we", "kedua-duanya (lk · pr)", "*amândoi am terminat*"],
+              ["**câte doi**", "KÎ-té doy", "dua-dua, masing-masing dua", "*intrăm câte doi*"]
+            ]
+          },
+          "after": [
+            "**Persen: *cu* untuk kenaikan, *din* untuk bagian.** *Prețurile au crescut cu zece la sută* ≠ *Zece la sută din prețuri au crescut* (sepuluh persen dari harganya yang naik).",
+            "***Amândoi* sudah mengandung \"dua\",** jadi jangan ditambahi: *amândoi am venit*, bukan *amândoi doi*. Kalau kata bendanya disebut, ia berartikel: *amândoi băieții*, *amândouă camerele*. Bentuk resminya *ambii, ambele*.",
+            "***Câte* membagi rata:** *Am primit câte două bilete* = \"masing-masing dapat dua tiket\". Dan angka desimal memakai koma: *2,5* dibaca *doi virgulă cinci*, sedangkan titik dipakai untuk ribuan: *1.250 lei*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Cât costă cursul?",
+      "intro": "Beberapa hari kemudian, di kantor. Ioana menemukan kursus tata bahasa untuk orang asing dan membujuk Budi mendaftar. Perhatikan bagaimana keduanya berhitung dengan suara keras — itu latihan angka yang paling jujur.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Budi, am găsit un curs de gramatică pentru străini, în Unirii.", "id": "Budi, aku menemukan kursus tata bahasa untuk orang asing, di Unirii.", "literal": "Budi, saya-sudah temukan sebuah-lk kursus dari tata-bahasa untuk asing-jamak, di Unirii."},
+        {"speaker": "Budi:", "text": "Cât costă?", "id": "Berapa harganya?", "literal": "berapa ia-berharga?"},
+        {"speaker": "Ioana:", "text": "Cursul costă douăzeci de lei pe oră, două ore și jumătate pe ședință, de două ori pe săptămână.", "id": "Kursusnya dua puluh lei per jam, satu pertemuan dua setengah jam, dua kali seminggu.", "literal": "kursus-nya ia-berharga dua-puluh dari lei per jam, dua-pr jam-jamak dan setengah per pertemuan, dari dua-pr kali per minggu."},
+        {"speaker": "Budi:", "text": "Deci cincizeci de lei de fiecare dată. Nu e puțin.", "id": "Jadi lima puluh lei setiap kali. Tidak sedikit.", "literal": "jadi lima-puluh dari lei dari tiap-pr kali. tidak ia-adalah sedikit."},
+        {"speaker": "Ioana:", "text": "Dacă plătești tot modulul o dată, ai o reducere de cincisprezece la sută.", "id": "Kalau kamu bayar satu modul sekaligus, kamu dapat diskon lima belas persen.", "literal": "kalau kamu-bayar seluruh modul-nya sebuah-pr kali, kamu-punya sebuah-pr potongan dari lima-belas pada seratus."},
+        {"speaker": "Budi:", "text": "Și câți suntem în grupă?", "id": "Dan satu kelas berapa orang?", "literal": "dan berapa-lk kami-adalah di kelompok?"},
+        {"speaker": "Ioana:", "text": "Maximum opt. Acum sunt înscriși cinci. La exerciții lucrați câte doi.", "id": "Maksimum delapan. Sekarang yang terdaftar lima. Untuk latihan kalian kerja berpasangan.", "literal": "maksimum delapan. sekarang mereka-adalah terdaftar-lk-jamak lima. pada latihan-jamak kalian-kerja per dua-lk."},
+        {"speaker": "Budi:", "text": "Mă înscriu. E a doua oară că încerc un curs de română.", "id": "Aku daftar. Ini kedua kalinya aku coba kursus bahasa Rumania.", "literal": "saya-refleksif saya-daftarkan. ia-adalah ke-dua-pr kali bahwa saya-coba sebuah-lk kursus dari rumania."},
+        {"speaker": "Ioana:", "text": "Acum e altfel. Amândoi am terminat facultatea în 2019 — încă știm cum se învață.", "id": "Sekarang lain. Kita berdua lulus kuliah tahun 2019 — kita masih ingat cara belajar.", "literal": "sekarang ia-adalah lain-cara. kedua-lk kami-sudah selesaikan fakultas-nya di dua-ribu sembilan-belas — masih kami-tahu bagaimana ia-refleksif ia-belajar."}
+      ],
+      "notes": [
+        "**Douăzeci de lei pe oră.** *Pe* adalah \"per\": *pe oră*, *pe lună*, *pe persoană*, *pe bucată*. Untuk kekerapan polanya *de … ori pe …*: *de două ori pe săptămână*.",
+        "**Două ore și jumătate ≠ o jumătate de oră.** Kalau setengahnya ditambahkan pada bilangan bulat, ia berdiri di belakang tanpa *de*. Kalau berdiri sendiri, ia butuh *de*.",
+        "**A doua oară că…** Untuk menghitung percobaan, penyambungnya *că*, bukan *când*: *E prima oară că vin aici*. Pasangan *prima dată / a doua dată* artinya sama.",
+        "**În 2019.** Tahun dibaca sebagai satu angka penuh dan tanpa *de*: *în două mii nouăsprezece*. Untuk dekade: *în anii nouăzeci*."
+      ],
+      "grammars": [
+        {
+          "title": "Angka besar, tahun, dan *de* penghubung",
+          "body": [
+            "*Sută* dan *mie* adalah kata benda perempuan, jadi keduanya berjamak: *o sută → două sute*, *o mie → trei mii*. *Milion* netral: *un milion → două milioane*."
+          ],
+          "table": {
+            "head": ["Angka", "Română", "Cara baca"],
+            "rows": [
+              ["19 lei", "*nouăsprezece lei*", "no-we-SPRÉ-zé-cé léy"],
+              ["20 lei", "*douăzeci **de** lei*", "do-we-ZÉC' dé léy"],
+              ["100 · 200", "*o sută* · *două sute*", "o SU-te · DO-we SU-té"],
+              ["1.000 · 3.000", "*o mie* · *trei mii*", "o MI-yé · tréy miy"],
+              ["2019", "*două mii nouăsprezece*", "DO-we miy no-we-SPRÉ-zé-cé"],
+              ["1989", "*o mie nouă sute optzeci și nouă*", "o MI-yé NO-we SU-té opt-ZÉC' syi NO-we"]
+            ]
+          },
+          "after": [
+            "**Aturan *de* dalam satu baris:** 1–19 tanpa *de*, 20 ke atas dengan *de* (*douăzeci de lei*, *cinci mii de euro*). Satu kecualian: tahun tidak pernah memakai *de*.",
+            "**Kata kerja ikut angkanya, bukan *sută*:** *O sută de oameni **au** venit.* Di pasar harga dipendekkan dengan kata benda berartikel di belakang: *cinci lei kilul*, *doi lei bucata*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Uang: sewa, gaji, tagihan",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**chirie, chirii** (pr)", "ki-RI-yé, ki-RIY", "sewa"],
+            ["**factură, facturi** (pr)", "fak-TU-re, fak-TUR'", "tagihan, faktur"],
+            ["**utilități** (pr, jamak)", "u-ti-li-TETS'", "biaya air, listrik, gas"],
+            ["**întreținere** (pr)", "în-tré-TSI-né-ré", "iuran pemeliharaan gedung"],
+            ["**avans, avansuri** (nt)", "a-VANS, a-VAN-sur'", "uang muka"],
+            ["**rată, rate** (pr)", "RA-te, RA-té", "angsuran, cicilan"],
+            ["**salariu, salarii** (nt)", "sa-LA-ryu, sa-LA-riy", "gaji"],
+            ["**cheltuială, cheltuieli** (pr)", "kél-tu-YA-le, kél-tu-YÉL'", "pengeluaran"],
+            ["**bon, bonuri** (nt)", "bon, BO-nur'", "struk"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kata kerjanya sedikit: *a plăti* (*plătesc chiria*), *a costa*, *a crește* dan *a scădea* (partisipnya *crescut* dan *scăzut*), serta *a economisi*. Tiga pertanyaan membagi tugas dengan rapi: ***Cât costă?*** untuk barang di rak, ***Cât face?*** di kasir ketika semuanya sudah dihitung, dan ***Cât plătesc?*** saat kamu mengeluarkan uang."
+        },
+        {
+          "type": "kotak",
+          "title": "Leu, ban, dan cara menyebut harga",
+          "items": [
+            "***Leu*** harfiahnya \"singa\", jamaknya *lei*. Pecahannya *ban*, jamak *bani* — kata yang sama juga berarti \"uang\": *N-am bani la mine*. Satu leu = seratus bani, kode internasionalnya **RON**.",
+            "Uang kertas Rumania dicetak pada polimer, bukan kertas — Rumania negara Eropa pertama yang memakainya untuk seluruh pecahan uangnya.",
+            "Sewa sering dipatok dalam **euro** tetapi dibayar dalam lei menurut kurs hari itu; *întreținere* dan *curent* (listrik) selalu dalam lei."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ukuran — dan membaca satu tabel angka",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**metru, metri** (lk)", "MÉ-tru, MÉ-tri", "meter"],
+            ["**metru pătrat, metri pătrați**", "MÉ-tru pe-TRAT", "meter persegi"],
+            ["**kilogram, kilograme** (nt)", "ki-lo-GRAM, ki-lo-GRA-mé", "kilogram"],
+            ["**litru, litri** (lk)", "LI-tru, LI-tri", "liter"],
+            ["**grad, grade** (nt)", "grad, GRA-dé", "derajat"],
+            ["**a cântări (cântăresc)**", "a kîn-te-RI (kîn-te-RÉSK)", "menimbang; berbobot"],
+            ["**a măsura (măsor)**", "a me-su-RA (MÉ-sor)", "mengukur"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tinggi badan disebut dengan *a avea*: *Am un metru șaptezeci și cinci.* Berat dengan *a cântări*: *Cântăresc șaptezeci de kilograme.* Luas apartemen dalam *metri pătrați*: *Apartamentul are cincizeci de metri pătrați.* Suhu memakai *grade* tanpa pelaku: *Afară sunt douăzeci și trei de grade.* Di pasar *kilogram* dipendekkan jadi *kil*: *un kil de mere*, *jumătate de kil de brânză*."
+        },
+        {
+          "type": "tabel",
+          "head": ["Cheltuială", "Lei pe lună", "Din total"],
+          "rows": [
+            ["*chirie*", "1.250", "42 la sută"],
+            ["*întreținere și curent*", "430", "14 la sută"],
+            ["*mâncare*", "870", "29 la sută"],
+            ["*transport*", "80", "3 la sută"],
+            ["*curs de română*", "370", "12 la sută"],
+            ["**în total**", "**3.000**", "**100 la sută**"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Membaca tabel itu dengan suara keras",
+          "items": [
+            "*Chiria înseamnă aproape jumătate din cheltuieli.* · *Pe mâncare dau aproximativ o treime.* · *Transportul costă doar trei la sută din total.*",
+            "*Cel mai mult plătesc pentru chirie.* · *Anul trecut chiria era cu zece la sută mai mică.*",
+            "Tiga kata kecil yang membuat kalimat angka terdengar wajar: *aproape*, *aproximativ*, dan *doar*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 11",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Ceritakan padaku apa yang terjadi!", "*Spune-mi ce s-a întâmplat!*"],
+            ["Jangan buru-buru, kita masih punya waktu.", "*Nu te grăbi, mai avem timp.*"],
+            ["Berikan itu padaku, tolong!", "*Dă-mi-l, te rog!*"],
+            ["Lihatlah peta ini! (kepada Anda)", "*Uitați-vă la harta aceasta!*"],
+            ["Sudah, pulanglah dan istirahat!", "*Hai, du-te acasă și odihnește-te!*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "cifră, cifre", "baca": "CI-fre, CI-fré", "id": "angka (pr)"},
+    {"ro": "măsură, măsuri", "baca": "me-SU-re, me-SUR'", "id": "ukuran, takaran (pr)"},
+    {"ro": "etaj, etaje", "baca": "é-TAZH, é-TA-zhé", "id": "lantai, tingkat (nt)"},
+    {"ro": "chirie, chirii", "baca": "ki-RI-yé, ki-RIY", "id": "sewa (pr)"},
+    {"ro": "factură, facturi", "baca": "fak-TU-re, fak-TUR'", "id": "tagihan (pr)"},
+    {"ro": "utilități", "baca": "u-ti-li-TETS'", "id": "biaya air, listrik, gas (pr, jamak)"},
+    {"ro": "avans, avansuri", "baca": "a-VANS, a-VAN-sur'", "id": "uang muka (nt)"},
+    {"ro": "rată, rate", "baca": "RA-te, RA-té", "id": "angsuran (pr)"},
+    {"ro": "salariu, salarii", "baca": "sa-LA-ryu, sa-LA-riy", "id": "gaji (nt)"},
+    {"ro": "preț, prețuri", "baca": "préts, PRÉ-tsur'", "id": "harga (nt)"},
+    {"ro": "cheltuială, cheltuieli", "baca": "kél-tu-YA-le, kél-tu-YÉL'", "id": "pengeluaran (pr)"},
+    {"ro": "a crește (cresc, crescut)", "baca": "a KRÉSY-té (krésk, krés-KUT)", "id": "naik, bertambah, tumbuh"},
+    {"ro": "a scădea (scad, scăzut)", "baca": "a ske-DYA (skad, ske-ZUT)", "id": "turun, berkurang"},
+    {"ro": "a economisi (economisesc)", "baca": "a é-ko-no-mi-SI (é-ko-no-mi-SÉSK)", "id": "menabung, berhemat"},
+    {"ro": "jumătate, jumătăți", "baca": "zhu-me-TA-té, zhu-me-TETS'", "id": "setengah (pr)"},
+    {"ro": "sfert, sferturi", "baca": "sfért, SFÉR-tur'", "id": "seperempat (nt)"},
+    {"ro": "treime, treimi", "baca": "tré-I-mé, tré-IM'", "id": "sepertiga (pr)"},
+    {"ro": "la sută", "baca": "la SU-te", "id": "persen"},
+    {"ro": "amândoi, amândouă", "baca": "a-mîn-DOY, a-mîn-DO-we", "id": "kedua-duanya (lk, pr)"},
+    {"ro": "oară, ori", "baca": "OA-re, or'", "id": "kali, kalinya (pr)"},
+    {"ro": "grad, grade", "baca": "grad, GRA-dé", "id": "derajat (nt)"},
+    {"ro": "metru pătrat", "baca": "MÉ-tru pe-TRAT", "id": "meter persegi (lk)"},
+    {"ro": "vreo, vreun", "baca": "vréo, vréun", "id": "kira-kira, sekitar"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Saya tinggal di lantai tiga.",
+        "Separuh rekan kerja saya kerja dari rumah.",
+        "Harga-harganya naik sepuluh persen.",
+        "Kami berdua lulus kuliah tahun 2019.",
+        "Kursusnya dua puluh lei per jam.",
+        "Boleh saya bayar setengah sekarang?"
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk ordinal yang tepat. Angka petunjuknya ada di dalam kurung.",
+      "items": [
+        "Stau la etajul ____. (4)",
+        "Este ____ oară că vin aici. (2)",
+        "Fiul ei este în clasa ____. (5)",
+        "Locuiesc în ____ bloc de la stație. (3, di depan kata benda)",
+        "Ziua mea este pe ____ mai. (1)",
+        "Am ajuns ____ la coadă. (1, lelaki)",
+        "Bunicul meu s-a născut în secolul ____. (20)"
+      ]
+    },
+    {
+      "prompt": "Ubah atau lengkapi seperti yang diminta.",
+      "items": [
+        "2,5 ore, ditulis dengan huruf: ____",
+        "30 de minute: ____ de oră",
+        "15 minute: ____ de oră",
+        "1989, dibaca: ____",
+        "Noi doi am terminat facultatea, pakai kata kolektifnya: ____ am terminat facultatea.",
+        "Prețul este cu 10% mai mare, tulis persennya dengan huruf: Prețul este cu ____ mai mare."
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "la / locuiesc / al treilea / etajul",
+        "lucrează / colegii / jumătate / mei / de acasă / dintre",
+        "au crescut / cu / prețurile / la sută / zece",
+        "facultatea / amândoi / în 2019 / am terminat",
+        "de lei / costă / cursul / pe oră / douăzeci"
+      ]
+    }
+  ],
+  "answers": [
+    "Locuiesc la etajul al treilea. — Jumătate dintre colegii mei lucrează de acasă. — Prețurile au crescut cu zece la sută. — Amândoi am terminat facultatea în 2019. — Cursul costă douăzeci de lei pe oră. — Pot să plătesc jumătate acum?",
+    "al patrulea — a doua — a cincea — al treilea — întâi — primul — al douăzecilea",
+    "două ore și jumătate — o jumătate — un sfert — o mie nouă sute optzeci și nouă — Amândoi — zece la sută",
+    "Locuiesc la etajul al treilea. — Jumătate dintre colegii mei lucrează de acasă. — Prețurile au crescut cu zece la sută. — Amândoi am terminat facultatea în 2019. — Cursul costă douăzeci de lei pe oră."
+  ]
+}
