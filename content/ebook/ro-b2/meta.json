@@ -1,0 +1,972 @@
+{
+ "brand": "LINGUO",
+ "cover": "cover.png",
+ "title": "Română 101",
+ "subtitle": "Modul belajar mandiri bahasa Rumania tingkat B2",
+ "level": "Level B2 (CEFR)",
+ "edition": "Edisi Bahasa Indonesia",
+ "ruby": false,
+ "font_size": "8.7pt",
+ "page_margin": "9mm 9mm 8mm",
+ "line_height": 1.28,
+ "vocab_columns": [
+  {
+   "head": "Română",
+   "key": "ro"
+  },
+  {
+   "head": "Cara baca",
+   "key": "baca"
+  },
+  {
+   "head": "Bahasa Indonesia",
+   "key": "id"
+  }
+ ],
+ "cover_design": {
+  "bg": "#22303C",
+  "accent": "#79B8A0",
+  "label": "BAHASA RUMANIA",
+  "judul": "Română",
+  "judul_size": "190px",
+  "angka": "101",
+  "cap": "â",
+  "pola_opacity": 0.38,
+  "pola": "background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.11) 0 3px, transparent 3px 26px),repeating-linear-gradient(135deg, rgba(255,255,255,.11) 0 3px, transparent 3px 26px),repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, transparent 2px 52px);",
+  "ringkas": "Modul belajar mandiri bahasa Rumania tingkat B2 — berargumen, membaca kontrak dan sastra, mengenali ragam daerah, dan memilih nada dengan sadar.",
+  "catatan": "Tiap baris dialog dilengkapi terjemahan harfiah dan cara baca."
+ },
+ "product": {
+  "slug": "romana-104-b2-id",
+  "title": "Romanian 101 - B2",
+  "type": "ebook",
+  "language": "Romanian",
+  "level": "B2",
+  "file": "romana-104-b2-id.pdf",
+  "description": "Dua puluh unit bahasa Rumania tingkat B2, jilid penutup seri: dialog berisi pendapat dan perdebatan, terjemahan harfiah, catatan tata bahasa, kosakata beserta ungkapan, empat latihan berkunci, dan teks bacaan sungguhan (kontrak, berita, esai, potongan bergaya sastra, pidato). Isinya bahasa untuk berargumen dan memilih nada: prezumtiv untuk dugaan, konjunktif di segala posisi (fara sa, in loc sa, decat sa), nominalisasi dan infinitif panjang, gerunziu serta partisip mutlak, urutan kata untuk penekanan, kerangka argumen dengan konektornya, melunakkan dan menegaskan, bahasa administratif dan hukum, angka dan ekonomi, bahasa politik dan pers beserta cara memilah fakta dari opini, sastra lisan Creanga dan Caragiale, puisi dan kata dor yang sukar diterjemahkan, ragam daerah serta bahasa Rumania di Republica Moldova, derivare dan keluarga kata, falsi amici, 45 idiom lanjut, presentasi dan rapat, esai argumentatif, dan persiapan ujian. Lengkap dengan kilas balik B1, ringkasan tata bahasa B2, peta lima ragam bahasa, dan daftar ungkapan siap pakai."
+ },
+ "front": [
+  {
+   "title": "Kata pengantar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tingkat B2 bukan soal menambah kata. Kalau kamu sampai di sini, kosakatamu sudah cukup untuk hampir semua urusan sehari-hari. Yang kurang adalah hal yang lebih halus dan lebih menentukan: **memilih nada**."
+    },
+    {
+     "type": "p",
+     "text": "Orang Rumania yang lancar tidak cuma bisa mengatakan sesuatu — ia bisa mengatakan hal yang sama dengan lima cara. *Nu sunt de acord* (tegas), *nu prea sunt convins* (melunak), *ce-i drept, nu m-am gândit așa* (mengakui), *nici vorbă* (menutup), *o fi, dar…* (meragukan sambil sopan). Dua puluh unit di depanmu mengajarkan kelima laras itu, satu per satu, beserta bentuk tata bahasanya."
+    },
+    {
+     "type": "p",
+     "text": "Unit 1 sampai 5 melengkapi tata bahasanya: *prezumtiv* untuk dugaan (*o fi plecat deja*), konjunktif di posisi yang belum pernah kamu pakai (*fără să spună nimic, în loc să te plângi, decât să tac*), cara menjadikan seluruh kalimat sebuah kata benda (*faptul că ai recunoscut*), gerunziu dan partisip mutlak (*neavând alte opțiuni, odată terminat raportul*), dan urutan kata sebagai alat penekanan (*pe el l-am văzut, pe ea nu*)."
+    },
+    {
+     "type": "p",
+     "text": "Unit 6 dan 7 adalah jantung modul ini: kerangka berargumen lengkap dengan konektornya, lalu seni melunakkan dan menegaskan. Unit 8 sampai 11 membawamu ke bahasa yang tidak ditulis untuk pelajar — kontrak dan bahasa administratif, angka dan laporan ekonomi, bahasa politik, dan bahasa pers beserta cara memilah fakta dari opini."
+    },
+    {
+     "type": "p",
+     "text": "Unit 12 sampai 17 masuk ke tempat yang paling jarang disentuh modul bahasa: sastra lisan Creangă dan ironi Caragiale, puisi dan kata *dor* yang tak punya padanan satu kata, ragam daerah dan bahasa Rumania di Republica Moldova, cara membentuk kata sendiri dari akar yang sudah kamu tahu, kawan-kawan palsu yang menjatuhkan penutur asing justru di tingkat ini, dan 45 idiom yang membuat kalimat benar jadi kalimat yang bunyinya Rumania."
+    },
+    {
+     "type": "p",
+     "text": "Tiga unit terakhir mengembalikan semuanya ke penggunaan: presentasi dan rapat, esai argumentatif, dan ujian bahasa Rumania — beserta satu hal yang lebih penting dari ujian, yaitu cara merawat bahasa sesudah tak ada modul lagi."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum mulai",
+     "items": [
+      "Bab **Kilas balik B1** di halaman berikutnya memuat seluruh sistem kata kerja bahasa Rumania dalam satu tabel beserta konektor B1. Kalau *aș fi venit* dan *plecaseră deja* belum otomatis, buka bab itu dulu.",
+      "Di B2 dialognya bukan lagi transaksi — ia percakapan berisi pendapat. Bacalah seperti kamu membaca percakapan dalam bahasa Indonesia: cari di mana orangnya setuju, di mana ia sebenarnya menolak dengan halus.",
+      "Beberapa unit memuat **teks yang memang sulit**: potongan kontrak, laporan angka, adegan bergaya sastra. Itu bukan salah cetak. Justru kemampuan membaca teks yang tidak diperlunak untukmu adalah yang membedakan B2 dari B1.",
+      "Mulai sekarang, latihan terpenting bukan lagi latihan di modul, tapi **menulis pendapatmu sendiri** — 150 kata seminggu tentang apa pun. Unit 19 mengajarkan caranya."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Selamat sampai di jilid terakhir. *Hai să vedem ce poți!*"
+    }
+   ]
+  },
+  {
+   "type": "isi",
+   "title": "Daftar isi",
+   "intro": "Unit 1-5 melengkapi tata bahasa, unit 6-7 memasang alat berargumen, unit 8-11 membawa ke bahasa resmi, angka, politik, dan pers, unit 12-17 ke sastra, ragam daerah, dan kata bentukan, unit 18-20 ke presentasi, esai, dan ujian."
+  },
+  {
+   "title": "Cara memakai modul ini",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Susunan tiap unit sama seperti B1 — dua dialog, kotak tata bahasa, dua bagian bertema, ulangan berjenjang, kosakata, empat latihan — tapi bobotnya bergeser."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Dialognya lebih panjang (15-17 baris) dan isinya pendapat.** Baca dua kali: sekali untuk isinya, sekali untuk nadanya. Pertanyaan yang berguna: kalimat mana yang sebenarnya sopan-tapi-menolak?",
+      "**Teks bacaannya teks sungguhan.** Kontrak, laporan angka, esai, adegan bergaya sastra, pidato. Terjemahannya ada di kolom sebelah, tapi jangan dibaca lebih dulu.",
+      "**Latihan ketiga: menulis ulang.** Menggabungkan, menominalkan, memasifkan, memperhalus, memindahkan ragam. Di B2 inilah latihan yang paling menentukan.",
+      "**Kosakatanya termasuk ungkapan**, bukan cuma kata tunggal — *a-i pica fisa, în măsura în care, pe propria răspundere*. Hafalkan utuh; potongan-potongannya tidak berguna sendiri."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tentang teks bergaya sastra",
+     "items": [
+      "Di unit 12 dan 19 kamu akan menemukan teks yang **ditulis bergaya** Creangă, Caragiale, atau bergaya esai — bukan kutipan asli. Modul ini sengaja tidak mengaku mengutip. Kalau kamu mau membaca yang asli — dan kamu sekarang bisa — bab terakhir menyebut karya mana yang harus dibuka lebih dulu.",
+      "Nama, karya, dan keterangan tentang penulisnya akurat. Yang dikarang hanya teks latihannya."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara membaca terjemahan harfiah",
+     "items": [
+      "Masih dipakai di setiap baris dialog, dan di B2 gunanya berubah: bukan lagi untuk memahami artinya — kamu sudah paham — tapi untuk melihat **susunan** yang tidak akan kamu pilih sendiri: *fiind vorba de bani* → \"ada-nya bicara tentang uang\", *nu că nu vreau* → \"bukan bahwa tidak saya-mau\".",
+      "Baris harfiah yang terasa paling aneh adalah baris yang paling perlu kamu tiru."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu hal yang berubah di tingkat ini: **berhenti mengejar kesempurnaan**. Di B2 yang membedakan penutur yang enak diajak bicara bukan ketiadaan kesalahan, tapi kejelasan, nada yang pas, dan keberanian menyatakan pendapat dengan kalimat panjang."
+    }
+   ]
+  },
+  {
+   "title": "Kilas balik B1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Seluruh sistem kata kerja bahasa Rumania dan konektor tingkat B1 dalam dua halaman. Tutup tabelnya, sebutkan dari ingatan, baru buka."
+    },
+    {
+     "type": "sub",
+     "text": "Semua bentuk kata kerja yang sudah kamu punya"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "a merge",
+      "a fi",
+      "a se trezi"
+     ],
+     "rows": [
+      [
+       "Kala kini",
+       "*merg*",
+       "*sunt*",
+       "*mă trezesc*"
+      ],
+      [
+       "Perfect compus",
+       "*am mers*",
+       "*am fost*",
+       "*m-am trezit*"
+      ],
+      [
+       "Imperfect",
+       "*mergeam*",
+       "*eram*",
+       "*mă trezeam*"
+      ],
+      [
+       "Mai mult ca perfectul",
+       "*mersesem*",
+       "*fusesem*",
+       "*mă trezisem*"
+      ],
+      [
+       "Masa depan",
+       "*o să merg / voi merge*",
+       "*o să fiu / voi fi*",
+       "*o să mă trezesc*"
+      ],
+      [
+       "Condițional prezent",
+       "*aș merge*",
+       "*aș fi*",
+       "*m-aș trezi*"
+      ],
+      [
+       "Condițional perfect",
+       "*aș fi mers*",
+       "*aș fi fost*",
+       "*m-aș fi trezit*"
+      ],
+      [
+       "Conjunctiv prezent",
+       "*să merg*",
+       "*să fiu*",
+       "*să mă trezesc*"
+      ],
+      [
+       "Conjunctiv perfect",
+       "*să fi mers*",
+       "*să fi fost*",
+       "*să mă fi trezit*"
+      ],
+      [
+       "Gerunziu · Partisip · Supin",
+       "*mergând · mers · de mers*",
+       "*fiind · fost*",
+       "*trezindu-se · trezit*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalimat bertingkat B1 yang akan dipakai terus"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Bentuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "Pengandaian 3 tingkat",
+       "kini / condițional / condițional perfect",
+       "*Dacă aș fi știut, ți-aș fi spus.*"
+      ],
+      [
+       "Konsesif",
+       "*deși, chiar dacă, oricât de … ar fi*",
+       "*Oricât de greu ar fi, nu renunț.*"
+      ],
+      [
+       "Sebab",
+       "*deoarece, din cauza, datorită*",
+       "*din cauza traficului*"
+      ],
+      [
+       "Akibat",
+       "*așa că, prin urmare, atât de … încât*",
+       "*atât de aglomerat, încât…*"
+      ],
+      [
+       "Tujuan & waktu",
+       "*ca să, înainte să, până să* / *după ce, de îndată ce*",
+       "*ca să prind trenul*"
+      ],
+      [
+       "Dugaan",
+       "*s-ar putea să, se pare că, cică, o fi*",
+       "*S-ar putea să întârzie.*"
+      ],
+      [
+       "Pasif",
+       "*a fi* + partisip (+ *de*) / *se* pasif",
+       "*Contractul a fost semnat.*"
+      ],
+      [
+       "Relatif",
+       "*care, pe care, al cărui, căruia, ceea ce*",
+       "*colegul al cărui birou…*"
+      ],
+      [
+       "Tak langsung",
+       "*a spus că* + pergeseran kala, *mi-a zis să*",
+       "*A spus că era obosită.*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Ragam: yang sudah dipasang di B1"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Lisan",
+      "Resmi"
+     ],
+     "rows": [
+      [
+       "*Mersi, pa, ne auzim!*",
+       "*Vă mulțumesc. Cu stimă,*"
+      ],
+      [
+       "*Păi, adică, mă rog, ce să zic*",
+       "*În vederea, în urma, respectiv*"
+      ],
+      [
+       "*Vreau o zi liberă.*",
+       "*Vă rog să îmi aprobați cererea de concediu.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau baris mana pun di tabel-tabel ini masih membuatmu berhenti, buka unitnya di modul B1 sebelum masuk unit 1. Modul ini memakai semuanya sebagai bahan dasar, bukan sebagai pelajaran."
+    }
+   ]
+  }
+ ],
+ "back": [
+  {
+   "title": "Ringkasan tata bahasa B2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuknya saja. Nomor unitnya dicantumkan kalau kamu ingin kembali ke penjelasannya."
+    },
+    {
+     "type": "sub",
+     "text": "Prezumtiv — menerka (unit 1)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Rumus",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Sekarang",
+       "*o fi* + partisip / *o fi* + kata sifat",
+       "*o fi acasă*",
+       "\"mungkin sedang di rumah\""
+      ],
+      [
+       "Lampau",
+       "*o fi* + partisip",
+       "*o fi plecat deja*",
+       "\"mungkin sudah pergi\""
+      ],
+      [
+       "Bentuk tulis",
+       "*va fi* + partisip",
+       "*va fi fost o neînțelegere*",
+       "\"barangkali itu salah paham\""
+      ],
+      [
+       "Kabar orang",
+       "*se zice că … ar fi* + partisip",
+       "*se zice că ar fi cumpărat casa*",
+       "\"katanya ia membeli\""
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Konjunktif di posisi baru (unit 2)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*fără să*",
+       "tanpa …",
+       "*Fără să spună nimic, a plecat.*"
+      ],
+      [
+       "*în loc să*",
+       "bukannya …",
+       "*În loc să te plângi, propune ceva.*"
+      ],
+      [
+       "*mai bine … decât să*",
+       "lebih baik … daripada …",
+       "*Mai bine tac decât să zic o prostie.*"
+      ],
+      [
+       "*până să*",
+       "sebelum sempat …",
+       "*Până să apuc să răspund, a închis.*"
+      ],
+      [
+       "sesudah negasi",
+       "*nu există … care să*",
+       "*Nu există om care să nu greșească.*"
+      ],
+      [
+       "sesudah superlatif",
+       "*singurul care să*",
+       "*E singurul care să fi înțeles.*"
+      ],
+      [
+       "*departe de a*",
+       "jauh dari …",
+       "*Departe de a fi perfect, e totuși bun.*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menjadikan kalimat sebuah kata benda (unit 3)"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Kalimat → kata benda**: *faptul că ai recunoscut* (\"kenyataan bahwa…\"), *ideea de a lucra de acasă*, *posibilitatea ca proiectul să fie amânat*, *necesitatea de a schimba planul*.",
+      "**Infinitif panjang** jadi kata benda biasa: *venire, plecare, citire, rezolvare, facere* — dan ia berperilaku seperti kata benda pr: *rezolvarea problemei, odată cu venirea iernii*.",
+      "Gunanya: memadatkan. *Pentru că a recunoscut, totul s-a schimbat* → *Faptul că a recunoscut a schimbat totul.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Gerunziu & partisip mutlak (unit 4)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Gerunziu",
+       "*Ajungând acolo, mi-am dat seama…*",
+       "sesudah/sambil …"
+      ],
+      [
+       "Gerunziu bernegasi",
+       "*Neavând alte opțiuni, am acceptat.*",
+       "karena tidak punya …"
+      ],
+      [
+       "Gerunziu + klitik",
+       "*trezindu-se, dându-mi seama*",
+       "klitiknya menempel di belakang"
+      ],
+      [
+       "*fiind vorba de*",
+       "*Fiind vorba de bani, toți au fost atenți.*",
+       "karena ini soal …"
+      ],
+      [
+       "*odată* + partisip",
+       "*Odată terminat raportul, am plecat.*",
+       "begitu … selesai"
+      ],
+      [
+       "Partisip sebagai keterangan",
+       "*lucrurile spuse la nervi*",
+       "yang (sudah) di-…"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Urutan kata & penekanan (unit 5)"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Objek dipindah ke depan + klitiknya digandakan: *Pe el l-am văzut, pe ea nu. Banii, îi trimit mâine.*",
+      "Penegas: *chiar* (bahkan/justru), *tocmai* (tepat), *doar/numai* (hanya), *și* (juga/bahkan), *nici* (bahkan tidak).",
+      "*nu … decât* = \"tidak … selain\" = hanya: *Nu vine decât la sfârșit.*",
+      "Kalimat yang isinya sama, penekanannya beda: *Ioana a trimis raportul* / *Raportul l-a trimis Ioana* / *Tocmai Ioana a trimis raportul.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kerangka & konektor berargumen (unit 6)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian argumen",
+      "Kalimat siap pakai"
+     ],
+     "rows": [
+      [
+       "Menyatakan tesis",
+       "*Teza mea este simplă: … · Voi argumenta în cele ce urmează că…*"
+      ],
+      [
+       "Argumen pertama",
+       "*În primul rând, … · Cel mai important argument este că…*"
+      ],
+      [
+       "Menambah",
+       "*În plus, … · Ba mai mult, … · Nu numai … ci și…*"
+      ],
+      [
+       "Bersyarat",
+       "*În măsura în care … · Cu condiția să … · Dacă e adevărat că … atunci…*"
+      ],
+      [
+       "Menimbang bobot",
+       "*Nu atât … cât … · Cu atât mai mult … · Mai puțin important este că…*"
+      ],
+      [
+       "Kontraargumen",
+       "*Un contraargument evident ar fi … · S-ar putea obiecta că…*"
+      ],
+      [
+       "Menjawab kontraargumen",
+       "*Numai că … · Ce se uită însă este că…*"
+      ],
+      [
+       "Menutup",
+       "*În concluzie, … · Așadar, … · Una peste alta,…*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Melunakkan & menegaskan (unit 7)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Melunakkan",
+      "Menegaskan"
+     ],
+     "rows": [
+      [
+       "*nu prea, cam, oarecum, parcă*",
+       "*categoric, fără doar și poate, clar*"
+      ],
+      [
+       "*într-o oarecare măsură*",
+       "*chiar, tocmai, mai ales*"
+      ],
+      [
+       "*ce-i drept, ca să fiu sincer*",
+       "*ba chiar, nici vorbă, în niciun caz*"
+      ],
+      [
+       "*aș zice că, mi se pare că*",
+       "*sunt convins că, e limpede că*"
+      ],
+      [
+       "*n-aș vrea să exagerez, dar*",
+       "*insist că, țin să subliniez că*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Bahasa administratif (unit 8)"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Kala kini bernilai aturan: *Cererea se depune în termen de 30 de zile.*",
+      "Pasiv & *se* impersonal: *Se interzice fumatul. Documentele vor fi transmise.*",
+      "Rumus baku: *prezentul contract, subsemnatul/subsemnata, pe propria răspundere, în conformitate cu prevederile, părțile convin, prezenta cerere, la data semnării, în termen de*.",
+      "Kata benda bertumpuk: *procedura de soluționare a cererilor de eliberare a actelor* — dan cara membacanya dari belakang ke depan."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Angka & tendensi (unit 9)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Rumania",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*a crescut cu 10%*",
+       "naik sebesar 10%"
+      ],
+      [
+       "*a crescut la 10%*",
+       "naik menjadi 10%"
+      ],
+      [
+       "*față de / comparativ cu anul trecut*",
+       "dibandingkan tahun lalu"
+      ],
+      [
+       "*s-a dublat / s-a înjumătățit*",
+       "berlipat dua / berkurang separuh"
+      ],
+      [
+       "*în medie · pe cap de locuitor*",
+       "rata-rata · per kapita"
+      ],
+      [
+       "*4,2%* → *patru virgulă doi la sută*",
+       "koma desimal pakai koma, bukan titik"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kata bentukan (unit 15)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*re-*",
+       "ulang",
+       "*a reciti, a rescrie, a reface*"
+      ],
+      [
+       "*ne-*",
+       "kebalikan",
+       "*nemulțumit, neatent, neplăcut*"
+      ],
+      [
+       "*des- / dez-*",
+       "membatalkan",
+       "*a desface, a dezlega, a dezamăgi*"
+      ],
+      [
+       "*în-*",
+       "menjadikan",
+       "*a înnegri, a îmbătrâni*"
+      ],
+      [
+       "*stră-*",
+       "melampaui, satu tingkat lebih jauh",
+       "*străbunic, străvechi*"
+      ],
+      [
+       "*-tor*",
+       "pelaku/alat",
+       "*cititor, muncitor, aspirator*"
+      ],
+      [
+       "*-re / -ire*",
+       "perbuatannya",
+       "*citire, venire, rezolvare*"
+      ],
+      [
+       "*-ime*",
+       "kumpulan/sifat",
+       "*mulțime, înălțime, tinerime*"
+      ],
+      [
+       "*-eală*",
+       "hasil/keadaan (sering merendahkan)",
+       "*oboseală, îmbulzeală, greșeală*"
+      ],
+      [
+       "*-ean / -ez*",
+       "asal",
+       "*bucureștean, clujean, francez*"
+      ],
+      [
+       "*-esc*",
+       "bersifat",
+       "*românesc, omenesc, prietenesc*"
+      ]
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kawan palsu yang paling sering menjatuhkan (unit 16)"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Rumania",
+      "Bukan berarti",
+      "Sebenarnya"
+     ],
+     "rows": [
+      [
+       "*a realiza*",
+       "merealisasikan",
+       "menyadari (juga: mewujudkan, tapi lebih jarang)"
+      ],
+      [
+       "*eventual*",
+       "akhirnya",
+       "barangkali, kalau perlu"
+      ],
+      [
+       "*a pretinde*",
+       "berpura-pura",
+       "menuntut, mengaku-aku"
+      ],
+      [
+       "*fabulos*",
+       "hanya untuk cerita",
+       "luar biasa (juga untuk harga)"
+      ],
+      [
+       "*a suporta*",
+       "mendukung",
+       "menanggung, tahan"
+      ],
+      [
+       "*sensibil*",
+       "masuk akal",
+       "peka, mudah tersentuh"
+      ],
+      [
+       "*magazin*",
+       "majalah",
+       "toko"
+      ],
+      [
+       "*a asista*",
+       "membantu",
+       "menyaksikan, menghadiri"
+      ],
+      [
+       "*serviciu*",
+       "(*servici* salah tulis)",
+       "pekerjaan, layanan"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Peta lima ragam bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Satu isi, lima ragam. Inilah keterampilan inti tingkat B2: bukan memilih kata yang benar, tapi memilih ragam yang pas. Bacalah tabel ini dari kiri ke kanan dan perhatikan apa yang berubah — kata gantinya, panjang kalimatnya, dan siapa yang jadi subjek."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ragam",
+      "\"Saya minta cuti tiga hari\"",
+      "Cirinya"
+     ],
+     "rows": [
+      [
+       "Lisan akrab",
+       "*Îmi iau trei zile libere.*",
+       "kalimat pendek, kata kerja aktif, tanpa formula"
+      ],
+      [
+       "Lisan sopan",
+       "*Aș vrea să-mi iau trei zile libere, dacă se poate.*",
+       "*aș* + pelunak *dacă se poate*"
+      ],
+      [
+       "Tulis netral",
+       "*Vreau să solicit trei zile de concediu.*",
+       "kata yang lebih tepat (*a solicita*), tanpa pelunak"
+      ],
+      [
+       "Administratif",
+       "*Vă rog să îmi aprobați cererea de concediu de odihnă pentru trei zile.*",
+       "*Vă rog să*, kata benda bertumpuk, formula baku"
+      ],
+      [
+       "Pers",
+       "*Angajatul ar fi solicitat trei zile de concediu.*",
+       "prezumtiv *ar fi*, subjek jadi pihak ketiga"
+      ]
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ragam",
+      "\"Harganya naik\"",
+      "Cirinya"
+     ],
+     "rows": [
+      [
+       "Lisan akrab",
+       "*S-a scumpit tot.*",
+       "kata kerja refleksif, tanpa angka"
+      ],
+      [
+       "Lisan sopan",
+       "*Mi se pare că prețurile au crescut destul de mult.*",
+       "*mi se pare că* + pelunak"
+      ],
+      [
+       "Tulis netral",
+       "*Prețurile au crescut în ultimele luni.*",
+       "pernyataan, tanpa nada"
+      ],
+      [
+       "Ekonomi / laporan",
+       "*Prețurile au crescut cu 8% comparativ cu aceeași perioadă a anului trecut.*",
+       "angka, *comparativ cu*, periode"
+      ],
+      [
+       "Pers",
+       "*Scumpirile lovesc din nou buzunarele românilor.*",
+       "nominalisasi + metafora + nada"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara memakai peta ini",
+     "items": [
+      "Waktu kamu menulis atau bicara, tanyakan dua hal: **siapa yang membaca/mendengar**, dan **apa yang akan terjadi sesudahnya**. Surat yang akan diarsipkan butuh ragam administratif; pesan ke Ioana tidak.",
+      "Kesalahan tingkat B2 yang paling sering: memakai ragam administratif di percakapan (terdengar kaku dan lucu) atau ragam lisan di surat resmi (terdengar tidak serius). Keduanya soal nada, bukan tata bahasa.",
+      "Kalau ragu, pilih **tulis netral**. Ragam ini hampir tak pernah salah tempat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ungkapan siap pakai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Potongan yang paling cepat menaikkan bunyi bahasamu, disusun menurut situasi. Hafalkan utuh — potongan-potongannya tidak berguna sendiri."
+    },
+    {
+     "type": "sub",
+     "text": "Di rapat & presentasi"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Dacă îmi permiteți, aș adăuga un singur lucru.*",
+      "*Revin la ce spuneam mai devreme.*",
+      "*Să trecem la punctul următor.*",
+      "*Îmi permiteți să vă întrerup o secundă?*",
+      "*Pe scurt, avem două opțiuni.*",
+      "*În încheiere, trei concluzii.*",
+      "*Mulțumesc pentru atenție; rămân la întrebări.*",
+      "*Nu am datele la mine, dar vă revin cu un e-mail.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Berbeda pendapat tanpa memutus percakapan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Înțeleg ce spui, dar hai să ne uităm și la partea cealaltă.*",
+      "*Ce-i drept, n-am privit lucrurile așa.*",
+      "*Într-o oarecare măsură, ai dreptate.*",
+      "*Nu prea sunt convins, ca să fiu sincer.*",
+      "*Aș zice mai degrabă că problema e alta.*",
+      "*Nici vorbă să renunțăm acum.*",
+      "*Poate că da, dar mă îndoiesc.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menulis surel yang enak dibaca"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Vă scriu în legătură cu…*",
+      "*Revin la mesajul de săptămâna trecută.*",
+      "*Vă transmit atașat documentele solicitate.*",
+      "*Aș avea nevoie de un răspuns până vineri, dacă se poate.*",
+      "*Vă mulțumesc anticipat pentru sprijin.*",
+      "*Rămân la dispoziția dumneavoastră pentru orice detaliu.*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Waktu kamu tidak tahu kata yang tepat"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Cum se spune la…?*",
+      "*Nu-mi vine cuvântul acum.*",
+      "*E ceva de genul…*",
+      "*Nu știu dacă se zice așa, dar…*",
+      "*Corectează-mă dacă greșesc.*",
+      "*Poți să-mi spui altfel, cu alte cuvinte?*"
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Menyambung cerita panjang"
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Ca să înțelegi, trebuie să-ți spun cum a început.*",
+      "*Între timp, se întâmpla altceva.*",
+      "*Și, culmea, chiar atunci a sunat telefonul.*",
+      "*Pe scurt, s-a terminat bine.*",
+      "*Una peste alta, n-a fost chiar rău.*"
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Aturan tiga",
+     "items": [
+      "Jangan menghafal seluruh halaman ini. Pilih **tiga** potongan seminggu dan paksa dirimu memakainya — di rapat, di pesan, di catatan sendiri. Potongan yang tak pernah dipakai akan hilang dalam sebulan.",
+      "Potongan yang paling cepat terpakai biasanya yang paling sederhana: *ce-i drept*, *pe scurt*, *revin la*. Mulailah dari situ."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Apa selanjutnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini jilid terakhir seri **Română 101**, dan itu berarti satu hal: mulai sekarang bahasa Rumania tidak lagi datang dari modul. Ia datang dari orang, dari teks, dan dari kebiasaan."
+    },
+    {
+     "type": "p",
+     "text": "Kalau dua puluh unit tadi benar-benar kamu kerjakan, kamu di **B2**: bisa berargumen dengan nada yang dipilih sadar, membaca kontrak dan berita tanpa bantuan, mengenali ragam daerah, menulis esai pendek, dan mengikuti percakapan cepat antara dua orang Rumania yang tidak memperlambat bicaranya untukmu."
+    },
+    {
+     "type": "sub",
+     "text": "Bacaan asli yang paling pas dibuka lebih dulu"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Ion Creangă — *Amintiri din copilărie***. Bahasa lisan Moldova, lucu, dan mengejutkan mudah dibaca dengan suara keras. Mulai dari bab pertama.",
+      "**I. L. Caragiale — *Momente și schițe***, lalu drama *O scrisoare pierdută*. Ironinya masih persis mengenai Rumania hari ini; dialognya sekolah terbaik untuk ragam lisan.",
+      "**Mihai Eminescu** — mulai dari puisi pendek, bukan *Luceafărul*. Baca dengan suara keras; jangan menerjemahkan dulu.",
+      "**Mircea Cărtărescu** — prosa Rumania modern. Kalimatnya panjang, tapi di B2 sudah bisa dinikmati.",
+      "**Pers harian** — satu artikel sehari dari topik yang memang kamu minati."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Alat yang dipakai orang Rumania sendiri"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**dexonline.ro** — kamus DEX daring. Di B2 berhentilah memakai kamus Rumania-Indonesia; pakai kamus Rumania-Rumania.",
+      "**Radio România Cultural** & podcast obrolan — untuk telinga, tanpa teks.",
+      "**TVR & pers daring** — untuk ragam pers yang dipasang di unit 11."
+     ]
+    },
+    {
+     "type": "sub",
+     "text": "Kalau kamu mau sertifikat"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Ujian bahasa Rumania untuk orang asing diselenggarakan lewat **Institutul Limbii Române** dan beberapa universitas Rumania; empat kemampuan diuji (citit, ascultat, scris, vorbit). Unit 20 membahas formatnya dan strategi tiap bagian.",
+      "Periksa persyaratan terbaru langsung di lembaga penyelenggara sebelum mendaftar — rincian ujian dan biayanya berubah dari waktu ke waktu."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dan satu kebiasaan terakhir, yang nilainya lebih besar dari semua daftar di atas: **bicaralah seminggu sekali dengan orang Rumania**, walau setengah jam. Tata bahasa bisa dipelajari sendiri; irama tidak."
+    },
+    {
+     "type": "p",
+     "text": "*Mulțumesc că ai ajuns până aici. Limba nu se termină niciodată de învățat — și asta e partea frumoasă.*"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+  "title": "Menjadikan kata benda",
+  "title_target": "Substantivizare",
+  "goal": "Bahasa Rumania tulis — laporan, judul berita, nota, kontrak — berjalan di atas **kata benda**, bukan kata kerja. Di unit ini: empat kepala nominalisasi (*faptul că, ideea de a, posibilitatea ca … să, necesitatea de a*) dan infinitif panjang (*venire, rezolvare, citire*) yang memadatkan satu kalimat penuh jadi dua kata.",
+  "bekal": [
+    "memadatkan satu klausa penuh jadi frasa benda: *prețurile cresc* → *creșterea prețurilor*",
+    "memilih di antara *faptul că*, *ideea de a*, *ideea că*, dan *posibilitatea ca … să* tanpa menebak",
+    "membaca bahasa laporan dan judul pers, termasuk melihat siapa yang disembunyikan nominalisasi"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Într-un raport nu explici, numești",
+      "intro": "Budi harus menyerahkan laporan sepuluh halaman dalam bahasa Rumania. Ia meminta Raluca — jurnalis, jadi pembaca paling tak sabar yang ia kenal — membacanya dulu. Percakapan ini bukan tentang tata bahasa, melainkan gaya.",
+      "lines": [
+        {"speaker": "Raluca:", "text": "Ți-am citit raportul. Faptul că ai scris singur zece pagini în română e deja o performanță.", "id": "Aku sudah baca laporanmu. Fakta bahwa kamu menulis sendiri sepuluh halaman dalam bahasa Rumania itu sudah prestasi.", "literal": "kamu-datif-saya-sudah baca laporan-nya. fakta-nya bahwa kamu-sudah tulis sendiri sepuluh halaman-jamak di rumania ia-adalah sudah sebuah-pr prestasi."},
+        {"speaker": "Budi:", "text": "Se simte un „dar” în aer.", "id": "Terasa ada \"tapi\" di udara.", "literal": "diri-ia-rasa sebuah-lk „tetapi” di udara."},
+        {"speaker": "Raluca:", "text": "Se simte. Se citește greu — ai propoziții de patru rânduri.", "id": "Terasa. Susah dibaca — kalimatmu ada yang empat baris.", "literal": "diri-ia-rasa. diri-ia-baca sulit — kamu-punya kalimat-jamak dari empat baris-jamak."},
+        {"speaker": "Budi:", "text": "Am vrut să explic tot. Mi s-a părut mai onest.", "id": "Aku mau menjelaskan semuanya. Rasanya lebih jujur.", "literal": "saya-sudah mau agar saya-jelaskan semua. saya-datif diri-ia-sudah tampak lebih jujur."},
+        {"speaker": "Raluca:", "text": "Într-un raport nu explici, numești. „Am discutat despre faptul că prețurile cresc” devine „creșterea prețurilor”.", "id": "Di laporan kamu tidak menjelaskan, kamu menamai. \"Kami membahas fakta bahwa harga naik\" jadi \"kenaikan harga\".", "literal": "di-dalam-sebuah-lk laporan tidak kamu-jelaskan, kamu-namai. „kami-sudah bahas tentang fakta-nya bahwa harga-jamak-nya mereka-naik” ia-jadi „kenaikan-nya harga-jamak-genitif”."},
+        {"speaker": "Raluca:", "text": "Verbul devine substantiv, și o frază întreagă intră într-un titlu: Rezolvarea problemei ține de noi.", "id": "Kata kerjanya jadi kata benda, dan satu kalimat utuh masuk ke dalam judul: Pemecahan masalahnya tergantung pada kita.", "literal": "kata-kerja-nya ia-jadi kata-benda, dan sebuah-pr kalimat utuh-pr ia-masuk di-dalam-sebuah-lk judul: pemecahan-nya masalah-genitif ia-pegang dari kami."},
+        {"speaker": "Budi:", "text": "Am pus titlul „Ce facem cu întârzierile”.", "id": "Aku memberi judul \"Kita bagaimana dengan keterlambatannya\".", "literal": "saya-sudah taruh judul-nya „apa kami-buat dengan keterlambatan-jamak-nya”."},
+        {"speaker": "Raluca:", "text": "Prea vorbit pentru un raport. „Cauzele întârzierilor” spune același lucru în două cuvinte.", "id": "Terlalu lisan untuk sebuah laporan. \"Sebab-sebab keterlambatan\" mengatakan hal yang sama dalam dua kata.", "literal": "terlalu terucap untuk sebuah-lk laporan. „sebab-jamak-nya keterlambatan-jamak-genitif” ia-bilang sama-lk hal di dua-pr kata-jamak."},
+        {"speaker": "Budi:", "text": "Sună a ziar.", "id": "Bunyinya seperti surat kabar.", "literal": "ia-bunyi pada surat-kabar."},
+        {"speaker": "Raluca:", "text": "E limba în care se scrie. Dar atenție: nu orice verb dă un substantiv frumos.", "id": "Itu bahasa yang dipakai untuk menulis. Tapi hati-hati: tidak setiap kata kerja memberi kata benda yang bagus.", "literal": "ia-adalah bahasa-nya di yang diri-ia-tulis. tetapi perhatian: tidak setiap kata-kerja ia-beri sebuah-lk kata-benda indah-lk."},
+        {"speaker": "Raluca:", "text": "„Venire” merge: Odată cu venirea iernii s-a schimbat programul. „Facere” aproape nu se folosește singur.", "id": "\"Venire\" jalan: Bersamaan dengan datangnya musim dingin, jadwalnya berubah. \"Facere\" hampir tidak dipakai sendiri.", "literal": "kedatangan ia-jalan: sekali dengan kedatangan-nya musim-dingin-genitif diri-ia-sudah ubah jadwal-nya. pembuatan hampir tidak diri-ia-pakai sendiri."},
+        {"speaker": "Budi:", "text": "Aici am scris: Ideea de a lucra de acasă nu i-a plăcut nimănui. E prea lung?", "id": "Di sini aku menulis: Gagasan bekerja dari rumah tidak disukai siapa pun. Terlalu panjang?", "literal": "di-sini saya-sudah tulis: gagasan-nya dari pada kerja dari rumah tidak ia-datif-ia-sudah suka tak-seorang-datif. ia-adalah terlalu panjang?"},
+        {"speaker": "Raluca:", "text": "Nu, e exact. La fel și „Posibilitatea ca proiectul să fie amânat există” — rece, dar corect.", "id": "Tidak, itu tepat. Begitu juga \"Posibilitatea ca proiectul să fie amânat există\" — dingin, tapi benar.", "literal": "tidak, ia-adalah tepat. pada sama juga kemungkinan-nya bahwa proyek-nya agar ia-ada tertunda ia-ada — dingin, tetapi benar."},
+        {"speaker": "Budi:", "text": "Și despre colegul care a greșit? Lui i-am spus atunci: Faptul că ai recunoscut greșeala schimbă totul.", "id": "Dan soal rekan yang salah itu? Ke dia waktu itu aku bilang: Fakta bahwa kamu mengakui kesalahannya mengubah segalanya.", "literal": "dan tentang rekan-nya yang ia-sudah salah? ia-datif ia-datif-saya-sudah bilang kalau-itu: fakta-nya bahwa kamu-sudah akui kesalahan-nya ia-ubah semua-nya."},
+        {"speaker": "Raluca:", "text": "Frumos spus — dar nu într-un raport. Acolo scrii „recunoașterea greșelii”. Scurt și rece, cum cere genul.", "id": "Bagus diucapkan — tapi bukan di dalam laporan. Di sana kamu tulis \"pengakuan kesalahan\". Pendek dan dingin, seperti yang dituntut jenisnya.", "literal": "indah terucap — tetapi tidak di-dalam-sebuah-lk laporan. di-sana kamu-tulis „pengakuan-nya kesalahan-genitif”. pendek dan dingin, bagaimana ia-minta jenis-nya."}
+      ],
+      "notes": [
+        "**Faptul că** membungkus SATU KLAUSA PENUH jadi kata benda; klausanya tetap indikatif. Ia bisa jadi subjek, objek, atau ikut kata depan: *din cauza faptului că*, *în ciuda faptului că* — perhatikan genitifnya, *faptului*.",
+        "**Ideea de a + infinitif pendek** bila tak ada subjek tersendiri. Kalau yang dibungkus fakta dengan subjeknya sendiri: *ideea că*. Saudaranya *necesitatea de a, dreptul de a, obiceiul de a*.",
+        "**Posibilitatea ca … să** — satu-satunya yang memakai *ca*, dan *ca* muncul karena klausanya punya subjek sendiri. Tanpa subjek baru: *posibilitatea de a amâna*. *Posibilitatea că* salah.",
+        "**Infinitif panjang** = infinitif + *-re*, selalu **perempuan**: *venire, rezolvare, citire, creștere*. Jamaknya *-ări/-iri*: *rezolvări, întârzieri*.",
+        "**-rea + genitif.** Objeknya jadi genitif: *rezolvarea problem**ei***, *creșterea prețuri**lor***. Tanpa genitif, frasanya rontok.",
+        "**Nimănui** adalah datif dari *nimeni* dan menuntut *nu* di kata kerjanya: *nu i-a plăcut nimănui*. Klitik *i* tetap dipakai walaupun *nimănui* sudah ada — penggandaan ini wajib."
+      ],
+      "grammars": [
+        {
+          "title": "Empat kepala nominalisasi dan sambungannya",
+          "body": [
+            "Kesalahan tingkat B2 di sini hampir selalu berupa sambungan yang salah: *că* di tempat *de a*, atau *ca … să* dipangkas jadi *că*. Hafalkan kolom kedua bersama kolom pertama, sebagai satu bongkahan."
+          ],
+          "table": {
+            "head": ["Kepala", "Sambungannya", "Contoh", "Kapan dipakai"],
+            "rows": [
+              ["**faptul**", "*că* + indikatif", "*Faptul că ai recunoscut greșeala…*", "sesuatu yang sudah pasti terjadi"],
+              ["**ideea**", "*de a* + infinitif", "*Ideea de a lucra de acasă…*", "tanpa subjek tersendiri"],
+              ["**ideea**", "*că* + indikatif", "*Ideea că el pleacă mă sperie.*", "gagasan tentang satu fakta"],
+              ["**posibilitatea**", "*ca* + subjek + *să*", "*Posibilitatea ca proiectul să fie amânat…*", "klausanya punya subjek sendiri"],
+              ["**necesitatea**", "*de a* + infinitif", "*Necesitatea de a îngheța cerințele…*", "keharusan, ragam laporan"],
+              ["**în ciuda / din cauza**", "*faptului că*", "*În ciuda faptului că a plouat…*", "kata depan menuntut genitif"]
+            ]
+          },
+          "after": [
+            "**Ragu antara *de a* dan *ca … să*? Tanya: ada subjek baru?** Ada → *ca … să*. Tidak ada → *de a* + infinitif.",
+            "**Jangan menumpuk lebih dari dua genitif.** *Rezolvarea problemei creșterii prețurilor* benar secara tata bahasa dan tak terbaca."
+          ]
+        },
+        {
+          "title": "Infinitif panjang: dari kata kerja ke kata benda biasa",
+          "body": [
+            "Sebagian infinitif panjang berhenti sebagai kata benda abstrak (*rezolvare*), sebagian lagi sudah jadi kata sehari-hari dengan arti sendiri (*mâncare* = makanan). Kolom ketiga itu yang perlu diperhatikan."
+          ],
+          "table": {
+            "head": ["Kata kerja", "Infinitif panjang", "Sudah jadi kata benda sehari-hari?", "Contoh"],
+            "rows": [
+              ["*a veni*", "**venire**", "tidak; hidup di ungkapan", "*odată cu venirea iernii*"],
+              ["*a rezolva*", "**rezolvare**", "ya, netral", "*rezolvarea problemei*"],
+              ["*a citi*", "**citire**", "ya; juga \"pelajaran membaca\"", "*citirea contractului*"],
+              ["*a crește*", "**creștere**", "ya, dipakai di angka", "*creșterea prețurilor*"],
+              ["*a mânca*", "**mâncare**", "ya = \"makanan\"", "*o mâncare bună*"],
+              ["*a face*", "**facere**", "hampir tidak dipakai", "pakai *realizare, efectuare*"]
+            ]
+          },
+          "after": [
+            "**Bentuk bertentu menempel seperti biasa** (*venire → venirea*), dan genitif jamaknya *-lor*: *creșterea prețurilor*, *cauzele întârzierilor*.",
+            "**Kalau infinitif panjangnya terdengar aneh, jangan dipaksa:** *a face → realizare*, *a plăti → plată*, *a începe → început*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — Titlul care ascunde autorul",
+      "intro": "Makan siang di depan kantor. Andrei membaca judul di telepon dan, tanpa sengaja, memberi Budi pelajaran tentang apa yang disembunyikan nominalisasi.",
+      "lines": [
+        {"speaker": "Andrei:", "text": "Ascultă titlul ăsta: „Amânarea deciziei nemulțumește angajații”.", "id": "Dengar judul ini: \"Penundaan keputusan membuat pegawai tidak senang\".", "literal": "dengar-lah judul-nya ini: „penundaan-nya keputusan-genitif ia-tidak-senangkan pegawai-jamak-nya”."},
+        {"speaker": "Budi:", "text": "Trei substantive și un verb. Dar cine a amânat?", "id": "Tiga kata benda dan satu kata kerja. Tapi siapa yang menunda?", "literal": "tiga kata-benda-jamak dan sebuah-lk kata-kerja. tetapi siapa ia-sudah tunda?"},
+        {"speaker": "Andrei:", "text": "Nu scrie. Asta e frumusețea genului: nominalizarea ascunde autorul.", "id": "Tidak ditulis. Itulah indahnya jenis tulisan ini: nominalisasi menyembunyikan pelakunya.", "literal": "tidak ia-tulis. ini ia-adalah keindahan-nya jenis-genitif: nominalisasi-nya ia-sembunyi pelaku-nya."},
+        {"speaker": "Budi:", "text": "Deci „amânarea deciziei” înseamnă „cineva a amânat decizia”, dar nu știm cine.", "id": "Jadi \"penundaan keputusan\" berarti \"seseorang menunda keputusannya\", tapi kita tidak tahu siapa.", "literal": "jadi „penundaan-nya keputusan-genitif” ia-berarti „seseorang ia-sudah tunda keputusan-nya”, tetapi tidak kami-tahu siapa."},
+        {"speaker": "Budi:", "text": "În presă se face des, nu? Și dacă vreau să fiu clar?", "id": "Di pers ini sering dilakukan, kan? Dan kalau aku mau jelas?", "literal": "di pers diri-ia-buat sering, tidak? dan kalau saya-mau agar saya-ada jelas?"},
+        {"speaker": "Andrei:", "text": "Scrii cu verb și cu subiect: „Consiliul a amânat decizia”. Se citește într-o secundă.", "id": "Kamu tulis dengan kata kerja dan subjek: \"Dewan menunda keputusannya\". Terbaca dalam satu detik.", "literal": "kamu-tulis dengan kata-kerja dan dengan subjek: „dewan-nya ia-sudah tunda keputusan-nya”. diri-ia-baca di-dalam-sebuah-pr detik."},
+        {"speaker": "Budi:", "text": "Posibilitatea ca proiectul să fie amânat există și la noi, de altfel.", "id": "Kemungkinan proyeknya ditunda itu ada juga di tempat kita, omong-omong.", "literal": "kemungkinan-nya bahwa proyek-nya agar ia-ada tertunda ia-ada juga pada kami, dari secara-lain."},
+        {"speaker": "Andrei:", "text": "Știu. Faptul că nimeni nu spune nimic mă îngrijorează mai mult decât amânarea.", "id": "Aku tahu. Fakta bahwa tidak ada yang bicara membuatku lebih khawatir daripada penundaannya.", "literal": "saya-tahu. fakta-nya bahwa tak-seorang tidak ia-bilang tidak-apa-pun saya-akusatif ia-khawatirkan lebih banyak daripada penundaan-nya."},
+        {"speaker": "Budi:", "text": "Rezolvarea problemei ține de noi, nu de ei.", "id": "Pemecahan masalahnya tergantung pada kita, bukan pada mereka.", "literal": "pemecahan-nya masalah-genitif ia-pegang dari kami, tidak dari mereka."},
+        {"speaker": "Andrei:", "text": "Ai început să vorbești ca rapoartele tale.", "id": "Kamu mulai bicara seperti laporan-laporanmu.", "literal": "kamu-sudah mulai agar kamu-bicara seperti laporan-jamak-nya kamu-jamak-pr."},
+        {"speaker": "Budi:", "text": "Ăsta e un compliment sau o amânare a răspunsului?", "id": "Ini pujian atau penundaan jawaban?", "literal": "ini ia-adalah sebuah-lk pujian atau sebuah-pr penundaan dari jawaban-genitif?"}
+      ],
+      "notes": [
+        "**Nominalisasi menyembunyikan tiga hal:** pelaku, waktu, kepastian. *Amânarea deciziei* tak memberi tahu siapa, kapan, dan apakah sudah terjadi. Di laporan itu berguna; di berita patut dicurigai.",
+        "**Frumusețea genului.** Kata benda bertakrif + genitif: *frumusețea* + *genului*. Baca dari belakang: \"keindahan-nya jenis-itu\".",
+        "**A nemulțumi** = membuat tidak senang, dari *mulțumit* + *ne-*. Bentuk *eu*-nya *nemulțumesc*.",
+        "**De altfel** = \"omong-omong\", dipisah koma. Jangan tertukar dengan *altfel* sendirian = \"kalau tidak\": *Grăbește-te, altfel pierdem trenul.*",
+        "**A începe să + konjunktif** untuk perubahan yang baru mulai: *Ai început să vorbești ca…* Bentuk bendanya *începutul*."
+      ],
+      "grammars": [
+        {
+          "title": "Bolak-balik antara judul dan kalimat",
+          "body": [
+            "Latihan paling manjur untuk unit ini: baca judul, ubah jadi kalimat berkata kerja, lalu balikkan lagi. Tutup satu kolom dan kerjakan dua arah."
+          ],
+          "table": {
+            "head": ["Judul bernominalisasi", "Kalimat berkata kerja", "Yang hilang di judul"],
+            "rows": [
+              ["*Amânarea deciziei*", "*Consiliul a amânat decizia.*", "pelakunya"],
+              ["*Creșterea prețurilor*", "*Prețurile au crescut.*", "waktunya"],
+              ["*Cauzele întârzierilor*", "*De ce am întârziat?*", "siapa yang terlambat"],
+              ["*Recunoașterea greșelii*", "*A recunoscut că a greșit.*", "siapa yang mengakui"],
+              ["*Modificarea specificației*", "*Clientul a modificat specificația.*", "pelakunya, kecuali ditambah *de către*"]
+            ]
+          },
+          "after": [
+            "**Pelaku bisa dipulangkan dengan *de către*:** *modificarea specificației **de către client***. Bentuk ini resmi dan hampir hanya dipakai di tulisan.",
+            "**Ujian jujur:** kalau satu paragraf tak punya satu pun kata kerja bermakna, pembacamu tidak tahu siapa melakukan apa."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bahasa laporan — teks bacaan",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Di bawah ini nota internal yang akhirnya diserahkan Budi, sesudah disunting. Baca kolom Rumania dulu sampai habis. Perhatikan: hampir tak ada *eu*, hampir semua kalimat dimulai kata benda."
+        },
+        {
+          "type": "tabel",
+          "head": ["Română", "Bahasa Indonesia"],
+          "rows": [
+            ["**Notă internă — Departamentul de produs, 14 martie**", "**Nota internal — Departemen Produk, 14 Maret**"],
+            ["*Obiectul notei: amânarea lansării și cauzele ei.*", "Perihal nota: penundaan peluncuran dan penyebabnya."],
+            ["*Constatări. Creșterea numărului de cerințe a dus la depășirea termenului cu două săptămâni.*", "Temuan. Bertambahnya jumlah permintaan menyebabkan tenggatnya terlampaui dua minggu."],
+            ["*Modificarea specificației de către client a avut loc după începerea lucrului.*", "Perubahan spesifikasi oleh klien terjadi sesudah pekerjaan dimulai."],
+            ["*Faptul că echipa a semnalat riscul din prima săptămână este consemnat în notele de ședință.*", "Fakta bahwa tim melaporkan risikonya sejak minggu pertama tercatat di notula rapat."],
+            ["*Posibilitatea ca proiectul să fie amânat a fost discutată la 2 martie.*", "Kemungkinan proyeknya ditunda sudah dibicarakan pada 2 Maret."],
+            ["*Propuneri. Scurtarea notelor de ședință la maximum o pagină și necesitatea de a îngheța cerințele noi până la livrare.*", "Usulan. Pemendekan notula rapat jadi maksimal satu halaman dan perlunya membekukan permintaan baru sampai penyerahan."],
+            ["*Concluzie: rezolvarea problemei ține de noi, nu de client.*", "Kesimpulan: pemecahan masalahnya tergantung pada kita, bukan pada klien."]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga penanda bahasa laporan",
+          "items": [
+            "**Kepala paragraf berupa satu kata benda:** *Obiectul notei, Constatări, Propuneri, Concluzie* — kerangka baku.",
+            "**Pelaku muncul dengan *de către*** kalau perlu disebut (*modificarea specificației de către client*), dan dihilangkan kalau tidak.",
+            "**Kata kerja yang tersisa biasanya pasif atau *se*:** *a avut loc, este consemnat, a fost discutată*. Tetapi *faptul că* tetap boleh — ia satu-satunya kepala nominalisasi yang membawa kalimat penuh."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Memadatkan kalimat panjang jadi frasa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lima pasangan di bawah ini adalah seluruh keterampilannya. Kerjakan dari kiri ke kanan sampai otomatis, lalu dari kanan ke kiri — waktu berbicara kamu harus bisa membongkarnya kembali."
+        },
+        {
+          "type": "tabel",
+          "head": ["Kalimat berkata kerja", "Bentuk padat", "Catatan"],
+          "rows": [
+            ["*Am discutat că prețurile cresc.*", "*creșterea prețurilor*", "objek jamak → genitif *-lor*"],
+            ["*Trebuie să rezolvăm problema.*", "*rezolvarea problemei*", "genitif tunggal perempuan: *problemei*"],
+            ["*Clientul a modificat specificația.*", "*modificarea specificației de către client*", "pelaku dipulangkan dengan *de către*"],
+            ["*Trebuie să înghețăm cerințele noi.*", "*necesitatea de a îngheța cerințele noi*", "*necesitatea de a* + infinitif"],
+            ["*Se poate ca proiectul să fie amânat.*", "*posibilitatea ca proiectul să fie amânat*", "ada subjek sendiri → *ca … să*"]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tiga rambu",
+          "items": [
+            "**Dua genitif maksimal.** Kalau perlu tiga, pecah jadi dua frasa dengan titik dua.",
+            "**Di percakapan, balikkan.** *Rezolvarea problemei ține de noi* wajar di laporan; di kafe orang bilang *noi trebuie să rezolvăm asta*.",
+            "**Jangan nominalkan apa yang belum jelas.** Kalau kamu sendiri tak tahu pelakunya, nominalisasi menyembunyikannya dari pembaca juga."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 1",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Mungkin dia sudah pergi, tidak ada yang menjawabnya lagi.", "*O fi plecat deja, nu-i mai răspunde nimeni.*"],
+            ["Katanya dia membeli rumah itu.", "*Se zice că ar fi cumpărat casa aceea.*"],
+            ["Barangkali itu sebuah kesalahpahaman.", "*Va fi fost o neînțelegere.*"],
+            ["Mungkin dia lupa, tapi aku ragu.", "*Poate o fi uitat, dar mă îndoiesc.*"],
+            ["Bukannya tidak mau, tapi tidak ada jalannya.", "*Nu că nu vreau, dar n-am cum.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "faptul că", "baca": "FAP-tul ke", "id": "fakta bahwa"},
+    {"ro": "ideea de a", "baca": "i-DÉ-ya dé a", "id": "gagasan untuk"},
+    {"ro": "posibilitatea ca … să", "baca": "po-si-bi-li-TA-tya ka … se", "id": "kemungkinan bahwa"},
+    {"ro": "necesitatea de a", "baca": "né-cé-si-TA-tya dé a", "id": "perlunya, keharusan untuk"},
+    {"ro": "în ciuda faptului că", "baca": "în CYU-da FAP-tu-luy ke", "id": "meskipun, walaupun"},
+    {"ro": "venire, veniri", "baca": "vé-NI-ré, vé-NIR'", "id": "kedatangan (pr)"},
+    {"ro": "rezolvare, rezolvări", "baca": "ré-zol-VA-ré, ré-zol-VER'", "id": "pemecahan, penyelesaian (pr)"},
+    {"ro": "creștere, creșteri", "baca": "KRÉSY-té-ré, KRÉSY-tér'", "id": "kenaikan, pertumbuhan (pr)"},
+    {"ro": "întârziere, întârzieri", "baca": "în-tîr-zi-YÉ-ré, în-tîr-zi-YÉR'", "id": "keterlambatan (pr)"},
+    {"ro": "amânare, amânări", "baca": "a-mî-NA-ré, a-mî-NER'", "id": "penundaan (pr)"},
+    {"ro": "recunoaștere, recunoașteri", "baca": "ré-ku-NOASY-té-ré", "id": "pengakuan (pr)"},
+    {"ro": "hotărâre, hotărâri", "baca": "ho-te-RÎ-ré, ho-te-RÎR'", "id": "keputusan (pr)"},
+    {"ro": "propunere, propuneri", "baca": "pro-PU-né-ré, pro-PU-nér'", "id": "usulan (pr)"},
+    {"ro": "notă internă", "baca": "NO-te in-TÉR-ne", "id": "nota internal (pr)"},
+    {"ro": "de către", "baca": "dé KE-tré", "id": "oleh (pelaku, ragam tulis)"},
+    {"ro": "odată cu", "baca": "o-DA-te ku", "id": "bersamaan dengan"},
+    {"ro": "de altfel", "baca": "dé ALT-fél", "id": "omong-omong, sebenarnya"},
+    {"ro": "a numi (numesc)", "baca": "a nu-MI (nu-MÉSK)", "id": "menamai, menyebut"},
+    {"ro": "a nemulțumi (nemulțumesc)", "baca": "a né-mul-tsu-MI", "id": "membuat tidak senang"},
+    {"ro": "a semnala (semnalez)", "baca": "a sém-na-LA (sém-na-LÉZ)", "id": "melaporkan, memberi tanda"},
+    {"ro": "a depăși (depășesc)", "baca": "a dé-pe-SYI (dé-pe-SYÉSK)", "id": "melampaui"},
+    {"ro": "a îngheța (îngheț)", "baca": "a în-gé-TSA (în-GÉTS)", "id": "membekukan, membeku"},
+    {"ro": "a ține de cineva", "baca": "a TSI-né dé CI-né-va", "id": "tergantung pada seseorang"},
+    {"ro": "a ascunde (ascund, ascuns)", "baca": "a as-KUN-dé (as-KUND)", "id": "menyembunyikan"},
+    {"ro": "livrare, livrări", "baca": "liv-RA-ré, liv-RER'", "id": "penyerahan, pengiriman (pr)"},
+    {"ro": "nimănui", "baca": "ni-me-NUY", "id": "kepada siapa pun (datif, dengan *nu*)"},
+    {"ro": "raport, rapoarte", "baca": "ra-PORT, ra-POAR-té", "id": "laporan (nt)"},
+    {"ro": "titlu, titluri", "baca": "TI-tlu, TI-tlur'", "id": "judul (nt)"},
+    {"ro": "propoziție, propoziții", "baca": "pro-po-ZI-tsi-yé", "id": "kalimat (pr)"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Fakta bahwa kamu mengakui kesalahannya mengubah segalanya.",
+        "Gagasan bekerja dari rumah tidak disukai siapa pun.",
+        "Bersamaan dengan datangnya musim dingin, jadwalnya berubah.",
+        "Kemungkinan proyeknya ditunda itu ada.",
+        "Pemecahan masalahnya tergantung pada kita.",
+        "Kenaikan harga membuat para pegawai tidak senang."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk yang tepat.",
+      "items": [
+        "____ că ai recunoscut greșeala schimbă totul.",
+        "Ideea ____ a lucra de acasă nu i-a plăcut nimănui.",
+        "Posibilitatea ____ proiectul să fie amânat există.",
+        "Odată cu ____ iernii s-a schimbat programul. (infinitif panjang dari *a veni*)",
+        "____ problemei ține de noi. (infinitif panjang dari *a rezolva*)",
+        "Nu i-a plăcut ____. (\"kepada siapa pun\")",
+        "Titlul notei: „____ prețurilor continuă”. (infinitif panjang dari *a crește*)"
+      ]
+    },
+    {
+      "prompt": "Tulis ulang: nominalkan atau padatkan seperti diminta.",
+      "items": [
+        "Ai recunoscut greșeala și asta schimbă totul. (buka dengan *faptul că*)",
+        "Nimănui nu i-a plăcut să lucreze de acasă. (pakai *ideea de a*)",
+        "Când a venit iarna, s-a schimbat programul. (pakai *odată cu* + infinitif panjang)",
+        "Se poate ca proiectul să fie amânat. (buka dengan *posibilitatea ca … să*)",
+        "Noi trebuie să rezolvăm problema. (nominalkan subjeknya)",
+        "Prețurile cresc și asta nemulțumește angajații. (nominalkan subjeknya)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "faptul că / ai recunoscut / greșeala / schimbă totul",
+        "ideea de a / lucra / de acasă / nu i-a plăcut / nimănui",
+        "odată cu / venirea iernii / s-a schimbat / programul",
+        "posibilitatea ca / proiectul / să fie amânat / există",
+        "rezolvarea / problemei / ține / de noi"
+      ]
+    }
+  ],
+  "answers": [
+    "Faptul că ai recunoscut greșeala schimbă totul. — Ideea de a lucra de acasă nu i-a plăcut nimănui. — Odată cu venirea iernii s-a schimbat programul. — Posibilitatea ca proiectul să fie amânat există. — Rezolvarea problemei ține de noi. — Creșterea prețurilor nemulțumește angajații.",
+    "Faptul — de — ca — venirea — Rezolvarea — nimănui — Creșterea",
+    "Faptul că ai recunoscut greșeala schimbă totul. — Ideea de a lucra de acasă nu i-a plăcut nimănui. — Odată cu venirea iernii s-a schimbat programul. — Posibilitatea ca proiectul să fie amânat există. — Rezolvarea problemei ține de noi. — Creșterea prețurilor nemulțumește angajații.",
+    "Faptul că ai recunoscut greșeala schimbă totul. — Ideea de a lucra de acasă nu i-a plăcut nimănui. — Odată cu venirea iernii s-a schimbat programul. — Posibilitatea ca proiectul să fie amânat există. — Rezolvarea problemei ține de noi."
+  ]
+}

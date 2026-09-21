@@ -1,0 +1,316 @@
+{
+  "title": "Dua kalimat jadi satu",
+  "title_target": "Construcții fără subiect",
+  "goal": "Memadatkan dua kalimat jadi satu dengan cara yang paling khas bahasa Rumania tulis: gerunziu sebagai keterangan (*neavând, fiind vorba de, ajungând*), gerunziu yang menelan klitik (*uitându-mă, dându-și*), konstruksi *odată* + partisip, dan partisip yang berdiri di belakang kata benda seperti kata sifat (*lucrurile spuse*).",
+  "bekal": [
+    "membentuk gerunziu dari kata kerja apa pun, menegatifkannya dengan *ne-* (*neavând, nefiind*), dan menyambungkan klitik ke belakangnya dengan sisipan *-u-*",
+    "mengganti kalimat sebab-akibat yang bertele-tele dengan satu keterangan gerunziu — dan mematuhi aturan yang membuatnya sah: pelakunya harus sama dengan pelaku kalimat induk",
+    "memakai *odată* + partisip untuk \"begitu … selesai\", dan partisip telanjang sebagai penjelas kata benda (*banii primiți, problema rezolvată*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — Ședința de luni dimineață",
+      "intro": "Senin, sembilan pagi, ruang rapat kecil di kantor Budi. Anggarannya dipotong dan tak ada yang senang. Perhatikan bukan isi perdebatannya, melainkan bentuk kalimatnya: hampir semua orang di ruangan ini memulai kalimatnya dengan keterangan berakhiran *-ând* atau *-ind*.",
+      "lines": [
+        {"speaker": "Ioana:", "text": "Bună dimineața. Neavând mult timp, intrăm direct în subiect.", "id": "Selamat pagi. Karena waktu kita tidak banyak, kita langsung ke pokoknya.", "literal": "baik-pr pagi-nya. tidak-sedang-punya banyak waktu, kami-masuk langsung di pokok."},
+        {"speaker": "Budi:", "text": "De acord. Odată terminat raportul, am plecat acasă — era unsprezece noaptea.", "id": "Setuju. Begitu laporannya selesai, aku pulang — sudah jam sebelas malam.", "literal": "dari kesepakatan. satu-kali selesai laporan-nya, saya-sudah pergi ke-rumah — ia-dulu-adalah sebelas malam-nya."},
+        {"speaker": "Ioana:", "text": "L-am citit. Bugetul a fost tăiat cu cincisprezece la sută.", "id": "Sudah kubaca. Anggarannya dipotong lima belas persen.", "literal": "dia-lk-akusatif-saya-sudah baca. anggaran-nya ia-sudah ada potong dengan lima-belas pada seratus."},
+        {"speaker": "Andrei:", "text": "Cu cincisprezece? Citind concluziile, am înțeles că e vorba de zece.", "id": "Lima belas? Waktu membaca kesimpulannya, aku paham yang dimaksud sepuluh.", "literal": "dengan lima-belas? sedang-baca kesimpulan-jamak-nya, saya-sudah mengerti bahwa ia-ada kata dari sepuluh."},
+        {"speaker": "Budi:", "text": "Zece era varianta de luna trecută. Neavând alte opțiuni, am acceptat.", "id": "Sepuluh itu versi bulan lalu. Karena tidak ada pilihan lain, aku menerimanya.", "literal": "sepuluh ia-dulu-adalah versi-nya dari bulan lewat-pr. tidak-sedang-punya lain-pr-jamak pilihan-jamak, saya-sudah terima."},
+        {"speaker": "Andrei:", "text": "Adică am semnat fără să discutăm?", "id": "Jadi kita tanda tangan tanpa diskusi?", "literal": "yaitu kami-sudah tanda-tangan tanpa agar kami-diskusi?"},
+        {"speaker": "Ioana:", "text": "Nu s-a semnat nimic. Fiind vorba de bani, toți au devenit atenți.", "id": "Belum ada yang ditandatangani. Karena yang dibicarakan uang, semua orang jadi memperhatikan.", "literal": "tidak diri-ia-sudah tanda-tangan tidak-ada-apa-apa. sedang-ada kata dari uang-jamak, semua-lk-jamak mereka-sudah menjadi awas-lk-jamak."},
+        {"speaker": "Andrei:", "text": "Atenți sau speriați? Tăind din buget, tăiem și din calitate.", "id": "Memperhatikan atau ketakutan? Kalau memotong anggaran, kita ikut memotong mutunya.", "literal": "awas-lk-jamak atau takut-lk-jamak? sedang-potong dari anggaran, kami-potong juga dari mutu."},
+        {"speaker": "Budi:", "text": "Nu neapărat. Redistribuind sumele, păstrăm partea de testare.", "id": "Tidak selalu. Dengan membagi ulang dananya, kita tetap menjaga bagian pengujian.", "literal": "tidak niscaya. sedang-bagi-ulang jumlah-jamak-nya, kami-jaga bagian-nya dari pengujian."},
+        {"speaker": "Ioana:", "text": "Exact asta voiam să aud. Concret: ce tăiem?", "id": "Itu justru yang mau kudengar. Konkretnya: apa yang kita potong?", "literal": "tepat ini saya-dulu-ingin agar saya-dengar. konkret: apa kami-potong?"},
+        {"speaker": "Budi:", "text": "Am trei variante, cu cifrele scrise una lângă alta. A doua taie costul cu douăzeci la sută, păstrând echipa întreagă.", "id": "Aku punya tiga versi, dengan angkanya tertulis berjajar. Yang kedua memangkas biaya dua puluh persen, dengan tetap mempertahankan tim secara utuh.", "literal": "saya-punya tiga versi-jamak, dengan angka-jamak-nya tertulis-pr-jamak satu-pr di-samping lain-pr. yang-pr kedua-pr ia-potong biaya-nya dengan dua-puluh pada seratus, sedang-jaga tim-nya utuh-pr."},
+        {"speaker": "Andrei:", "text": "Sună rezonabil. Îmi retrag și tonul de săptămâna trecută.", "id": "Kedengaran masuk akal. Aku juga tarik nada bicaraku minggu lalu.", "literal": "ia-berbunyi wajar. saya-datif saya-tarik juga nada-nya dari minggu-nya lewat-pr."},
+        {"speaker": "Ioana:", "text": "Lucrurile spuse la nervi nu se uită ușor, dar se pot repara.", "id": "Hal-hal yang diucapkan saat marah tidak mudah dilupakan, tapi bisa diperbaiki.", "literal": "hal-jamak-nya terucap-nt-jamak pada saraf-jamak tidak diri-ia-lupa mudah, tetapi diri-mereka-bisa perbaiki."},
+        {"speaker": "Andrei:", "text": "Nefiind sigur de trimestrul trei, aș mai aștepta cifrele.", "id": "Karena belum yakin soal kuartal tiga, aku akan menunggu angkanya dulu.", "literal": "tidak-sedang-ada yakin-lk dari kuartal-nya tiga, saya-andai lagi tunggu angka-jamak-nya."},
+        {"speaker": "Ioana:", "text": "Odată aprobată varianta a doua, vă trimit sarcinile. Trimițându-le azi, avem toată săptămâna.", "id": "Begitu versi kedua disetujui, tugasnya saya kirim. Kalau dikirim hari ini, kita punya seminggu penuh.", "literal": "satu-kali disetujui-pr versi-nya yang-pr kedua-pr, kalian-datif saya-kirim tugas-jamak-nya. sedang-kirim-mereka-akusatif hari-ini, kami-punya seluruh-pr minggu-nya."}
+      ],
+      "notes": [
+        "**Neavând — gerunziu bernegasi.** Gerunziu dinegatifkan bukan dengan *nu*, melainkan dengan awalan ***ne-*** yang menempel jadi satu kata: *având → neavând*, *fiind → nefiind*, *înțelegând → neînțelegând*. Di mana penutur B1 menulis *pentru că n-aveam alte opțiuni*, penutur B2 menulis *neavând alte opțiuni*.",
+        "**Fiind vorba de…** — ungkapan beku yang wajib kamu punya. Harfiahnya \"karena yang dibicarakan adalah…\", dipakai untuk menjelaskan mengapa orang bereaksi tertentu. Saudaranya: *fiind vorba despre* dan *dat fiind că*.",
+        "**Odată terminat raportul.** Susunannya khas: *odată* + partisip + **subjeknya di belakang**. Partisipnya ikut jenis kelamin & jumlah subjek itu: *odată terminat raportul* (lk), *odată aprobată varianta* (pr), *odată primiți banii* (lk jamak).",
+        "**Cifrele scrise una lângă alta.** Partisip boleh berdiri di belakang kata benda dan bekerja persis seperti kata sifat, tanpa *care*: *lucrurile **spuse***, *banii **primiți***. Versi panjangnya, *lucrurile care au fost spuse*, boros tiga kata untuk isi yang sama.",
+        "**Tăind, redistribuind, păstrând.** Tiga gerunziu di dialog ini menjawab tiga pertanyaan berbeda: syarat (*Tăind din buget…*), cara (*Redistribuind sumele…*), dan keadaan yang menyertai (*…taie costul, păstrând echipa*). Bentuknya satu, pekerjaannya banyak.",
+        "**Trimițându-le azi.** Klitik tidak berdiri di depan gerunziu; ia menempel di belakangnya dengan sisipan **-u-**. Ini satu-satunya tempat di bahasa Rumania di mana klitik selalu ke belakang.",
+        "**Îmi retrag tonul.** Berguna di rapat kalau kamu ingin menarik ucapan tanpa minta maaf berlebihan: *Îmi retrag tonul.* · *Retrag ce am spus.* · *Am exagerat, recunosc.* Andrei tidak menarik pendapatnya — hanya nada bicaranya."
+      ],
+      "grammars": [
+        {
+          "title": "Gerunziu — satu bentuk, lima pekerjaan",
+          "body": [
+            "Gerunziu adalah bentuk *-ând/-ind* yang sudah kamu pakai di dalam prezumtiv (*o fi dormind*). Di tulisan B2 ia naik pangkat: ia jadi cara utama membawa satu kalimat penuh sebagai keterangan bagi kalimat lain, tanpa konjungsi dan tanpa pelaku yang diulang.",
+            "Pembentukannya dua jalur: *-a, -â, -ea, -e* mengambil **-ând**; *-i, -î* mengambil **-ind**. Batang yang berakhir *t, d, s* sering melunak (*a trimite → trimițând*)."
+          ],
+          "table": {
+            "head": ["Infinitif", "Gerunziu", "Bernegasi", "Contoh"],
+            "rows": [
+              ["*a avea*", "**având**", "**neavând**", "*Neavând opțiuni, am acceptat.*"],
+              ["*a fi*", "**fiind**", "**nefiind**", "*Nefiind sigur, aș aștepta.*"],
+              ["*a ajunge*", "**ajungând**", "*neajungând*", "*Ajungând acolo, am înțeles.*"],
+              ["*a face*", "**făcând**", "*nefăcând*", "*Făcând calculul, am găsit greșeala.*"],
+              ["*a trimite*", "**trimițând**", "*netrimițând*", "*Trimițând azi, câștigăm timp.*"],
+              ["*a vedea*", "**văzând**", "*nevăzând*", "*Văzând cifrele, s-a liniștit.*"],
+              ["*a citi*", "**citind**", "*necitind*", "*Citind concluziile, am înțeles altceva.*"],
+              ["*a ști*", "**știind**", "**neștiind**", "*Neștiind ce să zic, am tăcut.*"]
+            ]
+          },
+          "after": [
+            "**Lima pekerjaan, satu bentuk.** Sebab: *Neavând bani, am renunțat.* · Waktu: *Ajungând acasă, l-am sunat.* · Cara: *Redistribuind sumele, am salvat proiectul.* · Syarat: *Tăind din buget, tăiem și din calitate.* · Keadaan yang menyertai: *A vorbit zâmbind.*",
+            "**SATU aturan yang wajib: pelakunya harus sama.** Pelaku gerunziu tidak ditulis, jadi pembaca mengambilnya dari kalimat induk. *Ajungând acasă, am sunat-o* sah; *Ajungând acasă, a sunat telefonul* tidak — telepon tidak pulang ke rumah. Kalau pelakunya berbeda, pulanglah ke kata sambung: *Când am ajuns acasă, a sunat telefonul.*",
+            "**Gerunziu tidak punya kala.** Ia mengambil waktunya dari kalimat induk: *Ajungând acolo, mi-am dat seama* (lampau) · *…îți dai seama* (kini) · *…vei vedea* (nanti). Untuk menandai \"sesudah selesai\", pakai *odată* + partisip.",
+            "**Jangan menumpuk lebih dari dua** dalam satu kalimat. Gramatikal, tetapi tak ada orang Rumania yang menulis begitu."
+          ]
+        },
+        {
+          "title": "*Odată* + partisip, dan partisip telanjang",
+          "body": [
+            "Kalau gerunziu menjawab \"sambil / karena / dengan\", dua konstruksi berikut menjawab \"sesudah selesai\" dan \"yang mana\". Keduanya memakai **partisip** dan menghapus *care* + *a fi* yang panjang. Yang perlu kamu jaga cuma satu: partisipnya ikut jenis kelamin dan jumlah benda yang diterangkannya."
+          ],
+          "table": {
+            "head": ["Bentuk padat", "Versi panjangnya", "Bahasa Indonesia"],
+            "rows": [
+              ["*Odată **terminat** raportul, am plecat.*", "*După ce am terminat raportul, am plecat.*", "Begitu laporannya selesai, aku pergi."],
+              ["*Odată **aprobată** varianta, trimit sarcinile.*", "*După ce se aprobă varianta, trimit sarcinile.*", "Begitu versinya disetujui, tugasnya kukirim."],
+              ["*Odată **primiți** banii, începem.*", "*După ce primim banii, începem.*", "Begitu uangnya diterima, kita mulai."],
+              ["*lucrurile **spuse** la nervi*", "*lucrurile care au fost spuse la nervi*", "hal yang diucapkan saat marah"],
+              ["*banii **primiți** anul trecut*", "*banii care au fost primiți anul trecut*", "uang yang diterima tahun lalu"],
+              ["*o factură **neplătită***", "*o factură care nu a fost plătită*", "tagihan yang belum dibayar"]
+            ]
+          },
+          "after": [
+            "**Subjeknya di belakang partisip.** *Odată terminat **raportul*** — bukan *odată raportul terminat*. Kalau subjeknya jelas dari konteks, buang saja: *Odată terminat, l-am trimis.*",
+            "**Sepupu yang lebih mudah: *odată ce* + kata kerja biasa.** *Odată ce terminăm raportul, plecăm.* Jangan tertukar dengan ***odată cu*** + kata benda dari unit 3: *odată cu venirea iernii*.",
+            "**Partisip tak pernah membawa pelaku di posisi ini.** \"Laporan yang ditulis Ioana\" bukan *raportul scris Ioana*. Kalau pelakunya harus muncul, pakai *de*: *raportul scris **de** Ioana*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — O dimineață greșită",
+      "intro": "Sore hari, di dapur apartemen bersama. Budi menceritakan pagi yang terbuang di kantor notaris, dan Andrei — seperti biasa — lebih tertarik pada pelajaran moralnya daripada pada ceritanya.",
+      "lines": [
+        {"speaker": "Budi:", "text": "Săptămâna trecută am avut o zi de pomină.", "id": "Minggu lalu aku mengalami hari yang jadi buah bibir.", "literal": "minggu-nya lewat-pr saya-sudah punya sebuah-pr hari dari buah-bibir."},
+        {"speaker": "Andrei:", "text": "La birou? Povestește.", "id": "Di kantor? Ceritakan.", "literal": "pada kantor? ceritakan-lah."},
+        {"speaker": "Budi:", "text": "Aveam o întâlnire la notariat. Ajungând acolo, mi-am dat seama că greșisem ziua.", "id": "Aku ada pertemuan di kantor notaris. Sesampai di sana, aku sadar aku salah hari.", "literal": "saya-dulu-punya sebuah-pr pertemuan pada notariat. sedang-sampai di-sana, saya-datif-saya-sudah beri paham bahwa saya-sudah-terlebih-dulu-salah hari-nya."},
+        {"speaker": "Andrei:", "text": "Și domnul Vasilescu ce-a zis?", "id": "Lalu Pak Vasilescu bilang apa?", "literal": "dan tuan-nya Vasilescu apa-ia-sudah bilang?"},
+        {"speaker": "Budi:", "text": "Nimic. Ridicându-și ochelarii, s-a uitat în agendă și a zâmbit.", "id": "Tidak ada. Sambil mengangkat kacamatanya, dia melihat ke agenda dan tersenyum.", "literal": "tidak-ada-apa-apa. sedang-angkat-diri-datif kacamata-jamak-nya, diri-ia-sudah lihat di agenda dan ia-sudah senyum."},
+        {"speaker": "Andrei:", "text": "Clasic. Te-ai întors a doua zi?", "id": "Klasik. Kamu kembali hari berikutnya?", "literal": "klasik. kamu-akusatif-kamu-sudah kembali yang-pr kedua-pr hari?"},
+        {"speaker": "Budi:", "text": "Da. Dar, odată pierdută dimineața, am citit contractul de la cap la coadă. Neînțelegând două clauze, i-am scris notarului o listă de întrebări.", "id": "Ya. Tapi karena paginya sudah hilang, kubaca kontraknya dari awal sampai akhir. Karena tidak paham dua klausul, aku menulis daftar pertanyaan untuk notarisnya.", "literal": "ya. tetapi, satu-kali hilang-pr pagi-nya, saya-sudah baca kontrak-nya dari pada kepala pada ekor. tidak-sedang-mengerti dua-pr klausul-jamak, dia-datif-saya-sudah tulis notaris-nya-datif sebuah-pr daftar dari pertanyaan-jamak."},
+        {"speaker": "Andrei:", "text": "Deci ziua n-a fost pierdută de tot. Totuși, trezindu-te mai devreme și citind agenda, ai fi evitat tot.", "id": "Jadi harinya tidak sepenuhnya terbuang. Tetap saja, kalau kamu bangun lebih awal dan membaca agendanya, semua itu bisa kauhindari.", "literal": "jadi hari-nya tidak-ia-sudah ada hilang-pr dari semua. namun, sedang-bangun-kamu-akusatif lebih awal dan sedang-baca agenda-nya, kamu-andai ada hindari semua."},
+        {"speaker": "Budi:", "text": "Știu. De atunci îmi verific agenda seara, nu dimineața.", "id": "Aku tahu. Sejak itu aku memeriksa agendaku malam, bukan pagi.", "literal": "saya-tahu. dari kalau-itu saya-datif saya-periksa agenda-nya malam-nya, tidak pagi-nya."},
+        {"speaker": "Andrei:", "text": "Bun obicei. Lucrurile scrise se țin minte; cele gândite se uită.", "id": "Kebiasaan bagus. Hal-hal yang dituliskan itu diingat; yang cuma dipikirkan dilupakan.", "literal": "baik-lk kebiasaan. hal-jamak-nya tertulis-nt-jamak diri-mereka-pegang ingat; yang-nt-jamak terpikir-nt-jamak diri-ia-lupa."}
+      ],
+      "notes": [
+        "**Zi de pomină.** *Pomină* nyaris tak pernah muncul di luar ungkapan ini; artinya \"buah bibir\". *O zi de pomină* = hari yang akan terus diceritakan orang, biasanya karena kacau.",
+        "**Ridicându-și ochelarii.** Dua hal sekaligus: klitik menempel di belakang gerunziu dengan sisipan *-u-*, dan klitiknya datif refleksif *-și* karena kacamatanya milik si pelaku. Bahasa Rumania hampir tak pernah berkata *ochelarii lui*.",
+        "**Greșisem ziua.** *Mai mult ca perfectul* dari B1. Urutan *mi-am dat seama că greșisem* wajar: kesadaran datang sesudah kesalahan, jadi kesalahannya mundur satu lapis.",
+        "**De la cap la coadă.** Harfiahnya \"dari kepala ke ekor\", untuk membaca atau memeriksa sesuatu secara lengkap. Saudaranya khusus buku: *din scoarță în scoarță*.",
+        "**Lucrurile scrise … cele gândite.** Andrei menyingkat *lucrurile gândite* jadi ***cele** gândite* — *cel, cea, cei, cele* menggantikan kata benda yang sudah disebut. Sering di pepatah: *cei plecați*, *cele spuse*."
+      ],
+      "grammars": [
+        {
+          "title": "Gerunziu + klitik: tanda hubung dan huruf *u* yang menyelip",
+          "body": [
+            "Di seluruh bahasa Rumania klitik berdiri **di depan** kata kerja (*mă uit, îi spun, ne-a dat*). Gerunziu adalah satu-satunya pengecualian: klitik menempel di belakangnya dengan tanda hubung, dan di antara keduanya muncul huruf **-u-** — *-ând* → *-ându-*, *-ind* → *-indu-*. Hafalkan bunyinya, bukan aturannya."
+          ],
+          "table": {
+            "head": ["Gerunziu", "+ klitik", "Contoh"],
+            "rows": [
+              ["*uitând*", "**uitându-mă**", "*Uitându-mă în agendă, am văzut greșeala.*"],
+              ["*ridicând*", "**ridicându-și**", "*Ridicându-și ochelarii, s-a uitat în agendă.*"],
+              ["*dând*", "**dându-mi**", "*Dându-mi raportul, a ieșit din birou.*"],
+              ["*trezind*", "**trezindu-te**", "*Trezindu-te mai devreme, ai fi evitat tot.*"],
+              ["*spunând*", "**spunându-i**", "*Spunându-i adevărul, am rezolvat problema.*"],
+              ["*aducând*", "**aducându-le**", "*Aducându-le cifrele, i-am liniștit.*"],
+              ["*gândind*", "**gândindu-se**", "*Gândindu-se puțin, a schimbat răspunsul.*"],
+              ["*dând*", "**dându-și seama**", "*Dându-și seama de greșeală, a sunat imediat.*"]
+            ]
+          },
+          "after": [
+            "**Tekanan tidak pindah.** *uitându-mă* tetap ditekan di suku *-tân-*: `u-i-TÎN-du-me`. Cara baca yang aman: `ri-di-KÎN-du-sy'` · `tré-ZIN-du-té` · `spu-NÎN-du-i` · `DÎN-du-mi`.",
+            "**Bentuk *o* adalah pengecualian di dalam pengecualian:** ia **tidak** memakai *-u-* dan langsung menempel — *văzând-o, sunând-o, lăsând-o*. Persis logika *le-am văzut* lawan *am văzut-o*.",
+            "**Satu tanda gaya.** Gerunziu + klitik terdengar tulis, bukan lisan. Di percakapan orang memecahnya: *M-am uitat în agendă și am văzut greșeala.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Gaya tulis padat — ungkapan yang wajib kamu kenali",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Română", "Cara baca", "Bahasa Indonesia"],
+          "rows": [
+            ["**având în vedere că**", "a-VÎND în vé-DÉ-ré ke", "mengingat bahwa"],
+            ["**ținând cont de**", "tsi-NÎND kont dé", "dengan memperhitungkan"],
+            ["**fiind vorba de**", "fi-IND VOR-ba dé", "karena yang dibicarakan …"],
+            ["**dat fiind că**", "dat fi-IND ke", "mengingat bahwa (resmi)"],
+            ["**plecând de la**", "plé-KÎND dé la", "bertolak dari"],
+            ["**judecând după**", "zhu-dé-KÎND DU-pe", "kalau dilihat dari"],
+            ["**nefiind clar**", "né-fi-IND klar", "karena belum jelas"],
+            ["**neavând de unde**", "né-a-VÎND dé UN-dé", "karena tak ada sumbernya"],
+            ["**neștiind ce să fac**", "né-syti-IND cé se fak", "karena tidak tahu harus apa"],
+            ["**odată stabilit**", "o-DA-te sta-bi-LIT", "begitu ditetapkan"],
+            ["**odată ce**", "o-DA-te cé", "begitu, sesudah"],
+            ["**lucrurile spuse**", "LU-kru-ri-lé SPU-sé", "hal-hal yang dikatakan"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tiga baris pertama adalah jalan masuk termudah: tinggal kamu tempel di depan kalimat yang sudah kamu bisa. Bedanya halus tapi nyata. *Având în vedere că* membawa alasan yang sudah diketahui semua orang (*Având în vedere că bugetul a fost tăiat, amânăm angajările.*). *Ținând cont de* membawa hal yang kamu perhitungkan waktu memutuskan, dan ia menuntut **kata benda** di belakangnya: *Ținând cont de trafic, plec mai devreme.* Satu jebakan: *având în vedere* memakai *că* kalau disusul kalimat, tetapi **tanpa** *că* kalau disusul kata benda — *având în vedere situația*."
+        },
+        {
+          "type": "kotak",
+          "title": "Dari bahasa lisan ke bahasa tulis",
+          "items": [
+            "*Pentru că n-aveam alte opțiuni, am acceptat.* → ***Neavând** alte opțiuni, am acceptat.* Kata sambung hilang, pelaku tidak diulang, empat kata hemat tanpa isi yang hilang.",
+            "*Când am ajuns acolo, mi-am dat seama.* → ***Ajungând** acolo, mi-am dat seama.* Yang paling sering kamu pakai — asal yang sampai dan yang sadar orang yang sama.",
+            "*După ce am terminat raportul, am plecat.* → ***Odată terminat** raportul, am plecat.* Subjeknya pindah ke belakang partisip; ini yang paling sering dilupakan.",
+            "*lucrurile care au fost spuse* → *lucrurile **spuse***. Setiap kali kamu menulis *care a fost / care au fost* + partisip, tanyakan: bisakah *care* dan *a fi* dibuang?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mengubah dua kalimat jadi satu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": ["Dua kalimat", "Jadi satu"],
+          "rows": [
+            ["*N-am avut alte opțiuni. Am acceptat.*", "*Neavând alte opțiuni, am acceptat.*"],
+            ["*Am terminat raportul. Am plecat acasă.*", "*Odată terminat raportul, am plecat acasă.*"],
+            ["*Am ajuns acolo. Mi-am dat seama că greșisem ziua.*", "*Ajungând acolo, mi-am dat seama că greșisem ziua.*"],
+            ["*E vorba de bani. Toți au devenit atenți.*", "*Fiind vorba de bani, toți au devenit atenți.*"],
+            ["*M-am uitat în agendă. Am văzut greșeala.*", "*Uitându-mă în agendă, am văzut greșeala.*"],
+            ["*Nu înțelegeam clauza. I-am scris notarului.*", "*Neînțelegând clauza, i-am scris notarului.*"],
+            ["*Contractul a fost semnat. Lucrările au început.*", "*Odată semnat contractul, lucrările au început.*"],
+            ["*Nu eram sigur de cifre. Am mai așteptat o zi.*", "*Nefiind sigur de cifre, am mai așteptat o zi.*"],
+            ["*I-am dat raportul. Am ieșit din birou.*", "*Dându-i raportul, am ieșit din birou.*"],
+            ["*Banii au fost primiți. Am început lucrările.*", "*Odată primiți banii, am început lucrările.*"]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Latihan yang paling cepat memperbaiki tulisanmu: ambil satu paragraf yang sudah kamu tulis dan cari tiap *pentru că*, *după ce*, *când*, dan *care a fost*. Untuk masing-masing, tanyakan satu pertanyaan — **pelakunya sama atau tidak?** Kalau sama, ganti dengan gerunziu atau *odată* + partisip. Kalau berbeda, biarkan kata sambungnya. Sesudah tiga paragraf kamu akan menemukan bahwa kalimat yang dipadatkan berlebihan justru jadi sulit dibaca: bahasa Rumania tulis yang bagus bukan yang terpadat, melainkan yang mengganti-ganti kalimat panjang dengan kalimat pendek."
+        },
+        {
+          "type": "kotak",
+          "title": "Empat kesalahan yang akan dicoret guru bahasamu",
+          "items": [
+            "**Pelaku yang berganti diam-diam.** *Ajungând acasă, a sunat telefonul* — salah. Perbaikannya: *Când am ajuns acasă, a sunat telefonul.*",
+            "**Klitik di depan gerunziu.** *Mă uitând în agendă* tidak ada dalam bahasa Rumania. Selalu ke belakang, dengan *-u-*: *uitându-mă*.",
+            "**Subjek di depan partisip.** *Odată raportul terminat* terbaca seperti terjemahan. Yang benar: *Odată terminat raportul*.",
+            "**Partisip yang tidak ikut bendanya.** *lucrurile spus*, *varianta aprobat* — di posisi ini partisip adalah kata sifat: *lucrurile spuse*, *varianta aprobată*, *banii primiți*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 2",
+      "blocks": [
+        {"type": "p", "text": "Tutup kolom Rumania, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+        {
+          "type": "tabel",
+          "head": ["Bahasa Indonesia", "Română"],
+          "rows": [
+            ["Tanpa mengatakan apa-apa, dia menutup pintu.", "*Fără să spună nimic, a închis ușa.*"],
+            ["Daripada mengeluh, ajukan satu solusi.", "*În loc să te plângi, propune o soluție.*"],
+            ["Lebih baik aku diam daripada mengucapkan hal yang bodoh.", "*Mai bine tac decât să zic o prostie.*"],
+            ["Tidak ada orang yang tidak pernah salah.", "*Nu există om care să nu greșească.*"],
+            ["Jauh dari sempurna, proyek itu tetap bagus.", "*Departe de a fi perfect, proiectul e totuși bun.*"]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {"ro": "neavând (de la a avea)", "baca": "né-a-VÎND", "id": "karena tidak punya"},
+    {"ro": "nefiind (de la a fi)", "baca": "né-fi-IND", "id": "karena bukan, karena belum"},
+    {"ro": "fiind vorba de", "baca": "fi-IND VOR-ba dé", "id": "karena yang dibicarakan adalah"},
+    {"ro": "dat fiind că", "baca": "dat fi-IND ke", "id": "mengingat bahwa"},
+    {"ro": "având în vedere că", "baca": "a-VÎND în vé-DÉ-ré ke", "id": "mengingat bahwa"},
+    {"ro": "ținând cont de", "baca": "tsi-NÎND kont dé", "id": "dengan memperhitungkan"},
+    {"ro": "judecând după", "baca": "zhu-dé-KÎND DU-pe", "id": "kalau dilihat dari"},
+    {"ro": "odată ce", "baca": "o-DA-te cé", "id": "begitu, sesudah"},
+    {"ro": "a redistribui (redistribui)", "baca": "a ré-dis-tri-bu-I", "id": "membagi ulang"},
+    {"ro": "a tăia (tai, tăiat)", "baca": "a te-YA (tay, te-YAT)", "id": "memotong, memangkas"},
+    {"ro": "a păstra (păstrez)", "baca": "a pes-TRA (pes-TRÉZ)", "id": "menjaga, mempertahankan"},
+    {"ro": "a evita (evit)", "baca": "a é-vi-TA (é-VIT)", "id": "menghindari"},
+    {"ro": "a repara (repar)", "baca": "a ré-pa-RA (ré-PAR)", "id": "memperbaiki"},
+    {"ro": "a ridica (ridic)", "baca": "a ri-di-KA (ri-DIK)", "id": "mengangkat, menaikkan"},
+    {"ro": "a se trezi (mă trezesc)", "baca": "a sé tré-ZI (me tré-ZÉSK)", "id": "bangun, terbangun"},
+    {"ro": "a retrage (retrag, retras)", "baca": "a ré-TRA-jé (ré-TRAG, ré-TRAS)", "id": "menarik kembali"},
+    {"ro": "a ține minte", "baca": "a TSI-né MIN-té", "id": "mengingat, menyimpan di ingatan"},
+    {"ro": "buget, bugete", "baca": "bu-JÉT, bu-JÉ-té", "id": "anggaran (nt)"},
+    {"ro": "cifră, cifre", "baca": "CI-fre, CI-fré", "id": "angka (pr)"},
+    {"ro": "trimestru, trimestre", "baca": "tri-MÉS-tru, tri-MÉS-tré", "id": "kuartal (nt)"},
+    {"ro": "clauză, clauze", "baca": "KLA-u-ze, KLA-u-zé", "id": "klausul (pr)"},
+    {"ro": "notariat, notariate", "baca": "no-ta-ri-YAT, no-ta-ri-YA-té", "id": "kantor notaris (nt)"},
+    {"ro": "agendă, agende", "baca": "a-JÉN-de, a-JÉN-dé", "id": "buku agenda (pr)"},
+    {"ro": "sarcină, sarcini", "baca": "SAR-ci-ne, SAR-cin'", "id": "tugas (pr)"},
+    {"ro": "variantă, variante", "baca": "va-ri-AN-te, va-ri-AN-té", "id": "versi, pilihan (pr)"},
+    {"ro": "zi de pomină", "baca": "zi dé PO-mi-ne", "id": "hari yang jadi buah bibir"},
+    {"ro": "de la cap la coadă", "baca": "dé la kap la KOA-de", "id": "dari awal sampai akhir"},
+    {"ro": "la nervi", "baca": "la nérv'", "id": "dalam keadaan marah"},
+    {"ro": "neapărat", "baca": "né-a-pe-RAT", "id": "niscaya, mutlak"},
+    {"ro": "întreg, întreagă", "baca": "în-TRÉG, în-TRYA-ge", "id": "utuh, seluruh"}
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Rumania.",
+      "items": [
+        "Karena tidak ada pilihan lain, aku menerimanya.",
+        "Begitu laporannya selesai, aku pulang.",
+        "Karena yang dibicarakan uang, semua orang jadi memperhatikan.",
+        "Sesampai di sana, aku sadar aku salah hari.",
+        "Hal-hal yang diucapkan saat marah tidak mudah dilupakan.",
+        "Sambil mengangkat kacamatanya, dia melihat ke buku agenda."
+      ]
+    },
+    {
+      "prompt": "Isi dengan bentuk gerunziu atau partisip dari kata kerja di dalam kurung.",
+      "items": [
+        "____ alte opțiuni, am acceptat. (a nu avea)",
+        "____ vorba de bani, toți au devenit atenți. (a fi)",
+        "____ acolo, mi-am dat seama că greșisem ziua. (a ajunge)",
+        "____ ochelarii, s-a uitat în agendă. (a ridica, dengan klitik *-și*)",
+        "____ mai devreme, ai fi evitat tot. (a se trezi, tu)",
+        "____ concluziile, am înțeles altceva. (a citi)",
+        "Odată ____ raportul, am plecat acasă. (a termina)"
+      ]
+    },
+    {
+      "prompt": "Gabungkan jadi satu kalimat, dengan bentuk yang diminta di dalam kurung.",
+      "items": [
+        "N-am avut alte opțiuni. Am acceptat. (gerunziu)",
+        "Am terminat raportul. Am plecat acasă. (odată + partisip)",
+        "M-am uitat în agendă. Am văzut greșeala. (gerunziu + klitik)",
+        "Contractul a fost semnat. Lucrările au început. (odată + partisip)",
+        "Nu eram sigur de cifre. Am mai așteptat o zi. (gerunziu bernegasi)",
+        "I-am dat raportul. Am ieșit din birou. (gerunziu + klitik)"
+      ]
+    },
+    {
+      "prompt": "Susun jadi kalimat yang benar.",
+      "items": [
+        "alte opțiuni / neavând / , / am acceptat",
+        "raportul / odată / terminat / , / am plecat acasă",
+        "de bani / fiind vorba / , / toți au devenit atenți",
+        "spuse / lucrurile / la nervi / nu se uită ușor",
+        "acolo / ajungând / , / mi-am dat seama / că greșisem ziua"
+      ]
+    }
+  ],
+  "answers": [
+    "Neavând alte opțiuni, am acceptat. — Odată terminat raportul, am plecat acasă. — Fiind vorba de bani, toți au devenit atenți. — Ajungând acolo, mi-am dat seama că greșisem ziua. — Lucrurile spuse la nervi nu se uită ușor. — Ridicându-și ochelarii, s-a uitat în agendă.",
+    "Neavând — Fiind — Ajungând — Ridicându-și — Trezindu-te — Citind — terminat",
+    "Neavând alte opțiuni, am acceptat. — Odată terminat raportul, am plecat acasă. — Uitându-mă în agendă, am văzut greșeala. — Odată semnat contractul, lucrările au început. — Nefiind sigur de cifre, am mai așteptat o zi. — Dându-i raportul, am ieșit din birou.",
+    "Neavând alte opțiuni, am acceptat. — Odată terminat raportul, am plecat acasă. — Fiind vorba de bani, toți au devenit atenți. — Lucrurile spuse la nervi nu se uită ușor. — Ajungând acolo, mi-am dat seama că greșisem ziua."
+  ]
+}
