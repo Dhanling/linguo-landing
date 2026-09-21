@@ -217,6 +217,8 @@ const EN: Record<string, string> = {
   "Belajar Mandiri": "Self-Study",
   "Aktif": "Active",
   "Riwayat": "History",
+  "Tampilan baris": "List view",
+  "Tampilan kartu": "Card view",
   "Tambah": "Add",
   "Tambah Kelas": "Add a Class",
   "Daftar Kelas": "Enroll in a Class",

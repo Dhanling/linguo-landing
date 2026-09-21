@@ -23,7 +23,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/OnboardingBelanja"; // [onboarding-belanja-v1] produk digital ikut ditawarkan di onboarding
@@ -2770,6 +2770,17 @@ export default function AkunPage() {
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
   // [beranda-riwayat-kelas-v1] Kelas Live cuma tampilin yang aktif; yang selesai pindah ke view "Riwayat"
   const [liveView, setLiveView] = useState<"aktif" | "riwayat">("aktif");
+  // [beranda-riwayat-baris-v1] Riwayat default tampil sebagai BARIS, bukan kartu poster:
+  // kelas selesai itu arsip (A1.1 … A2.4 semuanya 100%) — deretan foto kembar cuma
+  // makan layar. Pilihan siswa diingat per peramban; gagal baca storage = tetap baris.
+  const [riwayatLayout, setRiwayatLayout] = useState<"baris" | "kartu">("baris");
+  useEffect(() => {
+    try { if (localStorage.getItem("linguo_riwayat_layout") === "kartu") setRiwayatLayout("kartu"); } catch {}
+  }, []);
+  const pilihRiwayatLayout = (v: "baris" | "kartu") => {
+    setRiwayatLayout(v);
+    try { localStorage.setItem("linguo_riwayat_layout", v); } catch {}
+  };
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -4477,6 +4488,23 @@ export default function AkunPage() {
                                   ))}
                                 </div>
                               )}
+                              {/* [beranda-riwayat-baris-v1] pilih tampilan Riwayat: baris (default) / kartu */}
+                              {liveView === "riwayat" && riwayatRegs.length > 0 && (
+                                <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
+                                  {([["baris", tt("Tampilan baris"), List], ["kartu", tt("Tampilan kartu"), LayoutGrid]] as const).map(([k, label, Ikon]) => (
+                                    <button
+                                      key={k}
+                                      onClick={() => pilihRiwayatLayout(k)}
+                                      title={label}
+                                      aria-label={label}
+                                      aria-pressed={riwayatLayout === k}
+                                      className={`rounded-lg p-1.5 transition ${riwayatLayout === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                    >
+                                      <Ikon className="h-4 w-4" strokeWidth={2.2} />
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
                               {liveView === "aktif" && liveRegs.length > 0 && (
                                 <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ {tt("Tambah")}</button>
                               )}
@@ -4510,6 +4538,7 @@ export default function AkunPage() {
                               // Warna sampul berputar LINTAS seksi biar dua kartu bersebelahan
                               // (beda seksi) tak kebetulan kembar warnanya.
                               let cardIdx = 0;
+                              const barisRiwayat = liveView === "riwayat" && riwayatLayout === "baris"; // [beranda-riwayat-baris-v1]
                               const renderKelasCard = (reg: any, idx: number) => {
                                 const badge = PRODUCT_BADGE[normalizeProduct(reg.product)] || PRODUCT_BADGE["Kelas Private"];
                                 const total = reg.sessions_total || 0;
@@ -4564,6 +4593,60 @@ export default function AkunPage() {
                                         setActiveTab("materi");
                                       },
                                     };
+                                // [beranda-riwayat-baris-v1] Riwayat versi baris: satu kelas = satu
+                                // baris ringkas (sampul kecil · bahasa/level · pengajar · sesi).
+                                // Tautan & onClick-nya SAMA dengan kartu (wrapProps) supaya
+                                // perilaku klik / buka di tab baru tak bercabang.
+                                if (barisRiwayat) {
+                                  return (
+                                    <Wrap
+                                      key={reg.id}
+                                      {...wrapProps}
+                                      className="group flex items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-[#F5F6F8] sm:px-4"
+                                    >
+                                      <div className={`relative h-10 w-14 shrink-0 overflow-hidden rounded-lg ${photo ? "bg-[#0E1526]" : bg} ${selesai ? "grayscale" : ""}`}>
+                                        {photo ? (
+                                          <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                        ) : (
+                                          <span className="absolute inset-0 flex items-center justify-center text-[15px] font-extrabold text-white/95">{langGlyph(reg.language)}</span>
+                                        )}
+                                      </div>
+                                      <div className="min-w-0 flex-1">
+                                        <div className="flex items-center gap-1.5">
+                                          <img src={getFlagUrl(reg.language)} alt="" className="h-3.5 w-3.5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                          <h3 className="truncate text-[14px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                        </div>
+                                        <div className="mt-1 flex items-center gap-1.5">
+                                          {tAva ? (
+                                            <img src={tAva} alt={tName || ""} className="h-4 w-4 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                          ) : null}
+                                          <span className={`${tAva ? "hidden" : ""} flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#E8EAEE] text-[8px] font-extrabold text-gray-500`}>{tName ? initials(tName) : "L"}</span>
+                                          <p className="truncate text-[12px] font-medium text-gray-500">{tName || badge.label}</p>
+                                        </div>
+                                      </div>
+                                      {ytLink ? (
+                                        <span className="inline-flex shrink-0 items-center gap-1.5 text-[11.5px] font-semibold text-[#16796E]">
+                                          <Play className="h-3.5 w-3.5" strokeWidth={2.4} /> <span className="hidden sm:inline">{tt("Tonton videonya")}</span>
+                                        </span>
+                                      ) : (
+                                        <>
+                                          <div className="hidden w-28 shrink-0 md:block">
+                                            <div className="h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                              <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
+                                            </div>
+                                          </div>
+                                          <span className="shrink-0 text-[11.5px] font-semibold text-gray-500">{tt("Sesi")}: <span className="text-[#12172B]">{used}/{total}</span></span>
+                                        </>
+                                      )}
+                                      {selesai && (
+                                        <span className="hidden shrink-0 items-center gap-1 rounded-full bg-[#E8EAEE] px-2 py-0.5 text-[10.5px] font-bold text-gray-500 sm:inline-flex">
+                                          <Check className="h-2.5 w-2.5" strokeWidth={3} /> {tt("Selesai")}
+                                        </span>
+                                      )}
+                                      {ytLink ? <ExternalLink className="h-4 w-4 shrink-0 text-gray-300" /> : <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 transition-colors group-hover:text-[#16796E]" />}
+                                    </Wrap>
+                                  );
+                                }
                                 return (
                                   <Wrap
                                     key={reg.id}
@@ -4670,6 +4753,12 @@ export default function AkunPage() {
                                             [beranda-kartu-kompak-v2] Di layar lebar jadi 4 per baris:
                                             siswa dengan 5+ kelas dulu harus scroll dua baris penuh
                                             padahal separuh lebar layar cuma jadi ruang kosong. */}
+                                        {barisRiwayat ? (
+                                          /* [beranda-riwayat-baris-v1] satu wadah putih, baris dipisah garis tipis */
+                                          <div className="mt-3 divide-y divide-slate-100 overflow-hidden rounded-2xl bg-white">
+                                            {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
+                                          </div>
+                                        ) : (
                                         <div className={`mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 ${sesiMendatangCards.length ? "2xl:grid-cols-4" : "xl:grid-cols-4"}`}>
                                           {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
                                           {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di
@@ -4685,6 +4774,7 @@ export default function AkunPage() {
                                             </button>
                                           )}
                                         </div>
+                                        )}
                                       </section>
                                     );
                                   })}
