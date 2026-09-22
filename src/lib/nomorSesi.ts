@@ -75,7 +75,7 @@ export function petaNomorSesi(
     // Kalau baris jadwalnya lengkap satu paket DAN nomor tersimpannya urut rapat,
     // percaya nomor dari admin: mencampur session_number dengan urutan kronologis
     // gampang bikin nomor kembar.
-    // [nomor-sesi-rapat-v1] "Rapat" = dibaca menurut jam, tiap baris tepat satu
+    // [nomor-sesi-rapat-tampil-v1] "Rapat" = dibaca menurut jam, tiap baris tepat satu
     // lebih besar dari baris sebelumnya. Penomoran berlubang atau tertukar (sisa
     // hapus sesi, baris yang digeser, dua baris bertumpuk di jam yang sama) dulu
     // ikut dipercaya — di kalender pengajar satu pertemuan berisi 2 sesi sempat

@@ -30,7 +30,7 @@ describe("petaNomorSesi", () => {
     expect(nomorDari(rows, 4)).toEqual([1, 2, 3, 4]);
   });
 
-  // [nomor-sesi-rapat-v1] Bosnia Private 09:15–10:15: dua baris satu pertemuan yang
+  // [nomor-sesi-rapat-tampil-v1] Bosnia Private 09:15–10:15: dua baris satu pertemuan yang
   // nomor tersimpannya berlubang (1 & 4) bikin badge kartu kalender jadi "#1–4" —
   // rentang yang terbaca seperti empat pertemuan padahal cuma dua sesi.
   it("menomori ulang kronologis kalau nomor tersimpan berlubang", () => {
