@@ -50,8 +50,8 @@ interface Batch {
   current_price_per_student: number | null;
   status_display: string;
   capacity_hint: string;
-  // Batas pendaftaran. Beda dengan start_date: batch September buka 21 Agustus,
-  // tutup 10 September, kelasnya sendiri baru mulai pekan 14 September.
+  // Batas pendaftaran. Beda dengan start_date: batch Oktober buka 23 September,
+  // tutup H-1 kelas pertama tiap bahasa (11–17 Okt), kelasnya mulai pekan 12 Okt.
   closes_at: string | null;
 }
 

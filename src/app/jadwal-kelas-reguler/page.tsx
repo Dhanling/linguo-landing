@@ -69,7 +69,7 @@ async function getBatches() {
   // server batch yang mulai hari ini bisa hilang sejak pukul 07.00 WIB.
   const hariIni = todayWIBISO();
   // closes_at menang kalau diisi: batch yang pendaftarannya diperpanjang (mis.
-  // Batch Sep 2026 dibuka sampai 19 Sep) tetap buka walau kelasnya sudah mulai.
+  // Batch Okt 2026 dibuka sampai H-1 kelas) tetap buka walau kelasnya sudah mulai.
   const masihBuka = (b: any) => {
     if (b.closes_at) return new Date(b.closes_at).getTime() >= Date.now();
     return String(b.start_date).slice(0, 10) >= hariIni;
