@@ -149,11 +149,15 @@ export const SKILL_HOWTO: Record<Skill, string> = {
 };
 
 // Tata tertib umum. Item bertanda { timed: true } hanya tampil bila ada batas waktu.
-export const GENERAL_RULES: { text: string; timed?: boolean }[] = [
-  { text: "Kerjakan setiap bagian secara berurutan. Gunakan panel Navigasi Soal untuk berpindah dan memantau soal yang belum dijawab." },
-  { text: "Pastikan semua soal sudah dijawab sebelum mengirim — soal yang terlewati ditandai merah pada navigasi." },
-  { text: "Untuk bagian Speaking, izinkan akses mikrofon di browser saat diminta." },
-  { text: "Jawaban otomatis dikumpulkan ketika waktu habis, jadi pantau terus sisa waktu di pojok atas.", timed: true },
+// [sim-petunjuk-ringkas-v1] Tiap aturan punya JUDUL pendek + satu kalimat isi.
+// Review kurikulum 22 Sep 2026: "instruksi pada menu sebelum memulai test sedikit
+// membingungkan" — dulu semuanya satu daftar centang berisi kalimat panjang
+// beranak-pinak, jadi yang penting (urutan subtes, timer, layar penuh) tenggelam.
+export const GENERAL_RULES: { title: string; text: string; timed?: boolean }[] = [
+  { title: "Navigasi soal", text: "Pakai panel Navigasi Soal untuk berpindah nomor dan melihat mana yang belum dijawab." },
+  { title: "Sebelum mengumpulkan", text: "Nomor yang masih kosong ditandai merah di panel navigasi — periksa dulu sebelum mengirim." },
+  { title: "Mikrofon", text: "Di bagian Speaking, izinkan akses mikrofon saat browser meminta." },
+  { title: "Waktu habis", text: "Jawaban terkumpul otomatis begitu waktu habis. Sisa waktu selalu terlihat di pojok kanan atas.", timed: true },
 ];
 
 // [sim-fetch-retry-v1] Ulangi query yang GAGAL (bukan yang kosong). Kenapa:

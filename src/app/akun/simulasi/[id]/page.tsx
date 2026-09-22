@@ -69,11 +69,16 @@ let leavingSim = false;
 // Aturan tambahan (ikut tampil di wizard intro, bagian Petunjuk Pengerjaan).
 // [ui-lang-switcher-v1] Dibuat FUNGSI, bukan konstanta modul: teksnya harus
 // diterjemahkan saat render (kamus dibaca dari store bahasa, bukan saat impor).
+// [sim-petunjuk-ringkas-v1] Satu aturan = satu judul + satu gagasan. Dulu tiga
+// kalimat majemuk sepanjang paragraf (urutan subtes + kunci waktu + layar penuh
+// + sanksi jadi satu butir), dan pengajar melaporkan petunjuknya membingungkan.
 const extraRules = () => [
-  { text: tr("Subtes dikerjakan BERURUTAN seperti ujian aslinya (mis. Listening → Structure → Reading, atau Listening → Reading → Writing → Speaking). Subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan, dan yang sudah selesai tidak bisa dibuka lagi.") },
-  { text: `${tr("Tiap subtes punya batas waktu sendiri dan dikunci minimal")} ${SECTION_LOCK_MINUTES} ${tr("menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis ATAU semua soal subtes itu sudah kamu jawab: tombol Selesaikan Subtes langsung terbuka).")}` },
-  { text: `${tr("Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh akan memunculkan hitung mundur")} ${Math.round(RETURN_GRACE_MS / 1000)} ${tr("detik untuk kembali. Kembali tepat waktu cuma tercatat sebagai peringatan")} (${FREE_WARNINGS}× ${tr("pertama dimaafkan)")}; ${tr("tidak kembali = 1 pelanggaran.")} ${MAX_VIOLATIONS}× ${tr("pelanggaran → jawaban otomatis dikumpulkan.")}` },
-  { text: tr("Selama mengerjakan, klik kanan, blok-salin teks soal, tempel jawaban dari luar, cetak/simpan halaman, dan pintasan devtools diblokir. Yang bisa dipakai hanya tombol di layar ujian (navigasi soal, Selesaikan Subtes, dan tombol keluar).") },
+  { title: tr("Urutan subtes"), text: tr("Subtes dikerjakan berurutan seperti ujian aslinya — misalnya Listening → Reading → Writing → Speaking. Subtes berikutnya terbuka setelah subtes sekarang diselesaikan, dan subtes yang sudah selesai tidak bisa dibuka lagi.") },
+  { title: tr("Waktu tiap subtes"), text: tr("Tiap subtes punya batas waktunya sendiri. Waktu berjalan sejak kamu menekan Mulai dan tidak bisa dijeda.") },
+  { title: tr("Pindah subtes"), text: `${tr("Tombol Selesaikan Subtes terbuka setelah")} ${SECTION_LOCK_MINUTES} ${tr("menit — atau lebih cepat, begitu semua soal di subtes itu sudah kamu jawab.")}` },
+  { title: tr("Mode layar penuh"), text: `${tr("Ujian berjalan dalam layar penuh. Kalau kamu pindah tab, pindah aplikasi, minimize, atau keluar dari layar penuh, muncul hitung mundur")} ${Math.round(RETURN_GRACE_MS / 1000)} ${tr("detik untuk kembali.")}` },
+  { title: tr("Peringatan & pelanggaran"), text: `${tr("Kembali sebelum hitungan habis hanya dicatat sebagai peringatan —")} ${FREE_WARNINGS}× ${tr("pertama dimaafkan. Tidak kembali dihitung 1 pelanggaran, dan")} ${MAX_VIOLATIONS}× ${tr("pelanggaran membuat jawabanmu otomatis dikumpulkan.")}` },
+  { title: tr("Yang dimatikan"), text: tr("Klik kanan, menyalin teks soal, menempel jawaban dari luar, mencetak halaman, dan pintasan devtools dimatikan selama ujian. Gunakan tombol di layar ujian saja.") },
 ];
 
 // Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
@@ -527,7 +532,9 @@ function RangedAudio({ url, className }: { url: string; className?: string }) {
 
   return (
     <div className={`flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 py-2 ${className ?? ""}`}>
-      <audio key={base} ref={ref} src={base} preload="metadata" className="hidden" />
+      {/* preload=auto: part yang berbagi satu berkas (mis. Part 3 Q21–30) memakai
+          salinan cache yang sama, jadi pindah part tak menunggu buffer lagi. */}
+      <audio key={base} ref={ref} src={base} preload="auto" className="hidden" />
       <button type="button" onClick={() => skip(-10)} title="Mundur 10 detik" className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100">
         <RotateCcw className="h-4 w-4" /><span className="absolute text-[7px] font-bold">10</span>
       </button>
@@ -840,14 +847,33 @@ export default function SimulasiRunnerPage() {
     return v;
   });
 
+  // [sim-ielts-rubrik-grup-v1] Halaman soal sebuah bagian. Paginasinya mengikuti
+  // RANGKAIAN soal, bukan potongan kaku tiap PAGE_SIZE: satu rangkaian (mis. 7
+  // nomor Matching Headings) tak pernah terbelah ke halaman lain, supaya
+  // perintahnya tetap menempel di atas nomor-nomornya seperti di lembar IELTS.
+  const sectionPages = (si: number): QGroup[][] => {
+    const sec = sections[si];
+    if (!sec) return [];
+    const qs = questions.filter((q) => q.section_id === sec.id);
+    // Soal yang isiannya ditanam di dalam tabel tidak ikut daftar (lihat buildTableBlanks).
+    const tf = buildTableBlanks(sec.instructions, qs);
+    const inline = new Set((tf?.qs ?? []).map((q) => q.id));
+    // Rubrik pilihan ganda hanya untuk IELTS, dan hanya bila petunjuk bagiannya
+    // belum menuliskannya sendiri (mis. Listening Part 3 "Choose the correct
+    // letter A, B or C") — kalau tidak, perintahnya muncul dua kali.
+    const mcqRubric = sim?.test_type === "ielts"
+      && !/choose the correct letter/i.test((sec.instructions || "").replace(/<[^>]*>/g, " "));
+    return packQuestionPages(tf ? qs.filter((q) => !inline.has(q.id)) : qs, PAGE_SIZE, { mcqRubric });
+  };
+
   // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
   function goToQuestion(targetSecIdx: number, qid: string) {
     setSecIdx(targetSecIdx);
     dismissIntro(targetSecIdx); // loncat ke nomor soal → lewati layar intro bagian
-    // Pindah ke halaman yang memuat soal tujuan (paginasi PAGE_SIZE soal/halaman).
-    const targetSecId = sections[targetSecIdx]?.id;
-    const idxInSec = questions.filter((q) => q.section_id === targetSecId).findIndex((q) => q.id === qid);
-    setQPage(idxInSec >= 0 ? Math.floor(idxInSec / PAGE_SIZE) : 0);
+    // Pindah ke halaman yang memuat soal tujuan (paginasi per rangkaian soal).
+    const pagesOfTarget = sectionPages(targetSecIdx);
+    const pi = pagesOfTarget.findIndex((pg) => pg.some((g) => g.qs.some((q) => q.id === qid)));
+    setQPage(pi >= 0 ? pi : 0);
     requestAnimationFrame(() => setTimeout(() => {
       const el = document.getElementById(`q-${qid}`);
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1555,11 +1581,14 @@ export default function SimulasiRunnerPage() {
   const inlineIds = new Set((tableFill?.qs ?? []).map((q) => q.id));
   const listQs = tableFill ? secQs.filter((q) => !inlineIds.has(q.id)) : secQs;
 
-  // Paginasi soal: maksimal PAGE_SIZE soal per halaman (kurangi scroll panjang).
-  const pageCount = Math.max(1, Math.ceil(listQs.length / PAGE_SIZE));
+  // Paginasi soal: ±PAGE_SIZE soal per halaman (kurangi scroll panjang), tapi
+  // satu rangkaian soal + rubriknya selalu utuh dalam satu halaman.
+  const pages = sectionPages(secIdx);
+  const pageCount = Math.max(1, pages.length);
   const safePage = Math.min(qPage, pageCount - 1);
-  const pageStart = safePage * PAGE_SIZE;
-  const pageQs = listQs.slice(pageStart, pageStart + PAGE_SIZE);
+  const pageGroups = pages[safePage] ?? [];
+  const pageQs = pageGroups.flatMap((g) => g.qs);
+  const pageStart = pages.slice(0, safePage).reduce((n, pg) => n + pg.reduce((m, g) => m + g.qs.length, 0), 0);
   const isLastPage = safePage >= pageCount - 1;
   const isFirstPage = safePage === 0 && gPos <= 0;
   const scrollToTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { /* ignore */ } };
@@ -1576,9 +1605,8 @@ export default function SimulasiRunnerPage() {
     if (safePage > 0) { setQPage(safePage - 1); scrollToTop(); return; }
     if (gPos <= 0) return;
     const prev = activeGroup.secIdxs[gPos - 1];
-    const prevCount = questions.filter((q) => q.section_id === sections[prev].id).length;
     dismissIntro(prev);
-    setSecIdx(prev); setQPage(Math.max(0, Math.ceil(prevCount / PAGE_SIZE) - 1)); scrollToTop();
+    setSecIdx(prev); setQPage(Math.max(0, sectionPages(prev).length - 1)); scrollToTop();
   };
   const sectionHeader = (
     <>
@@ -1748,7 +1776,7 @@ export default function SimulasiRunnerPage() {
           {SKILL_LABEL[activeGroup.skill]} ·{" "}
           {listQs.length === 0
             ? `${secQs.length} ${t("soal — isi langsung di tabel")}`
-            : <>{t("Soal")} {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, listQs.length)} {t("dari")} {listQs.length}</>}
+            : <>{t("Soal")} {pageStart + 1}–{pageStart + pageQs.length} {t("dari")} {listQs.length}</>}
           {pageCount > 1 && <span className="text-slate-400"> · {t("Hal")} {safePage + 1}/{pageCount}</span>}
         </span>
         <div className="flex items-center gap-2">
@@ -1804,9 +1832,27 @@ export default function SimulasiRunnerPage() {
             {!hasMedia && sectionHeader}
             {!hasMedia && tableBlock}
 
-            <div className="mt-5 space-y-5 first:mt-0">
-              {pageQs.map((q) => (
-                <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} upload={recUpload ? (b) => recUpload(q.id, b) : undefined} />
+            <div className="mt-5 space-y-6 first:mt-0">
+              {pageGroups.map((g, gi) => (
+                <div key={`${g.sig}-${gi}`} className="space-y-3">
+                  <QuestionGroupHeader g={g} qNumber={qNumber} />
+                  <div className="space-y-5">
+                    {g.twin ? (
+                      <MultiPickBlock g={g} qNumber={qNumber} answers={answers} onSet={setAns} />
+                    ) : g.qs.map((q) => (
+                      <QuestionBlock
+                        key={q.id}
+                        index={qNumber[q.id]}
+                        q={q}
+                        state={answers[q.id]}
+                        onChange={(p) => setAns(q.id, p)}
+                        upload={recUpload ? (b) => recUpload(q.id, b) : undefined}
+                        body={splitRubric(q.prompt).body}
+                        sharedList={g.sharedList}
+                      />
+                    ))}
+                  </div>
+                </div>
               ))}
               {secQs.length === 0 && <p className="text-sm text-slate-400">{t("Tidak ada soal di bagian ini.")}</p>}
             </div>
@@ -1905,7 +1951,7 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
   const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
   const effDuration = useMemo(() => effectiveDurationMinutes(sim, sections), [sim, sections]);
   // + aturan mode subtes & proctoring (EXTRA_RULES) supaya siswa tahu sebelum mulai.
-  const rules = [...GENERAL_RULES.filter((r) => !r.timed || effDuration > 0).map((r) => ({ text: t(r.text) })), ...extraRules()];
+  const rules = [...extraRules(), ...GENERAL_RULES.filter((r) => !r.timed || effDuration > 0).map((r) => ({ title: t(r.title), text: t(r.text) }))];
 
   // Kelompokkan bagian per skill → accordion biar daftar yang panjang (mis. 13
   // bagian) tidak membanjiri layar. Default skill pertama yang terbuka.
@@ -1978,10 +2024,16 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
           <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
             <Info className="h-4 w-4 text-teal-600" />{t("Petunjuk Pengerjaan")}
           </h3>
-          <ul className="mt-3 space-y-2">
+          <p className="mt-1 text-xs text-slate-500">{t("Baca sekali sebelum mulai — aturan ini berlaku sampai ujian selesai.")}</p>
+          <ul className="mt-3 space-y-2.5">
             {rules.map((r, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-600">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{r.text}
+              <li key={i} className="flex gap-2.5 rounded-lg bg-slate-50 px-3 py-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />
+                <span className="text-sm text-slate-600">
+                  <b className="font-semibold text-slate-900">{r.title}</b>
+                  <span className="mx-1.5 text-slate-300">·</span>
+                  {r.text}
+                </span>
               </li>
             ))}
           </ul>
@@ -2808,9 +2860,231 @@ function IdentifyErrorInline({ tokens, state, onChange }: {
   );
 }
 
-function QuestionBlock({ index, q, state, onChange, upload }: {
+// ── [sim-ielts-rubrik-grup-v1] Rangkaian soal ala lembar IELTS ───────────────
+// IELTS menulis perintahnya SEKALI di atas satu rangkaian soal sejenis
+// ("Questions 14–20 … Choose the correct heading for each paragraph"), lalu
+// nomor-nomornya berdiri polos di bawahnya. Bank soal kami (hasil impor)
+// menyimpan perintah itu di DEPAN tiap prompt, jadi siswa membaca "Complete the
+// sentences below. Choose ONE WORD ONLY from the passage…" empat kali berturut-
+// turut — dan untuk Matching Headings SELURUH daftar heading diulang sebagai
+// opsi A–G di setiap nomor. Temuan review kurikulum 22 Sep 2026: "format reading
+// test tidak sesuai".
+//
+// Di sini soal berurutan yang sejenis dikelompokkan: perintahnya diangkat jadi
+// satu kop rubrik "Questions X–Y", daftar heading dipajang SEKALI sebagai kotak
+// "List of Headings" dengan angka Romawi aslinya, dan tiap nomor tinggal memilih.
+// Semuanya diturunkan dari isi soal — tak ada kolom baru di CMS, dan tes lain
+// (TOEFL/JLPT/dst.) yang promptnya tanpa perintah berulang tampil seperti semula.
+
+// Perintah selalu memakai kata kerja imperatif khas rubrik; dipakai untuk
+// membedakan "perintah + soal" dari prompt biasa yang kebetulan berparagraf.
+const DIRECTIVE_RE = /\b(choose|complete|write|answer|select|match|decide|label|classify|fill)\b/i;
+// Baris bergaya "Woman:" / "Narrator:" = naskah percakapan listening, bukan rubrik.
+const SPEAKER_RE = /^[A-Z][A-Za-z ]{0,20}:\s/m;
+
+/** Pisahkan prompt "PERINTAH\n\nisi soal" jadi rubrik + badan soal. */
+function splitRubric(prompt: string): { rubric: string; body: string } {
+  const i = (prompt || "").indexOf("\n\n");
+  if (i < 0) return { rubric: "", body: prompt };
+  const head = prompt.slice(0, i).trim();
+  const body = prompt.slice(i + 2).trim();
+  if (!body || !head || head.length > 260) return { rubric: "", body: prompt };
+  if (!DIRECTIVE_RE.test(head) || head.includes("?") || SPEAKER_RE.test(head)) return { rubric: "", body: prompt };
+  return { rubric: head, body };
+}
+
+// Daftar heading IELTS ditulis dengan angka Romawi ("i. ", "(iv) ").
+const ROMAN_OPT_RE = /^\s*\(?((?=[ivx])x{0,3}(?:ix|iv|v?i{0,3}))[.)]\s+/i;
+/** Penanda opsi seperti di lembar aslinya: Romawi untuk daftar heading, A/B/C untuk sisanya. */
+function optionTag(opt: string, i: number): string {
+  const m = (opt || "").match(ROMAN_OPT_RE);
+  return m ? m[1].toLowerCase() : String.fromCharCode(65 + i);
+}
+const isRomanList = (opts: string[]) => opts.length >= 4 && opts.every((o) => ROMAN_OPT_RE.test(o));
+
+type QGroup = {
+  sig: string; qs: Question[]; rubric: string;
+  /** Daftar pilihan yang dipakai bersama satu rangkaian (Matching Headings / mencocokkan). */
+  sharedList: string[] | null;
+  /** Rangkaian "Choose TWO letters A–E": satu pertanyaan, beberapa nomor jawaban. */
+  twin: boolean;
+  /** Deretan pilihan ganda yang perlu rubrik "Choose the correct letter". */
+  mcqRun?: boolean;
+};
+
+/** Satukan soal BERURUTAN yang sejenis (tipe + perintah + daftar opsi sama).
+ *  `mcqRubric` menyatukan deretan pilihan ganda polos jadi satu rangkaian
+ *  ber-rubrik — dipakai untuk IELTS, dan dimatikan kalau petunjuk bagiannya
+ *  sudah memuat perintah itu (supaya tidak tertulis dua kali). */
+function buildQuestionGroups(qs: Question[], opts?: { mcqRubric?: boolean }): QGroup[] {
+  const out: QGroup[] = [];
+  qs.forEach((q) => {
+    const { rubric } = splitRubric(q.prompt);
+    const qOpts = q.options ?? [];
+    // Soal mencocokkan memakai SATU daftar pilihan untuk semua nomornya —
+    // daftarnya dipajang sekali, bukan diulang di tiap nomor.
+    const sharedList = q.type === "matching" && qOpts.length >= 3 ? qOpts : null;
+    // Pertanyaan + opsi yang sama persis berturut-turut = "Choose TWO letters"
+    // yang dipecah jadi beberapa baris oleh pengimpor soal. True/False/Not Given
+    // TIDAK termasuk: opsinya memang selalu sama, tapi tiap nomor pernyataannya
+    // sendiri-sendiri — sempat salah tergabung jadi satu daftar centang.
+    const sig = sharedList ? `list|${q.type}|${qOpts.join("|")}`
+      : rubric ? `rubric|${q.type}|${rubric}`
+      : q.type === "true_false_ng" ? "tfng"
+      : qOpts.length > 0 ? `twin|${q.type}|${q.prompt}|${qOpts.join("|")}`
+      : `solo|${out.length}`;
+    const last = out[out.length - 1];
+    if (last && last.sig === sig) { last.qs.push(q); return; }
+    out.push({ sig, qs: [q], rubric, sharedList, twin: sig.startsWith("twin|") });
+  });
+  // "Twin" baru berlaku kalau memang lebih dari satu nomor memakai pertanyaan itu.
+  const fixed = out.map((g) => (g.twin && g.qs.length < 2 ? { ...g, twin: false } : g));
+  if (!opts?.mcqRubric) return fixed;
+  const merged: QGroup[] = [];
+  fixed.forEach((g) => {
+    const plainMcq = !g.twin && !g.sharedList && !g.rubric && g.qs.length === 1
+      && g.qs[0].type === "multiple_choice" && (g.qs[0].options?.length ?? 0) > 0;
+    const last = merged[merged.length - 1];
+    if (plainMcq && last?.mcqRun) { last.qs.push(g.qs[0]); return; }
+    merged.push(plainMcq ? { ...g, sig: `mcqrun|${merged.length}`, mcqRun: true } : g);
+  });
+  return merged;
+}
+
+/** Rubrik baku bila bank soal tak menuliskannya (kalimat resmi IELTS). */
+function defaultRubric(g: QGroup): string {
+  // Daftar Romawi = Matching Headings; perintah bakunya ditulis di sini kalau
+  // bank soal belum menuliskannya. Daftar biasa (mencocokkan) sudah punya
+  // perintah di kolom "instructions" bagian, jadi tak perlu ditambahi.
+  if (g.sharedList) return isRomanList(g.sharedList) ? tr("Choose the correct heading for each paragraph from the list of headings below.") : "";
+  if (g.mcqRun) {
+    const n = g.qs[0]?.options?.length ?? 4;
+    const letters = n <= 1 ? "A"
+      : `${Array.from({ length: n - 1 }, (_, i) => String.fromCharCode(65 + i)).join(", ")} ${tr("or")} ${String.fromCharCode(65 + n - 1)}`;
+    return `${tr("Choose the correct letter,")} ${letters}.`;
+  }
+  if (g.qs[0]?.type === "true_false_ng") {
+    return tr("Do the following statements agree with the information given in the passage?")
+      + "\nTRUE — " + tr("if the statement agrees with the information")
+      + "\nFALSE — " + tr("if the statement contradicts the information")
+      + "\nNOT GIVEN — " + tr("if there is no information on this");
+  }
+  return "";
+}
+
+/** Bagi jadi halaman tanpa MEMOTONG satu rangkaian — perintah tetap menempel di atas nomornya. */
+function packQuestionPages(qs: Question[], size: number, opts?: { mcqRubric?: boolean }): QGroup[][] {
+  const pages: QGroup[][] = [];
+  let cur: QGroup[] = [];
+  let n = 0;
+  buildQuestionGroups(qs, opts).forEach((g) => {
+    if (n > 0 && n + g.qs.length > size) { pages.push(cur); cur = []; n = 0; }
+    cur.push(g);
+    n += g.qs.length;
+  });
+  if (cur.length) pages.push(cur);
+  return pages;
+}
+
+/** Kop rubrik satu rangkaian soal + kotak daftar heading. */
+function QuestionGroupHeader({ g, qNumber }: { g: QGroup; qNumber: Record<string, number> }) {
+  const t = useT();
+  const rubric = g.rubric || defaultRubric(g);
+  if (!rubric && !g.sharedList) return null;
+  const roman = !!g.sharedList && isRomanList(g.sharedList);
+  const from = qNumber[g.qs[0].id];
+  const to = qNumber[g.qs[g.qs.length - 1].id];
+  return (
+    <div className="rounded-xl border border-teal-100 bg-teal-50/70 px-4 py-3">
+      {from != null && (
+        <p className="text-xs font-bold uppercase tracking-wide text-teal-800">
+          {from === to ? `${t("Soal")} ${from}` : `${t("Soal")} ${from}–${to}`}
+        </p>
+      )}
+      {rubric && <p className="mt-1 whitespace-pre-line text-sm font-medium leading-relaxed text-slate-700">{rubric}</p>}
+      {g.sharedList && (
+        <div className="mt-3 rounded-lg border border-slate-200 bg-white p-3">
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-wide text-slate-900">{roman ? t("Daftar Heading") : t("Daftar Pilihan")}</p>
+          <ul className="space-y-1 text-sm text-slate-700">
+            {g.sharedList.map((h, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="w-7 shrink-0 text-right font-semibold text-slate-500">{optionTag(h, i)}</span>
+                <span>{stripOptionLabel(h, i)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Rangkaian "Choose TWO letters A–E". Di lembar IELTS ini SATU pertanyaan
+ *  dengan dua jawaban, tapi bank soal menyimpannya sebagai dua nomor berisi
+ *  pertanyaan & opsi yang sama persis — dulu peserta membaca pertanyaan yang
+ *  identik dua kali berturut-turut. Sekarang ditampilkan sekali sebagai daftar
+ *  centang. Pilihan disimpan ke nomor-nomornya URUT MENAIK (kunci jawabannya
+ *  juga menaik), jadi peserta yang benar keduanya tidak dirugikan urutan klik,
+ *  dan satu opsi tak bisa terpilih dua kali. */
+function MultiPickBlock({ g, qNumber, answers, onSet }: {
+  g: QGroup; qNumber: Record<string, number>;
+  answers: Record<string, AnswerState>; onSet: (qid: string, patch: Partial<AnswerState>) => void;
+}) {
+  const t = useT();
+  const opts = g.qs[0].options ?? [];
+  const max = g.qs.length;
+  const picked = g.qs
+    .map((q) => answers[q.id]?.selected_index)
+    .filter((i): i is number => i != null);
+  const chosen = new Set(picked);
+  const apply = (next: number[]) => {
+    const sorted = [...next].sort((a, b) => a - b);
+    g.qs.forEach((q, i) => onSet(q.id, { selected_index: sorted[i] ?? null }));
+  };
+  const toggle = (i: number) => {
+    if (chosen.has(i)) apply(picked.filter((x) => x !== i));
+    else if (picked.length < max) apply([...picked, i]);
+  };
+  const nums = g.qs.map((q) => qNumber[q.id]).filter((n) => n != null);
+  return (
+    <div id={`q-${g.qs[0].id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4">
+      {/* Nomor lain di rangkaian ini tetap punya jangkar sendiri untuk panel navigasi. */}
+      {g.qs.slice(1).map((q) => <span key={q.id} id={`q-${q.id}`} className="block scroll-mt-24" />)}
+      <p className="whitespace-pre-line text-sm font-medium text-slate-900">
+        <span className="mr-1 text-slate-400">{nums.join(" & ")}.</span>{g.qs[0].prompt}
+      </p>
+      <p className="mt-1 text-xs font-semibold text-teal-700">
+        {t("Pilih")} {max} {t("jawaban")} · {picked.length}/{max} {t("dipilih")}
+      </p>
+      <div className="mt-3 space-y-2">
+        {opts.map((opt, i) => {
+          const active = chosen.has(i);
+          const full = !active && picked.length >= max;
+          return (
+            <label
+              key={i}
+              className={`flex items-center gap-3 rounded-lg border px-3 py-2 text-sm transition ${active ? "border-teal-400 bg-teal-50" : full ? "border-slate-200 opacity-50" : "cursor-pointer border-slate-200 hover:bg-slate-50"}`}
+            >
+              <input type="checkbox" checked={active} disabled={full} onChange={() => toggle(i)} className="sr-only" />
+              <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded border text-[11px] font-bold transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
+                {optionTag(opt, i)}
+              </span>
+              <span className="text-slate-700">{stripOptionLabel(opt, i)}</span>
+            </label>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function QuestionBlock({ index, q, state, onChange, upload, body, sharedList }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
   upload?: (blob: Blob) => Promise<string | null>;
+  // [sim-ielts-rubrik-grup-v1] body = prompt tanpa perintah (perintahnya sudah
+  // dipajang sekali di kop rangkaian); sharedList = daftar pilihan bersama, yang
+  // membuat soal ini jadi satu baris pemilih, bukan daftar opsi yang diulang.
+  body?: string; sharedList?: string[] | null;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
@@ -2821,13 +3095,18 @@ function QuestionBlock({ index, q, state, onChange, upload }: {
     && q.options!.every((o) => /^\s*\([A-Za-z]\)/.test(o)))
     ? buildErrorInline(q.prompt, q.options!) : null;
   const hideRawPrompt = isFillBlank || !!errorTokens;
+  // Rangkaian berdaftar-pilihan: perintah "Choose the correct heading for
+  // Paragraph A from the list of headings" sudah jadi kop rangkaian, jadi
+  // barisnya tinggal menyebut acuannya ("Paragraph A") seperti lembar aslinya.
+  const anchor = sharedList ? q.prompt.match(/\b(?:Paragraph|Paragraf|Section|Bagian)\s+[A-Z0-9]+\b/) : null;
+  const shownPrompt = anchor ? anchor[0] : (body ?? q.prompt);
   const promptHeading = isFillBlank
     ? t("Lengkapi kalimat dengan kata yang tepat:")
     : t("Pilih bagian yang salah secara tata bahasa:");
   return (
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       {/* pre-line: prompt listening multi-speaker pakai \n per giliran bicara */}
-      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{hideRawPrompt ? promptHeading : q.prompt}</p>
+      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{hideRawPrompt ? promptHeading : shownPrompt}</p>
 
       {q.image_url && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -2842,7 +3121,25 @@ alt={t("Visual soal")}
 
       {errorTokens && <IdentifyErrorInline tokens={errorTokens} state={state} onChange={onChange} />}
 
-      {!isFillBlank && !errorTokens && (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
+      {/* Daftar pilihan bersama sudah tampil sekali di kop rangkaian, jadi di sini
+          cukup satu pemilih ringkas — persis seperti lembar IELTS. */}
+      {sharedList && (
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className="text-sm text-slate-500">{t("Jawaban")}:</span>
+          <select
+            value={state.selected_index ?? ""}
+            onChange={(e) => onChange({ selected_index: e.target.value === "" ? null : Number(e.target.value) })}
+            className={`max-w-full rounded-lg border px-3 py-2 text-sm font-semibold outline-none transition ${state.selected_index != null ? "border-teal-400 bg-teal-50 text-teal-800" : "border-slate-300 bg-white text-slate-600"}`}
+          >
+            <option value="">{isRomanList(sharedList) ? t("Pilih heading…") : t("Pilih jawaban…")}</option>
+            {sharedList.map((h, i) => (
+              <option key={i} value={i}>{optionTag(h, i)} — {stripOptionLabel(h, i)}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {!sharedList && !isFillBlank && !errorTokens && (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
         <div className="mt-3 space-y-2">
           {opts.map((opt, i) => {
             const active = state.selected_index === i;
@@ -2850,8 +3147,10 @@ alt={t("Visual soal")}
               <label key={i} className={`flex cursor-pointer items-center gap-3 rounded-lg border px-3 py-2 text-sm transition ${active ? "border-teal-400 bg-teal-50" : "border-slate-200 hover:bg-slate-50"}`}>
                 <input type="radio" name={q.id} checked={active} onChange={() => onChange({ selected_index: i })} className="sr-only" />
                 {/* Label pilihan A/B/C/D — sekaligus jadi penanda terpilih */}
-                <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
-                  {String.fromCharCode(65 + i)}
+                {/* Penanda opsi mengikuti lembar aslinya: T/F/NG untuk True-False-
+                    Not Given, angka Romawi untuk daftar heading, sisanya A/B/C/D. */}
+                <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold uppercase transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
+                  {q.type === "true_false_ng" ? ["T", "F", "NG"][i] ?? String.fromCharCode(65 + i) : optionTag(opt, i)}
                 </span>
                 <span className="text-slate-700">{q.type === "true_false_ng" ? opt : stripOptionLabel(opt, i)}</span>
               </label>
