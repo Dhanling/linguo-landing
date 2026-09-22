@@ -24,6 +24,15 @@ export const LANG_FLAGS: Record<string, string> = {
   Uzbek:"uz",
   // [ebook-taiwan-101-v1] Katalog Perpustakaan punya baris "Taiwanese Mandarin".
   "Taiwanese Mandarin":"tw", "Mandarin Taiwan":"tw",
+  // [lang-flag-bosnia-v1] Bahasa yang ada di katalog /harga tapi belum punya kode
+  // bendera di sini — semuanya jatuh ke "un" (bendera PBB) di kartu kelas dashboard
+  // siswa. Kasus nyata: kelas Bosnian A1.1 Wendy/Michael.
+  Bosnian:"ba",Bosnia:"ba",
+  Serbian:"rs",Serbia:"rs",Estonian:"ee",Estonia:"ee",
+  Tagalog:"ph",Filipina:"ph",Malay:"my",Melayu:"my",
+  Farsi:"ir",Swahili:"tz",Irish:"ie",Irlandia:"ie",Kurdish:"iq",Kurdi:"iq",
+  "English British":"gb","Traditional Chinese":"tw",
+  Banjar:"id","BIPA (Indonesian for Foreigners)":"id",
 };
 export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[baseLanguage(lang)] || "un"}.png`;
 
@@ -74,6 +83,10 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   yunani: "greek", greek: "greek", greece: "greek",
   thai: "thai", thailand: "thai",
   tagalog: "filipino", filipina: "filipino", filipino: "filipino",
+  // [lang-flag-bosnia-v1] Foto: Blagaj Tekija (rumah darwis di mata air Buna,
+  // Herzegovina) — sumber Wikimedia Commons, lisensi CC0.
+  bosnia: "bosnian", bosnian: "bosnian", bosanski: "bosnian",
+  "bosnia dan herzegovina": "bosnian", "bosnia and herzegovina": "bosnian",
 };
 export const getLangPhoto = (lang?: string | null): string | null => {
   if (!lang) return null;
