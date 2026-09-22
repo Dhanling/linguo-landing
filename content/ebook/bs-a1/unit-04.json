@@ -1,0 +1,539 @@
+{
+ "title": "Keluargaku",
+ "title_target": "Moja porodica",
+ "goal": "Menceritakan keluarga dan menyatakan kepemilikan — sekaligus memasang kata milik yang ikut benda yang dimiliki, bukan pemiliknya, dan dua bentuk *imati* yang ingkarnya melebur jadi satu kata.",
+ "bekal": [
+  "menyebut anggota keluarga dan menjawab *Imaš li braće i sestara?*",
+  "memakai *moj, tvoj, njegov, njen, naš, vaš, njihov* dengan ekor yang tepat",
+  "memakai *imam / nemam* dan mengenali *ima / nema* yang berarti \"ada / tidak ada\""
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Moja porodica",
+   "intro": "Rehat siang di kantor. Budi membuka galeri foto di ponselnya, dan Amina langsung mendekat — di Bosnia, bertanya tentang keluarga bukan basa-basi melainkan cara berkenalan yang sesungguhnya.",
+   "lines": [
+    {
+     "speaker": "Amina:",
+     "text": "Je li ovo tvoja porodica?",
+     "id": "Ini keluargamu?",
+     "literal": "apakah ini-nt milikmu-pr keluarga?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeste. Ovo su moji roditelji, a ovo je moja sestra.",
+     "id": "Ya. Ini orang tua saya, dan ini adik perempuan saya.",
+     "literal": "ia-adalah. ini-nt mereka-adalah milikku-jm orang-tua, dan ini-nt ia-adalah milikku-pr saudari."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Kako se zove tvoja sestra?",
+     "id": "Siapa nama adikmu?",
+     "literal": "bagaimana diri-sendiri ia-memanggil milikmu-pr saudari?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zove se Sari. Ona je studentica, studira medicinu.",
+     "id": "Namanya Sari. Dia mahasiswa, kuliah kedokteran.",
+     "literal": "ia-memanggil diri-sendiri Sari. dia-pr ia-adalah mahasiswa-pr, ia-kuliah kedokteran-akusatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "A ovaj dječak? Je li i on tvoj brat?",
+     "id": "Kalau anak lelaki ini? Adikmu juga?",
+     "literal": "dan ini-lk anak-lelaki? apakah juga ia milikmu-lk saudara?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeste, to je moj brat Rizky. On ima deset godina.",
+     "id": "Ya, itu adik saya Rizky. Umurnya sepuluh tahun.",
+     "literal": "ia-adalah, itu-nt ia-adalah milikku-lk saudara Rizky. dia ia-punya sepuluh tahun-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Imaš li još braće i sestara?",
+     "id": "Masih ada saudara lain?",
+     "literal": "kamu-punya apakah lagi saudara-genitif-jm dan saudari-genitif-jm?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nemam, samo njih dvoje. A tvoja porodica?",
+     "id": "Tidak ada, cuma mereka berdua. Kalau keluargamu?",
+     "literal": "tidak-saya-punya, hanya mereka-genitif berdua. dan milikmu-pr keluarga?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Moja porodica je velika. Imam tri sestre i jednog brata.",
+     "id": "Keluarga saya besar. Saya punya tiga saudari dan satu saudara.",
+     "literal": "milikku-pr keluarga ia-adalah besar-pr. saya-punya tiga saudari-jm dan satu-akusatif saudara-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tri sestre! Jesu li sve u Mostaru?",
+     "id": "Tiga! Semuanya di Mostar?",
+     "literal": "tiga saudari-jm! mereka-adalah apakah semua-pr-jm di Mostar-lokatif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Nisu sve. Jedna sestra živi u Njemačkoj, u Frankfurtu.",
+     "id": "Tidak semua. Satu saudari saya tinggal di Jerman, di Frankfurt.",
+     "literal": "mereka-bukan semua. satu-pr saudari ia-tinggal di Jerman-lokatif, di Frankfurt-lokatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A tvoji roditelji? Šta rade?",
+     "id": "Kalau orang tuamu? Kerja apa?",
+     "literal": "dan milikmu-jm orang-tua? apa mereka-mengerjakan?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Otac je penzioner, a majka je nastavnica. Oni su u Mostaru.",
+     "id": "Ayah pensiunan, ibu guru. Mereka di Mostar.",
+     "literal": "ayah ia-adalah pensiunan, dan ibu ia-adalah guru-pr. mereka mereka-adalah di Mostar-lokatif."
+    }
+   ],
+   "notes": [
+    "**Kata milik ikut benda yang dimiliki, bukan pemiliknya.** *Moja sestra* memakai *moja* karena *sestra* perempuan; *moj brat* memakai *moj* karena *brat* lelaki; *moji roditelji* memakai *moji* karena jamak. Ini kebalikan cara berpikir bahasa Indonesia, dan satu-satunya cara membiasakannya adalah mengucapkan pasangannya utuh — *moja sestra*, *moj brat*, *moje pismo* — bukan menghafal tabel *moj / moja / moje* sendirian.",
+    "**Kenapa *medicinu*, *sestre*, *jednog brata*?** Karena kata benda di bahasa Bosnia berganti ekor menurut pekerjaannya di kalimat. Sesudah *studira* dan *imam*, ia menjadi sasaran, dan ekornya berubah: *medicina → medicinu*, *brat → brata*. Sesudah angka 2-4, ekornya lain lagi: *sestra → tri sestre*. Semuanya punya unitnya sendiri — angka di unit 5, sasaran di unit 7, genitif di unit 8. Untuk sekarang, hafalkan kalimat utuhnya dan biarkan telingamu terbiasa bahwa ekornya memang bergerak.",
+    "***On ima deset godina* — umur dinyatakan dengan \"punya\".** Persis bahasa Prancis dan Spanyol, dan berbeda dari bahasa Indonesia yang memakai \"berumur\". *Koliko imaš godina?* = \"berapa tahun yang kamu punya?\" Jawabannya *Imam dvadeset pet godina.* Angkanya dipasang di unit 5.",
+    "***Imaš li braće i sestara?* adalah satu kalimat baku.** Harfiahnya \"punyakah kamu saudara-saudara?\", dan bentuk *braće* itu jamak khusus dari *brat* yang tidak mengikuti pola biasa. Hafalkan utuh sebagai satu potongan; ia akan kamu dengar tiap kali seseorang berkenalan denganmu di Bosnia.",
+    "**Porodica bukan sekadar ayah-ibu-anak.** Di Bosnia *porodica* mudah melebar ke paman, bibi, sepupu, dan tetangga yang sudah dianggap keluarga. Kalau seseorang bertanya tentang keluargamu, jawaban satu kalimat terasa terlalu pendek — ceritakan sedikit, tanyakan balik, dan percakapannya akan berjalan sendiri. Kata *komšija* (tetangga, dari bahasa Turki) di Bosnia hampir setara dengan kerabat."
+   ],
+   "grammars": [
+    {
+     "title": "Kata milik — moj, tvoj, njegov, njen…",
+     "body": [
+      "Tujuh kata milik, masing-masing dengan empat rupa. Kelihatan banyak, tetapi ekornya persis sama di ketujuhnya — yang berubah cuma batang katanya."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "lk",
+       "pr",
+       "nt",
+       "jamak (lk / pr / nt)"
+      ],
+      "rows": [
+       [
+        "**ja** — saya",
+        "*moj*",
+        "*moja*",
+        "*moje*",
+        "*moji / moje / moja*"
+       ],
+       [
+        "**ti** — kamu",
+        "*tvoj*",
+        "*tvoja*",
+        "*tvoje*",
+        "*tvoji / tvoje / tvoja*"
+       ],
+       [
+        "**on** — dia (lk)",
+        "*njegov*",
+        "*njegova*",
+        "*njegovo*",
+        "*njegovi / njegove / njegova*"
+       ],
+       [
+        "**ona** — dia (pr)",
+        "*njen*",
+        "*njena*",
+        "*njeno*",
+        "*njeni / njene / njena*"
+       ],
+       [
+        "**mi** — kami",
+        "*naš*",
+        "*naša*",
+        "*naše*",
+        "*naši / naše / naša*"
+       ],
+       [
+        "**vi** — kalian; Anda",
+        "*vaš*",
+        "*vaša*",
+        "*vaše*",
+        "*vaši / vaše / vaša*"
+       ],
+       [
+        "**oni** — mereka",
+        "*njihov*",
+        "*njihova*",
+        "*njihovo*",
+        "*njihovi / njihove / njihova*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jebakan utamanya ada di *njegov* dan *njen*.** Keduanya memberitahu **siapa pemiliknya** (*njegov* = milik dia lelaki, *njen* = milik dia perempuan), tetapi **ekornya mengikuti barangnya**. Jadi \"adik perempuannya (Emir)\" = *njegova sestra*: *njegov-* karena Emir lelaki, *-a* karena *sestra* perempuan. Dan \"adik lelakinya (Amina)\" = *njen brat*. Dua keputusan dalam satu kata; pelan-pelan saja di awal.",
+      "**Cara sehari-hari yang jauh lebih pendek: kata ganti datif.** Alih-alih *moje ime je Budi*, orang Bosnia berkata *Ime mi je Budi* — harfiahnya \"nama kepada-saya adalah Budi\". Begitu juga *Brat mi je student* (adik saya mahasiswa), *Kako ti je sestra?* (apa kabar adikmu?). Bentuk ini dipasang lengkap di unit 13, tetapi mulai sekarang kamu akan mendengarnya di mana-mana — terutama dengan anggota keluarga.",
+      "**Bertanya \"milik siapa\": *čiji / čija / čije*.** *Čija je ovo knjiga?* (buku siapa ini?), *Čiji je ovaj telefon?* Ekornya sama dengan kata milik lainnya, jadi tak ada yang baru untuk dihafal.",
+      "**Satu kata yang belum kamu butuhkan, tetapi akan kamu dengar: *svoj*.** Ia berarti \"milik pelaku kalimat itu sendiri\": *On voli svoju sestru* = dia menyayangi adiknya sendiri, sedangkan *On voli njegovu sestru* = dia menyayangi adik orang lain. Di tingkat A1 memakai *moj/tvoj* biasa tidak akan membuat orang salah paham — simpan saja di ingatan untuk nanti."
+     ]
+    },
+    {
+     "title": "Imati dan nemati — dan \"ada\" yang tanpa pelaku",
+     "body": [
+      "Kata kerja kedua yang wajib kamu kuasai sedini *biti*. Ia golongan *-am*, jadi ekornya sudah kamu kenal dari unit 2 — dan ingkarnya, seperti *biti*, melebur jadi satu kata."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "**imati** (punya)",
+       "Cara baca",
+       "**nemati** (tidak punya)",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "ja",
+        "**imam**",
+        "I-mam",
+        "**nemam**",
+        "NE-mam"
+       ],
+       [
+        "ti",
+        "*imaš*",
+        "I-masy",
+        "*nemaš*",
+        "NE-masy"
+       ],
+       [
+        "on / ona / ono",
+        "*ima*",
+        "I-ma",
+        "*nema*",
+        "NE-ma"
+       ],
+       [
+        "mi",
+        "*imamo*",
+        "i-MA-mo",
+        "*nemamo*",
+        "ne-MA-mo"
+       ],
+       [
+        "vi",
+        "*imate*",
+        "i-MA-te",
+        "*nemate*",
+        "ne-MA-te"
+       ],
+       [
+        "oni / one / ona",
+        "*imaju*",
+        "i-MA-yu",
+        "*nemaju*",
+        "NE-ma-yu"
+       ]
+      ]
+     },
+     "after": [
+      "**Tidak ada \"ne imam\".** Ingkarnya *nemam*, satu kata. Bersama *nisam* (unit 1) dan *neću* (unit 19), inilah tiga kata kerja yang melebur ingkarnya; semua kata kerja lain cukup diberi *ne* terpisah di depan.",
+      "***Ima* dan *nema* juga berarti \"ada\" dan \"tidak ada\" — tanpa pelaku sama sekali.** *Ima li kafe?* (ada kopi?), *Nema problema* (tidak ada masalah), *Nema nikoga* (tidak ada siapa-siapa), *Ima mjesta?* (ada tempat kosong?). Bentuknya selalu *ima* / *nema*, tak pernah berubah, karena memang tak ada pelaku yang mengubahnya. Ini salah satu kalimat yang paling sering kamu ucapkan di toko dan restoran.",
+      "**Kata bendanya berganti ekor sesudah *imam*.** *Sestra → imam sestru*, *brat → imam brata*, *kafa → imam kafu*. Kata benda lelaki tak bernyawa justru tidak berubah sama sekali: *imam stan, imam kompjuter, imam telefon*. Itu bentuk sasaran, dan seluruh aturannya dipasang di unit 7 — untuk sekarang cukup perhatikan bahwa ekornya bergerak.",
+      "**Sesudah *nemam*, ekornya lain lagi.** *Imam sestru*, tetapi *nemam sestre*. *Ima kafe*, tetapi *nema kafe*. Penyangkalan di bahasa Bosnia menarik kata bendanya ke bentuk genitif — pola yang dipasang di unit 8 dan yang, sekali kamu lihat, menjelaskan separuh kalimat ingkar yang pernah kamu dengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Porodica — anggota keluarga",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perhatikan satu hal yang akan melegakan: bahasa Bosnia **tidak membedakan kakak dan adik**. *Brat* adalah saudara lelaki, seberapa pun umurnya; *sestra* saudara perempuan. Kalau perlu dijelaskan, tambahkan *stariji* (lebih tua) atau *mlađi* (lebih muda): *moj stariji brat*, *moja mlađa sestra*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "**porodica** (pr)",
+       "po-RO-di-tsa",
+       "keluarga"
+      ],
+      [
+       "**roditelji** (jm)",
+       "ro-DI-te-lyi",
+       "orang tua"
+      ],
+      [
+       "**otac / tata** (lk)",
+       "O-tats / TA-ta",
+       "ayah (resmi / sehari-hari)"
+      ],
+      [
+       "**majka / mama** (pr)",
+       "MAY-ka",
+       "ibu"
+      ],
+      [
+       "**sin** (lk)",
+       "sin",
+       "anak lelaki"
+      ],
+      [
+       "**kćerka / kći** (pr)",
+       "KCHER-ka",
+       "anak perempuan"
+      ],
+      [
+       "**brat** (lk)",
+       "brat",
+       "saudara lelaki"
+      ],
+      [
+       "**sestra** (pr)",
+       "SES-tra",
+       "saudara perempuan"
+      ],
+      [
+       "**djed / dedo** (lk)",
+       "dyed / DE-do",
+       "kakek"
+      ],
+      [
+       "**nana / baka** (pr)",
+       "NA-na / BA-ka",
+       "nenek"
+      ],
+      [
+       "**amidža / daidža** (lk)",
+       "a-MI-ja / DAY-ja",
+       "paman (dari ayah / dari ibu)"
+      ],
+      [
+       "**tetka** (pr)",
+       "TET-ka",
+       "bibi"
+      ],
+      [
+       "**rođak / rodica**",
+       "RO-jak",
+       "sepupu (lk / pr)"
+      ],
+      [
+       "**muž** (lk)",
+       "muzh",
+       "suami"
+      ],
+      [
+       "**žena / supruga** (pr)",
+       "ZHE-na",
+       "istri; perempuan"
+      ],
+      [
+       "**dijete** (nt) — jm *djeca*",
+       "DI-ye-te / DYE-tsa",
+       "anak"
+      ],
+      [
+       "**dječak / djevojčica**",
+       "DYE-chak",
+       "anak lelaki / anak perempuan"
+      ],
+      [
+       "**komšija / komšinica**",
+       "KOM-syi-ya",
+       "tetangga (lk / pr)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kata yang khas Bosnia dan tidak ada di Kroasia maupun Serbia: **amidža** (paman dari pihak ayah) dan **daidža** (paman dari pihak ibu) — keduanya dari bahasa Turki, dan pemisahan pihak ayah/ibu ini akan terasa akrab bagi pembaca Indonesia yang mengenal istilah kekerabatan Arab. Begitu pula *nana* untuk nenek, yang di Sarajevo jauh lebih sering terdengar daripada *baka*."
+    },
+    {
+     "type": "kotak",
+     "title": "Dijete dan djeca — satu kata yang berperilaku aneh",
+     "items": [
+      "*Dijete* (anak) adalah kata **netral tunggal**, tetapi jamaknya *djeca* diperlakukan sebagai kata **perempuan tunggal**: *Djeca su lijepa* — tetapi juga *Moja djeca su ovdje*, dengan *moja* bentuk perempuan tunggal. Kata kerjanya jamak, kata sifatnya tunggal perempuan. Tidak ada gunanya mencari logika di sini; hafalkan *moja djeca* utuh dan selesai.",
+      "Untuk menanyakan anak: *Imate li djece?* (\"punya anak?\"). Ini salah satu pertanyaan paling awal yang akan diajukan orang Bosnia kepadamu, dan bukan karena ingin tahu — melainkan karena itulah cara mereka menempatkanmu dalam peta hubungan. Jawaban *Nemam još* (\"belum punya\") sudah cukup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Kamu dari mana? — Saya dari Indonesia.",
+       "*Odakle si? — Iz Indonezije sam.*"
+      ],
+      [
+       "Sekarang saya tinggal di Sarajevo.",
+       "*Sada živim u Sarajevu.*"
+      ],
+      [
+       "Saya bisa bahasa Inggris dan sedikit bahasa Bosnia.",
+       "*Govorim engleski i malo bosanski.*"
+      ],
+      [
+       "Kamu kerja apa? — Saya programer.",
+       "*Šta radiš? — Programer sam.*"
+      ],
+      [
+       "Saya tidak mengerti semuanya, tapi saya belajar tiap hari.",
+       "*Ne razumijem sve, ali učim svaki dan.*"
+      ],
+      [
+       "Kamu tahu apa artinya?",
+       "*Znaš li šta znači?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "porodica (pr)",
+   "baca": "po-RO-di-tsa",
+   "id": "keluarga"
+  },
+  {
+   "bs": "roditelji (jm)",
+   "baca": "ro-DI-te-lyi",
+   "id": "orang tua"
+  },
+  {
+   "bs": "otac (lk)",
+   "baca": "O-tats",
+   "id": "ayah"
+  },
+  {
+   "bs": "majka (pr)",
+   "baca": "MAY-ka",
+   "id": "ibu"
+  },
+  {
+   "bs": "brat (lk)",
+   "baca": "brat",
+   "id": "saudara lelaki"
+  },
+  {
+   "bs": "sestra (pr)",
+   "baca": "SES-tra",
+   "id": "saudara perempuan"
+  },
+  {
+   "bs": "dijete (nt) — *djeca*",
+   "baca": "DI-ye-te",
+   "id": "anak"
+  },
+  {
+   "bs": "imati — *imam*",
+   "baca": "I-ma-ti",
+   "id": "punya"
+  },
+  {
+   "bs": "nemati — *nemam*",
+   "baca": "NE-ma-ti",
+   "id": "tidak punya"
+  },
+  {
+   "bs": "moj / moja / moje",
+   "baca": "moy / MO-ya",
+   "id": "milikku"
+  },
+  {
+   "bs": "tvoj / tvoja / tvoje",
+   "baca": "tvoy",
+   "id": "milikmu"
+  },
+  {
+   "bs": "njegov / njen",
+   "baca": "NYE-gov / nyen",
+   "id": "miliknya (lk / pr)"
+  },
+  {
+   "bs": "naš / vaš / njihov",
+   "baca": "nasy / vasy",
+   "id": "milik kami / kalian / mereka"
+  },
+  {
+   "bs": "čiji / čija / čije",
+   "baca": "CHI-yi",
+   "id": "milik siapa"
+  },
+  {
+   "bs": "velik / velika",
+   "baca": "VE-lik",
+   "id": "besar"
+  },
+  {
+   "bs": "stariji / mlađi",
+   "baca": "STA-ri-yi / MLA-ji",
+   "id": "lebih tua / lebih muda"
+  },
+  {
+   "bs": "još",
+   "baca": "yosy",
+   "id": "lagi; masih"
+  },
+  {
+   "bs": "samo",
+   "baca": "SA-mo",
+   "id": "hanya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Ini keluarga saya.",
+    "Siapa nama adikmu (perempuan)?",
+    "Saya punya satu saudara lelaki.",
+    "Saya tidak punya anak.",
+    "Ayah saya pensiunan, ibu saya guru.",
+    "Ada kopi? — Tidak ada."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata milik yang tepat.",
+   "items": [
+    "Ovo je ____ (saya) sestra.",
+    "Kako se zove ____ (kamu) brat?",
+    "____ (kami) porodica je velika.",
+    "____ (mereka) roditelji su u Mostaru.",
+    "Amina i ____ (dia, pr) sestra žive ovdje.",
+    "Emir i ____ (dia, lk) brat su studenti.",
+    "____ (Anda) kćerka je studentica?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "porodica / moja / velika / je",
+    "li / imaš / sestara / ?",
+    "penzioner / otac / je / moj",
+    "problema / nema",
+    "godina / deset / ima / on"
+   ]
+  }
+ ],
+ "answers": [
+  "Ovo je moja porodica. — Kako se zove tvoja sestra? — Imam jednog brata. — Nemam djece. — Moj otac je penzioner, a majka je nastavnica. — Ima li kafe? Nema.",
+  "moja — tvoj — Naša — Njihovi — njena — njegov — Vaša",
+  "Moja porodica je velika. — Imaš li sestara? — Moj otac je penzioner. — Nema problema. — On ima deset godina."
+ ]
+}

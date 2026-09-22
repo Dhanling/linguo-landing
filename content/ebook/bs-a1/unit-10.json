@@ -1,0 +1,190 @@
+{
+ "title": "Jam berapa? — dan setengah yang menghitung maju",
+ "title_target": "Koliko je sati?",
+ "goal": "Menyebut jam, membuat janji, dan menghindari kesalahan paling mahal yang bisa dilakukan pelajar bahasa Bosnia: mengira *pola osam* berarti setengah sembilan.",
+ "bekal": [
+  "menyebut jam dalam bentuk lengkap maupun bentuk percakapan",
+  "memahami bahwa *pola* menghitung maju ke jam berikutnya",
+  "membuat janji dengan *u*, *za*, *od…do*, *oko*, *prije*, dan *poslije*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kada imamo sastanak?",
+   "intro": "Menjelang sore di kantor. Amina menutup laptopnya dan menoleh ke meja Budi.",
+   "lines": [
+    { "speaker": "Amina:", "text": "Budi, kada ti počinje kurs bosanskog?", "id": "Budi, kursus bahasa Bosnianya mulai jam berapa?", "literal": "Budi, kapan kepada-kamu ia-mulai kursus bosnia-genitif?" },
+    { "speaker": "Budi:", "text": "U sedam uveče, tri puta sedmično.", "id": "Jam tujuh malam, tiga kali seminggu.", "literal": "pada tujuh pada-malam, tiga kali-genitif mingguan." },
+    { "speaker": "Amina:", "text": "A kada završava?", "id": "Selesainya jam berapa?", "literal": "dan kapan ia-selesai?" },
+    { "speaker": "Budi:", "text": "U pola devet. Zašto pitaš?", "id": "Setengah sembilan. Kenapa?", "literal": "pada separuh sembilan. kenapa kamu-bertanya?" },
+    { "speaker": "Amina:", "text": "Imamo sastanak sutra u deset i petnaest.", "id": "Besok kita ada rapat jam sepuluh lewat seperempat.", "literal": "kami-punya rapat-akusatif besok pada sepuluh dan lima-belas." },
+    { "speaker": "Budi:", "text": "Ujutro ili uveče?", "id": "Pagi atau malam?", "literal": "pada-pagi atau pada-malam?" },
+    { "speaker": "Amina:", "text": "Ujutro, naravno. I nemoj kasniti!", "id": "Pagi, dong. Jangan telat ya!", "literal": "pada-pagi, tentu. dan jangan terlambat!" },
+    { "speaker": "Budi:", "text": "Nikad ne kasnim. A koliko je sada sati?", "id": "Saya tidak pernah telat. Sekarang jam berapa?", "literal": "tak-pernah tidak saya-terlambat. dan berapa ia-adalah sekarang jam-genitif-jm?" },
+    { "speaker": "Amina:", "text": "Skoro pet. Tačnije, petnaest do pet.", "id": "Hampir jam lima. Tepatnya, jam lima kurang seperempat.", "literal": "hampir lima. lebih-tepat, lima-belas sampai lima." },
+    { "speaker": "Budi:", "text": "Onda moram ići. Autobus polazi za deset minuta.", "id": "Kalau begitu saya harus jalan. Busnya berangkat sepuluh menit lagi.", "literal": "kalau-begitu saya-harus pergi. bus ia-berangkat dalam sepuluh menit-genitif-jm." },
+    { "speaker": "Amina:", "text": "Dobro. Vidimo se sutra u deset i petnaest.", "id": "Oke. Besok ketemu jam sepuluh lewat seperempat.", "literal": "baik. kami-melihat diri-sendiri besok pada sepuluh dan lima-belas." },
+    { "speaker": "Budi:", "text": "U deset i petnaest. Zapisao sam. Laku noć!", "id": "Jam sepuluh lewat seperempat. Sudah saya catat. Selamat malam!", "literal": "pada sepuluh dan lima-belas. mencatat-lk saya-adalah. ringan-akusatif malam-akusatif!" },
+    { "speaker": "Amina:", "text": "Laku noć, vidimo se!", "id": "Selamat malam, sampai besok!", "literal": "ringan-akusatif malam-akusatif, kami-melihat diri-sendiri!" }
+   ],
+   "notes": [
+    "***U pola devet* berarti 8.30, bukan 9.30.** Ini kesalahan paling mahal yang bisa dilakukan pelajar bahasa Bosnia, dan hampir semua orang melakukannya sekali. Penjelasannya ada di kotak peringatan di bawah — bacalah sekarang, bukan nanti.",
+    "***Koliko je sati?* harfiahnya \"berapa jam?\"** dengan *sati* dalam bentuk genitif jamak, karena sesudah *koliko* selalu genitif (unit 8). Jawabannya boleh memakai *sati* atau tidak: *Pet sati je* dan *Pet je* sama-sama benar, yang kedua lebih santai.",
+    "***Za deset minuta* = sepuluh menit lagi.** Kata depan *za* punya dua pekerjaan yang jauh berbeda: dengan orang ia berarti \"untuk\" (*za tebe*), dengan waktu ia berarti \"dalam waktu\" (*za pet minuta, za sat vremena*). Lawannya: *prije deset minuta* = sepuluh menit yang lalu.",
+    "***Nemoj kasniti!* — \"jangan terlambat!\"** Larangan di bahasa Bosnia dibentuk dengan *nemoj* (kepada satu orang) atau *nemojte* (sopan/jamak) diikuti bentuk kamus. *Nemoj zaboraviti!* (jangan lupa!), *Nemojte brinuti!* (jangan khawatir!). Bentuk ini jauh lebih sering dipakai daripada perintah ingkar biasa.",
+    "**Ketepatan waktu di Bosnia punya dua muka.** Untuk urusan resmi — rapat, janji dokter, kereta — orang tepat waktu dan mengharapkan hal yang sama. Untuk kopi dengan teman, *u pet* berarti \"kira-kira jam lima\", dan datang seperempat jam kemudian tidak akan dikomentari siapa pun. Kata yang menandai perbedaannya: *tačno* (tepat). *Tačno u pet* berarti sungguh-sungguh jam lima."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut jam",
+     "body": [
+      "Dua cara hidup berdampingan: cara percakapan (jam 1-12 dengan *ujutro*, *popodne*, *uveče*) dan cara resmi 24 jam untuk jadwal tertulis. Tabel ini yang pertama."
+     ],
+     "table": {
+      "head": ["Waktu", "Bosanski", "Harfiah", "Catatan"],
+      "rows": [
+       ["**7.00**", "*sedam sati*", "tujuh jam", "*sati* boleh dibuang: *sedam je*"],
+       ["**7.05**", "*sedam i pet*", "tujuh dan lima", ""],
+       ["**7.15**", "*sedam i petnaest* / *sedam i četvrt*", "tujuh dan seperempat", ""],
+       ["**7.30**", "**pola osam**", "separuh (menuju) delapan", "⚠️ bukan setengah tujuh"],
+       ["**7.40**", "*dvadeset do osam*", "dua puluh sampai delapan", ""],
+       ["**7.45**", "*petnaest do osam* / *tri četvrt osam*", "lima belas sampai delapan", ""],
+       ["**12.00**", "*podne*", "tengah hari", "*u podne* = siang bolong"],
+       ["**00.00**", "*ponoć*", "tengah malam", "*u ponoć*"],
+       ["**17.30**", "*sedamnaest i trideset*", "tujuh belas dan tiga puluh", "cara resmi, jadwal"]
+      ]
+     },
+     "after": [
+      "**Sesudah lewat setengah, bahasa Bosnia menghitung mundur dengan *do* (sampai).** *Dvadeset do osam* = dua puluh menit sampai jam delapan = 7.40. Persis cara bahasa Inggris (*twenty to eight*) dan berbeda dari kebiasaan Indonesia yang berkata \"jam delapan kurang dua puluh\" — urutan katanya terbalik, tetapi gagasannya sama.",
+      "**Kata *sat* punya tiga bentuk yang bergantian menurut angkanya**, persis aturan unit 5: *jedan sat, dva sata, pet sati*. Jadi *Koliko je sati?* memakai bentuk genitif jamak karena *koliko*. Dan ingat bahwa *sat* juga berarti \"jam tangan\" dan \"jam pelajaran\" — keadaannya yang membedakan.",
+      "**Menambahkan bagian hari menghilangkan kebingungan pagi/malam:** *ujutro* (pagi, sekitar 5-11), *prijepodne* (menjelang siang), *popodne* (siang-sore), *uveče* (malam), *noću* (larut malam). *U sedam ujutro* dan *u sedam uveče* — dan itulah sebabnya Budi bertanya *ujutro ili uveče?*",
+      "**Jadwal resmi memakai sistem 24 jam**, dibaca angka demi angka: *voz polazi u sedamnaest i trideset*. Kamu akan melihatnya di stasiun, bandara, dan bioskop — tetapi hampir tidak pernah mendengarnya dalam percakapan."
+     ]
+    },
+    {
+     "title": "Kata depan waktu — dan padež yang dipanggilnya",
+     "body": [
+      "Semua kata depan waktu memakai padež yang sudah kamu kuasai. Tidak ada yang baru di sini kecuali daftarnya sendiri."
+     ],
+     "table": {
+      "head": ["Kata depan", "Padež", "Contoh", "Arti"],
+      "rows": [
+       ["**u**", "akuzatif", "*u sedam, u ponedjeljak, u podne*", "pada jam tujuh, hari Senin, tengah hari"],
+       ["**za**", "akuzatif", "*za deset minuta, za sat vremena*", "sepuluh menit lagi, satu jam lagi"],
+       ["**prije**", "genitif", "*prije deset minuta, prije ručka*", "sepuluh menit yang lalu, sebelum makan siang"],
+       ["**poslije / nakon**", "genitif", "*poslije posla, poslije podne*", "sesudah kerja, sesudah tengah hari"],
+       ["**od … do**", "genitif", "*od devet do pet*", "dari jam sembilan sampai lima"],
+       ["**oko**", "genitif", "*oko pet sati*", "sekitar jam lima"],
+       ["**do**", "genitif", "*do sutra, do pet*", "sampai besok, sampai jam lima"]
+      ]
+     },
+     "after": [
+      "***Prije* dan *za* adalah pasangan yang saling berlawanan** dan keduanya sangat sering dipakai: *prije pet minuta* (lima menit yang lalu) lawan *za pet minuta* (lima menit lagi). Satu menoleh ke belakang, satu ke depan. Kalau kamu tertukar, artinya berubah total — dan ini salah satu dari sedikit kesalahan A1 yang benar-benar bisa membuat orang menunggu sia-sia.",
+      "**Jam kerja dan jam buka selalu memakai *od … do***: *Radimo od osam do šesnaest.* Di pintu toko kamu akan melihat *radno vrijeme* (jam kerja) diikuti angkanya, dan *neradni dan* berarti hari libur.",
+      "***Oko* memberimu kelonggaran yang berguna.** *Dolazim oko pet* (saya datang sekitar jam lima) terdengar wajar dan jujur, sedangkan *dolazim u pet* adalah janji. Orang Bosnia memakai *oko* sepanjang waktu, dan mempelajarinya sejak awal akan menyelamatkanmu dari banyak permintaan maaf.",
+      "**Tiga kalimat baku yang layak dihafal hari ini:** *Koliko je sati?* (jam berapa?), *Kada se vidimo?* (kapan kita ketemu?), *Nemam vremena.* (saya tidak punya waktu)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dogovor — membuat dan mengubah janji",
+   "blocks": [
+    { "type": "p", "text": "Percakapan janji di Bosnia hampir selalu memakai potongan-potongan yang sama. Hafalkan sepuluh kalimat ini utuh dan kamu bisa mengatur pertemuan tanpa menyusun satu kalimat pun dari nol." },
+    { "type": "tabel", "head": ["Bosanski", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["*Kada se vidimo?*", "KA-da se VI-di-mo", "Kapan kita ketemu?"],
+      ["*Imaš li vremena sutra?*", "I-masy li VRE-me-na", "Besok ada waktu?"],
+      ["*Može li u pet?*", "MO-zhe li u pet", "Bisa jam lima?"],
+      ["*Odgovara mi.*", "od-go-VA-ra mi", "Cocok buat saya."],
+      ["*Ne mogu tada.*", "ne MO-gu TA-da", "Saya tidak bisa jam segitu."],
+      ["*Možemo li malo kasnije?*", "KAS-ni-ye", "Bisa agak siangan?"],
+      ["*Gdje se nalazimo?*", "na-LA-zi-mo", "Ketemunya di mana?"],
+      ["*Ispred pošte, u pet.*", "IS-pred POSY-te", "Di depan kantor pos, jam lima."],
+      ["*Kasnim deset minuta.*", "KAS-nim", "Saya telat sepuluh menit."],
+      ["*Izvini, moram otkazati.*", "ot-KA-za-ti", "Maaf, saya harus batalkan."],
+      ["*Vidimo se!*", "VI-di-mo se", "Sampai ketemu!"]
+     ]},
+    { "type": "kotak", "title": "⚠️ Pola — setengah yang menghitung maju", "items": [
+      "***Pola osam* berarti pukul 7.30.** Bahasa Bosnia tidak menghitung setengah dari jam yang sudah lewat, melainkan **separuh perjalanan menuju jam berikutnya**. Jadi *pola devet* = 8.30, *pola dvanaest* = 11.30, *pola jedan* = 12.30.",
+      "**Kalau kamu berpikir seperti bahasa Indonesia, kamu akan selalu meleset satu jam** — dan selalu ke arah yang sama: terlambat. Cara paling aman untuk membiasakannya adalah mengucapkan ulang jamnya dalam angka: *Pola devet? Znači osam i trideset?* Tidak ada penutur asli yang akan menganggap itu aneh; mereka tahu persis kenapa kamu bertanya.",
+      "**Pola juga dipakai untuk takaran**, dan di sana artinya biasa saja: *pola kilograma* (setengah kilo), *pola sata* (setengah jam), *pola litre* (setengah liter). Yang menghitung maju hanya *pola* + nama jam."
+     ]}
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    { "type": "p", "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Bosanski"], "rows": [
+      ["Sekilo apel berapa?", "*Koliko košta kilogram jabuka?*"],
+      ["Minta dua kilo, tolong.", "*Dajte mi dva kilograma, molim.*"],
+      ["Hari ini tidak ada tomat.", "*Danas nema paradajza.*"],
+      ["Saya tidak punya waktu.", "*Nemam vremena.*"],
+      ["Keju ada di tempat tetangga.", "*Sir je kod komšinice.*"],
+      ["Semuanya berapa?", "*Koliko je to ukupno?*"]
+     ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "bs": "sat (lk) — *dva sata, pet sati*", "baca": "sat", "id": "jam" },
+  { "bs": "minut (lk)", "baca": "MI-nut", "id": "menit" },
+  { "bs": "pola", "baca": "PO-la", "id": "setengah" },
+  { "bs": "četvrt (pr)", "baca": "CHET-vrt", "id": "seperempat" },
+  { "bs": "podne / ponoć", "baca": "POD-ne / PO-noch", "id": "tengah hari / tengah malam" },
+  { "bs": "ujutro / popodne / uveče", "baca": "U-yu-tro / po-POD-ne / U-ve-che", "id": "pagi / siang-sore / malam" },
+  { "bs": "sastanak (lk)", "baca": "SAS-ta-nak", "id": "rapat, pertemuan" },
+  { "bs": "početi — *počnem*", "baca": "po-CHE-ti", "id": "mulai" },
+  { "bs": "završiti — *završim*", "baca": "za-VR-syi-ti", "id": "selesai, mengakhiri" },
+  { "bs": "kasniti — *kasnim*", "baca": "KAS-ni-ti", "id": "terlambat" },
+  { "bs": "polaziti — *polazi*", "baca": "PO-la-zi-ti", "id": "berangkat" },
+  { "bs": "autobus (lk)", "baca": "AU-to-bus", "id": "bus" },
+  { "bs": "skoro / tačno", "baca": "SKO-ro / TACH-no", "id": "hampir / tepat" },
+  { "bs": "oko", "baca": "O-ko", "id": "sekitar" },
+  { "bs": "za (+ waktu)", "baca": "za", "id": "…lagi (dalam waktu)" },
+  { "bs": "prije", "baca": "PRI-ye", "id": "sebelum; …yang lalu" },
+  { "bs": "nemoj / nemojte", "baca": "NE-moy", "id": "jangan" },
+  { "bs": "sedmica (pr)", "baca": "SED-mi-tsa", "id": "minggu (tujuh hari)" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Sekarang jam berapa?",
+    "Jam tujuh malam.",
+    "Setengah sembilan. (8.30)",
+    "Busnya berangkat sepuluh menit lagi.",
+    "Kita kerja dari jam sembilan sampai lima.",
+    "Besok ketemu jam sepuluh lewat seperempat."
+   ]
+  },
+  {
+   "prompt": "Tulis jamnya dalam bahasa Bosnia.",
+   "items": [
+    "6.00 = ____",
+    "6.15 = ____",
+    "6.30 = ____",
+    "6.45 = ____",
+    "12.00 = ____",
+    "00.00 = ____",
+    "9.20 = ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "sati / je / koliko / ?",
+    "u / kurs / sedam / počinje",
+    "minuta / za / polazi / deset / autobus",
+    "sutra / se / vidimo / deset / u",
+    "kasni / ne / nemoj / !"
+   ]
+  }
+ ],
+ "answers": [
+  "Koliko je sada sati? — U sedam uveče. — Pola devet. — Autobus polazi za deset minuta. — Radimo od devet do pet. — Vidimo se sutra u deset i petnaest.",
+  "šest sati — šest i petnaest — pola sedam — petnaest do sedam — podne — ponoć — devet i dvadeset",
+  "Koliko je sati? — Kurs počinje u sedam. — Autobus polazi za deset minuta. — Vidimo se sutra u deset. — Nemoj kasniti!"
+ ]
+}

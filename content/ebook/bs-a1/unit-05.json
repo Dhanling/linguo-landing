@@ -1,0 +1,203 @@
+{
+ "title": "Berhitung — dan apa yang terjadi pada kata bendanya",
+ "title_target": "Koliko?",
+ "goal": "Menghitung dari nol sampai sejuta, menyebut umur, nomor telepon, dan harga — sekaligus memasang aturan yang menjegal hampir semua pelajar: kata benda berganti bentuk tiga kali menurut angka di depannya.",
+ "bekal": [
+  "menyebut angka 0-1000 dan menjawab *Koliko imate godina?*",
+  "membentuk jamak kata lelaki, perempuan, dan netral",
+  "memilih bentuk kata benda yang tepat sesudah 1, sesudah 2-4, dan sesudah 5 ke atas"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Upis na kurs",
+   "intro": "Budi mendaftar kursus bahasa Bosnia di sebuah lembaga kecil dekat Ferhadija. Petugasnya memakai *Vi* dari awal sampai akhir — perhatikan bentuk kata kerjanya.",
+   "lines": [
+    { "speaker": "Referentica:", "text": "Dobar dan! Kako se zovete?", "id": "Selamat siang! Nama Anda siapa?", "literal": "baik-lk hari! bagaimana diri-sendiri kalian-memanggil?" },
+    { "speaker": "Budi:", "text": "Zovem se Budi Santoso.", "id": "Nama saya Budi Santoso.", "literal": "saya-memanggil diri-sendiri Budi Santoso." },
+    { "speaker": "Referentica:", "text": "Koliko imate godina?", "id": "Umur Anda berapa?", "literal": "berapa kalian-punya tahun-genitif-jm?" },
+    { "speaker": "Budi:", "text": "Imam dvadeset osam godina.", "id": "Saya dua puluh delapan tahun.", "literal": "saya-punya dua-puluh delapan tahun-genitif-jm." },
+    { "speaker": "Referentica:", "text": "Koji je vaš broj telefona?", "id": "Nomor telepon Anda berapa?", "literal": "yang-mana-lk ia-adalah milik-kalian-lk nomor telepon-genitif?" },
+    { "speaker": "Budi:", "text": "Nula šest dva — tri četiri pet — sedam osam devet.", "id": "Nol enam dua, tiga empat lima, tujuh delapan sembilan.", "literal": "nol enam dua — tiga empat lima — tujuh delapan sembilan." },
+    { "speaker": "Referentica:", "text": "A adresa?", "id": "Alamatnya?", "literal": "dan alamat?" },
+    { "speaker": "Budi:", "text": "Ulica Ferhadija, broj sedamnaest, drugi sprat.", "id": "Jalan Ferhadija nomor tujuh belas, lantai dua.", "literal": "jalan Ferhadija, nomor tujuh-belas, kedua-lk lantai." },
+    { "speaker": "Referentica:", "text": "Koliko dugo ste već u Sarajevu?", "id": "Sudah berapa lama Anda di Sarajevo?", "literal": "berapa lama kalian-adalah sudah di Sarajevo-lokatif?" },
+    { "speaker": "Budi:", "text": "Tri mjeseca. Došao sam u junu.", "id": "Tiga bulan. Saya datang bulan Juni.", "literal": "tiga bulan-genitif. datang-lk saya-adalah pada Juni-lokatif." },
+    { "speaker": "Referentica:", "text": "Kurs ima dvadeset časova i košta dvjesto maraka.", "id": "Kursusnya dua puluh jam pelajaran dan biayanya dua ratus marka.", "literal": "kursus ia-punya dua-puluh jam-genitif-jm dan ia-berharga dua-ratus marka-genitif-jm." },
+    { "speaker": "Budi:", "text": "U redu. Koliko studenata ima u grupi?", "id": "Baik. Satu kelas berapa orang?", "literal": "pada urutan. berapa mahasiswa-genitif-jm ia-ada di kelompok-lokatif?" },
+    { "speaker": "Referentica:", "text": "Osam — pet žena i tri muškarca. Počinjemo u ponedjeljak.", "id": "Delapan — lima perempuan dan tiga lelaki. Kita mulai hari Senin.", "literal": "delapan — lima perempuan-genitif-jm dan tiga lelaki-genitif. kami-memulai pada Senin-akusatif." }
+   ],
+   "notes": [
+    "**Perhatikan ekor kata bendanya berubah tiga kali di dialog ini:** *tri mjeseca* (sesudah 2-4), *dvadeset časova* dan *pet žena* (sesudah 5 ke atas), *drugi sprat* (sesudah angka urutan, bentuk biasa). Itulah isi tata bahasa unit ini, dan ia bekerja persis sama untuk setiap kata benda dalam bahasa Bosnia.",
+    "***Koliko imate godina?* — umur dihitung sebagai milik.** Harfiahnya \"berapa tahun yang Anda punya?\" Jawabannya wajib memakai *godina*: *Imam dvadeset osam godina.* Menjawab hanya dengan angka terdengar tak selesai, seperti menjawab \"dua puluh delapan\" tanpa satuan.",
+    "**Nomor telepon dibaca angka per angka, dikelompokkan tiga-tiga.** Itu kebiasaan yang sama dengan bahasa Indonesia. Kalau ada angka kembar, orang Bosnia kadang menyebutnya *dva puta pet* (\"dua kali lima\") untuk 55. *Nula* adalah nol; jangan memakai huruf O seperti kebiasaan bahasa Inggris.",
+    "**Mata uang Bosnia: *konvertibilna marka*, ditulis KM atau BAM.** Satu marka = seratus *feninga*. Namanya warisan mark Jerman, dan nilainya memang dipatok ke euro (1 € ≈ 1,96 KM) — jadi hitungan kasarnya: bagi dua untuk mendapat euro. Dalam percakapan orang menyebutnya *maraka* atau sekadar *KM* (dibaca *ka-em*).",
+    "**Lantai dihitung cara Eropa.** *Prizemlje* adalah lantai dasar, *prvi sprat* adalah lantai satu tingkat di atasnya — yang di Indonesia disebut lantai dua. Jadi *drugi sprat* tempat tinggal Budi sebetulnya lantai tiga menurut hitungan Indonesia. Kesalahpahaman ini menyebabkan lebih banyak keterlambatan daripada yang layak."
+   ],
+   "grammars": [
+    {
+     "title": "Brojevi — angka nol sampai sejuta",
+     "body": [
+      "Sistemnya teratur dan hampir tanpa kejutan. Sekali kamu hafal satu sampai sepuluh, sisanya bisa kamu susun sendiri."
+     ],
+     "table": {
+      "head": ["", "", "", ""],
+      "rows": [
+       ["0 **nula**", "1 **jedan**", "2 **dva / dvije**", "3 **tri**"],
+       ["4 **četiri**", "5 **pet**", "6 **šest**", "7 **sedam**"],
+       ["8 **osam**", "9 **devet**", "10 **deset**", "11 *jedanaest*"],
+       ["12 *dvanaest*", "13 *trinaest*", "14 *četrnaest*", "15 *petnaest*"],
+       ["16 *šesnaest*", "17 *sedamnaest*", "18 *osamnaest*", "19 *devetnaest*"],
+       ["20 **dvadeset**", "21 *dvadeset jedan*", "30 **trideset**", "40 **četrdeset**"],
+       ["50 **pedeset**", "60 **šezdeset**", "70 **sedamdeset**", "80 **osamdeset**"],
+       ["90 **devedeset**", "100 **sto**", "200 *dvjesto*", "300 *tristo*"],
+       ["500 *petsto*", "1.000 **hiljada**", "2.000 *dvije hiljade*", "1.000.000 **milion**"]
+      ]
+     },
+     "after": [
+      "**Sebelas sampai sembilan belas: batang angkanya + *-naest*.** *Jedan → jedanaest*, *pet → petnaest*, *devet → devetnaest*. Dua yang sedikit dipotong: *četiri → četrnaest*, *šest → šesnaest*. Dibaca dengan tekanan di depan: je-da-NA-est terdengar salah; yang benar *je-DA-na-est*.",
+      "**Puluhan: batang angkanya + *-deset*.** *Tri → trideset*, *pet → pedeset*, *sedam → sedamdeset*. Dua yang berubah bunyi: *četiri → četrdeset*, *šest → šezdeset*. Angka gabungan cukup dirangkai: *dvadeset jedan* (21), *četrdeset pet* (45), *devedeset devet* (99) — tanpa \"dan\" di tengah, berbeda dari bahasa Jerman atau Belanda.",
+      "**Hanya *jedan* dan *dva* yang punya jenis kelamin.** *Jedan grad, jedna kafa, jedno pivo.* Dan yang paling sering terlewat: **dva** untuk kata lelaki dan netral, **dvije** untuk kata perempuan. *Dva brata* tetapi *dvije sestre*; *dva piva* tetapi *dvije kafe*. Angka tiga ke atas tidak pernah berubah.",
+      "**Angka urutan dibentuk seperti kata sifat**, jadi ekornya ikut kata bendanya: *prvi* (pertama), *drugi* (kedua), *treći*, *četvrti*, *peti*, *šesti*, *sedmi*, *osmi*, *deveti*, *deseti*. *Prvi sprat, prva soba, prvo pitanje.* Perhatikan *drugi* punya arti kedua: \"lain\" — *drugi grad* bisa berarti \"kota kedua\" atau \"kota lain\", dan keadaannya yang menentukan."
+     ]
+    },
+    {
+     "title": "Kata benda sesudah angka — tiga bentuk, bukan satu",
+     "body": [
+      "Inilah aturan yang paling sering membuat pelajar berhenti di tengah kalimat. Kabar baiknya: ia cuma punya tiga baris, dan berlaku sama untuk setiap kata benda tanpa kecuali."
+     ],
+     "table": {
+      "head": ["Angka", "Bentuk kata bendanya", "lk *grad*", "pr *godina*", "nt *pivo*"],
+      "rows": [
+       ["**1**, 21, 31, 101…", "tunggal biasa", "*jedan grad*", "*jedna godina*", "*jedno pivo*"],
+       ["**2, 3, 4**, 22, 33, 54…", "genitif **tunggal**", "*dva grada*", "*dvije godine*", "*dva piva*"],
+       ["**5 ke atas**, juga 11-14", "genitif **jamak**", "*pet gradova*", "*pet godina*", "*pet piva*"],
+       ["tanpa angka (jamak biasa)", "nominatif jamak", "*gradovi*", "*godine*", "*piva*"]
+      ]
+     },
+     "after": [
+      "**Yang menentukan adalah angka terakhirnya.** *Dvadeset jedna godina* (21 tahun) kembali ke bentuk tunggal karena berakhir 1. *Trideset tri godine* memakai bentuk 2-4. *Dvadeset pet godina* memakai genitif jamak. Satu-satunya pengecualian: **11 sampai 14 selalu genitif jamak** walaupun berakhir 1-4 — *jedanaest godina*, *četrnaest godina*.",
+      "**Kenapa ada bentuk terpisah untuk 2-4?** Karena bahasa Slavia dulu punya bentuk khusus untuk \"tepat dua\", dan sisa-sisanya membeku di angka 2, 3, dan 4. Tidak ada gunanya mencari logikanya sekarang — yang perlu kamu lakukan cuma melatih tiga contoh sampai keluar sendiri: *jedna kafa, dvije kafe, pet kafa*.",
+      "**Ekor genitifnya sudah kamu miliki separuh.** Genitif tunggal: kata lelaki dan netral tambah **-a** (*grad → grada*, *pivo → piva*), kata perempuan ganti jadi **-e** (*godina → godine*). Genitif jamak: kata lelaki tambah **-ova / -eva** (*gradovi → gradova*), kata perempuan dan netral justru **tanpa ekor sama sekali** (*godine → godina*, *piva → piva*). Seluruh ceritanya di unit 8.",
+      "**Kata kerjanya ikut pula.** Sesudah 1 ia tunggal (*jedan student je ovdje*), sesudah 2-4 tunggal juga dalam bahasa sehari-hari (*dva studenta su ovdje* — jamak dipakai juga dan sama-sama diterima), sesudah 5 ke atas ia **tunggal netral**: *Pet studenata je ovdje.* Terdengar aneh, tetapi memang begitulah — dan hampir tak ada penutur asing yang memperhatikannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Jamak — dari satu jadi banyak",
+   "blocks": [
+    { "type": "p", "text": "Jamak dibentuk dari ekor, dan ekornya ditentukan jenis kelamin katanya — jadi tiga pola, satu per jenis. Sekali lagi, ini bukti kenapa jenis kelamin harus dicatat sejak kata pertama." },
+    { "type": "tabel", "head": ["Jenis", "Ekor jamak", "Contoh", "Catatan"], "rows": [
+      ["**lelaki**", "**-i**", "*student → studenti*, *prozor → prozori*", "kata bersuku satu menyelipkan *-ov-/-ev-*: *grad → gradovi*, *nož → noževi*"],
+      ["**perempuan**", "**-e**", "*žena → žene*, *kafa → kafe*, *soba → sobe*", "paling teratur; hampir tanpa kejutan"],
+      ["**netral**", "**-a**", "*pivo → piva*, *selo → sela*", "*-e* jadi *-a* juga: *more → mora*"],
+      ["**pr berakhir huruf mati**", "**-i**", "*noć → noći*, *stvar → stvari*", "kelompok kecil yang sudah kamu kenal dari unit 3"]
+     ]},
+    { "type": "p", "text": "Kata lelaki bersuku satu menyelipkan *-ov-* (atau *-ev-* sesudah *č, ć, š, ž, đ, dž, j, lj, nj*) sebelum ekornya. *Grad → gradovi*, *sat → satovi*, *voz → vozovi*, tetapi *nož → noževi*, *muž → muževi*. Kata bersuku dua atau lebih tidak memerlukannya: *prozor → prozori*, *student → studenti*." },
+    { "type": "kotak", "title": "Lima jamak yang harus dihafal terpisah", "items": [
+      "*čovjek* (orang) → **ljudi** — sama sekali kata lain, persis seperti *person / people*. *Ljudi su dobri.*",
+      "*dijete* (anak) → **djeca**, diperlakukan perempuan tunggal: *moja djeca*.",
+      "*brat* (saudara lelaki) → **braća**, juga perempuan tunggal: *moja braća su ovdje*.",
+      "*oko* (mata) → **oči**, *uho* (telinga) → **uši** — dua-duanya perempuan jamak.",
+      "*sat* punya dua jamak dengan arti berbeda: **sati** = jam (satuan waktu), **satovi** = jam tangan/dinding. *Tri sata* = tiga jam; *tri satova* = tiga buah jam."
+     ]}
+   ]
+  },
+  {
+   "title": "Koliko? — angka dalam kehidupan sehari-hari",
+   "blocks": [
+    { "type": "p", "text": "Satu kata tanya membuka hampir semua pertanyaan berangka: *koliko*. Ia selalu diikuti bentuk genitif jamak, persis seperti angka besar." },
+    { "type": "tabel", "head": ["Bosanski", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["*Koliko imate godina?*", "KO-li-ko I-ma-te GO-di-na", "Umur Anda berapa?"],
+      ["*Koliko košta?*", "KO-li-ko KOSY-ta", "Berapa harganya?"],
+      ["*Koliko je sati?*", "KO-li-ko ye SA-ti", "Jam berapa sekarang?"],
+      ["*Koliko dugo?*", "KO-li-ko DU-go", "Berapa lama?"],
+      ["*Koliko ljudi?*", "KO-li-ko LYU-di", "Berapa orang?"],
+      ["*Koji je vaš broj telefona?*", "KO-yi ye vasy broy te-le-FO-na", "Nomor telepon Anda berapa?"],
+      ["*Koliko to košta ukupno?*", "…U-kup-no", "Semuanya berapa?"],
+      ["*Imam dvadeset osam godina.*", "", "Umur saya dua puluh delapan."],
+      ["*Košta pet maraka.*", "", "Harganya lima marka."],
+      ["*Živim ovdje tri mjeseca.*", "", "Saya tinggal di sini tiga bulan."]
+     ]},
+    { "type": "p", "text": "Uang Bosnia: **konvertibilna marka** (KM), seratus *feninga*. Pecahan yang beredar: 1, 2, 5 KM berupa koin; 10, 20, 50, 100, 200 KM berupa uang kertas. Untuk harga pecahan, orang menyebut markanya lebih dulu: *tri marke i pedeset* (3,50 KM), sering dipendekkan jadi *tri i po* — \"tiga setengah\"." },
+    { "type": "p", "text": "Satu jebakan kecil yang sering terjadi di kasir: **marka sendiri kata perempuan**, jadi *jedna marka, dvije marke, pet maraka*. Kalau kamu menyebut *dva marke*, semua orang tetap mengerti, tetapi *dvije marke* yang benar. Dan di Bosnia harga ditulis dengan koma untuk pecahan — *3,50 KM*, bukan *3.50*." }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    { "type": "p", "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Bosanski"], "rows": [
+      ["Ini apa? — Itu meja.", "*Šta je ovo? — To je sto.*"],
+      ["Kamar ini kecil tapi terang.", "*Ova soba je mala, ali svijetla.*"],
+      ["Meja ini untuk komputer.", "*Ovaj sto je za kompjuter.*"],
+      ["Yang di sana itu apa?", "*Šta je ono tamo?*"],
+      ["Kamar mandi di kiri, dapur di kanan.", "*Kupatilo je lijevo, kuhinja desno.*"],
+      ["Semuanya jelas!", "*Sve je jasno!*"]
+     ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "bs": "koliko", "baca": "KO-li-ko", "id": "berapa" },
+  { "bs": "broj (lk)", "baca": "broy", "id": "nomor; angka" },
+  { "bs": "godina (pr)", "baca": "go-DI-na", "id": "tahun" },
+  { "bs": "mjesec (lk)", "baca": "MYE-sets", "id": "bulan" },
+  { "bs": "sat (lk)", "baca": "sat", "id": "jam" },
+  { "bs": "marka (pr)", "baca": "MAR-ka", "id": "marka (mata uang Bosnia)" },
+  { "bs": "koštati — *košta*", "baca": "KOSY-ta-ti", "id": "berharga, seharga" },
+  { "bs": "adresa (pr)", "baca": "a-DRE-sa", "id": "alamat" },
+  { "bs": "ulica (pr)", "baca": "U-li-tsa", "id": "jalan" },
+  { "bs": "sprat (lk)", "baca": "sprat", "id": "lantai (tingkat)" },
+  { "bs": "kurs (lk)", "baca": "kurs", "id": "kursus" },
+  { "bs": "grupa (pr)", "baca": "GRU-pa", "id": "kelompok, kelas" },
+  { "bs": "čovjek (lk) — jm *ljudi*", "baca": "CHO-vyek", "id": "orang" },
+  { "bs": "žena (pr)", "baca": "ZHE-na", "id": "perempuan; istri" },
+  { "bs": "muškarac (lk)", "baca": "musy-KA-rats", "id": "lelaki" },
+  { "bs": "prvi / drugi / treći", "baca": "PR-vi / DRU-gi / TRE-chi", "id": "pertama / kedua / ketiga" },
+  { "bs": "ukupno", "baca": "U-kup-no", "id": "seluruhnya, totalnya" },
+  { "bs": "dugo", "baca": "DU-go", "id": "lama" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Umur saya dua puluh delapan tahun.",
+    "Berapa harganya? — Lima marka.",
+    "Saya punya dua saudara perempuan.",
+    "Kursusnya dua puluh jam.",
+    "Di kelas ada delapan orang.",
+    "Saya tinggal di sini tiga bulan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata benda yang tepat.",
+   "items": [
+    "jedna ____ (godina)",
+    "dvije ____ (godina)",
+    "pet ____ (godina)",
+    "dva ____ (grad)",
+    "sedam ____ (grad)",
+    "tri ____ (pivo)",
+    "deset ____ (marka)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "godina / imate / koliko / ?",
+    "košta / to / koliko / ?",
+    "sestre / imam / dvije",
+    "telefona / vaš / je / koji / broj / ?",
+    "maraka / košta / dvjesto / kurs"
+   ]
+  }
+ ],
+ "answers": [
+  "Imam dvadeset osam godina. — Koliko košta? Pet maraka. — Imam dvije sestre. — Kurs ima dvadeset časova. — U grupi ima osam ljudi. — Živim ovdje tri mjeseca.",
+  "godina — godine — godina — grada — gradova — piva — maraka",
+  "Koliko imate godina? — Koliko to košta? — Imam dvije sestre. — Koji je vaš broj telefona? — Kurs košta dvjesto maraka."
+ ]
+}

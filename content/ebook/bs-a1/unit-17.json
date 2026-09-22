@@ -1,0 +1,199 @@
+{
+ "title": "Bagian mana yang sakit",
+ "title_target": "Kod doktora",
+ "goal": "Mengatakan bagian mana yang sakit, bertahan di apotek dan di ruang dokter — dan memasang satu pola kalimat lagi yang membalik pelakunya, kali ini dengan akuzatif, bukan datif.",
+ "bekal": [
+  "mengatakan apa yang sakit dengan *boli me* dan *bole me*",
+  "menyebut gejala dan meminta obat di apotek",
+  "mengenali bentuk perintah yang dipakai dokter, penjual, dan petunjuk jalan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kod doktora",
+   "intro": "Hari keempat tenggorokan Budi terasa seperti amplas. Emir mengantarnya ke *Dom zdravlja* terdekat dan menunggu di luar.",
+   "lines": [
+    { "speaker": "Doktorica:", "text": "Dobar dan. Izvolite, sjednite. Šta vas muči?", "id": "Selamat siang. Silakan duduk. Ada keluhan apa?", "literal": "baik-lk hari. silakan, duduklah-jm. apa kalian-akusatif ia-mengganggu?" },
+    { "speaker": "Budi:", "text": "Dobar dan. Boli me grlo, već tri dana.", "id": "Selamat siang. Tenggorokan saya sakit, sudah tiga hari.", "literal": "baik-lk hari. ia-menyakiti saya-akusatif tenggorokan, sudah tiga hari-genitif." },
+    { "speaker": "Doktorica:", "text": "Imate li temperaturu?", "id": "Ada demam?", "literal": "kalian-punya apakah suhu-akusatif?" },
+    { "speaker": "Budi:", "text": "Sinoć sam imao trideset osam.", "id": "Tadi malam tiga puluh delapan.", "literal": "tadi-malam saya-adalah punya-lk tiga-puluh delapan." },
+    { "speaker": "Doktorica:", "text": "Otvorite usta i recite \"a\". … Grlo je crveno.", "id": "Buka mulutnya, bilang \"a\". … Tenggorokannya merah.", "literal": "bukalah-jm mulut-jm dan katakanlah-jm \"a\". … tenggorokan ia-adalah merah-nt." },
+    { "speaker": "Budi:", "text": "Boli i kad gutam. I glava me boli.", "id": "Sakit juga waktu menelan. Kepala saya juga sakit.", "literal": "ia-menyakiti juga ketika saya-menelan. dan kepala saya-akusatif ia-menyakiti." },
+    { "speaker": "Doktorica:", "text": "Nije ozbiljno. Obična upala grla, virusna.", "id": "Tidak serius. Radang tenggorokan biasa, karena virus.", "literal": "tidak-ia-adalah serius-nt. biasa-pr radang tenggorokan-genitif, virus-pr." },
+    { "speaker": "Budi:", "text": "Trebam li antibiotik?", "id": "Perlu antibiotik?", "literal": "saya-perlu apakah antibiotik-akusatif?" },
+    { "speaker": "Doktorica:", "text": "Ne trebate. Pijte puno čaja, odmarajte se i nemojte izlaziti.", "id": "Tidak perlu. Banyak minum teh, istirahat, dan jangan keluar-keluar.", "literal": "tidak kalian-perlu. minumlah-jm banyak teh-genitif, istirahatlah-jm diri-sendiri dan jangan-jm keluar." },
+    { "speaker": "Budi:", "text": "A mogu li raditi od kuće?", "id": "Boleh saya kerja dari rumah?", "literal": "dan saya-bisa apakah bekerja dari rumah-genitif?" },
+    { "speaker": "Doktorica:", "text": "Možete, ali polako. Evo vam recept za pastile.", "id": "Boleh, tapi pelan-pelan. Ini resep untuk tablet isapnya.", "literal": "kalian-bisa, tetapi pelan. inilah kepada-kalian resep untuk tablet-akusatif-jm." },
+    { "speaker": "Budi:", "text": "Hvala. Kada da se vratim?", "id": "Terima kasih. Kapan saya harus kontrol lagi?", "literal": "terima-kasih. kapan agar diri-sendiri saya-kembali?" },
+    { "speaker": "Doktorica:", "text": "Ako za tri dana ne bude bolje, dođite ponovo. Ozdravite brzo!", "id": "Kalau tiga hari lagi belum membaik, datang lagi. Semoga cepat sembuh!", "literal": "jika dalam tiga hari-genitif tidak ia-akan lebih-baik, datanglah-jm lagi. sembuhlah-jm cepat!" }
+   ],
+   "notes": [
+    "***Boli me grlo* — yang menjadi pelaku adalah tenggorokannya.** Harfiahnya \"tenggorokan menyakiti saya\". Karena itu, kalau yang sakit jamak, kata kerjanya ikut jamak: *bole me noge* (kaki saya sakit), *bole me oči* (mata saya sakit). Polanya sama seperti *sviđa mi se* di unit 13 — tetapi perhatikan bedanya: *sviđa* memakai datif (*mi*), *boli* memakai akusatif (*me*). Hafalkan keduanya berpasangan supaya tak tertukar.",
+    "***Šta vas muči?* adalah pertanyaan baku dokter Bosnia.** Harfiahnya \"apa yang menyiksa Anda?\" Jawaban yang paling aman selalu dimulai dari *Boli me…* Kalau kamu tidak tahu nama bagian tubuhnya, menunjuk sambil berkata *ovdje me boli* (di sini sakitnya) sudah cukup.",
+    "***Otvorite, recite, pijte, odmarajte se, dođite, nemojte*** — enam bentuk perintah dalam satu dialog. Di ruang dokter, di toko, dan di jalan, kamu akan lebih sering **mendengar** bentuk ini daripada mengucapkannya, jadi yang paling penting adalah mengenalinya. Tabel pembentukannya di bawah.",
+    "***Kada da se vratim?*** memakai pola *da* + kala kini yang sudah muncul di unit 11. Dalam pertanyaan, ia berarti \"apa yang sebaiknya saya lakukan\": *Šta da radim?* (saya harus bagaimana?), *Gdje da idem?* (saya mesti ke mana?). Ungkapan yang sangat berguna ketika kamu bingung.",
+    "**Sistem kesehatan Bosnia.** *Dom zdravlja* adalah klinik umum tingkat pertama, tempat kamu mendaftar dan bertemu *porodični ljekar* (dokter keluarga). Rumah sakit disebut *bolnica*; gawat darurat *hitna pomoć*, nomornya **124**. Apotek (*apoteka*) menjual banyak obat tanpa resep dan apotekernya biasa memberi saran — untuk keluhan ringan, ke sana dulu sebelum ke dokter."
+   ],
+   "grammars": [
+    {
+     "title": "Boli me — dan ungkapan keadaan badan",
+     "body": [
+      "Sekelompok ungkapan kesehatan memakai pola yang membalik pelakunya. Hafalkan kalimat utuhnya; yang perlu kamu ganti cuma nama bagian tubuhnya."
+     ],
+     "table": {
+      "head": ["Bosanski", "Harfiah", "Arti"],
+      "rows": [
+       ["*Boli me glava.*", "menyakiti saya-akusatif kepala", "Kepala saya sakit."],
+       ["*Bole me noge.*", "menyakiti-jm saya-akusatif kaki-jm", "Kaki saya sakit."],
+       ["*Boli li te zub?*", "", "Gigimu sakit?"],
+       ["*Ne osjećam se dobro.*", "tidak saya-merasa diri-sendiri baik", "Saya tidak enak badan."],
+       ["*Imam temperaturu.*", "saya-punya suhu", "Saya demam."],
+       ["*Prehlađen sam / prehlađena sam.*", "", "Saya masuk angin. (lk / pr)"],
+       ["*Kašljem.* / *Kijam.*", "", "Saya batuk. / Saya bersin."],
+       ["*Muka mi je.*", "mual kepada-saya ia-adalah", "Saya mual."],
+       ["*Umoran sam / umorna sam.*", "", "Saya lelah."],
+       ["*Bolje mi je.*", "lebih-baik kepada-saya ia-adalah", "Saya sudah membaik."]
+      ]
+     },
+     "after": [
+      "**Dua pola yang mirip tetapi memakai padež berbeda — jangan tertukar.** *Boli **me*** memakai **akuzatif** (*me, te, ga, je, nas, vas, ih*): badan itu menyakiti saya. *Sviđa **mi** se* dan *hladno **mi** je* memakai **datif** (*mi, ti, mu, joj, nam, vam, im*). Cara mengingatnya: rasa sakit menyerang kamu (akusatif), perasaan dan kesan datang kepada kamu (datif).",
+      "**Ada juga cara kedua memakai kata benda:** *Imam glavobolju* (saya sakit kepala), *imam zubobolju* (sakit gigi), *imam stomakobolju* (sakit perut). Bentuk ini sedikit lebih resmi dan sering dipakai di formulir; dalam percakapan, *boli me* yang lazim.",
+      "**Untuk bertanya kepada orang lain**, cukup ganti kata gantinya: *Šta te boli?* (kamu sakit apa?), *Boli li vas?* (Anda sakit?), *Da li ga još boli?* (dia masih sakit?).",
+      "**Ucapan yang wajib kamu punya:** *Ozdravi!* / *Ozdravite!* (semoga cepat sembuh — akrab / sopan), *Brzo ozdravljenje!* (lekas sembuh), dan yang paling sering diucapkan di Bosnia ketika seseorang bersin: *Nazdravlje!*"
+     ]
+    },
+    {
+     "title": "Imperativ — bentuk perintah",
+     "body": [
+      "Kamu akan lebih sering mendengarnya daripada mengucapkannya, jadi urutan belajarnya: kenali dulu, pakai kemudian. Pembentukannya berangkat dari bentuk *oni*, bukan dari bentuk kamus."
+     ],
+     "table": {
+      "head": ["Bentuk kamus", "oni", "ti (akrab)", "vi (sopan/jamak)", "Arti"],
+      "rows": [
+       ["*otvoriti*", "*otvore*", "*otvori*", "*otvorite*", "buka"],
+       ["*doći*", "*dođu*", "*dođi*", "*dođite*", "datang"],
+       ["*pisati*", "*pišu*", "*piši*", "*pišite*", "tulis"],
+       ["*reći*", "*kažu*", "*reci*", "*recite*", "katakan"],
+       ["*piti*", "*piju*", "*pij*", "*pijte*", "minum"],
+       ["*čitati*", "*čitaju*", "*čitaj*", "*čitajte*", "baca"],
+       ["*odmarati se*", "*odmaraju se*", "*odmaraj se*", "*odmarajte se*", "istirahat"],
+       ["*biti*", "*budu*", "*budi*", "*budite*", "jadilah"]
+      ]
+     },
+     "after": [
+      "**Caranya: ambil bentuk *oni*, buang ekornya, lalu tambahkan.** Kalau yang tersisa berakhir huruf mati, tambahkan **-i**: *piš- → piši*, *dođ- → dođi*, *otvor- → otvori*. Kalau berakhir huruf hidup, tambahkan **-j**: *pi- → pij*, *čita- → čitaj*, *da- → daj*. Bentuk sopan tinggal menambah **-te**.",
+      "**Larangan tidak memakai bentuk ini.** Yang dipakai adalah *nemoj* (akrab) atau *nemojte* (sopan) + bentuk kamus: *Nemoj zaboraviti! Nemojte izlaziti!* Bentuk *ne pij* memang ada, tetapi terdengar keras seperti perintah militer — *nemoj piti* jauh lebih wajar.",
+      "**Perintah yang paling sering kamu dengar di jalan:** *Izvolite!* (silakan), *Sjednite!* (duduklah), *Uđite!* (masuklah), *Idite pravo!* (lurus saja), *Sačekajte, molim!* (tunggu sebentar), *Požurite!* (cepat).",
+      "**Ajakan \"mari kita\" dibentuk dengan ekor *-mo*:** *Idemo!* (ayo pergi), *Nađimo se u sedam* (mari bertemu jam tujuh), *Popijmo kafu* (ayo minum kopi). Dan yang paling sering: *Hajdemo!*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tijelo i zdravlje — badan, gejala, apotek",
+   "blocks": [
+    { "type": "p", "text": "Tabel pertama adalah bagian tubuh. Ingat: bagian tubuh menjadi **pelaku** dalam kalimat *boli me*, jadi yang kamu perlukan adalah bentuk kamusnya, bukan bentuk sasarannya — satu hal yang lebih mudah daripada kelihatannya." },
+    { "type": "tabel", "head": ["Bosanski", "Bahasa Indonesia", "Bosanski", "Bahasa Indonesia"], "rows": [
+      ["*glava* (pr)", "kepala", "*oko* (nt) — jm *oči*", "mata"],
+      ["*kosa* (pr)", "rambut", "*uho* (nt) — jm *uši*", "telinga"],
+      ["*lice* (nt)", "wajah", "*nos* (lk)", "hidung"],
+      ["*usta* (jm)", "mulut", "*zub* (lk)", "gigi"],
+      ["*grlo* (nt)", "tenggorokan", "*vrat* (lk)", "leher"],
+      ["*ruka* (pr)", "tangan, lengan", "*noga* (pr)", "kaki"],
+      ["*prst* (lk)", "jari", "*leđa* (jm)", "punggung"],
+      ["*stomak* (lk)", "perut", "*srce* (nt)", "jantung, hati"],
+      ["*koža* (pr)", "kulit", "*krv* (pr)", "darah"]
+     ]},
+    { "type": "tabel", "head": ["Di apotek", "Bahasa Indonesia"], "rows": [
+      ["*Imate li nešto protiv glavobolje?*", "Ada obat sakit kepala?"],
+      ["*Treba mi nešto za kašalj.*", "Saya butuh obat batuk."],
+      ["*Imate li ovo bez recepta?*", "Ini ada yang tanpa resep?"],
+      ["*Koliko puta dnevno?*", "Sehari berapa kali?"],
+      ["*Prije ili poslije jela?*", "Sebelum atau sesudah makan?"],
+      ["*Alergičan sam na…*", "Saya alergi terhadap…"],
+      ["*Gdje je najbliža dežurna apoteka?*", "Apotek 24 jam terdekat di mana?"],
+      ["*Zovite hitnu pomoć!*", "Panggil ambulans!"]
+     ]},
+    { "type": "kotak", "title": "Dua kata yang bekerja lebih keras daripada dugaanmu", "items": [
+      "***Ruka*** berarti tangan **dan** lengan sekaligus; ***noga*** berarti kaki **dan** tungkai. Bahasa Bosnia tidak memisahkannya, persis seperti bahasa Indonesia tidak selalu memisahkan \"tangan\" dan \"lengan\". Kalau perlu tepat: *šaka* (telapak tangan), *stopalo* (telapak kaki).",
+      "***Srce*** berarti jantung sebagai organ dan hati sebagai pusat perasaan — juga seperti bahasa Indonesia. *Boli me srce* bisa berarti dua-duanya, dan keadaannya yang memberi tahu. Kalau kamu ingin memastikan orang tidak salah paham di ruang dokter, sebutkan gejalanya."
+     ]}
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    { "type": "p", "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Bosanski"], "rows": [
+      ["Saya baca bukunya, tapi belum selesai.", "*Čitao sam knjigu, ali je nisam pročitao.*"],
+      ["Tiap malam saya baca sedikit-sedikit.", "*Svako veče čitam po malo.*"],
+      ["Laporannya sudah selesai saya tulis.", "*Napisao sam izvještaj.*"],
+      ["Saya mengerjakan, tapi belum selesai.", "*Radio sam, ali nisam uradio.*"],
+      ["Kalau sudah selesai, saya kabari.", "*Kada završim, javit ću ti.*"],
+      ["Kopinya tidak jadi saya beli.", "*Nisam kupio kafu.*"]
+     ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "bs": "boljeti — *boli me*", "baca": "BO-lye-ti", "id": "terasa sakit" },
+  { "bs": "ljekar / doktor (lk)", "baca": "LYE-kar", "id": "dokter" },
+  { "bs": "bolnica (pr)", "baca": "BOL-ni-tsa", "id": "rumah sakit" },
+  { "bs": "apoteka (pr)", "baca": "a-po-TE-ka", "id": "apotek" },
+  { "bs": "lijek (lk)", "baca": "lyek", "id": "obat" },
+  { "bs": "recept (lk)", "baca": "RE-tsept", "id": "resep" },
+  { "bs": "temperatura (pr)", "baca": "tem-pe-ra-TU-ra", "id": "suhu; demam" },
+  { "bs": "kašalj (lk)", "baca": "KA-syaly", "id": "batuk" },
+  { "bs": "upala (pr)", "baca": "U-pa-la", "id": "radang" },
+  { "bs": "glava (pr)", "baca": "GLA-va", "id": "kepala" },
+  { "bs": "grlo (nt)", "baca": "GR-lo", "id": "tenggorokan" },
+  { "bs": "stomak (lk)", "baca": "STO-mak", "id": "perut" },
+  { "bs": "ruka / noga (pr)", "baca": "RU-ka / NO-ga", "id": "tangan / kaki" },
+  { "bs": "zub (lk)", "baca": "zub", "id": "gigi" },
+  { "bs": "ozbiljno", "baca": "OZ-bily-no", "id": "serius" },
+  { "bs": "odmarati se — *odmaram se*", "baca": "od-MA-ra-ti se", "id": "beristirahat" },
+  { "bs": "ozdraviti — *ozdravim*", "baca": "oz-DRA-vi-ti", "id": "sembuh" },
+  { "bs": "polako", "baca": "po-LA-ko", "id": "pelan-pelan" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Tenggorokan saya sakit.",
+    "Kaki saya sakit.",
+    "Saya tidak enak badan.",
+    "Saya demam.",
+    "Ada obat sakit kepala?",
+    "Semoga cepat sembuh!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan boli atau bole, dan kata ganti yang tepat.",
+   "items": [
+    "____ me glava.",
+    "____ me noge.",
+    "____ li te zub?",
+    "Njega ____ stomak.",
+    "Nju ____ oči.",
+    "____ li vas grlo?",
+    "Njih ____ leđa."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "me / grlo / boli",
+    "temperaturu / li / imate / ?",
+    "dobro / se / ne / osjećam",
+    "čaja / pijte / puno",
+    "brzo / ozdravite / !"
+   ]
+  }
+ ],
+ "answers": [
+  "Boli me grlo. — Bole me noge. — Ne osjećam se dobro. — Imam temperaturu. — Imate li nešto protiv glavobolje? — Ozdravite brzo!",
+  "Boli — Bole — Boli — boli — bole — Boli — bole",
+  "Boli me grlo. — Imate li temperaturu? — Ne osjećam se dobro. — Pijte puno čaja. — Ozdravite brzo!"
+ ]
+}

@@ -1,0 +1,204 @@
+{
+ "title": "Di kafe — dan kata benda sebagai sasaran",
+ "title_target": "U kafani",
+ "goal": "Memesan minuman dan makanan, lalu memasang padež pertama: akuzativ, bentuk yang dipakai kata benda ketika ia menjadi sasaran pekerjaan — dan yang separuhnya ternyata tidak berubah sama sekali.",
+ "bekal": [
+  "memesan dan membayar dengan kalimat yang sopan dan wajar",
+  "mengubah kata benda ke bentuk akuzatif, dan tahu kapan ia tidak berubah",
+  "memakai kata ganti sasaran *me, te, ga, je, nas, vas, ih*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — U kafani",
+   "intro": "Sebuah kafe kecil di Baščaršija, kursi-kursi kayu rendah di luar. Budi dan Amina duduk; pelayan datang tanpa menunggu dipanggil.",
+   "lines": [
+    { "speaker": "Konobar:", "text": "Izvolite! Šta želite?", "id": "Silakan! Mau pesan apa?", "literal": "silakan! apa kalian-menginginkan?" },
+    { "speaker": "Budi:", "text": "Jednu bosansku kafu, molim.", "id": "Satu kopi Bosnia, tolong.", "literal": "satu-akusatif-pr bosnia-akusatif-pr kopi-akusatif, saya-mohon." },
+    { "speaker": "Amina:", "text": "Za mene čaj, molim. S limunom.", "id": "Untuk saya teh, tolong. Pakai lemon.", "literal": "untuk saya-akusatif teh, saya-mohon. dengan lemon-instrumental." },
+    { "speaker": "Konobar:", "text": "Želite li nešto za jelo?", "id": "Mau pesan makanan juga?", "literal": "kalian-menginginkan apakah sesuatu untuk makanan?" },
+    { "speaker": "Budi:", "text": "Imate li ćevape?", "id": "Ada ćevapi?", "literal": "kalian-punya apakah ćevapi-akusatif-jm?" },
+    { "speaker": "Konobar:", "text": "Naravno. Pet ili deset?", "id": "Tentu. Lima atau sepuluh?", "literal": "tentu. lima atau sepuluh?" },
+    { "speaker": "Budi:", "text": "Deset, molim. I jednu vodu.", "id": "Sepuluh, tolong. Dan satu air putih.", "literal": "sepuluh, saya-mohon. dan satu-akusatif-pr air-akusatif." },
+    { "speaker": "Amina:", "text": "Ja ne jedem meso. Imate li nešto vegetarijansko?", "id": "Saya tidak makan daging. Ada yang vegetarian?", "literal": "saya tidak saya-makan daging-akusatif. kalian-punya apakah sesuatu vegetarian-nt?" },
+    { "speaker": "Konobar:", "text": "Imamo pitu sa sirom i pitu sa spinatom.", "id": "Ada pita isi keju dan pita isi bayam.", "literal": "kami-punya pita-akusatif dengan keju-instrumental dan pita-akusatif dengan bayam-instrumental." },
+    { "speaker": "Amina:", "text": "Onda pitu sa sirom, molim.", "id": "Kalau begitu pita keju, tolong.", "literal": "kalau-begitu pita-akusatif dengan keju-instrumental, saya-mohon." },
+    { "speaker": "Konobar:", "text": "Odmah donosim.", "id": "Segera saya antar.", "literal": "segera saya-membawa." },
+    { "speaker": "Budi:", "text": "Hvala. Možemo li poslije platiti zajedno?", "id": "Terima kasih. Nanti boleh bayar jadi satu?", "literal": "terima-kasih. kami-bisa apakah sesudah membayar bersama?" },
+    { "speaker": "Konobar:", "text": "Naravno, nema problema. Prijatno!", "id": "Tentu, tidak masalah. Selamat menikmati!", "literal": "tentu, tidak-ada masalah-genitif. menyenangkan!" }
+   ],
+   "notes": [
+    "**Perhatikan ekor *-u* yang muncul berulang kali:** *kafa → kafu*, *voda → vodu*, *pita → pitu*. Itulah akuzatif kata perempuan, dan ia yang membuat pesananmu terdengar benar. *Jednu kafu, molim* adalah kalimat yang akan kamu ucapkan lebih sering daripada kalimat lain mana pun di Bosnia.",
+    "**Kata sifat ikut berubah bersama kata bendanya.** *Bosanska kafa* menjadi *bosansku kafu*; *jedna* menjadi *jednu*. Kata benda tidak pernah bergerak sendirian — seluruh rombongan di depannya ikut. Inilah alasan tabel kata sifat di halaman belakang modul ini punya baris untuk tiap padež.",
+    "***Za mene* — sesudah kata depan, kata ganti memakai bentuk panjang.** *Za mene, za tebe, za njega, bez nas.* Bentuk pendek (*me, te, ga*) tidak pernah muncul sesudah kata depan, dan tidak pernah di awal kalimat. Ini bagian dari aturan kursi kedua yang dipasang lengkap di unit 12.",
+    "***Molim* di ujung kalimat adalah cara paling ringkas untuk sopan.** Bentuk yang lebih lengkap: *Molim vas* (kepada orang yang dihormati) atau *Molim te* (kepada teman). Dan *Izvolite!* dari pelayan berarti \"silakan\" — kamu akan mendengarnya tiap kali masuk toko, dan ia juga dipakai saat menyerahkan sesuatu kepadamu.",
+    "**Pita.** Bukan roti pipih Yunani, melainkan gulungan adonan tipis berisi yang dipanggang melingkar — makanan rumah tangga paling khas Bosnia. Namanya berbeda menurut isinya: *burek* (daging — dan hanya daging; menyebut yang lain *burek* akan dikoreksi dengan ramah tapi pasti), *sirnica* (keju), *zeljanica* (bayam), *krompiruša* (kentang). Bertanya *Imate li pitu?* hampir selalu dijawab *Imamo* di mana pun kamu berada."
+   ],
+   "grammars": [
+    {
+     "title": "Akuzativ — bentuk sasaran, dan separuhnya tidak berubah",
+     "body": [
+      "Padež pertama dari tujuh, dan sengaja yang ini dulu: ia paling sering dipakai, dan paling murah dipelajari — karena pada separuh kata benda, bentuknya sama persis dengan bentuk kamus."
+     ],
+     "table": {
+      "head": ["Jenis kata benda", "Nominativ (kamus)", "Akuzativ", "Contoh"],
+      "rows": [
+       ["**lk tak bernyawa**", "*sok, čaj, grad, hljeb*", "**sama**", "*Pijem sok. Volim grad.*"],
+       ["**lk bernyawa**", "*brat, konobar, student*", "**+ -a**", "*Čekam brata. Zovem konobara.*"],
+       ["**pr berakhir -a**", "*kafa, voda, pita, sestra*", "**-a → -u**", "*Pijem kafu. Čekam sestru.*"],
+       ["**pr berakhir huruf mati**", "*noć, stvar, ljubav*", "**sama**", "*Volim noć.*"],
+       ["**nt**", "*pivo, mlijeko, more*", "**sama**", "*Pijem mlijeko.*"],
+       ["**jamak lk**", "*studenti, gradovi, ćevapi*", "**-i → -e**", "*Vidim studente. Jedem ćevape.*"],
+       ["**jamak pr / nt**", "*kafe, žene, piva*", "**sama**", "*Pijem dvije kafe.*"]
+      ]
+     },
+     "after": [
+      "**Yang benar-benar perlu kamu ingat cuma dua baris:** kata perempuan berakhir *-a* ganti ekornya jadi **-u**, dan kata lelaki **bernyawa** ditambahi **-a**. Sisanya tidak bergerak sama sekali. Kalau kamu cuma mengingat *kafa → kafu* hari ini, tujuh puluh persen pesananmu sudah benar.",
+      "**\"Bernyawa\" berarti manusia dan hewan.** *Vidim brata* (saya melihat saudara saya), *Vidim konja* (saya melihat kuda), tetapi *Vidim grad* (saya melihat kota — tak bernyawa, tak berubah). Aturan ini hanya berlaku untuk kata **lelaki tunggal**; kata perempuan dan netral tidak peduli bernyawa atau tidak.",
+      "**Seluruh rombongan di depan kata benda ikut berubah.** *Ovaj dobar sok* tetap *ovaj dobar sok* (tak bernyawa), tetapi *ova dobra kafa* menjadi *ovu dobru kafu*, dan *ovaj dobar student* menjadi *ovog dobrog studenta*. Tabel lengkap kata sifatnya ada di ringkasan tata bahasa; untuk sekarang, tirukan pasangan jadi: *jednu bosansku kafu*.",
+      "**Akuzatif juga muncul sesudah beberapa kata depan**, dan yang paling penting adalah **tujuan**: *idem u grad* (ke kota), *idem na posao* (ke tempat kerja), *ovo je za tebe* (ini untuk kamu), *kroz park* (melewati taman). Bandingkan dengan *u gradu* dan *na poslu* — itu lokatif, bentuk **tempat**, yang dipasang di unit 9. Satu kata depan, dua padež, dua arti: *u grad* = ke kota, *u gradu* = di kota."
+     ]
+    },
+    {
+     "title": "Kata ganti sasaran — me, te, ga, je…",
+     "body": [
+      "Sama seperti kata benda, kata ganti pun punya bentuk sasaran. Dan seperti *sam* dan *je*, ia datang dalam dua rupa: pendek untuk sehari-hari, panjang untuk ditekankan."
+     ],
+     "table": {
+      "head": ["Orang", "Panjang", "Pendek", "Contoh"],
+      "rows": [
+       ["**ja** — saya", "*mene*", "**me**", "*Čekaš li me?* — Kamu menungguku?"],
+       ["**ti** — kamu", "*tebe*", "**te**", "*Ja te čekam.* — Saya menunggumu."],
+       ["**on** — dia (lk)", "*njega*", "**ga**", "*Vidim ga.* — Saya melihatnya."],
+       ["**ona** — dia (pr)", "*nju*", "**je / ju**", "*Vidim je.* — Saya melihatnya."],
+       ["**mi** — kami", "*nas*", "**nas**", "*Oni nas čekaju.*"],
+       ["**vi** — kalian; Anda", "*vas*", "**vas**", "*Ja vas razumijem.*"],
+       ["**oni** — mereka", "*njih*", "**ih**", "*Zovem ih.* — Saya memanggil mereka."]
+      ]
+     },
+     "after": [
+      "**Bentuk pendek duduk di kursi kedua dan tidak pernah memulai kalimat.** *Ja te čekam* — bukan *Te čekam*. Kalau tidak ada kata lain di depan, susunannya diubah: *Čekam te.* Aturan ini sama persis dengan *sam, si, je* di unit 1, dan lengkapnya di unit 12.",
+      "**Bentuk panjang dipakai di dua keadaan**: sesudah kata depan (*za mene, bez tebe, s njim*) dan ketika kamu ingin menekankan (*Mene čekaš, ne njega?* — \"aku yang kamu tunggu, bukan dia?\"). Dalam percakapan biasa, bentuk pendeklah yang kamu pakai hampir sepanjang waktu.",
+      "***Je* atau *ju* untuk \"dia perempuan\"?** Keduanya sama artinya. *Ju* dipakai supaya tidak bertabrakan dengan *je* dari *biti*: *Vidio ju je* (dia sudah melihatnya) terdengar lebih rapi daripada *vidio je je*. Selebihnya *je* yang lazim.",
+      "**Kata kerja yang paling sering berpasangan dengan bentuk-bentuk ini:** *čekati* (menunggu), *vidjeti* (melihat), *zvati* (memanggil, menelepon), *razumjeti* (mengerti), *voljeti* (menyayangi), *tražiti* (mencari), *poznavati* (mengenal). Latih tiga kalimat pendek tiap hari — *Čekam te. Vidim ga. Ne razumijem ih.* — dan kata-kata kecil ini akan berhenti terasa asing dalam seminggu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "U kafani — memesan, meminta, membayar",
+   "blocks": [
+    { "type": "p", "text": "Urutannya selalu sama, dan hampir tidak pernah berubah di seluruh Bosnia: pelayan datang dan berkata *Izvolite*, kamu menyebut pesananmu dengan akuzatif dan *molim*, lalu di akhir kamu memanggil *Račun, molim!*" },
+    { "type": "tabel", "head": ["Bosanski", "Cara baca", "Bahasa Indonesia"], "rows": [
+      ["*Izvolite!*", "iz-VO-li-te", "Silakan! (dari pelayan)"],
+      ["*Jednu kafu, molim.*", "YED-nu KA-fu MO-lim", "Satu kopi, tolong."],
+      ["*Za mene čaj, molim.*", "za ME-ne chay", "Untuk saya teh, tolong."],
+      ["*Imate li…?*", "I-ma-te li", "Ada… ?"],
+      ["*Šta preporučujete?*", "syta pre-po-RU-chu-ye-te", "Apa yang Anda sarankan?"],
+      ["*Ja ne jedem meso.*", "ya ne YE-dem ME-so", "Saya tidak makan daging."],
+      ["*Bez šećera, molim.*", "bez SYE-che-ra", "Tanpa gula, tolong."],
+      ["*Još jednu, molim.*", "yosy YED-nu", "Satu lagi, tolong."],
+      ["*Račun, molim!*", "RA-chun", "Minta bill!"],
+      ["*Možemo li platiti zajedno?*", "MO-zhe-mo li PLA-ti-ti za-YED-no", "Boleh bayar jadi satu?"],
+      ["*Odvojeno, molim.*", "od-VO-ye-no", "Terpisah, tolong."],
+      ["*Zadržite kusur.*", "za-DR-zhi-te KU-sur", "Kembaliannya ambil saja."],
+      ["*Bilo je odlično!*", "BI-lo ye od-LICH-no", "Enak sekali!"]
+     ]},
+    { "type": "tabel", "head": ["Piće (minuman)", "Hrana (makanan)", "Bahasa Indonesia"], "rows": [
+      ["*kafa* (pr)", "*hljeb* (lk)", "kopi / roti"],
+      ["*bosanska kafa*", "*burek* (lk)", "kopi Bosnia / pita isi daging"],
+      ["*čaj* (lk)", "*pita* (pr)", "teh / pita"],
+      ["*voda* (pr)", "*ćevapi* (jm)", "air / ćevapi"],
+      ["*sok* (lk)", "*meso* (nt)", "jus / daging"],
+      ["*mlijeko* (nt)", "*piletina* (pr)", "susu / ayam"],
+      ["*pivo* (nt)", "*riba* (pr)", "bir / ikan"],
+      ["*vino* (nt)", "*sir* (lk)", "anggur / keju"],
+      ["*gazirana voda*", "*salata* (pr)", "air soda / salad"],
+      ["*šećer* (lk)", "*supa* (pr)", "gula / sup"],
+      ["*limun* (lk)", "*kolač* (lk)", "lemon / kue"],
+      ["*jogurt* (lk)", "*sladoled* (lk)", "yoghurt / es krim"]
+     ]},
+    { "type": "kotak", "title": "Tiga hal yang perlu kamu tahu sebelum duduk", "items": [
+      "**Kopi Bosnia bukan espresso.** *Bosanska kafa* digiling sangat halus, direbus dalam *džezva*, dan disajikan bersama ampasnya. Diminum tanpa diaduk, pelan-pelan, sambil menggigit gula batu. Kalau kamu ingin kopi bergaya Italia, sebutkan namanya: *espreso*, *makijato*, *kapućino*.",
+      "**Harga sudah termasuk tempat duduk selama yang kamu mau.** Tidak ada yang akan mengusirmu; satu kopi bisa menemanimu dua jam, dan itu memang kebiasaannya. Pelayan tidak akan membawakan bill sampai kamu memintanya — *Račun, molim!*",
+      "**Persenan: bulatkan ke atas.** Tidak ada persentase baku. Kalau tagihannya 8,50 KM, memberikan 10 KM dan berkata *Zadržite kusur* sudah lebih dari cukup."
+     ]}
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    { "type": "p", "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan." },
+    { "type": "tabel", "head": ["Bahasa Indonesia", "Bosanski"], "rows": [
+      ["Umur saya dua puluh delapan tahun.", "*Imam dvadeset osam godina.*"],
+      ["Berapa harganya? — Lima marka.", "*Koliko košta? — Pet maraka.*"],
+      ["Saya punya dua saudara perempuan.", "*Imam dvije sestre.*"],
+      ["Nomor telepon Anda berapa?", "*Koji je vaš broj telefona?*"],
+      ["Di kelas ada delapan orang.", "*U grupi ima osam ljudi.*"],
+      ["Kursusnya dua ratus marka.", "*Kurs košta dvjesto maraka.*"]
+     ]}
+   ]
+  }
+ ],
+ "vocab": [
+  { "bs": "kafana (pr)", "baca": "ka-FA-na", "id": "kafe, kedai" },
+  { "bs": "konobar (lk)", "baca": "KO-no-bar", "id": "pelayan" },
+  { "bs": "izvolite", "baca": "iz-VO-li-te", "id": "silakan" },
+  { "bs": "željeti — *želim*", "baca": "ZHE-lye-ti", "id": "menginginkan" },
+  { "bs": "jelo (nt)", "baca": "YE-lo", "id": "makanan, hidangan" },
+  { "bs": "piće (nt)", "baca": "PI-che", "id": "minuman" },
+  { "bs": "meso (nt)", "baca": "ME-so", "id": "daging" },
+  { "bs": "voda (pr)", "baca": "VO-da", "id": "air" },
+  { "bs": "pita (pr)", "baca": "PI-ta", "id": "pita (pastri gulung)" },
+  { "bs": "sir (lk)", "baca": "sir", "id": "keju" },
+  { "bs": "račun (lk)", "baca": "RA-chun", "id": "bon, tagihan" },
+  { "bs": "platiti — *platim*", "baca": "PLA-ti-ti", "id": "membayar" },
+  { "bs": "zajedno", "baca": "za-YED-no", "id": "bersama-sama" },
+  { "bs": "odvojeno", "baca": "od-VO-ye-no", "id": "terpisah" },
+  { "bs": "nešto / ništa", "baca": "NESY-to / NISY-ta", "id": "sesuatu / tidak apa-apa" },
+  { "bs": "bez", "baca": "bez", "id": "tanpa" },
+  { "bs": "za", "baca": "za", "id": "untuk" },
+  { "bs": "odmah", "baca": "OD-mah", "id": "segera" }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Satu kopi Bosnia, tolong.",
+    "Untuk saya teh, tanpa gula.",
+    "Ada pita isi keju?",
+    "Saya tidak makan daging.",
+    "Minta bill! Boleh bayar jadi satu?",
+    "Saya menunggumu."
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk akuzatif.",
+   "items": [
+    "Pijem ____ (kafa).",
+    "Jedem ____ (pita).",
+    "Volim ____ (grad).",
+    "Čekam ____ (brat).",
+    "Pijemo ____ (voda).",
+    "Vidim ____ (studenti).",
+    "Ovo je za ____ (ti)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "molim / kafu / jednu / ,",
+    "li / pitu / imate / ?",
+    "meso / ne / jedem / ja",
+    "molim / račun / ,",
+    "čekam / te / ja"
+   ]
+  }
+ ],
+ "answers": [
+  "Jednu bosansku kafu, molim. — Za mene čaj, bez šećera. — Imate li pitu sa sirom? — Ja ne jedem meso. — Račun, molim! Možemo li platiti zajedno? — Ja te čekam.",
+  "kafu — pitu — grad — brata — vodu — studente — tebe",
+  "Jednu kafu, molim. — Imate li pitu? — Ja ne jedem meso. — Račun, molim. — Ja te čekam."
+ ]
+}

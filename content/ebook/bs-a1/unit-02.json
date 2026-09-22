@@ -1,0 +1,585 @@
+{
+ "title": "Kamu dari mana?",
+ "title_target": "Odakle si?",
+ "goal": "Menyebut asal, tempat tinggal, pekerjaan, dan bahasa yang kamu kuasai — sekaligus memasang dua golongan kata kerja yang paling banyak anggotanya dan dua cara bertanya \"apakah\".",
+ "bekal": [
+  "menjawab *Odakle si?* dan *Gdje živiš?* dengan kalimat utuh",
+  "memakai kata kerja golongan *-am* dan *-im* dalam keenam bentuknya",
+  "menyangkal dengan *ne* dan bertanya dengan *da li* maupun *li*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Odakle si?",
+   "intro": "Rehat kopi pertama Budi di kantor. Amina penasaran, dan seperti hampir semua orang Bosnia, ia bertanya langsung tanpa berputar-putar.",
+   "lines": [
+    {
+     "speaker": "Amina:",
+     "text": "Budi, odakle si? Iz Malezije?",
+     "id": "Budi, kamu dari mana? Dari Malaysia?",
+     "literal": "Budi, dari-mana kamu-adalah? dari Malaysia-genitif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne, nisam. Iz Indonezije sam, iz Jakarte.",
+     "id": "Bukan. Saya dari Indonesia, dari Jakarta.",
+     "literal": "tidak, saya-bukan. dari Indonesia-genitif saya-adalah, dari Jakarta-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Aha! A gdje sada živiš?",
+     "id": "Oh! Lalu sekarang kamu tinggal di mana?",
+     "literal": "aha! dan di-mana sekarang kamu-tinggal?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Živim u Sarajevu, u Starom Gradu. A ti?",
+     "id": "Saya tinggal di Sarajevo, di Stari Grad. Kamu?",
+     "literal": "saya-tinggal di Sarajevo-lokatif, di Kota-Lama-lokatif. dan kamu?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Ja sam iz Mostara, ali radim ovdje već tri godine.",
+     "id": "Saya dari Mostar, tapi sudah tiga tahun kerja di sini.",
+     "literal": "saya saya-adalah dari Mostar-genitif, tetapi saya-bekerja di-sini sudah tiga tahun-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Šta radiš u firmi?",
+     "id": "Kamu kerja apa di perusahaan?",
+     "literal": "apa kamu-mengerjakan di perusahaan-lokatif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Programerka sam, kao i ti. A koje jezike govoriš?",
+     "id": "Saya programer, sama seperti kamu. Kamu bisa bahasa apa saja?",
+     "literal": "programer-pr saya-adalah, seperti juga kamu. dan yang-mana-jm bahasa-jm kamu-berbicara?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Govorim indonežanski, engleski i malo bosanski.",
+     "id": "Saya bisa bahasa Indonesia, Inggris, dan sedikit bahasa Bosnia.",
+     "literal": "saya-berbicara indonesia, inggris dan sedikit bosnia."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Odlično govoriš! Razumiješ li sve?",
+     "id": "Bagus sekali! Kamu mengerti semuanya?",
+     "literal": "bagus-sekali kamu-berbicara! kamu-mengerti apakah semua?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne razumijem sve, ali učim svaki dan.",
+     "id": "Tidak semuanya, tapi saya belajar tiap hari.",
+     "literal": "tidak saya-mengerti semua, tetapi saya-belajar tiap hari."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Znaš li šta znači \"Baščaršija\"?",
+     "id": "Kamu tahu arti \"Baščaršija\"?",
+     "literal": "kamu-tahu apakah apa ia-berarti \"Baščaršija\"?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne znam. Šta znači?",
+     "id": "Tidak tahu. Apa artinya?",
+     "literal": "tidak saya-tahu. apa ia-berarti?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "To je glavna čaršija — turska riječ za pijacu. Idemo sutra!",
+     "id": "Itu pasar utama — kata Turki untuk pasar. Besok kita ke sana!",
+     "literal": "itu ia-adalah utama-pr pasar — turki-pr kata untuk pasar-akusatif. kami-pergi besok!"
+    }
+   ],
+   "notes": [
+    "***Odakle si?* dijawab dengan *iz* + ekor kata.** Nama tempatnya berubah ekor: *Indonezija → iz Indonezije*, *Jakarta → iz Jakarte*, *Mostar → iz Mostara*. Bentuk itu namanya genitif dan dipasang lengkap di unit 8. Untuk sekarang hafalkan polanya saja: nama berakhir *-a* ganti jadi *-e*, nama berakhir huruf mati tambah *-a*.",
+    "**Menjawab \"bukan\" butuh dua kata.** *Ne* sendirian terdengar sangat pendek, hampir ketus. Yang wajar adalah mengulang kata kerjanya dalam bentuk ingkar: *Ne, nisam.* — *Ne, ne znam.* — *Ne, ne živim tamo.* Pola ini berlaku untuk semua pertanyaan ya/tidak di bahasa Bosnia.",
+    "**Nama bahasa ditulis huruf kecil, nama negara huruf besar.** *Bosna* tetapi *bosanski*; *Indonezija* tetapi *indonežanski*; *Engleska* tetapi *engleski*. Nama bangsanya huruf besar: *Bosanac, Indonežanin*. Aturan ini kebalikan sebagian kebiasaan bahasa Inggris, dan penutur Indonesia justru lebih jarang salah.",
+    "***Radim ovdje već tri godine* — kala kini, bukan lampau.** Bahasa Indonesia berkata \"sudah tiga tahun saya kerja di sini\" dan bahasa Inggris memakai bentuk perfect, tetapi bahasa Bosnia memakai **kala kini** untuk perbuatan yang dimulai dulu dan masih berlangsung. Kata kuncinya *već* (sudah). Jangan tergoda memakai bentuk lampau di sini — artinya jadi \"dulu pernah\".",
+    "**Baščaršija.** Nama jantung kota tua Sarajevo, dari bahasa Turki *baş* (kepala, utama) + *çarşı* (pasar). Ratusan kata seperti ini hidup di bahasa Bosnia sehari-hari, dan sebagiannya sudah kamu kenal lewat bahasa Indonesia: *sapun* (sabun), *sat* (saat → jam), *šećer* (gula, seakar dengan *sakarin*), *insan*, *selam*, *dunjaluk* (dunia)."
+   ],
+   "grammars": [
+    {
+     "title": "Kala kini — dua golongan yang paling banyak anggotanya",
+     "body": [
+      "Kata kerja bahasa Bosnia berubah menurut pelakunya — enam bentuk untuk tiap kala, persis seperti *biti* di unit 1. Kabar baiknya: ekornya hampir seragam. Yang membedakan golongan cuma **huruf hidup sebelum ekor** dan **bentuk *oni***."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "**znati** (tahu)",
+       "**raditi** (bekerja)",
+       "**govoriti** (bicara)",
+       "**živjeti** (tinggal)"
+      ],
+      "rows": [
+       [
+        "ja",
+        "**znam**",
+        "**radim**",
+        "**govorim**",
+        "**živim**"
+       ],
+       [
+        "ti",
+        "*znaš*",
+        "*radiš*",
+        "*govoriš*",
+        "*živiš*"
+       ],
+       [
+        "on / ona / ono",
+        "*zna*",
+        "*radi*",
+        "*govori*",
+        "*živi*"
+       ],
+       [
+        "mi",
+        "*znamo*",
+        "*radimo*",
+        "*govorimo*",
+        "*živimo*"
+       ],
+       [
+        "vi",
+        "*znate*",
+        "*radite*",
+        "*govorite*",
+        "*živite*"
+       ],
+       [
+        "oni / one / ona",
+        "*znaju*",
+        "*rade*",
+        "*govore*",
+        "*žive*"
+       ]
+      ]
+     },
+     "after": [
+      "**Ekornya sama di kedua golongan: *-m, -š, —, -mo, -te*.** Yang berbeda cuma huruf hidup di depannya: golongan **-am** (*znam, znaš*) dan golongan **-im** (*radim, radiš*). Bentuk *on/ona* selalu tanpa ekor sama sekali — potong saja *-m* dari bentuk *ja*.",
+      "**Bentuk *oni* itulah yang tak bisa ditebak**: golongan *-am* memakai **-aju** (*znaju, imaju, pitaju*), golongan *-im* memakai **-e** (*rade, govore, žive*). Ini satu-satunya baris yang wajib dihafal terpisah.",
+      "**Bentuk kamus sering menipu.** *Raditi* dan *živjeti* kelihatan berbeda, tetapi keduanya golongan *-im*. *Znati* dan *imati* golongan *-am*. Karena itu modul ini selalu mencantumkan kata kerja dalam **bentuk *ja***, bukan bentuk kamus — itulah bentuk yang benar-benar memberitahu golongannya. Golongan ketiga (*-em*: *pišem, idem, zovem*) dipasang di unit 6.",
+      "**Kata gantinya dibuang kalau tidak ditekankan.** *Govorim bosanski* sudah pasti \"saya berbicara bahasa Bosnia\". *Ja govorim bosanski* berarti \"kalau saya, saya bisa bahasa Bosnia\" — ada perbandingan tersembunyi di situ."
+     ]
+    },
+    {
+     "title": "Menyangkal dan bertanya",
+     "body": [
+      "Dua perkakas yang akan kamu pakai di setiap unit berikutnya, dan dua-duanya lebih sederhana daripada yang kamu duga."
+     ],
+     "table": {
+      "head": [
+       "Kata tanya",
+       "Cara baca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**ko**",
+        "ko",
+        "siapa",
+        "*Ko je to?* — Siapa itu?"
+       ],
+       [
+        "**šta**",
+        "syta",
+        "apa",
+        "*Šta radiš?* — Kamu sedang apa?"
+       ],
+       [
+        "**gdje**",
+        "gdye",
+        "di mana",
+        "*Gdje živiš?* — Kamu tinggal di mana?"
+       ],
+       [
+        "**odakle**",
+        "O-da-kle",
+        "dari mana",
+        "*Odakle si?* — Kamu dari mana?"
+       ],
+       [
+        "**kuda / gdje**",
+        "KU-da",
+        "ke mana",
+        "*Kuda ideš?* — Kamu mau ke mana?"
+       ],
+       [
+        "**kada / kad**",
+        "KA-da",
+        "kapan",
+        "*Kada radiš?* — Kapan kamu kerja?"
+       ],
+       [
+        "**zašto**",
+        "ZASY-to",
+        "kenapa",
+        "*Zašto učiš bosanski?*"
+       ],
+       [
+        "**kako**",
+        "KA-ko",
+        "bagaimana",
+        "*Kako se kaže…?*"
+       ],
+       [
+        "**koliko**",
+        "KO-li-ko",
+        "berapa",
+        "*Koliko košta?* — Berapa harganya?"
+       ],
+       [
+        "**koji / koja / koje**",
+        "KO-yi",
+        "yang mana",
+        "*Koje jezike govoriš?*"
+       ]
+      ]
+     },
+     "after": [
+      "**Menyangkal: *ne* di depan kata kerja, ditulis terpisah.** *Ne znam. Ne razumijem. Ne živim u Mostaru.* Hanya tiga kata kerja yang meleburkan ingkarnya jadi satu kata, dan ketiganya sangat sering dipakai: *nisam* (dari *biti*), *nemam* (dari *imati*), *neću* (dari *htjeti*, mau).",
+      "**Bertanya ya/tidak punya dua cara yang sama benarnya.** Pertama, *da li* di depan kalimat: **Da li** *govoriš bosanski?* Kedua, *li* diselipkan sesudah kata kerjanya: *Govoriš* **li** *bosanski?* Keduanya dipakai sehari-hari di Bosnia; yang kedua sedikit lebih ringkas dan lebih sering muncul dalam tulisan. Dengan *biti*, bentuk panjanglah yang dipakai: *Jesi li umoran?*, *Jeste li Vi profesor?*",
+      "**Susunan katanya tidak perlu dibalik.** Berbeda dengan bahasa Inggris, kalimat tanya Bosnia bisa sama persis dengan kalimat berita — cukup nada suaranya yang naik: *Ti si student?* sudah merupakan pertanyaan yang sah dan sangat lazim.",
+      "**Kata tanya selalu di depan.** *Gdje živiš?*, *Šta radiš?*, *Koliko košta?* — tak pernah di belakang seperti \"kamu tinggal di mana?\" dalam bahasa Indonesia."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Negara, bangsa, bahasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kolom yang di bahasa Indonesia sering satu kata (\"Jerman\" = negaranya, orangnya, bahasanya) di bahasa Bosnia selalu tiga kata berbeda. Sekali polanya kelihatan, sisanya bisa kamu tebak."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Država (negara)",
+      "Čovjek (lelaki / perempuan)",
+      "Jezik (bahasa)"
+     ],
+     "rows": [
+      [
+       "**Bosna i Hercegovina**",
+       "*Bosanac / Bosanka*",
+       "*bosanski*"
+      ],
+      [
+       "**Indonezija**",
+       "*Indonežanin / Indonežanka*",
+       "*indonežanski*"
+      ],
+      [
+       "**Hrvatska**",
+       "*Hrvat / Hrvatica*",
+       "*hrvatski*"
+      ],
+      [
+       "**Srbija**",
+       "*Srbin / Srpkinja*",
+       "*srpski*"
+      ],
+      [
+       "**Turska**",
+       "*Turčin / Turkinja*",
+       "*turski*"
+      ],
+      [
+       "**Njemačka**",
+       "*Nijemac / Njemica*",
+       "*njemački*"
+      ],
+      [
+       "**Engleska**",
+       "*Englez / Engleskinja*",
+       "*engleski*"
+      ],
+      [
+       "**Amerika**",
+       "*Amerikanac / Amerikanka*",
+       "*engleski*"
+      ],
+      [
+       "**Francuska**",
+       "*Francuz / Francuskinja*",
+       "*francuski*"
+      ],
+      [
+       "**Italija**",
+       "*Italijan / Italijanka*",
+       "*italijanski*"
+      ],
+      [
+       "**Malezija**",
+       "*Malezijac / Malezijka*",
+       "*malajski*"
+      ],
+      [
+       "**Japan**",
+       "*Japanac / Japanka*",
+       "*japanski*"
+      ],
+      [
+       "**Kina**",
+       "*Kinez / Kineskinja*",
+       "*kineski*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nama bahasa **selalu berakhir *-ski* dan selalu huruf kecil**. Kalau kamu tahu nama negaranya, bahasanya hampir selalu bisa diturunkan sendiri. Untuk mengatakan \"dalam bahasa Bosnia\", pakai *na*: *Kako se to kaže na bosanskom?*"
+    },
+    {
+     "type": "kotak",
+     "title": "Dari mana — dan di mana",
+     "items": [
+      "**Asal: *iz* + ekor genitif.** *Ja sam iz Indonezije. On je iz Mostara. Oni su iz Njemačke.* Nama berakhir *-a* ganti ekornya jadi *-e*; nama berakhir huruf mati ditambahi *-a*.",
+      "**Tempat tinggal: *u* + ekor lokatif.** *Živim u Sarajevu. Ona živi u Jakarti. Oni žive u Njemačkoj.* Ekornya *-u* untuk kata lelaki dan netral, *-i* untuk kata perempuan.",
+      "**Untuk sekarang, hafalkan kalimat utuhnya, bukan tabelnya.** Dua ekor ini punya unitnya sendiri — genitif di unit 8, lokatif di unit 9 — dan di sana semuanya akan masuk akal sekaligus. Yang penting hari ini: telingamu sudah mendengar bahwa nama tempat *memang berubah*, jadi nanti tidak terasa seperti kejutan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Zanimanja — menyebut pekerjaan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pertanyaannya ada dua bentuk yang sama-sama lazim: *Šta si po zanimanju?* (\"apa kamu menurut pekerjaan?\") dan *Čime se baviš?* (\"dengan apa kamu menyibukkan diri?\"). Jawabannya tanpa kata sandang, persis bahasa Indonesia: *Programer sam.*"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Lelaki",
+      "Perempuan",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*student*",
+       "*studentica*",
+       "mahasiswa"
+      ],
+      [
+       "*profesor*",
+       "*profesorica*",
+       "dosen; guru SMA"
+      ],
+      [
+       "*nastavnik*",
+       "*nastavnica*",
+       "guru"
+      ],
+      [
+       "*ljekar / doktor*",
+       "*ljekarka / doktorica*",
+       "dokter"
+      ],
+      [
+       "*inženjer*",
+       "*inženjerka*",
+       "insinyur"
+      ],
+      [
+       "*programer*",
+       "*programerka*",
+       "programer"
+      ],
+      [
+       "*novinar*",
+       "*novinarka*",
+       "wartawan"
+      ],
+      [
+       "*pravnik*",
+       "*pravnica*",
+       "ahli hukum"
+      ],
+      [
+       "*konobar*",
+       "*konobarica*",
+       "pelayan restoran"
+      ],
+      [
+       "*kuhar*",
+       "*kuharica*",
+       "juru masak"
+      ],
+      [
+       "*prodavač*",
+       "*prodavačica*",
+       "penjaga toko"
+      ],
+      [
+       "*vozač*",
+       "*vozačica*",
+       "sopir"
+      ],
+      [
+       "*radnik*",
+       "*radnica*",
+       "pekerja, buruh"
+      ],
+      [
+       "*penzioner*",
+       "*penzionerka*",
+       "pensiunan"
+      ],
+      [
+       "*medicinski tehničar*",
+       "*medicinska sestra*",
+       "perawat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Polanya hampir selalu sama: bentuk perempuan dibuat dengan menambahkan **-ica** atau **-ka** pada bentuk lelakinya. Kalau kamu lupa bentuk perempuannya, memakai bentuk lelaki tidak akan membuat orang salah paham — tetapi bentuk perempuan terdengar jauh lebih wajar, dan di Bosnia hampir selalu dipakai."
+    },
+    {
+     "type": "p",
+     "text": "Tiga kata yang menolong saat kamu belum punya jawaban rapi: *Tražim posao* (saya sedang mencari kerja), *Ne radim* (saya tidak bekerja), *Studiram* (saya sedang kuliah). Dan satu kalimat yang akan sering kamu butuhkan di Sarajevo: *Radim za jednu firmu iz Indonezije* — saya bekerja untuk sebuah perusahaan dari Indonesia."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "odakle",
+   "baca": "O-da-kle",
+   "id": "dari mana"
+  },
+  {
+   "bs": "iz",
+   "baca": "iz",
+   "id": "dari (asal)"
+  },
+  {
+   "bs": "gdje",
+   "baca": "gdye",
+   "id": "di mana"
+  },
+  {
+   "bs": "živjeti — *živim*",
+   "baca": "ZHIV-ye-ti",
+   "id": "tinggal, hidup"
+  },
+  {
+   "bs": "raditi — *radim*",
+   "baca": "RA-di-ti",
+   "id": "bekerja; mengerjakan"
+  },
+  {
+   "bs": "govoriti — *govorim*",
+   "baca": "go-VO-ri-ti",
+   "id": "berbicara"
+  },
+  {
+   "bs": "znati — *znam*",
+   "baca": "ZNA-ti",
+   "id": "tahu"
+  },
+  {
+   "bs": "učiti — *učim*",
+   "baca": "U-chi-ti",
+   "id": "belajar; mengajar"
+  },
+  {
+   "bs": "razumjeti — *razumijem*",
+   "baca": "ra-ZU-mye-ti",
+   "id": "mengerti"
+  },
+  {
+   "bs": "značiti — *znači*",
+   "baca": "ZNA-chi-ti",
+   "id": "berarti"
+  },
+  {
+   "bs": "jezik (lk)",
+   "baca": "YE-zik",
+   "id": "bahasa; lidah"
+  },
+  {
+   "bs": "firma (pr)",
+   "baca": "FIR-ma",
+   "id": "perusahaan"
+  },
+  {
+   "bs": "godina (pr)",
+   "baca": "go-DI-na",
+   "id": "tahun"
+  },
+  {
+   "bs": "riječ (pr)",
+   "baca": "ri-YECH",
+   "id": "kata"
+  },
+  {
+   "bs": "sada / sad",
+   "baca": "SA-da",
+   "id": "sekarang"
+  },
+  {
+   "bs": "već",
+   "baca": "vech",
+   "id": "sudah"
+  },
+  {
+   "bs": "malo",
+   "baca": "MA-lo",
+   "id": "sedikit"
+  },
+  {
+   "bs": "svaki dan",
+   "baca": "SVA-ki dan",
+   "id": "tiap hari"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Kamu dari mana? — Saya dari Indonesia.",
+    "Sekarang saya tinggal di Sarajevo.",
+    "Kamu kerja apa?",
+    "Saya bisa bahasa Inggris dan sedikit bahasa Bosnia.",
+    "Saya tidak mengerti semuanya.",
+    "Kamu tahu apa artinya?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Ja ____ (raditi) u firmi.",
+    "Ti ____ (živjeti) u Mostaru?",
+    "Amina ____ (govoriti) engleski.",
+    "Mi ____ (učiti) bosanski.",
+    "Vi ____ (znati) Emira?",
+    "Oni ____ (raditi) svaki dan.",
+    "Budi ne ____ (razumjeti) sve."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "si / odakle / ?",
+    "u / živim / Sarajevu",
+    "jezike / govoriš / koje / ?",
+    "razumijem / ne / sve",
+    "dan / učim / svaki / bosanski"
+   ]
+  }
+ ],
+ "answers": [
+  "Odakle si? Iz Indonezije sam. — Sada živim u Sarajevu. — Šta radiš? — Govorim engleski i malo bosanski. — Ne razumijem sve. — Znaš li šta znači?",
+  "radim — živiš — govori — učimo — znate — rade — razumije",
+  "Odakle si? — Živim u Sarajevu. — Koje jezike govoriš? — Ne razumijem sve. — Učim bosanski svaki dan."
+ ]
+}
