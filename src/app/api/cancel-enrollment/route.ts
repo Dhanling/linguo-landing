@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { pastikanPemilikRegistrasi } from "@/lib/pemilikRegistrasi";
 
 // ── enrollment-student-cancel-v1 ─────────────────────────────────────────
 // Dipanggil saat siswa klik "Batalkan pendaftaran" di kartu Belum Bayar
@@ -42,6 +43,15 @@ export async function POST(req: NextRequest) {
     const rows = await getRes.json();
     const reg = Array.isArray(rows) ? rows[0] : rows;
     if (!reg) return NextResponse.json({ error: "Registrasi tidak ditemukan." }, { status: 404 });
+
+    /* [reg-hapus-butuh-pemilik-v1] Endpoint ini MENGHAPUS baris registrasi dengan
+       service role. Dulu modalnya cuma `registrationId` di body — tanpa sesi,
+       tanpa cek pemilik — jadi siapa pun yang pernah melihat sebuah id (id-nya
+       muncul di URL /akun/kelas/<id>) bisa membatalkan pendaftaran orang lain. */
+    const pagar = await pastikanPemilikRegistrasi(req, reg.students?.email);
+    if (!pagar.ok) {
+      return NextResponse.json({ error: pagar.error }, { status: pagar.status });
+    }
 
     // 2. Insert lead follow-up (non-fatal kalau gagal — tetap lanjut delete).
     const student = reg.students || {};

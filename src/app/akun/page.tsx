@@ -2942,9 +2942,15 @@ export default function AkunPage() {
       const expiredIds: string[] = [];
       for (const r of stale) {
         try {
+          /* [reg-hapus-butuh-pemilik-v1] Endpointnya sekarang minta bukti
+             pemilik — bawa access token sesi siswa ini. */
+          const { data: { session: sesiExp } } = await supabase.auth.getSession();
           const res = await fetch("/api/expire-enrollment", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              ...(sesiExp?.access_token ? { Authorization: `Bearer ${sesiExp.access_token}` } : {}),
+            },
             body: JSON.stringify({ registration_id: r.id }),
           });
           const data = await res.json().catch(() => ({}));
@@ -2980,9 +2986,14 @@ export default function AkunPage() {
     const reg = cancelTarget;
     setCancelling(true);
     try {
+      /* [reg-hapus-butuh-pemilik-v1] idem — tanpa token, server menolak. */
+      const { data: { session: sesiBatal } } = await supabase.auth.getSession();
       const res = await fetch("/api/cancel-enrollment", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(sesiBatal?.access_token ? { Authorization: `Bearer ${sesiBatal.access_token}` } : {}),
+        },
         body: JSON.stringify({ registrationId: reg.id }),
       });
       if (!res.ok) {

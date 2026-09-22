@@ -108,6 +108,27 @@ export async function POST(req: NextRequest) {
     // MODE UPDATE — enrich baris yang udah ada dengan kontak.
     // ───────────────────────────────────────────────────────────────
     if (id) {
+      /* [placement-update-sekali-v1] Mode update dulu menulis ke baris MANA PUN
+         yang id-nya diberikan — siapa pun yang tahu sebuah id bisa menimpa nama,
+         email & WhatsApp hasil tes orang lain (dan memicu lead atas nama itu).
+         Alur aslinya cuma butuh SATU kali tulis: hasil tes tersimpan dulu tanpa
+         kontak, lalu pengisi form melengkapinya. Jadi barisnya kini boleh diisi
+         selama kontaknya masih kosong — atau diulang oleh email yang sama
+         (pengiriman ganda / perbaikan di sesi yang sama). */
+      const cekRes = await fetch(
+        SUPABASE_URL + "/rest/v1/placement_results?id=eq." + encodeURIComponent(id) + "&select=email&limit=1",
+        { headers: baseHeaders },
+      );
+      const cekRows = cekRes.ok ? await cekRes.json().catch(() => []) : [];
+      const emailLama = String(cekRows?.[0]?.email ?? "").trim().toLowerCase();
+      const emailBaru = String(email ?? "").trim().toLowerCase();
+      if (emailLama && emailLama !== emailBaru) {
+        return NextResponse.json(
+          { success: false, error: "Hasil tes ini sudah terisi kontak lain." },
+          { status: 403 },
+        );
+      }
+
       const updatePayload: Record<string, any> = {};
       if (name) updatePayload.name = name;
       if (email) updatePayload.email = email;

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { pastikanPemilikRegistrasi } from "@/lib/pemilikRegistrasi";
 
 // ── enrollment-24h-autoexpire-v1 ─────────────────────────────────────────
 // Dipanggil client saat dashboard load untuk tiap registration yang masih
@@ -42,6 +43,15 @@ export async function POST(req: NextRequest) {
     const rows = await getRes.json();
     const reg = Array.isArray(rows) ? rows[0] : rows;
     if (!reg) return NextResponse.json({ expired: false, reason: "not-found" });
+
+    /* [reg-hapus-butuh-pemilik-v1] Sama seperti cancel-enrollment: yang
+       menghapus harus terbukti pemilik registrasinya (atau staf). Syarat umur
+       24 jam & status "Menunggu Pembayaran" di bawah tetap berlaku — pagar ini
+       menambah "siapa", bukan menggantikan "kapan". */
+    const pagar = await pastikanPemilikRegistrasi(req, reg.students?.email);
+    if (!pagar.ok) {
+      return NextResponse.json({ expired: false, reason: "forbidden" }, { status: pagar.status });
+    }
 
     // 2. Validasi: harus masih Menunggu Pembayaran & umur > 24 jam.
     if (reg.status !== "Menunggu Pembayaran") {
