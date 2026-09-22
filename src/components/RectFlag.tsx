@@ -30,6 +30,11 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   // hilang jadi Globe abu-abu — kasus nyata: kelas Private "Uzbek" di Kelas & Materi.
   uzbek: "uz", irish: "ie", bosnian: "ba", farsi: "ir", "english-british": "gb",
   "traditional-chinese": "tw",
+  // [ebook-bahasa-dari-katalog-v1] Daftar bahasa /produk/ebook sekarang dibaca
+  // dari katalog, jadi benderanya dicari pakai `digital_products.language`
+  // apa adanya — nama-nama ini tak pernah lewat sini sebelumnya.
+  myanmar: "mm", indonesian: "id", "egyptian arabic": "eg",
+  "taiwanese mandarin": "tw", pashto: "af", basque: "es",
 };
 
 // [perf:flags-lazy-v1] Kumpulan bendera blade-flags itu SATU modul berisi SVG

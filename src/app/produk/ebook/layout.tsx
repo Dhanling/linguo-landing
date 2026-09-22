@@ -16,9 +16,9 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   path: "/produk/ebook",
-  title: "E-Book Belajar Bahasa Asing — 20 Bahasa, Mulai Rp 79.000 | Linguo.id",
+  title: "E-Book Belajar Bahasa Asing — 50+ Bahasa, Mulai Rp 79.000 | Linguo.id",
   description:
-    "E-book belajar bahasa asing format PDF: kosakata praktis, contoh percakapan, dan latihan soal. Tersedia 20 bahasa, akses selamanya, update gratis. Mulai Rp 79.000.",
+    "E-book belajar bahasa asing format PDF: kosakata praktis, contoh percakapan, dan latihan soal. Tersedia 50+ bahasa, Unit 1 bisa dibaca gratis, akses selamanya, update gratis. Mulai Rp 79.000.",
   keywords: [
     "ebook belajar bahasa",
     "buku digital bahasa asing",

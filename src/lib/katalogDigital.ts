@@ -77,6 +77,13 @@ const NAMA_BAHASA_ID: Record<string, string> = {
   slovenian: "Slovenia", spanish: "Spanyol", sundanese: "Sunda", swahili: "Swahili",
   swedish: "Swedia", tagalog: "Tagalog", thai: "Thailand", turkish: "Turki",
   ukrainian: "Ukraina", urdu: "Urdu", uzbek: "Uzbek", vietnamese: "Vietnam",
+  // [ebook-bahasa-dari-katalog-v1] Bahasa yang sudah punya modul terbit tapi
+  // belum pernah dinamai di sini — sebelumnya kartunya berjudul nama Inggris.
+  // Nama di sini juga yang dikirim checkout /produk/ebook, jadi tiap tambahan
+  // WAJIB punya pasangan di EBOOK_LANG_TO_CATALOG (edge fn xendit-webhook).
+  bulgarian: "Bulgaria", "egyptian arabic": "Arab Mesir", irish: "Irlandia",
+  latin: "Latin", mongolian: "Mongolia", pashto: "Pashto", romanian: "Rumania",
+  "taiwanese mandarin": "Mandarin Taiwan",
 };
 
 export function labelBahasa(raw: string) {
