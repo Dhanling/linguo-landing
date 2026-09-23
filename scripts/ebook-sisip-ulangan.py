@@ -23,6 +23,11 @@ for n, (f, u) in units.items():
 
 if cek:
     sys.exit(0)
+if not any(kunci.values()):
+    # Penanda sudah dibuang di jalan sebelumnya — merakit ulang sekarang justru
+    # menghapus bagian ulangan yang sudah ada. Berhenti tanpa menyentuh berkas.
+    print(f"{slug}: tak ada baris kunci (sudah pernah disisipkan?) — tak ada yang diubah")
+    sys.exit(0)
 
 for n, (f, u) in units.items():
     src = n - 2
