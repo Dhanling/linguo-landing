@@ -1,0 +1,695 @@
+{
+ "title": "Katanya… — kalimat tak langsung",
+ "title_target": "Powiedział, że…",
+ "goal": "Meneruskan pesan, pertanyaan, dan perintah orang lain di kantor. Titik tata bahasanya: **mowa zależna** — *powiedział, że…; zapytała, czy…; kazał mi…* — dengan kala yang **tidak bergeser** (berbeda dari bahasa Inggris), serta kata kerja pengantar *twierdzić, dodać, obiecać, przyznać*.",
+ "bekal": [
+  "meneruskan ucapan orang lain tanpa mengubah kalanya: *Powiedziała, że jest w Warszawie i wróci w środę.*",
+  "meneruskan pertanyaan dengan *czy* atau kata tanya: *Zapytała, czy skończyliśmy. Pytał, kiedy będzie serwer.*",
+  "memilih kata kerja pengantar yang tepat: *obiecać, przyznać, dodać, twierdzić, przekazać*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co mówiła szefowa?",
+   "intro": "Senin pagi di Kodex. Rapat tim dijadwalkan pukul sembilan, tapi kursi pani Magdalena kosong. Pagi-pagi ia sudah menelepon Budi, dan sekarang Marek dan Ewa ingin tahu semua isi percakapan itu.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Budi, gdzie jest szefowa? Mieliśmy spotkanie o dziewiątej.",
+     "id": "Budi, bos di mana? Kita kan ada rapat jam sembilan.",
+     "literal": "Budi, di-mana adalah bos-pr? kami-punya-lampau pertemuan pada kesembilan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzwoniła rano. Powiedziała, że jest w Warszawie u klienta.",
+     "id": "Tadi pagi dia nelepon. Katanya dia di Warsawa, di tempat klien.",
+     "literal": "ia-menelepon-lampau-pr pagi. ia-berkata-lampau-pr, bahwa adalah di Warsawa pada klien."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Znowu? Mówiła, kiedy wróci?",
+     "id": "Lagi? Dia bilang kapan balik?",
+     "literal": "lagi? ia-berkata-lampau-pr, kapan ia-akan-kembali?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Powiedziała, że wróci w środę wieczorem.",
+     "id": "Katanya dia balik Rabu malam.",
+     "literal": "ia-berkata-lampau-pr, bahwa ia-akan-kembali di Rabu malam."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "A co z prezentacją dla banku?",
+     "id": "Terus presentasi buat bank gimana?",
+     "literal": "dan apa dengan presentasi untuk bank?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zapytała, czy skończyliśmy już testy.",
+     "id": "Dia nanya apakah kita sudah selesai tes.",
+     "literal": "ia-bertanya-lampau-pr, apakah kami-selesai-lampau sudah tes-jamak."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Prawie. Zostały nam dwa moduły.",
+     "id": "Hampir. Tinggal dua modul lagi.",
+     "literal": "hampir. mereka-tersisa-lampau-pr kami dua modul."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wie o tym. Twierdzi, że zdążymy do piątku.",
+     "id": "Dia tahu. Menurut dia kita bakal keburu, paling lambat Jumat.",
+     "literal": "ia-tahu tentang itu. ia-bersikeras, bahwa kami-akan-sempat sampai Jumat."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Łatwo jej mówić. Co jeszcze?",
+     "id": "Gampang dia ngomong. Apa lagi?",
+     "literal": "mudah dia berbicara. apa lagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kazała przekazać, żebyście nie zmieniali kodu bez przeglądu.",
+     "id": "Dia pesan supaya kalian jangan ubah kode tanpa review.",
+     "literal": "ia-menyuruh-lampau-pr meneruskan, agar-kalian tidak mengubah-lampau kode tanpa pemeriksaan."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "A wspomniała coś o moim urlopie?",
+     "id": "Terus dia nyinggung soal cuti saya nggak?",
+     "literal": "dan ia-menyinggung-lampau-pr sesuatu tentang milikku cuti?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Obiecała, że podpisze twój wniosek po powrocie.",
+     "id": "Iya. Dia janji tanda tangan pengajuanmu sesudah pulang.",
+     "literal": "ya. ia-berjanji-lampau-pr, bahwa ia-akan-menandatangani milikmu permohonan sesudah kepulangan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "A o mnie nic nie mówiła?",
+     "id": "Soal saya dia nggak bilang apa-apa?",
+     "literal": "dan tentang saya tidak-ada tidak ia-berkata-lampau-pr?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mówiła. Dodała, że czeka na twój raport od piątku.",
+     "id": "Bilang kok. Katanya dia nunggu laporanmu sejak Jumat.",
+     "literal": "ia-berkata-lampau-pr. ia-menambahkan-lampau-pr, bahwa ia-menunggu untuk milikmu laporan sejak Jumat."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "No tak. Przyznaję, że o nim zapomniałem.",
+     "id": "Oh iya. Saya ngaku, saya lupa soal itu.",
+     "literal": "nah ya. saya-mengakui, bahwa tentang dia saya-lupa-lampau-lk."
+    }
+   ],
+   "notes": [
+    "**Powiedziała, że jest w Warszawie** — pani Magdalena berkata *Jestem w Warszawie*, dan Budi meneruskannya dengan *jest*, bukan *była*. Bahasa Polandia **tidak menggeser kala** dalam kalimat tak langsung. Yang berubah hanya orangnya (*jestem → jest*), persis seperti bahasa Indonesia: \"katanya dia di Warsawa\".",
+    "**Mówiła, kiedy wróci?** Kalau kamu bertanya apakah suatu hal *disebut* sama sekali, pakai imperfektif *mówiła*. *Powiedziała* dipakai untuk melaporkan isi ucapan yang jelas. Kalimat Budi berikutnya memakai *powiedziała*, dengan futur *wróci* yang juga tidak bergeser.",
+    "**Zapytała, czy skończyliśmy** — pertanyaan ya/tidak diteruskan dengan *czy*. Kata ganti bergeser sesuai sudut pandang: pani Magdalena bertanya *Skończyliście?* (kalian), Budi melaporkan *czy skończyliśmy* (kami).",
+    "**Zostały nam dwa moduły** — *zostać* + celownik = \"tersisa bagi\". Sesudah angka 2–4 kata kerjanya jamak: *zostały dwa moduły*, tetapi *zostało pięć modułów*.",
+    "**Łatwo jej mówić** — \"gampang buat dia bilang begitu\". Ungkapan tetap untuk orang yang memberi target tanpa ikut bekerja. Ganti kata gantinya sesuai orang: *łatwo ci mówić, łatwo mu mówić*.",
+    "**Kazała przekazać, żebyście…** — perintah yang diteruskan memakai *żeby* dari unit 3. Pani Magdalena berkata *Nie zmieniajcie kodu!*, dan perintah itu berubah menjadi *żebyście nie zmieniali kodu*."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat langsung → tak langsung",
+     "body": [
+      "Tiga jenis kalimat, tiga penghubung: pernyataan dengan *że*, pertanyaan dengan *czy* atau kata tanya, perintah dengan *żeby*. Kalanya tetap seperti aslinya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat asli",
+       "Diteruskan",
+       "Penghubung"
+      ],
+      "rows": [
+       [
+        "*„Jestem w Warszawie.”*",
+        "*Powiedziała, że jest w Warszawie.*",
+        "*że*"
+       ],
+       [
+        "*„Wrócę w środę.”*",
+        "*Powiedziała, że wróci w środę.*",
+        "*że*"
+       ],
+       [
+        "*„Skończyliście testy?”*",
+        "*Zapytała, czy skończyliśmy testy.*",
+        "*czy*"
+       ],
+       [
+        "*„Kiedy będzie serwer?”*",
+        "*Zapytał, kiedy będzie serwer.*",
+        "kata tanya"
+       ],
+       [
+        "*„Nie zmieniajcie kodu!”*",
+        "*Kazała, żebyśmy nie zmieniali kodu.*",
+        "*żeby*"
+       ],
+       [
+        "*„Zadzwoń do klienta!”*",
+        "*Kazała mi zadzwonić do klienta.*",
+        "*kazać* + inf."
+       ]
+      ]
+     },
+     "after": [
+      "**Tidak ada pergeseran kala.** Kalau orang Inggris berkata *She said she was in Warsaw*, orang Polandia tetap berkata *Powiedziała, że jest w Warszawie*. Kalau kamu menulis *że była*, artinya berubah: \"bahwa (tadinya) ia di Warsawa\".",
+      "**Koma wajib** sebelum *że, czy, żeby*, dan sebelum kata tanya yang membuka anak kalimat: *Zapytał, kiedy…*.",
+      "Urutan kata dalam pertanyaan tak langsung sama dengan pertanyaan biasa; tidak ada pembalikan seperti bahasa Inggris."
+     ]
+    },
+    {
+     "title": "Kata kerja pengantar",
+     "body": [
+      "*Powiedzieć* dan *zapytać* cukup untuk bertahan hidup, tapi laporan yang hidup memakai kata kerja yang menunjukkan **cara** orang berbicara."
+     ],
+     "table": {
+      "head": [
+       "ndk / dk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*mówić / powiedzieć*",
+        "berkata",
+        "*Powiedział, że jest chory.*"
+       ],
+       [
+        "*pytać / zapytać* (+ B.)",
+        "bertanya",
+        "*Zapytała mnie, czy mam czas.*"
+       ],
+       [
+        "*odpowiadać / odpowiedzieć* (+ C.)",
+        "menjawab",
+        "*Odpowiedziałam mu, że nie wiem.*"
+       ],
+       [
+        "*twierdzić* (ndk)",
+        "berpendapat, bersikeras",
+        "*Twierdzi, że zdążymy.*"
+       ],
+       [
+        "*dodawać / dodać*",
+        "menambahkan",
+        "*Dodała, że czeka na raport.*"
+       ],
+       [
+        "*obiecywać / obiecać* (+ C.)",
+        "berjanji",
+        "*Obiecał mi, że przyjdzie.*"
+       ],
+       [
+        "*przyznawać / przyznać*",
+        "mengakui",
+        "*Przyznaję, że zapomniałem.*"
+       ],
+       [
+        "*wspominać / wspomnieć* (o + Ms.)",
+        "menyinggung",
+        "*Wspomniała o urlopie.*"
+       ],
+       [
+        "*przekazywać / przekazać* (+ C.)",
+        "meneruskan (pesan)",
+        "*Przekaż mu, że dzwoniłam.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Twierdzić* sering membawa sedikit jarak: *Twierdzi, że zdążymy* bisa berarti \"menurut dia sih kita keburu\" — pembicara belum tentu setuju.",
+      "Dalam laporan tentang percakapan yang sudah selesai, bentuk perfektif paling umum: *powiedziała, zapytał, obiecała, dodał*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Przekazałeś wszystko?",
+   "intro": "Sore harinya pani Magdalena menelepon lagi dari Warsawa. Kali ini arah pesannya terbalik: Budi melaporkan apa yang dikatakan dan ditanyakan tim.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Budi, przekazałeś wszystko zespołowi?",
+     "id": "Budi, semua sudah kamu sampaikan ke tim?",
+     "literal": "Budi, kamu-meneruskan-lampau-lk semuanya tim?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Marek przyznał, że zapomniał o raporcie.",
+     "id": "Sudah. Marek mengaku lupa soal laporannya.",
+     "literal": "ya. Marek ia-mengakui-lampau-lk, bahwa ia-lupa-lampau-lk tentang laporan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Typowe. A kiedy go wyśle?",
+     "id": "Khas. Lalu kapan dia kirim?",
+     "literal": "khas. dan kapan dia ia-akan-mengirim?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Obiecał, że wyśle go dziś wieczorem.",
+     "id": "Dia janji kirim malam ini.",
+     "literal": "ia-berjanji-lampau-lk, bahwa ia-akan-mengirim dia hari-ini malam."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze. Czy ktoś o coś pytał?",
+     "id": "Baik. Ada yang menanyakan sesuatu?",
+     "literal": "baik. apakah seseorang tentang sesuatu ia-bertanya-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ewa pyta, czy może wziąć urlop od dwudziestego.",
+     "id": "Ewa bertanya apakah dia boleh ambil cuti mulai tanggal dua puluh.",
+     "literal": "Ewa ia-bertanya, apakah ia-bisa mengambil cuti sejak kedua-puluh."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Może. A Marek chciał coś wiedzieć?",
+     "id": "Boleh. Marek mau tahu sesuatu?",
+     "literal": "ia-bisa. dan Marek ia-mau-lampau-lk sesuatu tahu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pytał, kiedy będzie nowy serwer.",
+     "id": "Dia nanya kapan server barunya ada.",
+     "literal": "ia-bertanya-lampau-lk, kapan akan-ada baru server."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Powiedz mu, że serwer będzie gotowy w przyszłym tygodniu.",
+     "id": "Bilang ke dia, servernya siap minggu depan.",
+     "literal": "katakanlah dia, bahwa server akan-ada siap di depan minggu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przekażę. A jak poszło spotkanie w banku?",
+     "id": "Saya sampaikan. Lalu rapat di bank bagaimana?",
+     "literal": "saya-akan-meneruskan. dan bagaimana ia-pergi-lampau pertemuan di bank?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze. Dyrektor zapytał tylko, dlaczego to tak długo trwa. Odpowiedziałam, że dobra robota wymaga czasu.",
+     "id": "Baik. Direkturnya cuma tanya kenapa lama sekali. Saya jawab, kerja yang bagus butuh waktu.",
+     "literal": "baik. direktur ia-bertanya-lampau-lk hanya, mengapa itu begitu lama ia-berlangsung. saya-menjawab-lampau-pr, bahwa baik kerja ia-menuntut waktu."
+    }
+   ],
+   "notes": [
+    "**Budi, przekazałeś…?** — pani Magdalena memakai *ty* kepada Budi, sedangkan Budi tetap memakai *pani* (lihat unit 1). Di banyak kantor Polandia, *pan / pani* + **nama depan** adalah jalan tengah antara resmi dan akrab: *pani Magdaleno, panie Tomku*. Nama depan Polandia berubah menjadi wołacz (*Tomku, Aniu*); nama *Budi* tetap *Budi*.",
+    "**Ewa pyta, czy może…** — Budi memakai kala kini *pyta* karena pertanyaan Ewa masih berlaku sekarang. Kalau pertanyaannya sudah basi, ia akan berkata *pytała*. Isi anak kalimatnya tetap *może*.",
+    "**Od dwudziestego** — tanggal diucapkan sebagai angka urutan dalam dopełniacz: *od dwudziestego* (mulai tanggal 20), *do piątego* (sampai tanggal 5). Kata *dnia* dan nama bulannya boleh dibuang kalau sudah jelas.",
+    "**Powiedz mu** — kepada Budi yang ia panggil *ty*, pani Magdalena cukup memakai imperatif. Kepada orang yang dipanggil *pan/pani* ia akan berkata *Proszę mu powiedzieć* (*proszę* + infinitif = perintah sopan). Budi menjawab cukup dengan satu kata: *Przekażę* (saya sampaikan).",
+    "**Odpowiedziałam, że…** — pani Magdalena perempuan, jadi *-łam*. Dalam percakapan, induk kalimat sering dibuang sama sekali: *— Co mu pani odpowiedziała? — Że dobra robota wymaga czasu.* Anak kalimat dengan *że* bisa berdiri sendiri sebagai jawaban.",
+    "**Wymaga czasu** — *wymagać* menuntut dopełniacz: *wymaga czasu, wymaga cierpliwości* (butuh kesabaran)."
+   ],
+   "grammars": [
+    {
+     "title": "Czy, bukan jeśli",
+     "body": [
+      "Penutur bahasa Inggris sering tergelincir karena *if* dipakai untuk dua hal. Bahasa Polandia memisahkannya dengan tegas, dan penutur Indonesia sebenarnya diuntungkan: *czy* = \"apakah\", *jeśli* = \"jika\"."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan langsung",
+       "Tak langsung",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*„Czy mogę wziąć urlop?”*",
+        "*Pyta, czy może wziąć urlop.*",
+        "*czy* tetap"
+       ],
+       [
+        "*„Masz czas?”*",
+        "*Zapytał, czy mam czas.*",
+        "*czy* wajib muncul"
+       ],
+       [
+        "*„Gdzie jesteś?”*",
+        "*Zapytała, gdzie jestem.*",
+        "kata tanya tetap"
+       ],
+       [
+        "*„Dlaczego to tak długo trwa?”*",
+        "*Zapytał, dlaczego to tak długo trwa.*",
+        "urutan kata tetap"
+       ],
+       [
+        "*„Jak poszło?”*",
+        "*Chciała wiedzieć, jak poszło.*",
+        "*chcieć wiedzieć*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam pertanyaan langsung *czy* boleh dibuang (*Masz czas?*), tetapi dalam pertanyaan tak langsung ia **wajib**: *Zapytał, czy mam czas*, tidak pernah *Zapytał, mam czas*.",
+      "*Nie wiem, czy przyjdzie* = saya tidak tahu apakah ia datang. *Jeśli przyjdzie, porozmawiamy* = kalau ia datang, kita bicara. Menukar keduanya adalah kesalahan, bukan sekadar gaya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyampaikan pesan di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Czy mogę coś przekazać?*",
+       "Ada pesan yang bisa saya sampaikan?"
+      ],
+      [
+       "*Dzwonił pan Nowak, prosił o kontakt.*",
+       "Pak Nowak menelepon, minta dihubungi."
+      ],
+      [
+       "*Zostawiła wiadomość, że się spóźni.*",
+       "Ia meninggalkan pesan bahwa ia terlambat."
+      ],
+      [
+       "*Mówi, że oddzwoni za godzinę.*",
+       "Katanya ia menelepon balik sejam lagi."
+      ],
+      [
+       "*Prosiła, żeby pan do niej zadzwonił.*",
+       "Ia minta Bapak meneleponnya."
+      ],
+      [
+       "*Nie wiem, czy zdąży.*",
+       "Saya tidak tahu apakah ia keburu."
+      ],
+      [
+       "*Podobno klient zmienił zdanie.*",
+       "Katanya klien berubah pikiran."
+      ],
+      [
+       "*Z tego, co wiem…*",
+       "Sejauh yang saya tahu…"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia punya \"katanya\" yang serba guna. Padanan paling dekat dalam bahasa Polandia adalah *podobno* (\"konon, katanya\"), yang menandai informasi yang kamu dengar dari orang lain tanpa menyebut siapa. Kalau sumbernya jelas, pakai kalimat tak langsung penuh: *Marek mówi, że…*. Dalam tulisan resmi, pakai *według* + dopełniacz: *według pani Magdaleny* (menurut Bu Magdalena)."
+    },
+    {
+     "type": "kotak",
+     "title": "Surel dan pesan kantor di Polandia",
+     "items": [
+      "Surel kerja hampir selalu dibuka dengan *Dzień dobry,* — bahkan kepada rekan yang akrab — lalu baris baru. Untuk orang yang belum dikenal atau lebih resmi: *Szanowna Pani, / Szanowny Panie,*.",
+      "Penutup paling umum dan aman: *Pozdrawiam* (salam), di atas namamu. *Z poważaniem* lebih resmi dan dipakai untuk surat ke instansi.",
+      "Lampiran disebut *załącznik*: *W załączniku przesyłam raport* (Terlampir saya kirimkan laporannya).",
+      "Di aplikasi obrolan kantor, pesan pendek tanpa salam dianggap wajar di antara rekan setim, tapi kepada atasan atau klien, *Dzień dobry* tetap aman."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berbagai cara berkata \"dia bilang\"",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Nuansa",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*zapewniać / zapewnić*",
+       "meyakinkan, menjamin",
+       "*Zapewnił mnie, że wszystko działa.*"
+      ],
+      [
+       "*zaznaczać / zaznaczyć*",
+       "menegaskan",
+       "*Zaznaczyła, że termin jest ostateczny.*"
+      ],
+      [
+       "*tłumaczyć / wytłumaczyć*",
+       "menjelaskan",
+       "*Wytłumaczył, dlaczego się spóźnił.*"
+      ],
+      [
+       "*narzekać* (ndk)",
+       "mengeluh",
+       "*Narzeka, że ma za dużo pracy.*"
+      ],
+      [
+       "*zaprzeczać / zaprzeczyć* (+ C.)",
+       "membantah",
+       "*Zaprzeczył, że wziął laptop.*"
+      ],
+      [
+       "*przypominać / przypomnieć* (+ C.)",
+       "mengingatkan",
+       "*Przypomniała nam, że jutro jest zebranie.*"
+      ],
+      [
+       "*prosić / poprosić*",
+       "meminta",
+       "*Poprosiła, żebym zamknął okno.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata kerja pengantar adalah tempat kamu menyelipkan pendapatmu tanpa berkata apa-apa. *Powiedział, że zdążymy* netral; *zapewnił, że zdążymy* terdengar meyakinkan; *twierdzi, że zdążymy* terdengar meragukan. Orang Polandia sangat peka pada perbedaan ini, terutama dalam rapat."
+    },
+    {
+     "type": "kotak",
+     "title": "Pesan otomatis yang akan kamu dengar",
+     "items": [
+      "*Abonent jest czasowo niedostępny.* — \"Nomor yang Anda tuju sedang tidak dapat dihubungi.\" Kalimat rekaman operator yang dikenal semua orang Polandia, sering dikutip sebagai lelucon untuk orang yang susah dihubungi.",
+      "*Proszę zostawić wiadomość po sygnale.* — \"Silakan tinggalkan pesan setelah nada.\" Kotak suaranya disebut *poczta głosowa*.",
+      "Saat meninggalkan pesan, sebut nama, alasan, dan permintaan: *Dzień dobry, mówi Budi z firmy Kodex. Dzwonię w sprawie umowy. Proszę o kontakt.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Kalau saya nggak harus kerja, saya bakal keliling dunia.",
+       "*Gdybym nie musiał pracować, pojechałbym dookoła świata.*"
+      ],
+      [
+       "Kalau saya, seandainya punya lebih banyak waktu, saya bakal buka kafe.",
+       "*A ja, gdybym miał więcej czasu, otworzyłbym kawiarnię.*"
+      ],
+      [
+       "Ania bakal mengajar les bahasa Inggris sambil ngopi.",
+       "*Ania prowadziłaby lekcje angielskiego przy kawie.*"
+      ],
+      [
+       "Sayang. Padahal saya bakal jadi pelanggan pertama kalian.",
+       "*Szkoda. Byłabym waszą pierwszą klientką.*"
+      ],
+      [
+       "Kalau kamu? Kamu bakal ngapain kalau menang sejuta złoty?",
+       "*A ty? Co byś zrobiła, gdybyś wygrała milion złotych?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "przekazywać (przekazuję) / przekazać (przekażę) (+ C.)",
+   "baca": "psye-ka-ZY-vac (psye-ka-ZU-ye) / psye-KA-zac (psye-KA-zye)",
+   "id": "meneruskan, menyampaikan"
+  },
+  {
+   "pl": "pytać (pytam) / zapytać (zapytam) (+ B., o + B.)",
+   "baca": "PY-tac (PY-tam) / za-PY-tac (za-PY-tam)",
+   "id": "bertanya"
+  },
+  {
+   "pl": "odpowiadać (odpowiadam) / odpowiedzieć (odpowiem) (+ C., na + B.)",
+   "baca": "od-po-VYA-dac (od-po-VYA-dam) / od-po-VYE-jyec (od-PO-vyem)",
+   "id": "menjawab"
+  },
+  {
+   "pl": "twierdzić (twierdzę) — ndk",
+   "baca": "TFYER-jic (TFYER-dze)",
+   "id": "berpendapat, bersikeras"
+  },
+  {
+   "pl": "dodawać (dodaję) / dodać (dodam)",
+   "baca": "do-DA-vac (do-DA-ye) / DO-dac (DO-dam)",
+   "id": "menambahkan"
+  },
+  {
+   "pl": "obiecywać (obiecuję) / obiecać (obiecam) (+ C.)",
+   "baca": "o-bye-TSY-vac (o-bye-TSU-ye) / o-BYE-tsac (o-BYE-tsam)",
+   "id": "berjanji"
+  },
+  {
+   "pl": "przyznawać (przyznaję) / przyznać (przyznam)",
+   "baca": "psyy-ZNA-vac (psyy-ZNA-ye) / PSYY-znac (PSYY-znam)",
+   "id": "mengakui"
+  },
+  {
+   "pl": "wspominać (wspominam) / wspomnieć (wspomnę) (o + Ms.)",
+   "baca": "fspo-MI-nac (fspo-MI-nam) / FSPOM-nyec (FSPOM-ne)",
+   "id": "menyinggung; mengenang"
+  },
+  {
+   "pl": "czy",
+   "baca": "cy",
+   "id": "apakah (juga dalam pertanyaan tak langsung)"
+  },
+  {
+   "pl": "szef (m) / szefowa (ż)",
+   "baca": "syef / sye-FO-va",
+   "id": "bos, atasan"
+  },
+  {
+   "pl": "zespół, zespołu (m)",
+   "baca": "ZES-puw, zes-PO-wu",
+   "id": "tim; grup musik"
+  },
+  {
+   "pl": "spotkanie (n)",
+   "baca": "spot-KA-nye",
+   "id": "rapat, pertemuan"
+  },
+  {
+   "pl": "wniosek, wniosku (m)",
+   "baca": "VNYO-sek, VNYOS-ku",
+   "id": "permohonan, pengajuan; kesimpulan"
+  },
+  {
+   "pl": "urlop (m)",
+   "baca": "UR-lop",
+   "id": "cuti"
+  },
+  {
+   "pl": "podpisywać (podpisuję) / podpisać (podpiszę)",
+   "baca": "pot-pi-SY-vac (pot-pi-SU-ye) / pot-PI-sac (pot-PI-sye)",
+   "id": "menandatangani"
+  },
+  {
+   "pl": "raport (m)",
+   "baca": "RA-port",
+   "id": "laporan"
+  },
+  {
+   "pl": "zdążyć (zdążę) — dk",
+   "baca": "ZDON-zyyc (ZDON-zye)",
+   "id": "sempat, keburu"
+  },
+  {
+   "pl": "wiadomość, wiadomości (ż)",
+   "baca": "vya-DO-mosyc, vya-do-MOSY-ci",
+   "id": "pesan; berita"
+  },
+  {
+   "pl": "wymagać (wymagam) (+ D.) — ndk",
+   "baca": "vy-MA-gac (vy-MA-gam)",
+   "id": "menuntut, membutuhkan"
+  },
+  {
+   "pl": "trwać (trwa) — ndk",
+   "baca": "trfac (trfa)",
+   "id": "berlangsung"
+  },
+  {
+   "pl": "zadowolony (z + D.)",
+   "baca": "za-do-vo-LO-ny",
+   "id": "puas (dengan)"
+  },
+  {
+   "pl": "przegląd kodu (m)",
+   "baca": "PSYEG-lont KO-du",
+   "id": "tinjauan kode (code review)"
+  },
+  {
+   "pl": "podobno",
+   "baca": "po-DOB-no",
+   "id": "katanya, konon"
+  },
+  {
+   "pl": "według (+ D.)",
+   "baca": "VED-wuk",
+   "id": "menurut"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia. Ingat: kala tidak bergeser.",
+   "items": [
+    "Ania bilang bahwa ia capek.",
+    "Tomek bertanya apakah kamu punya waktu.",
+    "Bu Magdalena berjanji akan membaca laporannya besok.",
+    "Marek bertanya kapan kita pulang. (futur)",
+    "Kasia mengakui bahwa ia lupa.",
+    "Bos (laki-laki) menyuruh saya menelepon klien."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ania powiedziała, ____ jest zmęczona. (że atau czy?)",
+    "Zapytałem Tomka, ____ ma czas. (że atau czy?)",
+    "Marek mówi, że jutro ____ w domu. (być, on, futur)",
+    "„Jestem głodna.” → Kasia powiedziała, że ____ głodna. (być)",
+    "„Kiedy wrócisz?” → Mama zapytała mnie, kiedy ____. (wrócić, ja)",
+    "„Zadzwoń do mnie!” → Ania prosiła, żebym do niej ____. (zadzwonić, ja, lk)",
+    "Pani Magdalena ____, że podpisze wniosek. (obiecać, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat tak langsung, dimulai dengan kata dalam kurung.",
+   "items": [
+    "„Jestem w pracy.” (Tomek powiedział)",
+    "„Czy masz klucze?” (Ania zapytała mnie)",
+    "„Gdzie jest dworzec?” (Turysta zapytał)",
+    "„Wyślę raport jutro.” (Marek obiecał)",
+    "„Nie spóźniaj się!” (Szefowa powiedziała mi; pembicara lk)",
+    "„Zapomniałam o spotkaniu.” (Ewa przyznała)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "że / powiedziała / jest / w / Warszawie",
+    "czy / zapytała / skończyliśmy / testy",
+    "obiecał / wyśle / że / go / dziś",
+    "kiedy / pytał / będzie / serwer / nowy",
+    "zapomniałem / przyznaję / o / że / nim"
+   ]
+  }
+ ],
+ "answers": [
+  "Ania powiedziała, że jest zmęczona. — Tomek zapytał, czy masz czas. — Pani Magdalena obiecała, że jutro przeczyta raport. — Marek zapytał, kiedy wrócimy. — Kasia przyznała, że zapomniała. — Szef kazał mi zadzwonić do klienta.",
+  "że — czy — będzie — jest — wrócę — zadzwonił — obiecała",
+  "Tomek powiedział, że jest w pracy. — Ania zapytała mnie, czy mam klucze. — Turysta zapytał, gdzie jest dworzec. — Marek obiecał, że wyśle raport jutro. — Szefowa powiedziała mi, żebym się nie spóźniał. — Ewa przyznała, że zapomniała o spotkaniu.",
+  "Powiedziała, że jest w Warszawie. — Zapytała, czy skończyliśmy testy. — Obiecał, że wyśle go dziś. — Pytał, kiedy będzie nowy serwer. — Przyznaję, że o nim zapomniałem."
+ ]
+}

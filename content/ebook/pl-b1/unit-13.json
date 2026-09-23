@@ -1,0 +1,766 @@
+{
+ "title": "Di kantor imigrasi — bahasa birokrasi dan sapaan resmi",
+ "title_target": "W urzędzie wojewódzkim",
+ "goal": "Mengurus izin tinggal di kantor pemerintah dan berbicara sopan dengan petugas, dosen, dan orang bergelar. Titik tata bahasanya: **pan / pani / państwo dalam semua kasus** (*panu, panią, państwa, z panem*), kata kerja orang ketiga untuk sapaan resmi, dan **sapaan bergelar** (*panie doktorze, pani profesor*).",
+ "bekal": [
+  "menyapa, bertanya, dan berterima kasih secara resmi: *Czy mogę panią o coś zapytać? Dziękuję panu.*",
+  "memakai sapaan bergelar untuk laki-laki dan perempuan: *panie doktorze, pani doktor*",
+  "mengenali kosakata formulir dan kantor: *wniosek, zaświadczenie, termin, złożyć dokumenty*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Chciałbym złożyć wniosek",
+   "intro": "Kantor urusan orang asing di Urząd Wojewódzki, Kraków. Izin tinggal Budi akan segera berakhir, jadi ia datang sesuai jadwal untuk mengajukan izin tinggal sementara yang baru. Nomor antreannya baru saja dipanggil.",
+   "lines": [
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Dzień dobry. Numer osiemnaście? Proszę usiąść. W jakiej sprawie pan przychodzi?",
+     "id": "Selamat pagi. Nomor delapan belas? Silakan duduk. Ada keperluan apa, Pak?",
+     "literal": "hari baik. nomor delapan-belas? saya-mohon duduk. dalam yang-mana urusan tuan datang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Chciałbym złożyć wniosek o kolejne zezwolenie na pobyt czasowy.",
+     "id": "Selamat pagi. Saya ingin mengajukan permohonan izin tinggal sementara yang berikutnya.",
+     "literal": "hari baik. saya-mau-andai-lk menyerahkan permohonan untuk berikutnya izin untuk tinggal sementara."
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Rozumiem. Czy jest pan umówiony na dzisiaj?",
+     "id": "Baik. Bapak sudah punya jadwal untuk hari ini?",
+     "literal": "saya-mengerti. apakah adalah tuan dijanjikan-lk untuk hari-ini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, na dziesiątą. Dostałem potwierdzenie mailem.",
+     "id": "Ya, jam sepuluh. Saya dapat konfirmasinya lewat surel.",
+     "literal": "ya, untuk kesepuluh. saya-mendapat-lampau-lk konfirmasi surel(N.)."
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Dobrze. Poproszę pana paszport i wypełniony wniosek.",
+     "id": "Baik. Saya minta paspor Bapak dan formulir yang sudah diisi.",
+     "literal": "baik. saya-akan-meminta tuan paspor dan diisi-lk permohonan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę. Tu są też zdjęcia i zaświadczenie z pracy.",
+     "id": "Silakan. Ini juga ada foto dan surat keterangan dari kantor.",
+     "literal": "silakan. di-sini mereka-adalah juga foto-foto dan keterangan dari kerja."
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Czy ma pan przy sobie umowę o pracę?",
+     "id": "Bapak membawa kontrak kerjanya?",
+     "literal": "apakah punya tuan di-dekat diri-sendiri kontrak tentang kerja?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oczywiście, oryginał i kopię.",
+     "id": "Tentu, yang asli dan fotokopinya.",
+     "literal": "tentu-saja, asli dan salinan."
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Dziękuję panu. Teraz jeszcze odciski palców. Proszę położyć palec tutaj.",
+     "id": "Terima kasih, Pak. Sekarang tinggal sidik jari. Silakan letakkan jari di sini.",
+     "literal": "saya-berterima-kasih tuan. sekarang masih cetakan jari-jari. saya-mohon meletakkan jari di-sini."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy mogę panią o coś zapytać?",
+     "id": "Boleh saya bertanya sesuatu, Bu?",
+     "literal": "apakah saya-bisa nyonya tentang sesuatu bertanya?"
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Słucham pana.",
+     "id": "Silakan, Pak.",
+     "literal": "saya-mendengarkan tuan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jak długo trzeba czekać na decyzję?",
+     "id": "Berapa lama harus menunggu keputusannya?",
+     "literal": "bagaimana lama perlu menunggu untuk keputusan?"
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Trudno powiedzieć, każda sprawa jest inna. O decyzji poinformujemy pana listownie.",
+     "id": "Sulit dikatakan, setiap perkara berbeda. Keputusannya akan kami beri tahukan kepada Bapak lewat surat.",
+     "literal": "sulit berkata, setiap urusan adalah lain. tentang keputusan kami-akan-memberitahu tuan lewat-surat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dziękuję bardzo. Czy to już wszystko?",
+     "id": "Terima kasih banyak. Apakah sudah semua?",
+     "literal": "saya-berterima-kasih sangat. apakah itu sudah semuanya?"
+    },
+    {
+     "speaker": "Urzędniczka:",
+     "text": "Tak. Proszę jeszcze tu podpisać. Życzę panu miłego dnia.",
+     "id": "Ya. Tolong tanda tangan di sini. Semoga hari Bapak menyenangkan.",
+     "literal": "ya. saya-mohon masih di-sini menandatangani. saya-mengharapkan tuan menyenangkan hari."
+    }
+   ],
+   "notes": [
+    "**W jakiej sprawie pan przychodzi?** — kalimat pembuka paling khas di kantor mana pun. *Sprawa* berarti \"urusan, perkara\"; *w jakiej sprawie* = \"soal apa\". Perhatikan kata kerjanya: *pan przychodzi*, orang ketiga, persis seperti A1 — *pan/pani* memakai kata kerja \"dia\", bukan \"kamu\".",
+    "**Poproszę pana paszport** — di sini *pana* adalah dopełniacz yang berfungsi sebagai kata milik: \"paspor (milik) Bapak\". Kata milik resmi tidak punya bentuk sendiri; kamu cukup memakai dopełniacz dan menaruhnya **di depan** kata bendanya: *pana paszport, pani wniosek, państwa dokumenty*.",
+    "**Czy mogę panią o coś zapytać?** — *zapytać* + B. orangnya + *o* + B. hal yang ditanyakan. *pani* dalam biernik berubah menjadi *panią* (sama dengan narzędnik: *z panią*); di luar dua kasus itu *pani* tidak berubah sama sekali, jadi *panią* layak dihafal lebih dulu.",
+    "**Słucham pana** — *słuchać* menuntut dopełniacz (*pana*, *pani*). Di kantor, di telepon, dan di toko, *Słucham?* atau *Słucham pana/pani* berarti \"silakan, saya mendengarkan\" — cara halus untuk mempersilakan orang bicara.",
+    "**Dziękuję panu, życzę panu** — dua kata kerja dengan celownik. *Dziękować* + C. sudah kamu kenal; *życzyć* + C. orang + D. hal yang diharapkan: *Życzę panu miłego dnia* (\"saya harapkan untuk Bapak hari yang menyenangkan\").",
+    "**Kolejne zezwolenie, bukan \"perpanjangan\".** Sehari-hari orang bilang *przedłużyć kartę pobytu* (memperpanjang karta pobytu), tapi secara resmi yang diajukan adalah izin baru. Syarat dan prosedurnya bisa berubah; selalu periksa situs resmi urząd wojewódzki tempatmu tinggal."
+   ],
+   "grammars": [
+    {
+     "title": "Pan, pani, państwo dalam semua kasus",
+     "body": [
+      "Ketiga kata ini berubah seperti kata benda biasa: *pan* seperti kata benda lk hidup, *pani* seperti kata sifat perempuan, *państwo* seperti jamak lk-orang. Dalam percakapan yang dituliskan — juga di buku ini — ketiganya ditulis dengan huruf kecil; di surat dan surel resmi ditulis dengan huruf besar sebagai tanda hormat (lihat bagian \"Surat dan surel resmi\")."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "*pan* (Bapak)",
+       "*pani* (Ibu)",
+       "*państwo* (Bapak-Ibu)",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "M.",
+        "*pan*",
+        "*pani*",
+        "*państwo*",
+        "*Czy pan wie…? Czy państwo wiedzą…?*"
+       ],
+       [
+        "D.",
+        "*pana*",
+        "*pani*",
+        "*państwa*",
+        "*Nie ma pana na liście. Państwa paszporty.*"
+       ],
+       [
+        "C.",
+        "*panu*",
+        "*pani*",
+        "*państwu*",
+        "*Dziękuję pani. Do widzenia państwu!*"
+       ],
+       [
+        "B.",
+        "*pana*",
+        "***panią***",
+        "*państwa*",
+        "*Proszę panią o podpis.*"
+       ],
+       [
+        "N.",
+        "*z panem*",
+        "*z panią*",
+        "*z państwem*",
+        "*Chciałbym porozmawiać z panem.*"
+       ],
+       [
+        "Ms.",
+        "*o panu*",
+        "*o pani*",
+        "*o państwu*",
+        "*Słyszałem o pani.*"
+       ],
+       [
+        "W.",
+        "*panie* + gelar",
+        "*pani* + gelar",
+        "*proszę państwa!*",
+        "*Panie doktorze! Pani profesor!*"
+       ]
+      ]
+     },
+     "after": [
+      "***pani* hampir tidak berubah:** lima kasus sama (*pani*), hanya B. dan N. yang *panią*. Kalau kamu ragu, *pani* hampir pasti benar.",
+      "***państwo* = jamak lk-orang.** Karena ia mencakup laki-laki dan perempuan, kata kerjanya memakai jamak orang ketiga dan, di kala lampau, bentuk *-li*: *Czy państwo już byli w Wieliczce?* *państwo* juga berarti \"pasangan suami-istri\": *państwo Kowalscy* — keluarga Kowalski.",
+      "**Jamak yang sejenis:** *panowie* (bapak-bapak: D./B. *panów*, C. *panom*, N. *panami*) dan *panie* (ibu-ibu: D. *pań*, C. *paniom*, N. *paniami*). *Proszę panów!* hanya kepada kelompok yang semuanya laki-laki."
+     ]
+    },
+    {
+     "title": "Pana, pani, państwa sebagai kata milik",
+     "body": [
+      "Kata milik resmi tidak ada; yang dipakai adalah dopełniacz. Letaknya di depan kata benda, dan ia **tidak berubah** mengikuti kasus kata bendanya."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Informal",
+       "Resmi"
+      ],
+      "rows": [
+       [
+        "paspormu",
+        "*twój paszport*",
+        "*pana / pani paszport*"
+       ],
+       [
+        "dengan paspormu",
+        "*z twoim paszportem*",
+        "*z pana / pani paszportem*"
+       ],
+       [
+        "tentang permohonanmu",
+        "*o twoim wniosku*",
+        "*o pana / pani wniosku*"
+       ],
+       [
+        "dokumen kalian",
+        "*wasze dokumenty*",
+        "*państwa dokumenty*"
+       ],
+       [
+        "di rumah kalian",
+        "*w waszym domu*",
+        "*w państwa domu*"
+       ]
+      ]
+     },
+     "after": [
+      "Lihat kolom kanan: *pana* tetap *pana* di semua baris, sementara *twój* berganti menjadi *twoim*. Sisi resmi justru lebih mudah.",
+      "Kalau pemiliknya adalah pelaku kalimat, *swój* tetap berlaku: *Czy pan ma swój paszport?* — \"Apakah Bapak membawa paspor Bapak sendiri?\" Tapi dalam pertanyaan sederhana *Czy ma pan paszport?* sudah cukup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Dzień dobry, pani profesor!",
+   "intro": "Di ruang tunggu, Budi bertemu dosen pembimbingnya dulu, pani profesor Nowak, yang sedang menemani mahasiswa asing. Ia bersama seorang rekannya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry, pani profesor! Co pani tu robi?",
+     "id": "Selamat pagi, Bu Profesor! Ibu sedang apa di sini?",
+     "literal": "hari baik, nyonya profesor! apa nyonya di-sini lakukan?"
+    },
+    {
+     "speaker": "Prof. Nowak:",
+     "text": "Budi! Jak miło pana widzieć. Pomagam naszym studentom z zagranicy.",
+     "id": "Budi! Senang sekali bertemu Anda. Saya membantu mahasiswa asing kami.",
+     "literal": "Budi! betapa menyenangkan tuan melihat. saya-membantu kami-punya mahasiswa-mahasiswa dari luar-negeri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pani zawsze nam pomagała. Wiele pani zawdzięczam.",
+     "id": "Ibu selalu membantu kami. Saya berutang banyak pada Ibu.",
+     "literal": "nyonya selalu kami membantu-lampau-pr. banyak nyonya saya-berutang-budi."
+    },
+    {
+     "speaker": "Prof. Nowak:",
+     "text": "Przesada! A to mój kolega, doktor Lewandowski.",
+     "id": "Ah, berlebihan! Ini rekan saya, Doktor Lewandowski.",
+     "literal": "berlebihan! dan ini milikku kolega, doktor Lewandowski."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Miło mi pana poznać, panie doktorze.",
+     "id": "Senang berkenalan dengan Bapak, Pak Doktor.",
+     "literal": "menyenangkan bagi-saya tuan berkenalan, tuan doktor."
+    },
+    {
+     "speaker": "Dr Lewandowski:",
+     "text": "Mnie również. Słyszałem o panu wiele dobrego.",
+     "id": "Saya juga. Saya sudah dengar banyak hal baik tentang Anda.",
+     "literal": "bagi-saya juga. saya-mendengar-lampau-lk tentang tuan banyak baik."
+    },
+    {
+     "speaker": "Głos:",
+     "text": "Proszę państwa, numer dwadzieścia dwa, okienko numer pięć!",
+     "id": "Bapak-Ibu sekalian, nomor dua puluh dua, loket nomor lima!",
+     "literal": "saya-mohon tuan-nyonya, nomor dua-puluh dua, loket nomor lima!"
+    },
+    {
+     "speaker": "Prof. Nowak:",
+     "text": "To nasz numer. Panie doktorze, idziemy?",
+     "id": "Itu nomor kita. Pak Doktor, kita jalan?",
+     "literal": "itu kami-punya nomor. tuan doktor, kita-pergi?"
+    },
+    {
+     "speaker": "Dr Lewandowski:",
+     "text": "Idziemy. Do widzenia, trzymam za pana kciuki!",
+     "id": "Ayo. Sampai jumpa, semoga urusan Anda lancar!",
+     "literal": "kita-pergi. sampai melihat, saya-memegang untuk tuan jempol-jempol!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dziękuję. Do widzenia państwu!",
+     "id": "Terima kasih. Sampai jumpa, Bapak, Ibu!",
+     "literal": "saya-berterima-kasih. sampai melihat tuan-nyonya!"
+    }
+   ],
+   "notes": [
+    "**pani profesor, panie doktorze.** Gelar akademik dan jabatan dipakai sebagai sapaan, didahului *pan/pani*. Untuk laki-laki, keduanya masuk wołacz: *panie doktorze, panie profesorze, panie dyrektorze*. Untuk perempuan, gelarnya **membeku**: *pani profesor, pani doktor, z panią doktor*. Di universitas, memanggil dosen tanpa gelar (*Dzień dobry, pani Nowak*) terdengar kurang sopan.",
+    "**Huruf besar hanya di surat.** Dalam dialog dan teks biasa *pan, pani, państwo* ditulis kecil, baik sebagai gelar (*pani profesor*) maupun sebagai kata ganti (*Co pani tu robi?*). Begitu kamu menulis surel kepada pani profesor Nowak, semuanya naik menjadi huruf besar: *Szanowna Pani Profesor, dziękuję Pani za…*",
+    "**Wiele pani zawdzięczam** — *zawdzięczać* (berutang budi) + C. orangnya + B. halnya. Ingat, C. dari *pani* sama dengan M.: *pani*.",
+    "**Słyszałem o panu** — Ms. dari *pan* adalah *panu*, sama dengan C. Bentuk *wiele dobrego* (banyak hal baik) memakai dopełniacz seperti *coś dobrego* di unit 11.",
+    "**Proszę państwa** — cara membuka pengumuman atau pidato untuk hadirin campuran: \"Bapak-Ibu sekalian\". Kamu akan mendengarnya di awal kuliah, rapat, dan di kereta.",
+    "**Trzymam kciuki** — \"saya pegang jempol\", yaitu \"semoga berhasil, saya dukung\". Ungkapan ini sangat sering; polanya *trzymać kciuki za* + B.: *Trzymam za ciebie kciuki!*"
+   ],
+   "grammars": [
+    {
+     "title": "Sapaan bergelar untuk laki-laki dan perempuan",
+     "body": [
+      "Aturannya sederhana: laki-laki — *pan* dan gelarnya sama-sama berubah; perempuan — hanya *pani* yang berubah, gelarnya tetap."
+     ],
+     "table": {
+      "head": [
+       "Gelar / jabatan",
+       "Kepada laki-laki",
+       "Kepada perempuan",
+       "Bersama dia (N.)"
+      ],
+      "rows": [
+       [
+        "dokter, doktor",
+        "*panie doktorze*",
+        "*pani doktor*",
+        "*z panem doktorem / z panią doktor*"
+       ],
+       [
+        "profesor",
+        "*panie profesorze*",
+        "*pani profesor*",
+        "*z panem profesorem / z panią profesor*"
+       ],
+       [
+        "direktur",
+        "*panie dyrektorze*",
+        "*pani dyrektor*",
+        "*z panem dyrektorem / z panią dyrektor*"
+       ],
+       [
+        "kepala, manajer",
+        "*panie kierowniku*",
+        "*pani kierownik*",
+        "*z panem kierownikiem / z panią kierownik*"
+       ],
+       [
+        "pengacara",
+        "*panie mecenasie*",
+        "*pani mecenas*",
+        "*z panem mecenasem / z panią mecenas*"
+       ],
+       [
+        "dengan nama depan",
+        "*panie Piotrze*",
+        "*pani Magdaleno*",
+        "*z panem Piotrem / z panią Magdaleną*"
+       ],
+       [
+        "orang tak dikenal",
+        "*proszę pana!*",
+        "*proszę pani!*",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "**Baris nama depan** penting untuk hubungan kerja jangka panjang: *pani Magdaleno* (pan/pani + nama depan dalam wołacz) itu sopan sekaligus akrab, dan paling sering dipakai kepada atasan yang sudah lama dikenal. Nama keluarga dengan *pan/pani* (*pani Wiśniewska*) terdengar lebih berjarak.",
+      "**Memanggil orang tak dikenal** di jalan: *Proszę pana!* / *Proszę pani!* atau *Przepraszam pana / panią* — bukan *Panie!* sendirian, yang terdengar kasar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata kantor dan formulir",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*urząd, urzędu (m)*",
+       "U-zyont, u-ZYEN-du",
+       "kantor pemerintah"
+      ],
+      [
+       "*wniosek, wniosku (m)*",
+       "VNYO-sek, VNYOS-ku",
+       "permohonan; formulir permohonan"
+      ],
+      [
+       "*formularz (m)*",
+       "for-MU-lasy",
+       "formulir"
+      ],
+      [
+       "*zaświadczenie (n)*",
+       "za-syfyat-CE-nye",
+       "surat keterangan"
+      ],
+      [
+       "*załącznik (m)*",
+       "za-WONC-nik",
+       "lampiran"
+      ],
+      [
+       "*termin (m)*",
+       "TER-min",
+       "tenggat; jadwal temu"
+      ],
+      [
+       "*kolejka (ż)*",
+       "ko-LEY-ka",
+       "antrean"
+      ],
+      [
+       "*numerek (m)*",
+       "nu-ME-rek",
+       "nomor antrean"
+      ],
+      [
+       "*okienko (n)*",
+       "o-KYEN-ko",
+       "loket"
+      ],
+      [
+       "*podpis (m)*",
+       "POT-pis",
+       "tanda tangan"
+      ],
+      [
+       "*odciski palców*",
+       "ot-CIS-ki PAL-tsuf",
+       "sidik jari"
+      ],
+      [
+       "*decyzja (ż)*",
+       "de-TSYZ-ya",
+       "keputusan"
+      ],
+      [
+       "*pełnomocnictwo (n)*",
+       "pew-no-mots-NITS-tfo",
+       "surat kuasa"
+      ],
+      [
+       "*tłumacz przysięgły*",
+       "TWU-mac psy-SYENG-wy",
+       "penerjemah tersumpah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata kerja yang menempel pada kata-kata ini perlu dipelajari berpasangan, karena pasangan itu yang akan kamu dengar di loket: *złożyć wniosek* (mengajukan permohonan, harfiah \"meletakkan\"), *wypełnić formularz* (mengisi formulir), *dołączyć załącznik* (melampirkan), *wydać decyzję* (mengeluarkan keputusan), *złożyć podpis* atau cukup *podpisać* (menandatangani), *umówić się na termin* (membuat janji temu). Perhatikan *termin* adalah \"teman palsu\": ia jarang berarti \"istilah\", hampir selalu \"tanggal, tenggat, jadwal\" — *Termin minął* berarti \"tenggatnya sudah lewat\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum datang ke urząd",
+     "items": [
+      "Setiap *urząd wojewódzki* punya situs resmi berisi daftar dokumen, formulir, dan cara membuat janji. Aturannya bisa berubah — pegang informasi dari situs resmi, bukan dari forum atau cerita teman.",
+      "Bawalah dokumen asli sekaligus fotokopinya. Dokumen berbahasa asing biasanya diminta beserta terjemahan dari *tłumacz przysięgły* (penerjemah tersumpah); tanyakan dulu dokumen mana yang memerlukannya.",
+      "Di banyak kantor kamu mengambil *numerek* dari mesin dan menunggu nomormu muncul di layar beserta nomor *okienko*. Kalau bingung, kalimat yang paling berguna: *Przepraszam, gdzie mogę pobrać numerek?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Surat dan surel resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian surat",
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "pembuka (kepada perempuan)",
+       "*Szanowna Pani,*",
+       "Ibu yang terhormat,"
+      ],
+      [
+       "pembuka (kepada laki-laki)",
+       "*Szanowny Panie,*",
+       "Bapak yang terhormat,"
+      ],
+      [
+       "pembuka (kepada lembaga)",
+       "*Szanowni Państwo,*",
+       "Bapak-Ibu yang terhormat,"
+      ],
+      [
+       "dengan gelar",
+       "*Szanowna Pani Profesor, / Szanowny Panie Doktorze,*",
+       "Yth. Ibu Profesor / Bapak Doktor,"
+      ],
+      [
+       "menyampaikan maksud",
+       "*Zwracam się z prośbą o…*",
+       "Dengan ini saya mohon…"
+      ],
+      [
+       "melampirkan",
+       "*W załączniku przesyłam…*",
+       "Terlampir saya kirimkan…"
+      ],
+      [
+       "meminta jawaban",
+       "*Będę wdzięczny / wdzięczna za odpowiedź.*",
+       "Saya akan berterima kasih atas jawabannya."
+      ],
+      [
+       "penutup resmi",
+       "*Z poważaniem*",
+       "Hormat saya"
+      ],
+      [
+       "penutup ramah-resmi",
+       "*Łączę pozdrowienia*",
+       "Salam hangat"
+      ],
+      [
+       "penutup akrab",
+       "*Pozdrawiam serdecznie*",
+       "Salam hangat (lebih santai)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam surat resmi, *Pan, Pani, Państwo* ditulis dengan huruf besar di mana pun letaknya: *Dziękuję Pani za szybką odpowiedź*, *Przesyłam Panu dokumenty*. Begitu juga kata milik resmi: *Pana wniosek, Państwa oferta*. Menulisnya dengan huruf kecil dalam surel kepada orang yang tidak kamu kenal bisa terkesan kurang hormat. Perhatikan juga koma sesudah sapaan pembuka dan huruf kecil pada kalimat berikutnya: *Szanowna Pani, / zwracam się…* — itulah kebiasaan surat Polandia."
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan beralih dari pan ke ty",
+     "items": [
+      "Tawaran untuk saling ber-*ty* biasanya datang dari pihak yang lebih tua, lebih tinggi jabatannya, atau — dalam tata krama tradisional — dari perempuan kepada laki-laki. Kalimatnya: *Mówmy sobie po imieniu* atau *Przejdźmy na ty*.",
+      "Di perusahaan teknologi dan kalangan anak muda, *ty* sering dipakai sejak hari pertama. Di kantor pemerintah, rumah sakit, dan universitas, *pan/pani* tetap aturan.",
+      "Kalau kamu tidak yakin, mulailah dengan *pan/pani*. Tidak ada orang Polandia yang tersinggung karena terlalu disopani."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Hari ini tidak ada di mana-mana. Pasti ada yang mengambilnya.",
+       "*A dzisiaj nigdzie go nie ma. Ktoś musiał go wziąć.*"
+      ],
+      [
+       "Tidak ada yang bilang apa-apa ke saya. Akhir pekan saya di Gdańsk.",
+       "*Nikt mi nic nie mówił. Ja w weekend byłem w Gdańsku.*"
+      ],
+      [
+       "Sudah saya cek. Tidak ada di lemari mana pun.",
+       "*Już sprawdziłem. Nie ma go w żadnej szafie.*"
+      ],
+      [
+       "Mau banget. Apa saja aku makan, dari pagi belum makan apa-apa.",
+       "*Chętnie. Zjem cokolwiek, od rana nic nie jadłem.*"
+      ],
+      [
+       "Ketemu. Ewa bawa laptop itu ke pelatihan dan tidak bilang apa-apa ke siapa pun.",
+       "*Tak. Ewa wzięła go na szkolenie i nikomu nic nie powiedziała.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "urząd wojewódzki, urzędu wojewódzkiego (m)",
+   "baca": "U-zyont vo-ye-VUTS-ki, u-ZYEN-du vo-ye-vuts-KYE-go",
+   "id": "kantor pemerintah provinsi"
+  },
+  {
+   "pl": "sprawa (ż)",
+   "baca": "SPRA-va",
+   "id": "urusan, perkara"
+  },
+  {
+   "pl": "wniosek, wniosku (m)",
+   "baca": "VNYO-sek, VNYOS-ku",
+   "id": "permohonan"
+  },
+  {
+   "pl": "zezwolenie na pobyt (n)",
+   "baca": "zez-vo-LE-nye na PO-byt",
+   "id": "izin tinggal"
+  },
+  {
+   "pl": "czasowy",
+   "baca": "ca-SO-vy",
+   "id": "sementara"
+  },
+  {
+   "pl": "potwierdzenie (n)",
+   "baca": "pot-fyer-DZE-nye",
+   "id": "konfirmasi"
+  },
+  {
+   "pl": "zaświadczenie (n)",
+   "baca": "za-syfyat-CE-nye",
+   "id": "surat keterangan"
+  },
+  {
+   "pl": "umowa o pracę (ż)",
+   "baca": "u-MO-va o PRA-tse",
+   "id": "kontrak kerja"
+  },
+  {
+   "pl": "oryginał / kopia",
+   "baca": "o-ry-GI-naw / KO-pya",
+   "id": "asli / salinan"
+  },
+  {
+   "pl": "odcisk palca, odciski palców (m)",
+   "baca": "OT-cisk PAL-tsa, ot-CIS-ki PAL-tsuf",
+   "id": "sidik jari"
+  },
+  {
+   "pl": "decyzja (ż)",
+   "baca": "de-TSYZ-ya",
+   "id": "keputusan"
+  },
+  {
+   "pl": "listownie",
+   "baca": "lis-TOV-nye",
+   "id": "lewat surat"
+  },
+  {
+   "pl": "termin (m)",
+   "baca": "TER-min",
+   "id": "tenggat; jadwal temu"
+  },
+  {
+   "pl": "okienko (n)",
+   "baca": "o-KYEN-ko",
+   "id": "loket"
+  },
+  {
+   "pl": "składać (składam) / złożyć (złożę) wniosek",
+   "baca": "SKWA-dac / ZWO-zyyc",
+   "id": "mengajukan permohonan"
+  },
+  {
+   "pl": "wypełniać (wypełniam) / wypełnić (wypełnię)",
+   "baca": "vy-PEW-nyac / vy-PEW-nic",
+   "id": "mengisi (formulir)"
+  },
+  {
+   "pl": "podpisywać (podpisuję) / podpisać (podpiszę)",
+   "baca": "pot-pi-SY-vac / pot-PI-sac",
+   "id": "menandatangani"
+  },
+  {
+   "pl": "informować (informuję) / poinformować (poinformuję) (o + Ms.)",
+   "baca": "in-for-MO-vac / po-in-for-MO-vac",
+   "id": "memberi tahu"
+  },
+  {
+   "pl": "umawiać się (umawiam się) / umówić się (umówię się)",
+   "baca": "u-MA-vyac sye / u-MU-vic sye",
+   "id": "membuat janji"
+  },
+  {
+   "pl": "życzyć (życzę) — ndk (+ C. + D.)",
+   "baca": "ZYY-cyc",
+   "id": "mengharapkan, mengucapkan selamat"
+  },
+  {
+   "pl": "zawdzięczać (zawdzięczam) — ndk (+ C.)",
+   "baca": "zav-JYEN-cac",
+   "id": "berutang budi"
+  },
+  {
+   "pl": "słuchać (słucham) — ndk (+ D.)",
+   "baca": "SWU-hac",
+   "id": "mendengarkan"
+  },
+  {
+   "pl": "profesor, profesora (m)",
+   "baca": "pro-FE-sor, pro-fe-SO-ra",
+   "id": "profesor"
+  },
+  {
+   "pl": "doktor, doktora (m)",
+   "baca": "DOK-tor, dok-TO-ra",
+   "id": "doktor; dokter"
+  },
+  {
+   "pl": "z poważaniem",
+   "baca": "s po-va-ZYA-nyem",
+   "id": "hormat saya (penutup surat)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia dengan sapaan resmi.",
+   "items": [
+    "Ada keperluan apa, Pak?",
+    "Boleh saya bertanya sesuatu, Bu?",
+    "Terima kasih, Pak.",
+    "Saya minta paspor Ibu.",
+    "Senang berkenalan dengan Bapak, Pak Doktor.",
+    "Sampai jumpa, Bapak-Ibu!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *pan / pani / państwo* yang tepat.",
+   "items": [
+    "Czy mogę ____ pomóc? (pan, C.)",
+    "Rozmawiałem wczoraj z ____. (pani, N.)",
+    "Czy to jest ____ wniosek? (państwo, D.)",
+    "Dzień dobry, ____ doktorze! (pan, W.)",
+    "Przepraszam, czy mogę prosić ____ o podpis? (pani, B.)",
+    "Słyszałem o ____ wiele dobrego. (pan, Ms.)",
+    "Nie widzę tu ____. (pan, D.)"
+   ]
+  },
+  {
+   "prompt": "Ubah dari *ty / wy* menjadi sapaan resmi.",
+   "items": [
+    "Czy masz paszport? (kepada laki-laki)",
+    "Gdzie mieszkasz? (kepada perempuan)",
+    "Dziękuję ci. (kepada laki-laki)",
+    "Czy możesz tu podpisać? (kepada perempuan)",
+    "Widziałem cię wczoraj. (kepada perempuan)",
+    "Czy wiecie, gdzie jest okienko? (kepada kelompok campuran)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "pana / paszport / poproszę / wypełniony / wniosek / i",
+    "mogę / czy / panią / coś / o / zapytać / ?",
+    "decyzji / o / pana / poinformujemy / listownie",
+    "panu / dnia / życzę / miłego",
+    "mi / poznać / pana / miło"
+   ]
+  }
+ ],
+ "answers": [
+  "W jakiej sprawie pan przychodzi? — Czy mogę panią o coś zapytać? — Dziękuję panu. — Poproszę pani paszport. — Miło mi pana poznać, panie doktorze. — Do widzenia państwu!",
+  "panu — panią — państwa — panie — panią — panu — pana",
+  "Czy ma pan paszport? — Gdzie pani mieszka? — Dziękuję panu. — Czy może pani tu podpisać? — Widziałem panią wczoraj. — Czy państwo wiedzą, gdzie jest okienko?",
+  "Poproszę pana paszport i wypełniony wniosek. — Czy mogę panią o coś zapytać? — O decyzji poinformujemy pana listownie. — Życzę panu miłego dnia. — Miło mi pana poznać."
+ ]
+}

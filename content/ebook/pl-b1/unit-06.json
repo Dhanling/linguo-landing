@@ -1,0 +1,737 @@
+{
+ "title": "Yang membaca, yang dibaca — partisip sebagai kata sifat",
+ "title_target": "Czytający i czytany",
+ "goal": "Membaca papan, pengumuman, dan menu tanpa tersandung bentuk seperti *zamknięte*, *odjeżdżający*, atau *polecane przez szefa kuchni*. Titik tata bahasanya: partisip aktif **-ący** dan partisip pasif **-ny / -ony / -ty**, yang berubah persis seperti kata sifat.",
+ "bekal": [
+  "membentuk partisip aktif dari kata kerja ndk: *czytają → czytający, stoją → stojący*",
+  "membentuk partisip pasif dan memakainya sesudah *jest*: *Wejście jest zamknięte. Stolik jest zarezerwowany.*",
+  "mengganti kalimat *który…* dengan partisip: *pociąg, który odjeżdża → pociąg odjeżdżający*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Wejście czasowo zamknięte",
+   "intro": "Beberapa minggu sesudah tur Stare Miasto, Budi kembali ke Warszawa, kali ini untuk urusan kantor. Ia dan Marek, kolega Kodex asal Gdańsk, baru turun dari kereta di stasiun Warszawa Centralna. Jam sebelas mereka ada rapat dengan klien, dan stasiun itu penuh papan, kertas tempelan, dan pengumuman.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Dobra, jesteśmy. Mamy godzinę do spotkania.",
+     "id": "Oke, sampai. Masih ada sejam sebelum rapat.",
+     "literal": "baik, kami-adalah. kami-punya jam sampai pertemuan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chodźmy do metra. O, to wejście jest zamknięte.",
+     "id": "Ayo ke metro. Eh, pintu masuk yang ini ditutup.",
+     "literal": "mari-kita-pergi ke metro. o, ini pintu-masuk adalah ditutup."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Jest kartka: „Wejście czasowo zamknięte. Prosimy korzystać z wejścia obok”.",
+     "id": "Ada kertasnya: \"Pintu masuk ditutup sementara. Silakan gunakan pintu masuk di sebelah.\"",
+     "literal": "ada kertas: pintu-masuk sementara ditutup. kami-mohon menggunakan dari pintu-masuk sebelah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Poczekaj, słyszysz komunikat? Chodzi o pociąg odjeżdżający do Krakowa.",
+     "id": "Tunggu, dengar pengumumannya? Soal kereta yang berangkat ke Kraków.",
+     "literal": "tunggulah, kamu-mendengar pengumuman? ia-berjalan tentang kereta yang-berangkat ke Kraków."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "„Pociąg opóźniony o około trzydzieści minut”. Dobrze, że to nie nasz.",
+     "id": "\"Kereta terlambat sekitar tiga puluh menit.\" Untung bukan kereta kita.",
+     "literal": "kereta ditunda-lk sebanyak sekitar tiga-puluh menit. baik, bahwa itu bukan milik-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Biedni ludzie czekający na peronie. A my mamy szczęście.",
+     "id": "Kasihan orang-orang yang menunggu di peron. Kita sih beruntung.",
+     "literal": "malang orang-orang yang-menunggu di peron. dan kami kami-punya keberuntungan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Masz bilet na metro?",
+     "id": "Kamu punya tiket metro?",
+     "literal": "kamu-punya tiket untuk metro?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mam bilet kupiony w aplikacji. Tobie też kupię.",
+     "id": "Saya punya tiket yang dibeli lewat aplikasi. Kamu juga saya belikan.",
+     "literal": "saya-punya tiket dibeli-lk di aplikasi. kamu juga saya-akan-membeli."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Dzięki. A masz zapisany adres tej firmy?",
+     "id": "Makasih. Alamat kantor klien itu sudah kamu simpan?",
+     "literal": "terima-kasih. dan kamu-punya dicatat-lk alamat itu perusahaan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Biuro jest w nowym budynku stojącym naprzeciwko Pałacu Kultury.",
+     "id": "Sudah. Kantornya di gedung baru yang berdiri di seberang Istana Kebudayaan.",
+     "literal": "ya. kantor adalah di baru gedung yang-berdiri di-seberang Istana Kebudayaan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "To blisko. Możemy iść pieszo.",
+     "id": "Dekat, dong. Kita bisa jalan kaki.",
+     "literal": "itu dekat. kami-bisa pergi berjalan-kaki."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tylko najpierw kawa. Ta kawiarnia jest już otwarta.",
+     "id": "Tapi ngopi dulu. Kafe yang itu sudah buka.",
+     "literal": "hanya pertama-tama kopi. itu kafe adalah sudah dibuka-pr."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Siadamy przy oknie? A nie, stolik zarezerwowany.",
+     "id": "Kita duduk dekat jendela? Eh, jangan, mejanya sudah dipesan.",
+     "literal": "kami-duduk dekat jendela? ah tidak, meja dipesan-lk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To weźmy kawę na wynos. Spotkanie jest ważniejsze.",
+     "id": "Ya sudah, kopinya dibawa saja. Rapatnya lebih penting.",
+     "literal": "maka mari-kita-mengambil kopi untuk dibawa. pertemuan adalah lebih-penting."
+    }
+   ],
+   "notes": [
+    "**Wejście czasowo zamknięte** — bahasa papan membuang *jest*. Kalimat lengkapnya *Wejście jest czasowo zamknięte*, tetapi di kertas tempelan, di pintu toko, dan di pengumuman stasiun, yang tersisa hanya kata benda dan partisipnya. Karena itu partisip pasif adalah bentuk yang paling sering kamu *baca* di Polandia, jauh sebelum kamu perlu mengucapkannya.",
+    "**Pociąg odjeżdżający do Krakowa** — partisip aktif berarti \"yang sedang melakukan\". *Odjeżdżający* sama dengan *który odjeżdża*: kereta yang berangkat. Bahasa Indonesia memakai \"yang\" + kata kerja; bahasa Polandia menempelkan *-cy* pada bentuk *oni* dan menjadikannya kata sifat.",
+    "**Biedni ludzie czekający na peronie** — perhatikan letaknya. Partisip yang berdiri sendiri boleh di depan kata benda (*czekający ludzie*), tetapi begitu ia membawa keterangan (*na peronie*), ia biasanya pindah ke **belakang** kata benda: *ludzie czekający na peronie*. Susunannya jadi sama dengan bahasa Indonesia: orang-orang yang menunggu di peron.",
+    "**Opóźniony o trzydzieści minut** — *o* + biernik menyatakan selisih: *droższy o sto złotych* (lebih mahal seratus złoty), *opóźniony o godzinę* (terlambat sejam). Di stasiun kamu akan mendengarnya setiap hari.",
+    "**Masz zapisany adres?** — *mieć* + partisip pasif berarti \"sudah punya dalam keadaan ter-…\": *Mam zapisany adres* (alamatnya sudah saya simpan), *Mam to zrobione* (itu sudah beres). Ini bukan kala khusus, hanya pola yang sangat lazim dalam percakapan.",
+    "**W nowym budynku stojącym…** — partisip berubah kasus mengikuti kata bendanya, persis seperti *nowym*. *W budynku* adalah miejscownik, jadi partisipnya juga miejscownik: *stojącym*."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip aktif -ący: \"yang sedang melakukan\"",
+     "body": [
+      "Resepnya satu langkah: ambil bentuk kala kini untuk *oni*, tambahkan **-cy**. Hasilnya kata sifat biasa dengan ekor *-ący, -ąca, -ące*."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "oni",
+       "Partisip (m / ż / n)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*czytać*",
+        "*czytają*",
+        "*czytający / czytająca / czytające*",
+        "yang membaca"
+       ],
+       [
+        "*pracować*",
+        "*pracują*",
+        "*pracujący / pracująca / pracujące*",
+        "yang bekerja"
+       ],
+       [
+        "*mówić*",
+        "*mówią*",
+        "*mówiący / mówiąca / mówiące*",
+        "yang berbicara"
+       ],
+       [
+        "*czekać*",
+        "*czekają*",
+        "*czekający / czekająca / czekające*",
+        "yang menunggu"
+       ],
+       [
+        "*stać*",
+        "*stoją*",
+        "*stojący / stojąca / stojące*",
+        "yang berdiri"
+       ],
+       [
+        "*odjeżdżać*",
+        "*odjeżdżają*",
+        "*odjeżdżający / odjeżdżająca / odjeżdżające*",
+        "yang berangkat"
+       ],
+       [
+        "*iść*",
+        "*idą*",
+        "*idący / idąca / idące*",
+        "yang berjalan"
+       ]
+      ]
+     },
+     "after": [
+      "**Hanya dari kata kerja ndk.** Partisip aktif menggambarkan sesuatu yang sedang berlangsung, jadi ia tidak bisa dibuat dari kata kerja dk: ada *robiący*, tetapi tidak ada \"*zrobiący*\". Kalau yang dimaksud sudah selesai, pakai kalimat *który*: *człowiek, który to zrobił*.",
+      "**Jamak lelaki-orang kebetulan sama dengan bentuk m tunggal:** *czytający student*, *czytający studenci*. Jamak lainnya memakai *-ące*: *czytające studentki, czytające dzieci*.",
+      "Satu pengecualian yang sering muncul: *być* → ***będący*** (yang merupakan), terutama dalam bahasa tulis: *firma będąca liderem rynku*."
+     ]
+    },
+    {
+     "title": "Partisip pasif -ny / -ony / -ty: \"yang di-…\"",
+     "body": [
+      "Partisip pasif dibuat dari bentuk kamus, dan ekornya ditentukan oleh akhiran bentuk kamus itu. Hampir selalu dari kata kerja dk, karena yang diumumkan biasanya hasil: pintu yang sudah ditutup, meja yang sudah dipesan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus",
+       "Ekor",
+       "Contoh",
+       "Jamak lk (orang)"
+      ],
+      "rows": [
+       [
+        "*-ać, -ować*",
+        "**-any**",
+        "*napisać → napisany; zarezerwować → zarezerwowany*",
+        "*-ani: wybrani* (yang terpilih)"
+       ],
+       [
+        "*-ić, -yć*",
+        "**-ony**",
+        "*kupić → kupiony; zrobić → zrobiony; zaprosić → zaproszony*",
+        "*-eni: zaproszeni, zmęczeni*"
+       ],
+       [
+        "*-nąć, -ąć*",
+        "**-ęty**",
+        "*zamknąć → zamknięty; zająć → zajęty*",
+        "*-ęci: zajęci*"
+       ],
+       [
+        "*-yć, -uć* bersuku satu, dll.",
+        "**-ty**",
+        "*umyć → umyty; zepsuć → zepsuty; otworzyć → otwarty*",
+        "*-ci: umyci, otwarci*"
+       ]
+      ]
+     },
+     "after": [
+      "**Perubahan bunyi di baris *-ony* sama dengan yang sudah kamu kenal:** *zaprosić → zaproszony, zapłacić → zapłacony, urodzić → urodzony* (lahir). *Otworzyć → otwarty* tidak beraturan; hafalkan saja, karena ia ada di setiap pintu toko.",
+      "**Jamak lelaki-orang melunakkan ekornya:** *zmęczony → zmęczeni, zaproszony → zaproszeni, zajęty → zajęci*. Jamak lainnya cukup *-e*: *drzwi zamknięte, stoliki zarezerwowane*.",
+      "**Kalau dibuat dari ndk, artinya \"yang biasa / sedang di-…\"**: *danie polecane* (hidangan yang direkomendasikan, selalu), *drzwi otwierane automatycznie* (pintu yang dibuka otomatis). Bandingkan *list polecony* dari *polecić* (dk): surat tercatat, yang sudah dikirim dengan cara itu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Danie polecane przez szefa kuchni",
+   "intro": "Sore harinya rapat selesai dengan baik. Budi dan Marek makan malam di sebuah restoran dekat Rynek Starego Miasta, dan menunya ternyata penuh partisip.",
+   "lines": [
+    {
+     "speaker": "Kelner:",
+     "text": "Dobry wieczór. Mają panowie rezerwację?",
+     "id": "Selamat malam. Bapak-bapak sudah reservasi?",
+     "literal": "baik malam. mereka-punya tuan-tuan reservasi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie mamy. Czy jest jakiś wolny stolik?",
+     "id": "Belum. Ada meja kosong?",
+     "literal": "tidak kami-punya. apakah ada suatu bebas meja?"
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Proszę, ten przy oknie. Tamte są już zajęte.",
+     "id": "Silakan, yang dekat jendela. Yang di sana sudah terisi.",
+     "literal": "silakan, ini dekat jendela. itu-jamak mereka-adalah sudah ditempati."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Patrz: „żurek podawany w chlebie”. To coś dla ciebie.",
+     "id": "Lihat: \"żurek yang disajikan di dalam roti\". Ini pas buat kamu.",
+     "literal": "lihatlah: żurek disajikan-lk di roti. itu sesuatu untuk kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Brzmi dobrze. A co to jest „danie polecane przez szefa kuchni”?",
+     "id": "Kedengarannya enak. Terus \"hidangan rekomendasi kepala koki\" itu apa?",
+     "literal": "ia-berbunyi baik. dan apa itu adalah hidangan direkomendasikan oleh kepala dapur?"
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Dzisiaj to kaczka pieczona z jabłkami. Bardzo polecam.",
+     "id": "Hari ini bebek panggang dengan apel. Sangat saya sarankan.",
+     "literal": "hari-ini itu bebek dipanggang-pr dengan apel-apel. sangat saya-merekomendasikan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Poproszę kaczkę. Czy napiwek jest wliczony w rachunek?",
+     "id": "Saya pesan bebeknya. Tip sudah termasuk di tagihan?",
+     "literal": "saya-akan-minta bebek. apakah tip adalah dihitung-lk ke tagihan?"
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Nie, nie jest wliczony. Zostawiają panowie tyle, ile chcą.",
+     "id": "Tidak, tidak termasuk. Silakan tinggalkan sebanyak yang Bapak-bapak mau.",
+     "literal": "tidak, tidak adalah dihitung-lk. mereka-meninggalkan tuan-tuan sebanyak, berapa mereka-mau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Marek, spójrz na drzwi: „Szukamy kelnerów znających język angielski”.",
+     "id": "Marek, lihat pintunya: \"Dicari pelayan yang menguasai bahasa Inggris.\"",
+     "literal": "Marek, lihatlah ke pintu: kami-mencari pelayan-pelayan yang-mengetahui bahasa Inggris."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Może zmienisz pracę? Kelner mówiący po indonezyjsku to rzadkość!",
+     "id": "Mau ganti kerja? Pelayan yang bisa bahasa Indonesia itu langka!",
+     "literal": "mungkin kamu-akan-mengganti pekerjaan? pelayan yang-berbicara dalam bahasa-Indonesia itu kelangkaan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie, dziękuję. Jestem zadowolony ze swojej pracy.",
+     "id": "Nggak, makasih. Saya puas dengan pekerjaan saya.",
+     "literal": "tidak, terima-kasih. saya-adalah dipuaskan-lk dari milik-sendiri pekerjaan."
+    }
+   ],
+   "notes": [
+    "**Mają panowie rezerwację?** — pelayan menyapa dua tamu lelaki dengan *panowie* dan kata kerja orang ketiga jamak. *Panowie* untuk kelompok yang semuanya lelaki, *panie* untuk yang semuanya perempuan, *państwo* untuk kelompok campuran (atau hadirin yang tak jelas susunannya: *Proszę państwa*). Kalau Ania ikut, pelayan akan bertanya *Mają państwo rezerwację?*",
+    "**Tamte są już zajęte** — *zajęty* berarti \"terisi\" untuk meja dan kursi, \"sedang dipakai\" untuk toilet, dan \"sibuk\" untuk orang: *Jestem zajęty* (lk), *Jestem zajęta* (pr). Satu partisip, tiga terjemahan Indonesia.",
+    "**Żurek podawany w chlebie** — *podawany* dari *podawać* (ndk), jadi artinya \"yang (selalu) disajikan\": begitulah cara restoran ini menyajikannya, bukan satu kejadian. Żurek dalam mangkuk roti adalah sajian yang digemari wisatawan di Kraków maupun di Warszawa.",
+    "**Polecane przez szefa kuchni** — pelaku ditandai *przez* + biernik, seperti di kalimat pasif unit 5. *Szef kuchni* secara harfiah \"kepala dapur\": itu istilah resmi untuk kepala koki.",
+    "**Kelnerów znających język angielski** — *szukać* menuntut dopełniacz, dan partisipnya ikut: *kelnerów znających*. Iklan lowongan kerja di Polandia penuh bentuk seperti ini: *osoby znające…, kandydaci posiadający…*",
+    "**Jestem zadowolony ze swojej pracy** — *zadowolony* (puas) aslinya partisip dari *zadowolić* (memuaskan). *Ze swojej* karena pemiliknya Budi sendiri, pelaku kalimat."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip berubah kasus seperti kata sifat",
+     "body": [
+      "Tidak ada deklinasi baru untuk dihafal. *Mówiący* berubah seperti *dobry*, *otwarta* seperti *nowa*. Yang perlu kamu latih hanya mengenali kasus kata bendanya lalu menempelkan ekor yang sama."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Aktif (m, orang)",
+       "Pasif (ż)"
+      ],
+      "rows": [
+       [
+        "M.",
+        "*kelner mówiący po polsku*",
+        "*kawiarnia otwarta do północy*"
+       ],
+       [
+        "D.",
+        "*Nie ma kelnera mówiącego po polsku.*",
+        "*Nie ma kawiarni otwartej do północy.*"
+       ],
+       [
+        "B.",
+        "*Znam kelnera mówiącego po polsku.*",
+        "*Znam kawiarnię otwartą do północy.*"
+       ],
+       [
+        "N.",
+        "*Rozmawiam z kelnerem mówiącym po polsku.*",
+        "*Czekam przed kawiarnią otwartą do północy.*"
+       ],
+       [
+        "Ms.",
+        "*Mówię o kelnerze mówiącym po polsku.*",
+        "*Siedzę w kawiarni otwartej do północy.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Tanda koma tidak wajib.** Frasa partisip di belakang kata benda biasanya ditulis tanpa koma: *Ludzie czekający na peronie są zmęczeni.* Koma baru dipakai kalau frasanya disisipkan sebagai tambahan keterangan, seperti tanda kurung.",
+      "**Partisip atau *który*?** Artinya sama: *kelner mówiący po polsku = kelner, który mówi po polsku*. Dalam percakapan orang lebih sering memakai *który*; di papan, pengumuman, berita, dan iklan, partisip lebih ringkas dan lebih disukai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Papan dan pengumuman di tempat umum",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Arti",
+      "Partisip di dalamnya"
+     ],
+     "rows": [
+      [
+       "*Wejście czasowo zamknięte*",
+       "Pintu masuk ditutup sementara",
+       "*zamknąć → zamknięty*"
+      ],
+      [
+       "*Osobom nieupoważnionym wstęp wzbroniony*",
+       "Yang tidak berwenang dilarang masuk",
+       "*upoważnić → upoważniony*, di sini celownik jamak"
+      ],
+      [
+       "*Teren monitorowany*",
+       "Area diawasi kamera",
+       "*monitorować → monitorowany*"
+      ],
+      [
+       "*Parking strzeżony*",
+       "Parkir berpenjaga",
+       "*strzec → strzeżony*"
+      ],
+      [
+       "*Miejsce zarezerwowane*",
+       "Tempat sudah dipesan",
+       "*zarezerwować → zarezerwowany*"
+      ],
+      [
+       "*Towar przeceniony*",
+       "Barang diskon",
+       "*przecenić → przeceniony*"
+      ],
+      [
+       "*Drzwi otwierane automatycznie*",
+       "Pintu membuka otomatis",
+       "*otwierać → otwierany* (ndk)"
+      ],
+      [
+       "*Pociąg opóźniony*",
+       "Kereta terlambat",
+       "*opóźnić → opóźniony*"
+      ],
+      [
+       "*Nieczynne*",
+       "Tutup, tidak beroperasi",
+       "bukan partisip: kata sifat *czynny*"
+      ],
+      [
+       "*Uwaga! Zły pies*",
+       "Awas! Anjing galak",
+       "bukan partisip, tapi papan pagar yang paling terkenal di Polandia"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan betapa hematnya bahasa papan: tak ada *jest*, tak ada pelaku, tak ada kata kerja lain. Yang tertinggal hanya benda dan keadaannya. Kalau kamu bertemu kata yang berakhiran *-ony, -any, -ty* di papan, tanyakan dua hal: dari kata kerja apa ia dibuat, dan apa yang sudah terjadi pada benda itu. Kata *nieczynne* sering membingungkan karena mirip partisip; ia kata sifat dari *czynny* (buka, beroperasi) dan bisa kamu temui di kasir, lift, dan toilet."
+    },
+    {
+     "type": "kotak",
+     "title": "Kertas di pintu toko",
+     "items": [
+      "*Zaraz wracam* — \"segera kembali\": penjualnya keluar sebentar. \"Sebentar\" di sini bisa lima menit, bisa juga setengah jam.",
+      "*Przerwa techniczna* — \"istirahat teknis\": toko atau loket tutup sebentar di tengah hari, tanpa penjelasan lebih lanjut.",
+      "*Remanent* — toko tutup karena sedang menghitung stok barang (stock opname).",
+      "*Czynne: pon.–pt. 10–18, sob. 10–14* — jam buka. Singkatan harinya: *pon., wt., śr., czw., pt., sob., niedz.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sifat yang lahir dari partisip",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Asal"
+     ],
+     "rows": [
+      [
+       "*zmęczony*",
+       "lelah",
+       "*zmęczyć* (melelahkan)"
+      ],
+      [
+       "*zadowolony (z + D.)*",
+       "puas",
+       "*zadowolić* (memuaskan)"
+      ],
+      [
+       "*zdziwiony*",
+       "heran",
+       "*zdziwić* (mengherankan)"
+      ],
+      [
+       "*zainteresowany (+ N.)*",
+       "tertarik",
+       "*zainteresować*"
+      ],
+      [
+       "*przekonany*",
+       "yakin",
+       "*przekonać* (meyakinkan)"
+      ],
+      [
+       "*wykształcony*",
+       "berpendidikan",
+       "*wykształcić* (mendidik)"
+      ],
+      [
+       "*znany*",
+       "terkenal",
+       "*znać* (mengenal)"
+      ],
+      [
+       "*ukochany*",
+       "tercinta",
+       "*ukochać*"
+      ],
+      [
+       "*interesujący*",
+       "menarik",
+       "*interesować*"
+      ],
+      [
+       "*wymagający*",
+       "menuntut, sulit dipuaskan",
+       "*wymagać*"
+      ],
+      [
+       "*przerażający / przerażony*",
+       "mengerikan / ketakutan",
+       "*przerazić* (menakutkan)"
+      ],
+      [
+       "*obowiązujący*",
+       "yang berlaku",
+       "*obowiązywać*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pasangan terakhir di tabel ini punya padanan yang rapi dalam bahasa Indonesia. Partisip aktif menyatakan **yang menimbulkan** (*przerażający film* — film yang menakutkan), partisip pasif menyatakan **yang mengalami** (*przerażony widz* — penonton yang ketakutan). Polanya sama dengan \"menakutkan\" dan \"ketakutan\", atau \"melelahkan\" dan \"kelelahan\". Banyak kata perasaan dalam bahasa Polandia sebenarnya partisip yang sudah menjadi kata sifat biasa, dan kamu sudah memakai sebagian sejak A1 tanpa menyadarinya."
+    },
+    {
+     "type": "kotak",
+     "title": "Papan peringatan di trotoar Warszawa",
+     "items": [
+      "Di banyak sudut Warszawa, di dinding atau di trotoar, ada papan batu bertulisan yang dimulai dengan *Miejsce uświęcone krwią Polaków poległych za wolność Ojczyzny* — tempat yang dikuduskan oleh darah orang Polandia yang gugur demi kemerdekaan tanah air.",
+      "Papan-papan itu menandai tempat warga sipil dan pejuang dibunuh selama pendudukan Jerman di Perang Dunia II. Jumlahnya lebih dari seratus, dan orang masih meletakkan bunga serta lilin di depannya.",
+      "Perhatikan bahasanya: *uświęcone* dan *poległych* adalah partisip. Kalau kamu berhenti membacanya, lakukan dengan tenang; ini tempat mengenang, bukan objek foto untuk bergaya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Katanya dia balik Rabu malam.",
+       "*Powiedziała, że wróci w środę wieczorem.*"
+      ],
+      [
+       "Dia nanya apakah kita sudah selesai tes.",
+       "*Zapytała, czy skończyliśmy już testy.*"
+      ],
+      [
+       "Oh iya. Saya ngaku, saya lupa soal itu.",
+       "*No tak. Przyznaję, że o nim zapomniałem.*"
+      ],
+      [
+       "Dia janji kirim malam ini.",
+       "*Obiecał, że wyśle go dziś wieczorem.*"
+      ],
+      [
+       "Ewa bertanya apakah dia boleh ambil cuti mulai tanggal dua puluh.",
+       "*Ewa pyta, czy może wziąć urlop od dwudziestego.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "wejście, wejścia (n)",
+   "baca": "VEY-sycye, VEY-sycya",
+   "id": "pintu masuk; masuk"
+  },
+  {
+   "pl": "wyjście, wyjścia (n)",
+   "baca": "VYY-sycye, VYY-sycya",
+   "id": "pintu keluar"
+  },
+  {
+   "pl": "zamykać (zamykam) / zamknąć (zamknę)",
+   "baca": "za-MY-kac (za-MY-kam) / ZAM-knonc (ZAM-kne)",
+   "id": "menutup"
+  },
+  {
+   "pl": "zamknięty",
+   "baca": "zam-KNYEN-ty",
+   "id": "tertutup, ditutup"
+  },
+  {
+   "pl": "otwierać (otwieram) / otworzyć (otworzę)",
+   "baca": "ot-FYE-rac (ot-FYE-ram) / ot-FO-zyyc (ot-FO-zye)",
+   "id": "membuka"
+  },
+  {
+   "pl": "otwarty",
+   "baca": "ot-FAR-ty",
+   "id": "terbuka, buka"
+  },
+  {
+   "pl": "opóźniony",
+   "baca": "o-puzy-NYO-ny",
+   "id": "terlambat, tertunda"
+  },
+  {
+   "pl": "komunikat (m)",
+   "baca": "ko-mu-NI-kat",
+   "id": "pengumuman"
+  },
+  {
+   "pl": "peron (m)",
+   "baca": "PE-ron",
+   "id": "peron"
+  },
+  {
+   "pl": "tor (m)",
+   "baca": "tor",
+   "id": "jalur rel"
+  },
+  {
+   "pl": "odjeżdżać (odjeżdżam) / odjechać (odjadę)",
+   "baca": "od-YEZY-djac (od-YEZY-djam) / od-YE-hac (od-YA-de)",
+   "id": "berangkat (kendaraan)"
+  },
+  {
+   "pl": "kartka (ż)",
+   "baca": "KART-ka",
+   "id": "kertas, lembar"
+  },
+  {
+   "pl": "korzystać (z + D.) — ndk",
+   "baca": "ko-ZYYS-tac",
+   "id": "memakai, memanfaatkan"
+  },
+  {
+   "pl": "czasowo",
+   "baca": "ca-SO-vo",
+   "id": "sementara"
+  },
+  {
+   "pl": "zapisywać (zapisuję) / zapisać (zapiszę)",
+   "baca": "za-pi-SY-vac (za-pi-SU-ye) / za-PI-sac (za-PI-sye)",
+   "id": "mencatat, menyimpan"
+  },
+  {
+   "pl": "rezerwować (rezerwuję) / zarezerwować (zarezerwuję)",
+   "baca": "re-zer-VO-vac (re-zer-VU-ye) / za-re-zer-VO-vac (za-re-zer-VU-ye)",
+   "id": "memesan tempat"
+  },
+  {
+   "pl": "zajęty",
+   "baca": "za-YEN-ty",
+   "id": "terisi; sibuk"
+  },
+  {
+   "pl": "podawać (podaję) / podać (podam)",
+   "baca": "po-DA-vac (po-DA-ye) / PO-dac (PO-dam)",
+   "id": "menyajikan; memberikan"
+  },
+  {
+   "pl": "polecać (polecam) / polecić (polecę)",
+   "baca": "po-LE-tsac (po-LE-tsam) / po-LE-cic (po-LE-tse)",
+   "id": "merekomendasikan"
+  },
+  {
+   "pl": "szef kuchni (m)",
+   "baca": "syef KUH-nyi",
+   "id": "kepala koki"
+  },
+  {
+   "pl": "kaczka (ż)",
+   "baca": "KAC-ka",
+   "id": "bebek"
+  },
+  {
+   "pl": "pieczony",
+   "baca": "pye-CO-ny",
+   "id": "dipanggang (di oven)"
+  },
+  {
+   "pl": "napiwek, napiwku (m)",
+   "baca": "na-PI-vek, na-PIF-ku",
+   "id": "tip, uang tip"
+  },
+  {
+   "pl": "wliczony (w + B.)",
+   "baca": "vli-CO-ny",
+   "id": "sudah termasuk"
+  },
+  {
+   "pl": "rzadkość (ż)",
+   "baca": "ZYAT-kosyc",
+   "id": "hal yang langka"
+  },
+  {
+   "pl": "zadowolony (z + D.)",
+   "baca": "za-do-vo-LO-ny",
+   "id": "puas"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia. Pakai partisip, bukan *który*.",
+   "items": [
+    "Saya punya tiket yang dibeli lewat aplikasi.",
+    "Kafe itu sudah buka.",
+    "Keretanya terlambat tiga puluh menit.",
+    "Orang-orang yang menunggu di peron kelelahan.",
+    "Apakah tip sudah termasuk di tagihan?",
+    "Pelayan yang bisa berbahasa Indonesia itu langka."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partisip yang cocok. Perhatikan jenis, jumlah, dan kasusnya.",
+   "items": [
+    "Drzwi są już ____. (zamknąć, pasif)",
+    "Znam kobietę ____ w Nowej Hucie. (mieszkać, aktif)",
+    "To jest list ____ przez Anię. (napisać, pasif)",
+    "Rozmawiałem z mężczyzną ____ przy oknie. (stać, aktif)",
+    "Goście są już ____. (zaprosić, pasif, jamak lk)",
+    "Stolik jest ____ na ósmą. (zarezerwować, pasif)",
+    "Szukamy programistów ____ po polsku. (mówić, aktif)"
+   ]
+  },
+  {
+   "prompt": "Ganti kalimat anak dengan *który* menjadi frasa partisip.",
+   "items": [
+    "Pociąg, który odjeżdża do Gdańska, stoi przy peronie drugim.",
+    "Znam studentów, którzy mieszkają w akademiku.",
+    "To jest dom, który został zbudowany w XIX wieku.",
+    "Czytam książkę, którą napisała Olga Tokarczuk.",
+    "Kobieta, która czeka na tramwaj, to moja sąsiadka.",
+    "Pokaż mi zdjęcia, które zostały zrobione w Warszawie."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kupiony / mam / w / bilet / aplikacji",
+    "otwarta / kawiarnia / już / jest / ta",
+    "na / czekający / ludzie / peronie / są / zmęczeni",
+    "jest / w / napiwek / rachunek / wliczony / czy / ?",
+    "po / kelner / to / mówiący / rzadkość / indonezyjsku"
+   ]
+  }
+ ],
+ "answers": [
+  "Mam bilet kupiony w aplikacji. — Ta kawiarnia jest już otwarta. — Pociąg jest opóźniony o trzydzieści minut. — Ludzie czekający na peronie są zmęczeni. — Czy napiwek jest wliczony w rachunek? — Kelner mówiący po indonezyjsku to rzadkość.",
+  "zamknięte — mieszkającą — napisany — stojącym — zaproszeni — zarezerwowany — mówiących",
+  "Pociąg odjeżdżający do Gdańska stoi przy peronie drugim. — Znam studentów mieszkających w akademiku. — To jest dom zbudowany w XIX wieku. — Czytam książkę napisaną przez Olgę Tokarczuk. — Kobieta czekająca na tramwaj to moja sąsiadka. — Pokaż mi zdjęcia zrobione w Warszawie.",
+  "Mam bilet kupiony w aplikacji. — Ta kawiarnia jest już otwarta. — Ludzie czekający na peronie są zmęczeni. — Czy napiwek jest wliczony w rachunek? — Kelner mówiący po indonezyjsku to rzadkość."
+ ]
+}

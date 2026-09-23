@@ -1,0 +1,779 @@
+{
+ "title": "Satu akar, sepuluh arti — awalan kata kerja",
+ "title_target": "Pisać, zapisać, przepisać, podpisać",
+ "goal": "Membaca dan menandatangani kontrak sewa baru, lalu menebak arti kata kerja baru dari awalannya. Titik tata bahasanya: **awalan non-gerak** *na-, prze-, za-, wy-, pod-, o-, od-, roz-, do-, po-* pada *pisać, robić, czytać, dzwonić*, beserta pasangan imperfektifnya (*podpisać → podpisywać*).",
+ "bekal": [
+  "membedakan *napisać, zapisać, przepisać, podpisać, opisać, odpisać, dopisać*",
+  "memakai kata kerja berawalan sehari-hari: *oddzwonić, dodzwonić się, dorobić klucz, doczytać*",
+  "menebak arti kata kerja yang belum pernah dilihat dari awalan dan akarnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Nowa umowa najmu",
+   "intro": "Kontrak sewa apartemen Budi dan Tomek di Podgórze habis bulan ini. Pemiliknya, pan Zbigniew, datang membawa kontrak baru.",
+   "lines": [
+    {
+     "speaker": "Zbigniew:",
+     "text": "Dzień dobry, panie Budi. Przyniosłem nową umowę najmu.",
+     "id": "Selamat siang, Pak Budi. Saya bawa kontrak sewa yang baru.",
+     "literal": "hari baik, tuan Budi. saya-membawa-lampau-lk baru kontrak sewa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Czy coś się zmieniło w porównaniu z poprzednią?",
+     "id": "Selamat siang. Ada yang berubah dibanding yang sebelumnya?",
+     "literal": "hari baik. apakah sesuatu diri berubah-lampau-n dalam perbandingan dengan sebelumnya?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Niewiele. Przepisałem starą umowę i dopisałem jeden punkt.",
+     "id": "Tidak banyak. Kontrak lama saya salin, lalu saya tambahkan satu poin.",
+     "literal": "tidak-banyak. saya-menyalin-lampau-lk lama kontrak dan saya-menambah-tulis-lampau-lk satu poin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaki?",
+     "id": "Poin apa?",
+     "literal": "yang-mana?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "O zwierzętach. Podobno pan Tomek chce mieć kota?",
+     "id": "Soal hewan. Katanya Mas Tomek mau pelihara kucing?",
+     "literal": "tentang hewan-hewan. katanya tuan Tomek ia-mau memiliki kucing?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na razie tylko o tym mówi. Czy mogę najpierw wszystko spokojnie przeczytać?",
+     "id": "Sejauh ini baru omongan. Boleh saya baca semuanya dulu dengan tenang?",
+     "literal": "untuk sekali hanya tentang itu ia-berbicara. apakah saya-bisa pertama-tama semuanya dengan-tenang membaca-habis?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Oczywiście. Niech pan przeczyta i podpisze obie kopie.",
+     "id": "Tentu. Silakan dibaca, lalu tanda tangani kedua salinannya.",
+     "literal": "tentu-saja. biarlah tuan akan-membaca-habis dan akan-menandatangani kedua salinan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tu jest błąd: ktoś źle zapisał moje imię.",
+     "id": "Ada yang salah di sini: nama saya ditulis keliru.",
+     "literal": "di-sini adalah kesalahan: seseorang buruk mencatat-lampau-lk milikku nama."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Przepraszam! Zaraz to poprawię.",
+     "id": "Maaf! Saya betulkan sekarang juga.",
+     "literal": "maaf! segera itu saya-akan-memperbaiki."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "I jeszcze jedno: musimy spisać stan liczników.",
+     "id": "Satu lagi: kita perlu mencatat angka meteran.",
+     "literal": "dan masih satu: kita-harus mencatat keadaan meteran-meteran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Już je spisałem i zrobiłem zdjęcia.",
+     "id": "Sudah saya catat, dan sudah saya foto juga.",
+     "literal": "sudah mereka saya-mencatat-lampau-lk dan saya-membuat-lampau-lk foto-foto."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Świetnie. A klucz do piwnicy? Dorobił pan drugi?",
+     "id": "Bagus. Terus kunci gudang bawah tanah? Sudah Bapak buatkan duplikatnya?",
+     "literal": "hebat. dan kunci ke ruang-bawah-tanah? membuat-tambahan-lampau-lk tuan kedua?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, dorobiłem klucz dla Tomka.",
+     "id": "Sudah, saya buatkan satu untuk Tomek.",
+     "literal": "ya, saya-membuat-tambahan-lampau-lk kunci untuk Tomek."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "To wszystko. Proszę podpisać tutaj, a ja podpiszę się obok.",
+     "id": "Itu saja. Silakan tanda tangan di sini, saya tanda tangan di sebelahnya.",
+     "literal": "itu semuanya. saya-mohon menandatangani di-sini, dan saya akan-menandatangani diri di-sebelah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gotowe. Podpisałem obie kopie.",
+     "id": "Beres. Kedua salinannya sudah saya tanda tangani.",
+     "literal": "siap. saya-menandatangani-lampau-lk kedua salinan."
+    }
+   ],
+   "notes": [
+    "**Przepisałem, dopisałem, zapisał, podpisał** — empat kata kerja dari satu akar *pisać* (menulis), dan setiap awalan menambahkan arah: *prze-* \"sekali lagi, dipindahkan\" (menyalin), *do-* \"tambahan\" (menambahkan tulisan), *za-* \"supaya tercatat\" (mencatat), *pod-* \"di bawah\" (menandatangani — harfiah \"menulis di bawah\"). Bahasa Indonesia punya pola serupa dengan imbuhan: tulis, menulis, menuliskan, mencatat.",
+    "**Ktoś źle zapisał moje imię** — *zapisać* adalah \"menuliskan supaya tersimpan\": nama di daftar, nomor telepon, berkas di komputer (*zapisz plik* — simpan berkasnya). Dengan *się* artinya \"mendaftar\": *zapisać się na kurs*.",
+    "**Przeczytać** — *prze-* pada *czytać* hanyalah awalan perfektif \"murni\": membaca sampai selesai. Setiap akar punya satu awalan yang berperan begitu (*na-pisać, prze-czytać, z-robić, za-dzwonić*), dan awalan lain menambah makna baru. Inilah yang kamu pelajari di A2 unit 18; unit ini membuka sisa awalannya.",
+    "**Spisać stan liczników** — *s-/z-* + *pisać* = \"mencatat dari sesuatu, mendata\". Di Polandia, mencatat angka meteran listrik, air, dan gas saat serah terima apartemen adalah hal yang sangat lazim — lihat kotak di bagian akhir unit.",
+    "**Dorobić klucz** — *do-* + *robić* = \"membuat tambahan\". Di kios tukang kunci kamu cukup berkata *Chciałbym dorobić klucz* dan menyerahkan kunci aslinya. *Dorobić* juga berarti \"mencari penghasilan tambahan\": *dorabiać po pracy*.",
+    "**Podpiszę się obok** — *podpisać* (menandatangani sesuatu, + B.) dan *podpisać się* (membubuhkan tanda tangan sendiri): *podpisać umowę* tetapi *podpisać się pod umową / na dole strony*."
+   ],
+   "grammars": [
+    {
+     "title": "Pisać dengan sepuluh awalan",
+     "body": [
+      "Setiap awalan punya makna dasar yang cukup stabil. Kalau kamu tahu makna dasarnya, sebagian besar kata kerja berawalan bisa ditebak. Semua bentuk di kolom tengah perfektif; pasangan imperfektifnya dibentuk dengan *-ywać* (kecuali *napisać*, yang pasangannya *pisać* sendiri)."
+     ],
+     "table": {
+      "head": [
+       "Awalan",
+       "Makna dasar",
+       "Kata kerja (dk)",
+       "Arti",
+       "Pasangan ndk"
+      ],
+      "rows": [
+       [
+        "*na-*",
+        "perfektif murni",
+        "*napisać*",
+        "menulis (sampai jadi)",
+        "*pisać*"
+       ],
+       [
+        "*za-*",
+        "supaya tercatat",
+        "*zapisać (się)*",
+        "mencatat; menyimpan; mendaftar",
+        "*zapisywać*"
+       ],
+       [
+        "*prze-*",
+        "ulang, pindah",
+        "*przepisać*",
+        "menyalin; meresepkan",
+        "*przepisywać*"
+       ],
+       [
+        "*pod-*",
+        "di bawah",
+        "*podpisać*",
+        "menandatangani",
+        "*podpisywać*"
+       ],
+       [
+        "*o-*",
+        "di sekeliling, perihal",
+        "*opisać*",
+        "mendeskripsikan",
+        "*opisywać*"
+       ],
+       [
+        "*od-*",
+        "balik, sebagai jawaban",
+        "*odpisać*",
+        "membalas (surat, pesan)",
+        "*odpisywać*"
+       ],
+       [
+        "*wy-*",
+        "keluar, tuntas",
+        "*wypisać*",
+        "mengisi; mengeluarkan (dari RS, dari daftar)",
+        "*wypisywać*"
+       ],
+       [
+        "*do-*",
+        "tambahan, sampai",
+        "*dopisać*",
+        "menambahkan tulisan",
+        "*dopisywać*"
+       ],
+       [
+        "*roz-*",
+        "diurai, dirinci",
+        "*rozpisać*",
+        "merinci (rencana, jadwal)",
+        "*rozpisywać*"
+       ],
+       [
+        "*w-*",
+        "ke dalam",
+        "*wpisać*",
+        "memasukkan (ke formulir)",
+        "*wpisywać*"
+       ]
+      ]
+     },
+     "after": [
+      "**Satu kata kerja bisa punya dua arti** yang sama-sama mengikuti makna awalannya: *przepisać tekst* (menyalin — dipindahkan ke kertas lain) dan *lekarz przepisał lek* (dokter meresepkan — dipindahkan ke resep). *Wypisać fakturę* (mengeluarkan faktur) dan *wypisać ze szpitala* (mengeluarkan dari rumah sakit).",
+      "**Kata depan ikut awalan:** *odpisać **na** e-mail, wpisać **do** formularza* atau *w formularzu, wypisać się **z** kursu, zapisać się **na** kurs, podpisać się **pod** umową*. Hafalkan kata kerja bersama kata depannya."
+     ]
+    },
+    {
+     "title": "Awalan membuat perfektif — lalu ndk baru",
+     "body": [
+      "Kata kerja dasar (*pisać, robić*) imperfektif. Awalan membuatnya perfektif dan sekaligus mengubah maknanya. Untuk membicarakan kebiasaan atau proses, bahasa Polandia lalu membentuk imperfektif baru dari kata berawalan itu."
+     ],
+     "table": {
+      "head": [
+       "Dasar (ndk)",
+       "Berawalan (dk)",
+       "Imperfektif baru",
+       "Contoh kebiasaan"
+      ],
+      "rows": [
+       [
+        "*pisać*",
+        "*podpisać*",
+        "*podpisywać*",
+        "*Codziennie podpisuję faktury.*"
+       ],
+       [
+        "*pisać*",
+        "*zapisać*",
+        "*zapisywać*",
+        "*Zawsze zapisuję nowe słowa.*"
+       ],
+       [
+        "*robić*",
+        "*zarobić*",
+        "*zarabiać*",
+        "*Ile zarabiasz?*"
+       ],
+       [
+        "*robić*",
+        "*dorobić*",
+        "*dorabiać*",
+        "*Dorabiam jako tłumacz.*"
+       ],
+       [
+        "*czytać*",
+        "*odczytać*",
+        "*odczytywać*",
+        "*Odczytuję wiadomości rano.*"
+       ],
+       [
+        "*dzwonić*",
+        "*oddzwonić*",
+        "*oddzwaniać*",
+        "*Nigdy nie oddzwania!*"
+       ]
+      ]
+     },
+     "after": [
+      "Akhiran imperfektif baru: *-ywać / -iwać* (*podpisywać, odczytywać*) atau *-ać* dengan perubahan vokal (*robić → -rabiać*, *dzwonić → -dzwaniać*). Pola *o → a* pada akar (*robić → zarabiać*) sangat teratur, jadi setelah kamu melihatnya dua kali, kamu akan mengenalinya di mana saja.",
+      "**Kamus mencatat pasangannya.** Di daftar kosakata buku ini, kata kerja selalu ditulis berpasangan *ndk / dk*; biasakan menghafal keduanya sekaligus."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Nie mogłem się dodzwonić!",
+   "intro": "Malamnya Tomek pulang dengan wajah penasaran. Seharian ia tidak bisa menghubungi Budi.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "Dzwoniłem trzy razy i nie mogłem się dodzwonić!",
+     "id": "Aku telepon tiga kali, tapi nggak nyambung-nyambung!",
+     "literal": "saya-menelepon-lampau-lk tiga kali dan tidak saya-bisa-lampau-lk diri menelepon-sampai-tersambung!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przepraszam, podpisywałem umowę z panem Zbigniewem. Wyciszyłem telefon.",
+     "id": "Maaf, aku lagi tanda tangan kontrak dengan Pak Zbigniew. HP-nya aku senyapkan.",
+     "literal": "maaf, saya-menandatangani-lampau-lk kontrak dengan tuan Zbigniew. saya-menyenyapkan-lampau-lk telepon."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "No i? Doczytałeś do końca?",
+     "id": "Terus? Kamu baca sampai habis?",
+     "literal": "nah dan? kamu-membaca-sampai-habis-lampau-lk sampai akhir?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Dopisał punkt o zwierzętach. Możemy mieć kota!",
+     "id": "Iya. Dia menambahkan poin soal hewan. Kita boleh pelihara kucing!",
+     "literal": "ya. menambah-tulis-lampau-lk poin tentang hewan-hewan. kita-bisa memiliki kucing!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Serio? Muszę od razu zadzwonić do Oli!",
+     "id": "Serius? Aku harus langsung telepon Ola!",
+     "literal": "serius? saya-harus dari sekali menelepon ke Ola!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Najpierw oddzwoń do mamy. Ona też nie mogła się do ciebie dodzwonić.",
+     "id": "Telepon balik ibumu dulu. Dia juga nggak bisa menghubungimu.",
+     "literal": "pertama-tama teleponlah-balik ke ibu. dia juga tidak bisa-lampau-pr diri ke kamu menelepon-sampai-tersambung."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Dobra, oddzwonię. A potem przerobimy balkon na królestwo kota!",
+     "id": "Oke, aku telepon balik. Habis itu kita ubah balkon jadi kerajaan kucing!",
+     "literal": "baik, saya-akan-menelepon-balik. dan kemudian kita-akan-mengubah balkon menjadi kerajaan kucing!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Spokojnie. Pan Zbigniew zapisał też, że za szkody płacimy my.",
+     "id": "Tenang. Pak Zbigniew juga mencatat bahwa kerusakan kita yang bayar.",
+     "literal": "dengan-tenang. tuan Zbigniew mencatat-lampau-lk juga, bahwa untuk kerusakan-kerusakan kami-membayar kami."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Rozumiem. To wypiszę sobie wszystkie zasady i powieszę na lodówce.",
+     "id": "Paham. Kalau begitu semua aturannya aku tulis dan kutempel di kulkas.",
+     "literal": "saya-mengerti. jadi saya-akan-menulis-keluar untuk-diri semua aturan dan saya-akan-menggantung di kulkas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Świetny pomysł. A ja opiszę całą historię na blogu.",
+     "id": "Ide bagus. Aku sendiri akan menceritakan semuanya di blog.",
+     "literal": "hebat gagasan. dan saya akan-mendeskripsikan seluruh cerita di blog."
+    }
+   ],
+   "notes": [
+    "**Dodzwonić się** — *do-* \"sampai\" + *dzwonić* + *się* = \"berhasil tersambung lewat telepon\". Sangat berguna di Polandia, terutama ke kantor dan dokter: *Nie mogę się dodzwonić do przychodni* — saya tidak bisa menghubungi klinik. Arahnya dengan *do* + D.: *dodzwonić się do mamy*.",
+    "**Oddzwoń** — *od-* \"sebagai balasan\" + *dzwonić*: menelepon balik. Pasangannya dengan *pisać* adalah *odpisać* (membalas pesan). Kalimat yang kamu dengar di pesan suara: *Oddzwonię później* — nanti saya telepon balik.",
+    "**Doczytałeś do końca?** — *do-* sering berpasangan dengan kata depan *do*: *doczytać do końca, dojść do domu, dopisać do listy*. Awalan dan kata depannya menggemakan arti yang sama: \"sampai\".",
+    "**Przerobimy balkon na królestwo** — *prze-* \"mengubah menjadi\" + *robić*; *przerobić coś na coś* = mengubah sesuatu menjadi sesuatu (*przerobić sukienkę na spódnicę*). *Przerobić* juga berarti \"mengulang materi pelajaran\": *przerobiliśmy już ten rozdział*.",
+    "**Wypiszę sobie** — *wypisać* \"menuliskan keluar\" dari suatu sumber, misalnya menyalin daftar poin dari kontrak. *Sobie* (untuk diri sendiri) memberi nuansa \"buat catatanku sendiri\"."
+   ],
+   "grammars": [
+    {
+     "title": "Robić, czytać, dzwonić dengan awalan",
+     "body": [
+      "Tiga akar lagi yang sangat sering. Bandingkan setiap baris dengan tabel *pisać*: makna awalannya konsisten."
+     ],
+     "table": {
+      "head": [
+       "Awalan",
+       "*robić*",
+       "*czytać*",
+       "*dzwonić*"
+      ],
+      "rows": [
+       [
+        "perfektif murni",
+        "*zrobić* (melakukan)",
+        "*przeczytać* (membaca habis)",
+        "*zadzwonić* (menelepon)"
+       ],
+       [
+        "*za-*",
+        "*zarobić* (mendapat uang)",
+        "*zaczytać się* (larut membaca)",
+        "—"
+       ],
+       [
+        "*prze-*",
+        "*przerobić* (mengubah; mengulang materi)",
+        "—",
+        "*przedzwonić* (menelepon sebentar, lisan)"
+       ],
+       [
+        "*od-*",
+        "*odrobić* (mengganti yang tertinggal; *odrobić lekcje* — mengerjakan PR)",
+        "*odczytać* (membacakan; memecahkan tulisan)",
+        "*oddzwonić* (menelepon balik)"
+       ],
+       [
+        "*do-*",
+        "*dorobić* (membuat tambahan; duplikat)",
+        "*doczytać* (membaca sampai habis)",
+        "*dodzwonić się* (berhasil tersambung)"
+       ],
+       [
+        "*wy-*",
+        "*wyrobić się* (sempat, keburu)",
+        "*wyczytać* (menemukan dengan membaca)",
+        "*wydzwaniać* (terus-terusan menelepon, ndk)"
+       ],
+       [
+        "*po-*",
+        "*porobić* (mengerjakan sedikit-sedikit)",
+        "*poczytać* (membaca sebentar)",
+        "*podzwonić* (menelepon beberapa orang)"
+       ]
+      ]
+     },
+     "after": [
+      "**Po- \"sebentar\"** adalah salah satu awalan paling bersahabat: *poczytać, pospacerować, porozmawiać* — melakukan sesuatu sebentar, dengan santai. *Poczytam trochę przed snem* — aku baca-baca sebentar sebelum tidur.",
+      "**Jangan menebak terlalu berani.** Makna dasar awalan adalah petunjuk, bukan jaminan: *zarobić* (za- + robić) tidak bisa ditebak sebagai \"mendapat uang\". Tebak dari awalan, lalu pastikan dari konteks atau kamus."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menebak arti dari awalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Awalan",
+      "Makna dasar",
+      "Dengan gerak",
+      "Tanpa gerak"
+     ],
+     "rows": [
+      [
+       "*prze-*",
+       "melewati; ulang; ubah",
+       "*przejść* (menyeberang)",
+       "*przemyśleć* (memikirkan matang-matang)"
+      ],
+      [
+       "*wy-*",
+       "keluar; tuntas",
+       "*wyjść* (keluar)",
+       "*wyczyścić* (membersihkan tuntas)"
+      ],
+      [
+       "*od-*",
+       "menjauh; balik",
+       "*odejść* (pergi menjauh)",
+       "*oddać* (mengembalikan)"
+      ],
+      [
+       "*do-*",
+       "sampai; tambahan",
+       "*dojść* (sampai)",
+       "*dosolić* (menambah garam)"
+      ],
+      [
+       "*roz-*",
+       "menyebar; terurai",
+       "*rozejść się* (bubar)",
+       "*rozdać* (membagi-bagikan)"
+      ],
+      [
+       "*za-*",
+       "mulai; menutup; tercatat",
+       "*zajść* (mampir)",
+       "*zamknąć* (menutup), *zaśpiewać* (menyanyikan)"
+      ],
+      [
+       "*pod-*",
+       "di bawah; mendekat",
+       "*podejść* (mendekat)",
+       "*podsłuchać* (menguping)"
+      ],
+      [
+       "*o- / ob-*",
+       "sekeliling",
+       "*obejść* (mengitari)",
+       "*oprowadzić* (memandu berkeliling)"
+      ],
+      [
+       "*po-*",
+       "sebentar; perfektif",
+       "*pójść* (pergi)",
+       "*pomyśleć* (berpikir sebentar)"
+      ],
+      [
+       "*na-*",
+       "ke atas; banyak; perfektif",
+       "*najechać* (menabrak, menyerbu)",
+       "*nagotować* (memasak banyak)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom \"dengan gerak\" menyambung unit A2 tentang kata kerja gerak berawalan: makna *prze-, wy-, od-, do-* sama persis, hanya dipindah dari ruang ke kegiatan. *Wyjść* adalah keluar dari ruangan; *wypisać* adalah mengeluarkan tulisan dari kepala ke kertas, atau mengeluarkan orang dari daftar. *Odejść* menjauh; *odpisać* mengirim tulisan balik ke arah pengirimnya. Kalau bertemu kata kerja baru, pisahkan dulu awalannya, cari akarnya, lalu gabungkan keduanya dalam kalimat: *pod* + *słuchać* = \"mendengar dari bawah, diam-diam\" = menguping. Tebakan seperti ini benar lebih sering daripada yang kamu kira."
+    },
+    {
+     "type": "kotak",
+     "title": "Menyewa apartemen di Polandia",
+     "items": [
+      "Kontrak sewa (*umowa najmu*) biasanya dibuat tertulis dalam dua salinan, satu untuk pemilik (*wynajmujący*) dan satu untuk penyewa (*najemca*). Hampir selalu ada *kaucja* (uang jaminan) yang dikembalikan saat keluar bila tidak ada kerusakan.",
+      "Saat serah terima, banyak pemilik dan penyewa membuat *protokół zdawczo-odbiorczy*: daftar isi apartemen, kondisinya, dan angka meteran (*stan liczników*), sering dilengkapi foto. Dokumen ini berguna ketika uang jaminan dikembalikan.",
+      "Bacalah kontrak sampai habis sebelum menandatangani, terutama soal biaya (*czynsz, opłaty, media*) dan jangka waktu pemberitahuan (*okres wypowiedzenia*). Kalau ragu, minta penjelasan atau bantuan orang yang paham hukum — buku ini bukan nasihat hukum."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa kontrak sewa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*umowa najmu*",
+       "u-MO-va NAY-mu",
+       "kontrak sewa"
+      ],
+      [
+       "*wynajmujący / najemca*",
+       "vy-nay-mu-YON-tsy / na-YEM-tsa",
+       "pemilik yang menyewakan / penyewa"
+      ],
+      [
+       "*czynsz*",
+       "cynsy",
+       "uang sewa; biaya gedung"
+      ],
+      [
+       "*kaucja*",
+       "KAU-tsya",
+       "uang jaminan"
+      ],
+      [
+       "*opłaty za media*",
+       "o-PWA-ty za ME-dya",
+       "biaya utilitas (listrik, air, gas)"
+      ],
+      [
+       "*licznik*",
+       "LIC-nik",
+       "meteran"
+      ],
+      [
+       "*okres wypowiedzenia*",
+       "O-kres vy-po-vye-DZE-nya",
+       "masa pemberitahuan pemutusan"
+      ],
+      [
+       "*wypowiedzieć umowę*",
+       "vy-po-VYE-jyec u-MO-ve",
+       "memutus kontrak"
+      ],
+      [
+       "*paragraf (§)*",
+       "pa-RA-graf",
+       "pasal"
+      ],
+      [
+       "*niniejsza umowa*",
+       "ni-NYEY-sya u-MO-va",
+       "kontrak ini (bahasa resmi)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa kontrak Polandia penuh kata berawalan juga: *wypowiedzieć* (wy- + powiedzieć — \"mengucapkan keluar\", yaitu mengakhiri kontrak), *przedłużyć* (prze- + dłużyć — memperpanjang), *rozwiązać umowę* (roz- + wiązać, \"mengurai ikatan\" — membatalkan kontrak). Kata *niniejszy* (\"yang ini, yang sekarang\") hanya muncul di dokumen resmi; dalam percakapan kamu cukup berkata *ta umowa*. Pasal-pasal ditandai *§ 1, § 2* dan dibaca *paragraf pierwszy, paragraf drugi*."
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Baik. Saya minta paspor Bapak dan formulir yang sudah diisi.",
+       "*Dobrze. Poproszę pana paszport i wypełniony wniosek.*"
+      ],
+      [
+       "Boleh saya bertanya sesuatu, Bu?",
+       "*Czy mogę panią o coś zapytać?*"
+      ],
+      [
+       "Sulit dikatakan, setiap perkara berbeda. Keputusannya akan kami beri tahukan kepada Bapak lewat surat.",
+       "*Trudno powiedzieć, każda sprawa jest inna. O decyzji poinformujemy pana listownie.*"
+      ],
+      [
+       "Ya. Tolong tanda tangan di sini. Semoga hari Bapak menyenangkan.",
+       "*Tak. Proszę jeszcze tu podpisać. Życzę panu miłego dnia.*"
+      ],
+      [
+       "Senang berkenalan dengan Bapak, Pak Doktor.",
+       "*Miło mi pana poznać, panie doktorze.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "pisać (piszę) / napisać (napiszę)",
+   "baca": "PI-sac / na-PI-sac",
+   "id": "menulis"
+  },
+  {
+   "pl": "zapisywać (zapisuję) / zapisać (zapiszę)",
+   "baca": "za-pi-SY-vac / za-PI-sac",
+   "id": "mencatat; menyimpan"
+  },
+  {
+   "pl": "zapisać się (na + B.) — dk",
+   "baca": "za-PI-sac sye",
+   "id": "mendaftar"
+  },
+  {
+   "pl": "przepisywać (przepisuję) / przepisać (przepiszę)",
+   "baca": "psye-pi-SY-vac / psye-PI-sac",
+   "id": "menyalin; meresepkan"
+  },
+  {
+   "pl": "podpisywać (podpisuję) / podpisać (podpiszę)",
+   "baca": "pot-pi-SY-vac / pot-PI-sac",
+   "id": "menandatangani"
+  },
+  {
+   "pl": "opisywać (opisuję) / opisać (opiszę)",
+   "baca": "o-pi-SY-vac / o-PI-sac",
+   "id": "mendeskripsikan"
+  },
+  {
+   "pl": "odpisywać (odpisuję) / odpisać (odpiszę) (na + B.)",
+   "baca": "ot-pi-SY-vac / ot-PI-sac",
+   "id": "membalas (pesan, surat)"
+  },
+  {
+   "pl": "dopisywać (dopisuję) / dopisać (dopiszę)",
+   "baca": "do-pi-SY-vac / do-PI-sac",
+   "id": "menambahkan (tulisan)"
+  },
+  {
+   "pl": "wypisywać (wypisuję) / wypisać (wypiszę)",
+   "baca": "vy-pi-SY-vac / vy-PI-sac",
+   "id": "menuliskan; mengeluarkan dari daftar"
+  },
+  {
+   "pl": "spisywać (spisuję) / spisać (spiszę)",
+   "baca": "spi-SY-vac / SPI-sac",
+   "id": "mencatat, mendata"
+  },
+  {
+   "pl": "dorabiać (dorabiam) / dorobić (dorobię)",
+   "baca": "do-RA-byac / do-RO-bic",
+   "id": "membuat tambahan; duplikat; kerja sampingan"
+  },
+  {
+   "pl": "zarabiać (zarabiam) / zarobić (zarobię)",
+   "baca": "za-RA-byac / za-RO-bic",
+   "id": "mendapat penghasilan"
+  },
+  {
+   "pl": "przerabiać (przerabiam) / przerobić (przerobię)",
+   "baca": "psye-RA-byac / psye-RO-bic",
+   "id": "mengubah; mengulang (materi)"
+  },
+  {
+   "pl": "doczytywać (doczytuję) / doczytać (doczytam)",
+   "baca": "do-cy-TY-vac / do-CY-tac",
+   "id": "membaca sampai habis"
+  },
+  {
+   "pl": "oddzwaniać (oddzwaniam) / oddzwonić (oddzwonię)",
+   "baca": "od-DZVA-nyac / od-DZVO-nic",
+   "id": "menelepon balik"
+  },
+  {
+   "pl": "dodzwaniać się / dodzwonić się (dodzwonię się) (do + D.)",
+   "baca": "do-DZVA-nyac sye / do-DZVO-nic sye",
+   "id": "berhasil tersambung (telepon)"
+  },
+  {
+   "pl": "poprawiać (poprawiam) / poprawić (poprawię)",
+   "baca": "po-PRA-vyac / po-PRA-vic",
+   "id": "memperbaiki, membetulkan"
+  },
+  {
+   "pl": "umowa najmu (ż)",
+   "baca": "u-MO-va NAY-mu",
+   "id": "kontrak sewa"
+  },
+  {
+   "pl": "nazwisko (n)",
+   "baca": "naz-VIS-ko",
+   "id": "nama keluarga"
+  },
+  {
+   "pl": "punkt, punkty (m)",
+   "baca": "punkt, PUNK-ty",
+   "id": "poin, butir"
+  },
+  {
+   "pl": "licznik, liczniki (m)",
+   "baca": "LIC-nik, lic-NI-ki",
+   "id": "meteran"
+  },
+  {
+   "pl": "piwnica (ż)",
+   "baca": "piv-NI-tsa",
+   "id": "ruang bawah tanah, gudang"
+  },
+  {
+   "pl": "szkoda, szkody (ż)",
+   "baca": "SYKO-da, SYKO-dy",
+   "id": "kerusakan, kerugian"
+  },
+  {
+   "pl": "zasada, zasady (ż)",
+   "baca": "za-SA-da, za-SA-dy",
+   "id": "aturan, prinsip"
+  },
+  {
+   "pl": "zwierzę, zwierzęta (n)",
+   "baca": "ZVYE-zye, zvye-ZYEN-ta",
+   "id": "hewan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya sudah menandatangani kontraknya. (pembicara lk)",
+    "Catat nomor telepon saya. (kepada teman)",
+    "Dia belum membalas surel saya. (*dia* pr)",
+    "Nanti malam saya telepon balik.",
+    "Deskripsikan kamarmu. (kepada teman)",
+    "Saya harus membuat duplikat kunci."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kerja berawalan yang tepat. Petunjuk: akar, makna yang dicari, dan bentuknya.",
+   "items": [
+    "Lekarz ____ mi nowe lekarstwo. (pisać: meresepkan, lampau lk)",
+    "Chcę ____ się na kurs polskiego. (pisać: mendaftar, inf.)",
+    "Ile ____ w tym miesiącu? (robić: mendapat uang, lampau ty lk)",
+    "Nie mogę się ____ do banku. (dzwonić: tersambung, inf.)",
+    "____ tę książkę do końca? (czytać: sampai habis, lampau ty pr)",
+    "Proszę ____ swoje imię do formularza. (pisać: memasukkan, inf.)",
+    "Szef kazał mi ____ ten raport. (robić: mengubah, inf.)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan satu kata kerja berawalan yang menggantikan keterangan panjangnya.",
+   "items": [
+    "Napisałem jeszcze jedno zdanie na końcu listu.",
+    "Napisałem cały tekst jeszcze raz, na nowej kartce.",
+    "Zadzwonię do ciebie później, bo ty dzwoniłeś do mnie.",
+    "Zrobiłem drugi, taki sam klucz.",
+    "Napisałem swoje imię i nazwisko pod umową.",
+    "Powiedz, jak wygląda twoje mieszkanie."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "starą / przepisałem / umowę / dopisałem / i / punkt / jeden",
+    "zapisał / imię / ktoś / moje / źle",
+    "dla / klucz / dorobiłem / Tomka",
+    "mogę / przeczytać / czy / najpierw / wszystko / ?",
+    "mogłem / dodzwonić / nie / się"
+   ]
+  }
+ ],
+ "answers": [
+  "Podpisałem umowę. — Zapisz mój numer telefonu. — Ona jeszcze nie odpisała na mój e-mail. — Oddzwonię wieczorem. — Opisz swój pokój. — Muszę dorobić klucz.",
+  "przepisał — zapisać — zarobiłeś — dodzwonić — Doczytałaś — wpisać — przerobić",
+  "Dopisałem jedno zdanie na końcu listu. — Przepisałem cały tekst na nową kartkę. — Oddzwonię do ciebie później. — Dorobiłem klucz. — Podpisałem umowę (atau: Podpisałem się pod umową). — Opisz swoje mieszkanie.",
+  "Przepisałem starą umowę i dopisałem jeden punkt. — Ktoś źle zapisał moje imię. — Dorobiłem klucz dla Tomka. — Czy mogę najpierw wszystko przeczytać? — Nie mogłem się dodzwonić."
+ ]
+}

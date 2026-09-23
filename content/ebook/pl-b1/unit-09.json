@@ -1,0 +1,683 @@
+{
+ "title": "Pergi-pulang dan sekali jalan — kata kerja gerak lengkap",
+ "title_target": "Chodzę czy idę?",
+ "goal": "Bercerita tentang perjalanan ke Gdańsk, kereta, kapal, dan pantai, dengan memilih kata kerja gerak yang tepat. Titik tata bahasanya: tujuh pasangan **satu arah vs berulang / tanpa arah**: *iść / chodzić, jechać / jeździć, nieść / nosić, wieźć / wozić, lecieć / latać, płynąć / pływać, biec / biegać*.",
+ "bekal": [
+  "membedakan gerak yang sedang menuju satu tempat (*idę, jadę, płynę*) dari kebiasaan dan gerak ke sana kemari (*chodzę, jeżdżę, pływam*)",
+  "memilih kata kerja menurut kendaraan: *jechać pociągiem, lecieć samolotem, płynąć statkiem*",
+  "membaca *chodziłem, szedłem, poszedłem* dalam cerita lampau dengan tiga arti yang berbeda"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Witaj w Gdańsku!",
+   "intro": "Marek, rekan Budi di Kodex, pulang ke kota asalnya untuk akhir pekan panjang dan mengundang Budi. Ia menjemput Budi di stasiun Gdańsk Główny.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Witaj w Gdańsku! Jak minęła podróż?",
+     "id": "Selamat datang di Gdańsk! Perjalanannya gimana?",
+     "literal": "salam di Gdańsk! bagaimana ia-berlalu-lampau-pr perjalanan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Długo. Jechałem pociągiem przez całą Polskę.",
+     "id": "Lama. Saya naik kereta menyeberangi seluruh Polandia.",
+     "literal": "lama. saya-berkendara-lampau-lk kereta melalui seluruh Polandia."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Czemu nie poleciałeś? Samolotem byłoby szybciej.",
+     "id": "Kenapa nggak terbang? Naik pesawat lebih cepat.",
+     "literal": "mengapa tidak kamu-terbang-lampau-lk? pesawat-dengan ia-adalah-andai lebih-cepat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie lubię latać. Wolę jeździć pociągiem i patrzeć przez okno.",
+     "id": "Saya nggak suka terbang. Saya lebih suka naik kereta sambil lihat ke luar jendela.",
+     "literal": "tidak saya-suka terbang. saya-lebih-suka berkendara kereta dan memandang melalui jendela."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Rozumiem. To idziemy? Moi rodzice mieszkają dziesięć minut stąd.",
+     "id": "Paham. Yuk jalan? Rumah orang tua saya sepuluh menit dari sini.",
+     "literal": "saya-paham. maka kami-pergi? milikku orang-tua mereka-tinggal sepuluh menit dari-sini."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chodźmy. Tylko ta torba jest strasznie ciężka.",
+     "id": "Ayo. Cuma tas ini berat banget.",
+     "literal": "mari-kita-pergi. hanya ini tas adalah sangat berat."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Co ty niesiesz w tej torbie? Kamienie?",
+     "id": "Kamu bawa apa di tas itu? Batu?",
+     "literal": "apa kamu kamu-membawa di itu tas? batu-batu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Prezenty z Krakowa. Kiedy jeżdżę do znajomych, zawsze wożę coś słodkiego.",
+     "id": "Oleh-oleh dari Kraków. Kalau saya pergi ke rumah kenalan, saya selalu bawa sesuatu yang manis.",
+     "literal": "hadiah-hadiah dari Kraków. ketika saya-berkendara ke kenalan-kenalan, selalu saya-membawa-berkendaraan sesuatu manis."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Kochany jesteś! A jutro płyniemy statkiem na Westerplatte.",
+     "id": "Baik banget kamu! Nah, besok kita naik kapal ke Westerplatte.",
+     "literal": "tersayang kamu-adalah! dan besok kami-berlayar kapal ke Westerplatte."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Statkiem? Nie można tam dojechać autobusem?",
+     "id": "Naik kapal? Memangnya nggak bisa ke sana naik bus?",
+     "literal": "kapal-dengan? tidak bisa ke-sana sampai-berkendara bus-dengan?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Można, ale statkiem jest ciekawiej. W sezonie statki pływają tam regularnie.",
+     "id": "Bisa, tapi naik kapal lebih seru. Kalau musimnya, kapal ke sana rutin.",
+     "literal": "bisa, tetapi kapal-dengan adalah lebih-menarik. di musim kapal-kapal berlayar-bolak-balik ke-sana secara-teratur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Super. A w Sopocie? Czy w Bałtyku można pływać?",
+     "id": "Asyik. Terus di Sopot? Di Laut Baltik bisa berenang?",
+     "literal": "super. dan di Sopot? apakah di Baltik bisa berenang?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Latem da się wytrzymać. Kiedy tu jestem, pływam prawie codziennie.",
+     "id": "Kalau musim panas masih tahan. Kalau lagi di sini, saya berenang hampir tiap hari.",
+     "literal": "di-musim-panas memberi diri bertahan. ketika di-sini saya-adalah, saya-berenang hampir setiap-hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja wolę chodzić po plaży. Pływam jak siekiera!",
+     "id": "Saya lebih suka jalan-jalan di pantai. Berenang saya kayak kapak: langsung tenggelam!",
+     "literal": "saya saya-lebih-suka berjalan-jalan di-sepanjang pantai. saya-berenang seperti kapak!"
+    }
+   ],
+   "notes": [
+    "**Jechałem… przez całą Polskę** — satu perjalanan dari Kraków ke Gdańsk, jadi *jechać* (satu arah). Untuk semua kendaraan di darat, termasuk kereta, bus, trem, mobil, dan sepeda, bahasa Polandia memakai *jechać / jeździć*. Kendaraannya dalam narzędnik: *pociągiem, autobusem, samochodem*.",
+    "**Nie lubię latać** — sesudah *lubić, umieć, bać się* dan kata sejenis yang membicarakan kegiatan secara umum, yang dipakai adalah kata kerja berulang: *lubię latać, umiem pływać, boję się jeździć samochodem*. Tidak ada arah, tidak ada satu perjalanan tertentu.",
+    "**Co ty niesiesz?** — *nieść*: membawa sambil berjalan, sekarang, ke satu arah. Kalau membawa dengan kendaraan, pakai *wieźć / wozić*: *Zawsze wożę coś słodkiego* — setiap kali bepergian (naik kereta), Budi membawa oleh-oleh.",
+    "**Płyniemy statkiem na Westerplatte** — kala kini untuk rencana yang sudah pasti, persis seperti \"besok kita naik kapal\" dalam bahasa Indonesia. *Na Westerplatte* memakai *na*, seperti *na Hel* dan *na Mazury*.",
+    "**Statki pływają tam regularnie** — kapal yang berlayar pulang-pergi secara rutin: *pływać*. Kapal yang saat ini sedang menuju ke sana: *płynąć*.",
+    "**Da się wytrzymać** — \"masih bisa ditahan\". *Da się* + infinitif = bisa (secara umum), kerabat dekat *można*. Laut Baltik memang dingin untuk ukuran orang Indonesia, bahkan di musim panas."
+   ],
+   "grammars": [
+    {
+     "title": "Tujuh pasangan gerak",
+     "body": [
+      "Kedua kolom pertama sama-sama ndk. Bedanya bukan selesai atau belum, melainkan **arah**: kolom kiri bergerak ke satu tujuan dan sedang berlangsung; kolom kanan bolak-balik, berulang, tanpa arah, atau sebagai kegiatan umum."
+     ],
+     "table": {
+      "head": [
+       "Satu arah, sekarang",
+       "Berulang / tanpa arah",
+       "dk (sekali)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*iść (idę, idziesz)*",
+        "*chodzić (chodzę, chodzisz)*",
+        "*pójść*",
+        "berjalan kaki, pergi"
+       ],
+       [
+        "*jechać (jadę, jedziesz)*",
+        "*jeździć (jeżdżę, jeździsz)*",
+        "*pojechać*",
+        "naik kendaraan"
+       ],
+       [
+        "*nieść (niosę, niesiesz)*",
+        "*nosić (noszę, nosisz)*",
+        "*zanieść*",
+        "membawa (sambil berjalan)"
+       ],
+       [
+        "*wieźć (wiozę, wieziesz)*",
+        "*wozić (wożę, wozisz)*",
+        "*zawieźć*",
+        "membawa (dengan kendaraan)"
+       ],
+       [
+        "*lecieć (lecę, lecisz)*",
+        "*latać (latam, latasz)*",
+        "*polecieć*",
+        "terbang"
+       ],
+       [
+        "*płynąć (płynę, płyniesz)*",
+        "*pływać (pływam, pływasz)*",
+        "*popłynąć*",
+        "berenang; berlayar"
+       ],
+       [
+        "*biec (biegnę, biegniesz)*",
+        "*biegać (biegam, biegasz)*",
+        "*pobiec*",
+        "berlari"
+       ]
+      ]
+     },
+     "after": [
+      "**Kolom kiri lebih sulit.** Hampir semuanya tak beraturan: *jadę, niosę, wiozę, biegnę*. Kolom kanan teratur, dan kata kerja *-ać* di sana (*latać, pływać, biegać*) mengikuti pola *czytam, czytasz* dari A1.",
+      "**Awas perubahan bunyi:** *jeździć → jeżdżę, nosić → noszę, wozić → wożę*. Hanya bentuk *ja* yang berubah; bentuk lainnya kembali ke *jeździsz, nosisz, wozisz*.",
+      "**Kolom dk** adalah bentuk yang kamu pakai untuk satu perjalanan yang sudah atau akan terjadi: *Pojechałem do Gdańska. Jutro polecę do Warszawy.* Pembentukan awalan lainnya (*przy-, wy-, do-*) sudah kamu kenal dari A2."
+     ]
+    },
+    {
+     "title": "Kapan memakai yang mana",
+     "body": [
+      "Kalau ragu, ajukan satu pertanyaan: apakah gerak ini sekarang sedang menuju satu tempat tertentu? Kalau ya, pakai kolom kiri. Untuk semua hal lain, pakai kolom kanan."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Pilihan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "sedang dalam perjalanan ke satu tempat",
+        "satu arah",
+        "*Idę na dworzec. Samolot leci do Warszawy.*"
+       ],
+       [
+        "rencana pasti yang dekat",
+        "satu arah",
+        "*Jutro jedziemy do Sopotu.*"
+       ],
+       [
+        "kebiasaan, berulang",
+        "berulang",
+        "*Codziennie chodzę do pracy.*"
+       ],
+       [
+        "ke sana kemari, tanpa tujuan",
+        "berulang",
+        "*Dzieci biegają po plaży. Mewy latają nad morzem.*"
+       ],
+       [
+        "kemampuan, kegiatan umum",
+        "berulang",
+        "*Umiem pływać. Nie lubię latać.*"
+       ],
+       [
+        "pergi lalu sudah kembali (lampau)",
+        "berulang",
+        "*Wczoraj chodziłem do lekarza.*"
+       ],
+       [
+        "mengenakan pakaian, kacamata",
+        "*nosić*",
+        "*Noszę okulary. Ania nosi długie włosy.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Baris terakhir sering mengejutkan:** *nosić* juga berarti \"memakai\" pakaian, perhiasan, atau gaya rambut secara rutin. *Niosę kurtkę* = saya sedang menenteng jaket; *Noszę kurtkę* = saya (biasa) memakai jaket."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Statek już płynie",
+   "intro": "Keesokan harinya Budi dan Marek berdiri di dek kapal yang meninggalkan pusat kota Gdańsk menuju Westerplatte. Di atas mereka, burung camar berputar-putar.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Patrz, ile mew lata nad statkiem!",
+     "id": "Lihat, banyak sekali camar terbang di atas kapal!",
+     "literal": "lihatlah, berapa camar-camar terbang-bolak-balik di-atas kapal!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Zawsze latają za statkami. Ludzie je karmią, ale nie wolno.",
+     "id": "Mereka selalu terbang mengikuti kapal. Orang-orang memberi mereka makan, padahal dilarang.",
+     "literal": "selalu mereka-terbang-bolak-balik di-belakang kapal-kapal. orang-orang mereka mereka-memberi-makan, tetapi tidak boleh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dokąd dokładnie płyniemy? Do tego pomnika?",
+     "id": "Kita tepatnya berlayar ke mana? Ke monumen itu?",
+     "literal": "ke-mana tepatnya kami-berlayar? ke itu monumen?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Tak. Tu pierwszego września 1939 roku zaczęła się wojna.",
+     "id": "Ya. Di sinilah perang dimulai, 1 September 1939.",
+     "literal": "ya. di-sini pertama September 1939 tahun ia-mulai-lampau-pr diri perang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wiem. Czytałem o tym, kiedy jechałem pociągiem.",
+     "id": "Saya tahu. Saya membacanya waktu di kereta.",
+     "literal": "saya-tahu. saya-membaca-lampau-lk tentang itu, ketika saya-berkendara-lampau-lk kereta."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Potem wrócimy statkiem i pojedziemy kolejką do Sopotu.",
+     "id": "Sesudah itu kita kembali naik kapal, lalu naik kereta komuter ke Sopot.",
+     "literal": "kemudian kami-akan-kembali kapal-dengan dan kami-akan-berkendara kereta-kecil ke Sopot."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Widzisz tego pana? Biegnie do statku z dwiema walizkami!",
+     "id": "Lihat bapak itu? Dia lari ke arah kapal bawa dua koper!",
+     "literal": "kamu-melihat itu tuan? ia-berlari ke kapal dengan dua koper-koper!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Za późno, statek już płynie. Popłynie następnym.",
+     "id": "Terlambat, kapalnya sudah jalan. Dia ikut kapal berikutnya saja.",
+     "literal": "terlalu terlambat, kapal sudah ia-berlayar. ia-akan-berlayar berikutnya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Biedny. Mam nadzieję, że nie niesie prezentów dla przyjaciół.",
+     "id": "Kasihan. Semoga dia nggak lagi bawa oleh-oleh untuk teman-temannya.",
+     "literal": "malang. saya-punya harapan, bahwa tidak ia-membawa hadiah-hadiah untuk teman-teman."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Jak ty wczoraj? Spokojnie, nikt nie będzie głodny.",
+     "id": "Kayak kamu kemarin? Tenang, nggak ada yang bakal kelaparan.",
+     "literal": "seperti kamu kemarin? tenanglah, tak-seorang-pun tidak akan-ada lapar."
+    }
+   ],
+   "notes": [
+    "**Ile mew lata** — sesudah *ile* (berapa banyak), kata bendanya dopełniacz jamak dan kata kerjanya tunggal: *ile mew lata, ile osób przyszło*. Pola ini sama dengan *pięć mew lata*. *Lata* (bukan *leci*) karena camar-camar itu berputar ke sana kemari tanpa satu arah.",
+    "**Dokąd płyniemy?** — *dokąd* (ke mana) lebih baku daripada *gdzie* untuk arah, walaupun dalam obrolan *Gdzie idziesz?* sangat umum. Di tulisan dan dalam percakapan yang lebih rapi, pilih *dokąd*.",
+    "**Pojedziemy kolejką** — di Trójmiasto, *kolejka* atau *SKM* adalah kereta komuter kota yang menghubungkan Gdańsk, Sopot, dan Gdynia. Karena di darat dan di atas rel, kata kerjanya *jechać*.",
+    "**Biegnie do statku** — satu orang, satu arah, sekarang: *biec*. Kalau ia joging setiap pagi di pantai, itu *biega*. *Z dwiema walizkami* adalah narzędnik dari *dwie walizki*.",
+    "**Nie niesie prezentów** — penyangkalan memindahkan sasaran ke dopełniacz: *niesie prezenty → nie niesie prezentów*. Dua *nie* berturut-turut di sini bukan salah ketik: yang pertama kata penyangkal, yang kedua bagian dari *niesie*."
+   ],
+   "grammars": [
+    {
+     "title": "Gerak dalam cerita lampau: tiga bentuk, tiga arti",
+     "body": [
+      "Di kala lampau, pasangan gerak memberi tiga pilihan, dan masing-masing menceritakan hal yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**chodziłem, jeździłem** (berulang)",
+        "pergi lalu sudah kembali; atau sering pergi",
+        "*Wczoraj chodziłem do lekarza. W zeszłym roku często jeździłem do Gdańska.*"
+       ],
+       [
+        "**szedłem, jechałem** (satu arah)",
+        "sedang dalam perjalanan (latar cerita)",
+        "*Kiedy jechałem pociągiem, czytałem o Westerplatte.*"
+       ],
+       [
+        "**poszedłem, pojechałem** (dk)",
+        "berangkat; satu kepergian sebagai peristiwa",
+        "*O ósmej poszedłem do pracy. W sierpniu pojechałem do Gdańska.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jeździłem do Gdańska** dan **byłem w Gdańsku** hampir sama artinya: saya pernah ke sana dan sudah pulang. *Pojechałem do Gdańska* hanya mengatakan bahwa kamu berangkat; mungkin kamu masih di sana.",
+      "**Latar dan peristiwa.** Dalam cerita, bentuk satu arah (*szedłem, jechałem*) sering menjadi latar, lalu bentuk dk memotongnya: *Kiedy szedłem przez most, zobaczyłem statek.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Naik apa? Kendaraan dan kata kerjanya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kendaraan",
+      "Kata kerja",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*pociąg, autobus, tramwaj, samochód*",
+       "*jechać / jeździć* + N.",
+       "*Jadę pociągiem do Gdańska.*"
+      ],
+      [
+       "*rower, motocykl*",
+       "*jechać / jeździć na* + Ms. atau + N.",
+       "*Jeżdżę do pracy na rowerze.*"
+      ],
+      [
+       "*taksówka*",
+       "*jechać / jeździć* + N.",
+       "*Pojedziemy taksówką na dworzec.*"
+      ],
+      [
+       "*winda, ruchome schody*",
+       "*jechać* + N.",
+       "*Jedziemy windą na piąte piętro.*"
+      ],
+      [
+       "*samolot*",
+       "*lecieć / latać* + N.",
+       "*Lecę samolotem do Dżakarty.*"
+      ],
+      [
+       "*statek, prom, kajak*",
+       "*płynąć / pływać* + N.",
+       "*Płyniemy promem do Szwecji.*"
+      ],
+      [
+       "*koń*",
+       "*jechać / jeździć konno* atau *na koniu*",
+       "*W Zakopanem jeździłem konno.*"
+      ],
+      [
+       "jalan kaki",
+       "*iść / chodzić* (*pieszo*)",
+       "*Idę pieszo, to niedaleko.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hal yang paling mengejutkan bagi penutur Indonesia ada di baris keempat: bahasa Polandia **mengendarai lift**. *Jechać windą* terdengar aneh kalau diterjemahkan kata per kata, tetapi logikanya konsisten: apa pun yang membawamu tanpa kamu melangkah, di darat atau di gedung, memakai *jechać*. Yang terbang memakai *lecieć*, yang mengapung memakai *płynąć*. *Pływać* juga dipakai untuk kapal yang berlayar secara rutin, dan untuk berenang, jadi *Statki pływają* dan *Dzieci pływają* sama-sama benar."
+    },
+    {
+     "type": "kotak",
+     "title": "Trójmiasto: Gdańsk, Sopot, Gdynia",
+     "items": [
+      "Tiga kota di pantai Baltik ini berdempetan dan dihubungkan kereta komuter SKM. Orang Polandia menyebut ketiganya bersama sebagai **Trójmiasto** (Kota Tiga).",
+      "**Westerplatte**, semenanjung di muara pelabuhan Gdańsk, adalah tempat pertempuran pertama Perang Dunia II pada 1 September 1939, ketika pos militer Polandia yang kecil diserang kapal perang Jerman. Monumen besar di sana adalah tempat mengenang, bukan tempat piknik.",
+      "**Molo di Sopot** sering disebut dermaga kayu terpanjang di Eropa. Pada musim ramai, masuk ke molo biasanya dikenai tiket, jadi siapkan sedikit uang atau kartu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membawa, mengantar, menenteng",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Niosę dziecko na rękach.*",
+       "Saya sedang menggendong anak."
+      ],
+      [
+       "*Noszę plecak do pracy.*",
+       "Saya (biasanya) bawa ransel ke kantor."
+      ],
+      [
+       "*Taksówka wiezie nas na lotnisko.*",
+       "Taksi sedang mengantar kami ke bandara."
+      ],
+      [
+       "*Tata codziennie wozi Zosię do przedszkola.*",
+       "Ayah tiap hari mengantar Zosia ke TK naik mobil."
+      ],
+      [
+       "*Zanieś, proszę, tę paczkę na pocztę.*",
+       "Tolong antarkan paket ini ke kantor pos."
+      ],
+      [
+       "*Zawiozę cię na dworzec.*",
+       "Saya antar kamu ke stasiun (naik mobil)."
+      ],
+      [
+       "*Przynieś mi kawę!*",
+       "Bawakan saya kopi!"
+      ],
+      [
+       "*Przywiozłem ci prezent z Gdańska.*",
+       "Saya bawakan kamu oleh-oleh dari Gdańsk."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia punya satu kata \"membawa\" untuk semuanya, dan \"mengantar\" untuk orang. Bahasa Polandia membedakan cara bawanya: dengan tangan sambil berjalan (*nieść / nosić*), atau dengan kendaraan (*wieźć / wozić*). Awalan dari A2 menempel pada keduanya: *przynieść* (bawakan ke sini), *zanieść* (bawa ke sana), *przywieźć* (bawa pulang dari perjalanan). Kalimat terakhir di tabel adalah kalimat yang akan kamu ucapkan setiap kali kembali dari liburan: *Przywiozłem ci…* atau, kalau kamu perempuan, *Przywiozłam ci…*"
+    },
+    {
+     "type": "kotak",
+     "title": "Oleh-oleh dari kota ke kota",
+     "items": [
+      "Membawa sesuatu ketika berkunjung adalah kebiasaan yang kuat di Polandia, dan oleh-oleh khas daerah selalu disambut hangat: *pierniki* dari Toruń, *oscypek* dari Zakopane, atau *krówki* (permen karamel susu) yang ada di mana-mana.",
+      "Dari Gdańsk orang sering membawa perhiasan atau suvenir dari **bursztyn** (amber), yang dijual di sepanjang jalan tua kota itu. Beli di toko yang jelas, bukan dari penjual sembarangan.",
+      "Dari Indonesia, teman Polandia biasanya senang menerima kopi, teh, atau camilan khas daerahmu. Kalau makanan, periksa dulu aturan bea cukai untuk bahan segar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Jangan tanya. Waktu keluar rumah, saya lupa bawa payung.",
+       "*Nie pytaj. Wychodząc z domu, zapomniałem parasola.*"
+      ],
+      [
+       "Iya, tapi karena sambil baca berita di HP, saya kelewatan halte.",
+       "*Tak, ale czytając wiadomości w telefonie, przegapiłem swój przystanek.*"
+      ],
+      [
+       "Belum selesai. Waktu jalan lewat Planty, saya ketemu Bu Halina.",
+       "*To nie koniec. Idąc przez Planty, spotkałem panią Halinę.*"
+      ],
+      [
+       "Sambil ngopi, cek surel. Kliennya sudah dua kali kirim pesan.",
+       "*Pijąc kawę, sprawdź maile. Klient pisał już dwa razy.*"
+      ],
+      [
+       "Baik. Kalau duduk di meja, saya pasti tidak kehujanan.",
+       "*Dobrze. Siedząc przy biurku, na pewno nie zmoknę.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "iść (idę) / chodzić (chodzę)",
+   "baca": "isyc (I-de) / HO-jic (HO-dze)",
+   "id": "berjalan, pergi (satu arah / berulang)"
+  },
+  {
+   "pl": "jechać (jadę) / jeździć (jeżdżę)",
+   "baca": "YE-hac (YA-de) / YEZY-jic (YEZY-dje)",
+   "id": "naik kendaraan"
+  },
+  {
+   "pl": "nieść (niosę) / nosić (noszę)",
+   "baca": "nyesyc (NYO-se) / NO-syic (NO-sye)",
+   "id": "membawa; (nosić) memakai"
+  },
+  {
+   "pl": "wieźć (wiozę) / wozić (wożę)",
+   "baca": "vyesyc (VYO-ze) / VO-zyic (VO-zye)",
+   "id": "membawa dengan kendaraan, mengantar"
+  },
+  {
+   "pl": "lecieć (lecę) / latać (latam)",
+   "baca": "LE-cyec (LE-tse) / LA-tac (LA-tam)",
+   "id": "terbang"
+  },
+  {
+   "pl": "płynąć (płynę) / pływać (pływam)",
+   "baca": "PWY-nonc (PWY-ne) / PWY-vac (PWY-vam)",
+   "id": "berenang; berlayar"
+  },
+  {
+   "pl": "biec (biegnę) / biegać (biegam)",
+   "baca": "byets (BYEG-ne) / BYE-gac (BYE-gam)",
+   "id": "berlari"
+  },
+  {
+   "pl": "podróż, podróży (ż)",
+   "baca": "POD-rusy, pod-RU-zyy",
+   "id": "perjalanan"
+  },
+  {
+   "pl": "samolot (m)",
+   "baca": "sa-MO-lot",
+   "id": "pesawat"
+  },
+  {
+   "pl": "statek, statku (m)",
+   "baca": "STA-tek, STAT-ku",
+   "id": "kapal"
+  },
+  {
+   "pl": "prom (m)",
+   "baca": "prom",
+   "id": "kapal feri"
+  },
+  {
+   "pl": "kolejka (ż)",
+   "baca": "ko-LEY-ka",
+   "id": "kereta komuter; antrean"
+  },
+  {
+   "pl": "winda (ż)",
+   "baca": "VIN-da",
+   "id": "lift"
+  },
+  {
+   "pl": "torba (ż)",
+   "baca": "TOR-ba",
+   "id": "tas"
+  },
+  {
+   "pl": "walizka (ż)",
+   "baca": "va-LIS-ka",
+   "id": "koper"
+  },
+  {
+   "pl": "ciężki",
+   "baca": "CYENSY-ki",
+   "id": "berat"
+  },
+  {
+   "pl": "znajomy, znajomi (m)",
+   "baca": "zna-YO-my, zna-YO-mi",
+   "id": "kenalan, teman"
+  },
+  {
+   "pl": "mewa, mew (ż)",
+   "baca": "ME-va, mef",
+   "id": "burung camar"
+  },
+  {
+   "pl": "pomnik (m)",
+   "baca": "POM-nik",
+   "id": "monumen"
+  },
+  {
+   "pl": "plaża (ż)",
+   "baca": "PLA-zya",
+   "id": "pantai"
+  },
+  {
+   "pl": "molo (n)",
+   "baca": "MO-lo",
+   "id": "dermaga pejalan kaki"
+  },
+  {
+   "pl": "Bałtyk (m)",
+   "baca": "BAW-tyk",
+   "id": "Laut Baltik"
+  },
+  {
+   "pl": "dokąd",
+   "baca": "DO-kont",
+   "id": "ke mana"
+  },
+  {
+   "pl": "wytrzymać (wytrzymam) — dk",
+   "baca": "vy-TSYY-mac (vy-TSYY-mam)",
+   "id": "bertahan, tahan"
+  },
+  {
+   "pl": "okulary (jamak)",
+   "baca": "o-ku-LA-ry",
+   "id": "kacamata"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya tidak suka terbang. Saya lebih suka naik kereta.",
+    "Kamu bawa apa di tas itu?",
+    "Besok kita naik kapal ke Westerplatte.",
+    "Lihat, banyak sekali camar terbang di atas kapal!",
+    "Saya lebih suka jalan-jalan di pantai.",
+    "Setiap hari ayah mengantar adik laki-laki saya ke sekolah naik mobil."
+   ]
+  },
+  {
+   "prompt": "Pilih kata kerja yang tepat dan isi dalam bentuk kala kini.",
+   "items": [
+    "Teraz ____ do pracy, a wieczorem wracam. (iść atau chodzić)",
+    "Codziennie ____ do pracy tramwajem. (jechać atau jeździć)",
+    "Patrz, ten samolot ____ do Warszawy. (lecieć atau latać)",
+    "Moja siostra ____ okulary. (nieść atau nosić)",
+    "Dzieci ____ po plaży cały dzień. (biec atau biegać)",
+    "Taksówka ____ nas teraz na dworzec. (wieźć atau wozić)",
+    "Umiesz ____? (płynąć atau pływać, infinitif)"
+   ]
+  },
+  {
+   "prompt": "Ubah dari \"sekarang, satu arah\" menjadi kebiasaan dengan keterangan di dalam kurung.",
+   "items": [
+    "Teraz idę do parku. (codziennie)",
+    "Teraz jadę do pracy rowerem. (zwykle)",
+    "Samolot leci do Gdańska. (dwa razy dziennie)",
+    "Niosę dzieciom prezenty. (zawsze)",
+    "Płyniemy statkiem na Westerplatte. (co roku)",
+    "Biegnę na przystanek. (zawsze)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "latać / nie / lubię",
+    "pociągiem / wolę / jeździć",
+    "statkiem / płyniemy / na / jutro / Westerplatte",
+    "niesiesz / w / co / torbie / tej / ?",
+    "mew / nad / ile / lata / statkiem / patrz / !"
+   ]
+  }
+ ],
+ "answers": [
+  "Nie lubię latać. Wolę jeździć pociągiem. — Co niesiesz w tej torbie? — Jutro płyniemy statkiem na Westerplatte. — Patrz, ile mew lata nad statkiem! — Wolę chodzić po plaży. — Tata codziennie wozi mojego brata do szkoły.",
+  "idę — jeżdżę — leci — nosi — biegają — wiezie — pływać",
+  "Codziennie chodzę do parku. — Zwykle jeżdżę do pracy rowerem. — Samolot lata do Gdańska dwa razy dziennie. — Zawsze noszę dzieciom prezenty. — Co roku pływamy statkiem na Westerplatte. — Zawsze biegam na przystanek.",
+  "Nie lubię latać. — Wolę jeździć pociągiem. — Jutro płyniemy statkiem na Westerplatte. — Co niesiesz w tej torbie? — Patrz, ile mew lata nad statkiem!"
+ ]
+}

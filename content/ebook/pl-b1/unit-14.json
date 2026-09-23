@@ -1,0 +1,712 @@
+{
+ "title": "Biarlah dia masuk — niech dan perintah tak langsung",
+ "title_target": "Niech pan wejdzie",
+ "goal": "Menerima klien di kantor, mempersilakan tamu, dan membagi tugas dalam tim. Titik tata bahasanya: **niech** + bentuk orang ketiga (*niech pan wejdzie, niech Ewa zadzwoni, niech żyje*), perintah sopan dengan **proszę + infinitif**, **imperatif orang pertama jamak** (*zacznijmy, chodźmy*), dan *nie ma co* + infinitif.",
+ "bekal": [
+  "mempersilakan tamu dengan dua cara sopan: *Proszę usiąść. / Niech pan usiądzie.*",
+  "menyerahkan tugas kepada orang ketiga: *Niech Marek przygotuje umowę.*",
+  "mengajak dan menenangkan: *Zacznijmy! Nie ma co się martwić.*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Niech pan usiądzie",
+   "intro": "Kamis pagi di kantor Kodex. Pan Wojciech Jankowski, pemilik jaringan toko buku, datang untuk melihat prototipe aplikasi pemesanan buku yang dibuat tim Budi.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry, zapraszam. Niech pan wejdzie.",
+     "id": "Selamat pagi, mari. Silakan masuk, Pak.",
+     "literal": "hari baik, saya-mengundang. biarlah tuan akan-masuk."
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Dzień dobry. Jankowski, jestem umówiony z panią Wiśniewską.",
+     "id": "Selamat pagi. Saya Jankowski, ada janji dengan Ibu Wiśniewska.",
+     "literal": "hari baik. Jankowski, saya-adalah dijanjikan-lk dengan nyonya Wiśniewska."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pani Magdalena zaraz przyjdzie. Niech pan usiądzie, proszę. Kawy, herbaty?",
+     "id": "Bu Magdalena sebentar lagi datang. Silakan duduk, Pak. Kopi, teh?",
+     "literal": "nyonya Magdalena segera akan-datang. biarlah tuan akan-duduk, saya-mohon. kopi, teh?"
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Poproszę kawę. Czarną, bez cukru.",
+     "id": "Kopi saja. Hitam, tanpa gula.",
+     "literal": "saya-akan-meminta kopi. hitam, tanpa gula."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dzień dobry, panie Wojciechu! Proszę nie wstawać.",
+     "id": "Selamat pagi, Pak Wojciech! Tidak usah berdiri.",
+     "literal": "hari baik, tuan Wojciech! saya-mohon tidak berdiri."
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Dzień dobry. Miał przyjść ze mną kolega, ale utknął w korku.",
+     "id": "Selamat pagi. Rekan saya mestinya ikut datang, tapi ia terjebak macet.",
+     "literal": "hari baik. punya-lampau-lk datang dengan saya kolega, tetapi terjebak-lampau-lk di kemacetan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Nic nie szkodzi. Zacznijmy bez niego, niech dojedzie spokojnie.",
+     "id": "Tidak apa-apa. Kita mulai saja tanpa dia, biar dia sampai dengan tenang.",
+     "literal": "tak-apa-pun tidak merugikan. mari-kita-mulai tanpa dia, biarlah ia-akan-sampai dengan-tenang."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Budi, pokażmy panu prototyp aplikacji.",
+     "id": "Budi, ayo kita tunjukkan prototipe aplikasinya kepada Bapak.",
+     "literal": "Budi, mari-kita-tunjukkan tuan prototipe aplikasi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę spojrzeć: tutaj klient szuka książki, a tu ją rezerwuje.",
+     "id": "Silakan lihat: di sini pelanggan mencari buku, dan di sini memesannya.",
+     "literal": "saya-mohon melihat: di-sini pelanggan ia-mencari buku, dan di-sini dia ia-memesan."
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Ciekawe. A czy klienci mogą też zapłacić w aplikacji?",
+     "id": "Menarik. Apa pelanggan juga bisa bayar di aplikasi?",
+     "literal": "menarik. dan apakah pelanggan-pelanggan mereka-bisa juga membayar di aplikasi?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Mogą. Niech pan spróbuje sam.",
+     "id": "Bisa. Silakan Bapak coba sendiri.",
+     "literal": "mereka-bisa. biarlah tuan akan-mencoba sendiri-lk."
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Hm, działa bardzo szybko. Nie ma co się zastanawiać.",
+     "id": "Hm, cepat sekali jalannya. Tidak perlu pikir panjang lagi.",
+     "literal": "hm, ia-bekerja sangat cepat. tidak ada apa diri merenung."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "To co, podpiszmy umowę?",
+     "id": "Jadi, kita tanda tangani kontraknya?",
+     "literal": "itu apa, mari-kita-tanda-tangani kontrak?"
+    },
+    {
+     "speaker": "Jankowski:",
+     "text": "Niech będzie! Ale najpierw niech mój wspólnik ją przeczyta.",
+     "id": "Baiklah! Tapi biar rekan usaha saya membacanya dulu.",
+     "literal": "biarlah akan-ada! tetapi pertama-tama biarlah milikku rekan-usaha dia akan-membaca."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Oczywiście. Umówmy się w takim razie na przyszły czwartek.",
+     "id": "Tentu. Kalau begitu kita jadwalkan Kamis depan.",
+     "literal": "tentu-saja. mari-kita-berjanji diri dalam begitu kasus untuk depan Kamis."
+    }
+   ],
+   "notes": [
+    "**Niech pan wejdzie — \"biarlah Bapak masuk\".** *Niech* + bentuk orang ketiga adalah cara Polandia memerintah orang yang tidak bisa diberi imperatif biasa. Karena *pan* dan *pani* memakai kata kerja orang ketiga, imperatif *wejdź!* (kamu) tidak bisa dipakai kepada mereka — maka *niech pan wejdzie*. Nadanya ramah dan hangat, seperti tuan rumah yang mempersilakan.",
+    "**Wejdzie, usiądzie, spróbuje — bentuk futur perfektif.** Sesudah *niech*, kata kerja perfektif muncul dalam bentuk yang sama dengan futurnya (*wejdzie* = ia akan masuk). Untuk kegiatan yang berlangsung, pakai imperfektif dalam bentuk kala kini: *niech pan siedzi* (silakan tetap duduk), *niech czeka* (biar dia menunggu).",
+    "**Proszę nie wstawać** — *proszę* + infinitif adalah perintah sopan yang paling netral, dan tidak peduli siapa lawan bicaranya: *proszę usiąść, proszę spojrzeć, proszę podpisać*. Larangan cukup ditambah *nie*, biasanya dengan imperfektif: *proszę nie wstawać, proszę nie palić*.",
+    "**Zacznijmy, pokażmy, podpiszmy** — imperatif orang pertama jamak: \"mari kita…\". Bentuknya adalah imperatif *ty* + *-my*: *zacznij → zacznijmy*, *pokaż → pokażmy*, *chodź → chodźmy*. Ini lebih langsung daripada \"*może zaczniemy?*\" (bagaimana kalau kita mulai?).",
+    "**Nie ma co się zastanawiać** — *nie ma co* + infinitif = \"tidak ada gunanya…, tak perlu…\". *Nie ma co czekać* (tak perlu menunggu), *nie ma co płakać* (tak ada gunanya menangis). Bandingkan dengan *nie ma czego* + infinitif: *Nie ma czego się bać* — tidak ada yang perlu ditakuti.",
+    "**Niech będzie!** — \"baiklah, jadilah\". Ungkapan tetap untuk menyetujui, sering dengan sedikit rasa mengalah: *Pizza? Niech będzie.* Versi akrabnya *Niech ci będzie* — \"ya sudah, terserah kamu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Niech untuk setiap orang",
+     "body": [
+      "*Niech* tidak berubah; yang berubah adalah kata kerja sesudahnya, selalu dalam bentuk kala kini (imperfektif) atau futur sederhana (perfektif). Untuk *ty* dan *wy* ada imperatif biasa, untuk *my* ada imperatif *-my* — *niech* mengisi semua celah lainnya."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*ja*",
+        "*niech* + orang ke-1",
+        "*Niech pomyślę. Niech zgadnę.*",
+        "Biar saya pikir. Coba saya tebak."
+       ],
+       [
+        "*on / ona / ono*",
+        "*niech* + orang ke-3",
+        "*Niech Ewa zadzwoni. Niech czeka.*",
+        "Biar Ewa yang menelepon. Biar dia menunggu."
+       ],
+       [
+        "*pan / pani*",
+        "*niech* + orang ke-3",
+        "*Niech pan usiądzie. Niech pani spróbuje.*",
+        "Silakan duduk. Silakan coba."
+       ],
+       [
+        "*oni / one*",
+        "*niech* + orang ke-3 jamak",
+        "*Niech wejdą. Niech sami zdecydują.*",
+        "Suruh mereka masuk. Biar mereka yang memutuskan."
+       ],
+       [
+        "*państwo*",
+        "*niech* + orang ke-3 jamak",
+        "*Niech państwo siadają.*",
+        "Silakan duduk, Bapak-Ibu."
+       ],
+       [
+        "*my*",
+        "imperatif *-my* (tanpa *niech*)",
+        "*Zacznijmy. Chodźmy.*",
+        "Mari kita mulai. Ayo pergi."
+       ],
+       [
+        "*ty / wy*",
+        "imperatif biasa",
+        "*Usiądź. Usiądźcie.*",
+        "Duduk. Duduklah (kalian)."
+       ]
+      ]
+     },
+     "after": [
+      "**Menyangkal:** *niech* + *nie* + biasanya imperfektif — *Niech pan nie wstaje. Niech nikt nie zapomni* (perfektif juga mungkin untuk peringatan: \"awas jangan sampai ada yang lupa\").",
+      "**Kepada orang ketiga yang tidak hadir**, *niech* terdengar seperti keputusan atau izin: *Niech Marek przygotuje umowę* — \"Marek saja yang siapkan kontraknya\". Dalam bahasa Indonesia kita memakai \"biar\" atau \"suruh\", tergantung nadanya."
+     ]
+    },
+    {
+     "title": "Empat tingkat perintah kepada pan / pani",
+     "body": [
+      "Dari yang paling resmi sampai yang paling hangat. Semuanya sopan; yang berbeda adalah suasana."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Nuansa",
+       "Kapan dipakai"
+      ],
+      "rows": [
+       [
+        "*Czy mógłby pan usiąść?*",
+        "permintaan sangat halus",
+        "kalau kamu meminta sesuatu yang merepotkan"
+       ],
+       [
+        "*Proszę usiąść.*",
+        "netral, standar",
+        "loket, dokter, rapat, surat — di mana saja"
+       ],
+       [
+        "*Niech pan usiądzie.*",
+        "hangat, sedikit mendesak",
+        "tuan rumah kepada tamu; menawarkan dengan tulus"
+       ],
+       [
+        "*Może pan usiąść.*",
+        "memberi izin",
+        "\"Bapak boleh duduk\" — dari pihak yang berwenang"
+       ]
+      ]
+     },
+     "after": [
+      "*Niech pan usiądzie* kadang terdengar lebih memaksa daripada *proszę usiąść*, karena artinya \"saya ingin Bapak duduk\". Tuan rumah Polandia memakainya dengan sengaja: menolak tawaran pertama itu wajar, dan tuan rumah yang baik akan menawarkan lagi.",
+      "Dalam surel dan pengumuman tertulis, *proszę* + infinitif hampir selalu menjadi pilihan: *Proszę o potwierdzenie* (mohon konfirmasi), *Proszę nie parkować* (dilarang parkir)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Niech Ewa się tym zajmie",
+   "intro": "Sesudah klien pulang, pani Magdalena, Budi, dan Marek membagi pekerjaan untuk dua minggu ke depan.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobra, podzielmy się pracą. Kto przygotuje umowę?",
+     "id": "Oke, mari kita bagi pekerjaannya. Siapa yang menyiapkan kontrak?",
+     "literal": "baik, mari-kita-bagi diri pekerjaan. siapa akan-menyiapkan kontrak?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Niech Ewa się tym zajmie, ona zna prawników.",
+     "id": "Biar Ewa yang mengurusnya, dia kenal beberapa pengacara.",
+     "literal": "biarlah Ewa diri itu akan-mengurus, dia ia-kenal pengacara-pengacara."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze. A testy aplikacji?",
+     "id": "Baik. Lalu uji coba aplikasinya?",
+     "literal": "baik. dan uji-uji aplikasi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Niech pomyślę… Mogę je zrobić w przyszłym tygodniu.",
+     "id": "Sebentar, saya pikir dulu… Saya bisa mengerjakannya minggu depan.",
+     "literal": "biarlah saya-akan-berpikir… saya-bisa mereka melakukan di depan minggu."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Tylko niech nikt nie zapomni o wersji na iPhone'a!",
+     "id": "Asal jangan sampai ada yang lupa versi iPhone-nya!",
+     "literal": "hanya biarlah tak-seorang-pun tidak akan-lupa tentang versi untuk iPhone!"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Nie ma co się martwić, Budi o wszystkim pamięta.",
+     "id": "Tidak usah khawatir, Budi ingat semuanya.",
+     "literal": "tidak ada apa diri khawatir, Budi tentang semuanya ia-ingat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Niech pani tak nie mówi, bo potem wszyscy będą tego ode mnie oczekiwać!",
+     "id": "Jangan bilang begitu, Bu, nanti semua orang mengharapkan itu dari saya!",
+     "literal": "biarlah nyonya begitu tidak berkata, karena kemudian semua-orang akan mengharapkan itu dari saya!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Za późno! Niech żyje Budi, nasz najlepszy tester!",
+     "id": "Terlambat! Hidup Budi, penguji terbaik kita!",
+     "literal": "terlalu terlambat! biarlah hidup Budi, kami-punya terbaik penguji!"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dość żartów. Chodźmy na obiad, zasłużyliśmy.",
+     "id": "Cukup bercandanya. Ayo makan siang, kita pantas mendapatkannya.",
+     "literal": "cukup lelucon-lelucon. mari-kita-pergi untuk makan-siang, kami-layak-lampau."
+    }
+   ],
+   "notes": [
+    "**Niech Ewa się tym zajmie** — *zająć się* + N. (mengurus) sudah kamu kenal dari unit 1. Dengan *niech*, kalimatnya menjadi usul atau keputusan: \"Ewa saja yang urus\". Perhatikan *się* tidak berada di akhir kalimat.",
+    "**Niech pomyślę** — salah satu dari sedikit pemakaian *niech* dengan orang pertama. Ungkapan tetap ini membeli waktu, persis seperti \"sebentar, saya pikir dulu\". Saudaranya: *Niech zgadnę…* (coba saya tebak…) dan *Niech sprawdzę* (biar saya cek).",
+    "**Niech nikt nie zapomni** — *niech* bergabung dengan negasi ganda dari unit 11 tanpa masalah: *nikt* + *nie* + kata kerja.",
+    "**Niech pani tak nie mówi** — larangan sopan kepada atasan. Budi tidak bisa berkata *nie mów tak!* kepada pani Magdalena; *niech pani nie…* adalah jalan tengah yang tetap hormat.",
+    "**Niech żyje…!** — \"hidup…!\", seruan untuk orang, negara, atau gagasan: *Niech żyje Polska! Niech żyją młodzi!* Di sini Marek memakainya setengah bercanda. Jamaknya *niech żyją*.",
+    "**Chodźmy** — dari *chodź* (ayo, sini). *Chodźmy na obiad / na kawę / do domu* adalah ajakan sehari-hari yang paling sering kamu dengar di kantor."
+   ],
+   "grammars": [
+    {
+     "title": "Imperatif mari-kita dan ungkapan tetap dengan niech",
+     "body": [
+      "Imperatif *my* dibentuk dari imperatif *ty* ditambah *-my*. Kalau kamu sudah hafal *weź, zrób, chodź* dari tingkat A2, kamu sudah punya semuanya."
+     ],
+     "table": {
+      "head": [
+       "Imperatif *ty*",
+       "Imperatif *my*",
+       "Arti",
+       "Ungkapan dengan *niech*",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*zacznij*",
+        "*zacznijmy*",
+        "mari mulai",
+        "*Niech będzie!*",
+        "Baiklah!"
+       ],
+       [
+        "*chodź*",
+        "*chodźmy*",
+        "ayo pergi",
+        "*Niech ci będzie.*",
+        "Ya sudah, terserah kamu."
+       ],
+       [
+        "*zrób*",
+        "*zróbmy*",
+        "mari lakukan",
+        "*Niech żyje…!*",
+        "Hidup…!"
+       ],
+       [
+        "*usiądź*",
+        "*usiądźmy*",
+        "mari duduk",
+        "*Niech pan da spokój!*",
+        "Ah, Bapak ini! (jangan begitu)"
+       ],
+       [
+        "*pomyśl*",
+        "*pomyślmy*",
+        "mari pikirkan",
+        "*Niech zgadnę…*",
+        "Coba saya tebak…"
+       ],
+       [
+        "*nie rób*",
+        "*nie róbmy*",
+        "jangan kita lakukan",
+        "*Niech mnie ktoś uszczypnie!*",
+        "Cubit aku, ini mimpi atau bukan!"
+       ]
+      ]
+     },
+     "after": [
+      "**Mari kita dengan *się*:** *podzielmy się, umówmy się, spotkajmy się*. Posisi *się* tetap sesudah kata kerja.",
+      "**Ajakan yang lebih lunak** memakai futur dengan *może*: *Może zaczniemy?* (bagaimana kalau kita mulai?), *Może pójdziemy na kawę?* Imperatif *-my* lebih tegas dan cocok untuk pemimpin rapat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menerima tamu di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Zapraszam do środka.*",
+       "za-PRA-syam do SYROT-ka",
+       "Silakan masuk."
+      ],
+      [
+       "*Proszę się rozgościć.*",
+       "PRO-sye sye roz-GOSY-cic",
+       "Anggap rumah sendiri."
+      ],
+      [
+       "*Mogę wziąć pana płaszcz?*",
+       "MO-ge vzyonc PA-na pwasyc",
+       "Boleh saya simpan mantel Bapak?"
+      ],
+      [
+       "*Czego się pani napije?*",
+       "CE-go sye PA-ni na-PI-ye",
+       "Ibu mau minum apa?"
+      ],
+      [
+       "*Proszę się częstować.*",
+       "PRO-sye sye cens-TO-vac",
+       "Silakan dicicipi / diambil."
+      ],
+      [
+       "*Przepraszam za spóźnienie.*",
+       "psye-PRA-syam za spuzy-NYE-nye",
+       "Maaf saya terlambat."
+      ],
+      [
+       "*Dziękuję za spotkanie.*",
+       "jyen-KU-ye za spot-KA-nye",
+       "Terima kasih atas pertemuannya."
+      ],
+      [
+       "*Odprowadzę pana do windy.*",
+       "ot-pro-VA-dze PA-na do VIN-dy",
+       "Saya antar Bapak ke lift."
+      ],
+      [
+       "*Do zobaczenia w czwartek.*",
+       "do zo-ba-CE-nya f CFAR-tek",
+       "Sampai jumpa hari Kamis."
+      ],
+      [
+       "*Niech się pan nie krępuje.*",
+       "nyeh sye pan nye krem-PU-ye",
+       "Jangan sungkan, Pak."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir menggabungkan semua yang ada di unit ini: *niech* + *pan* + larangan. *Krępować się* berarti \"sungkan, malu-malu\", dan tuan rumah Polandia sering mengucapkannya ketika tamu ragu mengambil kue kedua. Hati-hati dengan satu kalimat yang juga akan kamu dengar di pintu: *Proszę się rozebrać* — di rumah atau kantor artinya \"silakan lepas mantel\", tapi di ruang praktik dokter artinya \"silakan buka baju\". Konteks yang menentukan, dan orang Polandia sendiri kadang tersenyum karenanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Rapat bisnis dengan orang Polandia",
+     "items": [
+      "Jabat tangan yang mantap dan kontak mata adalah salam standar di awal dan akhir pertemuan. Datang tepat waktu dianggap tanda hormat; kalau terlambat, kabari sebelumnya.",
+      "Pada pertemuan pertama, pakailah *pan/pani* dengan nama keluarga atau gelar. Peralihan ke nama depan (*panie Wojciechu*) atau ke *ty* biasanya ditawarkan pihak Polandia.",
+      "Tuan rumah hampir selalu menawarkan kopi atau teh. Menerimanya adalah cara mudah untuk mencairkan suasana."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Niech dalam kehidupan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Di mana",
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ulang tahun",
+       "*Sto lat, sto lat, niech żyje, żyje nam!*",
+       "Seratus tahun, semoga ia panjang umur!"
+      ],
+      [
+       "pesta pernikahan",
+       "*Gorzko, gorzko!*",
+       "\"Pahit!\" — seruan agar pengantin berciuman"
+      ],
+      [
+       "demonstrasi, perayaan",
+       "*Niech żyje wolność!*",
+       "Hidup kebebasan!"
+      ],
+      [
+       "menyetujui dengan pasrah",
+       "*No dobrze, niech będzie.*",
+       "Ya sudah, baiklah."
+      ],
+      [
+       "kepada anak",
+       "*Niech mama odpocznie.*",
+       "Biarkan Mama istirahat."
+      ],
+      [
+       "di rapat",
+       "*Niech każdy powie, co myśli.*",
+       "Biar masing-masing bilang pendapatnya."
+      ],
+      [
+       "kaget, tak percaya",
+       "*Niech mnie ktoś uszczypnie!*",
+       "Ini beneran?!"
+      ],
+      [
+       "menolak pujian",
+       "*Niech pani da spokój!*",
+       "Ah, Ibu bisa saja!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris kedua sengaja diselipkan sebagai perbandingan: *Gorzko!* bukan *niech*, tapi sama-sama seruan bersama yang tidak bisa diterjemahkan kata per kata. Kalau kamu diundang ke pesta pernikahan Polandia, kamu akan mendengar keduanya — *Sto lat* untuk pengantin dan *Gorzko!* sampai mereka berciuman. Perhatikan *Niech każdy powie*: *każdy* (unit 11) tunggal, jadi kata kerjanya *powie*, bukan *powiedzą*."
+    },
+    {
+     "type": "kotak",
+     "title": "Sto lat",
+     "items": [
+      "*Sto lat* (seratus tahun) adalah lagu rakyat yang dinyanyikan hampir di setiap ulang tahun, hari nama, pesta pernikahan, dan perayaan kantor di Polandia. Liriknya pendek dan berulang, jadi mudah diikuti sejak pertama kali mendengar.",
+      "Baris kuncinya memakai *niech*: *niech żyje, żyje nam* — \"semoga ia hidup (panjang umur) bagi kita\". Kalau yang dirayakan lebih dari satu orang, orang Polandia menyanyikan *niech żyją*.",
+      "Sesudah lagu, biasanya diikuti *Wszystkiego najlepszego!* dan, kalau ada gelas di tangan, *Na zdrowie!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Kucingnya lucu sekali. Boleh aku elus?",
+       "*Śliczny kotek. Mogę go pogłaskać?*"
+      ],
+      [
+       "Silakan, teh pakai lemon dan kue-kue. Saya bikin sendiri.",
+       "*Proszę, herbatka z cytrynką i ciasteczka. Sama piekłam.*"
+      ],
+      [
+       "Karena kedengarannya lebih hangat. *Herbatka* itu bukan teh yang kecil, tapi teh yang menyenangkan.",
+       "*Bo tak brzmi cieplej. Herbatka to nie mała herbata, tylko miła.*"
+      ],
+      [
+       "Buat Ibu aku Piotruś, buat teman-teman Piotrek, dan di kantor Pak Piotr.",
+       "*Dla mamy jestem Piotruś, dla kolegów Piotrek, a w pracy pan Piotr.*"
+      ],
+      [
+       "Tapi hati-hati: diminutif tidak selalu manis.",
+       "*Tylko uważaj: zdrobnienie nie zawsze jest miłe.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "niech",
+   "baca": "nyeh",
+   "id": "biarlah, semoga (+ orang ke-3)"
+  },
+  {
+   "pl": "wchodzić (wchodzę) / wejść (wejdę)",
+   "baca": "FHO-jic / veysyc",
+   "id": "masuk"
+  },
+  {
+   "pl": "siadać (siadam) / usiąść (usiądę)",
+   "baca": "SYA-dac / U-syonsyc",
+   "id": "duduk"
+  },
+  {
+   "pl": "wstawać (wstaję) / wstać (wstanę)",
+   "baca": "FSTA-vac / fstac",
+   "id": "berdiri; bangun"
+  },
+  {
+   "pl": "próbować (próbuję) / spróbować (spróbuję)",
+   "baca": "pru-BO-vac / spru-BO-vac",
+   "id": "mencoba"
+  },
+  {
+   "pl": "zaczynać (zaczynam) / zacząć (zacznę)",
+   "baca": "za-CY-nac / ZA-conc",
+   "id": "memulai"
+  },
+  {
+   "pl": "dzielić się (dzielę się) / podzielić się (podzielę się) (+ N.)",
+   "baca": "JYE-lic sye / po-JYE-lic sye",
+   "id": "membagi, berbagi"
+  },
+  {
+   "pl": "zajmować się (zajmuję się) / zająć się (zajmę się) (+ N.)",
+   "baca": "zay-MO-vac sye / ZA-yonc sye",
+   "id": "mengurus, menangani"
+  },
+  {
+   "pl": "zastanawiać się (zastanawiam się) / zastanowić się (zastanowię się)",
+   "baca": "za-sta-NA-vyac sye / za-sta-NO-vic sye",
+   "id": "mempertimbangkan, merenung"
+  },
+  {
+   "pl": "martwić się (martwię się) — ndk",
+   "baca": "MAR-tfic sye",
+   "id": "khawatir"
+  },
+  {
+   "pl": "oczekiwać (oczekuję) — ndk (+ D.)",
+   "baca": "o-ce-KI-vac",
+   "id": "mengharapkan, menanti"
+  },
+  {
+   "pl": "utknąć (utknę) — dk",
+   "baca": "UT-knonc",
+   "id": "terjebak, tersangkut"
+  },
+  {
+   "pl": "korek, korka (m)",
+   "baca": "KO-rek, KOR-ka",
+   "id": "kemacetan; gabus"
+  },
+  {
+   "pl": "wspólnik, wspólnicy (m)",
+   "baca": "FSPUL-nik, fspul-NI-tsy",
+   "id": "rekan usaha, mitra"
+  },
+  {
+   "pl": "prawnik, prawnicy (m)",
+   "baca": "PRAV-nik, prav-NI-tsy",
+   "id": "ahli hukum, pengacara"
+  },
+  {
+   "pl": "klient, klienci (m)",
+   "baca": "KLI-yent, kli-YEN-cy",
+   "id": "klien, pelanggan"
+  },
+  {
+   "pl": "prototyp (m)",
+   "baca": "pro-TO-typ",
+   "id": "prototipe"
+  },
+  {
+   "pl": "umowa (ż)",
+   "baca": "u-MO-va",
+   "id": "kontrak, perjanjian"
+  },
+  {
+   "pl": "test, testy (m)",
+   "baca": "test, TES-ty",
+   "id": "uji, tes"
+  },
+  {
+   "pl": "żart, żarty (m)",
+   "baca": "zyart, ZYAR-ty",
+   "id": "lelucon, candaan"
+  },
+  {
+   "pl": "zasłużyć (zasłużę) — dk (na + B.)",
+   "baca": "za-SWU-zyyc",
+   "id": "layak mendapat, pantas"
+  },
+  {
+   "pl": "spokojnie",
+   "baca": "spo-KOY-nye",
+   "id": "dengan tenang"
+  },
+  {
+   "pl": "w takim razie",
+   "baca": "f TA-kim RA-zye",
+   "id": "kalau begitu"
+  },
+  {
+   "pl": "krępować się (krępuję się) — ndk",
+   "baca": "krem-PO-vac sye",
+   "id": "sungkan, malu-malu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Silakan masuk, Pak. (pakai *niech*)",
+    "Silakan duduk, Bu. (pakai *proszę*)",
+    "Mari kita mulai tanpa dia.",
+    "Biar dia yang menelepon besok. (*dia* lk)",
+    "Tidak usah khawatir.",
+    "Hidup Polandia!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata kerja yang tepat.",
+   "items": [
+    "Niech pan ____! (usiąść)",
+    "Niech pani ____ sama. (spróbować)",
+    "Niech oni ____ na zewnątrz. (czekać)",
+    "____ umowę jeszcze dziś! (podpisać, my)",
+    "____ do kina! (chodź → my)",
+    "Niech się państwo ____ kawy. (napić się)",
+    "Niech nikt nie ____ o spotkaniu! (zapomnieć)"
+   ]
+  },
+  {
+   "prompt": "Ubah imperatif *ty / wy* menjadi perintah sopan dengan *niech* + *pan / pani / państwo*.",
+   "items": [
+    "Usiądź! (kepada laki-laki)",
+    "Wejdź! (kepada perempuan)",
+    "Spróbuj sam! (kepada laki-laki)",
+    "Poczekaj chwilę! (kepada perempuan)",
+    "Nie wstawaj! (kepada laki-laki)",
+    "Weźcie kawę! (kepada Bapak-Ibu)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "pan / usiądzie / niech / proszę",
+    "bez / zacznijmy / niego",
+    "spróbuje / pan / niech / sam",
+    "ma / co / nie / zastanawiać / się",
+    "Ewa / zajmie / się / niech / tym"
+   ]
+  }
+ ],
+ "answers": [
+  "Niech pan wejdzie. — Proszę usiąść. — Zacznijmy bez niego. — Niech on zadzwoni jutro (atau: Niech jutro zadzwoni). — Nie ma co się martwić. — Niech żyje Polska!",
+  "usiądzie — spróbuje — czekają — Podpiszmy — Chodźmy — napiją — zapomni",
+  "Niech pan usiądzie! — Niech pani wejdzie! — Niech pan spróbuje sam! — Niech pani poczeka chwilę! — Niech pan nie wstaje! — Niech państwo wezmą kawę!",
+  "Niech pan usiądzie, proszę. — Zacznijmy bez niego. — Niech pan spróbuje sam. — Nie ma co się zastanawiać. — Niech Ewa się tym zajmie."
+ ]
+}

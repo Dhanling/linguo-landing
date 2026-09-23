@@ -1,0 +1,710 @@
+{
+ "title": "Wawancara kerja — kata benda dari kata kerja",
+ "title_target": "Rozmowa kwalifikacyjna",
+ "goal": "Menjawab pertanyaan wawancara kerja tentang pengalaman, kelebihan, dan rencana. Titik tata bahasanya: **kata benda dari kata kerja** berakhiran *-nie/-cie* (*pisanie, programowanie, picie*), *zajmować się* + narzędnik, dan *zostać* + narzędnik untuk menyatakan \"menjadi\".",
+ "bekal": [
+  "membentuk kata benda dari kata kerja mana pun: *czytać → czytanie, chodzić → chodzenie, pić → picie*",
+  "menyebut pekerjaan dan kesibukan dengan narzędnik: *Zajmuję się testowaniem. Chcę zostać programistą.*",
+  "memakai kosakata CV dan lowongan: *doświadczenie, umiejętności, stanowisko, umowa o pracę*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rozmowa kwalifikacyjna",
+   "intro": "Budi sudah lulus. Magangnya di Kodex selesai, dan hari ini ia diwawancarai secara resmi untuk posisi tetap. Pani Magdalena Wiśniewska sudah mengenalnya, tapi wawancara tetap wawancara: keduanya memakai *pan* dan *pani*.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Dzień dobry, proszę usiąść. Znamy się z praktyki, ale dziś rozmawiamy oficjalnie.",
+     "id": "Selamat pagi, silakan duduk. Kita saling kenal dari magang, tapi hari ini kita bicara secara resmi.",
+     "literal": "hari baik, silakan duduk. kami-kenal diri dari magang, tetapi hari-ini kami-berbicara secara-resmi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oczywiście. Dziękuję za zaproszenie.",
+     "id": "Tentu. Terima kasih atas undangannya.",
+     "literal": "tentu. saya-berterima-kasih untuk undangan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Czym się pan u nas zajmował?",
+     "id": "Apa saja yang dulu Anda kerjakan di sini?",
+     "literal": "dengan-apa diri tuan di-tempat kami ia-mengurus-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zajmowałem się testowaniem aplikacji i pisaniem dokumentacji.",
+     "id": "Saya menangani pengujian aplikasi dan penulisan dokumentasi.",
+     "literal": "saya-mengurus-lampau-lk diri pengujian(N.) aplikasi dan penulisan(N.) dokumentasi."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "A co pan najbardziej lubił w tej pracy?",
+     "id": "Lalu apa yang paling Anda sukai dari pekerjaan itu?",
+     "literal": "dan apa tuan paling ia-suka-lampau-lk di ini pekerjaan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Programowanie. I rozwiązywanie trudnych problemów razem z klientami.",
+     "id": "Pemrograman. Dan memecahkan masalah sulit bersama klien.",
+     "literal": "pemrograman. dan pemecahan sulit masalah bersama dengan klien."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Jakie są pana mocne strony?",
+     "id": "Apa kelebihan Anda?",
+     "literal": "yang-bagaimana mereka-adalah tuan kuat sisi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szybko się uczę, a praca w zespole daje mi dużo energii.",
+     "id": "Saya cepat belajar, dan kerja tim memberi saya banyak energi.",
+     "literal": "cepat diri saya-belajar, dan kerja dalam tim ia-memberi saya banyak energi."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Gdzie widzi się pan za pięć lat?",
+     "id": "Di mana Anda melihat diri Anda lima tahun lagi?",
+     "literal": "di-mana ia-melihat diri tuan dalam lima tahun?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chcę zostać doświadczonym programistą, a potem kierownikiem projektu.",
+     "id": "Saya ingin menjadi programmer berpengalaman, lalu manajer proyek.",
+     "literal": "saya-mau menjadi berpengalaman(N.) programmer(N.), dan kemudian manajer(N.) proyek."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Ambitnie! A skąd u pana taki dobry polski?",
+     "id": "Ambisius! Lalu dari mana bahasa Polandia Anda sebagus ini?",
+     "literal": "ambisius! dan dari-mana pada tuan begitu baik bahasa-Polandia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czytanie polskich książek bardzo mi pomogło.",
+     "id": "Membaca buku-buku Polandia sangat membantu saya.",
+     "literal": "pembacaan Polandia buku sangat saya ia-membantu-lampau."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Świetnie. Ostatnie pytanie: od kiedy może pan zacząć?",
+     "id": "Bagus. Pertanyaan terakhir: kapan Anda bisa mulai?",
+     "literal": "hebat. terakhir pertanyaan: sejak kapan ia-bisa tuan mulai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Od pierwszego października, jeśli to pani odpowiada.",
+     "id": "Mulai satu Oktober, kalau itu cocok untuk Ibu.",
+     "literal": "sejak pertama Oktober, jika itu nyonya ia-cocok."
+    }
+   ],
+   "notes": [
+    "**Czym się pan zajmował?** Kata kerja *zajmować się* (mengurus, menangani, sibuk dengan) selalu diikuti **narzędnik**. Karena itu kata tanyanya pun narzędnik: *czym* (dengan apa), bukan *co*. Ini pertanyaan wawancara paling standar, juga di pesta: *Czym się pan zajmuje?* = \"Apa pekerjaan Anda?\"",
+    "**Testowaniem, pisaniem** — jawaban Budi memakai kata benda dari kata kerja, dan karena *zajmować się* menuntut narzędnik, kata benda itu ikut berubah: *testowanie → testowaniem*. Kata benda *-nie/-cie* selalu netral dan berubah persis seperti *mieszkanie*.",
+    "**Gdzie widzi się pan za pięć lat?** Pertanyaan klise wawancara, sama klisenya dengan di Indonesia. *Za pięć lat* = \"lima tahun lagi\": *za* + biernik untuk jarak waktu ke depan, lawan dari *pięć lat temu*.",
+    "**Chcę zostać programistą** — *zostać* (menjadi) juga menuntut narzędnik, dan semua yang menjadi bagian dari sebutan itu ikut: *doświadczonym programistą*, *kierownikiem projektu*. *Projektu* tetap dopełniacz karena ia menerangkan *kierownik* (manajer **dari** proyek).",
+    "**Czytanie… pomogło** — kata benda *-nie* bisa jadi pelaku kalimat. Karena ia netral, kata kerja lampaunya pun berakhiran *-ło*: *Czytanie mi pomogło*, *Pływanie mnie zmęczyło*. Bahasa Indonesia melakukan hal yang sama tanpa mengubah apa pun: \"Membaca membantu saya\".",
+    "**Jeśli to pani odpowiada** — *odpowiadać* + celownik berarti \"cocok bagi\", bukan \"menjawab\". Cara sopan menawarkan tanggal atau jam: *Czy odpowiada panu czwartek?* (Kamis cocok untuk Bapak?)"
+   ],
+   "grammars": [
+    {
+     "title": "Dari kata kerja ke kata benda: -nie dan -cie",
+     "body": [
+      "Hampir setiap kata kerja bisa dijadikan kata benda netral yang berarti \"kegiatan melakukan sesuatu\", seperti awalan *pe-an* atau *ber-* yang dibendakan dalam bahasa Indonesia. Titik tolaknya adalah bentuk kamus; perubahannya bisa ditebak dari akhiran."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Kata benda",
+       "Pola",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*czytać*",
+        "*czytanie*",
+        "-ać → -anie",
+        "*Czytanie to moja pasja.*"
+       ],
+       [
+        "*programować*",
+        "*programowanie*",
+        "-ować → -owanie",
+        "*Uczę się programowania.*"
+       ],
+       [
+        "*robić*",
+        "*robienie*",
+        "-ić → -enie",
+        "*robienie zakupów*"
+       ],
+       [
+        "*uczyć się*",
+        "*uczenie się*",
+        "-yć → -enie",
+        "*szybkie uczenie się*"
+       ],
+       [
+        "*chodzić*",
+        "*chodzenie*",
+        "dzi → dz",
+        "*chodzenie po górach*"
+       ],
+       [
+        "*płacić*",
+        "*płacenie*",
+        "ci → c",
+        "*płacenie kartą*"
+       ],
+       [
+        "*nosić*",
+        "*noszenie*",
+        "si → sz",
+        "*noszenie ciężkich pudeł*"
+       ],
+       [
+        "*pić, żyć, myć*",
+        "*picie, życie, mycie*",
+        "kata pendek → -cie",
+        "*picie kawy, życie w Krakowie*"
+       ],
+       [
+        "*rozpocząć*",
+        "*rozpoczęcie*",
+        "-ąć → -ęcie",
+        "*rozpoczęcie roku akademickiego*"
+       ]
+      ]
+     },
+     "after": [
+      "**Semuanya netral dan berubah seperti *mieszkanie*:** M./B. *pisanie*, D. *pisania*, C./Ms. *pisaniu*, N. *pisaniem*. Kata kerja ber-*się* membawa *się*-nya: *uczenie się*, *spotykanie się*.",
+      "**Kedua aspek bisa dibendakan, dan artinya berbeda.** *Pisanie raportu* adalah prosesnya (menulis laporan, berlangsung); *napisanie raportu* adalah hasilnya yang selesai: *Napisanie raportu zajęło mi tydzień* (Menyelesaikan laporan itu makan waktu seminggu).",
+      "**Nie + kata benda ini ditulis bersambung**, tidak seperti *nie* + kata kerja: *nie palę* tetapi *niepalenie*, *nie zdałem* tetapi *niezdanie egzaminu*."
+     ]
+    },
+    {
+     "title": "Narzędnik untuk profesi dan kesibukan",
+     "body": [
+      "Tiga kata kerja yang paling sering menarik narzędnik ada di dialog ini: *być* (sudah kamu kenal sejak A1), *zostać*, dan *zajmować się*. Akhiran yang perlu kamu pegang cuma empat."
+     ],
+     "table": {
+      "head": [
+       "Bentuk dasar (M.)",
+       "Narzędnik",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*programista* (m, -a)",
+        "*programistą*",
+        "*Chcę zostać programistą.*"
+       ],
+       [
+        "*kierownik* (m)",
+        "*kierownikiem*",
+        "*Marek został kierownikiem.*"
+       ],
+       [
+        "*nauczycielka* (ż)",
+        "*nauczycielką*",
+        "*Ania jest nauczycielką.*"
+       ],
+       [
+        "*testowanie* (n)",
+        "*testowaniem*",
+        "*Zajmuję się testowaniem.*"
+       ],
+       [
+        "*doświadczony* (kata sifat m)",
+        "*doświadczonym*",
+        "*doświadczonym programistą*"
+       ],
+       [
+        "*dobra* (kata sifat ż)",
+        "*dobrą*",
+        "*dobrą lekarką*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata benda laki-laki berakhiran *-a* (*programista, kolega, kierowca*) berubah seperti kata benda perempuan: narzędnik *-ą*. Kata sifatnya tetap laki-laki: *dobrym kolegą*.",
+      "**Awas *jako*.** Sesudah *jako* (sebagai) bentuknya kembali ke mianownik: *Pracuję jako programista*, tetapi *Jestem programistą*. Dua kalimat itu artinya hampir sama; pilih salah satu dan jangan campur."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Moje hobby to gotowanie",
+   "intro": "Malamnya di mieszkanie di Podgórze. Tomek ingin tahu semuanya, terutama bagian CV yang ia curigai agak dilebih-lebihkan. Lalu telepon Budi berdering.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "No i jak poszło? O co cię pytała?",
+     "id": "Jadi gimana? Dia nanya apa aja?",
+     "literal": "nah dan bagaimana ia-pergi-lampau? tentang apa kamu ia-bertanya-lampau-pr?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O doświadczenie, mocne strony i plany. Standard.",
+     "id": "Soal pengalaman, kelebihan, dan rencana. Standar.",
+     "literal": "tentang pengalaman, kuat sisi dan rencana. standar."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A co wpisałeś w CV w rubryce „Zainteresowania”?",
+     "id": "Terus di CV bagian \"Minat\" kamu tulis apa?",
+     "literal": "dan apa kamu-mengisi-lampau-lk di CV di kolom minat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Moje hobby to gotowanie i chodzenie po górach.",
+     "id": "Hobi saya memasak dan naik gunung.",
+     "literal": "milikku hobi itu memasak dan berjalan di-atas gunung-jamak."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Chodzenie po górach? Byłeś w Tatrach dwa razy, i to ze mną!",
+     "id": "Naik gunung? Kamu ke Tatra baru dua kali, itu pun sama saya!",
+     "literal": "berjalan di-atas gunung-jamak? kamu-adalah-lampau-lk di Tatra dua kali, dan itu dengan saya!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To też się liczy. O, dzwoni pani Wiśniewska…",
+     "id": "Itu juga dihitung. Eh, Bu Wiśniewska nelepon…",
+     "literal": "itu juga diri ia-menghitung. oh, ia-menelepon nyonya Wiśniewska…"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "I co? Mów szybko!",
+     "id": "Terus? Cepat bilang!",
+     "literal": "dan apa? bicaralah cepat!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Od października zostanę młodszym programistą!",
+     "id": "Mulai Oktober saya jadi junior programmer!",
+     "literal": "sejak Oktober saya-akan-menjadi lebih-muda(N.) programmer(N.)!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Gratulacje! Takie wydarzenie trzeba uczcić.",
+     "id": "Selamat! Kejadian begini harus dirayakan.",
+     "literal": "selamat! begitu peristiwa perlu merayakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze, ale bez picia do rana. W poniedziałek mam szkolenie.",
+     "id": "Oke, tapi jangan minum sampai pagi. Senin saya ada pelatihan.",
+     "literal": "baik, tetapi tanpa minum(D.) sampai pagi. di Senin saya-punya pelatihan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Umowa stoi. Pizza, jedno piwo i spanie przed północą.",
+     "id": "Deal. Pizza, satu bir, dan tidur sebelum tengah malam.",
+     "literal": "perjanjian ia-berdiri. pizza, satu bir dan tidur sebelum tengah-malam."
+    }
+   ],
+   "notes": [
+    "**O co cię pytała?** *Pytać o* + biernik = menanyakan sesuatu; orang yang ditanya juga biernik: *pytać kogoś o coś*. Tomek memakai *pytała* (perempuan) karena yang mewawancarai pani Magdalena. Sejak Budi jadi karyawan tetap, pani Magdalena memanggilnya *Budi* dan *ty*, sedangkan Budi tetap memakai *pani*: sapaan tak simetris begini lazim antara atasan yang lebih senior dan karyawan muda.",
+    "**Moje hobby to…** — *to* di sini berfungsi sebagai \"adalah\" di depan kata benda, dan sesudahnya tetap mianownik: *Moje hobby to gotowanie*, bukan *gotowaniem*. Bandingkan: *Moje hobby jest gotowaniem* terdengar kaku. *Hobby* sendiri netral dan tidak pernah berubah.",
+    "**Byłeś w Tatrach** — *Tatry* hanya ada dalam bentuk jamak, seperti *Karkonosze* dan *Bieszczady*. Miejscowniknya *w Tatrach*, arahnya *w Tatry*.",
+    "**Zostanę** — *zostać* perfektif, jadi bentuk kininya bermakna masa depan: *zostanę* = saya akan menjadi. Pasangan imperfektifnya *zostawać (zostaję)* jarang dipakai untuk profesi.",
+    "**Młodszy programista** — padanan Polandia untuk *junior developer* (harfiah \"programmer yang lebih muda\"); lawannya *starszy programista*. Di kantor IT kamu akan sama seringnya mendengar *junior* dan *senior* begitu saja.",
+    "**Bez picia, spanie** — kata benda *-nie/-cie* menempel pada kata depan seperti kata benda lain: *bez* + dopełniacz → *bez picia*. Kalimat Tomek sendiri tidak punya kata kerja sama sekali: daftar kata benda sudah cukup untuk membuat kesepakatan."
+   ],
+   "grammars": [
+    {
+     "title": "Zostać: menjadi dan tinggal",
+     "body": [
+      "*Zostać* punya dua arti besar, dan kasus sesudahnya yang membedakan. Dengan narzędnik ia berarti **menjadi**; dengan keterangan tempat ia berarti **tinggal, tetap di situ**."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Futur (dk)",
+       "Lampau lk",
+       "Lampau pr"
+      ],
+      "rows": [
+       [
+        "ja",
+        "*zostanę*",
+        "*zostałem*",
+        "*zostałam*"
+       ],
+       [
+        "ty",
+        "*zostaniesz*",
+        "*zostałeś*",
+        "*zostałaś*"
+       ],
+       [
+        "on / ona",
+        "*zostanie*",
+        "*został*",
+        "*została*"
+       ],
+       [
+        "my",
+        "*zostaniemy*",
+        "*zostaliśmy*",
+        "*zostałyśmy*"
+       ],
+       [
+        "wy",
+        "*zostaniecie*",
+        "*zostaliście*",
+        "*zostałyście*"
+       ],
+       [
+        "oni / one",
+        "*zostaną*",
+        "*zostali*",
+        "*zostały*"
+       ]
+      ]
+     },
+     "after": [
+      "*Kasia została lekarką?* — Kasia sudah jadi dokter? / *Kasia została w domu.* — Kasia tinggal di rumah. Kata kerjanya sama; narzędnik *lekarką* yang memberi tahu artinya.",
+      "Di unit 5 *zostać* akan muncul lagi dengan pekerjaan ketiga: pembentuk kalimat pasif (*Stare Miasto zostało odbudowane*). Jadi tabel ini akan kamu pakai berkali-kali."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata CV dan lowongan kerja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*ogłoszenie o pracy*",
+       "o-gwo-SYE-nye o PRA-tsy",
+       "iklan lowongan"
+      ],
+      [
+       "*stanowisko*",
+       "sta-no-VIS-ko",
+       "posisi, jabatan"
+      ],
+      [
+       "*doświadczenie zawodowe*",
+       "do-syfyat-CE-nye za-vo-DO-ve",
+       "pengalaman kerja"
+      ],
+      [
+       "*wykształcenie*",
+       "vy-ksytaw-TSE-nye",
+       "pendidikan"
+      ],
+      [
+       "*umiejętności*",
+       "u-mye-yent-NO-syci",
+       "keterampilan"
+      ],
+      [
+       "*znajomość języków*",
+       "zna-YO-mosyc yen-ZY-kuf",
+       "penguasaan bahasa"
+      ],
+      [
+       "*list motywacyjny*",
+       "list mo-ty-va-TSYY-ny",
+       "surat lamaran"
+      ],
+      [
+       "*umowa o pracę*",
+       "u-MO-va o PRA-tse",
+       "kontrak kerja (status karyawan)"
+      ],
+      [
+       "*okres próbny*",
+       "OK-res PRUB-ny",
+       "masa percobaan"
+      ],
+      [
+       "*pełny etat / pół etatu*",
+       "PEW-ny E-tat / puw e-TA-tu",
+       "penuh waktu / paruh waktu"
+      ],
+      [
+       "*wynagrodzenie brutto / netto*",
+       "vy-na-gro-DZE-nye BRUT-to / NET-to",
+       "gaji kotor / bersih"
+      ],
+      [
+       "*praca zdalna*",
+       "PRA-tsa ZDAL-na",
+       "kerja jarak jauh"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan berapa banyak kata di tabel ini yang sebenarnya kata benda dari kata kerja: *ogłoszenie* (dari *ogłosić*, mengumumkan), *wykształcenie* (dari *wykształcić*, mendidik), *doświadczenie* (dari *doświadczyć*, mengalami), *wynagrodzenie* (dari *wynagrodzić*, mengganjar). Begitu kamu mengenali akhiran *-enie*, kamu bisa menebak arti kata baru dari kata kerjanya, dan sebaliknya."
+    },
+    {
+     "type": "kotak",
+     "title": "CV dan kontrak di Polandia",
+     "items": [
+      "CV di Polandia biasanya ringkas, satu sampai dua halaman: data diri, pengalaman kerja (dari yang terbaru), pendidikan, keterampilan, bahasa, lalu minat. Foto boleh dipasang, tapi tidak wajib.",
+      "Di bagian bawah CV sering ada kalimat persetujuan pengolahan data pribadi yang disebut *klauzula RODO* (RODO = GDPR). Lihat iklan lowongannya: kalau perusahaan memintanya, mereka biasanya menuliskan kalimat yang harus dipakai.",
+      "Tiga jenis kerja sama yang akan kamu dengar: *umowa o pracę* (kontrak kerja dengan cuti dan jaminan sosial), *umowa zlecenie* (kontrak jasa), dan *B2B* (bekerja sebagai usaha sendiri; sering di bidang IT).",
+      "Gaji di iklan bisa ditulis *brutto* (sebelum pajak dan iuran) atau *netto* (yang diterima). Kalau tidak jelas, bertanya soal ini wajar sekali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata benda -nie/-cie di papan dan di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Arti",
+      "Dari kata kerja"
+     ],
+     "rows": [
+      [
+       "*Palenie wzbronione*",
+       "Dilarang merokok",
+       "*palić*"
+      ],
+      [
+       "*Parkowanie tylko dla klientów*",
+       "Parkir khusus pelanggan",
+       "*parkować*"
+      ],
+      [
+       "*Wejście / Wyjście*",
+       "Masuk / Keluar",
+       "*wejść / wyjść*"
+      ],
+      [
+       "*Karmienie zwierząt zabronione*",
+       "Dilarang memberi makan hewan",
+       "*karmić*"
+      ],
+      [
+       "*Otwarcie wystawy*",
+       "Pembukaan pameran",
+       "*otworzyć*"
+      ],
+      [
+       "*Zebranie zespołu o 10:00*",
+       "Rapat tim pukul 10.00",
+       "*zebrać się*"
+      ],
+      [
+       "*Szkolenie BHP*",
+       "Pelatihan K3",
+       "*szkolić*"
+      ],
+      [
+       "*Mycie rąk obowiązkowe*",
+       "Wajib cuci tangan",
+       "*myć*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Beberapa kata benda seperti ini sudah lama hidup mandiri dan jarang lagi dirasakan sebagai \"kegiatan\": *mieszkanie* (apartemen, dari *mieszkać*), *zebranie* (rapat), *zdanie* (kalimat, juga pendapat: *moim zdaniem*), *życie* (hidup), *wejście* (pintu masuk). Kalau sebuah kata berakhiran *-nie* atau *-cie* dan netral, coba cari kata kerja di baliknya; delapan dari sepuluh kali kamu akan menemukannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat siap pakai untuk wawancara",
+     "items": [
+      "*Mam doświadczenie w programowaniu / w pracy z klientami.* — Saya berpengalaman dalam pemrograman / bekerja dengan klien.",
+      "*Zajmowałem się* (lk) / *Zajmowałam się* (pr) *obsługą klienta.* — Saya menangani layanan pelanggan.",
+      "*Interesuję się fotografią.* — Saya tertarik pada fotografi (*interesować się* + N., sama seperti *zajmować się*).",
+      "*Chciałbym* (lk) / *Chciałabym* (pr) *rozwijać się w tym kierunku.* — Saya ingin berkembang ke arah ini.",
+      "*Czy mogę zadać pytanie o zespół?* — Boleh saya bertanya soal timnya?",
+      "Karyawan baru di Polandia biasanya harus mengikuti *szkolenie BHP* (keselamatan dan kesehatan kerja) sebelum mulai; jangan heran kalau hari pertamamu diisi video tentang tangga dan alat pemadam."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "rozmowa kwalifikacyjna (ż)",
+   "baca": "roz-MO-va kfa-li-fi-ka-TSYY-na",
+   "id": "wawancara kerja"
+  },
+  {
+   "pl": "stanowisko (n)",
+   "baca": "sta-no-VIS-ko",
+   "id": "posisi, jabatan"
+  },
+  {
+   "pl": "doświadczenie (n)",
+   "baca": "do-syfyat-CE-nye",
+   "id": "pengalaman"
+  },
+  {
+   "pl": "umiejętność, umiejętności (ż)",
+   "baca": "u-mye-YENT-nosyc, u-mye-yent-NO-syci",
+   "id": "keterampilan"
+  },
+  {
+   "pl": "wykształcenie (n)",
+   "baca": "vy-ksytaw-TSE-nye",
+   "id": "pendidikan"
+  },
+  {
+   "pl": "zainteresowania (lm)",
+   "baca": "za-in-te-re-so-VA-nya",
+   "id": "minat, hobi (di CV)"
+  },
+  {
+   "pl": "zajmować się (zajmuję się) (+ N.) — ndk",
+   "baca": "zay-MO-vac sye (zay-MU-ye sye)",
+   "id": "mengurus, menangani, sibuk dengan"
+  },
+  {
+   "pl": "zostawać (zostaję) / zostać (zostanę) (+ N.)",
+   "baca": "zos-TA-vac (zos-TA-ye) / ZOS-tac (zos-TA-ne)",
+   "id": "menjadi; tinggal, tetap"
+  },
+  {
+   "pl": "programista, programiści (m)",
+   "baca": "pro-gra-MIS-ta, pro-gra-MISY-ci",
+   "id": "programmer"
+  },
+  {
+   "pl": "kierownik (m)",
+   "baca": "kye-ROV-nik",
+   "id": "manajer, kepala"
+  },
+  {
+   "pl": "mocna strona / słaba strona (ż)",
+   "baca": "MOTS-na STRO-na / SWA-ba STRO-na",
+   "id": "kelebihan / kelemahan"
+  },
+  {
+   "pl": "szkolenie (n)",
+   "baca": "syko-LE-nye",
+   "id": "pelatihan"
+  },
+  {
+   "pl": "umowa o pracę (ż)",
+   "baca": "u-MO-va o PRA-tse",
+   "id": "kontrak kerja"
+  },
+  {
+   "pl": "etat (m)",
+   "baca": "E-tat",
+   "id": "posisi tetap (pełny etat = penuh waktu)"
+  },
+  {
+   "pl": "wynagrodzenie (n)",
+   "baca": "vy-na-gro-DZE-nye",
+   "id": "gaji, upah"
+  },
+  {
+   "pl": "programowanie (n)",
+   "baca": "pro-gra-mo-VA-nye",
+   "id": "pemrograman"
+  },
+  {
+   "pl": "rozwiązywać (rozwiązuję) / rozwiązać (rozwiążę)",
+   "baca": "roz-vyon-ZY-vac (roz-vyon-ZU-ye) / roz-VYON-zac (roz-VYON-zye)",
+   "id": "memecahkan (masalah)"
+  },
+  {
+   "pl": "doświadczony",
+   "baca": "do-syfyat-CO-ny",
+   "id": "berpengalaman"
+  },
+  {
+   "pl": "ambitny",
+   "baca": "am-BIT-ny",
+   "id": "ambisius"
+  },
+  {
+   "pl": "odpowiadać (odpowiadam) (+ C.) — ndk",
+   "baca": "od-po-VYA-dac (od-po-VYA-dam)",
+   "id": "cocok bagi; juga: menjawab"
+  },
+  {
+   "pl": "uczcić (uczczę) — dk",
+   "baca": "UC-cic (UC-ce)",
+   "id": "merayakan, memperingati"
+  },
+  {
+   "pl": "zaproszenie (n)",
+   "baca": "za-pro-SYE-nye",
+   "id": "undangan"
+  },
+  {
+   "pl": "przyszłość (ż)",
+   "baca": "PSYY-sywosyc",
+   "id": "masa depan"
+  },
+  {
+   "pl": "hobby (n, tak berubah)",
+   "baca": "HOB-bi",
+   "id": "hobi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya sibuk dengan pemrograman. (*zajmować się*)",
+    "Ania adalah guru bahasa Inggris.",
+    "Tomek ingin menjadi pemandu gunung. (*przewodnik górski*)",
+    "Membaca buku membantu saya belajar. (*w nauce*)",
+    "Hobi saya memasak dan berenang.",
+    "Kasia ingin menjadi dokter anak. (*pediatra*)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Lubię ____ po górach. (chodzić → kata benda)",
+    "Zajmuję się ____ dokumentów. (tłumaczyć → kata benda, N.)",
+    "____ jest tu zabronione. (palić → kata benda)",
+    "Marek został ____ zespołu. (kierownik → N.)",
+    "Ania jest bardzo dobrą ____. (nauczycielka → N.)",
+    "Nie mam czasu na ____ obiadu. (gotować → kata benda)",
+    "Za dwa lata Kasia ____ lekarką. (zostać, futur)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat dengan *zajmować się* + narzędnik. Contoh: *Tłumaczę teksty.* → *Zajmuję się tłumaczeniem tekstów.*",
+   "items": [
+    "Piszę artykuły.",
+    "Testujemy aplikacje.",
+    "Tomek projektuje strony internetowe.",
+    "Organizuję szkolenia.",
+    "Oni tłumaczą dokumenty.",
+    "Pani Halina piecze ciasta."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "się / czym / pan / zajmuje / ?",
+    "zostać / chcę / programistą / dobrym",
+    "pomogło / mi / czytanie / bardzo / książek",
+    "po / to / górach / hobby / moje / chodzenie",
+    "października / od / zostanę / kierownikiem / projektu"
+   ]
+  }
+ ],
+ "answers": [
+  "Zajmuję się programowaniem. — Ania jest nauczycielką angielskiego. — Tomek chce zostać przewodnikiem górskim. — Czytanie książek pomaga mi w nauce. — Moje hobby to gotowanie i pływanie. — Kasia chce zostać pediatrą.",
+  "chodzenie — tłumaczeniem — Palenie — kierownikiem — nauczycielką — gotowanie — zostanie",
+  "Zajmuję się pisaniem artykułów. — Zajmujemy się testowaniem aplikacji. — Tomek zajmuje się projektowaniem stron internetowych. — Zajmuję się organizowaniem szkoleń. — Oni zajmują się tłumaczeniem dokumentów. — Pani Halina zajmuje się pieczeniem ciast.",
+  "Czym się pan zajmuje? — Chcę zostać dobrym programistą. — Czytanie książek bardzo mi pomogło. — Moje hobby to chodzenie po górach. — Od października zostanę kierownikiem projektu."
+ ]
+}

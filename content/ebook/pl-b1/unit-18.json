@@ -1,0 +1,736 @@
+{
+ "title": "Sebaiknya, seharusnya — kewajiban & saran",
+ "title_target": "Powinieneś odpocząć",
+ "goal": "Memberi dan menerima nasihat, serta membicarakan kewajiban dengan kekuatan yang berbeda-beda: *powinien / powinna* beserta bentuk lampaunya (*powinienem był*), *należy, trzeba, warto, lepiej, nie wolno*, dan *mieć* + bentuk kamus untuk tugas dari orang lain.",
+ "bekal": [
+  "memberi saran dan teguran halus dengan *powinieneś / powinnaś*",
+  "menyesali hal yang tidak dilakukan: *powinienem był…, powinnam była…*",
+  "membedakan \"harus\", \"perlu\", \"sebaiknya\", \"tidak perlu\", dan \"tidak boleh\""
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Wyglądasz na zmęczonego",
+   "intro": "Sabtu pagi di sebuah kafe di Kazimierz. Kasia, adik Ania yang kuliah kedokteran, bertemu Budi dan langsung melihat ada yang tidak beres.",
+   "lines": [
+    {
+     "speaker": "Kasia:",
+     "text": "Budi, wyglądasz okropnie. Ile spałeś w tym tygodniu?",
+     "id": "Budi, kamu kelihatan parah. Minggu ini kamu tidur berapa jam?",
+     "literal": "Budi, kamu-terlihat mengerikan. berapa kamu-tidur-lampau-lk di ini minggu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Może pięć godzin na noc. Mamy wielki projekt.",
+     "id": "Paling lima jam semalam. Kami lagi ada proyek besar.",
+     "literal": "mungkin lima jam per malam. kami-punya besar proyek."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "To za mało. Powinieneś spać co najmniej siedem godzin.",
+     "id": "Itu terlalu sedikit. Kamu seharusnya tidur paling tidak tujuh jam.",
+     "literal": "itu terlalu sedikit. kamu-seharusnya-lk tidur paling sedikit tujuh jam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wiem, wiem. Ale muszę skończyć moduł do piątku.",
+     "id": "Iya, tahu. Tapi saya harus menyelesaikan modulnya sebelum Jumat.",
+     "literal": "saya-tahu, saya-tahu. tetapi saya-harus menyelesaikan modul sampai Jumat."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "Mówię poważnie. Nie można tak żyć miesiącami.",
+     "id": "Saya serius. Tidak bisa hidup begitu berbulan-bulan.",
+     "literal": "saya-berkata serius. tidak bisa begitu hidup bulan-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szefowa mówi, że mam to zrobić do końca tygodnia.",
+     "id": "Kata bos, saya harus menyelesaikannya sebelum akhir minggu.",
+     "literal": "bos-pr ia-berkata, bahwa saya-punya itu melakukan sampai akhir minggu."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "To powinieneś z nią porozmawiać. Może warto przesunąć termin?",
+     "id": "Kalau begitu kamu sebaiknya bicara dengannya. Mungkin ada baiknya tenggatnya dimundurkan?",
+     "literal": "maka kamu-seharusnya-lk dengan dia berbicara. mungkin layak menggeser tenggat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Masz rację. Powinienem był jej to powiedzieć wcześniej.",
+     "id": "Kamu benar. Seharusnya dari awal saya bilang ke dia.",
+     "literal": "kamu-punya kebenaran. saya-seharusnya-lk adalah-lampau-lk dia itu mengatakan lebih-awal."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "No właśnie. A ile kawy pijesz dziennie?",
+     "id": "Nah, itu dia. Terus kopinya berapa gelas sehari?",
+     "literal": "nah justru. dan berapa kopi kamu-minum per-hari?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sześć. Ale przecież kawa pomaga.",
+     "id": "Enam. Tapi kan kopi membantu.",
+     "literal": "enam. tetapi kan kopi ia-membantu."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "Pomaga na chwilę. Lepiej pić wodę i wychodzić na spacer.",
+     "id": "Membantu sebentar. Lebih baik minum air dan keluar jalan kaki.",
+     "literal": "ia-membantu untuk sebentar. lebih-baik minum air dan keluar ke jalan-jalan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na spacer? Kiedy? Wracam z pracy po dziewiętnastej.",
+     "id": "Jalan kaki? Kapan? Saya pulang kerja lewat jam tujuh malam.",
+     "literal": "ke jalan-jalan? kapan? saya-kembali dari kerja setelah kesembilan-belas."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "To wychodź w przerwie na lunch. Bulwary są dziesięć minut od twojego biura.",
+     "id": "Ya keluar saja waktu istirahat makan siang. Bulwary cuma sepuluh menit dari kantormu.",
+     "literal": "maka keluarlah di istirahat untuk makan-siang. tepian-jamak adalah sepuluh menit dari milikmu kantor."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze, pani doktor. Obiecuję poprawę.",
+     "id": "Baik, Bu Dokter. Saya janji berubah.",
+     "literal": "baik, nyonya dokter. saya-berjanji perbaikan."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "Jeszcze nie jestem lekarką! Ale chyba powinnam brać pieniądze za porady.",
+     "id": "Saya belum jadi dokter! Tapi kayaknya saya harus mulai pasang tarif untuk konsultasi.",
+     "literal": "masih tidak saya-adalah dokter-pr! tetapi mungkin saya-seharusnya-pr mengambil uang untuk nasihat-jamak."
+    }
+   ],
+   "notes": [
+    "**Powinieneś spać** — \"kamu seharusnya tidur\". *Powinien* bukan kata kerja biasa: ia tidak punya bentuk kamus, nyaris tak pernah dipakai di masa depan, dan menempelkan ekor orang seperti kala lampau: *powinien-em, powinien-eś*. Sesudahnya selalu **bentuk kamus** kata kerja.",
+    "**Mam to zrobić** — *mieć* + bentuk kamus = \"saya ditugasi, saya disuruh\". Kewajibannya datang dari **orang lain** atau dari rencana: *Szefowa mówi, że mam to zrobić.* Dalam pertanyaan artinya \"saya harus bagaimana?\": *Co mam zrobić?*",
+    "**Powinienem był jej to powiedzieć** — \"seharusnya (dulu) saya bilang\". Penyesalan tentang masa lalu dibentuk dengan *powinienem* + *był*, yang ikut jenis kelamin: Kasia akan berkata *powinnam była*. Perhatikan juga urutan *jej to*: kata ganti celownik biasanya mendahului biernik.",
+    "**Warto** — \"ada gunanya, patut\". Tidak pernah berubah bentuk: *warto przesunąć termin*, *warto zobaczyć Wawel*, *nie warto się martwić*. Lampaunya *warto było*: *Warto było przyjechać!*",
+    "**Lepiej pić wodę** — \"lebih baik minum air\". *Lepiej* + bentuk kamus adalah saran yang lembut dan tidak menunjuk orang. Kalau ditujukan langsung, *lepiej* dipasangkan dengan imperatif: *Lepiej odpocznij.* (Sebaiknya kamu istirahat.)",
+    "**Pani doktor** — dokter disapa *panie doktorze* / *pani doktor*, walaupun gelarnya bukan doktor ilmiah. Budi bercanda karena Kasia masih mahasiswi; balasan Kasia memakai nama profesinya, *lekarka* (dokter perempuan), dalam narzędnik."
+   ],
+   "grammars": [
+    {
+     "title": "Powinien: \"seharusnya\" yang berekor",
+     "body": [
+      "*Powinien* berubah menurut orang dan jenis kelamin, dengan ekor yang sama seperti kala lampau (*-em, -eś, -śmy, -ście*). Bentuk jamaknya membedakan kelompok berisi laki-laki (*powinni*) dan kelompok lain (*powinny*)."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "lk",
+       "pr / n",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ja",
+        "*powinienem*",
+        "*powinnam*",
+        "*Powinnam więcej spać.*"
+       ],
+       [
+        "ty",
+        "*powinieneś*",
+        "*powinnaś*",
+        "*Powinieneś odpocząć.*"
+       ],
+       [
+        "on / ona / ono",
+        "*powinien*",
+        "*powinna / powinno*",
+        "*Dziecko powinno jeść warzywa.*"
+       ],
+       [
+        "my",
+        "*powinniśmy*",
+        "*powinnyśmy*",
+        "*Powinniśmy już iść.*"
+       ],
+       [
+        "wy",
+        "*powinniście*",
+        "*powinnyście*",
+        "*Powinnyście zadzwonić do mamy.*"
+       ],
+       [
+        "oni / one",
+        "*powinni*",
+        "*powinny*",
+        "*Studenci powinni więcej czytać.*"
+       ]
+      ]
+     },
+     "after": [
+      "***pan* dan *pani*** memakai bentuk orang ketiga: *Pan powinien odpocząć. Pani powinna iść do lekarza.*",
+      "**Sangkalan dan pertanyaan** tanpa kejutan: *Nie powinieneś tyle pracować. Czy powinnam to podpisać?*",
+      "**Impersonal:** *powinno się* + bentuk kamus = \"orang seharusnya…\": *Powinno się myć ręce przed jedzeniem.*"
+     ]
+    },
+    {
+     "title": "Seharusnya dulu: powinienem był",
+     "body": [
+      "Untuk masa lalu, tambahkan bentuk lampau *być* yang ikut jenis kelamin dan jumlah. Maknanya hampir selalu **penyesalan atau teguran**: sesuatu yang seharusnya terjadi, tetapi tidak."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Sekarang",
+       "Lampau",
+       "Contoh lampau"
+      ],
+      "rows": [
+       [
+        "ja (lk)",
+        "*powinienem*",
+        "*powinienem był*",
+        "*Powinienem był zadzwonić.*"
+       ],
+       [
+        "ja (pr)",
+        "*powinnam*",
+        "*powinnam była*",
+        "*Powinnam była wcześniej wyjść.*"
+       ],
+       [
+        "ty (lk)",
+        "*powinieneś*",
+        "*powinieneś był*",
+        "*Powinieneś był mnie uprzedzić.*"
+       ],
+       [
+        "on / ona",
+        "*powinien / powinna*",
+        "*powinien był / powinna była*",
+        "*Powinna była to wiedzieć.*"
+       ],
+       [
+        "my (campuran)",
+        "*powinniśmy*",
+        "*powinniśmy byli*",
+        "*Powinniśmy byli kupić bilety wcześniej.*"
+       ],
+       [
+        "oni / one",
+        "*powinni / powinny*",
+        "*powinni byli / powinny były*",
+        "*Powinni byli zapytać.*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam obrolan sering terdengar versi pendek tanpa *był* (*Powinienem wcześniej zadzwonić*), dengan kata *wcześniej* atau *wczoraj* yang menunjukkan waktunya. Dalam tulisan, pakai bentuk lengkap.",
+      "Padanan yang lebih santai: *Trzeba było…* — \"harusnya tadi…\": *Trzeba było mi powiedzieć!* (Harusnya kamu bilang ke saya!)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Rozmowa z szefową",
+   "intro": "Senin pagi. Mengikuti saran Kasia, Budi mengetuk pintu ruangan pani Magdalena.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Pani Magdaleno, czy mogę zająć pani chwilę?",
+     "id": "Bu Magdalena, boleh minta waktunya sebentar?",
+     "literal": "nyonya Magdalena(W.), apakah saya-bisa mengambil nyonya sebentar?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Oczywiście. Wyglądasz na zmęczonego. Co się stało?",
+     "id": "Tentu. Kamu kelihatan capek. Ada apa?",
+     "literal": "tentu. kamu-terlihat pada lelah. apa diri terjadi-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie zdążę z modułem do piątku. Przepraszam, że mówię to dopiero teraz.",
+     "id": "Modulnya tidak akan selesai hari Jumat. Maaf baru bilang sekarang.",
+     "literal": "tidak saya-akan-sempat dengan modul sampai Jumat. maaf, bahwa saya-berkata itu baru sekarang."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Szkoda, że nie powiedziałeś wcześniej. Powinieneś był mnie uprzedzić.",
+     "id": "Sayang kamu tidak bilang lebih awal. Harusnya kamu kasih tahu saya dari kemarin-kemarin.",
+     "literal": "sayang, bahwa tidak kamu-mengatakan-lampau-lk lebih-awal. kamu-seharusnya-lk adalah-lampau-lk saya memberi-tahu-dulu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wiem. Myślałem, że dam radę sam.",
+     "id": "Saya tahu. Saya kira saya sanggup sendiri.",
+     "literal": "saya-tahu. saya-berpikir-lampau-lk, bahwa saya-akan-memberi kesanggupan sendiri."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "W takich sytuacjach należy od razu informować zespół.",
+     "id": "Dalam situasi seperti ini, tim harus segera diberi tahu.",
+     "literal": "di begitu situasi-jamak sepatutnya segera memberi-tahu tim."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rozumiem. Co mam teraz zrobić?",
+     "id": "Paham. Sekarang saya harus bagaimana?",
+     "literal": "saya-mengerti. apa saya-punya sekarang melakukan?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Poproś Marka o pomoc. Nie warto pracować po nocach.",
+     "id": "Minta bantuan Marek. Tidak ada gunanya kerja sampai larut malam.",
+     "literal": "mintalah Marek tentang bantuan. tidak layak bekerja pada malam-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A termin? Klient się nie zdenerwuje?",
+     "id": "Lalu tenggatnya? Kliennya tidak akan kesal?",
+     "literal": "dan tenggat? klien diri tidak ia-akan-kesal?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Zadzwonię do niego. Nie musisz się martwić. Tylko następnym razem mów od razu.",
+     "id": "Saya yang telepon dia. Kamu tidak perlu khawatir. Cuma lain kali langsung bilang.",
+     "literal": "saya-akan-menelepon ke dia. tidak kamu-harus diri khawatir. hanya berikutnya kali bicaralah segera."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Obiecuję. I dziś wyjdę punktualnie – takie mam zalecenia lekarskie.",
+     "id": "Janji. Dan hari ini saya pulang tepat waktu; itu anjuran dokter saya.",
+     "literal": "saya-berjanji. dan hari-ini saya-akan-keluar tepat-waktu – begitu saya-punya anjuran-jamak dokter."
+    }
+   ],
+   "notes": [
+    "**Pani Magdaleno** — wołacz dari *Magdalena*. Dalam sapaan langsung yang sopan, *pani / panie* + nama depan dalam wołacz terdengar hangat sekaligus hormat: *Pani Magdaleno, panie Zbigniewie*.",
+    "**Czy mogę zająć pani chwilę?** — \"boleh saya ambil sedikit waktu Ibu?\". *Pani* di sini celownik (*zająć komuś chwilę*). Ini pembuka standar untuk bicara dengan atasan atau orang yang tidak dikenal.",
+    "**Należy informować** — *należy* + bentuk kamus = \"sepatutnya\" dalam nada **aturan atau prosedur**. Tidak menunjuk orang tertentu, jadi cocok untuk instruksi, peraturan kantor, dan petunjuk resmi.",
+    "**Nie musisz się martwić** — \"kamu tidak perlu khawatir\". Sangkalan dari *musieć* berarti **tidak perlu**, bukan \"tidak boleh\". Untuk larangan pakai *nie wolno* atau *nie możesz*.",
+    "**Dam radę** — \"saya sanggup\", ungkapan santai dari *dać radę* (harfiah \"memberi kesanggupan\"). Sering terdengar sebagai penyemangat: *Dasz radę!* (Kamu pasti bisa!)"
+   ],
+   "grammars": [
+    {
+     "title": "Peta kewajiban: dari \"harus\" sampai \"tidak boleh\"",
+     "body": [
+      "Bahasa Indonesia punya \"harus, perlu, sebaiknya, boleh\". Bahasa Polandia membagi wilayah itu lebih halus, terutama soal **siapa** yang mewajibkan dan **seberapa resmi** nadanya."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Makna",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*musieć*",
+        "harus (keharusan kuat)",
+        "*Muszę skończyć do piątku.*"
+       ],
+       [
+        "*mieć* + bentuk kamus",
+        "ditugasi, disuruh; rencana",
+        "*Mam to zrobić do jutra.*"
+       ],
+       [
+        "*trzeba*",
+        "perlu (impersonal)",
+        "*Trzeba kupić chleb.*"
+       ],
+       [
+        "*należy*",
+        "sepatutnya (aturan, resmi)",
+        "*Należy okazać dokument.*"
+       ],
+       [
+        "*powinien*",
+        "seharusnya, sebaiknya (saran, moral)",
+        "*Powinieneś odpocząć.*"
+       ],
+       [
+        "*warto*",
+        "ada gunanya, patut",
+        "*Warto zobaczyć Wieliczkę.*"
+       ],
+       [
+        "*lepiej*",
+        "lebih baik",
+        "*Lepiej wyjdź wcześniej.*"
+       ],
+       [
+        "*nie musisz / nie trzeba*",
+        "tidak perlu",
+        "*Nie trzeba rezerwować.*"
+       ],
+       [
+        "*nie wolno*",
+        "tidak boleh, dilarang",
+        "*Tu nie wolno palić.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jebakan terbesar:** *nie musisz* tidak sama dengan *nie wolno*. *Nie musisz przychodzić* = kamu tidak perlu datang (tapi boleh kalau mau). *Nie wolno ci przychodzić* = kamu dilarang datang.",
+      "Bentuk lampau *trzeba było, należało, warto było, nie wolno było* semuanya netral dan tidak berubah menurut jenis kelamin: *Trzeba było zostać w domu.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kelelahan dan kesehatan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*zmęczenie* (n)",
+       "kelelahan",
+       "*Zmęczenie mija po weekendzie.*"
+      ],
+      [
+       "*wypalenie zawodowe* (n)",
+       "kejenuhan kerja (*burnout*)",
+       "*To może być wypalenie zawodowe.*"
+      ],
+      [
+       "*bezsenność* (ż)",
+       "susah tidur",
+       "*Cierpię na bezsenność.*"
+      ],
+      [
+       "*stres* (m)",
+       "stres",
+       "*W pracy jest dużo stresu.*"
+      ],
+      [
+       "*odpocząć* (dk)",
+       "beristirahat",
+       "*Musisz porządnie odpocząć.*"
+      ],
+      [
+       "*wyspać się* (dk)",
+       "tidur sampai puas",
+       "*W weekend wreszcie się wyspałem.*"
+      ],
+      [
+       "*urlop* (m)",
+       "cuti",
+       "*Kiedy ostatnio byłeś na urlopie?*"
+      ],
+      [
+       "*zwolnienie lekarskie* (n)",
+       "surat keterangan sakit",
+       "*Lekarz dał mi tydzień zwolnienia.*"
+      ],
+      [
+       "*ruch* (m)",
+       "gerak badan",
+       "*Brakuje ci ruchu.*"
+      ],
+      [
+       "*badania* (jamak)",
+       "pemeriksaan medis",
+       "*Zrób sobie podstawowe badania.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata *zmęczony* (lelah) punya banyak saudara di percakapan: *padnięty* dan *wykończony* (santai: tepar), *ledwo żyję* (harfiah \"saya nyaris tidak hidup\" = capek sekali), *nie mam siły* (saya tidak punya tenaga). Untuk mengatakan kamu terus kurang tidur, pakai *nie wysypiam się* — bentuk berulang dari *wyspać się*, harfiahnya \"saya tidak (pernah) tidur sampai puas\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Istirahat ala Polandia",
+     "items": [
+      "**Cuti tahunan.** Pekerja dengan kontrak kerja (*umowa o pracę*) umumnya berhak atas 20 atau 26 hari cuti setahun, tergantung lama masa kerjanya — dan masa sekolah ikut dihitung. Banyak orang mengambil dua minggu berturut-turut di musim panas.",
+      "**Majówka.** Tanggal 1 Mei (Hari Buruh) dan 3 Mei (Hari Konstitusi) adalah hari libur. Dengan cuti satu-dua hari, jadilah libur panjang awal Mei yang ditunggu seluruh negeri.",
+      "**L4.** Surat sakit dari dokter masih disebut *L4* menurut nama formulir lamanya, walaupun kini dikirim secara elektronik langsung ke pemberi kerja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Memberi dan menerima nasihat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Nada"
+     ],
+     "rows": [
+      [
+       "*Na twoim miejscu…*",
+       "Kalau saya jadi kamu…",
+       "bersahabat; + kondisional: *Na twoim miejscu poszedłbym do lekarza.*"
+      ],
+      [
+       "*Radzę ci…*",
+       "Saran saya…",
+       "agak tegas: *Radzę ci odpocząć.*"
+      ],
+      [
+       "*Może spróbuj…*",
+       "Coba deh…",
+       "lembut"
+      ],
+      [
+       "*Co byś zrobił na moim miejscu?*",
+       "Kamu bakal bagaimana kalau jadi saya?",
+       "meminta saran (ke perempuan: *zrobiła*)"
+      ],
+      [
+       "*Dobra rada.*",
+       "Saran yang bagus.",
+       "menerima"
+      ],
+      [
+       "*Łatwo powiedzieć.*",
+       "Gampang ngomongnya.",
+       "menolak, agak sinis"
+      ],
+      [
+       "*Postaram się.*",
+       "Saya usahakan.",
+       "menerima tanpa janji penuh"
+      ],
+      [
+       "*Nie przejmuj się.*",
+       "Jangan terlalu dipikirkan.",
+       "menenangkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Powinieneś* terdengar cukup langsung, bahkan sedikit menggurui kalau dipakai ke orang yang lebih tua atau ke atasan. Untuk melunakkannya, tambahkan *chyba* (kayaknya) atau *może* (mungkin): *Chyba powinieneś odpocząć.* Bisa juga pindah ke kondisional: *Na twoim miejscu odpocząłbym.* Kepada atasan, bentuk paling aman adalah pertanyaan: *Może warto byłoby przesunąć termin?*"
+    },
+    {
+     "type": "kotak",
+     "title": "Resep nenek Polandia",
+     "items": [
+      "Untuk flu, hampir setiap keluarga Polandia punya jawaban yang sama: *rosół* (kaldu ayam) dan teh dengan madu dan lemon.",
+      "*Syrop z cebuli* — irisan bawang bombai ditaburi gula atau madu lalu didiamkan sampai keluar sirupnya — adalah obat batuk rumahan yang legendaris.",
+      "Roti bermentega dengan bawang putih mentah juga dipercaya ampuh. Tapi Kasia, sebagai calon dokter, tetap akan berkata: *Jeśli gorączka nie spada, trzeba iść do lekarza.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Begitu kita sambungkan lagi, saya cek apakah semuanya jalan.",
+       "*Jak tylko go podłączymy, sprawdzę, czy wszystko działa.*"
+      ],
+      [
+       "Saya tidak datang karena harus ke kantor imigrasi, urusan izin tinggal.",
+       "*Nie przyszedłem, bo musiałem iść do urzędu w sprawie karty pobytu.*"
+      ],
+      [
+       "Janji. Sebelum pulang, kuncinya saya taruh di meja Ibu.",
+       "*Obiecuję. Zanim wyjdę, zostawię klucze u pani na biurku.*"
+      ],
+      [
+       "Keren. Berkat jendelanya yang besar, seharian kami dapat sinar matahari.",
+       "*Jest super. Dzięki dużym oknom cały dzień mamy słońce.*"
+      ],
+      [
+       "Gara-gara pindahan ini saya cuma tidur empat jam.",
+       "*Przez tę przeprowadzkę spałem tylko cztery godziny.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "powinien, powinna, powinno",
+   "baca": "po-VI-nyen, po-VIN-na, po-VIN-no",
+   "id": "seharusnya, sebaiknya (lk, pr, n)"
+  },
+  {
+   "pl": "powinienem był / powinnam była",
+   "baca": "po-vi-NYE-nem byw / po-VIN-nam BY-wa",
+   "id": "seharusnya dulu saya (lk / pr)"
+  },
+  {
+   "pl": "należy",
+   "baca": "na-LE-zyy",
+   "id": "sepatutnya (aturan, resmi)"
+  },
+  {
+   "pl": "trzeba",
+   "baca": "TSYE-ba",
+   "id": "perlu"
+  },
+  {
+   "pl": "warto",
+   "baca": "VAR-to",
+   "id": "ada gunanya, patut"
+  },
+  {
+   "pl": "lepiej",
+   "baca": "LE-pyey",
+   "id": "lebih baik"
+  },
+  {
+   "pl": "nie wolno",
+   "baca": "nye VOL-no",
+   "id": "tidak boleh, dilarang"
+  },
+  {
+   "pl": "mieć (mam) + bentuk kamus",
+   "baca": "myec (mam)",
+   "id": "ditugasi, disuruh"
+  },
+  {
+   "pl": "odpoczywać (odpoczywam) / odpocząć (odpocznę)",
+   "baca": "ot-po-CY-vac / ot-PO-conc",
+   "id": "beristirahat"
+  },
+  {
+   "pl": "wysypiać się (wysypiam się) / wyspać się (wyśpię się)",
+   "baca": "vy-SY-pyac sye / VYS-pac sye",
+   "id": "tidur sampai puas"
+  },
+  {
+   "pl": "zmęczony",
+   "baca": "zmen-CO-ny",
+   "id": "lelah"
+  },
+  {
+   "pl": "zmęczenie (n)",
+   "baca": "zmen-CE-nye",
+   "id": "kelelahan"
+  },
+  {
+   "pl": "przesuwać (przesuwam) / przesunąć (przesunę)",
+   "baca": "psye-SU-vac / psye-SU-nonc",
+   "id": "menggeser, memundurkan"
+  },
+  {
+   "pl": "termin (m)",
+   "baca": "TER-min",
+   "id": "tenggat; jadwal"
+  },
+  {
+   "pl": "uprzedzać (uprzedzam) / uprzedzić (uprzedzę)",
+   "baca": "u-PSYE-dzac / u-PSYE-jic",
+   "id": "memberi tahu lebih dulu"
+  },
+  {
+   "pl": "zdążyć (zdążę) (z + N.) — dk",
+   "baca": "ZDON-zyyc",
+   "id": "sempat, keburu (menyelesaikan)"
+  },
+  {
+   "pl": "martwić się (martwię się) — ndk",
+   "baca": "MAR-tfic sye",
+   "id": "khawatir"
+  },
+  {
+   "pl": "rada, rady (ż)",
+   "baca": "RA-da, RA-dy",
+   "id": "nasihat, saran"
+  },
+  {
+   "pl": "radzić (radzę) / poradzić (poradzę) (+ C.)",
+   "baca": "RA-jic / po-RA-jic",
+   "id": "menasihati"
+  },
+  {
+   "pl": "urlop (m)",
+   "baca": "UR-lop",
+   "id": "cuti"
+  },
+  {
+   "pl": "lekarz / lekarka",
+   "baca": "LE-kasy / le-KAR-ka",
+   "id": "dokter (lk / pr)"
+  },
+  {
+   "pl": "przerwa (ż)",
+   "baca": "PSYER-va",
+   "id": "istirahat, jeda"
+  },
+  {
+   "pl": "na twoim miejscu",
+   "baca": "na TFO-im MYEY-stsu",
+   "id": "kalau aku jadi kamu"
+  },
+  {
+   "pl": "dać radę",
+   "baca": "dac RA-de",
+   "id": "sanggup, bisa mengatasi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kamu (lk) seharusnya lebih banyak tidur.",
+    "Seharusnya dulu saya (pr) menelepon lebih awal.",
+    "Di sini dilarang merokok.",
+    "Kamu tidak perlu datang besok.",
+    "Saya ditugasi menyelesaikannya sebelum Jumat. (pakai *mieć*)",
+    "Wieliczka layak dikunjungi. (pakai *warto zobaczyć*)"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya dengan bentuk yang tepat.",
+   "items": [
+    "Ania, ____ odpocząć. (powinien → ty, pr)",
+    "Pan ____ iść do lekarza. (powinien → pan)",
+    "My ____ kupić bilety wcześniej. (powinien, lampau → my, campuran)",
+    "Dzieci ____ jeść warzywa. (powinien → dzieci)",
+    "Co ____ teraz zrobić? (mieć → ja)",
+    "____ okazać paszport. (sepatutnya, resmi)",
+    "Nie ____ się martwić, wszystko jest w porządku. (musieć → ty)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi penyesalan tentang masa lalu dengan *był / była / byli*.",
+   "items": [
+    "Powinienem zadzwonić do mamy.",
+    "Powinnaś to wiedzieć.",
+    "Powinni zapytać.",
+    "Ona powinna wyjść wcześniej.",
+    "Powinniśmy kupić bilety.",
+    "Powinieneś mnie uprzedzić."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "powinieneś / spać / co / najmniej / siedem / godzin",
+    "mam / to / zrobić / do / końca / tygodnia",
+    "był / powinienem / jej / to / powiedzieć / wcześniej",
+    "sytuacjach / w / takich / należy / od / razu / informować / zespół",
+    "warto / nie / pracować / po / nocach"
+   ]
+  }
+ ],
+ "answers": [
+  "Powinieneś więcej spać. — Powinnam była zadzwonić wcześniej. — Tu nie wolno palić. — Nie musisz jutro przychodzić. — Mam to skończyć do piątku. — Warto zobaczyć Wieliczkę.",
+  "powinnaś — powinien — powinniśmy byli — powinny — mam — Należy — musisz",
+  "Powinienem był zadzwonić do mamy. — Powinnaś była to wiedzieć. — Powinni byli zapytać. — Ona powinna była wyjść wcześniej. — Powinniśmy byli kupić bilety. — Powinieneś był mnie uprzedzić.",
+  "Powinieneś spać co najmniej siedem godzin. — Mam to zrobić do końca tygodnia. — Powinienem był jej to powiedzieć wcześniej. — W takich sytuacjach należy od razu informować zespół. — Nie warto pracować po nocach."
+ ]
+}

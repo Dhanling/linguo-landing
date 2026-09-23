@@ -4,7 +4,8 @@ lalu buang penanda `kunci`. Pakai: python3 scripts/ebook-sisip-ulangan.py <slug>
 
 Pola tulis-paralel: tiap penulis unit menandai tepat 5 baris dialog `"kunci": true`;
 skrip ini yang merakit bagian ulangannya, jadi penulis unit N+2 tak perlu tahu isi unit N.
-Kolom kanan berjudul "Bosanski" — ganti untuk bahasa lain."""
+Judul kolom kanan diambil dari meta.json (`vocab_columns[0].head`, mis. "Polski") dan
+nama bahasanya dari `cover_design.label` ("BAHASA POLANDIA" → "Polandia")."""
 import json, sys, os, glob
 
 slug = sys.argv[1]
@@ -13,6 +14,11 @@ d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "content", "e
 units = {}
 for f in sorted(glob.glob(f"{d}/unit-*.json")):
     units[int(f[-7:-5])] = (f, json.load(open(f)))
+
+meta = json.load(open(f"{d}/meta.json")) if os.path.exists(f"{d}/meta.json") else {}
+kolom = (meta.get("vocab_columns") or [{}])[0].get("head", "Bosanski")
+label = (meta.get("cover_design") or {}).get("label", "BAHASA BOSNIA")
+nama = label.split(" ", 1)[1].title() if label.upper().startswith("BAHASA ") else label.title()
 
 kunci = {}
 for n, (f, u) in units.items():
@@ -36,8 +42,8 @@ for n, (f, u) in units.items():
         u["sections"].append({
             "title": f"Ulangan berjenjang — unit {src}",
             "blocks": [
-                {"type": "p", "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
-                {"type": "tabel", "head": ["Bahasa Indonesia", "Bosanski"],
+                {"type": "p", "text": f"Tutup kolom {nama}, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+                {"type": "tabel", "head": ["Bahasa Indonesia", kolom],
                  "rows": [[l["id"], f"*{l['text']}*"] for l in kunci[src]]},
             ],
         })

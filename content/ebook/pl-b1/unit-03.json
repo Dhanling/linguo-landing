@@ -1,0 +1,685 @@
+{
+ "title": "Supaya kamu datang — żeby untuk permintaan",
+ "title_target": "Chcę, żebyś przyszedł",
+ "goal": "Meminta, menyarankan, dan menyuruh orang lain melakukan sesuatu, serta menyatakan tujuan. Titik tata bahasanya: **żeby + bentuk lampau** bila pelakunya berbeda (*Chcę, żebyś mi pomógł*), kata kerja *prosić, radzić, kazać* + *żeby*, varian *aby*, dan bedanya dengan **żeby + infinitif** bila pelakunya sama.",
+ "bekal": [
+  "menyatakan keinginan terhadap orang lain: *Chcę, żebyś przyszedł / przyszła.*",
+  "meneruskan permintaan dan nasihat: *Piotr prosi, żebyś…; Radzę ci, żebyś…; Kazała mi zostać.*",
+  "memilih *żeby* + infinitif (pelaku sama) atau *żeby* + lampau (pelaku berbeda)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mam do ciebie prośbę",
+   "intro": "Kamis sore. Ania menelepon Budi dengan nada yang ia kenal betul: ada yang mau dimintai tolong. Kali ini urusannya Zosia, keponakan Ania yang berumur lima tahun, putri Piotr dan istrinya, Marta.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Budi, mam do ciebie ogromną prośbę.",
+     "id": "Budi, saya punya permintaan besar buat kamu.",
+     "literal": "Budi, saya-punya kepada kamu besar permintaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Słucham. Co się stało?",
+     "id": "Ya? Ada apa?",
+     "literal": "saya-mendengar. apa diri ia-terjadi-lampau?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Zosia ma w przedszkolu projekt „Dzieci świata”. Wybrała Indonezję.",
+     "id": "Zosia ada proyek \"Anak-anak Dunia\" di TK. Dia pilih Indonesia.",
+     "literal": "Zosia ia-punya di TK proyek anak-anak dunia. ia-memilih-lampau-pr Indonesia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Świetny wybór! A jak mogę pomóc?",
+     "id": "Pilihan bagus! Terus saya bisa bantu apa?",
+     "literal": "hebat pilihan! dan bagaimana saya-bisa membantu?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Piotr chce, żebyś przyszedł do nich w sobotę.",
+     "id": "Piotr ingin kamu datang ke rumah mereka hari Sabtu.",
+     "literal": "Piotr ia-mau, agar-kamu datang-lk ke mereka di Sabtu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Z przyjemnością. Co mam przynieść?",
+     "id": "Dengan senang hati. Saya bawa apa?",
+     "literal": "dengan kesenangan. apa saya-punya membawa?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Zdjęcia i mapę. A Zosia prosi, żebyś nauczył ją jakiejś piosenki.",
+     "id": "Foto dan peta. Dan Zosia minta kamu mengajarinya sebuah lagu.",
+     "literal": "foto-jamak dan peta. dan Zosia ia-meminta, agar-kamu mengajar-lk dia suatu lagu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znam jedną łatwą: „Burung Kakak Tua”. To piosenka o papudze.",
+     "id": "Saya tahu satu yang gampang: \"Burung Kakak Tua\". Itu lagu tentang burung kakaktua.",
+     "literal": "saya-tahu satu mudah: Burung Kakak Tua. itu lagu tentang burung-beo."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Idealnie. Tylko nie śpiewaj za głośno, żeby Zosia się nie przestraszyła.",
+     "id": "Pas banget. Cuma jangan nyanyi terlalu keras, biar Zosia nggak takut.",
+     "literal": "ideal. hanya jangan bernyanyi terlalu keras, agar Zosia diri tidak takut-lampau-pr."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Postaram się. Coś jeszcze?",
+     "id": "Saya usahakan. Ada lagi?",
+     "literal": "saya-akan-berusaha diri. sesuatu lagi?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Piotr radzi, żebyś mówił powoli i prosto.",
+     "id": "Piotr menyarankan supaya kamu bicara pelan dan sederhana.",
+     "literal": "Piotr ia-menyarankan, agar-kamu berbicara-lk perlahan dan sederhana."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jasne. Zrobię wszystko, żeby Zosia była dumna ze swojego projektu.",
+     "id": "Tentu. Saya akan lakukan apa saja supaya Zosia bangga sama proyeknya.",
+     "literal": "jelas. saya-akan-melakukan semuanya, agar Zosia adalah-pr bangga dari miliknya-sendiri proyek."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Aha, i Marta kazała mi powiedzieć, żebyś został na obiad.",
+     "id": "Oh ya, dan Marta menyuruh saya bilang supaya kamu tinggal untuk makan siang.",
+     "literal": "oh, dan Marta ia-menyuruh-lampau-pr saya mengatakan, agar-kamu tinggal-lk untuk makan-siang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie odmówię. Kupić coś słodkiego?",
+     "id": "Nggak akan saya tolak. Perlu saya beli yang manis-manis?",
+     "literal": "tidak saya-akan-menolak. membeli sesuatu manis?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Nie trzeba. Przyjdę wcześniej, żeby pomóc Marcie w kuchni.",
+     "id": "Nggak usah. Saya datang lebih awal buat bantu Marta di dapur.",
+     "literal": "tidak perlu. saya-akan-datang lebih-awal, agar membantu Marta di dapur."
+    }
+   ],
+   "notes": [
+    "**Mam do ciebie prośbę** — pembuka baku sebelum minta tolong, harfiah \"saya punya permintaan kepadamu\". Versi resmi: *Mam do pana / pani prośbę*. Jawaban yang wajar: *Słucham* (\"saya mendengarkan\"), bukan *tak*.",
+    "**Piotr chce, żebyś przyszedł** — yang ingin Piotr, yang datang Budi. Karena pelakunya **berbeda**, bahasa Polandia tidak bisa memakai infinitif seperti bahasa Inggris *I want you to come*. Kalimat anaknya wajib: *żeby* + akhiran orang + bentuk lampau. Bentuknya lampau, tapi maknanya sama sekali bukan masa lalu.",
+    "**Nauczył ją jakiejś piosenki** — *uczyć / nauczyć* menuntut dua pelengkap: orangnya biernik (*ją, Zosię*), pelajarannya dopełniacz (*piosenki, polskiego*). Bandingkan *uczyć się polskiego* (belajar bahasa Polandia) yang sudah kamu kenal.",
+    "**Żeby Zosia się nie przestraszyła** — *żeby nie* = \"supaya tidak, jangan sampai\". Untuk orang ketiga, *żeby* tidak membawa akhiran apa pun, dan jenis kelamin muncul di kata kerja: *przestraszyła* (Zosia perempuan).",
+    "**Ze swojego projektu** — *dumny z* + dopełniacz (bangga akan). *Swój* dipakai karena pemilik proyek itu sama dengan pelaku anak kalimatnya, Zosia.",
+    "**Przyjdę wcześniej, żeby pomóc** — di baris terakhir yang datang dan yang membantu orang yang sama, yaitu Ania. Maka *żeby* + **infinitif**, tanpa akhiran orang. Bandingkan dengan baris-baris sebelumnya."
+   ],
+   "grammars": [
+    {
+     "title": "Żeby + bentuk lampau",
+     "body": [
+      "Polanya sama dengan *gdyby* di unit 2: akhiran orang menempel pada *żeby*, kata kerja tinggal bentuk lampau tanpa ekor. Jenis kelamin mengikuti orang yang **diminta melakukan** sesuatu. Contoh: *przyjść*."
+     ],
+     "table": {
+      "head": [
+       "Pelaku anak kalimat",
+       "Laki-laki / campur",
+       "Perempuan"
+      ],
+      "rows": [
+       [
+        "ja",
+        "*żebym przyszedł*",
+        "*żebym przyszła*"
+       ],
+       [
+        "ty",
+        "*żebyś przyszedł*",
+        "*żebyś przyszła*"
+       ],
+       [
+        "on / ona / ono",
+        "*żeby przyszedł*",
+        "*żeby przyszła* (ono: *przyszło*)"
+       ],
+       [
+        "my",
+        "*żebyśmy przyszli*",
+        "*żebyśmy przyszły*"
+       ],
+       [
+        "wy",
+        "*żebyście przyszli*",
+        "*żebyście przyszły*"
+       ],
+       [
+        "oni / one",
+        "*żeby przyszli*",
+        "*żeby przyszły*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kesalahan yang paling sering:** *Chcę, że przyjdziesz* atau *Chcę ciebie przyjść*. Keduanya salah. Keinginan, permintaan, dan tujuan untuk orang lain selalu memakai *żeby*.",
+      "*Nie* diletakkan di depan kata kerjanya, bukan di depan *żeby*: *żebyś nie zapomniał* (supaya kamu tidak lupa). Susunan *nie żebyś…* punya arti lain (\"bukan berarti kamu…\").",
+      "Tanda koma sebelum *żeby* wajib, sama seperti sebelum *że* dan *gdyby*."
+     ]
+    },
+    {
+     "title": "Pelaku sama atau berbeda?",
+     "body": [
+      "Satu pertanyaan menentukan bentuknya: apakah orang yang ingin/datang sama dengan orang yang melakukan isi anak kalimat?"
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Keinginan",
+       "Tujuan"
+      ],
+      "rows": [
+       [
+        "**sama**",
+        "*Chcę pomóc.* (tanpa *żeby*)",
+        "*Przyszłam, żeby pomóc.*"
+       ],
+       [
+        "**berbeda**",
+        "*Chcę, żebyś pomógł.*",
+        "*Przyszłam, żebyś nie musiał gotować.*"
+       ],
+       [
+        "**sama**, negatif",
+        "*Nie chcę się spóźnić.*",
+        "*Wyszłam wcześniej, żeby się nie spóźnić.*"
+       ],
+       [
+        "**berbeda**, negatif",
+        "*Nie chcę, żebyś się spóźnił.*",
+        "*Zadzwoniłam, żebyś się nie spóźnił.*"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah *chcieć* dengan pelaku sama, *żeby* tidak dipakai sama sekali: *Chcę pomóc*, bukan *Chcę, żeby pomóc*. Untuk tujuan (\"untuk, supaya\"), *żeby* + infinitif justru biasa.",
+      "Rahasia kecil: dalam kalimat tujuan dengan pelaku sama, *żeby* sering dibuang sesudah kata kerja gerak: *Przyszłam pomóc*, *Idę kupić chleb*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Poproś wujka, żeby zaśpiewał",
+   "intro": "Sabtu siang di rumah Piotr dan Marta di Nowa Huta, tak jauh dari rumah orang tua Ania. Zosia sudah menunggu di pintu dengan krayon, dan Budi dalam sekejap berubah jadi \"paman\".",
+   "lines": [
+    {
+     "speaker": "Zosia:",
+     "text": "Wujku Budi, chcę, żebyś narysował mi Indonezję!",
+     "id": "Om Budi, aku mau Om gambarin Indonesia!",
+     "literal": "paman Budi, saya-mau, agar-kamu menggambar-lk saya Indonesia!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze, ale to będzie długi rysunek. Indonezja ma ponad siedemnaście tysięcy wysp.",
+     "id": "Oke, tapi gambarnya bakal panjang. Indonesia punya lebih dari tujuh belas ribu pulau.",
+     "literal": "baik, tetapi itu akan-ada panjang gambar. Indonesia ia-punya lebih-dari tujuh-belas ribu pulau."
+    },
+    {
+     "speaker": "Zosia:",
+     "text": "Tak dużo? A na której mieszkałeś?",
+     "id": "Banyak banget? Om dulu tinggal di pulau yang mana?",
+     "literal": "begitu banyak? dan di yang-mana kamu-tinggal-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na Jawie. Tu jest Dżakarta, a tu wulkany.",
+     "id": "Di Jawa. Ini Jakarta, dan ini gunung-gunung berapi.",
+     "literal": "di Jawa. di-sini adalah Jakarta, dan di-sini gunung-berapi-jamak."
+    },
+    {
+     "speaker": "Piotr:",
+     "text": "Zosiu, poproś wujka, żeby zaśpiewał piosenkę.",
+     "id": "Zosia, minta Om nyanyi lagunya.",
+     "literal": "Zosia, mintalah paman, agar ia-bernyanyi-lampau-lk lagu."
+    },
+    {
+     "speaker": "Zosia:",
+     "text": "Wujku, zaśpiewaj! Proszę, proszę!",
+     "id": "Om, nyanyi dong! Ayo, ayo!",
+     "literal": "paman, bernyanyilah! saya-mohon, saya-mohon!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Burung kakak tua…” Teraz ty. Powtarzaj za mną.",
+     "id": "\"Burung kakak tua…\" Sekarang kamu. Ikuti Om.",
+     "literal": "Burung kakak tua… sekarang kamu. ulangilah di-belakang saya."
+    },
+    {
+     "speaker": "Piotr:",
+     "text": "Dzięki, Budi. Pani w przedszkolu prosiła, aby każde dziecko coś pokazało.",
+     "id": "Makasih, Budi. Bu guru di TK minta supaya tiap anak menunjukkan sesuatu.",
+     "literal": "terima-kasih, Budi. nyonya di TK ia-meminta-lampau-pr, agar setiap anak sesuatu ia-menunjukkan-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Żeby Zosia nie zapomniała, zapiszę jej słowa na kartce.",
+     "id": "Supaya Zosia nggak lupa, saya tuliskan kata-katanya di kertas.",
+     "literal": "agar Zosia tidak lupa-lampau-pr, saya-akan-menulis dia kata-jamak di kertas."
+    },
+    {
+     "speaker": "Zosia:",
+     "text": "Tato, chcę, żeby wujek przychodził co sobotę!",
+     "id": "Papa, aku mau Om datang tiap Sabtu!",
+     "literal": "papa, saya-mau, agar paman datang-lampau-lk setiap Sabtu!"
+    },
+    {
+     "speaker": "Piotr:",
+     "text": "Zobaczymy, kochanie. A teraz wszyscy na obiad!",
+     "id": "Kita lihat nanti, Sayang. Sekarang semua makan siang!",
+     "literal": "kita-akan-lihat, sayang. dan sekarang semua ke makan-siang!"
+    }
+   ],
+   "notes": [
+    "**Wujku Budi** — anak-anak Polandia memanggil teman dekat orang tuanya *wujek* (om) dan *ciocia* (tante), walaupun tidak ada hubungan darah, persis seperti anak Indonesia memanggil \"om\" dan \"tante\". *Wujku* dan *ciociu* adalah bentuk panggilannya (wołacz).",
+    "**Na Jawie** — pulau memakai *na*, negara memakai *w*: *w Indonezji*, tetapi *na Jawie, na Sumatrze, na Bali, na Borneo*. Aturan yang sama berlaku untuk pulau Polandia: *na Helu* (semenanjung), *na Wolinie*.",
+    "**Zosiu, poproś wujka** — *prosić* menuntut biernik untuk orang yang diminta, dan untuk laki-laki biernik = dopełniacz: *wujka, Tomka, Budiego*. Nama kecil berakhiran *-sia, -nia* dipanggil dengan *-u*: *Zosiu, Kasiu, Aniu*.",
+    "**Pani w przedszkolu** — anak TK dan SD menyebut gurunya cukup *pani* atau *pan*, dan menyapanya *proszę pani*. Piotr meniru cara bicara anaknya.",
+    "**Aby każde dziecko coś pokazało** — *aby* sama artinya dengan *żeby*, tapi terdengar lebih resmi dan tertulis; Piotr sedang mengutip surat dari TK. *Dziecko* netral, jadi kata kerjanya *pokazało*.",
+    "**Żeby wujek przychodził co sobotę** — untuk kejadian berulang dipakai kata kerja imperfektif: *przychodził*, bukan *przyszedł*. Aspek bekerja di dalam *żeby* sama seperti di luar."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja yang membuka pintu untuk żeby",
+     "body": [
+      "Beberapa kata kerja hampir selalu diikuti *żeby*. Yang perlu kamu perhatikan: kasus untuk **orang yang diminta**, karena berbeda-beda."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Orangnya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*prosić / poprosić*",
+        "biernik",
+        "*Poproś wujka, żeby zaśpiewał.*"
+       ],
+       [
+        "*radzić / poradzić*",
+        "celownik",
+        "*Radzę ci, żebyś odpoczął.*"
+       ],
+       [
+        "*kazać*",
+        "celownik",
+        "*Kazała mi, żebym został.* / *Kazała mi zostać.*"
+       ],
+       [
+        "*mówić / powiedzieć*",
+        "celownik",
+        "*Powiedz Tomkowi, żeby zadzwonił.*"
+       ],
+       [
+        "*chcieć, woleć*",
+        "—",
+        "*Wolę, żebyście przyszli wcześniej.*"
+       ],
+       [
+        "*ważne, lepiej*",
+        "—",
+        "*Ważne, żebyś się wyspał.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Kazać* (menyuruh) boleh memakai infinitif juga, karena orangnya sudah disebut dalam celownik: *Kazała mi zostać* sama artinya dengan *Kazała mi, żebym został*. Versi infinitif lebih ringkas dan lebih sering terdengar.",
+      "*Mówić, żeby* berarti \"menyuruh\", sedangkan *mówić, że* berarti \"mengatakan bahwa\". *Powiedz mu, żeby zadzwonił* (suruh dia menelepon) vs *Powiedz mu, że zadzwonię* (bilang ke dia bahwa saya akan menelepon)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta, menyarankan, mengingatkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Mam do ciebie prośbę.*",
+       "Saya mau minta tolong."
+      ],
+      [
+       "*Przypomnij mi, żebym kupił(a) chleb.*",
+       "Ingatkan saya beli roti."
+      ],
+      [
+       "*Powiedz mu, żeby oddzwonił.*",
+       "Bilang ke dia supaya menelepon balik."
+      ],
+      [
+       "*Uważaj, żeby nie zgubić biletu.*",
+       "Hati-hati, jangan sampai tiketnya hilang."
+      ],
+      [
+       "*Ważne, żebyś się wyspał(a).*",
+       "Yang penting kamu cukup tidur."
+      ],
+      [
+       "*Nie chcę, żebyś się martwił(a).*",
+       "Saya tidak mau kamu khawatir."
+      ],
+      [
+       "*Chodzi o to, żeby…*",
+       "Intinya adalah supaya…"
+      ],
+      [
+       "*Żeby tylko nie padało!*",
+       "Asal jangan hujan saja!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir menunjukkan pemakaian *żeby* yang berdiri sendiri, tanpa induk kalimat: harapan atau kekhawatiran. *Żeby tylko zdążyć!* (Asal keburu!), *Żebyś wiedział!* (Kamu harus tahu!). Orang Polandia memakainya terus-menerus, dan nadanya selalu sedikit dramatis."
+    },
+    {
+     "type": "kotak",
+     "title": "Om, tante, dan cara anak menyapa orang dewasa",
+     "items": [
+      "Teman dekat keluarga menjadi *wujek* dan *ciocia* bagi anak-anak. Tetangga yang lebih jauh dan orang asing disebut *pan* dan *pani*: *Powiedz pani dzień dobry!* (Beri salam ke ibu itu!).",
+      "Anak-anak memanggil orang tuanya *mamo* dan *tato*, kakek-nenek *babciu* dan *dziadku*. Di banyak keluarga, orang tua yang sudah dewasa pun tetap dipanggil begitu.",
+      "Guru TK dan SD dipanggil *proszę pani / proszę pana*. Di universitas, gelar lebih penting: *panie profesorze, pani doktor*.",
+      "Kalau kamu diperkenalkan kepada anak kecil, cukup berjongkok dan berkata *Cześć, jak masz na imię?* (Halo, siapa namamu?). Kepada anak-anak, semua orang dewasa memakai *ty*, bahkan orang yang baru pertama kali bertemu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dari TK sampai universitas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*żłobek*",
+       "ZYWO-bek",
+       "tempat penitipan bayi dan balita"
+      ],
+      [
+       "*przedszkole*",
+       "psyet-SYKO-le",
+       "TK"
+      ],
+      [
+       "*zerówka*",
+       "ze-RUF-ka",
+       "kelas persiapan (umur enam tahun)"
+      ],
+      [
+       "*szkoła podstawowa*",
+       "SYKO-wa pot-sta-VO-va",
+       "sekolah dasar (delapan kelas)"
+      ],
+      [
+       "*liceum*",
+       "li-TSE-um",
+       "sekolah menengah atas umum"
+      ],
+      [
+       "*technikum*",
+       "TEH-ni-kum",
+       "sekolah menengah kejuruan"
+      ],
+      [
+       "*matura*",
+       "ma-TU-ra",
+       "ujian akhir sekolah menengah"
+      ],
+      [
+       "*ocena*",
+       "o-TSE-na",
+       "nilai"
+      ],
+      [
+       "*szóstka / jedynka*",
+       "SYUST-ka / ye-DYN-ka",
+       "nilai 6 (tertinggi) / nilai 1 (tidak lulus)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Anak Polandia mulai wajib sekolah pada umur tujuh tahun, dan setahun sebelumnya mereka mengikuti kelas persiapan yang disebut *zerówka*. Sekolah dasar berlangsung delapan tahun, lalu murid memilih *liceum* (empat tahun) atau *technikum* (lima tahun). Keduanya ditutup dengan *matura*, ujian yang hasilnya dipakai untuk mendaftar ke universitas."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal kecil tentang sekolah Polandia",
+     "items": [
+      "Nilai di sekolah memakai skala 1–6. *Szóstka* (6) istimewa, *piątka* (5) sangat baik, *jedynka* (1) berarti tidak lulus. Orang dewasa masih memakai angka ini sebagai kiasan: *Zasłużyłeś na szóstkę!* (Kamu pantas dapat nilai sempurna!).",
+      "Tanggal 14 Oktober adalah *Dzień Edukacji Narodowej*, yang lebih dikenal sebagai *Dzień Nauczyciela* (Hari Guru). Murid membawakan bunga untuk guru-gurunya.",
+      "Murid kelas satu SD \"dilantik\" dalam upacara *pasowanie na ucznia*: guru menyentuh bahu mereka dengan pensil raksasa, seperti ksatria dilantik dengan pedang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Saya menangani pengujian aplikasi dan penulisan dokumentasi.",
+       "*Zajmowałem się testowaniem aplikacji i pisaniem dokumentacji.*"
+      ],
+      [
+       "Saya ingin menjadi programmer berpengalaman, lalu manajer proyek.",
+       "*Chcę zostać doświadczonym programistą, a potem kierownikiem projektu.*"
+      ],
+      [
+       "Membaca buku-buku Polandia sangat membantu saya.",
+       "*Czytanie polskich książek bardzo mi pomogło.*"
+      ],
+      [
+       "Hobi saya memasak dan naik gunung.",
+       "*Moje hobby to gotowanie i chodzenie po górach.*"
+      ],
+      [
+       "Mulai Oktober saya jadi junior programmer!",
+       "*Od października zostanę młodszym programistą!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "prośba (ż)",
+   "baca": "PROZY-ba",
+   "id": "permintaan"
+  },
+  {
+   "pl": "prosić (proszę) / poprosić (poproszę) (+ B., o + B.)",
+   "baca": "PRO-syic (PRO-sye) / po-PRO-syic (po-PRO-sye)",
+   "id": "meminta"
+  },
+  {
+   "pl": "radzić (radzę) / poradzić (poradzę) (+ C.)",
+   "baca": "RA-jic (RA-dze) / po-RA-jic (po-RA-dze)",
+   "id": "menyarankan"
+  },
+  {
+   "pl": "kazać (każę) (+ C.)",
+   "baca": "KA-zac (KA-zye)",
+   "id": "menyuruh"
+  },
+  {
+   "pl": "żeby / aby",
+   "baca": "ZYE-by / A-by",
+   "id": "supaya, agar"
+  },
+  {
+   "pl": "przychodzić (przychodzę) / przyjść (przyjdę)",
+   "baca": "psyy-HO-jic (psyy-HO-dze) / psyysyc (PSYY-de)",
+   "id": "datang (jalan kaki)"
+  },
+  {
+   "pl": "uczyć (uczę) / nauczyć (nauczę) (+ B. + D.)",
+   "baca": "U-cyc (U-ce) / na-U-cyc (na-U-ce)",
+   "id": "mengajari (seseorang sesuatu)"
+  },
+  {
+   "pl": "piosenka (ż)",
+   "baca": "pyo-SEN-ka",
+   "id": "lagu"
+  },
+  {
+   "pl": "śpiewać (śpiewam) / zaśpiewać (zaśpiewam)",
+   "baca": "SYPYE-vac (SYPYE-vam) / za-SYPYE-vac (za-SYPYE-vam)",
+   "id": "bernyanyi"
+  },
+  {
+   "pl": "przestraszyć się (przestraszę się) — dk",
+   "baca": "psye-STRA-syyc sye (psye-STRA-sye sye)",
+   "id": "menjadi takut, kaget"
+  },
+  {
+   "pl": "zapominać (zapominam) / zapomnieć (zapomnę)",
+   "baca": "za-po-MI-nac (za-po-MI-nam) / za-POM-nyec (za-POM-ne)",
+   "id": "lupa"
+  },
+  {
+   "pl": "zapisywać (zapisuję) / zapisać (zapiszę)",
+   "baca": "za-pi-SY-vac (za-pi-SU-ye) / za-PI-sac (za-PI-sye)",
+   "id": "mencatat"
+  },
+  {
+   "pl": "odmawiać (odmawiam) / odmówić (odmówię)",
+   "baca": "od-MA-vyac (od-MA-vyam) / od-MU-vic (od-MU-vye)",
+   "id": "menolak"
+  },
+  {
+   "pl": "powtarzać (powtarzam) / powtórzyć (powtórzę)",
+   "baca": "pof-TA-zyac (pof-TA-zyam) / pof-TU-zyyc (pof-TU-zye)",
+   "id": "mengulang"
+  },
+  {
+   "pl": "rysować (rysuję) / narysować (narysuję)",
+   "baca": "ry-SO-vac (ry-SU-ye) / na-ry-SO-vac (na-ry-SU-ye)",
+   "id": "menggambar"
+  },
+  {
+   "pl": "przedszkole (n)",
+   "baca": "psyet-SYKO-le",
+   "id": "TK"
+  },
+  {
+   "pl": "wujek (m) / ciocia (ż)",
+   "baca": "VU-yek / CYO-cya",
+   "id": "om, paman / tante, bibi"
+  },
+  {
+   "pl": "wyspa, wysp (ż)",
+   "baca": "VYS-pa, vysp",
+   "id": "pulau"
+  },
+  {
+   "pl": "wulkan (m)",
+   "baca": "VUL-kan",
+   "id": "gunung berapi"
+  },
+  {
+   "pl": "dumny (z + D.)",
+   "baca": "DUM-ny",
+   "id": "bangga (akan)"
+  },
+  {
+   "pl": "kartka (ż)",
+   "baca": "KART-ka",
+   "id": "lembar kertas; kartu pos"
+  },
+  {
+   "pl": "punktualnie",
+   "baca": "punk-tu-AL-nye",
+   "id": "tepat waktu"
+  },
+  {
+   "pl": "uważać (uważam) — ndk",
+   "baca": "u-VA-zyac (u-VA-zyam)",
+   "id": "berhati-hati; berpendapat"
+  },
+  {
+   "pl": "kochanie (n)",
+   "baca": "ko-HA-nye",
+   "id": "sayang (panggilan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Saya ingin kamu datang hari Sabtu. (kepada laki-laki)",
+    "Ania meminta Budi supaya menelepon Piotr.",
+    "Dokter menyarankan saya supaya banyak tidur. (pembicara perempuan)",
+    "Saya datang untuk membantumu. (pembicara laki-laki)",
+    "Bos (perempuan) menyuruh kami datang jam delapan.",
+    "Bilang ke Tomek supaya dia menelepon saya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Chcę, ____ mi pomógł. (żeby, ty)",
+    "Mama prosi, żebym ____ wcześniej. (wrócić, ja, lk)",
+    "Ania radzi Kasi, żeby ____ więcej. (odpoczywać, ona)",
+    "Przyszłam, ____ ci pomóc. (żeby, pelaku sama)",
+    "Szef kazał, ____ skończyli raport do piątku. (żeby, my)",
+    "Uważaj, żebyś nie ____ kluczy! (zgubić, ty, lk)",
+    "Piotr chce, żeby dzieci ____ spać o ósmej. (pójść, dzieci)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan jadi satu kalimat dengan *żeby*. Contoh: *Proszę cię: zadzwoń do mnie.* → *Proszę cię, żebyś do mnie zadzwonił.*",
+   "items": [
+    "Proszę cię: przyjdź jutro. (kepada laki-laki)",
+    "Radzę ci: odpocznij. (kepada perempuan)",
+    "Szefowa mówi do nas: skończcie projekt. (kami: Budi dan Marek)",
+    "Piotr prosi Anię: zadzwoń do mamy.",
+    "Ania mówi do Budiego i Tomka: nie spóźnijcie się.",
+    "Lekarz radzi pani Halinie: proszę jeść mniej słodyczy."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "przyszedł / żebyś / chcę / w / sobotę",
+    "ci / radzę / odpoczął / żebyś",
+    "wujka / poproś / zaśpiewał / żeby",
+    "przyjdę / pomóc / żeby / wcześniej / ci",
+    "kazała / mi / szefowa / zostać / dłużej"
+   ]
+  }
+ ],
+ "answers": [
+  "Chcę, żebyś przyszedł w sobotę. — Ania prosi Budiego, żeby zadzwonił do Piotra. — Lekarz radzi mi, żebym dużo spała. — Przyszedłem, żeby ci pomóc. — Szefowa kazała nam przyjść o ósmej (atau: kazała, żebyśmy przyszli o ósmej). — Powiedz Tomkowi, żeby do mnie zadzwonił.",
+  "żebyś — wrócił — odpoczywała — żeby — żebyśmy — zgubił — poszły",
+  "Proszę cię, żebyś przyszedł jutro. — Radzę ci, żebyś odpoczęła. — Szefowa mówi, żebyśmy skończyli projekt. — Piotr prosi Anię, żeby zadzwoniła do mamy. — Ania mówi Budiemu i Tomkowi, żeby się nie spóźnili. — Lekarz radzi pani Halinie, żeby jadła mniej słodyczy.",
+  "Chcę, żebyś przyszedł w sobotę. — Radzę ci, żebyś odpoczął. — Poproś wujka, żeby zaśpiewał. — Przyjdę wcześniej, żeby ci pomóc. — Szefowa kazała mi zostać dłużej."
+ ]
+}
