@@ -1,0 +1,743 @@
+{
+ "title": "Kata Hán-Việt — menebak arti dari unsurnya",
+ "title_target": "Từ Hán Việt",
+ "goal": "Membaca brosur, papan nama, dan teks resmi yang penuh kata Hán-Việt, dan menebak arti kata baru dari unsur-unsurnya. Titik tata bahasanya: unsur Hán-Việt yang berulang (*học, sinh, viên, gia, quốc, đại, tiểu, nhân, thành, phố*), urutan unsur yang terbalik dari susunan asli Vietnam, dan pasangan Hán-Việt dengan kata asli (*phụ nữ / đàn bà, hải sản / đồ biển*).",
+ "bekal": [
+  "memecah kata majemuk Hán-Việt menjadi unsur-unsurnya dan menebak artinya",
+  "mengingat bahwa di kata Hán-Việt penjelasnya di **depan** (*đại học*), di kata asli di **belakang** (*trường lớn*)",
+  "memilih antara kata Hán-Việt yang resmi dan kata asli yang sehari-hari"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở Bảo tàng Dân tộc học",
+   "intro": "Hari Minggu pertama bulan Januari, tak lama sesudah Budi pulang dari Cần Thơ. Linh mengajak Budi ke Bảo tàng Dân tộc học Việt Nam, museum etnologi di Cầu Giấy, tak jauh dari apartemen Budi. Di pintu masuk Budi mengambil brosur dan langsung berhenti di baris pertama.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chị Linh ơi, tờ giới thiệu này nhiều từ khó quá. \"Bảo tàng\" là gì ạ?",
+     "id": "Kak Linh, brosur ini banyak kata sulit. \"Bảo tàng\" itu apa?",
+     "literal": "kakak Linh hai, lembar perkenalan ini banyak kata sulit terlalu. bảo tàng adalah apa ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Em tách từng chữ ra. \"Bảo\" là quý, \"tàng\" là cất giữ. Bảo tàng là nơi cất giữ những thứ quý.",
+     "id": "Pisahkan tiap unsurnya. \"Bảo\" berharga, \"tàng\" menyimpan. Museum adalah tempat menyimpan barang-barang berharga.",
+     "literal": "adik pisah tiap huruf keluar. bảo adalah berharga, tàng adalah simpan-jaga. berharga-simpan adalah tempat simpan-jaga sebagian benda berharga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế còn \"dân tộc học\" ạ?",
+     "id": "Lalu \"dân tộc học\"?",
+     "literal": "begitu lalu rakyat-suku-ilmu ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "\"Dân\" là người dân, \"tộc\" là nhóm người cùng nguồn gốc, còn \"học\" là môn học.",
+     "id": "\"Dân\" itu rakyat, \"tộc\" kelompok orang seasal-usul, dan \"học\" itu ilmu.",
+     "literal": "dân adalah orang rakyat, tộc adalah kelompok orang sama asal-akar, sedang học adalah mata pelajaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "À, giống \"sinh học\", \"hóa học\", \"văn học\" phải không chị?",
+     "id": "Oh, seperti \"biologi\", \"kimia\", \"sastra\", ya, Kak?",
+     "literal": "oh, mirip hidup-ilmu, ubah-ilmu, sastra-ilmu benar tidak kakak?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Đúng rồi. Học ở cuối từ thường là một ngành khoa học.",
+     "id": "Betul. Học di akhir kata biasanya berarti satu cabang ilmu.",
+     "literal": "benar sudah. học di akhir kata biasanya adalah satu cabang ilmu-belajar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ở đây viết Việt Nam có năm mươi tư dân tộc.",
+     "id": "Di sini tertulis Vietnam punya lima puluh empat suku bangsa.",
+     "literal": "di sini tulis Việt Nam ada lima puluh empat rakyat-suku."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Ừ. Người Kinh đông nhất, còn lại là các dân tộc thiểu số như Tày, Thái, Mông.",
+     "id": "Iya. Orang Kinh paling banyak, sisanya suku-suku minoritas seperti Tày, Thái, Mông.",
+     "literal": "ya. orang Kinh ramai paling, sisa adalah para rakyat-suku sedikit-jumlah seperti Tày, Thái, Mông."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thiểu số là ít người, vậy đa số là nhiều người ạ?",
+     "id": "Thiểu số itu sedikit orang, jadi đa số itu banyak orang?",
+     "literal": "sedikit-jumlah adalah sedikit orang, jadi banyak-jumlah adalah banyak orang ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Giỏi quá! Em đoán nghĩa từ từng chữ Hán Việt rồi đấy.",
+     "id": "Pintar! Kamu sudah menebak arti dari tiap unsur Hán-Việt, lho.",
+     "literal": "pandai terlalu! adik tebak arti dari tiap huruf Hán Việt sudah tuh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nhưng sao người ta không nói \"ít người\" cho dễ hiểu ạ?",
+     "id": "Tapi kenapa orang tidak bilang \"ít người\" saja supaya gampang dimengerti?",
+     "literal": "tetapi kenapa orang tidak bicara sedikit orang supaya mudah paham ya?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Từ Hán Việt nghe trang trọng hơn, hay dùng trong sách báo.",
+     "id": "Kata Hán-Việt terdengar lebih resmi, sering dipakai di buku dan koran.",
+     "literal": "kata Hán Việt dengar khidmat lebih, sering pakai dalam buku koran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Giống tiếng Indonesia! Từ gốc tiếng Phạn hay tiếng Ả Rập cũng nghe trang trọng hơn.",
+     "id": "Sama dengan bahasa Indonesia! Kata dari bahasa Sanskerta atau Arab juga terdengar lebih resmi.",
+     "literal": "mirip bahasa Indonesia! kata akar bahasa Sanskerta atau bahasa Arab juga dengar khidmat lebih."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Thế thì em có lợi thế rồi. Chữ \"quốc\" trong \"quốc gia\", \"quốc tế\" là gì?",
+     "id": "Kalau begitu kamu punya keuntungan. Unsur \"quốc\" di \"quốc gia\", \"quốc tế\" itu apa?",
+     "literal": "begitu maka adik ada keuntungan sudah. huruf quốc dalam negara-rumah, negara-antara adalah apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Quốc là nước. Vậy quốc tế là giữa các nước ạ.",
+     "id": "Quốc itu negara. Jadi quốc tế itu antarnegara.",
+     "literal": "negara adalah negara. jadi negara-antara adalah antara para negara ya."
+    }
+   ],
+   "notes": [
+    "**Chữ** — biasanya berarti \"huruf\" atau \"tulisan\", tapi ketika orang membicarakan kata Hán-Việt, *chữ* berarti satu suku kata beserta aksara Hán-nya, yaitu satu **unsur**. *Tách từng chữ ra* = memecah kata menjadi unsur-unsurnya.",
+    "**Học di belakang** — seperti \"-logi\" dalam bahasa Indonesia: *sinh học* (biologi), *hóa học* (kimia), *văn học* (sastra), *ngôn ngữ học* (linguistik). *Học* di depan justru berarti \"belajar, pelajar\": *học sinh* (murid), *học phí* (uang sekolah). Letak menentukan arti.",
+    "**Năm mươi tư dân tộc** — Vietnam secara resmi mengakui 54 kelompok etnis. *Người Kinh* (juga disebut *người Việt*) adalah yang terbesar; yang lain disebut *dân tộc thiểu số*. Di museum ini, rumah-rumah adat mereka dibangun ulang dalam ukuran asli di taman belakang.",
+    "**Thiểu số, đa số** — *thiểu* \"sedikit\", *đa* \"banyak\", *số* \"jumlah\". Budi menebak *đa số* dari *thiểu số* tanpa pernah melihatnya: itulah keterampilan yang dilatih unit ini. Unsur *số* juga ada di *số điện thoại*, *con số*.",
+    "**Tiếng Phạn, tiếng Ả Rập** — bahasa Sanskerta dan Arab. Perbandingan Budi tepat: seperti \"wisatawan\" terdengar lebih resmi daripada \"pelancong\", atau \"musyawarah\" daripada \"rembukan\", kata Hán-Việt adalah lapisan resmi bahasa Vietnam. Sebagian besar kosakata di koran dan dokumen adalah Hán-Việt."
+   ],
+   "grammars": [
+    {
+     "title": "Unsur Hán-Việt yang paling sering",
+     "body": [
+      "Hafalkan unsurnya, bukan hanya katanya. Sebelas unsur ini saja sudah membuka ratusan kata."
+     ],
+     "table": {
+      "head": [
+       "Unsur",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*học*",
+        "belajar; ilmu",
+        "*học sinh, đại học, sinh học*"
+       ],
+       [
+        "*sinh*",
+        "lahir, hidup; pelajar",
+        "*sinh viên, sinh nhật, sinh học*"
+       ],
+       [
+        "*viên*",
+        "anggota, orang dalam kelompok",
+        "*nhân viên, giáo viên, thành viên*"
+       ],
+       [
+        "*gia*",
+        "rumah, keluarga; ahli",
+        "*gia đình, quốc gia, chuyên gia*"
+       ],
+       [
+        "*quốc*",
+        "negara",
+        "*quốc tế, quốc tịch, Trung Quốc*"
+       ],
+       [
+        "*đại*",
+        "besar",
+        "*đại học, đại sứ, đại lộ*"
+       ],
+       [
+        "*tiểu*",
+        "kecil",
+        "*tiểu học, tiểu thuyết*"
+       ],
+       [
+        "*nhân*",
+        "orang",
+        "*nhân viên, bệnh nhân, nhân dân*"
+       ],
+       [
+        "*thành*",
+        "kota; benteng",
+        "*thành phố, thành cổ*"
+       ],
+       [
+        "*phố*",
+        "jalan bertoko",
+        "*thành phố, phố cổ*"
+       ],
+       [
+        "*dân*",
+        "rakyat, penduduk",
+        "*dân tộc, nhân dân, công dân*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Satu bunyi, beberapa unsur.** Aksara Hán yang berbeda bisa dibaca sama dalam bahasa Vietnam. *Thành* dalam *thành phố* berarti \"kota\", tapi dalam *thành viên* dan *thành công* berarti \"menjadi, berhasil\". Kalau tebakanmu tidak masuk akal, coba arti lain untuk unsur yang sama.",
+      "*Viên* dalam *viên thuốc* (sebutir obat) bahkan bukan unsur yang sama sekali; itu penggolong untuk benda bulat kecil. Dialog kedua membahasnya."
+     ]
+    },
+    {
+     "title": "Penjelas di depan, penjelas di belakang",
+     "body": [
+      "Kata asli Vietnam mengikuti urutan bahasa Indonesia: yang diterangkan dulu, penjelasnya sesudah (*trường lớn* = sekolah besar). Kata Hán-Việt mengikuti urutan Tionghoa: **penjelas dulu** (*đại học* = besar-belajar). Bahasa Indonesia punya pola yang sama pada kata Sanskerta: *mahasiswa*, *mahaguru* — \"maha\" (besar) di depan."
+     ],
+     "table": {
+      "head": [
+       "Hán-Việt (penjelas di depan)",
+       "Kata asli (penjelas di belakang)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*ngoại quốc* (luar-negara)",
+        "*nước ngoài* (negara-luar)",
+        "luar negeri"
+       ],
+       [
+        "*ngoại ngữ* (luar-bahasa)",
+        "*tiếng nước ngoài*",
+        "bahasa asing"
+       ],
+       [
+        "*hải sản* (laut-hasil)",
+        "*đồ biển* (barang-laut)",
+        "makanan laut"
+       ],
+       [
+        "*đại lộ* (besar-jalan)",
+        "*đường lớn* (jalan-besar)",
+        "jalan raya"
+       ],
+       [
+        "*hỏa xa* (api-kereta)",
+        "*xe lửa* (kereta-api)",
+        "kereta api"
+       ]
+      ]
+     },
+     "after": [
+      "Karena itu jangan menerjemahkan kata Hán-Việt dari kiri ke kanan seperti kalimat biasa. Baca unsur **terakhir** dulu (itu intinya), lalu unsur di depannya sebagai penjelas: *hải sản* → *sản* (hasil) dari *hải* (laut)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Đố vui với Minh",
+   "intro": "Malamnya Budi bertemu Minh di warung *bia hơi* langganan mereka. Budi bercerita tentang museum, dan Minh, yang tidak pernah melewatkan kesempatan menguji temannya, langsung mengajukan kuis.",
+   "lines": [
+    {
+     "speaker": "Minh:",
+     "text": "Budi, đố cậu nhé: \"hải sản\" là gì?",
+     "id": "Budi, tebak ya: \"hải sản\" itu apa?",
+     "literal": "Budi, teka kamu ya: laut-hasil adalah apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hải là biển, vậy hải sản là đồ biển!",
+     "id": "Hải itu laut, jadi hải sản itu makanan laut!",
+     "literal": "laut adalah laut, jadi laut-hasil adalah barang laut!"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Chuẩn! Thế từ thuần Việt của \"phụ nữ\" là gì?",
+     "id": "Tepat! Terus kata asli Vietnam untuk \"phụ nữ\" apa?",
+     "literal": "standar! begitu kata murni Việt dari perempuan adalah apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đàn bà. Nhưng tớ thấy \"phụ nữ\" lịch sự hơn.",
+     "id": "Đàn bà. Tapi menurutku \"phụ nữ\" lebih sopan.",
+     "literal": "perempuan. tetapi aku rasa perempuan sopan lebih."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Đúng. Ngày 8 tháng 3 là Ngày Quốc tế Phụ nữ, không ai gọi là ngày đàn bà cả.",
+     "id": "Betul. Tanggal 8 Maret itu Hari Perempuan Internasional, tidak ada yang menyebutnya \"hari đàn bà\".",
+     "literal": "benar. hari 8 bulan 3 adalah hari negara-antara perempuan, tidak siapa panggil adalah hari perempuan sama-sekali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dễ quá! Cậu đố câu khó hơn đi.",
+     "id": "Gampang! Kasih soal yang lebih sulit, dong.",
+     "literal": "mudah terlalu! kamu teka kalimat sulit lebih ayo."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Được. \"Viên\" trong \"nhân viên\", \"sinh viên\", \"giáo viên\" là gì?",
+     "id": "Oke. \"Viên\" dalam \"nhân viên\", \"sinh viên\", \"giáo viên\" artinya apa?",
+     "literal": "dapat. viên dalam orang-anggota, pelajar-anggota, ajar-anggota adalah apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Viên là người trong một nhóm, như thành viên.",
+     "id": "Viên itu orang dalam satu kelompok, seperti anggota.",
+     "literal": "anggota adalah orang dalam satu kelompok, seperti jadi-anggota."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Giỏi! Nhưng \"viên\" trong \"viên thuốc\" thì khác đấy.",
+     "id": "Hebat! Tapi \"viên\" dalam \"viên thuốc\" lain, lho.",
+     "literal": "pandai! tetapi viên dalam butir obat maka lain tuh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cùng một âm nhưng nghĩa khác nhau à?",
+     "id": "Bunyinya sama tapi artinya beda?",
+     "literal": "sama satu bunyi tetapi arti beda satu-sama-lain ya?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ừ, vì chữ Hán khác nhau, nhưng viết bằng chữ quốc ngữ thì giống nhau.",
+     "id": "Iya, karena aksara Hán-nya beda, tapi kalau ditulis dengan quốc ngữ jadi sama.",
+     "literal": "ya, karena huruf Hán beda satu-sama-lain, tetapi tulis dengan huruf negara-bahasa maka mirip satu-sama-lain."
+    }
+   ],
+   "notes": [
+    "**Đố** — \"menantang menebak, memberi teka-teki\". *Đố cậu* = \"tebak, ayo\"; *câu đố* = teka-teki; *đố vui* = kuis ringan.",
+    "**Từ thuần Việt** — kata asli Vietnam, lawan dari *từ Hán Việt*. *Thuần* berarti murni. Kata sehari-hari yang paling dasar (*ăn, ngủ, nhà, nước, đi, mẹ*) hampir semuanya kata asli.",
+    "**Phụ nữ dan đàn bà** — keduanya berarti \"perempuan\", tapi rasanya jauh berbeda. *Phụ nữ* netral dan hormat; *đàn bà* bisa terdengar kasar atau meremehkan, tergantung konteks. Selain 8 Maret, Vietnam juga merayakan *Ngày Phụ nữ Việt Nam* pada 20 Oktober; pada kedua hari itu perempuan diberi bunga dan ucapan.",
+    "**Viên thuốc** — di sini *viên* adalah penggolong untuk benda kecil bulat atau padat: *viên thuốc* (sebutir obat), *viên kẹo* (sebutir permen), *viên gạch* (sebuah bata). Ia tidak ada hubungannya dengan *viên* \"anggota\".",
+    "**Chuẩn!** — harfiah \"standar\", tapi di mulut anak muda Hà Nội artinya \"tepat sekali!\", \"betul banget!\". Bentuk yang lebih panjang: *Chuẩn không cần chỉnh* (\"tepat, tak perlu dikoreksi\"). Jangan dipakai di rapat dengan chị Hương."
+   ],
+   "grammars": [
+    {
+     "title": "Pasangan Hán-Việt dan kata asli",
+     "body": [
+      "Banyak benda punya dua nama. Kata Hán-Việt lebih resmi, lebih abstrak, atau lebih halus; kata asli lebih sehari-hari dan kadang lebih blak-blakan."
+     ],
+     "table": {
+      "head": [
+       "Hán-Việt",
+       "Kata asli",
+       "Arti",
+       "Kapan Hán-Việt dipilih"
+      ],
+      "rows": [
+       [
+        "*phụ nữ*",
+        "*đàn bà*",
+        "perempuan",
+        "hampir selalu; lebih hormat"
+       ],
+       [
+        "*hải sản*",
+        "*đồ biển*",
+        "makanan laut",
+        "menu, kemasan, tulisan"
+       ],
+       [
+        "*phu nhân*",
+        "*vợ*",
+        "istri",
+        "istri pejabat atau tamu kehormatan"
+       ],
+       [
+        "*nhi đồng*",
+        "*trẻ em*",
+        "anak-anak",
+        "nama lembaga, acara resmi"
+       ],
+       [
+        "*tử vong*",
+        "*chết*",
+        "meninggal",
+        "berita, laporan"
+       ],
+       [
+        "*phi cơ*",
+        "*máy bay*",
+        "pesawat",
+        "hampir tak dipakai lagi"
+       ],
+       [
+        "*thủy* (hanya di kata majemuk)",
+        "*nước*",
+        "air",
+        "*thủy sản, thủy điện*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Sebagian besar unsur Hán-Việt **tidak bisa berdiri sendiri**. Kamu tidak bisa berkata *Tôi uống thủy*; yang benar *Tôi uống nước*. *Thủy* hanya hidup di dalam kata majemuk seperti *thủy sản* (hasil perairan) atau *thủy điện* (pembangkit listrik tenaga air)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hán-Việt di papan nama",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Papan",
+      "Unsur",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Bệnh viện*",
+       "penyakit + lembaga",
+       "rumah sakit"
+      ],
+      [
+       "*Thư viện*",
+       "buku + lembaga",
+       "perpustakaan"
+      ],
+      [
+       "*Học viện*",
+       "belajar + lembaga",
+       "akademi, institut"
+      ],
+      [
+       "*Ủy ban nhân dân (UBND)*",
+       "komite + rakyat",
+       "kantor pemerintahan daerah"
+      ],
+      [
+       "*Bưu điện*",
+       "pos + listrik",
+       "kantor pos"
+      ],
+      [
+       "*Sân bay quốc tế*",
+       "(asli) + negara-antara",
+       "bandara internasional"
+      ],
+      [
+       "*Trường Tiểu học*",
+       "(asli) + kecil-belajar",
+       "sekolah dasar"
+      ],
+      [
+       "*Nhà văn hóa*",
+       "(asli) + sastra-ubah",
+       "balai budaya"
+      ],
+      [
+       "*Đại sứ quán*",
+       "besar + utusan + gedung",
+       "kedutaan besar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan kolom tengah: papan-papan ini sering mencampur unsur asli dan Hán-Việt. *Sân bay* (lapangan terbang) kata asli, *quốc tế* Hán-Việt; *trường* (sekolah) kata asli, *tiểu học* Hán-Việt. Unsur *viện* \"lembaga\" layak dihafal tersendiri — ia ada di *bệnh viện, thư viện, học viện*, dan *viện bảo tàng* (nama panjang untuk museum)."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga aksara dalam sejarah bahasa Vietnam",
+     "items": [
+      "**Chữ Hán.** Selama berabad-abad, termasuk lebih dari seribu tahun di bawah kekuasaan Tiongkok dan masa-masa kerajaan sesudahnya, bahasa tulis resmi di Vietnam adalah bahasa Tionghoa klasik. Ujian negara dengan aksara Hán baru dihapus pada awal abad ke-20. Prasasti para doktor di Văn Miếu ditulis dengan aksara ini.",
+      "**Chữ Nôm.** Aksara yang dibuat dari unsur-unsur aksara Hán untuk menuliskan bahasa Vietnam sendiri. Karya sastra besar seperti *Truyện Kiều* ditulis dengan chữ Nôm.",
+      "**Chữ quốc ngữ.** Tulisan Latin yang kamu baca sekarang, disusun pada abad ke-17 oleh misionaris Eropa bersama orang Vietnam; kamus Alexandre de Rhodes terbit tahun 1651. Pada awal abad ke-20 tulisan ini menyebar luas, dan sesudah 1945 menjadi tulisan resmi.",
+      "Menjelang Tết, di Văn Miếu dan jalan-jalan sekitarnya kamu bisa melihat *ông đồ* menulis kaligrafi (*thư pháp*) — dengan aksara Hán, Nôm, atau quốc ngữ yang digayakan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Latihan membedah kata",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Unsur",
+      "Tebakan arti"
+     ],
+     "rows": [
+      [
+       "*quốc lộ*",
+       "negara + jalan",
+       "jalan nasional"
+      ],
+      [
+       "*đại dương*",
+       "besar + samudra",
+       "samudra"
+      ],
+      [
+       "*ngoại ngữ*",
+       "luar + bahasa",
+       "bahasa asing"
+      ],
+      [
+       "*học phí*",
+       "belajar + biaya",
+       "uang sekolah"
+      ],
+      [
+       "*sinh nhật*",
+       "lahir + hari",
+       "ulang tahun"
+      ],
+      [
+       "*nông nghiệp*",
+       "tani + usaha",
+       "pertanian"
+      ],
+      [
+       "*thủy sản*",
+       "air + hasil",
+       "hasil perikanan"
+      ],
+      [
+       "*quốc tịch*",
+       "negara + catatan",
+       "kewarganegaraan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tutup kolom ketiga, lalu coba tebak artinya dari kolom kedua. Hampir selalu tebakanmu cukup dekat untuk memahami kalimatnya; ketepatan penuh bisa kamu periksa belakangan. Inilah cara penutur asli sendiri memahami kata Hán-Việt yang baru mereka temui."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat membedah kata Hán-Việt",
+     "items": [
+      "**Mulai dari unsur yang kamu kenal.** Satu unsur yang pasti sering sudah cukup untuk menebak bidangnya: apa pun yang berakhir dengan *-viện* adalah lembaga; *-học* adalah ilmu; *-viên* adalah orang.",
+      "**Ingat urutannya:** unsur terakhir adalah intinya. *Nông nghiệp* adalah \"usaha\" di bidang \"tani\".",
+      "**Waspadai kembaran bunyi.** Kalau hasil tebakanmu aneh, mungkin kamu bertemu unsur lain yang bunyinya sama, seperti *thành* \"kota\" dan *thành* \"menjadi\".",
+      "**Kumpulkan keluarga kata.** Setiap kali belajar kata baru, tulis dua kata lain dengan unsur yang sama: *quốc tịch → quốc gia, quốc tế*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Halo, kalian berdua! Masuk sini, duduk.",
+       "*Dạ, chào hai em! Vô đây ngồi nè.*"
+      ],
+      [
+       "Di sini kami bilangnya ly, bukan cốc.",
+       "*Trong này tụi anh kêu là ly, không phải cốc.*"
+      ],
+      [
+       "Oh, begitu? Tidak apa-apa, saya ganti jadi ayam dan ikan.",
+       "*Vậy hả? Hông sao, anh đổi qua gà với cá.*"
+      ],
+      [
+       "Ini helmnya, pakai yang benar, ya.",
+       "*Nón nè con, đội vô cho chắc nha.*"
+      ],
+      [
+       "Siapa pun yang tinggal lama di sini lama-lama terbiasa, kok.",
+       "*Ai vô đây ở riết rồi cũng quen hà.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "từ Hán Việt",
+   "baca": "từ Hán Việt",
+   "id": "kata Hán-Việt"
+  },
+  {
+   "vi": "từ thuần Việt",
+   "baca": "từ thuần Việt",
+   "id": "kata asli Vietnam"
+  },
+  {
+   "vi": "chữ",
+   "baca": "cữ",
+   "id": "huruf, tulisan; unsur (kata Hán-Việt)"
+  },
+  {
+   "vi": "âm",
+   "baca": "âm",
+   "id": "bunyi"
+  },
+  {
+   "vi": "nghĩa",
+   "baca": "ngĩa",
+   "id": "arti"
+  },
+  {
+   "vi": "tách",
+   "baca": "ták",
+   "id": "memisahkan"
+  },
+  {
+   "vi": "đoán",
+   "baca": "doán",
+   "id": "menebak"
+  },
+  {
+   "vi": "đố",
+   "baca": "dố",
+   "id": "menantang menebak, memberi teka-teki"
+  },
+  {
+   "vi": "tra từ điển",
+   "baca": "ca từ diển",
+   "id": "mencari di kamus"
+  },
+  {
+   "vi": "bảo tàng",
+   "baca": "bảo tàng",
+   "id": "museum"
+  },
+  {
+   "vi": "dân tộc",
+   "baca": "zân tộk",
+   "id": "suku bangsa; bangsa"
+  },
+  {
+   "vi": "thiểu số / đa số",
+   "baca": "thiểu số / da số",
+   "id": "minoritas / mayoritas"
+  },
+  {
+   "vi": "nguồn gốc",
+   "baca": "nguồn gốk",
+   "id": "asal-usul"
+  },
+  {
+   "vi": "ngành",
+   "baca": "ngàng",
+   "id": "cabang (ilmu, industri)"
+  },
+  {
+   "vi": "khoa học",
+   "baca": "khoa họk",
+   "id": "ilmu pengetahuan"
+  },
+  {
+   "vi": "trang trọng",
+   "baca": "cang cọng",
+   "id": "resmi, khidmat"
+  },
+  {
+   "vi": "lợi thế",
+   "baca": "lợi thế",
+   "id": "keuntungan, kelebihan"
+  },
+  {
+   "vi": "quốc gia",
+   "baca": "kwốk za",
+   "id": "negara"
+  },
+  {
+   "vi": "quốc tế",
+   "baca": "kwốk tế",
+   "id": "internasional"
+  },
+  {
+   "vi": "quốc tịch",
+   "baca": "kwốk tịk",
+   "id": "kewarganegaraan"
+  },
+  {
+   "vi": "hải sản",
+   "baca": "hải sản",
+   "id": "makanan laut"
+  },
+  {
+   "vi": "phụ nữ",
+   "baca": "fụ nữ",
+   "id": "perempuan (hormat)"
+  },
+  {
+   "vi": "đàn bà",
+   "baca": "dàn bà",
+   "id": "perempuan (sehari-hari, bisa kasar)"
+  },
+  {
+   "vi": "thành viên",
+   "baca": "thàng viên",
+   "id": "anggota"
+  },
+  {
+   "vi": "ngoại ngữ",
+   "baca": "ngoại ngữ",
+   "id": "bahasa asing"
+  },
+  {
+   "vi": "chữ Hán / chữ Nôm",
+   "baca": "cữ Hán / cữ Nôm",
+   "id": "aksara Hán / aksara Nôm"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Museum ini ada di Cầu Giấy.",
+    "Vietnam punya 54 suku bangsa.",
+    "Kata Hán-Việt terdengar lebih resmi.",
+    "Pisahkan tiap unsurnya, lalu tebak artinya. (kamu: em)",
+    "Dia staf baru perusahaan kami. (dia: anh ấy)",
+    "Hari Perempuan Internasional jatuh pada tanggal 8 Maret."
+   ]
+  },
+  {
+   "prompt": "Isi unsur Hán-Việt yang hilang. Petunjuk artinya ada di dalam kurung.",
+   "items": [
+    "Người làm việc trong công ty là nhân ____. (anggota)",
+    "Trường cho học sinh từ lớp một đến lớp năm là trường ____ học. (kecil)",
+    "Người từ nước khác là người ngoại ____. (negara)",
+    "Môn nghiên cứu về sự sống là sinh ____. (ilmu)",
+    "Đồ ăn từ biển là ____ sản. (laut)",
+    "Dân tộc có ít người là dân tộc thiểu ____. (jumlah)",
+    "Nơi khám và chữa bệnh là bệnh ____. (lembaga)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata Hán-Việt yang dicetak miring dengan kata asli Vietnam yang sepadan, lalu tulis ulang kalimatnya.",
+   "items": [
+    "Chị ấy thích ăn *hải sản*.",
+    "Anh ấy sống ở *ngoại quốc* hai năm.",
+    "*Hỏa xa* đến ga lúc bảy giờ.",
+    "*Nhi đồng* rất thích đèn ông sao.",
+    "Bà ấy là *phu nhân* của ông đại sứ.",
+    "Tôi học *ngoại ngữ* ở trung tâm."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "học / ở cuối từ / thường / là / một ngành / khoa học",
+    "thiểu số / ít người / là / nghĩa",
+    "trang trọng / nghe / từ Hán Việt / hơn",
+    "tách / từng chữ / ra / em / đi",
+    "có / Việt Nam / dân tộc / năm mươi tư"
+   ]
+  }
+ ],
+ "answers": [
+  "Bảo tàng này ở Cầu Giấy. — Việt Nam có năm mươi tư dân tộc. — Từ Hán Việt nghe trang trọng hơn. — Em tách từng chữ ra rồi đoán nghĩa. — Anh ấy là nhân viên mới của công ty chúng tôi. — Ngày Quốc tế Phụ nữ là ngày 8 tháng 3.",
+  "viên — tiểu — quốc — học — hải — số — viện",
+  "Chị ấy thích ăn đồ biển. — Anh ấy sống ở nước ngoài hai năm. — Xe lửa đến ga lúc bảy giờ. — Trẻ em rất thích đèn ông sao. — Bà ấy là vợ của ông đại sứ. — Tôi học tiếng nước ngoài ở trung tâm.",
+  "Học ở cuối từ thường là một ngành khoa học. — Thiểu số nghĩa là ít người. — Từ Hán Việt nghe trang trọng hơn. — Em tách từng chữ ra đi. — Việt Nam có năm mươi tư dân tộc."
+ ]
+}

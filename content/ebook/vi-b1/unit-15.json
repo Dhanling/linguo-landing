@@ -1,0 +1,677 @@
+{
+ "title": "Berita dan cuaca ekstrem",
+ "title_target": "Không khí lạnh sắp tràn về miền Bắc.",
+ "goal": "Memahami berita cuaca ekstrem, lalu meneruskan isinya kepada rekan dan pelanggan. Titik tata bahasanya: kosakata berita (*theo dự báo, dự kiến, ảnh hưởng, rét đậm, rét hại, băng giá*), **bị** dalam gaya resmi, pasif ke depan **sẽ được / sẽ bị**, dan cara membaca angka dan suhu dalam berita.",
+ "bekal": [
+  "membaca dan meneruskan kalimat berita: *Theo dự báo, không khí lạnh sẽ tràn về…*",
+  "memakai *sẽ bị* untuk yang merugikan dan *sẽ được* untuk yang menguntungkan: *đường đèo sẽ bị đóng băng, học sinh sẽ được nghỉ học*",
+  "menyampaikan kabar buruk kepada pelanggan dengan sopan dan menawarkan pilihan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rét đậm rét hại",
+   "intro": "Akhir Januari, Selasa pagi di Sen Travel. Rombongan dari Jakarta dijadwalkan naik kereta malam ke Lào Cai hari Kamis untuk tur tiga hari di Sa Pa. Tuấn membaca berita dari ponselnya, sementara Budi dan Hương mendengarkan.",
+   "lines": [
+    {
+     "speaker": "Tuấn:",
+     "text": "Mọi người nghe này: \"Theo dự báo, từ đêm thứ tư, một đợt không khí lạnh mạnh sẽ tràn về miền Bắc.\"",
+     "id": "Semuanya, dengar nih: \"Menurut prakiraan, mulai Rabu malam satu gelombang udara dingin yang kuat akan menerjang wilayah Utara.\"",
+     "literal": "semua orang dengar ini: menurut prakiraan, dari malam urutan empat, satu gelombang udara dingin kuat akan meluap kembali wilayah Utara."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thứ năm? Đoàn khách Jakarta lên Sa Pa đúng hôm đó!",
+     "id": "Kamis? Rombongan Jakarta berangkat ke Sa Pa tepat hari itu!",
+     "literal": "urutan lima? rombongan tamu Jakarta naik Sa Pa tepat hari itu!"
+    },
+    {
+     "speaker": "Tuấn:",
+     "text": "\"Ở vùng núi cao, nhiệt độ thấp nhất có thể xuống dưới không độ, có khả năng xảy ra băng giá.\"",
+     "id": "\"Di pegunungan tinggi, suhu terendah bisa turun di bawah nol derajat, dan kemungkinan terjadi lapisan es.\"",
+     "literal": "di wilayah gunung tinggi, suhu rendah paling bisa turun bawah nol derajat, ada kemungkinan terjadi es beku."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dưới không độ ạ? Khách Indonesia chắc thích xem băng lắm!",
+     "id": "Di bawah nol? Tamu Indonesia pasti senang sekali lihat es!",
+     "literal": "bawah nol derajat ya? tamu Indonesia pasti suka lihat es sangat!"
+    },
+    {
+     "speaker": "Tuấn:",
+     "text": "Nhưng đường đèo chắc chắn sẽ bị đóng băng.",
+     "id": "Tapi jalan di celah gunungnya pasti akan membeku.",
+     "literal": "tetapi jalan celah-gunung pasti pasti akan kena tutup es."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Còn học sinh ở vùng cao thì sao?",
+     "id": "Lalu anak-anak sekolah di dataran tinggi bagaimana?",
+     "literal": "sedangkan murid di wilayah tinggi maka bagaimana?"
+    },
+    {
+     "speaker": "Tuấn:",
+     "text": "Họ bảo học sinh vùng cao sẽ được nghỉ học.",
+     "id": "Katanya murid di dataran tinggi akan diliburkan.",
+     "literal": "mereka bilang murid wilayah tinggi akan dapat libur belajar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn cáp treo Fansipan thì sao ạ?",
+     "id": "Kalau kereta gantung Fansipan bagaimana?",
+     "literal": "sedangkan kabel-gantung Fansipan maka bagaimana ya?"
+    },
+    {
+     "speaker": "Tuấn:",
+     "text": "Cáp treo dự kiến sẽ bị tạm dừng hai ngày.",
+     "id": "Kereta gantungnya diperkirakan akan dihentikan sementara dua hari.",
+     "literal": "kabel gantung perkiraan akan kena sementara berhenti dua hari."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Thế thì không được rồi. An toàn của khách là trên hết.",
+     "id": "Kalau begitu nggak bisa. Keselamatan tamu yang paling utama.",
+     "literal": "begitu maka tidak dapat sudah. aman punya tamu adalah di-atas semua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế mình hủy tour hay hoãn ạ?",
+     "id": "Jadi turnya kita batalkan atau tunda, Mbak?",
+     "literal": "begitu kita batal tur atau tunda ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Hoãn một tuần. Budi, em gọi báo cho trưởng đoàn ngay nhé.",
+     "id": "Tunda seminggu. Budi, segera telepon ketua rombongan, ya.",
+     "literal": "tunda satu minggu. Budi, adik panggil kabari untuk ketua rombongan segera ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. Vé tàu của khách có đổi được không chị?",
+     "id": "Baik. Tiket kereta tamu bisa ditukar, Mbak?",
+     "literal": "iya ya. tiket kereta punya tamu ada tukar dapat tidak kakak?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Chắc là đổi được, nhưng có thể mất phí. Để chị kiểm tra lại.",
+     "id": "Mungkin bisa ditukar, tapi mungkin kena biaya. Biar aku cek lagi.",
+     "literal": "pasti adalah tukar dapat, tetapi ada bisa hilang biaya. biar kakak periksa kembali."
+    }
+   ],
+   "notes": [
+    "**Theo dự báo** — \"menurut prakiraan\", pembuka hampir semua berita cuaca. *Theo* (menurut) sudah kamu kenal dari unit 1; di berita ia juga muncul sebagai *theo Bộ Y tế* (menurut Kementerian Kesehatan), *theo thống kê* (menurut statistik).",
+    "**Không khí lạnh tràn về** — \"udara dingin meluap datang\". Musim dingin di utara datang bergelombang: setiap *đợt không khí lạnh* (gelombang udara dingin) dari arah utara menurunkan suhu beberapa hari, lalu berlalu. Berita juga menyebut *không khí lạnh tăng cường*, gelombang susulan yang memperkuat yang sebelumnya.",
+    "**Rét đậm, rét hại** — dua istilah resmi. *Rét đậm* (dingin pekat) berarti suhu rata-rata harian 15°C ke bawah; *rét hại* (dingin yang mencelakakan) berarti 13°C ke bawah. *Rét* adalah kata utara untuk dingin cuaca yang menusuk; *lạnh* lebih umum dan dipakai juga untuk benda (*nước lạnh*).",
+    "**Dưới không độ** — di bawah nol derajat. Suhu minus dibaca dengan *âm*: *âm hai độ* (−2°C). *Băng giá* adalah lapisan es di tanah, atap, dan daun; *đóng băng* berarti membeku. Salju (*tuyết*) jarang, tapi sesekali turun di puncak-puncak tertinggi dekat Sa Pa.",
+    "**Dự kiến** — \"diperkirakan, dijadwalkan\". Ia bisa berdiri di awal kalimat (*Dự kiến trời sẽ rét hại*) atau sesudah subjek (*Cáp treo dự kiến sẽ bị tạm dừng*). Di kantor ia juga berarti \"rencananya\": *Đoàn dự kiến đến lúc ba giờ.*",
+    "**An toàn của khách là trên hết** — \"keselamatan tamu di atas segalanya\". *… là trên hết* adalah cetakan untuk prioritas utama: *Sức khỏe là trên hết* (kesehatan nomor satu)."
+   ],
+   "grammars": [
+    {
+     "title": "Sẽ bị dan sẽ được: pasif ke depan",
+     "body": [
+      "Kamu sudah memakai *bị* dan *được* untuk kejadian lampau dan kini (A2 unit 6). Di berita keduanya sering berpasangan dengan *sẽ* atau *dự kiến sẽ* untuk hal yang akan terjadi. Aturannya tetap: **bị** untuk yang merugikan subjek, **được** untuk yang menguntungkan atau netral-resmi."
+     ],
+     "table": {
+      "head": [
+       "Kalimat berita",
+       "Arti",
+       "Mengapa"
+      ],
+      "rows": [
+       [
+        "*Đường đèo sẽ bị đóng băng.*",
+        "Jalan di celah gunung akan membeku.",
+        "merugikan → *bị*"
+       ],
+       [
+        "*Cáp treo dự kiến sẽ bị tạm dừng.*",
+        "Kereta gantung diperkirakan akan dihentikan sementara.",
+        "merugikan → *bị*"
+       ],
+       [
+        "*Nhiều chuyến xe khách đã bị hủy.*",
+        "Banyak perjalanan bus telah dibatalkan.",
+        "merugikan → *bị*"
+       ],
+       [
+        "*Học sinh sẽ được nghỉ học.*",
+        "Murid akan diliburkan.",
+        "menguntungkan → *được*"
+       ],
+       [
+        "*Khách sẽ được đổi vé.*",
+        "Tamu akan mendapat penukaran tiket.",
+        "menguntungkan → *được*"
+       ],
+       [
+        "*Chăn ấm sẽ được gửi đến các bản vùng cao.*",
+        "Selimut hangat akan dikirim ke kampung-kampung di dataran tinggi.",
+        "menguntungkan → *được*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Di berita, pelaku jarang disebut. *Học sinh sẽ được nghỉ học* tidak mengatakan siapa yang meliburkan; kalau perlu, pelakunya disisipkan langsung sesudah *được/bị*: *được nhà trường cho nghỉ* (diliburkan oleh sekolah)."
+     ]
+    },
+    {
+     "title": "Kata-kata berita",
+     "body": [
+      "Kata-kata ini hampir semuanya Hán-Việt, dan hampir tidak muncul di percakapan santai. Tapi begitu kamu membuka berita, mereka ada di setiap paragraf."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh di berita"
+      ],
+      "rows": [
+       [
+        "*dự báo*",
+        "prakiraan",
+        "*Theo dự báo, trời sẽ rét đậm.*"
+       ],
+       [
+        "*dự kiến*",
+        "diperkirakan, dijadwalkan",
+        "*Không khí lạnh dự kiến tràn về đêm nay.*"
+       ],
+       [
+        "*ảnh hưởng*",
+        "pengaruh; terdampak",
+        "*Nhiều tỉnh miền núi bị ảnh hưởng nặng.*"
+       ],
+       [
+        "*thiệt hại*",
+        "kerugian, kerusakan",
+        "*Băng giá gây thiệt hại cho hoa màu.*"
+       ],
+       [
+        "*tràn về*",
+        "meluap datang (udara dingin)",
+        "*Không khí lạnh tràn về từ đêm thứ tư.*"
+       ],
+       [
+        "*khuyến cáo*",
+        "mengimbau",
+        "*Người dân được khuyến cáo giữ ấm cho trẻ nhỏ và người già.*"
+       ],
+       [
+        "*khắc phục*",
+        "mengatasi, memulihkan",
+        "*Các địa phương đang khắc phục hậu quả.*"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Báo tin cho khách",
+   "intro": "Selain rombongan Jakarta, ada satu keluarga Hà Nội, dengan dua anak kecil dan nenek yang sudah sepuh, yang memesan tur pribadi ke Sa Pa akhir pekan itu. Budi menelepon pemesannya, chị Ngọc.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "A lô, em chào chị Ngọc ạ. Em là Budi, bên Sen Travel.",
+     "id": "Halo, selamat pagi, Bu Ngọc. Saya Budi dari Sen Travel.",
+     "literal": "halo, adik salam kakak Ngọc ya. adik adalah Budi, pihak Sen Travel."
+    },
+    {
+     "speaker": "Ngọc:",
+     "text": "Chào em. Có chuyện gì thế?",
+     "id": "Halo. Ada apa?",
+     "literal": "salam adik. ada hal apa begitu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em rất tiếc phải báo là tour Sa Pa cuối tuần này phải tạm hoãn vì rét hại ạ.",
+     "id": "Saya mohon maaf harus mengabarkan bahwa tur Sa Pa akhir pekan ini terpaksa ditunda karena dingin ekstrem.",
+     "literal": "iya, adik sangat sayang harus kabari adalah tur Sa Pa akhir minggu ini harus sementara tunda karena dingin celaka ya."
+    },
+    {
+     "speaker": "Ngọc:",
+     "text": "Trời ơi, thế à? Rét lắm à em?",
+     "id": "Astaga, begitu? Dingin sekali, ya?",
+     "literal": "langit hai, begitu ya? dingin sangat ya adik?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Theo dự báo, Sa Pa sẽ bị rét hại từ thứ năm.",
+     "id": "Menurut prakiraan, Sa Pa akan dilanda dingin ekstrem mulai Kamis.",
+     "literal": "menurut prakiraan, Sa Pa akan kena dingin celaka dari urutan lima."
+    },
+    {
+     "speaker": "Ngọc:",
+     "text": "Thế tiền chị đã chuyển thì sao?",
+     "id": "Lalu uang yang sudah saya transfer bagaimana?",
+     "literal": "begitu uang kakak telah transfer maka bagaimana?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, chị có hai lựa chọn: đổi sang tuần sau, hoặc hoàn tiền.",
+     "id": "Ibu punya dua pilihan: pindah ke minggu depan, atau pengembalian uang.",
+     "literal": "iya, kakak ada dua pilihan: tukar seberang minggu sesudah, atau kembali uang."
+    },
+    {
+     "speaker": "Ngọc:",
+     "text": "Nếu hoàn tiền thì bao lâu em?",
+     "id": "Kalau pengembalian uang, berapa lama?",
+     "literal": "jika kembali uang maka berapa lama adik?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị sẽ được hoàn lại toàn bộ trong vòng bảy ngày ạ.",
+     "id": "Ibu akan menerima pengembalian penuh dalam tujuh hari.",
+     "literal": "kakak akan dapat kembali kembali seluruh dalam lingkar tujuh hari ya."
+    },
+    {
+     "speaker": "Ngọc:",
+     "text": "Thôi, bà với các cháu cũng không chịu được rét. Để chị bàn với chồng rồi nhắn em sau nhé.",
+     "id": "Ya sudah, nenek dan anak-anak juga nggak tahan dingin. Biar saya bicarakan dengan suami dulu, nanti saya kabari.",
+     "literal": "sudahlah, nenek dengan para cucu juga tidak tahan dapat dingin. biar kakak diskusi dengan suami lalu kirim-pesan adik nanti ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. Em rất mong chị thông cảm. Em chờ tin chị ạ.",
+     "id": "Baik, Bu. Mohon pengertiannya. Saya tunggu kabarnya.",
+     "literal": "iya ya. adik sangat harap kakak maklum. adik tunggu kabar kakak ya."
+    }
+   ],
+   "notes": [
+    "**Em rất tiếc phải báo là…** — \"saya sangat menyesal harus mengabarkan bahwa…\" Pembuka baku kabar buruk kepada pelanggan (unit 6). Kabar buruk disampaikan dulu dengan jelas, baru penjelasannya; jangan berputar-putar.",
+    "**Tạm hoãn** — \"ditunda sementara\". *Hoãn* = menunda, *hủy* = membatalkan. Kepada pelanggan, *tạm hoãn* terdengar jauh lebih baik daripada *hủy*, karena ia menjanjikan kelanjutan.",
+    "**Budi memanggil chị Ngọc *chị* dan menyebut diri *em*** — sopan santun jabatan dari A1 unit 19. Chị Ngọc membalas dengan *em* dan *chị*, wajar karena ia pelanggan dan lebih tua.",
+    "**Sẽ được hoàn lại** — *hoàn* (mengembalikan) + *lại* (kembali) menegaskan uang itu pulang ke pemiliknya. Karena menguntungkan pelanggan, pasti *được*, bukan *bị*.",
+    "**Em rất mong chị thông cảm** — \"saya sangat berharap Ibu memaklumi\". *Thông cảm* (memahami keadaan orang lain) adalah kata ajaib dalam layanan pelanggan Vietnam, dan hampir selalu menutup kabar buruk."
+   ],
+   "grammars": [
+    {
+     "title": "Menyampaikan kabar buruk kepada pelanggan",
+     "body": [
+      "Urutannya: kabar dulu, alasan, pilihan, lalu permohonan maklum. Semua kalimat di bawah memakai *em* (petugas) dan *anh/chị* (pelanggan)."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Kalimat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "membuka",
+        "*Em gọi để báo với chị về tour Sa Pa ạ.*",
+        "Saya menelepon untuk mengabarkan soal tur Sa Pa."
+       ],
+       [
+        "kabar",
+        "*Em rất tiếc phải báo là tour phải tạm hoãn.*",
+        "Mohon maaf, tur terpaksa ditunda."
+       ],
+       [
+        "alasan",
+        "*Do rét hại, cáp treo sẽ bị tạm dừng.*",
+        "Karena dingin ekstrem, kereta gantung akan dihentikan sementara."
+       ],
+       [
+        "pilihan",
+        "*Chị có thể đổi ngày hoặc được hoàn tiền.*",
+        "Ibu bisa pindah tanggal atau menerima pengembalian."
+       ],
+       [
+        "janji",
+        "*Bên em sẽ gửi email xác nhận ngay hôm nay.*",
+        "Kami akan mengirim surel konfirmasi hari ini."
+       ],
+       [
+        "menutup",
+        "*Rất mong chị thông cảm.*",
+        "Mohon pengertiannya."
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca angka dan suhu dalam berita cuaca",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Di berita",
+      "Dibaca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*nhiệt độ thấp nhất 0–3°C*",
+       "*từ không đến ba độ C*",
+       "suhu terendah 0–3°C"
+      ],
+      [
+       "*có nơi dưới −2°C*",
+       "*có nơi dưới âm hai độ C*",
+       "di beberapa tempat di bawah −2°C"
+      ],
+      [
+       "*giảm 8–10 độ*",
+       "*giảm từ tám đến mười độ*",
+       "turun 8–10 derajat"
+      ],
+      [
+       "*gió đông bắc cấp 3–4*",
+       "*gió đông bắc cấp ba, cấp bốn*",
+       "angin timur laut skala 3–4"
+      ],
+      [
+       "*hơn 1,5 triệu học sinh*",
+       "*hơn một phẩy năm triệu học sinh*",
+       "lebih dari 1,5 juta murid"
+      ],
+      [
+       "*hơn 2.000 con trâu bò*",
+       "*hơn hai nghìn con trâu bò*",
+       "lebih dari 2.000 ekor kerbau dan sapi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kabar baik untuk pembaca Indonesia: Vietnam memakai titik untuk ribuan dan koma untuk desimal, persis seperti kita. *1,5* dibaca *một phẩy năm* (\"satu koma lima\"). *°C* dibaca *độ C* (*độ xê*), dan suhu minus memakai *âm* (\"negatif\"): *âm hai độ*. Kekuatan angin di berita Vietnam diukur dengan *cấp* (tingkat, skala Beaufort). Di musim dingin berita juga menghitung ternak yang mati kedinginan (*chết rét*), karena bagi petani pegunungan itu kerugian besar."
+    },
+    {
+     "type": "kotak",
+     "title": "Musim dingin di utara",
+     "items": [
+      "Wilayah utara Vietnam punya musim dingin sungguhan, kira-kira November sampai Maret. Udaranya lembap, jadi 10°C di Hà Nội terasa jauh lebih menusuk daripada angkanya; orang menyebutnya *rét cắt da cắt thịt* (dingin yang menyayat kulit dan daging).",
+      "Di pegunungan seperti Sa Pa dan Mẫu Sơn, gelombang dingin yang kuat bisa membawa *băng giá*, dan sesekali salju tipis. Banyak orang Hà Nội justru naik ke sana untuk *săn băng* (\"berburu es\") atau *săn tuyết*.",
+      "Sekolah punya aturan sendiri: di Hà Nội, bila suhu pagi turun di bawah 10°C, murid TK dan SD boleh tidak masuk sekolah. Berita pagi di musim dingin pun sering dibuka dengan suhu.",
+      "Bagi agen perjalanan, Desember sampai Februari adalah musim waspada untuk tur ke pegunungan utara: jalan di celah gunung bisa ditutup sementara karena es, dan jadwal tur disertai syarat perubahan karena cuaca."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata-kata cuaca dingin dan pertolongan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*rét đậm / rét hại*",
+       "dingin menusuk / dingin ekstrem",
+       "*Bắc Bộ rét đậm, vùng núi rét hại.*"
+      ],
+      [
+       "*băng giá*",
+       "lapisan es, embun beku",
+       "*Đỉnh núi xuất hiện băng giá.*"
+      ],
+      [
+       "*tuyết (rơi)*",
+       "salju (turun)",
+       "*Tuyết rơi trên đỉnh Fansipan.*"
+      ],
+      [
+       "*mưa phùn*",
+       "gerimis halus",
+       "*Hà Nội có mưa phùn, trời âm u.*"
+      ],
+      [
+       "*chết rét*",
+       "mati kedinginan (ternak, tanaman)",
+       "*Nhiều trâu bò bị chết rét.*"
+      ],
+      [
+       "*mất điện*",
+       "listrik padam",
+       "*Cả bản bị mất điện.*"
+      ],
+      [
+       "*cứu trợ / hỗ trợ*",
+       "bantuan darurat / bantuan",
+       "*Người dân vùng cao được hỗ trợ chăn ấm.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hampir semua kata di atas berpasangan dengan *bị*, karena semuanya merugikan: *bị ảnh hưởng, bị đóng băng, bị chết rét, bị mất điện*. Yang berpasangan dengan *được* adalah yang menolong: *được cứu trợ, được hỗ trợ*, dan bagi murid tentu saja *được nghỉ học*. Dari sini kamu bisa melihat betapa rapi dan konsisten pilihan *bị/được* dalam bahasa berita."
+    },
+    {
+     "type": "kotak",
+     "title": "Lá lành đùm lá rách",
+     "items": [
+      "Peribahasa ini berarti \"daun yang utuh membungkus daun yang robek\": yang berkecukupan menolong yang kesusahan. Ia muncul di hampir setiap kampanye bantuan, baik untuk banjir di wilayah Tengah maupun untuk musim dingin di pegunungan.",
+      "Setiap musim dingin, kantor, sekolah, dan kelompok relawan di kota mengumpulkan jaket, selimut, dan sepatu untuk anak-anak di kampung pegunungan utara, dengan nama kampanye seperti *Áo ấm cho em* (jaket hangat untuk adik). *Đồng bào* (sebangsa, harfiahnya \"satu kandungan\") adalah kata hangat untuk sesama warga Vietnam.",
+      "Kalau kantormu ikut menyumbang, kalimat yang tepat: *Em cũng muốn góp một chiếc áo ấm cho các em vùng cao.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Halo. Semoga kalian berdua bahagia selamanya!",
+       "*Chào em. Chúc hai bạn trăm năm hạnh phúc!*"
+      ],
+      [
+       "Masuk dan duduk saja dulu. Nanti kami berdua datang menyapa.",
+       "*Cậu cứ vào ngồi đi. Lát nữa vợ chồng tớ ra chào.*"
+      ],
+      [
+       "Nggak apa-apa. Nanti juga terbiasa.",
+       "*Không sao đâu. Rồi em sẽ quen thôi.*"
+      ],
+      [
+       "Pakai kemeja putih dan celana bahan saja sudah cukup.",
+       "*Anh cứ mặc sơ mi trắng với quần âu là được.*"
+      ],
+      [
+       "Tulis saja, nanti aku koreksi.",
+       "*Anh cứ viết đi, em sửa cho.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "rét đậm / rét hại",
+   "baca": "zét dậm / zét hại",
+   "id": "dingin menusuk / dingin ekstrem"
+  },
+  {
+   "vi": "không khí lạnh",
+   "baca": "không khí lạng",
+   "id": "udara dingin, gelombang dingin"
+  },
+  {
+   "vi": "tràn về",
+   "baca": "càn về",
+   "id": "meluap datang (udara dingin)"
+  },
+  {
+   "vi": "dự báo (thời tiết)",
+   "baca": "zự báo (thời tiết)",
+   "id": "prakiraan (cuaca)"
+  },
+  {
+   "vi": "dự kiến",
+   "baca": "zự kiến",
+   "id": "diperkirakan, dijadwalkan"
+  },
+  {
+   "vi": "nhiệt độ",
+   "baca": "nyiệt dộ",
+   "id": "suhu"
+  },
+  {
+   "vi": "băng giá",
+   "baca": "băng zá",
+   "id": "lapisan es, embun beku"
+  },
+  {
+   "vi": "đóng băng",
+   "baca": "dóng băng",
+   "id": "membeku"
+  },
+  {
+   "vi": "tuyết",
+   "baca": "tuyết",
+   "id": "salju"
+  },
+  {
+   "vi": "đường đèo",
+   "baca": "dường dèo",
+   "id": "jalan di celah gunung"
+  },
+  {
+   "vi": "cáp treo",
+   "baca": "káp ceo",
+   "id": "kereta gantung"
+  },
+  {
+   "vi": "vùng cao",
+   "baca": "vùng kao",
+   "id": "dataran tinggi, pegunungan"
+  },
+  {
+   "vi": "nghỉ học",
+   "baca": "ngỉ họk",
+   "id": "libur sekolah"
+  },
+  {
+   "vi": "tạm dừng",
+   "baca": "tạm zừng",
+   "id": "dihentikan sementara"
+  },
+  {
+   "vi": "ảnh hưởng",
+   "baca": "ảng hưởng",
+   "id": "pengaruh; terdampak"
+  },
+  {
+   "vi": "thiệt hại",
+   "baca": "thiệt hại",
+   "id": "kerugian, kerusakan"
+  },
+  {
+   "vi": "an toàn",
+   "baca": "an toàn",
+   "id": "aman, keselamatan"
+  },
+  {
+   "vi": "hủy / hoãn",
+   "baca": "hủy / hoãn",
+   "id": "membatalkan / menunda"
+  },
+  {
+   "vi": "tạm hoãn",
+   "baca": "tạm hoãn",
+   "id": "ditunda sementara"
+  },
+  {
+   "vi": "hoàn tiền",
+   "baca": "hoàn tiền",
+   "id": "mengembalikan uang"
+  },
+  {
+   "vi": "trưởng đoàn",
+   "baca": "cưởng doàn",
+   "id": "ketua rombongan"
+  },
+  {
+   "vi": "lựa chọn",
+   "baca": "lựa cọn",
+   "id": "pilihan"
+  },
+  {
+   "vi": "toàn bộ",
+   "baca": "toàn bộ",
+   "id": "seluruhnya"
+  },
+  {
+   "vi": "thông cảm",
+   "baca": "thông kảm",
+   "id": "memaklumi"
+  },
+  {
+   "vi": "cứu trợ",
+   "baca": "kứu cợ",
+   "id": "bantuan darurat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam dengan gaya berita.",
+   "items": [
+    "Menurut prakiraan, besok Hà Nội akan dingin menusuk.",
+    "Udara dingin diperkirakan akan datang Rabu malam.",
+    "Murid TK dan SD akan diliburkan.",
+    "Kereta gantung akan dihentikan sementara selama dua hari.",
+    "Banyak jalan di celah gunung membeku.",
+    "Tamu akan menerima pengembalian uang penuh."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *bị* atau *được*.",
+   "items": [
+    "Nhiều chuyến xe khách đã ____ hủy vì băng giá. (bị atau được?)",
+    "Học sinh vùng cao đã ____ nghỉ học ba ngày. (bị atau được?)",
+    "Đường lên Sa Pa lại ____ đóng băng. (bị atau được?)",
+    "Chăn ấm sẽ ____ gửi đến các bản vùng cao. (bị atau được?)",
+    "Nhiều trâu bò ____ chết rét. (bị atau được?)",
+    "Khách sẽ ____ đổi vé miễn phí. (bị atau được?)",
+    "Cả bản ____ mất điện suốt đêm. (bị atau được?)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat berita dengan *sẽ bị* atau *sẽ được*. Contoh: *Người ta sẽ đóng đường đèo.* → *Đường đèo sẽ bị đóng.*",
+   "items": [
+    "Người ta sẽ hủy các chuyến xe khách.",
+    "Nhà trường sẽ cho học sinh nghỉ học.",
+    "Công ty sẽ hoàn tiền cho khách.",
+    "Người ta sẽ tạm dừng cáp treo.",
+    "Người ta sẽ gửi chăn ấm đến vùng cao.",
+    "Băng giá sẽ làm hỏng nhiều hoa màu. (subjek: nhiều hoa màu)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "theo dự báo / sẽ / không khí lạnh / tràn về / đêm nay",
+    "sẽ được / học sinh / nghỉ học / vùng cao",
+    "dự kiến / cáp treo / tạm dừng / sẽ bị",
+    "đường đèo / đóng băng / chắc chắn / sẽ bị",
+    "toàn bộ / chị / hoàn lại / sẽ được"
+   ]
+  }
+ ],
+ "answers": [
+  "Theo dự báo, ngày mai Hà Nội sẽ rét đậm. — Không khí lạnh dự kiến sẽ tràn về vào đêm thứ tư. — Học sinh mầm non và tiểu học sẽ được nghỉ học. — Cáp treo sẽ bị tạm dừng trong hai ngày. — Nhiều đường đèo bị đóng băng. — Khách sẽ được hoàn lại toàn bộ tiền.",
+  "bị — được — bị — được — bị — được — bị",
+  "Các chuyến xe khách sẽ bị hủy. — Học sinh sẽ được nghỉ học. — Khách sẽ được hoàn tiền. — Cáp treo sẽ bị tạm dừng. — Chăn ấm sẽ được gửi đến vùng cao. — Nhiều hoa màu sẽ bị hỏng.",
+  "Theo dự báo, không khí lạnh sẽ tràn về đêm nay. — Học sinh vùng cao sẽ được nghỉ học. — Cáp treo dự kiến sẽ bị tạm dừng. — Đường đèo chắc chắn sẽ bị đóng băng. — Chị sẽ được hoàn lại toàn bộ."
+ ]
+}

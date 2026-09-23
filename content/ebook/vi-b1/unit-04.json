@@ -1,0 +1,700 @@
+{
+ "title": "Surel resmi — ragam tulis dan kata Hán-Việt",
+ "title_target": "Kính gửi Quý khách",
+ "goal": "Menulis dan membalas surel pelanggan dengan bahasa yang pantas, lalu menjelaskan isinya kembali dengan bahasa lisan di telepon. Titik tata bahasanya: **ragam tulis resmi** (*Quý khách, Quý công ty, kính mời, xin thông báo, rất mong nhận được*) dan pasangan **kata Hán-Việt resmi vs kata sehari-hari** (*thay đổi / đổi, hủy / bỏ, hoàn tiền / trả lại tiền*).",
+ "bekal": [
+  "membuka, mengisi, dan menutup surel resmi: *Kính gửi … / Chúng tôi xin xác nhận … / Trân trọng*",
+  "mengganti kata lisan dengan padanan Hán-Việt yang resmi",
+  "menerjemahkan kalimat surel yang kaku kembali ke bahasa percakapan untuk pelanggan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sửa email cho khách",
+   "intro": "Pertengahan November. Anh Khôi, pelanggan dari Hà Nội, memesan tur keluarga ke Bali dan meminta dua hal lewat surel: mengganti tanggal berangkat, dan uang muka ibunya dikembalikan karena beliau tidak bisa ikut. Budi sudah menulis balasan, dan chị Hương membacanya di layar.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, chị xem giúp em email trả lời anh Khôi được không ạ?",
+     "id": "Mbak, bisa tolong lihat surel balasan saya untuk Mas Khôi?",
+     "literal": "kakak hai, kakak lihat tolong adik email jawab kakak Khôi dapat tidak ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Để chị xem. \"Chào anh Khôi\"… Không được em ạ. Thư gửi khách phải mở đầu bằng \"Kính gửi\".",
+     "id": "Coba kulihat. \"Halo Mas Khôi\"… Tidak bisa begitu. Surat untuk pelanggan harus dibuka dengan \"Kính gửi\".",
+     "literal": "biar kakak lihat. salam kakak Khôi… tidak dapat adik ya. surat kirim tamu harus buka awal dengan hormat kirim."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Thế em viết \"Kính gửi anh Nguyễn Minh Khôi\" ạ?",
+     "id": "Baik. Jadi saya tulis \"Kính gửi Mas Nguyễn Minh Khôi\"?",
+     "literal": "iya. begitu adik tulis hormat kirim kakak Nguyễn Minh Khôi ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Được. Nhưng trong thư thì gọi khách là \"Quý khách\", không gọi \"anh\".",
+     "id": "Boleh. Tapi di dalam surat, sebut pelanggan \"Quý khách\", bukan \"anh\".",
+     "literal": "dapat. tetapi dalam surat maka panggil tamu adalah mulia tamu, tidak panggil kakak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Câu tiếp theo em viết: \"Em nhận được email của anh rồi.\"",
+     "id": "Kalimat berikutnya saya tulis: \"Saya sudah terima surel Mas.\"",
+     "literal": "kalimat sambung ikut adik tulis: adik terima dapat email punya kakak sudah."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Nói thì được, viết thì phải khác.",
+     "id": "Kalau diucapkan boleh, kalau ditulis harus lain.",
+     "literal": "bicara maka dapat, tulis maka harus lain."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Sen Travel đã nhận được email của Quý khách.",
+     "id": "Sen Travel telah menerima surel Bapak/Ibu.",
+     "literal": "Sen Travel telah terima dapat email punya mulia tamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế em không xưng \"em\" nữa ạ?",
+     "id": "Jadi saya tidak menyebut diri \"em\" lagi?",
+     "literal": "begitu adik tidak sebut-diri adik lagi ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Không. Trong thư công việc, mình xưng \"chúng tôi\", tức là cả công ty.",
+     "id": "Tidak. Di surat kerja, kita menyebut diri \"chúng tôi\", artinya seluruh perusahaan.",
+     "literal": "tidak. dalam surat pekerjaan, kita sebut-diri kami, yaitu adalah seluruh perusahaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rồi em viết: \"Bọn em đổi ngày được, nhưng không trả lại tiền được.\"",
+     "id": "Lalu saya tulis: \"Kami bisa ganti tanggal, tapi tidak bisa balikin uang.\"",
+     "literal": "lalu adik tulis: kelompok adik ganti tanggal dapat, tetapi tidak kembalikan uang dapat."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Chúng tôi xin xác nhận thay đổi ngày khởi hành.",
+     "id": "Dengan ini kami mengonfirmasi perubahan tanggal keberangkatan.",
+     "literal": "kami mohon konfirmasi ubah tanggal berangkat."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Rất tiếc, theo điều khoản, khoản đặt cọc không được hoàn lại.",
+     "id": "Mohon maaf, sesuai ketentuan, uang muka tidak dapat dikembalikan.",
+     "literal": "sangat sayang, menurut pasal, jumlah taruh-jaminan tidak dapat kembalikan kembali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hay quá. Còn cuối thư, em viết \"Cảm ơn anh, chào anh\" được không ạ?",
+     "id": "Bagus sekali. Lalu di akhir surat, boleh saya tulis \"Makasih, Mas, salam\"?",
+     "literal": "bagus sangat. lalu akhir surat, adik tulis terima-budi kakak, salam kakak dapat tidak ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Rất mong nhận được phản hồi của Quý khách.",
+     "id": "Kami sangat mengharapkan tanggapan Bapak/Ibu.",
+     "literal": "sangat harap terima dapat tanggapan punya mulia tamu."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Sau đó là \"Trân trọng\", rồi tên em và chức vụ. Thế là xong!",
+     "id": "Sesudah itu \"Hormat kami\", lalu namamu dan jabatanmu. Beres!",
+     "literal": "sesudah itu adalah hormat-hargai, lalu nama adik dan jabatan. begitu adalah selesai!"
+    }
+   ],
+   "notes": [
+    "**Kính gửi** — \"dengan hormat dikirimkan kepada\", pembuka baku setiap surat resmi. Ia diikuti nama dan gelar: *Kính gửi Quý khách*, *Kính gửi anh Nguyễn Minh Khôi*, *Kính gửi Quý công ty*. Jangan pernah membuka surel pelanggan dengan *Chào anh* atau *Hi*.",
+    "**Quý khách** — \"tamu yang terhormat\". *Quý* (berharga, mulia) ditempelkan di depan kata benda untuk menghormati pembaca: *Quý khách*, *Quý công ty*, *Quý vị* (hadirin). Di dalam surat, *Quý khách* menggantikan *anh/chị* sepenuhnya dan biasanya ditulis dengan huruf kapital.",
+    "**Nói thì được, viết thì phải khác** — *thì* di sini memisahkan dua topik yang dibandingkan: \"kalau bicara, boleh; kalau menulis, harus lain\". Pola kontras ini akan dibahas lengkap di unit 10.",
+    "**Chúng tôi**, bukan **em** — dalam surat resmi, penulis berbicara atas nama lembaga. *Chúng tôi* (kami, tanpa pembaca) menggantikan kata ganti pribadi; bahkan chị Hương sang direktur pun menulis *chúng tôi*. *Bọn em* di draf Budi terlalu santai: *bọn* adalah jamak akrab yang dipakai antarteman.",
+    "**Xin** di depan kata kerja resmi — *xin xác nhận*, *xin thông báo*, *xin gửi* — melunakkan pernyataan menjadi \"dengan ini kami …\". Tanpa *xin* kalimatnya tetap benar, tapi terasa seperti perintah dari kantor pajak.",
+    "**Trân trọng** — \"hormat kami\", penutup baku sebelum tanda tangan. Variasi: *Trân trọng cảm ơn* (terima kasih dengan hormat). Di bawahnya: nama, jabatan (*chức vụ*), perusahaan, dan nomor telepon."
+   ],
+   "grammars": [
+    {
+     "title": "Dari lisan ke tulisan",
+     "body": [
+      "Draf pertama Budi tidak salah tata bahasanya; ia hanya ditulis dengan suara percakapan. Tabel ini memperlihatkan penggantian yang dilakukan chị Hương."
+     ],
+     "table": {
+      "head": [
+       "Lisan (draf Budi)",
+       "Tulisan resmi",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*em*, *bọn em*",
+        "*chúng tôi*",
+        "saya, kami"
+       ],
+       [
+        "*anh* (pelanggan)",
+        "*Quý khách*",
+        "Bapak/Ibu"
+       ],
+       [
+        "*nhận được rồi*",
+        "*đã nhận được*",
+        "telah menerima"
+       ],
+       [
+        "*đổi ngày*",
+        "*thay đổi ngày khởi hành*",
+        "perubahan tanggal keberangkatan"
+       ],
+       [
+        "*trả lại tiền*",
+        "*hoàn tiền*, *hoàn lại*",
+        "mengembalikan dana"
+       ],
+       [
+        "*không được đâu*",
+        "*rất tiếc, … không thể …*",
+        "mohon maaf, tidak dapat"
+       ],
+       [
+        "*anh trả lời em nhé*",
+        "*rất mong nhận được phản hồi*",
+        "kami menantikan tanggapan"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa **partikel ujung menghilang** di tulisan resmi: tidak ada *nhé*, *ạ*, *nhỉ*, *đâu*. Kesopanan dipindahkan dari ujung kalimat ke kata-kata di awalnya: *xin*, *kính*, *rất mong*, *Quý*.",
+      "*Rồi* (sudah) di ujung kalimat juga terasa lisan; di tulisan, tanda waktunya pindah ke depan kata kerja: *đã nhận được*."
+     ]
+    },
+    {
+     "title": "Kerangka surel resmi",
+     "body": [
+      "Hampir semua surel bisnis Vietnam mengikuti urutan ini. Hafalkan kerangkanya, lalu isi bagian tengah."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Rumus",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Perihal (*tiêu đề*)",
+        "*V/v* + isi",
+        "*V/v: Xác nhận thay đổi ngày khởi hành*"
+       ],
+       [
+        "Salam",
+        "*Kính gửi* + pembaca,",
+        "*Kính gửi Quý khách Nguyễn Minh Khôi,*"
+       ],
+       [
+        "Pembuka",
+        "*… xin cảm ơn … đã …*",
+        "*Sen Travel xin cảm ơn Quý khách đã tin tưởng dịch vụ của chúng tôi.*"
+       ],
+       [
+        "Isi",
+        "*Chúng tôi xin thông báo / xác nhận …*",
+        "*Chúng tôi xin xác nhận …*"
+       ],
+       [
+        "Tawaran bantuan",
+        "*Nếu cần hỗ trợ thêm, …*",
+        "*Nếu cần hỗ trợ thêm, Quý khách vui lòng liên hệ …*"
+       ],
+       [
+        "Penutup",
+        "*Rất mong nhận được …*",
+        "*Rất mong nhận được phản hồi của Quý khách.*"
+       ],
+       [
+        "Salam akhir",
+        "*Trân trọng,*",
+        "nama, jabatan, perusahaan, nomor telepon"
+       ]
+      ]
+     },
+     "after": [
+      "*Vui lòng* (mohon dengan senang hati) adalah kata permintaan resmi untuk pembaca: *Quý khách vui lòng gửi thông tin hộ chiếu.* Ia menggantikan *giúp em* dan *nhé* dari bahasa lisan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Anh đọc email rồi",
+   "intro": "Satu jam sesudah surel terkirim, telepon kantor berdering. Anh Khôi, sekitar tiga puluh lima tahun, sudah membacanya, tapi ada beberapa kalimat yang membuatnya ragu.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Sen Travel xin nghe ạ.",
+     "id": "Sen Travel, selamat siang.",
+     "literal": "Sen Travel mohon dengar ya."
+    },
+    {
+     "speaker": "Khôi:",
+     "text": "Chào em, anh là Khôi. Anh đọc email rồi, nhưng có mấy chỗ chưa rõ.",
+     "id": "Halo, saya Khôi. Saya sudah baca surelnya, tapi ada beberapa bagian yang belum jelas.",
+     "literal": "salam adik, kakak adalah Khôi. kakak baca email sudah, tetapi ada beberapa tempat belum jelas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em chào anh Khôi. Anh chưa rõ chỗ nào ạ?",
+     "id": "Halo Mas Khôi. Bagian mana yang belum jelas?",
+     "literal": "iya, adik salam kakak Khôi. kakak belum jelas tempat mana ya?"
+    },
+    {
+     "speaker": "Khôi:",
+     "text": "\"Xác nhận thay đổi ngày khởi hành\" tức là đổi xong rồi hả em?",
+     "id": "\"Mengonfirmasi perubahan tanggal keberangkatan\" itu artinya sudah beres diganti?",
+     "literal": "konfirmasi ubah tanggal berangkat yaitu adalah ganti selesai sudah ya adik?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ vâng. Gia đình anh sẽ bay ngày hai mươi tám tháng Mười Hai ạ.",
+     "id": "Iya. Keluarga Mas akan terbang tanggal dua puluh delapan Desember.",
+     "literal": "iya iya. keluarga kakak akan terbang tanggal dua puluh delapan bulan dua belas ya."
+    },
+    {
+     "speaker": "Khôi:",
+     "text": "Còn \"khoản đặt cọc không được hoàn lại\" nghĩa là mẹ anh mất tiền cọc à?",
+     "id": "Lalu \"uang muka tidak dapat dikembalikan\" artinya ibu saya kehilangan uang mukanya?",
+     "literal": "lalu jumlah taruh-jaminan tidak dapat kembalikan kembali artinya adalah ibu kakak hilang uang jaminan ya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rất tiếc là vậy ạ. Nhưng anh có thể đổi tên cho người khác đi thay bác.",
+     "id": "Sayangnya begitu. Tapi Mas bisa ganti nama supaya orang lain berangkat menggantikan beliau.",
+     "literal": "sangat sayang adalah begitu ya. tetapi kakak bisa ganti nama beri orang lain pergi ganti bude."
+    },
+    {
+     "speaker": "Khôi:",
+     "text": "À, thế thì em gái anh đi thay nhé.",
+     "id": "Oh, kalau begitu adik perempuan saya yang berangkat menggantikan.",
+     "literal": "ah, begitu maka adik perempuan kakak pergi ganti ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ được ạ. Anh gửi em thông tin hộ chiếu của chị ấy nhé.",
+     "id": "Bisa. Tolong kirimkan data paspor beliau ke saya ya.",
+     "literal": "iya dapat ya. kakak kirim adik informasi paspor punya kakak itu ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em sẽ xác nhận lại bằng email ạ.",
+     "id": "Nanti saya konfirmasi ulang lewat surel.",
+     "literal": "adik akan konfirmasi kembali dengan email ya."
+    },
+    {
+     "speaker": "Khôi:",
+     "text": "Được. Mà email của công ty em viết lịch sự thật đấy!",
+     "id": "Oke. Omong-omong, surel kantormu sopan sekali lho!",
+     "literal": "dapat. tapi email punya perusahaan adik tulis sopan sungguh tuh!"
+    }
+   ],
+   "notes": [
+    "**Sen Travel xin nghe ạ** — cara baku menjawab telepon kantor: nama lembaga + *xin nghe* (\"mohon, kami mendengarkan\"). Bandingkan dengan *Em nghe đây* untuk telepon pribadi di A1.",
+    "**Tức là** — \"artinya, yaitu\". Alat terpenting saat menjelaskan ulang: *Tức là đổi xong rồi ạ.* Sepupunya *nghĩa là* (berarti) muncul di pertanyaan anh Khôi berikutnya. Keduanya membawa pembicaraan dari bahasa surel ke bahasa sehari-hari.",
+    "**Budi memakai dua ragam dalam satu jam.** Di surel ia menulis *Quý khách* dan *chúng tôi*; di telepon ia kembali ke *anh* dan *em*. Memakai *Quý khách* di telepon dengan pelanggan yang sudah akrab justru terdengar dingin.",
+    "**Bác** — Budi menyebut ibu anh Khôi *bác*, karena beliau seumuran orang tua Budi atau lebih tua. Adik perempuan anh Khôi disebutnya *chị ấy*: Budi tidak tahu umurnya, dan memilih kata ganti yang lebih tinggi selalu lebih aman.",
+    "**Đi thay** — \"berangkat menggantikan\". *Thay* (mengganti) di belakang kata kerja berarti \"menggantikan orang lain melakukan\": *làm thay*, *trả lời thay*. Di tulisan resmi: *thay thế*.",
+    "**Mà** di awal kalimat terakhir berarti \"omong-omong, ngomong-ngomong\", mengubah topik dengan ringan. *Mà* punya banyak fungsi; konteks selalu menentukan artinya."
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan surel dengan bahasa lisan",
+     "body": [
+      "Saat pelanggan menelepon tentang surelmu, terjemahkan dulu kalimat resmi ke bahasa percakapan. Arah penggantiannya kebalikan dari dialog pertama."
+     ],
+     "table": {
+      "head": [
+       "Di surel",
+       "Di telepon",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Chúng tôi xin xác nhận …*",
+        "*Dạ, em … xong rồi ạ.*",
+        "sudah beres"
+       ],
+       [
+        "*… không được hoàn lại.*",
+        "*… không lấy lại được ạ.*",
+        "tidak bisa diambil kembali"
+       ],
+       [
+        "*Quý khách vui lòng gửi …*",
+        "*Anh gửi em … nhé.*",
+        "tolong kirimkan"
+       ],
+       [
+        "*trong thời gian sớm nhất*",
+        "*sớm nhất có thể*",
+        "secepatnya"
+       ],
+       [
+        "*hủy dịch vụ*",
+        "*bỏ tour*",
+        "membatalkan"
+       ],
+       [
+        "*phản hồi*",
+        "*trả lời*",
+        "membalas"
+       ]
+      ]
+     },
+     "after": [
+      "Kalimat penghubungnya: *Ý của công ty là …* (maksud kantor kami …) atau *Nói đơn giản là …* (sederhananya …). Dengan dua kalimat ini kamu bisa menjelaskan surel apa pun tanpa terdengar menggurui."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Surel lengkap Budi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*V/v: Xác nhận thay đổi ngày khởi hành tour Bali*",
+       "Perihal: Konfirmasi perubahan tanggal keberangkatan tur Bali"
+      ],
+      [
+       "*Kính gửi Quý khách Nguyễn Minh Khôi,*",
+       "Yth. Bapak Nguyễn Minh Khôi,"
+      ],
+      [
+       "*Sen Travel đã nhận được email của Quý khách. Xin cảm ơn Quý khách đã tin tưởng dịch vụ của chúng tôi.*",
+       "Sen Travel telah menerima surel Bapak. Terima kasih atas kepercayaan Bapak pada layanan kami."
+      ],
+      [
+       "*Chúng tôi xin xác nhận thay đổi ngày khởi hành từ ngày 20/12 sang ngày 28/12.*",
+       "Kami mengonfirmasi perubahan tanggal keberangkatan dari 20/12 menjadi 28/12."
+      ],
+      [
+       "*Rất tiếc, theo điều khoản, khoản đặt cọc không được hoàn lại. Tuy nhiên, Quý khách có thể chuyển suất cho người khác.*",
+       "Mohon maaf, sesuai ketentuan, uang muka tidak dapat dikembalikan. Namun, Bapak dapat mengalihkan tempat itu kepada orang lain."
+      ],
+      [
+       "*Nếu cần hỗ trợ thêm, Quý khách vui lòng liên hệ số điện thoại bên dưới.*",
+       "Bila memerlukan bantuan lebih lanjut, silakan hubungi nomor di bawah."
+      ],
+      [
+       "*Rất mong nhận được phản hồi của Quý khách.*",
+       "Kami menantikan tanggapan Bapak."
+      ],
+      [
+       "*Trân trọng,* / *Budi, Nhân viên tư vấn, Sen Travel*",
+       "Hormat kami, / Budi, Staf Konsultan, Sen Travel"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa tanggal di surel ditulis *ngày/tháng* dengan angka, urutannya sama dengan kebiasaan Indonesia. *Tuy nhiên* (namun) adalah saudara tulis dari *nhưng*; di surel resmi ia lebih sering dipakai di awal kalimat."
+    },
+    {
+     "type": "kotak",
+     "title": "Kebiasaan surel dan pesan kerja di Vietnam",
+     "items": [
+      "**Zalo sama pentingnya dengan surel.** Banyak urusan kerja, termasuk dengan pelanggan, berlangsung di Zalo, aplikasi pesan buatan Vietnam. Surel dipakai untuk hal yang perlu jejak resmi: konfirmasi, kontrak, faktur.",
+      "**Huruf kapital sebagai hormat.** *Quý khách*, *Quý công ty*, dan kadang *Anh/Chị* di dalam surat ditulis dengan huruf kapital untuk menghormati pembaca.",
+      "**Tanda tangan lengkap.** Surel kerja ditutup dengan nama, jabatan, perusahaan, alamat, dan nomor telepon. Surel tanpa jabatan terasa seperti surel pribadi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata Hán-Việt untuk surat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hán-Việt (tulisan)",
+      "Kata sehari-hari",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*thông báo*",
+       "*báo*, *nói*",
+       "memberitahukan"
+      ],
+      [
+       "*xác nhận*",
+       "*nói là được rồi*",
+       "mengonfirmasi"
+      ],
+      [
+       "*hủy*",
+       "*bỏ*",
+       "membatalkan"
+      ],
+      [
+       "*hoàn tiền*",
+       "*trả lại tiền*",
+       "mengembalikan dana"
+      ],
+      [
+       "*khởi hành*",
+       "*đi*, *lên đường*",
+       "berangkat"
+      ],
+      [
+       "*phản hồi*",
+       "*trả lời*",
+       "menanggapi"
+      ],
+      [
+       "*hỗ trợ*",
+       "*giúp*",
+       "membantu"
+      ],
+      [
+       "*kính mời*",
+       "*mời*",
+       "dengan hormat mengundang"
+      ],
+      [
+       "*đính kèm*",
+       "*gửi kèm*",
+       "melampirkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata Hán-Việt bagi bahasa Vietnam mirip kata serapan Sanskerta dan Arab bagi bahasa Indonesia: \"memberitahukan\" terasa lebih resmi daripada \"bilang\", sama seperti *thông báo* lebih resmi daripada *báo*. Di unit 9 kamu akan belajar membongkar kata-kata ini per unsur."
+    },
+    {
+     "type": "kotak",
+     "title": "Singkatan yang akan kamu temui",
+     "items": [
+      "*V/v* = *về việc* (perihal), *Cty* = *công ty*, *SĐT* = *số điện thoại* (nomor telepon), *TP.* = *thành phố* (kota), *Q.* = *quận* (distrik kota), *P.* = *phường* (kelurahan).",
+      "*Công ty TNHH* = perseroan terbatas; *TNHH* adalah *trách nhiệm hữu hạn* (tanggung jawab terbatas)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Saya cuma bawa kontrak saja.",
+       "*Em chỉ mang hợp đồng thôi ạ.*"
+      ],
+      [
+       "Dokumennya harus ada cap merah perusahaan baru sah.",
+       "*Giấy tờ phải có dấu đỏ của công ty mới hợp lệ.*"
+      ],
+      [
+       "Betul. Sesudah dokumennya lengkap, baru kamu bisa menyerahkan.",
+       "*Đúng. Sau khi có đủ giấy tờ, anh mới nộp được.*"
+      ],
+      [
+       "Sesudah diserahkan, berapa lama baru kartunya jadi?",
+       "*Nộp xong thì bao lâu mới có thẻ ạ?*"
+      ],
+      [
+       "Cuma Mbak Hương yang bisa tanda tangan surat ini.",
+       "*Chỉ chị Hương mới ký được giấy này.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "kính gửi",
+   "baca": "kíng gửi",
+   "id": "yang terhormat (pembuka surat)"
+  },
+  {
+   "vi": "Quý khách / Quý công ty",
+   "baca": "Kwý khák / Kwý kông ty",
+   "id": "Bapak/Ibu pelanggan / perusahaan Anda (hormat)"
+  },
+  {
+   "vi": "trân trọng",
+   "baca": "cân cọng",
+   "id": "hormat kami"
+  },
+  {
+   "vi": "xác nhận",
+   "baca": "sák nyận",
+   "id": "mengonfirmasi"
+  },
+  {
+   "vi": "thay đổi",
+   "baca": "thay dổi",
+   "id": "mengubah; perubahan"
+  },
+  {
+   "vi": "hủy",
+   "baca": "hủy",
+   "id": "membatalkan"
+  },
+  {
+   "vi": "hoàn tiền / hoàn lại",
+   "baca": "hoàn tiền / hoàn lại",
+   "id": "mengembalikan dana"
+  },
+  {
+   "vi": "đặt cọc / tiền cọc",
+   "baca": "dặt kọk / tiền kọk",
+   "id": "memberi uang muka / uang muka"
+  },
+  {
+   "vi": "khởi hành",
+   "baca": "khởi hàng",
+   "id": "berangkat"
+  },
+  {
+   "vi": "phản hồi",
+   "baca": "fản hồi",
+   "id": "tanggapan; menanggapi"
+  },
+  {
+   "vi": "thông báo",
+   "baca": "thông báo",
+   "id": "memberitahukan; pengumuman"
+  },
+  {
+   "vi": "kính mời",
+   "baca": "kíng mời",
+   "id": "dengan hormat mengundang"
+  },
+  {
+   "vi": "rất mong",
+   "baca": "zất mong",
+   "id": "sangat berharap"
+  },
+  {
+   "vi": "điều khoản",
+   "baca": "diều khoản",
+   "id": "pasal, ketentuan"
+  },
+  {
+   "vi": "yêu cầu",
+   "baca": "yêu kầu",
+   "id": "permintaan; meminta"
+  },
+  {
+   "vi": "vui lòng",
+   "baca": "vui lòng",
+   "id": "mohon, silakan (resmi)"
+  },
+  {
+   "vi": "hỗ trợ",
+   "baca": "hỗ cợ",
+   "id": "membantu, dukungan"
+  },
+  {
+   "vi": "đính kèm",
+   "baca": "díng kèm",
+   "id": "melampirkan"
+  },
+  {
+   "vi": "tiêu đề",
+   "baca": "tiêu dề",
+   "id": "judul, perihal"
+  },
+  {
+   "vi": "chức vụ",
+   "baca": "cứk vụ",
+   "id": "jabatan"
+  },
+  {
+   "vi": "trang trọng",
+   "baca": "cang cọng",
+   "id": "resmi, khidmat"
+  },
+  {
+   "vi": "lịch sự",
+   "baca": "lịk sự",
+   "id": "sopan"
+  },
+  {
+   "vi": "tức là",
+   "baca": "tứk là",
+   "id": "artinya, yaitu"
+  },
+  {
+   "vi": "suất",
+   "baca": "suất",
+   "id": "jatah, tempat (satu orang)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam ragam surat resmi.",
+   "items": [
+    "Kami telah menerima surel Bapak/Ibu.",
+    "Dengan ini kami mengonfirmasi perubahan tanggal keberangkatan.",
+    "Mohon maaf, uang muka tidak dapat dikembalikan.",
+    "Kami dengan hormat mengundang Bapak/Ibu menghadiri acara pembukaan.",
+    "Kami lampirkan jadwal perjalanan.",
+    "Kami sangat mengharapkan tanggapan Bapak/Ibu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ Quý khách Trần Thu Hà, (pembuka surat)",
+    "Chúng tôi xin ____ Quý khách đã đặt tour thành công. (memberitahukan)",
+    "Quý khách ____ gửi thông tin hộ chiếu trước ngày 10/12. (mohon)",
+    "Chúng tôi sẽ ____ tiền trong vòng bảy ngày. (mengembalikan)",
+    "Do thời tiết xấu, chuyến tham quan Hạ Long bị ____. (dibatalkan)",
+    "Xin vui lòng xem lịch trình ____ theo email này. (terlampir)",
+    "____, Nguyễn Thu Hương, Giám đốc Sen Travel (penutup surat)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat lisan menjadi kalimat surel resmi. Contoh: *Em nhận được email của anh rồi.* → *Chúng tôi đã nhận được email của Quý khách.*",
+   "items": [
+    "Bọn em đổi ngày cho anh rồi.",
+    "Anh gửi em số hộ chiếu nhé.",
+    "Em báo anh là tour bị bỏ rồi.",
+    "Tiền cọc không trả lại được đâu anh.",
+    "Anh cần gì thì gọi em nhé.",
+    "Anh trả lời em sớm nhé."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "xin / chúng tôi / thay đổi / xác nhận / ngày khởi hành",
+    "rất mong / của / nhận được / Quý khách / phản hồi",
+    "rất tiếc / khoản đặt cọc / hoàn lại / không được",
+    "em / xác nhận / sẽ / lại / bằng email / ạ",
+    "Sen Travel / email / đã / của / nhận được / Quý khách"
+   ]
+  }
+ ],
+ "answers": [
+  "Chúng tôi đã nhận được email của Quý khách. — Chúng tôi xin xác nhận thay đổi ngày khởi hành. — Rất tiếc, khoản đặt cọc không được hoàn lại. — Chúng tôi trân trọng kính mời Quý khách tham dự lễ khai trương. — Chúng tôi xin gửi kèm lịch trình; hoặc: Lịch trình được đính kèm theo email này. — Rất mong nhận được phản hồi của Quý khách.",
+  "Kính gửi — thông báo — vui lòng — hoàn — hủy — đính kèm — Trân trọng",
+  "Chúng tôi đã thay đổi ngày khởi hành theo yêu cầu của Quý khách. — Quý khách vui lòng gửi số hộ chiếu. — Chúng tôi xin thông báo tour đã bị hủy. — Rất tiếc, khoản đặt cọc không được hoàn lại. — Nếu cần hỗ trợ thêm, Quý khách vui lòng liên hệ với chúng tôi. — Rất mong sớm nhận được phản hồi của Quý khách.",
+  "Chúng tôi xin xác nhận thay đổi ngày khởi hành. — Rất mong nhận được phản hồi của Quý khách. — Rất tiếc, khoản đặt cọc không được hoàn lại. — Em sẽ xác nhận lại bằng email ạ. — Sen Travel đã nhận được email của Quý khách."
+ ]
+}

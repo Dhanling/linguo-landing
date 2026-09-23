@@ -1,0 +1,654 @@
+{
+ "title": "Mengurus kartu izin tinggal — phải … mới, chỉ … thôi",
+ "title_target": "Thủ tục làm thẻ tạm trú",
+ "goal": "Mengurus kartu izin tinggal di kantor imigrasi, memahami apa yang kurang dari berkasmu, dan meminta rekan melengkapinya. Titik tata bahasanya: **mới** sebagai \"baru (bisa)\" dalam *phải … mới …* dan *sau khi … mới …*, serta pembatas **chỉ … thôi** dan **chỉ … mới**.",
+ "bekal": [
+  "menyatakan syarat dengan *phải có dấu thì mới hợp lệ* dan *sau khi có đủ giấy tờ, anh mới nộp được*",
+  "membatasi dengan *chỉ … thôi* (cuma itu) dan *chỉ … mới* (hanya itu yang bisa)",
+  "menyebut dokumen dan menanyakan syarat di loket pemerintah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở phòng xuất nhập cảnh",
+   "intro": "Akhir Oktober. Izin kerja Budi sudah keluar, dan pagi ini ia mengantre di kantor imigrasi Kepolisian Kota Hà Nội dengan map berisi berkas. Petugas di loket, seorang laki-laki berumur tiga puluhan, berbicara cepat dan resmi.",
+   "lines": [
+    {
+     "speaker": "Cán bộ:",
+     "text": "Mời anh ngồi. Anh làm thủ tục gì?",
+     "id": "Silakan duduk. Mau mengurus apa?",
+     "literal": "silakan kakak duduk. kakak buat prosedur apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em muốn làm thẻ tạm trú theo diện lao động ạ.",
+     "id": "Saya mau membuat kartu izin tinggal untuk kategori pekerja.",
+     "literal": "iya, adik mau buat kartu sementara-tinggal menurut golongan kerja ya."
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Anh cho tôi xem hộ chiếu và hồ sơ.",
+     "id": "Coba saya lihat paspor dan berkasnya.",
+     "literal": "kakak beri saya lihat paspor dan berkas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đây ạ. Có tờ khai, ảnh, giấy phép lao động và hợp đồng.",
+     "id": "Ini. Ada formulir, foto, izin kerja, dan kontrak.",
+     "literal": "sini ya. ada lembar-isian, foto, surat-izin kerja dan kontrak."
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Hồ sơ này do công ty bảo lãnh nộp. Giấy giới thiệu của công ty đâu?",
+     "id": "Berkas ini diajukan oleh perusahaan penjamin. Surat tugas dari perusahaannya mana?",
+     "literal": "berkas ini oleh perusahaan jamin serahkan. surat-perkenalan punya perusahaan mana?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em chỉ mang hợp đồng thôi ạ.",
+     "id": "Saya cuma bawa kontrak saja.",
+     "literal": "adik hanya bawa kontrak saja ya."
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Giấy giới thiệu là giấy công ty cử anh đi nộp hồ sơ.",
+     "id": "Surat tugas itu surat dari perusahaan yang menugaskanmu menyerahkan berkas.",
+     "literal": "surat-perkenalan adalah surat perusahaan utus kakak pergi serahkan berkas."
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Giấy tờ phải có dấu đỏ của công ty mới hợp lệ.",
+     "id": "Dokumennya harus ada cap merah perusahaan baru sah.",
+     "literal": "dokumen harus ada cap merah punya perusahaan baru sah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế em phải về công ty lấy giấy rồi mới nộp được ạ?",
+     "id": "Jadi saya harus kembali ke kantor ambil suratnya dulu, baru bisa menyerahkan?",
+     "literal": "begitu adik harus pulang perusahaan ambil surat sudah baru serahkan dapat ya?"
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Đúng. Sau khi có đủ giấy tờ, anh mới nộp được.",
+     "id": "Betul. Sesudah dokumennya lengkap, baru kamu bisa menyerahkan.",
+     "literal": "benar. sesudah ada cukup dokumen, kakak baru serahkan dapat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nộp xong thì bao lâu mới có thẻ ạ?",
+     "id": "Sesudah diserahkan, berapa lama baru kartunya jadi?",
+     "literal": "serahkan selesai maka berapa lama baru ada kartu ya?"
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Khoảng năm ngày làm việc. Anh cầm giấy hẹn đến lấy thẻ là được.",
+     "id": "Kira-kira lima hari kerja. Datang ambil kartunya dengan membawa tanda terima, sudah cukup.",
+     "literal": "kira-kira lima hari buat kerja. kakak pegang kertas-janji datang ambil kartu adalah bisa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn ảnh này dùng được không ạ?",
+     "id": "Lalu foto ini bisa dipakai?",
+     "literal": "lalu foto ini pakai dapat tidak ya?"
+    },
+    {
+     "speaker": "Cán bộ:",
+     "text": "Chưa được. Ảnh phải cỡ hai nhân ba, nền trắng. Anh chụp lại nhé.",
+     "id": "Belum bisa. Foto harus ukuran dua kali tiga, latar putih. Foto ulang ya.",
+     "literal": "belum dapat. foto harus ukuran dua kali tiga, latar putih. kakak potret kembali ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Em cảm ơn anh. Chiều nay em quay lại ạ.",
+     "id": "Baik. Terima kasih, Pak. Siang nanti saya kembali.",
+     "literal": "iya. adik terima budi kakak. sore ini adik putar kembali ya."
+    }
+   ],
+   "notes": [
+    "⚠️ **Petugas memanggil Budi *anh* dan menyebut dirinya *tôi*.** Di kantor pemerintah, petugas biasanya memakai *tôi* yang netral dan berjarak, bukan *em* seperti resepsionis hotel di unit 19 A1. Budi tetap memanggilnya *anh* dan menyebut diri *em* karena petugas itu lebih tua; itu sopan dan tidak salah. Yang penting, jangan membalas dengan *tôi – anh* yang dingin kepada orang yang sedang menolongmu.",
+    "**Theo diện lao động** — *diện* berarti \"golongan, kategori\" dalam urusan administrasi: *diện du lịch* (turis), *diện lao động* (pekerja), *diện thăm thân* (kunjungan keluarga). Kartu izin tinggal Vietnam dikeluarkan menurut diện visamu.",
+    "**Do công ty bảo lãnh nộp** — *do* + pelaku + kata kerja berarti \"dilakukan oleh\", pola resmi dari unit 6 A2. *Bảo lãnh* berarti \"menjamin, mensponsori\": untuk kartu izin tinggal pekerja, perusahaanlah yang menjadi penjamin dan mengajukan berkas.",
+    "**Chỉ … thôi** — *chỉ* di depan kata kerja dan *thôi* di ujung kalimat mengapit apa yang dibatasi: *Em chỉ mang hợp đồng thôi* (saya cuma bawa kontrak). Salah satunya boleh dijatuhkan, tapi berdua mereka terdengar paling alami.",
+    "**Phải có dấu đỏ … mới hợp lệ** — di sini *mới* bukan \"baru saja\" (unit 1 A2), melainkan \"baru (bisa terjadi)\": syaratnya di depan, hasilnya di belakang *mới*. Bandingkan dengan bahasa Indonesia \"harus ada cap, baru sah\"; urutannya sama persis.",
+    "**Hai nhân ba** — \"dua kali tiga\" (sentimeter). *Nhân* adalah \"kali\" dalam perkalian; ukuran foto dan kamar disebut dengan cara ini: *phòng bốn nhân năm* (kamar 4×5 meter)."
+   ],
+   "grammars": [
+    {
+     "title": "Mới: syarat dulu, baru hasil",
+     "body": [
+      "*Mới* di depan kata kerja utama menandai bahwa sesuatu **baru** terjadi sesudah syarat terpenuhi, atau lebih lambat dari dugaan. Syaratnya bisa dibuka dengan beberapa kata."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*phải* A *(thì) mới* B",
+        "harus A, baru B",
+        "*Phải có giấy giới thiệu thì mới nộp được.*"
+       ],
+       [
+        "*sau khi* A, *mới* B",
+        "sesudah A, baru B",
+        "*Sau khi ký hợp đồng, em mới làm giấy phép.*"
+       ],
+       [
+        "A *rồi mới* B",
+        "A dulu, baru B",
+        "*Em về công ty lấy giấy rồi mới nộp.*"
+       ],
+       [
+        "*có* A *mới* B",
+        "ada A, baru B",
+        "*Có vé mới được vào.*"
+       ],
+       [
+        "waktu + *mới* + kata kerja",
+        "baru (terlambat)",
+        "*Năm ngày nữa mới có thẻ.*"
+       ],
+       [
+        "*bao lâu mới* …?",
+        "berapa lama baru …?",
+        "*Bao lâu mới có kết quả ạ?*"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk negatifnya memakai *không … thì không …* atau cukup *chưa*: *Không có dấu thì không hợp lệ.* (Tanpa cap, tidak sah.)",
+      "⚠️ Jangan tertukar dengan *mới* \"baru saja\" dari A2: *Em mới nộp hồ sơ.* = Saya baru saja menyerahkan berkas. Di pola syarat, *mới* selalu didahului oleh syarat atau keterangan waktu."
+     ]
+    },
+    {
+     "title": "Kata-kata di map dokumen",
+     "body": [
+      "Kata-kata ini akan ditanyakan petugas, dan hampir semuanya kata Hán-Việt resmi. Pelajari berpasangan."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*bản gốc*",
+        "asli",
+        "*bản sao*",
+        "salinan"
+       ],
+       [
+        "*chứng thực*",
+        "legalisasi salinan",
+        "*công chứng*",
+        "pengesahan notaris"
+       ],
+       [
+        "*hợp lệ*",
+        "sah, memenuhi syarat",
+        "*không hợp lệ*",
+        "tidak sah"
+       ],
+       [
+        "*đủ*",
+        "lengkap, cukup",
+        "*thiếu*",
+        "kurang"
+       ],
+       [
+        "*bổ sung*",
+        "melengkapi",
+        "*nộp lại*",
+        "menyerahkan ulang"
+       ],
+       [
+        "*hết hạn*",
+        "kedaluwarsa",
+        "*gia hạn*",
+        "memperpanjang"
+       ],
+       [
+        "*giấy hẹn*",
+        "tanda terima berjadwal",
+        "*lệ phí*",
+        "biaya resmi"
+       ]
+      ]
+     },
+     "after": [
+      "*Hồ sơ thiếu* (berkas kurang) dan *bổ sung hồ sơ* (lengkapi berkas) adalah dua kalimat yang paling ditakuti di loket mana pun. Kabar baiknya: petugas biasanya menyebut dengan jelas apa yang kurang, dan kamu bisa minta ia menuliskannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Thiếu giấy giới thiệu",
+   "intro": "Di luar kantor imigrasi, Budi menelepon Mai di kantor. Mai yang biasanya menyiapkan dokumen perusahaan.",
+   "lines": [
+    {
+     "speaker": "Mai:",
+     "text": "A lô, em nghe đây anh ơi.",
+     "id": "Halo, ya Mas, aku dengar.",
+     "literal": "halo, adik dengar sini kakak hai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mai ơi, hồ sơ thẻ tạm trú của anh thiếu giấy giới thiệu.",
+     "id": "Mai, berkas kartu izin tinggalku kurang surat tugas.",
+     "literal": "Mai hai, berkas kartu sementara-tinggal punya kakak kurang surat-perkenalan."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Ôi, em xin lỗi anh! Em làm ngay bây giờ.",
+     "id": "Aduh, maaf Mas! Aku buat sekarang juga.",
+     "literal": "aduh, adik mohon maaf kakak! adik buat segera sekarang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nhưng giấy phải có chữ ký và dấu thì mới được.",
+     "id": "Tapi suratnya harus ada tanda tangan dan cap baru bisa.",
+     "literal": "tetapi surat harus ada tanda-tangan dan cap maka baru dapat."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Chỉ chị Hương mới ký được giấy này.",
+     "id": "Cuma Mbak Hương yang bisa tanda tangan surat ini.",
+     "literal": "hanya kakak Hương baru tanda-tangan dapat surat ini."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Mà chị ấy đang đi gặp khách, khoảng hai giờ mới về.",
+     "id": "Padahal dia lagi keluar ketemu klien, sekitar jam dua baru kembali.",
+     "literal": "tapi kakak itu sedang pergi temui tamu, kira-kira jam dua baru pulang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế là chiều anh mới nộp được.",
+     "id": "Berarti aku baru bisa menyerahkan siang nanti.",
+     "literal": "begitu adalah sore kakak baru serahkan dapat."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Chị ấy ký xong là em mang sang cho anh luôn.",
+     "id": "Begitu dia selesai tanda tangan, aku langsung antar ke Mas.",
+     "literal": "kakak itu tanda-tangan selesai adalah adik bawa seberang beri kakak sekalian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cảm ơn em. Trong lúc đợi, anh đi chụp lại ảnh nền trắng.",
+     "id": "Makasih. Sambil menunggu, aku foto ulang dengan latar putih.",
+     "literal": "terima budi adik. dalam waktu tunggu, kakak pergi potret kembali foto latar putih."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Gần đấy có hiệu ảnh lấy ngay đấy anh. Chỉ mười lăm phút thôi.",
+     "id": "Dekat situ ada studio foto kilat, Mas. Cuma lima belas menit.",
+     "literal": "dekat situ ada toko foto ambil segera tuh kakak. hanya lima belas menit saja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ừ. Hai rưỡi mình gặp nhau ở cổng nhé.",
+     "id": "Oke. Jam setengah tiga kita ketemu di gerbang ya.",
+     "literal": "iya. dua setengah kita temu satu-sama-lain di gerbang ya."
+    }
+   ],
+   "notes": [
+    "**Em nghe đây anh ơi** — cara menjawab telepon dari unit 20 A1, kini dengan *anh ơi* karena Mai tahu siapa yang menelepon. Perhatikan bahwa Budi menyebut diri *anh* kepada Mai sepanjang dialog, sesuai kesepakatan di unit 1.",
+    "**Chỉ chị Hương mới ký được** — *chỉ* + orang + *mới* berarti \"hanya dia yang bisa\". Ini berbeda dari *chỉ … thôi*: yang pertama menyatakan **siapa satu-satunya yang mampu atau berhak**, yang kedua menyatakan **jumlah yang sedikit**.",
+    "**Mà chị ấy đang đi gặp khách** — *mà* di awal kalimat berarti \"padahal, tapi masalahnya\", menambahkan halangan pada hal yang baru disebut. Nadanya lisan.",
+    "**Ký xong là em mang sang** — *… là …* di sini berarti \"begitu …, langsung …\". Pola lengkapnya (*hễ … là …*) akan kamu pelajari di unit 17; untuk sekarang, pahami saja maknanya.",
+    "**Hiệu ảnh lấy ngay** — studio foto kilat. *Hiệu* adalah \"toko\" dalam ragam utara (*hiệu sách*, *hiệu thuốc*); *lấy ngay* berarti \"bisa langsung diambil\". Di sekitar kantor pemerintah hampir selalu ada kios foto dan fotokopi.",
+    "**Hai rưỡi** — \"setengah tiga\". *Rưỡi* (setengah) hanya dipakai di belakang angka: *hai giờ rưỡi*, *một cân rưỡi*. Budi memakai *mình* = \"kita\" kepada Mai; ini akrab dan pas."
+   ],
+   "grammars": [
+    {
+     "title": "Chỉ … thôi atau chỉ … mới?",
+     "body": [
+      "Keduanya membatasi, tapi yang dibatasi berbeda. Perhatikan letak *mới*: ia selalu berdiri tepat sebelum kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Makna",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*chỉ* + kata kerja … *thôi*",
+        "hanya sedikit, cuma itu",
+        "*Em chỉ mang hợp đồng thôi.*",
+        "Saya cuma bawa kontrak."
+       ],
+       [
+        "*chỉ* + jumlah + *thôi*",
+        "tidak lebih dari",
+        "*Chỉ mười lăm phút thôi.*",
+        "Cuma lima belas menit."
+       ],
+       [
+        "*chỉ* + orang/benda + *mới* + kata kerja",
+        "hanya itu yang bisa",
+        "*Chỉ chị Hương mới ký được.*",
+        "Hanya Mbak Hương yang bisa tanda tangan."
+       ],
+       [
+        "*chỉ có* + A + *mới* + kata kerja",
+        "sama, lebih tegas",
+        "*Chỉ có công ty mới nộp được.*",
+        "Hanya perusahaan yang bisa menyerahkan."
+       ],
+       [
+        "*chỉ khi* A *mới* B",
+        "hanya jika A, baru B",
+        "*Chỉ khi đủ giấy tờ mới được nộp.*",
+        "Hanya bila berkas lengkap boleh diserahkan."
+       ]
+      ]
+     },
+     "after": [
+      "Tes cepat: kalau terjemahan Indonesianya memakai \"cuma … saja\", pakai *chỉ … thôi*. Kalau terjemahannya \"hanya … yang (bisa)\", pakai *chỉ … mới*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalimat mới dalam hidup sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Có vé mới được vào.*",
+       "Harus punya tiket baru boleh masuk."
+      ],
+      [
+       "*Ăn cơm rồi mới uống thuốc.*",
+       "Makan dulu, baru minum obat."
+      ],
+      [
+       "*Phải đặt trước mới có bàn.*",
+       "Harus pesan dulu baru dapat meja."
+      ],
+      [
+       "*Đến thứ Hai mới có kết quả.*",
+       "Baru hari Senin hasilnya keluar."
+      ],
+      [
+       "*Mười giờ anh ấy mới đến.*",
+       "Jam sepuluh dia baru datang. (terlambat)"
+      ],
+      [
+       "*Mới tám giờ anh ấy đã đến.*",
+       "Baru jam delapan dia sudah datang. (cepat)"
+      ],
+      [
+       "*Làm xong bài tập rồi mới được chơi.*",
+       "Selesaikan PR dulu, baru boleh main."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua baris *mười giờ … mới* dan *mới tám giờ … đã* adalah pasangan yang sangat berguna. *Mới* sesudah keterangan waktu berarti \"baru, terlambat dari harapan\"; *mới* sebelum keterangan waktu, disusul *đã*, berarti \"baru jam segini, sudah …\", lebih cepat dari harapan. Bahasa Indonesia memakai \"baru\" dan \"sudah\" dengan cara yang hampir sama, jadi percayai rasa bahasamu."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat penyelamat di loket",
+     "items": [
+      "*Anh/chị viết giúp em những giấy tờ còn thiếu được không ạ?* Minta petugas menuliskan daftar kekurangan. Ini menghemat satu perjalanan pulang-pergi.",
+      "*Em nộp bản sao hay bản gốc ạ?* Bawalah keduanya. Banyak kantor meminta salinan yang disahkan (*bản sao có chứng thực*), atau salinan biasa yang dicocokkan dengan aslinya di tempat.",
+      "*Bao giờ em quay lại lấy kết quả ạ?* Tanggal pengambilan biasanya tertulis di *giấy hẹn*; simpan kertas itu baik-baik, karena kamu memerlukannya untuk mengambil kartu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Izin tinggal: gambaran umum",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "*thị thực* / *visa*",
+       "visa",
+       "izin masuk; diberi kode menurut tujuannya"
+      ],
+      [
+       "*thẻ tạm trú*",
+       "kartu izin tinggal sementara",
+       "berlaku beberapa tahun, menggantikan visa"
+      ],
+      [
+       "*giấy phép lao động*",
+       "izin kerja",
+       "diurus perusahaan sebelum kartu tinggal"
+      ],
+      [
+       "*khai báo tạm trú*",
+       "lapor tinggal sementara",
+       "dilakukan tuan rumah atau penginapan ke polisi setempat"
+      ],
+      [
+       "*đơn vị bảo lãnh*",
+       "pihak penjamin",
+       "perusahaan, sekolah, atau keluarga"
+      ],
+      [
+       "*công an phường*",
+       "polisi kelurahan",
+       "tempat lapor tinggal dan urusan lingkungan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Urutannya biasanya begini: perusahaan mengurus *giấy phép lao động*, lalu, sebagai penjamin, mengajukan *thẻ tạm trú* untukmu. Selama itu, pemilik apartemen atau penginapan wajib melaporkan tempat tinggalmu kepada polisi setempat. Aturan dan syarat rinci bisa berubah, jadi selalu tanyakan daftar terbaru kepada perusahaanmu atau langsung di loket."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum berangkat ke kantor imigrasi",
+     "items": [
+      "Bawa paspor asli, salinannya, beberapa foto cadangan, dan pulpen sendiri. Foto dengan latar yang salah adalah alasan penolakan yang paling sering dan paling menyebalkan.",
+      "Ambil nomor antrean (*lấy số thứ tự*) begitu tiba. Datang pagi hampir selalu lebih baik daripada siang.",
+      "Berpakaianlah rapi: celana panjang dan kemeja. Kantor pemerintah Vietnam menghargai penampilan yang pantas, dan itu membuat urusanmu lebih lancar.",
+      "Kalau berkasmu kurang, tetap tenang dan sopan. *Dạ, em cảm ơn anh, em sẽ bổ sung ạ* jauh lebih berguna daripada berdebat."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "thủ tục",
+   "baca": "thủ tụk",
+   "id": "prosedur, urusan administrasi"
+  },
+  {
+   "vi": "thẻ tạm trú",
+   "baca": "thẻ tạm cú",
+   "id": "kartu izin tinggal sementara"
+  },
+  {
+   "vi": "xuất nhập cảnh",
+   "baca": "suất nyập kảng",
+   "id": "keimigrasian (keluar-masuk negara)"
+  },
+  {
+   "vi": "cán bộ",
+   "baca": "kán bộ",
+   "id": "petugas, pegawai negeri"
+  },
+  {
+   "vi": "diện",
+   "baca": "ziện",
+   "id": "golongan, kategori"
+  },
+  {
+   "vi": "bảo lãnh",
+   "baca": "bảo lãng",
+   "id": "menjamin, mensponsori"
+  },
+  {
+   "vi": "giấy giới thiệu",
+   "baca": "zấy zới thiệu",
+   "id": "surat tugas, surat pengantar"
+  },
+  {
+   "vi": "cử",
+   "baca": "kử",
+   "id": "menugaskan, mengutus"
+  },
+  {
+   "vi": "chữ ký",
+   "baca": "cữ ký",
+   "id": "tanda tangan"
+  },
+  {
+   "vi": "dấu / đóng dấu",
+   "baca": "zấu / dóng zấu",
+   "id": "cap / membubuhkan cap"
+  },
+  {
+   "vi": "hợp lệ",
+   "baca": "hợp lệ",
+   "id": "sah, memenuhi syarat"
+  },
+  {
+   "vi": "đủ / thiếu",
+   "baca": "dủ / thiếu",
+   "id": "lengkap, cukup / kurang"
+  },
+  {
+   "vi": "bổ sung",
+   "baca": "bổ sung",
+   "id": "melengkapi, menambahkan"
+  },
+  {
+   "vi": "bản gốc / bản sao",
+   "baca": "bản gốk / bản sao",
+   "id": "asli / salinan"
+  },
+  {
+   "vi": "giấy hẹn",
+   "baca": "zấy hẹn",
+   "id": "tanda terima berjadwal"
+  },
+  {
+   "vi": "kết quả",
+   "baca": "kết kwả",
+   "id": "hasil"
+  },
+  {
+   "vi": "ngày làm việc",
+   "baca": "ngày làm việk",
+   "id": "hari kerja"
+  },
+  {
+   "vi": "ảnh / chụp ảnh",
+   "baca": "ảng / cụp ảng",
+   "id": "foto / memotret"
+  },
+  {
+   "vi": "nền",
+   "baca": "nền",
+   "id": "latar (foto)"
+  },
+  {
+   "vi": "cỡ",
+   "baca": "kỡ",
+   "id": "ukuran"
+  },
+  {
+   "vi": "hết hạn / gia hạn",
+   "baca": "hết hạn / za hạn",
+   "id": "kedaluwarsa / memperpanjang"
+  },
+  {
+   "vi": "số thứ tự",
+   "baca": "số thứ tự",
+   "id": "nomor antrean"
+  },
+  {
+   "vi": "mới (+ kata kerja)",
+   "baca": "mới (+ kata kerja)",
+   "id": "baru (bisa, terjadi)"
+  },
+  {
+   "vi": "chỉ … thôi",
+   "baca": "cỉ … thôi",
+   "id": "cuma … saja"
+  },
+  {
+   "vi": "hiệu ảnh",
+   "baca": "hiệu ảng",
+   "id": "studio foto"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Harus ada cap merah, baru sah.",
+    "Sesudah berkasnya lengkap, kamu baru bisa menyerahkan. (petugas kepada Budi)",
+    "Saya cuma bawa paspor saja.",
+    "Hanya direktur yang bisa menandatangani surat ini.",
+    "Berapa lama baru hasilnya keluar?",
+    "Jam sebelas dia baru datang."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *mới*, *thôi*, *chỉ*, *đủ*, atau *thiếu*. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Phải có hộ chiếu thì ____ làm thẻ được. (baru)",
+    "Em chỉ cần hai ảnh ____. (saja)",
+    "____ công ty bảo lãnh mới nộp được hồ sơ này. (hanya)",
+    "Hồ sơ của anh ____ giấy giới thiệu. (kurang)",
+    "Anh đã có ____ giấy tờ chưa? (lengkap)",
+    "Năm ngày nữa ____ có kết quả. (baru)",
+    "Em ____ mang bản sao thôi, không mang bản gốc. (cuma)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan pola dalam kurung. Contoh: *Có giấy giới thiệu. Nộp được.* (phải … mới) → *Phải có giấy giới thiệu mới nộp được.*",
+   "items": [
+    "Có vé. Được vào. (phải … mới)",
+    "Ký hợp đồng. Làm giấy phép lao động. (sau khi … mới)",
+    "Chị Hương ký được. Người khác không ký được. (chỉ … mới)",
+    "Ăn sáng. Uống thuốc. (… rồi mới …)",
+    "Có dấu đỏ. Giấy hợp lệ. (phải … thì mới)",
+    "Em mang hai ảnh. Em không mang gì khác. (chỉ … thôi)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "phải / mới / dấu đỏ / có / hợp lệ / giấy tờ",
+    "sau khi / đủ / giấy tờ / có / anh / nộp được / mới",
+    "chỉ / hợp đồng / em / mang / thôi / ạ",
+    "chỉ / chị Hương / mới / giấy / này / ký được",
+    "bao lâu / thì / nộp xong / có / thẻ / mới / ạ / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Phải có dấu đỏ thì mới hợp lệ. — Sau khi có đủ giấy tờ, anh mới nộp được. — Em chỉ mang hộ chiếu thôi. — Chỉ giám đốc mới ký được giấy này. — Bao lâu mới có kết quả ạ? — Mười một giờ anh ấy mới đến.",
+  "mới — thôi — Chỉ — thiếu — đủ — mới — chỉ",
+  "Phải có vé mới được vào. — Sau khi ký hợp đồng mới làm giấy phép lao động. — Chỉ chị Hương mới ký được. — Ăn sáng rồi mới uống thuốc. — Phải có dấu đỏ thì giấy mới hợp lệ. — Em chỉ mang hai ảnh thôi.",
+  "Giấy tờ phải có dấu đỏ mới hợp lệ. — Sau khi có đủ giấy tờ, anh mới nộp được. — Em chỉ mang hợp đồng thôi ạ. — Chỉ chị Hương mới ký được giấy này. — Nộp xong thì bao lâu mới có thẻ ạ?"
+ ]
+}

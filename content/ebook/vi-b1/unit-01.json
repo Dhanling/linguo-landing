@@ -1,0 +1,657 @@
+{
+ "title": "Kontrak kerja pertama — kata ganti di kantor dan kalimat resmi",
+ "title_target": "Em đã ký hợp đồng rồi",
+ "goal": "Menandatangani kontrak kerja, berkenalan dengan rekan baru, dan menceritakan pekerjaanmu. Titik tata bahasanya: **kata ganti di kantor** (*anh/chị/em*, *sếp*, *các anh chị*, *mọi người*, *chúng ta*) dan tiga penghubung resmi **về việc**, **theo**, **đối với**.",
+ "bekal": [
+  "memilih kata ganti yang pas untuk atasan, rekan senior, dan rekan yang lebih muda, termasuk *xưng anh gọi em*",
+  "menanyakan isi kontrak dengan *về việc …*, *theo hợp đồng …*, dan *đối với …*",
+  "menjelaskan tugas dan jam kerjamu kepada orang di luar kantor"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ký hợp đồng",
+   "intro": "Awal Oktober, kantor Sen Travel di Hoàn Kiếm. Sesudah berbulan-bulan magang, Budi duduk di depan meja chị Hương dengan kontrak kerja pertamanya. Dua rekan yang akan menjadi timnya menunggu di ruang sebelah.",
+   "lines": [
+    {
+     "speaker": "Hương:",
+     "text": "Budi, em ngồi đi. Đây là hợp đồng lao động của em.",
+     "id": "Budi, duduklah. Ini kontrak kerjamu.",
+     "literal": "Budi, adik duduk lah. ini adalah kontrak kerja punya adik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em cảm ơn chị. Hợp đồng này có thời hạn bao lâu ạ?",
+     "id": "Terima kasih, Mbak. Kontrak ini berlaku berapa lama?",
+     "literal": "adik terima budi kakak. kontrak ini ada jangka-waktu berapa lama ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Một năm, bắt đầu từ ngày mười lăm tháng Mười.",
+     "id": "Satu tahun, mulai tanggal lima belas Oktober.",
+     "literal": "satu tahun, mulai dari tanggal lima belas bulan sepuluh."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Theo hợp đồng, em làm từ thứ Hai đến thứ Sáu.",
+     "id": "Menurut kontrak, kamu bekerja Senin sampai Jumat.",
+     "literal": "menurut kontrak, adik kerja dari urutan dua sampai urutan enam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn về việc làm thêm giờ thì sao ạ?",
+     "id": "Lalu soal lembur bagaimana?",
+     "literal": "lalu tentang hal kerja tambah jam maka bagaimana ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Nếu có đoàn khách vào cuối tuần, công ty sẽ trả thêm hoặc cho em nghỉ bù.",
+     "id": "Kalau ada rombongan tamu di akhir pekan, kantor akan membayar tambahan atau memberimu libur pengganti.",
+     "literal": "jika ada rombongan tamu pada akhir minggu, perusahaan akan bayar tambah atau beri adik libur ganti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ. Đối với nhân viên nước ngoài, công ty lo giấy phép lao động phải không ạ?",
+     "id": "Baik. Untuk karyawan asing, kantor yang mengurus izin kerja, kan?",
+     "literal": "iya. terhadap karyawan luar-negeri, perusahaan urus surat-izin kerja benar tidak ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đúng rồi. Tuần sau chị nộp hồ sơ, sau đó em đi làm thẻ tạm trú.",
+     "id": "Betul. Minggu depan aku serahkan berkasnya, sesudah itu kamu urus kartu izin tinggal.",
+     "literal": "benar sudah. minggu depan kakak serahkan berkas, sesudah itu adik pergi buat kartu sementara-tinggal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Em ký vào đâu ạ?",
+     "id": "Baik. Saya tanda tangan di mana?",
+     "literal": "iya. adik tanda-tangan ke mana ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Em ký vào hai bản này. Mỗi bên giữ một bản.",
+     "id": "Tanda tangani dua rangkap ini. Masing-masing pihak menyimpan satu.",
+     "literal": "adik tanda-tangan ke dua lembar ini. setiap pihak simpan satu lembar."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Xong rồi! Tuấn ơi, Mai ơi, vào đây chị giới thiệu nhé.",
+     "id": "Selesai! Tuấn, Mai, masuk sini, aku kenalkan ya.",
+     "literal": "selesai sudah! Tuấn hai, Mai hai, masuk sini kakak perkenalkan ya."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đây là anh Tuấn, hướng dẫn viên lâu năm nhất của chúng ta. Còn đây là Mai, phụ trách marketing.",
+     "id": "Ini Mas Tuấn, pemandu kita yang paling lama. Dan ini Mai, yang pegang pemasaran.",
+     "literal": "ini adalah kakak Tuấn, pandu-anggota lama tahun paling punya kita. lalu ini adalah Mai, pegang-tanggung-jawab pemasaran."
+    },
+    {
+     "speaker": "Tuấn:",
+     "text": "Chào em! Chị Hương khen em suốt. Có gì chưa biết thì hỏi anh nhé.",
+     "id": "Halo! Mbak Hương terus-terusan memujimu. Kalau ada yang belum kamu tahu, tanya aku ya.",
+     "literal": "salam adik! kakak Hương puji adik terus. ada apa belum tahu maka tanya kakak ya."
+    },
+    {
+     "speaker": "Mai:",
+     "text": "Em chào anh ạ. Anh cứ xưng anh, gọi em nhé.",
+     "id": "Halo, Mas. Mas sebut diri *anh* dan panggil aku *em* saja ya.",
+     "literal": "adik salam kakak ya. kakak terus sebut-diri kakak, panggil adik ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rất vui được làm việc cùng mọi người. Mong mọi người giúp đỡ em ạ.",
+     "id": "Senang sekali bisa bekerja bersama semuanya. Mohon bimbingannya.",
+     "literal": "sangat senang dapat buat kerja bersama semua orang. harap semua orang bantu adik ya."
+    }
+   ],
+   "notes": [
+    "**Hợp đồng lao động** — kontrak kerja; harfiahnya \"kesepakatan tenaga kerja\". Kontrak untuk jangka tertentu disebut *hợp đồng xác định thời hạn*, yang tanpa batas waktu *hợp đồng không xác định thời hạn*. *Thời hạn* (jangka waktu) juga muncul di *hết hạn* (kedaluwarsa) dan *gia hạn* (memperpanjang).",
+    "**Theo hợp đồng** — *theo* berarti \"mengikuti\", dan di kalimat resmi ia menjadi \"menurut\": *theo hợp đồng* (menurut kontrak), *theo quy định* (menurut aturan), *theo chị* (menurut Mbak). Letaknya di awal kalimat, persis seperti \"menurut\" kita.",
+    "**Còn về việc … thì sao?** — cara sopan berpindah ke topik baru. *Về* (tentang) + *việc* (hal, urusan) + kata kerja: *về việc làm thêm giờ*, *về việc nghỉ phép*. *Thì sao?* di ujung berarti \"bagaimana dengan itu?\".",
+    "**Đối với nhân viên nước ngoài** — *đối với* berarti \"terhadap, bagi, untuk\" dan menandai kelompok yang terkena suatu aturan. Kalimat ini sangat lazim di pengumuman: *Đối với khách quốc tế, vui lòng xuất trình hộ chiếu.*",
+    "**Chị Hương memanggil *Tuấn ơi*, tapi memperkenalkannya sebagai *anh Tuấn*.** Tuấn lebih muda dari chị Hương, jadi ia memanggilnya dengan nama saja. Tapi saat memperkenalkan kepada Budi, ia memakai sudut pandang Budi: bagi Budi, Tuấn adalah *anh*. Orang Vietnam terus-menerus menggeser kata ganti menurut **siapa pendengarnya**.",
+    "**Xưng anh gọi em** — \"menyebut diri *anh*, memanggil *em*\". *Xưng* = menyebut diri, *gọi* = memanggil; *xưng hô* adalah istilah untuk seluruh sistem kata ganti ini. Mai dua tahun lebih muda dari Budi, dan ia sendiri yang mempersilakan Budi memakai pasangan kakak–adik supaya hubungan mereka tidak kaku. *Cứ* di sini berarti \"silakan saja\"."
+   ],
+   "grammars": [
+    {
+     "title": "Kata ganti di kantor Sen Travel",
+     "body": [
+      "Di kantor Vietnam kata ganti kekerabatan tetap dipakai, bukan \"Bapak/Ibu\" yang kaku. Tabel ini memperlihatkan setiap pasangan di tim Budi, dari dua arah."
+     ],
+     "table": {
+      "head": [
+       "Pasangan",
+       "A menyebut diri",
+       "A memanggil B",
+       "B menyebut diri",
+       "B memanggil A"
+      ],
+      "rows": [
+       [
+        "Budi → chị Hương (atasan, ±40)",
+        "*em*",
+        "*chị*",
+        "*chị*",
+        "*em*"
+       ],
+       [
+        "Budi → anh Tuấn (senior, ±35)",
+        "*em*",
+        "*anh*",
+        "*anh*",
+        "*em*"
+       ],
+       [
+        "Budi → Mai (dua tahun lebih muda)",
+        "*anh*",
+        "*em*",
+        "*em*",
+        "*anh*"
+       ],
+       [
+        "Tuấn → chị Hương",
+        "*em*",
+        "*chị*",
+        "*chị*",
+        "*em* / *Tuấn*"
+       ],
+       [
+        "chị Hương → seluruh tim",
+        "*chị*",
+        "*các em*",
+        "*chúng em*",
+        "*chị*"
+       ],
+       [
+        "Budi → seluruh tim",
+        "*em*",
+        "*mọi người*, *các anh chị*",
+        "—",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "*Chúng ta* (kita, termasuk pendengar) dipakai atasan untuk merangkul tim: *khách của chúng ta*. *Chúng em* (kami para adik) dipakai tim saat berbicara kepada atasan: *Chúng em làm xong rồi ạ.*",
+      "⚠️ *Sếp* (bos) adalah kata untuk **membicarakan** atasan, bukan untuk **memanggilnya**. Budi berkata kepada Linh *sếp em rất tốt*, tapi kepada chị Hương ia tetap berkata *chị ơi*. Beberapa kantor memang memakai *sếp ơi* dengan nada bercanda; tunggu sampai kamu mendengar orang lain melakukannya."
+     ]
+    },
+    {
+     "title": "Về việc, theo, đối với — tiga penghubung resmi",
+     "body": [
+      "Ketiganya berdiri di depan kata benda atau frasa kerja, persis seperti kata depan Indonesia. Bedanya ada pada fungsinya."
+     ],
+     "table": {
+      "head": [
+       "Penghubung",
+       "Arti",
+       "Dalam percakapan",
+       "Dalam tulisan"
+      ],
+      "rows": [
+       [
+        "*về* / *về việc*",
+        "tentang, perihal",
+        "*Còn về việc nghỉ phép thì sao ạ?*",
+        "*V/v: xác nhận lịch tour*"
+       ],
+       [
+        "*theo*",
+        "menurut, sesuai",
+        "*Theo em, mình nên đi sớm.*",
+        "*Theo hợp đồng, …*"
+       ],
+       [
+        "*đối với*",
+        "terhadap, bagi",
+        "*Đối với em, việc này khó lắm.*",
+        "*Đối với khách quốc tế, …*"
+       ],
+       [
+        "*với*",
+        "dengan, kepada",
+        "*Em nói với chị rồi.*",
+        "*Hợp tác với đối tác*"
+       ]
+      ]
+     },
+     "after": [
+      "*V/v* di kolom terakhir adalah singkatan *về việc*, dan kamu akan melihatnya di baris \"perihal\" setiap surat resmi Vietnam.",
+      "*Đối với* dan *theo* sering bertemu dalam satu kalimat pendapat: *Theo tôi, đối với người mới thì việc này hơi khó.* (Menurut saya, bagi orang baru hal ini agak sulit.)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Công việc mới của em",
+   "intro": "Minggu sore, Budi mampir ke rumah Linh membawa sekantong jeruk. Linh ingin tahu semua tentang pekerjaan barunya.",
+   "lines": [
+    {
+     "speaker": "Linh:",
+     "text": "Em ký hợp đồng rồi à? Chúc mừng em nhé!",
+     "id": "Kamu sudah tanda tangan kontrak? Selamat ya!",
+     "literal": "adik tanda-tangan kontrak sudah ya? selamat adik ya!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em cảm ơn chị. Em ký hôm thứ Ba ạ.",
+     "id": "Terima kasih, Mbak. Hari Selasa saya tanda tangan.",
+     "literal": "adik terima budi kakak. adik tanda-tangan hari urutan tiga ya."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Thế công việc chính của em là gì?",
+     "id": "Terus pekerjaan utamamu apa?",
+     "literal": "begitu pekerjaan utama punya adik adalah apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em phụ trách khách Indonesia: đón khách, dẫn tour và trả lời email.",
+     "id": "Saya pegang tamu Indonesia: menjemput tamu, memandu tur, dan membalas surel.",
+     "literal": "adik pegang-tanggung-jawab tamu Indonesia: jemput tamu, pimpin tur dan jawab email."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Đối với em, việc nào khó nhất?",
+     "id": "Buatmu, pekerjaan mana yang paling sulit?",
+     "literal": "terhadap adik, hal mana sulit paling?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Viết email trang trọng ạ. Em vẫn chưa quen cách viết của người Việt.",
+     "id": "Menulis surel resmi. Saya masih belum terbiasa dengan gaya tulis orang Vietnam.",
+     "literal": "tulis email resmi ya. adik masih belum biasa cara tulis punya orang Việt."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Thế ở công ty, em có gọi chị Hương là sếp không?",
+     "id": "Terus di kantor, kamu panggil chị Hương \"bos\"?",
+     "literal": "begitu di perusahaan, adik ada panggil kakak Hương adalah bos tidak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Không ạ. Em gọi là chị, nhưng nói với người khác thì em bảo \"sếp em\".",
+     "id": "Tidak. Saya panggil \"Mbak\", tapi kalau bicara dengan orang lain saya bilang \"bos saya\".",
+     "literal": "tidak ya. adik panggil adalah kakak, tetapi bicara dengan orang lain maka adik bilang bos adik."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Đúng đấy. Gọi anh chị cho thân mật, nhưng vẫn phải lễ phép.",
+     "id": "Betul tuh. Panggil kakak supaya akrab, tapi tetap harus santun.",
+     "literal": "benar tuh. panggil kakak-kakak beri akrab, tetapi masih harus sopan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Theo chị, em nên gọi anh Tuấn là anh hay là thầy?",
+     "id": "Menurut Mbak, saya sebaiknya panggil Tuấn \"anh\" atau \"thầy\"?",
+     "literal": "menurut kakak, adik sebaiknya panggil kakak Tuấn adalah kakak atau adalah guru?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Gọi anh thôi em. Gọi thầy thì anh ấy ngại chết!",
+     "id": "Panggil \"anh\" saja. Kalau dipanggil \"thầy\", dia bakal malu setengah mati!",
+     "literal": "panggil kakak saja adik. panggil guru maka kakak itu sungkan mati!"
+    }
+   ],
+   "notes": [
+    "**Phụ trách** — \"bertanggung jawab atas, memegang\". Ini kata kunci di setiap perkenalan kerja: *Em phụ trách khách Indonesia*, *Mai phụ trách marketing*. Orang yang memegangnya disebut *người phụ trách* (penanggung jawab).",
+    "**Dẫn tour** — \"memandu tur\". *Dẫn* berarti menuntun; *tour* dipinjam dari bahasa Inggris dan sehari-hari lebih lazim daripada *chuyến du lịch*. Pemandu wisata resmi disebut *hướng dẫn viên* (harfiah \"anggota yang menuntun\").",
+    "**Đối với em, việc nào khó nhất?** — *đối với* + orang berarti \"bagi, menurut pengalaman\". Linh tidak menanyakan pendapat (itu *theo em*), tapi apa yang **terasa** sulit bagi Budi. Bedanya halus, tapi berguna: *theo em* = pendapatmu, *đối với em* = pengaruhnya padamu.",
+    "**Bảo** — \"bilang, menyuruh\"; di utara ia lebih sering dipakai daripada *nói* untuk mengutip kata-kata sendiri: *em bảo \"sếp em\"*. Kamu akan mempelajarinya lebih jauh di unit 11.",
+    "**Thân mật** vs **lễ phép** — \"akrab\" vs \"santun\". Inilah keseimbangan yang diatur kata ganti Vietnam: *anh/chị* membuat hubungan kerja terasa seperti keluarga, *ạ* dan *dạ* menjaga hormatnya.",
+    "**Ngại chết** — \"sungkan setengah mati\". *Chết* (mati) di belakang kata sifat adalah penguat lisan yang sangat umum: *mệt chết* (capek banget), *nóng chết* (panas banget)."
+   ],
+   "grammars": [
+    {
+     "title": "Membicarakan orang ketiga di kantor",
+     "body": [
+      "Saat membicarakan seseorang yang tidak hadir, tambahkan *ấy* (itu) sesudah kata ganti kekerabatan, atau pakai kata jabatan."
+     ],
+     "table": {
+      "head": [
+       "Yang dibicarakan",
+       "Kepada rekan",
+       "Kepada orang luar",
+       "Dalam tulisan resmi"
+      ],
+      "rows": [
+       [
+        "chị Hương",
+        "*chị Hương*, *chị ấy*",
+        "*sếp em*",
+        "*bà Nguyễn Thu Hương, Giám đốc*"
+       ],
+       [
+        "anh Tuấn",
+        "*anh Tuấn*, *anh ấy*",
+        "*đồng nghiệp em*",
+        "*ông Trần Văn Tuấn*"
+       ],
+       [
+        "Mai",
+        "*Mai*, *em ấy*",
+        "*đồng nghiệp em*",
+        "*bà Lê Thị Mai*"
+       ],
+       [
+        "seluruh tim",
+        "*mọi người*, *cả nhóm*",
+        "*công ty em*",
+        "*Công ty Sen Travel*"
+       ]
+      ]
+     },
+     "after": [
+      "Di tulisan resmi, kata ganti kekerabatan menghilang: *ông* (Bapak) dan *bà* (Ibu) + nama lengkap + jabatan, apa pun umurnya. Nama lengkap Vietnam urutannya marga, nama tengah, nama panggilan: *Nguyễn Thu Hương* dipanggil *Hương*, bukan *Nguyễn*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kontrak dan hari pertama",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*bên A / bên B*",
+       "pihak pertama / pihak kedua",
+       "*Bên A là công ty, bên B là người lao động.*"
+      ],
+      [
+       "*người sử dụng lao động*",
+       "pemberi kerja",
+       "*Người sử dụng lao động trả lương hằng tháng.*"
+      ],
+      [
+       "*người lao động*",
+       "pekerja",
+       "*Người lao động có mười hai ngày phép.*"
+      ],
+      [
+       "*thử việc*",
+       "masa percobaan",
+       "*Em không phải thử việc vì đã thực tập rồi.*"
+      ],
+      [
+       "*lương cơ bản / phụ cấp*",
+       "gaji pokok / tunjangan",
+       "*Phụ cấp đi lại được trả riêng.*"
+      ],
+      [
+       "*bảo hiểm xã hội*",
+       "jaminan sosial",
+       "*Công ty đóng bảo hiểm xã hội cho em.*"
+      ],
+      [
+       "*nghỉ phép / nghỉ bù*",
+       "cuti / libur pengganti",
+       "*Em muốn xin nghỉ phép hai ngày.*"
+      ],
+      [
+       "*chấm công*",
+       "absen kehadiran",
+       "*Sáng nào cũng phải chấm công.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kontrak Vietnam hampir selalu disusun dalam *Điều* (pasal) bernomor, dan kedua pihaknya disebut *bên A* dan *bên B*. Begitu kamu tahu siapa A dan siapa B, sisanya bisa dibaca pelan-pelan dengan kamus. Jangan menandatangani sebelum mengerti pasal tentang *thời hạn* (jangka waktu), *lương* (gaji), *thời giờ làm việc* (jam kerja), dan *chấm dứt hợp đồng* (pengakhiran kontrak)."
+    },
+    {
+     "type": "kotak",
+     "title": "Hari-hari pertama di kantor Vietnam",
+     "items": [
+      "**Makan siang bersama.** Banyak kantor makan siang beramai-ramai di warung *cơm văn phòng* terdekat, atau memesan nasi kotak. Menolak sekali-dua kali wajar; menolak terus membuatmu terlihat menjauh.",
+      "**Tidur siang.** Sesudah makan siang, jangan kaget melihat rekan tidur sebentar di kursi, di sofa, atau di atas tikar di bawah meja. Di banyak kantor Vietnam, *ngủ trưa* sekitar setengah jam dianggap biasa.",
+      "**Cuti tahunan.** Menurut undang-undang ketenagakerjaan Vietnam, pekerja dalam kondisi kerja biasa berhak atas 12 hari kerja cuti per tahun penuh; kontrakmu bisa memberi lebih, tapi tidak boleh kurang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa resmi dengan về việc, theo, đối với",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Di mana kamu melihatnya"
+     ],
+     "rows": [
+      [
+       "*V/v* (*về việc*) …",
+       "Perihal: …",
+       "baris perihal surat dan surel resmi"
+      ],
+      [
+       "*theo quy định*",
+       "sesuai ketentuan",
+       "pengumuman, kontrak"
+      ],
+      [
+       "*theo yêu cầu của khách*",
+       "atas permintaan tamu",
+       "catatan tur, faktur"
+      ],
+      [
+       "*đối với trẻ em dưới 5 tuổi*",
+       "bagi anak di bawah 5 tahun",
+       "daftar harga, tiket masuk"
+      ],
+      [
+       "*đối với người nước ngoài*",
+       "bagi warga asing",
+       "loket, kantor imigrasi"
+      ],
+      [
+       "*căn cứ vào*",
+       "berdasarkan",
+       "pembukaan kontrak dan keputusan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ketiga penghubung ini adalah pintu masuk ke bahasa kantor. Di percakapan, kamu bisa bertahan dengan *về*, *theo em*, dan *đối với em*; di tulisan, bentuk yang lebih panjang seperti *về việc*, *theo quy định*, dan *căn cứ vào* terasa lebih pantas. Ingat bahwa urutan kata tetap sama dengan bahasa Indonesia: frasa penghubung di depan, isi di belakang."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca kop surat Vietnam",
+     "items": [
+      "Surat dan dokumen resmi di Vietnam biasanya dibuka dengan semboyan negara di kanan atas: *CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM* dan di bawahnya *Độc lập – Tự do – Hạnh phúc* (Merdeka, Bebas, Bahagia). Kontrak kerjamu hampir pasti memakainya.",
+      "Di bawah kop ada tempat dan tanggal dalam urutan kata, bukan angka saja: *Hà Nội, ngày 6 tháng 10 năm …*.",
+      "Tanda tangan di dokumen perusahaan dianggap sah bila disertai **cap merah** perusahaan (*con dấu*). Kalau ada dokumen yang \"kurang cap\", kantor pemerintah biasanya akan menolaknya; ini akan dialami Budi di unit berikutnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "hợp đồng (lao động)",
+   "baca": "hợp dồng (lao dộng)",
+   "id": "kontrak (kerja)"
+  },
+  {
+   "vi": "ký / ký tên",
+   "baca": "ký / ký tên",
+   "id": "menandatangani"
+  },
+  {
+   "vi": "thời hạn",
+   "baca": "thời hạn",
+   "id": "jangka waktu, masa berlaku"
+  },
+  {
+   "vi": "bản",
+   "baca": "bản",
+   "id": "rangkap, salinan (penggolong dokumen)"
+  },
+  {
+   "vi": "bên",
+   "baca": "bên",
+   "id": "pihak"
+  },
+  {
+   "vi": "nhân viên",
+   "baca": "nyân viên",
+   "id": "karyawan, staf"
+  },
+  {
+   "vi": "đồng nghiệp",
+   "baca": "dồng ngiệp",
+   "id": "rekan kerja"
+  },
+  {
+   "vi": "sếp",
+   "baca": "sếp",
+   "id": "bos, atasan (untuk membicarakan)"
+  },
+  {
+   "vi": "hướng dẫn viên",
+   "baca": "hướng zẫn viên",
+   "id": "pemandu wisata"
+  },
+  {
+   "vi": "phụ trách",
+   "baca": "fụ cák",
+   "id": "bertanggung jawab atas, memegang"
+  },
+  {
+   "vi": "làm thêm giờ",
+   "baca": "làm thêm zờ",
+   "id": "lembur"
+  },
+  {
+   "vi": "nghỉ phép / nghỉ bù",
+   "baca": "ngỉ fép / ngỉ bù",
+   "id": "cuti / libur pengganti"
+  },
+  {
+   "vi": "lương",
+   "baca": "lương",
+   "id": "gaji"
+  },
+  {
+   "vi": "giấy phép lao động",
+   "baca": "zấy fép lao dộng",
+   "id": "izin kerja"
+  },
+  {
+   "vi": "hồ sơ",
+   "baca": "hồ sơ",
+   "id": "berkas, dokumen permohonan"
+  },
+  {
+   "vi": "nộp",
+   "baca": "nộp",
+   "id": "menyerahkan (berkas, uang)"
+  },
+  {
+   "vi": "về việc",
+   "baca": "về việk",
+   "id": "perihal, tentang"
+  },
+  {
+   "vi": "theo",
+   "baca": "theo",
+   "id": "menurut, sesuai"
+  },
+  {
+   "vi": "đối với",
+   "baca": "dối với",
+   "id": "terhadap, bagi"
+  },
+  {
+   "vi": "xưng hô",
+   "baca": "sưng hô",
+   "id": "cara menyapa dan menyebut diri"
+  },
+  {
+   "vi": "thân mật",
+   "baca": "thân mật",
+   "id": "akrab"
+  },
+  {
+   "vi": "lễ phép",
+   "baca": "lễ fép",
+   "id": "santun (kepada yang lebih tua)"
+  },
+  {
+   "vi": "đón",
+   "baca": "dón",
+   "id": "menjemput"
+  },
+  {
+   "vi": "dẫn tour",
+   "baca": "zẫn tour",
+   "id": "memandu tur"
+  },
+  {
+   "vi": "giúp đỡ",
+   "baca": "zúp dỡ",
+   "id": "membantu, membimbing"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Pilih kata ganti sesuai keterangan dalam kurung.",
+   "items": [
+    "Menurut kontrak, saya bekerja lima hari seminggu. (Budi kepada chị Hương)",
+    "Lalu soal cuti bagaimana, Mbak?",
+    "Bagi karyawan baru, pekerjaan ini agak sulit.",
+    "Mai memegang pemasaran. (Budi kepada Linh)",
+    "Mas, tolong bantu saya ya. (Budi kepada anh Tuấn)",
+    "Kalian sudah selesai? (chị Hương kepada seluruh tim)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ hợp đồng, em được nghỉ mười hai ngày một năm. (menurut)",
+    "Chị ơi, còn ____ việc bảo hiểm thì sao ạ? (tentang)",
+    "____ khách nước ngoài, vui lòng mang theo hộ chiếu. (bagi)",
+    "Mai ơi, anh gửi ____ file này rồi nhé. (kata ganti: Budi kepada Mai, \"kamu\")",
+    "Chị Hương ơi, ____ làm xong rồi ạ. (kata ganti: tim kepada atasan, \"kami\")",
+    "Hôm nay ____ có khách mới, cả nhóm cố gắng nhé! (kata ganti: atasan kepada tim, \"kita\")",
+    "Em ký vào hai ____, mỗi bên giữ một ____. (penggolong dokumen)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan penghubung dalam kurung. Contoh: *Em nghĩ là mình nên đi sớm.* (theo) → *Theo em, mình nên đi sớm.*",
+   "items": [
+    "Chị nghĩ là hợp đồng này tốt. (theo)",
+    "Việc viết email khó với em. (đối với)",
+    "Em muốn hỏi chuyện làm thêm giờ. (về việc)",
+    "Hợp đồng nói rằng em làm từ thứ Hai đến thứ Sáu. (theo)",
+    "Người nước ngoài phải có giấy phép lao động. (đối với)",
+    "Anh Tuấn nghĩ là khách Indonesia thích phố cổ. (theo)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "theo / em / hợp đồng / làm / đến / từ / thứ Hai / thứ Sáu",
+    "về việc / còn / làm thêm giờ / sao / thì / ạ / ?",
+    "đối với / việc / em / nào / nhất / khó / ?",
+    "chúng ta / là / đây / anh Tuấn / hướng dẫn viên / của",
+    "mọi người / em / mong / giúp đỡ / ạ"
+   ]
+  }
+ ],
+ "answers": [
+  "Theo hợp đồng, em làm năm ngày một tuần ạ. — Chị ơi, còn về việc nghỉ phép thì sao ạ? — Đối với nhân viên mới, việc này hơi khó. — Mai phụ trách marketing ạ. — Anh ơi, anh giúp em với nhé. — Các em làm xong chưa?",
+  "Theo — về — Đối với — em — chúng em — chúng ta — bản, bản",
+  "Theo chị, hợp đồng này tốt. — Đối với em, việc viết email khó. — Em muốn hỏi về việc làm thêm giờ. — Theo hợp đồng, em làm từ thứ Hai đến thứ Sáu. — Đối với người nước ngoài, phải có giấy phép lao động. — Theo anh Tuấn, khách Indonesia thích phố cổ.",
+  "Theo hợp đồng, em làm từ thứ Hai đến thứ Sáu. — Còn về việc làm thêm giờ thì sao ạ? — Đối với em, việc nào khó nhất? — Đây là anh Tuấn, hướng dẫn viên của chúng ta. — Mong mọi người giúp đỡ em ạ."
+ ]
+}

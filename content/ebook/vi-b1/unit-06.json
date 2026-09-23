@@ -1,0 +1,676 @@
+{
+ "title": "Keluhan pelanggan — minta maaf dan menyebut penyebab",
+ "title_target": "Em thành thật xin lỗi chị",
+ "goal": "Menangani tamu yang kecewa dengan tenang: mengakui kesalahan, meminta maaf secara resmi, menjelaskan apa yang terjadi, dan menjanjikan jalan keluar. Titik tata bahasanya: ungkapan maaf resmi (*thành thật xin lỗi, rất tiếc, chúng tôi sẽ*) dan empat kata penyebab — *tại* yang menyalahkan, *do* yang resmi, *vì* yang netral, dan *nhờ* untuk akibat baik.",
+ "bekal": [
+  "meminta maaf dengan beberapa tingkat keresmian: *xin lỗi*, *thành thật xin lỗi*, *rất tiếc*, *mong chị thông cảm*",
+  "menyebut penyebab dengan *tại*, *do*, *vì*, dan *nhờ* — dan tahu mana yang terdengar menuding",
+  "menjanjikan tindakan dengan *chúng em sẽ …* dan menutup percakapan tanpa memperpanjang masalah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Phòng không đúng như đã đặt",
+   "intro": "Awal Desember, Jumat sore di sebuah hotel kecil di phố cổ. Chị Vân, tamu dari Đà Nẵng yang memesan kamar keluarga lewat Sen Travel untuk tiga malam, malah mendapat kamar berranjang satu tanpa jendela. Ia menelepon kantor, dan Budi bergegas ke lobi hotel.",
+   "lines": [
+    {
+     "speaker": "Vân:",
+     "text": "Em là Budi bên Sen Travel phải không? Chị đợi gần một tiếng rồi đấy.",
+     "id": "Kamu Budi dari Sen Travel, kan? Saya sudah menunggu hampir satu jam, lho.",
+     "literal": "adik adalah Budi pihak Sen Travel benar tidak? kakak tunggu hampir satu jam sudah tuh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em thành thật xin lỗi chị vì để chị phải chờ lâu.",
+     "id": "Saya sungguh minta maaf karena membuat Ibu menunggu lama.",
+     "literal": "adik tulus-sungguh mohon salah kakak karena biarkan kakak harus tunggu lama."
+    },
+    {
+     "speaker": "Vân:",
+     "text": "Chị đặt phòng gia đình có cửa sổ, nhưng khách sạn lại xếp cho chị phòng một giường, không có cửa sổ.",
+     "id": "Saya pesan kamar keluarga yang ada jendelanya, tapi hotel malah memberi saya kamar satu ranjang, tanpa jendela.",
+     "literal": "kakak pesan kamar keluarga ada jendela, tetapi hotel malah atur beri kakak kamar satu ranjang, tidak ada jendela."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em rất tiếc về chuyện này. Chị cho em xem mã đặt phòng được không ạ?",
+     "id": "Saya sangat menyesal soal ini. Boleh saya lihat kode pemesanannya?",
+     "literal": "adik sangat sayang tentang hal ini. kakak beri adik lihat kode pesan kamar dapat tidak ya?"
+    },
+    {
+     "speaker": "Vân:",
+     "text": "Đây. Nhà chị bốn người, không ngủ chung một giường được đâu.",
+     "id": "Ini. Kami berempat, tidak mungkin tidur di satu ranjang.",
+     "literal": "sini. rumah kakak empat orang, tidak tidur bersama satu ranjang dapat kok."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em ơi, phòng này Sen Travel đặt cho khách. Sao lại sai loại phòng thế?",
+     "id": "Dik, kamar ini dipesan Sen Travel untuk tamu. Kenapa jenis kamarnya bisa salah?",
+     "literal": "adik hai, kamar ini Sen Travel pesan untuk tamu. kenapa malah salah jenis kamar begitu?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, do bên em nhập nhầm loại phòng ạ.",
+     "id": "Maaf, itu karena pihak kami salah memasukkan jenis kamar.",
+     "literal": "iya, oleh pihak adik masukkan keliru jenis kamar ya."
+    },
+    {
+     "speaker": "Vân:",
+     "text": "Tại các em làm việc cẩu thả quá!",
+     "id": "Gara-gara kalian kerjanya ceroboh sekali!",
+     "literal": "gara-gara para adik buat kerja ceroboh terlalu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị nói đúng ạ. Đây là lỗi của chúng em. Còn phòng gia đình nào trống không em?",
+     "id": "Ibu benar. Ini kesalahan kami. Masih ada kamar keluarga yang kosong, Dik?",
+     "literal": "kakak bicara benar ya. ini adalah salah dari kami. masih kamar keluarga mana kosong tidak adik?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, tối nay hết rồi ạ. Nhưng tầng sáu còn một phòng hai giường, có ban công nhìn ra phố.",
+     "id": "Malam ini sudah habis. Tapi di lantai enam masih ada satu kamar dua ranjang, ada balkon menghadap ke jalan.",
+     "literal": "iya, malam ini habis sudah ya. tetapi lantai enam masih satu kamar dua ranjang, ada balkon lihat keluar jalan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, tối nay chúng em sẽ chuyển chị lên phòng đó. Từ tối mai sẽ có phòng gia đình cho chị.",
+     "id": "Bu, malam ini kami akan memindahkan Ibu ke kamar itu. Mulai besok malam akan ada kamar keluarga untuk Ibu.",
+     "literal": "kakak hai, malam ini kami akan pindahkan kakak naik kamar itu. dari malam besok akan ada kamar keluarga untuk kakak."
+    },
+    {
+     "speaker": "Vân:",
+     "text": "Thế còn đêm nay thì sao? Chị trả tiền phòng gia đình mà.",
+     "id": "Terus malam ini bagaimana? Saya kan bayar harga kamar keluarga.",
+     "literal": "begitu lalu malam ini maka bagaimana? kakak bayar uang kamar keluarga kok."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, công ty em sẽ hoàn lại tiền chênh lệch và tặng chị một bữa tối ở phố cổ.",
+     "id": "Perusahaan kami akan mengembalikan selisihnya dan memberi Ibu makan malam gratis di kota tua.",
+     "literal": "iya, perusahaan adik akan kembalikan uang selisih dan hadiahkan kakak satu kali-makan malam di jalan tua."
+    },
+    {
+     "speaker": "Vân:",
+     "text": "Ừ, nhờ em đến nhanh nên chị cũng đỡ bực.",
+     "id": "Ya sudah, untung kamu cepat datang, jadi saya agak reda kesalnya.",
+     "literal": "ya, berkat adik datang cepat maka kakak juga berkurang kesal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em cảm ơn chị đã thông cảm. Có gì chị cứ gọi thẳng cho em ạ.",
+     "id": "Terima kasih atas pengertian Ibu. Kalau ada apa-apa, langsung telepon saya saja.",
+     "literal": "adik terima-kasih kakak telah maklum. ada apa kakak terus panggil langsung beri adik ya."
+    }
+   ],
+   "notes": [
+    "**Thành thật xin lỗi** — *thành thật* berarti \"tulus, jujur\", jadi seluruhnya \"sungguh-sungguh minta maaf\". Ini anak tangga di atas *xin lỗi* biasa, dipakai kalau kesalahannya nyata dan pihakmu yang bertanggung jawab. Di surel resmi bentuknya menjadi *Chúng tôi thành thật xin lỗi Quý khách* (unit 4).",
+    "**Để chị phải chờ** — *để* + orang + kata kerja berarti \"membiarkan / membuat seseorang …\": *để khách chờ*, *để em nghĩ đã* (biar saya pikir dulu). Ini bukan *để* \"supaya\" dari A1: kalau langsung diikuti orang, biasanya artinya \"membiarkan\".",
+    "**Do bên em** vs **tại các em** — kejadiannya sama, tapi resepsionis memilih *do*, kata penyebab yang netral dan resmi, sementara chị Vân yang sedang marah memilih *tại*, yang menunjuk siapa yang salah.",
+    "**Chị nói đúng ạ. Đây là lỗi của chúng em.** Budi tidak membela diri dan tidak menyalahkan hotel di depan tamu, walaupun hotel yang keliru: di mata tamu keduanya satu pihak. Perhatikan *chúng em* (kami, dari yang lebih muda), bukan *chúng tôi* — Budi tetap *em* bagi chị Vân.",
+    "**Nhờ em đến nhanh nên chị cũng đỡ bực.** Sesudah marah reda, chị Vân memakai *nhờ*, kata penyebab untuk akibat yang **baik**: berkat kamu datang cepat. *Đỡ* (berkurang, reda) sudah kamu kenal dari urusan sakit di A2: *đỡ đau, đỡ mệt, đỡ bực*."
+   ],
+   "grammars": [
+    {
+     "title": "Empat kata penyebab: tại, do, vì, nhờ",
+     "body": [
+      "Bahasa Indonesia punya \"karena\", \"gara-gara\", \"akibat\", dan \"berkat\". Bahasa Vietnam membaginya dengan cara yang mirip, dan pilihanmu langsung memberi tahu pendengar apakah kamu sedang menjelaskan, menyalahkan, atau berterima kasih."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Rasa",
+       "Akibatnya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*tại*",
+        "menyalahkan, lisan (\"gara-gara\")",
+        "buruk",
+        "*Tại anh ấy mà cả đoàn bị muộn.*"
+       ],
+       [
+        "*do*",
+        "netral, resmi, tulisan (\"akibat, disebabkan\")",
+        "buruk atau netral",
+        "*Chuyến bay bị hủy do thời tiết xấu.*"
+       ],
+       [
+        "*vì*",
+        "netral, paling umum (\"karena\")",
+        "apa saja",
+        "*Vì trời mưa nên tour bị hoãn.*"
+       ],
+       [
+        "*nhờ*",
+        "berterima kasih (\"berkat\")",
+        "baik",
+        "*Nhờ chị giúp mà em làm xong đúng hạn.*"
+       ],
+       [
+        "*tại vì* / *bởi vì*",
+        "lisan, menegaskan alasan",
+        "apa saja",
+        "*Em đến muộn tại vì tắc đường.*"
+       ]
+      ]
+     },
+     "after": [
+      "Keempatnya bisa berdiri di depan dengan pasangan *nên* (atau *mà*) sebelum akibatnya — *Do bên em nhập nhầm nên chị phải đổi phòng* — persis pola *vì … nên* yang kamu kenal dari A1.",
+      "⚠️ **Jangan memakai *tại* untuk menjelaskan kesalahanmu sendiri kepada pelanggan.** *Tại hệ thống* (gara-gara sistem) terdengar seperti mencari kambing hitam. Lebih baik *do lỗi kỹ thuật* (akibat kesalahan teknis), atau langsung *đây là lỗi của chúng em*.",
+      "⚠️ **Nhờ untuk akibat buruk berarti sindiran:** *Nhờ anh mà em bị sếp mắng* (\"berkat kamu aku dimarahi bos\"). Jangan tertukar dengan *nhờ ai làm gì* (minta tolong) dari A2."
+     ]
+    },
+    {
+     "title": "Lima langkah menanggapi keluhan",
+     "body": [
+      "Urutan yang dipakai Budi di lobi hotel adalah urutan yang juga diajarkan di pelatihan layanan pelanggan di Vietnam. Hafalkan satu kalimat untuk tiap langkah."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Ungkapan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1. mengakui",
+        "*Chị nói đúng ạ.* / *Đây là lỗi của chúng em.*",
+        "Ibu benar. / Ini kesalahan kami."
+       ],
+       [
+        "2. meminta maaf",
+        "*Em thành thật xin lỗi chị.* / *Chúng tôi rất tiếc về sự cố này.*",
+        "Saya sungguh minta maaf. / Kami sangat menyesal atas kejadian ini."
+       ],
+       [
+        "3. menjelaskan singkat",
+        "*Do bên em nhập nhầm nên …*",
+        "Karena pihak kami salah memasukkan, …"
+       ],
+       [
+        "4. menjanjikan tindakan",
+        "*Chúng em sẽ xử lý ngay.* / *Công ty sẽ hoàn lại tiền.*",
+        "Kami akan segera menanganinya. / Perusahaan akan mengembalikan uang."
+       ],
+       [
+        "5. menutup",
+        "*Mong chị thông cảm.* / *Cảm ơn chị đã thông cảm.*",
+        "Mohon pengertian Ibu. / Terima kasih atas pengertiannya."
+       ]
+      ]
+     },
+     "after": [
+      "*Rất tiếc* bukan permintaan maaf langsung, melainkan \"sayang sekali, kami menyesal\". Ia paling tepat dipakai ketika kamu **tidak bisa** memenuhi permintaan: *Rất tiếc, tối nay khách sạn hết phòng.* Untuk kesalahanmu sendiri, tetap pakai *xin lỗi*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Hàng bị vỡ",
+   "intro": "Kali ini Budi yang menjadi pelanggan. Ia memesan satu set mangkuk dan piring keramik Bát Tràng di toko daring sebagai hadiah perpisahan untuk guru bahasanya di kampus dulu, yang pensiun akhir pekan ini. Paketnya datang, dua di antaranya pecah. Ia menelepon nomor toko.",
+   "lines": [
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, cửa hàng gốm Thanh Tâm xin nghe ạ.",
+     "id": "Toko keramik Thanh Tâm, ada yang bisa kami bantu?",
+     "literal": "iya, toko keramik Thanh Tâm mohon dengar ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào em. Hôm qua anh nhận bộ bát đĩa đặt trên mạng, nhưng bị vỡ mất hai cái.",
+     "id": "Halo, Dik. Kemarin saya menerima set mangkuk-piring yang saya pesan online, tapi dua buah pecah.",
+     "literal": "salam adik. hari lalu kakak terima set mangkuk piring pesan di jaringan, tetapi kena pecah hilang dua buah."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Ôi, em xin lỗi anh. Anh cho em xin mã đơn hàng ạ.",
+     "id": "Aduh, maaf, Kak. Boleh minta nomor pesanannya?",
+     "literal": "aduh, adik mohon salah kakak. kakak beri adik minta kode pesanan barang ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mã đơn là NL2046. Hộp chỉ có một lớp giấy mỏng, không có xốp chống sốc.",
+     "id": "Nomornya NL2046. Kotaknya cuma dilapisi selembar kertas tipis, tanpa busa pelindung.",
+     "literal": "kode pesanan adalah NL2046. kotak hanya ada satu lapis kertas tipis, tidak ada busa tahan guncangan."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, chắc là do bên vận chuyển làm rơi ạ.",
+     "id": "Mungkin karena pihak ekspedisi menjatuhkannya.",
+     "literal": "iya, pasti adalah oleh pihak angkut buat jatuh ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh nghĩ là tại bên em đóng gói sơ sài quá.",
+     "id": "Menurut saya gara-gara toko kalian membungkusnya asal-asalan.",
+     "literal": "kakak pikir bahwa gara-gara pihak adik bungkus asal-asalan terlalu."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, anh nói đúng ạ. Bên em xin rút kinh nghiệm.",
+     "id": "Kakak benar. Kami akan menjadikannya pelajaran.",
+     "literal": "iya, kakak bicara benar ya. pihak adik mohon tarik pengalaman."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em đổi cho anh cả bộ mới được không?",
+     "id": "Bisa ditukar satu set baru?",
+     "literal": "adik tukar beri kakak seluruh set baru dapat tidak?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Rất tiếc, mẫu màu xanh này đang tạm hết hàng ạ.",
+     "id": "Sayang sekali, model warna biru ini sedang kosong stoknya.",
+     "literal": "sangat sayang, model warna biru ini sedang sementara habis barang ya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế thì em gửi bù hai cái bị vỡ thôi. Thứ Bảy này anh phải tặng cô giáo rồi.",
+     "id": "Kalau begitu kirim ganti yang dua pecah itu saja. Sabtu ini saya sudah harus memberikannya ke guru saya.",
+     "literal": "begitu maka adik kirim ganti dua buah kena pecah saja. urutan tujuh ini kakak harus hadiahkan tante guru sudah."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, bên em sẽ gửi hỏa tốc, mai anh nhận được ạ. Anh chụp ảnh hàng vỡ gửi qua Zalo cho em nhé.",
+     "id": "Baik, kami kirim ekspres, besok sudah sampai. Tolong foto barang yang pecah dan kirim lewat Zalo, ya.",
+     "literal": "iya, pihak adik akan kirim api-cepat, besok kakak terima dapat ya. kakak potret gambar barang pecah kirim lewat Zalo beri adik ya."
+    }
+   ],
+   "notes": [
+    "**Bên em, bên anh** — *bên* (sisi, pihak) adalah cara lisan menyebut perusahaan atau kelompok: *bên em* = \"pihak kami\", *bên anh* = \"pihak Anda\", *bên vận chuyển* = \"pihak ekspedisi\", *Budi bên Sen Travel* = Budi dari Sen Travel.",
+    "**Do bên vận chuyển vs tại bên em** — petugas toko mengalihkan penyebab dengan *do* yang sopan; Budi membalas dengan *tại*, menunjuk langsung. Satu kejadian, dua kata, dua sikap. Sebagai pelanggan kamu boleh memakai *tại*; sebagai petugas, hampir tidak pernah.",
+    "**Rút kinh nghiệm** — harfiah \"menarik pengalaman\", artinya menjadikan kesalahan sebagai pelajaran. *Chúng em xin rút kinh nghiệm* adalah kalimat baku penutup permintaan maaf di kantor, sekolah, dan toko.",
+    "**Hỏa tốc** — harfiah \"api-cepat\", kata lama untuk surat kilat yang kini dipakai untuk kiriman ekspres. **Zalo** adalah aplikasi pesan buatan Vietnam yang dipakai hampir semua orang, dari toko sampai kantor.",
+    "**Tặng cô giáo** — guru sangat dihormati di Vietnam. Mantan murid datang membawa bunga dan hadiah kecil pada *Ngày Nhà giáo Việt Nam* (20 November) dan pada acara penting seperti pensiunnya sang guru (*nghỉ hưu*). Budi memanggil gurunya *cô giáo* dan tetap *cô* seumur hidup, walaupun ia sudah tidak kuliah lagi."
+   ],
+   "grammars": [
+    {
+     "title": "Sebab dulu atau akibat dulu",
+     "body": [
+      "Kata penyebab bisa ditaruh di depan kalimat atau di tengahnya. Artinya sama; yang berubah adalah apa yang ingin kamu tonjolkan lebih dulu."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*tại/do/vì/nhờ* + sebab + *nên* + akibat",
+        "*Do trời mưa nên chuyến bay bị hoãn.*",
+        "Karena hujan, penerbangan ditunda."
+       ],
+       [
+        "akibat + *tại/do/vì/nhờ* + sebab",
+        "*Chuyến bay bị hoãn do trời mưa.*",
+        "Penerbangan ditunda karena hujan."
+       ],
+       [
+        "akibat + *là do / là tại / là nhờ* + sebab",
+        "*Hàng vỡ là do đóng gói sơ sài.*",
+        "Barang pecah itu akibat bungkusan asal-asalan."
+       ],
+       [
+        "*tại/nhờ* + orang + *mà* + akibat",
+        "*Nhờ chị mà em đỡ lo.* / *Tại cậu mà tớ bị muộn.*",
+        "Berkat Kakak aku lega. / Gara-gara kamu aku telat."
+       ],
+       [
+        "pertanyaan",
+        "*Tại sao …? / Vì sao …? / Do đâu mà …?*",
+        "Kenapa …? / Apa penyebabnya …?"
+       ]
+      ]
+     },
+     "after": [
+      "Pola *nhờ/tại + orang + mà* sangat lisan dan sangat sering: *Tại em mà cả nhà phải chờ!* Kata *mà* di sini hanya menyambung sebab dengan akibat; unit 10 akan membahas *mà* yang lain."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata keluhan di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*phàn nàn*",
+       "mengeluh, menggerutu",
+       "lisan: *Khách phàn nàn về đồ ăn.*"
+      ],
+      [
+       "*khiếu nại*",
+       "mengajukan keluhan resmi",
+       "tulisan: *đơn khiếu nại* (surat pengaduan)"
+      ],
+      [
+       "*sự cố*",
+       "insiden, gangguan",
+       "*sự cố kỹ thuật* (gangguan teknis)"
+      ],
+      [
+       "*sơ suất*",
+       "kelalaian kecil",
+       "halus: *Đây là sơ suất của chúng tôi.*"
+      ],
+      [
+       "*bồi thường*",
+       "mengganti rugi (resmi)",
+       "*bồi thường thiệt hại*"
+      ],
+      [
+       "*đền bù*",
+       "mengganti, menebus",
+       "*Chúng tôi sẽ đền bù cho anh.*"
+      ],
+      [
+       "*hoàn tiền*",
+       "mengembalikan uang",
+       "*hoàn tiền trong ba ngày*"
+      ],
+      [
+       "*xử lý*",
+       "menangani, memproses",
+       "*Em sẽ xử lý ngay ạ.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pasangan *phàn nàn* dan *khiếu nại* mirip \"mengeluh\" dan \"mengadu\". Tamu yang *phàn nàn* sedang kesal dan ingin didengar; tamu yang *khiếu nại* sudah menulis surat, meminta tanggapan resmi, dan mungkin ganti rugi — jawablah dengan gaya surel unit 4."
+    },
+    {
+     "type": "kotak",
+     "title": "Menghadapi tamu yang marah di Vietnam",
+     "items": [
+      "**Pindahkan ke tempat yang tenang.** Ditegur di depan orang banyak membuat semua pihak kehilangan muka (*mất mặt*).",
+      "**Kata ganti adalah separuh permintaan maafmu.** Sebut dirimu *em* dan tamu *anh/chị*, walaupun ia sebaya denganmu; di surel, tamu menjadi *Quý khách*.",
+      "**Tindakan dulu, alasan belakangan.** Penjelasan panjang tentang siapa yang salah terdengar seperti *đổ lỗi* (melempar kesalahan). Satu kalimat *do …* cukup; sisanya janji konkret dengan *sẽ*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Belanja daring dan pengembalian barang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*đặt hàng* / *đơn hàng*",
+       "memesan / pesanan"
+      ],
+      [
+       "*mã đơn (hàng)*",
+       "nomor pesanan"
+      ],
+      [
+       "*giao hàng* / *shipper*",
+       "mengantar barang / kurir"
+      ],
+      [
+       "*phí vận chuyển*, *phí ship*",
+       "ongkos kirim"
+      ],
+      [
+       "*thanh toán khi nhận hàng* (COD)",
+       "bayar di tempat"
+      ],
+      [
+       "*đổi trả*",
+       "tukar dan retur"
+      ],
+      [
+       "*hết hàng* / *còn hàng*",
+       "stok habis / stok ada"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa belanja daring di Vietnam penuh kata pinjaman Inggris yang dieja apa adanya: *shipper*, *ship*, *sale*, *voucher*, *shop*. Toko kecil sering menyebut dirinya *shop* — *Shop gửi anh mã giảm giá ạ* — dan pembeli pun memanggil *Shop ơi!*"
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum menekan tombol \"đặt hàng\"",
+     "items": [
+      "Belanja daring di Vietnam kebanyakan lewat lokapasar besar seperti Shopee, Lazada, dan TikTok Shop, ditambah toko yang berjualan lewat Facebook dan Zalo. Keluhan paling efektif biasanya lewat fitur chat toko atau lokapasar, dengan foto sebagai bukti.",
+      "**Bayar di tempat (COD) masih sangat umum.** Tanyakan dulu: *Em có được xem hàng trước khi thanh toán không?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Sen Travel telah menerima surel Bapak/Ibu.",
+       "*Sen Travel đã nhận được email của Quý khách.*"
+      ],
+      [
+       "Dengan ini kami mengonfirmasi perubahan tanggal keberangkatan.",
+       "*Chúng tôi xin xác nhận thay đổi ngày khởi hành.*"
+      ],
+      [
+       "Mohon maaf, sesuai ketentuan, uang muka tidak dapat dikembalikan.",
+       "*Rất tiếc, theo điều khoản, khoản đặt cọc không được hoàn lại.*"
+      ],
+      [
+       "Kami sangat mengharapkan tanggapan Bapak/Ibu.",
+       "*Rất mong nhận được phản hồi của Quý khách.*"
+      ],
+      [
+       "Nanti saya konfirmasi ulang lewat surel.",
+       "*Em sẽ xác nhận lại bằng email ạ.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "phàn nàn",
+   "baca": "fàn nàn",
+   "id": "mengeluh"
+  },
+  {
+   "vi": "thành thật",
+   "baca": "thàng thật",
+   "id": "tulus, sungguh-sungguh"
+  },
+  {
+   "vi": "rất tiếc",
+   "baca": "zất tiếk",
+   "id": "sayang sekali, (kami) menyesal"
+  },
+  {
+   "vi": "thông cảm",
+   "baca": "thông kảm",
+   "id": "memaklumi, mengerti"
+  },
+  {
+   "vi": "lỗi",
+   "baca": "lỗi",
+   "id": "kesalahan"
+  },
+  {
+   "vi": "tại",
+   "baca": "tại",
+   "id": "gara-gara (menyalahkan)"
+  },
+  {
+   "vi": "do",
+   "baca": "zo",
+   "id": "akibat, disebabkan oleh (resmi)"
+  },
+  {
+   "vi": "nhờ",
+   "baca": "nyờ",
+   "id": "berkat"
+  },
+  {
+   "vi": "cẩu thả",
+   "baca": "kẩu thả",
+   "id": "ceroboh"
+  },
+  {
+   "vi": "sơ sài",
+   "baca": "sơ sài",
+   "id": "asal-asalan, seadanya"
+  },
+  {
+   "vi": "nhầm",
+   "baca": "nyầm",
+   "id": "keliru, salah (pilih/ambil)"
+  },
+  {
+   "vi": "nhập",
+   "baca": "nyập",
+   "id": "memasukkan (data)"
+  },
+  {
+   "vi": "trống",
+   "baca": "cống",
+   "id": "kosong (kamar, kursi)"
+  },
+  {
+   "vi": "chuyển",
+   "baca": "cuyển",
+   "id": "memindahkan"
+  },
+  {
+   "vi": "chênh lệch",
+   "baca": "cêng lệk",
+   "id": "selisih"
+  },
+  {
+   "vi": "hoàn lại",
+   "baca": "hoàn lại",
+   "id": "mengembalikan (uang)"
+  },
+  {
+   "vi": "bồi thường",
+   "baca": "bồi thường",
+   "id": "mengganti rugi"
+  },
+  {
+   "vi": "xử lý",
+   "baca": "sử lý",
+   "id": "menangani"
+  },
+  {
+   "vi": "đơn hàng",
+   "baca": "dơn hàng",
+   "id": "pesanan"
+  },
+  {
+   "vi": "vận chuyển",
+   "baca": "vận cuyển",
+   "id": "pengangkutan, ekspedisi"
+  },
+  {
+   "vi": "đóng gói",
+   "baca": "dóng gói",
+   "id": "membungkus, mengemas"
+  },
+  {
+   "vi": "vỡ",
+   "baca": "vỡ",
+   "id": "pecah"
+  },
+  {
+   "vi": "hết hàng / còn hàng",
+   "baca": "hết hàng / kòn hàng",
+   "id": "stok habis / stok ada"
+  },
+  {
+   "vi": "rút kinh nghiệm",
+   "baca": "zút king ngiệm",
+   "id": "mengambil pelajaran"
+  },
+  {
+   "vi": "bực",
+   "baca": "bựk",
+   "id": "kesal, jengkel"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Pakai kata ganti yang disebut di dalam kurung.",
+   "items": [
+    "Saya sungguh minta maaf karena membuat Bapak menunggu lama. (saya: em, Bapak: anh)",
+    "Penerbangan dibatalkan karena cuaca buruk. (resmi)",
+    "Berkat bantuan Kakak, saya selesai tepat waktu. (Kakak: chị, saya: em)",
+    "Gara-gara kamu, kita ketinggalan bus! (kamu: cậu)",
+    "Sayang sekali, malam ini kamar keluarga sudah habis.",
+    "Kami akan mengembalikan selisih harganya. (kami: chúng tôi)"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ trời mưa to nên tour Hạ Long bị hoãn. (netral)",
+    "____ anh Tuấn chỉ đường mà cả đoàn không bị lạc. (akibat baik)",
+    "____ cậu mà tớ bị sếp mắng! (menyalahkan)",
+    "Sự cố này là ____ lỗi kỹ thuật. (resmi)",
+    "Em ____ xin lỗi chị. (sungguh-sungguh)",
+    "____, cửa hàng đã hết mẫu này. (menolak dengan menyesal)",
+    "Mong anh ____ cho chúng em. (mohon pengertian)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan kata di dalam kurung: sebab dulu, lalu *nên*. Contoh: *Tắc đường. Em đến muộn. (vì)* → *Vì tắc đường nên em đến muộn.*",
+   "items": [
+    "Khách sạn nhập nhầm. Khách phải đổi phòng. (do)",
+    "Chị Hương giúp. Budi làm xong báo cáo sớm. (nhờ)",
+    "Trời bão. Chuyến bay bị hủy. (vì)",
+    "Minh quên vé. Cả nhóm phải quay về. (tại)",
+    "Hàng đóng gói sơ sài. Hai cái bát bị vỡ. (do)",
+    "Có bản đồ. Đoàn khách không bị lạc. (nhờ)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "xin lỗi / thành thật / em / chị / vì / chờ / để / chị / lâu / phải",
+    "sự cố / do / này / lỗi kỹ thuật / là",
+    "nhờ / mà / chị / em / đỡ lo / nhiều",
+    "sẽ / chúng tôi / tiền / hoàn lại / cho / Quý khách",
+    "tại / muộn / mà / tắc đường / em / đến"
+   ]
+  }
+ ],
+ "answers": [
+  "Em thành thật xin lỗi anh vì để anh phải chờ lâu. — Chuyến bay bị hủy do thời tiết xấu. — Nhờ chị giúp nên em làm xong đúng hạn. — Tại cậu mà chúng ta bị lỡ xe buýt! — Rất tiếc, tối nay hết phòng gia đình rồi ạ. — Chúng tôi sẽ hoàn lại tiền chênh lệch.",
+  "Vì — Nhờ — Tại — do — thành thật — Rất tiếc — thông cảm",
+  "Do khách sạn nhập nhầm nên khách phải đổi phòng. — Nhờ chị Hương giúp nên Budi làm xong báo cáo sớm. — Vì trời bão nên chuyến bay bị hủy. — Tại Minh quên vé nên cả nhóm phải quay về. — Do hàng đóng gói sơ sài nên hai cái bát bị vỡ. — Nhờ có bản đồ nên đoàn khách không bị lạc.",
+  "Em thành thật xin lỗi chị vì để chị phải chờ lâu. — Sự cố này là do lỗi kỹ thuật. — Nhờ chị mà em đỡ lo nhiều. — Chúng tôi sẽ hoàn lại tiền cho Quý khách. — Tại tắc đường mà em đến muộn."
+ ]
+}

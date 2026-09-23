@@ -106,7 +106,11 @@ function perbaikiTabel(b, catat) {
 /* ── jalankan ────────────────────────────────────────────────────────────── */
 
 const arg = process.argv.slice(2);
-if (arg[0] === "--kata") { console.log(baca(arg.slice(1).join(" "))); process.exit(0); }
+// --kata di posisi mana pun = mode periksa satu frasa. Dulu hanya dikenali di
+// posisi pertama, jadi `baca-viet.mjs vi-b2 --kata "…"` diam-diam menulis ulang
+// seluruh folder (dan menambahkan cara baca ke baris dialog B2).
+const iKata = arg.indexOf("--kata");
+if (iKata >= 0) { console.log(baca(arg.slice(iKata + 1).join(" "))); process.exit(0); }
 
 const slug = arg[0];
 if (!slug) { console.error("pakai: node scripts/baca-viet.mjs <slug> [--cek]"); process.exit(1); }
