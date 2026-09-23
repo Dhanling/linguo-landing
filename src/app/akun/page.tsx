@@ -4427,8 +4427,13 @@ export default function AkunPage() {
                             )}
                           </div>
                           {/* [ui-lang-switcher-v1] pemilih bahasa antarmuka — kanan atas,
-                              persis di kiri lonceng & avatar. */}
-                          <UiLangSwitcher />
+                              persis di kiri lonceng & avatar.
+                              [ui-lang-switcher-desktop-only-v1] di HP disembunyikan:
+                              top bar mobile di StudentShell sudah punya pemilih yang
+                              sama, jadi dulu kelihatan dobel di satu layar. */}
+                          <div className="hidden md:block">
+                            <UiLangSwitcher />
+                          </div>
                           {/* [bug-report-topbar-dicabut-v1] Tombol Lapor Bug di top bar desktop
                               dicabut — dobel dengan tombol Lapor Bug di dasar sidebar kiri. */}
                           {student?.id && (
