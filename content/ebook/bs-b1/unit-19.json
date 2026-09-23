@@ -1,0 +1,845 @@
+{
+ "title": "Satu bahasa, tiga nama — perjalanan ke Zagreb & Beograd",
+ "title_target": "Voz ili vlak?",
+ "goal": "Bepergian di kawasan eks-Yugoslavia dengan bahasa Bosnia-mu: mengenali perbedaan **bosanski, hrvatski, srpski** — ijekavski vs ekavski, kosakata (*sedmica/tjedan/nedelja, hljeb/kruh/hleb, voz/vlak*), *da* + kala kini vs infinitif — dan membaca **ćirilica** 30 huruf.",
+ "bekal": [
+  "menebak dari mana seseorang berasal (atau sebuah teks ditulis) lewat kosakata dan bentuk ijekavski/ekavski",
+  "mengubah bentuk ekavski ke ijekavski dan sebaliknya: *mleko ↔ mlijeko, dete ↔ dijete, beo ↔ bijel*",
+  "membaca papan nama dan menu dalam huruf Kiril, termasuk huruf yang \"menipu\" (*Р, С, Н, В*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — U zagrebačkoj pekari",
+   "intro": "Budi pergi ke Zagreb bersama Ivana, teman sekelasnya dari Mostar, untuk akhir pekan. Pagi pertama, ia membeli sarapan di toko roti dekat pusat kota — dan untuk pertama kali mendengar bahasa \"yang sama tapi lain\".",
+   "lines": [
+    {
+     "speaker": "Prodavačica:",
+     "text": "Dobar dan! Izvolite, što želite?",
+     "id": "Selamat siang! Silakan, mau apa?",
+     "literal": "baik hari! silakan, apa Anda-ingin?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan. Pola hljeba i jedan burek, molim Vas.",
+     "id": "Selamat siang. Setengah roti dan satu burek, tolong.",
+     "literal": "baik hari. setengah roti-genitif dan satu burek, saya-mohon Anda-akusatif."
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Pola kruha, može. A burek s mesom ili sa sirom?",
+     "id": "Setengah roti, bisa. Burek-nya isi daging atau keju?",
+     "literal": "setengah roti-genitif, ia-bisa. dan burek dengan daging-instrumental atau dengan keju-instrumental?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sa sirom? Pa to je sirnica, a ne burek!",
+     "id": "Isi keju? Lho, itu namanya sirnica, bukan burek!",
+     "literal": "dengan keju-instrumental? lho itu ia-adalah sirnica, dan bukan burek!"
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Ah, Vi ste iz Sarajeva! Kod nas je burek sve što se peče u tom tijestu.",
+     "id": "Ah, Anda dari Sarajevo ya! Di tempat kami, semua yang dipanggang dalam adonan itu disebut burek.",
+     "literal": "ah, Anda Anda-adalah dari Sarajevo-genitif! di-tempat kami-genitif ia-adalah burek semua apa diri-sendiri ia-dipanggang dalam itu-nt-lokatif adonan-lokatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobro, uvjerili ste me. Onda burek sa sirom!",
+     "id": "Baiklah, Anda berhasil meyakinkan saya. Kalau begitu burek isi keju!",
+     "literal": "baik, meyakinkan-jm Anda-adalah saya-akusatif. kalau-begitu burek dengan keju-instrumental!"
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "Vidiš? Ona je rekla „kruh“, a ti „hljeb“, i razumjeli ste se savršeno.",
+     "id": "Lihat kan? Dia bilang „kruh“, kamu „hljeb“, dan kalian saling paham sempurna.",
+     "literal": "kamu-melihat? ia-pr ia-adalah berkata-pr „roti“, dan kamu „roti“, dan saling-memahami-jm kalian-adalah diri-sendiri sempurna."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tačno. Kao da sam u Sarajevu, samo s malo drugačijim riječima.",
+     "id": "Betul. Rasanya seperti di Sarajevo, cuma kata-katanya sedikit lain.",
+     "literal": "tepat. seperti bahwa saya-adalah di Sarajevo-lokatif, hanya dengan sedikit lain-jm-instrumental kata-jm-instrumental."
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "Gramatika je skoro ista, a razlike su najviše u rječniku.",
+     "id": "Tata bahasanya hampir sama, perbedaannya paling banyak di kosakata.",
+     "literal": "tata-bahasa ia-adalah hampir sama-pr, sedangkan perbedaan-jm mereka-adalah paling-banyak dalam kosakata-lokatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sutra idem autobusom u Beograd. Gdje je ovdje autobuska stanica?",
+     "id": "Besok aku ke Beograd naik bus. Di sini terminal busnya di mana?",
+     "literal": "besok saya-pergi bus-instrumental ke Beograd-akusatif. di-mana ia-adalah di-sini bus-pr stasiun?"
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "Ovdje se kaže „autobusni kolodvor“. A voz je u Zagrebu „vlak“.",
+     "id": "Di sini sebutannya „autobusni kolodvor“. Dan kereta di Zagreb disebut „vlak“.",
+     "literal": "di-sini diri-sendiri ia-dikatakan „bus-lk stasiun“. dan kereta ia-adalah di Zagreb-lokatif „kereta“."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Voz ili vlak, glavno da stignem!",
+     "id": "Voz atau vlak, yang penting aku sampai!",
+     "literal": "kereta atau kereta, utama-nt agar saya-tiba!"
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "A u Beogradu ćeš čuti „mleko“ umjesto „mlijeko“.",
+     "id": "Dan di Beograd kamu akan dengar „mleko“, bukan „mlijeko“.",
+     "literal": "dan di Beograd-lokatif kamu-akan mendengar „susu“ sebagai-ganti „susu“."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Mleko“? Zvuči kao da je neko pojeo pola riječi!",
+     "id": "„Mleko“? Kedengarannya kayak ada yang memakan separuh katanya!",
+     "literal": "„susu“? ia-terdengar seperti bahwa ia-adalah seseorang memakan-lk setengah kata-genitif!"
+    }
+   ],
+   "notes": [
+    "**Burek vs *sirnica* — lelucon lintas batas yang paling terkenal.** Di Bosnia, *burek* hanya berarti pita isi **daging**. Isi keju adalah *sirnica*, isi bayam *zeljanica*, isi kentang *krompiruša*, dan semuanya bersama-sama disebut *pita*. Di Kroasia dan Serbia, *burek* dipakai untuk isi apa saja: *burek sa sirom* di sana normal, di Sarajevo membuat orang tersenyum atau protes.",
+    "***Što želite?* — bentuk Kroasia untuk \"apa\".** Di Bosnia dan Serbia \"apa?\" adalah *šta*. Tetapi hati-hati: *što* juga hidup dalam bahasa Bosnia sebagai kata sambung dan kata ganti relatif — *zato što, izvinite što kasnim, sve što se peče*. Jadi *što* tidak otomatis berarti \"orang Kroasia\"; hanya *što* sebagai kata tanya yang terasa Kroasia — norma Bosnia sebenarnya mengizinkannya juga, tetapi di mulut orang Sarajevo hampir selalu *šta*.",
+    "***Kod nas* — \"di tempat kami, di negeri kami\".** *Kod* + genitif untuk orang = di rumah/di tempat: *kod nas, kod Amine, kod doktora*. Ini cara paling alami untuk membandingkan kebiasaan: *Kod nas se kaže…* (kami biasanya bilang…).",
+    "***Razumjeli ste se*** — *se* timbal balik: \"kalian saling memahami\". Bentuk yang sama: *vidjeli smo se, čujemo se* (sampai ngobrol lagi). Budi dan penjual itu adalah contoh nyata: dua ragam, satu percakapan tanpa hambatan.",
+    "***Autobusni kolodvor*** adalah nama terminal bus di Zagreb; di Sarajevo *autobuska stanica*. *Kolodvor* (stasiun) adalah kata Kroasia; kereta di Kroasia *vlak*, di Bosnia dan Serbia *voz*. *Glavno da* + kala kini = \"yang penting …\": *Glavno da si zdrav.*",
+    "***Mleko* — ekavski.** Di Serbia (termasuk Beograd), *ije/je* dari bahasa lama diucapkan *e*: *mleko, lepo, vreme, dete*. Bosnia dan Kroasia memakai *ije/je*: *mlijeko, lijepo, vrijeme, dijete*. Lihat tabel kedua di bawah."
+   ],
+   "grammars": [
+    {
+     "title": "Satu sistem, beberapa standar — kosakata yang berbeda",
+     "body": [
+      "Bahasa Bosnia, Kroasia, Serbia (dan Montenegro) punya tata bahasa yang hampir identik — tujuh padež, vid, klitik di kursi kedua. Perbedaannya terutama di **kosakata** dan **pelafalan satu vokal**. Bandingkan dengan bahasa Indonesia dan Melayu Malaysia: tata bahasanya sama, tetapi *mobil* di sana disebut *kereta*, dan *kantor* disebut *pejabat*."
+     ],
+     "table": {
+      "head": [
+       "Bosanski",
+       "Hrvatski",
+       "Srpski",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*sedmica*",
+        "*tjedan*",
+        "*nedelja* (juga *sedmica*)",
+        "minggu (7 hari)"
+       ],
+       [
+        "*hljeb*",
+        "*kruh*",
+        "*hleb*",
+        "roti"
+       ],
+       [
+        "*voz*",
+        "*vlak*",
+        "*voz*",
+        "kereta"
+       ],
+       [
+        "*kafa* (*kahva*)",
+        "*kava*",
+        "*kafa*",
+        "kopi"
+       ],
+       [
+        "*historija*",
+        "*povijest*",
+        "*istorija*",
+        "sejarah"
+       ],
+       [
+        "*hiljada*",
+        "*tisuća*",
+        "*hiljada*",
+        "ribu"
+       ],
+       [
+        "*šta? ko?*",
+        "*što? tko?*",
+        "*šta? ko?*",
+        "apa? siapa?"
+       ],
+       [
+        "*tačno*",
+        "*točno*",
+        "*tačno*",
+        "tepat"
+       ],
+       [
+        "*fudbal*",
+        "*nogomet*",
+        "*fudbal*",
+        "sepak bola"
+       ],
+       [
+        "*univerzitet*",
+        "*sveučilište*",
+        "*univerzitet*",
+        "universitas"
+       ],
+       [
+        "*januar, februar…*",
+        "*siječanj, veljača…*",
+        "*januar, februar…*",
+        "Januari, Februari…"
+       ],
+       [
+        "*paradajz*",
+        "*rajčica*",
+        "*paradajz*",
+        "tomat"
+       ],
+       [
+        "*izvinite*",
+        "*oprostite*",
+        "*izvinite*",
+        "maaf"
+       ]
+      ]
+     },
+     "after": [
+      "**Bahasa Bosnia sering berada di tengah:** dalam banyak kata ia sama dengan Serbia (*voz, hiljada, šta, tačno*), tetapi ijekavski-nya sama dengan Kroasia, dan ia punya ciri sendiri seperti **h** pada *historija, kahva, lahko, mehko, sahat*.",
+      "**Semua saling paham tanpa penerjemah.** Perbedaannya kira-kira sebesar bahasa Inggris Britania dan Amerika. Karena itu kamu bisa memakai bahasa Bosnia-mu dengan tenang di Zagreb, Beograd, maupun Podgorica."
+     ]
+    },
+    {
+     "title": "Ijekavski dan ekavski — satu vokal, dua wilayah",
+     "body": [
+      "Bahasa lama punya satu vokal (*jat*) yang di tiap wilayah berkembang berbeda. Di Bosnia, Kroasia, dan Montenegro ia menjadi **ije** (suku kata panjang) atau **je** (pendek) — *ijekavski*. Di Serbia ia menjadi **e** — *ekavski*."
+     ],
+     "table": {
+      "head": [
+       "Ijekavski (bs, hr)",
+       "Ekavski (sr di Serbia)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*mlijeko*",
+        "*mleko*",
+        "susu"
+       ],
+       [
+        "*lijepo*",
+        "*lepo*",
+        "indah, bagus"
+       ],
+       [
+        "*vrijeme*",
+        "*vreme*",
+        "waktu, cuaca"
+       ],
+       [
+        "*dijete, djeca*",
+        "*dete, deca*",
+        "anak, anak-anak"
+       ],
+       [
+        "*mjesto*",
+        "*mesto*",
+        "tempat"
+       ],
+       [
+        "*gdje*",
+        "*gde*",
+        "di mana"
+       ],
+       [
+        "*cijena*",
+        "*cena*",
+        "harga"
+       ],
+       [
+        "*rijeka*",
+        "*reka*",
+        "sungai"
+       ],
+       [
+        "*htio, htjeti*",
+        "*hteo, hteti*",
+        "mau (partisip, infinitif)"
+       ],
+       [
+        "*bijel, bijeli*",
+        "*beo, beli*",
+        "putih"
+       ]
+      ]
+     },
+     "after": [
+      "**Rumus menebak:** *ije* ↔ *e* dan *je* ↔ *e*. Dari ekavski ke ijekavski tidak selalu bisa ditebak (tidak semua *e* berasal dari *jat*: *more, selo* tetap sama), jadi andalkan kosakata yang kamu kenal.",
+      "**Perhatikan *beo* dan *hteo*.** Dalam bentuk ekavski ini *l* di akhir kata menjadi *o* (*beo*, sedangkan ijekavski mempertahankan *bijel*), dan partisip *htio* menjadi *hteo*. Itu sebabnya bentuknya terlihat lebih asing daripada sekadar hilangnya *ij*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ćirilica u Beogradu",
+   "intro": "Beograd, keesokan sorenya. Dragan, kolega Budi dari Banja Luka yang sedang dinas di Beograd, menjemputnya di terminal bus. Papan nama di sekeliling mereka bercampur antara huruf Latin dan Kiril.",
+   "lines": [
+    {
+     "speaker": "Dragan:",
+     "text": "Budi, dobro došao u Beograd! Kako je bilo putovanje?",
+     "id": "Budi, selamat datang di Beograd! Perjalanannya gimana?",
+     "literal": "Budi, baik datang-lk ke Beograd-akusatif! bagaimana ia-adalah ada-nt perjalanan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dugo, ali lijepo. Samo ne mogu pročitati pola natpisa — sve je na ćirilici!",
+     "id": "Lama, tapi menyenangkan. Cuma separuh papan nama nggak bisa kubaca — semuanya huruf Kiril!",
+     "literal": "lama, tetapi indah. hanya tidak saya-bisa membaca setengah tulisan-jm-genitif — semua ia-adalah pada Kiril-lokatif!"
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Nije baš sve, ali mnogo toga jeste. Hajde, pročitaj ovo: „ЦЕНТАР“.",
+     "id": "Nggak semuanya juga, tapi banyak. Ayo, baca ini: „ЦЕНТАР“.",
+     "literal": "ia-bukan persis semua, tetapi banyak itu-genitif ia-adalah. ayo, bacalah ini: „pusat“."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "C-e-n-t-a-r… Centar! A ovo, „РЕСТОРАН“… „Pectopah“? Ne, čekaj — restoran!",
+     "id": "C-e-n-t-a-r… Centar! Kalau ini, „РЕСТОРАН“… „Pectopah“? Eh, tunggu — restoran!",
+     "literal": "c-e-n-t-a-r… pusat! dan ini, „restoran“… „pectopah“? tidak, tunggulah — restoran!"
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Bravo! Najteža su slova koja liče na latinicu: Р je „r“, С je „s“, Н je „n“.",
+     "id": "Bravo! Yang paling susah itu huruf yang mirip huruf Latin: Р itu „r“, С itu „s“, Н itu „n“.",
+     "literal": "bravo! paling-sulit-jm mereka-adalah huruf-jm yang-jm mereka-mirip pada Latin-akusatif: Р ia-adalah „r“, С ia-adalah „s“, Н ia-adalah „n“."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A ti, Dragane? Pišeš li ćirilicom ili latinicom?",
+     "id": "Kalau kamu, Dragan? Kamu menulis pakai huruf Kiril atau Latin?",
+     "literal": "dan kamu, Dragan-vokatif? kamu-menulis apakah Kiril-instrumental atau Latin-instrumental?"
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Pišem i ćirilicom i latinicom. U Banjoj Luci se koriste obje.",
+     "id": "Aku menulis pakai dua-duanya, Kiril dan Latin. Di Banja Luka keduanya dipakai.",
+     "literal": "saya-menulis baik Kiril-instrumental maupun Latin-instrumental. di Banja-pr-lokatif Luka-lokatif diri-sendiri mereka-dipakai keduanya-pr."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Primijetio sam još nešto: ti kažeš „mlijeko“, kao ja, a ovdje svi kažu „mleko“.",
+     "id": "Aku perhatikan satu hal lagi: kamu bilang „mlijeko“, sama sepertiku, tapi di sini semua bilang „mleko“.",
+     "literal": "memperhatikan-lk saya-adalah masih sesuatu: kamu kamu-berkata „susu“, seperti saya, sedangkan di-sini semua-jm mereka-berkata „susu“."
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "U Srbiji se govori ekavski, a kod nas u Bosni ijekavski.",
+     "id": "Di Serbia orang bicara ekavski, sedangkan di tempat kami di Bosnia ijekavski.",
+     "literal": "di Serbia-lokatif diri-sendiri ia-dibicarakan ekavski, sedangkan di-tempat kami-genitif di Bosnia-lokatif ijekavski."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "I još: ovdje stalno čujem „moram da idem“, a skoro nikad „moram ići“.",
+     "id": "Satu lagi: di sini aku terus dengar „moram da idem“, hampir tak pernah „moram ići“.",
+     "literal": "dan masih: di-sini terus saya-mendengar „saya-harus agar saya-pergi“, dan hampir tidak-pernah „saya-harus pergi“."
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Tako je. Zagreb kaže „moram ići“, Beograd „moram da idem“, a Sarajevo — i jedno i drugo!",
+     "id": "Betul. Zagreb bilang „moram ići“, Beograd „moram da idem“, dan Sarajevo — dua-duanya!",
+     "literal": "begitu ia-adalah. Zagreb ia-berkata „saya-harus pergi“, Beograd „saya-harus agar saya-pergi“, dan Sarajevo — baik satu maupun lainnya!"
+    }
+   ],
+   "notes": [
+    "***Dobro došao*** — ucapan \"selamat datang\" ikut jenis dan jumlah tamunya: *dobro došao* (lk), *dobro došla* (pr), *dobro došli* (jamak atau *Vi*). Jawabannya: *Hvala, bolje vas našao/našla* (\"terima kasih, semoga aku mendapati kalian lebih baik\") — ungkapan lama yang masih sering terdengar.",
+    "***Mnogo toga*** — \"banyak hal\": *mnogo* + genitif dari *to*. Sama polanya: *malo toga, puno toga, ništa od toga*. *Nije baš sve* = \"tidak persis semua\", *baš* melunakkan bantahan.",
+    "***Liče na latinicu.*** *Ličiti na* + akusatif = \"mirip dengan\": *Ličiš na oca.* Kata Kroasia untuk ini adalah *sličiti*. Huruf yang \"menipu\" mata: **Р** = r, **С** = s, **Н** = n, **В** = v, **Х** = h, **У** = u. Yang benar-benar sama bentuk dan bunyinya dengan Latin hanya **А, Е, Ј, К, М, О, Т**.",
+    "***U Banjoj Luci.*** Kedua bagian nama kota ini dideklinasi: *Banja Luka, iz Banje Luke, u Banjoj Luci*. Banja Luka adalah kota terbesar di entitas Republika Srpska. Orang Serbia di Bosnia dan Hercegovina (juga di Montenegro) berbicara **ijekavski**, seperti Dragan — ekavski adalah ciri Serbia sendiri, bukan ciri \"orang Serbia\" di mana pun.",
+    "***Moram da idem* vs *moram ići*.** Bahasa Serbia lebih menyukai *da* + kala kini, bahasa Kroasia infinitif, dan bahasa Bosnia menerima keduanya (A2, unit 9). Perbedaan kecil lain ada pada futur di tulisan: Kroasia dan Bosnia menulis *radit ću*, Serbia menggabungkannya menjadi *radiću*."
+   ],
+   "grammars": [
+    {
+     "title": "Ćirilica — 30 huruf, satu huruf satu bunyi",
+     "body": [
+      "Aksara Kiril Serbia dan aksara Latin Bosnia-Kroasia-Serbia **cocok satu lawan satu**: 30 huruf di tiap aksara, satu huruf untuk satu bunyi. Ini buah reformasi abad ke-19 — Kiril oleh Vuk Karadžić, Latin oleh Ljudevit Gaj. Kalau kamu bisa membaca bahasa Bosnia, kamu hanya perlu menghafal bentuk hurufnya, bukan aturan baru. Bunyi *lj, nj, dž* yang di Latin ditulis dua huruf, di Kiril ditulis satu: **Љ, Њ, Џ**."
+     ],
+     "table": {
+      "head": [
+       "Ćirilica",
+       "Latinica",
+       "Ćirilica",
+       "Latinica"
+      ],
+      "rows": [
+       [
+        "А а",
+        "a",
+        "Н н",
+        "n"
+       ],
+       [
+        "Б б",
+        "b",
+        "Њ њ",
+        "nj"
+       ],
+       [
+        "В в",
+        "v",
+        "О о",
+        "o"
+       ],
+       [
+        "Г г",
+        "g",
+        "П п",
+        "p"
+       ],
+       [
+        "Д д",
+        "d",
+        "Р р",
+        "r"
+       ],
+       [
+        "Ђ ђ",
+        "đ",
+        "С с",
+        "s"
+       ],
+       [
+        "Е е",
+        "e",
+        "Т т",
+        "t"
+       ],
+       [
+        "Ж ж",
+        "ž",
+        "Ћ ћ",
+        "ć"
+       ],
+       [
+        "З з",
+        "z",
+        "У у",
+        "u"
+       ],
+       [
+        "И и",
+        "i",
+        "Ф ф",
+        "f"
+       ],
+       [
+        "Ј ј",
+        "j",
+        "Х х",
+        "h"
+       ],
+       [
+        "К к",
+        "k",
+        "Ц ц",
+        "c"
+       ],
+       [
+        "Л л",
+        "l",
+        "Ч ч",
+        "č"
+       ],
+       [
+        "Љ љ",
+        "lj",
+        "Џ џ",
+        "dž"
+       ],
+       [
+        "М м",
+        "m",
+        "Ш ш",
+        "š"
+       ]
+      ]
+     },
+     "after": [
+      "**Latihan membaca:** *ЦЕНТАР* = centar, *РЕСТОРАН* = restoran, *ПОШТА* = pošta, *АПОТЕКА* = apoteka, *ИЗЛАЗ* = izlaz (pintu keluar), *УЛАЗ* = ulaz (pintu masuk), *ЉУБАВ* = ljubav, *ЏЕМПЕР* = džemper.",
+      "**Ijekavski di Kiril** ditulis sama persis: *мјесто* = mjesto, *млијеко* = mlijeko. Aksara tidak menentukan bahasa: bahasa Bosnia pun sah ditulis dengan Kiril, dan bahasa Serbia sering ditulis dengan Latin."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata yang sama, kota yang berbeda",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Yang kamu cari",
+      "Sarajevo",
+      "Zagreb",
+      "Beograd"
+     ],
+     "rows": [
+      [
+       "stasiun kereta",
+       "*željeznička stanica*",
+       "*kolodvor*",
+       "*železnička stanica*"
+      ],
+      [
+       "terminal bus",
+       "*autobuska stanica*",
+       "*autobusni kolodvor*",
+       "*autobuska stanica*"
+      ],
+      [
+       "bandara",
+       "*aerodrom*",
+       "*zračna luka*",
+       "*aerodrom*"
+      ],
+      [
+       "apotek",
+       "*apoteka*",
+       "*ljekarna*",
+       "*apoteka*"
+      ],
+      [
+       "celana panjang",
+       "*pantalone*",
+       "*hlače*",
+       "*pantalone*"
+      ],
+      [
+       "piring",
+       "*tanjir*",
+       "*tanjur*",
+       "*tanjir*"
+      ],
+      [
+       "sendok",
+       "*kašika*",
+       "*žlica*",
+       "*kašika*"
+      ],
+      [
+       "udara",
+       "*zrak* (juga *vazduh*)",
+       "*zrak*",
+       "*vazduh*"
+      ],
+      [
+       "burek",
+       "hanya isi daging",
+       "isi apa saja",
+       "isi apa saja"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pada masa Yugoslavia, bahasa ini disebut *srpskohrvatski* (atau *hrvatskosrpski*). Sejak negara itu pecah pada 1990-an, tiap negara membakukan standarnya sendiri, dan kini ada empat nama resmi: *bosanski, hrvatski, srpski, crnogorski*. Di Bosnia dan Hercegovina, bahasa Bosnia, Kroasia, dan Serbia sama-sama resmi, dan aksara Latin maupun Kiril sama-sama sah. Secara linguistik keempatnya saling dipahami sepenuhnya, dan banyak ahli bahasa menyebutnya satu bahasa dengan beberapa standar. Bagi penuturnya, nama bahasa adalah soal identitas — dan identitas itu dihormati."
+    },
+    {
+     "type": "kotak",
+     "title": "Etiket bahasa di kawasan ini",
+     "items": [
+      "**Sebut bahasa seseorang dengan nama yang ia pakai.** Kalau ragu, ungkapan *naš jezik* (bahasa kita) dipakai luas dan netral.",
+      "**Tidak perlu \"berganti bahasa\".** Bicaralah bahasa Bosnia-mu di Zagreb maupun Beograd; orang akan paham, dan banyak yang senang mendengar orang asing bisa berbahasa ini sama sekali.",
+      "**Jangan menjadikan perbedaan bahasa bahan olok-olok** di depan orang yang baru kamu kenal. Lelucon burek dan *sirnica* aman; lelucon politik tidak.",
+      "Di Bosnia, formulir resmi dan kemasan produk sering tercetak dalam **tiga bahasa dan dua aksara**. Anggap saja latihan gratis."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tata bahasa kecil yang berbeda — dan cara menebak asal teks",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hal",
+      "Bosanski",
+      "Hrvatski",
+      "Srpski"
+     ],
+     "rows": [
+      [
+       "\"harus pergi\"",
+       "*moram ići / moram da idem*",
+       "*moram ići*",
+       "*moram da idem*"
+      ],
+      [
+       "futur di tulisan",
+       "*radit ću*",
+       "*radit ću*",
+       "*radiću*"
+      ],
+      [
+       "pertanyaan ya/tidak",
+       "*je li / da li*",
+       "*je li*",
+       "*da li*"
+      ],
+      [
+       "\"siapa, apa\"",
+       "*ko, šta*",
+       "*tko, što*",
+       "*ko, šta*"
+      ],
+      [
+       "h khas Bosnia",
+       "*lahko, kahva, mehko* (juga *lako, kafa*)",
+       "*lako, kava, meko*",
+       "*lako, kafa, meko*"
+      ],
+      [
+       "nama asing",
+       "umumnya ejaan asli",
+       "ejaan asli",
+       "sering sesuai ucapan: *Šekspir, Njujork*"
+      ],
+      [
+       "aksara",
+       "Latin (Kiril sah)",
+       "Latin",
+       "Kiril (resmi) dan Latin"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu membaca teks tanpa tahu asalnya, cari tiga-empat penanda saja. *Tko, što, tjedan, tisuća, kruh* → hampir pasti Kroasia. Ekavski (*mleko, lepo, gde*), *da li*, dan *radiću* → Serbia dari Serbia. Ijekavski dengan *šta, hiljada, sedmica, historija*, dan sesekali *lahko* atau *kahva* → Bosnia. Ijekavski dengan *istorija, da li* dan huruf Kiril → sangat mungkin bahasa Serbia dari Bosnia atau Montenegro."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau bepergian di kawasan ini",
+     "items": [
+      "Bus antarkota menghubungkan Sarajevo dengan Zagreb, Beograd, dan kota-kota lain di kawasan setiap hari. Periksa jadwal terkini di terminal atau situs resmi operatornya, karena jadwal dan operatornya bisa berubah; kereta lintas negara jauh lebih jarang daripada bus.",
+      "Siapkan **paspor** di perbatasan: BiH, Kroasia, dan Serbia adalah negara terpisah dengan pemeriksaan perbatasan masing-masing, dan Kroasia termasuk wilayah Schengen.",
+      "Mata uang berbeda: **KM** (konvertibilna marka) di BiH, **euro** di Kroasia, **dinar** di Serbia.",
+      "Kalimat penyelamat di mana saja: *Izvinite, gdje je…?* — di Beograd kamu mungkin mendengarnya kembali sebagai *gde je…?*, dan itu tidak apa-apa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 17",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Budi, hari ini derbi di Grbavica! Aku sudah ambil dua tiket, dua-duanya di baris yang sama.",
+       "*Budi, danas je derbi na Grbavici! Uzeo sam dvije karte, obje u istom redu.*"
+      ],
+      [
+       "Kakak-beradik itu dua-duanya pendukung Sarajevo, tapi mereka kumaafkan.",
+       "*Oba brata su za Sarajevo, ali im to opraštam.*"
+      ],
+      [
+       "Kalau hasilnya seri, kita bayar setengah-setengah.",
+       "*Ako bude neriješeno, plaćamo pola-pola.*"
+      ],
+      [
+       "Hampir nggak! Emir dan aku dua-duanya sampai kehilangan suara.",
+       "*Jedva! Emir i ja smo obojica ostali bez glasa.*"
+      ],
+      [
+       "Saya juga menonton derbi, bersama suami. Kami berdua sampai kedinginan.",
+       "*I ja sam bila na derbiju s mužem. Oboje smo se smrzli.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "jezik, jezici (lk)",
+   "baca": "YE-zik, YE-zi-tsi",
+   "id": "bahasa"
+  },
+  {
+   "bs": "ćirilica (pr)",
+   "baca": "CHI-ri-li-tsa",
+   "id": "aksara Kiril"
+  },
+  {
+   "bs": "latinica (pr)",
+   "baca": "la-TI-ni-tsa",
+   "id": "aksara Latin"
+  },
+  {
+   "bs": "slovo, slova (nt)",
+   "baca": "SLO-vo, SLO-va",
+   "id": "huruf"
+  },
+  {
+   "bs": "natpis, natpisi (lk)",
+   "baca": "NAT-pis, NAT-pi-si",
+   "id": "tulisan, papan nama"
+  },
+  {
+   "bs": "ijekavica / ekavica (pr)",
+   "baca": "i-YE-ka-vi-tsa / E-ka-vi-tsa",
+   "id": "ragam ijekavski / ekavski"
+  },
+  {
+   "bs": "razlika (pr)",
+   "baca": "RAZ-li-ka",
+   "id": "perbedaan"
+  },
+  {
+   "bs": "izgovor (lk)",
+   "baca": "IZ-go-vor",
+   "id": "pelafalan"
+  },
+  {
+   "bs": "rječnik, rječnici (lk)",
+   "baca": "RYECH-nik, RYECH-ni-tsi",
+   "id": "kamus; kosakata"
+  },
+  {
+   "bs": "autobuska stanica (pr)",
+   "baca": "A-u-to-bus-ka STA-ni-tsa",
+   "id": "terminal bus"
+  },
+  {
+   "bs": "željeznička stanica (pr)",
+   "baca": "ZHE-lyez-nich-ka STA-ni-tsa",
+   "id": "stasiun kereta"
+  },
+  {
+   "bs": "granica (pr)",
+   "baca": "GRA-ni-tsa",
+   "id": "perbatasan"
+  },
+  {
+   "bs": "putovanje (nt)",
+   "baca": "pu-to-VA-nye",
+   "id": "perjalanan"
+  },
+  {
+   "bs": "tijesto (nt)",
+   "baca": "TI-yes-to",
+   "id": "adonan"
+  },
+  {
+   "bs": "sirnica (pr)",
+   "baca": "SIR-ni-tsa",
+   "id": "pita isi keju"
+  },
+  {
+   "bs": "pantalone (pr, jamak)",
+   "baca": "pan-ta-LO-ne",
+   "id": "celana panjang"
+  },
+  {
+   "bs": "griješiti (griješim) / pogriješiti (pogriješim)",
+   "baca": "GRI-ye-syi-ti / po-GRI-ye-syi-ti",
+   "id": "keliru, berbuat salah"
+  },
+  {
+   "bs": "primjećivati (primjećujem) / primijetiti (primijetim)",
+   "baca": "pri-mye-CHI-va-ti / pri-MI-ye-ti-ti",
+   "id": "memperhatikan, menyadari"
+  },
+  {
+   "bs": "uvjeravati (uvjeravam) / uvjeriti (uvjerim)",
+   "baca": "uv-YE-ra-va-ti / UV-ye-ri-ti",
+   "id": "meyakinkan"
+  },
+  {
+   "bs": "ličiti (ličim) na + akusatif — ipf",
+   "baca": "LI-chi-ti",
+   "id": "mirip dengan"
+  },
+  {
+   "bs": "peći (pečem) / ispeći (ispečem)",
+   "baca": "PE-chi / IS-pe-chi",
+   "id": "memanggang"
+  },
+  {
+   "bs": "koristiti (koristim) — ipf",
+   "baca": "ko-RIS-ti-ti",
+   "id": "memakai, menggunakan"
+  },
+  {
+   "bs": "sličan, slična",
+   "baca": "SLI-chan, SLICH-na",
+   "id": "mirip, serupa"
+  },
+  {
+   "bs": "glavno da…",
+   "baca": "GLAV-no da",
+   "id": "yang penting …"
+  },
+  {
+   "bs": "kod nas",
+   "baca": "kod nas",
+   "id": "di tempat kami, di negeri kami"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia (pakai kosakata Bosnia).",
+   "items": [
+    "Minggu depan aku ke Zagreb naik bus.",
+    "Tata bahasanya hampir sama.",
+    "Dragan menulis dengan huruf Kiril dan Latin.",
+    "Di Beograd orang bilang „mleko“.",
+    "Terminal bus di mana?",
+    "Yang penting aku sampai."
+   ]
+  },
+  {
+   "prompt": "Ganti kata Kroasia (hr) atau Serbia (sr) di dalam kurung dengan kata Bosnia.",
+   "items": [
+    "Kupio sam pola ____. (hr: kruha)",
+    "Idemo ____ u Mostar. (hr: vlakom)",
+    "Vidimo se iduće ____. (hr: tjedna)",
+    "____ ti je to? (hr: Što)",
+    "To je koštalo dvije ____ maraka. (hr: tisuće)",
+    "Studiram ____ na fakultetu. (sr: istoriju)",
+    "Ovo ____ je hladno. (sr: mleko)"
+   ]
+  },
+  {
+   "prompt": "Ubah dari ekavski ke ijekavski Bosnia.",
+   "items": [
+    "Ovo je lepo mesto.",
+    "Gde je dete?",
+    "Cena je visoka.",
+    "Hteo sam da vidim reku.",
+    "Beli hleb je ukusan.",
+    "Deca pevaju."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "skoro / gramatika / ista / je",
+    "vlak / voz / ili / glavno / stignem / da",
+    "i / ćirilicom / latinicom / i / pišem",
+    "ekavski / Srbiji / u / se / govori",
+    "razlike / u / najviše / rječniku / su"
+   ]
+  }
+ ],
+ "answers": [
+  "Iduće sedmice idem autobusom u Zagreb. — Gramatika je skoro ista. — Dragan piše i ćirilicom i latinicom. — U Beogradu se kaže „mleko“. — Gdje je autobuska stanica? — Glavno da stignem.",
+  "hljeba — vozom — sedmice — Šta — hiljade — historiju — mlijeko",
+  "Ovo je lijepo mjesto. — Gdje je dijete? — Cijena je visoka. — Htio sam da vidim rijeku. — Bijeli hljeb je ukusan. — Djeca pjevaju.",
+  "Gramatika je skoro ista. — Voz ili vlak, glavno da stignem. — Pišem i ćirilicom i latinicom. — U Srbiji se govori ekavski. — Razlike su najviše u rječniku."
+ ]
+}

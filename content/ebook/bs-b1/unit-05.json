@@ -1,0 +1,766 @@
+{
+ "title": "Membuat pasangan vid sendiri — awalan dan akhiran",
+ "title_target": "Prepisati i prepisivati",
+ "goal": "Menyunting teks bersama redaktur sambil menguasai **cara kata kerja Bosnia membentuk pasangan vid**: awalan (*pisati → napisati*), akhiran imperfektif *-ivati / -avati / -ati* (*prepisati → prepisivati, dati → davati, vratiti → vraćati*), kata kerja dua-vid (*organizovati*), dan menebak arti kata kerja baru dari awalannya.",
+ "bekal": [
+  "membentuk perfektif dengan awalan dan melihat kapan awalan itu menambah arti baru (*pisati → prepisati, potpisati, opisati*)",
+  "mengembalikan kata kerja berawalan menjadi imperfektif dengan *-ivati / -avati / -ati* (*potpisivati, davati, vraćati*)",
+  "memilih vid yang tepat untuk kebiasaan, proses, dan tindakan sekali selesai — dalam perintah maupun cerita"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Tekst o Travniku",
+   "intro": "Selasa, rapat redaksi baru selesai. Nermina — yang sejak minggu kedua sudah menawarkan *Možemo na ti* — memanggil Budi ke mejanya dengan cetakan reportasenya tentang Travnik, penuh coretan merah.",
+   "lines": [
+    {
+     "speaker": "Nermina:",
+     "text": "Budi, pročitala sam tvoj tekst o Travniku. Dobar je, ali treba ga malo doraditi.",
+     "id": "Budi, aku sudah baca tulisanmu tentang Travnik. Bagus, tapi perlu sedikit dipoles.",
+     "literal": "Budi, membaca-habis-pr saya-adalah kamu-punya-lk teks-akusatif tentang Travnik-lokatif. baik-lk ia-adalah, tetapi ia-perlu dia-lk-akusatif sedikit menyempurnakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znao sam. Šta da prepravim?",
+     "id": "Sudah kuduga. Apa yang harus kuperbaiki?",
+     "literal": "tahu-lk saya-adalah. apa agar saya-perbaiki?"
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Uvod je predug. Čitalac se izgubi prije nego što stigne do Travnika.",
+     "id": "Pembukaannya kepanjangan. Pembaca sudah tersesat sebelum sampai ke Travnik.",
+     "literal": "pembukaan ia-adalah terlalu-panjang. pembaca diri-sendiri ia-tersesat sebelum daripada apa ia-tiba sampai Travnik-genitif."
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Nemoj prepisivati cijeli uvod, samo ga skrati.",
+     "id": "Jangan tulis ulang seluruh pembukaan, pendekkan saja.",
+     "literal": "jangan-kamu menulis-ulang seluruh-lk-akusatif pembukaan-akusatif, hanya dia-lk-akusatif pendekkanlah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobro. A dio o vezirskim turbetima? Njega sam pisao tri dana.",
+     "id": "Oke. Terus bagian tentang makam para wazir? Itu kutulis tiga hari.",
+     "literal": "baik. dan bagian tentang wazir-jm-lokatif makam-jm-lokatif? dia-lk-akusatif saya-adalah menulis-lk tiga hari-genitif."
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Taj dio je odličan. Samo dopiši jednu rečenicu o Andrićevoj rodnoj kući.",
+     "id": "Bagian itu bagus sekali. Tinggal tambahkan satu kalimat tentang rumah kelahiran Andrić.",
+     "literal": "itu-lk bagian ia-adalah bagus-sekali. hanya tambah-tuliskanlah satu-pr-akusatif kalimat-akusatif tentang Andrić-punya-pr-lokatif kelahiran-pr-lokatif rumah-lokatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Može. Zapisivao sam sve što sam vidio dok sam bio tamo.",
+     "id": "Bisa. Aku mencatat semua yang kulihat selama di sana.",
+     "literal": "bisa. mencatat-lk saya-adalah semua apa saya-adalah melihat-lk selama saya-adalah ada-lk di-sana."
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "I još nešto. U trećem pasusu si prepisao dvije rečenice s jednog sajta.",
+     "id": "Satu lagi. Di paragraf ketiga kamu menyalin dua kalimat dari sebuah situs.",
+     "literal": "dan masih sesuatu. di ketiga-lk-lokatif paragraf-lokatif kamu-adalah menyalin-lk dua kalimat-genitif dari satu-lk-genitif situs-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nisam ih prepisao, samo sam ih preveo s engleskog.",
+     "id": "Aku tidak menyalinnya, cuma menerjemahkannya dari bahasa Inggris.",
+     "literal": "saya-bukan mereka-akusatif menyalin-lk, hanya saya-adalah mereka-akusatif menerjemahkan-lk dari inggris-lk-genitif."
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Kad prevodiš tuđi tekst, uvijek navedi izvor.",
+     "id": "Kalau menerjemahkan teks orang lain, selalu sebutkan sumbernya.",
+     "literal": "kalau kamu-menerjemahkan milik-orang-lain-lk teks-akusatif, selalu sebutkanlah sumber-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Razumijem. Kad da ti pošaljem novu verziju?",
+     "id": "Paham. Kapan versi barunya kukirim ke kamu?",
+     "literal": "saya-mengerti. kapan agar kepada-kamu saya-kirim baru-pr-akusatif versi-akusatif?"
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Danas do pet, da je stignem pregledati prije sastanka s direktorom.",
+     "id": "Hari ini sebelum jam lima, supaya sempat kuperiksa sebelum rapat dengan direktur.",
+     "literal": "hari-ini sampai lima, agar dia-pr-akusatif saya-sempat memeriksa sebelum rapat-genitif dengan direktur-instrumental."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Obično šaljem tekstove uveče, ali danas ću ga poslati ranije.",
+     "id": "Biasanya aku kirim tulisan malam hari, tapi hari ini akan kukirim lebih awal.",
+     "literal": "biasanya saya-mengirim teks-jm-akusatif malam-hari, tetapi hari-ini saya-akan dia-lk-akusatif mengirim lebih-awal."
+    },
+    {
+     "speaker": "Nermina:",
+     "text": "Odlično. I potpiši se ispod teksta punim imenom. Čitaoci vole znati ko piše.",
+     "id": "Bagus. Dan cantumkan nama lengkapmu di bawah tulisan. Pembaca suka tahu siapa penulisnya.",
+     "literal": "bagus-sekali. dan tanda-tanganilah diri-sendiri di-bawah teks-genitif penuh-lk-instrumental nama-instrumental. pembaca-jm mereka-suka tahu siapa ia-menulis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Potpisat ću se. Prvi put potpisujem tekst na bosanskom!",
+     "id": "Akan kucantumkan. Ini pertama kalinya aku menandatangani tulisan dalam bahasa Bosnia!",
+     "literal": "akan-menandatangani saya-akan diri-sendiri. pertama kali saya-menandatangani teks-akusatif pada bosnia-lk-lokatif!"
+    }
+   ],
+   "notes": [
+    "***Nemoj prepisivati…, samo ga skrati.*** Satu kalimat, dua vid, dua fungsi. Larangan dengan *nemoj* biasanya memakai **imperfektif** (*nemoj prepisivati*, bukan *nemoj prepisati*), karena yang dilarang adalah kegiatannya. Perfektif sesudah *nemoj* dipakai untuk peringatan agar sesuatu tidak sampai terjadi: *nemoj zaboraviti, nemoj ga izgubiti*. Perintah positif untuk satu tugas yang harus selesai memakai **perfektif** (*skrati, dopiši, navedi, potpiši*). Nermina memberi empat perintah perfektif dalam satu percakapan — itulah bahasa redaktur.",
+    "***Pisao sam tri dana* vs *pročitala sam tvoj tekst*.** Lamanya waktu (\"tiga hari\") cocok dengan imperfektif, karena yang diceritakan prosesnya. *Pročitala sam* menegaskan bahwa ia sudah membaca sampai habis — dan karena itu bisa memberi penilaian.",
+    "***Zapisivao sam sve što sam vidio.*** *Zapisati* (mencatat) adalah perfektif, dan untuk kebiasaan \"terus-menerus mencatat\" Budi butuh pasangannya: *zapisivati*. Inilah fungsi utama akhiran *-ivati*: membuat kata kerja berawalan kembali bisa berarti \"sedang\" atau \"biasa\".",
+    "***Prepisao* vs *preveo*.** *Prepisati* = menyalin atau menulis ulang; *prevesti* = menerjemahkan. Keduanya berawalan *pre-* (\"melintas, dari satu ke yang lain\"), tetapi akarnya berbeda: *pisati* (menulis) dan *voditi / vesti* (membawa). Menerjemahkan, dalam bahasa Bosnia, adalah \"membawa menyeberang\".",
+    "***Kad da ti pošaljem?* — \"kapan sebaiknya kukirim?\"** Pola *da* + kala kini dalam pertanyaan meminta arahan: *Šta da radim? Gdje da stavim?* Lebih lembut daripada *Kad moram poslati?*",
+    "**Travnik — Vezirski grad.** Dari akhir abad ke-17 sampai pertengahan abad ke-19, Travnik adalah tempat kedudukan para wazir Utsmaniyah yang memerintah Bosnia; *vezirska turbeta* (makam para wazir) di jalan utamanya masih berdiri. Ivo Andrić, peraih Nobel Sastra 1961, lahir di kota ini, dan rumah yang dikenal sebagai rumah kelahirannya kini menjadi museum kecil."
+   ],
+   "grammars": [
+    {
+     "title": "Jalan pertama — awalan: dari imperfektif ke perfektif",
+     "body": [
+      "Kata kerja dasar Bosnia kebanyakan imperfektif. Tambahkan awalan, dan ia menjadi perfektif. Kadang awalan itu **kosong** — hanya menambah \"selesai\"; kadang ia **menambah arti baru**. Satu akar *pisati* menunjukkan kedua kemungkinan."
+     ],
+     "table": {
+      "head": [
+       "Imperfektif",
+       "Awalan",
+       "Perfektif",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*pisati*",
+        "na- (kosong)",
+        "*napisati*",
+        "menulis sampai jadi"
+       ],
+       [
+        "*čitati*",
+        "pro- (kosong)",
+        "*pročitati*",
+        "membaca sampai habis"
+       ],
+       [
+        "*raditi*",
+        "u- (kosong)",
+        "*uraditi*",
+        "mengerjakan sampai beres"
+       ],
+       [
+        "*kuhati*",
+        "s- (kosong)",
+        "*skuhati*",
+        "memasak sampai matang"
+       ],
+       [
+        "*pisati*",
+        "pre-",
+        "*prepisati*",
+        "menyalin, menulis ulang"
+       ],
+       [
+        "*pisati*",
+        "do-",
+        "*dopisati*",
+        "menambahkan tulisan"
+       ],
+       [
+        "*pisati*",
+        "za-",
+        "*zapisati*",
+        "mencatat"
+       ],
+       [
+        "*pisati*",
+        "pot-",
+        "*potpisati*",
+        "menandatangani"
+       ],
+       [
+        "*pisati*",
+        "o-",
+        "*opisati*",
+        "menggambarkan"
+       ],
+       [
+        "*pisati*",
+        "u-",
+        "*upisati*",
+        "mendaftarkan, memasukkan"
+       ]
+      ]
+     },
+     "after": [
+      "**Awalan \"kosong\" harus dihafal per kata kerja**, dan tidak bisa ditebak: *napisati* tetapi *pročitati*, *uraditi*, *skuhati*, *popiti*, *pojesti*, *naučiti*. Kabar baiknya: kamu sudah mengenal sebagian besar dari A1–A2.",
+      "**Awalan yang menambah arti menimbulkan masalah baru.** *Prepisati* perfektif — lalu bagaimana mengatakan \"aku sedang menyalin\"? *Prepisujem* tidak bisa dibentuk dari *prepisati*, dan *pišem* sudah kehilangan arti \"salin\". Jawabannya ada di tabel berikut."
+     ]
+    },
+    {
+     "title": "Jalan kedua — akhiran: kembali ke imperfektif",
+     "body": [
+      "Untuk kata kerja perfektif yang **berawalan dengan arti baru**, bahasa Bosnia membuat imperfektif baru dengan mengubah akhirannya. Hasilnya disebut imperfektif sekunder, dan polanya cukup teratur untuk ditebak."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Perfektif",
+       "Imperfektif",
+       "Contoh kala kini"
+      ],
+      "rows": [
+       [
+        "*-ati* → *-ivati*",
+        "*prepisati, zapisati, potpisati*",
+        "*prepisivati, zapisivati, potpisivati*",
+        "*prepisujem, potpisujem*"
+       ],
+       [
+        "*-ati* → *-avati*",
+        "*dati, prodati, pregledati*",
+        "*davati, prodavati, pregledavati*",
+        "*dajem, prodajem*"
+       ],
+       [
+        "*-iti* → *-ivati*",
+        "*skratiti, preporučiti*",
+        "*skraćivati, preporučivati*",
+        "*skraćujem, preporučujem*"
+       ],
+       [
+        "*-iti* → *-ati* (+ perubahan bunyi)",
+        "*vratiti, pustiti, baciti*",
+        "*vraćati, puštati, bacati*",
+        "*vraćam, puštam, bacam*"
+       ],
+       [
+        "*-iti* → *-ati* (o → a)",
+        "*odgovoriti, skočiti*",
+        "*odgovarati, skakati*",
+        "*odgovaram, skačem*"
+       ],
+       [
+        "akar lain",
+        "*poslati, navesti, doći*",
+        "*slati, navoditi, dolaziti*",
+        "*šaljem, navodim, dolazim*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata kerja *-ivati* hampir semuanya berkala kini *-ujem*:** *prepisivati → prepisujem*, *potpisivati → potpisujem*, *skraćivati → skraćujem*. Kalau kamu melihat *-ujem*, kemungkinan besar itu imperfektif.",
+      "**Bunyi yang melunak di pola *-iti → -ati*** adalah perubahan yang sama dengan kata benda verbal unit 1: t → ć (*vratiti → vraćati*), st → št (*pustiti → puštati*), d → đ (*roditi → rađati*). Kerabat dekatnya memakai *-avati*, dan di situ *ije* ikut memendek: *riješiti → rješavati*.",
+      "**Baris terakhir harus dihafal**, karena pasangannya dari akar lain: *poslati / slati*, *navesti / navoditi*, *doći / dolaziti*, *reći / govoriti*, *uzeti / uzimati*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Iz jednog glagola deset",
+   "intro": "Sore harinya, di kafe dekat Filozofski fakultet. Budi membawa daftar kata kerja dari coretan Nermina, dan Amina — guru bahasa sejati — langsung mengeluarkan pulpen.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Danas sam shvatio da \"prepisati\" i \"prepisivati\" nisu isto.",
+     "id": "Hari ini aku baru sadar bahwa *prepisati* dan *prepisivati* tidak sama.",
+     "literal": "hari-ini saya-adalah memahami-lk bahwa \"menyalin-pf\" dan \"menyalin-ipf\" mereka-bukan sama."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Naravno. Prepišeš nešto jednom i gotovo. A prepisuješ kad to radiš duže ili često.",
+     "id": "Tentu saja. *Prepišeš* itu sekali dan selesai. *Prepisuješ* kalau kamu melakukannya lama atau sering.",
+     "literal": "tentu. kamu-salin-pf sesuatu sekali dan selesai. dan kamu-salin-ipf kalau itu kamu-lakukan lebih-lama atau sering."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A kako da znam koji je koji? U rječniku ima na stotine takvih parova.",
+     "id": "Terus bagaimana aku tahu yang mana yang mana? Di kamus ada ratusan pasangan begitu.",
+     "literal": "dan bagaimana agar saya-tahu yang-lk ia-adalah yang-lk? di kamus-lokatif ia-ada pada ratusan-akusatif begitu-jm-genitif pasangan-jm-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Gledaj nastavak. Ako vidiš -iva- ili -ava-, glagol je skoro sigurno nesvršen.",
+     "id": "Lihat akhirannya. Kalau kamu lihat *-iva-* atau *-ava-*, kata kerjanya hampir pasti imperfektif.",
+     "literal": "lihatlah akhiran-akusatif. kalau kamu-melihat -iva- atau -ava-, kata-kerja ia-adalah hampir pasti tak-selesai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A \"organizovati\"? Nermina kaže i \"organizovao sam jučer\" i \"organizujem svake sedmice\".",
+     "id": "Terus *organizovati*? Nermina bilang \"kemarin aku mengorganisasi\" dan juga \"aku mengorganisasi tiap minggu\".",
+     "literal": "dan \"mengorganisasi\"? Nermina ia-berkata juga \"mengorganisasi-lk saya-adalah kemarin\" juga \"saya-mengorganisasi setiap-pr-genitif minggu-genitif\"."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "To je dvovidski glagol. Isti oblik služi za oba vida, a kontekst ti kaže koji je.",
+     "id": "Itu kata kerja dua-vid. Satu bentuk dipakai untuk kedua vid, dan konteksnya yang memberitahumu.",
+     "literal": "itu ia-adalah dua-vid-lk kata-kerja. sama-lk bentuk ia-melayani untuk kedua vid-genitif, dan konteks kepada-kamu ia-berkata yang-lk ia-adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobro. A šta znači \"dopisivati se\"? Nermina se dopisuje s čitaocima.",
+     "id": "Oke. Terus *dopisivati se* artinya apa? Nermina saling berkirim surat dengan pembaca.",
+     "literal": "baik. dan apa ia-berarti \"berkirim-surat diri-sendiri\"? Nermina diri-sendiri ia-berkirim-surat dengan pembaca-jm-instrumental."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Godinama sam se dopisivala s drugaricom iz Tuzle.",
+     "id": "Bertahun-tahun aku berkirim surat dengan sahabatku dari Tuzla.",
+     "literal": "tahun-jm-instrumental saya-adalah diri-sendiri berkirim-surat-pr dengan teman-pr-instrumental dari Tuzla-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znači, od \"pisati\" mogu napraviti desetak glagola: napisati, prepisati, opisati, potpisati…",
+     "id": "Jadi dari *pisati* aku bisa bikin sekitar sepuluh kata kerja: *napisati, prepisati, opisati, potpisati*…",
+     "literal": "berarti, dari \"menulis\" saya-bisa membuat sekitar-sepuluh kata-kerja-genitif: menulis-pf, menyalin-pf, menggambarkan-pf, menandatangani-pf…"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Tačno. A kad naučiš šta znači prefiks, pogodit ćeš i riječi koje nikad nisi vidio.",
+     "id": "Betul. Dan begitu kamu tahu arti awalannya, kamu bisa menebak juga kata-kata yang belum pernah kamu lihat.",
+     "literal": "tepat. dan kalau kamu-mempelajari-pf apa ia-berarti awalan, akan-menebak kamu-akan juga kata-jm-akusatif yang-jm tidak-pernah kamu-bukan melihat-lk."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Svaki dan zapisuj pet novih glagola.",
+     "id": "Setiap hari catatlah lima kata kerja baru.",
+     "literal": "setiap hari catatlah-ipf lima baru-jm-genitif kata-kerja-jm-genitif."
+    }
+   ],
+   "notes": [
+    "***Godinama sam se dopisivala.*** Amina perempuan, jadi *dopisivala*. *Godinama* (instrumental jamak dari *godina*) berarti \"bertahun-tahun\" — dan lamanya waktu seperti ini hampir selalu menuntut imperfektif. Kerabatnya: *danima* (berhari-hari), *satima* (berjam-jam), *mjesecima* (berbulan-bulan).",
+    "***Dopisivati se* — *se* timbal balik.** Dengan *se*, kata kerja ini berarti \"saling menulis\": *dopisujemo se*, *dopisivala sam se s njom*. Kata bendanya *prepiska* (korespondensi). Tanpa *se*, *dopisivati* berarti \"menambah-nambahkan tulisan\" — arti yang dipakai Nermina di dialog pertama dalam bentuk perfektif *dopiši*.",
+    "***Zapisuj* — perintah imperfektif untuk kebiasaan.** Bandingkan dengan perintah Nermina *dopiši jednu rečenicu* (sekali, perfektif). Perintah untuk sesuatu yang harus diulang setiap hari memakai imperfektif: *zapisuj, čitaj, ponavljaj*.",
+    "***Svršen* dan *nesvršen*.** Itulah istilah tata bahasa Bosnia untuk perfektif (*svršeni glagol*) dan imperfektif (*nesvršeni glagol*) — secara harfiah \"selesai\" dan \"tak selesai\". Kamu akan menemukannya di setiap kamus sebagai singkatan *svrš.* dan *nesvrš.*, atau *pf.* dan *ipf.*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja dua-vid dan tebakan dari awalan",
+     "body": [
+      "Kebanyakan kata kerja serapan internasional berakhiran *-ovati / -irati* adalah **dua-vid**: satu bentuk untuk kedua makna, dan konteks yang menentukan. Ditambah beberapa kata kerja asli yang juga begitu."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Makna selesai (pf)",
+       "Makna proses (ipf)",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*organizovati*",
+        "*Organizovao sam sastanak.* (sekali)",
+        "*Organizujem sastanke svake sedmice.*",
+        "Kroasia: *organizirati*"
+       ],
+       [
+        "*rezervisati*",
+        "*Rezervisala sam sto.*",
+        "*Uvijek rezervišem unaprijed.*",
+        "Kroasia: *rezervirati*"
+       ],
+       [
+        "*analizirati*",
+        "*Analizirali smo podatke.*",
+        "*Analiziramo tržište.*",
+        "juga *-irati* di Bosnia"
+       ],
+       [
+        "*telefonirati*",
+        "*Telefonirao mi je jutros.*",
+        "*Često mi telefonira.*",
+        "lisan: *zvati / nazvati*"
+       ],
+       [
+        "*ručati, večerati*",
+        "*Jesi li ručao?*",
+        "*Ručamo u dva.*",
+        "kata kerja asli"
+       ],
+       [
+        "*vidjeti, čuti*",
+        "*Vidio sam ga jučer.*",
+        "*Vidim more.*",
+        "pf-nya sering *ugledati, začuti*"
+       ]
+      ]
+     },
+     "after": [
+      "**Bosnia lebih menyukai *-ovati / -isati*** untuk kata serapan (*organizovati, rezervisati, informisati*), sedangkan bahasa Kroasia memakai *-irati* (*organizirati, rezervirati, informirati*). Beberapa kata (*analizirati, telefonirati*) memakai *-irati* di ketiga bahasa.",
+      "**Kalau ingin menegaskan \"sudah selesai\"**, penutur kadang menambahkan awalan pada kata kerja dua-vid: *isplanirati* (merencanakan sampai tuntas). Kamu cukup mengenalinya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kotak perkakas penyunting",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Perfektif (sekali)",
+      "Imperfektif (proses/kebiasaan)",
+      "Cara baca (pf)",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*skratiti*",
+       "*skraćivati*",
+       "SKRA-ti-ti",
+       "memendekkan"
+      ],
+      [
+       "*ispraviti*",
+       "*ispravljati*",
+       "IS-pra-vi-ti",
+       "membetulkan"
+      ],
+      [
+       "*dodati*",
+       "*dodavati*",
+       "DO-da-ti",
+       "menambahkan"
+      ],
+      [
+       "*izbrisati*",
+       "*brisati*",
+       "IZ-bri-sa-ti",
+       "menghapus"
+      ],
+      [
+       "*zamijeniti*",
+       "*zamjenjivati*",
+       "za-MI-ye-ni-ti",
+       "mengganti"
+      ],
+      [
+       "*provjeriti*",
+       "*provjeravati*",
+       "PRO-vye-ri-ti",
+       "memeriksa"
+      ],
+      [
+       "*prevesti*",
+       "*prevoditi*",
+       "PRE-ves-ti",
+       "menerjemahkan"
+      ],
+      [
+       "*navesti (izvor)*",
+       "*navoditi*",
+       "NA-ves-ti",
+       "menyebutkan (sumber)"
+      ],
+      [
+       "*doraditi*",
+       "*dorađivati*",
+       "DO-ra-di-ti",
+       "memoles, menyempurnakan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *zamijeniti → zamjenjivati*: *ije* memendek menjadi *je* ketika kata itu memanjang, pola ijekavski yang sudah kamu lihat di *riješiti → rješavati*. Dan *izbrisati → brisati* berjalan terbalik: di sini yang dasar justru imperfektif, dan awalan *iz-* hanya menambah \"sampai habis\". Dalam rapat redaksi, redaktur akan memakai kolom kiri untuk perintah (*skrati, dodaj, provjeri*) dan kolom kanan untuk kebiasaan atau keluhan (*stalno dodaješ zareze*, kamu selalu menambah koma)."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis untuk publik dalam bahasa Bosnia",
+     "items": [
+      "**Acuan ejaan:** *Pravopis bosanskoga jezika* karya Senahid Halilović adalah rujukan utama untuk tulisan baku. Redaksi biasanya juga punya pedoman gaya sendiri.",
+      "**Huruf bertanda wajib.** Dalam pesan singkat orang sering menulis tanpa *č, ć, š, ž, đ* (*sisanje* alih-alih *šišanje*), tetapi dalam teks yang terbit itu dianggap ceroboh — dan bisa mengubah arti.",
+      "**Ijekavski konsisten:** *vrijeme, mjesto, lijep* — jangan tercampur *vreme, mesto, lep* dari teks Serbia yang kamu salin atau terjemahkan.",
+      "**Sebut sumber:** *prema podacima…* (menurut data…), *izvor: …*. Menyalin tanpa menyebut sumber (*prepisivanje*) dianggap pelanggaran serius di redaksi mana pun."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menebak arti dari awalan — satu akar, banyak kata",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Awalan",
+      "Arti dasar",
+      "Dengan *pisati*",
+      "Dengan *raditi*"
+     ],
+     "rows": [
+      [
+       "*pre-*",
+       "melintas, ulang",
+       "*prepisati* (menyalin)",
+       "*preraditi* (mengolah ulang)"
+      ],
+      [
+       "*do-*",
+       "menambah, sampai",
+       "*dopisati* (menambahkan)",
+       "*doraditi* (menyempurnakan)"
+      ],
+      [
+       "*za-*",
+       "mulai; menandai",
+       "*zapisati* (mencatat)",
+       "*zaraditi* (mendapat penghasilan)"
+      ],
+      [
+       "*o- / ob-*",
+       "sekeliling, menyeluruh",
+       "*opisati* (menggambarkan)",
+       "*obraditi* (mengolah)"
+      ],
+      [
+       "*iz- / is-*",
+       "keluar, sampai habis",
+       "*ispisati* (mencetak, menulis penuh)",
+       "*izraditi* (membuat, memproduksi)"
+      ],
+      [
+       "*u-*",
+       "masuk; selesai",
+       "*upisati* (mendaftarkan)",
+       "*uraditi* (mengerjakan)"
+      ],
+      [
+       "*pro-*",
+       "melalui; mulai",
+       "*propisati* (meresepkan, menetapkan)",
+       "*proraditi* (mempelajari seluruhnya)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Arti awalan tidak selalu bisa dijumlahkan dengan rapi — *zaraditi* tidak ada hubungannya dengan \"mulai bekerja\", dan *propisati* sudah menjadi istilah dokter dan hukum. Tetapi sebagai alat tebak, tabel ini bekerja lebih sering daripada tidak. Ketika kamu membaca kata kerja baru, pisahkan awalannya, cari akarnya, lalu tebak; setelah itu periksa kamus. Nuansa awalan yang lebih halus akan dibahas lagi di B2."
+    },
+    {
+     "type": "kotak",
+     "title": "Travnik dalam satu hari",
+     "items": [
+      "**Šarena džamija** (Masjid Berwarna), dengan dinding luar yang dilukis, adalah salah satu bangunan paling khas di kota ini.",
+      "**Stari grad**, benteng di atas kota, memberi pemandangan ke seluruh lembah Lašva.",
+      "**Plava voda** adalah mata air jernih di kaki benteng, dikelilingi kafe dan restoran tempat orang makan *ćevapi* ala Travnik.",
+      "**Travnički sir**, keju putih asin dari daerah pegunungan Vlašić di dekatnya, dikenal di seluruh BiH — oleh-oleh yang tepat untuk teta Hajra."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Seandainya saya tidak ketiduran, sekarang saya sudah di pesawat.",
+       "*Da nisam zaspao, sad bih već bio u avionu.*"
+      ],
+      [
+       "Kalau aku tahu, aku telepon kamu jam lima pagi.",
+       "*Da sam znala, zvala bih te u pet ujutro.*"
+      ],
+      [
+       "Sayang sekali saya tidak memesan penerbangan sore.",
+       "*Šteta što nisam rezervisao popodnevni let.*"
+      ],
+      [
+       "Seandainya aku ingat, aku pasti minta tolong kamu.",
+       "*Da sam se sjetio, zamolio bih te.*"
+      ],
+      [
+       "Seandainya aku lebih teliti, aku tidak perlu bayar apa-apa.",
+       "*Da sam bio pažljiviji, ne bih ništa platio.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "prepisivati (prepisujem) / prepisati (prepišem)",
+   "baca": "pre-pi-SI-va-ti / PRE-pi-sa-ti",
+   "id": "menyalin, menulis ulang"
+  },
+  {
+   "bs": "potpisivati (potpisujem) / potpisati (potpišem)",
+   "baca": "pot-pi-SI-va-ti / POT-pi-sa-ti",
+   "id": "menandatangani"
+  },
+  {
+   "bs": "zapisivati (zapisujem) / zapisati (zapišem)",
+   "baca": "za-pi-SI-va-ti / ZA-pi-sa-ti",
+   "id": "mencatat"
+  },
+  {
+   "bs": "opisivati (opisujem) / opisati (opišem)",
+   "baca": "o-pi-SI-va-ti / O-pi-sa-ti",
+   "id": "menggambarkan"
+  },
+  {
+   "bs": "dopisivati se (dopisujem se) — ipf",
+   "baca": "do-pi-SI-va-ti se",
+   "id": "saling berkirim surat"
+  },
+  {
+   "bs": "davati (dajem) / dati (dam)",
+   "baca": "DA-va-ti / DA-ti",
+   "id": "memberi"
+  },
+  {
+   "bs": "vraćati (vraćam) / vratiti (vratim)",
+   "baca": "VRA-cha-ti / VRA-ti-ti",
+   "id": "mengembalikan"
+  },
+  {
+   "bs": "skraćivati (skraćujem) / skratiti (skratim)",
+   "baca": "skra-CHI-va-ti / SKRA-ti-ti",
+   "id": "memendekkan"
+  },
+  {
+   "bs": "dorađivati (dorađujem) / doraditi (doradim)",
+   "baca": "do-ra-JI-va-ti / DO-ra-di-ti",
+   "id": "memoles, menyempurnakan"
+  },
+  {
+   "bs": "navoditi (navodim) / navesti (navedem)",
+   "baca": "NA-vo-di-ti / NA-ves-ti",
+   "id": "menyebutkan, mengutip"
+  },
+  {
+   "bs": "pregledavati (pregledavam) / pregledati (pregledam)",
+   "baca": "pre-gle-DA-va-ti / PRE-gle-da-ti",
+   "id": "memeriksa, meninjau"
+  },
+  {
+   "bs": "organizovati (organizujem) — ipf i pf",
+   "baca": "or-ga-ni-ZO-va-ti",
+   "id": "mengorganisasi"
+  },
+  {
+   "bs": "shvatati (shvatam) / shvatiti (shvatim)",
+   "baca": "s-HVA-ta-ti / s-HVA-ti-ti",
+   "id": "memahami, menyadari"
+  },
+  {
+   "bs": "pogađati (pogađam) / pogoditi (pogodim)",
+   "baca": "PO-ga-ja-ti / PO-go-di-ti",
+   "id": "menebak; mengenai"
+  },
+  {
+   "bs": "svršen / nesvršen (glagol)",
+   "baca": "SVR-syen / NE-svr-syen",
+   "id": "perfektif / imperfektif"
+  },
+  {
+   "bs": "dvovidski glagol (lk)",
+   "baca": "DVO-vid-ski GLA-gol",
+   "id": "kata kerja dua-vid"
+  },
+  {
+   "bs": "prefiks / nastavak (lk)",
+   "baca": "PRE-fiks / NAS-ta-vak",
+   "id": "awalan / akhiran"
+  },
+  {
+   "bs": "uvod (lk)",
+   "baca": "U-vod",
+   "id": "pembukaan, pengantar"
+  },
+  {
+   "bs": "pasus, pasusi (lk)",
+   "baca": "PA-sus",
+   "id": "paragraf"
+  },
+  {
+   "bs": "rečenica (pr)",
+   "baca": "RE-che-ni-tsa",
+   "id": "kalimat"
+  },
+  {
+   "bs": "izvor, izvori (lk)",
+   "baca": "IZ-vor",
+   "id": "sumber"
+  },
+  {
+   "bs": "sajt, sajtovi (lk)",
+   "baca": "sayt, SAY-to-vi",
+   "id": "situs web"
+  },
+  {
+   "bs": "čitalac, čitaoci (lk)",
+   "baca": "CHI-ta-lats, CHI-ta-o-tsi",
+   "id": "pembaca"
+  },
+  {
+   "bs": "tuđ, tuđa, tuđe",
+   "baca": "tuj",
+   "id": "milik orang lain"
+  },
+  {
+   "bs": "prepiska (pr)",
+   "baca": "PRE-pis-ka",
+   "id": "korespondensi, surat-menyurat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia; perhatikan vid.",
+   "items": [
+    "Jangan tulis ulang seluruh pembukaan, pendekkan saja.",
+    "Kalau menerjemahkan teks orang lain, selalu sebutkan sumbernya.",
+    "Biasanya aku kirim tulisan malam hari, tapi hari ini akan kukirim lebih awal.",
+    "Bertahun-tahun aku berkirim surat dengan sahabatku dari Tuzla. (pembicara perempuan)",
+    "Setiap hari catatlah lima kata kerja baru.",
+    "Aku sudah membaca tulisanmu sampai habis. (pembicara perempuan)"
+   ]
+  },
+  {
+   "prompt": "Tulis pasangan imperfektif dari kata kerja perfektif di dalam kurung, dalam bentuk yang cocok dengan kalimat.",
+   "items": [
+    "Svaki mjesec ____ novi ugovor. (potpisati, ja, kala kini)",
+    "Ona uvijek ____ knjige na vrijeme. (vratiti, kala kini)",
+    "Nemoj ____ tuđe tekstove! (prepisati, infinitif)",
+    "Dok sam bio u Travniku, ____ sam sve u svesku. (zapisati, lk)",
+    "Na pijaci ____ voće i povrće. (prodati, oni, kala kini)",
+    "Nermina stalno ____ moje uvode. (skratiti, kala kini)",
+    "Zašto mi nikad ne ____ na poruke? (odgovoriti, ti, kala kini)"
+   ]
+  },
+  {
+   "prompt": "Pilih vid yang tepat dan tulis ulang kalimatnya: sekali-selesai → perfektif, proses/kebiasaan → imperfektif.",
+   "items": [
+    "Jučer sam (pisati / napisati) tekst tri sata.",
+    "Molim te, (potpisivati / potpisati) ovaj ugovor.",
+    "Obično (davati / dati) stare knjige biblioteci.",
+    "Kad (završavati / završiti) uvod, pošalji mi ga.",
+    "Godinama (prepisivati / prepisati) recepte svoje bake. (ja, lk)",
+    "Nemoj (skraćivati / skratiti) ovaj dio."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "uvod / nemoj / skrati / cijeli / ga / prepisivati / samo",
+    "izvor / prevodiš / navedi / kad / tekst / tuđi / uvijek",
+    "poslati / obično / uveče / ću / tekstove / ga / ali / ranije / danas / šaljem",
+    "sam / dopisivala / godinama / s drugaricom / se / iz Tuzle",
+    "glagola / zapisuj / svaki dan / novih / pet"
+   ]
+  }
+ ],
+ "answers": [
+  "Nemoj prepisivati cijeli uvod, samo ga skrati. — Kad prevodiš tuđi tekst, uvijek navedi izvor. — Obično šaljem tekstove uveče, ali danas ću ga poslati ranije. — Godinama sam se dopisivala s drugaricom iz Tuzle. — Svaki dan zapisuj pet novih glagola. — Pročitala sam tvoj tekst.",
+  "potpisujem — vraća — prepisivati — zapisivao — prodaju — skraćuje — odgovaraš",
+  "Jučer sam pisao tekst tri sata. — Molim te, potpiši ovaj ugovor. — Obično dajem stare knjige biblioteci. — Kad završiš uvod, pošalji mi ga. — Godinama sam prepisivao recepte svoje bake. — Nemoj skraćivati ovaj dio.",
+  "Nemoj prepisivati cijeli uvod, samo ga skrati. — Kad prevodiš tuđi tekst, uvijek navedi izvor. — Obično šaljem tekstove uveče, ali danas ću ga poslati ranije. — Godinama sam se dopisivala s drugaricom iz Tuzle. — Svaki dan zapisuj pet novih glagola."
+ ]
+}

@@ -1,0 +1,700 @@
+{
+ "title": "Membaca berita — laporan orang lain",
+ "title_target": "Kako javljaju mediji",
+ "goal": "Membaca dan menulis berita pendek tanpa mencampur fakta dengan klaim: menyebut sumber (*prema riječima, kako navodi, kako javlja*), mengatur jarak dengan *tvrdi da* dan *navodno*, dan memilih kata kerja pengantar yang tepat (*izjavio je, najavio je, demantovao je*).",
+ "bekal": [
+  "menyebut sumber dengan *prema* + datif (*prema riječima vlasnika*) dan *kako* + kata kerja (*kako navode organizatori*)",
+  "memilih kata kerja laporan menurut nuansanya: *reći, izjaviti, tvrditi, istaći, najaviti, demantovati*",
+  "mengatur jarak penulis dari berita: fakta, *kako navode*, *tvrdi da*, *navodno*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Navodno se zatvara",
+   "intro": "Selasa pagi di kantor agensi. Tarik, rekan kerja Budi, menggulir ponselnya sambil menunggu *džezva* mendidih, lalu tiba-tiba menjerit kecil.",
+   "lines": [
+    {
+     "speaker": "Tarik:",
+     "text": "Jesi li vidio vijesti? Navodno se zatvara ona ćevabdžinica iza ćoška.",
+     "id": "Sudah lihat berita? Katanya kedai ćevapi di pojokan itu mau tutup.",
+     "literal": "kamu-adalah apakah melihat-lk berita-jm? konon diri-sendiri ia-menutup itu-pr kedai-ćevapi di-balik pojok-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne može biti! Ko to kaže?",
+     "id": "Nggak mungkin! Siapa yang bilang?",
+     "literal": "tidak ia-bisa ada! siapa itu ia-berkata?"
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Piše na nekom portalu. Kako navode, vlasnik odlazi u penziju.",
+     "id": "Ada di salah satu portal. Katanya pemiliknya mau pensiun.",
+     "literal": "ia-menulis pada suatu-lk-lokatif portal-lokatif. seperti mereka-menyebutkan, pemilik ia-pergi ke pensiun-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Neki portal“ nije izvor. Prema čijim riječima?",
+     "id": "„Salah satu portal“ itu bukan sumber. Menurut kata siapa?",
+     "literal": "„suatu-lk portal“ ia-bukan sumber. menurut siapa-punya-jm-datif kata-jm-datif?"
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Prema riječima jednog konobara, koji nije želio da mu se objavi ime.",
+     "id": "Menurut seorang pelayan, yang tidak mau namanya dimuat.",
+     "literal": "menurut kata-jm-datif satu-lk-genitif pelayan-genitif, yang ia-bukan ingin-lk agar kepada-dia-lk diri-sendiri ia-memuat nama."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znači, samo glasina. Vlasnik je na Facebooku sve demantovao.",
+     "id": "Berarti cuma kabar burung. Pemiliknya sudah membantah semuanya di Facebook.",
+     "literal": "berarti, hanya desas-desus. pemilik ia-adalah pada Facebook-lokatif semua membantah-lk."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Stvarno? Šta tačno kaže?",
+     "id": "Serius? Persisnya dia bilang apa?",
+     "literal": "sungguh? apa tepat ia-berkata?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tvrdi da ne ide nigdje i da nastavlja raditi.",
+     "id": "Dia bersikeras nggak ke mana-mana dan tetap buka.",
+     "literal": "ia-mengklaim bahwa tidak ia-pergi ke-mana-pun dan bahwa ia-melanjutkan bekerja."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Ha, hvala Bogu! A šta javljaju o vremenu?",
+     "id": "Ha, syukurlah! Terus soal cuaca beritanya apa?",
+     "literal": "ha, terima-kasih Tuhan-datif! dan apa mereka-mengabarkan tentang cuaca-lokatif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Prema najavi meteorologa, večeras bi mogao pasti snijeg.",
+     "id": "Menurut prakiraan ahli cuaca, nanti malam salju mungkin turun.",
+     "literal": "menurut prakiraan-datif ahli-cuaca-jm-genitif, nanti-malam ia-andai bisa-lk jatuh salju."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Kažu to svake sedmice. I prošli put su rekli da će padati, pa ništa.",
+     "id": "Tiap minggu mereka bilang begitu. Minggu lalu juga bilang bakal turun, eh nggak ada apa-apa.",
+     "literal": "mereka-berkata itu setiap-pr-genitif minggu-genitif. dan lalu-akusatif kali mereka-adalah berkata-jm bahwa ia-akan jatuh, lalu tidak-apa-apa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ovaj put se navodi i tačno vrijeme: poslije devet.",
+     "id": "Kali ini jamnya juga disebut: sesudah jam sembilan.",
+     "literal": "ini-akusatif kali diri-sendiri ia-menyebutkan juga tepat-nt waktu: sesudah sembilan."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Kako kaže moja nana, bolje spriječiti nego liječiti.",
+     "id": "Kata nenekku, lebih baik mencegah daripada mengobati.",
+     "literal": "seperti ia-berkata saya-punya-pr nenek, lebih-baik mencegah daripada mengobati."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tvoja nana bi bila odlična urednica.",
+     "id": "Nenekmu pasti jadi redaktur yang hebat.",
+     "literal": "kamu-punya-pr nenek ia-andai ada-pr sangat-baik-pr redaktur-pr."
+    }
+   ],
+   "notes": [
+    "***Navodno* — satu kata, satu jarak.** *Navodno* berarti \"konon, katanya\", dan memberi tahu pendengar bahwa kamu **belum yakin**. Dalam obrolan, padanannya *kažu da…* atau *priča se da…*. Di berita, *navodno* dipakai hemat, karena menandai informasi yang belum terverifikasi.",
+    "***Prema riječima jednog konobara* — *prema* + datif.** *Prema* selalu memakai datif: *riječima, najavi, pisanju, podacima* adalah bentuk datif. Orang yang berbicara menyusul dalam **genitif** sebagai pemilik: *prema riječima **konobara**, prema najavi **meteorologa***.",
+    "***Kako navode* — \"sebagaimana disebutkan\".** *Kako* + kata kerja laporan memasukkan sumber di tengah kalimat tanpa anak kalimat *da*: *Kako navode organizatori, tura je besplatna.* Susunan ini sangat disukai media Bosnia: *Kako javlja BHRT…, Kako je rekao za Klix.ba…*",
+    "***Tvrdi da ne ide nigdje.*** *Tvrditi* (mengklaim, bersikeras) diikuti *da* + kala **yang sama dengan ucapan aslinya** — tidak ada pergeseran kala seperti dalam bahasa Inggris. *I prošli put su rekli da će padati*: ucapan aslinya futur (*padat će*), jadi laporannya tetap futur.",
+    "***Demantovati* — membantah secara publik.** Bentuk Bosnia dan Serbia; di Kroasia *demantirati*. Kata bendanya *demant*. Pasangannya *potvrditi* (membenarkan): *Vlasnik je potvrdio / demantovao vijest.*",
+    "***Nana* dan peribahasanya.** Di Sarajevo, nenek sering disebut *nana*, terutama dalam keluarga Bosniak; *baka* juga umum dan dipahami semua orang. *Bolje spriječiti nego liječiti* — \"lebih baik mencegah daripada mengobati\" — adalah peribahasa umum di seluruh kawasan."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pengantar laporan",
+     "body": [
+      "Bahasa Indonesia berita punya \"mengatakan, menyatakan, menegaskan, membantah\". Bahasa Bosnia serupa, dan pilihan katanya sekaligus menunjukkan sikap penulis. Semua diikuti *da* + kala asli."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja (ipf / pf)",
+       "Arti",
+       "Nuansa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*govoriti / reći*",
+        "berkata",
+        "netral",
+        "*Rekao je da će doći.*"
+       ],
+       [
+        "*izjavljivati / izjaviti*",
+        "menyatakan",
+        "resmi, kepada media",
+        "*Izjavio je za N1 da…*"
+       ],
+       [
+        "*tvrditi* — ipf",
+        "mengklaim",
+        "penulis menjaga jarak",
+        "*Tvrdi da ne ide nigdje.*"
+       ],
+       [
+        "*navoditi / navesti*",
+        "menyebutkan",
+        "netral, gaya tulis",
+        "*Navode da je tura besplatna.*"
+       ],
+       [
+        "*isticati / istaći*",
+        "menegaskan",
+        "menonjolkan satu hal",
+        "*Istakla je da je to važno.*"
+       ],
+       [
+        "*najavljivati / najaviti*",
+        "mengumumkan rencana",
+        "hal yang akan datang",
+        "*Najavili su novu turu.*"
+       ],
+       [
+        "*upozoravati / upozoriti*",
+        "memperingatkan",
+        "bahaya, risiko",
+        "*Upozorili su da će biti leda.*"
+       ],
+       [
+        "*demantovati* — ipf/pf",
+        "membantah",
+        "menolak klaim",
+        "*Vlasnik je sve demantovao.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kepada siapa: *za* + akusatif untuk media.** *Izjavio je **za** Klix.ba* = dia menyatakan kepada Klix.ba. Untuk orang biasa, datif: *Rekao je **novinarima** da…*",
+      "**Perempuan tetap perempuan:** *istakla je, izjavila je, najavila je*. Partisip lampau di berita ikut jenis kelamin narasumbernya — perhatikan *istakla* dari *istaći*, *rekla* dari *reći*."
+     ]
+    },
+    {
+     "title": "Menyebut sumber tanpa anak kalimat",
+     "body": [
+      "Tiga pola ini menempelkan sumber pada kalimat berita, lalu kalimat intinya berdiri sendiri. Letakkan di depan dengan koma, atau selipkan di tengah di antara dua koma."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Padež",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*prema riječima* + pemilik",
+        "datif + genitif",
+        "*Prema riječima konobara, vlasnik odlazi u penziju.*"
+       ],
+       [
+        "*prema pisanju / podacima* + pemilik",
+        "datif + genitif",
+        "*Prema pisanju portala, most je zatvoren.*"
+       ],
+       [
+        "*prema najavi* + pemilik",
+        "datif + genitif",
+        "*Prema najavi meteorologa, večeras će padati snijeg.*"
+       ],
+       [
+        "*kako kaže / navodi / javlja* + pelaku",
+        "nominatif",
+        "*Kako javlja BHRT, put je otvoren.*"
+       ],
+       [
+        "*navodi se da / priča se da*",
+        "tanpa pelaku",
+        "*Navodi se da je festival rasprodan.*"
+       ],
+       [
+        "*navodno*",
+        "keterangan",
+        "*Navodno se zatvara.*"
+       ]
+      ]
+     },
+     "after": [
+      "***Prema meni, prema tebi* juga ada**, tetapi berarti \"terhadap saya\" atau \"ke arah saya\". Untuk \"menurut saya\" pakai *po mom mišljenju* atau *meni se čini*.",
+      "***Navodi se da* adalah *se* impersonal** seperti *ovdje se plaća*: tanpa pelaku, kata kerjanya orang ketiga tunggal."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Mi ne ocjenjujemo, mi prenosimo",
+   "intro": "Siang harinya, sesudah rapat redaksi di portal. Sanela, pemimpin redaksi — atasan Nermina — memanggil Budi ke mejanya. Di layar ada berita pendek Budi tentang tur jalan kaki gratis yang diadakan sebuah perkumpulan pemandu wisata.",
+   "lines": [
+    {
+     "speaker": "Sanela:",
+     "text": "Budi, pročitala sam tvoju vijest. Lijepo je napisana, ali imam jednu primjedbu.",
+     "id": "Budi, aku sudah baca beritamu. Tulisannya bagus, tapi aku punya satu catatan.",
+     "literal": "Budi, membaca-pr saya-adalah kamu-punya-pr-akusatif berita-akusatif. indah ia-adalah ditulis-pr, tetapi saya-punya satu-pr-akusatif catatan-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Samo recite. Šta nije dobro?",
+     "id": "Silakan, Bu. Apa yang kurang?",
+     "literal": "hanya katakanlah. apa ia-bukan baik?"
+    },
+    {
+     "speaker": "Sanela:",
+     "text": "Pišeš: „Ture će biti besplatne i odlične.“ Ko to tvrdi, ti ili organizatori?",
+     "id": "Kamu tulis: „Turnya akan gratis dan luar biasa.“ Siapa yang mengklaim itu, kamu atau penyelenggara?",
+     "literal": "kamu-menulis: „tur-jm ia-akan ada gratis-jm dan sangat-baik-jm.“ siapa itu ia-mengklaim, kamu atau penyelenggara-jm?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Organizatori. Tako su rekli na konferenciji za medije.",
+     "id": "Penyelenggara. Mereka bilang begitu di jumpa pers.",
+     "literal": "penyelenggara-jm. begitu mereka-adalah berkata-jm pada konferensi-lokatif untuk media-jm-akusatif."
+    },
+    {
+     "speaker": "Sanela:",
+     "text": "Onda to moraš i napisati: „Kako navode organizatori, ture će biti besplatne.“",
+     "id": "Kalau begitu itu juga harus kamu tulis: „Menurut penyelenggara, turnya akan gratis.“",
+     "literal": "kalau-begitu itu kamu-harus juga menulis: „seperti mereka-menyebutkan penyelenggara-jm, tur-jm ia-akan ada gratis-jm.“"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A „odlične“? To je rekao predsjednik udruženja.",
+     "id": "Terus „luar biasa“? Itu kata ketua perkumpulannya.",
+     "literal": "dan „sangat-baik-jm“? itu ia-adalah berkata-lk ketua perkumpulan-genitif."
+    },
+    {
+     "speaker": "Sanela:",
+     "text": "Onda: „Ture će, prema riječima predsjednika udruženja, biti odlične.“ Mi ne ocjenjujemo, mi prenosimo.",
+     "id": "Maka: „Turnya, menurut ketua perkumpulan, akan luar biasa.“ Kita tidak menilai, kita meneruskan.",
+     "literal": "kalau-begitu: „tur-jm ia-akan, menurut kata-jm-datif ketua-genitif perkumpulan-genitif, ada sangat-baik-jm.“ kami tidak kami-menilai, kami kami-meneruskan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Razumijem. A smijem li napisati „navodno“?",
+     "id": "Paham. Terus boleh aku tulis „navodno“?",
+     "literal": "saya-mengerti. dan saya-boleh apakah menulis „konon“?"
+    },
+    {
+     "speaker": "Sanela:",
+     "text": "Samo kad sumnjaš. „Navodno“ čitaocu kaže: ovo nije provjereno.",
+     "id": "Hanya kalau kamu ragu. „Navodno“ memberi tahu pembaca: ini belum diperiksa.",
+     "literal": "hanya kalau kamu-ragu. „konon“ pembaca-datif ia-berkata: ini ia-bukan diperiksa-nt."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znači: „navodno“ za glasine, „kako navode“ za izjave.",
+     "id": "Jadi: „navodno“ untuk kabar burung, „kako navode“ untuk pernyataan.",
+     "literal": "berarti: „konon“ untuk desas-desus-jm-akusatif, „seperti mereka-menyebutkan“ untuk pernyataan-jm-akusatif."
+    },
+    {
+     "speaker": "Sanela:",
+     "text": "Tačno. I uvijek navedi ko je šta rekao.",
+     "id": "Tepat. Dan selalu sebutkan siapa bilang apa.",
+     "literal": "tepat. dan selalu sebutkanlah siapa ia-adalah apa berkata-lk."
+    }
+   ],
+   "notes": [
+    "***Ture će, prema riječima predsjednika udruženja, biti odlične.*** Perhatikan *će* tetap di kursi kedua, tepat sesudah *ture*, lalu sumbernya diselipkan di antara dua koma, dan barulah *biti odlične*. Kursi kedua tidak bergeser meskipun ada sisipan panjang.",
+    "***Mi ne ocjenjujemo, mi prenosimo.*** Prinsip redaksi yang sama dengan yang diajarkan di sekolah jurnalistik mana pun. Kata kerjanya: *ocjenjivati* (menilai, *ocjenjujem*) dan *prenositi* (meneruskan, menyiarkan). Kata ganti *mi* diucapkan untuk kontras: \"KITA tidak menilai\".",
+    "***Konferencija za medije* — \"jumpa pers\".** Bentuk ini lazim di Bosnia; *press konferencija* juga sering terdengar. *Saopćenje za javnost* (juga *saopštenje*) adalah siaran pers tertulis.",
+    "***Ko je šta rekao* — dua kata tanya berderet.** Bahasa Bosnia bisa menumpuk kata tanya tanpa kata sambung: *ko je šta rekao, ko je kome dao, ko je gdje bio*. Bahasa Indonesia memerlukan \"siapa bilang apa\" — sama ringkasnya.",
+    "**Budi memakai *Vi*, Sanela memakai *ti*.** *Samo recite* (imperatif *Vi*) karena Sanela pemimpin redaksi dan belum menawarkan *ti* — lain dengan Nermina; Sanela menjawab dengan *ti* karena usia dan jabatan. Di kantor Sarajevo, atasan sering segera menawarkan *ti* — tunggu tawaran itu, jangan mendahului.",
+    "***Smijem li napisati…?* — minta izin, bukan menanyakan kemampuan.** *Mogu li* menanyakan \"bisakah\"; *smijem li* menanyakan \"bolehkah (aturannya mengizinkan)\". Di hadapan redaktur, Budi memilih *smijem* — ia tahu ia *bisa* menulis kata itu, yang ia tanyakan adalah apakah redaksi *mengizinkannya*. Jawaban Sanela memakai *provjereno*, partisip pasif dari unit lalu: \"sudah diperiksa\"."
+   ],
+   "grammars": [
+    {
+     "title": "Empat tingkat jarak penulis",
+     "body": [
+      "Satu berita, empat cara menuliskannya. Makin ke bawah, makin jauh penulis menjaga jaraknya dari kebenaran isi kalimat. Redaktur Bosnia membaca pilihan ini dengan sangat teliti."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Yang dikatakan penulis",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "tanpa sumber",
+        "\"ini fakta, saya menjaminnya\"",
+        "*Ture su besplatne.*"
+       ],
+       [
+        "*kako navode / prema riječima*",
+        "\"mereka yang bilang, saya meneruskan\"",
+        "*Kako navode organizatori, ture su besplatne.*"
+       ],
+       [
+        "*bi trebalo da / trebale bi*",
+        "\"begitu rencananya\"",
+        "*Ture bi trebale početi u nedjelju.*"
+       ],
+       [
+        "*tvrdi da*",
+        "\"dia bersikeras; belum tentu benar\"",
+        "*Vlasnik tvrdi da ne ide nigdje.*"
+       ],
+       [
+        "*navodno*",
+        "\"ada kabar, belum terverifikasi\"",
+        "*Navodno se ćevabdžinica zatvara.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jangan menumpuk dua jarak** (*Kako navode organizatori, ture su navodno besplatne*) — hasilnya terdengar mengejek sumbermu sendiri.",
+      "**Kondisional *trebale bi* untuk rencana** sangat umum di berita: *Radovi bi trebali biti završeni do juna.* Artinya bukan \"seharusnya\" secara moral, melainkan \"dijadwalkan\". Nasihat dengan *trebao bi* dipasang di unit berikutnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata berita",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*vijest, vijesti* (pr)",
+       "VI-yest, VI-yes-ti",
+       "berita"
+      ],
+      [
+       "*naslov* (lk)",
+       "NA-slov",
+       "judul berita"
+      ],
+      [
+       "*izjava* (pr)",
+       "IZ-ya-va",
+       "pernyataan"
+      ],
+      [
+       "*saopćenje / saopštenje* (nt)",
+       "sa-op-CHE-nye / sa-op-SYTE-nye",
+       "siaran pers, pengumuman resmi"
+      ],
+      [
+       "*glasina* (pr)",
+       "gla-SI-na",
+       "kabar burung"
+      ],
+      [
+       "*lažna vijest*",
+       "LAZH-na VI-yest",
+       "berita bohong, hoaks"
+      ],
+      [
+       "*novinar / novinarka*",
+       "NO-vi-nar / NO-vi-nar-ka",
+       "wartawan"
+      ],
+      [
+       "*dopisnik* (lk)",
+       "DO-pis-nik",
+       "koresponden"
+      ],
+      [
+       "*prema nezavisnim izvorima*",
+       "PRE-ma NE-za-vis-nim IZ-vo-ri-ma",
+       "menurut sumber independen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Lanskap media Bosnia berlapis seperti negaranya. Ada lembaga penyiaran publik tingkat negara, *BHRT*, dan dua penyiar publik tingkat entitas, *FTV* di Federasi dan *RTRS* di Republika Srpska. Di sampingnya ada televisi swasta, saluran berita regional seperti *N1*, dan banyak portal daring — *Klix.ba* termasuk yang paling banyak dibaca. Karena setiap media punya pembaca dan sudut pandangnya sendiri, orang Bosnia terbiasa membaca satu peristiwa di dua atau tiga tempat sebelum mempercayainya. Kebiasaan yang baik untukmu juga."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca berita dengan kepala dingin",
+     "items": [
+      "**Cari sumbernya dulu.** Kalau kalimatnya tidak memuat *prema riječima, kako navodi, izjavio je* atau nama lembaga, tanyakan: siapa yang bilang?",
+      "**Bedakan *tvrdi* dari *potvrdio je*.** Yang pertama klaim satu pihak; yang kedua konfirmasi. Judul *Vlasnik tvrdi…* belum berarti benar.",
+      "**Waspadai judul pemancing klik** seperti *Šok!, Nevjerovatno!, Pogledajte šta se desilo…* — di portal mana pun, judul semacam itu jarang diikuti berita penting.",
+      "**Cari kata *demant*.** Banyak berita yang ramai di pagi hari mendapat bantahan di siang hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pertanyaan dan perintah dalam laporan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ucapan langsung",
+      "Laporan di berita"
+     ],
+     "rows": [
+      [
+       "*„Da li će ture biti besplatne?“*",
+       "*Novinari su pitali da li će ture biti besplatne.*"
+      ],
+      [
+       "*„Kada počinju radovi?“*",
+       "*Upitan kada počinju radovi, odgovorio je da još nije poznato.*"
+      ],
+      [
+       "*„Ne izlazite na put!“*",
+       "*Policija je pozvala građane da ne izlaze na put.*"
+      ],
+      [
+       "*„Ponesite toplu odjeću.“*",
+       "*Organizatori savjetuju posjetiocima da ponesu toplu odjeću.*"
+      ],
+      [
+       "*„Ne znam ništa o tome.“*",
+       "*Rekao je da o tome ne zna ništa.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pertanyaan ya/tidak dilaporkan dengan *da li* (atau *je li*), pertanyaan terbuka dengan kata tanyanya sendiri (*kada, gdje, zašto*). Perintah menjadi *da* + kala kini: *pozvao je građane da ne izlaze*. Satu pola khas berita yang menggabungkan unit lalu dan unit ini: ***Upitan** kada…, odgovorio je da…* — \"ketika ditanya kapan…, ia menjawab bahwa…\". *Upitan* adalah partisip pasif dari *upitati*, dan kamu akan melihatnya di hampir setiap wawancara tertulis."
+    },
+    {
+     "type": "kotak",
+     "title": "Susunan berita pendek ala portal Bosnia",
+     "items": [
+      "**Naslov** (judul) pendek, sering tanpa kata kerja *biti*: *Besplatne ture kroz Baščaršiju svake nedjelje.*",
+      "**Paragraf pertama** menjawab ko, šta, gdje, kada — dengan sumber: *Kako navode organizatori, prva tura počinje u nedjelju u deset sati.*",
+      "**Kutipan langsung** dengan tanda kutip Bosnia „…“, lalu pengantar: *„Želimo da ljudi upoznaju grad“, izjavio je predsjednik udruženja.* Perhatikan: sesudah kutipan, kata kerja dulu, baru pelakunya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Begitu sampai di atas, aku mau memotret kota buat portal. Masih berapa jauh?",
+       "*Stigavši gore, slikat ću grad za portal. Koliko još ima?*"
+      ],
+      [
+       "Musim gugur lalu, waktu turun dari puncak, aku ketemu beruang.",
+       "*Silazeći s vrha prošle jeseni, sreo sam medvjeda.*"
+      ],
+      [
+       "Nggak ngapa-ngapain. Setelah kuperhatikan baik-baik, ternyata itu anjing tetangga.",
+       "*Ništa. Pogledavši ga bolje, shvatio sam da je to komšijin pas.*"
+      ],
+      [
+       "Cerdas. Dengan menulis untuk dua jenis pembaca, kamu bakal belajar menulis lebih baik.",
+       "*Pametno. Pišući za dvije publike, naučit ćeš pisati bolje.*"
+      ],
+      [
+       "Kalau aku, sambil duduk di sini, mau menghabiskan semua roti isinya.",
+       "*A ja ću, sjedeći ovdje, pojesti sve sendviče.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "javljati (javljam) / javiti (javim)",
+   "baca": "YAV-lya-ti / YA-vi-ti",
+   "id": "mengabarkan, memberitakan"
+  },
+  {
+   "bs": "navoditi (navodim) / navesti (navedem)",
+   "baca": "NA-vo-di-ti / NA-ves-ti",
+   "id": "menyebutkan, mengutip"
+  },
+  {
+   "bs": "tvrditi (tvrdim) — ipf",
+   "baca": "TVR-di-ti",
+   "id": "mengklaim, bersikeras"
+  },
+  {
+   "bs": "izjavljivati (izjavljujem) / izjaviti (izjavim)",
+   "baca": "iz-yav-LYI-va-ti / iz-YA-vi-ti",
+   "id": "menyatakan"
+  },
+  {
+   "bs": "isticati (ističem) / istaći (istaknem)",
+   "baca": "IS-ti-tsa-ti / IS-ta-chi",
+   "id": "menegaskan, menonjolkan"
+  },
+  {
+   "bs": "najavljivati (najavljujem) / najaviti (najavim)",
+   "baca": "na-yav-LYI-va-ti / NA-ya-vi-ti",
+   "id": "mengumumkan (rencana)"
+  },
+  {
+   "bs": "upozoravati (upozoravam) / upozoriti (upozorim)",
+   "baca": "u-po-ZO-ra-va-ti / u-po-ZO-ri-ti",
+   "id": "memperingatkan"
+  },
+  {
+   "bs": "demantovati (demantujem) — ipf/pf",
+   "baca": "de-man-TO-va-ti",
+   "id": "membantah"
+  },
+  {
+   "bs": "potvrđivati (potvrđujem) / potvrditi (potvrdim)",
+   "baca": "pot-vr-JI-va-ti / POT-vr-di-ti",
+   "id": "membenarkan, mengonfirmasi"
+  },
+  {
+   "bs": "ocjenjivati (ocjenjujem) / ocijeniti (ocijenim)",
+   "baca": "o-tsye-NYI-va-ti / o-TSI-ye-ni-ti",
+   "id": "menilai"
+  },
+  {
+   "bs": "prenositi (prenosim) / prenijeti (prenesem)",
+   "baca": "PRE-no-si-ti / PRE-ni-ye-ti",
+   "id": "meneruskan, menyiarkan"
+  },
+  {
+   "bs": "sumnjati (sumnjam) — ipf",
+   "baca": "SUM-nya-ti",
+   "id": "ragu, curiga"
+  },
+  {
+   "bs": "navodno",
+   "baca": "NA-vod-no",
+   "id": "konon, katanya"
+  },
+  {
+   "bs": "prema + datif",
+   "baca": "PRE-ma",
+   "id": "menurut; ke arah"
+  },
+  {
+   "bs": "prema riječima + genitif",
+   "baca": "PRE-ma RI-ye-chi-ma",
+   "id": "menurut kata (seseorang)"
+  },
+  {
+   "bs": "vijest, vijesti (pr)",
+   "baca": "VI-yest, VI-yes-ti",
+   "id": "berita"
+  },
+  {
+   "bs": "izjava (pr)",
+   "baca": "IZ-ya-va",
+   "id": "pernyataan"
+  },
+  {
+   "bs": "glasina (pr)",
+   "baca": "gla-SI-na",
+   "id": "kabar burung"
+  },
+  {
+   "bs": "demant (lk)",
+   "baca": "DE-mant",
+   "id": "bantahan"
+  },
+  {
+   "bs": "primjedba (pr)",
+   "baca": "PRIM-yed-ba",
+   "id": "catatan, keberatan"
+  },
+  {
+   "bs": "udruženje (nt)",
+   "baca": "u-dru-ZHE-nye",
+   "id": "perkumpulan, asosiasi"
+  },
+  {
+   "bs": "predsjednik (lk) / predsjednica (pr)",
+   "baca": "PRED-s-yed-nik / PRED-s-yed-ni-tsa",
+   "id": "ketua, presiden"
+  },
+  {
+   "bs": "konferencija za medije (pr)",
+   "baca": "kon-fe-REN-tsi-ya za ME-di-ye",
+   "id": "jumpa pers"
+  },
+  {
+   "bs": "meteorolog (lk)",
+   "baca": "me-te-o-RO-log",
+   "id": "ahli cuaca"
+  },
+  {
+   "bs": "ćevabdžinica (pr)",
+   "baca": "che-VAB-ji-ni-tsa",
+   "id": "kedai ćevapi"
+  },
+  {
+   "bs": "nana (pr)",
+   "baca": "NA-na",
+   "id": "nenek (Sarajevo)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Katanya kedai ćevapi itu mau tutup.",
+    "Menurut kata pemiliknya, dia tidak ke mana-mana.",
+    "Kata nenekku, lebih baik mencegah daripada mengobati.",
+    "Minggu lalu mereka bilang salju akan turun.",
+    "Pemiliknya membantah semuanya.",
+    "Menurut penyelenggara, turnya gratis."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik sesuai petunjuk di dalam kurung.",
+   "items": [
+    "____ riječima konobara, vlasnik odlazi u penziju. (menurut)",
+    "Vlasnik ____ da ne ide nigdje. (tvrditi, kala kini)",
+    "____ javlja BHRT, večeras će padati snijeg. (sebagaimana)",
+    "____ se da je festival rasprodan. (navoditi)",
+    "Predsjednica udruženja je ____ da su ture besplatne. (izjaviti, perfekt)",
+    "Organizatori su ____ novu turu za nedjelju. (najaviti, perfekt)",
+    "Prema ____ portala, most je zatvoren. (pisanje, datif)"
+   ]
+  },
+  {
+   "prompt": "Ubah ucapan langsung menjadi laporan. Pakai pola di dalam kurung bila ada.",
+   "items": [
+    "Vlasnik: „Ne idem nigdje.“ (tvrdi da)",
+    "Meteorolog: „Večeras će padati snijeg.“ (rekao je da)",
+    "Novinar: „Da li će ture biti besplatne?“ (pitao je)",
+    "Sanela Budiju: „Navedi izvor!“ (rekla je)",
+    "Organizatori: „Tura počinje u deset.“ (kako navode)",
+    "Konobar: „Vlasnik odlazi u penziju.“ (prema riječima)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "je / vlasnik / demantovao / sve",
+    "bi / snijeg / večeras / pasti / mogao",
+    "da / tvrdi / nigdje / ne / ide",
+    "kaže / nana / kako / moja / bolje / spriječiti / nego / liječiti",
+    "navedi / ko / šta / je / rekao"
+   ]
+  }
+ ],
+ "answers": [
+  "Navodno se ta ćevabdžinica zatvara. — Prema riječima vlasnika, on ne ide nigdje. — Kako kaže moja nana, bolje spriječiti nego liječiti. — Prošle sedmice su rekli da će padati snijeg. — Vlasnik je sve demantovao. — Kako navode organizatori, tura je besplatna (atau Prema riječima organizatora, tura je besplatna).",
+  "Prema — tvrdi — Kako — Navodi — izjavila — najavili — pisanju",
+  "Vlasnik tvrdi da ne ide nigdje. — Meteorolog je rekao da će večeras padati snijeg. — Novinar je pitao da li će ture biti besplatne. — Sanela je rekla Budiju da navede izvor. — Kako navode organizatori, tura počinje u deset. — Prema riječima konobara, vlasnik odlazi u penziju.",
+  "Vlasnik je sve demantovao. — Večeras bi mogao pasti snijeg. — Tvrdi da ne ide nigdje. — Kako kaže moja nana, bolje spriječiti nego liječiti. — Navedi ko je šta rekao."
+ ]
+}

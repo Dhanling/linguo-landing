@@ -1,0 +1,686 @@
+{
+ "title": "Sudah ditutup, sudah dibayar — partisip pasif",
+ "title_target": "Muzej je zatvoren",
+ "goal": "Membaca papan pengumuman, menjelaskan keadaan (*zatvoreno, plaćeno, rezervisano*), dan menulis riwayat singkat sebuah bangunan dengan *biti* + partisip pasif: *Most je izgrađen 1566.* Sekaligus memilih dengan sadar antara *srušen je* dan *srušio se*.",
+ "bekal": [
+  "membentuk *trpni pridjev* dari kata kerja *-ati, -iti, -jeti, -ći* termasuk perubahan bunyi (*platiti → plaćen, kupiti → kupljen*)",
+  "menyesuaikannya dengan jenis dan jumlah pelaku: *muzej je zatvoren, karte su plaćene, vrata su zaključana*",
+  "memilih antara pasif *biti*, pasif *se*, dan kalimat aktif dengan objek di depan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ponedjeljkom zatvoreno",
+   "intro": "Senin siang. Budi mengajak Amina ke sebuah museum dekat Baščaršija untuk bahan tulisannya — dan menemukan pintu besar yang terkunci.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Ne mogu vjerovati. Pogledaj tablu: „Ponedjeljkom zatvoreno.“",
+     "id": "Nggak percaya. Lihat papannya: „Senin tutup.“",
+     "literal": "tidak saya-bisa percaya. lihatlah papan-akusatif: „pada-hari-senin tertutup-nt.“"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Rekla sam ti jučer. Mnogi muzeji ponedjeljkom ne rade.",
+     "id": "Kan kemarin sudah kubilang. Banyak museum nggak buka hari Senin.",
+     "literal": "berkata-pr saya-adalah kepada-kamu kemarin. banyak-jm museum-jm pada-hari-senin tidak mereka-bekerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A karte su već plaćene! Kupio sam ih preko interneta.",
+     "id": "Padahal tiketnya sudah dibayar! Aku beli lewat internet.",
+     "literal": "dan tiket-jm mereka-adalah sudah dibayar-pr-jm! membeli-lk saya-adalah mereka-akusatif lewat internet-genitif."
+    },
+    {
+     "speaker": "čuvar:",
+     "text": "Dobar dan. Muzej je ponedjeljkom zatvoren. Mogu li vam pomoći?",
+     "id": "Selamat siang. Hari Senin museum tutup. Ada yang bisa saya bantu?",
+     "literal": "baik hari. museum ia-adalah pada-hari-senin tertutup-lk. saya-bisa apakah kepada-kalian membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan. Imam dvije karte za danas, a vrata su zaključana.",
+     "id": "Selamat siang. Saya punya dua tiket untuk hari ini, tapi pintunya terkunci.",
+     "literal": "baik hari. saya-punya dua tiket-genitif untuk hari-ini, dan pintu-jm mereka-adalah terkunci-nt-jm."
+    },
+    {
+     "speaker": "čuvar:",
+     "text": "Da vidim… Karte su kupljene za utorak, ne za ponedjeljak.",
+     "id": "Coba saya lihat… Tiketnya dibeli untuk hari Selasa, bukan Senin.",
+     "literal": "agar saya-melihat… tiket-jm mereka-adalah dibeli-pr-jm untuk selasa-akusatif, bukan untuk senin-akusatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Budi, pa to je sutra! Ništa nije izgubljeno.",
+     "id": "Budi, itu kan besok! Nggak ada yang hilang.",
+     "literal": "Budi, lho itu ia-adalah besok! tidak-apa-apa ia-bukan hilang-nt."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Uf, hvala Bogu. A je li izložba o Starom mostu još otvorena?",
+     "id": "Fiuh, syukurlah. Terus pameran tentang Jembatan Tua masih dibuka?",
+     "literal": "uf, terima-kasih Tuhan-datif. dan ia-adalah apakah pameran tentang tua-lk-lokatif jembatan-lokatif masih terbuka-pr?"
+    },
+    {
+     "speaker": "čuvar:",
+     "text": "Jeste, do kraja mjeseca. Ali fotografisanje je zabranjeno u prvoj sali.",
+     "id": "Masih, sampai akhir bulan. Tapi memotret dilarang di ruang pertama.",
+     "literal": "ia-adalah, sampai akhir-genitif bulan-genitif. tetapi pemotretan ia-adalah dilarang-nt di pertama-pr-lokatif ruang-lokatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Šteta. Tekst za portal je već napisan, samo mi fale fotografije.",
+     "id": "Sayang. Tulisan buat portal sudah jadi, tinggal fotonya yang kurang.",
+     "literal": "sayang. teks untuk portal ia-adalah sudah ditulis-lk, hanya kepada-saya mereka-kurang foto-jm."
+    },
+    {
+     "speaker": "čuvar:",
+     "text": "Fotografije s izložbe su objavljene na našoj stranici. Samo navedite izvor.",
+     "id": "Foto-foto pamerannya dimuat di situs kami. Cukup cantumkan sumbernya.",
+     "literal": "foto-jm dari pameran-genitif mereka-adalah dimuat-pr-jm pada kami-punya-pr-lokatif halaman-lokatif. hanya sebutkanlah sumber-akusatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Vidiš, sve je riješeno. Sutra dolazimo ponovo, a sad idemo na kafu.",
+     "id": "Tuh, semua beres. Besok kita datang lagi, sekarang kita ngopi dulu.",
+     "literal": "kamu-lihat, semua ia-adalah diselesaikan-nt. besok kami-datang lagi, dan sekarang kami-pergi ke kopi-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dogovoreno! Ja častim, jer sam danas baš zbunjen.",
+     "id": "Sepakat! Aku yang traktir, soalnya hari ini aku linglung banget.",
+     "literal": "disepakati-nt! saya saya-mentraktir, karena saya-adalah hari-ini sungguh bingung-lk."
+    }
+   ],
+   "notes": [
+    "***Ponedjeljkom zatvoreno* — papan memakai bentuk netral.** Pengumuman tanpa kata benda biasanya netral tunggal: *Zatvoreno. Otvoreno. Rezervisano. Zabranjeno pušenje.* Begitu ada kata bendanya, partisip menyesuaikan diri: *Muzej je zatvoren. Sala je zatvorena.*",
+    "***Karte su plaćene, vrata su zaključana.*** Partisip pasif adalah **kata sifat**: ikut jenis dan jumlah. *Karta* perempuan → *plaćene*. Yang menjebak: *vrata* (pintu) hanya ada dalam bentuk **jamak netral**, jadi *vrata su zaključana* — bukan *zaključane* dan bukan *zaključan*.",
+    "**Keadaan, bukan kejadian.** *Muzej je zatvoren* menggambarkan **keadaan sekarang** (tertutup), bukan kejadian di masa lalu, meskipun ada *je*. Karena itu padanan Indonesianya sering \"ter-\" atau \"sudah di-\": tertutup, sudah dibayar, terkunci. Kalau mau menceritakan kejadiannya, pakai perfekt aktif: *Zatvorili su muzej u pet.*",
+    "***Ništa nije izgubljeno*, *sve je riješeno*.** Dengan *ništa, sve, to, nešto* partisipnya netral. Dua kalimat ini juga ungkapan hidup untuk menenangkan orang: \"tak ada yang hilang\", \"semua beres\".",
+    "***Fale mi fotografije.*** Kata kerja lisan *faliti* (kurang) memakai datif, persis seperti *nedostajati* yang lebih baku: *nedostaju mi fotografije*. Dan *Ja častim* = \"aku yang traktir\" — kalimat yang membuatmu disukai di kafe mana pun di Sarajevo."
+   ],
+   "grammars": [
+    {
+     "title": "Trpni pridjev — cara membentuknya",
+     "body": [
+      "Partisip pasif dibentuk dari kata kerja yang punya objek, hampir selalu **perfektif**. Akhiran menurut golongan infinitifnya, lalu diberi ekor kata sifat biasa: lk *-Ø*, pr *-a*, nt *-o*; jamak *-i, -e, -a*."
+     ],
+     "table": {
+      "head": [
+       "Golongan",
+       "Infinitif",
+       "lk / pr / nt",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*-ati → -an*",
+        "*napisati*",
+        "*napisan, napisana, napisano*",
+        "*Tekst je napisan.*"
+       ],
+       [
+        "*-ati → -an*",
+        "*zaključati*",
+        "*zaključan, zaključana, zaključano*",
+        "*Vrata su zaključana.*"
+       ],
+       [
+        "*-iti → -en*",
+        "*zatvoriti*",
+        "*zatvoren, zatvorena, zatvoreno*",
+        "*Muzej je zatvoren.*"
+       ],
+       [
+        "*-iti → -en* + perubahan bunyi",
+        "*platiti*",
+        "*plaćen, plaćena, plaćeno*",
+        "*Karte su plaćene.*"
+       ],
+       [
+        "*-jeti → -en* + perubahan bunyi",
+        "*vidjeti*",
+        "*viđen, viđena, viđeno*",
+        "*Nije viđen od jučer.*"
+       ],
+       [
+        "akar konsonan → *-en*",
+        "*reći*",
+        "*rečen, rečena, rečeno*",
+        "*Sve je rečeno.*"
+       ],
+       [
+        "*-nuti, -eti → -t*",
+        "*prekinuti, zauzeti*",
+        "*prekinut, zauzet*",
+        "*Mjesto je zauzeto.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata kerja tanpa objek tidak punya partisip pasif.** *Ići, spavati, doći* tidak bisa \"di-\". Ini sama dengan bahasa Indonesia: tak ada \"dipergi\".",
+      "**Imperfektif hanya sesekali** (*voljen* — dicintai, *čitan* — banyak dibaca, *tražen* — dicari). Untuk hasil tindakan, pilih pasangan perfektifnya: *izgrađen, plaćen, napisan*."
+     ]
+    },
+    {
+     "title": "Perubahan bunyi pada kata kerja *-iti*",
+     "body": [
+      "Bila akar kata kerja *-iti* berakhir dengan salah satu konsonan di bawah, konsonan itu **melunak** sebelum *-en*. Perubahan ini sama dengan yang kamu lihat di pasangan vid (*platiti → plaćati*), jadi tabel ini dipakai dua kali."
+     ],
+     "table": {
+      "head": [
+       "Perubahan",
+       "Infinitif",
+       "Trpni pridjev"
+      ],
+      "rows": [
+       [
+        "*t → ć*",
+        "*platiti, vratiti*",
+        "*plaćen, vraćen*"
+       ],
+       [
+        "*d → đ*",
+        "*izgraditi, roditi*",
+        "*izgrađen, rođen*"
+       ],
+       [
+        "*s → š*, *z → ž*",
+        "*nositi, poraziti*",
+        "*nošen, poražen*"
+       ],
+       [
+        "*st → šć*",
+        "*očistiti*",
+        "*očišćen*"
+       ],
+       [
+        "*p → plj*, *b → blj*",
+        "*kupiti, izgubiti*",
+        "*kupljen, izgubljen*"
+       ],
+       [
+        "*v → vlj*, *m → mlj*",
+        "*obnoviti, objaviti, slomiti*",
+        "*obnovljen, objavljen, slomljen*"
+       ],
+       [
+        "*l → lj*, *n → nj*",
+        "*dozvoliti, promijeniti*",
+        "*dozvoljen, promijenjen*"
+       ],
+       [
+        "*r, š, ž, č* tetap",
+        "*zatvoriti, riješiti, završiti*",
+        "*zatvoren, riješen, završen*"
+       ]
+      ]
+     },
+     "after": [
+      "**Konsonan bibir (*p, b, v, m*) mendapat *lj* sisipan** — di situ lidah orang Indonesia paling sering tergelincir: *kupljen*, bukan *kupen*; *obnovljen*, bukan *obnoven*.",
+      "**Satu yang kamu ucapkan tiap kali memperkenalkan diri:** *roditi → rođen*. *Rođen sam u Jakarti* (lk), *rođena sam u Zenici* (pr) — secara tata bahasa itu kalimat pasif: \"saya dilahirkan\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Most je izgrađen 1566.",
+   "intro": "Selasa sore, sesudah kunjungan ke museum. Budi menunjukkan draf tulisannya tentang Stari most di Mostar kepada Amina, yang membacanya dengan pensil merah di tangan.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Amina, evo početka teksta: „Stari most je izgrađen 1566. godine.“",
+     "id": "Amina, ini awal tulisannya: „Jembatan Tua dibangun tahun 1566.“",
+     "literal": "Amina, inilah awal-genitif teks-genitif: „tua-lk jembatan ia-adalah dibangun-lk 1566. tahun-genitif.“"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Dobro. Ali ko ga je izgradio? Čitalac to želi znati.",
+     "id": "Bagus. Tapi siapa yang membangunnya? Pembaca pasti ingin tahu.",
+     "literal": "baik. tetapi siapa dia-lk-akusatif ia-adalah membangun-lk? pembaca itu ia-ingin tahu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mimar Hajrudin, po nalogu sultana Sulejmana. Da napišem: „Most je izgradio Mimar Hajrudin“?",
+     "id": "Mimar Hajrudin, atas perintah Sultan Sulejman. Kutulis: „Jembatan itu dibangun oleh Mimar Hajrudin“?",
+     "literal": "Mimar Hajrudin, atas perintah-lokatif sultan-genitif Sulejman-genitif. agar saya-menulis: „jembatan ia-adalah membangun-lk Mimar Hajrudin“?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Može i jedno i drugo. Aktiv je živahniji, a pasiv stavlja most u prvi plan.",
+     "id": "Dua-duanya bisa. Aktif lebih hidup, pasif menaruh jembatannya di depan.",
+     "literal": "ia-bisa dan satu dan lain. aktif ia-adalah lebih-hidup, dan pasif ia-menaruh jembatan ke pertama-akusatif rencana-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dalje: „Most je srušen 9. novembra 1993., a obnovljen je 2004.“",
+     "id": "Lanjut: „Jembatan itu dihancurkan 9 November 1993, dan dibangun kembali tahun 2004.“",
+     "literal": "selanjutnya: „jembatan ia-adalah dihancurkan-lk 9. november-genitif 1993., dan dipulihkan-lk ia-adalah 2004.“"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Dobro je što nisi napisao „most se srušio“. To bi značilo da je pao sam od sebe.",
+     "id": "Untung kamu nggak menulis „jembatannya runtuh“. Itu berarti jembatannya jatuh sendiri.",
+     "literal": "baik ia-adalah bahwa kamu-bukan menulis-lk „jembatan diri-sendiri runtuh-lk“. itu ia-andai berarti-nt bahwa ia-adalah jatuh-lk sendiri dari diri-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znam. Srušen je u ratu, namjerno, i to treba reći jasno.",
+     "id": "Aku tahu. Jembatan itu dihancurkan dalam perang, dengan sengaja, dan itu harus dikatakan dengan jelas.",
+     "literal": "saya-tahu. dihancurkan-lk ia-adalah dalam perang-lokatif, sengaja, dan itu ia-perlu berkata jelas."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Slažem se. A kada je ponovo otvoren?",
+     "id": "Setuju. Terus kapan dibuka lagi?",
+     "literal": "saya-setuju diri-sendiri. dan kapan ia-adalah lagi dibuka-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Svečano je otvoren 23. jula 2004., a 2005. je upisan na UNESCO-ovu listu svjetske baštine.",
+     "id": "Diresmikan 23 Juli 2004, lalu tahun 2005 masuk daftar Warisan Dunia UNESCO.",
+     "literal": "secara-meriah ia-adalah dibuka-lk 23. juli-genitif 2004., dan 2005. ia-adalah dicatat-lk pada UNESCO-punya-akusatif daftar-akusatif dunia-pr-genitif warisan-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Odlično. Tekst je završen, sad ga pošalji uredniku.",
+     "id": "Bagus sekali. Tulisannya sudah rampung, sekarang kirim ke redaktur.",
+     "literal": "sangat-baik. teks ia-adalah diselesaikan-lk, sekarang dia-lk-akusatif kirimlah redaktur-datif."
+    }
+   ],
+   "notes": [
+    "***Most je izgradio Mimar Hajrudin* — pelaku di belakang, objek di depan.** Karena bahasa Bosnia punya padež, urutan kata bebas: *most* di sini akusatif (bentuknya sama dengan nominatif), *Mimar Hajrudin* nominatif. Menaruh pelaku di akhir memberi efek \"… oleh Mimar Hajrudin\" tanpa perlu pasif sama sekali.",
+    "**Hindari *od strane* + genitif.** Terjemahan kata per kata \"dibangun oleh\" — *izgrađen od strane Mimara Hajrudina* — memang ada, tetapi terdengar seperti surat kantor. Penulis yang baik memilih kalimat aktif dengan objek di depan, seperti saran Amina.",
+    "***Srušen je* lawan *srušio se*.** Keduanya bisa diterjemahkan \"runtuh\", tetapi *srušio se* (refleksif) berarti jatuh **dengan sendirinya**, sedangkan *srušen je* berarti **ada yang meruntuhkannya**. Dalam sejarah, pilihan bentuk ini menentukan siapa yang dianggap bertanggung jawab — dan penutur Bosnia sangat peka terhadapnya.",
+    "**Fakta Stari most.** Dibangun 1557–1566 atas perintah Sultan Sulejman Agung oleh arsitek Mimar Hajrudin; dihancurkan oleh tembakan artileri pada 9 November 1993; dibangun ulang dengan batu dan teknik asli, diresmikan 23 Juli 2004; tahun 2005 kawasan jembatan dan kota tua Mostar masuk Daftar Warisan Dunia UNESCO.",
+    "**Tanggal dibaca dengan bilangan urut genitif:** *9. novembra 1993.* = *devetog novembra hiljadu devetsto devedeset treće (godine)*. Titik sesudah angka menandai bilangan urut, termasuk tahun. Dan *upisan je na listu* memakai *na* + akusatif karena ada gerak \"masuk ke\"; keadaannya memakai lokatif: *Most je na listi svjetske baštine.*",
+    "***Da napišem…?* — \"bagaimana kalau kutulis…?\"** *Da* + kala kini orang pertama adalah cara wajar menawarkan atau menanyakan langkah berikutnya: *Da ti pomognem? Da pozovem taksi? Da krenemo?* Nadanya lebih lembut daripada *Hoćeš li da…?*"
+   ],
+   "grammars": [
+    {
+     "title": "Satu kejadian, lima cara menyebutnya",
+     "body": [
+      "Bahasa Indonesia cukup dengan \"dibangun\". Bahasa Bosnia memberimu beberapa pilihan, dan masing-masing membawa nuansa yang berbeda. Penulis portal harus bisa memilih."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Nuansa"
+      ],
+      "rows": [
+       [
+        "*biti* + trpni pridjev",
+        "*Most je izgrađen 1566.*",
+        "hasil, fakta; pelaku tak penting"
+       ],
+       [
+        "aktif, objek di depan",
+        "*Most je izgradio Mimar Hajrudin.*",
+        "pelaku ditonjolkan di akhir"
+       ],
+       [
+        "pasif *se* (imperfektif)",
+        "*Most se gradio devet godina.*",
+        "proses yang berlangsung"
+       ],
+       [
+        "refleksif *se*",
+        "*Most se srušio.*",
+        "terjadi dengan sendirinya"
+       ],
+       [
+        "*od strane* + genitif",
+        "*izgrađen od strane …*",
+        "kaku, gaya kantor; hindari"
+       ]
+      ]
+     },
+     "after": [
+      "**Pasif *se* paling wajar untuk hal yang berulang atau umum:** *Ovdje se prodaju karte. Skokovi s mosta se organizuju svakog ljeta.* Pasif *biti* paling wajar untuk hasil yang sudah selesai: *Karte su prodane. Most je obnovljen.*",
+      "**Letak *je* dalam tulisan.** Sesudah subjek pendek, *je* masuk kursi kedua biasa: *Most je izgrađen.* Sesudah subjek panjang, penulis sering memindahkan *je* ke belakang partisip: *Stari most u Mostaru izgrađen je 1566.* Keduanya baku."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tulisan di pintu dan papan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Otvoreno / Zatvoreno*",
+       "OT-vo-re-no / ZA-tvo-re-no",
+       "Buka / Tutup"
+      ],
+      [
+       "*Ponedjeljkom zatvoreno*",
+       "po-NE-dyely-kom ZA-tvo-re-no",
+       "Senin tutup"
+      ],
+      [
+       "*Zabranjeno pušenje*",
+       "ZA-bra-nye-no PU-sye-nye",
+       "Dilarang merokok"
+      ],
+      [
+       "*Fotografisanje zabranjeno*",
+       "fo-to-gra-FI-sa-nye ZA-bra-nye-no",
+       "Dilarang memotret"
+      ],
+      [
+       "*Rezervisano*",
+       "re-ZER-vi-sa-no",
+       "Sudah dipesan"
+      ],
+      [
+       "*Zauzeto*",
+       "ZA-u-ze-to",
+       "Terisi, sedang dipakai"
+      ],
+      [
+       "*Rasprodano*",
+       "RAS-pro-da-no",
+       "Habis terjual"
+      ],
+      [
+       "*Uključeno u cijenu*",
+       "UK-lyu-che-no u TSI-ye-nu",
+       "Termasuk dalam harga"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hampir semua papan di Sarajevo memakai pola yang sama: partisip pasif netral tanpa kata kerja. Di pintu toilet kafe kamu melihat *zauzeto*, di meja restoran *rezervisano*, di loket bioskop *rasprodano*, di menu *PDV uključen u cijenu* (PPN termasuk harga — di sini lk, karena *PDV* = *porez*). Begitu kamu tahu polanya, papan-papan itu berhenti menjadi teka-teki: cari kata kerjanya di dalam partisip, dan artinya langsung terbuka."
+    },
+    {
+     "type": "kotak",
+     "title": "Museum di Sarajevo — sebelum berangkat",
+     "items": [
+      "Hari tutup dan jam buka tiap museum berbeda dan bisa berubah menurut musim. Periksa situs resmi atau halaman media sosial museumnya pada hari yang sama, jangan mengandalkan catatan lama.",
+      "*Zemaljski muzej Bosne i Hercegovine* (Museum Nasional), didirikan tahun 1888, pernah **ditutup** pada Oktober 2012 karena masalah pendanaan dan **dibuka kembali** pada September 2015 — contoh nyata *zatvoren* dan *ponovo otvoren* yang ramai diberitakan.",
+      "Di banyak museum, memotret dikenai aturan khusus: kadang boleh tanpa blitz, kadang perlu tiket foto tambahan. Tanyakan: *Je li dozvoljeno fotografisanje?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lahir, dibangun, didirikan — riwayat dalam satu kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Ivo Andrić je rođen 1892. u Docu kod Travnika.*",
+       "Ivo Andrić lahir tahun 1892 di Dolac, dekat Travnik."
+      ],
+      [
+       "*Meša Selimović je rođen 1910. u Tuzli.*",
+       "Meša Selimović lahir tahun 1910 di Tuzla."
+      ],
+      [
+       "*Zemaljski muzej je osnovan 1888. godine.*",
+       "Museum Nasional didirikan tahun 1888."
+      ],
+      [
+       "*Most Mehmed-paše Sokolovića u Višegradu završen je 1577.*",
+       "Jembatan Mehmed-paša Sokolović di Višegrad selesai tahun 1577."
+      ],
+      [
+       "*Stari most je srušen 1993., a obnovljen 2004.*",
+       "Jembatan Tua dihancurkan 1993 dan dibangun kembali 2004."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Riwayat singkat — di brosur, papan informasi, atau portal wisata — hampir seluruhnya berdiri di atas tiga kata: *rođen, izgrađen, osnovan*. Dua kalimat pasif bisa dirangkai dengan *a* tanpa mengulang *je* (*srušen je 1993., a obnovljen 2004.*), karena subjeknya sama. Perhatikan juga *u Docu*: nama desa *Dolac* kehilangan *a* yang tak tetap (seperti *lonac → u loncu*), lalu *l* di depan *c* ikut gugur: *Dolac → Doca → u Docu*."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis teks sejarah untuk portal wisata",
+     "items": [
+      "**Tahun dan tanggal pakai *biti* + partisip:** *izgrađen je, osnovan je, obnovljen je*. Untuk orang, pakai aktif: *Most je izgradio Mimar Hajrudin.*",
+      "**Tahun ditulis dengan titik** (*1566. godine*), dan di akhir kalimat titik itu sekaligus menjadi titik kalimat: *…obnovljen je 2004.*",
+      "**Di Bosnia \"abad\" paling sering *vijek*** (*16. vijek*); *stoljeće* juga baku dan dipakai, tetapi terasa lebih sering di teks Kroasia. Periksa setiap angka tahun dua kali — pembaca Bosnia akan memeriksanya juga.",
+      "**Tradisi yang selalu disebut di teks tentang Mostar:** melompat dari Stari most ke Sungai Neretva, sekitar dua puluh meter di bawahnya. Lompatan dilakukan oleh penyelam setempat yang terlatih, dan lomba tahunannya diadakan setiap musim panas. Dalam bahasa Bosnia: *S mosta se skače u Neretvu* — pasif *se* untuk kebiasaan yang berulang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Jangan tulis ulang seluruh pembukaan, pendekkan saja.",
+       "*Nemoj prepisivati cijeli uvod, samo ga skrati.*"
+      ],
+      [
+       "Kalau menerjemahkan teks orang lain, selalu sebutkan sumbernya.",
+       "*Kad prevodiš tuđi tekst, uvijek navedi izvor.*"
+      ],
+      [
+       "Biasanya aku kirim tulisan malam hari, tapi hari ini akan kukirim lebih awal.",
+       "*Obično šaljem tekstove uveče, ali danas ću ga poslati ranije.*"
+      ],
+      [
+       "Bertahun-tahun aku berkirim surat dengan sahabatku dari Tuzla.",
+       "*Godinama sam se dopisivala s drugaricom iz Tuzle.*"
+      ],
+      [
+       "Setiap hari catatlah lima kata kerja baru.",
+       "*Svaki dan zapisuj pet novih glagola.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "trpni pridjev (lk)",
+   "baca": "TR-pni PRI-dyev",
+   "id": "partisip pasif"
+  },
+  {
+   "bs": "zatvarati (zatvaram) / zatvoriti (zatvorim)",
+   "baca": "ZA-tva-ra-ti / za-TVO-ri-ti",
+   "id": "menutup"
+  },
+  {
+   "bs": "otvarati (otvaram) / otvoriti (otvorim)",
+   "baca": "OT-va-ra-ti / ot-VO-ri-ti",
+   "id": "membuka"
+  },
+  {
+   "bs": "plaćati (plaćam) / platiti (platim)",
+   "baca": "PLA-cha-ti / PLA-ti-ti",
+   "id": "membayar"
+  },
+  {
+   "bs": "graditi (gradim) / izgraditi (izgradim)",
+   "baca": "GRA-di-ti / iz-GRA-di-ti",
+   "id": "membangun"
+  },
+  {
+   "bs": "rušiti (rušim) / srušiti (srušim)",
+   "baca": "RU-syi-ti / SRU-syi-ti",
+   "id": "merobohkan, menghancurkan"
+  },
+  {
+   "bs": "obnavljati (obnavljam) / obnoviti (obnovim)",
+   "baca": "ob-NAV-lya-ti / ob-NO-vi-ti",
+   "id": "memulihkan, membangun kembali"
+  },
+  {
+   "bs": "objavljivati (objavljujem) / objaviti (objavim)",
+   "baca": "ob-yav-LYI-va-ti / ob-YA-vi-ti",
+   "id": "memuat, menerbitkan"
+  },
+  {
+   "bs": "zabranjivati (zabranjujem) / zabraniti (zabranim)",
+   "baca": "za-bra-NYI-va-ti / za-BRA-ni-ti",
+   "id": "melarang"
+  },
+  {
+   "bs": "zaključavati (zaključavam) / zaključati (zaključam)",
+   "baca": "za-klyu-CHA-va-ti / za-KLYU-cha-ti",
+   "id": "mengunci"
+  },
+  {
+   "bs": "osnivati (osnivam) / osnovati (osnujem)",
+   "baca": "OS-ni-va-ti / os-NO-va-ti",
+   "id": "mendirikan"
+  },
+  {
+   "bs": "roditi se (rodim se) — pf",
+   "baca": "RO-di-ti se",
+   "id": "lahir (*rođen sam* = aku lahir)"
+  },
+  {
+   "bs": "častiti (častim) — ipf",
+   "baca": "CHAS-ti-ti",
+   "id": "mentraktir"
+  },
+  {
+   "bs": "tabla (pr)",
+   "baca": "TA-bla",
+   "id": "papan pengumuman"
+  },
+  {
+   "bs": "izložba (pr)",
+   "baca": "IZ-lozh-ba",
+   "id": "pameran"
+  },
+  {
+   "bs": "sala (pr)",
+   "baca": "SA-la",
+   "id": "ruang, aula"
+  },
+  {
+   "bs": "čuvar, čuvari (lk)",
+   "baca": "CHU-var",
+   "id": "penjaga"
+  },
+  {
+   "bs": "vrata (nt, hanya jamak)",
+   "baca": "VRA-ta",
+   "id": "pintu"
+  },
+  {
+   "bs": "izvor, izvori (lk)",
+   "baca": "IZ-vor",
+   "id": "sumber"
+  },
+  {
+   "bs": "čitalac, čitaoci (lk)",
+   "baca": "CHI-ta-lats, CHI-ta-o-tsi",
+   "id": "pembaca"
+  },
+  {
+   "bs": "urednik (lk) / urednica (pr)",
+   "baca": "U-red-nik / U-red-ni-tsa",
+   "id": "redaktur, editor"
+  },
+  {
+   "bs": "svjetska baština (pr)",
+   "baca": "SVYET-ska BASY-ti-na",
+   "id": "warisan dunia"
+  },
+  {
+   "bs": "po nalogu + genitif",
+   "baca": "po NA-lo-gu",
+   "id": "atas perintah"
+  },
+  {
+   "bs": "namjerno",
+   "baca": "NAM-yer-no",
+   "id": "dengan sengaja"
+  },
+  {
+   "bs": "svečano",
+   "baca": "SVE-cha-no",
+   "id": "secara resmi, meriah"
+  },
+  {
+   "bs": "zbunjen, zbunjena",
+   "baca": "ZBU-nyen",
+   "id": "bingung, linglung"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia dengan *biti* + partisip pasif.",
+   "items": [
+    "Museumnya tutup hari Senin.",
+    "Tiketnya sudah dibayar.",
+    "Jembatan Tua dibangun tahun 1566.",
+    "Memotret dilarang di ruang pertama.",
+    "Tulisannya sudah selesai.",
+    "Aku (pr) lahir di Zenica."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partisip pasif yang sesuai jenis dan jumlahnya.",
+   "items": [
+    "Vrata su ____. (zaključati)",
+    "Karte su ____ za utorak. (kupiti)",
+    "Muzej je ponovo ____. (otvoriti)",
+    "Pismo je ____ jučer. (napisati)",
+    "Most je ____ u ratu. (srušiti)",
+    "Fotografije su ____ na stranici. (objaviti)",
+    "Kafa je već ____. (platiti)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat aktif menjadi *biti* + partisip pasif, tanpa menyebut pelakunya.",
+   "items": [
+    "Neko je zatvorio muzej.",
+    "Platili smo račun.",
+    "Zabranili su pušenje.",
+    "Obnovili su most 2004.",
+    "Prodali su sve karte.",
+    "Rezervisala je sto za četvero."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "je / zatvoren / ponedjeljkom / muzej",
+    "su / plaćene / već / karte",
+    "izgrađen / most / je / 1566. / godine",
+    "nije / izgubljeno / ništa",
+    "je / Tuzli / rođen / Selimović / u"
+   ]
+  }
+ ],
+ "answers": [
+  "Muzej je ponedjeljkom zatvoren. — Karte su već plaćene. — Stari most je izgrađen 1566. godine. — Fotografisanje je zabranjeno u prvoj sali. — Tekst je završen. — Rođena sam u Zenici.",
+  "zaključana — kupljene — otvoren — napisano — srušen — objavljene — plaćena",
+  "Muzej je zatvoren. — Račun je plaćen. — Pušenje je zabranjeno. — Most je obnovljen 2004. — Sve karte su prodane (atau prodate). — Sto je rezervisan za četvero.",
+  "Muzej je ponedjeljkom zatvoren. — Karte su već plaćene. — Most je izgrađen 1566. godine. — Ništa nije izgubljeno. — Selimović je rođen u Tuzli."
+ ]
+}
