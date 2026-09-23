@@ -1,0 +1,732 @@
+{
+ "title": "Membuat nem rán — kalimat perintah",
+ "title_target": "Trước tiên, hãy ngâm miến",
+ "goal": "Mengikuti dan memberi petunjuk langkah demi langkah — resep masakan dan cara memakai alat. Titik tata bahasanya: perintah dan larangan **hãy, đừng, chớ, … đi, … nhé, … thôi**, urutan waktu **trước khi, sau khi, khi, trong khi**, dan takaran (*một thìa, một chút, vừa đủ*).",
+ "bekal": [
+  "menyuruh, mengajak, dan melarang dengan rasa yang pas untuk lawan bicaramu",
+  "menyusun langkah dengan *trước khi, sau khi, khi, trong khi* dan *… đã*",
+  "menyebut takaran dan kata kerja dapur utara (*thái, rán, ngâm, trộn*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Bác Tư dạy làm nem rán",
+   "intro": "Pertengahan April. Bác Tư, tetangga sebelah yang tiap pagi berjualan xôi, mengajak Budi ke dapurnya: ia berjanji mengajarinya membuat *nem rán*, lumpia goreng khas utara.",
+   "lines": [
+    {
+     "speaker": "Bác Tư:",
+     "text": "Cháu rửa tay đi, rồi ngồi xuống đây với bác.",
+     "id": "Cuci tangan dulu, Nak, lalu duduk sini sama Bude.",
+     "literal": "cucu cuci tangan ayo, lalu duduk turun sini dengan bude.",
+     "baca": "Cáu zửa tay di, zồi ngồi suống dây với bák."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. Hôm nay bác dạy cháu làm nem rán ạ?",
+     "id": "Baik. Hari ini Bude mengajari saya bikin nem rán?",
+     "literal": "iya ya. hari ini bude ajar cucu buat nem goreng ya?",
+     "baca": "Vâng ạ. Hôm nay bák zạy cáu làm nem zán ạ?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Trước tiên, cháu hãy ngâm miến và mộc nhĩ vào nước ấm.",
+     "id": "Pertama, rendam soun dan jamur kuping di air hangat.",
+     "literal": "lebih-dulu pertama, cucu hendaklah rendam soun dan jamur-kuping masuk air hangat.",
+     "baca": "Cướk tiên, cáu hãy ngâm miến và mộk nyĩ vào nướk ấm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ngâm bao lâu ạ?",
+     "id": "Direndam berapa lama?",
+     "literal": "rendam berapa lama ya?",
+     "baca": "Ngâm bao lâu ạ?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Mười lăm phút thôi. Đừng ngâm lâu quá, miến sẽ nát.",
+     "id": "Lima belas menit saja. Jangan terlalu lama, nanti sounnya hancur.",
+     "literal": "lima-belas menit saja. jangan rendam lama terlalu, soun akan hancur.",
+     "baca": "Mười lăm fút thôi. Dừng ngâm lâu kwá, miến sẽ nát."
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Trong khi chờ, cháu thái cà rốt và hành lá thật nhỏ nhé.",
+     "id": "Sambil menunggu, iris wortel dan daun bawang kecil-kecil ya.",
+     "literal": "dalam waktu tunggu, cucu iris wortel dan bawang daun sungguh kecil ya.",
+     "baca": "Cong khi cờ, cáu thái kà zốt và hàng lá thật nyỏ nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thái thế này được chưa bác?",
+     "id": "Segini sudah cukup, Bude?",
+     "literal": "iris begini dapat belum bude?",
+     "baca": "Thái thế này dượk cưa bák?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Được rồi. Sau khi thái xong, trộn tất cả với thịt băm, hai quả trứng và một thìa nước mắm.",
+     "id": "Sudah. Sesudah selesai mengiris, campur semuanya dengan daging cincang, dua butir telur, dan sesendok kecap ikan.",
+     "literal": "dapat sudah. sesudah waktu iris selesai, campur semua dengan daging cincang, dua buah telur dan satu sendok air-ikan.",
+     "baca": "Dượk zồi. Sau khi thái song, cộn tất kả với thịt băm, hai kwả cứng và một thìa nướk mắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có cho muối không bác?",
+     "id": "Pakai garam, Bude?",
+     "literal": "ada beri garam tidak bude?",
+     "baca": "Kó co muối không bák?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Chớ cho muối, nước mắm mặn rồi.",
+     "id": "Jangan pakai garam, kecap ikannya sudah asin.",
+     "literal": "jangan beri garam, air-ikan asin sudah.",
+     "baca": "Cớ co muối, nướk mắm mặn zồi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bác ơi, cháu cuốn thế này có chặt quá không ạ?",
+     "id": "Bude, gulunganku segini terlalu kencang nggak?",
+     "literal": "bude hai, cucu gulung begini ada kencang terlalu tidak ya?",
+     "baca": "Bák ơi, cáu kuốn thế này kó cặt kwá không ạ?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Hơi chặt đấy. Cuốn chặt quá thì khi rán nem sẽ bị nứt.",
+     "id": "Agak kencang. Kalau terlalu kencang, waktu digoreng nemnya pecah.",
+     "literal": "agak kencang tuh. gulung kencang terlalu maka waktu goreng nem akan kena retak.",
+     "baca": "Hơi cặt dấy. Kuốn cặt kwá thì khi zán nem sẽ bị nứt."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cháu hiểu rồi. Bây giờ rán luôn ạ?",
+     "id": "Paham. Sekarang langsung digoreng?",
+     "literal": "cucu paham sudah. sekarang goreng langsung ya?",
+     "baca": "Cáu hiểu zồi. Bây zờ zán luôn ạ?"
+    },
+    {
+     "speaker": "Bác Tư:",
+     "text": "Đợi dầu nóng đã. Khi cho nem vào, hãy để lửa nhỏ.",
+     "id": "Tunggu minyaknya panas dulu. Waktu nem dimasukkan, pakai api kecil.",
+     "literal": "tunggu minyak panas dulu. waktu beri nem masuk, hendaklah biarkan api kecil.",
+     "baca": "Dợi zầu nóng dã. Khi co nem vào, hãy dể lửa nyỏ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vàng đều rồi! Ngon quá bác ạ, giòn hơn nem ngoài hàng.",
+     "id": "Sudah kuning rata! Enak sekali, Bude, lebih renyah daripada nem di warung.",
+     "literal": "kuning rata sudah! enak sekali bude ya, renyah lebih nem luar warung.",
+     "baca": "Vàng dều zồi! Ngon kwá bák ạ, zòn hơn nem ngoài hàng."
+    }
+   ],
+   "notes": [
+    "**Cháu – bác sepanjang dialog.** Bác Tư menyebut dirinya *bác* dan memanggil Budi *cháu*; Budi membalas dengan pasangan yang sama dari arah sebaliknya dan menambahkan *ạ*. Ini hubungan tetangga tua dan anak muda yang paling lazim di Hà Nội.",
+    "**Đợi dầu nóng đã — *đã* di ujung kalimat berarti \"dulu\".** Ia menandai langkah yang harus beres sebelum yang lain: *Ăn cơm đã!* (makan dulu!), *Để em nghĩ đã.* (biar kupikir dulu). Jangan tertukar dengan *đã* sebelum kata kerja yang berarti \"sudah\".",
+    "**Thái — \"mengiris\" di utara.** Di selatan kata yang sama menjadi *xắt*, dan *cắt* dipakai di mana-mana untuk \"memotong\" secara umum (kertas, rambut). *Rán* (menggoreng) juga kata utara; orang selatan bilang *chiên*.",
+    "**Bị nứt — \"jadi pecah\".** *Bị* dari unit 6 muncul lagi untuk kejadian yang tak diinginkan, kali ini pada benda: *nem bị nứt*, *cơm bị cháy* (nasinya gosong).",
+    "**Ngoài hàng — \"di luar, di warung\".** *Hàng* di sini berarti tempat makan atau kios; *ăn ngoài hàng* = makan di luar, lawannya *ăn ở nhà*."
+   ],
+   "grammars": [
+    {
+     "title": "Menyuruh dan melarang",
+     "body": [
+      "Bahasa Vietnam tidak mengubah kata kerja untuk perintah; yang berubah adalah kata kecil di depan atau di ujungnya, dan masing-masing membawa rasa sendiri."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Rasa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**hãy** + kata kerja",
+        "tegas tapi santun; resep, petunjuk, semangat",
+        "*Cháu hãy ngâm miến trước.*"
+       ],
+       [
+        "kata kerja + **đi**",
+        "ajakan atau suruhan akrab",
+        "*Ăn thử đi!*"
+       ],
+       [
+        "kata kerja + **nhé**",
+        "lembut, mengajak setuju",
+        "*Thái nhỏ nhé.*"
+       ],
+       [
+        "**đừng** + kata kerja",
+        "jangan (umum)",
+        "*Đừng ngâm lâu quá.*"
+       ],
+       [
+        "**chớ** + kata kerja",
+        "jangan (kuno, tulisan, orang tua)",
+        "*Chớ cho muối.*"
+       ],
+       [
+        "… **thôi**",
+        "\"saja\"; di ujung ajakan: \"yuk\"",
+        "*Mười lăm phút thôi. Đi thôi!*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kepada orang yang lebih tua, perintah telanjang terdengar kasar. Tambahkan panggilan dan *ạ*: *Bác ngồi đi ạ.* (silakan duduk, Bude), *Bác đừng lo ạ.* (Bude jangan khawatir). *Hãy* jarang dipakai anak muda kepada orang tua dalam percakapan; ia lebih cocok untuk resep, petunjuk tertulis, dan pidato.",
+      "*Chớ* cukup kamu kenali. Ia hidup di peribahasa dan di mulut orang tua seperti bác Tư; untuk dirimu sendiri, *đừng* selalu tepat."
+     ]
+    },
+    {
+     "title": "Urutan waktu: sebelum, sesudah, ketika",
+     "body": [
+      "Di A1 kamu merangkai cerita dengan *trước tiên, sau đó, cuối cùng*. Untuk menghubungkan dua kejadian dalam satu kalimat, pakai kata-kata berikut."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*trước khi* + kata kerja",
+        "sebelum",
+        "*Rửa tay trước khi ăn.*"
+       ],
+       [
+        "*sau khi* + kata kerja",
+        "sesudah",
+        "*Sau khi thái xong, trộn đều.*"
+       ],
+       [
+        "*khi* + kalimat",
+        "ketika, waktu",
+        "*Khi cho nem vào, để lửa nhỏ.*"
+       ],
+       [
+        "*trong khi* + kalimat",
+        "sementara, sambil",
+        "*Trong khi chờ, thái cà rốt.*"
+       ],
+       [
+        "*đến khi* + kalimat",
+        "sampai",
+        "*Rán đến khi vàng đều.*"
+       ]
+      ]
+     },
+     "after": [
+      "Di depan kata benda cukup *trước* dan *sau*, tanpa *khi*: *trước bữa ăn* (sebelum makan), *sau giờ làm* (sesudah jam kerja). *Khi* hanya dipakai bila yang menyusul kata kerja atau kalimat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Máy giặt mới",
+   "intro": "Akhir pekan di apartemen Cầu Giấy. Cô Thu, pemilik apartemen, baru saja memasang mesin cuci baru, dan Minh menunjukkan cara memakainya kepada Budi.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Minh ơi, cái máy giặt mới này dùng thế nào?",
+     "id": "Minh, mesin cuci baru ini cara pakainya gimana?",
+     "literal": "Minh hai, buah mesin cuci baru ini pakai bagaimana?",
+     "baca": "Ming ơi, kái máy zặt mới này zùng thế nào?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Dễ lắm. Trước khi giặt, cậu để riêng quần áo trắng nhé.",
+     "id": "Gampang. Sebelum mencuci, pisahkan baju putih, ya.",
+     "literal": "mudah sekali. sebelum cuci, kamu taruh terpisah pakaian putih ya.",
+     "baca": "Zễ lắm. Cướk khi zặt, kậu dể ziêng kwần áo cắng nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sao phải để riêng?",
+     "id": "Kenapa harus dipisah?",
+     "literal": "kenapa harus taruh terpisah?",
+     "baca": "Sao fải dể ziêng?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Áo màu hay bị phai, dây màu sang áo trắng. Nào, cho quần áo vào máy đi.",
+     "id": "Baju berwarna sering luntur ke baju putih. Ayo, masukkan pakaiannya ke mesin.",
+     "literal": "baju warna sering kena luntur, tempel warna seberang baju putih. ayo, beri pakaian masuk mesin ayo.",
+     "baca": "Áo màu hay bị fai, zây màu sang áo cắng. Nào, co kwần áo vào máy di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Xong rồi. Bột giặt cho bao nhiêu?",
+     "id": "Sudah. Deterjennya berapa banyak?",
+     "literal": "selesai sudah. bubuk cuci beri berapa?",
+     "baca": "Song zồi. Bột zặt co bao nyiêu?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Đừng cho nhiều bột giặt quá, nửa cốc thôi.",
+     "id": "Jangan kebanyakan deterjen, setengah gelas takar saja.",
+     "literal": "jangan beri banyak bubuk cuci terlalu, setengah gelas saja.",
+     "baca": "Dừng co nyiều bột zặt kwá, nửa kốk thôi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rồi bấm nút nào?",
+     "id": "Terus tekan tombol yang mana?",
+     "literal": "lalu tekan tombol mana?",
+     "baca": "Zồi bấm nút nào?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Bấm nút này, chọn giặt nhanh. Khi máy kêu \"tít tít\" thì lấy quần áo ra phơi ngay.",
+     "id": "Tekan tombol ini, pilih cuci cepat. Kalau mesinnya bunyi \"tit-tit\", langsung keluarkan pakaian dan jemur.",
+     "literal": "tekan tombol ini, pilih cuci cepat. waktu mesin bunyi \"tít tít\" maka ambil pakaian keluar jemur segera.",
+     "baca": "Bấm nút này, cọn zặt nyang. Khi máy kêu \"tít tít\" thì lấy kwần áo za fơi ngay."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Trời nồm thế này thì bao giờ mới khô?",
+     "id": "Cuaca lembap begini, kapan keringnya?",
+     "literal": "langit lembap begini maka kapan baru kering?",
+     "baca": "Cời nồm thế này thì bao zờ mới khô?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Thì phơi ở ban công rồi bật quạt. Đừng để quần áo ướt trong máy lâu, sẽ bị hôi đấy.",
+     "id": "Ya jemur di balkon, lalu nyalakan kipas. Jangan biarkan pakaian basah lama di mesin, nanti bau.",
+     "literal": "maka jemur di balkon lalu nyalakan kipas. jangan biarkan pakaian basah dalam mesin lama, akan kena bau tuh.",
+     "baca": "Thì fơi ở ban kông zồi bật kwạt. Dừng dể kwần áo ướt cong máy lâu, sẽ bị hôi dấy."
+    }
+   ],
+   "notes": [
+    "**Nào, … đi — \"ayo, …\".** *Nào* di awal kalimat mengajak mulai bergerak, dan *đi* di ujung menutup ajakan itu. Pasangan ini sangat lazim di antara teman sebaya.",
+    "**Để riêng — \"pisahkan, taruh tersendiri\".** *Riêng* berarti \"sendiri, khusus\": *phòng riêng* (kamar pribadi), *để riêng* (disisihkan).",
+    "**Phai — \"luntur, pudar\".** *Áo bị phai màu* = \"bajunya luntur\". Lagi-lagi *bị*, karena luntur jelas bukan kabar baik.",
+    "**Thì di awal jawaban — \"ya, kalau begitu …\".** *Thì phơi ở ban công.* Minh menjawab keluhan Budi dengan solusi, dan *thì* di depan memberi rasa \"ya sudah, begini saja\".",
+    "**Nồm — udara lembap khas Hà Nội.** Kata ini tidak punya padanan Indonesia yang pas: bukan hujan, bukan panas, melainkan lembap pekat sampai lantai dan dinding berembun. Lihat kotak di akhir unit."
+   ],
+   "grammars": [
+    {
+     "title": "Petunjuk memakai alat",
+     "body": [
+      "Kata kerja berikut muncul di hampir semua petunjuk: mesin cuci, AC, penanak nasi, pemanas air. Pasangkan dengan *đi*, *nhé*, atau *đừng* sesuai kebutuhan."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*bật / tắt*",
+        "menyalakan / mematikan",
+        "*Bật quạt lên đi.*"
+       ],
+       [
+        "*bấm / ấn*",
+        "menekan",
+        "*Bấm nút này nhé.*"
+       ],
+       [
+        "*cắm điện / rút điện*",
+        "mencolokkan / mencabut listrik",
+        "*Đừng quên rút điện.*"
+       ],
+       [
+        "*chọn*",
+        "memilih",
+        "*Chọn chế độ giặt nhanh.*"
+       ],
+       [
+        "*cho … vào / lấy … ra*",
+        "memasukkan / mengeluarkan",
+        "*Lấy quần áo ra ngay.*"
+       ],
+       [
+        "*mở / đóng*",
+        "membuka / menutup",
+        "*Đóng nắp lại đã.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Di rumah-rumah Vietnam, pemanas air listrik (*bình nóng lạnh*) di kamar mandi sering dinyalakan hanya sebelum mandi. Kalimat yang akan sering kamu dengar: *Tắm xong nhớ tắt bình nóng lạnh nhé!*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dapur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "rửa",
+       "zửa",
+       "mencuci"
+      ],
+      [
+       "ngâm",
+       "ngâm",
+       "merendam"
+      ],
+      [
+       "thái / băm",
+       "thái / băm",
+       "mengiris / mencincang"
+      ],
+      [
+       "trộn",
+       "cộn",
+       "mencampur"
+      ],
+      [
+       "luộc",
+       "luộk",
+       "merebus"
+      ],
+      [
+       "rán",
+       "zán",
+       "menggoreng (banyak minyak)"
+      ],
+      [
+       "xào",
+       "sào",
+       "menumis"
+      ],
+      [
+       "nướng",
+       "nướng",
+       "memanggang, membakar"
+      ],
+      [
+       "hấp",
+       "hấp",
+       "mengukus"
+      ],
+      [
+       "nêm",
+       "nêm",
+       "membumbui, mencicipi rasa"
+      ],
+      [
+       "một thìa / một chút",
+       "một thìa / một cút",
+       "satu sendok / sedikit"
+      ],
+      [
+       "cho vừa ăn",
+       "co vừa ăn",
+       "secukupnya, sesuai selera"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Cho vừa ăn* adalah takaran favorit juru masak Vietnam — harfiahnya \"beri sampai pas dimakan\". Resep tertulis pun sering berkata *nêm nước mắm cho vừa ăn*. *Vừa* di sini sama dengan *vừa* yang berarti \"pas\" di unit 7."
+    },
+    {
+     "type": "kotak",
+     "title": "Nem rán di meja makan utara",
+     "items": [
+      "Di Hà Nội lumpia goreng disebut *nem rán*; di selatan namanya *chả giò*. Hati-hati: *nem* saja bisa berarti hidangan lain, misalnya *nem chua* (daging fermentasi asam).",
+      "*Nem rán* sering hadir di hidangan pesta dan di *mâm cỗ* Tết keluarga utara. Kulitnya *bánh đa nem*, lembaran tipis dari beras.",
+      "Ia dimakan bersama sayur segar, *bún* (bihun), dan *nước chấm* — kuah cocolan dari *nước mắm*, gula, air jeruk nipis atau cuka, bawang putih, dan cabai. Di warung *bún chả*, orang Hà Nội sering memesan *nem* sebagai tambahan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tanda larangan dan petunjuk",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cấm hút thuốc.",
+       "Kấm hút thuốk.",
+       "Dilarang merokok."
+      ],
+      [
+       "Không đỗ xe.",
+       "Không dỗ se.",
+       "Dilarang parkir."
+      ],
+      [
+       "Xin đừng chạm vào hiện vật.",
+       "Sin dừng cạm vào hiện vật.",
+       "Mohon jangan menyentuh benda pameran."
+      ],
+      [
+       "Đẩy / Kéo",
+       "Dẩy / Kéo",
+       "Dorong / Tarik"
+      ],
+      [
+       "Lối ra / Lối vào",
+       "Lối za / Lối vào",
+       "Pintu keluar / masuk"
+      ],
+      [
+       "Đi chậm lại.",
+       "Di cậm lại.",
+       "Pelan-pelan."
+      ],
+      [
+       "Giữ gìn vệ sinh chung.",
+       "Zữ zìn vệ sing cung.",
+       "Jagalah kebersihan bersama."
+      ],
+      [
+       "Tắt đèn trước khi ra về.",
+       "Tắt dèn cướk khi za về.",
+       "Matikan lampu sebelum pulang."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Papan larangan jarang memakai *hãy* atau *đừng*. Yang paling keras *cấm* (dilarang), yang netral *không* + kata kerja, yang paling santun *xin đừng* (mohon jangan). *Hãy* justru muncul di papan ajakan: *Hãy bỏ rác đúng nơi quy định.* — \"buanglah sampah pada tempatnya\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Mùa nồm — musim lembap Hà Nội",
+     "items": [
+      "Sekitar akhir musim dingin sampai musim semi, udara hangat yang sangat lembap sering datang ke Hà Nội. Orang menyebutnya *nồm* atau *nồm ẩm*.",
+      "Saat *nồm*, lantai licin berembun, dinding \"berkeringat\", dan jemuran bisa berhari-hari tak kering. Banyak keluarga memakai *máy hút ẩm* (penyerap lembap) atau pengering baju.",
+      "Nasihat yang akan kamu dengar dari tetangga: tutup jendela saat hari *nồm*, dan buka lagi saat udara kering kembali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Kamu banyak dipuji tamu, lho.",
+       "*Em được khách khen nhiều lắm đấy.*"
+      ],
+      [
+       "Tadi pagi aku ditelepon tamu yang komplain.",
+       "*Sáng nay chị bị khách gọi điện phàn nàn.*"
+      ],
+      [
+       "Hari ini aku kena tilang polisi lalu lintas.",
+       "*Hôm nay tớ bị cảnh sát giao thông phạt.*"
+      ],
+      [
+       "Untungnya nggak, tapi aku kena marah ibuku habis-habisan.",
+       "*May là không, nhưng tớ bị mẹ mắng một trận.*"
+      ],
+      [
+       "Tadi pagi aku dikasih sebungkus xôi sama bác Tư.",
+       "*Sáng nay tớ được bác Tư cho một gói xôi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "hãy",
+   "baca": "hãy",
+   "id": "-lah (perintah santun-tegas)"
+  },
+  {
+   "vi": "đừng",
+   "baca": "dừng",
+   "id": "jangan"
+  },
+  {
+   "vi": "chớ",
+   "baca": "cớ",
+   "id": "jangan (kuno, tulisan)"
+  },
+  {
+   "vi": "trước khi",
+   "baca": "cướk khi",
+   "id": "sebelum"
+  },
+  {
+   "vi": "sau khi",
+   "baca": "sau khi",
+   "id": "sesudah"
+  },
+  {
+   "vi": "trong khi",
+   "baca": "cong khi",
+   "id": "sementara, sambil"
+  },
+  {
+   "vi": "rửa tay",
+   "baca": "zửa tay",
+   "id": "mencuci tangan"
+  },
+  {
+   "vi": "ngâm",
+   "baca": "ngâm",
+   "id": "merendam"
+  },
+  {
+   "vi": "thái",
+   "baca": "thái",
+   "id": "mengiris"
+  },
+  {
+   "vi": "trộn",
+   "baca": "cộn",
+   "id": "mencampur"
+  },
+  {
+   "vi": "cuốn",
+   "baca": "kuốn",
+   "id": "menggulung"
+  },
+  {
+   "vi": "rán",
+   "baca": "zán",
+   "id": "menggoreng"
+  },
+  {
+   "vi": "dầu ăn",
+   "baca": "zầu ăn",
+   "id": "minyak goreng"
+  },
+  {
+   "vi": "lửa",
+   "baca": "lửa",
+   "id": "api"
+  },
+  {
+   "vi": "miến",
+   "baca": "miến",
+   "id": "soun"
+  },
+  {
+   "vi": "mộc nhĩ",
+   "baca": "mộk nyĩ",
+   "id": "jamur kuping"
+  },
+  {
+   "vi": "thịt băm",
+   "baca": "thịt băm",
+   "id": "daging cincang"
+  },
+  {
+   "vi": "thìa",
+   "baca": "thìa",
+   "id": "sendok"
+  },
+  {
+   "vi": "một chút",
+   "baca": "một cút",
+   "id": "sedikit"
+  },
+  {
+   "vi": "giòn",
+   "baca": "zòn",
+   "id": "renyah"
+  },
+  {
+   "vi": "máy giặt",
+   "baca": "máy zặt",
+   "id": "mesin cuci"
+  },
+  {
+   "vi": "bột giặt",
+   "baca": "bột zặt",
+   "id": "deterjen bubuk"
+  },
+  {
+   "vi": "phơi",
+   "baca": "fơi",
+   "id": "menjemur"
+  },
+  {
+   "vi": "nồm",
+   "baca": "nồm",
+   "id": "lembap (udara Hà Nội)"
+  },
+  {
+   "vi": "bấm",
+   "baca": "bấm",
+   "id": "menekan (tombol)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Cuci tangan dulu, lalu duduk. (kepada adik, akrab)",
+    "Jangan rendam terlalu lama.",
+    "Sebelum menggoreng, tunggulah minyaknya panas. (*hãy*)",
+    "Sesudah makan, cuci mangkuk ya.",
+    "Tambahkan sedikit merica.",
+    "Jangan masukkan terlalu banyak deterjen."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "____ quên mang ô nhé! (jangan)",
+    "Cháu ____ ngồi xuống đây. (perintah santun-tegas)",
+    "Ăn thử ____, ngon lắm! (ajakan akrab)",
+    "____ đi ngủ, em đánh răng nhé. (sebelum)",
+    "____ ăn cơm xong, chúng ta đi dạo. (sesudah)",
+    "____ mẹ nấu cơm, con dọn bàn nhé. (sementara)",
+    "Đợi dầu nóng ____ rồi cho nem vào. (dulu, di ujung)"
+   ]
+  },
+  {
+   "prompt": "Soal 1–3: jadikan larangan dengan *đừng*. Soal 4–6: gabungkan dua kalimat dengan kata dalam kurung.",
+   "items": [
+    "Cuốn chặt quá. →",
+    "Để lửa to. →",
+    "Phơi quần áo trong phòng. →",
+    "Rửa tay. Ăn cơm. (trước khi) →",
+    "Thái rau. Trộn với thịt. (sau khi) →",
+    "Mẹ nấu cơm. Bố đọc báo. (trong khi) →"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "ngâm / trước tiên, / miến / hãy / cháu",
+    "quá / đừng / lâu / ngâm",
+    "đi / thử / ăn / cháu",
+    "quần áo trắng / trước khi / để riêng / giặt",
+    "lửa nhỏ / hãy / khi rán, / để"
+   ]
+  }
+ ],
+ "answers": [
+  "Em rửa tay đi, rồi ngồi xuống. — Đừng ngâm lâu quá. — Trước khi rán, hãy đợi dầu nóng. — Sau khi ăn, rửa bát nhé. — Cho thêm một chút hạt tiêu. — Đừng cho nhiều bột giặt quá.",
+  "Đừng — hãy — đi — Trước khi — Sau khi — Trong khi — đã",
+  "Đừng cuốn chặt quá. — Đừng để lửa to. — Đừng phơi quần áo trong phòng. — Rửa tay trước khi ăn cơm. — Sau khi thái rau, trộn với thịt. — Trong khi mẹ nấu cơm, bố đọc báo.",
+  "Trước tiên, cháu hãy ngâm miến. — Đừng ngâm lâu quá. — Cháu ăn thử đi. — Để riêng quần áo trắng trước khi giặt. — Khi rán, hãy để lửa nhỏ."
+ ]
+}

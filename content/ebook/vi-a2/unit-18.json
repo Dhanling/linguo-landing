@@ -1,0 +1,654 @@
+{
+ "title": "Selesai, habis, terlihat — pelengkap hasil",
+ "title_target": "Em làm xong rồi ạ.",
+ "goal": "Melaporkan apakah pekerjaan sudah beres, mencari barang yang terselip, dan mengatakan bahwa sesuatu tak sanggup atau tak berhasil dilakukan. Titik tata bahasanya: pelengkap hasil **xong, hết, được, thấy, ra, mất, nổi** beserta negasinya (*chưa làm xong, không tìm thấy, không mang nổi*).",
+ "bekal": [
+  "melaporkan kemajuan kerja dengan *xong*, *gần xong*, *chưa xong*",
+  "membedakan proses dan hasil: *tìm* vs *tìm thấy*, *nhớ* vs *nhớ ra*",
+  "mengatakan tak sanggup dengan *không … nổi* dan *… không ra*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Báo cáo tháng",
+   "intro": "Selasa pagi di Sen Travel, sehari sesudah rapat soal tamu dari Jakarta. Laporan bulanan harus dikirim ke mitra sore ini, dan satu kuitansi belum ditemukan.",
+   "lines": [
+    {
+     "speaker": "Hương:",
+     "text": "Budi ơi, báo cáo tháng em làm xong chưa?",
+     "id": "Budi, laporan bulanan sudah selesai?",
+     "literal": "Budi hai, laporan bulan adik buat selesai belum?",
+     "baca": "Budi ơi, báo káo tháng em làm song cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, gần xong rồi ạ. Chỉ còn phần chi phí thôi.",
+     "id": "Hampir selesai, Mbak. Tinggal bagian biaya.",
+     "literal": "iya, hampir selesai sudah ya. hanya masih bagian biaya saja.",
+     "baca": "Zạ, gần song zồi ạ. Cỉ kòn fần ci fí thôi."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Chiều nay chị phải gửi cho đối tác đấy. Em tìm thấy hóa đơn khách sạn Hoa Mai chưa?",
+     "id": "Sore ini aku harus kirim ke mitra, lho. Kuitansi hotel Hoa Mai sudah ketemu?",
+     "literal": "sore ini kakak harus kirim untuk mitra tuh. adik cari lihat kuitansi hotel Hoa Mai belum?",
+     "baca": "Ciều nay cị fải gửi co dối ták dấy. Em tìm thấy hóa dơn khák sạn Hoa Mai cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em tìm cả sáng mà vẫn chưa tìm thấy ạ.",
+     "id": "Saya cari sepagian tapi masih belum ketemu.",
+     "literal": "adik cari seluruh pagi tapi masih belum cari lihat ya.",
+     "baca": "Em tìm kả sáng mà vẫn cưa tìm thấy ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Hôm đó em để ở đâu? Em nhớ lại đi.",
+     "id": "Hari itu kamu taruh di mana? Coba ingat-ingat.",
+     "literal": "hari itu adik taruh di mana? adik ingat kembali lah.",
+     "baca": "Hôm dó em dể ở dâu? Em nyớ lại di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "À, em nhớ ra rồi! Em để trong ngăn kéo, dưới máy in. Đây rồi!",
+     "id": "Ah, saya ingat! Saya taruh di laci, di bawah printer. Ini dia!",
+     "literal": "ah, adik ingat keluar sudah! adik taruh dalam laci, bawah mesin cetak. sini sudah!",
+     "baca": "À, em nyớ za zồi! Em dể cong ngăn kéo, zưới máy in. Dây zồi!"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "May quá. Em nhập số tiền vào bảng tính luôn đi.",
+     "id": "Untunglah. Langsung masukkan jumlahnya ke tabel.",
+     "literal": "untung sekali. adik masukkan jumlah uang ke tabel-hitung langsung lah.",
+     "baca": "May kwá. Em nyập số tiền vào bảng tíng luôn di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nhưng chữ mờ quá, em đọc không ra số tiền ạ.",
+     "id": "Tapi tulisannya buram sekali, saya tak bisa membaca jumlahnya.",
+     "literal": "tetapi huruf buram terlalu, adik baca tidak keluar jumlah uang ya.",
+     "baca": "Nyưng cữ mờ kwá, em dọk không za số tiền ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đưa chị xem nào… Một triệu tám trăm nghìn. Lần sau em cất cẩn thận hơn nhé.",
+     "id": "Sini kulihat… Satu juta delapan ratus ribu. Lain kali simpan lebih hati-hati, ya.",
+     "literal": "serahkan kakak lihat nah… satu juta delapan ratus ribu. kali berikut adik simpan hati-hati lebih ya.",
+     "baca": "Dưa cị sem nào… Một ciệu tám căm ngìn. Lần sau em kất kẩn thận hơn nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. À, em quên mất! Sáng nay chị Sari có gọi điện cho chị.",
+     "id": "Baik. Aduh, saya lupa! Tadi pagi Mbak Sari menelepon Mbak.",
+     "literal": "iya ya. ah, adik lupa hilang! pagi ini kakak Sari ada panggil listrik untuk kakak.",
+     "baca": "Vâng ạ. À, em kwên mất! Sáng nay cị Sari kó gọi diện co cị."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Thế à? Chị ấy nói gì?",
+     "id": "Oh ya? Dia bilang apa?",
+     "literal": "begitu ya? kakak itu bicara apa?",
+     "baca": "Thế à? Cị ấy nói zì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị ấy hỏi về du thuyền. Em đặt được phòng rồi ạ, phòng cuối cùng đấy!",
+     "id": "Dia tanya soal kapal pesiar. Saya berhasil pesan kamar, kamar terakhir, lho!",
+     "literal": "kakak itu tanya tentang kapal-pesiar. adik pesan dapat kamar sudah ya, kamar terakhir tuh!",
+     "baca": "Cị ấy hỏi về zu thuyền. Em dặt dượk fòng zồi ạ, fòng kuối kùng dấy!"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Giỏi quá! Làm xong báo cáo thì em gửi chị trước hai giờ nhé.",
+     "id": "Hebat! Kalau laporannya sudah selesai, kirim ke aku sebelum jam dua, ya.",
+     "literal": "pandai terlalu! buat selesai laporan maka adik kirim kakak sebelum dua jam ya.",
+     "baca": "Zỏi kwá! Làm song báo káo thì em gửi cị cướk hai zờ nyé."
+    }
+   ],
+   "notes": [
+    "**Làm xong chưa? — pertanyaan wajib di kantor.** *Xong* sesudah kata kerja berarti tindakannya tuntas: *làm xong*, *viết xong*, *ăn xong*. Jawabannya *xong rồi*, *gần xong rồi*, atau *chưa xong*.",
+    "**Tìm vs tìm thấy.** *Tìm* adalah prosesnya (mencari), *tìm thấy* adalah hasilnya (menemukan, ketemu). Karena itu kalimat Budi masuk akal: *tìm cả sáng mà vẫn chưa tìm thấy* — mencari sepagian tapi belum menemukan.",
+    "**Nhớ lại dan nhớ ra.** *Nhớ lại* = berusaha mengingat kembali; *nhớ ra* = tiba-tiba teringat, ingatannya \"keluar\". Keduanya memakai kata arah dari unit 11 dengan makna kiasan.",
+    "**Quên mất — lupa, dengan nada menyesal.** *Mất* (hilang) sesudah kata kerja menambahkan rasa \"sayang sekali, terlanjur\": *quên mất*, *muộn mất rồi*, *hết mất rồi*.",
+    "**Đặt được — berhasil memesan.** *Được* sesudah kata kerja = berhasil (A1): *mua được vé*, *tìm được việc*. Di sini ia terasa lega: kamar terakhir!"
+   ],
+   "grammars": [
+    {
+     "title": "Pelengkap hasil",
+     "body": [
+      "Bahasa Indonesia sering membedakan proses dan hasil dengan kata yang berbeda: mencari/menemukan, melihat/tampak. Bahasa Vietnam melakukannya dengan menempelkan satu kata hasil di belakang kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Pelengkap",
+       "Makna",
+       "Contoh",
+       "Negasi"
+      ],
+      "rows": [
+       [
+        "*xong*",
+        "selesai, tuntas",
+        "*làm xong báo cáo*",
+        "*chưa làm xong*"
+       ],
+       [
+        "*hết*",
+        "habis, semuanya",
+        "*ăn hết bát phở*",
+        "*chưa ăn hết*"
+       ],
+       [
+        "*được*",
+        "berhasil, dapat",
+        "*đặt được phòng*",
+        "*không đặt được*"
+       ],
+       [
+        "*thấy*",
+        "tertangkap indra",
+        "*tìm thấy, nghe thấy*",
+        "*không tìm thấy*"
+       ],
+       [
+        "*ra*",
+        "muncul, ketemu (pikiran)",
+        "*nhớ ra, nhận ra*",
+        "*không nhận ra*"
+       ],
+       [
+        "*mất*",
+        "hilang, terlanjur",
+        "*quên mất, làm mất*",
+        "—"
+       ],
+       [
+        "*nổi*",
+        "kuat, sanggup (tenaga)",
+        "*mang nổi, đi nổi*",
+        "*không mang nổi*"
+       ]
+      ]
+     },
+     "after": [
+      "Letak objek biasanya sesudah pelengkap: *làm xong báo cáo*, *ăn hết cơm*. Kalau objeknya sudah disebut di depan sebagai pokok, cukup kata kerja + pelengkap: *Báo cáo em làm xong chưa?*",
+      "⚠️ *Chưa làm xong* (belum selesai, masih dikerjakan) tidak sama dengan *không làm xong* (tidak berhasil menyelesaikan). Dengan atasan, bedanya penting."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Chìa khóa đâu rồi?",
+   "intro": "Pagi hari di căn hộ Cầu Giấy. Minh sudah berpakaian rapi, tapi kunci motornya tak ada di tempat biasa.",
+   "lines": [
+    {
+     "speaker": "Minh:",
+     "text": "Budi ơi, cậu có nhìn thấy chìa khóa xe máy của tớ không?",
+     "id": "Budi, kamu lihat kunci motorku nggak?",
+     "literal": "Budi hai, kamu ada pandang lihat kunci motor punya aku tidak?",
+     "baca": "Budi ơi, kậu kó nyìn thấy cìa khóa se máy kủa tớ không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Không. Cậu tìm trong túi áo khoác chưa?",
+     "id": "Nggak. Sudah cari di saku jaket?",
+     "literal": "tidak. kamu cari dalam saku baju-luar belum?",
+     "baca": "Không. Kậu tìm cong túi áo khoák cưa?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Tớ tìm khắp nhà rồi mà vẫn không thấy.",
+     "id": "Aku sudah cari di seluruh rumah tapi tetap nggak ketemu.",
+     "literal": "aku cari seluruh rumah sudah tapi masih tidak lihat.",
+     "baca": "Tớ tìm khắp nyà zồi mà vẫn không thấy."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bình tĩnh đã. Tối qua cậu về lúc mấy giờ?",
+     "id": "Tenang dulu. Semalam kamu pulang jam berapa?",
+     "literal": "tenang dulu. malam lalu kamu pulang saat berapa jam?",
+     "baca": "Bìng tĩng dã. Tối kwa kậu về lúk mấy zờ?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Khoảng mười một giờ. Tớ mua hai thùng nước, xách lên đến nhà thì mệt quá.",
+     "id": "Sekitar jam sebelas. Aku beli dua kardus air, menjinjingnya sampai rumah, capek sekali.",
+     "literal": "kira-kira sebelas jam. aku beli dua kardus air, jinjing naik sampai rumah maka lelah terlalu.",
+     "baca": "Khoảng mười một zờ. Tớ mua hai thùng nướk, sák lên dến nyà thì mệt kwá."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hai thùng à? Một thùng nước tớ còn xách không nổi!",
+     "id": "Dua kardus? Satu kardus air saja aku nggak kuat menjinjing!",
+     "literal": "dua kardus ya? satu kardus air aku masih jinjing tidak kuat!",
+     "baca": "Hai thùng à? Một thùng nướk tớ kòn sák không nổi!"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Tớ khỏe mà. Nhưng lên đến nhà là tớ quên mất để chìa khóa ở đâu.",
+     "id": "Aku kan kuat. Tapi begitu sampai di atas, aku lupa menaruh kunci di mana.",
+     "literal": "aku kuat kok. tetapi naik sampai rumah adalah aku lupa hilang taruh kunci di mana.",
+     "baca": "Tớ khỏe mà. Nyưng lên dến nyà là tớ kwên mất dể cìa khóa ở dâu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế cậu để thùng nước ở đâu? Có khi chìa khóa ở đấy.",
+     "id": "Terus kardusnya kamu taruh di mana? Mungkin kuncinya di situ.",
+     "literal": "begitu kamu taruh kardus air di mana? ada kala kunci di situ.",
+     "baca": "Thế kậu dể thùng nướk ở dâu? Kó khi cìa khóa ở dấy."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Để tớ xem… Thấy rồi! Nó nằm ngay dưới thùng nước.",
+     "id": "Coba kulihat… Ketemu! Ada persis di bawah kardus air.",
+     "literal": "biar aku lihat… lihat sudah! dia berbaring tepat bawah kardus air.",
+     "baca": "Dể tớ sem… Thấy zồi! Nó nằm ngay zưới thùng nướk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đấy! Lần sau về nhà thì treo chìa khóa lên ngay nhé.",
+     "id": "Nah! Lain kali pulang langsung gantung kuncinya, ya.",
+     "literal": "tuh! kali berikut pulang rumah maka gantung kunci naik segera ya.",
+     "baca": "Dấy! Lần sau về nyà thì ceo cìa khóa lên ngay nyé."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ừ. Không có cậu thì tớ chẳng tìm ra đâu. Tớ đi đây!",
+     "id": "Iya. Tanpa kamu aku nggak bakal ketemu. Aku berangkat!",
+     "literal": "iya. tidak ada kamu maka aku sama-sekali-tidak cari keluar kok. aku pergi sini!",
+     "baca": "Ừ. Không kó kậu thì tớ cẳng tìm za dâu. Tớ di dây!"
+    }
+   ],
+   "notes": [
+    "**Nhìn thấy — melihat dan tampak.** *Nhìn* adalah mengarahkan mata; *nhìn thấy* (atau *thấy* saja) berarti sesuatu tertangkap mata. Pasangannya: *nghe* (mendengarkan) dan *nghe thấy* (terdengar).",
+    "**Bình tĩnh đã — tenang dulu.** *Đã* di ujung kalimat bukan \"telah\", melainkan \"dulu, sebelum yang lain\": *Ăn đã!* (makan dulu!), *Nghỉ đã.* (istirahat dulu).",
+    "**Xách, mang, bê — membawa dengan cara berbeda.** *Xách* = menjinjing dengan tangan terjulur ke bawah, *bê* = mengangkat dengan dua tangan di depan badan, *mang* = membawa secara umum. *Thùng nước* biasanya kardus berisi botol air minum.",
+    "**Tìm ra — ketemu setelah susah payah.** *Tìm thấy* netral; *tìm ra* menekankan hasil usaha, dan juga dipakai untuk jawaban atau jalan keluar: *tìm ra cách* (menemukan cara)."
+   ],
+   "grammars": [
+    {
+     "title": "Sanggup dan tak sanggup: dua letak *không*",
+     "body": [
+      "Negasi pelengkap hasil bisa ditaruh di dua tempat. Di depan kata kerja terdengar netral; di antara kata kerja dan pelengkap terdengar lisan dan menekankan \"tak sanggup, tak berhasil\"."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Rasa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*không* + K + hasil",
+        "netral",
+        "*Tớ không mang nổi.*"
+       ],
+       [
+        "K + *không* + hasil",
+        "lisan, \"tak kuat / tak bisa\"",
+        "*Tớ xách không nổi.*"
+       ],
+       [
+        "K + *không ra*",
+        "tak bisa menangkap (pikiran, mata)",
+        "*Em đọc không ra.*"
+       ],
+       [
+        "K + *có* + hasil + *không*?",
+        "pertanyaan sanggup",
+        "*Cậu xách có nổi không?*"
+       ],
+       [
+        "*chưa* + K + hasil",
+        "belum berhasil",
+        "*Tớ chưa tìm thấy.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Nổi* terutama untuk tenaga dan daya tahan: *mang không nổi* (tak kuat bawa), *ăn không nổi* (tak sanggup habiskan), *dậy không nổi* (tak kuat bangun). Untuk kemampuan umum tetap pakai *được*: *Em không nói được tiếng Pháp.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tenggat dan laporan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Hạn chót là thứ sáu.",
+       "Hạn cót là thứ sáu.",
+       "Tenggatnya hari Jumat."
+      ],
+      [
+       "Em nộp báo cáo rồi ạ.",
+       "Em nộp báo káo zồi ạ.",
+       "Saya sudah menyerahkan laporannya."
+      ],
+      [
+       "Em sợ là làm không kịp.",
+       "Em sợ là làm không kịp.",
+       "Saya khawatir tidak keburu."
+      ],
+      [
+       "Chị cho em thêm một ngày được không ạ?",
+       "Cị co em thêm một ngày dượk không ạ?",
+       "Boleh saya minta tambahan satu hari?"
+      ],
+      [
+       "Em kiểm tra lại số liệu rồi.",
+       "Em kiểm ca lại số liệu zồi.",
+       "Saya sudah memeriksa ulang datanya."
+      ],
+      [
+       "Em gửi kèm file ạ.",
+       "Em gửi kèm file ạ.",
+       "Saya lampirkan berkasnya."
+      ],
+      [
+       "Việc này gấp lắm.",
+       "Việk này gấp lắm.",
+       "Pekerjaan ini mendesak sekali."
+      ],
+      [
+       "Xong việc thì về sớm đi.",
+       "Song việk thì về sớm di.",
+       "Kalau kerjaan sudah beres, pulang cepat saja."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Kịp* adalah pelengkap hasil yang sangat berguna di kantor: \"keburu, tepat waktu\". *Làm kịp* (sempat selesai), *đến kịp* (datang tepat waktu), *không kịp* (tak keburu). Kata *deadline* sendiri juga dipakai luas di kantor-kantor Vietnam, berdampingan dengan *hạn chót*."
+    },
+    {
+     "type": "kotak",
+     "title": "Ritme kantor di Vietnam",
+     "items": [
+      "Banyak kantor punya istirahat siang yang cukup panjang, dan tidur siang sebentar di meja atau di kursi lipat adalah pemandangan yang biasa.",
+      "Laporan dan pengumuman kerja sering beredar lewat grup Zalo, bukan surel. Membalas cepat dengan *Dạ, em nhận được rồi ạ.* dianggap sopan.",
+      "Menjelang Tết, pekerjaan menumpuk karena semua orang ingin menuntaskan urusan sebelum libur panjang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kehilangan dan menemukan barang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cậu có thấy điện thoại của tớ đâu không?",
+       "Kậu kó thấy diện thoại kủa tớ dâu không?",
+       "Kamu lihat HP-ku di mana nggak?"
+      ],
+      [
+       "Tớ để quên ví ở quán rồi.",
+       "Tớ dể kwên ví ở kwán zồi.",
+       "Dompetku ketinggalan di warung."
+      ],
+      [
+       "Để tớ tìm giúp cho.",
+       "Dể tớ tìm zúp co.",
+       "Sini kubantu cari."
+      ],
+      [
+       "Tìm mãi mà không thấy.",
+       "Tìm mãi mà không thấy.",
+       "Dicari terus tapi tak ketemu."
+      ],
+      [
+       "Tìm thấy rồi!",
+       "Tìm thấy zồi!",
+       "Ketemu!"
+      ],
+      [
+       "Tớ làm mất chìa khóa rồi.",
+       "Tớ làm mất cìa khóa zồi.",
+       "Aku menghilangkan kuncinya."
+      ],
+      [
+       "Nó rơi xuống gầm ghế.",
+       "Nó zơi suống gầm gế.",
+       "Jatuh ke kolong kursi."
+      ],
+      [
+       "Lần sau nhớ cất cẩn thận.",
+       "Lần sau nyớ kất kẩn thận.",
+       "Lain kali ingat simpan baik-baik."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bedakan *để quên* (ketinggalan, lupa membawa) dari *làm mất* (menghilangkan, karena kelalaian) dan *bị mất* (kehilangan, sering karena dicuri — unit 6 dan 10). *Để tớ tìm giúp cho* memakai *để* dalam arti \"biar\": \"biar aku yang bantu cari\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Kunci di gedung apartemen",
+     "items": [
+      "Banyak *chung cư* memakai kartu magnet (*thẻ từ*) untuk lift dan pintu masuk. Kartu yang hilang biasanya diurus di kantor pengelola gedung (*ban quản lý*).",
+      "Kunci motor sebaiknya punya cadangan. Tukang kunci (*thợ sửa khóa*) mudah ditemukan, dan banyak yang mau datang ke rumah.",
+      "Di tempat parkir, karcis parkir (*vé xe*) sama pentingnya dengan kunci — tanpa karcis, mengambil motor bisa jadi urusan panjang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Hadiah ini membuatku senang sekali. Terima kasih, ya!",
+       "*Món quà này làm chị rất vui. Cảm ơn em nhé!*"
+      ],
+      [
+       "Belakangan ini pekerjaan di rumah sakit bikin istriku capek sekali.",
+       "*Dạo này công việc ở bệnh viện khiến vợ anh rất mệt.*"
+      ],
+      [
+       "Tapi hari ini semua orang ada di sini, aku merasa senang sekali.",
+       "*Nhưng hôm nay có mọi người ở đây, chị thấy vui lắm.*"
+      ],
+      [
+       "Oh, pertandingan itu bikin kamu sesedih itu?",
+       "*Ồ, trận đó làm cậu buồn thế à?*"
+      ],
+      [
+       "Dengar kamu ngomong begitu, aku sudah merasa agak mendingan.",
+       "*Nghe cậu nói thế, tớ thấy đỡ buồn rồi đấy.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "báo cáo",
+   "baca": "báo káo",
+   "id": "laporan; melapor"
+  },
+  {
+   "vi": "xong",
+   "baca": "song",
+   "id": "selesai"
+  },
+  {
+   "vi": "hết",
+   "baca": "hết",
+   "id": "habis"
+  },
+  {
+   "vi": "tìm / tìm thấy",
+   "baca": "tìm / tìm thấy",
+   "id": "mencari / menemukan"
+  },
+  {
+   "vi": "nhớ ra",
+   "baca": "nyớ za",
+   "id": "teringat"
+  },
+  {
+   "vi": "nhận ra",
+   "baca": "nyận za",
+   "id": "mengenali, menyadari"
+  },
+  {
+   "vi": "quên mất",
+   "baca": "kwên mất",
+   "id": "lupa sama sekali"
+  },
+  {
+   "vi": "nổi",
+   "baca": "nổi",
+   "id": "sanggup, kuat"
+  },
+  {
+   "vi": "kịp",
+   "baca": "kịp",
+   "id": "keburu, tepat waktu"
+  },
+  {
+   "vi": "hóa đơn",
+   "baca": "hóa dơn",
+   "id": "kuitansi"
+  },
+  {
+   "vi": "ngăn kéo",
+   "baca": "ngăn kéo",
+   "id": "laci"
+  },
+  {
+   "vi": "máy in",
+   "baca": "máy in",
+   "id": "printer"
+  },
+  {
+   "vi": "mờ",
+   "baca": "mờ",
+   "id": "buram"
+  },
+  {
+   "vi": "cất",
+   "baca": "kất",
+   "id": "menyimpan"
+  },
+  {
+   "vi": "đối tác",
+   "baca": "dối ták",
+   "id": "mitra"
+  },
+  {
+   "vi": "chi phí",
+   "baca": "ci fí",
+   "id": "biaya"
+  },
+  {
+   "vi": "chìa khóa",
+   "baca": "cìa khóa",
+   "id": "kunci"
+  },
+  {
+   "vi": "xách",
+   "baca": "sák",
+   "id": "menjinjing"
+  },
+  {
+   "vi": "thùng",
+   "baca": "thùng",
+   "id": "kardus, peti"
+  },
+  {
+   "vi": "bình tĩnh",
+   "baca": "bìng tĩng",
+   "id": "tenang"
+  },
+  {
+   "vi": "treo",
+   "baca": "ceo",
+   "id": "menggantung"
+  },
+  {
+   "vi": "hạn chót",
+   "baca": "hạn cót",
+   "id": "tenggat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Laporannya sudah selesai? (kepada adik)",
+    "Saya sudah mencari sepagian tapi belum ketemu.",
+    "Aduh, aku lupa! (kepada teman sebaya)",
+    "Saya berhasil memesan kamar terakhir.",
+    "Tulisannya buram, saya tidak bisa membacanya.",
+    "Koper ini berat sekali, aku tak kuat membawanya. (kepada teman sebaya)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *xong, hết, được, thấy, ra, mất,* atau *nổi*.",
+   "items": [
+    "Em ăn ____ bát phở rồi. (habis)",
+    "Anh có nghe ____ tiếng chuông không? (terdengar)",
+    "Tớ nhớ ____ rồi, chìa khóa ở trên bàn! (teringat)",
+    "Chị làm ____ báo cáo chưa? (selesai)",
+    "Em quên ____ tên anh ấy rồi. (lupa, menyesal)",
+    "Túi này nặng quá, em không xách ____ . (kuat)",
+    "Cuối cùng em cũng mua ____ vé tàu. (berhasil)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat negatif. Pakai *chưa* bila ada petunjuk (belum), selain itu *không*.",
+   "items": [
+    "Em làm xong rồi. (belum)",
+    "Tớ tìm thấy chìa khóa.",
+    "Anh ấy mang nổi va li.",
+    "Em ăn hết rồi. (belum)",
+    "Chị nhận ra em.",
+    "Em đọc được chữ này."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "xong / em / chưa / báo cáo / làm",
+    "thấy / tìm / chưa / vẫn / em",
+    "nổi / không / mang / tớ / va li này",
+    "ra / nhớ / rồi / em",
+    "mất / quên / tớ / rồi"
+   ]
+  }
+ ],
+ "answers": [
+  "Báo cáo em làm xong chưa? — Em tìm cả sáng mà vẫn chưa tìm thấy. — Tớ quên mất! — Em đặt được phòng cuối cùng. — Chữ mờ quá, em đọc không ra (atau em không đọc được). — Va li này nặng quá, tớ không mang nổi (atau tớ mang không nổi).",
+  "hết — thấy — ra — xong — mất — nổi — được",
+  "Em chưa làm xong. — Tớ không tìm thấy chìa khóa. — Anh ấy không mang nổi va li. — Em chưa ăn hết. — Chị không nhận ra em. — Em không đọc được chữ này.",
+  "Báo cáo em làm xong chưa? (atau: Em làm xong báo cáo chưa?) — Em vẫn chưa tìm thấy. — Tớ không mang nổi va li này. — Em nhớ ra rồi. — Tớ quên mất rồi."
+ ]
+}

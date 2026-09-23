@@ -1,0 +1,697 @@
+{
+ "title": "Angka besar, persen, tanggal",
+ "title_target": "Giảm giá hai mươi phần trăm.",
+ "goal": "Menyusun harga tur, menghitung diskon, menyebut tanggal lengkap, dan mengirim uang lewat bank. Titik tata bahasanya: angka ratusan ribu sampai miliar (dengan *linh/lẻ*), *phần trăm*, kata perkiraan *khoảng / gần / hơn / trên / dưới / tầm*, tanggal *ngày … tháng … năm …*, dan urutan dengan *thứ* (*thứ nhất, thứ hai*).",
+ "bekal": [
+  "membaca dan mengucapkan harga sampai jutaan, termasuk bentuk lisan *năm triệu hai* dan *sáu triệu rưỡi*",
+  "menyebut persen, perkiraan, batas atas dan batas bawah",
+  "menyebut tanggal lengkap dengan tahun, serta membedakan *thứ hai* (Senin) dari *ngày thứ hai* (hari kedua)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Bảng giá tour miền Trung",
+   "intro": "Akhir Juli di kantor Sen Travel. Usulan tur Đà Nẵng – Hội An dari unit 14 disetujui, dan sekarang chị Hương dan Budi menghitung harganya untuk rombongan guru dari Indonesia.",
+   "lines": [
+    {
+     "speaker": "Hương:",
+     "text": "Budi, giá tour Đà Nẵng – Hội An em tính đến đâu rồi?",
+     "id": "Budi, hitungan harga tur Đà Nẵng – Hội An sudah sampai mana?",
+     "literal": "Budi, harga tur Đà Nẵng – Hội An adik hitung sampai mana sudah?",
+     "baca": "Budi, zá tour Dà Nẵng – Hội An em tíng dến dâu zồi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, bốn ngày ba đêm, mỗi khách sáu triệu năm trăm nghìn đồng ạ.",
+     "id": "Empat hari tiga malam, per tamu enam juta lima ratus ribu dong.",
+     "literal": "ya, empat hari tiga malam, setiap tamu enam juta lima ratus ribu dong ya.",
+     "baca": "Zạ, bốn ngày ba dêm, mỗi khák sáu ciệu năm căm ngìn dồng ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đoàn có bao nhiêu người?",
+     "id": "Rombongannya berapa orang?",
+     "literal": "rombongan ada berapa orang?",
+     "baca": "Doàn kó bao nyiêu người?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, khoảng hai mươi lăm người, phần lớn là giáo viên.",
+     "id": "Sekitar dua puluh lima orang, sebagian besar guru.",
+     "literal": "ya, kira-kira dua puluh lima orang, bagian besar adalah ajar-anggota.",
+     "baca": "Zạ, khoảng hai mươi lăm người, fần lớn là záo viên."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Nhóm trên hai mươi người được giảm giá hai mươi phần trăm.",
+     "id": "Kelompok di atas dua puluh orang dapat diskon dua puluh persen.",
+     "literal": "kelompok atas dua puluh orang dapat kurangi harga dua puluh bagian ratus.",
+     "baca": "Nyóm cên hai mươi người dượk zảm zá hai mươi fần căm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vậy mỗi người còn năm triệu hai trăm nghìn ạ.",
+     "id": "Jadi per orang tinggal lima juta dua ratus ribu.",
+     "literal": "begitu setiap orang sisa lima juta dua ratus ribu ya.",
+     "baca": "Vậy mỗi người kòn năm ciệu hai căm ngìn ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đúng rồi. Em ghi rõ là giá chưa bao gồm vé máy bay nhé.",
+     "id": "Betul. Tulis dengan jelas bahwa harganya belum termasuk tiket pesawat, ya.",
+     "literal": "benar sudah. adik catat jelas adalah harga belum termasuk tiket pesawat ya.",
+     "baca": "Dúng zồi. Em gi zõ là zá cưa bao gồm vé máy bay nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ. Ngày khởi hành là thứ năm, mười tám tháng ba, phải không chị?",
+     "id": "Baik. Tanggal berangkatnya Kamis, 18 Maret, betul, Kak?",
+     "literal": "ya. hari berangkat adalah urutan lima, sepuluh-delapan bulan tiga, benar tidak kakak?",
+     "baca": "Zạ. Ngày khởi hàng là thứ năm, mười tám tháng ba, fải không cị?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Ừ, năm hai nghìn không trăm hai mươi bảy. Tầm tháng ba miền Trung ít mưa.",
+     "id": "Iya, tahun 2027. Sekitar bulan Maret, Vietnam tengah jarang hujan.",
+     "literal": "iya, tahun dua ribu nol ratus dua puluh tujuh. sekitar bulan tiga wilayah Tengah sedikit hujan.",
+     "baca": "Ừ, năm hai ngìn không căm hai mươi bảy. Tầm tháng ba miền Cung ít mưa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ngày thứ nhất đón khách ở sân bay, ngày thứ hai đi Mỹ Sơn và Hội An ạ.",
+     "id": "Hari pertama jemput tamu di bandara, hari kedua ke Mỹ Sơn dan Hội An.",
+     "literal": "hari urutan satu jemput tamu di lapangan terbang, hari urutan dua pergi Mỹ Sơn dan Hội An ya.",
+     "baca": "Ngày thứ nyất dón khák ở sân bay, ngày thứ hai di Mỹ Sơn và Hội An ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Khách đặt cọc ba mươi phần trăm trước cuối tháng mười.",
+     "id": "Tamu membayar uang muka tiga puluh persen sebelum akhir Oktober.",
+     "literal": "tamu taruh uang-muka tiga puluh bagian ratus sebelum akhir bulan sepuluh.",
+     "baca": "Khák dặt kọk ba mươi fần căm cướk kuối tháng mười."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn trẻ em dưới mười hai tuổi thì sao ạ?",
+     "id": "Kalau anak di bawah dua belas tahun bagaimana?",
+     "literal": "masih anak kecil bawah sepuluh-dua umur maka bagaimana ya?",
+     "baca": "Kòn cẻ em zưới mười hai tuổi thì sao ạ?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Trẻ em trả bảy mươi lăm phần trăm giá người lớn.",
+     "id": "Anak-anak bayar tujuh puluh lima persen dari harga dewasa.",
+     "literal": "anak kecil bayar tujuh puluh lima bagian ratus harga orang besar.",
+     "baca": "Cẻ em cả bảy mươi lăm fần căm zá người lớn."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em hiểu rồi. Chiều nay em gửi bảng giá cho chị ạ.",
+     "id": "Baik, saya paham. Sore ini daftar harganya saya kirim ke Kakak.",
+     "literal": "ya, adik paham sudah. sore ini adik kirim papan harga beri kakak ya.",
+     "baca": "Zạ, em hiểu zồi. Ciều nay em gửi bảng zá co cị ạ."
+    }
+   ],
+   "notes": [
+    "**Năm triệu hai trăm nghìn = 5.200.000.** Bahasa Vietnam menghitung per tiga angka seperti kita: *nghìn* (ribu), *triệu* (juta), *tỷ* (miliar). Di percakapan, ekor yang sudah jelas sering dibuang: *năm triệu hai* = 5,2 juta, *sáu triệu rưỡi* = 6,5 juta, *ba trăm hai* = 320 ribu. Konteks harga membuat semuanya jelas.",
+    "**Phần trăm = persen.** Harfiahnya \"bagian (dari) seratus\". Angkanya di depan: *hai mươi phần trăm*. *Giảm giá* berarti \"diskon\" (menurunkan harga); *tăng giá* \"menaikkan harga\". Tulisan di toko: *Giảm 20%*, dibaca *giảm hai mươi phần trăm*.",
+    "**Trên dan dưới untuk batas.** *Trên hai mươi người* = lebih dari dua puluh orang; *dưới mười hai tuổi* = di bawah dua belas tahun. Persis \"di atas\" dan \"di bawah\" kita, dan sama-sama sering muncul di aturan harga, tiket, dan diskon.",
+    "**Năm hai nghìn không trăm hai mươi bảy.** Tahun dibaca sebagai angka biasa, dengan *không trăm* untuk ratusan yang kosong. Di percakapan santai sering disingkat angka per angka: *năm hai không hai bảy*. Tahun di abad lalu: *năm một nghìn chín trăm chín mươi*.",
+    "**Ngày thứ nhất, ngày thứ hai: urutan dengan thứ.** *Thứ* di depan angka membentuk bilangan urutan. Dua pengecualian: \"pertama\" adalah *thứ nhất* (bukan *thứ một*), dan \"keempat\" lazimnya *thứ tư* (bukan *thứ bốn*)."
+   ],
+   "grammars": [
+    {
+     "title": "Angka besar",
+     "body": [
+      "Titik memisahkan ribuan, koma memisahkan desimal — sama dengan kebiasaan Indonesia. Nol di tengah angka harus disebut."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Tiếng Việt",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "105",
+        "*một trăm linh năm*",
+        "utara *linh*, selatan *lẻ*"
+       ],
+       [
+        "205.000",
+        "*hai trăm linh năm nghìn*",
+        "*linh* juga di dalam ribuan"
+       ],
+       [
+        "1.050.000",
+        "*một triệu không trăm năm mươi nghìn*",
+        "ratusan kosong = *không trăm*"
+       ],
+       [
+        "5.200.000",
+        "*năm triệu hai trăm nghìn*",
+        "lisan: *năm triệu hai*"
+       ],
+       [
+        "6.500.000",
+        "*sáu triệu năm trăm nghìn*",
+        "lisan: *sáu triệu rưỡi*"
+       ],
+       [
+        "2.000.000.000",
+        "*hai tỷ*",
+        "*tỷ* = miliar"
+       ],
+       [
+        "2,5",
+        "*hai phẩy năm*",
+        "*phẩy* = koma"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Hati-hati dengan bentuk lisan yang dipendekkan.** *Một triệu hai* adalah 1.200.000, bukan 1.000.002. Kalau jumlahnya penting — di bank, di kontrak — ucapkan bentuk lengkapnya, atau tulis angkanya."
+     ]
+    },
+    {
+     "title": "Perkiraan dan batas",
+     "body": [
+      "Enam kata kecil ini menempel di depan angka. Tiga menandai perkiraan, tiga menandai batas."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*khoảng*",
+        "sekitar (netral)",
+        "*khoảng hai mươi lăm người*"
+       ],
+       [
+        "*tầm*",
+        "sekitar (lisan)",
+        "*tầm tháng ba*, *tầm hai trăm nghìn*"
+       ],
+       [
+        "*gần*",
+        "hampir, belum sampai",
+        "*gần ba mươi người*"
+       ],
+       [
+        "*hơn*",
+        "lebih dari",
+        "*hơn một tháng*"
+       ],
+       [
+        "*trên*",
+        "di atas (batas)",
+        "*nhóm trên hai mươi người*"
+       ],
+       [
+        "*dưới*",
+        "di bawah (batas)",
+        "*trẻ em dưới mười hai tuổi*"
+       ]
+      ]
+     },
+     "after": [
+      "*Hơn* dan *trên* hampir sama; *trên* lebih sering dipakai untuk aturan dan batas resmi, *hơn* untuk cerita sehari-hari: *Em ở Hà Nội hơn một năm rồi.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Chuyển tiền về Indonesia",
+   "intro": "Awal Agustus. Ibu Budi akan berulang tahun bulan depan, dan Budi ingin mengirim uang kepada kakak keduanya di Bandung supaya ia membelikan hadiah. Petugas bank seorang perempuan muda; ia memanggil Budi *anh* dan menyebut diri *em*.",
+   "lines": [
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Em chào anh. Anh cần giao dịch gì ạ?",
+     "id": "Selamat siang. Ada transaksi apa, Kak?",
+     "literal": "adik salam kakak. kakak perlu transaksi apa ya?",
+     "baca": "Em cào ang. Ang kần zao zịk zì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào em. Anh muốn chuyển tiền về Indonesia.",
+     "id": "Halo. Saya mau kirim uang ke Indonesia.",
+     "literal": "salam adik. kakak mau pindah uang pulang Indonesia.",
+     "baca": "Cào em. Ang muốn cuyển tiền về Indonesia."
+    },
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Dạ, anh chuyển bao nhiêu ạ?",
+     "id": "Baik, berapa yang mau dikirim?",
+     "literal": "ya, kakak pindah berapa ya?",
+     "baca": "Zạ, ang cuyển bao nyiêu ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Năm triệu đồng. Phí chuyển khoảng bao nhiêu em?",
+     "id": "Lima juta dong. Biaya kirimnya kira-kira berapa?",
+     "literal": "lima juta dong. biaya pindah kira-kira berapa adik?",
+     "baca": "Năm ciệu dồng. Fí cuyển khoảng bao nyiêu em?"
+    },
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Dạ, dưới hai trăm nghìn ạ. Tiền đến trong khoảng hai đến ba ngày làm việc.",
+     "id": "Di bawah dua ratus ribu. Uangnya sampai dalam sekitar dua sampai tiga hari kerja.",
+     "literal": "ya, bawah dua ratus ribu ya. uang tiba dalam kira-kira dua sampai tiga hari kerja.",
+     "baca": "Zạ, zưới hai căm ngìn ạ. Tiền dến cong khoảng hai dến ba ngày làm việk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sinh nhật mẹ anh là ngày mười hai tháng chín.",
+     "id": "Ulang tahun ibu saya tanggal 12 September.",
+     "literal": "lahir-hari ibu kakak adalah hari sepuluh-dua bulan sembilan.",
+     "baca": "Sing nyật mẹ ang là ngày mười hai tháng cín."
+    },
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Hôm nay mới mùng năm tháng tám, kịp anh ạ.",
+     "id": "Hari ini baru tanggal 5 Agustus, masih keburu kok.",
+     "literal": "hari ini baru tanggal lima bulan delapan, sempat kakak ya.",
+     "baca": "Hôm nay mới mùng năm tháng tám, kịp ang ạ."
+    },
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Anh cho em xem hộ chiếu và số tài khoản người nhận ạ.",
+     "id": "Boleh saya lihat paspor dan nomor rekening penerimanya?",
+     "literal": "kakak beri adik lihat paspor dan nomor rekening orang terima ya.",
+     "baca": "Ang co em sem hộ ciếu và số tài khoản người nyận ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đây em. Người nhận là chị thứ hai của anh.",
+     "id": "Ini. Penerimanya kakak perempuan saya yang kedua.",
+     "literal": "sini adik. orang terima adalah kakak urutan dua punya kakak.",
+     "baca": "Dây em. Người nyận là cị thứ hai kủa ang."
+    },
+    {
+     "speaker": "Giao dịch viên:",
+     "text": "Năm triệu đồng, người nhận ở Bandung, đúng không ạ?",
+     "id": "Lima juta dong, penerima di Bandung, betul?",
+     "literal": "lima juta dong, orang terima di Bandung, benar tidak ya?",
+     "baca": "Năm ciệu dồng, người nyận ở Bandung, dúng không ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đúng rồi. Năm nay mẹ anh tròn sáu mươi tuổi đấy.",
+     "id": "Betul. Tahun ini ibu saya genap enam puluh tahun lho.",
+     "literal": "benar sudah. tahun ini ibu kakak bulat enam puluh umur tuh.",
+     "baca": "Dúng zồi. Năm nay mẹ ang còn sáu mươi tuổi dấy."
+    }
+   ],
+   "notes": [
+    "**Mùng năm = tanggal lima.** Untuk tanggal 1 sampai 10, orang utara menambahkan *mùng* (juga ditulis *mồng*): *mùng một, mùng năm, mùng mười*. Mulai tanggal 11 cukup *ngày mười một*. Kata ini juga yang dipakai untuk hari-hari Tết: *mùng một Tết* adalah hari pertama Tahun Baru Imlek.",
+    "**Chị thứ hai = kakak (perempuan) kedua.** Urutan saudara pun memakai *thứ*. Budi punya dua kakak perempuan: *chị cả* (sulung) dan *chị thứ hai*. Di selatan orang menghitung dengan cara lain — anak sulung disebut *hai* — tapi di utara urutannya biasa.",
+    "**Tròn sáu mươi tuổi = genap enam puluh tahun.** *Tròn* berarti \"bulat\", dan dipakai untuk umur, tahun, dan jumlah yang pas: *tròn một năm* (genap setahun).",
+    "**Ngày làm việc = hari kerja.** Sabtu, Minggu, dan hari libur nasional tidak dihitung."
+   ],
+   "grammars": [
+    {
+     "title": "Tanggal lengkap dan urutan",
+     "body": [
+      "Urutannya dari kecil ke besar, sama dengan kita: hari, tanggal, bulan, tahun. Nama bulan hanyalah angka."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*thứ năm, ngày 18 tháng 3 năm 2027*",
+        "Kamis, 18 Maret 2027"
+       ],
+       [
+        "*mùng 5 tháng 8*",
+        "5 Agustus (tanggal 1–10 memakai *mùng*)"
+       ],
+       [
+        "*Hôm nay là ngày bao nhiêu?*",
+        "Hari ini tanggal berapa?"
+       ],
+       [
+        "*thứ hai*",
+        "hari Senin"
+       ],
+       [
+        "*ngày thứ hai*",
+        "hari kedua (dari sebuah tur)"
+       ],
+       [
+        "*lần thứ ba*",
+        "kali ketiga"
+       ],
+       [
+        "*thứ nhất, thứ hai, thứ ba, thứ tư*",
+        "pertama, kedua, ketiga, keempat"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Thứ hai bisa berarti Senin atau kedua.** Nama hari memang lahir dari urutan: Senin adalah \"hari kedua\" pekan karena Minggu dihitung pertama. Bedanya ditentukan kata di depannya: *thứ hai* sendiri = Senin; *ngày thứ hai, lần thứ hai, người thứ hai* = yang kedua."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Uang, harga, dan bahasa gaulnya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "bảng giá",
+       "bảng zá",
+       "daftar harga"
+      ],
+      [
+       "giá trọn gói",
+       "zá cọn gói",
+       "harga paket (semua termasuk)"
+      ],
+      [
+       "phụ thu",
+       "fụ thu",
+       "biaya tambahan"
+      ],
+      [
+       "khuyến mãi",
+       "khuyến mãi",
+       "promo"
+      ],
+      [
+       "thanh toán",
+       "thang toán",
+       "membayar, pelunasan"
+      ],
+      [
+       "hoàn tiền",
+       "hoàn tiền",
+       "pengembalian uang"
+      ],
+      [
+       "năm chục",
+       "năm cụk",
+       "lima puluh ribu (lisan)"
+      ],
+      [
+       "một củ",
+       "một kủ",
+       "satu juta (gaul)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di Hà Nội, *chục* (puluhan) dipakai untuk puluhan ribu: *năm chục* = 50.000, *hai chục* = 20.000. Anak muda punya bahasa gaul yang lebih jauh lagi: *một củ* (\"satu umbi\") = sejuta, *một lít* (\"satu liter\") = seratus ribu. Di tulisan, harga sering disingkat dengan *k*: *50k* = 50.000 đồng. Di kantor dan bank, ucapkan bentuk lengkapnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Mengenal uang kertas Vietnam",
+     "items": [
+      "**Semua uang kertas bergambar Hồ Chí Minh.** Pecahan 10.000 ke atas terbuat dari polimer (plastik), yang di bawahnya dari kertas biasa. Koin hampir tidak pernah kamu lihat.",
+      "**Uang 20.000 dan 500.000 warnanya sama-sama kebiruan** dan sering tertukar oleh pendatang, terutama di tempat remang-remang. Biasakan menghitung nolnya sebelum membayar.",
+      "**Satuan mata uangnya *đồng***, disingkat *đ* atau VND. Harga di menu sering ditulis tanpa tiga nol terakhir: *45* di menu kedai berarti 45.000 đồng."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tanggal-tanggal penting di Vietnam",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "mùng một tháng giêng âm lịch",
+       "mùng một tháng zêng âm lịk",
+       "Tết Nguyên Đán, Tahun Baru Imlek"
+      ],
+      [
+       "mùng mười tháng ba âm lịch",
+       "mùng mười tháng ba âm lịk",
+       "Giỗ Tổ Hùng Vương, peringatan raja-raja Hùng"
+      ],
+      [
+       "ngày ba mươi tháng tư",
+       "ngày ba mươi tháng tư",
+       "hari penyatuan kembali Vietnam (1975)"
+      ],
+      [
+       "ngày mùng một tháng năm",
+       "ngày mùng một tháng năm",
+       "Hari Buruh Internasional"
+      ],
+      [
+       "ngày mùng hai tháng chín",
+       "ngày mùng hai tháng cín",
+       "Hari Nasional (1945)"
+      ],
+      [
+       "rằm tháng tám âm lịch",
+       "zằm tháng tám âm lịk",
+       "Tết Trung thu, Festival Pertengahan Musim Gugur"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Vietnam memakai dua kalender sekaligus. *Dương lịch* (kalender matahari) untuk kantor, sekolah, dan bank; *âm lịch* (kalender bulan) untuk Tết, Trung thu, dan peringatan hari wafat keluarga. *Rằm* adalah tanggal 15 kalender bulan, saat bulan purnama. Karena itu tanggal Tết dan Trung thu berpindah-pindah setiap tahun menurut kalender kita — tahun ini Trung thu jatuh pada 25 September."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis angka dan tanggal",
+     "items": [
+      "**Tanggal ditulis hari/bulan/tahun**: *18/3/2027*. Di dokumen resmi: *ngày 18 tháng 3 năm 2027*.",
+      "**Titik untuk ribuan, koma untuk desimal**: *6.500.000 đ*; *2,5%*. Persis seperti di Indonesia, dan berbeda dari kebiasaan Inggris.",
+      "**Libur 30/4 dan 1/5 berurutan**, jadi sering menjadi libur panjang, dan libur 2/9 juga sering disambung dengan akhir pekan. Tiket bus, kereta, dan hotel pada tanggal-tanggal itu cepat habis — pesan jauh-jauh hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Saya merasa tidak enak badan sekali, Dok.",
+       "*Dạ, em thấy trong người khó chịu lắm ạ.*"
+      ],
+      [
+       "Batuk sedikit. Saya merasa makin hari makin lemas.",
+       "*Em bị ho một chút. Em thấy càng ngày càng mệt ạ.*"
+      ],
+      [
+       "Obat penurun demam ini diminum tiga kali sehari, sekali satu tablet.",
+       "*Thuốc hạ sốt này ngày uống ba lần, mỗi lần một viên.*"
+      ],
+      [
+       "Sudah jauh membaik, tapi masih batuk sedikit.",
+       "*Dạ, cháu đỡ nhiều rồi, nhưng vẫn còn ho một chút.*"
+      ],
+      [
+       "Kalau tiga hari tidak membaik, harus periksa ke dokter lho.",
+       "*Nếu ba ngày không đỡ thì phải đi khám đấy.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "tính giá",
+   "baca": "tíng zá",
+   "id": "menghitung harga"
+  },
+  {
+   "vi": "đoàn",
+   "baca": "doàn",
+   "id": "rombongan"
+  },
+  {
+   "vi": "giảm giá",
+   "baca": "zảm zá",
+   "id": "diskon"
+  },
+  {
+   "vi": "phần trăm",
+   "baca": "fần căm",
+   "id": "persen"
+  },
+  {
+   "vi": "triệu / tỷ",
+   "baca": "ciệu / tỷ",
+   "id": "juta / miliar"
+  },
+  {
+   "vi": "linh / lẻ",
+   "baca": "ling / lẻ",
+   "id": "(nol) … — utara / selatan"
+  },
+  {
+   "vi": "rưỡi",
+   "baca": "zưỡi",
+   "id": "setengah (sesudah angka)"
+  },
+  {
+   "vi": "phẩy",
+   "baca": "fẩy",
+   "id": "koma (desimal)"
+  },
+  {
+   "vi": "khoảng / tầm",
+   "baca": "khoảng / tầm",
+   "id": "sekitar"
+  },
+  {
+   "vi": "gần",
+   "baca": "gần",
+   "id": "hampir"
+  },
+  {
+   "vi": "trên / dưới",
+   "baca": "cên / zưới",
+   "id": "di atas / di bawah"
+  },
+  {
+   "vi": "khởi hành",
+   "baca": "khởi hàng",
+   "id": "berangkat"
+  },
+  {
+   "vi": "đặt cọc",
+   "baca": "dặt kọk",
+   "id": "membayar uang muka"
+  },
+  {
+   "vi": "bảng giá",
+   "baca": "bảng zá",
+   "id": "daftar harga"
+  },
+  {
+   "vi": "mùng",
+   "baca": "mùng",
+   "id": "tanggal (1–10)"
+  },
+  {
+   "vi": "thứ nhất",
+   "baca": "thứ nyất",
+   "id": "pertama"
+  },
+  {
+   "vi": "chuyển tiền",
+   "baca": "cuyển tiền",
+   "id": "mengirim uang, transfer"
+  },
+  {
+   "vi": "phí",
+   "baca": "fí",
+   "id": "biaya"
+  },
+  {
+   "vi": "tài khoản",
+   "baca": "tài khoản",
+   "id": "rekening"
+  },
+  {
+   "vi": "người nhận",
+   "baca": "người nyận",
+   "id": "penerima"
+  },
+  {
+   "vi": "ngày làm việc",
+   "baca": "ngày làm việk",
+   "id": "hari kerja"
+  },
+  {
+   "vi": "kịp",
+   "baca": "kịp",
+   "id": "sempat, keburu"
+  },
+  {
+   "vi": "tròn",
+   "baca": "còn",
+   "id": "bulat; genap"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Diskon dua puluh persen.",
+    "Rombongan lebih dari dua puluh orang dapat diskon.",
+    "Anak di bawah dua belas tahun membayar tujuh puluh lima persen.",
+    "Berangkat hari Kamis, 18 Maret 2027.",
+    "Uangnya sampai dalam sekitar dua sampai tiga hari kerja.",
+    "Hari pertama kami menjemput tamu di bandara."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata yang tepat.",
+   "items": [
+    "Giảm giá mười lăm ____. (persen)",
+    "Đoàn có ____ ba mươi người. (hampir)",
+    "Trẻ em ____ sáu tuổi được miễn phí. (di bawah)",
+    "Phí chuyển tiền ____ hai trăm nghìn. (sekitar, lisan)",
+    "Hôm nay là ____ năm tháng tám. (tanggal 1–10)",
+    "Ngày ____, đoàn đi Mỹ Sơn. (kedua)",
+    "Một trăm ____ năm nghìn đồng. (105.000, utara)"
+   ]
+  },
+  {
+   "prompt": "Tulis angka dan tanggal berikut dengan kata-kata Vietnam (bentuk lengkap).",
+   "items": [
+    "205.000 đồng",
+    "6.500.000 đồng",
+    "1.050.000 đồng",
+    "2,5%",
+    "30/4/1975",
+    "18/3/2027"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hai mươi / giảm giá / phần trăm",
+    "trên / người / nhóm / hai mươi / được giảm giá",
+    "mỗi người / năm triệu / còn / hai trăm nghìn / vậy",
+    "chuyển tiền / anh / về / muốn / Indonesia",
+    "tháng chín / sinh nhật / ngày mười hai / mẹ anh / là"
+   ]
+  }
+ ],
+ "answers": [
+  "Giảm giá hai mươi phần trăm. — Nhóm trên hai mươi người được giảm giá. — Trẻ em dưới mười hai tuổi trả bảy mươi lăm phần trăm. — Khởi hành thứ năm, ngày mười tám tháng ba năm hai nghìn không trăm hai mươi bảy. — Tiền đến trong khoảng hai đến ba ngày làm việc. — Ngày thứ nhất chúng tôi đón khách ở sân bay.",
+  "phần trăm — gần — dưới — tầm — mùng (atau mồng) — thứ hai — linh",
+  "hai trăm linh năm nghìn đồng — sáu triệu năm trăm nghìn đồng (lisan: sáu triệu rưỡi) — một triệu không trăm năm mươi nghìn đồng — hai phẩy năm phần trăm — ngày ba mươi tháng tư năm một nghìn chín trăm bảy mươi lăm — ngày mười tám tháng ba năm hai nghìn không trăm hai mươi bảy",
+  "Giảm giá hai mươi phần trăm. — Nhóm trên hai mươi người được giảm giá. — Vậy mỗi người còn năm triệu hai trăm nghìn. — Anh muốn chuyển tiền về Indonesia. — Sinh nhật mẹ anh là ngày mười hai tháng chín."
+ ]
+}

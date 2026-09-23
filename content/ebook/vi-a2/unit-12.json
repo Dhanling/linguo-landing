@@ -1,0 +1,672 @@
+{
+ "title": "Memesan hotel dengan sopan",
+ "title_target": "Cho em hỏi còn phòng không ạ?",
+ "goal": "Memesan kamar lewat telepon dan surel, lalu meminta ganti kamar tanpa terdengar kasar. Titik tata bahasanya: kesopanan lanjut — *vui lòng, xin phép, phiền anh/chị, không biết … có … không ạ, có thể … được không ạ* — serta kerangka surel resmi (*Kính gửi*, *Trân trọng*).",
+ "bekal": [
+  "melunakkan pertanyaan dan permintaan dengan *không biết … không ạ* dan *phiền …*",
+  "membedakan *vui lòng* (bahasa pelayanan) dari *xin phép* (meminta izin)",
+  "menulis surel pemesanan singkat yang dibuka *Kính gửi* dan ditutup *Trân trọng*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gọi điện đặt phòng ở Huế",
+   "intro": "Awal Juni. Chị Hương meminta Budi memesan kamar di sebuah homestay di Huế untuk keluarga Hartono, tamu dari Surabaya. Pemilik homestay, chị Lan, sudah lama bekerja sama dengan Sen Travel.",
+   "lines": [
+    {
+     "speaker": "Lan:",
+     "text": "Dạ, homestay Bên Sông xin nghe ạ.",
+     "id": "Ya, homestay Bên Sông, ada yang bisa dibantu?",
+     "literal": "ya, homestay Bên Sông mohon dengar ya.",
+     "baca": "Zạ, homestay Bên Sông sin nge ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em chào chị. Em là Budi, gọi từ công ty du lịch của chị Hương ở Hà Nội.",
+     "id": "Halo, Kak. Saya Budi, dari biro perjalanan Kak Hương di Hà Nội.",
+     "literal": "ya, adik salam kakak. adik adalah Budi, panggil dari perusahaan wisata punya kakak Hương di Hà Nội.",
+     "baca": "Zạ, em cào cị. Em là Budi, gọi từ kông ty zu lịk kủa cị Hương ở Hà Nội."
+    },
+    {
+     "speaker": "Lan:",
+     "text": "À, bên chị Hương à? Chị chào em. Em cần gì thế?",
+     "id": "Oh, dari kantornya Kak Hương? Halo. Ada perlu apa?",
+     "literal": "ah, pihak kakak Hương ya? kakak salam adik. adik perlu apa begitu?",
+     "baca": "À, bên cị Hương à? Cị cào em. Em kần zì thế?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cho em hỏi bên mình còn phòng gia đình không ạ?",
+     "id": "Boleh saya tanya, apakah masih ada kamar keluarga?",
+     "literal": "beri adik tanya pihak kita masih kamar keluarga tidak ya?",
+     "baca": "Co em hỏi bên mìng kòn fòng za dìng không ạ?"
+    },
+    {
+     "speaker": "Lan:",
+     "text": "Em cần từ ngày nào đến ngày nào?",
+     "id": "Perlunya dari tanggal berapa sampai tanggal berapa?",
+     "literal": "adik perlu dari hari mana sampai hari mana?",
+     "baca": "Em kần từ ngày nào dến ngày nào?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, từ ngày mười hai đến ngày mười lăm tháng sáu, ba đêm. Khách có hai người lớn và hai trẻ em.",
+     "id": "Dari tanggal dua belas sampai lima belas Juni, tiga malam. Tamunya dua orang dewasa dan dua anak.",
+     "literal": "ya, dari hari sepuluh-dua sampai hari sepuluh-lima bulan enam, tiga malam. tamu ada dua orang besar dan dua anak kecil.",
+     "baca": "Zạ, từ ngày mười hai dến ngày mười lăm tháng sáu, ba dêm. Khák kó hai người lớn và hai cẻ em."
+    },
+    {
+     "speaker": "Lan:",
+     "text": "Để chị xem nhé… Còn một phòng gia đình, nhìn ra sông.",
+     "id": "Sebentar saya lihat… Masih ada satu kamar keluarga, menghadap sungai.",
+     "literal": "biar kakak lihat ya… masih satu kamar keluarga, lihat keluar sungai.",
+     "baca": "Dể cị sem nyé… Kòn một fòng za dìng, nyìn za sông."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Không biết phòng đó có giường phụ cho trẻ em không ạ?",
+     "id": "Kira-kira kamar itu ada kasur tambahan untuk anak-anak tidak, ya?",
+     "literal": "tidak tahu kamar itu ada ranjang tambahan untuk anak kecil tidak ya?",
+     "baca": "Không biết fòng dó kó zường fụ co cẻ em không ạ?"
+    },
+    {
+     "speaker": "Lan:",
+     "text": "Có, nhưng phải trả thêm một chút. Em vui lòng gửi email để chị xác nhận nhé.",
+     "id": "Ada, tapi harus bayar sedikit tambahan. Tolong kirim surel supaya saya konfirmasi ya.",
+     "literal": "ada, tetapi harus bayar tambah satu sedikit. adik senang-hati kirim email untuk kakak pastikan ya.",
+     "baca": "Kó, nyưng fải cả thêm một cút. Em vui lòng gửi email dể cị sák nyận nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Phiền chị giữ phòng giúp em đến chiều nay được không ạ?",
+     "id": "Maaf merepotkan, bisa tolong ditahan kamarnya sampai sore ini?",
+     "literal": "repotkan kakak tahan kamar tolong adik sampai sore ini dapat tidak ya?",
+     "baca": "Fiền cị zữ fòng zúp em dến ciều nay dượk không ạ?"
+    },
+    {
+     "speaker": "Lan:",
+     "text": "Được em. Chị giữ đến năm giờ chiều nhé.",
+     "id": "Bisa. Saya tahan sampai jam lima sore ya.",
+     "literal": "dapat adik. kakak tahan sampai lima jam sore ya.",
+     "baca": "Dượk em. Cị zữ dến năm zờ ciều nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em xin phép hỏi thêm: bên mình có thể đón khách ở ga Huế được không ạ?",
+     "id": "Maaf, saya mau tanya satu lagi: apakah bisa menjemput tamu di stasiun Huế?",
+     "literal": "adik mohon izin tanya tambah: pihak kita bisa jemput tamu di stasiun Huế dapat tidak ya?",
+     "baca": "Em sin fép hỏi thêm: bên mìng kó thể dón khák ở ga Huế dượk không ạ?"
+    },
+    {
+     "speaker": "Lan:",
+     "text": "Được chứ. Em ghi giờ tàu đến vào email luôn nhé.",
+     "id": "Bisa dong. Tulis sekalian jam kedatangan keretanya di surel ya.",
+     "literal": "dapat dong. adik catat jam kereta tiba masuk email sekalian ya.",
+     "baca": "Dượk cứ. Em gi zờ tàu dến vào email luôn nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em cảm ơn chị nhiều. Em xin phép chào chị ạ.",
+     "id": "Terima kasih banyak, Kak. Saya pamit dulu.",
+     "literal": "ya, adik terima-kasih kakak banyak. adik mohon izin salam kakak ya.",
+     "baca": "Zạ, em kảm ơn cị nyiều. Em sin fép cào cị ạ."
+    }
+   ],
+   "notes": [
+    "**Xin nghe là cara resmi mengangkat telepon kantor.** Harfiahnya \"mohon mendengar\", biasanya didahului nama tempatnya: *Khách sạn Hoa Mai xin nghe.* Versi pribadinya dari A1: *Em nghe đây ạ.*",
+    "**Bên mình = pihak Anda (atau pihak kami).** *Bên* berarti \"sisi, pihak\". Dalam urusan bisnis *bên mình* dipakai dengan hangat untuk tempat lawan bicara. *Bên em* berarti \"di kantor saya\", *bên chị Hương* \"kantornya chị Hương\".",
+    "**Không biết … có … không ạ? adalah pertanyaan yang dibungkus.** Harfiahnya \"(saya) tidak tahu apakah …\". Isinya tetap pertanyaan *có … không*, tapi pembukanya memberi lawan bicara ruang untuk menjawab \"tidak\" tanpa sungkan. Rasanya seperti \"kira-kira … ya?\" kita.",
+    "**Phiền chị … = maaf merepotkan, Kak.** *Phiền* berarti \"repot, merepotkan\". Pasangannya di akhir percakapan: *Xin lỗi đã làm phiền chị.* — maaf sudah mengganggu.",
+    "**Xin phép = mohon izin, juga untuk pamit.** *Em xin phép hỏi thêm* (izinkan saya bertanya lagi) dan *Em xin phép chào chị* (saya pamit dulu) memakai kata yang sama. Menutup telepon kerja dengan *xin phép* jauh lebih halus daripada sekadar *Chào chị*."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga kesopanan: dari santai sampai resmi",
+     "body": [
+      "Semua bentuk ini sudah sopan; yang berubah adalah **jaraknya**. Makin ke bawah, makin cocok untuk orang yang belum kamu kenal, urusan kerja, dan tulisan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Rasa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kata kerja + *giúp em nhé*",
+        "akrab, hangat",
+        "*Giữ phòng giúp em nhé.*"
+       ],
+       [
+        "*cho em hỏi* …",
+        "sopan sehari-hari",
+        "*Cho em hỏi còn phòng không ạ?*"
+       ],
+       [
+        "*có thể* … *được không ạ?*",
+        "sopan, menanyakan kemungkinan",
+        "*Chị có thể đón khách được không ạ?*"
+       ],
+       [
+        "*không biết* … *có* … *không ạ?*",
+        "sangat halus, tak mendesak",
+        "*Không biết chị có rảnh không ạ?*"
+       ],
+       [
+        "*phiền* + orang + kata kerja …",
+        "sadar merepotkan",
+        "*Phiền chị gửi lại email giúp em.*"
+       ],
+       [
+        "*xin phép* + kata kerja",
+        "meminta izin; pamit",
+        "*Em xin phép về trước ạ.*"
+       ],
+       [
+        "*vui lòng* + kata kerja",
+        "bahasa pelayanan & papan",
+        "*Quý khách vui lòng đợi.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan menumpuk semuanya dalam satu kalimat.** *Phiền chị vui lòng không biết có thể …* bukan lebih sopan, melainkan membingungkan. Satu pembuka ditambah *ạ* di ujung sudah cukup."
+     ]
+    },
+    {
+     "title": "Kerangka surel resmi",
+     "body": [
+      "Surel kerja berbahasa Vietnam punya rangka tetap. Kata ganti kekerabatan tetap dipakai — kepada chị Lan, Budi tetap menulis *chị* dan *em*, bukan *bà* dan *tôi*."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "perihal",
+        "*V/v: Đặt phòng từ 12/6 đến 15/6*",
+        "Perihal (*về việc*): pemesanan kamar 12–15 Juni"
+       ],
+       [
+        "pembuka",
+        "*Kính gửi chị Lan,*",
+        "Yth. Kak Lan,"
+       ],
+       [
+        "perkenalan",
+        "*Em là Budi, nhân viên thực tập của công ty …*",
+        "Saya Budi, pegawai magang di …"
+       ],
+       [
+        "isi",
+        "*Em xin gửi chị thông tin đặt phòng như sau:*",
+        "Berikut informasi pemesanannya:"
+       ],
+       [
+        "permintaan",
+        "*Chị vui lòng xác nhận giúp em.*",
+        "Mohon konfirmasinya."
+       ],
+       [
+        "terima kasih",
+        "*Em xin chân thành cảm ơn chị.*",
+        "Terima kasih banyak."
+       ],
+       [
+        "penutup",
+        "*Trân trọng,*",
+        "Hormat saya,"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Phòng ồn quá",
+   "intro": "Sebelum ke Huế, keluarga Hartono menginap dua malam di hotel kecil di phố cổ Hà Nội, dekat jalan Tạ Hiện yang ramai sampai larut. Pagi harinya Budi datang ke meja resepsionis. Resepsionisnya pemuda yang lebih muda dari Budi.",
+   "lines": [
+    {
+     "speaker": "Lễ tân:",
+     "text": "Em chào anh. Anh cần em giúp gì ạ?",
+     "id": "Selamat pagi. Ada yang bisa saya bantu?",
+     "literal": "adik salam kakak. kakak perlu adik bantu apa ya?",
+     "baca": "Em cào ang. Ang kần em zúp zì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào em. Anh đi cùng khách phòng hai không bốn.",
+     "id": "Halo. Saya pendamping tamu kamar 204.",
+     "literal": "salam adik. kakak pergi bersama tamu kamar dua nol empat.",
+     "baca": "Cào em. Ang di kùng khák fòng hai không bốn."
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, phòng hai không bốn có vấn đề gì không ạ?",
+     "id": "Baik, ada masalah dengan kamar 204?",
+     "literal": "ya, kamar dua nol empat ada masalah apa tidak ya?",
+     "baca": "Zạ, fòng hai không bốn kó vấn dề zì không ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tối qua ồn quá, khách không ngủ được.",
+     "id": "Semalam berisik sekali, tamunya tidak bisa tidur.",
+     "literal": "malam lalu bising terlalu, tamu tidak tidur dapat.",
+     "baca": "Tối kwa ồn kwá, khák không ngủ dượk."
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, em xin lỗi anh. Phía dưới là phố bia nên buổi tối hơi ồn ạ.",
+     "id": "Mohon maaf. Di bawah itu jalan bir, jadi malam hari agak berisik.",
+     "literal": "ya, adik mohon maaf kakak. sisi bawah adalah jalan bir maka waktu malam agak bising ya.",
+     "baca": "Zạ, em sin lỗi ang. Fía zưới là fố bia nên buổi tối hơi ồn ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Phiền em đổi cho khách một phòng yên tĩnh hơn được không?",
+     "id": "Bisa tolong gantikan kamar yang lebih tenang untuk tamu?",
+     "literal": "repotkan adik tukar beri tamu satu kamar tenang lebih dapat tidak?",
+     "baca": "Fiền em dổi co khák một fòng yên tĩng hơn dượk không?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Anh vui lòng đợi em một chút ạ.",
+     "id": "Mohon tunggu sebentar.",
+     "literal": "kakak senang-hati tunggu adik satu sedikit ya.",
+     "baca": "Ang vui lòng dợi em một cút ạ."
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, cảm ơn anh đã đợi. Còn phòng bốn không một ở tầng trên, nhìn ra phía sau ạ.",
+     "id": "Terima kasih sudah menunggu. Masih ada kamar 401 di lantai atas, menghadap ke belakang.",
+     "literal": "ya, terima-kasih kakak telah tunggu. masih kamar empat nol satu di lantai atas, lihat keluar sisi belakang ya.",
+     "baca": "Zạ, kảm ơn ang dã dợi. Kòn fòng bốn không một ở tầng cên, nyìn za fía sau ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Không biết phòng đó có rộng bằng phòng cũ không em?",
+     "id": "Kira-kira kamar itu seluas kamar yang lama tidak?",
+     "literal": "tidak tahu kamar itu ada luas sama kamar lama tidak adik?",
+     "baca": "Không biết fòng dó kó zộng bằng fòng kũ không em?"
+    },
+    {
+     "speaker": "Lễ tân:",
+     "text": "Dạ, rộng như nhau ạ. Mười giờ em cho người chuyển hành lý lên giúp khách.",
+     "id": "Sama luasnya. Jam sepuluh saya suruh orang membawa naik barang-barang tamu.",
+     "literal": "ya, luas seperti sama ya. sepuluh jam adik beri orang pindah bagasi naik tolong tamu.",
+     "baca": "Zạ, zộng nyư nyau ạ. Mười zờ em co người cuyển hàng lý lên zúp khák."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tốt quá. Cảm ơn em nhé.",
+     "id": "Bagus sekali. Makasih ya.",
+     "literal": "baik terlalu. terima-kasih adik ya.",
+     "baca": "Tốt kwá. Kảm ơn em nyé."
+    }
+   ],
+   "notes": [
+    "**Vui lòng adalah bahasa pelayanan.** Harfiahnya \"(dengan) senang hati\", dan ia dipakai pihak yang melayani kepada tamu, atau di papan pengumuman: *Vui lòng không hút thuốc.* Tamu yang meminta sesuatu kepada resepsionis lebih wajar memakai *phiền em* atau *… được không*.",
+    "**Nomor kamar dibaca angka per angka.** *Phòng 204* lazim dibaca *hai không bốn*, walau *hai trăm linh bốn* juga benar. Nomor telepon selalu dibaca angka per angka.",
+    "**Phố bia: jalan bir.** Beberapa ruas di phố cổ, terutama Tạ Hiện, penuh kedai *bia hơi* dengan kursi plastik di trotoar sampai larut malam.",
+    "**Như nhau = sama saja.** *Rộng như nhau* berarti \"sama luasnya\". Ini jawaban yang lazim untuk pertanyaan *có rộng bằng … không?* yang diajukan Budi."
+   ],
+   "grammars": [
+    {
+     "title": "Siapa memakai apa: pelayan, tamu, dan papan",
+     "body": [
+      "Ungkapan sopan juga punya \"pemilik\". Memakainya dari kursi yang salah tidak keliru, tapi terdengar ganjil."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Biasanya dipakai oleh",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*vui lòng*",
+        "petugas → tamu; papan, surel resmi",
+        "*Anh vui lòng ký vào đây.*"
+       ],
+       [
+        "*quý khách*",
+        "petugas → tamu (sangat resmi)",
+        "*Mời quý khách lên xe.*"
+       ],
+       [
+        "*phiền* + orang",
+        "yang meminta → yang dimintai",
+        "*Phiền em gọi taxi giúp anh.*"
+       ],
+       [
+        "*làm phiền*",
+        "yang merasa mengganggu",
+        "*Xin lỗi đã làm phiền anh.*"
+       ],
+       [
+        "*xin phép*",
+        "siapa pun yang meminta izin",
+        "*Cho em xin phép ra ngoài một chút.*"
+       ]
+      ]
+     },
+     "after": [
+      "Budi memanggil resepsionis muda itu *em*, tapi tetap memakai *phiền em … được không?*. Meminta dengan halus kepada yang lebih muda membuatmu terdengar dewasa, bukan lemah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di hotel: meminta dan mengeluh dengan halus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Phòng em bị hỏng điều hòa.",
+       "Fòng em bị hỏng diều hòa.",
+       "AC di kamar saya rusak."
+      ],
+      [
+       "Vòi sen không có nước nóng ạ.",
+       "Vòi sen không kó nướk nóng ạ.",
+       "Pancurannya tidak ada air panas."
+      ],
+      [
+       "Cho em xin thêm một cái chăn.",
+       "Co em sin thêm một kái căn.",
+       "Minta satu selimut lagi."
+      ],
+      [
+       "Em gửi hành lý ở đây được không ạ?",
+       "Em gửi hàng lý ở dây dượk không ạ?",
+       "Boleh saya titip koper di sini?"
+      ],
+      [
+       "Có thể trả phòng muộn được không ạ?",
+       "Kó thể cả fòng muộn dượk không ạ?",
+       "Bisa check out lebih siang?"
+      ],
+      [
+       "Xin lỗi đã làm phiền chị.",
+       "Sin lỗi dã làm fiền cị.",
+       "Maaf sudah merepotkan."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Keluhan yang paling ampuh di Vietnam jarang yang paling keras. Kalimat pendek yang menyebut masalahnya (*Phòng em bị hỏng điều hòa*), disusul permintaan yang dilunakkan (*Phiền chị …*), hampir selalu lebih cepat ditanggapi daripada nada tinggi. Memberi petugas jalan keluar yang sopan justru membuatnya mau berusaha lebih."
+    },
+    {
+     "type": "kotak",
+     "title": "Surel dan pesan kerja di Vietnam",
+     "items": [
+      "**Kata ganti kekerabatan tetap dipakai di surel kerja.** Surel kepada mitra yang lebih tua dibuka *Kính gửi anh/chị …*; kepada lembaga, *Kính gửi Quý công ty*.",
+      "**Banyak urusan kerja pindah ke Zalo**, aplikasi pesan buatan Vietnam yang sangat luas dipakai. Konfirmasi pesanan, foto kamar, dan nomor rekening sering dikirim di sana sesudah telepon pertama.",
+      "**Tanggal ditulis hari dulu, lalu bulan:** *12/6* adalah 12 Juni. Jam di tulisan resmi memakai sistem 24 jam: *14h00*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Huế untuk tamu pertama kali",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "đặt phòng",
+       "dặt fòng",
+       "memesan kamar"
+      ],
+      [
+       "xác nhận",
+       "sák nyận",
+       "mengonfirmasi"
+      ],
+      [
+       "đặt cọc",
+       "dặt kọk",
+       "membayar uang muka"
+      ],
+      [
+       "hủy phòng",
+       "hủy fòng",
+       "membatalkan pesanan kamar"
+      ],
+      [
+       "phòng nhìn ra sông",
+       "fòng nyìn za sông",
+       "kamar menghadap sungai"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Hủy* berarti \"membatalkan\" untuk segala hal: *hủy phòng*, *hủy vé*, *hủy chuyến đi*. Kalimat yang wajib ditanyakan sebelum membayar uang muka: *Nếu hủy thì có mất tiền cọc không ạ?* — kalau batal, uang mukanya hangus tidak?"
+    },
+    {
+     "type": "kotak",
+     "title": "Huế dalam tiga kata",
+     "items": [
+      "**Đại Nội**: kompleks istana Dinasti Nguyễn, dinasti terakhir Vietnam, yang menjadikan Huế ibu kota dari 1802 sampai 1945. Kompleks monumen Huế masuk daftar Warisan Dunia UNESCO pada 1993.",
+      "**Sông Hương**: Sungai Parfum yang membelah kota; naik perahu naga ke pagoda Thiên Mụ adalah acara klasik. Hujan paling deras biasanya turun sekitar September sampai Desember.",
+      "**Bún bò Huế**: mi kuah daging sapi yang harum serai dan terasa pedas. Masakan Huế sering disebut yang paling pedas di Vietnam."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Salahnya justru di saya, saya taruh dompet di saku celana belakang.",
+       "*Lỗi là do chính em, em để ví ở túi quần sau.*"
+      ],
+      [
+       "Jangan menyalahkan diri sendiri.",
+       "*Em đừng tự trách mình.*"
+      ],
+      [
+       "Bisa, saya tulis sendiri.",
+       "*Dạ, em tự viết được ạ.*"
+      ],
+      [
+       "Sudah kublokir sendiri lewat aplikasi.",
+       "*Em tự khóa trên ứng dụng rồi ạ.*"
+      ],
+      [
+       "Hari ini aku libur. Teman ya harus saling bantu, dong.",
+       "*Hôm nay chị được nghỉ. Bạn bè thì phải giúp nhau chứ.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "đặt phòng",
+   "baca": "dặt fòng",
+   "id": "memesan kamar"
+  },
+  {
+   "vi": "phòng gia đình",
+   "baca": "fòng za dìng",
+   "id": "kamar keluarga"
+  },
+  {
+   "vi": "giường phụ",
+   "baca": "zường fụ",
+   "id": "kasur tambahan"
+  },
+  {
+   "vi": "người lớn / trẻ em",
+   "baca": "người lớn / cẻ em",
+   "id": "orang dewasa / anak-anak"
+  },
+  {
+   "vi": "xác nhận",
+   "baca": "sák nyận",
+   "id": "mengonfirmasi"
+  },
+  {
+   "vi": "giữ phòng",
+   "baca": "zữ fòng",
+   "id": "menahan (menyimpan) kamar"
+  },
+  {
+   "vi": "đón",
+   "baca": "dón",
+   "id": "menjemput"
+  },
+  {
+   "vi": "ga",
+   "baca": "ga",
+   "id": "stasiun kereta"
+  },
+  {
+   "vi": "xin nghe",
+   "baca": "sin nge",
+   "id": "(saya) mendengarkan — sapaan telepon resmi"
+  },
+  {
+   "vi": "bên",
+   "baca": "bên",
+   "id": "pihak, sisi"
+  },
+  {
+   "vi": "vui lòng",
+   "baca": "vui lòng",
+   "id": "mohon (bahasa pelayanan)"
+  },
+  {
+   "vi": "phiền / làm phiền",
+   "baca": "fiền / làm fiền",
+   "id": "merepotkan / mengganggu"
+  },
+  {
+   "vi": "xin phép",
+   "baca": "sin fép",
+   "id": "mohon izin; pamit"
+  },
+  {
+   "vi": "không biết … không ạ?",
+   "baca": "không biết … không ạ?",
+   "id": "kira-kira … ya?"
+  },
+  {
+   "vi": "có thể",
+   "baca": "kó thể",
+   "id": "bisa, mungkin"
+  },
+  {
+   "vi": "kính gửi",
+   "baca": "kíng gửi",
+   "id": "yang terhormat (pembuka surel)"
+  },
+  {
+   "vi": "trân trọng",
+   "baca": "cân cọng",
+   "id": "hormat saya (penutup surel)"
+  },
+  {
+   "vi": "thực tập sinh",
+   "baca": "thựk tập sing",
+   "id": "pegawai magang"
+  },
+  {
+   "vi": "ồn",
+   "baca": "ồn",
+   "id": "berisik"
+  },
+  {
+   "vi": "yên tĩnh",
+   "baca": "yên tĩng",
+   "id": "tenang, sunyi"
+  },
+  {
+   "vi": "hủy",
+   "baca": "hủy",
+   "id": "membatalkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Budi berbicara kepada perempuan yang lebih tua (*chị*).",
+   "items": [
+    "Boleh saya tanya, masih ada kamar?",
+    "Kira-kira kamar itu ada kasur tambahan tidak, ya?",
+    "Maaf merepotkan, bisa tolong tahan kamarnya sampai sore ini?",
+    "Saya mau tanya satu hal lagi. (dengan *xin phép*)",
+    "Bisakah Kakak menjemput tamu di stasiun?",
+    "Maaf sudah mengganggu Kakak."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *vui lòng, phiền, xin phép, không biết, có thể, kính gửi,* atau *trân trọng*.",
+   "items": [
+    "____ chị giữ phòng giúp em được không ạ? (merepotkan)",
+    "Quý khách ____ không hút thuốc trong phòng. (papan pengumuman)",
+    "Em ____ về trước ạ. (pamit)",
+    "____ tối nay anh có rảnh không ạ? (kira-kira)",
+    "Bên mình ____ đón khách ở sân bay được không ạ? (bisa)",
+    "____ chị Lan, (pembuka surel)",
+    "____, Budi (penutup surel)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi lebih sopan dengan bentuk di dalam kurung. Budi berbicara kepada *chị*.",
+   "items": [
+    "Còn phòng không? (cho em hỏi … ạ)",
+    "Chị có phòng yên tĩnh không? (không biết … có … không ạ)",
+    "Chị đón khách ở ga. (có thể … được không ạ)",
+    "Chị giữ phòng đến năm giờ. (phiền … giúp em)",
+    "Em về đây. (xin phép)",
+    "Chị gửi lại email. (vui lòng, dalam surel)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hỏi / cho em / còn phòng / không ạ",
+    "đợi / vui lòng / một chút / anh / ạ",
+    "phiền / đổi phòng / chị / giúp em / được không ạ",
+    "không biết / giường phụ / có / phòng này / không ạ",
+    "xin phép / em / trước / về / ạ"
+   ]
+  }
+ ],
+ "answers": [
+  "Cho em hỏi còn phòng không ạ? — Không biết phòng đó có giường phụ không ạ? — Phiền chị giữ phòng giúp em đến chiều nay được không ạ? — Em xin phép hỏi thêm một việc ạ. — Chị có thể đón khách ở ga được không ạ? — Xin lỗi đã làm phiền chị.",
+  "Phiền — vui lòng — xin phép — Không biết — có thể — Kính gửi — Trân trọng",
+  "Cho em hỏi còn phòng không ạ? — Không biết chị có phòng yên tĩnh không ạ? — Chị có thể đón khách ở ga được không ạ? — Phiền chị giữ phòng đến năm giờ giúp em. — Em xin phép về trước ạ (atau: Em xin phép về ạ). — Chị vui lòng gửi lại email giúp em.",
+  "Cho em hỏi còn phòng không ạ? — Anh vui lòng đợi một chút ạ. — Phiền chị đổi phòng giúp em được không ạ? — Không biết phòng này có giường phụ không ạ? — Em xin phép về trước ạ."
+ ]
+}

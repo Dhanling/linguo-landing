@@ -1,0 +1,677 @@
+{
+ "title": "Mencari apartemen — jamak dan \"setiap\"",
+ "title_target": "Em đang tìm căn hộ.",
+ "goal": "Melihat apartemen, menanyakan isi dan biayanya, lalu menawar harga sewa — dengan *những / các* (sebagian / semua), *mỗi / mọi / từng* (setiap), dan penggolong untuk rumah dan ruangan.",
+ "bekal": [
+  "menanyakan jumlah kamar, perabot, dan biaya sewa bulanan",
+  "membedakan *những* dari *các*, dan *mỗi* dari *mọi* dan *từng*",
+  "menawar harga dan membicarakan deposit dengan sopan kepada orang seumur orang tuamu"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Xem căn hộ ở Cầu Giấy",
+   "intro": "Minh — programmer asal Hà Nội yang ingin tinggal lebih dekat ke kantornya — sedang mencari teman serumah, dan Budi sedang mencari tempat tinggal. Kamis sore mereka melihat sebuah apartemen di Cầu Giấy. Pemiliknya, cô Thu, kira-kira seumur ibu mereka.",
+   "lines": [
+    {
+     "speaker": "Cô Thu:",
+     "text": "Chào hai cháu. Căn hộ ở tầng ba, các cháu lên với cô nhé.",
+     "id": "Halo, kalian berdua. Apartemennya di lantai tiga, ayo naik bersama saya.",
+     "literal": "salam dua cucu. apartemen di lantai tiga, para cucu naik dengan tante ya.",
+     "baca": "Cào hai cáu. Kăn hộ ở tầng ba, kák cáu lên với kô nyé."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Dạ. Cô cho cháu hỏi, căn hộ có mấy phòng ạ?",
+     "id": "Baik. Boleh saya tanya, apartemennya ada berapa ruangan?",
+     "literal": "iya. tante beri cucu tanya, apartemen ada berapa kamar ya?",
+     "baca": "Zạ. Kô co cáu hỏi, kăn hộ kó mấy fòng ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Hai phòng ngủ, một phòng khách, bếp và một nhà vệ sinh.",
+     "id": "Dua kamar tidur, satu ruang tamu, dapur, dan satu kamar mandi.",
+     "literal": "dua kamar tidur, satu kamar tamu, dapur dan satu rumah kebersihan.",
+     "baca": "Hai fòng ngủ, một fòng khák, bếp và một nyà vệ sing."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Các phòng ngủ có điều hòa không ạ?",
+     "id": "Kamar-kamar tidurnya ada AC?",
+     "literal": "para kamar tidur ada pendingin tidak ya?",
+     "baca": "Kák fòng ngủ kó diều hòa không ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Mỗi phòng có một cái điều hòa và một cái tủ.",
+     "id": "Tiap kamar ada satu AC dan satu lemari.",
+     "literal": "tiap kamar ada satu buah pendingin dan satu buah lemari.",
+     "baca": "Mỗi fòng kó một kái diều hòa và một kái tủ."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Những đồ này cô có để lại không ạ?",
+     "id": "Barang-barang ini Tante tinggalkan?",
+     "literal": "barang-barang ini tante ada taruh kembali tidak ya?",
+     "baca": "Nyững dồ này kô kó dể lại không ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Các đồ lớn thì cô để lại. Những đồ nhỏ này cô mang đi.",
+     "id": "Semua barang besar saya tinggalkan. Barang-barang kecil ini saya bawa.",
+     "literal": "para barang besar maka tante taruh kembali. barang-barang kecil ini tante bawa pergi.",
+     "baca": "Kák dồ lớn thì kô dể lại. Nyững dồ nyỏ này kô mang di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cháu xem từng phòng được không ạ?",
+     "id": "Boleh saya lihat kamarnya satu per satu?",
+     "literal": "cucu lihat satu-demi-satu kamar bisa tidak ya?",
+     "baca": "Cáu sem từng fòng dượk không ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Được chứ, các cháu cứ xem thoải mái.",
+     "id": "Tentu, silakan lihat sepuasnya.",
+     "literal": "bisa dong, para cucu terus lihat leluasa.",
+     "baca": "Dượk cứ, kák cáu kứ sem thoải mái."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Tiền thuê bao nhiêu một tháng ạ?",
+     "id": "Sewanya berapa sebulan?",
+     "literal": "uang sewa berapa satu bulan ya?",
+     "baca": "Tiền thuê bao nyiêu một tháng ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Chín triệu một tháng, chưa tính tiền điện nước.",
+     "id": "Sembilan juta sebulan, belum termasuk listrik dan air.",
+     "literal": "sembilan juta satu bulan, belum hitung uang listrik air.",
+     "baca": "Cín ciệu một tháng, cưa tíng tiền diện nướk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tiền điện nước tính thế nào ạ?",
+     "id": "Listrik dan airnya dihitung bagaimana?",
+     "literal": "uang listrik air hitung bagaimana ya?",
+     "baca": "Tiền diện nướk tíng thế nào ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Điện tính theo đồng hồ. Nước thì mỗi người một trăm nghìn một tháng.",
+     "id": "Listrik menurut meteran. Air, tiap orang seratus ribu sebulan.",
+     "literal": "listrik hitung menurut jam. air maka tiap orang satu ratus ribu satu bulan.",
+     "baca": "Diện tíng theo dồng hồ. Nướk thì mỗi người một căm ngìn một tháng."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ở đây có ồn không cô?",
+     "id": "Di sini bising, Tante?",
+     "literal": "di sini ada bising tidak tante?",
+     "baca": "Ở dây kó ồn không kô?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Không đâu. Mọi người ở tầng này dễ chịu lắm.",
+     "id": "Tidak kok. Semua orang di lantai ini menyenangkan.",
+     "literal": "tidak kok. semua orang di lantai ini enak-hati sangat.",
+     "baca": "Không dâu. Mọi người ở tầng này zễ cịu lắm."
+    }
+   ],
+   "notes": [
+    "**Cô dan cháu.** Cô Thu kira-kira seumur ibu mereka, jadi Budi dan Minh menyebut diri *cháu* dan memanggilnya *cô*; ia menyebut diri *cô* dan memanggil mereka *cháu*. *Hai cháu* = kalian berdua, *các cháu* = kalian. Pasangan ini dipakai ke pemilik rumah, ke ibu teman, dan ke penjual di pasar yang seumur orang tuamu.",
+    "**Dạ** adalah \"iya\" yang paling sopan, dipakai kepada orang yang lebih tua, dan sering membuka kalimat seperti \"Baik, …\". Minh, anak Hà Nội, memakainya secara refleks. *Vâng* juga sopan, tapi *dạ* terdengar lebih hangat dan lebih merendah.",
+    "**Chưa tính** berarti \"belum dihitung, belum termasuk\" — kebalikan *đã bao gồm* dari A1 unit 19. Di iklan sewa, harga hampir selalu *chưa tính điện nước*, jadi pertanyaan Budi berikutnya wajib diajukan.",
+    "**Điện tính theo đồng hồ** — listrik dihitung menurut meteran (*đồng hồ* juga berarti jam). Tarif per kWh — sehari-hari disebut *số điện* — di kos dan apartemen sewaan sering ditentukan pemilik dan bisa berbeda dari satu tempat ke tempat lain. Tanyakan: *Một số điện bao nhiêu tiền ạ?*"
+   ],
+   "grammars": [
+    {
+     "title": "Những dan các — sebagian atau semua",
+     "body": [
+      "Bahasa Vietnam tidak wajib menandai jamak: *Phòng có điều hòa* bisa berarti satu kamar atau semua kamar. Kalau jamak perlu ditegaskan, pilih *các* atau *những* — dan keduanya tidak sama."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh",
+       "Maksudnya"
+      ],
+      "rows": [
+       [
+        "*các* + benda",
+        "semua (seluruh kelompok yang sudah jelas)",
+        "*các phòng ngủ*",
+        "semua kamar tidur di apartemen ini"
+       ],
+       [
+        "*những* + benda",
+        "sebagian, beberapa; kelompok tertentu",
+        "*những đồ nhỏ này*",
+        "hanya barang yang kecil-kecil"
+       ],
+       [
+        "*các* + kata ganti",
+        "penanda \"kalian / para\"",
+        "*các cháu, các anh, các chị*",
+        "kalian (sesuai umur)"
+       ],
+       [
+        "tanpa penanda",
+        "satu atau banyak, tergantung konteks",
+        "*Phòng có điều hòa.*",
+        "kamarnya ada AC"
+       ]
+      ]
+     },
+     "after": [
+      "Cara cepat mengingat: *các* = **semua anggota** himpunan yang sama-sama kita ketahui (\"semua kamar di apartemen ini\"), *những* = **sebagian** yang dipilih dari himpunan itu (\"barang yang kecil\"). Kalimat cô Thu memakai keduanya berdampingan: *Các đồ lớn thì cô để lại. Những đồ nhỏ này cô mang đi.*",
+      "⚠️ Jangan menaruh *các* di depan angka: *hai phòng*, bukan *các hai phòng* — angka sudah cukup menunjukkan jumlahnya. (*Những* + angka memang ada, tapi artinya lain, \"sampai sebanyak\": *ăn những ba bát* = makan sampai tiga mangkuk.)"
+     ]
+    },
+    {
+     "title": "Mỗi, mọi, từng, hằng — empat cara berkata \"setiap\"",
+     "body": [
+      "Bahasa Indonesia punya \"setiap\", \"semua\", dan \"satu per satu\". Bahasa Vietnam membaginya ke empat kata dengan tugas yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Rasanya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*mỗi* + (penggolong) + benda",
+        "tiap-tiap, masing-masing — sering dengan pembagian",
+        "*Mỗi phòng có một cái tủ.*",
+        "Tiap kamar ada satu lemari."
+       ],
+       [
+        "*mọi* + benda",
+        "semua, setiap — menyeluruh, tanpa terkecuali",
+        "*Mọi người ở đây dễ chịu lắm.*",
+        "Semua orang di sini menyenangkan."
+       ],
+       [
+        "*từng* + (penggolong) + benda",
+        "satu demi satu, bergiliran",
+        "*Cháu xem từng phòng.*",
+        "Saya lihat kamarnya satu per satu."
+       ],
+       [
+        "*hằng* + waktu",
+        "tiap (rutin, agak resmi)",
+        "*hằng tháng, hằng ngày* (lisan juga *hàng tháng*)",
+        "tiap bulan, tiap hari"
+       ],
+       [
+        "*mỗi* + waktu",
+        "tiap (lisan)",
+        "*mỗi tháng, mỗi sáng*",
+        "tiap bulan, tiap pagi"
+       ]
+      ]
+     },
+     "after": [
+      "**Mỗi meminta penggolong kalau bendanya perlu penggolong** (*mỗi người, mỗi cái bàn, mỗi chiếc xe*), sedangkan *mọi* langsung ke kata benda umum: *mọi người, mọi thứ, mọi nơi, mọi lúc*.",
+      "Pola pembagian dengan *mỗi* sangat hemat — kata kerjanya boleh hilang: *mỗi người một trăm nghìn* (tiap orang seratus ribu), *mỗi phòng một cái điều hòa*. Bahasa Indonesia melakukan hal yang sama: \"satu orang seratus ribu\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Mặc cả giá thuê",
+   "intro": "Keesokan harinya, Jumat siang. Budi dan Minh sepakat mengambil apartemen itu, tapi harganya sedikit di atas anggaran. Minh sedang di kantor, jadi Budi yang menelepon cô Thu untuk menawar.",
+   "lines": [
+    {
+     "speaker": "Cô Thu:",
+     "text": "A lô, cô nghe đây.",
+     "id": "Halo, saya dengar.",
+     "literal": "halo, tante dengar sini.",
+     "baca": "A lô, kô nge dây."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, cháu chào cô. Cháu là Budi, hôm qua cháu đến xem căn hộ với Minh ạ.",
+     "id": "Selamat siang, Tante. Saya Budi, kemarin saya melihat apartemen bersama Minh.",
+     "literal": "iya, cucu salam tante. cucu adalah Budi, kemarin cucu datang lihat apartemen dengan Minh ya.",
+     "baca": "Zạ, cáu cào kô. Cáu là Budi, hôm kwa cáu dến sem kăn hộ với Ming ạ."
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "À, cô nhớ rồi. Các cháu quyết định chưa?",
+     "id": "Oh, saya ingat. Kalian sudah memutuskan?",
+     "literal": "ah, tante ingat sudah. para cucu putuskan belum?",
+     "baca": "À, kô nyớ zồi. Kák cáu kwyết dịng cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, bọn cháu thích lắm. Nhưng chín triệu thì hơi cao với bọn cháu ạ.",
+     "id": "Kami suka sekali. Tapi sembilan juta agak tinggi untuk kami.",
+     "literal": "iya, kelompok cucu suka sangat. tetapi sembilan juta maka agak tinggi dengan kelompok cucu ya.",
+     "baca": "Zạ, bọn cáu thík lắm. Nyưng cín ciệu thì hơi kao với bọn cáu ạ."
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Thế các cháu muốn bao nhiêu?",
+     "id": "Jadi kalian maunya berapa?",
+     "literal": "begitu para cucu mau berapa?",
+     "baca": "Thế kák cáu muốn bao nyiêu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tám triệu được không cô? Bọn cháu định ở lâu, ít nhất một năm.",
+     "id": "Delapan juta boleh, Tante? Kami berencana tinggal lama, paling sedikit setahun.",
+     "literal": "delapan juta bisa tidak tante? kelompok cucu rencana tinggal lama, sedikit paling satu tahun.",
+     "baca": "Tám ciệu dượk không kô? Bọn cáu dịng ở lâu, ít nyất một năm."
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Tám triệu thì thấp quá. Tám triệu rưỡi nhé, và đặt cọc một tháng.",
+     "id": "Delapan juta terlalu rendah. Delapan setengah ya, dan deposit satu bulan.",
+     "literal": "delapan juta maka rendah terlalu. delapan juta setengah ya, dan taruh-jaminan satu bulan.",
+     "baca": "Tám ciệu thì thấp kwá. Tám ciệu zưỡi nyé, và dặt kọk một tháng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ được ạ. Mỗi tháng bọn cháu trả tiền vào ngày nào ạ?",
+     "id": "Baik. Tiap bulan kami bayar tanggal berapa?",
+     "literal": "iya bisa ya. tiap bulan kelompok cucu bayar uang masuk hari mana ya?",
+     "baca": "Zạ dượk ạ. Mỗi tháng bọn cáu cả tiền vào ngày nào ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Mùng năm hằng tháng. Các cháu chuyển khoản là được.",
+     "id": "Tanggal lima tiap bulan. Transfer saja.",
+     "literal": "tanggal lima tiap bulan. para cucu pindah rekening adalah bisa.",
+     "baca": "Mùng năm hằng tháng. Kák cáu cuyển khoản là dượk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ. Mùng một tháng ba bọn cháu chuyển đến được không ạ?",
+     "id": "Baik. Tanggal satu Maret kami boleh pindah masuk?",
+     "literal": "iya. tanggal satu bulan tiga kelompok cucu pindah datang bisa tidak ya?",
+     "baca": "Zạ. Mùng một tháng ba bọn cáu cuyển dến dượk không ạ?"
+    },
+    {
+     "speaker": "Cô Thu:",
+     "text": "Được. Thứ bảy này cô cháu mình gặp nhau ký hợp đồng nhé.",
+     "id": "Boleh. Sabtu ini kita ketemu untuk tanda tangan kontrak, ya.",
+     "literal": "bisa. urutan tujuh ini tante cucu kita ketemu satu-sama-lain tanda-tangan kontrak ya.",
+     "baca": "Dượk. Thứ bảy này kô cáu mìng gặp nyau ký hợp dồng nyé."
+    }
+   ],
+   "notes": [
+    "**Bọn cháu** berarti \"kami\" dari mulut orang yang lebih muda. *Bọn* (kelompok) terdengar akrab; *chúng cháu* sedikit lebih resmi. Keduanya sopan kepada pemilik rumah — yang penting kata *cháu*-nya tetap.",
+    "**Rưỡi** berarti \"setengah\" dan hanya menempel di belakang satuan yang bulat: *tám triệu rưỡi* (8,5 juta), *hai giờ rưỡi* (jam setengah tiga), *một cân rưỡi* (1,5 kg). Untuk angka lain dipakai *lẻ* atau angka lengkap, yang dibahas di unit 15.",
+    "**Mùng** dipakai untuk tanggal satu sampai sepuluh: *mùng một*, *mùng năm*, *mùng mười*. Sesudah itu cukup *ngày*: *ngày mười lăm*. Di Hà Nội juga terdengar bentuk *mồng* — artinya sama.",
+    "**Cô cháu mình** berarti \"kita\" — tante dan kamu. Orang Vietnam sering membentuk \"kita\" dari dua kata ganti yang dipakai: *anh em mình* (kita, kakak-adik), *chị em mình*. Rasanya jauh lebih hangat daripada *chúng ta*."
+   ],
+   "grammars": [
+    {
+     "title": "Menghitung rumah, ruangan, dan harga sewa",
+     "body": [
+      "Unit hunian, lantai, dan perabot punya penggolongnya sendiri. Harga sewa selalu disusun **harga + *một* + satuan waktu**."
+     ],
+     "table": {
+      "head": [
+       "Penggolong / pola",
+       "Untuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*căn*",
+        "unit hunian: apartemen, rumah",
+        "*một căn hộ hai phòng ngủ*"
+       ],
+       [
+        "*phòng*",
+        "kamar, ruangan",
+        "*hai phòng ngủ, một phòng khách*"
+       ],
+       [
+        "*tầng*",
+        "lantai",
+        "*tầng ba*, *nhà năm tầng*"
+       ],
+       [
+        "*tòa*",
+        "gedung",
+        "*tòa nhà A*"
+       ],
+       [
+        "*cái* / *chiếc*",
+        "perabot dan alat",
+        "*một cái giường, một chiếc tủ lạnh*"
+       ],
+       [
+        "harga + *một* + waktu",
+        "harga per periode",
+        "*tám triệu rưỡi một tháng*"
+       ],
+       [
+        "*bao nhiêu một* + waktu?",
+        "bertanya harga per periode",
+        "*Bao nhiêu một tháng?*"
+       ]
+      ]
+     },
+     "after": [
+      "*Một* di sini berarti \"per\": *một tháng* = sebulan, *một đêm* = semalam (A1 unit 19), *một người* = per orang. Urutannya sama persis dengan bahasa Indonesia lisan: \"delapan setengah juta sebulan\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Cho thuê căn hộ",
+       "Co thuê kăn hộ",
+       "Disewakan apartemen"
+      ],
+      [
+       "Chính chủ",
+       "Cíng củ",
+       "Langsung dari pemilik (tanpa perantara)"
+      ],
+      [
+       "Đầy đủ nội thất",
+       "Dầy dủ nội thất",
+       "Perabot lengkap"
+      ],
+      [
+       "Nhà trống",
+       "Nyà cống",
+       "Kosong, tanpa perabot"
+      ],
+      [
+       "Không chung chủ",
+       "Không cung củ",
+       "Pemilik tidak tinggal di situ"
+      ],
+      [
+       "Giờ giấc tự do",
+       "Zờ zấk tự zo",
+       "Jam keluar-masuk bebas"
+      ],
+      [
+       "Tìm người ở ghép",
+       "Tìm người ở gép",
+       "Mencari teman sekamar / serumah"
+      ],
+      [
+       "Có chỗ để xe máy",
+       "Kó cỗ dể se máy",
+       "Ada tempat parkir motor"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Iklan sewa di Hà Nội ditempel di tiang listrik, dipasang di depan gedung, dan — terutama sekarang — diunggah ke grup media sosial. *Chính chủ* penting karena berarti tak ada biaya perantara (*môi giới*). *Không chung chủ* dan *giờ giấc tự do* dicari mahasiswa, sebab di kos yang pemiliknya tinggal serumah sering ada jam malam."
+    }
+   ]
+  },
+  {
+   "title": "Isi apartemen",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "giường",
+       "zường",
+       "tempat tidur"
+      ],
+      [
+       "tủ quần áo",
+       "tủ kwần áo",
+       "lemari pakaian"
+      ],
+      [
+       "bàn ăn",
+       "bàn ăn",
+       "meja makan"
+      ],
+      [
+       "tủ lạnh",
+       "tủ lạng",
+       "kulkas"
+      ],
+      [
+       "máy giặt",
+       "máy zặt",
+       "mesin cuci"
+      ],
+      [
+       "bình nóng lạnh",
+       "bìng nóng lạng",
+       "pemanas air"
+      ],
+      [
+       "bếp từ / bếp ga",
+       "bếp từ / bếp ga",
+       "kompor induksi / kompor gas"
+      ],
+      [
+       "ban công",
+       "ban kông",
+       "balkon"
+      ],
+      [
+       "thang máy",
+       "thang máy",
+       "lift"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Bình nóng lạnh* (harfiah \"tabung panas-dingin\") bukan kemewahan di Hà Nội: musim dinginnya lembap dan suhu bisa turun di bawah 10 °C, sementara rumah jarang punya pemanas ruangan. Pastikan alat ini berfungsi sebelum menandatangani kontrak."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal yang dicek sebelum menyewa di Hà Nội",
+     "items": [
+      "**Musim *nồm*.** Menjelang dan sesudah Tết, udara utara sering sangat lembap: lantai dan dinding \"berkeringat\", cucian tak kering-kering. Apartemen dengan balkon berjendela dan mesin pengering akan sangat membantu.",
+      "**Tempat parkir.** Gedung apartemen biasanya punya *hầm để xe* (parkir bawah tanah) dengan biaya bulanan tersendiri. Tanyakan: *Gửi xe máy bao nhiêu một tháng ạ?*",
+      "**Lapor tinggal sementara.** Penghuni asing wajib dilaporkan ke *công an* setempat (*khai báo tạm trú*), dan biasanya pemilik rumah yang mengurusnya. Siapkan paspor dan visa saat menandatangani *hợp đồng*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "căn hộ",
+   "baca": "kăn hộ",
+   "id": "apartemen"
+  },
+  {
+   "vi": "tòa nhà",
+   "baca": "tòa nyà",
+   "id": "gedung"
+  },
+  {
+   "vi": "tầng",
+   "baca": "tầng",
+   "id": "lantai"
+  },
+  {
+   "vi": "phòng ngủ / phòng khách",
+   "baca": "fòng ngủ / fòng khák",
+   "id": "kamar tidur / ruang tamu"
+  },
+  {
+   "vi": "bếp",
+   "baca": "bếp",
+   "id": "dapur; kompor"
+  },
+  {
+   "vi": "nhà vệ sinh",
+   "baca": "nyà vệ sing",
+   "id": "kamar mandi, toilet"
+  },
+  {
+   "vi": "điều hòa",
+   "baca": "diều hòa",
+   "id": "AC"
+  },
+  {
+   "vi": "tủ",
+   "baca": "tủ",
+   "id": "lemari"
+  },
+  {
+   "vi": "đồ",
+   "baca": "dồ",
+   "id": "barang"
+  },
+  {
+   "vi": "để lại",
+   "baca": "dể lại",
+   "id": "meninggalkan (barang)"
+  },
+  {
+   "vi": "những / các",
+   "baca": "nyững / kák",
+   "id": "sebagian / semua (penanda jamak)"
+  },
+  {
+   "vi": "mỗi",
+   "baca": "mỗi",
+   "id": "tiap, masing-masing"
+  },
+  {
+   "vi": "mọi",
+   "baca": "mọi",
+   "id": "semua, setiap"
+  },
+  {
+   "vi": "từng",
+   "baca": "từng",
+   "id": "satu per satu"
+  },
+  {
+   "vi": "hằng tháng",
+   "baca": "hằng tháng",
+   "id": "tiap bulan"
+  },
+  {
+   "vi": "tiền thuê",
+   "baca": "tiền thuê",
+   "id": "uang sewa"
+  },
+  {
+   "vi": "tiền điện nước",
+   "baca": "tiền diện nướk",
+   "id": "biaya listrik dan air"
+  },
+  {
+   "vi": "chưa tính",
+   "baca": "cưa tíng",
+   "id": "belum termasuk"
+  },
+  {
+   "vi": "đặt cọc",
+   "baca": "dặt kọk",
+   "id": "membayar deposit"
+  },
+  {
+   "vi": "hợp đồng",
+   "baca": "hợp dồng",
+   "id": "kontrak"
+  },
+  {
+   "vi": "rưỡi",
+   "baca": "zưỡi",
+   "id": "setengah"
+  },
+  {
+   "vi": "chuyển khoản",
+   "baca": "cuyển khoản",
+   "id": "transfer (bank)"
+  },
+  {
+   "vi": "ồn",
+   "baca": "ồn",
+   "id": "bising"
+  },
+  {
+   "vi": "quyết định",
+   "baca": "kwyết dịng",
+   "id": "memutuskan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Kamu bicara dengan pemilik rumah (*cô*).",
+   "items": [
+    "Apartemen ini ada berapa kamar, Tante?",
+    "Tiap kamar ada satu lemari.",
+    "Sewanya berapa sebulan?",
+    "Semua kamar tidur ada AC.",
+    "Saya mau lihat kamarnya satu per satu.",
+    "Semua orang di sini menyenangkan."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya.",
+   "items": [
+    "____ phòng có một cái điều hòa. (tiap)",
+    "____ người ở tầng này dễ chịu lắm. (semua)",
+    "Cháu muốn xem ____ phòng một. (satu per satu)",
+    "____ cháu lên với cô nhé. (kalian)",
+    "____ đồ nhỏ này cô mang đi. (sebagian)",
+    "Tám triệu ____ một tháng. (setengah)",
+    "Căn hộ ở ____ ba. (lantai)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan cô Thu sesuai petunjuk. Kamu menyebut diri *cháu* atau *bọn cháu*.",
+   "items": [
+    "Các cháu muốn thuê bao lâu? (paling sedikit setahun)",
+    "Các cháu có mấy người? (dua orang)",
+    "Các cháu muốn trả bao nhiêu? (delapan juta sebulan, boleh?)",
+    "Bao giờ các cháu chuyển đến? (tanggal satu bulan depan)",
+    "Các cháu có xe máy không? (ya, masing-masing satu)",
+    "Cháu còn muốn hỏi gì không? (tanya cara menghitung listrik)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "có / mỗi / một cái tủ / phòng",
+    "bao nhiêu / tiền thuê / một tháng",
+    "từng / cháu / phòng / xem / muốn",
+    "ở tầng này / mọi người / lắm / dễ chịu",
+    "đặt cọc / phải / các cháu / một tháng"
+   ]
+  }
+ ],
+ "answers": [
+  "Căn hộ này có mấy phòng ạ? (atau Cô cho cháu hỏi, căn hộ này có mấy phòng ạ?) — Mỗi phòng có một cái tủ. — Tiền thuê bao nhiêu một tháng ạ? — Các phòng ngủ có điều hòa. (atau Các phòng ngủ đều có điều hòa.) — Cháu muốn xem từng phòng. — Mọi người ở đây dễ chịu lắm.",
+  "Mỗi — Mọi — từng — Các — Những — rưỡi — tầng",
+  "Bọn cháu muốn thuê ít nhất một năm ạ. — Bọn cháu có hai người ạ. — Tám triệu một tháng được không ạ? — Mùng một tháng sau ạ. — Có ạ, mỗi người một chiếc. — Tiền điện tính thế nào ạ?",
+  "Mỗi phòng có một cái tủ. — Tiền thuê bao nhiêu một tháng? — Cháu muốn xem từng phòng. — Mọi người ở tầng này dễ chịu lắm. — Các cháu phải đặt cọc một tháng."
+ ]
+}

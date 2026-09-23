@@ -1,0 +1,708 @@
+{
+ "title": "Kehilangan dompet — sendiri dan diri",
+ "title_target": "Em tự đi báo công an",
+ "goal": "Melaporkan barang hilang kepada polisi, menceritakan kejadiannya secara urut, lalu mengurus kartu bank yang ikut hilang. Titik tata bahasanya: **tự** (sendiri, tanpa bantuan), **chính** (justru; sendiri sebagai penegas), **mình** refleksif (*tự trách mình*), dan **nhau** (saling).",
+ "bekal": [
+  "membedakan *tự làm* (tanpa bantuan), *một mình* (seorang diri), dan *chính* (justru dia)",
+  "memakai *mình* untuk \"diri sendiri\" dan *nhau* untuk \"saling\"",
+  "melapor kehilangan dan mengurus kartu bank"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở công an phường",
+   "intro": "Awal Mei, beberapa hari sesudah pulang dari Sa Pa. Dompet Budi hilang di bus kota pagi ini. Minh sudah berangkat kerja, jadi Budi pergi sendiri ke kantor polisi kelurahan. Petugas yang melayaninya laki-laki berumur sekitar empat puluhan.",
+   "lines": [
+    {
+     "speaker": "Công an:",
+     "text": "Chào em. Em cần gì?",
+     "id": "Halo. Ada perlu apa?",
+     "literal": "salam adik. adik perlu apa?",
+     "baca": "Cào em. Em kần zì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào anh. Em bị mất ví trên xe buýt, em muốn trình báo ạ.",
+     "id": "Halo, Pak. Dompet saya hilang di bus, saya mau melapor.",
+     "literal": "salam kakak. adik kena hilang dompet di-atas kendaraan bus, adik mau lapor ya.",
+     "baca": "Cào ang. Em bị mất ví cên se buýt, em muốn cìng báo ạ."
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Em kể lại cho anh nghe. Chuyện xảy ra lúc nào?",
+     "id": "Ceritakan ke saya. Kejadiannya kapan?",
+     "literal": "adik cerita kembali untuk kakak dengar. hal terjadi waktu mana?",
+     "baca": "Em kể lại co ang nge. Cuyện sảy za lúk nào?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lúc tám giờ sáng nay. Đến khi xuống xe em mới biết.",
+     "id": "Jam delapan pagi tadi. Saya baru sadar waktu turun dari bus.",
+     "literal": "waktu delapan jam pagi ini. sampai waktu turun kendaraan adik baru tahu.",
+     "baca": "Lúk tám zờ sáng nay. Dến khi suống se em mới biết."
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Trong ví có những gì?",
+     "id": "Di dompet ada apa saja?",
+     "literal": "dalam dompet ada yang-jamak apa?",
+     "baca": "Cong ví kó nyững zì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có ít tiền, thẻ ngân hàng và thẻ sinh viên. May là hộ chiếu em để ở nhà.",
+     "id": "Sedikit uang, kartu bank, dan kartu mahasiswa. Untung paspor saya tinggal di rumah.",
+     "literal": "ada sedikit uang, kartu bank dan kartu pelajar. untung adalah paspor adik taruh di rumah.",
+     "baca": "Kó ít tiền, thẻ ngân hàng và thẻ sing viên. May là hộ ciếu em dể ở nyà."
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Em để ví ở đâu?",
+     "id": "Dompetnya kamu taruh di mana?",
+     "literal": "adik taruh dompet di mana?",
+     "baca": "Em dể ví ở dâu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lỗi là do chính em, em để ví ở túi quần sau.",
+     "id": "Salahnya justru di saya, saya taruh dompet di saku celana belakang.",
+     "literal": "salah adalah karena justru adik, adik taruh dompet di kantong celana belakang.",
+     "baca": "Lỗi là zo cíng em, em dể ví ở túi kwần sau."
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Em đừng tự trách mình.",
+     "id": "Jangan menyalahkan diri sendiri.",
+     "literal": "adik jangan sendiri salahkan diri.",
+     "baca": "Em dừng tự cák mìng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Bây giờ em phải làm gì ạ?",
+     "id": "Baik. Sekarang saya harus bagaimana?",
+     "literal": "iya. sekarang adik harus buat apa ya?",
+     "baca": "Vâng. Bây zờ em fải làm zì ạ?"
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Em viết đơn trình báo theo mẫu này. Em viết tiếng Việt được không?",
+     "id": "Tulis surat laporan mengikuti formulir ini. Bisa menulis dalam bahasa Vietnam?",
+     "literal": "adik tulis surat lapor ikut contoh ini. adik tulis bahasa Vietnam dapat tidak?",
+     "baca": "Em viết dơn cìng báo theo mẫu này. Em viết tiếng Việt dượk không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em tự viết được ạ.",
+     "id": "Bisa, saya tulis sendiri.",
+     "literal": "iya, adik sendiri tulis dapat ya.",
+     "baca": "Zạ, em tự viết dượk ạ."
+    },
+    {
+     "speaker": "Công an:",
+     "text": "Giỏi quá! Giờ cao điểm xe đông, hay có kẻ móc túi. Lần sau em để ví ở túi trước nhé.",
+     "id": "Hebat! Jam sibuk bus penuh, sering ada copet. Lain kali taruh dompet di saku depan, ya.",
+     "literal": "pandai sekali! jam titik-tinggi kendaraan ramai, sering ada orang kait kantong. kali sesudah adik taruh dompet di kantong depan ya.",
+     "baca": "Zỏi kwá! Zờ kao diểm se dông, hay kó kẻ mók túi. Lần sau em dể ví ở túi cướk nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng. Nếu có tin gì, anh gọi cho em được không ạ?",
+     "id": "Baik. Kalau ada kabar, Bapak bisa telepon saya?",
+     "literal": "iya. jika ada kabar apa, kakak panggil untuk adik dapat tidak ya?",
+     "baca": "Vâng. Nếu kó tin zì, ang gọi co em dượk không ạ?"
+    }
+   ],
+   "notes": [
+    "**Petugas memakai *anh – em* dengan Budi.** Polisi kelurahan yang jauh lebih tua sering memanggil anak muda *em* dan menyebut dirinya *anh*, dan itu terasa ramah. Dalam situasi yang lebih resmi ia bisa memakai *tôi*; Budi cukup mengikuti pasangan yang dipilih petugas.",
+    "**Trình báo — \"melapor (kepada pihak berwenang)\".** Lebih resmi dari *báo* (memberi tahu). Suratnya disebut *đơn trình báo*. *Báo công an* adalah versi sehari-hari: \"lapor polisi\".",
+    "**Đến khi … mới … — \"baru … ketika …\".** *Đến khi xuống xe em mới biết* = \"baru waktu turun dari bus aku sadar\". *Mới* di sini menandai bahwa sesuatu terjadi lebih lambat dari seharusnya — sangat berguna saat bercerita.",
+    "**Lỗi là do chính em — \"justru aku yang salah\".** *Do* dari unit 6 menunjuk asal (\"karena, oleh\"); *chính* menegaskan orangnya: bukan orang lain, **aku** sendiri.",
+    "**Kẻ móc túi — \"copet\".** Harfiahnya \"orang yang mengait saku\". *Kẻ* adalah penggolong untuk orang yang dipandang buruk (*kẻ trộm*, *kẻ gian*); jangan dipakai untuk orang biasa — untuk mereka pakai *người*."
+   ],
+   "grammars": [
+    {
+     "title": "Tự, một mình, chính, mình",
+     "body": [
+      "Bahasa Indonesia menyelesaikan semuanya dengan \"sendiri\". Bahasa Vietnam membaginya menjadi empat pekerjaan yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Letak",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**tự** + kata kerja",
+        "sebelum kata kerja",
+        "sendiri, tanpa bantuan",
+        "*Em tự viết đơn.*"
+       ],
+       [
+        "**tự** … **lấy**",
+        "mengapit kata kerja",
+        "sendiri (lebih tegas)",
+        "*Cháu tự nấu cơm lấy.*"
+       ],
+       [
+        "**một mình**",
+        "sesudah kata kerja",
+        "seorang diri, tanpa teman",
+        "*Em đi một mình.*"
+       ],
+       [
+        "**chính** + orang/benda",
+        "sebelum yang ditegaskan",
+        "justru, persis, sendiri",
+        "*Lỗi là do chính em.*"
+       ],
+       [
+        "kata kerja + **mình**",
+        "sesudah kata kerja",
+        "diri sendiri (refleksif)",
+        "*Đừng tự trách mình.*"
+       ],
+       [
+        "**chính mình**",
+        "sesudah kata kerja",
+        "diri sendiri (paling tegas)",
+        "*Hãy tin vào chính mình.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Tự* dan *một mình* sering tertukar. *Em tự đi* = aku pergi tanpa diantar atau dibantu; *em đi một mình* = aku pergi tanpa teman. Keduanya bisa digabung: *Em tự đi một mình.*",
+      "*Mình* sebagai \"diri sendiri\" berbeda dari *mình* \"aku\" yang kamu kenal dari A1. Letaknya yang membedakan: sesudah kata kerja seperti *trách, hỏi, lo cho*, ia menunjuk kembali ke pelakunya: *Anh ấy chỉ lo cho mình.* (dia cuma memikirkan dirinya sendiri)."
+     ]
+    },
+    {
+     "title": "Bercerita kepada petugas",
+     "body": [
+      "Petugas di mana pun menanyakan hal yang sama, dalam urutan yang kira-kira sama. Siapkan jawabanmu dengan pola ini."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Arti",
+       "Pola jawaban"
+      ],
+      "rows": [
+       [
+        "*Chuyện xảy ra lúc nào?*",
+        "Kejadiannya kapan?",
+        "*Lúc … giờ sáng nay.*"
+       ],
+       [
+        "*Ở đâu?*",
+        "Di mana?",
+        "*Trên xe buýt, ở gần …*"
+       ],
+       [
+        "*Em để … ở đâu?*",
+        "Kamu taruh … di mana?",
+        "*Em để trong túi / ba lô.*"
+       ],
+       [
+        "*Trong ví có những gì?*",
+        "Di dompet ada apa saja?",
+        "*Có tiền, thẻ …*"
+       ],
+       [
+        "*Em phát hiện lúc nào?*",
+        "Kapan kamu sadar?",
+        "*Đến khi … em mới biết.*"
+       ]
+      ]
+     },
+     "after": [
+      "Urutkan ceritamu dengan kata yang sudah kamu kenal: *trước tiên, sau đó, đến khi … mới, cuối cùng*. Kalimat pendek lebih baik daripada satu kalimat panjang yang kusut."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Chị em mình giúp nhau",
+   "intro": "Sore harinya Linh menelepon karena mendengar kabar dari Minh, lalu menjemput Budi untuk pergi ke bank bersama.",
+   "lines": [
+    {
+     "speaker": "Linh:",
+     "text": "Budi, em khóa thẻ ngân hàng chưa?",
+     "id": "Budi, kartu bankmu sudah diblokir?",
+     "literal": "Budi, adik kunci kartu bank belum?",
+     "baca": "Budi, em khóa thẻ ngân hàng cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em tự khóa trên ứng dụng rồi ạ.",
+     "id": "Sudah kublokir sendiri lewat aplikasi.",
+     "literal": "adik sendiri kunci di-atas aplikasi sudah ya.",
+     "baca": "Em tự khóa cên ứng zụng zồi ạ."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Tốt. Nhưng làm lại thẻ thì phải ra ngân hàng. Chị đi cùng em nhé.",
+     "id": "Bagus. Tapi bikin kartu baru harus ke bank. Aku temani, ya.",
+     "literal": "baik. tapi buat kembali kartu maka harus keluar bank. kakak pergi bersama adik ya.",
+     "baca": "Tốt. Nyưng làm lại thẻ thì fải za ngân hàng. Cị di kùng em nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị bận lắm mà. Em tự đi được, chị đừng lo.",
+     "id": "Kak kan sibuk sekali. Aku bisa pergi sendiri, jangan khawatir.",
+     "literal": "kakak sibuk sekali kok. adik sendiri pergi dapat, kakak jangan cemas.",
+     "baca": "Cị bận lắm mà. Em tự di dượk, cị dừng lo."
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Hôm nay chị được nghỉ. Bạn bè thì phải giúp nhau chứ.",
+     "id": "Hari ini aku libur. Teman ya harus saling bantu, dong.",
+     "literal": "hari ini kakak dapat libur. teman-teman maka harus bantu saling dong.",
+     "baca": "Hôm nay cị dượk ngỉ. Bạn bè thì fải zúp nyau cứ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế em cần mang gì ạ?",
+     "id": "Kalau begitu aku perlu bawa apa?",
+     "literal": "begitu adik perlu bawa apa ya?",
+     "baca": "Thế em kần mang zì ạ?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Mang hộ chiếu. Ngân hàng cần chính chủ đến làm thủ tục.",
+     "id": "Bawa paspor. Bank perlu pemiliknya sendiri yang datang mengurus.",
+     "literal": "bawa paspor. bank perlu tepat pemilik datang buat prosedur.",
+     "baca": "Mang hộ ciếu. Ngân hàng kần cíng củ dến làm thủ tụk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chính chủ nghĩa là gì hả chị?",
+     "id": "*Chính chủ* itu artinya apa, Kak?",
+     "literal": "tepat pemilik artinya adalah apa ya kakak?",
+     "baca": "Cíng củ ngĩa là zì hả cị?"
+    },
+    {
+     "speaker": "Linh:",
+     "text": "Là chính người đứng tên tài khoản. Chị không làm hộ em được đâu.",
+     "id": "Ya orang yang namanya tercantum di rekening itu sendiri. Aku nggak bisa mewakilimu.",
+     "literal": "adalah justru orang berdiri nama rekening. kakak tidak buat menggantikan adik dapat kok.",
+     "baca": "Là cíng người dứng tên tài khoản. Cị không làm hộ em dượk dâu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em hiểu rồi. Hai chị em mình đi thôi!",
+     "id": "Paham. Ayo kita berangkat!",
+     "literal": "adik paham sudah. dua kakak adik kita pergi yuk!",
+     "baca": "Em hiểu zồi. Hai cị em mìng di thôi!"
+    }
+   ],
+   "notes": [
+    "**Em tự khóa trên ứng dụng — \"kublokir sendiri lewat aplikasi\".** Di sini *tự* menegaskan bahwa Budi tak perlu menelepon siapa pun. *Khóa* berarti \"mengunci\"; untuk kartu artinya memblokir. Lawannya *mở khóa*.",
+    "**Bạn bè thì phải giúp nhau chứ — \"teman ya harus saling bantu, dong\".** *Thì* dari A1 menonjolkan pokoknya (*bạn bè*), *nhau* berarti \"saling\", dan *chứ* di ujung memberi rasa \"sudah semestinya\".",
+    "**Chính chủ — \"pemiliknya sendiri\".** Istilah yang sangat sering muncul di urusan bank, jual-beli motor, dan sewa rumah: *nhà chính chủ* = rumah yang disewakan langsung oleh pemiliknya, bukan lewat perantara.",
+    "**Hai chị em mình — \"kita berdua\".** Linh bukan kakak kandung Budi, tapi pasangan *chị – em* yang mereka pakai membuat keduanya bisa disebut *hai chị em*. Rasanya hangat, seperti \"kita kakak-beradik\".",
+    "**Làm hộ — \"mengerjakan untuk orang lain\"** dari unit 5 muncul lagi: *Chị không làm hộ em được đâu.* *Đâu* di ujung menegaskan penolakan dengan nada akrab: \"nggak bisa, kok\"."
+   ],
+   "grammars": [
+    {
+     "title": "Nhau — \"saling\" di belakang kata kerja",
+     "body": [
+      "Bahasa Indonesia menaruh \"saling\" di depan kata kerja; bahasa Vietnam menaruh *nhau* di belakangnya. Kalau kata kerjanya memerlukan kata depan, *nhau* ikut di belakang kata depan itu."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*giúp nhau*",
+        "saling membantu"
+       ],
+       [
+        "*gặp nhau*",
+        "bertemu (satu sama lain)"
+       ],
+       [
+        "*hiểu nhau*",
+        "saling memahami"
+       ],
+       [
+        "*chào nhau*",
+        "saling menyapa"
+       ],
+       [
+        "*nói chuyện với nhau*",
+        "mengobrol satu sama lain"
+       ],
+       [
+        "*gửi cho nhau*",
+        "saling mengirimi"
+       ],
+       [
+        "*ngồi cạnh nhau*",
+        "duduk bersebelahan"
+       ],
+       [
+        "*cách nhau hai cây số*",
+        "berjarak dua kilometer"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Nhau* selalu butuh pelaku jamak: *hai chị em, bạn bè, chúng ta, họ*. *Em giúp nhau* salah; *Chúng ta giúp nhau* benar. Untuk menyebut siapa dengan siapa, pakai *với*: *Em với Minh hay giúp nhau.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kalau kehilangan barang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Tôi bị mất điện thoại.",
+       "Tôi bị mất diện thoại.",
+       "Ponselku hilang."
+      ],
+      [
+       "Tôi để quên túi trên taxi.",
+       "Tôi dể kwên túi cên taxi.",
+       "Tasku ketinggalan di taksi."
+      ],
+      [
+       "Tôi đánh rơi ví ở đâu đó.",
+       "Tôi dáng zơi ví ở dâu dó.",
+       "Dompetku jatuh entah di mana."
+      ],
+      [
+       "Tôi bị móc túi.",
+       "Tôi bị mók túi.",
+       "Aku kecopetan."
+      ],
+      [
+       "Tôi bị giật điện thoại.",
+       "Tôi bị zật diện thoại.",
+       "Ponselku dijambret."
+      ],
+      [
+       "Tôi muốn trình báo mất đồ.",
+       "Tôi muốn cìng báo mất dồ.",
+       "Aku mau lapor kehilangan barang."
+      ],
+      [
+       "Cho tôi xin giấy xác nhận.",
+       "Co tôi sin zấy sák nyận.",
+       "Minta surat keterangannya."
+      ],
+      [
+       "Ai nhặt được xin liên hệ số này.",
+       "Ai nyặt dượk sin liên hệ số này.",
+       "Yang menemukan mohon hubungi nomor ini."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pilih kata kerjanya menurut cara barang itu lepas darimu: *để quên* (lupa, tertinggal), *đánh rơi* (terjatuh), *bị móc túi* (dicopet diam-diam), *bị giật* (dirampas dengan cepat, sering dari motor). *Bị mất* dipakai bila kamu tak tahu caranya — hanya tahu barangnya tak ada."
+    },
+    {
+     "type": "kotak",
+     "title": "Melapor ke công an phường",
+     "items": [
+      "*Công an phường* (di desa *công an xã*) adalah kantor polisi tingkat terbawah dan tempat pertama untuk melapor kehilangan di lingkunganmu. Nomor darurat polisi tetap 113.",
+      "Bila yang hilang paspor, laporan polisi itu penting: dengan surat keterangan kehilangan kamu lalu menghubungi KBRI Hà Nội untuk dokumen perjalanan pengganti. Simpan salinan paspor di ponsel dan di kertas sejak hari pertama.",
+      "Membawa teman yang berbahasa Vietnam memudahkan, tapi bukan keharusan; petugas biasanya sabar kepada orang asing yang berusaha bicara dalam bahasa Vietnam."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di bank",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "tài khoản / số tài khoản",
+       "tài khoản / số tài khoản",
+       "rekening / nomor rekening"
+      ],
+      [
+       "chủ tài khoản",
+       "củ tài khoản",
+       "pemilik rekening"
+      ],
+      [
+       "khóa thẻ / mở khóa thẻ",
+       "khóa thẻ / mở khóa thẻ",
+       "memblokir / membuka blokir kartu"
+      ],
+      [
+       "làm lại thẻ",
+       "làm lại thẻ",
+       "membuat ulang kartu"
+      ],
+      [
+       "mã PIN",
+       "mã Pin",
+       "PIN"
+      ],
+      [
+       "ứng dụng ngân hàng",
+       "ứng zụng ngân hàng",
+       "aplikasi bank"
+      ],
+      [
+       "chuyển khoản",
+       "cuyển khoản",
+       "transfer"
+      ],
+      [
+       "quét mã QR",
+       "kwét mã QR",
+       "memindai kode QR"
+      ],
+      [
+       "cây ATM",
+       "kây Atm",
+       "mesin ATM"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Orang Vietnam menyebut mesin ATM *cây ATM* — \"pohon ATM\" — barangkali karena mesinnya berdiri tegak di pinggir jalan. Pembayaran dengan *quét mã QR* dan *chuyển khoản* kini sangat umum di kota besar, dari restoran sampai penjual di pasar."
+    },
+    {
+     "type": "kotak",
+     "title": "Menjaga barang di kota",
+     "items": [
+      "**Di bus dan tempat ramai**, pakai ransel di depan dan simpan dompet di saku depan atau tas berritsleting.",
+      "**Di pinggir jalan**, jangan memegang ponsel di sisi yang menghadap lalu lintas; penjambret bermotor (*giật đồ*) memang ada di kota-kota besar.",
+      "**Pisahkan uang dan kartu.** Kalau satu hilang, yang lain masih ada. Catat nomor layanan bank di tempat selain dompetmu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Pertama, rendam soun dan jamur kuping di air hangat.",
+       "*Trước tiên, cháu hãy ngâm miến và mộc nhĩ vào nước ấm.*"
+      ],
+      [
+       "Jangan pakai garam, kecap ikannya sudah asin.",
+       "*Chớ cho muối, nước mắm mặn rồi.*"
+      ],
+      [
+       "Tunggu minyaknya panas dulu. Waktu nem dimasukkan, pakai api kecil.",
+       "*Đợi dầu nóng đã. Khi cho nem vào, hãy để lửa nhỏ.*"
+      ],
+      [
+       "Gampang. Sebelum mencuci, pisahkan baju putih, ya.",
+       "*Dễ lắm. Trước khi giặt, cậu để riêng quần áo trắng nhé.*"
+      ],
+      [
+       "Jangan kebanyakan deterjen, setengah gelas takar saja.",
+       "*Đừng cho nhiều bột giặt quá, nửa cốc thôi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "tự",
+   "baca": "tự",
+   "id": "sendiri, tanpa bantuan"
+  },
+  {
+   "vi": "một mình",
+   "baca": "một mìng",
+   "id": "seorang diri"
+  },
+  {
+   "vi": "chính",
+   "baca": "cíng",
+   "id": "justru; sendiri (penegas)"
+  },
+  {
+   "vi": "nhau",
+   "baca": "nyau",
+   "id": "saling"
+  },
+  {
+   "vi": "trách",
+   "baca": "cák",
+   "id": "menyalahkan"
+  },
+  {
+   "vi": "trình báo",
+   "baca": "cìng báo",
+   "id": "melapor (resmi)"
+  },
+  {
+   "vi": "đơn",
+   "baca": "dơn",
+   "id": "surat permohonan, surat laporan"
+  },
+  {
+   "vi": "mẫu",
+   "baca": "mẫu",
+   "id": "formulir, contoh"
+  },
+  {
+   "vi": "ví",
+   "baca": "ví",
+   "id": "dompet"
+  },
+  {
+   "vi": "túi quần",
+   "baca": "túi kwần",
+   "id": "saku celana"
+  },
+  {
+   "vi": "xe buýt",
+   "baca": "se buýt",
+   "id": "bus kota"
+  },
+  {
+   "vi": "giờ cao điểm",
+   "baca": "zờ kao diểm",
+   "id": "jam sibuk"
+  },
+  {
+   "vi": "kẻ móc túi",
+   "baca": "kẻ mók túi",
+   "id": "copet"
+  },
+  {
+   "vi": "ba lô",
+   "baca": "ba lô",
+   "id": "ransel"
+  },
+  {
+   "vi": "xảy ra",
+   "baca": "sảy za",
+   "id": "terjadi"
+  },
+  {
+   "vi": "khóa thẻ",
+   "baca": "khóa thẻ",
+   "id": "memblokir kartu"
+  },
+  {
+   "vi": "làm lại",
+   "baca": "làm lại",
+   "id": "membuat ulang"
+  },
+  {
+   "vi": "tài khoản",
+   "baca": "tài khoản",
+   "id": "rekening"
+  },
+  {
+   "vi": "chính chủ",
+   "baca": "cíng củ",
+   "id": "pemilik langsung"
+  },
+  {
+   "vi": "thủ tục",
+   "baca": "thủ tụk",
+   "id": "prosedur, urusan administrasi"
+  },
+  {
+   "vi": "ứng dụng",
+   "baca": "ứng zụng",
+   "id": "aplikasi"
+  },
+  {
+   "vi": "để quên",
+   "baca": "dể kwên",
+   "id": "tertinggal, lupa membawa"
+  },
+  {
+   "vi": "đánh rơi",
+   "baca": "dáng zơi",
+   "id": "menjatuhkan (tanpa sengaja)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Aku menulis surat laporan sendiri. (*tự*, Budi kepada petugas)",
+    "Jangan menyalahkan dirimu sendiri.",
+    "Justru aku yang salah. (*chính*)",
+    "Teman harus saling membantu.",
+    "Aku sudah memblokir kartu sendiri lewat aplikasi.",
+    "Kami saling kenal sejak tahun lalu. (*chúng tôi*)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan *tự, chính, mình, nhau*, atau *một mình*.",
+   "items": [
+    "Con đã lớn rồi, con ____ làm được. (tanpa bantuan)",
+    "____ anh ấy đã tìm thấy ví của tôi. (justru dia)",
+    "Hai người bạn gặp ____ ở quán cà phê. (saling)",
+    "Đừng tự trách ____ nữa. (diri sendiri)",
+    "Tối qua em ở nhà ____. (seorang diri)",
+    "Chúng ta nên giúp đỡ ____. (saling)",
+    "Đây là ____ quyển sách em tìm hôm qua. (persis itu)"
+   ]
+  },
+  {
+   "prompt": "Tambahkan kata dalam kurung di tempat yang tepat.",
+   "items": [
+    "Em viết đơn. (tự) →",
+    "Tôi đã làm việc này. (chính) →",
+    "Anh ấy trách mình. (tự) →",
+    "Họ giúp đỡ. (nhau) →",
+    "Hai chị em nói chuyện. (với nhau) →",
+    "Cháu nấu cơm. (tự … lấy) →"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "tự / em / đơn / viết",
+    "mình / đừng / trách / tự",
+    "chính / là / em / lỗi / do",
+    "giúp / bạn bè / nhau / phải",
+    "mới biết / xuống xe / đến khi / em"
+   ]
+  }
+ ],
+ "answers": [
+  "Em tự viết đơn trình báo. — Đừng tự trách mình. — Lỗi là do chính em. — Bạn bè phải giúp nhau. — Em tự khóa thẻ trên ứng dụng rồi. — Chúng tôi biết nhau từ năm ngoái. (atau Chúng tôi quen nhau từ năm ngoái.)",
+  "tự — Chính — nhau — mình — một mình — nhau — chính",
+  "Em tự viết đơn. — Chính tôi đã làm việc này. — Anh ấy tự trách mình. — Họ giúp đỡ nhau. — Hai chị em nói chuyện với nhau. — Cháu tự nấu cơm lấy.",
+  "Em tự viết đơn. — Đừng tự trách mình. — Lỗi là do chính em. — Bạn bè phải giúp nhau. — Đến khi xuống xe em mới biết."
+ ]
+}

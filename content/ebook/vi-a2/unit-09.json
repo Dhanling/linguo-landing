@@ -1,0 +1,697 @@
+{
+ "title": "Rencana ke Sa Pa — rencana dan kemungkinan",
+ "title_target": "Chắc là sẽ lạnh lắm",
+ "goal": "Membicarakan rencana liburan, menebak cuaca, dan memesan tiket bus malam lewat telepon. Titik tata bahasanya: rencana dengan **định, dự định, có kế hoạch**, yang segera terjadi dengan **sắp / sắp … rồi**, dan tangga kemungkinan **chắc chắn, chắc là, có lẽ, có thể**.",
+ "bekal": [
+  "menanyakan dan menyampaikan rencana: *Cậu định làm gì?*",
+  "menakar keyakinanmu dari \"pasti\" sampai \"bisa jadi\"",
+  "memesan tiket *xe giường nằm* dan menanyakan jadwal lewat telepon"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Đi Sa Pa không?",
+   "intro": "Sekitar tanggal 20 April, sepuluh hari sebelum libur panjang 30 April dan 1 Mei. Malam hari di apartemen, Minh menutup laptopnya dan menoleh ke Budi.",
+   "lines": [
+    {
+     "speaker": "Minh:",
+     "text": "Sắp đến ba mươi tháng tư rồi. Cậu định làm gì?",
+     "id": "Sebentar lagi 30 April. Kamu mau ngapain?",
+     "literal": "hampir tiba tiga-puluh bulan empat sudah. kamu niat buat apa?",
+     "baca": "Sắp dến ba mươi tháng tư zồi. Kậu dịng làm zì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tớ chưa có kế hoạch gì cả. Được nghỉ mấy ngày nhỉ?",
+     "id": "Aku belum ada rencana apa-apa. Liburnya berapa hari, ya?",
+     "literal": "aku belum ada rencana apa semua. dapat libur berapa hari ya kan?",
+     "baca": "Tớ cưa kó kế hoạk zì kả. Dượk ngỉ mấy ngày nyỉ?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ba mươi tháng tư và mùng một tháng năm đều được nghỉ.",
+     "id": "Tanggal 30 April dan 1 Mei dua-duanya libur.",
+     "literal": "tiga-puluh bulan empat dan tanggal satu bulan lima semua dapat libur.",
+     "baca": "Ba mươi tháng tư và mùng một tháng năm dều dượk ngỉ."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Tớ với mấy đứa bạn dự định đi Sa Pa. Cậu đi cùng không?",
+     "id": "Aku dan beberapa teman berencana ke Sa Pa. Mau ikut?",
+     "literal": "aku dengan beberapa anak teman rencana pergi Sa Pa. kamu pergi bersama tidak?",
+     "baca": "Tớ với mấy dứa bạn zự dịng di Sa Pa. Kậu di kùng không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sa Pa à? Tớ muốn đi từ lâu rồi! Đi bằng gì?",
+     "id": "Sa Pa? Dari dulu aku pengin ke sana! Naik apa?",
+     "literal": "Sa Pa ya? aku mau pergi dari lama sudah! pergi dengan apa?",
+     "baca": "Sa Pa à? Tớ muốn di từ lâu zồi! Di bằng zì?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Đi xe giường nằm, mất năm, sáu tiếng thôi.",
+     "id": "Naik bus tidur, cuma lima-enam jam.",
+     "literal": "pergi kendaraan ranjang berbaring, habis lima, enam jam saja.",
+     "baca": "Di se zường nằm, mất năm, sáu tiếng thôi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Trên đó thời tiết thế nào?",
+     "id": "Cuaca di atas sana gimana?",
+     "literal": "di-atas situ cuaca bagaimana?",
+     "baca": "Cên dó thời tiết thế nào?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ban ngày mát, nhưng buổi tối chắc là sẽ lạnh lắm.",
+     "id": "Siangnya sejuk, tapi malamnya kemungkinan besar dingin sekali.",
+     "literal": "siang hari sejuk, tapi malam hari mungkin adalah akan dingin sekali.",
+     "baca": "Ban ngày mát, nyưng buổi tối cắk là sẽ lạng lắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế tớ phải mang áo khoác. Có mưa không nhỉ?",
+     "id": "Berarti aku harus bawa jaket. Bakal hujan nggak, ya?",
+     "literal": "begitu aku harus bawa jaket. ada hujan tidak ya kan?",
+     "baca": "Thế tớ fải mang áo khoák. Kó mưa không nyỉ?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Có lẽ có mưa phùn một chút. Trên núi thời tiết thay đổi nhanh lắm.",
+     "id": "Barangkali ada gerimis sedikit. Di gunung cuaca cepat sekali berubah.",
+     "literal": "barangkali ada hujan gerimis sedikit. di-atas gunung cuaca berubah cepat sekali.",
+     "baca": "Kó lẽ kó mưa fùn một cút. Cên núi thời tiết thay dổi nyang lắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Các cậu có định lên đỉnh Fansipan không?",
+     "id": "Kalian berencana naik ke puncak Fansipan?",
+     "literal": "para kamu ada niat naik puncak Fansipan tidak?",
+     "baca": "Kák kậu kó dịng lên dỉng Fansipan không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Có thể. Nếu trời đẹp thì bọn mình đi cáp treo lên đỉnh.",
+     "id": "Mungkin. Kalau cuacanya bagus, kita naik kereta gantung ke puncak.",
+     "literal": "bisa. jika langit indah maka kelompok kita pergi kabel gantung naik puncak.",
+     "baca": "Kó thể. Nếu cời dẹp thì bọn mìng di káp ceo lên dỉng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nhưng tớ phải hỏi chị Hương đã. Dịp lễ là lúc công ty du lịch bận nhất mà.",
+     "id": "Tapi aku harus tanya Kak Hương dulu. Musim libur itu masa tersibuk agen perjalanan.",
+     "literal": "tapi aku harus tanya kakak Hương dulu. kesempatan hari-raya adalah saat perusahaan wisata sibuk paling kok.",
+     "baca": "Nyưng tớ fải hỏi cị Hương dã. Zịp lễ là lúk kông ty zu lịk bận nyất mà."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Tớ chắc chắn chị ấy sẽ cho cậu nghỉ.",
+     "id": "Aku yakin dia pasti kasih kamu libur.",
+     "literal": "aku pasti-pasti kakak itu akan beri kamu libur.",
+     "baca": "Tớ cắk cắn cị ấy sẽ co kậu ngỉ."
+    }
+   ],
+   "notes": [
+    "**Sắp … rồi — \"sebentar lagi … nih\".** *Sắp* sendiri berarti \"hampir, akan segera\" (A1). Menambahkan *rồi* di ujung membuatnya terasa sudah di depan mata: *Sắp đến ba mươi tháng tư rồi* — \"tanggal 30 April sudah dekat\".",
+    "**Mùng một tháng năm — \"tanggal satu Mei\".** Untuk tanggal 1 sampai 10, orang Vietnam biasa menambahkan *mùng*: *mùng một, mùng hai, … mùng mười*. Mulai tanggal 11 cukup angkanya: *ngày mười một*.",
+    "**Mấy đứa bạn, bọn mình — bahasa santai anak muda.** *Đứa* adalah penggolong untuk anak kecil atau teman sebaya yang akrab; jangan dipakai untuk orang yang lebih tua. *Bọn mình* berarti \"kita\" (termasuk lawan bicara) dengan rasa gerombolan teman; *bọn tớ* \"kami\".",
+    "**Xe giường nằm — \"bus tidur\".** Harfiahnya \"kendaraan ranjang berbaring\": bus dengan kursi yang bisa dipakai berbaring, biasanya dua tingkat. Ini cara paling umum bepergian jauh dengan bus di Vietnam.",
+    "**Có thể punya dua arti.** Kamu mengenalnya sebagai \"bisa, mampu\" (*Em có thể nói tiếng Việt*). Sendirian sebagai jawaban — *Có thể.* — ia berarti \"mungkin, bisa jadi\". Konteks yang memilih."
+   ],
+   "grammars": [
+    {
+     "title": "Rencana dan yang segera terjadi",
+     "body": [
+      "Ketiga kata rencana ini ditaruh sebelum kata kerja, seperti *muốn* dan *cần*. Bedanya pada seberapa matang rencananya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Rasa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**định** + kata kerja",
+        "niat, santai, sehari-hari",
+        "*Cậu định làm gì?*"
+       ],
+       [
+        "**dự định** + kata kerja",
+        "rencana yang sudah dipikirkan",
+        "*Bọn tớ dự định đi Sa Pa.*"
+       ],
+       [
+        "**có kế hoạch** + kata kerja",
+        "punya rencana, lebih resmi",
+        "*Công ty có kế hoạch mở tour mới.*"
+       ],
+       [
+        "**chưa có kế hoạch gì**",
+        "belum ada rencana apa-apa",
+        "*Tớ chưa có kế hoạch gì cả.*"
+       ],
+       [
+        "**sắp** + kata kerja",
+        "hampir, segera",
+        "*Xe sắp chạy.*"
+       ],
+       [
+        "**sắp** + kata kerja + **rồi**",
+        "sudah di depan mata",
+        "*Vé sắp hết rồi!*"
+       ]
+      ]
+     },
+     "after": [
+      "*Dự định* juga dipakai sebagai kata benda: *Dự định của cậu là gì?* — \"rencanamu apa?\". *Định* tidak bisa begitu; kata bendanya *kế hoạch* atau *dự định*."
+     ]
+    },
+    {
+     "title": "Seberapa yakin? Tangga kemungkinan",
+     "body": [
+      "Dari yang paling yakin ke yang paling ragu. Semuanya bisa ditaruh di awal kalimat atau tepat sebelum kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Keyakinan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*chắc chắn*",
+        "pasti",
+        "*Chắc chắn chị ấy sẽ đồng ý.*",
+        "Pasti dia setuju."
+       ],
+       [
+        "*chắc là / chắc*",
+        "kemungkinan besar",
+        "*Buổi tối chắc là sẽ lạnh.*",
+        "Malamnya kemungkinan besar dingin."
+       ],
+       [
+        "*có lẽ*",
+        "barangkali",
+        "*Có lẽ có mưa phùn.*",
+        "Barangkali ada gerimis."
+       ],
+       [
+        "*có thể*",
+        "bisa jadi",
+        "*Xe có thể đến sớm hơn.*",
+        "Busnya bisa jadi tiba lebih awal."
+       ],
+       [
+        "*chưa chắc*",
+        "belum tentu",
+        "*Chưa chắc mai trời đẹp.*",
+        "Belum tentu besok cerah."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Chắc tanpa *chắn* tidak berarti \"pasti\".** Telinga Indonesia sering menyamakannya dengan \"pasti\", padahal *chắc là lạnh* berarti \"sepertinya dingin\". Yang benar-benar pasti hanya *chắc chắn*. Jawaban *Chắc chắn rồi!* berarti \"tentu saja!\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Đặt vé xe giường nằm",
+   "intro": "Chị Hương ternyata memberi Budi libur dua hari. Ia langsung menelepon kantor perusahaan bus untuk memesan empat tiket. Karena tak tahu umur petugasnya, ia memakai *em – chị* yang aman.",
+   "lines": [
+    {
+     "speaker": "Nhân viên:",
+     "text": "A lô, nhà xe xin nghe ạ.",
+     "id": "Halo, dengan kantor bus.",
+     "literal": "halo, rumah kendaraan mohon dengar ya.",
+     "baca": "A lô, nyà se sin nge ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chào chị. Em muốn đặt bốn vé giường nằm đi Sa Pa tối hai mươi chín tháng tư ạ.",
+     "id": "Halo, Kak. Saya mau pesan empat tiket bus tidur ke Sa Pa malam 29 April.",
+     "literal": "salam kakak. adik mau pesan empat tiket ranjang berbaring pergi Sa Pa malam dua-puluh sembilan bulan empat ya.",
+     "baca": "Cào cị. Em muốn dặt bốn vé zường nằm di Sa Pa tối hai mươi cín tháng tư ạ."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, chuyến tám giờ sắp hết chỗ rồi anh ạ.",
+     "id": "Yang jam delapan tempatnya hampir habis, Kak.",
+     "literal": "iya, perjalanan delapan jam hampir habis tempat sudah kakak ya.",
+     "baca": "Zạ, cuyến tám zờ sắp hết cỗ zồi ang ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế còn chuyến nào khác không chị?",
+     "id": "Kalau begitu masih ada perjalanan lain, Kak?",
+     "literal": "begitu masih perjalanan mana lain tidak kakak?",
+     "baca": "Thế kòn cuyến nào khák không cị?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Còn chuyến mười giờ tối, vẫn còn nhiều giường ạ.",
+     "id": "Masih ada yang jam sepuluh malam, ranjangnya masih banyak.",
+     "literal": "masih perjalanan sepuluh jam malam, masih masih banyak ranjang ya.",
+     "baca": "Kòn cuyến mười zờ tối, vẫn kòn nyiều zường ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chuyến đó mấy giờ đến Sa Pa ạ?",
+     "id": "Yang itu jam berapa sampai Sa Pa?",
+     "literal": "perjalanan itu berapa jam tiba Sa Pa ya?",
+     "baca": "Cuyến dó mấy zờ dến Sa Pa ạ?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Khoảng bốn giờ sáng ạ. Có thể sớm hơn nếu đường vắng.",
+     "id": "Sekitar jam empat pagi. Bisa jadi lebih awal kalau jalannya sepi.",
+     "literal": "sekitar empat jam pagi ya. bisa awal lebih jika jalan sepi.",
+     "baca": "Khoảng bốn zờ sáng ạ. Kó thể sớm hơn nếu dường vắng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng, em đặt bốn vé chuyến mười giờ. Em tên là Budi.",
+     "id": "Baik, saya pesan empat tiket yang jam sepuluh. Nama saya Budi.",
+     "literal": "iya, adik pesan empat tiket perjalanan sepuluh jam. adik nama adalah Budi.",
+     "baca": "Vâng, em dặt bốn vé cuyến mười zờ. Em tên là Budi."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh cho em xin số điện thoại. Anh nhớ có mặt trước ba mươi phút nhé.",
+     "id": "Boleh minta nomor teleponnya. Ingat datang tiga puluh menit sebelumnya, ya.",
+     "literal": "kakak beri adik minta nomor telepon. kakak ingat ada muka sebelum tiga-puluh menit ya.",
+     "baca": "Ang co em sin số diện thoại. Ang nyớ kó mặt cướk ba mươi fút nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng, chắc chắn rồi ạ. Em cảm ơn chị!",
+     "id": "Baik, pasti. Terima kasih, Kak!",
+     "literal": "iya, pasti sudah ya. adik terima-kasih kakak!",
+     "baca": "Vâng, cắk cắn zồi ạ. Em kảm ơn cị!"
+    }
+   ],
+   "notes": [
+    "**Nhà xe xin nghe — cara menjawab telepon kantor.** *Nhà xe* adalah perusahaan pengelola bus; *xin nghe* (\"mohon mendengar\") versi sopan dari *em nghe đây* yang kamu pelajari di A1. Banyak kantor menjawab dengan pola yang sama: *Sen Travel xin nghe ạ.*",
+    "**Hết chỗ / còn chỗ — \"penuh / masih ada tempat\".** *Chỗ* berarti tempat atau kursi. *Sắp hết chỗ rồi* = hampir penuh. Kalimat ini juga kamu dengar di restoran dan hotel.",
+    "**Có thể + nếu — kemungkinan bersyarat.** *Có thể sớm hơn nếu đường vắng.* Petugas tidak berjanji; ia menyebut kemungkinan dan syaratnya. Cara ini sangat lazim dalam pelayanan: sopan dan aman.",
+    "**Có mặt — \"hadir\".** Harfiahnya \"ada muka\". *Có mặt trước ba mươi phút* = datang tiga puluh menit sebelumnya. Lawannya *vắng mặt* (tidak hadir).",
+    "**Petugas memanggil Budi *anh*, Budi memanggilnya *chị*.** Keduanya sama-sama merendah, dan tak ada yang merasa aneh. Di telepon, saat umur tak kelihatan, pasangan \"salah arah\" seperti ini biasa saja."
+   ],
+   "grammars": [
+    {
+     "title": "Memesan tiket perjalanan",
+     "body": [
+      "Kalimat-kalimat ini berlaku untuk bus, kereta, dan pesawat. Rencana dan kemungkinan dari dialog pertama muncul lagi di sini."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Em muốn đặt hai vé đi Sa Pa.*",
+        "Saya mau pesan dua tiket ke Sa Pa."
+       ],
+       [
+        "*Vé một chiều hay khứ hồi ạ?*",
+        "Sekali jalan atau pulang-pergi?"
+       ],
+       [
+        "*Xe xuất phát lúc mấy giờ?*",
+        "Busnya berangkat jam berapa?"
+       ],
+       [
+        "*Mấy giờ đến nơi ạ?*",
+        "Jam berapa sampai?"
+       ],
+       [
+        "*Đón ở đâu ạ?*",
+        "Dijemput di mana?"
+       ],
+       [
+        "*Còn giường tầng dưới không?*",
+        "Masih ada ranjang bawah?"
+       ],
+       [
+        "*Chuyến này sắp chạy chưa?*",
+        "Yang ini sebentar lagi berangkat?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Di bus tidur, *giường tầng dưới* (ranjang bawah) biasanya lebih cepat habis karena lebih mudah naik-turun. Banyak nhà xe juga menjemput penumpang di beberapa titik dalam kota; tanyakan *Đón ở đâu ạ?* sebelum memesan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca di pegunungan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Trời mát.",
+       "Cời mát.",
+       "Cuacanya sejuk."
+      ],
+      [
+       "Trời rét lắm.",
+       "Cời zét lắm.",
+       "Dingin menggigit."
+      ],
+      [
+       "Có sương mù.",
+       "Kó sương mù.",
+       "Ada kabut."
+      ],
+      [
+       "Có mưa phùn.",
+       "Kó mưa fùn.",
+       "Ada gerimis."
+      ],
+      [
+       "Trời quang.",
+       "Cời kwang.",
+       "Langit cerah tak berawan."
+      ],
+      [
+       "Gió to.",
+       "Zó to.",
+       "Anginnya kencang."
+      ],
+      [
+       "Nhiệt độ khoảng mười lăm độ.",
+       "Nyiệt dộ khoảng mười lăm dộ.",
+       "Suhunya sekitar lima belas derajat."
+      ],
+      [
+       "Ban ngày nắng, ban đêm lạnh.",
+       "Ban ngày nắng, ban dêm lạng.",
+       "Siang terik, malam dingin."
+      ],
+      [
+       "Nhớ mang áo ấm nhé.",
+       "Nyớ mang áo ấm nyé.",
+       "Jangan lupa bawa baju hangat."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Rét* adalah kata utara untuk dingin yang menusuk, lebih kuat dari *lạnh*. Orang Hà Nội bilang *mùa rét* untuk musim dingin dan *rét đậm* untuk gelombang dingin yang panjang. Suhu disebut dengan *độ*: *hai mươi độ* = dua puluh derajat."
+    },
+    {
+     "type": "kotak",
+     "title": "Sa Pa",
+     "items": [
+      "Sa Pa terletak di provinsi Lào Cai, di pegunungan barat laut Vietnam dekat perbatasan Tiongkok. Kotanya berada di ketinggian sekitar 1.500 meter, jadi jauh lebih sejuk daripada Hà Nội sepanjang tahun.",
+      "Di dekatnya menjulang Fansipan, puncak tertinggi Vietnam dan Indochina, lebih dari 3.100 meter. Dulu mendakinya butuh berhari-hari; kini ada kereta gantung (*cáp treo*) yang membawa pengunjung hampir sampai puncak.",
+      "Lembah di sekitar Sa Pa terkenal dengan sawah bertingkat (*ruộng bậc thang*) dan desa-desa suku H'Mông dan Dao. Hormati mereka seperti kamu menghormati tetangga: minta izin sebelum memotret orang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Libur nasional dan musim ramai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Tết Dương lịch (1/1)",
+       "Tết Zương lịk (1/1)",
+       "Tahun Baru Masehi"
+      ],
+      [
+       "Tết Nguyên Đán",
+       "Tết Nguyên Dán",
+       "Tahun Baru Imlek (menurut kalender bulan)"
+      ],
+      [
+       "Giỗ Tổ Hùng Vương (10/3 âm lịch)",
+       "Zỗ Tổ Hùng Vương (10/3 âm lịk)",
+       "Peringatan Raja-Raja Hùng"
+      ],
+      [
+       "Ngày Giải phóng miền Nam (30/4)",
+       "Ngày Zải fóng miền Nam (30/4)",
+       "Hari Pembebasan Selatan dan Penyatuan Negeri"
+      ],
+      [
+       "Quốc tế Lao động (1/5)",
+       "Kwốk tế Lao dộng (1/5)",
+       "Hari Buruh"
+      ],
+      [
+       "Quốc khánh (2/9)",
+       "Kwốk kháng (2/9)",
+       "Hari Kemerdekaan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Libur 30 April dan 1 Mei sering bersambung dengan akhir pekan, sehingga menjadi salah satu musim bepergian tersibuk di Vietnam. Orang menyebut masa seperti ini *dịp lễ* (musim libur) atau *cao điểm* (masa puncak). Tanggal kalender bulan ditandai *âm lịch*; kalender Masehi *dương lịch*."
+    },
+    {
+     "type": "kotak",
+     "title": "Bepergian di musim libur",
+     "items": [
+      "**Pesan jauh-jauh hari.** Tiket bus, kereta, dan kamar di tujuan populer cepat habis menjelang *dịp lễ*, dan harganya sering naik.",
+      "**Siapkan kesabaran.** Jalan keluar kota padat pada hari pertama libur dan macet lagi pada hari terakhir. Kalimat yang berguna: *Chắc là sẽ tắc đường lắm.*",
+      "**Cek cuaca tujuanmu.** Pegunungan utara bisa dingin di malam hari bahkan ketika Hà Nội sudah panas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Warnanya cocok buatmu, tapi agak sempit di bahu.",
+       "*Màu này hợp với cậu, nhưng hơi chật ở vai.*"
+      ],
+      [
+       "Kemeja ini pas nggak?",
+       "*Cái áo này có vừa không?*"
+      ],
+      [
+       "Sudah pas. Kamu kelihatan profesional banget.",
+       "*Vừa rồi. Trông cậu có vẻ chuyên nghiệp lắm.*"
+      ],
+      [
+       "Cokelat cocok nggak dengan celana abu-abu?",
+       "*Màu nâu có hợp với quần xám không em?*"
+      ],
+      [
+       "Yang ini pas sekali, empuk dipakai.",
+       "*Đôi này vừa lắm, đi rất êm.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "định",
+   "baca": "dịng",
+   "id": "berniat, mau"
+  },
+  {
+   "vi": "dự định",
+   "baca": "zự dịng",
+   "id": "berencana; rencana"
+  },
+  {
+   "vi": "kế hoạch",
+   "baca": "kế hoạk",
+   "id": "rencana"
+  },
+  {
+   "vi": "sắp",
+   "baca": "sắp",
+   "id": "hampir, segera"
+  },
+  {
+   "vi": "chắc là",
+   "baca": "cắk là",
+   "id": "kemungkinan besar"
+  },
+  {
+   "vi": "có lẽ",
+   "baca": "kó lẽ",
+   "id": "barangkali"
+  },
+  {
+   "vi": "có thể",
+   "baca": "kó thể",
+   "id": "bisa jadi; bisa"
+  },
+  {
+   "vi": "chắc chắn",
+   "baca": "cắk cắn",
+   "id": "pasti"
+  },
+  {
+   "vi": "dịp lễ",
+   "baca": "zịp lễ",
+   "id": "musim libur, hari raya"
+  },
+  {
+   "vi": "xe giường nằm",
+   "baca": "se zường nằm",
+   "id": "bus tidur"
+  },
+  {
+   "vi": "nhà xe",
+   "baca": "nyà se",
+   "id": "perusahaan bus"
+  },
+  {
+   "vi": "chuyến",
+   "baca": "cuyến",
+   "id": "perjalanan, trip"
+  },
+  {
+   "vi": "đặt vé",
+   "baca": "dặt vé",
+   "id": "memesan tiket"
+  },
+  {
+   "vi": "hết chỗ / còn chỗ",
+   "baca": "hết cỗ / kòn cỗ",
+   "id": "penuh / masih ada tempat"
+  },
+  {
+   "vi": "có mặt",
+   "baca": "kó mặt",
+   "id": "hadir"
+  },
+  {
+   "vi": "cáp treo",
+   "baca": "káp ceo",
+   "id": "kereta gantung"
+  },
+  {
+   "vi": "đỉnh",
+   "baca": "dỉng",
+   "id": "puncak"
+  },
+  {
+   "vi": "mát",
+   "baca": "mát",
+   "id": "sejuk"
+  },
+  {
+   "vi": "rét",
+   "baca": "zét",
+   "id": "dingin menusuk"
+  },
+  {
+   "vi": "sương mù",
+   "baca": "sương mù",
+   "id": "kabut"
+  },
+  {
+   "vi": "mưa phùn",
+   "baca": "mưa fùn",
+   "id": "gerimis"
+  },
+  {
+   "vi": "nhiệt độ",
+   "baca": "nyiệt dộ",
+   "id": "suhu"
+  },
+  {
+   "vi": "thay đổi",
+   "baca": "thay dổi",
+   "id": "berubah"
+  },
+  {
+   "vi": "vắng",
+   "baca": "vắng",
+   "id": "sepi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Sebentar lagi libur, nih.",
+    "Kamu berencana ke mana? (kepada teman sebaya, *cậu*)",
+    "Malam hari di Sa Pa kemungkinan besar dingin sekali.",
+    "Barangkali besok hujan.",
+    "Aku pasti ikut. (kepada teman, *tớ*)",
+    "Saya mau pesan dua tiket bus tidur ke Sa Pa."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "Tàu ____ chạy rồi, nhanh lên! (hampir)",
+    "Hè này em ____ đi Huế. (berniat)",
+    "Công ty ____ mở văn phòng ở Đà Nẵng. (berencana, resmi)",
+    "Trời nhiều mây quá, ____ là sắp mưa. (kemungkinan besar)",
+    "Anh ấy ____ đến muộn một chút. (bisa jadi)",
+    "Tôi ____ sẽ đến, anh đừng lo. (pasti)",
+    "____ chị ấy chưa biết chuyện này. (barangkali)"
+   ]
+  },
+  {
+   "prompt": "Jawab dalam bahasa Vietnam memakai petunjuk di dalam kurung.",
+   "items": [
+    "Cuối tuần này cậu định làm gì? (berniat ke Ninh Bình) →",
+    "Mai trời có mưa không? (barangkali) →",
+    "Anh có đến dự tiệc không? (pasti) →",
+    "Xe chạy chưa? (hampir, sudah dekat) →",
+    "Sa Pa có lạnh không? (kemungkinan besar, malam hari) →",
+    "Còn vé không chị? (hampir habis) →"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "rồi / sắp / ba mươi tháng tư / đến",
+    "đi / định / cậu / đâu",
+    "lạnh lắm / chắc là / sẽ / buổi tối",
+    "mưa / có lẽ / trời / mai",
+    "hết chỗ / sắp / tối đó / rồi"
+   ]
+  }
+ ],
+ "answers": [
+  "Sắp được nghỉ rồi. — Cậu định đi đâu? — Buổi tối ở Sa Pa chắc là lạnh lắm. — Có lẽ mai trời mưa. — Tớ chắc chắn sẽ đi. — Em muốn đặt hai vé xe giường nằm đi Sa Pa.",
+  "sắp — định — dự định (atau: có kế hoạch) — chắc — có thể — chắc chắn — Có lẽ",
+  "Tớ định đi Ninh Bình. — Có lẽ mai trời mưa. — Chắc chắn anh sẽ đến. — Xe sắp chạy rồi. — Buổi tối chắc là lạnh lắm. — Vé sắp hết rồi.",
+  "Sắp đến ba mươi tháng tư rồi. — Cậu định đi đâu? — Buổi tối chắc là sẽ lạnh lắm. — Có lẽ mai trời mưa (atau: Mai có lẽ trời mưa). — Tối đó sắp hết chỗ rồi."
+ ]
+}

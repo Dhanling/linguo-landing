@@ -1,0 +1,676 @@
+{
+ "title": "Membandingkan lebih jauh",
+ "title_target": "Không đắt bằng ở Hội An.",
+ "goal": "Menimbang dua pilihan — dua kota, dua ponsel — dan menjelaskan mana yang lebih cocok. Titik tata bahasanya: *không … bằng*, *kém*, *hơn … nhiều / một chút*, *càng … càng …*, *nhất là*, serta *giống / khác / như nhau*.",
+ "bekal": [
+  "membandingkan dengan *hơn* dan *không … bằng*, lengkap dengan besarnya selisih",
+  "menyatakan kesamaan dan perbedaan dengan *giống nhau, khác nhau, như nhau*",
+  "memakai *càng … càng …* dan *nhất là* untuk memberi tekanan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hội An hay Đà Nẵng?",
+   "intro": "Pertengahan Juli, malam di apartemen. Chị Hương meminta Budi menyusun usulan tur empat hari ke Vietnam tengah untuk rombongan guru dari Indonesia. Budi bimbang: tamunya menginap di Hội An atau di Đà Nẵng? Minh sudah beberapa kali ke Đà Nẵng, tapi belum pernah ke Hội An.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Minh ơi, cậu từng đi Đà Nẵng rồi, đúng không?",
+     "id": "Minh, kamu sudah pernah ke Đà Nẵng, kan?",
+     "literal": "Minh hai, kamu pernah pergi Đà Nẵng sudah, benar tidak?",
+     "baca": "Ming ơi, kậu từng di Dà Nẵng zồi, dúng không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ừ, đi mấy lần rồi, nhưng chưa đến Hội An. Sao thế?",
+     "id": "Iya, sudah beberapa kali, tapi belum pernah ke Hội An. Kenapa?",
+     "literal": "iya, pergi beberapa kali sudah, tetapi belum datang Hội An. kenapa begitu?",
+     "baca": "Ừ, di mấy lần zồi, nyưng cưa dến Hội An. Sao thế?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tớ đang làm tour cho khách. Nên cho khách ngủ ở đâu nhỉ?",
+     "id": "Aku lagi menyusun tur untuk tamu. Enaknya tamu menginap di mana, ya?",
+     "literal": "aku sedang buat tur beri tamu. sebaiknya beri tamu tidur di mana ya kan?",
+     "baca": "Tớ dang làm tour co khák. Nên co khák ngủ ở dâu nyỉ?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Khách sạn ở Đà Nẵng không đắt bằng ở Hội An.",
+     "id": "Hotel di Đà Nẵng tidak semahal di Hội An.",
+     "literal": "hotel di Đà Nẵng tidak mahal sebanding di Hội An.",
+     "baca": "Khák sạn ở Dà Nẵng không dắt bằng ở Hội An."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rẻ hơn nhiều không?",
+     "id": "Jauh lebih murah?",
+     "literal": "murah lebih banyak tidak?",
+     "baca": "Zẻ hơn nyiều không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Rẻ hơn một chút thôi, nhưng phòng rộng hơn và gần biển.",
+     "id": "Cuma sedikit lebih murah, tapi kamarnya lebih luas dan dekat pantai.",
+     "literal": "murah lebih satu sedikit saja, tetapi kamar luas lebih dan dekat laut.",
+     "baca": "Zẻ hơn một cút thôi, nyưng fòng zộng hơn và gần biển."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nghe nói Hội An đẹp hơn Đà Nẵng nhiều.",
+     "id": "Katanya Hội An jauh lebih cantik daripada Đà Nẵng.",
+     "literal": "dengar kata Hội An indah lebih Đà Nẵng banyak.",
+     "baca": "Nge nói Hội An dẹp hơn Dà Nẵng nyiều."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Ai cũng bảo thế. Nhất là buổi tối, khi cả phố cổ thắp đèn lồng.",
+     "id": "Semua orang bilang begitu. Terutama malam hari, waktu seluruh kota tua menyalakan lampion.",
+     "literal": "siapa pun bilang begitu. paling adalah waktu malam, ketika seluruh jalan kuno nyalakan lampion.",
+     "baca": "Ai kũng bảo thế. Nyất là buổi tối, khi kả fố kổ thắp dèn lồng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hai nơi cách nhau bao xa?",
+     "id": "Dua tempat itu berjarak berapa jauh?",
+     "literal": "dua tempat berjarak satu-sama-lain berapa jauh?",
+     "baca": "Hai nơi kák nyau bao sa?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Khoảng ba mươi cây số, đi ô tô chưa đến một tiếng.",
+     "id": "Sekitar tiga puluh kilometer, naik mobil kurang dari satu jam.",
+     "literal": "kira-kira tiga puluh batang angka, pergi mobil belum sampai satu jam.",
+     "baca": "Khoảng ba mươi kây số, di ô tô cưa dến một tiếng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đồ ăn hai nơi có giống nhau không?",
+     "id": "Makanan di dua tempat itu mirip, tidak?",
+     "literal": "barang makan dua tempat ada mirip satu-sama-lain tidak?",
+     "baca": "Dồ ăn hai nơi kó zống nyau không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Khá giống. Nhưng cao lầu là đặc sản Hội An, nghe nói ở Đà Nẵng không ngon bằng.",
+     "id": "Cukup mirip. Tapi cao lầu itu khas Hội An; katanya di Đà Nẵng tidak seenak di sana.",
+     "literal": "cukup mirip. tetapi cao lầu adalah khas-hasil Hội An, dengar kata di Đà Nẵng tidak enak sebanding.",
+     "baca": "Khá zống. Nyưng kao lầu là dặk sản Hội An, nge nói ở Dà Nẵng không ngon bằng."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế tớ cho khách ngủ ở Đà Nẵng, tối đi Hội An chơi. Được không?",
+     "id": "Kalau begitu tamunya kuinapkan di Đà Nẵng, malamnya main ke Hội An. Bisa?",
+     "literal": "begitu aku beri tamu tidur di Đà Nẵng, malam pergi Hội An main. dapat tidak?",
+     "baca": "Thế tớ co khák ngủ ở Dà Nẵng, tối di Hội An cơi. Dượk không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Hay đấy! Nhưng đừng xếp lịch dày quá, khách càng đi nhiều càng mệt.",
+     "id": "Bagus tuh! Tapi jangan bikin jadwal terlalu padat, makin banyak jalan tamunya makin capek.",
+     "literal": "menarik tuh! tetapi jangan susun jadwal tebal terlalu, tamu makin pergi banyak makin capek.",
+     "baca": "Hay dấy! Nyưng dừng sếp lịk zày kwá, khák kàng di nyiều kàng mệt."
+    }
+   ],
+   "notes": [
+    "**Không đắt bằng = tidak semahal.** Bahasa Indonesia punya awalan *se-* (\"semahal\", \"secantik\"); bahasa Vietnam memakai *bằng* (sama dengan) di belakang kata sifat, lalu menegasikannya dengan *không*. Hasilnya lebih halus daripada *rẻ hơn*: kamu tidak bilang Đà Nẵng murah, kamu bilang Hội An lebih mahal.",
+    "**Hơn … nhiều, hơn … một chút: besarnya selisih di ujung.** *Đẹp hơn Đà Nẵng nhiều* = jauh lebih indah; *rẻ hơn một chút* = sedikit lebih murah. Selisihnya biasanya di **belakang**, sesudah pembandingnya — bukan di depan seperti \"jauh lebih\" kita.",
+    "**Nhất là = terutama.** Harfiahnya \"yang paling adalah\". Ia memilih satu contoh dari kelompok yang lebih besar: *Tớ thích đồ ăn Việt, nhất là bún chả.*",
+    "**Cách nhau bao xa? = berjarak berapa jauh (satu sama lain)?** *Cách* berarti \"berjarak\", *nhau* \"satu sama lain\" dari unit 10. Jawabannya: *Hai nơi cách nhau ba mươi cây số.* *Cây số* adalah kata sehari-hari untuk kilometer; *ki-lô-mét* dipakai di tulisan.",
+    "**Đặc sản = kekhasan daerah.** Harfiahnya \"hasil istimewa\". Setiap kota di Vietnam bangga pada *đặc sản*-nya dan setiap tamu diharapkan mencicipinya."
+   ],
+   "grammars": [
+    {
+     "title": "Cara-cara membandingkan",
+     "body": [
+      "A1 sudah memberimu *hơn*, *nhất*, dan *bằng*. Unit ini menambahkan cara menyangkal, cara menyebut selisih, dan satu kata yang sering dilupakan: *kém*."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "A + sifat + *hơn* + B",
+        "*Hội An đẹp hơn Đà Nẵng.*",
+        "Hội An lebih indah dari Đà Nẵng."
+       ],
+       [
+        "A + sifat + *hơn* + B + *nhiều / một chút*",
+        "*Rẻ hơn một chút.*",
+        "Sedikit lebih murah."
+       ],
+       [
+        "A + *không* + sifat + *bằng* + B",
+        "*Đà Nẵng không đắt bằng Hội An.*",
+        "Đà Nẵng tidak semahal Hội An."
+       ],
+       [
+        "A + *kém* + B (+ jumlah)",
+        "*Em kém anh trai hai tuổi.*",
+        "Aku dua tahun lebih muda dari kakakku."
+       ],
+       [
+        "A + sifat + *kém* (hơn)",
+        "*Pin máy này kém hơn.*",
+        "Baterai ponsel ini kalah bagus."
+       ],
+       [
+        "A + sifat + *bằng* + B",
+        "*Phòng này rộng bằng phòng kia.*",
+        "Kamar ini seluas kamar itu."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Kém berarti \"kurang dari, kalah\"**, dan kamu sudah pernah bertemu dengannya di jam: *hai giờ kém mười lăm* = jam dua kurang lima belas. Untuk umur ia sangat wajar (*kém hai tuổi*); untuk mutu ia terdengar agak tajam, jadi di toko orang lebih suka *không … bằng*."
+     ]
+    },
+    {
+     "title": "Sama dan beda",
+     "body": [
+      "*Nhau* (satu sama lain) membuat pasangan ini bekerja tanpa pembanding: kedua hal yang dibandingkan sudah ada di pokok kalimat."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*A giống B*",
+        "*Cao lầu hơi giống mì.*",
+        "Cao lầu agak mirip mi."
+       ],
+       [
+        "*A và B giống nhau*",
+        "*Hai món này giống nhau.*",
+        "Dua masakan ini mirip."
+       ],
+       [
+        "*A khác B*",
+        "*Tiếng Huế khác tiếng Hà Nội.*",
+        "Logat Huế beda dari Hà Nội."
+       ],
+       [
+        "*A và B khác nhau*",
+        "*Hai thành phố rất khác nhau.*",
+        "Dua kota itu sangat berbeda."
+       ],
+       [
+        "*… như nhau*",
+        "*Gọi điện thì hai máy như nhau.*",
+        "Untuk menelepon, dua ponsel itu sama saja."
+       ]
+      ]
+     },
+     "after": [
+      "*Giống* berarti \"mirip\", belum tentu sama persis. Untuk \"persis sama\" orang bilang *giống hệt* atau *y hệt*: *Hai chị em giống hệt nhau.* — kakak-adik itu mirip sekali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Chọn điện thoại mới",
+   "intro": "Ponsel lama Budi makin lambat. Sabtu sore ia pergi ke toko ponsel di Cầu Giấy. Pramuniaganya pemuda yang lebih muda dari Budi: ia memanggil Budi *anh* dan menyebut diri *em*.",
+   "lines": [
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh muốn xem máy nào ạ?",
+     "id": "Mau lihat ponsel yang mana, Kak?",
+     "literal": "kakak mau lihat mesin mana ya?",
+     "baca": "Ang muốn sem máy nào ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em cho anh xem hai máy này. Máy nào tốt hơn?",
+     "id": "Coba lihat dua ponsel ini. Mana yang lebih bagus?",
+     "literal": "adik beri kakak lihat dua mesin ini. mesin mana baik lebih?",
+     "baca": "Em co ang sem hai máy này. Máy nào tốt hơn?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Máy đen chụp ảnh đẹp hơn nhiều, nhưng pin kém hơn một chút ạ.",
+     "id": "Yang hitam fotonya jauh lebih bagus, tapi baterainya sedikit kalah.",
+     "literal": "mesin hitam potret foto indah lebih banyak, tetapi baterai kalah lebih satu sedikit ya.",
+     "baca": "Máy den cụp ảng dẹp hơn nyiều, nyưng pin kém hơn một cút ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn máy xanh thì sao?",
+     "id": "Kalau yang biru?",
+     "literal": "masih mesin biru maka bagaimana?",
+     "baca": "Kòn máy sang thì sao?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Máy xanh pin rất trâu, nhưng camera không đẹp bằng máy đen.",
+     "id": "Yang biru baterainya awet banget, tapi kameranya tidak sebagus yang hitam.",
+     "literal": "mesin biru baterai sangat kerbau, tetapi kamera tidak indah sebanding mesin hitam.",
+     "baca": "Máy sang pin zất câu, nyưng camera không dẹp bằng máy den."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Giá hai máy có khác nhau nhiều không em?",
+     "id": "Harganya beda jauh?",
+     "literal": "harga dua mesin ada beda satu-sama-lain banyak tidak adik?",
+     "baca": "Zá hai máy kó khák nyau nyiều không em?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Máy đen đắt hơn máy xanh hai triệu ạ.",
+     "id": "Yang hitam dua juta lebih mahal dari yang biru.",
+     "literal": "mesin hitam mahal lebih mesin biru dua juta ya.",
+     "baca": "Máy den dắt hơn máy sang hai ciệu ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đắt thế à? Anh cứ nghĩ đắt hơn thì tốt hơn.",
+     "id": "Semahal itu? Kukira yang lebih mahal pasti lebih bagus.",
+     "literal": "mahal begitu ya? kakak terus pikir mahal lebih maka baik lebih.",
+     "baca": "Dắt thế à? Ang kứ ngĩ dắt hơn thì tốt hơn."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Không phải máy càng đắt càng tốt đâu anh.",
+     "id": "Belum tentu makin mahal makin bagus, Kak.",
+     "literal": "tidak benar mesin makin mahal makin baik kok kakak.",
+     "baca": "Không fải máy kàng dắt kàng tốt dâu ang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh chủ yếu gọi điện và xem bản đồ. Thế thì máy xanh hợp hơn nhỉ?",
+     "id": "Aku kebanyakan cuma menelepon dan lihat peta. Berarti yang biru lebih cocok, ya?",
+     "literal": "kakak utamanya panggil listrik dan lihat peta. begitu maka mesin biru cocok lebih ya kan?",
+     "baca": "Ang củ yếu gọi diện và sem bản dồ. Thế thì máy sang hợp hơn nyỉ?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, gọi điện, xem bản đồ thì hai máy như nhau ạ.",
+     "id": "Iya, kalau untuk telepon dan lihat peta, dua-duanya sama saja, Kak.",
+     "literal": "ya, panggil listrik, lihat peta maka dua mesin seperti sama ya.",
+     "baca": "Zạ, gọi diện, sem bản dồ thì hai máy nyư nyau ạ."
+    }
+   ],
+   "notes": [
+    "**Máy = mesin, dan juga ponsel.** Di toko, *máy* cukup untuk menyebut ponsel: *máy này, máy đen, máy cũ*. *Điện thoại* dipakai kalau belum jelas barangnya. Warna menempel langsung di belakang: *máy đen* (yang hitam), *máy xanh* (yang biru).",
+    "**Pin trâu = baterai awet.** *Trâu* berarti kerbau — binatang yang kuat dan tahan kerja. Ungkapan gaul ini dipakai semua orang, dari pramuniaga sampai iklan. Lawannya: *pin yếu* (baterai lemah), *hao pin* (boros baterai).",
+    "**Anh cứ nghĩ … = kukira (dan ternyata salah).** *Cứ* di depan kata kerja berarti \"terus-terusan, begitu saja\". *Cứ nghĩ* menandai keyakinan yang ternyata keliru; hampir sama dengan *tưởng*: *Anh tưởng đắt hơn thì tốt hơn.*",
+    "**Chủ yếu = terutama, sebagian besar.** Beda dengan *nhất là*: *chủ yếu* menyebut bagian terbesar (*chủ yếu gọi điện*), *nhất là* menunjuk satu contoh yang paling menonjol."
+   ],
+   "grammars": [
+    {
+     "title": "Càng … càng …: makin … makin …",
+     "body": [
+      "Polanya sama persis dengan bahasa Indonesia: dua *càng*, masing-masing di depan kata kerja atau kata sifatnya. Yang perlu diperhatikan hanya letak pokok kalimat."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*càng* A *càng* B",
+        "*Càng sớm càng tốt.*",
+        "Makin cepat makin baik."
+       ],
+       [
+        "pokok + *càng* A + *càng* B",
+        "*Khách càng đi nhiều càng mệt.*",
+        "Makin banyak jalan, tamu makin capek."
+       ],
+       [
+        "pokok 1 + *càng* A, pokok 2 + *càng* B",
+        "*Anh ấy càng giải thích, tôi càng không hiểu.*",
+        "Makin dia menjelaskan, aku makin tak paham."
+       ],
+       [
+        "*không phải* … *càng* A *càng* B",
+        "*Không phải càng đắt càng tốt.*",
+        "Belum tentu makin mahal makin bagus."
+       ],
+       [
+        "*càng ngày càng* + sifat",
+        "*Trời càng ngày càng nóng.*",
+        "Cuaca makin hari makin panas. (unit 13)"
+       ]
+      ]
+     },
+     "after": [
+      "*Càng sớm càng tốt* adalah ungkapan siap pakai yang akan kamu dengar di kantor setiap minggu — \"secepatnya\". Sepupunya *càng nhiều càng tốt* (makin banyak makin baik) dan *càng nhanh càng tốt*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata sifat untuk menimbang tempat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "đông / vắng",
+       "dông / vắng",
+       "ramai / sepi"
+      ],
+      [
+       "ồn ào / yên tĩnh",
+       "ồn ào / yên tĩng",
+       "hiruk-pikuk / tenang"
+      ],
+      [
+       "hiện đại / cổ kính",
+       "hiện dại / kổ kíng",
+       "modern / kuno dan anggun"
+      ],
+      [
+       "sôi động / thơ mộng",
+       "sôi dộng / thơ mộng",
+       "semarak / romantis, puitis"
+      ],
+      [
+       "đáng tiền",
+       "dáng tiền",
+       "sepadan dengan harganya"
+      ],
+      [
+       "hợp với",
+       "hợp với",
+       "cocok untuk"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Susunan usulan tur Budi akhirnya berbunyi begini: *Đà Nẵng hiện đại và sôi động hơn, khách sạn không đắt bằng Hội An. Hội An cổ kính và thơ mộng hơn nhiều, nhất là buổi tối.* Dua kalimat, dua pola perbandingan, dan tamu langsung bisa memilih. Di tulisan promosi, kata sifat Vietnam senang datang berpasangan dengan *và*."
+    },
+    {
+     "type": "kotak",
+     "title": "Vietnam tengah: Đà Nẵng, Hội An, Mỹ Sơn",
+     "items": [
+      "**Hội An** adalah bekas kota pelabuhan dagang yang ramai sekitar abad ke-15 sampai ke-19; kota tuanya masuk daftar Warisan Dunia UNESCO pada 1999. Ikonnya *Chùa Cầu*, jembatan beratap yang dikaitkan dengan pedagang Jepang, dan penjahit yang bisa menyelesaikan baju dalam satu-dua hari.",
+      "**Đà Nẵng** adalah kota besar yang modern, dengan bandara internasional, pantai Mỹ Khê yang panjang, dan jembatan Naga (*Cầu Rồng*) yang menyemburkan api dan air pada malam akhir pekan.",
+      "**Mỹ Sơn**, sekitar satu jam dari Hội An, adalah kompleks candi kerajaan Champa yang dibangun kira-kira dari abad ke-4 sampai ke-13, juga Warisan Dunia sejak 1999 — menarik bagi tamu Indonesia yang mengenal candi Hindu.",
+      "**Musim**: hujan lebat dan banjir paling sering terjadi sekitar September sampai Desember. Untuk tur rombongan, Februari sampai Mei biasanya jauh lebih aman."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan barang di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Máy này có bảo hành không?",
+       "Máy này kó bảo hàng không?",
+       "Ponsel ini ada garansinya?"
+      ],
+      [
+       "Bảo hành mười hai tháng.",
+       "Bảo hàng mười hai tháng.",
+       "Garansi dua belas bulan."
+      ],
+      [
+       "Hàng chính hãng hay xách tay?",
+       "Hàng cíng hãng hay sák tay?",
+       "Barang resmi atau bawaan dari luar negeri?"
+      ],
+      [
+       "Máy này nhẹ hơn một chút.",
+       "Máy này nyẹ hơn một cút.",
+       "Ponsel ini sedikit lebih ringan."
+      ],
+      [
+       "Máy kia bền hơn nhiều.",
+       "Máy kia bền hơn nyiều.",
+       "Yang itu jauh lebih awet."
+      ],
+      [
+       "Anh xem thêm đã.",
+       "Ang sem thêm dã.",
+       "Saya lihat-lihat dulu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Anh xem thêm đã* adalah cara sopan untuk pergi tanpa membeli — *đã* di ujung kalimat berarti \"dulu, sebelum yang lain\". Di toko berantai harganya tetap, jadi yang ditawar bukan harga melainkan bonusnya: *Có tặng kèm gì không em?* — ada bonus apa?"
+    },
+    {
+     "type": "kotak",
+     "title": "Membeli ponsel dan SIM di Vietnam",
+     "items": [
+      "***Chính hãng*** berarti barang resmi dengan garansi dari distributor di Vietnam; ***xách tay*** (\"dijinjing tangan\") berarti dibawa dari luar negeri, biasanya lebih murah tapi garansinya dari toko saja.",
+      "**Kartu SIM wajib didaftarkan dengan identitas.** Orang asing memakai paspor; bawalah paspor asli saat membeli SIM.",
+      "**Tanyakan selalu *bảo hành* dan simpan *hóa đơn*.** Tanpa kuitansi, garansi sering sulit diklaim."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Boleh saya tanya, apakah masih ada kamar keluarga?",
+       "*Cho em hỏi bên mình còn phòng gia đình không ạ?*"
+      ],
+      [
+       "Kira-kira kamar itu ada kasur tambahan untuk anak-anak tidak, ya?",
+       "*Không biết phòng đó có giường phụ cho trẻ em không ạ?*"
+      ],
+      [
+       "Maaf merepotkan, bisa tolong ditahan kamarnya sampai sore ini?",
+       "*Phiền chị giữ phòng giúp em đến chiều nay được không ạ?*"
+      ],
+      [
+       "Bisa tolong gantikan kamar yang lebih tenang untuk tamu?",
+       "*Phiền em đổi cho khách một phòng yên tĩnh hơn được không?*"
+      ],
+      [
+       "Mohon tunggu sebentar.",
+       "*Anh vui lòng đợi em một chút ạ.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "so sánh",
+   "baca": "so sáng",
+   "id": "membandingkan"
+  },
+  {
+   "vi": "không … bằng",
+   "baca": "không … bằng",
+   "id": "tidak se-…"
+  },
+  {
+   "vi": "kém",
+   "baca": "kém",
+   "id": "kurang dari, kalah"
+  },
+  {
+   "vi": "nhất là",
+   "baca": "nyất là",
+   "id": "terutama"
+  },
+  {
+   "vi": "giống / khác",
+   "baca": "zống / khák",
+   "id": "mirip / berbeda"
+  },
+  {
+   "vi": "như nhau",
+   "baca": "nyư nyau",
+   "id": "sama saja"
+  },
+  {
+   "vi": "càng … càng",
+   "baca": "kàng … kàng",
+   "id": "makin … makin"
+  },
+  {
+   "vi": "phố cổ",
+   "baca": "fố kổ",
+   "id": "kota tua"
+  },
+  {
+   "vi": "đèn lồng",
+   "baca": "dèn lồng",
+   "id": "lampion"
+  },
+  {
+   "vi": "thắp",
+   "baca": "thắp",
+   "id": "menyalakan (lampu, dupa)"
+  },
+  {
+   "vi": "biển",
+   "baca": "biển",
+   "id": "laut, pantai"
+  },
+  {
+   "vi": "cách",
+   "baca": "kák",
+   "id": "berjarak"
+  },
+  {
+   "vi": "cây số",
+   "baca": "kây số",
+   "id": "kilometer"
+  },
+  {
+   "vi": "đặc sản",
+   "baca": "dặk sản",
+   "id": "makanan khas daerah"
+  },
+  {
+   "vi": "xếp lịch",
+   "baca": "sếp lịk",
+   "id": "menyusun jadwal"
+  },
+  {
+   "vi": "dày",
+   "baca": "zày",
+   "id": "tebal; padat (jadwal)"
+  },
+  {
+   "vi": "chụp ảnh",
+   "baca": "cụp ảng",
+   "id": "memotret"
+  },
+  {
+   "vi": "pin",
+   "baca": "pin",
+   "id": "baterai"
+  },
+  {
+   "vi": "trâu",
+   "baca": "câu",
+   "id": "kerbau; (gaul) kuat, awet"
+  },
+  {
+   "vi": "bản đồ",
+   "baca": "bản dồ",
+   "id": "peta"
+  },
+  {
+   "vi": "chủ yếu",
+   "baca": "củ yếu",
+   "id": "terutama, sebagian besar"
+  },
+  {
+   "vi": "hợp",
+   "baca": "hợp",
+   "id": "cocok"
+  },
+  {
+   "vi": "bảo hành",
+   "baca": "bảo hàng",
+   "id": "garansi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Budi berbicara kepada Minh (*cậu/tớ*).",
+   "items": [
+    "Hotel di Đà Nẵng tidak semahal di Hội An.",
+    "Hội An jauh lebih cantik daripada Đà Nẵng.",
+    "Ponsel ini sedikit lebih ringan.",
+    "Makin cepat makin baik.",
+    "Dua kota ini sangat berbeda.",
+    "Aku suka semua masakan Vietnam, terutama bún chả."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata yang tepat.",
+   "items": [
+    "Phòng ở Đà Nẵng không đắt ____ ở Hội An. (se-)",
+    "Máy đen đắt ____ máy xanh hai triệu. (lebih)",
+    "Camera máy xanh ____ hơn một chút. (kalah)",
+    "Tớ thích biển, ____ biển Mỹ Khê. (terutama)",
+    "Gọi điện thì hai máy ____ ạ. (sama saja)",
+    "Giọng Huế ____ giọng Hà Nội nhiều. (berbeda dari)",
+    "Khách càng đi nhiều ____ mệt. (makin)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat *hơn* menjadi kalimat *không … bằng*, dan sebaliknya. Artinya harus tetap sama.",
+   "items": [
+    "Hội An đắt hơn Đà Nẵng.",
+    "Máy đen đẹp hơn máy xanh.",
+    "Hà Nội lạnh hơn Sài Gòn.",
+    "Minh nói nhanh hơn Budi.",
+    "Phòng cũ không yên tĩnh bằng phòng mới.",
+    "Xe máy không an toàn bằng ô tô."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "bằng / không / đắt / ở Hội An / khách sạn ở Đà Nẵng",
+    "nhiều / Hội An / hơn / đẹp / Đà Nẵng",
+    "càng / càng / đắt / không phải / tốt / máy",
+    "như nhau / thì / gọi điện / hai máy",
+    "giống nhau / không / có / đồ ăn / hai nơi"
+   ]
+  }
+ ],
+ "answers": [
+  "Khách sạn ở Đà Nẵng không đắt bằng ở Hội An. — Hội An đẹp hơn Đà Nẵng nhiều. — Máy này nhẹ hơn một chút. — Càng sớm càng tốt. — Hai thành phố này rất khác nhau. — Tớ thích tất cả các món Việt, nhất là bún chả.",
+  "bằng — hơn — kém — nhất là — như nhau — khác — càng",
+  "Đà Nẵng không đắt bằng Hội An. — Máy xanh không đẹp bằng máy đen. — Sài Gòn không lạnh bằng Hà Nội. — Budi không nói nhanh bằng Minh. — Phòng mới yên tĩnh hơn phòng cũ. — Ô tô an toàn hơn xe máy.",
+  "Khách sạn ở Đà Nẵng không đắt bằng ở Hội An. — Hội An đẹp hơn Đà Nẵng nhiều. — Không phải máy càng đắt càng tốt. — Gọi điện thì hai máy như nhau. — Đồ ăn hai nơi có giống nhau không?"
+ ]
+}

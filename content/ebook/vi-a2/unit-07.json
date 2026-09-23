@@ -1,0 +1,752 @@
+{
+ "title": "Belanja pakaian — memakai dan cocok",
+ "title_target": "Cái áo này có vừa không?",
+ "goal": "Membeli dan menukar pakaian: menyebut ukuran dan warna, mencoba, menilai apakah pas dan cocok, lalu meminta tukar. Titik tata bahasanya: lima kata kerja **memakai** (*mặc, đội, đeo, đi/mang, thắt*) dan kata penilai **vừa, chật, rộng, hợp, trông, có vẻ**.",
+ "bekal": [
+  "memilih kata kerja memakai yang tepat untuk badan, kepala, kaki, dan aksesori",
+  "menilai pakaian dengan *vừa, chật, rộng, hợp với* dan *trông … có vẻ …*",
+  "menukar barang dan meminta *hóa đơn*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mua áo sơ mi ở phố Hàng Đào",
+   "intro": "Akhir Maret. Chị Hương meminta Budi berpakaian lebih rapi saat menemui tamu, jadi hari Minggu ia mengajak Minh ke sebuah toko pakaian di phố Hàng Đào. Pramuniaganya gadis yang jelas lebih muda dari mereka.",
+   "lines": [
+    {
+     "speaker": "Nhân viên:",
+     "text": "Chào hai anh, hai anh cần tìm gì ạ?",
+     "id": "Halo, Kakak berdua cari apa?",
+     "literal": "salam dua kakak, dua kakak perlu cari apa ya?",
+     "baca": "Cào hai ang, hai ang kần tìm zì ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh muốn mua một cái áo sơ mi để mặc đi làm.",
+     "id": "Aku mau beli kemeja buat dipakai kerja.",
+     "literal": "kakak mau beli satu buah baju kemeja untuk pakai pergi kerja.",
+     "baca": "Ang muốn mua một kái áo sơ mi dể mặk di làm."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, anh mặc cỡ nào ạ? Cỡ M hay cỡ L ạ?",
+     "id": "Kak pakai ukuran apa? M atau L?",
+     "literal": "iya, kakak pakai ukuran mana ya? ukuran M atau ukuran L ya?",
+     "baca": "Zạ, ang mặk kỡ nào ạ? Kỡ M hay kỡ L ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh không rõ lắm. Ở Indonesia anh mặc cỡ M.",
+     "id": "Aku kurang tahu. Di Indonesia aku pakai M.",
+     "literal": "kakak tidak jelas sekali. di Indonesia kakak pakai ukuran M.",
+     "baca": "Ang không zõ lắm. Ở Indonesia ang mặk kỡ M."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh mặc thử cái màu xanh nhạt này nhé. Phòng thử đồ ở kia ạ.",
+     "id": "Coba pakai yang biru muda ini, ya. Kamar pasnya di sana.",
+     "literal": "kakak pakai coba buah warna biru pucat ini ya. kamar coba barang di sana ya.",
+     "baca": "Ang mặk thử kái màu sang nyạt này nyé. Fòng thử dồ ở kia ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minh ơi, trông tớ thế nào?",
+     "id": "Minh, aku kelihatan gimana?",
+     "literal": "Minh hai, kelihatan aku bagaimana?",
+     "baca": "Ming ơi, công tớ thế nào?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Màu này hợp với cậu, nhưng hơi chật ở vai.",
+     "id": "Warnanya cocok buatmu, tapi agak sempit di bahu.",
+     "literal": "warna ini cocok dengan kamu, tapi agak sempit di bahu.",
+     "baca": "Màu này hợp với kậu, nyưng hơi cật ở vai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ừ, tớ cũng thấy chật. Em ơi, có cỡ L không em?",
+     "id": "Iya, aku juga merasa sempit. Dik, ada ukuran L?",
+     "literal": "iya, aku juga rasa sempit. adik hai, ada ukuran L tidak adik?",
+     "baca": "Ừ, tớ kũng thấy cật. Em ơi, kó kỡ L không em?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ có ạ, đây anh.",
+     "id": "Ada, ini Kak.",
+     "literal": "iya ada ya, sini kakak.",
+     "baca": "Zạ kó ạ, dây ang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cái áo này có vừa không?",
+     "id": "Kemeja ini pas nggak?",
+     "literal": "buah baju ini ada pas tidak?",
+     "baca": "Kái áo này kó vừa không?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Vừa rồi. Trông cậu có vẻ chuyên nghiệp lắm.",
+     "id": "Sudah pas. Kamu kelihatan profesional banget.",
+     "literal": "pas sudah. kelihatan kamu ada rupa profesional sekali.",
+     "baca": "Vừa zồi. Công kậu kó vẻ cuyên ngiệp lắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thật à? Thế có cần thắt cà vạt không nhỉ?",
+     "id": "Serius? Terus perlu pakai dasi nggak, ya?",
+     "literal": "sungguh ya? lalu ada perlu ikat dasi tidak ya kan?",
+     "baca": "Thật à? Thế kó kần thắt kà vạt không nyỉ?"
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Không cần đâu. Mặc áo sơ mi, đi giày da là đủ lịch sự rồi.",
+     "id": "Nggak perlu. Pakai kemeja dan sepatu kulit sudah cukup rapi.",
+     "literal": "tidak perlu kok. pakai baju kemeja, jalan sepatu kulit adalah cukup sopan sudah.",
+     "baca": "Không kần dâu. Mặk áo sơ mi, di zày za là dủ lịk sự zồi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em ơi, anh lấy cái này. Bao nhiêu tiền em?",
+     "id": "Dik, aku ambil yang ini. Berapa?",
+     "literal": "adik hai, kakak ambil buah ini. berapa uang adik?",
+     "baca": "Em ơi, ang lấy kái này. Bao nyiêu tiền em?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, ba trăm năm mươi nghìn ạ.",
+     "id": "Tiga ratus lima puluh ribu, Kak.",
+     "literal": "iya, tiga ratus lima-puluh ribu ya.",
+     "baca": "Zạ, ba căm năm mươi ngìn ạ."
+    }
+   ],
+   "notes": [
+    "**Budi kini memakai *anh – em* dengan pramuniaga.** Pramuniaganya jelas lebih muda, jadi Budi menyebut dirinya *anh* dan memanggilnya *em* — persis yang dilakukan pembeli Vietnam. Di A1 ia masih memakai *em* ke semua orang; itu tidak salah, tapi terdengar seperti pelajar yang selalu merendah. Kalau ragu soal umur, *em* untuk dirimu tetap aman.",
+    "**Mặc thử — \"mencoba memakai\".** *Thử* ditaruh **sesudah** kata kerja: *mặc thử* (coba pakai), *ăn thử* (cicipi), *đi thử* (coba sepatunya). Tempat mencobanya *phòng thử đồ*, harfiahnya \"kamar coba barang\".",
+    "**Hơi chật ở vai — \"agak sempit di bahu\".** Bagian badan cukup disebut dengan *ở*: *chật ở vai*, *rộng ở eo* (longgar di pinggang), *ngắn ở tay* (pendek di lengan).",
+    "⚠️ **Vừa di sini berarti \"pas\", bukan \"baru saja\".** Kamu mengenal *vừa* dari unit 1 (*vừa về* — baru pulang); sebagai kata sifat ia berarti \"pas, cukup\". Letaknya yang membedakan: sebelum kata kerja \"baru saja\", sesudah benda atau sendirian \"pas\".",
+    "**Lịch sự — \"sopan, rapi, pantas\".** Untuk pakaian ia berarti rapi dan pantas dilihat, bukan mewah."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja \"memakai\" menurut bagian badan",
+     "body": [
+      "Bahasa Indonesia cukup punya \"pakai\". Bahasa Vietnam memilih kata kerja menurut **bagian badan** dan **cara benda itu melekat**. Salah pilih tidak membuatmu tak dimengerti, tapi terdengar lucu — seperti bilang \"mengenakan topi di kaki\"."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Untuk",
+       "Contoh",
+       "Melepasnya"
+      ],
+      "rows": [
+       [
+        "**mặc**",
+        "badan: baju, celana, rok, *áo dài*",
+        "*mặc áo sơ mi*",
+        "*cởi áo*"
+       ],
+       [
+        "**đội**",
+        "kepala: topi, helm, *nón lá*",
+        "*đội mũ bảo hiểm*",
+        "*bỏ mũ*"
+       ],
+       [
+        "**đeo**",
+        "yang digantung atau dipasang: kacamata, jam, masker, kalung, cincin, ransel",
+        "*đeo kính, đeo khẩu trang*",
+        "*tháo kính*"
+       ],
+       [
+        "**đi** (utara) / **mang**",
+        "kaki: sepatu, sandal, kaus kaki",
+        "*đi giày da, đi tất*",
+        "*cởi giày*"
+       ],
+       [
+        "**thắt**",
+        "yang diikat: dasi, ikat pinggang",
+        "*thắt cà vạt, thắt lưng*",
+        "*tháo cà vạt*"
+       ],
+       [
+        "**quàng**",
+        "yang dililitkan: syal",
+        "*quàng khăn*",
+        "*bỏ khăn*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Di utara sepatu dipakai dengan **đi** — *đi giày*, harfiahnya \"berjalan sepatu\". *Mang giày* juga dimengerti dan lebih umum di selatan, tapi di Hà Nội *mang* lebih sering berarti \"membawa\". Jadi *Anh mang giày à?* bisa terdengar \"Kamu bawa sepatu?\"."
+     ]
+    },
+    {
+     "title": "Pas, sempit, cocok — dan kelihatannya",
+     "body": [
+      "Kata sifat penilai ini ditaruh sesudah benda seperti kata sifat biasa. *Trông* dan *có vẻ* ditaruh di depan untuk kesan dari luar."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*vừa (với)*",
+        "pas (untuk)",
+        "*Cái áo này vừa với em.*"
+       ],
+       [
+        "*chật*",
+        "sempit, kekecilan",
+        "*Đôi giày này hơi chật.*"
+       ],
+       [
+        "*rộng*",
+        "longgar, kebesaran",
+        "*Quần này rộng quá.*"
+       ],
+       [
+        "*hợp với*",
+        "cocok dengan",
+        "*Màu đỏ hợp với chị.*"
+       ],
+       [
+        "*trông* + kata sifat",
+        "kelihatan …",
+        "*Trông anh trẻ quá!*"
+       ],
+       [
+        "*có vẻ* + kata sifat",
+        "tampaknya …, sepertinya …",
+        "*Anh ấy có vẻ mệt.*"
+       ],
+       [
+        "*trông … có vẻ …*",
+        "kelihatannya …",
+        "*Trông cái này có vẻ đắt.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Trông* menilai dari mata sendiri dan cukup lugas; *có vẻ* lebih berhati-hati, seperti \"sepertinya\". Bila digabung, *trông* ada di depan pokok atau sesudahnya: *Trông cậu có vẻ chuyên nghiệp* dan *Cậu trông có vẻ chuyên nghiệp* sama-sama benar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Đổi giày",
+   "intro": "Dua hari kemudian Budi kembali ke toko sepatu di sebuah pusat perbelanjaan. Sepatu kulit yang ia beli ternyata menyakitkan kaki. Pramuniaganya pemuda yang lebih muda darinya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Chào em. Hôm kia anh mua đôi giày này ở đây.",
+     "id": "Halo, Dik. Kemarin lusa aku beli sepatu ini di sini.",
+     "literal": "salam adik. kemarin-lusa kakak beli pasang sepatu ini di sini.",
+     "baca": "Cào em. Hôm kia ang mua dôi zày này ở dây."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, giày có vấn đề gì không anh?",
+     "id": "Sepatunya ada masalah, Kak?",
+     "literal": "iya, sepatu ada masalah apa tidak kakak?",
+     "baca": "Zạ, zày kó vấn dề zì không ang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh đi thử ở nhà thì thấy hơi chật. Anh muốn đổi sang số bốn mươi ba.",
+     "id": "Kupakai di rumah, rasanya agak sempit. Aku mau tukar ke nomor empat puluh tiga.",
+     "literal": "kakak jalan coba di rumah maka rasa agak sempit. kakak mau tukar seberang nomor empat-puluh tiga.",
+     "baca": "Ang di thử ở nyà thì thấy hơi cật. Ang muốn dổi sang số bốn mươi ba."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Anh còn giữ hóa đơn không ạ?",
+     "id": "Kuitansinya masih disimpan, Kak?",
+     "literal": "kakak masih simpan kuitansi tidak ya?",
+     "baca": "Ang kòn zữ hóa dơn không ạ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Còn, đây em. Anh chưa đi ra đường lần nào.",
+     "id": "Masih, ini. Belum pernah kupakai keluar sekali pun.",
+     "literal": "masih, sini adik. kakak belum jalan keluar jalan kali mana.",
+     "baca": "Kòn, dây em. Ang cưa di za dường lần nào."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, được ạ. Nhưng số bốn mươi ba màu đen hết rồi, chỉ còn màu nâu thôi.",
+     "id": "Bisa. Tapi nomor empat puluh tiga warna hitam habis, tinggal yang cokelat.",
+     "literal": "iya, bisa ya. tapi nomor empat-puluh tiga warna hitam habis sudah, hanya masih warna cokelat saja.",
+     "baca": "Zạ, dượk ạ. Nyưng số bốn mươi ba màu den hết zồi, cỉ kòn màu nâu thôi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Màu nâu có hợp với quần xám không em?",
+     "id": "Cokelat cocok nggak dengan celana abu-abu?",
+     "literal": "warna cokelat ada cocok dengan celana abu-abu tidak adik?",
+     "baca": "Màu nâu kó hợp với kwần sám không em?"
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Hợp lắm anh ạ. Anh đi thử nhé.",
+     "id": "Cocok sekali, Kak. Coba dipakai, ya.",
+     "literal": "cocok sekali kakak ya. kakak jalan coba ya.",
+     "baca": "Hợp lắm ang ạ. Ang di thử nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đôi này vừa lắm, đi rất êm.",
+     "id": "Yang ini pas sekali, empuk dipakai.",
+     "literal": "pasang ini pas sekali, jalan sangat empuk.",
+     "baca": "Dôi này vừa lắm, di zất êm."
+    },
+    {
+     "speaker": "Nhân viên:",
+     "text": "Dạ, em in lại hóa đơn mới cho anh nhé.",
+     "id": "Saya cetakkan kuitansi baru, ya.",
+     "literal": "iya, adik cetak kembali kuitansi baru untuk kakak ya.",
+     "baca": "Zạ, em in lại hóa dơn mới co ang nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cảm ơn em. Lần này thì anh không phải quay lại nữa rồi!",
+     "id": "Terima kasih. Kali ini aku nggak perlu balik lagi!",
+     "literal": "terima-kasih adik. kali ini maka kakak tidak harus putar kembali lagi sudah!",
+     "baca": "Kảm ơn em. Lần này thì ang không fải kway lại nữa zồi!"
+    }
+   ],
+   "notes": [
+    "**Đổi sang — \"tukar ke\".** *Sang* (seberang) menunjuk tujuan pertukarannya: *đổi sang số bốn mươi ba*, *đổi sang màu đen*. Tanpa tujuan cukup *đổi*: *Em muốn đổi cái này.*",
+    "**Nomor sepatu memakai *số*, ukuran baju memakai *cỡ*.** *Giày số bốn mươi ba* (sepatu nomor 43), *áo cỡ L*. Orang muda juga sering bilang *size* langsung dari bahasa Inggris: *size L*.",
+    "**Chưa … lần nào — \"belum sekali pun\".** *Anh chưa đi ra đường lần nào* = \"belum pernah kupakai keluar sekali pun\". Ini alasan terkuatmu ketika menukar barang.",
+    "**Êm — \"empuk, nyaman\".** Untuk sepatu, kasur, kursi, bahkan mobil yang jalannya halus. *Đi rất êm* = \"sangat nyaman dipakai berjalan\".",
+    "**Hóa đơn — \"kuitansi, faktur\".** Seri ini memakai ejaan tanda nada gaya baru (*hóa, hòa, khỏe*); di papan toko kamu juga akan melihat *hoá đơn*. Keduanya kata yang sama."
+   ],
+   "grammars": [
+    {
+     "title": "Menukar dan mengembalikan barang",
+     "body": [
+      "Kalimat-kalimat ini hampir selalu dimulai dengan menyebut masalahnya dulu, lalu permintaannya."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Cái này hơi chật / rộng quá.*",
+        "Yang ini agak sempit / terlalu longgar."
+       ],
+       [
+        "*Em muốn đổi sang cỡ khác.*",
+        "Aku mau tukar ke ukuran lain."
+       ],
+       [
+        "*Có cỡ to hơn / nhỏ hơn không?*",
+        "Ada ukuran lebih besar / kecil?"
+       ],
+       [
+        "*Có màu khác không?*",
+        "Ada warna lain?"
+       ],
+       [
+        "*Em muốn trả lại cái này.*",
+        "Aku mau mengembalikan ini."
+       ],
+       [
+        "*Được đổi trong mấy ngày?*",
+        "Bisa ditukar dalam berapa hari?"
+       ],
+       [
+        "*Cho em xin hóa đơn.*",
+        "Minta kuitansinya."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Aturan tukar-kembali berbeda di tiap toko. Di toko bermerek biasanya ada batas hari dan barang harus disertai *hóa đơn*; di pasar, barang yang sudah dibeli umumnya tak bisa dikembalikan. Tanyakan sebelum membayar: *Được đổi trong mấy ngày?*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Warna",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "màu đỏ",
+       "màu dỏ",
+       "merah"
+      ],
+      [
+       "màu vàng",
+       "màu vàng",
+       "kuning"
+      ],
+      [
+       "màu xanh da trời / xanh dương",
+       "màu sang za cời / sang zương",
+       "biru"
+      ],
+      [
+       "màu xanh lá cây",
+       "màu sang lá kây",
+       "hijau"
+      ],
+      [
+       "màu trắng",
+       "màu cắng",
+       "putih"
+      ],
+      [
+       "màu đen",
+       "màu den",
+       "hitam"
+      ],
+      [
+       "màu nâu",
+       "màu nâu",
+       "cokelat"
+      ],
+      [
+       "màu xám / màu ghi",
+       "màu sám / màu gi",
+       "abu-abu"
+      ],
+      [
+       "màu hồng",
+       "màu hồng",
+       "merah muda"
+      ],
+      [
+       "màu tím",
+       "màu tím",
+       "ungu"
+      ],
+      [
+       "xanh nhạt / đỏ đậm",
+       "sang nyạt / dỏ dậm",
+       "biru muda / merah tua"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ *Xanh* sendirian bisa berarti biru **atau** hijau — langit *xanh*, daun juga *xanh*. Untuk memastikan, tambahkan bendanya: *xanh da trời* (biru langit), *xanh lá cây* (hijau daun). Untuk muda dan tua, pakai *nhạt* (pucat) dan *đậm* (pekat) di belakang: *hồng nhạt*, *nâu đậm*. Di Hà Nội abu-abu sering disebut *ghi*, dari bahasa Prancis *gris*."
+    },
+    {
+     "type": "kotak",
+     "title": "Berbelanja di phố cổ",
+     "items": [
+      "Nama banyak jalan di kota tua Hà Nội dimulai dengan *Hàng* (\"barang dagangan\"): *Hàng Bạc* (perak), *Hàng Mã* (kertas sesaji), *Hàng Đào*. Dulu tiap jalan dihuni perajin atau pedagang satu jenis barang; kini isinya sudah bercampur, tapi namanya tetap.",
+      "*Phố Hàng Đào* dulu dikenal sebagai jalan pedagang kain sutra dan sekarang penuh toko pakaian. Di ujung utaranya berdiri *chợ Đồng Xuân*, salah satu pasar tertua dan terbesar di kota ini.",
+      "Di pasar, tawar-menawar itu wajar; di toko bergaya modern dengan label harga, umumnya harga pas. Pada malam akhir pekan, jalan dari Hàng Đào ke arah chợ Đồng Xuân ditutup untuk *chợ đêm* (pasar malam)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Isi lemari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "áo phông",
+       "áo fông",
+       "kaus oblong"
+      ],
+      [
+       "áo khoác",
+       "áo khoák",
+       "jaket"
+      ],
+      [
+       "áo len",
+       "áo len",
+       "sweter"
+      ],
+      [
+       "quần bò",
+       "kwần bò",
+       "celana jins"
+      ],
+      [
+       "quần âu",
+       "kwần âu",
+       "celana bahan"
+      ],
+      [
+       "váy",
+       "váy",
+       "rok; gaun"
+      ],
+      [
+       "giày thể thao",
+       "zày thể thao",
+       "sepatu olahraga"
+      ],
+      [
+       "dép",
+       "zép",
+       "sandal"
+      ],
+      [
+       "tất",
+       "tất",
+       "kaus kaki"
+      ],
+      [
+       "thắt lưng",
+       "thắt lưng",
+       "ikat pinggang"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Beberapa nama pakaian berbeda antara utara dan selatan. Yang tertulis di tabel adalah bentuk Hà Nội; di Sài Gòn kamu akan mendengar *áo thun* untuk kaus, *quần jean* untuk jins, dan *vớ* untuk kaus kaki. Kamu cukup mengenalinya dulu — bahasan logat selatan menyusul di B1."
+    },
+    {
+     "type": "kotak",
+     "title": "Áo dài",
+     "items": [
+      "*Áo dài* adalah busana nasional Vietnam: tunik panjang berbelah di kedua sisi, dipakai di atas celana panjang longgar. Harfiahnya \"baju panjang\".",
+      "Perempuan memakainya di acara resmi, pernikahan, dan Tết; di sebagian sekolah menengah atas ia menjadi seragam siswi. Laki-laki juga punya *áo dài*, tapi kini biasanya hanya dipakai di pernikahan atau acara adat.",
+      "*Áo dài* yang bagus dijahit sesuai badan: penjahit akan *đo* (mengukur) badanmu, lalu kamu datang lagi untuk mencoba. Kalimatnya: *Em muốn may một bộ áo dài.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Aku baru mengirimkan program tur ke kamu lewat email.",
+       "*Chị vừa gửi cho em chương trình tour qua email.*"
+      ],
+      [
+       "Sore ini saya kirim terjemahannya ke Kakak, ya.",
+       "*Chiều nay em gửi bản dịch cho chị nhé.*"
+      ],
+      [
+       "Oh ya, aku minta tolong kamu ke kantor pos mengirimkan kontrak-kontrak ini.",
+       "*À, chị nhờ em ra bưu điện gửi hộ mấy cái hợp đồng này.*"
+      ],
+      [
+       "Bisa tolong sampaikan ke Pak Quang untuk menelepon saya kembali?",
+       "*Chị nhắn anh Quang gọi lại cho em được không ạ?*"
+      ],
+      [
+       "Baik, pesannya akan saya sampaikan ke Pak Quang.",
+       "*Dạ, em sẽ chuyển lời cho anh Quang ạ.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "mặc",
+   "baca": "mặk",
+   "id": "memakai (baju, celana)"
+  },
+  {
+   "vi": "đội",
+   "baca": "dội",
+   "id": "memakai (di kepala)"
+  },
+  {
+   "vi": "đeo",
+   "baca": "deo",
+   "id": "memakai (kacamata, jam, masker)"
+  },
+  {
+   "vi": "đi giày",
+   "baca": "di zày",
+   "id": "memakai sepatu"
+  },
+  {
+   "vi": "thắt",
+   "baca": "thắt",
+   "id": "mengikat; memakai (dasi, sabuk)"
+  },
+  {
+   "vi": "cởi",
+   "baca": "kởi",
+   "id": "melepas (baju, sepatu)"
+  },
+  {
+   "vi": "áo sơ mi",
+   "baca": "áo sơ mi",
+   "id": "kemeja"
+  },
+  {
+   "vi": "cà vạt",
+   "baca": "kà vạt",
+   "id": "dasi"
+  },
+  {
+   "vi": "giày da",
+   "baca": "zày za",
+   "id": "sepatu kulit"
+  },
+  {
+   "vi": "cỡ",
+   "baca": "kỡ",
+   "id": "ukuran (baju)"
+  },
+  {
+   "vi": "số",
+   "baca": "số",
+   "id": "nomor (sepatu)"
+  },
+  {
+   "vi": "vừa",
+   "baca": "vừa",
+   "id": "pas"
+  },
+  {
+   "vi": "chật",
+   "baca": "cật",
+   "id": "sempit, kekecilan"
+  },
+  {
+   "vi": "rộng",
+   "baca": "zộng",
+   "id": "longgar, kebesaran"
+  },
+  {
+   "vi": "hợp với",
+   "baca": "hợp với",
+   "id": "cocok dengan"
+  },
+  {
+   "vi": "trông",
+   "baca": "công",
+   "id": "kelihatan"
+  },
+  {
+   "vi": "có vẻ",
+   "baca": "kó vẻ",
+   "id": "tampaknya, sepertinya"
+  },
+  {
+   "vi": "lịch sự",
+   "baca": "lịk sự",
+   "id": "rapi, sopan, pantas"
+  },
+  {
+   "vi": "chuyên nghiệp",
+   "baca": "cuyên ngiệp",
+   "id": "profesional"
+  },
+  {
+   "vi": "phòng thử đồ",
+   "baca": "fòng thử dồ",
+   "id": "kamar pas"
+  },
+  {
+   "vi": "đổi",
+   "baca": "dổi",
+   "id": "menukar"
+  },
+  {
+   "vi": "hóa đơn",
+   "baca": "hóa dơn",
+   "id": "kuitansi, faktur"
+  },
+  {
+   "vi": "êm",
+   "baca": "êm",
+   "id": "empuk, nyaman"
+  },
+  {
+   "vi": "vai",
+   "baca": "vai",
+   "id": "bahu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Kemeja ini agak sempit di bahu.",
+    "Warna ini cocok denganmu. (kepada teman sebaya, *cậu*)",
+    "Dia memakai kacamata dan topi. (*anh ấy*)",
+    "Kamu kelihatan capek. (kepada adik)",
+    "Aku mau tukar ke ukuran L. (*tôi*)",
+    "Sepatu ini pas dan empuk."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "Trời lạnh, em nhớ ____ áo khoác nhé. (memakai — badan)",
+    "Ra đường phải ____ mũ bảo hiểm. (memakai — kepala)",
+    "Ông ấy ____ kính khi đọc báo. (memakai — kacamata)",
+    "Hôm nay anh ____ giày thể thao. (memakai — kaki, utara)",
+    "Đi phỏng vấn thì nên ____ cà vạt. (memakai — dasi)",
+    "Cái quần này ____ quá, em không mặc được. (sempit)",
+    "Màu đỏ rất ____ với chị. (cocok)"
+   ]
+  },
+  {
+   "prompt": "Jawab dalam bahasa Vietnam memakai petunjuk di dalam kurung.",
+   "items": [
+    "Cái áo này có vừa không? (tidak, agak longgar) →",
+    "Trông tớ thế nào? (kelihatan profesional) →",
+    "Anh mặc cỡ nào? (L) →",
+    "Anh đi giày số mấy? (42) →",
+    "Màu nâu có hợp với quần xám không? (cocok sekali) →",
+    "Chị muốn đổi gì ạ? (tukar ke warna hitam) →"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "hợp / màu này / cậu / với",
+    "nhớ / mũ bảo hiểm / đội / em",
+    "chật / ở / hơi / vai / cái áo này",
+    "có vẻ / trông / mệt / anh ấy",
+    "đổi / muốn / tôi / sang / cỡ L"
+   ]
+  }
+ ],
+ "answers": [
+  "Cái áo sơ mi này hơi chật ở vai. — Màu này hợp với cậu. — Anh ấy đeo kính và đội mũ. — Trông em có vẻ mệt. (atau Em trông mệt quá.) — Tôi muốn đổi sang cỡ L. — Đôi giày này vừa và êm.",
+  "mặc — đội — đeo — đi — thắt — chật — hợp",
+  "Không, hơi rộng. — Trông cậu có vẻ chuyên nghiệp. — Anh mặc cỡ L. — Anh đi giày số bốn mươi hai. — Hợp lắm. — Chị muốn đổi sang màu đen. (atau Tôi muốn đổi sang màu đen.)",
+  "Màu này hợp với cậu. — Em nhớ đội mũ bảo hiểm. — Cái áo này hơi chật ở vai. — Trông anh ấy có vẻ mệt. — Tôi muốn đổi sang cỡ L."
+ ]
+}

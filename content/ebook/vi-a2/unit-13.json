@@ -1,0 +1,689 @@
+{
+ "title": "Di dokter — badan dan keadaan",
+ "title_target": "Em thấy trong người khó chịu.",
+ "goal": "Menjelaskan keluhan kepada dokter dan apoteker, memahami aturan minum obat, dan mengabarkan bahwa kamu sudah membaik. Titik tata bahasanya: *thấy* (merasa), *bị* + penyakit, *đỡ / khỏi / khỏe lại*, *càng ngày càng*, dan takaran obat (*ngày uống ba lần, mỗi lần một viên*).",
+ "bekal": [
+  "menyebut keluhan dengan *bị sốt, bị ho, đau họng* dan perasaan badan dengan *thấy mệt, thấy khó chịu*",
+  "memahami aturan minum obat dan menanyakan kapan sembuh",
+  "membedakan *đỡ* (membaik), *khỏi* (sembuh), dan *khỏe lại* (sehat kembali)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ở phòng khám",
+   "intro": "Akhir Juni, udara Hà Nội panas dan lembap. Sudah dua hari Budi demam. Pagi tadi Linh — yang dokter — meneleponnya dan menyuruhnya segera ke klinik dekat apartemen. Dokternya laki-laki berumur sekitar empat puluhan.",
+   "lines": [
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Mời em ngồi. Em thấy trong người thế nào?",
+     "id": "Silakan duduk. Apa yang kamu rasakan?",
+     "literal": "silakan adik duduk. adik rasa dalam orang bagaimana?",
+     "baca": "Mời em ngồi. Em thấy cong người thế nào?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, em thấy trong người khó chịu lắm ạ.",
+     "id": "Saya merasa tidak enak badan sekali, Dok.",
+     "literal": "ya, adik rasa dalam orang tidak-nyaman sangat ya.",
+     "baca": "Zạ, em thấy cong người khó cịu lắm ạ."
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Em bị sốt từ bao giờ?",
+     "id": "Sejak kapan demamnya?",
+     "literal": "adik kena demam dari kapan?",
+     "baca": "Em bị sốt từ bao zờ?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Từ hôm kia ạ. Đêm qua em sốt ba mươi chín độ.",
+     "id": "Sejak kemarin lusa. Tadi malam demam saya 39 derajat.",
+     "literal": "dari hari lusa-lalu ya. malam lalu adik demam tiga puluh sembilan derajat.",
+     "baca": "Từ hôm kia ạ. Dêm kwa em sốt ba mươi cín dộ."
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Em có bị ho hay đau họng không?",
+     "id": "Ada batuk atau sakit tenggorokan?",
+     "literal": "adik ada kena batuk atau sakit tenggorokan tidak?",
+     "baca": "Em kó bị ho hay dau họng không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em bị ho một chút. Em thấy càng ngày càng mệt ạ.",
+     "id": "Batuk sedikit. Saya merasa makin hari makin lemas.",
+     "literal": "adik kena batuk satu sedikit. adik rasa makin hari makin capek ya.",
+     "baca": "Em bị ho một cút. Em thấy kàng ngày kàng mệt ạ."
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Em há miệng ra nào… Họng hơi sưng. Em bị cảm cúm thôi, không nặng đâu.",
+     "id": "Coba buka mulut… Tenggorokannya agak bengkak. Cuma flu, tidak berat kok.",
+     "literal": "adik buka mulut keluar nah… tenggorokan agak bengkak. adik kena flu saja, tidak berat kok.",
+     "baca": "Em há miệng za nào… Họng hơi sưng. Em bị kảm kúm thôi, không nặng dâu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Thế em phải uống thuốc thế nào ạ?",
+     "id": "Jadi saya harus minum obatnya bagaimana?",
+     "literal": "begitu adik harus minum obat bagaimana ya?",
+     "baca": "Thế em fải uống thuốk thế nào ạ?"
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Thuốc hạ sốt này ngày uống ba lần, mỗi lần một viên.",
+     "id": "Obat penurun demam ini diminum tiga kali sehari, sekali satu tablet.",
+     "literal": "obat turunkan demam ini hari minum tiga kali, setiap kali satu butir.",
+     "baca": "Thuốk hạ sốt này ngày uống ba lần, mỗi lần một viên."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, uống trước hay sau khi ăn ạ?",
+     "id": "Baik. Diminum sebelum atau sesudah makan, Dok?",
+     "literal": "ya, minum sebelum atau sesudah makan ya?",
+     "baca": "Zạ, uống cướk hay sau khi ăn ạ?"
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Sau khi ăn. Nếu hai ngày nữa vẫn sốt cao thì quay lại đây.",
+     "id": "Sesudah makan. Kalau dua hari lagi masih demam tinggi, kembali ke sini.",
+     "literal": "sesudah makan. jika dua hari lagi masih demam tinggi maka putar kembali sini.",
+     "baca": "Sau khi ăn. Nếu hai ngày nữa vẫn sốt kao thì kway lại dây."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ. Mấy ngày thì em khỏi ạ?",
+     "id": "Baik. Berapa hari saya sembuh, Dok?",
+     "literal": "ya. berapa hari maka adik sembuh ya?",
+     "baca": "Zạ. Mấy ngày thì em khỏi ạ?"
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Nghỉ ngơi, uống nhiều nước thì ba bốn ngày là khỏe lại thôi.",
+     "id": "Kalau istirahat dan banyak minum, tiga-empat hari juga sudah sehat lagi.",
+     "literal": "istirahat, minum banyak air maka tiga empat hari adalah sehat kembali saja.",
+     "baca": "Ngỉ ngơi, uống nyiều nướk thì ba bốn ngày là khỏe lại thôi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Phòng khám có nhận bảo hiểm không ạ?",
+     "id": "Klinik ini menerima asuransi?",
+     "literal": "kamar-periksa ada terima asuransi tidak ya?",
+     "baca": "Fòng khám kó nyận bảo hiểm không ạ?"
+    },
+    {
+     "speaker": "Bác sĩ:",
+     "text": "Em hỏi quầy lễ tân nhé. Nhớ xin hóa đơn để làm hồ sơ bảo hiểm.",
+     "id": "Tanya di meja depan ya. Jangan lupa minta kuitansi untuk klaim asuransi.",
+     "literal": "adik tanya meja resepsionis ya. ingat minta kuitansi untuk buat berkas asuransi.",
+     "baca": "Em hỏi kwầy lễ tân nyé. Nyớ sin hóa dơn dể làm hồ sơ bảo hiểm."
+    }
+   ],
+   "notes": [
+    "**Em thấy trong người khó chịu: \"badanku terasa tidak enak\".** *Thấy* berarti \"merasa\" (dan juga \"melihat\"), *trong người* \"di dalam badan\", *khó chịu* \"tidak nyaman\" — harfiahnya \"sukar menanggung\". Inilah kalimat pembuka paling umum di depan dokter, persis \"tidak enak badan\" kita.",
+    "**Bị + penyakit: \"kena\" demam, batuk, flu.** Sejak A1 kamu tahu *bị* untuk hal yang merugikan. Penyakit adalah contoh terbaiknya: *bị sốt, bị ho, bị cảm*. Di jawaban singkat *bị* boleh hilang (*Đêm qua em sốt ba mươi chín độ*), tapi di pertanyaan dokter ia biasanya muncul.",
+    "**Từ bao giờ? = sejak kapan?** *Từ* berarti \"dari, sejak\". Jawabannya cukup keterangan waktunya: *Từ hôm kia* (sejak kemarin lusa), *Từ tối qua* (sejak semalam), *Từ tuần trước* (sejak minggu lalu).",
+    "**Há miệng ra: kata arah dari unit 11 bekerja lagi.** Mulut yang membuka bergerak \"keluar\", jadi dokter berkata *há miệng ra*. Begitu juga *thè lưỡi ra* (julurkan lidah) dan *hít vào, thở ra* (tarik napas, embuskan) saat dokter memeriksa paru-paru.",
+    "**Không cần kháng sinh.** Dokter tidak memberi antibiotik untuk flu biasa, karena flu disebabkan virus. Kalimat yang berguna kalau kamu ragu: *Em có cần uống kháng sinh không ạ?* — lalu percayakan jawabannya kepada dokter."
+   ],
+   "grammars": [
+    {
+     "title": "Keluhan: bị, đau, thấy",
+     "body": [
+      "Tiga pola ini menampung hampir semua keluhan. *Bị* untuk penyakit dan kejadian, *đau* + bagian badan untuk rasa sakit, *thấy* + keadaan untuk yang kamu rasakan."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*bị* + penyakit",
+        "*bị sốt, bị ho, bị cảm, bị sổ mũi*",
+        "demam, batuk, flu, pilek"
+       ],
+       [
+        "*bị* + kejadian",
+        "*bị tiêu chảy, bị dị ứng, bị ngộ độc*",
+        "diare, alergi, keracunan"
+       ],
+       [
+        "*(bị) đau* + bagian badan",
+        "*đau đầu, đau họng, đau bụng, đau răng*",
+        "sakit kepala, tenggorokan, perut, gigi"
+       ],
+       [
+        "*thấy* + keadaan",
+        "*thấy mệt, thấy chóng mặt, thấy buồn nôn*",
+        "lemas, pusing, mual"
+       ],
+       [
+        "*thấy trong người* + keadaan",
+        "*thấy trong người khó chịu*",
+        "tidak enak badan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Untuk menyebut keluhan, *đau* ditaruh di depan bagian badan** (*đau đầu, đau bụng*), sama dengan \"sakit kepala\" kita. Susunan terbalik (*bụng đau quá!*) juga terdengar ketika orang menekankan rasa sakitnya saat itu, tapi di depan dokter *đau* + bagian badan-lah yang wajar."
+     ]
+    },
+    {
+     "title": "Membaik, sembuh, sehat lagi — dan makin lama makin",
+     "body": [
+      "Tiga kata ini sering tertukar oleh pemula, padahal masing-masing menandai tahap yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Tahap",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*đỡ*",
+        "membaik, belum sembuh",
+        "*Em đỡ nhiều rồi.* (sudah jauh membaik)"
+       ],
+       [
+        "*khỏi*",
+        "sembuh, penyakitnya hilang",
+        "*Em khỏi ho rồi.* (batuknya sudah hilang)"
+       ],
+       [
+        "*khỏe lại*",
+        "sehat dan bertenaga lagi",
+        "*Ba ngày là khỏe lại.*"
+       ],
+       [
+        "*càng ngày càng* + sifat",
+        "makin hari makin",
+        "*Em thấy càng ngày càng mệt.*"
+       ],
+       [
+        "*ngày càng* + sifat",
+        "sama, lebih ringkas; sering di tulisan",
+        "*Trời ngày càng nóng.*"
+       ]
+      ]
+     },
+     "after": [
+      "Pertanyaan yang pasti kamu dengar dari teman sesudah sakit: *Em đỡ chưa?* — sudah baikan? Jawaban jujurnya bertahap: *Em đỡ rồi*, lalu *Em khỏi rồi*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ở nhà thuốc",
+   "intro": "Tiga hari kemudian Budi sudah membaik, tapi Minh tertular. Budi mampir ke apotek kecil di mulut gang. Pemiliknya seorang ibu seumuran ibu Budi, jadi Budi memanggilnya *cô* dan menyebut diri *cháu*.",
+   "lines": [
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Cháu cần mua thuốc gì?",
+     "id": "Mau beli obat apa, Nak?",
+     "literal": "cucu perlu beli obat apa?",
+     "baca": "Cáu kần mua thuốk zì?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, cháu mua thuốc cho bạn cháu. Bạn ấy bị cảm ạ.",
+     "id": "Saya beli obat untuk teman saya. Dia kena flu, Bu.",
+     "literal": "ya, cucu beli obat beri teman cucu. teman itu kena flu ya.",
+     "baca": "Zạ, cáu mua thuốk co bạn cáu. Bạn ấy bị kảm ạ."
+    },
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Bạn cháu thấy thế nào? Có sốt không?",
+     "id": "Temanmu merasa bagaimana? Demam?",
+     "literal": "teman cucu rasa bagaimana? ada demam tidak?",
+     "baca": "Bạn cáu thấy thế nào? Kó sốt không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Có ạ, sốt nhẹ, bị sổ mũi và đau họng.",
+     "id": "Iya, demam ringan, pilek, dan sakit tenggorokan.",
+     "literal": "ada ya, demam ringan, kena ingus-keluar dan sakit tenggorokan.",
+     "baca": "Kó ạ, sốt nyẹ, bị sổ mũi và dau họng."
+    },
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Bị từ bao giờ rồi?",
+     "id": "Sudah sejak kapan?",
+     "literal": "kena dari kapan sudah?",
+     "baca": "Bị từ bao zờ zồi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Từ tối qua ạ. Chắc bạn ấy bị lây từ cháu.",
+     "id": "Sejak semalam. Mungkin dia ketularan dari saya.",
+     "literal": "dari malam lalu ya. mungkin teman itu kena tular dari cucu.",
+     "baca": "Từ tối kwa ạ. Cắk bạn ấy bị lây từ cáu."
+    },
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Thế cháu khỏi chưa?",
+     "id": "Lalu kamu sendiri sudah sembuh?",
+     "literal": "begitu cucu sembuh belum?",
+     "baca": "Thế cáu khỏi cưa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, cháu đỡ nhiều rồi, nhưng vẫn còn ho một chút.",
+     "id": "Sudah jauh membaik, tapi masih batuk sedikit.",
+     "literal": "ya, cucu reda banyak sudah, tetapi masih tersisa batuk satu sedikit.",
+     "baca": "Zạ, cáu dỡ nyiều zồi, nyưng vẫn kòn ho một cút."
+    },
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Thuốc này người lớn ngày uống hai lần, mỗi lần hai viên.",
+     "id": "Obat ini untuk dewasa diminum dua kali sehari, sekali dua tablet.",
+     "literal": "obat ini orang besar hari minum dua kali, setiap kali dua butir.",
+     "baca": "Thuốk này người lớn ngày uống hai lần, mỗi lần hai viên."
+    },
+    {
+     "speaker": "Cô dược sĩ:",
+     "text": "Nếu ba ngày không đỡ thì phải đi khám đấy.",
+     "id": "Kalau tiga hari tidak membaik, harus periksa ke dokter lho.",
+     "literal": "jika tiga hari tidak reda maka harus pergi periksa tuh.",
+     "baca": "Nếu ba ngày không dỡ thì fải di khám dấy."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, cháu nhớ rồi. Cháu cảm ơn cô ạ.",
+     "id": "Baik, saya ingat. Terima kasih, Bu.",
+     "literal": "ya, cucu ingat sudah. cucu terima-kasih tante ya.",
+     "baca": "Zạ, cáu nyớ zồi. Cáu kảm ơn kô ạ."
+    }
+   ],
+   "notes": [
+    "**Bị lây = ketularan.** *Lây* berarti \"menular\"; yang tertular *bị lây*, dan asal penularannya ditandai *từ*: *bị lây từ cháu*. Penyakit yang menular disebut *bệnh truyền nhiễm*, tapi sehari-hari cukup *Bệnh này có lây không?*",
+    "**Sổ mũi = pilek (hidung meler).** Pasangannya *nghẹt mũi* (hidung tersumbat) dan *hắt hơi* (bersin). Tiga kata ini ditambah *ho* dan *sốt* sudah cukup untuk menjelaskan flu kepada apoteker mana pun.",
+    "**Cô dan cháu di apotek.** Petugas muda di toko besar akan memanggilmu *anh* dan menyebut diri *em*, seperti di A1. Tapi di apotek keluarga yang dijaga pemiliknya yang sudah berumur, *cô – cháu* terasa lebih wajar dan lebih hangat.",
+    "**Đi khám = pergi periksa ke dokter.** *Khám* berarti \"memeriksa (badan)\", dan *đi khám* sudah berarti \"ke dokter\" tanpa perlu menyebut dokternya. *Khám bệnh* adalah pemeriksaan, *phòng khám* tempatnya."
+   ],
+   "grammars": [
+    {
+     "title": "Aturan minum obat",
+     "body": [
+      "Aturan pakai di bungkus obat dan di mulut apoteker memakai rangka yang sama: **berapa kali sehari**, lalu **berapa banyak sekali minum**, lalu **kapan**."
+     ],
+     "table": {
+      "head": [
+       "Tiếng Việt",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Ngày uống ba lần.*",
+        "Diminum tiga kali sehari."
+       ],
+       [
+        "*Mỗi lần một viên.*",
+        "Sekali minum satu tablet."
+       ],
+       [
+        "*Mỗi lần một gói / một thìa.*",
+        "Sekali satu sachet / satu sendok."
+       ],
+       [
+        "*Uống trước khi ăn / sau khi ăn.*",
+        "Diminum sebelum / sesudah makan."
+       ],
+       [
+        "*Uống trước khi đi ngủ.*",
+        "Diminum sebelum tidur."
+       ],
+       [
+        "*Uống với nhiều nước.*",
+        "Diminum dengan banyak air."
+       ],
+       [
+        "*Không uống quá bốn viên một ngày.*",
+        "Jangan lebih dari empat tablet sehari."
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan bahwa *ngày* di depan (*ngày uống ba lần*) berarti \"per hari\" — tak perlu \"setiap\". *Viên* adalah penggolong untuk benda kecil bulat: tablet, pil, dan juga *viên kẹo* (sebutir permen)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluhan yang sering dibutuhkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Em bị đau bụng.",
+       "Em bị dau bụng.",
+       "Saya sakit perut."
+      ],
+      [
+       "Em bị tiêu chảy.",
+       "Em bị tiêu cảy.",
+       "Saya diare."
+      ],
+      [
+       "Em bị dị ứng với hải sản.",
+       "Em bị zị ứng với hải sản.",
+       "Saya alergi makanan laut."
+      ],
+      [
+       "Em bị say nắng.",
+       "Em bị say nắng.",
+       "Saya kena sengatan panas."
+      ],
+      [
+       "Em bị muỗi đốt nhiều lắm.",
+       "Em bị muỗi dốt nyiều lắm.",
+       "Saya digigit banyak nyamuk."
+      ],
+      [
+       "Em thấy chóng mặt.",
+       "Em thấy cóng mặt.",
+       "Saya pusing."
+      ],
+      [
+       "Em bị ốm, hôm nay không đi làm được.",
+       "Em bị ốm, hôm nay không di làm dượk.",
+       "Saya sakit, hari ini tidak bisa masuk kerja."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ **Ốm di utara berarti \"sakit\"**: *Em bị ốm* = saya sakit, *nghỉ ốm* = cuti sakit. Di selatan, \"sakit\" adalah *bệnh*, sedangkan *ốm* justru berarti \"kurus\". Karena itu orang Hà Nội bilang *Hôm nay em ốm*, orang Sài Gòn bilang *Hôm nay em bệnh*. *Bệnh viện* (rumah sakit) dan *bị bệnh* dipakai di seluruh negeri."
+    },
+    {
+     "type": "kotak",
+     "title": "Berobat di Hà Nội",
+     "items": [
+      "**Klinik (*phòng khám*) biasanya lebih cepat daripada rumah sakit besar**, yang antreannya bisa panjang sejak pagi. Banyak orang asing memakai klinik internasional yang stafnya berbahasa Inggris, dengan biaya yang lebih tinggi.",
+      "**Apotek (*nhà thuốc*) ada di hampir setiap jalan**, dan apotekernya terbiasa memberi saran untuk keluhan ringan. Antibiotik secara aturan memerlukan resep dokter; jangan memintanya untuk flu biasa.",
+      "**Musim hujan membawa demam berdarah (*sốt xuất huyết*).** Kasusnya biasanya memuncak di akhir musim panas dan awal musim gugur. Demam tinggi mendadak dengan nyeri sendi adalah alasan untuk segera *đi khám*, bukan menunggu. Nomor ambulans: 115."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menjenguk dan menanyakan kabar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Em đỡ chưa?",
+       "Em dỡ cưa?",
+       "Sudah baikan?"
+      ],
+      [
+       "Em đã đi khám chưa?",
+       "Em dã di khám cưa?",
+       "Sudah periksa ke dokter?"
+      ],
+      [
+       "Nghỉ ngơi cho khỏe nhé.",
+       "Ngỉ ngơi co khỏe nyé.",
+       "Istirahat yang cukup, ya."
+      ],
+      [
+       "Uống nhiều nước vào.",
+       "Uống nyiều nướk vào.",
+       "Banyak-banyak minum air."
+      ],
+      [
+       "Có cần chị mang gì đến không?",
+       "Kó kần cị mang zì dến không?",
+       "Perlu kubawakan sesuatu?"
+      ],
+      [
+       "Chúc em chóng khỏe!",
+       "Cúk em cóng khỏe!",
+       "Semoga cepat sembuh!"
+      ],
+      [
+       "Em khỏi hẳn rồi ạ.",
+       "Em khỏi hẳn zồi ạ.",
+       "Saya sudah sembuh total."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Chúc em chóng khỏe* dan *Chúc em mau khỏe* sama-sama berarti \"semoga cepat sembuh\"; *chóng* terasa lebih utara. Orang Vietnam menjenguk orang sakit dengan membawa buah, susu, atau semangkuk *cháo* (bubur nasi). Untuk masuk angin, yang klasik adalah *cháo hành* — bubur panas dengan daun bawang, dimakan selagi mengepul sampai berkeringat."
+    },
+    {
+     "type": "kotak",
+     "title": "Obat rumahan ala Vietnam",
+     "items": [
+      "***Cạo gió*** — menggosok punggung dengan koin atau sendok berminyak sampai kulitnya merah, dipercaya \"mengeluarkan angin\". Orang Indonesia langsung mengenalinya: ini saudara dekat kerokan.",
+      "***Xông*** — menghirup uap dari panci berisi air mendidih dan daun-daunan (serai, daun jeruk, daun jambu), dengan kepala ditutup kain. Dipakai untuk flu dan hidung tersumbat.",
+      "**Gừng, chanh, mật ong** — jahe, jeruk nipis, dan madu diseduh air panas untuk sakit tenggorokan. Semua ini kebiasaan rumahan, bukan pengganti *đi khám* kalau demamnya tinggi atau tak kunjung turun."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Ayo naik ke perahu, duduk hati-hati ya!",
+       "*Các cháu lên thuyền đi, ngồi xuống cẩn thận nhé!*"
+      ],
+      [
+       "Gelap banget! Masukkan HP-mu ke saku.",
+       "*Tối quá! Cậu cất điện thoại vào túi đi.*"
+      ],
+      [
+       "Naiknya capek, tapi turunnya malah lebih susah.",
+       "*Leo lên thì mệt, nhưng đi xuống còn khó hơn.*"
+      ],
+      [
+       "Bisa tolong bawakan naik ke lantai tiga, Mas?",
+       "*Anh mang lên tầng ba giúp em được không ạ?*"
+      ],
+      [
+       "Saya lari turun ambil dua kotak lagi.",
+       "*Em chạy xuống lấy hai cái hộp nữa.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "phòng khám",
+   "baca": "fòng khám",
+   "id": "klinik"
+  },
+  {
+   "vi": "khám / đi khám",
+   "baca": "khám / di khám",
+   "id": "memeriksa / periksa ke dokter"
+  },
+  {
+   "vi": "thấy",
+   "baca": "thấy",
+   "id": "merasa"
+  },
+  {
+   "vi": "khó chịu",
+   "baca": "khó cịu",
+   "id": "tidak nyaman, tidak enak badan"
+  },
+  {
+   "vi": "sốt",
+   "baca": "sốt",
+   "id": "demam"
+  },
+  {
+   "vi": "ho",
+   "baca": "ho",
+   "id": "batuk"
+  },
+  {
+   "vi": "đau họng",
+   "baca": "dau họng",
+   "id": "sakit tenggorokan"
+  },
+  {
+   "vi": "cảm / cảm cúm",
+   "baca": "kảm / kảm kúm",
+   "id": "masuk angin / flu"
+  },
+  {
+   "vi": "sổ mũi",
+   "baca": "sổ mũi",
+   "id": "pilek"
+  },
+  {
+   "vi": "mệt",
+   "baca": "mệt",
+   "id": "capek, lemas"
+  },
+  {
+   "vi": "càng ngày càng",
+   "baca": "kàng ngày kàng",
+   "id": "makin hari makin"
+  },
+  {
+   "vi": "đỡ",
+   "baca": "dỡ",
+   "id": "membaik, reda"
+  },
+  {
+   "vi": "khỏi",
+   "baca": "khỏi",
+   "id": "sembuh"
+  },
+  {
+   "vi": "khỏe lại",
+   "baca": "khỏe lại",
+   "id": "sehat kembali"
+  },
+  {
+   "vi": "thuốc hạ sốt",
+   "baca": "thuốk hạ sốt",
+   "id": "obat penurun demam"
+  },
+  {
+   "vi": "viên",
+   "baca": "viên",
+   "id": "butir, tablet (penggolong)"
+  },
+  {
+   "vi": "lần",
+   "baca": "lần",
+   "id": "kali"
+  },
+  {
+   "vi": "kháng sinh",
+   "baca": "kháng sing",
+   "id": "antibiotik"
+  },
+  {
+   "vi": "nhà thuốc",
+   "baca": "nyà thuốk",
+   "id": "apotek"
+  },
+  {
+   "vi": "dược sĩ",
+   "baca": "zượk sĩ",
+   "id": "apoteker"
+  },
+  {
+   "vi": "lây",
+   "baca": "lây",
+   "id": "menular"
+  },
+  {
+   "vi": "bảo hiểm",
+   "baca": "bảo hiểm",
+   "id": "asuransi"
+  },
+  {
+   "vi": "nghỉ ngơi",
+   "baca": "ngỉ ngơi",
+   "id": "beristirahat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam. Budi berbicara kepada dokter (*em*).",
+   "items": [
+    "Saya merasa tidak enak badan.",
+    "Saya demam sejak kemarin lusa.",
+    "Saya batuk sedikit dan sakit tenggorokan.",
+    "Obat ini diminum tiga kali sehari, sekali satu tablet.",
+    "Saya sudah jauh membaik.",
+    "Saya merasa makin hari makin lemas."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata yang tepat.",
+   "items": [
+    "Đêm qua em ____ ba mươi chín độ. (demam)",
+    "Uống thuốc này ____ ăn. (sesudah)",
+    "Ngày uống hai ____, mỗi lần một viên. (kali)",
+    "Em ____ nhiều rồi, cảm ơn chị. (membaik)",
+    "Ba ngày nữa chắc em sẽ ____ ho. (sembuh)",
+    "Tiếng Việt của Budi ____ tốt. (makin hari makin)",
+    "Minh bị ____ từ Budi. (tertular)"
+   ]
+  },
+  {
+   "prompt": "Jawab dalam bahasa Vietnam berdasarkan kedua dialog.",
+   "items": [
+    "Budi bị sốt từ bao giờ?",
+    "Bác sĩ nói Budi bị gì?",
+    "Budi phải uống thuốc hạ sốt thế nào?",
+    "Mấy ngày thì Budi khỏe lại?",
+    "Minh bị làm sao?",
+    "Nếu ba ngày không đỡ thì Minh phải làm gì?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "thấy / em / khó chịu / trong người",
+    "càng ngày càng / em / mệt / thấy",
+    "mỗi lần / ngày uống / một viên / ba lần",
+    "rồi / đỡ / cháu / nhiều",
+    "bị / từ bao giờ / sốt / em"
+   ]
+  }
+ ],
+ "answers": [
+  "Em thấy trong người khó chịu. — Em bị sốt từ hôm kia. — Em bị ho một chút và đau họng. — Thuốc này ngày uống ba lần, mỗi lần một viên. — Em đỡ nhiều rồi. — Em thấy càng ngày càng mệt.",
+  "sốt — sau khi — lần — đỡ — khỏi — càng ngày càng (atau ngày càng) — lây",
+  "Budi bị sốt từ hôm kia. — Budi bị cảm cúm. — Ngày uống ba lần, mỗi lần một viên, sau khi ăn. — Nghỉ ngơi, uống nhiều nước thì ba bốn ngày là khỏe lại. — Minh bị sốt nhẹ, sổ mũi và đau họng. — Minh phải đi khám.",
+  "Em thấy trong người khó chịu. — Em thấy càng ngày càng mệt. — Ngày uống ba lần, mỗi lần một viên. — Cháu đỡ nhiều rồi. — Em bị sốt từ bao giờ? (atau: Từ bao giờ em bị sốt?)"
+ ]
+}

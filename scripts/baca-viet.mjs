@@ -18,6 +18,7 @@
 //   node scripts/baca-viet.mjs vi-a1            # isi semua unit-NN.json
 //   node scripts/baca-viet.mjs vi-a1 --cek      # cuma laporkan yang beda
 //   node scripts/baca-viet.mjs --kata "xin chào"
+//   node scripts/baca-viet.mjs vi-b1 --tanpa-dialog   # B1/B2: baris dialog TAK diberi cara baca
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 
@@ -43,12 +44,30 @@ const samakanBesar = (asli, ganti) =>
     : ganti;
 
 /** Satu suku kata (satu token huruf) → cara bacanya. */
+/* [ebook-baca-viet-asing-v1] Kata asing (nama orang/kota Indonesia, merek,
+   "Sen Travel") dibiarkan apa adanya. Satu suku Vietnam cuma punya SATU gugus
+   vokal, tak memakai f/j/w/z, dan hanya boleh berakhir -c -ch -m -n -ng -nh
+   -p -t atau vokal. Tanpa saringan ini "Travel" keluar "Cavel", "Dewi" "Zewi". */
+const VOKAL = "aeiouyàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ";
+const GUGUS_VOKAL = new RegExp(`[${VOKAL}]+`, "g");
+const AKHIR_SAH = new RegExp(`(?:[${VOKAL}]|ch|nh|ng|[cmnpt])$`);
+export function bukanSukuViet(kata) {
+  const k = kata.toLowerCase();
+  if (/[fjwz]/.test(k)) return true;
+  if ((k.match(GUGUS_VOKAL) ?? []).length > 1) return true;
+  return !AKHIR_SAH.test(k);
+}
+
 export function bacaSuku(kata) {
+  if (bukanSukuViet(kata)) return kata;
   const kecil = kata.toLowerCase();
   let awal = "", sisa = kecil;
   for (const [dari, ke] of AWAL) {
     if (kecil.startsWith(dari)) { awal = ke; sisa = kecil.slice(dari.length); break; }
   }
+  // "gi" + i bernada (gì, gìn, gị): huruf i-nya ikut memikul nada, jadi prefiks
+  // "gi" polos tak cocok dan kata ini dulu keluar "gì" — padahal bunyinya zì.
+  if (awal === "g" && /^[ìíỉĩị]/.test(sisa)) awal = "z";
   // Suku kata Vietnam selalu punya vokal sesudah huruf mati awalnya. Kalau
   // sisanya kosong atau tak bervokal, tokennya bukan kata Vietnam (nama asing,
   // singkatan) — biarkan apa adanya.
@@ -92,6 +111,11 @@ if (arg[0] === "--kata") { console.log(baca(arg.slice(1).join(" "))); process.ex
 const slug = arg[0];
 if (!slug) { console.error("pakai: node scripts/baca-viet.mjs <slug> [--cek]"); process.exit(1); }
 const CEK = arg.includes("--cek");
+/* [ebook-baca-viet-tanpa-dialog-v1] Seri lanjutan (vi-b1, vi-b2) sengaja tak
+   mencetak cara baca di bawah tiap baris dialog — pembacanya sudah lancar
+   membaca quốc ngữ, dan barisnya cuma memakan halaman. Kosakata & tabel
+   "Cara baca" tetap diisi; `baca` di baris dialog malah dibuang. */
+const TANPA_DIALOG = arg.includes("--tanpa-dialog");
 const DIR = `content/ebook/${slug}`;
 if (!existsSync(DIR)) { console.error(`${DIR} tidak ada`); process.exit(1); }
 
@@ -110,7 +134,10 @@ for (const berkas of readdirSync(DIR).filter((f) => /^unit-\d+\.json$/.test(f)).
   };
 
   for (const d of u.dialogs ?? (u.dialog ? [u.dialog] : [])) {
-    for (const l of d.lines ?? []) pasang(l, "text", "baca");
+    for (const l of d.lines ?? []) {
+      if (!TANPA_DIALOG) pasang(l, "text", "baca");
+      else if ("baca" in l) { beda++; if (!CEK) { delete l.baca; diisi++; } }
+    }
   }
   for (const v of u.vocab ?? []) pasang(v, "vi", "baca");
   perbaikiTabel(u, (r, k, harus) => {

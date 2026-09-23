@@ -1,0 +1,659 @@
+{
+ "title": "Menyambung kalimat — yang, bahwa, supaya",
+ "title_target": "Người mà em gặp hôm qua là khách mới.",
+ "goal": "Menjelaskan orang, benda, dan rencana dengan kalimat yang lebih panjang. Titik tata bahasanya: **mà** sebagai \"yang\" (kalimat relatif), **rằng / là** sebagai \"bahwa\" sesudah *nói, nghĩ, biết, thấy*, dan **để / để cho** untuk \"supaya\".",
+ "bekal": [
+  "menerangkan orang dan benda dengan *mà*: *người mà em gặp, chỗ mà chị chọn*",
+  "menyampaikan pikiran dan kabar dengan *nói rằng, nghĩ là, thấy là*",
+  "menyebut tujuan dengan *để* dan *để cho*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Khách mà em gặp hôm qua",
+   "intro": "Kantor Sen Travel di Hoàn Kiếm. Kemarin Budi bertemu calon tamu dari Jakarta, dan pagi ini chị Hương ingin tahu rencananya.",
+   "lines": [
+    {
+     "speaker": "Hương:",
+     "text": "Người mà em gặp hôm qua là khách nào thế?",
+     "id": "Orang yang kamu temui kemarin itu tamu yang mana?",
+     "literal": "orang yang adik temu hari lalu adalah tamu mana begitu?",
+     "baca": "Người mà em gặp hôm kwa là khák nào thế?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, là chị Sari, người Indonesia mà em kể với chị tuần trước ạ.",
+     "id": "Itu Mbak Sari, orang Indonesia yang saya ceritakan ke Mbak minggu lalu.",
+     "literal": "iya, adalah kakak Sari, orang Indonesia yang adik cerita dengan kakak minggu lalu ya.",
+     "baca": "Zạ, là cị Sari, người Indonesia mà em kể với cị tuần cướk ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "À, chị nhớ rồi. Chị ấy muốn đi đâu?",
+     "id": "Oh, aku ingat. Dia mau ke mana?",
+     "literal": "ah, kakak ingat sudah. kakak itu mau pergi mana?",
+     "baca": "À, cị nyớ zồi. Cị ấy muốn di dâu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị ấy nói rằng hai vợ chồng muốn đi Hạ Long ạ.",
+     "id": "Dia bilang bahwa dia dan suaminya mau ke Hạ Long.",
+     "literal": "kakak itu bilang bahwa dua istri suami mau pergi Hạ Long ya.",
+     "baca": "Cị ấy nói zằng hai vợ cồng muốn di Hạ Long ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Chỉ Hạ Long thôi à? Tháng mười khách đông lắm đấy.",
+     "id": "Cuma Hạ Long? Bulan Oktober tamunya ramai sekali, lho.",
+     "literal": "hanya Hạ Long saja ya? bulan sepuluh tamu ramai sangat tuh.",
+     "baca": "Cỉ Hạ Long thôi à? Tháng mười khák dông lắm dấy."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ, cả Ninh Bình nữa. Em nghĩ là mình nên đặt du thuyền sớm để có phòng đẹp.",
+     "id": "Ninh Bình juga. Menurut saya kita sebaiknya pesan kapal pesiar lebih awal supaya dapat kamar bagus.",
+     "literal": "iya, semua Ninh Bình lagi. adik pikir bahwa kita sebaiknya pesan kapal-pesiar awal untuk ada kamar bagus.",
+     "baca": "Zạ, kả Ning Bìng nữa. Em ngĩ là mìng nên dặt zu thuyền sớm dể kó fòng dẹp."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đúng. Thế chỗ mà em chọn ở Ninh Bình thì sao?",
+     "id": "Betul. Terus tempat yang kamu pilih di Ninh Bình gimana?",
+     "literal": "benar. begitu tempat yang adik pilih di Ninh Bình maka bagaimana?",
+     "baca": "Dúng. Thế cỗ mà em cọn ở Ning Bìng thì sao?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em chọn homestay mà khách trước khen nhiều nhất, gần Tam Cốc ạ.",
+     "id": "Saya pilih homestay yang paling banyak dipuji tamu-tamu sebelumnya, dekat Tam Cốc.",
+     "literal": "adik pilih homestay yang tamu sebelum puji banyak paling, dekat Tam Cốc ya.",
+     "baca": "Em cọn homestay mà khák cướk khen nyiều nyất, gần Tam Kốk ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Tốt. Khách có yêu cầu gì đặc biệt không?",
+     "id": "Bagus. Tamunya ada permintaan khusus?",
+     "literal": "baik. tamu ada permintaan apa khusus tidak?",
+     "baca": "Tốt. Khák kó yêu kầu zì dặk biệt không?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dạ có. Chị ấy nói là chồng chị ấy bị dị ứng tôm ạ.",
+     "id": "Ada. Dia bilang suaminya alergi udang.",
+     "literal": "iya ada. kakak itu bilang bahwa suami kakak itu kena alergi udang ya.",
+     "baca": "Zạ kó. Cị ấy nói là cồng cị ấy bị zị ứng tôm ạ."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Em ghi rõ vào hồ sơ để nhà hàng biết nhé.",
+     "id": "Tulis dengan jelas di berkasnya supaya restorannya tahu, ya.",
+     "literal": "adik catat jelas masuk berkas untuk restoran tahu ya.",
+     "baca": "Em gi zõ vào hồ sơ dể nyà hàng biết nyé."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vâng ạ. Em sẽ gửi lịch trình bằng tiếng Indonesia để cho chị ấy dễ đọc.",
+     "id": "Baik. Saya akan kirim jadwal perjalanan dalam bahasa Indonesia supaya dia mudah membacanya.",
+     "literal": "iya ya. adik akan kirim jadwal-perjalanan dengan bahasa Indonesia untuk beri kakak itu mudah baca.",
+     "baca": "Vâng ạ. Em sẽ gửi lịk cìng bằng tiếng Indonesia dể co cị ấy zễ dọk."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Ý hay đấy. Chị thấy là em làm việc cẩn thận hơn trước nhiều.",
+     "id": "Ide bagus. Aku lihat kamu kerjanya jauh lebih teliti daripada dulu.",
+     "literal": "gagasan bagus tuh. kakak lihat bahwa adik kerja teliti lebih sebelum banyak.",
+     "baca": "Ý hay dấy. Cị thấy là em làm việk kẩn thận hơn cướk nyiều."
+    }
+   ],
+   "notes": [
+    "**Người mà em gặp — *mà* sebagai \"yang\".** Keterangan datang di belakang kata benda, sama seperti bahasa Indonesia: *người mà em gặp* = orang yang kamu temui. Kalau keterangannya pendek, *mà* sering dilesapkan: *người em gặp hôm qua*.",
+    "**Mình = \"kita\" di kantor.** Dalam *Em nghĩ là mình nên đặt…*, *mình* bukan \"aku\" melainkan \"kita\" — Budi dan kantornya. Konteks yang menentukan.",
+    "**Hai vợ chồng — pasangan suami-istri itu.** Harfiahnya \"dua istri-suami\". Ungkapan ini selalu dipakai untuk pasangan sebagai satu kesatuan: *Hai vợ chồng anh Nam có một con gái.*",
+    "**Bị dị ứng — alergi.** *Bị* (unit 6) karena alergi merugikan: *bị dị ứng tôm*, *bị dị ứng hải sản*.",
+    "**Du thuyền Hạ Long.** Menginap semalam di kapal pesiar di Teluk Hạ Long adalah paket yang sangat lazim. Musim gugur dikenal sebagai waktu yang nyaman untuk ke utara, jadi kamar cepat habis."
+   ],
+   "grammars": [
+    {
+     "title": "*Mà* — kalimat relatif \"yang\"",
+     "body": [
+      "Pola dasarnya: kata benda + *mà* + kalimat kecil yang punya pelaku sendiri. Seluruh kelompok itu lalu bisa menjadi pokok atau pelengkap kalimat besar."
+     ],
+     "table": {
+      "head": [
+       "Kepala",
+       "+ mà + keterangan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*người*",
+        "*mà em gặp hôm qua*",
+        "orang yang kamu temui kemarin"
+       ],
+       [
+        "*chỗ*",
+        "*mà em chọn ở Ninh Bình*",
+        "tempat yang kamu pilih di Ninh Bình"
+       ],
+       [
+        "*quyển sách*",
+        "*mà anh cho em mượn*",
+        "buku yang Mas pinjamkan padaku"
+       ],
+       [
+        "*cái áo*",
+        "*mà chị mua ở Hàng Đào*",
+        "baju yang Mbak beli di Hàng Đào"
+       ],
+       [
+        "*lúc*",
+        "*mà anh gọi*",
+        "saat Mas menelepon"
+       ],
+       [
+        "*món*",
+        "*mà Budi thích nhất*",
+        "masakan yang paling Budi suka"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Beda besar dengan \"yang\": *mà* dipakai bila keterangannya punya pelaku sendiri (*em gặp*, *anh gọi*). Untuk kata sifat, cukup letakkan di belakang tanpa apa-apa: *áo đỏ* (baju yang merah), *người cao* (orang yang tinggi) — bukan *áo mà đỏ*.",
+      "*Mà* juga masih berarti \"tapi\" (*gọi mà không nghe máy*) dan \"kok\" di ujung kalimat (A1). Letaknya yang membedakan: sesudah kata benda = \"yang\"."
+     ]
+    },
+    {
+     "title": "*Rằng / là* — \"bahwa\"",
+     "body": [
+      "Sesudah kata kerja berbicara, berpikir, dan mengetahui, kalimat berikutnya bisa dibuka dengan *rằng* atau *là*. Keduanya boleh juga dihilangkan, persis seperti \"bahwa\" dalam percakapan kita."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*nói rằng / nói là*",
+        "*Chị ấy nói rằng muốn đi Hạ Long.*",
+        "Dia bilang bahwa dia mau ke Hạ Long."
+       ],
+       [
+        "*nghĩ là*",
+        "*Em nghĩ là mình nên đặt sớm.*",
+        "Menurut saya kita sebaiknya pesan awal."
+       ],
+       [
+        "*thấy là*",
+        "*Chị thấy là em làm việc cẩn thận.*",
+        "Aku lihat kamu bekerja teliti."
+       ],
+       [
+        "*biết là*",
+        "*Em biết là anh bận.*",
+        "Saya tahu Mas sibuk."
+       ],
+       [
+        "*hy vọng là*",
+        "*Em hy vọng là khách sẽ thích.*",
+        "Saya harap tamunya akan suka."
+       ]
+      ]
+     },
+     "after": [
+      "*Rằng* lebih rapi dan sering di tulisan; *là* jauh lebih sering di percakapan. ⚠️ Jangan bingung dengan *là* \"adalah\": sesudah *nói, nghĩ, biết, thấy*, *là* hampir selalu \"bahwa\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Tin nhắn thoại cho anh Nam",
+   "intro": "Budi menelepon Nam, tapi tidak diangkat. Ia mengirim pesan suara lewat Zalo; satu jam kemudian Nam membalas dengan pesan suara juga.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Anh Nam ơi, em Budi đây. Em gọi mà anh không nghe máy, nên em gửi tin nhắn thoại ạ.",
+     "id": "Mas Nam, ini Budi. Saya telepon tapi Mas nggak angkat, jadi saya kirim pesan suara.",
+     "literal": "kakak Nam hai, adik Budi sini. adik panggil tapi kakak tidak dengar mesin, maka adik kirim pesan suara ya.",
+     "baca": "Ang Nam ơi, em Budi dây. Em gọi mà ang không nge máy, nên em gửi tin nyắn thoại ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Quyển sách mà anh cho em mượn hay lắm ạ.",
+     "id": "Buku yang Mas pinjamkan ke saya bagus sekali.",
+     "literal": "jilid buku yang kakak beri adik pinjam bagus sangat ya.",
+     "baca": "Kwyển sák mà ang co em mượn hay lắm ạ."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Khách của em muốn ăn ở quán mà người Hà Nội hay ăn. Em biết là anh thuộc phố cổ lắm.",
+     "id": "Tamu saya mau makan di warung tempat orang Hà Nội biasa makan. Saya tahu Mas hafal kota tua.",
+     "literal": "tamu punya adik mau makan di warung yang orang Hà Nội sering makan. adik tahu bahwa kakak hafal jalan tua sangat.",
+     "baca": "Khák kủa em muốn ăn ở kwán mà người Hà Nội hay ăn. Em biết là ang thuộk fố kổ lắm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anh rảnh thì gọi lại cho em nhé. Em cảm ơn anh!",
+     "id": "Kalau Mas sempat, telepon balik ya. Terima kasih!",
+     "literal": "kakak senggang maka panggil kembali untuk adik ya. adik terima-kasih kakak!",
+     "baca": "Ang zảng thì gọi lại co em nyé. Em kảm ơn ang!"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Budi à, anh Nam đây. Lúc nãy anh đang họp nên không nghe máy.",
+     "id": "Budi, ini Nam. Tadi aku lagi rapat, jadi nggak angkat.",
+     "literal": "Budi ya, kakak Nam sini. saat tadi kakak sedang rapat maka tidak dengar mesin.",
+     "baca": "Budi à, ang Nam dây. Lúk nãy ang dang họp nên không nge máy."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Quán mà anh thích nhất ở gần chợ Đồng Xuân.",
+     "id": "Warung yang paling aku suka ada di dekat pasar Đồng Xuân.",
+     "literal": "warung yang kakak suka paling di dekat pasar Đồng Xuân.",
+     "baca": "Kwán mà ang thík nyất ở gần cợ Dồng Suân."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Anh nghĩ là ít khách nước ngoài biết chỗ đó, nên khách của em sẽ thích.",
+     "id": "Menurutku sedikit turis asing yang tahu tempat itu, jadi tamumu pasti suka.",
+     "literal": "kakak pikir bahwa sedikit tamu luar-negeri tahu tempat itu, maka tamu punya adik akan suka.",
+     "baca": "Ang ngĩ là ít khák nướk ngoài biết cỗ dó, nên khák kủa em sẽ thík."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Anh gửi vị trí qua Zalo để em dễ tìm nhé.",
+     "id": "Aku kirim lokasinya lewat Zalo supaya kamu gampang mencarinya.",
+     "literal": "kakak kirim posisi lewat Zalo untuk adik mudah cari ya.",
+     "baca": "Ang gửi vị cí kwa Zalo dể em zễ tìm nyé."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "À, còn quyển sách thì em cứ giữ thêm vài hôm, anh chưa cần đâu.",
+     "id": "Oh, bukunya simpan saja beberapa hari lagi, aku belum perlu kok.",
+     "literal": "ah, masih jilid buku maka adik terus simpan tambah beberapa hari, kakak belum perlu kok.",
+     "baca": "À, kòn kwyển sák thì em kứ zữ thêm vài hôm, ang cưa kần dâu."
+    }
+   ],
+   "notes": [
+    "**Gọi mà anh không nghe máy — *mà* sebagai \"tapi\".** Di sini *mà* menyambung dua kejadian yang bertentangan dengan sedikit rasa heran: \"sudah kutelepon, tapi kok tidak diangkat\". Bandingkan dengan *quyển sách mà anh cho em mượn* di baris berikutnya.",
+    "**Nghe máy — mengangkat telepon.** Harfiahnya \"mendengar mesin\". Keluarganya: *gọi lại* (menelepon balik), *máy bận* (sedang sibuk), *không liên lạc được* (tak bisa dihubungi).",
+    "**Tin nhắn thoại dan Zalo.** Zalo adalah aplikasi pesan buatan Vietnam dan dipakai hampir semua orang, dari grup kantor sampai grup keluarga. Pesan suara sangat lazim, dan *gửi vị trí* (kirim lokasi) adalah cara biasa memberi alamat di gang-gang Hà Nội.",
+    "**Thuộc phố cổ — hafal kota tua.** *Thuộc* berarti hafal: *thuộc bài* (hafal pelajaran), *thuộc đường* (hafal jalan). Pujian halus untuk orang Hà Nội asli."
+   ],
+   "grammars": [
+    {
+     "title": "*Để* dan *để cho* — \"supaya, untuk\"",
+     "body": [
+      "*Để* menjawab \"untuk apa?\". Kalau pelaku kalimat kedua sama dengan yang pertama, cukup *để* + kata kerja. Kalau berbeda, sebutkan pelakunya — dan di situ *để cho* terasa paling jelas."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "**để** + kata kerja",
+        "*Em gọi để hỏi giá phòng.*",
+        "Saya menelepon untuk menanyakan harga kamar."
+       ],
+       [
+        "**để** + pelaku + kata kerja",
+        "*Anh gửi vị trí để em dễ tìm.*",
+        "Aku kirim lokasi supaya kamu mudah mencari."
+       ],
+       [
+        "**để cho** + pelaku + kata kerja",
+        "*Em viết tiếng Indonesia để cho khách dễ đọc.*",
+        "Saya tulis dalam bahasa Indonesia supaya tamu mudah membaca."
+       ],
+       [
+        "**để** + **không** + kata kerja",
+        "*Em ghi lại để không quên.*",
+        "Saya catat supaya tidak lupa."
+       ],
+       [
+        "**… để làm gì?**",
+        "*Em học tiếng Việt để làm gì?*",
+        "Kamu belajar bahasa Vietnam untuk apa?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Để* juga kata kerja \"menaruh\" dan \"membiarkan\": *để sách ở đây* (taruh buku di sini), *để em làm* (biar saya yang kerjakan). Kalau *để* muncul di tengah kalimat sesudah satu tindakan lengkap, hampir pasti artinya \"supaya\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyampaikan kabar dan pikiran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Em nghĩ là như thế sẽ tốt hơn.",
+       "Em ngĩ là nyư thế sẽ tốt hơn.",
+       "Menurut saya begitu akan lebih baik."
+      ],
+      [
+       "Chị ấy nói là sẽ đến muộn.",
+       "Cị ấy nói là sẽ dến muộn.",
+       "Dia bilang akan datang terlambat."
+      ],
+      [
+       "Em không biết là hôm nay chị nghỉ.",
+       "Em không biết là hôm nay cị ngỉ.",
+       "Saya tidak tahu kalau hari ini Mbak libur."
+      ],
+      [
+       "Em quên là phải gửi email.",
+       "Em kwên là fải gửi email.",
+       "Saya lupa bahwa harus kirim email."
+      ],
+      [
+       "Em nhớ là khách thích ăn cay.",
+       "Em nyớ là khák thík ăn kay.",
+       "Seingat saya tamunya suka pedas."
+      ],
+      [
+       "Em hy vọng là trời sẽ đẹp.",
+       "Em hy vọng là cời sẽ dẹp.",
+       "Saya harap cuacanya bagus."
+      ],
+      [
+       "Anh có chắc là đúng không?",
+       "Ang kó cắk là dúng không?",
+       "Mas yakin itu benar?"
+      ],
+      [
+       "Em sợ là không kịp.",
+       "Em sợ là không kịp.",
+       "Saya khawatir tidak keburu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *em nhớ là* (seingat saya) dan *em sợ là* (saya khawatir) — dua pembuka yang membuat kalimatmu terdengar hati-hati dan sopan. *Sợ là* di sini sudah tidak berarti \"takut\" lagi; ia melunakkan kabar buruk, seperti \"sepertinya\" atau \"khawatirnya\" dalam bahasa kita."
+    },
+    {
+     "type": "kotak",
+     "title": "Pesan kerja di Zalo",
+     "items": [
+      "Kepada atasan, pesan dibuka dengan salam lengkap: *Dạ, em chào chị ạ.* lalu isi, lalu *Em cảm ơn chị ạ.* Pesan tanpa salam terasa ketus.",
+      "Jawaban singkat yang sopan: *Dạ vâng ạ.* (baik), *Em nhận được rồi ạ.* (sudah saya terima), *Em làm ngay ạ.* (saya kerjakan sekarang)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tempat, waktu, dan orang dengan *mà*",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tiếng Việt",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Đây là quán mà em hay ăn.",
+       "Dây là kwán mà em hay ăn.",
+       "Ini warung tempat saya biasa makan."
+      ],
+      [
+       "Hôm mà em đến, trời mưa to.",
+       "Hôm mà em dến, cời mưa to.",
+       "Hari waktu saya datang, hujan deras."
+      ],
+      [
+       "Người mà chị cần gặp là anh Nam.",
+       "Người mà cị kần gặp là ang Nam.",
+       "Orang yang perlu Mbak temui adalah Mas Nam."
+      ],
+      [
+       "Cái mà em thích nhất là cà phê trứng.",
+       "Kái mà em thík nyất là kà fê cứng.",
+       "Yang paling saya suka adalah kopi telur."
+      ],
+      [
+       "Tháng mà em thích nhất là tháng mười.",
+       "Tháng mà em thík nyất là tháng mười.",
+       "Bulan yang paling saya suka adalah Oktober."
+      ],
+      [
+       "Những gì mà chị nói đều đúng.",
+       "Nyững zì mà cị nói dều dúng.",
+       "Semua yang Mbak katakan benar."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Cái mà …* dan *những gì mà …* adalah \"yang …\" tanpa kata benda: *Cái mà em cần là thời gian.* (yang saya perlukan adalah waktu). Pola *X mà … là Y* sangat berguna untuk menonjolkan sesuatu, mirip \"yang paling saya suka adalah …\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Mencari warung \"orang lokal\" di Hà Nội",
+     "items": [
+      "Banyak warung terbaik ada di dalam *ngõ* (gang) dan tak punya papan nama besar. Kursi plastik rendah di trotoar adalah pemandangan biasa.",
+      "Tiap masakan punya jamnya: *phở* dan *xôi* paling ramai pagi, *bún chả* terutama makan siang.",
+      "Tanda yang aman: warung penuh orang Vietnam pada jam makan. Tanyakan saja: *Quán này có món gì ngon nhất ạ?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Kelompok di atas dua puluh orang dapat diskon dua puluh persen.",
+       "*Nhóm trên hai mươi người được giảm giá hai mươi phần trăm.*"
+      ],
+      [
+       "Jadi per orang tinggal lima juta dua ratus ribu.",
+       "*Vậy mỗi người còn năm triệu hai trăm nghìn ạ.*"
+      ],
+      [
+       "Tamu membayar uang muka tiga puluh persen sebelum akhir Oktober.",
+       "*Khách đặt cọc ba mươi phần trăm trước cuối tháng mười.*"
+      ],
+      [
+       "Ulang tahun ibu saya tanggal 12 September.",
+       "*Sinh nhật mẹ anh là ngày mười hai tháng chín.*"
+      ],
+      [
+       "Hari ini baru tanggal 5 Agustus, masih keburu kok.",
+       "*Hôm nay mới mùng năm tháng tám, kịp anh ạ.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "mà",
+   "baca": "mà",
+   "id": "yang (relatif); tapi"
+  },
+  {
+   "vi": "rằng / là",
+   "baca": "zằng / là",
+   "id": "bahwa"
+  },
+  {
+   "vi": "để / để cho",
+   "baca": "dể / dể co",
+   "id": "supaya, untuk"
+  },
+  {
+   "vi": "gặp",
+   "baca": "gặp",
+   "id": "bertemu"
+  },
+  {
+   "vi": "kể",
+   "baca": "kể",
+   "id": "bercerita"
+  },
+  {
+   "vi": "hai vợ chồng",
+   "baca": "hai vợ cồng",
+   "id": "pasangan suami-istri"
+  },
+  {
+   "vi": "du thuyền",
+   "baca": "zu thuyền",
+   "id": "kapal pesiar"
+  },
+  {
+   "vi": "yêu cầu",
+   "baca": "yêu kầu",
+   "id": "permintaan"
+  },
+  {
+   "vi": "đặc biệt",
+   "baca": "dặk biệt",
+   "id": "khusus, istimewa"
+  },
+  {
+   "vi": "dị ứng",
+   "baca": "zị ứng",
+   "id": "alergi"
+  },
+  {
+   "vi": "hồ sơ",
+   "baca": "hồ sơ",
+   "id": "berkas"
+  },
+  {
+   "vi": "ghi",
+   "baca": "gi",
+   "id": "mencatat"
+  },
+  {
+   "vi": "lịch trình",
+   "baca": "lịk cìng",
+   "id": "jadwal perjalanan"
+  },
+  {
+   "vi": "cẩn thận",
+   "baca": "kẩn thận",
+   "id": "teliti, hati-hati"
+  },
+  {
+   "vi": "ý",
+   "baca": "ý",
+   "id": "ide, pendapat"
+  },
+  {
+   "vi": "tin nhắn thoại",
+   "baca": "tin nyắn thoại",
+   "id": "pesan suara"
+  },
+  {
+   "vi": "nghe máy",
+   "baca": "nge máy",
+   "id": "mengangkat telepon"
+  },
+  {
+   "vi": "gọi lại",
+   "baca": "gọi lại",
+   "id": "menelepon balik"
+  },
+  {
+   "vi": "mượn",
+   "baca": "mượn",
+   "id": "meminjam"
+  },
+  {
+   "vi": "thuộc",
+   "baca": "thuộk",
+   "id": "hafal"
+  },
+  {
+   "vi": "vị trí",
+   "baca": "vị cí",
+   "id": "lokasi, posisi"
+  },
+  {
+   "vi": "lúc nãy",
+   "baca": "lúk nãy",
+   "id": "tadi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam.",
+   "items": [
+    "Orang yang kamu temui kemarin itu siapa? (kepada adik)",
+    "Dia bilang bahwa dia mau ke Hạ Long. (tentang perempuan lebih tua)",
+    "Menurut saya kita sebaiknya pesan lebih awal. (kepada atasan)",
+    "Tulis jelas supaya restorannya tahu. (kepada adik)",
+    "Buku yang Mas pinjamkan bagus sekali.",
+    "Saya belajar bahasa Vietnam supaya bisa bekerja di Hà Nội."
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan *mà*, *rằng/là*, *để*, atau *để cho*.",
+   "items": [
+    "Cái áo ____ chị mua hôm qua đẹp quá. (yang)",
+    "Em nghĩ ____ trời sắp mưa. (bahwa, lisan)",
+    "Em gọi điện ____ hỏi giá phòng. (untuk)",
+    "Anh viết chậm ____ em dễ đọc. (supaya, bentuk panjang)",
+    "Chị ấy nói ____ chồng chị ấy bị dị ứng tôm. (bahwa, rapi)",
+    "Đây là quán ____ anh Nam thích nhất. (yang)",
+    "Em ghi lại ____ không quên. (supaya)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan menjadi satu kalimat dengan kata dalam kurung.",
+   "items": [
+    "Em gặp một người. Người đó là khách mới. (mà)",
+    "Chị mua một cái túi. Cái túi đó rất đẹp. (mà)",
+    "Anh Nam thích một quán. Quán đó ở gần chợ Đồng Xuân. (mà)",
+    "Minh nói: \"Tớ bận.\" (rằng)",
+    "Chị Hương thấy: \"Budi làm việc cẩn thận.\" (là)",
+    "Em học tiếng Việt. Em muốn nói chuyện với bạn bè. (để)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "gặp / người / hôm qua / mà / em / là / khách mới",
+    "nói / chị ấy / muốn / rằng / đi Hạ Long",
+    "để / em / hồ sơ / ghi / vào / nhà hàng / biết",
+    "nghĩ / em / là / nên / mình / đặt sớm",
+    "cho / để / dễ đọc / khách / em / viết rõ"
+   ]
+  }
+ ],
+ "answers": [
+  "Người mà em gặp hôm qua là ai? — Chị ấy nói rằng (atau nói là) chị ấy muốn đi Hạ Long. — Em nghĩ là mình nên đặt sớm ạ. — Em ghi rõ để nhà hàng biết nhé. — Quyển sách mà anh cho em mượn hay lắm. — Em học tiếng Việt để có thể làm việc ở Hà Nội.",
+  "mà — là — để — để cho — rằng — mà — để",
+  "Người mà em gặp là khách mới. — Cái túi mà chị mua rất đẹp. — Quán mà anh Nam thích ở gần chợ Đồng Xuân. — Minh nói rằng cậu ấy bận. — Chị Hương thấy là Budi làm việc cẩn thận. — Em học tiếng Việt để nói chuyện với bạn bè.",
+  "Người mà em gặp hôm qua là khách mới. — Chị ấy nói rằng muốn đi Hạ Long. — Em ghi vào hồ sơ để nhà hàng biết. — Em nghĩ là mình nên đặt sớm. — Em viết rõ để cho khách dễ đọc."
+ ]
+}
